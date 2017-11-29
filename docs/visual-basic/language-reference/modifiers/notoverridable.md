@@ -1,66 +1,65 @@
 ---
-title: "NotOverridable (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.NotOverridable"
-  - "NotOverridable"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "sealed methods"
-  - "NotOverridable keyword"
-  - "properties [Visual Basic], redefining"
-  - "elements, sealed"
-  - "sealed elements"
-  - "procedures, overriding"
-  - "procedures, redefining"
-  - "overriding"
-  - "methods [Visual Basic], sealed"
-  - "properties [Visual Basic], overriding"
+title: NotOverridable (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.NotOverridable
+- NotOverridable
+helpviewer_keywords:
+- sealed methods [Visual Basic]
+- NotOverridable keyword [Visual Basic]
+- properties [Visual Basic], redefining
+- elements [Visual Basic], sealed
+- sealed [elements VB]
+- procedures [Visual Basic], overriding
+- procedures [Visual Basic], redefining
+- overriding
+- methods [Visual Basic], sealed
+- properties [Visual Basic], overriding
 ms.assetid: 66ec6984-f5f5-4857-b362-6a3907aaf9e0
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 6fc5fb006b36cda1b6ad0e128604bc3bb427fd94
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# NotOverridable (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-派生クラスでオーバーライドできないプロパティまたはプロシージャを示すキーワードです。  
+# <a name="notoverridable-visual-basic"></a>NotOverridable (Visual Basic)
+プロパティまたはプロシージャを派生クラスでオーバーライドできないことを指定します。  
   
-## 解説  
- `NotOverridable` の修飾子はプロパティまたはメソッドが派生クラスでオーバーライドされることを防ぎます。  [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md) の修飾子は派生クラスでオーバーライドされるクラスのプロパティまたはメソッドができます。  詳細については、「[Inheritance Basics](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ `NotOverridable`修飾子プロパティまたはメソッドが派生クラスでオーバーライドされないできなくなります。  [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)修飾子により、派生クラスでオーバーライドするクラスでプロパティまたはメソッドです。 詳細については、「[継承の基本](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)」を参照してください。  
   
- `Overridable` または `NotOverridable` の修飾子が指定されていない場合は既定の設定がプロパティまたはメソッドが基本クラスのプロパティやメソッドをオーバーライドするかどうかによって異なります。  プロパティまたはメソッドが基本クラスのプロパティやメソッドをオーバーライドすると既定の設定はです `Overridable`; それ以外の場合は `NotOverridable` です。  
+ 場合、`Overridable`または`NotOverridable`修飾子が指定されていない、既定の設定は、プロパティまたはメソッドが基底クラスのプロパティまたはメソッドをオーバーライドするかどうかによって異なります。 プロパティまたはメソッドは、基底クラスのプロパティまたはメソッドをオーバーライドする場合、既定値は`Overridable`です。 それ以外の場合は`NotOverridable`します。  
   
- オーバーライドできない要素は、*シール*要素と呼ばれることもあります。  
+ 上書きできないように要素と呼ぶことが、*シール*要素。  
   
- `NotOverridable` は、プロパティまたはプロシージャの宣言ステートメント内でだけ使用できます。  `NotOverridable` を指定できるのは、別のプロパティまたはプロシージャをオーバーライドしているプロパティやプロシージャだけです。つまり、`Overrides` と組み合わせた場合のみ使用できます。  
+ `NotOverridable` は、プロパティまたはプロシージャの宣言ステートメントでのみ使用できます。 指定できます`NotOverridable`プロパティまたはとの組み合わせでのみ、つまり、別のプロパティまたはプロシージャをオーバーライドするプロシージャでのみ`Overrides`です。  
   
-## 組み合わせて修飾子  
- `Private` メソッドに `Overridable` または `NotOverridable` を指定できません。  
+## <a name="combined-modifiers"></a>結合された修飾子  
+ 指定することはできません`Overridable`または`NotOverridable`の`Private`メソッドです。  
   
- 同じ変数宣言で `NotOverridable` を、`MustOverride`、`Overridable`、または `Shared` と同時に指定することはできません。  
+ 指定することはできません`NotOverridable`と共に`MustOverride`、 `Overridable`、または`Shared`同じ宣言内で。  
   
-## 使用方法  
- 修飾子 `NotOverridable` は、次の構文で使用します。  
+## <a name="usage"></a>使用方法  
+ `NotOverridable` 修飾子は、次のコンテキストで使用できます。  
   
- [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## 参照  
- [Modifiers](../../../visual-basic/language-reference/modifiers/index.md)   
- [Inheritance Basics](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)   
- [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)   
- [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)   
- [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)   
- [キーワード](../../../visual-basic/language-reference/keywords/index.md)   
- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+## <a name="see-also"></a>関連項目  
+ [修飾子](../../../visual-basic/language-reference/modifiers/index.md)  
+ [継承の基本](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)  
+ [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
+ [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)  
+ [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)  
+ [キーワード](../../../visual-basic/language-reference/keywords/index.md)  
+ [Visual Basic におけるシャドウ](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

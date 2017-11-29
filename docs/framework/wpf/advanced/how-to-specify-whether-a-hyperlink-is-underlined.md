@@ -1,45 +1,48 @@
 ---
-title: "方法: ハイパーリンクに下線を引くかどうかを指定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, TextDecoration"
-  - "ハイパーリンク コントロール型"
-  - "TextDecoration クラス"
+title: "方法: ハイパーリンクに下線を引くかどうかを指定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: Hyperlink control type [WPF]
 ms.assetid: 3996cfe6-1dac-4835-aeb3-c719ce9cfee5
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7914b3b3332b7ea0abe05b3048b5016888e2d93e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: ハイパーリンクに下線を引くかどうかを指定する
-<xref:System.Windows.Documents.Hyperlink> オブジェクトはインラインレベルのフロー コンテンツ要素であり、これを使用すると、フロー コンテンツ内でハイパーリンクをホストできます。  既定では、<xref:System.Windows.Documents.Hyperlink> は、下線を表示するために、<xref:System.Windows.TextDecoration> オブジェクトを使用します。  <xref:System.Windows.TextDecoration> オブジェクトは、インスタンス化するために、パフォーマンスに大きな負荷をかけることがあります。特に、多数の <xref:System.Windows.Documents.Hyperlink> オブジェクトを使用する場合には、大きな負荷をかけます。  <xref:System.Windows.Documents.Hyperlink> 要素を広く使用する場合は、<xref:System.Windows.ContentElement.MouseEnter> イベントのようなイベントが発生したときにだけ下線を表示することを、検討する必要があります。  
+# <a name="how-to-specify-whether-a-hyperlink-is-underlined"></a>方法: ハイパーリンクに下線を引くかどうかを指定する
+<xref:System.Windows.Documents.Hyperlink>オブジェクトはインライン レベル フロー コンテンツ要素フロー コンテンツ内のハイパーリンクをホストすることができます。 既定では、<xref:System.Windows.Documents.Hyperlink>を使用して、<xref:System.Windows.TextDecoration>下線を表示するオブジェクト。 <xref:System.Windows.TextDecoration>オブジェクトができる処理を要するインスタンスを作成すると、パフォーマンスが多数ある場合に特に<xref:System.Windows.Documents.Hyperlink>オブジェクト。 広範な利用を加えた場合<xref:System.Windows.Documents.Hyperlink>要素、するをお勧めしますように、イベントをトリガーする場合にのみ下線を表示、<xref:System.Windows.ContentElement.MouseEnter>イベント。  
   
- 次の例では、"My MSN" リンクの下線は動的であり、<xref:System.Windows.ContentElement.MouseEnter> イベントが発生したときにのみ表示されます。  
+ 次の例では、"My MSN"リンクの下線は動的 — これ場合のみ表示されます、<xref:System.Windows.ContentElement.MouseEnter>イベントが発生します。  
   
- ![TextDecorations を表示するハイパーリンク](../../../../docs/framework/wpf/advanced/media/textdecoration03.png "TextDecoration03")  
-TextDecorations が定義されたハイパーリンク  
+ ![Textdecorations を表示するハイパーリンク](../../../../docs/framework/wpf/advanced/media/textdecoration03.png "TextDecoration03")  
+Textdecorations をで定義されているハイパーリンク  
   
-## 使用例  
- 下線付きおよび下線なしで定義されている <xref:System.Windows.Documents.Hyperlink> のマークアップのサンプルを次に示します。  
+## <a name="example"></a>例  
+ 次のマークアップのサンプルでは、<xref:System.Windows.Documents.Hyperlink>および下線を使用せずに定義されています。  
   
- [!code-xml[Performance#PerformanceSnippet11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet11)]  
+ [!code-xaml[Performance#PerformanceSnippet11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet11)]  
   
- 次のコード サンプルでは、<xref:System.Windows.Documents.Hyperlink> の下線を <xref:System.Windows.ContentElement.MouseEnter> イベントで表示し、<xref:System.Windows.ContentElement.MouseLeave> イベントで消去する方法を示します。  
+ 次のコード サンプルの下線を作成する方法を示しています、<xref:System.Windows.Documents.Hyperlink>上、<xref:System.Windows.ContentElement.MouseEnter>イベント、上で削除し、<xref:System.Windows.ContentElement.MouseLeave>イベント。  
   
  [!code-csharp[Performance#PerformanceSnippet15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml.cs#performancesnippet15)]
  [!code-vb[Performance#PerformanceSnippet15](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Performance/visualbasic/hyperlink.xaml.vb#performancesnippet15)]  
   
-## 参照  
- <xref:System.Windows.TextDecoration>   
- <xref:System.Windows.Documents.Hyperlink>   
- [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.TextDecoration>  
+ <xref:System.Windows.Documents.Hyperlink>  
+ [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
  [文字の装飾を作成する](../../../../docs/framework/wpf/advanced/how-to-create-a-text-decoration.md)

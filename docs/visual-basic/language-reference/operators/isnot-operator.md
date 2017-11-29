@@ -1,63 +1,59 @@
 ---
-title: "IsNot Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.isnot"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "IsNot operator"
+title: "IsNot 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.isnot
+helpviewer_keywords: IsNot operator [Visual Basic]
 ms.assetid: 8dd2bcdb-0166-48a2-9094-60dfb448f36c
-caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 969fdebdf15a1f779075c58616ccd16c64976a35
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# IsNot Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-2 つのオブジェクト変数を比較します。  
+# <a name="isnot-operator-visual-basic"></a>IsNot 演算子 (Visual Basic)
+2 つのオブジェクト参照変数を比較します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
 result = object1 IsNot object2  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `result`  
- 必ず指定します。  `Boolean` 値。  
+ 必須です。 `Boolean` 値。  
   
  `object1`  
- 必ず指定します。  任意の `Object` 変数または式です。  
+ 必須です。 どの`Object`変数または式。  
   
  `object2`  
- 必ず指定します。  任意の `Object` 変数または式です。  
+ 必須です。 どの`Object`変数または式。  
   
-## 解説  
- `IsNot`演算子は、2 つのオブジェクト参照が別のオブジェクトを参照しているかどうかを判定します。  ただし、値の比較は行われません。  `object1` と `object2` の両方がまったく同じオブジェクト インスタンスを参照している場合、`result` は `False` になります。それ以外の場合は、`result` は `True` です。  
+## <a name="remarks"></a>コメント  
+ `IsNot`演算子は、次の 2 つのオブジェクト参照が別のオブジェクトを参照してかどうかを決定します。 ただし、値の比較は実行しません。 場合`object1`と`object2`正確な同じオブジェクト インスタンスをどちらも参照してください`result`は`False`以外の場合は一致しない場合、`result`は`True`します。  
   
- `IsNot` は `Is` 演算子の逆の働きをします。  `IsNot` の利点は、`Not` と `Is` を組み合わせて記述し、コードが読みづらくなるのを防げることです。  
+ `IsNot`逆の`Is`演算子。 利点は、`IsNot`は避けることができますを組み合わせて`Not`と`Is`、読みにくくなることができます。  
   
- `Is` と `IsNot` 演算子を使用して、事前バインディング オブジェクトと遅延バインディング オブジェクトの両方をテストできます。  
+ 使用することができます、`Is`と`IsNot`事前バインドおよび遅延バインディングの両方のオブジェクトをテストする演算子です。  
   
 > [!NOTE]
->  `TypeOf` 演算子から返される式を比較するために `IsNot` 演算子を使用することはできません。  代わりに、`Not` 演算子と `Is` 演算子を使用する必要があります。  
+>  `IsNot`から返される式を比較する演算子を使用することはできません、`TypeOf`演算子。 代わりに、使用する必要があります、`Not`と`Is`演算子。  
   
-## 使用例  
- 次のコード例では、`Is` 演算子と `IsNot` 演算子の両方を使用して、同じ比較を実行します。  
+## <a name="example"></a>例  
+ 次のコード例では、両方は使用して、`Is`演算子および`IsNot`を同じ比較を実行する演算子です。  
   
  [!code-vb[VbVbalrOperators#29](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/isnot-operator_1.vb)]  
   
-## 参照  
- [Is Operator](../../../visual-basic/language-reference/operators/is-operator.md)   
- [TypeOf Operator](../../../visual-basic/language-reference/operators/typeof-operator.md)   
- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [How to: Test Whether Two Objects Are the Same](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-test-whether-two-objects-are-the-same.md)
+## <a name="see-also"></a>関連項目  
+ [Is 演算子](../../../visual-basic/language-reference/operators/is-operator.md)  
+ [TypeOf 演算子](../../../visual-basic/language-reference/operators/typeof-operator.md)  
+ [Visual Basic における演算子の優先順位](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [方法: 2 つのオブジェクトが等しいかどうかをテストする](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-test-whether-two-objects-are-the-same.md)

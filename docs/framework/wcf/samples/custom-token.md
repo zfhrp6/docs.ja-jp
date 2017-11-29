@@ -1,23 +1,26 @@
 ---
-title: "カスタム トークン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム トークン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 19593e61cc640068ac7c90a6abbd6ea0d6a3ff08
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# カスタム トークン
-このサンプルでは、カスタム トークンの実装を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションに追加する方法を示します。  この例では、`CreditCardToken` を使用して、クライアントのクレジット カードに関する情報をサーバーに安全に渡します。  このトークンは、WS\-Security メッセージ ヘッダー内で渡され、対称セキュリティ バインディング要素を使用してメッセージ本文と他のメッセージ ヘッダーと共に署名および暗号化されます。  これは、組み込みのトークンでは不十分な場合に役立ちます。  このサンプルでは、組み込みのトークンのいずれかを使用する代わりに、カスタム セキュリティ トークンをサービスに提供する方法を示します。  サービスは、要求\/応答通信パターンを定義するコントラクトを実装します。  
+# <a name="custom-token"></a>カスタム トークン
+このサンプルでは、カスタム トークンの実装を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションに追加する方法を示します。 この例では、`CreditCardToken` を使用して、クライアントのクレジット カードに関する情報をサーバーに安全に渡します。 このトークンは、WS-Security メッセージ ヘッダー内で渡され、対称セキュリティ バインディング要素を使用してメッセージ本文と他のメッセージ ヘッダーと共に署名および暗号化されます。 これは、組み込みのトークンでは不十分な場合に役立ちます。 このサンプルでは、組み込みのトークンのいずれかを使用する代わりに、カスタム セキュリティ トークンをサービスに提供する方法を示します。 サービスは、要求/応答通信パターンを定義するコントラクトを実装します。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
@@ -32,8 +35,8 @@ caps.handback.revision: 28
   
 -   サーバーの X.509 証明書を使用して、メッセージの暗号化や署名に使用する対称キーを保護する方法。  
   
-## カスタム セキュリティ トークンを使用したクライアント認証  
- サービスは単一エンドポイントを公開します。エンドポイントは、`BindingHelper` クラスと `EchoServiceHost` クラスを使用してプログラムによって作成されます。  エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。  バインディングは、`SymmetricSecurityBindingElement` と `HttpTransportBindingElement` を使用して、カスタム バインディングとして構成されます。  このサンプルでは、`SymmetricSecurityBindingElement` を設定してサービスの X.509 証明書を使用し、送信中の対称キーを保護して、WS\-Security メッセージ ヘッダー内でカスタム `CreditCardToken` を署名および暗号化されたセキュリティ トークンとして渡します。  この動作により、クライアント認証に使用されるサービス資格情報と、サービス X.509 証明書に関する情報が指定されます。  
+## <a name="client-authentication-using-a-custom-security-token"></a>カスタム セキュリティ トークンを使用したクライアント認証  
+ サービスは単一エンドポイントを公開します。エンドポイントは、`BindingHelper` クラスと `EchoServiceHost` クラスを使用してプログラムによって作成されます。 エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。 バインディングは、`SymmetricSecurityBindingElement` と `HttpTransportBindingElement` を使用して、カスタム バインディングとして構成されます。 このサンプルでは、`SymmetricSecurityBindingElement` を設定してサービスの X.509 証明書を使用し、送信中の対称キーを保護して、WS-Security メッセージ ヘッダー内でカスタム `CreditCardToken` を署名および暗号化されたセキュリティ トークンとして渡します。 この動作により、クライアント認証に使用されるサービス資格情報と、サービス X.509 証明書に関する情報が指定されます。  
   
 ```  
 public static class BindingHelper  
@@ -54,7 +57,7 @@ public static class BindingHelper
 }  
 ```  
   
- メッセージ内のクレジット カード トークンを使用するため、このサンプルではカスタム サービス資格情報を使用してこの機能を実現します。  サービス資格情報クラスは `CreditCardServiceCredentials` クラス内にあり、`EchoServiceHost.InitializeRuntime` メソッド内のサービス ホストの動作コレクションに追加されます。  
+ メッセージ内のクレジット カード トークンを使用するため、このサンプルではカスタム サービス資格情報を使用してこの機能を実現します。 サービス資格情報クラスは `CreditCardServiceCredentials` クラス内にあり、`EchoServiceHost.InitializeRuntime` メソッド内のサービス ホストの動作コレクションに追加されます。  
   
 ```  
 class EchoServiceHost : ServiceHost  
@@ -89,10 +92,9 @@ class EchoServiceHost : ServiceHost
         base.InitializeRuntime();  
     }  
 }  
-  
 ```  
   
- クライアント エンドポイントは、サービス エンドポイントと同様の方法で構成されます。  クライアントは、同じ `BindingHelper` クラスを使用してバインディングを作成します。  セットアップの残りの部分は、`Client` クラスにあります。  クライアントはさらに、`CreditCardClientCredentials` インスタンスを適切なデータと共にクライアント エンドポイントの動作コレクションに追加することによって、`CreditCardToken` に含まれる情報とサービス X.509 証明書に関する情報をセットアップ コード内に設定します。  サンプルでは、サービス証明書として、サブジェクト名が `CN=localhost` に設定された X.509 証明書を使用しています。  
+ クライアント エンドポイントは、サービス エンドポイントと同様の方法で構成されます。 クライアントは、同じ `BindingHelper` クラスを使用してバインディングを作成します。 セットアップの残りの部分は、`Client` クラスにあります。 クライアントはさらに、`CreditCardToken` インスタンスを適切なデータと共にクライアント エンドポイントの動作コレクションに追加することによって、`CreditCardClientCredentials` に含まれる情報とサービス X.509 証明書に関する情報をセットアップ コード内に設定します。 サンプルでは、サービス証明書として、サブジェクト名が `CN=localhost` に設定された X.509 証明書を使用しています。  
   
 ```  
 Binding creditCardBinding = BindingHelper.CreateCreditCardBinding();  
@@ -122,8 +124,8 @@ Console.WriteLine("Echo service returned: {0}", client.Echo());
 channelFactory.Close();  
 ```  
   
-## カスタム セキュリティ トークンの実装  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でカスタム セキュリティ トークンを有効にするには、カスタム セキュリティ トークンのオブジェクト表現を作成します。  サンプルのこの表現は、`CreditCardToken` クラスにあります。  このオブジェクト表現は、セキュリティ トークンのすべての関連情報を保持し、セキュリティ トークンに含まれるセキュリティ キーのリストを提供します。  この場合、クレジット カード セキュリティ トークンにはセキュリティ キーが含まれません。  
+## <a name="custom-security-token-implementation"></a>カスタム セキュリティ トークンの実装  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でカスタム セキュリティ トークンを有効にするには、カスタム セキュリティ トークンのオブジェクト表現を作成します。 サンプルのこの表現は、`CreditCardToken` クラスにあります。 このオブジェクト表現は、セキュリティ トークンのすべての関連情報を保持し、セキュリティ トークンに含まれるセキュリティ キーのリストを提供します。 この場合、クレジット カード セキュリティ トークンにはセキュリティ キーが含まれません。  
   
  次のセクションでは、カスタム トークンを有効にして通信回線を介して送信し、さらに [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントで使用するために必要な手順について説明します。  
   
@@ -160,11 +162,10 @@ class CreditCardToken : SecurityToken
     public override DateTime ValidTo { get { return this.cardInfo.ExpirationDate; } }  
     public override string Id { get { return this.id; } }  
 }  
-  
 ```  
   
-## カスタム クレジット カード トークンのメッセージへの提供とメッセージからの取得  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ トークン シリアライザーは、セキュリティ トークンのオブジェクト表現をメッセージの XML から作成するほか、XML 形式のセキュリティ トークンを作成します。  また、セキュリティ トークンを指すキー識別子の読み取りと書き込みなど、他の機能も備えていますが、この例ではセキュリティ トークン関連の機能だけを使用します。  カスタム トークンを有効にするには、独自のセキュリティ トークン シリアライザーを実装する必要があります。  このサンプルでは、この目的のために `CreditCardSecurityTokenSerializer` クラスを使用します。  
+## <a name="getting-the-custom-credit-card-token-to-and-from-the-message"></a>カスタム クレジット カード トークンのメッセージへの提供とメッセージからの取得  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ トークン シリアライザーは、セキュリティ トークンのオブジェクト表現をメッセージの XML から作成するほか、XML 形式のセキュリティ トークンを作成します。 また、セキュリティ トークンを指すキー識別子の読み取りと書き込みなど、他の機能も備えていますが、この例ではセキュリティ トークン関連の機能だけを使用します。 カスタム トークンを有効にするには、独自のセキュリティ トークン シリアライザーを実装する必要があります。 このサンプルでは、この目的のために `CreditCardSecurityTokenSerializer` クラスを使用します。  
   
  サービス側では、カスタム シリアライザーは XML 形式のカスタム トークンを読み取り、そこからカスタム トークンのオブジェクト表現を作成します。  
   
@@ -251,14 +252,14 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
 }  
 ```  
   
-## トークン プロバイダー クラスとトークン認証システム クラスの作成方法  
- クライアントとサービスの資格情報は、セキュリティ トークン マネージャーのインスタンスを提供します。  セキュリティ トークン マネージャーのインスタンスを使用すると、トークン プロバイダー、トークン認証システム、およびトークン シリアライザーを取得できます。  
+## <a name="how-token-provider-and-token-authenticator-classes-are-created"></a>トークン プロバイダー クラスとトークン認証システム クラスの作成方法  
+ クライアントとサービスの資格情報は、セキュリティ トークン マネージャーのインスタンスを提供します。 セキュリティ トークン マネージャーのインスタンスを使用すると、トークン プロバイダー、トークン認証システム、およびトークン シリアライザーを取得できます。  
   
- トークン プロバイダーは、クライアントまたはサービスの資格情報に含まれる情報に基づいて、トークンのオブジェクト表現を作成します。  次に、トークンのオブジェクト表現は、\(前のセクションで説明したとおり\) トークン シリアライザーを使用してメッセージに書き込まれます。  
+ トークン プロバイダーは、クライアントまたはサービスの資格情報に含まれる情報に基づいて、トークンのオブジェクト表現を作成します。 次に、トークンのオブジェクト表現は、(前のセクションで説明したとおり) トークン シリアライザーを使用してメッセージに書き込まれます。  
   
- トークン認証システムは、到着したメッセージ内のトークンを検証します。  受信トークンのオブジェクト表現は、トークン シリアライザーによって作成されます。  このオブジェクト表現は、次に、検証のためトークン認証システムに渡されます。  トークンが正常に検証されたら、トークン認証システムは `IAuthorizationPolicy` オブジェクトのコレクションを返します。このオブジェクトはトークンに含まれる情報を表します。  この情報は、承認に関する決定を行ったり、アプリケーションに対するクレームを提供したりするために、後でメッセージ処理中に使用されます。  この例では、クレジット カード トークンの認証システムはこの目的のために `CreditCardTokenAuthorizationPolicy` を使用します。  
+ トークン認証システムは、到着したメッセージ内のトークンを検証します。 受信トークンのオブジェクト表現は、トークン シリアライザーによって作成されます。 このオブジェクト表現は、次に、検証のためトークン認証システムに渡されます。 トークンが正常に検証されたら、トークン認証システムは `IAuthorizationPolicy` オブジェクトのコレクションを返します。このオブジェクトはトークンに含まれる情報を表します。 この情報は、承認に関する決定を行ったり、アプリケーションに対するクレームを提供したりするために、後でメッセージ処理中に使用されます。 この例では、クレジット カード トークンの認証システムはこの目的のために `CreditCardTokenAuthorizationPolicy` を使用します。  
   
- トークン シリアライザーは、トークンのオブジェクト表現を通信回線に送り、通信回線からトークンのオブジェクト表現を受け取ります。  これについては、前のセクションで説明したとおりです。  
+ トークン シリアライザーは、トークンのオブジェクト表現を通信回線に送り、通信回線からトークンのオブジェクト表現を受け取ります。 これについては、前のセクションで説明したとおりです。  
   
  このサンプルでは、トークン プロバイダーはクライアントでのみ使用し、トークン認証システムはサービスでのみ使用します。これは、クレジット カード トークンの送信はクライアントからサービスへの方向でのみ行うためです。  
   
@@ -506,11 +507,10 @@ public class CreditCardServiceCredentialsSecurityTokenManager : ServiceCredentia
             return true;  
         }  
     }  
-  
 ```  
   
-## 呼び出し元の情報の表示  
- 呼び出し元の情報を表示するには、次のサンプル コードに示すように `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` を使用します。  `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` には、現在の呼び出し元に関連付けられている承認クレームが含まれています。  クレームは、`AuthorizationPolicies` コレクションの `CreditCardToken` クラスによって提供されます。  
+## <a name="displaying-the-callers-information"></a>呼び出し元の情報の表示  
+ 呼び出し元の情報を表示するには、次のサンプル コードに示すように `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` を使用します。 `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` には、現在の呼び出し元に関連付けられている承認クレームが含まれています。 クレームは、`CreditCardToken` コレクションの `AuthorizationPolicies` クラスによって提供されます。  
   
 ```  
 bool TryGetStringClaimValue(ClaimSet claimSet, string claimType, out string claimValue)  
@@ -551,21 +551,20 @@ string GetCallerCreditCardNumber()
 }  
 ```  
   
- このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。  クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+ このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。 クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
   
-## セットアップ バッチ ファイル  
- このサンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してサーバーを構成し、サーバー証明書ベースのセキュリティを必要とする、IIS でホストされるアプリケーションを実行できるようになります。  このバッチ ファイルは、複数のコンピューターを使用する場合またはホストなしの場合に応じて変更する必要があります。  
+## <a name="setup-batch-file"></a>セットアップ バッチ ファイル  
+ このサンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してサーバーを構成し、サーバー証明書ベースのセキュリティを必要とする、IIS でホストされるアプリケーションを実行できるようになります。 このバッチ ファイルは、複数のコンピューターを使用する場合またはホストなしの場合に応じて変更する必要があります。  
   
  次に、バッチ ファイルのセクションのうち、該当する構成で実行するために変更が必要となる部分を示します。  
   
 -   サーバー証明書の作成 :  
   
-     `Setup.bat` バッチ ファイルの次の行は、使用するサーバー証明書を作成します。  `%SERVER_NAME%`  変数はサーバー名です。  この変数を変更して、使用するサーバー名を指定します。  このバッチ ファイルでの既定は localhost です。  `%SERVER_NAME%` 変数を変更する場合は、Client.cs ファイルと Service.cs ファイル全体を参照して、localhost のすべてのインスタンスを Setup.bat スクリプトで使用するサーバー名に置き換える必要があります。  
+     `Setup.bat` バッチ ファイルの次の行は、使用するサーバー証明書を作成します。 `%SERVER_NAME%` 変数はサーバー名です。 この変数を変更して、使用するサーバー名を指定します。 このバッチ ファイルでの既定は localhost です。 `%SERVER_NAME%` 変数を変更する場合は、Client.cs ファイルと Service.cs ファイル全体を参照して、localhost のすべてのインスタンスを Setup.bat スクリプトで使用するサーバー名に置き換える必要があります。  
   
-     証明書は、`LocalMachine` ストアの場所の My \(Personal\) ストアに保存されます。  証明書は、IIS でホストされるサービスの LocalMachine ストアに保存されます。  自己ホスト型サービスの場合、バッチ ファイルで文字列 LocalMachine を CurrentUser に置き換えて、クライアント証明書を CurrentUser ストアの場所に保存します。  
+     証明書は、`LocalMachine` ストアの場所の My (Personal) ストアに保存されます。 証明書は、IIS でホストされるサービスの LocalMachine ストアに保存されます。 自己ホスト型サービスの場合、バッチ ファイルで文字列 LocalMachine を CurrentUser に置き換えて、クライアント証明書を CurrentUser ストアの場所に保存します。  
   
     ```  
-  
     echo ************  
     echo Server cert setup starting  
     echo %SERVER_NAME%  
@@ -573,23 +572,20 @@ string GetCallerCreditCardNumber()
     echo making server cert  
     echo ************  
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
-  
     ```  
   
 -   サーバー証明書のクライアントの信頼された証明書ストアへのインストール。  
   
-     Setup.bat バッチ ファイルの次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。  この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないからです。  マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
+     Setup.bat バッチ ファイルの次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。 この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないからです。 マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
   
     ```  
-  
     echo ************  
     echo copying server cert to client's TrustedPeople store  
     echo ************  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
-  
     ```  
   
--   IIS でホストされるサービスから証明書の秘密キーへのアクセスを有効にするには、IIS でホストされる処理が実行されているユーザー アカウントに、秘密キーへの適切なアクセス許可を付与する必要があります。  これは、Setup.bat スクリプトの最後の手順によって実現されます。  
+-   IIS でホストされるサービスから証明書の秘密キーへのアクセスを有効にするには、IIS でホストされる処理が実行されているユーザー アカウントに、秘密キーへの適切なアクセス許可を付与する必要があります。 これは、Setup.bat スクリプトの最後の手順によって実現されます。  
   
     ```  
     echo ************  
@@ -603,38 +599,38 @@ string GetCallerCreditCardNumber()
     ```  
   
 > [!NOTE]
->  Setup.bat バッチ ファイルは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトから実行します。  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト内で設定された PATH 環境変数は、Setup.bat スクリプトで必要な実行可能ファイルが格納されているディレクトリを指しています。  
+>  Setup.bat バッチ ファイルは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトから実行します。 [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト内で設定された PATH 環境変数は、Setup.bat スクリプトで必要な実行可能ファイルが格納されているディレクトリを指しています。  
   
-#### サンプルをセットアップしてビルドするには  
+#### <a name="to-set-up-and-build-the-sample"></a>サンプルをセットアップしてビルドするには  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
-2.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。  
   
-#### サンプルを同じコンピューターで実行するには  
+#### <a name="to-run-the-sample-on-the-same-computer"></a>サンプルを同じコンピューターで実行するには  
   
-1.  管理特権で [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト ウィンドウを開き、サンプルのインストール フォルダーから Setup.bat を実行します。  これにより、サンプルの実行に必要なすべての証明書がインストールされます。Makecert.exe が存在するフォルダーがパスに含まれていることを確認します。  
+1.  管理特権で [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト ウィンドウを開き、サンプルのインストール フォルダーから Setup.bat を実行します。 これにより、サンプルの実行に必要なすべての証明書がインストールされます。Makecert.exe が存在するフォルダーがパスに含まれていることを確認します。  
   
 > [!NOTE]
->  サンプルの使用が終わったら、Cleanup.bat を実行して証明書を削除してください。  他のセキュリティ サンプルでも同じ証明書を使用します。  
+>  サンプルの使用が終わったら、Cleanup.bat を実行して証明書を削除してください。 他のセキュリティ サンプルでも同じ証明書を使用します。  
   
-1.  Client.exe を client\\bin ディレクトリで起動します。  クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
+1.  Client.exe を client\bin ディレクトリで起動します。 クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
   
-2.  クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+2.  クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
   
-#### サンプルを複数のコンピューターで実行するには  
+#### <a name="to-run-the-sample-across-computer"></a>サンプルを複数のコンピューターで実行するには  
   
 1.  サービス コンピューターにサービス バイナリ用のディレクトリを作成します。  
   
-2.  サービス プログラム ファイルを、サービス コンピューターのサービス ディレクトリにコピーします。  必ず CreditCardFile.txt をコピーしてください。これを行わない場合、クレジット カードの認証システムはクライアントから送信されたクレジット カード情報を検証できません。  Setup.bat ファイルと Cleanup.bat ファイルもサービス コンピューターにコピーします。  
+2.  サービス プログラム ファイルを、サービス コンピューターのサービス ディレクトリにコピーします。 必ず CreditCardFile.txt をコピーしてください。これを行わない場合、クレジット カードの認証システムはクライアントから送信されたクレジット カード情報を検証できません。 Setup.bat ファイルと Cleanup.bat ファイルもサービス コンピューターにコピーします。  
   
-3.  コンピューターの完全修飾ドメイン名を含むサブジェクト名を持つサーバー証明書が必要です。  `%SERVER_NAME%` 変数を、サービスがホストされるコンピューターの完全修飾名に変更すると、Setup.bat を使用してこの証明書を作成できます。  Setup.bat ファイルは、管理特権を使用して開いた Visual Studio コマンド プロンプトで実行する必要があります。  
+3.  コンピューターの完全修飾ドメイン名を含むサブジェクト名を持つサーバー証明書が必要です。 `%SERVER_NAME%` 変数を、サービスがホストされるコンピューターの完全修飾名に変更すると、Setup.bat を使用してこの証明書を作成できます。 Setup.bat ファイルは、管理特権を使用して開いた Visual Studio コマンド プロンプトで実行する必要があります。  
   
-4.  サーバー証明書をクライアントの CurrentUser\-TrustedPeople ストアにコピーします。  このようにする必要があるのは、サーバー証明書が信頼できる発行元から発行されていない場合のみです。  
+4.  サーバー証明書をクライアントの CurrentUser-TrustedPeople ストアにコピーします。 このようにする必要があるのは、サーバー証明書が信頼できる発行元から発行されていない場合のみです。  
   
 5.  EchoServiceHost.cs ファイルで、証明書のサブジェクト名の値を localhost から完全修飾コンピューター名に変更します。  
   
-6.  クライアント プログラム ファイルを、言語固有のフォルダーにある \\client\\bin\\ フォルダーからクライアント コンピューターにコピーします。  
+6.  クライアント プログラム ファイルを、言語固有のフォルダーにある \client\bin\ フォルダーからクライアント コンピューターにコピーします。  
   
 7.  Client.cs ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。  
   
@@ -642,10 +638,10 @@ string GetCallerCreditCardNumber()
   
 9. クライアント コンピューターで、コマンド プロンプト ウィンドウから Client.exe を起動します。  
   
-10. クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+10. クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
   
-#### サンプルの実行後にクリーンアップするには  
+#### <a name="to-clean-up-after-the-sample"></a>サンプルの実行後にクリーンアップするには  
   
 1.  サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
   
-## 参照
+## <a name="see-also"></a>関連項目

@@ -1,33 +1,25 @@
 ---
-title: "方法: 指定された単語 (LINQ) (Visual Basic) のセットを含む文章を照会 |Microsoft ドキュメント"
+title: "方法 : 指定された単語のセットを含む文章を照会する (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: a5ae8ced-61fe-4c10-bb8a-95630e50f603
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 31561d586c9c05f502002efdfc455acb55159fed
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 523b1e681c97e14f1d0e49b82a426b0e0e54fa1e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-visual-basic"></a>方法 : 指定された単語のセットを含む文章を照会する (LINQ) (Visual Basic)
-この例では、各単語の指定されたセットに一致するものを含むテキスト ファイルに文を検索する方法を示します。 検索語句の配列では、この例では、ハードコーディングは、その可能性がありますも作成される動的に実行時にします。 この例では、クエリを「従来、」という単語を含む文章を返します。"データ"と"統合"です。  
+この例は、指定された一連の単語と一致する文言を含む文をテキスト ファイルから検索する方法を示しています。 この例では検索語句の配列をハードコーディングしていますが、実行時に動的に設定することもできます。 この例のクエリを実行すると、"Historically"、"data"、"integrated" という単語をすべて含んだ文が返されます。  
   
 ## <a name="example"></a>例  
   
@@ -75,12 +67,12 @@ End Class
 ' Historically, the world of data and the world of objects have not been well integrated  
 ```  
   
- クエリは、まず、テキストを文に分割したり、文章を分割して各単語を含む文字列の配列にによって機能します。 これらの配列の各、<xref:System.Linq.Enumerable.Distinct%2A>メソッドは、すべての重複する単語を削除し、クエリを実行、<xref:System.Linq.Enumerable.Intersect%2A>単語の配列で操作し、`wordsToMatch`配列</xref:System.Linq.Enumerable.Intersect%2A></xref:System.Linq.Enumerable.Distinct%2A>。 交差する位置の数が数と同じかどうか、`wordsToMatch`配列、言葉で検出されたすべての単語と、元の文章が返されます。  
+ このクエリではまず、テキストを文単位に分割し、個々の単語を保持する文字列の配列に分割しています。 その各配列について、重複する単語を <xref:System.Linq.Enumerable.Distinct%2A> メソッドですべて削除したうえで、それらの単語の配列と `wordsToMatch` 配列との <xref:System.Linq.Enumerable.Intersect%2A> 演算を実行します。 共通部分のカウントと `wordsToMatch` 配列のカウントとが一致した場合、文を構成する単語内にすべての検索語句が見つかったものとして判断され、該当する文が返されます。  
   
- 呼び出しで<xref:System.String.Split%2A>、区切り記号は、文字列から削除するために区切り記号として使用されます</xref:System.String.Split%2A>。 場合なら、文字列「従来」例については、これを実行するいると一致しません「従来」で、`wordsToMatch`配列。 ソース テキストに見つかった区切り記号の種類に応じて、追加の区切り記号を使用する必要があります。  
+ 句読点を文字列から削除するために、<xref:System.String.Split%2A> の呼び出しでは句読点を区切り記号として使用しています。 この処理がないと、たとえば "Historically," という文字列があった場合に、`wordsToMatch` 配列内の "Historically" と一致しません。 ソース テキストに使われている句読点の種類によっては、別の区切り記号を使う必要があります。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+ .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll および System.Linq 名前空間の `Imports` ステートメントを参照設定します。  
   
 ## <a name="see-also"></a>関連項目  
  [LINQ と文字列 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

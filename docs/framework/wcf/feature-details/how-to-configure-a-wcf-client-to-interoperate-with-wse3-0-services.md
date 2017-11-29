@@ -1,22 +1,28 @@
 ---
-title: "方法 : WCF クライアントと WSE3.0 サービスを相互運用するために構成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : WCF クライアントと WSE3.0 サービスを相互運用するために構成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 3dadd7f1-d207-4ea5-a73b-3e8aa44407f8
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2dbd83de39f7daa96ec5566084e925f878e32154
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : WCF クライアントと WSE3.0 サービスを相互運用するために構成する
+# <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>方法 : WCF クライアントと WSE3.0 サービスを相互運用するために構成する
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントが WS-Addressing 仕様の 2004 年 8 月版を使用して構成されている場合は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントは Microsoft .NET サービスの WSE (Web サービス拡張) 3.0 とネットワーク レベルで互換性があります。  
   
 ### <a name="to-configure-a-wcf-client-to-interoperate-with-a-wse-30-web-service"></a>WSE 3.0 Web サービスと相互運用するように WCF クライアントを構成するには  
@@ -25,27 +31,27 @@ caps.handback.revision: 6
   
      WSE Web サービスに対して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント クラスが作成されます。  
   
-     作成する方法について、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントを参照してください、[方法: クライアントを作成する](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。  
+     作成する方法について、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントを参照してください、[する方法: クライアントを作成する](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。  
   
 2.  WSE 3.0 Web サービスと通信できるバインディングを表すクラスを作成します。  
   
-     次のクラスの一部である、 [WSE との相互運用](http://msdn.microsoft.com/ja-jp/f6816861-96a0-45f9-8736-8e4e82cd3a41)サンプルです。  
+     次のクラスの一部である、 [WSE との相互運用](http://msdn.microsoft.com/en-us/f6816861-96a0-45f9-8736-8e4e82cd3a41)サンプルです。  
   
-    1.  派生したクラスを作成、<xref:System.ServiceModel.Channels.Binding>クラスです。  
+    1.  <xref:System.ServiceModel.Channels.Binding> クラスから派生するクラスを作成します。  
   
-         次のコード例は、という名前のクラスを作成`WseHttpBinding`から派生した、<xref:System.ServiceModel.Channels.Binding>クラスです。  
+         `WseHttpBinding` クラスから派生する、<xref:System.ServiceModel.Channels.Binding> という名前のクラスを作成する方法を次のコード例に示します。  
   
          [!code-csharp[c_WCFClientToWSEService#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/wsehttpbinding.cs#1)]
          [!code-vb[c_WCFClientToWSEService#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/wsehttpbinding.vb#1)]  
   
     2.  WSE の設定不要アサーションを指定するクラスに、派生キーが必要か、セキュリティで保護されたセッションが使用されるか、署名の確認が必要かどうかの指定、およびメッセージ保護設定などのプロパティを追加します。  
   
-         次のコード例では定義`SecurityAssertion,``RequireDerivedKeys, EstablishSecurityContext, MessageProtectionOrder`WSE 設定不要アサーション、派生キーが必要かどうか、セキュリティで保護されたセッションを使用するかどうか、署名の確認が必要かどうかおよびメッセージの保護設定をそれぞれ指定するプロパティです。  
+         次のコード例で定義`SecurityAssertion,``RequireDerivedKeys, EstablishSecurityContext, MessageProtectionOrder`WSE 設定不要アサーション、派生キーが必要かどうか、セキュリティで保護されたセッションを使用するかどうか、署名の確認が必要かどうかおよびメッセージ保護設定を指定するプロパティそれぞれします。  
   
          [!code-csharp[c_WCFClientToWSEService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/wsehttpbinding.cs#3)]
          [!code-vb[c_WCFClientToWSEService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/wsehttpbinding.vb#3)]  
   
-    3.  オーバーライド、 <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A>バインドのプロパティを設定します。  
+    3.  <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> メソッドをオーバーライドして、バインディング プロパティを設定します。  
   
          `SecurityAssertion` プロパティと `MessageProtectionOrder` プロパティの値を取得することで、トランスポート、メッセージ エンコーディング、メッセージ保護設定を指定するコード例を次に示します。  
   
@@ -67,5 +73,5 @@ caps.handback.revision: 6
 [!code-vb[c_WCFClientToWSEService#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/client.vb#0)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.Channels.Binding>   
- [WSE との相互運用](http://msdn.microsoft.com/ja-jp/f6816861-96a0-45f9-8736-8e4e82cd3a41)
+ <xref:System.ServiceModel.Channels.Binding>  
+ [WSE との相互運用](http://msdn.microsoft.com/en-us/f6816861-96a0-45f9-8736-8e4e82cd3a41)

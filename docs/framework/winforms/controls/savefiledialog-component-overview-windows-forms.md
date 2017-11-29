@@ -1,38 +1,38 @@
 ---
-title: "SaveFileDialog コンポーネントの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "SaveFileDialog"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "[ファイルの保存] ダイアログ ボックス, 表示"
-  - "SaveFileDialog コンポーネント, SaveFileDialog の概要"
+title: "SaveFileDialog コンポーネントの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: SaveFileDialog
+helpviewer_keywords:
+- Save File dialog box [Windows Forms], displaying
+- SaveFileDialog component [Windows Forms], about SaveFileDialog
 ms.assetid: be7a625f-46fd-4d06-9985-b613dcbf9bd2
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4cbdc1cb96234e302458cbeac6d6ae26b63c956e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# SaveFileDialog コンポーネントの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.SaveFileDialog> コンポーネントは、定義済みのダイアログ ボックスです。  このダイアログ ボックスは、Windows で使用される標準の **\[ファイルの保存\]** ダイアログ ボックスと同じダイアログ ボックスです。  このコンポーネントは、<xref:System.Windows.Forms.CommonDialog> クラスを継承しています。  
+# <a name="savefiledialog-component-overview-windows-forms"></a>SaveFileDialog コンポーネントの概要 (Windows フォーム)
+Windows フォームの <xref:System.Windows.Forms.SaveFileDialog> コンポーネントは、事前構成済みのダイアログ ボックスです。 標準と同じである**ファイルを保存** ダイアログ ボックスの Windows で使用します。 これは、<xref:System.Windows.Forms.CommonDialog> クラスを継承しています。  
   
-## SaveFileDialog コンポーネントの操作  
- このコントロールは、独自のダイアログ ボックスを設定せずにファイルの保存を行うための簡易ソリューションとして使用します。  Windows の標準のダイアログ ボックスを使用して、一般的な基本機能を持つアプリケーションを作成できます。  ただし、<xref:System.Windows.Forms.SaveFileDialog> コンポーネントを使用する場合は、独自のファイル保存ロジックを記述する必要があります。  
+## <a name="working-with-the-savefiledialog-component"></a>SaveFileDialog コンポーネントの操作  
+ 独自のダイアログ ボックスを構成する代わりにファイルを保存するユーザーを有効にするための簡易ソリューションとして使用します。 標準の Windows ダイアログ ボックスには、この証明書利用者で作成したアプリケーションの基本機能は、ユーザーにすぐに慣れるです。 ただし、ときに使用して、<xref:System.Windows.Forms.SaveFileDialog>コンポーネント、独自のファイルの保存ロジックを記述する必要があります。  
   
- 実行時にダイアログ ボックスを表示するには、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> メソッドを使用します。  <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> メソッドを使用して、ファイルを読み取り\/書き込みモードで開くことができます。  
+ 使用することができます、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>メソッドを実行時に、ダイアログ ボックスを表示します。 読み取り/書き込みモードを使用してファイルを開くことができます、<xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A>メソッドです。  
   
- フォームに登録すると、<xref:System.Windows.Forms.SaveFileDialog> コンポーネントは Windows フォーム デザイナーの下部のトレイに表示されます。  
+ フォームに追加されたとき、<xref:System.Windows.Forms.SaveFileDialog>コンポーネントは、Windows フォーム デザイナーの下部にあるトレイに表示されます。  
   
-## 参照  
- <xref:System.Windows.Forms.SaveFileDialog>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.SaveFileDialog>  
  [SaveFileDialog コンポーネント](../../../../docs/framework/winforms/controls/savefiledialog-component-windows-forms.md)

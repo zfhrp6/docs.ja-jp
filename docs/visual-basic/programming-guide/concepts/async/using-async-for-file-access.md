@@ -1,50 +1,42 @@
 ---
-title: "非同期ファイルへのアクセス (Visual Basic) の使用 |Microsoft ドキュメント"
+title: "ファイル アクセスにおける非同期の使用 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c989305f-08e3-4687-95c3-948465cda202
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e0e548989b1d2c32b9faf5ce0dd90ae371dfc028
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 329ae43f8752fbe8a7167b57cb710cc53c0ec247
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-async-for-file-access-visual-basic"></a>ファイル アクセスにおける非同期の使用 (Visual Basic)
-非同期機能を使用して、ファイルにアクセスすることができます。 非同期機能を使用すると、コールバックの使用や複数のメソッドまたはラムダ式へのコードの分割を行わずに、非同期メソッドを呼び出すことができます。 同期コードを非同期にするだけ同期メソッドの代わりに非同期のメソッドを呼び出すをコードにいくつかのキーワードを追加します。  
+非同期機能を使用して、ファイルにアクセスすることができます。 非同期機能を使用すると、コールバックの使用や複数のメソッドまたはラムダ式へのコードの分割を行わずに、非同期メソッドを呼び出すことができます。 同期コードを非同期コードにするには、同期メソッドの代わりに非同期メソッドを呼び出して、コードにいくつかのキーワードを追加するだけで済みます。  
   
- ファイル アクセスの呼び出しを非同期処理を追加するために、次の理由を考慮することがあります。  
+ ファイル アクセスの呼び出しに非同期性を適用する利点には、次のようなものがあります。  
   
--   非同期性により、UI アプリケーション応答性の高い、操作を起動する UI スレッドが他の作業を実行するためです。 コードを UI スレッドで実行する必要があります (たとえば、50 を超えるミリ秒) の長い時間がかかること、UI がフリーズ、I/O が完了して、UI スレッドをもう一度キーボードを処理およびマウス入力やその他のイベントまで。  
+-   非同期性により、UI アプリケーションの応答性が向上します。非同期処理を開始した UI スレッドが他の処理を実行できるためです。 UI スレッドが、時間のかかるコード、たとえば 50 ミリ秒を超えるコードを実行する必要がある場合、I/O が完了して、UI スレッドがキーボードやマウス入力などのイベントを再度処理できるようになるまで、UI が停止することがあります。  
   
--   非同期処理では、ASP.NET のスケーラビリティおよびその他のサーバー ベースのアプリケーションがスレッドの必要性を減らすことによって向上します。 アプリケーションが応答ごとに専用のスレッドを使用して、1000 単位の要求が同時に処理されている場合は、3 桁のスレッドが必要です。 多くの場合、非同期操作は、待機中のスレッドを使用する必要ありません。 既存の I/O 完了スレッドは、最後に簡単に、使用します。  
+-   非同期性を適用すると、スレッドの必要性が軽減され、ASP.NET などのサーバー ベースのアプリケーションのスケーラビリティが向上します。 アプリケーションが応答ごとに専用スレッドを使用している場合、1,000 個の要求を同時に処理するには、1,000 個のスレッドが必要です。 非同期処理では、待機中にスレッドを使用する必要がほとんどありません。 既存の I/O 完了スレッドが最後に少しだけ使用されます。  
   
--   ファイル アクセス操作の待機時間は、現在の状況では、非常に少ない可能性がありますが、待機時間は大幅に、将来増加します。 たとえば、世界中であるサーバーにファイルを移動することがあります。  
+-   現状ではファイル アクセス操作の待機時間が非常に短くても、将来に大幅に長くなる可能性があります。 たとえば、地球の裏側にあるサーバーにファイルが移動される場合があります。  
   
--   追加された非同期機能を使用するオーバーヘッドは小さいです。  
+-   非同期機能の使用に伴うオーバーヘッドはわずかです。  
   
--   非同期タスクは、並列で簡単に実行できます。  
+-   非同期タスクは簡単に並列実行できます。  
   
 ## <a name="running-the-examples"></a>例の実行  
- このトピックの例を実行するには、作成、 **WPF アプリケーション**または**Windows フォーム アプリケーション**し、追加、**ボタン**します。 ボタンの`Click`イベント、それぞれの例に最初のメソッドの呼び出しを追加します。  
+ このトピックの例を実行するには、**WPF アプリケーション**または **Windows フォーム アプリケーション**を作成し、**ボタン**を追加します。 ボタンの `Click` イベントに、それぞれの例で最初のメソッドの呼び出しを追加してください。  
   
- 次の例については、次が含まれる`Imports`ステートメントです。  
+ 以降の例には、次の `Imports` ステートメントを含めてください。  
   
 ```vb  
 Imports System  
@@ -55,13 +47,13 @@ Imports System.Text
 Imports System.Threading.Tasks  
 ```  
   
-## <a name="use-of-the-filestream-class"></a>FileStream クラスの使用方法  
- このトピックで例として、<xref:System.IO.FileStream>クラスで、オペレーティング システム レベルで発生する非同期 I/O を原因となるオプションがあります</xref:System.IO.FileStream>。 このオプションを使用すると、多くの場合、ThreadPool のスレッドのブロックを回避できます。 指定するには、このオプションを有効にする、`useAsync=true`または`options=FileOptions.Asynchronous`のコンス トラクター呼び出しの引数。  
+## <a name="use-of-the-filestream-class"></a>FileStream クラスの使用  
+ このトピックの例では、<xref:System.IO.FileStream> クラスを使用します。このクラスには、非同期 I/O をオペレーティング システム レベルで発生させるオプションが用意されています。 このオプションを使用すると、多くのケースで ThreadPool スレッドがブロックされるのを回避できます。 このオプションを有効にするには、コンストラクター呼び出しで `useAsync=true` または `options=FileOptions.Asynchronous` 引数を指定します。  
   
- <xref:System.IO.StreamReader><xref:System.IO.StreamWriter>ファイル パスを指定して直接開くかどうか</xref:System.IO.StreamWriter></xref:System.IO.StreamReader>と、このオプションを使用することはできません。 そこで指定する場合、このオプションを使用する、<xref:System.IO.Stream>を<xref:System.IO.FileStream>クラスを開く</xref:System.IO.FileStream></xref:System.IO.Stream>。 非同期呼び出しがあること UI アプリで高速なスレッド プールのスレッドがブロックされている場合でも、待機中に UI スレッドがブロックされていないので注意してください。  
+ ファイル パスを指定して <xref:System.IO.StreamReader> と <xref:System.IO.StreamWriter> を直接開いた場合、このオプションは使用できません。 一方、<xref:System.IO.FileStream> クラスによって開かれた <xref:System.IO.Stream> を使用する場合は、このオプションを使用できます。 UI アプリでは、ThreadPool スレッドがブロックされた場合でも、非同期呼び出しのほうが高速です。これは、UI スレッドは待機中にブロックされないためです。  
   
 ## <a name="writing-text"></a>テキストの書き込み  
- 次の例では、テキストをファイルに書き込みます。 Await ステートメントのそれぞれで、メソッドがすぐに終了します。 ファイル I/O が完了すると、メソッドは await ステートメントに続くステートメントから再開されます。 Async 修飾子が await ステートメントを使用するメソッドの定義に注意してください。  
+ 次の例では、ファイルにテキストを書き込みます。 各 await ステートメントに達すると、メソッドは直ちに終了します。 ファイル I/O が完了すると、メソッドは await ステートメントの後のステートメントから再開します。 await ステートメントを使用するメソッドの定義に async 修飾子が含まれていることに注意してください。  
   
 ```vb  
 Public Async Sub ProcessWrite()  
@@ -83,17 +75,17 @@ Private Async Function WriteTextAsync(filePath As String, text As String) As Tas
 End Function  
 ```  
   
- 元の例には、ステートメントが含まれている`Await sourceStream.WriteAsync(encodedText, 0, encodedText.Length)`、これは、次の 2 つのステートメントの省略形。  
+ 元の例には `Await sourceStream.WriteAsync(encodedText, 0, encodedText.Length)` ステートメントがあります。これは、次の 2 つのステートメントの省略形です。  
   
 ```vb  
 Dim theTask As Task = sourceStream.WriteAsync(encodedText, 0, encodedText.Length)  
 Await theTask  
 ```  
   
- 最初のステートメントは、タスクを返し、ファイル処理が開始します。 Await で&2; 番目のステートメントをすぐに終了し、別のタスクを返すメソッドです。 ファイルの後で処理が完了したら、実行が await の次のステートメントに返します。 詳細については、次を参照してください。[非同期プログラム (Visual Basic) の制御フロー](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)します。  
+ 最初のステートメントはタスクを返し、ファイル処理を開始します。 await が含まれた 2 番目のステートメントによって、メソッドが直ちに終了し、別のタスクを返します。 ファイル処理が完了すると、await の後のステートメントに実行が戻ります。 詳細については、次を参照してください。 [(Visual Basic) の非同期プログラムにおける制御フロー](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)です。  
   
 ## <a name="reading-text"></a>テキストの読み取り  
- 次の例では、ファイルからテキストを読み取ります。 テキストがバッファーに格納され、この場合、保存されます<xref:System.Text.StringBuilder>。</xref:System.Text.StringBuilder> 異なり、前の例で await の評価値を生成します。 <xref:System.IO.Stream.ReadAsync%2A>メソッドが返される、 <xref:System.Threading.Tasks.Task> \< <xref:System.Int32>> await の評価を生成するため、`Int32`値 (`numRead`)、操作が完了した後</xref:System.Int32></xref:System.Threading.Tasks.Task></xref:System.IO.Stream.ReadAsync%2A>。 詳細については、次を参照してください。 [Async を返す型 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)します。  
+ 次の例では、ファイルからテキストを読み取ります。 テキストはバッファーに格納されます。この例では <xref:System.Text.StringBuilder> に配置されます。 前の例と異なり、await の評価で値が生成されます。 <xref:System.IO.Stream.ReadAsync%2A> メソッドによって <xref:System.Threading.Tasks.Task>\<<xref:System.Int32> が返されます。処理の完了後、await の評価によって `Int32` 値 (`numRead`) が生成されます。 詳細については、次を参照してください。 [Async 戻り値の型 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)です。  
   
 ```vb  
 Public Async Sub ProcessRead()  
@@ -134,12 +126,12 @@ Private Async Function ReadTextAsync(filePath As String) As Task(Of String)
 End Function  
 ```  
   
-## <a name="parallel-asynchronous-io"></a>並列の非同期 I/O  
- 次の例では、10 個のテキスト ファイルを記述して並列処理を示します。 ファイルごとに、<xref:System.IO.Stream.WriteAsync%2A>メソッドは、タスクの一覧に追加するタスクを返します</xref:System.IO.Stream.WriteAsync%2A>。 `Await Task.WhenAll(tasks)`ステートメントは、メソッドを終了し、すべてのタスクのファイルの処理がメソッド内の再開を完了します。  
+## <a name="parallel-asynchronous-io"></a>並列非同期 I/O  
+ 次の例では、10 個のテキスト ファイルを記述する並列処理を示します。 <xref:System.IO.Stream.WriteAsync%2A> メソッドは、ファイルごとにタスクを返します。タスクはタスクの一覧に追加されます。 `Await Task.WhenAll(tasks)` ステートメントはメソッドを終了し、すべてのタスクのファイル処理が完了すると、メソッド内で再開します。  
   
- この例ではすべて<xref:System.IO.FileStream>のインスタンス、`Finally`タスクが完了したらをブロックします</xref:System.IO.FileStream>。 各`FileStream`で作成した代わりに、`Imports`ステートメント、`FileStream`タスクが完了する前に破棄することがあります。  
+ この例では、タスクの完了後、`Finally` ブロックのすべての <xref:System.IO.FileStream> インスタンスを閉じます。 `Imports` ステートメントで `FileStream` が作成された場合は、タスクが完了する前に `FileStream` が破棄されることがあります。  
   
- すべてのパフォーマンスの向上が並列処理と非同期処理ではないからほぼ完全ことに注意してください。 非同期性のメリットは、複数のスレッドせず拘束されないことと、ユーザー インターフェイス スレッドせず拘束されないことです。  
+ パフォーマンスの向上のほとんどが、非同期処理ではなく並列処理によって実現していることに注意してください。 非同期性の利点は、複数のスレッドやユーザー インターフェイス スレッドが拘束されなくなる点にあります。  
   
 ```vb  
 Public Async Sub ProcessWriteMult()  
@@ -175,9 +167,9 @@ Public Async Sub ProcessWriteMult()
 End Sub  
 ```  
   
- 使用する場合、<xref:System.IO.Stream.WriteAsync%2A>と<xref:System.IO.Stream.ReadAsync%2A>メソッドを指定できます、<xref:System.Threading.CancellationToken>を操作の途中で取り消すことができます</xref:System.Threading.CancellationToken></xref:System.IO.Stream.ReadAsync%2A></xref:System.IO.Stream.WriteAsync%2A>。 詳細については、次を参照してください。[微調整 Your Async アプリケーション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)と[マネージ スレッドのキャンセル](http://msdn.microsoft.com/library/eea11fe5-d8b0-4314-bb5d-8a58166fb1c3)します。  
+ <xref:System.IO.Stream.WriteAsync%2A> メソッドと <xref:System.IO.Stream.ReadAsync%2A> メソッドを使用すると、<xref:System.Threading.CancellationToken> を指定して、途中で処理をキャンセルすることができます。 詳細については、次を参照してください。[非同期アプリケーションの微調整 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)と[マネージ スレッドのキャンセル](../../../../standard/threading/cancellation-in-managed-threads.md)です。  
   
 ## <a name="see-also"></a>関連項目  
- [非同期プログラミングを Async と Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)   
- [非同期の戻り値の型 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)   
- [(Visual Basic) の非同期プログラムにおける制御フロー](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)
+ [Async および Await を使用した非同期プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  
+ [非同期の戻り値の型 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)  
+ [非同期プログラムにおける制御フロー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)

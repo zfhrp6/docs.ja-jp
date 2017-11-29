@@ -1,52 +1,50 @@
 ---
-title: "抽象クラスのデザイン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "デザインのガイドラインを入力、抽象クラス"
-  - "抽象クラスのデザイン ガイドライン"
-  - "クラス ライブラリ デザインのガイドライン [.NET Framework] クラス"
-  - "抽象クラス [.NET Framework]"
-  - "クラス [.NET Framework] のデザイン ガイドライン"
-  - "クラス型の設計ガイドライン"
+title: "抽象クラスのデザイン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- type design guidelines, abstract classes
+- abstract classes, design guidelines
+- class library design guidelines [.NET Framework], classes
+- classes [.NET Framework], abstract
+- classes [.NET Framework], design guidelines
+- type design guidelines, classes
 ms.assetid: d3646e6d-5c1f-4922-8fb0-ec5effb30d60
-caps.latest.revision: 13
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: d7b680c3377cbfa40734a57f9408d9487dbf3769
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 抽象クラスのデザイン
-**X のしないで** 抽象型のパブリックまたはプロテクトの内部コンス トラクターを定義します。  
+# <a name="abstract-class-design"></a>抽象クラスのデザイン
+**X しないで**抽象型の public または protected のコンス トラクター内部を定義します。  
   
- コンス トラクターは、ユーザーが型のインスタンスを作成する必要がある場合にのみ、パブリックにする必要があります。 抽象型のインスタンスを作成することはできませんのでパブリック コンス トラクターを持つ抽象型が正しくされていないに設計され、ユーザーに誤解を招きやすい。  
+ コンス トラクターは、ユーザーが型のインスタンスを作成する必要がある場合にのみ、パブリックにする必要があります。 抽象型のインスタンスを作成できないため、パブリック コンス トラクターを持つ抽象型が正しくされていない仕様であり、ユーザーに誤解を招く。  
   
- **✓ は** 抽象クラス内で、保護されているか、内部コンス トラクターを定義します。  
+ **✓ しないで**抽象クラス内で、保護されているか、内部のコンス トラクターを定義します。  
   
- プロテクト コンス トラクターはより一般的なでき、単にサブタイプが作成されるときは、自己の初期化を実行する基本クラスです。  
+ プロテクト コンス トラクターより一般的なサブタイプが作成されるときに、独自の初期化を実行する基本クラスでは。  
   
- クラスを定義するアセンブリを抽象クラスの具象実装を制限するため、内部コンス トラクターを使用できます。  
+ アセンブリのクラスを定義する抽象クラスの具象実装を制限する、内部のコンス トラクターを使用できます。  
   
- **✓ は** を出荷するそれぞれの抽象クラスから継承する少なくとも 1 つの具象型を提供します。  
+ **✓ しないで**を出荷する各の抽象クラスから継承する少なくとも 1 つの具象型を提供します。  
   
- これにより、抽象クラスの設計を検証します。 たとえば、  <xref:System.IO.FileStream?displayProperty=fullName> の実装には、 <xref:System.IO.Stream?displayProperty=fullName> 抽象クラスです。  
+ 抽象クラスの設計を検証するには、これによりを行っています。 たとえば、<xref:System.IO.FileStream?displayProperty=nameWithType>に実装されて、<xref:System.IO.Stream?displayProperty=nameWithType>抽象クラスです。  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## 参照  
- [型デザインのガイドライン](../../../docs/standard/design-guidelines/type.md)   
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>関連項目  
+ [型のデザインのガイドライン](../../../docs/standard/design-guidelines/type.md)  
+ [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)

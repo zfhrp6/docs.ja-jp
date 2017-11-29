@@ -1,76 +1,80 @@
 ---
-title: "変換を使用した色のスケーリング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "色, スケーリング"
-  - "変換, スケーリング (色の)"
+title: "変換を使用した色のスケーリング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- transformations [Windows Forms], for scaling colors
+- colors [Windows Forms], scaling
 ms.assetid: df23c887-7fd6-4b15-ad94-e30b5bd4b849
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a4584b74cd7a394f7dd04d0cfba150b907ca7c82
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 変換を使用した色のスケーリング
-スケーリング変換では、4 つの色要素のうちの 1 つ以上の要素に数値を掛け合わせます。  スケーリングを表すカラー行列エントリを次の表に示します。  
+# <a name="using-transformations-to-scale-colors"></a>変換を使用した色のスケーリング
+拡大縮小変換は、番号で 4 つの色要素の 1 つ以上を乗算します。 拡大/縮小を表すカラー マトリックス エントリは、次の表で表されます。  
   
-|スケーリング対象の要素|行列エントリ|  
-|-----------------|------------|  
-|赤|\[0\]\[0\]|  
-|緑|\[1\]\[1\]|  
-|青|\[2\]\[2\]|  
-|アルファ|\[3\]\[3\]|  
+|コンポーネントを拡張します。|マトリックスのエントリ|  
+|----------------------------|------------------|  
+|赤|[0][0]|  
+|緑|[1][1]|  
+|青|[2][2]|  
+|[アルファ]|[3][3]|  
   
-## 単一色のスケーリング  
- ファイル ColorBars2.bmp から <xref:System.Drawing.Image> オブジェクトを構築する例を次に示します。  このコードは、次に、イメージ内の各ピクセルの青の要素を係数 2 でスケーリングします。  元のイメージと変換後のイメージが並んで描画されます。  
+## <a name="scaling-one-color"></a>1 つの色のスケーリング  
+ 次の例の構築、 <xref:System.Drawing.Image> ColorBars2.bmp ファイルからオブジェクト。 コードは、2 倍の図の各ピクセルの青の成分をスケーリングします。 変換後のイメージが並んで、元の画像が描画されます。  
   
  [!code-csharp[System.Drawing.RecoloringImages#41](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#41)]
  [!code-vb[System.Drawing.RecoloringImages#41](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#41)]  
   
- 次の図は、左側に元のイメージ、右側にスケーリングされたイメージを示しています。  
+ 次の図は、右側の左側に元のイメージとスケーリングされたイメージを示します。  
   
- ![スケールの色](../../../../docs/framework/winforms/advanced/media/colortrans3.png "colortrans3")  
+ ![色をスケーリング](../../../../docs/framework/winforms/advanced/media/colortrans3.png "colortrans3")  
   
- 青のスケーリングを実行する前後の 4 つのバーのカラー ベクターを次の表に示します。  4 番目のカラー バーの青の要素は、0.8 から 0.6 になっています。  その理由は、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] が結果値の小数部だけを保持するためです。  たとえば、\(2\)\(0.8\) \= 1.6 の場合、1.6 の小数部は 0.6 になります。  小数部だけを保持することによって、結果値が必ず \[0, 1\] の間隔内に収まるようにしています。  
+ 次の表では、青のスケーリングの前後に、次の 4 つのバーの色ベクターが一覧表示します。 4 番目のカラー バーの青の要素が 0.6 を 0.8 からしたことに注意してください。 これはため[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]は、結果の小数部の一部のみが保持されます。 たとえば、(2)(0.8) = 1.6、1.6 の小数部は 0.6 です。 小数部分のみを保持とは、結果は、常には [0, 1] 間隔することを確認します。  
   
-|元|変換後|  
-|-------|---------|  
-|\(0.4, 0.4, 0.4, 1\)|\(0.4, 0.4, 0.8, 1\)|  
-|\(0.4, 0.2, 0.2, 1\)|\(0.4, 0.2, 0.4, 1\)|  
-|\(0.2, 0.4, 0.2, 1\)|\(0.2, 0.4, 0.4, 1\)|  
-|\(0.4, 0.4, 0.8, 1\)|\(0.4, 0.4, 0.6, 1\)|  
+|元|拡大/縮小|  
+|--------------|------------|  
+|(0.4, 0.4, 0.4, 1)|(0.4, 0.4, 0.8, 1)|  
+|(0.4, 0.2, 0.2, 1)|(0.4, 0.2, 0.4, 1)|  
+|(0.2, 0.4, 0.2, 1)|(0.2, 0.4, 0.4, 1)|  
+|(0.4, 0.4, 0.8, 1)|(0.4, 0.4, 0.6, 1)|  
   
-## 複数の色のスケーリング  
- ファイル ColorBars2.bmp から <xref:System.Drawing.Image> オブジェクトを構築する例を次に示します。  このコードは、次に、イメージ内の各ピクセルの赤、緑、青の各要素をスケーリングします。  赤の要素は 25%、緑の要素は 35%、青の要素は 50% 縮小されます。  
+## <a name="scaling-multiple-colors"></a>複数の色のスケーリング  
+ 次の例の構築、 <xref:System.Drawing.Image> ColorBars2.bmp ファイルからオブジェクト。 コードは、イメージ内の各ピクセルの赤、緑、および青のコンポーネントをスケーリングします。 赤の要素は、25% に縮小し、緑の要素は 35% に縮小青の要素は、50% に縮小します。  
   
  [!code-csharp[System.Drawing.RecoloringImages#42](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#42)]
  [!code-vb[System.Drawing.RecoloringImages#42](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#42)]  
   
- 次の図は、左側に元のイメージ、右側にスケーリングされたイメージを示しています。  
+ 次の図は、右側の左側に元のイメージとスケーリングされたイメージを示します。  
   
- ![スケールの色](../../../../docs/framework/winforms/advanced/media/colortrans4.png "colortrans4")  
+ ![色をスケーリング](../../../../docs/framework/winforms/advanced/media/colortrans4.png "colortrans4")  
   
- 赤、緑、および青のスケーリングを実行する前後の 4 つのバーのカラー ベクターを次の表に示します。  
+ 次の表では、赤、緑、青のスケーリングの前後に、次の 4 つのバーの色ベクターが一覧表示します。  
   
-|元|変換後|  
-|-------|---------|  
-|\(0.6, 0.6, 0.6, 1\)|\(0.45, 0.39, 0.3, 1\)|  
-|\(0, 1, 1, 1\)|\(0, 0.65, 0.5, 1\)|  
-|\(1, 1, 0, 1\)|\(0.75, 0.65, 0, 1\)|  
-|\(1, 0, 1, 1\)|\(0.75, 0, 0.5, 1\)|  
+|元|拡大/縮小|  
+|--------------|------------|  
+|(0.6, 0.6, 0.6, 1)|(0.45, 0.39, 0.3, 1)|  
+|(0, 1, 1, 1)|(0, 0.65, 0.5, 1)|  
+|(1, 1, 0, 1)|(0.75, 0.65, 0, 1)|  
+|(1, 0, 1, 1)|(0.75, 0, 0.5, 1)|  
   
-## 参照  
- <xref:System.Drawing.Imaging.ColorMatrix>   
- <xref:System.Drawing.Imaging.ImageAttributes>   
- [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Drawing.Imaging.ColorMatrix>  
+ <xref:System.Drawing.Imaging.ImageAttributes>  
+ [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
  [イメージの色の変更](../../../../docs/framework/winforms/advanced/recoloring-images.md)

@@ -5,23 +5,20 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- CLR ETW events, logging
+helpviewer_keywords: CLR ETW events, logging
 ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
-caps.latest.revision: 40
+caps.latest.revision: "40"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: aebeb1bb1257599cc3fb9b8be7bf2595ccca0f13
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: f996cf730acc355f3bf13287b79581d23e4e6a5b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="controlling-net-framework-logging"></a>.NET Framework のログ記録の制御
 Windows イベント トレーシング (ETW: Event Tracing for Windows) を使用して共通言語ランタイム (CLR: Common Language Runtime) イベントを記録できます。 トレースの作成および表示には次のツールを使用します。  
@@ -119,6 +116,5 @@ Provider                                 GUID
      このコマンドを使用すると、XPerf によって、表示可能なコンマ区切り値 (CSV) ファイルとしてイベントがダンプされます。 イベントが異なればフィールドも異なるので、この CSV ファイルには、データの前に複数のヘッダー行が含まれます。 すべての行の先頭のフィールドはイベントの種類を表します。このフィールドは、残りのフィールドを判別するために使用されるヘッダーを示します。  
   
 ## <a name="see-also"></a>関連項目  
- [Windows パフォーマンス ツールキット](http://go.microsoft.com/fwlink/?LinkID=161141)   
+ [Windows パフォーマンス ツールキット](http://go.microsoft.com/fwlink/?LinkID=161141)  
  [共通言語ランタイムの ETW イベント](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
-

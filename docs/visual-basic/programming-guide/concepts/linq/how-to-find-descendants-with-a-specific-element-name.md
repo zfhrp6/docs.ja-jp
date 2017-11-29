@@ -1,29 +1,25 @@
 ---
-title: "方法: 特定の要素の名前 (Visual Basic) を持つ子孫を検索 |Microsoft ドキュメント"
+title: "方法: 特定の要素の名前 (Visual Basic) を持つ子孫を検索"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 78915518-0d25-4051-ab55-929779989510
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 678622fe04ae971e7fed2cea182b21d895edaa1c
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 076a2d6707cf0f09945030cfe75814c195cdd6cd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-find-descendants-with-a-specific-element-name-visual-basic"></a>方法: 特定の要素の名前 (Visual Basic) を持つ子孫を検索
-特定の名前を持つ子孫をすべて検索しなければならない場合があります。 すべての子孫を反復処理するコードを記述できますが使いやすく、<xref:System.Xml.Linq.XContainer.Descendants%2A>軸</xref:System.Xml.Linq.XContainer.Descendants%2A>。  
+特定の名前を持つ子孫をすべて検索しなければならない場合があります。 すべての子孫を反復処理するコードを記述することもできますが、<xref:System.Xml.Linq.XContainer.Descendants%2A> 軸を使用する方が簡単です。  
   
 ## <a name="example"></a>例  
  要素名に基づいて子孫を検索する方法の例を次に示します。  
@@ -67,7 +63,7 @@ Some text that is broken up into multiple segments.
 ```  
   
 ## <a name="example"></a>例  
- 次の例は名前空間に含まれている XML 用のクエリです。これらのクエリは上の例と同じ機能を表しています。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の使用](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)します。  
+ 次の例は名前空間に含まれている XML 用のクエリです。これらのクエリは上の例と同じ機能を表しています。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の操作](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)です。  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -114,5 +110,5 @@ Some text that is broken up into multiple segments.
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Linq.XContainer.Descendants%2A></xref:System.Xml.Linq.XContainer.Descendants%2A>   
+ <xref:System.Xml.Linq.XContainer.Descendants%2A>  
  [基本的なクエリ (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

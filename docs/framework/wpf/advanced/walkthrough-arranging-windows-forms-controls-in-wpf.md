@@ -1,26 +1,32 @@
 ---
-title: "チュートリアル: WPF での Windows フォーム コントロールの配置 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "配置 (コントロールを)"
-  - "ハイブリッド アプリケーション [WPF 相互運用性]"
+title: "チュートリアル: WPF での Windows フォーム コントロールの配置"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- hybrid applications [WPF interoperability]
+- arranging controls [WPF]
 ms.assetid: a1db8049-15c7-45d6-ae3d-36a6735cb848
-caps.latest.revision: 31
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 28
+caps.latest.revision: "31"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f78da83657c4c1bd913f67c9e612264cc5dbdf99
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル: WPF での Windows フォーム コントロールの配置
-このチュートリアルでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レイアウト機能を使用して、ハイブリッド アプリケーションで [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールを配置する方法を示します。  
+# <a name="walkthrough-arranging-windows-forms-controls-in-wpf"></a>チュートリアル: WPF での Windows フォーム コントロールの配置
+このチュートリアルで使用する方法[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を整列するレイアウト機能[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]ハイブリッド アプリケーションでのコントロールです。  
   
  このチュートリアルでは、以下のタスクを行います。  
   
@@ -52,20 +58,20 @@ caps.handback.revision: 28
   
 -   動的レイアウト コンテナーの使用。  
   
- このチュートリアルで示すタスクの完全なコード一覧については、[WPF での Windows フォーム コントロールの配置のサンプル](http://go.microsoft.com/fwlink/?LinkID=159971)を参照してください。  
+ このチュートリアルでタスクの完全なコードについては、次を参照してください。 [WPF サンプルでの Windows フォーム コントロールの配置](http://go.microsoft.com/fwlink/?LinkID=159971)です。  
   
- 終了すると、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ベースのアプリケーションにおける [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] レイアウトの機能を理解できます。  
+ 理解する必要が完了したら、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]レイアウトの機能で[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]-ベースのアプリケーションです。  
   
-## 必須コンポーネント  
+## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを実行するには、次のコンポーネントが必要です。  
   
--   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  
+-   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)]。  
   
-## プロジェクトの作成  
+## <a name="creating-the-project"></a>プロジェクトの作成  
   
-#### プロジェクトを作成し、設定するには  
+#### <a name="to-create-and-set-up-the-project"></a>プロジェクトを作成し、設定するには  
   
-1.  `WpfLayoutHostingWf` という名前の WPF アプリケーション プロジェクトを作成します。  
+1.  という名前の WPF アプリケーション プロジェクトを作成する`WpfLayoutHostingWf`です。  
   
 2.  ソリューション エクスプローラーで、次のアセンブリへの参照を追加します。  
   
@@ -77,120 +83,120 @@ caps.handback.revision: 28
   
 3.  MainWindow.xaml をダブルクリックして、XAML ビューで開きます。  
   
-4.  <xref:System.Windows.Window> 要素に、次の [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] 名前空間の割り当てを追加します。  
+4.  <xref:System.Windows.Window>要素では、次の追加[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]名前空間のマッピング。  
   
     ```xaml  
     xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"  
     ```  
   
-5.  <xref:System.Windows.Controls.Grid> 要素で、<xref:System.Windows.Controls.Grid.ShowGridLines%2A> プロパティを `true` に設定し、5 つの行と 3 つの列を定義します。  
+5.  <xref:System.Windows.Controls.Grid>要素セット、<xref:System.Windows.Controls.Grid.ShowGridLines%2A>プロパティを`true`5 つの行および 3 つの列を定義します。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#2)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#2)]  
   
-## 既定のレイアウト設定の使用  
- 既定では、<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素が、ホストされている [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールのレイアウトを処理します。  
+## <a name="using-default-layout-settings"></a>既定のレイアウト設定の使用  
+ 既定では、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素は、ホスト型のレイアウトで処理[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロール。  
   
-#### 既定のレイアウト設定を使用するには  
+#### <a name="to-use-default-layout-settings"></a>既定のレイアウト設定を使用するには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#3)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#3)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.Button?displayProperty=fullName> コントロールが <xref:System.Windows.Controls.Canvas> に表示されます。  ホストされているコントロールはそのコンテンツに基づいてサイズ設定され、<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素はホストされているコントロールが収まるようにサイズ変更されます。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.Button?displayProperty=nameWithType>コントロールに表示され、<xref:System.Windows.Controls.Canvas>です。 ホストされるコントロールは、その内容に基づいてサイズでは、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素のサイズは、ホストされるコントロールに対応します。  
   
-## コンテンツに合わせたサイズの変更  
- <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素を使用すると、ホストされているコントロールのサイズは、そのコンテンツが正しく表示されるように変更されます。  
+## <a name="sizing-to-content"></a>コンテンツに合わせたサイズの変更  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>要素の内容を正しく表示するため、ホストされるコントロールがサイズを調整することを確認します。  
   
-#### コンテンツに合わせてサイズ変更するには  
+#### <a name="to-size-to-content"></a>コンテンツに合わせてサイズ変更するには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#4)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#4)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  長くなったテキスト文字列および大きくなったフォント サイズが正しく表示されるように 2 つの新しいボタン コントロールのサイズが変更され、ホストされているコントロールが収まるように <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素のサイズが変更されます。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 2 つの新しいボタン コントロールのフォント サイズを大きく、長いテキスト文字列が正しく表示するサイズは、<xref:System.Windows.Forms.Integration.WindowsFormsHost>ホストされるコントロールに合わせて要素のサイズが変更されます。  
   
-## 絶対配置の使用  
- 絶対配置を使用して、ユーザー インターフェイス \(UI\) の任意の場所に <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素を配置できます。  
+## <a name="using-absolute-positioning"></a>絶対配置の使用  
+ 絶対配置を使用する配置、<xref:System.Windows.Forms.Integration.WindowsFormsHost>任意の場所で、ユーザー インターフェイス (UI) 要素です。  
   
-#### 絶対配置を使用するには  
+#### <a name="to-use-absolute-positioning"></a>絶対配置を使用するには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#5)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#5)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素は、グリッド セルの上辺から 20 ピクセル、左辺から 20 ピクセルの位置に配置されます。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 <xref:System.Windows.Forms.Integration.WindowsFormsHost>のグリッド セルの上にあるから 20 ピクセル、左端から 20 ピクセル要素が配置されます。  
   
-## サイズの明示的な指定  
- <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素のサイズは、<xref:System.Windows.FrameworkElement.Width%2A> プロパティと <xref:System.Windows.FrameworkElement.Height%2A> プロパティを使用して指定できます。  
+## <a name="specifying-size-explicitly"></a>サイズの明示的な指定  
+ サイズを指定することができます、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素を使用して、<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>プロパティです。  
   
-#### サイズを明示的に指定するには  
+#### <a name="to-specify-size-explicitly"></a>サイズを明示的に指定するには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#6)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#6)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素は、既定のレイアウト設定よりも小さい、幅 50 ピクセル、高さ 70 ピクセルに設定されます。  それに合わせて、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールのコンテンツが再配置されます。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 <xref:System.Windows.Forms.Integration.WindowsFormsHost>要素はこれが既定のレイアウトの設定よりも小さい 70 ピクセル、高さ、幅 50 ピクセルのサイズに設定します。 内容、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールがそれに応じて再配置します。  
   
-## レイアウト プロパティの設定  
- ホストされているコントロールにレイアウト関連のプロパティを設定する場合は、常に <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素のプロパティを使用します。  ホストされているコントロールで直接レイアウト プロパティを設定すると、予期しない結果になります。  
+## <a name="setting-layout-properties"></a>レイアウト プロパティの設定  
+ 常のプロパティを使用してホストされるコントロールにレイアウトに関連するプロパティを設定、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素。 ホストされているコントロールで直接レイアウト プロパティを設定すると、予期しない結果になります。  
   
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] でホストされているコントロールにレイアウト関連プロパティを設定しても無効です。  
+ ホストされるコントロールのレイアウトに関連するプロパティを設定[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]も何も起こりません。  
   
-#### ホストされているコントロールでプロパティを設定した場合の結果を確認するには  
+#### <a name="to-see-the-effects-of-setting-properties-on-the-hosted-control"></a>ホストされているコントロールでプロパティを設定した場合の結果を確認するには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#7)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#7)]  
   
-2.  ソリューション エクスプローラーで、MainWindow.xaml.  vb または MainWindow.xaml.cs をダブルクリックして、コード エディターで開きます。  
+2.  ソリューション エクスプ ローラーで、MainWindow.xaml をダブルクリックします。 vb または MainWindow.xaml.cs コード エディターで開きます。  
   
-3.  次のコードを `MainWindow` クラス定義にコピーします。  
+3.  次のコードをコピー、`MainWindow`クラス定義です。  
   
      [!code-csharp[WpfLayoutHostingWfWithXaml#101](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml.cs#101)]
      [!code-vb[WpfLayoutHostingWfWithXaml#101](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/VisualBasic/Window1.xaml.vb#101)]  
   
 4.  F5 キーを押してアプリケーションをビルドし、実行します。  
   
-5.  \[Click me\] ボタンをクリックします。  `button1_Click` イベント ハンドラーは、ホストされているコントロールで <xref:System.Windows.Forms.Control.Top%2A> プロパティと <xref:System.Windows.Forms.Control.Left%2A> プロパティを設定します。  これにより、ホストされているコントロールは、<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素内で再配置されます。  ホストは同じ画面領域を維持しますが、ホストされているコントロールはクリップされます。  代わりに、ホストされているコントロールは、常に <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素全体を占めます。  
+5.  クリックして、 **Click me**ボタンをクリックします。 `button1_Click`イベント ハンドラーの設定、<xref:System.Windows.Forms.Control.Top%2A>と<xref:System.Windows.Forms.Control.Left%2A>ホストされるコントロールのプロパティです。 これにより、ホストされるコントロール内の位置を変更する、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素。 ホストは同じ画面領域を維持しますが、ホストされているコントロールはクリップされます。 代わりに、ホストされるコントロールの入力は常に、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素。  
   
-## z オーダーの制限の理解  
- 既定では<xref:System.Windows.Forms.Integration.WindowsFormsHost> の可視要素は [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の他の要素の上に常に描画されz オーダーには影響しません。  18 Z 命令を有効にするには<xref:System.Windows.Interop.CompositionMode.Full> または <xref:System.Windows.Interop.CompositionMode.OutputOnly> と <xref:System.Windows.Interop.HwndHost.CompositionMode%2A> のプロパティを調整できるように <xref:System.Windows.Forms.Integration.WindowsFormsHost> の <xref:System.Windows.Interop.HwndHost.IsRedirected%2A> のプロパティを設定します。  
+## <a name="understanding-z-order-limitations"></a>z オーダーの制限の理解  
+ 既定では、表示されている<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素は常に他の上に描画[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]要素、および、z オーダーで影響を受けません。 Z オーダーを有効にするには設定、<xref:System.Windows.Interop.HwndHost.IsRedirected%2A>のプロパティ、<xref:System.Windows.Forms.Integration.WindowsFormsHost>を true に、<xref:System.Windows.Interop.HwndHost.CompositionMode%2A>プロパティを<xref:System.Windows.Interop.CompositionMode.Full>または<xref:System.Windows.Interop.CompositionMode.OutputOnly>です。  
   
-#### 既定の z オーダーの動作を確認するには  
+#### <a name="to-see-the-default-z-order-behavior"></a>既定の z オーダーの動作を確認するには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#8)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#8)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。   <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素がラベル要素の上に描画されます。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 <xref:System.Windows.Forms.Integration.WindowsFormsHost>ラベル要素上で要素を描画します。  
   
-#### IsRedirected に該当する場合は z オーダーの動作を確認するには  
+#### <a name="to-see-the-z-order-behavior-when-isredirected-is-true"></a>IsRedirected が true の場合に z オーダーの動作を確認するには  
   
-1.  次の XAML に前の z オーダーの例を次のコードに置き換えます。  
+1.  前の z オーダーの例を次の XAML に置き換えます。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#8b](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/VisualBasic/Window1.xaml#8b)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#8b](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/VisualBasic/Window1.xaml#8b)]  
   
-     F5 キーを押してアプリケーションをビルドし、実行します。  label 要素は <xref:System.Windows.Forms.Integration.WindowsFormsHost> の要素の上に描画されます。  
+     F5 キーを押してアプリケーションをビルドし、実行します。 経由で、label 要素が描画された、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素。  
   
-## ドッキング  
- <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のドッキングをサポートします。  ホストされているコントロールを <xref:System.Windows.Controls.DockPanel> 要素にドッキングするように、<xref:System.Windows.Controls.DockPanel.Dock%2A> 添付プロパティを設定します。  
+## <a name="docking"></a>ドッキング  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>要素をサポートしている[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ドッキングします。 設定、<xref:System.Windows.Controls.DockPanel.Dock%2A>添付プロパティでホストされるコントロールをドッキングするのには、<xref:System.Windows.Controls.DockPanel>要素。  
   
-#### ホストされているコントロールをドッキングするには  
+#### <a name="to-dock-a-hosted-control"></a>ホストされているコントロールをドッキングするには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#9)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#9)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素が <xref:System.Windows.Controls.DockPanel> 要素の右側にドッキングされます。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 <xref:System.Windows.Forms.Integration.WindowsFormsHost>の右側に要素がドッキングされている、<xref:System.Windows.Controls.DockPanel>要素。  
   
-## 可視性の設定  
- [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールを非表示にしたり、折りたたむには、<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素で <xref:System.Windows.UIElement.Visibility%2A> プロパティを設定します。  コントロールを非表示にすると、そのコントロールは表示されませんが、レイアウト空間は使用されます。  コントロールを折りたたむと、そのコントロールは表示されず、レイアウト空間も使用されません。  
+## <a name="setting-visibility"></a>可視性の設定  
+ ことができます、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]非表示を制御したり、設定して折りたたむこと、<xref:System.Windows.UIElement.Visibility%2A>プロパティを<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素。 コントロールを非表示にすると、そのコントロールは表示されませんが、レイアウト空間は使用されます。 コントロールを折りたたむと、そのコントロールは表示されず、レイアウト空間も使用されません。  
   
-#### ホストされているコントロールの可視性を設定するには  
+#### <a name="to-set-the-visibility-of-a-hosted-control"></a>ホストされているコントロールの可視性を設定するには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#10)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#10)]  
   
 2.  MainWindow.xaml.vb または MainWindow.xaml.cs で、次のコードをクラス定義にコピーします。  
   
@@ -199,97 +205,97 @@ caps.handback.revision: 28
   
 3.  F5 キーを押してアプリケーションをビルドし、実行します。  
   
-4.  <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素を非表示にするには、\[Click to make invisible\] ボタンをクリックします。  
+4.  をクリックして、**を非表示 をクリックします。**を作成するボタン、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素を非表示します。  
   
-5.  レイアウト全体から <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素を非表示にする場合は、\[Click to collapse\] ボタンをクリックします。  [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールが折りたたまれ、周りの要素が再配置されて、そのスペースが使用されます。  
+5.  をクリックして、**を折りたたみます**を非表示にするにはボタン、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素をレイアウトから完全です。 ときに、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールが折りたたまれている、周囲の要素がその領域を占有するように再配置します。  
   
-## 伸縮しないコントロールのホスト  
- 一部の [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールは、サイズが固定され、レイアウト内の使用可能なスペースに合わせて伸縮しません。  たとえば、<xref:System.Windows.Forms.MonthCalendar> コントロールでは、固定されたスペースに月が表示されます。  
+## <a name="hosting-a-control-that-does-not-stretch"></a>伸縮しないコントロールのホスト  
+ いくつか[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールのサイズが固定されているし、レイアウトで使用可能なスペースを埋めます伸縮しませんしないでください。 たとえば、<xref:System.Windows.Forms.MonthCalendar>コントロールでは、固定された間隔で 1 か月が表示されます。  
   
-#### 伸縮しないコントロールをホストするには  
+#### <a name="to-host-a-control-that-does-not-stretch"></a>伸縮しないコントロールをホストするには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#11)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#11)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素はグリッド行で中央揃えになりますが、使用可能なスペースに合わせて伸縮されることはありません。  ウィンドウが十分に大きい場合は、ホストされている <xref:System.Windows.Forms.MonthCalendar> コントロールによって 2 か月以上の月が表示される場合もありますが、これらは行内で中央揃えになります。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レイアウト エンジンは、使用可能なスペースに合わせたサイズ変更ができない要素を中央揃えにします。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 <xref:System.Windows.Forms.Integration.WindowsFormsHost>要素がグリッド行の中央に配置が、空き領域の塗りつぶしに拡張されていません。 ウィンドウが十分な大きさの場合、ホストによって表示される 2 つ以上の月を参照してください可能性があります<xref:System.Windows.Forms.MonthCalendar>コントロールが、これらが、行の中央に配置します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]レイアウト エンジンの中心が空き領域の塗りつぶしのサイズが変更できない要素。  
   
-## スケーリング  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 要素と異なり、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールは継続的にスケーリングすることはできません。  既定では<xref:System.Windows.Forms.Integration.WindowsFormsHost> の要素は可能であればホストされているコントロールをスケーリングします。  完全なスケーリングを有効にするには<xref:System.Windows.Interop.CompositionMode.Full> または <xref:System.Windows.Interop.CompositionMode.OutputOnly> と <xref:System.Windows.Interop.HwndHost.CompositionMode%2A> のプロパティを調整できるように <xref:System.Windows.Forms.Integration.WindowsFormsHost> の <xref:System.Windows.Interop.HwndHost.IsRedirected%2A> のプロパティを設定します。  
+## <a name="scaling"></a>スケーリング  
+ 異なり[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]要素、ほとんど[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールにスケーラブルな継続的にはできません。 既定では、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素可能な場合は、ホストされるコントロールのスケールを設定します。  本格的なスケーリングを有効にするには設定、<xref:System.Windows.Interop.HwndHost.IsRedirected%2A>のプロパティ、<xref:System.Windows.Forms.Integration.WindowsFormsHost>を true に、<xref:System.Windows.Interop.HwndHost.CompositionMode%2A>プロパティを<xref:System.Windows.Interop.CompositionMode.Full>または<xref:System.Windows.Interop.CompositionMode.OutputOnly>です。  
   
-#### ホストされているコントロールを既定の動作を使用してスケーリングするには  
+#### <a name="to-scale-a-hosted-control-by-using-the-default-behavior"></a>既定の動作を使用してホストされているコントロールをスケーリングするには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#12)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#12)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  ホストされているコントロールとその周りの要素は、ファクター 0.5 でスケーリングされますが、  ホストされているコントロールのフォントはスケーリングされません。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 ホストされているコントロールとその周りの要素は、0.5 倍でスケーリングされます。 ただし、ホストされているコントロールのフォントはスケーリングされません。  
   
-#### ホストされているコントロールを IsRedirected を true に設定してスケーリングするには  
+#### <a name="to-scale-a-hosted-control-by-setting-isredirected-to-true"></a>IsRedirected を true に設定してホストされているコントロールをスケーリングするには  
   
-1.  次の XAML にスケーリング前の例のに置き換えます。  
+1.  前述のスケーリングの例を、次の XAML に書き換えます。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#12b](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/VisualBasic/Window1.xaml#12b)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#12b](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/VisualBasic/Window1.xaml#12b)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  ホストされているコントロールその周りの要素とホストされているコントロールのフォントはファクター 0.5 でスケーリングされます。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 ホストされているコントロール、その周りの要素、ホストされているコントロールのフォントは 0.5 倍でスケーリングされます。  
   
-## 回転  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 要素とは異なり、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールは回転をサポートしません。  既定では<xref:System.Windows.Forms.Integration.WindowsFormsHost> の要素は [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の他の要素と回転変換が適用されても。  回転値が 180 度の場合を除き、<xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError> イベントが発生します。  への回転の角度を有効にするには<xref:System.Windows.Interop.CompositionMode.Full> または <xref:System.Windows.Interop.CompositionMode.OutputOnly> と <xref:System.Windows.Interop.HwndHost.CompositionMode%2A> のプロパティを調整できるように <xref:System.Windows.Forms.Integration.WindowsFormsHost> の <xref:System.Windows.Interop.HwndHost.IsRedirected%2A> のプロパティを設定します。  
+## <a name="rotating"></a>回転  
+ 異なり[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]要素、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールでは回転をサポートしていません。 既定では、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素が他の回転させません[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]回転変換を適用するときの要素。 180 度を発生させます以外の値を回転、<xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError>イベント。  任意の角度に回転を有効にするには設定、<xref:System.Windows.Interop.HwndHost.IsRedirected%2A>のプロパティ、<xref:System.Windows.Forms.Integration.WindowsFormsHost>を true に、<xref:System.Windows.Interop.HwndHost.CompositionMode%2A>プロパティを<xref:System.Windows.Interop.CompositionMode.Full>または<xref:System.Windows.Interop.CompositionMode.OutputOnly>です。  
   
-#### ハイブリッド アプリケーションでの回転の結果を確認するには  
+#### <a name="to-see-the-effect-of-rotation-in-a-hybrid-application"></a>ハイブリッド アプリケーションでの回転の効果を確認するには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#13)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#13)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  ホストされているコントロールは回転しませんが、その周りの要素は 180 度の角度で回転します。  要素を表示するためにウィンドウのサイズを変更することが必要になる場合があります。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 ホストされているコントロールは回転しませんが、その周りの要素は 180 度の角度で回転します。 要素を表示するためにウィンドウのサイズを変更する必要がある場合があります。  
   
-#### IsRedirected に該当する場合はハイブリッド アプリケーションで回転の効果を確認します。  
+#### <a name="to-see-the-effect-of-rotation-in-a-hybrid-application-when-isredirected-is-true"></a>IsRedirected が true の場合に、ハイブリッド アプリケーションで回転の効果を確認するには  
   
-1.  次の XAML に前の回転の例を次のコードに置き換えます。  
+1.  前述の回転の例を、次の XAML に書き換えます。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#13b](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/VisualBasic/Window1.xaml#13b)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#13b](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/VisualBasic/Window1.xaml#13b)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  ホストされているコントロールは回転します。  <xref:System.Windows.Media.RotateTransform.Angle%2A> のプロパティを任意の値に設定できることに注意してください。  要素を表示するためにウィンドウのサイズを変更することが必要になる場合があります。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 ホストされているコントロールが回転します。  なお、<xref:System.Windows.Media.RotateTransform.Angle%2A>プロパティは、任意の値に設定することができます。 要素を表示するためにウィンドウのサイズを変更する必要がある場合があります。  
   
-## パディングとマージンの設定  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レイアウトのパディングとマージンは、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]のパディングとマージンに似ています。  <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素で <xref:System.Windows.Controls.Control.Padding%2A> プロパティと <xref:System.Windows.FrameworkElement.Margin%2A> プロパティを設定するだけです。  
+## <a name="setting-padding-and-margins"></a>パディングとマージンの設定  
+ パディングと余白の[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]レイアウトは、埋め込みと余白のような[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]します。 設定するだけ、<xref:System.Windows.Controls.Control.Padding%2A>と<xref:System.Windows.FrameworkElement.Margin%2A>プロパティを<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素。  
   
-#### ホストされているコントロールのパディングとマージンを設定するには  
+#### <a name="to-set-padding-and-margins-for-a-hosted-control"></a>ホストされているコントロールのパディングとマージンを設定するには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#14)]  
-    [!code-xml[WpfLayoutHostingWfWithXaml#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#15)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#14)]  
+    [!code-xaml[WpfLayoutHostingWfWithXaml#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#15)]  
   
-2.  F5 キーを押してアプリケーションをビルドし、実行します。  パディングとマージンの設定が、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]で適用される場合と同じように、ホストされている [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールに適用されます。  
+2.  F5 キーを押してアプリケーションをビルドし、実行します。 パディングと余白の設定が適用されるホストに[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]で、適用される同じ方法でコントロール[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]です。  
   
-## 動的レイアウト コンテナーの使用  
- [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]は、2 つの動的レイアウト コンテナー、<xref:System.Windows.Forms.FlowLayoutPanel> と <xref:System.Windows.Forms.TableLayoutPanel> を提供します。  これらのコンテナーは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レイアウトで使用することもできます。  
+## <a name="using-dynamic-layout-containers"></a>動的レイアウト コンテナーの使用  
+ [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]2 つの動的レイアウト コンテナーを提供<xref:System.Windows.Forms.FlowLayoutPanel>と<xref:System.Windows.Forms.TableLayoutPanel>です。 これらのコンテナーを使用することもできます。[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]レイアウトです。  
   
-#### 動的レイアウト コンテナーを使用するには  
+#### <a name="to-use-a-dynamic-layout-container"></a>動的レイアウト コンテナーを使用するには  
   
-1.  次の XAML を <xref:System.Windows.Controls.Grid> 要素にコピーします。  
+1.  次の XAML をコピー、<xref:System.Windows.Controls.Grid>要素。  
   
-     [!code-xml[WpfLayoutHostingWfWithXaml#16](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#16)]  
+     [!code-xaml[WpfLayoutHostingWfWithXaml#16](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml#16)]  
   
 2.  MainWindow.xaml.vb または MainWindow.xaml.cs で、次のコードをクラス定義にコピーします。  
   
      [!code-csharp[WpfLayoutHostingWfWithXaml#103](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml.cs#103)]
      [!code-vb[WpfLayoutHostingWfWithXaml#103](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/VisualBasic/Window1.xaml.vb#103)]  
   
-3.  コンストラクターに `InitializeFlowLayoutPanel` メソッドの呼び出しを追加します。  
+3.  呼び出しを追加、`InitializeFlowLayoutPanel`コンス トラクターのメソッドです。  
   
      [!code-csharp[WpfLayoutHostingWfWithXaml#104](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/CSharp/Window1.xaml.cs#104)]
      [!code-vb[WpfLayoutHostingWfWithXaml#104](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WpfLayoutHostingWfWithXaml/VisualBasic/Window1.xaml.vb#104)]  
   
-4.  F5 キーを押してアプリケーションをビルドし、実行します。  <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素は <xref:System.Windows.Controls.DockPanel> 全体を占め、<xref:System.Windows.Forms.FlowLayoutPanel> はその子コントロールを既定の <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> に配置します。  
+4.  F5 キーを押してアプリケーションをビルドし、実行します。 <xref:System.Windows.Forms.Integration.WindowsFormsHost>要素の設定、 <xref:System.Windows.Controls.DockPanel>、および<xref:System.Windows.Forms.FlowLayoutPanel>、既定では、その子コントロールを配置<xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A>です。  
   
-## 参照  
- <xref:System.Windows.Forms.Integration.ElementHost>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [WPF デザイナー](http://msdn.microsoft.com/ja-jp/c6c65214-8411-4e16-b254-163ed4099c26)   
- [WindowsFormsHost 要素のレイアウトに関する考慮事項](../../../../docs/framework/wpf/advanced/layout-considerations-for-the-windowsformshost-element.md)   
- [WPF での Windows フォーム コントロールの配置のサンプル](http://go.microsoft.com/fwlink/?LinkID=159971)   
- [チュートリアル: WPF での Windows フォーム複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.Integration.ElementHost>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [WPF デザイナー](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [WindowsFormsHost 要素のレイアウトに関する考慮事項](../../../../docs/framework/wpf/advanced/layout-considerations-for-the-windowsformshost-element.md)  
+ [WPF のサンプルでのフォーム コントロールのウィンドウの配置](http://go.microsoft.com/fwlink/?LinkID=159971)  
+ [チュートリアル: WPF での Windows フォーム複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)  
  [チュートリアル: Windows フォームでの WPF 複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

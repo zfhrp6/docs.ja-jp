@@ -1,91 +1,90 @@
 ---
-title: "Passing Arguments by Position and by Name (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "arguments [Visual Basic], passing by name"
-  - "procedures, arguments"
-  - ":= passing arguments"
-  - "procedure arguments"
-  - "Visual Basic code, procedures"
-  - "named arguments, passing arguments"
-  - "arguments [Visual Basic], passing by position"
-  - "Function procedures, passing arguments"
-  - "named parameters, passing arguments"
-  - "named arguments"
-  - "passing parameters, named parameter arguments"
-  - "passing parameters, by position"
-  - "procedures, calling"
-  - "named parameters"
-  - "Sub procedures, passing arguments"
-  - "argument passing"
-  - "passing parameters, by name"
-  - "argument passing, by position"
-  - "arguments [Visual Basic], listing by name"
+title: "位置と名前による引数渡し (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- arguments [Visual Basic], passing by name
+- procedures [Visual Basic], arguments
+- := passing arguments
+- procedure arguments
+- Visual Basic code, procedures
+- named arguments [Visual Basic], passing arguments
+- arguments [Visual Basic], passing by position
+- Function procedures [Visual Basic], passing arguments
+- named parameters [Visual Basic], passing arguments
+- named arguments
+- passing parameters [Visual Basic], named parameter arguments
+- passing parameters [Visual Basic], by position
+- procedures [Visual Basic], calling
+- named parameters
+- Sub procedures [Visual Basic], passing arguments
+- argument passing
+- passing parameters [Visual Basic], by name
+- argument passing [Visual Basic], by position
+- arguments [Visual Basic], listing by name
 ms.assetid: 1ad7358f-1da9-48da-a95b-f3c7ed41eff3
-caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 164f69fcf23049441a0acbe05058c792d5363a03
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Passing Arguments by Position and by Name (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`Sub` プロシージャまたは `Function` プロシージャを呼び出すときには、引数を*位置で*渡したり*名前で*渡したりできます。位置で渡す場合は、プロシージャの定義で宣言されている順に引数を指定します。名前で渡す場合は、指定する位置 \(順序\) は関係なくなります。  
+# <a name="passing-arguments-by-position-and-by-name-visual-basic"></a>位置と名前による引数渡し (Visual Basic)
+呼び出すと、`Sub`または`Function`プロシージャの引数を渡すことができます*位置によって*— プロシージャの定義に表示される順序で — 渡したりすることができます*名前によって*、なし配置を考慮します。  
   
- 引数を名前で渡すときには、宣言されている引数の名前、コロンと等号 \(`:=`\)、引数の値という順に指定します。  引数はどのような順序でも指定できます。  
+ 宣言されている引数の名前、コロンと等号 (=) を指定する名前で引数を渡す場合 (`:=`)、その後に、引数の値。 任意の順序で名前付き引数を指定することができます。  
   
- たとえば、次の `Sub` プロシージャでは 3 つの引数を使用します。  
+ たとえば、次`Sub`プロシージャでは、3 つの引数。  
   
  [!code-vb[VbVbcnProcedures#41](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_1.vb)]  
   
- このプロシージャを呼び出すときには、引数を位置で指定することも、名前で指定することも、両方を一緒に使って指定することもできます。  
+ このプロシージャを呼び出すときは、位置、名、または両方の組み合わせを使用して引数を指定できます。  
   
-## 位置による引数渡し  
- 引数を位置で渡してプロシージャ  `studentInfo`  を呼び出すには、次のようにコンマで区切って指定します。  
+## <a name="passing-arguments-by-position"></a>位置による引数渡し  
+ プロシージャを呼び出すことができます`studentInfo`位置によって渡され、次の例で示すように、コンマで区切り、引数を使用します。  
   
  [!code-vb[VbVbcnProcedures#42](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_2.vb)]  
   
- 位置で指定する引数リストで省略可能な引数を省略する場合は、省略する引数の場所にコンマを置く必要があります。   `age`  引数を指定せずに  `studentInfo`  を呼び出す例を次に示します。  
+ 位置指定引数リストで省略可能な引数を省略した場合、コンマでは、その場所を保持する必要があります。 次の例では`studentInfo`せず、`age`引数。  
   
  [!code-vb[VbVbcnProcedures#43](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_3.vb)]  
   
-## 名前による引数渡し  
- 引数を名前で渡してプロシージャ  `studentInfo`  を呼び出すこともできます。この場合も、次のようにコンマで区切って指定します。  
+## <a name="passing-arguments-by-name"></a>名前による引数渡し  
+ 代わりに、呼び出すことができます`studentInfo`、名前によって渡される引数でもコンマで区切られた、次の例で示すようにします。  
   
  [!code-vb[VbVbcnProcedures#44](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_4.vb)]  
   
-## 位置と名前の両方による引数渡し  
- 次に示す例のように、1 つのプロシージャ呼び出しで、位置と名前の両方を使って引数を指定することもできます。  
+## <a name="mixing-arguments-by-position-and-by-name"></a>位置と名前による引数の混在  
+ 次の例で示すように、両方の位置と、1 つのプロシージャ呼び出しで名前による引数を指定できます。  
   
  [!code-vb[VbVbcnProcedures#45](./codesnippet/VisualBasic/passing-arguments-by-position-and-by-name_5.vb)]  
   
- 上の例では、引数 `age` が省略されていますが、 `birth` が名前で指定されているため、 `age` の場所にコンマを置く必要はありません。  
+ 上記の例では、余分なコンマは省略された場所を保持するために必要な`age`引数、ので`birth`は名前によって渡されます。  
   
- 位置と名前の両方を使って引数を指定する場合は、位置で指定する引数をすべて先に指定する必要があります。  いったん名前で引数を指定したら、残りの引数はすべて名前で指定する必要があります。  
+ 位置と名前、位置指定引数の組み合わせで引数を指定するときのすべてを先にする必要があります。 名前で引数を指定すると、残りの引数すべてがあります名前。  
   
-## 名前による省略可能な引数の指定  
- 名前による引数渡しは、省略可能な引数が複数あるプロシージャを呼び出す場合に便利です。  引数を名前で指定する場合は、省略する引数の位置を示すためのコンマは必要はありません。  また、引数を名前で指定すると、どの引数を渡してどの引数を省略したのかが把握しやすくなります。  
+## <a name="supplying-optional-arguments-by-name"></a>省略可能な引数の名前を指定します。  
+ 名前による引数渡しは、1 つ以上の省略可能な引数を持つプロシージャを呼び出す場合に特に便利です。 名前で引数を指定する場合、引数の位置を示すためにコンマを使用するはありません。 名前による引数渡しもやすく引数を渡し、どれを省略しているを追跡するためです。  
   
-## 名前による引数渡しの制限事項  
- 引数を名前で渡しても、必要な引数を省略することはできません。  省略できるのは、省略可能な引数だけです。  
+## <a name="restrictions-on-supplying-arguments-by-name"></a>名前による引数渡しに関する制限事項  
+ 必須の引数を入力せずに名前で引数を渡すことはできません。 省略可能な引数だけを省略できます。  
   
- パラメーター配列を名前で渡すことはできません。  これは、プロシージャの呼び出し時に、パラメーター配列ではコンマで区切られた不特定多数の引数が指定されますが、コンパイラは複数の引数を 1 つの名前に関連付けることができないためです。  
+ 名前で、パラメーター配列を渡すことはできません。 これは、プロシージャを呼び出すときのパラメーター配列に対してコンマで区切った不特定数を指定して、コンパイラは、単一の名前を 1 つ以上の引数を関連付けることはできませんです。  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [How to: Pass Arguments to a Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-pass-arguments-to-a-procedure.md)   
- [Passing Arguments by Value and by Reference](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)   
- [Optional Parameters](../../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)   
- [Parameter Arrays](../../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)   
- [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)   
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)  
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)  
+ [方法: プロシージャに引数を渡す](./how-to-pass-arguments-to-a-procedure.md)  
+ [引数の値渡しと参照渡し](./passing-arguments-by-value-and-by-reference.md)  
+ [省略可能なパラメーター](./optional-parameters.md)  
+ [パラメーター配列](./parameter-arrays.md)  
+ [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)  
  [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)

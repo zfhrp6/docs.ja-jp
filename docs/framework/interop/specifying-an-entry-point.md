@@ -5,30 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - EntryPoint field
 - platform invoke, attribute fields
 - attribute fields in platform invoke, EntryPoint
 ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f8d8f4a561248b7022b08ee15c9a726a58b80318
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 7406e256acaea0c535c222386c529c4087bbdc6f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="specifying-an-entry-point"></a>エントリ ポイントの指定
 エントリ ポイントは、DLL 内の関数の位置を識別します。 マネージ プロジェクト内では、対象となる関数の元の名前または序数エントリ ポイントによって、その関数が相互運用の境界にまたがって識別されます。 また、エントリ ポイントを別の名前に割り当てて、関数の名前を事実上変更できます。  
@@ -46,7 +39,7 @@ ms.lasthandoff: 08/21/2017
  このトピックでは、マネージ コード内の DLL 関数の名前を変更する方法について説明します。  
   
 ## <a name="renaming-a-function-in-visual-basic"></a>Visual Basic での関数名の変更  
- Visual Basic で <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=fullName> フィールドを設定するには、**Declare** ステートメントで **Function** キーワードを使います。 基本的な宣言を次の例に示します。  
+ Visual Basic で <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> フィールドを設定するには、**Declare** ステートメントで **Function** キーワードを使います。 基本的な宣言を次の例に示します。  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -71,7 +64,7 @@ End Class
 ```  
   
 ## <a name="renaming-a-function-in-c-and-c"></a>C# および C++ での関数名の変更  
- DLL 関数を名前または序数で指定するには、<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=fullName> フィールドを使います。 メソッド定義内の関数の名前が DLL 内のエントリ ポイントと同じである場合は、その関数を **EntryPoint** フィールドで明示的に識別する必要はありません。 同じでない場合は、次のいずれかの属性書式を使って、名前または序数を指示します。  
+ DLL 関数を名前または序数で指定するには、<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> フィールドを使います。 メソッド定義内の関数の名前が DLL 内のエントリ ポイントと同じである場合は、その関数を **EntryPoint** フィールドで明示的に識別する必要はありません。 同じでない場合は、次のいずれかの属性書式を使って、名前または序数を指示します。  
   
 ```  
 [DllImport("dllname", EntryPoint="Functionname")]  
@@ -104,8 +97,7 @@ extern "C" int MsgBox(HWND hWnd,
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.InteropServices.DllImportAttribute>   
- [マネージ コードでのプロトタイプの作成](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)   
- [プラットフォーム呼び出しの例](../../../docs/framework/interop/platform-invoke-examples.md)   
+ <xref:System.Runtime.InteropServices.DllImportAttribute>  
+ [マネージ コードでのプロトタイプの作成](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)  
+ [プラットフォーム呼び出しの例](../../../docs/framework/interop/platform-invoke-examples.md)  
  [プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)
-

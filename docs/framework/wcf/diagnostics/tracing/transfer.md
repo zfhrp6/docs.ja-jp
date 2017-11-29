@@ -1,52 +1,55 @@
 ---
-title: "転送 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "転送"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 40cd80b2b4e2f949b92f4c89cde6b271a502d047
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 転送
+# <a name="transfer"></a>転送
 このトピックでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] のアクティビティ トレース モデルで使用される転送という概念について説明します。  
   
-## 転送の定義  
- アクティビティ間の転送は、エンドポイント内の関連アクティビティで発生したイベント間の因果関係を表します。  制御が 2 つのアクティビティ間を流れる場合 \(アクティビティの境界を越えたメソッド呼び出しなど\)、転送によってこれらのアクティビティが関連付けられます。  [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では、サービスでバイトを受信すると、"リッスン" アクティビティが "バイトを受信" アクティビティに転送され、このアクティビティでメッセージ オブジェクトが作成されます。  エンドツーエンドのトレースのシナリオの一覧、および各シナリオの個々のアクティビティとトレース デザインについては、「[エンドツーエンドのトレースのシナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)」を参照してください。  
+## <a name="transfer-definition"></a>転送の定義  
+ アクティビティ間の転送は、エンドポイント内の関連アクティビティで発生したイベント間の因果関係を表します。 制御が 2 つのアクティビティ間を流れる場合 (アクティビティの境界を越えたメソッド呼び出しなど)、転送によってこれらのアクティビティが関連付けられます。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] では、サービスでバイトを受信すると、"リッスン" アクティビティが "バイトを受信" アクティビティに転送され、このアクティビティでメッセージ オブジェクトが作成されます。 エンド ツー エンドのトレース シナリオと、それぞれのアクティビティとデザインのトレースの一覧は、次を参照してください。[エンド ツー エンドのトレース シナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)です。  
   
  転送トレースを出力するには、次の構成コードのように、トレース ソースに `ActivityTracing` を設定します。  
   
-```  
+```xml  
 <source name="System.ServiceModel" switchValue="Verbose,ActivityTracing">  
 ```  
   
-## 転送を使用したエンドポイント内でのアクティビティの関連付け  
- アクティビティと転送により、ユーザーはエラーの根本原因をほぼ突き止めることができます。  たとえば、コンポーネント M と N のアクティビティ M と N の間で、M から N および N から M への転送を行い、M への転送の直後に N でクラッシュが発生した場合、N から M にデータを返したことが原因でクラッシュが発生した可能性があるという結論を下すことができます。  
+## <a name="using-transfer-to-correlate-activities-within-endpoints"></a>転送を使用したエンドポイント内でのアクティビティの関連付け  
+ アクティビティと転送により、ユーザーはエラーの根本原因をほぼ突き止めることができます。 たとえば、コンポーネント M と N のアクティビティ M と N の間で、M から N および N から M への転送を行い、M への転送の直後に N でクラッシュが発生した場合、N から M にデータを返したことが原因でクラッシュが発生した可能性があるという結論を下すことができます。  
   
- アクティビティ M とアクティビティ N の間に制御のフローが存在する場合、転送トレースは M から N に出力されます。  たとえば、メソッド呼び出しがアクティビティの境界を越えるため、N が M に代わって何らかの処理を実行するとします。  N は既に存在する場合もあれば、作成されている場合もあります。  N が、M に代わって何らかの処理を実行する新しいアクティビティである場合、N は M によって発生します。  
+ アクティビティ M とアクティビティ N の間に制御のフローが存在する場合、転送トレースは M から N に出力されます。たとえば、メソッド呼び出しがアクティビティの境界を越えるため、N が M に代わって何らかの処理を実行するとします。 N は既に存在する場合もあれば、作成されている場合もあります。 N が、M に代わって何らかの処理を実行する新しいアクティビティである場合、N は M によって発生します。  
   
- M から N への転送の後に、N から M に転送することはできません。  これは、M は N で処理を発生させることはできますが、N がその処理をいつ完了するかまでは追跡しないからです。  実際、N がタスクを完了する前に M が終了する場合があります。  このような状況は、リスナーのアクティビティ \(N\) を発生させた後に終了する "ServiceHost を開く" アクティビティ \(M\) で発生します。  N から M への転送は、N が M に関連する処理を完了したことを意味します。  
+ M から N への転送の後に、N から M に転送することはできません。これは、M は N で処理を発生させることはできますが、N がその処理をいつ完了するかまでは追跡しないからです。 実際、N がタスクを完了する前に M が終了する場合があります。 これは、リスナーのアクティビティ (N) を生成し、後に終了する"ServiceHost を開く"アクティビティ (M) で発生します。 N から M への転送は、N が M に関連する処理を完了したことを意味します。  
   
- N は、M に関連しない他の処理を引き続き実行できます。たとえば、既存の認証システム アクティビティ \(N\) は、さまざまなログイン アクティビティからのログイン要求 \(M\) を受信し続けることができます。  
+ N は、M に関連しない他の処理を引き続き実行できます。たとえば、既存の認証システム アクティビティ (N) は、さまざまなログイン アクティビティからのログイン要求 (M) を受信し続けることができます。  
   
- アクティビティ M と N の間に、入れ子のリレーションシップが必ずしも存在するわけではありません。  入れ子のリレーションシップが存在しない状況が発生する原因として、2 つのケースが考えられます。  1 つは、アクティビティ M がアクティビティ N を開始したが、N で実行される実際の処理を M が監視しない場合です。  もう 1 つは、N が既に存在する場合です。  
+ アクティビティ M と N の間に、入れ子のリレーションシップが必ずしも存在するわけではありません。入れ子のリレーションシップが存在しない状況が発生する原因として、2 つのケースが考えられます。 1 つは、アクティビティ M が アクティビティ N を開始したが、N で実行される実際の処理を M が監視しない場合です。もう 1 つは、N が既に存在する場合です。  
   
-## 転送の例  
+## <a name="example-of-transfers"></a>転送の例  
  転送の 2 つの例を次に示します。  
   
--   サービス ホストの作成時に、コンストラクターは呼び出し元のコードから制御を取得します。つまり、呼び出し元のコードがコンストラクターに転送されます。  コンストラクターは、必要な処理を終えると、呼び出し元に制御を返します。つまり、コンストラクターから呼び出し元への逆転送が起こります。  これは、入れ子になったリレーションシップの例です。  
+-   サービス ホストの作成時に、コンストラクターは呼び出し元のコードから制御を取得します。つまり、呼び出し元のコードがコンストラクターに転送されます。 コンストラクターは、必要な処理を終えると、呼び出し元に制御を返します。つまり、コンストラクターから呼び出し元への逆転送が起こります。 これは、入れ子になったリレーションシップの例です。  
   
--   リスナーはトランスポート データの処理を開始するときに、新しいスレッドを作成し、"バイトを受信" アクティビティに、処理の適切なコンテキストとして制御とデータを渡します。  このスレッドが要求の処理を完了しても、"バイトを受信" アクティビティからリスナーには何も渡されません。  この場合、新しいスレッドのアクティビティへの転送はありますが、このアクティビティからの転送はありません。  2 つのアクティビティは関連していますが、入れ子にはなっていません。  
+-   リスナーはトランスポート データの処理を開始するときに、新しいスレッドを作成し、"バイトを受信" アクティビティに、処理の適切なコンテキストとして制御とデータを渡します。 このスレッドが要求の処理を完了しても、"バイトを受信" アクティビティからリスナーには何も渡されません。 この場合、新しいスレッドのアクティビティへの転送はありますが、このアクティビティからの転送はありません。 2 つのアクティビティは関連していますが、入れ子にはなっていません。  
   
-## アクティビティ転送シーケンス  
+## <a name="activity-transfer-sequence"></a>アクティビティ転送シーケンス  
  適切なアクティビティ転送シーケンスには、次の手順が含まれます。  
   
 1.  新しい gAId を選択して、新しいアクティビティを開始します。  
@@ -65,12 +68,12 @@ caps.handback.revision: 7
   
 8.  TLS を以前の gAId に設定します。  
   
- これを実行する方法を次のコード例に示します。  この例は、新しいアクティビティへの転送時にブロック呼び出しが行われることを想定しており、Suspend トレースと Resume トレースが含まれています。  
+ これを実行する方法を次のコード例に示します。 この例は、新しいアクティビティへの転送時にブロック呼び出しが行われることを想定しており、Suspend トレースと Resume トレースが含まれています。  
   
 ```  
 // 0. Create a trace source  
-TraceSource ts = new TraceSource(“myTS”);  
-// 1. remember existing (“ambient”) activity for clean up  
+TraceSource ts = new TraceSource("myTS");  
+// 1. remember existing ("ambient") activity for clean up  
 Guid oldGuid = Trace.CorrelationManager.ActivityId;  
 // this will be our new activity  
 Guid newGuid = Guid.NewGuid();   
@@ -98,8 +101,8 @@ Trace.CorrelationManager.ActivityId = oldGuid;
 ts.TraceEvent(TraceEventType.Resume, 667, "Resume: Activity " + i-1);  
 ```  
   
-## 参照  
- [トレースの構成](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)   
- [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)   
- [エンドツーエンドのトレースのシナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)   
- [サービス トレース ビューアー ツール \(SvcTraceViewer.exe\)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+## <a name="see-also"></a>関連項目  
+ [トレースの構成](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
+ [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
+ [エンド ツー エンドのトレース シナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  
+ [サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)

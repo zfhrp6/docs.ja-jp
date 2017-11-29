@@ -1,29 +1,32 @@
 ---
-title: "&lt;bindingElementExtensions&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;bindingElementExtensions&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bb597fc0-c947-451c-afda-bf23d42f4f4d
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6b12752980e43944bb73f8adfde04bfb2d4dadf4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;bindingElementExtensions&gt;
-このセクションは、コンピューターまたはアプリケーションの構成ファイルからカスタム バインディング要素を使用できます。  このコレクションにカスタム バインディング要素を追加するには、`add` キーワードを使用し、要素の `type` 属性をバインディング要素拡張に設定して、`name` 属性をカスタム バインディング要素に設定します。  
+# <a name="ltbindingelementextensionsgt"></a>&lt;bindingElementExtensions&gt;
+このセクションは、コンピューターまたはアプリケーションの構成ファイルからカスタム バインド要素を使用できます。 このコレクションにカスタム バインディング要素を追加するには、`add` キーワードを使用し、要素の `type` 属性をバインディング要素拡張に設定して、`name` 属性をカスタム バインディング要素に設定します。  
   
- バインディングの拡張により、ユーザーは、カスタム バインディングの一部として使用するユーザー定義のバインディング要素を作成できます。  プログラムではバインディング拡張は、抽象クラス <xref:System.ServiceModel.Channels.BindingElement> を実装する型です。  構成ファイルでは、`bindingElementExtensions` セクションは、拡張要素を定義するために使用されます。  
+ バインディングの拡張により、ユーザーは、カスタム バインディングの一部として使用するユーザー定義のバインディング要素を作成できます。 プログラムではバインディング拡張は、抽象クラス <xref:System.ServiceModel.Channels.BindingElement> を実装する型です。 構成ファイルでは、`bindingElementExtensions` セクションは、拡張要素を定義するために使用されます。  
   
  次の例は、`add` 要素と `name` 属性を使用して、構成ファイルの `bindingElementExtensions` セクションにバインディング拡張を追加します。  
   
-```  
+```xml  
 <system.serviceModel>  
     <extensions>  
         <bindingElementExtensions>  
@@ -34,11 +37,11 @@ caps.handback.revision: 6
 </system.serviceModel>  
 ```  
   
- 構成機能を要素に追加するには、ユーザーは `bindingElementExtensionSection` を記述して登録する必要があります。  詳細については、<xref:System.Configuration> を参照してください。  
+ 構成機能を要素に追加するには、ユーザーは `bindingElementExtensionSection` を記述して登録する必要があります。 詳細については、<xref:System.Configuration> を参照してください。  
   
  要素とその構成の型を定義したら、次の例に示すように拡張をカスタム バインディングの一部として使用できます。  
   
-```  
+```xml  
 <customBinding>  
      <binding name="test2">  
          <udpTransport />  
@@ -48,6 +51,6 @@ caps.handback.revision: 6
 </customBinding>  
 ```  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>  
  [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)

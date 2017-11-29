@@ -1,32 +1,28 @@
 ---
-title: "方法: プロジェクトのオブジェクト グラフ (Visual Basic) |Microsoft ドキュメント"
+title: "方法: プロジェクトのオブジェクト グラフ (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 9451eb47-6a31-49d7-84df-73368c618422
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e634d2520e5b40d6ccb8ac11ce47f726980ef8cd
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 946c09035c2856203c544c6e5378624989b0e96b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-project-an-object-graph-visual-basic"></a>方法: プロジェクトのオブジェクト グラフ (Visual Basic)
 このトピックでは、XML からオブジェクト グラフを射影 (作成) する方法を示します。  
   
 ## <a name="example"></a>例  
- 次のコードにオブジェクト グラフの設定、 `Address`、 `PurchaseOrder`、および`PurchaseOrderItem`クラスを[サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md) XML ドキュメントです。  
+ 次のコードでは、「[サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md)」という XML ドキュメントから `Address`、`PurchaseOrder`、および `PurchaseOrderItem` の各クラスを使用してオブジェクト グラフを作成します。  
   
 ```vb  
 Class Address  
@@ -307,10 +303,9 @@ Sub Main()
     }  
     Console.WriteLine(purchOrder)  
 End Sub  
-  
 ```  
   
- この例の結果で、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]としてクエリが返される、<xref:System.Collections.Generic.IEnumerable%601>の`PurchaseOrderItem`</xref:System.Collections.Generic.IEnumerable%601>。 内の項目、`PurchaseOrder`クラスは型<xref:System.Collections.Generic.IEnumerable%601>の`PurchaseOrderItem`</xref:System.Collections.Generic.IEnumerable%601>。 コードを使用して、<xref:System.Linq.Enumerable.ToList%2A>を作成する拡張メソッド、<xref:System.Collections.Generic.List%601>クエリの結果のコレクション</xref:System.Collections.Generic.List%601></xref:System.Linq.Enumerable.ToList%2A>。  
+ この例では、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリの結果は、<xref:System.Collections.Generic.IEnumerable%601> の `PurchaseOrderItem` として返されます。 `PurchaseOrder` クラスの項目は、<xref:System.Collections.Generic.IEnumerable%601> の `PurchaseOrderItem` 型です。 このコードでは、<xref:System.Linq.Enumerable.ToList%2A> 拡張メソッドを使用して、クエリの結果から <xref:System.Collections.Generic.List%601> コレクションを作成します。  
   
  この例では次の出力が生成されます。  
   
@@ -352,6 +347,6 @@ ShipDate: 5/21/1999
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Linq.Enumerable.Select%2A></xref:System.Linq.Enumerable.Select%2A>   
- <xref:System.Linq.Enumerable.ToList%2A></xref:System.Linq.Enumerable.ToList%2A>   
+ <xref:System.Linq.Enumerable.Select%2A>  
+ <xref:System.Linq.Enumerable.ToList%2A>  
  [射影と変換 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

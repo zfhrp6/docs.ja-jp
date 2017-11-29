@@ -1,45 +1,51 @@
 ---
-title: "方法 : グリッド間でサイズ設定プロパティを共有する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "グリッド コントロール, 共有 (列のサイズ設定データを)"
-  - "グリッド コントロール, 共有 (行のサイズ設定データを)"
-  - "サイズ設定データ (グリッド コントロールの)"
+title: "方法 : グリッド間でサイズ設定プロパティを共有する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Grid control [WPF], sharing sizing data of columns
+- sizing data in Grid controls [WPF]
+- Grid control [WPF], sharing sizing data of rows
 ms.assetid: a0535a6f-ff04-4b25-9912-7dd856e11044
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f0e3be0a0b550f6fbbc9876709094d4a23abe1a6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : グリッド間でサイズ設定プロパティを共有する
-この例では、一貫したサイズ設定を行うために、<xref:System.Windows.Controls.Grid> の要素間で列と行のサイズ設定データを共有する方法を示します。  
+# <a name="how-to-share-sizing-properties-between-grids"></a>方法 : グリッド間でサイズ設定プロパティを共有する
+この例は、列のサイズ変更データを共有する方法について説明し、間で行<xref:System.Windows.Controls.Grid>一貫性のあるサイズ変更を保持するために要素。  
   
-## 使用例  
- 次の例では、親 <xref:System.Windows.Controls.DockPanel> の子要素として 2 つの <xref:System.Windows.Controls.Grid> 要素を導入しています。  <xref:System.Windows.Controls.Grid> の <xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A> [添付プロパティ](GTMT)は、親 <xref:System.Windows.Controls.DockPanel> で定義されています。  
+## <a name="example"></a>例  
+ 次の例を紹介 2<xref:System.Windows.Controls.Grid>要素を親の子要素として<xref:System.Windows.Controls.DockPanel>です。 <xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A>添付プロパティの<xref:System.Windows.Controls.Grid>親で定義された<xref:System.Windows.Controls.DockPanel>です。  
   
- この例では、2 つの <xref:System.Windows.Controls.Button> 要素を使用してプロパティの値を操作します。各要素は、Boolean プロパティ値の 1 つを表します。  <xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A> プロパティ値が `true` に設定されている場合、<xref:System.Windows.Controls.DefinitionBase.SharedSizeGroup%2A> の各列または行メンバーは、行または列のコンテンツに関係なく、サイズ設定情報を共有します。  
+ 例では、2 つを使用して、プロパティ値を操作する<xref:System.Windows.Controls.Button>要素以外のブール型プロパティ値の各要素は 1 つです。 ときに、<xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A>にプロパティの値が設定されている`true`の各列または行のメンバー、<xref:System.Windows.Controls.DefinitionBase.SharedSizeGroup%2A>行または列のコンテンツに関係なく、サイズ変更情報を共有します。  
   
- [!code-xml[gridIssharedsizescopeProp#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml#1)]  
+ [!code-xaml[gridIssharedsizescopeProp#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml#1)]  
   
  ...  
   
- [!code-xml[gridIssharedsizescopeProp#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml#2)]  
+ [!code-xaml[gridIssharedsizescopeProp#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml#2)]  
   
- 次の分離コード例では、ボタンの <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントによって起動されるメソッドを処理します。  この例では、これらのメソッドの <xref:System.Windows.Controls.TextBlock> 要素に対する呼び出しの結果を記述しています。この要素は、関連する get メソッドを使用して新しいプロパティの値を文字列として出力します。  
+ 次のコード ビハインド例は、メソッドを処理するボタン<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベントを発生させます。 これらのメソッド呼び出しの結果を書き込む例を<xref:System.Windows.Controls.TextBlock>使用して関連する要素が文字列として新しいプロパティ値を出力する方法を取得します。  
   
  [!code-csharp[gridIssharedsizescopeProp#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml.cs#3)]
  [!code-vb[gridIssharedsizescopeProp#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/gridIssharedsizescopeProp/VisualBasic/Window1.xaml.vb#3)]  
   
-## 参照  
- <xref:System.Windows.Controls.Grid>   
- <xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.Grid>  
+ <xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A>  
  [パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)

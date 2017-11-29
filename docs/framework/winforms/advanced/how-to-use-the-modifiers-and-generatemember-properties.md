@@ -1,62 +1,64 @@
 ---
-title: "方法 : Modifiers プロパティおよび GenerateMember プロパティを使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Designer_GenerateMember"
-  - "Designer_Modifiers"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "基本フォーム"
-  - "フォームの継承"
-  - "GenerateMember プロパティ"
-  - "継承, フォーム"
-  - "継承フォーム"
-  - "継承フォーム, Windows フォーム"
-  - "Modifiers プロパティ"
-  - "Windows フォーム, 継承"
+title: "方法 : Modifiers プロパティおよび GenerateMember プロパティを使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+f1_keywords:
+- Designer_GenerateMember
+- Designer_Modifiers
+helpviewer_keywords:
+- base forms
+- inheritance [Windows Forms], forms
+- inherited forms [Windows Forms], Windows Forms
+- inherited forms
+- form inheritance
+- Windows Forms, inheritance
 ms.assetid: 3381a5e4-e1a3-44e2-a765-a0b758937b85
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bcb79525e557a66ed471bc38dcbdd444d75ba6b4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Modifiers プロパティおよび GenerateMember プロパティを使用する
-Windows フォームにコンポーネントを配置するときに、デザイン環境では `GenerateMember` プロパティと `Modifiers` プロパティを使用できます。  `GenerateMember` プロパティは、Windows フォーム デザイナーでコンポーネントにメンバー変数を生成するときに指定します。  `Modifiers` プロパティは、そのメンバー変数に割り当てるアクセス修飾子です。  `GenerateMember` プロパティの値が `false` の場合、`Modifiers` プロパティの値は無効です。  
+# <a name="how-to-use-the-modifiers-and-generatemember-properties"></a>方法 : Modifiers プロパティおよび GenerateMember プロパティを使用する
+2 つのプロパティが、デザイン環境で提供される Windows フォームでコンポーネントを配置する場合:`GenerateMember`と`Modifiers`です。 `GenerateMember`プロパティは、Windows フォーム デザイナーでコンポーネントのメンバー変数を生成するときを指定します。 `Modifiers`プロパティは、そのメンバー変数に割り当てられている、アクセス修飾子。 場合の値、`GenerateMember`プロパティは`false`の値、`Modifiers`プロパティは影響を与えません。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### コンポーネントがフォームのメンバーかどうかを指定するには  
+### <a name="to-specify-whether-a-component-is-a-member-of-the-form"></a>コンポーネントからのメンバーであるかどうかを指定するには  
   
-1.  Windows フォーム デザイナーで、フォームを開きます。  
+1.  Windows フォーム デザイナーでフォームを開きます。  
   
-2.  **ツールボックス**を開き、3 つの <xref:System.Windows.Forms.Button> コントロールをフォームに配置します。  
+2.  開く、**ツールボックス**、フォームで、3 つの配置と<xref:System.Windows.Forms.Button>コントロール。  
   
-3.  <xref:System.Windows.Forms.Button> コントロールの `GenerateMember` プロパティと `Modifiers` プロパティを、次の表に示した値に設定します。  
+3.  設定、`GenerateMember`と`Modifiers`の各プロパティ<xref:System.Windows.Forms.Button>次の表に従って管理します。  
   
-    |ボタン名|GenerateMember 値|Modifiers 値|  
-    |----------|----------------------|-----------------|  
+    |ボタン名|GenerateMember 値|修飾子の値|  
+    |-----------------|--------------------------|---------------------|  
     |`button1`|`true`|`private`|  
     |`button2`|`true`|`protected`|  
-    |`button3`|`false`|変更なし|  
+    |`button3`|`false`|変更はありません。|  
   
 4.  ソリューションをビルドします。  
   
-5.  **ソリューション エクスプローラー**の **\[すべてのファイルを表示\]** をクリックします。  
+5.  **ソリューション エクスプローラー**で、**[すべてのファイルを表示]** ボタンをクリックします。  
   
-6.  **\[Form1\]** ノードを開き、**コード エディター**で、**Form1.Designer.vb** ファイルまたは **Form1.Designer.cs** ファイルを開きます。  このファイルには、Windows フォーム デザイナーからコードが出力されます。  
+6.  開く、 **Form1**ノード、および、**コード エディター**、開かれている、 **Form1.Designer.vb**または**Form1.Designer.cs**ファイル。 このファイルには、Windows フォーム デザイナーによって生成されます。 コードが含まれています。  
   
-7.  3 つのボタンの宣言を探します。  `GenerateMember` プロパティと `Modifiers` プロパティの指定による違いを以下のコード例に示します。  
+7.  3 つのボタンの宣言を検索します。 次のコード例で指定されたの違いを示します、`GenerateMember`と`Modifiers`プロパティです。  
   
      [!code-csharp[System.Windows.Forms.GenerateMember#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GenerateMember/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.GenerateMember#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GenerateMember/VB/Form1.vb#3)]  
@@ -65,10 +67,10 @@ Windows フォームにコンポーネントを配置するときに、デザイ
      [!code-vb[System.Windows.Forms.GenerateMember#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GenerateMember/VB/Form1.vb#2)]  
   
 > [!NOTE]
->  Windows フォーム デザイナーは、<xref:System.Windows.Forms.Panel> などのコンテナー コントロールに既定で `private` \(Visual Basic では `Friend`\) 修飾子を割り当てます。  ベースの <xref:System.Windows.Forms.UserControl> または <xref:System.Windows.Forms.Form> にコンテナー コントロールが含まれていても、継承されたコントロールやフォームで新しい子を追加することはできません。  これを解決するには、ベースのコンテナー コントロールの修飾子を `protected` または `public` に変更します。  
+>  既定では、Windows フォーム デザイナーが割り当てられます、 `private` (`Friend` Visual basic) 修飾子などのコンテナー コントロールを<xref:System.Windows.Forms.Panel>です。 場合、ベース<xref:System.Windows.Forms.UserControl>または<xref:System.Windows.Forms.Form>コンテナー コントロールを持つ継承されたコントロールとフォームで新しい子を入力することはできません。 解決する基本のコンテナー コントロールの修飾子を変更するには`protected`または`public`です。  
   
-## 参照  
- <xref:System.Windows.Forms.Button>   
- [Windows フォームのビジュアルの継承](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)   
- [チュートリアル : ビジュアル継承のデモンストレーション](../../../../docs/framework/winforms/advanced/walkthrough-demonstrating-visual-inheritance.md)   
- [方法 : Windows フォームを継承する](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.Button>  
+ [Windows フォームのビジュアルの継承](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)  
+ [チュートリアル: ビジュアル継承のデモンストレーション](../../../../docs/framework/winforms/advanced/walkthrough-demonstrating-visual-inheritance.md)  
+ [方法: Windows フォームを継承する](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)

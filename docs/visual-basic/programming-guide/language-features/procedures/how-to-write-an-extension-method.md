@@ -1,47 +1,46 @@
 ---
-title: "How to: Write an Extension Method (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "extending data types"
-  - "writing extension methods"
-  - "extension methods [Visual Basic]"
+title: "方法: 拡張メソッドを作成する (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- extending data types [Visual Basic]
+- writing extension methods [Visual Basic]
+- extension methods [Visual Basic]
 ms.assetid: fb2739cc-958d-4ef4-a38b-214a74c93413
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 65cdabf59886e7457a327ee9cde968a6a73f2280
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Write an Extension Method (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-拡張メソッドを使用すると、既存のクラスにメソッドを追加できます。  拡張メソッドは、そのクラスのインスタンスの場合と同じ要領で呼び出すことができます。  
+# <a name="how-to-write-an-extension-method-visual-basic"></a>方法: 拡張メソッドを作成する (Visual Basic)
+拡張メソッドを使用すると、既存のクラスにメソッドを追加できます。 そのクラスのインスタンスの場合と同様、拡張メソッドを呼び出すことができます。  
   
-### 拡張メソッドを定義するには  
+### <a name="to-define-an-extension-method"></a>拡張メソッドを定義するには  
   
 1.  Visual Studio で新規または既存の Visual Basic アプリケーションを開きます。  
   
-2.  拡張メソッドを定義するファイルの先頭に、次のインポート ステートメントを記述します。  
+2.  拡張メソッドを定義するファイルの上部には、次の import ステートメントを含めます。  
   
     ```  
     Imports System.Runtime.CompilerServices  
     ```  
   
-3.  新規または既存のアプリケーションのモジュールで、拡張属性を指定してメソッド定義を開始します。  
+3.  新規または既存のアプリケーションでのモジュール内で拡張機能の属性を持つメソッドの定義を開始します。  
   
     ```  
     <Extension()>  
     ```  
   
-4.  通常の方法でメソッドを宣言します。ただし、最初のパラメーターの型は、拡張するデータ型に設定する必要があります。  
+4.  最初のパラメーターの型が拡張するデータ型にする必要がある点を除いて、通常の方法でメソッドを宣言します。  
   
     ```  
     <Extension()>   
@@ -50,10 +49,10 @@ caps.handback.revision: 11
     End Sub  
     ```  
   
-## 使用例  
- モジュール `StringExtensions` で拡張メソッドを宣言する例を次に示します。  2 番目のモジュール `Module1` では、`StringExtensions` をインポートして、メソッドを呼び出します。  拡張メソッドを呼び出すときには、拡張メソッドがスコープの中に入っていなければなりません。  拡張メソッド `PrintAndPunctuate` は、文字列インスタンスと、パラメーターとして渡す区切り記号の文字列を表示するメソッドによって、<xref:System.String> クラスを拡張しています。  
+## <a name="example"></a>例  
+ 次の例は、モジュールの拡張メソッドを宣言`StringExtensions`です。 2 番目のモジュール`Module1`、インポート`StringExtensions`メソッドを呼び出します。 拡張メソッドが呼び出されるとスコープ内にある必要があります。 拡張メソッド`PrintAndPunctuate`拡張、<xref:System.String>文字列インスタンスを表示するメソッドを持つクラスが続くでパラメーターとして送信される区切り記号の文字列を指定します。  
   
-```vb#  
+```vb  
 ' Declarations will typically be in a separate module.  
 Imports System.Runtime.CompilerServices  
   
@@ -67,7 +66,7 @@ Module StringExtensions
 End Module  
 ```  
   
-```vb#  
+```vb  
 ' Import the module that holds the extension method you want to use,   
 ' and call it.  
   
@@ -82,18 +81,17 @@ Module Module1
     End Sub  
   
 End Module  
-  
 ```  
   
- このメソッドでは 2 つのパラメーターを定義していますが、呼び出し時には 1 つしか指定していません。  メソッド定義の最初のパラメーター `aString` は、そのメソッドを呼び出す `String` のインスタンスである `example` にバインドされています。  この例の出力は次のようになります。  
+ メソッドが 2 つのパラメーターで定義されているし、1 つだけ備えたと呼ばれることに注意してください。 最初のパラメーターでは、 `aString`、メソッド定義にバインドされている`example`のインスタンス`String`メソッドを呼び出します。 この例の出力は次のとおりです。  
   
  `Hello?`  
   
  `Hello!!!!`  
   
-## 参照  
- <xref:System.Runtime.CompilerServices.ExtensionAttribute>   
- [拡張メソッド](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)   
- [Module Statement](../../../../visual-basic/language-reference/statements/module-statement.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Runtime.CompilerServices.ExtensionAttribute>  
+ [拡張メソッド](./extension-methods.md)  
+ [Module ステートメント](../../../../visual-basic/language-reference/statements/module-statement.md)  
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)  
+ [Visual Basic におけるスコープ](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

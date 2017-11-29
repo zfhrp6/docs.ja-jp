@@ -1,38 +1,41 @@
 ---
-title: "方法 : ユーザー イベントによってメディアの再生をトリガーする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "同期 (イベントとメディアの再生を)"
-  - "イベントと同期するメディアの再生"
-  - "イベントと再生を同期するメディア"
-  - "イベントによってマルチ メディア、同期中のメディアの再生"
+title: "方法 : ユーザー イベントによってメディアの再生をトリガーする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- synchronizing media playback with events [WPF]
+- playback of media [WPF], synchronizing with events
+- media [WPF], synchronizing playback with events
+- multimedia [WPF], synchronizing media playback with events
 ms.assetid: c4dbe632-6e7f-4d7f-9df5-98737a758bc3
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 39d50fc23be4a5cdf4df90cd6fa96466acc738aa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ユーザー イベントによってメディアの再生をトリガーする
-この例では、イベントとメディアの再生を同期する方法を示します。  
+# <a name="how-to-trigger-media-playback-with-a-user-event"></a>方法 : ユーザー イベントによってメディアの再生をトリガーする
+この例では、メディアの再生とイベントを同期する方法を示します。  
   
 ## <a name="example"></a>例  
- 次の例で、 <xref:System.Windows.Controls.MediaElement>コントロールと<xref:System.Windows.Media.MediaTimeline> 、ユーザーがクリックしたときに発生するサウンドを再生するクラス、<xref:System.Windows.Controls.Button>します。  
+ 次の例では、<xref:System.Windows.Controls.MediaElement>コントロールと<xref:System.Windows.Media.MediaTimeline>、ユーザーがクリックしたときに発生するサウンドを再生するクラス、<xref:System.Windows.Controls.Button>です。  
   
- [!code-xml[MediaGallery_snippet#SoundFromUserEventExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MediaGallery_snippet/CSharp/SoundFromUserEventExample.xaml#soundfromusereventexamplewholepage)]  
+ [!code-xaml[MediaGallery_snippet#SoundFromUserEventExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MediaGallery_snippet/CSharp/SoundFromUserEventExample.xaml#soundfromusereventexamplewholepage)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Windows.Controls.MediaElement>   
- <xref:System.Windows.Media.MediaTimeline>   
- <xref:System.Windows.EventTrigger.RoutedEvent%2A>   
- <xref:System.Windows.Media.Animation.Storyboard>   
- [操作方法に関するトピック](../../../../docs/framework/wpf/graphics-multimedia/audio-and-video-how-to-topics.md)   
- [グラフィックスとマルチ メディア](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+ <xref:System.Windows.Controls.MediaElement>  
+ <xref:System.Windows.Media.MediaTimeline>  
+ <xref:System.Windows.EventTrigger.RoutedEvent%2A>  
+ <xref:System.Windows.Media.Animation.Storyboard>  
+ [方法トピック](../../../../docs/framework/wpf/graphics-multimedia/audio-and-video-how-to-topics.md)  
+ [グラフィックスとマルチメディア](../../../../docs/framework/wpf/graphics-multimedia/index.md)

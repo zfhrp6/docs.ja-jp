@@ -1,59 +1,61 @@
 ---
-title: "How to: Change the Layout of a DataRepeater Control (Visual Studio) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "DataRepeater, changing layout style"
-  - "DataRepeater, changing orientation"
+title: "方法 : DataRepeater コントロールのレイアウトを変更する (Visual Studio)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataRepeater, changing layout style
+- DataRepeater, changing orientation
 ms.assetid: 33aa8fd5-ac63-4bd0-ba13-8c2ab17e7824
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 94c5f8f5e83578ca0a82b479ef5ef359738df5f1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Change the Layout of a DataRepeater Control (Visual Studio)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールは、垂直方向 \(項目を縦にスクロールする\) または水平方向 \(項目を横にスクロールする\) に表示できます。  この方向は、デザイン時にも実行時にも、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A> プロパティを変更することによって変更できます。  実行時に <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A> プロパティを変更する場合は、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> のサイズと子コントロールの位置も変更することが必要になる場合があります。  
+# <a name="how-to-change-the-layout-of-a-datarepeater-control-visual-studio"></a>方法 : DataRepeater コントロールのレイアウトを変更する (Visual Studio)
+<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロールを垂直方向 (垂直方向にスクロールを項目) または水平方向 (水平方向にスクロールを項目) のいずれかで表示されることができますの向きです。 デザイン時または実行時に印刷の向きを変更するには変更することによって、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A>プロパティです。 変更した場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A>実行時にプロパティをすることもサイズを変更する、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A>および子コントロールを再配置します。  
   
 > [!NOTE]
->  実行時に <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> 上のコントロールの位置を変更する場合、コントロールの位置を変更するコード ブロックの先頭と末尾で、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.BeginResetItemTemplate%2A> メソッドおよび <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.EndResetItemTemplate%2A> メソッドを呼び出す必要があります。  
+>  上のコントロールの位置を変更する場合、 <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> 、実行時に呼び出す必要があります、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.BeginResetItemTemplate%2A>と<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.EndResetItemTemplate%2A>メソッドの先頭と末尾のコントロールが再配置されるコード ブロックにします。  
   
-### デザイン時にレイアウトを変更するには  
+### <a name="to-change-the-layout-at-design-time"></a>デザイン時レイアウトを変更するには  
   
-1.  Windows フォーム デザイナーで、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールを選択します。  
+1.  Windows フォーム デザイナーで、選択、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。  
   
     > [!NOTE]
-    >  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールの上部にある <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> 領域ではなく、下部の領域でコントロールの外枠をクリックして選択する必要があります。  
+    >  外側の境界線を選択する必要があります、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>上ではなく、コントロールの下の領域内をクリックするコントロール<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A>領域。  
   
-2.  \[プロパティ\] ウィンドウで、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A> プロパティを <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterLayoutStyles> または <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterLayoutStyles> に設定します。  
+2.  [プロパティ] ウィンドウで、設定、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A>プロパティを<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterLayoutStyles.Vertical>または<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterLayoutStyles.Horizontal>です。  
   
-### 実行時にレイアウトを変更するには  
+### <a name="to-change-the-layout-at-run-time"></a>実行時にレイアウトを変更するには  
   
-1.  ボタンまたはメニューの `Click` イベント ハンドラーに次のコードを追加します。  
+1.  次のコードを追加するボタンまたはメニュー`Click`イベントのハンドラー。  
   
-     [!code-cs[VbPowerPacksDataRepeaterLayout#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-change-the-layout-of-a-datarepeater-control-visual-studio_1.cs)]
+     [!code-csharp[VbPowerPacksDataRepeaterLayout#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-change-the-layout-of-a-datarepeater-control-visual-studio_1.cs)]
      [!code-vb[VbPowerPacksDataRepeaterLayout#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-change-the-layout-of-a-datarepeater-control-visual-studio_1.vb)]  
   
-2.  多くの場合、例のセクションに示されているようなコードを追加して、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> のサイズおよびコントロールの位置を新しい方向に合わせて変更する必要があります。  
+2.  サイズを変更する例」のセクションで示すようなコードを追加する必要はほとんどの場合、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A>および新しい向きに合わせてコントロールを再配置します。  
   
-## 使用例  
- イベント ハンドラー内で <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyleChanged> イベントに応答する方法を次の例に示します。  この例では、フォームに `DataRepeater1` という名前の <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールが配置され、そのコントロールの <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A> に `TextBox1` および `TextBox2` という名前の 2 つの <xref:System.Windows.Forms.TextBox> コントロールが配置されている必要があります。  
+## <a name="example"></a>例  
+ 次の例に応答する方法を示しています、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyleChanged>イベント ハンドラーでイベント。 この例では、ある必要があります、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>という名前のコントロール`DataRepeater1`フォームでその<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemTemplate%2A>2 つが含まれて<xref:System.Windows.Forms.TextBox>という名前のコントロール`TextBox1`と`TextBox2`です。  
   
- [!code-cs[VbPowerPacksDataRepeaterLayout#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-change-the-layout-of-a-datarepeater-control-visual-studio_2.cs)]
+ [!code-csharp[VbPowerPacksDataRepeaterLayout#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-change-the-layout-of-a-datarepeater-control-visual-studio_2.cs)]
  [!code-vb[VbPowerPacksDataRepeaterLayout#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-change-the-layout-of-a-datarepeater-control-visual-studio_2.vb)]  
   
-## 参照  
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>   
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A>   
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.BeginResetItemTemplate%2A>   
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.EndResetItemTemplate%2A>   
- [Introduction to the DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)   
- [Troubleshooting the DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)   
- [How to: Change the Appearance of a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>  
+ <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.LayoutStyle%2A>  
+ <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.BeginResetItemTemplate%2A>  
+ <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.EndResetItemTemplate%2A>  
+ [DataRepeater コントロールの概要](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)  
+ [DataRepeater コントロールのトラブルシューティング](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)  
+ [方法: DataRepeater コントロールの外観を変更する](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio.md)

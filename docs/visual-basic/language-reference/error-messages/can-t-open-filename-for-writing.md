@@ -1,39 +1,37 @@
 ---
-title: "Can&#39;t open &#39;&lt;filename&gt;&#39; for writing | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc2012"
-  - "bc2012"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC2012"
+title: "&#39; 開いている t &#39;&lt;filename&gt;&#39;書き込み用です。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc2012
+- bc2012
+helpviewer_keywords: BC2012
 ms.assetid: 73270fe4-a638-42c7-be21-5e156e2b18f6
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 338ef8e7374deabe80b084ba016b7517bd3c403c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Can&#39;t open &#39;&lt;filename&gt;&#39; for writing
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-指定されたファイルを書き込むために開くことができません。おそらくファイルが既に開いているためと思われます。  
+# <a name="can39t-open-39ltfilenamegt39-for-writing"></a>&#39; 開いている t &#39;&lt;filename&gt;&#39;書き込み用です。
+作成するため、おそらく既に開かれているために、指定したファイルを開くことができません。  
   
- **Error ID:** BC2012  
+ **エラー ID:** BC2012  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  ファイルを一度閉じてから開いてください。  
+1.  ファイルを閉じて、再度開きます。  
   
 2.  ファイルのアクセス許可を確認してください。  
   
-## 参照  
- <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>   
- <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A>   
- [Writing to Files](../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>  
+ <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A>  
+ [ファイルへの書き込み](../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)

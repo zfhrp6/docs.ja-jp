@@ -1,39 +1,39 @@
 ---
-title: "LinkLabel コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "LinkLabel"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Label コントロール [Windows フォーム], Label コントロールの概要"
-  - "LinkLabel コントロール [Windows フォーム], LinkLabel コントロールの概要"
-  - "リンク, LinkLabel コントロール"
+title: "LinkLabel コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: LinkLabel
+helpviewer_keywords:
+- links [Windows Forms], LinkLabel control
+- Label control [Windows Forms], about Label control
+- LinkLabel control [Windows Forms], about LinkLabel control
 ms.assetid: 9e248549-10ca-43a3-bb5e-60f583d369f1
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0cb01c0fc5503a5bf16e1f191d87ae90907ec816
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# LinkLabel コントロールの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.LinkLabel> コントロールを使用すると、Web スタイルのリンクを Windows フォーム アプリケーションに追加できます。  <xref:System.Windows.Forms.LinkLabel> コントロールは、<xref:System.Windows.Forms.Label> コントロールを使用できるすべての項目に使用できます。テキストの一部をファイル、フォルダー、または Web ページへのリンクとして設定することもできます。  
+# <a name="linklabel-control-overview-windows-forms"></a>LinkLabel コントロールの概要 (Windows フォーム)
+Windows フォーム<xref:System.Windows.Forms.LinkLabel>コントロールでは、Windows フォーム アプリケーションに Web スタイルのリンクを追加することができます。 使用することができます、<xref:System.Windows.Forms.LinkLabel>使用できるすべてのコントロール、<xref:System.Windows.Forms.Label>の制御。 設定することもできる、テキストの一部としてファイル、フォルダー、または Web ページへのリンク。  
   
-## LinkLabel コントロールで可能なこと  
- <xref:System.Windows.Forms.Label> コントロールには、<xref:System.Windows.Forms.LinkLabel> コントロールのすべてのプロパティ、メソッド、およびイベントに加えて、ハイパーリンクとリンクの色を設定するプロパティがあります。  <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> プロパティでは、リンクをアクティブにするテキストの領域を設定します。  <xref:System.Windows.Forms.LinkLabel.LinkColor%2A> プロパティ、<xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A> プロパティ、および <xref:System.Windows.Forms.LinkLabel.ActiveLinkColor%2A> プロパティでは、リンクの色を設定します。  <xref:System.Windows.Forms.LinkLabel.LinkClicked> イベントでは、リンク テキストを選択したときの動作を指定します。  
+## <a name="what-you-can-do-with-the-linklabel-control"></a>LinkLabel コントロールで行うことができます。  
+ すべてのプロパティ、メソッド、およびのイベントだけでなく、<xref:System.Windows.Forms.Label>コントロール、<xref:System.Windows.Forms.LinkLabel>コントロール ハイパーリンクおよびリンクの色のプロパティがあります。 <xref:System.Windows.Forms.LinkLabel.LinkArea%2A>プロパティは、リンクをアクティブにするテキストの領域を設定します。 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、 <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>、および<xref:System.Windows.Forms.LinkLabel.ActiveLinkColor%2A>プロパティは、リンクの色を設定します。 <xref:System.Windows.Forms.LinkLabel.LinkClicked>イベントは、このリンク テキストが選択されているときの動作を決定します。  
   
- <xref:System.Windows.Forms.LinkLabel> コントロールの最も単純な用途は <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> プロパティを使用した単一リンクの表示ですが、<xref:System.Windows.Forms.LinkLabel.Links%2A> プロパティを使用することによって複数のハイパーリンクを表示することもできます。  <xref:System.Windows.Forms.LinkLabel.Links%2A> プロパティを使用すると、リンクのコレクションにアクセスできます。  また、各 <xref:System.Windows.Forms.LinkLabel.Link> オブジェクトの <xref:System.Windows.Forms.LinkLabel.Link.LinkData%2A> プロパティ内にデータを指定することもできます。  <xref:System.Windows.Forms.LinkLabel.Link.LinkData%2A> プロパティの値は、表示するファイルの場所や Web サイトのアドレスを格納するために使用できます。  
+ 最も簡単な使い方、<xref:System.Windows.Forms.LinkLabel>コントロールを使用して、1 つのリンクを表示する、<xref:System.Windows.Forms.LinkLabel.LinkArea%2A>プロパティもハイパーリンクを表示できる複数を使用して、<xref:System.Windows.Forms.LinkLabel.Links%2A>プロパティです。 <xref:System.Windows.Forms.LinkLabel.Links%2A>プロパティでは、リンクのコレクションにアクセスすることができます。 内のデータを指定することも、<xref:System.Windows.Forms.LinkLabel.Link.LinkData%2A>プロパティをそれぞれ個別<xref:System.Windows.Forms.LinkLabel.Link>オブジェクト。 値、<xref:System.Windows.Forms.LinkLabel.Link.LinkData%2A>を表示するファイルの場所または Web サイトのアドレスを格納するプロパティを使用できます。  
   
-## 参照  
- <xref:System.Windows.Forms.LinkLabel>   
- [Label コントロールの概要](../../../../docs/framework/winforms/controls/label-control-overview-windows-forms.md)   
- [方法 : Windows フォーム LinkLabel コントロールでオブジェクトまたは Web ページにリンクする](../../../../docs/framework/winforms/controls/link-to-an-object-or-web-page-with-wf-linklabel-control.md)   
- [方法 : Windows フォーム LinkLabel コントロールの表示形式を変更する](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-linklabel-control.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.LinkLabel>  
+ [Label コントロールの概要](../../../../docs/framework/winforms/controls/label-control-overview-windows-forms.md)  
+ [方法: Windows フォーム LinkLabel コントロールでオブジェクトまたは Web ページにリンクする](../../../../docs/framework/winforms/controls/link-to-an-object-or-web-page-with-wf-linklabel-control.md)  
+ [方法: Windows フォーム LinkLabel コントロールの表示形式を変更する](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-linklabel-control.md)

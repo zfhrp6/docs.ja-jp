@@ -1,62 +1,63 @@
 ---
-title: "カスタム レンダリング インク | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, DynamicRenderer"
-  - "クラス, InkCanvas"
-  - "クラス, ストローク"
-  - "カスタム レンダリング インク"
-  - "DynamicRenderer クラス"
-  - "インク, カスタム レンダリング"
-  - "InkCanvas クラス"
-  - "Stroke クラス"
+title: "カスタム レンダリング インク"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- custom-rendering ink
+- ink [WPF], custom-rendering
+- classes [WPF], InkCanvas
 ms.assetid: 65c978a7-0ee0-454f-ac7f-b1bd2efecac5
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 90d2ab68f76bef8d8f437a7dd6096011889303fa
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# カスタム レンダリング インク
-ストロークの <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> プロパティを使用すると、ストロークのサイズ、色、形状などの外観を指定できますが、<xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> で可能な指定以上の外観にカスタマイズする必要が生じる場合もあります。  インクの外観は、エアブラシや油絵の具などのさまざまな効果の外観でレンダリングすることでカスタマイズできます。  [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] では、カスタムの <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> オブジェクトと <xref:System.Windows.Ink.Stroke> オブジェクトを実装することで、インクのカスタム レンダリングを実行できます。  
+# <a name="custom-rendering-ink"></a>カスタム レンダリング インク
+<xref:System.Windows.Ink.Stroke.DrawingAttributes%2A>ストロークのプロパティでは、そのサイズ、色、および図形など、線の外観を指定することができますが、機能の外観をカスタマイズすることもあります<xref:System.Windows.Ink.Stroke.DrawingAttributes%2A>を許可します。 エアブラシ、油絵、およびその他の多くの効果の外観でレンダリングすることで、インクの外観をカスタマイズしたい場合もあります。 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]により、カスタムを実装することでインクをレンダリングすると、カスタム<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>と<xref:System.Windows.Ink.Stroke>オブジェクト。  
   
  このトピックは、次の内容で構成されています。  
   
 -   [アーキテクチャ](#Architecture)  
   
--   [動的レンダラーの実装](#ImplementingADynamicRenderer)  
+-   [動的なレンダラーの実装](#ImplementingADynamicRenderer)  
   
--   [Implementing a Custom Stroke](#ImplementingACustomStroke)  
+-   [カスタム ストロークの実装](#ImplementingCustomStrokes)  
   
 -   [カスタム InkCanvas の実装](#ImplementingACustomInkCanvas)  
   
 -   [まとめ](#Conclusion)  
   
 <a name="Architecture"></a>   
-## アーキテクチャ  
- インクのレンダリングは 2 回行われます。ユーザーがインクをインク サーフェイスに書き込んだときと、ストロークがインク対応サーフェイスに追加された後です。  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> はユーザーがタブレット ペンをデジタイザー上で動かしたときにインクをレンダリングし、<xref:System.Windows.Ink.Stroke> は要素に追加されたときにレンダリングされます。  
+## <a name="architecture"></a>アーキテクチャ  
+ インク レンダリングは 2 回発生します。ユーザーがインクを手描き入力サーフェイスに書き込む時と、ストロークが手書き対応のサーフェスに追加された後です。 <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> 、ユーザーは、デジタイザー上でタブレット ペンを動かすと、インクをレンダリングおよび<xref:System.Windows.Ink.Stroke>要素に追加すること自体を表示します。  
   
- インクを動的にレンダリングするときに実装するクラスは 3 つあります。  
+ インクを動的にレンダリングするときに実装する 3 つのクラスがあります。  
   
-1.  **DynamicRenderer** : <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> から派生するクラスを実装します。  このクラスは、ストロークを描画されたとおりにレンダリングする特殊な <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> です。  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> は個別のスレッドでレンダリングを実行するため、アプリケーションのユーザー インターフェイス \(UI\) スレッドがブロックされても、インクを収集するためにインク サーフェイスが表示されます。  スレッド処理モデルの詳細については、「[インク スレッド モデル](../../../../docs/framework/wpf/advanced/the-ink-threading-model.md)」を参照してください。  ストロークの動的レンダリングをカスタマイズするには、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw%2A> メソッドをオーバーライドします。  
+1.  **DynamicRenderer**: から派生するクラスを実装する<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>です。 このクラスは、特殊な<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>表示するための線が描画されるとします。 <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>アプリケーション ユーザー インターフェイス (UI) スレッドがブロックされている場合でも、インクを収集する場合は、インクの画面が表示されるように、別のスレッドでレンダリングがします。 スレッド処理モデルの詳細については、「[インク スレッド モデル](../../../../docs/framework/wpf/advanced/the-ink-threading-model.md)」を参照してください。 ストロークを動的に表示をカスタマイズするには、上書き、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw%2A>メソッドです。  
   
-2.  **Stroke** : <xref:System.Windows.Ink.Stroke> から派生するクラスを実装します。  このクラスは、<xref:System.Windows.Input.StylusPoint> データが <xref:System.Windows.Ink.Stroke> オブジェクトに変換された後に、そのデータの静的レンダリングを実行します。  ストロークの静的レンダリングが動的レンダリングと一貫するようにするには、<xref:System.Windows.Ink.Stroke.DrawCore%2A> メソッドをオーバーライドします。  
+2.  **ストローク**: から派生するクラスを実装する<xref:System.Windows.Ink.Stroke>です。 静的表示するため、このクラスは、<xref:System.Windows.Input.StylusPoint>データに変換した後、<xref:System.Windows.Ink.Stroke>オブジェクト。 上書き、<xref:System.Windows.Ink.Stroke.DrawCore%2A>ストロークの静的なレンダリングできることを確認するメソッドは動的なレンダリングと一致します。  
   
-3.  **InkCanvas** : <xref:System.Windows.Controls.InkCanvas> から派生するクラスを実装します。  カスタマイズされた <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> を <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A> プロパティに割り当てます。  <xref:System.Windows.Controls.InkCanvas.OnStrokeCollected%2A> メソッドをオーバーライドし、カスタム ストロークを <xref:System.Windows.Controls.InkCanvas.Strokes%2A> プロパティに追加します。  これにより、インクの外観の一貫性が確保されます。  
+3.  **InkCanvas:**から派生するクラスを実装する<xref:System.Windows.Controls.InkCanvas>です。 カスタマイズされた割り当てる<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>を<xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A>プロパティです。 上書き、<xref:System.Windows.Controls.InkCanvas.OnStrokeCollected%2A>メソッドにカスタムの線を追加し、<xref:System.Windows.Controls.InkCanvas.Strokes%2A>プロパティです。 これにより、インクの外観に一貫性を確保します。  
   
 <a name="ImplementingADynamicRenderer"></a>   
-## 動的レンダラーの実装  
- <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> クラスは [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の標準クラスですが、特殊なレンダリングを実行するには、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> から派生したカスタマイズ動的レンダラーを作成し、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw%2A> メソッドをオーバーライドする必要があります。  
+## <a name="implementing-a-dynamic-renderer"></a>動的なレンダラーの実装  
+ <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>クラスは、標準の一部の[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、以上を実行するには、レンダリング特化したから派生したカスタマイズされた動的レンダラーを作成する必要があります、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>をオーバーライドし、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw%2A>メソッドです。  
   
- 線形グラデーション ブラシ効果を使用してインクを描画するカスタマイズされた <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> の例を次に示します。  
+ 次の例で、カスタマイズされた<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>線形グラデーション ブラシ効果のあるインクを描画します。  
   
  [!code-csharp[AdvancedInkTopicsSamples#19](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#19)]
  [!code-vb[AdvancedInkTopicsSamples#19](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#19)]  
@@ -64,14 +65,14 @@ caps.handback.revision: 8
 [!code-vb[AdvancedInkTopicsSamples#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#1)]  
   
 <a name="ImplementingCustomStrokes"></a>   
-## カスタム ストロークの実装  
- <xref:System.Windows.Ink.Stroke> から派生するクラスを実装します。  このクラスは、<xref:System.Windows.Input.StylusPoint> データが <xref:System.Windows.Ink.Stroke> オブジェクトに変換された後に、そのデータのレンダリングを実行します。  実際の描画を実行するには、<xref:System.Windows.Ink.Stroke.DrawCore%2A> クラスをオーバーライドします。  
+## <a name="implementing-custom-strokes"></a>カスタム ストロークの実装  
+ <xref:System.Windows.Ink.Stroke> から派生するクラスを実装します。 このクラスは、レンダリング<xref:System.Windows.Input.StylusPoint>データに変換した後、<xref:System.Windows.Ink.Stroke>オブジェクト。 上書き、<xref:System.Windows.Ink.Stroke.DrawCore%2A>実際の描画を実行するクラス。  
   
- <xref:System.Windows.Ink.Stroke.AddPropertyData%2A> メソッドを使用して、Stroke クラスにカスタム データを格納することもできます。  このデータは、永続化される場合、ストローク データと共に格納されます。  
+ ストローク クラスを使用してカスタム データを格納も、<xref:System.Windows.Ink.Stroke.AddPropertyData%2A>メソッドです。 このデータは、保持されるときにストローク データと共に格納されます。  
   
- <xref:System.Windows.Ink.Stroke> クラスは、ヒット テストを実行することもできます。  また、現在のクラスで <xref:System.Windows.Ink.Stroke.HitTest%2A> メソッドをオーバーライドして、独自のヒット テスト アルゴリズムを実装することもできます。  
+ <xref:System.Windows.Ink.Stroke>クラスは、ヒット テストも実行できます。 独自のヒットをオーバーライドすることでアルゴリズムをテストを実装することも、<xref:System.Windows.Ink.Stroke.HitTest%2A>現在のクラスのメソッドです。  
   
- 次の C\# のコードは、<xref:System.Windows.Input.StylusPoint> データを 3\-D ストロークとしてレンダリングするカスタムの <xref:System.Windows.Ink.Stroke> クラスを示しています。  
+ 次の c# コードをカスタムに示します<xref:System.Windows.Ink.Stroke>レンダリング クラス<xref:System.Windows.Input.StylusPoint>3-D ストロークとしてデータ。  
   
  [!code-csharp[AdvancedInkTopicsSamples#19](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#19)]
  [!code-vb[AdvancedInkTopicsSamples#19](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#19)]  
@@ -79,26 +80,26 @@ caps.handback.revision: 8
 [!code-vb[AdvancedInkTopicsSamples#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#2)]  
   
 <a name="ImplementingACustomInkCanvas"></a>   
-## カスタム InkCanvas の実装  
- カスタマイズされた <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> およびストロークの最も簡単な使用方法は、<xref:System.Windows.Controls.InkCanvas> から派生するクラスを実装して使用することです。  <xref:System.Windows.Controls.InkCanvas> には、ユーザーがストロークを描画しているときにそのストロークをどのようにレンダリングするかを指定する <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A> プロパティがあります。  
+## <a name="implementing-a-custom-inkcanvas"></a>カスタム InkCanvas の実装  
+ カスタマイズしたを使用する最も簡単な方法<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>ストロークから派生するクラスを実装して<xref:System.Windows.Controls.InkCanvas>し、これらのクラスを使用します。 <xref:System.Windows.Controls.InkCanvas>が、<xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A>ユーザーが描画するときに、線がどのように表示されるかを指定するプロパティです。  
   
- <xref:System.Windows.Controls.InkCanvas> でストロークのカスタム レンダリングを行うには、次の操作を実行します。  
+ カスタム上のストロークの表示、<xref:System.Windows.Controls.InkCanvas>次の操作します。  
   
--   <xref:System.Windows.Controls.InkCanvas> から派生するクラスを作成します。  
+-   派生するクラスを作成、<xref:System.Windows.Controls.InkCanvas>です。  
   
--   カスタマイズされた <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> を <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A?displayProperty=fullName> プロパティに割り当てます。  
+-   カスタマイズした割り当てる<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>を<xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A?displayProperty=nameWithType>プロパティです。  
   
--   <xref:System.Windows.Controls.InkCanvas.OnStrokeCollected%2A> メソッドをオーバーライドします。  このメソッドで、InkCanvas に追加された元のストロークを削除します。  次に、カスタム ストロークを作成して <xref:System.Windows.Controls.InkCanvas.Strokes%2A> プロパティに追加し、カスタム ストロークを含む新しい <xref:System.Windows.Controls.InkCanvasStrokeCollectedEventArgs> を使用して基本クラスを呼び出します。  
+-   <xref:System.Windows.Controls.InkCanvas.OnStrokeCollected%2A> メソッドをオーバーライドします。 このメソッドで、InkCanvas に追加された元のストロークを削除します。 カスタム線を作成し、それを追加、<xref:System.Windows.Controls.InkCanvas.Strokes%2A>プロパティ、および呼び出し、基本クラスを新しい<xref:System.Windows.Controls.InkCanvasStrokeCollectedEventArgs>カスタム線を格納しています。  
   
- 次の C\# のコードは、カスタマイズされた <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> を使用してカスタム ストロークを収集するカスタムの <xref:System.Windows.Controls.InkCanvas> クラスを示しています。  
+ 次の c# コードに示しますカスタム<xref:System.Windows.Controls.InkCanvas>を使用して、カスタマイズされたクラス<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>し、カスタムのストロークを収集します。  
   
  [!code-csharp[AdvancedInkTopicsSamples#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/Window1.xaml.cs#9)]  
   
- <xref:System.Windows.Controls.InkCanvas> には、複数の <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> を追加できます。  複数の <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> オブジェクトを <xref:System.Windows.Controls.InkCanvas> に追加するには、それらのオブジェクトを <xref:System.Windows.UIElement.StylusPlugIns%2A> プロパティに追加します。  
+ <xref:System.Windows.Controls.InkCanvas> 1 つ以上の<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>します。 複数を追加する<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>オブジェクトを<xref:System.Windows.Controls.InkCanvas>に追加することによって、<xref:System.Windows.UIElement.StylusPlugIns%2A>プロパティです。  
   
 <a name="Conclusion"></a>   
-## まとめ  
- インクの外観をカスタマイズするには、独自の <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>、<xref:System.Windows.Ink.Stroke>、および <xref:System.Windows.Controls.InkCanvas> クラスを派生させます。  これらのクラスを合わせて、ユーザーがストロークを描画したときとそのストロークが収集された後のストロークの外観の一貫性を確保することができます。  
+## <a name="conclusion"></a>まとめ  
+ インクの外観をカスタマイズするには、独自の派生によって<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>、 <xref:System.Windows.Ink.Stroke>、および<xref:System.Windows.Controls.InkCanvas>クラスです。 これらのクラスを合わせて、ユーザーがストロークを描画し、その後ストロークが収集される際に、ストロークの外観を一致させます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [高度なインク処理](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)

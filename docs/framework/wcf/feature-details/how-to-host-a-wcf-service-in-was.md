@@ -1,30 +1,33 @@
 ---
-title: "方法 : WAS で WCF サービスをホストする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : WAS で WCF サービスをホストする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-caps.latest.revision: 25
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3069dfbde9fedc0a0c89d8f55ba1adcc852d5c24
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : WAS で WCF サービスをホストする
+# <a name="how-to-host-a-wcf-service-in-was"></a>方法 : WAS で WCF サービスをホストする
 ここでは、Windows プロセス アクティブ化サービス (WAS) でホストされる [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを作成するために必要な基本手順について説明します。 WAS は、HTTP 以外のトランスポート プロトコルで動作するインターネット インフォメーション サービス (IIS) 機能を一般化した新しいプロセス アクティブ化サービスです。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、リスナー アダプター インターフェイスを使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされる HTTP 以外のプロトコル (TCP、名前付きパイプ、メッセージ キューなど) を介して受信されるアクティブ化要求を伝達します。  
   
- このホスト オプションでは、WAS アクティブ化コンポーネントのインストールと構成が正しく行われている必要がありますが、アプリケーションの一部としてホスト コードを記述する必要はありません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]インストールと、WAS の構成を参照してください。[方法: WCF アクティブ化コンポーネントの構成のインストールおよび](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)です。  
+ このホスト オプションでは、WAS アクティブ化コンポーネントのインストールと構成が正しく行われている必要がありますが、アプリケーションの一部としてホスト コードを記述する必要はありません。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]インストールと構成を参照してください。[する方法: WCF アクティブ化コンポーネントの構成のインストールと](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)です。  
   
 > [!WARNING]
 >  Web サーバーの要求処理パイプラインをクラシック モードに設定すると、WAS のアクティブ化がサポートされません。 WAS のアクティブ化を使用する場合は、Web サーバーの要求処理パイプラインを統合モードに設定する必要があります。  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが WAS でホストされている場合、標準バインディングは通常の方法で使用されます。 ただしを使用する場合、 <xref:System.ServiceModel.NetTcpBinding>と<xref:System.ServiceModel.NetNamedPipeBinding> WAS でホストされるサービスを構成する、制限を遵守する必要があります。 つまり、異なるエンドポイントが同じトランスポートを使用する場合、次の&7; つのプロパティでバインディング設定が一致する必要があります。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが WAS でホストされている場合、標準バインディングは通常の方法で使用されます。 ただし、WAS でホストされるサービスを <xref:System.ServiceModel.NetTcpBinding> や <xref:System.ServiceModel.NetNamedPipeBinding> を使用して構成する場合は、制限を遵守する必要があります。 つまり、異なるエンドポイントが同じトランスポートを使用する場合、次の 7 つのプロパティでバインディング設定が一致する必要があります。  
   
 -   ConnectionBufferSize  
   
@@ -40,9 +43,9 @@ caps.handback.revision: 25
   
 -   ConnectionPoolSettings.MaxOutboundConnectionsPerEndpoint  
   
- それ以外の場合、まず初期化されているエンドポイント常に、これらのプロパティの値を決定し、後で追加したエンドポイントをスローする<xref:System.ServiceModel.ServiceActivationException>これらの設定と一致しない場合。  
+ バインディングの設定が一致しない場合、これらのプロパティの値は常に最初に初期化されたエンドポイントによって決定されるため、後で追加されるエンドポイントは <xref:System.ServiceModel.ServiceActivationException> をスローします。  
   
- この例のソースのコピーを次を参照してください。 [TCP のアクティブ化](../../../../docs/framework/wcf/samples/tcp-activation.md)します。  
+ この例の元のコピーを次を参照してください。 [TCP アクティベーション](../../../../docs/framework/wcf/samples/tcp-activation.md)です。  
   
 ### <a name="to-create-a-basic-service-hosted-by-was"></a>WAS でホストされる基本サービスを作成するには  
   
@@ -54,7 +57,7 @@ caps.handback.revision: 25
   
      [!code-csharp[C_HowTo_HostInWAS#1122](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/cs/service.cs#1122)]  
   
-3.  定義する Web.config ファイルを作成、 <xref:System.ServiceModel.NetTcpBinding>で使用するバインディングを`CalculatorService`エンドポイント。  
+3.  <xref:System.ServiceModel.NetTcpBinding> エンドポイントによって使用される `CalculatorService` バインディングを定義する Web.config ファイルを作成します。  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -81,7 +84,7 @@ caps.handback.revision: 25
   
 ### <a name="to-create-a-client-to-use-the-service"></a>サービスを使用するクライアントを作成するには  
   
-1.  使用[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)を使用してサービス メタデータからコードを生成します。  
+1.  使用して[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービス メタデータからコードを生成するためのコマンドラインからです。  
   
     ```  
     Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>   
@@ -95,9 +98,9 @@ caps.handback.revision: 25
   
      [!code-csharp[C_HowTo_HostInWAS#1222](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/cs/client.cs#1222)]  
   
-4.  使用するクライアントの構成、 <xref:System.ServiceModel.NetTcpBinding>も Svcutil.exe によって生成されます。 Visual Studio を使用する場合は、このファイルの名前は App.config ファイル内で指定する必要があります。  
+4.  <xref:System.ServiceModel.NetTcpBinding> を使用するクライアントの構成は、Svcutil.exe で生成することもできます。 Visual Studio を使用する場合は、このファイルの名前は App.config ファイル内で指定する必要があります。  
   
-     <!-- TODO: review snippet reference [!code[C_HowTo_HostInWAS#2211](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_hostinwas/common/app.config#2211)]  -->  
+     [!code-xml[C_HowTo_HostInWAS#2211](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/common/app.config#2211)]   
   
 5.  アプリケーションで `ClientCalculator` のインスタンスを作成し、サービス操作を呼び出します。  
   
@@ -106,5 +109,5 @@ caps.handback.revision: 25
 6.  クライアントをコンパイルして実行します。  
   
 ## <a name="see-also"></a>関連項目  
- [TCP のアクティブ化](../../../../docs/framework/wcf/samples/tcp-activation.md)   
- [Windows Server App Fabric の機能をホストしています。](http://go.microsoft.com/fwlink/?LinkId=201276)
+ [TCP のアクティブ化](../../../../docs/framework/wcf/samples/tcp-activation.md)  
+ [Windows Server App Fabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=201276)

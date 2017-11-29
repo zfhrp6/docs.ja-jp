@@ -1,114 +1,118 @@
 ---
-title: "変換の行列表現 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "アフィン変換"
-  - "複合変換"
-  - "線形変換"
-  - "行列"
-  - "変換, 複合"
-  - "変換, リニア"
-  - "変換, 行列表現"
-  - "変換, 変換"
-  - "平行移動 (行列表現内の)"
-  - "ベクター"
+title: "変換の行列表現"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- composite transformations
+- transformations [Windows Forms], linear
+- matrices
+- translations in matrix representation
+- transformations [Windows Forms], composite
+- vectors
+- linear transformations
+- transformations [Windows Forms], matrix representation of
+- transformations [Windows Forms], translation
+- affine transformations
 ms.assetid: 0659fe00-9e0c-41c4-9118-016f2404c905
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 10babac22fd94bd00b14b7f861fe99469d3ecbda
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 変換の行列表現
-m×n 行列とは、m 行 n 列に配列された数値の集まりです。  いくつかの行列を次の図に示します。  
+# <a name="matrix-representation-of-transformations"></a>変換の行列表現
+M × n マトリックスは、一連の数字が m 個の行と n 個の列に配置します。 次の図は、いくつかのマトリックスを示します。  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art04.png "AboutGdip05\_art04")  
+ ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art04.gif "AboutGdip05_art04")  
   
- 同じサイズの 2 つの行列を加算するには、個々の要素を加算します。  行列加算の 2 つの例を次の図に示します。  
+ 個々 の要素を追加することで、同じサイズの 2 つの行列を作成できます。 次の図は、マトリックスの追加の 2 つの例を示します。  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art05.png "AboutGdip05\_art05")  
+ ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art05.gif "AboutGdip05_art05")  
   
- m×n 行列に n×p 行列を掛け合わせることができ、その結果は m×p 行列になります。  1 番目の行列の列数が、2 番目の行列の行数と同じである必要があります。  たとえば、4 × 2 行列に 2 × 3 行列を掛け合わせて、4 × 3 行列を生成できます。  
+ M × n 行列を乗算するためには、n × p 行列によってと、結果は m × p 行列。 1 番目の行列内の列の数は、2 番目の行列内の行の数と同じである必要があります。 たとえば、4 × 2 マトリックスは、4 × 3 マトリックスを生成するために 2 × 3 行列を掛けることができます。  
   
- 平面上の点および行列の行と列は、ベクターであると考えることができます。  たとえば、\(2, 5\) は 2 つの要素を持つベクターであり、\(3, 7, 1\) は 3 つの要素を持つベクターです。  2 つのベクターのドット積は、次のように定義されます。  
+ 平面と行およびマトリックスの列内のポイントは、ベクターと考えることができます。 たとえば、(2, 5) は、2 つのコンポーネントを持つベクトルと (3, 7, 1) は、3 つのコンポーネントを持つベクトル。 2 つのベクトルのドット積の定義は次のとおりです。  
   
- \(a, b\) × \(c, d\) \= ac \+ bd  
+ (a、b) • (c、d) = ac + bd  
   
- \(a, b, c\) × \(d, e, f\) \= ad \+ be \+ cf  
+ (a、b、c) • (d、e、f) = ad + する + cf  
   
- たとえば、\(2, 3\) と \(5, 4\) のドット積は \(2\)\(5\) \+ \(3\)\(4\) \= 22 です。  \(2, 5, 1\) と \(4, 3, 1\) のドット積は \(2\)\(4\) \+ \(5\)\(3\) \+ \(1\)\(1\) \= 24 です。  2 つのベクターのドット積は、別のベクターではなく 1 つの数値になります。  また、ドット積を計算できるのは、2 つのベクターの要素の数が同じ場合だけです。  
+ たとえばのドット積 (2, 3) と (5, 4) は (2)(5) + (3)(4) = 22。 (2, 5, 1) とのドット積と (4, 3, 1) が (2)(4) + (5)(3) + (1)(1) = 24。 2 つのベクトルのドット積は番号、別のベクトルであることに注意してください。 ドット積を計算できるは、2 つのベクトルのコンポーネントの数が同じ場合だけにも注意してください。  
   
- A\(i, j\) は、行列 A の i 行目、j 列目のエントリであるとします。  たとえば、A\(3, 2\) は行列 A の 3 行目、2 列目のエントリです。  A、B、および C の 3 つの行列があり、AB \= C であるとします。  C のエントリは次のように計算されます。  
+ Let A(i, j) には、i 番目の行と jth 列の行列 A にエントリがあります。 たとえば、A (3, 2) の 3 番目の行と 2 番目の列の行列 A エントリです。 たとえば、A、B、および C は、マトリックス、および AB C. を =C のエントリは、次のように計算されます。  
   
- C\(i, j\) \= \(A の i 行\) × \(B の j 列\)  
+ C (i, j) = (A の行 i) • (B の列 j)  
   
- 行列乗算のいくつかの例を次の図に示します。  
+ 次の図は、行列乗算のいくつかの例を示します。  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art06.png "AboutGdip05\_art06")  
+ ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art06.gif "AboutGdip05_art06")  
   
- 平面上の各点を 1 × 2 行列と考えると、その点を、2 × 2 行列を掛け合わせることによって変換できます。  点 \(2, 1\) に適用されるいくつかの変換を次の図に示します。  
+ 1 x 2 行列平面上のポイントの場合は、2 × 2 の行列で乗算そのポイントを変換することができます。 次の図は、点 (2, 1) に適用されるいくつかの変換を示します。  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art07.gif "AboutGdip05\_art07")  
+ ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art07.gif "AboutGdip05_art07")  
   
- 上の図に示す変換は、すべて線形変換です。  線形変換ではない平行移動などの変換は、2 × 2 行列による乗算では表現できません。  点 \(2, 1\) を 90°回転してから、x 方向に 3 単位、y 方向に 4 単位平行移動するとします。  この変換を実行するには、行列乗算の後で行列加算を実行します。  
+ すべての前の図に示すように、変換は、線形変換です。 変換など、他の特定の変換を使用して、線形ではありません、2 × 2 の行列で乗算では表現できません。 場合を考えます最初に、点 (2, 1)、90 ° 回転して、x 軸方向の 3 つの単位を変換および y 方向の 4 つの単位を変換します。 行列加算続けて行列乗算を使用して、これを行うことができます。  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art08.gif "AboutGdip05\_art08")  
+ ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art08.gif "AboutGdip05_art08")  
   
- 線形変換 \(2 × 2 行列による乗算\) の後で平行移動 \(1 × 2 行列の加算\) を実行することを、アフィン変換と呼びます。  1 つのアフィン変換を 2 つの行列 \(線形変換用の行列と平行移動用の行列\) の組み合わせに格納する代わりに、この変換全体を 1 つの 3 × 3 行列に格納できます。  この方法を使用するには、平面上の各点を、3 番目の座標としてダミー座標を持つ 1 × 3 行列に格納する必要があります。  通常の手法では、3 番目の座標はすべて 1 にします。  たとえば、点 \(2, 1\) を行列 \[2 1 1\] で表します。  アフィン変換 \(90°の回転、x 方向に 3 単位の平行移動、y 方向に 4 単位の平行移動\) を 1 つの 3 × 3 行列による乗算として表現する例を次の図に示します。  
+ 翻訳 (1 x 2 行列の追加) を続けて線形変換 (2 × 2 の行列で乗算) は、アフィン変換と呼ばれます。 マトリックス (1 つは線形) および変換用の 1 つのペアのアフィン変換を格納する代わりに 3 × 3 行列変換全体を格納を開始します。 この作業をするためには、平面内のポイントをダミー サード座標で 1 × 3 行列に格納する必要があります。 通常の手法はすべて 3 番目の座標を 1 にします。 たとえば、ポイント (2, 1) は、[2 1 1] マトリックスで表されます。 次の図に、アフィン変換 (90 度回転させます。 x 軸方向に 3 単位、y 方向の 4 つの単位に変換) で 1 つ 3 × 3 行列の乗算で表されます。  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art09.png "AboutGdip05\_art09")  
+ ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art09.gif "AboutGdip05_art09")  
   
- 上の例では、点 \(2, 1\) が点 \(2, 6\) に割り当てられます。  3 × 3 行列の 3 番目の列には、数値 0, 0, 1 が格納されています。  アフィン変換の 3 × 3 行列では、常にこの数値は同じです。  重要な数値は、列 1 と列 2 にある 6 個の数値です。  行列の左上の 2 × 2 部分が線形変換を表し、3 番目の行の最初の 2 つのエントリが平行移動を表します。  
+ 前の例では、点 (2, 1) は、ポイント (2, 6) にマップされます。 3 × 3 行列の 3 番目の列に数値 0, 0, 1 が含まれていることを注意してください。 アフィン変換の 3 × 3 行列の場合と常になります。 重要な数値は、列 1 および 2 の 6 つの番号です。 マトリックスの左上の 2 × 2 部分は、変換の線形の一部を表し、3 番目の行の最初の 2 つのエントリが平行移動を表します。  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art10.gif "AboutGdip05\_art10")  
+ ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art10.gif "AboutGdip05_art10")  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] では、アフィン変換を <xref:System.Drawing.Drawing2D.Matrix> オブジェクトに格納できます。  アフィン変換を表す行列の 3 番目の列は常に \(0, 0, 1\) であるため、<xref:System.Drawing.Drawing2D.Matrix> を構築するときには、最初の 2 列にある 6 個の数値だけを指定します。  `Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)` ステートメントによって、上の図に示す行列が構築されます。  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]でアフィン変換を格納することができます、<xref:System.Drawing.Drawing2D.Matrix>オブジェクト。 表すアフィン変換行列の 3 番目の列は常にあるため (0, 0, 1) を構築するとき、最初の 2 つの列で 6 つの数字のみを指定する、<xref:System.Drawing.Drawing2D.Matrix>オブジェクト。 ステートメント`Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)`前の図に示すように、マトリックスを構築します。  
   
-## 複合変換  
- 複合変換は、複数の変換を 1 つずつ連続して実行します。  次の一覧に示す行列と変換を考えてみます。  
+## <a name="composite-transformations"></a>複合変換  
+ 複合変換とは、変換後、その他の 1 つのシーケンスです。 マトリックスおよび次の一覧内の変換を考慮してください。  
   
 |||  
 |-|-|  
-|行列 A|90°の回転|  
-|行列 B|x 方向にファクター 2 のスケーリング|  
-|行列 C|y 方向に 3 単位の平行移動|  
+|行列 A|90 度回転します。|  
+|マトリックス B|X 軸方向の 2 倍の拡大縮小します。|  
+|マトリックス C|Y 方向の 3 つの単位に変換します。|  
   
- 行列 \[2 1 1\] で表される点 \(2, 1\) に A、B、C を順に掛け合わせると、点 \(2, 1\) に対して 3 つの変換が上の一覧の順序で適用されます。  
+ かどうかはまず、点 (2, 1): [2 1 1] マトリックスで表される — しを a、B、C、点 (2, 1) が使用される順番で 3 つの変換し、します。  
   
- \[2 1 1\]ABC \= \[\-2 5 1\]  
+ [2 1 1]ABC [-2 5 1] を =  
   
- 複合変換の 3 つの部分を 3 つの異なる行列に格納する代わりに、A、B、C をすべて掛け合わせることで、この複合変換全体を格納する 1 つの 3 × 3 行列を得ることができます。  ABC \= D であるとします。  この場合、ある点に D を掛け合わせると、その点に A、B、C を順に掛け合わせた場合と同じ結果が得られます。  
+ はなく 3 つの独立した行列に複合変換の 3 つの部分を格納は、A を掛けることができますを複合変換全体を格納する 1 つの 3 倍 3 行列を取得するには、同時に、B、および C です。 たとえば、ABC D. を =D を掛けたポイントが A、B、C を掛けたポイントと同じ結果を提供し、  
   
- \[2 1 1\]D \= \[\-2 5 1\]  
+ [2 1 1]D = [-2 5 1]  
   
- A、B、C、D の各行列を次の図に示します。  
+ 次の図に、A、B、C および D のマトリックス  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art12.png "AboutGdip05\_art12")  
+ ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art12.gif "AboutGdip05_art12")  
   
- 個々の変換を表す行列を掛け合わせることにより、1 つの複合変換の行列を作成できるということは、連続するアフィン変換の任意の組み合わせを 1 つの <xref:System.Drawing.Drawing2D.Matrix> オブジェクトに格納できることを意味します。  
+ 複合変換の行列を個々 の変換行列を乗算することによって作成できますが、ファクトは 1 つのアフィン変換の任意のシーケンスを格納できることを意味<xref:System.Drawing.Drawing2D.Matrix>オブジェクト。  
   
 > [!CAUTION]
->  変換の順序が重要です。  一般に、回転、スケーリング、平行移動の順序で実行される変換は、スケーリング、回転、平行移動の順序で実行される変換と異なります。  同様に、行列乗算でも順序が重要です。  一般に、ABC と BAC は異なります。  
+>  複合変換の順序が重要です。 一般に、回転してから、スケールを設定し、変換が同じではありません、スケーリング、回転、しに変換します。 同様に、行列乗算の順序が重要です。 一般に、ABC はいない BAC と同じです。  
   
- <xref:System.Drawing.Drawing2D.Matrix> クラスには、複合変換を作成するためのメソッドとして、<xref:System.Drawing.Drawing2D.Matrix.Multiply%2A>、<xref:System.Drawing.Drawing2D.Matrix.Rotate%2A>、<xref:System.Drawing.Drawing2D.Matrix.RotateAt%2A>、<xref:System.Drawing.Drawing2D.Matrix.Scale%2A>、<xref:System.Drawing.Drawing2D.Matrix.Shear%2A>、および <xref:System.Drawing.Drawing2D.Matrix.Translate%2A> が用意されています。  30°の回転、y 方向にファクター 2 のスケーリング、x 方向に 5 単位の平行移動を順に実行する複合変換の行列の作成例を次に示します。  
+ <xref:System.Drawing.Drawing2D.Matrix>クラスが複合変換を作成するためのいくつかのメソッドを提供します。 <xref:System.Drawing.Drawing2D.Matrix.Multiply%2A>、 <xref:System.Drawing.Drawing2D.Matrix.Rotate%2A>、 <xref:System.Drawing.Drawing2D.Matrix.RotateAt%2A>、 <xref:System.Drawing.Drawing2D.Matrix.Scale%2A>、 <xref:System.Drawing.Drawing2D.Matrix.Shear%2A>、および<xref:System.Drawing.Drawing2D.Matrix.Translate%2A>です。 次の例では、回転角度 (30) し、y 方向の 2 倍のスケールを設定し、x 軸方向に 5 単位に変換する複合変換の行列を作成します。  
   
  [!code-csharp[System.Drawing.CoordinateSystems#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.CoordinateSystems#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/VB/Class1.vb#11)]  
   
- この行列を次の図に示します。  
+ 次の図は、マトリックスを示します。  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art13.png "AboutGdip05\_art13")  
+ ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art13.gif "AboutGdip05_art13")  
   
-## 参照  
- [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)   
- [マネージ GDI\+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)
+## <a name="see-also"></a>関連項目  
+ [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
+ [マネージ GDI+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)

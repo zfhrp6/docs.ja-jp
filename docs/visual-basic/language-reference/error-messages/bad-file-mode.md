@@ -1,47 +1,45 @@
 ---
-title: "Bad file mode | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID54"
-dev_langs: 
-  - "VB"
+title: "ファイル モードが正しくありません。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID54
 ms.assetid: 74891e96-884b-4c8d-872d-cd11ae272372
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: a540135727eb97f4df5027e2ded7271e21bb4648
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Bad file mode
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-ファイルの内容を操作するステートメントは、ファイルを開くときに指定したモードに対応している必要があります。  以下の原因が考えられます。  
+# <a name="bad-file-mode"></a>ファイル モードが正しくありません。
+ファイルの内容を操作するときに使用するステートメントは、ファイルが開かれたモードに対応する必要があります。 以下の原因が考えられます。  
   
--   `FilePutObject` ステートメントまたは `FileGetObject` ステートメントでシーケンシャル ファイルを指定しています。  
+-   A`FilePutObject`または`FileGetObject`ステートメントはシーケンシャル ファイルを指定します。  
   
--   `Print` ステートメントで、`Output` または `Append` 以外のアクセス モードで開いたファイルを指定しています。  
+-   A`Print`ステートメント以外の場合、アクセス モードで開かれたファイルを指定する`Output`または`Append`です。  
   
--   `Input` ステートメントで、`Input` 以外のアクセス モードで開いたファイルを指定しています。  
+-   `Input`ステートメント以外の場合、アクセス モードで開かれたファイルを指定します`Input`  
   
--   読み取り専用のファイルに書き込みを行おうとしました。  
+-   読み取り専用ファイルに書き込もうとしています。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   `FilePutObject` や `FileGetObject` で参照されているファイルが、`Random` アクセスまたは `Binary` アクセスで開いたファイルだけであることを確認します。  
+-   確認してください`FilePutObject`と`FileGetObject`の開いているファイルだけが参照され`Random`または`Binary`アクセスします。  
   
--   `Print` で `Output` アクセス モードまたは `Append` アクセス モードで開いたファイルを指定します。  そうでない場合は、別のステートメントを使ってファイルにデータを書き込むか、ファイルを適切なモードで開き直します。  
+-   確認`Print`のいずれかで開かれるファイルを指定`Output`または`Append`アクセス モードです。 ない場合は、さまざまなステートメントを使用して、データ ファイル内に配置または適切なモードでファイルを閉じて再度開きます。  
   
--   `Input` に `Input` で開いたファイルを指定します。  そうでない場合は、別のステートメントを使ってファイルにデータを書き込むか、ファイルを適切なモードで開き直します。  
+-   確認`Input`で開いたファイルを指定`Input`です。 それ以外の場合は、さまざまなステートメントを使用して、データ ファイル内に配置または適切なモードでファイルを閉じて再度開きます。  
   
--   読み取り専用ファイルに書き込んでいる場合は、ファイルの読み取り\/書き込み属性を変更するか、そのファイルに書き込まないようにします。  
+-   読み取り専用ファイルに書き込みを行う場合は、ファイルの読み取り/書き込み状態を変更したりへの書き込みをしないでください。  
   
--   `My.Computer.FileSystem` オブジェクトで準備されている機能を使用します。  
+-   `My.Computer.FileSystem` オブジェクトで利用できる機能を使用します。  
   
-## 参照  
- <xref:Microsoft.VisualBasic.FileSystem>   
- [Troubleshooting: Reading from and Writing to Text Files](../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.FileSystem>  
+ [トラブルシューティング : テキスト ファイルの読み取りと書き込み](../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)

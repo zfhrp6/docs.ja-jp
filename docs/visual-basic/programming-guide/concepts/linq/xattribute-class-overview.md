@@ -1,45 +1,37 @@
 ---
-title: "XAttribute クラスの概要 (Visual Basic) |Microsoft ドキュメント"
+title: "XAttribute クラスの概要 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 7781580a-9583-4a1b-ae1e-91c5936eb0b1
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1ce5f4be6006908b35057854f89432471fd9f06b
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 900f047ec0db8ed1e2399345d2d4c3fba34afd5b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="xattribute-class-overview-visual-basic"></a>XAttribute クラスの概要 (Visual Basic)
-属性は、要素に関連付けられている名前と値のペアです。 <xref:System.Xml.Linq.XAttribute>クラスは XML 属性を表します</xref:System.Xml.Linq.XAttribute>。  
+属性は、要素に関連付けられている名前と値のペアです。 <xref:System.Xml.Linq.XAttribute> クラスは、XML 属性を表します。  
   
 ## <a name="overview"></a>概要  
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] での属性の操作は、要素の操作に似ています。 コンストラクターはほぼ同じです。 それぞれのコレクションの取得に使用するメソッドもほぼ同じです。 A[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]属性のコレクションのクエリ式によく似た、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]要素のコレクションの式をクエリします。  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] での属性の操作は、要素の操作に似ています。 コンストラクターはほぼ同じです。 それぞれのコレクションの取得に使用するメソッドもほぼ同じです。 属性のコレクションの [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式は、要素のコレクションの [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ式とよく似ています。  
   
  属性が要素に追加された順序は保持されます。 つまり、属性を反復処理する場合、属性は追加された順序と同じ順序で表示されます。  
   
 ## <a name="the-xattribute-constructor"></a>XAttribute コンストラクター  
- 次のコンス トラクター、<xref:System.Xml.Linq.XAttribute>クラスは、最もよく使用するもの:</xref:System.Xml.Linq.XAttribute>  
+ 最もよく使用する <xref:System.Xml.Linq.XAttribute> クラスのコンストラクターを次に示します。  
   
 |コンストラクター|説明|  
 |-----------------|-----------------|  
-|`XAttribute(XName name, object content)`|作成、<xref:System.Xml.Linq.XAttribute>オブジェクト</xref:System.Xml.Linq.XAttribute>。 `name` 引数には属性の名前を指定し、`content` には属性のコンテンツを指定します。|  
+|`XAttribute(XName name, object content)`|<xref:System.Xml.Linq.XAttribute> オブジェクトを作成します。 `name` 引数には属性の名前を指定し、`content` には属性のコンテンツを指定します。|  
   
 ### <a name="creating-an-element-with-an-attribute"></a>属性を持つ要素の作成  
  次のコードは、Visual Basic で XML リテラルを使用して、属性を含む要素を示しています。  
@@ -56,7 +48,7 @@ Console.WriteLine(phone)
 ```  
   
 ### <a name="functional-construction-of-attributes"></a>属性の関数型構築  
- 構築する<xref:System.Xml.Linq.XAttribute>の構築と共にインラインで<xref:System.Xml.Linq.XElement>オブジェクトを次のように:</xref:System.Xml.Linq.XElement> </xref:System.Xml.Linq.XAttribute>  
+ <xref:System.Xml.Linq.XAttribute> オブジェクトは、<xref:System.Xml.Linq.XElement> オブジェクトの構築と共にインラインで構築できます。  
   
 ```vb  
 Dim c As XElement = _  
@@ -87,7 +79,7 @@ Console.WriteLine(c)
 ```  
   
 ### <a name="attributes-are-not-nodes"></a>属性はノードではない  
- 属性と要素には、いくつかの違いがあります。 <xref:System.Xml.Linq.XAttribute>オブジェクトは、XML ツリー内のノードではありません。</xref:System.Xml.Linq.XAttribute> 属性は、XML 要素に関連付けられている名前と値のペアです。 ドキュメント オブジェクト モデル (DOM) とは異なり、XML の構造をより密接に反映します。 <xref:System.Xml.Linq.XAttribute>オブジェクトが実際に、この XML ツリーの操作でノードではない<xref:System.Xml.Linq.XAttribute>オブジェクトは、操作に非常に似て<xref:System.Xml.Linq.XElement>オブジェクト</xref:System.Xml.Linq.XElement></xref:System.Xml.Linq.XAttribute></xref:System.Xml.Linq.XAttribute>。  
+ 属性と要素には、いくつかの違いがあります。 <xref:System.Xml.Linq.XAttribute> オブジェクトは、XML ツリーのノードではありません。 属性は、XML 要素に関連付けられている名前と値のペアです。 ドキュメント オブジェクト モデル (DOM) とは異なり、XML の構造をより密接に反映します。 <xref:System.Xml.Linq.XAttribute> オブジェクトは実際には XML ツリーのノードではありませんが、<xref:System.Xml.Linq.XAttribute> オブジェクトの操作は <xref:System.Xml.Linq.XElement> オブジェクトの操作とよく似ています。  
   
  属性と要素の区別は主に、ノード レベルで XML ツリーを操作するコードを記述する開発者にとってのみ重要な意味を持ちます。 多くの開発者は、この区別を考慮する必要はありません。  
   

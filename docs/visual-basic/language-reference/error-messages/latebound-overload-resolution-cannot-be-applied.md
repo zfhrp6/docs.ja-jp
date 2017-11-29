@@ -1,43 +1,42 @@
 ---
-title: "Latebound overload resolution cannot be applied to &#39;&lt;procedurename&gt;&#39; because the accessing instance is an interface type | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30933"
-  - "bc30933"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "overload resolution, with late-bound argument"
-  - "BC30933"
+title: "遅延バインディングされたオーバー ロードの解決には適用できません &#39;です。&lt;procedurename&gt;&#39;へのアクセスのインスタンスがインターフェイス型であるためです。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30933
+- bc30933
+helpviewer_keywords:
+- overload resolution [Visual Basic], with late-bound argument
+- BC30933
 ms.assetid: 8182eea0-dd34-4d6e-9ca0-41d8713e9dc4
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: fb7f8a9f6eadfc9fd856ea57d362b43d25ff81a1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Latebound overload resolution cannot be applied to &#39;&lt;procedurename&gt;&#39; because the accessing instance is an interface type
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-コンパイラがオーバーロードされたプロパティまたはプロシージャへの参照の解決を試みましたが、引数が `Object` 型で、参照元のオブジェクトのデータ型がインターフェイス型であるため、参照が失敗しました。  引数が `Object` 型である場合、コンパイラは遅延バインディングで参照を解決します。  
+# <a name="latebound-overload-resolution-cannot-be-applied-to-39ltprocedurenamegt39-because-the-accessing-instance-is-an-interface-type"></a>遅延バインディングされたオーバー ロードの解決には適用できません &#39;です。&lt;procedurename&gt;&#39;へのアクセスのインスタンスがインターフェイス型であるためです。
+オーバー ロードされたプロパティまたはプロシージャへの参照を解決するのには、コンパイラがしようとしていますが、型の引数であるため、参照が失敗した`Object`と参照元のオブジェクトには、インターフェイスのデータ型。 `Object`引数は、遅延バインディングとして参照を解決するのには、コンパイラを強制します。  
   
- このような状況では、コンパイラは基のインターフェイスを調べてではなく、実装しているクラスを調べてオーバーロードを解決します。  そのクラスがオーバーロードされたいずれかのクラスの名前を変更していると、コンパイラは名前が違うためにそれをオーバーロードされたクラスと見なしません。  このため、コンパイラは名前が変更されたクラスを無視します。よって、このクラスは参照の解決先として正しい場合でも選択されません。  
+ このような場合は、コンパイラは、基になるインターフェイスの代わりに、実装するクラスをオーバー ロードを解決します。 クラスのオーバー ロードされたバージョンのいずれかの名前を変更、コンパイラでは、名前が異なるため、オーバー ロードするには、そのバージョンは考慮されません。 これで、コンパイラを無視する、名前を変更したバージョンの参照を解決するのには、適切な選択されている可能性があります。  
   
- **Error ID:** BC30933  
+ **エラー ID:** BC30933  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   `CType` を使用して、`Object` 型の引数を、呼び出そうとしているオーバーロードのシグネチャに指定された型にキャストします。  
+-   使用して`CType`から引数をキャストする`Object`を呼び出したいオーバー ロードのシグネチャで指定された型にします。  
   
-     参照元のオブジェクトを基のインターフェイスにキャストしても意味がありません。  このエラーを防ぐには、引数をキャストする必要があります。  
+     注意を参照しているオブジェクトは基になるインターフェイスにキャストも効果はありません。 このエラーを回避する引数をキャストする必要があります。  
   
-## 使用例  
- オーバーロードされた `Sub` プロシージャを、コンパイル時にこのエラーが発生する方法で呼び出す例を次に示します。  
+## <a name="example"></a>例  
+ 次の例では、オーバー ロードされたへの呼び出し`Sub`コンパイル時にこのエラーが発生するプロシージャ。  
   
 ```  
 Module m1  
@@ -61,18 +60,18 @@ Module m1
 End Module  
 ```  
   
- この例では、コンパイラが定義どおりに `s1` の呼び出しを許可したとすると、`i1` インターフェイスではなく `c1` クラスを介して解決が行われます。  この場合、コンパイラは `s2` の名前が `c1` のときの名前と違うため、`i1` の定義によれば `s2` を選択するのが正しいにもかかわらずこれを無視します。  
+ コンパイラへの呼び出しを許可された場合、上記の例では`s1`が書き込まれると、解決が行わクラスを通じて`c1`インターフェイスではなく`i1`です。 つまり、コンパイラは見なしません`s2`名前が異なるため`c1`で定義されている適切な選択である場合でも、`i1`です。  
   
- このエラーを修正するには、呼び出しの部分を次のいずれかのコード行に変更します。  
+ 次のコード行のいずれかへの呼び出しを変更することで、エラーを修正することができます。  
   
 ```  
 refer.s1(CType(o1, Integer))  
 refer.s1(CType(o1, Double))  
 ```  
   
- これらのコード行はどちらも、`Object` 型の変数である `o1` を、オーバーロードの際に定義されたいずれかのパラメーター型に明示的にキャストします。  
+ 前の行のコードに明示的にキャスト、`Object`変数`o1`オーバー ロードでは定義されているパラメーターの型のいずれかにします。  
   
-## 参照  
- [Procedure Overloading](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)   
- [Overload Resolution](../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)   
+## <a name="see-also"></a>関連項目  
+ [プロシージャのオーバーロード](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)  
+ [オーバーロードの解決](../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)  
  [CType 関数](../../../visual-basic/language-reference/functions/ctype-function.md)

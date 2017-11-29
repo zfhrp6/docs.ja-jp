@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceContract | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceContract
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5b670c80-a119-4114-8b1d-2b2034e5cb19
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1413c157bd82b28f420d13826b210783d8d6f596
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceContract
+# <a name="systemservicemodelcomintegrationcomintegrationservicehostcreatedservicecontract"></a>System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceContract
 System.ServiceModel.ComIntegration.ComIntegrationServiceHostCreatedServiceContract  
   
-## 説明  
+## <a name="description"></a>説明  
  ComPlus : 作成されたサービス コントラクト。  
   
-## 参照  
- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
+## <a name="see-also"></a>関連項目  
+ [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [トレースを使用して、アプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)

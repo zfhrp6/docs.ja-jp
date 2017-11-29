@@ -1,32 +1,37 @@
 ---
-title: "方法 : Windows フォーム CheckedListBox コントロールでオンになっている項目を判断する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "チェック ボックス, 判断 (チェック状態を)"
-  - "CheckedListBox コントロール [Windows フォーム], 判断 (チェック状態を)"
+title: "方法 : Windows フォーム CheckedListBox コントロールでオンになっている項目を判断する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- check boxes [Windows Forms], determining checked state
+- CheckedListBox control [Windows Forms], determining checked state
 ms.assetid: 178b477d-27c9-489c-8914-44a9623a4d41
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f45006b437ad0a2fa537e6b8ea4312ab0060c882
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : Windows フォーム CheckedListBox コントロールでオンになっている項目を判断する
-Windows フォームの <xref:System.Windows.Forms.CheckedListBox> コントロールにデータを表示する場合は、<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> プロパティに格納されたコレクションに対して反復処理するか、または <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> メソッドを使用してリストをステップ処理することによって、どの項目がオンになっているかを判断できます。  <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> メソッドは、項目のインデックス番号を引数として、`true` または `false` を返します。  <xref:System.Windows.Forms.ListBox.SelectedItems%2A> プロパティおよび <xref:System.Windows.Forms.ListBox.SelectedIndices%2A> プロパティでは、オンになっている項目ではなく、強調表示された項目が判断されます。  
+# <a name="how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control"></a>方法 : Windows フォーム CheckedListBox コントロールでオンになっている項目を判断する
+Windows フォームでデータを表示する場合、<xref:System.Windows.Forms.CheckedListBox>コントロールすることができますか、コレクションの反復に格納されている、<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A>プロパティ、または手順を使用して、一覧から、<xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>どの項目がチェックを調べます。 <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>メソッドの引数として、項目のインデックス番号を受け取り、返します`true`または`false`です。 期待するとは対照的、<xref:System.Windows.Forms.ListBox.SelectedItems%2A>と<xref:System.Windows.Forms.ListBox.SelectedIndices%2A>プロパティはどの項目がチェックを決定していません。 項目が強調表示を判断します。  
   
-### CheckedListBox コントロールでチェック状態の項目を判断するには  
+### <a name="to-determine-checked-items-in-a-checkedlistbox-control"></a>CheckedListBox コントロールでチェックされた項目を決定するには  
   
-1.  <xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> コレクションに対して反復処理します。コレクションは配列が 0 から始まるため、0 から検索します。  このメソッドは、一覧全体ではなく、オンにされた項目の一覧について項目番号を取得します。  したがって、一覧の先頭の項目がオフで、2 番目の項目がオンの場合、以下のコードは "Checked Item 1 \= MyListItem2" のようなメッセージを表示します。  
+1.  反復処理する、<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A>コレクションは 0 から始まるために、0 から始まるコレクション。 このメソッドが表示項目数の一覧で、メモには、全体的なリストではなく、項目がチェックされます。 次のコードでのようにテキストを表示する場合は、一覧の最初の項目がチェックされないため、2 番目の項目がチェックされて、ように"チェック項目 1 MyListItem2 ="です。  
   
     ```vb  
     ' Determine if there are any items checked.  
@@ -39,7 +44,6 @@ Windows フォームの <xref:System.Windows.Forms.CheckedListBox> コントロ�
        Next x  
        MessageBox.Show(s)  
     End If  
-  
     ```  
   
     ```csharp  
@@ -54,7 +58,6 @@ Windows フォームの <xref:System.Windows.Forms.CheckedListBox> コントロ�
        }  
     MessageBox.Show (s);  
     }  
-  
     ```  
   
     ```cpp  
@@ -73,9 +76,9 @@ Windows フォームの <xref:System.Windows.Forms.CheckedListBox> コントロ�
     }  
     ```  
   
-     または  
+     - または  
   
-2.  <xref:System.Windows.Forms.CheckedListBox.Items%2A> コレクションをステップ処理します。コレクションは配列が 0 から始まるため、0 から検索します。各項目に対して <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> メソッドを呼び出します。  このメソッドは、一覧全体から項目番号を取得するため、一覧の先頭の項目がオフで、2 番目の項目がオンの場合、このコードは "Item 2 \= MyListItem2" とメッセージを表示します。  
+2.  ステップ実行、<xref:System.Windows.Forms.CheckedListBox.Items%2A>コレクション、コレクションは、0 から始まるために、0 から始まるおよび呼び出し、<xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>の各項目に対してメソッドです。 このメソッドが表示項目数、一覧全体での先頭の項目リストはチェックされませんので実行して、2 番目の項目がチェックされてのようなものが表示されます"の項目 2 = MyListItem2"です。  
   
     ```vb  
     Dim i As Integer  
@@ -87,7 +90,6 @@ Windows フォームの <xref:System.Windows.Forms.CheckedListBox> コントロ�
        End If  
     Next  
     MessageBox.Show(s)  
-  
     ```  
   
     ```csharp  
@@ -102,7 +104,6 @@ Windows フォームの <xref:System.Windows.Forms.CheckedListBox> コントロ�
        }  
     }  
     MessageBox.Show (s);  
-  
     ```  
   
     ```cpp  
@@ -120,5 +121,5 @@ Windows フォームの <xref:System.Windows.Forms.CheckedListBox> コントロ�
     MessageBox::Show(s);  
     ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [オプションのリストを表示するための Windows フォーム コントロール](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)

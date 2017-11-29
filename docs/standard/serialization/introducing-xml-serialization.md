@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - XML serialization, about XML serialization
 - ICollection interface, serializing
@@ -20,16 +18,15 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 858d973ae48ee217f73f293c1ed30c4c3f91cb29
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 13afeecc979cab9719ffa063f78ff91c866262d3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="introducing-xml-serialization"></a>XML シリアル化の概要
 シリアル化とは、転送できる形式にオブジェクトを変換するプロセスのことです。 たとえば、オブジェクトをシリアル化し、HTTP を使用してインターネット経由でクライアントとサーバー間で転送できます。 一方、逆シリアル化とは、ストリームから元のオブジェクトを再構築する処理です。  
@@ -181,14 +178,13 @@ public string MyToken;
 -   <xref:System.Xml.Serialization.XmlRootAttribute>  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Serialization.XmlSerializer>   
- <xref:System.Runtime.Serialization.DataContractSerializer>   
- <xref:System.IO.FileStream>   
- [XML シリアル化および SOAP シリアル化](../../../docs/standard/serialization/xml-and-soap-serialization.md)   
- [バイナリ シリアル化](../../../docs/standard/serialization/binary-serialization.md)   
- [シリアル化](../../../docs/standard/serialization/index.md)   
- <xref:System.Xml.Serialization.XmlSerializer>   
- [XML シリアル化の例](../../../docs/standard/serialization/examples-of-xml-serialization.md)   
- [方法 : オブジェクトをシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object.md)   
+ <xref:System.Xml.Serialization.XmlSerializer>  
+ <xref:System.Runtime.Serialization.DataContractSerializer>  
+ <xref:System.IO.FileStream>  
+ [XML シリアル化および SOAP シリアル化](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+ [バイナリ シリアル化](../../../docs/standard/serialization/binary-serialization.md)  
+ [シリアル化](../../../docs/standard/serialization/index.md)  
+ <xref:System.Xml.Serialization.XmlSerializer>  
+ [XML シリアル化の例](../../../docs/standard/serialization/examples-of-xml-serialization.md)  
+ [方法 : オブジェクトをシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
  [方法 : オブジェクトを逆シリアル化する](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
-

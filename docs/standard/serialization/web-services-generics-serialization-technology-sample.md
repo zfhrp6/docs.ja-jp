@@ -8,16 +8,15 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: cdc15ea4-f678-4729-8ebe-188ae720bef7
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 0b5dfc6be702b37eafeac2ae0d944dabe074d209
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: b542149f211b037661bc662e7fc1f680aeb0e0ea
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="web-services-generics-serialization-technology-sample"></a>Web サービス ジェネリック シリアル化の技術サンプル
 [サンプルのダウンロード](http://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/GenericsSerialization.zip.exe)  
@@ -74,9 +73,8 @@ ms.lasthandoff: 08/21/2017
  サンプルでは、Web サービスの定義へのリンクを含む既定の ASP.NET ページが表示されます。 Web サービスのソース コードの変更に加えて、表示のカスタマイズも可能です。 詳細については、「[XML Web サービス クライアントの作成](http://msdn.microsoft.com/en-us/c606f3cb-4111-45b4-ae42-9300420fa16c)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Collections.Generic>   
- <xref:System.Web.Services>   
- <xref:System.Xml.Serialization>   
- [シリアル化](../../../docs/standard/serialization/index.md)   
+ <xref:System.Collections.Generic>  
+ <xref:System.Web.Services>  
+ <xref:System.Xml.Serialization>  
+ [シリアル化](../../../docs/standard/serialization/index.md)  
  [ASP.NET と XML Web サービス クライアントを使用して作成した XML Web サービス](http://msdn.microsoft.com/en-us/1e64af78-d705-4384-b08d-591a45f4379c)
-

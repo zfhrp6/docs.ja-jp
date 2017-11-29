@@ -1,65 +1,48 @@
 ---
-title: "方法: 符号なしの型 (Visual Basic の場合)、Windows 関数を呼び出す |Microsoft ドキュメント"
+title: "方法: 符号なしの型を使用する Windows の機能を呼び出す (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- Windows functions, calling
-- unsigned data types
-- UShort data type, using
+- Windows functions [Visual Basic], calling
+- unsigned data types [Visual Basic]
+- UShort data type [Visual Basic], using
 - functions [Visual Basic], calling Windows functions
-- ULong data type, using
-- UInteger data type, using
+- ULong data type [Visual Basic], using
+- UInteger data type [Visual Basic], using
 - data types [Visual Basic], using
-- unsigned types
+- unsigned types [Visual Basic]
 - data types [Visual Basic], unsigned
 - data types [Visual Basic], numeric
-- unsigned types, using
+- unsigned types [Visual Basic], using
 ms.assetid: c2c0e712-8dc2-43b9-b4c6-345fbb02e7ce
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: fbff07f4923b0633a2bc9b4fd558d9d51f64370a
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: d1d59c29a83ede97d90926c8e499788676e2c235
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>方法: 符号なしの型を使用する Windows の機能を呼び出す (Visual Basic)
-クラス、モジュール、または符号なし整数型のメンバーを含む構造体を使用している場合は、これらのメンバーとをアクセスすることができます[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]します。  
+クラス、モジュール、または符号なし整数型のメンバーを含む構造体を使用している場合にこれらのメンバーにアクセスできます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
   
 ### <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>符号なしの型を受け取る Windows 関数を呼び出す  
   
-1.  使用して、[宣言ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)のに[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]関数を保持するためのライブラリ、その名前がそのライブラリには、および呼び出しシーケンスは、それを呼び出すときに文字列を変換する方法です。  
+1.  使用して、 [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)への通知[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ライブラリ関数を保持する、名前がそのライブラリでは、および呼び出しシーケンスは、それを呼び出すときに、文字列を変換する方法です。  
   
-2.  `Declare`ステートメントを使用して`UInteger`、 `ULong`、 `UShort`、または`Byte`必要に応じて、符号なしの型の各パラメーターにします。  
+2.  `Declare`ステートメントでは、使用`UInteger`、 `ULong`、 `UShort`、または`Byte`必要に応じて、各型のパラメーターを符号なしにします。  
   
-3.  Windows 関数の名前と使用されている定数の値を検索する呼び出しと、ドキュメントを参照してください。 これらの多くは、WinUser.h ファイルで定義されます。  
+3.  Windows 関数の呼び出しの名前と使用されている定数の値を検索するには、ドキュメントを参照してください。 これらの多くは、WinUser.h ファイルで定義されます。  
   
-4.  コードで必要な定数を宣言します。 多くの Windows 定数は、32 ビット符号なしの値と、これらを宣言する必要があります`As``UInteger`します。  
+4.  コードで必要な定数を宣言します。 多くの Windows 定数は、32 ビット符号なしの値、およびこれらを宣言する必要があります`As``UInteger`です。  
   
-5.  通常の方法で、関数を呼び出します。 次の例は、Windows の関数を呼び出して`MessageBox`、符号なし整数の引数を受け取る。  
+5.  通常の方法で関数を呼び出します。 次の例は、Windows の関数を呼び出して`MessageBox`、符号なし整数の引数を受け取ります。  
   
     ```  
     Public Class windowsMessage  
@@ -84,7 +67,7 @@ ms.lasthandoff: 03/13/2017
     End Class  
     ```  
   
-     この関数をテストする`messageThroughWindows`を次のコードです。  
+     関数をテストする`messageThroughWindows`を次のコード。  
   
     ```  
     Public Sub consumeWindowsMessage()  
@@ -94,17 +77,17 @@ ms.lasthandoff: 03/13/2017
     ```  
   
     > [!CAUTION]
-    >  `UInteger`、 `ULong`、 `UShort`、および`SByte`データ型がないの一部では、[言語非依存および言語非依存コンポーネント](https://msdn.microsoft.com/library/12a7a7h3)(CLS) には、CLS 準拠のコードは、それらを使用するコンポーネントを使用できないようにします。  
+    >  `UInteger`、 `ULong`、 `UShort`、および`SByte`データ型がないの一部、[言語非依存および言語非依存コンポーネント](https://msdn.microsoft.com/library/12a7a7h3)(CLS)、CLS 準拠コードのコンポーネントを利用できないようにします。それらを使用します。  
   
     > [!IMPORTANT]
-    >  Windows アプリケーション プログラミング インターフェイス (API) など、アンマネージ コードへの呼び出しを行うには、潜在的なセキュリティ リスクにコードを公開します。  
+    >  Windows アプリケーション プログラミング インターフェイス (API) など、アンマネージ コードへの呼び出しを行うには、潜在的なセキュリティ リスクに対するコードを公開します。  
   
     > [!IMPORTANT]
-    >  Windows API を呼び出すと、アンマネージ コード アクセス許可が必要です。 詳細については、次を参照してください<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)。</xref:System.Security.Permissions.SecurityPermission> 。  
+    >  Windows API を呼び出すと、アンマネージ コード アクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
   
 ## <a name="see-also"></a>関連項目  
- [データ型](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [整数データ型](../../../visual-basic/language-reference/data-types/integer-data-type.md)   
- [Uinteger 型](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)   
- [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)   
+ [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [整数データ型](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
+ [UInteger データ型](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
+ [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)  
  [チュートリアル : Windows API の呼び出し](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)

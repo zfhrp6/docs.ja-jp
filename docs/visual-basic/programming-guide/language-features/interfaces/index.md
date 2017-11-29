@@ -1,41 +1,23 @@
 ---
 title: "インターフェイス (Visual Basic)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - Visual Basic code, interfaces
-- interfaces, Visual Basic
+- interfaces [Visual Basic], Visual Basic
 - interfaces
 - interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 775e4512a5ff31c7059961f6332c6bdc0dc5247a
-ms.openlocfilehash: 0b3f13cd69564a61da1a961e35c5319e4c2d79aa
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/11/2017
-
+ms.openlocfilehash: c26bb7322064d0b8cdf733e74f8b37e81b1e620c
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
 # <a name="interfaces-visual-basic"></a>インターフェイス (Visual Basic)
 *インターフェイス*は、クラスが実装できるプロパティ、メソッド、およびイベントを定義します。 インターフェイスでは、密接に関連するプロパティ、メソッド、およびイベントの小さなグループとして機能を定義できます。これにより、既存のコードを損なうことなく、インターフェイスを拡張して実装を開発できるため、互換性の問題を減らすことができます。 追加のインターフェイスと実装を開発することで、いつでも新しい機能を追加できます。  
@@ -108,4 +90,3 @@ ms.lasthandoff: 08/11/2017
 |-----------|-----------------|  
 |[チュートリアル: インターフェイスの作成と実装](../../../../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)|独自のインターフェイスを定義および実装する処理の詳細な手順を説明します。|  
 |[ジェネリック インターフェイスの分散](../../concepts/covariance-contravariance/variance-in-generic-interfaces.md)|ジェネリック インターフェイスでの共変性と反変性について説明し、.NET Framework でのバリアント ジェネリック インターフェイスの一覧を示します。|
-

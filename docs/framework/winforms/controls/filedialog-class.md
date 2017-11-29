@@ -1,44 +1,44 @@
 ---
-title: "FileDialog クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "FileDialog クラス"
+title: "FileDialog クラス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: FileDialog class [Windows Forms]
 ms.assetid: 85a8fb62-c7d9-4a30-9b74-1cd10efe6ccb
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 432b9935113a700160f89ad427ebf5cade6d0e99
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# FileDialog クラス
-Windows フォームの <xref:System.Windows.Forms.FileDialog> クラスは、<xref:System.Windows.Forms.OpenFileDialog> コンポーネントと <xref:System.Windows.Forms.SaveFileDialog> コンポーネントに共通する基本クラスです。  アプリケーションが実行されている Windows のバージョンによっては、これらのダイアログ ボックスの外観と動作に影響する <xref:System.Windows.Forms.FileDialog> クラスを変更できます。  
+# <a name="filedialog-class"></a>FileDialog クラス
+Windows フォーム<xref:System.Windows.Forms.FileDialog>クラスは、共通の基本クラス、<xref:System.Windows.Forms.OpenFileDialog>と<xref:System.Windows.Forms.SaveFileDialog>コンポーネントです。 変更を行うことができます、<xref:System.Windows.Forms.FileDialog>でアプリケーションが実行されている Windows のバージョンに応じて、これらのダイアログ ボックスの動作と外観に影響するクラス。  
   
-## このセクションの内容  
- [方法 : ファイル関連のダイアログ ボックスの自動アップグレードを無効にする](../../../../docs/framework/winforms/controls/how-to-opt-out-of-file-dialog-box-automatic-upgrade.md)  
- ファイル ダイアログ ボックスのスタイルの自動アップグレードを無効にする方法について説明します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [方法: ファイル関連のダイアログ ボックスの自動アップグレードを無効にする](../../../../docs/framework/winforms/controls/how-to-opt-out-of-file-dialog-box-automatic-upgrade.md)  
+ ファイル ダイアログ ボックスに、スタイルの自動アップグレードを解除する方法について説明します。  
   
- [方法 : よく使用する場所をファイル ダイアログ ボックスに追加する](../../../../docs/framework/winforms/controls/how-to-add-a-custom-place-to-a-file-dialog-box.md)  
- ファイル ダイアログ ボックスにカスタムのファイルの場所を追加する方法について説明します。  
+ [方法: よく使用する場所をファイル ダイアログ ボックスに追加する](../../../../docs/framework/winforms/controls/how-to-add-a-custom-place-to-a-file-dialog-box.md)  
+ ファイル ダイアログ ボックスに、カスタムのファイルの場所を追加する方法について説明します。  
   
  [ファイル ダイアログ ボックスのカスタム プレイス用既知のフォルダー GUID](../../../../docs/framework/winforms/controls/known-folder-guids-for-file-dialog-custom-places.md)  
- フォルダー名と、それらに関連付けられている GUID の一覧を示します。  
+ フォルダー名と、それらに関連付けられている Guid を一覧表示します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.OpenFileDialog>  
   
  <xref:System.Windows.Forms.SaveFileDialog>  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [OpenFileDialog コンポーネント](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md)  
   
  [SaveFileDialog コンポーネント](../../../../docs/framework/winforms/controls/savefiledialog-component-windows-forms.md)

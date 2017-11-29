@@ -1,37 +1,29 @@
 ---
-title: "方法: 多くのファイルのファイル グループ (LINQ) (Visual Basic) を使用して分割 |Microsoft ドキュメント"
+title: "方法: 複数のファイルのファイル グループ (LINQ) (Visual Basic) を使用して分割"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 5e8b2a2b-0b1d-4933-8a2b-03e91dfaf77f
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 00fbffa99ade302db536f7e56a4d004071efb2c6
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 76fb89136e05ee803c1bb2c91674e6b216e4ed2d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>方法: 多くのファイルのファイル グループ (LINQ) (Visual Basic) を使用して分割
-この例では、2 つのファイルの内容をマージし、一連の新しい方法でデータを整理する新しいファイルを作成するための&1; つの方法を示します。  
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>方法: 複数のファイルのファイル グループ (LINQ) (Visual Basic) を使用して分割
+この例では、2 つのファイルの内容をマージし、新しい方法でデータを整理する一連の新しいファイルを作成するための、1 つの方法を示します。  
   
 ### <a name="to-create-the-data-files"></a>データ ファイルを作成するには  
   
-1.  Names1.txt という名前のテキスト ファイルに次の名前をコピーし、プロジェクト フォルダーに保存します。  
+1.  以下の名前を names1.txt という名前のテキスト ファイルにコピーし、プロジェクト フォルダーに保存します。  
   
     ```  
     Bankov, Peter  
@@ -46,7 +38,7 @@ ms.lasthandoff: 03/13/2017
     Garcia, Debra  
     ```  
   
-2.  プロジェクト フォルダーに次の名前をコピーし、names2.txt という名前のテキスト ファイルに保存します。 注&2; つのファイルがあるいくつかの共通の名前。  
+2.  以下の名前を names2.txt という名前のテキスト ファイルにコピーし、プロジェクト フォルダーに保存します。いくつかの名前は両方のファイルに共通して存在することに注意してください。  
   
     ```  
     Liu, Jinghao  
@@ -130,11 +122,11 @@ End Class
 '    Toyoshima, Tim  
 ```  
   
- プログラムでは、データ ファイルと同じフォルダー内の各グループの別のファイルを書き込みます。  
+ このプログラムは、データ ファイルとしてグループごとに異なるファイルを同じフォルダーに書き込みます。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+ .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll および System.Linq 名前空間の `Imports` ステートメントを参照設定します。  
   
 ## <a name="see-also"></a>関連項目  
- [LINQ と文字列 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)   
+ [LINQ と文字列 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
  [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

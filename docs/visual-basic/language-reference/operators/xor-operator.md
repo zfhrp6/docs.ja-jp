@@ -1,105 +1,102 @@
 ---
-title: "Xor Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Xor"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "exclusive OR operator"
-  - "logical exclusion"
-  - "operators [Visual Basic], exclusive or"
-  - "exclusion operator"
-  - "operators [Visual Basic], bitwise"
-  - "bitwise operators, XOR operator"
-  - "Xor operator [Visual Basic]"
-  - "Xor keyword"
-  - "bitwise comparison"
+title: "Xor 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Xor
+helpviewer_keywords:
+- exclusive OR operator [Visual Basic]
+- logical exclusion
+- operators [Visual Basic], exclusive or
+- exclusion operator [Visual Basic]
+- operators [Visual Basic], bitwise
+- bitwise operators [Visual Basic], XOR operator
+- Xor operator [Visual Basic]
+- Xor keyword [Visual Basic]
+- bitwise comparison [Visual Basic]
 ms.assetid: 036000a9-3934-4e7f-a9d0-a816de3d84a6
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b14f11f2df2df9c29e88e9188390cfe245d2cb58
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Xor Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-2 つのブール \(`Boolean`\) 式の排他的論理和を求めます。または、2 つの数式のビットごとの排他を求めます。  
+# <a name="xor-operator-visual-basic"></a>Xor 演算子 (Visual Basic)
+2 つの論理和を求めます`Boolean`式、または 2 つの数値式の和を求めます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
 result = expression1 Xor expression2  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `result`  
- 必ず指定します。  任意のブール変数または数値変数を指定します。  ブール式の比較の場合、`result` は 2 つの `Boolean` 値の排他的論理和です。  ビットごとの演算の場合、`result` は 2 つの数式のビットパターンの、ビットごとの排他的論理和を表す数値です。  
+ 必須です。 どの`Boolean`または数値型の変数です。 ブール値の比較の`result`は 2 つの論理和 (排他的論理和)`Boolean`値。 ビットごとの演算`result`は、ビット処理排他的論理和) 2 つの数値のビット パターンを表す数値。  
   
  `expression1`  
- 必ず指定します。  任意のブール型 \(`Boolean`\) または数式を指定します。  
+ 必須です。 どの`Boolean`または数値式です。  
   
  `expression2`  
- 必ず指定します。  任意のブール型 \(`Boolean`\) または数式を指定します。  
+ 必須です。 どの`Boolean`または数値式です。  
   
-## 解説  
- ブール値の比較の場合、`result` が `True` になるのは、`expression1` と `expression2` の一方だけが `True` と評価される場合だけです。  つまり、`expression1` と `expression2` が反対の `Boolean` 値に評価される場合だけということです。  次の表は、2 つの式の値と演算結果 `result` の値の対応を示しています。  
+## <a name="remarks"></a>コメント  
+ ブール値の比較の`result`は`True`場合にだけ、ただ 1 つの`expression1`と`expression2`に評価される`True`です。 つまり、場合にのみ`expression1`と`expression2`評価に反対`Boolean`値。 次に示す方法`result`決定されます。  
   
-|`expression1` の値|`expression2` の値|`result` の値|  
-|----------------------|----------------------|-----------------|  
+|場合`expression1`は|および`expression2`は|値`result`は|  
+|-------------------------|--------------------------|------------------------------|  
 |`True`|`True`|`False`|  
 |`True`|`False`|`True`|  
 |`False`|`True`|`True`|  
 |`False`|`False`|`False`|  
   
 > [!NOTE]
->  ブール式の比較の場合、`Xor` 演算子は必ず両方の式を評価します。これはプロシージャ呼び出しを作成する場合も同じです。  `Xor` の結果は必ず 2 つのオペランドによって決まるため、この演算子に相当するショートサーキットはありません。  *ショートサーキット*論理演算子については、「[AndAlso Operator](../../../visual-basic/language-reference/operators/andalso-operator.md)」と「[OrElse Operator](../../../visual-basic/language-reference/operators/orelse-operator.md)」を参照してください。  
+>  ブール値の比較で、`Xor`演算子では、両方の式では、プロシージャの呼び出しを含めることが常に評価されます。 相当するショート サーキットはありません`Xor`結果は常に両方のオペランドに依存するため、します。 *ショート サーキット*論理演算子を参照してください[AndAlso 演算子](../../../visual-basic/language-reference/operators/andalso-operator.md)と[OrElse 演算子](../../../visual-basic/language-reference/operators/orelse-operator.md)です。  
   
- ビットごとの演算の場合、`Xor` 演算子は、2 つの数式内の対応するビットどうしの、ビット単位の比較を行います。次の表に従って、`result` 内の対応するビットがセットされます。  
+ ビットごとの演算、`Xor`演算子が 2 つの数値式で同じ位置にビットのビットごとの比較を実行し、対応するにビットを設定`result`次の表のとおりです。  
   
-|`expression1` のビット|`expression2` のビット|`result` 内のビット|  
-|------------------------|------------------------|--------------------|  
+|場合内のビット`expression1`は|でビット`expression2`は|内のビット`result`は|  
+|--------------------------------|---------------------------------|----------------------------|  
 |1|1|0|  
 |1|0|1|  
 |0|1|1|  
 |0|0|0|  
   
 > [!NOTE]
->  論理\/ビット処理演算子は他の算術演算子や関係演算子より優先順位が低いため、ビットごとの演算は、正確に実行されるようにかっこで囲む必要があります。  
+>  論理/ビット処理演算子の他の算術演算子や関係演算子よりも優先順位が低いため、ビットごとの演算が正確に実行されるようにかっこで囲む必要があります。  
   
- たとえば、5 `Xor` 3 の結果は 6 になります。  その理由は、5 と 3 を対応する 2 進数 \(それぞれ 101 と 011\) に変換してみるとわかります。  前出の表によると、101 Xor 011 の結果は 110 です。これは、10 進数の 6 を 2 進数で表した値です。  
+ たとえば、5 `Xor` 3 は 6 です。 これが理由を確認するため、101 と 011 のバイナリ表現に 5 と 3 に変換します。 101 Xor 011 があること、110 6 の 10 進数のバイナリ表現を決定するのに、前の表を使用しています。  
   
-## データ型  
- オペランドの一方が `Boolean` 式で、もう一方が数式の場合、Visual Basic は `Boolean` 式を数値 \(`True` は \-1、`False` は 0\) に変換してから、ビットごとの演算を実行します。  
+## <a name="data-types"></a>データ型  
+ いずれかのオペランドで構成される場合`Boolean`式と 1 つの数値式では、Visual Basic に変換します、`Boolean`数値を指定する式 (– 1`True`と 0 を`False`) し、ビットごとの演算を実行します。  
   
- `Boolean` 式の比較の場合、結果のデータ型は `Boolean` になります。  ビットごとの比較の場合、結果のデータ型は `expression1` と `expression2` のデータ型に対して適切な数値型になります。  「[Data Types of Operator Results](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md)」の「リレーショナルおよびビットごとの比較」の表を参照してください。  
+ `Boolean` 、比較結果のデータ型は`Boolean`します。 ビットごとの比較結果のデータ型は数値型のデータ型に適した`expression1`と`expression2`です。 「リレーショナルとビットごとの比較」表を参照して[データ型の演算子の結果](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md)です。  
   
-## オーバーロード  
- `Xor` 演算子は*オーバーロード*できます。つまり、オペランドがクラスや構造体を型として持つ場合に、演算子の動作をそのクラスや構造体で再定義できるという意味です。  このようなクラスまたは構造体でこの演算子を使用している場合、再定義された動作を確認してください。  詳細については、「[Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+## <a name="overloading"></a>オーバーロード  
+ `Xor`演算子を指定できます*オーバー ロードされた*、つまり、あるクラスまたは構造体を再定義できますその動作オペランドは、そのクラスまたは構造体の型を持つときにします。 コードは、このようなクラスまたは構造体で、この演算子を使用する場合、再定義された動作を理解することを確認します。 詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。  
   
-## 使用例  
- `Xor` 演算子を使って 2 つの式の排他的論理和を求める例を次に示します。  結果は、2 つの式のどちらか一方が `True` かどうかを表す `Boolean` 値です。  
+## <a name="example"></a>例  
+ 次の例では、 `Xor` 2 つの式に対して論理和 (排他的論理和) を実行する演算子です。 結果は、`Boolean`が式の 1 つだけかどうかを表す値`True`です。  
   
  [!code-vb[VbVbalrOperators#40](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xor-operator_1.vb)]  
   
- 前の例では、`False`、`True`、`False` の結果を順に生成します。  
+ 前の例の結果を生成する`False`、 `True`、および`False`、それぞれします。  
   
-## 使用例  
- `Xor` 演算子を使って 2 つの数式のビットごとの排他的論理和を求める例を次に示します。  オペランド内の、対応するビットのどちらか一方だけが 1 にセットされている場合は、結果パターンにビットがセットされます。  
+## <a name="example"></a>例  
+ 次の例では、`Xor`オペレーターが 2 つの数値式のビットごとの排他的論理和 (排他的論理和) を実行します。 結果のパターン内のビットはただ 1 つのオペランドの対応するビットを 1 に設定されている場合に設定されます。  
   
  [!code-vb[VbVbalrOperators#41](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xor-operator_2.vb)]  
   
- 前の例では、2、12、14 の結果を順に生成します。  
+ 前の例では、2、12、および 14 の結果をそれぞれ生成されます。  
   
-## 参照  
- [Logical\/Bitwise Operators](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)   
- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
- [Logical and Bitwise Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+## <a name="see-also"></a>関連項目  
+ [論理/ビット演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)  
+ [Visual Basic における演算子の優先順位](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [機能別の演算子一覧](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [Visual Basic における論理/ビット処理演算子](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

@@ -1,48 +1,44 @@
 ---
-title: "方法:&2; つのコレクション (LINQ to XML) を結合 (Visual Basic) |Microsoft ドキュメント"
+title: "方法: 2 つのコレクション (LINQ to XML) を結合 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 5a5758d4-906b-4285-908d-5b930db192e6
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 169a2ca7fb7fdc7b4cccdaab6547c6bb1a66072c
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: c4850013184b35dcb0b30455a62cead30394103c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-join-two-collections-linq-to-xml-visual-basic"></a>方法:&2; つのコレクション (LINQ to XML) を結合 (Visual Basic)
-XML ドキュメント内の要素または属性は、別の要素または属性を参照することがあります。 たとえば、[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) XML ドキュメントには、顧客の一覧と注文の一覧が含まれています。 各 `Customer` 要素には、`CustomerID` 属性が含まれています。 各 `Order` 要素には、`CustomerID` 要素が含まれています。 各注文の `CustomerID` 要素は、顧客の `CustomerID` 属性を参照します。  
+# <a name="how-to-join-two-collections-linq-to-xml-visual-basic"></a>方法: 2 つのコレクション (LINQ to XML) を結合 (Visual Basic)
+XML ドキュメント内の要素または属性は、別の要素または属性を参照することがあります。 たとえば、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)」の XML ドキュメントには、顧客の一覧と注文の一覧が含まれています。 各 `Customer` 要素には、`CustomerID` 属性が含まれています。 各 `Order` 要素には、`CustomerID` 要素が含まれています。 各注文の `CustomerID` 要素は、顧客の `CustomerID` 属性を参照します。  
   
- トピック[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)このドキュメントの検証に使用できる XSD が含まれています。 この XSD は、XSD の `xs:key` 機能と `xs:keyref` 機能を使用して、`CustomerID` 要素の `Customer` 属性がキーであることを確立し、各 `CustomerID` 要素の `Order` 要素と各 `CustomerID` 要素の `Customer` 属性の間にリレーションシップを確立します。  
+ 「[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)」のトピックには、このドキュメントの検証に使用できる XSD が含まれています。 この XSD は、XSD の `xs:key` 機能と `xs:keyref` 機能を使用して、`CustomerID` 要素の `Customer` 属性がキーであることを確立し、各 `CustomerID` 要素の `Order` 要素と各 `CustomerID` 要素の `Customer` 属性の間にリレーションシップを確立します。  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] では、`Join` 句を使用することで、このリレーションシップを利用できます。  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] では、`Join` 句を使用することで、このリレーションシップを利用できます。  
   
  使用できるインデックスがないため、このような結合では実行時のパフォーマンスが低下することに注意してください。  
   
- 詳細については`Join`を参照してください[の結合操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/join-operations.md)します。  
+ 詳細については`Join`を参照してください[参加操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/join-operations.md)です。  
   
 ## <a name="example"></a>例  
  次の例では、`Customer` 要素を `Order` 要素に結合し、注文に `CompanyName` 要素が含まれている新しい XML ドキュメントを生成します。  
   
- ドキュメントがスキーマに準拠しているの例では、クエリを実行する前に検証[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)します。 これにより、結合句が常に機能するようになります。  
+ クエリを実行する前に、この例では、ドキュメントが「[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)」のスキーマに準拠しているかどうかを検証します。 これにより、結合句が常に機能するようになります。  
   
  このクエリでは、まずすべての `Customer` 要素を取得し、次にそれらを `Order` 要素に結合します。 クエリでは、"K" より大きい `CustomerID` を持つ顧客の注文のみを選択します。 次に、各注文内に顧客情報を含む新しい `Order` 要素を射影します。  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)します。  
+ この例では、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)」の XML ドキュメントを使用します。  
   
- この例は、次の XSD スキーマを使用して:[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)します。  
+ この例では、「[サンプル XSD ファイル: 顧客と注文](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)」の XSD スキーマを使用します。  
   
  この方式の結合ではパフォーマンスが低下することに注意してください。 結合は線形探索によって実行されます。 パフォーマンスを向上させるハッシュ テーブルまたはインデックスはありません。  
   

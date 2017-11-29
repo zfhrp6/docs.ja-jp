@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 39b16b82-4ec6-4eff-8031-67e026870961
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 59fa9c4a5a296ee3a0663cce6f77a8c12c5955c2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 1c39ca0a4437016b8b718bd5d3cf988029556fb8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltbasichttpcontextbindinggt"></a>&lt;basicHttpContextBinding&gt;
 HTTP クッキーを交換機構として有効にすることにより、交換する <xref:System.ServiceModel.BasicHttpBinding> のコンテキストを提供するバインディングを指定します。  
@@ -105,13 +103,12 @@ HTTP クッキーを交換機構として有効にすることにより、交換
  このバインディング要素は、`BasicHttpBinding` のコンテキストの一部として保護レベルと交換機構を提供します。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.BasicHttpBinding>   
- <xref:System.ServiceModel.BasicHttpContextBinding>   
- <xref:System.ServiceModel.Configuration.BasicHttpContextBindingElement>   
- <xref:System.ServiceModel.Channels.ContextBindingElement>   
- [バインド](../../../../../docs/framework/wcf/bindings.md)   
- [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<バインド >](../../../../../docs/framework/misc/binding.md)   
+ <xref:System.ServiceModel.BasicHttpBinding>  
+ <xref:System.ServiceModel.BasicHttpContextBinding>  
+ <xref:System.ServiceModel.Configuration.BasicHttpContextBindingElement>  
+ <xref:System.ServiceModel.Channels.ContextBindingElement>  
+ [バインディング](../../../../../docs/framework/wcf/bindings.md)  
+ [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<バインド >](../../../../../docs/framework/misc/binding.md)  
  [\<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)
-

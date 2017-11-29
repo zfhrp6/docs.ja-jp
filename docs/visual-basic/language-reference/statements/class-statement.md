@@ -1,127 +1,124 @@
 ---
-title: "Class Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Class"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "class modules"
-  - "Class statement"
-  - "classes [Visual Basic], fields"
-  - "fields, of classes"
-  - "class types, class statements"
-  - "classes [Visual Basic], creating"
-  - "classes [Visual Basic], data members"
-  - "data members, of classes"
+title: "Class ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Class
+helpviewer_keywords:
+- class modules
+- Class statement [Visual Basic]
+- classes [Visual Basic], fields
+- fields [Visual Basic], of classes
+- class types [Visual Basic], class statements
+- classes [Visual Basic], creating
+- classes [Visual Basic], data members
+- data members [Visual Basic], of classes
 ms.assetid: f2664f38-eb5a-4d4b-a374-1d041521fb6c
-caps.latest.revision: 29
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 29
+caps.latest.revision: "29"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: df86ef0eec67d96f2f997dc5dac7ee2357c6362b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Class Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-クラスの名前を宣言し、そのクラスを構成する変数、プロパティ、イベント、およびプロシージャの定義を示します。  
+# <a name="class-statement-visual-basic"></a>Class ステートメント (Visual Basic)
+クラスの名前を宣言し、変数、プロパティ、イベント、およびクラスを構成するプロシージャの定義が追加されました。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ MustInherit | NotInheritable ] [ Partial ] _  
-Class name [ ( Of typelist ) ]  
-    [ Inherits classname ]  
-    [ Implements interfacenames ]  
-    [ statements ]  
+[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ MustInherit | NotInheritable ] [ Partial ] _  
+Class name [ ( Of typelist ) ]  
+    [ Inherits classname ]  
+    [ Implements interfacenames ]  
+    [ statements ]  
 End Class  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`attributelist`|省略可能です。  「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。|  
-|`accessmodifier`|省略可能です。  次のいずれかになります。<br /><br /> -   [Public](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|  
-|`Shadows`|省略可能です。  「[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。|  
-|`MustInherit`|省略可能です。  「[MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)」を参照してください。|  
-|`NotInheritable`|省略可能です。  「[NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)」を参照してください。|  
-|`Partial`|省略可能です。  クラスの部分定義であることを示します。  「[Partial](../../../visual-basic/language-reference/modifiers/partial.md)」を参照してください。|  
-|`name`|必ず指定します。  このクラスの名前です。  「[Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|  
-|`Of`|省略可能です。  これがジェネリック クラスであることを指定します。|  
-|`typelist`|[Of](../../../visual-basic/language-reference/statements/of-clause.md) キーワードを使用する場合は必ず指定します。  このクラスの型パラメーターの一覧を指定します。  「[型リスト](../../../visual-basic/language-reference/statements/type-list.md)」を参照してください。|  
-|`Inherits`|省略可能です。  このクラスが他のクラスのメンバーを継承することを示します。  「[Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md)」を参照してください。|  
-|`classname`|`Inherits` ステートメントを使用する場合は必ず指定します。  このクラスの派生元となるクラスの名前です。|  
-|`Implements`|省略可能です。  このクラスが、1 つ以上のインターフェイスのメンバーを実装していることを示します。  「[Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md)」を参照してください。|  
-|`interfacenames`|`Implements` ステートメントを使用する場合は必ず指定します。  このクラスが実装するインターフェイスの名前を指定します。|  
-|`statements`|省略可能です。  このクラスのメンバーを定義するステートメントを指定します。|  
-|`End Class`|必ず指定します。  `Class` 定義を終了します。|  
+|用語|定義|  
+|---|---|  
+|`attributelist`|省略可能です。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
+|`accessmodifier`|省略可能です。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
+|`Shadows`|省略可能です。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。|  
+|`MustInherit`|省略可能です。 参照してください[MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)です。|  
+|`NotInheritable`|省略可能です。 参照してください[NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)です。|  
+|`Partial`|省略可能です。 クラスの部分定義を示します。 参照してください[部分](../../../visual-basic/language-reference/modifiers/partial.md)です。|  
+|`name`|必須です。 このクラスの名前です。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
+|`Of`|省略可能です。 これは、ジェネリック クラスであることを指定します。|  
+|`typelist`|使用するかどうかは必ず、[の](../../../visual-basic/language-reference/statements/of-clause.md)キーワード。 このクラスの型パラメーターの一覧。 参照してください[のリストを入力](../../../visual-basic/language-reference/statements/type-list.md)です。|  
+|`Inherits`|省略可能です。 このクラスが別のクラスのメンバーを継承することを示します。 参照してください[Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)です。|  
+|`classname`|`Inherits` ステートメントを使用する場合は必ず指定します。 このクラスの派生元となるクラスの名前。|  
+|`Implements`|省略可能です。 このクラスで、1 つまたは複数のインターフェイスのメンバーを実装することを示します。 参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。|  
+|`interfacenames`|`Implements` ステートメントを使用する場合は必ず指定します。 このクラスが実装するインターフェイスの名前。|  
+|`statements`|省略可能です。 このクラスのメンバーを定義するステートメント。|  
+|`End Class`|必須です。 `Class` の定義を終了します。|  
   
-## 解説  
- `Class` ステートメントは新しいデータ型を定義します。  *クラス*はオブジェクト指向プログラミング \(OOP: Object\-Oriented Programming\) の基本的なビルド ブロックです。  詳細については、「[Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ A`Class`ステートメントが、新しいデータ型を定義します。 A*クラス*オブジェクト指向プログラミング (OOP) の基本的なビルド ブロックです。 詳細については、次を参照してください。[クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)です。  
   
- `Class` は、名前空間またはモジュール レベルでのみ使用できます。  つまり、クラスの*宣言コンテキスト*は、ソース ファイル、名前空間、クラス、構造体、モジュール、またはインターフェイスのいずれかである必要があり、プロシージャまたはブロックでは宣言できません。  詳細については、「[Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
+ `Class` は、名前空間またはモジュール レベルでのみ使用できます。 つまり、*宣言コンテキスト*クラスのソース ファイル、名前空間、クラス、構造体、モジュール、またはインターフェイスである必要があります、プロシージャまたはブロックすることはできません。 詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
   
- クラスの各インスタンスは、他のインスタンスからは独立した有効期間を持ちます。  インスタンスの有効期間は、[New Operator](../../../visual-basic/language-reference/operators/new-operator.md) 句または <xref:Microsoft.VisualBasic.Interaction.CreateObject%2A> などの関数で作成されたときに開始します。  インスタンスを参照している変数がすべて [Nothing](../../../visual-basic/language-reference/nothing.md) に設定されるか、他のクラスのインスタンスに設定されると、インスタンスの有効期間は終了します。  
+ クラスの各インスタンスには、その他のすべてのインスタンスの独立した有効期間があります。 これを作成するときにこの有効期間が開始、 [New 演算子](../../../visual-basic/language-reference/operators/new-operator.md)句またはなどの関数によって<xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>です。 インスタンスを指すすべての変数に設定されている時に終了[Nothing](../../../visual-basic/language-reference/nothing.md)またはその他のクラスのインスタンスにします。  
   
- 既定では、クラスのアクセス レベルは [Friend](../../../visual-basic/language-reference/modifiers/friend.md) です。  アクセス修飾子を使用してこれらのアクセス レベルを調整できます。  詳細については、「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ クラスの既定値は[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)アクセスします。 アクセス修飾子を使用してこれらのアクセス レベルを調整できます。 詳細については、次を参照してください。 [Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。  
   
-## 規則  
+## <a name="rules"></a>ルール  
   
--   **入れ子。**クラス内に別のクラスを定義できます。  外側のクラスは*包含クラス*、内側のクラスは*入れ子クラス*と呼ばれます。  
+-   **入れ子にするとします。** 他の中で 1 つのクラスを定義できます。 外側のクラス、*クラスを含む*、内部クラスを呼び出すと、*入れ子になったクラス*です。  
   
--   **継承。**クラスが [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md)を使用している場合は、1 つの基本クラスまたはインターフェイスのみを指定できます。  複数の要素を継承することはできません。  
+-   **継承。** クラスで使用する場合、 [Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)、基底クラスまたはインターフェイスの 1 つだけを指定することができます。 クラスは、複数の要素から継承できません。  
   
-     自分よりもアクセス レベルの厳しいクラスは継承できません。  たとえば、`Public` クラスは `Friend` クラスを継承できません。  
+     クラスより制限の厳しいアクセス レベルを持つ別のクラスから継承できません。 たとえば、`Public`クラスから継承できません、`Friend`クラスです。  
   
-     中に入れ子になったクラスは継承できません。  
+     クラスは、内部に入れ子になったクラスから継承できません。  
   
--   **実装。**クラスが [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md)を使用している場合は、`interfacenames` に指定したすべてのインターフェイスで定義されているメンバーをすべて実装する必要があります。  ただし、基本クラスのメンバーを再実装する必要はありません。  詳細については、「[Implements](../../../visual-basic/language-reference/statements/implements-clause.md)」の「再実装」を参照してください。  
+-   **実装です。** クラスで使用する場合、 [Implements ステートメント](../../../visual-basic/language-reference/statements/implements-statement.md)で指定したすべてのインターフェイスによって定義されたすべてのメンバーを実装する必要があります`interfacenames`です。 この例外は、基底クラスのメンバーの再実装が必要です。 詳細についてを参照してください再実装が「必要」 [Implements](../../../visual-basic/language-reference/statements/implements-clause.md)です。  
   
--   **既定のプロパティ。**クラス内の最大 1 つのプロパティを*既定のプロパティ*として指定できます。  詳細については、「[Default](../../../visual-basic/language-reference/modifiers/default.md)」を参照してください。  
+-   **既定のプロパティ。** クラスとして最大で 1 つのプロパティを指定できます、*既定プロパティ*です。 詳細については、次を参照してください。[既定](../../../visual-basic/language-reference/modifiers/default.md)です。  
   
-## \[動作\]  
+## <a name="behavior"></a>動作  
   
--   **アクセス レベル。**クラス内では、それぞれのメンバーにアクセス レベルを宣言できます。  変数と定数を除くクラス メンバーは既定で [Public](../../../visual-basic/language-reference/modifiers/public.md) アクセスになります。変数と定数は既定で [Private](../../../visual-basic/language-reference/modifiers/private.md) アクセスになります。  クラスのアクセス レベルの方がメンバーのアクセス レベルよりも厳しいときは、クラスのアクセス レベルが優先されます。  
+-   **アクセス レベル。** クラス内では、各メンバーを独自のアクセス レベルを宣言できます。 クラス メンバーは既定[パブリック](../../../visual-basic/language-reference/modifiers/public.md)へのアクセス、変数および定数を除く既定[プライベート](../../../visual-basic/language-reference/modifiers/private.md)アクセスします。 クラスがそのメンバーの 1 つ以上のアクセスが制限されたよりする場合は、クラスのアクセス レベルが優先されます。  
   
--   **スコープ。**クラスのスコープは、そのクラスを含んでいる名前空間、クラス、構造体、またはモジュールになります。  
+-   **スコープです。** クラスは、そのを含む名前空間、クラス、構造体、またはモジュール全体にわたってスコープ内です。  
   
-     すべてのクラス メンバーのスコープは、クラス全体になります。  
+     すべてのクラス メンバーのスコープは、クラス全体です。  
   
-     **有効期間。**Visual Basic は静的クラスをサポートしません。  静的クラスと同等の機能はモジュールで実現されます。  詳細については、「[Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)」を参照してください。  
+     **有効期間。** Visual Basic は、静的クラスをサポートしていません。 静的クラスと同等の機能は、モジュールによって提供されます。 詳細については、次を参照してください。[モジュール ステートメント](../../../visual-basic/language-reference/statements/module-statement.md)です。  
   
-     クラス メンバーの有効期間は、宣言された方法と場所によって左右されます。  詳細については、「[Lifetime in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)」を参照してください。  
+     クラスのメンバーには、宣言されている方法と場所に応じて有効期間があります。 詳細については、次を参照してください。 [Visual Basic における有効期間](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)です。  
   
--   **修飾。**クラス外部のコードがメンバーにアクセスするときには、メンバー名をクラス名で修飾する必要があります。  
+-   **パス名です。** クラスの外側のコードでは、そのクラスの名前を持つメンバーの名前を修飾する必要があります。  
   
-     入れ子クラスの内部のコードがプログラミング要素に対する非修飾参照を行った場合、Visual Basic は目的の要素をまず入れ子クラス内で検索し、次にそのコンテナー クラス内で検索し、同様にして一番外側のコンテナー要素まで検索します。  
+     入れ子になったクラス内のコード、プログラミング要素への参照を修飾されていない場合は、Visual Basic 要素を検索、まず、入れ子になったクラスで、そのクラスを含むなど外側のコンテナー要素にします。  
   
-## クラスとモジュール  
- これらの要素はよく似ていますが、重要な相違点がいくつかあります。  
+## <a name="classes-and-modules"></a>クラスとモジュール  
+ これらの要素がある多くの類似点がいくつかの重要な違いがあります。  
   
--   **用語。**以前のバージョンの Visual Basic には、*クラス モジュール* \(.cls ファイル\) と*標準モジュール* \(.bas ファイル\) という 2 種類のモジュールがありました。  現在のバージョンでは、これらをそれぞれ*クラス*と*モジュール*と呼びます。  
+-   **用語集。** 以前のバージョンの Visual Basic モジュールの 2 つの種類を認識する:*クラス モジュール*(.cls ファイル) と*標準モジュール*(.bas ファイル)。 現在のバージョンを呼び出す*クラス*と*モジュール*、それぞれします。  
   
--   **共有メンバー。**クラスのメンバーを共有メンバーにするかインスタンス メンバーにするかを制御できます。  
+-   **共有メンバー。** クラスのメンバーは、共有するかどうか、またはインスタンス メンバーを制御できます。  
   
--   **オブジェクト指向。**クラスはオブジェクト指向ですが、モジュールはオブジェクト指向ではありません。  クラスについては 1 つ以上のインスタンスを作成できます。  詳細については、「[Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)」を参照してください。  
+-   **オブジェクトの方向。** クラスは、オブジェクト指向しますが、モジュールがないです。 クラスの 1 つまたは複数のインスタンスを作成することができます。 詳細については、次を参照してください。[クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)です。  
   
-## 使用例  
- 次の例では、`Class` ステートメントを使用してクラスといくつかのメンバーを定義しています。  
+## <a name="example"></a>例  
+ 次の例では、`Class`クラスといくつかのメンバーを定義するステートメント。  
   
  [!code-vb[VbVbalrStatements#62](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/class-statement_1.vb)]  
   
-## 参照  
- [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)   
- [Structures and Classes](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)   
- [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)   
- [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)   
- [Object Lifetime: How Objects Are Created and Destroyed](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)   
- [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
+## <a name="see-also"></a>関連項目  
+ [クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
+ [構造体とクラス](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)  
+ [Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [Module ステートメント](../../../visual-basic/language-reference/statements/module-statement.md)  
+ [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [オブジェクトの有効期間 : オブジェクトの作成と破棄](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)  
+ [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
  [方法 : ジェネリック クラスを使用する](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)

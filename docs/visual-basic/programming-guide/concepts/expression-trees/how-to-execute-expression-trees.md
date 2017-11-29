@@ -1,43 +1,35 @@
 ---
-title: "方法: 式ツリー (Visual Basic) を実行 |Microsoft ドキュメント"
+title: "方法: 式ツリー (Visual Basic) を実行"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 9dfb5ab3-f48f-417e-975f-f8f6f1cdc18d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e12c45b417310f097d597561b2652ee793a4b2c0
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 45a13f13659472b7620b6df070815ace1d6fb0de
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-execute-expression-trees-visual-basic"></a>方法: 式ツリー (Visual Basic) を実行
-このトピックでは、式ツリーを実行する方法を説明します。 式ツリーの実行で、値を返すことがありますか、メソッドの呼び出しなど、アクションをのみ実行することがあります。  
+このトピックでは、式ツリーを実行する方法について説明します。 式ツリーを実行すると値が返される場合がありますが、メソッドの呼び出しなどの処理が実行されるだけの場合もあります。  
   
- ラムダ式を表す式ツリーのみを実行することができます。 型<xref:System.Linq.Expressions.LambdaExpression>または<xref:System.Linq.Expressions.Expression%601>.</xref:System.Linq.Expressions.Expression%601></xref:System.Linq.Expressions.LambdaExpression>のラムダ式を表す式ツリーが、します。 これらの式ツリーを実行するを呼び出し、<xref:System.Linq.Expressions.LambdaExpression.Compile%2A>を実行可能なデリゲートを作成し、デリゲートを呼び出すメソッド</xref:System.Linq.Expressions.LambdaExpression.Compile%2A>。  
+ 実行できるのは、ラムダ式を表す式ツリーのみです。 ラムダ式を表す式ツリーの型は、<xref:System.Linq.Expressions.LambdaExpression> または <xref:System.Linq.Expressions.Expression%601> です。 このような式ツリーを実行するには、<xref:System.Linq.Expressions.LambdaExpression.Compile%2A> メソッドを呼び出して実行可能なデリゲートを作成した後、そのデリゲートを呼び出します。  
   
 > [!NOTE]
->  デリゲートの型が不明の場合、ラムダ式は型の<xref:System.Linq.Expressions.LambdaExpression>および not <xref:System.Linq.Expressions.Expression%601>、呼び出す必要があります、<xref:System.Delegate.DynamicInvoke%2A>メソッドを直接呼び出す場合の代わりにデリゲートします</xref:System.Delegate.DynamicInvoke%2A></xref:System.Linq.Expressions.Expression%601></xref:System.Linq.Expressions.LambdaExpression>。  
+>  デリゲートの型が不明な場合、つまり、ラムダ式が <xref:System.Linq.Expressions.LambdaExpression> 型であり <xref:System.Linq.Expressions.Expression%601> 型ではない場合には、デリゲートを直接呼び出さずに、デリゲートに対して <xref:System.Delegate.DynamicInvoke%2A> メソッドを呼び出す必要があります。  
   
- 呼び出すことによって、本文として元の式ツリーを持つ新しいラムダ式を作成する式ツリーがラムダ式を表さない場合、<xref:System.Linq.Expressions.Expression.Lambda%60%601%28System.Linq.Expressions.Expression%2CSystem.Collections.Generic.IEnumerable%7BSystem.Linq.Expressions.ParameterExpression%7D%29>メソッド</xref:System.Linq.Expressions.Expression.Lambda%60%601%28System.Linq.Expressions.Expression%2CSystem.Collections.Generic.IEnumerable%7BSystem.Linq.Expressions.ParameterExpression%7D%29>。 次に、このセクションで説明したとおりに、ラムダ式を実行できます。  
+ 式ツリーがラムダ式を表さない場合、<xref:System.Linq.Expressions.Expression.Lambda%60%601%28System.Linq.Expressions.Expression%2CSystem.Collections.Generic.IEnumerable%7BSystem.Linq.Expressions.ParameterExpression%7D%29> メソッドを呼び出すことで、元の式ツリーを本体に含む新しいラムダ式を作成できます。 その後、このセクションの説明のとおりにラムダ式を実行できます。  
   
 ## <a name="example"></a>例  
- 次のコード例では、ラムダ式を作成して実行することで累乗する数値を累乗を表す式ツリーを実行する方法を示します。 電源に数値の累乗を表す、結果が表示されます。  
+ 次のコード例は、ラムダ式を作成して実行することで数値の累乗を表す式ツリーの実行方法を示しています。 このコードを実行すると、累乗された数値を表す結果が表示されます。  
   
 ```vb  
 ' The expression tree to execute.  
@@ -61,10 +53,10 @@ MsgBox(result)
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
   
--   参照されていない場合は、System.Core.dll へのプロジェクト参照を追加します。  
+-   System.Core.dll がまだ参照されていない場合は、System.Core.dll へのプロジェクト参照を追加します。  
   
--   System.Linq.Expressions 名前空間が含まれます。  
+-   System.Linq.Expressions 名前空間をインクルードします。  
   
 ## <a name="see-also"></a>関連項目  
- [式ツリー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)   
+ [式ツリー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)  
  [方法: 式ツリー (Visual Basic) を変更](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)

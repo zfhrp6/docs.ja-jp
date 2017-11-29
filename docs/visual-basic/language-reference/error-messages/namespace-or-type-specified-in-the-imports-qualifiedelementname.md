@@ -1,39 +1,37 @@
 ---
-title: "Namespace or type specified in the Imports &#39;&lt;qualifiedelementname&gt;&#39; doesn&#39;t contain any public member or cannot be found | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc40056"
-  - "vbc40056"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC40056"
+title: "Namespace またはインポート &#39; で指定された型&lt;qualifiedelementname&gt;&#39; しません &#39; t がすべてのパブリック メンバーを含めるか、または見つかりません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc40056
+- vbc40056
+helpviewer_keywords: BC40056
 ms.assetid: b59f5754-444f-4378-9272-9678b437e84a
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 49cd9fa5d5182b2cf2d7fc4623bc8e9aa02bf85e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Namespace or type specified in the Imports &#39;&lt;qualifiedelementname&gt;&#39; doesn&#39;t contain any public member or cannot be found
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-インポート '\<qualifiedelementname\>' で指定された名前空間または型が、パブリック メンバーを含んでいないか、または見つかりません。名前空間または型が定義されていて、少なくとも 1 つのパブリック メンバーを含んでいることを確認してください。エイリアスが他のエイリアスを含まないようにしてください。  
+# <a name="namespace-or-type-specified-in-the-imports-39ltqualifiedelementnamegt39-doesn39t-contain-any-public-member-or-cannot-be-found"></a>Namespace またはインポート &#39; で指定された型&lt;qualifiedelementname&gt;&#39; しません &#39; t がすべてのパブリック メンバーを含めるか、または見つかりません
+インポートで指定された Namespace または型\<qualifiedelementname >'、パブリック メンバーが含まれていないか、または見つかりません。 確認してください、名前空間または型が定義されている少なくとも 1 つのパブリック メンバーが含まれています。 エイリアス名には他のエイリアスが含まれていないことを確認してください。  
   
- `Imports` ステートメントが、コンテナー要素を指定していますが、それが見つからないか、`Public` メンバーを定義していません。  
+ `Imports`見つからない、またはいずれかを一切定義しませんをコンテナー要素を指定してステートメント`Public`メンバー。  
   
- *コンテナー要素*は、名前空間、クラス、構造体、モジュール、インターフェイス、または列挙体です。  コンテナー要素には、変数、プロシージャ、その他のコンテナー要素などのメンバーが含まれます。  
+ A*要素を含む*名前空間、クラス、構造体、モジュール、インターフェイス、または列挙型にすることができます。 コンテナー要素には、変数、プロシージャ、または他のコンテナー要素などのメンバーが含まれています。  
   
- インポートの目的は、コードで名前空間または型のメンバーに修飾なしでアクセスできるようにすることです。  場合によっては、プロジェクトでも、名前空間または型への参照を追加することが必要になります。  詳細については、「[References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)」の「コンテナー要素のインポート」を参照してください。  
+ インポートの目的は、それらを修飾することがなく、名前空間または型メンバーにアクセスするようにコードを許可します。 プロジェクトは、名前空間または型への参照を追加する必要もあります。 詳細については、「を含む要素をインポートする」を参照してください[宣言された要素への参照](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)です。  
   
- 指定されたコンテナー要素が見つからない場合、コンパイラはそれを使用する参照を解決できません。  要素が見つかっても、それが `Public` メンバーを一切公開しない場合、参照は成功しません。  どちらの場合も、要素をインポートしても無意味です。  
+ コンパイラに指定されたコンテナーの要素が見つからない場合、それを使用する参照を解決できません。 かどうか、要素が見つかったが、要素はいずれかを公開しません`Public`メンバー、その参照はありませんが、成功することができます。 どちらの場合は意味が要素をインポートします。  
   
- コンテナー要素をインポートしてそれにインポート エイリアスを割り当てる場合は、そのインポート エイリアスを別の要素のインポートには使用できないことに注意してください。  次のコードはコンパイル エラーになります。  
+ コンテナー要素をインポートしてインポート エイリアスを割り当てる場合、使用できないことそのインポート エイリアスを別の要素をインポートすることに注意してください。 次のコードには、コンパイラ エラーが発生します。  
   
  `Imports`   `winfrm`   `= System.Windows.Forms`  
   
@@ -41,19 +39,19 @@ caps.handback.revision: 8
   
  `Imports behav =`   `winfrm`  `.Design.Behavior`  
   
- **Error ID:** BC40056  
+ **エラー ID:** BC40056  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  プロジェクトからコンテナー要素にアクセスできることを確認します。  
+1.  コンテナー要素に、プロジェクトからアクセスできることを確認します。  
   
-2.  コンテナー要素の指定に、別のインポートのインポート エイリアスが含まれていないことを確認します。  
+2.  親要素の仕様に別のインポートからのインポート エイリアスが含まれていないことを確認します。  
   
-3.  コンテナー要素が少なくとも 1 つの `Public` メンバーを公開することを確認します。  
+3.  コンテナーの要素が少なくとも 1 つを公開することを確認`Public`メンバー。  
   
-## 参照  
- [Imports Statement \(.NET Namespace and Type\)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)   
- [Namespace Statement](../../../visual-basic/language-reference/statements/namespace-statement.md)   
- [Public](../../../visual-basic/language-reference/modifiers/public.md)   
- [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)   
- [References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+## <a name="see-also"></a>関連項目  
+ [Imports ステートメント (.NET 名前空間および型)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+ [Namespace ステートメント](../../../visual-basic/language-reference/statements/namespace-statement.md)  
+ [Public](../../../visual-basic/language-reference/modifiers/public.md)  
+ [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)  
+ [宣言された要素の参照](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)

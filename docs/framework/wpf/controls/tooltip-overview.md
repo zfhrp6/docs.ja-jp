@@ -1,87 +1,93 @@
 ---
-title: "ToolTip の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール, ヒント"
-  - "ToolTip コントロール, ToolTip コントロールの概要"
+title: "ToolTip の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ToolTip control [WPF], about ToolTip control
+- controls [WPF], ToolTip
 ms.assetid: f06c1603-e9cb-4809-8a62-234607fc52f7
-caps.latest.revision: 22
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 31bd56323e90368f850ae54854e6f50b63d5f7fe
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ToolTip の概要
-ツールヒントは、<xref:System.Windows.Controls.Button> などの要素の上にマウス ポインターを置いたときに表示される小さいポップアップ ウィンドウです。  ここでは、ツールヒントについて、およびツールヒントのコンテンツを作成およびカスタマイズする方法について説明します。  
+# <a name="tooltip-overview"></a>ToolTip の概要
+ツールヒントは、ユーザーなどを超えると、要素の上にマウス ポインターを置いたときに表示される小さいポップアップ ウィンドウ、<xref:System.Windows.Controls.Button>です。 このトピックでは、ツールヒントを紹介し、ツールヒントの内容を作成およびカスタマイズする方法について説明します。  
   
-   
+ 
   
 <a name="what_is_a_tooltip"></a>   
-## ツールヒントとは  
- ツールヒントを持つ要素の上にマウス ポインターを移動すると、ツールヒントのコンテンツ \(たとえば、コントロールの機能を説明するテキスト コンテンツなど\) を含むウィンドウが、指定した時間だけ表示されます。  マウス ポインターをコントロールの外に移動すると、ツールヒントのコンテンツはフォーカスを受け取ることができないので、ウィンドウは表示されなくなります。  
+## <a name="what-is-a-tooltip"></a>ツールヒントとは  
+ ツールヒントを持つ要素の上にマウス ポインターを置くと、一定の時間、ツールヒントの内容 (たとえば、コントロールの機能を説明するテキスト コンテンツ) を含むウィンドウが表示されます。 コントロールからマウス ポインターを移動すると、ツールヒントの内容がフォーカスを受け取ることができなくなるため、ウィンドウが消えます  
   
- ツールヒントのコンテンツには、1 行または複数行のテキスト、イメージ、図形、またはその他のビジュアル コンテンツを使用できます。  コントロールのツールヒントを定義するには、ツールヒントのコンテンツに次のいずれかのプロパティを設定します。  
+ ツールヒントの内容は、1 行または複数行のテキスト、イメージ、図形などのビジュアル コンテンツを含めることができます。 次のプロパティの 1 つをツールヒントの内容に設定することによって、コントロールのツールヒントを定義します。  
   
--   <xref:System.Windows.FrameworkContentElement.ToolTip%2A?displayProperty=fullName>  
+-   <xref:System.Windows.FrameworkContentElement.ToolTip%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.FrameworkElement.ToolTip%2A?displayProperty=fullName>  
+-   <xref:System.Windows.FrameworkElement.ToolTip%2A?displayProperty=nameWithType>  
   
- どちらのプロパティを使用するかは、ツールヒントを定義するコントロールが <xref:System.Windows.FrameworkContentElement> クラスまたは <xref:System.Windows.FrameworkElement> クラスのどちらを継承するかによります。  
+ 使用するどのプロパティから、ツールヒントを定義するコントロールを継承するかどうかに依存、<xref:System.Windows.FrameworkContentElement>または<xref:System.Windows.FrameworkElement>クラスです。  
   
 <a name="create_tooltip"></a>   
-## ツールヒントの作成  
- <xref:System.Windows.Controls.Button> コントロールの <xref:System.Windows.FrameworkElement.ToolTip%2A> プロパティにテキスト文字列を設定して、簡単なツールヒントを作成する方法を次の例に示します。  
+## <a name="creating-a-tooltip"></a>ツールヒントの作成  
+ 次の例を設定して、単純なツールヒントを作成する方法を示しています、<xref:System.Windows.FrameworkElement.ToolTip%2A>プロパティを<xref:System.Windows.Controls.Button>コントロールにテキスト文字列。  
   
- [!code-xml[GroupBoxSnippet#ToolTipString](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GroupBoxSnippet/CS/Window1.xaml#tooltipstring)]  
+ [!code-xaml[GroupBoxSnippet#ToolTipString](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GroupBoxSnippet/CS/Window1.xaml#tooltipstring)]  
   
- <xref:System.Windows.Controls.ToolTip> オブジェクトとしてツールヒントを定義することもできます。  次の例では、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] を使用し、<xref:System.Windows.Controls.TextBox> 要素のツールヒントとして <xref:System.Windows.Controls.ToolTip> オブジェクトを指定します。  <xref:System.Windows.FrameworkElement.ToolTip%2A?displayProperty=fullName> プロパティを設定することで <xref:System.Windows.Controls.ToolTip> を指定していることに注意してください。  
+ としてのツールヒントを定義することも、<xref:System.Windows.Controls.ToolTip>オブジェクト。 次の例で[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を指定する、<xref:System.Windows.Controls.ToolTip>オブジェクトのツールヒントとして、<xref:System.Windows.Controls.TextBox>要素。 例では、指定、<xref:System.Windows.Controls.ToolTip>を設定して、<xref:System.Windows.FrameworkElement.ToolTip%2A?displayProperty=nameWithType>プロパティです。  
   
- [!code-xml[ToolTipSimple#ToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipSimple#ToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#tooltip)]  
   
- コードを使用して <xref:System.Windows.Controls.ToolTip> オブジェクトを生成する例を次に示します。  この例では、<xref:System.Windows.Controls.ToolTip> \(`tt`\) を作成し、それを <xref:System.Windows.Controls.Button> に関連付けます。  
+ 次の例では、コードを使用して、生成する、<xref:System.Windows.Controls.ToolTip>オブジェクト。 例は、作成、 <xref:System.Windows.Controls.ToolTip> (`tt`) に関連付けますと、<xref:System.Windows.Controls.Button>です。  
   
  [!code-csharp[ToolTipSimple#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml.cs#2)]
  [!code-vb[ToolTipSimple#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipSimple/VisualBasic/Window1.xaml.vb#2)]  
   
- ツールヒントのコンテンツを <xref:System.Windows.Controls.DockPanel> などのレイアウト要素で囲むことで、<xref:System.Windows.Controls.ToolTip> オブジェクトとして定義されていないツールヒントのコンテンツを作成することもできます。  次の例では、<xref:System.Windows.Controls.DockPanel> コントロールで囲まれているコンテンツを、<xref:System.Windows.Controls.TextBox> の <xref:System.Windows.FrameworkElement.ToolTip%2A> プロパティに設定する方法を示します。  
+ として定義されていないツールヒントのコンテンツを作成することも、<xref:System.Windows.Controls.ToolTip>などをレイアウト要素のツールヒントのコンテンツを囲むことによってオブジェクト、<xref:System.Windows.Controls.DockPanel>です。 次の例は、設定する方法を示します、<xref:System.Windows.FrameworkElement.ToolTip%2A>のプロパティ、<xref:System.Windows.Controls.TextBox>で囲まれたコンテンツを<xref:System.Windows.Controls.DockPanel>コントロール。  
   
- [!code-xml[GroupBoxSnippet#ToolTipDockPanel](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GroupBoxSnippet/CS/Window1.xaml#tooltipdockpanel)]  
+ [!code-xaml[GroupBoxSnippet#ToolTipDockPanel](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GroupBoxSnippet/CS/Window1.xaml#tooltipdockpanel)]  
   
 <a name="Using_the_ToolTip_and_ToolTipService_Properties"></a>   
-## ToolTip クラスと ToolTipService クラスのプロパティの使用  
- 視覚プロパティを設定してスタイルを適用することで、ツールヒントのコンテンツをカスタマイズできます。  <xref:System.Windows.Controls.ToolTip> オブジェクトとしてツールヒントのコンテンツを定義する場合は、<xref:System.Windows.Controls.ToolTip> オブジェクトの視覚プロパティを設定できます。  それ以外の場合は、<xref:System.Windows.Controls.ToolTipService> クラスで等価の[添付プロパティ](GTMT)を設定する必要があります。  
+## <a name="using-the-properties-of-the-tooltip-and-tooltipservice-classes"></a>ToolTip クラスおよび ToolTipService クラスのプロパティの使用  
+ ビジュアル プロパティを設定し、スタイルを適用して、ツールヒントの内容をカスタマイズできます。 ツールヒントとしてコンテンツを定義する場合、<xref:System.Windows.Controls.ToolTip>オブジェクトのビジュアル プロパティを設定することができます、<xref:System.Windows.Controls.ToolTip>オブジェクト。 それ以外の場合でと同等の添付プロパティを設定する必要があります、<xref:System.Windows.Controls.ToolTipService>クラスです。  
   
- <xref:System.Windows.Controls.ToolTip> と <xref:System.Windows.Controls.ToolTipService> のプロパティを使用して、ツールヒントのコンテンツの位置を指定するプロパティを設定する方法の例については、「[ToolTip を配置する](../../../../docs/framework/wpf/controls/how-to-position-a-tooltip.md)」を参照してください。  
+ 使用して、ツールヒントのコンテンツの位置を指定するためにプロパティを設定する方法の例については、<xref:System.Windows.Controls.ToolTip>と<xref:System.Windows.Controls.ToolTipService>プロパティを参照してください[ツールヒントを配置](../../../../docs/framework/wpf/controls/how-to-position-a-tooltip.md)です。  
   
 <a name="StylingToolTip"></a>   
-## ToolTip のスタイル設定  
- カスタム <xref:System.Windows.Style> を定義することで、<xref:System.Windows.Controls.ToolTip> のスタイルを設定できます。  次の例では、<xref:System.Windows.Controls.Control.Background%2A>、<xref:System.Windows.Controls.Control.Foreground%2A>、<xref:System.Windows.Controls.Control.FontSize%2A>、および <xref:System.Windows.Controls.Control.FontWeight%2A> を設定することで <xref:System.Windows.Controls.ToolTip> の配置をオフセットして外観を変更する、`Simple` という名前の <xref:System.Windows.Style> を定義しています。  
+## <a name="styling-a-tooltip"></a>ツールヒントのスタイル設定  
+ スタイルを設定することができます、<xref:System.Windows.Controls.ToolTip>カスタムを定義することによって<xref:System.Windows.Style>です。 次の例では定義、<xref:System.Windows.Style>と呼ばれる`Simple`の配置をオフセットする方法を示す、<xref:System.Windows.Controls.ToolTip>を設定して、外観を変更し、 <xref:System.Windows.Controls.Control.Background%2A>、 <xref:System.Windows.Controls.Control.Foreground%2A>、 <xref:System.Windows.Controls.Control.FontSize%2A>、および<xref:System.Windows.Controls.Control.FontWeight%2A>です。  
   
- [!code-xml[ToolTipSimple#Style](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#style)]  
+ [!code-xaml[ToolTipSimple#Style](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#style)]  
   
 <a name="UsingtheToolTipServiceTimeIntervalProperties"></a>   
-## ToolTipService の時間間隔プロパティの使用  
- <xref:System.Windows.Controls.ToolTipService> クラスで提供されている <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A>、<xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A>、および <xref:System.Windows.Controls.ToolTipService.ShowDuration%2A> の各プロパティを使用すると、ツールヒントの表示時間を設定できます。  
+## <a name="using-the-time-interval-properties-of-tooltipservice"></a>ToolTipService の時間間隔プロパティの使用  
+ <xref:System.Windows.Controls.ToolTipService> 、次のプロパティにツールヒントを設定する時刻を表示するクラスが用意されています: <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A>、 <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A>、および<xref:System.Windows.Controls.ToolTipService.ShowDuration%2A>です。  
   
- <xref:System.Windows.Controls.ToolTip> が表示されるまでの遅延時間 \(通常は短時間\)、および <xref:System.Windows.Controls.ToolTip> が表示されている時間を指定するには、<xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A> プロパティと <xref:System.Windows.Controls.ToolTipService.ShowDuration%2A> プロパティを使用します。  詳細については、「[How to: Delay the Display of a ToolTip](http://msdn.microsoft.com/ja-jp/618e05ef-f2bf-4a53-a0f4-aacb49918bd7)」を参照してください。  
+ 使用して、<xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A>と<xref:System.Windows.Controls.ToolTipService.ShowDuration%2A>プロパティで、遅延を指定する通常の簡単な前に、<xref:System.Windows.Controls.ToolTip>が表示されますおよび期間を指定にも、<xref:System.Windows.Controls.ToolTip>表示されたままです。 詳細については、「[ How to: Delay the Display of a ToolTip](http://msdn.microsoft.com/en-us/618e05ef-f2bf-4a53-a0f4-aacb49918bd7)」を参照してください。  
   
- <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> プロパティは、マウス ポインターをあるコントロールから別のコントロールに移動したときに、後のコントロールのツールヒントを初期遅延なしで表示するかどうかを指定します。  <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> プロパティの詳細については、「[BetweenShowDelay プロパティを使用する](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md)」を参照してください。  
+ <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A>プロパティ間にマウス ポインターをすばやく移動するときに初期遅延なしのさまざまなコントロールのツールヒントが表示されるかどうかがします。 詳細については、<xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A>プロパティを参照してください[BetweenShowDelay プロパティを使用して](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md)です。  
   
- 次の例では、ツールヒントにこれらのプロパティを設定する方法を示します。  
+ 次の例では、ツールヒントのこれらのプロパティを設定する方法を示します。  
   
- [!code-xml[ToolTipService#ToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipService#ToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
   
-## 参照  
- <xref:System.Windows.Controls.ToolTipService>   
- <xref:System.Windows.Controls.ToolTip>   
- <xref:System.Windows.Controls.ToolTipEventArgs>   
- <xref:System.Windows.Controls.ToolTipEventHandler>   
- [方法のトピック](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.ToolTipService>  
+ <xref:System.Windows.Controls.ToolTip>  
+ <xref:System.Windows.Controls.ToolTipEventArgs>  
+ <xref:System.Windows.Controls.ToolTipEventHandler>  
+ [データ バインドに関する「方法」トピック](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)

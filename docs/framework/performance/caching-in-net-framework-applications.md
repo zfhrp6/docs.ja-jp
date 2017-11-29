@@ -5,8 +5,7 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,16 +13,15 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [ASP.NET]
 ms.assetid: c4b47ee0-4b82-4124-9bce-818088385e34
-caps.latest.revision: 26
+caps.latest.revision: "26"
 author: tdykstra
 ms.author: tdykstra
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7886b3bfe8299b64277d6062ab481136caafbde0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 69e6ea6a95ffdea8f7a21540106d4817119a7cb3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="caching-in-net-framework-applications"></a>.NET Framework アプリケーションでのキャッシュ
 キャッシュを使用すると、メモリにデータを格納して高速にアクセスできます。 アプリケーションからそのデータに再アクセスするときに、元のソースからではなく、キャッシュからデータを取得できます。 そのため、パフォーマンスとスケーラビリティが向上します。 また、データ ソースが一時的に使用できない場合でも、キャッシュのデータを使用できます。  
@@ -88,8 +86,7 @@ ms.lasthandoff: 08/21/2017
  詳細については、Scott Guthrie のブログのエントリ「[Extensible Output Caching with ASP.NET 4 (VS 2010 and .NET 4.0 Series)](http://go.microsoft.com/fwlink/?LinkId=185772)」(ASP.NET 4 を使用した拡張可能な出力キャッシュ (VS 2010 および .NET 4.0 シリーズ)) を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.Caching.ObjectCache>   
- <xref:System.Runtime.Caching.MemoryCache>   
- [チュートリアル: WPF アプリケーション内のアプリケーション データのキャッシュ](../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)   
+ <xref:System.Runtime.Caching.ObjectCache>  
+ <xref:System.Runtime.Caching.MemoryCache>  
+ [チュートリアル: WPF アプリケーション内のアプリケーション データのキャッシュ](../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)  
  [チュートリアル: ASP.NET 内のアプリケーション データのキャッシュ](http://msdn.microsoft.com/library/942236f6-0138-4aaf-af71-a5ea451a1e23)
-

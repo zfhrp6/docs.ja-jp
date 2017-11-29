@@ -1,40 +1,41 @@
 ---
-title: "方法 : PrintDialog コンポーネントを表示する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "[印刷] ダイアログ ボックス, 表示"
-  - "PrintDialog コンポーネント [Windows フォーム], 表示"
-  - "印刷 [Windows フォーム], 表示 (印刷ダイアログ ボックスを)"
+title: "方法 : PrintDialog コンポーネントを表示する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Print dialog box [Windows Forms], displaying
+- PrintDialog component [Windows Forms], displaying
+- printing [Windows Forms], displaying print dialog box
 ms.assetid: 745a8db7-0526-4b21-b09d-18e13ed32014
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7e1162a4e926d5be35f8f7bb7cdeb92264f293aa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : PrintDialog コンポーネントを表示する
-<xref:System.Windows.Forms.PrintDialog> コンポーネントは、多くのユーザーにお馴染みの Windows の標準印刷ダイアログ ボックスです。  ユーザーが簡単に使用できるため、<xref:System.Windows.Forms.PrintDialog> コンポーネントを使用することをお勧めします。  
+# <a name="how-to-display-the-printdialog-component"></a>方法 : PrintDialog コンポーネントを表示する
+<xref:System.Windows.Forms.PrintDialog>コンポーネントは、多くのユーザーに習熟する標準の Windows 印刷 ダイアログ ボックス。 あるため、ユーザーはすぐに慣れる、使用すると役に立つなります、<xref:System.Windows.Forms.PrintDialog>コンポーネントです。  
   
-### PrintDialog コンポーネントを表示するには  
+### <a name="to-display-the-printdialog-component"></a>PrintDialog コンポーネントを表示するには  
   
--   アプリケーションのコードから <xref:System.Windows.Forms.Form.ShowDialog%2A> メソッドを呼び出します。  
+-   呼び出す、<xref:System.Windows.Forms.Form.ShowDialog%2A>メソッド アプリケーションのコード内からです。  
   
-     コンポーネントが表示されると、ユーザーはそれを使用して印刷ジョブのプロパティを設定します。  この設定は、印刷ジョブに関連付けられている [PrinterSettings](frlrfSystemDrawingPrintingPrinterSettingsMembersTopic) クラス \(ユーザーが <xref:System.Windows.Forms.PrintDialog> コンポーネントを通じて [PageSetupDialog コンポーネント](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md) にアクセスしている場合は [PageSettings](frlrfSystemDrawingPrintingPageSettingsMembersTopic) クラス\) に保存されます。  その後で、設定されたプロパティを呼び出して印刷ジョブの詳細を確認できます。  
+     コンポーネントが表示されると、ユーザーはそれを使用して印刷ジョブのプロパティを設定します。 これらに保存、 <!--zz <xref:System.Drawing.Printing.PrinterSetting>--> `PrinterSetting`クラス (および<xref:System.Drawing.Printing.PageSettings>クラス、ユーザーがアクセスする場合、 [PageSetupDialog コンポーネント](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)を通じて、<xref:System.Windows.Forms.PrintDialog>コンポーネント) その印刷ジョブに関連付けられています。 その後で、設定されたプロパティを呼び出して印刷ジョブの詳細を確認できます。  
   
-## 参照  
- [方法 : 標準の Windows フォーム印刷ジョブを作成する](../../../../docs/framework/winforms/advanced/how-to-create-standard-windows-forms-print-jobs.md)   
- [方法 : 実行時に PrintDialog のユーザー入力をキャプチャする](../../../../docs/framework/winforms/advanced/how-to-capture-user-input-from-a-printdialog-at-run-time.md)   
- [PrintPreviewDialog コントロール](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)   
- [PrintDialog コンポーネント](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md)   
- [Windows フォームにおける印刷のサポート](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)   
+## <a name="see-also"></a>関連項目  
+ [方法: 標準の Windows フォーム印刷ジョブを作成する](../../../../docs/framework/winforms/advanced/how-to-create-standard-windows-forms-print-jobs.md)  
+ [方法: 実行時に PrintDialog のユーザー入力をキャプチャする](../../../../docs/framework/winforms/advanced/how-to-capture-user-input-from-a-printdialog-at-run-time.md)  
+ [PrintPreviewDialog コントロール](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)  
+ [PrintDialog コンポーネント](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md)  
+ [Windows フォームにおける印刷のサポート](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)  
  [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)

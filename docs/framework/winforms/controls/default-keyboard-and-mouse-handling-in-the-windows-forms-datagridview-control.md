@@ -1,124 +1,125 @@
 ---
-title: "Windows フォーム DataGridView コントロールの既定のキーボード処理とマウス処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ グリッド, マウス処理"
-  - "DataGridView コントロール [Windows フォーム], キーボード処理"
-  - "DataGridView コントロール [Windows フォーム], マウス処理"
-  - "DataGridView コントロール [Windows フォーム], 移動キー"
-  - "キーボード, 既定の処理 (DataGridView コントロール内の)"
-  - "マウス, 既定の処理 (DataGridView コントロール内の)"
-  - "移動キー, DataGridView コントロール"
+title: "Windows フォーム DataGridView コントロールの既定のキーボード処理とマウス処理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- data grids [Windows Forms], mouse handling
+- DataGridView control [Windows Forms], navigation keys
+- keyboards [Windows Forms], default handling in DataGridView control
+- DataGridView control [Windows Forms], keyboard handling
+- mouse [Windows Forms], default handling in DataGridView control
+- DataGridView control [Windows Forms], mouse handling
+- navigation keys [Windows Forms], DataGridView control
 ms.assetid: 4519b928-bfc8-4e8b-bb9c-b1e76a0ca552
-caps.latest.revision: 19
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d0f1ec3f1fe0b078da92c93cbb928075d7d462c9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム DataGridView コントロールの既定のキーボード処理とマウス処理
-キーボードとマウスを介して、ユーザーが <xref:System.Windows.Forms.DataGridView> コントロールとやり取りする方法を次の表に示します。  
+# <a name="default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールの既定のキーボード処理とマウス処理
+次の表とユーザーの対話方法について説明する、<xref:System.Windows.Forms.DataGridView>キーボードとマウスを制御します。  
   
 > [!NOTE]
->  キーボードの動作をカスタマイズするには、<xref:System.Windows.Forms.Control.KeyDown> などの標準キーボード イベントを処理します。  ただし、編集モードでは、ホストされる編集コントロールがキーボード入力を受け取るため、<xref:System.Windows.Forms.DataGridView> コントロールに対するキーボード イベントは発生しません。  編集コントロールのイベントを処理するには、<xref:System.Windows.Forms.DataGridView.EditingControlShowing> イベント ハンドラーで編集コントロールにハンドラーをアタッチします。  または、<xref:System.Windows.Forms.DataGridView> サブクラスで <xref:System.Windows.Forms.DataGridView.ProcessDialogKey%2A> メソッドと <xref:System.Windows.Forms.DataGridView.ProcessDataGridViewKey%2A> メソッドをオーバーライドして、キーボードの動作をカスタマイズすることもできます。  
+>  キーボードの動作をカスタマイズすることがイベントを処理する標準のキーボードなど<xref:System.Windows.Forms.Control.KeyDown>です。 編集モードで、ただし、ホストされる編集コントロールが受信キーボード入力やキーボード イベントの発生、<xref:System.Windows.Forms.DataGridView>コントロール。 編集コントロールのイベントを処理するには、編集コントロールに、ハンドラーをアタッチ、<xref:System.Windows.Forms.DataGridView.EditingControlShowing>イベント ハンドラー。 キーボードの動作をカスタマイズする代わりに、<xref:System.Windows.Forms.DataGridView>サブクラスをオーバーライドすることで、<xref:System.Windows.Forms.DataGridView.ProcessDialogKey%2A>と<xref:System.Windows.Forms.DataGridView.ProcessDataGridViewKey%2A>メソッドです。  
   
-## 既定のキーボード処理  
+## <a name="default-keyboard-handling"></a>既定のキーボード処理  
   
-### 基本的な移動キーと入力キー  
+### <a name="basic-navigation-and-entry-keys"></a>基本的なナビゲーション キーとエントリ キー  
   
-|キーまたはキーの組み合わせ|Description|  
-|-------------------|-----------------|  
-|↓|現在のセルの 1 つ下のセルにフォーカスを移動します。  フォーカスが最後の行にある場合は、何も行いません。|  
-|←|同じ行の 1 つ前のセルにフォーカスを移動します。  フォーカスが行の最初のセルにある場合は、何も行いません。|  
-|→|同じ行の次のセルにフォーカスを移動します。  フォーカスが行の最後のセルにある場合は、何も行いません。|  
-|↑|現在のセルの 1 つ上のセルにフォーカスを移動します。  フォーカスが最初の行にある場合は、何も行いません。|  
-|Home|現在の行の最初のセルにフォーカスを移動します。|  
+|キーまたはキーの組み合わせ|説明|  
+|----------------------------|-----------------|  
+|↓|現在のセルの直下のセルにフォーカスを移動します。 最後の行にフォーカスがある場合は、何も行われません。|  
+|←|行の前のセルにフォーカスを移動します。 行の最初のセルにフォーカスがある場合は、何も行われません。|  
+|→|次の行のセルにフォーカスを移動します。 行の最後のセルにフォーカスがある場合は、何も行われません。|  
+|↑|現在のセルの上に直接セルにフォーカスを移動します。 最初の行にフォーカスがある場合は、何も行われません。|  
+|ホーム|現在の行の最初のセルにフォーカスを移動します。|  
 |End|現在の行の最後のセルにフォーカスを移動します。|  
-|PageDown|完全に表示されている行数分、コントロールを下にスクロールします。  完全に表示されている最後の行にフォーカスを移動します。列は変更しません。|  
-|PageUp|完全に表示されている行数分、コントロールを上にスクロールします。  現在表示されている最初の行にフォーカスを移動します。列は変更しません。|  
-|Tab|<xref:System.Windows.Forms.DataGridView.StandardTab%2A> プロパティ値が `false` の場合は、現在の行の次のセルにフォーカスを移動します。  行の最後のセルにフォーカスがあるときは、次の行の最初のセルにフォーカスを移動します。  コントロールの最後のセルにフォーカスがあるときは、親コンテナーのタブ オーダーで次のコントロールにフォーカスを移動します。<br /><br /> <xref:System.Windows.Forms.DataGridView.StandardTab%2A> プロパティ値が `true` の場合は、親コンテナーのタブ オーダーで次のコントロールにフォーカスを移動します。|  
-|Shift \+ Tab|<xref:System.Windows.Forms.DataGridView.StandardTab%2A> プロパティ値が `false` の場合は、現在の行の 1 つ前のセルにフォーカスを移動します。  行の最初のセルにフォーカスがあるときは、1 つ前の行の最後のセルにフォーカスを移動します。  コントロールの最初のセルにフォーカスがある場合は、親コンテナーのタブ オーダーで 1 つ前のコントロールにフォーカスを移動します。<br /><br /> <xref:System.Windows.Forms.DataGridView.StandardTab%2A> プロパティ値が `true` の場合は、親コンテナーのタブ オーダーで 1 つ前のコントロールにフォーカスを移動します。|  
-|Ctrl \+ Tab|<xref:System.Windows.Forms.DataGridView.StandardTab%2A> プロパティ値が `false` の場合は、親コンテナーのタブ オーダーで次のコントロールにフォーカスを移動します。<br /><br /> <xref:System.Windows.Forms.DataGridView.StandardTab%2A> プロパティ値が `true` の場合は、現在の行の次のセルにフォーカスを移動します。  行の最後のセルにフォーカスがあるときは、次の行の最初のセルにフォーカスを移動します。  コントロールの最後のセルにフォーカスがあるときは、親コンテナーのタブ オーダーで次のコントロールにフォーカスを移動します。|  
-|Ctrl \+ Shift \+ Tab|<xref:System.Windows.Forms.DataGridView.StandardTab%2A> プロパティ値が `false` の場合は、親コンテナーのタブ オーダーで 1 つ前のコントロールにフォーカスを移動します。<br /><br /> <xref:System.Windows.Forms.DataGridView.StandardTab%2A> プロパティ値が `true` の場合は、現在の行の 1 つ前のセルにフォーカスを移動します。  行の最初のセルにフォーカスがあるときは、1 つ前の行の最後のセルにフォーカスを移動します。  コントロールの最初のセルにフォーカスがある場合は、親コンテナーのタブ オーダーで 1 つ前のコントロールにフォーカスを移動します。|  
-|Ctrl \+ 方向キー|矢印の方向にある最も遠いセルにフォーカスを移動します。|  
-|Ctrl \+ Home|コントロール内の最初のセルにフォーカスを移動します。|  
-|Ctrl \+ End|コントロール内の最後のセルにフォーカスを移動します。|  
-|Ctrl \+ PageDown または Ctrl \+ PageUp|PageDown または PageUp と同じです。|  
-|F2|<xref:System.Windows.Forms.DataGridView.EditMode%2A> プロパティ値が <xref:System.Windows.Forms.DataGridViewEditMode> または <xref:System.Windows.Forms.DataGridViewEditMode> の場合に、現在のセルを編集モードに設定します。|  
-|F4|現在のセルが <xref:System.Windows.Forms.DataGridViewComboBoxCell> の場合に、現在のセルを編集モードにしてドロップダウン リストを表示します。|  
-|Alt \+ ↑ または Alt \+ ↓|現在のセルが <xref:System.Windows.Forms.DataGridViewComboBoxCell> の場合に、現在のセルを編集モードにしてドロップダウン リストを表示します。|  
-|Space|現在のセルが <xref:System.Windows.Forms.DataGridViewButtonCell>、<xref:System.Windows.Forms.DataGridViewLinkCell>、または <xref:System.Windows.Forms.DataGridViewCheckBoxCell> の場合に、<xref:System.Windows.Forms.DataGridView.CellClick> イベントと <xref:System.Windows.Forms.DataGridView.CellContentClick> イベントを発生させます。  現在のセルが <xref:System.Windows.Forms.DataGridViewButtonCell> の場合は、ボタンも押します。  現在のセルが <xref:System.Windows.Forms.DataGridViewCheckBoxCell> の場合は、\(チェック ボックスの\) チェックの状態も変更します。|  
-|Enter|現在のセルおよび行への変更をコミットし、現在のセルの 1 つ下のセルにフォーカスを移動します。  フォーカスが最後の行にある場合は、変更をコミットし、フォーカスは移動しません。|  
-|Esc|コントロールが編集モードの場合は、編集をキャンセルします。  コントロールが編集モードではない場合、コントロールが編集をサポートするデータ ソースにバインドされているか、または行レベルのコミット スコープを持つ仮想モードが実装されていれば、現在の行に加えられた変更をすべて元に戻します。|  
-|BackSpace|セルを編集するときに、カーソル位置の前にある文字を削除します。|  
-|Del|セルを編集するときに、カーソル位置の後にある文字を削除します。|  
-|Ctrl \+ Enter|現在のセルに対して行われた変更をコミットします。フォーカスは移動しません。  また、コントロールが編集をサポートするデータ ソースにバインドされている場合、または行レベルのコミット スコープを持つ仮想モードが実装されている場合、現在の行に対する変更をすべてコミットします。|  
-|Ctrl \+ 0|セルを編集できる場合に、現在のセルに <xref:System.DBNull.Value?displayProperty=fullName> 値を入力します。  既定では、<xref:System.DBNull> セル値の表示値は、現在のセルに対して有効な <xref:System.Windows.Forms.DataGridViewCellStyle> の <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> プロパティの値です。|  
+|PageDown|コントロールを下を完全に表示されている行の数でスクロールします。 列を変更することがなく、最後に完全に表示されている行に、フォーカスを移動します。|  
+|PageUp|コントロールを完全に表示されている行の数、スクロールします。 最初の表示されている行の列を変更せずにフォーカスを移動します。|  
+|Tab|場合、<xref:System.Windows.Forms.DataGridView.StandardTab%2A>プロパティの値が`false`、現在の行の次のセルにフォーカスを移動します。 行の最後のセルにフォーカスがある場合は、次の行の最初のセルにフォーカスを移動します。 コントロール内の最後のセルにフォーカスがある場合は、親コンテナーのタブ オーダーの次のコントロールにフォーカスを移動します。<br /><br /> 場合、<xref:System.Windows.Forms.DataGridView.StandardTab%2A>プロパティの値が`true`、親コンテナーのタブ オーダーの次のコントロールにフォーカスを移動します。|  
+|Shift + Tab|場合、<xref:System.Windows.Forms.DataGridView.StandardTab%2A>プロパティの値が`false`、現在の行の前のセルにフォーカスを移動します。 行の最初のセルにフォーカスがある場合は、前の行の最後のセルにフォーカスを移動します。 コントロール内の最初のセルにフォーカスがある場合は、親コンテナーのタブ オーダーの前のコントロールにフォーカスを移動します。<br /><br /> 場合、<xref:System.Windows.Forms.DataGridView.StandardTab%2A>プロパティの値が`true`、親コンテナーのタブ オーダー内の前のコントロールにフォーカスを移動します。|  
+|Ctrl + Tab|場合、<xref:System.Windows.Forms.DataGridView.StandardTab%2A>プロパティの値が`false`、親コンテナーのタブ オーダーの次のコントロールにフォーカスを移動します。<br /><br /> 場合、<xref:System.Windows.Forms.DataGridView.StandardTab%2A>プロパティの値が`true`、現在の行の次のセルにフォーカスを移動します。 行の最後のセルにフォーカスがある場合は、次の行の最初のセルにフォーカスを移動します。 コントロール内の最後のセルにフォーカスがある場合は、親コンテナーのタブ オーダーの次のコントロールにフォーカスを移動します。|  
+|Ctrl + Shift + Tab|場合、<xref:System.Windows.Forms.DataGridView.StandardTab%2A>プロパティの値が`false`、親コンテナーのタブ オーダー内の前のコントロールにフォーカスを移動します。<br /><br /> 場合、<xref:System.Windows.Forms.DataGridView.StandardTab%2A>プロパティの値が`true`、現在の行の前のセルにフォーカスを移動します。 行の最初のセルにフォーカスがある場合は、前の行の最後のセルにフォーカスを移動します。 コントロール内の最初のセルにフォーカスがある場合は、親コンテナーのタブ オーダーの前のコントロールにフォーカスを移動します。|  
+|CTRL キーを押しながら方向|矢印の方向で最も遠いセルにフォーカスを移動します。|  
+|CTRL + HOME|コントロール内の最初のセルにフォーカスを移動します。|  
+|CTRL キーを押しながら END キー|コントロール内の最後のセルにフォーカスを移動します。|  
+|CTRL + ページ上/下|PAGE down キーまたはページの上と同じです。|  
+|F2|場合、セルの編集モードに現在のセルを挿入、<xref:System.Windows.Forms.DataGridView.EditMode%2A>プロパティの値が<xref:System.Windows.Forms.DataGridViewEditMode.EditOnF2>または<xref:System.Windows.Forms.DataGridViewEditMode.EditOnKeystrokeOrF2>です。|  
+|F4|現在のセルがある場合、<xref:System.Windows.Forms.DataGridViewComboBoxCell>セルが編集モードに、ドロップダウン リストが表示されます。|  
+|ALT キーを押しながら上/下方向|現在のセルがある場合、<xref:System.Windows.Forms.DataGridViewComboBoxCell>セルが編集モードに、ドロップダウン リストが表示されます。|  
+|Space|現在のセルがある場合、 <xref:System.Windows.Forms.DataGridViewButtonCell>、 <xref:System.Windows.Forms.DataGridViewLinkCell>、または<xref:System.Windows.Forms.DataGridViewCheckBoxCell>を生成、<xref:System.Windows.Forms.DataGridView.CellClick>と<xref:System.Windows.Forms.DataGridView.CellContentClick>イベント。 現在のセルがある場合、 <xref:System.Windows.Forms.DataGridViewButtonCell>、また、ボタンを押します。 現在のセルがある場合、<xref:System.Windows.Forms.DataGridViewCheckBoxCell>もチェックの状態を変更します。|  
+|Enter|現在のセルと行に変更をコミットし、現在のセルの直下のセルにフォーカスを移動します。 最後の行にフォーカスがある場合は、フォーカスを移動させることがなく変更をコミットします。|  
+|Esc|コントロールが編集モードである場合は、編集をキャンセルします。 コントロールが編集モードにない場合は、コントロールが編集をサポートするデータ ソースにバインドされている場合、現在の行に行われた変更を元に戻します。 または行レベルのコミットのスコープを持つ仮想モードが実装されています。|  
+|BACKSPACE キー|セルを編集するときは、挿入ポイントの直前にある文字を削除します。|  
+|Del|セルの編集時に、挿入位置より後に文字を削除します。|  
+|Ctrl + Enter|現在のセルにフォーカスを移動せず変更をコミットします。 コントロールが編集または仮想モードをサポートするデータ ソースにバインドされている場合は、現在の行への変更が実装されてコミット行レベルのコミットのスコープ。|  
+|Ctrl + 0|入力した、<xref:System.DBNull.Value?displayProperty=nameWithType>セルを編集する場合は、現在のセルに値します。 既定では、表示の値を<xref:System.DBNull>セル値がの値、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewCellStyle>現在のセルに対して有効です。|  
   
-### 選択キー  
- <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> プロパティが `false` に設定され、<xref:System.Windows.Forms.DataGridView.SelectionMode%2A> プロパティが <xref:System.Windows.Forms.DataGridViewSelectionMode> に設定されている場合は、移動キーを使用して現在のセルを変更すると、選択対象が新しいセルに変更されます。  Shift キー、Ctrl キー、および Alt キーはこの動作には影響しません。  
+### <a name="selection-keys"></a>選択キー  
+ 場合、<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>プロパティに設定されている`false`と<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>プロパティに設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>、新しいセルに、選択範囲を変更するナビゲーション キーを使用して、現在のセルを変更します。 Shift キーを押し、CTRL、ALT の各キーは、この動作は影響しません。  
   
- <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> が <xref:System.Windows.Forms.DataGridViewSelectionMode> または <xref:System.Windows.Forms.DataGridViewSelectionMode> に設定されている場合も同じように動作しますが、次の動作が追加されます。  
+ 場合、<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>に設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect>または<xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>、同じ動作が発生したが、次の項目を追加します。  
   
-|キーまたはキーの組み合わせ|Description|  
-|-------------------|-----------------|  
-|Shift \+ Space|行全体または列全体を選択します \(行ヘッダーまたは列ヘッダーを選択するのと同じです\)。|  
-|移動キー \(方向キー、PageUp、PageDown、Home、End\)|行全体または列全体が選択されている場合に、現在のセルを新しい行または列に変更すると、選択対象が新しい行全体または列全体に移動します \(選択モードによって異なります\)。|  
+|キーまたはキーの組み合わせ|説明|  
+|----------------------------|-----------------|  
+|SHIFT キーを押しながら SPACE キー|すべての行または列 (行または列ヘッダーをクリックした場合と同じ) を選択します。|  
+|ナビゲーション キー (方向キー、ページの上下 HOME、END)|完全行または列が選択されている場合、新しい行または列に現在のセルを変更するに移動、新しい行または列 (選択モード) に応じて。|  
   
- <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> が `false` に設定され、<xref:System.Windows.Forms.DataGridView.SelectionMode%2A> が <xref:System.Windows.Forms.DataGridViewSelectionMode> または <xref:System.Windows.Forms.DataGridViewSelectionMode> に設定されている場合は、キーボードを使用して現在のセルを新しい行または列に変更すると、選択対象が新しい行全体または列全体に移動します。  Shift キー、Ctrl キー、および Alt キーはこの動作には影響しません。  
+ 場合<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>に設定されている`false`と<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>に設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect>または<xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>キーボードを使用して新しい行または列に現在のセルを変更する、新しい行または列に移動します。 Shift キーを押し、CTRL、ALT の各キーは、この動作は影響しません。  
   
- <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> が `true` に設定されている場合は、移動動作は変更されません。ただし、Shift \(Ctrl \+ Shift を含む\) キーを押しながらキーボードを使用する移動では、複数セルの選択動作が変更されます。  移動を開始する前に、コントロールは現在のセルをアンカー セルとしてマークします。  Shift キーを押しながら移動すると、アンカー セルと現在のセルの間のすべてのセルが選択範囲に含められます。  コントロール内のその他のセルは、既に選択されている場合は、選択された状態が保持されます。ただし、キーボードによる移動操作で、これらのセルがアンカー セルと現在のセルの間に一時的に含まれた場合は、選択が解除されることがあります。  
+ 場合<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>に設定されている`true`ナビゲーションの動作は変わりませんが (CTRL + SHIFT を含む) shift キーを押しながらキーボードで移動すると、複数のセルの選択が変更されます。 ナビゲーションが開始する前に、コントロールは、現在のセルをアンカー セルとしてマークします。 Shift キーを押しながら移動するときに、選択範囲には、アンカー セルと現在のセル間のすべてのセルが含まれています。 既に選択されている、選択されていない場合は、キーボードのナビゲーションは一時的にアンカー セルと現在のセルの場合、コントロールの他のセルが選択された保持されます。  
   
- <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> が `true` に設定され、<xref:System.Windows.Forms.DataGridView.SelectionMode%2A> が <xref:System.Windows.Forms.DataGridViewSelectionMode> または <xref:System.Windows.Forms.DataGridViewSelectionMode> に設定されている場合、アンカー セルと現在のセルは同じように動作しますが、選択または選択解除されるのは行全体のみまたは列全体のみです。  
+ 場合<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>に設定されている`true`と<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>に設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect>または<xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>、アンカー セルと現在のセルの動作は同じですが、完全行や列だけになる選択または選択解除しました。  
   
-## 既定のマウス処理  
+## <a name="default-mouse-handling"></a>既定のマウス処理  
   
-### 基本的なマウス処理  
+### <a name="basic-mouse-handling"></a>基本的なマウス処理  
   
 > [!NOTE]
->  マウスの左ボタンでセルをクリックすると、常に現在のセルが変更されます。  また、マウスの右ボタンでセルをクリックすると、ショートカット メニューがある場合は、ショートカット メニューが開きます。  
+>  マウスの左ボタンを含むセルをクリックすると、常に現在のセルを変更します。 マウスの右ボタンを含むセルをクリックすると 1 つが利用可能なときに、ショートカット メニューが開きます。  
   
-|マウス操作|Description|  
-|-----------|-----------------|  
-|マウスの左ボタンを押す|クリックしたセルが現在のセルになり、<xref:System.Windows.Forms.DataGridView.CellMouseDown?displayProperty=fullName> イベントが発生します。|  
-|マウスの左ボタンを離す|<xref:System.Windows.Forms.DataGridView.CellMouseUp?displayProperty=fullName> イベントが発生します。|  
-|マウスの左ボタンでクリックする|<xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=fullName> イベントと <xref:System.Windows.Forms.DataGridView.CellMouseClick?displayProperty=fullName> イベントが発生します。|  
-|マウスの左ボタンを押して列ヘッダー セル上でドラッグする|<xref:System.Windows.Forms.DataGridView.AllowUserToOrderColumns%2A?displayProperty=fullName> プロパティが `true` の場合、列を新しい位置にドロップできるように移動します。|  
+|マウス操作|説明|  
+|------------------|-----------------|  
+|マウスの左ボタンを押す|クリックされたセルは、現在のセル、させ、<xref:System.Windows.Forms.DataGridView.CellMouseDown?displayProperty=nameWithType>イベント。|  
+|マウスの左ボタン|<xref:System.Windows.Forms.DataGridView.CellMouseUp?displayProperty=nameWithType> イベントを発生させます。|  
+|マウスの左ボタンをクリックします。|発生させる、<xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataGridView.CellMouseClick?displayProperty=nameWithType>イベント|  
+|マウスの左ボタンを押す、および列ヘッダー セルにドラッグ|場合、<xref:System.Windows.Forms.DataGridView.AllowUserToOrderColumns%2A?displayProperty=nameWithType>プロパティは`true`の新しい場所に削除できるように、列を移動します。|  
   
-### マウスによる選択  
- マウスの中央ボタン \(マウス ホイール\) には選択動作が関連付けられていません。  
+### <a name="mouse-selection"></a>マウスの選択  
+ 選択の動作は、マウスの中央ボタンやマウス ホイールを関連付けではありません。  
   
- <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> プロパティが `false` に設定され、<xref:System.Windows.Forms.DataGridView.SelectionMode%2A> プロパティが <xref:System.Windows.Forms.DataGridViewSelectionMode> に設定されている場合は、次のように動作します。  
+ 場合、<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>プロパティに設定されている`false`と<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>プロパティに設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>、次の動作が発生します。  
   
-|マウス操作|Description|  
-|-----------|-----------------|  
-|マウスの左ボタンでクリックする|ユーザーがセルをクリックした場合、現在のセルだけが選択されます。  ユーザーが行ヘッダーまたは列ヘッダーをクリックした場合、選択動作は行われません。|  
-|マウスの右ボタンでクリックする|ショートカット メニューがある場合は、ショートカット メニューが表示されます。|  
+|マウス操作|説明|  
+|------------------|-----------------|  
+|マウスの左ボタンをクリックします。|ユーザーがセルをクリックした場合は、現在のセルのみを選択します。 選択動作はありません、ユーザーが行または列ヘッダーをクリックするとします。|  
+|マウスの右ボタンをクリックします。|1 つが利用可能な場合は、ショートカット メニューを表示します。|  
   
- <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> が <xref:System.Windows.Forms.DataGridViewSelectionMode> または <xref:System.Windows.Forms.DataGridViewSelectionMode> に設定されている場合も、同様の動作が行われます。ただし、選択モードによっては、行ヘッダーまたは列ヘッダーをクリックすると行全体または列全体が選択され、現在のセルが行または列の最初のセルに設定されます。  
+ 同じ動作が発生したときに、<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>に設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect>または<xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>によって選択モード行または列ヘッダーをクリックするとは、行全体または列を選択および行または列の最初のセルに、現在のセルを設定することを除き、します。  
   
- <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> が <xref:System.Windows.Forms.DataGridViewSelectionMode> または <xref:System.Windows.Forms.DataGridViewSelectionMode> に設定されている場合は、行または列の任意のセルをクリックすると行全体または列全体が選択されます。  
+ 場合<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>に設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect>または<xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>、行または列の任意のセルをクリックすると行全体または列を選択します。  
   
- <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> が `true` に設定されている場合、Ctrl キーまたは Shift キーを押しながらセルをクリックすると複数セルの選択が変更されます。  
+ 場合<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>に設定されている`true`、複数のセル選択範囲の変更は ctrl キーまたは shift キーを押しながらセルをクリックします。  
   
- Ctrl キーを押しながらセルをクリックすると、そのセルの選択状態は変化しますが、その他のすべてのセルは現在の選択状態を保持します。  
+ CTRL キーを押しながら、セルをクリックすると、セルは、現在選択状態を保持する他のすべてのセルの選択状態を変更します。  
   
- Shift キーを押しながら特定のセルまたは連続するセルをクリックした場合、現在のセルとアンカー セル \(最初のクリックの前に選択されていたセルの位置にあります\) の間のすべてのセルが選択されます。  マウスをクリックし、複数のセル間でポインターをドラッグした場合、ドラッグ操作の最初にクリックしたセルがアンカー セルになります。  それ以降、Shift キーを押しながらクリックすると、現在のセルは変更されますが、アンカー セルは変更されません。  コントロール内のその他のセルは、既に選択されている場合は、選択された状態が保持されます。ただし、マウスによる移動操作で、これらのセルがアンカー セルと現在のセルの間に一時的に含まれた場合は、選択が解除されることがあります。  
+ Shift キーを押しながら、セルまたは一連のセルをクリックすると、選択範囲には、現在のセルと最初のクリックする前に現在のセルの位置のアンカー セル間のすべてのセルが含まれています。 をクリックして、複数のセル、ポインターをドラッグすると、ドラッグ操作の先頭でクリックされたセルがアンカー セルにします。 Shift キーを押しながらそれ以降のクリックでは、現在のセルがないのアンカー セルを変更します。 既に選択されている、選択されていない場合は、マウスのナビゲーションは一時的にアンカー セルと現在のセルの場合、コントロールの他のセルが選択された保持されます。  
   
- <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> が `true` に設定され、<xref:System.Windows.Forms.DataGridView.SelectionMode%2A> が <xref:System.Windows.Forms.DataGridViewSelectionMode> または <xref:System.Windows.Forms.DataGridViewSelectionMode> に設定されている場合は、Shift キーを押しながら行ヘッダーまたは列ヘッダー \(選択モードによります\) をクリックすると既存の行全体または列全体の選択が変更されます \(そのような選択範囲が存在する場合\)。  それ以外の場合は、選択が解除され、新しい行全体または列全体の選択が開始されます。  ただし、Ctrl キーを押しながら行ヘッダーまたは列ヘッダーをクリックした場合は、クリックした行または列が現在の選択範囲に対して追加または削除されます。現在の選択範囲に対してそれ以外の変更はありません。  
+ 場合<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>に設定されている`true`と<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>に設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect>または<xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>場合は、このような完全行または列の既存の選択範囲を変更、shift キーを押しながら (に応じて選択モード) の行または列ヘッダーをクリックすると、選択範囲が存在します。 それ以外の場合、選択を解除を行全体または列の新しい選択を開始します。 CTRL キーを押しながら、行または列ヘッダーをクリックすると、ただしは追加またはそれ以外の場合、現在の選択を変更することがなく、現在の選択項目からクリックされた行または列を削除します。  
   
- <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> が `true` に設定され、<xref:System.Windows.Forms.DataGridView.SelectionMode%2A> が <xref:System.Windows.Forms.DataGridViewSelectionMode> または <xref:System.Windows.Forms.DataGridViewSelectionMode> に設定されている場合は、Shift キーまたは Ctrl キーを押しながらセルをクリックすると、行全体のみまたは列全体のみが影響を受けることを除き、同じように動作します。  
+ 場合<xref:System.Windows.Forms.DataGridView.MultiSelect%2A>に設定されている`true`と<xref:System.Windows.Forms.DataGridView.SelectionMode%2A>に設定されている<xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect>または<xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>そののみ完全行を除くと同様の動作、SHIFT または CTRL を押しながら、セルをクリックすると、および列には影響します。  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.DataGridView>  
  [DataGridView コントロール](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)

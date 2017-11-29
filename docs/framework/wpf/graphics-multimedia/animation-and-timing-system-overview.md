@@ -1,96 +1,98 @@
 ---
-title: "アニメーションとタイミング システムの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アニメーション [WPF]"
-  - "タイミング システム [WPF]"
+title: "アニメーションとタイミング システムの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- timing system [WPF]
+- animation [WPF]
 ms.assetid: 172cd5a8-a333-4c81-9456-fafccc19f382
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 484aa47744de95c849b237112f1a383c2c2cb0b7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# アニメーションとタイミング システムの概要
-ここでは、タイミング システムで、アニメーションの <xref:System.Windows.Media.Animation.Timeline> および <xref:System.Windows.Media.Animation.Clock> の各クラスを使用してプロパティをアニメーション化する方法について説明します。  
+# <a name="animation-and-timing-system-overview"></a>アニメーションとタイミング システムの概要
+このトピックでは、タイミング システムが、アニメーションを使用する方法について説明<xref:System.Windows.Media.Animation.Timeline>、および<xref:System.Windows.Media.Animation.Clock>プロパティをアニメーション化するクラス。  
   
-<a name="autoTopLevelSectionsOUTLINE0"></a>   
 <a name="prerequisites"></a>   
-## 必要条件  
- このトピックを理解するには、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」の説明に従って、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アニメーションを使用し、プロパティをアニメーション化できる必要があります。  また、[依存関係プロパティ](GTMT)についても知っておくと役に立ちます。詳細については、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
+## <a name="prerequisites"></a>必須コンポーネント  
+ このトピックを理解するには、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」で説明されているように、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のアニメーションを使ってプロパティをアニメーション化できる必要があります。 依存関係プロパティの理解も役に立ちます。詳しくは、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」をご覧ください。  
   
 <a name="timelinesandclocks"></a>   
-## タイムラインとクロック  
- 「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」では、<xref:System.Windows.Media.Animation.Timeline> で時間のセグメントを表す方法、およびアニメーションが出力値を生成する <xref:System.Windows.Media.Animation.Timeline> の 1 つの型であることを説明しました。  <xref:System.Windows.Media.Animation.Timeline> 自体は、時間のセグメントを記述する以外、何も実行しません。  実際の処理を実行するのは、タイムラインの <xref:System.Windows.Media.Animation.Clock> オブジェクトです。  同様に、アニメーションは実際にはプロパティをアニメーション化しません。アニメーション クラスは出力値の計算方法を記述しますが、アニメーション出力を実行し、その出力をプロパティに適用するのは、そのアニメーション用に作成された <xref:System.Windows.Media.Animation.Clock> です。  
+## <a name="timelines-and-clocks"></a>タイムラインとクロック  
+ [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)方法の説明、<xref:System.Windows.Media.Animation.Timeline>時間、およびアニメーションのセグメントでは、種類の<xref:System.Windows.Media.Animation.Timeline>出力値を生成します。 単独で、 <xref:System.Windows.Media.Animation.Timeline>、何もしない以外の時間のセグメントを記述するだけです。 これは、タイムラインの<xref:System.Windows.Media.Animation.Clock>実際の処理を行うオブジェクト。 同様に、アニメーションが実際にアニメーション化プロパティ: アニメーション クラスは、出力値を計算する方法について説明しますが、<xref:System.Windows.Media.Animation.Clock>アニメーションの出力を駆動し、それをプロパティに適用されるアニメーションの作成されました。  
   
- <xref:System.Windows.Media.Animation.Clock> は、<xref:System.Windows.Media.Animation.Timeline> のタイミングに関連する実行時の状態を維持する特殊な型のオブジェクトです。  このオブジェクトは、アニメーションおよびタイミング システムには不可欠な 3 つの情報、<xref:System.Windows.Media.Animation.Clock.CurrentTime%2A>、<xref:System.Windows.Media.Animation.Clock.CurrentProgress%2A>、および <xref:System.Windows.Media.Animation.Clock.CurrentState%2A> を提供します。  <xref:System.Windows.Media.Animation.Clock> は、その現在の時刻、進行状況、および状態を、その <xref:System.Windows.Media.Animation.Timeline> で記述された、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>、<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>、<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A> などのタイミング動作を使用して判断します。  
+ A<xref:System.Windows.Media.Animation.Clock>は特殊な種類の実行時のタイミングに関連する状態を保持するオブジェクトの<xref:System.Windows.Media.Animation.Timeline>です。 アニメーションおよびタイミング システムに不可欠な情報の 3 つのビットを提供します。 <xref:System.Windows.Media.Animation.Clock.CurrentTime%2A>、 <xref:System.Windows.Media.Animation.Clock.CurrentProgress%2A>、および<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>です。 A<xref:System.Windows.Media.Animation.Clock>で示されるタイミング動作を使用して、現在の時刻、進捗、および状態が指定の<xref:System.Windows.Media.Animation.Timeline>: <xref:System.Windows.Media.Animation.Timeline.Duration%2A>、 <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>、<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>のようにします。  
   
- ほとんどの場合、タイムラインに自動的に <xref:System.Windows.Media.Animation.Clock> が作成されます。  <xref:System.Windows.Media.Animation.Storyboard> メソッドや <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> メソッドを使用してアニメーション化すると、タイムラインとアニメーションに自動的にクロックが作成されて対象のプロパティに適用されます。  <xref:System.Windows.Media.Animation.Timeline> の <xref:System.Windows.Media.Animation.Timeline.CreateClock%2A> メソッドを使用して、<xref:System.Windows.Media.Animation.Clock> を明示的に作成することもできます。  <xref:System.Windows.Media.MediaTimeline.CreateClock%2A?displayProperty=fullName> メソッドは、それが呼び出された <xref:System.Windows.Media.Animation.Timeline> に対応する型のクロックを作成します。  <xref:System.Windows.Media.Animation.Timeline> に子タイムラインが含まれる場合、それらの子タイムラインの <xref:System.Windows.Media.Animation.Clock> オブジェクトも作成されます。  結果として得られる <xref:System.Windows.Media.Animation.Clock> オブジェクトは、クロック オブジェクトを作成した <xref:System.Windows.Media.Animation.Timeline> オブジェクト ツリーと同じ構造のツリーに配置されます。  
+ ほとんどの場合、<xref:System.Windows.Media.Animation.Clock>タイムラインのスペースを自動的に作成されます。 使用してアニメーション化するときに、<xref:System.Windows.Media.Animation.Storyboard>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッド、クロックが自動的にタイムラインとアニメーションを作成し、その対象となるプロパティに適用します。 作成することも、<xref:System.Windows.Media.Animation.Clock>を使用して明示的に、<xref:System.Windows.Media.Animation.Timeline.CreateClock%2A>のメソッド、<xref:System.Windows.Media.Animation.Timeline>です。 <xref:System.Windows.Media.MediaTimeline.CreateClock%2A?displayProperty=nameWithType>メソッドは、対応する型の時計を作成、<xref:System.Windows.Media.Animation.Timeline>これが呼び出されるときです。 場合、<xref:System.Windows.Media.Animation.Timeline>子タイムラインを含む作成<xref:System.Windows.Media.Animation.Clock>もそれらのオブジェクト。 結果として得られる<xref:System.Windows.Media.Animation.Clock>オブジェクトがツリーの構造に合ったで配置された、<xref:System.Windows.Media.Animation.Timeline>オブジェクト ツリーから作成されます。  
   
- さまざまな型のタイムラインに対応するさまざまな型のクロックが存在します。  いくつかの <xref:System.Windows.Media.Animation.Timeline> 型とそれに対応する <xref:System.Windows.Media.Animation.Clock> 型を次の表に示します。  
+ 異なる型のタイムラインに対して異なる型のクロックがあります。 次の表に、 <xref:System.Windows.Media.Animation.Clock> 、別の一部に対応する型<xref:System.Windows.Media.Animation.Timeline>型です。  
   
 |タイムラインの型|クロックの型|クロックの目的|  
-|--------------|------------|-------------|  
-|Animation \(<xref:System.Windows.Media.Animation.AnimationTimeline> から継承\)|<xref:System.Windows.Media.Animation.AnimationClock>|依存関係プロパティの出力値を生成します。|  
+|-------------------|----------------|-------------------|  
+|アニメーション (から継承<xref:System.Windows.Media.Animation.AnimationTimeline>)|<xref:System.Windows.Media.Animation.AnimationClock>|依存関係プロパティの出力値を生成します。|  
 |<xref:System.Windows.Media.MediaTimeline>|<xref:System.Windows.Media.MediaClock>|メディア ファイルを処理します。|  
-|<xref:System.Windows.Media.Animation.ParallelTimeline>|<xref:System.Windows.Media.Animation.ClockGroup>|その子 <xref:System.Windows.Media.Animation.Clock> オブジェクトをグループ化し、制御します。|  
-|<xref:System.Windows.Media.Animation.Storyboard>|<xref:System.Windows.Media.Animation.ClockGroup>|その子 <xref:System.Windows.Media.Animation.Clock> オブジェクトをグループ化し、制御します。|  
+|<xref:System.Windows.Media.Animation.ParallelTimeline>|<xref:System.Windows.Media.Animation.ClockGroup>|グループ化し、その子を制御<xref:System.Windows.Media.Animation.Clock>オブジェクト|  
+|<xref:System.Windows.Media.Animation.Storyboard>|<xref:System.Windows.Media.Animation.ClockGroup>|グループ化し、その子を制御<xref:System.Windows.Media.Animation.Clock>オブジェクト|  
   
- 作成した <xref:System.Windows.Media.Animation.AnimationClock> オブジェクトはすべて、<xref:System.Windows.Media.Animation.IAnimatable.ApplyAnimationClock%2A> メソッドを使用して互換性のある依存関係プロパティに適用できます。  
+ 適用することができます<xref:System.Windows.Media.Animation.AnimationClock>オブジェクトを使用して互換性のある依存関係プロパティを作成する、<xref:System.Windows.Media.Animation.IAnimatable.ApplyAnimationClock%2A>メソッドです。  
   
- 同じようなオブジェクトを多数アニメーション化するなど、パフォーマンスに大きな負荷がかかるシナリオでは、独自の <xref:System.Windows.Media.Animation.Clock> を管理することによってパフォーマンスを向上できます。  
+ 多数の類似オブジェクトをアニメーション化するなど、パフォーマンス重視のシナリオで管理する独自<xref:System.Windows.Media.Animation.Clock>を使用して、パフォーマンスが向上します。  
   
 <a name="timemanager"></a>   
-## クロックとタイム マネージャー  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でオブジェクトをアニメーション化する場合、タイムラインに対して作成された <xref:System.Windows.Media.MediaPlayer.Clock%2A> オブジェクトはタイム マネージャーが管理します。  タイム マネージャーは、<xref:System.Windows.Media.MediaPlayer.Clock%2A> オブジェクトのツリーのルートであり、そのツリーの時間のフローを制御します。  タイム マネージャーは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションごとに自動的に作成され、アプリケーション開発者には表示されません。タイム マネージャーは、1 秒に何度も "タイマーを刻み" ます。1 秒あたりのタイマー刻みの実際の回数は、使用可能なシステム リソースに応じて変わります。  これらの 1 回のタイマー刻みの間、タイム マネージャーは、タイミング ツリー内のすべての <xref:System.Windows.Media.Animation.ClockState> <xref:System.Windows.Media.Animation.Clock> オブジェクトの状態を計算します。  
+## <a name="clocks-and-the-time-manager"></a>クロックとタイム マネージャー  
+ 内のオブジェクトをアニメーション化するときに[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を管理するタイム マネージャーは、<xref:System.Windows.Media.MediaPlayer.Clock%2A>タイムラインに作成されたオブジェクト。 タイム マネージャーは <xref:System.Windows.Media.MediaPlayer.Clock%2A> オブジェクトのツリーのルートで、そのツリー内の時間の流れを制御します。  タイム マネージャーは各 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションに自動的に作成され、アプリケーション開発者には表示されません。 タイム マネージャーは 1 秒間に何度も "タイマーを刻み" ます。1 秒ごとに刻まれるタイマーの実際の数は、使用可能なシステム リソースによって異なります。 これらの各 1 時に、タイム マネージャーがすべての状態を計算<xref:System.Windows.Media.Animation.ClockState.Active><xref:System.Windows.Media.Animation.Clock>タイミング ツリー内のオブジェクト。  
   
- タイム マネージャー、<xref:System.Windows.Media.Animation.AnimationClock>、およびアニメーション化された依存関係プロパティの関係を次の図に示します。  
+ 次の図に、タイム マネージャー間のリレーションシップと<xref:System.Windows.Media.Animation.AnimationClock>、およびアニメーションの依存関係プロパティです。  
   
- ![タイミング システム コンポーネント](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clocks-1clock1prop.png "graphicsmm\_clocks\_1clock1prop")  
+ ![タイミング システム コンポーネント](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clocks-1clock1prop.png "graphicsmm_clocks_1clock1prop")  
 プロパティのアニメーション化  
   
- タイムマネージャーは、タイマーを刻むときに、アプリケーション内のすべての <xref:System.Windows.Media.Animation.ClockState> <xref:System.Windows.Media.Animation.Clock> の時間を更新します。  <xref:System.Windows.Media.Animation.Clock> が <xref:System.Windows.Media.Animation.AnimationClock> の場合、クロックは、その作成元の <xref:System.Windows.Media.Animation.AnimationTimeline> の <xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A> メソッドを使用して現在の出力値を計算します。  <xref:System.Windows.Media.Animation.AnimationClock> は、現在のローカル時刻、入力値 \(通常はプロパティの基本値\)、および既定の終点の値を指定した <xref:System.Windows.Media.Animation.AnimationTimeline> を提供します。  <xref:System.Windows.DependencyObject.GetValue%2A> メソッドまたはその CLR アクセサーを使用してアニメーション化プロパティの値を取得するときに、その <xref:System.Windows.Media.Animation.AnimationClock> の出力を取得します。  
+ 時刻が更新、タイム マネージャー、タイマーを刻むときにすべて<xref:System.Windows.Media.Animation.ClockState.Active><xref:System.Windows.Media.Animation.Clock>アプリケーションにします。 場合、<xref:System.Windows.Media.Animation.Clock>は、<xref:System.Windows.Media.Animation.AnimationClock>を使用して、<xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A>のメソッド、<xref:System.Windows.Media.Animation.AnimationTimeline>から作成された出力するのには、現在の計算値です。 <xref:System.Windows.Media.Animation.AnimationClock>提供、<xref:System.Windows.Media.Animation.AnimationTimeline>現在の現地時刻、入力値、一般的にこれは、プロパティのベース値、および、既定値は変換先を使用します。 アニメーションの値を取得するプロパティを使用して、<xref:System.Windows.DependencyObject.GetValue%2A>の出力を取得するメソッドまたはその CLR アクセサーの場合は、その<xref:System.Windows.Media.Animation.AnimationClock>です。  
   
-#### クロック グループ  
- 前のセクションでは、さまざまな型のタイムラインに対応するさまざまな型の <xref:System.Windows.Media.Animation.Clock> オブジェクトを説明しました。  タイム マネージャー、<xref:System.Windows.Media.Animation.ClockGroup>、<xref:System.Windows.Media.Animation.AnimationClock>、およびアニメーション化された依存関係プロパティの関係を次の図に示します。  アニメーションおよび他のタイムラインをグループ化する <xref:System.Windows.Media.Animation.Storyboard> クラスなど、他のタイムラインをグループ化するタイムラインに対して、<xref:System.Windows.Media.Animation.ClockGroup> が作成されます。  
+#### <a name="clock-groups"></a>クロック グループ  
+ 前のセクションでは、さまざまな種類の方法が説明されている<xref:System.Windows.Media.Animation.Clock>タイムラインのさまざまな種類のオブジェクト。 次の図に、タイム マネージャー間のリレーションシップ、 <xref:System.Windows.Media.Animation.ClockGroup>、 <xref:System.Windows.Media.Animation.AnimationClock>、およびアニメーションの依存関係プロパティです。 A<xref:System.Windows.Media.Animation.ClockGroup>など他のタイムラインをグループ化のタイムラインを作成、<xref:System.Windows.Media.Animation.Storyboard>クラスは、アニメーションやその他のタイムラインをグループ化します。  
   
- ![タイミング システム コンポーネント](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clocks-2clock1clockgroup2prop.png "graphicsmm\_clocks\_2clock1clockgroup2prop")  
+ ![タイミング システム コンポーネント](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clocks-2clock1clockgroup2prop.png "graphicsmm_clocks_2clock1clockgroup2prop")  
 ClockGroup  
   
-#### 構成  
- 複数のクロックを単一のプロパティに関連付けることが可能です。この場合、各クロックは前のクロックの出力値をその基本値として使用します。  同じプロパティに適用された 3 つの <xref:System.Windows.Media.Animation.AnimationClock> オブジェクトを次の図に示します。  Clock1 は、アニメーション化されたプロパティの基本値をその入力として使用して出力を生成します。  Clock2 は、Clock1 からの出力をその入力として取得し、それを使用して出力を生成します。  Clock3 は、Clock2 からの出力をその入力として取得し、それを使用して出力を生成します。  複数のクロックが同じプロパティに同時に影響を与える場合、それらは構成チェーン内にあるものと見みなされます。  
+#### <a name="composition"></a>コンポジション  
+ 複数のクロックを 1 つのプロパティと関連付けることができます。その場合、各クロックは前のクロックの出力値を基本値として使います。 次の図は 3 つ<xref:System.Windows.Media.Animation.AnimationClock>同じプロパティに適用されるオブジェクト。 Clock1 は、アニメーション化されたプロパティの基本値を入力として使って、出力を生成します。 Clock2 は、Clock1 の出力を入力として受け取り、それを使って出力を生成します。 Clock3 は、Clock2 の出力を入力として受け取り、それを使って出力を生成します。 複数のクロックが同じプロパティに同時に影響を与える場合、それらはコンポジション チェーン内にあると言います。  
   
- ![タイミング システム コンポーネント](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clocks-2clock1prop.png "graphicsmm\_clocks\_2clock1prop")  
-構成チェーン  
+ ![タイミング システム コンポーネント](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clocks-2clock1prop.png "graphicsmm_clocks_2clock1prop")  
+コンポジション チェーン  
   
- 構成チェーン内の <xref:System.Windows.Media.Animation.AnimationClock> オブジェクトの入力および出力間の関係は作成されますが、それらのタイミング動作は影響を受けません。<xref:System.Windows.Media.Animation.Clock> オブジェクト \(<xref:System.Windows.Media.Animation.AnimationClock> オブジェクトを含む\) は、その親 <xref:System.Windows.Media.Animation.Clock> オブジェクトに対して階層型の依存関係を持ちます。  
+ 入力と出力の間のリレーションシップは作成されますが、なお、<xref:System.Windows.Media.Animation.AnimationClock>複合チェーン内のオブジェクトのタイミング動作が影響を受けません。<xref:System.Windows.Media.Animation.Clock>オブジェクト (含む<xref:System.Windows.Media.Animation.AnimationClock>オブジェクト)、親に階層型依存関係がある<xref:System.Windows.Media.Animation.Clock>オブジェクト。  
   
- 複数のクロックを同じプロパティに適用するには、<xref:System.Windows.Media.Animation.Storyboard>、アニメーション、または <xref:System.Windows.Media.Animation.AnimationClock> の適用時に <xref:System.Windows.Media.Animation.HandoffBehavior> <xref:System.Windows.Media.Animation.HandoffBehavior> を使用します。  
+ 同じプロパティに複数の時計を適用するには、使用、 <xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>適用するときに、 <xref:System.Windows.Media.Animation.Storyboard>、アニメーション、または<xref:System.Windows.Media.Animation.AnimationClock>です。  
   
-#### タイマー刻みとイベントの統合  
- 出力値の計算に加え、タイム マネージャーはタイマーを刻むごとに他の作業も行います。タイム マネージャーは、各クロックの状態を確認し、必要に応じてイベントを発生させます。  
+#### <a name="ticks-and-event-consolidation"></a>ティックとイベントの統合  
+ 出力値を計算するだけでなく、タイム マネージャーはティックのたびに他の処理を行います。つまり、クロックの状態を判断し、必要に応じてイベントを発生させます。  
   
- タイマー刻みが頻繁に発生している間は、タイマー刻みの間隔に多くのことが行われる可能性があります。  たとえば、<xref:System.Windows.Media.Animation.Clock> が停止してから開始し、もう一度停止する可能性あります。この場合、クロックの <xref:System.Windows.Media.Animation.Clock.CurrentState%2A> 値は 3 回変更されています。  理論的には、<xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated> イベントは 1 回のタイマー刻みで複数回発生することは可能ですが、タイミング エンジンはイベントを統合して、<xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated> イベントが 1 回のタイマー刻みにつき多くても 1 回だけ発生するようにします。  これはすべてのタイミング イベントに該当します。特定の 1 <xref:System.Windows.Media.Animation.Clock> オブジェクトに対して、各型のイベントは 1 回だけ発生します。  
+ ティックは頻繁に発生しますが、各ティックの間には多くのことが起こる可能性があります。 たとえば、<xref:System.Windows.Media.Animation.Clock>停止、開始、および後者停止もう一度、可能性があります、<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>値は 3 回変更しました。 理論上は、<xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated>イベントは、単一のティックを複数回発生でしたさせるです。 ただし、タイミング エンジンはイベントを統合します。 できるように、<xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated>ティックあたり最大で 1 つはイベントを発生させることができます。 これは、すべてのタイミング イベントの場合は true。: の各型の最大で 1 つのイベントが発生した、指定された<xref:System.Windows.Media.Animation.Clock>オブジェクト。  
   
- タイマー刻み間隔に、<xref:System.Windows.Media.Animation.Clock> の状態が切り替わり、元の状態に戻った場合 \(<xref:System.Windows.Media.Animation.ClockState> から <xref:System.Windows.Media.Animation.ClockState> に切り替わり、<xref:System.Windows.Media.Animation.ClockState> に戻る場合など\) でも、関連のイベントは発生します。  
+ ときに、<xref:System.Windows.Media.Animation.Clock>の状態が切り替わるし、ティック間を元の状態に戻します (からの変更など<xref:System.Windows.Media.Animation.ClockState.Active>に<xref:System.Windows.Media.Animation.ClockState.Stopped>およびへ<xref:System.Windows.Media.Animation.ClockState.Active>)、関連イベントが引き続き発生します。  
   
- タイミング イベントの詳細については、「[タイミング イベントの概要](../../../../docs/framework/wpf/graphics-multimedia/timing-events-overview.md)」を参照してください。  
+ タイミング イベントについて詳しくは、「[タイミング イベントの概要](../../../../docs/framework/wpf/graphics-multimedia/timing-events-overview.md)」をご覧ください。  
   
 <a name="currentvaluesbasevaluesofproperties"></a>   
-## プロパティの現在値と基本値  
- アニメーション化可能なプロパティは、基本値と現在値の 2 つの値を持つことができます。  その CLR アクセサーまたは <xref:System.Windows.DependencyObject.SetValue%2A> メソッドを使用してプロパティを設定する場合は、その基本値を設定します。  プロパティをアニメーション化しない場合、その基本値と現在値は同じになります。  
+## <a name="current-values-and-base-values-of-properties"></a>プロパティの現在値と基本値  
+ アニメーション化可能なプロパティは、基本値と現在値の 2 つの値を持つことができます。 その CLR アクセサーを使用してプロパティを設定すると、または<xref:System.Windows.DependencyObject.SetValue%2A>メソッド、その基本値を設定します。 プロパティがアニメーション化されない場合は、基本値と現在値は同じです。  
   
- プロパティをアニメーション化する場合、<xref:System.Windows.Media.Animation.AnimationClock> はプロパティの*現在*値を設定します。  <xref:System.Windows.Media.Animation.AnimationClock> が <xref:System.Windows.Media.Animation.ClockState> または <xref:System.Windows.Media.Animation.ClockState> の場合、プロパティの値をその CLR アクセサーまたは <xref:System.Windows.DependencyObject.GetValue%2A> メソッドをとおして取得すると、<xref:System.Windows.Media.Animation.AnimationClock> の出力が返されます。  プロパティの基本値は、<xref:System.Windows.Media.Animation.IAnimatable.GetAnimationBaseValue%2A> メソッドを使用して取得できます。  
+ プロパティをアニメーション化するときに、<xref:System.Windows.Media.Animation.AnimationClock>プロパティの設定*現在*値。 その CLR アクセサーを使用して、プロパティの値を取得する、または<xref:System.Windows.DependencyObject.GetValue%2A>メソッドの出力が返されます、<xref:System.Windows.Media.Animation.AnimationClock>ときに、<xref:System.Windows.Media.Animation.AnimationClock>は<xref:System.Windows.Media.Animation.ClockState.Active>または<xref:System.Windows.Media.Animation.ClockState.Filling>です。 使用して、プロパティのベース値を取得することができます、<xref:System.Windows.Media.Animation.IAnimatable.GetAnimationBaseValue%2A>メソッドです。  
   
-## 参照  
- [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
- [タイミング イベントの概要](../../../../docs/framework/wpf/graphics-multimedia/timing-events-overview.md)   
+## <a name="see-also"></a>関連項目  
+ [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [タイミング イベントの概要](../../../../docs/framework/wpf/graphics-multimedia/timing-events-overview.md)  
  [タイミング動作の概要](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)

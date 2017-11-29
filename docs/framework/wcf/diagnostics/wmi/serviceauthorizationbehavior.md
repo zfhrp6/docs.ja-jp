@@ -1,25 +1,28 @@
 ---
-title: "ServiceAuthorizationBehavior | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ServiceAuthorizationBehavior
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 77dad8e8-fea4-4d1c-b366-2f01a2a87f78
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: eb02a02557a88bf53ca1a8e5b30fe66d6995e545
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ServiceAuthorizationBehavior
+# <a name="serviceauthorizationbehavior"></a>ServiceAuthorizationBehavior
 ServiceAuthorizationBehavior  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class ServiceAuthorizationBehavior : Behavior  
@@ -31,45 +34,45 @@ class ServiceAuthorizationBehavior : Behavior
 };  
 ```  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
  ServiceAuthorizationBehavior クラスは、メソッドを一切定義しません。  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
  ServiceAuthorizationBehavior クラスには、次のプロパティがあります。  
   
-### impersonateCallerForAllOperations  
+### <a name="impersonatecallerforalloperations"></a>impersonateCallerForAllOperations  
  データ型 : boolean  
   
  アクセスの種類 : 読み取り専用  
   
  受信メッセージによって提供される資格情報を使用してサービスが偽装を試みるかどうかを制御する値。  
   
-### PrincipalPermissionMode  
- データ型 : string  
+### <a name="principalpermissionmode"></a>PrincipalPermissionMode  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  サーバーでの操作を実行するために使用されるプリンシパル。  
   
-### RoleProvider  
- データ型 : string  
+### <a name="roleprovider"></a>RoleProvider  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  ASP.NET ロール プロバイダーの名前。  
   
-### ServiceAuthorizationManager  
- データ型 : string  
+### <a name="serviceauthorizationmanager"></a>ServiceAuthorizationManager  
+ データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  カスタム承認で使用される承認マネージャー。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
-|---------|------------------------------|  
-|名前空間|root\\ServiceModel で定義|  
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>

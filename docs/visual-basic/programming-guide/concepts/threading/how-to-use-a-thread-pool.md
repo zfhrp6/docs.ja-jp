@@ -1,37 +1,29 @@
 ---
-title: "方法: スレッド プール (Visual Basic) を使用する |Microsoft ドキュメント"
+title: "方法: スレッド プール (Visual Basic) を使用します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 90a0bb24-39f8-41f5-a217-b52a7d4fed0b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d60bceea0ed956075233f5f045131ffb2eb37eef
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 42a4120900203eb7eb5ad8463fba4491636882b1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-use-a-thread-pool-visual-basic"></a>方法: スレッド プール (Visual Basic) を使用します。
-*スレッド プール*の形式は、どのタスクがキューに追加され、スレッドを作成するときに自動的に開始のマルチ スレッド処理します。 詳細については、次を参照してください。 [(Visual Basic) スレッド プール](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)します。  
+"*スレッド プール*" はマルチスレッドの 1 つの形式であり、タスクはキューに追加されて、スレッドが作成されると自動的に開始されます。 詳細については、次を参照してください。 [(Visual Basic) スレッドのプール](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)です。  
   
- 次の例で、.NET Framework スレッド プールを使用して、計算、 `Fibonacci` 20 ~ 40 の間の 10 個の数字の結果。 各`Fibonacci`で結果を表す、`Fibonacci`という名前のメソッドを提供するクラス`ThreadPoolCallback`計算を実行します。 それぞれを表すオブジェクト`Fibonacci`値を作成すると、および`ThreadPoolCallback`をメソッドに渡されます<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>、メソッドの実行にプールで利用可能なスレッドが割り当てられます</xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>。  
+ 次の例では、.NET Framework のスレッド プールを使って、20 から 40 の間の 10 個の数字に対する `Fibonacci` の結果を計算しています。 各 `Fibonacci` の結果は `Fibonacci` クラスによって表され、このクラスには計算を実行する `ThreadPoolCallback` という名前のメソッドがあります。 `Fibonacci` の各値を表すオブジェクトが作成され、`ThreadPoolCallback` メソッドが <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> に渡されます。このメソッドは、プール内の使用可能なスレッドを割り当てて、渡されたメソッドを実行します。  
   
- 各`Fibonacci`オブジェクトにを計算するための半ランダムな値が指定され、ため、各スレッドは、プロセッサ時間の競合は、事前に時間が&10; 個すべての結果を計算するを知ることはできません。 そういう各`Fibonacci`オブジェクトには、インスタンスが渡される、<xref:System.Threading.ManualResetEvent>の構築時にクラス</xref:System.Threading.ManualResetEvent>。 各オブジェクトが指定されたイベント オブジェクトに通知の計算が終了すると、これにより、プライマリ スレッドで実行をブロックする<xref:System.Threading.WaitHandle.WaitAll%2A>10 まで`Fibonacci`オブジェクトが、結果を計算します</xref:System.Threading.WaitHandle.WaitAll%2A>。 `Main`メソッドは、それぞれ表示`Fibonacci`結果。  
+ `Fibonacci` の各オブジェクトは計算のために準ランダムな値を提供され、各スレッドはプロセッサ時間を競合するため、10 個の結果すべてが計算されるまでにかかる時間を事前に知ることはできません。 そのため、各 `Fibonacci` オブジェクトには構築の間に <xref:System.Threading.ManualResetEvent> クラスのインスタンスを渡されます。 各オブジェクトは、計算が完了すると提供されたイベント オブジェクトに通知します。これにより、プライマリ スレッドは、10 個の `Fibonacci` オブジェクトすべてが結果を計算するまで、<xref:System.Threading.WaitHandle.WaitAll%2A> で実行をブロックできます。 その後、`Main` メソッドは各 `Fibonacci` の結果を表示します。  
   
 ## <a name="example"></a>例  
   
@@ -151,14 +143,14 @@ Fibonacci(27) = 196418
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Threading.Mutex></xref:System.Threading.Mutex>   
- <xref:System.Threading.WaitHandle.WaitAll%2A></xref:System.Threading.WaitHandle.WaitAll%2A>   
- <xref:System.Threading.ManualResetEvent></xref:System.Threading.ManualResetEvent>   
- <xref:System.Threading.EventWaitHandle.Set%2A></xref:System.Threading.EventWaitHandle.Set%2A>   
- <xref:System.Threading.ThreadPool></xref:System.Threading.ThreadPool>   
- <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A></xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>   
- <xref:System.Threading.ManualResetEvent></xref:System.Threading.ManualResetEvent>   
- [スレッド プール (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)   
- [スレッド処理 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/index.md)   
- @System.Threading.Monitor   
- [セキュリティ](http://msdn.microsoft.com/library/9a9621d7-8883-4a4f-a874-65e8e09e20a6)
+ <xref:System.Threading.Mutex>  
+ <xref:System.Threading.WaitHandle.WaitAll%2A>  
+ <xref:System.Threading.ManualResetEvent>  
+ <xref:System.Threading.EventWaitHandle.Set%2A>  
+ <xref:System.Threading.ThreadPool>  
+ <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>  
+ <xref:System.Threading.ManualResetEvent>  
+ <xref:System.Threading.Monitor>  
+ [スレッド プール (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)  
+ [スレッド処理 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/index.md)  
+ [セキュリティ](../../../../standard/security/index.md)

@@ -1,145 +1,148 @@
 ---
-title: "グラフィックスの描画層 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "グラフィックスの描画層"
-  - "グラフィックス, パフォーマンス"
-  - "グラフィックス, 描画層"
-  - "描画 (グラフィックスを)"
-  - "描画層"
+title: "グラフィックスの描画層"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- graphics [WPF], performance
+- rendering graphics [WPF]
+- rendering tiers [WPF]
+- graphics rendering tiers [WPF]
+- graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-caps.latest.revision: 44
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 43
+caps.latest.revision: "44"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4a64ca2f0da2e10a3042b5f9c30baf3caa37534e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# グラフィックスの描画層
-描画層は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを実行するデバイスのグラフィックス ハードウェアの機能およびパフォーマンスのレベルを定義します。  
+# <a name="graphics-rendering-tiers"></a>グラフィックスの描画層
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを実行するデバイスのグラフィックス ハードウェア性能は描画層で決まります。  
   
-   
+
   
 <a name="graphics_hardware"></a>   
-## グラフィックス ハードウェア  
- 描画層のレベルに大きく影響するグラフィックス ハードウェアの機能は、次のとおりです。  
+## <a name="graphics-hardware"></a>グラフィックス ハードウェア  
+ 描画層に最も影響を与えるグラフィックス ハードウェアの機能:  
   
--   **ビデオ RAM** グラフィックス ハードウェアのビデオ メモリの量によって、グラフィックスを合成する際に使用できるバッファーのサイズと数が決まります。  
+-   **ビデオ RAM** グラフィックス ハードウェアのビデオ メモリの量で、グラフィックスの構築に利用できるバッファーのサイズと数が決まります。  
   
--   **ピクセル シェーダー** ピクセル シェーダーは、ピクセル単位で効果を計算するグラフィックス処理関数です。  表示するグラフィックスの解像度によっては、各表示フレームの処理に数百万ピクセルが必要な場合もあります。  
+-   **ピクセル シェーダー** ピクセル シェーダーは、ピクセル単位で効果を計算するグラフィックス処理機能です。 表示されるグラフィックスの解像度によっては、各表示フレームの処理に数百万単位のピクセルが必要になることがあります。  
   
--   **頂点シェーダー** 頂点シェーダーは、オブジェクトの頂点データの算術演算を実行するグラフィックス処理関数です。  
+-   **頂点シェーダー** 頂点シェーダーは、オブジェクトの頂点データに数学演算を実行するグラフィックス処理機能です。  
   
--   **マルチテクスチャのサポート** マルチテクスチャがサポートされていると、3D グラフィックス オブジェクトのブレンド操作を行うときに、2 つ以上の別個のテクスチャを適用できます。  マルチテクスチャのサポートの度合いは、グラフィックス ハードウェアのマルチテクスチャ ユニットの数によって決まります。  
+-   **マルチテクスチャ サポート** マルチテクスチャ サポートとは、3D グラフィックス オブジェクトにブレンド操作を実行するとき、2 つ以上の異なるテクスチャを適用できる機能のことです。 マルチテクスチャ サポートの度合いは、グラフィックス ハードウェア上のマルチテクスチャ ユニットの数で決まります。  
   
 <a name="rendering_tier_definitions"></a>   
-## 描画層の定義  
- グラフィックス ハードウェアの機能によって、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションの表示能力が決まります。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] システムは、次の 3 つの描画階層を定義します。  
+## <a name="rendering-tier-definitions"></a>描画層の定義  
+ グラフィックス ハードウェアの機能により [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションのレンダリング能力が決まります。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] システムには次の 3 つの描画層があります。  
   
--   **描画層 0** グラフィックス ハードウェアの加速が使用されません。  すべてのグラフィックス機能で、ソフトウェア アクセラレータを使用します。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン レベルは Version 9.0 未満です。  
+-   **描画層 0** グラフィックス ハードウェアの高速化はありません。 すべてのグラフィックス機能でソフトウェア高速化が利用されます。 [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] バージョン レベルはバージョン 9.0 より前です。  
   
--   **描画層 1** 一部のグラフィックス機能で、グラフィックス ハードウェア アクセラレータを使用します。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン レベルは Version 9.0 以上です。  
+-   **描画層 1** 一部のグラフィックス機能でグラフィックス ハードウェア高速が利用されます。 [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] バージョンのレベルはバージョン 9.0 以上です。  
   
--   **描画層 2** ほとんどのグラフィックス機能でグラフィックス ハードウェアの加速を使用します。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン レベルは Version 9.0 以上です。  
+-   **描画層 2** ほとんどのグラフィックス機能でグラフィックス ハードウェア高速が利用されます。 [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] バージョンのレベルはバージョン 9.0 以上です。  
   
- <xref:System.Windows.Media.RenderCapability.Tier%2A?displayProperty=fullName> プロパティを使用すると、アプリケーションの実行時に描画層を取得できます。  描画層を使用すると、特定のハードウェア アクセラレータ グラフィックス機能がデバイスでサポートされているかどうかを確認できます。  アプリケーションは、デバイスでサポートされている描画層に応じて、実行時に異なるコード パスを受け取ることができます。  
+ <xref:System.Windows.Media.RenderCapability.Tier%2A?displayProperty=nameWithType>プロパティでは、アプリケーション実行時の描画層を取得することができます。 描画層を利用し、特定のハードウェア高速化グラフィックス機能にデバイスが対応しているか判断します。 その後、デバイスでサポートされている描画層に基づき、アプリケーションが実行時にさまざまなコード パスを取ります。  
   
-### 描画層 0  
- 描画層の値 0 は、デバイスのアプリケーションに使用できるグラフィックス ハードウェア アクセラレータがないことを示します。  この描画層では、すべてのグラフィックスがハードウェア アクセラレータを使用せずにソフトウェアで描画されることを想定する必要があります。  この層の機能は、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] の 9.0 未満の Version に対応します。  
+### <a name="rendering-tier-0"></a>描画層 0  
+ 0 値の描画層は、デバイスのアプリケーションでグラフィックス ハードウェア高速化を利用できないことを意味します。 この層レベルでは、ハードウェア高速化がなく、すべてのグラフィックスがソフトウェアにより描画されるものと想定してください。 この層の機能は、9.0 より前のバージョンの [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] に相当します。  
   
-### 描画層 1 および描画層 2  
+### <a name="rendering-tier-1-and-rendering-tier-2"></a>描画層 1 と描画層 2  
   
 > [!NOTE]
->  .NET Framework 4 以降、描画層 1 は、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 以降をサポートするグラフィックス ハードウェアのみを含むように再定義されています。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 7 または 8 をサポートするグラフィックス ハードウェアは、描画層 0 と定義されています。  
+>  .NET Framework 4 より、描画層 1 が再定義され、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 9.0 以上をサポートするグラフィックスのみが含まれます。 [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 7 または 8 をサポートするグラフィックス ハードウェアは現在、描画層 0 として定義されています。  
   
- 描画層の値 1 または 2 は、必要なシステム リソースが使用可能であり、枯渇していない場合に、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のほとんどのグラフィックス機能がハードウェア アクセラレータを使用することを示します。  これは、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] の 9.0 以上の Version に対応します。  
+ 描画層の値 1 または 2 は、必要なシステム リソースがあり、枯渇していなければ、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のグラフィックス機能のほとんどでハードウェア高速化が利用されることを意味します。 これは 9.0 以上のバージョンの [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] に相当します。  
   
- 描画層 1 と描画層 2 のグラフィックス ハードウェア要件の違いを次の表に示します。  
+ 次の表は、描画層 1 と描画層 2 のグラフィックス ハードウェア要件の違いをまとめたものです。  
   
-|機能|層 1|層 2|  
-|--------|---------|---------|  
-|[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン|9.0 以上であることが必要です。|9.0 以上であることが必要です。|  
-|ビデオ RAM|60 MB 以上であることが必要です。|120 MB 以上であることが必要です。|  
-|ピクセル シェーダー|バージョン レベルは、2.0 以上であることが必要です。|バージョン レベルは、2.0 以上であることが必要です。|  
-|頂点シェーダー|要件は特にありません。|バージョン レベルは、2.0 以上であることが必要です。|  
-|マルチテクスチャ単位|要件は特にありません。|単位数は、4 以上であることが必要です。|  
+|特性|層 1|層 2|  
+|-------------|------------|------------|  
+|[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン|9.0 以上が要求されます。|9.0 以上が要求されます。|  
+|ビデオ RAM|60MB 以上が要求されます。|120MB 以上が要求されます。|  
+|ピクセル シェーダー|バージョン 2.0 以上が要求されます。|バージョン 2.0 以上が要求されます。|  
+|頂点シェーダー|要件はありません。|バージョン 2.0 以上が要求されます。|  
+|マルチテクスチャ ユニット|要件はありません。|ユニット数が 4 以上であることが要求されます。|  
   
- 描画層 1 および描画層 2 では、以下の機能がハードウェア アクセラレータによって加速されます。  
+ 次の機能は、描画層 1 と描画層 2 でハードウェア高速化されます。  
   
-|機能|説明|  
-|--------|--------|  
-|2D レンダリング|ほとんどの 2D レンダリングがサポートされています。|  
-|3D ラスタライズ|ほとんどの 3D ラスタライズがサポートされています。|  
-|3D 異方性フィルタリング|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、3D コンテンツの描画時に異方性フィルタリングの使用が試行されます。  異方性フィルタリングとは、カメラから遠く、視線角度のきつい位置にあるサーフェイス上のテクスチャの画質を向上させる手法です。|  
-|3D ミップマップ|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、3D コンテンツの描画時にミップマップの使用が試行されます。ミップマップを使用すると、テクスチャが <xref:System.Windows.Controls.Viewport3D> の狭い視野を占める場合にテクスチャの描画品質が向上します。|  
-|放射状グラデーション|サポートされますが、大きなオブジェクトでは <xref:System.Windows.Media.RadialGradientBrush> を使用しないでください。|  
-|3D の光源計算|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、頂点ごとの光源処理を実行します。そのため、メッシュに適用されている各素材の頂点ごとに光の強さを計算する必要があります。|  
-|テキストの描画|サブピクセル フォントの描画では、グラフィックス ハードウェアで利用可能なピクセル シェーダーを使用します。|  
+|特性|ノート|  
+|-------------|-----------|  
+|2D 描画|ほとんどの 2D 描画をサポートします。|  
+|3D ラスター化|ほとんどの 3D ラスター化をサポートします。|  
+|3D 異方性フィルター処理|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は 3D コンテンツを描画するとき、異方性フィルター処理を試行します。 異方性フィルター処理は、カメラから遠くにあり、カメラに対して急な角度が付く表面の画質を上げます。|  
+|3D MIP マッピング|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は 3D コンテンツを描画するとき、MIP マッピングを試行します。 テクスチャの小さい視野を占有するときに、MIP マッピングがテクスチャのレンダリング品質を向上させる、<xref:System.Windows.Controls.Viewport3D>です。|  
+|放射状グラデーション|サポートされていますの使用を避けるため<xref:System.Windows.Media.RadialGradientBrush>ラージ オブジェクトにします。|  
+|3D ライティング計算|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は頂点ごとに照明を実行します。つまり、メッシュに適用される素材ごとに各頂点で光の強度を計算する必要があります。|  
+|テキスト描画|サブピクセル フォント描画では、グラフィックス ハードウェアのピクセル シェーダーを利用します。|  
   
- 描画層 2 に対してのみ、以下の機能がハードウェア アクセラレータによって加速されます。  
+ 次の機能は、描画層 2 でのみハードウェア高速化されます。  
   
-|機能|説明|  
-|--------|--------|  
-|3D アンチエイリアシング|3D アンチエイリアシングは、Windows Display Driver Model \(WDDM\) をサポートするオペレーティング システム \([!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)]、[!INCLUDE[win7](../../../../includes/win7-md.md)] など\) でのみサポートされます。|  
+|特性|ノート|  
+|-------------|-----------|  
+|3D アンチエイリアス|3D アンチエイリアシングは、[!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] や [!INCLUDE[win7](../../../../includes/win7-md.md)] など、Windows Display Driver Model (WDDM) 対応のオペレーティング システムでのみサポートされています。|  
   
- 以下の機能はハードウェア アクセラレータによって加速されません。  
+ 次の機能はハードウェア高速化**されません**。  
   
-|機能|説明|  
-|--------|--------|  
-|印刷されるコンテンツ|印刷されるすべてのコンテンツが、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ソフトウェア パイプラインによって表示されます。|  
-|<xref:System.Windows.Media.Imaging.RenderTargetBitmap> を使用する、ラスタライズされたコンテンツ|すべてのコンテンツが、<xref:System.Windows.Media.Imaging.RenderTargetBitmap> の <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> メソッドによって描画されます。|  
-|<xref:System.Windows.Media.TileBrush> を使用する、並べて表示されるコンテンツ|すべての並べて表示されるコンテンツにおいて <xref:System.Windows.Media.TileBrush> の <xref:System.Windows.Media.TileBrush.TileMode%2A> プロパティが <xref:System.Windows.Media.TileMode> に設定されます。|  
-|グラフィックス ハードウェアの最大テクスチャ サイズを超えるサーフェイス。|ほとんどのグラフィックス ハードウェアでは、大型のサーフェイスのサイズは 2048 x 2048 ピクセルまたは 4096 x 4096 ピクセルです。|  
-|必要なビデオ RAM 容量がグラフィックス ハードウェアのメモリ容量を上回るすべての操作|Windows SDK の [WPF Performance Suite](../Topic/WPF%20Performance%20Suite.md) に付属する Perforator ツールを使用して、アプリケーション ビデオ RAM の使用量を監視できます。|  
-|レイヤード ウィンドウ|レイヤード ウィンドウを使用すると、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションで、コンテンツを四角形以外のウィンドウの画面に描画できます。  Windows Display Driver Model \(WDDM\) をサポートするオペレーティング システム \([!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)]、[!INCLUDE[win7](../../../../includes/win7-md.md)] など\) では、レイヤード ウィンドウはハードウェア アクセラレータによって加速されます。  [!INCLUDE[winxp](../../../../includes/winxp-md.md)] などのその他のシステムでは、レイヤード ウィンドウはハードウェア アクセラレータを使用せずにソフトウェアで描画されます。<br /><br /> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でレイヤード ウィンドウを有効にするには、<xref:System.Windows.Window> の次のプロパティを設定します。<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> \= <xref:System.Windows.WindowStyle><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> \= `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> \= <xref:System.Windows.Media.Brushes.Transparent%2A>|  
+|特性|ノート|  
+|-------------|-----------|  
+|印刷コンテンツ|印刷コンテンツはすべて、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ソフトウェア パイプラインを利用して描画されます。|  
+|使用するラスタライズされたコンテンツ<xref:System.Windows.Media.Imaging.RenderTargetBitmap>|すべてのコンテンツを使用して、<xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A>メソッドの<xref:System.Windows.Media.Imaging.RenderTargetBitmap>します。|  
+|タイルを使用するコンテンツ<xref:System.Windows.Media.TileBrush>|いずれかでコンテンツを並べて表示、<xref:System.Windows.Media.TileBrush.TileMode%2A>のプロパティ、<xref:System.Windows.Media.TileBrush>に設定されている<xref:System.Windows.Media.TileMode.Tile>です。|  
+|グラフィックス ハードウェアの最大テクスチャ サイズを超過する表面|ほとんどのグラフィックス ハードウェアの場合、大きな表面のサイズは 2048x2048 ピクセルか 4096x4096 ピクセルになります。|  
+|ビデオ RAM 要件がグラフィックス ハードウェアのメモリを超える操作|Windows SDK の [WPF Performance Suite](http://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e) に含まれる Perforator ツールを利用し、アプリケーションのビデオ RAM 使用率を監視できます。|  
+|レイヤード ウィンドウ|レイヤード ウィンドウを利用することで、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションは四角形以外のウィンドウ内の画面にコンテンツを描画できます。 [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] や [!INCLUDE[win7](../../../../includes/win7-md.md)] など、Windows Display Driver Model (WDDM) 対応のオペレーティング システムでは、レイヤード ウィンドウがハードウェア高速化されます。 [!INCLUDE[winxp](../../../../includes/winxp-md.md)] のような他のシステムの場合、ハードウェア高速化なしで、ソフトウェアによりレイヤード ウィンドウが描画されます。<br /><br /> レイヤード ウィンドウで有効にすることができます[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]以下に設定して<xref:System.Windows.Window>プロパティ。<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> = <xref:System.Windows.WindowStyle.None><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> = `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> = <xref:System.Windows.Media.Brushes.Transparent%2A>|  
   
 <a name="other_resources"></a>   
-## その他のリソース  
- 次の技術情報は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションのパフォーマンス特性の分析に役立ちます。  
+## <a name="other-resources"></a>その他の参照情報  
+ 次のリソースは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションのパフォーマンス特性の分析に役立ちます。  
   
-### グラフィックス レンダリングのレジストリ設定  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のレンダリングを制御するために 4 つのレジストリ設定が用意されています。  
+### <a name="graphics-rendering-registry-settings"></a>グラフィックス レンダリングのレジストリ設定  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の描画を制御するためのレジストリ設定が 4 つあります。  
   
-|設定|Description|  
-|--------|-----------------|  
-|**Disable Hardware Acceleration Option**|ハードウェア アクセラレータを有効にするかどうかを指定します。|  
-|**Maximum Multisample Value**|[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] コンテンツのアンチエイリアシングのマルチサンプリングの度合いを指定します。|  
-|**Required Video Driver Date Setting**|2004 年 11 月より前にリリースされたドライバーに対してハードウェア アクセラレータをシステムで無効にするかどうかを指定します。|  
-|**Use Reference Rasterizer Option**|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でリファレンス ラスタライザーを使用するかどうかを指定します。|  
+|設定|説明|  
+|-------------|-----------------|  
+|**Disable Hardware Acceleration Option (ハードウェア高速化オプションを無効にする)**|ハードウェア高速化を有効にするかどうかを指定します。|  
+|**Maximum Multisample Value (最大マルチサンプル値)**|[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] コンテンツをアンチエイリアシングするためのマルチサンプリングの度合いを指定します。|  
+|**Required Video Driver Date Setting (ビデオ ドライバーの日付設定が必須)**|2004 年 11 月より前にリリースされたドライバーについて、ハードウェア高速化を無効にするかどうかを指定します。|  
+|**Use Reference Rasterizer Option (リファレンス ラスタライザー オプションを使用する)**|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でリファレンス ラスタライザーを使用するかどうかを指定します。|  
   
- これらの設定には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レジストリ設定の参照方法を認識している外部構成ユーティリティを使用してアクセスできます。  また、これらの設定は、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] レジストリ エディターを使用して値に直接アクセスして作成または変更することもできます。  詳細については、「[グラフィックス レンダリングのレジストリ設定](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)」を参照してください。  
+ これらの設定には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レジストリ設定の参照方法を認識する外部構成ユーティリティを使用してアクセスできます。 これらの設定は、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] レジストリ エディターを使用して値に直接アクセスして作成または変更することもできます。 詳細については、「[グラフィックス レンダリングのレジストリ設定](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)」を参照してください。  
   
-### WPF パフォーマンス プロファイリング ツール  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、アプリケーションの実行時の動作を分析したり、適用可能なパフォーマンス最適化の種類を決定できるパフォーマンス プロファイリング ツール スイートを提供します。  [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] ツール \(WPF Performance Suite\) に含まれるパフォーマンス プロファイリング ツールを次の表に示します。  
+### <a name="wpf-performance-profiling-tools"></a>WPF パフォーマンス プロファイリング データ  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] にはパフォーマンス プロファイリング ツールのセットがあります。アプリケーションの実行時動作を分析したり、適用できるパフォーマンス最適化の種類を決定したりできます。 次の表は、[!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] ツール、WPF Performance Suite に含まれるパフォーマンス プロファイリング ツールをまとめたものです。  
   
-|ツール|Description|  
-|---------|-----------------|  
-|Perforator|レンダリング動作の分析に使用します。|  
-|ビジュアル プロファイラー|ビジュアル ツリーの要素による [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] サービス \(レイアウトやイベント処理など\) の使用状況に関するプロファイリングで使用します。|  
+|ツール|説明|  
+|----------|-----------------|  
+|Perforator|描画動作を分析します。|  
+|ビジュアル プロファイラー|ビジュアル ツリーの要素による [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] サービス (レイアウトやイベント処理など) の使用状況をプロファイルします。|  
   
- WPF Performance Suite では、パフォーマンス データを多彩なグラフィカル ビューで表示できます。  WPF のパフォーマンス ツールの詳細については、「[WPF Performance Suite](../Topic/WPF%20Performance%20Suite.md)」を参照してください。  
+ WPF Performance Suite では、パフォーマンス データを豊富な機能でグラフィカルに表示できます。 WPF パフォーマンス ツールの詳細については、「[WPF Performance Suite](http://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e)」を参照してください。  
   
-### DirectX 診断ツール  
- [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツール \(Dxdiag.exe\) は、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 関連の問題のトラブルシューティングを支援します。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツールの既定のインストール フォルダーは次のとおりです。  
+### <a name="directx-diagnostic-tool"></a>DirectX 診断ツール  
+ [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツール、Dxdiag.exe は、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 関連の問題解決に役立ちます。 [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツールの既定のインストール フォルダー:  
   
  `~\Windows\System32`  
   
- [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツールを実行すると、メイン ウィンドウに一連のタブが表示され、これらのタブを使用して [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 関連の情報を表示および診断することができます。  たとえば、\[システム\] タブにはコンピューターに関するシステム情報が表示され、コンピューターにインストールされている [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョンが示されます。  
+ [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツールを実行すると、メイン ウィンドウにタブ セットが表示されます。このタブ セットで [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 関連の情報を表示し、診断できます。 たとえば、**[システム]** タブにはコンピューターに関するシステム情報とコンピューターにインストールされている [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョンが表示されます。  
   
- ![スクリーンショット: DirectX 診断ツール](../../../../docs/framework/wpf/advanced/media/directxdiagnostictool-01.png "DirectXDiagnosticTool\_01")  
+ ![スクリーン ショット: DirectX 診断ツール](../../../../docs/framework/wpf/advanced/media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
 DirectX 診断ツールのメイン ウィンドウ  
   
-## 参照  
- <xref:System.Windows.Media.RenderCapability>   
- <xref:System.Windows.Media.RenderOptions>   
- [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)   
- [WPF Performance Suite](../Topic/WPF%20Performance%20Suite.md)   
- [グラフィックス レンダリングのレジストリ設定](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Media.RenderCapability>  
+ <xref:System.Windows.Media.RenderOptions>  
+ [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
+ [WPF Performance Suite](http://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e)  
+ [グラフィックス レンダリングのレジストリ設定](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)  
  [アニメーションのヒントとテクニック](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)

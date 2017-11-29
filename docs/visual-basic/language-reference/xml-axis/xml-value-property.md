@@ -1,89 +1,85 @@
 ---
-title: "XML Value Property (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.XmlPropertyExtensionValue"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Value property [Visual Basic]"
-  - "Visual Basic code, accessing XML"
-  - "XML axis [Visual Basic], Value"
-  - "XML Value property [Visual Basic]"
+title: "XML Value プロパティ (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.XmlPropertyExtensionValue
+helpviewer_keywords:
+- Value property [Visual Basic]
+- Visual Basic code, accessing XML
+- XML axis [Visual Basic], Value
+- XML Value property [Visual Basic]
 ms.assetid: 7ddd057a-a195-4e9b-ad8b-2ee0e615a20f
-caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 6c52ac09e209d6e3f0cfd877a071cbbe3ab96f18
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XML Value Property (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-<xref:System.Xml.Linq.XElement> オブジェクトのコレクションの最初の要素の値へのアクセスを提供します。  
+# <a name="xml-value-property-visual-basic"></a>XML Value プロパティ (Visual Basic)
+コレクションの最初の要素の値にアクセスできるように<xref:System.Xml.Linq.XElement>オブジェクト。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
 object.Value  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`object`|必ず指定します。  <xref:System.Xml.Linq.XElement> オブジェクトのコレクションです。|  
+|用語|定義|  
+|---|---|  
+|`object`|必須です。 <xref:System.Xml.Linq.XElement> オブジェクトのコレクション。|  
   
-## 戻り値  
- コレクションの最初の要素の値を含む `String`。コレクションが空の場合は `Nothing` です。  
+## <a name="return-value"></a>戻り値  
+ A `String` 、コレクションの最初の要素の値を格納しているか、`Nothing`コレクションが空の場合。  
   
-## 解説  
- <xref:System.Xml.Linq.XElement.Value%2A> プロパティを使用すると、<xref:System.Xml.Linq.XElement> オブジェクトのコレクションの最初の要素の値に簡単にアクセスできます。  このプロパティは、コレクションに少なくとも 1 つのオブジェクトが含まれているかどうかを最初にチェックします。  コレクションが空の場合、このプロパティは `Nothing` を返します。  それ以外の場合、このプロパティは、コレクションの最初の要素の <xref:System.Xml.Linq.XElement.Value%2A> プロパティの値を返します。  
+## <a name="remarks"></a>コメント  
+ <xref:System.Xml.Linq.XElement.Value%2A>プロパティでは、最初の要素のコレクション内の値にアクセスする簡単な<xref:System.Xml.Linq.XElement>オブジェクト。 まず、このプロパティは、コレクションに少なくとも 1 つのオブジェクトが含まれているかどうかを確認します。 このプロパティを返しますのかどうか、コレクションが空、`Nothing`です。 このプロパティがの値を返しますそれ以外の場合、<xref:System.Xml.Linq.XElement.Value%2A>コレクションの最初の要素のプロパティです。  
   
 > [!NOTE]
->  '@' 識別子を使用してXML 属性の値にアクセスすると、属性値は `String` として返され、<xref:System.Xml.Linq.XAttribute.Value%2A> プロパティを明示的に指定する必要はありません。  
+>  使用して XML 属性の値にアクセスするときに、' @' 識別子、属性が返される値として、`String`を明示的に指定する必要はありませんし、<xref:System.Xml.Linq.XAttribute.Value%2A>プロパティです。  
   
- コレクションの他の要素にアクセスするには、XML 拡張インデクサー プロパティを使用できます。  詳細については、「[Extension Indexer Property](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md)」を参照してください。  
+ コレクション内の他の要素にアクセスするには、XML 拡張インデクサー プロパティを使用することができます。 詳細については、次を参照してください。[拡張インデクサー プロパティ](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md)です。  
   
-## 継承  
- ほとんどのユーザーは <xref:System.Collections.Generic.IEnumerable%601> を実装する必要がないので、このセクションは無視してもかまいません。  
+## <a name="inheritance"></a>継承  
+ ほとんどのユーザーが実装する必要はありません<xref:System.Collections.Generic.IEnumerable%601>、およびそのためこのセクションを無視することができます。  
   
- <xref:System.Xml.Linq.XElement.Value%2A> プロパティは、`IEnumerable(Of XElement)` を実装する型の拡張プロパティです。  この拡張プロパティのバインディングは、拡張メソッドのバインディングに似ています。型がいずれかのインターフェイスを実装し、"Value" という名前のプロパティを定義した場合、そのプロパティが拡張プロパティに優先します。  つまり、この <xref:System.Xml.Linq.XElement.Value%2A> プロパティは、`IEnumerable(Of XElement)` を実装するクラスに新しいプロパティを定義することによってオーバーライドできます。  
+ <xref:System.Xml.Linq.XElement.Value%2A>拡張機能を実装する型のプロパティは、`IEnumerable(Of XElement)`です。 拡張メソッドのバインディングと同様には、この拡張機能プロパティのバインディング: 型、インターフェイスの 1 つを実装して"Value"という名前を持つプロパティが定義されて、そのプロパティが優先順位、拡張機能のプロパティです。 つまり、この<xref:System.Xml.Linq.XElement.Value%2A>プロパティを実装するクラスの新しいプロパティを定義することによりオーバーライドできます`IEnumerable(Of XElement)`です。  
   
-## 使用例  
- 次の例は、<xref:System.Xml.Linq.XElement.Value%2A> プロパティを使用して <xref:System.Xml.Linq.XElement> オブジェクトのコレクションの最初のノードにアクセスする方法を示しています。  この例では、子軸プロパティを使用して、`contact` オブジェクトの中の `phone` という名前のすべての子ノードのコレクションを取得します。  
+## <a name="example"></a>例  
+ 次の例を使用する方法を示しています、<xref:System.Xml.Linq.XElement.Value%2A>プロパティのコレクションの最初のノードへのアクセスを<xref:System.Xml.Linq.XElement>オブジェクト。 例では、すべての子ノードがという名前のコレクションを取得する子軸プロパティを使用して`phone`内にある、`contact`オブジェクト。  
   
  [!code-vb[VbXMLSamples#15](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-value-property_1.vb)]  
   
- このコードは、次のテキストを表示します。  
+ このコードを実行すると、次のテキストが表示されます。  
   
  `Phone number: 206-555-0144`  
   
-## 使用例  
- 次の例は、<xref:System.Xml.Linq.XAttribute> オブジェクトのコレクションから XML 属性の値を取得する方法を示しています。  この例では、属性軸プロパティを使用して、すべての `phone` 要素の `type` 属性の値を表示します。  
+## <a name="example"></a>例  
+ 次の例は、のコレクションから、XML 属性の値を取得する方法を示しています。<xref:System.Xml.Linq.XAttribute>オブジェクト。 この例の値を表示する属性軸プロパティを使用して、`type`のすべての属性、`phone`要素。  
   
  [!code-vb[VbXMLSamples#16](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-value-property_2.vb)]  
   
- このコードは、次のテキストを表示します。  
+ このコードを実行すると、次のテキストが表示されます。  
   
  `home`  
   
  `work`  
   
-## 参照  
- <xref:System.Xml.Linq.XElement>   
- <xref:System.Collections.Generic.IEnumerable%601>   
- [XML Axis Properties](../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)   
- [XML Literals](../../../visual-basic/language-reference/xml-literals/index.md)   
- [Creating XML in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)   
- [拡張メソッド](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)   
- [Extension Indexer Property](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md)   
- [XML Child Axis Property](../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)   
- [XML Attribute Axis Property](../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Xml.Linq.XElement>  
+ <xref:System.Collections.Generic.IEnumerable%601>  
+ [XML 軸プロパティ](../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)  
+ [XML リテラル](../../../visual-basic/language-reference/xml-literals/index.md)  
+ [Visual Basic での XML の作成](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
+ [拡張メソッド](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)  
+ [拡張インデクサー プロパティ](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md)  
+ [XML 子軸プロパティ](../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)  
+ [XML 属性軸プロパティ](../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)

@@ -1,41 +1,39 @@
 ---
-title: "Type of &#39;&lt;variablename&gt;&#39; cannot be inferred because the loop bounds and the step variable do not widen to the same type | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc30982"
-  - "vbc30982"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30982"
+title: "種類 &#39;&lt;variablename&gt;&#39; ループの境界とステップ変数が同じ型に変換されないために、推論できません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc30982
+- vbc30982
+helpviewer_keywords: BC30982
 ms.assetid: 741e85d9-a747-42ad-a1e1-a3f1928aaff5
-caps.latest.revision: 30
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 022e29e38a93d2880bbfa250e65a8b95b39ff140
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Type of &#39;&lt;variablename&gt;&#39; cannot be inferred because the loop bounds and the step variable do not widen to the same type
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`For...Next` ループを記述しましたが、次の条件が満たされているため、コンパイラはそのループの中でループ制御変数のデータ型を推論できません。  
+# <a name="type-of-39ltvariablenamegt39-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>種類 &#39;&lt;variablename&gt;&#39; ループの境界とステップ変数が同じ型に変換されないために、推論できません
+記述した、`For...Next`ループをコンパイラを推論できません for loop コントロール変数のデータ型は次の条件に当てはまるため。  
   
 -   ループ コントロール変数のデータ型が `As` 句で指定されていません。  
   
 -   ループ境界とステップ変数に少なくとも 2 つのデータ型が含まれています。  
   
--   標準的なデータ型変換が存在しません。  
+-   データ型の間で変換する標準変換が存在しません。  
   
- したがって、コンパイラはループ コントロール変数のデータ型を推論できません。  
+ したがって、コンパイラは、ループ コントロール変数のデータ型を推論できません。  
   
- 以下の例では、ステップ変数が文字、両方のループ境界が整数になっています。  文字と整数の間には標準的な変換がないので、このエラーが生成されます。  
+ 次の例では、ステップの変数は文字であり、ループの境界は、両方の整数。 文字および整数間の標準変換がないため、このエラーは報告されます。  
   
-```vb#  
+```vb  
 Dim stepVar = "1"c  
 Dim m = 0  
 Dim n = 20  
@@ -48,9 +46,9 @@ Dim n = 20
   
  **エラー ID:** BC30982  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   必要に応じてループ境界とステップ変数の型を変更し、少なくともいずれか 1 つの型が、他の型から見て拡大変換に相当する型になるようにします。  上の例では、`stepVar` の型を `Integer` に変換します。  
+-   少なくとも 1 つが、他のユーザーに拡大変換する型であるために、ループの境界と必要に応じて、ステップの変数の型を変更します。 上記の例では、変更の種類`stepVar`に`Integer`です。  
   
     ```  
     Dim stepVar = 1  
@@ -62,7 +60,7 @@ Dim n = 20
     Dim stepVar As Integer = 1  
     ```  
   
--   明示的な変換関数を使用して、ループ境界とステップ変数を適切な型に変換します。  上の例では、`Val` 関数を `stepVar` に適用します。  
+-   ループの境界とステップ変数を適切な型に変換するのにには、明示的な変換関数を使用します。 前の例では、適用、`Val`関数`stepVar`です。  
   
     ```  
     For i = 1 To 10 Step Val(stepVar)  
@@ -70,11 +68,11 @@ Dim n = 20
     Next  
     ```  
   
-## 参照  
- <xref:Microsoft.VisualBasic.Conversion.Val%2A>   
- [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)   
- [Implicit and Explicit Conversions](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
- [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
- [Option Infer Statement](../../../visual-basic/language-reference/statements/option-infer-statement.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.Conversion.Val%2A>  
+ [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [暗黙の型変換と明示的な型変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
+ [ローカル型の推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
+ [Option Infer ステートメント](../../../visual-basic/language-reference/statements/option-infer-statement.md)  
+ [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

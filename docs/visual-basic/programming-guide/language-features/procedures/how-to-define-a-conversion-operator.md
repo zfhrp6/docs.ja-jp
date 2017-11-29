@@ -1,53 +1,52 @@
 ---
-title: "How to: Define a Conversion Operator (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procedures, defining"
-  - "operators [Visual Basic], defining"
-  - "procedures, operator"
-  - "operators [Visual Basic], overloading"
-  - "return values, Operator procedures"
-  - "operator overloading"
+title: "方法: 変換演算子を定義する (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- procedures [Visual Basic], defining
+- operators [Visual Basic], defining
+- procedures [Visual Basic], operator
+- operators [Visual Basic], overloading
+- return values [Visual Basic], Operator procedures
+- operator overloading
 ms.assetid: 54203dfa-c24b-463f-9942-d5153e89e762
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b0f9e63ba039a48226186fa4ce118d3e47b5673e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Define a Conversion Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-定義されたクラスまたは構造体がある場合、その型と別のデータ型 \(`Integer`、`Double`、または `String`\) の間の型変換演算子を定義できます。  
+# <a name="how-to-define-a-conversion-operator-visual-basic"></a>方法: 変換演算子を定義する (Visual Basic)
+クラスまたは構造体を定義している場合は、クラスまたは構造体の型と別のデータ型の型変換演算子を定義することができます (など`Integer`、 `Double`、または`String`)。  
   
- 型変換はクラスまたは構造体の内部に [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md) プロシージャとして定義します。  すべての変換プロシージャは `Public Shared` であることが必要です。また、それぞれに [Widening](../../../../visual-basic/language-reference/modifiers/widening.md) または [Narrowing](../../../../visual-basic/language-reference/modifiers/narrowing.md) を指定する必要があります。  
+ として型の変換を定義、 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)クラスまたは構造内のプロシージャです。 変換のすべてのプロシージャである必要があります`Public Shared`、どちらか 1 つを指定する必要がありますと[Widening](../../../../visual-basic/language-reference/modifiers/widening.md)または[Narrowing](../../../../visual-basic/language-reference/modifiers/narrowing.md)です。  
   
- クラスまたは構造体で演算子を定義することを、演算子を*オーバーロード*するといいます。  
+ クラスまたは構造体で演算子を定義とも呼びます*オーバー ロード*演算子。  
   
-## 使用例  
- 構造体  `digit`  と `Byte` の間の変換演算子を定義する例は次のようになります。  
+## <a name="example"></a>例  
+ 次の例と呼ばれる構造との間の変換演算子を定義する`digit`と`Byte`です。  
   
  [!code-vb[VbVbcnProcedures#27](./codesnippet/VisualBasic/how-to-define-a-conversion-operator_1.vb)]  
   
- 構造体 `digit` を、次のコードを使用してテストしてください。  
+ 構造体をテストする`digit`を次のコード。  
   
  [!code-vb[VbVbcnProcedures#28](./codesnippet/VisualBasic/how-to-define-a-conversion-operator_2.vb)]  
   
-## 参照  
- [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [How to: Define an Operator](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)   
- [How to: Call an Operator Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-call-an-operator-procedure.md)   
- [How to: Use a Class that Defines Operators](../../../../visual-basic/programming-guide/language-features/procedures/how-to-use-a-class-that-defines-operators.md)   
- [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md)   
- [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md)   
- [How to: Declare a Structure](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)   
- [Implicit and Explicit Conversions](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
- [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+## <a name="see-also"></a>関連項目  
+ [演算子プロシージャ](./operator-procedures.md)  
+ [方法 : 演算子を定義する](./how-to-define-an-operator.md)  
+ [方法 : 演算子プロシージャを呼び出す](./how-to-call-an-operator-procedure.md)  
+ [方法: 演算子を定義するクラスを使用する](./how-to-use-a-class-that-defines-operators.md)  
+ [Operator ステートメント](../../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Structure ステートメント](../../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [方法 : 構造体を宣言する](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
+ [暗黙の型変換と明示的な型変換](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
+ [拡大変換と縮小変換](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

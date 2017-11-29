@@ -1,26 +1,22 @@
 ---
-title: "方法: 属性 (XPATH-LINQ to XML) でフィルター処理 (Visual Basic) |Microsoft ドキュメント"
+title: "方法: 属性 (XPATH-LINQ to XML) でフィルター処理 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: ffefb9d6-45ec-4677-a396-dd9c2b36298f
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 321fd6aba7b8ab40b29eb0708039cb5c0f8a964d
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: c4bd1482b535035c9cae329c774e952e54d8c681
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-visual-basic"></a>方法: 属性 (XPATH-LINQ to XML) でフィルター処理 (Visual Basic)
 このトピックでは、指定した名前を持ち、かつ指定した値の属性を持つ子孫要素を取得する方法について説明します。  
@@ -32,7 +28,7 @@ ms.lasthandoff: 03/13/2017
 ## <a name="example"></a>例  
  この例では、`Address` という名前を持ち、かつ "Shipping" という値の `Type` 属性を持つ子孫要素をすべて検索します。  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 複数の発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md)します。  
+ この例では、「[サンプル XML ファイル: 複数の購買発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md)」の XML ドキュメントを使用します。  
   
 ```vb  
 Dim po As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -89,4 +85,4 @@ Results are identical
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [LINQ to XML の XPath ユーザー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+ [LINQ to XML を XPath ユーザー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

@@ -1,32 +1,33 @@
 ---
-title: "チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの配置 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "相互運用性 [WPF]"
-  - "Windows フォーム, 固定およびドッキング (WPF コンテンツを)"
-  - "Windows フォーム, 配置 (WPF コンテンツをデザイン時に)"
-  - "WPF コンテンツ [Windows フォーム], 配置 (デザイン時に)"
-  - "WPF コンテンツ, ホスト (Windows フォームで)"
-  - "WPF ユーザー コントロール [Windows フォーム], ホスト (レイアウト パネルで)"
+title: "チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの配置"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WPF user control [Windows Forms], hosting in a layout panel
+- WPF content [Windows Forms], arranging at design time
+- Windows Forms, arranging WPF content at design time
+- WPF content [Windows Forms], hosting in Windows Forms
+- Windows Forms, anchoring and docking WPF content
+- interoperability [WPF]
 ms.assetid: 5efb1c53-1484-43d6-aa8a-f4861b99bb8a
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9ae86989489ec4c50a4234eeb4a0950a71e53b0a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの配置
-このチュートリアルでは、固定やスナップ線などの Windows フォームのレイアウト機能を使用して、Windows Presentation Foundation \(WPF\) コントロールを配置する方法を説明します。  
+# <a name="walkthrough-arranging-wpf-content-on-windows-forms-at-design-time"></a>チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの配置
+このチュートリアルでは、固定やスナップ線などの Windows フォームのレイアウト機能を使用して、Windows Presentation Foundation (WPF) コントロールを配置する方法を説明します。  
   
  このチュートリアルでは次のタスクを実行します。  
   
@@ -41,69 +42,69 @@ caps.handback.revision: 20
 -   WPF コントロールを固定してドッキングする。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-## 必須コンポーネント  
+## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを実行するには、次のコンポーネントが必要です。  
   
--   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)].  
+-   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)]。  
   
-## プロジェクトの作成  
+## <a name="creating-the-project"></a>プロジェクトの作成  
  まず、Windows フォーム プロジェクトを作成します。  
   
 > [!NOTE]
->  WPF コンテンツをホストする場合は、C\# プロジェクトと Visual Basic プロジェクトのみがサポートされます。  
+>  WPF コンテンツをホストする場合は、C# プロジェクトと Visual Basic プロジェクトのみがサポートされます。  
   
-#### プロジェクトを作成するには  
+#### <a name="to-create-the-project"></a>プロジェクトを作成するには  
   
--   `ArrangeElementHost` という名前の新しい Windows フォーム アプリケーション プロジェクトを Visual Basic または Visual C\# で作成します。  
+-   Visual Basic または Visual c# のという名前で新しい Windows フォーム アプリケーション プロジェクトを作成`ArrangeElementHost`です。  
   
-## WPF コントロールの作成  
+## <a name="creating-the-wpf-control"></a>WPF コントロールの作成  
  プロジェクトに WPF コントロール型を追加したら、フォーム状に配置できます。  
   
-#### WPF コントロールを作成するには  
+#### <a name="to-create-wpf-controls"></a>WPF コントロールを作成するには  
   
-1.  新しい WPF <xref:System.Windows.Controls.UserControl> をプロジェクトに追加します。  コントロール型の既定の名前である `UserControl1.xaml` を使用します。  詳細については、「[チュートリアル: デザイン時の Windows フォームでの新しい WPF コンテンツの作成](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)」を参照してください。  
+1.  新しい WPF <xref:System.Windows.Controls.UserControl> をプロジェクトに追加します。 コントロール型の既定の名前である `UserControl1.xaml` を使用します。 詳細については、次を参照してください。[チュートリアル: 新しい WPF コンテンツの作成デザイン時に Windows フォームで](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)です。  
   
-2.  デザイン ビューで `UserControl1` が選択されていることを確認します。  詳細については、「[方法 : デザイン画面上で要素を選択して移動する](http://msdn.microsoft.com/ja-jp/54cb70b6-b35b-46e4-a0cc-65189399c474)」を参照してください。  
+2.  デザイン ビューで `UserControl1` が選択されていることを確認します。 詳細については、次を参照してください。[する方法: Select およびデザイン サーフェイス上の要素の移動](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474)です。  
   
-3.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.FrameworkElement.Width%2A> プロパティおよび <xref:System.Windows.FrameworkElement.Height%2A> プロパティの値を `200` に設定します。  
+3.  **プロパティ**ウィンドウで、設定の値、<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>プロパティ`200`です。  
   
-4.  <xref:System.Windows.Controls.Control.Background%2A> プロパティの値を `[青]` に設定します。  
+4.  <xref:System.Windows.Controls.Control.Background%2A> プロパティの値を `Blue` に設定します。  
   
 5.  プロジェクトをビルドします。  
   
-## レイアウト パネルで WPF コントロールをホストする  
+## <a name="hosting-wpf-controls-in-a-layout-panel"></a>レイアウト パネルで WPF コントロールをホストする  
  その他の Windows フォーム コントロールを使用するのと同じ方法で、レイアウト パネルで WPF コントロールを使用できます。  
   
-#### レイアウト パネルで WPF コントロールをホストするには  
+#### <a name="to-host-wpf-controls-in-a-layout-panel"></a>レイアウト パネルで WPF コントロールをホストするには  
   
 1.  Windows フォーム デザイナーで `Form1` を開きます。  
   
-2.  **ツールボックス**から、<xref:System.Windows.Forms.TableLayoutPanel> コントロールをフォームにドラッグします。  
+2.  **ツールボックス**、ドラッグ、<xref:System.Windows.Forms.TableLayoutPanel>コントロールをフォームにします。  
   
-3.  <xref:System.Windows.Forms.TableLayoutPanel> コントロールのスマート タグ パネルで、**\[最後の行を削除する\]** を選択します。  
+3.  <xref:System.Windows.Forms.TableLayoutPanel>コントロールのスマート タグ パネルで、**最後の行を削除する**です。  
   
 4.  幅と高さが大きくなるよう <xref:System.Windows.Forms.TableLayoutPanel> コントロールのサイズを変更します。  
   
-5.  **\[ツールボックス\]** で `UserControl1` をダブルクリックして、<xref:System.Windows.Forms.TableLayoutPanel> コントロールの最初のセルに `UserControl1` のインスタンスを作成します。  
+5.  **ツールボックス**をダブルクリックして`UserControl1`のインスタンスを作成する`UserControl1`の最初のセルで、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。  
   
      `UserControl1` のインスタンスは、`elementHost1` という名前の新しい <xref:System.Windows.Forms.Integration.ElementHost> コントロールでホストされます。  
   
-6.  **\[ツールボックス\]** で `UserControl1` をダブルクリックして、<xref:System.Windows.Forms.TableLayoutPanel> コントロールの 2 番目のセルの別のインスタンスを作成します。  
+6.  **ツールボックス**をダブルクリックして`UserControl1`の 2 番目のセルで別のインスタンスを作成する、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。  
   
-7.  **\[ドキュメント アウトライン\]** ウィンドウで、`tableLayoutPanel1` を選択します。  詳細については、「[Document Outline Window](http://msdn.microsoft.com/ja-jp/9054f2bc-f6f8-4242-9fe0-be71089b12f8)」を参照してください。  
+7.  **ドキュメント アウトライン**ウィンドウで、`tableLayoutPanel1`です。 詳細については、次を参照してください。[ドキュメント アウトライン ウィンドウ](http://msdn.microsoft.com/en-us/9054f2bc-f6f8-4242-9fe0-be71089b12f8)します。  
   
-8.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.Control.Padding%2A> プロパティの値を `10、10、10、10` に設定します。  
+8.  **プロパティ**ウィンドウで、設定の値、<xref:System.Windows.Forms.Control.Padding%2A>プロパティを`10, 10, 10, 10`です。  
   
      両方の <xref:System.Windows.Forms.Integration.ElementHost> コントロールが、新しいレイアウトに収まるようにサイズ変更されました。  
   
-## WPF コントロールを配置するスナップ線を使用する  
- スナップ線により、フォームのコントロールの配置を簡単に調整できます。  スナップ線を使用して、WPF コントロールも配置することができます。  詳細については、「[チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)」を参照してください。  
+## <a name="using-snaplines-to-align-wpf-controls"></a>WPF コントロールを配置するスナップ線を使用する  
+ スナップ線により、フォームのコントロールの配置を簡単に調整できます。 スナップ線を使用して、WPF コントロールも配置することができます。 詳細については、次を参照してください。[チュートリアル: Windows フォームを使用するスナップ線上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)です。  
   
-#### WPF コントロールを配置するスナップ線を使用するには  
+#### <a name="to-use-snaplines-to-align-wpf-controls"></a>WPF コントロールを配置するスナップ線を使用するには  
   
-1.  **ツールボックス**から、`UserControl1` のインスタンスをフォームにドラッグして、<xref:System.Windows.Forms.TableLayoutPanel> コントロールの下の領域に配置します。  
+1.  **ツールボックス**のインスタンスをドラッグ`UserControl1`フォーム上に下の領域に配置し、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。  
   
      `UserControl1` のインスタンスは、`elementHost3` という名前の新しい <xref:System.Windows.Forms.Integration.ElementHost> コントロールでホストされます。  
   
@@ -113,22 +114,22 @@ caps.handback.revision: 20
   
 4.  コントロール間に中央揃えのスナップ線が表示されるまで`elementHost3` を <xref:System.Windows.Forms.TableLayoutPanel> コントロールの方へ移動します。  
   
-5.  **\[プロパティ\]** ウィンドウで、余白プロパティの値を `20、20、20、20` に設定します。  
+5.  **プロパティ**ウィンドウで、余白プロパティの値を設定する`20, 20, 20, 20`です。  
   
-6.  中央揃えのスナップ線がもう一度表示されるまで、`elementHost3` を <xref:System.Windows.Forms.TableLayoutPanel> コントロールから移動します。  中央揃えのスナップ線が、余白 20 を示すようになりました。  
+6.  中央揃えのスナップ線がもう一度表示されるまで、`elementHost3` を <xref:System.Windows.Forms.TableLayoutPanel> コントロールから移動します。 中央揃えのスナップ線が、余白 20 を示すようになりました。  
   
 7.  左端が `elementHost1` の左端に配置されるまで、`elementHost3` を右に移動します。  
   
 8.  右端が `elementHost2` の右端に配置されるまで、`elementHost3` の幅を変更します。  
   
-## WPF コントロールの固定およびドッキング  
+## <a name="anchoring-and-docking-wpf-controls"></a>WPF コントロールの固定およびドッキング  
  フォームでホストされている WPF コントロールは、他の Windows フォーム コントロールと同じ固定とドッキングの動作を持ちます。  
   
-#### WPF コントロールを固定してドッキングするには  
+#### <a name="to-anchor-and-dock-wpf-controls"></a>WPF コントロールを固定してドッキングするには  
   
 1.  `elementHost1` を選択します。  
   
-2.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.Control.Anchor%2A> プロパティを **\[Top, Bottom, Left, Right\]** に設定します。  
+2.  **プロパティ**ウィンドウで、設定、<xref:System.Windows.Forms.Control.Anchor%2A>プロパティを**Top、Bottom、Left、Right**です。  
   
 3.  <xref:System.Windows.Forms.TableLayoutPanel> コントロールを大きなサイズに変更します。  
   
@@ -136,17 +137,17 @@ caps.handback.revision: 20
   
 4.  `elementHost2` を選択します。  
   
-5.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle> に設定します。  
+5.  **プロパティ**ウィンドウで、設定の値、<xref:System.Windows.Forms.Control.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Fill>です。  
   
      `elementHost2` コントロールがセルを満たすようサイズ変更されます。  
   
 6.  <xref:System.Windows.Forms.TableLayoutPanel> コントロールを選択します。  
   
-7.  <xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle> に設定します。  
+7.  <xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle.Top> に設定します。  
   
 8.  `elementHost3` を選択します。  
   
-9. <xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle> に設定します。  
+9. <xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle.Fill> に設定します。  
   
      `elementHost3` コントロールが、フォームの残りの領域を満たすようサイズ変更されます。  
   
@@ -154,14 +155,14 @@ caps.handback.revision: 20
   
      3 つすべての <xref:System.Windows.Forms.Integration.ElementHost> コントロールのサイズを適切に変更します。  
   
-     詳細については、「[方法 : TableLayoutPanel コントロールで子コントロールを固定およびドッキングする](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)」を参照してください。  
+     詳細については、次を参照してください。[する方法: アンカーと TableLayoutPanel コントロールで子コントロールのドッキング](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)です。  
   
-## 参照  
- <xref:System.Windows.Forms.Integration.ElementHost>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [方法 : TableLayoutPanel コントロールで子コントロールを固定およびドッキングする](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)   
- [方法 : デザイン時にフォームの端に合わせてコントロールを配置する](../../../../docs/framework/winforms/controls/how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)   
- [チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)   
- [移行と相互運用性](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)   
- [WPF コントロールの使用](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)   
- [WPF デザイナー](http://msdn.microsoft.com/ja-jp/c6c65214-8411-4e16-b254-163ed4099c26)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.Integration.ElementHost>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [方法: TableLayoutPanel コントロールで子コントロールを固定およびドッキングする](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
+ [方法: デザイン時にフォームの端に合わせてコントロールを配置する](../../../../docs/framework/winforms/controls/how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)  
+ [チュートリアル: スナップ線を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
+ [移行と相互運用性](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
+ [WPF コントロールの使用](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
+ [WPF デザイナー](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)

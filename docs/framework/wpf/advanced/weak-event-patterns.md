@@ -1,144 +1,146 @@
 ---
-title: "弱いイベント パターン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "イベント ハンドラー, 弱いイベント パターン"
-  - "IWeakEventListener インターフェイス"
-  - "弱いイベント パターンの実装"
-  - "WeakEventManager クラス"
+title: "弱いイベント パターン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- weak event pattern implementation [WPF]
+- event handlers [WPF], weak event pattern
+- IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a27e17e4940ff68f34d1e7e4accfb9e112bc412b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 弱いイベント パターン
-アプリケーションでは、イベント ソースにアタッチされているハンドラーが、このハンドラーをソースにアタッチしたリスナー オブジェクトとの関連によって、破棄されないことがあります。  このような状況は、メモリ リークにつながる可能性があります。  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] では、デザイン パターンが導入されており、このデザイン パターンを使用して、特定のイベントの専用マネージャー クラスを提供し、そのイベントのリスナーにインターフェイスを実装することによって、この問題に対処できます。  このデザイン パターンは、弱いイベント パターンと呼ばれます。  
+# <a name="weak-event-patterns"></a>弱いイベント パターン
+アプリケーションでは、可能であれば、イベント ソースに接続されているハンドラーは破棄されません、ハンドラーをソースに接続されているリスナー オブジェクトと連携します。 このような状況は、メモリ リークが発生する可能性があります。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]この問題に対処、特定のイベントの専用マネージャー クラスを提供して、そのイベントのリスナーにインターフェイスを実装して使用できるデザイン パターンについて説明します。 この設計パターンと呼ばれる、*弱いイベント パターン*です。  
   
-## 弱いイベント パターンを実装する理由  
- イベントのリッスンによって、メモリ リークが発生する可能性があります。  イベントをリッスンする場合の一般的な手法は、言語固有の構文を使用して、ソース上でイベントにハンドラーをアタッチすることです。  たとえば、[!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] では、その構文は `source.SomeEvent += new SomeEventHandler(MyEventHandler)` です。  
+## <a name="why-implement-the-weak-event-pattern"></a>弱いイベント パターンを実装する理由  
+ イベントのリッスンと、メモリ リークが発生する可能性があります。 イベントをリッスンするための一般的な手法では、ソースでのイベントにハンドラーをアタッチする言語固有の構文を使用します。 たとえば、 [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)]、構文がである:`source.SomeEvent += new SomeEventHandler(MyEventHandler)`です。  
   
- この手法では、イベント ソースからイベント リスナーへの強い参照を作成します。  通常、リスナーのイベント ハンドラーをアタッチすると、リスナーはオブジェクトの有効期間を持ちますが、この有効期間はソースのオブジェクトの有効期間の影響を受けます \(イベント ハンドラーが明示的に削除されない場合\)。  ただし、特定の状況では、リスナーのオブジェクトの有効期間を、ソースの有効期間によってではなく、アプリケーションのビジュアル ツリーに現在属しているかどうかなどの別の要素によって制御したい場合もあります。  ソース オブジェクトの有効期間がリスナーのオブジェクトの有効期間を超える場合、常に通常のイベント パターンによってメモリ リークが発生します。つまり、このリスナーは想定した以上に長く維持されます。  
+ この手法は、強い参照をイベント ソースからのイベント リスナーを作成します。 オブジェクトの有効期間が影響を受けるソースのオブジェクトの有効期間 (しない限り、イベント ハンドラーが明示的に削除) にリスナーが通常は、リスナーのイベント ハンドラーをアタッチするとします。 特定の状況で、ソースの有効期間ではなく、アプリケーションのビジュアル ツリーに現在属しているかどうかなどするその他の要因によって制御されているリスナーのオブジェクトの有効期間をする可能性があります。 ソース オブジェクトの有効期間は、リスナーのオブジェクトの有効期間からはみ出した、ときに通常のイベント パターンは、メモリ リークが発生につながります。 リスナーが有効のまま保持ためのものよりも長い時間です。  
   
- 弱いイベント パターンは、このメモリ リークの問題を解決するように設計されています。  弱いイベント パターンは、リスナーをイベントに登録する必要がある際に、いつ登録を解除するかを明示的には認識できない場合に使用できます。  また、弱いイベント パターンは、ソースのオブジェクトの有効期間がリスナーの有用なオブジェクトの有効期間を超える場合にも使用できます  \(この場合、*"有用な"* ものは自分自身で判断します\)。弱いイベント パターンを使用すると、リスナーのオブジェクトの有効期間の特性にまったく影響を与えることなく、リスナーをイベントに登録し、イベントを受け取ることができます。  実際には、ソースからの暗黙的な参照では、リスナーがガベージ コレクションの対象であるかどうかは判断されません。  この参照は弱い参照であり、このことから弱いイベント パターンおよび関連する [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] の名前が付けられています。  リスナーはガベージ コレクトされ、そうでなければ破棄されて、ソースは存続することができ、破棄されたオブジェクトへの収集不能なハンドラー参照を継続することもありません。  
+ 弱いイベント パターンは、このメモリ リークの問題を解決するために設計されています。 リスナーは、イベントに登録する必要がありますが、リスナーは明示的に認識できない場合の登録を解除するたびに、弱いイベント パターンを使用できます。 弱いイベント パターンは、ソースのオブジェクトの有効期間は、リスナーの役に立つオブジェクトの有効期間を超えた場合にも使用できます。 (この場合、*便利*するによって決定されます)。弱いイベント パターンは、を登録し、任意の方法でリスナーのオブジェクトの有効期間の特性に影響を与えずに、イベントを受信するリスナーを使用できます。 実際には、ソースからの暗黙的な参照では、リスナーは、ガベージ コレクションの条件に適合するかどうかは不明です。 参照は、弱いイベント パターンとの関連する名前付けつまり、弱い参照[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]です。 リスナーはガベージ コレクトされ、それ以外の場合は破棄、ソースが破棄されたオブジェクトへの収集ハンドラーの参照を保持せずに続行できます。  
   
-## だれが弱いイベント パターンを実装するのか  
- 弱いイベント パターンの実装は、主にコントロール作成者にとって意味があります。  コントロールの作成者には、作成したコントロールの動作と格納およびそれを組み込むアプリケーションに与える影響に対する主な責任があります。  これには、コントロール オブジェクトの有効期間の動作 \(特に、上に示したメモリ リークの問題への対応\) が含まれます。  
+## <a name="who-should-implement-the-weak-event-pattern"></a>弱いイベント パターンを実装する必要がありますか。  
+ 弱いイベント パターンを実装するは、主にコントロールの作成者にとって重要です。 コントロールの作成者は、ユーザーは、動作や、コントロールと挿入されているアプリケーションへの影響の含有関係担当大きくします。 これが含まれています、コントロール オブジェクトの有効期間の動作では、具体的には記載されているメモリ リークの問題の処理には、します。  
   
- 弱いイベント パターンを適用すると本質的に役立つシナリオがいくつかあります。  このようなシナリオの 1 つが、データ バインディングです。  データ バインディングでは、ソース オブジェクトが、バインディングのターゲットであるリスナー オブジェクトにまったく依存しない場合が一般的です。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] データ バインディングの多くの側面は、イベントの実装方法に適用される弱いイベント パターンをあらかじめ含んでいます。  
+ 特定のシナリオでは、弱いイベント パターンをアプリケーション自体本質的に役立ちます。 このようなシナリオの 1 つは、データ バインディングです。 データ バインディングでは、ソース オブジェクトのバインディングのターゲットは、そのリスナー オブジェクトを完全に独立した一般的なです。 多くの側面[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]弱いイベント パターン、イベントの実装方法で適用されるバインディングが既にデータがあります。  
   
-## 弱いイベント パターンを実装する方法  
- 弱いイベント パターンを実装する 3 とおりの方法があります。  次の表ではを使用すると3 とおりの方法についてガイダンスを提供します。  
+## <a name="how-to-implement-the-weak-event-pattern"></a>弱いイベント パターンを実装する方法  
+ 弱いイベント パターンを実装する次の 3 つの方法はあります。 次の表は、3 つの方法を示し、それぞれを使用する際のガイダンスを紹介します。  
   
-|方法|実行します。|  
-|--------|------------|  
-|既存の弱いイベント マネージャー クラスを使用します。|サブスクライブするイベントに対応する <xref:System.Windows.WeakEventManager> を使用すると既存の弱いイベント マネージャーがある場合。  WPF に含まれる弱いイベント マネージャーの一覧については<xref:System.Windows.WeakEventManager> のクラスの継承階層 " を参照してください。  WPF に含まれているためは他の方法の 1 つがを選択する必要があります。ただし比較的少数の弱いイベント マネージャーがあることに注意してください。|  
-|一般的に弱いイベント マネージャー クラスを使用します。|既存の <xref:System.Windows.WeakEventManager> が存在しない場合通常 <xref:System.Windows.WeakEventManager%602> を実行する必要があるため簡単にを使用して効率の影響を受けません。  一般的な <xref:System.Windows.WeakEventManager%602> は既存またはカスタムの弱いイベント マネージャーよりも効率的です。  たとえばジェネリック クラスはイベントの名前のイベントを検出するためにリフレクションを実行します。  またジェネリック <xref:System.Windows.WeakEventManager%602> を使用してイベントを登録するコードは既存またはカスタム <xref:System.Windows.WeakEventManager> を使用して冗長です。|  
-|カスタム弱いイベント マネージャー クラスを作成します。|既存の <xref:System.Windows.WeakEventManager> 存在しない最適な効率が必要な場合はカスタム <xref:System.Windows.WeakEventManager> を作成します。  カスタム <xref:System.Windows.WeakEventManager> を使用してイベントをサブスクライブする方が効率的ですが先頭でのコードの記述のコストがかかります。|  
+|方法|実装する場合|  
+|--------------|-----------------------|  
+|既存の弱いイベント マネージャー クラスを使用します。|サブスクライブするイベントが、対応する<xref:System.Windows.WeakEventManager>、既存の弱いイベント マネージャーを使用します。 WPF に含まれている弱いイベント マネージャーの一覧は、継承階層を参照してください、<xref:System.Windows.WeakEventManager>クラスです。 ただし、他のアプローチのいずれかを選択する必要がありますので、WPF に含まれる比較的少数の弱いイベント マネージャーがあることに注意してください。|  
+|ジェネリックの弱いイベント マネージャー クラスを使用します。|ジェネリック型を使用して<xref:System.Windows.WeakEventManager%602>既存<xref:System.Windows.WeakEventManager>が利用できないを実装する簡単な方法を目的し、していない関係する効率。 ジェネリック<xref:System.Windows.WeakEventManager%602>既存またはカスタムの弱いイベント マネージャーより効率が下がります。 たとえば、discover イベントのイベントの名前を指定するために複数のリフレクションでは、ジェネリック クラス。 ジェネリックを使用して、イベントを登録するコードも、<xref:System.Windows.WeakEventManager%602>がより既存を使用するよりも詳細なまたは custom<xref:System.Windows.WeakEventManager>です。|  
+|カスタムの弱いイベント マネージャー クラスを作成します。|カスタム作成<xref:System.Windows.WeakEventManager>ときに既存する<xref:System.Windows.WeakEventManager>は使用できません最適な効率性を必要とします。 使用するカスタム<xref:System.Windows.WeakEventManager>をサブスクライブするイベントをより効率的になりますが、先頭にさらにコードを記述するコストが発生する操作を行います。|  
   
- 以降のセクションでは弱いイベント パターンを実装する方法について説明します。  ここではサブスクライブするイベントには次の特徴があります。  
+ 次のセクションでは、弱いイベント パターンを実装する方法について説明します。  この説明の目的は、サブスクライブするイベントは、次の特性を持ちます。  
   
--   イベント名は `SomeEvent` です。  
+-   イベント名が`SomeEvent`です。  
   
--   イベントは `EventSource` のクラスによって発生します。  
+-   このイベントは、`EventSource`クラスです。  
   
--   イベント ハンドラーは型を含んでいます : `SomeEventEventHandler` \(または\) `EventHandler<SomeEventEventArgs>`。  
+-   イベント ハンドラーが型: `SomeEventEventHandler` (または`EventHandler<SomeEventEventArgs>`)。  
   
--   イベントがイベント ハンドラーに `SomeEventEventArgs` 型のパラメーターを渡します。  
+-   このイベントは、型のパラメーターを渡します`SomeEventEventArgs`イベント ハンドラーにします。  
   
-### 既存の弱いイベント マネージャー クラスを使用します。  
+### <a name="using-an-existing-weak-event-manager-class"></a>既存の弱いイベント マネージャー クラスを使用します。  
   
-1.  既存の弱いイベント マネージャーを検索します。  
+1.  既存の弱いイベント マネージャーが見つかりません。  
   
-     WPF に含まれる弱いイベント マネージャーの一覧については<xref:System.Windows.WeakEventManager> のクラスの継承階層 " を参照してください。  
+     WPF に含まれている弱いイベント マネージャーの一覧は、継承階層を参照してください、<xref:System.Windows.WeakEventManager>クラスです。  
   
-2.  通常のイベントの接続ではなく弱いイベント マネージャーを使用します。  
+2.  通常のイベント フックアップの代わりに新しいの弱いイベント マネージャーを使用します。  
   
-     たとえばコードがイベントをサブスクライブするには次のパターンを使用する場合 :  
+     たとえば、コードでは、次のパターンを使用してイベントにサブスクライブします。  
   
     ```  
     source.SomeEvent += new SomeEventEventHandler(OnSomeEvent);  
     ```  
   
-     次のパターンに変更します :  
+     次のパターンに変更します。  
   
     ```  
     SomeEventWeakEventManager.AddHandler(source, OnSomeEvent);  
     ```  
   
-     同様にコードがイベントをサブスクライブを解除するには次のパターンを使用する場合 :  
+     同様に、コードがイベントをアンサブスク ライブするのに次のパターンを使用する場合。  
   
     ```  
     source.SomeEvent -= new SomeEventEventHandler(OnSome);  
     ```  
   
-     次のパターンに変更します :  
+     次のパターンに変更します。  
   
     ```  
     SomeEventWeakEventManager.RemoveHandler(source, OnSomeEvent);  
     ```  
   
-### 一般的に弱いイベント マネージャー クラスを使用します。  
+### <a name="using-the-generic-weak-event-manager-class"></a>ジェネリックの弱いイベント マネージャー クラスを使用します。  
   
-1.  通常のイベントの接続ではなく <xref:System.Windows.WeakEventManager%602> の一般的なクラスを使用します。  
+1.  ジェネリックを使用して<xref:System.Windows.WeakEventManager%602>通常のイベント フックアップではなくクラスです。  
   
-     イベント リスナーの登録に <xref:System.Windows.WeakEventManager%602> を使用するとクラスに型パラメーターとして <xref:System.EventArgs> のイベント ソースを指定し次のコードに示すように <xref:System.Windows.WeakEventManager%602.AddHandler%2A> を呼び出します :  
+     使用すると<xref:System.Windows.WeakEventManager%602>イベント リスナーを登録するには、イベント ソースを指定し、<xref:System.EventArgs>への呼び出し、クラス型のパラメーターとして型<xref:System.Windows.WeakEventManager%602.AddHandler%2A>次のコードに示すように。  
   
     ```  
     WeakEventManager<EventSource, SomeEventEventArgs>.AddHandler(source, "SomeEvent", source_SomeEvent);  
     ```  
   
-### カスタム弱いイベント マネージャー クラスの作成  
+### <a name="creating-a-custom-weak-event-manager-class"></a>カスタムの弱いイベント マネージャー クラスを作成します。  
   
-1.  プロジェクトに次のクラス テンプレートをコピーします。  
+1.  次のクラス テンプレートをプロジェクトにコピーします。  
   
-     このクラスは <xref:System.Windows.WeakEventManager> クラスから継承します。  
+     このクラスから継承、<xref:System.Windows.WeakEventManager>クラスです。  
   
      [!code-csharp[WeakEvents#WeakEventManagerTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WeakEvents/CSharp/WeakEventManagerTemplate.cs#weakeventmanagertemplate)]  
   
-2.  独自の名前と `SomeEventWeakEventManager` の名前に置き換えます。  
+2.  置換、`SomeEventWeakEventManager`名に置き換えて名前。  
   
-3.  前に説明したイベントに対応する名前を持つ 3 個の名前に置き換えます。  \(`SomeEvent``EventSource` と `SomeEventEventArgs`\)  
+3.  イベントの対応する名前の前に説明した 3 つの名前に置き換えます。 (`SomeEvent`、 `EventSource`、および`SomeEventEventArgs`)  
   
-4.  イベントは管理するのと同じ表示に弱いイベント マネージャー クラスの表示 \(public または internal キーと秘密キーのペア\) に設定します。  
+4.  管理イベントと同様に表示するには、弱いイベント マネージャー クラスの可視性 (パブリック/内部/プライベート) を設定します。  
   
-5.  通常のイベントの接続ではなく弱いイベント マネージャーを使用します。  
+5.  通常のイベント フックアップの代わりに新しいの弱いイベント マネージャーを使用します。  
   
-     たとえばコードがイベントをサブスクライブするには次のパターンを使用する場合 :  
+     たとえば、コードでは、次のパターンを使用してイベントにサブスクライブします。  
   
     ```  
     source.SomeEvent += new SomeEventEventHandler(OnSomeEvent);  
     ```  
   
-     次のパターンに変更します :  
+     次のパターンに変更します。  
   
     ```  
     SomeEventWeakEventManager.AddHandler(source, OnSomeEvent);  
     ```  
   
-     同様にコードがイベントをサブスクライブを解除するには次のパターンを使用する場合 :  
+     同様に、コードがイベントをアンサブスク ライブするのに次のパターンを使用する場合。  
   
     ```  
     source.SomeEvent -= new SomeEventEventHandler(OnSome);  
     ```  
   
-     次のパターンに変更します :  
+     次のパターンに変更します。  
   
     ```  
     SomeEventWeakEventManager.RemoveHandler(source, OnSomeEvent);  
     ```  
   
-## 参照  
- <xref:System.Windows.WeakEventManager>   
- <xref:System.Windows.IWeakEventListener>   
- [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.WeakEventManager>  
+ <xref:System.Windows.IWeakEventListener>  
+ [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
+ [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)

@@ -1,33 +1,25 @@
 ---
-title: "方法: ディレクトリ ツリー (LINQ) (Visual Basic) で重複するファイルのクエリ |Microsoft ドキュメント"
+title: "方法: ディレクトリ ツリー (LINQ) (Visual Basic) で重複するファイルのクエリ"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 387d7c97-95dd-4a50-9761-7e9cf8ae9e6a
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9773f1fc5a17957cb77a0f14e12a2f61e67d73c3
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 30ff1afe31b2dd23e7e9618093a8b1d383b5d713
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>方法: ディレクトリ ツリー (LINQ) (Visual Basic) で重複するファイルのクエリ
-あります&1; つ以上のフォルダーに同じ名前を持つファイルを配置することがあります。 たとえばの Visual Studio インストール フォルダーは、いくつかのフォルダーと、readme.htm ファイルがあります。 この例では、指定したルート フォルダーの下にある場合は、このような重複するファイル名を照会する方法を示します。 2 番目の例では、ファイル サイズを照会する方法と作成時間にも一致します。  
+同じ名前のファイルが複数のフォルダーに存在することがあります。 たとえば、Visual Studio インストール フォルダーでは、複数のフォルダーに readme.htm ファイルが含まれています。 次の例は、指定したルート フォルダーの下で、このような重複したファイル名をクエリする方法を示しています。 また、2 番目の例では、名前のほかにサイズと作成時刻が一致するファイルをクエリする方法を示します。  
   
 ## <a name="example"></a>例  
   
@@ -115,11 +107,11 @@ Module QueryDuplicateFileNames
 End Module  
 ```  
   
- 最初のクエリでは、単純なキーを使用して、一致を判断しますこれは、同じ名前が同じ内容であるファイルを見つけます。 2 番目のクエリの&3; つのプロパティと照合する複合キーを使用して、<xref:System.IO.FileInfo>オブジェクト</xref:System.IO.FileInfo>。 このクエリは、同じ名前と同じまたはよく似たコンテンツを持つファイルを検索する可能性が高くなります。  
+ 最初のクエリでは、単純なキーを使用して一致を判断します。これにより、同じ名前を持つファイルが検索されますが、この場合、各ファイルの内容が一致するとは限りません。 2 番目のクエリでは、複合キーを使用して、<xref:System.IO.FileInfo> オブジェクトの 3 つのプロパティと照合します。 このクエリでは、名前が同じで、内容も類似または一致するファイルが検索される可能性が高くなります。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+ .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll および System.Linq 名前空間の `Imports` ステートメントを参照設定します。  
   
 ## <a name="see-also"></a>関連項目  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
+ [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
  [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

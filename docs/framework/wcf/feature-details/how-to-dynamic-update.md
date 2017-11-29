@@ -1,23 +1,26 @@
 ---
-title: "動的な更新を行う方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "動的な更新を行う方法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
-caps.latest.revision: 4
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 70f9bb374405496c62650ee3fb715f059e91cd7c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 動的な更新を行う方法
-ここでは、ルーティング構成の作成および動的な更新に必要な基本的手順について説明します。この例では、ルーティングの初期構成を構成ファイルから取得し、すべてのメッセージを regularCalc 電卓サービスにルーティングします。ただし、これは、roundingCalc のサービスの提供先となるエンドポイントを変更するために、後でプログラムによって更新されます。  
+# <a name="how-to-dynamic-update"></a>動的な更新を行う方法
+ここでは、ルーティング構成の作成および動的な更新に必要な基本的手順について説明します。 この例では、ルーティングの初期構成を構成ファイルから取得し、すべてのメッセージを regularCalc 電卓サービスにルーティングします。ただし、これは、roundingCalc のサービスの提供先となるエンドポイントを変更するために、後でプログラムによって更新されます。  
   
 > [!NOTE]
 >  多くの実装では、構成が完全に動的で、既定の構成に依存しません。ただし、このトピックのシナリオのように、サービスの開始時は既定の構成の状態を使用することが望ましい場合もあります。  
@@ -25,11 +28,11 @@ caps.handback.revision: 4
 > [!NOTE]
 >  動的な更新はメモリ内のみで実行され、構成ファイルが変更されることはありません。  
   
- regularCalc でも roundingCalc でも、同じ加算、減算、乗算、および除算の操作がサポートされますが、roundingCalc では、すべての計算結果が、四捨五入によって最も近い整数値に変換されてから返されます。regularCalc サービスにすべてのメッセージをルーティングするようにサービスを構成するには、構成ファイルが使用されます。ルーティング サービスが開始されると、<xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> を使用して、メッセージを roundingCalc サービスにルーティングするようにルーティング サービスが構成されます。  
+ regularCalc でも roundingCalc でも、同じ加算、減算、乗算、および除算の操作がサポートされますが、roundingCalc では、すべての計算結果が、四捨五入によって最も近い整数値に変換されてから返されます。 regularCalc サービスにすべてのメッセージをルーティングするようにサービスを構成するには、構成ファイルが使用されます。 ルーティング サービスが開始されると、<xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> を使用して、メッセージを roundingCalc サービスにルーティングするようにルーティング サービスが構成されます。  
   
-### 初期構成の実装  
+### <a name="implement-initial-configuration"></a>初期構成の実装  
   
-1.  サービスによって公開されるサービス エンドポイントを指定することによって、ルーティング サービスの基本的な構成を作成します。次の例では、メッセージの受信に使用される、単一のサービス エンドポイントを定義します。また、regularCalc へのメッセージ送信に使用するクライアント エンドポイントも定義します。  
+1.  サービスによって公開されるサービス エンドポイントを指定することによって、ルーティング サービスの基本的な構成を作成します。 次の例では、メッセージの受信に使用される、単一のサービス エンドポイントを定義します。 また、regularCalc へのメッセージ送信に使用するクライアント エンドポイントも定義します。  
   
     ```xml  
     <services>  
@@ -56,7 +59,7 @@ caps.handback.revision: 4
     </client>  
     ```  
   
-2.  送信先エンドポイントへのメッセージのルーティングに使用するフィルターを定義します。この例では、MatchAll フィルターを使用して、前に定義した regularCalcEndpoint にすべてのメッセージをルーティングしています。次の例では、フィルターおよびフィルター テーブルを定義します。  
+2.  送信先エンドポイントへのメッセージのルーティングに使用するフィルターを定義します。 この例では、MatchAll フィルターを使用して、前に定義した regularCalcEndpoint にすべてのメッセージをルーティングしています。 次の例では、フィルターおよびフィルター テーブルを定義します。  
   
     ```xml  
     <filters>  
@@ -69,10 +72,9 @@ caps.handback.revision: 4
           <add filterName="MatchAllFilter" endpointName="regularCalcEndpoint"/>  
       </filterTable>  
     </filterTables>  
-  
     ```  
   
-3.  受信メッセージをフィルター テーブルに含まれているフィルターと照合して評価するには、ルーティング動作を使用して、フィルター テーブルをサービス エンドポイントと関連付ける必要があります。次の例は、filterTable1 をサービス エンドポイントと関連付ける方法を示しています。  
+3.  フィルター テーブルに含まれているフィルターと照合して受信メッセージを評価するには、ルーティング動作を使用して、フィルター テーブルをサービス エンドポイントと関連付ける必要があります。 次の例では、filterTable1 関連付けるサービス エンドポイントを含むを示します。  
   
     ```xml  
     <behaviors>  
@@ -85,8 +87,8 @@ caps.handback.revision: 4
     </behaviors>  
     ```  
   
-## 動的構成の実装  
- ルーティング サービスの動的構成は、コードでのみ実行できます。これを実行するには、新しい <xref:System.ServiceModel.Routing.RoutingConfiguration> を作成し、<xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> を使用して現在の構成を置き換えます。この例では、ルーティング サービスがコンソール アプリケーション内に自己ホストされます。アプリケーションが起動したら、ルーティングの構成を変更できます。メッセージのルーティング先のエンドポイントを構成するには、コンソール ウィンドウで「regular」または「rounding」と入力します。「regular」と入力した場合は regularCalc が、「rounding」と入力した場合は roundingCalc になります。  
+## <a name="implement-dynamic-configuration"></a>動的構成の実装  
+ ルーティング サービスの動的構成は、コードでのみ実行できます。これを実行するには、新しい <xref:System.ServiceModel.Routing.RoutingConfiguration> を作成し、<xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> を使用して現在の構成を置き換えます。  この例では、ルーティング サービスがコンソール アプリケーション内に自己ホストされます。 アプリケーションが起動したら、ルーティングの構成を変更できます。メッセージのルーティング先のエンドポイントを構成するには、コンソール ウィンドウで「regular」または「rounding」と入力します。「regular」と入力した場合は regularCalc が、「rounding」と入力した場合は roundingCalc になります。  
   
 1.  ルーティング サービスをサポートするには、次の using ステートメントを追加する必要があります。  
   
@@ -98,10 +100,9 @@ caps.handback.revision: 4
     using System.ServiceModel.Description;  
     using System.ServiceModel.Dispatcher;  
     using System.ServiceModel.Routing;  
-  
     ```  
   
-2.  ルーティング サービスをコンソール アプリケーションとして自己ホストするには、次のコードを使用します。これは、前の手順で説明した構成を使用してルーティング サービスを初期化します。この構成は、アプリケーション構成ファイルに保持されています。while ループには、ルーティング構成の変更に使用されるコードが設定されています。  
+2.  ルーティング サービスをコンソール アプリケーションとして自己ホストするには、次のコードを使用します。 これは、前の手順で説明した構成を使用してルーティング サービスを初期化します。この構成は、アプリケーション構成ファイルに保持されています。 while ループには、ルーティング構成の変更に使用されるコードが設定されています。  
   
     ```csharp  
     // Host the service within this EXE console application.  
@@ -124,10 +125,9 @@ caps.handback.revision: 4
             }  
         }  
     }  
-  
     ```  
   
-3.  ルーティング構成を動的に更新するには、新しいルーティング構成を作成する必要があります。作成する構成には、新しいルーティング構成に必要なすべてのエンドポイント、フィルター、およびフィルター テーブルの情報が含まれている必要があります。これは、既存のルーティング構成全体が、この構成に置き換えられるためです。新しいルーティング構成を使用するには、<xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> を呼び出して新しい構成を渡す必要があります。  
+3.  ルーティング構成を動的に更新するには、新しいルーティング構成を作成する必要があります。 作成する構成には、新しいルーティング構成に必要なすべてのエンドポイント、フィルター、およびフィルター テーブルの情報が含まれている必要があります。これは、既存のルーティング構成全体が、この構成に置き換えられるためです。 新しいルーティング構成を使用するには、<xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> を呼び出して新しい構成を渡す必要があります。  
   
      前の手順で定義した while ループに次のコードを追加して、ユーザー入力を基にサービスを再構成できるようにします。  
   
@@ -170,9 +170,9 @@ caps.handback.revision: 4
     ```  
   
     > [!NOTE]
-    >  新しい RoutingConfiguration を提供するメソッドは RoutingExtension service サービス拡張に含まれているため、新しい RoutingConfiguration オブジェクトは、ServiceHost または ServiceExtension \(別の ServiceExtension など\) への参照を含む WCF 拡張モデル、またはこの参照を取得できる WCF 拡張モデル内の任意の場所で提供できます。この方法で RoutingConfiguration を動的に更新する例については、「[動的再構成](../../../../docs/framework/wcf/samples/dynamic-reconfiguration.md)」を参照してください。  
+    >  新しい RoutingConfiguration を提供するメソッドは RoutingExtension service サービス拡張に含まれているため、新しい RoutingConfiguration オブジェクトは、ServiceHost または ServiceExtension (別の ServiceExtension など) への参照を含む WCF 拡張モデル、またはこの参照を取得できる WCF 拡張モデル内の任意の場所で提供できます。 この方法で RoutingConfiguration の動的更新の例は、次を参照してください。[動的再構成](../../../../docs/framework/wcf/samples/dynamic-reconfiguration.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
  この例で使用されているコンソール アプリケーション全体の一覧を次に示します。  
   
 ```  
@@ -248,10 +248,9 @@ namespace Microsoft.Samples.AdvancedFilters
         }  
     }  
 }  
-  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  この例で使用されている構成ファイルの全体の一覧を次に示します。  
   
 ```xml  
@@ -305,8 +304,7 @@ namespace Microsoft.Samples.AdvancedFilters
     </routing>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ルーティング サービス](../../../../docs/framework/wcf/samples/routing-services.md)

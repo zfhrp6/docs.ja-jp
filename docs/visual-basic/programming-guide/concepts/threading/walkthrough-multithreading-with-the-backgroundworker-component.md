@@ -1,71 +1,63 @@
 ---
-title: "BackgroundWorker コンポーネント (Visual Basic) でのマルチ スレッド |Microsoft ドキュメント"
+title: "BackgroundWorker コンポーネント (Visual Basic) でのマルチ スレッド"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: e4cd9b2a-f924-470e-a16e-50274709b40e
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3686eb230349876f6cfffd2ad94ed1f547779ab1
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: bb0734b4bbf3f8bf5b27305754829f1a9f29f42a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="walkthrough-multithreading-with-the-backgroundworker-component-visual-basic"></a>チュートリアル: BackgroundWorker コンポーネント (Visual Basic) でのマルチ スレッド
-このチュートリアルは、単語の出現回数をテキスト ファイルを検索するマルチ スレッドの Windows フォーム アプリケーションを作成する方法を示します。 これを示しています。  
+このチュートリアルでは、テキスト ファイルで単語を検索する、マルチスレッドの Windows Forms アプリケーションを作成する方法について説明します。 具体的には、次のタスクについて説明します。  
   
--   呼び出すことができるメソッドを使用してクラスを定義する、<xref:System.ComponentModel.BackgroundWorker>コンポーネント</xref:System.ComponentModel.BackgroundWorker>。  
+-   <xref:System.ComponentModel.BackgroundWorker> コンポーネントによって呼び出すことができるメソッドを使用してクラスを定義する。  
   
--   によって生成されるイベントを処理、<xref:System.ComponentModel.BackgroundWorker>コンポーネント</xref:System.ComponentModel.BackgroundWorker>。  
+-   <xref:System.ComponentModel.BackgroundWorker> コンポーネントによって生成されたイベントを処理する。  
   
--   以降、<xref:System.ComponentModel.BackgroundWorker>メソッドを実行するコンポーネント</xref:System.ComponentModel.BackgroundWorker>。  
+-   <xref:System.ComponentModel.BackgroundWorker> コンポーネントを起動してメソッドを実行する。  
   
--   実装する、`Cancel`停止ボタン、<xref:System.ComponentModel.BackgroundWorker>コンポーネント</xref:System.ComponentModel.BackgroundWorker>。  
+-   <xref:System.ComponentModel.BackgroundWorker> コンポーネントを停止する `Cancel` ボタンを実装する。  
   
 ### <a name="to-create-the-user-interface"></a>ユーザー インターフェイスを作成するには  
   
-1.  新しい Visual Basic Windows フォーム アプリケーション プロジェクトを開き、という名前のフォームを作成`Form1`します。  
+1.  新しい Visual Basic Windows フォーム アプリケーション プロジェクトを開き、という名前のフォームを作成`Form1`です。  
   
-2.  2 つのボタンと&4; つのテキスト ボックスに追加`Form1`します。  
+2.  `Form1` に、2 つのボタンと 4 つのテキスト ボックスを追加します。  
   
-3.  次の表に示すように、オブジェクトの名前を付けます。  
-  
-    |オブジェクト|プロパティ|設定|  
-    |------------|--------------|-------------|  
-    |最初のボタン|`Name`, `Text`|スタート、開始|  
-    |2 番目のボタン|`Name`, `Text`|[キャンセル]、[キャンセル]|  
-    |最初のテキスト ボックス|`Name`, `Text`|SourceFile、""|  
-    |2 つ目のテキスト ボックス|`Name`, `Text`|通常、""|  
-    |3 番目のテキスト ボックス|`Name`, `Text`|WordsCounted、「0」|  
-    |4 番目のテキスト ボックス|`Name`, `Text`|LinesCounted、「0」|  
-  
-4.  各テキスト ボックスの横にあるラベルを追加します。 設定、`Text`次の表に示すように、各ラベルのプロパティです。  
+3.  次の表のように、各オブジェクトに名前を付けます。  
   
     |オブジェクト|プロパティ|設定|  
     |------------|--------------|-------------|  
-    |最初のラベル|`Text`|[ソース ファイル]|  
-    |2 番目のラベル|`Text`|文字列を比較します。|  
-    |3 番目のラベル|`Text`|単語に一致します。|  
-    |4 番目のラベル|`Text`|行のカウント|  
+    |1 つ目のボタン|`Name`, `Text`|Start, Start|  
+    |2 つ目のボタン|`Name`, `Text`|Cancel, Cancel|  
+    |1 つ目のテキスト ボックス|`Name`, `Text`|SourceFile, ""|  
+    |2 つ目のテキスト ボックス|`Name`, `Text`|CompareString, ""|  
+    |3 つ目のテキスト ボックス|`Name`, `Text`|WordsCounted, "0"|  
+    |4 つ目のテキスト ボックス|`Name`, `Text`|LinesCounted, "0"|  
+  
+4.  各テキスト ボックスの横にラベルを追加します。 次の表のように、各ラベルの `Text` プロパティを設定します。  
+  
+    |オブジェクト|プロパティ|設定|  
+    |------------|--------------|-------------|  
+    |1 つ目のラベル|`Text`|[ソース ファイル]|  
+    |2 つ目のラベル|`Text`|Compare String|  
+    |3 つ目のラベル|`Text`|Matching Words|  
+    |4 つ目のラベル|`Text`|Lines Counted|  
   
 ### <a name="to-create-a-backgroundworker-component-and-subscribe-to-its-events"></a>BackgroundWorker コンポーネントを作成し、そのイベントをサブスクライブするには  
   
-1.  追加、<xref:System.ComponentModel.BackgroundWorker>コンポーネントから、**コンポーネント**のセクションで、**ツールボックス**をフォームにします</xref:System.ComponentModel.BackgroundWorker>。 フォームのコンポーネント トレイに表示されます。  
+1.  **[ツールボックス]** の **[コンポーネント]** セクションから、<xref:System.ComponentModel.BackgroundWorker> コンポーネントをフォームに追加します。 追加したコンポーネントは、フォームのコンポーネント トレイに表示されます。  
   
 2.  BackgroundWorker1 オブジェクトの次のプロパティを設定します。  
   
@@ -74,13 +66,13 @@ ms.lasthandoff: 03/13/2017
     |`WorkerReportsProgress`|True|  
     |`WorkerSupportsCancellation`|True|  
   
-### <a name="to-define-the-method-that-will-run-on-a-separate-thread"></a>別のスレッドで実行されるメソッドを定義するには  
+### <a name="to-define-the-method-that-will-run-on-a-separate-thread"></a>個別のスレッドで実行されるメソッドを定義するには  
   
-1.  **プロジェクト**] メニューの [選択**クラスの追加**クラスをプロジェクトに追加します。 **新しい項目の追加** ダイアログ ボックスが表示されます。  
+1.  **[プロジェクト]** メニューの **[クラスの追加]** を選択して、プロジェクトにクラスを追加します。 **[新しい項目の追加]** ダイアログ ボックスが表示されます。  
   
-2.  選択**クラス**テンプレート ウィンドウから入力`Words.vb`名 フィールドにします。  
+2.  テンプレート ウィンドウから **[クラス]** を選択し、名前 フィールドに「`Words.vb`」と入力します。  
   
-3.  **[追加]**をクリックします。 `Words`クラスが表示されます。  
+3.  **[追加]**をクリックします。 `Words` クラスが表示されます。  
   
 4.  `Words` クラスに次のコードを追加します。  
   
@@ -205,9 +197,9 @@ ms.lasthandoff: 03/13/2017
     End Sub  
     ```  
   
-### <a name="to-start-and-call-a-new-thread-that-runs-the-wordcount-method"></a>WordCount メソッドを実行して開始し、新しいスレッドを呼び出します  
+### <a name="to-start-and-call-a-new-thread-that-runs-the-wordcount-method"></a>WordCount メソッドを実行する新しいスレッドを起動して呼び出すには  
   
-1.  プログラムを次の手順を追加します。  
+1.  プログラムに次のプロシージャを追加します。  
   
     ```vb  
     Private Sub BackgroundWorker1_DoWork(   
@@ -241,7 +233,7 @@ ms.lasthandoff: 03/13/2017
     End Sub  
     ```  
   
-2.  呼び出す、`StartThread`メソッドから、`Start`フォーム上のボタン。  
+2.  フォーム上の `Start` ボタンから `StartThread` メソッドを呼び出します。  
   
     ```vb  
     Private Sub Start_Click() Handles Start.Click  
@@ -249,9 +241,9 @@ ms.lasthandoff: 03/13/2017
     End Sub  
     ```  
   
-### <a name="to-implement-a-cancel-button-that-stops-the-thread"></a>[キャンセル] ボタンを実装するには、スレッドを停止します。  
+### <a name="to-implement-a-cancel-button-that-stops-the-thread"></a>スレッドを停止するためのキャンセル ボタンを実装するには  
   
--   呼び出す、`StopThread`プロシージャから、`Click`のイベント ハンドラー、 `Cancel`  ボタンをクリックします。  
+-   `Cancel` ボタンの `Click` イベント ハンドラーから、`StopThread` プロシージャを呼び出します。  
   
     ```vb  
     Private Sub Cancel_Click() Handles Cancel.Click  
@@ -261,30 +253,30 @@ ms.lasthandoff: 03/13/2017
     ```  
   
 ## <a name="testing"></a>テスト中  
- 正常に動作を確認するアプリケーションをテストできます。  
+ アプリケーションをテストして、正常に動作していることを確認できます。  
   
 #### <a name="to-test-the-application"></a>アプリケーションをテストするには  
   
 1.  F5 キーを押してアプリケーションを実行します。  
   
-2.  フォームが表示されたら、ファイルのパスを入力でテストするファイル、`sourceFile`ボックス。 たとえば、テスト ファイルと仮定した場合は、Test.txt という名前を C:\Test.txt を入力します。  
+2.  フォームが表示されたら、テストするファイルのファイル パスを `sourceFile` ボックスに入力します。 たとえば、テスト ファイルの名前が Test.txt の場合は、「C:\Test.txt」と入力します。  
   
-3.  2 つ目のテキスト ボックスには、アプリケーションでテキスト ファイル内で検索する語句を入力します。  
+3.  2 つ目のテキスト ボックスに、テキスト ファイル内で検索する単語または語句を入力します。  
   
-4.  [`Start`] ボタンをクリックします。 `LinesCounted`ボタンがすぐに増分する操作を始める必要があります。 アプリケーションでは、処理が完了したら、「終了カウント」メッセージが表示されます。  
+4.  [`Start`] ボタンをクリックします。 `LinesCounted` ボタンがすぐにインクリメントし始めます。 処理が完了すると、「Finished Counting」というメッセージが表示されます。  
   
-#### <a name="to-test-the-cancel-button"></a>[キャンセル] ボタンをテストするには  
+#### <a name="to-test-the-cancel-button"></a>キャンセル ボタンをテストするには  
   
-1.  F5 キーを押して、アプリケーションを起動し、前の手順に従って、ファイル名と検索語を入力します。 選択したファイルが完了する前に、プロシージャをキャンセルする時間があることを確認するために十分であることを確認してください。  
+1.  F5 キーを押してアプリケーションを起動し、前の手順で説明したように、ファイル名を入力して単語を検索します。 処理が完了する前にプロシージャをキャンセルできるだけの時間が必要なので、選択したファイルが十分なサイズであることを確認します。  
   
-2.  クリックして、`Start`アプリケーションを起動するボタンをクリックします。  
+2.  `Start` ボタンをクリックしてアプリケーションを起動します。  
   
-3.  [`Cancel`] ボタンをクリックします。 アプリケーションは、カウントをすぐに停止する必要があります。  
+3.  [`Cancel`] ボタンをクリックします。 アプリケーションがすぐにカウントを停止します。  
   
 ## <a name="next-steps"></a>次の手順  
- このアプリケーションには、基本的なエラー処理が含まれています。 空白の検索文字列を検出します。 単語やカウントできる行の最大数を超えた場合など、他のエラーを処理することによって行うと、このプログラムがより堅牢です。  
+ このアプリケーションには、基本的なエラー処理が含まれており、 このアプリケーションは空白の検索文字列を検出します。 その他のエラーを処理できるようにすれば、このプログラムの堅牢性をさらに高めることができます (カウントできる単語や行の最大数を超えた場合の処理を追加するなど)。  
   
 ## <a name="see-also"></a>関連項目  
- [スレッド処理 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/index.md)   
- [チュートリアル: Visual Basic による簡単なマルチ スレッド コンポーネントの作成](http://msdn.microsoft.com/library/05693b70-3566-4d91-9f2c-c9bc4ccb3001)   
+ [スレッド処理 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/index.md)  
+ [チュートリアル: Visual Basic による簡単なマルチ スレッド コンポーネントの作成](http://msdn.microsoft.com/library/05693b70-3566-4d91-9f2c-c9bc4ccb3001)  
  [方法: イベント サブスクリプションとサブスクリプションの解除](../../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)

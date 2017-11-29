@@ -1,28 +1,24 @@
 ---
-title: "(Visual Basic) の Word 文書でテキストの検索 |Microsoft ドキュメント"
+title: "Word 文書 (Visual Basic) でのテキストの検索"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: eea9819b-a78a-4552-bf13-8837fc0e7a37
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: b4a71f961d39d0cf34922ee3bf498e89a1288995
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 4907aacfae333544448da399f0fd7169a36fc505
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="finding-text-in-word-documents-visual-basic"></a>(Visual Basic) の Word 文書でテキストの検索
+# <a name="finding-text-in-word-documents-visual-basic"></a>Word 文書 (Visual Basic) でのテキストの検索
 このトピックでは、以前のクエリを拡張して、ドキュメント内で特定の文字列の出現箇所をすべて検索します。  
   
 ## <a name="example"></a>例  
@@ -30,7 +26,7 @@ ms.lasthandoff: 03/13/2017
   
  この例のソース ドキュメントを作成する方法の詳細については、次を参照してください。[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)です。  
   
- この例では、WindowsBase アセンブリに含まれるクラスを使用します。 内の型を使用して、<xref:System.IO.Packaging?displayProperty=fullName>名前空間</xref:System.IO.Packaging?displayProperty=fullName>。  
+ この例では、WindowsBase アセンブリに含まれるクラスを使用します。 また、<xref:System.IO.Packaging?displayProperty=nameWithType> 名前空間内の型を使用します。  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -313,14 +309,14 @@ StyleName:Code ><
   
  この例はさまざまな形で強化できます。 たとえば、正規表現を使用してテキストを検索したり、特定のディレクトリにあるすべての Word ファイルを反復処理したりすることができます。  
   
- この例は、1 つのクエリとして記述された場合とほぼ同程度のパフォーマンスを発揮します。 各クエリはレイジー遅延方式で実装されているため、反復処理されるまで結果は生成されません。 実行とレイジー評価の詳細については、次を参照してください。[遅延実行とレイジー評価 linq to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)します。  
+ この例は、1 つのクエリとして記述された場合とほぼ同程度のパフォーマンスを発揮します。 各クエリはレイジー遅延方式で実装されているため、反復処理されるまで結果は生成されません。 実行とレイジー評価の詳細については、次を参照してください。[遅延実行とレイジー評価を LINQ to XML (Visual Basic) で](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)です。  
   
 ## <a name="next-steps"></a>次の手順  
  次のセクションでは、WordprocessingML ドキュメントについて詳細に説明します。  
   
--   [Office の詳細については Open XML WordprocessingML ドキュメント (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)  
+-   [Office の詳細は Open XML WordprocessingML ドキュメント (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)  
   
 ## <a name="see-also"></a>関連項目  
- [チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)   
- [純粋関数 (Visual Basic) を使用してリファクタリングします。](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)   
- [遅延実行とレイジー評価 linq to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+ [チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
+ [純粋関数によるリファクタリング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+ [遅延実行とレイジー評価で LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

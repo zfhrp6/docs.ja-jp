@@ -1,100 +1,101 @@
 ---
-title: "DataGridView コントロールのシナリオ (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ [Windows フォーム], 表示 (表形式で)"
-  - "データ グリッド, データ グリッドの概要"
-  - "DataGridView コントロール [Windows フォーム], シナリオ"
+title: "DataGridView コントロールのシナリオ (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- data [Windows Forms], displaying in tabular format
+- data grids [Windows Forms], about data grids
+- DataGridView control [Windows Forms], scenarios
 ms.assetid: 09a5fd05-3447-47ec-a4ec-6082a2b7f0dd
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 919197d8fdb40f0e0fb7b91fecae38f4e0e061bc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataGridView コントロールのシナリオ (Windows フォーム)
-<xref:System.Windows.Forms.DataGridView> コントロールでは、さまざまなデータ ソースから取得した表形式のデータを表示できます。  単純な使い方では、<xref:System.Windows.Forms.DataGridView> コントロールに手動でデータを埋め込み、このコントロールを通じてデータを直接操作します。  しかし一般的な方法では、外部データ ソースにデータを格納しておき、<xref:System.Windows.Forms.BindingSource> コンポーネントを通じてこのコントロールをデータにバインドします。  
+# <a name="datagridview-control-scenarios-windows-forms"></a>DataGridView コントロールのシナリオ (Windows フォーム)
+<xref:System.Windows.Forms.DataGridView>コントロール、さまざまなデータ ソースから表形式のデータを表示することができます。 単純な使用方法については、手動で設定できる、<xref:System.Windows.Forms.DataGridView>コントロールから直接データを操作します。 通常、ただし、外部データ ソースにデータを格納してコントロールをバインドして、<xref:System.Windows.Forms.BindingSource>コンポーネントです。  
   
- ここでは、<xref:System.Windows.Forms.DataGridView> コントロールを使用する一般的なシナリオをいくつか紹介します。  
+ このトピックでは、いくつかを実行する一般的なシナリオについて説明します、<xref:System.Windows.Forms.DataGridView>コントロール。  
   
-## シナリオ 1: 少量のデータを表示する  
- <xref:System.Windows.Forms.DataGridView> コントロールにデータを表示するときに、そのデータを必ず外部データ ソースに格納しなければならないわけではありません。  少量のデータを扱う場合には、そのデータをコントロールに手動で埋め込み、コントロールを通じてデータを操作できます。  これは*非バインド モード*と呼ばれます。  詳細については、「[方法 : 連結されていない Windows フォーム DataGridView コントロールを作成する](../../../../docs/framework/winforms/controls/how-to-create-an-unbound-windows-forms-datagridview-control.md)」を参照してください。  
+## <a name="scenario-1-displaying-small-amounts-of-data"></a>シナリオ 1: 少量のデータを表示します。  
+ 表示する外部データ ソースにデータを格納する必要はありません、<xref:System.Windows.Forms.DataGridView>コントロール。 少量のデータを扱う場合は、コントロールを設定し、コントロールからデータを操作できます。 これと呼ばれる*バインドされていないモード*です。 詳細については、次を参照してください。[する方法: バインドされていない Windows フォームの DataGridView コントロールの作成](../../../../docs/framework/winforms/controls/how-to-create-an-unbound-windows-forms-datagridview-control.md)です。  
   
-### シナリオの要点  
+### <a name="scenario-key-points"></a>シナリオの要点  
   
--   非バインド モードでは、コントロールに手動でデータを埋め込みます。  
+-   モードではバインドされていない、設定コントロール手動でします。  
   
--   非バインド モードは、少量の読み取り専用データを扱うときに適しています。  
+-   バインドされていないモードは、読み取り専用データが少ない場合に特に適しています。  
   
--   非バインド モードは、スプレッドシートのようなテーブルや、部分的にデータが含まれているテーブルにも適しています。  
+-   バインドされていないモードはスプレッドシート形式または付けますテーブルにも適しています。  
   
-## シナリオ 2: 外部データ ソースに格納されているデータを表示および更新する  
- <xref:System.Windows.Forms.DataGridView> コントロールを、ユーザーがデータベース テーブルやビジネス オブジェクトのコレクションなどのデータ ソース内のデータにアクセスするときに使うユーザー インターフェイス \(UI\) として使用することができます。  詳細については、「[方法 : データを Windows フォーム DataGridView コントロールにバインドする](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-windows-forms-datagridview-control.md)」を参照してください。  
+## <a name="scenario-2-viewing-and-updating-data-stored-in-an-external-data-source"></a>シナリオ 2: 表示して、外部データ ソースに格納されているデータの更新  
+ 使用することができます、<xref:System.Windows.Forms.DataGridView>ユーザーから、データベース テーブルまたはビジネス オブジェクトのコレクションなどのデータ ソースに保持されるデータにアクセスできるユーザー インターフェイス (UI) を管理します。 詳細については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールにデータをバインド](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-windows-forms-datagridview-control.md)です。  
   
-### シナリオの要点  
+### <a name="scenario-key-points"></a>シナリオの要点  
   
--   バインド モードでは、データ ソースに接続し、データ ソースのプロパティやデータベース列に基づいて自動的に列を生成し、コントロールに自動的にデータを読み込むことができます。  
+-   バインドされたモードでは、データ ソースへの接続、データ ソースのプロパティまたはデータベース列に基づく列を自動的に生成し、コントロールを自動的に設定することができます。  
   
--   バインド モードは、ユーザーがデータ操作を頻繁に行う場合に適しています。  データを表示用にフォーマットしたり、ユーザーが指定したデータをデータ ソース側で定義されている形式へと自動フォーマットしたりできます。  データ入力フォーマット エラーやデータベース制約エラーを検出し、ユーザーに警告を出したり、問題のあるセルを訂正したりすることもできます。  
+-   バインド モードは、ユーザー負荷が高いデータが操作に適しています。 データを表示する形式指定できるし、ユーザー指定のデータは、データ ソースによって予期される形式に解析できます。 ユーザーに警告され、該当するセルを修正できるように、データ エントリ エラーおよびデータベースの制約のエラーの書式設定を検出できます。  
   
--   ユーザーは列の並べ替え、固定、順序変更などの追加機能を使用して、ワークフローに最も適した方法でデータを表示できます。  
+-   列の並べ替えなどの追加機能は、固定すること、および並べ替えは、ワークフローに最も便利な方法でデータを表示するユーザーに有効にします。  
   
--   クリップボード サポートにより、ユーザーはアプリケーションから別のアプリケーションにデータをコピーできます。  
+-   クリップボードのサポートでは、他のアプリケーションにアプリケーションからデータをコピーすることができます。  
   
-## シナリオ 3: 高度なデータ  
- 標準のデータ バインディング モデルでは対応できない特別な要件がある場合は、*仮想モード*を実装することで、コントロールとデータとのやり取りを管理できます。  仮想モードを実装するとは、コントロールがセルに関する情報を必要なときに要求できるようにするイベント ハンドラーを実装することです。  
+## <a name="scenario-3-advanced-data"></a>シナリオ 3: 高度なデータ  
+ 実装することによってコントロールとデータ間の相互作用を管理するには、標準的なデータ バインディング モデルでは取り上げません特別なニーズがあれば、*仮想モード*です。 セルに関する情報と、コントロール要求情報ことのできる 1 つまたは複数のイベント ハンドラーの実装の仮想モード手段を実装することが必要です。  
   
- たとえば、大量のデータを扱う場合には、仮想モードを実装することで最適な効率を確保できます。  仮想モードは、別のデータ ソースから取得した列と一緒に表示されているバインドされていない列の値を保守する場合にも役立ちます。  
+ たとえば、大量のデータを操作する場合、最適な効率性を確保する仮想モードを実装します。 仮想モードも別のデータ ソースから取得した列と共に表示する非バインド列の値を維持するため便利です。  
   
- 仮想モードの詳細については、「[チュートリアル : Windows フォーム DataGridView コントロールでの仮想モードの実装](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)」を参照してください。  
+ 仮想モードの詳細については、次を参照してください。[チュートリアル: Windows フォーム DataGridView コントロールでの仮想モードを実装する](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)です。  
   
-### シナリオの要点  
+### <a name="scenario-key-points"></a>シナリオの要点  
   
--   仮想モードは、高いパフォーマンスを保ちつつ大量のデータを表示しなければならないときに適しています。  
+-   仮想モードは、パフォーマンスを微調整する必要がある場合は、非常に大量のデータを表示するために適しています。  
   
-## シナリオ 4: 行と列のサイズを自動調整する  
- 定期的に更新されるデータを表示するときは、すべての内容が表示されるように自動的に行と列のサイズを変更できます。  <xref:System.Windows.Forms.DataGridView> コントロールには、手動でのサイズ変更を有効\/無効にしたり、特定のタイミングでサイズをプログラムから変更したり、内容が変化したときに自動的にサイズを調整したりするオプションが用意されています。  詳細については、「[Windows フォーム DataGridView コントロールのサイズ変更オプション](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)」を参照してください。  
+## <a name="scenario-4-automatically-resizing-rows-and-columns"></a>シナリオ 4: は、行と列に自動的にサイズ変更  
+ 定期的に更新されるデータを表示するときに自動的にサイズを変更する行と列のすべてのコンテンツが表示されていることを確認します。 <xref:System.Windows.Forms.DataGridView>コントロールには、有効または無効にする手動によるサイズ変更、特定の時刻では、プログラムでのサイズを変更するのに便利ないくつかのオプションが用意されていますか、自動的にサイズ変更されるたびに、変更をコンテンツします。 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのサイズ変更オプション](../../../../docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)です。  
   
-### シナリオの要点  
+### <a name="scenario-key-points"></a>シナリオの要点  
   
--   手動でのサイズ変更を有効にすると、ユーザーがセルの高さと幅を調整できます。  
+-   手動のサイズを変更すると、セルの高さと幅を調整するユーザーができます。  
   
--   自動サイズ変更を有効にすると、セルの内容がクリップされないようにセルのサイズを調整できます。  
+-   自動サイズ変更するには、セルの内容がクリップされないように、セルのサイズを維持することができます。  
   
--   プログラム的なサイズ変更を行うと、特定のタイミングでセルのサイズを変更することができ、連続的な自動サイズ変更によるパフォーマンス低下を回避できます。  
+-   プログラムによるサイズ変更するには、継続的なサイズの自動調整のパフォーマンスの低下を避けるために特定の時点でのセルのサイズを変更することができます。  
   
-## シナリオ 5: 単純なカスタマイズ  
- <xref:System.Windows.Forms.DataGridView> コントロールの基本的な外観と動作はさまざまな方法で変更できます。  詳細については、「[Windows フォーム DataGridView コントロールでのセルのスタイル](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)」を参照してください。  
+## <a name="scenario-5-simple-customization"></a>シナリオ 5: 単純なカスタマイズ  
+ <xref:System.Windows.Forms.DataGridView>コントロールには、その基本的な外観と動作を変更するためのさまざまな方法が用意されています。 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのセル スタイル](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)です。  
   
-### シナリオの要点  
+### <a name="scenario-key-points"></a>シナリオの要点  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle> オブジェクトを使用すると、コントロールの個々の要素に関する色、フォント、形式、位置の情報をさまざまなレベルで設定できます。  
+-   <xref:System.Windows.Forms.DataGridViewCellStyle>オブジェクトを使用して、色、フォント、書式設定、および複数のレベルと、コントロールの個々 の要素の位置情報を提供できます。  
   
--   セルのスタイルは複数の要素で重ねたり共有したりできるので、コードを再使用できます。  
+-   セル スタイルは、レイヤーし、コードを再利用すること、複数の要素で共有されることができます。  
   
-## シナリオ 6: 高度なカスタマイズ  
- <xref:System.Windows.Forms.DataGridView> コントロールの外観と動作はさまざまな方法でカスタマイズできます。  
+## <a name="scenario-6-advanced-customization"></a>シナリオ 6: 高度なカスタマイズ  
+ <xref:System.Windows.Forms.DataGridView>コントロールには、外観や動作をカスタマイズするためのさまざまな方法が用意されています。  
   
-### シナリオの要点  
+### <a name="scenario-key-points"></a>シナリオの要点  
   
--   独自のセル描画コードを記述できます。  詳細については、「[方法 : Windows フォームの DataGridView コントロールのセルの外観をカスタマイズする](../../../../docs/framework/winforms/controls/customize-the-appearance-of-cells-in-the-datagrid.md)」を参照してください。  
+-   セルの描画コードを指定することができます。 詳細については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールのセルの外観をカスタマイズ](../../../../docs/framework/winforms/controls/customize-the-appearance-of-cells-in-the-datagrid.md)です。  
   
--   独自の行描画コードを記述できます。  この手法は、複数の列にまたがる内容を含んだ行を作成するときに役立ちます。  詳細については、「[方法 : Windows フォームの DataGridView コントロールの行の外観をカスタマイズする](../../../../docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)」を参照してください。  
+-   独自の行のペイントを使用できます。 たとえば、コンテンツにまたがる複数の列を含む行を作成するこれは、便利です。 詳細については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールで行の外観をカスタマイズ](../../../../docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)です。  
   
--   独自のセル クラスや列クラスを実装して、セルの外観をカスタマイズすることができます。  詳細については、「[方法 : Windows フォーム DataGridView コントロールのセルと列を、それぞれの動作と外観を拡張してカスタマイズする](../../../../docs/framework/winforms/controls/customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)」を参照してください。  
+-   セルの外観をカスタマイズする、独自のセルと列のクラスを実装することができます。 詳細については、次を参照してください。[する方法: セルのカスタマイズおよびその動作を拡張すると外観が Windows フォーム DataGridView コントロールで列](../../../../docs/framework/winforms/controls/customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)です。  
   
--   組み込みの列型ではサポートされないコントロールをホストする独自のセル クラスや列クラスを実装できます。  詳細については、「[方法 : Windows フォーム DataGridView Cells でコントロールをホストする](../../../../docs/framework/winforms/controls/how-to-host-controls-in-windows-forms-datagridview-cells.md)」を参照してください。  
+-   組み込み列の型によって提供されるもの以外のホスト コントロールを独自のセルと列のクラスを実装することができます。 詳細については、次を参照してください。[する方法: Windows フォーム DataGridView セルでホスト コントロール](../../../../docs/framework/winforms/controls/how-to-host-controls-in-windows-forms-datagridview-cells.md)です。  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.DataGridView>  
  [DataGridView コントロールの概要](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)

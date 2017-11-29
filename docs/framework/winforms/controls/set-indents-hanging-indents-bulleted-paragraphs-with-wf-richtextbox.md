@@ -1,71 +1,72 @@
 ---
-title: "方法 : Windows フォームの RichTextBox コントロールを使用してインデント、ぶら下げインデント、および箇条書き段落を設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - ".rtf ファイル, 書式指定 (RichTextBox コントロールで)"
-  - "例 [Windows フォーム], テキスト ボックス"
-  - "RichTextBox コントロール [Windows フォーム], 設定 (インデントと箇条書きを)"
-  - "RTF ファイル, 書式指定 (RichTextBox コントロールで)"
-  - "テキスト ボックス, 箇条書き"
-  - "テキスト ボックス, 設定 (インデントを)"
+title: "方法: Windows フォームの RichTextBox コントロールを使用してインデント、ぶら下げインデント、および箇条書き段落を設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- text boxes [Windows Forms], setting indents
+- .rtf files [Windows Forms], formatting in RichTextBox control
+- examples [Windows Forms], text boxes
+- RTF files [Windows Forms], formatting in RichTextBox control
+- RichTextBox control [Windows Forms], setting indents and bullets
+- text boxes [Windows Forms], bullets
 ms.assetid: abfb40e6-5642-4691-8ec1-9d9ae91688dc
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b9b1398c0438f9ebe528e9394014f5f6529ea8f2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームの RichTextBox コントロールを使用してインデント、ぶら下げインデント、および箇条書き段落を設定する
-Windows フォームの <xref:System.Windows.Forms.RichTextBox> コントロールには、表示するテキストの書式を設定する数多くのオプションがあります。  <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> プロパティを設定することにより、選択した段落を箇条書きとして設定できます。  また、<xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>、<xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>、および <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> の各プロパティを使用して、コントロールの左端または右端、およびテキストの他の行の左端を基準にして、段落のインデントを設定できます。  
+# <a name="how-to-set-indents-hanging-indents-and-bulleted-paragraphs-with-the-windows-forms-richtextbox-control"></a>方法: Windows フォームの RichTextBox コントロールを使用してインデント、ぶら下げインデント、および箇条書き段落を設定する
+Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールが、表示されるテキストを書式設定するためのさまざまなオプションです。 設定して箇条書きとして選択した段落をフォーマットすることができます、<xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>プロパティです。 使用することも、 <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>、 <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>、および<xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A>左と、コントロールの右のエッジ、およびその他の行のテキストの左端と比較して段落のインデントを設定するプロパティです。  
   
-### 段落を箇条書きに設定するには  
+### <a name="to-format-a-paragraph-as-a-bulleted-list"></a>段落を箇条書きとして書式設定するには  
   
 1.  <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> プロパティを `true` に設定します。  
   
     ```vb  
     RichTextBox1.SelectionBullet = True  
-  
     ```  
   
     ```csharp  
     richTextBox1.SelectionBullet = true;  
-  
     ```  
   
     ```cpp  
     richTextBox1->SelectionBullet = true;  
     ```  
   
-### 段落にインデントを設定するには  
+### <a name="to-indent-a-paragraph"></a>段落にインデントを設定するには  
   
-1.  <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A> プロパティに、コントロールの左端とテキストの左端の間のピクセル数を示す整数を設定します。  
+1.  設定、<xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>プロパティをコントロールの左端とテキストの左端のピクセル単位の距離を表す整数。  
   
-2.  <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> プロパティに、段落内のテキストの 1 行目の左端と同じ段落の 2 行目以降の左端の間のピクセル数を示す整数を設定します。  <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> プロパティの値は、1 行目の下で折り返されている段落の行にだけ適用されます。  
+2.  設定、<xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A>プロパティを同じ paragraph 内の後続の行の左端と段落のテキストの最初の行の左端のピクセル単位の距離を表す整数。 値、<xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A>プロパティは、最初の行の下にラップがある段落内の行にのみ適用されます。  
   
-3.  <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A> プロパティに、コントロールの右端とテキストの右端の間のピクセル数を示す整数を設定します。  
+3.  設定、<xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>プロパティをコントロールの右端とテキストの右端との間のピクセル距離を表す整数。  
   
     ```vb  
     RichTextBox1.SelectionIndent = 8  
     RichTextBox1.SelectionHangingIndent = 3  
     RichTextBox1.SelectionRightIndent = 12  
-  
     ```  
   
     ```csharp  
     richTextBox1.SelectionIndent = 8;  
     richTextBox1.SelectionHangingIndent = 3;  
     richTextBox1.SelectionRightIndent = 12;  
-  
     ```  
   
     ```cpp  
@@ -75,9 +76,9 @@ Windows フォームの <xref:System.Windows.Forms.RichTextBox> コントロー�
     ```  
   
     > [!NOTE]
-    >  これらのプロパティはすべて、選択したテキストを含む段落に適用されます。または、現在のカーソル位置から入力されるテキストに適用されます。  たとえば、ユーザーが段落内の 1 語を選択してインデントを調整すると、新しい設定はその語を含む段落全体に適用され、さらに、選択された段落の後に入力されるすべての段落にも適用されます。  テキストをプログラムで選択する方法については、「[TextBoxBase.Select メソッド](frlrfSystemWindowsFormsTextBoxBaseClassSelectTopic)」を参照してください。  
+    >  これらすべてのプロパティは、選択したテキストを含む段落に影響し、現在の挿入ポイントの後に入力されるテキストにも影響します。 たとえば、ユーザーが段落内の単語を選択して、インデントを調整すると、新しい設定はその単語を含む段落全体に適用され、選択した段落の後に入力される段落にも適用されます。 プログラムによってテキストを選択する方法の詳細については、次を参照してください。<xref:System.Windows.Forms.TextBoxBase.Select%2A>です。  
   
-## 参照  
- <xref:System.Windows.Forms.RichTextBox>   
- [RichTextBox コントロール](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.RichTextBox>  
+ [RichTextBox コントロール](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

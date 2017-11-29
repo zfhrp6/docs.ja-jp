@@ -1,59 +1,40 @@
 ---
-title: "PrintForm コンポーネント (Visual Basic) を参照するアプリケーションを展開する |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "PrintForm コンポーネント (Visual Basic) を参照するアプリケーションの配置"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
-helpviewer_keywords:
-- PrintForm component [Visual Basic], deploying
+helpviewer_keywords: PrintForm component [Visual Basic], deploying
 ms.assetid: b595ea44-a712-4625-a761-190c64f59bbe
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 016643329d2ee66ca5a32f155cf91e0ee137f38f
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 15b6e21e769c90e23e66e4f87b37f74462423985
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="deploying-applications-that-reference-the-printform-component-visual-basic"></a>PrintForm コンポーネント (Visual Basic) を参照するアプリケーションを展開します。
-参照するアプリケーションを展開する場合、<xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm>コンポーネントは、コンポーネントは、セットアップ先のコンピューターにインストールする必要があります</xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm>。  
+# <a name="deploying-applications-that-reference-the-printform-component-visual-basic"></a>PrintForm コンポーネント (Visual Basic) を参照するアプリケーションの配置
+<xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントを参照するアプリケーションを配置する場合は、コンポーネントをターゲット コンピューターにインストールする必要があります。  
   
  PowerPack コントロールは、Visual Studio には含まれなくなりましたが、 [ダウンロード センター](http://www.microsoft.com/en-us/download/details.aspx?id=25169)からダウンロードできます。  
   
-## <a name="installing-the-printform-as-a-prerequisite"></a>前提条件として、PrintForm をインストールします。  
+## <a name="installing-the-printform-as-a-prerequisite"></a>必要条件として PrintForm をインストールする  
  アプリケーションを正しく配置するためには、アプリケーションによって参照されるすべてのコンポーネントを配置する必要もあります。 必須コンポーネントのインストール プロセスは、 *ブートストラップ*と呼ばれます。  
   
- ときに、<xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm>コンポーネントが開発用コンピューターにインストールされている Microsoft Visual Basic Power Packs ブートス トラップ パッケージを追加する、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]ブートス トラップ ディレクトリ</xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm>。 このパッケージは次のいずれかの前提条件を追加する手順を実行すると使用可能になります[!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick_md.md)]または Windows インストーラーの展開。  
+ <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントのインストール時に、Microsoft Visual Basic Power Packs ブートストラップ パッケージが [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] ブートストラップ ディレクトリに追加されます。 その後、 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] または Windows インストーラー配置のための必要条件を追加する手順に従うと、このパッケージが使用可能になります。  
   
  既定では、ブートストラップ コンポーネントは、インストール パッケージと同じ場所から配置されます。 または、必要に応じてユーザーがダウンロードできるような URL またはファイルの共有位置からコンポーネントを配置することもできます。  
   
 > [!NOTE]
->  ブートストラップ コンポーネントをインストールするには、コンピューターに対する管理者または同様のユーザー アクセス許可が必要になる場合があります。 [!INCLUDE[ndptecclick](../../../visual-basic/developing-apps/printing/includes/ndptecclick_md.md)]アプリケーション、つまり、ユーザーに、アプリケーションで指定されたセキュリティ レベルに関係なく、アプリケーションをインストールする管理アクセス許可は必要があります。 アプリケーションのインストール後は、管理アクセス許可がなくてもアプリケーションを実行できます。  
+>  ブートストラップ コンポーネントをインストールするには、コンピューターに対する管理者または同様のユーザー アクセス許可が必要になる場合があります。 つまり、 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] アプリケーションの場合、アプリケーションで指定されたセキュリティ レベルに関係なく、アプリケーションをインストールするために管理アクセス許可が必要です。 アプリケーションのインストール後は、管理アクセス許可がなくてもアプリケーションを実行できます。  
   
- インストール中に、ユーザーがインストールするように求められます、<xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm>コンポーネントがセットアップ先のコンピューターに存在しない場合</xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm>。  
+ インストール中に、 <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントがターゲット コンピューター上に存在しなければ、ユーザーはこれをインストールするよう求められます。  
   
- ブートス トラップする代わりは事前に展開する、 <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm>Microsoft Systems Management Server のような電子ソフトウェア配布システムを使用してコンポーネント</xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm>。  
+ ブートストラップの代わりに、Microsoft Systems Management Server などの電子ソフトウェア配布システムを使って <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> コンポーネントを事前に配置することもできます。  
   
 ## <a name="see-also"></a>関連項目  
- [方法: ClickOnce アプリケーションと共に必須コンポーネントをインストール](http://msdn.microsoft.com/library/e964fca5-fdfd-47cf-a1c9-7fb96b1c88b5)   
+ [方法: ClickOnce アプリケーションと共に必須コンポーネントをインストールする](/visualstudio/deployment/how-to-install-prerequisites-with-a-clickonce-application)  
  [PrintForm コンポーネント](../../../visual-basic/developing-apps/printing/printform-component.md)

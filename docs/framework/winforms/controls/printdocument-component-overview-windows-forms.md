@@ -1,42 +1,42 @@
 ---
-title: "PrintDocument コンポーネントの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PrintDocument"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "PrintDocument コンポーネント [Windows フォーム], PrintDocument コンポーネントの概要"
-  - "印刷 [Windows フォーム], PrintDocument コンポーネント"
+title: "PrintDocument コンポーネントの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: PrintDocument
+helpviewer_keywords:
+- PrintDocument component [Windows Forms], about PrintDocument component
+- printing [Windows Forms], PrintDocument component
 ms.assetid: b59b4b60-dce5-42ca-8421-3a54a2f7bab0
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f052283b743d5f1a7ed9d2bb6576390e5343dcae
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# PrintDocument コンポーネントの概要 (Windows フォーム)
-Windows フォームの [PrintDocument](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md) コンポーネントは、Windows ベースのアプリケーション内でドキュメントの印刷を行うために、印刷対象と機能を定義するプロパティを設定するときに使用します。  このコンポーネントを [PrintDialog](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md) コンポーネントと一緒に使用すると、ドキュメント印刷のすべての設定を制御できます。  
+# <a name="printdocument-component-overview-windows-forms"></a>PrintDocument コンポーネントの概要 (Windows フォーム)
+Windows フォーム [PrintDocument](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md) コンポーネントを使用して、印刷対象を示すプロパティを設定し、Windows ベースのアプリケーション内でドキュメントを印刷できます。 このコンポーネントは、ドキュメント印刷のあらゆる側面を制御するために、[PrintDialog](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md) コンポーネントと組み合わせて使用できます。  
   
-## PrintDocument コンポーネントの操作  
- <xref:System.Drawing.Printing.PrintDocument> コンポーネントを使用するのは主に次の 2 つの場合です。  
+## <a name="working-with-the-printdocument-component"></a>PrintDocument コンポーネントの操作  
+ 2 つの主なシナリオが関係する、<xref:System.Drawing.Printing.PrintDocument>コンポーネントします。  
   
--   簡易印刷ジョブ \(特定のテキスト ファイルを印刷する場合など\)。  簡易印刷ジョブの場合は、<xref:System.Drawing.Printing.PrintDocument> コンポーネントを Windows フォームに追加してから、<xref:System.Drawing.Printing.PrintDocument.PrintPage> イベント ハンドラーにファイル印刷のプログラミング ロジックを登録します。  このプログラミング ロジックでは、最後に <xref:System.Drawing.Printing.PrintDocument.Print%2A> メソッドを使用してドキュメントを印刷するようにします。  このメソッドは、<xref:System.Drawing.Printing.PrintPageEventArgs> クラスの <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A> プロパティに格納されている <xref:System.Drawing.Graphics> オブジェクトをプリンターに送信します。  <xref:System.Drawing.Printing.PrintDocument> コンポーネントを使用してテキスト ドキュメントを印刷する方法を示す例については、「[方法 : Windows フォームで複数ページのテキスト ファイルを印刷する](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)」を参照してください。  
+-   簡易印刷ジョブ (個々のテキスト ファイルを印刷する場合など)。 このようなケースで追加すること、<xref:System.Drawing.Printing.PrintDocument>コンポーネントを Windows フォームは、その後でファイルを出力するプログラミングのロジックを追加、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント ハンドラー。 プログラミング ロジックは、最後に、<xref:System.Drawing.Printing.PrintDocument.Print%2A>文書を印刷する方法です。 このメソッドは、送信、<xref:System.Drawing.Graphics>に含まれるオブジェクト、<xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A>のプロパティ、<xref:System.Drawing.Printing.PrintPageEventArgs>プリンターへのクラスです。 使用して、テキスト ドキュメントを印刷する方法を示す例については、<xref:System.Drawing.Printing.PrintDocument>コンポーネントを参照してください[する方法: Windows フォームで複数ページのテキスト ファイルを印刷](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)です。  
   
--   より複雑な印刷ジョブ \(作成した印刷ロジックを再利用する場合など\)。  作成した印刷ロジックを再利用する場合は、<xref:System.Drawing.Printing.PrintDocument> の派生コンポーネントを新規作成し、<xref:System.Drawing.Printing.PrintDocument.PrintPage> イベントをオーバーライドします。オーバーライドの詳細については、Visual Basic では [Overrides](../Topic/Overrides%20\(Visual%20Basic\).md)、C\# では [override](../Topic/override%20\(C%23%20Reference\).md) のトピックをそれぞれ参照してください。  
+-   より複雑な印刷ジョブ (作成した印刷ロジックを再利用する場合など)。 このような場合は、新しいコンポーネントを派生させる、<xref:System.Drawing.Printing.PrintDocument>コンポーネントおよびオーバーライド (を参照してください[オーバーライド](~/docs/visual-basic/language-reference/modifiers/overrides.md)Visual basic の場合または[オーバーライド](~/docs/csharp/language-reference/keywords/override.md)C# の場合)、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。  
   
- フォームに登録すると、<xref:System.Drawing.Printing.PrintDocument> コンポーネントは Windows フォーム デザイナーの下部のトレイに表示されます。  
+ フォームに追加されたとき、<xref:System.Drawing.Printing.PrintDocument>コンポーネントは、Windows フォーム デザイナーの下部にあるトレイに表示されます。  
   
-## 参照  
- <xref:System.Drawing.Graphics>   
- <xref:System.Drawing.Printing.PrintDocument>   
- [Windows フォームにおける印刷のサポート](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Drawing.Graphics>  
+ <xref:System.Drawing.Printing.PrintDocument>  
+ [Windows フォームにおける印刷のサポート](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)  
  [PrintDocument コンポーネント](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md)

@@ -1,34 +1,30 @@
 ---
-title: "方法: XML (Visual Basic の場合) からテキスト ファイルを生成する |Microsoft ドキュメント"
+title: "方法: テキスト ファイルを XML から生成する (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 3b33f191-4abe-4419-b81b-3cb81d9a317f
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 0c45218ab9330c0b67ebfbbcedd5e5f699c3e6e2
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 901d31b6dbac54740404a7dc182ecbadca5ddd74
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-generate-text-files-from-xml-visual-basic"></a>方法: XML (Visual Basic の場合) からテキスト ファイルを生成
+# <a name="how-to-generate-text-files-from-xml-visual-basic"></a>方法: テキスト ファイルを XML から生成する (Visual Basic)
 この例では、XML ファイルからコンマ区切り (CSV) ファイルを生成する方法について説明します。  
   
 ## <a name="example"></a>例  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]バージョンでは、文字列のコレクションを&1; つの文字列に集計に手続き型コードを使用します。  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]バージョンが 1 つの文字列に文字列のコレクションを集計する手続き型コードを使用します。  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)します。  
+ この例では、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)」の XML ドキュメントを使用します。  
   
 ```vb  
 Dim custOrd As XElement = XElement.Load("CustomersOrders.xml")  

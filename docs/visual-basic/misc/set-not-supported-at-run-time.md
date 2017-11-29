@@ -1,26 +1,28 @@
 ---
-title: "Set は実行時にはサポートされません | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID382"
+title: "Set は実行時にはサポートされません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID382
 ms.assetid: cb7285d3-778f-423d-a2be-88573be8ad48
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: c10691abf13ea00cc4eaea961b5ca6fd59a2be8d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Set は実行時にはサポートされません
+# <a name="set-not-supported-at-run-time"></a>Set は実行時にはサポートされません
 デザイン時にのみ値を設定できるプロパティを設定または変更しようとしました。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
 1.  コードからプロパティへの参照を削除します。  
   
 2.  実行時に、プロパティの値のみを返す参照に変更します。  
   
-## 参照  
- [NIB 方法: プロジェクト プロパティと構成設定を変更する](http://msdn.microsoft.com/ja-jp/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)
+## <a name="see-also"></a>関連項目  
+ [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)

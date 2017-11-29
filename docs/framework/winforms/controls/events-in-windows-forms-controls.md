@@ -1,33 +1,34 @@
 ---
-title: "Windows フォーム コントロールのイベント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "カスタム コントロール [Windows フォーム], イベントの概要 (コードを使用)"
-  - "イベント [Windows フォーム], カスタム コントロール (コードを使用した)"
+title: "Windows フォーム コントロールのイベント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- events [Windows Forms], custom controls (using code)
+- custom controls [Windows Forms], events overview (using code)
 ms.assetid: 7e3d1379-87aa-437c-afce-c99454eff30e
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e568dd7fadea8af399a63aa95347f368b4e13a54
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム コントロールのイベント
-Windows フォーム コントロールは、<xref:System.Windows.Forms.Control?displayProperty=fullName> から 60 を越えるイベントを継承します。  これらには、コントロールを描画する <xref:System.Windows.Forms.Control.Paint> イベント、ウィンドウの表示に関連するイベント \(<xref:System.Windows.Forms.Control.Resize> イベントや <xref:System.Windows.Forms.Control.Layout> イベントなど\)、下位のマウス イベントやキーボード イベントなどがあります。  <xref:System.Windows.Forms.Control> は、いくつかの下位のイベントを合成して <xref:System.Windows.Forms.Control.Click> や <xref:System.Windows.Forms.Control.DoubleClick> などの意味イベントを作成します。  継承されるイベントの詳細については、<xref:System.Windows.Forms.Control> に関するトピックを参照してください。  
+# <a name="events-in-windows-forms-controls"></a>Windows フォーム コントロールのイベント
+Windows フォーム コントロールから 60 以上のイベントを継承する<xref:System.Windows.Forms.Control?displayProperty=nameWithType>です。 ように、<xref:System.Windows.Forms.Control.Paint>イベントは、これにより、コントロールを描画するなど、ウィンドウの表示に関連するイベント、<xref:System.Windows.Forms.Control.Resize>と<xref:System.Windows.Forms.Control.Layout>イベント、および低レベルのマウスとキーボード イベント。 一部の低レベルのイベントは、合成<xref:System.Windows.Forms.Control>ようセマンティックなイベントに<xref:System.Windows.Forms.Control.Click>と<xref:System.Windows.Forms.Control.DoubleClick>です。 継承されたイベントに関する詳細については、「<xref:System.Windows.Forms.Control>です。  
   
- カスタム コントロールが継承したイベントの機能をオーバーライドする必要がある場合は、デリゲートを割り当てる代わりに継承した `On`*EventName* メソッドをオーバーライドします。  .NET Framework のイベント モデルの詳細については、「[コンポーネントからのイベントの生成](../Topic/Raising%20Events%20from%20a%20Component.md)」を参照してください。  
+ 継承されたイベントの機能をカスタム コントロールでオーバーライドする必要がある場合、デリゲートを結び付けるのではなく、継承された `On`*EventName* メソッドをオーバーライドします。 .NET Framework でのイベント モデルに詳しくない場合は、「[コンポーネントからのイベントの生成](http://msdn.microsoft.com/library/9aebf605-a87d-470b-b7c8-f9abfc8360a0)」を参照してください。  
   
-## 参照  
- [OnPaint メソッドのオーバーライド](../../../../docs/framework/winforms/controls/overriding-the-onpaint-method.md)   
- [ユーザーの入力の処理](../../../../docs/framework/winforms/controls/handling-user-input.md)   
- [イベントの定義](../../../../docs/framework/winforms/controls/defining-an-event-in-windows-forms-controls.md)   
+## <a name="see-also"></a>関連項目  
+ [OnPaint メソッドのオーバーライド](../../../../docs/framework/winforms/controls/overriding-the-onpaint-method.md)  
+ [ユーザーの入力の処理](../../../../docs/framework/winforms/controls/handling-user-input.md)  
+ [イベントの定義](../../../../docs/framework/winforms/controls/defining-an-event-in-windows-forms-controls.md)  
  [イベント](../../../../docs/standard/events/index.md)
