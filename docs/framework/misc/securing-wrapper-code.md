@@ -1,129 +1,113 @@
 ---
-title: "ラッパー コードの保護 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "コード セキュリティ, ラッパー コード"
-  - "安全なコーディング, ラッパー コード"
-  - "セキュリティ [.NET Framework], ラッパー コード"
-  - "ラッパー コード, セキュリティ"
+title: "ラッパー コードの保護"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- security [.NET Framework], wrapper code
+- wrapper code, securing
+- secure coding, wrapper code
+- code security, wrapper code
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
-caps.latest.revision: 11
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "11"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 70df7cb2f87fc2a6616d0818acdde6974bcce4d6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ラッパー コードの保護
-ラッパー コードで、使用しているコードよりもラッパーの信頼が高い場合には特に、特有のセキュリティ脆弱性が生じる恐れがあります。 呼び出し元の制限されたアクセス許可が適切なセキュリティ チェックに含まれないと、呼び出し元のために実行されるすべての処理が、悪用される可能性のある潜在的な脆弱性となります。  
+# <a name="securing-wrapper-code"></a><span data-ttu-id="c35ab-102">ラッパー コードの保護</span><span class="sxs-lookup"><span data-stu-id="c35ab-102">Securing Wrapper Code</span></span>
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- 呼び出し元自体で実行できない処理をラッパーによって行うことがないようにしてください。 完全なスタック ウォーク要求とは対照的に、限定的なセキュリティ チェックしか行われずに何らかの処理が行われる場合に、この状況は特に危険です。 単一レベルのチェックが行われる場合、実際の呼び出し元と対象の API 要素との間にラッパー コードを挿入することによって、本来は成功すべきではないセキュリティ チェックが簡単に成功してしまう原因となる可能性があり、セキュリティが弱体化します。  
+ <span data-ttu-id="c35ab-103">ラッパー コードで、使用しているコードよりもラッパーの信頼が高い場合には特に、特有のセキュリティ脆弱性が生じる恐れがあります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-103">Wrapper code, especially where the wrapper has higher trust than code that uses it, can open a unique set of security weaknesses.</span></span> <span data-ttu-id="c35ab-104">呼び出し元の制限されたアクセス許可が適切なセキュリティ チェックに含まれないと、呼び出し元のために実行されるすべての処理が、悪用される可能性のある潜在的な脆弱性となります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-104">Anything done on behalf of a caller, where the caller's limited permissions are not included in the appropriate security check, is a potential weakness to be exploited.</span></span>  
   
-> [!CAUTION]
->  コード アクセス セキュリティと部分的に信頼できるコード  
->   
->  .NET Framework には、コード アクセス セキュリティ \(CAS\) と呼ばれる、同一アプリケーションで実行される各種コードにさまざまな信頼レベルを強制的に適用するメカニズムが備わっています。  .NET Framework におけるコード アクセス セキュリティを、部分的に信頼できるコード、特に発生元の不明なコードのセキュリティ境界として使用しないでください。 発生元の不明なコードの読み込みと実行に関しては、他のセキュリティ対策を適切に導入することなく行わないようにしてください。  
->   
->  このポリシーは .NET Framework のすべてのバージョンに適用されますが、Silverlight に含まれる .NET Framework には適用されません。  
+ <span data-ttu-id="c35ab-105">呼び出し元自体で実行できない処理をラッパーによって行うことがないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="c35ab-105">Never enable something through the wrapper that the caller could not do itself.</span></span> <span data-ttu-id="c35ab-106">完全なスタック ウォーク要求とは対照的に、限定的なセキュリティ チェックしか行われずに何らかの処理が行われる場合に、この状況は特に危険です。</span><span class="sxs-lookup"><span data-stu-id="c35ab-106">This is a special danger when doing something that involves a limited security check, as opposed to a full stack walk demand.</span></span> <span data-ttu-id="c35ab-107">単一レベルのチェックが行われる場合、実際の呼び出し元と対象の API 要素との間にラッパー コードを挿入することによって、本来は成功すべきではないセキュリティ チェックが簡単に成功してしまう原因となる可能性があり、セキュリティが弱体化します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-107">When single-level checks are involved, interposing the wrapper code between the real caller and the API element in question can easily cause the security check to succeed when it should not, thereby weakening security.</span></span>  
   
-## デリゲート  
- デリゲートのセキュリティは、.NET Framework のバージョンによって異なります。  このセクションでは、各種デリゲートの動作と、関連するセキュリティ上の考慮事項について説明します。  
+## <a name="delegates"></a><span data-ttu-id="c35ab-108">デリゲート</span><span class="sxs-lookup"><span data-stu-id="c35ab-108">Delegates</span></span>  
+ <span data-ttu-id="c35ab-109">デリゲートのセキュリティは、.NET Framework のバージョンによって異なります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-109">Delegate security differs between versions of the .NET Framework.</span></span>  <span data-ttu-id="c35ab-110">このセクションでは、各種デリゲートの動作と、関連するセキュリティ上の考慮事項について説明します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-110">This section describes the different delegate behaviors and associated security considerations.</span></span>  
   
-### .NET Framework バージョン 1.0 および 1.1 の場合  
- .NET Framework バージョン 1.0 および 1.1 は、デリゲートの作成者とデリゲートの呼び出し元に対して、次のセキュリティ アクションを実行します。  
+### <a name="in-version-10-and-11-of-the-net-framework"></a><span data-ttu-id="c35ab-111">.NET Framework バージョン 1.0 および 1.1 の場合</span><span class="sxs-lookup"><span data-stu-id="c35ab-111">In version 1.0 and 1.1 of the .NET Framework</span></span>  
+ <span data-ttu-id="c35ab-112">.NET Framework バージョン 1.0 および 1.1 は、デリゲートの作成者とデリゲートの呼び出し元に対して、次のセキュリティ アクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-112">Version 1.0 and 1.1 of the .NET Framework perform the following security actions against a delegate creator and a delegate caller.</span></span>  
   
--   デリゲートが作成されると、デリゲート対象メソッドのセキュリティ リンク要求が、デリゲート作成者の許可セットに対して実行されます。  セキュリティ アクションを満たすことができないと、<xref:System.Security.SecurityException> が結果として生じます。  
+-   <span data-ttu-id="c35ab-113">デリゲートが作成されると、デリゲート対象メソッドのセキュリティ リンク要求が、デリゲート作成者の許可セットに対して実行されます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-113">When a delegate is created, security link demands on the delegate target method are performed against the grant set of the delegate creator.</span></span>  <span data-ttu-id="c35ab-114">セキュリティ アクションを満たすことができないと、<xref:System.Security.SecurityException> が結果として生じます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-114">Failure to satisfy the security action results in a <xref:System.Security.SecurityException>.</span></span>  
   
--   デリゲートが呼び出されると、デリゲート呼び出し元の既存のセキュリティ要求が実行されます。  
+-   <span data-ttu-id="c35ab-115">デリゲートが呼び出されると、デリゲート呼び出し元の既存のセキュリティ要求が実行されます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-115">When the delegate is invoked, any existing security demands on the delegate caller are performed.</span></span>  
   
- ご使用のコードで <xref:System.Delegate> を取得するときに、それを呼び出すことができる信頼性の低いコードから取得する場合には、その信頼性の低いコードによってアクセス許可がエスカレートされることがないようにしてください。 デリゲートを取得して後ほど使用するとき、デリゲートを作成したコードは呼び出しスタック上にはなく、デリゲートのコードまたはデリゲートを行うコードが保護された操作を試みる場合にアクセス許可がテストされないことになります。 ご使用のコードと呼び出し元のコードに作成者よりも高い特権がある場合、作成者は呼び出しスタックの一部になることなく、呼び出しパスを編成できます。  
+ <span data-ttu-id="c35ab-116">ご使用のコードで <xref:System.Delegate> を取得するときに、それを呼び出すことができる信頼性の低いコードから取得する場合には、その信頼性の低いコードによってアクセス許可がエスカレートされることがないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="c35ab-116">Whenever your code takes a <xref:System.Delegate> from less-trusted code that might call it, make sure that you are not enabling the less-trusted code to escalate its permissions.</span></span> <span data-ttu-id="c35ab-117">デリゲートを取得して後ほど使用するとき、デリゲートを作成したコードは呼び出しスタック上にはなく、デリゲートのコードまたはデリゲートを行うコードが保護された操作を試みる場合にアクセス許可がテストされないことになります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-117">If you take a delegate and use it later, the code that created the delegate is not on the call stack and its permissions will not be tested if code in or under the delegate attempts a protected operation.</span></span> <span data-ttu-id="c35ab-118">ご使用のコードと呼び出し元のコードに作成者よりも高い特権がある場合、作成者は呼び出しスタックの一部になることなく、呼び出しパスを編成できます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-118">If your code and the caller code have higher privileges than the creator, the creator can orchestrate the call path without being part of the call stack.</span></span>  
   
-### .NET Framework バージョン 2.0 以降の場合  
- .NET Framework version 2.0 ではそれより前のバージョンとは異なり、デリゲートが作成されて呼び出されるときに、デリゲート作成者に対してセキュリティ アクションを実行します。  
+### <a name="in-version-20-and-later-versions-of-the-net-framework"></a><span data-ttu-id="c35ab-119">バージョン 2.0 および .NET Framework の以降のバージョン</span><span class="sxs-lookup"><span data-stu-id="c35ab-119">In version 2.0 and later versions of the .NET Framework</span></span>  
+ <span data-ttu-id="c35ab-120">以前のバージョンとは異なりバージョン 2.0 と .NET Framework の以降のバージョンを実行、デリゲート作成者に対してセキュリティ アクション デリゲートが作成され、呼び出されるとします。</span><span class="sxs-lookup"><span data-stu-id="c35ab-120">Unlike previous versions, version 2.0 and later versions of the .NET Framework performs security action against the delegate creator when the delegate is created and called.</span></span>  
   
--   デリゲートが作成されると、デリゲート対象メソッドのセキュリティ リンク要求が、デリゲート作成者の許可セットに対して実行されます。  セキュリティ アクションを満たすことができないと、<xref:System.Security.SecurityException> が結果として生じます。  
+-   <span data-ttu-id="c35ab-121">デリゲートが作成されると、デリゲート対象メソッドのセキュリティ リンク要求が、デリゲート作成者の許可セットに対して実行されます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-121">When a delegate is created, security link demands on the delegate target method are performed against the grant set of the delegate creator.</span></span>  <span data-ttu-id="c35ab-122">セキュリティ アクションを満たすことができないと、<xref:System.Security.SecurityException> が結果として生じます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-122">Failure to satisfy the security action results in a <xref:System.Security.SecurityException>.</span></span>  
   
--   デリゲート作成時に、デリゲート作成者の許可セットも取得され、デリゲートと一緒に格納されます。  
+-   <span data-ttu-id="c35ab-123">デリゲート作成時に、デリゲート作成者の許可セットも取得され、デリゲートと一緒に格納されます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-123">The delegate creator's grant set is also captured during delegate creation and stored with the delegate.</span></span>  
   
--   デリゲートが呼び出されると、デリゲート作成者と呼び出し元が属するアセンブリが異なる場合には、現在のコンテキストの任意の要求に対して、デリゲート作成者の取得された許可セットが最初に評価されます。  次に、デリゲート呼び出し元の既存のセキュリティ要求が実行されます。  
+-   <span data-ttu-id="c35ab-124">デリゲートが呼び出されると、デリゲート作成者と呼び出し元が属するアセンブリが異なる場合には、現在のコンテキストの任意の要求に対して、デリゲート作成者の取得された許可セットが最初に評価されます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-124">When the delegate is invoked, the delegate creator's captured grant set is first evaluated against any demands in the current context if the delegate creator and caller belong to different assemblies.</span></span>  <span data-ttu-id="c35ab-125">次に、デリゲート呼び出し元の既存のセキュリティ要求が実行されます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-125">Next, any existing security demands on the delegate caller are performed.</span></span>  
   
-## リンク要求とラッパー  
- リンク要求に関する特別な保護がセキュリティ インフラストラクチャで強化されましたが、依然としてコード内で脆弱性の原因となる可能性があります。  
+## <a name="link-demands-and-wrappers"></a><span data-ttu-id="c35ab-126">リンク要求とラッパー</span><span class="sxs-lookup"><span data-stu-id="c35ab-126">Link demands and wrappers</span></span>  
+ <span data-ttu-id="c35ab-127">リンク要求に関する特別な保護がセキュリティ インフラストラクチャで強化されましたが、依然としてコード内で脆弱性の原因となる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-127">A special protection case with link demands has been strengthened in the security infrastructure, but it is still a source of possible weakness in your code.</span></span>  
   
- 完全に信頼されるコードが、[LinkDemand](../../../docs/framework/misc/link-demands.md) によって保護されているプロパティ、イベント、メソッドを呼び出す場合、呼び出し元の **LinkDemand** アクセス許可チェックを満たしているとその呼び出しは成功します。 さらに、完全に信頼されるコードがプロパティ名を取るクラスを公開し、リフレクションを使用して**get** アクセサーを呼び出すと、**get** アクセサーに対する呼び出しは、ユーザー コードにこのプロパティにアクセスする権限がない場合であっても成功します。 これは、**LinkDemand** がチェックするのは、完全に信頼できるコードである直接の呼び出し元だけであることに起因します。 基本的に、完全に信頼できるコードは、ユーザー コードに代わって呼び出す権限があり、その際、ユーザー コードに呼び出すための権限があるかどうかの確認は行いません。  
+ <span data-ttu-id="c35ab-128">完全に信頼されたコードは、プロパティ、イベント、またはによって保護されているメソッドを呼び出す場合、 [LinkDemand](../../../docs/framework/misc/link-demands.md)場合、呼び出しが成功した、 **LinkDemand**呼び出し元の権限チェックが満たしています。</span><span class="sxs-lookup"><span data-stu-id="c35ab-128">If fully trusted code calls a property, event, or method protected by a [LinkDemand](../../../docs/framework/misc/link-demands.md), the call succeeds if the **LinkDemand** permission check for the caller is satisfied.</span></span> <span data-ttu-id="c35ab-129">さらに、完全に信頼されたコードがクラスを公開している場合を受け取る、プロパティの名前、および呼び出し、**取得**アクセサーへの呼び出し、リフレクションを使用して、**取得**いなくても、ユーザー コードではアクセサーは成功このプロパティにアクセスする権限を持っていません。</span><span class="sxs-lookup"><span data-stu-id="c35ab-129">Additionally, if the fully trusted code exposes a class that takes the name of a property and calls its **get** accessor using reflection, that call to the **get** accessor succeeds even though the user code does not have the right to access this property.</span></span> <span data-ttu-id="c35ab-130">これは、ため、 **LinkDemand**のみ直前の呼び出し元を完全に信頼されたコードを確認します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-130">This is because the **LinkDemand** checks only the immediate caller, which is the fully trusted code.</span></span> <span data-ttu-id="c35ab-131">基本的に、完全に信頼できるコードは、ユーザー コードに代わって呼び出す権限があり、その際、ユーザー コードに呼び出すための権限があるかどうかの確認は行いません。</span><span class="sxs-lookup"><span data-stu-id="c35ab-131">In essence, the fully trusted code is making a privileged call on behalf of user code without making sure that the user code has the right to make that call.</span></span>  
   
- こうしたセキュリティ ホールを回避するには、共通言語ランタイムによるチェックを、**LinkDemand** によって保護されているメソッド、コンストラクター、プロパティ、イベントに対する間接呼び出しの完全なスタック ウォーク要求へと拡張します。 この保護により若干のパフォーマンス コストが発生し、セキュリティ チェックのセマンティクスが変更されます。より高速な単一レベルのチェックに合格していた場合にも完全なスタック ウォーク要求が失敗する可能性があります。  
+ <span data-ttu-id="c35ab-132">このようなセキュリティ ホールを防ぐため、共通言語ランタイム拡張メソッド、コンス トラクター、プロパティ、またはによって保護されているイベントに対する間接呼び出しの完全なスタックのウォーク要求にチェック、 **LinkDemand**です。</span><span class="sxs-lookup"><span data-stu-id="c35ab-132">To help prevent such security holes, the common language runtime extends the check into a full stack-walking demand on any indirect call to a method, constructor, property, or event protected by a **LinkDemand**.</span></span> <span data-ttu-id="c35ab-133">この保護により若干のパフォーマンス コストが発生し、セキュリティ チェックのセマンティクスが変更されます。より高速な単一レベルのチェックに合格していた場合にも完全なスタック ウォーク要求が失敗する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-133">This protection incurs some performance costs and changes the semantics of the security check; the full stack-walk demand might fail where the faster, one-level check would have passed.</span></span>  
   
-> [!NOTE]
->  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] では、部分的に信頼されるコードが透過コードとして再定義されました。 透過性モデルは、ネイティブ コードの呼び出しなどの特権的な処理を実行できるコード \(重要なコード\) と、そのような処理を実行できないコード \(透過的なコード\) との間に、障壁を設けます。 透過性では、<xref:System.Security.Permissions.SecurityAction> を使用する代わりに、完全な信頼に関して <xref:System.Security.SecurityCriticalAttribute> を用いて完全に信頼されるコードを特定します。 この変更およびその他の変更の詳細については、「[セキュリティの変更点](../../../docs/framework/security/security-changes.md)」を参照してください。  
+## <a name="assembly-loading-wrappers"></a><span data-ttu-id="c35ab-134">アセンブリ読み込みラッパー</span><span class="sxs-lookup"><span data-stu-id="c35ab-134">Assembly loading wrappers</span></span>  
+ <span data-ttu-id="c35ab-135">マネージ コードの読み込みに使用されるいくつかのメソッド (<xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> など) は、呼び出し元の証拠に基づいてアセンブリを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-135">Several methods used to load managed code, including <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>, load assemblies with the evidence of the caller.</span></span> <span data-ttu-id="c35ab-136">これらのメソッドのいずれかをラップする場合、セキュリティ システムがアセンブリを読み込むとき、ラッパーに対する呼び出し元のアクセス許可ではなく、ご使用のコードのアクセス許可を使用できることがあります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-136">If you wrap any of these methods, the security system could use your code's permission grant, instead of the permissions of the caller to your wrapper, to load the assemblies.</span></span> <span data-ttu-id="c35ab-137">信頼性の低いコードに対して、ラッパーへの呼び出し元のアクセス許可より高いアクセス許可が付与されているコードの読み込みを許可しないでください。</span><span class="sxs-lookup"><span data-stu-id="c35ab-137">You should not allow less-trusted code to load code that is granted higher permissions than those of the caller to your wrapper.</span></span>  
   
-## アセンブリ読み込みラッパー  
- マネージ コードの読み込みに使用されるいくつかのメソッド \(<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> など\) は、呼び出し元の証拠に基づいてアセンブリを読み込みます。 これらのメソッドのいずれかをラップする場合、セキュリティ システムがアセンブリを読み込むとき、ラッパーに対する呼び出し元のアクセス許可ではなく、ご使用のコードのアクセス許可を使用できることがあります。 信頼性の低いコードに対して、ラッパーへの呼び出し元のアクセス許可より高いアクセス許可が付与されているコードの読み込みを許可しないでください。  
+ <span data-ttu-id="c35ab-138">完全な信頼のあるコード、または潜在的な呼び出し元 (インターネット アクセス許可レベルの呼び出し元など) よりも信頼が高いコードであっても、こうした方法でセキュリティが弱体化する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-138">Any code that has full trust or significantly higher trust than a potential caller (including an Internet-permissions-level caller) could weaken security in this way.</span></span> <span data-ttu-id="c35ab-139">コードをバイト配列を受け取るに渡すパブリック メソッドがある場合**Assembly.Load**これにより、アセンブリを作成する、呼び出し元の代わりに、セッキュリティが破らその可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-139">If your code has a public method that takes a byte array and passes it to **Assembly.Load**, thereby creating an assembly on the caller's behalf, it might break security.</span></span>  
   
- 完全な信頼のあるコード、または潜在的な呼び出し元 \(インターネット アクセス許可レベルの呼び出し元など\) よりも信頼が高いコードであっても、こうした方法でセキュリティが弱体化する可能性があります。 コードに、バイト配列を取って、それを **Assembly.Load** に渡すパブリック メソッドが含まれる場合、そうした呼び出し元のためにアセンブリを作成すると、セッキュリティが破られる恐れがあります。  
+ <span data-ttu-id="c35ab-140">この問題は、次の API 要素に当てはまります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-140">This issue applies to the following API elements:</span></span>  
   
- この問題は、次の API 要素に当てはまります。  
+-   <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>  
   
--   <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=fullName>  
+-   <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>  
   
--   <xref:System.AppDomain.Load%2A?displayProperty=fullName>  
+-   <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>  
   
--   <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName>  
+-   <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>  
   
--   <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName>  
+## <a name="demand-vs-linkdemand"></a><span data-ttu-id="c35ab-141">Demand とLinkDemand</span><span class="sxs-lookup"><span data-stu-id="c35ab-141">Demand vs. LinkDemand</span></span>  
+ <span data-ttu-id="c35ab-142">宣言型セキュリティには 2 種類のセキュリティ チェックがあり、どちらも似ていますが、実行するチェックがかなり異なります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-142">Declarative security offers two kinds of security checks that are similar but perform very different checks.</span></span> <span data-ttu-id="c35ab-143">選択を誤るとセキュリティの脆弱性やパフォーマンスの低下を招くことがあるため、両方の形式について理解する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-143">You should understand both forms because the wrong choice can result in weak security or performance loss.</span></span>  
   
-## Demand とLinkDemand  
- 宣言型セキュリティには 2 種類のセキュリティ チェックがあり、どちらも似ていますが、実行するチェックがかなり異なります。 選択を誤るとセキュリティの脆弱性やパフォーマンスの低下を招くことがあるため、両方の形式について理解する必要があります。  
+ <span data-ttu-id="c35ab-144">宣言型のセキュリティには、次のセキュリティ チェックがあります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-144">Declarative security offers the following security checks:</span></span>  
   
- 宣言型のセキュリティには、次のセキュリティ チェックがあります。  
+-   <span data-ttu-id="c35ab-145"><xref:System.Security.Permissions.SecurityAction.Demand> はコード アクセス セキュリティのスタック ウォークを指定します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-145"><xref:System.Security.Permissions.SecurityAction.Demand> specifies the code access security stack walk.</span></span> <span data-ttu-id="c35ab-146">スタック上の各呼び出し元が合格するには、指定のアクセス許可または ID が必要です。</span><span class="sxs-lookup"><span data-stu-id="c35ab-146">All callers on the stack must have the specified permission or identity to pass.</span></span> <span data-ttu-id="c35ab-147">**必要に応じて**スタックは異なる呼び出し元を含めることがあるために、呼び出しごとに生じます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-147">**Demand** occurs on every call because the stack might contain different callers.</span></span> <span data-ttu-id="c35ab-148">メソッドを繰り返し呼び出す場合は、このセキュリティ チェックが毎回行われます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-148">If you call a method repeatedly, this security check occurs each time.</span></span> <span data-ttu-id="c35ab-149">**必要に応じて**おびき寄せによる攻撃に対して優れた保護とは、これを使用して取得しようとしています。 未承認のコードが検出されます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-149">**Demand** is good protection against luring attacks; unauthorized code trying to get through it will be detected.</span></span>  
   
--   <xref:System.Security.Permissions.SecurityAction> はコード アクセス セキュリティのスタック ウォークを指定します。 スタック上の各呼び出し元が合格するには、指定のアクセス許可または ID が必要です。 スタックには異なる呼び出し元が含まれている可能性があるため、**Demand** は呼び出しごとに生じます。 メソッドを繰り返し呼び出す場合は、このセキュリティ チェックが毎回行われます。**Demand** はおびき寄せによる攻撃に対して優れた保護となります。そうした攻撃によって送り込まれようとする未承認のコードが検出されます。  
-  
--   [LinkDemand](../../../docs/framework/misc/link-demands.md) は JIT\(just\-in\-time\) コンパイル時に生じて、直接の呼び出し元だけをチェックします。 このセキュリティ チェックでは、呼び出し元の呼び出し元はチェックされません。 このチェックに合格すると、呼び出し元が何度も呼び出す場合であってもさらにセキュリティ オーバーヘッドが生じることはありません。 ただし、おびき寄せによる攻撃からの保護機能はありません。**LinkDemand** を使用すると、テストに合格し、ご使用のコードを参照可能なすべてのコードで、セキュリティが破られる可能性が生じます。つまり、悪意のあるコードに対して、承認済みのコードの呼び出しが許可される場合です。 そのため、可能性のあるすべての脆弱性を完全に回避できるのでない限り、**LinkDemand** を使用しないでください。  
+-   <span data-ttu-id="c35ab-150">[LinkDemand](../../../docs/framework/misc/link-demands.md) ・ イン タイム (JIT) コンパイル時に発生し、直前の呼び出し元のみをチェックします。</span><span class="sxs-lookup"><span data-stu-id="c35ab-150">[LinkDemand](../../../docs/framework/misc/link-demands.md) happens at just-in-time (JIT) compilation time and checks only the immediate caller.</span></span> <span data-ttu-id="c35ab-151">このセキュリティ チェックでは、呼び出し元の呼び出し元はチェックされません。</span><span class="sxs-lookup"><span data-stu-id="c35ab-151">This security check does not check the caller's caller.</span></span> <span data-ttu-id="c35ab-152">このチェックに合格すると、呼び出し元が何度も呼び出す場合であってもさらにセキュリティ オーバーヘッドが生じることはありません。</span><span class="sxs-lookup"><span data-stu-id="c35ab-152">Once this check passes, there is no additional security overhead no matter how many times the caller might call.</span></span> <span data-ttu-id="c35ab-153">ただし、おびき寄せによる攻撃からの保護機能はありません。</span><span class="sxs-lookup"><span data-stu-id="c35ab-153">However, there is also no protection from luring attacks.</span></span> <span data-ttu-id="c35ab-154">**LinkDemand**テストに成功し、コードを参照するすべてのコードを呼び出す権限のあるコードを使用して悪意のあるコードを許可することでセキュリティ使用できなくなる可能性ことができます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-154">With **LinkDemand**, any code that passes the test and can reference your code can potentially break security by allowing malicious code to call using the authorized code.</span></span> <span data-ttu-id="c35ab-155">したがって、使用しないで**LinkDemand**可能なすべての脆弱性を完全に回避できる場合を除き、します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-155">Therefore, do not use **LinkDemand** unless all the possible weaknesses can be thoroughly avoided.</span></span>  
   
     > [!NOTE]
-    >  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] では、<xref:System.Security.SecurityRuleSet> アセンブリの <xref:System.Security.SecurityCriticalAttribute> 属性によってリンク要求が置換されています。<xref:System.Security.SecurityCriticalAttribute> は完全な信頼のリンク要求に相当しますが、継承ルールにも影響を及ぼします。 この変更の詳細については、「[透過的セキュリティ コード、レベル 2](../../../docs/framework/misc/security-transparent-code-level-2.md)」を参照してください。  
+    >  <span data-ttu-id="c35ab-156">[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]、リンク確認要求に置換された、<xref:System.Security.SecurityCriticalAttribute>属性<xref:System.Security.SecurityRuleSet.Level2>アセンブリ。</span><span class="sxs-lookup"><span data-stu-id="c35ab-156">In the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], link demands have been replaced by the <xref:System.Security.SecurityCriticalAttribute> attribute in <xref:System.Security.SecurityRuleSet.Level2> assemblies.</span></span> <span data-ttu-id="c35ab-157"><xref:System.Security.SecurityCriticalAttribute>は完全な信頼のリンク要求に相当ただし、継承ルールにも影響します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-157">The <xref:System.Security.SecurityCriticalAttribute> is equivalent to a link demand for full trust; however, it also affects inheritance rules.</span></span> <span data-ttu-id="c35ab-158">この変更の詳細については、次を参照してください。[透過的セキュリティ コード、レベル 2](../../../docs/framework/misc/security-transparent-code-level-2.md)です。</span><span class="sxs-lookup"><span data-stu-id="c35ab-158">For more information about this change, see [Security-Transparent Code, Level 2](../../../docs/framework/misc/security-transparent-code-level-2.md).</span></span>  
   
- **LinkDemand** を使用するときに必要な特別な措置は、個別にプログラミングする必要があります。セキュリティ システムを実施に役立てられることがあります。 どのようなミスもセキュリティを脆弱化します。 作成したコードを使用する、承認されたすべてのコード側で、次の措置を行うことによって追加セキュリティを実装する責任があります。  
+ <span data-ttu-id="c35ab-159">使用する場合に必要な特別な措置**LinkDemand**個別にプログラミングする必要があります。 適用に役立つセキュリティ システムのことができます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-159">The extra precautions required when using **LinkDemand** must be programmed individually; the security system can help with enforcement.</span></span> <span data-ttu-id="c35ab-160">どのようなミスもセキュリティを脆弱化します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-160">Any mistake opens a security weakness.</span></span> <span data-ttu-id="c35ab-161">作成したコードを使用する、承認されたすべてのコード側で、次の措置を行うことによって追加セキュリティを実装する責任があります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-161">All authorized code that uses your code must be responsible for implementing additional security by doing the following:</span></span>  
   
--   呼び出し元のコードがクラスまたはアセンブリにアクセスするのを制限します。  
+-   <span data-ttu-id="c35ab-162">呼び出し元のコードがクラスまたはアセンブリにアクセスするのを制限します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-162">Restricting the calling code's access to the class or assembly.</span></span>  
   
--   呼び出されるコードに現れる呼び出し元のコードで同じセキュリティ チェックを配置し、呼び出し元にその実行義務を課します。 たとえば、<xref:System.Security.Permissions.SecurityPermissionFlag> フラグを指定した <xref:System.Security.Permissions.SecurityPermission> に関して **LinkDemand** で保護されたメソッドを呼び出すコードを作成する場合、ご使用のメソッドもこのアクセス許可の **LinkDemand** \(またはより強力な **Demand**\) を実行する必要があります。 ただし、ご使用のコードで **LinkDemand** 保護されたメソッドを、安全だと判断した限定的な方法でのみ使用していて、コードに他のセキュリティ保護機能 \(Demand など\) がある場合は例外です。 前述の例外的なケースでは、呼び出し側で、基になるコードでのセキュリティ保護の脆弱性に対処する必要があります。  
+-   <span data-ttu-id="c35ab-163">呼び出されるコードに現れる呼び出し元のコードで同じセキュリティ チェックを配置し、呼び出し元にその実行義務を課します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-163">Placing the same security checks on the calling code that appear on the code being called and obligating its callers to do so.</span></span> <span data-ttu-id="c35ab-164">たとえば、メソッドを呼び出すコードを記述する場合で保護されている、 **LinkDemand**の<xref:System.Security.Permissions.SecurityPermission>で、<xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode>フラグが指定の方法も確認してください、 **LinkDemand** (または**デマンド**より強力な) このアクセス許可。</span><span class="sxs-lookup"><span data-stu-id="c35ab-164">For example, if you write code that calls a method that is protected with a **LinkDemand** for the <xref:System.Security.Permissions.SecurityPermission> with the <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> flag specified, your method should also make a **LinkDemand** (or **Demand**, which is stronger) for this permission.</span></span> <span data-ttu-id="c35ab-165">例外は、コードが使用するかどうか、 **LinkDemand**-と判断した限定された方法で保護されたメソッドは、安全なコード内の他のセキュリティ保護機能 (demand など) を指定します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-165">The exception is if your code uses the **LinkDemand**-protected method in a limited way that you decide is safe, given other security protection mechanisms (such as demands) in your code.</span></span> <span data-ttu-id="c35ab-166">前述の例外的なケースでは、呼び出し側で、基になるコードでのセキュリティ保護の脆弱性に対処する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-166">In this exceptional case, the caller takes responsibility in weakening the security protection on the underlying code.</span></span>  
   
--   呼び出し元のコードが、呼び出し先のコードに成り代わって、保護されているコードを呼び出すことがないようにしてください。 つまり、呼び出し元は承認されたコードに対して、保護されているコードに特定のパラメーターを渡したり、結果を送り返させたりすることはできません。  
+-   <span data-ttu-id="c35ab-167">呼び出し元のコードが、呼び出し先のコードに成り代わって、保護されているコードを呼び出すことがないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="c35ab-167">Ensuring that your code's callers cannot trick your code into calling the protected code on their behalf.</span></span> <span data-ttu-id="c35ab-168">つまり、呼び出し元は承認されたコードに対して、保護されているコードに特定のパラメーターを渡したり、結果を送り返させたりすることはできません。</span><span class="sxs-lookup"><span data-stu-id="c35ab-168">In other words, callers cannot force the authorized code to pass specific parameters to the protected code, or to get results back from it.</span></span>  
   
-### インターフェイスとリンク要求  
- **LinkDemand** を使用した仮想メソッド、プロパティ、イベントが基本クラス メソッドをオーバーライドする場合、オーバーライド対象メソッドで有効になるように、その基本クラス メソッドにも同じ **LinkDemand** が必要です。 悪意のあるコードが、基本型にキャスト バックを行い、基本クラスのメソッドを呼び出す可能性があります。 リンク要求を、<xref:System.Security.AllowPartiallyTrustedCallersAttribute> アセンブリ レベル属性を持たないアセンブリに暗黙的に追加できるという点にも注意してください。  
+### <a name="interfaces-and-link-demands"></a><span data-ttu-id="c35ab-169">インターフェイスとリンク要求</span><span class="sxs-lookup"><span data-stu-id="c35ab-169">Interfaces and Link Demands</span></span>  
+ <span data-ttu-id="c35ab-170">仮想メソッド、プロパティ、またはイベントと場合**LinkDemand**基底クラス メソッドをオーバーライドし、基本クラスのメソッドも必要があります、同じ**LinkDemand**有効にするために、オーバーライド対象メソッドの。</span><span class="sxs-lookup"><span data-stu-id="c35ab-170">If a virtual method, property, or event with **LinkDemand** overrides a base class method, the base class method must also have the same **LinkDemand** for the overridden method in order to be effective.</span></span> <span data-ttu-id="c35ab-171">悪意のあるコードが、基本型にキャスト バックを行い、基本クラスのメソッドを呼び出す可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-171">It is possible for malicious code to cast back to the base type and call the base class method.</span></span> <span data-ttu-id="c35ab-172">リンク要求を、<xref:System.Security.AllowPartiallyTrustedCallersAttribute> アセンブリ レベル属性を持たないアセンブリに暗黙的に追加できるという点にも注意してください。</span><span class="sxs-lookup"><span data-stu-id="c35ab-172">Also note that link demands can be added implicitly to assemblies that do not have the <xref:System.Security.AllowPartiallyTrustedCallersAttribute> assembly-level attribute.</span></span>  
   
- インターフェイス メソッドでリンク要求も指定されている場合は、メソッドの実装をリンク要求で保護するのは良い方法です。 リンク要求をインターフェイスと一緒に使用する場合、以下の点に注意してください。  
+ <span data-ttu-id="c35ab-173">インターフェイス メソッドでリンク要求も指定されている場合は、メソッドの実装をリンク要求で保護するのは良い方法です。</span><span class="sxs-lookup"><span data-stu-id="c35ab-173">It is a good practice to protect method implementations with link demands when interface methods also have link demands.</span></span> <span data-ttu-id="c35ab-174">リンク要求をインターフェイスと一緒に使用する場合、以下の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="c35ab-174">Note the following about using link demands with interfaces:</span></span>  
   
--   **AllowPartiallyTrustedCallersAttribute** 属性はインターフェイスにも適用されます。  
+-   <span data-ttu-id="c35ab-175">配置した場合、 **LinkDemand** 、インターフェイス メソッドを実装するクラスのパブリック メソッドで、 **LinkDemand**インターフェイスにキャストし、メソッドを呼び出す場合は適用されません。</span><span class="sxs-lookup"><span data-stu-id="c35ab-175">If you place a **LinkDemand** on a public method of a class that implements an interface method, the **LinkDemand** will not be enforced if you then cast to the interface and call the method.</span></span> <span data-ttu-id="c35ab-176">この場合、インターフェイスに対してリンクされているため、 **LinkDemand**インターフェイスでは受け入れられます。</span><span class="sxs-lookup"><span data-stu-id="c35ab-176">In this case, because you linked against the interface, only the **LinkDemand** on the interface is honored.</span></span>  
   
--   リンク要求をインターフェイス上に配置することにより、**AllowPartiallyTrustedCallersAttribute** 属性を使用する場合など、部分的に信頼されるコードの使用から特定のインターフェイスを選択的に保護できます。  
+ <span data-ttu-id="c35ab-177">セキュリティの問題に関して次の項目をレビューします。</span><span class="sxs-lookup"><span data-stu-id="c35ab-177">Review the following items for security issues:</span></span>  
   
--   使用しているインターフェイスが **AllowPartiallyTrustedCallersAttribute** 属性が含まれないアセンブリで定義されている場合、そのインターフェイスを部分的に信頼されるクラスで実装できます。  
+-   <span data-ttu-id="c35ab-178">インターフェイス メソッドでのリンク要求を明示的に指定します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-178">Explicit link demands on interface methods.</span></span> <span data-ttu-id="c35ab-179">こうしたリンク要求が期待どおりの保護を提供することを確認します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-179">Make sure these link demands offer the expected protection.</span></span> <span data-ttu-id="c35ab-180">悪意のあるコードがキャストを使用して、前述のようにリンク要求を迂回できるかどうかを判別します。</span><span class="sxs-lookup"><span data-stu-id="c35ab-180">Determine whether malicious code can use a cast to get around the link demands as described previously.</span></span>  
   
--   インターフェイス メソッドを実装するクラスのパブリック メソッドに **LinkDemand** を配置すると、そのインターフェイスをキャストしてメソッドを呼び出すときに **LinkDemand** は実施されません。 この場合、インターフェイスに対してリンクされているため、インターフェイス上の **LinkDemand** のみが実行されます。  
+-   <span data-ttu-id="c35ab-181">リンク要求が適用される仮想メソッド。</span><span class="sxs-lookup"><span data-stu-id="c35ab-181">Virtual methods with link demands applied.</span></span>  
   
- セキュリティの問題に関して次の項目を確認します。  
+-   <span data-ttu-id="c35ab-182">実装する型とインターフェイス。</span><span class="sxs-lookup"><span data-stu-id="c35ab-182">Types and the interfaces they implement.</span></span> <span data-ttu-id="c35ab-183">一貫してリンク要求を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c35ab-183">These should use link demands consistently.</span></span>  
   
--   インターフェイス メソッドでのリンク要求を明示的に指定します。 こうしたリンク要求が期待どおりの保護を提供することを確認します。 悪意のあるコードがキャストを使用して、前述のようにリンク要求を迂回できるかどうかを判別します。  
-  
--   リンク要求が適用される仮想メソッド。  
-  
--   実装する型とインターフェイス。 一貫してリンク要求を使用する必要があります。  
-  
-## 参照  
- [安全なコーディングのガイドライン](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a><span data-ttu-id="c35ab-184">関連項目</span><span class="sxs-lookup"><span data-stu-id="c35ab-184">See Also</span></span>  
+ [<span data-ttu-id="c35ab-185">安全なコーディングのガイドライン</span><span class="sxs-lookup"><span data-stu-id="c35ab-185">Secure Coding Guidelines</span></span>](../../../docs/standard/security/secure-coding-guidelines.md)

@@ -1,27 +1,30 @@
 ---
-title: "入れ子になっていない要素間のリレーションの指定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "入れ子になっていない要素間のリレーションの指定"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e31325da-7691-4d33-acf4-99fccca67006
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 036085160e9e4817964754a85db627e4d4ba8654
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 入れ子になっていない要素間のリレーションの指定
-要素が入れ子になっていない場合、暗黙的なリレーションは作成されません。  それに対し、**msdata:Relationship** 注釈を使用すると、入れ子になっていない要素間にリレーションを明示的に指定できます。  
+# <a name="specify-relations-between-elements-with-no-nesting"></a><span data-ttu-id="74a8b-102">入れ子になっていない要素間のリレーションの指定</span><span class="sxs-lookup"><span data-stu-id="74a8b-102">Specify Relations Between Elements with No Nesting</span></span>
+<span data-ttu-id="74a8b-103">要素が入れ子になっていない場合、暗黙的なリレーションは作成されません。</span><span class="sxs-lookup"><span data-stu-id="74a8b-103">When elements are not nested, no implicit relations are created.</span></span> <span data-ttu-id="74a8b-104">使用して入れ子になっていない要素間のリレーションを明示的に指定することができます、ただし、 **msdata:Relationship**注釈。</span><span class="sxs-lookup"><span data-stu-id="74a8b-104">You can, however, explicitly specify relations between elements that are not nested by using the **msdata:Relationship** annotation.</span></span>  
   
- 互いに入れ子になっていない **Order** 要素と **OrderDetail** 要素の間に **msdata:Relationship** 注釈を指定する XML スキーマの例を次に示します。  **msdata:Relationship** 注釈は、**Schema** 要素の子要素として指定します。  
+ <span data-ttu-id="74a8b-105">次の例を XML スキーマを示しています、 **msdata:Relationship**間で注釈が指定されて、**順序**と**OrderDetail**要素は、含まれていません入れ子になった。</span><span class="sxs-lookup"><span data-stu-id="74a8b-105">The following example shows an XML Schema in which the **msdata:Relationship** annotation is specified between the **Order** and **OrderDetail** elements, which are not nested.</span></span> <span data-ttu-id="74a8b-106">**Msdata:Relationship**の子要素として注釈が指定されて、**スキーマ**要素。</span><span class="sxs-lookup"><span data-stu-id="74a8b-106">The **msdata:Relationship** annotation is specified as the child element of the **Schema** element.</span></span>  
   
-```  
+```xml  
 <xs:schema id="MyDataSet" xmlns=""   
              xmlns:xs="http://www.w3.org/2001/XMLSchema"   
              xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
@@ -60,7 +63,7 @@ caps.handback.revision: 4
 </xs:schema>  
 ```  
   
- 次に示すように、XML スキーマ定義言語 \(XSD\) スキーマの割り当て処理によって、**Order** テーブルと **OrderDetail** テーブルを含む <xref:System.Data.DataSet> が生成され、それらのテーブル間にリレーションシップが指定されます。  
+ <span data-ttu-id="74a8b-107">XML スキーマ定義言語 (XSD) スキーマのマッピング プロセスを作成、<xref:System.Data.DataSet>で**順序**と**OrderDetail**テーブルと次のように、これら 2 つのテーブル間で指定されたリレーションシップです。</span><span class="sxs-lookup"><span data-stu-id="74a8b-107">The XML Schema definition language (XSD) schema mapping process creates a <xref:System.Data.DataSet> with **Order** and **OrderDetail** tables and a relationship specified between these two tables, as shown below.</span></span>  
   
 ```  
 RelationName: OrdOrderDetailRelation  
@@ -71,7 +74,7 @@ ChildColumns: OrderNo
 Nested: False  
 ```  
   
-## 参照  
- [XML スキーマ \(XSD\) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)   
- [XML スキーマ \(XSD\) 制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="74a8b-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="74a8b-108">See Also</span></span>  
+ [<span data-ttu-id="74a8b-109">XML スキーマ (XSD) からの DataSet リレーションの生成</span><span class="sxs-lookup"><span data-stu-id="74a8b-109">Generating DataSet Relations from XML Schema (XSD)</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
+ [<span data-ttu-id="74a8b-110">制約の DataSet 制約への XML スキーマ (XSD) 制約のマッピング</span><span class="sxs-lookup"><span data-stu-id="74a8b-110">Mapping XML Schema (XSD) Constraints to DataSet Constraints</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [<span data-ttu-id="74a8b-111">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="74a8b-111">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

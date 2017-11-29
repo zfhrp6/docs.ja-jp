@@ -1,28 +1,36 @@
 ---
-title: "&lt;netMsmqBinding&gt; の &lt;security&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;netMsmqBinding&gt; の &lt;security&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 001d11a9-7439-498c-b09d-fca20eaf8cd3
-caps.latest.revision: 15
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 15ebbd1f0f139ef0d66ed802b990876735074485
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;netMsmqBinding&gt; の &lt;security&gt;
-MSMQ バインディングのセキュリティ設定を定義します。  トランスポートまたは SOAP セキュリティが有効であるかどうか、および有効である場合は、どの認証モードと保護レベルを使用するかを指定します。  
+# <a name="ltsecuritygt-of-ltnetmsmqbindinggt"></a><span data-ttu-id="bbd18-102">&lt;netMsmqBinding&gt; の &lt;security&gt;</span><span class="sxs-lookup"><span data-stu-id="bbd18-102">&lt;security&gt; of &lt;netMsmqBinding&gt;</span></span>
+<span data-ttu-id="bbd18-103">MSMQ バインディングのセキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="bbd18-103">Defines the security settings for a MSMQ binding.</span></span> <span data-ttu-id="bbd18-104">トランスポートまたは SOAP セキュリティが有効であるかどうか、および有効である場合は、どの認証モードと保護レベルを使用するかを指定します。</span><span class="sxs-lookup"><span data-stu-id="bbd18-104">It specifies whether transport or SOAP security is enabled and, if so, what authentication mode and protection levels are in use.</span></span>  
   
-## 構文  
+ <span data-ttu-id="bbd18-105">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="bbd18-105">\<system.ServiceModel></span></span>  
+<span data-ttu-id="bbd18-106">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="bbd18-106">\<bindings></span></span>  
+<span data-ttu-id="bbd18-107">\<netMsmqBinding ></span><span class="sxs-lookup"><span data-stu-id="bbd18-107">\<netMsmqBinding></span></span>  
+<span data-ttu-id="bbd18-108">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="bbd18-108">\<binding></span></span>  
+<span data-ttu-id="bbd18-109">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="bbd18-109">\<security></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="bbd18-110">構文</span><span class="sxs-lookup"><span data-stu-id="bbd18-110">Syntax</span></span>  
   
+```xml  
 <security mode="None/Transport/Message/Both">  
    <transport msmqAuthenticationMode="None/WindowsDomain/Certificate"  
       msmqEncryptionAlgorithm="RC4Stream/AES"  
@@ -34,36 +42,36 @@ MSMQ バインディングのセキュリティ設定を定義します。  ト�
 </security>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="bbd18-111">属性および要素</span><span class="sxs-lookup"><span data-stu-id="bbd18-111">Attributes and Elements</span></span>  
+ <span data-ttu-id="bbd18-112">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="bbd18-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="bbd18-113">属性</span><span class="sxs-lookup"><span data-stu-id="bbd18-113">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|モード|整合性、機密性、および認証を制御するセキュリティの種類を指定します。  以下の値が有効です。<br /><br /> -   None: セキュリティは無効になります。<br />-   Transport: 保護と認証はトランスポートが提供します。  これは、2 つのキュー マネージャー間のメッセージ セキュリティに適用されます。  アプリケーションとキュー マネージャーとの間にセキュリティは提供されません。  既存の Msmq アプリケーションは、この種類のセキュリティ モードと機能的に等価です。<br />-   Message: エンドツーエンドのアプリケーション セキュリティを指定します。  トランスポート層で提供されるセキュリティありません。  これは、他の標準バインディングによって提供されたセキュリティと同様です。<br />-   Both: トランスポートと SOAP メッセージング レイヤーの両方でセキュリティを提供します。  同じ資格情報が、両方のレベルで要求されます。<br /><br /> 既定値は、Transport です。  この属性は <xref:System.ServiceModel.NetMsmqSecurityMode> 型です。|  
+|<span data-ttu-id="bbd18-114">属性</span><span class="sxs-lookup"><span data-stu-id="bbd18-114">Attribute</span></span>|<span data-ttu-id="bbd18-115">説明</span><span class="sxs-lookup"><span data-stu-id="bbd18-115">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="bbd18-116">モード</span><span class="sxs-lookup"><span data-stu-id="bbd18-116">mode</span></span>|<span data-ttu-id="bbd18-117">整合性、機密性、および認証を制御するセキュリティの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="bbd18-117">Specifies the type of security that controls integrity, confidentiality and authentication.</span></span> <span data-ttu-id="bbd18-118">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="bbd18-118">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="bbd18-119">-なし: 無効になりますセキュリティ。</span><span class="sxs-lookup"><span data-stu-id="bbd18-119">-   None: This disables security.</span></span><br /><span data-ttu-id="bbd18-120">-Transport: 保護と認証は、トランスポートによって提供されます。</span><span class="sxs-lookup"><span data-stu-id="bbd18-120">-   Transport: Protection and authentication are offered by the transport.</span></span> <span data-ttu-id="bbd18-121">これは、2 つのキュー マネージャー間のメッセージ セキュリティに適用されます。</span><span class="sxs-lookup"><span data-stu-id="bbd18-121">This applies to the message security between the two queue managers.</span></span> <span data-ttu-id="bbd18-122">アプリケーションとキュー マネージャーとの間にセキュリティは提供されません。</span><span class="sxs-lookup"><span data-stu-id="bbd18-122">There is no security offered between the application and queue manager.</span></span> <span data-ttu-id="bbd18-123">既存の Msmq アプリケーションは、この種類のセキュリティ モードと機能的に等価です。</span><span class="sxs-lookup"><span data-stu-id="bbd18-123">Existing Msmq applications are functionally equivalent with this type of security mode.</span></span><br /><span data-ttu-id="bbd18-124">-メッセージ: は、エンド ツー エンドのアプリケーションのセキュリティを指定します。</span><span class="sxs-lookup"><span data-stu-id="bbd18-124">-   Message: Specifies end-end application security.</span></span> <span data-ttu-id="bbd18-125">トランスポート層で提供されるセキュリティありません。</span><span class="sxs-lookup"><span data-stu-id="bbd18-125">There is no security offered at the transport layer.</span></span> <span data-ttu-id="bbd18-126">これは、他の標準バインディングによって提供されたセキュリティと同様です。</span><span class="sxs-lookup"><span data-stu-id="bbd18-126">This is similar to the security offered by other standard bindings.</span></span><br /><span data-ttu-id="bbd18-127">-両方:、トランスポートと SOAP メッセージング レイヤーの両方でセキュリティを提供しています。</span><span class="sxs-lookup"><span data-stu-id="bbd18-127">-   Both: Offers security at both the transport and SOAP messaging layer.</span></span> <span data-ttu-id="bbd18-128">同じ資格情報が、両方のレベルで要求されます。</span><span class="sxs-lookup"><span data-stu-id="bbd18-128">The same credential is required at both the levels.</span></span><br /><br /> <span data-ttu-id="bbd18-129">既定値は、Transport です。</span><span class="sxs-lookup"><span data-stu-id="bbd18-129">The default value is Transport.</span></span> <span data-ttu-id="bbd18-130">この属性は <xref:System.ServiceModel.NetMsmqSecurityMode> 型です。</span><span class="sxs-lookup"><span data-stu-id="bbd18-130">This attribute is of type <xref:System.ServiceModel.NetMsmqSecurityMode>.</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="bbd18-131">子要素</span><span class="sxs-lookup"><span data-stu-id="bbd18-131">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<message\>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-netmsmqbinding.md)|SOAP メッセージのセキュリティ設定を定義します。  この要素は <xref:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement> 型です。|  
-|[\<transport\>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-netmsmqbinding.md)|MSMQ トランスポートのセキュリティ設定を定義します。  この要素は <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement> 型です。|  
+|<span data-ttu-id="bbd18-132">要素</span><span class="sxs-lookup"><span data-stu-id="bbd18-132">Element</span></span>|<span data-ttu-id="bbd18-133">説明</span><span class="sxs-lookup"><span data-stu-id="bbd18-133">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="bbd18-134">\<メッセージ ></span><span class="sxs-lookup"><span data-stu-id="bbd18-134">\<message></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-netmsmqbinding.md)|<span data-ttu-id="bbd18-135">SOAP メッセージのセキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="bbd18-135">Defines the SOAP message security settings.</span></span> <span data-ttu-id="bbd18-136">この要素は <xref:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="bbd18-136">This element is of type <xref:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement>.</span></span>|  
+|[<span data-ttu-id="bbd18-137">\<トランスポート ></span><span class="sxs-lookup"><span data-stu-id="bbd18-137">\<transport></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-netmsmqbinding.md)|<span data-ttu-id="bbd18-138">MSMQ トランスポートのセキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="bbd18-138">Defines the security settings for the MSMQ transport.</span></span> <span data-ttu-id="bbd18-139">この要素は <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="bbd18-139">This element is of type <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="bbd18-140">親要素</span><span class="sxs-lookup"><span data-stu-id="bbd18-140">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|バインド|[\<netMsmqBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md) のバインディング要素です。|  
+|<span data-ttu-id="bbd18-141">要素</span><span class="sxs-lookup"><span data-stu-id="bbd18-141">Element</span></span>|<span data-ttu-id="bbd18-142">説明</span><span class="sxs-lookup"><span data-stu-id="bbd18-142">Description</span></span>|  
+|-------------|-----------------|  
+|<span data-ttu-id="bbd18-143">バインド</span><span class="sxs-lookup"><span data-stu-id="bbd18-143">binding</span></span>|<span data-ttu-id="bbd18-144">バインド要素、 [ \<netMsmqBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)</span><span class="sxs-lookup"><span data-stu-id="bbd18-144">The binding element of the [\<netMsmqBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)</span></span>|  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement>   
- <xref:System.ServiceModel.NetMsmqBinding.Security%2A>   
- <xref:System.ServiceModel.Configuration.NetMsmqBindingElement.Security%2A>   
- <xref:System.ServiceModel.NetMsmqSecurity>   
- [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/ja-jp/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<binding\>](../../../../../docs/framework/misc/binding.md)   
- [WCF のキュー](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
+## <a name="see-also"></a><span data-ttu-id="bbd18-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="bbd18-145">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement>  
+ <xref:System.ServiceModel.NetMsmqBinding.Security%2A>  
+ <xref:System.ServiceModel.Configuration.NetMsmqBindingElement.Security%2A>  
+ <xref:System.ServiceModel.NetMsmqSecurity>  
+ [<span data-ttu-id="bbd18-146">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="bbd18-146">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="bbd18-147">バインディング</span><span class="sxs-lookup"><span data-stu-id="bbd18-147">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="bbd18-148">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="bbd18-148">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="bbd18-149">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="bbd18-149">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [<span data-ttu-id="bbd18-150">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="bbd18-150">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)  
+ [<span data-ttu-id="bbd18-151">WCF のキュー</span><span class="sxs-lookup"><span data-stu-id="bbd18-151">Queues in WCF</span></span>](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)

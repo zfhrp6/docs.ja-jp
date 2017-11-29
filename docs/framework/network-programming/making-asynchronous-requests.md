@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - Internet, asynchronous access
 - Networking
@@ -19,43 +17,42 @@ helpviewer_keywords:
 - Network Resources
 - WebRequest class, asynchronous access
 ms.assetid: 735d3fce-f80c-437f-b02c-5c47f5739674
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6854ddc10e35c2a5ff1de200a44c95f34c186609
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: d0ed1eea11049a1e6f026c71a2eb41134f87fd8d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="making-asynchronous-requests"></a>非同期要求を行う
-<xref:System.Net> クラスは、インターネット リソースへの非同期アクセスに .NET Framework の標準非同期プログラミング モデルを使用します。 <xref:System.Net.WebRequest> クラスの <xref:System.Net.WebRequest.BeginGetResponse%2A> および <xref:System.Net.WebRequest.EndGetResponse%2A> メソッドは、インターネット リソースの非同期要求の開始と完了を行います。  
+# <a name="making-asynchronous-requests"></a><span data-ttu-id="a1da5-102">非同期要求を行う</span><span class="sxs-lookup"><span data-stu-id="a1da5-102">Making Asynchronous Requests</span></span>
+<span data-ttu-id="a1da5-103"><xref:System.Net> クラスは、インターネット リソースへの非同期アクセスに .NET Framework の標準非同期プログラミング モデルを使用します。</span><span class="sxs-lookup"><span data-stu-id="a1da5-103">The <xref:System.Net> classes use the .NET Framework's standard asynchronous programming model for asynchronous access to Internet resources.</span></span> <span data-ttu-id="a1da5-104"><xref:System.Net.WebRequest> クラスの <xref:System.Net.WebRequest.BeginGetResponse%2A> および <xref:System.Net.WebRequest.EndGetResponse%2A> メソッドは、インターネット リソースの非同期要求の開始と完了を行います。</span><span class="sxs-lookup"><span data-stu-id="a1da5-104">The <xref:System.Net.WebRequest.BeginGetResponse%2A> and <xref:System.Net.WebRequest.EndGetResponse%2A> methods of the <xref:System.Net.WebRequest> class start and complete asynchronous requests for an Internet resource.</span></span>  
   
 > [!NOTE]
->  非同期コールバック メソッドで同期呼び出しを使用すると、パフォーマンスが大幅に低下する可能性があります。 **WebRequest** とその子孫を使用して作成されたインターネット要求で、<xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=fullName> メソッドで返されたストリームを読み取るには、<xref:System.IO.Stream.BeginRead%2A?displayProperty=fullName> を使用する必要があります。  
+>  <span data-ttu-id="a1da5-105">非同期コールバック メソッドで同期呼び出しを使用すると、パフォーマンスが大幅に低下する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a1da5-105">Using synchronous calls in asynchronous callback methods can result in severe performance penalties.</span></span> <span data-ttu-id="a1da5-106">**WebRequest** とその子孫を使用して作成されたインターネット要求で、<xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=nameWithType> メソッドで返されたストリームを読み取るには、<xref:System.IO.Stream.BeginRead%2A?displayProperty=nameWithType> を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a1da5-106">Internet requests made with **WebRequest** and its descendants must use <xref:System.IO.Stream.BeginRead%2A?displayProperty=nameWithType> to read the stream returned by the <xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=nameWithType> method.</span></span>  
   
- 次のサンプル コードは、**WebRequest** クラスで非同期呼び出しを使用する方法の例です。 このサンプルは、コマンド ラインから URI を取得し、その URI のリソースを要求し、インターネットから受信したデータをコンソールに出力するコンソール プログラムです。  
+ <span data-ttu-id="a1da5-107">次のサンプル コードは、**WebRequest** クラスで非同期呼び出しを使用する方法の例です。</span><span class="sxs-lookup"><span data-stu-id="a1da5-107">The following sample code demonstrates how to use asynchronous calls with the **WebRequest** class.</span></span> <span data-ttu-id="a1da5-108">このサンプルは、コマンド ラインから URI を取得し、その URI のリソースを要求し、インターネットから受信したデータをコンソールに出力するコンソール プログラムです。</span><span class="sxs-lookup"><span data-stu-id="a1da5-108">The sample is a console program that takes a URI from the command line, requests the resource at the URI, and then prints data to the console as it is received from the Internet.</span></span>  
   
- このプログラムでは、独自の用途がある 2 つのクラスを定義しています。非同期呼び出し全体にデータを渡す **RequestState** クラスと、インターネット リソースに対する非同期要求を実装する **ClientGetAsync** クラスです。  
+ <span data-ttu-id="a1da5-109">このプログラムでは、独自の用途がある 2 つのクラスを定義しています。非同期呼び出し全体にデータを渡す **RequestState** クラスと、インターネット リソースに対する非同期要求を実装する **ClientGetAsync** クラスです。</span><span class="sxs-lookup"><span data-stu-id="a1da5-109">The program defines two classes for its own use, the **RequestState** class, which passes data across asynchronous calls, and the **ClientGetAsync** class, which implements the asynchronous request to an Internet resource.</span></span>  
   
- **RequestState** クラスは、要求を処理する非同期メソッドの呼び出し全体について要求の状態を保持します。 たとえば、リソースに対する現在の要求と応答で受信したストリームを含む **WebRequest** および <xref:System.IO.Stream> インスタンス、インターネット リソースから現在受信しているデータを含むバッファー、完全な応答を含む <xref:System.Text.StringBuilder> があります。 <xref:System.AsyncCallback> メソッドが **WebRequest.BeginGetResponse** に登録されている場合、**RequestState** は *state* パラメーターとして渡されます。  
+ <span data-ttu-id="a1da5-110">**RequestState** クラスは、要求を処理する非同期メソッドの呼び出し全体について要求の状態を保持します。</span><span class="sxs-lookup"><span data-stu-id="a1da5-110">The **RequestState** class preserves the state of the request across calls to the asynchronous methods that service the request.</span></span> <span data-ttu-id="a1da5-111">たとえば、リソースに対する現在の要求と応答で受信したストリームを含む **WebRequest** および <xref:System.IO.Stream> インスタンス、インターネット リソースから現在受信しているデータを含むバッファー、完全な応答を含む <xref:System.Text.StringBuilder> があります。</span><span class="sxs-lookup"><span data-stu-id="a1da5-111">It contains **WebRequest** and <xref:System.IO.Stream> instances that contain the current request to the resource and the stream received in response, a buffer that contains the data currently received from the Internet resource, and a <xref:System.Text.StringBuilder> that contains the complete response.</span></span> <span data-ttu-id="a1da5-112"><xref:System.AsyncCallback> メソッドが **WebRequest.BeginGetResponse** に登録されている場合、**RequestState** は *state* パラメーターとして渡されます。</span><span class="sxs-lookup"><span data-stu-id="a1da5-112">A **RequestState**is passed as the *state* parameter when the <xref:System.AsyncCallback> method is registered with **WebRequest.BeginGetResponse**.</span></span>  
   
- **ClientGetAsync** クラスは、インターネット リソースに対する非同期要求を実装し、結果の応答をコンソールに出力します。 次の一覧で説明するメソッドとプロパティがあります。  
+ <span data-ttu-id="a1da5-113">**ClientGetAsync** クラスは、インターネット リソースに対する非同期要求を実装し、結果の応答をコンソールに出力します。</span><span class="sxs-lookup"><span data-stu-id="a1da5-113">The **ClientGetAsync** class implements an asynchronous request to an Internet resource and writes the resulting response to the console.</span></span> <span data-ttu-id="a1da5-114">次の一覧で説明するメソッドとプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="a1da5-114">It contains the methods and properties described in the following list.</span></span>  
   
--   `allDone` プロパティには、要求の完了を通知する <xref:System.Threading.ManualResetEvent> クラスのインスタンスが含まれています。  
+-   <span data-ttu-id="a1da5-115">`allDone` プロパティには、要求の完了を通知する <xref:System.Threading.ManualResetEvent> クラスのインスタンスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a1da5-115">The `allDone` property contains an instance of the <xref:System.Threading.ManualResetEvent> class that signals the completion of the request.</span></span>  
   
--   `Main()` メソッドは、コマンド ラインを読み取り、指定されたインターネット リソースの要求を開始します。 **WebRequest** `wreq` および **RequestState** `rs` を作成し、**BeginGetResponse** を呼び出して要求の処理を開始し、`allDone.WaitOne()` メソッドを呼び出して、コールバックが完了するまでアプリケーションが終了しないようにします。 インターネット リソースから応答を読み取ると、`Main()` はその応答をコンソールに出力し、アプリケーションは終了します。  
+-   <span data-ttu-id="a1da5-116">`Main()` メソッドは、コマンド ラインを読み取り、指定されたインターネット リソースの要求を開始します。</span><span class="sxs-lookup"><span data-stu-id="a1da5-116">The `Main()` method reads the command line and begins the request for the specified Internet resource.</span></span> <span data-ttu-id="a1da5-117">**WebRequest** `wreq` および **RequestState** `rs` を作成し、**BeginGetResponse** を呼び出して要求の処理を開始し、`allDone.WaitOne()` メソッドを呼び出して、コールバックが完了するまでアプリケーションが終了しないようにします。</span><span class="sxs-lookup"><span data-stu-id="a1da5-117">It creates the **WebRequest** `wreq` and the **RequestState** `rs`, calls **BeginGetResponse** to begin processing the request, and then calls the `allDone.WaitOne()`method so that the application will not exit until the callback is complete.</span></span> <span data-ttu-id="a1da5-118">インターネット リソースから応答を読み取ると、`Main()` はその応答をコンソールに出力し、アプリケーションは終了します。</span><span class="sxs-lookup"><span data-stu-id="a1da5-118">After the response is read from the Internet resource, `Main()` writes it to the console and the application ends.</span></span>  
   
--   `showusage()` メソッドは、コンソールにコマンド ライン例を出力します。 これは、コマンド ラインに URI が指定されていない場合に `Main()` から呼び出されます。  
+-   <span data-ttu-id="a1da5-119">`showusage()` メソッドは、コンソールにコマンド ライン例を出力します。</span><span class="sxs-lookup"><span data-stu-id="a1da5-119">The `showusage()` method writes an example command line on the console.</span></span> <span data-ttu-id="a1da5-120">これは、コマンド ラインに URI が指定されていない場合に `Main()` から呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="a1da5-120">It is called by `Main()` when no URI is provided on the command line.</span></span>  
   
--   `RespCallBack()` メソッドは、インターネット要求の非同期コールバック メソッドを実装します。 インターネット リソースからの応答を含む **WebResponse** インスタンスを作成し、応答ストリームを取得し、非同期にストリームからデータの読み取りを開始します。  
+-   <span data-ttu-id="a1da5-121">`RespCallBack()` メソッドは、インターネット要求の非同期コールバック メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="a1da5-121">The `RespCallBack()` method implements the asynchronous callback method for the Internet request.</span></span> <span data-ttu-id="a1da5-122">インターネット リソースからの応答を含む **WebResponse** インスタンスを作成し、応答ストリームを取得し、非同期にストリームからデータの読み取りを開始します。</span><span class="sxs-lookup"><span data-stu-id="a1da5-122">It creates the **WebResponse** instance containing the response from the Internet resource, gets the response stream, and then starts reading the data from the stream asynchronously.</span></span>  
   
--   `ReadCallBack()` メソッドは、応答ストリームを読み取るための非同期コールバック メソッドを実装します。 インターネット リソースから受信したデータを **RequestState** インスタンスの **ResponseData** プロパティに転送し、データが返されなくなるまで、応答ストリームの非同期読み取りを再び開始します。 すべてのデータが読み取られたら、`ReadCallBack()` は応答ストリームを終了し、`allDone.Set()` メソッドを呼び出して、応答全体が **ResponseData** 内にあることを示します。  
+-   <span data-ttu-id="a1da5-123">`ReadCallBack()` メソッドは、応答ストリームを読み取るための非同期コールバック メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="a1da5-123">The `ReadCallBack()` method implements the asynchronous callback method for reading the response stream.</span></span> <span data-ttu-id="a1da5-124">インターネット リソースから受信したデータを **RequestState** インスタンスの **ResponseData** プロパティに転送し、データが返されなくなるまで、応答ストリームの非同期読み取りを再び開始します。</span><span class="sxs-lookup"><span data-stu-id="a1da5-124">It transfers data received from the Internet resource into the **ResponseData** property of the **RequestState** instance, then starts another asynchronous read of the response stream until no more data is returned.</span></span> <span data-ttu-id="a1da5-125">すべてのデータが読み取られたら、`ReadCallBack()` は応答ストリームを終了し、`allDone.Set()` メソッドを呼び出して、応答全体が **ResponseData** 内にあることを示します。</span><span class="sxs-lookup"><span data-stu-id="a1da5-125">Once all the data has been read, `ReadCallBack()` closes the response stream and calls the `allDone.Set()` method to indicate that the entire response is present in **ResponseData**.</span></span>  
   
     > [!NOTE]
-    >  すべてのネットワーク ストリームが終了していることが重要です。 各要求と応答ストリームが終了していない場合、アプリケーションからサーバーへの接続が不足し、追加の要求を処理できなくなります。  
+    >  <span data-ttu-id="a1da5-126">すべてのネットワーク ストリームが終了していることが重要です。</span><span class="sxs-lookup"><span data-stu-id="a1da5-126">It is critical that all network streams are closed.</span></span> <span data-ttu-id="a1da5-127">各要求と応答ストリームが終了していない場合、アプリケーションからサーバーへの接続が不足し、追加の要求を処理できなくなります。</span><span class="sxs-lookup"><span data-stu-id="a1da5-127">If you do not close each request and response stream, your application will run out of connections to the server and be unable to process additional requests.</span></span>  
   
 ```csharp  
 using System;  
@@ -346,6 +343,5 @@ Class ClientGetAsync
 End Class  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [データの要求](../../../docs/framework/network-programming/requesting-data.md)
-
+## <a name="see-also"></a><span data-ttu-id="a1da5-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="a1da5-128">See Also</span></span>  
+ [<span data-ttu-id="a1da5-129">データの要求</span><span class="sxs-lookup"><span data-stu-id="a1da5-129">Requesting Data</span></span>](../../../docs/framework/network-programming/requesting-data.md)

@@ -5,172 +5,169 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - ETW, method events (CLR)
 - method events [.NET Framework]
 ms.assetid: 167a4459-bb6e-476c-9046-7920880f2bb5
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 353ae034381ab29787aba1c1c362f4c6fc57da7e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="method-etw-events"></a>メソッド ETW イベント
-<a name="top"></a> これらのイベントは、メソッド固有の情報を収集します。 これらのイベントのペイロードは、シンボルの解決に必要です。 さらに、これらのイベントは、メソッドが呼び出された回数などの有用な情報を提供します。  
+# <a name="method-etw-events"></a><span data-ttu-id="0722c-102">メソッド ETW イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-102">Method ETW Events</span></span>
+<span data-ttu-id="0722c-103"><a name="top"></a> これらのイベントは、メソッド固有の情報を収集します。</span><span class="sxs-lookup"><span data-stu-id="0722c-103"><a name="top"></a> These events collect information that is specific to methods.</span></span> <span data-ttu-id="0722c-104">これらのイベントのペイロードは、シンボルの解決に必要です。</span><span class="sxs-lookup"><span data-stu-id="0722c-104">The payload of these events is required for symbol resolution.</span></span> <span data-ttu-id="0722c-105">さらに、これらのイベントは、メソッドが呼び出された回数などの有用な情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="0722c-105">In addition, these events provide helpful information such as the number of times a method was called.</span></span>  
   
- すべてのメソッド イベントのレベルは「情報提供 (4)」です。 すべてのメソッド詳細イベントのレベルは「詳細 (5)」です。  
+ <span data-ttu-id="0722c-106">すべてのメソッド イベントのレベルは「情報提供 (4)」です。</span><span class="sxs-lookup"><span data-stu-id="0722c-106">All method events have a level of "Informational (4)".</span></span> <span data-ttu-id="0722c-107">すべてのメソッド詳細イベントのレベルは「詳細 (5)」です。</span><span class="sxs-lookup"><span data-stu-id="0722c-107">All method verbose events have a level of "Verbose (5)".</span></span>  
   
- すべてのメソッド イベントは、ランタイム プロバイダーのもとでは `JITKeyword` (0x10) キーワードまたは `NGenKeyword` (0x20) キーワードが発生させ、ランダウン プロバイダーのもとでは `JitRundownKeyword` (0x10) または `NGENRundownKeyword` (0x20) が発生させます。  
+ <span data-ttu-id="0722c-108">すべてのメソッド イベントは、ランタイム プロバイダーのもとでは `JITKeyword` (0x10) キーワードまたは `NGenKeyword` (0x20) キーワードが発生させ、ランダウン プロバイダーのもとでは `JitRundownKeyword` (0x10) または `NGENRundownKeyword` (0x20) が発生させます。</span><span class="sxs-lookup"><span data-stu-id="0722c-108">All method events are raised by the `JITKeyword` (0x10) keyword or the `NGenKeyword` (0x20) keyword under the runtime provider, or `JitRundownKeyword` (0x10) or `NGENRundownKeyword` (0x20) under the rundown provider.</span></span>  
   
- CLR メソッド イベントは、さらに次のように細分化されます。  
+ <span data-ttu-id="0722c-109">CLR メソッド イベントは、さらに次のように細分化されます。</span><span class="sxs-lookup"><span data-stu-id="0722c-109">CLR method events are further subdivided into the following:</span></span>  
   
--   [CLR メソッド イベント](#clr_method_events)  
+-   [<span data-ttu-id="0722c-110">CLR メソッド イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-110">CLR Method Events</span></span>](#clr_method_events)  
   
--   [CLR メソッド マーカー イベント](#clr_method_marker_events)  
+-   [<span data-ttu-id="0722c-111">CLR メソッド マーカー イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-111">CLR Method Marker Events</span></span>](#clr_method_marker_events)  
   
--   [CLR メソッド詳細イベント](#clr_method_verbose_events)  
+-   [<span data-ttu-id="0722c-112">CLR メソッド詳細イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-112">CLR Method Verbose Events</span></span>](#clr_method_verbose_events)  
   
--   [MethodJittingStarted イベント](#methodjittingstarted_event)  
+-   [<span data-ttu-id="0722c-113">MethodJittingStarted イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-113">MethodJittingStarted Event</span></span>](#methodjittingstarted_event)  
   
 <a name="clr_method_events"></a>   
-## <a name="clr-method-events"></a>CLR メソッド イベント  
- 次の表に、キーワードとレベルを示します。 (詳細については、「 [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」を参照してください)。  
+## <a name="clr-method-events"></a><span data-ttu-id="0722c-114">CLR メソッド イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-114">CLR Method Events</span></span>  
+ <span data-ttu-id="0722c-115">次の表に、キーワードとレベルを示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-115">The following table shows the keyword and level.</span></span> <span data-ttu-id="0722c-116">(詳細については、「 [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="0722c-116">(For more information, see [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)</span></span>  
   
-|イベントを発生させるキーワード|レベル|  
+|<span data-ttu-id="0722c-117">イベントを発生させるキーワード</span><span class="sxs-lookup"><span data-stu-id="0722c-117">Keyword for raising the event</span></span>|<span data-ttu-id="0722c-118">レベル</span><span class="sxs-lookup"><span data-stu-id="0722c-118">Level</span></span>|  
 |-----------------------------------|-----------|  
-|`JITKeyword` (0x10) ランタイム プロバイダー|情報提供 (4)|  
-|`NGenKeyword` (0x20) ランタイム プロバイダー|情報提供 (4)|  
-|`JitRundownKeyword` (0x10) ランダウン プロバイダー|情報提供 (4)|  
-|`NGENRundownKeyword` (0x20) ランダウン プロバイダー|情報提供 (4)|  
+|<span data-ttu-id="0722c-119">`JITKeyword` (0x10) ランタイム プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-119">`JITKeyword` (0x10) runtime provider</span></span>|<span data-ttu-id="0722c-120">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="0722c-120">Informational (4)</span></span>|  
+|<span data-ttu-id="0722c-121">`NGenKeyword` (0x20) ランタイム プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-121">`NGenKeyword` (0x20) runtime provider</span></span>|<span data-ttu-id="0722c-122">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="0722c-122">Informational (4)</span></span>|  
+|<span data-ttu-id="0722c-123">`JitRundownKeyword` (0x10) ランダウン プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-123">`JitRundownKeyword` (0x10) rundown provider</span></span>|<span data-ttu-id="0722c-124">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="0722c-124">Informational (4)</span></span>|  
+|<span data-ttu-id="0722c-125">`NGENRundownKeyword` (0x20) ランダウン プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-125">`NGENRundownKeyword` (0x20) rundown provider</span></span>|<span data-ttu-id="0722c-126">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="0722c-126">Informational (4)</span></span>|  
   
- 次の表に、イベント情報を示します。  
+ <span data-ttu-id="0722c-127">次の表に、イベント情報を示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-127">The following table shows the event information.</span></span>  
   
-|イベント|イベント ID|説明|  
+|<span data-ttu-id="0722c-128">イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-128">Event</span></span>|<span data-ttu-id="0722c-129">イベント ID</span><span class="sxs-lookup"><span data-stu-id="0722c-129">Event ID</span></span>|<span data-ttu-id="0722c-130">説明</span><span class="sxs-lookup"><span data-stu-id="0722c-130">Description</span></span>|  
 |-----------|--------------|-----------------|  
-|`MethodLoad_V1`|136|メソッドが Just-In-Time 読み込み (JIT 読み込み) される時点、または NGEN イメージが読み込まれる時点で発生します。 動的メソッドとジェネリック メソッドは、メソッドの読み込みにこのバージョンを使用しません。 JIT ヘルパーがこのバージョンを使用することはありません。|  
-|`MethodUnLoad_V1`|137|モジュールがアンロードされるとき、またはアプリケーション ドメインが破棄されるときに発生します。 動的メソッドがメソッドのアンロードにこのバージョンを使用することはありません。|  
-|`MethodDCStart_V1`|137|開始ランダウン中にメソッドを列挙します。|  
-|`MethodDCEnd_V1`|138|終了ランダウン中にメソッドを列挙します。|  
+|`MethodLoad_V1`|<span data-ttu-id="0722c-131">136</span><span class="sxs-lookup"><span data-stu-id="0722c-131">136</span></span>|<span data-ttu-id="0722c-132">メソッドが Just-In-Time 読み込み (JIT 読み込み) される時点、または NGEN イメージが読み込まれる時点で発生します。</span><span class="sxs-lookup"><span data-stu-id="0722c-132">Raised when a method is just-in-time loaded (JIT-loaded) or an NGEN image is loaded.</span></span> <span data-ttu-id="0722c-133">動的メソッドとジェネリック メソッドは、メソッドの読み込みにこのバージョンを使用しません。</span><span class="sxs-lookup"><span data-stu-id="0722c-133">Dynamic and generic methods do not use this version for method loads.</span></span> <span data-ttu-id="0722c-134">JIT ヘルパーがこのバージョンを使用することはありません。</span><span class="sxs-lookup"><span data-stu-id="0722c-134">JIT helpers never use this version.</span></span>|  
+|`MethodUnLoad_V1`|<span data-ttu-id="0722c-135">137</span><span class="sxs-lookup"><span data-stu-id="0722c-135">137</span></span>|<span data-ttu-id="0722c-136">モジュールがアンロードされるとき、またはアプリケーション ドメインが破棄されるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="0722c-136">Raised when a module is unloaded, or an application domain is destroyed.</span></span> <span data-ttu-id="0722c-137">動的メソッドがメソッドのアンロードにこのバージョンを使用することはありません。</span><span class="sxs-lookup"><span data-stu-id="0722c-137">Dynamic methods never use this version for method unloads.</span></span>|  
+|`MethodDCStart_V1`|<span data-ttu-id="0722c-138">137</span><span class="sxs-lookup"><span data-stu-id="0722c-138">137</span></span>|<span data-ttu-id="0722c-139">開始ランダウン中にメソッドを列挙します。</span><span class="sxs-lookup"><span data-stu-id="0722c-139">Enumerates methods during a start rundown.</span></span>|  
+|`MethodDCEnd_V1`|<span data-ttu-id="0722c-140">138</span><span class="sxs-lookup"><span data-stu-id="0722c-140">138</span></span>|<span data-ttu-id="0722c-141">終了ランダウン中にメソッドを列挙します。</span><span class="sxs-lookup"><span data-stu-id="0722c-141">Enumerates methods during an end rundown.</span></span>|  
   
- 次の表に、イベント データを示します。  
+ <span data-ttu-id="0722c-142">次の表に、イベント データを示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-142">The following table shows the event data.</span></span>  
   
-|フィールド名|データ型|説明|  
+|<span data-ttu-id="0722c-143">フィールド名</span><span class="sxs-lookup"><span data-stu-id="0722c-143">Field name</span></span>|<span data-ttu-id="0722c-144">データ型</span><span class="sxs-lookup"><span data-stu-id="0722c-144">Data type</span></span>|<span data-ttu-id="0722c-145">説明</span><span class="sxs-lookup"><span data-stu-id="0722c-145">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|MethodID|win:UInt64|メソッドの一意の識別子。 JIT ヘルパー メソッドの場合、これはメソッドの開始アドレスに設定されます。|  
-|ModuleID|win:UInt64|このメソッドが属するモジュールの識別子 (JIT ヘルパーの場合は 0)。|  
-|MethodStartAddress|win:UInt64|メソッドの開始アドレス。|  
-|MethodSize|win:UInt32|メソッドのサイズ。|  
-|MethodToken|win:UInt32|動的メソッドおよび JIT ヘルパーの場合は 0。|  
-|MethodFlags|win:UInt32|0x1: 動的メソッド。<br /><br /> 0x2: ジェネリック メソッド。<br /><br /> 0x4: JIT コンパイル済みコード メソッド (それ以外の場合は NGEN ネイティブ イメージ コード)。<br /><br /> 0x8: ヘルパー メソッド。|  
-|ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
+|<span data-ttu-id="0722c-146">MethodID</span><span class="sxs-lookup"><span data-stu-id="0722c-146">MethodID</span></span>|<span data-ttu-id="0722c-147">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="0722c-147">win:UInt64</span></span>|<span data-ttu-id="0722c-148">メソッドの一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="0722c-148">Unique identifier of a method.</span></span> <span data-ttu-id="0722c-149">JIT ヘルパー メソッドの場合、これはメソッドの開始アドレスに設定されます。</span><span class="sxs-lookup"><span data-stu-id="0722c-149">For JIT helper methods, this is set to the start address of the method.</span></span>|  
+|<span data-ttu-id="0722c-150">ModuleID</span><span class="sxs-lookup"><span data-stu-id="0722c-150">ModuleID</span></span>|<span data-ttu-id="0722c-151">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="0722c-151">win:UInt64</span></span>|<span data-ttu-id="0722c-152">このメソッドが属するモジュールの識別子 (JIT ヘルパーの場合は 0)。</span><span class="sxs-lookup"><span data-stu-id="0722c-152">Identifier of the module to which this method belongs (0 for JIT helpers).</span></span>|  
+|<span data-ttu-id="0722c-153">MethodStartAddress</span><span class="sxs-lookup"><span data-stu-id="0722c-153">MethodStartAddress</span></span>|<span data-ttu-id="0722c-154">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="0722c-154">win:UInt64</span></span>|<span data-ttu-id="0722c-155">メソッドの開始アドレス。</span><span class="sxs-lookup"><span data-stu-id="0722c-155">Start address of the method.</span></span>|  
+|<span data-ttu-id="0722c-156">MethodSize</span><span class="sxs-lookup"><span data-stu-id="0722c-156">MethodSize</span></span>|<span data-ttu-id="0722c-157">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="0722c-157">win:UInt32</span></span>|<span data-ttu-id="0722c-158">メソッドのサイズ。</span><span class="sxs-lookup"><span data-stu-id="0722c-158">Size of the method.</span></span>|  
+|<span data-ttu-id="0722c-159">MethodToken</span><span class="sxs-lookup"><span data-stu-id="0722c-159">MethodToken</span></span>|<span data-ttu-id="0722c-160">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="0722c-160">win:UInt32</span></span>|<span data-ttu-id="0722c-161">動的メソッドおよび JIT ヘルパーの場合は 0。</span><span class="sxs-lookup"><span data-stu-id="0722c-161">0 for dynamic methods and JIT helpers.</span></span>|  
+|<span data-ttu-id="0722c-162">MethodFlags</span><span class="sxs-lookup"><span data-stu-id="0722c-162">MethodFlags</span></span>|<span data-ttu-id="0722c-163">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="0722c-163">win:UInt32</span></span>|<span data-ttu-id="0722c-164">0x1: 動的メソッド。</span><span class="sxs-lookup"><span data-stu-id="0722c-164">0x1: Dynamic method.</span></span><br /><br /> <span data-ttu-id="0722c-165">0x2: ジェネリック メソッド。</span><span class="sxs-lookup"><span data-stu-id="0722c-165">0x2: Generic method.</span></span><br /><br /> <span data-ttu-id="0722c-166">0x4: JIT コンパイル済みコード メソッド (それ以外の場合は NGEN ネイティブ イメージ コード)。</span><span class="sxs-lookup"><span data-stu-id="0722c-166">0x4: JIT-compiled code method (otherwise NGEN native image code).</span></span><br /><br /> <span data-ttu-id="0722c-167">0x8: ヘルパー メソッド。</span><span class="sxs-lookup"><span data-stu-id="0722c-167">0x8: Helper method.</span></span>|  
+|<span data-ttu-id="0722c-168">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="0722c-168">ClrInstanceID</span></span>|<span data-ttu-id="0722c-169">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="0722c-169">win:UInt16</span></span>|<span data-ttu-id="0722c-170">CLR または CoreCLR のインスタンスの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="0722c-170">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="0722c-171">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="0722c-171">Back to top</span></span>](#top)  
   
 <a name="clr_method_marker_events"></a>   
-## <a name="clr-method-marker-events"></a>CLR メソッド マーカー イベント  
- これらのイベントはランダウン プロバイダーのもとでしか発生しません。 これらは、開始ランダウンまたは終了ランダウン中にメソッド列挙体の終わりを示します。 (つまり、 `NGENRundownKeyword`、 `JitRundownKeyword`、 `LoaderRundownKeyword`、または `AppDomainResourceManagementRundownKeyword` のキーワードが有効な場合に発生します。)  
+## <a name="clr-method-marker-events"></a><span data-ttu-id="0722c-172">CLR メソッド マーカー イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-172">CLR Method Marker Events</span></span>  
+ <span data-ttu-id="0722c-173">これらのイベントはランダウン プロバイダーのもとでしか発生しません。</span><span class="sxs-lookup"><span data-stu-id="0722c-173">These events are raised only under the rundown provider.</span></span> <span data-ttu-id="0722c-174">これらは、開始ランダウンまたは終了ランダウン中にメソッド列挙体の終わりを示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-174">They signify the end of method enumeration during a start or end rundown.</span></span> <span data-ttu-id="0722c-175">(つまり、 `NGENRundownKeyword`、 `JitRundownKeyword`、 `LoaderRundownKeyword`、または `AppDomainResourceManagementRundownKeyword` のキーワードが有効な場合に発生します。)</span><span class="sxs-lookup"><span data-stu-id="0722c-175">(That is, they are raised when the `NGENRundownKeyword`, `JitRundownKeyword`, `LoaderRundownKeyword`, or `AppDomainResourceManagementRundownKeyword` keyword is enabled.)</span></span>  
   
- 次の表に、キーワードとレベルを示します。  
+ <span data-ttu-id="0722c-176">次の表に、キーワードとレベルを示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-176">The following table shows the keyword and level.</span></span>  
   
-|イベントを発生させるキーワード|レベル|  
+|<span data-ttu-id="0722c-177">イベントを発生させるキーワード</span><span class="sxs-lookup"><span data-stu-id="0722c-177">Keyword for raising the event</span></span>|<span data-ttu-id="0722c-178">レベル</span><span class="sxs-lookup"><span data-stu-id="0722c-178">Level</span></span>|  
 |-----------------------------------|-----------|  
-|`AppDomainResourceManagementRundownKeyword` (0x800) ランダウン プロバイダー|情報提供 (4)|  
-|`JitRundownKeyword` (0x10) ランダウン プロバイダー|情報提供 (4)|  
-|`NGENRundownKeyword` (0x20) ランダウン プロバイダー|情報提供 (4)|  
+|<span data-ttu-id="0722c-179">`AppDomainResourceManagementRundownKeyword` (0x800) ランダウン プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-179">`AppDomainResourceManagementRundownKeyword` (0x800) rundown provider</span></span>|<span data-ttu-id="0722c-180">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="0722c-180">Informational (4)</span></span>|  
+|<span data-ttu-id="0722c-181">`JitRundownKeyword` (0x10) ランダウン プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-181">`JitRundownKeyword` (0x10) rundown provider</span></span>|<span data-ttu-id="0722c-182">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="0722c-182">Informational (4)</span></span>|  
+|<span data-ttu-id="0722c-183">`NGENRundownKeyword` (0x20) ランダウン プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-183">`NGENRundownKeyword` (0x20) rundown provider</span></span>|<span data-ttu-id="0722c-184">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="0722c-184">Informational (4)</span></span>|  
   
- 次の表に、イベント情報を示します。  
+ <span data-ttu-id="0722c-185">次の表に、イベント情報を示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-185">The following table shows the event information.</span></span>  
   
-|イベント|イベント ID|説明|  
+|<span data-ttu-id="0722c-186">イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-186">Event</span></span>|<span data-ttu-id="0722c-187">イベント ID</span><span class="sxs-lookup"><span data-stu-id="0722c-187">Event ID</span></span>|<span data-ttu-id="0722c-188">説明</span><span class="sxs-lookup"><span data-stu-id="0722c-188">Desciption</span></span>|  
 |-----------|--------------|----------------|  
-|`DCStartInit_V1`|147|開始ランダウン中に列挙体の始まりの前に送信されます。|  
-|`DCStartComplete_V1`|145|開始ランダウン中に列挙体の終わりに送信されます。|  
-|`DCEndInit_V1`|148|終了ランダウン中に列挙体の始まりの前に送信されます。|  
-|`DCEndComplete_V1`|146|終了ランダウン中に列挙体の終わりに送信されます。|  
+|`DCStartInit_V1`|<span data-ttu-id="0722c-189">147</span><span class="sxs-lookup"><span data-stu-id="0722c-189">147</span></span>|<span data-ttu-id="0722c-190">開始ランダウン中に列挙体の始まりの前に送信されます。</span><span class="sxs-lookup"><span data-stu-id="0722c-190">Sent before the start of the enumeration during a start rundown.</span></span>|  
+|`DCStartComplete_V1`|<span data-ttu-id="0722c-191">145</span><span class="sxs-lookup"><span data-stu-id="0722c-191">145</span></span>|<span data-ttu-id="0722c-192">開始ランダウン中に列挙体の終わりに送信されます。</span><span class="sxs-lookup"><span data-stu-id="0722c-192">Sent at the end of the enumeration during a start rundown.</span></span>|  
+|`DCEndInit_V1`|<span data-ttu-id="0722c-193">148</span><span class="sxs-lookup"><span data-stu-id="0722c-193">148</span></span>|<span data-ttu-id="0722c-194">終了ランダウン中に列挙体の始まりの前に送信されます。</span><span class="sxs-lookup"><span data-stu-id="0722c-194">Sent before the start of the enumeration during an end rundown.</span></span>|  
+|`DCEndComplete_V1`|<span data-ttu-id="0722c-195">146</span><span class="sxs-lookup"><span data-stu-id="0722c-195">146</span></span>|<span data-ttu-id="0722c-196">終了ランダウン中に列挙体の終わりに送信されます。</span><span class="sxs-lookup"><span data-stu-id="0722c-196">Sent at the end of the enumeration during an end rundown.</span></span>|  
   
- 次の表に、イベント データを示します。  
+ <span data-ttu-id="0722c-197">次の表に、イベント データを示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-197">The following table shows the event data.</span></span>  
   
-|フィールド名|データ型|説明|  
+|<span data-ttu-id="0722c-198">フィールド名</span><span class="sxs-lookup"><span data-stu-id="0722c-198">Field name</span></span>|<span data-ttu-id="0722c-199">データ型</span><span class="sxs-lookup"><span data-stu-id="0722c-199">Data type</span></span>|<span data-ttu-id="0722c-200">説明</span><span class="sxs-lookup"><span data-stu-id="0722c-200">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
+|<span data-ttu-id="0722c-201">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="0722c-201">ClrInstanceID</span></span>|<span data-ttu-id="0722c-202">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="0722c-202">win:UInt16</span></span>|<span data-ttu-id="0722c-203">CLR または CoreCLR のインスタンスの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="0722c-203">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="0722c-204">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="0722c-204">Back to top</span></span>](#top)  
   
 <a name="clr_method_verbose_events"></a>   
-## <a name="clr-method-verbose-events"></a>CLR メソッド詳細イベント  
- 次の表に、キーワードとレベルを示します。  
+## <a name="clr-method-verbose-events"></a><span data-ttu-id="0722c-205">CLR メソッド詳細イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-205">CLR Method Verbose Events</span></span>  
+ <span data-ttu-id="0722c-206">次の表に、キーワードとレベルを示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-206">The following table shows the keyword and level.</span></span>  
   
-|イベントを発生させるキーワード|レベル|  
+|<span data-ttu-id="0722c-207">イベントを発生させるキーワード</span><span class="sxs-lookup"><span data-stu-id="0722c-207">Keyword for raising the event</span></span>|<span data-ttu-id="0722c-208">レベル</span><span class="sxs-lookup"><span data-stu-id="0722c-208">Level</span></span>|  
 |-----------------------------------|-----------|  
-|`JITKeyword` (0x10) ランタイム プロバイダー|詳細 (5)|  
-|`NGenKeyword` (0x20) ランタイム プロバイダー|詳細 (5)|  
-|`JitRundownKeyword` (0x10) ランダウン プロバイダー|詳細 (5)|  
-|`NGENRundownKeyword` (0x20) ランダウン プロバイダー|詳細 (5)|  
+|<span data-ttu-id="0722c-209">`JITKeyword` (0x10) ランタイム プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-209">`JITKeyword` (0x10) runtime provider</span></span>|<span data-ttu-id="0722c-210">詳細 (5)</span><span class="sxs-lookup"><span data-stu-id="0722c-210">Verbose (5)</span></span>|  
+|<span data-ttu-id="0722c-211">`NGenKeyword` (0x20) ランタイム プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-211">`NGenKeyword` (0x20) runtime provider</span></span>|<span data-ttu-id="0722c-212">詳細 (5)</span><span class="sxs-lookup"><span data-stu-id="0722c-212">Verbose (5)</span></span>|  
+|<span data-ttu-id="0722c-213">`JitRundownKeyword` (0x10) ランダウン プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-213">`JitRundownKeyword` (0x10) rundown provider</span></span>|<span data-ttu-id="0722c-214">詳細 (5)</span><span class="sxs-lookup"><span data-stu-id="0722c-214">Verbose (5)</span></span>|  
+|<span data-ttu-id="0722c-215">`NGENRundownKeyword` (0x20) ランダウン プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-215">`NGENRundownKeyword` (0x20) rundown provider</span></span>|<span data-ttu-id="0722c-216">詳細 (5)</span><span class="sxs-lookup"><span data-stu-id="0722c-216">Verbose (5)</span></span>|  
   
- 次の表に、イベント情報を示します。  
+ <span data-ttu-id="0722c-217">次の表に、イベント情報を示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-217">The following table shows the event information.</span></span>  
   
-|イベント|イベント ID|説明|  
+|<span data-ttu-id="0722c-218">イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-218">Event</span></span>|<span data-ttu-id="0722c-219">イベント ID</span><span class="sxs-lookup"><span data-stu-id="0722c-219">Event ID</span></span>|<span data-ttu-id="0722c-220">説明</span><span class="sxs-lookup"><span data-stu-id="0722c-220">Description</span></span>|  
 |-----------|--------------|-----------------|  
-|`MethodLoadVerbose_V1`|143|メソッドが JIT 読み込みされるとき、または NGEN イメージが読み込まれるときに発生します。 動的メソッドとジェネリック メソッドは、メソッドの読み込みに常にこのバージョンを使用します。 JIT ヘルパーは常にこのバージョンを使用します。|  
-|`MethodUnLoadVerbose_V1`|144|動的メソッドが破棄されるとき、またはモジュールがアンロードされるとき、あるいはアプリケーション ドメインが破棄されるときに発生します。 動的メソッドは、メソッドのアンロードに常にこのバージョンを使用します。|  
-|`MethodDCStartVerbose_V1`|141|開始ランダウン中にメソッドを列挙します。|  
-|`MethodDCEndVerbose_V1`|142|終了ランダウン中にメソッドを列挙します。|  
+|`MethodLoadVerbose_V1`|<span data-ttu-id="0722c-221">143</span><span class="sxs-lookup"><span data-stu-id="0722c-221">143</span></span>|<span data-ttu-id="0722c-222">メソッドが JIT 読み込みされるとき、または NGEN イメージが読み込まれるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="0722c-222">Raised when a method is JIT-loaded or an NGEN image is loaded.</span></span> <span data-ttu-id="0722c-223">動的メソッドとジェネリック メソッドは、メソッドの読み込みに常にこのバージョンを使用します。</span><span class="sxs-lookup"><span data-stu-id="0722c-223">Dynamic and generic methods always use this version for method loads.</span></span> <span data-ttu-id="0722c-224">JIT ヘルパーは常にこのバージョンを使用します。</span><span class="sxs-lookup"><span data-stu-id="0722c-224">JIT helpers always use this version.</span></span>|  
+|`MethodUnLoadVerbose_V1`|<span data-ttu-id="0722c-225">144</span><span class="sxs-lookup"><span data-stu-id="0722c-225">144</span></span>|<span data-ttu-id="0722c-226">動的メソッドが破棄されるとき、またはモジュールがアンロードされるとき、あるいはアプリケーション ドメインが破棄されるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="0722c-226">Raised when a dynamic method is destroyed, a module is unloaded, or an application domain is destroyed.</span></span> <span data-ttu-id="0722c-227">動的メソッドは、メソッドのアンロードに常にこのバージョンを使用します。</span><span class="sxs-lookup"><span data-stu-id="0722c-227">Dynamic methods always use this version for method unloads.</span></span>|  
+|`MethodDCStartVerbose_V1`|<span data-ttu-id="0722c-228">141</span><span class="sxs-lookup"><span data-stu-id="0722c-228">141</span></span>|<span data-ttu-id="0722c-229">開始ランダウン中にメソッドを列挙します。</span><span class="sxs-lookup"><span data-stu-id="0722c-229">Enumerates methods during a start rundown.</span></span>|  
+|`MethodDCEndVerbose_V1`|<span data-ttu-id="0722c-230">142</span><span class="sxs-lookup"><span data-stu-id="0722c-230">142</span></span>|<span data-ttu-id="0722c-231">終了ランダウン中にメソッドを列挙します。</span><span class="sxs-lookup"><span data-stu-id="0722c-231">Enumerates methods during an end rundown.</span></span>|  
   
- 次の表に、イベント データを示します。  
+ <span data-ttu-id="0722c-232">次の表に、イベント データを示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-232">The following table shows the event data.</span></span>  
   
-|フィールド名|データ型|説明|  
+|<span data-ttu-id="0722c-233">フィールド名</span><span class="sxs-lookup"><span data-stu-id="0722c-233">Field name</span></span>|<span data-ttu-id="0722c-234">データ型</span><span class="sxs-lookup"><span data-stu-id="0722c-234">Data type</span></span>|<span data-ttu-id="0722c-235">説明</span><span class="sxs-lookup"><span data-stu-id="0722c-235">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|MethodID|win:UInt64|メソッドの一意の識別子。 JIT ヘルパー メソッドの場合は、メソッドの開始アドレスに設定されます。|  
-|ModuleID|win:UInt64|このメソッドが属するモジュールの識別子 (JIT ヘルパーの場合は 0)。|  
-|MethodStartAddress|win:UInt64|開始アドレス。|  
-|MethodSize|win:UInt32|メソッドの長さ。|  
-|MethodToken|win:UInt32|動的メソッドおよび JIT ヘルパーの場合は 0。|  
-|MethodFlags|win:UInt32|0x1: 動的メソッド。<br /><br /> 0x2: ジェネリック メソッド。<br /><br /> 0x4: JIT コンパイル済みメソッド (それ以外の場合は NGen.exe により生成)<br /><br /> 0x8: ヘルパー メソッド。|  
-|MethodNameSpace|win:UnicodeString|メソッドに関連付けられた完全な名前空間名。|  
-|MethodName|win:UnicodeString|メソッドに関連付けられた完全クラス名。|  
-|MethodSignature|win:UnicodeString|メソッドのシグネチャ (型名のコンマ区切りリスト)。|  
-|ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
+|<span data-ttu-id="0722c-236">MethodID</span><span class="sxs-lookup"><span data-stu-id="0722c-236">MethodID</span></span>|<span data-ttu-id="0722c-237">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="0722c-237">win:UInt64</span></span>|<span data-ttu-id="0722c-238">メソッドの一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="0722c-238">Unique identifier of the method.</span></span> <span data-ttu-id="0722c-239">JIT ヘルパー メソッドの場合は、メソッドの開始アドレスに設定されます。</span><span class="sxs-lookup"><span data-stu-id="0722c-239">For JIT helper methods, set to the start address of the method.</span></span>|  
+|<span data-ttu-id="0722c-240">ModuleID</span><span class="sxs-lookup"><span data-stu-id="0722c-240">ModuleID</span></span>|<span data-ttu-id="0722c-241">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="0722c-241">win:UInt64</span></span>|<span data-ttu-id="0722c-242">このメソッドが属するモジュールの識別子 (JIT ヘルパーの場合は 0)。</span><span class="sxs-lookup"><span data-stu-id="0722c-242">Identifier of the module to which this method belongs (0 for JIT helpers).</span></span>|  
+|<span data-ttu-id="0722c-243">MethodStartAddress</span><span class="sxs-lookup"><span data-stu-id="0722c-243">MethodStartAddress</span></span>|<span data-ttu-id="0722c-244">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="0722c-244">win:UInt64</span></span>|<span data-ttu-id="0722c-245">開始アドレス。</span><span class="sxs-lookup"><span data-stu-id="0722c-245">Start address.</span></span>|  
+|<span data-ttu-id="0722c-246">MethodSize</span><span class="sxs-lookup"><span data-stu-id="0722c-246">MethodSize</span></span>|<span data-ttu-id="0722c-247">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="0722c-247">win:UInt32</span></span>|<span data-ttu-id="0722c-248">メソッドの長さ。</span><span class="sxs-lookup"><span data-stu-id="0722c-248">Method length.</span></span>|  
+|<span data-ttu-id="0722c-249">MethodToken</span><span class="sxs-lookup"><span data-stu-id="0722c-249">MethodToken</span></span>|<span data-ttu-id="0722c-250">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="0722c-250">win:UInt32</span></span>|<span data-ttu-id="0722c-251">動的メソッドおよび JIT ヘルパーの場合は 0。</span><span class="sxs-lookup"><span data-stu-id="0722c-251">0 for dynamic methods and JIT helpers.</span></span>|  
+|<span data-ttu-id="0722c-252">MethodFlags</span><span class="sxs-lookup"><span data-stu-id="0722c-252">MethodFlags</span></span>|<span data-ttu-id="0722c-253">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="0722c-253">win:UInt32</span></span>|<span data-ttu-id="0722c-254">0x1: 動的メソッド。</span><span class="sxs-lookup"><span data-stu-id="0722c-254">0x1: Dynamic method.</span></span><br /><br /> <span data-ttu-id="0722c-255">0x2: ジェネリック メソッド。</span><span class="sxs-lookup"><span data-stu-id="0722c-255">0x2: Generic method.</span></span><br /><br /> <span data-ttu-id="0722c-256">0x4: JIT コンパイル済みメソッド (それ以外の場合は NGen.exe により生成)</span><span class="sxs-lookup"><span data-stu-id="0722c-256">0x4: JIT-compiled method (otherwise, generated by NGen.exe)</span></span><br /><br /> <span data-ttu-id="0722c-257">0x8: ヘルパー メソッド。</span><span class="sxs-lookup"><span data-stu-id="0722c-257">0x8: Helper method.</span></span>|  
+|<span data-ttu-id="0722c-258">MethodNameSpace</span><span class="sxs-lookup"><span data-stu-id="0722c-258">MethodNameSpace</span></span>|<span data-ttu-id="0722c-259">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="0722c-259">win:UnicodeString</span></span>|<span data-ttu-id="0722c-260">メソッドに関連付けられた完全な名前空間名。</span><span class="sxs-lookup"><span data-stu-id="0722c-260">Full namespace name associated with the method.</span></span>|  
+|<span data-ttu-id="0722c-261">MethodName</span><span class="sxs-lookup"><span data-stu-id="0722c-261">MethodName</span></span>|<span data-ttu-id="0722c-262">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="0722c-262">win:UnicodeString</span></span>|<span data-ttu-id="0722c-263">メソッドに関連付けられた完全クラス名。</span><span class="sxs-lookup"><span data-stu-id="0722c-263">Full class name associated with the method.</span></span>|  
+|<span data-ttu-id="0722c-264">MethodSignature</span><span class="sxs-lookup"><span data-stu-id="0722c-264">MethodSignature</span></span>|<span data-ttu-id="0722c-265">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="0722c-265">win:UnicodeString</span></span>|<span data-ttu-id="0722c-266">メソッドのシグネチャ (型名のコンマ区切りリスト)。</span><span class="sxs-lookup"><span data-stu-id="0722c-266">Signature of the method (comma-separated list of type names).</span></span>|  
+|<span data-ttu-id="0722c-267">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="0722c-267">ClrInstanceID</span></span>|<span data-ttu-id="0722c-268">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="0722c-268">win:UInt16</span></span>|<span data-ttu-id="0722c-269">CLR または CoreCLR のインスタンスの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="0722c-269">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="0722c-270">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="0722c-270">Back to top</span></span>](#top)  
   
 <a name="methodjittingstarted_event"></a>   
-## <a name="methodjittingstarted-event"></a>MethodJittingStarted イベント  
- 次の表に、キーワードとレベルを示します。  
+## <a name="methodjittingstarted-event"></a><span data-ttu-id="0722c-271">MethodJittingStarted イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-271">MethodJittingStarted Event</span></span>  
+ <span data-ttu-id="0722c-272">次の表に、キーワードとレベルを示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-272">The following table shows the keyword and level.</span></span>  
   
-|イベントを発生させるキーワード|レベル|  
+|<span data-ttu-id="0722c-273">イベントを発生させるキーワード</span><span class="sxs-lookup"><span data-stu-id="0722c-273">Keyword for raising the event</span></span>|<span data-ttu-id="0722c-274">レベル</span><span class="sxs-lookup"><span data-stu-id="0722c-274">Level</span></span>|  
 |-----------------------------------|-----------|  
-|`JITKeyword` (0x10) ランタイム プロバイダー|詳細 (5)|  
-|`NGenKeyword` (0x20) ランタイム プロバイダー|詳細 (5)|  
-|`JitRundownKeyword` (0x10) ランダウン プロバイダー|詳細 (5)|  
-|`NGENRundownKeyword` (0x20) ランダウン プロバイダー|詳細 (5)|  
+|<span data-ttu-id="0722c-275">`JITKeyword` (0x10) ランタイム プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-275">`JITKeyword` (0x10) runtime provider</span></span>|<span data-ttu-id="0722c-276">詳細 (5)</span><span class="sxs-lookup"><span data-stu-id="0722c-276">Verbose (5)</span></span>|  
+|<span data-ttu-id="0722c-277">`NGenKeyword` (0x20) ランタイム プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-277">`NGenKeyword` (0x20) runtime provider</span></span>|<span data-ttu-id="0722c-278">詳細 (5)</span><span class="sxs-lookup"><span data-stu-id="0722c-278">Verbose (5)</span></span>|  
+|<span data-ttu-id="0722c-279">`JitRundownKeyword` (0x10) ランダウン プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-279">`JitRundownKeyword` (0x10) rundown provider</span></span>|<span data-ttu-id="0722c-280">詳細 (5)</span><span class="sxs-lookup"><span data-stu-id="0722c-280">Verbose (5)</span></span>|  
+|<span data-ttu-id="0722c-281">`NGENRundownKeyword` (0x20) ランダウン プロバイダー</span><span class="sxs-lookup"><span data-stu-id="0722c-281">`NGENRundownKeyword` (0x20) rundown provider</span></span>|<span data-ttu-id="0722c-282">詳細 (5)</span><span class="sxs-lookup"><span data-stu-id="0722c-282">Verbose (5)</span></span>|  
   
- 次の表に、イベント情報を示します。  
+ <span data-ttu-id="0722c-283">次の表に、イベント情報を示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-283">The following table shows the event information.</span></span>  
   
-|イベント|イベント ID|説明|  
+|<span data-ttu-id="0722c-284">イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-284">Event</span></span>|<span data-ttu-id="0722c-285">イベント ID</span><span class="sxs-lookup"><span data-stu-id="0722c-285">Event ID</span></span>|<span data-ttu-id="0722c-286">説明</span><span class="sxs-lookup"><span data-stu-id="0722c-286">Description</span></span>|  
 |-----------|--------------|-----------------|  
-|`MethodJittingStarted`|145|メソッドが JIT コンパイルされているときに発生します。|  
+|`MethodJittingStarted`|<span data-ttu-id="0722c-287">145</span><span class="sxs-lookup"><span data-stu-id="0722c-287">145</span></span>|<span data-ttu-id="0722c-288">メソッドが JIT コンパイルされているときに発生します。</span><span class="sxs-lookup"><span data-stu-id="0722c-288">Raised when a method is being JIT-compiled.</span></span>|  
   
- 次の表に、イベント データを示します。  
+ <span data-ttu-id="0722c-289">次の表に、イベント データを示します。</span><span class="sxs-lookup"><span data-stu-id="0722c-289">The following table shows the event data.</span></span>  
   
-|フィールド名|データ型|説明|  
+|<span data-ttu-id="0722c-290">フィールド名</span><span class="sxs-lookup"><span data-stu-id="0722c-290">Field name</span></span>|<span data-ttu-id="0722c-291">データ型</span><span class="sxs-lookup"><span data-stu-id="0722c-291">Data type</span></span>|<span data-ttu-id="0722c-292">説明</span><span class="sxs-lookup"><span data-stu-id="0722c-292">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|MethodID|win:UInt64|メソッドの一意の識別子。|  
-|ModuleID|win:UInt64|このメソッドが属するモジュールの識別子。|  
-|MethodToken|win:UInt32|動的メソッドおよび JIT ヘルパーの場合は 0。|  
-|MethodILSize|win:UInt32|JIT コンパイルされているメソッドの Microsoft intermediate language (MSIL) のサイズ。|  
-|MethodNameSpace|win:UnicodeString|メソッドに関連付けられた完全クラス名。|  
-|MethodName|win:UnicodeString|メソッドの名前です。|  
-|MethodSignature|win:UnicodeString|メソッドのシグネチャ (型名のコンマ区切りリスト)。|  
-|ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
+|<span data-ttu-id="0722c-293">MethodID</span><span class="sxs-lookup"><span data-stu-id="0722c-293">MethodID</span></span>|<span data-ttu-id="0722c-294">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="0722c-294">win:UInt64</span></span>|<span data-ttu-id="0722c-295">メソッドの一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="0722c-295">Unique identifier of the method.</span></span>|  
+|<span data-ttu-id="0722c-296">ModuleID</span><span class="sxs-lookup"><span data-stu-id="0722c-296">ModuleID</span></span>|<span data-ttu-id="0722c-297">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="0722c-297">win:UInt64</span></span>|<span data-ttu-id="0722c-298">このメソッドが属するモジュールの識別子。</span><span class="sxs-lookup"><span data-stu-id="0722c-298">Identifier of the module to which this method belongs.</span></span>|  
+|<span data-ttu-id="0722c-299">MethodToken</span><span class="sxs-lookup"><span data-stu-id="0722c-299">MethodToken</span></span>|<span data-ttu-id="0722c-300">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="0722c-300">win:UInt32</span></span>|<span data-ttu-id="0722c-301">動的メソッドおよび JIT ヘルパーの場合は 0。</span><span class="sxs-lookup"><span data-stu-id="0722c-301">0 for dynamic methods and JIT helpers.</span></span>|  
+|<span data-ttu-id="0722c-302">MethodILSize</span><span class="sxs-lookup"><span data-stu-id="0722c-302">MethodILSize</span></span>|<span data-ttu-id="0722c-303">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="0722c-303">win:UInt32</span></span>|<span data-ttu-id="0722c-304">JIT コンパイルされているメソッドの Microsoft intermediate language (MSIL) のサイズ。</span><span class="sxs-lookup"><span data-stu-id="0722c-304">The size of the Microsoft intermediate language (MSIL) for the method that is being JIT-compiled.</span></span>|  
+|<span data-ttu-id="0722c-305">MethodNameSpace</span><span class="sxs-lookup"><span data-stu-id="0722c-305">MethodNameSpace</span></span>|<span data-ttu-id="0722c-306">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="0722c-306">win:UnicodeString</span></span>|<span data-ttu-id="0722c-307">メソッドに関連付けられた完全クラス名。</span><span class="sxs-lookup"><span data-stu-id="0722c-307">Full class name associated with the method.</span></span>|  
+|<span data-ttu-id="0722c-308">MethodName</span><span class="sxs-lookup"><span data-stu-id="0722c-308">MethodName</span></span>|<span data-ttu-id="0722c-309">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="0722c-309">win:UnicodeString</span></span>|<span data-ttu-id="0722c-310">メソッドの名前です。</span><span class="sxs-lookup"><span data-stu-id="0722c-310">Name of the method.</span></span>|  
+|<span data-ttu-id="0722c-311">MethodSignature</span><span class="sxs-lookup"><span data-stu-id="0722c-311">MethodSignature</span></span>|<span data-ttu-id="0722c-312">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="0722c-312">win:UnicodeString</span></span>|<span data-ttu-id="0722c-313">メソッドのシグネチャ (型名のコンマ区切りリスト)。</span><span class="sxs-lookup"><span data-stu-id="0722c-313">Signature of the method (comma-separated list of type names).</span></span>|  
+|<span data-ttu-id="0722c-314">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="0722c-314">ClrInstanceID</span></span>|<span data-ttu-id="0722c-315">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="0722c-315">win:UInt16</span></span>|<span data-ttu-id="0722c-316">CLR または CoreCLR のインスタンスの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="0722c-316">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)
-
+## <a name="see-also"></a><span data-ttu-id="0722c-317">関連項目</span><span class="sxs-lookup"><span data-stu-id="0722c-317">See Also</span></span>  
+ [<span data-ttu-id="0722c-318">CLR ETW イベント</span><span class="sxs-lookup"><span data-stu-id="0722c-318">CLR ETW Events</span></span>](../../../docs/framework/performance/clr-etw-events.md)

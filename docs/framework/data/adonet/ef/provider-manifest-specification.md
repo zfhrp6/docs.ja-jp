@@ -1,113 +1,116 @@
 ---
-title: "プロバイダー マニフェストの仕様 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "プロバイダー マニフェストの仕様"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 73d98d5e2f97bd0425f11db35877f3eabca449be
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# プロバイダー マニフェストの仕様
-ここでは、データ ストア プロバイダーでデータ ストアの型および関数がどのようにサポートされているかについて説明します。  
+# <a name="provider-manifest-specification"></a><span data-ttu-id="e5c7e-102">プロバイダー マニフェストの仕様</span><span class="sxs-lookup"><span data-stu-id="e5c7e-102">Provider Manifest Specification</span></span>
+<span data-ttu-id="e5c7e-103">ここでは、データ ストア プロバイダーでデータ ストアの型および関数がどのようにサポートされているかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-103">This section discusses how a data store provider can support the types and functions in the data store.</span></span>  
   
- Entity Services は、特定のデータ ストア プロバイダーとは別に動作しますが、データ プロバイダーでモデル、マッピング、およびクエリと基になるデータ ストアの対話方法を明示的に定義できるようにします。  抽象化レイヤーがない場合、Entity Services が対象とするのは、特定のデータ ストアまたはデータ プロバイダーのみです。  
+ <span data-ttu-id="e5c7e-104">Entity Services は、特定のデータ ストア プロバイダーとは別に動作しますが、データ プロバイダーでモデル、マッピング、およびクエリと基になるデータ ストアの対話方法を明示的に定義できるようにします。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-104">Entity Services operates independently of a specific data store provider yet still allows a data provider to explicitly define how models, mappings, and queries interact with an underlying data store.</span></span> <span data-ttu-id="e5c7e-105">抽象化レイヤーがない場合、Entity Services が対象とするのは、特定のデータ ストアまたはデータ プロバイダーのみです。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-105">Without a layer of abstraction, Entity Services could only be targeted at a specific data store or data provider.</span></span>  
   
- プロバイダーでサポートされる型は、基になるデータベースによって直接的または間接的にサポートされています。  これらの型は、必ずしも正確なストア型であるとは限りませんが、プロバイダーで [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] のサポートに使用される型です。  プロバイダー\/ストア型は、Entity Data Model \(EDM\) 用語で記述されます。  
+ <span data-ttu-id="e5c7e-106">プロバイダーでサポートされる型は、基になるデータベースによって直接的または間接的にサポートされています。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-106">Types that the provider supports are directly or indirectly supported by the underlying database.</span></span> <span data-ttu-id="e5c7e-107">これらの型は、必ずしも正確なストア型であるとは限りませんが、プロバイダーで [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] のサポートに使用される型です。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-107">These types are not necessarily the exact store types, but the types the provider uses to support the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].</span></span> <span data-ttu-id="e5c7e-108">プロバイダー/ストア型は、Entity Data Model (EDM) 用語で記述されます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-108">Provider/store types are described in the Entity Data Model (EDM) terms.</span></span>  
   
- データ ストアによってサポートされる関数のパラメーターと戻り値の型は、EDM 用語で指定されます。  
+ <span data-ttu-id="e5c7e-109">データ ストアによってサポートされる関数のパラメーターと戻り値の型は、EDM 用語で指定されます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-109">Parameter and return types for the functions supported by the data store are specified in EDM terms.</span></span>  
   
-## 要件  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] およびデータ ストアでは、データが失われたり切り捨てられたりすることなく、既知の型でデータを受け渡しできることが必要です。  
+## <a name="requirements"></a><span data-ttu-id="e5c7e-110">要件</span><span class="sxs-lookup"><span data-stu-id="e5c7e-110">Requirements</span></span>  
+ <span data-ttu-id="e5c7e-111">[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] およびデータ ストアでは、データが失われたり切り捨てられたりすることなく、既知の型でデータを受け渡しできることが必要です。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-111">The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] and the data store need to be able to pass data back and forth in known types without any data loss or truncation.</span></span>  
   
- プロバイダー マニフェストは、データ ストアへの接続を開くことなく、デザイン時にツールで読み込むことができる必要があります。  
+ <span data-ttu-id="e5c7e-112">プロバイダー マニフェストは、データ ストアへの接続を開くことなく、デザイン時にツールで読み込むことができる必要があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-112">The provider manifest must be loadable by tools at design time without having to open a connection to the data store.</span></span>  
   
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では大文字と小文字が区別されますが、基になるデータ ストアでは区別されない場合があります。  マニフェストで定義および使用されている EDM 成果物 \(識別子や型名など\) では、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] の大文字と小文字の区別を使用する必要があります。  大文字と小文字が区別されるデータ ストア要素がプロバイダー マニフェストに含まれる場合、その大文字と小文字の区別はプロバイダー マニフェストで保持する必要があります。  
+ <span data-ttu-id="e5c7e-113">[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]大文字と小文字が区別が、基になるデータ ストアができない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-113">The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] is case sensitive, but the underlying data store may not be.</span></span> <span data-ttu-id="e5c7e-114">マニフェストで定義および使用されている EDM 成果物 (識別子や型名など) では、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] の大文字と小文字の区別を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-114">When EDM artifacts (identifiers and type names, for example) are defined and used in the manifest, they must use the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] case sensitivity.</span></span> <span data-ttu-id="e5c7e-115">大文字と小文字が区別されるデータ ストア要素がプロバイダー マニフェストに含まれる場合、その大文字と小文字の区別はプロバイダー マニフェストで保持する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-115">If data store elements that may be case sensitive appear in the provider manifest, that casing needs to be maintained in the provider manifest.</span></span>  
   
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、すべてのデータ プロバイダーに対応するプロバイダー マニフェストが必要です。  プロバイダー マニフェストがないプロバイダーを [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] と共に使用しようとすると、エラーが発生します。  
+ <span data-ttu-id="e5c7e-116">[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] では、すべてのデータ プロバイダーに対応するプロバイダー マニフェストが必要です。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-116">The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] requires a provider manifest for all data providers.</span></span> <span data-ttu-id="e5c7e-117">プロバイダーがないプロバイダーを使用しようとする場合のマニフェスト、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]エラーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-117">If you try to use a provider that does not have a provider manifest with the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], you will get an error.</span></span>  
   
- プロバイダーとの対話で例外が発生したときに [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] によってスローされる例外の種類を次の表に示します。  
+ <span data-ttu-id="e5c7e-118">プロバイダーとの対話で例外が発生したときに [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] によってスローされる例外の種類を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-118">The following table describes the kinds of exceptions the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] would throw when exceptions arise through provider interaction:</span></span>  
   
-|懸案事項|例外|  
-|----------|--------|  
-|プロバイダーで DbProviderServices の GetProviderManifest がサポートされていない。|ProviderIncompatibleException|  
-|プロバイダー マニフェストが見つからないため、プロバイダー マニフェストを取得しようとすると、プロバイダーから `null` が返される。|ProviderIncompatibleException|  
-|無効なプロバイダー マニフェストにより、プロバイダー マニフェストを取得しようとすると、プロバイダーから無効な XML が返される。|ProviderIncompatibleException|  
+|<span data-ttu-id="e5c7e-119">懸案事項</span><span class="sxs-lookup"><span data-stu-id="e5c7e-119">Issue</span></span>|<span data-ttu-id="e5c7e-120">例外</span><span class="sxs-lookup"><span data-stu-id="e5c7e-120">Exception</span></span>|  
+|-----------|---------------|  
+|<span data-ttu-id="e5c7e-121">プロバイダーで DbProviderServices の GetProviderManifest がサポートされていない。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-121">The Provider does not support GetProviderManifest in DbProviderServices.</span></span>|<span data-ttu-id="e5c7e-122">ProviderIncompatibleException</span><span class="sxs-lookup"><span data-stu-id="e5c7e-122">ProviderIncompatibleException</span></span>|  
+|<span data-ttu-id="e5c7e-123">プロバイダー マニフェストが見つからないため、プロバイダー マニフェストを取得しようとすると、プロバイダーから `null` が返される。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-123">Missing provider manifest: the provider returns `null` when attempting to retrieve the provider manifest.</span></span>|<span data-ttu-id="e5c7e-124">ProviderIncompatibleException</span><span class="sxs-lookup"><span data-stu-id="e5c7e-124">ProviderIncompatibleException</span></span>|  
+|<span data-ttu-id="e5c7e-125">無効なプロバイダー マニフェストにより、プロバイダー マニフェストを取得しようとすると、プロバイダーから無効な XML が返される。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-125">Invalid provider manifest: the provider returns invalid XML when attempting to retrieve the provider manifest.</span></span>|<span data-ttu-id="e5c7e-126">ProviderIncompatibleException</span><span class="sxs-lookup"><span data-stu-id="e5c7e-126">ProviderIncompatibleException</span></span>|  
   
-## シナリオ  
- プロバイダーでは、次のシナリオをサポートしています。  
+## <a name="scenarios"></a><span data-ttu-id="e5c7e-127">シナリオ</span><span class="sxs-lookup"><span data-stu-id="e5c7e-127">Scenarios</span></span>  
+ <span data-ttu-id="e5c7e-128">プロバイダーでは、次のシナリオをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-128">A provider should support the following scenarios:</span></span>  
   
-### 対称型マッピングによるプロバイダーの記述  
- マッピングの方向に関係なく、各ストア型が単一の EDM 型にマップされる [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] のプロバイダーを記述できます。  EDM 型に対応する非常に単純なマッピングを持つプロバイダー型では、型システムが単純であるか EDM 型と一致するため、対称ソリューションを使用できます。  
+### <a name="writing-a-provider-with-symmetric-type-mapping"></a><span data-ttu-id="e5c7e-129">対称型マッピングによるプロバイダーの記述</span><span class="sxs-lookup"><span data-stu-id="e5c7e-129">Writing a Provider with Symmetric Type Mapping</span></span>  
+ <span data-ttu-id="e5c7e-130">プロバイダーを作成することができます、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]各ストアの種類がマッピングの方向に関係なく、単一の EDM 型にマップする場所です。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-130">You can write a provider for the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] where each store type maps to a single EDM type, regardless of the mapping direction.</span></span> <span data-ttu-id="e5c7e-131">EDM 型に対応する非常に単純なマッピングを持つプロバイダー型では、型システムが単純であるか EDM 型と一致するため、対称ソリューションを使用できます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-131">For a provider type that has very simple mapping that corresponds with an EDM type, you can use a symmetric solution because the type system is simple or matches EDM types.</span></span>  
   
- ドメインの単純さを利用して、静的な宣言型プロバイダー マニフェストを作成することができます。  
+ <span data-ttu-id="e5c7e-132">ドメインの単純さを利用して、静的な宣言型プロバイダー マニフェストを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-132">You can use the simplicity of their domain and produce a static declarative provider manifest.</span></span>  
   
- 次の 2 つのセクションで構成される XML ファイルを記述します。  
+ <span data-ttu-id="e5c7e-133">次の 2 つのセクションで構成される XML ファイルを記述します。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-133">You write an XML file that has two sections:</span></span>  
   
--   ストア型またはストア関数の "対応する EDM 要素" で表現されるプロバイダー型の一覧。  ストア型には、対応する EDM 型があります。  ストア関数には、対応する EDM 関数があります。  たとえば、varchar は SQL Server の型ですが、対応する EDM 型は文字列になります。  
+-   <span data-ttu-id="e5c7e-134">ストア型またはストア関数の "対応する EDM 要素" で表現されるプロバイダー型の一覧。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-134">A list of provider types expressed in terms of the "EDM counterpart" of a store type or function.</span></span> <span data-ttu-id="e5c7e-135">ストア型には、対応する EDM 型があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-135">Store types have counterpart EDM types.</span></span> <span data-ttu-id="e5c7e-136">ストア関数には、対応する EDM 関数があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-136">Store functions have corresponding EDM functions.</span></span> <span data-ttu-id="e5c7e-137">たとえば、varchar は SQL Server の型ですが、対応する EDM 型は文字列になります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-137">For example, varchar is a SQL Server type but the corresponding EDM type is string.</span></span>  
   
--   パラメーターと戻り値の型が EDM 用語で表現される、プロバイダーがサポートする関数の一覧。  
+-   <span data-ttu-id="e5c7e-138">パラメーターと戻り値の型が EDM 用語で表現される、プロバイダーがサポートする関数の一覧。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-138">A list of functions supported by the provider where parameter and return types are expressed in EDM terms.</span></span>  
   
-### 非対照型マッピングによるプロバイダーの記述  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] のデータ ストア プロバイダーを記述する場合、一部の型の EDM からプロバイダーへの型マッピングが、プロバイダーから EDM への型マッピングとは異なることがあります。  たとえば、プロバイダー側で unbounded の EDM PrimitiveTypeKind.String が nvarchar\(4000\) にマップされるのに対して、nvarchar\(4000\) は EDM PrimitiveTypeKind.String\(MaxLength\=4000\) にマップされる場合があります。  
+### <a name="writing-a-provider-with-asymmetric-type-mapping"></a><span data-ttu-id="e5c7e-139">非対照型マッピングによるプロバイダーの記述</span><span class="sxs-lookup"><span data-stu-id="e5c7e-139">Writing a Provider with Asymmetric Type Mapping</span></span>  
+ <span data-ttu-id="e5c7e-140">[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] のデータ ストア プロバイダーを記述する場合、一部の型の EDM からプロバイダーへの型マッピングが、プロバイダーから EDM への型マッピングとは異なることがあります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-140">When writing a data store provider for the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], the EDM-to-provider type mapping for some types may be different from provider-to-EDM type mapping.</span></span> <span data-ttu-id="e5c7e-141">たとえば、プロバイダー側で unbounded の EDM PrimitiveTypeKind.String が nvarchar(4000) にマップされるのに対して、nvarchar(4000) は EDM PrimitiveTypeKind.String(MaxLength=4000) にマップされる場合があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-141">For instance, unbounded EDM PrimitiveTypeKind.String may map to nvarchar(4000) on the provider, while nvarchar(4000) maps to the EDM PrimitiveTypeKind.String(MaxLength=4000).</span></span>  
   
- 次の 2 つのセクションで構成される XML ファイルを記述します。  
+ <span data-ttu-id="e5c7e-142">次の 2 つのセクションで構成される XML ファイルを記述します。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-142">You write an XML file that has two sections:</span></span>  
   
--   両方向 \(EDM からプロバイダーおよびプロバイダーから EDM\) のマッピングを定義する、EDM 用語で表現されたプロバイダー型の一覧。  
+-   <span data-ttu-id="e5c7e-143">両方向 (EDM からプロバイダーおよびプロバイダーから EDM) のマッピングを定義する、EDM 用語で表現されたプロバイダー型の一覧。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-143">A list of provider types expressed in EDM terms and define mapping for both direction: EDM-to-provider and provider-to-EDM.</span></span>  
   
--   パラメーターと戻り値の型が EDM 用語で表現される、プロバイダーがサポートする関数の一覧。  
+-   <span data-ttu-id="e5c7e-144">パラメーターと戻り値の型が EDM 用語で表現される、プロバイダーがサポートする関数の一覧。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-144">A list of functions supported by the provider where parameter and return types are expressed in EDM terms.</span></span>  
   
-## プロバイダー マニフェストの探索可能性  
- マニフェストは、Entity Services の複数のコンポーネントの種類 \(Tools や Query など\) では間接的に使用されますが、データ ストア メタデータ ローダーを使用してメタデータからより直接的に使用することができます。  
+## <a name="provider-manifest-discoverability"></a><span data-ttu-id="e5c7e-145">プロバイダー マニフェストの探索可能性</span><span class="sxs-lookup"><span data-stu-id="e5c7e-145">Provider Manifest Discoverability</span></span>  
+ <span data-ttu-id="e5c7e-146">マニフェストは、Entity Services の複数のコンポーネントの種類 (Tools や Query など) では間接的に使用されますが、データ ストア メタデータ ローダーを使用してメタデータからより直接的に使用することができます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-146">The manifest is used indirectly by several component types in Entity Services (for example Tools or Query) but more directly leveraged by metadata through the use of the data store metadata loader.</span></span>  
   
- ![dfb3d02b&#45;7a8c&#45;4d51&#45;ac5a&#45;a73d8aa145e6](../../../../../docs/framework/data/adonet/ef/media/dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6.gif "dfb3d02b\-7a8c\-4d51\-ac5a\-a73d8aa145e6")  
+ <span data-ttu-id="e5c7e-147">![dfb3d02b &#45; 7a8c &#45; 4 d 51 &#45; ac5a &#45; a73d8aa145e6](../../../../../docs/framework/data/adonet/ef/media/dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6.gif "dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6")</span><span class="sxs-lookup"><span data-stu-id="e5c7e-147">![dfb3d02b&#45;7a8c&#45;4d51&#45;ac5a&#45;a73d8aa145e6](../../../../../docs/framework/data/adonet/ef/media/dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6.gif "dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6")</span></span>  
   
- ただし、指定されたプロバイダーでは、異なるストアや、同じストアの異なるバージョンがサポートされている場合があります。  そのため、プロバイダーは、サポートされるデータ ストアごとに、異なるマニフェストを報告する必要があります。  
+ <span data-ttu-id="e5c7e-148">ただし、指定されたプロバイダーでは、異なるストアや、同じストアの異なるバージョンがサポートされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-148">However, a given provider may support different stores or different versions of the same store.</span></span> <span data-ttu-id="e5c7e-149">そのため、プロバイダーは、サポートされるデータ ストアごとに、異なるマニフェストを報告する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-149">Therefore, a provider must report a different manifest for each supported data store.</span></span>  
   
-### プロバイダー マニフェスト トークン  
- データ ストア接続が開いている場合、プロバイダーは、クエリで情報を取得して、適切なマニフェストを返すことができます。  この動作は、接続情報が利用できない場合やストアに接続できない場合があるオフライン シナリオでは不可能になることもあります。  マニフェストを識別するには、.ssdl ファイルの `Schema` の `ProviderManifestToken` 属性を使用します。  この属性には必須の形式はありません。プロバイダーは、ストアへの接続を開くことなく、マニフェストを特定するために必要最小限の情報を選択します。  
+### <a name="provider-manifest-token"></a><span data-ttu-id="e5c7e-150">プロバイダー マニフェスト トークン</span><span class="sxs-lookup"><span data-stu-id="e5c7e-150">Provider Manifest Token</span></span>  
+ <span data-ttu-id="e5c7e-151">データ ストア接続が開いている場合、プロバイダーは、クエリで情報を取得して、適切なマニフェストを返すことができます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-151">When a data store connection is opened, the provider can query for information to return the right manifest.</span></span> <span data-ttu-id="e5c7e-152">この動作は、接続情報が利用できない場合やストアに接続できない場合があるオフライン シナリオでは不可能になることもあります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-152">This may not be possible in offline scenarios where connection information is not available or when it is not possible to connect to the store.</span></span> <span data-ttu-id="e5c7e-153">マニフェストを識別するには、.ssdl ファイルの `ProviderManifestToken` の `Schema` 属性を使用します。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-153">Identify the manifest by using the `ProviderManifestToken` attribute of the `Schema` element in the .ssdl file.</span></span> <span data-ttu-id="e5c7e-154">この属性には必須の形式はありません。プロバイダーは、ストアへの接続を開くことなく、マニフェストを特定するために必要最小限の情報を選択します。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-154">There is no required format for this attribute; the provider chooses the minimum information needed to identify a manifest without opening a connection to the store.</span></span>  
   
- 次に例を示します。  
+ <span data-ttu-id="e5c7e-155">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-155">For example:</span></span>  
   
-```  
+```xml  
 <Schema Namespace="Northwind" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:edm="http://schemas.microsoft.com/ado/2006/04/edm/ssdl" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">  
 ```  
   
-## プロバイダー マニフェストのプログラミング モデル  
- プロバイダーは <xref:System.Data.Common.DbXmlEnabledProviderManifest> から派生します。これにより、プロバイダーは、そのマニフェストを宣言によって指定できます。  プロバイダーのクラス階層を次の図に示します。  
+## <a name="provider-manifest-programming-model"></a><span data-ttu-id="e5c7e-156">プロバイダー マニフェストのプログラミング モデル</span><span class="sxs-lookup"><span data-stu-id="e5c7e-156">Provider Manifest Programming Model</span></span>  
+ <span data-ttu-id="e5c7e-157">プロバイダーは <xref:System.Data.Common.DbXmlEnabledProviderManifest> から派生します。これにより、プロバイダーは、そのマニフェストを宣言によって指定できます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-157">Providers derive from <xref:System.Data.Common.DbXmlEnabledProviderManifest>, which allows them to specify their manifests declaratively.</span></span> <span data-ttu-id="e5c7e-158">プロバイダーのクラス階層を次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-158">The following illustration shows the class hierarchy of a provider:</span></span>  
   
- ![なし](../../../../../docs/framework/data/adonet/ef/media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3\-2ee6\-4cd1\-88f5\-89d0b2582a6c")  
+ <span data-ttu-id="e5c7e-159">![None](../../../../../docs/framework/data/adonet/ef/media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3-2ee6-4cd1-88f5-89d0b2582a6c")</span><span class="sxs-lookup"><span data-stu-id="e5c7e-159">![None](../../../../../docs/framework/data/adonet/ef/media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3-2ee6-4cd1-88f5-89d0b2582a6c")</span></span>  
   
-### 探索可能性の API  
- プロバイダー マニフェストは、データ ストア接続またはプロバイダー マニフェスト トークンのいずれかを使用して、ストア メタデータ ローダー \(StoreItemCollection\) によって読み込まれます。  
+### <a name="discoverability-api"></a><span data-ttu-id="e5c7e-160">探索可能性の API</span><span class="sxs-lookup"><span data-stu-id="e5c7e-160">Discoverability API</span></span>  
+ <span data-ttu-id="e5c7e-161">プロバイダー マニフェストは、データ ストア接続またはプロバイダー マニフェスト トークンのいずれかを使用して、ストア メタデータ ローダー (StoreItemCollection) によって読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-161">The provider manifest is loaded by the Store Metadata loader (StoreItemCollection), either by using a data store connection or a provider manifest token.</span></span>  
   
-#### データ ストア接続を使用する  
- データ ストア接続が使用可能な場合は、DbProvderServices.GetProviderManifestToken を呼び出して GetProviderManifest メソッドに渡されるトークンを返すことで、DbProviderManifest を返します。  このメソッドは、プロバイダーによる GetDbProviderManifestToken の実装に委任されます。  
+#### <a name="using-a-data-store-connection"></a><span data-ttu-id="e5c7e-162">データ ストア接続を使用する</span><span class="sxs-lookup"><span data-stu-id="e5c7e-162">Using a Data Store Connection</span></span>  
+ <span data-ttu-id="e5c7e-163">データ ストア接続が使用可能な場合は、DbProvderServices.GetProviderManifestToken を呼び出して GetProviderManifest メソッドに渡されるトークンを返すことで、DbProviderManifest を返します。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-163">When the data store connection is available, call DbProvderServices.GetProviderManifestToken to return the token that is passed to the GetProviderManifest method, which returns DbProviderManifest.</span></span> <span data-ttu-id="e5c7e-164">このメソッドは、プロバイダーによる GetDbProviderManifestToken の実装に委任されます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-164">This method delegates to the provider's implementation of GetDbProviderManifestToken.</span></span>  
   
 ```  
 public string GetProviderManifestToken(DbConnection connection);  
 public DbProviderManifest GetProviderManifest(string manifestToken);  
 ```  
   
-#### プロバイダー マニフェスト トークンを使用する  
- オフライン シナリオの場合、SSDL の表現からトークンが選択されます。  SSDL により、ProviderManifestToken を指定できます \(詳細については、「[Schema Element \(SSDL\)](http://msdn.microsoft.com/ja-jp/fec75ae4-7f16-4421-9265-9dac61509222)」を参照してください\)。  たとえば、接続を開くことができない場合、SSDL には、マニフェストに関する情報を指定するプロバイダー マニフェスト トークンがあります。  
+#### <a name="using-a-provider-manifest-token"></a><span data-ttu-id="e5c7e-165">プロバイダー マニフェスト トークンを使用する</span><span class="sxs-lookup"><span data-stu-id="e5c7e-165">Using a Provider Manifest Token</span></span>  
+ <span data-ttu-id="e5c7e-166">オフライン シナリオの場合、SSDL の表現からトークンが選択されます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-166">For the offline scenario, the token is picked from SSDL representation.</span></span> <span data-ttu-id="e5c7e-167">SSDL では、ProviderManifestToken を指定することができます (を参照してください[スキーマ要素 (SSDL)](http://msdn.microsoft.com/en-us/fec75ae4-7f16-4421-9265-9dac61509222)詳細については)。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-167">The SSDL allows you to specify a ProviderManifestToken (see [Schema Element (SSDL)](http://msdn.microsoft.com/en-us/fec75ae4-7f16-4421-9265-9dac61509222) for more information).</span></span> <span data-ttu-id="e5c7e-168">たとえば、接続を開くことができない場合、SSDL には、マニフェストに関する情報を指定するプロバイダー マニフェスト トークンがあります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-168">For example, if a connection cannot be opened, the SSDL has a provider manifest token that specifies information about the manifest.</span></span>  
   
 ```  
 public DbProviderManifest GetProviderManifest(string manifestToken);  
 ```  
   
-### プロバイダー マニフェスト スキーマ  
- プロバイダーごとに定義された情報のスキーマには、メタデータによって使用される静的な情報が含まれています。  
+### <a name="provider-manifest-schema"></a><span data-ttu-id="e5c7e-169">プロバイダー マニフェスト スキーマ</span><span class="sxs-lookup"><span data-stu-id="e5c7e-169">Provider Manifest Schema</span></span>  
+ <span data-ttu-id="e5c7e-170">プロバイダーごとに定義された情報のスキーマには、メタデータによって使用される静的な情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-170">The schema of information defined for each provider contains the static information to be consumed by metadata:</span></span>  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <xs:schema elementFormDefault="qualified"  
    xmlns:xs="http://www.w3.org/2001/XMLSchema"  
@@ -247,44 +250,44 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 </xs:schema>  
 ```  
   
-#### Types ノード  
- プロバイダー マニフェスト内の Types ノードには、データ ストアまたはプロバイダーによってネイティブでサポートされている型に関する情報が含まれています。  
+#### <a name="types-node"></a><span data-ttu-id="e5c7e-171">Types ノード</span><span class="sxs-lookup"><span data-stu-id="e5c7e-171">Types Node</span></span>  
+ <span data-ttu-id="e5c7e-172">プロバイダー マニフェスト内の Types ノードには、データ ストアまたはプロバイダーによってネイティブでサポートされている型に関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-172">The Types node in the provider manifest contains information about the Types that are supported natively by the data store or through the provider.</span></span>  
   
-##### Type ノード  
- 各 Type ノードでは、EDM の観点でプロバイダー型が定義されています。  Type ノードには、プロバイダー型の名前、およびマップ先のモデル型とその型マッピングを示すファセットに関する情報が記述されています。  
+##### <a name="type-node"></a><span data-ttu-id="e5c7e-173">Type ノード</span><span class="sxs-lookup"><span data-stu-id="e5c7e-173">Type Node</span></span>  
+ <span data-ttu-id="e5c7e-174">各 Type ノードでは、EDM の観点でプロバイダー型が定義されています。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-174">Each Type node defines a provider type in terms of EDM.</span></span> <span data-ttu-id="e5c7e-175">Type ノードには、プロバイダー型の名前、およびマップ先のモデル型とその型マッピングを示すファセットに関する情報が記述されています。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-175">The Type node describes the name of the provider type, and information related to the model type it maps to and facets to describe that type mapping.</span></span>  
   
- プロバイダー マニフェストでこの型情報を公開するために、各 TypeInformation の宣言では、各 Type に対応する複数のファセットの説明を定義する必要があります。  
+ <span data-ttu-id="e5c7e-176">プロバイダー マニフェストでこの型情報を公開するために、各 TypeInformation の宣言では、各 Type に対応する複数のファセットの説明を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-176">In order to express this type information in the provider manifest, each TypeInformation declaration must define several facet descriptions for each Type:</span></span>  
   
-|属性名|データ型|必須|既定値|説明|  
-|---------|----------|--------|---------|--------|  
-|名前|String|はい|適用なし|プロバイダー固有のデータ型の名前|  
-|PrimitiveTypeKind|PrimitiveTypeKind|はい|適用なし|EDM 型の名前|  
+|<span data-ttu-id="e5c7e-177">属性名</span><span class="sxs-lookup"><span data-stu-id="e5c7e-177">Attribute Name</span></span>|<span data-ttu-id="e5c7e-178">データ型</span><span class="sxs-lookup"><span data-stu-id="e5c7e-178">Data Type</span></span>|<span data-ttu-id="e5c7e-179">必須</span><span class="sxs-lookup"><span data-stu-id="e5c7e-179">Required</span></span>|<span data-ttu-id="e5c7e-180">既定値</span><span class="sxs-lookup"><span data-stu-id="e5c7e-180">Default Value</span></span>|<span data-ttu-id="e5c7e-181">説明</span><span class="sxs-lookup"><span data-stu-id="e5c7e-181">Description</span></span>|  
+|--------------------|---------------|--------------|-------------------|-----------------|  
+|<span data-ttu-id="e5c7e-182">名前</span><span class="sxs-lookup"><span data-stu-id="e5c7e-182">Name</span></span>|<span data-ttu-id="e5c7e-183">String</span><span class="sxs-lookup"><span data-stu-id="e5c7e-183">String</span></span>|<span data-ttu-id="e5c7e-184">はい</span><span class="sxs-lookup"><span data-stu-id="e5c7e-184">Yes</span></span>|<span data-ttu-id="e5c7e-185">適用なし</span><span class="sxs-lookup"><span data-stu-id="e5c7e-185">n/a</span></span>|<span data-ttu-id="e5c7e-186">プロバイダー固有のデータ型の名前</span><span class="sxs-lookup"><span data-stu-id="e5c7e-186">Provider-specific data type name</span></span>|  
+|<span data-ttu-id="e5c7e-187">PrimitiveTypeKind</span><span class="sxs-lookup"><span data-stu-id="e5c7e-187">PrimitiveTypeKind</span></span>|<span data-ttu-id="e5c7e-188">PrimitiveTypeKind</span><span class="sxs-lookup"><span data-stu-id="e5c7e-188">PrimitiveTypeKind</span></span>|<span data-ttu-id="e5c7e-189">はい</span><span class="sxs-lookup"><span data-stu-id="e5c7e-189">Yes</span></span>|<span data-ttu-id="e5c7e-190">適用なし</span><span class="sxs-lookup"><span data-stu-id="e5c7e-190">n/a</span></span>|<span data-ttu-id="e5c7e-191">EDM 型の名前</span><span class="sxs-lookup"><span data-stu-id="e5c7e-191">EDM type name</span></span>|  
   
-###### Function ノード  
- 各 Function では、プロバイダーを介して使用できる 1 つの関数が定義されています。  
+###### <a name="function-node"></a><span data-ttu-id="e5c7e-192">Function ノード</span><span class="sxs-lookup"><span data-stu-id="e5c7e-192">Function Node</span></span>  
+ <span data-ttu-id="e5c7e-193">各 Function では、プロバイダーを介して使用できる 1 つの関数が定義されています。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-193">Each Function defines a single function available through the provider.</span></span>  
   
-|属性名|データ型|必須|既定値|説明|  
-|---------|----------|--------|---------|--------|  
-|名前|String|はい|適用なし|関数の識別子\/名前|  
-|ReturnType|String|Ｘ|Void|関数の戻り値の EDM 型|  
-|Aggregate|Boolean|Ｘ|False|関数が集計関数の場合は True|  
-|BuiltIn|Boolean|Ｘ|True|関数がデータ ストアに組み込まれている場合は True|  
-|StoreFunctionName|String|Ｘ|\<Name\>|データ ストア内の関数名。  関数名のリダイレクト レベルを許可できます。|  
-|NiladicFunction|Boolean|Ｘ|False|関数にパラメーターが必要なく、パラメーターなしで呼び出される場合は True|  
-|ParameterType<br /><br /> Semantics|ParameterSemantics|Ｘ|AllowImplicit<br /><br /> 変換|クエリ パイプラインによるパラメーター型の置換の処理方法の選択<br /><br /> -   ExactMatchOnly<br />-   AllowImplicitPromotion<br />-   AllowImplicitConversion|  
+|<span data-ttu-id="e5c7e-194">属性名</span><span class="sxs-lookup"><span data-stu-id="e5c7e-194">Attribute Name</span></span>|<span data-ttu-id="e5c7e-195">データ型</span><span class="sxs-lookup"><span data-stu-id="e5c7e-195">Data Type</span></span>|<span data-ttu-id="e5c7e-196">必須</span><span class="sxs-lookup"><span data-stu-id="e5c7e-196">Required</span></span>|<span data-ttu-id="e5c7e-197">既定値</span><span class="sxs-lookup"><span data-stu-id="e5c7e-197">Default Value</span></span>|<span data-ttu-id="e5c7e-198">説明</span><span class="sxs-lookup"><span data-stu-id="e5c7e-198">Description</span></span>|  
+|--------------------|---------------|--------------|-------------------|-----------------|  
+|<span data-ttu-id="e5c7e-199">名前</span><span class="sxs-lookup"><span data-stu-id="e5c7e-199">Name</span></span>|<span data-ttu-id="e5c7e-200">String</span><span class="sxs-lookup"><span data-stu-id="e5c7e-200">String</span></span>|<span data-ttu-id="e5c7e-201">はい</span><span class="sxs-lookup"><span data-stu-id="e5c7e-201">Yes</span></span>|<span data-ttu-id="e5c7e-202">適用なし</span><span class="sxs-lookup"><span data-stu-id="e5c7e-202">n/a</span></span>|<span data-ttu-id="e5c7e-203">関数の識別子/名前</span><span class="sxs-lookup"><span data-stu-id="e5c7e-203">Identifier/name of the function</span></span>|  
+|<span data-ttu-id="e5c7e-204">ReturnType</span><span class="sxs-lookup"><span data-stu-id="e5c7e-204">ReturnType</span></span>|<span data-ttu-id="e5c7e-205">String</span><span class="sxs-lookup"><span data-stu-id="e5c7e-205">String</span></span>|<span data-ttu-id="e5c7e-206">Ｘ</span><span class="sxs-lookup"><span data-stu-id="e5c7e-206">No</span></span>|<span data-ttu-id="e5c7e-207">Void</span><span class="sxs-lookup"><span data-stu-id="e5c7e-207">Void</span></span>|<span data-ttu-id="e5c7e-208">関数の戻り値の EDM 型</span><span class="sxs-lookup"><span data-stu-id="e5c7e-208">The EDM return type of the function</span></span>|  
+|<span data-ttu-id="e5c7e-209">Aggregate</span><span class="sxs-lookup"><span data-stu-id="e5c7e-209">Aggregate</span></span>|<span data-ttu-id="e5c7e-210">Boolean</span><span class="sxs-lookup"><span data-stu-id="e5c7e-210">Boolean</span></span>|<span data-ttu-id="e5c7e-211">Ｘ</span><span class="sxs-lookup"><span data-stu-id="e5c7e-211">No</span></span>|<span data-ttu-id="e5c7e-212">False</span><span class="sxs-lookup"><span data-stu-id="e5c7e-212">False</span></span>|<span data-ttu-id="e5c7e-213">関数が集計関数の場合は True</span><span class="sxs-lookup"><span data-stu-id="e5c7e-213">True if the function is an aggregate function</span></span>|  
+|<span data-ttu-id="e5c7e-214">BuiltIn</span><span class="sxs-lookup"><span data-stu-id="e5c7e-214">BuiltIn</span></span>|<span data-ttu-id="e5c7e-215">Boolean</span><span class="sxs-lookup"><span data-stu-id="e5c7e-215">Boolean</span></span>|<span data-ttu-id="e5c7e-216">Ｘ</span><span class="sxs-lookup"><span data-stu-id="e5c7e-216">No</span></span>|<span data-ttu-id="e5c7e-217">True</span><span class="sxs-lookup"><span data-stu-id="e5c7e-217">True</span></span>|<span data-ttu-id="e5c7e-218">関数がデータ ストアに組み込まれている場合は True</span><span class="sxs-lookup"><span data-stu-id="e5c7e-218">True if the function is built into the data store</span></span>|  
+|<span data-ttu-id="e5c7e-219">StoreFunctionName</span><span class="sxs-lookup"><span data-stu-id="e5c7e-219">StoreFunctionName</span></span>|<span data-ttu-id="e5c7e-220">String</span><span class="sxs-lookup"><span data-stu-id="e5c7e-220">String</span></span>|<span data-ttu-id="e5c7e-221">いいえ</span><span class="sxs-lookup"><span data-stu-id="e5c7e-221">No</span></span>|<span data-ttu-id="e5c7e-222">\<名 ></span><span class="sxs-lookup"><span data-stu-id="e5c7e-222">\<Name></span></span>|<span data-ttu-id="e5c7e-223">データ ストア内の関数名。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-223">Function Name in the data store.</span></span>  <span data-ttu-id="e5c7e-224">関数名のリダイレクト レベルを許可できます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-224">Allows for a level of redirection of function names.</span></span>|  
+|<span data-ttu-id="e5c7e-225">NiladicFunction</span><span class="sxs-lookup"><span data-stu-id="e5c7e-225">NiladicFunction</span></span>|<span data-ttu-id="e5c7e-226">Boolean</span><span class="sxs-lookup"><span data-stu-id="e5c7e-226">Boolean</span></span>|<span data-ttu-id="e5c7e-227">Ｘ</span><span class="sxs-lookup"><span data-stu-id="e5c7e-227">No</span></span>|<span data-ttu-id="e5c7e-228">False</span><span class="sxs-lookup"><span data-stu-id="e5c7e-228">False</span></span>|<span data-ttu-id="e5c7e-229">関数にパラメーターが必要なく、パラメーターなしで呼び出される場合は True</span><span class="sxs-lookup"><span data-stu-id="e5c7e-229">True if the function does not require parameters and is called without any parameters</span></span>|  
+|<span data-ttu-id="e5c7e-230">ParameterType</span><span class="sxs-lookup"><span data-stu-id="e5c7e-230">ParameterType</span></span><br /><br /> <span data-ttu-id="e5c7e-231">Semantics</span><span class="sxs-lookup"><span data-stu-id="e5c7e-231">Semantics</span></span>|<span data-ttu-id="e5c7e-232">ParameterSemantics</span><span class="sxs-lookup"><span data-stu-id="e5c7e-232">ParameterSemantics</span></span>|<span data-ttu-id="e5c7e-233">Ｘ</span><span class="sxs-lookup"><span data-stu-id="e5c7e-233">No</span></span>|<span data-ttu-id="e5c7e-234">AllowImplicit</span><span class="sxs-lookup"><span data-stu-id="e5c7e-234">AllowImplicit</span></span><br /><br /> <span data-ttu-id="e5c7e-235">変換</span><span class="sxs-lookup"><span data-stu-id="e5c7e-235">Conversion</span></span>|<span data-ttu-id="e5c7e-236">クエリ パイプラインによるパラメーター型の置換の処理方法の選択</span><span class="sxs-lookup"><span data-stu-id="e5c7e-236">Choice of how the query pipeline should deal with parameter type substitution:</span></span><br /><br /> <span data-ttu-id="e5c7e-237">-ExactMatchOnly</span><span class="sxs-lookup"><span data-stu-id="e5c7e-237">-   ExactMatchOnly</span></span><br /><span data-ttu-id="e5c7e-238">-AllowImplicitPromotion</span><span class="sxs-lookup"><span data-stu-id="e5c7e-238">-   AllowImplicitPromotion</span></span><br /><span data-ttu-id="e5c7e-239">-AllowImplicitConversion</span><span class="sxs-lookup"><span data-stu-id="e5c7e-239">-   AllowImplicitConversion</span></span>|  
   
- **Parameters ノード**  
+ <span data-ttu-id="e5c7e-240">**[パラメーター] ノード**</span><span class="sxs-lookup"><span data-stu-id="e5c7e-240">**Parameters Node**</span></span>  
   
- 各関数には、1 つ以上の Parameter ノードのコレクションが含まれています。  
+ <span data-ttu-id="e5c7e-241">各関数には、1 つ以上の Parameter ノードのコレクションが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-241">Each function has a collection of one or more Parameter nodes.</span></span>  
   
-|属性名|データ型|必須|既定値|説明|  
-|---------|----------|--------|---------|--------|  
-|名前|String|はい|適用なし|パラメーターの識別子\/名前|  
-|種類|String|はい|適用なし|パラメーターの EDM 型|  
-|モード|パラメーター<br /><br /> Direction|はい|適用なし|パラメーターの方向<br /><br /> -   in<br />-   out<br />-   inout|  
+|<span data-ttu-id="e5c7e-242">属性名</span><span class="sxs-lookup"><span data-stu-id="e5c7e-242">Attribute Name</span></span>|<span data-ttu-id="e5c7e-243">データ型</span><span class="sxs-lookup"><span data-stu-id="e5c7e-243">Data Type</span></span>|<span data-ttu-id="e5c7e-244">必須</span><span class="sxs-lookup"><span data-stu-id="e5c7e-244">Required</span></span>|<span data-ttu-id="e5c7e-245">既定値</span><span class="sxs-lookup"><span data-stu-id="e5c7e-245">Default Value</span></span>|<span data-ttu-id="e5c7e-246">説明</span><span class="sxs-lookup"><span data-stu-id="e5c7e-246">Description</span></span>|  
+|--------------------|---------------|--------------|-------------------|-----------------|  
+|<span data-ttu-id="e5c7e-247">名前</span><span class="sxs-lookup"><span data-stu-id="e5c7e-247">Name</span></span>|<span data-ttu-id="e5c7e-248">String</span><span class="sxs-lookup"><span data-stu-id="e5c7e-248">String</span></span>|<span data-ttu-id="e5c7e-249">はい</span><span class="sxs-lookup"><span data-stu-id="e5c7e-249">Yes</span></span>|<span data-ttu-id="e5c7e-250">適用なし</span><span class="sxs-lookup"><span data-stu-id="e5c7e-250">n/a</span></span>|<span data-ttu-id="e5c7e-251">パラメーターの識別子/名前</span><span class="sxs-lookup"><span data-stu-id="e5c7e-251">Identifier/name of the parameter.</span></span>|  
+|<span data-ttu-id="e5c7e-252">種類</span><span class="sxs-lookup"><span data-stu-id="e5c7e-252">Type</span></span>|<span data-ttu-id="e5c7e-253">String</span><span class="sxs-lookup"><span data-stu-id="e5c7e-253">String</span></span>|<span data-ttu-id="e5c7e-254">はい</span><span class="sxs-lookup"><span data-stu-id="e5c7e-254">Yes</span></span>|<span data-ttu-id="e5c7e-255">適用なし</span><span class="sxs-lookup"><span data-stu-id="e5c7e-255">n/a</span></span>|<span data-ttu-id="e5c7e-256">パラメーターの EDM 型</span><span class="sxs-lookup"><span data-stu-id="e5c7e-256">The EDM type of the parameter.</span></span>|  
+|<span data-ttu-id="e5c7e-257">モード</span><span class="sxs-lookup"><span data-stu-id="e5c7e-257">Mode</span></span>|<span data-ttu-id="e5c7e-258">パラメーター</span><span class="sxs-lookup"><span data-stu-id="e5c7e-258">Parameter</span></span><br /><br /> <span data-ttu-id="e5c7e-259">Direction</span><span class="sxs-lookup"><span data-stu-id="e5c7e-259">Direction</span></span>|<span data-ttu-id="e5c7e-260">はい</span><span class="sxs-lookup"><span data-stu-id="e5c7e-260">Yes</span></span>|<span data-ttu-id="e5c7e-261">適用なし</span><span class="sxs-lookup"><span data-stu-id="e5c7e-261">n/a</span></span>|<span data-ttu-id="e5c7e-262">パラメーターの方向</span><span class="sxs-lookup"><span data-stu-id="e5c7e-262">Direction of parameter:</span></span><br /><br /> <span data-ttu-id="e5c7e-263">-で</span><span class="sxs-lookup"><span data-stu-id="e5c7e-263">-   in</span></span><br /><span data-ttu-id="e5c7e-264">-アウト</span><span class="sxs-lookup"><span data-stu-id="e5c7e-264">-   out</span></span><br /><span data-ttu-id="e5c7e-265">-inout</span><span class="sxs-lookup"><span data-stu-id="e5c7e-265">-   inout</span></span>|  
   
-##### Namespace 属性  
- 各データ ストア プロバイダーでは、マニフェストで定義された情報に対して 1 つの名前空間または名前空間のグループを定義する必要があります。  この名前空間は、Entity SQL クエリで、関数および型の名前を解決するために使用できます。  たとえば SqlServer の場合、  その名前空間は、標準的な関数が Entity SQL クエリでサポートされるように Entity Services で定義された正規の名前空間 \(EDM\) とは別にする必要があります。  
+##### <a name="namespace-attribute"></a><span data-ttu-id="e5c7e-266">Namespace 属性</span><span class="sxs-lookup"><span data-stu-id="e5c7e-266">Namespace Attribute</span></span>  
+ <span data-ttu-id="e5c7e-267">各データ ストア プロバイダーでは、マニフェストで定義された情報に対して 1 つの名前空間または名前空間のグループを定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-267">Each data store provider must define a namespace or group of namespaces for information defined in the manifest.</span></span> <span data-ttu-id="e5c7e-268">この名前空間は、Entity SQL クエリで、関数および型の名前を解決するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-268">This namespace can be used in Entity SQL queries to resolve names of functions and types.</span></span> <span data-ttu-id="e5c7e-269">たとえば SqlServer の場合、</span><span class="sxs-lookup"><span data-stu-id="e5c7e-269">For instance: SqlServer.</span></span> <span data-ttu-id="e5c7e-270">その名前空間は、標準的な関数が Entity SQL クエリでサポートされるように Entity Services で定義された正規の名前空間 (EDM) とは別にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e5c7e-270">That namespace must be different from the canonical namespace, EDM, defined by Entity Services for standard functions to be supported by Entity SQL queries.</span></span>  
   
-## 参照  
- [Entity Framework データ プロバイダーの作成](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)
+## <a name="see-also"></a><span data-ttu-id="e5c7e-271">関連項目</span><span class="sxs-lookup"><span data-stu-id="e5c7e-271">See Also</span></span>  
+ [<span data-ttu-id="e5c7e-272">Entity Framework データ プロバイダーの作成</span><span class="sxs-lookup"><span data-stu-id="e5c7e-272">Writing an Entity Framework Data Provider</span></span>](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)

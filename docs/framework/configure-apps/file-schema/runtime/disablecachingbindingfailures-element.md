@@ -1,84 +1,86 @@
 ---
-title: "&lt;disableCachingBindingFailures&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#disableCachingBindingFailures"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/disableCachingBindingFailures"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<disableCachingBindingFailures> 要素"
-  - "アセンブリ [.NET Framework], キャッシュ (バインディング エラーを)"
-  - "キャッシュ (アセンブリ バインディング エラーを)"
-  - "disableCachingBindingFailures 要素"
+title: "&lt;disableCachingBindingFailures&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#disableCachingBindingFailures
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/disableCachingBindingFailures
+helpviewer_keywords:
+- assemblies [.NET Framework],caching binding failures
+- caching assembly binding failures
+- <disableCachingBindingFailures> element
+- disableCachingBindingFailures element
 ms.assetid: bf598873-83b7-48de-8955-00b0504fbad0
-caps.latest.revision: 14
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 25d504afd7945718f08dd5f2bf92d7ea33037a11
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;disableCachingBindingFailures&gt; 要素
-調査でアセンブリが見つからなかったために発生するバインディング エラーのキャッシュを無効にするかどうかを指定します。  
+# <a name="ltdisablecachingbindingfailuresgt-element"></a><span data-ttu-id="9a24a-102">&lt;disableCachingBindingFailures&gt;要素</span><span class="sxs-lookup"><span data-stu-id="9a24a-102">&lt;disableCachingBindingFailures&gt; Element</span></span>
+<span data-ttu-id="9a24a-103">バインディングを調査して、アセンブリが見つからなかったために発生するエラーのキャッシュを無効にするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="9a24a-103">Specifies whether to disable the caching of binding failures that occur because the assembly was not found by probing.</span></span>  
   
-## 構文  
+ <span data-ttu-id="9a24a-104">\<configuration > 要素</span><span class="sxs-lookup"><span data-stu-id="9a24a-104">\<configuration> Element</span></span>  
+<span data-ttu-id="9a24a-105">\<ランタイム > 要素</span><span class="sxs-lookup"><span data-stu-id="9a24a-105">\<runtime> Element</span></span>  
+<span data-ttu-id="9a24a-106">\<disableCachingBindingFailures ></span><span class="sxs-lookup"><span data-stu-id="9a24a-106">\<disableCachingBindingFailures></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="9a24a-107">構文</span><span class="sxs-lookup"><span data-stu-id="9a24a-107">Syntax</span></span>  
+  
+```xml  
 <disableCachingBindingFailures enabled="0|1"/>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="9a24a-108">属性および要素</span><span class="sxs-lookup"><span data-stu-id="9a24a-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="9a24a-109">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="9a24a-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="9a24a-110">属性</span><span class="sxs-lookup"><span data-stu-id="9a24a-110">Attributes</span></span>  
   
-|Attribute|説明|  
-|---------------|--------|  
-|enabled|必須の属性です。<br /><br /> 調査でアセンブリが見つからなかったために発生するバインディング エラーのキャッシュを無効にするかどうかを指定します。|  
+|<span data-ttu-id="9a24a-111">属性</span><span class="sxs-lookup"><span data-stu-id="9a24a-111">Attribute</span></span>|<span data-ttu-id="9a24a-112">説明</span><span class="sxs-lookup"><span data-stu-id="9a24a-112">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="9a24a-113">enabled</span><span class="sxs-lookup"><span data-stu-id="9a24a-113">enabled</span></span>|<span data-ttu-id="9a24a-114">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="9a24a-114">Required attribute.</span></span><br /><br /> <span data-ttu-id="9a24a-115">バインディングを調査して、アセンブリが見つからなかったために発生するエラーのキャッシュを無効にするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="9a24a-115">Specifies whether to disable the caching of binding failures that occur because the assembly was not found by probing.</span></span>|  
   
-## enabled 属性  
+## <a name="enabled-attribute"></a><span data-ttu-id="9a24a-116">enabled 属性</span><span class="sxs-lookup"><span data-stu-id="9a24a-116">enabled Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|0|調査でアセンブリが見つからなかったために発生するバインディング エラーのキャッシュを無効にしません。  これは .NET Framework Version 2.0 以降での既定のバインディング動作です。|  
-|1|調査でアセンブリが見つからなかったために発生するバインディング エラーのキャッシュを無効にします。  この設定により、.NET Framework Version 1.1 のバインディング動作に戻ります。|  
+|<span data-ttu-id="9a24a-117">値</span><span class="sxs-lookup"><span data-stu-id="9a24a-117">Value</span></span>|<span data-ttu-id="9a24a-118">説明</span><span class="sxs-lookup"><span data-stu-id="9a24a-118">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="9a24a-119">0</span><span class="sxs-lookup"><span data-stu-id="9a24a-119">0</span></span>|<span data-ttu-id="9a24a-120">バインディングを調査して、アセンブリが見つからなかったために発生するエラーのキャッシュを無効にできません。</span><span class="sxs-lookup"><span data-stu-id="9a24a-120">Do not disable the caching of binding failures that occur because the assembly was not found by probing.</span></span> <span data-ttu-id="9a24a-121">これは、.NET Framework version 2.0 以降の既定のバインディングの動作です。</span><span class="sxs-lookup"><span data-stu-id="9a24a-121">This is the default binding behavior starting with the .NET Framework version 2.0.</span></span>|  
+|<span data-ttu-id="9a24a-122">1</span><span class="sxs-lookup"><span data-stu-id="9a24a-122">1</span></span>|<span data-ttu-id="9a24a-123">バインディングを調査して、アセンブリが見つからなかったために発生するエラーのキャッシュを無効にします。</span><span class="sxs-lookup"><span data-stu-id="9a24a-123">Disable the caching of binding failures that occur because the assembly was not found by probing.</span></span> <span data-ttu-id="9a24a-124">この設定は、.NET Framework version 1.1 のバインドの動作に戻ります。</span><span class="sxs-lookup"><span data-stu-id="9a24a-124">This setting reverts to the binding behavior of the .NET Framework version 1.1.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="9a24a-125">子要素</span><span class="sxs-lookup"><span data-stu-id="9a24a-125">Child Elements</span></span>  
+ <span data-ttu-id="9a24a-126">なし。</span><span class="sxs-lookup"><span data-stu-id="9a24a-126">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="9a24a-127">親要素</span><span class="sxs-lookup"><span data-stu-id="9a24a-127">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
-|`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
+|<span data-ttu-id="9a24a-128">要素</span><span class="sxs-lookup"><span data-stu-id="9a24a-128">Element</span></span>|<span data-ttu-id="9a24a-129">説明</span><span class="sxs-lookup"><span data-stu-id="9a24a-129">Description</span></span>|  
+|-------------|-----------------|  
+|`configuration`|<span data-ttu-id="9a24a-130">共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。</span><span class="sxs-lookup"><span data-stu-id="9a24a-130">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="9a24a-131">アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="9a24a-131">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## 解説  
- .NET Framework Version 2.0 以降では、アセンブリを読み込む際の既定の動作として、すべてのバインディング エラーおよび読み込みエラーがキャッシュされます。  つまり、アセンブリの読み込みに失敗した場合、それ以降の同じアセンブリの読み込みの要求は即座に失敗します。アセンブリを探す試みは行われません。  この要素は、調査パスでアセンブリが見つからなかったために発生するバインディング エラーに対応するための既定の動作を無効にします。  このようなエラーでは、<xref:System.IO.FileNotFoundException> がスローされます。  
+## <a name="remarks"></a><span data-ttu-id="9a24a-132">コメント</span><span class="sxs-lookup"><span data-stu-id="9a24a-132">Remarks</span></span>  
+ <span data-ttu-id="9a24a-133">以降、.NET Framework version 2.0 では、アセンブリの読み込みの既定の動作をすべてのバインディングと読み込みエラーをキャッシュします。</span><span class="sxs-lookup"><span data-stu-id="9a24a-133">Starting with the .NET Framework version 2.0, the default behavior for loading assemblies is to cache all binding and loading failures.</span></span> <span data-ttu-id="9a24a-134">つまり、アセンブリの読み込みに失敗した場合、同じアセンブリの読み込みに後続の要求は即座に失敗しようとするアセンブリの検索をします。</span><span class="sxs-lookup"><span data-stu-id="9a24a-134">That is, if an attempt to load an assembly fails, subsequent requests to load the same assembly fail immediately, without any attempt to locate the assembly.</span></span> <span data-ttu-id="9a24a-135">この要素は、そのアセンブリが調査パスに見つからなかったために発生するエラーをバインドするための既定の動作を無効にします。</span><span class="sxs-lookup"><span data-stu-id="9a24a-135">This element disables that default behavior for binding failures that occur because the assembly could not be found in the probing path.</span></span> <span data-ttu-id="9a24a-136">このようなエラーをスロー<xref:System.IO.FileNotFoundException>です。</span><span class="sxs-lookup"><span data-stu-id="9a24a-136">These failures throw <xref:System.IO.FileNotFoundException>.</span></span>  
   
- バインディング エラーおよび読み込みエラーの中には、この要素の影響を受けないものもあり、このようなエラーは常にキャッシュされます。  このようなエラーは、アセンブリが見つかっても読み込むことができなかった場合に発生します。  <xref:System.BadImageFormatException> または <xref:System.IO.FileLoadException> がスローされます。  このようなエラーの例を次の一覧に示します。  
+ <span data-ttu-id="9a24a-137">一部のバインドと障害の読み込みは、この要素の影響は受けませんされ、常にキャッシュされます。</span><span class="sxs-lookup"><span data-stu-id="9a24a-137">Some binding and loading failures are not affected by this element, and are always cached.</span></span> <span data-ttu-id="9a24a-138">アセンブリが見つかりましたが、読み込むことができないために、このようなエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="9a24a-138">These failures occur because the assembly was found but could not be loaded.</span></span> <span data-ttu-id="9a24a-139">スロー<xref:System.BadImageFormatException>または<xref:System.IO.FileLoadException>です。</span><span class="sxs-lookup"><span data-stu-id="9a24a-139">They throw <xref:System.BadImageFormatException> or <xref:System.IO.FileLoadException>.</span></span> <span data-ttu-id="9a24a-140">次の一覧には、このようなエラーの例いくつかにはが含まれています。</span><span class="sxs-lookup"><span data-stu-id="9a24a-140">The following list includes some examples of such failures.</span></span>  
   
--   有効なアセンブリではないファイルを読み込もうとした場合、その後に無効なファイルを正しいアセンブリに置き換えても、それ以降のそのアセンブリの読み込みは失敗します。  
+-   <span data-ttu-id="9a24a-141">読み込もうとした場合は、ファイルが有効なアセンブリではない、適切なアセンブリに無効なファイルが置き換えられた場合でも、後続のアセンブリの読み込みは失敗します。</span><span class="sxs-lookup"><span data-stu-id="9a24a-141">If you attempt to load a file is not a valid assembly, subsequent attempts to load the assembly will fail even if the bad file is replaced with the correct assembly.</span></span>  
   
--   ファイル システムによってロックされているアセンブリを読み込もうとした場合、その後にそのアセンブリがファイル システムによって解放されても、それ以降のそのアセンブリの読み込みは失敗します。  
+-   <span data-ttu-id="9a24a-142">ファイル システムによってロックされているアセンブリをロードしようとすると、アセンブリが、ファイル システムによってリリースされた後でも後続のアセンブリの読み込みは失敗します。</span><span class="sxs-lookup"><span data-stu-id="9a24a-142">If you attempt to load an assembly that is locked by the file system, subsequent attempts to load the assembly will fail even after the assembly is released by the file system.</span></span>  
   
--   読み込もうとしているアセンブリの 1 つ以上のバージョンが調査パスに存在するにもかかわらず、要求している特定のバージョンがその中に含まれていない場合、正しいバージョンを調査パスに移動しても、それ以降のそのバージョンの読み込みは失敗します。  
+-   <span data-ttu-id="9a24a-143">ロードしようとしているアセンブリの 1 つまたは複数のバージョンは、プローブ パスですが、要求している特定のバージョンはそれらの間にない場合、調査パスに正しいバージョンが移動された場合でもそのバージョンの読み込みに後続の試行は失敗します。</span><span class="sxs-lookup"><span data-stu-id="9a24a-143">If one or more versions of the assembly that you are attempting to load is in the probing path, but the specific version you are requesting is not among them, subsequent attempts to load that version will fail even if the correct version is moved into the probing path.</span></span>  
   
-## 使用例  
- 調査でアセンブリが見つからなかったために発生するアセンブリ バインディング エラーのキャッシュを無効にする方法を次のコード例に示します。  
+## <a name="example"></a><span data-ttu-id="9a24a-144">例</span><span class="sxs-lookup"><span data-stu-id="9a24a-144">Example</span></span>  
+ <span data-ttu-id="9a24a-145">次の例では、アセンブリ バインディング エラーを調査して、アセンブリが見つからなかったために発生するのキャッシュを無効にする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9a24a-145">The following example shows how to disable the caching of assembly binding failures that occur because the assembly was not found by probing.</span></span>  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <disableCachingBindingFailures enabled="1" />  
@@ -86,7 +88,7 @@ caps.handback.revision: 14
 </configuration>  
 ```  
   
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [ランタイムがアセンブリを検索する方法](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+## <a name="see-also"></a><span data-ttu-id="9a24a-146">関連項目</span><span class="sxs-lookup"><span data-stu-id="9a24a-146">See Also</span></span>  
+ [<span data-ttu-id="9a24a-147">ランタイム設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="9a24a-147">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="9a24a-148">構成ファイル スキーマ</span><span class="sxs-lookup"><span data-stu-id="9a24a-148">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="9a24a-149">ランタイムがアセンブリを検索する方法</span><span class="sxs-lookup"><span data-stu-id="9a24a-149">How the Runtime Locates Assemblies</span></span>](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

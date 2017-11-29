@@ -1,68 +1,74 @@
 ---
-title: "DataReader によるデータの取得 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataReader によるデータの取得"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 97afc121-fb8b-465b-bab3-6d844420badb
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 0b66ca2fbcc760598b771b4c02a46acc3c9c1d4e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataReader によるデータの取得
-**DataReader** を使用してデータを取得するには、データ ソースから行を取得するために **Command.ExecuteReader** を呼び出して、**Command** オブジェクトのインスタンスを作成し、次に **DataReader** を作成する必要があります。  **DataReader** を使用する例を次に示します。ここで、`reader` は有効な DataReader を、`command` は有効な Command オブジェクトを表します。  
+# <a name="retrieving-data-using-a-datareader"></a><span data-ttu-id="dc196-102">DataReader によるデータの取得</span><span class="sxs-lookup"><span data-stu-id="dc196-102">Retrieving Data Using a DataReader</span></span>
+<span data-ttu-id="dc196-103">使用してデータの取得、 **DataReader**のインスタンスを作成、**コマンド**オブジェクト作成し、作成、 **DataReader**を呼び出して**Command.ExecuteReader**データ ソースから行を取得します。</span><span class="sxs-lookup"><span data-stu-id="dc196-103">Retrieving data using a **DataReader** involves creating an instance of the **Command** object and then creating a **DataReader** by calling **Command.ExecuteReader** to retrieve rows from a data source.</span></span> <span data-ttu-id="dc196-104">使用して次の例を示しています、 **DataReader**場所`reader`は有効な datareader および`command`有効なコマンド オブジェクトを表します。</span><span class="sxs-lookup"><span data-stu-id="dc196-104">The following example illustrates using a **DataReader** where `reader` represents a valid DataReader and `command` represents a valid Command object.</span></span>  
   
 ```  
 reader = command.ExecuteReader();  
 ```  
   
- クエリの結果から行を取得するには、**DataReader** オブジェクトの **Read** メソッドを使用します。  返された行の各列にアクセスするには、その列の名前または序数参照を **DataReader** に渡します。  一方で **DataReader** は、最適のパフォーマンスが得られるように、ネイティブのデータ型を使用して列の値にアクセスするための一連のメソッド \(**GetDateTime**、**GetDouble**、**GetGuid**、**GetInt32** など\) も提供します。  データ プロバイダー固有の **DataReaders** の型指定されたアクセサー メソッドの一覧については、「<xref:System.Data.OleDb.OleDbDataReader>」および「<xref:System.Data.SqlClient.SqlDataReader>」を参照してください。  基になるデータ型がわかっている場合、型指定されたアクセサー メソッドを使用すると、列の値を取得するときに必要な型変換の量が少なくなります。  
+ <span data-ttu-id="dc196-105">使用する、**読み取り**のメソッド、 **DataReader**クエリの結果から行を取得するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="dc196-105">You use the **Read** method of the **DataReader** object to obtain a row from the results of the query.</span></span> <span data-ttu-id="dc196-106">返される行の各列をアクセスするには、名前または列の序数参照を渡すことによって、 **DataReader**です。</span><span class="sxs-lookup"><span data-stu-id="dc196-106">You can access each column of the returned row by passing the name or ordinal reference of the column to the **DataReader**.</span></span> <span data-ttu-id="dc196-107">ただし、最適なパフォーマンスを**DataReader**一連の列の値に、ネイティブ データ型にアクセスできるようにするメソッドを提供 (**GetDateTime**、 **GetDouble**、 **GetGuid**、 **GetInt32**など)。</span><span class="sxs-lookup"><span data-stu-id="dc196-107">However, for best performance, the **DataReader** provides a series of methods that allow you to access column values in their native data types (**GetDateTime**, **GetDouble**, **GetGuid**, **GetInt32**, and so on).</span></span> <span data-ttu-id="dc196-108">データ プロバイダーに固有の型指定されたアクセサー メソッドの一覧については**DataReaders**を参照してください<xref:System.Data.OleDb.OleDbDataReader>と<xref:System.Data.SqlClient.SqlDataReader>です。</span><span class="sxs-lookup"><span data-stu-id="dc196-108">For a list of typed accessor methods for data provider-specific **DataReaders**, see <xref:System.Data.OleDb.OleDbDataReader> and <xref:System.Data.SqlClient.SqlDataReader>.</span></span> <span data-ttu-id="dc196-109">基になるデータ型がわかっている場合、型指定されたアクセサー メソッドを使用すると、列の値を取得するときに必要な型変換の量が少なくなります。</span><span class="sxs-lookup"><span data-stu-id="dc196-109">Using the typed accessor methods, assuming the underlying data type is known, reduces the amount of type conversion required when retrieving the column value.</span></span>  
   
 > [!NOTE]
->  .NET Framework の Windows Server 2003 リリースには、**DataReader** の追加のプロパティである、**HasRows** が含まれているため、これを使用すると、読み取る前に **DataReader** が結果を返したかどうかを確認できます。  
+>  <span data-ttu-id="dc196-110">.NET Framework の Windows Server 2003 リリースには、その他のプロパティが含まれています、 **DataReader**、 **HasRows**を使用するかどうかを**DataReader**がそこから読み取る前に結果を返した。</span><span class="sxs-lookup"><span data-stu-id="dc196-110">The Windows Server 2003 release of the .NET Framework includes an additional property for the **DataReader**, **HasRows**, which enables you to determine if the **DataReader** has returned any results before reading from it.</span></span>  
   
- 次に、**DataReader** オブジェクトを反復処理して各行から 2 つの列を返すコード サンプルを示します。  
+ <span data-ttu-id="dc196-111">次のコード例を反復処理する**DataReader**オブジェクト、およびそれぞれの行から 2 つの列を返します。</span><span class="sxs-lookup"><span data-stu-id="dc196-111">The following code example iterates through a **DataReader** object, and returns two columns from each row.</span></span>  
   
  [!code-csharp[DataWorks SqlClient.HasRows#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.HasRows/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.HasRows#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.HasRows/VB/source.vb#1)]  
   
- **DataReader** はバッファリングされないデータ ストリームを提供して、手続きロジックがデータ ソースからの結果を順番に効率的に処理できるようにします。  **DataReader** はデータをメモリにキャッシュしないため、大量のデータを取得する場合に適しています。  
+ <span data-ttu-id="dc196-112">**DataReader**は効率的にデータ ソースからの結果を順番に処理する手続き型のロジックを可能にするデータのバッファリングされていないストリームを提供します。</span><span class="sxs-lookup"><span data-stu-id="dc196-112">The **DataReader** provides an unbuffered stream of data that allows procedural logic to efficiently process results from a data source sequentially.</span></span> <span data-ttu-id="dc196-113">**DataReader**データがメモリにキャッシュされていないために、大量のデータを取得するときにお勧めします。</span><span class="sxs-lookup"><span data-stu-id="dc196-113">The **DataReader** is a good choice when retrieving large amounts of data because the data is not cached in memory.</span></span>  
   
-## DataReader の終了  
- **DataReader** を使い終えたら、**Close** メソッドを呼び出す必要があります。  
+## <a name="closing-the-datareader"></a><span data-ttu-id="dc196-114">DataReader の終了</span><span class="sxs-lookup"><span data-stu-id="dc196-114">Closing the DataReader</span></span>  
+ <span data-ttu-id="dc196-115">常に呼び出す必要があります、**閉じる**メソッドを使用してが完了したら、 **DataReader**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="dc196-115">You should always call the **Close** method when you have finished using the **DataReader** object.</span></span>  
   
- **Command** に出力パラメーターや戻り値が含まれていても、**DataReader** が終了するまでは使用できません。  
+ <span data-ttu-id="dc196-116">場合、**コマンド**出力を含むパラメーターまたは戻り値の場合が使用できなくまで、 **DataReader**が閉じられます。</span><span class="sxs-lookup"><span data-stu-id="dc196-116">If your **Command** contains output parameters or return values, they will not be available until the **DataReader** is closed.</span></span>  
   
- **DataReader** が開いている間、**Connection** はその **DataReader** によって排他的に使用されています。  元の **DataReader** が終了するまでは、その **Connection** に対してはどのコマンドも実行できません。別の **DataReader** を作成することもできません。  
+ <span data-ttu-id="dc196-117">注意してください、 **DataReader**が開いている場合、**接続**によって排他的に使用されて**DataReader**です。</span><span class="sxs-lookup"><span data-stu-id="dc196-117">Note that while a **DataReader** is open, the **Connection** is in use exclusively by that **DataReader**.</span></span> <span data-ttu-id="dc196-118">ためのコマンドを実行することはできません、**接続**、別の作成を含む**DataReader**、オリジナルまで**DataReader**が閉じられます。</span><span class="sxs-lookup"><span data-stu-id="dc196-118">You cannot execute any commands for the **Connection**, including creating another **DataReader**, until the original **DataReader** is closed.</span></span>  
   
 > [!NOTE]
->  クラスの **Finalize** メソッド内で **Connection**、**DataReader**、またはその他のマネージ オブジェクトの **Close** または **Dispose** を呼び出さないでください。  終了処理では、クラスに直接所有されているアンマネージ リソースだけを解放してください。  クラスがアンマネージ リソースを所有していない場合は、クラス定義に **Finalize** メソッドを含めないでください。  詳細については、「[Garbage Collection](../../../../docs/standard/garbage-collection/index.md)」を参照してください。  
+>  <span data-ttu-id="dc196-119">呼び出す必要はありません**閉じる**または**Dispose**上、**接続**、 **DataReader**、またはその他のマネージ オブジェクトで、 **Finalize**クラスのメソッドです。</span><span class="sxs-lookup"><span data-stu-id="dc196-119">Do not call **Close** or **Dispose** on a **Connection**, a **DataReader**, or any other managed object in the **Finalize** method of your class.</span></span> <span data-ttu-id="dc196-120">終了処理では、クラスに直接所有されているアンマネージ リソースだけを解放してください。</span><span class="sxs-lookup"><span data-stu-id="dc196-120">In a finalizer, only release unmanaged resources that your class owns directly.</span></span> <span data-ttu-id="dc196-121">クラスがアンマネージ リソースを所有していない場合は含まれません、 **Finalize**メソッド、クラス定義にします。</span><span class="sxs-lookup"><span data-stu-id="dc196-121">If your class does not own any unmanaged resources, do not include a **Finalize** method in your class definition.</span></span> <span data-ttu-id="dc196-122">詳細については、次を参照してください。[ガベージ コレクション](../../../../docs/standard/garbage-collection/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="dc196-122">For more information, see [Garbage Collection](../../../../docs/standard/garbage-collection/index.md).</span></span>  
   
-## NextResult による複数の結果セットの取得  
- 複数の結果セットが返された場合は、**DataReader** は **NextResult** メソッドを提供してその結果セットを順に反復処理します。  <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A> メソッドを使用して、2 つの SELECT ステートメントの結果を処理する <xref:System.Data.SqlClient.SqlDataReader> の例を次に示します。  
+## <a name="retrieving-multiple-result-sets-using-nextresult"></a><span data-ttu-id="dc196-123">NextResult による複数の結果セットの取得</span><span class="sxs-lookup"><span data-stu-id="dc196-123">Retrieving Multiple Result Sets using NextResult</span></span>  
+ <span data-ttu-id="dc196-124">複数の結果セットが返される場合は、 **DataReader**提供、 **NextResult**の順序で結果を反復処理するメソッドを設定します。</span><span class="sxs-lookup"><span data-stu-id="dc196-124">If multiple result sets are returned, the **DataReader** provides the **NextResult** method to iterate through the result sets in order.</span></span> <span data-ttu-id="dc196-125"><xref:System.Data.SqlClient.SqlDataReader> メソッドを使用して、2 つの SELECT ステートメントの結果を処理する <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A> の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="dc196-125">The following example shows the <xref:System.Data.SqlClient.SqlDataReader> processing the results of two SELECT statements using the <xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A> method.</span></span>  
   
  [!code-csharp[DataWorks SqlClient.NextResult#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.NextResult/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.NextResult#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.NextResult/VB/source.vb#1)]  
   
-## DataReader からのスキーマ情報の取得  
- **DataReader** が開いている間に **GetSchemaTable** メソッドを使用して、現在の結果セットについてのスキーマ情報を取得できます。  **GetSchemaTable** は、現在の結果セットのスキーマ情報を含む行と列が設定されている <xref:System.Data.DataTable> オブジェクトを返します。  **DataTable** には結果セットの列ごとに 1 行が設定されます。  スキーマ テーブル行の各列が、結果セットで返される列の 1 つのプロパティに割り当てられます。**ColumnName** はそのプロパティの名前であり、列の値はプロパティの値です。  **DataReader** のスキーマ情報を出力するコード サンプルを次に示します。  
+## <a name="getting-schema-information-from-the-datareader"></a><span data-ttu-id="dc196-126">DataReader からのスキーマ情報の取得</span><span class="sxs-lookup"><span data-stu-id="dc196-126">Getting Schema Information from the DataReader</span></span>  
+ <span data-ttu-id="dc196-127">中に、 **DataReader**は開くことができますを取得する、現在使用して結果セットに関するスキーマ情報、 **GetSchemaTable**メソッドです。</span><span class="sxs-lookup"><span data-stu-id="dc196-127">While a **DataReader** is open, you can retrieve schema information about the current result set using the **GetSchemaTable** method.</span></span> <span data-ttu-id="dc196-128">**GetSchemaTable**を返します、<xref:System.Data.DataTable>オブジェクトの現在の結果セットのスキーマ情報が含まれている行と列に設定されます。</span><span class="sxs-lookup"><span data-stu-id="dc196-128">**GetSchemaTable** returns a <xref:System.Data.DataTable> object populated with rows and columns that contain the schema information for the current result set.</span></span> <span data-ttu-id="dc196-129">**DataTable**結果セットの列ごとに 1 つの行が含まれています。</span><span class="sxs-lookup"><span data-stu-id="dc196-129">The **DataTable** contains one row for each column of the result set.</span></span> <span data-ttu-id="dc196-130">スキーマ テーブル行の各列に返される列のプロパティにマップ結果セットの場所、 **ColumnName**プロパティの名前は、列の値は、プロパティの値。</span><span class="sxs-lookup"><span data-stu-id="dc196-130">Each column of the schema table row maps to a property of the column returned in the result set, where the **ColumnName** is the name of the property and the value of the column is the value of the property.</span></span> <span data-ttu-id="dc196-131">次のコード例は、のスキーマ情報を書き込みます**DataReader**です。</span><span class="sxs-lookup"><span data-stu-id="dc196-131">The following code example writes out the schema information for **DataReader**.</span></span>  
   
  [!code-csharp[DataWorks SqlClient.GetSchemaTable#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.GetSchemaTable/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.GetSchemaTable#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.GetSchemaTable/VB/source.vb#1)]  
   
-## OLE DB のチャプターの使用  
- 階層構造の行セット、つまりチャプター \(OLE DB では **DBTYPE\_HCHAPTER** 型、ADO では **adChapter** 型\) は <xref:System.Data.OleDb.OleDbDataReader> を使用して取得できます。  チャプターを含むクエリが **DataReader** として返されるとき、チャプターはその **DataReader** の列として返され、**DataReader** オブジェクトとして公開されます。  
+## <a name="working-with-ole-db-chapters"></a><span data-ttu-id="dc196-132">OLE DB のチャプターの使用</span><span class="sxs-lookup"><span data-stu-id="dc196-132">Working with OLE DB Chapters</span></span>  
+ <span data-ttu-id="dc196-133">階層的な行セット、つまりチャプター (OLE DB 型**DBTYPE_HCHAPTER**、ADO 型**adChapter**) を使用して取得できます、<xref:System.Data.OleDb.OleDbDataReader>です。</span><span class="sxs-lookup"><span data-stu-id="dc196-133">Hierarchical rowsets, or chapters (OLE DB type **DBTYPE_HCHAPTER**, ADO type **adChapter**) can be retrieved using the <xref:System.Data.OleDb.OleDbDataReader>.</span></span> <span data-ttu-id="dc196-134">チャプターを含むクエリとして返される場合、 **DataReader**、チャプターを内の列として返されます**DataReader**として公開されると、 **DataReader**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="dc196-134">When a query that includes a chapter is returned as a **DataReader**, the chapter is returned as a column in that **DataReader** and is exposed as a **DataReader** object.</span></span>  
   
- ADO.NET の **DataSet** を使用することで、テーブル間の親子のリレーションシップを使用して階層構造の行セットを表現することもできます。  詳細については、「[DataSets、DataTables、および DataViews](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)」を参照してください。  
+ <span data-ttu-id="dc196-135">ADO.NET**データセット**テーブル間の親子リレーションシップを使用して階層的な行セットを表すも使用できます。</span><span class="sxs-lookup"><span data-stu-id="dc196-135">The ADO.NET **DataSet** can also be used to represent hierarchical rowsets using parent-child relationships between tables.</span></span> <span data-ttu-id="dc196-136">詳細については、次を参照してください。[データセット、Datatable、および Dataview](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="dc196-136">For more information, see [DataSets, DataTables, and DataViews](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md).</span></span>  
   
- MSDataShape プロバイダーを使用して、顧客リストの顧客別オーダーのチャプター列を生成するコード サンプルを次に示します。  
+ <span data-ttu-id="dc196-137">MSDataShape プロバイダーを使用して、顧客リストの顧客別オーダーのチャプター列を生成するコード サンプルを次に示します。</span><span class="sxs-lookup"><span data-stu-id="dc196-137">The following code example uses the MSDataShape Provider to generate a chapter column of orders for each customer in a list of customers.</span></span>  
   
 ```vb  
 Using connection As OleDbConnection = New OleDbConnection( _  
@@ -128,16 +134,16 @@ custReader.Close();
 }  
 ```  
   
-## Oracle REF CURSOR による結果の取得  
- .NET Framework Data Provider for Oracle は、クエリ結果を返すために、Oracle REF CURSOR の使用をサポートしています。  Oracle REF CURSOR は <xref:System.Data.OracleClient.OracleDataReader> として返されます。  
+## <a name="returning-results-with-oracle-ref-cursors"></a><span data-ttu-id="dc196-138">Oracle REF CURSOR による結果の取得</span><span class="sxs-lookup"><span data-stu-id="dc196-138">Returning Results with Oracle REF CURSORs</span></span>  
+ <span data-ttu-id="dc196-139">.NET Framework Data Provider for Oracle は、クエリ結果を返すために、Oracle REF CURSOR の使用をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="dc196-139">The .NET Framework Data Provider for Oracle supports the use of Oracle REF CURSORs to return a query result.</span></span> <span data-ttu-id="dc196-140">Oracle REF CURSOR は <xref:System.Data.OracleClient.OracleDataReader> として返されます。</span><span class="sxs-lookup"><span data-stu-id="dc196-140">An Oracle REF CURSOR is returned as an <xref:System.Data.OracleClient.OracleDataReader>.</span></span>  
   
- Oracle REF CURSOR を表す **OracleDataReader** オブジェクトは、<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A> メソッドで取得できます。また、<xref:System.Data.DataSet> にデータを格納するために使用する <xref:System.Data.OracleClient.OracleDataAdapter> の **SelectCommand** として、1 つ以上の Oracle REF CURSOR を返す <xref:System.Data.OracleClient.OracleCommand> を指定することもできます。  
+ <span data-ttu-id="dc196-141">取得することができます、 **OracleDataReader**を使用して、Oracle REF CURSOR を表すオブジェクト、<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>メソッド、およびするを指定できますも、<xref:System.Data.OracleClient.OracleCommand>として 1 つまたは複数の Oracle REF Cursor を返す、 **SelectCommand**の<xref:System.Data.OracleClient.OracleDataAdapter>塗りつぶしに使用される、<xref:System.Data.DataSet>です。</span><span class="sxs-lookup"><span data-stu-id="dc196-141">You can retrieve an **OracleDataReader** object, that represents an Oracle REF CURSOR using the <xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A> method, and you can also specify an <xref:System.Data.OracleClient.OracleCommand> that returns one or more Oracle REF CURSORs as the **SelectCommand** for an <xref:System.Data.OracleClient.OracleDataAdapter> used to fill a <xref:System.Data.DataSet>.</span></span>  
   
- Oracle データ ソースから返された REF CURSOR にアクセスするには、クエリ用の **OracleCommand** を作成し、その **Parameters** コレクションに、REF CURSOR を参照する出力パラメーターを追加します。  パラメーターの名前は、クエリの REF CURSOR パラメーターの名前と一致させる必要があります。  パラメーターの型を **OracleType.Cursor** に設定します。  **OracleCommand** の **ExecuteReader** メソッドは REF CURSOR に対する **OracleDataReader** を返します。  
+ <span data-ttu-id="dc196-142">Oracle データ ソースから返された REF CURSOR にアクセスするには、作成、 **OracleCommand**クエリ用に REF カーソルを参照する出力パラメーターを追加し、**パラメーター** のコレクション**OracleCommand**です。</span><span class="sxs-lookup"><span data-stu-id="dc196-142">To access a REF CURSOR returned from an Oracle data source, create an **OracleCommand** for your query and add an output parameter that references the REF CURSOR to the **Parameters** collection of your **OracleCommand**.</span></span> <span data-ttu-id="dc196-143">パラメーターの名前は、クエリの REF CURSOR パラメーターの名前と一致させる必要があります。</span><span class="sxs-lookup"><span data-stu-id="dc196-143">The name of the parameter must match the name of the REF CURSOR parameter in your query.</span></span> <span data-ttu-id="dc196-144">パラメーターの型を設定**OracleType.Cursor**です。</span><span class="sxs-lookup"><span data-stu-id="dc196-144">Set the type of the parameter to **OracleType.Cursor**.</span></span> <span data-ttu-id="dc196-145">**ExecuteReader**のメソッド、 **OracleCommand**が返されます、 **OracleDataReader** REF CURSOR のです。</span><span class="sxs-lookup"><span data-stu-id="dc196-145">The **ExecuteReader** method of your **OracleCommand** will return an **OracleDataReader** for the REF CURSOR.</span></span>  
   
- **OracleCommand** が複数の REF CURSOR を返す場合は、複数の出力パラメーターを追加してください。  **OracleCommand.ExecuteReader** メソッドを呼び出して、それぞれの REF CURSOR にアクセスできます。  **ExecuteReader** を呼び出すと、最初の REF CURSOR を参照する **OracleDataReader** が返されます。  次に **OracleDataReader.NextResult** メソッドを呼び出すと、後続の REF CURSOR にアクセスできます。  **OracleCommand.Parameters** コレクションのパラメーターが REF CURSOR 出力パラメーターと名前が一致していても、**OracleDataReader** は、**Parameters** コレクションに追加された順に出力パラメーターにアクセスします。  
+ <span data-ttu-id="dc196-146">場合、 **OracleCommand**複数の REF CURSOR を返す複数の出力パラメーターを追加します。</span><span class="sxs-lookup"><span data-stu-id="dc196-146">If your **OracleCommand** returns multiple REF CURSORS, add multiple output parameters.</span></span> <span data-ttu-id="dc196-147">それぞれの REF Cursor を呼び出すことによってアクセスできる、 **OracleCommand.ExecuteReader**メソッドです。</span><span class="sxs-lookup"><span data-stu-id="dc196-147">You can access the different REF CURSORs by calling the **OracleCommand.ExecuteReader** method.</span></span> <span data-ttu-id="dc196-148">呼び出し**ExecuteReader**を返します、 **OracleDataReader**最初 REF カーソルを参照します。</span><span class="sxs-lookup"><span data-stu-id="dc196-148">The call to **ExecuteReader** returns an **OracleDataReader** referencing the first REF CURSOR.</span></span> <span data-ttu-id="dc196-149">呼び出すことができますし、 **OracleDataReader.NextResult**後続の REF Cursor にアクセスするメソッド。</span><span class="sxs-lookup"><span data-stu-id="dc196-149">You can then call the **OracleDataReader.NextResult** method to access subsequent REF CURSORs.</span></span> <span data-ttu-id="dc196-150">ただしでは、パラメーター、 **OracleCommand.Parameters**コレクション一致 REF CURSOR 出力パラメーターを名前で、 **OracleDataReader** に追加された順序でそれらにアクセスします。**パラメーター**コレクション。</span><span class="sxs-lookup"><span data-stu-id="dc196-150">Although the parameters in your **OracleCommand.Parameters** collection match the REF CURSOR output parameters by name, the **OracleDataReader** accesses them in the order that they were added to the **Parameters** collection.</span></span>  
   
- たとえば、次のような Oracle パッケージとパッケージ本体があるとします。  
+ <span data-ttu-id="dc196-151">たとえば、次のような Oracle パッケージとパッケージ本体があるとします。</span><span class="sxs-lookup"><span data-stu-id="dc196-151">For example, consider the following Oracle package and package body.</span></span>  
   
 ```  
 CREATE OR REPLACE PACKAGE CURSPKG AS   
@@ -157,7 +163,7 @@ CREATE OR REPLACE PACKAGE BODY CURSPKG AS
 END CURSPKG;   
 ```  
   
- **OracleType.Cursor** 型の 2 つのパラメーターを **Parameters** コレクションに追加して、上の Oracle パッケージから REF CURSOR を返す **OracleCommand** を作成するコードを次に示します。  
+ <span data-ttu-id="dc196-152">次のコードを作成、 **OracleCommand**型の 2 つのパラメーターを追加することで、上の Oracle パッケージから REF Cursor を返す**OracleType.Cursor**を**パラメーター**コレクション。</span><span class="sxs-lookup"><span data-stu-id="dc196-152">The following code creates an **OracleCommand** that returns the REF CURSORs from the previous Oracle package by adding two parameters of type **OracleType.Cursor** to the **Parameters** collection.</span></span>  
   
 ```vb  
 Dim cursCmd As OracleCommand = New OracleCommand("CURSPKG.OPEN_TWO_CURSORS", oraConn)  
@@ -171,7 +177,7 @@ cursCmd.Parameters.Add("EMPCURSOR", OracleType.Cursor).Direction = ParameterDire
 cursCmd.Parameters.Add("DEPTCURSOR", OracleType.Cursor).Direction = ParameterDirection.Output;  
 ```  
   
- **OracleDataReader** の **Read** メソッドと **NextResult** メソッドを使用して、上のコマンドの結果を返すコードを次に示します。  REF CURSOR パラメーターは順番に返されます。  
+ <span data-ttu-id="dc196-153">次のコードは、前のコマンドを使用して、結果を返します、**読み取り**と**NextResult**のメソッド、 **OracleDataReader**です。</span><span class="sxs-lookup"><span data-stu-id="dc196-153">The following code returns the results of the previous command using the **Read** and **NextResult** methods of the **OracleDataReader**.</span></span> <span data-ttu-id="dc196-154">REF CURSOR パラメーターは順番に返されます。</span><span class="sxs-lookup"><span data-stu-id="dc196-154">The REF CURSOR parameters are returned in order.</span></span>  
   
 ```vb  
 oraConn.Open()  
@@ -227,10 +233,10 @@ reader.Close();
 oraConn.Close();  
 ```  
   
- 上のコマンドを使用して、Oracle パッケージの結果を **DataSet** に設定する例を次に示します。  
+ <span data-ttu-id="dc196-155">次の例では、前のコマンドを使用して、事前設定、**データセット**Oracle パッケージの結果。</span><span class="sxs-lookup"><span data-stu-id="dc196-155">The following example uses the previous command to populate a **DataSet** with the results of the Oracle package.</span></span>  
   
 > [!NOTE]
->  **OverflowException** が発生しないようにするために、**DataRow** に値を格納する前に Oracle の NUMBER 型から有効な .NET Framework のデータ型への変換も行うことをお勧めします。  **FillError** イベントを使用して、**OverflowException** が発生したかどうかを確認できます。  **FillError** イベントの詳細については、「[DataAdapter のイベント処理](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)」を参照してください。  
+>  <span data-ttu-id="dc196-156">避けるために、 **OverflowException**は有効な .NET Framework 型の値を格納する前に Oracle の NUMBER 型から変換を処理することをお勧め、 **DataRow**です。</span><span class="sxs-lookup"><span data-stu-id="dc196-156">To avoid an **OverflowException**, we recommend that you also handle any conversion from the Oracle NUMBER type to a valid .NET Framework type before storing the value in a **DataRow**.</span></span> <span data-ttu-id="dc196-157">使用することができます、 **FillError**イベントかどうかを**OverflowException**が発生しました。</span><span class="sxs-lookup"><span data-stu-id="dc196-157">You can use the **FillError** event to determine if an **OverflowException** has occurred.</span></span> <span data-ttu-id="dc196-158">詳細については、 **FillError**イベントを参照してください[DataAdapter イベントの処理](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)です。</span><span class="sxs-lookup"><span data-stu-id="dc196-158">For more information on the **FillError** event, see [Handling DataAdapter Events](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).</span></span>  
   
 ```vb  
 Dim ds As DataSet = New DataSet()  
@@ -252,9 +258,9 @@ adapter.TableMappings.Add("Table1", "Departments");
 adapter.Fill(ds);  
 ```  
   
-## 参照  
- [Working with DataReaders](http://msdn.microsoft.com/ja-jp/126a966a-d08d-4d22-a19f-f432908b2b54)   
- [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [コマンドとパラメーター](../../../../docs/framework/data/adonet/commands-and-parameters.md)   
- [データベース スキーマ情報の取得](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="dc196-159">関連項目</span><span class="sxs-lookup"><span data-stu-id="dc196-159">See Also</span></span>  
+ [<span data-ttu-id="dc196-160">Datareader の操作</span><span class="sxs-lookup"><span data-stu-id="dc196-160">Working with DataReaders</span></span>](http://msdn.microsoft.com/en-us/126a966a-d08d-4d22-a19f-f432908b2b54)  
+ [<span data-ttu-id="dc196-161">Dataadapter と Datareader</span><span class="sxs-lookup"><span data-stu-id="dc196-161">DataAdapters and DataReaders</span></span>](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [<span data-ttu-id="dc196-162">コマンドおよびパラメーター</span><span class="sxs-lookup"><span data-stu-id="dc196-162">Commands and Parameters</span></span>](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
+ [<span data-ttu-id="dc196-163">データベース スキーマ情報の取得</span><span class="sxs-lookup"><span data-stu-id="dc196-163">Retrieving Database Schema Information</span></span>](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
+ [<span data-ttu-id="dc196-164">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="dc196-164">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

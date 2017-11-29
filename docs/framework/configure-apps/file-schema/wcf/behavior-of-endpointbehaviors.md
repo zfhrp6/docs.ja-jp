@@ -1,31 +1,35 @@
 ---
-title: "&lt;endpointBehaviors&gt; の &lt;behavior&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: "&lt;endpointBehaviors&gt; の &lt;behavior&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b90ca3bc-3c22-4174-b903-e3a39898bd27
-caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: bef07c6cdd80874bfa17994dffafe4d3f2cfc5a7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;endpointBehaviors&gt; の &lt;behavior&gt;
-エンドポイントの動作設定のコレクションを含む `behavior` 要素。  各動作には、それぞれの `name` によってインデックスが付けられます。  エンドポイントは、この名前を使用して各動作にリンクできます。  [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。  既定の構成、および名前のないバインディングと動作の詳細については、「[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)」および「[WCF サービスの簡略化された構成](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)」を参照してください。  
+# <a name="ltbehaviorgt-of-ltendpointbehaviorsgt"></a><span data-ttu-id="28e1a-102">&lt;endpointBehaviors&gt; の &lt;behavior&gt;</span><span class="sxs-lookup"><span data-stu-id="28e1a-102">&lt;behavior&gt; of &lt;endpointBehaviors&gt;</span></span>
+<span data-ttu-id="28e1a-103">エンドポイントの動作設定のコレクションを含む `behavior` 要素。</span><span class="sxs-lookup"><span data-stu-id="28e1a-103">The `behavior` element contains a collection of settings for the behavior of an endpoint.</span></span> <span data-ttu-id="28e1a-104">各動作には、それぞれの `name` によってインデックスが付けられます。</span><span class="sxs-lookup"><span data-stu-id="28e1a-104">Each behavior is indexed by its `name`.</span></span> <span data-ttu-id="28e1a-105">エンドポイントは、この名前を使用して各動作にリンクできます。</span><span class="sxs-lookup"><span data-stu-id="28e1a-105">Endpoints can link to each behavior through this name.</span></span> <span data-ttu-id="28e1a-106">[!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。</span><span class="sxs-lookup"><span data-stu-id="28e1a-106">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="28e1a-107">既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="28e1a-107">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>  
   
-## 構文  
+ <span data-ttu-id="28e1a-108">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="28e1a-108">\<system.ServiceModel></span></span>  
+<span data-ttu-id="28e1a-109">\<ビヘイビアー ></span><span class="sxs-lookup"><span data-stu-id="28e1a-109">\<behaviors></span></span>  
+<span data-ttu-id="28e1a-110">\<endpointBehaviors ></span><span class="sxs-lookup"><span data-stu-id="28e1a-110">\<endpointBehaviors></span></span>  
+<span data-ttu-id="28e1a-111">\<動作 ></span><span class="sxs-lookup"><span data-stu-id="28e1a-111">\<behavior></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="28e1a-112">構文</span><span class="sxs-lookup"><span data-stu-id="28e1a-112">Syntax</span></span>  
   
+```xml  
 <system.ServiceModel>  
   <behaviors>  
     <endpointBehaviors>  
@@ -35,34 +39,34 @@ caps.handback.revision: 19
 </system.ServiceModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="28e1a-113">属性および要素</span><span class="sxs-lookup"><span data-stu-id="28e1a-113">Attributes and Elements</span></span>  
+ <span data-ttu-id="28e1a-114">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="28e1a-114">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="28e1a-115">属性</span><span class="sxs-lookup"><span data-stu-id="28e1a-115">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|name|動作の構成名を含む一意の文字列。  この値は、要素の識別文字列として機能するため、一意のユーザー定義の文字列である必要があります。  [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。  既定の構成、および名前のないバインディングと動作の詳細については、「[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)」および「[WCF サービスの簡略化された構成](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)」を参照してください。|  
+|<span data-ttu-id="28e1a-116">属性</span><span class="sxs-lookup"><span data-stu-id="28e1a-116">Attribute</span></span>|<span data-ttu-id="28e1a-117">説明</span><span class="sxs-lookup"><span data-stu-id="28e1a-117">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="28e1a-118">name</span><span class="sxs-lookup"><span data-stu-id="28e1a-118">name</span></span>|<span data-ttu-id="28e1a-119">動作の構成名を含む一意の文字列。</span><span class="sxs-lookup"><span data-stu-id="28e1a-119">A unique string that contains the configuration name of the behavior.</span></span> <span data-ttu-id="28e1a-120">この値は、要素の識別文字列として機能するため、一意のユーザー定義の文字列である必要があります。</span><span class="sxs-lookup"><span data-stu-id="28e1a-120">This value is a user-defined string that must be unique, since it acts as the identification string for the element.</span></span> <span data-ttu-id="28e1a-121">[!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。</span><span class="sxs-lookup"><span data-stu-id="28e1a-121">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="28e1a-122">既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="28e1a-122">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="28e1a-123">子要素</span><span class="sxs-lookup"><span data-stu-id="28e1a-123">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<clientCredentials\>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|サービスに対するクライアントの認証に使用される資格情報を指定します。|  
-|[\<callbackDebug\>](../../../../../docs/framework/configure-apps/file-schema/wcf/callbackdebug.md)|[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] コールバック オブジェクトのサービス デバッグを指定します。|  
-|[\<callbackTimeouts\>](../../../../../docs/framework/configure-apps/file-schema/wcf/callbacktimeouts.md)|クライアント コールバックのタイムアウトを指定します。|  
-|[\<clientVia\>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientvia.md)|メッセージの経路を指定します。|  
-|[\<dataContractSerializer\>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer.md)|DataContractSerializer 用の構成データが含まれています。|  
-|[\<dispatcherSynchronization\>](../../../../../docs/framework/configure-apps/file-schema/wcf/dispatchersynchronization.md)|サービスが非同期に応答を返すことができるようにするエンドポイントの動作を指定します。|  
-|[\<enableWebScript\>](../../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md)|ASP.NET AJAX Web ページからサービスを使用できるようにするエンドポイントの動作を有効にします。  この動作は、必ず \<webHttpBinding\> 標準バインディングまたは \<webMessageEncoding\> バインディング要素と組み合わせて使用する必要があります。|  
-|[\<endpointDiscovery\>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointdiscovery.md)|エンドポイントのさまざまな探索設定を指定します \(探索可能性、スコープ、メタデータに対するカスタム拡張など\)。|  
-|[\<soapProcessing\>](../../../../../docs/framework/configure-apps/file-schema/wcf/soapprocessing.md)|異なるバインディングの種類およびメッセージ バージョンの間でメッセージのマーシャリングに使用されるクライアント エンドポイントの動作を定義します。|  
-|[\<synchronousReceive\>](../../../../../docs/framework/configure-apps/file-schema/wcf/synchronousreceive-element.md)|サービスまたはクライアント アプリケーションでメッセージを受信する場合のランタイム動作を指定します。  属性や子要素はありません。|  
-|[\<transactedBatching\>](../../../../../docs/framework/configure-apps/file-schema/wcf/transactedbatching.md)|受信操作でトランザクション バッチがサポートされるかどうかを指定します。|  
-|[\<webHttp\>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)|構成によってエンドポイントに WebHttpBehavior を指定します。  この動作を \<webHttpBinding\> 標準バインディングと組み合わせて使用すると、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスの Web プログラミング モデルが有効になります。|  
+|<span data-ttu-id="28e1a-124">要素</span><span class="sxs-lookup"><span data-stu-id="28e1a-124">Element</span></span>|<span data-ttu-id="28e1a-125">説明</span><span class="sxs-lookup"><span data-stu-id="28e1a-125">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="28e1a-126">\<clientCredentials ></span><span class="sxs-lookup"><span data-stu-id="28e1a-126">\<clientCredentials></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|<span data-ttu-id="28e1a-127">サービスに対するクライアントの認証に使用される資格情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="28e1a-127">Specifies the credentials used to authenticate the client to a service.</span></span>|  
+|[<span data-ttu-id="28e1a-128">\<callbackDebug ></span><span class="sxs-lookup"><span data-stu-id="28e1a-128">\<callbackDebug></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/callbackdebug.md)|<span data-ttu-id="28e1a-129">[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] コールバック オブジェクトのサービス デバッグを指定します。</span><span class="sxs-lookup"><span data-stu-id="28e1a-129">Specifies service debugging for a [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] callback object.</span></span>|  
+|[<span data-ttu-id="28e1a-130">\<callbackTimeouts ></span><span class="sxs-lookup"><span data-stu-id="28e1a-130">\<callbackTimeouts></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/callbacktimeouts.md)|<span data-ttu-id="28e1a-131">クライアント コールバックのタイムアウトを指定します。</span><span class="sxs-lookup"><span data-stu-id="28e1a-131">Specifies the timeout for the client callback.</span></span>|  
+|[<span data-ttu-id="28e1a-132">\<clientVia ></span><span class="sxs-lookup"><span data-stu-id="28e1a-132">\<clientVia></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientvia.md)|<span data-ttu-id="28e1a-133">メッセージの経路を指定します。</span><span class="sxs-lookup"><span data-stu-id="28e1a-133">Specifies the route a message should take.</span></span>|  
+|[<span data-ttu-id="28e1a-134">\<dataContractSerializer ></span><span class="sxs-lookup"><span data-stu-id="28e1a-134">\<dataContractSerializer></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer.md)|<span data-ttu-id="28e1a-135">DataContractSerializer 用の構成データが含まれています。</span><span class="sxs-lookup"><span data-stu-id="28e1a-135">Contains configuration data for the DataContractSerializer.</span></span>|  
+|[<span data-ttu-id="28e1a-136">\<dispatcherSynchronization ></span><span class="sxs-lookup"><span data-stu-id="28e1a-136">\<dispatcherSynchronization></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/dispatchersynchronization.md)|<span data-ttu-id="28e1a-137">サービスが非同期に応答を返すことができるようにするエンドポイントの動作を指定します。</span><span class="sxs-lookup"><span data-stu-id="28e1a-137">Specifies an endpoint behavior that enables a service to send replies asynchronously.</span></span>|  
+|[<span data-ttu-id="28e1a-138">\<enableWebScript ></span><span class="sxs-lookup"><span data-stu-id="28e1a-138">\<enableWebScript></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md)|<span data-ttu-id="28e1a-139">ASP.NET AJAX Web ページからサービスを使用できるようにするエンドポイントの動作を有効にします。</span><span class="sxs-lookup"><span data-stu-id="28e1a-139">Enables the endpoint behavior that makes it possible to consume the service from ASP.NET AJAX web pages.</span></span> <span data-ttu-id="28e1a-140">動作は、いずれかと組み合わせてのみ使用する必要があります、 \<webHttpBinding > 標準バインディングまたは\<webMessageEncoding > バインド要素。</span><span class="sxs-lookup"><span data-stu-id="28e1a-140">The behavior should only be used in conjunction with either the \<webHttpBinding> standard binding, or the \<webMessageEncoding> binding element.</span></span>|  
+|[<span data-ttu-id="28e1a-141">\<endpointDiscovery ></span><span class="sxs-lookup"><span data-stu-id="28e1a-141">\<endpointDiscovery></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointdiscovery.md)|<span data-ttu-id="28e1a-142">エンドポイントのさまざまな探索設定を指定します (探索可能性、スコープ、メタデータに対するカスタム拡張など)。</span><span class="sxs-lookup"><span data-stu-id="28e1a-142">Specifies the various discovery settings for an endpoint, such as its discoverability, scopes, and any custom extensions to its metadata.</span></span>|  
+|[<span data-ttu-id="28e1a-143">\<soapProcessing ></span><span class="sxs-lookup"><span data-stu-id="28e1a-143">\<soapProcessing></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/soapprocessing.md)|<span data-ttu-id="28e1a-144">異なるバインディングの種類およびメッセージ バージョンの間でメッセージのマーシャリングに使用されるクライアント エンドポイントの動作を定義します。</span><span class="sxs-lookup"><span data-stu-id="28e1a-144">Defines the client endpoint behavior used to marshal messages between different binding types and message versions.</span></span>|  
+|[<span data-ttu-id="28e1a-145">\<synchronousReceive ></span><span class="sxs-lookup"><span data-stu-id="28e1a-145">\<synchronousReceive></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/synchronousreceive-element.md)|<span data-ttu-id="28e1a-146">サービスまたはクライアント アプリケーションでメッセージを受信する場合のランタイム動作を指定します。</span><span class="sxs-lookup"><span data-stu-id="28e1a-146">Specifies run-time behavior for receiving messages in either a service or client application.</span></span> <span data-ttu-id="28e1a-147">属性や子要素はありません。</span><span class="sxs-lookup"><span data-stu-id="28e1a-147">It does not have any attributes or child elements.</span></span>|  
+|[<span data-ttu-id="28e1a-148">\<transactedBatching ></span><span class="sxs-lookup"><span data-stu-id="28e1a-148">\<transactedBatching></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/transactedbatching.md)|<span data-ttu-id="28e1a-149">受信操作でトランザクション バッチがサポートされるかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="28e1a-149">Specifies whether transaction batching is supported for receive operations.</span></span>|  
+|[<span data-ttu-id="28e1a-150">\<webHttp ></span><span class="sxs-lookup"><span data-stu-id="28e1a-150">\<webHttp></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)|<span data-ttu-id="28e1a-151">構成によってエンドポイントに WebHttpBehavior を指定します。</span><span class="sxs-lookup"><span data-stu-id="28e1a-151">Specifies the WebHttpBehavior on an endpoint through configuration.</span></span> <span data-ttu-id="28e1a-152">この動作と組み合わせて使用すると、 \<webHttpBinding > 標準バインディングの Web プログラミング モデルを有効に、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]サービス。</span><span class="sxs-lookup"><span data-stu-id="28e1a-152">This behavior, when used in conjunction with the \<webHttpBinding> standard binding, enables the Web programming model for a [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] service.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="28e1a-153">親要素</span><span class="sxs-lookup"><span data-stu-id="28e1a-153">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<endpointBehaviors\>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)|エンドポイント動作要素のコレクション。|
+|<span data-ttu-id="28e1a-154">要素</span><span class="sxs-lookup"><span data-stu-id="28e1a-154">Element</span></span>|<span data-ttu-id="28e1a-155">説明</span><span class="sxs-lookup"><span data-stu-id="28e1a-155">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="28e1a-156">\<endpointBehaviors ></span><span class="sxs-lookup"><span data-stu-id="28e1a-156">\<endpointBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)|<span data-ttu-id="28e1a-157">エンドポイント動作要素のコレクション。</span><span class="sxs-lookup"><span data-stu-id="28e1a-157">A collection of endpoint behavior elements.</span></span>|

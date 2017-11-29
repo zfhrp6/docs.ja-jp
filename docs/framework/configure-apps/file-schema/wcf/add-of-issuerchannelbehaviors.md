@@ -1,68 +1,79 @@
 ---
-title: "&lt;issuerChannelBehaviors&gt; の &lt;add&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;issuerChannelBehaviors&gt; の &lt;add&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 50710506-e28f-45dd-ab7e-bff6f44173db
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7dca60a5bf1b3dd81502f9fd48d2881c3a9b71dc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;issuerChannelBehaviors&gt; の &lt;add&gt;
-STS と通信するときに使用されるエンドポイントの動作を追加します。  
+# <a name="ltaddgt-of-ltissuerchannelbehaviorsgt"></a><span data-ttu-id="7c31b-102">&lt;issuerChannelBehaviors&gt; の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="7c31b-102">&lt;add&gt; of &lt;issuerChannelBehaviors&gt;</span></span>
+<span data-ttu-id="7c31b-103">STS と通信するときに使用されるエンドポイントの動作を追加します。</span><span class="sxs-lookup"><span data-stu-id="7c31b-103">Adds an endpoint behavior to be used when communicating with an STS.</span></span>  
   
 > [!NOTE]
->  エンドポイントの動作に [\<clientCredentials\>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) 要素が含まれている場合は、例外がスローされます。  
+>  <span data-ttu-id="7c31b-104">すべてのエンドポイント動作が含まれている場合、 [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)要素、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="7c31b-104">If any endpoint behavior contains a [\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) element, an exception will be thrown.</span></span>  
   
-## 構文  
+ <span data-ttu-id="7c31b-105">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="7c31b-105">\<system.ServiceModel></span></span>  
+<span data-ttu-id="7c31b-106">\<ビヘイビアー ></span><span class="sxs-lookup"><span data-stu-id="7c31b-106">\<behaviors></span></span>  
+<span data-ttu-id="7c31b-107">endpointBehaviors セクション</span><span class="sxs-lookup"><span data-stu-id="7c31b-107">endpointBehaviors section</span></span>  
+<span data-ttu-id="7c31b-108">\<動作 ></span><span class="sxs-lookup"><span data-stu-id="7c31b-108">\<behavior></span></span>  
+<span data-ttu-id="7c31b-109">\<clientCredentials ></span><span class="sxs-lookup"><span data-stu-id="7c31b-109">\<clientCredentials></span></span>  
+<span data-ttu-id="7c31b-110">\<issuedToken ></span><span class="sxs-lookup"><span data-stu-id="7c31b-110">\<issuedToken></span></span>  
+<span data-ttu-id="7c31b-111">\<issuerChannelBehaviors > 要素</span><span class="sxs-lookup"><span data-stu-id="7c31b-111">\<issuerChannelBehaviors> Element</span></span>  
+<span data-ttu-id="7c31b-112">\<add></span><span class="sxs-lookup"><span data-stu-id="7c31b-112">\<add></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="7c31b-113">構文</span><span class="sxs-lookup"><span data-stu-id="7c31b-113">Syntax</span></span>  
   
+```xml  
 <add issuerAddress="string"  
      behaviorConfiguraton="string" />  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="7c31b-114">属性および要素</span><span class="sxs-lookup"><span data-stu-id="7c31b-114">Attributes and Elements</span></span>  
+ <span data-ttu-id="7c31b-115">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="7c31b-115">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="7c31b-116">属性</span><span class="sxs-lookup"><span data-stu-id="7c31b-116">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|issuerAddress|通信するためのセキュリティ トークン発行者の URI。|  
-|behaviorConfiguration|同じ構成ファイルに定義されたエンドポイントの動作の名前。|  
+|<span data-ttu-id="7c31b-117">属性</span><span class="sxs-lookup"><span data-stu-id="7c31b-117">Attribute</span></span>|<span data-ttu-id="7c31b-118">説明</span><span class="sxs-lookup"><span data-stu-id="7c31b-118">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="7c31b-119">issuerAddress</span><span class="sxs-lookup"><span data-stu-id="7c31b-119">issuerAddress</span></span>|<span data-ttu-id="7c31b-120">通信するためのセキュリティ トークン発行者の URI。</span><span class="sxs-lookup"><span data-stu-id="7c31b-120">The URI of the security token issuer to communicate with.</span></span>|  
+|<span data-ttu-id="7c31b-121">behaviorConfiguration</span><span class="sxs-lookup"><span data-stu-id="7c31b-121">behaviorConfiguration</span></span>|<span data-ttu-id="7c31b-122">同じ構成ファイルに定義されたエンドポイントの動作の名前。</span><span class="sxs-lookup"><span data-stu-id="7c31b-122">The name of an endpoint behavior defined in the same configuration file.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="7c31b-123">子要素</span><span class="sxs-lookup"><span data-stu-id="7c31b-123">Child Elements</span></span>  
+ <span data-ttu-id="7c31b-124">なし。</span><span class="sxs-lookup"><span data-stu-id="7c31b-124">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="7c31b-125">親要素</span><span class="sxs-lookup"><span data-stu-id="7c31b-125">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<issuerChannelBehaviors\>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md)|指定されたセキュリティ トークン サービスと通信するときに使用される [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] クライアント エンドポイントの動作のコレクションが含まれています。|  
+|<span data-ttu-id="7c31b-126">要素</span><span class="sxs-lookup"><span data-stu-id="7c31b-126">Element</span></span>|<span data-ttu-id="7c31b-127">説明</span><span class="sxs-lookup"><span data-stu-id="7c31b-127">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="7c31b-128">\<issuerChannelBehaviors ></span><span class="sxs-lookup"><span data-stu-id="7c31b-128">\<issuerChannelBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md)|<span data-ttu-id="7c31b-129">指定されたセキュリティ トークン サービスと通信するときに使用される [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] クライアント エンドポイントの動作のコレクションが含まれています。</span><span class="sxs-lookup"><span data-stu-id="7c31b-129">Contains a collection of [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] client endpoint behaviors to be used when communicating with the specified Service Token Services.</span></span>|  
   
-## 解説  
- `issuerAddress` には、クライアントの通信相手となるセキュリティ トークン サービスの URI が含まれます。  `behaviorConfiguration` は、アプリケーションが使用するエンドポイント動作を表します。アプリケーションは、セキュリティ トークン サービスから発行されたトークンを取得するために、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] によって作成されたチャネルでこの動作を使用します。  
+## <a name="remarks"></a><span data-ttu-id="7c31b-130">コメント</span><span class="sxs-lookup"><span data-stu-id="7c31b-130">Remarks</span></span>  
+ <span data-ttu-id="7c31b-131">`issuerAddress` には、クライアントの通信相手となるセキュリティ トークン サービスの URI が含まれます。</span><span class="sxs-lookup"><span data-stu-id="7c31b-131">`issuerAddress` contains the URI of the Security Token Service that the client wants to communicate with.</span></span> <span data-ttu-id="7c31b-132">`behaviorConfiguration` は、アプリケーションが使用するエンドポイント動作を表します。アプリケーションは、セキュリティ トークン サービスから発行されたトークンを取得するために、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] によって作成されたチャネルでこの動作を使用します。</span><span class="sxs-lookup"><span data-stu-id="7c31b-132">`behaviorConfiguration` points to an endpoint behavior that the application uses in the channels created by [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] to get the issued tokens from the Security Token Services.</span></span>  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.IssuedTokenClientElement.IssuerChannelBehaviors%2A>   
- <xref:System.ServiceModel.Configuration.IssuedTokenClientBehaviorsElement>   
- <xref:System.ServiceModel.Configuration.IssuedTokenClientBehaviorsElementCollection>   
- <xref:System.ServiceModel.Security.IssuedTokenClientCredential.IssuerChannelBehaviors%2A>   
- [サービス ID と認証](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)   
- [セキュリティ動作](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)   
- [フェデレーションと発行済みトークン](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)   
- [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [クライアントのセキュリティ保護](../../../../../docs/framework/wcf/securing-clients.md)   
- [方法 : フェデレーション クライアントを作成する](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)   
- [方法 : ローカル発行者を設定する](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)   
- [フェデレーションと発行済みトークン](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)   
- [\<issuerChannelBehaviors\>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md)
+## <a name="see-also"></a><span data-ttu-id="7c31b-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="7c31b-133">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.IssuedTokenClientElement.IssuerChannelBehaviors%2A>  
+ <xref:System.ServiceModel.Configuration.IssuedTokenClientBehaviorsElement>  
+ <xref:System.ServiceModel.Configuration.IssuedTokenClientBehaviorsElementCollection>  
+ <xref:System.ServiceModel.Security.IssuedTokenClientCredential.IssuerChannelBehaviors%2A>  
+ [<span data-ttu-id="7c31b-134">サービス Id と認証</span><span class="sxs-lookup"><span data-stu-id="7c31b-134">Service Identity and Authentication</span></span>](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [<span data-ttu-id="7c31b-135">セキュリティ動作</span><span class="sxs-lookup"><span data-stu-id="7c31b-135">Security Behaviors</span></span>](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
+ [<span data-ttu-id="7c31b-136">フェデレーションと発行済みトークン</span><span class="sxs-lookup"><span data-stu-id="7c31b-136">Federation and Issued Tokens</span></span>](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
+ [<span data-ttu-id="7c31b-137">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="7c31b-137">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="7c31b-138">クライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="7c31b-138">Securing Clients</span></span>](../../../../../docs/framework/wcf/securing-clients.md)  
+ [<span data-ttu-id="7c31b-139">方法: フェデレーション クライアントを作成します。</span><span class="sxs-lookup"><span data-stu-id="7c31b-139">How to: Create a Federated Client</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
+ [<span data-ttu-id="7c31b-140">方法: ローカル発行者を構成します。</span><span class="sxs-lookup"><span data-stu-id="7c31b-140">How to: Configure a Local Issuer</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)  
+ [<span data-ttu-id="7c31b-141">フェデレーションと発行済みトークン</span><span class="sxs-lookup"><span data-stu-id="7c31b-141">Federation and Issued Tokens</span></span>](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
+ [<span data-ttu-id="7c31b-142">\<issuerChannelBehaviors ></span><span class="sxs-lookup"><span data-stu-id="7c31b-142">\<issuerChannelBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md)

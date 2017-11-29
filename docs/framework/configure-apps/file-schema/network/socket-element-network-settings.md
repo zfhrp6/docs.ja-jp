@@ -1,104 +1,105 @@
 ---
-title: "&lt;socket&gt; 要素 (ネットワーク設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/socket"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#socket"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<socket> 要素"
-  - "socket 要素"
+title: "&lt;ソケット&gt;要素 (ネットワーク設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/socket
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#socket
+helpviewer_keywords:
+- <socket> element
+- socket element
 ms.assetid: 366c634c-7d16-478f-aedf-053eda94a1a0
-caps.latest.revision: 21
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 3d1adc163e889a0de6ad27347c8f122ac26d3524
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;socket&gt; 要素 (ネットワーク設定)
-ソケット処理で完了ポートを使用するかどうかを指定します。  
+# <a name="ltsocketgt-element-network-settings"></a><span data-ttu-id="3d186-102">&lt;ソケット&gt;要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="3d186-102">&lt;socket&gt; Element (Network Settings)</span></span>
+<span data-ttu-id="3d186-103">ソケット操作が完了ポートを使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="3d186-103">Specifies whether socket operations use completion ports.</span></span>  
   
-## 構文  
+ <span data-ttu-id="3d186-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="3d186-104">\<configuration></span></span>  
+<span data-ttu-id="3d186-105">\<system.net ></span><span class="sxs-lookup"><span data-stu-id="3d186-105">\<system.net></span></span>  
+<span data-ttu-id="3d186-106">\<設定 ></span><span class="sxs-lookup"><span data-stu-id="3d186-106">\<settings></span></span>  
+<span data-ttu-id="3d186-107">\<ソケット ></span><span class="sxs-lookup"><span data-stu-id="3d186-107">\<socket></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="3d186-108">構文</span><span class="sxs-lookup"><span data-stu-id="3d186-108">Syntax</span></span>  
   
-      <socket  
+```xml  
+<socket  
   alwaysUseCompletionPortsForConnect="true|false"  
   alwaysUseCompletionPortsForAccept="true|false"  
-  ipProtectionLevel ="EdgeRestricted|Restricted|Unrestricted|Unspecified"  
-/socket>  
+  ipProtectionLevel="EdgeRestricted|Restricted|Unrestricted|Unspecified"  
+/>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="3d186-109">属性および要素</span><span class="sxs-lookup"><span data-stu-id="3d186-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="3d186-110">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="3d186-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="3d186-111">属性</span><span class="sxs-lookup"><span data-stu-id="3d186-111">Attributes</span></span>  
   
-|**Attribute**|**説明**|  
-|-------------------|------------|  
-|`alwaysUseCompletionPortsForAccept`|Accept メソッドの呼び出しを行う場合、ソケットで常に完了ポートを使用するかどうかを示します。  既定値は `false` です。|  
-|`alwaysUseCompletionPortsForConnect`|Connect メソッドの呼び出しを行う場合、ソケットで常に完了ポートを使用するかどうかを示します。  既定値は `false` です。|  
-|`ipProtectionLevel`|ソケットに使用する既定の <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=fullName> を指定します。  既定値は、Windows のバージョンによって異なります。|  
+|<span data-ttu-id="3d186-112">**属性**</span><span class="sxs-lookup"><span data-stu-id="3d186-112">**Attribute**</span></span>|<span data-ttu-id="3d186-113">**説明**</span><span class="sxs-lookup"><span data-stu-id="3d186-113">**Description**</span></span>|  
+|-------------------|---------------------|  
+|`alwaysUseCompletionPortsForAccept`|<span data-ttu-id="3d186-114">受け入れメソッド呼び出しの場合、ソケットで常に完了ポートを使用するかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="3d186-114">Indicates whether the socket should always use completion ports for Accept method calls.</span></span> <span data-ttu-id="3d186-115">既定値は `false` です。</span><span class="sxs-lookup"><span data-stu-id="3d186-115">The default value is `false`.</span></span>|  
+|`alwaysUseCompletionPortsForConnect`|<span data-ttu-id="3d186-116">Connect メソッドの呼び出しの場合、ソケットで常に完了ポートを使用するかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="3d186-116">Indicates whether the socket should always use completion ports for Connect method calls.</span></span> <span data-ttu-id="3d186-117">既定値は `false` です。</span><span class="sxs-lookup"><span data-stu-id="3d186-117">The default value is `false`.</span></span>|  
+|`ipProtectionLevel`|<span data-ttu-id="3d186-118">既定値を指定<xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>ソケットを使用します。</span><span class="sxs-lookup"><span data-stu-id="3d186-118">Specifies the default <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> to use for a socket.</span></span> <span data-ttu-id="3d186-119">既定値は、Windows のバージョンによって異なります。</span><span class="sxs-lookup"><span data-stu-id="3d186-119">The default value depends on the version of Windows.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="3d186-120">子要素</span><span class="sxs-lookup"><span data-stu-id="3d186-120">Child Elements</span></span>  
+ <span data-ttu-id="3d186-121">なし。</span><span class="sxs-lookup"><span data-stu-id="3d186-121">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="3d186-122">親要素</span><span class="sxs-lookup"><span data-stu-id="3d186-122">Parent Elements</span></span>  
   
-|**要素**|**説明**|  
-|------------|------------|  
-|[設定](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
+|<span data-ttu-id="3d186-123">**要素**</span><span class="sxs-lookup"><span data-stu-id="3d186-123">**Element**</span></span>|<span data-ttu-id="3d186-124">**説明**</span><span class="sxs-lookup"><span data-stu-id="3d186-124">**Description**</span></span>|  
+|-----------------|---------------------|  
+|[<span data-ttu-id="3d186-125">設定</span><span class="sxs-lookup"><span data-stu-id="3d186-125">settings</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<span data-ttu-id="3d186-126"><xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。</span><span class="sxs-lookup"><span data-stu-id="3d186-126">Configures basic network options for the <xref:System.Net> namespace.</span></span>|  
   
-## 解説  
- クラスによって `alwaysUseCompletionPortsForAccept` と `alwaysUseCompletionPortsForConnect` 属性が <xref:System.Net.Sockets?displayProperty=fullName>.namespace で完了ポートの使用に関する既定の動作を指定するために使用されます。  完了ポートは、高性能なサーバー アプリケーションに推奨されます。  
+## <a name="remarks"></a><span data-ttu-id="3d186-127">コメント</span><span class="sxs-lookup"><span data-stu-id="3d186-127">Remarks</span></span>  
+ <span data-ttu-id="3d186-128">`alwaysUseCompletionPortsForAccept`と`alwaysUseCompletionPortsForConnect`にあるクラスで属性を使用して、完了ポートの使用に関する既定の動作を指定、 <xref:System.Net.Sockets?displayProperty=nameWithType>.namespace です。</span><span class="sxs-lookup"><span data-stu-id="3d186-128">The `alwaysUseCompletionPortsForAccept` and `alwaysUseCompletionPortsForConnect` attributes are used to specify the default behavior regarding the use of completion ports by the classes in the <xref:System.Net.Sockets?displayProperty=nameWithType>.namespace.</span></span> <span data-ttu-id="3d186-129">完了ポートは、高パフォーマンス サーバー アプリケーションに適しています。</span><span class="sxs-lookup"><span data-stu-id="3d186-129">Completion ports are recommended for high performance server applications.</span></span>  
   
- `alwaysUseCompletionPortsForAccept` 属性および `alwaysUseCompletionPortsForConnect` 属性の既定値は **false** です。  
+ <span data-ttu-id="3d186-130">既定値、`alwaysUseCompletionPortsForAccept`と`alwaysUseCompletionPortsForConnect`属性は**false**です。</span><span class="sxs-lookup"><span data-stu-id="3d186-130">The default value for the `alwaysUseCompletionPortsForAccept` and `alwaysUseCompletionPortsForConnect` attributes is **false**.</span></span>  
   
- <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForAccept%2A> を使用して、適用可能な構成ファイルから `alwaysUseCompletionPortsForAccept` 属性の現在の値を取得できます。  <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForConnect%2A> を使用して、適用可能な構成ファイルから `alwaysUseCompletionPortsForConnect` 属性の現在の値を取得できます。  
+ <span data-ttu-id="3d186-131"><xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForAccept%2A>の現在の値を取得するために使用する、`alwaysUseCompletionPortsForAccept`該当する構成ファイルからの属性です。</span><span class="sxs-lookup"><span data-stu-id="3d186-131">The <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForAccept%2A> can be used to get the current value of the `alwaysUseCompletionPortsForAccept` attribute from applicable configuration files.</span></span> <span data-ttu-id="3d186-132"><xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForConnect%2A>の現在の値を取得するために使用する、`alwaysUseCompletionPortsForConnect`該当する構成ファイルからの属性です。</span><span class="sxs-lookup"><span data-stu-id="3d186-132">The <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForConnect%2A> can be used to get the current value of the `alwaysUseCompletionPortsForConnect` attribute from applicable configuration files.</span></span>  
   
- `ipProtectionLevel` 属性は、ソケットに使用する既定の <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=fullName> を指定します。  <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> プロパティを使用すると、IPv6 ソケットの制限を指定したスコープ \(同じリンク ローカルまたはサイト ローカル プレフィックスを持つアドレスなど\) に構成できます。  このオプションによって、アプリケーションは IPv6 ソケットにアクセス制限を設定できます。  この制限により、プライベート LAN で実行されるアプリケーションを外部からの攻撃に対して簡単、堅牢に強化できます。  このオプションで待機中のソケットのスコープを変更して、適切な場合はパブリック ユーザーおよびプライベート ユーザーからの無制限のアクセスを許可したり、必要に応じて同じサイトへのアクセスのみに制限したりできます。  
+ <span data-ttu-id="3d186-133">`ipProtectionLevel`属性は、既定値を指定します。<xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>ソケットを使用します。</span><span class="sxs-lookup"><span data-stu-id="3d186-133">The `ipProtectionLevel` attribute specifies the default <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> to use for a socket.</span></span> <span data-ttu-id="3d186-134"><xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A>プロパティなど、ローカル リンクまたはサイト ローカル プレフィックスを同じアドレスを特定のスコープ、IPv6 ソケットの制限の構成を有効にします。</span><span class="sxs-lookup"><span data-stu-id="3d186-134">The <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> property enables configuration of a restriction for an IPv6 socket to a specified scope, such as addresses with the same link local or site local prefix.</span></span> <span data-ttu-id="3d186-135">このオプションにより、IPv6 ソケットに対するアクセス制限を設定できます。</span><span class="sxs-lookup"><span data-stu-id="3d186-135">This option enables applications to place access restrictions on IPv6 sockets.</span></span> <span data-ttu-id="3d186-136">この制限により、プライベート LAN で実行されるアプリケーションを外部からの攻撃に対して簡単かつ堅牢に強化できます。</span><span class="sxs-lookup"><span data-stu-id="3d186-136">Such restrictions enable an application running on a private LAN to simply and robustly harden itself against external attacks.</span></span> <span data-ttu-id="3d186-137">このオプションは、拡大変換か、適切な場合は、パブリックおよびプライベートのユーザーまたは必要に応じて同じサイトにのみアクセスを制限することから無制限のアクセスを有効にすると、待機中のソケットのスコープを絞り込みます。</span><span class="sxs-lookup"><span data-stu-id="3d186-137">This option widens or narrows the scope of a listening socket, enabling unrestricted access from public and private users when appropriate, or restricting access only to the same site, as required.</span></span>  
   
- この `ipProtectionLevel` 属性設定は、最初の受信トラフィックにだけ影響します。  
+ <span data-ttu-id="3d186-138">これは、`ipProtectionLevel`初期着信トラフィックのみに影響を与える属性の設定。</span><span class="sxs-lookup"><span data-stu-id="3d186-138">This `ipProtectionLevel` attribute setting affects only initial incoming traffic:</span></span>  
   
--   ソケットで受信接続を待機する TCP サーバー。  
+-   <span data-ttu-id="3d186-139">ソケットの受信接続のリッスン TCP サーバー。</span><span class="sxs-lookup"><span data-stu-id="3d186-139">A TCP server listening for incoming connections on a socket.</span></span>  
   
--   ソケットでパケットを受信する UDP アプリケーション。  
+-   <span data-ttu-id="3d186-140">ソケットでパケットを受信する UDP アプリケーション。</span><span class="sxs-lookup"><span data-stu-id="3d186-140">A UDP application receiving a packet on a socket.</span></span>  
   
- この構成設定は、既に確立されている TCP 接続には影響しません \(トラフィックはいずれの方向でも制限されません\)。また、アプリケーションが送信する UDP パケットにも影響しません。  
+ <span data-ttu-id="3d186-141">この構成設定では既に確立されている TCP 接続が (トラフィックは双方向に無制限) には影響しません UDP パケットを送信するアプリケーションには影響しません。</span><span class="sxs-lookup"><span data-stu-id="3d186-141">This configuration setting does not affect already established TCP connections (traffic is unrestricted in both directions) and does not affect an application sending UDP packets.</span></span>  
   
- <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=fullName> 列挙体で定義されている保護レベルに対応する `ipProtectionLevel` 属性設定には、次の値を指定できます。  
+ <span data-ttu-id="3d186-142">できる値、`ipProtectionLevel`属性の設定が指定された定義済みの保護レベルに対応して、<xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>次のように列挙します。</span><span class="sxs-lookup"><span data-stu-id="3d186-142">The possible values for the `ipProtectionLevel` attribute setting correspond with the defined protection levels specified in the <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> enumeration as follows:</span></span>  
   
-|||  
+|<span data-ttu-id="3d186-143">**属性値**</span><span class="sxs-lookup"><span data-stu-id="3d186-143">**Attribute Value**</span></span>|<span data-ttu-id="3d186-144">**説明**</span><span class="sxs-lookup"><span data-stu-id="3d186-144">**Description**</span></span>|  
 |-|-|  
-|**属性値**|**説明**|  
-|EdgeRestricted|IP 保護レベルはエッジ制限付きです。  この値は、インターネット経由で動作するように設計されているアプリケーションによって使用されます。  この設定を使用する場合、Windows Teredo 実装を使用したネットワーク アドレス変換 \(NAT: Network Address Translation\) トラバーサルは使用できません。  これらのアプリケーションは、IPv4 のファイアウォールをバイパスすることがあるため、開いているポートを対象としたインターネットからの攻撃に対して堅牢である必要があります。  Windows Server 2003 と Windows XP では、ソケットの IP 保護レベルの既定値はエッジ制限付きです。|  
-|Restricted|IP 保護レベルは制限付きです。  この値は、インターネットのシナリオを実装しないイントラネット アプリケーションによって使用されます。  これらのアプリケーションは、一般的に、インターネット型の攻撃に対してテストが行われていなかったり堅牢ではなかったりします。  この設定を使用する場合、受信トラフィックはリンクローカルのみに制限されます。|  
-|制限なし|IP 保護レベルは無制限です。  この値は、Windows に組み込まれている IPv6 NAT Traversal 機能 \(たとえば、Teredo\) を使用するアプリケーションを含む、インターネット経由で動作するように設計されているアプリケーションによって使用されます。  これらのアプリケーションは、IPv4 のファイアウォールをバイパスすることがあるため、開いているポートを対象としたインターネットからの攻撃に対して堅牢である必要があります。  Windows Server 2008 R2 と Windows Vista では、ソケットの IP 保護レベルの既定値は無制限です。|  
-|Unspecified|IP 保護レベルは未指定です。  Windows 7 と Windows Server 2008 R2 では、ソケットの IP 保護レベルの既定値は未指定です。|  
+|<span data-ttu-id="3d186-145">EdgeRestricted</span><span class="sxs-lookup"><span data-stu-id="3d186-145">EdgeRestricted</span></span>|<span data-ttu-id="3d186-146">IP 保護レベルは、エッジ制限付きです。</span><span class="sxs-lookup"><span data-stu-id="3d186-146">The IP protection level is edge restricted.</span></span> <span data-ttu-id="3d186-147">この値が、インターネット経由で動作するアプリケーションで使用されます。</span><span class="sxs-lookup"><span data-stu-id="3d186-147">This value would be used by applications designed to operate across the Internet.</span></span> <span data-ttu-id="3d186-148">この設定は、Windows Teredo の実装を使用したネットワーク アドレス変換 (NAT) トラバーサルを許可されません。</span><span class="sxs-lookup"><span data-stu-id="3d186-148">This setting does not allow Network Address Translation (NAT) traversal using the Windows Teredo implementation.</span></span> <span data-ttu-id="3d186-149">これらのアプリケーションは、開かれたポートに送信するインターネット攻撃からアプリケーションを強化する必要がありますので、IPv4 のファイアウォールをバイパスする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="3d186-149">These applications may bypass IPv4 firewalls, so applications must be hardened against Internet attacks directed at the opened port.</span></span> <span data-ttu-id="3d186-150">Windows Server 2003 および Windows XP の場合は、ソケットで IP 保護レベルの既定値はエッジ制限付きです。</span><span class="sxs-lookup"><span data-stu-id="3d186-150">On Windows Server 2003 and Windows XP, the default value for the IP Protection level on a socket is edge restricted.</span></span>|  
+|<span data-ttu-id="3d186-151">Restricted</span><span class="sxs-lookup"><span data-stu-id="3d186-151">Restricted</span></span>|<span data-ttu-id="3d186-152">IP 保護レベルは制限されます。</span><span class="sxs-lookup"><span data-stu-id="3d186-152">The IP protection level is restricted.</span></span> <span data-ttu-id="3d186-153">この値は、イントラネットのシナリオを実装していないイントラネット アプリケーションで使用されます。</span><span class="sxs-lookup"><span data-stu-id="3d186-153">This value would be used by intranet applications that do not implement Internet scenarios.</span></span> <span data-ttu-id="3d186-154">これらのアプリケーションは通常、テストもインターネット スタイルの攻撃に対して強化します。</span><span class="sxs-lookup"><span data-stu-id="3d186-154">These applications are generally not tested or hardened against Internet-style attacks.</span></span> <span data-ttu-id="3d186-155">この設定では、リンク ローカルのみを受信したトラフィックを制限します。</span><span class="sxs-lookup"><span data-stu-id="3d186-155">This setting will limit the received traffic to link-local only.</span></span>|  
+|<span data-ttu-id="3d186-156">無制限</span><span class="sxs-lookup"><span data-stu-id="3d186-156">Unrestricted</span></span>|<span data-ttu-id="3d186-157">IP 保護レベルは制限されません。</span><span class="sxs-lookup"><span data-stu-id="3d186-157">The IP protection level is unrestricted.</span></span> <span data-ttu-id="3d186-158">この値は組み込まれている IPv6 NAT トラバーサル機能を活用するアプリケーションなど、インターネット経由で動作するよう設計されています。 アプリケーションによって使用されます (たとえば Teredo) を Windows にします。</span><span class="sxs-lookup"><span data-stu-id="3d186-158">This value would be used by applications designed to operate across the Internet, including applications taking advantage of IPv6 NAT traversal capabilities built into Windows (Teredo, for example).</span></span> <span data-ttu-id="3d186-159">これらのアプリケーションは、開かれたポートに送信するインターネット攻撃からアプリケーションを強化する必要がありますので、IPv4 のファイアウォールをバイパスする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="3d186-159">These applications may bypass IPv4 firewalls, so applications must be hardened against Internet attacks directed at the opened port.</span></span> <span data-ttu-id="3d186-160">Windows Server 2008 R2 および Windows Vista では、ソケットで IP 保護レベルの既定値は制限されません。</span><span class="sxs-lookup"><span data-stu-id="3d186-160">On Windows Server 2008 R2 and Windows Vista, the default value for the IP Protection level on a socket is unrestricted.</span></span>|  
+|<span data-ttu-id="3d186-161">指定されていません。</span><span class="sxs-lookup"><span data-stu-id="3d186-161">Unspecified</span></span>|<span data-ttu-id="3d186-162">IP 保護レベルが指定されていません。</span><span class="sxs-lookup"><span data-stu-id="3d186-162">The IP protection level is unspecified.</span></span> <span data-ttu-id="3d186-163">Windows 7 および Windows Server 2008 R2 でのソケットで IP 保護レベルの既定値は指定されません。</span><span class="sxs-lookup"><span data-stu-id="3d186-163">On Windows 7 and Windows Server 2008 R2, the default value for the IP Protection level on a socket is unspecified.</span></span>|  
   
- `ipProtectionLevel` 属性の既定値は **Unspecified** です。  
+ <span data-ttu-id="3d186-164">既定値、`ipProtectionLevel`属性は**未指定**です。</span><span class="sxs-lookup"><span data-stu-id="3d186-164">The default value for the `ipProtectionLevel` attribute is **Unspecified**.</span></span>  
   
- <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> プロパティを使用して、適用可能な構成ファイルから `ipProtectionLevel` 属性の現在の値を取得できます。  
+ <span data-ttu-id="3d186-165"><xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A>プロパティを使用しての現在の値を取得すること、`ipProtectionLevel`該当する構成ファイルからの属性です。</span><span class="sxs-lookup"><span data-stu-id="3d186-165">The <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> property can be used to get the current value of the `ipProtectionLevel` attribute from applicable configuration files.</span></span>  
   
-## 構成ファイル  
- この要素は、アプリケーション構成ファイルまたはマシン構成ファイル \(Machine.config\) で使用できます。  
+## <a name="configuration-files"></a><span data-ttu-id="3d186-166">構成ファイル</span><span class="sxs-lookup"><span data-stu-id="3d186-166">Configuration Files</span></span>  
+ <span data-ttu-id="3d186-167">この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。</span><span class="sxs-lookup"><span data-stu-id="3d186-167">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## 使用例  
- 完了ポートが使用される必要があることと、既定の <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=fullName> が Unrestricted である必要があることを指定する方法を、次のコード例に示します。  
+## <a name="example"></a><span data-ttu-id="3d186-168">例</span><span class="sxs-lookup"><span data-stu-id="3d186-168">Example</span></span>  
+ <span data-ttu-id="3d186-169">次の例は、完了ポートを使用することを指定する方法と、既定<xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>限定してください。</span><span class="sxs-lookup"><span data-stu-id="3d186-169">The following example shows how to specify that completion ports should be used and that the default <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> should be unrestricted.</span></span>  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <settings>  
@@ -112,10 +113,10 @@ caps.handback.revision: 21
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Net?displayProperty=fullName>   
- <xref:System.Net.Configuration.SocketElement?displayProperty=fullName>   
- <xref:System.Net.Sockets?displayProperty=fullName>   
- <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=fullName>   
- <xref:System.Net.Sockets.SocketOptionName?displayProperty=fullName>   
- [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+## <a name="see-also"></a><span data-ttu-id="3d186-170">関連項目</span><span class="sxs-lookup"><span data-stu-id="3d186-170">See Also</span></span>  
+ <xref:System.Net?displayProperty=nameWithType>  
+ <xref:System.Net.Configuration.SocketElement?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel?displayProperty=nameWithType>  
+ [<span data-ttu-id="3d186-171">ネットワーク設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="3d186-171">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

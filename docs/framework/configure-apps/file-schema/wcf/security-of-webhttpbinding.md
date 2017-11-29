@@ -1,28 +1,36 @@
 ---
-title: "&lt;webHttpBinding&gt; の &lt;security&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;webHttpBinding&gt; の &lt;security&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 727cf3d2-6f56-48ad-a59f-ba423edb9c83
-caps.latest.revision: 9
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: b3d5d00dcc79a746818975a6a8b125d3dc33933b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;webHttpBinding&gt; の &lt;security&gt;
-[\<wsHttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)で構成されるエンドポイントのセキュリティ要件を指定します。  
+# <a name="ltsecuritygt-of-ltwebhttpbindinggt"></a><span data-ttu-id="1e2b6-102">&lt;webHttpBinding&gt; の &lt;security&gt;</span><span class="sxs-lookup"><span data-stu-id="1e2b6-102">&lt;security&gt; of &lt;webHttpBinding&gt;</span></span>
+<span data-ttu-id="1e2b6-103">構成されるエンドポイントのセキュリティ要件を指定、 [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-103">Specifies the security requirements for an endpoint configured with a [\<wsHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).</span></span>  
   
-## 構文  
+ <span data-ttu-id="1e2b6-104">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="1e2b6-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="1e2b6-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="1e2b6-105">\<bindings></span></span>  
+<span data-ttu-id="1e2b6-106">\<webHttpBinding ></span><span class="sxs-lookup"><span data-stu-id="1e2b6-106">\<webHttpBinding></span></span>  
+<span data-ttu-id="1e2b6-107">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="1e2b6-107">\<binding></span></span>  
+<span data-ttu-id="1e2b6-108">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="1e2b6-108">\<security></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="1e2b6-109">構文</span><span class="sxs-lookup"><span data-stu-id="1e2b6-109">Syntax</span></span>  
   
+```xml  
 <system.ServiceModel>  
     <bindings>  
         <webHttpBinding>  
@@ -38,45 +46,45 @@ caps.handback.revision: 9
 </system.ServiceModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="1e2b6-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="1e2b6-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="1e2b6-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="1e2b6-112">属性</span><span class="sxs-lookup"><span data-stu-id="1e2b6-112">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|モード|トランスポート レベルのセキュリティをエンドポイントで使用するか、セキュリティを使用しないかを指定します。  既定値は、`None` です。  この属性は <xref:System.ServiceModel.WebHttpSecurityMode> 型です。|  
+|<span data-ttu-id="1e2b6-113">属性</span><span class="sxs-lookup"><span data-stu-id="1e2b6-113">Attribute</span></span>|<span data-ttu-id="1e2b6-114">説明</span><span class="sxs-lookup"><span data-stu-id="1e2b6-114">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="1e2b6-115">モード</span><span class="sxs-lookup"><span data-stu-id="1e2b6-115">mode</span></span>|<span data-ttu-id="1e2b6-116">トランスポート レベルのセキュリティをエンドポイントで使用するか、セキュリティを使用しないかを指定します。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-116">Specifies whether transport-level security or no security is used by an endpoint.</span></span> <span data-ttu-id="1e2b6-117">既定値は、`None` です。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-117">The default is `None`.</span></span> <span data-ttu-id="1e2b6-118">この属性は <xref:System.ServiceModel.WebHttpSecurityMode> 型です。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-118">This attribute is of type <xref:System.ServiceModel.WebHttpSecurityMode>.</span></span>|  
   
-## Mode 属性  
+## <a name="mode-attribute"></a><span data-ttu-id="1e2b6-119">Mode 属性</span><span class="sxs-lookup"><span data-stu-id="1e2b6-119">Mode Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|なし|セキュリティを無効にします。|  
-|Transport|セキュリティは、HTTPS を使用して確保されます。  サービスは、SSL 証明書を使用して構成する必要があります。  メッセージは、HTTPS およびサービスを使用して完全にセキュリティで保護され、サービスの SSL 証明書を使用するクライアントによって認証されます。  クライアント認証は、[\<transport\>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-webhttpbinding.md) の `ClientCredentialType` 属性を使用して制御されます。|  
-|TransportCredentialOnly|このモードは、メッセージの整合性と機密性を提供しません。  HTTP ベースのクライアント認証を提供します。  このモードを使用するときは、十分に注意する必要があります。  トランスポート セキュリティが他の方法 \(IPSec など\) で提供され、クライアント認証だけが [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] インフラストラクチャで提供されている環境で使用する必要があります。|  
+|<span data-ttu-id="1e2b6-120">値</span><span class="sxs-lookup"><span data-stu-id="1e2b6-120">Value</span></span>|<span data-ttu-id="1e2b6-121">説明</span><span class="sxs-lookup"><span data-stu-id="1e2b6-121">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="1e2b6-122">なし</span><span class="sxs-lookup"><span data-stu-id="1e2b6-122">None</span></span>|<span data-ttu-id="1e2b6-123">セキュリティを無効にします。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-123">Security is disabled.</span></span>|  
+|<span data-ttu-id="1e2b6-124">Transport</span><span class="sxs-lookup"><span data-stu-id="1e2b6-124">Transport</span></span>|<span data-ttu-id="1e2b6-125">セキュリティは、HTTPS を使用して確保されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-125">Security is provided using HTTPS.</span></span> <span data-ttu-id="1e2b6-126">サービスは、SSL 証明書を使用して構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-126">The service needs to be configured with SSL certificates.</span></span> <span data-ttu-id="1e2b6-127">メッセージは、HTTPS およびサービスを使用して完全にセキュリティで保護され、サービスの SSL 証明書を使用するクライアントによって認証されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-127">The message is entirely secured using HTTPS and the service is authenticated by the client using the service’s SSL certificate.</span></span> <span data-ttu-id="1e2b6-128">クライアントの認証はによって制御されます、`ClientCredentialType`の属性、 [\<トランスポート >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-webhttpbinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-128">The client authentication is controlled through the `ClientCredentialType` attribute of the [\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-webhttpbinding.md).</span></span>|  
+|<span data-ttu-id="1e2b6-129">TransportCredentialOnly</span><span class="sxs-lookup"><span data-stu-id="1e2b6-129">TransportCredentialOnly</span></span>|<span data-ttu-id="1e2b6-130">このモードは、メッセージの整合性と機密性を提供しません。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-130">This mode does not provide message integrity and confidentiality.</span></span> <span data-ttu-id="1e2b6-131">HTTP ベースのクライアント認証を提供します。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-131">It provides HTTP-based client authentication.</span></span> <span data-ttu-id="1e2b6-132">このモードを使用するときは、十分に注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-132">This mode should be used with caution.</span></span> <span data-ttu-id="1e2b6-133">トランスポート セキュリティが他の方法 (IPSec など) で提供され、クライアント認証だけが [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] インフラストラクチャで提供されている環境で使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-133">It should be used in environments where the transport security is being provided by other means (such as IPSec) and only client authentication is provided by the [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] infrastructure.</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="1e2b6-134">子要素</span><span class="sxs-lookup"><span data-stu-id="1e2b6-134">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<transport\>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-webhttpbinding.md)|トランスポートのセキュリティ設定を定義します。  この要素は、<xref:System.ServiceModel.Configuration.HttpTransportSecurityElement> 型に対応しています。|  
+|<span data-ttu-id="1e2b6-135">要素</span><span class="sxs-lookup"><span data-stu-id="1e2b6-135">Element</span></span>|<span data-ttu-id="1e2b6-136">説明</span><span class="sxs-lookup"><span data-stu-id="1e2b6-136">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="1e2b6-137">\<トランスポート ></span><span class="sxs-lookup"><span data-stu-id="1e2b6-137">\<transport></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-webhttpbinding.md)|<span data-ttu-id="1e2b6-138">トランスポートのセキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-138">Defines the transport security settings.</span></span> <span data-ttu-id="1e2b6-139">この要素は、<xref:System.ServiceModel.Configuration.HttpTransportSecurityElement> 型に対応しています。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-139">This element corresponds to the <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement> type.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="1e2b6-140">親要素</span><span class="sxs-lookup"><span data-stu-id="1e2b6-140">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<webHttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|SOAP メッセージに代わって HTTP 要求に応答する [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] Web サービスのエンドポイントを構成するために使用するバインド要素。|  
+|<span data-ttu-id="1e2b6-141">要素</span><span class="sxs-lookup"><span data-stu-id="1e2b6-141">Element</span></span>|<span data-ttu-id="1e2b6-142">説明</span><span class="sxs-lookup"><span data-stu-id="1e2b6-142">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="1e2b6-143">\<webHttpBinding ></span><span class="sxs-lookup"><span data-stu-id="1e2b6-143">\<webHttpBinding></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|<span data-ttu-id="1e2b6-144">SOAP メッセージに代わって HTTP 要求に応答する [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] Web サービスのエンドポイントを構成するために使用するバインド要素。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-144">A binding element that is used to configure endpoints for [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] Web services that respond to HTTP requests instead of SOAP messages.</span></span>|  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.WebHttpBindingElement>   
- <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>   
- <xref:System.ServiceModel.WebHttpBinding.Security%2A>   
- <xref:System.ServiceModel.Configuration.WebHttpBindingElement.Security%2A>   
- <xref:System.ServiceModel.WebHttpSecurity>   
- [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [資格情報の種類の選択](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/ja-jp/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<binding\>](../../../../../docs/framework/misc/binding.md)   
- [WCF Web HTTP プログラミング モデル](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+## <a name="see-also"></a><span data-ttu-id="1e2b6-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="1e2b6-145">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.WebHttpBindingElement>  
+ <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>  
+ <xref:System.ServiceModel.WebHttpBinding.Security%2A>  
+ <xref:System.ServiceModel.Configuration.WebHttpBindingElement.Security%2A>  
+ <xref:System.ServiceModel.WebHttpSecurity>  
+ [<span data-ttu-id="1e2b6-146">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="1e2b6-146">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="1e2b6-147">資格情報の種類を選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-147">Selecting a Credential Type</span></span>](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
+ [<span data-ttu-id="1e2b6-148">バインディング</span><span class="sxs-lookup"><span data-stu-id="1e2b6-148">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="1e2b6-149">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="1e2b6-149">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="1e2b6-150">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="1e2b6-150">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [<span data-ttu-id="1e2b6-151">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="1e2b6-151">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)  
+ [<span data-ttu-id="1e2b6-152">WCF Web HTTP プログラミング モデル</span><span class="sxs-lookup"><span data-stu-id="1e2b6-152">WCF Web HTTP Programming Model</span></span>](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

@@ -1,40 +1,43 @@
 ---
-title: "&lt;compiler&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#compiler"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.codedom/compilers/compiler"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<compiler> 要素"
-  - "コンパイラ構成属性"
-  - "コンパイラ構成要素, <compiler> 要素"
-  - "compiler 要素"
+title: "&lt;コンパイラ&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#compiler
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.codedom/compilers/compiler
+helpviewer_keywords:
+- compiler configuration elements, <compiler> element
+- <compiler> element
+- compiler configuration attributes
+- compiler element
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
-caps.latest.revision: 20
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 8d2562bb37413cd07b4548bbf2bad0b6a9aedbc5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;compiler&gt; 要素
-言語プロバイダーのコンパイラ設定属性を指定します。  
+# <a name="ltcompilergt-element"></a><span data-ttu-id="168ce-102">&lt;コンパイラ&gt;要素</span><span class="sxs-lookup"><span data-stu-id="168ce-102">&lt;compiler&gt; Element</span></span>
+<span data-ttu-id="168ce-103">言語プロバイダーのコンパイラ構成属性を指定します。</span><span class="sxs-lookup"><span data-stu-id="168ce-103">Specifies the compiler configuration attributes for a language provider.</span></span>  
   
-## 構文  
+ <span data-ttu-id="168ce-104">\<構成要素 ></span><span class="sxs-lookup"><span data-stu-id="168ce-104">\<configuration Element></span></span>  
+<span data-ttu-id="168ce-105">\<system.codedom 要素 ></span><span class="sxs-lookup"><span data-stu-id="168ce-105">\<system.codedom Element></span></span>  
+<span data-ttu-id="168ce-106">\<コンパイラ要素 ></span><span class="sxs-lookup"><span data-stu-id="168ce-106">\<compilers Element></span></span>  
+<span data-ttu-id="168ce-107">\<コンパイラ > 要素</span><span class="sxs-lookup"><span data-stu-id="168ce-107">\<compiler> Element</span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="168ce-108">構文</span><span class="sxs-lookup"><span data-stu-id="168ce-108">Syntax</span></span>  
+  
+```xml  
 <compiler  
   language="languageName[;...;...]"  
   extension="fileExtension[;...;...]"  
@@ -44,47 +47,47 @@ caps.handback.revision: 20
 />  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="168ce-109">属性および要素</span><span class="sxs-lookup"><span data-stu-id="168ce-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="168ce-110">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="168ce-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="168ce-111">属性</span><span class="sxs-lookup"><span data-stu-id="168ce-111">Attributes</span></span>  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`compilerOptions`|省略可能な属性。<br /><br /> コンパイル用のその他のコンパイラ固有引数を指定します。  `compilerOptions` 属性の値については、通常、コンパイラのコンパイラ オプションのトピックで説明されています。  Visual Studio 2005 のドキュメントで「コンパイラ オプション」というキーワードを検索すると、コンパイラのオプションについての説明を見つけることができます。|  
-|`extension`|必須の属性です。<br /><br /> 言語プロバイダーのソース ファイルで使用されるファイル名拡張子のセミコロン区切りのリストを指定します。  たとえば、".cs" とします。|  
-|`language`|必須の属性です。<br /><br /> 言語プロバイダーでサポートされる言語名のセミコロン区切りのリストを指定します。  たとえば、"c\#;cs;csharp" とします。|  
-|`type`|必須の属性です。<br /><br /> 言語プロバイダーの型名と、プロバイダーの実装が含まれているアセンブリの名前を指定します。  型名は、「[完全修飾型名の指定](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)」で定義されている要件を満たす必要があります。|  
-|`warningLevel`|省略可能な属性。<br /><br /> コンパイラの既定の警告レベルを指定します。これにより、言語プロバイダーでエラーとして処理されるコンパイラの警告レベルが決定されます。|  
+|<span data-ttu-id="168ce-112">属性</span><span class="sxs-lookup"><span data-stu-id="168ce-112">Attribute</span></span>|<span data-ttu-id="168ce-113">説明</span><span class="sxs-lookup"><span data-stu-id="168ce-113">Description</span></span>|  
+|---------------|-----------------|  
+|`compilerOptions`|<span data-ttu-id="168ce-114">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="168ce-114">Optional attribute.</span></span><br /><br /> <span data-ttu-id="168ce-115">コンパイルのコンパイラ固有の追加の引数を指定します。</span><span class="sxs-lookup"><span data-stu-id="168ce-115">Specifies additional compiler-specific arguments for compilation.</span></span> <span data-ttu-id="168ce-116">値、`compilerOptions`属性は通常はコンパイラのコンパイラ オプションのトピックに表示します。</span><span class="sxs-lookup"><span data-stu-id="168ce-116">The values for the `compilerOptions` attribute are typically listed in a compiler options topic for the compiler.</span></span> <span data-ttu-id="168ce-117">Visual Studio 2005 ドキュメントでの「コンパイラ オプション」というキーワードを検索してコンパイラのオプションを検索できます。</span><span class="sxs-lookup"><span data-stu-id="168ce-117">In the Visual Studio 2005 documentation, you can locate the options for the compiler by looking for "compiler options" in the index.</span></span>|  
+|`extension`|<span data-ttu-id="168ce-118">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="168ce-118">Required attribute.</span></span><br /><br /> <span data-ttu-id="168ce-119">言語プロバイダーのソース ファイルによって使用されるファイル名拡張子のセミコロンで区切った一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="168ce-119">Provides a semicolon-separated list of file name extensions used by source files for the language provider.</span></span> <span data-ttu-id="168ce-120">たとえば、".cs"と指定します。</span><span class="sxs-lookup"><span data-stu-id="168ce-120">For example, ".cs".</span></span>|  
+|`language`|<span data-ttu-id="168ce-121">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="168ce-121">Required attribute.</span></span><br /><br /> <span data-ttu-id="168ce-122">言語プロバイダーによってサポートされる言語名のセミコロン区切りの一覧を提供します。</span><span class="sxs-lookup"><span data-stu-id="168ce-122">Provides a semicolon-separated list of language names supported by the language provider.</span></span> <span data-ttu-id="168ce-123">たとえば、「c# 以外の場合は cs; csharp」です。</span><span class="sxs-lookup"><span data-stu-id="168ce-123">For example, "c#;cs;csharp".</span></span>|  
+|`type`|<span data-ttu-id="168ce-124">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="168ce-124">Required attribute.</span></span><br /><br /> <span data-ttu-id="168ce-125">プロバイダーの実装を含むアセンブリの名前を含め、言語プロバイダーの型名を指定します。</span><span class="sxs-lookup"><span data-stu-id="168ce-125">Specifies the type name of the language provider, including the name of the assembly containing the provider implementation.</span></span> <span data-ttu-id="168ce-126">型名で定義されている要件を満たす必要がある[完全修飾型名の指定](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)です。</span><span class="sxs-lookup"><span data-stu-id="168ce-126">The type name must meet the requirements defined in [Specifying Fully Qualified Type Names](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).</span></span>|  
+|`warningLevel`|<span data-ttu-id="168ce-127">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="168ce-127">Optional attribute.</span></span><br /><br /> <span data-ttu-id="168ce-128">既定のコンパイラ警告レベルを指定しますある言語プロバイダーは、コンパイルの警告をエラーとして扱いますレベルが決まります。</span><span class="sxs-lookup"><span data-stu-id="168ce-128">Specifies the default compiler warning level; determines the level at which the language provider treats compilation warnings as errors.</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="168ce-129">子要素</span><span class="sxs-lookup"><span data-stu-id="168ce-129">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<providerOption\> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/provideroption-element.md)|言語プロバイダーのコンパイラ バージョン属性を指定します。|  
+|<span data-ttu-id="168ce-130">要素</span><span class="sxs-lookup"><span data-stu-id="168ce-130">Element</span></span>|<span data-ttu-id="168ce-131">説明</span><span class="sxs-lookup"><span data-stu-id="168ce-131">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="168ce-132">\<providerOption > 要素</span><span class="sxs-lookup"><span data-stu-id="168ce-132">\<providerOption> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/provideroption-element.md)|<span data-ttu-id="168ce-133">言語プロバイダーのコンパイラ バージョン属性を指定します。</span><span class="sxs-lookup"><span data-stu-id="168ce-133">Specifies compiler version attributes for a language provider.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="168ce-134">親要素</span><span class="sxs-lookup"><span data-stu-id="168ce-134">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<configuration\> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
-|[\<system.codedom\> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|利用可能な言語プロバイダー用のコンパイラ構成設定を指定します。|  
-|[\<compilers\> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|コンパイラの設定要素用のコンテナーです。0 個以上の `<compiler>` 要素が含まれます。|  
+|<span data-ttu-id="168ce-135">要素</span><span class="sxs-lookup"><span data-stu-id="168ce-135">Element</span></span>|<span data-ttu-id="168ce-136">説明</span><span class="sxs-lookup"><span data-stu-id="168ce-136">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="168ce-137">\<configuration> 要素</span><span class="sxs-lookup"><span data-stu-id="168ce-137">\<configuration> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|<span data-ttu-id="168ce-138">共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。</span><span class="sxs-lookup"><span data-stu-id="168ce-138">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|[<span data-ttu-id="168ce-139">\<system.codedom > 要素</span><span class="sxs-lookup"><span data-stu-id="168ce-139">\<system.codedom> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|<span data-ttu-id="168ce-140">使用可能な言語プロバイダーのコンパイラ構成設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="168ce-140">Specifies compiler configuration settings for available language providers.</span></span>|  
+|[<span data-ttu-id="168ce-141">\<コンパイラ > 要素</span><span class="sxs-lookup"><span data-stu-id="168ce-141">\<compilers> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|<span data-ttu-id="168ce-142">コンパイラ構成要素のコンテナー0 個以上含む`<compiler>`要素。</span><span class="sxs-lookup"><span data-stu-id="168ce-142">Container for compiler configuration elements; contains zero or more `<compiler>` elements.</span></span>|  
   
-## 解説  
- 各 `<compiler>` 要素では、特定の言語プロバイダー用のコンパイラ設定属性を指定します。  プロバイダーでは、特定の言語用に <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName> クラスを拡張します。`<compiler>` 要素では、言語プロバイダー用にコンパイラとコード ジェネレーターの設定を定義します。  
+## <a name="remarks"></a><span data-ttu-id="168ce-143">コメント</span><span class="sxs-lookup"><span data-stu-id="168ce-143">Remarks</span></span>  
+ <span data-ttu-id="168ce-144">各`<compiler>`要素は、特定の言語プロバイダーのコンパイラ構成属性を指定します。</span><span class="sxs-lookup"><span data-stu-id="168ce-144">Each `<compiler>` element specifies the compiler configuration attributes for a specific language provider.</span></span> <span data-ttu-id="168ce-145">プロバイダーでは、 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> 、特定の言語のクラス、`<compiler>`要素は、コンパイラおよび言語プロバイダーのコード ジェネレーターの設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="168ce-145">The provider extends the <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> class for a specific language; the `<compiler>` element defines the compiler and code generator settings for the language provider.</span></span>  
   
- .NET Framework では、マシン構成ファイル \(Machine.config\) にコンパイラの初期設定を定義します。  開発者やコンパイラの販売元では、新しい <xref:System.CodeDom.Compiler.CodeDomProvider> 実装用に構成の設定を追加できます。  コンピューター上の言語プロバイダーおよびコンパイラの構成の設定をプログラムで列挙するには、<xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=fullName> メソッドを使用します。  
+ <span data-ttu-id="168ce-146">.NET Framework は、マシン構成ファイル (Machine.config) 内でコンパイラの初期設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="168ce-146">The .NET Framework defines the initial compiler settings in the machine configuration file (Machine.config).</span></span> <span data-ttu-id="168ce-147">開発者やコンパイラ ベンダーは、新しい <xref:System.CodeDom.Compiler.CodeDomProvider> の実装のために構成設定を追加することができます。</span><span class="sxs-lookup"><span data-stu-id="168ce-147">Developers and compiler vendors can add configuration settings for a new <xref:System.CodeDom.Compiler.CodeDomProvider> implementation.</span></span> <span data-ttu-id="168ce-148"><xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> メソッドを使用して、プログラムによってコンピューターの言語プロバイダーとコンパイラ構成の設定を列挙します。</span><span class="sxs-lookup"><span data-stu-id="168ce-148">Use the <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> method to programmatically enumerate language provider and compiler configuration settings on a computer.</span></span>  
   
- アプリケーションまたは Web の構成ファイル内のコンパイラ要素によって、マシン構成ファイル内の設定を補足またはオーバーライドできます。  複数のプロバイダー実装で同じ言語名または同じファイル拡張子が設定されている場合は、最後に一致した設定で、その言語名またはファイル拡張子のそれまでの設定済みプロバイダーがオーバーライドされます。  
+ <span data-ttu-id="168ce-149">アプリケーションまたは Web 構成ファイル内のコンパイラ要素では、補完したり、コンピューターの構成ファイル設定を上書きすることができます。</span><span class="sxs-lookup"><span data-stu-id="168ce-149">Compiler elements in the application or Web configuration file can supplement or override the settings in the machine configuration file.</span></span> <span data-ttu-id="168ce-150">1 つ以上のプロバイダー実装が同じ言語の名前または同じのファイル拡張子に対して構成されている場合、最後の一致する構成は、その言語名またはファイル拡張子の前の構成済みのプロバイダーをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="168ce-150">If more than one provider implementation is configured for the same language name or the same file extension, the last matching configuration overrides any previous configured providers for that language name or file extension.</span></span>  
   
-## 構成ファイル  
- この要素は、マシン構成ファイルとアプリケーション構成ファイルで使用できます。  
+## <a name="configuration-file"></a><span data-ttu-id="168ce-151">構成ファイル</span><span class="sxs-lookup"><span data-stu-id="168ce-151">Configuration File</span></span>  
+ <span data-ttu-id="168ce-152">この要素は、マシン構成ファイルとアプリケーション構成ファイルで使用できます。</span><span class="sxs-lookup"><span data-stu-id="168ce-152">This element can be used in the machine configuration file and the application configuration file.</span></span>  
   
-## 使用例  
- 一般的なコンパイラ設定要素を次の例に示します。  
+## <a name="example"></a><span data-ttu-id="168ce-153">例</span><span class="sxs-lookup"><span data-stu-id="168ce-153">Example</span></span>  
+ <span data-ttu-id="168ce-154">次の例は、一般的なコンパイラ構成要素を示しています。</span><span class="sxs-lookup"><span data-stu-id="168ce-154">The following example illustrates a typical compiler configuration element.</span></span>  
   
-```  
+```xml  
 <configuration>  
   <system.codedom>  
     <compilers>  
@@ -102,10 +105,10 @@ caps.handback.revision: 20
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.CodeDom.Compiler.CompilerInfo>   
- <xref:System.CodeDom.Compiler.CodeDomProvider>   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [\<compilers\> 要素](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)   
- [完全修飾型名の指定](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)   
- [compilation の compilers の compiler 要素 \(ASP.NET 設定スキーマ\)](http://msdn.microsoft.com/ja-jp/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)
+## <a name="see-also"></a><span data-ttu-id="168ce-155">関連項目</span><span class="sxs-lookup"><span data-stu-id="168ce-155">See Also</span></span>  
+ <xref:System.CodeDom.Compiler.CompilerInfo>  
+ <xref:System.CodeDom.Compiler.CodeDomProvider>  
+ [<span data-ttu-id="168ce-156">構成ファイル スキーマ</span><span class="sxs-lookup"><span data-stu-id="168ce-156">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="168ce-157">\<コンパイラ > 要素</span><span class="sxs-lookup"><span data-stu-id="168ce-157">\<compilers> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
+ [<span data-ttu-id="168ce-158">完全修飾型名の指定</span><span class="sxs-lookup"><span data-stu-id="168ce-158">Specifying Fully Qualified Type Names</span></span>](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)  
+ [<span data-ttu-id="168ce-159">コンパイル (ASP.NET 設定スキーマ) のコンパイラのコンパイラ要素</span><span class="sxs-lookup"><span data-stu-id="168ce-159">compiler Element for compilers for compilation (ASP.NET Settings Schema)</span></span>](http://msdn.microsoft.com/en-us/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)

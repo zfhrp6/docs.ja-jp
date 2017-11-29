@@ -1,28 +1,37 @@
 ---
-title: "&lt;secureConversationBootstrap&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;secureConversationBootstrap&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 66b46f95-fa2d-4b5b-b6ce-0572ab0cdd50
-caps.latest.revision: 13
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: c8b29b9b4253e51f8cc1d0625fb27998a2d10b3a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;secureConversationBootstrap&gt;
-セキュリティで保護されたメッセージ交換サービスの開始に使用される既定値を指定します。  
+# <a name="ltsecureconversationbootstrapgt"></a><span data-ttu-id="2f49a-102">&lt;secureConversationBootstrap&gt;</span><span class="sxs-lookup"><span data-stu-id="2f49a-102">&lt;secureConversationBootstrap&gt;</span></span>
+<span data-ttu-id="2f49a-103">セキュリティで保護されたメッセージ交換サービスの開始に使用される既定値を指定します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-103">Specifies the default values used for initiating a secure conversation service.</span></span>  
   
-## 構文  
+ <span data-ttu-id="2f49a-104">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="2f49a-104">\<system.serviceModel></span></span>  
+<span data-ttu-id="2f49a-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="2f49a-105">\<bindings></span></span>  
+<span data-ttu-id="2f49a-106">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="2f49a-106">\<customBinding></span></span>  
+<span data-ttu-id="2f49a-107">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="2f49a-107">\<binding></span></span>  
+<span data-ttu-id="2f49a-108">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="2f49a-108">\<security></span></span>  
+<span data-ttu-id="2f49a-109">\<secureConversationBootstrap ></span><span class="sxs-lookup"><span data-stu-id="2f49a-109">\<secureConversationBootstrap></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="2f49a-110">構文</span><span class="sxs-lookup"><span data-stu-id="2f49a-110">Syntax</span></span>  
   
+```xml  
 <secureConversationBootstrap  
    allowSerializedSigningTokenOnReply="Boolean"  
    authenticationMode="AuthenticationMode"  
@@ -39,50 +48,50 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
    includeTimestamp="Boolean" />  
 ```  
   
-## 型  
+## <a name="type"></a><span data-ttu-id="2f49a-111">型</span><span class="sxs-lookup"><span data-stu-id="2f49a-111">Type</span></span>  
  `Type`  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="2f49a-112">属性および要素</span><span class="sxs-lookup"><span data-stu-id="2f49a-112">Attributes and Elements</span></span>  
+ <span data-ttu-id="2f49a-113">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-113">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="2f49a-114">属性</span><span class="sxs-lookup"><span data-stu-id="2f49a-114">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|`allowSerializedSigningTokenOnReply`|省略可能です。  シリアル化されたトークンを応答で使用できる場合に指定するブール値。  既定値は `false` です。  二重バインドを使用する場合、この設定の既定値は `true` に設定され、行った設定はすべて無視されます。|  
-|`authenticationMode`|イニシエーターとレスポンダーの間で使用される SOAP 認証モードを指定します。<br /><br /> 既定値は sspiNegotiated です。<br /><br /> この属性は <xref:System.ServiceModel.Configuration.AuthenticationMode> 型です。|  
-|`defaultAlgorithmSuite`|セキュリティ アルゴリズム スイートは、正規化、ダイジェスト、キーラップ、署名、暗号化、およびキー派生の各アルゴリズムなど、さまざまなアルゴリズムを定義します。  各セキュリティ アルゴリズム スイートは、これらのさまざまなパラメーターの値を定義します。  メッセージ ベースのセキュリティは、これらのアルゴリズムを使用して実現されます。<br /><br /> この属性は、既定とは異なるアルゴリズムのセットを選択する別のプラットフォームで操作するときに使用されます。  この設定を修正する場合、関連するアルゴリズムの強さと脆弱性に注意する必要があります。  この属性は <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> 型です。  既定値は、`Basic256` です。|  
-|`includeTimestamp`|各メッセージにタイム スタンプが含まれるかどうかを指定するブール値です。  既定値は、`true` です。|  
-|`keyEntropyMode`|メッセージをセキュリティで保護するキーを計算する方法を指定します。  キーは、クライアント キー マテリアルのみ、サービス キー マテリアルのみ、または両方の組み合わせに基づいて生成できます。  次の値を指定できます。<br /><br /> -   ClientEntropy: セッション キーは、クライアントから提供されるキー マテリアルに基づいています。<br />-   ServerEntropy: セッション キーは、サービスから提供されるキー マテリアルに基づいています。<br />-   CombinedEntropy: セッション キーは、クライアントとサービスから提供されるキー マテリアルに基づいています。<br /><br /> 既定値は CombinedEntropy です。<br /><br /> この属性は <xref:System.ServiceModel.Security.SecurityKeyEntropyMode> 型です。|  
-|`messageProtectionOrder`|メッセージ レベルのセキュリティ アルゴリズムをメッセージに適用する順序を設定します。  以下の値が有効です。<br /><br /> -   SignBeforeEncrypt: 最初に署名してから暗号化します。<br />-   SignBeforeEncryptAndEncryptSignature: 署名してから暗号化し、次に署名を暗号化します。<br />-   EncryptBeforeSign: 最初に暗号化してから署名します。<br /><br /> SignBeforeEncryptAndEncryptSignature は、WS\-Security 1.1 による相互証明書を使用する場合の既定値です。  SignBeforeEncrypt は、WS\-Security 1. 0 での既定値です。<br /><br /> この属性は <xref:System.ServiceModel.Security.MessageProtectionOrder> 型です。|  
-|`messageSecurityVersion`|使用される WS\-Security のバージョンを設定します。  以下の値が有効です。<br /><br /> -   WSSecurityJan2004<br />-   WSSecurityXXX2005<br /><br /> 既定値は WSSecurityXXX2005 です。  この属性は <xref:System.ServiceModel.MessageSecurityVersion> 型です。|  
-|`requireDerivedKeys`|キーを元の証明キーから派生できるかどうかを指定するブール値。  既定値は、`true` です。|  
-|`requireSecurityContextCancellation`|セキュリティ コンテキストが不要になったときにそれをキャンセルして終了する必要があるかどうかを指定するブール値。  既定値は、`true` です。|  
-|`requireSignatureConfirmation`|WS\-Security 署名確認を有効にするかどうかを指定するブール値です。  `true` に設定されている場合、メッセージ署名が応答側で確認されます。  既定値は、`false` です。<br /><br /> サービスが要求を完全に認識して応答していることを確認するために、署名確認を使用します。|  
-|`securityHeaderLayout`|セキュリティ ヘッダーでの要素の順序を指定します。  次の値を指定できます。<br /><br /> -   Strict。  "使用前に宣言する" という一般的な方針に従って、項目がセキュリティ ヘッダーに追加されます。<br />-   Lax。  WSS: SOAP メッセージ セキュリティに準じた任意の順序で、項目はセキュリティ ヘッダーに追加されます。<br />-   LaxWithTimestampFirst。  WSS: SOAP メッセージ セキュリティに準じた任意の順序で、項目はセキュリティ ヘッダーに追加されます。ただし、セキュリティ ヘッダーの最初の要素は wsse:Timestamp 要素である必要があります。<br />-   LaxWithTimestampLast。  WSS: SOAP メッセージ セキュリティに準じた任意の順序で、項目はセキュリティ ヘッダーに追加されます。ただし、セキュリティ ヘッダーの最後の要素は wsse:Timestamp 要素である必要があります。<br /><br /> 既定値は Strict です。<br /><br /> この要素は <xref:System.ServiceModel.Channels.SecurityHeaderLayout> 型です。|  
+|<span data-ttu-id="2f49a-115">属性</span><span class="sxs-lookup"><span data-stu-id="2f49a-115">Attribute</span></span>|<span data-ttu-id="2f49a-116">説明</span><span class="sxs-lookup"><span data-stu-id="2f49a-116">Description</span></span>|  
+|---------------|-----------------|  
+|`allowSerializedSigningTokenOnReply`|<span data-ttu-id="2f49a-117">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-117">Optional.</span></span> <span data-ttu-id="2f49a-118">シリアル化されたトークンを応答で使用できる場合に指定するブール値。</span><span class="sxs-lookup"><span data-stu-id="2f49a-118">A Boolean value that specifies if a serialized token can be used on reply.</span></span> <span data-ttu-id="2f49a-119">既定値は `false` です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-119">The default value is `false`.</span></span> <span data-ttu-id="2f49a-120">二重バインドを使用する場合、この設定の既定値は `true` に設定され、行った設定はすべて無視されます。</span><span class="sxs-lookup"><span data-stu-id="2f49a-120">When using a dual binding, the setting defaults to `true` any setting made will be ignored.</span></span>|  
+|`authenticationMode`|<span data-ttu-id="2f49a-121">イニシエーターとレスポンダーの間で使用される SOAP 認証モードを指定します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-121">Specifies the SOAP authentication mode used between the initiator and the responder.</span></span><br /><br /> <span data-ttu-id="2f49a-122">既定値は sspiNegotiated です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-122">The default is sspiNegotiated.</span></span><br /><br /> <span data-ttu-id="2f49a-123">この属性は <xref:System.ServiceModel.Configuration.AuthenticationMode> 型です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-123">This attribute is of type <xref:System.ServiceModel.Configuration.AuthenticationMode>.</span></span>|  
+|`defaultAlgorithmSuite`|<span data-ttu-id="2f49a-124">セキュリティ アルゴリズム スイートは、正規化、ダイジェスト、キーラップ、署名、暗号化、およびキー派生の各アルゴリズムなど、さまざまなアルゴリズムを定義します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-124">Security algorithm suite defines of a variety of algorithms such as Canonicalization, Digest, KeyWrap, Signature, Encryption, and KeyDerivation algorithms.</span></span> <span data-ttu-id="2f49a-125">各セキュリティ アルゴリズム スイートは、これらのさまざまなパラメーターの値を定義します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-125">Each of the security algorithm suites defines values for these different parameters.</span></span> <span data-ttu-id="2f49a-126">メッセージ ベースのセキュリティは、これらのアルゴリズムを使用して実現されます。</span><span class="sxs-lookup"><span data-stu-id="2f49a-126">Message-based security is achieved using these algorithms.</span></span><br /><br /> <span data-ttu-id="2f49a-127">この属性は、既定とは異なるアルゴリズムのセットを選択する別のプラットフォームで操作するときに使用されます。</span><span class="sxs-lookup"><span data-stu-id="2f49a-127">This attribute is used when working with a different platform that opts for a set of algorithms different than the default.</span></span> <span data-ttu-id="2f49a-128">この設定を修正する場合、関連するアルゴリズムの強さと脆弱性に注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2f49a-128">You should be aware of the strengths and weaknesses of the relevant algorithms when making modifications to this setting.</span></span> <span data-ttu-id="2f49a-129">この属性は <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> 型です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-129">This attribute is of type <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.</span></span> <span data-ttu-id="2f49a-130">既定値は、`Basic256` です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-130">The default is `Basic256`.</span></span>|  
+|`includeTimestamp`|<span data-ttu-id="2f49a-131">各メッセージにタイム スタンプが含まれるかどうかを指定するブール値です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-131">A Boolean value that specifies whether time stamps are included in each message.</span></span> <span data-ttu-id="2f49a-132">既定値は、`true` です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-132">The default is `true`.</span></span>|  
+|`keyEntropyMode`|<span data-ttu-id="2f49a-133">メッセージをセキュリティで保護するキーを計算する方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-133">Specifies the way that keys for securing messages are computed.</span></span> <span data-ttu-id="2f49a-134">キーは、クライアント キー マテリアルのみ、サービス キー マテリアルのみ、または両方の組み合わせに基づいて生成できます。</span><span class="sxs-lookup"><span data-stu-id="2f49a-134">Keys can be based on the client key material only, on the service key material only or a combination of both.</span></span> <span data-ttu-id="2f49a-135">次の値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="2f49a-135">Valid values are:</span></span><br /><br /> <span data-ttu-id="2f49a-136">-ClientEntropy: セッション キーは、クライアントから提供されるキー マテリアル基づいています。</span><span class="sxs-lookup"><span data-stu-id="2f49a-136">-   ClientEntropy: The session key is based off the client provided key material.</span></span><br /><span data-ttu-id="2f49a-137">-ServerEntropy: セッション キーは、サービスから提供されるキー マテリアルを基づいています。</span><span class="sxs-lookup"><span data-stu-id="2f49a-137">-   ServerEntropy: The session key is based off the service provided key material.</span></span><br /><span data-ttu-id="2f49a-138">-CombinedEntropy: セッション キーは、クライアントに基づいてし、サービスはキー生成情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-138">-   CombinedEntropy: The session key is based off the client and service provided keying material.</span></span><br /><br /> <span data-ttu-id="2f49a-139">既定値は CombinedEntropy です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-139">The default is CombinedEntropy.</span></span><br /><br /> <span data-ttu-id="2f49a-140">この属性は <xref:System.ServiceModel.Security.SecurityKeyEntropyMode> 型です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-140">This attribute is of type <xref:System.ServiceModel.Security.SecurityKeyEntropyMode>.</span></span>|  
+|`messageProtectionOrder`|<span data-ttu-id="2f49a-141">メッセージ レベルのセキュリティ アルゴリズムをメッセージに適用する順序を設定します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-141">Sets the order in which message level security algorithms are applied to the message.</span></span> <span data-ttu-id="2f49a-142">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-142">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="2f49a-143">-SignBeforeEncrypt: 最初に署名し、暗号化します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-143">-   SignBeforeEncrypt: Sign first, then encrypt.</span></span><br /><span data-ttu-id="2f49a-144">-SignBeforeEncryptAndEncryptSignature: 署名、暗号化、および署名を暗号化します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-144">-   SignBeforeEncryptAndEncryptSignature: Sign, encrypt, and encrypt signature.</span></span><br /><span data-ttu-id="2f49a-145">-EncryptBeforeSign: が最初に暗号化し、サインインします。</span><span class="sxs-lookup"><span data-stu-id="2f49a-145">-   EncryptBeforeSign: Encrypt first, then sign.</span></span><br /><br /> <span data-ttu-id="2f49a-146">SignBeforeEncryptAndEncryptSignature は、WS-Security 1.1 による相互証明書を使用する場合の既定値です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-146">SignBeforeEncryptAndEncryptSignature is the default value when using mutual certificates with WS-Security 1.1.</span></span>  <span data-ttu-id="2f49a-147">SignBeforeEncrypt は、WS-Security 1. 0 での既定値です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-147">SignBeforeEncrypt is the default value with WS-Security 1.0.</span></span><br /><br /> <span data-ttu-id="2f49a-148">この属性は <xref:System.ServiceModel.Security.MessageProtectionOrder> 型です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-148">This attribute is of type <xref:System.ServiceModel.Security.MessageProtectionOrder>.</span></span>|  
+|`messageSecurityVersion`|<span data-ttu-id="2f49a-149">使用される WS-Security のバージョンを設定します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-149">Sets the version of WS-Security that is used.</span></span> <span data-ttu-id="2f49a-150">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-150">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="2f49a-151">-WSSecurityJan2004</span><span class="sxs-lookup"><span data-stu-id="2f49a-151">-   WSSecurityJan2004</span></span><br /><span data-ttu-id="2f49a-152">-WSSecurityXXX2005</span><span class="sxs-lookup"><span data-stu-id="2f49a-152">-   WSSecurityXXX2005</span></span><br /><br /> <span data-ttu-id="2f49a-153">既定値は WSSecurityXXX2005 です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-153">The default is WSSecurityXXX2005.</span></span> <span data-ttu-id="2f49a-154">この属性は <xref:System.ServiceModel.MessageSecurityVersion> 型です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-154">This attribute is of type <xref:System.ServiceModel.MessageSecurityVersion>.</span></span>|  
+|`requireDerivedKeys`|<span data-ttu-id="2f49a-155">キーを元の証明キーから派生できるかどうかを指定するブール値。</span><span class="sxs-lookup"><span data-stu-id="2f49a-155">A Boolean value that specifies whether keys can be derived from the original proof keys.</span></span> <span data-ttu-id="2f49a-156">既定値は、`true` です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-156">The default is `true`.</span></span>|  
+|`requireSecurityContextCancellation`|<span data-ttu-id="2f49a-157">セキュリティ コンテキストが不要になったときにそれをキャンセルして終了する必要があるかどうかを指定するブール値。</span><span class="sxs-lookup"><span data-stu-id="2f49a-157">A Boolean value that specifies whether security context should be cancelled and terminated when it is no longer required.</span></span> <span data-ttu-id="2f49a-158">既定値は、`true` です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-158">The default is `true`.</span></span>|  
+|`requireSignatureConfirmation`|<span data-ttu-id="2f49a-159">WS-Security 署名確認を有効にするかどうかを指定するブール値です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-159">A Boolean value that specifies whether WS-Security signature confirmation is enabled.</span></span> <span data-ttu-id="2f49a-160">`true` に設定されている場合、メッセージ署名が応答側で確認されます。</span><span class="sxs-lookup"><span data-stu-id="2f49a-160">When set to `true`, message signatures are confirmed by the responder.</span></span> <span data-ttu-id="2f49a-161">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-161">The default is `false`.</span></span><br /><br /> <span data-ttu-id="2f49a-162">サービスが要求を完全に認識して応答していることを確認するために、署名確認を使用します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-162">Signature confirmation is used to confirm that the service is responding in full awareness of a request.</span></span>|  
+|`securityHeaderLayout`|<span data-ttu-id="2f49a-163">セキュリティ ヘッダーでの要素の順序を指定します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-163">Specifies the ordering of the elements in security header.</span></span> <span data-ttu-id="2f49a-164">次の値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="2f49a-164">Valid values are:</span></span><br /><br /> <span data-ttu-id="2f49a-165">厳格です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-165">-   Strict.</span></span> <span data-ttu-id="2f49a-166">"使用前に宣言する" という一般的な方針に従って、項目がセキュリティ ヘッダーに追加されます。</span><span class="sxs-lookup"><span data-stu-id="2f49a-166">Items are added to the security header according to the general principle of "declare before use".</span></span><br /><span data-ttu-id="2f49a-167">-厳密でないです。</span><span class="sxs-lookup"><span data-stu-id="2f49a-167">-   Lax.</span></span> <span data-ttu-id="2f49a-168">WSS: SOAP メッセージ セキュリティに準じた任意の順序で、項目はセキュリティ ヘッダーに追加されます。</span><span class="sxs-lookup"><span data-stu-id="2f49a-168">Items are added to the security header in any order that confirms to WSS: SOAP Message security.</span></span><br /><span data-ttu-id="2f49a-169">-LaxWithTimestampFirst です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-169">-   LaxWithTimestampFirst.</span></span> <span data-ttu-id="2f49a-170">WSS: SOAP メッセージ セキュリティに準じた任意の順序で、項目はセキュリティ ヘッダーに追加されます。ただし、セキュリティ ヘッダーの最初の要素は wsse:Timestamp 要素である必要があります。</span><span class="sxs-lookup"><span data-stu-id="2f49a-170">Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the first element in the security header must be a wsse:Timestamp element.</span></span><br /><span data-ttu-id="2f49a-171">-LaxWithTimestampLast です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-171">-   LaxWithTimestampLast.</span></span> <span data-ttu-id="2f49a-172">WSS: SOAP メッセージ セキュリティに準じた任意の順序で、項目はセキュリティ ヘッダーに追加されます。ただし、セキュリティ ヘッダーの最後の要素は wsse:Timestamp 要素である必要があります。</span><span class="sxs-lookup"><span data-stu-id="2f49a-172">Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the last element in the security header must be a wsse:Timestamp element.</span></span><br /><br /> <span data-ttu-id="2f49a-173">既定値は Strict です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-173">The default is Strict.</span></span><br /><br /> <span data-ttu-id="2f49a-174">この要素は <xref:System.ServiceModel.Channels.SecurityHeaderLayout> 型です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-174">This element is of type <xref:System.ServiceModel.Channels.SecurityHeaderLayout>.</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="2f49a-175">子要素</span><span class="sxs-lookup"><span data-stu-id="2f49a-175">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<issuedTokenParameters\>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|現在発行されているトークンを指定します。  この要素は <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement> 型です。|  
-|[\<localClientSettings\>](../../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)|このバインディングのローカル クライアントのセキュリティ設定を指定します。  この要素は <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement> 型です。|  
-|[\<localServiceSettings\>](../../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md)|このバインディングのローカル サービスのセキュリティ設定を指定します。  この要素は <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement> 型です。|  
+|<span data-ttu-id="2f49a-176">要素</span><span class="sxs-lookup"><span data-stu-id="2f49a-176">Element</span></span>|<span data-ttu-id="2f49a-177">説明</span><span class="sxs-lookup"><span data-stu-id="2f49a-177">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="2f49a-178">\<issuedTokenParameters ></span><span class="sxs-lookup"><span data-stu-id="2f49a-178">\<issuedTokenParameters></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|<span data-ttu-id="2f49a-179">現在発行されているトークンを指定します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-179">Specifies a current issued token.</span></span> <span data-ttu-id="2f49a-180">この要素は <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-180">This element is of type <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>.</span></span>|  
+|[<span data-ttu-id="2f49a-181">\<localClientSettings ></span><span class="sxs-lookup"><span data-stu-id="2f49a-181">\<localClientSettings></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)|<span data-ttu-id="2f49a-182">このバインディングのローカル クライアントのセキュリティ設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-182">Specifies the security settings of a local client for this binding.</span></span> <span data-ttu-id="2f49a-183">この要素は <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-183">This element is of type <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement>.</span></span>|  
+|[<span data-ttu-id="2f49a-184">\<localServiceSettings ></span><span class="sxs-lookup"><span data-stu-id="2f49a-184">\<localServiceSettings></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md)|<span data-ttu-id="2f49a-185">このバインディングのローカル サービスのセキュリティ設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-185">Specifies the security settings of a local service for this binding.</span></span> <span data-ttu-id="2f49a-186">この要素は <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="2f49a-186">This element is of type <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="2f49a-187">親要素</span><span class="sxs-lookup"><span data-stu-id="2f49a-187">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<security\>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|カスタム バインディングのセキュリティ オプションを指定します。|  
+|<span data-ttu-id="2f49a-188">要素</span><span class="sxs-lookup"><span data-stu-id="2f49a-188">Element</span></span>|<span data-ttu-id="2f49a-189">説明</span><span class="sxs-lookup"><span data-stu-id="2f49a-189">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="2f49a-190">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="2f49a-190">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|<span data-ttu-id="2f49a-191">カスタム バインドのセキュリティ オプションを指定します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-191">Specifies the security options for a custom binding.</span></span>|  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>   
- <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>   
- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
- [\<customBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)   
- [方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)   
- [カスタム バインディング セキュリティ](../../../../../docs/framework/wcf/samples/custom-binding-security.md)
+## <a name="see-also"></a><span data-ttu-id="2f49a-192">関連項目</span><span class="sxs-lookup"><span data-stu-id="2f49a-192">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>  
+ <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ [<span data-ttu-id="2f49a-193">バインディング</span><span class="sxs-lookup"><span data-stu-id="2f49a-193">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="2f49a-194">バインディングの拡張</span><span class="sxs-lookup"><span data-stu-id="2f49a-194">Extending Bindings</span></span>](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [<span data-ttu-id="2f49a-195">カスタム バインド</span><span class="sxs-lookup"><span data-stu-id="2f49a-195">Custom Bindings</span></span>](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [<span data-ttu-id="2f49a-196">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="2f49a-196">\<customBinding></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
+ [<span data-ttu-id="2f49a-197">方法: SecurityBindingElement を使用してカスタム バインディングを作成します。</span><span class="sxs-lookup"><span data-stu-id="2f49a-197">How to: Create a Custom Binding Using the SecurityBindingElement</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
+ [<span data-ttu-id="2f49a-198">カスタム バインディングのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="2f49a-198">Custom Binding Security</span></span>](../../../../../docs/framework/wcf/samples/custom-binding-security.md)

@@ -5,28 +5,21 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-ado
+ms.technology: dotnet-ado
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
 ms.assetid: a437041f-6899-4ae7-96ce-aabf528d7205
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5a2617953e337cfe81f4223051a20a2ae216dad8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.openlocfilehash: 14798b2d45beca7344d9e68b92efbcd4ec62b375
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="adonet-entity-framework"></a>ADO.NET Entity Framework
-現在、[msdn.com/data/ef](http://msdn.microsoft.com/data/ef) サイトでは、主に Entity Framework に関するコンテンツを提供しています。  
+# <a name="adonet-entity-framework"></a><span data-ttu-id="6ac09-102">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="6ac09-102">ADO.NET Entity Framework</span></span>
+<span data-ttu-id="6ac09-103">現在、[msdn.com/data/ef](http://msdn.microsoft.com/data/ef) サイトでは、主に Entity Framework に関するコンテンツを提供しています。</span><span class="sxs-lookup"><span data-stu-id="6ac09-103">The [msdn.com/data/ef](http://msdn.microsoft.com/data/ef) site is now the main location for the Entity Framework content.</span></span>  
   
- このトピックの内容は、[「Entity Framework 開発ワークフロー](http://msdn.microsoft.com/data/jj590134)」で公開されています。
-
+ <span data-ttu-id="6ac09-104">このトピックの内容は、[「Entity Framework 開発ワークフロー](http://msdn.microsoft.com/data/jj590134)」で公開されています。</span><span class="sxs-lookup"><span data-stu-id="6ac09-104">The content for this topic is now available on the following page: [Introducing Entity Framework](http://msdn.microsoft.com/data/jj590134).</span></span>
