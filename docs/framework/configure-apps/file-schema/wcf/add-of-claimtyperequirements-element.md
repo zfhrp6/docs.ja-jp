@@ -1,60 +1,70 @@
 ---
-title: "&lt;claimTypeRequirements&gt; 要素の &lt;add&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;claimTypeRequirements&gt; 要素の &lt;add&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3234cd45-1478-468e-8b19-5c50815c4786
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 0b814f7db727cba289ae6f9eba1b0c6532b52ebb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;claimTypeRequirements&gt; 要素の &lt;add&gt;
-フェデレーション資格情報に表示されると予想される必須のクレームおよび省略可能なクレームの種類を指定します。  たとえば、サービスは、クレームの種類の特定のセットを処理する必要がある受信資格情報について要件を記述します。  
+# <a name="ltaddgt-of-ltclaimtyperequirementsgt-element"></a><span data-ttu-id="8e9c9-102">&lt;claimTypeRequirements&gt; 要素の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="8e9c9-102">&lt;add&gt; of &lt;claimTypeRequirements&gt; element</span></span>
+<span data-ttu-id="8e9c9-103">フェデレーション資格情報に表示されると予想される必須のクレームおよび省略可能なクレームの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-103">Specifies the types of required and optional claims expected to appear in the federated credential.</span></span> <span data-ttu-id="8e9c9-104">たとえば、サービスは、クレームの種類の特定のセットを処理する必要がある受信資格情報について要件を記述します。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-104">For example, services state the requirements on incoming credentials, which must possess a certain set of claim types.</span></span>  
   
-## 構文  
+ <span data-ttu-id="8e9c9-105">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="8e9c9-105">\<system.ServiceModel></span></span>  
+<span data-ttu-id="8e9c9-106">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="8e9c9-106">\<bindings></span></span>  
+<span data-ttu-id="8e9c9-107">\<wsFederatedBinding ></span><span class="sxs-lookup"><span data-stu-id="8e9c9-107">\<wsFederatedBinding></span></span>  
+<span data-ttu-id="8e9c9-108">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="8e9c9-108">\<binding></span></span>  
+<span data-ttu-id="8e9c9-109">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="8e9c9-109">\<security></span></span>  
+<span data-ttu-id="8e9c9-110">\<メッセージ ></span><span class="sxs-lookup"><span data-stu-id="8e9c9-110">\<message></span></span>  
+<span data-ttu-id="8e9c9-111">\<claimTypeRequirements ></span><span class="sxs-lookup"><span data-stu-id="8e9c9-111">\<claimTypeRequirements></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="8e9c9-112">構文</span><span class="sxs-lookup"><span data-stu-id="8e9c9-112">Syntax</span></span>  
   
+```xml  
 <claimTypeRequirements>  
       <add claimType="URI"  
         isOptional="Boolean" />  
 </claimTypeRequirements>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="8e9c9-113">属性および要素</span><span class="sxs-lookup"><span data-stu-id="8e9c9-113">Attributes and Elements</span></span>  
+ <span data-ttu-id="8e9c9-114">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-114">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="8e9c9-115">属性</span><span class="sxs-lookup"><span data-stu-id="8e9c9-115">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|claimType|クレームの種類を定義する URI。  たとえば、Web サイトから製品を購入するために、ユーザーは、十分な与信限度額を備えた有効なクレジット カードを示す必要があります。  クレームの種類として、クレジット カードの URI があります。|  
-|isOptional|これが省略可能なクレームかどうかを指定するブール値。  これが必須のクレームの場合は、この属性を `false` に設定します。<br /><br /> サービスが必須でない情報を求めるときにこの属性を使用できます。  たとえば、ユーザーに氏名と住所の入力を要求し、電話番号は省略可能にする場合などです。|  
+|<span data-ttu-id="8e9c9-116">属性</span><span class="sxs-lookup"><span data-stu-id="8e9c9-116">Attribute</span></span>|<span data-ttu-id="8e9c9-117">説明</span><span class="sxs-lookup"><span data-stu-id="8e9c9-117">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="8e9c9-118">claimType</span><span class="sxs-lookup"><span data-stu-id="8e9c9-118">claimType</span></span>|<span data-ttu-id="8e9c9-119">クレームの種類を定義する URI。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-119">A URI that defines the type of a claim.</span></span> <span data-ttu-id="8e9c9-120">たとえば、Web サイトから製品を購入するために、ユーザーは、十分な与信限度額を備えた有効なクレジット カードを示す必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-120">For example, to purchase a product from a Web site, the user must present a valid credit card with sufficient credit limit.</span></span> <span data-ttu-id="8e9c9-121">クレームの種類として、クレジット カードの URI があります。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-121">The claim type would be the credit card URI.</span></span>|  
+|<span data-ttu-id="8e9c9-122">isOptional</span><span class="sxs-lookup"><span data-stu-id="8e9c9-122">isOptional</span></span>|<span data-ttu-id="8e9c9-123">これが省略可能なクレームかどうかを指定するブール値。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-123">A Boolean value that specifies if this is for an optional claim.</span></span> <span data-ttu-id="8e9c9-124">これが必須のクレームの場合は、この属性を `false` に設定します。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-124">Set this attribute to `false` if this is a required claim.</span></span><br /><br /> <span data-ttu-id="8e9c9-125">サービスが必須でない情報を求めるときにこの属性を使用できます。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-125">You can use this attribute when the service asks for some information but does not require it.</span></span> <span data-ttu-id="8e9c9-126">たとえば、ユーザーに氏名と住所の入力を要求し、電話番号は省略可能にする場合などです。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-126">For example, if you require the user to enter his/her first name, last name and address, but decide that phone number is optional.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="8e9c9-127">子要素</span><span class="sxs-lookup"><span data-stu-id="8e9c9-127">Child Elements</span></span>  
+ <span data-ttu-id="8e9c9-128">なし。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-128">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="8e9c9-129">親要素</span><span class="sxs-lookup"><span data-stu-id="8e9c9-129">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<claimTypeRequirements\>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-for-message.md)|必須のクレームの種類のコレクションを指定します。  各要素は <xref:System.ServiceModel.Configuration.ClaimTypeElement> 型です。<br /><br /> フェデレーション シナリオでは、サービスが受信資格情報についての要件を記述します。  たとえば、受信資格情報は、特定のクレーム タイプのセットを処理する必要があります。  このコレクションの要素はそれぞれ、フェデレーション資格情報に表示されると予想される必須の要求および省略可能な要求の種類を指定します。|  
+|<span data-ttu-id="8e9c9-130">要素</span><span class="sxs-lookup"><span data-stu-id="8e9c9-130">Element</span></span>|<span data-ttu-id="8e9c9-131">説明</span><span class="sxs-lookup"><span data-stu-id="8e9c9-131">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="8e9c9-132">\<claimTypeRequirements ></span><span class="sxs-lookup"><span data-stu-id="8e9c9-132">\<claimTypeRequirements></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-for-message.md)|<span data-ttu-id="8e9c9-133">必須のクレームの種類のコレクションを指定します。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-133">Specifies a collection of required claim types.</span></span> <span data-ttu-id="8e9c9-134">各要素は <xref:System.ServiceModel.Configuration.ClaimTypeElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-134">Each element is of type <xref:System.ServiceModel.Configuration.ClaimTypeElement>.</span></span><br /><br /> <span data-ttu-id="8e9c9-135">フェデレーション シナリオでは、サービスが受信資格情報についての要件を記述します。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-135">In a federated scenario, services state the requirements on incoming credentials.</span></span> <span data-ttu-id="8e9c9-136">たとえば、受信資格情報は、特定のクレーム タイプのセットを処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-136">For example, the incoming credentials must possess a certain set of claim types.</span></span> <span data-ttu-id="8e9c9-137">このコレクションの要素はそれぞれ、フェデレーション資格情報に表示されると予想される必須の要求および省略可能な要求の種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-137">Each element in this collection specifies the types of required and optional claims expected to appear in a federated credential.</span></span>|  
   
-## 解説  
- フェデレーション シナリオでは、サービスが受信資格情報についての要件を記述します。  たとえば、受信資格情報は、特定のクレーム タイプのセットを処理する必要があります。  この要件はセキュリティ ポリシー内に明記されます。  クライアントがフェデレーション サービスの資格情報 \(CardSpace など\) を要求する場合、クライアントは要件をトークン要求 \(RequestSecurityToken\) に設定します。これにより、フェデレーション サービスは、要件どおりの資格情報を発行できます。  
+## <a name="remarks"></a><span data-ttu-id="8e9c9-138">コメント</span><span class="sxs-lookup"><span data-stu-id="8e9c9-138">Remarks</span></span>  
+ <span data-ttu-id="8e9c9-139">フェデレーション シナリオでは、サービスが受信資格情報についての要件を記述します。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-139">In a federated scenario, services state the requirements on incoming credentials.</span></span> <span data-ttu-id="8e9c9-140">たとえば、受信資格情報は、特定のクレーム タイプのセットを処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-140">For example, the incoming credentials must possess a certain set of claim types.</span></span> <span data-ttu-id="8e9c9-141">この要件はセキュリティ ポリシー内に明記されます。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-141">This requirement is manifested in a security policy.</span></span> <span data-ttu-id="8e9c9-142">クライアントがフェデレーション サービスの資格情報 (CardSpace など) を要求する場合、クライアントは要件をトークン要求 (RequestSecurityToken) に設定します。これにより、フェデレーション サービスは、要件どおりの資格情報を発行できます。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-142">When a client requests credentials from a federated service (for example, CardSpace), it puts the requirements into a token request (RequestSecurityToken) so that the federated service can issue the credentials that satisfy the requirements accordingly.</span></span>  
   
-## 使用例  
- 次の構成では、2 つのクレームの種類の要件をセキュリティ バインディングに追加しています。  
+## <a name="example"></a><span data-ttu-id="8e9c9-143">例</span><span class="sxs-lookup"><span data-stu-id="8e9c9-143">Example</span></span>  
+ <span data-ttu-id="8e9c9-144">次の構成では、2 つのクレームの種類の要件をセキュリティ バインディングに追加しています。</span><span class="sxs-lookup"><span data-stu-id="8e9c9-144">The following configuration adds two claim type requirements to a security binding.</span></span>  
   
-```  
+```xml  
 <bindings>  
     <wsFederationHttpBinding>  
       <binding name="myFederatedBinding">  
@@ -74,9 +84,9 @@ optional="true" />
 </bindings>  
 ```  
   
-## 参照  
- <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A>   
- <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement>   
- <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.ClaimTypeRequirements%2A>   
- <xref:System.ServiceModel.Configuration.ClaimTypeElementCollection>   
+## <a name="see-also"></a><span data-ttu-id="8e9c9-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="8e9c9-145">See Also</span></span>  
+ <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A>  
+ <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement>  
+ <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.ClaimTypeRequirements%2A>  
+ <xref:System.ServiceModel.Configuration.ClaimTypeElementCollection>  
  <xref:System.ServiceModel.Configuration.ClaimTypeElement>

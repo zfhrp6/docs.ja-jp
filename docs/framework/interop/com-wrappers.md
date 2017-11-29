@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - wrapper classes
 - COM interop, COM wrappers
@@ -22,37 +16,35 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: e56c485b-6b67-4345-8e66-fd21835a6092
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0c83cae510d695dc05b2cc6a71fdef7b5244a2ea
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 733d7f3e56b8ed704003ca9d6c2aa858c713df93
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="com-wrappers"></a>COM ラッパー
-COM は、次のいくつかの重要な点で、.NET Framework オブジェクト モデルとは異なります。  
+# <a name="com-wrappers"></a><span data-ttu-id="1ceb8-102">COM ラッパー</span><span class="sxs-lookup"><span data-stu-id="1ceb8-102">COM Wrappers</span></span>
+<span data-ttu-id="1ceb8-103">COM は、次のいくつかの重要な点で、.NET Framework オブジェクト モデルとは異なります。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-103">COM differs from the .NET Framework object model in several important ways:</span></span>  
   
--   COM オブジェクトのクライアントは、COM オブジェクトの有効期間を管理する必要があります。共通言語ランタイムはその環境でのオブジェクトの有効期間を管理します。  
+-   <span data-ttu-id="1ceb8-104">COM オブジェクトのクライアントは、COM オブジェクトの有効期間を管理する必要があります。共通言語ランタイムはその環境でのオブジェクトの有効期間を管理します。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-104">Clients of COM objects must manage the lifetime of those objects; the common language runtime manages the lifetime of objects in its environment.</span></span>  
   
--   COM オブジェクトのクライアントは、サービスを提供するインターフェイスを要求し、インターフェイス ポインターを取得して、そのサービスが利用可能かどうかを確認します。 .NET オブジェクトのクライアントは、リフレクションを使用してオブジェクトの機能の説明を取得できます。  
+-   <span data-ttu-id="1ceb8-105">COM オブジェクトのクライアントは、サービスを提供するインターフェイスを要求し、インターフェイス ポインターを取得して、そのサービスが利用可能かどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-105">Clients of COM objects discover whether a service is available by requesting an interface that provides that service and getting back an interface pointer, or not.</span></span> <span data-ttu-id="1ceb8-106">.NET オブジェクトのクライアントは、リフレクションを使用してオブジェクトの機能の説明を取得できます。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-106">Clients of .NET objects can obtain a description of an object's functionality using reflection.</span></span>  
   
--   NET オブジェクトは、.NET Framework の実行環境によって管理されるメモリ内に存在します。 実行環境では、パフォーマンス上の理由からオブジェクトをメモリ内で移動させることができ、移動先のオブジェクトへのすべての参照を更新できます。 オブジェクトへのポインターを取得するアンマネージ クライアントは、そのオブジェクトに依存するので同じ場所にとどまります。 これらのクライアントには、場所が固定されていないオブジェクトを処理するための機構がありません。  
+-   <span data-ttu-id="1ceb8-107">NET オブジェクトは、.NET Framework の実行環境によって管理されるメモリ内に存在します。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-107">NET objects reside in memory managed by the .NET Framework execution environment.</span></span> <span data-ttu-id="1ceb8-108">実行環境では、パフォーマンス上の理由からオブジェクトをメモリ内で移動させることができ、移動先のオブジェクトへのすべての参照を更新できます。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-108">The execution environment can move objects around in memory for performance reasons and update all references to the objects it moves.</span></span> <span data-ttu-id="1ceb8-109">オブジェクトへのポインターを取得するアンマネージ クライアントは、そのオブジェクトに依存するので同じ場所にとどまります。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-109">Unmanaged clients, having obtained a pointer to an object, rely on the object to remain at the same location.</span></span> <span data-ttu-id="1ceb8-110">これらのクライアントには、場所が固定されていないオブジェクトを処理するための機構がありません。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-110">These clients have no mechanism for dealing with an object whose location is not fixed.</span></span>  
   
- このような相違を克服するために、ランタイムはラッパー クラスを提供して、マネージ クライアントとアンマネージ クライアントの両方がそれぞれの環境内でオブジェクトを呼び出していると認識するようにします。 マネージ クライアントが COM オブジェクトでメソッドを呼び出すたびに、ランタイムは[ランタイム呼び出し可能ラッパー](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) を作成します。 RCW は、特にマネージ参照機構とアンマネージ参照機構の相違を抽象化します。 また、ランタイムは [COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md) (CCW) を作成して、プロセスを反転させ、COM クライアントがシームレスに .NET オブジェクトでメソッドを呼び出せるようにします。 呼び出し元のコードと、ランタイムが作成するラッパー クラスの関係を示す図を以下に示します。  
+ <span data-ttu-id="1ceb8-111">このような相違を克服するために、ランタイムはラッパー クラスを提供して、マネージ クライアントとアンマネージ クライアントの両方がそれぞれの環境内でオブジェクトを呼び出していると認識するようにします。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-111">To overcome these differences, the runtime provides wrapper classes to make both managed and unmanaged clients think they are calling objects within their respective environment.</span></span> <span data-ttu-id="1ceb8-112">マネージ クライアントが COM オブジェクトでメソッドを呼び出すたびに、ランタイムは[ランタイム呼び出し可能ラッパー](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) を作成します。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-112">Whenever your managed client calls a method on a COM object, the runtime creates a [runtime callable wrapper](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW).</span></span> <span data-ttu-id="1ceb8-113">RCW は、特にマネージ参照機構とアンマネージ参照機構の相違を抽象化します。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-113">RCWs abstract the differences between managed and unmanaged reference mechanisms, among other things.</span></span> <span data-ttu-id="1ceb8-114">また、ランタイムは [COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md) (CCW) を作成して、プロセスを反転させ、COM クライアントがシームレスに .NET オブジェクトでメソッドを呼び出せるようにします。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-114">The runtime also creates a [COM callable wrapper](../../../docs/framework/interop/com-callable-wrapper.md) (CCW) to reverse the process, enabling a COM client to seamlessly call a method on a .NET object.</span></span> <span data-ttu-id="1ceb8-115">呼び出し元のコードと、ランタイムが作成するラッパー クラスの関係を示す図を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-115">As the following illustration shows, the perspective of the calling code determines which wrapper class the runtime creates.</span></span>  
   
- ![COM ラッパーの概要](../../../docs/framework/interop/media/bidirectional.gif "bidirectional")  
-COM ラッパーの概要  
+ <span data-ttu-id="1ceb8-116">![COM ラッパーの概要](../../../docs/framework/interop/media/bidirectional.gif "bidirectional")</span><span class="sxs-lookup"><span data-stu-id="1ceb8-116">![COM wrapper overview](../../../docs/framework/interop/media/bidirectional.gif "bidirectional")</span></span>  
+<span data-ttu-id="1ceb8-117">COM ラッパーの概要</span><span class="sxs-lookup"><span data-stu-id="1ceb8-117">COM wrapper overview</span></span>  
   
- ほとんどの場合、ランタイムによって生成される標準の RCW または CCW は、COM と .NET Framework の境界をまたがる呼び出しに対して適切なマーシャリングを提供します。 カスタム属性を使用することにより、必要に応じて、ランタイムがマネージ コードおよびアンマネージ コードを表わす方法を調整できます。  
+ <span data-ttu-id="1ceb8-118">ほとんどの場合、ランタイムによって生成される標準の RCW または CCW は、COM と .NET Framework の境界をまたがる呼び出しに対して適切なマーシャリングを提供します。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-118">In most cases, the standard RCW or CCW generated by the runtime provides adequate marshaling for calls that cross the boundary between COM and the .NET Framework.</span></span> <span data-ttu-id="1ceb8-119">カスタム属性を使用することにより、必要に応じて、ランタイムがマネージ コードおよびアンマネージ コードを表わす方法を調整できます。</span><span class="sxs-lookup"><span data-stu-id="1ceb8-119">Using custom attributes, you can optionally adjust the way the runtime represents managed and unmanaged code.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)   
- [ランタイム呼び出し可能ラッパー](../../../docs/framework/interop/runtime-callable-wrapper.md)   
- [COM 呼び出し可能ラッパー](../../../docs/framework/interop/com-callable-wrapper.md)   
- [標準ラッパーのカスタマイズ](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)   
- [方法 : ランタイム呼び出し可能ラッパーをカスタマイズする](http://msdn.microsoft.com/en-us/4a4bb3da-4d60-4517-99f2-78d46a681732)
-
+## <a name="see-also"></a><span data-ttu-id="1ceb8-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="1ceb8-120">See Also</span></span>  
+ [<span data-ttu-id="1ceb8-121">高度な COM 相互運用性</span><span class="sxs-lookup"><span data-stu-id="1ceb8-121">Advanced COM Interoperability</span></span>](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
+ [<span data-ttu-id="1ceb8-122">ランタイム呼び出し可能ラッパー</span><span class="sxs-lookup"><span data-stu-id="1ceb8-122">Runtime Callable Wrapper</span></span>](../../../docs/framework/interop/runtime-callable-wrapper.md)  
+ [<span data-ttu-id="1ceb8-123">COM 呼び出し可能ラッパー</span><span class="sxs-lookup"><span data-stu-id="1ceb8-123">COM Callable Wrapper</span></span>](../../../docs/framework/interop/com-callable-wrapper.md)  
+ [<span data-ttu-id="1ceb8-124">標準ラッパーのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="1ceb8-124">Customizing Standard Wrappers</span></span>](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)  
+ [<span data-ttu-id="1ceb8-125">方法 : ランタイム呼び出し可能ラッパーをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="1ceb8-125">How to: Customize Runtime Callable Wrappers</span></span>](http://msdn.microsoft.com/en-us/4a4bb3da-4d60-4517-99f2-78d46a681732)

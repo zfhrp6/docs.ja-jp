@@ -5,223 +5,220 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - loader events [.NET Framework]
 - ETW, loader events (CLR)
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 1643e5d645ec6c3ae35b2e57b8cb4f4bcb048379
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="loader-etw-events"></a>ローダー ETW イベント
-<a name="top"></a> これらのイベントは、アプリケーションのドメイン、アセンブリ、およびモジュールのロードとアンロードに関連する情報を収集します。  
+# <a name="loader-etw-events"></a><span data-ttu-id="6e627-102">ローダー ETW イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-102">Loader ETW Events</span></span>
+<span data-ttu-id="6e627-103"><a name="top"></a> これらのイベントは、アプリケーションのドメイン、アセンブリ、およびモジュールのロードとアンロードに関連する情報を収集します。</span><span class="sxs-lookup"><span data-stu-id="6e627-103"><a name="top"></a> These events collect information relating to loading and unloading application domains, assemblies, and modules.</span></span>  
   
- すべてのローダー イベントは、 `LoaderKeyword` (0x8) キーワードで発生します。 `DCStart` および `DCEnd` のイベントは、`StartRundown`/`EndRundown` が有効になっている `LoaderRundownKeyword` (0x8) で発生します。 (詳細については、「 [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」を参照してください)。  
+ <span data-ttu-id="6e627-104">すべてのローダー イベントは、 `LoaderKeyword` (0x8) キーワードで発生します。</span><span class="sxs-lookup"><span data-stu-id="6e627-104">All loader events are raised under the `LoaderKeyword` (0x8) keyword.</span></span> <span data-ttu-id="6e627-105">`DCStart` および `DCEnd` のイベントは、`StartRundown`/`EndRundown` が有効になっている `LoaderRundownKeyword` (0x8) で発生します。</span><span class="sxs-lookup"><span data-stu-id="6e627-105">The `DCStart` and the `DCEnd` events are raised under `LoaderRundownKeyword` (0x8) with `StartRundown`/`EndRundown` enabled.</span></span> <span data-ttu-id="6e627-106">(詳細については、「 [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)」を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="6e627-106">(For more information, see [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)</span></span>  
   
- ローダー イベントは、次のように細分化されています。  
+ <span data-ttu-id="6e627-107">ローダー イベントは、次のように細分化されています。</span><span class="sxs-lookup"><span data-stu-id="6e627-107">Loader events are subdivided into the following:</span></span>  
   
--   [アプリケーション ドメイン イベント](#application_domain_events)  
+-   [<span data-ttu-id="6e627-108">アプリケーション ドメイン イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-108">Application Domain Events</span></span>](#application_domain_events)  
   
--   [CLR ローダー アセンブリ イベント](#clr_loader_assembly_events)  
+-   [<span data-ttu-id="6e627-109">CLR ローダー アセンブリ イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-109">CLR Loader Assembly Events</span></span>](#clr_loader_assembly_events)  
   
--   [モジュール イベント](#module_events)  
+-   [<span data-ttu-id="6e627-110">モジュール イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-110">Module Events</span></span>](#module_events)  
   
--   [CLR ドメイン モジュール イベント](#clr_domain_module_events)  
+-   [<span data-ttu-id="6e627-111">CLR ドメイン モジュール イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-111">CLR Domain Module Events</span></span>](#clr_domain_module_events)  
   
--   [モジュールの範囲イベント](#module_range_events)  
+-   [<span data-ttu-id="6e627-112">モジュールの範囲イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-112">Module Range Events</span></span>](#module_range_events)  
   
 <a name="application_domain_events"></a>   
-## <a name="application-domain-events"></a>アプリケーション ドメイン イベント  
- 次の表に、キーワードとレベルを示します。  
+## <a name="application-domain-events"></a><span data-ttu-id="6e627-113">アプリケーション ドメイン イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-113">Application Domain Events</span></span>  
+ <span data-ttu-id="6e627-114">次の表に、キーワードとレベルを示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-114">The following table shows the keyword and level.</span></span>  
   
-|イベントを発生させるキーワード|イベント|レベル|  
+|<span data-ttu-id="6e627-115">イベントを発生させるキーワード</span><span class="sxs-lookup"><span data-stu-id="6e627-115">Keyword for raising the event</span></span>|<span data-ttu-id="6e627-116">イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-116">Event</span></span>|<span data-ttu-id="6e627-117">レベル</span><span class="sxs-lookup"><span data-stu-id="6e627-117">Level</span></span>|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword` (0x8)|`AppDomainLoad_V1` および `AppDomainUnLoad_V1`|情報提供 (4)|  
-|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|情報提供 (4)|  
-|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`AppDomainDCEnd_V1`|情報提供 (4)|  
+|<span data-ttu-id="6e627-118">`LoaderKeyword` (0x8)</span><span class="sxs-lookup"><span data-stu-id="6e627-118">`LoaderKeyword` (0x8)</span></span>|<span data-ttu-id="6e627-119">`AppDomainLoad_V1` および `AppDomainUnLoad_V1`</span><span class="sxs-lookup"><span data-stu-id="6e627-119">`AppDomainLoad_V1` and `AppDomainUnLoad_V1`</span></span>|<span data-ttu-id="6e627-120">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-120">Informational (4)</span></span>|  
+|<span data-ttu-id="6e627-121">`LoaderRundownKeyword` (0x8) +</span><span class="sxs-lookup"><span data-stu-id="6e627-121">`LoaderRundownKeyword` (0x8) +</span></span><br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|<span data-ttu-id="6e627-122">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-122">Informational (4)</span></span>|  
+|<span data-ttu-id="6e627-123">`LoaderRundownKeyword` (0x8) +</span><span class="sxs-lookup"><span data-stu-id="6e627-123">`LoaderRundownKeyword` (0x8) +</span></span><br /><br /> `EndRundownKeyword`|`AppDomainDCEnd_V1`|<span data-ttu-id="6e627-124">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-124">Informational (4)</span></span>|  
   
- 次の表に、イベント情報を示します。  
+ <span data-ttu-id="6e627-125">次の表に、イベント情報を示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-125">The following table shows the event information.</span></span>  
   
-|イベント|イベント ID|説明|  
+|<span data-ttu-id="6e627-126">イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-126">Event</span></span>|<span data-ttu-id="6e627-127">イベント ID</span><span class="sxs-lookup"><span data-stu-id="6e627-127">Event ID</span></span>|<span data-ttu-id="6e627-128">説明</span><span class="sxs-lookup"><span data-stu-id="6e627-128">Description</span></span>|  
 |-----------|--------------|-----------------|  
-|`AppDomainLoad_V1` (すべてのアプリケーション ドメインについて記録)|156|プロセスの有効期間中に、アプリケーション ドメインが作成されるたびに発生します。|  
-|`AppDomainUnLoad_V1`|157|プロセスの有効期間中に、アプリケーション ドメインが破壊されるたびに発生します。|  
-|`AppDomainDCStart_V1`|157|開始ランダウン中にアプリケーション ドメインを列挙します。|  
-|`AppDomainDCEnd_V1`|158|終了ランダウン中にアプリケーション ドメインを列挙します。|  
+|<span data-ttu-id="6e627-129">`AppDomainLoad_V1` (すべてのアプリケーション ドメインについて記録)</span><span class="sxs-lookup"><span data-stu-id="6e627-129">`AppDomainLoad_V1` (logged for all application domains)</span></span>|<span data-ttu-id="6e627-130">156</span><span class="sxs-lookup"><span data-stu-id="6e627-130">156</span></span>|<span data-ttu-id="6e627-131">プロセスの有効期間中に、アプリケーション ドメインが作成されるたびに発生します。</span><span class="sxs-lookup"><span data-stu-id="6e627-131">Raised whenever an application domain is created during the lifetime of a process.</span></span>|  
+|`AppDomainUnLoad_V1`|<span data-ttu-id="6e627-132">157</span><span class="sxs-lookup"><span data-stu-id="6e627-132">157</span></span>|<span data-ttu-id="6e627-133">プロセスの有効期間中に、アプリケーション ドメインが破壊されるたびに発生します。</span><span class="sxs-lookup"><span data-stu-id="6e627-133">Raised whenever an application domain is destroyed during the lifetime of a process.</span></span>|  
+|`AppDomainDCStart_V1`|<span data-ttu-id="6e627-134">157</span><span class="sxs-lookup"><span data-stu-id="6e627-134">157</span></span>|<span data-ttu-id="6e627-135">開始ランダウン中にアプリケーション ドメインを列挙します。</span><span class="sxs-lookup"><span data-stu-id="6e627-135">Enumerates the application domains during a start rundown.</span></span>|  
+|`AppDomainDCEnd_V1`|<span data-ttu-id="6e627-136">158</span><span class="sxs-lookup"><span data-stu-id="6e627-136">158</span></span>|<span data-ttu-id="6e627-137">終了ランダウン中にアプリケーション ドメインを列挙します。</span><span class="sxs-lookup"><span data-stu-id="6e627-137">Enumerates the application domains during an end rundown.</span></span>|  
   
- 次の表に、イベント データを示します。  
+ <span data-ttu-id="6e627-138">次の表に、イベント データを示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-138">The following table shows the event data.</span></span>  
   
-|フィールド名|データ型|説明|  
+|<span data-ttu-id="6e627-139">フィールド名</span><span class="sxs-lookup"><span data-stu-id="6e627-139">Field name</span></span>|<span data-ttu-id="6e627-140">データ型</span><span class="sxs-lookup"><span data-stu-id="6e627-140">Data type</span></span>|<span data-ttu-id="6e627-141">説明</span><span class="sxs-lookup"><span data-stu-id="6e627-141">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|AppDomainID|win:UInt64|アプリケーション ドメインの一意の識別子。|  
-|AppDomainFlags|win:UInt32|0x1: 既定のドメイン。<br /><br /> 0x2: 実行可能ファイル。<br /><br /> 0x4: アプリケーション ドメイン、ビット 28 ～ 31: このドメインの共有ポリシー。<br /><br /> 0: 共有ドメイン。|  
-|AppDomainName|win:UnicodeString|わかりやすいアプリケーション ドメイン名。 プロセスの有効期間中に変更することがあります。|  
-|AppDomainIndex|win:UInt32|このアプリケーション ドメインのインデックス。|  
-|ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
+|<span data-ttu-id="6e627-142">AppDomainID</span><span class="sxs-lookup"><span data-stu-id="6e627-142">AppDomainID</span></span>|<span data-ttu-id="6e627-143">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="6e627-143">win:UInt64</span></span>|<span data-ttu-id="6e627-144">アプリケーション ドメインの一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="6e627-144">The unique identifier for an application domain.</span></span>|  
+|<span data-ttu-id="6e627-145">AppDomainFlags</span><span class="sxs-lookup"><span data-stu-id="6e627-145">AppDomainFlags</span></span>|<span data-ttu-id="6e627-146">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-146">win:UInt32</span></span>|<span data-ttu-id="6e627-147">0x1: 既定のドメイン。</span><span class="sxs-lookup"><span data-stu-id="6e627-147">0x1: Default domain.</span></span><br /><br /> <span data-ttu-id="6e627-148">0x2: 実行可能ファイル。</span><span class="sxs-lookup"><span data-stu-id="6e627-148">0x2: Executable.</span></span><br /><br /> <span data-ttu-id="6e627-149">0x4: アプリケーション ドメイン、ビット 28 ～ 31: このドメインの共有ポリシー。</span><span class="sxs-lookup"><span data-stu-id="6e627-149">0x4: Application domain, bit 28-31: Sharing policy of this domain.</span></span><br /><br /> <span data-ttu-id="6e627-150">0: 共有ドメイン。</span><span class="sxs-lookup"><span data-stu-id="6e627-150">0: A shared domain.</span></span>|  
+|<span data-ttu-id="6e627-151">AppDomainName</span><span class="sxs-lookup"><span data-stu-id="6e627-151">AppDomainName</span></span>|<span data-ttu-id="6e627-152">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="6e627-152">win:UnicodeString</span></span>|<span data-ttu-id="6e627-153">わかりやすいアプリケーション ドメイン名。</span><span class="sxs-lookup"><span data-stu-id="6e627-153">Friendly application domain name.</span></span> <span data-ttu-id="6e627-154">プロセスの有効期間中に変更することがあります。</span><span class="sxs-lookup"><span data-stu-id="6e627-154">Might change during the lifetime of the process.</span></span>|  
+|<span data-ttu-id="6e627-155">AppDomainIndex</span><span class="sxs-lookup"><span data-stu-id="6e627-155">AppDomainIndex</span></span>|<span data-ttu-id="6e627-156">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-156">Win:UInt32</span></span>|<span data-ttu-id="6e627-157">このアプリケーション ドメインのインデックス。</span><span class="sxs-lookup"><span data-stu-id="6e627-157">The index of this application domain.</span></span>|  
+|<span data-ttu-id="6e627-158">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="6e627-158">ClrInstanceID</span></span>|<span data-ttu-id="6e627-159">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="6e627-159">win:UInt16</span></span>|<span data-ttu-id="6e627-160">CLR または CoreCLR のインスタンスの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="6e627-160">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="6e627-161">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="6e627-161">Back to top</span></span>](#top)  
   
 <a name="clr_loader_assembly_events"></a>   
-## <a name="clr-loader-assembly-events"></a>CLR ローダー アセンブリ イベント  
- 次の表に、キーワードとレベルを示します。  
+## <a name="clr-loader-assembly-events"></a><span data-ttu-id="6e627-162">CLR ローダー アセンブリ イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-162">CLR Loader Assembly Events</span></span>  
+ <span data-ttu-id="6e627-163">次の表に、キーワードとレベルを示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-163">The following table shows the keyword and level.</span></span>  
   
-|イベントを発生させるキーワード|イベント|レベル|  
+|<span data-ttu-id="6e627-164">イベントを発生させるキーワード</span><span class="sxs-lookup"><span data-stu-id="6e627-164">Keyword for raising the event</span></span>|<span data-ttu-id="6e627-165">イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-165">Event</span></span>|<span data-ttu-id="6e627-166">レベル</span><span class="sxs-lookup"><span data-stu-id="6e627-166">Level</span></span>|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword` (0x8)|`AssemblyLoad` および `AssemblyUnload`|情報提供 (4)|  
-|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|情報提供 (4)|  
-|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`AssemblyDCEnd`|情報提供 (4)|  
+|<span data-ttu-id="6e627-167">`LoaderKeyword` (0x8)</span><span class="sxs-lookup"><span data-stu-id="6e627-167">`LoaderKeyword` (0x8)</span></span>|<span data-ttu-id="6e627-168">`AssemblyLoad` および `AssemblyUnload`</span><span class="sxs-lookup"><span data-stu-id="6e627-168">`AssemblyLoad` and `AssemblyUnload`</span></span>|<span data-ttu-id="6e627-169">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-169">Informational (4)</span></span>|  
+|<span data-ttu-id="6e627-170">`LoaderRundownKeyword` (0x8) +</span><span class="sxs-lookup"><span data-stu-id="6e627-170">`LoaderRundownKeyword` (0x8) +</span></span><br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|<span data-ttu-id="6e627-171">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-171">Informational (4)</span></span>|  
+|<span data-ttu-id="6e627-172">`LoaderRundownKeyword` (0x8) +</span><span class="sxs-lookup"><span data-stu-id="6e627-172">`LoaderRundownKeyword` (0x8) +</span></span><br /><br /> `EndRundownKeyword`|`AssemblyDCEnd`|<span data-ttu-id="6e627-173">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-173">Informational (4)</span></span>|  
   
- 次の表に、イベント情報を示します。  
+ <span data-ttu-id="6e627-174">次の表に、イベント情報を示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-174">The following table shows the event information.</span></span>  
   
-|イベント|イベント ID|説明|  
+|<span data-ttu-id="6e627-175">イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-175">Event</span></span>|<span data-ttu-id="6e627-176">イベント ID</span><span class="sxs-lookup"><span data-stu-id="6e627-176">Event ID</span></span>|<span data-ttu-id="6e627-177">説明</span><span class="sxs-lookup"><span data-stu-id="6e627-177">Description</span></span>|  
 |-----------|--------------|-----------------|  
-|`AssemblyLoad_V1`|154|アセンブリが読み込まれたときに発生します。|  
-|`AssemblyUnload_V1`|155|アセンブリがアンロードされたときに発生します。|  
-|`AssemblyDCStart_V1`|155|開始ランダウン中にアセンブリを列挙します。|  
-|`AssemblyDCEnd_V1`|156|終了ランダウン中にアセンブリを列挙します。|  
+|`AssemblyLoad_V1`|<span data-ttu-id="6e627-178">154</span><span class="sxs-lookup"><span data-stu-id="6e627-178">154</span></span>|<span data-ttu-id="6e627-179">アセンブリが読み込まれたときに発生します。</span><span class="sxs-lookup"><span data-stu-id="6e627-179">Raised when an assembly is loaded.</span></span>|  
+|`AssemblyUnload_V1`|<span data-ttu-id="6e627-180">155</span><span class="sxs-lookup"><span data-stu-id="6e627-180">155</span></span>|<span data-ttu-id="6e627-181">アセンブリがアンロードされたときに発生します。</span><span class="sxs-lookup"><span data-stu-id="6e627-181">Raised when an assembly is unloaded.</span></span>|  
+|`AssemblyDCStart_V1`|<span data-ttu-id="6e627-182">155</span><span class="sxs-lookup"><span data-stu-id="6e627-182">155</span></span>|<span data-ttu-id="6e627-183">開始ランダウン中にアセンブリを列挙します。</span><span class="sxs-lookup"><span data-stu-id="6e627-183">Enumerates assemblies during a start rundown.</span></span>|  
+|`AssemblyDCEnd_V1`|<span data-ttu-id="6e627-184">156</span><span class="sxs-lookup"><span data-stu-id="6e627-184">156</span></span>|<span data-ttu-id="6e627-185">終了ランダウン中にアセンブリを列挙します。</span><span class="sxs-lookup"><span data-stu-id="6e627-185">Enumerates assemblies during an end rundown.</span></span>|  
   
- 次の表に、イベント データを示します。  
+ <span data-ttu-id="6e627-186">次の表に、イベント データを示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-186">The following table shows the event data.</span></span>  
   
-|フィールド名|データ型|説明|  
+|<span data-ttu-id="6e627-187">フィールド名</span><span class="sxs-lookup"><span data-stu-id="6e627-187">Field name</span></span>|<span data-ttu-id="6e627-188">データ型</span><span class="sxs-lookup"><span data-stu-id="6e627-188">Data type</span></span>|<span data-ttu-id="6e627-189">説明</span><span class="sxs-lookup"><span data-stu-id="6e627-189">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|AssemblyID|win:UInt64|アセンブリの一意の ID。|  
-|AppDomainID|win:UInt64|このアセンブリのドメインの ID。|  
-|BindingID|win:UInt64|アセンブリ バインディングを一意に識別する ID。|  
-|AssemblyFlags|win:UInt32|0x1: ドメインに中立的なアセンブリ。<br /><br /> 0x2: 動的アセンブリ。<br /><br /> 0x4: アセンブリにネイティブ イメージがある。<br /><br /> 0x8: 収集可能なアセンブリ。|  
-|AssemblyName|win:UnicodeString|完全修飾アセンブリ名。|  
-|ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
+|<span data-ttu-id="6e627-190">AssemblyID</span><span class="sxs-lookup"><span data-stu-id="6e627-190">AssemblyID</span></span>|<span data-ttu-id="6e627-191">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="6e627-191">win:UInt64</span></span>|<span data-ttu-id="6e627-192">アセンブリの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="6e627-192">Unique ID for the assembly.</span></span>|  
+|<span data-ttu-id="6e627-193">AppDomainID</span><span class="sxs-lookup"><span data-stu-id="6e627-193">AppDomainID</span></span>|<span data-ttu-id="6e627-194">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="6e627-194">win:UInt64</span></span>|<span data-ttu-id="6e627-195">このアセンブリのドメインの ID。</span><span class="sxs-lookup"><span data-stu-id="6e627-195">ID of the domain of this assembly.</span></span>|  
+|<span data-ttu-id="6e627-196">BindingID</span><span class="sxs-lookup"><span data-stu-id="6e627-196">BindingID</span></span>|<span data-ttu-id="6e627-197">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="6e627-197">win:UInt64</span></span>|<span data-ttu-id="6e627-198">アセンブリ バインディングを一意に識別する ID。</span><span class="sxs-lookup"><span data-stu-id="6e627-198">ID that uniquely identifies the assembly binding.</span></span>|  
+|<span data-ttu-id="6e627-199">AssemblyFlags</span><span class="sxs-lookup"><span data-stu-id="6e627-199">AssemblyFlags</span></span>|<span data-ttu-id="6e627-200">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-200">win:UInt32</span></span>|<span data-ttu-id="6e627-201">0x1: ドメインに中立的なアセンブリ。</span><span class="sxs-lookup"><span data-stu-id="6e627-201">0x1: Domain neutral assembly.</span></span><br /><br /> <span data-ttu-id="6e627-202">0x2: 動的アセンブリ。</span><span class="sxs-lookup"><span data-stu-id="6e627-202">0x2: Dynamic assembly.</span></span><br /><br /> <span data-ttu-id="6e627-203">0x4: アセンブリにネイティブ イメージがある。</span><span class="sxs-lookup"><span data-stu-id="6e627-203">0x4: Assembly has a native image.</span></span><br /><br /> <span data-ttu-id="6e627-204">0x8: 収集可能なアセンブリ。</span><span class="sxs-lookup"><span data-stu-id="6e627-204">0x8: Collectible assembly.</span></span>|  
+|<span data-ttu-id="6e627-205">AssemblyName</span><span class="sxs-lookup"><span data-stu-id="6e627-205">AssemblyName</span></span>|<span data-ttu-id="6e627-206">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="6e627-206">win:UnicodeString</span></span>|<span data-ttu-id="6e627-207">完全修飾アセンブリ名。</span><span class="sxs-lookup"><span data-stu-id="6e627-207">Fully qualified assembly name.</span></span>|  
+|<span data-ttu-id="6e627-208">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="6e627-208">ClrInstanceID</span></span>|<span data-ttu-id="6e627-209">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="6e627-209">win:UInt16</span></span>|<span data-ttu-id="6e627-210">CLR または CoreCLR のインスタンスの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="6e627-210">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="6e627-211">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="6e627-211">Back to top</span></span>](#top)  
   
 <a name="module_events"></a>   
-## <a name="module-events"></a>モジュール イベント  
- 次の表に、キーワードとレベルを示します。  
+## <a name="module-events"></a><span data-ttu-id="6e627-212">モジュール イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-212">Module Events</span></span>  
+ <span data-ttu-id="6e627-213">次の表に、キーワードとレベルを示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-213">The following table shows the keyword and level.</span></span>  
   
-|イベントを発生させるキーワード|イベント|レベル|  
+|<span data-ttu-id="6e627-214">イベントを発生させるキーワード</span><span class="sxs-lookup"><span data-stu-id="6e627-214">Keyword for raising the event</span></span>|<span data-ttu-id="6e627-215">イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-215">Event</span></span>|<span data-ttu-id="6e627-216">レベル</span><span class="sxs-lookup"><span data-stu-id="6e627-216">Level</span></span>|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword` (0x8)|`ModuleLoad_V2` および `ModuleUnload_V2`|情報提供 (4)|  
-|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|情報提供 (4)|  
-|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`ModuleDCEnd_V2`|情報提供 (4)|  
+|<span data-ttu-id="6e627-217">`LoaderKeyword` (0x8)</span><span class="sxs-lookup"><span data-stu-id="6e627-217">`LoaderKeyword` (0x8)</span></span>|<span data-ttu-id="6e627-218">`ModuleLoad_V2` および `ModuleUnload_V2`</span><span class="sxs-lookup"><span data-stu-id="6e627-218">`ModuleLoad_V2` and `ModuleUnload_V2`</span></span>|<span data-ttu-id="6e627-219">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-219">Informational (4)</span></span>|  
+|<span data-ttu-id="6e627-220">`LoaderRundownKeyword` (0x8) +</span><span class="sxs-lookup"><span data-stu-id="6e627-220">`LoaderRundownKeyword` (0x8) +</span></span><br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|<span data-ttu-id="6e627-221">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-221">Informational (4)</span></span>|  
+|<span data-ttu-id="6e627-222">`LoaderRundownKeyword` (0x8) +</span><span class="sxs-lookup"><span data-stu-id="6e627-222">`LoaderRundownKeyword` (0x8) +</span></span><br /><br /> `EndRundownKeyword`|`ModuleDCEnd_V2`|<span data-ttu-id="6e627-223">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-223">Informational (4)</span></span>|  
 ||||  
   
- 次の表に、イベント情報を示します。  
+ <span data-ttu-id="6e627-224">次の表に、イベント情報を示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-224">The following table shows the event information.</span></span>  
   
-|イベント|イベント ID|説明|  
+|<span data-ttu-id="6e627-225">イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-225">Event</span></span>|<span data-ttu-id="6e627-226">イベント ID</span><span class="sxs-lookup"><span data-stu-id="6e627-226">Event ID</span></span>|<span data-ttu-id="6e627-227">説明</span><span class="sxs-lookup"><span data-stu-id="6e627-227">Description</span></span>|  
 |-----------|--------------|-----------------|  
-|`ModuleLoad_V2`|152|プロセスの有効期間中にモジュールが読み込まれるときに発生します。|  
-|`ModuleUnload_V2`|153|プロセスの有効期間中にモジュールがアンロードされるときに発生します。|  
-|`ModuleDCStart_V2`|153|開始ランダウン中にモジュールを列挙します。|  
-|`ModuleDCEnd_V2`|154|終了ランダウン中にモジュールを列挙します。|  
+|`ModuleLoad_V2`|<span data-ttu-id="6e627-228">152</span><span class="sxs-lookup"><span data-stu-id="6e627-228">152</span></span>|<span data-ttu-id="6e627-229">プロセスの有効期間中にモジュールが読み込まれるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="6e627-229">Raised when a module is loaded during the lifetime of a process.</span></span>|  
+|`ModuleUnload_V2`|<span data-ttu-id="6e627-230">153</span><span class="sxs-lookup"><span data-stu-id="6e627-230">153</span></span>|<span data-ttu-id="6e627-231">プロセスの有効期間中にモジュールがアンロードされるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="6e627-231">Raised when a module is unloaded during the lifetime of a process.</span></span>|  
+|`ModuleDCStart_V2`|<span data-ttu-id="6e627-232">153</span><span class="sxs-lookup"><span data-stu-id="6e627-232">153</span></span>|<span data-ttu-id="6e627-233">開始ランダウン中にモジュールを列挙します。</span><span class="sxs-lookup"><span data-stu-id="6e627-233">Enumerates modules during a start rundown.</span></span>|  
+|`ModuleDCEnd_V2`|<span data-ttu-id="6e627-234">154</span><span class="sxs-lookup"><span data-stu-id="6e627-234">154</span></span>|<span data-ttu-id="6e627-235">終了ランダウン中にモジュールを列挙します。</span><span class="sxs-lookup"><span data-stu-id="6e627-235">Enumerates modules during an end rundown.</span></span>|  
   
- 次の表に、イベント データを示します。  
+ <span data-ttu-id="6e627-236">次の表に、イベント データを示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-236">The following table shows the event data.</span></span>  
   
-|フィールド名|データ型|説明|  
+|<span data-ttu-id="6e627-237">フィールド名</span><span class="sxs-lookup"><span data-stu-id="6e627-237">Field name</span></span>|<span data-ttu-id="6e627-238">データ型</span><span class="sxs-lookup"><span data-stu-id="6e627-238">Data type</span></span>|<span data-ttu-id="6e627-239">説明</span><span class="sxs-lookup"><span data-stu-id="6e627-239">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|ModuleID|win:UInt64|モジュールの一意な ID。|  
-|AssemblyID|win:UInt64|このモジュールが存在するアセンブリの ID。|  
-|ModuleFlags|win:UInt32|0x1: ドメインに中立的なモジュール。<br /><br /> 0x2: モジュールにネイティブ イメージがある。<br /><br /> 0x4: 動的モジュール。<br /><br /> 0x8: マニフェスト モジュール。|  
-|Reserved1|win:UInt32|予約済みのフィールド。|  
-|ModuleILPath|win:UnicodeString|モジュールの Microsoft intermediate language (MSIL) のイメージのパス、またはそれが動的アセンブリ (null で終わる) である場合は動的モジュール名。|  
-|ModuleNativePath|win:UnicodeString|モジュール ネイティブ イメージがある場合、そのパス (null で終わる)。|  
-|ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
-|ManagedPdbSignature|win:GUID|このモジュールに一致するマネージ プログラム データベース (PDB) の GUID の署名。 (「解説」を参照してください。)|  
-|ManagedPdbAge|win:UInt32|このモジュールに一致する管理対象 PDB に書き込まれた期間を表す数値。 (「解説」を参照してください。)|  
-|ManagedPdbBuildPath|win:UnicodeString|このモジュールに一致する管理対象の PDB が構成されている場所へのパス。 これは、ファイル名だけの場合もあります。 (「解説」を参照してください。)|  
-|NativePdbSignature|win:GUID|このモジュールに一致するネイティブ イメージ ジェネレーター (NGen) PDB の GUID の署名 (該当する場合)。 (「解説」を参照してください。)|  
-|NativePdbAge|win:UInt32|このモジュールに一致する NGen PDB に書き込まれた期間を表す数値 (該当する場合)。 (「解説」を参照してください。)|  
-|NativePdbBuildPath|win:UnicodeString|このモジュールに一致する管理対象の NGen PDB が構成されている場所へのパス (該当する場合)。 これは、ファイル名だけの場合もあります。 (「解説」を参照してください。)|  
+|<span data-ttu-id="6e627-240">ModuleID</span><span class="sxs-lookup"><span data-stu-id="6e627-240">ModuleID</span></span>|<span data-ttu-id="6e627-241">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="6e627-241">win:UInt64</span></span>|<span data-ttu-id="6e627-242">モジュールの一意な ID。</span><span class="sxs-lookup"><span data-stu-id="6e627-242">Unique ID for the module.</span></span>|  
+|<span data-ttu-id="6e627-243">AssemblyID</span><span class="sxs-lookup"><span data-stu-id="6e627-243">AssemblyID</span></span>|<span data-ttu-id="6e627-244">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="6e627-244">win:UInt64</span></span>|<span data-ttu-id="6e627-245">このモジュールが存在するアセンブリの ID。</span><span class="sxs-lookup"><span data-stu-id="6e627-245">ID of the assembly in which this module resides.</span></span>|  
+|<span data-ttu-id="6e627-246">ModuleFlags</span><span class="sxs-lookup"><span data-stu-id="6e627-246">ModuleFlags</span></span>|<span data-ttu-id="6e627-247">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-247">win:UInt32</span></span>|<span data-ttu-id="6e627-248">0x1: ドメインに中立的なモジュール。</span><span class="sxs-lookup"><span data-stu-id="6e627-248">0x1: Domain neutral module.</span></span><br /><br /> <span data-ttu-id="6e627-249">0x2: モジュールにネイティブ イメージがある。</span><span class="sxs-lookup"><span data-stu-id="6e627-249">0x2: Module has a native image.</span></span><br /><br /> <span data-ttu-id="6e627-250">0x4: 動的モジュール。</span><span class="sxs-lookup"><span data-stu-id="6e627-250">0x4: Dynamic module.</span></span><br /><br /> <span data-ttu-id="6e627-251">0x8: マニフェスト モジュール。</span><span class="sxs-lookup"><span data-stu-id="6e627-251">0x8: Manifest module.</span></span>|  
+|<span data-ttu-id="6e627-252">Reserved1</span><span class="sxs-lookup"><span data-stu-id="6e627-252">Reserved1</span></span>|<span data-ttu-id="6e627-253">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-253">win:UInt32</span></span>|<span data-ttu-id="6e627-254">予約済みのフィールド。</span><span class="sxs-lookup"><span data-stu-id="6e627-254">Reserved field.</span></span>|  
+|<span data-ttu-id="6e627-255">ModuleILPath</span><span class="sxs-lookup"><span data-stu-id="6e627-255">ModuleILPath</span></span>|<span data-ttu-id="6e627-256">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="6e627-256">win:UnicodeString</span></span>|<span data-ttu-id="6e627-257">モジュールの Microsoft intermediate language (MSIL) のイメージのパス、またはそれが動的アセンブリ (null で終わる) である場合は動的モジュール名。</span><span class="sxs-lookup"><span data-stu-id="6e627-257">Path of the Microsoft intermediate language (MSIL) image for the module, or dynamic module name if it is a dynamic assembly (null-terminated).</span></span>|  
+|<span data-ttu-id="6e627-258">ModuleNativePath</span><span class="sxs-lookup"><span data-stu-id="6e627-258">ModuleNativePath</span></span>|<span data-ttu-id="6e627-259">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="6e627-259">win:UnicodeString</span></span>|<span data-ttu-id="6e627-260">モジュール ネイティブ イメージがある場合、そのパス (null で終わる)。</span><span class="sxs-lookup"><span data-stu-id="6e627-260">Path of the module native image, if present (null-terminated).</span></span>|  
+|<span data-ttu-id="6e627-261">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="6e627-261">ClrInstanceID</span></span>|<span data-ttu-id="6e627-262">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="6e627-262">win:UInt16</span></span>|<span data-ttu-id="6e627-263">CLR または CoreCLR のインスタンスの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="6e627-263">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
+|<span data-ttu-id="6e627-264">ManagedPdbSignature</span><span class="sxs-lookup"><span data-stu-id="6e627-264">ManagedPdbSignature</span></span>|<span data-ttu-id="6e627-265">win:GUID</span><span class="sxs-lookup"><span data-stu-id="6e627-265">win:GUID</span></span>|<span data-ttu-id="6e627-266">このモジュールに一致するマネージ プログラム データベース (PDB) の GUID の署名。</span><span class="sxs-lookup"><span data-stu-id="6e627-266">GUID signature of the managed program database (PDB) that matches this module.</span></span> <span data-ttu-id="6e627-267">(「解説」を参照してください。)</span><span class="sxs-lookup"><span data-stu-id="6e627-267">(See Remarks.)</span></span>|  
+|<span data-ttu-id="6e627-268">ManagedPdbAge</span><span class="sxs-lookup"><span data-stu-id="6e627-268">ManagedPdbAge</span></span>|<span data-ttu-id="6e627-269">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-269">win:UInt32</span></span>|<span data-ttu-id="6e627-270">このモジュールに一致する管理対象 PDB に書き込まれた期間を表す数値。</span><span class="sxs-lookup"><span data-stu-id="6e627-270">Age number written to the managed PDB that matches this module.</span></span> <span data-ttu-id="6e627-271">(「解説」を参照してください。)</span><span class="sxs-lookup"><span data-stu-id="6e627-271">(See Remarks.)</span></span>|  
+|<span data-ttu-id="6e627-272">ManagedPdbBuildPath</span><span class="sxs-lookup"><span data-stu-id="6e627-272">ManagedPdbBuildPath</span></span>|<span data-ttu-id="6e627-273">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="6e627-273">win:UnicodeString</span></span>|<span data-ttu-id="6e627-274">このモジュールに一致する管理対象の PDB が構成されている場所へのパス。</span><span class="sxs-lookup"><span data-stu-id="6e627-274">Path to the location where the managed PDB that matches this module was built.</span></span> <span data-ttu-id="6e627-275">これは、ファイル名だけの場合もあります。</span><span class="sxs-lookup"><span data-stu-id="6e627-275">In some cases, this may just be a file name.</span></span> <span data-ttu-id="6e627-276">(「解説」を参照してください。)</span><span class="sxs-lookup"><span data-stu-id="6e627-276">(See Remarks.)</span></span>|  
+|<span data-ttu-id="6e627-277">NativePdbSignature</span><span class="sxs-lookup"><span data-stu-id="6e627-277">NativePdbSignature</span></span>|<span data-ttu-id="6e627-278">win:GUID</span><span class="sxs-lookup"><span data-stu-id="6e627-278">win:GUID</span></span>|<span data-ttu-id="6e627-279">このモジュールに一致するネイティブ イメージ ジェネレーター (NGen) PDB の GUID の署名 (該当する場合)。</span><span class="sxs-lookup"><span data-stu-id="6e627-279">GUID signature of the Native Image Generator (NGen) PDB that matches this module, if applicable.</span></span> <span data-ttu-id="6e627-280">(「解説」を参照してください。)</span><span class="sxs-lookup"><span data-stu-id="6e627-280">(See Remarks.)</span></span>|  
+|<span data-ttu-id="6e627-281">NativePdbAge</span><span class="sxs-lookup"><span data-stu-id="6e627-281">NativePdbAge</span></span>|<span data-ttu-id="6e627-282">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-282">win:UInt32</span></span>|<span data-ttu-id="6e627-283">このモジュールに一致する NGen PDB に書き込まれた期間を表す数値 (該当する場合)。</span><span class="sxs-lookup"><span data-stu-id="6e627-283">Age number written to the NGen PDB that matches this module, if applicable.</span></span> <span data-ttu-id="6e627-284">(「解説」を参照してください。)</span><span class="sxs-lookup"><span data-stu-id="6e627-284">(See Remarks.)</span></span>|  
+|<span data-ttu-id="6e627-285">NativePdbBuildPath</span><span class="sxs-lookup"><span data-stu-id="6e627-285">NativePdbBuildPath</span></span>|<span data-ttu-id="6e627-286">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="6e627-286">win:UnicodeString</span></span>|<span data-ttu-id="6e627-287">このモジュールに一致する管理対象の NGen PDB が構成されている場所へのパス (該当する場合)。</span><span class="sxs-lookup"><span data-stu-id="6e627-287">Path to the location where the NGen PDB that matches this module was built, if applicable.</span></span> <span data-ttu-id="6e627-288">これは、ファイル名だけの場合もあります。</span><span class="sxs-lookup"><span data-stu-id="6e627-288">In some cases, this may just be a file name.</span></span> <span data-ttu-id="6e627-289">(「解説」を参照してください。)</span><span class="sxs-lookup"><span data-stu-id="6e627-289">(See Remarks.)</span></span>|  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a><span data-ttu-id="6e627-290">コメント</span><span class="sxs-lookup"><span data-stu-id="6e627-290">Remarks</span></span>  
   
--   名前に"Pdb"が付いているフィールドは、プロファイル セッション中に読み込まれたモジュールに一致する PDB を検索するプロファイリング ツールによって使用できます。 これらのフィールドの値は、読み込まれたモジュールに一致する PDB の位置を特定するためにデバッガーが通常使用する、モジュールの IMAGE_DIRECTORY_ENTRY_DEBUG のセクションに書き込まれたデータに対応します。  
+-   <span data-ttu-id="6e627-291">名前に"Pdb"が付いているフィールドは、プロファイル セッション中に読み込まれたモジュールに一致する PDB を検索するプロファイリング ツールによって使用できます。</span><span class="sxs-lookup"><span data-stu-id="6e627-291">The fields that have "Pdb" in their names can be used by profiling tools to locate PDBs that match the modules that were loaded during the profiling session.</span></span> <span data-ttu-id="6e627-292">これらのフィールドの値は、読み込まれたモジュールに一致する PDB の位置を特定するためにデバッガーが通常使用する、モジュールの IMAGE_DIRECTORY_ENTRY_DEBUG のセクションに書き込まれたデータに対応します。</span><span class="sxs-lookup"><span data-stu-id="6e627-292">The values of these fields correspond to the data written into the IMAGE_DIRECTORY_ENTRY_DEBUG sections of the module normally used by debuggers to help locate PDBs that match the loaded modules.</span></span>  
   
--   "ManagedPdb"で始まるフィールド名は、マネージ コンパイラ (c# または Visual Basic コンパイラなど) によって生成された MSIL モジュールに対応する管理対象の PDB を参照します。 この PDB は、管理対象の PDB 形式を使用して、ファイル、行番号、およびシンボルの名前など、元のマネージ ソース コードからの要素が MSIL モジュールにコンパイルされている MSIL 要素にどのようにマップされるかについて説明します。  
+-   <span data-ttu-id="6e627-293">"ManagedPdb"で始まるフィールド名は、マネージ コンパイラ (c# または Visual Basic コンパイラなど) によって生成された MSIL モジュールに対応する管理対象の PDB を参照します。</span><span class="sxs-lookup"><span data-stu-id="6e627-293">The field names that begin with "ManagedPdb" refer to the managed PDB corresponding to the MSIL module that was generated by the managed compiler (such as the C# or Visual Basic compiler).</span></span> <span data-ttu-id="6e627-294">この PDB は、管理対象の PDB 形式を使用して、ファイル、行番号、およびシンボルの名前など、元のマネージ ソース コードからの要素が MSIL モジュールにコンパイルされている MSIL 要素にどのようにマップされるかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="6e627-294">This PDB uses the managed PDB format, and describes how elements from the original managed source code, such as files, line numbers, and symbol names, map to MSIL elements that are compiled into the MSIL module.</span></span>  
   
--   "NativePdb"で始まるフィールド名は、 `NGEN createPDB`を呼び出すことによって生成された NGen PDB を参照します。 この PDB は、ネイティブ PDB 形式を使用して、ファイル、行番号、およびシンボルの名前など、元のマネージ ソース コードからの要素が NGen モジュールにコンパイルされているネイティブ要素にどのようにマップされるかについて説明します。  
+-   <span data-ttu-id="6e627-295">"NativePdb"で始まるフィールド名は、 `NGEN createPDB`を呼び出すことによって生成された NGen PDB を参照します。</span><span class="sxs-lookup"><span data-stu-id="6e627-295">The field names that begin with "NativePdb" refer to the NGen PDB generated by calling `NGEN createPDB`.</span></span> <span data-ttu-id="6e627-296">この PDB は、ネイティブ PDB 形式を使用して、ファイル、行番号、およびシンボルの名前など、元のマネージ ソース コードからの要素が NGen モジュールにコンパイルされているネイティブ要素にどのようにマップされるかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="6e627-296">This PDB uses the native PDB format, and describes how elements from the original managed source code, such as files, line numbers, and symbol names, map to native elements that are compiled into the NGen module.</span></span>  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="6e627-297">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="6e627-297">Back to top</span></span>](#top)  
   
 <a name="clr_domain_module_events"></a>   
-## <a name="clr-domain-module-events"></a>CLR ドメイン モジュール イベント  
- 次の表に、キーワードとレベルを示します。  
+## <a name="clr-domain-module-events"></a><span data-ttu-id="6e627-298">CLR ドメイン モジュール イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-298">CLR Domain Module Events</span></span>  
+ <span data-ttu-id="6e627-299">次の表に、キーワードとレベルを示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-299">The following table shows the keyword and level.</span></span>  
   
-|イベントを発生させるキーワード|イベント|レベル|  
+|<span data-ttu-id="6e627-300">イベントを発生させるキーワード</span><span class="sxs-lookup"><span data-stu-id="6e627-300">Keyword for raising the event</span></span>|<span data-ttu-id="6e627-301">イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-301">Event</span></span>|<span data-ttu-id="6e627-302">レベル</span><span class="sxs-lookup"><span data-stu-id="6e627-302">Level</span></span>|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword` (0x8)|`DomainModuleLoad_V1`|情報提供 (4)|  
-|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|情報提供 (4)|  
-|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`DomainModuleDCEnd_V1`|情報提供 (4)|  
+|<span data-ttu-id="6e627-303">`LoaderKeyword` (0x8)</span><span class="sxs-lookup"><span data-stu-id="6e627-303">`LoaderKeyword` (0x8)</span></span>|`DomainModuleLoad_V1`|<span data-ttu-id="6e627-304">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-304">Informational (4)</span></span>|  
+|<span data-ttu-id="6e627-305">`LoaderRundownKeyword` (0x8) +</span><span class="sxs-lookup"><span data-stu-id="6e627-305">`LoaderRundownKeyword` (0x8) +</span></span><br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|<span data-ttu-id="6e627-306">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-306">Informational (4)</span></span>|  
+|<span data-ttu-id="6e627-307">`LoaderRundownKeyword` (0x8) +</span><span class="sxs-lookup"><span data-stu-id="6e627-307">`LoaderRundownKeyword` (0x8) +</span></span><br /><br /> `EndRundownKeyword`|`DomainModuleDCEnd_V1`|<span data-ttu-id="6e627-308">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-308">Informational (4)</span></span>|  
   
- 次の表に、イベント情報を示します。  
+ <span data-ttu-id="6e627-309">次の表に、イベント情報を示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-309">The following table shows the event information.</span></span>  
   
-|イベント|イベント ID|説明|  
+|<span data-ttu-id="6e627-310">イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-310">Event</span></span>|<span data-ttu-id="6e627-311">イベント ID</span><span class="sxs-lookup"><span data-stu-id="6e627-311">Event ID</span></span>|<span data-ttu-id="6e627-312">説明</span><span class="sxs-lookup"><span data-stu-id="6e627-312">Description</span></span>|  
 |-----------|--------------|-----------------|  
-|`DomainModuleLoad_V1`|151|モジュールがアプリケーション ドメインに読み込まれるときに発生します。|  
-|`DomainModuleDCStart_V1`|151|開始ランダウン中にアプリケーション ドメインに読み込まれたモジュールを列挙し、すべてのアプリケーション ドメインについてログに記録されます。|  
-|`DomainModuleDCEnd_V1`|152|終了ランダウン中にアプリケーション ドメインに読み込まれたモジュールを列挙し、すべてのアプリケーション ドメインについてログに記録されます。|  
+|`DomainModuleLoad_V1`|<span data-ttu-id="6e627-313">151</span><span class="sxs-lookup"><span data-stu-id="6e627-313">151</span></span>|<span data-ttu-id="6e627-314">モジュールがアプリケーション ドメインに読み込まれるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="6e627-314">Raised when a module is loaded for an application domain.</span></span>|  
+|`DomainModuleDCStart_V1`|<span data-ttu-id="6e627-315">151</span><span class="sxs-lookup"><span data-stu-id="6e627-315">151</span></span>|<span data-ttu-id="6e627-316">開始ランダウン中にアプリケーション ドメインに読み込まれたモジュールを列挙し、すべてのアプリケーション ドメインについてログに記録されます。</span><span class="sxs-lookup"><span data-stu-id="6e627-316">Enumerates modules loaded for an application domain during a start rundown, and is logged for all application domains.</span></span>|  
+|`DomainModuleDCEnd_V1`|<span data-ttu-id="6e627-317">152</span><span class="sxs-lookup"><span data-stu-id="6e627-317">152</span></span>|<span data-ttu-id="6e627-318">終了ランダウン中にアプリケーション ドメインに読み込まれたモジュールを列挙し、すべてのアプリケーション ドメインについてログに記録されます。</span><span class="sxs-lookup"><span data-stu-id="6e627-318">Enumerates modules loaded for an application domain during an end rundown, and is logged for all application domains.</span></span>|  
   
- 次の表に、イベント データを示します。  
+ <span data-ttu-id="6e627-319">次の表に、イベント データを示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-319">The following table shows the event data.</span></span>  
   
-|フィールド名|データ型|説明|  
+|<span data-ttu-id="6e627-320">フィールド名</span><span class="sxs-lookup"><span data-stu-id="6e627-320">Field name</span></span>|<span data-ttu-id="6e627-321">データ型</span><span class="sxs-lookup"><span data-stu-id="6e627-321">Data type</span></span>|<span data-ttu-id="6e627-322">説明</span><span class="sxs-lookup"><span data-stu-id="6e627-322">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|ModuleID|win:UInt64|このモジュールが所属するアセンブリを識別します。|  
-|AssemblyID|win:UInt64|このモジュールが存在するアセンブリの ID。|  
-|AppDomainID|win:UInt64|このモジュールを使用する、アプリケーション ドメインの ID。|  
-|ModuleFlags|win:UInt32|0x1: ドメインに中立的なモジュール。<br /><br /> 0x2: モジュールにネイティブ イメージがある。<br /><br /> 0x4: 動的モジュール。<br /><br /> 0x8: マニフェスト モジュール。|  
-|Reserved1|win:UInt32|予約済みのフィールド。|  
-|ModuleILPath|win:UnicodeString|モジュールの MSIL のイメージのパス、またはそれが動的アセンブリ (null で終わる) である場合は動的モジュール名。|  
-|ModuleNativePath|win:UnicodeString|モジュール ネイティブ イメージがある場合、そのパス (null で終わる)。|  
-|ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
+|<span data-ttu-id="6e627-323">ModuleID</span><span class="sxs-lookup"><span data-stu-id="6e627-323">ModuleID</span></span>|<span data-ttu-id="6e627-324">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="6e627-324">win:UInt64</span></span>|<span data-ttu-id="6e627-325">このモジュールが所属するアセンブリを識別します。</span><span class="sxs-lookup"><span data-stu-id="6e627-325">Identifies the assembly to which this module belongs.</span></span>|  
+|<span data-ttu-id="6e627-326">AssemblyID</span><span class="sxs-lookup"><span data-stu-id="6e627-326">AssemblyID</span></span>|<span data-ttu-id="6e627-327">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="6e627-327">win:UInt64</span></span>|<span data-ttu-id="6e627-328">このモジュールが存在するアセンブリの ID。</span><span class="sxs-lookup"><span data-stu-id="6e627-328">ID of the assembly in which this module resides.</span></span>|  
+|<span data-ttu-id="6e627-329">AppDomainID</span><span class="sxs-lookup"><span data-stu-id="6e627-329">AppDomainID</span></span>|<span data-ttu-id="6e627-330">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="6e627-330">win:UInt64</span></span>|<span data-ttu-id="6e627-331">このモジュールを使用する、アプリケーション ドメインの ID。</span><span class="sxs-lookup"><span data-stu-id="6e627-331">ID of the application domain in which this module is used.</span></span>|  
+|<span data-ttu-id="6e627-332">ModuleFlags</span><span class="sxs-lookup"><span data-stu-id="6e627-332">ModuleFlags</span></span>|<span data-ttu-id="6e627-333">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-333">win:UInt32</span></span>|<span data-ttu-id="6e627-334">0x1: ドメインに中立的なモジュール。</span><span class="sxs-lookup"><span data-stu-id="6e627-334">0x1: Domain neutral module.</span></span><br /><br /> <span data-ttu-id="6e627-335">0x2: モジュールにネイティブ イメージがある。</span><span class="sxs-lookup"><span data-stu-id="6e627-335">0x2: Module has a native image.</span></span><br /><br /> <span data-ttu-id="6e627-336">0x4: 動的モジュール。</span><span class="sxs-lookup"><span data-stu-id="6e627-336">0x4: Dynamic module.</span></span><br /><br /> <span data-ttu-id="6e627-337">0x8: マニフェスト モジュール。</span><span class="sxs-lookup"><span data-stu-id="6e627-337">0x8: Manifest module.</span></span>|  
+|<span data-ttu-id="6e627-338">Reserved1</span><span class="sxs-lookup"><span data-stu-id="6e627-338">Reserved1</span></span>|<span data-ttu-id="6e627-339">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-339">win:UInt32</span></span>|<span data-ttu-id="6e627-340">予約済みのフィールド。</span><span class="sxs-lookup"><span data-stu-id="6e627-340">Reserved field.</span></span>|  
+|<span data-ttu-id="6e627-341">ModuleILPath</span><span class="sxs-lookup"><span data-stu-id="6e627-341">ModuleILPath</span></span>|<span data-ttu-id="6e627-342">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="6e627-342">win:UnicodeString</span></span>|<span data-ttu-id="6e627-343">モジュールの MSIL のイメージのパス、またはそれが動的アセンブリ (null で終わる) である場合は動的モジュール名。</span><span class="sxs-lookup"><span data-stu-id="6e627-343">Path of the MSIL image for the module, or dynamic module name if it is a dynamic assembly (null-terminated).</span></span>|  
+|<span data-ttu-id="6e627-344">ModuleNativePath</span><span class="sxs-lookup"><span data-stu-id="6e627-344">ModuleNativePath</span></span>|<span data-ttu-id="6e627-345">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="6e627-345">win:UnicodeString</span></span>|<span data-ttu-id="6e627-346">モジュール ネイティブ イメージがある場合、そのパス (null で終わる)。</span><span class="sxs-lookup"><span data-stu-id="6e627-346">Path of the module native image, if present (null-terminated).</span></span>|  
+|<span data-ttu-id="6e627-347">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="6e627-347">ClrInstanceID</span></span>|<span data-ttu-id="6e627-348">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="6e627-348">win:UInt16</span></span>|<span data-ttu-id="6e627-349">CLR または CoreCLR のインスタンスの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="6e627-349">Unique ID for the instance of CLR or CoreCLR.</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="6e627-350">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="6e627-350">Back to top</span></span>](#top)  
   
 <a name="module_range_events"></a>   
-## <a name="module-range-events"></a>モジュールの範囲イベント  
- 次の表に、キーワードとレベルを示します。  
+## <a name="module-range-events"></a><span data-ttu-id="6e627-351">モジュールの範囲イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-351">Module Range Events</span></span>  
+ <span data-ttu-id="6e627-352">次の表に、キーワードとレベルを示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-352">The following table shows the keyword and level.</span></span>  
   
-|イベントを発生させるキーワード|イベント|レベル|  
+|<span data-ttu-id="6e627-353">イベントを発生させるキーワード</span><span class="sxs-lookup"><span data-stu-id="6e627-353">Keyword for raising the event</span></span>|<span data-ttu-id="6e627-354">イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-354">Event</span></span>|<span data-ttu-id="6e627-355">レベル</span><span class="sxs-lookup"><span data-stu-id="6e627-355">Level</span></span>|  
 |-----------------------------------|-----------|-----------|  
-|`PerfTrackKeyWord`)|`ModuleRange`|情報提供 (4)|  
-|`PerfTrackKeyWord`|`ModuleRangeDCStart`|情報提供 (4)|  
-|`PerfTrackKeyWord`|`ModuleRangeDCEnd`|情報提供 (4)|  
+|<span data-ttu-id="6e627-356">`PerfTrackKeyWord`)</span><span class="sxs-lookup"><span data-stu-id="6e627-356">`PerfTrackKeyWord`)</span></span>|`ModuleRange`|<span data-ttu-id="6e627-357">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-357">Informational (4)</span></span>|  
+|`PerfTrackKeyWord`|`ModuleRangeDCStart`|<span data-ttu-id="6e627-358">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-358">Informational (4)</span></span>|  
+|`PerfTrackKeyWord`|`ModuleRangeDCEnd`|<span data-ttu-id="6e627-359">情報提供 (4)</span><span class="sxs-lookup"><span data-stu-id="6e627-359">Informational (4)</span></span>|  
   
- 次の表に、イベント情報を示します。  
+ <span data-ttu-id="6e627-360">次の表に、イベント情報を示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-360">The following table shows the event information.</span></span>  
   
-|イベント|イベント ID|説明|  
+|<span data-ttu-id="6e627-361">イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-361">Event</span></span>|<span data-ttu-id="6e627-362">イベント ID</span><span class="sxs-lookup"><span data-stu-id="6e627-362">Event ID</span></span>|<span data-ttu-id="6e627-363">説明</span><span class="sxs-lookup"><span data-stu-id="6e627-363">Description</span></span>|  
 |-----------|--------------|-----------------|  
-|`ModuleRange`|158|ロードされたネイティブ イメージ ジェネレーター (NGen) のイメージが IBC によって最適化されていて、NGen イメージのホット セクションに関する情報が含まれる場合は、このイベントが存在します。|  
-|`ModuleRangeDCStart`|160|ランダウンの開始時に発生する `ModuleRange` イベント。|  
-|`ModuleRangeDCEnd`|161|ランダウンの終了時に発生する `ModuleRange` イベント。|  
+|`ModuleRange`|<span data-ttu-id="6e627-364">158</span><span class="sxs-lookup"><span data-stu-id="6e627-364">158</span></span>|<span data-ttu-id="6e627-365">ロードされたネイティブ イメージ ジェネレーター (NGen) のイメージが IBC によって最適化されていて、NGen イメージのホット セクションに関する情報が含まれる場合は、このイベントが存在します。</span><span class="sxs-lookup"><span data-stu-id="6e627-365">This event is present if a loaded Native Image Generator (NGen) image has been optimized with IBC and contains information about the hot sections of the NGen image.</span></span>|  
+|`ModuleRangeDCStart`|<span data-ttu-id="6e627-366">160</span><span class="sxs-lookup"><span data-stu-id="6e627-366">160</span></span>|<span data-ttu-id="6e627-367">ランダウンの開始時に発生する `ModuleRange` イベント。</span><span class="sxs-lookup"><span data-stu-id="6e627-367">A `ModuleRange` event fired at the start of a rundown.</span></span>|  
+|`ModuleRangeDCEnd`|<span data-ttu-id="6e627-368">161</span><span class="sxs-lookup"><span data-stu-id="6e627-368">161</span></span>|<span data-ttu-id="6e627-369">ランダウンの終了時に発生する `ModuleRange` イベント。</span><span class="sxs-lookup"><span data-stu-id="6e627-369">A `ModuleRange` event fired at the end of a rundown.</span></span>|  
   
- 次の表に、イベント データを示します。  
+ <span data-ttu-id="6e627-370">次の表に、イベント データを示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-370">The following table shows the event data.</span></span>  
   
-|フィールド名|データ型|説明|  
+|<span data-ttu-id="6e627-371">フィールド名</span><span class="sxs-lookup"><span data-stu-id="6e627-371">Field name</span></span>|<span data-ttu-id="6e627-372">データ型</span><span class="sxs-lookup"><span data-stu-id="6e627-372">Data type</span></span>|<span data-ttu-id="6e627-373">説明</span><span class="sxs-lookup"><span data-stu-id="6e627-373">Description</span></span>|  
 |----------------|---------------|-----------------|  
-|ClrInstanceID|win:UInt16|CLR の複数のインスタンスが読み込まれている場合、プロセス内の CLR の特定のインスタンスを一意に識別します。|  
-|ModuleID|win:UInt64|このモジュールが所属するアセンブリを識別します。|  
-|RangeBegin|win:UInt32|指定された範囲の種類の範囲の開始を表す、モジュール内のオフセット。|  
-|RangeSize|win:UInt32|指定された範囲のサイズ (バイト単位)。|  
-|RangeType|win:UInt32|コールド IBC 範囲を表す単一の値、0x4。 このフィールドは、後により多くの値を表すことができるようになります。|  
-|RangeSize1|win:UInt32|0 は無効なデータを示します。|  
-|RangeBegin2|win:UnicodeString||  
+|<span data-ttu-id="6e627-374">ClrInstanceID</span><span class="sxs-lookup"><span data-stu-id="6e627-374">ClrInstanceID</span></span>|<span data-ttu-id="6e627-375">win:UInt16</span><span class="sxs-lookup"><span data-stu-id="6e627-375">win:UInt16</span></span>|<span data-ttu-id="6e627-376">CLR の複数のインスタンスが読み込まれている場合、プロセス内の CLR の特定のインスタンスを一意に識別します。</span><span class="sxs-lookup"><span data-stu-id="6e627-376">Uniquely identifies a specific instance of the CLR in a process if multiple instances of the CLR are loaded.</span></span>|  
+|<span data-ttu-id="6e627-377">ModuleID</span><span class="sxs-lookup"><span data-stu-id="6e627-377">ModuleID</span></span>|<span data-ttu-id="6e627-378">win:UInt64</span><span class="sxs-lookup"><span data-stu-id="6e627-378">win:UInt64</span></span>|<span data-ttu-id="6e627-379">このモジュールが所属するアセンブリを識別します。</span><span class="sxs-lookup"><span data-stu-id="6e627-379">Identifies the assembly to which this module belongs.</span></span>|  
+|<span data-ttu-id="6e627-380">RangeBegin</span><span class="sxs-lookup"><span data-stu-id="6e627-380">RangeBegin</span></span>|<span data-ttu-id="6e627-381">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-381">win:UInt32</span></span>|<span data-ttu-id="6e627-382">指定された範囲の種類の範囲の開始を表す、モジュール内のオフセット。</span><span class="sxs-lookup"><span data-stu-id="6e627-382">The offset in the module that represents the start of the range for the specified range type.</span></span>|  
+|<span data-ttu-id="6e627-383">RangeSize</span><span class="sxs-lookup"><span data-stu-id="6e627-383">RangeSize</span></span>|<span data-ttu-id="6e627-384">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-384">win:UInt32</span></span>|<span data-ttu-id="6e627-385">指定された範囲のサイズ (バイト単位)。</span><span class="sxs-lookup"><span data-stu-id="6e627-385">The size of the specified range in bytes.</span></span>|  
+|<span data-ttu-id="6e627-386">RangeType</span><span class="sxs-lookup"><span data-stu-id="6e627-386">RangeType</span></span>|<span data-ttu-id="6e627-387">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-387">win:UInt32</span></span>|<span data-ttu-id="6e627-388">コールド IBC 範囲を表す単一の値、0x4。</span><span class="sxs-lookup"><span data-stu-id="6e627-388">A single value, 0x4, to represent Cold IBC ranges.</span></span> <span data-ttu-id="6e627-389">このフィールドは、後により多くの値を表すことができるようになります。</span><span class="sxs-lookup"><span data-stu-id="6e627-389">This field can represent more values in the future.</span></span>|  
+|<span data-ttu-id="6e627-390">RangeSize1</span><span class="sxs-lookup"><span data-stu-id="6e627-390">RangeSize1</span></span>|<span data-ttu-id="6e627-391">win:UInt32</span><span class="sxs-lookup"><span data-stu-id="6e627-391">win:UInt32</span></span>|<span data-ttu-id="6e627-392">0 は無効なデータを示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-392">0 indicates bad data.</span></span>|  
+|<span data-ttu-id="6e627-393">RangeBegin2</span><span class="sxs-lookup"><span data-stu-id="6e627-393">RangeBegin2</span></span>|<span data-ttu-id="6e627-394">win:UnicodeString</span><span class="sxs-lookup"><span data-stu-id="6e627-394">win:UnicodeString</span></span>||  
   
-### <a name="remarks"></a>コメント  
- .NET Framework のプロセスで読み込まれた NGen イメージが IBC に最適化されている場合、NGen イメージにホットの範囲を含む `ModuleRange` イベントが `moduleID` と `ClrInstanceID`と共にログに記録されます。  NGen イメージが IBC に最適化されていない場合は、このイベントは記録されません。 モジュール名を確認するには、このイベントをモジュールの読み込みの ETW イベントで照合する必要があります。  
+### <a name="remarks"></a><span data-ttu-id="6e627-395">コメント</span><span class="sxs-lookup"><span data-stu-id="6e627-395">Remarks</span></span>  
+ <span data-ttu-id="6e627-396">.NET Framework のプロセスで読み込まれた NGen イメージが IBC に最適化されている場合、NGen イメージにホットの範囲を含む `ModuleRange` イベントが `moduleID` と `ClrInstanceID`と共にログに記録されます。</span><span class="sxs-lookup"><span data-stu-id="6e627-396">If a loaded NGen image in a .NET Framework process has been optimized with IBC, the `ModuleRange` event that contains the hot ranges in the NGen image is logged along with its `moduleID` and `ClrInstanceID`.</span></span>  <span data-ttu-id="6e627-397">NGen イメージが IBC に最適化されていない場合は、このイベントは記録されません。</span><span class="sxs-lookup"><span data-stu-id="6e627-397">If the NGen image is not optimized with IBC, this event isn't logged.</span></span> <span data-ttu-id="6e627-398">モジュール名を確認するには、このイベントをモジュールの読み込みの ETW イベントで照合する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6e627-398">To determine the module name, this event must be collated with the module load ETW events.</span></span>  
   
- このイベントのペイロードのサイズは変数です。 `Count` フィールドは、イベントに含まれている範囲オフセットの数を示します。  このイベントは、実際の範囲を判断するために Windows `IStart` イベントと照合する必要があります。 Windows Image Load イベントは、イメージが読み込まれ、読み込まれたイメージの仮想アドレスが含まれている場合は必ず記録されます。  
+ <span data-ttu-id="6e627-399">このイベントのペイロードのサイズは変数です。 `Count` フィールドは、イベントに含まれている範囲オフセットの数を示します。</span><span class="sxs-lookup"><span data-stu-id="6e627-399">The payload size for this event is variable; the `Count` field indicates the number of range offsets contained in the event.</span></span>  <span data-ttu-id="6e627-400">このイベントは、実際の範囲を判断するために Windows `IStart` イベントと照合する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6e627-400">This event has to be collated with the Windows `IStart` event to determine the actual ranges.</span></span> <span data-ttu-id="6e627-401">Windows Image Load イベントは、イメージが読み込まれ、読み込まれたイメージの仮想アドレスが含まれている場合は必ず記録されます。</span><span class="sxs-lookup"><span data-stu-id="6e627-401">The Windows Image Load event is logged whenever an image is loaded, and contains the virtual address of the loaded image.</span></span>  
   
- モジュールの範囲イベントは、4 以上のすべての ETW レベルで発行され、情報イベントに分類されます。  
+ <span data-ttu-id="6e627-402">モジュールの範囲イベントは、4 以上のすべての ETW レベルで発行され、情報イベントに分類されます。</span><span class="sxs-lookup"><span data-stu-id="6e627-402">Module range events are fired under any ETW level greater than or equal to 4 and are classified as informational events.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)
-
+## <a name="see-also"></a><span data-ttu-id="6e627-403">関連項目</span><span class="sxs-lookup"><span data-stu-id="6e627-403">See Also</span></span>  
+ [<span data-ttu-id="6e627-404">CLR ETW イベント</span><span class="sxs-lookup"><span data-stu-id="6e627-404">CLR ETW Events</span></span>](../../../docs/framework/performance/clr-etw-events.md)

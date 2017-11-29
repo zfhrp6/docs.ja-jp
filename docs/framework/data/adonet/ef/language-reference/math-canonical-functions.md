@@ -1,45 +1,44 @@
 ---
-title: "数学正規関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "数値演算正規関数"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6f6cddc6-b561-4ebe-84b6-841ef5b4113b
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: b6e69a9dbc204cfa8f0abc7e641b0784a08d747c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 数学正規関数
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)] には数学正規関数が含まれます。  
+# <a name="math-canonical-functions"></a><span data-ttu-id="bb1ea-102">数値演算正規関数</span><span class="sxs-lookup"><span data-stu-id="bb1ea-102">Math Canonical Functions</span></span>
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="bb1ea-103"> には数学正規関数が含まれます。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-103"> includes math canonical functions.</span></span>  
   
- 次の表に、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 数学正規関数を示します。  
+ <span data-ttu-id="bb1ea-104">次の表に、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 数学正規関数を示します。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-104">The following table shows the math [!INCLUDE[esql](../../../../../../includes/esql-md.md)] canonical functions.</span></span>  
   
-|関数|説明|  
-|--------|--------|  
-|`Abs(` `value` `)`|`value` の絶対値を返します。<br /><br /> **引数**<br /><br /> `Int16`、`Int32`、`Int64`、`Byte`、`Single`、`Double`、および `Decimal`。<br /><br /> **戻り値**<br /><br /> `value` の型。<br /><br /> **例**<br /><br /> `Abs(-2)`|  
-|`Ceiling(` `value` `)`|`value` 以上で最小の整数値を返します。<br /><br /> **引数**<br /><br /> `Single`、`Double`、および `Decimal`。<br /><br /> **戻り値**<br /><br /> `value` の型。<br /><br /> **例**<br /><br /> [!code-csharp[DP EntityServices Concepts#EDM_CEILING](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_ceiling)]
+|<span data-ttu-id="bb1ea-105">関数</span><span class="sxs-lookup"><span data-stu-id="bb1ea-105">Function</span></span>|<span data-ttu-id="bb1ea-106">説明</span><span class="sxs-lookup"><span data-stu-id="bb1ea-106">Description</span></span>|  
+|--------------|-----------------|  
+|<span data-ttu-id="bb1ea-107">`Abs(` `value` `)`</span><span class="sxs-lookup"><span data-stu-id="bb1ea-107">`Abs(` `value` `)`</span></span>|<span data-ttu-id="bb1ea-108">`value` の絶対値を返します。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-108">Returns the absolute value of `value`.</span></span><br /><br /> <span data-ttu-id="bb1ea-109">**引数**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-109">**Arguments**</span></span><br /><br /> <span data-ttu-id="bb1ea-110">`Int16`、 `Int32`、 `Int64`、 `Byte`、 `Single`、 `Double`、および`Decimal`です。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-110">An `Int16`, `Int32`, `Int64`, `Byte`, `Single`, `Double`, and `Decimal`.</span></span><br /><br /> <span data-ttu-id="bb1ea-111">**戻り値**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-111">**Return Value**</span></span><br /><br /> <span data-ttu-id="bb1ea-112">`value` の型。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-112">The type of `value`.</span></span><br /><br /> <span data-ttu-id="bb1ea-113">**例**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-113">**Example**</span></span><br /><br /> `Abs(-2)`|  
+|<span data-ttu-id="bb1ea-114">`Ceiling(` `value` `)`</span><span class="sxs-lookup"><span data-stu-id="bb1ea-114">`Ceiling(` `value` `)`</span></span>|<span data-ttu-id="bb1ea-115">`value` 以上で最小の整数値を返します。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-115">Returns the smallest integer that is not less than `value`.</span></span><br /><br /> <span data-ttu-id="bb1ea-116">**引数**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-116">**Arguments**</span></span><br /><br /> <span data-ttu-id="bb1ea-117">A `Single`、 `Double`、および`Decimal`です。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-117">A `Single`, `Double`, and `Decimal`.</span></span><br /><br /> <span data-ttu-id="bb1ea-118">**戻り値**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-118">**Return Value**</span></span><br /><br /> <span data-ttu-id="bb1ea-119">`value` の型。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-119">The type of `value`.</span></span><br /><br /> <span data-ttu-id="bb1ea-120">**例**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-120">**Example**</span></span><br /><br /> [!code-csharp[DP EntityServices Concepts#EDM_CEILING](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_ceiling)]
  [!code-sql[DP EntityServices Concepts#EDM_CEILING](../../../../../../samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_ceiling)]|  
-|`Floor(` `value` `)`|`value` 以下で最大の整数値を返します。<br /><br /> **引数**<br /><br /> `Single`、`Double`、および `Decimal`。<br /><br /> **戻り値**<br /><br /> `value` の型。<br /><br /> **例**<br /><br /> [!code-csharp[DP EntityServices Concepts#EDM_FLOOR](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_floor)]
+|<span data-ttu-id="bb1ea-121">`Floor(` `value` `)`</span><span class="sxs-lookup"><span data-stu-id="bb1ea-121">`Floor(` `value` `)`</span></span>|<span data-ttu-id="bb1ea-122">`value` 以下で最大の整数値を返します。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-122">Returns the largest integer that is not greater than `value`.</span></span><br /><br /> <span data-ttu-id="bb1ea-123">**引数**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-123">**Arguments**</span></span><br /><br /> <span data-ttu-id="bb1ea-124">A `Single`、 `Double`、および`Decimal`です。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-124">A `Single`, `Double`, and `Decimal`.</span></span><br /><br /> <span data-ttu-id="bb1ea-125">**戻り値**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-125">**Return Value**</span></span><br /><br /> <span data-ttu-id="bb1ea-126">`value` の型。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-126">The type of `value`.</span></span><br /><br /> <span data-ttu-id="bb1ea-127">**例**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-127">**Example**</span></span><br /><br /> [!code-csharp[DP EntityServices Concepts#EDM_FLOOR](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_floor)]
  [!code-sql[DP EntityServices Concepts#EDM_FLOOR](../../../../../../samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_floor)]|  
-|`Power(` `value`, `exponent``)`|指定された `value` を指定された `exponent` でべき乗した結果を返します。<br /><br /> **引数**<br /><br /> `value`:  `Int32, Int64, Double`、または `Decimal`。<br /><br /> `exponent`: `Int64``, Double`、または `Decimal`。<br /><br /> **戻り値**<br /><br /> `value` の型。<br /><br /> **例**<br /><br /> `Power(748.58,2)`|  
-|`Round(` `value` `)`|最も近い整数に丸められた `value` の整数部分を返します。<br /><br /> **引数**<br /><br /> `Single`、`Double`、および `Decimal`。<br /><br /> **戻り値**<br /><br /> `value` の型。<br /><br /> **例**<br /><br /> `Round(748.58)`|  
-|`Round(` `value`, `digits``)`|`value` を指定された最も近い `digits` に丸めて返します。<br /><br /> **引数**<br /><br /> `value`: `Double` または `Decimal`。<br /><br /> `digits`: `Int16` または `Int32`。<br /><br /> **戻り値**<br /><br /> `value` の型。<br /><br /> **例**<br /><br /> `Round(748.58,1)`|  
-|`Truncate(` `value`, `digits``)`|`value` を指定された最も近い `digits` に切り詰めて返します。<br /><br /> **引数**<br /><br /> `value`: `Double` または `Decimal`。<br /><br /> `digits`: `Int16` または `Int32`。<br /><br /> **戻り値**<br /><br /> `value` の型。<br /><br /> **例**<br /><br /> `Truncate(748.58,1)`|  
+|<span data-ttu-id="bb1ea-128">`Power(` `value`, `exponent``)`</span><span class="sxs-lookup"><span data-stu-id="bb1ea-128">`Power(` `value`, `exponent``)`</span></span>|<span data-ttu-id="bb1ea-129">指定された `value` を指定された `exponent` でべき乗した結果を返します。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-129">Returns the result of the specified `value` to the specified `exponent`.</span></span><br /><br /> <span data-ttu-id="bb1ea-130">**引数**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-130">**Arguments**</span></span><br /><br /> <span data-ttu-id="bb1ea-131">`value``Int32, Int64, Double`、または`Decimal`です。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-131">`value`: An `Int32, Int64, Double`, or `Decimal`.</span></span><br /><br /> <span data-ttu-id="bb1ea-132">`exponent``Int64``, Double`、または`Decimal`です。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-132">`exponent`: An `Int64``, Double`, or `Decimal`.</span></span><br /><br /> <span data-ttu-id="bb1ea-133">**戻り値**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-133">**Return Value**</span></span><br /><br /> <span data-ttu-id="bb1ea-134">`value` の型。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-134">The type of `value`.</span></span><br /><br /> <span data-ttu-id="bb1ea-135">**例**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-135">**Example**</span></span><br /><br /> `Power(748.58,2)`|  
+|<span data-ttu-id="bb1ea-136">`Round(` `value` `)`</span><span class="sxs-lookup"><span data-stu-id="bb1ea-136">`Round(` `value` `)`</span></span>|<span data-ttu-id="bb1ea-137">最も近い整数に丸められた `value` の整数部分を返します。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-137">Returns the integer portion of `value`, rounded to the nearest integer.</span></span><br /><br /> <span data-ttu-id="bb1ea-138">**引数**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-138">**Arguments**</span></span><br /><br /> <span data-ttu-id="bb1ea-139">A `Single`、 `Double`、および`Decimal`です。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-139">A `Single`, `Double`, and `Decimal`.</span></span><br /><br /> <span data-ttu-id="bb1ea-140">**戻り値**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-140">**Return Value**</span></span><br /><br /> <span data-ttu-id="bb1ea-141">`value` の型。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-141">The type of `value`.</span></span><br /><br /> <span data-ttu-id="bb1ea-142">**例**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-142">**Example**</span></span><br /><br /> `Round(748.58)`|  
+|<span data-ttu-id="bb1ea-143">`Round(` `value`, `digits``)`</span><span class="sxs-lookup"><span data-stu-id="bb1ea-143">`Round(` `value`, `digits``)`</span></span>|<span data-ttu-id="bb1ea-144">`value` を指定された最も近い `digits` に丸めて返します。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-144">Returns the `value`, rounded to the nearest specified `digits`.</span></span><br /><br /> <span data-ttu-id="bb1ea-145">**引数**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-145">**Arguments**</span></span><br /><br /> <span data-ttu-id="bb1ea-146">`value`: `Double` または `Decimal`。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-146">`value`: `Double` or `Decimal`.</span></span><br /><br /> <span data-ttu-id="bb1ea-147">`digits`: `Int16` または `Int32`。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-147">`digits`: `Int16` or `Int32`.</span></span><br /><br /> <span data-ttu-id="bb1ea-148">**戻り値**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-148">**Return Value**</span></span><br /><br /> <span data-ttu-id="bb1ea-149">`value` の型。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-149">The type of `value`.</span></span><br /><br /> <span data-ttu-id="bb1ea-150">**例**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-150">**Example**</span></span><br /><br /> `Round(748.58,1)`|  
+|<span data-ttu-id="bb1ea-151">`Truncate(` `value`, `digits``)`</span><span class="sxs-lookup"><span data-stu-id="bb1ea-151">`Truncate(` `value`, `digits``)`</span></span>|<span data-ttu-id="bb1ea-152">`value` を指定された最も近い `digits` に切り詰めて返します。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-152">Returns the `value`, truncated to the nearest specified `digits`.</span></span><br /><br /> <span data-ttu-id="bb1ea-153">**引数**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-153">**Arguments**</span></span><br /><br /> <span data-ttu-id="bb1ea-154">`value`: `Double` または `Decimal`。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-154">`value`: `Double` or `Decimal`.</span></span><br /><br /> <span data-ttu-id="bb1ea-155">`digits`: `Int16` または `Int32`。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-155">`digits`: `Int16` or `Int32`.</span></span><br /><br /> <span data-ttu-id="bb1ea-156">**戻り値**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-156">**Return Value**</span></span><br /><br /> <span data-ttu-id="bb1ea-157">`value` の型。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-157">The type of `value`.</span></span><br /><br /> <span data-ttu-id="bb1ea-158">**例**</span><span class="sxs-lookup"><span data-stu-id="bb1ea-158">**Example**</span></span><br /><br /> `Truncate(748.58,1)`|  
   
- `null` が入力された場合、これらの関数は `null` を返します。  
+ <span data-ttu-id="bb1ea-159">`null` が入力された場合、これらの関数は `null` を返します。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-159">These functions will return `null` if given `null` input.</span></span>  
   
- 同等の機能は、Microsoft SQL クライアント マネージ プロバイダーでも利用できます。  詳細については、「[Entity Framework 用 SqlClient 関数](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)」を参照してください。  
+ <span data-ttu-id="bb1ea-160">同等の機能は、Microsoft SQL クライアント マネージ プロバイダーでも利用できます。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-160">Equivalent functionality is available in the Microsoft SQL Client Managed Provider.</span></span> <span data-ttu-id="bb1ea-161">詳細については、次を参照してください。 [Framework 用 SqlClient エンティティ関数](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)です。</span><span class="sxs-lookup"><span data-stu-id="bb1ea-161">For more information, see [SqlClient for Entity Framework Functions](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).</span></span>  
   
-## 参照  
- [正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)
+## <a name="see-also"></a><span data-ttu-id="bb1ea-162">関連項目</span><span class="sxs-lookup"><span data-stu-id="bb1ea-162">See Also</span></span>  
+ [<span data-ttu-id="bb1ea-163">正規関数</span><span class="sxs-lookup"><span data-stu-id="bb1ea-163">Canonical Functions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)

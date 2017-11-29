@@ -1,83 +1,82 @@
 ---
-title: "LINQ to Entities でのクエリ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "LINQ to Entities でのクエリ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c015a609-29eb-4e95-abb1-2ca721c6e2ad
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 220416aa4e282cb342ee6080d9040f9f4818fbf0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# LINQ to Entities でのクエリ
-クエリは、データ ソースからデータを取得する式です。  一般に、クエリは専用のクエリ言語で表現されます。たとえば、リレーショナル データベースであれば SQL、XML であれば XQuery が使用されます。  そのため、開発者はクエリの対象となるデータ ソースやデータ形式ごとに新しいクエリ言語を習得する必要があります。  統合言語クエリ \(LINQ\) は、データ ソースや形式の違いを意識することなくデータを扱うことのできる、より簡素化された一貫したモデルを提供します。  LINQ クエリでは、常にプログラミング オブジェクトを操作することになります。  
+# <a name="queries-in-linq-to-entities"></a><span data-ttu-id="a3e00-102">LINQ to Entities でのクエリ</span><span class="sxs-lookup"><span data-stu-id="a3e00-102">Queries in LINQ to Entities</span></span>
+<span data-ttu-id="a3e00-103">クエリは、データ ソースからデータを取得する式です。</span><span class="sxs-lookup"><span data-stu-id="a3e00-103">A query is an expression that retrieves data from a data source.</span></span> <span data-ttu-id="a3e00-104">一般に、クエリは専用のクエリ言語で表現されます。たとえば、リレーショナル データベースであれば SQL、XML であれば XQuery が使用されます。</span><span class="sxs-lookup"><span data-stu-id="a3e00-104">Queries are usually expressed in a specialized query language, such as SQL for relational databases and XQuery for XML.</span></span> <span data-ttu-id="a3e00-105">そのため、開発者はクエリの対象となるデータ ソースやデータ形式ごとに新しいクエリ言語を習得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a3e00-105">Therefore, developers have had to learn a new query language for each type of data source or data format that they query.</span></span> <span data-ttu-id="a3e00-106">統合言語クエリ (LINQ) は、データ ソースや形式の違いを意識することなくデータを扱うことのできる、より簡素化された一貫したモデルを提供します。</span><span class="sxs-lookup"><span data-stu-id="a3e00-106">Language-Integrated Query (LINQ) offers a simpler, consistent model for working with data across various kinds of data sources and formats.</span></span> <span data-ttu-id="a3e00-107">LINQ クエリでは、常にプログラミング オブジェクトを操作することになります。</span><span class="sxs-lookup"><span data-stu-id="a3e00-107">In a LINQ query, you always work with programming objects.</span></span>  
   
- LINQ のクエリ操作は、データ ソースを取得し、クエリを作成して、クエリを実行するという 3 つのアクションから成ります。  
+ <span data-ttu-id="a3e00-108">LINQ のクエリ操作は、データ ソースを取得し、クエリを作成して、クエリを実行するという 3 つのアクションから成ります。</span><span class="sxs-lookup"><span data-stu-id="a3e00-108">A LINQ query operation consists of three actions: obtain the data source or sources, create the query, and execute the query.</span></span>  
   
- LINQ を介したクエリは、<xref:System.Collections.Generic.IEnumerable%601> ジェネリック インターフェイスまたは <xref:System.Linq.IQueryable%601> ジェネリック インターフェイスを実装するデータ ソースに対して行うことができます。  ジェネリック <xref:System.Data.Objects.ObjectQuery%601> インターフェイスを実装するジェネリック <xref:System.Linq.IQueryable%601> クラスのインスタンスは、[!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] クエリのデータ ソースとして動作します。  <xref:System.Data.Objects.ObjectQuery%601> ジェネリック クラスは、0 個以上の型指定されたオブジェクトのコレクションを返すクエリを表します。  C\# キーワード `var` \(Visual Basic の場合は Dim\) を使用して、コンパイラでエンティティの型を推論することもできます。  
+ <span data-ttu-id="a3e00-109">LINQ を介したクエリは、<xref:System.Collections.Generic.IEnumerable%601> ジェネリック インターフェイスまたは <xref:System.Linq.IQueryable%601> ジェネリック インターフェイスを実装するデータ ソースに対して行うことができます。</span><span class="sxs-lookup"><span data-stu-id="a3e00-109">Data sources that implement the <xref:System.Collections.Generic.IEnumerable%601> generic interface or the <xref:System.Linq.IQueryable%601> generic interface can be queried through LINQ.</span></span> <span data-ttu-id="a3e00-110">ジェネリックのインスタンス<xref:System.Data.Objects.ObjectQuery%601>実装するジェネリック クラス<xref:System.Linq.IQueryable%601>インターフェイスでは、データ ソースとして使用[!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]クエリ。</span><span class="sxs-lookup"><span data-stu-id="a3e00-110">Instances of the generic <xref:System.Data.Objects.ObjectQuery%601> class, which implements the generic <xref:System.Linq.IQueryable%601> interface, serve as the data source for [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] queries.</span></span> <span data-ttu-id="a3e00-111"><xref:System.Data.Objects.ObjectQuery%601> ジェネリック クラスは、0 個以上の型指定されたオブジェクトのコレクションを返すクエリを表します。</span><span class="sxs-lookup"><span data-stu-id="a3e00-111">The <xref:System.Data.Objects.ObjectQuery%601> generic class represents a query that returns a collection of zero or more typed objects.</span></span> <span data-ttu-id="a3e00-112">コンパイラの c# キーワードを使用してエンティティの型を推論できますも`var`(Visual Basic では灰色表示)。</span><span class="sxs-lookup"><span data-stu-id="a3e00-112">You can also let the compiler infer the type of an entity by using the C# keyword `var` (Dim in Visual Basic).</span></span>  
   
- クエリでは、データ ソースから取得する情報を正確に指定できます。  また、並べ替え、グループ化、整形方法を指定して情報を取得することもできます。  LINQ では、クエリが変数に格納されます。  クエリが一連の値を返す場合、クエリ変数そのものがクエリ可能な型であることが必要です。  このクエリ変数は、クエリの情報を保存するだけで、なんらかのアクションを実行したり、データを返したりすることはありません。  クエリを作成した後、データを取得するには、そのクエリを実行する必要があります。  
+ <span data-ttu-id="a3e00-113">クエリでは、データ ソースから取得する情報を正確に指定できます。</span><span class="sxs-lookup"><span data-stu-id="a3e00-113">In the query, you specify exactly the information that you want to retrieve from the data source.</span></span> <span data-ttu-id="a3e00-114">また、並べ替え、グループ化、整形方法を指定して情報を取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="a3e00-114">A query can also specify how that information should be sorted, grouped, and shaped before it is returned.</span></span> <span data-ttu-id="a3e00-115">LINQ では、クエリが変数に格納されます。</span><span class="sxs-lookup"><span data-stu-id="a3e00-115">In LINQ, a query is stored in a variable.</span></span> <span data-ttu-id="a3e00-116">クエリが一連の値を返す場合、クエリ変数そのものがクエリ可能な型であることが必要です。</span><span class="sxs-lookup"><span data-stu-id="a3e00-116">If the query returns a sequence of values, the query variable itself must be a queryable type.</span></span> <span data-ttu-id="a3e00-117">このクエリ変数は、クエリの情報を保存するだけで、なんらかのアクションを実行したり、データを返したりすることはありません。</span><span class="sxs-lookup"><span data-stu-id="a3e00-117">This query variable takes no action and returns no data; it only stores the query information.</span></span> <span data-ttu-id="a3e00-118">クエリを作成した後、データを取得するには、そのクエリを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a3e00-118">After you create a query you must execute that query to retrieve any data.</span></span>  
   
-## クエリ構文  
- [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] クエリは、クエリ式の構文とメソッド ベースのクエリ構文という 2 とおりの構文を使って作成できます。  クエリ式の構文は、C\# 3.0 および Visual Basic 9.0 で新たに導入され、Transact\-SQL や XQuery などと同様な宣言型の構文で記述された一連の句で構成されます。  ただし、[!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] の共通言語ランタイム \(CLR\) は、クエリ式の構文そのものを理解することはできません。  そのため、クエリ式はコンパイル時に、CLR が理解できる形式 \(メソッド呼び出し\) へと変換されます。  これらのメソッドは*標準クエリ演算子*として知られています。  開発者は、クエリ構文を使う代わりに、メソッド構文を使ってそれらを直接呼び出すこともできます。詳細については、「[Query Syntax and Method Syntax in LINQ](../Topic/Query%20Syntax%20and%20Method%20Syntax%20in%20LINQ%20\(C%23\).md)」を参照してください。  
+## <a name="query-syntax"></a><span data-ttu-id="a3e00-119">クエリ構文</span><span class="sxs-lookup"><span data-stu-id="a3e00-119">Query Syntax</span></span>  
+ [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]<span data-ttu-id="a3e00-120">2 種類の構文のクエリを作成できます: クエリ式の構文とメソッド ベースのクエリ構文です。</span><span class="sxs-lookup"><span data-stu-id="a3e00-120"> queries can be composed in two different syntaxes: query expression syntax and method-based query syntax.</span></span> <span data-ttu-id="a3e00-121">クエリ式の構文は c# 3.0 と Visual Basic 9.0 での新機能と、一連の TRANSACT-SQL や XQuery のように宣言の構文で記述された句で構成されます。</span><span class="sxs-lookup"><span data-stu-id="a3e00-121">Query expression syntax is new in C# 3.0 and Visual Basic 9.0, and it consists of a set of clauses written in a declarative syntax similar to Transact-SQL or XQuery.</span></span> <span data-ttu-id="a3e00-122">ただし、[!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] の共通言語ランタイム (CLR) は、クエリ式の構文そのものを理解することはできません。</span><span class="sxs-lookup"><span data-stu-id="a3e00-122">However, the [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] common language runtime (CLR) cannot read the query expression syntax itself.</span></span> <span data-ttu-id="a3e00-123">そのため、クエリ式はコンパイル時に、CLR が理解できる形式 (メソッド呼び出し) へと変換されます。</span><span class="sxs-lookup"><span data-stu-id="a3e00-123">Therefore, at compile time, query expressions are translated to something that the CLR does understand: method calls.</span></span> <span data-ttu-id="a3e00-124">これらのメソッドと呼ばれる、*標準クエリ演算子*です。</span><span class="sxs-lookup"><span data-stu-id="a3e00-124">These methods are known as the *standard query operators*.</span></span> <span data-ttu-id="a3e00-125">開発者は、クエリ構文を使う代わりに、メソッド構文を使ってそれらを直接呼び出すこともできます。</span><span class="sxs-lookup"><span data-stu-id="a3e00-125">As a developer, you have the option of calling them directly by using method syntax, instead of using query syntax.</span></span> <span data-ttu-id="a3e00-126">詳細については、「[LINQ でのクエリ構文とメソッド構文](~/docs/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a3e00-126">For more information, see [Query Syntax and Method Syntax in LINQ](~/docs/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).</span></span>  
   
-### クエリ式の構文  
- クエリ式は宣言型のクエリ構文です。  開発者は、Transact\-SQL に似た形式の高級言語でクエリを記述できます。  クエリ式の構文を使用することにより、フィルター、並べ替え、グループ化など、データ ソースに対するきわめて複雑な処理を最小限のコードで実行できます。  詳細については、「[基本的なクエリ操作 \(Visual Basic\)](../Topic/Basic%20Query%20Operations%20\(Visual%20Basic\).md)」を参照してください。  クエリ式構文の使用方法を示す例については、次のトピックを参照してください。  
+### <a name="query-expression-syntax"></a><span data-ttu-id="a3e00-127">クエリ式の構文</span><span class="sxs-lookup"><span data-stu-id="a3e00-127">Query Expression Syntax</span></span>  
+ <span data-ttu-id="a3e00-128">クエリ式は宣言型のクエリ構文です。</span><span class="sxs-lookup"><span data-stu-id="a3e00-128">Query expressions are a declarative query syntax.</span></span> <span data-ttu-id="a3e00-129">開発者は、Transact-SQL に似た形式の高級言語でクエリを記述できます。</span><span class="sxs-lookup"><span data-stu-id="a3e00-129">This syntax enables a developer to write queries in a high-level language that is formatted similar to Transact-SQL.</span></span> <span data-ttu-id="a3e00-130">クエリ式の構文を使用することにより、フィルター、並べ替え、グループ化など、データ ソースに対するきわめて複雑な処理を最小限のコードで実行できます。</span><span class="sxs-lookup"><span data-stu-id="a3e00-130">By using query expression syntax, you can perform even complex filtering, ordering, and grouping operations on data sources with minimal code.</span></span> <span data-ttu-id="a3e00-131">詳細については、[基本的なクエリ操作 (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/linq/basic-query-operations.md)です。</span><span class="sxs-lookup"><span data-stu-id="a3e00-131">For more information, [Basic Query Operations (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/linq/basic-query-operations.md).</span></span> <span data-ttu-id="a3e00-132">クエリ式構文の使用方法を示す例については、次のトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="a3e00-132">For examples that demonstrate how to use the query expression syntax, see the following topics:</span></span>  
   
--   [クエリ式の構文例 : 射影](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-projection.md)  
+-   [<span data-ttu-id="a3e00-133">クエリ式の構文例: 射影</span><span class="sxs-lookup"><span data-stu-id="a3e00-133">Query Expression Syntax Examples: Projection</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-projection.md)  
   
--   [クエリ式の構文例: フィルター処理](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-filtering.md)  
+-   [<span data-ttu-id="a3e00-134">クエリ式の構文例: フィルター処理</span><span class="sxs-lookup"><span data-stu-id="a3e00-134">Query Expression Syntax Examples: Filtering</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-filtering.md)  
   
--   [クエリ式の構文例 : 並べ替え](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-ordering.md)  
+-   [<span data-ttu-id="a3e00-135">クエリ式の構文例: 順序付け</span><span class="sxs-lookup"><span data-stu-id="a3e00-135">Query Expression Syntax Examples: Ordering</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-ordering.md)  
   
--   [クエリ式の構文例 : 集計演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-aggregate-operators.md)  
+-   [<span data-ttu-id="a3e00-136">クエリ式の構文例: 集計演算子</span><span class="sxs-lookup"><span data-stu-id="a3e00-136">Query Expression Syntax Examples: Aggregate Operators</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-aggregate-operators.md)  
   
--   [クエリ式の構文例 : パーティション分割](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-partitioning.md)  
+-   [<span data-ttu-id="a3e00-137">クエリ式の構文例: パーティション分割</span><span class="sxs-lookup"><span data-stu-id="a3e00-137">Query Expression Syntax Examples: Partitioning</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-partitioning.md)  
   
--   [クエリ式の構文例 : 結合演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-join-operators.md)  
+-   [<span data-ttu-id="a3e00-138">クエリ式の構文例: 結合演算子</span><span class="sxs-lookup"><span data-stu-id="a3e00-138">Query Expression Syntax Examples: Join Operators</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-join-operators.md)  
   
--   [クエリ式の構文例 : 要素演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-element-operators.md)  
+-   [<span data-ttu-id="a3e00-139">クエリ式の構文例: 要素演算子</span><span class="sxs-lookup"><span data-stu-id="a3e00-139">Query Expression Syntax Examples: Element Operators</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-element-operators.md)  
   
--   [クエリ式の構文例 : グループ化](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-grouping.md)  
+-   [<span data-ttu-id="a3e00-140">クエリ式の構文例: グループ化</span><span class="sxs-lookup"><span data-stu-id="a3e00-140">Query Expression Syntax Examples: Grouping</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-grouping.md)  
   
--   [クエリ式の構文例 : リレーションシップのナビゲーション](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-navigating-relationships.md)  
+-   [<span data-ttu-id="a3e00-141">クエリ式の構文例: リレーションシップのナビゲーション</span><span class="sxs-lookup"><span data-stu-id="a3e00-141">Query Expression Syntax Examples: Navigating Relationships</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-navigating-relationships.md)  
   
-### メソッド ベースのクエリ構文  
- [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] クエリを作成するもう 1 つの方法として、メソッド ベースのクエリがあります。  メソッド ベースのクエリ構文は、LINQ の演算子メソッドを、ラムダ式をパラメーターとして直接順次呼び出すものです。  詳細については、「[ラムダ式](../Topic/Lambda%20Expressions%20\(C%23%20Programming%20Guide\).md)」を参照してください。  メソッドベースの構文の使用方法を示す例については、次のトピックを参照してください。  
+### <a name="method-based-query-syntax"></a><span data-ttu-id="a3e00-142">メソッド ベースのクエリ構文</span><span class="sxs-lookup"><span data-stu-id="a3e00-142">Method-Based Query Syntax</span></span>  
+ <span data-ttu-id="a3e00-143">[!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] クエリを作成するもう 1 つの方法として、メソッド ベースのクエリがあります。</span><span class="sxs-lookup"><span data-stu-id="a3e00-143">Another way to compose [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] queries is by using method-based queries.</span></span> <span data-ttu-id="a3e00-144">メソッド ベースのクエリ構文は、LINQ の演算子メソッド、ラムダ式をパラメーターとして渡すことへの直接的なメソッド呼び出しのシーケンスです。</span><span class="sxs-lookup"><span data-stu-id="a3e00-144">The method-based query syntax is a sequence of direct method calls to LINQ operator methods, passing lambda expressions as the parameters.</span></span> <span data-ttu-id="a3e00-145">詳しくは、「[ラムダ式](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a3e00-145">For more information, see [Lambda Expressions](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).</span></span> <span data-ttu-id="a3e00-146">メソッドベースの構文の使用方法を示す例については、次のトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="a3e00-146">For examples that demonstrate how to use method-based syntax, see the following topics:</span></span>  
   
--   [メソッド ベースのクエリ構文例 : 射影](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-projection.md)  
+-   [<span data-ttu-id="a3e00-147">メソッド ベースのクエリ構文例: 射影</span><span class="sxs-lookup"><span data-stu-id="a3e00-147">Method-Based Query Syntax Examples: Projection</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-projection.md)  
   
--   [メソッドベースのクエリ構文例: フィルター処理](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-filtering.md)  
+-   [<span data-ttu-id="a3e00-148">メソッド ベースのクエリ構文例: フィルター処理</span><span class="sxs-lookup"><span data-stu-id="a3e00-148">Method-Based Query Syntax Examples: Filtering</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-filtering.md)  
   
--   [メソッド ベースのクエリ構文例 : 並べ替え](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-ordering.md)  
+-   [<span data-ttu-id="a3e00-149">メソッド ベースのクエリ構文例: 順序付け</span><span class="sxs-lookup"><span data-stu-id="a3e00-149">Method-Based Query Syntax Examples: Ordering</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-ordering.md)  
   
--   [メソッド ベースのクエリ構文例 : 集計演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-aggregate-operators.md)  
+-   [<span data-ttu-id="a3e00-150">メソッド ベースのクエリ構文例: 集計演算子</span><span class="sxs-lookup"><span data-stu-id="a3e00-150">Method-Based Query Syntax Examples: Aggregate Operators</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-aggregate-operators.md)  
   
--   [メソッド ベースのクエリ構文例 : パーティション分割](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-partitioning.md)  
+-   [<span data-ttu-id="a3e00-151">メソッド ベースのクエリ構文例: パーティション分割</span><span class="sxs-lookup"><span data-stu-id="a3e00-151">Method-Based Query Syntax Examples: Partitioning</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-partitioning.md)  
   
--   [メソッド ベースのクエリ構文例 : 変換](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-conversion.md)  
+-   [<span data-ttu-id="a3e00-152">メソッド ベースのクエリ構文例: 変換</span><span class="sxs-lookup"><span data-stu-id="a3e00-152">Method-Based Query Syntax Examples: Conversion</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-conversion.md)  
   
--   [メソッド ベースのクエリ構文例 : 結合演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-join-operators.md)  
+-   [<span data-ttu-id="a3e00-153">メソッド ベースのクエリ構文例: 結合演算子</span><span class="sxs-lookup"><span data-stu-id="a3e00-153">Method-Based Query Syntax Examples: Join Operators</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-join-operators.md)  
   
--   [メソッド ベースのクエリ構文例 : 要素演算子](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-element-operators.md)  
+-   [<span data-ttu-id="a3e00-154">メソッド ベースのクエリ構文例: 要素演算子</span><span class="sxs-lookup"><span data-stu-id="a3e00-154">Method-Based Query Syntax Examples: Element Operators</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-element-operators.md)  
   
--   [メソッド ベースのクエリ構文例 : グループ化](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-grouping.md)  
+-   [<span data-ttu-id="a3e00-155">メソッド ベースのクエリ構文例: グループ化</span><span class="sxs-lookup"><span data-stu-id="a3e00-155">Method-Based Query Syntax Examples: Grouping</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-grouping.md)  
   
--   [メソッド ベースのクエリ構文例 : リレーションシップのナビゲーション](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-navigating-relationships.md)  
+-   [<span data-ttu-id="a3e00-156">メソッド ベースのクエリ構文例: リレーションシップのナビゲーション</span><span class="sxs-lookup"><span data-stu-id="a3e00-156">Method-Based Query Syntax Examples: Navigating Relationships</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-navigating-relationships.md)  
   
-## 参照  
- [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)   
- [Getting Started with LINQ in C\#](../Topic/Getting%20Started%20with%20LINQ%20in%20C%23.md)   
- [Getting Started with LINQ in Visual Basic](../Topic/Getting%20Started%20with%20LINQ%20in%20Visual%20Basic.md)   
- [Entity Framework マージ オプションおよびコンパイル済みクエリ](http://go.microsoft.com/fwlink/?LinkId=199591)
+## <a name="see-also"></a><span data-ttu-id="a3e00-157">関連項目</span><span class="sxs-lookup"><span data-stu-id="a3e00-157">See Also</span></span>  
+ [<span data-ttu-id="a3e00-158">LINQ to Entities</span><span class="sxs-lookup"><span data-stu-id="a3e00-158">LINQ to Entities</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)  
+ [<span data-ttu-id="a3e00-159">C# の LINQ の概要</span><span class="sxs-lookup"><span data-stu-id="a3e00-159">Getting Started with LINQ in C#</span></span>](~/docs/csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
+ [<span data-ttu-id="a3e00-160">Visual Basic の LINQ の概要</span><span class="sxs-lookup"><span data-stu-id="a3e00-160">Getting Started with LINQ in Visual Basic</span></span>](~/docs/visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
+ [<span data-ttu-id="a3e00-161">Entity Framework マージ オプションおよびコンパイル済みクエリ</span><span class="sxs-lookup"><span data-stu-id="a3e00-161">Entity Framework Merge Options and Compiled Queries</span></span>](http://go.microsoft.com/fwlink/?LinkId=199591)

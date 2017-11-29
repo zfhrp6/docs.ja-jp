@@ -1,29 +1,32 @@
 ---
-title: "XML スキーマ (XSD) からの DataSet リレーショナル構造の派生 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "XML スキーマ (XSD) からの DataSet リレーショナル構造の派生"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8f6cd04d-6197-4bc4-9096-8c51c7e4acae
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 0aae23c295401d4b9565c35d4d47c5ab913029d5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# XML スキーマ (XSD) からの DataSet リレーショナル構造の派生
-ここでは、XML スキーマ定義言語 \(XSD\) スキーマ ドキュメントから <xref:System.Data.DataSet> のリレーショナル スキーマを生成する方法についての概要を説明します。  一般的には、スキーマの要素の各 **complexType** 子要素に対して、テーブルが **DataSet** に生成されます。  テーブル構造は、複合型の定義に基づいて決定されます。  テーブルは、スキーマのトップレベル要素の **DataSet** に作成されます。  ただし、**complexType** 要素が別の **complexType** 要素内で入れ子になっている場合、テーブルはトップレベルの **complexType** 要素にだけ作成されます。その場合、入れ子になった **complexType** 要素は、**DataSet** 内の <xref:System.Data.DataTable> に割り当てられます。  
+# <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a><span data-ttu-id="dba3f-102">XML スキーマ (XSD) からの DataSet リレーショナル構造の派生</span><span class="sxs-lookup"><span data-stu-id="dba3f-102">Deriving DataSet Relational Structure from XML Schema (XSD)</span></span>
+<span data-ttu-id="dba3f-103">ここでは、XML スキーマ定義言語 (XSD) スキーマ ドキュメントから `DataSet` のリレーショナル スキーマを生成する方法についての概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="dba3f-103">This section provides an overview of how the relational schema of a `DataSet` is built from an XML Schema definition language (XSD) schema document.</span></span> <span data-ttu-id="dba3f-104">一般に、それぞれの`complexType`で、テーブルが生成されて、スキーマ要素の子要素、`DataSet`です。</span><span class="sxs-lookup"><span data-stu-id="dba3f-104">In general, for each `complexType` child element of a schema element, a table is generated in the `DataSet`.</span></span> <span data-ttu-id="dba3f-105">テーブル構造は、複合型の定義に基づいて決定されます。</span><span class="sxs-lookup"><span data-stu-id="dba3f-105">The table structure is determined by the definition of the complex type.</span></span> <span data-ttu-id="dba3f-106">テーブルに作成されます、`DataSet`スキーマ内の最上位要素です。</span><span class="sxs-lookup"><span data-stu-id="dba3f-106">Tables are created in the `DataSet` for top-level elements in the schema.</span></span> <span data-ttu-id="dba3f-107">ただし、テーブルを最上位の作成のみ`complexType`要素と、`complexType`要素が別の内部に入れ子に`complexType`を内の要素が入れ子になった場合`complexType`に要素がマップされて、`DataTable`内で、`DataSet`です。</span><span class="sxs-lookup"><span data-stu-id="dba3f-107">However, a table is only created for a top-level `complexType` element when the `complexType` element is nested inside another `complexType` element, in which case the nested `complexType` element is mapped to a `DataTable` within the `DataSet`.</span></span>  
   
- XSD の詳細については、World Wide Web Consortium \(W3C\) XML スキーマ パート 0:Primer Recommendation、XML スキーマ パート 1:Structures Recommendation、XML スキーマ パート 2:Datatypes Recommendation \([http:\/\/www.w3.org\/](http://www.w3.org/TR/) にあります\) を参照してください。  
+ <span data-ttu-id="dba3f-108">について、XSD の詳細については、World Wide Web Consortium (W3C) XML Schema Part 0: Primer 推奨設定、XML Schema Part 1: 構造の推奨事項、および XML Schema Part 2: Datatypes recommendation 』 にある[http://www.w3.org/](http://www.w3.org/TR/)です。</span><span class="sxs-lookup"><span data-stu-id="dba3f-108">For more information about the XSD, see the World Wide Web Consortium (W3C) XML Schema Part 0: Primer Recommendation, the XML Schema Part 1: Structures Recommendation, and the XML Schema Part 2: Datatypes Recommendation, located at [http://www.w3.org/](http://www.w3.org/TR/).</span></span>  
   
- `customers` 要素が `MyDataSet` 要素の子要素である XML スキーマの例を次に示します。この `MyDataSet` 要素が **DataSet** 要素に該当します。  
+ <span data-ttu-id="dba3f-109">次の例では、XML スキーマ、`customers`の子要素、`MyDataSet`である要素、**データセット**要素。</span><span class="sxs-lookup"><span data-stu-id="dba3f-109">The following example demonstrates an XML Schema where `customers` is the child element of the `MyDataSet` element, which is a **DataSet** element.</span></span>  
   
-```  
+```xml  
 <xs:schema id="SomeID"   
             xmlns=""   
             xmlns:xs="http://www.w3.org/2001/XMLSchema"   
@@ -48,20 +51,20 @@ caps.handback.revision: 3
  </xs:schema>  
 ```  
   
- 上記の例では、`customers` 要素は複合型の要素です。  したがって、複合型の定義が解析され、割り当て処理によって次のテーブルが作成されます。  
+ <span data-ttu-id="dba3f-110">上記の例では、`customers` 要素は複合型の要素です。</span><span class="sxs-lookup"><span data-stu-id="dba3f-110">In the preceding example, the element `customers` is a complex type element.</span></span> <span data-ttu-id="dba3f-111">したがって、複合型の定義が解析され、割り当て処理によって次のテーブルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="dba3f-111">Therefore, the complex type definition is parsed, and the mapping process creates the following table.</span></span>  
   
 ```  
 Customers (CustomerID , CompanyName, Phone)  
 ```  
   
- テーブルの各列のデータ型は、それに対応する指定された要素または属性の XML スキーマ型から派生します。  
+ <span data-ttu-id="dba3f-112">テーブルの各列のデータ型は、それに対応する指定された要素または属性の XML スキーマ型から派生します。</span><span class="sxs-lookup"><span data-stu-id="dba3f-112">The data type of each column in the table is derived from the XML Schema type of the corresponding element or attribute specified.</span></span>  
   
 > [!NOTE]
->  `customers` 要素が **integer** のような単純な XML スキーマ データ型である場合、テーブルは生成されません。  テーブルが作成されるのは、複合型のトップレベル要素に対してだけです。  
+>  <span data-ttu-id="dba3f-113">場合、要素`customers`などの単純な XML スキーマ データ型は**整数**テーブルは生成されません。</span><span class="sxs-lookup"><span data-stu-id="dba3f-113">If the element `customers` is of a simple XML Schema data type such as **integer**, no table is generated.</span></span> <span data-ttu-id="dba3f-114">テーブルが作成されるのは、複合型のトップレベル要素に対してだけです。</span><span class="sxs-lookup"><span data-stu-id="dba3f-114">Tables are only created for the top-level elements that are complex types.</span></span>  
   
- **Schema** 要素に `InStateCustomers` と `OutOfStateCustomers` の 2 つの子要素を持つ XML スキーマの例を次に示します。  
+ <span data-ttu-id="dba3f-115">次の XML スキーマで、**スキーマ**要素が 2 つの子要素、`InStateCustomers`と`OutOfStateCustomers`です。</span><span class="sxs-lookup"><span data-stu-id="dba3f-115">In the following XML Schema, the **Schema** element has two element children, `InStateCustomers` and `OutOfStateCustomers`.</span></span>  
   
-```  
+```xml  
 <xs:schema id="SomeID"   
             xmlns=""   
             xmlns:xs="http://www.w3.org/2001/XMLSchema"   
@@ -82,26 +85,26 @@ Customers (CustomerID , CompanyName, Phone)
  </xs:schema>  
 ```  
   
- `InStateCustomers` と `OutOfStateCustomers` の 2 つの子要素は、複合型の要素です \(`customerType`\)。  したがって、割り当て処理によって **DataSet** に次の 2 つの同じテーブルが生成されます。  
+ <span data-ttu-id="dba3f-116">`InStateCustomers` と `OutOfStateCustomers` の 2 つの子要素は、複合型の要素です (`customerType`)。</span><span class="sxs-lookup"><span data-stu-id="dba3f-116">Both the `InStateCustomers` and the `OutOfStateCustomers` child elements are complex type elements (`customerType`).</span></span> <span data-ttu-id="dba3f-117">したがって、マッピング プロセスを生成で次の 2 つの同一テーブル、`DataSet`です。</span><span class="sxs-lookup"><span data-stu-id="dba3f-117">Therefore, the mapping process generates the following two identical tables in the `DataSet`.</span></span>  
   
 ```  
 InStateCustomers (CustomerID , CompanyName, Phone)  
 OutOfStateCustomers (CustomerID , CompanyName, Phone)  
 ```  
   
-## このセクションの内容  
- [XML スキーマ \(XSD\) 制約の DataSet 制約への割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- **DataSet** での UNIQUE 制約および外部キー制約の作成に使用する XML スキーマの要素について説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="dba3f-118">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="dba3f-118">In This Section</span></span>  
+ [<span data-ttu-id="dba3f-119">制約の DataSet 制約への XML スキーマ (XSD) 制約のマッピング</span><span class="sxs-lookup"><span data-stu-id="dba3f-119">Mapping XML Schema (XSD) Constraints to DataSet Constraints</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ <span data-ttu-id="dba3f-120">一意制約と外部キー制約の作成に使用される XML スキーマの要素について説明します、`DataSet`です。</span><span class="sxs-lookup"><span data-stu-id="dba3f-120">Describes the XML Schema elements used to create unique and foreign key constraints in a `DataSet`.</span></span>  
   
- [XML スキーマ \(XSD\) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
- **DataSet** でのテーブル列間のリレーションの生成に使用する XML スキーマの要素について説明します。  
+ [<span data-ttu-id="dba3f-121">XML スキーマ (XSD) からの DataSet リレーションの生成</span><span class="sxs-lookup"><span data-stu-id="dba3f-121">Generating DataSet Relations from XML Schema (XSD)</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
+ <span data-ttu-id="dba3f-122">テーブルの列間のリレーションを作成するために使用する XML スキーマの要素について説明します、`DataSet`です。</span><span class="sxs-lookup"><span data-stu-id="dba3f-122">Describes the XML Schema elements used to create relations between table columns in a `DataSet`.</span></span>  
   
- [XML スキーマ制約およびリレーションシップ](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/xml-schema-constraints-and-relationships.md)  
- XML スキーマの要素を使用して **DataSet** に制約を作成するときに、リレーションが暗黙的に生成される方法について説明します。  
+ [<span data-ttu-id="dba3f-123">XML スキーマ制約およびリレーションシップ</span><span class="sxs-lookup"><span data-stu-id="dba3f-123">XML Schema Constraints and Relationships</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/xml-schema-constraints-and-relationships.md)  
+ <span data-ttu-id="dba3f-124">作成方法を説明のリレーションが暗黙的に XML スキーマの要素を使用して、内の制約を作成するときに、`DataSet`です。</span><span class="sxs-lookup"><span data-stu-id="dba3f-124">Describes how relations are created implicitly when using XML Schema elements to create constraints in a `DataSet`.</span></span>  
   
-## 関連項目  
- [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
- **DataSet** のリレーショナル構造とデータを XML データとして読み込んで、永続化する方法について説明します。  
+## <a name="related-sections"></a><span data-ttu-id="dba3f-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="dba3f-125">Related Sections</span></span>  
+ [<span data-ttu-id="dba3f-126">DataSet での XML の使用</span><span class="sxs-lookup"><span data-stu-id="dba3f-126">Using XML in a DataSet</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ <span data-ttu-id="dba3f-127">読み込んで、リレーショナル構造とデータを永続化する方法について説明、 `DataSet` XML データとして。</span><span class="sxs-lookup"><span data-stu-id="dba3f-127">Describes how to load and persist the relational structure and data in a `DataSet` as XML data.</span></span>  
   
-## 参照  
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="dba3f-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="dba3f-128">See Also</span></span>  
+ [<span data-ttu-id="dba3f-129">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="dba3f-129">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

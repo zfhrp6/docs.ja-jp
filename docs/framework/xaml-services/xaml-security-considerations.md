@@ -1,52 +1,55 @@
 ---
-title: "XAML Security Considerations | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "security [XAML Services], .NET XAML services"
-  - "XAML security [XAML Services]"
+title: "XAML セキュリティの考慮事項"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- security [XAML Services], .NET XAML services
+- XAML security [XAML Services]
 ms.assetid: 544296d4-f38e-4498-af49-c9f4dad28964
-caps.latest.revision: 7
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 59d0b835a0de3e84e2cb6e77ed368511bfe21b19
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# XAML Security Considerations
-このトピックでは、XAML および .NET Framework XAML サービス API を使用するときの、アプリケーションのセキュリティのベスト プラクティスについて説明します。  
+# <a name="xaml-security-considerations"></a><span data-ttu-id="85ca8-102">XAML セキュリティの考慮事項</span><span class="sxs-lookup"><span data-stu-id="85ca8-102">XAML Security Considerations</span></span>
+<span data-ttu-id="85ca8-103">このトピックは、XAML と .NET Framework XAML サービス API を使用するときに、アプリケーションのセキュリティのベスト プラクティスを説明します。</span><span class="sxs-lookup"><span data-stu-id="85ca8-103">This topic describes best practices for security in applications when you use XAML and .NET Framework XAML Services API.</span></span>  
   
-## アプリケーションの信頼されていない XAML  
- 最も一般的な意味では、信頼されていない XAML とは、アプリケーションで明確に含めたり生成したりしていない XAML ソースを指します。  
+## <a name="untrusted-xaml-in-applications"></a><span data-ttu-id="85ca8-104">アプリケーションで信頼されていない XAML</span><span class="sxs-lookup"><span data-stu-id="85ca8-104">Untrusted XAML in Applications</span></span>  
+ <span data-ttu-id="85ca8-105">最も一般的な意味では、信頼されていない XAML は、アプリケーションの表示または出力しなかった以外にインクルードするすべての XAML ソースです。</span><span class="sxs-lookup"><span data-stu-id="85ca8-105">In the most general sense, untrusted XAML is any XAML source that your application did not specifically include or emit.</span></span>  
   
- 信頼された署名済みアセンブリ内に `resx` 型のリソースとしてコンパイルまたは格納されている XAML は、本質的には信頼されていない XAML ではありません。  XAML は、アセンブリ全体と同程度に信頼することができます。  ほとんどの場合は、Loose XAML の信頼の側面のみを考慮します。Loose XAML とは、ストリームやその他の IO から読み込む XAML ソースのことです。  Loose XAML は、配置およびパッケージング インフラストラクチャを持つアプリケーション モデルの特定のコンポーネントや機能ではありません。  ただし、アセンブリは Loose XAML の読み込みを伴う動作を実装することがあります。  
+ <span data-ttu-id="85ca8-106">XAML にコンパイルまたはとして格納されている、 `resx`-信頼されたおよび署名されたアセンブリ内で型のリソースが本質的に信頼されていません。</span><span class="sxs-lookup"><span data-stu-id="85ca8-106">XAML that is compiled into or stored as a `resx`-type resource within a trusted and signed assembly is not inherently untrusted.</span></span> <span data-ttu-id="85ca8-107">全体として、アセンブリを信頼する限り、XAML を信頼できます。</span><span class="sxs-lookup"><span data-stu-id="85ca8-107">You can trust the XAML as much as you trust the assembly as a whole.</span></span> <span data-ttu-id="85ca8-108">ほとんどの場合、ストリームまたはその他の IO から読み込まれる XAML ソースでは、loose XAML の信頼の側面に関係するはのみです。</span><span class="sxs-lookup"><span data-stu-id="85ca8-108">In most cases, you are only concerned with the trust aspects of loose XAML, which is a XAML source that you load from a stream or other IO.</span></span> <span data-ttu-id="85ca8-109">Loose XAML は、特定のコンポーネントまたは配置とパッケージ化インフラストラクチャを持つアプリケーション モデルの機能ではありません。</span><span class="sxs-lookup"><span data-stu-id="85ca8-109">Loose XAML is not a specific component or feature of an application model with a deployment and packaging infrastructure.</span></span> <span data-ttu-id="85ca8-110">ただし、アセンブリは、loose XAML を読み込む必要がある動作を実装する場合があります。</span><span class="sxs-lookup"><span data-stu-id="85ca8-110">However, an assembly might implement a behavior that involves loading loose XAML.</span></span>  
   
- 信頼されていない XAML は、一般的には、信頼されていないコードと同じように扱う必要があります。  信頼されていない可能性がある XAML が、信頼されているコードにアクセスしないよう、サンドボックス化またはその他の比喩を使用します。  
+ <span data-ttu-id="85ca8-111">、信頼されていない xaml にする必要があります扱う一般に、同じ信頼できないコードの場合と同様。</span><span class="sxs-lookup"><span data-stu-id="85ca8-111">For untrusted XAML, you should treat it generally the same as if it were untrusted code.</span></span> <span data-ttu-id="85ca8-112">サンド ボックスまたは他の要素を使用して、信頼されるコードにアクセスできなくなる可能性のある信頼されていない XAML にします。</span><span class="sxs-lookup"><span data-stu-id="85ca8-112">Use sandboxing or other metaphors to prevent possibly untrusted XAML from accessing your trusted code.</span></span>  
   
- XAML 機能は、性質上、オブジェクトを構築し、プロパティを設定する権利を XAML に与えます。  これらの機能には、型コンバーターへのアクセス、アプリケーション ドメインのアセンブリのマッピングとアクセス、マークアップ拡張機能の使用、`x:Code` ブロックなども含まれます。  
+ <span data-ttu-id="85ca8-113">XAML 機能の性質は、XAML オブジェクトを構築し、それらのプロパティを設定する権利を与えます。</span><span class="sxs-lookup"><span data-stu-id="85ca8-113">The nature of XAML capabilities gives the XAML the right to construct objects and set their properties.</span></span> <span data-ttu-id="85ca8-114">型コンバーター、マッピング、およびマークアップ拡張機能を使用して、アプリケーション ドメインでアセンブリへのアクセスにアクセスするこれらの機能も含める`x:Code`ブロック、およびなどです。</span><span class="sxs-lookup"><span data-stu-id="85ca8-114">These capabilities also include accessing type converters, mapping and accessing assemblies in the application domain, using markup extensions, `x:Code` blocks, and so on.</span></span>  
   
- 言語レベルの機能に加えて、XAML は、さまざまな技術の UI の定義で使用されています。  信頼されていない XAML を読み込むと、悪意のあるなりすまし UI を読み込む可能性もあります。  
+ <span data-ttu-id="85ca8-115">そのレベルの言語機能だけでなく XAML は、多くのテクノロジの UI の定義に使用されます。</span><span class="sxs-lookup"><span data-stu-id="85ca8-115">In addition to its language-level capabilities, XAML is used for UI definition in many technologies.</span></span> <span data-ttu-id="85ca8-116">信頼されていない XAML を読み込むには、悪意のあるスプーフィング UI を読み込む可能性があります。</span><span class="sxs-lookup"><span data-stu-id="85ca8-116">Loading untrusted XAML might mean loading a malicious spoofing UI.</span></span>  
   
-## リーダーおよびライターによるコンテキストの共有  
- XAML リーダーおよび XAML ライターの .NET Framework XAML サービス アーキテクチャでは、XAML ライターまたは XAML スキーマ コンテキストに XAML リーダーを共有する必要があります。  XAML ノード ループ ロジックを記述している場合、またはカスタム保存パスを指定する場合には、オブジェクトまたはコンテキストの共有が必要になることがあります。  信頼されているコードと信頼されていないコードの間で、XAML リーダー インスタンス、既定以外の XAML スキーマ コンテキスト、または XAML リーダー\/XAML ライター クラスの設定を共有しないでください。  
+## <a name="sharing-context-between-readers-and-writers"></a><span data-ttu-id="85ca8-117">リーダーとライターの間でコンテキストを共有</span><span class="sxs-lookup"><span data-stu-id="85ca8-117">Sharing Context Between Readers and Writers</span></span>  
+ <span data-ttu-id="85ca8-118">.NET Framework XAML サービス アーキテクチャは、XAML リーダーと XAML ライターでは、多くの場合、XAML ライターまたは XAML スキーマ コンテキストを共有するための XAML リーダーの共有が必要です。</span><span class="sxs-lookup"><span data-stu-id="85ca8-118">The .NET Framework XAML Services architecture for XAML readers and XAML writers often requires sharing a XAML reader to a XAML writer, or a shared XAML schema context.</span></span> <span data-ttu-id="85ca8-119">XAML ノード ループのロジックを作成しているか、パスを保存するカスタムを提供する場合、オブジェクトまたはコンテキストの共有が必要があります。</span><span class="sxs-lookup"><span data-stu-id="85ca8-119">Sharing objects or contexts might be required if you are writing XAML node loop logic, or providing a custom save path.</span></span> <span data-ttu-id="85ca8-120">XAML リーダーのインスタンス、既定以外の XAML スキーマ コンテキスト、または信頼されていると信頼されていないコードの間での XAML リーダー/ライター クラスの設定を共有しないでください。</span><span class="sxs-lookup"><span data-stu-id="85ca8-120">You should not share XAML reader instances, nondefault XAML schema context, or settings for XAML reader/writer classes between trusted and untrusted code.</span></span>  
   
- CLR ベースの型バッキング向けの、XAML オブジェクトの記述を伴う大半のシナリオおよび操作では、既定の XAML スキーマ コンテキストのみを使用できます。  既定の XAML スキーマ コンテキストには、完全な信頼を損なう可能性がある設定は明示的には含まれていません。  そのため、信頼されている XAML リーダー\/ライター コンポーネントと、信頼されていない XAML リーダー\/ライター コンポーネントの間でコンテキストを共有しても安全です。  ただし、そうする場合は、そのようなリーダーとライターを個別の <xref:System.AppDomain> スコープに保持しておき、いずれか 1 つを部分信頼用に指定\/サンドボックス化することをお勧めします。  
+ <span data-ttu-id="85ca8-121">ほとんどのシナリオと XAML オブジェクトのバッキング CLR ベースの型の記述に関連する操作では、既定の XAML スキーマ コンテキストだけを使用できます。</span><span class="sxs-lookup"><span data-stu-id="85ca8-121">Most scenarios and operations involving XAML object writing for a CLR-based type backing can just use default XAML schema context.</span></span> <span data-ttu-id="85ca8-122">既定の XAML スキーマ コンテキストは、完全な信頼を損なうおそれのある設定を明示的には含まれません。</span><span class="sxs-lookup"><span data-stu-id="85ca8-122">The default XAML schema context does not explicitly include settings that could compromise full trust.</span></span> <span data-ttu-id="85ca8-123">安全に信頼されたコンポーネントと信頼されていない XAML リーダー/ライター コンポーネント間でコンテキストを共有は、です。</span><span class="sxs-lookup"><span data-stu-id="85ca8-123">It is thus safe to share context between trusted and untrusted XAML reader/writer components.</span></span> <span data-ttu-id="85ca8-124">ただし、これを行うことがあるこのようなリーダーおよびライターを個別に保持することをお勧め<xref:System.AppDomain>具体的には意図したものとサンド ボックス化された部分信頼のうちの 1 つのスコープです。</span><span class="sxs-lookup"><span data-stu-id="85ca8-124">However, if you do this, it is still a best practice to keep such readers and writers in separate <xref:System.AppDomain> scopes, with one of them specifically intended/sandboxed for partial trust.</span></span>  
   
-## XAML 名前空間およびアセンブリの信頼  
- XAML がアセンブリに対するカスタム XAML 名前空間マッピングをどのように解釈するかについての基本的な非修飾構文および定義では、アプリケーション ドメインに読み込まれた、信頼されたアセンブリと信頼されていないアセンブリを区別しません。  そのため、理論的には、信頼されていないアセンブリが信頼されているアセンブリが目的とする XAML 名前空間マッピングになりすまし、XAML ソースの宣言されたオブジェクトおよびプロパティ情報をキャプチャすることはできます。  この状況を回避するためのセキュリティ要件がある場合は、目的の XAML 名前空間マッピングは、次のいずれかの方法によって行われる必要があります。  
+## <a name="xaml-namespaces-and-assembly-trust"></a><span data-ttu-id="85ca8-125">XAML 名前空間とアセンブリの信頼レベル</span><span class="sxs-lookup"><span data-stu-id="85ca8-125">XAML Namespaces and Assembly Trust</span></span>  
+ <span data-ttu-id="85ca8-126">基本的な構文が不適切な XAML がアセンブリにカスタム XAML 名前空間のマッピングを解釈する方法の定義は区別されません、アプリケーション ドメインに読み込まれた、信頼できる、信頼されていないアセンブリです。</span><span class="sxs-lookup"><span data-stu-id="85ca8-126">The basic unqualified syntax and definition for how XAML interprets a custom XAML namespace mapping to an assembly does not distinguish between a trusted and untrusted assembly as loaded into the application domain.</span></span> <span data-ttu-id="85ca8-127">したがって、信頼されたアセンブリの目的の XAML 名前空間マッピングを偽装し、XAML ソースの宣言されたオブジェクトとプロパティの情報をキャプチャする信頼されていないアセンブリの技術的に可能なは。</span><span class="sxs-lookup"><span data-stu-id="85ca8-127">Thus, it is technically possible for an untrusted assembly to spoof a trusted assembly's intended XAML namespace mapping and capture a XAML source's declared object and property information.</span></span> <span data-ttu-id="85ca8-128">このような状況を回避するためのセキュリティ要件がある場合は、目的の XAML 名前空間のマッピングにするかどうを使用して、次の手法のいずれか。</span><span class="sxs-lookup"><span data-stu-id="85ca8-128">If you have security requirements to avoid this situation, your intended XAML namespace mapping should be made using one of the following techniques:</span></span>  
   
--   アプリケーションの XAML によって作成されたすべての XAML 名前空間マッピングで、厳密な名前を持つ完全修飾アセンブリ名を使用する。  
+-   <span data-ttu-id="85ca8-129">アプリケーションの XAML によって行われたすべての XAML 名前空間マッピングで厳密な名前でアセンブリの完全修飾名を使用します。</span><span class="sxs-lookup"><span data-stu-id="85ca8-129">Use a fully qualified assembly name with strong name in any XAML namespace mapping made by your application's XAML.</span></span>  
   
--   XAML リーダーおよび XAML オブジェクト ライターに対して特定の <xref:System.Xaml.XamlSchemaContext> を構築し、アセンブリ マッピングを参照アセンブリの固定セットに制限する。  「<xref:System.Xaml.XamlSchemaContext.%23ctor%28System.Collections.Generic.IEnumerable%7BSystem.Reflection.Assembly%7D%29>」を参照してください。  
+-   <span data-ttu-id="85ca8-130">アセンブリの特定を構築することによって、参照アセンブリの固定セットへのマッピングを制限する<xref:System.Xaml.XamlSchemaContext>XAML リーダーと XAML オブジェクト ライター。</span><span class="sxs-lookup"><span data-stu-id="85ca8-130">Restrict assembly mapping to a fixed set of reference assemblies, by constructing a specific <xref:System.Xaml.XamlSchemaContext> for your XAML readers and XAML object writers.</span></span> <span data-ttu-id="85ca8-131">「<xref:System.Xaml.XamlSchemaContext.%23ctor%28System.Collections.Generic.IEnumerable%7BSystem.Reflection.Assembly%7D%29>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="85ca8-131">See <xref:System.Xaml.XamlSchemaContext.%23ctor%28System.Collections.Generic.IEnumerable%7BSystem.Reflection.Assembly%7D%29>.</span></span>  
   
-## XAML 型マッピングと型システム アクセス  
- XAML は独自の型システムをサポートしています。この型システムは、CLR が基本的な CLR 型システムを実装する方法と、多くの点で似ています。  ただし、型情報に基づいて型に関する信頼の決定を下すという、型対応の一部の側面では、CLR バッキング型の型情報に従う必要があります。  これは、XAML 型システム固有の一部のレポート機能は仮想メソッドとして開いたままになるため、元の .NET Framework XAML サービス実装の完全な制御下にはないためです。  これらの機能拡張ポイントが存在するのは、既定の CLR バッキング実装および既定の XAML スキーマ コンテキストに比べ、XAML 型システムには XAML 自体の拡張性と、使用できる型マッピング戦略に対応するだけの拡張性があるためです。  詳細については、<xref:System.Xaml.XamlType> および <xref:System.Xaml.XamlMember> のいくつかのプロパティに関するメモを参照してください。  
+## <a name="xaml-type-mapping-and-type-system-access"></a><span data-ttu-id="85ca8-132">XAML の型マッピングおよびシステム アクセスの種類</span><span class="sxs-lookup"><span data-stu-id="85ca8-132">XAML Type Mapping and Type System Access</span></span>  
+ <span data-ttu-id="85ca8-133">XAML では、独自の型システムがあるさまざまな方法でピア CLR が、基本的な CLR 型システムを実装する方法をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="85ca8-133">XAML supports its own type system, which in many ways is a peer to how CLR implements the basic CLR type system.</span></span> <span data-ttu-id="85ca8-134">ただし、特定の要素の型情報に基づいて、型に関する信頼の決定を行う型対応の型のバッキング CLR の型情報に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="85ca8-134">However, for certain aspects of type awareness where you are making trust decisions about a type based on its type information, you should defer to the type information in the CLR backing types.</span></span> <span data-ttu-id="85ca8-135">これは XAML 型システムの特定のレポート機能の一部は仮想メソッドとして開かれたままを完全に元の .NET Framework XAML サービス実装の制御下です。</span><span class="sxs-lookup"><span data-stu-id="85ca8-135">This is because some of the specific reporting capabilities of the XAML type system are left open as virtual methods and are therefore, not fully under the control of the original .NET Framework XAML Services implementations.</span></span> <span data-ttu-id="85ca8-136">これらの拡張ポイントは、XAML 型システムでは、拡張可能な XAML 自体の拡張機能とその考えられる別型マッピングの手法と、既定の実装で CLR バックアップおよび既定の XAML スキーマ コンテキストとを照合するために存在します。</span><span class="sxs-lookup"><span data-stu-id="85ca8-136">These extensibility points exist because the XAML type system is extensible, to match the extensibility of XAML itself and its possible alternative type-mapping strategies versus the default CLR-backed implementation and default XAML schema context.</span></span> <span data-ttu-id="85ca8-137">詳細については、のプロパティのいくつかの特定のノートを参照してください。<xref:System.Xaml.XamlType>と<xref:System.Xaml.XamlMember>です。</span><span class="sxs-lookup"><span data-stu-id="85ca8-137">For more information, see the specific notes on several of the properties of <xref:System.Xaml.XamlType> and <xref:System.Xaml.XamlMember>.</span></span>  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="85ca8-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="85ca8-138">See Also</span></span>  
  <xref:System.Xaml.Permissions.XamlAccessLevel>

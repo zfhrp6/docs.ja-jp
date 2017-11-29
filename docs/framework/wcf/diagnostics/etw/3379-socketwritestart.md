@@ -1,35 +1,38 @@
 ---
-title: "3379 - SocketWriteStart | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 3379 - SocketWriteStart
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 26523526-258b-4721-b681-ef1a19f33fa1
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ff62b76d6678e38a3d1a8c2a7ad18d694eaeb551
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 3379 - SocketWriteStart
-## プロパティ  
+# <a name="3379---socketwritestart"></a><span data-ttu-id="1f48b-102">3379 - SocketWriteStart</span><span class="sxs-lookup"><span data-stu-id="1f48b-102">3379 - SocketWriteStart</span></span>
+## <a name="properties"></a><span data-ttu-id="1f48b-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1f48b-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|3379|  
-|キーワード|TCP|  
-|レベル|詳細|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Debug|  
+|<span data-ttu-id="1f48b-104">ID</span><span class="sxs-lookup"><span data-stu-id="1f48b-104">ID</span></span>|<span data-ttu-id="1f48b-105">3379</span><span class="sxs-lookup"><span data-stu-id="1f48b-105">3379</span></span>|  
+|<span data-ttu-id="1f48b-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="1f48b-106">Keywords</span></span>|<span data-ttu-id="1f48b-107">TCP</span><span class="sxs-lookup"><span data-stu-id="1f48b-107">TCP</span></span>|  
+|<span data-ttu-id="1f48b-108">レベル</span><span class="sxs-lookup"><span data-stu-id="1f48b-108">Level</span></span>|<span data-ttu-id="1f48b-109">詳細</span><span class="sxs-lookup"><span data-stu-id="1f48b-109">Verbose</span></span>|  
+|<span data-ttu-id="1f48b-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="1f48b-110">Channel</span></span>|<span data-ttu-id="1f48b-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="1f48b-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## 説明  
- このイベントは、SocketWrite が開始するときに生成されます。  
+## <a name="description"></a><span data-ttu-id="1f48b-112">説明</span><span class="sxs-lookup"><span data-stu-id="1f48b-112">Description</span></span>  
+ <span data-ttu-id="1f48b-113">このイベントは、SocketWrite が開始するときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="1f48b-113">This event is emitted with the SocketWrite start.</span></span>  
   
-## メッセージ  
- SocketId:%1 が '%3' に '%2' バイトを書き込んでいます。  
+## <a name="message"></a><span data-ttu-id="1f48b-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="1f48b-114">Message</span></span>  
+ <span data-ttu-id="1f48b-115">SocketId:%1 が '%3' に '%2' バイトを書き込んでいます。</span><span class="sxs-lookup"><span data-stu-id="1f48b-115">SocketId:%1 writing '%2' bytes to '%3'.</span></span>  
   
-## 詳細
+## <a name="details"></a><span data-ttu-id="1f48b-116">詳細</span><span class="sxs-lookup"><span data-stu-id="1f48b-116">Details</span></span>

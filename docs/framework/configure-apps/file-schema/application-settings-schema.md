@@ -1,99 +1,104 @@
 ---
-title: "アプリケーション設定のスキーマ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "アプリケーション設定, スキーマ [Windows フォーム]"
-  - "構成スキーマ [.NET Framework], アプリケーション設定"
-  - "スキーマ (アプリケーション設定)"
-  - "Windows フォーム, アプリケーション設定スキーマ"
+title: "アプリケーション設定スキーマ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- schema application settings
+- application settings, schema [Windows Forms]
+- Windows Forms, application settings schema
+- configuration schema [.NET Framework], application settings
 ms.assetid: 5797fcff-6081-4e8c-bebf-63d9c70cf14b
-caps.latest.revision: 3
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: d93a18b17e0d6b8e413903fb84dc6b427d94f6af
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# アプリケーション設定のスキーマ
-アプリケーション設定によって、Windows フォームまたは ASP.NET アプリケーションはアプリケーション スコープおよびユーザー スコープの設定を格納および取得できます。  ここにおける「設定」は、データベース接続文字列からユーザーの既定のウィンドウ サイズにいたるまでのアプリケーションまたは現在のユーザー固有の情報を意味します。  
-  
- 既定では、Windows フォーム アプリケーションのアプリケーション設定は、.NET 構成システムを使用して設定を XML 構成ファイルに格納する <xref:System.Configuration.LocalFileSettingsProvider> を使用します。  アプリケーション設定が使用するファイルの詳細については、「[アプリケーション設定アーキテクチャ](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)」を参照してください。  
-  
- アプリケーション設定は、使用する構成ファイルで次の要素を定義します。  
-  
-|要素|説明|  
-|--------|--------|  
-|`<applicationSettings>` 要素|アプリケーション固有のすべての `<setting>` タグが含まれます。|  
-|`<userSettings>` 要素|現在のユーザー固有のすべての `<setting>` タグが含まれます。|  
-|`<setting>` 要素|設定を定義します。  `<applicationSettings>` または `<userSettings>` の子要素です。|  
-|`<value>` 要素|設定の値を定義します。  `<setting>` の子要素です。|  
-  
-## \<applicationSettings\> 要素  
- この要素には \<、クライアント コンピューターのアプリケーションのインスタンス固有のすべての構成\> タグが含まれます。  属性は定義されません。  
-  
-## \<userSettings\> 要素  
- この要素は \<\>、アプリケーションを使用しているユーザー固有のすべての構成 タグが含まれます。  属性は定義されません。  
-  
-## \<構成\> 要素  
- この要素は、設定を定義します。  次の属性を持ちます。  
-  
-|要素|説明|  
-|--------|--------|  
-|`name`|必須。  設定の一意の ID です。  Visual Studio を使用して作成された設定は `ProjectName``.Properties.Settings` という名前で保存されます。|  
-|`serializedAs`|必須。  テキストに値をシリアル化するために使用する形式です。  次の値を指定できます。<br /><br /> -   `string`:   値は、<xref:System.ComponentModel.TypeConverter> を使用して文字列としてシリアル化されます。<br />-   `xml`.  値は、XML シリアル化を使用してシリアル化されます。<br />-   `binary`:   値は、バイナリ シリアル化を使用してテキストでエンコードされたバイナリとしてシリアル化されます。<br />-   `custom`:   設定プロバイダーは、この設定に固有の情報を保有してシリアル化および逆シリアル化を実行します。<br />-   バイナリまたはカスタムのシリアル化を使用する場合は、独自に設定クラスを定義し、<xref:System.Configuration.SettingsSerializeAsAttribute> を使用してバイナリまたはカスタムのシリアル化を指定する必要があります。|  
-  
-## \<値要素\>  
- この要素には、設定の値が含まれます。  
-  
-## 使用例  
- 2 つのアプリケーション スコープの設定および 2 つのユーザー スコープの設定を定義するアプリケーション設定ファイルのコード例を次に示します。  
-  
-```  
-<?xml version="1.0" encoding="utf-8" ?>  
-<configuration>  
-    <configSections>  
-        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >  
-            <section name="WindowsApplication1.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
-        </sectionGroup>  
-        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >  
-            <section name="WindowsApplication1.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" />  
-        </sectionGroup>  
-    </configSections>  
-    <applicationSettings>  
-        <WindowsApplication1.Properties.Settings>  
-            <setting name="Cursor" serializeAs="String">  
-                <value>Default</value>  
-            </setting>  
-            <setting name="DoubleBuffering" serializeAs="String">  
-                <value>False</value>  
-            </setting>  
-        </WindowsApplication1.Properties.Settings>  
-    </applicationSettings>  
-    <userSettings>  
-        <WindowsApplication1.Properties.Settings>  
-            <setting name="FormTitle" serializeAs="String">  
-                <value>Form1</value>  
-            </setting>  
-            <setting name="FormSize" serializeAs="String">  
-                <value>595, 536</value>  
-            </setting>  
-        </WindowsApplication1.Properties.Settings>  
-    </userSettings>  
-</configuration>  
-```  
-  
-## 参照  
- [アプリケーション設定の概要](../../../../docs/framework/winforms/advanced/application-settings-overview.md)   
- [アプリケーション設定アーキテクチャ](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)
+# <a name="application-settings-schema"></a><span data-ttu-id="08d53-102">アプリケーション設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="08d53-102">Application Settings schema</span></span>
+
+<span data-ttu-id="08d53-103">アプリケーションの設定を保存し、アプリケーション スコープ設定し、ユーザー スコープ設定を取得する Windows フォームまたは ASP.NET アプリケーションを許可します。</span><span class="sxs-lookup"><span data-stu-id="08d53-103">Application settings allow a Windows Forms or ASP.NET application to store and retrieve application-scoped and user-scoped settings.</span></span> <span data-ttu-id="08d53-104">このコンテキストで、*設定*のアプリケーション固有または現在のユーザーに特定できる情報は、-ユーザーにデータベース接続文字列から何かの既定のウィンドウ サイズを優先します。</span><span class="sxs-lookup"><span data-stu-id="08d53-104">In this context, a *setting* is any piece of information that may be specific to the application or specific to the current user — anything from a database connection string to the user's preferred default window size.</span></span>
+
+<span data-ttu-id="08d53-105">既定では、Windows フォーム アプリケーションにおけるアプリケーションの設定を使用して、<xref:System.Configuration.LocalFileSettingsProvider>クラスは、.NET 構成システムを使用して、XML 構成ファイルに設定を格納します。</span><span class="sxs-lookup"><span data-stu-id="08d53-105">By default, application settings in a Windows Forms application uses the <xref:System.Configuration.LocalFileSettingsProvider> class, which uses the .NET configuration system to store settings in an XML configuration file.</span></span> <span data-ttu-id="08d53-106">アプリケーションの設定で使用されるファイルの詳細については、次を参照してください。[アプリケーション設定アーキテクチャ](~/docs/framework/winforms/advanced/application-settings-architecture.md)です。</span><span class="sxs-lookup"><span data-stu-id="08d53-106">For more information about the files used by application settings, see [Application Settings Architecture](~/docs/framework/winforms/advanced/application-settings-architecture.md).</span></span>
+
+<span data-ttu-id="08d53-107">アプリケーションの設定は、使用して、構成ファイルの一部として、次の要素を定義します。</span><span class="sxs-lookup"><span data-stu-id="08d53-107">Application settings defines the following elements as part of the configuration files it uses.</span></span>
+
+| <span data-ttu-id="08d53-108">要素</span><span class="sxs-lookup"><span data-stu-id="08d53-108">Element</span></span>                    | <span data-ttu-id="08d53-109">説明</span><span class="sxs-lookup"><span data-stu-id="08d53-109">Description</span></span>                                                                           |
+| -------------------------- | ------------------------------------------------------------------------------------- |
+| <span data-ttu-id="08d53-110">**\<applicationSettings >**</span><span class="sxs-lookup"><span data-stu-id="08d53-110">**\<applicationSettings>**</span></span> | <span data-ttu-id="08d53-111">すべてを含む**\<設定 >**タグはアプリケーションに固有です。</span><span class="sxs-lookup"><span data-stu-id="08d53-111">Contains all **\<setting>** tags specific to the application.</span></span>                         |
+| <span data-ttu-id="08d53-112">**\<ユーザー >**</span><span class="sxs-lookup"><span data-stu-id="08d53-112">**\<userSettings>**</span></span>        | <span data-ttu-id="08d53-113">すべてが含まれます**\<設定 >**タグは、現在のユーザーを特定します。</span><span class="sxs-lookup"><span data-stu-id="08d53-113">Contains all **\<setting>** tags specific to the current user.</span></span>                        |
+| <span data-ttu-id="08d53-114">**\<設定 >**</span><span class="sxs-lookup"><span data-stu-id="08d53-114">**\<setting>**</span></span>             | <span data-ttu-id="08d53-115">設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="08d53-115">Defines a setting.</span></span> <span data-ttu-id="08d53-116">いずれかの子 **\<applicationSettings >**または**\<ユーザー >**です。</span><span class="sxs-lookup"><span data-stu-id="08d53-116">Child of either **\<applicationSettings>** or **\<userSettings>**.</span></span> |
+| <span data-ttu-id="08d53-117">**\<value>**</span><span class="sxs-lookup"><span data-stu-id="08d53-117">**\<value>**</span></span>               | <span data-ttu-id="08d53-118">設定の値を定義します。</span><span class="sxs-lookup"><span data-stu-id="08d53-118">Defines a setting's value.</span></span> <span data-ttu-id="08d53-119">子**\<設定 >**です。</span><span class="sxs-lookup"><span data-stu-id="08d53-119">Child of **\<setting>**.</span></span>                                   |
+
+## <a name="applicationsettings-element"></a><span data-ttu-id="08d53-120">\<applicationSettings > 要素</span><span class="sxs-lookup"><span data-stu-id="08d53-120">\<applicationSettings> element</span></span>
+
+<span data-ttu-id="08d53-121">この要素には、すべてが含まれています**\<設定 >**タグは、クライアント コンピューターにアプリケーションのインスタンスに固有です。</span><span class="sxs-lookup"><span data-stu-id="08d53-121">This element contains all **\<setting>** tags that are specific to an instance of the application on a client computer.</span></span> <span data-ttu-id="08d53-122">属性は定義されません。</span><span class="sxs-lookup"><span data-stu-id="08d53-122">It defines no attributes.</span></span>
+
+## <a name="usersettings-element"></a><span data-ttu-id="08d53-123">\<ユーザー > 要素</span><span class="sxs-lookup"><span data-stu-id="08d53-123">\<userSettings> element</span></span>
+
+<span data-ttu-id="08d53-124">この要素には、すべてが含まれています**\<設定 >**アプリケーションが現在使用しているユーザーに固有のタグ。</span><span class="sxs-lookup"><span data-stu-id="08d53-124">This element contains all **\<setting>** tags that are specific to the user who is currently using the application.</span></span> <span data-ttu-id="08d53-125">属性は定義されません。</span><span class="sxs-lookup"><span data-stu-id="08d53-125">It defines no attributes.</span></span>
+
+## <a name="setting-element"></a><span data-ttu-id="08d53-126">\<設定 > 要素</span><span class="sxs-lookup"><span data-stu-id="08d53-126">\<setting> element</span></span>
+
+<span data-ttu-id="08d53-127">この要素は、設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="08d53-127">This element defines a setting.</span></span> <span data-ttu-id="08d53-128">次の属性があります。</span><span class="sxs-lookup"><span data-stu-id="08d53-128">It has the following attributes.</span></span>
+
+| <span data-ttu-id="08d53-129">属性</span><span class="sxs-lookup"><span data-stu-id="08d53-129">Attribute</span></span>        | <span data-ttu-id="08d53-130">説明</span><span class="sxs-lookup"><span data-stu-id="08d53-130">Description</span></span> |
+| ---------------- | ----------- |
+| <span data-ttu-id="08d53-131">**name**</span><span class="sxs-lookup"><span data-stu-id="08d53-131">**name**</span></span>         | <span data-ttu-id="08d53-132">必須です。</span><span class="sxs-lookup"><span data-stu-id="08d53-132">Required.</span></span> <span data-ttu-id="08d53-133">設定の一意の ID。</span><span class="sxs-lookup"><span data-stu-id="08d53-133">The unique ID of the setting.</span></span> <span data-ttu-id="08d53-134">Visual Studio で作成した設定は、名前で保存`ProjectName.Properties.Settings`です。</span><span class="sxs-lookup"><span data-stu-id="08d53-134">Settings created through Visual Studio are saved with the name `ProjectName.Properties.Settings`.</span></span> |
+| <span data-ttu-id="08d53-135">**serializedAs**</span><span class="sxs-lookup"><span data-stu-id="08d53-135">**serializedAs**</span></span> | <span data-ttu-id="08d53-136">必須です。</span><span class="sxs-lookup"><span data-stu-id="08d53-136">Required.</span></span> <span data-ttu-id="08d53-137">テキスト値をシリアル化するために使用する形式。</span><span class="sxs-lookup"><span data-stu-id="08d53-137">The format to use for serializing the value to text.</span></span> <span data-ttu-id="08d53-138">次の値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="08d53-138">Valid values are:</span></span><br><br><span data-ttu-id="08d53-139">- `string`.</span><span class="sxs-lookup"><span data-stu-id="08d53-139">- `string`.</span></span> <span data-ttu-id="08d53-140">使用して文字列として値がシリアル化、<xref:System.ComponentModel.TypeConverter>です。</span><span class="sxs-lookup"><span data-stu-id="08d53-140">The value is serialized as a string using a <xref:System.ComponentModel.TypeConverter>.</span></span><br><span data-ttu-id="08d53-141">- `xml`.</span><span class="sxs-lookup"><span data-stu-id="08d53-141">- `xml`.</span></span> <span data-ttu-id="08d53-142">XML シリアル化を使用して、値がシリアル化されます。</span><span class="sxs-lookup"><span data-stu-id="08d53-142">The value is serialized using XML serialization.</span></span><br><span data-ttu-id="08d53-143">- `binary`.</span><span class="sxs-lookup"><span data-stu-id="08d53-143">- `binary`.</span></span> <span data-ttu-id="08d53-144">値は、バイナリのシリアル化を使用して、テキスト エンコードされたバイナリとしてシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="08d53-144">The value is serialized as text-encoded binary using binary serialization.</span></span><br /><span data-ttu-id="08d53-145">- `custom`.</span><span class="sxs-lookup"><span data-stu-id="08d53-145">- `custom`.</span></span> <span data-ttu-id="08d53-146">設定プロバイダーは、この設定の固有の情報しシリアル化し、逆シリアル化されます。</span><span class="sxs-lookup"><span data-stu-id="08d53-146">The settings provider has inherent knowledge of this setting and serializes and de-serializes it.</span></span> |
+
+## <a name="value-element"></a><span data-ttu-id="08d53-147">\<値 > 要素</span><span class="sxs-lookup"><span data-stu-id="08d53-147">\<value> element</span></span>
+
+<span data-ttu-id="08d53-148">この要素には、設定の値が含まれています。</span><span class="sxs-lookup"><span data-stu-id="08d53-148">This element contains the value of a setting.</span></span>
+
+## <a name="example"></a><span data-ttu-id="08d53-149">例</span><span class="sxs-lookup"><span data-stu-id="08d53-149">Example</span></span>
+
+<span data-ttu-id="08d53-150">次の例では、2 つのアプリケーション スコープ設定と 2 つのユーザー スコープ設定を定義するアプリケーションの設定ファイルを示します。</span><span class="sxs-lookup"><span data-stu-id="08d53-150">The following example shows an application settings file that defines two application-scoped settings and two user-scoped settings:</span></span>
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="WindowsApplication1.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    </sectionGroup>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="WindowsApplication1.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" />
+    </sectionGroup>
+  </configSections>
+  <applicationSettings>
+    <WindowsApplication1.Properties.Settings>
+      <setting name="Cursor" serializeAs="String">
+        <value>Default</value>
+      </setting>
+      <setting name="DoubleBuffering" serializeAs="String">
+        <value>False</value>
+      </setting>
+    </WindowsApplication1.Properties.Settings>
+  </applicationSettings>
+  <userSettings>
+    <WindowsApplication1.Properties.Settings>
+      <setting name="FormTitle" serializeAs="String">
+        <value>Form1</value>
+      </setting>
+      <setting name="FormSize" serializeAs="String">
+        <value>595, 536</value>
+      </setting>
+    </WindowsApplication1.Properties.Settings>
+  </userSettings>
+</configuration>
+```
+
+## <a name="see-also"></a><span data-ttu-id="08d53-151">関連項目</span><span class="sxs-lookup"><span data-stu-id="08d53-151">See also</span></span>
+
+<span data-ttu-id="08d53-152">[アプリケーション設定の概要](~/docs/framework/winforms/advanced/application-settings-overview.md) </span><span class="sxs-lookup"><span data-stu-id="08d53-152">[Application Settings Overview](~/docs/framework/winforms/advanced/application-settings-overview.md) </span></span>  
+[<span data-ttu-id="08d53-153">アプリケーション設定アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="08d53-153">Application Settings Architecture</span></span>](~/docs/framework/winforms/advanced/application-settings-architecture.md)

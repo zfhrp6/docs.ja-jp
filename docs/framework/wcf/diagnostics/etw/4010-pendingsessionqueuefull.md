@@ -1,35 +1,38 @@
 ---
-title: "4010 - PendingSessionQueueFull | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 4010 - PendingSessionQueueFull
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 14696793-16eb-4847-a530-fa2f90f682c9
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f147fbc746fbdfc6b23e622e4942410f0cc77028
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 4010 - PendingSessionQueueFull
-## プロパティ  
+# <a name="4010---pendingsessionqueuefull"></a><span data-ttu-id="61a47-102">4010 - PendingSessionQueueFull</span><span class="sxs-lookup"><span data-stu-id="61a47-102">4010 - PendingSessionQueueFull</span></span>
+## <a name="properties"></a><span data-ttu-id="61a47-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="61a47-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|4010|  
-|キーワード|ActivationServices|  
-|レベル|警告|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Analytic|  
+|<span data-ttu-id="61a47-104">ID</span><span class="sxs-lookup"><span data-stu-id="61a47-104">ID</span></span>|<span data-ttu-id="61a47-105">4010</span><span class="sxs-lookup"><span data-stu-id="61a47-105">4010</span></span>|  
+|<span data-ttu-id="61a47-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="61a47-106">Keywords</span></span>|<span data-ttu-id="61a47-107">ActivationServices</span><span class="sxs-lookup"><span data-stu-id="61a47-107">ActivationServices</span></span>|  
+|<span data-ttu-id="61a47-108">レベル</span><span class="sxs-lookup"><span data-stu-id="61a47-108">Level</span></span>|<span data-ttu-id="61a47-109">警告</span><span class="sxs-lookup"><span data-stu-id="61a47-109">Warning</span></span>|  
+|<span data-ttu-id="61a47-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="61a47-110">Channel</span></span>|<span data-ttu-id="61a47-111">Microsoft-Windows-Application Server-Applications/Analytic</span><span class="sxs-lookup"><span data-stu-id="61a47-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## 説明  
- このイベントは、保留中のセッションのキューがいっぱいであるためにセッション ディスパッチが失敗すると生成されます。  
+## <a name="description"></a><span data-ttu-id="61a47-112">説明</span><span class="sxs-lookup"><span data-stu-id="61a47-112">Description</span></span>  
+ <span data-ttu-id="61a47-113">このイベントは、保留中のセッションのキューがいっぱいであるためにセッション ディスパッチが失敗すると生成されます。</span><span class="sxs-lookup"><span data-stu-id="61a47-113">This event is emitted when the session dispatch has failed because the pending session queue is full.</span></span>  
   
-## メッセージ  
- '%1' のセッション ディスパッチに失敗しました。保留セッション キューがいっぱいです。保留中の項目が '%2' 個あります。  
+## <a name="message"></a><span data-ttu-id="61a47-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="61a47-114">Message</span></span>  
+ <span data-ttu-id="61a47-115">'%1' のセッション ディスパッチに失敗しました。保留セッション キューがいっぱいです。保留中の項目が '%2' 個あります。</span><span class="sxs-lookup"><span data-stu-id="61a47-115">Session dispatch for '%1' failed since pending session queue is full with '%2' pending items.</span></span>  
   
-## 詳細
+## <a name="details"></a><span data-ttu-id="61a47-116">詳細</span><span class="sxs-lookup"><span data-stu-id="61a47-116">Details</span></span>

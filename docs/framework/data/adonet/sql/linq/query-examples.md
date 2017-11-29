@@ -1,82 +1,85 @@
 ---
-title: "Query Examples | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "クエリの例"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 137f8677-494c-4d49-95ce-c17742f2d01f
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 0e7d7a0a1f641603887675ed0c1faebd5c06b273
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Query Examples
-このセクションでは、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] および C\# で一般的な [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] クエリの例を示して説明します。  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] を使用している場合は、「サンプル」セクションに多数のサンプル ソリューションが用意されています。  詳細については、「[Samples](../../../../../../docs/framework/data/adonet/sql/linq/samples.md)」を参照してください。  
+# <a name="query-examples"></a><span data-ttu-id="acff6-102">クエリの例</span><span class="sxs-lookup"><span data-stu-id="acff6-102">Query Examples</span></span>
+<span data-ttu-id="acff6-103">このセクションでは、[!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] および C# で一般的な [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] クエリの例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-103">This section provides [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] and C# examples of typical [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] queries.</span></span> <span data-ttu-id="acff6-104">[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] を使用している場合は、「サンプル」セクションに多数のサンプル ソリューションが用意されています。</span><span class="sxs-lookup"><span data-stu-id="acff6-104">Developers using [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] can find many more examples in a sample solution available in the Samples section.</span></span> <span data-ttu-id="acff6-105">詳細については、次を参照してください。[サンプル](../../../../../../docs/framework/data/adonet/sql/linq/samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="acff6-105">For more information, see [Samples](../../../../../../docs/framework/data/adonet/sql/linq/samples.md).</span></span>  
   
 > [!IMPORTANT]
->  *db* は、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ドキュメントのコード サンプルでよく使用されます。  *db* は、*Northwind* クラスのインスタンスであることが前提です。このクラスは、<xref:System.Data.Linq.DataContext> から継承されます。  
+>  <span data-ttu-id="acff6-106">*db*のコード例でよく使用されて[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]ドキュメント。</span><span class="sxs-lookup"><span data-stu-id="acff6-106">*db* is often used in code examples in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documentation.</span></span> <span data-ttu-id="acff6-107">*db*のインスタンスであると見なされます、 *Northwind*から継承されるクラスが<xref:System.Data.Linq.DataContext>です。</span><span class="sxs-lookup"><span data-stu-id="acff6-107">*db* is assumed to be an instance of a *Northwind* class, which inherits from <xref:System.Data.Linq.DataContext>.</span></span>  
   
-## このセクションの内容  
- [Aggregate Queries](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)  
- <xref:System.Linq.Enumerable.Average%2A>、<xref:System.Linq.Enumerable.Count%2A> などの使用方法について説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="acff6-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="acff6-108">In This Section</span></span>  
+ [<span data-ttu-id="acff6-109">集計クエリ</span><span class="sxs-lookup"><span data-stu-id="acff6-109">Aggregate Queries</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)  
+ <span data-ttu-id="acff6-110"><xref:System.Linq.Enumerable.Average%2A>、<xref:System.Linq.Enumerable.Count%2A> などの使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-110">Describes how to use <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>, and so forth.</span></span>  
   
- [Return the First Element in a Sequence](../../../../../../docs/framework/data/adonet/sql/linq/return-the-first-element-in-a-sequence.md)  
- <xref:System.Linq.Enumerable.First%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-111">シーケンス内の最初の要素を返す</span><span class="sxs-lookup"><span data-stu-id="acff6-111">Return the First Element in a Sequence</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/return-the-first-element-in-a-sequence.md)  
+ <span data-ttu-id="acff6-112"><xref:System.Linq.Enumerable.First%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-112">Provides examples of using <xref:System.Linq.Enumerable.First%2A>.</span></span>  
   
- [Return Or Skip Elements in a Sequence](../../../../../../docs/framework/data/adonet/sql/linq/return-or-skip-elements-in-a-sequence.md)  
- <xref:System.Linq.Enumerable.Take%2A> および <xref:System.Linq.Enumerable.Skip%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-113">戻り値またはシーケンスの要素のスキップ</span><span class="sxs-lookup"><span data-stu-id="acff6-113">Return Or Skip Elements in a Sequence</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/return-or-skip-elements-in-a-sequence.md)  
+ <span data-ttu-id="acff6-114"><xref:System.Linq.Enumerable.Take%2A> および <xref:System.Linq.Enumerable.Skip%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-114">Provides examples of using <xref:System.Linq.Enumerable.Take%2A> and <xref:System.Linq.Enumerable.Skip%2A>.</span></span>  
   
- [Sort Elements in a Sequence](../../../../../../docs/framework/data/adonet/sql/linq/sort-elements-in-a-sequence.md)  
- <xref:System.Linq.Enumerable.OrderBy%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-115">シーケンスの要素の並べ替え</span><span class="sxs-lookup"><span data-stu-id="acff6-115">Sort Elements in a Sequence</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/sort-elements-in-a-sequence.md)  
+ <span data-ttu-id="acff6-116"><xref:System.Linq.Enumerable.OrderBy%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-116">Provides examples of using <xref:System.Linq.Enumerable.OrderBy%2A>.</span></span>  
   
- [Group Elements in a Sequence](../../../../../../docs/framework/data/adonet/sql/linq/group-elements-in-a-sequence.md)  
- <xref:System.Linq.Enumerable.GroupBy%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-117">シーケンスの要素のグループ</span><span class="sxs-lookup"><span data-stu-id="acff6-117">Group Elements in a Sequence</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/group-elements-in-a-sequence.md)  
+ <span data-ttu-id="acff6-118"><xref:System.Linq.Enumerable.GroupBy%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-118">Provides examples of using <xref:System.Linq.Enumerable.GroupBy%2A>.</span></span>  
   
- [Eliminate Duplicate Elements from a Sequence](../../../../../../docs/framework/data/adonet/sql/linq/eliminate-duplicate-elements-from-a-sequence.md)  
- <xref:System.Linq.Enumerable.Distinct%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-119">シーケンスから重複する要素を除去します。</span><span class="sxs-lookup"><span data-stu-id="acff6-119">Eliminate Duplicate Elements from a Sequence</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/eliminate-duplicate-elements-from-a-sequence.md)  
+ <span data-ttu-id="acff6-120"><xref:System.Linq.Enumerable.Distinct%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-120">Provides examples of using <xref:System.Linq.Enumerable.Distinct%2A>.</span></span>  
   
- [Determine if Any or All Elements in a Sequence Satisfy a Condition](../../../../../../docs/framework/data/adonet/sql/linq/determine-if-any-or-all-elements-in-a-sequence-satisfy-a-condition.md)  
- <xref:System.Linq.Enumerable.All%2A> および <xref:System.Linq.Enumerable.Any%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-121">シーケンス内のいずれかまたはすべての要素が条件を満たすかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="acff6-121">Determine if Any or All Elements in a Sequence Satisfy a Condition</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/determine-if-any-or-all-elements-in-a-sequence-satisfy-a-condition.md)  
+ <span data-ttu-id="acff6-122"><xref:System.Linq.Enumerable.All%2A> および <xref:System.Linq.Enumerable.Any%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-122">Provides examples of using <xref:System.Linq.Enumerable.All%2A> and <xref:System.Linq.Enumerable.Any%2A>.</span></span>  
   
- [Concatenate Two Sequences](../../../../../../docs/framework/data/adonet/sql/linq/concatenate-two-sequences.md)  
- <xref:System.Linq.Enumerable.Concat%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-123">2 つのシーケンスを連結します。</span><span class="sxs-lookup"><span data-stu-id="acff6-123">Concatenate Two Sequences</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/concatenate-two-sequences.md)  
+ <span data-ttu-id="acff6-124"><xref:System.Linq.Enumerable.Concat%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-124">Provides examples of using <xref:System.Linq.Enumerable.Concat%2A>.</span></span>  
   
- [Return the Set Difference Between Two Sequences](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-difference-between-two-sequences.md)  
- <xref:System.Linq.Enumerable.Except%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-125">2 つのシーケンスの差集合を返す</span><span class="sxs-lookup"><span data-stu-id="acff6-125">Return the Set Difference Between Two Sequences</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-difference-between-two-sequences.md)  
+ <span data-ttu-id="acff6-126"><xref:System.Linq.Enumerable.Except%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-126">Provides examples of using <xref:System.Linq.Enumerable.Except%2A>.</span></span>  
   
- [Return the Set Intersection of Two Sequences](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-intersection-of-two-sequences.md)  
- <xref:System.Linq.Enumerable.Intersect%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-127">2 つのシーケンスの積集合を返す</span><span class="sxs-lookup"><span data-stu-id="acff6-127">Return the Set Intersection of Two Sequences</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-intersection-of-two-sequences.md)  
+ <span data-ttu-id="acff6-128"><xref:System.Linq.Enumerable.Intersect%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-128">Provides examples of using <xref:System.Linq.Enumerable.Intersect%2A>.</span></span>  
   
- [Return the Set Union of Two Sequences](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-union-of-two-sequences.md)  
- <xref:System.Linq.Enumerable.Union%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-129">2 つのシーケンスの和集合を返す</span><span class="sxs-lookup"><span data-stu-id="acff6-129">Return the Set Union of Two Sequences</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-union-of-two-sequences.md)  
+ <span data-ttu-id="acff6-130"><xref:System.Linq.Enumerable.Union%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-130">Provides examples of using <xref:System.Linq.Enumerable.Union%2A>.</span></span>  
   
- [Convert a Sequence to an Array](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-sequence-to-an-array.md)  
- <xref:System.Linq.Enumerable.ToArray%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-131">シーケンスを配列に変換します。</span><span class="sxs-lookup"><span data-stu-id="acff6-131">Convert a Sequence to an Array</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-sequence-to-an-array.md)  
+ <span data-ttu-id="acff6-132"><xref:System.Linq.Enumerable.ToArray%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-132">Provides examples of using <xref:System.Linq.Enumerable.ToArray%2A>.</span></span>  
   
- [Convert a Sequence to a Generic List](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-sequence-to-a-generic-list.md)  
- <xref:System.Linq.Enumerable.ToList%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-133">ジェネリック リストをシーケンスに変換します。</span><span class="sxs-lookup"><span data-stu-id="acff6-133">Convert a Sequence to a Generic List</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-sequence-to-a-generic-list.md)  
+ <span data-ttu-id="acff6-134"><xref:System.Linq.Enumerable.ToList%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-134">Provides examples of using <xref:System.Linq.Enumerable.ToList%2A>.</span></span>  
   
- [Convert a Type to a Generic IEnumerable](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-type-to-a-generic-ienumerable.md)  
- <xref:System.Linq.Enumerable.AsEnumerable%2A> の使用例を示して説明します。  
+ [<span data-ttu-id="acff6-135">汎用 IEnumerable への型を変換します。</span><span class="sxs-lookup"><span data-stu-id="acff6-135">Convert a Type to a Generic IEnumerable</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/convert-a-type-to-a-generic-ienumerable.md)  
+ <span data-ttu-id="acff6-136"><xref:System.Linq.Enumerable.AsEnumerable%2A> の使用例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-136">Provides examples of using <xref:System.Linq.Enumerable.AsEnumerable%2A>.</span></span>  
   
- [Formulate Joins and Cross\-Product Queries](../../../../../../docs/framework/data/adonet/sql/linq/formulate-joins-and-cross-product-queries.md)  
- `from` 句、`where` 句、および `select` 句で外部キーを移動する方法の例を示して説明します。  
+ [<span data-ttu-id="acff6-137">結合およびクロス積クエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="acff6-137">Formulate Joins and Cross-Product Queries</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/formulate-joins-and-cross-product-queries.md)  
+ <span data-ttu-id="acff6-138">`from` 句、`where` 句、および `select` 句で外部キーを移動する方法の例を示して説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-138">Provides examples of using foreign-key navigation in the `from`, `where`, and `select` clauses.</span></span>  
   
- [Formulate Projections](../../../../../../docs/framework/data/adonet/sql/linq/formulate-projections.md)  
- `select` と他の機能 \(*匿名型*など\) を組み合わせてクエリ射影を作成する方法の例を示して説明します。  
+ [<span data-ttu-id="acff6-139">射影の作成</span><span class="sxs-lookup"><span data-stu-id="acff6-139">Formulate Projections</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/formulate-projections.md)  
+ <span data-ttu-id="acff6-140">結合の例を示します`select`と他の機能 (たとえば、*匿名型*) クエリ射影を作成します。</span><span class="sxs-lookup"><span data-stu-id="acff6-140">Provides examples of combining `select` with other features (for example, *anonymous types*) to form query projections.</span></span>  
   
-## 関連項目  
- [Standard Query Operators Overview](../../../../../../ocs/visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- 標準クエリ演算子の概念について説明します。  
+## <a name="related-sections"></a><span data-ttu-id="acff6-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="acff6-141">Related Sections</span></span>  
+ [<span data-ttu-id="acff6-142">標準クエリ演算子の概要</span><span class="sxs-lookup"><span data-stu-id="acff6-142">Standard Query Operators Overview</span></span>](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)  
+ <span data-ttu-id="acff6-143">標準クエリ演算子の概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-143">Explains the concept of standard query operators.</span></span>  
   
- [Query Concepts](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
- クエリに関する概念が [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] でどのように使用されるかを説明します。  
+ [<span data-ttu-id="acff6-144">クエリの概念</span><span class="sxs-lookup"><span data-stu-id="acff6-144">Query Concepts</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
+ <span data-ttu-id="acff6-145">クエリに関する概念が [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] でどのように使用されるかを説明します。</span><span class="sxs-lookup"><span data-stu-id="acff6-145">Explains how [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] uses concepts that apply to queries.</span></span>  
   
- [プログラミング ガイド](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] に関連するプログラミングの概念を説明するトピックへのポータルです。
+ [<span data-ttu-id="acff6-146">プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="acff6-146">Programming Guide</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  
+ <span data-ttu-id="acff6-147">[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] に関連するプログラミングの概念を説明するトピックへのポータルです。</span><span class="sxs-lookup"><span data-stu-id="acff6-147">Provides a portal to topics that explain programming concepts related to [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].</span></span>

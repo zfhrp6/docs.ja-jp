@@ -1,27 +1,30 @@
 ---
-title: "System.Convert Methods | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "System.Convert メソッド"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3ca6c5b6-ea5d-4ab0-b675-f082135b342c
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 7f4ed9cc6ae4668fe978b0e7f685e360f1044e6b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# System.Convert Methods
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、次の <xref:System.Convert> メソッドをサポートしていません。  
+# <a name="systemconvert-methods"></a><span data-ttu-id="d1e19-102">System.Convert メソッド</span><span class="sxs-lookup"><span data-stu-id="d1e19-102">System.Convert Methods</span></span>
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<span data-ttu-id="d1e19-103"> は、次の <xref:System.Convert> メソッドをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="d1e19-103"> does not support the following <xref:System.Convert> methods.</span></span>  
   
--   <xref:System.IFormatProvider> パラメーターを持つ形式。  
+-   <span data-ttu-id="d1e19-104"><xref:System.IFormatProvider> パラメーターを持つ形式。</span><span class="sxs-lookup"><span data-stu-id="d1e19-104">Versions with an <xref:System.IFormatProvider> parameter.</span></span>  
   
--   文字配列またはバイト配列を扱うメソッド。  
+-   <span data-ttu-id="d1e19-105">文字配列またはバイト配列を扱うメソッド。</span><span class="sxs-lookup"><span data-stu-id="d1e19-105">Methods that involve char arrays or byte arrays:</span></span>  
   
     -   <xref:System.Convert.FromBase64CharArray%2A>  
   
@@ -31,19 +34,19 @@ caps.handback.revision: 2
   
     -   <xref:System.Convert.ToBase64String%2A>  
   
--   次のメソッド。  
+-   <span data-ttu-id="d1e19-106">次のメソッド。</span><span class="sxs-lookup"><span data-stu-id="d1e19-106">The following methods:</span></span>  
   
-    -   `public static <Type2> To<Type2>(<Type1> value);` \(  
+    -   <span data-ttu-id="d1e19-107">`public static <Type2> To<Type2>(<Type1> value);` (</span><span class="sxs-lookup"><span data-stu-id="d1e19-107">`public static <Type2> To<Type2>(<Type1> value);` where</span></span>  
   
-         `Type1` および `Type2` は `sbyte`、`uint`、`ulong`、`ushort` のいずれか\)  
+         <span data-ttu-id="d1e19-108">`Type1` および `Type2` は `sbyte`、`uint`、`ulong`、`ushort` のいずれか)</span><span class="sxs-lookup"><span data-stu-id="d1e19-108">`Type1` and `Type2` are each one of `sbyte`, `uint`, `ulong`, or `ushort`.</span></span>  
   
-    -   C\#:  
+    -   <span data-ttu-id="d1e19-109">C#: </span><span class="sxs-lookup"><span data-stu-id="d1e19-109">C#:</span></span>  
   
          `int To<int type>(string value, int fromBase),`  
   
-         `ToString(...  value, int toBase)`  
+         `ToString(... value, int toBase)`  
   
-    -   Visual Basic:  
+    -   <span data-ttu-id="d1e19-110">Visual Basic: </span><span class="sxs-lookup"><span data-stu-id="d1e19-110">Visual Basic:</span></span>  
   
          `Function To(Of [Numeric])(value as String, fromBase As Integer)`  
   
@@ -55,5 +58,5 @@ caps.handback.revision: 2
   
     -   <xref:System.Convert.ChangeType%2A>  
   
-## 参照  
- [Data Types and Functions](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+## <a name="see-also"></a><span data-ttu-id="d1e19-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="d1e19-111">See Also</span></span>  
+ [<span data-ttu-id="d1e19-112">データ型および関数</span><span class="sxs-lookup"><span data-stu-id="d1e19-112">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

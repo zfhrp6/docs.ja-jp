@@ -1,145 +1,144 @@
 ---
-title: "Entity SQL リファレンス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "Entity SQL リファレンス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 61ce7ee1-ffe2-477d-8a9f-835b0a11d900
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 776a2a93f559ba54651adc49e6b609c8156e9e31
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Entity SQL リファレンス
-このセクションには、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] リファレンス トピックがあります。このトピックでは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] の演算子について概要を説明し、カテゴリ別に分類しています。  
+# <a name="entity-sql-reference"></a><span data-ttu-id="2fb6d-102">Entity SQL リファレンス</span><span class="sxs-lookup"><span data-stu-id="2fb6d-102">Entity SQL Reference</span></span>
+<span data-ttu-id="2fb6d-103">このセクションには、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 参照に関するトピックがあります。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-103">This section contains [!INCLUDE[esql](../../../../../../includes/esql-md.md)] reference topics.</span></span> <span data-ttu-id="2fb6d-104">このトピックでは、カテゴリ別に [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 演算子をグループ化し、その概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-104">This topic summarizes and groups the [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operators by category.</span></span>  
   
-## 算術演算子  
- 算術演算子は、数値データ型が 1 つ以上含まれる 2 つの式の間で、数学的な操作を実行します。  次の表は、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] の算術演算子の一覧です。  
+## <a name="arithmetic-operators"></a><span data-ttu-id="2fb6d-105">算術演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-105">Arithmetic Operators</span></span>  
+ <span data-ttu-id="2fb6d-106">算術演算子は、数値データ型が 1 つ以上含まれる 2 つの式の間で、数学的な操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-106">Arithmetic operators perform mathematical operations on two expressions of one or more numeric data types.</span></span> <span data-ttu-id="2fb6d-107">次の表は、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] の算術演算子の一覧です。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-107">The following table lists the [!INCLUDE[esql](../../../../../../includes/esql-md.md)] arithmetic operators.</span></span>  
   
-|演算子|用途|  
-|---------|--------|  
-|[\+ \(加算\)](../../../../../../docs/framework/data/adonet/ef/language-reference/add.md)|加算。|  
-|[\/ \(除算\)](../../../../../../docs/framework/data/adonet/ef/language-reference/divide-entity-sql.md)|除算。|  
-|[% \(剰余\)](../../../../../../docs/framework/data/adonet/ef/language-reference/modulo-entity-sql.md)|除算の剰余|  
-|[\* \(乗算\)](../../../../../../docs/framework/data/adonet/ef/language-reference/multiply-entity-sql.md)|乗算。|  
-|[\- \(負符号\)](../../../../../../docs/framework/data/adonet/ef/language-reference/negative-entity-sql.md)|否定|  
-|[\- \(減算\)](../../../../../../docs/framework/data/adonet/ef/language-reference/subtract-entity-sql.md)|減算。|  
+|<span data-ttu-id="2fb6d-108">演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-108">Operator</span></span>|<span data-ttu-id="2fb6d-109">用途</span><span class="sxs-lookup"><span data-stu-id="2fb6d-109">Use</span></span>|  
+|--------------|---------|  
+|[<span data-ttu-id="2fb6d-110">+ (加算)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-110">+ (Add)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/add.md)|<span data-ttu-id="2fb6d-111">加算。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-111">Addition.</span></span>|  
+|<span data-ttu-id="2fb6d-112">「/(除算)」</span><span class="sxs-lookup"><span data-stu-id="2fb6d-112">"/ (Divide)"</span></span>|<span data-ttu-id="2fb6d-113">除算。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-113">Division.</span></span>|  
+|[<span data-ttu-id="2fb6d-114">% (剰余)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-114">% (Modulo)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/modulo-entity-sql.md)|<span data-ttu-id="2fb6d-115">除算の剰余</span><span class="sxs-lookup"><span data-stu-id="2fb6d-115">Returns the remainder of a division.</span></span>|  
+|[<span data-ttu-id="2fb6d-116">* (乗算)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-116">* (Multiply)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/multiply-entity-sql.md)|<span data-ttu-id="2fb6d-117">乗算。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-117">Multiplication.</span></span>|  
+|[<span data-ttu-id="2fb6d-118">-(負号)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-118">- (Negative)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/negative-entity-sql.md)|<span data-ttu-id="2fb6d-119">否定</span><span class="sxs-lookup"><span data-stu-id="2fb6d-119">Negation.</span></span>|  
+|[<span data-ttu-id="2fb6d-120">-(減算)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-120">- (Subtract)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/subtract-entity-sql.md)|<span data-ttu-id="2fb6d-121">減算。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-121">Subtraction.</span></span>|  
   
-## 正規関数  
- 正規関数とは、すべてのデータ プロバイダーがサポートし、あらゆるクエリ テクノロジで使用できる関数です。  次の表に正規関数を示します。  
+## <a name="canonical-functions"></a><span data-ttu-id="2fb6d-122">正規関数</span><span class="sxs-lookup"><span data-stu-id="2fb6d-122">Canonical Functions</span></span>  
+ <span data-ttu-id="2fb6d-123">正規関数とは、すべてのデータ プロバイダーがサポートし、あらゆるクエリ テクノロジで使用できる関数です。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-123">Canonical functions are supported by all data providers and can be used by all querying technologies.</span></span> <span data-ttu-id="2fb6d-124">次の表に正規関数を示します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-124">The following table lists the canonical functions.</span></span>  
   
-|関数|種類|  
-|--------|--------|  
-|[集計 Entity SQL 正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)|集計 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。|  
-|[数値演算正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|数学 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。|  
-|[文字列正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|文字列 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。|  
-|[日付と時刻の正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|日付および時刻の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。|  
-|[ビット単位の正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|ビット単位の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。|  
-|[その他の正規関数](../../../../../../docs/framework/data/adonet/ef/language-reference/other-canonical-functions.md)|ビット単位、日付\/時刻、文字列、数学、または集計に分類されない関数について説明します。|  
+|<span data-ttu-id="2fb6d-125">関数</span><span class="sxs-lookup"><span data-stu-id="2fb6d-125">Function</span></span>|<span data-ttu-id="2fb6d-126">型</span><span class="sxs-lookup"><span data-stu-id="2fb6d-126">Type</span></span>|  
+|--------------|----------|  
+|[<span data-ttu-id="2fb6d-127">集計 Entity SQL 正規関数</span><span class="sxs-lookup"><span data-stu-id="2fb6d-127">Aggregate Entity SQL Canonical Functions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)|<span data-ttu-id="2fb6d-128">集計 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-128">Discusses aggregate [!INCLUDE[esql](../../../../../../includes/esql-md.md)] canonical functions.</span></span>|  
+|[<span data-ttu-id="2fb6d-129">数値演算正規関数</span><span class="sxs-lookup"><span data-stu-id="2fb6d-129">Math Canonical Functions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|<span data-ttu-id="2fb6d-130">数学 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-130">Discusses math [!INCLUDE[esql](../../../../../../includes/esql-md.md)] canonical functions.</span></span>|  
+|[<span data-ttu-id="2fb6d-131">文字列正規関数</span><span class="sxs-lookup"><span data-stu-id="2fb6d-131">String Canonical Functions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|<span data-ttu-id="2fb6d-132">文字列 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-132">Discusses string [!INCLUDE[esql](../../../../../../includes/esql-md.md)] canonical functions.</span></span>|  
+|[<span data-ttu-id="2fb6d-133">日付と時刻の正規関数</span><span class="sxs-lookup"><span data-stu-id="2fb6d-133">Date and Time Canonical Functions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|<span data-ttu-id="2fb6d-134">日付および時刻の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-134">Discusses date and time [!INCLUDE[esql](../../../../../../includes/esql-md.md)] canonical functions.</span></span>|  
+|[<span data-ttu-id="2fb6d-135">ビットごとの正規関数</span><span class="sxs-lookup"><span data-stu-id="2fb6d-135">Bitwise Canonical Functions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|<span data-ttu-id="2fb6d-136">ビット単位の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 正規関数について説明します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-136">Discusses bitwise [!INCLUDE[esql](../../../../../../includes/esql-md.md)] canonical functions.</span></span>|  
+|[<span data-ttu-id="2fb6d-137">他の正規関数</span><span class="sxs-lookup"><span data-stu-id="2fb6d-137">Other Canonical Functions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/other-canonical-functions.md)|<span data-ttu-id="2fb6d-138">ビット単位、日付/時刻、文字列、数学、または集計に分類されない関数について説明します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-138">Discusses functions not classified as bitwise, date/time, string, math, or aggregate.</span></span>|  
   
-## 比較演算子  
- 比較演算子は、`Byte`、`Int16`、`Int32`、`Int64`、`Double`、`Single`、`Decimal`、`String`、`DateTime`、`Date`、`Time`、`DateTimeOffset` のデータ型に対して定義されます。  比較演算子が適用される前に、オペランドに対して暗黙の型の昇格が行われます。  比較演算子は常にブール値を取得します。  1 つ以上のオペランドが `null` である場合、結果は `null` になります。  
+## <a name="comparison-operators"></a><span data-ttu-id="2fb6d-139">比較演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-139">Comparison Operators</span></span>  
+ <span data-ttu-id="2fb6d-140">比較演算子は、`Byte`、`Int16`、`Int32`、`Int64`、`Double`、`Single`、`Decimal`、`String`、`DateTime`、`Date`、`Time`、`DateTimeOffset` のデータ型に対して定義されます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-140">Comparison operators are defined for the following types: `Byte`, `Int16`, `Int32`, `Int64`, `Double`, `Single`, `Decimal`, `String`, `DateTime`, `Date`, `Time`, `DateTimeOffset`.</span></span> <span data-ttu-id="2fb6d-141">比較演算子が適用される前に、オペランドに対して暗黙の型の昇格が行われます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-141">Implicit type promotion occurs for the operands before the comparison operator is applied.</span></span> <span data-ttu-id="2fb6d-142">比較演算子は常にブール値を取得します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-142">Comparison operators always yield Boolean values.</span></span> <span data-ttu-id="2fb6d-143">1 つ以上のオペランドが `null` である場合、結果は `null` になります。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-143">When at least one of the operands is `null`, the result is `null`.</span></span>  
   
- 等価演算子および非等価演算子は、`Boolean` 型など、ID を持つオブジェクト型に対して定義されます。  ID を含む非プリミティブ オブジェクトは、同じ ID を共有している場合に等価と見なされます。  次の表は、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] の比較演算子の一覧です。  
+ <span data-ttu-id="2fb6d-144">等価演算子および非等価演算子は、`Boolean` 型など、ID を持つオブジェクト型に対して定義されます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-144">Equality and inequality are defined for any object type that has identity, such as the `Boolean` type.</span></span> <span data-ttu-id="2fb6d-145">ID を含む非プリミティブ オブジェクトは、同じ ID を共有している場合に等価と見なされます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-145">Non-primitive objects with identity are considered equal if they share the same identity.</span></span> <span data-ttu-id="2fb6d-146">次の表は、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] の比較演算子の一覧です。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-146">The following table lists the [!INCLUDE[esql](../../../../../../includes/esql-md.md)] comparison operators.</span></span>  
   
-|演算子|説明|  
-|---------|--------|  
-|[\= \(等しい\)](../../../../../../docs/framework/data/adonet/ef/language-reference/equals-entity-sql.md)|2 つの式の等価性を比較します。|  
-|[\> \(より大きい\)](../../../../../../docs/framework/data/adonet/ef/language-reference/greater-than-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値よりも大きいかどうかを判別します。|  
-|[\>\= \(以上\)](../../../../../../docs/framework/data/adonet/ef/language-reference/greater-than-or-equal-to-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値以上であるかどうかを判別します。|  
-|[IS &#91;NOT&#93; NULL](../../../../../../docs/framework/data/adonet/ef/language-reference/isnull-entity-sql.md)|クエリ式が NULL かどうかを調べます。|  
-|[\< \(より小さい\)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値よりも小さいかどうかを判別します。|  
-|[\<\= \(以下\)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-or-equal-to-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値以下であるかどうかを判別します。|  
-|[&#91;NOT&#93; BETWEEN](../../../../../../docs/framework/data/adonet/ef/language-reference/between-entity-sql.md)|式の結果が指定の範囲内の値になるかどうかを判断します。|  
-|[\!\= \(等しくない\)](../../../../../../docs/framework/data/adonet/ef/language-reference/not-equal-to-entity-sql.md)|2 つの式を比較して、左の式の値が右の式の値と等しくないかどうかを判別します。|  
-|[&#91;NOT&#93; LIKE](../../../../../../docs/framework/data/adonet/ef/language-reference/like-entity-sql.md)|指定された文字列が指定されたパターンと一致するかどうかを判断します。|  
+|<span data-ttu-id="2fb6d-147">演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-147">Operator</span></span>|<span data-ttu-id="2fb6d-148">説明</span><span class="sxs-lookup"><span data-stu-id="2fb6d-148">Description</span></span>|  
+|--------------|-----------------|  
+|[<span data-ttu-id="2fb6d-149">= (等しい)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-149">= (Equals)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/equals-entity-sql.md)|<span data-ttu-id="2fb6d-150">2 つの式の等価性を比較します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-150">Compares the equality of two expressions.</span></span>|  
+|[<span data-ttu-id="2fb6d-151">> (より大きい)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-151">> (Greater Than)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/greater-than-entity-sql.md)|<span data-ttu-id="2fb6d-152">2 つの式を比較して、左の式の値が右の式の値よりも大きいかどうかを判別します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-152">Compares two expressions to determine whether the left expression has a value greater than the right expression.</span></span>|  
+|[<span data-ttu-id="2fb6d-153">> = (より大きいか等しい)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-153">>= (Greater Than or Equal To)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/greater-than-or-equal-to-entity-sql.md)|<span data-ttu-id="2fb6d-154">2 つの式を比較して、左の式の値が右の式の値以上であるかどうかを判別します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-154">Compares two expressions to determine whether the left expression has a value greater than or equal to the right expression.</span></span>|  
+|[<span data-ttu-id="2fb6d-155">& #91。いない &#93;です。NULL</span><span class="sxs-lookup"><span data-stu-id="2fb6d-155">IS &#91;NOT&#93; NULL</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/isnull-entity-sql.md)|<span data-ttu-id="2fb6d-156">クエリ式が NULL かどうかを調べます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-156">Determines if a query expression is null.</span></span>|  
+|[<span data-ttu-id="2fb6d-157">< (より小さい)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-157">< (Less Than)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-entity-sql.md)|<span data-ttu-id="2fb6d-158">2 つの式を比較して、左の式の値が右の式の値よりも小さいかどうかを判別します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-158">Compares two expressions to determine whether the left expression has a value less than the right expression.</span></span>|  
+|[<span data-ttu-id="2fb6d-159">< = (以下を)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-159"><= (Less Than or Equal To)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-or-equal-to-entity-sql.md)|<span data-ttu-id="2fb6d-160">2 つの式を比較して、左の式の値が右の式の値以下であるかどうかを判別します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-160">Compares two expressions to determine whether the left expression has a value less than or equal to the right expression.</span></span>|  
+|[<span data-ttu-id="2fb6d-161">& #91。いない &#93;です。間</span><span class="sxs-lookup"><span data-stu-id="2fb6d-161">&#91;NOT&#93; BETWEEN</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/between-entity-sql.md)|<span data-ttu-id="2fb6d-162">式の結果が指定の範囲内の値になるかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-162">Determines whether an expression results in a value in a specified range.</span></span>|  
+|[! = (等しくない)]<span data-ttu-id="2fb6d-163">(../../../../../../docs/framework/data/adonet/ef/language-reference/not-equal-to-entity-sql.md)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-163">(../../../../../../docs/framework/data/adonet/ef/language-reference/not-equal-to-entity-sql.md)</span></span>|<span data-ttu-id="2fb6d-164">2 つの式を比較して、左の式の値が右の式の値と等しくないかどうかを判別します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-164">Compares two expressions to determine whether the left expression is not equal to the right expression.</span></span>|  
+|[<span data-ttu-id="2fb6d-165">& #91。いない &#93;です。という感じで</span><span class="sxs-lookup"><span data-stu-id="2fb6d-165">&#91;NOT&#93; LIKE</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/like-entity-sql.md)|<span data-ttu-id="2fb6d-166">指定された文字列が指定されたパターンと一致するかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-166">Determines whether a specific character string matches a specified pattern.</span></span>|  
   
-## 論理演算子と CASE 式演算子  
- 論理演算子は、条件の真偽をテストします。  CASE 式は、一連のブール式を評価して結果を判定します。  次の表に論理演算子と CASE 式演算子を示します。  
+## <a name="logical-and-case-expression-operators"></a><span data-ttu-id="2fb6d-167">論理演算子と CASE 式演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-167">Logical and Case Expression Operators</span></span>  
+ <span data-ttu-id="2fb6d-168">論理演算子は、条件の真偽をテストします。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-168">Logical operators test for the truth of a condition.</span></span> <span data-ttu-id="2fb6d-169">CASE 式は、一連のブール式を評価して結果を判定します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-169">The CASE expression evaluates a set of Boolean expressions to determine the result.</span></span> <span data-ttu-id="2fb6d-170">次の表に論理演算子と CASE 式演算子を示します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-170">The following table lists the logical and CASE expression operators.</span></span>  
   
-|演算子|説明|  
-|---------|--------|  
-|[&& \(論理 AND\)](../../../../../../docs/framework/data/adonet/ef/language-reference/and-entity-sql.md)|論理 AND。|  
-|[\!  \(論理 NOT\)](../../../../../../docs/framework/data/adonet/ef/language-reference/not-entity-sql.md)|論理 NOT。|  
-|[&#124;&#124; \(論理 OR\)](../../../../../../docs/framework/data/adonet/ef/language-reference/or-entity-sql.md)|論理 OR。|  
-|[CASE](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)|一連のブール式を評価して結果を決定します。|  
-|[THEN](../../../../../../docs/framework/data/adonet/ef/language-reference/then-entity-sql.md)|[WHEN](http://msdn.microsoft.com/ja-jp/6233fe9f-00b0-460e-8372-64e138a5f998) 句が true に評価された場合の結果です。|  
+|<span data-ttu-id="2fb6d-171">演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-171">Operator</span></span>|<span data-ttu-id="2fb6d-172">説明</span><span class="sxs-lookup"><span data-stu-id="2fb6d-172">Description</span></span>|  
+|--------------|-----------------|  
+|[<span data-ttu-id="2fb6d-173">& & (論理 AND)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-173">&& (Logical AND)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/and-entity-sql.md)|<span data-ttu-id="2fb6d-174">論理 AND。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-174">Logical AND.</span></span>|  
+|[!(論理 NOT)]<span data-ttu-id="2fb6d-175">(../../../../../../docs/framework/data/adonet/ef/language-reference/not-entity-sql.md)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-175">(../../../../../../docs/framework/data/adonet/ef/language-reference/not-entity-sql.md)</span></span>|<span data-ttu-id="2fb6d-176">論理 NOT。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-176">Logical NOT.</span></span>|  
+|[<span data-ttu-id="2fb6d-177">&#124; &#124;です。(論理 OR)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-177">&#124;&#124; (Logical OR)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/or-entity-sql.md)|<span data-ttu-id="2fb6d-178">論理 OR。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-178">Logical OR.</span></span>|  
+|[<span data-ttu-id="2fb6d-179">場合</span><span class="sxs-lookup"><span data-stu-id="2fb6d-179">CASE</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)|<span data-ttu-id="2fb6d-180">一連のブール式を評価して結果を決定します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-180">Evaluates a set of Boolean expressions to determine the result.</span></span>|  
+|[<span data-ttu-id="2fb6d-181">そうしたら</span><span class="sxs-lookup"><span data-stu-id="2fb6d-181">THEN</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/then-entity-sql.md)|<span data-ttu-id="2fb6d-182">結果、[とき](http://msdn.microsoft.com/en-us/6233fe9f-00b0-460e-8372-64e138a5f998)句を true に評価された場合。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-182">The result of a [WHEN](http://msdn.microsoft.com/en-us/6233fe9f-00b0-460e-8372-64e138a5f998) clause when it evaluates to true.</span></span>|  
   
-## クエリ演算子  
- クエリ演算子は、エンティティ データを返すクエリ式を定義するために使用されます。  次の表にクエリ演算子を示します。  
+## <a name="query-operators"></a><span data-ttu-id="2fb6d-183">クエリ演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-183">Query Operators</span></span>  
+ <span data-ttu-id="2fb6d-184">クエリ演算子は、エンティティ データを返すクエリ式を定義するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-184">Query operators are used to define query expressions that return entity data.</span></span> <span data-ttu-id="2fb6d-185">次の表にクエリ演算子を示します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-185">The following table lists query operators.</span></span>  
   
-|演算子|用途|  
-|---------|--------|  
-|[FROM](../../../../../../docs/framework/data/adonet/ef/language-reference/from-entity-sql.md)|[SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) ステートメントで使用するコレクションを指定します。|  
-|[GROUP BY](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md)|クエリ \([SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)\) 式によって返されるオブジェクトをグループ化するよう指定します。|  
-|[GroupPartition](../../../../../../docs/framework/data/adonet/ef/language-reference/grouppartition-entity-sql.md)|引数値のコレクションを返します。この値は、集計の関係先であるグループ パーティションから投影されたものです。|  
-|[HAVING](../../../../../../docs/framework/data/adonet/ef/language-reference/having-entity-sql.md)|グループまたは集計の検索条件を指定します。|  
-|[LIMIT](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)|[ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md) 句と共に使用されて、物理ページングを実行します。|  
-|[ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)|[SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) ステートメントで返されるオブジェクトで使用される並べ替え順を指定します。|  
-|[SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)|クエリによって返される投影の要素を指定します。|  
-|[SKIP](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md)|[ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md) 句と共に使用されて、物理ページングを実行します。|  
-|[TOP](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)|クエリ結果の先頭から指定した行セットだけを返すよう指定します。|  
-|[WHERE](../../../../../../docs/framework/data/adonet/ef/language-reference/where-entity-sql.md)|クエリによって返されるデータを条件に基づいてフィルター処理します。|  
+|<span data-ttu-id="2fb6d-186">演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-186">Operator</span></span>|<span data-ttu-id="2fb6d-187">用途</span><span class="sxs-lookup"><span data-stu-id="2fb6d-187">Use</span></span>|  
+|--------------|---------|  
+|[<span data-ttu-id="2fb6d-188">差出人</span><span class="sxs-lookup"><span data-stu-id="2fb6d-188">FROM</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/from-entity-sql.md)|<span data-ttu-id="2fb6d-189">使用されているコレクションを示す[選択](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-189">Specifies the collection that is used in [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) statements.</span></span>|  
+|[<span data-ttu-id="2fb6d-190">グループ化</span><span class="sxs-lookup"><span data-stu-id="2fb6d-190">GROUP BY</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md)|<span data-ttu-id="2fb6d-191">クエリによって返されるをオブジェクト グループを指定します ([選択](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)) を配置する式は、します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-191">Specifies groups into which objects that are returned by a query ([SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)) expression are to be placed.</span></span>|  
+|[<span data-ttu-id="2fb6d-192">続いて GroupPartition</span><span class="sxs-lookup"><span data-stu-id="2fb6d-192">GroupPartition</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/grouppartition-entity-sql.md)|<span data-ttu-id="2fb6d-193">引数値のコレクションを返します。この値は、集計の関係先であるグループ パーティションから投影されたものです。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-193">Returns a collection of argument values, projected off the group partition to which the aggregate is related.</span></span>|  
+|[<span data-ttu-id="2fb6d-194">持つ</span><span class="sxs-lookup"><span data-stu-id="2fb6d-194">HAVING</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/having-entity-sql.md)|<span data-ttu-id="2fb6d-195">グループまたは集計の検索条件を指定します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-195">Specifies a search condition for a group or an aggregate.</span></span>|  
+|[<span data-ttu-id="2fb6d-196">制限</span><span class="sxs-lookup"><span data-stu-id="2fb6d-196">LIMIT</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)|<span data-ttu-id="2fb6d-197">使用される、 [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)句物理ページングを実行します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-197">Used with the [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md) clause to performed physical paging.</span></span>|  
+|[<span data-ttu-id="2fb6d-198">ORDER BY</span><span class="sxs-lookup"><span data-stu-id="2fb6d-198">ORDER BY</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)|<span data-ttu-id="2fb6d-199">返されたオブジェクトで使用されている並べ替え順序を指定します、[選択](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-199">Specifies the sort order that is used on objects returned in a [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) statement.</span></span>|  
+|[<span data-ttu-id="2fb6d-200">選択します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-200">SELECT</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)|<span data-ttu-id="2fb6d-201">クエリによって返される投影の要素を指定します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-201">Specifies the elements in the projection that are returned by a query.</span></span>|  
+|[<span data-ttu-id="2fb6d-202">スキップします。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-202">SKIP</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md)|<span data-ttu-id="2fb6d-203">使用される、 [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)句物理ページングを実行します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-203">Used with the [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md) clause to performed physical paging.</span></span>|  
+|[<span data-ttu-id="2fb6d-204">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="2fb6d-204">TOP</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)|<span data-ttu-id="2fb6d-205">クエリ結果の先頭から指定した行セットだけを返すよう指定します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-205">Specifies that only the first set of rows will be returned from the query result.</span></span>|  
+|[<span data-ttu-id="2fb6d-206">どこ</span><span class="sxs-lookup"><span data-stu-id="2fb6d-206">WHERE</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/where-entity-sql.md)|<span data-ttu-id="2fb6d-207">クエリによって返されるデータを条件に基づいてフィルター処理します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-207">Conditionally filters data that is returned by a query.</span></span>|  
   
-## リファレンス演算子  
- リファレンスは、特定のエンティティ セットにある特定のエンティティへの論理ポインター \(外部キー\) です。  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、参照の構築、分解、およびナビゲートを行うための次の演算子がサポートされています。  
+## <a name="reference-operators"></a><span data-ttu-id="2fb6d-208">リファレンス演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-208">Reference Operators</span></span>  
+ <span data-ttu-id="2fb6d-209">リファレンスは、特定のエンティティ セットにある特定のエンティティへの論理ポインター (外部キー) です。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-209">A reference is a logical pointer (foreign key) to a specific entity in a specific entity set.</span></span> [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="2fb6d-210">構築、分解、および参照を使用して移動するには、次の演算子をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-210"> supports the following operators to construct, deconstruct, and navigate through references.</span></span>  
   
-|演算子|用途|  
-|---------|--------|  
-|[CREATEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md)|エンティティ セット内のエンティティへの参照を作成します。|  
-|[DEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/deref-entity-sql.md)|参照値を逆参照し、その逆参照の結果を生成します。|  
-|[KEY](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md)|参照またはエンティティ式のキーを抽出します。|  
-|[NAVIGATE](../../../../../../docs/framework/data/adonet/ef/language-reference/navigate-entity-sql.md)|リレーションシップ内のエンティティ型間を移動するために使用します。|  
-|[REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)|エンティティ インスタンスへの参照を返します。|  
+|<span data-ttu-id="2fb6d-211">演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-211">Operator</span></span>|<span data-ttu-id="2fb6d-212">用途</span><span class="sxs-lookup"><span data-stu-id="2fb6d-212">Use</span></span>|  
+|--------------|---------|  
+|[<span data-ttu-id="2fb6d-213">CREATEREF</span><span class="sxs-lookup"><span data-stu-id="2fb6d-213">CREATEREF</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md)|<span data-ttu-id="2fb6d-214">エンティティ セット内のエンティティへの参照を作成します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-214">Creates references to an entity in an entity set.</span></span>|  
+|[<span data-ttu-id="2fb6d-215">DEREF</span><span class="sxs-lookup"><span data-stu-id="2fb6d-215">DEREF</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/deref-entity-sql.md)|<span data-ttu-id="2fb6d-216">参照値を逆参照し、その逆参照の結果を生成します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-216">Dereferences a reference value and produces the result of that dereference.</span></span>|  
+|[<span data-ttu-id="2fb6d-217">キー</span><span class="sxs-lookup"><span data-stu-id="2fb6d-217">KEY</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md)|<span data-ttu-id="2fb6d-218">参照またはエンティティ式のキーを抽出します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-218">Extracts the key of a reference or of an entity expression.</span></span>|  
+|[<span data-ttu-id="2fb6d-219">移動</span><span class="sxs-lookup"><span data-stu-id="2fb6d-219">NAVIGATE</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/navigate-entity-sql.md)|<span data-ttu-id="2fb6d-220">リレーションシップ内のエンティティ型間を移動するために使用します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-220">Allows you to navigate over the relationship from one entity type to another</span></span>|  
+|[<span data-ttu-id="2fb6d-221">REF</span><span class="sxs-lookup"><span data-stu-id="2fb6d-221">REF</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)|<span data-ttu-id="2fb6d-222">エンティティ インスタンスへの参照を返します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-222">Returns a reference to an entity instance.</span></span>|  
   
-## 集合演算子  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は各種の強力な集合演算機能を備えています。  これには、UNION、INTERSECT、EXCEPT、EXISTS などの Transact\-SQL  演算子に類似する集合演算子が含まれます。  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、重複排除 \(SET\)、メンバーシップのテスト \(IN\)、および結合 \(JOIN\) の演算子もサポートされています。  次の表に [!INCLUDE[esql](../../../../../../includes/esql-md.md)] の集合演算子を示します。  
+## <a name="set-operators"></a><span data-ttu-id="2fb6d-223">集合演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-223">Set Operators</span></span>  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="2fb6d-224"> は各種の強力な集合演算機能を備えています。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-224"> provides various powerful set operations.</span></span> <span data-ttu-id="2fb6d-225">これには、set 演算子 UNION、INTERSECT、EXCEPT などの TRANSACT-SQL 演算子に似ていますが含まれます、および EXISTS です。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-225">This includes set operators similar to Transact-SQL  operators such as UNION, INTERSECT, EXCEPT, and EXISTS.</span></span> [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="2fb6d-226"> では、重複排除 (SET)、メンバーシップのテスト (IN)、および結合 (JOIN) の演算子もサポートされています。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-226"> also supports operators for duplicate elimination (SET), membership testing (IN), and joins (JOIN).</span></span> <span data-ttu-id="2fb6d-227">次の表に [!INCLUDE[esql](../../../../../../includes/esql-md.md)] の集合演算子を示します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-227">The following table lists the [!INCLUDE[esql](../../../../../../includes/esql-md.md)] set operators.</span></span>  
   
-|演算子|用途|  
-|---------|--------|  
-|[ANYELEMENT](../../../../../../docs/framework/data/adonet/ef/language-reference/anyelement-entity-sql.md)|複数値のコレクションから要素を抽出します。|  
-|[EXCEPT](../../../../../../docs/framework/data/adonet/ef/language-reference/except-entity-sql.md)|EXCEPT オペランドの左辺のクエリ式から返される結果のうち、右辺のクエリ式でも返される結果を除いた、重複しない値のコレクションを返します。|  
-|[&#91;NOT&#93; EXISTS](../../../../../../docs/framework/data/adonet/ef/language-reference/exists-entity-sql.md)|コレクションが空かどうかを調べます。|  
-|[FLATTEN](../../../../../../docs/framework/data/adonet/ef/language-reference/flatten-entity-sql.md)|コレクションのコレクションをフラット化して単一のコレクションに変換します。|  
-|[&#91;NOT&#93; IN](../../../../../../docs/framework/data/adonet/ef/language-reference/in-entity-sql.md)|コレクション内に一致する値があるかどうかを調べます。|  
-|[INTERSECT](../../../../../../docs/framework/data/adonet/ef/language-reference/intersect-entity-sql.md)|INTERSECT オペランドの左右両方のクエリ式によって返される個別の値のコレクションを返します。|  
-|[OVERLAPS](../../../../../../docs/framework/data/adonet/ef/language-reference/overlaps-entity-sql.md)|2 つのコレクションに共通の要素が存在するかどうかを調べます。|  
-|[SET](../../../../../../docs/framework/data/adonet/ef/language-reference/set-entity-sql.md)|重複する要素をすべて除外した新しいコレクションを生成することによって、オブジェクトのコレクションを 1 つの集合に変換するために使用されます。|  
-|[UNION](../../../../../../docs/framework/data/adonet/ef/language-reference/union-entity-sql.md)|複数のクエリの結果を 1 つのコレクションに結合します。|  
+|<span data-ttu-id="2fb6d-228">演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-228">Operator</span></span>|<span data-ttu-id="2fb6d-229">用途</span><span class="sxs-lookup"><span data-stu-id="2fb6d-229">Use</span></span>|  
+|--------------|---------|  
+|[<span data-ttu-id="2fb6d-230">ANYELEMENT</span><span class="sxs-lookup"><span data-stu-id="2fb6d-230">ANYELEMENT</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/anyelement-entity-sql.md)|<span data-ttu-id="2fb6d-231">複数値のコレクションから要素を抽出します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-231">Extracts an element from a multivalued collection.</span></span>|  
+|[<span data-ttu-id="2fb6d-232">点を除いて</span><span class="sxs-lookup"><span data-stu-id="2fb6d-232">EXCEPT</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/except-entity-sql.md)|<span data-ttu-id="2fb6d-233">EXCEPT オペランドの左辺のクエリ式から返される結果のうち、右辺のクエリ式でも返される結果を除いた、重複しない値のコレクションを返します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-233">Returns a collection of any distinct values from the query expression to the left of the EXCEPT operand that are not also returned from the query expression to the right of the EXCEPT operand.</span></span>|  
+|[<span data-ttu-id="2fb6d-234">& #91。いない &#93;です。存在します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-234">&#91;NOT&#93; EXISTS</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/exists-entity-sql.md)|<span data-ttu-id="2fb6d-235">コレクションが空かどうかを調べます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-235">Determines if a collection is empty.</span></span>|  
+|[<span data-ttu-id="2fb6d-236">フラット化します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-236">FLATTEN</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/flatten-entity-sql.md)|<span data-ttu-id="2fb6d-237">コレクションのコレクションをフラット化して単一のコレクションに変換します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-237">Converts a collection of collections into a flattened collection.</span></span>|  
+|[<span data-ttu-id="2fb6d-238">& #91。いない &#93;です。IN</span><span class="sxs-lookup"><span data-stu-id="2fb6d-238">&#91;NOT&#93; IN</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/in-entity-sql.md)|<span data-ttu-id="2fb6d-239">コレクション内に一致する値があるかどうかを調べます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-239">Determines whether a value matches any value in a collection.</span></span>|  
+|[<span data-ttu-id="2fb6d-240">INTERSECT</span><span class="sxs-lookup"><span data-stu-id="2fb6d-240">INTERSECT</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/intersect-entity-sql.md)|<span data-ttu-id="2fb6d-241">INTERSECT オペランドの左右両方のクエリ式によって返される個別の値のコレクションを返します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-241">Returns a collection of any distinct values that are returned by both the query expressions on the left and right sides of the INTERSECT operand.</span></span>|  
+|[<span data-ttu-id="2fb6d-242">重複しています</span><span class="sxs-lookup"><span data-stu-id="2fb6d-242">OVERLAPS</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/overlaps-entity-sql.md)|<span data-ttu-id="2fb6d-243">2 つのコレクションに共通の要素が存在するかどうかを調べます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-243">Determines whether two collections have common elements.</span></span>|  
+|[<span data-ttu-id="2fb6d-244">設定</span><span class="sxs-lookup"><span data-stu-id="2fb6d-244">SET</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/set-entity-sql.md)|<span data-ttu-id="2fb6d-245">重複する要素をすべて除外した新しいコレクションを生成することによって、オブジェクトのコレクションを 1 つの集合に変換するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-245">Used to convert a collection of objects into a set by yielding a new collection with all duplicate elements removed.</span></span>|  
+|[<span data-ttu-id="2fb6d-246">UNION</span><span class="sxs-lookup"><span data-stu-id="2fb6d-246">UNION</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/union-entity-sql.md)|<span data-ttu-id="2fb6d-247">複数のクエリの結果を 1 つのコレクションに結合します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-247">Combines the results of two or more queries into a single collection.</span></span>|  
   
-## 型演算子  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、式 \(値\) の型の構築、クエリの実行、および操作を実行できます。  次の表に型の操作に使用される演算子を示します。  
+## <a name="type-operators"></a><span data-ttu-id="2fb6d-248">型演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-248">Type Operators</span></span>  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="2fb6d-249">式 (値) を作成、照会、および操作の種類を許可する操作を提供します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-249"> provides operations that allow the type of an expression (value) to be constructed, queried, and manipulated.</span></span> <span data-ttu-id="2fb6d-250">次の表に型の操作に使用される演算子を示します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-250">The following table lists operators that are used to work with types.</span></span>  
   
-|演算子|用途|  
-|---------|--------|  
-|[CAST](../../../../../../docs/framework/data/adonet/ef/language-reference/cast-entity-sql.md)|あるデータ型の式を別のデータ型に変換します。|  
-|[COLLECTION](../../../../../../docs/framework/data/adonet/ef/language-reference/collection-entity-sql.md)|[FUNCTION](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md) 演算で使用され、エンティティ型または複合型のコレクションを宣言します。|  
-|[IS &#91;NOT&#93; OF](../../../../../../docs/framework/data/adonet/ef/language-reference/isof-entity-sql.md)|式の型が指定の型であるか、またはそのサブタイプであるかを判断します。|  
-|[OFTYPE](../../../../../../docs/framework/data/adonet/ef/language-reference/oftype-entity-sql.md)|クエリ式を使用して、指定された型のオブジェクトのコレクションを返します。|  
-|[名前付きの型コンストラクター](../../../../../../docs/framework/data/adonet/ef/language-reference/named-type-constructor-entity-sql.md)|エンティティ型または複合型のインスタンスの作成に使用されます。|  
-|[MULTISET](../../../../../../docs/framework/data/adonet/ef/language-reference/multiset-entity-sql.md)|値のリストからマルチセットのインスタンスを作成します。|  
-|[ROW](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md)|1 つまたは複数の値から構造的に型付けされた匿名レコードを構築します。|  
-|[TREAT](../../../../../../docs/framework/data/adonet/ef/language-reference/treat-entity-sql.md)|特定の基本データ型のオブジェクトを指定の派生型のオブジェクトとして処理します。|  
+|<span data-ttu-id="2fb6d-251">演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-251">Operator</span></span>|<span data-ttu-id="2fb6d-252">用途</span><span class="sxs-lookup"><span data-stu-id="2fb6d-252">Use</span></span>|  
+|--------------|---------|  
+|[<span data-ttu-id="2fb6d-253">キャスト</span><span class="sxs-lookup"><span data-stu-id="2fb6d-253">CAST</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/cast-entity-sql.md)|<span data-ttu-id="2fb6d-254">あるデータ型の式を別のデータ型に変換します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-254">Converts an expression of one data type to another.</span></span>|  
+|[<span data-ttu-id="2fb6d-255">コレクション</span><span class="sxs-lookup"><span data-stu-id="2fb6d-255">COLLECTION</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/collection-entity-sql.md)|<span data-ttu-id="2fb6d-256">使用される、[関数](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md)宣言エンティティ型または複合型のコレクションを操作します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-256">Used in a [FUNCTION](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md) operation to declare a collection of entity types or complex types.</span></span>|  
+|[<span data-ttu-id="2fb6d-257">& #91。いない &#93;です。の</span><span class="sxs-lookup"><span data-stu-id="2fb6d-257">IS &#91;NOT&#93; OF</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/isof-entity-sql.md)|<span data-ttu-id="2fb6d-258">式の型が指定の型であるか、またはそのサブタイプであるかを判断します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-258">Determines whether the type of an expression is of the specified type or one of its subtypes.</span></span>|  
+|[<span data-ttu-id="2fb6d-259">OFTYPE</span><span class="sxs-lookup"><span data-stu-id="2fb6d-259">OFTYPE</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/oftype-entity-sql.md)|<span data-ttu-id="2fb6d-260">クエリ式を使用して、指定された型のオブジェクトのコレクションを返します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-260">Returns a collection of objects from a query expression that is of a specific type.</span></span>|  
+|[<span data-ttu-id="2fb6d-261">名前付きの型のコンス トラクター</span><span class="sxs-lookup"><span data-stu-id="2fb6d-261">Named Type Constructor</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/named-type-constructor-entity-sql.md)|<span data-ttu-id="2fb6d-262">エンティティ型または複合型のインスタンスの作成に使用されます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-262">Used to create instances of entity types or complex types.</span></span>|  
+|[<span data-ttu-id="2fb6d-263">MULTISET</span><span class="sxs-lookup"><span data-stu-id="2fb6d-263">MULTISET</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/multiset-entity-sql.md)|<span data-ttu-id="2fb6d-264">値のリストからマルチセットのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-264">Creates an instance of a multiset from a list of values.</span></span>|  
+|[<span data-ttu-id="2fb6d-265">行</span><span class="sxs-lookup"><span data-stu-id="2fb6d-265">ROW</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md)|<span data-ttu-id="2fb6d-266">1 つまたは複数の値から構造的に型付けされた匿名レコードを構築します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-266">Constructs anonymous, structurally typed records from one or more values.</span></span>|  
+|[<span data-ttu-id="2fb6d-267">処理</span><span class="sxs-lookup"><span data-stu-id="2fb6d-267">TREAT</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/treat-entity-sql.md)|<span data-ttu-id="2fb6d-268">特定の基本データ型のオブジェクトを指定の派生型のオブジェクトとして処理します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-268">Treats an object of a particular base type as an object of the specified derived type.</span></span>|  
   
-## その他の演算子  
- 次の表にその他の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 演算子を示します。  
+## <a name="other-operators"></a><span data-ttu-id="2fb6d-269">その他の演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-269">Other Operators</span></span>  
+ <span data-ttu-id="2fb6d-270">次の表の[!INCLUDE[esql](../../../../../../includes/esql-md.md)]演算子。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-270">The following table lists other [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operators.</span></span>  
   
-|演算子|用途|  
-|---------|--------|  
-|[\+ \(文字列連結\)](../../../../../../docs/framework/data/adonet/ef/language-reference/string-concatenation-entity-sql.md)|[!INCLUDE[esql](../../../../../../includes/esql-md.md)] で文字列を連結するために使用されます。|  
-|[.  \(メンバー アクセス\)](../../../../../../docs/framework/data/adonet/ef/language-reference/member-access-entity-sql.md)|構造型概念モデル型のインスタンスのプロパティ値またはフィールド値にアクセスするために使用されます。|  
-|[\-\- \(コメント\)](../../../../../../docs/framework/data/adonet/ef/language-reference/comment-entity-sql.md)|[!INCLUDE[esql](../../../../../../includes/esql-md.md)] コメントを含めます。|  
-|[FUNCTION](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md)|Entity SQL クエリで実行できるインライン関数を定義します。|  
+|<span data-ttu-id="2fb6d-271">演算子</span><span class="sxs-lookup"><span data-stu-id="2fb6d-271">Operator</span></span>|<span data-ttu-id="2fb6d-272">用途</span><span class="sxs-lookup"><span data-stu-id="2fb6d-272">Use</span></span>|  
+|--------------|---------|  
+|[<span data-ttu-id="2fb6d-273">+ (文字列連結)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-273">+ (String Concatenation)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/string-concatenation-entity-sql.md)|<span data-ttu-id="2fb6d-274">[!INCLUDE[esql](../../../../../../includes/esql-md.md)] で文字列を連結するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-274">Used to concatenate strings in [!INCLUDE[esql](../../../../../../includes/esql-md.md)].</span></span>|  
+|[<span data-ttu-id="2fb6d-275">。(メンバー アクセス)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-275">. (Member Access)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/member-access-entity-sql.md)|<span data-ttu-id="2fb6d-276">構造型概念モデル型のインスタンスのプロパティ値またはフィールド値にアクセスするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-276">Used to access the value of a property or field of an instance of structural conceptual model type.</span></span>|  
+|[<span data-ttu-id="2fb6d-277">-(コメント)</span><span class="sxs-lookup"><span data-stu-id="2fb6d-277">-- (Comment)</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/comment-entity-sql.md)|<span data-ttu-id="2fb6d-278">[!INCLUDE[esql](../../../../../../includes/esql-md.md)] コメントを含めます。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-278">Include [!INCLUDE[esql](../../../../../../includes/esql-md.md)] comments.</span></span>|  
+|[<span data-ttu-id="2fb6d-279">関数</span><span class="sxs-lookup"><span data-stu-id="2fb6d-279">FUNCTION</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md)|<span data-ttu-id="2fb6d-280">Entity SQL クエリで実行できるインライン関数を定義します。</span><span class="sxs-lookup"><span data-stu-id="2fb6d-280">Defines an inline function that can be executed in an Entity SQL query.</span></span>|  
   
-## 参照  
- [Entity SQL 言語](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)
+## <a name="see-also"></a><span data-ttu-id="2fb6d-281">関連項目</span><span class="sxs-lookup"><span data-stu-id="2fb6d-281">See Also</span></span>  
+ [<span data-ttu-id="2fb6d-282">Entity SQL 言語</span><span class="sxs-lookup"><span data-stu-id="2fb6d-282">Entity SQL Language</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)

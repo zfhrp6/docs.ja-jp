@@ -1,66 +1,69 @@
 ---
-title: "&lt;probing&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/probing"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#probing"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<probing> 要素"
-  - "コンテナー タグ, <probing> 要素"
-  - "probing 要素"
+title: "&lt;プローブ&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/probing
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#probing
+helpviewer_keywords:
+- <probing> element
+- container tags, <probing> element
+- probing element
 ms.assetid: 09c80fc9-1ba5-4192-89f7-3a79b2e4b024
-caps.latest.revision: 13
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 7dd829fbbfbaa6f26b59e26d5a8b1d2b36593f57
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;probing&gt; 要素
-アセンブリを読み込むときに、共通言語ランタイムが検索するアプリケーション ベース サブディレクトリを指定します。  
+# <a name="ltprobinggt-element"></a><span data-ttu-id="2d12b-102">&lt;プローブ&gt;要素</span><span class="sxs-lookup"><span data-stu-id="2d12b-102">&lt;probing&gt; Element</span></span>
+<span data-ttu-id="2d12b-103">アプリケーション ベース、共通言語ランタイム アセンブリを読み込むときに検索するサブディレクトリを指定します。</span><span class="sxs-lookup"><span data-stu-id="2d12b-103">Specifies application base subdirectories for the common language runtime to search when loading assemblies.</span></span>  
   
-## 構文  
+ <span data-ttu-id="2d12b-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="2d12b-104">\<configuration></span></span>  
+<span data-ttu-id="2d12b-105">\<ランタイム ></span><span class="sxs-lookup"><span data-stu-id="2d12b-105">\<runtime></span></span>  
+<span data-ttu-id="2d12b-106">\<assemblyBinding ></span><span class="sxs-lookup"><span data-stu-id="2d12b-106">\<assemblyBinding></span></span>  
+<span data-ttu-id="2d12b-107">\<probing ></span><span class="sxs-lookup"><span data-stu-id="2d12b-107">\<probing></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="2d12b-108">構文</span><span class="sxs-lookup"><span data-stu-id="2d12b-108">Syntax</span></span>  
+  
+```xml  
 <probing privatePath="paths"/>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="2d12b-109">属性および要素</span><span class="sxs-lookup"><span data-stu-id="2d12b-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="2d12b-110">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="2d12b-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="2d12b-111">属性</span><span class="sxs-lookup"><span data-stu-id="2d12b-111">Attributes</span></span>  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`privatePath`|必須の属性です。<br /><br /> アセンブリが格納されているアプリケーションのベース ディレクトリのサブディレクトリを指定します。  サブディレクトリは、セミコロン \(;\) で区切ります。|  
+|<span data-ttu-id="2d12b-112">属性</span><span class="sxs-lookup"><span data-stu-id="2d12b-112">Attribute</span></span>|<span data-ttu-id="2d12b-113">説明</span><span class="sxs-lookup"><span data-stu-id="2d12b-113">Description</span></span>|  
+|---------------|-----------------|  
+|`privatePath`|<span data-ttu-id="2d12b-114">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="2d12b-114">Required attribute.</span></span><br /><br /> <span data-ttu-id="2d12b-115">アセンブリを含めることができるアプリケーションのベース ディレクトリのサブディレクトリを指定します。</span><span class="sxs-lookup"><span data-stu-id="2d12b-115">Specifies subdirectories of the application's base directory that might contain assemblies.</span></span> <span data-ttu-id="2d12b-116">各サブディレクトリをセミコロンで区切ります。</span><span class="sxs-lookup"><span data-stu-id="2d12b-116">Delimit each subdirectory with a semicolon.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="2d12b-117">子要素</span><span class="sxs-lookup"><span data-stu-id="2d12b-117">Child Elements</span></span>  
+ <span data-ttu-id="2d12b-118">なし。</span><span class="sxs-lookup"><span data-stu-id="2d12b-118">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="2d12b-119">親要素</span><span class="sxs-lookup"><span data-stu-id="2d12b-119">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|`assemblyBinding`|アセンブリ バージョンのリダイレクトおよびアセンブリの位置に関する情報が含まれます。|  
-|`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
-|`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
+|<span data-ttu-id="2d12b-120">要素</span><span class="sxs-lookup"><span data-stu-id="2d12b-120">Element</span></span>|<span data-ttu-id="2d12b-121">説明</span><span class="sxs-lookup"><span data-stu-id="2d12b-121">Description</span></span>|  
+|-------------|-----------------|  
+|`assemblyBinding`|<span data-ttu-id="2d12b-122">アセンブリ バージョンのリダイレクトおよびアセンブリの位置に関する情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="2d12b-122">Contains information about assembly version redirection and the locations of assemblies.</span></span>|  
+|`configuration`|<span data-ttu-id="2d12b-123">共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。</span><span class="sxs-lookup"><span data-stu-id="2d12b-123">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="2d12b-124">アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="2d12b-124">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## 使用例  
- ランタイムがアセンブリを検索するアプリケーション ベース サブディレクトリを指定する例を示します。  
+## <a name="example"></a><span data-ttu-id="2d12b-125">例</span><span class="sxs-lookup"><span data-stu-id="2d12b-125">Example</span></span>  
+ <span data-ttu-id="2d12b-126">次の例では、アプリケーションの基本サブディレクトリが、ランタイムがアセンブリを検索する必要がありますを指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="2d12b-126">The following example shows how to specify application base subdirectories the runtime should search for assemblies.</span></span>  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -70,8 +73,8 @@ caps.handback.revision: 13
 </configuration>  
 ```  
   
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [アセンブリの場所の指定](../../../../../docs/framework/configure-apps/specify-assembly-location.md)   
- [ランタイムがアセンブリを検索する方法](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+## <a name="see-also"></a><span data-ttu-id="2d12b-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="2d12b-127">See Also</span></span>  
+ [<span data-ttu-id="2d12b-128">ランタイム設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="2d12b-128">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="2d12b-129">構成ファイル スキーマ</span><span class="sxs-lookup"><span data-stu-id="2d12b-129">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="2d12b-130">アセンブリの場所の指定</span><span class="sxs-lookup"><span data-stu-id="2d12b-130">Specifying an Assembly's Location</span></span>](../../../../../docs/framework/configure-apps/specify-assembly-location.md)  
+ [<span data-ttu-id="2d12b-131">ランタイムがアセンブリを検索する方法</span><span class="sxs-lookup"><span data-stu-id="2d12b-131">How the Runtime Locates Assemblies</span></span>](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

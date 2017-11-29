@@ -1,25 +1,31 @@
 ---
-title: "DataSet に対する XPath クエリの実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataSet に対する XPath クエリの実行"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: e8a993c75f33dd3c98da5534658d02b4eeeda51a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataSet に対する XPath クエリの実行
-同期された <xref:System.Data.DataSet> と <xref:System.Xml.XmlDataDocument> との間のリレーションシップによって、XPath \(XML Path Language\) クエリなどの XML サービスが使用できます。XML サービスは **XmlDataDocument** にアクセスし、**DataSet** に直接アクセスするよりも、特定の機能を効率的に実行できます。  たとえば、<xref:System.Data.DataTable> の **Select** メソッドを使用して **DataSet** の他のテーブルとのリレーションシップをナビゲートする代わりに、**DataSet** と同期化された **XmlDataDocument** に対して XPath クエリを実行すると、<xref:System.Xml.XmlNodeList> 形式で XML 要素のリストを取得できます。  <xref:System.Xml.XmlElement> ノードとしてキャストされた **XmlNodeList** のノードを **XmlDataDocument** の **GetRowFromElement** メソッドに渡すと、同期化された **DataSet** のテーブルの行に一致する <xref:System.Data.DataRow> 参照が返されます。  
+# <a name="performing-an-xpath-query-on-a-dataset"></a><span data-ttu-id="d5ff7-102">DataSet に対する XPath クエリの実行</span><span class="sxs-lookup"><span data-stu-id="d5ff7-102">Performing an XPath Query on a DataSet</span></span>
+<span data-ttu-id="d5ff7-103">同期済みの間のリレーションシップ<xref:System.Data.DataSet>と<xref:System.Xml.XmlDataDocument>XML を使用することができますにアクセスする XML パス言語 (XPath) クエリなどのサービス、 **XmlDataDocument**し、特定の機能を実行することができます簡単にアクセスするよりも、**データセット**直接です。</span><span class="sxs-lookup"><span data-stu-id="d5ff7-103">The relationship between a synchronized <xref:System.Data.DataSet> and <xref:System.Xml.XmlDataDocument> allows you to make use of XML services, such as the XML Path Language (XPath) query, that access the **XmlDataDocument** and can perform certain functionality more conveniently than accessing the **DataSet** directly.</span></span> <span data-ttu-id="d5ff7-104">使用するのではなく、たとえば、**選択**のメソッド、<xref:System.Data.DataTable>で他のテーブルへのリレーションシップを移動する、**データセット**、に対して XPath クエリを実行できる、 **XmlDataDocument**と同期されている、**データセット**の形式で XML 要素の一覧を取得する、<xref:System.Xml.XmlNodeList>です。</span><span class="sxs-lookup"><span data-stu-id="d5ff7-104">For example, rather than using the **Select** method of a <xref:System.Data.DataTable> to navigate relationships to other tables in a **DataSet**, you can perform an XPath query on an **XmlDataDocument** that is synchronized with the **DataSet**, to get a list of XML elements in the form of an <xref:System.Xml.XmlNodeList>.</span></span> <span data-ttu-id="d5ff7-105">内のノード、 **XmlNodeList**としてキャストされた、<xref:System.Xml.XmlElement>ノードに渡すことができます、 **GetRowFromElement**のメソッド、 **XmlDataDocument**を一致を返す<xref:System.Data.DataRow>は同期済みテーブルの行への参照**データセット**です。</span><span class="sxs-lookup"><span data-stu-id="d5ff7-105">The nodes in the **XmlNodeList**, cast as <xref:System.Xml.XmlElement> nodes, can then be passed to the **GetRowFromElement** method of the **XmlDataDocument**, to return matching <xref:System.Data.DataRow> references to the rows of the table in the synchronized **DataSet**.</span></span>  
   
- たとえば、次に示すコード サンプルでは孫 XPath クエリが実行されます。  **DataSet** には、**Customers**、**Orders**、および **OrderDetails** の 3 つのテーブルが格納されています。  このサンプルでは、**Customers** テーブルと **Orders** テーブルの間に親子のリレーションが作成され、次に **Orders** テーブルと **OrderDetails** テーブルの間に親子のリレーションが作成されます。  XPath クエリが実行され、値 43 の **ProductID** ノードを持つ孫 **OrderDetails** ノードのある **Customers** ノードの **XmlNodeList** リストが返されます。  つまり、このサンプルでは、XPath クエリを使用して **ProductID** が 43 の製品を注文した顧客を確認します。  
+ <span data-ttu-id="d5ff7-106">たとえば、次に示すコード サンプルでは孫 XPath クエリが実行されます。</span><span class="sxs-lookup"><span data-stu-id="d5ff7-106">For example, the following code sample performs a "grandchild" XPath query.</span></span> <span data-ttu-id="d5ff7-107">**データセット**は 3 つのテーブルで塗りつぶされます:**顧客**、 **Orders**、および**OrderDetails**です。</span><span class="sxs-lookup"><span data-stu-id="d5ff7-107">The **DataSet** is filled with three tables: **Customers**, **Orders**, and **OrderDetails**.</span></span> <span data-ttu-id="d5ff7-108">サンプルでは、親子関係が最初に作成の間、**顧客**と**Orders**テーブル、および、 **Orders**と**OrderDetails**テーブル。</span><span class="sxs-lookup"><span data-stu-id="d5ff7-108">In the sample, a parent-child relation is first created between the **Customers** and **Orders** tables, and between the **Orders** and **OrderDetails** tables.</span></span> <span data-ttu-id="d5ff7-109">XPath クエリが実行されを返す、 **XmlNodeList**の**顧客**ノード、孫**OrderDetails**ノードには、 **ProductID**43 の値を持つノード。</span><span class="sxs-lookup"><span data-stu-id="d5ff7-109">An XPath query is then performed to return an **XmlNodeList** of **Customers** nodes where a grandchild **OrderDetails** node has a **ProductID** node with the value of 43.</span></span> <span data-ttu-id="d5ff7-110">基本的には、サンプルは、クエリを使用して XPath を持つ製品を注文した顧客を決定する、 **ProductID** 43 のです。</span><span class="sxs-lookup"><span data-stu-id="d5ff7-110">In essence, the sample is using the XPath query to determine which customers have ordered the product that has the **ProductID** of 43.</span></span>  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection.  
@@ -105,6 +111,6 @@ foreach (XmlNode xmlNode in nodeList)
 }  
 ```  
   
-## 参照  
- [DataSet と XmlDataDocument の同期](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="d5ff7-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="d5ff7-111">See Also</span></span>  
+ [<span data-ttu-id="d5ff7-112">DataSet と XmlDataDocument の同期</span><span class="sxs-lookup"><span data-stu-id="d5ff7-112">DataSet and XmlDataDocument Synchronization</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
+ [<span data-ttu-id="d5ff7-113">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="d5ff7-113">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

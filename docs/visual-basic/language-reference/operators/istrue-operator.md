@@ -1,58 +1,56 @@
 ---
-title: "IsTrue Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.istrue"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "IsTrue operator"
-  - "OrElse operator [Visual Basic]"
+title: "IsTrue 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.istrue
+helpviewer_keywords:
+- IsTrue operator [Visual Basic]
+- OrElse operator [Visual Basic]
 ms.assetid: b6cec0f2-61b1-4331-a7f0-4d07ee3179d6
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: c0d261186ce68f06cec95251e815248a189f6da5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# IsTrue Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-式が `True` かどうかを調べます。  
+# <a name="istrue-operator-visual-basic"></a><span data-ttu-id="8d0dd-102">IsTrue 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8d0dd-102">IsTrue Operator (Visual Basic)</span></span>
+<span data-ttu-id="8d0dd-103">式は、かどうかを判断`True`です。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-103">Determines whether an expression is `True`.</span></span>  
   
- `IsTrue` をコードの中で明示的に呼び出すことはできませんが、Visual Basic コンパイラはこれを使用して `OrElse` 句からコードを生成します。  クラスまたは構造体を定義し、`OrElse` 句でその型の変数を使用する場合、そのクラスまたは構造体で `IsTrue` を定義する必要があります。  
+ <span data-ttu-id="8d0dd-104">呼び出すことはできません`IsTrue`明示的に、コードが、Visual Basic のコンパイラが使用できるからコードを生成する`OrElse`句。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-104">You cannot call `IsTrue` explicitly in your code, but the Visual Basic compiler can use it to generate code from `OrElse` clauses.</span></span> <span data-ttu-id="8d0dd-105">クラスまたは構造体を定義しでその型の変数を使用する場合、`OrElse`を定義する必要があります句、`IsTrue`そのクラスまたは構造にします。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-105">If you define a class or structure and then use a variable of that type in an `OrElse` clause, you must define `IsTrue` on that class or structure.</span></span>  
   
- コンパイラは `IsTrue` および `IsFalse` 演算子を *一致したペア*と見なします。  つまり、一方を定義したら、もう一方も定義する必要があります。  
+ <span data-ttu-id="8d0dd-106">コンパイラは、`IsTrue`と`IsFalse`演算子として、*ペア*です。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-106">The compiler considers the `IsTrue` and `IsFalse` operators as a *matched pair*.</span></span> <span data-ttu-id="8d0dd-107">つまり、それらのいずれかを定義する場合をする必要がありますも定義、もう 1 つです。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-107">This means that if you define one of them, you must also define the other one.</span></span>  
   
-## IsTrue のコンパイラによる使用  
- クラスまたは構造体を定義した場合、その型の変数を `For`、`If`、`Else` `If`、または `While` ステートメントまたは `When` 句で使用できます。  この場合、コンパイラは条件をテストするために、この型を `Boolean` 値に変換する演算子が必要です。  適切な演算子は次の順序で検索されます。  
+## <a name="compiler-use-of-istrue"></a><span data-ttu-id="8d0dd-108">IsTrue のコンパイラの使用</span><span class="sxs-lookup"><span data-stu-id="8d0dd-108">Compiler Use of IsTrue</span></span>  
+ <span data-ttu-id="8d0dd-109">クラスまたは構造体を定義したらでその型の変数を使用することができます、 `For`、 `If`、 `Else``If`、または`While`ステートメント、または、`When`句。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-109">When you have defined a class or structure, you can use a variable of that type in a `For`, `If`, `Else``If`, or `While` statement, or in a `When` clause.</span></span> <span data-ttu-id="8d0dd-110">これを行う場合、コンパイラは、演算子に、型に変換する`Boolean`条件をテストするための値します。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-110">If you do this, the compiler requires an operator that converts your type into a `Boolean` value so it can test a condition.</span></span> <span data-ttu-id="8d0dd-111">これは、適切な演算子は次の順序で検索します。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-111">It searches for a suitable operator in the following order:</span></span>  
   
-1.  クラスまたは構造体から `Boolean` への拡大変換演算子  
+1.  <span data-ttu-id="8d0dd-112">クラスまたは構造から拡大変換演算子`Boolean`です。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-112">A widening conversion operator from your class or structure to `Boolean`.</span></span>  
   
-2.  クラスまたは構造体から `Boolean?` への拡大変換演算子  
+2.  <span data-ttu-id="8d0dd-113">クラスまたは構造から拡大変換演算子`Boolean?`です。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-113">A widening conversion operator from your class or structure to `Boolean?`.</span></span>  
   
-3.  クラスまたは構造体上の `IsTrue` 演算子  
+3.  <span data-ttu-id="8d0dd-114">`IsTrue`クラスまたは構造体で演算子。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-114">The `IsTrue` operator on your class or structure.</span></span>  
   
-4.  `Boolean` から `Boolean?` への変換が含まれない `Boolean?` への縮小変換  
+4.  <span data-ttu-id="8d0dd-115">縮小変換`Boolean?`からの変換を含まない`Boolean`に`Boolean?`です。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-115">A narrowing conversion to `Boolean?` that does not involve a conversion from `Boolean` to `Boolean?`.</span></span>  
   
-5.  クラスまたは構造体から `Boolean` への縮小変換演算子  
+5.  <span data-ttu-id="8d0dd-116">クラスまたは構造から縮小変換演算子`Boolean`です。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-116">A narrowing conversion operator from your class or structure to `Boolean`.</span></span>  
   
- `Boolean` への変換、または `IsTrue` 演算子を定義していない場合、コンパイラはエラーを返します。  
+ <span data-ttu-id="8d0dd-117">変換を定義していない場合`Boolean`または`IsTrue`演算子、コンパイラがエラーを通知します。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-117">If you have not defined any conversion to `Boolean` or an `IsTrue` operator, the compiler signals an error.</span></span>  
   
 > [!NOTE]
->  `IsTrue` は *オーバーロード* できます。つまり、オペランドがクラスまたは構造体の型であれば、クラスまたは構造体がこの動作を再定義できます。  このようなクラスまたは構造体でこの演算子を使用している場合、再定義された動作を確認してください。  詳細については、「[Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+>  <span data-ttu-id="8d0dd-118">`IsTrue`演算子を指定できます*オーバー ロードされた*、いるクラスまたは構造体を再定義できますその動作のオペランドは、そのクラスまたは構造体の型を持つときにすることを意味します。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-118">The `IsTrue` operator can be *overloaded*, which means that a class or structure can redefine its behavior when its operand has the type of that class or structure.</span></span> <span data-ttu-id="8d0dd-119">コードは、このようなクラスまたは構造体で、この演算子を使用する場合は、再定義された動作を理解することを確認します。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-119">If your code uses this operator on such a class or structure, be sure you understand its redefined behavior.</span></span> <span data-ttu-id="8d0dd-120">詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-120">For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).</span></span>  
   
-## 使用例  
- 次のコード例では、`IsFalse` および `IsTrue` 演算子の定義を含む構造体の骨組みを定義します。  
+## <a name="example"></a><span data-ttu-id="8d0dd-121">例</span><span class="sxs-lookup"><span data-stu-id="8d0dd-121">Example</span></span>  
+ <span data-ttu-id="8d0dd-122">次のコード例の定義を含む構造体の輪郭の定義、`IsFalse`と`IsTrue`演算子。</span><span class="sxs-lookup"><span data-stu-id="8d0dd-122">The following code example defines the outline of a structure that includes definitions for the `IsFalse` and `IsTrue` operators.</span></span>  
   
  [!code-vb[VbVbalrOperators#28](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/istrue-operator_1.vb)]  
   
-## 参照  
- [IsFalse Operator](../../../visual-basic/language-reference/operators/isfalse-operator.md)   
- [How to: Define an Operator](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)   
- [OrElse Operator](../../../visual-basic/language-reference/operators/orelse-operator.md)
+## <a name="see-also"></a><span data-ttu-id="8d0dd-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="8d0dd-123">See Also</span></span>  
+ [<span data-ttu-id="8d0dd-124">IsFalse 演算子</span><span class="sxs-lookup"><span data-stu-id="8d0dd-124">IsFalse Operator</span></span>](../../../visual-basic/language-reference/operators/isfalse-operator.md)  
+ [<span data-ttu-id="8d0dd-125">方法 : 演算子を定義する</span><span class="sxs-lookup"><span data-stu-id="8d0dd-125">How to: Define an Operator</span></span>](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)  
+ [<span data-ttu-id="8d0dd-126">OrElse 演算子</span><span class="sxs-lookup"><span data-stu-id="8d0dd-126">OrElse Operator</span></span>](../../../visual-basic/language-reference/operators/orelse-operator.md)

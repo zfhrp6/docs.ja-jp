@@ -1,61 +1,64 @@
 ---
-title: "&lt;namedCaches&gt; の &lt;clear&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<namedCaches> の <clear> 要素"
-  - "<namedCaches> の clear 要素"
+title: "&lt;オフ&gt;要素&lt;namedCaches&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- <clear> element for <namedCaches>
+- clear element for <namedCaches>
 ms.assetid: ea01a858-65da-4348-800f-5e3df59d4d79
-caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 0819141b2135a2de99a2801a1888f7b0e1cd19fc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;namedCaches&gt; の &lt;clear&gt; 要素
-メモリ キャッシュの `namedCaches` コレクションのすべての `namedCache` エントリを消去します。  
+# <a name="ltcleargt-element-for-ltnamedcachesgt"></a><span data-ttu-id="f177c-102">&lt;オフ&gt;要素&lt;namedCaches&gt;</span><span class="sxs-lookup"><span data-stu-id="f177c-102">&lt;clear&gt; Element for &lt;namedCaches&gt;</span></span>
+<span data-ttu-id="f177c-103">すべてを消去`namedCache`内のエントリ、`namedCaches`メモリ キャッシュのコレクション。</span><span class="sxs-lookup"><span data-stu-id="f177c-103">Clears all `namedCache` entries in the `namedCaches` collection for a memory cache.</span></span>  
   
-## 構文  
+ <span data-ttu-id="f177c-104">\<system.runtime.caching ></span><span class="sxs-lookup"><span data-stu-id="f177c-104">\<system.runtime.caching></span></span>  
+<span data-ttu-id="f177c-105">\<memoryCache ></span><span class="sxs-lookup"><span data-stu-id="f177c-105">\<memoryCache></span></span>  
+<span data-ttu-id="f177c-106">\<namedCaches ></span><span class="sxs-lookup"><span data-stu-id="f177c-106">\<namedCaches></span></span>  
+<span data-ttu-id="f177c-107">\<add></span><span class="sxs-lookup"><span data-stu-id="f177c-107">\<add></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="f177c-108">構文</span><span class="sxs-lookup"><span data-stu-id="f177c-108">Syntax</span></span>  
+  
+```xml  
 <namedCaches>  
     <clear name="default" />  
     <!-- child elements -->  
  </namedCaches>  
 ```  
   
-## 型  
+## <a name="type"></a><span data-ttu-id="f177c-109">型</span><span class="sxs-lookup"><span data-stu-id="f177c-109">Type</span></span>  
  `Type`  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="f177c-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="f177c-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="f177c-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="f177c-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="f177c-112">属性</span><span class="sxs-lookup"><span data-stu-id="f177c-112">Attributes</span></span>  
  `None`  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="f177c-113">子要素</span><span class="sxs-lookup"><span data-stu-id="f177c-113">Child Elements</span></span>  
  `None`  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="f177c-114">親要素</span><span class="sxs-lookup"><span data-stu-id="f177c-114">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<namedCaches\>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|名前付き <xref:System.Runtime.Caching.MemoryCache> インスタンスの構成設定のコレクションが含まれます。|  
+|<span data-ttu-id="f177c-115">要素</span><span class="sxs-lookup"><span data-stu-id="f177c-115">Element</span></span>|<span data-ttu-id="f177c-116">説明</span><span class="sxs-lookup"><span data-stu-id="f177c-116">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="f177c-117">\<namedCaches></span><span class="sxs-lookup"><span data-stu-id="f177c-117">\<namedCaches></span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|<span data-ttu-id="f177c-118">名前付きの構成設定のコレクションを含んでいます<xref:System.Runtime.Caching.MemoryCache>インスタンス。</span><span class="sxs-lookup"><span data-stu-id="f177c-118">Contains a collection of configuration settings for the named <xref:System.Runtime.Caching.MemoryCache> instances.</span></span>|  
   
-## 解説  
- `clear` 要素は、メモリ キャッシュの名前付きキャッシュ コレクション内のすべての `namedCache` エントリを消去します。  `add` 要素を使用する前に `clear` 要素を使用すると、コレクション内に他の名前付きキャッシュがないことを確認するために、新しい名前付きキャッシュ エントリを追加できます。  
+## <a name="remarks"></a><span data-ttu-id="f177c-119">コメント</span><span class="sxs-lookup"><span data-stu-id="f177c-119">Remarks</span></span>  
+ <span data-ttu-id="f177c-120">`clear`要素には、すべてを消去`namedCache`メモリ キャッシュの名前付きキャッシュ コレクション内のエントリ。</span><span class="sxs-lookup"><span data-stu-id="f177c-120">The `clear` element clears all `namedCache` entries in the named cache collection for a memory cache.</span></span> <span data-ttu-id="f177c-121">使用することができます、`clear`要素を使用する前に、`add`があるユーザーが何を特定するために新しい名前付きキャッシュ エントリを追加する要素がコレクション内のキャッシュをという名前です。</span><span class="sxs-lookup"><span data-stu-id="f177c-121">You can use the `clear` element before you use the `add` element to add a new named cache entry in order to be certain there are no other named caches in the collection.</span></span>  
   
-## 参照  
- [\<namedCaches\> 要素 \(キャッシュ設定\)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)
+## <a name="see-also"></a><span data-ttu-id="f177c-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="f177c-122">See Also</span></span>  
+ [<span data-ttu-id="f177c-123">\<namedCaches > 要素 (キャッシュの設定)</span><span class="sxs-lookup"><span data-stu-id="f177c-123">\<namedCaches> Element (Cache Settings)</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)

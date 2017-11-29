@@ -1,37 +1,43 @@
 ---
-title: "Generic Field and SetField Methods (LINQ to DataSet) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ジェネリック メソッド Field および SetField (LINQ to DataSet)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 1883365f-9d6c-4ccb-9187-df309f47706d
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 58c2126c97d68fbe33d53b9d9ffa81fcc1aec8a0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Generic Field and SetField Methods (LINQ to DataSet)
-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] では、<xref:System.Data.DataRow> クラスの拡張メソッドとして、列値にアクセスするための <xref:System.Data.DataRowExtensions.Field%2A> メソッドおよび <xref:System.Data.DataRowExtensions.SetField%2A> メソッドが提供されています。これらのメソッドを使用すると、開発者は列値に容易にアクセスでき、特に、Null 値へのアクセスが容易になっています。<xref:System.Data.DataSet> が <xref:System.DBNull.Value> を使って Null 値を表現するのに対し、[!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] では、[!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)] で導入された Null 許容型が使用されます。  <xref:System.Data.DataRow> の既存の列アクセサーを使用する場合、返されたオブジェクトを適切な型にキャストする必要があります。  <xref:System.Data.DataRow> の特定のフィールドが NULL 値を許容している場合、Null 値を明示的にチェックする必要があります。<xref:System.DBNull.Value> を取得して、それを暗黙的に別の型にキャストしようとすると、<xref:System.InvalidCastException> がスローされます。  次の例では、<xref:System.Data.DataRow.IsNull%2A> メソッドを使用して Null 値をチェックしなかった場合、インデクサーが <xref:System.DBNull.Value> を返し、それを <xref:System.String> にキャストしようとすると、例外がスローされます。  
+# <a name="generic-field-and-setfield-methods-linq-to-dataset"></a><span data-ttu-id="ecf00-102">ジェネリック メソッド Field および SetField (LINQ to DataSet)</span><span class="sxs-lookup"><span data-stu-id="ecf00-102">Generic Field and SetField Methods (LINQ to DataSet)</span></span>
+[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]<span data-ttu-id="ecf00-103"> では、<xref:System.Data.DataRow> クラスの拡張メソッドとして、列値にアクセスするための <xref:System.Data.DataRowExtensions.Field%2A> メソッドおよび <xref:System.Data.DataRowExtensions.SetField%2A> メソッドが提供されています。</span><span class="sxs-lookup"><span data-stu-id="ecf00-103"> provides extension methods to the <xref:System.Data.DataRow> class for accessing column values: the <xref:System.Data.DataRowExtensions.Field%2A> method and the <xref:System.Data.DataRowExtensions.SetField%2A> method.</span></span> <span data-ttu-id="ecf00-104">開発者はこれらのメソッドを使用することで、列値に容易にアクセスできます。特に強化されている点は Null 値の扱いです。</span><span class="sxs-lookup"><span data-stu-id="ecf00-104">These methods provide easier access to column values for developers, especially regarding null values.</span></span> <span data-ttu-id="ecf00-105"><xref:System.Data.DataSet> が <xref:System.DBNull.Value> を使って Null 値を表現するのに対し、[!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] では、[!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)] で導入された Null 許容型が使用されます。</span><span class="sxs-lookup"><span data-stu-id="ecf00-105">The <xref:System.Data.DataSet> uses <xref:System.DBNull.Value> to represent null values, whereas [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] uses the nullable type support introduced in the [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)].</span></span> <span data-ttu-id="ecf00-106">既存の列アクセサーを使用して<xref:System.Data.DataRow>戻りオブジェクトを適切な型をキャストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="ecf00-106">Using the pre-existing column accessor in <xref:System.Data.DataRow> requires you to cast the return object to the appropriate type.</span></span> <span data-ttu-id="ecf00-107">特定のフィールドで、 <xref:System.Data.DataRow> null には、null 値を明示的にチェックする必要がありますを返すため<xref:System.DBNull.Value>別の型をスローに暗黙的にキャストして、<xref:System.InvalidCastException>です。</span><span class="sxs-lookup"><span data-stu-id="ecf00-107">If a particular field in a <xref:System.Data.DataRow> can be null, you must explicitly check for a null value because returning <xref:System.DBNull.Value> and implicitly casting it to another type throws an <xref:System.InvalidCastException>.</span></span> <span data-ttu-id="ecf00-108">次の例では場合、<xref:System.Data.DataRow.IsNull%2A>インデクサーが返される場合は、例外がスローされます、null 値をチェックするメソッドが使用されませんでした<xref:System.DBNull.Value>およびにキャストしようとした、<xref:System.String>です。</span><span class="sxs-lookup"><span data-stu-id="ecf00-108">In the following example, if the <xref:System.Data.DataRow.IsNull%2A> method was not used to check for a null value, an exception would be thrown if the indexer returned <xref:System.DBNull.Value> and tried to cast it to a <xref:System.String>.</span></span>  
   
  [!code-csharp[DP LINQ to DataSet Examples#WhereIsNull](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#whereisnull)]
  [!code-vb[DP LINQ to DataSet Examples#WhereIsNull](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#whereisnull)]  
   
- <xref:System.Data.DataRowExtensions.Field%2A> は、<xref:System.Data.DataRow> の列値にアクセスするためのメソッドです。<xref:System.Data.DataRowExtensions.SetField%2A> は、<xref:System.Data.DataRow> の列値を設定するためのメソッドです。  <xref:System.Data.DataRowExtensions.Field%2A> メソッドも <xref:System.Data.DataRowExtensions.SetField%2A> メソッドも Null 許容型を扱うことができるため、前出の例のように Null 値を明示的にチェックする必要はありません。  また、どちらのメソッドもジェネリック メソッドであるため、戻り値の型をキャストする必要もありません。  
+ <span data-ttu-id="ecf00-109"><xref:System.Data.DataRowExtensions.Field%2A> は、<xref:System.Data.DataRow> の列値にアクセスするためのメソッドです。<xref:System.Data.DataRowExtensions.SetField%2A> は、<xref:System.Data.DataRow> の列値を設定するためのメソッドです。</span><span class="sxs-lookup"><span data-stu-id="ecf00-109">The <xref:System.Data.DataRowExtensions.Field%2A> method provides access to the column values of a <xref:System.Data.DataRow> and the <xref:System.Data.DataRowExtensions.SetField%2A> sets column values in a <xref:System.Data.DataRow>.</span></span> <span data-ttu-id="ecf00-110"><xref:System.Data.DataRowExtensions.Field%2A> メソッドも <xref:System.Data.DataRowExtensions.SetField%2A> メソッドも Null 許容型を扱うことができるため、前出の例のように Null 値を明示的にチェックする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="ecf00-110">Both the <xref:System.Data.DataRowExtensions.Field%2A> method and <xref:System.Data.DataRowExtensions.SetField%2A> method handle nullable types, so you do not have to explicitly check for null values as in the previous example.</span></span> <span data-ttu-id="ecf00-111">また、どちらのメソッドもジェネリック メソッドであるため、戻り値の型をキャストする必要もありません。</span><span class="sxs-lookup"><span data-stu-id="ecf00-111">Both methods are generic methods, also, so you do not have to cast the return type.</span></span>  
   
- 次の例では、<xref:System.Data.DataRowExtensions.Field%2A> メソッドを使用します。  
+ <span data-ttu-id="ecf00-112">次の例では、<xref:System.Data.DataRowExtensions.Field%2A> メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="ecf00-112">The following example uses the <xref:System.Data.DataRowExtensions.Field%2A> method.</span></span>  
   
  [!code-csharp[DP LINQ to DataSet Examples#Where3](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#where3)]
  [!code-vb[DP LINQ to DataSet Examples#Where3](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#where3)]  
   
- <xref:System.Data.DataRowExtensions.Field%2A> メソッドおよび <xref:System.Data.DataRowExtensions.SetField%2A> メソッドのジェネリック パラメーター `T` に指定するデータ型は、基になる値の型と一致している必要があります。  それ以外の場合、<xref:System.InvalidCastException> 例外がスローされます。  指定する列の名前も <xref:System.Data.DataSet> 内の列名と一致している必要があります。一致していない場合、<xref:System.ArgumentException> がスローされます。  どちらの場合も、例外は、実行時にデータが列挙されて、クエリが実行されたときにスローされます。  
+ <span data-ttu-id="ecf00-113">`T` メソッドおよび <xref:System.Data.DataRowExtensions.Field%2A> メソッドのジェネリック パラメーター <xref:System.Data.DataRowExtensions.SetField%2A> に指定するデータ型は、基になる値の型と一致している必要があります。</span><span class="sxs-lookup"><span data-stu-id="ecf00-113">Note that the data type specified in the generic parameter `T` of the <xref:System.Data.DataRowExtensions.Field%2A> method and the <xref:System.Data.DataRowExtensions.SetField%2A> method must match the type of the underlying value.</span></span> <span data-ttu-id="ecf00-114">それ以外の場合、<xref:System.InvalidCastException> 例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="ecf00-114">Otherwise, an <xref:System.InvalidCastException> exception will be thrown.</span></span> <span data-ttu-id="ecf00-115">指定する列の名前も <xref:System.Data.DataSet> 内の列名と一致している必要があります。一致していない場合、<xref:System.ArgumentException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="ecf00-115">The specified column name must also match the name of a column in the <xref:System.Data.DataSet>, or an <xref:System.ArgumentException> will be thrown.</span></span> <span data-ttu-id="ecf00-116">どちらの場合も、例外は、実行時にデータが列挙されて、クエリが実行されたときにスローされます。</span><span class="sxs-lookup"><span data-stu-id="ecf00-116">In both cases, the exception is thrown at run time during the enumeration of the data when the query is executed.</span></span>  
   
- <xref:System.Data.DataRowExtensions.SetField%2A> メソッド自体は、型変換を一切実行しません。  ただし、型変換がまったく発生しないということではありません。  <xref:System.Data.DataRowExtensions.SetField%2A> メソッドは、[!INCLUDE[ado_whidbey_long](../../../../includes/ado-whidbey-long-md.md)] の <xref:System.Data.DataRow> クラスの動作を公開します。  <xref:System.Data.DataRow> オブジェクトによって型変換が実行され、変換後の値が <xref:System.Data.DataRow> オブジェクトに保存される場合もあります。  
+ <span data-ttu-id="ecf00-117"><xref:System.Data.DataRowExtensions.SetField%2A> メソッド自体は、型変換を一切実行しません。</span><span class="sxs-lookup"><span data-stu-id="ecf00-117">The <xref:System.Data.DataRowExtensions.SetField%2A> method itself does not perform any type conversions.</span></span> <span data-ttu-id="ecf00-118">ただし、型変換がまったく発生しないということではありません。</span><span class="sxs-lookup"><span data-stu-id="ecf00-118">This does not mean, however, that a type conversion will not occur.</span></span> <span data-ttu-id="ecf00-119"><xref:System.Data.DataRowExtensions.SetField%2A>メソッドの公開、[!INCLUDE[ado_whidbey_long](../../../../includes/ado-whidbey-long-md.md)]の動作、<xref:System.Data.DataRow>クラスです。</span><span class="sxs-lookup"><span data-stu-id="ecf00-119">The <xref:System.Data.DataRowExtensions.SetField%2A> method exposes the [!INCLUDE[ado_whidbey_long](../../../../includes/ado-whidbey-long-md.md)] behavior of the <xref:System.Data.DataRow> class.</span></span> <span data-ttu-id="ecf00-120">型変換を実行して、<xref:System.Data.DataRow>オブジェクトと変換後の値に保存される、<xref:System.Data.DataRow>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="ecf00-120">A type conversion could be performed by the <xref:System.Data.DataRow> object and the converted value would then be saved to the <xref:System.Data.DataRow> object.</span></span>  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="ecf00-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="ecf00-121">See Also</span></span>  
  <xref:System.Data.DataRowExtensions>
