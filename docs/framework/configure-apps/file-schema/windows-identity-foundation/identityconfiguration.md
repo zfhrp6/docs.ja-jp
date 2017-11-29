@@ -1,100 +1,107 @@
 ---
-title: "&lt;identityConfiguration&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;identityConfiguration&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1db76253-07da-447b-9e7a-3705c7228cf4
-caps.latest.revision: 13
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: b1cca286fc967631c60aa02a1318fe24120e05b0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;identityConfiguration&gt;
-サービス ・ レベルの id の設定を指定します。  
+# <a name="ltidentityconfigurationgt"></a><span data-ttu-id="62b6a-102">&lt;identityConfiguration&gt;</span><span class="sxs-lookup"><span data-stu-id="62b6a-102">&lt;identityConfiguration&gt;</span></span>
+<span data-ttu-id="62b6a-103">サービス レベルの id 設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-103">Specifies service-level identity settings.</span></span>  
   
-## 構文  
+ <span data-ttu-id="62b6a-104">\<system.identityModel ></span><span class="sxs-lookup"><span data-stu-id="62b6a-104">\<system.identityModel></span></span>  
+<span data-ttu-id="62b6a-105">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="62b6a-105">\<identityConfiguration></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="62b6a-106">構文</span><span class="sxs-lookup"><span data-stu-id="62b6a-106">Syntax</span></span>  
+  
+```xml  
 <system.identityModel>  
-  <identityConfiguration  
-      name=xs:string  
-      saveBootstrapContext=xs:boolean>  
-      maximumClockSkew=TimeSpan >  
-  </identityConfiguration>  
+  <identityConfiguration  
+      name=xs:string  
+      saveBootstrapContext=xs:boolean>  
+      maximumClockSkew=TimeSpan >  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="62b6a-107">属性および要素</span><span class="sxs-lookup"><span data-stu-id="62b6a-107">Attributes and Elements</span></span>  
+ <span data-ttu-id="62b6a-108">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="62b6a-109">属性</span><span class="sxs-lookup"><span data-stu-id="62b6a-109">Attributes</span></span>  
   
-|属性|Description|  
-|--------|-----------------|  
-|name|Id の構成セクションの名前。  特定の構成セクションを参照するのにには、この名前を使用できます。  ない場合は`name`属性を指定すると、既定の構成セクションを定義します。  既定の構成は、パッシブ フェデレーション シナリオでは常に使用されます。  詳細については、[\<federationConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) 要素を参照してください。|  
-|saveBootstrapContext|ブートス トラップのトークンをセッション トークンを含める必要がかどうかを指定します。  値も、トークン ハンドラーのコレクションを設定する可能性があります、 `saveBootstrapContext`の属性を[\<securityTokenHandlerConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)要素。  サービスに設定されている値、トークン ハンドラーのコレクションの設定値をオーバーライドします。|  
-|maximumClockSkew|A <xref:System.TimeSpan>は、最大許可された時計の傾斜を指定します。  サインイン セッションの有効期限の検証など、急を要する操作を実行するときの最大許可された時計の傾斜を制御します。  既定値は 5 分です\] 00: 05:00"。  指定する方法の詳細については、 <xref:System.TimeSpan>の値を参照してください[Timespan Values](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md#BKMK_TimespanValues)。  最大クロック スキューも、トークン ハンドラーのコレクションを設定する可能性があります、 `maximumClockSkew`の属性を[\<securityTokenHandlerConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)要素。  サービスに設定されている値、トークン ハンドラーのコレクションの設定値をオーバーライドします。|  
+|<span data-ttu-id="62b6a-110">属性</span><span class="sxs-lookup"><span data-stu-id="62b6a-110">Attribute</span></span>|<span data-ttu-id="62b6a-111">説明</span><span class="sxs-lookup"><span data-stu-id="62b6a-111">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="62b6a-112">name</span><span class="sxs-lookup"><span data-stu-id="62b6a-112">name</span></span>|<span data-ttu-id="62b6a-113">Id の構成セクションの名前。</span><span class="sxs-lookup"><span data-stu-id="62b6a-113">The name of the identity configuration section.</span></span> <span data-ttu-id="62b6a-114">この名前を使用すると、特定の構成セクションを参照します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-114">You can use this name to reference a specific configuration section.</span></span> <span data-ttu-id="62b6a-115">ない場合は`name`属性を指定すると、セクションが既定の構成を定義します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-115">If no `name` attribute is specified, the section defines the default configuration.</span></span> <span data-ttu-id="62b6a-116">既定の構成は常に、パッシブなフェデレーション シナリオで使用します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-116">The default configuration is always used for passive federation scenarios.</span></span> <span data-ttu-id="62b6a-117">詳細については、次を参照してください。、 [ \<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)要素。</span><span class="sxs-lookup"><span data-stu-id="62b6a-117">For more information, see the [\<federationConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) element.</span></span>|  
+|<span data-ttu-id="62b6a-118">saveBootstrapContext</span><span class="sxs-lookup"><span data-stu-id="62b6a-118">saveBootstrapContext</span></span>|<span data-ttu-id="62b6a-119">セッション トークンにブートス トラップ トークンを含める必要があるかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-119">Specifies whether bootstrap tokens should be included in the session token.</span></span> <span data-ttu-id="62b6a-120">設定して、値がトークン ハンドラー コレクションに設定することも可能性があります、`saveBootstrapContext`属性を[ \<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)要素。</span><span class="sxs-lookup"><span data-stu-id="62b6a-120">The value may also be set on a token handler collection by setting the `saveBootstrapContext` attribute on the [\<securityTokenHandlerConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) element.</span></span> <span data-ttu-id="62b6a-121">トークン ハンドラー コレクションに設定値は、サービスで設定された値をオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="62b6a-121">A value set on the token handler collection overrides the value set on the service.</span></span>|  
+|<span data-ttu-id="62b6a-122">maximumClockSkew</span><span class="sxs-lookup"><span data-stu-id="62b6a-122">maximumClockSkew</span></span>|<span data-ttu-id="62b6a-123">A<xref:System.TimeSpan>最大許容される時計の誤差を指定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-123">A <xref:System.TimeSpan> that specifies the maximum allowed clock skew.</span></span> <span data-ttu-id="62b6a-124">サインイン セッションの有効期限の検証などの時間が重要な操作を実行するときは、最大許容される時計の誤差を制御します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-124">Controls the maximum allowed clock skew when performing time-sensitive operations, such as validating the expiration time of a sign-in session.</span></span> <span data-ttu-id="62b6a-125">既定値は 5 分、"00: 継続"です。</span><span class="sxs-lookup"><span data-stu-id="62b6a-125">The default is 5 minutes, "00:05:00".</span></span> <span data-ttu-id="62b6a-126">指定する方法について<xref:System.TimeSpan>値を参照してください[Timespan 値](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="62b6a-126">For more information about how to specify <xref:System.TimeSpan> values, see [Timespan Values](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md).</span></span> <span data-ttu-id="62b6a-127">設定して、最大の時刻のずれがトークン ハンドラー コレクションに設定することも可能性があります、`maximumClockSkew`属性を[ \<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)要素。</span><span class="sxs-lookup"><span data-stu-id="62b6a-127">The maximum clock skew may also be set on a token handler collection by setting the `maximumClockSkew` attribute on the [\<securityTokenHandlerConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) element.</span></span> <span data-ttu-id="62b6a-128">トークン ハンドラー コレクションに設定値は、サービスで設定された値をオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="62b6a-128">A value set on the token handler collection overrides the value set on the service.</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="62b6a-129">子要素</span><span class="sxs-lookup"><span data-stu-id="62b6a-129">Child Elements</span></span>  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<キャッシュ\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|セッション トークンをトークンのリプレイ検出を使用して、キャッシュを登録します。  サービス ・ レベルやセキュリティ トークン ハンドラーのコレクションを指定できます。  省略可能です。|  
-|[\<certificateValidation\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)|証明書を検証するトークン ハンドラーを使用する設定を制御します。  サービス ・ レベルやセキュリティ トークン ハンドラーのコレクションを指定できます。  省略可能です。|  
-|[\<claimsAuthenticationManager\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthenticationmanager.md)|クレーム認証マネージャーの入力方向の要求を登録します。  省略可能です。|  
-|[\<claimsAuthorizationManager\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)|要求の承認マネージャーは、入力方向の要求を登録します。  省略可能です。|  
-|[\<claimTypeRequired\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|入力方向のセキュリティ トークンに必要なクレームのセットを指定します。  省略可能です。|  
-|[\<securityTokenHandlers\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|セキュリティ トークン ハンドラーのコレクションを指定します。  0 個以上のコレクションのセキュリティ トークン ハンドラーを指定できます。  省略可能です。|  
-|[\<tokenReplayDetection\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)|トークンのリプレイ検出を有効にし、トークンの有効期限を指定します。  サービス ・ レベルやセキュリティ トークン ハンドラーのコレクションを指定できます。  省略可能です。|  
+|<span data-ttu-id="62b6a-130">要素</span><span class="sxs-lookup"><span data-stu-id="62b6a-130">Element</span></span>|<span data-ttu-id="62b6a-131">説明</span><span class="sxs-lookup"><span data-stu-id="62b6a-131">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="62b6a-132">\<キャッシュ ></span><span class="sxs-lookup"><span data-stu-id="62b6a-132">\<caches></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|<span data-ttu-id="62b6a-133">セッション トークンやトークン リプレイ検出のために使用されるキャッシュに登録します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-133">Registers the caches used for session tokens and token replay detection.</span></span> <span data-ttu-id="62b6a-134">サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。</span><span class="sxs-lookup"><span data-stu-id="62b6a-134">Can be specified at the service-level or on a security token handler collection.</span></span> <span data-ttu-id="62b6a-135">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="62b6a-135">Optional.</span></span>|  
+|[<span data-ttu-id="62b6a-136">\<certificateValidation ></span><span class="sxs-lookup"><span data-stu-id="62b6a-136">\<certificateValidation></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)|<span data-ttu-id="62b6a-137">トークン ハンドラーを使用して証明書の検証の設定を制御します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-137">Controls the settings that token handlers use to validate certificates.</span></span> <span data-ttu-id="62b6a-138">サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。</span><span class="sxs-lookup"><span data-stu-id="62b6a-138">Can be specified at the service-level or on a security token handler collection.</span></span> <span data-ttu-id="62b6a-139">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="62b6a-139">Optional.</span></span>|  
+|[<span data-ttu-id="62b6a-140">\<claimsAuthenticationManager ></span><span class="sxs-lookup"><span data-stu-id="62b6a-140">\<claimsAuthenticationManager></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthenticationmanager.md)|<span data-ttu-id="62b6a-141">入力方向の要求の要求認証マネージャーに登録します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-141">Registers a claims authentication manager for the incoming claims.</span></span> <span data-ttu-id="62b6a-142">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="62b6a-142">Optional.</span></span>|  
+|[<span data-ttu-id="62b6a-143">\<claimsAuthorizationManager ></span><span class="sxs-lookup"><span data-stu-id="62b6a-143">\<claimsAuthorizationManager></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)|<span data-ttu-id="62b6a-144">入力方向の要求の要求の承認マネージャーを登録します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-144">Registers a claims authorization manager for the incoming claims.</span></span> <span data-ttu-id="62b6a-145">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="62b6a-145">Optional.</span></span>|  
+|[<span data-ttu-id="62b6a-146">\<claimTypeRequired ></span><span class="sxs-lookup"><span data-stu-id="62b6a-146">\<claimTypeRequired></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|<span data-ttu-id="62b6a-147">必要な受信セキュリティ トークンのクレームのセットを指定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-147">Specifies the set of required claims for incoming security tokens.</span></span> <span data-ttu-id="62b6a-148">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="62b6a-148">Optional.</span></span>|  
+|[<span data-ttu-id="62b6a-149">\<securityTokenHandlers ></span><span class="sxs-lookup"><span data-stu-id="62b6a-149">\<securityTokenHandlers></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|<span data-ttu-id="62b6a-150">セキュリティ トークン ハンドラーのコレクションを指定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-150">Specifies a collection of security token handlers.</span></span> <span data-ttu-id="62b6a-151">セキュリティ トークン ハンドラーの 0 個以上のコレクションを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="62b6a-151">Zero or more collections of security token handlers can be specified.</span></span> <span data-ttu-id="62b6a-152">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="62b6a-152">Optional.</span></span>|  
+|[<span data-ttu-id="62b6a-153">\<tokenReplayDetection ></span><span class="sxs-lookup"><span data-stu-id="62b6a-153">\<tokenReplayDetection></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)|<span data-ttu-id="62b6a-154">トークン リプレイ検出を有効にし、トークンの有効期限を指定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-154">Enables token replay detection and specifies the expiration time for tokens.</span></span> <span data-ttu-id="62b6a-155">サービス レベルまたはセキュリティ トークン ハンドラーのコレクションで指定できます。</span><span class="sxs-lookup"><span data-stu-id="62b6a-155">Can be specified at the service-level or on a security token handler collection.</span></span> <span data-ttu-id="62b6a-156">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="62b6a-156">Optional.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="62b6a-157">親要素</span><span class="sxs-lookup"><span data-stu-id="62b6a-157">Parent Elements</span></span>  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<system.identityModel\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md)|アプリケーションでんだ Windows アイデンティティ基盤 \(ぜ\) オプションを有効にする構成を提供します。|  
+|<span data-ttu-id="62b6a-158">要素</span><span class="sxs-lookup"><span data-stu-id="62b6a-158">Element</span></span>|<span data-ttu-id="62b6a-159">説明</span><span class="sxs-lookup"><span data-stu-id="62b6a-159">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="62b6a-160">\<system.identityModel ></span><span class="sxs-lookup"><span data-stu-id="62b6a-160">\<system.identityModel></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md)|<span data-ttu-id="62b6a-161">アプリケーションで Windows Identity Foundation (WIF) オプションを有効にするための構成を提供します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-161">Provides configuration for enabling Windows Identity Foundation (WIF) options in applications.</span></span>|  
   
-## 解説  
- 複数のアイデンティティが構成が定義可能性がありますが、それぞれに一意の名前。  動作は次のとおりです。  
+## <a name="remarks"></a><span data-ttu-id="62b6a-162">コメント</span><span class="sxs-lookup"><span data-stu-id="62b6a-162">Remarks</span></span>  
+ <span data-ttu-id="62b6a-163">複数の id が構成を定義することがあります、それぞれに一意の名前。</span><span class="sxs-lookup"><span data-stu-id="62b6a-163">Multiple identity configurations may be defined, each with a unique name.</span></span> <span data-ttu-id="62b6a-164">動作は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="62b6a-164">The behavior is as follows:</span></span>  
   
-1.  ない場合は`<identityConfiguration>`要素を指定します。  既定のユーザー構成実行時に作成され、既定値が指定されました。  
+1.  <span data-ttu-id="62b6a-165">ない場合は`<identityConfiguration>`要素を指定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-165">If no `<identityConfiguration>` element is specified.</span></span> <span data-ttu-id="62b6a-166">既定の id 構成では、実行時に作成され、既定値で設定されます。</span><span class="sxs-lookup"><span data-stu-id="62b6a-166">A default identity configuration is created at runtime and populated with default values.</span></span>  
   
-2.  場合は 1 つの`<identityConfiguration>`要素を指定します。  これは、ユーザーの既定の構成です。  名前または名前のないかどうかは関係ありません。  
+2.  <span data-ttu-id="62b6a-167">場合、1 つ`<identityConfiguration>`要素を指定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-167">If a single `<identityConfiguration>` element is specified.</span></span> <span data-ttu-id="62b6a-168">既定の id 構成することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="62b6a-168">It is the default identity configuration.</span></span> <span data-ttu-id="62b6a-169">という名前または名前のないかどうかは関係ありません。</span><span class="sxs-lookup"><span data-stu-id="62b6a-169">It does not matter whether it is named or unnamed.</span></span>  
   
-3.  場合は、複数`<identityConfiguration>`要素を指定します。  無名の要素には、ユーザーの既定の構成を指定します。  複数指定する場合にお勧め`<identityConfiguration>`要素、それらのいずれかする必要がありますできない名前付き。  
+3.  <span data-ttu-id="62b6a-170">複数`<identityConfiguration>`の要素を指定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-170">If multiple `<identityConfiguration>` elements are specified.</span></span> <span data-ttu-id="62b6a-171">名前なし要素は、既定の id 構成を指定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-171">The unnamed element specifies the default identity configuration.</span></span> <span data-ttu-id="62b6a-172">推奨複数指定するときに`<identityConfiguration>`要素、これらのいずれかができない名前付きです。</span><span class="sxs-lookup"><span data-stu-id="62b6a-172">It is recommended that when you specify multiple `<identityConfiguration>` elements, one of them should be unnamed.</span></span>  
   
 > [!WARNING]
->  複数指定する場合`<identityConfiguration>`要素、それらのいずれかする必要がありますできない名前付き。  名前のない要素は、ユーザーの既定の構成になります。  
+>  <span data-ttu-id="62b6a-173">複数指定する場合`<identityConfiguration>`要素、これらのいずれかができない名前付きです。</span><span class="sxs-lookup"><span data-stu-id="62b6a-173">If you specify multiple `<identityConfiguration>` elements, one of them should be unnamed.</span></span> <span data-ttu-id="62b6a-174">名前なし要素は、既定の id 構成になります。</span><span class="sxs-lookup"><span data-stu-id="62b6a-174">The unnamed element will be the default identity configuration.</span></span>  
   
- 指定した設定のいくつかの`<identityConfiguration>`セキュリティ トークン ハンドラーのコレクションを設定または個々 のセキュリティ トークン ハンドラーの設定によって、要素をオーバーライドできます。  
-  
-> [!IMPORTANT]
->  使用すると、 <xref:System.IdentityModel.Services.ClaimsPrincipalPermission>や、 <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>クラスをコードで参照されている識別情報構成でクレーム ベースのアクセス制御を提供するために、 `<federationConfiguration>`要素は、要求承認マネージャー、承認決定を行うために使用するポリシーを構成します。  パッシブ Web シナリオ、たとえば、Windows 通信基盤 \(WCF\) アプリケーションまたは Web ベースでないアプリケーションではない場合も同様です。  アプリケーションがパッシブの Web アプリケーションでない場合、 [\<claimsAuthorizationManager\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)要素とその子ポリシー要素が存在する場合\) 参照の id の構成をされるだけの設定を適用します。  これ以外の設定は、すべて無視されます。  詳細については、[\<federationConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) 要素を参照してください。  
-  
- `<identityConfiguration>`要素で表される、 <xref:System.IdentityModel.Configuration.IdentityConfigurationElement>クラス。  ユーザーの構成\] セクションで表される、 <xref:System.IdentityModel.Configuration.IdentityConfiguration>クラス。  
+ <span data-ttu-id="62b6a-175">指定された設定の一部、`<identityConfiguration>`要素は、セキュリティ トークン ハンドラーのコレクションの設定によって、または個々 のセキュリティ トークン ハンドラーの設定によってオーバーライドできます。</span><span class="sxs-lookup"><span data-stu-id="62b6a-175">Some of the settings specified in the `<identityConfiguration>` element can be overridden by settings on a security token handler collection or by settings on individual security token handlers.</span></span>  
   
 > [!IMPORTANT]
->  子要素として、次の要素を指定する、 `<identityConfiguration>`要素が廃止されました、旧バージョンとの互換性はまだ動作がサポートされていますが。  これらの要素で指定する必要があります、 [\<securityTokenHandlerConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)要素。  
+>  <span data-ttu-id="62b6a-176">使用する場合、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>または<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>コードによって参照される id の構成でクレーム ベースのアクセス制御を提供するクラス、`<federationConfiguration>`要素は、要求承認マネージャーとを使用して、ポリシーを構成します。承認を決定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-176">When using the <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> or the <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> class to provide claims-based access control in your code, the identity configuration that is referenced by the `<federationConfiguration>` element configures the claims authorization manager and policy that is used to make authorization decisions.</span></span> <span data-ttu-id="62b6a-177">これは、true の場合、パッシブの Web シナリオ、たとえば、Windows Communication Foundation (WCF) アプリケーションや Web ベースではないアプリケーションではないシナリオであってもです。</span><span class="sxs-lookup"><span data-stu-id="62b6a-177">This is true, even in scenarios that are not passive Web scenarios, for example Windows Communication Foundation (WCF) applications or an application that is not Web-based.</span></span> <span data-ttu-id="62b6a-178">アプリケーションが、パッシブ Web アプリケーションではない場合、 [ \<claimsAuthorizationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)要素 (とその子ポリシー要素、存在する場合) のみに適用される設定は、参照される id の構成のです。</span><span class="sxs-lookup"><span data-stu-id="62b6a-178">If the application is not a passive Web application, the [\<claimsAuthorizationManager>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md) element (and its child policy elements, if present) of the referenced identity configuration are the only settings applied.</span></span> <span data-ttu-id="62b6a-179">その他のすべての設定は無視されます。</span><span class="sxs-lookup"><span data-stu-id="62b6a-179">All other settings are ignored.</span></span> <span data-ttu-id="62b6a-180">詳細については、次を参照してください。、 [ \<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)要素。</span><span class="sxs-lookup"><span data-stu-id="62b6a-180">For more information, see the [\<federationConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) element.</span></span>  
+  
+ <span data-ttu-id="62b6a-181">`<identityConfiguration>`要素として表されます、<xref:System.IdentityModel.Configuration.IdentityConfigurationElement>クラスです。</span><span class="sxs-lookup"><span data-stu-id="62b6a-181">The `<identityConfiguration>` element is represented by the <xref:System.IdentityModel.Configuration.IdentityConfigurationElement> class.</span></span> <span data-ttu-id="62b6a-182">Id の構成セクションで表される、<xref:System.IdentityModel.Configuration.IdentityConfiguration>クラスです。</span><span class="sxs-lookup"><span data-stu-id="62b6a-182">An identity configuration section is represented by the <xref:System.IdentityModel.Configuration.IdentityConfiguration> class.</span></span>  
+  
+> [!IMPORTANT]
+>  <span data-ttu-id="62b6a-183">子要素として、次の要素を指定する、`<identityConfiguration>`動作はまだサポートされていますが旧バージョンとの互換性のための要素は推奨されていません。</span><span class="sxs-lookup"><span data-stu-id="62b6a-183">Specifying the following elements as child elements of the `<identityConfiguration>` element has been deprecated, although the behavior is still supported for backward compatibility.</span></span> <span data-ttu-id="62b6a-184">これらの要素は、代わりに、指定する必要があります、 [ \<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)要素。</span><span class="sxs-lookup"><span data-stu-id="62b6a-184">These elements should, instead, be specified under the [\<securityTokenHandlerConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) element.</span></span>  
 >   
->  -   [\<audienceUris\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/audienceuris.md)  
-> -   [\<issuerNameRegistry\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)  
-> -   [\<issuerTokenResolver\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuertokenresolver.md)  
-> -   [\<serviceTokenResolver\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicetokenresolver.md)  
+>  -   [<span data-ttu-id="62b6a-185">\<Audienceuri ></span><span class="sxs-lookup"><span data-stu-id="62b6a-185">\<audienceUris></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/audienceuris.md)  
+> -   [<span data-ttu-id="62b6a-186">\<issuerNameRegistry ></span><span class="sxs-lookup"><span data-stu-id="62b6a-186">\<issuerNameRegistry></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)  
+> -   [<span data-ttu-id="62b6a-187">\<issuerTokenResolver ></span><span class="sxs-lookup"><span data-stu-id="62b6a-187">\<issuerTokenResolver></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuertokenresolver.md)  
+> -   [<span data-ttu-id="62b6a-188">\<serviceTokenResolver ></span><span class="sxs-lookup"><span data-stu-id="62b6a-188">\<serviceTokenResolver></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicetokenresolver.md)  
   
-## 使用例  
- 次の使用例は、"alternateConfiguration"という名前は、身元の構成を作成します。  ユーザーの構成の既定の設定を指定します。  
+## <a name="example"></a><span data-ttu-id="62b6a-189">例</span><span class="sxs-lookup"><span data-stu-id="62b6a-189">Example</span></span>  
+ <span data-ttu-id="62b6a-190">次の例では、"alternateConfiguration"という名前 id の構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-190">The following example creates an identity configuration named "alternateConfiguration".</span></span> <span data-ttu-id="62b6a-191">Id の構成では、既定の設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="62b6a-191">The identity configuration specifies default settings.</span></span>  
   
-```  
+```xml  
 <system.identityModel>  
     <identityConfiguration name="alternateConfiguration"/>  
 </system.identityModel>  
 ```  
   
-## 参照  
- <xref:System.IdentityModel.Configuration.IdentityConfiguration>   
+## <a name="see-also"></a><span data-ttu-id="62b6a-192">関連項目</span><span class="sxs-lookup"><span data-stu-id="62b6a-192">See Also</span></span>  
+ <xref:System.IdentityModel.Configuration.IdentityConfiguration>  
  <xref:System.IdentityModel.Configuration.IdentityConfigurationElement>

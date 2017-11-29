@@ -1,59 +1,64 @@
 ---
-title: "方法 : カスタム証明書検証を使用するサービスを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WCF, 認証"
+title: "方法 : カスタム証明書検証を使用するサービスを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: WCF, authentication
 ms.assetid: bb0190ff-0738-4e54-8d22-c97d343708bf
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3533b17a1e7f3d244bc3c1d97eb82459a5316af1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : カスタム証明書検証を使用するサービスを作成する
-このトピックでは、カスタム証明書検証を実装する方法、クライアントまたはサービスの資格情報の設定により、既定の証明書検証機能を、カスタム証明書検証で置き換える方法について解説します。  
+# <a name="how-to-create-a-service-that-employs-a-custom-certificate-validator"></a><span data-ttu-id="7c523-102">方法 : カスタム証明書検証を使用するサービスを作成する</span><span class="sxs-lookup"><span data-stu-id="7c523-102">How to: Create a Service that Employs a Custom Certificate Validator</span></span>
+<span data-ttu-id="7c523-103">このトピックでは、カスタム証明書検証を実装する方法、クライアントまたはサービスの資格情報の設定により、既定の証明書検証機能を、カスタム証明書検証で置き換える方法について解説します。</span><span class="sxs-lookup"><span data-stu-id="7c523-103">This topic shows how to implement a custom certificate validator and how to configure client or service credentials to replace the default certificate validation logic with the custom certificate validator.</span></span>  
   
- X.509 証明書を使ってクライアントやサービスを認証する場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の既定では、Windows 証明書ストアと Crypto API を使用して証明書が検証され、信頼できるかどうかが確認されます。  ただし、組み込みの検証機能では不十分で、処理内容を変更する必要がある場合もあります。  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザーがカスタムの証明書検証機能を追加して、検証ロジックを簡単に変更できます。  カスタムの証明書検証機能が指定されている場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、組み込みの検証機能ではなく、カスタムの検証処理のみが使用されます。  
+ <span data-ttu-id="7c523-104">X.509 証明書を使ってクライアントやサービスを認証する場合、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] の既定では、Windows 証明書ストアと Crypto API を使用して証明書が検証され、信頼できるかどうかが確認されます。</span><span class="sxs-lookup"><span data-stu-id="7c523-104">If the X.509 certificate is used to authenticate a client or service, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] by default uses the Windows certificate store and Crypto API to validate the certificate and to ensure that it is trusted.</span></span> <span data-ttu-id="7c523-105">ただし、組み込みの検証機能では不十分で、処理内容を変更する必要がある場合もあります。</span><span class="sxs-lookup"><span data-stu-id="7c523-105">Sometimes the built-in certificate validation functionality is not enough and must be changed.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="7c523-106"> では、ユーザーがカスタムの証明書検証機能を追加して、検証ロジックを簡単に変更できます。</span><span class="sxs-lookup"><span data-stu-id="7c523-106"> provides an easy way to change the validation logic by allowing users to add a custom certificate validator.</span></span> <span data-ttu-id="7c523-107">カスタムの証明書検証機能が指定されている場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、組み込みの検証機能ではなく、カスタムの検証処理のみが使用されます。</span><span class="sxs-lookup"><span data-stu-id="7c523-107">If a custom certificate validator is specified, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] does not use the built-in certificate validation logic but relies on the custom validator instead.</span></span>  
   
-## 手順  
+## <a name="procedures"></a><span data-ttu-id="7c523-108">手順</span><span class="sxs-lookup"><span data-stu-id="7c523-108">Procedures</span></span>  
   
-#### カスタムの証明書検証機能を作成するには  
+#### <a name="to-create-a-custom-certificate-validator"></a><span data-ttu-id="7c523-109">カスタムの証明書検証機能を作成するには</span><span class="sxs-lookup"><span data-stu-id="7c523-109">To create a custom certificate validator</span></span>  
   
-1.  <xref:System.IdentityModel.Selectors.X509CertificateValidator> から派生する新しいクラスを定義します。  
+1.  <span data-ttu-id="7c523-110"><xref:System.IdentityModel.Selectors.X509CertificateValidator> から派生する新しいクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="7c523-110">Define a new class derived from <xref:System.IdentityModel.Selectors.X509CertificateValidator>.</span></span>  
   
-2.  抽象メソッドである <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> を実装します。  検証対象の証明書が、引数としてこのメソッドに渡されます。  検証処理の結果、証明書が無効であると判断されると、このメソッドは、<xref:System.IdentityModel.Tokens.SecurityTokenValidationException> という例外をスローします。  有効であればそのまま呼び出し元に制御を返します。  
+2.  <span data-ttu-id="7c523-111">抽象メソッドである <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> を実装します。</span><span class="sxs-lookup"><span data-stu-id="7c523-111">Implement the abstract <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> method.</span></span> <span data-ttu-id="7c523-112">検証対象の証明書が、引数としてこのメソッドに渡されます。</span><span class="sxs-lookup"><span data-stu-id="7c523-112">The certificate that must be validated is passed as an argument to the method.</span></span> <span data-ttu-id="7c523-113">検証処理の結果、証明書が無効であると判断されると、このメソッドは、<xref:System.IdentityModel.Tokens.SecurityTokenValidationException> という例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="7c523-113">If the passed certificate is not valid according to the validation logic, this method throws a <xref:System.IdentityModel.Tokens.SecurityTokenValidationException>.</span></span> <span data-ttu-id="7c523-114">有効であればそのまま呼び出し元に制御を返します。</span><span class="sxs-lookup"><span data-stu-id="7c523-114">If the certificate is valid, the method returns to the caller.</span></span>  
   
     > [!NOTE]
-    >  クライアントに認証エラーを返すには、<xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> メソッドで <xref:System.ServiceModel.FaultException> をスローします。  
+    >  <span data-ttu-id="7c523-115">クライアントに認証エラーを返すには、<xref:System.ServiceModel.FaultException> メソッドで <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> をスローします。</span><span class="sxs-lookup"><span data-stu-id="7c523-115">To return authentication errors back to the client, throw a <xref:System.ServiceModel.FaultException> in the <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> method.</span></span>  
   
  [!code-csharp[c_CustomCertificateValidator#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcertificatevalidator/cs/source.cs#2)]
  [!code-vb[c_CustomCertificateValidator#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcertificatevalidator/vb/source.vb#2)]  
   
-#### サービス構成でカスタム検証処理を指定するには  
+#### <a name="to-specify-a-custom-certificate-validator-in-service-configuration"></a><span data-ttu-id="7c523-116">サービス構成でカスタム検証処理を指定するには</span><span class="sxs-lookup"><span data-stu-id="7c523-116">To specify a custom certificate validator in service configuration</span></span>  
   
-1.  [\<system.serviceModel\>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) 要素に [\<behaviors\>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) 要素と [\<serviceBehaviors\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) を追加します。  
+1.  <span data-ttu-id="7c523-117">追加、 [\<動作 >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)要素、および[ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)を[ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)要素。</span><span class="sxs-lookup"><span data-stu-id="7c523-117">Add a [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) element and a [\<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) to the [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) element.</span></span>  
   
-2.  [\<behavior\>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)を追加し、`name` 属性に適切な値を設定します。  
+2.  <span data-ttu-id="7c523-118">追加、 [\<動作 >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)設定と、`name`属性を適切な値にします。</span><span class="sxs-lookup"><span data-stu-id="7c523-118">Add a [\<behavior>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) and set the `name` attribute to an appropriate value.</span></span>  
   
-3.  [\<serviceCredentials\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)を `<behavior>` 要素に追加します。  
+3.  <span data-ttu-id="7c523-119">追加、 [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)を`<behavior>`要素。</span><span class="sxs-lookup"><span data-stu-id="7c523-119">Add a [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) to the `<behavior>` element.</span></span>  
   
-4.  `<clientCertificate>` 要素を `<serviceCredentials>` 要素に追加します。  
+4.  <span data-ttu-id="7c523-120">`<clientCertificate>` 要素を `<serviceCredentials>` 要素に追加します。</span><span class="sxs-lookup"><span data-stu-id="7c523-120">Add a `<clientCertificate>` element to the `<serviceCredentials>` element.</span></span>  
   
-5.  `<clientCertificate>` 要素に [\<authentication\>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) を追加します。  
+5.  <span data-ttu-id="7c523-121">追加、 [\<認証 >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)を`<clientCertificate>`要素。</span><span class="sxs-lookup"><span data-stu-id="7c523-121">Add an [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) to the `<clientCertificate>` element.</span></span>  
   
-6.  `customCertificateValidatorType` 属性に検証処理の型を設定します。  この属性に型の名前空間と名前を設定する例を以下に示します。  
+6.  <span data-ttu-id="7c523-122">`customCertificateValidatorType` 属性に検証処理の型を設定します。</span><span class="sxs-lookup"><span data-stu-id="7c523-122">Set the `customCertificateValidatorType` attribute to the validator type.</span></span> <span data-ttu-id="7c523-123">この属性に型の名前空間と名前を設定する例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="7c523-123">The following example sets the attribute to the namespace and name of the type.</span></span>  
   
-7.  `certificateValidationMode` 属性を `Custom` に設定します。  
+7.  <span data-ttu-id="7c523-124">`certificateValidationMode` 属性を `Custom` に設定します。</span><span class="sxs-lookup"><span data-stu-id="7c523-124">Set the `certificateValidationMode` attribute to `Custom`.</span></span>  
   
-    ```  
+    ```xml  
     <configuration>  
      <system.serviceModel>  
       <behaviors>  
@@ -71,25 +76,25 @@ caps.handback.revision: 14
     </configuration>  
     ```  
   
-#### クライアント側の設定でカスタム証明書検証を指定するには  
+#### <a name="to-specify-a-custom-certificate-validator-using-configuration-on-the-client"></a><span data-ttu-id="7c523-125">クライアント側の設定でカスタム証明書検証を指定するには</span><span class="sxs-lookup"><span data-stu-id="7c523-125">To specify a custom certificate validator using configuration on the client</span></span>  
   
-1.  [\<system.serviceModel\>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) 要素に [\<behaviors\>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) 要素と [\<serviceBehaviors\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) を追加します。  
+1.  <span data-ttu-id="7c523-126">追加、 [\<動作 >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)要素、および[ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)を[ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)要素。</span><span class="sxs-lookup"><span data-stu-id="7c523-126">Add a [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) element and a [\<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) to the [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) element.</span></span>  
   
-2.  [\<endpointBehaviors\>](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) 要素を追加します。  
+2.  <span data-ttu-id="7c523-127">追加、 [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)要素。</span><span class="sxs-lookup"><span data-stu-id="7c523-127">Add an [\<endpointBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) element.</span></span>  
   
-3.  `<behavior>` 要素を追加し、`name` 属性に適切な値を設定します。  
+3.  <span data-ttu-id="7c523-128">`<behavior>` 要素を追加し、`name` 属性に適切な値を設定します。</span><span class="sxs-lookup"><span data-stu-id="7c523-128">Add a `<behavior>` element and set the `name` attribute to an appropriate value.</span></span>  
   
-4.  [\<clientCredentials\>](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) 要素を追加します。  
+4.  <span data-ttu-id="7c523-129">追加、 [ \<clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)要素。</span><span class="sxs-lookup"><span data-stu-id="7c523-129">Add a [\<clientCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) element.</span></span>  
   
-5.  [\<serviceCertificate\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) を追加します。  
+5.  <span data-ttu-id="7c523-130">追加、 [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)です。</span><span class="sxs-lookup"><span data-stu-id="7c523-130">Add a [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md).</span></span>  
   
-6.  次の例に示すように、[\<authentication\>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) を追加します。  
+6.  <span data-ttu-id="7c523-131">追加、 [\<認証 >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)次の例に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="7c523-131">Add an [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) as shown on the following example.</span></span>  
   
-7.  `customCertificateValidatorType` 属性に検証処理の型を設定します。  
+7.  <span data-ttu-id="7c523-132">`customCertificateValidatorType` 属性に検証処理の型を設定します。</span><span class="sxs-lookup"><span data-stu-id="7c523-132">Set the `customCertificateValidatorType` attribute to the validator type.</span></span>  
   
-8.  `certificateValidationMode` 属性を `Custom` に設定します。  この属性に型の名前空間と名前を設定する例を以下に示します。  
+8.  <span data-ttu-id="7c523-133">`certificateValidationMode` 属性を `Custom` に設定します。</span><span class="sxs-lookup"><span data-stu-id="7c523-133">Set the `certificateValidationMode` attribute to `Custom`.</span></span> <span data-ttu-id="7c523-134">この属性に型の名前空間と名前を設定する例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="7c523-134">The following example sets the attribute to the namespace and name of the type.</span></span>  
   
-    ```  
+    ```xml  
     <configuration>  
      <system.serviceModel>  
       <behaviors>  
@@ -109,29 +114,29 @@ caps.handback.revision: 14
     </configuration>  
     ```  
   
-#### サービス側のコードでカスタム証明書検証を指定するには  
+#### <a name="to-specify-a-custom-certificate-validator-using-code-on-the-service"></a><span data-ttu-id="7c523-135">サービス側のコードでカスタム証明書検証を指定するには</span><span class="sxs-lookup"><span data-stu-id="7c523-135">To specify a custom certificate validator using code on the service</span></span>  
   
-1.  <xref:System.ServiceModel.Description.ServiceCredentials.ClientCertificate%2A> プロパティの値としてカスタム証明書検証を指定します。  サービスの資格情報には、<xref:System.ServiceModel.ServiceHostBase.Credentials%2A> プロパティを使用してアクセスできます。  
+1.  <span data-ttu-id="7c523-136"><xref:System.ServiceModel.Description.ServiceCredentials.ClientCertificate%2A> プロパティの値としてカスタム証明書検証を指定します。</span><span class="sxs-lookup"><span data-stu-id="7c523-136">Specify the custom certificate validator on the <xref:System.ServiceModel.Description.ServiceCredentials.ClientCertificate%2A> property.</span></span> <span data-ttu-id="7c523-137">サービスの資格情報には、<xref:System.ServiceModel.ServiceHostBase.Credentials%2A> プロパティを使用してアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="7c523-137">You can access the service credentials using the <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> property.</span></span>  
   
-2.  <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A> プロパティを <xref:System.ServiceModel.Security.X509CertificateValidationMode> に設定します。  
+2.  <span data-ttu-id="7c523-138"><xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A> プロパティを <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> に設定します。</span><span class="sxs-lookup"><span data-stu-id="7c523-138">Set the <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A> property to <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>.</span></span>  
   
  [!code-csharp[c_CustomCertificateValidator#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcertificatevalidator/cs/source.cs#1)]
  [!code-vb[c_CustomCertificateValidator#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcertificatevalidator/vb/source.vb#1)]  
   
-#### クライアント側のコードでカスタム証明書検証を指定するには  
+#### <a name="to-specify-a-custom-certificate-validator-using-code-on-the-client"></a><span data-ttu-id="7c523-139">クライアント側のコードでカスタム証明書検証を指定するには</span><span class="sxs-lookup"><span data-stu-id="7c523-139">To specify a custom certificate validator using code on the client</span></span>  
   
-1.  カスタム証明書検証を、<xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CustomCertificateValidator%2A> プロパティを使って指定します。  クライアントの資格情報には、<xref:System.ServiceModel.ServiceHostBase.Credentials%2A> プロパティを使用してアクセスできます。  [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) によって生成されるクライアント クラスは、常に <xref:System.ServiceModel.ClientBase%601> クラスから派生したものです。  
+1.  <span data-ttu-id="7c523-140">カスタム証明書検証を、<xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CustomCertificateValidator%2A> プロパティを使って指定します。</span><span class="sxs-lookup"><span data-stu-id="7c523-140">Specify the custom certificate validator using the <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CustomCertificateValidator%2A> property.</span></span> <span data-ttu-id="7c523-141">クライアントの資格情報には、<xref:System.ServiceModel.ServiceHostBase.Credentials%2A> プロパティを使用してアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="7c523-141">You can access the client credentials using the <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> property.</span></span> <span data-ttu-id="7c523-142">(によって生成されたクライアント クラス[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)から派生して常に、<xref:System.ServiceModel.ClientBase%601>クラスです)。</span><span class="sxs-lookup"><span data-stu-id="7c523-142">(The client class generated by [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) always derives from the <xref:System.ServiceModel.ClientBase%601> class.)</span></span>  
   
-2.  <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A> プロパティを <xref:System.ServiceModel.Security.X509CertificateValidationMode> に設定します。  
+2.  <span data-ttu-id="7c523-143"><xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A> プロパティを <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> に設定します。</span><span class="sxs-lookup"><span data-stu-id="7c523-143">Set the <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A> property to <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>.</span></span>  
   
-## 例  
+## <a name="example"></a><span data-ttu-id="7c523-144">例</span><span class="sxs-lookup"><span data-stu-id="7c523-144">Example</span></span>  
   
-### 説明  
- カスタム証明書検証を実装し、サービス側で使用する例を以下に示します。  
+### <a name="description"></a><span data-ttu-id="7c523-145">説明</span><span class="sxs-lookup"><span data-stu-id="7c523-145">Description</span></span>  
+ <span data-ttu-id="7c523-146">カスタム証明書検証を実装し、サービス側で使用する例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="7c523-146">The following sample shows an implementation of a custom certificate validator and its usage on the service.</span></span>  
   
-### コード  
+### <a name="code"></a><span data-ttu-id="7c523-147">コード</span><span class="sxs-lookup"><span data-stu-id="7c523-147">Code</span></span>  
  [!code-csharp[c_CustomCertificateValidator#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcertificatevalidator/cs/source.cs#3)]
  [!code-vb[c_CustomCertificateValidator#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcertificatevalidator/vb/source.vb#3)]  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="7c523-148">関連項目</span><span class="sxs-lookup"><span data-stu-id="7c523-148">See Also</span></span>  
  <xref:System.IdentityModel.Selectors.X509CertificateValidator>

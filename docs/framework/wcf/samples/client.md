@@ -1,42 +1,45 @@
 ---
-title: "クライアント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "クライアント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fabb0c70-b79b-4e58-a5d3-9705de85ee5b
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9e0c7a0336ec72ebe1fe8083286ab098c78ba845
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# クライアント
-このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント アプリケーションを示すサンプルが含まれています。  
+# <a name="client"></a><span data-ttu-id="bda25-102">クライアント</span><span class="sxs-lookup"><span data-stu-id="bda25-102">Client</span></span>
+<span data-ttu-id="bda25-103">このセクションには、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアント アプリケーションを示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="bda25-103">This section contains samples that demonstrate [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client applications.</span></span>  
   
-## このセクションの内容  
- [クライアント相互運用性](../../../../docs/framework/wcf/samples/client-interoperability.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と他の技術間の相互運用性を示します。  
+## <a name="in-this-section"></a><span data-ttu-id="bda25-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="bda25-104">In This Section</span></span>  
+ [<span data-ttu-id="bda25-105">クライアント相互運用性</span><span class="sxs-lookup"><span data-stu-id="bda25-105">Client Interoperability</span></span>](../../../../docs/framework/wcf/samples/client-interoperability.md)  
+ <span data-ttu-id="bda25-106">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と他の技術間の相互運用性を示します。</span><span class="sxs-lookup"><span data-stu-id="bda25-106">Demonstrates interoperability between [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] and other technologies.</span></span>  
   
- [アドレス ヘッダー](../../../../docs/framework/wcf/samples/address-headers.md)  
- クライアントが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して、サービスに参照パラメーターを渡す方法を示します。  
+ [<span data-ttu-id="bda25-107">アドレス ヘッダー</span><span class="sxs-lookup"><span data-stu-id="bda25-107">Address Headers</span></span>](../../../../docs/framework/wcf/samples/address-headers.md)  
+ <span data-ttu-id="bda25-108">クライアントが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して、サービスに参照パラメーターを渡す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="bda25-108">Demonstrates how clients can pass reference parameters to a service using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
   
- [チャネル ファクトリ](../../../../docs/framework/wcf/samples/channel-factory.md)  
- クライアント アプリケーションが、生成されたクライアントではなく <xref:System.ServiceModel.ChannelFactory> クラスを含むチャネルを作成できる方法を示します。  
+ [<span data-ttu-id="bda25-109">チャネル ファクトリ</span><span class="sxs-lookup"><span data-stu-id="bda25-109">Channel Factory</span></span>](../../../../docs/framework/wcf/samples/channel-factory.md)  
+ <span data-ttu-id="bda25-110">クライアント アプリケーションが、生成されたクライアントではなく <xref:System.ServiceModel.ChannelFactory> クラスを含むチャネルを作成できる方法を示します。</span><span class="sxs-lookup"><span data-stu-id="bda25-110">Demonstrates how a client application can create a channel with the <xref:System.ServiceModel.ChannelFactory> class instead of a generated client.</span></span>  
   
- [予期される例外](../../../../docs/framework/wcf/samples/expected-exceptions.md)  
- 型指定のあるクライアントを使用する際に、予期される例外をキャッチする方法を示します。  
+ [<span data-ttu-id="bda25-111">予期される例外</span><span class="sxs-lookup"><span data-stu-id="bda25-111">Expected Exceptions</span></span>](../../../../docs/framework/wcf/samples/expected-exceptions.md)  
+ <span data-ttu-id="bda25-112">型指定のあるクライアントを使用する際に、予期される例外をキャッチする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="bda25-112">Demonstrates how to catch expected exceptions when using a typed client.</span></span>  
   
- [メタデータの抽出](../../../../docs/framework/wcf/samples/retrieve-metadata.md)  
- サービスからメタデータを動的に取得し、通信に使用するエンドポイントを選択するクライアントを実装する方法を示します。  
+ [<span data-ttu-id="bda25-113">メタデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="bda25-113">Retrieve Metadata</span></span>](../../../../docs/framework/wcf/samples/retrieve-metadata.md)  
+ <span data-ttu-id="bda25-114">サービスからメタデータを動的に取得し、通信に使用するエンドポイントを選択するクライアントを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="bda25-114">Demonstrates how to implement a client that dynamically retrieves metadata from a service to choose an endpoint with which to communicate.</span></span>  
   
- [Using ステートメントに関する問題の回避](../../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)  
- 型指定のあるクライアントを使用する際に C\# の "using" ステートメントを使用せずに、リソースを自動的にクリーンアップする方法を示します。  
+ [<span data-ttu-id="bda25-115">Using ステートメントに関する問題の回避</span><span class="sxs-lookup"><span data-stu-id="bda25-115">Avoiding Problems with the Using Statement</span></span>](../../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)  
+ <span data-ttu-id="bda25-116">型指定のあるクライアントを使用する際に C# の "using" ステートメントを使用せずに、リソースを自動的にクリーンアップする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="bda25-116">Demonstrates how you should not use the C# "using" statement to automatically clean up resources when using a typed client.</span></span>  
   
- [型指定のあるクライアント](../../../../docs/framework/wcf/samples/typed-client.md)  
- [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) で生成された型指定のあるクライアントから情報を取得する方法を示します。
+ [<span data-ttu-id="bda25-117">型指定されたクライアント</span><span class="sxs-lookup"><span data-stu-id="bda25-117">Typed Client</span></span>](../../../../docs/framework/wcf/samples/typed-client.md)  
+ <span data-ttu-id="bda25-118">によって生成される型指定されたクライアントから情報を取得する方法を示します、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。</span><span class="sxs-lookup"><span data-stu-id="bda25-118">Demonstrates how to obtain information from a typed client generated by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span>

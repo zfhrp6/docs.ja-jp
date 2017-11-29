@@ -1,6 +1,6 @@
 ---
 title: "値 (F#)"
-description: "値 (F#)"
+description: "F# の値の特定の種類の数量の方法について説明します。"
 keywords: "visual f#, f#, 関数型プログラミング"
 author: cartermp
 ms.author: phcart
@@ -10,51 +10,49 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 5e1e73c3-5adb-4bba-9976-d57f1ff6cd8d
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: 31d28a5ff1bb7d9a88949bcaee895a405a5e7014
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: a1e077552ba39a483be3129c89af48b547219733
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="values"></a><span data-ttu-id="1fced-104">値</span><span class="sxs-lookup"><span data-stu-id="1fced-104">Values</span></span>
 
-# <a name="values"></a>値
-
-F# の値は、特定の型を持つ数量です。値は、整数または浮動小数点数、文字またはテキスト、リスト、シーケンス、配列、タプル、判別共用体、レコード、クラス型、関数値のいずれかです。
+<span data-ttu-id="1fced-105">F# の値は、特定の型を持つ数量です。値は、整数または浮動小数点数、文字またはテキスト、リスト、シーケンス、配列、タプル、判別共用体、レコード、クラス型、関数値のいずれかです。</span><span class="sxs-lookup"><span data-stu-id="1fced-105">Values in F# are quantities that have a specific type; values can be integral or floating point numbers, characters or text, lists, sequences, arrays, tuples, discriminated unions, records, class types, or function values.</span></span>
 
 
-## <a name="binding-a-value"></a>値のバインド
-*バインド*とは、名前と定義を関連付けることを意味します。 `let` キーワードは、次の例のように、値のバインディングを行います。
+## <a name="binding-a-value"></a><span data-ttu-id="1fced-106">値のバインド</span><span class="sxs-lookup"><span data-stu-id="1fced-106">Binding a Value</span></span>
+<span data-ttu-id="1fced-107">*バインド*とは、名前と定義を関連付けることを意味します。</span><span class="sxs-lookup"><span data-stu-id="1fced-107">The term *binding* means associating a name with a definition.</span></span> <span data-ttu-id="1fced-108">`let` キーワードは、次の例のように、値のバインディングを行います。</span><span class="sxs-lookup"><span data-stu-id="1fced-108">The `let` keyword binds a value, as in the following examples:</span></span>
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet601.fs)]
 
-値の型は、定義から推論されます。 整数や浮動小数点数などのプリミティブ型では、型がリテラルの型から判断されます。 したがって、前の例では、コンパイラによって `b` の型が `unsigned int` と推論されるのに対し、`a` の型は `int` と推論されます。 関数値の型は、関数本体の戻り値から判断されます。 関数値の型の詳細については、「[関数](../functions/index.md)」を参照してください。 リテラルの型の詳細については、「[Literals](../literals.md)」を参照してください。
+<span data-ttu-id="1fced-109">値の型は、定義から推論されます。</span><span class="sxs-lookup"><span data-stu-id="1fced-109">The type of a value is inferred from the definition.</span></span> <span data-ttu-id="1fced-110">整数や浮動小数点数などのプリミティブ型では、型がリテラルの型から判断されます。</span><span class="sxs-lookup"><span data-stu-id="1fced-110">For a primitive type, such as an integral or floating point number, the type is determined from the type of the literal.</span></span> <span data-ttu-id="1fced-111">したがって、前の例では、コンパイラによって `b` の型が `unsigned int` と推論されるのに対し、`a` の型は `int` と推論されます。</span><span class="sxs-lookup"><span data-stu-id="1fced-111">Therefore, in the previous example, the compiler infers the type of `b` to be `unsigned int`, whereas the compiler infers the type of `a` to be `int`.</span></span> <span data-ttu-id="1fced-112">関数値の型は、関数本体の戻り値から判断されます。</span><span class="sxs-lookup"><span data-stu-id="1fced-112">The type of a function value is determined from the return value in the function body.</span></span> <span data-ttu-id="1fced-113">関数値の型の詳細については、「[関数](../functions/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1fced-113">For more information about function value types, see [Functions](../functions/index.md).</span></span> <span data-ttu-id="1fced-114">リテラルの型の詳細については、「[Literals](../literals.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1fced-114">For more information about literal types, see [Literals](../literals.md).</span></span>
 
 
-## <a name="why-immutable"></a>変更不可である理由
-変更不可の値とは、プログラムの実行過程全体を通じて変更できない値です。 C++、Visual Basic、C# などの言語に慣れている場合は、F# のプログラムの実行中に、新しい値の割り当てが可能な変数よりも、変更不可な値が優先されることが意外に思われる可能性があります。 変更不可のデータは、関数型プログラミングの重要な要素です。 マルチスレッド環境では、多数の異なるスレッドによる変更が可能な共有の変数を管理することは困難です。 また、変更可能な変数では、変数が別の関数に渡されたときに変更される可能性があるかどうかを見分けるのが難しい場合があります。
+## <a name="why-immutable"></a><span data-ttu-id="1fced-115">変更不可である理由</span><span class="sxs-lookup"><span data-stu-id="1fced-115">Why Immutable?</span></span>
+<span data-ttu-id="1fced-116">変更不可の値とは、プログラムの実行過程全体を通じて変更できない値です。</span><span class="sxs-lookup"><span data-stu-id="1fced-116">Immutable values are values that cannot be changed throughout the course of a program's execution.</span></span> <span data-ttu-id="1fced-117">C++、Visual Basic、C# などの言語に慣れている場合は、F# のプログラムの実行中に、新しい値の割り当てが可能な変数よりも、変更不可な値が優先されることが意外に思われる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1fced-117">If you are used to languages such as C++, Visual Basic, or C#, you might find it surprising that F# puts primacy over immutable values rather than variables that can be assigned new values during the execution of a program.</span></span> <span data-ttu-id="1fced-118">変更不可のデータは、関数型プログラミングの重要な要素です。</span><span class="sxs-lookup"><span data-stu-id="1fced-118">Immutable data is an important element of functional programming.</span></span> <span data-ttu-id="1fced-119">マルチスレッド環境では、多数の異なるスレッドによる変更が可能な共有の変数を管理することは困難です。</span><span class="sxs-lookup"><span data-stu-id="1fced-119">In a multithreaded environment, shared mutable variables that can be changed by many different threads are difficult to manage.</span></span> <span data-ttu-id="1fced-120">また、変更可能な変数では、変数が別の関数に渡されたときに変更される可能性があるかどうかを見分けるのが難しい場合があります。</span><span class="sxs-lookup"><span data-stu-id="1fced-120">Also, with mutable variables, it can sometimes be hard to tell if a variable might be changed when it is passed to another function.</span></span>
 
-純粋な関数型言語では、変数は存在せず、関数は数学関数として厳密に機能します。 手続き型言語のコードでは変数割り当てを使用して値を変更しますが、関数型言語の同等のコードには、入力である変更不可の値、変更不可の関数、および出力としての別の変更不可の値があります。 この数学的な厳密性により、プログラムの動作についての強力な推論が実現します。 この強力な推論により、コンパイラでコードをより厳密にチェックし、より効率的に最適化を行い、開発者が正しいコードを容易に理解および記述できるようになります。 したがって、関数型コードは、通常の手続き型コードよりもデバッグが容易になるのが普通です。
+<span data-ttu-id="1fced-121">純粋な関数型言語では、変数は存在せず、関数は数学関数として厳密に機能します。</span><span class="sxs-lookup"><span data-stu-id="1fced-121">In pure functional languages, there are no variables, and functions behave strictly as mathematical functions.</span></span> <span data-ttu-id="1fced-122">手続き型言語のコードでは変数割り当てを使用して値を変更しますが、関数型言語の同等のコードには、入力である変更不可の値、変更不可の関数、および出力としての別の変更不可の値があります。</span><span class="sxs-lookup"><span data-stu-id="1fced-122">Where code in a procedural language uses a variable assignment to alter a value, the equivalent code in a functional language has an immutable value that is the input, an immutable function, and different immutable values as the output.</span></span> <span data-ttu-id="1fced-123">この数学的な厳密性により、プログラムの動作についての強力な推論が実現します。</span><span class="sxs-lookup"><span data-stu-id="1fced-123">This mathematical strictness allows for tighter reasoning about the behavior of the program.</span></span> <span data-ttu-id="1fced-124">この強力な推論により、コンパイラでコードをより厳密にチェックし、より効率的に最適化を行い、開発者が正しいコードを容易に理解および記述できるようになります。</span><span class="sxs-lookup"><span data-stu-id="1fced-124">This tighter reasoning is what enables compilers to check code more stringently and to optimize more effectively, and helps make it easier for developers to understand and write correct code.</span></span> <span data-ttu-id="1fced-125">したがって、関数型コードは、通常の手続き型コードよりもデバッグが容易になるのが普通です。</span><span class="sxs-lookup"><span data-stu-id="1fced-125">Functional code is therefore likely to be easier to debug than ordinary procedural code.</span></span>
 
-F# は、純粋な関数型言語ではありませんが、関数型プログラミングを完全にサポートします。 変更不可の値の使用は、コードで関数型プログラミングの重要な特長を利用できる、優れたプログラミング方法です。
+<span data-ttu-id="1fced-126">F# は、純粋な関数型言語ではありませんが、関数型プログラミングを完全にサポートします。</span><span class="sxs-lookup"><span data-stu-id="1fced-126">F# is not a pure functional language, yet it fully supports functional programming.</span></span> <span data-ttu-id="1fced-127">変更不可の値の使用は、コードで関数型プログラミングの重要な特長を利用できる、優れたプログラミング方法です。</span><span class="sxs-lookup"><span data-stu-id="1fced-127">Using immutable values is a good practice because doing this allows your code to benefit from an important aspect of functional programming.</span></span>
 
 
-## <a name="mutable-variables"></a>変更可能な変数
-キーワード `mutable` を使用して、変更可能な変数を指定できます。 F# での変更可能な変数の範囲は、通常、型のフィールドまたはローカル値として限定されています。 範囲が限定された変更可能な変数は、制御が容易であり、誤った方法で変更される可能性が低くなります。
+## <a name="mutable-variables"></a><span data-ttu-id="1fced-128">変更可能な変数</span><span class="sxs-lookup"><span data-stu-id="1fced-128">Mutable Variables</span></span>
+<span data-ttu-id="1fced-129">キーワード `mutable` を使用して、変更可能な変数を指定できます。</span><span class="sxs-lookup"><span data-stu-id="1fced-129">You can use the keyword `mutable` to specify a variable that can be changed.</span></span> <span data-ttu-id="1fced-130">F# での変更可能な変数の範囲は、通常、型のフィールドまたはローカル値として限定されています。</span><span class="sxs-lookup"><span data-stu-id="1fced-130">Mutable variables in F# should generally have a limited scope, either as a field of a type or as a local value.</span></span> <span data-ttu-id="1fced-131">範囲が限定された変更可能な変数は、制御が容易であり、誤った方法で変更される可能性が低くなります。</span><span class="sxs-lookup"><span data-stu-id="1fced-131">Mutable variables with a limited scope are easier to control and are less likely to be modified in incorrect ways.</span></span>
 
-変更可能な変数に初期値を割り当てるには、値を定義するときと同じ方法で、`let` キーワードを使用します。 ただし、次の例に示すように、`<-` 演算子を使用して、変更可能な変数に後で新しい値を割り当てることができる点が異なります。
+<span data-ttu-id="1fced-132">変更可能な変数に初期値を割り当てるには、値を定義するときと同じ方法で、`let` キーワードを使用します。</span><span class="sxs-lookup"><span data-stu-id="1fced-132">You can assign an initial value to a mutable variable by using the `let` keyword in the same way as you would define a value.</span></span> <span data-ttu-id="1fced-133">ただし、次の例に示すように、`<-` 演算子を使用して、変更可能な変数に後で新しい値を割り当てることができる点が異なります。</span><span class="sxs-lookup"><span data-stu-id="1fced-133">However, the difference is that you can subsequently assign new values to mutable variables by using the `<-` operator, as in the following example.</span></span>
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet602.fs)]
     
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="1fced-134">関連トピック</span><span class="sxs-lookup"><span data-stu-id="1fced-134">Related Topics</span></span>
 
 
-|タイトル|説明|
+|<span data-ttu-id="1fced-135">タイトル</span><span class="sxs-lookup"><span data-stu-id="1fced-135">Title</span></span>|<span data-ttu-id="1fced-136">説明</span><span class="sxs-lookup"><span data-stu-id="1fced-136">Description</span></span>|
 |-----|-----------|
-|[let バインド](../functions/let-bindings.md)|`let` キーワードを使用した値および関数への名前のバインディングに関する情報を提供します。|
-|[関数](../functions/index.md)|F# の関数の概要を説明します。|
+|[<span data-ttu-id="1fced-137">let バインド</span><span class="sxs-lookup"><span data-stu-id="1fced-137">let Bindings</span></span>](../functions/let-bindings.md)|<span data-ttu-id="1fced-138">使用に関する情報、`let`キーワード値や関数に名前をバインドします。</span><span class="sxs-lookup"><span data-stu-id="1fced-138">Provides information about using the `let` keyword to bind names to values and functions.</span></span>|
+|[<span data-ttu-id="1fced-139">関数</span><span class="sxs-lookup"><span data-stu-id="1fced-139">Functions</span></span>](../functions/index.md)|<span data-ttu-id="1fced-140">F# の関数の概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="1fced-140">Provides an overview of functions in F#.</span></span>|
 
-## <a name="see-also"></a>関連項目
-[null 値](null-Values.md)
+## <a name="see-also"></a><span data-ttu-id="1fced-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="1fced-141">See Also</span></span>
+[<span data-ttu-id="1fced-142">null 値</span><span class="sxs-lookup"><span data-stu-id="1fced-142">Null Values</span></span>](null-Values.md)
 
-[F# 言語リファレンス](../index.md)
-
+[<span data-ttu-id="1fced-143">F# 言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="1fced-143">F# Language Reference</span></span>](../index.md)

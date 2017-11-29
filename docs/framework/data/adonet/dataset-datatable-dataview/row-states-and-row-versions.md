@@ -1,42 +1,47 @@
 ---
-title: "行の状態とバージョン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "行の状態とバージョン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 2e6642c9-bfc6-425c-b3a7-e4912ffa6c1f
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: f03ddd0c8a09826068ae30e23773016faf3f56e4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 行の状態とバージョン
-ADO.NET は、行の状態とバージョンを使用してテーブル内の行を管理します。  行状態は、1 つの行のステータスを示します。行バージョンは、1 つの行の値が変更されるときに、変更に応じてその行に格納される現在の値、元の値、既定値などを維持します。  たとえば、ある行の 1 つの列を変更すると、この行の状態は `Modified` になり、次の 2 つの行バージョンが存在することになります。`Current` には現在の行値が格納され、`Original` にはその列が変更される前の行値が格納されます。  
+# <a name="row-states-and-row-versions"></a><span data-ttu-id="714b4-102">行の状態とバージョン</span><span class="sxs-lookup"><span data-stu-id="714b4-102">Row States and Row Versions</span></span>
+<span data-ttu-id="714b4-103">ADO.NET は、行の状態とバージョンを使用してテーブル内の行を管理します。</span><span class="sxs-lookup"><span data-stu-id="714b4-103">ADO.NET manages rows in tables using row states and versions.</span></span> <span data-ttu-id="714b4-104">行状態は、1 つの行のステータスを示します。行バージョンは、1 つの行の値が変更されるときに、変更に応じてその行に格納される現在の値、元の値、既定値などを維持します。</span><span class="sxs-lookup"><span data-stu-id="714b4-104">A row state indicates the status of a row; row versions maintain the values stored in a row as it is modified, including current, original, and default values.</span></span> <span data-ttu-id="714b4-105">たとえば、ある行の 1 つの列を変更すると、この行の状態は `Modified` になり、次の 2 つの行バージョンが存在することになります。`Current` には現在の行値が格納され、`Original` にはその列が変更される前の行値が格納されます。</span><span class="sxs-lookup"><span data-stu-id="714b4-105">For example, after you have made a modification to a column in a row, the row will have a row state of `Modified`, and two row versions: `Current`, which contains the current row values, and `Original`, which contains the row values before the column was modified.</span></span>  
   
- 各 <xref:System.Data.DataRow> オブジェクトにある <xref:System.Data.DataRow.RowState%2A> プロパティを調べると、行の現在の状態を確認できます。  `RowState` 列挙値ごとの簡単な説明を次の表に示します。  
+ <span data-ttu-id="714b4-106">各 <xref:System.Data.DataRow> オブジェクトにある <xref:System.Data.DataRow.RowState%2A> プロパティを調べると、行の現在の状態を確認できます。</span><span class="sxs-lookup"><span data-stu-id="714b4-106">Each <xref:System.Data.DataRow> object has a <xref:System.Data.DataRow.RowState%2A> property that you can examine to determine the current state of the row.</span></span> <span data-ttu-id="714b4-107">`RowState` 列挙値ごとの簡単な説明を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="714b4-107">The following table gives a brief description of each `RowState` enumeration value.</span></span>  
   
-|RowState の値|説明|  
-|-----------------|--------|  
-|<xref:System.Data.DataRowState>|`AcceptChanges` が最後に呼び出されてから、または `DataAdapter.Fill` によって行が作成されてから変更は行われていません。|  
-|<xref:System.Data.DataRowState>|行がテーブルに追加されましたが、`AcceptChanges` が呼び出されていません。|  
-|<xref:System.Data.DataRowState>|行のいくつかの要素が変更されました。|  
-|<xref:System.Data.DataRowState>|行がテーブルから削除されましたが、`AcceptChanges` が呼び出されていません。|  
-|<xref:System.Data.DataRowState>|行がどの `DataRowCollection` にも属していません。  新しく作成された行の `RowState` は `Detached` に設定されます。  `Add` メソッドを呼び出して新しい `DataRow` を `DataRowCollection` に追加すると、`RowState` プロパティの値は `Added` に設定されます。<br /><br /> `Detached` は、`Remove` メソッドを使用するか、または `Delete` メソッドに続いて `AcceptChanges` メソッドを使用して `DataRowCollection` から削除された行に対しても設定されます。|  
+|<span data-ttu-id="714b4-108">RowState の値</span><span class="sxs-lookup"><span data-stu-id="714b4-108">RowState value</span></span>|<span data-ttu-id="714b4-109">説明</span><span class="sxs-lookup"><span data-stu-id="714b4-109">Description</span></span>|  
+|--------------------|-----------------|  
+|<xref:System.Data.DataRowState.Unchanged>|<span data-ttu-id="714b4-110">`AcceptChanges` が最後に呼び出されてから、または `DataAdapter.Fill` によって行が作成されてから変更は行われていません。</span><span class="sxs-lookup"><span data-stu-id="714b4-110">No changes have been made since the last call to `AcceptChanges` or since the row was created by `DataAdapter.Fill`.</span></span>|  
+|<xref:System.Data.DataRowState.Added>|<span data-ttu-id="714b4-111">行がテーブルに追加されましたが、`AcceptChanges` が呼び出されていません。</span><span class="sxs-lookup"><span data-stu-id="714b4-111">The row has been added to the table, but `AcceptChanges` has not been called.</span></span>|  
+|<xref:System.Data.DataRowState.Modified>|<span data-ttu-id="714b4-112">行のいくつかの要素が変更されました。</span><span class="sxs-lookup"><span data-stu-id="714b4-112">Some element of the row has been changed.</span></span>|  
+|<xref:System.Data.DataRowState.Deleted>|<span data-ttu-id="714b4-113">行がテーブルから削除されましたが、`AcceptChanges` が呼び出されていません。</span><span class="sxs-lookup"><span data-stu-id="714b4-113">The row has been deleted from a table, and `AcceptChanges` has not been called.</span></span>|  
+|<xref:System.Data.DataRowState.Detached>|<span data-ttu-id="714b4-114">行がどの `DataRowCollection` にも属していません。</span><span class="sxs-lookup"><span data-stu-id="714b4-114">The row is not part of any `DataRowCollection`.</span></span> <span data-ttu-id="714b4-115">新しく作成された行の `RowState` は `Detached` に設定されます。</span><span class="sxs-lookup"><span data-stu-id="714b4-115">The `RowState` of a newly created row is set to `Detached`.</span></span> <span data-ttu-id="714b4-116">`DataRow` メソッドを呼び出して新しい `DataRowCollection` を `Add` に追加すると、`RowState` プロパティの値は `Added` に設定されます。</span><span class="sxs-lookup"><span data-stu-id="714b4-116">After the new `DataRow` is added to the `DataRowCollection` by calling the `Add` method, the value of the `RowState` property is set to `Added`.</span></span><br /><br /> <span data-ttu-id="714b4-117">`Detached` は、`DataRowCollection` メソッドを使用するか、または `Remove` メソッドに続いて `Delete` メソッドを使用して `AcceptChanges` から削除された行に対しても設定されます。</span><span class="sxs-lookup"><span data-stu-id="714b4-117">`Detached` is also set for a row that has been removed from a `DataRowCollection` using the `Remove` method, or by the `Delete` method followed by the `AcceptChanges` method.</span></span>|  
   
- <xref:System.Data.DataSet>、<xref:System.Data.DataTable>、または <xref:System.Data.DataRow> の `AcceptChanges` が呼び出されると、`Deleted` の行状態を持つすべての行が削除されます。  残りの行の行状態は `Unchanged` になり、`Current` 行バージョンの値は `Original` 行バージョンの値で上書きされます。  `RejectChanges` が呼び出されると、`Added` の行状態を持つすべての行が削除されます。  残りの行の行状態は `Unchanged` になり、`Original` 行バージョンの値は `Current` 行バージョンの値で上書きされます。  
+ <span data-ttu-id="714b4-118">`AcceptChanges`、<xref:System.Data.DataSet>、または <xref:System.Data.DataTable> の <xref:System.Data.DataRow> が呼び出されると、`Deleted` の行状態を持つすべての行が削除されます。</span><span class="sxs-lookup"><span data-stu-id="714b4-118">When `AcceptChanges` is called on a <xref:System.Data.DataSet>, <xref:System.Data.DataTable> , or <xref:System.Data.DataRow>, all rows with a row state of `Deleted` are removed.</span></span> <span data-ttu-id="714b4-119">残りの行の行状態は `Unchanged` になり、`Original` 行バージョンの値は `Current` 行バージョンの値で上書きされます。</span><span class="sxs-lookup"><span data-stu-id="714b4-119">The remaining rows are given a row state of `Unchanged`, and the values in the `Original` row version are overwritten with the `Current` row version values.</span></span> <span data-ttu-id="714b4-120">`RejectChanges` が呼び出されると、`Added` の行状態を持つすべての行が削除されます。</span><span class="sxs-lookup"><span data-stu-id="714b4-120">When `RejectChanges` is called, all rows with a row state of `Added` are removed.</span></span> <span data-ttu-id="714b4-121">残りの行の行状態は `Unchanged` になり、`Current` 行バージョンの値は `Original` 行バージョンの値で上書きされます。</span><span class="sxs-lookup"><span data-stu-id="714b4-121">The remaining rows are given a row state of `Unchanged`, and the values in the `Current` row version are overwritten with the `Original` row version values.</span></span>  
   
- <xref:System.Data.DataRowVersion> パラメーターと列参照を渡すことにより、ある行の行バージョンを表示する例を次に示します。  
+ <span data-ttu-id="714b4-122"><xref:System.Data.DataRowVersion> パラメーターと列参照を渡すことにより、ある行の行バージョンを表示する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="714b4-122">You can view the different row versions of a row by passing a <xref:System.Data.DataRowVersion> parameter with the column reference, as shown in the following example.</span></span>  
   
 ```vb  
 Dim custRow As DataRow = custTable.Rows(0)  
 Dim custID As String = custRow("CustomerID", DataRowVersion.Original).ToString()  
-  
 ```  
   
 ```csharp  
@@ -44,18 +49,18 @@ DataRow custRow = custTable.Rows[0];
 string custID = custRow["CustomerID", DataRowVersion.Original].ToString();  
 ```  
   
- `DataRowVersion` 列挙値ごとの簡単な説明を次の表に示します。  
+ <span data-ttu-id="714b4-123">`DataRowVersion` 列挙値ごとの簡単な説明を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="714b4-123">The following table gives a brief description of each `DataRowVersion` enumeration value.</span></span>  
   
-|DataRowVersion の値|説明|  
-|-----------------------|--------|  
-|<xref:System.Data.DataRowVersion>|行の現在の値。  この行バージョンは、`Deleted` の `RowState` を持つ行については存在しません。|  
-|<xref:System.Data.DataRowVersion>|特定の行の既定の行バージョン。  `Added`、`Modified`、または `Unchanged` 行の既定の行バージョンは、`Current` です。  `Deleted` 行の既定の行バージョンは、`Original` です。  `Detached` 行の既定の行バージョンは、`Proposed` です。|  
-|<xref:System.Data.DataRowVersion>|行の元の値。  この行バージョンは、`Added` の `RowState` を持つ行については存在しません。|  
-|<xref:System.Data.DataRowVersion>|行に対して提示された値。  この行バージョンは、行、つまり `DataRowCollection` の一部ではない行に対する編集操作の間存在します。|  
+|<span data-ttu-id="714b4-124">DataRowVersion の値</span><span class="sxs-lookup"><span data-stu-id="714b4-124">DataRowVersion value</span></span>|<span data-ttu-id="714b4-125">説明</span><span class="sxs-lookup"><span data-stu-id="714b4-125">Description</span></span>|  
+|--------------------------|-----------------|  
+|<xref:System.Data.DataRowVersion.Current>|<span data-ttu-id="714b4-126">行の現在の値。</span><span class="sxs-lookup"><span data-stu-id="714b4-126">The current values for the row.</span></span> <span data-ttu-id="714b4-127">この行バージョンは、`RowState` の `Deleted` を持つ行については存在しません。</span><span class="sxs-lookup"><span data-stu-id="714b4-127">This row version does not exist for rows with a `RowState` of `Deleted`.</span></span>|  
+|<xref:System.Data.DataRowVersion.Default>|<span data-ttu-id="714b4-128">特定の行の既定の行バージョン。</span><span class="sxs-lookup"><span data-stu-id="714b4-128">The default row version for a particular row.</span></span> <span data-ttu-id="714b4-129">`Added`、`Modified`、または `Unchanged` 行の既定の行バージョンは、`Current` です。</span><span class="sxs-lookup"><span data-stu-id="714b4-129">The default row version for an `Added`, `Modified`, or `Unchanged` row is `Current`.</span></span> <span data-ttu-id="714b4-130">`Deleted` 行の既定の行バージョンは、`Original` です。</span><span class="sxs-lookup"><span data-stu-id="714b4-130">The default row version for a `Deleted` row is `Original`.</span></span> <span data-ttu-id="714b4-131">`Detached` 行の既定の行バージョンは、`Proposed` です。</span><span class="sxs-lookup"><span data-stu-id="714b4-131">The default row version for a `Detached` row is `Proposed`.</span></span>|  
+|<xref:System.Data.DataRowVersion.Original>|<span data-ttu-id="714b4-132">行の元の値。</span><span class="sxs-lookup"><span data-stu-id="714b4-132">The original values for the row.</span></span> <span data-ttu-id="714b4-133">この行バージョンは、`RowState` の `Added` を持つ行については存在しません。</span><span class="sxs-lookup"><span data-stu-id="714b4-133">This row version does not exist for rows with a `RowState` of `Added`.</span></span>|  
+|<xref:System.Data.DataRowVersion.Proposed>|<span data-ttu-id="714b4-134">行に対して提示された値。</span><span class="sxs-lookup"><span data-stu-id="714b4-134">The proposed values for the row.</span></span> <span data-ttu-id="714b4-135">この行バージョンは、行、つまり `DataRowCollection` の一部ではない行に対する編集操作の間存在します。</span><span class="sxs-lookup"><span data-stu-id="714b4-135">This row version exists during an edit operation on a row, or for a row that is not part of a `DataRowCollection`.</span></span>|  
   
- <xref:System.Data.DataRow.HasVersion%2A> メソッドを呼び出して `DataRowVersion` を引数として渡すことにより、`DataRow` が特定の行バージョンを持っているかどうかを確認できます。  たとえば、`DataRow.HasVersion(DataRowVersion.Original)` は、新しく追加された行に対して `AcceptChanges` が呼び出されていない場合に `false` を返します。  
+ <span data-ttu-id="714b4-136">`DataRow` メソッドを呼び出して <xref:System.Data.DataRow.HasVersion%2A> を引数として渡すことにより、`DataRowVersion` が特定の行バージョンを持っているかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="714b4-136">You can test whether a `DataRow` has a particular row version by calling the <xref:System.Data.DataRow.HasVersion%2A> method and passing a `DataRowVersion` as an argument.</span></span> <span data-ttu-id="714b4-137">たとえば、`DataRow.HasVersion(DataRowVersion.Original)` は、新しく追加された行に対して `false` が呼び出されていない場合に `AcceptChanges` を返します。</span><span class="sxs-lookup"><span data-stu-id="714b4-137">For example, `DataRow.HasVersion(DataRowVersion.Original)` will return `false` for newly added rows before `AcceptChanges` has been called.</span></span>  
   
- テーブルから削除されたすべての行の値を表示するコード サンプルを次に示します。  `Deleted` 行には `Current` 行バージョンがないため、列値にアクセスするときに `DataRowVersion.Original` を渡す必要があります。  
+ <span data-ttu-id="714b4-138">テーブルから削除されたすべての行の値を表示するコード サンプルを次に示します。</span><span class="sxs-lookup"><span data-stu-id="714b4-138">The following code example displays the values in all the deleted rows of a table.</span></span> <span data-ttu-id="714b4-139">`Deleted` 行には `Current` 行バージョンがないため、列値にアクセスするときに `DataRowVersion.Original` を渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="714b4-139">`Deleted` rows do not have a `Current` row version, so you must pass `DataRowVersion.Original` when accessing the column values.</span></span>  
   
 ```vb  
 Dim catTable As DataTable = catDS.Tables("Categories")  
@@ -78,7 +83,6 @@ For Each delRow In delRows
   Next  
   Console.WriteLine()  
 Next  
-  
 ```  
   
 ```csharp  
@@ -100,8 +104,8 @@ foreach (DataRow delRow in delRows)
 }  
 ```  
   
-## 参照  
- [DataTable 内のデータの操作](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)   
- [DataSets、DataTables、および DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [DataAdapter と DataReader](../../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="714b4-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="714b4-140">See Also</span></span>  
+ [<span data-ttu-id="714b4-141">DataTable 内のデータを操作します。</span><span class="sxs-lookup"><span data-stu-id="714b4-141">Manipulating Data in a DataTable</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
+ [<span data-ttu-id="714b4-142">DataSet、DataTable、および DataView</span><span class="sxs-lookup"><span data-stu-id="714b4-142">DataSets, DataTables, and DataViews</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [<span data-ttu-id="714b4-143">Dataadapter と Datareader</span><span class="sxs-lookup"><span data-stu-id="714b4-143">DataAdapters and DataReaders</span></span>](../../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [<span data-ttu-id="714b4-144">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="714b4-144">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

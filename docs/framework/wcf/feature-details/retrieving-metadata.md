@@ -1,43 +1,45 @@
 ---
-title: "メタデータを取得する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "メタデータ [WCF], 取得"
+title: "メタデータを取得する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: metadata [WCF], retrieving
 ms.assetid: 18d8ba4c-af0f-4827-a50b-4202d767bacc
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 51d12f091100e73a87b0c7203db1fbf1eeed77bb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# メタデータを取得する
-メタデータの取得は、WS\-MetadataExchange \(MEX\) メタデータ エンドポイントや HTTP\/GET メタデータ エンドポイントなどのメタデータ エンドポイントに対してメタデータを要求して取得する処理です。  
+# <a name="retrieving-metadata"></a><span data-ttu-id="899d0-102">メタデータを取得する</span><span class="sxs-lookup"><span data-stu-id="899d0-102">Retrieving Metadata</span></span>
+<span data-ttu-id="899d0-103">メタデータの取得は、WS-MetadataExchange (MEX) メタデータ エンドポイントや HTTP/GET メタデータ エンドポイントなどのメタデータ エンドポイントに対してメタデータを要求して取得する処理です。</span><span class="sxs-lookup"><span data-stu-id="899d0-103">Metadata retrieval is the process of requesting and retrieving metadata from a metadata endpoint, such as a WS-MetadataExchange (MEX) metadata endpoint or an HTTP/GET metadata endpoint.</span></span>  
   
-## Svcutil.exe を使用した、コマンドラインからのメタデータの取得  
- [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ツールを使用して、`/target:metadata` スイッチとアドレスを渡すことにより、WS\-MetadataExchange 要求または HTTP\/GET 要求を使用してサービス メタデータを取得できます。Svcutil.exe は指定したアドレスでメタデータをダウンロードし、ディスクにファイルを保存します。Svcutil.exe は内部的に <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> インスタンスを使用し、構成 \(Svcutil.exe に入力として渡されたアドレスのスキーマに一致する名前の <xref:System.ServiceModel.Description.IMetadataExchange> エンドポイント構成\) から読み込まれます。  
+## <a name="retrieving-metadata-from-the-command-line-using-svcutilexe"></a><span data-ttu-id="899d0-104">Svcutil.exe を使用した、コマンドラインからのメタデータの取得</span><span class="sxs-lookup"><span data-stu-id="899d0-104">Retrieving Metadata from the Command Line Using Svcutil.exe</span></span>  
+ <span data-ttu-id="899d0-105">使用して、Ws-metadataexchange または HTTP/GET 要求を使用してサービス メタデータを取得することができます、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)ツールを渡して、`/target:metadata`スイッチとアドレスです。</span><span class="sxs-lookup"><span data-stu-id="899d0-105">You can retrieve service metadata using WS-MetadataExchange or HTTP/GET requests by using the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) tool and passing the `/target:metadata` switch and an address.</span></span> <span data-ttu-id="899d0-106">Svcutil.exe は指定したアドレスでメタデータをダウンロードし、ディスクにファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="899d0-106">Svcutil.exe downloads the metadata at the specified address and saves the file to disk.</span></span> <span data-ttu-id="899d0-107">Svcutil.exe は内部的に <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> インスタンスを使用し、構成 (Svcutil.exe に入力として渡されたアドレスのスキーマに一致する名前の <xref:System.ServiceModel.Description.IMetadataExchange> エンドポイント構成) から読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="899d0-107">Svcutil.exe uses a <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> instance internally and loads from configuration the <xref:System.ServiceModel.Description.IMetadataExchange> endpoint configuration whose name matches the scheme of the address passed to Svcutil.exe as input.</span></span>  
   
-## MetadataExchangeClient を使用した、プログラムによるメタデータの取得  
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、WS\-MetadataExchange 要求や HTTP\/GET 要求などの標準化プロトコルを使用してサービス メタデータを取得できます。これらのプロトコルはいずれも、<xref:System.ServiceModel.Description.MetadataExchangeClient> 型でサポートされます。メタデータ エンドポイントのアドレスとオプションのバインディングを指定することにより、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> 型を使用してサービス メタデータを取得します。<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> インスタンスで使用するバインディングは、<xref:System.ServiceModel.Description.MetadataExchangeBindings> 静的クラスの既定のバインディング、ユーザー指定のバインディング、`IMetadataExchange` コントラクト用のエンドポイント構成から読み込まれたバインディングのいずれかです。<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> は同様に、<xref:System.Net.HttpWebRequest> 型を使用して、メタデータへの HTTP URL 参照を解決できます。  
+## <a name="retrieving-metadata-programmatically-using-the-metadataexchangeclient"></a><span data-ttu-id="899d0-108">MetadataExchangeClient を使用した、プログラムによるメタデータの取得</span><span class="sxs-lookup"><span data-stu-id="899d0-108">Retrieving Metadata Programmatically Using the MetadataExchangeClient</span></span>  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="899d0-109"> では、WS-MetadataExchange 要求や HTTP/GET 要求などの標準化プロトコルを使用してサービス メタデータを取得できます。</span><span class="sxs-lookup"><span data-stu-id="899d0-109"> can retrieve service metadata using standardized protocols such as WS-MetadataExchange and HTTP/GET requests.</span></span> <span data-ttu-id="899d0-110">これらのプロトコルはいずれも、<xref:System.ServiceModel.Description.MetadataExchangeClient> 型でサポートされます。</span><span class="sxs-lookup"><span data-stu-id="899d0-110">Both of these protocols are supported by the <xref:System.ServiceModel.Description.MetadataExchangeClient> type.</span></span> <span data-ttu-id="899d0-111">メタデータ エンドポイントのアドレスとオプションのバインディングを指定することにより、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> 型を使用してサービス メタデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="899d0-111">You retrieve service metadata using the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> type by providing an address for the metadata endpoint and an optional binding.</span></span> <span data-ttu-id="899d0-112"><xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> インスタンスで使用するバインディングは、<xref:System.ServiceModel.Description.MetadataExchangeBindings> 静的クラスの既定のバインディング、ユーザー指定のバインディング、`IMetadataExchange` コントラクト用のエンドポイント構成から読み込まれたバインディングのいずれかです。</span><span class="sxs-lookup"><span data-stu-id="899d0-112">The binding used by a <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> instance can be one of the default bindings from the <xref:System.ServiceModel.Description.MetadataExchangeBindings> static class, a user-supplied binding, or a binding loaded from an endpoint configuration for the `IMetadataExchange` contract.</span></span> <span data-ttu-id="899d0-113"><xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> は同様に、<xref:System.Net.HttpWebRequest> 型を使用して、メタデータへの HTTP URL 参照を解決できます。</span><span class="sxs-lookup"><span data-stu-id="899d0-113">The <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> can also resolve HTTP URL references to metadata using the <xref:System.Net.HttpWebRequest> type.</span></span>  
   
- 既定では、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> インスタンスは、1 つの <xref:System.ServiceModel.ChannelFactory> インスタンスに結び付けられています。<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> によって使用される <xref:System.ServiceModel.ChannelFactory?displayProperty=fullName> インスタンスは、<xref:System.ServiceModel.Description.MetadataExchangeClient.GetChannelFactory%2A> 仮想メソッドを上書きすることによって変更または置換することができます。同様に、<xref:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest%2A?displayProperty=fullName> 仮想メソッドをオーバーライドすることによって、HTTP\/GET 要求を行うために <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> が使用する <xref:System.Net.HttpWebRequest> インスタンスを変更または置換できます。  
+ <span data-ttu-id="899d0-114">既定では、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> インスタンスは、1 つの <xref:System.ServiceModel.ChannelFactory> インスタンスに結び付けられています。</span><span class="sxs-lookup"><span data-stu-id="899d0-114">By default, a <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> instance is tied to a single <xref:System.ServiceModel.ChannelFactory> instance.</span></span> <span data-ttu-id="899d0-115"><xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> によって使用される <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> インスタンスは、<xref:System.ServiceModel.Description.MetadataExchangeClient.GetChannelFactory%2A> 仮想メソッドを上書きすることによって変更または置換することができます。</span><span class="sxs-lookup"><span data-stu-id="899d0-115">You can change or replace the <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> instance used by a <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> by overriding the <xref:System.ServiceModel.Description.MetadataExchangeClient.GetChannelFactory%2A> virtual method.</span></span> <span data-ttu-id="899d0-116">同様に、<xref:System.Net.HttpWebRequest> 仮想メソッドをオーバーライドすることによって、HTTP/GET 要求を行うために <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> が使用する <xref:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest%2A?displayProperty=nameWithType> インスタンスを変更または置換できます。</span><span class="sxs-lookup"><span data-stu-id="899d0-116">Similarly, you can change or replace the <xref:System.Net.HttpWebRequest> instance used by a <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> to make HTTP/GET requests by overriding the <xref:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest%2A?displayProperty=nameWithType> virtual method.</span></span>  
   
-## このセクションの内容  
- [方法 : Svcutil.exe を使用してメタデータ ドキュメントをダウンロードする](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)  
- Svcutil.exe を使用して、メタデータ ドキュメントをダウンロードする方法を示します。  
+## <a name="in-this-section"></a><span data-ttu-id="899d0-117">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="899d0-117">In This Section</span></span>  
+ [<span data-ttu-id="899d0-118">方法: Svcutil.exe を使用してメタデータ ドキュメントをダウンロードするには</span><span class="sxs-lookup"><span data-stu-id="899d0-118">How to: Use Svcutil.exe to Download Metadata Documents</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)  
+ <span data-ttu-id="899d0-119">Svcutil.exe を使用して、メタデータ ドキュメントをダウンロードする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="899d0-119">Demonstrates how to use Svcutil.exe to download metadata documents.</span></span>  
   
- [方法 : MetadataResolver を使用してバインディング メタデータを動的に取得する](../../../../docs/framework/wcf/feature-details/how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md)  
- <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=fullName> を使用して、実行時に動的にバインディング メタデータを取得する方法を示します。  
+ [<span data-ttu-id="899d0-120">方法: MetadataResolver を使用してバインディング メタデータを動的に取得するには</span><span class="sxs-lookup"><span data-stu-id="899d0-120">How to: Use MetadataResolver to Obtain Binding Metadata Dynamically</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md)  
+ <span data-ttu-id="899d0-121"><xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType> を使用して、実行時に動的にバインディング メタデータを取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="899d0-121">Demonstrates how to use the <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType> to obtain binding metadata dynamically at runtime.</span></span>  
   
- [方法 : MetadataExchangeClient を使用してメタデータを取得する](../../../../docs/framework/wcf/feature-details/how-to-use-metadataexchangeclient-to-retrieve-metadata.md)  
- <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> クラスを使用して、<xref:System.ServiceModel.Description.MetadataSection?displayProperty=fullName> オブジェクトを含む <xref:System.ServiceModel.Description.MetadataSet?displayProperty=fullName> オブジェクトにメタデータ ファイルをダウンロードし、ファイルに書き込んだり、他の目的に使用したりする方法を示します。  
+ [<span data-ttu-id="899d0-122">方法: MetadataExchangeClient を使用してメタデータを取得するには</span><span class="sxs-lookup"><span data-stu-id="899d0-122">How to: Use MetadataExchangeClient to Retrieve Metadata</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-metadataexchangeclient-to-retrieve-metadata.md)  
+ <span data-ttu-id="899d0-123"><xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> クラスを使用して、<xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> オブジェクトを含む <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> オブジェクトにメタデータ ファイルをダウンロードし、ファイルに書き込んだり、他の目的に使用したりする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="899d0-123">Demonstrates how to use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> class to download metadata files into a <xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> object that contains <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> objects to write to files or for other uses.</span></span>  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="899d0-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="899d0-124">See Also</span></span>  
  <xref:System.ServiceModel.Description.MetadataExchangeClient>

@@ -1,40 +1,43 @@
 ---
-title: "402 - StartSignpostEvent | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 402 - StartSignpostEvent
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5e5be126-765d-4ac9-88e7-008e9ef4f0e5
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c0cd786f78336be50ad2ef5447f74b92b2abbdc7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 402 - StartSignpostEvent
-## プロパティ  
+# <a name="402---startsignpostevent"></a><span data-ttu-id="a5fda-102">402 - StartSignpostEvent</span><span class="sxs-lookup"><span data-stu-id="a5fda-102">402 - StartSignpostEvent</span></span>
+## <a name="properties"></a><span data-ttu-id="a5fda-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a5fda-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|402|  
-|キーワード|Troubleshooting|  
-|レベル|情報|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Analytic|  
+|<span data-ttu-id="a5fda-104">ID</span><span class="sxs-lookup"><span data-stu-id="a5fda-104">ID</span></span>|<span data-ttu-id="a5fda-105">402</span><span class="sxs-lookup"><span data-stu-id="a5fda-105">402</span></span>|  
+|<span data-ttu-id="a5fda-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="a5fda-106">Keywords</span></span>|<span data-ttu-id="a5fda-107">トラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="a5fda-107">Troubleshooting</span></span>|  
+|<span data-ttu-id="a5fda-108">レベル</span><span class="sxs-lookup"><span data-stu-id="a5fda-108">Level</span></span>|<span data-ttu-id="a5fda-109">情報</span><span class="sxs-lookup"><span data-stu-id="a5fda-109">Information</span></span>|  
+|<span data-ttu-id="a5fda-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="a5fda-110">Channel</span></span>|<span data-ttu-id="a5fda-111">Microsoft-Windows-Application Server-Applications/Analytic</span><span class="sxs-lookup"><span data-stu-id="a5fda-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## 説明  
- このイベントは、エンド ツー エンド アクティビティの開始を示します。ここにはアクティビティの名前が指定されています。  
+## <a name="description"></a><span data-ttu-id="a5fda-112">説明</span><span class="sxs-lookup"><span data-stu-id="a5fda-112">Description</span></span>  
+ <span data-ttu-id="a5fda-113">このイベントは、エンド ツー エンド アクティビティの開始を示します。</span><span class="sxs-lookup"><span data-stu-id="a5fda-113">This event marks the beginning of an end-to-end activity.</span></span> <span data-ttu-id="a5fda-114">ここにはアクティビティの名前が指定されています。</span><span class="sxs-lookup"><span data-stu-id="a5fda-114">It contains the name of the activity.</span></span>  
   
-## メッセージ  
- アクティビティの境界。  
+## <a name="message"></a><span data-ttu-id="a5fda-115">メッセージ</span><span class="sxs-lookup"><span data-stu-id="a5fda-115">Message</span></span>  
+ <span data-ttu-id="a5fda-116">アクティビティの境界</span><span class="sxs-lookup"><span data-stu-id="a5fda-116">Activity boundary.</span></span>  
   
-## 詳細  
+## <a name="details"></a><span data-ttu-id="a5fda-117">詳細</span><span class="sxs-lookup"><span data-stu-id="a5fda-117">Details</span></span>  
   
-|データ項目名|データ項目の型|説明|  
-|------------|-------------|--------|  
-|Extended Data|`xs:string`|アクティビティの名前。|  
-|AppDomain|`xs:string`|AppDomain.CurrentDomain.FriendlyName で返される文字列。|
+|<span data-ttu-id="a5fda-118">データ項目名</span><span class="sxs-lookup"><span data-stu-id="a5fda-118">Data Item Name</span></span>|<span data-ttu-id="a5fda-119">データ項目の型</span><span class="sxs-lookup"><span data-stu-id="a5fda-119">Data Item Type</span></span>|<span data-ttu-id="a5fda-120">説明</span><span class="sxs-lookup"><span data-stu-id="a5fda-120">Description</span></span>|  
+|--------------------|--------------------|-----------------|  
+|<span data-ttu-id="a5fda-121">Extended Data</span><span class="sxs-lookup"><span data-stu-id="a5fda-121">Extended Data</span></span>|`xs:string`|<span data-ttu-id="a5fda-122">アクティビティの名前。</span><span class="sxs-lookup"><span data-stu-id="a5fda-122">The name of the activity.</span></span>|  
+|<span data-ttu-id="a5fda-123">AppDomain</span><span class="sxs-lookup"><span data-stu-id="a5fda-123">AppDomain</span></span>|`xs:string`|<span data-ttu-id="a5fda-124">AppDomain.CurrentDomain.FriendlyName で返される文字列。</span><span class="sxs-lookup"><span data-stu-id="a5fda-124">The string returned by AppDomain.CurrentDomain.FriendlyName.</span></span>|

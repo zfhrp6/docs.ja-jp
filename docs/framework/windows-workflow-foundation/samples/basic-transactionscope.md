@@ -1,48 +1,52 @@
 ---
-title: "基本 TransactionScope | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "基本 TransactionScope"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1e22b76a-76de-43b4-9be7-7a86ed3d5a44
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d4f9d9e966a0a6d8fa48d195b17438b3d78b32a9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 基本 TransactionScope
-このサンプルは、<xref:System.Activities.Statements.TransactionScope> インスタンスを入れ子にする方法を示す 4 つのシナリオで構成されています。1 つ目のシナリオは、作成者には構造がわからないサードパーティのアクティビティを入れ子にする方法を示しています。2 つ目と 3 つ目のシナリオは、タイムアウトがどのように機能するかを示しています。4 つ目のシナリオは、<xref:System.Activities.Statements.TransactionScope.AbortInstanceOnTransactionFailure%2A> の設定を示しています。  
+# <a name="basic-transactionscope"></a><span data-ttu-id="03e88-102">基本 TransactionScope</span><span class="sxs-lookup"><span data-stu-id="03e88-102">Basic TransactionScope</span></span>
+<span data-ttu-id="03e88-103">このサンプルは、<xref:System.Activities.Statements.TransactionScope> インスタンスを入れ子にする方法を示す 4 つのシナリオで構成されています。</span><span class="sxs-lookup"><span data-stu-id="03e88-103">This sample consists of four scenarios that run showing how to nest <xref:System.Activities.Statements.TransactionScope> instances.</span></span> <span data-ttu-id="03e88-104">1 つ目のシナリオは、作成者には構造がわからないサードパーティのアクティビティを入れ子にする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="03e88-104">The first scenario shows nesting a 3rd party activity of which the author has no knowledge of the construction.</span></span> <span data-ttu-id="03e88-105">2 つ目と 3 つ目のシナリオは、タイムアウトがどのように機能するかを示しています。4 つ目のシナリオは、<xref:System.Activities.Statements.TransactionScope.AbortInstanceOnTransactionFailure%2A> の設定を示しています。</span><span class="sxs-lookup"><span data-stu-id="03e88-105">The second and third scenarios show how time-outs are respected and the final scenario shows the <xref:System.Activities.Statements.TransactionScope.AbortInstanceOnTransactionFailure%2A> setting.</span></span>  
   
-## TransactionScopeActivity の入れ子  
- 1 つ目のシナリオのワークフローは、2 つの <xref:System.Activities.Statements.WriteLine> アクティビティと 1 つの <xref:System.Activities.Statements.TransactionScope> のシーケンスで構成されています。<xref:System.Activities.Statements.TransactionScope> の本体は、2 つの <xref:System.Activities.Statements.WriteLine> アクティビティ、トランザクションのローカル識別子を出力するカスタム アクティビティ、およびサードパーティのアクティビティのシーケンスです。サードパーティのアクティビティである `TransactionScopeTest` には <xref:System.Activities.Statements.TransactionScope> が含まれていますが、ワークフローの作成者にはわかりません。このシナリオは、<xref:System.Activities.Statements.TransactionScope> アクティビティを入れ子にできることを示しています。  
+## <a name="nesting-of-transactionscopeactivity"></a><span data-ttu-id="03e88-106">TransactionScopeActivity の入れ子</span><span class="sxs-lookup"><span data-stu-id="03e88-106">Nesting of TransactionScopeActivity</span></span>  
+ <span data-ttu-id="03e88-107">1 つ目のシナリオのワークフローは、2 つの <xref:System.Activities.Statements.WriteLine> アクティビティと 1 つの <xref:System.Activities.Statements.TransactionScope> のシーケンスで構成されています。</span><span class="sxs-lookup"><span data-stu-id="03e88-107">The workflow for the first scenario consists of a sequence of two <xref:System.Activities.Statements.WriteLine> activities and a <xref:System.Activities.Statements.TransactionScope>.</span></span> <span data-ttu-id="03e88-108"><xref:System.Activities.Statements.TransactionScope> の本体は、2 つの <xref:System.Activities.Statements.WriteLine> アクティビティ、トランザクションのローカル識別子を出力するカスタム アクティビティ、およびサードパーティのアクティビティのシーケンスです。</span><span class="sxs-lookup"><span data-stu-id="03e88-108">The body of the <xref:System.Activities.Statements.TransactionScope> is a sequence of two more <xref:System.Activities.Statements.WriteLine> activities, a custom activity that prints the local identifier of the transaction and a third party activity.</span></span> <span data-ttu-id="03e88-109">サードパーティのアクティビティである `TransactionScopeTest` には <xref:System.Activities.Statements.TransactionScope> が含まれていますが、ワークフローの作成者にはわかりません。</span><span class="sxs-lookup"><span data-stu-id="03e88-109">The third party activity `TransactionScopeTest` contains a <xref:System.Activities.Statements.TransactionScope> although the workflow author has no way of knowing.</span></span> <span data-ttu-id="03e88-110">このシナリオは、<xref:System.Activities.Statements.TransactionScope> アクティビティを入れ子にできることを示しています。</span><span class="sxs-lookup"><span data-stu-id="03e88-110">This scenario shows that <xref:System.Activities.Statements.TransactionScope> activities can be nested.</span></span>  
   
-## タイムアウト  
- 2 つ目のシナリオのワークフローは 1 つ目のシナリオとほとんど同じですが、`TransactionScopeTest` が <xref:System.Activities.Statements.TransactionScope> に置き換えられています。この <xref:System.Activities.Statements.TransactionScope> の本体は 5 秒の遅延で、トランザクションのタイムアウトは 2 秒に設定されています。外側の <xref:System.Activities.Statements.TransactionScope> のタイムアウトは 10 秒に設定されています。スコープで最も小さいタイムアウト値が適用されるため、トランザクションがタイムアウトします。  
+## <a name="time-outs"></a><span data-ttu-id="03e88-111">タイムアウト</span><span class="sxs-lookup"><span data-stu-id="03e88-111">Time-Outs</span></span>  
+ <span data-ttu-id="03e88-112">2 つ目のシナリオのワークフローは 1 つ目のシナリオとほとんど同じですが、</span><span class="sxs-lookup"><span data-stu-id="03e88-112">The workflow for the second scenario is nearly identical to the first.</span></span> <span data-ttu-id="03e88-113">`TransactionScopeTest` が <xref:System.Activities.Statements.TransactionScope> に置き換えられています。</span><span class="sxs-lookup"><span data-stu-id="03e88-113">The `TransactionScopeTest` has been replaced with a <xref:System.Activities.Statements.TransactionScope>.</span></span> <span data-ttu-id="03e88-114">この <xref:System.Activities.Statements.TransactionScope> の本体は 5 秒の遅延で、トランザクションのタイムアウトは 2 秒に設定されています。</span><span class="sxs-lookup"><span data-stu-id="03e88-114">The body of the <xref:System.Activities.Statements.TransactionScope> is a five-second delay and the time-out for the transaction is set to two seconds.</span></span> <span data-ttu-id="03e88-115">外側の <xref:System.Activities.Statements.TransactionScope> のタイムアウトは 10 秒に設定されています。</span><span class="sxs-lookup"><span data-stu-id="03e88-115">The time-out for the outer <xref:System.Activities.Statements.TransactionScope> is set to 10 seconds.</span></span> <span data-ttu-id="03e88-116">スコープで最も小さいタイムアウト値が適用されるため、トランザクションがタイムアウトします。</span><span class="sxs-lookup"><span data-stu-id="03e88-116">Note that the smallest time-out in scope is respected and the transaction times out.</span></span>  
   
- 3 つ目のシナリオのワークフローは 2 つ目のシナリオとほとんど同じですが、遅延アクティビティが内側の <xref:System.Activities.Statements.TransactionScope> の本体からその直後 \(外側の <xref:System.Activities.Statements.TransactionScope> の本体\) に移動されています。この場合もトランザクションがタイムアウトしますが、内側の <xref:System.Activities.Statements.TransactionScope> の 2 秒のタイムアウトはもう適用されないため、トランザクションは 10 秒後 \(外側の <xref:System.Activities.Statements.TransactionScope> のタイムアウト期間が経過したとき\) にタイムアウトします。  
+ <span data-ttu-id="03e88-117">3 つ目のシナリオのワークフローは 2 つ目のシナリオとほとんど同じですが、</span><span class="sxs-lookup"><span data-stu-id="03e88-117">The workflow for the third scenario is nearly identical to scenario two.</span></span> <span data-ttu-id="03e88-118">遅延アクティビティが内側の <xref:System.Activities.Statements.TransactionScope> の本体からその直後 (外側の <xref:System.Activities.Statements.TransactionScope> の本体) に移動されています。</span><span class="sxs-lookup"><span data-stu-id="03e88-118">The delay activity has been moved from the body of the inner <xref:System.Activities.Statements.TransactionScope> to immediately after it in the sequence that is the body of the outer <xref:System.Activities.Statements.TransactionScope>.</span></span> <span data-ttu-id="03e88-119">この場合もトランザクションがタイムアウトしますが、内側の <xref:System.Activities.Statements.TransactionScope> の 2 秒のタイムアウトはもう適用されないため、</span><span class="sxs-lookup"><span data-stu-id="03e88-119">The transaction still times out but because the two second time-out of the inner <xref:System.Activities.Statements.TransactionScope> no longer applies.</span></span> <span data-ttu-id="03e88-120">トランザクションは 10 秒後 (外側の <xref:System.Activities.Statements.TransactionScope> のタイムアウト期間が経過したとき) にタイムアウトします。</span><span class="sxs-lookup"><span data-stu-id="03e88-120">The transaction times out at 10 seconds when the outer <xref:System.Activities.Statements.TransactionScope> time-out is exceeded.</span></span>  
   
-## トランザクション エラーによる中止  
- このワークフローは 3 つ目のシナリオに似ていますが、タイムアウトが <xref:System.Activities.Statements.TransactionScope.AbortInstanceOnTransactionFailure%2A> プロパティに置き換えられています。内側にあるすべての子は、フラグが設定されている場合、フラグが外側の <xref:System.Activities.Statements.TransactionScope> と一致している必要がありますが、このシナリオでは一致していないため、ワークフローを開くと例外がスローされます。  
+## <a name="aborting-on-transaction-failure"></a><span data-ttu-id="03e88-121">トランザクション エラーによる中止</span><span class="sxs-lookup"><span data-stu-id="03e88-121">Aborting on Transaction Failure</span></span>  
+ <span data-ttu-id="03e88-122">このワークフローは 3 つ目のシナリオに似ていますが、タイムアウトが <xref:System.Activities.Statements.TransactionScope.AbortInstanceOnTransactionFailure%2A> プロパティに置き換えられています。</span><span class="sxs-lookup"><span data-stu-id="03e88-122">This workflow is similar to scenario three except the time-outs have been replaced by the <xref:System.Activities.Statements.TransactionScope.AbortInstanceOnTransactionFailure%2A> property.</span></span> <span data-ttu-id="03e88-123">内側にあるすべての子は、フラグが設定されている場合、フラグが外側の <xref:System.Activities.Statements.TransactionScope> と一致している必要がありますが、</span><span class="sxs-lookup"><span data-stu-id="03e88-123">Note that the flags of all inner children, if set, must match the outer <xref:System.Activities.Statements.TransactionScope>.</span></span> <span data-ttu-id="03e88-124">このシナリオでは一致していないため、ワークフローを開くと例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="03e88-124">In this scenario, they do not and an exception is thrown when the workflow opens.</span></span>  
   
-#### サンプルを実行するには  
+#### <a name="to-run-the-sample"></a><span data-ttu-id="03e88-125">サンプルを実行するには</span><span class="sxs-lookup"><span data-stu-id="03e88-125">To run the sample</span></span>  
   
-1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] で BasicTransactionScopeSample.sln ソリューションを開きます。  
+1.  <span data-ttu-id="03e88-126">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] で BasicTransactionScopeSample.sln ソリューションを開きます。</span><span class="sxs-lookup"><span data-stu-id="03e88-126">Open the BasicTransactionScopeSample.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
   
-2.  ソリューションをビルドするには、CTRL キーと SHIFT キーを押したまま B キーを押すか、**\[ビルド\]** メニューの **\[ソリューションのビルド\]** を選択します。  
+2.  <span data-ttu-id="03e88-127">ソリューションをビルドするには、ctrl キーと shift キーを押しながら B キーを押してまたは選択**ソリューションのビルド**から、**ビルド**メニュー。</span><span class="sxs-lookup"><span data-stu-id="03e88-127">To build the solution, press CTRL+SHIFT+B or select **Build Solution** from the **Build** menu.</span></span>  
   
-3.  ビルドが完了したら、F5 キーを押すか、**\[デバッグ\]** メニューの **\[デバッグ開始\]** をクリックします。または、Ctrl キーを押しながら F5 キーを押すか、**\[デバッグ\]** メニューの **\[デバッグなしで開始\]** をクリックして、デバッグ機能なしで実行します。  
+3.  <span data-ttu-id="03e88-128">F5 キーを押してビルドが成功した後、または選択**デバッグの開始**から、**デバッグ**メニュー。</span><span class="sxs-lookup"><span data-stu-id="03e88-128">Once the build has succeeded, press F5 or select **Start Debugging** from the **Debug** menu.</span></span> <span data-ttu-id="03e88-129">または ctrl キーを押しながら f5 キーを押してまたは選択**デバッグなしで開始**から、**デバッグ**] メニューの [デバッグなしで実行します。</span><span class="sxs-lookup"><span data-stu-id="03e88-129">Alternatively you can press CTRL+F5 or select **Start Without Debugging** from the **Debug** menu to run without debugging.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="03e88-130">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="03e88-130">The samples may already be installed on your machine.</span></span> <span data-ttu-id="03e88-131">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="03e88-131">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="03e88-132">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="03e88-132">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="03e88-133">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="03e88-133">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Transactions\BasicTransactionScope`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="03e88-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="03e88-134">See Also</span></span>

@@ -5,30 +5,28 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 8586ecc9-bdaa-44d6-8d4d-7038e4ea1741
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4eff0a30723d8122e895b73b106c136724c7a7d7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: c28b5f0304106fb2aa3e95e68ddb798b5a1fe0b5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="ltws2007httpbindinggt"></a>&lt;ws2007HttpBinding&gt;
-<xref:System.ServiceModel.WSHttpBinding.Security%2A>、<xref:System.ServiceModel.ReliableSession>、および <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> の各バインディング要素の適切なバージョンをサポートする相互運用可能なバインディングを定義します。  
+# <a name="ltws2007httpbindinggt"></a><span data-ttu-id="db344-102">&lt;ws2007HttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="db344-102">&lt;ws2007HttpBinding&gt;</span></span>
+<span data-ttu-id="db344-103"><xref:System.ServiceModel.WSHttpBinding.Security%2A>、<xref:System.ServiceModel.ReliableSession>、および <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> の各バインディング要素の適切なバージョンをサポートする相互運用可能なバインディングを定義します。</span><span class="sxs-lookup"><span data-stu-id="db344-103">Defines an interoperable binding that provides support for the correct versions of the <xref:System.ServiceModel.WSHttpBinding.Security%2A>, <xref:System.ServiceModel.ReliableSession>, and <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> binding elements.</span></span>  
   
- \<system.serviceModel >  
-\<バインド >  
-\<ws2007HttpBinding >  
+ <span data-ttu-id="db344-104">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="db344-104">\<system.serviceModel></span></span>  
+<span data-ttu-id="db344-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="db344-105">\<bindings></span></span>  
+<span data-ttu-id="db344-106">\<ws2007HttpBinding ></span><span class="sxs-lookup"><span data-stu-id="db344-106">\<ws2007HttpBinding></span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="db344-107">構文</span><span class="sxs-lookup"><span data-stu-id="db344-107">Syntax</span></span>  
   
 ```xml  
 <ws2007HttpBinding>  
@@ -67,47 +65,47 @@ textEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding"
 </ws2007HttpBinding>  
 ```  
   
-## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="db344-108">属性および要素</span><span class="sxs-lookup"><span data-stu-id="db344-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="db344-109">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="db344-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a><span data-ttu-id="db344-110">属性</span><span class="sxs-lookup"><span data-stu-id="db344-110">Attributes</span></span>  
   
-|属性|説明|  
+|<span data-ttu-id="db344-111">属性</span><span class="sxs-lookup"><span data-stu-id="db344-111">Attribute</span></span>|<span data-ttu-id="db344-112">説明</span><span class="sxs-lookup"><span data-stu-id="db344-112">Description</span></span>|  
 |---------------|-----------------|  
-|`allowCookies`|クライアントがクッキーを受け入れて、それらを今後の要求に反映させるかどうかを指定する値です。 既定値は、`false` です。<br /><br /> クッキーを使用する ASMX (ASP.NET Web サービス) と対話する場合に、このプロパティを使用できます。 これにより、サーバーから返されるクッキーが、このサービスに対するそれ以降のすべてのクライアント要求に自動的にコピーされます。|  
-|`bypassProxyOnLocal`|ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示す値。 既定値は、`false` です。|  
-|`closeTimeout`|クローズ操作が完了するまでの期間を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
-|`hostnameComparisonMode`|URI (Uniform Resource Identifier) の解析に使用する HTTP ホスト名比較モードを指定します。 この属性は <xref:System.ServiceModel.HostNameComparisonMode> 型で、URI が一致したときにサービスへのアクセスにホスト名を使用するかどうかを指定します。 既定値は <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard> で、一致しているホスト名を無視します。|  
-|`maxBufferPoolSize`|このバインドに使用するバッファー プールの最大サイズ。 既定値は 524,288 バイト (512 × 1,024) です。 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] の多くの部分でバッファーが使用されます。 使用するたびに毎回バッファーを作成および破棄すると負荷が高くなります。バッファーのガベージ コレクションも同様です。 バッファー プールを使用すると、バッファーをプールから取得して使用し、作業が終わったらプールに戻すことができます。 これで、バッファーの作成と破棄によるオーバーヘッドを回避できます。|  
-|`maxReceivedMessageSize`|このバインディングで構成されたチャネルで受信可能な、ヘッダーを含む最大メッセージ サイズ (バイト単位) です。 この制限を超える場合、メッセージの送信者は SOAP エラーを受け取ります。 メッセージは受信者によって破棄され、トレース ログにこのイベントのエントリが作成されます。 既定値は 65536 です。|  
-|`messageEncoding`|メッセージのエンコードに使用されるエンコーダーを定義します。 以下の値が有効です。<br /><br /> -   `Text`: テキスト メッセージ エンコーダーを使用します。<br />-   `Mtom`: メッセージ Transmission Organization Mechanism 1.0 (MTOM) エンコーダーを使用します。<br /><br /> 既定値は、`Text` です。<br /><br /> この属性は <xref:System.ServiceModel.WSMessageEncoding> 型です。|  
-|`name`|バインドの構成名。 この値は、バインディングの ID として使用されるため、一意にする必要があります。 [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。 既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。|  
-|`openTimeout`|実行中の操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
-|`proxyAddress`|HTTP プロキシのアドレスを指定する URI。 `useSystemWebProxy` が `true` の場合、この設定を `null` にする必要があります。 既定値は、`null` です。|  
-|`receiveTimeout`|受信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
-|`sendTimeout`|送信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
-|`textEncoding`|バインディングでメッセージの発行に使用する文字セット エンコーディングを指定します。 以下の値が有効です。<br /><br /> -   `UnicodeFffeTextEncoding`: Unicode ビッグ エンディアン エンコーディングします。<br />-   `Utf16TextEncoding`: 16 ビット エンコーディングします。<br />-   `Utf8TextEncoding`: 8 ビット エンコーディングします。<br /><br /> 既定値は、`Utf8TextEncoding` です。<br /><br /> この属性は <xref:System.Text.Encoding> 型です。|  
-|`transactionFlow`|バインドが WS-Transactions のフローをサポートするかどうかを指定する値。 既定値は、`false` です。|  
-|`useDefaultWebProxy`|システムの自動設定 HTTP プロキシを使用するかどうかを示す値です。 既定値は、`true` です。|  
+|`allowCookies`|<span data-ttu-id="db344-113">クライアントがクッキーを受け入れて、それらを今後の要求に反映させるかどうかを指定する値です。</span><span class="sxs-lookup"><span data-stu-id="db344-113">A value that indicates whether the client accepts cookies and propagates them on future requests.</span></span> <span data-ttu-id="db344-114">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="db344-114">The default is `false`.</span></span><br /><br /> <span data-ttu-id="db344-115">クッキーを使用する ASMX (ASP.NET Web サービス) と対話する場合に、このプロパティを使用できます。</span><span class="sxs-lookup"><span data-stu-id="db344-115">You can use this property when you interact with ASP.NET Web services (ASMX) that use cookies.</span></span> <span data-ttu-id="db344-116">これにより、サーバーから返されるクッキーが、このサービスに対するそれ以降のすべてのクライアント要求に自動的にコピーされます。</span><span class="sxs-lookup"><span data-stu-id="db344-116">This ensures that cookies that the server returns are automatically copied to all future client requests for that service.</span></span>|  
+|`bypassProxyOnLocal`|<span data-ttu-id="db344-117">ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示す値。</span><span class="sxs-lookup"><span data-stu-id="db344-117">A value that indicates whether to bypass the proxy server for local addresses.</span></span> <span data-ttu-id="db344-118">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="db344-118">The default is `false`.</span></span>|  
+|`closeTimeout`|<span data-ttu-id="db344-119">クローズ操作が完了するまでの期間を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="db344-119">A <xref:System.TimeSpan> value that specifies the time interval for a close operation to complete.</span></span> <span data-ttu-id="db344-120">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="db344-120">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="db344-121">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="db344-121">The default is 00:01:00.</span></span>|  
+|`hostnameComparisonMode`|<span data-ttu-id="db344-122">URI (Uniform Resource Identifier) の解析に使用する HTTP ホスト名比較モードを指定します。</span><span class="sxs-lookup"><span data-stu-id="db344-122">Specifies the HTTP hostname comparison mode used to parse Uniform Resource Identifiers (URIs).</span></span> <span data-ttu-id="db344-123">この属性は <xref:System.ServiceModel.HostNameComparisonMode> 型で、URI が一致したときにサービスへのアクセスにホスト名を使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="db344-123">This attribute is of type <xref:System.ServiceModel.HostNameComparisonMode>, which indicates whether the hostname is used to reach the service when matching on the URI.</span></span> <span data-ttu-id="db344-124">既定値は <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard> で、一致しているホスト名を無視します。</span><span class="sxs-lookup"><span data-stu-id="db344-124">The default value is <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, which ignores the hostname in the match.</span></span>|  
+|`maxBufferPoolSize`|<span data-ttu-id="db344-125">このバインドに使用するバッファー プールの最大サイズ。</span><span class="sxs-lookup"><span data-stu-id="db344-125">The maximum buffer pool size for this binding.</span></span> <span data-ttu-id="db344-126">既定値は 524,288 バイト (512 × 1,024) です。</span><span class="sxs-lookup"><span data-stu-id="db344-126">The default is 524,288 bytes (512 × 1,024).</span></span> <span data-ttu-id="db344-127">[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] の多くの部分でバッファーが使用されます。</span><span class="sxs-lookup"><span data-stu-id="db344-127">Many parts of [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] use buffers.</span></span> <span data-ttu-id="db344-128">使用するたびに毎回バッファーを作成および破棄すると負荷が高くなります。バッファーのガベージ コレクションも同様です。</span><span class="sxs-lookup"><span data-stu-id="db344-128">Creating and destroying buffers each time they are used is expensive, as is garbage collection for buffers.</span></span> <span data-ttu-id="db344-129">バッファー プールを使用すると、バッファーをプールから取得して使用し、作業が終わったらプールに戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="db344-129">With buffer pools, you can take a buffer from the pool, use it, and return it to the pool when you are done.</span></span> <span data-ttu-id="db344-130">これで、バッファーの作成と破棄によるオーバーヘッドを回避できます。</span><span class="sxs-lookup"><span data-stu-id="db344-130">This avoids the overhead in creating and destroying buffers.</span></span>|  
+|`maxReceivedMessageSize`|<span data-ttu-id="db344-131">このバインディングで構成されたチャネルで受信可能な、ヘッダーを含む最大メッセージ サイズ (バイト単位) です。</span><span class="sxs-lookup"><span data-stu-id="db344-131">The maximum message size, in bytes, including headers, which a channel configured with this binding, can receive.</span></span> <span data-ttu-id="db344-132">この制限を超える場合、メッセージの送信者は SOAP エラーを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="db344-132">The sender of a message exceeding this limit receives a SOAP fault.</span></span> <span data-ttu-id="db344-133">メッセージは受信者によって破棄され、トレース ログにこのイベントのエントリが作成されます。</span><span class="sxs-lookup"><span data-stu-id="db344-133">The receiver drops the message and creates an entry of the event in the trace log.</span></span> <span data-ttu-id="db344-134">既定値は 65536 です。</span><span class="sxs-lookup"><span data-stu-id="db344-134">The default is 65536.</span></span>|  
+|`messageEncoding`|<span data-ttu-id="db344-135">メッセージのエンコードに使用されるエンコーダーを定義します。</span><span class="sxs-lookup"><span data-stu-id="db344-135">Defines the encoder used to encode the message.</span></span> <span data-ttu-id="db344-136">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="db344-136">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="db344-137">-   `Text`: テキスト メッセージ エンコーダーを使用します。</span><span class="sxs-lookup"><span data-stu-id="db344-137">-   `Text`: Use a text message encoder.</span></span><br /><span data-ttu-id="db344-138">-   `Mtom`: メッセージ Transmission Organization Mechanism 1.0 (MTOM) エンコーダーを使用します。</span><span class="sxs-lookup"><span data-stu-id="db344-138">-   `Mtom`: Use a Message Transmission Organization Mechanism 1.0 (MTOM) encoder.</span></span><br /><br /> <span data-ttu-id="db344-139">既定値は、`Text` です。</span><span class="sxs-lookup"><span data-stu-id="db344-139">The default is `Text`.</span></span><br /><br /> <span data-ttu-id="db344-140">この属性は <xref:System.ServiceModel.WSMessageEncoding> 型です。</span><span class="sxs-lookup"><span data-stu-id="db344-140">This attribute is of type <xref:System.ServiceModel.WSMessageEncoding>.</span></span>|  
+|`name`|<span data-ttu-id="db344-141">バインドの構成名。</span><span class="sxs-lookup"><span data-stu-id="db344-141">The configuration name of the binding.</span></span> <span data-ttu-id="db344-142">この値は、バインディングの ID として使用されるため、一意にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="db344-142">This value should be unique because it is used as an identification for the binding.</span></span> <span data-ttu-id="db344-143">[!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。</span><span class="sxs-lookup"><span data-stu-id="db344-143">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="db344-144">既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="db344-144">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>|  
+|`openTimeout`|<span data-ttu-id="db344-145">実行中の操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="db344-145">A <xref:System.TimeSpan> value that specifies the interval of time provided for an open operation to complete.</span></span> <span data-ttu-id="db344-146">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="db344-146">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="db344-147">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="db344-147">The default is 00:01:00.</span></span>|  
+|`proxyAddress`|<span data-ttu-id="db344-148">HTTP プロキシのアドレスを指定する URI。</span><span class="sxs-lookup"><span data-stu-id="db344-148">A URI that specifies the address of the HTTP proxy.</span></span> <span data-ttu-id="db344-149">`useSystemWebProxy` が `true` の場合、この設定を `null` にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="db344-149">If `useSystemWebProxy` is `true`, this setting must be `null`.</span></span> <span data-ttu-id="db344-150">既定値は、`null` です。</span><span class="sxs-lookup"><span data-stu-id="db344-150">The default is `null`.</span></span>|  
+|`receiveTimeout`|<span data-ttu-id="db344-151">受信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="db344-151">A <xref:System.TimeSpan> value that specifies the interval of time provided for a receive operation to complete.</span></span> <span data-ttu-id="db344-152">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="db344-152">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="db344-153">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="db344-153">The default is 00:01:00.</span></span>|  
+|`sendTimeout`|<span data-ttu-id="db344-154">送信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="db344-154">A <xref:System.TimeSpan> value that specifies the interval of time provided for a send operation to complete.</span></span> <span data-ttu-id="db344-155">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="db344-155">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="db344-156">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="db344-156">The default is 00:01:00.</span></span>|  
+|`textEncoding`|<span data-ttu-id="db344-157">バインディングでメッセージの発行に使用する文字セット エンコーディングを指定します。</span><span class="sxs-lookup"><span data-stu-id="db344-157">Specifies the character set encoding to use for emitting messages on the binding.</span></span> <span data-ttu-id="db344-158">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="db344-158">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="db344-159">-   `UnicodeFffeTextEncoding`: Unicode ビッグ エンディアン エンコーディングします。</span><span class="sxs-lookup"><span data-stu-id="db344-159">-   `UnicodeFffeTextEncoding`: Unicode Big Endian encoding.</span></span><br /><span data-ttu-id="db344-160">-   `Utf16TextEncoding`: 16 ビット エンコーディングします。</span><span class="sxs-lookup"><span data-stu-id="db344-160">-   `Utf16TextEncoding`: 16-bit encoding.</span></span><br /><span data-ttu-id="db344-161">-   `Utf8TextEncoding`: 8 ビット エンコーディングします。</span><span class="sxs-lookup"><span data-stu-id="db344-161">-   `Utf8TextEncoding`: 8-bit encoding.</span></span><br /><br /> <span data-ttu-id="db344-162">既定値は、`Utf8TextEncoding` です。</span><span class="sxs-lookup"><span data-stu-id="db344-162">The default is `Utf8TextEncoding`.</span></span><br /><br /> <span data-ttu-id="db344-163">この属性は <xref:System.Text.Encoding> 型です。</span><span class="sxs-lookup"><span data-stu-id="db344-163">This attribute is of type <xref:System.Text.Encoding>.</span></span>|  
+|`transactionFlow`|<span data-ttu-id="db344-164">バインドが WS-Transactions のフローをサポートするかどうかを指定する値。</span><span class="sxs-lookup"><span data-stu-id="db344-164">A value that specifies whether the binding supports flowing WS-Transactions.</span></span> <span data-ttu-id="db344-165">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="db344-165">The default is `false`.</span></span>|  
+|`useDefaultWebProxy`|<span data-ttu-id="db344-166">システムの自動設定 HTTP プロキシを使用するかどうかを示す値です。</span><span class="sxs-lookup"><span data-stu-id="db344-166">A value that specifies whether the system’s auto-configured HTTP proxy is used.</span></span> <span data-ttu-id="db344-167">既定値は、`true` です。</span><span class="sxs-lookup"><span data-stu-id="db344-167">The default is `true`.</span></span>|  
   
-### <a name="child-elements"></a>子要素  
+### <a name="child-elements"></a><span data-ttu-id="db344-168">子要素</span><span class="sxs-lookup"><span data-stu-id="db344-168">Child Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="db344-169">要素</span><span class="sxs-lookup"><span data-stu-id="db344-169">Element</span></span>|<span data-ttu-id="db344-170">説明</span><span class="sxs-lookup"><span data-stu-id="db344-170">Description</span></span>|  
 |-------------|-----------------|  
-|[\<セキュリティ >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|バインディングのセキュリティ設定を定義します。 この要素は <xref:System.ServiceModel.Configuration.WSHttpSecurityElement> 型です。|  
-|[\<ある readerQuotas >](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|このバインディングを使用して設定されるエンドポイントで処理できる、SOAP メッセージの複雑さに対する制約を定義します。 この要素は <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> 型です。|  
-|[reliableSession](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)|チャネルのエンドポイント間に信頼できるセッションを確立するかどうかを指定します。|  
+|[<span data-ttu-id="db344-171">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="db344-171">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|<span data-ttu-id="db344-172">バインディングのセキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="db344-172">Defines the security settings for the binding.</span></span> <span data-ttu-id="db344-173">この要素は <xref:System.ServiceModel.Configuration.WSHttpSecurityElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="db344-173">This element is of type <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>.</span></span>|  
+|[<span data-ttu-id="db344-174">\<ある readerQuotas ></span><span class="sxs-lookup"><span data-stu-id="db344-174">\<readerQuotas></span></span>](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|<span data-ttu-id="db344-175">このバインディングを使用して設定されるエンドポイントで処理できる、SOAP メッセージの複雑さに対する制約を定義します。</span><span class="sxs-lookup"><span data-stu-id="db344-175">Defines the constraints on the complexity of SOAP messages that endpoints configured with this binding can process.</span></span> <span data-ttu-id="db344-176">この要素は <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="db344-176">This element is of type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.</span></span>|  
+|[<span data-ttu-id="db344-177">reliableSession</span><span class="sxs-lookup"><span data-stu-id="db344-177">reliableSession</span></span>](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)|<span data-ttu-id="db344-178">チャネルのエンドポイント間に信頼できるセッションを確立するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="db344-178">Specifies whether reliable sessions are established between channel endpoints.</span></span>|  
   
-### <a name="parent-elements"></a>親要素  
+### <a name="parent-elements"></a><span data-ttu-id="db344-179">親要素</span><span class="sxs-lookup"><span data-stu-id="db344-179">Parent Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="db344-180">要素</span><span class="sxs-lookup"><span data-stu-id="db344-180">Element</span></span>|<span data-ttu-id="db344-181">説明</span><span class="sxs-lookup"><span data-stu-id="db344-181">Description</span></span>|  
 |-------------|-----------------|  
-|[\<バインド >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。|  
+|[<span data-ttu-id="db344-182">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="db344-182">\<bindings></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|<span data-ttu-id="db344-183">この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。</span><span class="sxs-lookup"><span data-stu-id="db344-183">This element holds a collection of standard and custom bindings.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- `WS2007HttpBinding` は、`WSHttpBinding` と同様のシステム標準のバインディングを追加しますが、ReliableSession、Security、および TransactionFlow の各プロトコルの OASIS (Organization for the Advancement of Structured Information Standards) 標準バージョンを使用します。 このバインドを使用する場合、オブジェクト モデルも既定の設定も変更する必要はありません。  
+## <a name="remarks"></a><span data-ttu-id="db344-184">コメント</span><span class="sxs-lookup"><span data-stu-id="db344-184">Remarks</span></span>  
+ <span data-ttu-id="db344-185">`WS2007HttpBinding` は、`WSHttpBinding` と同様のシステム標準のバインディングを追加しますが、ReliableSession、Security、および TransactionFlow の各プロトコルの OASIS (Organization for the Advancement of Structured Information Standards) 標準バージョンを使用します。</span><span class="sxs-lookup"><span data-stu-id="db344-185">The `WS2007HttpBinding` adds a system-provided binding similar to `WSHttpBinding` but uses the Organization for the Advancement of Structured Information Standards (OASIS) standard versions of the ReliableSession, Security, and TransactionFlow protocols.</span></span> <span data-ttu-id="db344-186">このバインドを使用する場合、オブジェクト モデルも既定の設定も変更する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="db344-186">No changes to the object model or default settings are required when using this binding.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="db344-187">例</span><span class="sxs-lookup"><span data-stu-id="db344-187">Example</span></span>  
   
 ```xml  
 <configuration>  
@@ -146,11 +144,10 @@ textEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.WS2007HttpBinding>   
- <xref:System.ServiceModel.Configuration.WS2007HttpBindingElement>   
- [バインド](../../../../../docs/framework/wcf/bindings.md)   
- [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<バインド >](../../../../../docs/framework/misc/binding.md)
-
+## <a name="see-also"></a><span data-ttu-id="db344-188">関連項目</span><span class="sxs-lookup"><span data-stu-id="db344-188">See Also</span></span>  
+ <xref:System.ServiceModel.WS2007HttpBinding>  
+ <xref:System.ServiceModel.Configuration.WS2007HttpBindingElement>  
+ [<span data-ttu-id="db344-189">バインディング</span><span class="sxs-lookup"><span data-stu-id="db344-189">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="db344-190">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="db344-190">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="db344-191">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="db344-191">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [<span data-ttu-id="db344-192">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="db344-192">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)

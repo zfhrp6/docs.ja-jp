@@ -1,63 +1,67 @@
 ---
-title: "Windows Workflow Foundation の新機能 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WF [WF], 新機能"
-  - "Windows Workflow Foundation [WF], 新機能"
+title: "どのような &#39; の Windows Workflow Foundation"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Workflow Foundation [WF], what's new
+- WF [WF], what's new
 ms.assetid: 11f96014-001e-41a0-bcc2-d0684a52fa43
-caps.latest.revision: 29
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 29
+caps.latest.revision: "29"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 22405b5cb7bcc4f59fb4acb4a9e3de06137d8b56
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Windows Workflow Foundation の新機能
-[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] の [!INCLUDE[wf](../../../includes/wf-md.md)] では、前のバージョンから開発パラダイムがいくつか変更されました。ワークフローでは、新しい機能のホストの作成、実行、保守、実装が簡単になっています。.NET 3.0 および .NET 3.5 ワークフロー アプリケーションを移行して最新バージョンを使用する方法[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[移行のガイドライン](../../../docs/framework/windows-workflow-foundation//migration-guidance.md)」を参照してください。  
+# <a name="what39s-new-in-windows-workflow-foundation"></a><span data-ttu-id="9394b-102">どのような &#39; の Windows Workflow Foundation</span><span class="sxs-lookup"><span data-stu-id="9394b-102">What&#39;s New in Windows Workflow Foundation</span></span>
+[!INCLUDE[wf](../../../includes/wf-md.md)]<span data-ttu-id="9394b-103"> の [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] では、前のバージョンから開発パラダイムがいくつか変更されました。</span><span class="sxs-lookup"><span data-stu-id="9394b-103"> in [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] changes several development paradigms from previous versions.</span></span> <span data-ttu-id="9394b-104">ワークフローでは、新しい機能のホストの作成、実行、保守、実装が簡単になっています。</span><span class="sxs-lookup"><span data-stu-id="9394b-104">Workflows are now easier to create, execute, and maintain, and implement a host of new functionality.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="9394b-105">.NET 3.0 を移行して、最新バージョンを使用する .NET 3.5 ワークフロー アプリケーションを参照してください。[移行ガイダンス](../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。</span><span class="sxs-lookup"><span data-stu-id="9394b-105"> migrating .NET 3.0 and .NET 3.5 workflow applications to use the latest version, see [Migration Guidance](../../../docs/framework/windows-workflow-foundation/migration-guidance.md).</span></span>  
   
-## ワークフロー アクティビティ モデル  
- アクティビティは、現在はワークフロー作成の基本単位であり、<xref:System.Workflow.Activities.SequentialWorkflowActivity> クラスや <xref:System.Workflow.Activities.StatemachineWorkflowActivity> クラスは使用されなくなっています。<xref:System.Activities.Activity> クラスは、ワークフロー動作の基本抽象クラスです。このため、アクティビティの作成者は、基本的なカスタム アクティビティ機能用に <xref:System.Activities.CodeActivity> を実装するか、一定範囲のランタイムを使用するカスタム アクティビティ機能用に <xref:System.Activities.NativeActivity> を実装することができます。また、アクティビティの作成者は <xref:System.Activities.Activity> クラスを使用して、他の <xref:System.Activities.NativeActivity> オブジェクト、<xref:System.Activities.CodeActivity> オブジェクト、<xref:System.Activities.AsyncCodeActivity> オブジェクト、または <xref:System.Activities.DynamicActivity> オブジェクトによって新しい動作を宣言して表します。このオブジェクトは、カスタムに開発されたものである場合と、[ビルトイン アクティビティ ライブラリ](../../../docs/framework/windows-workflow-foundation//net-framework-4-5-built-in-activity-library.md)に含まれているものである場合があります。  
+## <a name="workflow-activity-model"></a><span data-ttu-id="9394b-106">ワークフロー アクティビティ モデル</span><span class="sxs-lookup"><span data-stu-id="9394b-106">Workflow Activity Model</span></span>  
+ <span data-ttu-id="9394b-107">アクティビティは、現在はワークフロー作成の基本単位であり、<xref:System.Workflow.Activities.SequentialWorkflowActivity> クラスや <xref:System.Workflow.Activities.StateMachineWorkflowActivity> クラスは使用されなくなっています。</span><span class="sxs-lookup"><span data-stu-id="9394b-107">The activity is now the base unit of creating a workflow, rather than using the <xref:System.Workflow.Activities.SequentialWorkflowActivity> or <xref:System.Workflow.Activities.StateMachineWorkflowActivity> classes.</span></span> <span data-ttu-id="9394b-108"><xref:System.Activities.Activity> クラスは、ワークフロー動作の基本抽象クラスです。</span><span class="sxs-lookup"><span data-stu-id="9394b-108">The <xref:System.Activities.Activity> class provides the base abstraction of workflow behavior.</span></span> <span data-ttu-id="9394b-109">このため、アクティビティの作成者は、基本的なカスタム アクティビティ機能用に <xref:System.Activities.CodeActivity> を実装するか、一定範囲のランタイムを使用するカスタム アクティビティ機能用に <xref:System.Activities.NativeActivity> を実装することができます。</span><span class="sxs-lookup"><span data-stu-id="9394b-109">Activity authors can then implement either <xref:System.Activities.CodeActivity> for basic custom activity functionality, or <xref:System.Activities.NativeActivity> for custom activity functionality that uses the breadth of the runtime.</span></span> <span data-ttu-id="9394b-110"><xref:System.Activities.Activity>クラス宣言の観点から他の新しい動作を明示するアクティビティの作成者によって使用<xref:System.Activities.NativeActivity>、 <xref:System.Activities.CodeActivity>、 <xref:System.Activities.AsyncCodeActivity>、または<xref:System.Activities.DynamicActivity>オブジェクト、カスタム開発したかに含まれているかどうか、[ビルトイン アクティビティライブラリ](../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md)です。</span><span class="sxs-lookup"><span data-stu-id="9394b-110"><xref:System.Activities.Activity> is a class used by activity authors to express new behaviors declaratively in terms of other <xref:System.Activities.NativeActivity>, <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, or <xref:System.Activities.DynamicActivity> objects, whether they are custom-developed or included in the [Built-In Activity Library](../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md).</span></span>  
   
-## 豊富な複合アクティビティ オプション  
- <xref:System.Activities.Statements.Flowchart> は新しい強力な制御フロー アクティビティです。作成者は、これを使用して任意のループや条件分岐をモデル化できます。<xref:System.Activities.Statements.Flowchart> により、以前は <xref:System.Workflow.Activities.StateMachineWorkflowActivity> でのみ実装が可能であったイベント ドリブン プログラミング モデルを使用できます。手続き型のワークフローでは、<xref:System.Activities.Statements.TryCatch> や <xref:System.Activities.Statements.Switch%601> などの従来のフロー制御構造をモデル化する新しいフロー制御アクティビティを利用できます。  
+## <a name="rich-composite-activity-options"></a><span data-ttu-id="9394b-111">豊富な複合アクティビティ オプション</span><span class="sxs-lookup"><span data-stu-id="9394b-111">Rich Composite Activity Options</span></span>  
+ <span data-ttu-id="9394b-112"><xref:System.Activities.Statements.Flowchart> は新しい強力な制御フロー アクティビティです。作成者は、これを使用して任意のループや条件分岐をモデル化できます。</span><span class="sxs-lookup"><span data-stu-id="9394b-112"><xref:System.Activities.Statements.Flowchart> is a powerful new control flow activity that allows authors to model arbitrary loops and conditional branching.</span></span> <span data-ttu-id="9394b-113"><xref:System.Activities.Statements.Flowchart> により、以前は <xref:System.Workflow.Activities.StateMachineWorkflowActivity> でのみ実装が可能であったイベント ドリブン プログラミング モデルを使用できます。</span><span class="sxs-lookup"><span data-stu-id="9394b-113"><xref:System.Activities.Statements.Flowchart> provides an event-driven programming model that was previously only able to be implemented with <xref:System.Workflow.Activities.StateMachineWorkflowActivity>.</span></span> <span data-ttu-id="9394b-114">手続き型のワークフローでは、<xref:System.Activities.Statements.TryCatch> や <xref:System.Activities.Statements.Switch%601> などの従来のフロー制御構造をモデル化する新しいフロー制御アクティビティを利用できます。</span><span class="sxs-lookup"><span data-stu-id="9394b-114">Procedural workflows benefit from new flow-control activities that model traditional flow-control structures, such as <xref:System.Activities.Statements.TryCatch> and <xref:System.Activities.Statements.Switch%601>.</span></span>  
   
-## 拡張ビルトイン アクティビティ ライブラリ  
- アクティビティ ライブラリには、次のような新しい機能があります。  
+## <a name="expanded-built-in-activity-library"></a><span data-ttu-id="9394b-115">拡張ビルトイン アクティビティ ライブラリ</span><span class="sxs-lookup"><span data-stu-id="9394b-115">Expanded Built-In Activity Library</span></span>  
+ <span data-ttu-id="9394b-116">アクティビティ ライブラリには、次のような新しい機能があります。</span><span class="sxs-lookup"><span data-stu-id="9394b-116">New features of the activity library include:</span></span>  
   
--   <xref:System.Activities.Statements.DoWhile>、<xref:System.Activities.Statements.Pick>、<xref:System.Activities.Statements.TryCatch>、<xref:System.Activities.Statements.ForEach%601>、<xref:System.Activities.Statements.Switch%601>、<xref:System.Activities.Statements.ParallelForEach%601> などの新しいフロー制御アクティビティ  
+-   <span data-ttu-id="9394b-117"><xref:System.Activities.Statements.DoWhile>、<xref:System.Activities.Statements.Pick>、<xref:System.Activities.Statements.TryCatch>、<xref:System.Activities.Statements.ForEach%601>、<xref:System.Activities.Statements.Switch%601>、<xref:System.Activities.Statements.ParallelForEach%601> などの新しいフロー制御アクティビティ</span><span class="sxs-lookup"><span data-stu-id="9394b-117">New flow control activities, such as, <xref:System.Activities.Statements.DoWhile>, <xref:System.Activities.Statements.Pick>, <xref:System.Activities.Statements.TryCatch>, <xref:System.Activities.Statements.ForEach%601>, <xref:System.Activities.Statements.Switch%601>, and <xref:System.Activities.Statements.ParallelForEach%601>.</span></span>  
   
--   <xref:System.Activities.Statements.Assign> などのメンバー データを操作するためのアクティビティと、<xref:System.Activities.Statements.AddToCollection%601> などのコレクション アクティビティ  
+-   <span data-ttu-id="9394b-118"><xref:System.Activities.Statements.Assign> などのメンバー データを操作するためのアクティビティと、<xref:System.Activities.Statements.AddToCollection%601> などのコレクション アクティビティ</span><span class="sxs-lookup"><span data-stu-id="9394b-118">Activities for manipulating member data, such as <xref:System.Activities.Statements.Assign> and collection activities such as <xref:System.Activities.Statements.AddToCollection%601>.</span></span>  
   
--   <xref:System.Activities.Statements.TransactionScope> や <xref:System.Activities.Statements.Compensate> などのトランザクションを制御するアクティビティ  
+-   <span data-ttu-id="9394b-119"><xref:System.Activities.Statements.TransactionScope> や <xref:System.Activities.Statements.Compensate> などのトランザクションを制御するアクティビティ</span><span class="sxs-lookup"><span data-stu-id="9394b-119">Activities for controlling transactions, such as <xref:System.Activities.Statements.TransactionScope> and <xref:System.Activities.Statements.Compensate>.</span></span>  
   
--   <xref:System.ServiceModel.Activities.SendContent> や <xref:System.ServiceModel.Activities.ReceiveReply> などの新しいメッセージング アクティビティ  
+-   <span data-ttu-id="9394b-120"><xref:System.ServiceModel.Activities.SendContent> や <xref:System.ServiceModel.Activities.ReceiveReply> などの新しいメッセージング アクティビティ</span><span class="sxs-lookup"><span data-stu-id="9394b-120">New messaging activities such as <xref:System.ServiceModel.Activities.SendContent> and <xref:System.ServiceModel.Activities.ReceiveReply>.</span></span>  
   
-## 明示的なアクティビティ データ モデル  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] には、データを格納および移動するための新しいオプションがあります。データは、<xref:System.Activities.Variable> を使用してアクティビティに格納できます。データをアクティビティに移動したり、アクティビティから移動したりするときは、特殊な引数型を使用してデータの移動方向が判定されます。これらの型は、<xref:System.Activities.InArgument>、<xref:System.Activities.InOutArgument>、<xref:System.Activities.OutArgument>です。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Windows Workflow Foundation のデータ モデル](../../../docs/framework/windows-workflow-foundation//data-model.md).  
+## <a name="explicit-activity-data-model"></a><span data-ttu-id="9394b-121">明示的なアクティビティ データ モデル</span><span class="sxs-lookup"><span data-stu-id="9394b-121">Explicit Activity Data Model</span></span>  
+ [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]<span data-ttu-id="9394b-122"> には、データを格納および移動するための新しいオプションがあります。</span><span class="sxs-lookup"><span data-stu-id="9394b-122"> includes new options for storing or moving data.</span></span> <span data-ttu-id="9394b-123">データは、<xref:System.Activities.Variable> を使用してアクティビティに格納できます。</span><span class="sxs-lookup"><span data-stu-id="9394b-123">Data can be stored in an activity using <xref:System.Activities.Variable>.</span></span> <span data-ttu-id="9394b-124">データをアクティビティに移動したり、アクティビティから移動したりするときは、特殊な引数型を使用してデータの移動方向が判定されます。</span><span class="sxs-lookup"><span data-stu-id="9394b-124">When moving data in and out of an activity, specialized argument types are used to determine which direction data is moving.</span></span> <span data-ttu-id="9394b-125">これらの型は、<xref:System.Activities.InArgument>、<xref:System.Activities.InOutArgument>、<xref:System.Activities.OutArgument>です。</span><span class="sxs-lookup"><span data-stu-id="9394b-125">These types are <xref:System.Activities.InArgument>, <xref:System.Activities.InOutArgument>, and <xref:System.Activities.OutArgument>.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="9394b-126">[Windows Workflow Foundation のデータ モデル](../../../docs/framework/windows-workflow-foundation/data-model.md)です。</span><span class="sxs-lookup"><span data-stu-id="9394b-126"> [Windows Workflow Foundation Data Model](../../../docs/framework/windows-workflow-foundation/data-model.md).</span></span>  
   
-## ホスティング、永続化、追跡の強化されたオプション  
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] には、次のような永続化の拡張機能があります。  
+## <a name="enhanced-hosting-persistence-and-tracking-options"></a><span data-ttu-id="9394b-127">ホスティング、永続化、追跡の強化されたオプション</span><span class="sxs-lookup"><span data-stu-id="9394b-127">Enhanced Hosting, Persistence, and Tracking Options</span></span>  
+ [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]<span data-ttu-id="9394b-128"> には、次のような永続化の拡張機能があります。</span><span class="sxs-lookup"><span data-stu-id="9394b-128"> contains persistence enhancements such as the following:</span></span>  
   
--   <xref:System.ServiceModel.Activities.WorkflowServiceHost>、<xref:System.Activities.WorkflowApplication>、<xref:System.Activities.WorkflowInvoker> などの、ワークフローを実行するための多数のオプションがあります。  
+-   <span data-ttu-id="9394b-129"><xref:System.ServiceModel.Activities.WorkflowServiceHost>、<xref:System.Activities.WorkflowApplication>、<xref:System.Activities.WorkflowInvoker> などの、ワークフローを実行するための多数のオプションがあります。</span><span class="sxs-lookup"><span data-stu-id="9394b-129">There are more options for running workflows, including <xref:System.ServiceModel.Activities.WorkflowServiceHost>, <xref:System.Activities.WorkflowApplication>, and <xref:System.Activities.WorkflowInvoker>.</span></span>  
   
--   <xref:System.Activities.Statements.Persist> アクティビティを使用してワークフロー状態データを明示的に永続化できます。  
+-   <span data-ttu-id="9394b-130"><xref:System.Activities.Statements.Persist> アクティビティを使用してワークフロー状態データを明示的に永続化できます。</span><span class="sxs-lookup"><span data-stu-id="9394b-130">Workflow state data can be explicitly persisted using the <xref:System.Activities.Statements.Persist> activity.</span></span>  
   
--   ホストは、<xref:System.Activities.ActivityInstance> をアンロードせずに永続化できます。  
+-   <span data-ttu-id="9394b-131">ホストは、<xref:System.Activities.ActivityInstance> をアンロードせずに永続化できます。</span><span class="sxs-lookup"><span data-stu-id="9394b-131">A host can persist an <xref:System.Activities.ActivityInstance> without unloading it.</span></span>  
   
--   ワークフローは、永続化できないデータを処理するときは非永続化ゾーンを指定できます。このため、非永続化ゾーンを終了するまで永続化は延期されます。  
+-   <span data-ttu-id="9394b-132">ワークフローは、永続化できないデータを処理するときは非永続化ゾーンを指定できます。このため、非永続化ゾーンを終了するまで永続化は延期されます。</span><span class="sxs-lookup"><span data-stu-id="9394b-132">A workflow can specify no-persist zones while working with data that cannot be persisted, so that persistence is postponed until the no-persist zone exits.</span></span>  
   
--   トランザクションは、<xref:System.Activities.Statements.TransactionScope> を使用してワークフローに流し込むことができます。  
+-   <span data-ttu-id="9394b-133">トランザクションは、<xref:System.Activities.Statements.TransactionScope> を使用してワークフローに流し込むことができます。</span><span class="sxs-lookup"><span data-stu-id="9394b-133">Transactions can be flowed into a workflow using <xref:System.Activities.Statements.TransactionScope>.</span></span>  
   
--   追跡は、<xref:System.Activities.Tracking.TrackingParticipant> を使用して、簡単に実行できます。  
+-   <span data-ttu-id="9394b-134">追跡は、<xref:System.Activities.Tracking.TrackingParticipant> を使用して、簡単に実行できます。</span><span class="sxs-lookup"><span data-stu-id="9394b-134">Tracking is more easily accomplished using <xref:System.Activities.Tracking.TrackingParticipant>.</span></span>  
   
--   システムのイベント ログへの追跡は <xref:System.Activities.Tracking.EtwTrackingParticipant> を使用して実現されます。  
+-   <span data-ttu-id="9394b-135">システムのイベント ログへの追跡は <xref:System.Activities.Tracking.EtwTrackingParticipant> を使用して実現されます。</span><span class="sxs-lookup"><span data-stu-id="9394b-135">Tracking to the system event log is provided using <xref:System.Activities.Tracking.EtwTrackingParticipant>.</span></span>  
   
--   保留中のワークフローの再開は、<xref:System.Activities.Bookmark> オブジェクトを使用して管理されるようになりました。  
+-   <span data-ttu-id="9394b-136">保留中のワークフローの再開は、<xref:System.Activities.Bookmark> オブジェクトを使用して管理されるようになりました。</span><span class="sxs-lookup"><span data-stu-id="9394b-136">Resuming a pending workflow is now managed using a <xref:System.Activities.Bookmark> object.</span></span>  
   
-## WF デザイナー エクスペリエンスの容易な拡張  
- 新しい WF デザイナーは [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] に基づいて構築されており、Visual Studio の外部で WF デザイナーを再ホストするときに簡単に使用できるモデルです。また、カスタムのアクティビティ デザイナーを作成するための使いやすいメカニズムを備えています。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][ワークフロー デザイン操作のカスタマイズ](../../../docs/framework/windows-workflow-foundation//customizing-the-workflow-design-experience.md).
+## <a name="easier-ability-to-extend-wf-designer-experience"></a><span data-ttu-id="9394b-137">WF デザイナー エクスペリエンスの容易な拡張</span><span class="sxs-lookup"><span data-stu-id="9394b-137">Easier Ability to Extend WF Designer Experience</span></span>  
+ <span data-ttu-id="9394b-138">新しい WF デザイナーは [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] に基づいて構築されており、Visual Studio の外部で WF デザイナーを再ホストするときに簡単に使用できるモデルです。また、カスタムのアクティビティ デザイナーを作成するための使いやすいメカニズムを備えています。</span><span class="sxs-lookup"><span data-stu-id="9394b-138">The new WF Designer is built on [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] and provides an easier model to use when rehosting the WF Designer outside of Visual Studio and also provides easier mechanisms for creating custom activity designers.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="9394b-139">[ワークフローのデザイン エクスペリエンスのカスタマイズ](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)です。</span><span class="sxs-lookup"><span data-stu-id="9394b-139"> [Customizing the Workflow Design Experience](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md).</span></span>

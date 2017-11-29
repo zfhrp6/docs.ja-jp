@@ -7,60 +7,53 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: b5e994c3-3535-4aff-8e1b-b69be22e9a22
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: bb81ee9db5c4c8dc7dfa9a7a193adf47ee37b604
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: e11e6a6746c555db9b51d76da3554ce75c1f6ee8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="international-resource-identifier-support-in-systemuri"></a>System.Uri での International Resource Identifier のサポート
-<xref:System.Uri?displayProperty=fullName> クラスは、International Resource Identifier (IRI) および国際化ドメイン名 (IDN) のサポートにより拡張されました。 これらの機能拡張は、.NET Framework 3.5、3.0 SP1、および 2.0 SP1 で使用できます。  
+# <a name="international-resource-identifier-support-in-systemuri"></a><span data-ttu-id="6de07-102">System.Uri での International Resource Identifier のサポート</span><span class="sxs-lookup"><span data-stu-id="6de07-102">International Resource Identifier Support in System.Uri</span></span>
+<span data-ttu-id="6de07-103"><xref:System.Uri?displayProperty=nameWithType> クラスは、International Resource Identifier (IRI) および国際化ドメイン名 (IDN) のサポートにより拡張されました。</span><span class="sxs-lookup"><span data-stu-id="6de07-103">The <xref:System.Uri?displayProperty=nameWithType> class has been extended with International Resource Identifier (IRI) and Internationalized Domain Names (IDN) support.</span></span> <span data-ttu-id="6de07-104">これらの機能拡張は、.NET Framework 3.5、3.0 SP1、および 2.0 SP1 で使用できます。</span><span class="sxs-lookup"><span data-stu-id="6de07-104">These enhancements are available in .NET Framework 3.5, 3.0 SP1, and 2.0 SP1.</span></span>  
   
-## <a name="iri-and-idn-support"></a>IRI と IDN のサポート  
- Web アドレスは通常、次の非常に限られた文字のセットで構成される Uniform Resource Identifier (URI) を使用して表されます。  
+## <a name="iri-and-idn-support"></a><span data-ttu-id="6de07-105">IRI と IDN のサポート</span><span class="sxs-lookup"><span data-stu-id="6de07-105">IRI and IDN Support</span></span>  
+ <span data-ttu-id="6de07-106">Web アドレスは通常、次の非常に限られた文字のセットで構成される Uniform Resource Identifier (URI) を使用して表されます。</span><span class="sxs-lookup"><span data-stu-id="6de07-106">Web addresses are typically expressed using Uniform Resource Identifiers (URI) that consist of a very restricted set of characters:</span></span>  
   
--   英文字の大文字と小文字の ASCII 文字。  
+-   <span data-ttu-id="6de07-107">英文字の大文字と小文字の ASCII 文字。</span><span class="sxs-lookup"><span data-stu-id="6de07-107">Upper and lower case ASCII letters from the English alphabet.</span></span>  
   
--   0 から 9 の数字。  
+-   <span data-ttu-id="6de07-108">0 から 9 の数字。</span><span class="sxs-lookup"><span data-stu-id="6de07-108">Digits from 0 to 9.</span></span>  
   
--   その他の少数の ASCII シンボル。  
+-   <span data-ttu-id="6de07-109">その他の少数の ASCII シンボル。</span><span class="sxs-lookup"><span data-stu-id="6de07-109">A small number of other ASCII symbols.</span></span>  
   
- URI の仕様は、インターネット技術標準化委員会 (IETF) が公開している RFC 2396 および RFC 3986 で規定されています。  
+ <span data-ttu-id="6de07-110">URI の仕様は、インターネット技術標準化委員会 (IETF) が公開している RFC 2396 および RFC 3986 で規定されています。</span><span class="sxs-lookup"><span data-stu-id="6de07-110">The specifications for URIs are documented in RFC 2396 and RFC 3986 published by the Internet Engineering Task Force (IETF).</span></span>  
   
- インターネットの成長により、英語以外の言語を使用するリソースを識別する必要性が高まっています。 このニーズに対応し、非 ASCII 文字 (Unicode/ISO 10646 の文字セット内の文字) を許可する識別子が、International Resource Identifier (IRI) として知られています。 IRI の仕様は、IETF によって発行された RFC 3987 で規定されています。 IRI を使用すると、URL に Unicode 文字を含めることができます。  
+ <span data-ttu-id="6de07-111">インターネットの成長により、英語以外の言語を使用するリソースを識別する必要性が高まっています。</span><span class="sxs-lookup"><span data-stu-id="6de07-111">With the growth of the Internet, there is a growing need to identify resources using languages other than English.</span></span> <span data-ttu-id="6de07-112">このニーズに対応し、非 ASCII 文字 (Unicode/ISO 10646 の文字セット内の文字) を許可する識別子が、International Resource Identifier (IRI) として知られています。</span><span class="sxs-lookup"><span data-stu-id="6de07-112">Identifiers which facilitate this need and allow non-ASCII characters (characters in the Unicode/ISO 10646 character set) are known as International Resource Identifiers (IRIs).</span></span> <span data-ttu-id="6de07-113">IRI の仕様は、IETF によって発行された RFC 3987 で規定されています。</span><span class="sxs-lookup"><span data-stu-id="6de07-113">The specifications for IRIs are documented in RFC 3987 published by IETF.</span></span> <span data-ttu-id="6de07-114">IRI を使用すると、URL に Unicode 文字を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="6de07-114">Using IRIs allows a URL to contain Unicode characters.</span></span>  
   
- 既存の <xref:System.Uri?displayProperty=fullName> クラスは、RFC 3987 に基づいて IRI サポートを提供するために拡張されています。 現在のユーザーは、自分で明確に IRI を有効にしない限り、.NET Framework 2.0 の動作からは変更に気付きません。 これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。  
+ <span data-ttu-id="6de07-115">既存の <xref:System.Uri?displayProperty=nameWithType> クラスは、RFC 3987 に基づいて IRI サポートを提供するために拡張されています。</span><span class="sxs-lookup"><span data-stu-id="6de07-115">The existing <xref:System.Uri?displayProperty=nameWithType> class has been extended to provide IRI support based on RFC 3987.</span></span> <span data-ttu-id="6de07-116">現在のユーザーは、自分で明確に IRI を有効にしない限り、.NET Framework 2.0 の動作からは変更に気付きません。</span><span class="sxs-lookup"><span data-stu-id="6de07-116">Current users will not see any change from the .NET Framework 2.0 behavior unless they specifically enable IRI.</span></span> <span data-ttu-id="6de07-117">これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。</span><span class="sxs-lookup"><span data-stu-id="6de07-117">This ensures application compatibility with prior versions of the .NET Framework.</span></span>  
   
- アプリケーションで、ドメイン名に適用する国際ドメイン名 (IDN) 解析を使用するかどうか、および IRI 解析規則を適用すべきかどうかを指定できます。 これは、machine.config ファイルまたは app.config ファイルで指定できます。  
+ <span data-ttu-id="6de07-118">アプリケーションで、ドメイン名に適用する国際ドメイン名 (IDN) 解析を使用するかどうか、および IRI 解析規則を適用すべきかどうかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="6de07-118">An application can specify whether to use Internationalized Domain Name (IDN) parsing applied to domain names and whether IRI parsing rules should be applied.</span></span> <span data-ttu-id="6de07-119">これは、machine.config ファイルまたは app.config ファイルで指定できます。</span><span class="sxs-lookup"><span data-stu-id="6de07-119">This can be done in the machine.config or in the app.config file.</span></span>  
   
- IDN を有効にすると、ドメイン名に含まれるすべての Unicode のラベルが Punycode のラベルに変換されます。 Punycode 名には ASCII 文字のみが含まれ、常に xn-- プレフィックスで始まります。 この理由は、ほとんどの DNS サーバーは ASCII 文字しかサポートしていないため、インターネットで既存の DNS サーバーをサポートするためです (RFC 3940 を参照)。  
+ <span data-ttu-id="6de07-120">IDN を有効にすると、ドメイン名に含まれるすべての Unicode のラベルが Punycode のラベルに変換されます。</span><span class="sxs-lookup"><span data-stu-id="6de07-120">Enabling IDN will convert all Unicode labels in a domain name to their Punycode equivalents.</span></span> <span data-ttu-id="6de07-121">Punycode 名には ASCII 文字のみが含まれ、常に xn-- プレフィックスで始まります。</span><span class="sxs-lookup"><span data-stu-id="6de07-121">Punycode names contain only ASCII characters and always start with the xn-- prefix.</span></span> <span data-ttu-id="6de07-122">この理由は、ほとんどの DNS サーバーは ASCII 文字しかサポートしていないため、インターネットで既存の DNS サーバーをサポートするためです (RFC 3940 を参照)。</span><span class="sxs-lookup"><span data-stu-id="6de07-122">The reason for this is to support existing DNS servers on the Internet, since most DNS servers only support ASCII characters (see RFC 3940).</span></span>  
   
- IRI と IDN を有効にすると、<xref:System.Uri.DnsSafeHost%2A?displayProperty=fullName> プロパティの値に影響します。 IRI と IDN を有効にすると、<xref:System.Uri.Equals%2A?displayProperty=fullName>、<xref:System.Uri.OriginalString%2A?displayProperty=fullName>、<xref:System.Uri.GetComponents%2A?displayProperty=fullName>、および <xref:System.Uri.IsWellFormedOriginalString%2A> メソッドの動作を変更することもできます。  
+ <span data-ttu-id="6de07-123">IRI と IDN を有効にすると、<xref:System.Uri.DnsSafeHost%2A?displayProperty=nameWithType> プロパティの値に影響します。</span><span class="sxs-lookup"><span data-stu-id="6de07-123">Enabling IRI and IDN affects the value of the <xref:System.Uri.DnsSafeHost%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="6de07-124">IRI と IDN を有効にすると、<xref:System.Uri.Equals%2A?displayProperty=nameWithType>、<xref:System.Uri.OriginalString%2A?displayProperty=nameWithType>、<xref:System.Uri.GetComponents%2A?displayProperty=nameWithType>、および <xref:System.Uri.IsWellFormedOriginalString%2A> メソッドの動作を変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="6de07-124">Enabling IRI and IDN can also change the behavior of the <xref:System.Uri.Equals%2A?displayProperty=nameWithType>, <xref:System.Uri.OriginalString%2A?displayProperty=nameWithType>, <xref:System.Uri.GetComponents%2A?displayProperty=nameWithType>, and <xref:System.Uri.IsWellFormedOriginalString%2A> methods.</span></span>  
   
- IRI と IDN をサポートするカスタマイズ可能なパーサーを作成できるように、<xref:System.GenericUriParser?displayProperty=fullName> クラスも拡張されています。 <xref:System.GenericUriParser?displayProperty=fullName> オブジェクトの動作は、<xref:System.GenericUriParserOptions?displayProperty=fullName> 列挙型で使用可能な値のビットごとの組み合わせを <xref:System.GenericUriParser?displayProperty=fullName> コンストラクターに渡すことによって指定されます。 <xref:System.GenericUriParserOptions.IriParsing?displayProperty=fullName> 型は、パーサーが International Resource Identifiers (IRI) の RFC 3987 で規定された解析規則をサポートしていることを示します。 IRI が実際に使用されるかどうかは、IRI が有効になっているかどうかに依存します。  
+ <span data-ttu-id="6de07-125">IRI と IDN をサポートするカスタマイズ可能なパーサーを作成できるように、<xref:System.GenericUriParser?displayProperty=nameWithType> クラスも拡張されています。</span><span class="sxs-lookup"><span data-stu-id="6de07-125">The <xref:System.GenericUriParser?displayProperty=nameWithType> class has also been extended to allow creating a customizable parser that supports IRI and IDN.</span></span> <span data-ttu-id="6de07-126"><xref:System.GenericUriParser?displayProperty=nameWithType> オブジェクトの動作は、<xref:System.GenericUriParserOptions?displayProperty=nameWithType> 列挙型で使用可能な値のビットごとの組み合わせを <xref:System.GenericUriParser?displayProperty=nameWithType> コンストラクターに渡すことによって指定されます。</span><span class="sxs-lookup"><span data-stu-id="6de07-126">The behavior of a <xref:System.GenericUriParser?displayProperty=nameWithType> object is specified by passing a bitwise combination of the values available in the <xref:System.GenericUriParserOptions?displayProperty=nameWithType> enumeration to the <xref:System.GenericUriParser?displayProperty=nameWithType> constructor.</span></span> <span data-ttu-id="6de07-127"><xref:System.GenericUriParserOptions.IriParsing?displayProperty=nameWithType> 型は、パーサーが International Resource Identifiers (IRI) の RFC 3987 で規定された解析規則をサポートしていることを示します。</span><span class="sxs-lookup"><span data-stu-id="6de07-127">The <xref:System.GenericUriParserOptions.IriParsing?displayProperty=nameWithType> type indicates the parser supports the parsing rules specified in RFC 3987 for International Resource Identifiers (IRI).</span></span> <span data-ttu-id="6de07-128">IRI が実際に使用されるかどうかは、IRI が有効になっているかどうかに依存します。</span><span class="sxs-lookup"><span data-stu-id="6de07-128">Whether IRI is actually used depends on if IRI is enabled.</span></span>  
   
- <xref:System.GenericUriParserOptions.Idn?displayProperty=fullName> 型は、パーサーがホスト名の国際化ドメイン名 (IDN) の解析をサポートしていることを示します。 IDN が実際に使用されるかどうかは、IDN が有効になっているかどうかに依存します。  
+ <span data-ttu-id="6de07-129"><xref:System.GenericUriParserOptions.Idn?displayProperty=nameWithType> 型は、パーサーがホスト名の国際化ドメイン名 (IDN) の解析をサポートしていることを示します。</span><span class="sxs-lookup"><span data-stu-id="6de07-129">The <xref:System.GenericUriParserOptions.Idn?displayProperty=nameWithType> type indicates the parser supports Internationalized Domain Name (IDN) parsing (IDN) of host names.</span></span> <span data-ttu-id="6de07-130">IDN が実際に使用されるかどうかは、IDN が有効になっているかどうかに依存します。</span><span class="sxs-lookup"><span data-stu-id="6de07-130">Whether IDN is actually used depends on if IDN is enabled.</span></span>  
   
- IRI 解析を有効にすると、RFC 3987 の最新の IRI 規則に従って、正規化と文字チェックが実行されます。 RFC 2396 および RFC 3986 に従って正規化と文字チェックが実行されるように、既定値では IRI 解析は無効になっています。  
+ <span data-ttu-id="6de07-131">IRI 解析を有効にすると、RFC 3987 の最新の IRI 規則に従って、正規化と文字チェックが実行されます。</span><span class="sxs-lookup"><span data-stu-id="6de07-131">Enabling IRI parsing will do normalization and character checking according to the latest IRI rules in RFC 3987.</span></span> <span data-ttu-id="6de07-132">RFC 2396 および RFC 3986 に従って正規化と文字チェックが実行されるように、既定値では IRI 解析は無効になっています。</span><span class="sxs-lookup"><span data-stu-id="6de07-132">The default value is for IRI parsing to be disabled so normalization and character checking are done according to RFC 2396 and RFC 3986.</span></span>  
   
- <xref:System.Uri?displayProperty=fullName> クラスでの IRI と IDN の処理は、<xref:System.Configuration.IriParsingElement?displayProperty=fullName> および <xref:System.Configuration.IdnElement?displayProperty=fullName> の構成設定クラスを使用しても制御することができます。 <xref:System.Configuration.IriParsingElement?displayProperty=fullName> 設定は、<xref:System.Uri?displayProperty=fullName> クラスでの IRI 処理を有効または無効にします。 <xref:System.Configuration.IdnElement?displayProperty=fullName> 設定は、<xref:System.Uri> クラスでの IDN 処理を有効または無効にします。 <xref:System.Configuration.IriParsingElement?displayProperty=fullName> 設定も間接的に IDN を制御します。 IDN 処理を可能にするためには、IRI 処理を有効にする必要があります。 IRI 処理が無効になっている場合、IDN 処理は既定の設定に設定されます。既定の設定では、互換性のために .NET Framework 2.0 の動作が使用され、IDN 名は使用されません。  
+ <span data-ttu-id="6de07-133"><xref:System.Uri?displayProperty=nameWithType> クラスでの IRI と IDN の処理は、<xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> および <xref:System.Configuration.IdnElement?displayProperty=nameWithType> の構成設定クラスを使用しても制御することができます。</span><span class="sxs-lookup"><span data-stu-id="6de07-133">IRI and IDN processing in the <xref:System.Uri?displayProperty=nameWithType> class can also be controlled using the <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> and <xref:System.Configuration.IdnElement?displayProperty=nameWithType> configuration setting classes.</span></span> <span data-ttu-id="6de07-134"><xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> 設定は、<xref:System.Uri?displayProperty=nameWithType> クラスでの IRI 処理を有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="6de07-134">The <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> setting enables or disables IRI processing in the <xref:System.Uri?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="6de07-135"><xref:System.Configuration.IdnElement?displayProperty=nameWithType> 設定は、<xref:System.Uri> クラスでの IDN 処理を有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="6de07-135">The <xref:System.Configuration.IdnElement?displayProperty=nameWithType> setting enables or disables IDN processing in the <xref:System.Uri> class.</span></span> <span data-ttu-id="6de07-136"><xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> 設定も間接的に IDN を制御します。</span><span class="sxs-lookup"><span data-stu-id="6de07-136">The <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> setting also indirectly controls IDN.</span></span> <span data-ttu-id="6de07-137">IDN 処理を可能にするためには、IRI 処理を有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6de07-137">IRI processing must be enabled for IDN processing to be possible.</span></span> <span data-ttu-id="6de07-138">IRI 処理が無効になっている場合、IDN 処理は既定の設定に設定されます。既定の設定では、互換性のために .NET Framework 2.0 の動作が使用され、IDN 名は使用されません。</span><span class="sxs-lookup"><span data-stu-id="6de07-138">If IRI processing is disabled, then IDN processing will be set to the default setting where the .NET Framework 2.0 behavior is used for compatibility and IDN names are not used.</span></span>  
   
- <xref:System.Configuration.IriParsingElement?displayProperty=fullName> 構成クラスと <xref:System.Configuration.IdnElement?displayProperty=fullName> 構成クラスの構成設定は、最初の <xref:System.Uri?displayProperty=fullName> クラスが構築されるときに 1 回、読み取られます。 それ以降の構成設定の変更は無視されます。  
+ <span data-ttu-id="6de07-139"><xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> 構成クラスと <xref:System.Configuration.IdnElement?displayProperty=nameWithType> 構成クラスの構成設定は、最初の <xref:System.Uri?displayProperty=nameWithType> クラスが構築されるときに 1 回、読み取られます。</span><span class="sxs-lookup"><span data-stu-id="6de07-139">The configuration setting for the <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> and <xref:System.Configuration.IdnElement?displayProperty=nameWithType> configuration classes will be read once when the first <xref:System.Uri?displayProperty=nameWithType> class is constructed.</span></span> <span data-ttu-id="6de07-140">それ以降の構成設定の変更は無視されます。</span><span class="sxs-lookup"><span data-stu-id="6de07-140">Changes to configuration settings after that time are ignored.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Configuration.IdnElement?displayProperty=fullName>   
- <xref:System.Configuration.IriParsingElement?displayProperty=fullName>   
- <xref:System.Uri?displayProperty=fullName>   
- <xref:System.Uri.DnsSafeHost%2A?displayProperty=fullName>
-
+## <a name="see-also"></a><span data-ttu-id="6de07-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="6de07-141">See Also</span></span>  
+ <xref:System.Configuration.IdnElement?displayProperty=nameWithType>  
+ <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType>  
+ <xref:System.Uri?displayProperty=nameWithType>  
+ <xref:System.Uri.DnsSafeHost%2A?displayProperty=nameWithType>

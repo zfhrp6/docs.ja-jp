@@ -5,56 +5,49 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - JIT compilation
 - MDAs (managed debugging assistants), JIT compilation
 - JitCompilationStart MDA
 - managed debugging assistants (MDAs), JIT compilation
 ms.assetid: 5ffd2857-d0ba-4342-9824-9ffe04ec135d
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: eb6a36b9427c7d55aceba226a865cd51d076f448
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 67c80fce223d8f212fa485a8105862bcf24e161b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="jitcompilationstart-mda"></a>jitCompilationStart MDA
-`jitCompilationStart` マネージ デバッグ アシスタント (MDA: Managed Debugging Assistant) が起動すると、Just-In-Time (JIT) コンパイラが関数のコンパイルを開始した時刻が報告されます。  
+# <a name="jitcompilationstart-mda"></a><span data-ttu-id="679ae-102">jitCompilationStart MDA</span><span class="sxs-lookup"><span data-stu-id="679ae-102">jitCompilationStart MDA</span></span>
+<span data-ttu-id="679ae-103">`jitCompilationStart` マネージ デバッグ アシスタント (MDA: Managed Debugging Assistant) が起動すると、Just-In-Time (JIT) コンパイラが関数のコンパイルを開始した時刻が報告されます。</span><span class="sxs-lookup"><span data-stu-id="679ae-103">The `jitCompilationStart` managed debugging assistant (MDA) is activated to report when the just-in-time (JIT) compiler starts to compile a function.</span></span>  
   
-## <a name="symptoms"></a>症状  
- mscorjit.dll がプロセスに読み込まれるため、既にネイティブの画像形式になっているプログラムで、ワーキング セット サイズが増えます。  
+## <a name="symptoms"></a><span data-ttu-id="679ae-104">症状</span><span class="sxs-lookup"><span data-stu-id="679ae-104">Symptoms</span></span>  
+ <span data-ttu-id="679ae-105">mscorjit.dll がプロセスに読み込まれるため、既にネイティブの画像形式になっているプログラムで、ワーキング セット サイズが増えます。</span><span class="sxs-lookup"><span data-stu-id="679ae-105">The working set size increases for a program that is already in native image format because mscorjit.dll is loaded into the process.</span></span>  
   
-## <a name="cause"></a>原因  
- プログラムが依存するアセンブリの一部がネイティブ形式に生成されていないか、生成されていても正しく登録されていません。  
+## <a name="cause"></a><span data-ttu-id="679ae-106">原因</span><span class="sxs-lookup"><span data-stu-id="679ae-106">Cause</span></span>  
+ <span data-ttu-id="679ae-107">プログラムが依存するアセンブリの一部がネイティブ形式に生成されていないか、生成されていても正しく登録されていません。</span><span class="sxs-lookup"><span data-stu-id="679ae-107">Not all the assemblies the program depends on have been generated into native format, or those that have are not registered correctly.</span></span>  
   
-## <a name="resolution"></a>解決策  
- この MDA を有効にすると、JIT コンパイルされている関数を判断できます。 関数が含まれるアセンブリがネイティブ形式に生成され、正しく登録されているかどうかを判断します。  
+## <a name="resolution"></a><span data-ttu-id="679ae-108">解像度</span><span class="sxs-lookup"><span data-stu-id="679ae-108">Resolution</span></span>  
+ <span data-ttu-id="679ae-109">この MDA を有効にすると、JIT コンパイルされている関数を判断できます。</span><span class="sxs-lookup"><span data-stu-id="679ae-109">Enabling this MDA allows you to determine which function is being JIT-compiled.</span></span> <span data-ttu-id="679ae-110">関数が含まれるアセンブリがネイティブ形式に生成され、正しく登録されているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="679ae-110">Determine whether the assembly that contains the function is generated to native format and properly registered.</span></span>  
   
-## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
- この MDA は、メソッドが JIT コンパイルされる前にメッセージをログに記録します。そのため、この MDA を有効にすると、パフォーマンスに大きな影響が出ます。 メソッドがインラインの場合、この MDA は別個のメッセージを生成しません。  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="679ae-111">ランタイムへの影響</span><span class="sxs-lookup"><span data-stu-id="679ae-111">Effect on the Runtime</span></span>  
+ <span data-ttu-id="679ae-112">この MDA は、メソッドが JIT コンパイルされる前にメッセージをログに記録します。そのため、この MDA を有効にすると、パフォーマンスに大きな影響が出ます。</span><span class="sxs-lookup"><span data-stu-id="679ae-112">This MDA logs a message just before a method is JIT-compiled, so enabling this MDA has significant impact on performance.</span></span> <span data-ttu-id="679ae-113">メソッドがインラインの場合、この MDA は別個のメッセージを生成しません。</span><span class="sxs-lookup"><span data-stu-id="679ae-113">Note that if a method is inline, this MDA will not generate a separate message.</span></span>  
   
-## <a name="output"></a>出力  
- 次のコード サンプルでは、サンプル出力を確認できます。 ここでは、アセンブリ Test で、クラス "ns2.CO" のメソッド "m" が JIT コンパイルされたことを出力で確認できます。  
+## <a name="output"></a><span data-ttu-id="679ae-114">出力</span><span class="sxs-lookup"><span data-stu-id="679ae-114">Output</span></span>  
+ <span data-ttu-id="679ae-115">次のコード サンプルでは、サンプル出力を確認できます。</span><span class="sxs-lookup"><span data-stu-id="679ae-115">The following code sample shows sample output.</span></span> <span data-ttu-id="679ae-116">ここでは、アセンブリ Test で、クラス "ns2.CO" のメソッド "m" が JIT コンパイルされたことを出力で確認できます。</span><span class="sxs-lookup"><span data-stu-id="679ae-116">In this case the output shows that in assembly Test the method "m" on class "ns2.CO" was JIT-compiled.</span></span>  
   
 ```  
 method name="Test!ns2.C0::m"  
 ```  
   
-## <a name="configuration"></a>構成  
- 次の構成ファイルでは、最初に JIT コンパイルされたときに報告されるメソッドを絞り込むためのさまざまなフィルターを確認できます。 名前属性の値を * に設定することで、すべてのメソッドを報告するように指定できます。  
+## <a name="configuration"></a><span data-ttu-id="679ae-117">構成</span><span class="sxs-lookup"><span data-stu-id="679ae-117">Configuration</span></span>  
+ <span data-ttu-id="679ae-118">次の構成ファイルでは、最初に JIT コンパイルされたときに報告されるメソッドを絞り込むためのさまざまなフィルターを確認できます。</span><span class="sxs-lookup"><span data-stu-id="679ae-118">The following configuration file shows a variety of filters that can be employed to filter out which methods are reported when they are first JIT-compiled.</span></span> <span data-ttu-id="679ae-119">名前属性の値を * に設定することで、すべてのメソッドを報告するように指定できます。</span><span class="sxs-lookup"><span data-stu-id="679ae-119">You can specify that all methods be reported by setting the value of the name attribute to *.</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -74,8 +67,8 @@ method name="Test!ns2.C0::m"
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>例  
- 次のコード サンプルは、先の構成ファイルとの併用を意図しています。  
+## <a name="example"></a><span data-ttu-id="679ae-120">例</span><span class="sxs-lookup"><span data-stu-id="679ae-120">Example</span></span>  
+ <span data-ttu-id="679ae-121">次のコード サンプルは、先の構成ファイルとの併用を意図しています。</span><span class="sxs-lookup"><span data-stu-id="679ae-121">The following code sample is intended to be used with the preceding configuration file.</span></span>  
   
 ```  
 using System;  
@@ -172,8 +165,7 @@ namespace ns2
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
- [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)
-
+## <a name="see-also"></a><span data-ttu-id="679ae-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="679ae-122">See Also</span></span>  
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+ [<span data-ttu-id="679ae-123">マネージ デバッグ アシスタントによるエラーの診断</span><span class="sxs-lookup"><span data-stu-id="679ae-123">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
+ [<span data-ttu-id="679ae-124">相互運用マーシャリング</span><span class="sxs-lookup"><span data-stu-id="679ae-124">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)
