@@ -5,101 +5,93 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Assembly Registration tool
 - assemblies [.NET Framework], registering
 - Regasm.exe
 - registering assemblies
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 21da853d442a86eb42d04ff4f32d9f2798e14477
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 553b7725d2e0fe8fc197805d8e4b444567c33040
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (アセンブリ登録ツール)
-アセンブリ登録ツールは、1 つのアセンブリに含まれるメタデータを読み込み、必要なエントリをレジストリに追加します。これにより、COM クライアントによって .NET Framework クラスが自動的に作成されます。 クラスが登録されると、どの COM クライアントでも、そのクラスを COM クラスであるかのように使用できます。 クラスの登録は、アセンブリのインストール時に 1 回だけ行われます。 実際に登録されるまでは、アセンブリに含まれるクラスのインスタンスを COM から作成することはできません。  
+# <a name="regasmexe-assembly-registration-tool"></a><span data-ttu-id="394a6-102">Regasm.exe (アセンブリ登録ツール)</span><span class="sxs-lookup"><span data-stu-id="394a6-102">Regasm.exe (Assembly Registration Tool)</span></span>
+<span data-ttu-id="394a6-103">アセンブリ登録ツールは、1 つのアセンブリに含まれるメタデータを読み込み、必要なエントリをレジストリに追加します。これにより、COM クライアントによって .NET Framework クラスが自動的に作成されます。</span><span class="sxs-lookup"><span data-stu-id="394a6-103">The Assembly Registration tool reads the metadata within an assembly and adds the necessary entries to the registry, which allows COM clients to create .NET Framework classes transparently.</span></span> <span data-ttu-id="394a6-104">クラスが登録されると、どの COM クライアントでも、そのクラスを COM クラスであるかのように使用できます。</span><span class="sxs-lookup"><span data-stu-id="394a6-104">Once a class is registered, any COM client can use it as though the class were a COM class.</span></span> <span data-ttu-id="394a6-105">クラスの登録は、アセンブリのインストール時に 1 回だけ行われます。</span><span class="sxs-lookup"><span data-stu-id="394a6-105">The class is registered only once, when the assembly is installed.</span></span> <span data-ttu-id="394a6-106">実際に登録されるまでは、アセンブリに含まれるクラスのインスタンスを COM から作成することはできません。</span><span class="sxs-lookup"><span data-stu-id="394a6-106">Instances of classes within the assembly cannot be created from COM until they are actually registered.</span></span>  
   
- このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ <span data-ttu-id="394a6-107">このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。</span><span class="sxs-lookup"><span data-stu-id="394a6-107">To run the tool, use the Developer Command Prompt (or the Visual Studio Command Prompt in Windows 7).</span></span> <span data-ttu-id="394a6-108">詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="394a6-108">For more information, see [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md).</span></span>  
   
- コマンド プロンプトに次のように入力します。  
+ <span data-ttu-id="394a6-109">コマンド プロンプトに次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="394a6-109">At the command prompt, type the following:</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="394a6-110">構文</span><span class="sxs-lookup"><span data-stu-id="394a6-110">Syntax</span></span>  
   
 ```  
 regasm assemblyFile [options]  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a><span data-ttu-id="394a6-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="394a6-111">Parameters</span></span>  
   
-|パラメーター|説明|  
+|<span data-ttu-id="394a6-112">パラメーター</span><span class="sxs-lookup"><span data-stu-id="394a6-112">Parameter</span></span>|<span data-ttu-id="394a6-113">説明</span><span class="sxs-lookup"><span data-stu-id="394a6-113">Description</span></span>|  
 |---------------|-----------------|  
-|*assemblyFile*|COM に登録するアセンブリ。|  
+|<span data-ttu-id="394a6-114">*assemblyFile*</span><span class="sxs-lookup"><span data-stu-id="394a6-114">*assemblyFile*</span></span>|<span data-ttu-id="394a6-115">COM に登録するアセンブリ。</span><span class="sxs-lookup"><span data-stu-id="394a6-115">The assembly to be registered with COM.</span></span>|  
   
-|オプション|説明|  
+|<span data-ttu-id="394a6-116">オプション</span><span class="sxs-lookup"><span data-stu-id="394a6-116">Option</span></span>|<span data-ttu-id="394a6-117">説明</span><span class="sxs-lookup"><span data-stu-id="394a6-117">Description</span></span>|  
 |------------|-----------------|  
-|**/codebase**|レジストリに Codebase エントリを作成します。 Codebase エントリは、グローバル アセンブリ キャッシュにインストールされないアセンブリのファイル パスを指定します。 登録しようとしているアセンブリを、後でグローバル アセンブリ キャッシュにインストールする場合は、このオプションを指定する必要はありません。 **/codebase** オプションと共に指定する *assemblyFile* 引数は、[厳密な名前付きのアセンブリ](../../../docs/framework/app-domains/strong-named-assemblies.md)である必要があります。|  
-|**/registered**|このツールが既に登録されているタイプ ライブラリだけを参照するように指定します。|  
-|**/asmpath:directory**|アセンブリ参照を含むディレクトリを指定します。 **/regfile** オプションと共に使用する必要があります。|  
-|**/nologo**|Microsoft 著作権情報を表示しません。|  
-|**/regfile** [**:** *regFile*]|アセンブリについて指定した .reg ファイルを生成します。このファイルには必要なレジストリ エントリが含まれます。 このオプションを指定してもレジストリは変更されません。 このオプションは **/u** または **/tlb** オプションとは併用できません。|  
-|**/silent** または **/s**|成功メッセージを表示しません。|  
-|**/tlb** [**:** *typeLibFile*]|指定したアセンブリからタイプ ライブラリを生成します。このアセンブリには、アセンブリ内で定義されたアクセス可能な型の定義が含まれます。|  
-|**/unregister** または **/u**|*assemblyFile* 内で見つかった、作成可能なクラスの登録を取り消します。 このオプションを省略すると、アセンブリ内の作成可能なクラスが Regasm.exe で登録されます。|  
-|**/verbose**|詳細出力モードを指定します。**/tlb** オプションと共に指定した場合、タイプ ライブラリを生成する必要のある参照先アセンブリの一覧が表示されます。|  
-|**/?** または **/help**|このツールのコマンド構文とオプションを表示します。|  
+|<span data-ttu-id="394a6-118">**/codebase**</span><span class="sxs-lookup"><span data-stu-id="394a6-118">**/codebase**</span></span>|<span data-ttu-id="394a6-119">レジストリに Codebase エントリを作成します。</span><span class="sxs-lookup"><span data-stu-id="394a6-119">Creates a Codebase entry in the registry.</span></span> <span data-ttu-id="394a6-120">Codebase エントリは、グローバル アセンブリ キャッシュにインストールされないアセンブリのファイル パスを指定します。</span><span class="sxs-lookup"><span data-stu-id="394a6-120">The Codebase entry specifies the file path for an assembly that is not installed in the global assembly cache.</span></span> <span data-ttu-id="394a6-121">登録しようとしているアセンブリを、後でグローバル アセンブリ キャッシュにインストールする場合は、このオプションを指定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="394a6-121">You should not specify this option if you will subsequently install the assembly that you are registering into the global assembly cache.</span></span> <span data-ttu-id="394a6-122">**/codebase** オプションと共に指定する *assemblyFile* 引数は、[厳密な名前付きのアセンブリ](../../../docs/framework/app-domains/strong-named-assemblies.md)である必要があります。</span><span class="sxs-lookup"><span data-stu-id="394a6-122">The *assemblyFile* argument that you specify with the **/codebase** option must be a [strong-named assembly](../../../docs/framework/app-domains/strong-named-assemblies.md).</span></span>|  
+|<span data-ttu-id="394a6-123">**/registered**</span><span class="sxs-lookup"><span data-stu-id="394a6-123">**/registered**</span></span>|<span data-ttu-id="394a6-124">このツールが既に登録されているタイプ ライブラリだけを参照するように指定します。</span><span class="sxs-lookup"><span data-stu-id="394a6-124">Specifies that this tool will only refer to type libraries that have already been registered.</span></span>|  
+|<span data-ttu-id="394a6-125">**/asmpath:directory**</span><span class="sxs-lookup"><span data-stu-id="394a6-125">**/asmpath:directory**</span></span>|<span data-ttu-id="394a6-126">アセンブリ参照を含むディレクトリを指定します。</span><span class="sxs-lookup"><span data-stu-id="394a6-126">Specifies a directory containing assembly references.</span></span> <span data-ttu-id="394a6-127">**/regfile** オプションと共に使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="394a6-127">Must be used with the **/regfile** option.</span></span>|  
+|<span data-ttu-id="394a6-128">**/nologo**</span><span class="sxs-lookup"><span data-stu-id="394a6-128">**/nologo**</span></span>|<span data-ttu-id="394a6-129">Microsoft 著作権情報を表示しません。</span><span class="sxs-lookup"><span data-stu-id="394a6-129">Suppresses the Microsoft startup banner display.</span></span>|  
+|<span data-ttu-id="394a6-130">**/regfile** [**:** *regFile*]</span><span class="sxs-lookup"><span data-stu-id="394a6-130">**/regfile** [**:** *regFile*]</span></span>|<span data-ttu-id="394a6-131">アセンブリについて指定した .reg ファイルを生成します。このファイルには必要なレジストリ エントリが含まれます。</span><span class="sxs-lookup"><span data-stu-id="394a6-131">Generates the specified .reg file for the assembly, which contains the needed registry entries.</span></span> <span data-ttu-id="394a6-132">このオプションを指定してもレジストリは変更されません。</span><span class="sxs-lookup"><span data-stu-id="394a6-132">Specifying this option does not change the registry.</span></span> <span data-ttu-id="394a6-133">このオプションは **/u** または **/tlb** オプションとは併用できません。</span><span class="sxs-lookup"><span data-stu-id="394a6-133">You cannot use this option with the **/u** or **/tlb** options.</span></span>|  
+|<span data-ttu-id="394a6-134">**/silent** または **/s**</span><span class="sxs-lookup"><span data-stu-id="394a6-134">**/silent** or **/s**</span></span>|<span data-ttu-id="394a6-135">成功メッセージを表示しません。</span><span class="sxs-lookup"><span data-stu-id="394a6-135">Suppresses the display of success messages.</span></span>|  
+|<span data-ttu-id="394a6-136">**/tlb** [**:** *typeLibFile*]</span><span class="sxs-lookup"><span data-stu-id="394a6-136">**/tlb** [**:** *typeLibFile*]</span></span>|<span data-ttu-id="394a6-137">指定したアセンブリからタイプ ライブラリを生成します。このアセンブリには、アセンブリ内で定義されたアクセス可能な型の定義が含まれます。</span><span class="sxs-lookup"><span data-stu-id="394a6-137">Generates a type library from the specified assembly containing definitions of the accessible types defined within the assembly.</span></span>|  
+|<span data-ttu-id="394a6-138">**/unregister** または **/u**</span><span class="sxs-lookup"><span data-stu-id="394a6-138">**/unregister** or **/u**</span></span>|<span data-ttu-id="394a6-139">*assemblyFile* 内で見つかった、作成可能なクラスの登録を取り消します。</span><span class="sxs-lookup"><span data-stu-id="394a6-139">Unregisters the creatable classes found in *assemblyFile*.</span></span> <span data-ttu-id="394a6-140">このオプションを省略すると、アセンブリ内の作成可能なクラスが Regasm.exe で登録されます。</span><span class="sxs-lookup"><span data-stu-id="394a6-140">Omitting this option causes Regasm.exe to register the creatable classes in the assembly.</span></span>|  
+|<span data-ttu-id="394a6-141">**/verbose**</span><span class="sxs-lookup"><span data-stu-id="394a6-141">**/verbose**</span></span>|<span data-ttu-id="394a6-142">詳細出力モードを指定します。**/tlb** オプションと共に指定した場合、タイプ ライブラリを生成する必要のある参照先アセンブリの一覧が表示されます。</span><span class="sxs-lookup"><span data-stu-id="394a6-142">Specifies verbose mode; displays a list of any referenced assemblies for which a type library needs to be generated, when specified with the **/tlb** option.</span></span>|  
+|<span data-ttu-id="394a6-143">**/?**</span><span class="sxs-lookup"><span data-stu-id="394a6-143">**/?**</span></span> <span data-ttu-id="394a6-144">または **/help**</span><span class="sxs-lookup"><span data-stu-id="394a6-144">or **/help**</span></span>|<span data-ttu-id="394a6-145">このツールのコマンド構文とオプションを表示します。</span><span class="sxs-lookup"><span data-stu-id="394a6-145">Displays command syntax and options for the tool.</span></span>|  
   
 > [!NOTE]
->  Regasm.exe のコマンド行オプションでは大文字と小文字が区別されません。 オプションの一部を指定するだけで一意に識別できます。 たとえば、**/n** は **/nologo** と等価であり、**/t:** *outfile.tlb* は **/tlb:** *outfile.tlb* と等価です。  
+>  <span data-ttu-id="394a6-146">Regasm.exe のコマンド行オプションでは大文字と小文字が区別されません。</span><span class="sxs-lookup"><span data-stu-id="394a6-146">The Regasm.exe command-line options are case insensitive.</span></span> <span data-ttu-id="394a6-147">オプションの一部を指定するだけで一意に識別できます。</span><span class="sxs-lookup"><span data-stu-id="394a6-147">You only need to provide enough of the option to uniquely identify it.</span></span> <span data-ttu-id="394a6-148">たとえば、**/n** は **/nologo** と等価であり、**/t:** *outfile.tlb* は **/tlb:** *outfile.tlb* と等価です。</span><span class="sxs-lookup"><span data-stu-id="394a6-148">For example, **/n** is equivalent to **/nologo** and **/t:** *outfile.tlb* is equivalent to **/tlb:** *outfile.tlb*.</span></span>  
   
-## <a name="remarks"></a>コメント  
- **/regfile** オプションを使用すると、直接にレジストリを変更しなくても、レジストリ エントリを含む .reg ファイルを生成できます。 コンピューターのレジストリを更新するには、レジストリ エディター ツール (Regedit.exe) を使用して .reg ファイルをインポートします。 .reg ファイルには、ユーザー定義の登録機能で行われるレジストリの更新についての情報は含まれません。  **/regfile** オプションは、マネージ クラスのレジストリ エントリだけを生成します。  このオプションは、`TypeLibID` と `InterfaceID` のエントリは生成しません。  
+## <a name="remarks"></a><span data-ttu-id="394a6-149">コメント</span><span class="sxs-lookup"><span data-stu-id="394a6-149">Remarks</span></span>  
+ <span data-ttu-id="394a6-150">**/regfile** オプションを使用すると、直接にレジストリを変更しなくても、レジストリ エントリを含む .reg ファイルを生成できます。</span><span class="sxs-lookup"><span data-stu-id="394a6-150">You can use the **/regfile** option to generate a .reg file that contains the registry entries instead of making the changes directly to the registry.</span></span> <span data-ttu-id="394a6-151">コンピューターのレジストリを更新するには、レジストリ エディター ツール (Regedit.exe) を使用して .reg ファイルをインポートします。</span><span class="sxs-lookup"><span data-stu-id="394a6-151">You can update the registry on a computer by importing the .reg file with the Registry Editor tool (Regedit.exe).</span></span> <span data-ttu-id="394a6-152">.reg ファイルには、ユーザー定義の登録機能で行われるレジストリの更新についての情報は含まれません。</span><span class="sxs-lookup"><span data-stu-id="394a6-152">Note that the .reg file does not contain any registry updates that can be made by user-defined register functions.</span></span>  <span data-ttu-id="394a6-153">**/regfile** オプションは、マネージ クラスのレジストリ エントリだけを生成します。</span><span class="sxs-lookup"><span data-stu-id="394a6-153">Note that the **/regfile** option only emits registry entries for managed classes.</span></span>  <span data-ttu-id="394a6-154">このオプションは、`TypeLibID` と `InterfaceID` のエントリは生成しません。</span><span class="sxs-lookup"><span data-stu-id="394a6-154">This option does not emit entries for `TypeLibID`s or `InterfaceID`s.</span></span>  
   
- **/tlb** オプションを指定すると、アセンブリ内で見つかった型を記述するタイプ ライブラリが Regasm.exe で生成および登録されます。 生成されたタイプ ライブラリは、現在の作業ディレクトリ、または出力ファイル用に指定されたディレクトリ内に格納されます。 他のアセンブリを参照するアセンブリについてタイプ ライブラリを生成すると、一度に複数のタイプ ライブラリが生成されることがあります。 タイプ ライブラリを使用して、[!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] などの開発用ツールに対して型情報を提供できます。 登録するアセンブリがタイプ ライブラリ インポーター ([Tlbimp.exe](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)) で生成されたアセンブリである場合には、**/tlb** オプションを使用しないでください。 タイプ ライブラリからインポートされたアセンブリからは、タイプ ライブラリをエクスポートできません。 **/tlb** オプションを使用した場合の効果は、タイプ ライブラリ エクスポーター ([Tlbexp.exe](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)) と Regasm.exe を使用した場合と同じです。ただし、Tlbexp.exe では、生成されたタイプ ライブラリが登録されません。  **/tlb** オプションを使用してタイプ ライブラリを登録する場合、**/tlb** オプションと **/unregister** オプションを使用してタイプ ライブラリの登録を解除できます。 この 2 つのオプションを使用すると、タイプ ライブラリとインターフェイス エントリの登録を解除でき、これによって、レジストリをかなり整理できます。  
+ <span data-ttu-id="394a6-155">**/tlb** オプションを指定すると、アセンブリ内で見つかった型を記述するタイプ ライブラリが Regasm.exe で生成および登録されます。</span><span class="sxs-lookup"><span data-stu-id="394a6-155">When you specify the **/tlb** option, Regasm.exe generates and registers a type library describing the types found in the assembly.</span></span> <span data-ttu-id="394a6-156">生成されたタイプ ライブラリは、現在の作業ディレクトリ、または出力ファイル用に指定されたディレクトリ内に格納されます。</span><span class="sxs-lookup"><span data-stu-id="394a6-156">Regasm.exe places the generated type libraries in the current working directory or the directory specified for the output file.</span></span> <span data-ttu-id="394a6-157">他のアセンブリを参照するアセンブリについてタイプ ライブラリを生成すると、一度に複数のタイプ ライブラリが生成されることがあります。</span><span class="sxs-lookup"><span data-stu-id="394a6-157">Generating a type library for an assembly that references other assemblies may cause several type libraries to be generated at once.</span></span> <span data-ttu-id="394a6-158">タイプ ライブラリを使用して、[!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] などの開発用ツールに対して型情報を提供できます。</span><span class="sxs-lookup"><span data-stu-id="394a6-158">You can use the type library to provide type information to development tools like [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)].</span></span> <span data-ttu-id="394a6-159">登録するアセンブリがタイプ ライブラリ インポーター ([Tlbimp.exe](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)) で生成されたアセンブリである場合には、**/tlb** オプションを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="394a6-159">You should not use the **/tlb** option if the assembly you are registering was produced by the Type Library Importer ([Tlbimp.exe](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)).</span></span> <span data-ttu-id="394a6-160">タイプ ライブラリからインポートされたアセンブリからは、タイプ ライブラリをエクスポートできません。</span><span class="sxs-lookup"><span data-stu-id="394a6-160">You cannot export a type library from an assembly that was imported from a type library.</span></span> <span data-ttu-id="394a6-161">**/tlb** オプションを使用した場合の効果は、タイプ ライブラリ エクスポーター ([Tlbexp.exe](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)) と Regasm.exe を使用した場合と同じです。ただし、Tlbexp.exe では、生成されたタイプ ライブラリが登録されません。</span><span class="sxs-lookup"><span data-stu-id="394a6-161">Using the **/tlb** option has the same effect as using the Type Library Exporter ([Tlbexp.exe](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)) and Regasm.exe, with the exception that Tlbexp.exe does not register the type library it produces.</span></span>  <span data-ttu-id="394a6-162">**/tlb** オプションを使用してタイプ ライブラリを登録する場合、**/tlb** オプションと **/unregister** オプションを使用してタイプ ライブラリの登録を解除できます。</span><span class="sxs-lookup"><span data-stu-id="394a6-162">If you use the **/tlb** option to registered a type library, you can use **/tlb** option with the **/unregister** option to unregistered the type library.</span></span> <span data-ttu-id="394a6-163">この 2 つのオプションを使用すると、タイプ ライブラリとインターフェイス エントリの登録を解除でき、これによって、レジストリをかなり整理できます。</span><span class="sxs-lookup"><span data-stu-id="394a6-163">Using the two options together will unregister the type library and interface entries, which can clean the registry considerably.</span></span>  
   
- COM で使用するためにアセンブリを登録すると、Regasm.exe は、ローカル コンピューターのレジストリにエントリを追加します。 より具体的には、バージョンに依存するレジストリ キーを作成して、同じアセンブリの複数のバージョンが同じコンピューターで side-by-side 実行できるようにします。 アセンブリが初めて登録される場合は、そのアセンブリの最上位キーが 1 つ作成され、特定のバージョンに対する一意なサブキーが作成されます。 アセンブリの新しいバージョンを登録するたびに、Regasm.exe は、新しいバージョンに対するサブキーを作成します。  
+ <span data-ttu-id="394a6-164">COM で使用するためにアセンブリを登録すると、Regasm.exe は、ローカル コンピューターのレジストリにエントリを追加します。</span><span class="sxs-lookup"><span data-stu-id="394a6-164">When you register an assembly for use by COM, Regasm.exe adds entries to the registry on the local computer.</span></span> <span data-ttu-id="394a6-165">より具体的には、バージョンに依存するレジストリ キーを作成して、同じアセンブリの複数のバージョンが同じコンピューターで side-by-side 実行できるようにします。</span><span class="sxs-lookup"><span data-stu-id="394a6-165">More specifically, it creates version-dependent registry keys that allow multiple versions of the same assembly to run side by side on a computer.</span></span> <span data-ttu-id="394a6-166">アセンブリが初めて登録される場合は、そのアセンブリの最上位キーが 1 つ作成され、特定のバージョンに対する一意なサブキーが作成されます。</span><span class="sxs-lookup"><span data-stu-id="394a6-166">The first time an assembly is registered, one top-level key is created for the assembly and a unique subkey is created for the specific version.</span></span> <span data-ttu-id="394a6-167">アセンブリの新しいバージョンを登録するたびに、Regasm.exe は、新しいバージョンに対するサブキーを作成します。</span><span class="sxs-lookup"><span data-stu-id="394a6-167">Each time you register a new version of the assembly, Regasm.exe creates a subkey for the new version.</span></span>  
   
- たとえば、COM で使用するために、マネージ コンポーネント myComp.dll のバージョン 1.0.0.0 を登録しているとします。 その後、myComp.dll バージョン 2.0.0.0 を登録します。 コンピューター上のすべての COM クライアント アプリケーションは myComp.dll バージョン 2.0.0.0 を使用しているため、myComponent.dll バージョン 1.0.0.0 を登録解除することにしました。 このレジストリ スキームでは、myComp.dll バージョン 1.0.0.0 のサブキーだけが削除されるため、バージョン 1.0.0.0 を登録解除できます。  
+ <span data-ttu-id="394a6-168">たとえば、COM で使用するために、マネージ コンポーネント myComp.dll のバージョン 1.0.0.0 を登録しているとします。</span><span class="sxs-lookup"><span data-stu-id="394a6-168">For example, consider a scenario where you register the managed component, myComp.dll, version 1.0.0.0 for use by COM.</span></span> <span data-ttu-id="394a6-169">その後、myComp.dll バージョン 2.0.0.0 を登録します。</span><span class="sxs-lookup"><span data-stu-id="394a6-169">Later, you register myComp.dll, version 2.0.0.0.</span></span> <span data-ttu-id="394a6-170">コンピューター上のすべての COM クライアント アプリケーションは myComp.dll バージョン 2.0.0.0 を使用しているため、myComponent.dll バージョン 1.0.0.0 を登録解除することにしました。</span><span class="sxs-lookup"><span data-stu-id="394a6-170">You determine that all COM client applications on the computer are using myComp.dll version 2.0.0.0 and you decide to unregister myComponent.dll version 1.0.0.0.</span></span> <span data-ttu-id="394a6-171">このレジストリ スキームでは、myComp.dll バージョン 1.0.0.0 のサブキーだけが削除されるため、バージョン 1.0.0.0 を登録解除できます。</span><span class="sxs-lookup"><span data-stu-id="394a6-171">This registry scheme allows you to unregister myComp.dll version 1.0.0.0 because only the version 1.0.0.0 subkey is removed.</span></span>  
   
- Regasm.exe を使用してアセンブリを登録した後で、そのアセンブリを[グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)内に登録すると、どの COM クライアントからもアクティブにできます。 アセンブリをアクティブにするアプリケーションが 1 つだけの場合は、そのアプリケーションのディレクトリ内にアセンブリを格納できます。  
+ <span data-ttu-id="394a6-172">Regasm.exe を使用してアセンブリを登録した後で、そのアセンブリを[グローバル アセンブリ キャッシュ](../../../docs/framework/app-domains/gac.md)内に登録すると、どの COM クライアントからもアクティブにできます。</span><span class="sxs-lookup"><span data-stu-id="394a6-172">After registering an assembly using Regasm.exe, you can install it in the [global assembly cache](../../../docs/framework/app-domains/gac.md) so that it can be activated from any COM client.</span></span> <span data-ttu-id="394a6-173">アセンブリをアクティブにするアプリケーションが 1 つだけの場合は、そのアプリケーションのディレクトリ内にアセンブリを格納できます。</span><span class="sxs-lookup"><span data-stu-id="394a6-173">If the assembly is only going to be activated by a single application, you can place it in that application's directory.</span></span>  
   
-## <a name="examples"></a>例  
- `myTest.dll` に含まれるすべてのパブリック クラスを登録するコマンドを次に示します。  
+## <a name="examples"></a><span data-ttu-id="394a6-174">例</span><span class="sxs-lookup"><span data-stu-id="394a6-174">Examples</span></span>  
+ <span data-ttu-id="394a6-175">`myTest.dll` に含まれるすべてのパブリック クラスを登録するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="394a6-175">The following command registers all public classes contained in `myTest.dll`.</span></span>  
   
 ```  
 regasm myTest.dll  
 ```  
   
- ファイル `myTest.reg` を生成するコマンドを次に示します。このファイルには、必要なレジストリ エントリがすべて含まれます。 このコマンドを実行してもレジストリは更新されません。  
+ <span data-ttu-id="394a6-176">ファイル `myTest.reg` を生成するコマンドを次に示します。このファイルには、必要なレジストリ エントリがすべて含まれます。</span><span class="sxs-lookup"><span data-stu-id="394a6-176">The following command generates the file `myTest.reg`, which contains all the necessary registry entries.</span></span> <span data-ttu-id="394a6-177">このコマンドを実行してもレジストリは更新されません。</span><span class="sxs-lookup"><span data-stu-id="394a6-177">This command does not update the registry.</span></span>  
   
 ```  
 regasm myTest.dll /regfile:myTest.reg  
 ```  
   
- `myTest.dll` に含まれるすべてのパブリック クラスを登録し、タイプ ライブラリ `myTest.tlb` を生成および登録するコマンドを次に示します。このタイプ ライブラリには、`myTest.dll` で定義されたすべてのパブリック型の定義が含まれます。  
+ <span data-ttu-id="394a6-178">`myTest.dll` に含まれるすべてのパブリック クラスを登録し、タイプ ライブラリ `myTest.tlb` を生成および登録するコマンドを次に示します。このタイプ ライブラリには、`myTest.dll` で定義されたすべてのパブリック型の定義が含まれます。</span><span class="sxs-lookup"><span data-stu-id="394a6-178">The following command registers all public classes contained in `myTest.dll`, and generates and registers the type library `myTest.tlb`, which contains definitions of all the public types defined in `myTest.dll`.</span></span>  
   
 ```  
 regasm myTest.dll /tlb:myTest.tlb  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [ツール](../../../docs/framework/tools/index.md)   
- [Tlbexp.exe (タイプ ライブラリ エクスポーター)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)   
- [Tlbimp.exe (タイプ ライブラリ インポーター)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)   
- [COM へのアセンブリの登録](../../../docs/framework/interop/registering-assemblies-with-com.md)   
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-
+## <a name="see-also"></a><span data-ttu-id="394a6-179">関連項目</span><span class="sxs-lookup"><span data-stu-id="394a6-179">See Also</span></span>  
+ [<span data-ttu-id="394a6-180">ツール</span><span class="sxs-lookup"><span data-stu-id="394a6-180">Tools</span></span>](../../../docs/framework/tools/index.md)  
+ [<span data-ttu-id="394a6-181">Tlbexp.exe (タイプ ライブラリ エクスポーター)</span><span class="sxs-lookup"><span data-stu-id="394a6-181">Tlbexp.exe (Type Library Exporter)</span></span>](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)  
+ [<span data-ttu-id="394a6-182">Tlbimp.exe (タイプ ライブラリ インポーター)</span><span class="sxs-lookup"><span data-stu-id="394a6-182">Tlbimp.exe (Type Library Importer)</span></span>](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
+ [<span data-ttu-id="394a6-183">COM へのアセンブリの登録</span><span class="sxs-lookup"><span data-stu-id="394a6-183">Registering Assemblies with COM</span></span>](../../../docs/framework/interop/registering-assemblies-with-com.md)  
+ [<span data-ttu-id="394a6-184">コマンド プロンプト</span><span class="sxs-lookup"><span data-stu-id="394a6-184">Command Prompts</span></span>](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

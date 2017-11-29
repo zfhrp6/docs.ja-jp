@@ -1,83 +1,66 @@
 ---
-title: "/nowarn |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: /nowarn
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - nowarn compiler option [Visual Basic]
 - /nowarn compiler option [Visual Basic]
 - -nowarn compiler option [Visual Basic]
 ms.assetid: 7ebf2106-0652-4fdc-bf60-70fc86465d83
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 61b145a9eb95f5357c7aa2983a96c31e8f2cef6a
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 8da27ea2f9f0a4d370928d70cda1a796b822d97c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="nowarn"></a>/nowarn
-警告を生成するコンパイラの機能を無効にします。  
+# <a name="nowarn"></a><span data-ttu-id="70f1a-102">/nowarn</span><span class="sxs-lookup"><span data-stu-id="70f1a-102">/nowarn</span></span>
+<span data-ttu-id="70f1a-103">警告を生成するコンパイラの機能を無効にします。</span><span class="sxs-lookup"><span data-stu-id="70f1a-103">Suppresses the compiler's ability to generate warnings.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="70f1a-104">構文</span><span class="sxs-lookup"><span data-stu-id="70f1a-104">Syntax</span></span>  
   
 ```  
 /nowarn[:numberList]  
 ```  
   
-## <a name="arguments"></a>引数  
+## <a name="arguments"></a><span data-ttu-id="70f1a-105">引数</span><span class="sxs-lookup"><span data-stu-id="70f1a-105">Arguments</span></span>  
   
-|用語|定義|  
+|<span data-ttu-id="70f1a-106">用語</span><span class="sxs-lookup"><span data-stu-id="70f1a-106">Term</span></span>|<span data-ttu-id="70f1a-107">定義</span><span class="sxs-lookup"><span data-stu-id="70f1a-107">Definition</span></span>|  
 |---|---|  
-|`numberList`|省略可能です。 しないか、コンパイラの警告の ID 番号のコンマ区切りリスト。 警告の Id が指定されていない場合、すべての警告は抑制されます。|  
+|`numberList`|<span data-ttu-id="70f1a-108">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="70f1a-108">Optional.</span></span> <span data-ttu-id="70f1a-109">コンパイラはしないようにする警告の ID 番号のコンマ区切り一覧。</span><span class="sxs-lookup"><span data-stu-id="70f1a-109">Comma-delimited list of the warning ID numbers that the compiler should suppress.</span></span> <span data-ttu-id="70f1a-110">警告の Id が指定されていない場合、すべての警告は抑制されます。</span><span class="sxs-lookup"><span data-stu-id="70f1a-110">If the warning IDs are not specified, all warnings are suppressed.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- `/nowarn`オプションは、コンパイラの警告が発生しないようにします。 個々 の警告を抑制するのに警告の ID を提供、`/nowarn`コロンの後ろのオプションです。 複数の警告番号コンマで区切ります。  
+## <a name="remarks"></a><span data-ttu-id="70f1a-111">コメント</span><span class="sxs-lookup"><span data-stu-id="70f1a-111">Remarks</span></span>  
+ <span data-ttu-id="70f1a-112">`/nowarn`オプションにより、コンパイラの警告を生成しないことができます。</span><span class="sxs-lookup"><span data-stu-id="70f1a-112">The `/nowarn` option causes the compiler to not generate warnings.</span></span> <span data-ttu-id="70f1a-113">個々 の警告を抑制するのに警告の ID を指定、`/nowarn`コロンの後ろのオプションです。</span><span class="sxs-lookup"><span data-stu-id="70f1a-113">To suppress an individual warning, supply the warning ID to the `/nowarn` option following the colon.</span></span> <span data-ttu-id="70f1a-114">複数の警告番号をカンマで区切ります。</span><span class="sxs-lookup"><span data-stu-id="70f1a-114">Separate multiple warning numbers with commas.</span></span>  
   
- 警告 id の数値の一部だけを指定する必要があります。 ある BC42024、未使用のローカル変数に対して警告を抑制する場合の指定など`/nowarn:42024`します。  
+ <span data-ttu-id="70f1a-115">警告 id の数値の一部だけを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="70f1a-115">You need to specify only the numeric part of the warning identifier.</span></span> <span data-ttu-id="70f1a-116">たとえば、BC42024、未使用のローカル変数に対する警告を抑制する場合を指定`/nowarn:42024`です。</span><span class="sxs-lookup"><span data-stu-id="70f1a-116">For example, if you want to suppress BC42024, the warning for unused local variables, specify `/nowarn:42024`.</span></span>  
   
- 警告 ID 番号の詳細については、次を参照してください。 [Visual Basic での警告の構成](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)します。  
+ <span data-ttu-id="70f1a-117">警告 ID 番号の詳細については、次を参照してください。 [Visual Basic での警告の構成](/visualstudio/ide/configuring-warnings-in-visual-basic)です。</span><span class="sxs-lookup"><span data-stu-id="70f1a-117">For more information on the warning ID numbers, see [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).</span></span>  
   
-|統合開発環境 Visual Studio で/nowarn を設定するには|  
+|<span data-ttu-id="70f1a-118">開発環境を統合するには、Visual Studio での/nowarn の設定</span><span class="sxs-lookup"><span data-stu-id="70f1a-118">To set /nowarn in the Visual Studio integrated development environment</span></span>|  
 |---|  
-|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 **プロジェクト** メニューのをクリックして**プロパティ**します。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。<br />2.**[コンパイル]** タブをクリックします。<br />3.選択、**すべての警告を無効にする**をすべての警告を無効にする チェック ボックスです。<br />     または<br />     特定の警告を無効にするには、**なし**警告の横にあるドロップダウン リストからです。|  
+|<span data-ttu-id="70f1a-119">1.**ソリューション エクスプローラー**でプロジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="70f1a-119">1.  Have a project selected in **Solution Explorer**.</span></span> <span data-ttu-id="70f1a-120">**[プロジェクト]** メニューの **[プロパティ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="70f1a-120">On the **Project** menu, click **Properties**.</span></span> <span data-ttu-id="70f1a-121">詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="70f1a-121">For more information, see [Introduction to the Project Designer](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).</span></span><br /><span data-ttu-id="70f1a-122">2.**[コンパイル]** タブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="70f1a-122">2.  Click the **Compile** tab.</span></span><br /><span data-ttu-id="70f1a-123">3.選択、**すべての警告を無効にする**すべての警告を無効にする チェック ボックスです。</span><span class="sxs-lookup"><span data-stu-id="70f1a-123">3.  Select the **Disable all warnings** check box to disable all warnings.</span></span><br />     <span data-ttu-id="70f1a-124">または</span><span class="sxs-lookup"><span data-stu-id="70f1a-124">- or -</span></span><br />     <span data-ttu-id="70f1a-125">特定の警告を無効にするには、 **None**警告の横にあるドロップダウン リストからです。</span><span class="sxs-lookup"><span data-stu-id="70f1a-125">To disable a particular warning, click **None** from the drop-down list adjacent to the warning.</span></span>|  
   
-## <a name="example"></a>例  
- 次のコードのコンパイル`T2.vb`すべての警告は表示されません。  
+## <a name="example"></a><span data-ttu-id="70f1a-126">例</span><span class="sxs-lookup"><span data-stu-id="70f1a-126">Example</span></span>  
+ <span data-ttu-id="70f1a-127">次のコードのコンパイル`T2.vb`し、すべての警告を表示しません。</span><span class="sxs-lookup"><span data-stu-id="70f1a-127">The following code compiles `T2.vb` and does not display any warnings.</span></span>  
   
 ```  
 vbc /nowarn t2.vb  
 ```  
   
-## <a name="example"></a>例  
- 次のコードのコンパイル`T2.vb`と、使用されていないローカル変数 (42024) に警告が表示されません。  
+## <a name="example"></a><span data-ttu-id="70f1a-128">例</span><span class="sxs-lookup"><span data-stu-id="70f1a-128">Example</span></span>  
+ <span data-ttu-id="70f1a-129">次のコードのコンパイル`T2.vb`し、使用されていないローカル変数 (42024) に警告を表示しません。</span><span class="sxs-lookup"><span data-stu-id="70f1a-129">The following code compiles `T2.vb` and does not display the warnings for unused local variables (42024).</span></span>  
   
 ```  
 vbc /nowarn:42024 t2.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
- [コンパイル コマンドラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)   
- [Visual Basic での警告の構成](https://docs.microsoft.com/visualstudio/ide/configuring-warnings-in-visual-basic)
+## <a name="see-also"></a><span data-ttu-id="70f1a-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="70f1a-130">See Also</span></span>  
+ [<span data-ttu-id="70f1a-131">Visual Basic のコマンド ライン コンパイラ</span><span class="sxs-lookup"><span data-stu-id="70f1a-131">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [<span data-ttu-id="70f1a-132">コンパイル コマンド ラインのサンプル</span><span class="sxs-lookup"><span data-stu-id="70f1a-132">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
+ [<span data-ttu-id="70f1a-133">Visual Basic での警告の構成</span><span class="sxs-lookup"><span data-stu-id="70f1a-133">Configuring Warnings in Visual Basic</span></span>](/visualstudio/ide/configuring-warnings-in-visual-basic)

@@ -7,51 +7,45 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - overriding XML serialization
 - SOAP, overriding encoded XML serialization
 ms.assetid: d0791df8-04e3-46b4-a6be-fe0ed09267e8
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 0dea6233f2a13bd3b6c7e33ebf9ee1c96dae7577
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 74c7974f5f10a507f5344b9686c22015e381b27d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-override-encoded-soap-xml-serialization"></a>方法 : SOAP エンコード済み XML シリアル化をオーバーライドする
-[コード例](#tskhowtooverrideencodedsoapxmlserializationanchor1)  
+# <a name="how-to-override-encoded-soap-xml-serialization"></a><span data-ttu-id="eadb8-102">方法 : SOAP エンコード済み XML シリアル化をオーバーライドする</span><span class="sxs-lookup"><span data-stu-id="eadb8-102">How to: Override Encoded SOAP XML Serialization</span></span>
+[<span data-ttu-id="eadb8-103">コード例</span><span class="sxs-lookup"><span data-stu-id="eadb8-103">Code Example</span></span>](#tskhowtooverrideencodedsoapxmlserializationanchor1)  
   
- SOAP メッセージとしてオブジェクトの XML シリアル化をオーバーライドするプロセスは、標準の XML シリアル化をオーバーライドするプロセスに似ています。 標準の XML シリアル化をオーバーライドする方法については、「[方法 : XML ストリームの代替要素名を指定する](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)」を参照してください。  
+ <span data-ttu-id="eadb8-104">SOAP メッセージとしてオブジェクトの XML シリアル化をオーバーライドするプロセスは、標準の XML シリアル化をオーバーライドするプロセスに似ています。</span><span class="sxs-lookup"><span data-stu-id="eadb8-104">The process for overriding XML serialization of objects as SOAP messages is similar to the process for overriding standard XML serialization.</span></span> <span data-ttu-id="eadb8-105">標準の XML シリアル化をオーバーライドする方法については、「[方法 : XML ストリームの代替要素名を指定する](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="eadb8-105">For information about overriding standard XML serialization, see [How to: Specify an Alternate Element Name for an XML Stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).</span></span>  
   
-### <a name="to-override-serialization-of-objects-as-soap-messages"></a>SOAP メッセージとしてオブジェクトのシリアル化をオーバーライドするには  
+### <a name="to-override-serialization-of-objects-as-soap-messages"></a><span data-ttu-id="eadb8-106">SOAP メッセージとしてオブジェクトのシリアル化をオーバーライドするには</span><span class="sxs-lookup"><span data-stu-id="eadb8-106">To override serialization of objects as SOAP messages</span></span>  
   
-1.  <xref:System.Xml.Serialization.SoapAttributeOverrides> クラスのインスタンスを作成します。  
+1.  <span data-ttu-id="eadb8-107"><xref:System.Xml.Serialization.SoapAttributeOverrides> クラスのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="eadb8-107">Create an instance of the <xref:System.Xml.Serialization.SoapAttributeOverrides> class.</span></span>  
   
-2.  シリアル化するクラス メンバーごとに `SoapAttributes` を作成します。  
+2.  <span data-ttu-id="eadb8-108">シリアル化するクラス メンバーごとに `SoapAttributes` を作成します。</span><span class="sxs-lookup"><span data-stu-id="eadb8-108">Create a `SoapAttributes` for each class member that is being serialized.</span></span>  
   
-3.  シリアル化するメンバーに対し、XML シリアル化に影響を与える 1 つ以上の属性のインスタンスを必要に応じて作成します。 詳細については、「エンコード済み SOAP シリアル化を制御する属性」を参照してください。  
+3.  <span data-ttu-id="eadb8-109">シリアル化するメンバーに対し、XML シリアル化に影響を与える 1 つ以上の属性のインスタンスを必要に応じて作成します。</span><span class="sxs-lookup"><span data-stu-id="eadb8-109">Create an instance of one or more of the attributes that affect XML serialization, as appropriate, to the member being serialized.</span></span> <span data-ttu-id="eadb8-110">詳細については、「エンコード済み SOAP シリアル化を制御する属性」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="eadb8-110">For more information, see "Attributes That Control Encoded SOAP Serialization".</span></span>  
   
-4.  手順 3 で作成した属性に、`SoapAttributes` の適切なプロパティを設定します。  
+4.  <span data-ttu-id="eadb8-111">手順 3 で作成した属性に、`SoapAttributes` の適切なプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="eadb8-111">Set the appropriate property of `SoapAttributes` to the attribute created in step 3.</span></span>  
   
-5.  `SoapAttributes` に `SoapAttributeOverrides` を追加します。  
+5.  <span data-ttu-id="eadb8-112">`SoapAttributes` に `SoapAttributeOverrides` を追加します。</span><span class="sxs-lookup"><span data-stu-id="eadb8-112">Add `SoapAttributes` to `SoapAttributeOverrides`.</span></span>  
   
-6.  `XmlTypeMapping` を使用して `SoapAttributeOverrides` を作成します。 `SoapReflectionImporter.ImportTypeMapping` メソッドを使用します。  
+6.  <span data-ttu-id="eadb8-113">`XmlTypeMapping` を使用して `SoapAttributeOverrides` を作成します。</span><span class="sxs-lookup"><span data-stu-id="eadb8-113">Create an `XmlTypeMapping` using the `SoapAttributeOverrides`.</span></span> <span data-ttu-id="eadb8-114">`SoapReflectionImporter.ImportTypeMapping` メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="eadb8-114">Use the `SoapReflectionImporter.ImportTypeMapping` method.</span></span>  
   
-7.  `XmlSerializer` を使用して `XmlTypeMapping` を作成します。  
+7.  <span data-ttu-id="eadb8-115">`XmlSerializer` を使用して `XmlTypeMapping` を作成します。</span><span class="sxs-lookup"><span data-stu-id="eadb8-115">Create an `XmlSerializer` using `XmlTypeMapping`.</span></span>  
   
-8.  オブジェクトをシリアル化または逆シリアル化します。  
+8.  <span data-ttu-id="eadb8-116">オブジェクトをシリアル化または逆シリアル化します。</span><span class="sxs-lookup"><span data-stu-id="eadb8-116">Serialize or deserialize the object.</span></span>  
   
-## <a name="example"></a>例  
- ファイルを 2 つの方法でシリアル化するコード例を次に示します。最初の方法では `XmlSerializer` クラスの動作をオーバーライドせずにシリアル化し、2 番目の方法ではこのクラスの動作をオーバーライドしてシリアル化します。 この例には、複数のメンバーを持つ `Group` という名前のクラスが含まれています。 クラス メンバーには、`SoapElementAttribute` などのさまざまな属性が適用されています。 `SerializeOriginal` メソッドでこのクラスをシリアル化すると、これらの属性によって SOAP メッセージの内容が制御されます。 この `SerializeOverride` メソッドを呼び出すと、さまざまな属性を作成し、それらの属性に `XmlSerializer` のプロパティを設定することによって、`SoapAttributes` の動作がオーバーライドされます。  
+## <a name="example"></a><span data-ttu-id="eadb8-117">例</span><span class="sxs-lookup"><span data-stu-id="eadb8-117">Example</span></span>  
+ <span data-ttu-id="eadb8-118">ファイルを 2 つの方法でシリアル化するコード例を次に示します。最初の方法では `XmlSerializer` クラスの動作をオーバーライドせずにシリアル化し、2 番目の方法ではこのクラスの動作をオーバーライドしてシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="eadb8-118">The following code example serializes a file in two ways: first, without overriding the `XmlSerializer` class's behavior, and second, by overriding the behavior.</span></span> <span data-ttu-id="eadb8-119">この例には、複数のメンバーを持つ `Group` という名前のクラスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="eadb8-119">The example contains a class named `Group` with several members.</span></span> <span data-ttu-id="eadb8-120">クラス メンバーには、`SoapElementAttribute` などのさまざまな属性が適用されています。</span><span class="sxs-lookup"><span data-stu-id="eadb8-120">Various attributes, such as the `SoapElementAttribute`, have been applied to class members.</span></span> <span data-ttu-id="eadb8-121">`SerializeOriginal` メソッドでこのクラスをシリアル化すると、これらの属性によって SOAP メッセージの内容が制御されます。</span><span class="sxs-lookup"><span data-stu-id="eadb8-121">When the class is serialized with the `SerializeOriginal` method, the attributes control the SOAP message content.</span></span> <span data-ttu-id="eadb8-122">この `SerializeOverride` メソッドを呼び出すと、さまざまな属性を作成し、それらの属性に `XmlSerializer` のプロパティを設定することによって、`SoapAttributes` の動作がオーバーライドされます。</span><span class="sxs-lookup"><span data-stu-id="eadb8-122">When the `SerializeOverride` method is called, the behavior of the `XmlSerializer` is overridden by creating various attributes and setting the properties of a `SoapAttributes` to those attributes (as appropriate).</span></span>  
   
 ```csharp  
 using System;  
@@ -293,11 +287,10 @@ public class Run
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XML シリアル化および SOAP シリアル化](../../../docs/standard/serialization/xml-and-soap-serialization.md)   
- [エンコード済み SOAP シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)   
- [XML Web サービスを使用した XML シリアル化](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)   
- [方法 : オブジェクトをシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object.md)   
- [方法 : オブジェクトを逆シリアル化する](../../../docs/standard/serialization/how-to-deserialize-an-object.md)   
- [方法 : オブジェクトを SOAP エンコード済み XML ストリームとしてシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
-
+## <a name="see-also"></a><span data-ttu-id="eadb8-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="eadb8-123">See Also</span></span>  
+ [<span data-ttu-id="eadb8-124">XML シリアル化および SOAP シリアル化</span><span class="sxs-lookup"><span data-stu-id="eadb8-124">XML and SOAP Serialization</span></span>](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+ [<span data-ttu-id="eadb8-125">エンコード済み SOAP シリアル化を制御する属性</span><span class="sxs-lookup"><span data-stu-id="eadb8-125">Attributes That Control Encoded SOAP Serialization</span></span>](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
+ [<span data-ttu-id="eadb8-126">XML Web サービスを使用した XML シリアル化</span><span class="sxs-lookup"><span data-stu-id="eadb8-126">XML Serialization with XML Web Services</span></span>](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)  
+ [<span data-ttu-id="eadb8-127">方法 : オブジェクトをシリアル化する</span><span class="sxs-lookup"><span data-stu-id="eadb8-127">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [<span data-ttu-id="eadb8-128">方法 : オブジェクトを逆シリアル化する</span><span class="sxs-lookup"><span data-stu-id="eadb8-128">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
+ [<span data-ttu-id="eadb8-129">方法 : オブジェクトを SOAP エンコード済み XML ストリームとしてシリアル化する</span><span class="sxs-lookup"><span data-stu-id="eadb8-129">How to: Serialize an Object as a SOAP-Encoded XML Stream</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)

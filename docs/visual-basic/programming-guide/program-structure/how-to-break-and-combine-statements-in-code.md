@@ -1,17 +1,13 @@
 ---
-title: "方法: 分割およびコード (Visual Basic) 内のステートメントを連結する |Microsoft ドキュメント"
+title: "方法: コード内でステートメントを分割および連結する (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vb._
-dev_langs:
-- VB
+f1_keywords: vb._
 helpviewer_keywords:
 - colons (:)
 - line continuation
@@ -23,67 +19,52 @@ helpviewer_keywords:
 - long lines of code
 - line terminator
 - line-continuation sequence
-- underscores, in code
+- underscores [Visual Basic], in code
 - statements [Visual Basic], line continuation in
-- line breaks, in code
-- line-continuation character
+- line breaks [Visual Basic], in code
+- line-continuation character [Visual Basic]
 - Visual Basic code, line continuation in
 - statements [Visual Basic], line breaks in
 ms.assetid: dea01dad-a8ac-484a-bb3a-8c45a1b1eccc
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 840036a91f430f72e0258b8be466770f2855a58f
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: cf6b3ce7e5f9549ca04c4980bd3c91513b343ff6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>方法: コード内でステートメントを分割および連結する (Visual Basic)
-コードを記述する場合は、コード エディターでを水平方向にスクロールを必要とするステートメントが長くなりも作成できます。 方法は、これには影響しませんが、コードを実行、困難の作成者やその他のユーザーをモニターされているとおり、コードを読み取る。 このような場合は、単一の長いステートメントを複数の行に分割を検討してください。  
+# <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a><span data-ttu-id="2f6d6-102">方法: コード内でステートメントを分割および連結する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2f6d6-102">How to: Break and Combine Statements in Code (Visual Basic)</span></span>
+<span data-ttu-id="2f6d6-103">コードを書くときにも必要になるは、水平方向にスクロール コード エディターでステートメントが長くなりを作成する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-103">When writing your code, you might at times create lengthy statements that necessitate horizontal scrolling in the Code Editor.</span></span> <span data-ttu-id="2f6d6-104">方法は、これには影響しませんが、コードの実行、困難の作成者やその他のユーザーをモニターに表示されるようにコードを読み取る。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-104">Although this doesn't affect the way your code runs, it makes it difficult for you or anyone else to read the code as it appears on the monitor.</span></span> <span data-ttu-id="2f6d6-105">このような場合は、単一の長いステートメントを複数の行に分割することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-105">In such cases, you should consider breaking the single long statement into several lines.</span></span>  
   
-### <a name="to-break-a-single-statement-into-multiple-lines"></a>複数の行に単一のステートメントを分割するには  
+### <a name="to-break-a-single-statement-into-multiple-lines"></a><span data-ttu-id="2f6d6-106">複数の行に単一のステートメントを分割するには</span><span class="sxs-lookup"><span data-stu-id="2f6d6-106">To break a single statement into multiple lines</span></span>  
   
--   アンダー スコアは、行連結文字を使用 (`_`)、行を分割する時点。 アンダースコアは、スペースの直後、および行終端記号 (キャリッジ リターン) の直前に指定する必要があります。  
+-   <span data-ttu-id="2f6d6-107">行連結文字、つまりアンダー スコアを使用して (`_`)、行を分割する時点。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-107">Use the line-continuation character, which is an underscore (`_`), at the point at which you want the line to break.</span></span> <span data-ttu-id="2f6d6-108">アンダースコアは、スペースの直後、および行終端記号 (キャリッジ リターン) の直前に指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-108">The underscore must be immediately preceded by a space and immediately followed by a line terminator (carriage return).</span></span>  
   
     > [!NOTE]
-    >  場合によっては、行連結文字を省略した場合、Visual Basic コンパイラに暗黙的には引き続きステートメント次のコード行にします。 行連結文字を省略できます構文要素については、「暗黙的な行継続」を参照してください[ステートメント](../../../visual-basic/programming-guide/language-features/statements.md)します。  
+    >  <span data-ttu-id="2f6d6-109">場合によっては、行連結文字を省略した場合、Visual Basic コンパイラは暗黙的に続行ステートメント コードの次の行にします。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-109">In some cases, if you omit the line-continuation character, the Visual Basic compiler will implicitly continue the statement on the next line of code.</span></span> <span data-ttu-id="2f6d6-110">行連結文字を省略できる構文要素の一覧を参照してください「暗黙的な行の連結」[ステートメント](../../../visual-basic/programming-guide/language-features/statements.md)です。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-110">For a list of syntax elements for which you can omit the line-continuation character, see "Implicit Line Continuation" in [Statements](../../../visual-basic/programming-guide/language-features/statements.md).</span></span>  
   
-     次の例では、ステートメントは末尾行連結文字の&4; つの行が最後の行に分割されます。  
+     <span data-ttu-id="2f6d6-111">次の例では、ステートメントは行連結文字をすべて終了して 4 つの行が最後の行に分割されます。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-111">In the following example, the statement is broken into four lines with line-continuation characters terminating all but the last line.</span></span>  
   
-     [!code-vb[VbVbcnConventions&#20;](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/how-to-break-and-combine-statements-in-code_1.vb)]  
+     [!code-vb[VbVbcnConventions#20](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/how-to-break-and-combine-statements-in-code_1.vb)]  
   
-     このシーケンスを使用して、コード読みやすく、オンラインとタイミングを印刷します。  
+     <span data-ttu-id="2f6d6-112">このシーケンスを使用して、コードを見やすく、オンラインとときに出力されます。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-112">Using this sequence makes your code easier to read, both online and when printed.</span></span>  
   
-     行連結文字は、行の最後の文字である必要があります。 アイテムと同じ行に、それをフォローできません。  
+     <span data-ttu-id="2f6d6-113">行連結文字は、行の最後の文字である必要があります。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-113">The line-continuation character must be the last character on a line.</span></span> <span data-ttu-id="2f6d6-114">他の何らかの同じ行にたどってすることはできません。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-114">You can't follow it with anything else on the same line.</span></span>  
   
-     行連結文字を使用するに関していくつかの制限があります。たとえば、引数の名前の途中では使用できません。 行連結文字で、引数リストを分割することができますが、個々 の引数の名前が残す必要があります。  
+     <span data-ttu-id="2f6d6-115">行連結文字を使用するに関していくつかの制限があります。たとえば、引数名の途中では使用できません。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-115">Some limitations exist as to where you can use the line-continuation character; for example, you can't use it in the middle of an argument name.</span></span> <span data-ttu-id="2f6d6-116">行連結文字の引数リストを中断することができますが、個々 の引数の名前はそのまま保持する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-116">You can break an argument list with the line-continuation character, but the individual names of the arguments must remain intact.</span></span>  
   
-     行連結文字を使用して、コメントを続行できません。 コンパイラは、特別な意味のコメント内の文字を調べるしません。 複数行にコメントを記述する場合は、コメント記号を繰り返します (`'`)&1; 行にします。  
+     <span data-ttu-id="2f6d6-117">行連結文字を使用してコメントを続行することはできません。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-117">You can't continue a comment by using a line-continuation character.</span></span> <span data-ttu-id="2f6d6-118">コンパイラには、特別な意味のコメント内の文字を確認しません。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-118">The compiler doesn't examine the characters in a comment for special meaning.</span></span> <span data-ttu-id="2f6d6-119">複数行にコメントを記述する場合は、コメント記号を繰り返します (`'`) 行ごとにします。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-119">For a multiple-line comment, repeat the comment symbol (`'`) on each line.</span></span>  
   
- 推奨される方法は、別々 の行に各ステートメントを配置することが[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]同じ行に複数のステートメントを配置することもできます。  
+ <span data-ttu-id="2f6d6-120">行ごとに各ステートメントを配置することをお勧めの方法では、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]同じ行に複数のステートメントを配置することもできます。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-120">Although placing each statement on a separate line is the recommended method, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] also allows you to place multiple statements on the same line.</span></span>  
   
-### <a name="to-place-multiple-statements-on-the-same-line"></a>同じ行に複数のステートメントを配置するには  
+### <a name="to-place-multiple-statements-on-the-same-line"></a><span data-ttu-id="2f6d6-121">同じ行に複数のステートメントを配置するには</span><span class="sxs-lookup"><span data-stu-id="2f6d6-121">To place multiple statements on the same line</span></span>  
   
--   ステートメントをコロンで区切ります (`:`)、次の例のようにします。  
+-   <span data-ttu-id="2f6d6-122">ステートメントをコロンで区切ります (`:`)、次の例のようにします。</span><span class="sxs-lookup"><span data-stu-id="2f6d6-122">Separate the statements with a colon (`:`), as in the following example.</span></span>  
   
-     [!code-vb[VbVbcnConventions&#10;](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/how-to-break-and-combine-statements-in-code_2.vb)]  
+     [!code-vb[VbVbcnConventions#10](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/how-to-break-and-combine-statements-in-code_2.vb)]  
   
-## <a name="see-also"></a>関連項目  
- [プログラム構造とコード規則](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)   
- [ステートメント](../../../visual-basic/programming-guide/language-features/statements.md)
+## <a name="see-also"></a><span data-ttu-id="2f6d6-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="2f6d6-123">See Also</span></span>  
+ [<span data-ttu-id="2f6d6-124">プログラム構造とコード規則</span><span class="sxs-lookup"><span data-stu-id="2f6d6-124">Program Structure and Code Conventions</span></span>](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
+ [<span data-ttu-id="2f6d6-125">ステートメント</span><span class="sxs-lookup"><span data-stu-id="2f6d6-125">Statements</span></span>](../../../visual-basic/programming-guide/language-features/statements.md)

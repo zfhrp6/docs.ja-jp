@@ -5,23 +5,23 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.topic: article
+dev_langs: fsharp
 ms.prod: .net-core
+ms.openlocfilehash: f8ea697596f144fdd6d50c871399388a075ba935
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: b041fbec3ff22157d00af2447e76a7ce242007fc
-ms.openlocfilehash: f07569a4d352162f9d6e9a13ab1c5eb921077416
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-mstest"></a>dotnet テストと MSTest を使用した .NET Core での単体テスト F# ライブラリ
+# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-mstest"></a><span data-ttu-id="bbb82-103">dotnet テストと MSTest を使用した .NET Core での単体テスト F# ライブラリ</span><span class="sxs-lookup"><span data-stu-id="bbb82-103">Unit testing F# libraries in .NET Core using dotnet test and MSTest</span></span>
 
-このチュートリアルでは、単体テストの概念について学習するためにサンプル ソリューションを段階的に構築する対話型のエクスペリエンスを示します。 構築済みのソリューションを使用してチュートリアルに従う場合は、開始する前に[サンプル コードを参照またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-with-fsharp-mstest/)してください。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+<span data-ttu-id="bbb82-104">このチュートリアルでは、単体テストの概念について学習するためにサンプル ソリューションを段階的に構築する対話型のエクスペリエンスを示します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-104">This tutorial takes you through an interactive experience building a sample solution step-by-step to learn unit testing concepts.</span></span> <span data-ttu-id="bbb82-105">構築済みのソリューションを使用してチュートリアルに従う場合は、開始する前に[サンプル コードを参照またはダウンロード](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-with-fsharp-mstest/)してください。</span><span class="sxs-lookup"><span data-stu-id="bbb82-105">If you prefer to follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-with-fsharp-mstest/) before you begin.</span></span> <span data-ttu-id="bbb82-106">ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="bbb82-106">For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span></span>
 
-## <a name="creating-the-source-project"></a>ソース プロジェクトの作成
+## <a name="creating-the-source-project"></a><span data-ttu-id="bbb82-107">ソース プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="bbb82-107">Creating the source project</span></span>
 
-シェル ウィンドウを開きます。 ソリューションを保存するための *unit-testing-with-fsharp* というディレクトリを作成します。
-この新しいディレクトリ内で [`dotnet new sln`](../tools/dotnet-new.md) を実行して、ソリューションを新たに作成します。 こうすることで、クラス ライブラリと単体テスト プロジェクトの両方を管理しやすくなります。
-ソリューションのディレクトリ内で、*MathService* ディレクトリを作成します。 現時点のディレクトリとファイルの構造は次のようになっています。
+<span data-ttu-id="bbb82-108">シェル ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="bbb82-108">Open a shell window.</span></span> <span data-ttu-id="bbb82-109">ソリューションを保存するための *unit-testing-with-fsharp* というディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-109">Create a directory called *unit-testing-with-fsharp* to hold the solution.</span></span>
+<span data-ttu-id="bbb82-110">この新しいディレクトリ内で [`dotnet new sln`](../tools/dotnet-new.md) を実行して、ソリューションを新たに作成します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-110">Inside this new directory, run [`dotnet new sln`](../tools/dotnet-new.md) to create a new solution.</span></span> <span data-ttu-id="bbb82-111">こうすることで、クラス ライブラリと単体テスト プロジェクトの両方を管理しやすくなります。</span><span class="sxs-lookup"><span data-stu-id="bbb82-111">This makes it easier to manage both the class library and the unit test project.</span></span>
+<span data-ttu-id="bbb82-112">ソリューションのディレクトリ内で、*MathService* ディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-112">Inside the solution directory, create a *MathService* directory.</span></span> <span data-ttu-id="bbb82-113">現時点のディレクトリとファイルの構造は次のようになっています。</span><span class="sxs-lookup"><span data-stu-id="bbb82-113">The directory and file structure thus far is shown below:</span></span>
 
 ```
 /unit-testing-with-fsharp
@@ -29,18 +29,18 @@ ms.lasthandoff: 09/14/2017
     /MathService
 ```
 
-*MathService* を現在のディレクトリにし、[`dotnet new classlib -lang F#`](../tools/dotnet-new.md) を実行してソース プロジェクトを作成します。  テスト駆動開発 (TDD) を行うには、計算サービスのエラーが発生する実装を作成します。
+<span data-ttu-id="bbb82-114">*MathService* を現在のディレクトリにし、[`dotnet new classlib -lang F#`](../tools/dotnet-new.md) を実行してソース プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-114">Make *MathService* the current directory and run [`dotnet new classlib -lang F#`](../tools/dotnet-new.md) to create the source project.</span></span>  <span data-ttu-id="bbb82-115">テスト駆動開発 (TDD) を行うには、計算サービスのエラーが発生する実装を作成します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-115">To use test-driven development (TDD), you'll create a failing implementation of the math service:</span></span>
 
 ```fsharp
 module MyMath =
     let sumOfSquares xs = raise (System.NotImplementedException("You haven't written a test yet!"))
 ```
 
-*unit-testing-with-fsharp* ディレクトリに戻ります。 [`dotnet sln add .\MathService\MathService.fsproj`](../tools/dotnet-sln.md) を実行して、クラス ライブラリ プロジェクトをソリューションに追加します。
+<span data-ttu-id="bbb82-116">*unit-testing-with-fsharp* ディレクトリに戻ります。</span><span class="sxs-lookup"><span data-stu-id="bbb82-116">Change the directory back to the *unit-testing-with-fsharp* directory.</span></span> <span data-ttu-id="bbb82-117">[`dotnet sln add .\MathService\MathService.fsproj`](../tools/dotnet-sln.md) を実行して、クラス ライブラリ プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-117">Run [`dotnet sln add .\MathService\MathService.fsproj`](../tools/dotnet-sln.md) to add the class library project to the solution.</span></span>
 
-## <a name="creating-the-test-project"></a>テスト プロジェクトの作成
+## <a name="creating-the-test-project"></a><span data-ttu-id="bbb82-118">テスト プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="bbb82-118">Creating the test project</span></span>
 
-次に、*MathService.Tests* ディレクトリを作成します。 次の一覧はディレクトリ構造を示したものです。
+<span data-ttu-id="bbb82-119">次に、*MathService.Tests* ディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-119">Next, create the *MathService.Tests* directory.</span></span> <span data-ttu-id="bbb82-120">次の一覧はディレクトリ構造を示したものです。</span><span class="sxs-lookup"><span data-stu-id="bbb82-120">The following outline shows the directory structure:</span></span>
 
 ```
 /unit-testing-with-fsharp
@@ -51,7 +51,7 @@ module MyMath =
     /MathService.Tests
 ```
 
-*MathService.Tests* ディレクトリを現在のディレクトリにし、[`dotnet new mstest -lang F#`](../tools/dotnet-new.md) を使用して新しいプロジェクトを作成します。 これにより、テスト フレームワークとして MSTest を使用するテスト プロジェクトが作成されます。 生成されたテンプレートで、*MathServiceTests.fsproj* のテスト ランナーが構成されます。
+<span data-ttu-id="bbb82-121">*MathService.Tests* ディレクトリを現在のディレクトリにし、[`dotnet new mstest -lang F#`](../tools/dotnet-new.md) を使用して新しいプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-121">Make the *MathService.Tests* directory the current directory and create a new project using [`dotnet new mstest -lang F#`](../tools/dotnet-new.md).</span></span> <span data-ttu-id="bbb82-122">これにより、テスト フレームワークとして MSTest を使用するテスト プロジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="bbb82-122">This creates a test project that uses MSTest as the test framework.</span></span> <span data-ttu-id="bbb82-123">生成されたテンプレートで、*MathServiceTests.fsproj* のテスト ランナーが構成されます。</span><span class="sxs-lookup"><span data-stu-id="bbb82-123">The generated template configures the test runner in the *MathServiceTests.fsproj*:</span></span>
 
 ```xml
 <ItemGroup>
@@ -61,15 +61,15 @@ module MyMath =
 </ItemGroup>
 ```
 
-テスト プロジェクトには、単体テストを作成して実行するための、他のパッケージが必要です。 前の手順の `dotnet new` によって、MSTest と MSTest ランナーが追加されています。 ここで、プロジェクトに別の依存関係として `MathService` クラス ライブラリを追加します。 次の [`dotnet add reference`](../tools/dotnet-add-reference.md) コマンドを使用します。
+<span data-ttu-id="bbb82-124">テスト プロジェクトには、単体テストを作成して実行するための、他のパッケージが必要です。</span><span class="sxs-lookup"><span data-stu-id="bbb82-124">The test project requires other packages to create and run unit tests.</span></span> <span data-ttu-id="bbb82-125">前の手順の `dotnet new` によって、MSTest と MSTest ランナーが追加されています。</span><span class="sxs-lookup"><span data-stu-id="bbb82-125">`dotnet new` in the previous step added MSTest and the MSTest runner.</span></span> <span data-ttu-id="bbb82-126">ここで、プロジェクトに別の依存関係として `MathService` クラス ライブラリを追加します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-126">Now, add the `MathService` class library as another dependency to the project.</span></span> <span data-ttu-id="bbb82-127">次の [`dotnet add reference`](../tools/dotnet-add-reference.md) コマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-127">Use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:</span></span>
 
 ```
 dotnet add reference ../MathService/MathService.fsproj
 ```
 
-全体のファイルは GitHub の[サンプル リポジトリ](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj)で確認できます。
+<span data-ttu-id="bbb82-128">全体のファイルは GitHub の[サンプル リポジトリ](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj)で確認できます。</span><span class="sxs-lookup"><span data-stu-id="bbb82-128">You can see the entire file in the [samples repository](https://github.com/dotnet/docs/blob/master/samples/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj) on GitHub.</span></span>
 
-ソリューションの最終的なレイアウトは次のようになります。
+<span data-ttu-id="bbb82-129">ソリューションの最終的なレイアウトは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="bbb82-129">You have the following final solution layout:</span></span>
 
 ```
 /unit-testing-with-fsharp
@@ -82,11 +82,11 @@ dotnet add reference ../MathService/MathService.fsproj
         MathServiceTests.fsproj
 ```
 
-*unit-testing-with-fsharp* ディレクトリで [`dotnet sln add .\MathService.Tests\MathService.Tests.fsproj`](../tools/dotnet-sln.md) を実行します。
+<span data-ttu-id="bbb82-130">*unit-testing-with-fsharp* ディレクトリで [`dotnet sln add .\MathService.Tests\MathService.Tests.fsproj`](../tools/dotnet-sln.md) を実行します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-130">Execute [`dotnet sln add .\MathService.Tests\MathService.Tests.fsproj`](../tools/dotnet-sln.md) in the *unit-testing-with-fsharp* directory.</span></span>
 
-## <a name="creating-the-first-test"></a>最初のテストの作成
+## <a name="creating-the-first-test"></a><span data-ttu-id="bbb82-131">最初のテストの作成</span><span class="sxs-lookup"><span data-stu-id="bbb82-131">Creating the first test</span></span>
 
-TDD のアプローチでは、失敗するテストを 1 つ記述することを要求し、それを渡して、プロセスを繰り返します。 *Tests.fs* を開き、次のコードを追加します。
+<span data-ttu-id="bbb82-132">TDD のアプローチでは、失敗するテストを 1 つ記述することを要求し、それを渡して、プロセスを繰り返します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-132">The TDD approach calls for writing one failing test, making it pass, then repeating the process.</span></span> <span data-ttu-id="bbb82-133">*Tests.fs* を開き、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-133">Open *Tests.fs* and add the following code:</span></span>
 
 ```fsharp
 namespace MathService.Tests
@@ -106,11 +106,11 @@ type TestClass () =
      member this.FailEveryTime() = Assert.IsTrue(false)
 ```
 
-`[<TestClass>]` 属性は、テストを含むクラスを表します。 `[<TestMethod>]` 属性は、テスト ランナーによって実行されるテスト メソッドを表します。 *unit-testing-with-fsharp* ディレクトリで [`dotnet test`](../tools/dotnet-test.md) を実行してテストとクラス ライブラリをビルドし、それからテストを実行します。 xUnit テスト ランナーには、テストを実行するためのプログラムのエントリ ポイントが含まれています。 `dotnet test` を実行すると、作成した単体テスト プロジェクトを使用してテスト ランナーが開始されます。
+<span data-ttu-id="bbb82-134">`[<TestClass>]` 属性は、テストを含むクラスを表します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-134">The `[<TestClass>]` attribute denotes a class that contains tests.</span></span> <span data-ttu-id="bbb82-135">`[<TestMethod>]` 属性は、テスト ランナーによって実行されるテスト メソッドを表します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-135">The `[<TestMethod>]` attribute denotes a test method that is run by the test runner.</span></span> <span data-ttu-id="bbb82-136">*unit-testing-with-fsharp* ディレクトリで [`dotnet test`](../tools/dotnet-test.md) を実行してテストとクラス ライブラリをビルドし、それからテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-136">From the *unit-testing-with-fsharp* directory, execute [`dotnet test`](../tools/dotnet-test.md) to build the tests and the class library and then run the tests.</span></span> <span data-ttu-id="bbb82-137">xUnit テスト ランナーには、テストを実行するためのプログラムのエントリ ポイントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="bbb82-137">The xUnit test runner contains the program entry point to run your tests.</span></span> <span data-ttu-id="bbb82-138">`dotnet test` を実行すると、作成した単体テスト プロジェクトを使用してテスト ランナーが開始されます。</span><span class="sxs-lookup"><span data-stu-id="bbb82-138">`dotnet test` starts the test runner using the unit test project you've created.</span></span>
 
-この 2 つのテストは、最も基本的な成功テストと失敗テストです。 `My test` は成功し、`Fail every time` は失敗します。 今度は `sumOfSquares` メソッドのテストを作成します。 `sumOfSquares` メソッドは、入力シーケンスに含まれるすべての奇数の整数値を 2 乗して合計した値を返します。 これらの関数をすべて一度に書き込むのではなく、機能を検証するテストを繰り返し作成することができます。 各テストを成功させることで、メソッドに必要な機能を作成することになります。
+<span data-ttu-id="bbb82-139">この 2 つのテストは、最も基本的な成功テストと失敗テストです。</span><span class="sxs-lookup"><span data-stu-id="bbb82-139">These two tests show the most basic passing and failing tests.</span></span> <span data-ttu-id="bbb82-140">`My test` は成功し、`Fail every time` は失敗します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-140">`My test` passes, and `Fail every time` fails.</span></span> <span data-ttu-id="bbb82-141">今度は `sumOfSquares` メソッドのテストを作成します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-141">Now, create a test for the `sumOfSquares` method.</span></span> <span data-ttu-id="bbb82-142">`sumOfSquares` メソッドは、入力シーケンスに含まれるすべての奇数の整数値を 2 乗して合計した値を返します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-142">The `sumOfSquares` method returns the sum of the squares of all odd integer values that are part of the input sequence.</span></span> <span data-ttu-id="bbb82-143">これらの関数をすべて一度に書き込むのではなく、機能を検証するテストを繰り返し作成することができます。</span><span class="sxs-lookup"><span data-stu-id="bbb82-143">Rather than trying to write all of those functions at once, you can iteratively create tests that validate the functionality.</span></span> <span data-ttu-id="bbb82-144">各テストを成功させることで、メソッドに必要な機能を作成することになります。</span><span class="sxs-lookup"><span data-stu-id="bbb82-144">Making each test pass means creating the necessary functionality for the method.</span></span>
 
-最も簡単に記述できるテストは、すべて偶数である数字を `sumOfSquares` に渡して呼び出すことです。このテストの結果は、整数の空のシーケンスになります。  次に示すのがそのテストです。
+<span data-ttu-id="bbb82-145">最も簡単に記述できるテストは、すべて偶数である数字を `sumOfSquares` に渡して呼び出すことです。このテストの結果は、整数の空のシーケンスになります。</span><span class="sxs-lookup"><span data-stu-id="bbb82-145">The simplest test we can write is to call `sumOfSquares` with all even numbers, where the result should be an empty sequence of integers.</span></span>  <span data-ttu-id="bbb82-146">次に示すのがそのテストです。</span><span class="sxs-lookup"><span data-stu-id="bbb82-146">Here's that test:</span></span>
 
 ```fsharp
 [<TestMethod>]
@@ -120,20 +120,20 @@ member this.TestEvenSequence() =
     Assert.AreEqual(expected, actual)
 ```
 
-`expected` シーケンスがリストに変換されていることに注意してください。 MSTest ライブラリは、標準的な .NET 型の多くに依存しています。 この依存関係は、お使いのパブリック インターフェイスおよび期待される結果が、<xref:System.Collections.IEnumerable> でなく <xref:System.Collections.ICollection> をサポートしていることを意味します。 
+<span data-ttu-id="bbb82-147">`expected` シーケンスがリストに変換されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="bbb82-147">Notice that the `expected` sequence has been converted to a list.</span></span> <span data-ttu-id="bbb82-148">MSTest ライブラリは、標準的な .NET 型の多くに依存しています。</span><span class="sxs-lookup"><span data-stu-id="bbb82-148">The MSTest library relies on many standard .NET types.</span></span> <span data-ttu-id="bbb82-149">この依存関係は、お使いのパブリック インターフェイスおよび期待される結果が、<xref:System.Collections.IEnumerable> でなく <xref:System.Collections.ICollection> をサポートしていることを意味します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-149">That dependency means that your public interface and expected results support <xref:System.Collections.ICollection> rather than <xref:System.Collections.IEnumerable>.</span></span> 
 
-テストを実行すると、失敗することがわかります。 実装はまだ作成していません。 最も単純な動作のコードを `Mathservice` クラスに記述して、このテストを作成します。
+<span data-ttu-id="bbb82-150">テストを実行すると、失敗することがわかります。</span><span class="sxs-lookup"><span data-stu-id="bbb82-150">When you run the test, you see that your test fails.</span></span> <span data-ttu-id="bbb82-151">実装はまだ作成していません。</span><span class="sxs-lookup"><span data-stu-id="bbb82-151">You haven't created the implementation yet.</span></span> <span data-ttu-id="bbb82-152">最も単純な動作のコードを `Mathservice` クラスに記述して、このテストを作成します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-152">Make this test by writing the simplest code in the `Mathservice` class that works:</span></span>
 
 ```csharp
 let sumOfSquares xs =
     Seq.empty<int> |> Seq.toList
 ```
 
-*unit-testing-with-fsharp* ディレクトリで、もう一度 `dotnet test` を実行します。 `dotnet test` コマンドは `MathService` プロジェクトのビルドを実行してから、`MathService.Tests` プロジェクトのビルドを実行します。 両方のプロジェクトをビルドすると、この単一テストが実行されます。 成功します。
+<span data-ttu-id="bbb82-153">*unit-testing-with-fsharp* ディレクトリで、もう一度 `dotnet test` を実行します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-153">In the *unit-testing-with-fsharp* directory, run `dotnet test` again.</span></span> <span data-ttu-id="bbb82-154">`dotnet test` コマンドは `MathService` プロジェクトのビルドを実行してから、`MathService.Tests` プロジェクトのビルドを実行します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-154">The `dotnet test` command runs a build for the `MathService` project and then for the `MathService.Tests` project.</span></span> <span data-ttu-id="bbb82-155">両方のプロジェクトをビルドすると、この単一テストが実行されます。</span><span class="sxs-lookup"><span data-stu-id="bbb82-155">After building both projects, it runs this single test.</span></span> <span data-ttu-id="bbb82-156">成功します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-156">It passes.</span></span>
 
-## <a name="completing-the-requirements"></a>要件の完成
+## <a name="completing-the-requirements"></a><span data-ttu-id="bbb82-157">要件の完成</span><span class="sxs-lookup"><span data-stu-id="bbb82-157">Completing the requirements</span></span>
 
-テストが成功したので、他のテストも記述してみましょう。 次の単純な例は、奇数は `1` のみが含まれるシーケンスで機能します。 数値の 1 は簡単です。なぜなら 1 の 2 乗は 1 になるためです。 次のテストを以下に示します。
+<span data-ttu-id="bbb82-158">テストが成功したので、他のテストも記述してみましょう。</span><span class="sxs-lookup"><span data-stu-id="bbb82-158">Now that you've made one test pass, it's time to write more.</span></span> <span data-ttu-id="bbb82-159">次の単純な例は、奇数は `1` のみが含まれるシーケンスで機能します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-159">The next simple case works with a sequence whose only odd number is `1`.</span></span> <span data-ttu-id="bbb82-160">数値の 1 は簡単です。なぜなら 1 の 2 乗は 1 になるためです。</span><span class="sxs-lookup"><span data-stu-id="bbb82-160">The number 1 is easier because the square of 1 is 1.</span></span> <span data-ttu-id="bbb82-161">次のテストを以下に示します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-161">Here's that next test:</span></span>
 
 ```fsharp
 [<TestMethod>]
@@ -143,7 +143,7 @@ member public this.SumOnesAndEvens() =
     Assert.AreEqual(expected, actual)
 ```
 
-`dotnet test` を実行すると、新しいテストは失敗します。 新しいテストに対応するには `sumOfSquares` メソッドを更新する必要があります。 このテストを成功させるには、フィルター処理でシーケンスからすべての偶数を除外する必要があります。 小さなフィルター関数を記述し、`Seq.filter` を使用することで実現できます。
+<span data-ttu-id="bbb82-162">`dotnet test` を実行すると、新しいテストは失敗します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-162">Executing `dotnet test` fails the new test.</span></span> <span data-ttu-id="bbb82-163">新しいテストに対応するには `sumOfSquares` メソッドを更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bbb82-163">You must update the `sumOfSquares` method to handle this new test.</span></span> <span data-ttu-id="bbb82-164">このテストを成功させるには、フィルター処理でシーケンスからすべての偶数を除外する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bbb82-164">You must filter all the even numbers out of the sequence to make this test pass.</span></span> <span data-ttu-id="bbb82-165">小さなフィルター関数を記述し、`Seq.filter` を使用することで実現できます。</span><span class="sxs-lookup"><span data-stu-id="bbb82-165">You can do that by writing a small filter function and using `Seq.filter`:</span></span>
 
 ```fsharp
 let private isOdd x = x % 2 <> 0
@@ -153,9 +153,9 @@ let sumOfSquares xs =
     |> Seq.filter isOdd |> Seq.toList
 ```
 
-`Seq.toList` を呼び出していることに注意してください。 これにより、<xref:System.Collections.ICollection> インターフェイスを実装するリストが作成されます。
+<span data-ttu-id="bbb82-166">`Seq.toList` を呼び出していることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="bbb82-166">Notice the call to `Seq.toList`.</span></span> <span data-ttu-id="bbb82-167">これにより、<xref:System.Collections.ICollection> インターフェイスを実装するリストが作成されます。</span><span class="sxs-lookup"><span data-stu-id="bbb82-167">That creates a list, which implements the <xref:System.Collections.ICollection> interface.</span></span>
 
-実施する手順がもう一つあります。各奇数を 2 乗します。 テストを新たに記述するところから始めます。
+<span data-ttu-id="bbb82-168">実施する手順がもう一つあります。各奇数を 2 乗します。</span><span class="sxs-lookup"><span data-stu-id="bbb82-168">There's one more step to go: square each of the odd numbers.</span></span> <span data-ttu-id="bbb82-169">テストを新たに記述するところから始めます。</span><span class="sxs-lookup"><span data-stu-id="bbb82-169">Start by writing a new test:</span></span>
 
 ```fsharp
 [<TestMethod>]
@@ -165,7 +165,7 @@ member public this.TestSquaresOfOdds() =
     Assert.AreEqual(expected, actual)
 ```
 
-テストを修正するには、フィルター処理したシーケンスをパイプでつなぎ、各奇数の 2 乗を計算するマップ操作をします。
+<span data-ttu-id="bbb82-170">テストを修正するには、フィルター処理したシーケンスをパイプでつなぎ、各奇数の 2 乗を計算するマップ操作をします。</span><span class="sxs-lookup"><span data-stu-id="bbb82-170">You can fix the test by piping the filtered sequence through a map operation to compute the square of each odd number:</span></span>
 
 ```fsharp
 let private square x = x * x
@@ -178,5 +178,4 @@ let sumOfSquares xs =
     |> Seq.toList
 ```
 
-これで、小さなライブラリとそのライブラリの単体テストのセットが構築されました。 ソリューションを構築したことで、新しいパッケージとテストの追加が通常のワークフローに組み込まれました。 アプリケーションの目標を達成することに時間と労力の多くを割き、集中して取り組みました。
-
+<span data-ttu-id="bbb82-171">これで、小さなライブラリとそのライブラリの単体テストのセットが構築されました。</span><span class="sxs-lookup"><span data-stu-id="bbb82-171">You've built a small library and a set of unit tests for that library.</span></span> <span data-ttu-id="bbb82-172">ソリューションを構築したことで、新しいパッケージとテストの追加が通常のワークフローに組み込まれました。</span><span class="sxs-lookup"><span data-stu-id="bbb82-172">You've structured the solution so that adding new packages and tests is part of the normal workflow.</span></span> <span data-ttu-id="bbb82-173">アプリケーションの目標を達成することに時間と労力の多くを割き、集中して取り組みました。</span><span class="sxs-lookup"><span data-stu-id="bbb82-173">You've concentrated most of your time and effort on solving the goals of the application.</span></span>

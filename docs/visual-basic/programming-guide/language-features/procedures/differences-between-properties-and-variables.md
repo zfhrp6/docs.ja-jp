@@ -1,66 +1,65 @@
 ---
-title: "Differences Between Properties and Variables in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "property values"
-  - "variables [Visual Basic]"
-  - "Visual Basic code, procedures"
-  - "values, properties"
-  - "variables [Visual Basic], definition"
-  - "Visual Basic code, variables"
-  - "Visual Basic code, properties"
-  - "properties [Visual Basic], values"
-  - "properties [Visual Basic], defined"
-  - "variables [Visual Basic], and properties"
-  - "properties [Visual Basic], and variables"
+title: "Visual Basic のプロパティと変数の違い"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- property values [Visual Basic]
+- variables [Visual Basic]
+- Visual Basic code, procedures
+- values [Visual Basic], properties
+- variables [Visual Basic], definition
+- Visual Basic code, variables
+- Visual Basic code, properties
+- properties [Visual Basic], values
+- properties [Visual Basic], defined
+- variables [Visual Basic], and properties
+- properties [Visual Basic], and variables
 ms.assetid: 7a03a8be-5381-431f-bd7c-16e887e4e07b
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: cb30972e2b49a7005749f57c0223b9fa493cde52
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Differences Between Properties and Variables in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-変数とプロパティは、いずれもアクセス可能な値を表します。  しかし、格納と実装が異なります。  
+# <a name="differences-between-properties-and-variables-in-visual-basic"></a><span data-ttu-id="9cd16-102">Visual Basic のプロパティと変数の違い</span><span class="sxs-lookup"><span data-stu-id="9cd16-102">Differences Between Properties and Variables in Visual Basic</span></span>
+<span data-ttu-id="9cd16-103">変数とプロパティは、アクセス可能な値を表します。</span><span class="sxs-lookup"><span data-stu-id="9cd16-103">Variables and properties both represent values that you can access.</span></span> <span data-ttu-id="9cd16-104">ただし、これには記憶域および実装内の違いがあります。</span><span class="sxs-lookup"><span data-stu-id="9cd16-104">However, there are differences in storage and implementation.</span></span>  
   
-## 変数  
- *変数*は、メモリ内の場所に直接対応します。  変数は、1 つの宣言ステートメントで定義します。  変数は、プロシージャ内で定義され、そのプロシージャ内でのみ使用できる*ローカル変数*と、モジュール、クラス、または構造体の中で定義され、プロシージャ内では定義されない*メンバー変数*のいずれかです。  メンバー変数は*フィールド*とも呼ばれます。  
+## <a name="variables"></a><span data-ttu-id="9cd16-105">変数</span><span class="sxs-lookup"><span data-stu-id="9cd16-105">Variables</span></span>  
+ <span data-ttu-id="9cd16-106">A*変数*メモリ位置に直接対応しています。</span><span class="sxs-lookup"><span data-stu-id="9cd16-106">A *variable* corresponds directly to a memory location.</span></span> <span data-ttu-id="9cd16-107">1 つの宣言ステートメントで変数を定義するとします。</span><span class="sxs-lookup"><span data-stu-id="9cd16-107">You define a variable with a single declaration statement.</span></span> <span data-ttu-id="9cd16-108">変数を指定できます、*ローカル変数*、そのプロシージャ内でのみ使用し、プロシージャ内に定義することもできます、*メンバー変数*、いずれかの内部ではなく、モジュール、クラスまたは構造体で定義されています。プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="9cd16-108">A variable can be a *local variable*, defined inside a procedure and available only within that procedure, or it can be a *member variable*, defined in a module, class, or structure but not inside any procedure.</span></span> <span data-ttu-id="9cd16-109">メンバー変数とも呼ばれますが、*フィールド*です。</span><span class="sxs-lookup"><span data-stu-id="9cd16-109">A member variable is also called a *field*.</span></span>  
   
-## プロパティ  
- *プロパティ*は、モジュール、クラス、構造体で定義されるデータ要素です。  プロパティは、`Property` と `End Property` ステートメントの間のコード ブロックで定義します。  `Get` プロシージャか `Set` プロシージャ、またはこの両方を含むコード ブロックです。  これらのプロシージャは、*プロパティ プロシージャ*または *プロパティ アクセサー*と呼ばれます。  プロパティの値を取得および格納するだけでなく、アクセス カウンターの更新などのカスタム動作を実行することもできます。  
+## <a name="properties"></a><span data-ttu-id="9cd16-110">プロパティ</span><span class="sxs-lookup"><span data-stu-id="9cd16-110">Properties</span></span>  
+ <span data-ttu-id="9cd16-111">A*プロパティ*はモジュール、クラスまたは構造体で定義されているデータ要素です。</span><span class="sxs-lookup"><span data-stu-id="9cd16-111">A *property* is a data element defined on a module, class, or structure.</span></span> <span data-ttu-id="9cd16-112">間でコード ブロックがプロパティを定義する、`Property`と`End Property`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="9cd16-112">You define a property with a code block between the `Property` and `End Property` statements.</span></span> <span data-ttu-id="9cd16-113">コード ブロックが含まれる、`Get`プロシージャ、`Set`プロシージャ、またはその両方です。</span><span class="sxs-lookup"><span data-stu-id="9cd16-113">The code block contains a `Get` procedure, a `Set` procedure, or both.</span></span> <span data-ttu-id="9cd16-114">これらのプロシージャ*プロパティ プロシージャ*または*プロパティ アクセサー*です。</span><span class="sxs-lookup"><span data-stu-id="9cd16-114">These procedures are called *property procedures* or *property accessors*.</span></span> <span data-ttu-id="9cd16-115">取得したり、プロパティの値を格納したりするには、に加えてアクセス カウンターの更新などのカスタム アクションを実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="9cd16-115">In addition to retrieving or storing the property's value, they can also perform custom actions, such as updating an access counter.</span></span>  
   
-## 異なる点  
- 次の表に、変数とプロパティの主な違いをまとめます。  
+## <a name="differences"></a><span data-ttu-id="9cd16-116">相違点</span><span class="sxs-lookup"><span data-stu-id="9cd16-116">Differences</span></span>  
+ <span data-ttu-id="9cd16-117">次の表は、変数とプロパティの重要な相違を示します。</span><span class="sxs-lookup"><span data-stu-id="9cd16-117">The following table shows some important differences between variables and properties.</span></span>  
   
-|異なる点|変数|プロパティ|  
-|----------|--------|-----------|  
-|宣言|1 つの宣言ステートメント|コード ブロック内の一連のステートメント|  
-|実装|1 つの格納場所|実行可能コード \(プロパティ プロシージャ\)|  
-|Storage|変数の値に直接関連付けられる|一般的に、プロパティに含まれるクラスまたはモジュールの外部からはアクセスできない内部ストレージを持つ<br /><br /> プロパティの値は 1 つの格納された要素として存在する場合もそうでない場合もある <sup>1</sup>|  
-|実行可能コード|なし|最低でも 1 つのプロシージャを持つ必要がある|  
-|読み取り\/書き込みアクセス|読み取り\/書き込みまたは読み取り専用|読み取り\/書き込み、読み取り専用、書き込み専用|  
-|カスタム動作 \(値を受け取ったり返したりする操作以外\)|不可能|プロパティの値の設定または取得操作の一部として実行可能|  
+|<span data-ttu-id="9cd16-118">異なる点</span><span class="sxs-lookup"><span data-stu-id="9cd16-118">Point of difference</span></span>|<span data-ttu-id="9cd16-119">変数</span><span class="sxs-lookup"><span data-stu-id="9cd16-119">Variable</span></span>|<span data-ttu-id="9cd16-120">プロパティ</span><span class="sxs-lookup"><span data-stu-id="9cd16-120">Property</span></span>|  
+|-------------------------|--------------|--------------|  
+|<span data-ttu-id="9cd16-121">宣言</span><span class="sxs-lookup"><span data-stu-id="9cd16-121">Declaration</span></span>|<span data-ttu-id="9cd16-122">1 つの宣言ステートメント</span><span class="sxs-lookup"><span data-stu-id="9cd16-122">Single declaration statement</span></span>|<span data-ttu-id="9cd16-123">一連のコード ブロック内のステートメント</span><span class="sxs-lookup"><span data-stu-id="9cd16-123">Series of statements in a code block</span></span>|  
+|<span data-ttu-id="9cd16-124">実装</span><span class="sxs-lookup"><span data-stu-id="9cd16-124">Implementation</span></span>|<span data-ttu-id="9cd16-125">1 つの記憶域の場所</span><span class="sxs-lookup"><span data-stu-id="9cd16-125">Single storage location</span></span>|<span data-ttu-id="9cd16-126">実行可能コード (プロパティ プロシージャ)</span><span class="sxs-lookup"><span data-stu-id="9cd16-126">Executable code (property procedures)</span></span>|  
+|<span data-ttu-id="9cd16-127">ストレージ</span><span class="sxs-lookup"><span data-stu-id="9cd16-127">Storage</span></span>|<span data-ttu-id="9cd16-128">変数の値に直接関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="9cd16-128">Directly associated with variable's value</span></span>|<span data-ttu-id="9cd16-129">通常、プロパティの親クラスまたはモジュールの外部からアクセスできない内部ストレージには</span><span class="sxs-lookup"><span data-stu-id="9cd16-129">Typically has internal storage not available outside the property's containing class or module</span></span><br /><br /> <span data-ttu-id="9cd16-130">プロパティの値がありますまたはとして格納された要素が存在しない<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="9cd16-130">Property's value might or might not exist as a stored element <sup>1</sup></span></span>|  
+|<span data-ttu-id="9cd16-131">実行可能コード</span><span class="sxs-lookup"><span data-stu-id="9cd16-131">Executable code</span></span>|<span data-ttu-id="9cd16-132">なし</span><span class="sxs-lookup"><span data-stu-id="9cd16-132">None</span></span>|<span data-ttu-id="9cd16-133">少なくとも 1 つの手順があります。</span><span class="sxs-lookup"><span data-stu-id="9cd16-133">Must have at least one procedure</span></span>|  
+|<span data-ttu-id="9cd16-134">読み取りおよび書き込みアクセス</span><span class="sxs-lookup"><span data-stu-id="9cd16-134">Read and write access</span></span>|<span data-ttu-id="9cd16-135">読み取り/書き込みまたは読み取り専用</span><span class="sxs-lookup"><span data-stu-id="9cd16-135">Read/write or read-only</span></span>|<span data-ttu-id="9cd16-136">読み取り/書き込み、書き込み専用または読み取り専用</span><span class="sxs-lookup"><span data-stu-id="9cd16-136">Read/write, read-only, or write-only</span></span>|  
+|<span data-ttu-id="9cd16-137">カスタムの動作 (に加えてを受け入れるかまたは値を返す)</span><span class="sxs-lookup"><span data-stu-id="9cd16-137">Custom actions (in addition to accepting or returning value)</span></span>|<span data-ttu-id="9cd16-138">無理です</span><span class="sxs-lookup"><span data-stu-id="9cd16-138">Not possible</span></span>|<span data-ttu-id="9cd16-139">設定またはプロパティの値を取得するの一部として実行されることができます。</span><span class="sxs-lookup"><span data-stu-id="9cd16-139">Can be performed as part of setting or retrieving property value</span></span>|  
   
- <sup>1</sup> 変数とは異なり、プロパティの値はストレージの単独のアイテムに直接対応しないこともあります。  ストレージが利便性やセキュリティのために分割されたり、値が暗号化されたフォームに格納されたりすることがあります。  このような場合、`Get` プロシージャが分割された部分をアセンブルしたり、格納された値を復号化したりし、`Set` プロシージャが新しい値を暗号化したり、値をストレージに分割したりします。  プロパティの値は、時刻のようにすぐ変わるものである場合もあります。このような場合、プロパティにアクセスすると、`Get` プロシージャが実行時に値を計算します。  
+ <span data-ttu-id="9cd16-140"><sup>1</sup>変数とは異なり、プロパティの値は記憶域の単一の項目に直接対応しない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9cd16-140"><sup>1</sup> Unlike a variable, the value of a property might not correspond directly to a single item of storage.</span></span> <span data-ttu-id="9cd16-141">記憶域は利便性や、セキュリティの断片に分割することがまたは暗号化された形式で、値を格納する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9cd16-141">The storage might be split into pieces for convenience or security, or the value might be stored in an encrypted form.</span></span> <span data-ttu-id="9cd16-142">このような場合、`Get`プロシージャはコンポーネントの編成または、格納された値の暗号化を解除し、`Set`プロシージャは、新しい値を暗号化またはストレージに分割します。</span><span class="sxs-lookup"><span data-stu-id="9cd16-142">In these cases the `Get` procedure would assemble the pieces or decrypt the stored value, and the `Set` procedure would encrypt the new value or split it into the constituent storage.</span></span> <span data-ttu-id="9cd16-143">プロパティの値がありますの時間帯と同様に、一時的な場合、`Get`プロシージャが自動的に計算される、実行時にプロパティにアクセスするたびにします。</span><span class="sxs-lookup"><span data-stu-id="9cd16-143">A property value might be ephemeral, like time of day, in which case the `Get` procedure would calculate it on the fly each time you access the property.</span></span>  
   
-## 参照  
- [Property プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Property Statement](../../../../visual-basic/language-reference/statements/property-statement.md)   
- [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md)   
- [How to: Create a Property](../../../../visual-basic/programming-guide/language-features/procedures/how-to-create-a-property.md)   
- [How to: Declare a Property with Mixed Access Levels](../../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-a-property-with-mixed-access-levels.md)   
- [How to: Call a Property Procedure](../../../../visual-basic/programming-guide/language-features/procedures/how-to-call-a-property-procedure.md)   
- [How to: Declare and Call a Default Property in Visual Basic](../../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)   
- [How to: Put a Value in a Property](../../../../visual-basic/programming-guide/language-features/procedures/how-to-put-a-value-in-a-property.md)   
- [How to: Get a Value from a Property](../../../../visual-basic/programming-guide/language-features/procedures/how-to-get-a-value-from-a-property.md)
+## <a name="see-also"></a><span data-ttu-id="9cd16-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="9cd16-144">See Also</span></span>  
+ [<span data-ttu-id="9cd16-145">Property プロシージャ</span><span class="sxs-lookup"><span data-stu-id="9cd16-145">Property Procedures</span></span>](./property-procedures.md)  
+ [<span data-ttu-id="9cd16-146">プロシージャのパラメーターと引数</span><span class="sxs-lookup"><span data-stu-id="9cd16-146">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)  
+ [<span data-ttu-id="9cd16-147">Property ステートメント</span><span class="sxs-lookup"><span data-stu-id="9cd16-147">Property Statement</span></span>](../../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="9cd16-148">Dim ステートメント</span><span class="sxs-lookup"><span data-stu-id="9cd16-148">Dim Statement</span></span>](../../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [<span data-ttu-id="9cd16-149">方法 : プロパティを作成する</span><span class="sxs-lookup"><span data-stu-id="9cd16-149">How to: Create a Property</span></span>](./how-to-create-a-property.md)  
+ [<span data-ttu-id="9cd16-150">方法 : 複数のアクセス レベルを持つプロパティを宣言する</span><span class="sxs-lookup"><span data-stu-id="9cd16-150">How to: Declare a Property with Mixed Access Levels</span></span>](./how-to-declare-a-property-with-mixed-access-levels.md)  
+ [<span data-ttu-id="9cd16-151">方法 : プロパティ プロシージャを呼び出す</span><span class="sxs-lookup"><span data-stu-id="9cd16-151">How to: Call a Property Procedure</span></span>](./how-to-call-a-property-procedure.md)  
+ [<span data-ttu-id="9cd16-152">方法: 宣言し、Visual Basic では、既定のプロパティを呼び出す</span><span class="sxs-lookup"><span data-stu-id="9cd16-152">How to: Declare and Call a Default Property in Visual Basic</span></span>](./how-to-declare-and-call-a-default-property.md)  
+ [<span data-ttu-id="9cd16-153">方法 : プロパティに値を格納する</span><span class="sxs-lookup"><span data-stu-id="9cd16-153">How to: Put a Value in a Property</span></span>](./how-to-put-a-value-in-a-property.md)  
+ [<span data-ttu-id="9cd16-154">方法 : プロパティから値を取得する</span><span class="sxs-lookup"><span data-stu-id="9cd16-154">How to: Get a Value from a Property</span></span>](./how-to-get-a-value-from-a-property.md)

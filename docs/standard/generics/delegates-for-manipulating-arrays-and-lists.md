@@ -1,54 +1,57 @@
 ---
-title: "配列とリストの操作に使用する汎用デリゲート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "配列 [.NET Framework], 汎用デリゲート"
-  - "チェーン (デリゲートを)"
-  - "デリゲート [.NET Framework], 汎用デリゲート"
-  - "汎用デリゲート [.NET Framework]"
-  - "ジェネリック [.NET Framework], デリゲート"
-  - "リスト [.NET Framework], 汎用デリゲート"
+title: "配列とリストの操作に使用する汎用デリゲート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- delegates [.NET Framework], generic delegates
+- chaining delegates
+- arrays [.NET Framework], generic delegates
+- generic delegates [.NET Framework]
+- lists [.NET Framework], generic delegates
+- generics [.NET Framework], delegates
 ms.assetid: 416be383-cc61-4102-9b1b-88b51adb963e
-caps.latest.revision: 9
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 905f30d8b7e6d7c10a0e2b32109076e2950a99ce
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 配列とリストの操作に使用する汎用デリゲート
-ここでは、配列またはコレクションの要素に対して実行される変換、検索述語、およびアクションの汎用デリゲートの概要について説明します。  
+# <a name="generic-delegates-for-manipulating-arrays-and-lists"></a><span data-ttu-id="1629b-102">配列とリストの操作に使用する汎用デリゲート</span><span class="sxs-lookup"><span data-stu-id="1629b-102">Generic Delegates for Manipulating Arrays and Lists</span></span>
+<span data-ttu-id="1629b-103">ここでは、配列またはコレクションの要素に対して実行される変換、検索述語、およびアクションの汎用デリゲートの概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="1629b-103">This topic provides an overview of generic delegates for conversions, search predicates, and actions to be taken on elements of an array or collection.</span></span>  
   
-## 配列とリストの操作に使用する汎用デリゲート  
- <xref:System.Action%601> 汎用デリゲートは、指定した型の要素に対して何らかのアクションを実行するメソッドを表します。  要素に対して必要なアクションを実行するメソッドを作成し、そのメソッドを表す <xref:System.Action%601> デリゲートのインスタンスを作成した後、配列とデリゲートを静的ジェネリック メソッド <xref:System.Array.ForEach%2A?displayProperty=fullName> に渡すことができます。  このメソッドは、配列の各要素に対して呼び出されます。  
+## <a name="generic-delegates-for-manipulating-arrays-and-lists"></a><span data-ttu-id="1629b-104">配列とリストの操作に使用する汎用デリゲート</span><span class="sxs-lookup"><span data-stu-id="1629b-104">Generic Delegates for Manipulating Arrays and Lists</span></span>  
+ <span data-ttu-id="1629b-105"><xref:System.Action%601> 汎用デリゲートは、指定した型の要素に対して何らかのアクションを実行するメソッドを表します。</span><span class="sxs-lookup"><span data-stu-id="1629b-105">The <xref:System.Action%601> generic delegate represents a method that performs some action on an element of the specified type.</span></span> <span data-ttu-id="1629b-106">要素に対して必要なアクションを実行するメソッドを作成し、そのメソッドを表す <xref:System.Action%601> デリゲートのインスタンスを作成した後、配列とデリゲートを静的ジェネリック メソッド <xref:System.Array.ForEach%2A?displayProperty=nameWithType> に渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="1629b-106">You can create a method that performs the desired action on the element, create an instance of the <xref:System.Action%601> delegate to represent that method, and then pass the array and the delegate to the <xref:System.Array.ForEach%2A?displayProperty=nameWithType> static generic method.</span></span> <span data-ttu-id="1629b-107">このメソッドは、配列の各要素に対して呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="1629b-107">The method is called for every element of the array.</span></span>  
   
- <xref:System.Collections.Generic.List%601> ジェネリック クラスにも、<xref:System.Action%601> デリゲートを使用する <xref:System.Collections.Generic.List%601.ForEach%2A> メソッドが用意されています。  このメソッドはジェネリックではありません。  
+ <span data-ttu-id="1629b-108"><xref:System.Collections.Generic.List%601> ジェネリック クラスにも、<xref:System.Action%601> デリゲートを使用する <xref:System.Collections.Generic.List%601.ForEach%2A> メソッドが用意されています。</span><span class="sxs-lookup"><span data-stu-id="1629b-108">The <xref:System.Collections.Generic.List%601> generic class also provides a <xref:System.Collections.Generic.List%601.ForEach%2A> method that uses the <xref:System.Action%601> delegate.</span></span> <span data-ttu-id="1629b-109">このメソッドはジェネリックではありません。</span><span class="sxs-lookup"><span data-stu-id="1629b-109">This method is not generic.</span></span>  
   
 > [!NOTE]
->  これは、ジェネリック型とジェネリック メソッドに関する興味深い点です。  <xref:System.Array> はジェネリック型ではないため、<xref:System.Array.ForEach%2A?displayProperty=fullName> メソッドは static \(Visual Basic では `Shared`\) かつジェネリックであることが必要です。<xref:System.Array.ForEach%2A?displayProperty=fullName> に型を指定して動作させることができるのは、このメソッドが独自の型パラメーター リストを保持しているからです。  これに対して、非ジェネリック <xref:System.Collections.Generic.List%601.ForEach%2A?displayProperty=fullName> メソッドは <xref:System.Collections.Generic.List%601> ジェネリック クラスに属しています。したがって、このメソッドは、このクラスの型パラメーターを使用しているにすぎません。  このクラスは厳密に型指定されているため、メソッドをインスタンス メソッドにすることができます。  
+>  <span data-ttu-id="1629b-110">これは、ジェネリック型とジェネリック メソッドに関する興味深い点です。</span><span class="sxs-lookup"><span data-stu-id="1629b-110">This makes an interesting point about generic types and methods.</span></span> <span data-ttu-id="1629b-111"><xref:System.Array> はジェネリック型ではないため、<xref:System.Array.ForEach%2A?displayProperty=nameWithType> メソッドは static (Visual Basic では `Shared`) かつジェネリックであることが必要です。<xref:System.Array.ForEach%2A?displayProperty=nameWithType> に型を指定して動作させることができるのは、このメソッドが独自の型パラメーター リストを保持しているからです。</span><span class="sxs-lookup"><span data-stu-id="1629b-111">The <xref:System.Array.ForEach%2A?displayProperty=nameWithType> method must be static (`Shared` in Visual Basic) and generic because <xref:System.Array> is not a generic type; the only reason you can specify a type for <xref:System.Array.ForEach%2A?displayProperty=nameWithType> to operate on is that the method has its own type parameter list.</span></span> <span data-ttu-id="1629b-112">これに対して、非ジェネリック <xref:System.Collections.Generic.List%601.ForEach%2A?displayProperty=nameWithType> メソッドは <xref:System.Collections.Generic.List%601> ジェネリック クラスに属しています。したがって、このメソッドは、このクラスの型パラメーターを使用しているにすぎません。</span><span class="sxs-lookup"><span data-stu-id="1629b-112">By contrast, the nongeneric <xref:System.Collections.Generic.List%601.ForEach%2A?displayProperty=nameWithType> method belongs to the generic class <xref:System.Collections.Generic.List%601>, so it simply uses the type parameter of its class.</span></span> <span data-ttu-id="1629b-113">このクラスは厳密に型指定されているため、メソッドをインスタンス メソッドにすることができます。</span><span class="sxs-lookup"><span data-stu-id="1629b-113">The class is strongly typed, so the method can be an instance method.</span></span>  
   
- <xref:System.Predicate%601> 汎用デリゲートは、特定の要素が定義されている基準を満たしているかどうかを判断するメソッドを表します。  <xref:System.Array> の静的ジェネリック メソッドである <xref:System.Array.Exists%2A>、<xref:System.Array.Find%2A>、<xref:System.Array.FindAll%2A>、<xref:System.Array.FindIndex%2A>、<xref:System.Array.FindLast%2A>、<xref:System.Array.FindLastIndex%2A>、および <xref:System.Array.TrueForAll%2A> でこのデリゲートを使用することにより、要素または要素のセットを検索できます。  
+ <span data-ttu-id="1629b-114"><xref:System.Predicate%601> 汎用デリゲートは、特定の要素が定義されている基準を満たしているかどうかを判断するメソッドを表します。</span><span class="sxs-lookup"><span data-stu-id="1629b-114">The <xref:System.Predicate%601> generic delegate represents a method that determines whether a particular element meets criteria you define.</span></span> <span data-ttu-id="1629b-115"><xref:System.Array> の静的ジェネリック メソッドである <xref:System.Array.Exists%2A>、<xref:System.Array.Find%2A>、<xref:System.Array.FindAll%2A>、<xref:System.Array.FindIndex%2A>、<xref:System.Array.FindLast%2A>、<xref:System.Array.FindLastIndex%2A>、および <xref:System.Array.TrueForAll%2A> でこのデリゲートを使用することにより、要素または要素のセットを検索できます。</span><span class="sxs-lookup"><span data-stu-id="1629b-115">You can use it with the following static generic methods of <xref:System.Array> to search for an element or a set of elements: <xref:System.Array.Exists%2A>, <xref:System.Array.Find%2A>, <xref:System.Array.FindAll%2A>, <xref:System.Array.FindIndex%2A>, <xref:System.Array.FindLast%2A>, <xref:System.Array.FindLastIndex%2A>, and <xref:System.Array.TrueForAll%2A>.</span></span>  
   
- <xref:System.Predicate%601> は、<xref:System.Collections.Generic.List%601> ジェネリック クラスの対応する非ジェネリック インスタンス メソッドも使用します。  
+ <span data-ttu-id="1629b-116"><xref:System.Predicate%601> は、<xref:System.Collections.Generic.List%601> ジェネリック クラスの対応する非ジェネリック インスタンス メソッドも使用します。</span><span class="sxs-lookup"><span data-stu-id="1629b-116"><xref:System.Predicate%601> also works with the corresponding nongeneric instance methods of the <xref:System.Collections.Generic.List%601> generic class.</span></span>  
   
- <xref:System.Comparison%601> 汎用デリゲートを使用すると、ネイティブな並べ替え順序のない配列またはリストの要素の並べ替え順序を指定したり、ネイティブな並べ替え順序をオーバーライドしたりできます。  比較を実行するメソッドを作成し、そのメソッドを表す <xref:System.Comparison%601> デリゲートのインスタンスを作成した後、配列とデリゲートを [Array.Sort\<T\>\(T\<xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29?displayProperty=fullName> 静的ジェネリック メソッドに渡します。  <xref:System.Collections.Generic.List%601> ジェネリック クラスには、対応するインスタンス メソッド オーバーロードである <xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29?displayProperty=fullName> が用意されています。  
+ <span data-ttu-id="1629b-117"><xref:System.Comparison%601> 汎用デリゲートを使用すると、ネイティブな並べ替え順序のない配列またはリストの要素の並べ替え順序を指定したり、ネイティブな並べ替え順序をオーバーライドしたりできます。</span><span class="sxs-lookup"><span data-stu-id="1629b-117">The <xref:System.Comparison%601> generic delegate allows you to provide a sort order for array or list elements that do not have a native sort order, or to override the native sort order.</span></span> <span data-ttu-id="1629b-118">比較を実行するメソッドを作成し、そのメソッドを表す <xref:System.Comparison%601> デリゲートのインスタンスを作成した後、配列とデリゲートを <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29?displayProperty=nameWithType> 静的ジェネリック メソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="1629b-118">Create a method that performs the comparison, create an instance of the <xref:System.Comparison%601> delegate to represent your method, and then pass the array and the delegate to the <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29?displayProperty=nameWithType> static generic method.</span></span> <span data-ttu-id="1629b-119"><xref:System.Collections.Generic.List%601> ジェネリック クラスには、対応するインスタンス メソッド オーバーロードである <xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29?displayProperty=nameWithType> が用意されています。</span><span class="sxs-lookup"><span data-stu-id="1629b-119">The <xref:System.Collections.Generic.List%601> generic class provides a corresponding instance method overload, <xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29?displayProperty=nameWithType>.</span></span>  
   
- <xref:System.Converter%602> 汎用デリゲートを使用すると、2 つの型の間での変換を定義し、一方の型の配列をもう一方の型の配列に変換したり、一方の型のリストをもう一方の型のリストに変換したりできます。  既存のリストの要素を新しい型に変換するメソッドを作成し、そのメソッドを表すデリゲート インスタンスを作成したら、<xref:System.Array.ConvertAll%2A?displayProperty=fullName> 静的ジェネリック メソッドを使用して、元の配列から新しい型の配列を生成します。また、元のリストから新しい型のリストを生成する場合は、<xref:System.Collections.Generic.List%601.ConvertAll%2A?displayProperty=fullName> ジェネリック インスタンス メソッドを使用します。  
+ <span data-ttu-id="1629b-120"><xref:System.Converter%602> 汎用デリゲートを使用すると、2 つの型の間での変換を定義し、一方の型の配列をもう一方の型の配列に変換したり、一方の型のリストをもう一方の型のリストに変換したりできます。</span><span class="sxs-lookup"><span data-stu-id="1629b-120">The <xref:System.Converter%602> generic delegate allows you to define a conversion between two types, and to convert an array of one type into an array of the other, or to convert a list of one type to a list of the other.</span></span> <span data-ttu-id="1629b-121">既存のリストの要素を新しい型に変換するメソッドを作成し、そのメソッドを表すデリゲート インスタンスを作成したら、<xref:System.Array.ConvertAll%2A?displayProperty=nameWithType> 静的ジェネリック メソッドを使用して、元の配列から新しい型の配列を生成します。また、元のリストから新しい型のリストを生成する場合は、<xref:System.Collections.Generic.List%601.ConvertAll%60%601%28System.Converter%7B%600%2C%60%600%7D%29?displayProperty=nameWithType> ジェネリック インスタンス メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="1629b-121">Create a method that converts the elements of the existing list to a new type, create a delegate instance to represent the method, and use the <xref:System.Array.ConvertAll%2A?displayProperty=nameWithType> generic static method to produce an array of the new type from the original array, or the <xref:System.Collections.Generic.List%601.ConvertAll%60%601%28System.Converter%7B%600%2C%60%600%7D%29?displayProperty=nameWithType> generic instance method to produce a list of the new type from the original list.</span></span>  
   
-### デリゲートのチェーン  
- これらのデリゲートを使用するメソッドの多くは、別のメソッドに渡すことのできる配列またはリストを返します。  たとえば、配列の特定の要素を選択して新しい型に変換し、新しい配列に保存すると、<xref:System.Array.FindAll%2A> ジェネリック メソッドによって返される配列を <xref:System.Array.ConvertAll%2A> ジェネリック メソッドに渡すことができます。  新しい要素の型にネイティブな並べ替え順序がない場合は、<xref:System.Array.ConvertAll%2A> ジェネリック メソッドによって返された配列を [Sort\<T\>\(T\<xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29> ジェネリック メソッドに渡すことができます。  
+### <a name="chaining-delegates"></a><span data-ttu-id="1629b-122">デリゲートのチェーン</span><span class="sxs-lookup"><span data-stu-id="1629b-122">Chaining Delegates</span></span>  
+ <span data-ttu-id="1629b-123">これらのデリゲートを使用するメソッドの多くは、別のメソッドに渡すことのできる配列またはリストを返します。</span><span class="sxs-lookup"><span data-stu-id="1629b-123">Many of the methods that use these delegates return an array or list, which can be passed to another method.</span></span> <span data-ttu-id="1629b-124">たとえば、配列の特定の要素を選択して新しい型に変換し、新しい配列に保存すると、<xref:System.Array.FindAll%2A> ジェネリック メソッドによって返される配列を <xref:System.Array.ConvertAll%2A> ジェネリック メソッドに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="1629b-124">For example, if you want to select certain elements of an array, convert those elements to a new type, and save them in a new array, you can pass the array returned by the <xref:System.Array.FindAll%2A> generic method to the <xref:System.Array.ConvertAll%2A> generic method.</span></span> <span data-ttu-id="1629b-125">新しい要素の型にネイティブな並べ替え順序がない場合は、<xref:System.Array.ConvertAll%2A> ジェネリック メソッドによって返された配列を <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29> ジェネリック メソッドに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="1629b-125">If the new element type lacks a natural sort order, you can pass the array returned by the <xref:System.Array.ConvertAll%2A> generic method to the <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29> generic method.</span></span>  
   
-## 参照  
- <xref:System.Collections.Generic?displayProperty=fullName>   
- <xref:System.Collections.ObjectModel?displayProperty=fullName>   
- [ジェネリック](../../../docs/standard/generics/index.md)   
- [.NET Framework のジェネリック コレクション](../../../docs/standard/generics/collections.md)   
- [ジェネリック インターフェイス](../../../docs/standard/generics/interfaces.md)   
- [共変性と反変性](../../../docs/standard/generics/covariance-and-contravariance.md)
+## <a name="see-also"></a><span data-ttu-id="1629b-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="1629b-126">See Also</span></span>  
+ <xref:System.Collections.Generic?displayProperty=nameWithType>  
+ <xref:System.Collections.ObjectModel?displayProperty=nameWithType>  
+ [<span data-ttu-id="1629b-127">ジェネリック</span><span class="sxs-lookup"><span data-stu-id="1629b-127">Generics</span></span>](../../../docs/standard/generics/index.md)  
+ [<span data-ttu-id="1629b-128">.NET Framework のジェネリック コレクション</span><span class="sxs-lookup"><span data-stu-id="1629b-128">Generic Collections in the .NET Framework</span></span>](../../../docs/standard/generics/collections.md)  
+ [<span data-ttu-id="1629b-129">ジェネリック インターフェイス</span><span class="sxs-lookup"><span data-stu-id="1629b-129">Generic Interfaces</span></span>](../../../docs/standard/generics/interfaces.md)  
+ [<span data-ttu-id="1629b-130">共変性と反変性</span><span class="sxs-lookup"><span data-stu-id="1629b-130">Covariance and Contravariance</span></span>](../../../docs/standard/generics/covariance-and-contravariance.md)

@@ -1,45 +1,36 @@
 ---
 title: "方法: ファイルから XML を読み込む (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 3ed38487-8028-4209-9872-c8dce0ed4dfe
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 7db51b4b0d6cebb443a9ff43ac8916d3004c1ea5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 683c87608ecc9dea71c55a4b3c426ad3fd9f36fe
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-load-xml-from-a-file-c"></a>方法: ファイルから XML を読み込む (C#)
-このトピックでは、<xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName> メソッドを使用して URI から XML を読み込む方法について説明します。  
+# <a name="how-to-load-xml-from-a-file-c"></a><span data-ttu-id="9c4e3-102">方法: ファイルから XML を読み込む (C#)</span><span class="sxs-lookup"><span data-stu-id="9c4e3-102">How to: Load XML from a File (C#)</span></span>
+<span data-ttu-id="9c4e3-103">このトピックでは、<xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> メソッドを使用して URI から XML を読み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9c4e3-103">This topic shows how to load XML from a URI by using the <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> method.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、ファイルから XML ドキュメントを読み込む方法を示します。 この例では、books.xml を読み込んで、XML ツリーをコンソールに出力します。  
+## <a name="example"></a><span data-ttu-id="9c4e3-104">例</span><span class="sxs-lookup"><span data-stu-id="9c4e3-104">Example</span></span>  
+ <span data-ttu-id="9c4e3-105">次の例では、ファイルから XML ドキュメントを読み込む方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9c4e3-105">The following example shows how to load an XML document from a file.</span></span> <span data-ttu-id="9c4e3-106">この例では、books.xml を読み込んで、XML ツリーをコンソールに出力します。</span><span class="sxs-lookup"><span data-stu-id="9c4e3-106">The following example loads books.xml and outputs the XML tree to the console.</span></span>  
   
- この例では、「[サンプル XML ファイル: 書籍 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md)」の XML ドキュメントを使用します。  
+ <span data-ttu-id="9c4e3-107">この例では、「[サンプル XML ファイル: 書籍 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md)」の XML ドキュメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="9c4e3-107">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XElement booksFromFile = XElement.Load(@"books.xml");  
 Console.WriteLine(booksFromFile);  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="9c4e3-108">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="9c4e3-108">This code produces the following output:</span></span>  
   
 ```xml  
 <Catalog>  
@@ -65,6 +56,5 @@ Console.WriteLine(booksFromFile);
 </Catalog>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XML の解析 (C#)](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)
-
+## <a name="see-also"></a><span data-ttu-id="9c4e3-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="9c4e3-109">See Also</span></span>  
+ [<span data-ttu-id="9c4e3-110">XML の解析 (C#)</span><span class="sxs-lookup"><span data-stu-id="9c4e3-110">Parsing XML (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)

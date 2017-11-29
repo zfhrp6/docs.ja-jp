@@ -1,74 +1,57 @@
 ---
-title: "Visual Basic で XML を操作する |Microsoft ドキュメント"
+title: "Visual Basic での XML の操作"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - LINQ to XML [Visual Basic], manipulating XML
 - Visual Basic code, XML
 - XML [Visual Basic], manipulating
 ms.assetid: da32cffb-198d-41b1-9af3-260fe32e3b7d
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 1a47bed5ecbf1e82c19748af34b6bac23aa97e1b
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 061617524659ac2f8793e2030f26a2d6b2724a64
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="manipulating-xml-in-visual-basic"></a>Visual Basic での XML の操作
-使用する*XML リテラル*文字列、ファイル、ストリームなどの外部ソースから XML を読み込めません。 使用することができますし、 [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] 、XML を操作して[!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)]XML に対してクエリをします。  
+# <a name="manipulating-xml-in-visual-basic"></a><span data-ttu-id="a5fa0-102">Visual Basic での XML の操作</span><span class="sxs-lookup"><span data-stu-id="a5fa0-102">Manipulating XML in Visual Basic</span></span>
+<span data-ttu-id="a5fa0-103">使用することができます*XML リテラル*文字列、ファイル、またはストリームなど、外部ソースから XML を読み込めません。</span><span class="sxs-lookup"><span data-stu-id="a5fa0-103">You can use *XML literals* to load XML from an external source such as a string, file, or stream.</span></span> <span data-ttu-id="a5fa0-104">使用してできます[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]、XML を操作して[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]XML に対してクエリをします。</span><span class="sxs-lookup"><span data-stu-id="a5fa0-104">You can then use [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to manipulate the XML and use [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] to query the XML.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [方法 : ファイル、文字列、またはストリームからの XML の読み込み](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)  
- XML を読み込む方法を示しています、<xref:System.Xml.Linq.XDocument>または<xref:System.Xml.Linq.XElement>テキスト ファイル、文字列またはストリームからのオブジェクト</xref:System.Xml.Linq.XElement></xref:System.Xml.Linq.XDocument>。  
+## <a name="in-this-section"></a><span data-ttu-id="a5fa0-105">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="a5fa0-105">In This Section</span></span>  
+ [<span data-ttu-id="a5fa0-106">方法 : ファイル、文字列、またはストリームからの XML の読み込み</span><span class="sxs-lookup"><span data-stu-id="a5fa0-106">How to: Load XML from a File, String, or Stream</span></span>](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)  
+ <span data-ttu-id="a5fa0-107">XML を読み込む方法を示します、<xref:System.Xml.Linq.XDocument>または<xref:System.Xml.Linq.XElement>テキスト ファイル、文字列、またはストリームからのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a5fa0-107">Demonstrates how to load XML into an <xref:System.Xml.Linq.XDocument> or <xref:System.Xml.Linq.XElement> object from a text file, string, or stream.</span></span>  
   
- [方法 : LINQ を使用した XML の変換](../../../../visual-basic/programming-guide/language-features/xml/how-to-transform-xml-by-using-linq.md)  
- 内容を変換する方法を示しています、<xref:System.Xml.Linq.XDocument>して、新しい XML ドキュメント オブジェクト</xref:System.Xml.Linq.XDocument>。  
+ [<span data-ttu-id="a5fa0-108">方法 : LINQ を使用した XML の変換</span><span class="sxs-lookup"><span data-stu-id="a5fa0-108">How to: Transform XML by Using LINQ</span></span>](../../../../visual-basic/programming-guide/language-features/xml/how-to-transform-xml-by-using-linq.md)  
+ <span data-ttu-id="a5fa0-109">コンテンツを変換する方法を示します、<xref:System.Xml.Linq.XDocument>オブジェクトを新しい XML ドキュメントにします。</span><span class="sxs-lookup"><span data-stu-id="a5fa0-109">Demonstrates how to transform the contents of an <xref:System.Xml.Linq.XDocument> object into a new XML document.</span></span>  
   
- [方法 : XML リテラルの変更](../../../../visual-basic/programming-guide/language-features/xml/how-to-modify-xml-literals.md)  
- 要素、属性、および XML リテラルの値を変更する方法を示します。  
+ [<span data-ttu-id="a5fa0-110">方法 : XML リテラルの変更</span><span class="sxs-lookup"><span data-stu-id="a5fa0-110">How to: Modify XML Literals</span></span>](../../../../visual-basic/programming-guide/language-features/xml/how-to-modify-xml-literals.md)  
+ <span data-ttu-id="a5fa0-111">要素、属性、および XML リテラル内の値を変更する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a5fa0-111">Demonstrates how to modify the elements, attributes, and values in an XML literal.</span></span>  
   
-## <a name="related-sections"></a>関連項目  
- [XML 軸プロパティ](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)  
- さまざまな XML アクセス プロパティを説明するセクションへのリンクを提供します。  
+## <a name="related-sections"></a><span data-ttu-id="a5fa0-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="a5fa0-112">Related Sections</span></span>  
+ [<span data-ttu-id="a5fa0-113">XML 軸プロパティ</span><span class="sxs-lookup"><span data-stu-id="a5fa0-113">XML Axis Properties</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)  
+ <span data-ttu-id="a5fa0-114">さまざまな XML アクセス プロパティを説明するセクションへのリンクを提供します。</span><span class="sxs-lookup"><span data-stu-id="a5fa0-114">Provides links to sections that describe the various XML access properties.</span></span>  
   
- [Visual Basic における LINQ to XML の概要](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
- 使用の概要については、 [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] Visual Basic でします。  
+ [<span data-ttu-id="a5fa0-115">Visual Basic における LINQ to XML の概要</span><span class="sxs-lookup"><span data-stu-id="a5fa0-115">Overview of LINQ to XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
+ <span data-ttu-id="a5fa0-116">使用する方法について紹介[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]Visual Basic でします。</span><span class="sxs-lookup"><span data-stu-id="a5fa0-116">Provides an introduction to using [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] in Visual Basic.</span></span>  
   
- [Visual Basic で XML を作成します。](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- Visual Basic で XML リテラルを使用するための概要を提供します。  
+ [<span data-ttu-id="a5fa0-117">Visual Basic での XML の作成</span><span class="sxs-lookup"><span data-stu-id="a5fa0-117">Creating XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
+ <span data-ttu-id="a5fa0-118">Visual Basic での XML リテラルの使用の概要を提供します。</span><span class="sxs-lookup"><span data-stu-id="a5fa0-118">Provides an introduction to using XML literals in Visual Basic.</span></span>  
   
- [Visual Basic における XML へのアクセス](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)  
- XML 要素または Visual Basic でのドキュメントの部分にアクセスする方法を示します。  
+ [<span data-ttu-id="a5fa0-119">Visual Basic での XML へのアクセス</span><span class="sxs-lookup"><span data-stu-id="a5fa0-119">Accessing XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)  
+ <span data-ttu-id="a5fa0-120">XML 要素または Visual Basic でのドキュメントの部分にアクセスする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a5fa0-120">Demonstrates how to access parts of an XML element or document in Visual Basic.</span></span>  
   
- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
- 使用方法について説明するセクションへのリンクを提供[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]Visual Basic でします。  
+ [<span data-ttu-id="a5fa0-121">XML</span><span class="sxs-lookup"><span data-stu-id="a5fa0-121">XML</span></span>](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
+ <span data-ttu-id="a5fa0-122">使用する方法を説明するセクションへのリンクを提供[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]Visual Basic でします。</span><span class="sxs-lookup"><span data-stu-id="a5fa0-122">Provides links to sections that describe how to use [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] in Visual Basic.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)   
- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)   
- [Visual Basic における LINQ の概要](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+## <a name="see-also"></a><span data-ttu-id="a5fa0-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="a5fa0-123">See Also</span></span>  
+ [<span data-ttu-id="a5fa0-124">XML</span><span class="sxs-lookup"><span data-stu-id="a5fa0-124">XML</span></span>](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
+ [<span data-ttu-id="a5fa0-125">LINQ</span><span class="sxs-lookup"><span data-stu-id="a5fa0-125">LINQ</span></span>](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
+ [<span data-ttu-id="a5fa0-126">Visual Basic における LINQ の概要</span><span class="sxs-lookup"><span data-stu-id="a5fa0-126">Introduction to LINQ in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

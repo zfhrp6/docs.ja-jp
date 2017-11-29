@@ -1,43 +1,42 @@
 ---
-title: "How to: Determine Whether Two Objects Are Related (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "inheritance, Visual Basic objects"
-  - "objects [Visual Basic], inheritance"
-  - "object variables, determining relation"
+title: "方法: 2 つのオブジェクトが関連しているかどうかを判別する (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- inheritance [Visual Basic], Visual Basic objects
+- objects [Visual Basic], inheritance
+- object variables [Visual Basic], determining relation
 ms.assetid: da002e3f-6616-4bad-a229-f842d06652bb
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 7824742459fca355c0043ad8ed20a26330402c05
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Determine Whether Two Objects Are Related (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-2 つのオブジェクトの各作成元クラス間の関係 \(もしあれば\) を確認するために、それらのオブジェクトを比較することができます。  指定されたクラスが現在のクラスから継承されている場合、または指定されたクラスが現在の型をサポートしている場合、<xref:System.Type?displayProperty=fullName> クラスの <xref:System.Type.IsInstanceOfType%2A> メソッドは `True` を返します。  
+# <a name="how-to-determine-whether-two-objects-are-related-visual-basic"></a><span data-ttu-id="eafec-102">方法: 2 つのオブジェクトが関連しているかどうかを判別する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="eafec-102">How to: Determine Whether Two Objects Are Related (Visual Basic)</span></span>
+<span data-ttu-id="eafec-103">その作成元のクラス間のリレーションシップを判断する 2 つのオブジェクトを比較することができます。</span><span class="sxs-lookup"><span data-stu-id="eafec-103">You can compare two objects to determine the relationship, if any, between the classes from which they are created.</span></span> <span data-ttu-id="eafec-104"><xref:System.Type.IsInstanceOfType%2A>のメソッド、<xref:System.Type?displayProperty=nameWithType>クラスを返します`True`指定したクラスを現在のクラスから継承する場合、または現在の型が指定したクラスでサポートされているインターフェイス。</span><span class="sxs-lookup"><span data-stu-id="eafec-104">The <xref:System.Type.IsInstanceOfType%2A> method of the <xref:System.Type?displayProperty=nameWithType> class returns `True` if the specified class inherits from the current class, or if the current type is an interface supported by the specified class.</span></span>  
   
-### あるオブジェクトが、他のオブジェクトのクラスまたはインターフェイスを継承しているかどうかを決めるには  
+### <a name="to-determine-if-one-object-inherits-from-another-objects-class-or-interface"></a><span data-ttu-id="eafec-105">1 つのオブジェクトが別のオブジェクトのクラスまたはインターフェイスから継承かどうかを決定するには</span><span class="sxs-lookup"><span data-stu-id="eafec-105">To determine if one object inherits from another object's class or interface</span></span>  
   
-1.  基本型と思われるオブジェクトで、<xref:System.Object.GetType%2A> メソッドを呼び出します。  
+1.  <span data-ttu-id="eafec-106">思われるオブジェクトの可能性がありますの基本型、呼び出し、<xref:System.Object.GetType%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="eafec-106">On the object you think might be of the base type, invoke the <xref:System.Object.GetType%2A> method.</span></span>  
   
-2.  <xref:System.Object.GetType%2A> によって返された <xref:System.Type?displayProperty=fullName> オブジェクトで、<xref:System.Type.IsInstanceOfType%2A> メソッドを呼び出します。  
+2.  <span data-ttu-id="eafec-107"><xref:System.Type?displayProperty=nameWithType>によって返されるオブジェクト<xref:System.Object.GetType%2A>を呼び出し、<xref:System.Type.IsInstanceOfType%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="eafec-107">On the <xref:System.Type?displayProperty=nameWithType> object returned by <xref:System.Object.GetType%2A>, invoke the <xref:System.Type.IsInstanceOfType%2A> method.</span></span>  
   
-3.  <xref:System.Type.IsInstanceOfType%2A> の引数リスト内で、派生型であると思われるオブジェクトを指定します。  
+3.  <span data-ttu-id="eafec-108">引数リストの<xref:System.Type.IsInstanceOfType%2A>、派生型のオブジェクトと思われる場合がありますを指定します。</span><span class="sxs-lookup"><span data-stu-id="eafec-108">In the argument list for <xref:System.Type.IsInstanceOfType%2A>, specify the object you think might be of the derived type.</span></span>  
   
-     引数型が <xref:System.Type?displayProperty=fullName> オブジェクト型を継承している場合、<xref:System.Type.IsInstanceOfType%2A> は `True` を返します。  
+     <span data-ttu-id="eafec-109"><xref:System.Type.IsInstanceOfType%2A>返します`True`からその引数の型を継承する場合、<xref:System.Type?displayProperty=nameWithType>オブジェクトの種類。</span><span class="sxs-lookup"><span data-stu-id="eafec-109"><xref:System.Type.IsInstanceOfType%2A> returns `True` if its argument type inherits from the <xref:System.Type?displayProperty=nameWithType> object type.</span></span>  
   
-## 使用例  
- 次に示すのは、一方のオブジェクトの表すクラスが、もう一方のオブジェクトのクラスから派生したものかどうかを確認する例です。  
+## <a name="example"></a><span data-ttu-id="eafec-110">例</span><span class="sxs-lookup"><span data-stu-id="eafec-110">Example</span></span>  
+ <span data-ttu-id="eafec-111">次の例では、1 つのオブジェクトが別のオブジェクトのクラスから派生するクラスを表すかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="eafec-111">The following example determines whether one object represents a class derived from another object's class.</span></span>  
   
 ```  
 Public Class baseClass  
@@ -55,13 +54,13 @@ Public Class testTheseClasses
 End Class  
 ```  
   
- <xref:System.Type.IsInstanceOfType%2A> への呼び出し内にある 2 つのオブジェクト変数が、期待どおり設定されない場合があることに注意してください。  この処理では、想定される基本型を使用して <xref:System.Type?displayProperty=fullName> クラスが生成され、想定される派生型が引数として <xref:System.Type.IsInstanceOfType%2A> メソッドに渡されます。  
+ <span data-ttu-id="eafec-112">呼び出しで 2 つのオブジェクト変数の予期しない配置に注意してください<xref:System.Type.IsInstanceOfType%2A>です。</span><span class="sxs-lookup"><span data-stu-id="eafec-112">Note the unexpected placement of the two object variables in the call to <xref:System.Type.IsInstanceOfType%2A>.</span></span> <span data-ttu-id="eafec-113">生成に使用される基本型、<xref:System.Type?displayProperty=nameWithType>クラス、およびされる派生型が引数として渡される、<xref:System.Type.IsInstanceOfType%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="eafec-113">The supposed base type is used to generate the <xref:System.Type?displayProperty=nameWithType> class, and the supposed derived type is passed as an argument to the <xref:System.Type.IsInstanceOfType%2A> method.</span></span>  
   
-## 参照  
- <xref:System.Object.GetType%2A>   
- <xref:System.Type?displayProperty=fullName>   
- <xref:System.Type.IsInstanceOfType%2A>   
- [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)   
- [Object Variables](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)   
- [Object Variable Values](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)   
- [How to: Determine Whether Two Objects Are Identical](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)
+## <a name="see-also"></a><span data-ttu-id="eafec-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="eafec-114">See Also</span></span>  
+ <xref:System.Object.GetType%2A>  
+ <xref:System.Type?displayProperty=nameWithType>  
+ <xref:System.Type.IsInstanceOfType%2A>  
+ [<span data-ttu-id="eafec-115">Object 型</span><span class="sxs-lookup"><span data-stu-id="eafec-115">Object Data Type</span></span>](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
+ [<span data-ttu-id="eafec-116">オブジェクト変数</span><span class="sxs-lookup"><span data-stu-id="eafec-116">Object Variables</span></span>](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)  
+ [<span data-ttu-id="eafec-117">オブジェクト変数の値</span><span class="sxs-lookup"><span data-stu-id="eafec-117">Object Variable Values</span></span>](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)  
+ [<span data-ttu-id="eafec-118">方法: 2 つのオブジェクトが同一であるかどうか判別する</span><span class="sxs-lookup"><span data-stu-id="eafec-118">How to: Determine Whether Two Objects Are Identical</span></span>](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)

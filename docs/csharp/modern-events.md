@@ -10,26 +10,24 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: cf69cbe0a7adbd274d1cb9e9544dda77d9fa1740
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="the-updated-net-core-event-pattern"></a><span data-ttu-id="16716-104">更新された .NET Core イベント パターン</span><span class="sxs-lookup"><span data-stu-id="16716-104">The Updated .NET Core Event Pattern</span></span>
 
-# <a name="the-updated-net-core-event-pattern"></a>更新された .NET Core イベント パターン
+[<span data-ttu-id="16716-105">前へ</span><span class="sxs-lookup"><span data-stu-id="16716-105">Previous</span></span>](event-pattern.md)
 
-[前へ](event-pattern.md)
+<span data-ttu-id="16716-106">前回の記事では、最も一般的なイベント パターンについて説明しました。</span><span class="sxs-lookup"><span data-stu-id="16716-106">The previous article discussed the most common event patterns.</span></span> <span data-ttu-id="16716-107">.NET Core には、もっと柔軟なパターンがあります。</span><span class="sxs-lookup"><span data-stu-id="16716-107">.NET Core has a more relaxed pattern.</span></span> <span data-ttu-id="16716-108">このバージョンでは、`EventHandler<TEventArgs>` 定義に、`TEventArgs` は `System.EventArgs` から派生したクラスでなければならないという制約がなくなりました。</span><span class="sxs-lookup"><span data-stu-id="16716-108">In this version, the `EventHandler<TEventArgs>` definition no longer has the constraint that `TEventArgs` must be a class derived from `System.EventArgs`.</span></span>
 
-前回の記事では、最も一般的なイベント パターンについて説明しました。 .NET Core には、もっと柔軟なパターンがあります。 このバージョンでは、`EventHandler<TEventArgs>` 定義に、`TEventArgs` は `System.EventArgs` から派生したクラスでなければならないという制約がなくなりました。
+<span data-ttu-id="16716-109">これにより、柔軟性が向上し、旧バージョンとの互換性が与えられます。</span><span class="sxs-lookup"><span data-stu-id="16716-109">This increases flexibility for you, and is backwards compatible.</span></span> <span data-ttu-id="16716-110">柔軟性から始めましょう。</span><span class="sxs-lookup"><span data-stu-id="16716-110">Let's start with the flexibility.</span></span> <span data-ttu-id="16716-111">クラス System.EventArgs で `MemberwiseClone()` というメソッドが導入されました。これはオブジェクトの簡易コピーを作成するメソッドです。</span><span class="sxs-lookup"><span data-stu-id="16716-111">The class System.EventArgs introduces one method: `MemberwiseClone()`, which creates a shallow copy of the object.</span></span>
+<span data-ttu-id="16716-112">そのメソッドでは、`EventArgs` から派生したあらゆるクラスのための機能を実装する目的で、リフレクションを利用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="16716-112">That method must use reflection in order to implement its functionality for any class derived from `EventArgs`.</span></span> <span data-ttu-id="16716-113">その機能では、特定の派生クラスでの作成が簡単になります。</span><span class="sxs-lookup"><span data-stu-id="16716-113">That functionality is easier to create in a specific derived class.</span></span> <span data-ttu-id="16716-114">つまり、System.EventArgs からの派生は設計を制限する制約ですが、他に利点はありません。</span><span class="sxs-lookup"><span data-stu-id="16716-114">That effectively means that deriving from System.EventArgs is a constraint that limits your designs, but does not provide any additional benefit.</span></span>
+<span data-ttu-id="16716-115">実際、`EventArgs` から派生しないように `FileFoundArgs` と `SearchDirectoryArgs` の定義を変更できます。</span><span class="sxs-lookup"><span data-stu-id="16716-115">In fact, you can changes the definitions of `FileFoundArgs` and `SearchDirectoryArgs` so that they do not derive from `EventArgs`.</span></span>
+<span data-ttu-id="16716-116">このプログラムはまったく同じように機能します。</span><span class="sxs-lookup"><span data-stu-id="16716-116">The program will work exactly the same.</span></span>
 
-これにより、柔軟性が向上し、旧バージョンとの互換性が与えられます。 柔軟性から始めましょう。 クラス System.EventArgs で `MemberwiseClone()` というメソッドが導入されました。これはオブジェクトの簡易コピーを作成するメソッドです。
-そのメソッドでは、`EventArgs` から派生したあらゆるクラスのための機能を実装する目的で、リフレクションを利用する必要があります。 その機能では、特定の派生クラスでの作成が簡単になります。 つまり、System.EventArgs からの派生は設計を制限する制約ですが、他に利点はありません。
-実際、`EventArgs` から派生しないように `FileFoundArgs` と `SearchDirectoryArgs` の定義を変更できます。
-このプログラムはまったく同じように機能します。
-
-さらに 1 つ変更するのであれば、`SearchDirectoryArgs` を構造体に変更することもできます。
+<span data-ttu-id="16716-117">さらに 1 つ変更するのであれば、`SearchDirectoryArgs` を構造体に変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="16716-117">You could also change the `SearchDirectoryArgs` to a struct, if you also make one more change:</span></span>
 
 ```csharp  
 internal struct SearchDirectoryArgs  
@@ -48,21 +46,21 @@ internal struct SearchDirectoryArgs
 }  
 ```   
 
-追加の変更は、すべてのフィールドを初期化するコンストラクターに入る前に既定のコンストラクターを呼び出すことです。 その追加がなければ、C# のルールは、割り当てられる前にプロパティがアクセスされていると報告するでしょう。
+<span data-ttu-id="16716-118">追加の変更は、すべてのフィールドを初期化するコンストラクターに入る前に既定のコンストラクターを呼び出すことです。</span><span class="sxs-lookup"><span data-stu-id="16716-118">The additional change is to call the default constructor before entering the constructor that initializes all the fields.</span></span> <span data-ttu-id="16716-119">その追加がなければ、C# のルールは、割り当てられる前にプロパティがアクセスされていると報告するでしょう。</span><span class="sxs-lookup"><span data-stu-id="16716-119">Without that addition, the rules of C# would report that the properties are being accessed before they have been assigned.</span></span>
 
-`FileFoundArgs` はクラス (参照型) から構造体 (値型) に変更しないでください。 キャンセルを処理するプロトコルで、イベント引数が参照で渡されることが要求されるためです。 同じ変更をした場合、ファイル検索クラスは、イベント サブスクライバーが行った変更を観察できなくなる可能性があります。 サブスクライバーごとに構造体の新しいコピーが使用され、そのコピーは、ファイル検索オブジェクトで確認されるものとは別のコピーになるでしょう。
+<span data-ttu-id="16716-120">`FileFoundArgs` はクラス (参照型) から構造体 (値型) に変更しないでください。</span><span class="sxs-lookup"><span data-stu-id="16716-120">You should not change the `FileFoundArgs` from a class (reference type) to a struct (value type).</span></span> <span data-ttu-id="16716-121">キャンセルを処理するプロトコルで、イベント引数が参照で渡されることが要求されるためです。</span><span class="sxs-lookup"><span data-stu-id="16716-121">That's because the protocol for handling cancel requires that the event arguments are passed by reference.</span></span> <span data-ttu-id="16716-122">同じ変更をした場合、ファイル検索クラスは、イベント サブスクライバーが行った変更を観察できなくなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="16716-122">If you made the same change, the file search class could never observe any changes made by any of the event subscribers.</span></span> <span data-ttu-id="16716-123">サブスクライバーごとに構造体の新しいコピーが使用され、そのコピーは、ファイル検索オブジェクトで確認されるものとは別のコピーになるでしょう。</span><span class="sxs-lookup"><span data-stu-id="16716-123">A new copy of the structure would be used for each subscriber, and that copy would be a different copy than the one seen by the file search object.</span></span>
 
-次に、この変更を下位互換可能にする方法について考えましょう。
-制約を削除しても、既存のコードには影響を与えません。 既存のイベントの引数の型は引き続き `System.EventArgs` から派生します。
-`System.EventArgs` から引き続き派生する理由の 1 つが下位互換性です。 既存のイベント サブスクライバーは、従来のパターンに従ったイベントのサブスクライバーになります。
+<span data-ttu-id="16716-124">次に、この変更を下位互換可能にする方法について考えましょう。</span><span class="sxs-lookup"><span data-stu-id="16716-124">Next, let's consider how this change can be backwards compatible.</span></span>
+<span data-ttu-id="16716-125">制約を削除しても、既存のコードには影響を与えません。</span><span class="sxs-lookup"><span data-stu-id="16716-125">The removal of the constraint does not affect any existing code.</span></span> <span data-ttu-id="16716-126">既存のイベントの引数の型は引き続き `System.EventArgs` から派生します。</span><span class="sxs-lookup"><span data-stu-id="16716-126">Any existing event argument types do still derive from `System.EventArgs`.</span></span>
+<span data-ttu-id="16716-127">`System.EventArgs` から引き続き派生する理由の 1 つが下位互換性です。</span><span class="sxs-lookup"><span data-stu-id="16716-127">Backwards compatibility is one major reason why they will continue to derive from `System.EventArgs`.</span></span> <span data-ttu-id="16716-128">既存のイベント サブスクライバーは、従来のパターンに従ったイベントのサブスクライバーになります。</span><span class="sxs-lookup"><span data-stu-id="16716-128">Any existing event subscribers will be subscribers to an event that followed the classic pattern.</span></span>
 
-同様の論理に従うと、今、イベントの引数の型を作成すると、それには既存のコードベースのサブスクライバーが与えられないでしょう。 `System.EventArgs` から派生しない新しいイベントの型は、そのようなコードベースを壊しません。
+<span data-ttu-id="16716-129">同様の論理に従うと、今、イベントの引数の型を作成すると、それには既存のコードベースのサブスクライバーが与えられないでしょう。</span><span class="sxs-lookup"><span data-stu-id="16716-129">Following similar logic, any event argument type created now would not have any subscribers in any existing codebases.</span></span> <span data-ttu-id="16716-130">`System.EventArgs` から派生しない新しいイベントの型は、そのようなコードベースを壊しません。</span><span class="sxs-lookup"><span data-stu-id="16716-130">New event types that do not derive from `System.EventArgs` will not break those codebases.</span></span>
 
-## <a name="events-with-async-subscribers"></a>非同期サブスクライバーのあるイベント
+## <a name="events-with-async-subscribers"></a><span data-ttu-id="16716-131">非同期サブスクライバーのあるイベント</span><span class="sxs-lookup"><span data-stu-id="16716-131">Events with Async subscribers</span></span>
 
-学習する最後のパターンは、非同期コードを呼び出すイベント サブスクライバーを正しく記述する方法です。 この難題の説明は、[async と await](async.md) に関する記事にあります。 非同期メソッドには戻り値の型 void を指定できますが、指定しないことが推奨されます。 イベント サブスクライバーのコードが非同期メソッドを呼び出すとき、`async void` メソッドを作成する以外の選択肢はありません。 イベント ハンドラー シグネチャでそれが要求されます。
+<span data-ttu-id="16716-132">学習する最後のパターンは、非同期コードを呼び出すイベント サブスクライバーを正しく記述する方法です。</span><span class="sxs-lookup"><span data-stu-id="16716-132">You have one final pattern to learn: How to correctly write event subscribers that call async code.</span></span> <span data-ttu-id="16716-133">この難題の説明は、[async と await](async.md) に関する記事にあります。</span><span class="sxs-lookup"><span data-stu-id="16716-133">The challenge is described in the article on [async and await](async.md).</span></span> <span data-ttu-id="16716-134">非同期メソッドには戻り値の型 void を指定できますが、指定しないことが推奨されます。</span><span class="sxs-lookup"><span data-stu-id="16716-134">Async methods can have a void return type, but that is strongly discouraged.</span></span> <span data-ttu-id="16716-135">イベント サブスクライバーのコードが非同期メソッドを呼び出すとき、`async void` メソッドを作成する以外の選択肢はありません。</span><span class="sxs-lookup"><span data-stu-id="16716-135">When your event subscriber code calls an async method, you have no choice but to create an `async void` method.</span></span> <span data-ttu-id="16716-136">イベント ハンドラー シグネチャでそれが要求されます。</span><span class="sxs-lookup"><span data-stu-id="16716-136">The event handler signature requires it.</span></span>
 
-このような相反する指示と何とか折り合いを付け、 無難な `async void` メソッドを作成する必要があります。 実装が必要なパターンの基本は次のようになります。
+<span data-ttu-id="16716-137">このような相反する指示と何とか折り合いを付け、</span><span class="sxs-lookup"><span data-stu-id="16716-137">You need to reconcile this opposing guidance.</span></span> <span data-ttu-id="16716-138">無難な `async void` メソッドを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="16716-138">Somehow, you must create a safe `async void` method.</span></span> <span data-ttu-id="16716-139">実装が必要なパターンの基本は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="16716-139">The basics of the pattern you need to implement are below:</span></span>
 
 ```csharp
 worker.StartWorking += async (sender, eventArgs) =>
@@ -80,13 +78,12 @@ worker.StartWorking += async (sender, eventArgs) =>
 };
 ```
 
-最初に、ハンドラーが非同期ハンドラーとしてマークされていることに注目してください。 イベント ハンドラーのデリゲート型に割り当てられているため、戻り値の型 void が与えられます。 つまり、ハンドラーに示されるパターンに従う必要があります。非同期ハンドラーのコンテキストから例外をスローすることを許可しません。 タスクを返さないため、エラーが発生してもタスクはそれを報告できません。 メソッドは非同期であるため、例外をスローできません。 (呼び出しメソッドは `async` であるため、実行を続行しています。)実際の実行時動作は、環境が異なれば各様に定義されます。 スレッドを終了すること、プログラムを終了すること、プログラムを未決定の状態にすることがあります。 どれも好ましい結果ではありません。
+<span data-ttu-id="16716-140">最初に、ハンドラーが非同期ハンドラーとしてマークされていることに注目してください。</span><span class="sxs-lookup"><span data-stu-id="16716-140">First, notice that the handler is marked as an async handler.</span></span> <span data-ttu-id="16716-141">イベント ハンドラーのデリゲート型に割り当てられているため、戻り値の型 void が与えられます。</span><span class="sxs-lookup"><span data-stu-id="16716-141">Because it is being assigned to an event handler delegate type, it will have a void return type.</span></span> <span data-ttu-id="16716-142">つまり、ハンドラーに示されるパターンに従う必要があります。非同期ハンドラーのコンテキストから例外をスローすることを許可しません。</span><span class="sxs-lookup"><span data-stu-id="16716-142">That means you must follow the pattern shown in the handler, and not allow any exceptions to be thrown out of the context of the async handler.</span></span> <span data-ttu-id="16716-143">タスクを返さないため、エラーが発生してもタスクはそれを報告できません。</span><span class="sxs-lookup"><span data-stu-id="16716-143">Because it does not return a task, there is no task that can report the error by entering the faulted state.</span></span> <span data-ttu-id="16716-144">メソッドは非同期であるため、例外をスローできません。</span><span class="sxs-lookup"><span data-stu-id="16716-144">Because the method is async, the method can't simply throw the exception.</span></span> <span data-ttu-id="16716-145">(呼び出しメソッドは `async` であるため、実行を続行しています。)実際の実行時動作は、環境が異なれば各様に定義されます。</span><span class="sxs-lookup"><span data-stu-id="16716-145">(The calling method has continued execution because it is `async`.) The actual runtime behavior will be defined differently for different environments.</span></span> <span data-ttu-id="16716-146">スレッドを終了すること、プログラムを終了すること、プログラムを未決定の状態にすることがあります。</span><span class="sxs-lookup"><span data-stu-id="16716-146">It may terminate the thread, it may terminate the program, or it may leave the program in an undetermined state.</span></span> <span data-ttu-id="16716-147">どれも好ましい結果ではありません。</span><span class="sxs-lookup"><span data-stu-id="16716-147">None of those are good outcomes.</span></span>
 
-そのため、独自の try ブロックに非同期タスクの await ステートメントをラップする必要があります。 それでタスクにエラーが発生した場合、エラーをログに記録できます。 アプリケーションがエラーから復旧できない場合、プログラムを至急、正常に終了できます。
+<span data-ttu-id="16716-148">そのため、独自の try ブロックに非同期タスクの await ステートメントをラップする必要があります。</span><span class="sxs-lookup"><span data-stu-id="16716-148">That's why you should wrap the await statement for the async Task in your own try block.</span></span> <span data-ttu-id="16716-149">それでタスクにエラーが発生した場合、エラーをログに記録できます。</span><span class="sxs-lookup"><span data-stu-id="16716-149">If it does cause a faulted task, you can log the error.</span></span> <span data-ttu-id="16716-150">アプリケーションがエラーから復旧できない場合、プログラムを至急、正常に終了できます。</span><span class="sxs-lookup"><span data-stu-id="16716-150">If it is an error from which your application cannot recover, you can exit the program quickly and gracefully</span></span>
 
-以上が .NET イベント パターンの主要な更新でした。 使用するライブラリには以前のバージョンのサンプルがたくさんあります。 しかしながら、最新のパターンも理解してください。
+<span data-ttu-id="16716-151">以上が .NET イベント パターンの主要な更新でした。</span><span class="sxs-lookup"><span data-stu-id="16716-151">Those are the major updates to the .NET event pattern.</span></span> <span data-ttu-id="16716-152">使用するライブラリには以前のバージョンのサンプルがたくさんあります。</span><span class="sxs-lookup"><span data-stu-id="16716-152">You will see many examples of the earlier versions in the libraries you work with.</span></span> <span data-ttu-id="16716-153">しかしながら、最新のパターンも理解してください。</span><span class="sxs-lookup"><span data-stu-id="16716-153">However, you should understand what the latest patterns are as well.</span></span>
 
-このシリーズの次の記事では、設計における `delegates` と `events` の使い分けについて説明します。 概念は似ており、最良のプログラムを作るための知識をその記事で得ることができます。
+<span data-ttu-id="16716-154">このシリーズの次の記事では、設計における `delegates` と `events` の使い分けについて説明します。</span><span class="sxs-lookup"><span data-stu-id="16716-154">The next article in this series helps you distinguish between using `delegates` and `events` in your designs.</span></span> <span data-ttu-id="16716-155">概念は似ており、最良のプログラムを作るための知識をその記事で得ることができます。</span><span class="sxs-lookup"><span data-stu-id="16716-155">They are similar concepts, and that article will help you make the best decision for your programs.</span></span>
 
-[次へ](distinguish-delegates-events.md)
-
+[<span data-ttu-id="16716-156">次へ</span><span class="sxs-lookup"><span data-stu-id="16716-156">Next</span></span>](distinguish-delegates-events.md)

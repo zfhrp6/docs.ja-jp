@@ -1,90 +1,70 @@
 ---
 title: ".NET Framework のファイル I/O とファイル システムで使用するクラス (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
-helpviewer_keywords:
-- file I/O classes
+helpviewer_keywords: file I/O classes
 ms.assetid: 4a5ca924-eea8-4a95-a5f0-6ac10de276a3
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: abb2291ce797f3630eebd24e563994a2d86242bd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a87d2e6f87b92b5f66706095d3f485c080008e0f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>.NET Framework のファイル I/O とファイル システムで使用するクラス (Visual Basic)
-以下の表は、.NET Framework のファイル I/O で一般的に使用するクラスの一覧です。ファイル I/O クラス、ストリームの作成に使用するクラス、ストリームの読み取りと書き込みに使用するクラスに分類されています。  
+# <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a><span data-ttu-id="9b367-102">.NET Framework のファイル I/O とファイル システムで使用するクラス (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9b367-102">Classes Used in .NET Framework File I/O and the File System (Visual Basic)</span></span>
+<span data-ttu-id="9b367-103">以下の表は、.NET Framework のファイル I/O で一般的に使用するクラスの一覧です。ファイル I/O クラス、ストリームの作成に使用するクラス、ストリームの読み取りと書き込みに使用するクラスに分類されています。</span><span class="sxs-lookup"><span data-stu-id="9b367-103">The following tables list the classes commonly used for .NET Framework file I/O, categorized into file I/O classes, classes used for creating streams, and classes used to read and write to streams.</span></span>  
   
- [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] ドキュメントで詳細な一覧を参照するには、「[クラス ライブラリの概要](https://msdn.microsoft.com/library/hfa3fa08)」をご覧ください。  
+ <span data-ttu-id="9b367-104">[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] ドキュメントで詳細な一覧を参照するには、「[クラス ライブラリの概要](https://msdn.microsoft.com/library/hfa3fa08)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9b367-104">To enter the [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] documentation and find a more comprehensive listing, see [Class Library Overview](https://msdn.microsoft.com/library/hfa3fa08).</span></span>  
   
-## <a name="basic-io-classes-for-files-drives-and-directories"></a>ファイル、ドライブ、およびディレクトリ用の基本 I/O クラス  
- 次の表は、ファイル I/O に使用する主要なクラスの一覧と各クラスの説明です。  
+## <a name="basic-io-classes-for-files-drives-and-directories"></a><span data-ttu-id="9b367-105">ファイル、ドライブ、およびディレクトリ用の基本 I/O クラス</span><span class="sxs-lookup"><span data-stu-id="9b367-105">Basic I/O Classes for Files, Drives, and Directories</span></span>  
+ <span data-ttu-id="9b367-106">次の表は、ファイル I/O に使用する主要なクラスの一覧と各クラスの説明です。</span><span class="sxs-lookup"><span data-stu-id="9b367-106">The following table lists and describes the main classes used for file I/O.</span></span>  
   
-|クラス|説明|  
+|<span data-ttu-id="9b367-107">クラス</span><span class="sxs-lookup"><span data-stu-id="9b367-107">Class</span></span>|<span data-ttu-id="9b367-108">説明</span><span class="sxs-lookup"><span data-stu-id="9b367-108">Description</span></span>|  
 |-----------|-----------------|  
-|<xref:System.IO.Directory?displayProperty=nameWithType>|ディレクトリやサブディレクトリを作成、移動、および反復処理するための静的メソッドを提供します。|  
-|<xref:System.IO.DirectoryInfo?displayProperty=nameWithType>|ディレクトリやサブディレクトリを作成、移動、および反復処理するためのインスタンス メソッドを提供します。|  
-|<xref:System.IO.DriveInfo?displayProperty=nameWithType>|ドライブを作成、移動、および反復処理するためのインスタンス メソッドを提供します。|  
-|<xref:System.IO.File?displayProperty=nameWithType>|ファイルを作成、コピー、削除、移動、およびオープンするための静的メソッドを提供し、`FileStream`の作成を支援します。|  
-|<xref:System.IO.FileAccess?displayProperty=nameWithType>|ファイルの読み取り、書き込み、または読み取り/書き込みアクセスのための定数を定義します。|  
-|<xref:System.IO.FileAttributes?displayProperty=nameWithType>|`Archive`、`Hidden`、`ReadOnly` など、ファイルとディレクトリの属性を提供します。|  
-|<xref:System.IO.FileInfo?displayProperty=nameWithType>|ファイルを作成、コピー、削除、移動、およびオープンするための静的メソッドを提供し、`FileStream`の作成を支援します。|  
-|<xref:System.IO.FileMode?displayProperty=nameWithType>|ファイルを開く方法を制御します。 このパラメーターは、`FileStream` と `IsolatedStorageFileStream` の多数のコンストラクター、および <xref:System.IO.File> と <xref:System.IO.FileInfo> の `Open` メソッドで使用します。|  
-|<xref:System.IO.FileShare?displayProperty=nameWithType>|他のファイル ストリームから同一のファイルに対して可能なアクセスの種類を制御する定数を定義します。|  
-|<xref:System.IO.Path?displayProperty=nameWithType>|ディレクトリ文字列を処理するためのメソッドとプロパティを提供します。|  
-|<xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType>|<xref:System.Security.Permissions.FileIOPermissionAttribute.Read%2A>、<xref:System.Security.Permissions.FileIOPermissionAttribute.Write%2A>、<xref:System.Security.Permissions.FileIOPermissionAttribute.Append%2A>、<xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A> の各アクセス許可を定義してファイルおよびフォルダーへのアクセスを制御します。|  
+|<xref:System.IO.Directory?displayProperty=nameWithType>|<span data-ttu-id="9b367-109">ディレクトリやサブディレクトリを作成、移動、および反復処理するための静的メソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="9b367-109">Provides static methods for creating, moving, and enumerating through directories and subdirectories.</span></span>|  
+|<xref:System.IO.DirectoryInfo?displayProperty=nameWithType>|<span data-ttu-id="9b367-110">ディレクトリやサブディレクトリを作成、移動、および反復処理するためのインスタンス メソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="9b367-110">Provides instance methods for creating, moving, and enumerating through directories and subdirectories.</span></span>|  
+|<xref:System.IO.DriveInfo?displayProperty=nameWithType>|<span data-ttu-id="9b367-111">ドライブを作成、移動、および反復処理するためのインスタンス メソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="9b367-111">Provides instance methods for creating, moving, and enumerating through drives.</span></span>|  
+|<xref:System.IO.File?displayProperty=nameWithType>|<span data-ttu-id="9b367-112">ファイルを作成、コピー、削除、移動、およびオープンするための静的メソッドを提供し、`FileStream`の作成を支援します。</span><span class="sxs-lookup"><span data-stu-id="9b367-112">Provides static methods for creating, copying, deleting, moving, and opening files, and aids in the creation of a `FileStream`.</span></span>|  
+|<xref:System.IO.FileAccess?displayProperty=nameWithType>|<span data-ttu-id="9b367-113">ファイルの読み取り、書き込み、または読み取り/書き込みアクセスのための定数を定義します。</span><span class="sxs-lookup"><span data-stu-id="9b367-113">Defines constants for read, write, or read/write access to a file.</span></span>|  
+|<xref:System.IO.FileAttributes?displayProperty=nameWithType>|<span data-ttu-id="9b367-114">`Archive`、`Hidden`、`ReadOnly` など、ファイルとディレクトリの属性を提供します。</span><span class="sxs-lookup"><span data-stu-id="9b367-114">Provides attributes for files and directories such as `Archive`, `Hidden`, and `ReadOnly`.</span></span>|  
+|<xref:System.IO.FileInfo?displayProperty=nameWithType>|<span data-ttu-id="9b367-115">ファイルを作成、コピー、削除、移動、およびオープンするための静的メソッドを提供し、`FileStream`の作成を支援します。</span><span class="sxs-lookup"><span data-stu-id="9b367-115">Provides static methods for creating, copying, deleting, moving, and opening files, and aids in the creation of a `FileStream`.</span></span>|  
+|<xref:System.IO.FileMode?displayProperty=nameWithType>|<span data-ttu-id="9b367-116">ファイルを開く方法を制御します。</span><span class="sxs-lookup"><span data-stu-id="9b367-116">Controls how a file is opened.</span></span> <span data-ttu-id="9b367-117">このパラメーターは、`FileStream` と `IsolatedStorageFileStream` の多数のコンストラクター、および <xref:System.IO.File> と <xref:System.IO.FileInfo> の `Open` メソッドで使用します。</span><span class="sxs-lookup"><span data-stu-id="9b367-117">This parameter is specified in many of the constructors for `FileStream` and `IsolatedStorageFileStream`, and for the `Open` methods of <xref:System.IO.File> and <xref:System.IO.FileInfo>.</span></span>|  
+|<xref:System.IO.FileShare?displayProperty=nameWithType>|<span data-ttu-id="9b367-118">他のファイル ストリームから同一のファイルに対して可能なアクセスの種類を制御する定数を定義します。</span><span class="sxs-lookup"><span data-stu-id="9b367-118">Defines constants for controlling the type of access other file streams can have to the same file.</span></span>|  
+|<xref:System.IO.Path?displayProperty=nameWithType>|<span data-ttu-id="9b367-119">ディレクトリ文字列を処理するためのメソッドとプロパティを提供します。</span><span class="sxs-lookup"><span data-stu-id="9b367-119">Provides methods and properties for processing directory strings.</span></span>|  
+|<xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType>|<span data-ttu-id="9b367-120"><xref:System.Security.Permissions.FileIOPermissionAttribute.Read%2A>、<xref:System.Security.Permissions.FileIOPermissionAttribute.Write%2A>、<xref:System.Security.Permissions.FileIOPermissionAttribute.Append%2A>、<xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A> の各アクセス許可を定義してファイルおよびフォルダーへのアクセスを制御します。</span><span class="sxs-lookup"><span data-stu-id="9b367-120">Controls the access of files and folders by defining <xref:System.Security.Permissions.FileIOPermissionAttribute.Read%2A>, <xref:System.Security.Permissions.FileIOPermissionAttribute.Write%2A>, <xref:System.Security.Permissions.FileIOPermissionAttribute.Append%2A> and <xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A> permissions.</span></span>|  
   
-## <a name="classes-used-to-create-streams"></a>ストリームの作成に使用するクラス  
- 次の表は、ストリームの作成に使用する主要なクラスの一覧と各クラスの説明です。  
+## <a name="classes-used-to-create-streams"></a><span data-ttu-id="9b367-121">ストリームの作成に使用するクラス</span><span class="sxs-lookup"><span data-stu-id="9b367-121">Classes Used to Create Streams</span></span>  
+ <span data-ttu-id="9b367-122">次の表は、ストリームの作成に使用する主要なクラスの一覧と各クラスの説明です。</span><span class="sxs-lookup"><span data-stu-id="9b367-122">The following table lists and describes the main classes used to create streams.</span></span>  
   
-|クラス|説明|  
+|<span data-ttu-id="9b367-123">クラス</span><span class="sxs-lookup"><span data-stu-id="9b367-123">Class</span></span>|<span data-ttu-id="9b367-124">説明</span><span class="sxs-lookup"><span data-stu-id="9b367-124">Description</span></span>|  
 |-----------|-----------------|  
-|<xref:System.IO.BufferedStream?displayProperty=nameWithType>|他のストリームの読み取りおよび書き込み操作に対してバッファリング レイヤーを追加します。|  
-|<xref:System.IO.FileStream?displayProperty=nameWithType>|<xref:System.IO.FileStream.Seek%2A> メソッドにより、ファイルへのランダム アクセスをサポートします。 <xref:System.IO.FileStream> は、既定では同期的にファイルを開きますが、非同期操作もサポートしています。|  
-|<xref:System.IO.MemoryStream?displayProperty=nameWithType>|バッキング ストアがファイルではなくメモリであるストリームを作成します。|  
-|<xref:System.Net.Sockets.NetworkStream?displayProperty=nameWithType>|ネットワーク アクセスの基になるデータ ストリームを提供します。|  
-|<xref:System.Security.Cryptography.CryptoStream?displayProperty=nameWithType>|データ ストリームを暗号変換にリンクするストリームを定義します。|  
+|<xref:System.IO.BufferedStream?displayProperty=nameWithType>|<span data-ttu-id="9b367-125">他のストリームの読み取りおよび書き込み操作に対してバッファリング レイヤーを追加します。</span><span class="sxs-lookup"><span data-stu-id="9b367-125">Adds a buffering layer to read and write operations on another stream.</span></span>|  
+|<xref:System.IO.FileStream?displayProperty=nameWithType>|<span data-ttu-id="9b367-126"><xref:System.IO.FileStream.Seek%2A> メソッドにより、ファイルへのランダム アクセスをサポートします。</span><span class="sxs-lookup"><span data-stu-id="9b367-126">Supports random access to files through its <xref:System.IO.FileStream.Seek%2A> method.</span></span> <span data-ttu-id="9b367-127"><xref:System.IO.FileStream> は、既定では同期的にファイルを開きますが、非同期操作もサポートしています。</span><span class="sxs-lookup"><span data-stu-id="9b367-127"><xref:System.IO.FileStream> opens files synchronously by default but also supports asynchronous operation.</span></span>|  
+|<xref:System.IO.MemoryStream?displayProperty=nameWithType>|<span data-ttu-id="9b367-128">バッキング ストアがファイルではなくメモリであるストリームを作成します。</span><span class="sxs-lookup"><span data-stu-id="9b367-128">Creates a stream whose backing store is memory, rather than a file.</span></span>|  
+|<xref:System.Net.Sockets.NetworkStream?displayProperty=nameWithType>|<span data-ttu-id="9b367-129">ネットワーク アクセスの基になるデータ ストリームを提供します。</span><span class="sxs-lookup"><span data-stu-id="9b367-129">Provides the underlying stream of data for network access.</span></span>|  
+|<xref:System.Security.Cryptography.CryptoStream?displayProperty=nameWithType>|<span data-ttu-id="9b367-130">データ ストリームを暗号変換にリンクするストリームを定義します。</span><span class="sxs-lookup"><span data-stu-id="9b367-130">Defines a stream that links data streams to cryptographic transformations.</span></span>|  
   
-## <a name="classes-used-to-read-from-and-write-to-streams"></a>ストリームの読み取りと書き込みに使用するクラス  
- 次の表は、ストリームによるファイルの読み取りと書き込みに使用する固有のクラスの一覧です。  
+## <a name="classes-used-to-read-from-and-write-to-streams"></a><span data-ttu-id="9b367-131">ストリームの読み取りと書き込みに使用するクラス</span><span class="sxs-lookup"><span data-stu-id="9b367-131">Classes Used to Read from and Write to Streams</span></span>  
+ <span data-ttu-id="9b367-132">次の表は、ストリームによるファイルの読み取りと書き込みに使用する固有のクラスの一覧です。</span><span class="sxs-lookup"><span data-stu-id="9b367-132">The following table shows the specific classes used for reading from and writing to files with streams.</span></span>  
   
-|**クラス**|**説明**|  
+|<span data-ttu-id="9b367-133">**クラス**</span><span class="sxs-lookup"><span data-stu-id="9b367-133">**Class**</span></span>|<span data-ttu-id="9b367-134">**説明**</span><span class="sxs-lookup"><span data-stu-id="9b367-134">**Description**</span></span>|  
 |---------------|---------------------|  
-|<xref:System.IO.BinaryReader?displayProperty=nameWithType>|エンコードされた文字列とプリミティブ データ型を <xref:System.IO.FileStream> から読み取ります。|  
-|<xref:System.IO.BinaryWriter?displayProperty=nameWithType>|エンコードされた文字列とプリミティブ データ型を <xref:System.IO.FileStream> に書き込みます。|  
-|<xref:System.IO.StreamReader?displayProperty=nameWithType>|<xref:System.IO.StreamReader.CurrentEncoding%2A> を使用して文字とバイト間の変換を行い、<xref:System.IO.FileStream> から文字を読み取ります。 <xref:System.IO.StreamReader> には、指定したストリームに適した <xref:System.IO.StreamReader.CurrentEncoding%2A> を <xref:System.IO.StreamReader.CurrentEncoding%2A> 固有のプリアンブル (バイト オーダー マークなど) に基づいて確認するコンストラクターが用意されています。|  
-|<xref:System.IO.StreamWriter?displayProperty=nameWithType>|<xref:System.IO.StreamWriter.Encoding%2A> を使用して文字をバイトに変換し、`FileStream` に文字を書き込みます。|  
-|<xref:System.IO.StringReader?displayProperty=nameWithType>|`String` から文字を読み取ります。 出力は、任意のエンコーディングのストリームまたは `String` です。|  
-|<xref:System.IO.StringWriter?displayProperty=nameWithType>|`String` に文字を書き込みます。 出力は、任意のエンコーディングのストリームまたは `String` です。|  
+|<xref:System.IO.BinaryReader?displayProperty=nameWithType>|<span data-ttu-id="9b367-135">エンコードされた文字列とプリミティブ データ型を <xref:System.IO.FileStream> から読み取ります。</span><span class="sxs-lookup"><span data-stu-id="9b367-135">Reads encoded strings and primitive data types from a <xref:System.IO.FileStream>.</span></span>|  
+|<xref:System.IO.BinaryWriter?displayProperty=nameWithType>|<span data-ttu-id="9b367-136">エンコードされた文字列とプリミティブ データ型を <xref:System.IO.FileStream> に書き込みます。</span><span class="sxs-lookup"><span data-stu-id="9b367-136">Writes encoded strings and primitive data types to a <xref:System.IO.FileStream>.</span></span>|  
+|<xref:System.IO.StreamReader?displayProperty=nameWithType>|<span data-ttu-id="9b367-137"><xref:System.IO.StreamReader.CurrentEncoding%2A> を使用して文字とバイト間の変換を行い、<xref:System.IO.FileStream> から文字を読み取ります。</span><span class="sxs-lookup"><span data-stu-id="9b367-137">Reads characters from a <xref:System.IO.FileStream>, using <xref:System.IO.StreamReader.CurrentEncoding%2A> to convert characters to and from bytes.</span></span> <span data-ttu-id="9b367-138"><xref:System.IO.StreamReader> には、指定したストリームに適した <xref:System.IO.StreamReader.CurrentEncoding%2A> を <xref:System.IO.StreamReader.CurrentEncoding%2A> 固有のプリアンブル (バイト オーダー マークなど) に基づいて確認するコンストラクターが用意されています。</span><span class="sxs-lookup"><span data-stu-id="9b367-138"><xref:System.IO.StreamReader> has a constructor that attempts to ascertain the correct <xref:System.IO.StreamReader.CurrentEncoding%2A> for a given stream, based on the presence of a <xref:System.IO.StreamReader.CurrentEncoding%2A>-specific preamble, such as a byte order mark.</span></span>|  
+|<xref:System.IO.StreamWriter?displayProperty=nameWithType>|<span data-ttu-id="9b367-139"><xref:System.IO.StreamWriter.Encoding%2A> を使用して文字をバイトに変換し、`FileStream` に文字を書き込みます。</span><span class="sxs-lookup"><span data-stu-id="9b367-139">Writes characters to a `FileStream`, using <xref:System.IO.StreamWriter.Encoding%2A> to convert characters to bytes.</span></span>|  
+|<xref:System.IO.StringReader?displayProperty=nameWithType>|<span data-ttu-id="9b367-140">`String` から文字を読み取ります。</span><span class="sxs-lookup"><span data-stu-id="9b367-140">Reads characters from a `String`.</span></span> <span data-ttu-id="9b367-141">出力は、任意のエンコーディングのストリームまたは `String` です。</span><span class="sxs-lookup"><span data-stu-id="9b367-141">Output can be either a stream in any encoding or a `String`.</span></span>|  
+|<xref:System.IO.StringWriter?displayProperty=nameWithType>|<span data-ttu-id="9b367-142">`String` に文字を書き込みます。</span><span class="sxs-lookup"><span data-stu-id="9b367-142">Writes characters to a `String`.</span></span> <span data-ttu-id="9b367-143">出力は、任意のエンコーディングのストリームまたは `String` です。</span><span class="sxs-lookup"><span data-stu-id="9b367-143">Output can be either a stream in any encoding or a `String`.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [ストリームの構成](https://msdn.microsoft.com/library/e4y2dch9)   
- [ファイルおよびストリーム入出力](https://msdn.microsoft.com/library/k3352a4t)   
- [非同期ファイル I/O](https://msdn.microsoft.com/library/kztecsys)   
- [.NET Framework のファイル I/O とファイル システムの基礎 (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)
-
+## <a name="see-also"></a><span data-ttu-id="9b367-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="9b367-144">See Also</span></span>  
+ [<span data-ttu-id="9b367-145">ストリームの構成</span><span class="sxs-lookup"><span data-stu-id="9b367-145">Composing Streams</span></span>](https://msdn.microsoft.com/library/e4y2dch9)  
+ [<span data-ttu-id="9b367-146">ファイルおよびストリーム入出力</span><span class="sxs-lookup"><span data-stu-id="9b367-146">File and Stream I/O</span></span>](https://msdn.microsoft.com/library/k3352a4t)  
+ [<span data-ttu-id="9b367-147">非同期ファイル I/O</span><span class="sxs-lookup"><span data-stu-id="9b367-147">Asynchronous File I/O</span></span>](https://msdn.microsoft.com/library/kztecsys)  
+ [<span data-ttu-id="9b367-148">.NET Framework のファイル I/O とファイル システムの基礎 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9b367-148">Basics of .NET Framework File I/O and the File System (Visual Basic)</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)

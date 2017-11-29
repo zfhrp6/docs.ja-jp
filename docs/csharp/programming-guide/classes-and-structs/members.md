@@ -1,69 +1,50 @@
 ---
 title: "メンバー (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - types [C#], nested types
 - C# language, type members
 ms.assetid: 4a30a4ab-d690-4936-9124-92ce9448665a
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 184d4f2976b8594c308efeb113a0490499e3460e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 98446a2eb0415c92aa44cbddf8539477a00a2666
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="members-c-programming-guide"></a>メンバー (C# プログラミング ガイド)
-クラスと構造体には、そのデータおよび動作を表すメンバーがあります。 クラスのメンバーには、クラスで宣言されているすべてのメンバーと、継承の階層構造のすべてのクラスで宣言されているメンバー (コンストラクターとファイナライザーを除く) が含まれます。 基底クラスのプライベート メンバーは継承されますが、派生クラスからはアクセスできません。  
+# <a name="members-c-programming-guide"></a><span data-ttu-id="98822-102">メンバー (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="98822-102">Members (C# Programming Guide)</span></span>
+<span data-ttu-id="98822-103">クラスと構造体には、そのデータおよび動作を表すメンバーがあります。</span><span class="sxs-lookup"><span data-stu-id="98822-103">Classes and structs have members that represent their data and behavior.</span></span> <span data-ttu-id="98822-104">クラスのメンバーには、クラスで宣言されているすべてのメンバーと、継承の階層構造のすべてのクラスで宣言されているメンバー (コンストラクターとファイナライザーを除く) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="98822-104">A class's members include all the members declared in the class, along with all members (except constructors and finalizers) declared in all classes in its inheritance hierarchy.</span></span> <span data-ttu-id="98822-105">基底クラスのプライベート メンバーは継承されますが、派生クラスからはアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="98822-105">Private members in base classes are inherited but are not accessible from derived classes.</span></span>  
   
- クラスまたは構造体に含まれるメンバーの種類を次の表に示します。  
+ <span data-ttu-id="98822-106">クラスまたは構造体に含まれるメンバーの種類を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="98822-106">The following table lists the kinds of members a class or struct may contain:</span></span>  
   
-|メンバー|説明|  
+|<span data-ttu-id="98822-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="98822-107">Member</span></span>|<span data-ttu-id="98822-108">説明</span><span class="sxs-lookup"><span data-stu-id="98822-108">Description</span></span>|  
 |------------|-----------------|  
-|[フィールド](../../../csharp/programming-guide/classes-and-structs/fields.md)|フィールドとは、クラス スコープで宣言される変数です。 フィールドは、組み込みの数値型であったり、別のクラスのインスタンスであったりします。 たとえば、Calender クラスには、現在の日付を格納するフィールドがあります。|  
-|[定数](../../../csharp/programming-guide/classes-and-structs/constants.md)|定数とは、コンパイル時に値が設定され、設定された値を変更できないフィールドまたはプロパティです。|  
-|[プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)|プロパティはクラスのメソッドで、そのクラスのフィールドのようにアクセスされます。 プロパティは、クラスのフィールドを保護し、オブジェクトが認識することなくフィールドが変更されるのを防止できます。|  
-|[メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)|メソッドは、クラスが実行できるアクションを定義します。 メソッドは、入力データを提供するパラメーターを受け取り、パラメーターを通じて出力データを返すことができます。 メソッドは、パラメーターを使用せずに値を直接返すこともできます。|  
-|[イベント](../../../csharp/programming-guide/events/index.md)|イベントは、ボタンのクリックやメソッドの正常な終了などの発生に関する通知を他のオブジェクトに提供します。 イベントを定義し、トリガーするには、デリゲートを使用します。|  
-|[演算子](../../../csharp/programming-guide/statements-expressions-operators/operators.md)|オーバーロードされた演算子は、クラス メンバーと見なされます。 演算子をオーバーロードする場合は、演算子をパブリックな静的メソッドとしてクラスに定義します。 定義済みの演算子 (`+`、`*`、`<` など) はメンバーとは見なされません。 詳細については、「[オーバーロードされた演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)」を参照してください。|  
-|[インデクサー](../../../csharp/programming-guide/indexers/index.md)|インデクサーを使用すると、配列と同じようにオブジェクトにインデックスを付けることができます。|  
-|[コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)|コンストラクターは、オブジェクトを初めて作成するときに呼び出されるメソッドです。 コンストラクターは、一般にオブジェクトのデータを初期化するために使用します。|  
-|[ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)|ファイナライザーが C# で使用されることはほとんどありません。 デストラクターは、オブジェクトがメモリから削除されるときに、ランタイム実行エンジンによって呼び出されるメソッドです。 デストラクターは、通常、解放する必要があるリソースが適切に処理されるようにするために使用します。|  
-|[入れ子にされた型](../../../csharp/programming-guide/classes-and-structs/nested-types.md)|入れ子にされた型は、別の型で宣言された型です。 入れ子にされた型は、通常、それを格納している型だけで使用されるオブジェクトを表すために使用します。|  
+|[<span data-ttu-id="98822-109">フィールド</span><span class="sxs-lookup"><span data-stu-id="98822-109">Fields</span></span>](../../../csharp/programming-guide/classes-and-structs/fields.md)|<span data-ttu-id="98822-110">フィールドとは、クラス スコープで宣言される変数です。</span><span class="sxs-lookup"><span data-stu-id="98822-110">Fields are variables declared at class scope.</span></span> <span data-ttu-id="98822-111">フィールドは、組み込みの数値型であったり、別のクラスのインスタンスであったりします。</span><span class="sxs-lookup"><span data-stu-id="98822-111">A field may be a built-in numeric type or an instance of another class.</span></span> <span data-ttu-id="98822-112">たとえば、Calender クラスには、現在の日付を格納するフィールドがあります。</span><span class="sxs-lookup"><span data-stu-id="98822-112">For example, a calendar class may have a field that contains the current date.</span></span>|  
+|[<span data-ttu-id="98822-113">定数</span><span class="sxs-lookup"><span data-stu-id="98822-113">Constants</span></span>](../../../csharp/programming-guide/classes-and-structs/constants.md)|<span data-ttu-id="98822-114">定数とは、コンパイル時に値が設定され、設定された値を変更できないフィールドまたはプロパティです。</span><span class="sxs-lookup"><span data-stu-id="98822-114">Constants are fields or properties whose value is set at compile time and cannot be changed.</span></span>|  
+|[<span data-ttu-id="98822-115">プロパティ</span><span class="sxs-lookup"><span data-stu-id="98822-115">Properties</span></span>](../../../csharp/programming-guide/classes-and-structs/properties.md)|<span data-ttu-id="98822-116">プロパティはクラスのメソッドで、そのクラスのフィールドのようにアクセスされます。</span><span class="sxs-lookup"><span data-stu-id="98822-116">Properties are methods on a class that are accessed as if they were fields on that class.</span></span> <span data-ttu-id="98822-117">プロパティは、クラスのフィールドを保護し、オブジェクトが認識することなくフィールドが変更されるのを防止できます。</span><span class="sxs-lookup"><span data-stu-id="98822-117">A property can provide protection for a class field to keep it from being changed without the knowledge of the object.</span></span>|  
+|[<span data-ttu-id="98822-118">メソッド</span><span class="sxs-lookup"><span data-stu-id="98822-118">Methods</span></span>](../../../csharp/programming-guide/classes-and-structs/methods.md)|<span data-ttu-id="98822-119">メソッドは、クラスが実行できるアクションを定義します。</span><span class="sxs-lookup"><span data-stu-id="98822-119">Methods define the actions that a class can perform.</span></span> <span data-ttu-id="98822-120">メソッドは、入力データを提供するパラメーターを受け取り、パラメーターを通じて出力データを返すことができます。</span><span class="sxs-lookup"><span data-stu-id="98822-120">Methods can take parameters that provide input data, and can return output data through parameters.</span></span> <span data-ttu-id="98822-121">メソッドは、パラメーターを使用せずに値を直接返すこともできます。</span><span class="sxs-lookup"><span data-stu-id="98822-121">Methods can also return a value directly, without using a parameter.</span></span>|  
+|[<span data-ttu-id="98822-122">イベント</span><span class="sxs-lookup"><span data-stu-id="98822-122">Events</span></span>](../../../csharp/programming-guide/events/index.md)|<span data-ttu-id="98822-123">イベントは、ボタンのクリックやメソッドの正常な終了などの発生に関する通知を他のオブジェクトに提供します。</span><span class="sxs-lookup"><span data-stu-id="98822-123">Events provide notifications about occurrences, such as button clicks or the successful completion of a method, to other objects.</span></span> <span data-ttu-id="98822-124">イベントを定義し、トリガーするには、デリゲートを使用します。</span><span class="sxs-lookup"><span data-stu-id="98822-124">Events are defined and triggered by using delegates.</span></span>|  
+|[<span data-ttu-id="98822-125">演算子</span><span class="sxs-lookup"><span data-stu-id="98822-125">Operators</span></span>](../../../csharp/programming-guide/statements-expressions-operators/operators.md)|<span data-ttu-id="98822-126">オーバーロードされた演算子は、クラス メンバーと見なされます。</span><span class="sxs-lookup"><span data-stu-id="98822-126">Overloaded operators are considered class members.</span></span> <span data-ttu-id="98822-127">演算子をオーバーロードする場合は、演算子をパブリックな静的メソッドとしてクラスに定義します。</span><span class="sxs-lookup"><span data-stu-id="98822-127">When you overload an operator, you define it as a public static method in a class.</span></span> <span data-ttu-id="98822-128">定義済みの演算子 (`+`、`*`、`<` など) はメンバーとは見なされません。</span><span class="sxs-lookup"><span data-stu-id="98822-128">The predefined operators (`+`, `*`, `<`, and so on) are not considered members.</span></span> <span data-ttu-id="98822-129">詳細については、「[オーバーロードされた演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="98822-129">For more information, see [Overloadable Operators](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md).</span></span>|  
+|[<span data-ttu-id="98822-130">インデクサー</span><span class="sxs-lookup"><span data-stu-id="98822-130">Indexers</span></span>](../../../csharp/programming-guide/indexers/index.md)|<span data-ttu-id="98822-131">インデクサーを使用すると、配列と同じようにオブジェクトにインデックスを付けることができます。</span><span class="sxs-lookup"><span data-stu-id="98822-131">Indexers enable an object to be indexed in a manner similar to arrays.</span></span>|  
+|[<span data-ttu-id="98822-132">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="98822-132">Constructors</span></span>](../../../csharp/programming-guide/classes-and-structs/constructors.md)|<span data-ttu-id="98822-133">コンストラクターは、オブジェクトを初めて作成するときに呼び出されるメソッドです。</span><span class="sxs-lookup"><span data-stu-id="98822-133">Constructors are methods that are called when the object is first created.</span></span> <span data-ttu-id="98822-134">コンストラクターは、一般にオブジェクトのデータを初期化するために使用します。</span><span class="sxs-lookup"><span data-stu-id="98822-134">They are often used to initialize the data of an object.</span></span>|  
+|[<span data-ttu-id="98822-135">ファイナライザー</span><span class="sxs-lookup"><span data-stu-id="98822-135">Finalizers</span></span>](../../../csharp/programming-guide/classes-and-structs/destructors.md)|<span data-ttu-id="98822-136">ファイナライザーが C# で使用されることはほとんどありません。</span><span class="sxs-lookup"><span data-stu-id="98822-136">Finalizers are used very rarely in C#.</span></span> <span data-ttu-id="98822-137">デストラクターは、オブジェクトがメモリから削除されるときに、ランタイム実行エンジンによって呼び出されるメソッドです。</span><span class="sxs-lookup"><span data-stu-id="98822-137">They are methods that are called by the runtime execution engine when the object is about to be removed from memory.</span></span> <span data-ttu-id="98822-138">デストラクターは、通常、解放する必要があるリソースが適切に処理されるようにするために使用します。</span><span class="sxs-lookup"><span data-stu-id="98822-138">They are generally used to make sure that any resources which must be released are handled appropriately.</span></span>|  
+|[<span data-ttu-id="98822-139">入れ子にされた型</span><span class="sxs-lookup"><span data-stu-id="98822-139">Nested Types</span></span>](../../../csharp/programming-guide/classes-and-structs/nested-types.md)|<span data-ttu-id="98822-140">入れ子にされた型は、別の型で宣言された型です。</span><span class="sxs-lookup"><span data-stu-id="98822-140">Nested types are types declared within another type.</span></span> <span data-ttu-id="98822-141">入れ子にされた型は、通常、それを格納している型だけで使用されるオブジェクトを表すために使用します。</span><span class="sxs-lookup"><span data-stu-id="98822-141">Nested types are often used to describe objects that are used only by the types that contain them.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [クラス](../../../csharp/programming-guide/classes-and-structs/classes.md)   
- [メソッド](../../../csharp/programming-guide/classes-and-structs/methods.md)   
- [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
- [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)   
- [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)   
- [フィールド](../../../csharp/programming-guide/classes-and-structs/fields.md)   
- [インデクサー](../../../csharp/programming-guide/indexers/index.md)   
- [イベント](../../../csharp/programming-guide/events/index.md)   
- [入れ子にされた型](../../../csharp/programming-guide/classes-and-structs/nested-types.md)   
- [演算子](../../../csharp/programming-guide/statements-expressions-operators/operators.md)   
- [オーバーロードされた演算子](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)
-
+## <a name="see-also"></a><span data-ttu-id="98822-142">関連項目</span><span class="sxs-lookup"><span data-stu-id="98822-142">See Also</span></span>  
+ [<span data-ttu-id="98822-143">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="98822-143">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="98822-144">クラス</span><span class="sxs-lookup"><span data-stu-id="98822-144">Classes</span></span>](../../../csharp/programming-guide/classes-and-structs/classes.md)  
+ [<span data-ttu-id="98822-145">メソッド</span><span class="sxs-lookup"><span data-stu-id="98822-145">Methods</span></span>](../../../csharp/programming-guide/classes-and-structs/methods.md)  
+ [<span data-ttu-id="98822-146">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="98822-146">Constructors</span></span>](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
+ [<span data-ttu-id="98822-147">ファイナライザー</span><span class="sxs-lookup"><span data-stu-id="98822-147">Finalizers</span></span>](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
+ [<span data-ttu-id="98822-148">プロパティ</span><span class="sxs-lookup"><span data-stu-id="98822-148">Properties</span></span>](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+ [<span data-ttu-id="98822-149">フィールド</span><span class="sxs-lookup"><span data-stu-id="98822-149">Fields</span></span>](../../../csharp/programming-guide/classes-and-structs/fields.md)  
+ [<span data-ttu-id="98822-150">インデクサー</span><span class="sxs-lookup"><span data-stu-id="98822-150">Indexers</span></span>](../../../csharp/programming-guide/indexers/index.md)  
+ [<span data-ttu-id="98822-151">イベント</span><span class="sxs-lookup"><span data-stu-id="98822-151">Events</span></span>](../../../csharp/programming-guide/events/index.md)  
+ [<span data-ttu-id="98822-152">入れ子にされた型</span><span class="sxs-lookup"><span data-stu-id="98822-152">Nested Types</span></span>](../../../csharp/programming-guide/classes-and-structs/nested-types.md)  
+ [<span data-ttu-id="98822-153">演算子</span><span class="sxs-lookup"><span data-stu-id="98822-153">Operators</span></span>](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
+ [<span data-ttu-id="98822-154">オーバーロードされた演算子</span><span class="sxs-lookup"><span data-stu-id="98822-154">Overloadable Operators</span></span>](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)

@@ -1,33 +1,29 @@
 ---
 title: "方法: 特定の属性を持つ要素を検索する (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: b92591aa-3cfb-490e-99f6-da8de335e362
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 4fc7fd7986b79109038bb4f653131d5256c14f04
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0852db3d3e374b267321dfbf34dff0222d355d5b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-find-an-element-with-a-specific-attribute-c"></a>方法: 特定の属性を持つ要素を検索する (C#)
-このトピックでは、特定の値を含む属性を持つ要素を検索する方法について説明します。  
+# <a name="how-to-find-an-element-with-a-specific-attribute-c"></a><span data-ttu-id="6de1d-102">方法: 特定の属性を持つ要素を検索する (C#)</span><span class="sxs-lookup"><span data-stu-id="6de1d-102">How to: Find an Element with a Specific Attribute (C#)</span></span>
+<span data-ttu-id="6de1d-103">このトピックでは、特定の値を含む属性を持つ要素を検索する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6de1d-103">This topic shows how to find an element that has an attribute that has a specific value.</span></span>  
   
-## <a name="example"></a>例  
- この例では、"Billing" の値を含む `Address` 属性を持つ `Type` 要素を検索する方法を示します。  
+## <a name="example"></a><span data-ttu-id="6de1d-104">例</span><span class="sxs-lookup"><span data-stu-id="6de1d-104">Example</span></span>  
+ <span data-ttu-id="6de1d-105">この例では、"Billing" の値を含む `Address` 属性を持つ `Type` 要素を検索する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6de1d-105">The example shows how to find the `Address` element that has a `Type` attribute with a value of "Billing".</span></span>  
   
- この例では、「[サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md)」の XML ドキュメントを使用します。  
+ <span data-ttu-id="6de1d-106">この例では、「[サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md)」の XML ドキュメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="6de1d-106">This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span></span>  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrder.xml");  
@@ -39,7 +35,7 @@ foreach (XElement el in address)
     Console.WriteLine(el);  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="6de1d-107">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="6de1d-107">This code produces the following output:</span></span>  
   
 ```xml  
 <Address Type="Billing">  
@@ -52,10 +48,10 @@ foreach (XElement el in address)
 </Address>  
 ```  
   
-## <a name="example"></a>例  
- 次の例は名前空間に含まれている XML 用のクエリです。これらのクエリは上の例と同じ機能を表しています。 詳細については、「[XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)」を参照してください。  
+## <a name="example"></a><span data-ttu-id="6de1d-108">例</span><span class="sxs-lookup"><span data-stu-id="6de1d-108">Example</span></span>  
+ <span data-ttu-id="6de1d-109">次の例は名前空間に含まれている XML 用のクエリです。これらのクエリは上の例と同じ機能を表しています。</span><span class="sxs-lookup"><span data-stu-id="6de1d-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="6de1d-110">詳細については、「[XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6de1d-110">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
- この例では、XML ドキュメントの「[サンプル XML ファイル : 名前空間内の一般的な購買発注書](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md)」を使用します。  
+ <span data-ttu-id="6de1d-111">この例では、XML ドキュメントの「[サンプル XML ファイル : 名前空間内の一般的な購買発注書](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md)」を使用します。</span><span class="sxs-lookup"><span data-stu-id="6de1d-111">This example uses the following XML document: [Sample XML File: Typical Purchase Order in a Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).</span></span>  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrderInNamespace.xml");  
@@ -68,7 +64,7 @@ foreach (XElement el in address)
     Console.WriteLine(el);  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="6de1d-112">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="6de1d-112">This code produces the following output:</span></span>  
   
 ```xml  
 <aw:Address aw:Type="Billing" xmlns:aw="http://www.adventure-works.com">  
@@ -81,10 +77,9 @@ foreach (XElement el in address)
 </aw:Address>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Linq.XElement.Attribute%2A>   
- <xref:System.Xml.Linq.XContainer.Elements%2A>   
- [基本的なクエリ (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)   
- [標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [射影操作 (C#)](../../../../csharp/programming-guide/concepts/linq/projection-operations.md)
-
+## <a name="see-also"></a><span data-ttu-id="6de1d-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="6de1d-113">See Also</span></span>  
+ <xref:System.Xml.Linq.XElement.Attribute%2A>  
+ <xref:System.Xml.Linq.XContainer.Elements%2A>  
+ [<span data-ttu-id="6de1d-114">基本的なクエリ (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="6de1d-114">Basic Queries (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)  
+ [<span data-ttu-id="6de1d-115">標準クエリ演算子の概要 (C#)</span><span class="sxs-lookup"><span data-stu-id="6de1d-115">Standard Query Operators Overview (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [<span data-ttu-id="6de1d-116">射影操作 (C#)</span><span class="sxs-lookup"><span data-stu-id="6de1d-116">Projection Operations (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projection-operations.md)

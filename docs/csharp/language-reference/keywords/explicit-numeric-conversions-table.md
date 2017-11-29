@@ -1,12 +1,9 @@
 ---
 title: "明示的な数値変換の一覧表 (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - conversions [C#], explicit numeric
 - numeric conversions [C#], explicit
@@ -15,76 +12,60 @@ helpviewer_keywords:
 - types [C#], explicit numeric conversions
 - type conversion [C#], explicit numeric
 ms.assetid: f3bb9e76-6b92-4df7-bc36-f866c24e1dfd
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: e7a366328035b205b93a50ff6d212a06576ee801
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0315810522be319a6bb565c99e1c8f7d1ba4701b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="explicit-numeric-conversions-table-c-reference"></a>明示的な数値変換の一覧表 (C# リファレンス)
-明示的な数値変換は、暗黙的変換がないときに、キャスト式を利用し、任意の数値型を他の数値型に変換するために利用します。 次の表はこの変換についてまとめたものです。  
+# <a name="explicit-numeric-conversions-table-c-reference"></a><span data-ttu-id="83955-102">明示的な数値変換の一覧表 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="83955-102">Explicit Numeric Conversions Table (C# Reference)</span></span>
+<span data-ttu-id="83955-103">明示的な数値変換は、暗黙的変換がないときに、キャスト式を利用し、任意の数値型を他の数値型に変換するために利用します。</span><span class="sxs-lookup"><span data-stu-id="83955-103">Explicit numeric conversion is used to convert any numeric type to any other numeric type, for which there is no implicit conversion, by using a cast expression.</span></span> <span data-ttu-id="83955-104">次の表はこの変換についてまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="83955-104">The following table shows these conversions.</span></span>  
   
- 変換の詳細については、「[キャストと型変換](../../../csharp/programming-guide/types/casting-and-type-conversions.md)」を参照してください。  
+ <span data-ttu-id="83955-105">変換の詳細については、「[キャストと型変換](../../../csharp/programming-guide/types/casting-and-type-conversions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="83955-105">For more information about conversions, see [Casting and Type Conversions](../../../csharp/programming-guide/types/casting-and-type-conversions.md).</span></span>  
   
-|変換前|目的|  
+|<span data-ttu-id="83955-106">変換前</span><span class="sxs-lookup"><span data-stu-id="83955-106">From</span></span>|<span data-ttu-id="83955-107">目的</span><span class="sxs-lookup"><span data-stu-id="83955-107">To</span></span>|  
 |----------|--------|  
-|[sbyte](../../../csharp/language-reference/keywords/sbyte.md)|`byte`、`ushort`、`uint`、`ulong`、または `char`|  
-|[byte](../../../csharp/language-reference/keywords/byte.md)|`Sbyte` または `char`|  
-|[short](../../../csharp/language-reference/keywords/short.md)|`sbyte`、`byte`、`ushort`、`uint`、`ulong`、または `char`|  
-|[ushort](../../../csharp/language-reference/keywords/ushort.md)|`sbyte`、`byte`、`short`、または `char`|  
-|[int](../../../csharp/language-reference/keywords/int.md)|`sbyte`、`byte`、`short`、`ushort`、`uint`、`ulong`、または `char`|  
-|[uint](../../../csharp/language-reference/keywords/uint.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、または `char`|  
-|[long](../../../csharp/language-reference/keywords/long.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`ulong`、または `char`|  
-|[ulong](../../../csharp/language-reference/keywords/ulong.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、または `char`|  
-|[char](../../../csharp/language-reference/keywords/char.md)|`sbyte`、 `byte`、または `short`|  
-|[float](../../../csharp/language-reference/keywords/float.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、`ulong`、`char`、または `decimal`|  
-|[double](../../../csharp/language-reference/keywords/double.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、`ulong`、`char`、`float`、または `decimal`|  
-|[decimal](../../../csharp/language-reference/keywords/decimal.md)|`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、`ulong`、`char`、`float`、または `double`|  
+|[<span data-ttu-id="83955-108">sbyte</span><span class="sxs-lookup"><span data-stu-id="83955-108">sbyte</span></span>](../../../csharp/language-reference/keywords/sbyte.md)|<span data-ttu-id="83955-109">`byte`、`ushort`、`uint`、`ulong`、または `char`</span><span class="sxs-lookup"><span data-stu-id="83955-109">`byte`, `ushort`, `uint`, `ulong`, or `char`</span></span>|  
+|[<span data-ttu-id="83955-110">byte</span><span class="sxs-lookup"><span data-stu-id="83955-110">byte</span></span>](../../../csharp/language-reference/keywords/byte.md)|<span data-ttu-id="83955-111">`Sbyte` または `char`</span><span class="sxs-lookup"><span data-stu-id="83955-111">`Sbyte` or `char`</span></span>|  
+|[<span data-ttu-id="83955-112">short</span><span class="sxs-lookup"><span data-stu-id="83955-112">short</span></span>](../../../csharp/language-reference/keywords/short.md)|<span data-ttu-id="83955-113">`sbyte`、`byte`、`ushort`、`uint`、`ulong`、または `char`</span><span class="sxs-lookup"><span data-stu-id="83955-113">`sbyte`, `byte`, `ushort`, `uint`, `ulong`, or `char`</span></span>|  
+|[<span data-ttu-id="83955-114">ushort</span><span class="sxs-lookup"><span data-stu-id="83955-114">ushort</span></span>](../../../csharp/language-reference/keywords/ushort.md)|<span data-ttu-id="83955-115">`sbyte`、`byte`、`short`、または `char`</span><span class="sxs-lookup"><span data-stu-id="83955-115">`sbyte`, `byte`, `short`, or `char`</span></span>|  
+|[<span data-ttu-id="83955-116">int</span><span class="sxs-lookup"><span data-stu-id="83955-116">int</span></span>](../../../csharp/language-reference/keywords/int.md)|<span data-ttu-id="83955-117">`sbyte`、`byte`、`short`、`ushort`、`uint`、`ulong`、または `char`</span><span class="sxs-lookup"><span data-stu-id="83955-117">`sbyte`, `byte`, `short`, `ushort`, `uint`, `ulong`,or `char`</span></span>|  
+|[<span data-ttu-id="83955-118">uint</span><span class="sxs-lookup"><span data-stu-id="83955-118">uint</span></span>](../../../csharp/language-reference/keywords/uint.md)|<span data-ttu-id="83955-119">`sbyte`、`byte`、`short`、`ushort`、`int`、または `char`</span><span class="sxs-lookup"><span data-stu-id="83955-119">`sbyte`, `byte`, `short`, `ushort`, `int`, or `char`</span></span>|  
+|[<span data-ttu-id="83955-120">long</span><span class="sxs-lookup"><span data-stu-id="83955-120">long</span></span>](../../../csharp/language-reference/keywords/long.md)|<span data-ttu-id="83955-121">`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`ulong`、または `char`</span><span class="sxs-lookup"><span data-stu-id="83955-121">`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `ulong`, or `char`</span></span>|  
+|[<span data-ttu-id="83955-122">ulong</span><span class="sxs-lookup"><span data-stu-id="83955-122">ulong</span></span>](../../../csharp/language-reference/keywords/ulong.md)|<span data-ttu-id="83955-123">`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、または `char`</span><span class="sxs-lookup"><span data-stu-id="83955-123">`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, or `char`</span></span>|  
+|[<span data-ttu-id="83955-124">char</span><span class="sxs-lookup"><span data-stu-id="83955-124">char</span></span>](../../../csharp/language-reference/keywords/char.md)|<span data-ttu-id="83955-125">`sbyte`、`byte`、または `short`</span><span class="sxs-lookup"><span data-stu-id="83955-125">`sbyte`, `byte`, or `short`</span></span>|  
+|[<span data-ttu-id="83955-126">float</span><span class="sxs-lookup"><span data-stu-id="83955-126">float</span></span>](../../../csharp/language-reference/keywords/float.md)|<span data-ttu-id="83955-127">`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、`ulong`、`char`、または `decimal`</span><span class="sxs-lookup"><span data-stu-id="83955-127">`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`,or `decimal`</span></span>|  
+|[<span data-ttu-id="83955-128">double</span><span class="sxs-lookup"><span data-stu-id="83955-128">double</span></span>](../../../csharp/language-reference/keywords/double.md)|<span data-ttu-id="83955-129">`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、`ulong`、`char`、`float`、または `decimal`</span><span class="sxs-lookup"><span data-stu-id="83955-129">`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`,or `decimal`</span></span>|  
+|[<span data-ttu-id="83955-130">decimal</span><span class="sxs-lookup"><span data-stu-id="83955-130">decimal</span></span>](../../../csharp/language-reference/keywords/decimal.md)|<span data-ttu-id="83955-131">`sbyte`、`byte`、`short`、`ushort`、`int`、`uint`、`long`、`ulong`、`char`、`float`、または `double`</span><span class="sxs-lookup"><span data-stu-id="83955-131">`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, or `double`</span></span>|  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a><span data-ttu-id="83955-132">コメント</span><span class="sxs-lookup"><span data-stu-id="83955-132">Remarks</span></span>  
   
--   明示的な数値変換では、精度が失われたり、例外がスローされることがあります。  
+-   <span data-ttu-id="83955-133">明示的な数値変換では、精度が失われたり、例外がスローされることがあります。</span><span class="sxs-lookup"><span data-stu-id="83955-133">The explicit numeric conversion may cause loss of precision or result in throwing exceptions.</span></span>  
   
--   `decimal` 値を整数型に変換するとき、この値は 0 方向に最も近い整数値に丸められます。 結果的に生成される整数値が変換先の型の範囲外になった場合、<xref:System.OverflowException> がスローされます。  
+-   <span data-ttu-id="83955-134">`decimal` 値を整数型に変換するとき、この値は 0 方向に最も近い整数値に丸められます。</span><span class="sxs-lookup"><span data-stu-id="83955-134">When you convert a `decimal` value to an integral type, this value is rounded towards zero to the nearest integral value.</span></span> <span data-ttu-id="83955-135">結果的に生成される整数値が変換先の型の範囲外になった場合、<xref:System.OverflowException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="83955-135">If the resulting integral value is outside the range of the destination type, an <xref:System.OverflowException> is thrown.</span></span>  
   
--   `double` または `float` 値から整数型に変換するとき、値に切り捨てが行われます。 結果的に生成される整数値が変換先の値の範囲外になる場合、結果はオーバーフロー チェック コンテキストによって変わります。 チェック済みコンテキストの場合、`OverflowException` がスローされます。未チェック コンテキストの場合、結果は変換先の型の未指定値になります。  
+-   <span data-ttu-id="83955-136">`double` または `float` 値から整数型に変換するとき、値に切り捨てが行われます。</span><span class="sxs-lookup"><span data-stu-id="83955-136">When you convert from a `double` or `float` value to an integral type, the value is truncated.</span></span> <span data-ttu-id="83955-137">結果的に生成される整数値が変換先の値の範囲外になる場合、結果はオーバーフロー チェック コンテキストによって変わります。</span><span class="sxs-lookup"><span data-stu-id="83955-137">If the resulting integral value is outside the range of the destination value, the result depends on the overflow checking context.</span></span> <span data-ttu-id="83955-138">チェック済みコンテキストの場合、`OverflowException` がスローされます。未チェック コンテキストの場合、結果は変換先の型の未指定値になります。</span><span class="sxs-lookup"><span data-stu-id="83955-138">In a checked context, an `OverflowException` is thrown, while in an unchecked context, the result is an unspecified value of the destination type.</span></span>  
   
--   `double` を `float` に変換すると、`double` 値は最も近い `float` 値に丸められます。 `double` 値が小さすぎるか、大きすぎて変換先の型に合わない場合、結果は 0 か無限になります。  
+-   <span data-ttu-id="83955-139">`double` を `float` に変換すると、`double` 値は最も近い `float` 値に丸められます。</span><span class="sxs-lookup"><span data-stu-id="83955-139">When you convert `double` to `float`, the `double` value is rounded to the nearest `float` value.</span></span> <span data-ttu-id="83955-140">`double` 値が小さすぎるか、大きすぎて変換先の型に合わない場合、結果は 0 か無限になります。</span><span class="sxs-lookup"><span data-stu-id="83955-140">If the `double` value is too small or too large to fit into the destination type, the result will be zero or infinity.</span></span>  
   
--   `float` または `double` を `decimal` に変換するとき、変換元の値は `decimal` 表現に変換され、必要であれば、28 番目の小数位の後に最も近い数字に丸められます。 変換元の値によっては、結果は次のいずれかになります。  
+-   <span data-ttu-id="83955-141">`float` または `double` を `decimal` に変換するとき、変換元の値は `decimal` 表現に変換され、必要であれば、28 番目の小数位の後に最も近い数字に丸められます。</span><span class="sxs-lookup"><span data-stu-id="83955-141">When you convert `float` or `double` to `decimal`, the source value is converted to `decimal` representation and rounded to the nearest number after the 28th decimal place if required.</span></span> <span data-ttu-id="83955-142">変換元の値によっては、結果は次のいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="83955-142">Depending on the value of the source value, one of the following results may occur:</span></span>  
   
-    -   変換元の値が小さすぎて `decimal` として表現できない場合、結果は 0 になります。  
+    -   <span data-ttu-id="83955-143">変換元の値が小さすぎて `decimal` として表現できない場合、結果は 0 になります。</span><span class="sxs-lookup"><span data-stu-id="83955-143">If the source value is too small to be represented as a `decimal`, the result becomes zero.</span></span>  
   
-    -   変換元の値が NaN (Not a Number/数字ではない) か、無限か、大きすぎて `decimal` として表現できない場合、`OverflowException` がスローされます。  
+    -   <span data-ttu-id="83955-144">変換元の値が NaN (Not a Number/数字ではない) か、無限か、大きすぎて `decimal` として表現できない場合、`OverflowException` がスローされます。</span><span class="sxs-lookup"><span data-stu-id="83955-144">If the source value is NaN (not a number), infinity, or too large to be represented as a `decimal`, an `OverflowException` is thrown.</span></span>  
   
--   `decimal` を `float` または `double` に変換すると、`decimal` 値は最も近い `double` または `float` 値に丸められます。  
+-   <span data-ttu-id="83955-145">`decimal` を `float` または `double` に変換すると、`decimal` 値は最も近い `double` または `float` 値に丸められます。</span><span class="sxs-lookup"><span data-stu-id="83955-145">When you convert `decimal` to `float` or `double`, the `decimal` value is rounded to the nearest `double` or `float` value.</span></span>  
   
- 明示的な変換の詳細については、「C# 言語仕様」の「明示的」を参照してください。 仕様にアクセスする方法については、「[C# のドラフト言語仕様](../../../csharp/language-reference/language-specification/index.md)」を参照してください。  
+ <span data-ttu-id="83955-146">明示的な変換の詳細については、「C# 言語仕様」の「明示的」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="83955-146">For more information on explicit conversion, see Explicit in the C# Language Specification.</span></span> <span data-ttu-id="83955-147">仕様にアクセスする方法については、「[C# のドラフト言語仕様](../../../csharp/language-reference/language-specification/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="83955-147">For more information on how to access the spec, see [C# Language Specification](../../../csharp/language-reference/language-specification/index.md).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [キャストと型変換](../../../csharp/programming-guide/types/casting-and-type-conversions.md)   
- [() 演算子](../../../csharp/language-reference/operators/invocation-operator.md)   
- [整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)   
- [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
- [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)
-
+## <a name="see-also"></a><span data-ttu-id="83955-148">関連項目</span><span class="sxs-lookup"><span data-stu-id="83955-148">See Also</span></span>  
+ [<span data-ttu-id="83955-149">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="83955-149">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="83955-150">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="83955-150">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="83955-151">キャストと型変換</span><span class="sxs-lookup"><span data-stu-id="83955-151">Casting and Type Conversions</span></span>](../../../csharp/programming-guide/types/casting-and-type-conversions.md)  
+ [<span data-ttu-id="83955-152">() 演算子</span><span class="sxs-lookup"><span data-stu-id="83955-152">() Operator</span></span>](../../../csharp/language-reference/operators/invocation-operator.md)  
+ [<span data-ttu-id="83955-153">整数型の一覧表</span><span class="sxs-lookup"><span data-stu-id="83955-153">Integral Types Table</span></span>](../../../csharp/language-reference/keywords/integral-types-table.md)  
+ [<span data-ttu-id="83955-154">組み込み型の一覧表</span><span class="sxs-lookup"><span data-stu-id="83955-154">Built-In Types Table</span></span>](../../../csharp/language-reference/keywords/built-in-types-table.md)  
+ [<span data-ttu-id="83955-155">暗黙的な数値変換の一覧表</span><span class="sxs-lookup"><span data-stu-id="83955-155">Implicit Numeric Conversions Table</span></span>](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)

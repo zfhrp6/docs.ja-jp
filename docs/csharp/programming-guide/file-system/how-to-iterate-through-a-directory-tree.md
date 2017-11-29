@@ -1,86 +1,67 @@
 ---
 title: "方法 : ディレクトリ ツリーを反復処理する (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: c4851938aafefd93aa9189aecbb3f5cdd9a09ea0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 562431f525cc58b5d630671c9015e30a14ea06ee
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>方法 : ディレクトリ ツリーを反復処理する (C# プログラミング ガイド)
-"ディレクトリ ツリーを反復処理する" とは、指定したルート フォルダー以下の入れ子になっている各サブディレクトリ内の各ファイルにアクセスすることです。 必ずしもファイルを 1 つ 1 つ開く必要はありません。 ファイルまたはサブディレクトリの名前だけを `string` として取得することも、その他の情報を <xref:System.IO.FileInfo?displayProperty=fullName> または <xref:System.IO.DirectoryInfo?displayProperty=fullName> オブジェクトの形式で取得することもできます。  
+# <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a><span data-ttu-id="cf0fb-102">方法 : ディレクトリ ツリーを反復処理する (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="cf0fb-102">How to: Iterate Through a Directory Tree (C# Programming Guide)</span></span>
+<span data-ttu-id="cf0fb-103">"ディレクトリ ツリーを反復処理する" とは、指定したルート フォルダー以下の入れ子になっている各サブディレクトリ内の各ファイルにアクセスすることです。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-103">The phrase "iterate a directory tree" means to access each file in each nested subdirectory under a specified root folder, to any depth.</span></span> <span data-ttu-id="cf0fb-104">必ずしもファイルを 1 つ 1 つ開く必要はありません。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-104">You do not necessarily have to open each file.</span></span> <span data-ttu-id="cf0fb-105">ファイルまたはサブディレクトリの名前だけを `string` として取得することも、その他の情報を <xref:System.IO.FileInfo?displayProperty=nameWithType> または <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> オブジェクトの形式で取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-105">You can just retrieve the name of the file or subdirectory as a `string`, or you can retrieve additional information in the form of a <xref:System.IO.FileInfo?displayProperty=nameWithType> or <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> object.</span></span>  
   
 > [!NOTE]
->  Windows では、"ディレクトリ" と "フォルダー" という用語は同義です。 多くのドキュメントおよびユーザー インターフェイスのテキストでは、"フォルダー" という用語が使用されていますが、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリでは、"ディレクトリ" という用語が使用されています。  
+>  <span data-ttu-id="cf0fb-106">Windows では、"ディレクトリ" と "フォルダー" という用語は同義です。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-106">In Windows, the terms "directory" and "folder" are used interchangeably.</span></span> <span data-ttu-id="cf0fb-107">多くのドキュメントおよびユーザー インターフェイスのテキストでは、"フォルダー" という用語が使用されていますが、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] クラス ライブラリでは、"ディレクトリ" という用語が使用されています。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-107">Most documentation and user interface text uses the term "folder," but the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] class library uses the term "directory."</span></span>  
   
- 最も容易なケース、つまり、指定したルート以下のすべてのディレクトリのアクセス許可があることが確実にわかっている場合は、`System.IO.SearchOption.AllDirectories` フラグを使用できます。 このフラグは、指定したパターンと一致する、入れ子にされたすべてのサブディレクトリを返します。 このフラグを使用する方法を次の例に示します。  
+ <span data-ttu-id="cf0fb-108">最も容易なケース、つまり、指定したルート以下のすべてのディレクトリのアクセス許可があることが確実にわかっている場合は、`System.IO.SearchOption.AllDirectories` フラグを使用できます。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-108">In the simplest case, in which you know for certain that you have access permissions for all directories under a specified root, you can use the `System.IO.SearchOption.AllDirectories` flag.</span></span> <span data-ttu-id="cf0fb-109">このフラグは、指定したパターンと一致する、入れ子にされたすべてのサブディレクトリを返します。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-109">This flag returns all the nested subdirectories that match the specified pattern.</span></span> <span data-ttu-id="cf0fb-110">このフラグを使用する方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-110">The following example shows how to use this flag.</span></span>  
   
 ```csharp  
 root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);  
 ```  
   
- この方法の弱点は、指定したルート以下のサブディレクトリの 1 つが <xref:System.IO.DirectoryNotFoundException> または <xref:System.UnauthorizedAccessException> を発生させた場合、メソッド全体が失敗し、ディレクトリが返されないという点です。 <xref:System.IO.DirectoryInfo.GetFiles%2A> メソッドを使用する場合も同様です。 特定のサブフォルダーに関するこのような例外を処理する必要がある場合は、次の例のように、ディレクトリ ツリーを手動で移動する必要があります。  
+ <span data-ttu-id="cf0fb-111">この方法の弱点は、指定したルート以下のサブディレクトリの 1 つが <xref:System.IO.DirectoryNotFoundException> または <xref:System.UnauthorizedAccessException> を発生させた場合、メソッド全体が失敗し、ディレクトリが返されないという点です。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-111">The weakness in this approach is that if any one of the subdirectories under the specified root causes a <xref:System.IO.DirectoryNotFoundException> or <xref:System.UnauthorizedAccessException>, the whole method fails and returns no directories.</span></span> <span data-ttu-id="cf0fb-112"><xref:System.IO.DirectoryInfo.GetFiles%2A> メソッドを使用する場合も同様です。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-112">The same is true when you use the <xref:System.IO.DirectoryInfo.GetFiles%2A> method.</span></span> <span data-ttu-id="cf0fb-113">特定のサブフォルダーに関するこのような例外を処理する必要がある場合は、次の例のように、ディレクトリ ツリーを手動で移動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-113">If you have to handle these exceptions on specific subfolders, you must manually walk the directory tree, as shown in the following examples.</span></span>  
   
- ディレクトリ ツリーを手動で移動するときは、最初にサブディレクトリを処理 ("*先行順走査*") するか、最初にファイルを処理 ("*後順走査*") できます。 先行順走査を実行する場合、現在のフォルダー以下のツリー全体を移動してから、そのフォルダー自体に直接格納されているファイルを反復処理していきます。 このドキュメントで後述する例は、後順走査を実行しますが、先行順走査を実行するように簡単に変更できます。  
+ <span data-ttu-id="cf0fb-114">ディレクトリ ツリーを手動で移動するときは、最初にサブディレクトリを処理 ("*先行順走査*") するか、最初にファイルを処理 ("*後順走査*") できます。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-114">When you manually walk a directory tree, you can handle the subdirectories first (*pre-order traversal*), or the files first (*post-order traversal*).</span></span> <span data-ttu-id="cf0fb-115">先行順走査を実行する場合、現在のフォルダー以下のツリー全体を移動してから、そのフォルダー自体に直接格納されているファイルを反復処理していきます。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-115">If you perform a pre-order traversal, you walk the whole tree under the current folder before iterating through the files that are directly in that folder itself.</span></span> <span data-ttu-id="cf0fb-116">このドキュメントで後述する例は、後順走査を実行しますが、先行順走査を実行するように簡単に変更できます。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-116">The examples later in this document perform post-order traversal, but you can easily modify them to perform pre-order traversal.</span></span>  
   
- また、再帰とスタック ベース走査のどちらを使用するかを選択できます。 このドキュメント内の後の例では、両方の方法を示しています。  
+ <span data-ttu-id="cf0fb-117">また、再帰とスタック ベース走査のどちらを使用するかを選択できます。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-117">Another option is whether to use recursion or a stack-based traversal.</span></span> <span data-ttu-id="cf0fb-118">このドキュメント内の後の例では、両方の方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-118">The examples later in this document show both approaches.</span></span>  
   
- ファイルおよびフォルダーに対してさまざまな操作を実行する必要がある場合は、単一のデリゲートを使用して呼び出すことができる個別の関数に操作をリファクタリングすることで、これらの例をモジュール化できます。  
+ <span data-ttu-id="cf0fb-119">ファイルおよびフォルダーに対してさまざまな操作を実行する必要がある場合は、単一のデリゲートを使用して呼び出すことができる個別の関数に操作をリファクタリングすることで、これらの例をモジュール化できます。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-119">If you have to perform a variety of operations on files and folders, you can modularize these examples by refactoring the operation into separate functions that you can invoke by using a single delegate.</span></span>  
   
 > [!NOTE]
->  NTFS ファイル システムには、"*接合ポイント*"、"*シンボリック リンク*"、および "*ハード リンク*" の形式で "*リパース ポイント*" を含めることができます。 <xref:System.IO.DirectoryInfo.GetFiles%2A> や <xref:System.IO.DirectoryInfo.GetDirectories%2A> などの .NET Framework メソッドは、リパース ポイント以下のサブディレクトリを返しません。 この動作により、リパース ポイントが相互参照している場合に、無限ループに入るのが回避されます。 通常、ファイルを誤って変更または削除しないようにリパース ポイントを処理する場合は、十分な注意が必要です。 リパース ポイントを詳細に制御する必要がある場合は、プラットフォーム呼び出しまたはネイティブ コードを使用して、適切な Win32 ファイル システム メソッドを直接呼び出します。  
+>  <span data-ttu-id="cf0fb-120">NTFS ファイル システムには、"*接合ポイント*"、"*シンボリック リンク*"、および "*ハード リンク*" の形式で "*リパース ポイント*" を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-120">NTFS file systems can contain *reparse points* in the form of *junction points*, *symbolic links*, and *hard links*.</span></span> <span data-ttu-id="cf0fb-121"><xref:System.IO.DirectoryInfo.GetFiles%2A> や <xref:System.IO.DirectoryInfo.GetDirectories%2A> などの .NET Framework メソッドは、リパース ポイント以下のサブディレクトリを返しません。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-121">The .NET Framework methods such as <xref:System.IO.DirectoryInfo.GetFiles%2A> and <xref:System.IO.DirectoryInfo.GetDirectories%2A> will not return any subdirectories under a reparse point.</span></span> <span data-ttu-id="cf0fb-122">この動作により、リパース ポイントが相互参照している場合に、無限ループに入るのが回避されます。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-122">This behavior guards against the risk of entering into an infinite loop when two reparse points refer to each other.</span></span> <span data-ttu-id="cf0fb-123">通常、ファイルを誤って変更または削除しないようにリパース ポイントを処理する場合は、十分な注意が必要です。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-123">In general, you should use extreme caution when you deal with reparse points to ensure that you do not unintentionally modify or delete files.</span></span> <span data-ttu-id="cf0fb-124">リパース ポイントを詳細に制御する必要がある場合は、プラットフォーム呼び出しまたはネイティブ コードを使用して、適切な Win32 ファイル システム メソッドを直接呼び出します。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-124">If you require precise control over reparse points, use platform invoke or native code to call the appropriate Win32 file system methods directly.</span></span>  
   
-## <a name="example"></a>例  
- 再帰を使用してディレクトリ ツリーを移動する方法を次の例に示します。 この再帰の方法は洗練されていますが、ディレクトリ ツリーが大きく、入れ子の階層が深いと、スタック オーバーフロー例外が発生する可能性があります。  
+## <a name="example"></a><span data-ttu-id="cf0fb-125">例</span><span class="sxs-lookup"><span data-stu-id="cf0fb-125">Example</span></span>  
+ <span data-ttu-id="cf0fb-126">再帰を使用してディレクトリ ツリーを移動する方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-126">The following example shows how to walk a directory tree by using recursion.</span></span> <span data-ttu-id="cf0fb-127">この再帰の方法は洗練されていますが、ディレクトリ ツリーが大きく、入れ子の階層が深いと、スタック オーバーフロー例外が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-127">The recursive approach is elegant but has the potential to cause a stack overflow exception if the directory tree is large and deeply nested.</span></span>  
   
- ここで処理される例外や、各ファイルまたは各フォルダーに対して実行される操作は、あくまで例として用意したものです。 実際の要件を満たす際には、このコードを修正する必要があります。 詳細については、コード内のコメントを参照してください。  
+ <span data-ttu-id="cf0fb-128">ここで処理される例外や、各ファイルまたは各フォルダーに対して実行される操作は、あくまで例として用意したものです。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-128">The particular exceptions that are handled, and the particular actions that are performed on each file or folder, are provided as examples only.</span></span> <span data-ttu-id="cf0fb-129">実際の要件を満たす際には、このコードを修正する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-129">You should modify this code to meet your specific requirements.</span></span> <span data-ttu-id="cf0fb-130">詳細については、コード内のコメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-130">See the comments in the code for more information.</span></span>  
   
- [!code-cs[csFilesandFolders#1](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_1.cs)]  
+ [!code-csharp[csFilesandFolders#1](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_1.cs)]  
   
-## <a name="example"></a>例  
- 再帰を使用せずにディレクトリ ツリー内のファイルおよびフォルダーを反復処理する方法を、次の例に示します。 この方法では、後入れ先出し (LIFO) スタックである、一般的な <xref:System.Collections.Generic.Stack%601> コレクション型を使用します。  
+## <a name="example"></a><span data-ttu-id="cf0fb-131">例</span><span class="sxs-lookup"><span data-stu-id="cf0fb-131">Example</span></span>  
+ <span data-ttu-id="cf0fb-132">再帰を使用せずにディレクトリ ツリー内のファイルおよびフォルダーを反復処理する方法を、次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-132">The following example shows how to iterate through files and folders in a directory tree without using recursion.</span></span> <span data-ttu-id="cf0fb-133">この方法では、後入れ先出し (LIFO) スタックである、一般的な <xref:System.Collections.Generic.Stack%601> コレクション型を使用します。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-133">This technique uses the generic <xref:System.Collections.Generic.Stack%601> collection type, which is a last in first out (LIFO) stack.</span></span>  
   
- ここで処理される例外や、各ファイルまたは各フォルダーに対して実行される操作は、あくまで例として用意したものです。 実際の要件を満たす際には、このコードを修正する必要があります。 詳細については、コード内のコメントを参照してください。  
+ <span data-ttu-id="cf0fb-134">ここで処理される例外や、各ファイルまたは各フォルダーに対して実行される操作は、あくまで例として用意したものです。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-134">The particular exceptions that are handled, and the particular actions that are performed on each file or folder, are provided as examples only.</span></span> <span data-ttu-id="cf0fb-135">実際の要件を満たす際には、このコードを修正する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-135">You should modify this code to meet your specific requirements.</span></span> <span data-ttu-id="cf0fb-136">詳細については、コード内のコメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-136">See the comments in the code for more information.</span></span>  
   
- [!code-cs[csFilesandFolders#2](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_2.cs)]  
+ [!code-csharp[csFilesandFolders#2](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_2.cs)]  
   
- 通常、すべてのフォルダーをテストして、アプリケーションにフォルダーを開くアクセス許可があるかどうかを確認する作業には時間がかかります。 そのため、このコード例には、`try/catch` ブロック内の操作の該当部分のみが含まれています。 フォルダーへのアクセスが拒否されたときにアクセス許可を昇格して再びアクセスを試行するように、`catch` ブロックを修正できます。 原則として、アプリケーションが不明の状態にならずに処理できる例外のみをキャッチしてください。  
+ <span data-ttu-id="cf0fb-137">通常、すべてのフォルダーをテストして、アプリケーションにフォルダーを開くアクセス許可があるかどうかを確認する作業には時間がかかります。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-137">It is generally too time-consuming to test every folder to determine whether your application has permission to open it.</span></span> <span data-ttu-id="cf0fb-138">そのため、このコード例には、`try/catch` ブロック内の操作の該当部分のみが含まれています。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-138">Therefore, the code example just encloses that part of the operation in a `try/catch` block.</span></span> <span data-ttu-id="cf0fb-139">フォルダーへのアクセスが拒否されたときにアクセス許可を昇格して再びアクセスを試行するように、`catch` ブロックを修正できます。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-139">You can modify the `catch` block so that when you are denied access to a folder, you try to elevate your permissions and then access it again.</span></span> <span data-ttu-id="cf0fb-140">原則として、アプリケーションが不明の状態にならずに処理できる例外のみをキャッチしてください。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-140">As a rule, only catch those exceptions that you can handle without leaving your application in an unknown state.</span></span>  
   
- ディレクトリ ツリーの内容をメモリまたはディスクに格納する必要がある場合、各ファイルの (<xref:System.IO.FileSystemInfo.FullName%2A> 型の) `string` プロパティのみを格納するのが最適な選択肢です。 その後、必要に応じて、この文字列を使用して新しい <xref:System.IO.FileInfo> または <xref:System.IO.DirectoryInfo> オブジェクトを作成するか、追加処理が必要なファイルを開くことができます。  
+ <span data-ttu-id="cf0fb-141">ディレクトリ ツリーの内容をメモリまたはディスクに格納する必要がある場合、各ファイルの (<xref:System.IO.FileSystemInfo.FullName%2A> 型の) `string` プロパティのみを格納するのが最適な選択肢です。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-141">If you must store the contents of a directory tree, either in memory or on disk, the best option is to store only the <xref:System.IO.FileSystemInfo.FullName%2A> property (of type `string`) for each file.</span></span> <span data-ttu-id="cf0fb-142">その後、必要に応じて、この文字列を使用して新しい <xref:System.IO.FileInfo> または <xref:System.IO.DirectoryInfo> オブジェクトを作成するか、追加処理が必要なファイルを開くことができます。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-142">You can then use this string to create a new <xref:System.IO.FileInfo> or <xref:System.IO.DirectoryInfo> object as necessary, or open any file that requires additional processing.</span></span>  
   
-## <a name="robust-programming"></a>信頼性の高いプログラミング  
- 堅牢性の高いファイル反復処理コードでは、ファイル システムの数多くの複雑な部分を考慮する必要があります。 詳細については、「[NTFS Technical Reference (NTFS テクニカル リファレンス)](http://go.microsoft.com/fwlink/?LinkId=79488)」を参照してください。  
+## <a name="robust-programming"></a><span data-ttu-id="cf0fb-143">信頼性の高いプログラミング</span><span class="sxs-lookup"><span data-stu-id="cf0fb-143">Robust Programming</span></span>  
+ <span data-ttu-id="cf0fb-144">堅牢性の高いファイル反復処理コードでは、ファイル システムの数多くの複雑な部分を考慮する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-144">Robust file iteration code must take into account many complexities of the file system.</span></span> <span data-ttu-id="cf0fb-145">詳細については、「[NTFS Technical Reference (NTFS テクニカル リファレンス)](http://go.microsoft.com/fwlink/?LinkId=79488)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cf0fb-145">For more information, see [NTFS Technical Reference](http://go.microsoft.com/fwlink/?LinkId=79488).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.IO>   
- [LINQ とファイル ディレクトリ](http://msdn.microsoft.com/library/5a5d516c-0279-4a84-ac84-b87f54caa808)   
- [ファイル システムとレジストリ (C# プログラミング ガイド)](../../../csharp/programming-guide/file-system/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="cf0fb-146">関連項目</span><span class="sxs-lookup"><span data-stu-id="cf0fb-146">See Also</span></span>  
+ <xref:System.IO>  
+ [<span data-ttu-id="cf0fb-147">LINQ とファイル ディレクトリ</span><span class="sxs-lookup"><span data-stu-id="cf0fb-147">LINQ and File Directories</span></span>](http://msdn.microsoft.com/library/5a5d516c-0279-4a84-ac84-b87f54caa808)  
+ [<span data-ttu-id="cf0fb-148">ファイル システムとレジストリ (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="cf0fb-148">File System and the Registry (C# Programming Guide)</span></span>](../../../csharp/programming-guide/file-system/index.md)

@@ -1,30 +1,26 @@
 ---
 title: "方法 : 匿名型を射影する (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 5cb9be13-5ac4-4373-a034-b3520a5b2dec
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: e7b56e919342cb168951c78a2d90953ba0ab758c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 31e0b9c5714c2365323d8c8f65659ee1b1ef5e2b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-project-an-anonymous-type-c"></a>方法 : 匿名型を射影する (C#)
-短期間しか使用しないことがわかっている新しい型にクエリを射影することが必要になる場合があります。 単に射影で使用するために新しい型を作成するのは大きな負担です。 この場合は、匿名型に射影する方法が効率的です。 匿名型を使用すると、クラス名を指定することなくクラスを定義し、そのクラスのオブジェクトを宣言して初期化できます。  
+# <a name="how-to-project-an-anonymous-type-c"></a><span data-ttu-id="cd2bb-102">方法 : 匿名型を射影する (C#)</span><span class="sxs-lookup"><span data-stu-id="cd2bb-102">How to: Project an Anonymous Type (C#)</span></span>
+<span data-ttu-id="cd2bb-103">短期間しか使用しないことがわかっている新しい型にクエリを射影することが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-103">In some cases you might want to project a query to a new type, even though you know you will only use this type for a short while.</span></span> <span data-ttu-id="cd2bb-104">単に射影で使用するために新しい型を作成するのは大きな負担です。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-104">It is a lot of extra work to create a new type just to use in the projection.</span></span> <span data-ttu-id="cd2bb-105">この場合は、匿名型に射影する方法が効率的です。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-105">A more efficient approach in this case is to project to an anonymous type.</span></span> <span data-ttu-id="cd2bb-106">匿名型を使用すると、クラス名を指定することなくクラスを定義し、そのクラスのオブジェクトを宣言して初期化できます。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-106">Anonymous types allow you to define a class, then declare and initialize an object of that class, without giving the class a name.</span></span>  
   
- 匿名型とは、*タプル*の数学的概念を C# で実装したものです。 タプルという数学用語は、1 タプル、2 タプル、3 タプル、4 タプル、5 タプル、n タプルという数列に基づいています。 組とは、それぞれが特定の型を持つオブジェクトの有限のシーケンスを意味します。 名前と値のペアの一覧と呼ばれることもあります。 たとえば、「[サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md)」という XML ドキュメントでは、住所の内容が次のように表現されます。  
+ <span data-ttu-id="cd2bb-107">匿名型とは、*タプル*の数学的概念を C# で実装したものです。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-107">Anonymous types are the C# implementation of the mathematical concept of a *tuple*.</span></span> <span data-ttu-id="cd2bb-108">タプルという数学用語は、1 タプル、2 タプル、3 タプル、4 タプル、5 タプル、n タプルという数列に基づいています。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-108">The mathematical term tuple originated from the sequence single, double, triple, quadruple, quintuple, n-tuple.</span></span> <span data-ttu-id="cd2bb-109">組とは、それぞれが特定の型を持つオブジェクトの有限のシーケンスを意味します。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-109">It refers to a finite sequence of objects, each of a specific type.</span></span> <span data-ttu-id="cd2bb-110">名前と値のペアの一覧と呼ばれることもあります。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-110">Sometimes this is called a list of name/value pairs.</span></span> <span data-ttu-id="cd2bb-111">たとえば、「[サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md)」という XML ドキュメントでは、住所の内容が次のように表現されます。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-111">For example, the contents of an address in the [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md) XML document could be expressed as follows:</span></span>  
   
 ```  
 Name: Ellen Adams  
@@ -35,12 +31,12 @@ Zip: 90952
 Country: USA  
 ```  
   
- 匿名型のインスタンスを作成するときは、注文 n のタプルを作成すると考えると簡単です。 `select` 句でタプルを作成するクエリを記述すると、そのクエリからタプルの `IEnumerable` が返されます。  
+ <span data-ttu-id="cd2bb-112">匿名型のインスタンスを作成するときは、注文 n のタプルを作成すると考えると簡単です。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-112">When you create an instance of an anonymous type, it is convenient to think of it as creating a tuple of order n.</span></span> <span data-ttu-id="cd2bb-113">`select` 句でタプルを作成するクエリを記述すると、そのクエリからタプルの `IEnumerable` が返されます。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-113">If you write a query that creates a tuple in the `select` clause, the query returns an `IEnumerable` of the tuple.</span></span>  
   
-## <a name="example"></a>例  
- この例では、`select` 句で匿名型を射影しています。 さらに、`var` を使用して `IEnumerable` オブジェクトを作成しています。 `foreach` ループ内では、繰り返し変数が、クエリ式で作成された匿名型のインスタンスになります。  
+## <a name="example"></a><span data-ttu-id="cd2bb-114">例</span><span class="sxs-lookup"><span data-stu-id="cd2bb-114">Example</span></span>  
+ <span data-ttu-id="cd2bb-115">この例では、`select` 句で匿名型を射影しています。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-115">In this example, the `select` clause projects an anonymous type.</span></span> <span data-ttu-id="cd2bb-116">さらに、`var` を使用して `IEnumerable` オブジェクトを作成しています。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-116">The example then uses `var` to create the `IEnumerable` object.</span></span> <span data-ttu-id="cd2bb-117">`foreach` ループ内では、繰り返し変数が、クエリ式で作成された匿名型のインスタンスになります。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-117">Within the `foreach` loop, the iteration variable becomes an instance of the anonymous type created in the query expression.</span></span>  
   
- この例では、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md)」の XML ドキュメントを使用します。  
+ <span data-ttu-id="cd2bb-118">この例では、「[サンプル XML ファイル: 顧客と注文 (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md)」の XML ドキュメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-118">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>  
   
 ```csharp  
 XElement custOrd = XElement.Load("CustomersOrders.xml");  
@@ -55,7 +51,7 @@ foreach (var cust in custList)
     Console.WriteLine("{0}:{1}:{2}", cust.CustomerID, cust.CompanyName, cust.ContactName);  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="cd2bb-119">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="cd2bb-119">This code produces the following output:</span></span>  
   
 ```  
 GREAL:Great Lakes Food Market:Howard Snyder  
@@ -64,6 +60,5 @@ LAZYK:Lazy K Kountry Store:John Steel
 LETSS:Let's Stop N Shop:Jaime Yorres  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [プロジェクションと変換 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
-
+## <a name="see-also"></a><span data-ttu-id="cd2bb-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="cd2bb-120">See Also</span></span>  
+ [<span data-ttu-id="cd2bb-121">プロジェクションと変換 (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="cd2bb-121">Projections and Transformations (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

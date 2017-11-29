@@ -1,262 +1,265 @@
 ---
-title: "チュートリアル : Microsoft Expression Blend を使用してボタンを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ボタン"
-  - "変換, 図形をボタンに"
-  - "Expression Blend [WPF デザイナー]"
+title: "チュートリアル : Microsoft Expression Blend を使用してボタンを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- buttons [WPF]
+- converting [WPF], shape to button
+- Expression Blend [WPF Designer]
 ms.assetid: ff5037c2-bba7-4cae-8abb-6475b686c48e
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1371fdc3582e2ebe052442b15ecb2d5cf0b2865a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : Microsoft Expression Blend を使用してボタンを作成する
-このチュートリアルでは、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] のカスタマイズされたボタンを Microsoft Expression Blend を使用して作成する手順について説明します。  
+# <a name="walkthrough-create-a-button-by-using-microsoft-expression-blend"></a><span data-ttu-id="feb60-102">チュートリアル : Microsoft Expression Blend を使用してボタンを作成する</span><span class="sxs-lookup"><span data-stu-id="feb60-102">Walkthrough: Create a Button by Using Microsoft Expression Blend</span></span>
+<span data-ttu-id="feb60-103">このチュートリアルの作成プロセス、 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Microsoft Expression Blend を使用してカスタマイズされたボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="feb60-103">This walkthrough steps you through the process of creating a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] customized button using Microsoft Expression Blend.</span></span>  
   
 > [!IMPORTANT]
->  Microsoft Expression Blend の具体的な動作は [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] の生成で、これがコンパイルされ、実行可能プログラムが作成されます。  [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] を直接扱う場合については、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] を Blend ではなく [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] を使用して、これと同じアプリケーションを作成する別のチュートリアルが用意されています。  詳細については、「[XAML を使用したボタンの作成](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)」を参照してください。  
+>  <span data-ttu-id="feb60-104">Microsoft Expression Blend が生成することによって動作[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]をコンパイルする実行可能プログラムを作成します。</span><span class="sxs-lookup"><span data-stu-id="feb60-104">Microsoft Expression Blend works by generating [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] that is then compiled to make the executable program.</span></span> <span data-ttu-id="feb60-105">使用することで場合[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]が 1 つ使用して、このと同じアプリケーションを作成するもう 1 つのチュートリアルを直接[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]で[!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]Blend ではなくです。</span><span class="sxs-lookup"><span data-stu-id="feb60-105">If you would rather work with [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] directly, there is another walkthrough that creates the same application as this one using [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] with [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] rather than Blend.</span></span> <span data-ttu-id="feb60-106">参照してください[xaml を使用してボタンを作成して](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)詳細についてはします。</span><span class="sxs-lookup"><span data-stu-id="feb60-106">See [Create a Button by Using XAML](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md) for more information.</span></span>  
   
- これから作成する、カスタマイズされたボタンを次の図に示します。  
+ <span data-ttu-id="feb60-107">次の図を作成する場合、カスタマイズされたボタンを示しています。</span><span class="sxs-lookup"><span data-stu-id="feb60-107">The following illustration shows the customized button that you will create.</span></span>  
   
- ![ユーザーが作成するカスタマイズされたボタン](../../../../docs/framework/wpf/controls/media/custom-button-blend-intro.png "custom\_button\_blend\_Intro")  
+ <span data-ttu-id="feb60-108">![作成するカスタマイズされたボタン](../../../../docs/framework/wpf/controls/media/custom-button-blend-intro.jpg "custom_button_blend_Intro")</span><span class="sxs-lookup"><span data-stu-id="feb60-108">![The customized button that you will create](../../../../docs/framework/wpf/controls/media/custom-button-blend-intro.jpg "custom_button_blend_Intro")</span></span>  
   
-## 図形からボタンへの変換  
- このチュートリアルの前半では、カスタム ボタンの独自の外観を作成します。  作成するには、まず四角形をボタンに変換します。  次に、他の図形をボタンのテンプレートに追加し、より複雑な外観のボタンを作成します。  ここでは、通常のボタンを使用してカスタマイズします。  ボタンには今回は使用しない組み込み機能があるので、カスタム ボタンを作成するには、四角形から始める方が簡単です。  
+## <a name="convert-a-shape-to-a-button"></a><span data-ttu-id="feb60-109">図形をボタンに変換します。</span><span class="sxs-lookup"><span data-stu-id="feb60-109">Convert a Shape to a Button</span></span>  
+ <span data-ttu-id="feb60-110">このチュートリアルの最初の部分では、独自のカスタム ボタンの外観を作成します。</span><span class="sxs-lookup"><span data-stu-id="feb60-110">In the first part of this walkthrough you create the custom look of the custom button.</span></span> <span data-ttu-id="feb60-111">これを行うには、最初に変換する四角形のボタンにします。</span><span class="sxs-lookup"><span data-stu-id="feb60-111">To do this, you first convert a rectangle to a button.</span></span> <span data-ttu-id="feb60-112">図形を追加、ボタンのテンプレートにより複雑な探し求めているボタンを作成します。</span><span class="sxs-lookup"><span data-stu-id="feb60-112">You then add additional shapes to the template of the button, creating a more complex looking button.</span></span> <span data-ttu-id="feb60-113">標準のボタンで開始し、カスタマイズしないのはなぜですか。</span><span class="sxs-lookup"><span data-stu-id="feb60-113">Why not start with a regular button and customize it?</span></span> <span data-ttu-id="feb60-114">ボタンがある機能する必要はありません。 が組み込まれているためカスタム ボタンの四角形を開始する簡単です。</span><span class="sxs-lookup"><span data-stu-id="feb60-114">Because a button has built-in functionality that you do not need; for custom buttons, it is easier to start with a rectangle.</span></span>  
   
-#### Expression Blend で新しいプロジェクトを作成するには  
+#### <a name="to-create-a-new-project-in-expression-blend"></a><span data-ttu-id="feb60-115">Expression Blend で新しいプロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="feb60-115">To create a new project in Expression Blend</span></span>  
   
-1.  Expression Blend を起動します   \(**\[スタート\]** をクリックし、**\[すべてのプログラム\]**、**\[Microsoft Expression\]**、**\[Microsoft Expression Blend\]** の順にポイントします\)。  
+1.  <span data-ttu-id="feb60-116">Expression Blend を開始します。</span><span class="sxs-lookup"><span data-stu-id="feb60-116">Start Expression Blend.</span></span> <span data-ttu-id="feb60-117">(をクリックして**開始**、 をポイント**すべてのプログラム**、 をポイント**Microsoft Expression**、順にクリック**Microsoft Expression Blend**)。</span><span class="sxs-lookup"><span data-stu-id="feb60-117">(Click **Start**, point to **All Programs**, point to **Microsoft Expression**, and then click **Microsoft Expression Blend**.)</span></span>  
   
-2.  必要に応じて、アプリケーションを最大化します。  
+2.  <span data-ttu-id="feb60-118">必要な場合は、アプリケーションを最大化します。</span><span class="sxs-lookup"><span data-stu-id="feb60-118">Maximize the application if needed.</span></span>  
   
-3.  **\[ファイル\]** メニューの **\[新しいプロジェクト\]** をクリックします。  
+3.  <span data-ttu-id="feb60-119">**[ファイル]** メニューの **[新しいプロジェクト]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="feb60-119">On the **File** menu, click **New Project**.</span></span>  
   
-4.  **\[標準アプリケーション \(.exe\)\]** を選択します。  
+4.  <span data-ttu-id="feb60-120">選択**標準的なアプリケーション (.exe)**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-120">Select **Standard Application (.exe)**.</span></span>  
   
-5.  プロジェクトの名前を「`CustomButton`」と指定して、**\[OK\]** をクリックします。  
+5.  <span data-ttu-id="feb60-121">プロジェクトに名前を`CustomButton`とキーを押します**OK**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-121">Name the project `CustomButton` and press **OK**.</span></span>  
   
- この時点で、空の [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] プロジェクトができます。  F5 キーを押すと、アプリケーションを実行できます。  予想どおり、アプリケーションは空のウィンドウのみで構成されていることがわかります。  次に、角の丸い四角形を作成し、それをボタンに変換します。  
+ <span data-ttu-id="feb60-122">この時点では空白がある[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]プロジェクト。</span><span class="sxs-lookup"><span data-stu-id="feb60-122">At this point you have a blank [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] project.</span></span> <span data-ttu-id="feb60-123">アプリケーションの実行に f5 キーを押すことができます。</span><span class="sxs-lookup"><span data-stu-id="feb60-123">You can press F5 to run the application.</span></span> <span data-ttu-id="feb60-124">ご想像のとおり、空白のウィンドウのみのアプリケーションで構成されます。</span><span class="sxs-lookup"><span data-stu-id="feb60-124">As you might expect, the application consists of only a blank window.</span></span> <span data-ttu-id="feb60-125">次に、角の丸い四角形を作成し、ボタンに変換します。</span><span class="sxs-lookup"><span data-stu-id="feb60-125">Next, you create a rounded rectangle and convert it into a button.</span></span>  
   
-#### 四角形をボタンに変換するには  
+#### <a name="to-convert-a-rectangle-to-a-button"></a><span data-ttu-id="feb60-126">四角形をボタンに変換するには</span><span class="sxs-lookup"><span data-stu-id="feb60-126">To convert a Rectangle to a Button</span></span>  
   
-1.  **ウィンドウの背景プロパティを黒に設定します。**ウィンドウを選択して **\[プロパティ\]** タブをクリックし、<xref:System.Windows.Controls.Control.Background%2A> プロパティを `Black` に設定します。  
+1.  <span data-ttu-id="feb60-127">**プロパティ ウィンドウの背景色を黒に設定:**ウィンドウを選択し、をクリックして、**プロパティ タブ**、設定と、<xref:System.Windows.Controls.Control.Background%2A>プロパティを`Black`です。</span><span class="sxs-lookup"><span data-stu-id="feb60-127">**Set the Window Background property to black:** Select the Window, click the **Properties Tab**, and set the <xref:System.Windows.Controls.Control.Background%2A> property to `Black`.</span></span>  
   
-     ![ボタンの背景を黒に設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-changebackground.png "custom\_button\_blend\_ChangeBackground")  
+     <span data-ttu-id="feb60-128">![ボタンの背景を黒に設定する方法について](../../../../docs/framework/wpf/controls/media/custom-button-blend-changebackground.png "custom_button_blend_ChangeBackground")</span><span class="sxs-lookup"><span data-stu-id="feb60-128">![How to set the background of a button to black](../../../../docs/framework/wpf/controls/media/custom-button-blend-changebackground.png "custom_button_blend_ChangeBackground")</span></span>  
   
-2.  **大きさがボタンのサイズに近い四角形をウィンドウ上に描画します。**左側のツール パネルで四角形ツールを選択し、ウィンドウ上でドラッグして四角形を描画します。  
+2.  <span data-ttu-id="feb60-129">**ウィンドウ上の四角形のボタンとほぼ同じサイズの描画:**ツールの左側のパネルに四角形ツールを選択し、ウィンドウに、四角形をドラッグします。</span><span class="sxs-lookup"><span data-stu-id="feb60-129">**Draw a rectangle approximately the size of a button on the Window:** Select the rectangle tool on the left-hand tool panel and drag the rectangle onto the Window.</span></span>  
   
-     ![四角形を描画する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-drawrect.png "custom\_button\_blend\_DrawRect")  
+     <span data-ttu-id="feb60-130">![四角形を描画する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-drawrect.png "custom_button_blend_DrawRect")</span><span class="sxs-lookup"><span data-stu-id="feb60-130">![How to draw a rectangle](../../../../docs/framework/wpf/controls/media/custom-button-blend-drawrect.png "custom_button_blend_DrawRect")</span></span>  
   
-3.  **四角形の四隅を丸めます。**四角形の制御点をドラッグするか、<xref:System.Windows.Shapes.Rectangle.RadiusX%2A> プロパティと <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> プロパティを直接設定します。  <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> と <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> の値を 20 に設定します。  
+3.  <span data-ttu-id="feb60-131">**四角形の角をラウンド:**四角形の制御点をドラッグするか、直接設定、<xref:System.Windows.Shapes.Rectangle.RadiusX%2A>と<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="feb60-131">**Round out the corners of the rectangle:** Either drag the control points of the rectangle or directly set the <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> and <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> properties.</span></span> <span data-ttu-id="feb60-132">値を設定<xref:System.Windows.Shapes.Rectangle.RadiusX%2A>と<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>20 です。</span><span class="sxs-lookup"><span data-stu-id="feb60-132">Set the values of <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> and <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> to 20.</span></span>  
   
-     ![四角形の角を丸くする方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-roundcorners.png "custom\_button\_blend\_RoundCorners")  
+     <span data-ttu-id="feb60-133">![四角形の角を丸く方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-roundcorners.png "custom_button_blend_RoundCorners")</span><span class="sxs-lookup"><span data-stu-id="feb60-133">![How to make the corners of a rectangle round](../../../../docs/framework/wpf/controls/media/custom-button-blend-roundcorners.png "custom_button_blend_RoundCorners")</span></span>  
   
-4.  **四角形をボタンに変換します。**四角形を選択します。  **\[ツール\]** メニューの **\[ボタンの作成\]** をクリックします。  
+4.  <span data-ttu-id="feb60-134">**ボタンの四角形に変換します。**四角形を選択します。</span><span class="sxs-lookup"><span data-stu-id="feb60-134">**Change the rectangle into a button:** Select the rectangle.</span></span> <span data-ttu-id="feb60-135">**ツール** メニューのをクリックして**ボタンの作成**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-135">On the **Tools** menu, click **Make Button**.</span></span>  
   
-     ![図形をボタンにする方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-makebutton.png "custom\_button\_blend\_MakeButton")  
+     <span data-ttu-id="feb60-136">![ボタンに図形を作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-makebutton.png "custom_button_blend_MakeButton")</span><span class="sxs-lookup"><span data-stu-id="feb60-136">![How to make a shape into a button](../../../../docs/framework/wpf/controls/media/custom-button-blend-makebutton.png "custom_button_blend_MakeButton")</span></span>  
   
-5.  **スタイル\/テンプレートのスコープを指定します。**次のようなダイアログ ボックスが表示されます。  
+5.  <span data-ttu-id="feb60-137">**スタイルまたはテンプレートのスコープを指定します。**次が表示されるように、ダイアログ ボックス。</span><span class="sxs-lookup"><span data-stu-id="feb60-137">**Specify the scope of the style/template:** A dialog box like the following appears.</span></span>  
   
-     ![&#91;Style リソースの作成&#93; ダイアログ ボックス](../../../../docs/framework/wpf/controls/media/custom-button-blend-makebutton2.gif "custom\_button\_blend\_MakeButton2")  
+     <span data-ttu-id="feb60-138">!["スタイル リソースの作成 ダイアログ ボックス](../../../../docs/framework/wpf/controls/media/custom-button-blend-makebutton2.gif "custom_button_blend_MakeButton2")</span><span class="sxs-lookup"><span data-stu-id="feb60-138">![The "Create Style Resource" dialog box](../../../../docs/framework/wpf/controls/media/custom-button-blend-makebutton2.gif "custom_button_blend_MakeButton2")</span></span>  
   
-     **\[リソース名 \(キー\)\]** で、**\[すべてに適用\]** を選択します。  これにより、生成されるスタイルとボタン テンプレートが、ボタンであるすべてのオブジェクトに適用されます。  **\[定義元\]** で、**\[アプリケーション\]** を選択します。  これにより、生成されるスタイルとボタン テンプレートのスコープが、アプリケーション全体になります。  この 2 つのボックスに値を設定すると、ボタンのスタイルとテンプレートはアプリケーション全体に含まれるすべてのボタンに適用され、アプリケーションで作成するボタンには既定でこのテンプレートが使用されます。  
+     <span data-ttu-id="feb60-139">**リソース名 (キー)****すべてに適用**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-139">For **Resource name (Key)**, select **Apply to all**.</span></span>  <span data-ttu-id="feb60-140">これにより、結果として得られるスタイルと button のテンプレートのボタンは、すべてのオブジェクトに適用します。</span><span class="sxs-lookup"><span data-stu-id="feb60-140">This will make the resulting style and button template apply to all objects that are buttons.</span></span> <span data-ttu-id="feb60-141">**で定義****アプリケーション**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-141">For **Define in**, select **Application**.</span></span> <span data-ttu-id="feb60-142">これにより、結果として得られるスタイルと button のテンプレートのスコープを持つアプリケーション全体にします。</span><span class="sxs-lookup"><span data-stu-id="feb60-142">This will make the resulting style and button template have scope over the entire application.</span></span> <span data-ttu-id="feb60-143">これら 2 つのボックスで、値を設定する場合は、ボタンのスタイルとテンプレートが全体のアプリケーション内のすべてのボタンに適用され、アプリケーションで作成するいずれかのボタンは、既定では、このテンプレートを使用します。</span><span class="sxs-lookup"><span data-stu-id="feb60-143">When you set the values in these two boxes, the button style and template apply to all buttons within the entire application and any button you create in the application will, by default, use this template.</span></span>  
   
-## ボタン テンプレートの編集  
- 現在、ボタンに変更された四角形があります。  このセクションでは、ボタンのテンプレートを変更して、外観をさらにカスタマイズします。  
+## <a name="edit-the-button-template"></a><span data-ttu-id="feb60-144">Button テンプレートを編集します。</span><span class="sxs-lookup"><span data-stu-id="feb60-144">Edit the Button Template</span></span>  
+ <span data-ttu-id="feb60-145">ボタンに変更された四角形があるようになりました。</span><span class="sxs-lookup"><span data-stu-id="feb60-145">You now have a rectangle that has been changed to a button.</span></span> <span data-ttu-id="feb60-146">ここをボタンのテンプレートを変更し、さらにカスタマイズして結果を確認します。</span><span class="sxs-lookup"><span data-stu-id="feb60-146">In this section, you'll modify the template of the button and further customize how it looks.</span></span>  
   
-#### ボタンの外観を変更するためにボタン テンプレートを編集するには  
+#### <a name="to-edit-the-button-template-to-change-the-button-appearance"></a><span data-ttu-id="feb60-147">ボタンの外観を変更するボタンのテンプレートを編集するには</span><span class="sxs-lookup"><span data-stu-id="feb60-147">To edit the button template to change the button appearance</span></span>  
   
-1.  **テンプレートの表示ビューに移動します。**ボタンの外観をさらにカスタマイズするには、ボタン テンプレートを編集する必要があります。  このテンプレートは、四角形をボタンに変換したときに作成されました。  ボタン テンプレートを編集するには、ボタンを右クリックし、**\[コントロール パーツ \(テンプレート\) の編集\]**、**\[テンプレートの編集\]** の順にクリックします。  
+1.  <span data-ttu-id="feb60-148">**編集テンプレート ビューに移動:**さらにボタンの外観をカスタマイズする必要がありますを button テンプレートを編集します。</span><span class="sxs-lookup"><span data-stu-id="feb60-148">**Go into edit template view:** To further customize the look of our button, we need to edit the button template.</span></span> <span data-ttu-id="feb60-149">このテンプレートは、ボタンに四角形に変換したときに作成されました。</span><span class="sxs-lookup"><span data-stu-id="feb60-149">This template was created when we converted the rectangle into a button.</span></span> <span data-ttu-id="feb60-150">Button テンプレートを編集するボタンを右クリックし **編集コントロールのパーツ (テンプレート)**し**テンプレートの編集**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-150">To edit the button template, right-click the button and select **Edit Control Parts (Template)** and then **Edit Template**.</span></span>  
   
-     ![テンプレートを編集する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-edittemplate.jpg "custom\_button\_blend\_EditTemplate")  
+     <span data-ttu-id="feb60-151">![テンプレートを編集する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-edittemplate.jpg "custom_button_blend_EditTemplate")</span><span class="sxs-lookup"><span data-stu-id="feb60-151">![How to edit a template](../../../../docs/framework/wpf/controls/media/custom-button-blend-edittemplate.jpg "custom_button_blend_EditTemplate")</span></span>  
   
-     テンプレート エディターでは、ボタンが <xref:System.Windows.Shapes.Rectangle> と <xref:System.Windows.Controls.ContentPresenter> に分離されています。  <xref:System.Windows.Controls.ContentPresenter> は、ボタン内のコンテンツ \(文字列 "Button" など\) の表示に使用します。  四角形と <xref:System.Windows.Controls.ContentPresenter> はどちらも <xref:System.Windows.Controls.Grid> の内側に配置されます。  
+     <span data-ttu-id="feb60-152">テンプレート エディターで、ボタンが今すぐ分割されていることに注意してください、<xref:System.Windows.Shapes.Rectangle>と<xref:System.Windows.Controls.ContentPresenter>です。</span><span class="sxs-lookup"><span data-stu-id="feb60-152">In the template editor, notice that the button is now separated into a <xref:System.Windows.Shapes.Rectangle> and the <xref:System.Windows.Controls.ContentPresenter>.</span></span> <span data-ttu-id="feb60-153"><xref:System.Windows.Controls.ContentPresenter>ボタン (たとえば、文字列"Button") 内のコンテンツを表示するためにします。</span><span class="sxs-lookup"><span data-stu-id="feb60-153">The <xref:System.Windows.Controls.ContentPresenter> is used to present content within the button (for example, the string "Button").</span></span> <span data-ttu-id="feb60-154">両方の四角形と<xref:System.Windows.Controls.ContentPresenter>内のレイアウト、<xref:System.Windows.Controls.Grid>です。</span><span class="sxs-lookup"><span data-stu-id="feb60-154">Both the rectangle and <xref:System.Windows.Controls.ContentPresenter> are laid out inside of a <xref:System.Windows.Controls.Grid>.</span></span>  
   
-     ![四角形で表したコンポーネント](../../../../docs/framework/wpf/controls/media/custom-button-blend-templatepanel.png "custom\_button\_blend\_TemplatePanel")  
+     <span data-ttu-id="feb60-155">![四角形のプレゼンテーションでコンポーネント](../../../../docs/framework/wpf/controls/media/custom-button-blend-templatepanel.png "custom_button_blend_TemplatePanel")</span><span class="sxs-lookup"><span data-stu-id="feb60-155">![Components in the presentation of a rectangle](../../../../docs/framework/wpf/controls/media/custom-button-blend-templatepanel.png "custom_button_blend_TemplatePanel")</span></span>  
   
-2.  **テンプレート コンポーネントの名前を変更します。**テンプレート インベントリで四角形を右クリックし、<xref:System.Windows.Shapes.Rectangle> 名を "\[Rectangle\]" から "outerRectangle" に変更し、"\[ContentPresenter\]" を "myContentPresenter" に変更します。  
+2.  <span data-ttu-id="feb60-156">**テンプレートのコンポーネントの名前を変更:**テンプレート インベントリ、変更の四角形を右クリックし、 <xref:System.Windows.Shapes.Rectangle> 「サイズ」を「[四角形]」の名前を指定しを""[ContentPresenter]"を変更します。</span><span class="sxs-lookup"><span data-stu-id="feb60-156">**Change the names of the template components:** Right-click the rectangle in the template inventory, change the <xref:System.Windows.Shapes.Rectangle> name from "[Rectangle]" to "outerRectangle", and change "[ContentPresenter]" to "myContentPresenter".</span></span>  
   
-     ![テンプレートのコンポーネント名を変更する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-renamecomponents.png "custom\_button\_blend\_RenameComponents")  
+     <span data-ttu-id="feb60-157">![テンプレートのコンポーネントの名前を変更する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-renamecomponents.png "custom_button_blend_RenameComponents")</span><span class="sxs-lookup"><span data-stu-id="feb60-157">![How to rename a component of a template](../../../../docs/framework/wpf/controls/media/custom-button-blend-renamecomponents.png "custom_button_blend_RenameComponents")</span></span>  
   
-3.  **中が空洞になるよう \(ドーナツのように\) 四角形を変更します。** **\[outerRectangle\]** を選択し、<xref:System.Windows.Shapes.Shape.Fill%2A> を "Transparent" に設定し、<xref:System.Windows.Shapes.Shape.StrokeThickness%2A> を 5 に設定します。  
+3.  <span data-ttu-id="feb60-158">**内の空 (ドーナツ) のようになるように、四角形を変更:**選択**サイズ**設定と<xref:System.Windows.Shapes.Shape.Fill%2A>「透明」と<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>5 にします。</span><span class="sxs-lookup"><span data-stu-id="feb60-158">**Alter the rectangle so that it is empty inside (like a donut):** Select **outerRectangle** and set <xref:System.Windows.Shapes.Shape.Fill%2A> to "Transparent" and <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> to 5.</span></span>  
   
-     ![四角形を空にする方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-changerectproperties.png "custom\_button\_blend\_ChangeRectProperties")  
+     <span data-ttu-id="feb60-159">![四角形を空にする方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-changerectproperties.png "custom_button_blend_ChangeRectProperties")</span><span class="sxs-lookup"><span data-stu-id="feb60-159">![How to make a rectangle empty](../../../../docs/framework/wpf/controls/media/custom-button-blend-changerectproperties.png "custom_button_blend_ChangeRectProperties")</span></span>  
   
-     次に、<xref:System.Windows.Shapes.Shape.Stroke%2A> にテンプレートの色を設定します。  これを行うには、**\[ストローク\]** の横にある小さな白いボックスをクリックし、**\[CustomExpression\]** を選択し、ダイアログ ボックスに「{TemplateBinding Background}」と入力します。  
+     <span data-ttu-id="feb60-160">設定して、<xref:System.Windows.Shapes.Shape.Stroke%2A>テンプレートができる任意の色にします。</span><span class="sxs-lookup"><span data-stu-id="feb60-160">Then set the <xref:System.Windows.Shapes.Shape.Stroke%2A> to the color of whatever the template will be.</span></span> <span data-ttu-id="feb60-161">これを行う場合は の横に小さな白いボックスをクリックして**ストローク**を選択**CustomExpression**、ダイアログ ボックスで、"{TemplateBinding"バック グラウンド} を入力します。</span><span class="sxs-lookup"><span data-stu-id="feb60-161">To do this, click the small white box next to **Stroke**, select **CustomExpression**, and type "{TemplateBinding Background}" in the dialog box.</span></span>  
   
-     ![テンプレートの色の使用を設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-templatestroke.png "custom\_button\_blend\_TemplateStroke")  
+     <span data-ttu-id="feb60-162">![使用するテンプレートの色を設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-templatestroke.png "custom_button_blend_TemplateStroke")</span><span class="sxs-lookup"><span data-stu-id="feb60-162">![How to set the use the color of the template](../../../../docs/framework/wpf/controls/media/custom-button-blend-templatestroke.png "custom_button_blend_TemplateStroke")</span></span>  
   
-4.  **内側の四角形を作成します。**次に、四角形をもう 1 つ作成し \("innerRectangle" という名前を付けます\)、それを **outerRectangle** の内側に対称になるように配置します。  このような場合、ズームを使用して編集領域に表示されるボタンを大きくすると、作業しやすくなります。  
-  
-    > [!NOTE]
-    >  作成している四角形は、図のものと外観が異なっている場合があります \(角が丸くなっているなど\)。  
-  
-     ![別の四角形の中に四角形を作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-innerrectangleproperties.png "custom\_button\_blend\_innerRectangleProperties")  
-  
-5.  **ContentPresenter を最前面に移動します。**この時点で、テキスト "Button" が表示されなくなることがあります。  これは、**innerRectangle** が **myContentPresenter** より前面にあるためです。  これを解消するには、**myContentPresenter** を **innerRectangle** の下にドラッグします。  四角形や **myContentPresenter** の位置を変更して、次のようにします。  
+4.  <span data-ttu-id="feb60-163">**内部の四角形を作成:**ここで、別の四角形を作成 (名前を付けます「において」) の内側の対称的に配置**サイズ**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-163">**Create an inner rectangle:** Now, create another rectangle (name it "innerRectangle") and position it symmetrically on the inside of **outerRectangle** .</span></span> <span data-ttu-id="feb60-164">この種類の作業では、おそらくする編集領域で、ボタンのサイズを大きくするズームします。</span><span class="sxs-lookup"><span data-stu-id="feb60-164">For this kind of work, you will probably want to zoom to make the button larger in the editing area.</span></span>  
   
     > [!NOTE]
-    >  また、**myContentPresenter** は、右クリックして **\[前面へ移動\]** をクリックすることで、前面に配置することもできます。  
+    >  <span data-ttu-id="feb60-165">図とは異なる、四角形になります (たとえば、その可能性がありますが丸く)。</span><span class="sxs-lookup"><span data-stu-id="feb60-165">Your rectangle might look different than the one in the figure (for example, it might have rounded corners).</span></span>  
   
-     ![別のボタンの上にボタンを移動する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-innerrectangle2.png "custom\_button\_blend\_innerRectangle2")  
+     <span data-ttu-id="feb60-166">![別の四角形内の四角形を作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-innerrectangleproperties.png "custom_button_blend_innerRectangleProperties")</span><span class="sxs-lookup"><span data-stu-id="feb60-166">![How to create a rectangle inside another rectangle](../../../../docs/framework/wpf/controls/media/custom-button-blend-innerrectangleproperties.png "custom_button_blend_innerRectangleProperties")</span></span>  
   
-6.  **innerRectangle の外観を変更します。** <xref:System.Windows.Shapes.Rectangle.RadiusX%2A>、<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>、および <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> の値を 20 に設定します。  また、<xref:System.Windows.Shapes.Shape.Fill%2A> をカスタム式 "{TemplateBinding Background}" を使用してテンプレートの背景に設定し、<xref:System.Windows.Shapes.Shape.Stroke%2A> を "transparent" に設定します。  **innerRectangle** の <xref:System.Windows.Shapes.Shape.Fill%2A> と <xref:System.Windows.Shapes.Shape.Stroke%2A> が **outerRectangle** とは逆になっていることを確認します。  
-  
-     ![四角形の外観を変更する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-glassrectangleproperties1.png "custom\_button\_blend\_glassRectangleProperties1")  
-  
-7.  **グラス レイヤーを前面に追加します。**ボタンの外観変更の最後の手順は、グラス レイヤーを前面に追加することです。  このグラス レイヤーは、3 つ目の四角形です。  グラスはボタン全体を覆うため、グラス四角形のサイズは **outerRectangle** とほとんど同じになります。  したがって、この四角形を作成するには、単純に **outerRectangle** のコピーを作成します。  **outerRectangle** を強調表示し、Ctrl \+ C と Ctrl \+ V でコピーを作成します。  この新しい四角形の名前を "glassCube" と指定します。  
-  
-8.  **必要に応じて glassCube 位置を変更します。** **glassCube** がボタンを覆う位置にない場合は、覆う位置までドラッグします。  
-  
-9. **glassCube に outerRectangle とは少しだけ異なる外観を指定します。** **glassCube** のプロパティを変更します。  まず、<xref:System.Windows.Shapes.Rectangle.RadiusX%2A> プロパティと <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> プロパティを 10 に変更し、<xref:System.Windows.Shapes.Shape.StrokeThickness%2A> を 2 に変更します。  
-  
-     ![glassCube の外観設定](../../../../docs/framework/wpf/controls/media/custom-button-blend-glasscubeappearance.gif "custom\_button\_blend\_GlassCubeAppearance")  
-  
-10. **glassCube をグラスのような外観にします。** <xref:System.Windows.Shapes.Shape.Fill%2A> をグラスのような外観にするには、75% 不透明の線形グラデーションを使用し、色は白と透明とをほとんど同じような間隔で 6 回交互に入れ替えます。  グラデーション終了位置の設定値は次のようになります。  
-  
-    -   グラデーション終了位置 1: 白、アルファ値 75%  
-  
-    -   グラデーション終了位置 2: 透明  
-  
-    -   グラデーション終了位置 3: 白、アルファ値 75%  
-  
-    -   グラデーション終了位置 4: 透明  
-  
-    -   グラデーション終了位置 5: 白、アルファ値 75%  
-  
-    -   グラデーション終了位置 6: 透明  
-  
-     これで、"波打つ" グラスの外観になります。  
-  
-     ![グラスのような四角形](../../../../docs/framework/wpf/controls/media/custom-button-blend-glassrectangleproperties2.png "custom\_button\_blend\_glassRectangleProperties2")  
-  
-11. **グラス レイヤーを非表示にします。**グラスのようなレイヤーの外観はこれで確認できたので、**\[プロパティ\] パネル**の **\[表示\] ペイン**に移動し、\[不透明度\] を 0% にして非表示にします。  ここから先では、グラス レイヤーを操作するのに、プロパティ トリガーとイベントを使用します。  
-  
-     ![グラス四角形を非表示にする方法](../../../../docs/framework/wpf/controls/media/custom-button-glassrectangleproperties3.gif "custom\_button\_glassRectangleProperties3")  
-  
-## ボタン動作のカスタマイズ  
- この時点で、ボタンのプレゼンテーションはテンプレートの変更によってカスタマイズされていますが、マウスオーバーによる外観の変化、フォーカスの受け取り、クリックなどのユーザー操作に対して、通常のボタンのような反応はしません。次の 2 つの手順で、こうした動作をカスタム ボタンに組み込む方法を説明します。  まず、簡単なプロパティ トリガーを使用し、その後にイベント トリガーやアニメーションを追加します。  
-  
-#### プロパティ トリガーを設定するには  
-  
-1.  **新しいプロパティ トリガーを作成します。** **\[glassCube\]** が選択された状態で、**\[トリガー\]** パネルで **\[\+ プロパティ\]** をクリックします \(次の手順の下の図を参照してください\)。  これにより、既定のプロパティ トリガーを持つプロパティ トリガーが作成されます。  
-  
-2.  **IsMouseOver をトリガーによって使用されるプロパティにします。**プロパティを <xref:System.Windows.UIElement.IsMouseOver%2A> に変更します。  これにより、<xref:System.Windows.UIElement.IsMouseOver%2A> プロパティが `true` になる \(ユーザーがマウスでボタンをポイントする\) と、プロパティ トリガーがアクティブになります。  
-  
-     ![プロパティでトリガーを設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger.png "custom\_button\_blend\_IsMousedOverPropertyTrigger")  
-  
-3.  **IsMouseOver で glassCube の不透明度 100% をトリガーします。** **\[トリガー記録オン\]** と表示されていることを確認します \(前の図を参照\)。  これは、記録がオンの間に **glassCube** のプロパティ値に行われるあらゆる変更が、<xref:System.Windows.UIElement.IsMouseOver%2A> が `true` の場合に実行されるアクションになることを意味します。  記録中に、**glassCube** の <xref:System.Windows.UIElement.Opacity%2A> を 100% に変更します。  
-  
-     ![ボタンの不透明度を設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger2.gif "custom\_button\_blend\_IsMousedOverPropertyTrigger2")  
-  
-     これで、最初のプロパティ トリガーが作成されました。  エディターの **\[トリガー\]** パネルに、<xref:System.Windows.UIElement.Opacity%2A> が 100% に変更されたことが記録されたことを確認します。  
-  
-     ![&#91;トリガー&#93; パネル](../../../../docs/framework/wpf/controls/media/custom-button-blend-propertytriggerinfo.png "custom\_button\_blend\_PropertyTriggerInfo")  
-  
-     F5 キーを押してアプリケーションを実行し、マウス ポインターをボタンに合わせたり、ボタンから離したりします。  ボタンにマウス ポインターを合わせるとグラス レイヤーが現れ、離すと消えることを確認します。  
-  
-4.  **IsMouseOver でストローク値の変更をトリガーします。**他のアクションを <xref:System.Windows.UIElement.IsMouseOver%2A> トリガーと関連付けてみましょう。  記録が続行されている間、選択を **glassCube** から **outerRectangle** に切り替えます。  次に、**outerRectangle** の <xref:System.Windows.Shapes.Shape.Stroke%2A> をカスタム式 "{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" に設定します。  これにより、<xref:System.Windows.Shapes.Shape.Stroke%2A> が、ボタンによって使用される通常の強調表示色に設定されます。  F5 キーを押し、マウスをボタンに合わせたときの効果を確認します。  
-  
-     ![ストロークを強調表示色に設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger3.png "custom\_button\_blend\_IsMousedOverPropertyTrigger3")  
-  
-5.  **IsMouseOver でぼやけたテキストをトリガーします。** <xref:System.Windows.UIElement.IsMouseOver%2A> プロパティ トリガーにアクションをもう 1 つ追加します。  グラスがボタンを覆ったときに、ボタンのコンテンツが少しぼやけるようにします。  これを行うには、ぼかしの <xref:System.Windows.Media.Effects.BitmapEffect> を <xref:System.Windows.Controls.ContentPresenter> \(**myContentPresenter**\) に適用します。  
-  
-     ![ボタンの内容をぼかす方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-propertytriggerwithbitmapeffect.png "custom\_button\_blend\_PropertyTriggerWithBitMapEffect")  
+5.  <span data-ttu-id="feb60-167">**ContentPresenter を一番上に移動:**この時点では、可能であればテキスト"Button"ができなくなった場合は表示されないことです。</span><span class="sxs-lookup"><span data-stu-id="feb60-167">**Move ContentPresenter to the top:** At this point, it is possible that the text "Button" will not be visible any longer.</span></span> <span data-ttu-id="feb60-168">これは場合、これはため**において**の上には、 **myContentPresenter**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-168">If this is so, this is because **innerRectangle** is on top of the **myContentPresenter**.</span></span> <span data-ttu-id="feb60-169">この問題を解決するにはドラッグ**myContentPresenter**下**において**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-169">To fix this, drag **myContentPresenter** below **innerRectangle**.</span></span> <span data-ttu-id="feb60-170">四角形の位置を変更し、 **myContentPresenter**に次のようになります。</span><span class="sxs-lookup"><span data-stu-id="feb60-170">Reposition rectangles and **myContentPresenter** to look similar to below.</span></span>  
   
     > [!NOTE]
-    >  <xref:System.Windows.Media.Effects.BitmapEffect> を検索する前の状態に **\[プロパティ\]** パネルを戻すには、**\[検索\]** ボックスのテキストをクリアします。  
+    >  <span data-ttu-id="feb60-171">また、配置することも**myContentPresenter**上を右クリックして、キーを押して**送信転送**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-171">Alternatively, you can also position **myContentPresenter** on top by right-clicking it and pressing **Send Forward**.</span></span>  
   
-     ここまでの段階では、プロパティ トリガーにいくつかのアクションを関連付けて、マウス ポインターがボタン領域に出入りしたときの強調表示動作を作成しました。  もう 1 つの一般的なボタン動作は、フォーカスがあるとき \(クリックされた後など\) の強調表示です。  このような動作を追加するには、<xref:System.Windows.UIElement.IsFocused%2A> プロパティに別のプロパティ トリガーを追加します。  
+     <span data-ttu-id="feb60-172">![別のボタンの上に 1 つのボタンを移動する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-innerrectangle2.png "custom_button_blend_innerRectangle2")</span><span class="sxs-lookup"><span data-stu-id="feb60-172">![How to move one button on top of another button](../../../../docs/framework/wpf/controls/media/custom-button-blend-innerrectangle2.png "custom_button_blend_innerRectangle2")</span></span>  
   
-6.  **IsFocused のプロパティ トリガーを作成します。** <xref:System.Windows.UIElement.IsMouseOver%2A> の場合と同じ手順で \(このセクションの最初の手順を参照\)、<xref:System.Windows.UIElement.IsFocused%2A> プロパティにプロパティ トリガーをもう 1 つ作成します。  **\[トリガー記録オン\]** の間、次のアクションをトリガーに追加します。  
+6.  <span data-ttu-id="feb60-173">**においての外観を変更:**設定、 <xref:System.Windows.Shapes.Rectangle.RadiusX%2A>、 <xref:System.Windows.Shapes.Rectangle.RadiusY%2A>、および<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>20 の値。</span><span class="sxs-lookup"><span data-stu-id="feb60-173">**Change the look of innerRectangle:** Set the <xref:System.Windows.Shapes.Rectangle.RadiusX%2A>, <xref:System.Windows.Shapes.Rectangle.RadiusY%2A>, and <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> values to 20.</span></span> <span data-ttu-id="feb60-174">また、設定、<xref:System.Windows.Shapes.Shape.Fill%2A>カスタム式"{TemplateBinding"バック グラウンド} を使用して、テンプレートの背景に) を設定および<xref:System.Windows.Shapes.Shape.Stroke%2A>「透過的」にします。</span><span class="sxs-lookup"><span data-stu-id="feb60-174">In addition, set the <xref:System.Windows.Shapes.Shape.Fill%2A> to the background of the template using the custom expression "{TemplateBinding Background}" ) and set <xref:System.Windows.Shapes.Shape.Stroke%2A> to "transparent".</span></span> <span data-ttu-id="feb60-175">注意しての設定、<xref:System.Windows.Shapes.Shape.Fill%2A>と<xref:System.Windows.Shapes.Shape.Stroke%2A>の**において**は逆の場合の**サイズ**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-175">Notice that the settings for the <xref:System.Windows.Shapes.Shape.Fill%2A> and <xref:System.Windows.Shapes.Shape.Stroke%2A> of **innerRectangle** are the opposite of those for **outerRectangle**.</span></span>  
   
-    -   **glassCube** の <xref:System.Windows.UIElement.Opacity%2A> を 100% にする。  
+     <span data-ttu-id="feb60-176">![四角形の外観を変更する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-glassrectangleproperties1.png "custom_button_blend_glassRectangleProperties1")</span><span class="sxs-lookup"><span data-stu-id="feb60-176">![How to change the appearance of a rectangle](../../../../docs/framework/wpf/controls/media/custom-button-blend-glassrectangleproperties1.png "custom_button_blend_glassRectangleProperties1")</span></span>  
   
-    -   **outerRectangle** の <xref:System.Windows.Shapes.Shape.Stroke%2A> をカスタム値 "{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" に設定する。  
+7.  <span data-ttu-id="feb60-177">**上部でガラス レイヤーを追加:**ボタンの外観のカスタマイズの最後の部分は上部でガラス レイヤーを追加します。</span><span class="sxs-lookup"><span data-stu-id="feb60-177">**Add a glass layer on top:** The final piece of customizing the look of the button is to add a glass layer on top.</span></span> <span data-ttu-id="feb60-178">このグラス レイヤーは、3 つ目の四角形で構成されます。</span><span class="sxs-lookup"><span data-stu-id="feb60-178">This glass layer consists of a third rectangle.</span></span> <span data-ttu-id="feb60-179">グラス四角形がディメンションに似ています虫眼鏡ボタン全体を対象とは、ため、**サイズ**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-179">Because the glass will cover the entire button, the glass rectangle is similar in dimensions to the **outerRectangle**.</span></span> <span data-ttu-id="feb60-180">そのためのコピーするだけで四角形を作成、**サイズ**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-180">Therefore, create the rectangle by simply making a copy of the **outerRectangle**.</span></span> <span data-ttu-id="feb60-181">強調表示**サイズ**CTRL + C と CTRL + V を使用して、コピーを作成するとします。</span><span class="sxs-lookup"><span data-stu-id="feb60-181">Highlight **outerRectangle** and use CTRL+C and CTRL+V to make a copy.</span></span> <span data-ttu-id="feb60-182">この新しい四角形"glassCube"の名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="feb60-182">Name this new rectangle "glassCube".</span></span>  
   
- このチュートリアルの最後の手順として、ボタンにアニメーションを追加します。  ボタンのアニメーションはイベントによりトリガーされます。具体的には <xref:System.Windows.UIElement.MouseEnter> イベントと <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントです。  
+8.  <span data-ttu-id="feb60-183">**GlassCube の位置を変更して必要に応じて:**場合**glassCube**は全体のボタンに対応するように配置されていない、位置にドラッグします。</span><span class="sxs-lookup"><span data-stu-id="feb60-183">**Reposition glassCube if necessary:** If **glassCube** is not already positioned so that it covers the entire button, drag it into position.</span></span>  
   
-#### イベント トリガーとアニメーションを使用して対話機能を追加するには  
+9. <span data-ttu-id="feb60-184">**GlassCube サイズよりも若干異なる図形に付ける:**のプロパティを変更**glassCube**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-184">**Give glassCube a slightly different shape than outerRectangle:** Change the properties of **glassCube**.</span></span> <span data-ttu-id="feb60-185">変更することによって、まず、<xref:System.Windows.Shapes.Rectangle.RadiusX%2A>と<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>10 プロパティおよび<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>2 にします。</span><span class="sxs-lookup"><span data-stu-id="feb60-185">Start off by changing the <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> and <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> properties to 10 and the <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> to 2.</span></span>  
   
-1.  **MouseEnter イベント トリガーを作成します。**新しいイベント トリガーを追加し、トリガーで使用するイベントとして <xref:System.Windows.UIElement.MouseEnter> を選択します。  
+     <span data-ttu-id="feb60-186">![GlassCube の外観設定](../../../../docs/framework/wpf/controls/media/custom-button-blend-glasscubeappearance.gif "custom_button_blend_GlassCubeAppearance")</span><span class="sxs-lookup"><span data-stu-id="feb60-186">![The appearance settings for glassCube](../../../../docs/framework/wpf/controls/media/custom-button-blend-glasscubeappearance.gif "custom_button_blend_GlassCubeAppearance")</span></span>  
   
-     ![MouseEnter イベント トリガーを作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger.png "custom\_button\_blend\_MouseOverEventTrigger")  
+10. <span data-ttu-id="feb60-187">**GlassCube のガラスのように検索を行う:**設定、 <xref:System.Windows.Shapes.Shape.Fill%2A> 75% 不透明でありが交互に白と透明 6 以上ほぼ均等にある線形グラデーションの間隔の間隔を使用してガラスのような外観にします。</span><span class="sxs-lookup"><span data-stu-id="feb60-187">**Make glassCube look like glass:** Set the <xref:System.Windows.Shapes.Shape.Fill%2A> to a glassy look by  using a linear gradient that is 75% opaque and alternates between the color White and Transparent over 6 approximately evenly spaced intervals.</span></span> <span data-ttu-id="feb60-188">これは、グラデーションの終了位置に設定する新機能です。</span><span class="sxs-lookup"><span data-stu-id="feb60-188">This is what to set the gradient stops to:</span></span>  
   
-2.  **アニメーション タイムラインを作成します。**次に、アニメーション タイムラインを <xref:System.Windows.UIElement.MouseEnter> イベントに関連付けます。  
+    -   <span data-ttu-id="feb60-189">グラデーションの分岐点 1: 白、75% のアルファ値</span><span class="sxs-lookup"><span data-stu-id="feb60-189">Gradient Stop 1: White with Alpha value of 75%</span></span>  
   
-     ![アニメーション タイムラインをイベントに追加する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger2.png "custom\_button\_blend\_MouseOverEventTrigger2")  
+    -   <span data-ttu-id="feb60-190">グラデーションの分岐点 2: 透過的な</span><span class="sxs-lookup"><span data-stu-id="feb60-190">Gradient Stop 2: Transparent</span></span>  
   
-     **\[OK\]** をクリックして新しいタイムラインを作成すると、**\[タイムライン パネル\]** が表示され、"Timeline recording is on" がデザイン パネルに表示されます。  これは、タイムラインでのプロパティ変更の記録を開始できることを示しています \(プロパティ変更のアニメーション化\)。  
+    -   <span data-ttu-id="feb60-191">グラデーションの分岐点 3: 白、75% のアルファ値</span><span class="sxs-lookup"><span data-stu-id="feb60-191">Gradient Stop 3: White with Alpha value of 75%</span></span>  
+  
+    -   <span data-ttu-id="feb60-192">グラデーションの分岐点 4: 透過的な</span><span class="sxs-lookup"><span data-stu-id="feb60-192">Gradient Stop 4: Transparent</span></span>  
+  
+    -   <span data-ttu-id="feb60-193">グラデーションの分岐点 5: 白、75% のアルファ値</span><span class="sxs-lookup"><span data-stu-id="feb60-193">Gradient Stop 5: White with Alpha value of 75%</span></span>  
+  
+    -   <span data-ttu-id="feb60-194">グラデーションの分岐点 6: 透過的な</span><span class="sxs-lookup"><span data-stu-id="feb60-194">Gradient Stop 6: Transparent</span></span>  
+  
+     <span data-ttu-id="feb60-195">これには、「波線」グラスの外観が作成されます。</span><span class="sxs-lookup"><span data-stu-id="feb60-195">This creates a "wavy" glass look.</span></span>  
+  
+     <span data-ttu-id="feb60-196">![ガラスのようなする四角形](../../../../docs/framework/wpf/controls/media/custom-button-blend-glassrectangleproperties2.png "custom_button_blend_glassRectangleProperties2")</span><span class="sxs-lookup"><span data-stu-id="feb60-196">![A rectangle that that looks like glass](../../../../docs/framework/wpf/controls/media/custom-button-blend-glassrectangleproperties2.png "custom_button_blend_glassRectangleProperties2")</span></span>  
+  
+11. <span data-ttu-id="feb60-197">**グラス レイヤーを非表示に:**になったので、ガラスのようなレイヤーの外観が表示されたら、移動、**外観ウィンドウ**の**プロパティ パネル**し、非表示にする 0% 不透明度を設定します。</span><span class="sxs-lookup"><span data-stu-id="feb60-197">**Hide the glass layer:** Now that you see what the glassy layer looks like, go into the **Appearance pane** of the **Properties panel** and set the Opacity to 0% to hide it.</span></span> <span data-ttu-id="feb60-198">セクションで、事前プロパティ トリガーとイベントを表示およびグラス レイヤーを操作に使用されます。</span><span class="sxs-lookup"><span data-stu-id="feb60-198">In the sections ahead, we'll use property triggers and events to show and manipulate the glass layer.</span></span>  
+  
+     <span data-ttu-id="feb60-199">![グラス四角形を非表示にする方法](../../../../docs/framework/wpf/controls/media/custom-button-glassrectangleproperties3.gif "custom_button_glassRectangleProperties3")</span><span class="sxs-lookup"><span data-stu-id="feb60-199">![How to hide the glass rectangle](../../../../docs/framework/wpf/controls/media/custom-button-glassrectangleproperties3.gif "custom_button_glassRectangleProperties3")</span></span>  
+  
+## <a name="customize-the-button-behavior"></a><span data-ttu-id="feb60-200">ボタンの動作をカスタマイズします。</span><span class="sxs-lookup"><span data-stu-id="feb60-200">Customize the Button Behavior</span></span>  
+ <span data-ttu-id="feb60-201">この時点で、そのテンプレートを編集して、ボタンの表示をカスタマイズしているが、ボタンは (たとえば、マウス カーソルを置いての外観を変更する、受信、フォーカスおよび をクリックします。) の通常のボタンはユーザーの操作に反応しません次の 2 つの手順では、カスタム ボタンに上記のような動作を作成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="feb60-201">At this point, you have customized the presentation of the button by editing its template, but the button does not react to user actions as typical buttons do (for example, changing appearance upon mouse-over, receiving focus, and clicking.) The next two procedures show how to build behaviors like these into the custom button.</span></span> <span data-ttu-id="feb60-202">単純なプロパティ トリガーで起動し、イベントのトリガーとアニメーションを追加おします。</span><span class="sxs-lookup"><span data-stu-id="feb60-202">We'll start with simple property triggers, and then add event triggers and animations.</span></span>  
+  
+#### <a name="to-set-property-triggers"></a><span data-ttu-id="feb60-203">プロパティを設定するには、次のようにトリガーします。</span><span class="sxs-lookup"><span data-stu-id="feb60-203">To set property triggers</span></span>  
+  
+1.  <span data-ttu-id="feb60-204">**新しいプロパティ トリガーの作成:**で**glassCube**をクリックして選択すると、 **+ プロパティ**で、**トリガー**パネル (次の手順を次の図を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="feb60-204">**Create a new property trigger:** With **glassCube** selected, click **+ Property** in the **Triggers** panel (see the figure that follows the next step).</span></span> <span data-ttu-id="feb60-205">既定のプロパティ トリガー プロパティ トリガーが作成されます。</span><span class="sxs-lookup"><span data-stu-id="feb60-205">This creates a property trigger with a default property trigger.</span></span>  
+  
+2.  <span data-ttu-id="feb60-206">**ように、トリガーで使用されるプロパティの IsMouseOver:**プロパティを変更<xref:System.Windows.UIElement.IsMouseOver%2A>です。</span><span class="sxs-lookup"><span data-stu-id="feb60-206">**Make IsMouseOver the property used by the trigger:** Change the property to <xref:System.Windows.UIElement.IsMouseOver%2A>.</span></span> <span data-ttu-id="feb60-207">これにより、アクティブ化するときにプロパティ トリガー、<xref:System.Windows.UIElement.IsMouseOver%2A>プロパティは`true`(ときに、ユーザーが指す、マウスのボタン)。</span><span class="sxs-lookup"><span data-stu-id="feb60-207">This makes the property trigger activate when the <xref:System.Windows.UIElement.IsMouseOver%2A> property is `true` (when the user points to the button with the mouse).</span></span>  
+  
+     <span data-ttu-id="feb60-208">![プロパティでトリガーを設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger.png "custom_button_blend_IsMousedOverPropertyTrigger")</span><span class="sxs-lookup"><span data-stu-id="feb60-208">![How to set a trigger on a property](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger.png "custom_button_blend_IsMousedOverPropertyTrigger")</span></span>  
+  
+3.  <span data-ttu-id="feb60-209">**IsMouseOver glassCube の 100% の不透明度のトリガー:**ことに注意して、**トリガーの記録がオン**(上記の図を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="feb60-209">**IsMouseOver triggers opacity of 100% for glassCube:** Notice that the **Trigger recording is on** (see the preceding figure).</span></span> <span data-ttu-id="feb60-210">つまり、このプロパティの値に加えた変更はすべて**glassCube**の記録が入っているときに行われるときにアクションなります<xref:System.Windows.UIElement.IsMouseOver%2A>は`true`します。</span><span class="sxs-lookup"><span data-stu-id="feb60-210">This means that any changes you make to the property values of **glassCube** while recording is on will become an action that takes place when <xref:System.Windows.UIElement.IsMouseOver%2A> is `true`.</span></span> <span data-ttu-id="feb60-211">記録中は、変更、<xref:System.Windows.UIElement.Opacity%2A>の**glassCube**を 100% にします。</span><span class="sxs-lookup"><span data-stu-id="feb60-211">While recording, change the <xref:System.Windows.UIElement.Opacity%2A> of **glassCube** to 100%.</span></span>  
+  
+     <span data-ttu-id="feb60-212">![ボタンの不透明度を設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger2.gif "custom_button_blend_IsMousedOverPropertyTrigger2")</span><span class="sxs-lookup"><span data-stu-id="feb60-212">![How to set the opacity of a button](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger2.gif "custom_button_blend_IsMousedOverPropertyTrigger2")</span></span>  
+  
+     <span data-ttu-id="feb60-213">最初のプロパティ トリガーが作成されました。</span><span class="sxs-lookup"><span data-stu-id="feb60-213">You have now created your first property trigger.</span></span> <span data-ttu-id="feb60-214">注意して、**トリガー パネル**エディターが記録されている、 <xref:System.Windows.UIElement.Opacity%2A> 100% に変更されます。</span><span class="sxs-lookup"><span data-stu-id="feb60-214">Notice that the **Triggers panel** of the editor has recorded the <xref:System.Windows.UIElement.Opacity%2A> being changed to 100%.</span></span>  
+  
+     <span data-ttu-id="feb60-215">![[トリガー] パネル](../../../../docs/framework/wpf/controls/media/custom-button-blend-propertytriggerinfo.png "custom_button_blend_PropertyTriggerInfo")</span><span class="sxs-lookup"><span data-stu-id="feb60-215">![The "Triggers" panel](../../../../docs/framework/wpf/controls/media/custom-button-blend-propertytriggerinfo.png "custom_button_blend_PropertyTriggerInfo")</span></span>  
+  
+     <span data-ttu-id="feb60-216">F5 キーを押して、アプリケーションを実行し、経由で、オフ、ボタンにマウス ポインターを移動します。</span><span class="sxs-lookup"><span data-stu-id="feb60-216">Press F5 to run the application, and move the mouse pointer over and off the button.</span></span> <span data-ttu-id="feb60-217">ときに表示グラス レイヤーが表示されます ボタンをマウスでポイントして、ポインターから離れたときに表示されなくなります。</span><span class="sxs-lookup"><span data-stu-id="feb60-217">You should see the glass layer appear when you mouse-over the button and disappear when the pointer leaves.</span></span>  
+  
+4.  <span data-ttu-id="feb60-218">**値の変更の境界線の描画 IsMouseOver トリガー:**みましょうでその他のいくつかのアクションを関連付ける、<xref:System.Windows.UIElement.IsMouseOver%2A>トリガーします。</span><span class="sxs-lookup"><span data-stu-id="feb60-218">**IsMouseOver triggers stroke value change:** Let's associate some other actions with the <xref:System.Windows.UIElement.IsMouseOver%2A> trigger.</span></span> <span data-ttu-id="feb60-219">記録が引き続き発生する間には、選択した項目を切り替えます**glassCube**に**サイズ**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-219">While recording continues, switch your selection from **glassCube** to **outerRectangle**.</span></span> <span data-ttu-id="feb60-220">設定して、<xref:System.Windows.Shapes.Shape.Stroke%2A>の**サイズ**"以下 {DynamicResource {X:static SystemColors.HighlightBrushKey}}"のカスタム式にします。</span><span class="sxs-lookup"><span data-stu-id="feb60-220">Then set the <xref:System.Windows.Shapes.Shape.Stroke%2A> of **outerRectangle** to the custom expression of "{DynamicResource {x:Static SystemColors.HighlightBrushKey}}".</span></span> <span data-ttu-id="feb60-221">これにより設定、<xref:System.Windows.Shapes.Shape.Stroke%2A>標準的なボタンで使用される色を強調表示します。</span><span class="sxs-lookup"><span data-stu-id="feb60-221">This sets the <xref:System.Windows.Shapes.Shape.Stroke%2A> to the typical highlight color used by buttons.</span></span> <span data-ttu-id="feb60-222">F5 キーを押して、ボタンにマウスを置く場合の効果を確認します。</span><span class="sxs-lookup"><span data-stu-id="feb60-222">Press F5 to see the effect when you mouse over the button.</span></span>  
+  
+     <span data-ttu-id="feb60-223">![ストロークを強調表示色を設定する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger3.png "custom_button_blend_IsMousedOverPropertyTrigger3")</span><span class="sxs-lookup"><span data-stu-id="feb60-223">![How to set the stroke to the highlight color](../../../../docs/framework/wpf/controls/media/custom-button-blend-ismousedoverpropertytrigger3.png "custom_button_blend_IsMousedOverPropertyTrigger3")</span></span>  
+  
+5.  <span data-ttu-id="feb60-224">**IsMouseOver トリガーがぼやけてテキスト:**みましょうを 1 つ以上のアクションを関連付ける、<xref:System.Windows.UIElement.IsMouseOver%2A>プロパティ トリガーします。</span><span class="sxs-lookup"><span data-stu-id="feb60-224">**IsMouseOver triggers blurry text:** Let's associate one more action to the <xref:System.Windows.UIElement.IsMouseOver%2A> property trigger.</span></span> <span data-ttu-id="feb60-225">ボタンのコンテンツを上に表示されたら、ガラスに少しがぼやけて見えるようにします。</span><span class="sxs-lookup"><span data-stu-id="feb60-225">Make the content of the button appear a little blurry when the glass appears over it.</span></span> <span data-ttu-id="feb60-226">これを行うには、適用しても、ぼかし<xref:System.Windows.Media.Effects.BitmapEffect>を<xref:System.Windows.Controls.ContentPresenter>(**myContentPresenter**)。</span><span class="sxs-lookup"><span data-stu-id="feb60-226">To do this, we can apply a blur <xref:System.Windows.Media.Effects.BitmapEffect> to the <xref:System.Windows.Controls.ContentPresenter> (**myContentPresenter**).</span></span>  
+  
+     <span data-ttu-id="feb60-227">![ボタンの内容をぼかす方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-propertytriggerwithbitmapeffect.png "custom_button_blend_PropertyTriggerWithBitMapEffect")</span><span class="sxs-lookup"><span data-stu-id="feb60-227">![How to blur the content of a button](../../../../docs/framework/wpf/controls/media/custom-button-blend-propertytriggerwithbitmapeffect.png "custom_button_blend_PropertyTriggerWithBitMapEffect")</span></span>  
   
     > [!NOTE]
-    >  この表示を見るために、場合によってはウィンドウやパネルの表示サイズを大きくする必要があります。  
+    >  <span data-ttu-id="feb60-228">返される、**プロパティ パネル**バックアップの状態にしたときの検索前に<xref:System.Windows.Media.Effects.BitmapEffect>からのテキストをクリア、**検索ボックス**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-228">To return the **Properties panel** back to what it was before you did the search for <xref:System.Windows.Media.Effects.BitmapEffect>, clear the text from the **Search box**.</span></span>  
   
-     ![タイムライン パネル](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger3.png "custom\_button\_blend\_MouseOverEventTrigger3")  
+     <span data-ttu-id="feb60-229">この時点では、マウスのポインター ボタン領域に出入りしたときの強調表示動作を作成するのにいくつかの関連するアクションがあるプロパティ トリガーを使用しています。</span><span class="sxs-lookup"><span data-stu-id="feb60-229">At this point, we have used a property trigger with several associated actions to create highlighting behavior for when the mouse pointer enters and leaves the button area.</span></span> <span data-ttu-id="feb60-230">ボタンの他の一般的な動作はフォーカスがあるときに強調表示する (がクリックされた後など)。</span><span class="sxs-lookup"><span data-stu-id="feb60-230">Another typical behavior for a button is to highlight when it has focus (as after it is clicked).</span></span> <span data-ttu-id="feb60-231">別のプロパティ トリガーを追加することによってこのような動作を追加できる、<xref:System.Windows.UIElement.IsFocused%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="feb60-231">We can add such behavior by adding another property trigger for the <xref:System.Windows.UIElement.IsFocused%2A> property.</span></span>  
   
-3.  **キーフレームを作成します。**アニメーションを作成するには、アニメーション化するオブジェクトを選択し、タイムライン上に 2 つ以上のキーフレームを作成します。そして、それぞれのキーフレームについて、アニメーションで補間する間隔を示すプロパティ値を設定します。  次の図は、キーフレームの作成過程を示しています。  
+6.  <span data-ttu-id="feb60-232">**IsFocused のプロパティのトリガーの作成:**場合と同じ手順を使用して<xref:System.Windows.UIElement.IsMouseOver%2A>(このセクションの最初の手順を参照) の別のプロパティ トリガーを作成、<xref:System.Windows.UIElement.IsFocused%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="feb60-232">**Create property trigger for IsFocused:** Using the same procedure as for <xref:System.Windows.UIElement.IsMouseOver%2A> (see the first step of this section), create another property trigger for the <xref:System.Windows.UIElement.IsFocused%2A> property.</span></span> <span data-ttu-id="feb60-233">中に**トリガーの記録がオン**トリガーを次のアクションを追加します。</span><span class="sxs-lookup"><span data-stu-id="feb60-233">While **Trigger recording is on**, add the following actions to the trigger:</span></span>  
   
-     ![キーフレームを作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger4.png "custom\_button\_blend\_MouseOverEventTrigger4")  
+    -   <span data-ttu-id="feb60-234">**glassCube**を取得、 <xref:System.Windows.UIElement.Opacity%2A> 100% です。</span><span class="sxs-lookup"><span data-stu-id="feb60-234">**glassCube** gets an <xref:System.Windows.UIElement.Opacity%2A> of 100%.</span></span>  
   
-4.  **このキーフレームで glassCube を縮小します。**2 番目のキーフレームが選択された状態で、**glassCube** のサイズを **\[サイズ変換\]** を使用して元の大きさの 90% に縮小します。  
+    -   <span data-ttu-id="feb60-235">**サイズ**を取得、 <xref:System.Windows.Shapes.Shape.Stroke%2A> "以下 {DynamicResource {X:static SystemColors.HighlightBrushKey}}"のカスタム式の値。</span><span class="sxs-lookup"><span data-stu-id="feb60-235">**outerRectangle** gets a <xref:System.Windows.Shapes.Shape.Stroke%2A> custom expression value of "{DynamicResource {x:Static SystemColors.HighlightBrushKey}}".</span></span>  
   
-     ![ボタンのサイズを縮小する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-sizetransform.png "custom\_button\_blend\_SizeTransform")  
+ <span data-ttu-id="feb60-236">このチュートリアルの最後の手順としては、ボタンに、アニメーションを追加します。</span><span class="sxs-lookup"><span data-stu-id="feb60-236">As the final step in this walkthrough, we will add animations to the button.</span></span> <span data-ttu-id="feb60-237">これらのアニメーションがイベントによってトリガーされます — 具体的には、<xref:System.Windows.UIElement.MouseEnter>と<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。</span><span class="sxs-lookup"><span data-stu-id="feb60-237">These animations will be triggered by events—specifically, the <xref:System.Windows.UIElement.MouseEnter> and <xref:System.Windows.Controls.Primitives.ButtonBase.Click> events.</span></span>  
   
-     F5 キーを押してアプリケーションを実行します。  マウス ポインターをボタンに合わせます。  ボタン上のグラス レイヤーが縮小することを確認します。  
+#### <a name="to-use-event-triggers-and-animations-to-add-interactivity"></a><span data-ttu-id="feb60-238">イベント トリガーとアニメーションを使用して、対話機能を追加するには</span><span class="sxs-lookup"><span data-stu-id="feb60-238">To use event triggers and animations to add interactivity</span></span>  
   
-5.  **イベント トリガーをもう 1 つ作成し、別のアニメーションを関連付けます。**アニメーションをもう 1 つ追加します。  前のイベント トリガー アニメーションを作成するために使用した方法と似た手順を使用します。  
+1.  <span data-ttu-id="feb60-239">**MouseEnter イベント トリガーの作成:**新しいイベント トリガーを追加し、選択<xref:System.Windows.UIElement.MouseEnter>イベントをトリガーに使用するとします。</span><span class="sxs-lookup"><span data-stu-id="feb60-239">**Create a MouseEnter Event Trigger:** Add a new event trigger and select <xref:System.Windows.UIElement.MouseEnter> as the event to use in the trigger.</span></span>  
   
-    1.  新しいイベント トリガーを <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントを使用して作成します。  
+     <span data-ttu-id="feb60-240">![MouseEnter イベント トリガーを作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger.png "custom_button_blend_MouseOverEventTrigger")</span><span class="sxs-lookup"><span data-stu-id="feb60-240">![How to create a MouseEnter event trigger](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger.png "custom_button_blend_MouseOverEventTrigger")</span></span>  
   
-    2.  新しいタイムライン <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントに関連付けます。  
+2.  <span data-ttu-id="feb60-241">**アニメーション タイムラインを作成します。**次に、アニメーション タイムラインを関連付ける、<xref:System.Windows.UIElement.MouseEnter>イベント。</span><span class="sxs-lookup"><span data-stu-id="feb60-241">**Create an animation timeline:** Next, associate an animation timeline to the <xref:System.Windows.UIElement.MouseEnter> event.</span></span>  
   
-     ![新しいタイムラインを作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-clickeventtrigger1.png "custom\_button\_blend\_ClickEventTrigger1")  
+     <span data-ttu-id="feb60-242">![アニメーション タイムラインをイベントに追加する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger2.png "custom_button_blend_MouseOverEventTrigger2")</span><span class="sxs-lookup"><span data-stu-id="feb60-242">![How to add an animation timeline to an event](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger2.png "custom_button_blend_MouseOverEventTrigger2")</span></span>  
   
-    1.  このタイムラインに 2 つのキーフレームを作成します。位置はそれぞれ 0.0 秒と 0.3 秒です。  
+     <span data-ttu-id="feb60-243">キーを押す**[ok]**新しいタイムラインを作成する、**タイムライン パネル**が表示され「タイムラインの記録がオン」に、[デザイン] パネルに表示されます。</span><span class="sxs-lookup"><span data-stu-id="feb60-243">After you press **OK** to create a new timeline, a **Timeline Panel** appears and "Timeline recording is on" is visible in the design panel.</span></span> <span data-ttu-id="feb60-244">つまり、タイムライン (アニメーションのプロパティが変更された) プロパティの変更を記録し始めることができます。</span><span class="sxs-lookup"><span data-stu-id="feb60-244">This means we can start recording property changes in the timeline (animate property changes).</span></span>  
   
-    2.  0.3 秒の位置のキーフレームが強調表示された状態で、**\[回転角度\]** を 360° に設定します。  
+    > [!NOTE]
+    >  <span data-ttu-id="feb60-245">ウィンドウや表示を表示するパネルのサイズを変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="feb60-245">You may need to resize your window and/or panels to see the display.</span></span>  
   
-     ![回転変換を作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-rotatetransform.gif "custom\_button\_blend\_RotateTransform")  
+     <span data-ttu-id="feb60-246">![タイムライン パネル](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger3.png "custom_button_blend_MouseOverEventTrigger3")</span><span class="sxs-lookup"><span data-stu-id="feb60-246">![The timeline panel](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger3.png "custom_button_blend_MouseOverEventTrigger3")</span></span>  
   
-    1.  F5 キーを押してアプリケーションを実行します。  ボタンをクリックします。  グラス レイヤーが回転することを確認します。  
+3.  <span data-ttu-id="feb60-247">**キーフレームを作成する:**アニメーションを作成するには、アニメーション化する、タイムラインで、およびそれらのキーフレームの 2 つ以上のキーフレームを作成、補間するアニメーションを適用するプロパティ値を設定するオブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="feb60-247">**Create a keyframe:** To create an animation, select the object you want to animate, create two or more keyframes on the timeline, and for those keyframes, set the property values you want the animation to interpolate between.</span></span> <span data-ttu-id="feb60-248">次の図では、キーフレームの作成を説明します。</span><span class="sxs-lookup"><span data-stu-id="feb60-248">The following figure guides you through the creation of a keyframe.</span></span>  
   
-## まとめ  
- これで、カスタマイズされたボタンが完成されました。  これには、アプリケーションに存在するすべてのボタンに適用されるボタン テンプレートを使用しました。  テンプレートを編集モードのままにして \(次の図を参照\) 他にもボタンを作成すると、作成されるボタンの動作と外観が、既定のボタンではなくカスタム ボタンに似ていることを確認できます。  
+     <span data-ttu-id="feb60-249">![キーフレームを作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger4.png "custom_button_blend_MouseOverEventTrigger4")</span><span class="sxs-lookup"><span data-stu-id="feb60-249">![How to create a keyframe](../../../../docs/framework/wpf/controls/media/custom-button-blend-mouseovereventtrigger4.png "custom_button_blend_MouseOverEventTrigger4")</span></span>  
   
- ![カスタム ボタン テンプレート](../../../../docs/framework/wpf/controls/media/custom-button-blend-scopeup.gif "custom\_button\_blend\_ScopeUp")  
+4.  <span data-ttu-id="feb60-250">**このキーフレームの glassCube の圧縮:**選択されている 2 番目のキーフレーム、サイズの縮小、 **glassCube**を使用して、フル サイズの 90% を**サイズ変換**です。</span><span class="sxs-lookup"><span data-stu-id="feb60-250">**Shrink glassCube at this keyframe:** With the second keyframe selected, shrink the size of the **glassCube** to 90% of its full size using the **Size Transform**.</span></span>  
   
- ![同じテンプレートを使用する複数のボタン](../../../../docs/framework/wpf/controls/media/custom-button-blend-createmultiplebuttons.png "custom\_button\_blend\_CreateMultipleButtons")  
+     <span data-ttu-id="feb60-251">![ボタンのサイズを縮小する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-sizetransform.png "custom_button_blend_SizeTransform")</span><span class="sxs-lookup"><span data-stu-id="feb60-251">![How to shrink the size of a button](../../../../docs/framework/wpf/controls/media/custom-button-blend-sizetransform.png "custom_button_blend_SizeTransform")</span></span>  
   
- F5 キーを押してアプリケーションを実行します。  ボタンをクリックして、どれも動作が同じであることを確認します。  
+     <span data-ttu-id="feb60-252">F5 キーを押してアプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="feb60-252">Press F5 to run the application.</span></span> <span data-ttu-id="feb60-253">ボタンの上にマウス ポインターを移動します。</span><span class="sxs-lookup"><span data-stu-id="feb60-253">Move the mouse pointer over the button.</span></span> <span data-ttu-id="feb60-254">グラス レイヤーが、ボタンの上に縮小することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="feb60-254">Notice that the glass layer shrinks on top of the button.</span></span>  
   
- 前の手順において、テンプレートのカスタマイズ中に、**innerRectangle** の <xref:System.Windows.Shapes.Shape.Fill%2A> プロパティと **outerRectangle** の <xref:System.Windows.Shapes.Shape.Stroke%2A> プロパティを、テンプレートの背景 \({TemplateBinding Background}\) に設定しました。  このため、個々のボタンの背景色を設定すると、設定した背景が個々のプロパティで使用されます。  ここで、背景を変更してみます。  次の図では、異なるグラデーションが使用されています。  したがって、テンプレートはボタンのようなコントロールの全体的なカスタマイズには便利ですが、テンプレートを使用したコントロールどうしで外観が異なるように変更することは引き続き可能です。  
+5.  <span data-ttu-id="feb60-255">**別のイベント トリガーを作成し、別のアニメーションを関連付ける:** 1 つ以上のアニメーションを追加してみましょう。</span><span class="sxs-lookup"><span data-stu-id="feb60-255">**Create another Event Trigger and associate a different animation with it:** Let's add one more animation.</span></span> <span data-ttu-id="feb60-256">前のイベント トリガー アニメーションを作成するために使用するのと同様の手順を使用します。</span><span class="sxs-lookup"><span data-stu-id="feb60-256">Use a similar procedure to what you used to create the previous event trigger animation:</span></span>  
   
- ![外観が異なる同じテンプレートを含むボタン](../../../../docs/framework/wpf/controls/media/custom-button-blend-blendconclusion.png "custom\_button\_blend\_BlendConclusion")  
+    1.  <span data-ttu-id="feb60-257">新しいイベント トリガーを使用して、作成、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。</span><span class="sxs-lookup"><span data-stu-id="feb60-257">Create a new event trigger using the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event.</span></span>  
   
- ボタン テンプレートをカスタマイズする過程で、Microsoft Expression Blend で次のことを行う方法を学びました。  
+    2.  <span data-ttu-id="feb60-258">新しいタイムライン、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。</span><span class="sxs-lookup"><span data-stu-id="feb60-258">Associate a new timeline with the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event.</span></span>  
   
--   コントロールの外観をカスタマイズする。  
+     <span data-ttu-id="feb60-259">![新しいタイムラインを作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-clickeventtrigger1.png "custom_button_blend_ClickEventTrigger1")</span><span class="sxs-lookup"><span data-stu-id="feb60-259">![How to create a new timeline](../../../../docs/framework/wpf/controls/media/custom-button-blend-clickeventtrigger1.png "custom_button_blend_ClickEventTrigger1")</span></span>  
   
--   プロパティ トリガーを設定する。  プロパティ トリガーは、コントロールに限らずほとんどのオブジェクトでも使用でき、非常に便利です。  
+    1.  <span data-ttu-id="feb60-260">このタイムラインの 2 つのキーフレーム、0.0 秒で 0.3 秒の間隔で 2 つ目を作成します。</span><span class="sxs-lookup"><span data-stu-id="feb60-260">For this timeline, create two keyframes, one at 0.0 seconds and the second one at 0.3 seconds.</span></span>  
   
--   イベント トリガーを設定する。  イベント トリガーは、コントロールに限らずほとんどのオブジェクトでも使用でき、非常に便利です。  
+    2.  <span data-ttu-id="feb60-261">強調表示されている 0.3 の秒の位置、キーフレームを設定、**回転角度**360 度にします。</span><span class="sxs-lookup"><span data-stu-id="feb60-261">With the keyframe at 0.3 seconds highlighted, set the **Rotate Transform Angle** to 360 degrees.</span></span>  
   
--   アニメーションを作成する。  
+     <span data-ttu-id="feb60-262">![回転変換を作成する方法](../../../../docs/framework/wpf/controls/media/custom-button-blend-rotatetransform.gif "custom_button_blend_RotateTransform")</span><span class="sxs-lookup"><span data-stu-id="feb60-262">![How to create a rotate transform](../../../../docs/framework/wpf/controls/media/custom-button-blend-rotatetransform.gif "custom_button_blend_RotateTransform")</span></span>  
   
--   その他 : グラデーションの作成、BitmapEffects の追加、変換の使用、オブジェクトの基本プロパティの設定。  
+    1.  <span data-ttu-id="feb60-263">F5 キーを押してアプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="feb60-263">Press F5 to run the application.</span></span> <span data-ttu-id="feb60-264">ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="feb60-264">Click the button.</span></span> <span data-ttu-id="feb60-265">グラス レイヤーが回転することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="feb60-265">Notice that the glass layer spins around.</span></span>  
   
-## 参照  
- [XAML を使用したボタンの作成](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
- [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)   
- [ビットマップ効果の概要](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)
+## <a name="conclusion"></a><span data-ttu-id="feb60-266">まとめ</span><span class="sxs-lookup"><span data-stu-id="feb60-266">Conclusion</span></span>  
+ <span data-ttu-id="feb60-267">カスタマイズされたボタンが完了しました。</span><span class="sxs-lookup"><span data-stu-id="feb60-267">You have completed a customized button.</span></span> <span data-ttu-id="feb60-268">アプリケーションのすべてのボタンに適用されている button テンプレートを使用してこのしました。</span><span class="sxs-lookup"><span data-stu-id="feb60-268">You did this using a button template that was applied to all buttons in the application.</span></span> <span data-ttu-id="feb60-269">テンプレート編集モードのままにする場合 (次図参照) と他のボタンを作成、外観や動作を既定のボタンではなく、カスタム ボタンのように表示されます。</span><span class="sxs-lookup"><span data-stu-id="feb60-269">If you leave the template editing mode (see the following figure) and create more buttons, you will see that they look and behave like your custom button rather than like the default button.</span></span>  
+  
+ <span data-ttu-id="feb60-270">![カスタム ボタン テンプレート](../../../../docs/framework/wpf/controls/media/custom-button-blend-scopeup.gif "custom_button_blend_ScopeUp")</span><span class="sxs-lookup"><span data-stu-id="feb60-270">![The custom button template](../../../../docs/framework/wpf/controls/media/custom-button-blend-scopeup.gif "custom_button_blend_ScopeUp")</span></span>  
+  
+ <span data-ttu-id="feb60-271">![同じテンプレートを使用する複数のボタン](../../../../docs/framework/wpf/controls/media/custom-button-blend-createmultiplebuttons.png "custom_button_blend_CreateMultipleButtons")</span><span class="sxs-lookup"><span data-stu-id="feb60-271">![Multiple buttons that use the same template](../../../../docs/framework/wpf/controls/media/custom-button-blend-createmultiplebuttons.png "custom_button_blend_CreateMultipleButtons")</span></span>  
+  
+ <span data-ttu-id="feb60-272">F5 キーを押してアプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="feb60-272">Press F5 to run the application.</span></span> <span data-ttu-id="feb60-273">ボタンをクリックし、すべての動作と同じことを確認します。</span><span class="sxs-lookup"><span data-stu-id="feb60-273">Click the buttons and notice how they all behave the same.</span></span>  
+  
+ <span data-ttu-id="feb60-274">テンプレートをカスタマイズしていたときに設定することに注意してください、<xref:System.Windows.Shapes.Shape.Fill%2A>プロパティ**において**と<xref:System.Windows.Shapes.Shape.Stroke%2A>プロパティ**サイズ**テンプレート バック グラウンド ({TemplateBinding バック グラウンド})。</span><span class="sxs-lookup"><span data-stu-id="feb60-274">Remember that while you were customizing the template, you set the <xref:System.Windows.Shapes.Shape.Fill%2A> property of **innerRectangle** and the <xref:System.Windows.Shapes.Shape.Stroke%2A> property **outerRectangle** to the template background ({TemplateBinding Background}).</span></span> <span data-ttu-id="feb60-275">このため、、個々 のボタンの背景色を設定するときに設定した背景は、個々 のプロパティに使用されます。</span><span class="sxs-lookup"><span data-stu-id="feb60-275">Because of this, when you set the background color of the individual buttons, the background you set will be used for those respective properties.</span></span> <span data-ttu-id="feb60-276">これで、背景を変更してください。</span><span class="sxs-lookup"><span data-stu-id="feb60-276">Try changing the backgrounds now.</span></span> <span data-ttu-id="feb60-277">次の図には、さまざまなグラデーションが使用されます。</span><span class="sxs-lookup"><span data-stu-id="feb60-277">In the following figure, different gradients are used.</span></span> <span data-ttu-id="feb60-278">そのため、テンプレートはボタンのようにコントロールの全体的なカスタマイズの場合に便利ですが、テンプレートを使用してコントロールを変更できます互いに異なる外観にします。</span><span class="sxs-lookup"><span data-stu-id="feb60-278">Therefore, although a template is useful for overall customization of controls like button, controls with templates can still be modified to look different from each other.</span></span>  
+  
+ <span data-ttu-id="feb60-279">![同じテンプレートを使用して異なるを参照するボタン](../../../../docs/framework/wpf/controls/media/custom-button-blend-blendconclusion.jpg "custom_button_blend_BlendConclusion")</span><span class="sxs-lookup"><span data-stu-id="feb60-279">![Buttons with the same template that look diferent](../../../../docs/framework/wpf/controls/media/custom-button-blend-blendconclusion.jpg "custom_button_blend_BlendConclusion")</span></span>  
+  
+ <span data-ttu-id="feb60-280">結論として、button テンプレートをカスタマイズする処理を行って Microsoft Expression Blend では、次を行う方法について学習しました。</span><span class="sxs-lookup"><span data-stu-id="feb60-280">In conclusion, in the process of customizing a button template you have learned how to do the following in Microsoft Expression Blend:</span></span>  
+  
+-   <span data-ttu-id="feb60-281">コントロールの外観をカスタマイズします。</span><span class="sxs-lookup"><span data-stu-id="feb60-281">Customize the look of a control.</span></span>  
+  
+-   <span data-ttu-id="feb60-282">プロパティ トリガーを設定します。</span><span class="sxs-lookup"><span data-stu-id="feb60-282">Set property triggers.</span></span> <span data-ttu-id="feb60-283">プロパティ トリガーは、コントロールだけでなく、ほとんどのオブジェクトで使用されることがあるために、非常に便利です。</span><span class="sxs-lookup"><span data-stu-id="feb60-283">Property triggers are very useful because they can be used on most objects, not just controls.</span></span>  
+  
+-   <span data-ttu-id="feb60-284">イベント トリガーを設定します。</span><span class="sxs-lookup"><span data-stu-id="feb60-284">Set event triggers.</span></span> <span data-ttu-id="feb60-285">イベント トリガーは、コントロールだけでなく、ほとんどのオブジェクトで使用されることがあるために、非常に便利です。</span><span class="sxs-lookup"><span data-stu-id="feb60-285">Event triggers are very useful because they can be used on most objects, not just controls.</span></span>  
+  
+-   <span data-ttu-id="feb60-286">アニメーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="feb60-286">Create animations.</span></span>  
+  
+-   <span data-ttu-id="feb60-287">BitmapEffects を追加のグラデーションを作成するその他: し、変換を使用してオブジェクトの基本プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="feb60-287">Miscellaneous: create gradients, add BitmapEffects, use transforms, and set basic properties of objects.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="feb60-288">関連項目</span><span class="sxs-lookup"><span data-stu-id="feb60-288">See Also</span></span>  
+ [<span data-ttu-id="feb60-289">XAML を使用したボタンの作成</span><span class="sxs-lookup"><span data-stu-id="feb60-289">Create a Button by Using XAML</span></span>](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)  
+ [<span data-ttu-id="feb60-290">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="feb60-290">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="feb60-291">アニメーションの概要</span><span class="sxs-lookup"><span data-stu-id="feb60-291">Animation Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [<span data-ttu-id="feb60-292">純色およびグラデーションによる塗りつぶしの概要</span><span class="sxs-lookup"><span data-stu-id="feb60-292">Painting with Solid Colors and Gradients Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
+ [<span data-ttu-id="feb60-293">ビットマップ効果の概要</span><span class="sxs-lookup"><span data-stu-id="feb60-293">Bitmap Effects Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)

@@ -1,44 +1,40 @@
 ---
-title: "(Visual Basic) の段落のテキストを取得して |Microsoft ドキュメント"
+title: "(Visual Basic) の段落のテキストを取得します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 095fa0d9-7b1b-4cbb-9c13-e2c9d8923d31
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 147c8e60e44fd71869df84cbee9836213d96c0fd
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 492fc0dffd007f0ccdb7454c62e86cac753ca06b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="retrieving-the-text-of-the-paragraphs-visual-basic"></a>(Visual Basic) の段落のテキストを取得します。
-この例は前の例に基づいて[段落とそのスタイル (Visual Basic) を取得する](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)です。 この新しい例では、各段落のテキストを文字列として取得します。  
+# <a name="retrieving-the-text-of-the-paragraphs-visual-basic"></a><span data-ttu-id="e49f9-102">(Visual Basic) の段落のテキストを取得します。</span><span class="sxs-lookup"><span data-stu-id="e49f9-102">Retrieving the Text of the Paragraphs (Visual Basic)</span></span>
+<span data-ttu-id="e49f9-103">この例は、前の例に基づいて[段落とそのスタイル (Visual Basic) を取得する](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)です。</span><span class="sxs-lookup"><span data-stu-id="e49f9-103">This example builds on the previous example, [Retrieving the Paragraphs and Their Styles (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md).</span></span> <span data-ttu-id="e49f9-104">この新しい例では、各段落のテキストを文字列として取得します。</span><span class="sxs-lookup"><span data-stu-id="e49f9-104">This new example retrieves the text of each paragraph as a string.</span></span>  
   
- テキストを取得するため、この例で追加するクエリでは、匿名型のコレクションを反復処理し、新しいメンバー `Text` を追加して匿名型の新しいコレクションを射影します。 使用して、<xref:System.Linq.Enumerable.Aggregate%2A>標準クエリ演算子を&1; つの文字列に複数の文字列を連結します</xref:System.Linq.Enumerable.Aggregate%2A>。  
+ <span data-ttu-id="e49f9-105">テキストを取得するため、この例で追加するクエリでは、匿名型のコレクションを反復処理し、新しいメンバー `Text` を追加して匿名型の新しいコレクションを射影します。</span><span class="sxs-lookup"><span data-stu-id="e49f9-105">To retrieve the text, this example adds an additional query that iterates through the collection of anonymous types and projects a new collection of an anonymous type with the addition of a new member, `Text`.</span></span> <span data-ttu-id="e49f9-106">また、<xref:System.Linq.Enumerable.Aggregate%2A> 標準クエリ演算子を使用して、複数の文字列を 1 つの文字列に連結します。</span><span class="sxs-lookup"><span data-stu-id="e49f9-106">It uses the <xref:System.Linq.Enumerable.Aggregate%2A> standard query operator to concatenate multiple strings into one string.</span></span>  
   
- この手法 (まず匿名型のコレクションに射影した後、このコレクションを使用して匿名型の新しいコレクションに射影する) は、一般的で便利な表現形式です。 最初の匿名型に射影せずに、このクエリを記述することも可能です。 また、レイジー評価のため、その射影を行うことによって追加使用される処理能力は大きくありません。 この表現形式を使用すると、ヒープ上に作成される存続期間の短いオブジェクトが増加しますが、それによってパフォーマンスが大幅に低下することはありません。  
+ <span data-ttu-id="e49f9-107">この手法 (まず匿名型のコレクションに射影した後、このコレクションを使用して匿名型の新しいコレクションに射影する) は、一般的で便利な表現形式です。</span><span class="sxs-lookup"><span data-stu-id="e49f9-107">This technique (that is, first projecting to a collection of an anonymous type, then using this collection to project to a new collection of an anonymous type) is a common and useful idiom.</span></span> <span data-ttu-id="e49f9-108">最初の匿名型に射影せずに、このクエリを記述することも可能です。</span><span class="sxs-lookup"><span data-stu-id="e49f9-108">This query could have been written without projecting to the first anonymous type.</span></span> <span data-ttu-id="e49f9-109">また、レイジー評価のため、その射影を行うことによって追加使用される処理能力は大きくありません。</span><span class="sxs-lookup"><span data-stu-id="e49f9-109">However, because of lazy evaluation, doing so does not use much additional processing power.</span></span> <span data-ttu-id="e49f9-110">この表現形式を使用すると、ヒープ上に作成される存続期間の短いオブジェクトが増加しますが、それによってパフォーマンスが大幅に低下することはありません。</span><span class="sxs-lookup"><span data-stu-id="e49f9-110">The idiom creates more short lived objects on the heap, but this does not substantially degrade performance.</span></span>  
   
- もちろん、段落、各段落のスタイル、および各段落のテキストを取得する機能を持つ&1; つのクエリを記述することも可能です。 しかし、多くの場合、比較的複雑なクエリは複数のクエリに分割した方が便利です。コードのモジュール性が高まり、保守が簡単になるためです。 また、クエリの一部を再利用する必要がある場合、クエリを分割して記述すると、リファクタリングが容易になります。  
+ <span data-ttu-id="e49f9-111">もちろん、段落、各段落のスタイル、および各段落のテキストを取得する機能を持つ 1 つのクエリを記述することも可能です。</span><span class="sxs-lookup"><span data-stu-id="e49f9-111">Of course, it would be possible to write a single query that contains the functionality to retrieve the paragraphs, the style of each paragraph, and the text of each paragraph.</span></span> <span data-ttu-id="e49f9-112">しかし、多くの場合、比較的複雑なクエリは複数のクエリに分割した方が便利です。コードのモジュール性が高まり、保守が簡単になるためです。</span><span class="sxs-lookup"><span data-stu-id="e49f9-112">However, it often is useful to break up a more complicated query into multiple queries because the resulting code is more modular and easier to maintain.</span></span> <span data-ttu-id="e49f9-113">また、クエリの一部を再利用する必要がある場合、クエリを分割して記述すると、リファクタリングが容易になります。</span><span class="sxs-lookup"><span data-stu-id="e49f9-113">Furthermore, if you need to reuse a portion of the query, it is easier to refactor if the queries are written in this manner.</span></span>  
   
- これらのクエリを連結する」で詳しく説明されている処理モデルを使用して[チュートリアル: 遅延実行 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)します。  
+ <span data-ttu-id="e49f9-114">これらのクエリでは、一緒にチェーンされたトピックで詳細に調べる処理モデルを使用して[チュートリアル: 遅延実行 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)です。</span><span class="sxs-lookup"><span data-stu-id="e49f9-114">These queries, which are chained together, use the processing model that is examined in detail in the topic [Tutorial: Deferred Execution (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md).</span></span>  
   
-## <a name="example"></a>例  
- この例では、WordprocessingML ドキュメントを処理して、要素ノード、スタイル名、および各段落のテキストを特定します。 この例は、このチュートリアルのこれまでの例に基づいています。 新しいクエリについては、以下のコード内にあるコメントで説明が示されています。  
+## <a name="example"></a><span data-ttu-id="e49f9-115">例</span><span class="sxs-lookup"><span data-stu-id="e49f9-115">Example</span></span>  
+ <span data-ttu-id="e49f9-116">この例では、WordprocessingML ドキュメントを処理して、要素ノード、スタイル名、および各段落のテキストを特定します。</span><span class="sxs-lookup"><span data-stu-id="e49f9-116">This example processes a WordprocessingML document, determining the element node, the style name, and the text of each paragraph.</span></span> <span data-ttu-id="e49f9-117">この例は、このチュートリアルのこれまでの例に基づいています。</span><span class="sxs-lookup"><span data-stu-id="e49f9-117">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="e49f9-118">新しいクエリについては、以下のコード内にあるコメントで説明が示されています。</span><span class="sxs-lookup"><span data-stu-id="e49f9-118">The new query is called out in comments in the code below.</span></span>  
   
- この例のソース ドキュメントを作成する方法の詳細については、次を参照してください。[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)です。  
+ <span data-ttu-id="e49f9-119">この例のソース ドキュメントを作成する方法の詳細については、次を参照してください。[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)です。</span><span class="sxs-lookup"><span data-stu-id="e49f9-119">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
   
- この例では、WindowsBase アセンブリのクラスを使用します。 内の型を使用して、<xref:System.IO.Packaging?displayProperty=fullName>名前空間</xref:System.IO.Packaging?displayProperty=fullName>。  
+ <span data-ttu-id="e49f9-120">この例では、WindowsBase アセンブリのクラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="e49f9-120">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="e49f9-121">また、<xref:System.IO.Packaging?displayProperty=nameWithType> 名前空間内の型を使用します。</span><span class="sxs-lookup"><span data-stu-id="e49f9-121">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -129,7 +125,7 @@ Module Module1
 End Module  
 ```  
   
- この例で、次の出力に示されるドキュメントに適用すると生成[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)です。  
+ <span data-ttu-id="e49f9-122">この例には、次で説明されているドキュメントに適用されたときに出力が生成されます。[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)です。</span><span class="sxs-lookup"><span data-stu-id="e49f9-122">This example produces the following output when applied to the document described in [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -149,11 +145,11 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
-## <a name="next-steps"></a>次の手順  
- 次の例は、の代わりに、拡張メソッドを使用する方法を示しています<xref:System.Linq.Enumerable.Aggregate%2A>、単一の文字列に複数の文字列を連結します。</xref:System.Linq.Enumerable.Aggregate%2A> 。  
+## <a name="next-steps"></a><span data-ttu-id="e49f9-123">次の手順</span><span class="sxs-lookup"><span data-stu-id="e49f9-123">Next Steps</span></span>  
+ <span data-ttu-id="e49f9-124">次の例では、<xref:System.Linq.Enumerable.Aggregate%2A> の代わりに拡張メソッドを使用して、複数の文字列を 1 つの文字列に連結する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e49f9-124">The next example shows how to use an extension method, instead of <xref:System.Linq.Enumerable.Aggregate%2A>, to concatenate multiple strings into a single string.</span></span>  
   
--   [拡張メソッド (Visual Basic) を使用してリファクタリングします。](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
+-   [<span data-ttu-id="e49f9-125">拡張メソッド (Visual Basic) を使用したリファクタリング</span><span class="sxs-lookup"><span data-stu-id="e49f9-125">Refactoring Using an Extension Method (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
   
-## <a name="see-also"></a>関連項目  
- [チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)   
- [遅延実行とレイジー評価 linq to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="e49f9-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="e49f9-126">See Also</span></span>  
+ [<span data-ttu-id="e49f9-127">チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作</span><span class="sxs-lookup"><span data-stu-id="e49f9-127">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
+ [<span data-ttu-id="e49f9-128">遅延実行とレイジー評価で LINQ to XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e49f9-128">Deferred Execution and Lazy Evaluation in LINQ to XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

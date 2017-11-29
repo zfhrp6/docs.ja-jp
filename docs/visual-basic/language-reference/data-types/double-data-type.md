@@ -1,74 +1,72 @@
 ---
-title: "Double Data Type (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Double"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "identifier type characters, #"
-  - "trailing zeros"
-  - "real numbers"
-  - "trailing 0 characters"
-  - "0 characters, trailing"
-  - "literal type characters, R"
-  - "data types [Visual Basic], assigning"
-  - "Double data type [Visual Basic]"
-  - "# identifier type character"
-  - "double-precision numbers"
-  - "floating-point numbers, Double data type"
-  - "R literal type character"
-  - "zeros, trailing"
-  - "Double data type"
+title: "倍精度浮動小数点数型 (Double) (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Double
+helpviewer_keywords:
+- 'identifier type characters [Visual Basic], #'
+- trailing zeros
+- real numbers
+- trailing 0 characters [Visual Basic]
+- 0 characters [Visual Basic], trailing
+- literal type characters [Visual Basic], R
+- data types [Visual Basic], assigning
+- Double data type [Visual Basic]
+- '# identifier type character'
+- double-precision numbers
+- floating-point numbers [Visual Basic], Double data type
+- R literal type character [Visual Basic]
+- zeros, trailing
+- Double data type
 ms.assetid: 0c5670f7-fcb1-453a-bef1-374730cd38fd
-caps.latest.revision: 25
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: ad0e8082edfb7b7d96b0ca2019da88514e5b3b09
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Double Data Type (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-IEEE 64 ビット \(8 バイト\) の符号付き浮動小数点数を格納します。負の値は \-1.79769313486231570E\+308 ～ \-4.94065645841246544E\-324、正の値は 4.94065645841246544E\-324 ～ 1.79769313486231570E\+308 の範囲の値をとります。  倍精度の数値には、実数の近似値が格納されます。  
+# <a name="double-data-type-visual-basic"></a><span data-ttu-id="3144d-102">倍精度浮動小数点数型 (Double) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3144d-102">Double Data Type (Visual Basic)</span></span>
+<span data-ttu-id="3144d-103">-- をからの値の範囲は IEEE の 64 ビット (8 バイト) の倍精度浮動小数点数の符号付き 4.94065645841246544E-負の値と 4.94065645841246544E から 324-324 1.79769313486231570 e + 308 ~正の値。</span><span class="sxs-lookup"><span data-stu-id="3144d-103">Holds signed IEEE 64-bit (8-byte) double-precision floating-point numbers that range in value from -1.79769313486231570E+308 through -4.94065645841246544E-324 for negative values and from 4.94065645841246544E-324 through 1.79769313486231570E+308 for positive values.</span></span> <span data-ttu-id="3144d-104">倍精度数値には、実数の概算値が格納されます。</span><span class="sxs-lookup"><span data-stu-id="3144d-104">Double-precision numbers store an approximation of a real number.</span></span>  
   
-## 解説  
- `Double` データ型に格納できる数値の範囲は、最大値はどのデータ型よりも大きく、最小値はどのデータ型よりも小さいという広範なものです。  
+## <a name="remarks"></a><span data-ttu-id="3144d-105">コメント</span><span class="sxs-lookup"><span data-stu-id="3144d-105">Remarks</span></span>  
+ <span data-ttu-id="3144d-106">`Double`データ型、最大および最小規模が大きくを提供しています。</span><span class="sxs-lookup"><span data-stu-id="3144d-106">The `Double` data type provides the largest and smallest possible magnitudes for a number.</span></span>  
   
- `Double` の既定値は 0 です。  
+ <span data-ttu-id="3144d-107">`Double` の既定値は 0 です。</span><span class="sxs-lookup"><span data-stu-id="3144d-107">The default value of `Double` is 0.</span></span>  
   
-## プログラミングのヒント  
+## <a name="programming-tips"></a><span data-ttu-id="3144d-108">プログラミングのヒント</span><span class="sxs-lookup"><span data-stu-id="3144d-108">Programming Tips</span></span>  
   
--   **精度。**浮動小数点数を扱う場合、これらの値がメモリ内で常に正確に表現されているわけではないことに注意してください。  このため、値の比較や `Mod` 演算子など、特定の処理で予期しない結果が返される可能性があります。  詳細については、「[Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)」を参照してください。  
+-   <span data-ttu-id="3144d-109">**有効桁数です。**</span><span class="sxs-lookup"><span data-stu-id="3144d-109">**Precision.**</span></span> <span data-ttu-id="3144d-110">浮動小数点数を使用する場合は、ことが常に正確に表現でないメモリに注意してください。</span><span class="sxs-lookup"><span data-stu-id="3144d-110">When you work with floating-point numbers, remember that they do not always have a precise representation in memory.</span></span> <span data-ttu-id="3144d-111">これにより予期しない結果を比較値などの特定の操作から、`Mod`演算子。</span><span class="sxs-lookup"><span data-stu-id="3144d-111">This could lead to unexpected results from certain operations, such as value comparison and the `Mod` operator.</span></span> <span data-ttu-id="3144d-112">詳細については、次を参照してください。[データ型のトラブルシューティング](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)です。</span><span class="sxs-lookup"><span data-stu-id="3144d-112">For more information, see [Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).</span></span>  
   
--   **後続のゼロ。**浮動小数点のデータ型には、後続のゼロの文字に対する内部表現がありません。  たとえば、4.2000 と 4.2 は区別されません。  したがって、浮動小数点数の値を表示または印刷するとき、後続のゼロの文字は出力されません。  
+-   <span data-ttu-id="3144d-113">**後続のゼロです。**</span><span class="sxs-lookup"><span data-stu-id="3144d-113">**Trailing Zeros.**</span></span> <span data-ttu-id="3144d-114">浮動小数点データ型には、後続のゼロ文字の任意の内部表現はありません。</span><span class="sxs-lookup"><span data-stu-id="3144d-114">The floating-point data types do not have any internal representation of trailing zero characters.</span></span> <span data-ttu-id="3144d-115">たとえば、それらによって区別されません 4.2000 および 4.2 です。</span><span class="sxs-lookup"><span data-stu-id="3144d-115">For example, they do not distinguish between 4.2000 and 4.2.</span></span> <span data-ttu-id="3144d-116">したがって、末尾のゼロは表示されませんを表示する場合、または印刷の浮動小数点値。</span><span class="sxs-lookup"><span data-stu-id="3144d-116">Consequently, trailing zero characters do not appear when you display or print floating-point values.</span></span>  
   
--   **型宣言文字。**あるリテラルにリテラルの型文字 `R`  を付けると、そのリテラルは `Double` に変換されます。  たとえば、整数値の後が `R` の場合、その値は `Double` に変更されます。  
+-   <span data-ttu-id="3144d-117">**型宣言文字。**</span><span class="sxs-lookup"><span data-stu-id="3144d-117">**Type Characters.**</span></span> <span data-ttu-id="3144d-118">あるリテラルにリテラルの型文字 `R` を付けると、そのリテラルは `Double` に変換されます。</span><span class="sxs-lookup"><span data-stu-id="3144d-118">Appending the literal type character `R` to a literal forces it to the `Double` data type.</span></span> <span data-ttu-id="3144d-119">たとえば、整数値が続く場合`R`に値が変更された、`Double`です。</span><span class="sxs-lookup"><span data-stu-id="3144d-119">For example, if an integer value is followed by `R`, the value is changed to a `Double`.</span></span>  
   
     ```  
     ' Visual Basic expands the 4 in the statement Dim dub As Double = 4R to 4.0:  
     Dim dub As Double = 4.0R  
     ```  
   
-     ある識別子に識別子の型文字 `#` を付けると、その識別子は整数型 \(`Double`\) に変換されます。  次の例では、`num` 変数が `Double` として型指定されています。  
+     <span data-ttu-id="3144d-120">ある識別子に識別子の型文字 `#` を付けると、その識別子は整数型 (`Double`) に変換されます。</span><span class="sxs-lookup"><span data-stu-id="3144d-120">Appending the identifier type character `#` to any identifier forces it to `Double`.</span></span> <span data-ttu-id="3144d-121">次の例では、変数`num`として型指定されて、 `Double`:</span><span class="sxs-lookup"><span data-stu-id="3144d-121">In the following example, the variable `num` is typed as a `Double`:</span></span>  
   
     ```  
     Dim num# = 3  
     ```  
   
--   **Framework のデータ型。**.NET Framework において対応する型は、<xref:System.Double?displayProperty=fullName> 構造体です。  
+-   <span data-ttu-id="3144d-122">**Framework の型。**</span><span class="sxs-lookup"><span data-stu-id="3144d-122">**Framework Type.**</span></span> <span data-ttu-id="3144d-123">.NET Framework において対応する型は、<xref:System.Double?displayProperty=nameWithType> 構造体です。</span><span class="sxs-lookup"><span data-stu-id="3144d-123">The corresponding type in the .NET Framework is the <xref:System.Double?displayProperty=nameWithType> structure.</span></span>  
   
-## 参照  
- <xref:System.Double?displayProperty=fullName>   
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Decimal Data Type](../../../visual-basic/language-reference/data-types/decimal-data-type.md)   
- [Single Data Type](../../../visual-basic/language-reference/data-types/single-data-type.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)   
- [Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
- [Type Characters](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
+## <a name="see-also"></a><span data-ttu-id="3144d-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="3144d-124">See Also</span></span>  
+ <xref:System.Double?displayProperty=nameWithType>  
+ [<span data-ttu-id="3144d-125">データの種類</span><span class="sxs-lookup"><span data-stu-id="3144d-125">Data Types</span></span>](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [<span data-ttu-id="3144d-126">Decimal データ型</span><span class="sxs-lookup"><span data-stu-id="3144d-126">Decimal Data Type</span></span>](../../../visual-basic/language-reference/data-types/decimal-data-type.md)  
+ [<span data-ttu-id="3144d-127">Single データ型</span><span class="sxs-lookup"><span data-stu-id="3144d-127">Single Data Type</span></span>](../../../visual-basic/language-reference/data-types/single-data-type.md)  
+ [<span data-ttu-id="3144d-128">データ型変換関数</span><span class="sxs-lookup"><span data-stu-id="3144d-128">Type Conversion Functions</span></span>](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [<span data-ttu-id="3144d-129">変換の概要</span><span class="sxs-lookup"><span data-stu-id="3144d-129">Conversion Summary</span></span>](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [<span data-ttu-id="3144d-130">データ型の有効な使用方法</span><span class="sxs-lookup"><span data-stu-id="3144d-130">Efficient Use of Data Types</span></span>](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)  
+ [<span data-ttu-id="3144d-131">トラブルシューティング (データ型)</span><span class="sxs-lookup"><span data-stu-id="3144d-131">Troubleshooting Data Types</span></span>](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [<span data-ttu-id="3144d-132">型文字</span><span class="sxs-lookup"><span data-stu-id="3144d-132">Type Characters</span></span>](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)

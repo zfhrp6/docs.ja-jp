@@ -1,54 +1,46 @@
 ---
-title: "結合操作 (Visual Basic) |Microsoft ドキュメント"
+title: "結合操作 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 39ab4854-ac84-4738-9d0b-3cb79be84db4
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: dce1adb5b918674bc8ee8fc48c8ff5b3c3814a88
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 21ff2c466db223720edf00be91c3516c641762ba
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="join-operations-visual-basic"></a>結合操作 (Visual Basic)
-A*結合*を別のデータ ソースの共通の属性を共有するオブジェクトと&1; つのデータ ソース内のオブジェクトの関連付けは、2 つのデータ ソースのです。  
+# <a name="join-operations-visual-basic"></a><span data-ttu-id="53fc2-102">結合操作 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="53fc2-102">Join Operations (Visual Basic)</span></span>
+<span data-ttu-id="53fc2-103">2 つのデータ ソースの "*結合*" とは、あるデータ ソースのオブジェクトを、共通の属性を共有する別のデータ ソースのオブジェクトと関連付けることです。</span><span class="sxs-lookup"><span data-stu-id="53fc2-103">A *join* of two data sources is the association of objects in one data source with objects that share a common attribute in another data source.</span></span>  
   
- 相互に直接の関連がない&2; つのデータ ソースを対象とするクエリにおいて、結合は重要な操作になります。 オブジェクト指向プログラミングでは、これは一方向の関係における逆の方向など、モデル化されていないオブジェクト間の相関関係を意味する場合があります。 一方向の関係の例として、City 型のプロパティを持つ Customer クラスがあるとします。ただし、City クラスには、Customer オブジェクトのコレクションを表すプロパティはありません。 City オブジェクトのリストから各都市のすべての顧客を取得する場合は、結合演算を使用して顧客を検索できます。  
+ <span data-ttu-id="53fc2-104">相互に直接の関連がない 2 つのデータ ソースを対象とするクエリにおいて、結合は重要な操作になります。</span><span class="sxs-lookup"><span data-stu-id="53fc2-104">Joining is an important operation in queries that target data sources whose relationships to each other cannot be followed directly.</span></span> <span data-ttu-id="53fc2-105">オブジェクト指向プログラミングでは、これは一方向の関係における逆の方向など、モデル化されていないオブジェクト間の相関関係を意味する場合があります。</span><span class="sxs-lookup"><span data-stu-id="53fc2-105">In object-oriented programming, this could mean a correlation between objects that is not modeled, such as the backwards direction of a one-way relationship.</span></span> <span data-ttu-id="53fc2-106">一方向の関係の例として、City 型のプロパティを持つ Customer クラスがあるとします。ただし、City クラスには、Customer オブジェクトのコレクションを表すプロパティはありません。</span><span class="sxs-lookup"><span data-stu-id="53fc2-106">An example of a one-way relationship is a Customer class that has a property of type City, but the City class does not have a property that is a collection of Customer objects.</span></span> <span data-ttu-id="53fc2-107">City オブジェクトのリストから各都市のすべての顧客を取得する場合は、結合演算を使用して顧客を検索できます。</span><span class="sxs-lookup"><span data-stu-id="53fc2-107">If you have a list of City objects and you want to find all the customers in each city, you could use a join operation to find them.</span></span>  
   
- LINQ フレームワークで提供されている結合メソッドは、 <xref:System.Linq.Enumerable.Join%2A> <xref:System.Linq.Enumerable.GroupJoin%2A>。</xref:System.Linq.Enumerable.GroupJoin%2A> </xref:System.Linq.Enumerable.Join%2A> これらのメソッドでは、等キーが等しいかどうかに基づいて&2; つのデータ ソースに一致する結合を実行します。 (比較に関して、Transact-SQL では、"小なり" 演算子などの "等値" 以外の結合演算子もサポートされます)。リレーショナル データベース用語で<xref:System.Linq.Enumerable.Join%2A>は内部結合、結合の種類のデータ セットで一致するオブジェクトのみが返される</xref:System.Linq.Enumerable.Join%2A>。 <xref:System.Linq.Enumerable.GroupJoin%2A>でもメソッドのリレーショナル データベース用語では、直接相当するものはありませんが、内部結合と左外部結合のスーパー セットを実装します</xref:System.Linq.Enumerable.GroupJoin%2A>。 左外部結合では、他のデータ ソースには相関関係を持つ要素があるない場合でも、最初 (左側) のデータ ソースの各要素を返す結合ですが、します。  
+ <span data-ttu-id="53fc2-108">LINQ framework で用意された結合メソッドは <xref:System.Linq.Enumerable.Join%2A> と <xref:System.Linq.Enumerable.GroupJoin%2A> です。</span><span class="sxs-lookup"><span data-stu-id="53fc2-108">The join methods provided in the LINQ framework are <xref:System.Linq.Enumerable.Join%2A> and <xref:System.Linq.Enumerable.GroupJoin%2A>.</span></span> <span data-ttu-id="53fc2-109">この 2 つのメソッドは、等結合 (キーが等しいかどうかに基づいて 2 つのデータ ソースを対応させる結合) を実行します。</span><span class="sxs-lookup"><span data-stu-id="53fc2-109">These methods perform equijoins, or joins that match two data sources based on equality of their keys.</span></span> <span data-ttu-id="53fc2-110">(比較に関して、Transact-SQL では、"小なり" 演算子などの "等値" 以外の結合演算子もサポートされます)。リレーショナル データベース用語で説明すると、<xref:System.Linq.Enumerable.Join%2A> は内部結合 (両方のデータ セットで一致するオブジェクトだけが返される結合) を実装します。</span><span class="sxs-lookup"><span data-stu-id="53fc2-110">(For comparison, Transact-SQL supports join operators other than 'equals', for example the 'less than' operator.) In relational database terms, <xref:System.Linq.Enumerable.Join%2A> implements an inner join, a type of join in which only those objects that have a match in the other data set are returned.</span></span> <span data-ttu-id="53fc2-111">リレーショナル データベース用語で <xref:System.Linq.Enumerable.GroupJoin%2A> メソッドに直接相当するものはありませんが、このメソッドは内部結合と左外部結合のスーパーセットを実装します。</span><span class="sxs-lookup"><span data-stu-id="53fc2-111">The <xref:System.Linq.Enumerable.GroupJoin%2A> method has no direct equivalent in relational database terms, but it implements a superset of inner joins and left outer joins.</span></span> <span data-ttu-id="53fc2-112">左外部結合とは、最初 (左側) のデータ ソースの各要素を返す結合です。これらの要素は、もう一方のデータ ソースの要素と相関関係がなくても返されます。</span><span class="sxs-lookup"><span data-stu-id="53fc2-112">A left outer join is a join that returns each element of the first (left) data source, even if it has no correlated elements in the other data source.</span></span>  
   
- 次の図は、2 つのセットと、内部結合または左外部結合としてこれらのセットに含まれている要素の概念図を示しています。  
+ <span data-ttu-id="53fc2-113">次の図は、2 つのセットと、内部結合または左外部結合としてこれらのセットに含まれている要素の概念図を示しています。</span><span class="sxs-lookup"><span data-stu-id="53fc2-113">The following illustration shows a conceptual view of two sets and the elements within those sets that are included in either an inner join or a left outer join.</span></span>  
   
- ![内側/外側を示す&2; つの重なり合う円します。] (../../../../csharp/programming-guide/concepts/linq/media/joincircles.png "JoinCircles")  
+ <span data-ttu-id="53fc2-114">![内側/外側を示す 2 つの重なり合う円。](../../../../csharp/programming-guide/concepts/linq/media/joincircles.png "JoinCircles")</span><span class="sxs-lookup"><span data-stu-id="53fc2-114">![Two overlapping circles showing inner&#47;outer.](../../../../csharp/programming-guide/concepts/linq/media/joincircles.png "JoinCircles")</span></span>  
   
-## <a name="methods"></a>メソッド  
+## <a name="methods"></a><span data-ttu-id="53fc2-115">メソッド</span><span class="sxs-lookup"><span data-stu-id="53fc2-115">Methods</span></span>  
   
-|メソッド名|説明|Visual Basic のクエリ式の構文|説明|  
+|<span data-ttu-id="53fc2-116">メソッド名</span><span class="sxs-lookup"><span data-stu-id="53fc2-116">Method Name</span></span>|<span data-ttu-id="53fc2-117">説明</span><span class="sxs-lookup"><span data-stu-id="53fc2-117">Description</span></span>|<span data-ttu-id="53fc2-118">Visual Basic のクエリ式の構文</span><span class="sxs-lookup"><span data-stu-id="53fc2-118">Visual Basic Query Expression Syntax</span></span>|<span data-ttu-id="53fc2-119">説明</span><span class="sxs-lookup"><span data-stu-id="53fc2-119">More Information</span></span>|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|Join|キー セレクター関数に基づいて&2; つのシーケンスを結合し、値のペアを抽出します。|`From x In …, y In … Where x.a = y.a`<br /><br /> または<br /><br /> `Join … [As …]In … On …`|<xref:System.Linq.Enumerable.Join%2A?displayProperty=fullName></xref:System.Linq.Enumerable.Join%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Join%2A?displayProperty=fullName></xref:System.Linq.Queryable.Join%2A?displayProperty=fullName>|  
-|GroupJoin|キー セレクター関数に基づいて&2; つのシーケンスを結合し、各要素について結果として得られる一致をグループ化します。|`Group Join … In … On …`|<xref:System.Linq.Enumerable.GroupJoin%2A?displayProperty=fullName></xref:System.Linq.Enumerable.GroupJoin%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.GroupJoin%2A?displayProperty=fullName></xref:System.Linq.Queryable.GroupJoin%2A?displayProperty=fullName>|  
+|<span data-ttu-id="53fc2-120">Join</span><span class="sxs-lookup"><span data-stu-id="53fc2-120">Join</span></span>|<span data-ttu-id="53fc2-121">キー セレクター関数に基づいて 2 つのシーケンスを結合し、値のペアを抽出します。</span><span class="sxs-lookup"><span data-stu-id="53fc2-121">Joins two sequences based on key selector functions and extracts pairs of values.</span></span>|`From x In …, y In … Where x.a = y.a`<br /><br /> <span data-ttu-id="53fc2-122">または</span><span class="sxs-lookup"><span data-stu-id="53fc2-122">-or-</span></span><br /><br /> `Join … [As …]In … On …`|<xref:System.Linq.Enumerable.Join%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Join%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="53fc2-123">GroupJoin</span><span class="sxs-lookup"><span data-stu-id="53fc2-123">GroupJoin</span></span>|<span data-ttu-id="53fc2-124">キー セレクター関数に基づいて 2 つのシーケンスを結合し、各要素について結果として得られる一致をグループ化します。</span><span class="sxs-lookup"><span data-stu-id="53fc2-124">Joins two sequences based on key selector functions and groups the resulting matches for each element.</span></span>|`Group Join … In … On …`|<xref:System.Linq.Enumerable.GroupJoin%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupJoin%2A?displayProperty=nameWithType>|  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Linq></xref:System.Linq>   
- [標準クエリ演算子の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)   
- [結合およびクロス積クエリを作成します。](http://msdn.microsoft.com/library/d8072ede-0521-4670-9bec-1778ceeb875b)   
- [Join 句](../../../../visual-basic/language-reference/queries/join-clause.md)   
- [方法: 異種ファイル (LINQ) (Visual Basic の場合) からコンテンツを結合します。](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)   
- [方法: 複数のソース (LINQ) (Visual Basic の場合) からオブジェクトのコレクション設定](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)
+## <a name="see-also"></a><span data-ttu-id="53fc2-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="53fc2-125">See Also</span></span>  
+ <xref:System.Linq>  
+ [<span data-ttu-id="53fc2-126">標準クエリ演算子の概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="53fc2-126">Standard Query Operators Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [<span data-ttu-id="53fc2-127">匿名型</span><span class="sxs-lookup"><span data-stu-id="53fc2-127">Anonymous Types</span></span>](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
+ [<span data-ttu-id="53fc2-128">結合およびクロス積クエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="53fc2-128">Formulate Joins and Cross-Product Queries</span></span>](http://msdn.microsoft.com/library/d8072ede-0521-4670-9bec-1778ceeb875b)  
+ [<span data-ttu-id="53fc2-129">Join 句</span><span class="sxs-lookup"><span data-stu-id="53fc2-129">Join Clause</span></span>](../../../../visual-basic/language-reference/queries/join-clause.md)  
+ [<span data-ttu-id="53fc2-130">方法: 異種ファイル (LINQ) (Visual Basic) からコンテンツを結合します。</span><span class="sxs-lookup"><span data-stu-id="53fc2-130">How to: Join Content from Dissimilar Files (LINQ) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)  
+ [<span data-ttu-id="53fc2-131">方法: 複数のソース (LINQ) (Visual Basic) からオブジェクトのコレクションへの追加</span><span class="sxs-lookup"><span data-stu-id="53fc2-131">How to: Populate Object Collections from Multiple Sources (LINQ) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)

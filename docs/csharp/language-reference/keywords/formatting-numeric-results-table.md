@@ -1,62 +1,42 @@
 ---
 title: "数値結果テーブルの書式設定 (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - formatting [C#]
 - numeric formatting [C#]
 - String.Format method
 - Console.Write method
 ms.assetid: 120ba537-4448-4c62-8676-7a8fdd98f496
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: cce14d5124ffdf030701ae0fc769278da51f86cc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 16976f5a59bd4eb0eca29553aff87d4fe0b1d247
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="formatting-numeric-results-table-c-reference"></a>数値結果テーブルの書式設定 (C# リファレンス)
-数値結果の書式を指定するには、<xref:System.String.Format%2A?displayProperty=fullName> メソッドを使用するか、`String.Format` を呼び出す <xref:System.Console.Write%2A?displayProperty=fullName> メソッドまたは <xref:System.Console.WriteLine%2A?displayProperty=fullName> メソッドを使用します。 書式を指定するには、書式指定文字列を使用します。 サポートされる標準の書式指定文字列を次の表に示します。 書式指定文字列は `Axx` という形式になります。この `A` は書式指定子、`xx` は精度指定子です。 書式指定子は、数値に適用する書式の種類を制御し、精度指定子は、書式付き出力の有効桁数または小数点以下の桁数を制御します。 精度指定子の値は 0 から 99 の範囲です。  
+# <a name="formatting-numeric-results-table-c-reference"></a><span data-ttu-id="ebffa-102">数値結果テーブルの書式設定 (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="ebffa-102">Formatting Numeric Results Table (C# Reference)</span></span>
+<span data-ttu-id="ebffa-103">数値結果の書式を指定するには、<xref:System.String.Format%2A?displayProperty=nameWithType> メソッドを使用するか、`String.Format` を呼び出す <xref:System.Console.Write%2A?displayProperty=nameWithType> メソッドまたは <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="ebffa-103">You can format numeric results by using the <xref:System.String.Format%2A?displayProperty=nameWithType> method, or through the <xref:System.Console.Write%2A?displayProperty=nameWithType> or <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> method, which calls `String.Format`.</span></span> <span data-ttu-id="ebffa-104">書式を指定するには、書式指定文字列を使用します。</span><span class="sxs-lookup"><span data-stu-id="ebffa-104">The format is specified by using format strings.</span></span> <span data-ttu-id="ebffa-105">サポートされる標準の書式指定文字列を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="ebffa-105">The following table contains the supported standard format strings.</span></span> <span data-ttu-id="ebffa-106">書式指定文字列は `Axx` という形式になります。この `A` は書式指定子、`xx` は精度指定子です。</span><span class="sxs-lookup"><span data-stu-id="ebffa-106">The format string takes the following form: `Axx`, where `A` is the format specifier and `xx` is the precision specifier.</span></span> <span data-ttu-id="ebffa-107">書式指定子は、数値に適用する書式の種類を制御し、精度指定子は、書式付き出力の有効桁数または小数点以下の桁数を制御します。</span><span class="sxs-lookup"><span data-stu-id="ebffa-107">The format specifier controls the type of formatting applied to the numeric value, and the precision specifier controls the number of significant digits or decimal places of the formatted output.</span></span> <span data-ttu-id="ebffa-108">精度指定子の値は 0 から 99 の範囲です。</span><span class="sxs-lookup"><span data-stu-id="ebffa-108">The value of the precision specifier ranges from 0 to 99.</span></span>  
   
- 標準およびカスタム書式指定文字列の詳細については、「[Formatting Types](../../../standard/base-types/formatting-types.md)」(型の書式設定) を参照してください。 `String.Format` メソッドの詳細については、<xref:System.String.Format%2A?displayProperty=fullName> を参照してください。  
+ <span data-ttu-id="ebffa-109">標準およびカスタム書式指定文字列の詳細については、「[Formatting Types](../../../standard/base-types/formatting-types.md)」(型の書式設定) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ebffa-109">For more information about standard and custom formatting strings, see [Formatting Types](../../../standard/base-types/formatting-types.md).</span></span> <span data-ttu-id="ebffa-110">`String.Format` メソッドの詳細については、<xref:System.String.Format%2A?displayProperty=nameWithType> を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ebffa-110">For more information about the `String.Format` method, see <xref:System.String.Format%2A?displayProperty=nameWithType>.</span></span>  
   
-|書式指定子|説明|例|出力|  
+|<span data-ttu-id="ebffa-111">書式指定子</span><span class="sxs-lookup"><span data-stu-id="ebffa-111">Format Specifier</span></span>|<span data-ttu-id="ebffa-112">説明</span><span class="sxs-lookup"><span data-stu-id="ebffa-112">Description</span></span>|<span data-ttu-id="ebffa-113">例</span><span class="sxs-lookup"><span data-stu-id="ebffa-113">Examples</span></span>|<span data-ttu-id="ebffa-114">出力</span><span class="sxs-lookup"><span data-stu-id="ebffa-114">Output</span></span>|  
 |----------------------|-----------------|--------------|------------|  
-|C または c|通貨|Console.Write("{0:C}", 2.5);<br /><br /> Console.Write("{0:C}", -2.5);|$2.50<br /><br /> ($2.50)|  
-|D または d|Decimal (10 進数型)|Console.Write("{0:D5}", 25);|00025|  
-|E または e|指数|Console.Write("{0:E}", 250000);|2.500000E+005|  
-|F または f|固定小数点|Console.Write("{0:F2}", 25);<br /><br /> Console.Write("{0:F0}", 25);|25.00<br /><br /> 25|  
-|G または g|全般|Console.Write("{0:G}", 2.5);|2.5|  
-|N または n|数値|Console.Write("{0:N}", 2500000);|2,500,000.00|  
-|X または x|16 進数|Console.Write("{0:X}", 250);<br /><br /> Console.Write("{0:X}", 0xffff);|FA<br /><br /> FFFF|  
+|<span data-ttu-id="ebffa-115">C または c</span><span class="sxs-lookup"><span data-stu-id="ebffa-115">C or c</span></span>|<span data-ttu-id="ebffa-116">通貨</span><span class="sxs-lookup"><span data-stu-id="ebffa-116">Currency</span></span>|<span data-ttu-id="ebffa-117">Console.Write("{0:C}", 2.5);</span><span class="sxs-lookup"><span data-stu-id="ebffa-117">Console.Write("{0:C}", 2.5);</span></span><br /><br /> <span data-ttu-id="ebffa-118">Console.Write("{0:C}", -2.5);</span><span class="sxs-lookup"><span data-stu-id="ebffa-118">Console.Write("{0:C}", -2.5);</span></span>|<span data-ttu-id="ebffa-119">$2.50</span><span class="sxs-lookup"><span data-stu-id="ebffa-119">$2.50</span></span><br /><br /> <span data-ttu-id="ebffa-120">($2.50)</span><span class="sxs-lookup"><span data-stu-id="ebffa-120">($2.50)</span></span>|  
+|<span data-ttu-id="ebffa-121">D または d</span><span class="sxs-lookup"><span data-stu-id="ebffa-121">D or d</span></span>|<span data-ttu-id="ebffa-122">Decimal (10 進数型)</span><span class="sxs-lookup"><span data-stu-id="ebffa-122">Decimal</span></span>|<span data-ttu-id="ebffa-123">Console.Write("{0:D5}", 25);</span><span class="sxs-lookup"><span data-stu-id="ebffa-123">Console.Write("{0:D5}", 25);</span></span>|<span data-ttu-id="ebffa-124">00025</span><span class="sxs-lookup"><span data-stu-id="ebffa-124">00025</span></span>|  
+|<span data-ttu-id="ebffa-125">E または e</span><span class="sxs-lookup"><span data-stu-id="ebffa-125">E or e</span></span>|<span data-ttu-id="ebffa-126">指数</span><span class="sxs-lookup"><span data-stu-id="ebffa-126">Scientific</span></span>|<span data-ttu-id="ebffa-127">Console.Write("{0:E}", 250000);</span><span class="sxs-lookup"><span data-stu-id="ebffa-127">Console.Write("{0:E}", 250000);</span></span>|<span data-ttu-id="ebffa-128">2.500000E+005</span><span class="sxs-lookup"><span data-stu-id="ebffa-128">2.500000E+005</span></span>|  
+|<span data-ttu-id="ebffa-129">F または f</span><span class="sxs-lookup"><span data-stu-id="ebffa-129">F or f</span></span>|<span data-ttu-id="ebffa-130">固定小数点</span><span class="sxs-lookup"><span data-stu-id="ebffa-130">Fixed-point</span></span>|<span data-ttu-id="ebffa-131">Console.Write("{0:F2}", 25);</span><span class="sxs-lookup"><span data-stu-id="ebffa-131">Console.Write("{0:F2}", 25);</span></span><br /><br /> <span data-ttu-id="ebffa-132">Console.Write("{0:F0}", 25);</span><span class="sxs-lookup"><span data-stu-id="ebffa-132">Console.Write("{0:F0}", 25);</span></span>|<span data-ttu-id="ebffa-133">25.00</span><span class="sxs-lookup"><span data-stu-id="ebffa-133">25.00</span></span><br /><br /> <span data-ttu-id="ebffa-134">25</span><span class="sxs-lookup"><span data-stu-id="ebffa-134">25</span></span>|  
+|<span data-ttu-id="ebffa-135">G または g</span><span class="sxs-lookup"><span data-stu-id="ebffa-135">G or g</span></span>|<span data-ttu-id="ebffa-136">全般</span><span class="sxs-lookup"><span data-stu-id="ebffa-136">General</span></span>|<span data-ttu-id="ebffa-137">Console.Write("{0:G}", 2.5);</span><span class="sxs-lookup"><span data-stu-id="ebffa-137">Console.Write("{0:G}", 2.5);</span></span>|<span data-ttu-id="ebffa-138">2.5</span><span class="sxs-lookup"><span data-stu-id="ebffa-138">2.5</span></span>|  
+|<span data-ttu-id="ebffa-139">N または n</span><span class="sxs-lookup"><span data-stu-id="ebffa-139">N or n</span></span>|<span data-ttu-id="ebffa-140">数値</span><span class="sxs-lookup"><span data-stu-id="ebffa-140">Number</span></span>|<span data-ttu-id="ebffa-141">Console.Write("{0:N}", 2500000);</span><span class="sxs-lookup"><span data-stu-id="ebffa-141">Console.Write("{0:N}", 2500000);</span></span>|<span data-ttu-id="ebffa-142">2,500,000.00</span><span class="sxs-lookup"><span data-stu-id="ebffa-142">2,500,000.00</span></span>|  
+|<span data-ttu-id="ebffa-143">X または x</span><span class="sxs-lookup"><span data-stu-id="ebffa-143">X or x</span></span>|<span data-ttu-id="ebffa-144">16 進数</span><span class="sxs-lookup"><span data-stu-id="ebffa-144">Hexadecimal</span></span>|<span data-ttu-id="ebffa-145">Console.Write("{0:X}", 250);</span><span class="sxs-lookup"><span data-stu-id="ebffa-145">Console.Write("{0:X}", 250);</span></span><br /><br /> <span data-ttu-id="ebffa-146">Console.Write("{0:X}", 0xffff);</span><span class="sxs-lookup"><span data-stu-id="ebffa-146">Console.Write("{0:X}", 0xffff);</span></span>|<span data-ttu-id="ebffa-147">FA</span><span class="sxs-lookup"><span data-stu-id="ebffa-147">FA</span></span><br /><br /> <span data-ttu-id="ebffa-148">FFFF</span><span class="sxs-lookup"><span data-stu-id="ebffa-148">FFFF</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [標準の数値書式指定文字列](../../../standard/base-types/standard-numeric-format-strings.md)   
- [型のリファレンス表](../../../csharp/language-reference/keywords/reference-tables-for-types.md)   
- [string](../../../csharp/language-reference/keywords/string.md)
-
+## <a name="see-also"></a><span data-ttu-id="ebffa-149">関連項目</span><span class="sxs-lookup"><span data-stu-id="ebffa-149">See Also</span></span>  
+ [<span data-ttu-id="ebffa-150">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="ebffa-150">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="ebffa-151">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="ebffa-151">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="ebffa-152">標準の数値書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="ebffa-152">Standard Numeric Format Strings</span></span>](../../../standard/base-types/standard-numeric-format-strings.md)  
+ [<span data-ttu-id="ebffa-153">型のリファレンス表</span><span class="sxs-lookup"><span data-stu-id="ebffa-153">Reference Tables for Types</span></span>](../../../csharp/language-reference/keywords/reference-tables-for-types.md)  
+ [<span data-ttu-id="ebffa-154">string</span><span class="sxs-lookup"><span data-stu-id="ebffa-154">string</span></span>](../../../csharp/language-reference/keywords/string.md)

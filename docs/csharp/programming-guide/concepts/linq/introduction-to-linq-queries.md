@@ -1,74 +1,55 @@
 ---
 title: "LINQ クエリの概要 (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - deferred execution [LINQ]
 - LINQ, queries
 - LINQ, deferred execution
 - queries [LINQ], about LINQ queries
 ms.assetid: 37895c02-268c-41d5-be39-f7d936fa88a8
-caps.latest.revision: 47
+caps.latest.revision: "47"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: ae7a2d03859e95d939ff4c62fa33e07917a873a2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8427a0f439516cbba0b38db25f48b0083a337b1b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="introduction-to-linq-queries-c"></a>LINQ クエリの概要 (C#)
-"*クエリ*" は、データ ソースからデータを取得する式です。 クエリは通常、専用のクエリ言語で表されます。 これまでに、リレーショナル データベース用の SQL や XML 用の XQuery など、データ ソースの種類に合わせてさまざまな言語が開発されてきました。 このため、開発者は、サポートする必要のあるデータ ソースの種類やデータ形式ごとに、新しいクエリ言語を習得する必要がありました。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] は、さまざまな種類のデータ ソースやデータ形式のデータを操作するための一貫したモデルを提供することにより、この負担を軽減します。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリでは、操作の対象は常にオブジェクトになります。 共通の基本的なコーディング パターンを使用することで、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーを利用できる XML ドキュメント、SQL データベース、[!INCLUDE[vstecado](~/includes/vstecado-md.md)] データセット、.NET コレクション、その他の任意の形式のデータを照会したり変換したりできます。  
+# <a name="introduction-to-linq-queries-c"></a><span data-ttu-id="eef0f-102">LINQ クエリの概要 (C#)</span><span class="sxs-lookup"><span data-stu-id="eef0f-102">Introduction to LINQ Queries (C#)</span></span>
+<span data-ttu-id="eef0f-103">"*クエリ*" は、データ ソースからデータを取得する式です。</span><span class="sxs-lookup"><span data-stu-id="eef0f-103">A *query* is an expression that retrieves data from a data source.</span></span> <span data-ttu-id="eef0f-104">クエリは通常、専用のクエリ言語で表されます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-104">Queries are usually expressed in a specialized query language.</span></span> <span data-ttu-id="eef0f-105">これまでに、リレーショナル データベース用の SQL や XML 用の XQuery など、データ ソースの種類に合わせてさまざまな言語が開発されてきました。</span><span class="sxs-lookup"><span data-stu-id="eef0f-105">Different languages have been developed over time for the various types of data sources, for example SQL for relational databases and XQuery for XML.</span></span> <span data-ttu-id="eef0f-106">このため、開発者は、サポートする必要のあるデータ ソースの種類やデータ形式ごとに、新しいクエリ言語を習得する必要がありました。</span><span class="sxs-lookup"><span data-stu-id="eef0f-106">Therefore, developers have had to learn a new query language for each type of data source or data format that they must support.</span></span> [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]<span data-ttu-id="eef0f-107"> は、さまざまな種類のデータ ソースやデータ形式のデータを操作するための一貫したモデルを提供することにより、この負担を軽減します。</span><span class="sxs-lookup"><span data-stu-id="eef0f-107"> simplifies this situation by offering a consistent model for working with data across various kinds of data sources and formats.</span></span> <span data-ttu-id="eef0f-108">[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリでは、操作の対象は常にオブジェクトになります。</span><span class="sxs-lookup"><span data-stu-id="eef0f-108">In a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query, you are always working with objects.</span></span> <span data-ttu-id="eef0f-109">共通の基本的なコーディング パターンを使用することで、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーを利用できる XML ドキュメント、SQL データベース、[!INCLUDE[vstecado](~/includes/vstecado-md.md)] データセット、.NET コレクション、その他の任意の形式のデータを照会したり変換したりできます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-109">You use the same basic coding patterns to query and transform data in XML documents, SQL databases, [!INCLUDE[vstecado](~/includes/vstecado-md.md)] Datasets, .NET collections, and any other format for which a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] provider is available.</span></span>  
   
-## <a name="three-parts-of-a-query-operation"></a>クエリ操作の 3 つの手順  
- すべての [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ操作は、次の 3 つの手順で構成されます。  
+## <a name="three-parts-of-a-query-operation"></a><span data-ttu-id="eef0f-110">クエリ操作の 3 つの手順</span><span class="sxs-lookup"><span data-stu-id="eef0f-110">Three Parts of a Query Operation</span></span>  
+ <span data-ttu-id="eef0f-111">すべての [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ操作は、次の 3 つの手順で構成されます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-111">All [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query operations consist of three distinct actions:</span></span>  
   
-1.  データ ソースを取得します。  
+1.  <span data-ttu-id="eef0f-112">データ ソースを取得します。</span><span class="sxs-lookup"><span data-stu-id="eef0f-112">Obtain the data source.</span></span>  
   
-2.  クエリを作成します。  
+2.  <span data-ttu-id="eef0f-113">クエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="eef0f-113">Create the query.</span></span>  
   
-3.  クエリを実行します。  
+3.  <span data-ttu-id="eef0f-114">クエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="eef0f-114">Execute the query.</span></span>  
   
- クエリ操作の 3 つの手順がソース コードでどのように表されるかを次の例に示します。 この例では、わかりやすくするために整数の配列をデータ ソースとして使用していますが、他のデータ ソースを使用する場合にも同じ概念が当てはまります。 このコードは、このトピックの残りの部分全体を通して参照されます。  
+ <span data-ttu-id="eef0f-115">クエリ操作の 3 つの手順がソース コードでどのように表されるかを次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="eef0f-115">The following example shows how the three parts of a query operation are expressed in source code.</span></span> <span data-ttu-id="eef0f-116">この例では、わかりやすくするために整数の配列をデータ ソースとして使用していますが、他のデータ ソースを使用する場合にも同じ概念が当てはまります。</span><span class="sxs-lookup"><span data-stu-id="eef0f-116">The example uses an integer array as a data source for convenience; however, the same concepts apply to other data sources also.</span></span> <span data-ttu-id="eef0f-117">このコードは、このトピックの残りの部分全体を通して参照されます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-117">This example is referred to throughout the rest of this topic.</span></span>  
   
- [!code-cs[CsLINQGettingStarted#1](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_1.cs)]  
+ [!code-csharp[CsLINQGettingStarted#1](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_1.cs)]  
   
- 次の図は、クエリ操作全体を表しています。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] では、クエリの実行はクエリ自体とは別個のものです。つまり、クエリ変数を作成するだけでは、データは取得されません。  
+ <span data-ttu-id="eef0f-118">次の図は、クエリ操作全体を表しています。</span><span class="sxs-lookup"><span data-stu-id="eef0f-118">The following illustration shows the complete query operation.</span></span> <span data-ttu-id="eef0f-119">[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] では、クエリの実行はクエリ自体とは別個のものです。つまり、クエリ変数を作成するだけでは、データは取得されません。</span><span class="sxs-lookup"><span data-stu-id="eef0f-119">In [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] the execution of the query is distinct from the query itself; in other words you have not retrieved any data just by creating a query variable.</span></span>  
   
- ![LINQ クエリ操作の全体](../../../../csharp/programming-guide/concepts/linq/media/linq_query.png "LINQ_Query")  
+ <span data-ttu-id="eef0f-120">![LINQ クエリ操作の全体](../../../../csharp/programming-guide/concepts/linq/media/linq_query.png "LINQ_Query")</span><span class="sxs-lookup"><span data-stu-id="eef0f-120">![Complete LINQ Query Operation](../../../../csharp/programming-guide/concepts/linq/media/linq_query.png "LINQ_Query")</span></span>  
   
-## <a name="the-data-source"></a>データ ソース  
- 前の例では、データ ソースが配列であるため、暗黙的にジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイスがサポートされます。 つまり、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] でクエリを実行できるということです。 クエリは `foreach` ステートメントで実行されますが、`foreach` には <xref:System.Collections.IEnumerable> または <xref:System.Collections.Generic.IEnumerable%601> が必要です。 <xref:System.Collections.Generic.IEnumerable%601> をサポートする型や、ジェネリック <xref:System.Linq.IQueryable%601> などの派生インターフェイスは、*クエリ可能型*と呼ばれます。  
+## <a name="the-data-source"></a><span data-ttu-id="eef0f-121">データ ソース</span><span class="sxs-lookup"><span data-stu-id="eef0f-121">The Data Source</span></span>  
+ <span data-ttu-id="eef0f-122">前の例では、データ ソースが配列であるため、暗黙的にジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイスがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-122">In the previous example, because the data source is an array, it implicitly supports the generic <xref:System.Collections.Generic.IEnumerable%601> interface.</span></span> <span data-ttu-id="eef0f-123">つまり、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] でクエリを実行できるということです。</span><span class="sxs-lookup"><span data-stu-id="eef0f-123">This fact means it can be queried with [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].</span></span> <span data-ttu-id="eef0f-124">クエリは `foreach` ステートメントで実行されますが、`foreach` には <xref:System.Collections.IEnumerable> または <xref:System.Collections.Generic.IEnumerable%601> が必要です。</span><span class="sxs-lookup"><span data-stu-id="eef0f-124">A query is executed in a `foreach` statement, and `foreach` requires <xref:System.Collections.IEnumerable> or <xref:System.Collections.Generic.IEnumerable%601>.</span></span> <span data-ttu-id="eef0f-125"><xref:System.Collections.Generic.IEnumerable%601> をサポートする型や、ジェネリック <xref:System.Linq.IQueryable%601> などの派生インターフェイスは、*クエリ可能型*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-125">Types that support <xref:System.Collections.Generic.IEnumerable%601> or a derived interface such as the generic <xref:System.Linq.IQueryable%601> are called *queryable types*.</span></span>  
   
- クエリ可能型は、変更や特別な処理を行わなくても、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データ ソースとして使用できます。 ソース データがメモリ内にクエリ可能型として存在していない場合、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーは、そのような型としてソース データを表す必要があります。 たとえば、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] では、クエリ可能な <xref:System.Xml.Linq.XElement> 型に XML ドキュメントが読み込まれます。  
+ <span data-ttu-id="eef0f-126">クエリ可能型は、変更や特別な処理を行わなくても、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データ ソースとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-126">A queryable type requires no modification or special treatment to serve as a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] data source.</span></span> <span data-ttu-id="eef0f-127">ソース データがメモリ内にクエリ可能型として存在していない場合、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーは、そのような型としてソース データを表す必要があります。</span><span class="sxs-lookup"><span data-stu-id="eef0f-127">If the source data is not already in memory as a queryable type, the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] provider must represent it as such.</span></span> <span data-ttu-id="eef0f-128">たとえば、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] では、クエリ可能な <xref:System.Xml.Linq.XElement> 型に XML ドキュメントが読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-128">For example, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] loads an XML document into a queryable <xref:System.Xml.Linq.XElement> type:</span></span>  
   
- [!code-cs[CsLINQGettingStarted#2](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_2.cs)]  
+ [!code-csharp[CsLINQGettingStarted#2](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_2.cs)]  
   
- [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] では、まず、デザイン時に手動で、または Visual Studio で [LINQ to SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)を使用して、オブジェクト リレーショナル マッピングを作成します。 オブジェクトに対するクエリを記述すると、実行時には、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] によってデータベースとの通信が処理されます。 次の例では、`Customers` がデータベース内の特定のテーブルを表し、クエリ結果の型 <xref:System.Linq.IQueryable%601> が <xref:System.Collections.Generic.IEnumerable%601> から派生しています。  
+ <span data-ttu-id="eef0f-129">[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] では、まず、デザイン時に手動で、または Visual Studio で [LINQ to SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)を使用して、オブジェクト リレーショナル マッピングを作成します。</span><span class="sxs-lookup"><span data-stu-id="eef0f-129">With [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], you first create an object-relational mapping at design time either manually or by using the [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2) in Visual Studio.</span></span> <span data-ttu-id="eef0f-130">オブジェクトに対するクエリを記述すると、実行時には、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] によってデータベースとの通信が処理されます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-130">You write your queries against the objects, and at run-time [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] handles the communication with the database.</span></span> <span data-ttu-id="eef0f-131">次の例では、`Customers` がデータベース内の特定のテーブルを表し、クエリ結果の型 <xref:System.Linq.IQueryable%601> が <xref:System.Collections.Generic.IEnumerable%601> から派生しています。</span><span class="sxs-lookup"><span data-stu-id="eef0f-131">In the following example, `Customers` represents a specific table in the database, and the type of the query result, <xref:System.Linq.IQueryable%601>, derives from <xref:System.Collections.Generic.IEnumerable%601>.</span></span>  
   
 ```csharp  
 Northwnd db = new Northwnd(@"c:\northwnd.mdf");  
@@ -80,46 +61,45 @@ IQueryable<Customer> custQuery =
     select cust;  
 ```  
   
- それぞれの種類のデータ ソースを作成する方法の詳細については、対応する [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーのドキュメントを参照してください。 ただし、基本的な規則は非常に単純です。[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データ ソースは、ジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイス、またはこれを継承するインターフェイスをサポートする任意のオブジェクトです。  
+ <span data-ttu-id="eef0f-132">それぞれの種類のデータ ソースを作成する方法の詳細については、対応する [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーのドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="eef0f-132">For more information about how to create specific types of data sources, see the documentation for the various [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] providers.</span></span> <span data-ttu-id="eef0f-133">ただし、基本的な規則は非常に単純です。[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データ ソースは、ジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイス、またはこれを継承するインターフェイスをサポートする任意のオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="eef0f-133">However, the basic rule is very simple: a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] data source is any object that supports the generic <xref:System.Collections.Generic.IEnumerable%601> interface, or an interface that inherits from it.</span></span>  
   
 > [!NOTE]
->  非ジェネリック <xref:System.Collections.ArrayList> インターフェイスをサポートする <xref:System.Collections.IEnumerable> などの型も、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データ ソースとして使用できます。 詳細については、「[How to: Query an ArrayList with LINQ (C#) (方法: LINQ を使用して ArrayList を照会する (C#))](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)」を参照してください。  
+>  <span data-ttu-id="eef0f-134">非ジェネリック <xref:System.Collections.ArrayList> インターフェイスをサポートする <xref:System.Collections.IEnumerable> などの型も、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データ ソースとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-134">Types such as <xref:System.Collections.ArrayList> that support the non-generic <xref:System.Collections.IEnumerable> interface can also be used as a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] data source.</span></span> <span data-ttu-id="eef0f-135">詳細については、「[How to: Query an ArrayList with LINQ (C#) (方法: LINQ を使用して ArrayList を照会する (C#))](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="eef0f-135">For more information, see [How to: Query an ArrayList with LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).</span></span>  
   
-##  <a name="query"></a> クエリ  
- クエリでは、データ ソースからどのような情報を取得するかを指定します。 オプションとして、情報が返される前に、その情報を並べ替え、グループ化し、構造化する方法を指定することもできます。 クエリはクエリ変数に格納され、クエリ式で初期化されます。 クエリを簡単に記述できるようにするために、C# に新しいクエリ構文が導入されています。  
+##  <span data-ttu-id="eef0f-136"><a name="query"></a> クエリ</span><span class="sxs-lookup"><span data-stu-id="eef0f-136"><a name="query"></a> The Query</span></span>  
+ <span data-ttu-id="eef0f-137">クエリでは、データ ソースからどのような情報を取得するかを指定します。</span><span class="sxs-lookup"><span data-stu-id="eef0f-137">The query specifies what information to retrieve from the data source or sources.</span></span> <span data-ttu-id="eef0f-138">オプションとして、情報が返される前に、その情報を並べ替え、グループ化し、構造化する方法を指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-138">Optionally, a query also specifies how that information should be sorted, grouped, and shaped before it is returned.</span></span> <span data-ttu-id="eef0f-139">クエリはクエリ変数に格納され、クエリ式で初期化されます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-139">A query is stored in a query variable and initialized with a query expression.</span></span> <span data-ttu-id="eef0f-140">クエリを簡単に記述できるようにするために、C# に新しいクエリ構文が導入されています。</span><span class="sxs-lookup"><span data-stu-id="eef0f-140">To make it easier to write queries, C# has introduced new query syntax.</span></span>  
   
- 前の例のクエリでは、整数の配列からすべての偶数が返されます。 クエリ式には、`from`、`where`、および `select` の 3 つの句が含まれています  (SQL に詳しい方は、句の順番が SQL での順番とは逆になっていることに気付かれると思います)。`from` 句はデータ ソースを指定し、`where` 句はフィルターを適用し、`select` 句は返される要素の種類を指定します。 これらのクエリ句およびその他のクエリ句の詳細については、「[LINQ クエリ式](../../../../csharp/programming-guide/linq-query-expressions/index.md)」セクションで説明しています。 今の段階で重要な点は、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] では、クエリ変数自体は何も処理を行わず、データを返さないという点です。 この時点では、後でクエリが実行されるときに結果の生成に必要となる情報が格納されるだけです。 背後でどのようにクエリが構築されるかについては、「[標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)」をご覧ください。  
+ <span data-ttu-id="eef0f-141">前の例のクエリでは、整数の配列からすべての偶数が返されます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-141">The query in the previous example returns all the even numbers from the integer array.</span></span> <span data-ttu-id="eef0f-142">クエリ式には、`from`、`where`、および `select` の 3 つの句が含まれています </span><span class="sxs-lookup"><span data-stu-id="eef0f-142">The query expression contains three clauses: `from`, `where` and `select`.</span></span> <span data-ttu-id="eef0f-143">(SQL に詳しい方は、句の順番が SQL での順番とは逆になっていることに気付かれると思います)。`from` 句はデータ ソースを指定し、`where` 句はフィルターを適用し、`select` 句は返される要素の種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="eef0f-143">(If you are familiar with SQL, you will have noticed that the ordering of the clauses is reversed from the order in SQL.) The `from` clause specifies the data source, the `where` clause applies the filter, and the `select` clause specifies the type of the returned elements.</span></span> <span data-ttu-id="eef0f-144">これらのクエリ句およびその他のクエリ句の詳細については、「[LINQ クエリ式](../../../../csharp/programming-guide/linq-query-expressions/index.md)」セクションで説明しています。</span><span class="sxs-lookup"><span data-stu-id="eef0f-144">These and the other query clauses are discussed in detail in the [LINQ Query Expressions](../../../../csharp/programming-guide/linq-query-expressions/index.md) section.</span></span> <span data-ttu-id="eef0f-145">今の段階で重要な点は、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] では、クエリ変数自体は何も処理を行わず、データを返さないという点です。</span><span class="sxs-lookup"><span data-stu-id="eef0f-145">For now, the important point is that in [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], the query variable itself takes no action and returns no data.</span></span> <span data-ttu-id="eef0f-146">この時点では、後でクエリが実行されるときに結果の生成に必要となる情報が格納されるだけです。</span><span class="sxs-lookup"><span data-stu-id="eef0f-146">It just stores the information that is required to produce the results when the query is executed at some later point.</span></span> <span data-ttu-id="eef0f-147">背後でどのようにクエリが構築されるかについては、「[標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="eef0f-147">For more information about how queries are constructed behind the scenes, see [Standard Query Operators Overview (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md).</span></span>  
   
 > [!NOTE]
->  クエリは、メソッド構文を使用して表すこともできます。 詳細については、「[LINQ でのクエリ構文とメソッド構文](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」を参照してください。  
+>  <span data-ttu-id="eef0f-148">クエリは、メソッド構文を使用して表すこともできます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-148">Queries can also be expressed by using method syntax.</span></span> <span data-ttu-id="eef0f-149">詳細については、「[LINQ でのクエリ構文とメソッド構文](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="eef0f-149">For more information, see [Query Syntax and Method Syntax in LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).</span></span>  
   
-## <a name="query-execution"></a>クエリの実行  
+## <a name="query-execution"></a><span data-ttu-id="eef0f-150">クエリの実行</span><span class="sxs-lookup"><span data-stu-id="eef0f-150">Query Execution</span></span>  
   
-### <a name="deferred-execution"></a>遅延実行  
- 先に説明したように、クエリ変数自体が行うのはクエリ コマンドの格納のみです。 実際のクエリの実行は、`foreach` ステートメントでクエリ変数が反復処理されるまで延期されます。 この概念を "*遅延実行*" と呼びます。遅延実行の例を次に示します。  
+### <a name="deferred-execution"></a><span data-ttu-id="eef0f-151">遅延実行</span><span class="sxs-lookup"><span data-stu-id="eef0f-151">Deferred Execution</span></span>  
+ <span data-ttu-id="eef0f-152">先に説明したように、クエリ変数自体が行うのはクエリ コマンドの格納のみです。</span><span class="sxs-lookup"><span data-stu-id="eef0f-152">As stated previously, the query variable itself only stores the query commands.</span></span> <span data-ttu-id="eef0f-153">実際のクエリの実行は、`foreach` ステートメントでクエリ変数が反復処理されるまで延期されます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-153">The actual execution of the query is deferred until you iterate over the query variable in a `foreach` statement.</span></span> <span data-ttu-id="eef0f-154">この概念を "*遅延実行*" と呼びます。遅延実行の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="eef0f-154">This concept is referred to as *deferred execution* and is demonstrated in the following example:</span></span>  
   
- [!code-cs[csLinqGettingStarted#4](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_3.cs)]  
+ [!code-csharp[csLinqGettingStarted#4](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_3.cs)]  
   
- `foreach` ステートメントでは、クエリ結果の取得も行われます。 たとえば、前のクエリでは、返されるシーケンスの各値が反復変数 `num` に (一度に 1 つずつ) 格納されます。  
+ <span data-ttu-id="eef0f-155">`foreach` ステートメントでは、クエリ結果の取得も行われます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-155">The `foreach` statement is also where the query results are retrieved.</span></span> <span data-ttu-id="eef0f-156">たとえば、前のクエリでは、返されるシーケンスの各値が反復変数 `num` に (一度に 1 つずつ) 格納されます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-156">For example, in the previous query, the iteration variable `num` holds each value (one at a time) in the returned sequence.</span></span>  
   
- クエリ変数自体にはクエリ結果は格納されないので、必要に応じて何度でもクエリを実行できます。 たとえば、別のアプリケーションによって頻繁に更新されるデータベースがあるとします。 自分のアプリケーションでは、最新のデータを取得するクエリを 1 つ作成し、それを一定の間隔で繰り返し実行することで、毎回異なる結果を取得できます。  
+ <span data-ttu-id="eef0f-157">クエリ変数自体にはクエリ結果は格納されないので、必要に応じて何度でもクエリを実行できます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-157">Because the query variable itself never holds the query results, you can execute it as often as you like.</span></span> <span data-ttu-id="eef0f-158">たとえば、別のアプリケーションによって頻繁に更新されるデータベースがあるとします。</span><span class="sxs-lookup"><span data-stu-id="eef0f-158">For example, you may have a database that is being updated continually by a separate application.</span></span> <span data-ttu-id="eef0f-159">自分のアプリケーションでは、最新のデータを取得するクエリを 1 つ作成し、それを一定の間隔で繰り返し実行することで、毎回異なる結果を取得できます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-159">In your application, you could create one query that retrieves the latest data, and you could execute it repeatedly at some interval to retrieve different results every time.</span></span>  
   
-### <a name="forcing-immediate-execution"></a>即時実行の強制  
- 一連のソース要素に対して集計関数を実行するクエリでは、最初にそれらの要素を反復処理する必要があります。 このようなクエリには、`Count`、`Max`、`Average`、`First` などがあります。 これらのクエリでは、明示的に `foreach` ステートメントを使用しなくても同等の処理が実行されます。これは、結果を返すためにクエリ自体が `foreach` を使用する必要があるからです。 これらの種類のクエリでは、`IEnumerable` コレクションではなく、単一の値が返されることにも注意してください。 次のクエリは、ソース配列に含まれている偶数の数を返します。  
+### <a name="forcing-immediate-execution"></a><span data-ttu-id="eef0f-160">即時実行の強制</span><span class="sxs-lookup"><span data-stu-id="eef0f-160">Forcing Immediate Execution</span></span>  
+ <span data-ttu-id="eef0f-161">一連のソース要素に対して集計関数を実行するクエリでは、最初にそれらの要素を反復処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="eef0f-161">Queries that perform aggregation functions over a range of source elements must first iterate over those elements.</span></span> <span data-ttu-id="eef0f-162">このようなクエリには、`Count`、`Max`、`Average`、`First` などがあります。</span><span class="sxs-lookup"><span data-stu-id="eef0f-162">Examples of such queries are `Count`, `Max`, `Average`, and `First`.</span></span> <span data-ttu-id="eef0f-163">これらのクエリでは、明示的に `foreach` ステートメントを使用しなくても同等の処理が実行されます。これは、結果を返すためにクエリ自体が `foreach` を使用する必要があるからです。</span><span class="sxs-lookup"><span data-stu-id="eef0f-163">These execute without an explicit `foreach` statement because the query itself must use `foreach` in order to return a result.</span></span> <span data-ttu-id="eef0f-164">これらの種類のクエリでは、`IEnumerable` コレクションではなく、単一の値が返されることにも注意してください。</span><span class="sxs-lookup"><span data-stu-id="eef0f-164">Note also that these types of queries return a single value, not an `IEnumerable` collection.</span></span> <span data-ttu-id="eef0f-165">次のクエリは、ソース配列に含まれている偶数の数を返します。</span><span class="sxs-lookup"><span data-stu-id="eef0f-165">The following query returns a count of the even numbers in the source array:</span></span>  
   
- [!code-cs[csLinqGettingStarted#5](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_4.cs)]  
+ [!code-csharp[csLinqGettingStarted#5](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_4.cs)]  
   
- クエリの即時実行を強制し、その結果をキャッシュするには、<xref:System.Linq.Enumerable.ToList%2A> メソッドまたは <xref:System.Linq.Enumerable.ToArray%2A> メソッドを呼び出します。  
+ <span data-ttu-id="eef0f-166">クエリの即時実行を強制し、その結果をキャッシュするには、<xref:System.Linq.Enumerable.ToList%2A> メソッドまたは <xref:System.Linq.Enumerable.ToArray%2A> メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="eef0f-166">To force immediate execution of any query and cache its results, you can call the <xref:System.Linq.Enumerable.ToList%2A> or <xref:System.Linq.Enumerable.ToArray%2A> methods.</span></span>  
   
- [!code-cs[csLinqGettingStarted#6](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_5.cs)]  
+ [!code-csharp[csLinqGettingStarted#6](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_5.cs)]  
   
- クエリ式の直後に `foreach` ループを配置することでも実行を強制できます。 ただし、`ToList` または `ToArray` を呼び出した場合は、単一のコレクション オブジェクトにすべてのデータをキャッシュする処理も行われます。  
+ <span data-ttu-id="eef0f-167">クエリ式の直後に `foreach` ループを配置することでも実行を強制できます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-167">You can also force execution by putting the `foreach` loop immediately after the query expression.</span></span> <span data-ttu-id="eef0f-168">ただし、`ToList` または `ToArray` を呼び出した場合は、単一のコレクション オブジェクトにすべてのデータをキャッシュする処理も行われます。</span><span class="sxs-lookup"><span data-stu-id="eef0f-168">However, by calling `ToList` or `ToArray` you also cache all the data in a single collection object.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# の LINQ の概要](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)   
- [チュートリアル: C# でのクエリの作成](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)   
- [チュートリアル: C# でのクエリの作成](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)   
- [LINQ クエリ式](../../../../csharp/programming-guide/linq-query-expressions/index.md)   
- [foreach、in](../../../../csharp/language-reference/keywords/foreach-in.md)   
- [クエリ キーワード (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)
-
+## <a name="see-also"></a><span data-ttu-id="eef0f-169">関連項目</span><span class="sxs-lookup"><span data-stu-id="eef0f-169">See Also</span></span>  
+ [<span data-ttu-id="eef0f-170">C# の LINQ の概要</span><span class="sxs-lookup"><span data-stu-id="eef0f-170">Getting Started with LINQ in C#</span></span>](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
+ [<span data-ttu-id="eef0f-171">チュートリアル: C# でのクエリの作成</span><span class="sxs-lookup"><span data-stu-id="eef0f-171">Walkthrough: Writing Queries in C#</span></span>](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
+ [<span data-ttu-id="eef0f-172">チュートリアル: C# でのクエリの作成</span><span class="sxs-lookup"><span data-stu-id="eef0f-172">Walkthrough: Writing Queries in C#</span></span>](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
+ [<span data-ttu-id="eef0f-173">LINQ クエリ式</span><span class="sxs-lookup"><span data-stu-id="eef0f-173">LINQ Query Expressions</span></span>](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
+ [<span data-ttu-id="eef0f-174">foreach、in</span><span class="sxs-lookup"><span data-stu-id="eef0f-174">foreach, in</span></span>](../../../../csharp/language-reference/keywords/foreach-in.md)  
+ [<span data-ttu-id="eef0f-175">クエリ キーワード (LINQ)</span><span class="sxs-lookup"><span data-stu-id="eef0f-175">Query Keywords (LINQ)</span></span>](../../../../csharp/language-reference/keywords/query-keywords.md)

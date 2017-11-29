@@ -1,60 +1,56 @@
 ---
 title: "方法 : 文字列を比較する (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
 ms.assetid: e1268e28-ee98-4695-98e9-92280f1c33c0
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: BillWagner
 ms.author: wiwagn
+ms.openlocfilehash: 4837fa57c962cba841ffcc83c5bd4475a4faff0c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 70bd8f52971115a36626961c2c605f2f93c1ae6b
-ms.openlocfilehash: ed376960e0b3bb793b377cc8fac2fdefa030dcc0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/19/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-compare-strings-c-programming-guide"></a>方法 : 文字列を比較する (C# プログラミング ガイド)
+# <a name="how-to-compare-strings-c-programming-guide"></a><span data-ttu-id="39bdf-102">方法 : 文字列を比較する (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="39bdf-102">How to: Compare strings (C# Programming Guide)</span></span>
 
-文字列を比較する場合、1 つの文字列がその他の文字列よりも大きいか小さいか、または 2 つの文字列が等しいことを示す結果を生成します。 *序数に基づく比較*か、*カルチャで区別される比較*のいずれを実行しているかに応じて、結果を決定する規則は異なります。 特定のタスクに正しい種類の比較を使用することが重要です。
+<span data-ttu-id="39bdf-103">文字列を比較する場合、1 つの文字列がその他の文字列よりも大きいか小さいか、または 2 つの文字列が等しいことを示す結果を生成します。</span><span class="sxs-lookup"><span data-stu-id="39bdf-103">When you compare strings, you are producing a result that says one string is greater than or less than the other, or that the two strings are equal.</span></span> <span data-ttu-id="39bdf-104">*序数に基づく比較*か、*カルチャで区別される比較*のいずれを実行しているかに応じて、結果を決定する規則は異なります。</span><span class="sxs-lookup"><span data-stu-id="39bdf-104">The rules by which the result is determined are different depending on whether you are performing *ordinal comparison* or *culture-sensitive comparison*.</span></span> <span data-ttu-id="39bdf-105">特定のタスクに正しい種類の比較を使用することが重要です。</span><span class="sxs-lookup"><span data-stu-id="39bdf-105">It is important to use the correct kind of comparison for the specific task.</span></span>
 
- 言語の規則に関係なく、2 つの文字列の値を比較または並べ替える必要がある場合、基本の序数に基づく比較を使用します。 基本の序数に基づく比較 (`System.StringComparison.Ordinal`) は、大文字と小文字を区別します。つまり、2 つの文字列は、文字レベルで一致している必要があります ("and" は、"And" や "AND" と等しくありません)。 頻繁に使用される変数の `System.StringComparison.OrdinalIgnoreCase` では、"and"、"And"、および "AND" は一致と見なされます。 `StringComparison.OrdinalIgnoreCase` は、ファイル名、パス名、ネットワーク パス、およびユーザーのコンピューターのロケールに基づいて変更されない値を持つその他の文字列を比較するために使用されます。 詳細については、「<xref:System.StringComparison?displayProperty=fullName>」を参照してください。
+ <span data-ttu-id="39bdf-106">言語の規則に関係なく、2 つの文字列の値を比較または並べ替える必要がある場合、基本の序数に基づく比較を使用します。</span><span class="sxs-lookup"><span data-stu-id="39bdf-106">Use basic ordinal comparisons when you have to compare or sort the values of two strings without regard to linguistic conventions.</span></span> <span data-ttu-id="39bdf-107">基本の序数に基づく比較 (`System.StringComparison.Ordinal`) は、大文字と小文字を区別します。つまり、2 つの文字列は、文字レベルで一致している必要があります ("and" は、"And" や "AND" と等しくありません)。</span><span class="sxs-lookup"><span data-stu-id="39bdf-107">A basic ordinal comparison (`System.StringComparison.Ordinal`) is case-sensitive, which means that the two strings must match character for character: "and" does not equal "And" or "AND".</span></span> <span data-ttu-id="39bdf-108">頻繁に使用される変数の `System.StringComparison.OrdinalIgnoreCase` では、"and"、"And"、および "AND" は一致と見なされます。</span><span class="sxs-lookup"><span data-stu-id="39bdf-108">A frequently-used variation is `System.StringComparison.OrdinalIgnoreCase`, which will match "and", "And", and "AND".</span></span> <span data-ttu-id="39bdf-109">`StringComparison.OrdinalIgnoreCase` は、ファイル名、パス名、ネットワーク パス、およびユーザーのコンピューターのロケールに基づいて変更されない値を持つその他の文字列を比較するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="39bdf-109">`StringComparison.OrdinalIgnoreCase` is often used to compare file names, path names, network paths, and any other string whose value does not change based on the locale of the user's computer.</span></span> <span data-ttu-id="39bdf-110">詳細については、「<xref:System.StringComparison?displayProperty=nameWithType>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="39bdf-110">For more information, see <xref:System.StringComparison?displayProperty=nameWithType>.</span></span>
 
- 通常、文字および文字列の並べ替え規則は、ユーザーのコンピューターのロケールによって異なる可能性があるため、カルチャで区別される比較は、エンド ユーザーが入力する文字列を比較および並べ替えるために使用されます。 同一の文字を含む文字列でも、現在のスレッドのカルチャに応じて、異なる方法で並べ替えられます。
+ <span data-ttu-id="39bdf-111">通常、文字および文字列の並べ替え規則は、ユーザーのコンピューターのロケールによって異なる可能性があるため、カルチャで区別される比較は、エンド ユーザーが入力する文字列を比較および並べ替えるために使用されます。</span><span class="sxs-lookup"><span data-stu-id="39bdf-111">Culture-sensitive comparisons are typically used to compare and sort strings that are input by end users, because the characters and sorting conventions of these strings might vary depending on the locale of the user's computer.</span></span> <span data-ttu-id="39bdf-112">同一の文字を含む文字列でも、現在のスレッドのカルチャに応じて、異なる方法で並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="39bdf-112">Even strings that contain identical characters might sort differently depending on the culture of the current thread.</span></span>
 
 > [!NOTE]
-> 文字列を比較する場合、実行する比較の種類を明示的に指定するメソッドを使用する必要があります。 これらのメソッドを使用すると、コードを保守しやすく、読みやすくすることができます。 可能な限り、<xref:System.StringComparison> 列挙型のパラメーターを取る、<xref:System.String?displayProperty=fullName> と <xref:System.Array?displayProperty=fullName> クラスのメソッドのオーバーロードを使用し、どの種類の比較を実行するか指定できるようにします。 文字列を比較する場合、`==` 演算子と `!=` 演算子を使用しないことをお勧めします。 なお、いずれのオーバーロードも <xref:System.StringComparison> を取ることはないため、ここでは <xref:System.String.CompareTo%2A?displayProperty=fullName> インスタンス メソッドは使用しません。
+> <span data-ttu-id="39bdf-113">文字列を比較する場合、実行する比較の種類を明示的に指定するメソッドを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="39bdf-113">When you compare strings, you should use the methods that explicitly specify what kind of comparison you intend to perform.</span></span> <span data-ttu-id="39bdf-114">これらのメソッドを使用すると、コードを保守しやすく、読みやすくすることができます。</span><span class="sxs-lookup"><span data-stu-id="39bdf-114">This makes your code much more maintainable and readable.</span></span> <span data-ttu-id="39bdf-115">可能な限り、<xref:System.StringComparison> 列挙型のパラメーターを取る、<xref:System.String?displayProperty=nameWithType> と <xref:System.Array?displayProperty=nameWithType> クラスのメソッドのオーバーロードを使用し、どの種類の比較を実行するか指定できるようにします。</span><span class="sxs-lookup"><span data-stu-id="39bdf-115">Whenever possible, use the overloads of the methods of the <xref:System.String?displayProperty=nameWithType> and <xref:System.Array?displayProperty=nameWithType> classes that take a <xref:System.StringComparison> enumeration parameter, so that you can specify which type of comparison to perform.</span></span> <span data-ttu-id="39bdf-116">文字列を比較する場合、`==` 演算子と `!=` 演算子を使用しないことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="39bdf-116">It is best to avoid using the `==` and `!=` operators when you compare strings.</span></span> <span data-ttu-id="39bdf-117">なお、いずれのオーバーロードも <xref:System.StringComparison> を取ることはないため、ここでは <xref:System.String.CompareTo%2A?displayProperty=nameWithType> インスタンス メソッドは使用しません。</span><span class="sxs-lookup"><span data-stu-id="39bdf-117">Also, avoid using the <xref:System.String.CompareTo%2A?displayProperty=nameWithType> instance methods because none of the overloads takes a <xref:System.StringComparison>.</span></span>
 
-## <a name="example"></a>例
+## <a name="example"></a><span data-ttu-id="39bdf-118">例</span><span class="sxs-lookup"><span data-stu-id="39bdf-118">Example</span></span>
 
-次の例では、ユーザーのコンピューターのロケールに基づいて、値が変更されない文字列を正しく比較する方法を示します。 さらに、C# の*文字列のインターン*機能も示しています。 プログラムで 2 つ以上の同じ文字列変数を宣言すると、コンパイラはそれらをすべて同じ場所に保管します。 <xref:System.Object.ReferenceEquals%2A> メソッドを呼び出すと、2 つの文字列がメモリ内の同じオブジェクトを実際に参照していることを確認できます。 インターンを回避するには、次の例のように、<xref:System.String.Copy%2A?displayProperty=fullName> メソッドを使用します。
+<span data-ttu-id="39bdf-119">次の例では、ユーザーのコンピューターのロケールに基づいて、値が変更されない文字列を正しく比較する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="39bdf-119">The following example shows how to correctly compare strings whose values will not change based on the locale of the user's computer.</span></span> <span data-ttu-id="39bdf-120">さらに、C# の*文字列のインターン*機能も示しています。</span><span class="sxs-lookup"><span data-stu-id="39bdf-120">In addition, it also demonstrates the *string interning* feature of C#.</span></span> <span data-ttu-id="39bdf-121">プログラムで 2 つ以上の同じ文字列変数を宣言すると、コンパイラはそれらをすべて同じ場所に保管します。</span><span class="sxs-lookup"><span data-stu-id="39bdf-121">When a program declares two or more identical string variables, the compiler stores them all in the same location.</span></span> <span data-ttu-id="39bdf-122"><xref:System.Object.ReferenceEquals%2A> メソッドを呼び出すと、2 つの文字列がメモリ内の同じオブジェクトを実際に参照していることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="39bdf-122">By calling the <xref:System.Object.ReferenceEquals%2A> method, you can see that the two strings actually refer to the same object in memory.</span></span> <span data-ttu-id="39bdf-123">インターンを回避するには、次の例のように、<xref:System.String.Copy%2A?displayProperty=nameWithType> メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="39bdf-123">Use the <xref:System.String.Copy%2A?displayProperty=nameWithType> method to avoid interning, as shown in the example.</span></span>
 
 [!code-csharp[csProgGuideStrings#11](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#11)]
 
-## <a name="example"></a>例
+## <a name="example"></a><span data-ttu-id="39bdf-124">例</span><span class="sxs-lookup"><span data-stu-id="39bdf-124">Example</span></span>
 
-次の例では、<xref:System.StringComparison> 列挙型を取る <xref:System.String?displayProperty=fullName> メソッドを使用して、推奨の方法で文字列を比較する方法を説明します。 なお、いずれのオーバーロードも <xref:System.StringComparison> を取ることはないため、ここでは <xref:System.String.CompareTo%2A?displayProperty=fullName> インスタンス メソッドは使用していません。
+<span data-ttu-id="39bdf-125">次の例では、<xref:System.StringComparison> 列挙型を取る <xref:System.String?displayProperty=nameWithType> メソッドを使用して、推奨の方法で文字列を比較する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="39bdf-125">The following example shows how to compare strings the preferred way by using the <xref:System.String?displayProperty=nameWithType> methods that take a <xref:System.StringComparison> enumeration.</span></span> <span data-ttu-id="39bdf-126">なお、いずれのオーバーロードも <xref:System.StringComparison> を取ることはないため、ここでは <xref:System.String.CompareTo%2A?displayProperty=nameWithType> インスタンス メソッドは使用していません。</span><span class="sxs-lookup"><span data-stu-id="39bdf-126">Note that the <xref:System.String.CompareTo%2A?displayProperty=nameWithType> instance methods are not used here, because none of the overloads takes a <xref:System.StringComparison>.</span></span>
 
 [!code-csharp[csProgGuideStrings#31](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#31)]
 
-## <a name="example"></a>例
+## <a name="example"></a><span data-ttu-id="39bdf-127">例</span><span class="sxs-lookup"><span data-stu-id="39bdf-127">Example</span></span>
 
-次の例では、<xref:System.StringComparer?displayProperty=fullName> パラメーターを受け取る静的 <xref:System.Array> メソッドを使用したカルチャで区別される手法で、配列内の文字列を検索および並べ替える方法を示します。
+<span data-ttu-id="39bdf-128">次の例では、<xref:System.StringComparer?displayProperty=nameWithType> パラメーターを受け取る静的 <xref:System.Array> メソッドを使用したカルチャで区別される手法で、配列内の文字列を検索および並べ替える方法を示します。</span><span class="sxs-lookup"><span data-stu-id="39bdf-128">The following example shows how to sort and search for strings in an array in a culture-sensitive manner by using the static <xref:System.Array> methods that take a <xref:System.StringComparer?displayProperty=nameWithType> parameter.</span></span>
 
 [!code-csharp[csProgGuideStrings#32](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#32)]
 
-<xref:System.Collections.Hashtable?displayProperty=fullName>、<xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName>、および <xref:System.Collections.Generic.List%601?displayProperty=fullName> などのコレクション クラスには、要素またはキーの種類が `string` の場合、<xref:System.StringComparer?displayProperty=fullName> パラメーターを取るコンストラクターが用意されています。 通常は、これらのコンストラクターをできるだけ使用し、`Ordinal` または `OrdinalIgnoreCase` を指定する必要があります。
+<span data-ttu-id="39bdf-129"><xref:System.Collections.Hashtable?displayProperty=nameWithType>、<xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>、および <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> などのコレクション クラスには、要素またはキーの種類が `string` の場合、<xref:System.StringComparer?displayProperty=nameWithType> パラメーターを取るコンストラクターが用意されています。</span><span class="sxs-lookup"><span data-stu-id="39bdf-129">Collection classes such as <xref:System.Collections.Hashtable?displayProperty=nameWithType>, <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>, and <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> have constructors that take a <xref:System.StringComparer?displayProperty=nameWithType> parameter when the type of the elements or keys is `string`.</span></span> <span data-ttu-id="39bdf-130">通常は、これらのコンストラクターをできるだけ使用し、`Ordinal` または `OrdinalIgnoreCase` を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="39bdf-130">In general, you should use these constructors whenever possible, and specify either `Ordinal` or `OrdinalIgnoreCase`.</span></span>
 
-## <a name="see-also"></a>関連項目
- <xref:System.Globalization.CultureInfo?displayProperty=fullName>   
- <xref:System.StringComparer?displayProperty=fullName>   
- [文字列](../../../csharp/programming-guide/strings/index.md)   
- [文字列の比較](../../../standard/base-types/comparing.md)   
- [アプリケーションのグローバライズとローカライズ](/visualstudio/ide/globalizing-and-localizing-applications)
+## <a name="see-also"></a><span data-ttu-id="39bdf-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="39bdf-131">See also</span></span>
+ <xref:System.Globalization.CultureInfo?displayProperty=nameWithType>  
+ <xref:System.StringComparer?displayProperty=nameWithType>  
+ [<span data-ttu-id="39bdf-132">文字列</span><span class="sxs-lookup"><span data-stu-id="39bdf-132">Strings</span></span>](../../../csharp/programming-guide/strings/index.md)  
+ [<span data-ttu-id="39bdf-133">文字列の比較</span><span class="sxs-lookup"><span data-stu-id="39bdf-133">Comparing Strings</span></span>](../../../standard/base-types/comparing.md)  
+ [<span data-ttu-id="39bdf-134">アプリケーションのグローバライズとローカライズ</span><span class="sxs-lookup"><span data-stu-id="39bdf-134">Globalizing and Localizing Applications</span></span>](/visualstudio/ide/globalizing-and-localizing-applications)

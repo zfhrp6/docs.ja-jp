@@ -1,54 +1,35 @@
 ---
 title: "if-else (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - if_CSharpKeyword
 - else
 - else_CSharpKeyword
 - if
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - else keyword [C#]
 - if keyword [C#]
 ms.assetid: d9a1d562-8cf5-4bd4-9ba7-8ad970cd25b2
-caps.latest.revision: 32
+caps.latest.revision: "32"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: a0ecc915af00caffeba92a8308a60bc24198d477
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 694761a9b03fadf2dff97e61e37c0af52658f9e4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="if-else-c-reference"></a>if-else (C# リファレンス)
-`if` ステートメントは、 `Boolean` 式の値に基づいて実行するステートメントを決定します。 次の例では、 `Boolean` 変数 `result` を `true` に設定してから、 `if` ステートメントにチェックインします。 出力は `The condition is true`になります。  
+# <a name="if-else-c-reference"></a><span data-ttu-id="1103a-102">if-else (C# リファレンス)</span><span class="sxs-lookup"><span data-stu-id="1103a-102">if-else (C# Reference)</span></span>
+<span data-ttu-id="1103a-103">`if` ステートメントは、 `Boolean` 式の値に基づいて実行するステートメントを決定します。</span><span class="sxs-lookup"><span data-stu-id="1103a-103">An `if` statement identifies which statement to run based on the value of a `Boolean` expression.</span></span> <span data-ttu-id="1103a-104">次の例では、 `Boolean` 変数 `result` を `true` に設定してから、 `if` ステートメントにチェックインします。</span><span class="sxs-lookup"><span data-stu-id="1103a-104">In the following example, the `Boolean` variable `result` is set to `true` and then checked in the `if` statement.</span></span> <span data-ttu-id="1103a-105">出力は `The condition is true`になります。</span><span class="sxs-lookup"><span data-stu-id="1103a-105">The output is `The condition is true`.</span></span>  
   
- [!code-cs[csrefKeywordsSelection#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_1.cs)]  
+ [!code-csharp[csrefKeywordsSelection#1](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_1.cs)]  
   
- このトピックの例を実行するには、コンソール アプリケーションの `Main` メソッドに例を挿入します。  
+ <span data-ttu-id="1103a-106">このトピックの例を実行するには、コンソール アプリケーションの `Main` メソッドに例を挿入します。</span><span class="sxs-lookup"><span data-stu-id="1103a-106">You can run the examples in this topic by placing them in the `Main` method of a console app.</span></span>  
   
- C# の `if` ステートメントは、次の例に示すように 2 つの形式を取ります。  
+ <span data-ttu-id="1103a-107">C# の `if` ステートメントは、次の例に示すように 2 つの形式を取ります。</span><span class="sxs-lookup"><span data-stu-id="1103a-107">An `if` statement in C# can take two forms, as the following example shows.</span></span>  
   
 ```csharp  
 // if-else statement  
@@ -70,38 +51,38 @@ if (condition)
 // Next statement in the program.  
 ```  
   
- `if-else` ステートメントで、 `condition` が true に評価されると、 `then-statement` が実行されます。 `condition` が false の場合は、 `else-statement` が実行されます。 `condition` が同時に true と false に評価されることはないため、 `then-statement` ステートメントの `else-statement` と `if-else` の両方が実行されることは決してありません。 `then-statement` または `else-statement` が実行された後、制御は `if` ステートメントの後のステートメントに移ります。  
+ <span data-ttu-id="1103a-108">`if-else` ステートメントで、 `condition` が true に評価されると、 `then-statement` が実行されます。</span><span class="sxs-lookup"><span data-stu-id="1103a-108">In an `if-else` statement, if `condition` evaluates to true, the `then-statement` runs.</span></span> <span data-ttu-id="1103a-109">`condition` が false の場合は、 `else-statement` が実行されます。</span><span class="sxs-lookup"><span data-stu-id="1103a-109">If `condition` is false, the `else-statement` runs.</span></span> <span data-ttu-id="1103a-110">`condition` が同時に true と false に評価されることはないため、 `then-statement` ステートメントの `else-statement` と `if-else` の両方が実行されることは決してありません。</span><span class="sxs-lookup"><span data-stu-id="1103a-110">Because `condition` can’t be simultaneously true and false, the `then-statement` and the `else-statement` of an `if-else` statement can never both run.</span></span> <span data-ttu-id="1103a-111">`then-statement` または `else-statement` が実行された後、制御は `if` ステートメントの後のステートメントに移ります。</span><span class="sxs-lookup"><span data-stu-id="1103a-111">After the `then-statement` or the `else-statement` runs, control is transferred to the next statement after the `if` statement.</span></span>  
   
- `if` ステートメントが含まれない `else` ステートメントで `condition` が true に評価された場合は、 `then-statement` が実行されます。 `condition` が false の場合、制御は `if` ステートメントの後のステートメントに移ります。  
+ <span data-ttu-id="1103a-112">`if` ステートメントが含まれない `else` ステートメントで `condition` が true に評価された場合は、 `then-statement` が実行されます。</span><span class="sxs-lookup"><span data-stu-id="1103a-112">In an `if` statement that doesn’t include an `else` statement, if `condition` is true, the `then-statement` runs.</span></span> <span data-ttu-id="1103a-113">`condition` が false の場合、制御は `if` ステートメントの後のステートメントに移ります。</span><span class="sxs-lookup"><span data-stu-id="1103a-113">If `condition` is false, control is transferred to the next statement after the `if` statement.</span></span>  
   
- `then-statement` と `else-statement` はどちらも、中かっこ (`{}`) で囲まれた 1 つのステートメントまたは複数のステートメントで構成できます。 ステートメントが 1 つの場合、中かっこは省略可能ですが、使用することが推奨されます。  
+ <span data-ttu-id="1103a-114">`then-statement` と `else-statement` はどちらも、中かっこ (`{}`) で囲まれた 1 つのステートメントまたは複数のステートメントで構成できます。</span><span class="sxs-lookup"><span data-stu-id="1103a-114">Both the `then-statement` and the `else-statement` can consist of a single statement or multiple statements that are enclosed in braces (`{}`).</span></span> <span data-ttu-id="1103a-115">ステートメントが 1 つの場合、中かっこは省略可能ですが、使用することが推奨されます。</span><span class="sxs-lookup"><span data-stu-id="1103a-115">For a single statement, the braces are optional but recommended.</span></span>  
   
- `then-statement` および `else-statement` では、任意の種類のステートメントを使用できます。元の `if` ステートメント内に別の `if` ステートメントを入れ子にすることもできます。 入れ子になった `if` ステートメントでは、各 `else` 句が、対応する `if` がない最後の `else`に属します。 次の例では、 `Result1` と `m > 10` の両方が true に評価されると、 `n > 20` が表示されます。 `m > 10` が true で `n > 20` が false の場合は、 `Result2` が表示されます。  
+ <span data-ttu-id="1103a-116">`then-statement` および `else-statement` では、任意の種類のステートメントを使用できます。元の `if` ステートメント内に別の `if` ステートメントを入れ子にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="1103a-116">The statement or statements in the `then-statement` and the `else-statement` can be of any kind, including another `if` statement nested inside the original `if` statement.</span></span> <span data-ttu-id="1103a-117">入れ子になった `if` ステートメントでは、各 `else` 句が、対応する `if` がない最後の `else`に属します。</span><span class="sxs-lookup"><span data-stu-id="1103a-117">In nested `if` statements, each `else` clause belongs to the last `if` that doesn’t have a corresponding `else`.</span></span> <span data-ttu-id="1103a-118">次の例では、 `Result1` と `m > 10` の両方が true に評価されると、 `n > 20` が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1103a-118">In the following example, `Result1` appears if both `m > 10` and `n > 20` evaluate to true.</span></span> <span data-ttu-id="1103a-119">`m > 10` が true で `n > 20` が false の場合は、 `Result2` が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1103a-119">If `m > 10` is true but `n > 20` is false, `Result2` appears.</span></span>  
   
- [!code-cs[csrefKeywordsSelection#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_2.cs)]  
+ [!code-csharp[csrefKeywordsSelection#2](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_2.cs)]  
   
- 代わりに `Result2` が false の場合に `(m > 10)` を表示させるには、次の例に示すように、中かっこを使用して入れ子になった `if` の開始と終了を設定することで、その関連付けを指定します。  
+ <span data-ttu-id="1103a-120">代わりに `Result2` が false の場合に `(m > 10)` を表示させるには、次の例に示すように、中かっこを使用して入れ子になった `if` の開始と終了を設定することで、その関連付けを指定します。</span><span class="sxs-lookup"><span data-stu-id="1103a-120">If, instead, you want `Result2` to appear when `(m > 10)` is false, you can specify that association by using braces to establish the start and end of the nested `if` statement, as the following example shows.</span></span>  
   
- [!code-cs[csrefKeywordsSelection#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_3.cs)]  
+ [!code-csharp[csrefKeywordsSelection#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_3.cs)]  
   
- 条件 `(m > 10)` が false に評価されると、`Result2` が表示されます。  
+ <span data-ttu-id="1103a-121">条件 `(m > 10)` が false に評価されると、`Result2` が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1103a-121">`Result2` appears if the condition `(m > 10)` evaluates to false.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、キーボードから文字を入力すると、プログラムが、入れ子になった `if` ステートメントを実行して、入力された文字が英字かどうかを判別します。 入力された文字が英字である場合、プログラムはその文字が小文字と大文字のどちらであるかを判別します。 いずれの場合も、メッセージが表示されます。  
+## <a name="example"></a><span data-ttu-id="1103a-122">例</span><span class="sxs-lookup"><span data-stu-id="1103a-122">Example</span></span>  
+ <span data-ttu-id="1103a-123">次の例では、キーボードから文字を入力すると、プログラムが、入れ子になった `if` ステートメントを実行して、入力された文字が英字かどうかを判別します。</span><span class="sxs-lookup"><span data-stu-id="1103a-123">In the following example, you enter a character from the keyboard, and the program uses a nested `if` statement to determine whether the input character is an alphabetic character.</span></span> <span data-ttu-id="1103a-124">入力された文字が英字である場合、プログラムはその文字が小文字と大文字のどちらであるかを判別します。</span><span class="sxs-lookup"><span data-stu-id="1103a-124">If the input character is an alphabetic character, the program checks whether the input character is lowercase or uppercase.</span></span> <span data-ttu-id="1103a-125">いずれの場合も、メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1103a-125">A message appears for each case.</span></span>  
   
- [!code-cs[csrefKeywordsSelection#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_4.cs)]  
+ [!code-csharp[csrefKeywordsSelection#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_4.cs)]  
   
-## <a name="example"></a>例  
- 以下の部分的なコードに示すように、 `if` ステートメントを else ブロック内に入れ子にすることもできます。 この例では、2 つの else ブロックと 1 つの then ブロックの中で `if` ステートメントを入れ子にしています。 コメントに、各ブロックでどの条件が true または false であるかを示しています。  
+## <a name="example"></a><span data-ttu-id="1103a-126">例</span><span class="sxs-lookup"><span data-stu-id="1103a-126">Example</span></span>  
+ <span data-ttu-id="1103a-127">以下の部分的なコードに示すように、 `if` ステートメントを else ブロック内に入れ子にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="1103a-127">You also can nest an `if` statement inside an else block, as the following partial code shows.</span></span> <span data-ttu-id="1103a-128">この例では、2 つの else ブロックと 1 つの then ブロックの中で `if` ステートメントを入れ子にしています。</span><span class="sxs-lookup"><span data-stu-id="1103a-128">The example nests `if` statements inside two else blocks and one then block.</span></span> <span data-ttu-id="1103a-129">コメントに、各ブロックでどの条件が true または false であるかを示しています。</span><span class="sxs-lookup"><span data-stu-id="1103a-129">The comments specify which conditions are true or false in each block.</span></span>  
   
- [!code-cs[csrefKeywordsSelection#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_5.cs)]  
+ [!code-csharp[csrefKeywordsSelection#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_5.cs)]  
   
-## <a name="example"></a>例  
- この例では、入力された文字が小文字、大文字、または数値のいずれであるかを判別します。 3 つすべての条件が false の場合、文字は英数字ではありません。 この例では、いずれの場合もメッセージが表示されます。  
+## <a name="example"></a><span data-ttu-id="1103a-130">例</span><span class="sxs-lookup"><span data-stu-id="1103a-130">Example</span></span>  
+ <span data-ttu-id="1103a-131">この例では、入力された文字が小文字、大文字、または数値のいずれであるかを判別します。</span><span class="sxs-lookup"><span data-stu-id="1103a-131">The following example determines whether an input character is a lowercase letter, an uppercase letter, or a number.</span></span> <span data-ttu-id="1103a-132">3 つすべての条件が false の場合、文字は英数字ではありません。</span><span class="sxs-lookup"><span data-stu-id="1103a-132">If all three conditions are false, the character isn’t an alphanumeric character.</span></span> <span data-ttu-id="1103a-133">この例では、いずれの場合もメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1103a-133">The example displays a message for each case.</span></span>  
   
- [!code-cs[csrefKeywordsSelection#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_6.cs)]  
+ [!code-csharp[csrefKeywordsSelection#6](../../../csharp/language-reference/keywords/codesnippet/CSharp/if-else_6.cs)]  
   
- else ブロックまたは then ブロック内のステートメントを任意の有効なステートメントにできるように、条件には任意の有効なブール式を使用できます。 [&&](../../../csharp/language-reference/operators/conditional-and-operator.md)、[&](../../../csharp/language-reference/operators/and-operator.md)、[&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md)、[&#124;](../../../csharp/language-reference/operators/or-operator.md)、[!](../../../csharp/language-reference/operators/logical-negation-operator.md) などの論理演算子を使用して複合条件を作成できます。 次のコードに例を示します。  
+ <span data-ttu-id="1103a-134">else ブロックまたは then ブロック内のステートメントを任意の有効なステートメントにできるように、条件には任意の有効なブール式を使用できます。</span><span class="sxs-lookup"><span data-stu-id="1103a-134">Just as a statement in the else block or the then block can be any valid statement, you can use any valid Boolean expression for the condition.</span></span> <span data-ttu-id="1103a-135">[&&](../../../csharp/language-reference/operators/conditional-and-operator.md)、[&](../../../csharp/language-reference/operators/and-operator.md)、[&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md)、[&#124;](../../../csharp/language-reference/operators/or-operator.md)、[!](../../../csharp/language-reference/operators/logical-negation-operator.md)</span><span class="sxs-lookup"><span data-stu-id="1103a-135">You can use logical operators such as [&&](../../../csharp/language-reference/operators/conditional-and-operator.md), [&](../../../csharp/language-reference/operators/and-operator.md), [&#124;&#124;](../../../csharp/language-reference/operators/conditional-or-operator.md), [&#124;](../../../csharp/language-reference/operators/or-operator.md) and [!](../../../csharp/language-reference/operators/logical-negation-operator.md)</span></span> <span data-ttu-id="1103a-136">などの論理演算子を使用して複合条件を作成できます。</span><span class="sxs-lookup"><span data-stu-id="1103a-136">to make compound conditions.</span></span> <span data-ttu-id="1103a-137">次のコードに例を示します。</span><span class="sxs-lookup"><span data-stu-id="1103a-137">The following code shows examples.</span></span>  
   
 ```csharp  
 // NOT  
@@ -150,14 +131,13 @@ if (!(m >= n || m >= p))
 // Now m is the smallest.  
 ```  
   
-## <a name="c-language-specification"></a>C# 言語仕様  
+## <a name="c-language-specification"></a><span data-ttu-id="1103a-138">C# 言語仕様</span><span class="sxs-lookup"><span data-stu-id="1103a-138">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [?: 演算子](../../../csharp/language-reference/operators/conditional-operator.md)   
- [if-else ステートメント (C++)](/cpp/cpp/if-else-statement-cpp)   
- [switch](../../../csharp/language-reference/keywords/switch.md)
-
+## <a name="see-also"></a><span data-ttu-id="1103a-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="1103a-139">See Also</span></span>  
+ [<span data-ttu-id="1103a-140">C# リファレンス</span><span class="sxs-lookup"><span data-stu-id="1103a-140">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+ [<span data-ttu-id="1103a-141">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="1103a-141">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="1103a-142">C# のキーワード</span><span class="sxs-lookup"><span data-stu-id="1103a-142">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
+ [<span data-ttu-id="1103a-143">?: 演算子</span><span class="sxs-lookup"><span data-stu-id="1103a-143">?: Operator</span></span>](../../../csharp/language-reference/operators/conditional-operator.md)  
+ [<span data-ttu-id="1103a-144">if-else ステートメント (C++)</span><span class="sxs-lookup"><span data-stu-id="1103a-144">if-else Statement (C++)</span></span>](/cpp/cpp/if-else-statement-cpp)  
+ [<span data-ttu-id="1103a-145">switch</span><span class="sxs-lookup"><span data-stu-id="1103a-145">switch</span></span>](../../../csharp/language-reference/keywords/switch.md)

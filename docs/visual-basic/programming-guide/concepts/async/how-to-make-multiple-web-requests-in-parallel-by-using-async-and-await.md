@@ -1,40 +1,31 @@
 ---
-title: "方法: 並列で Async を使用して、複数の Web 要求を実行して、Await (Visual Basic) |Microsoft ドキュメント"
+title: "方法: 並列で非同期を使用して、複数の Web 要求を実行して、Await (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: a894b99b-7cfd-4a38-adfb-20d24f986730
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e4c41cc3813a9f96d944d115c6aaa5c5842a629b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: a9b96e8acf9f5453ac035769ea7b279c4fedadfb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-visual-basic"></a>方法: 並列で Async を使用して、複数の Web 要求を実行して、Await (Visual Basic)
-非同期メソッドでは、タスクは作成されると開始されます。 [Await](../../../../visual-basic/language-reference/operators/await-operator.md)演算子は、タスクが終了するまで処理を続行できない、メソッド内の位置で、タスクに適用します。 次の例に示すように、タスクは多くの場合、作成されるとすぐに待機します。  
+# <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-visual-basic"></a><span data-ttu-id="d8107-102">方法: 並列で非同期を使用して、複数の Web 要求を実行して、Await (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d8107-102">How to: Make Multiple Web Requests in Parallel by Using Async and Await (Visual Basic)</span></span>
+<span data-ttu-id="d8107-103">非同期メソッドでは、タスクは作成されると開始されます。</span><span class="sxs-lookup"><span data-stu-id="d8107-103">In an async method, tasks are started when they’re created.</span></span> <span data-ttu-id="d8107-104">[Await](../../../../visual-basic/language-reference/operators/await-operator.md)演算子は、メソッドのポイントで、タスクが終了するまで処理を続行できない場所で、タスクに適用します。</span><span class="sxs-lookup"><span data-stu-id="d8107-104">The [Await](../../../../visual-basic/language-reference/operators/await-operator.md) operator is applied to the task at the point in the method where processing can’t continue until the task finishes.</span></span> <span data-ttu-id="d8107-105">次の例に示すように、タスクは多くの場合、作成されるとすぐに待機します。</span><span class="sxs-lookup"><span data-stu-id="d8107-105">Often a task is awaited as soon as it’s created, as the following example shows.</span></span>  
   
 ```vb  
 Dim result = Await someWebAccessMethodAsync(url)  
 ```  
   
- ただし、プログラムにタスクの完了に依存せずに実行する別の処理がある場合、タスクの作成とタスクの待機を分けることもできます。  
+ <span data-ttu-id="d8107-106">ただし、プログラムにタスクの完了に依存せずに実行する別の処理がある場合、タスクの作成とタスクの待機を分けることもできます。</span><span class="sxs-lookup"><span data-stu-id="d8107-106">However, you can separate creating the task from awaiting the task if your program has other work to accomplish that doesn’t depend on the completion of the task.</span></span>  
   
 ```vb  
 ' The following line creates and starts the task.  
@@ -49,32 +40,32 @@ Dim myTask = someWebAccessMethodAsync(url)
 Dim result = Await myTask  
 ```  
   
- タスクを開始して待機する間に、他のタスクを開始できます。 追加のタスクは暗黙的に並列で実行されますが、追加のスレッドは作成されません。  
+ <span data-ttu-id="d8107-107">タスクを開始して待機する間に、他のタスクを開始できます。</span><span class="sxs-lookup"><span data-stu-id="d8107-107">Between starting a task and awaiting it, you can start other tasks.</span></span> <span data-ttu-id="d8107-108">追加のタスクは暗黙的に並列で実行されますが、追加のスレッドは作成されません。</span><span class="sxs-lookup"><span data-stu-id="d8107-108">The additional tasks implicitly run in parallel, but no additional threads are created.</span></span>  
   
- 次のプログラムは&3; つの非同期的な Web ダウンロードを開始し、次に呼び出した順にそれを待機します。 プログラムを実行する場合、タスクは必ずしも作成して待機した順には終了しないことに注意します。 タスクは作成されると実行され、メソッドが await 式に到達する前に&1; つまたは複数のタスクが終了する場合もあります。  
+ <span data-ttu-id="d8107-109">次のプログラムは 3 つの非同期的な Web ダウンロードを開始し、次に呼び出した順にそれを待機します。</span><span class="sxs-lookup"><span data-stu-id="d8107-109">The following program starts three asynchronous web downloads and then awaits them in the order in which they’re called.</span></span> <span data-ttu-id="d8107-110">プログラムを実行する場合、タスクは必ずしも作成して待機した順には終了しないことに注意します。</span><span class="sxs-lookup"><span data-stu-id="d8107-110">Notice, when you run the program, that the tasks don’t always finish in the order in which they’re created and awaited.</span></span> <span data-ttu-id="d8107-111">タスクは作成されると実行され、メソッドが await 式に到達する前に 1 つまたは複数のタスクが終了する場合もあります。</span><span class="sxs-lookup"><span data-stu-id="d8107-111">They start to run when they’re created, and one or more of the tasks might finish before the method reaches the await expressions.</span></span>  
   
 > [!NOTE]
->  このプロジェクトを完了するには、Visual Studio 2012 以降と .NET Framework 4.5 が必要または以降がコンピューターにインストールされています。  
+>  <span data-ttu-id="d8107-112">このプロジェクトを完成させるには、Visual Studio 2012 以降および .NET Framework 4.5 以降がコンピューターにインストールされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="d8107-112">To complete this project, you must have Visual Studio 2012 or higher and the .NET Framework 4.5 or higher installed on your computer.</span></span>  
   
- 同時に複数のタスクを起動する別の例では、次を参照してください。[方法: Task.WhenAll を使用する」(Visual Basic の場合) して Asyncwalkthrough を拡張](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)します。  
+ <span data-ttu-id="d8107-113">同時に複数のタスクを起動する別の例では、次を参照してください。[する方法: Task.WhenAll (Visual Basic) にを使用して Asyncwalkthrough を拡張](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)です。</span><span class="sxs-lookup"><span data-stu-id="d8107-113">For another example that starts multiple tasks at the same time, see [How to: Extend the Async Walkthrough by Using Task.WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).</span></span>  
   
- この例のコードをダウンロードする[デベロッパー サンプル コード集](http://go.microsoft.com/fwlink/?LinkId=254906)します。  
+ <span data-ttu-id="d8107-114">この例のコードは、[開発者コード サンプル](http://go.microsoft.com/fwlink/?LinkId=254906)のページからダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="d8107-114">You can download the code for this example from [Developer Code Samples](http://go.microsoft.com/fwlink/?LinkId=254906).</span></span>  
   
-### <a name="to-set-up-the-project"></a>プロジェクトを設定するには  
+### <a name="to-set-up-the-project"></a><span data-ttu-id="d8107-115">プロジェクトを設定するには</span><span class="sxs-lookup"><span data-stu-id="d8107-115">To set up the project</span></span>  
   
-1.  WPF アプリケーションを設定するには、次の手順を実行します。 これらの手順の詳細な説明を参照して[チュートリアル: を使用して Async と Await (Visual Basic の場合) により、Web にアクセスする](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。  
+1.  <span data-ttu-id="d8107-116">WPF アプリケーションを設定するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="d8107-116">To set up a WPF application, complete the following steps.</span></span> <span data-ttu-id="d8107-117">これらの手順の詳細な手順を参照して[チュートリアル: を使用して Async および Await (Visual Basic) で Web へのアクセス](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)です。</span><span class="sxs-lookup"><span data-stu-id="d8107-117">You can find detailed instructions for these steps in [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).</span></span>  
   
-    -   テキスト ボックスとボタンを含む WPF アプリケーションを作成します。 ボタンに `startButton` という名前を付け、テキスト ボックスに `resultsTextBox` という名前を付けます。  
+    -   <span data-ttu-id="d8107-118">テキスト ボックスとボタンを含む WPF アプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="d8107-118">Create a WPF application that contains a text box and a button.</span></span> <span data-ttu-id="d8107-119">ボタンに `startButton` という名前を付け、テキスト ボックスに `resultsTextBox` という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="d8107-119">Name the button `startButton`, and name the text box `resultsTextBox`.</span></span>  
   
-    -   <xref:System.Net.Http>。</xref:System.Net.Http>への参照を追加します。  
+    -   <span data-ttu-id="d8107-120"><xref:System.Net.Http> への参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="d8107-120">Add a reference for <xref:System.Net.Http>.</span></span>  
   
-    -   MainWindow.xaml.vb ファイルで、追加、`Imports`の声明`System.Net.Http`します。  
+    -   <span data-ttu-id="d8107-121">MainWindow.xaml.vb ファイルで追加、`Imports`の声明`System.Net.Http`です。</span><span class="sxs-lookup"><span data-stu-id="d8107-121">In the MainWindow.xaml.vb file, add an `Imports` statement for `System.Net.Http`.</span></span>  
   
-### <a name="to-add-the-code"></a>コードを追加するには  
+### <a name="to-add-the-code"></a><span data-ttu-id="d8107-122">コードを追加するには</span><span class="sxs-lookup"><span data-stu-id="d8107-122">To add the code</span></span>  
   
-1.  デザイン ウィンドウの MainWindow.xaml で作成するには、ボタンをダブルクリックして、 `startButton_Click` MainWindow.xaml.vb 内のイベント ハンドラーです。  
+1.  <span data-ttu-id="d8107-123">デザイン ウィンドウで、MainWindow.xaml を作成するボタンをダブルクリックして、 `startButton_Click` MainWindow.xaml.vb 内のイベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="d8107-123">In the design window, MainWindow.xaml, double-click the button to create the `startButton_Click` event handler in MainWindow.xaml.vb.</span></span>  
   
-2.  次のコードをコピーしの本文に貼り付けます`startButton_Click`MainWindow.xaml.vb にします。  
+2.  <span data-ttu-id="d8107-124">次のコードをコピーしの本体に貼り付けます`startButton_Click`MainWindow.xaml.vb にします。</span><span class="sxs-lookup"><span data-stu-id="d8107-124">Copy the following code, and paste it into the body of `startButton_Click` in MainWindow.xaml.vb.</span></span>  
   
     ```vb  
     resultsTextBox.Clear()  
@@ -82,15 +73,15 @@ Dim result = Await myTask
     resultsTextBox.Text &= vbCrLf & "Control returned to button1_Click."  
     ```  
   
-     このコードは、アプリケーションを呼び出す非同期メソッドである `CreateMultipleTasksAsync` を呼び出します。  
+     <span data-ttu-id="d8107-125">このコードは、アプリケーションを呼び出す非同期メソッドである `CreateMultipleTasksAsync` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="d8107-125">The code calls an asynchronous method, `CreateMultipleTasksAsync`, which drives the application.</span></span>  
   
-3.  プロジェクトに次のサポート メソッドを追加します。  
+3.  <span data-ttu-id="d8107-126">プロジェクトに次のサポート メソッドを追加します。</span><span class="sxs-lookup"><span data-stu-id="d8107-126">Add the following support methods to the project:</span></span>  
   
-    -   `ProcessURLAsync`使用して、<xref:System.Net.Http.HttpClient>バイト配列としての web サイトのコンテンツをダウンロードする方法</xref:System.Net.Http.HttpClient>。 次に `ProcessURLAsync` サポート メソッドは、配列の長さを表示して返します。  
+    -   <span data-ttu-id="d8107-127">`ProcessURLAsync` は <xref:System.Net.Http.HttpClient> メソッドを使用して、Web サイトのコンテンツをバイト配列としてダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="d8107-127">`ProcessURLAsync` uses an <xref:System.Net.Http.HttpClient> method to download the contents of a website as a byte array.</span></span> <span data-ttu-id="d8107-128">次に `ProcessURLAsync` サポート メソッドは、配列の長さを表示して返します。</span><span class="sxs-lookup"><span data-stu-id="d8107-128">The support method, `ProcessURLAsync` then displays and returns the length of the array.</span></span>  
   
-    -   `DisplayResults` は各 URL のバイト配列内のバイトの数を表示します。 この表示は、各タスクがいつダウンロードを完了したかを示します。  
+    -   <span data-ttu-id="d8107-129">`DisplayResults` は各 URL のバイト配列内のバイトの数を表示します。</span><span class="sxs-lookup"><span data-stu-id="d8107-129">`DisplayResults` displays the number of bytes in the byte array for each URL.</span></span> <span data-ttu-id="d8107-130">この表示は、各タスクがいつダウンロードを完了したかを示します。</span><span class="sxs-lookup"><span data-stu-id="d8107-130">This display shows when each task has finished downloading.</span></span>  
   
-     次のメソッドをコピーして貼り付けるした後にそれらの`startButton_Click`MainWindow.xaml.vb 内のイベント ハンドラーです。  
+     <span data-ttu-id="d8107-131">次のメソッドをコピーし、後に貼り付けます、 `startButton_Click` MainWindow.xaml.vb 内のイベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="d8107-131">Copy the following methods, and paste them after the `startButton_Click` event handler in MainWindow.xaml.vb.</span></span>  
   
     ```vb  
     Private Async Function ProcessURLAsync(url As String, client As HttpClient) As Task(Of Integer)  
@@ -112,17 +103,17 @@ Dim result = Await myTask
     End Sub  
     ```  
   
-4.  最後に、次の手順を実行するメソッド `CreateMultipleTasksAsync` を定義します。  
+4.  <span data-ttu-id="d8107-132">最後に、次の手順を実行するメソッド `CreateMultipleTasksAsync` を定義します。</span><span class="sxs-lookup"><span data-stu-id="d8107-132">Finally, define method `CreateMultipleTasksAsync`, which performs the following steps.</span></span>  
   
-    -   メソッドを宣言して、`HttpClient`メソッドにアクセスする必要があるオブジェクト<xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A>で`ProcessURLAsync`</xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A>。  
+    -   <span data-ttu-id="d8107-133">このメソッドは、`HttpClient` の <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> メソッドにアクセスするために必要な `ProcessURLAsync` オブジェクトを宣言します。</span><span class="sxs-lookup"><span data-stu-id="d8107-133">The method declares an `HttpClient` object,which you need  to access method <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> in `ProcessURLAsync`.</span></span>  
   
-    -   メソッドを作成し、型の&3; つのタスクを開始<xref:System.Threading.Tasks.Task%601>ここで、`TResult`整数です</xref:System.Threading.Tasks.Task%601>。 各タスクが終了すると、`DisplayResults` はタスクの URL とダウンロードしたコンテンツの長さを表示します。 タスクは非同期的に実行されるため、結果が表示される順序は、宣言された順序と異なる場合があります。  
+    -   <span data-ttu-id="d8107-134">このメソッドは <xref:System.Threading.Tasks.Task%601> が整数である `TResult` 型の 3 つのタスクを作成して開始します。</span><span class="sxs-lookup"><span data-stu-id="d8107-134">The method creates and starts three tasks of type <xref:System.Threading.Tasks.Task%601>, where `TResult` is an integer.</span></span> <span data-ttu-id="d8107-135">各タスクが終了すると、`DisplayResults` はタスクの URL とダウンロードしたコンテンツの長さを表示します。</span><span class="sxs-lookup"><span data-stu-id="d8107-135">As each task finishes, `DisplayResults` displays the task's URL and the length of the downloaded contents.</span></span> <span data-ttu-id="d8107-136">タスクは非同期的に実行されるため、結果が表示される順序は、宣言された順序と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="d8107-136">Because the tasks are running asynchronously, the order in which the results appear might differ from the order in which they were declared.</span></span>  
   
-    -   メソッドは、各タスクの完了を待機します。 各`Await`演算子の実行を中断する`CreateMultipleTasksAsync`待機中のタスクを完了するまでです。 さらに演算子は、完了した各タスクから `ProcessURLAsync` への呼び出しからの戻り値を取得します。  
+    -   <span data-ttu-id="d8107-137">メソッドは、各タスクの完了を待機します。</span><span class="sxs-lookup"><span data-stu-id="d8107-137">The method awaits the completion of each task.</span></span> <span data-ttu-id="d8107-138">各 `Await` 演算子は、待機したタスクが終了するまで `CreateMultipleTasksAsync` の実行を中断します。</span><span class="sxs-lookup"><span data-stu-id="d8107-138">Each `Await` operator suspends execution of `CreateMultipleTasksAsync` until the awaited task is finished.</span></span> <span data-ttu-id="d8107-139">さらに演算子は、完了した各タスクから `ProcessURLAsync` への呼び出しからの戻り値を取得します。</span><span class="sxs-lookup"><span data-stu-id="d8107-139">The operator also retrieves the return value from the call to `ProcessURLAsync` from each completed task.</span></span>  
   
-    -   タスクが完了して整数値が取得されると、メソッドは Web サイトの長さの合計し、その結果を表示します。  
+    -   <span data-ttu-id="d8107-140">タスクが完了して整数値が取得されると、メソッドは Web サイトの長さの合計し、その結果を表示します。</span><span class="sxs-lookup"><span data-stu-id="d8107-140">When the tasks have been completed and the integer values have been retrieved, the method sums the lengths of the websites and displays the result.</span></span>  
   
-     次のメソッドをコピーしてソリューションに貼り付けます。  
+     <span data-ttu-id="d8107-141">次のメソッドをコピーしてソリューションに貼り付けます。</span><span class="sxs-lookup"><span data-stu-id="d8107-141">Copy the following method, and paste it into your solution.</span></span>  
   
     ```vb  
     Private Async Function CreateMultipleTasksAsync() As Task  
@@ -154,12 +145,12 @@ Dim result = Await myTask
     End Function  
     ```  
   
-5.  F5 キーを押してプログラムを実行し、 **[Start]** を複数回クリックします。  
+5.  <span data-ttu-id="d8107-142">F5 キーを押してプログラムを実行し、 **[Start]** を複数回クリックします。</span><span class="sxs-lookup"><span data-stu-id="d8107-142">Choose the F5 key to run the program, and then choose the **Start** button.</span></span>  
   
-     プログラムを複数回実行して、3 つのタスクが必ずしも同じ順序では完了しないこと、また完了の順序は必ずしも作成され待機した順序と同じではないことを確認します。  
+     <span data-ttu-id="d8107-143">プログラムを複数回実行して、3 つのタスクが必ずしも同じ順序では完了しないこと、また完了の順序は必ずしも作成され待機した順序と同じではないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="d8107-143">Run the program several times to verify that the three tasks don’t always finish in the same order and that the order in which they finish isn't necessarily the order in which they’re created and awaited.</span></span>  
   
-## <a name="example"></a>例  
- ここまでの例をすべて含んだコードを次に示します。  
+## <a name="example"></a><span data-ttu-id="d8107-144">例</span><span class="sxs-lookup"><span data-stu-id="d8107-144">Example</span></span>  
+ <span data-ttu-id="d8107-145">ここまでの例をすべて含んだコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="d8107-145">The following code contains the full example.</span></span>  
   
 ```vb  
 ' Add the following Imports statements, and add a reference for System.Net.Http.  
@@ -221,8 +212,7 @@ Class MainWindow
 End Class  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [チュートリアル: Async を使用して Web へのアクセスと Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
- [非同期プログラミングを Async と Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)   
- [方法: Task.WhenAll (Visual Basic) を使用して Asyncwalkthrough を拡張](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
-
+## <a name="see-also"></a><span data-ttu-id="d8107-146">関連項目</span><span class="sxs-lookup"><span data-stu-id="d8107-146">See Also</span></span>  
+ [<span data-ttu-id="d8107-147">チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d8107-147">Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
+ [<span data-ttu-id="d8107-148">Async および Await を使用した非同期プログラミング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d8107-148">Asynchronous Programming with Async and Await (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/async/index.md)  
+ [<span data-ttu-id="d8107-149">方法: Task.WhenAll を使用して AsyncWalkthrough を拡張する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d8107-149">How to: Extend the Async Walkthrough by Using Task.WhenAll (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)

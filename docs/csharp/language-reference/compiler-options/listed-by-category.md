@@ -1,138 +1,119 @@
 ---
 title: "カテゴリ別の C# コンパイラ オプションの一覧"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - Visual C# compiler, options listed by category
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: c95c5c3d1c7ea2461e9bda9a1d58464e97ccc688
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 8e8d01587ccde967b8484b3b61916f8cf437f6c0
-ms.openlocfilehash: 584d0cb249644e6b4ffe15e115c49256f5fa2716
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="c-compiler-options-listed-by-category"></a>カテゴリ別の C# コンパイラ オプションの一覧
-次のコンパイラ オプションは、カテゴリ別に並んでいます。 アルファベット順の一覧については、「[アルファベット順の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)」を参照してください。  
+# <a name="c-compiler-options-listed-by-category"></a><span data-ttu-id="06700-102">カテゴリ別の C# コンパイラ オプションの一覧</span><span class="sxs-lookup"><span data-stu-id="06700-102">C# Compiler Options Listed by Category</span></span>
+<span data-ttu-id="06700-103">次のコンパイラ オプションは、カテゴリ別に並んでいます。</span><span class="sxs-lookup"><span data-stu-id="06700-103">The following compiler options are sorted by category.</span></span> <span data-ttu-id="06700-104">アルファベット順の一覧については、「[アルファベット順の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="06700-104">For an alphabetical list, see [C# Compiler Options Listed Alphabetically](../../../csharp/language-reference/compiler-options/listed-alphabetically.md).</span></span>  
   
-### <a name="optimization"></a>最適化  
+### <a name="optimization"></a><span data-ttu-id="06700-105">最適化</span><span class="sxs-lookup"><span data-stu-id="06700-105">Optimization</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="06700-106">オプション</span><span class="sxs-lookup"><span data-stu-id="06700-106">Option</span></span>|<span data-ttu-id="06700-107">目的</span><span class="sxs-lookup"><span data-stu-id="06700-107">Purpose</span></span>|  
 |------------|-------------|  
-|[/filealign](../../../csharp/language-reference/compiler-options/filealign-compiler-option.md)|出力ファイル内のセクションのサイズを指定します。|  
-|[/optimize](../../../csharp/language-reference/compiler-options/optimize-compiler-option.md)|最適化を有効または無効にします。|  
+|[<span data-ttu-id="06700-108">/filealign</span><span class="sxs-lookup"><span data-stu-id="06700-108">/filealign</span></span>](../../../csharp/language-reference/compiler-options/filealign-compiler-option.md)|<span data-ttu-id="06700-109">出力ファイル内のセクションのサイズを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-109">Specifies the size of sections in the output file.</span></span>|  
+|[<span data-ttu-id="06700-110">/optimize</span><span class="sxs-lookup"><span data-stu-id="06700-110">/optimize</span></span>](../../../csharp/language-reference/compiler-options/optimize-compiler-option.md)|<span data-ttu-id="06700-111">最適化を有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="06700-111">Enables/disables optimizations.</span></span>|  
   
-### <a name="output-files"></a>出力ファイル  
+### <a name="output-files"></a><span data-ttu-id="06700-112">出力ファイル</span><span class="sxs-lookup"><span data-stu-id="06700-112">Output Files</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="06700-113">オプション</span><span class="sxs-lookup"><span data-stu-id="06700-113">Option</span></span>|<span data-ttu-id="06700-114">目的</span><span class="sxs-lookup"><span data-stu-id="06700-114">Purpose</span></span>|  
 |------------|-------------|  
-|[/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)|処理されたドキュメントのコメントが書き込まれる XML ファイルを指定します。|  
-|[/out](../../../csharp/language-reference/compiler-options/out-compiler-option.md)|出力ファイルを指定します。|  
-|[/pdb](../../../csharp/language-reference/compiler-options/pdb-compiler-option.md)|.pdb ファイルの名前と場所を指定します。|  
-|[/platform](../../../csharp/language-reference/compiler-options/platform-compiler-option.md)|出力プラットフォームを指定します。|  
-|[/preferreduilang](../../../csharp/language-reference/compiler-options/preferreduilang-compiler-option.md)|コンパイラ出力用の言語を指定します。|  
-|[/refout](refout-compiler-option.md)|プライマリ アセンブリだけでなく、参照アセンブリを生成します。|  
-|[/refonly](refonly-compiler-option.md)|プライマリ アセンブリの代わりに、参照アセンブリを生成します。|  
-|[/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md)|6 つのオプション ([/target:appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md)、[/target:exe](../../../csharp/language-reference/compiler-options/target-exe-compiler-option.md)、[/target:library](../../../csharp/language-reference/compiler-options/target-library-compiler-option.md)、[/target:module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md)、[/target:winexe](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md)、[/target:winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md)) のいずれかを使用して、出力ファイルの形式を指定します。|  
-|/modulename:\<文字列>|ソース モジュールの名前を指定します。|  
+|[<span data-ttu-id="06700-115">/doc</span><span class="sxs-lookup"><span data-stu-id="06700-115">/doc</span></span>](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)|<span data-ttu-id="06700-116">処理されたドキュメントのコメントが書き込まれる XML ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-116">Specifies an XML file where processed documentation comments are to be written.</span></span>|  
+|[<span data-ttu-id="06700-117">/out</span><span class="sxs-lookup"><span data-stu-id="06700-117">/out</span></span>](../../../csharp/language-reference/compiler-options/out-compiler-option.md)|<span data-ttu-id="06700-118">出力ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-118">Specifies the output file.</span></span>|  
+|[<span data-ttu-id="06700-119">/pdb</span><span class="sxs-lookup"><span data-stu-id="06700-119">/pdb</span></span>](../../../csharp/language-reference/compiler-options/pdb-compiler-option.md)|<span data-ttu-id="06700-120">.pdb ファイルの名前と場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-120">Specifies the file name and location of the .pdb file.</span></span>|  
+|[<span data-ttu-id="06700-121">/platform</span><span class="sxs-lookup"><span data-stu-id="06700-121">/platform</span></span>](../../../csharp/language-reference/compiler-options/platform-compiler-option.md)|<span data-ttu-id="06700-122">出力プラットフォームを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-122">Specify the output platform.</span></span>|  
+|[<span data-ttu-id="06700-123">/preferreduilang</span><span class="sxs-lookup"><span data-stu-id="06700-123">/preferreduilang</span></span>](../../../csharp/language-reference/compiler-options/preferreduilang-compiler-option.md)|<span data-ttu-id="06700-124">コンパイラ出力用の言語を指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-124">Specify a language for compiler output.</span></span>|  
+|[<span data-ttu-id="06700-125">/refout</span><span class="sxs-lookup"><span data-stu-id="06700-125">/refout</span></span>](refout-compiler-option.md)|<span data-ttu-id="06700-126">プライマリ アセンブリだけでなく、参照アセンブリを生成します。</span><span class="sxs-lookup"><span data-stu-id="06700-126">Generate a reference assembly in addition to the primary assembly.</span></span>|  
+|[<span data-ttu-id="06700-127">/refonly</span><span class="sxs-lookup"><span data-stu-id="06700-127">/refonly</span></span>](refonly-compiler-option.md)|<span data-ttu-id="06700-128">プライマリ アセンブリの代わりに、参照アセンブリを生成します。</span><span class="sxs-lookup"><span data-stu-id="06700-128">Generate a reference assembly instead of a primary assembly.</span></span>|  
+|[<span data-ttu-id="06700-129">/target</span><span class="sxs-lookup"><span data-stu-id="06700-129">/target</span></span>](../../../csharp/language-reference/compiler-options/target-compiler-option.md)|<span data-ttu-id="06700-130">6 つのオプション ([/target:appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md)、[/target:exe](../../../csharp/language-reference/compiler-options/target-exe-compiler-option.md)、[/target:library](../../../csharp/language-reference/compiler-options/target-library-compiler-option.md)、[/target:module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md)、[/target:winexe](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md)、[/target:winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md)) のいずれかを使用して、出力ファイルの形式を指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-130">Specifies the format of the output file using one of five options: [/target:appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md), [/target:exe](../../../csharp/language-reference/compiler-options/target-exe-compiler-option.md), [/target:library](../../../csharp/language-reference/compiler-options/target-library-compiler-option.md), [/target:module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md), [/target:winexe](../../../csharp/language-reference/compiler-options/target-winexe-compiler-option.md), or [/target:winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md).</span></span>|  
+|<span data-ttu-id="06700-131">/modulename:\<文字列></span><span class="sxs-lookup"><span data-stu-id="06700-131">/modulename:\<string></span></span>|<span data-ttu-id="06700-132">ソース モジュールの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-132">Specify the name of the source module</span></span>|  
   
-### <a name="net-framework-assemblies"></a>.NET Framework アセンブリ  
+### <a name="net-framework-assemblies"></a><span data-ttu-id="06700-133">.NET Framework アセンブリ</span><span class="sxs-lookup"><span data-stu-id="06700-133">.NET Framework Assemblies</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="06700-134">オプション</span><span class="sxs-lookup"><span data-stu-id="06700-134">Option</span></span>|<span data-ttu-id="06700-135">目的</span><span class="sxs-lookup"><span data-stu-id="06700-135">Purpose</span></span>|  
 |------------|-------------|  
-|[/addmodule](../../../csharp/language-reference/compiler-options/addmodule-compiler-option.md)|このアセンブリを構成する 1 つ以上のモジュールを指定します。|  
-|[/delaysign](../../../csharp/language-reference/compiler-options/delaysign-compiler-option.md)|公開キーを追加し、アセンブリには署名しないでおくようコンパイラに指示します。|  
-|[/keycontainer](../../../csharp/language-reference/compiler-options/keycontainer-compiler-option.md)|暗号化キー コンテナーの名前を指定します。|  
-|[/keyfile](../../../csharp/language-reference/compiler-options/keyfile-compiler-option.md)|暗号化キーを格納するファイル名を指定します。|  
-|[/lib](../../../csharp/language-reference/compiler-options/lib-compiler-option.md)|[/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) で参照されるアセンブリの場所を指定します。|  
-|[/nostdlib](../../../csharp/language-reference/compiler-options/nostdlib-compiler-option.md)|標準ライブラリ (mscorlib.dll) をインポートしないようコンパイラに指示します。|  
-|[/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)|アセンブリが格納されているファイルからメタデータをインポートします。|  
-|/analyzer|このアセンブリからアナライザーを実行します (短縮形: /a)。|  
-|/additionalfile|コードの生成に直接影響はないが、エラーまたは警告を生成するためにアナライザーが使用できる追加のファイルを指定します。|  
+|[<span data-ttu-id="06700-136">/addmodule</span><span class="sxs-lookup"><span data-stu-id="06700-136">/addmodule</span></span>](../../../csharp/language-reference/compiler-options/addmodule-compiler-option.md)|<span data-ttu-id="06700-137">このアセンブリを構成する 1 つ以上のモジュールを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-137">Specifies one or more modules to be part of this assembly.</span></span>|  
+|[<span data-ttu-id="06700-138">/delaysign</span><span class="sxs-lookup"><span data-stu-id="06700-138">/delaysign</span></span>](../../../csharp/language-reference/compiler-options/delaysign-compiler-option.md)|<span data-ttu-id="06700-139">公開キーを追加し、アセンブリには署名しないでおくようコンパイラに指示します。</span><span class="sxs-lookup"><span data-stu-id="06700-139">Instructs the compiler to add the public key but to leave the assembly unsigned.</span></span>|  
+|[<span data-ttu-id="06700-140">/keycontainer</span><span class="sxs-lookup"><span data-stu-id="06700-140">/keycontainer</span></span>](../../../csharp/language-reference/compiler-options/keycontainer-compiler-option.md)|<span data-ttu-id="06700-141">暗号化キー コンテナーの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-141">Specifies the name of the cryptographic key container.</span></span>|  
+|[<span data-ttu-id="06700-142">/keyfile</span><span class="sxs-lookup"><span data-stu-id="06700-142">/keyfile</span></span>](../../../csharp/language-reference/compiler-options/keyfile-compiler-option.md)|<span data-ttu-id="06700-143">暗号化キーを格納するファイル名を指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-143">Specifies the filename containing the cryptographic key.</span></span>|  
+|[<span data-ttu-id="06700-144">/lib</span><span class="sxs-lookup"><span data-stu-id="06700-144">/lib</span></span>](../../../csharp/language-reference/compiler-options/lib-compiler-option.md)|<span data-ttu-id="06700-145">[/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) で参照されるアセンブリの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-145">Specifies the location of assemblies referenced by means of [/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md).</span></span>|  
+|[<span data-ttu-id="06700-146">/nostdlib</span><span class="sxs-lookup"><span data-stu-id="06700-146">/nostdlib</span></span>](../../../csharp/language-reference/compiler-options/nostdlib-compiler-option.md)|<span data-ttu-id="06700-147">標準ライブラリ (mscorlib.dll) をインポートしないようコンパイラに指示します。</span><span class="sxs-lookup"><span data-stu-id="06700-147">Instructs the compiler not to import the standard library (mscorlib.dll).</span></span>|  
+|[<span data-ttu-id="06700-148">/reference</span><span class="sxs-lookup"><span data-stu-id="06700-148">/reference</span></span>](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)|<span data-ttu-id="06700-149">アセンブリが格納されているファイルからメタデータをインポートします。</span><span class="sxs-lookup"><span data-stu-id="06700-149">Imports metadata from a file that contains an assembly.</span></span>|  
+|<span data-ttu-id="06700-150">/analyzer</span><span class="sxs-lookup"><span data-stu-id="06700-150">/analyzer</span></span>|<span data-ttu-id="06700-151">このアセンブリからアナライザーを実行します (短縮形: /a)。</span><span class="sxs-lookup"><span data-stu-id="06700-151">Run the analyzers from this assembly (Short form: /a)</span></span>|  
+|<span data-ttu-id="06700-152">/additionalfile</span><span class="sxs-lookup"><span data-stu-id="06700-152">/additionalfile</span></span>|<span data-ttu-id="06700-153">コードの生成に直接影響はないが、エラーまたは警告を生成するためにアナライザーが使用できる追加のファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-153">Names additional files that don't directly affect code generation but may be used by analyzers for producing errors or warnings.</span></span>|  
   
-### <a name="debuggingerror-checking"></a>デバッグ/エラー チェック  
+### <a name="debuggingerror-checking"></a><span data-ttu-id="06700-154">デバッグ/エラー チェック</span><span class="sxs-lookup"><span data-stu-id="06700-154">Debugging/Error Checking</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="06700-155">オプション</span><span class="sxs-lookup"><span data-stu-id="06700-155">Option</span></span>|<span data-ttu-id="06700-156">目的</span><span class="sxs-lookup"><span data-stu-id="06700-156">Purpose</span></span>|  
 |------------|-------------|  
-|[/bugreport](../../../csharp/language-reference/compiler-options/bugreport-compiler-option.md)|バグを簡単に報告するための情報を含むファイルを作成します。|  
-|[/checked](../../../csharp/language-reference/compiler-options/checked-compiler-option.md)|データ型の境界をオーバーフローする整数演算で、実行時に例外を発生させるかどうかを指定します。|  
-|[/debug](../../../csharp/language-reference/compiler-options/debug-compiler-option.md)|デバッグ情報を生成するようコンパイラに指示します。|  
-|[/errorreport](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)|エラー報告の動作を設定します。|  
-|[/fullpaths](../../../csharp/language-reference/compiler-options/fullpaths-compiler-option.md)|コンパイラ出力に含まれるファイルの絶対パスを指定します。|  
-|[/nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md)|指定した警告がコンパイラで生成されないようにします。|  
-|[/warn](../../../csharp/language-reference/compiler-options/warn-compiler-option.md)|警告レベルを設定します。|  
-|[/warnaserror](../../../csharp/language-reference/compiler-options/warnaserror-compiler-option.md)|警告をエラーに昇格します。|  
-|/ruleset:\<ファイル>|特定の診断を無効にするルールセット ファイルを指定します。|  
+|[<span data-ttu-id="06700-157">/bugreport</span><span class="sxs-lookup"><span data-stu-id="06700-157">/bugreport</span></span>](../../../csharp/language-reference/compiler-options/bugreport-compiler-option.md)|<span data-ttu-id="06700-158">バグを簡単に報告するための情報を含むファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="06700-158">Creates a file that contains information that makes it easy to report a bug.</span></span>|  
+|[<span data-ttu-id="06700-159">/checked</span><span class="sxs-lookup"><span data-stu-id="06700-159">/checked</span></span>](../../../csharp/language-reference/compiler-options/checked-compiler-option.md)|<span data-ttu-id="06700-160">データ型の境界をオーバーフローする整数演算で、実行時に例外を発生させるかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-160">Specifies whether integer arithmetic that overflows the bounds of the data type will cause an exception at run time.</span></span>|  
+|[<span data-ttu-id="06700-161">/debug</span><span class="sxs-lookup"><span data-stu-id="06700-161">/debug</span></span>](../../../csharp/language-reference/compiler-options/debug-compiler-option.md)|<span data-ttu-id="06700-162">デバッグ情報を生成するようコンパイラに指示します。</span><span class="sxs-lookup"><span data-stu-id="06700-162">Instruct the compiler to emit debugging information.</span></span>|  
+|[<span data-ttu-id="06700-163">/errorreport</span><span class="sxs-lookup"><span data-stu-id="06700-163">/errorreport</span></span>](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)|<span data-ttu-id="06700-164">エラー報告の動作を設定します。</span><span class="sxs-lookup"><span data-stu-id="06700-164">Sets error reporting behavior.</span></span>|  
+|[<span data-ttu-id="06700-165">/fullpaths</span><span class="sxs-lookup"><span data-stu-id="06700-165">/fullpaths</span></span>](../../../csharp/language-reference/compiler-options/fullpaths-compiler-option.md)|<span data-ttu-id="06700-166">コンパイラ出力に含まれるファイルの絶対パスを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-166">Specifies the absolute path to the file in compiler output.</span></span>|  
+|[<span data-ttu-id="06700-167">/nowarn</span><span class="sxs-lookup"><span data-stu-id="06700-167">/nowarn</span></span>](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md)|<span data-ttu-id="06700-168">指定した警告がコンパイラで生成されないようにします。</span><span class="sxs-lookup"><span data-stu-id="06700-168">Suppresses the compiler's generation of specified warnings.</span></span>|  
+|[<span data-ttu-id="06700-169">/warn</span><span class="sxs-lookup"><span data-stu-id="06700-169">/warn</span></span>](../../../csharp/language-reference/compiler-options/warn-compiler-option.md)|<span data-ttu-id="06700-170">警告レベルを設定します。</span><span class="sxs-lookup"><span data-stu-id="06700-170">Sets the warning level.</span></span>|  
+|[<span data-ttu-id="06700-171">/warnaserror</span><span class="sxs-lookup"><span data-stu-id="06700-171">/warnaserror</span></span>](../../../csharp/language-reference/compiler-options/warnaserror-compiler-option.md)|<span data-ttu-id="06700-172">警告をエラーに昇格します。</span><span class="sxs-lookup"><span data-stu-id="06700-172">Promotes warnings to errors.</span></span>|  
+|<span data-ttu-id="06700-173">/ruleset:\<ファイル></span><span class="sxs-lookup"><span data-stu-id="06700-173">/ruleset:\<file></span></span>|<span data-ttu-id="06700-174">特定の診断を無効にするルールセット ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-174">Specify a ruleset file that disables specific diagnostics.</span></span>|  
   
-### <a name="preprocessor"></a>プリプロセッサ  
+### <a name="preprocessor"></a><span data-ttu-id="06700-175">プリプロセッサ</span><span class="sxs-lookup"><span data-stu-id="06700-175">Preprocessor</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="06700-176">オプション</span><span class="sxs-lookup"><span data-stu-id="06700-176">Option</span></span>|<span data-ttu-id="06700-177">目的</span><span class="sxs-lookup"><span data-stu-id="06700-177">Purpose</span></span>|  
 |------------|-------------|  
-|[/define](../../../csharp/language-reference/compiler-options/define-compiler-option.md)|プリプロセッサ シンボルを定義します。|  
+|[<span data-ttu-id="06700-178">/define</span><span class="sxs-lookup"><span data-stu-id="06700-178">/define</span></span>](../../../csharp/language-reference/compiler-options/define-compiler-option.md)|<span data-ttu-id="06700-179">プリプロセッサ シンボルを定義します。</span><span class="sxs-lookup"><span data-stu-id="06700-179">Defines preprocessor symbols.</span></span>|  
   
-### <a name="resources"></a>リソース  
+### <a name="resources"></a><span data-ttu-id="06700-180">リソース</span><span class="sxs-lookup"><span data-stu-id="06700-180">Resources</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="06700-181">オプション</span><span class="sxs-lookup"><span data-stu-id="06700-181">Option</span></span>|<span data-ttu-id="06700-182">目的</span><span class="sxs-lookup"><span data-stu-id="06700-182">Purpose</span></span>|  
 |------------|-------------|  
-|[/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md)|指定したアセンブリ内の COM 型情報をプロジェクトで使用できるようにします。|  
-|[/linkresource](../../../csharp/language-reference/compiler-options/linkresource-compiler-option.md)|マネージ リソースへのリンクを作成します。|  
-|[/resource](../../../csharp/language-reference/compiler-options/resource-compiler-option.md)|.NET Framework のリソースを出力ファイルに埋め込みます。|  
-|[/win32icon](../../../csharp/language-reference/compiler-options/win32icon-compiler-option.md)|出力ファイルに挿入する .ico ファイルを指定します。|  
-|[/win32res](../../../csharp/language-reference/compiler-options/win32res-compiler-option.md)|出力ファイルに挿入する Win32 リソースを指定します。|  
+|[<span data-ttu-id="06700-183">/link</span><span class="sxs-lookup"><span data-stu-id="06700-183">/link</span></span>](../../../csharp/language-reference/compiler-options/link-compiler-option.md)|<span data-ttu-id="06700-184">指定したアセンブリ内の COM 型情報をプロジェクトで使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="06700-184">Makes COM type information in specified assemblies available to the project.</span></span>|  
+|[<span data-ttu-id="06700-185">/linkresource</span><span class="sxs-lookup"><span data-stu-id="06700-185">/linkresource</span></span>](../../../csharp/language-reference/compiler-options/linkresource-compiler-option.md)|<span data-ttu-id="06700-186">マネージ リソースへのリンクを作成します。</span><span class="sxs-lookup"><span data-stu-id="06700-186">Creates a link to a managed resource.</span></span>|  
+|[<span data-ttu-id="06700-187">/resource</span><span class="sxs-lookup"><span data-stu-id="06700-187">/resource</span></span>](../../../csharp/language-reference/compiler-options/resource-compiler-option.md)|<span data-ttu-id="06700-188">.NET Framework のリソースを出力ファイルに埋め込みます。</span><span class="sxs-lookup"><span data-stu-id="06700-188">Embeds a .NET Framework resource into the output file.</span></span>|  
+|[<span data-ttu-id="06700-189">/win32icon</span><span class="sxs-lookup"><span data-stu-id="06700-189">/win32icon</span></span>](../../../csharp/language-reference/compiler-options/win32icon-compiler-option.md)|<span data-ttu-id="06700-190">出力ファイルに挿入する .ico ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-190">Specifies an .ico file to insert into the output file.</span></span>|  
+|[<span data-ttu-id="06700-191">/win32res</span><span class="sxs-lookup"><span data-stu-id="06700-191">/win32res</span></span>](../../../csharp/language-reference/compiler-options/win32res-compiler-option.md)|<span data-ttu-id="06700-192">出力ファイルに挿入する Win32 リソースを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-192">Specifies a Win32 resource to insert into the output file.</span></span>|  
   
-### <a name="miscellaneous"></a>その他の指定  
+### <a name="miscellaneous"></a><span data-ttu-id="06700-193">その他の指定</span><span class="sxs-lookup"><span data-stu-id="06700-193">Miscellaneous</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="06700-194">オプション</span><span class="sxs-lookup"><span data-stu-id="06700-194">Option</span></span>|<span data-ttu-id="06700-195">目的</span><span class="sxs-lookup"><span data-stu-id="06700-195">Purpose</span></span>|  
 |------------|-------------|  
-|[@](../../../csharp/language-reference/compiler-options/response-file-compiler-option.md)|応答ファイルを指定します。|  
-|[/?](../../../csharp/language-reference/compiler-options/help-compiler-option.md)|stdout にコンパイラ オプションの一覧を表示します。|  
-|[/baseaddress](../../../csharp/language-reference/compiler-options/baseaddress-compiler-option.md)|DLL を読み込む位置に推奨されるベース アドレスを指定します。|  
-|[/codepage](../../../csharp/language-reference/compiler-options/codepage-compiler-option.md)|コンパイルですべてのソース コード ファイルに使用するコード ページを指定します。|  
-|[/help](../../../csharp/language-reference/compiler-options/help-compiler-option.md)|stdout にコンパイラ オプションの一覧を表示します。|  
-|[/highentropyva](../../../csharp/language-reference/compiler-options/highentropyva-compiler-option.md)|実行可能ファイルが ASLR (Address Space Layout Randomization) をサポートするように指定します。|  
-|[/langversion](../../../csharp/language-reference/compiler-options/langversion-compiler-option.md)|言語バージョンのモード: Default、ISO-1、ISO-2、3、4、5、6、7、7.1、または Latest を指定します。 |  
-|[/main](../../../csharp/language-reference/compiler-options/main-compiler-option.md)|**Main** メソッドの場所を指定します。|  
-|[/noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md)|csc.rsp でコンパイルにしないようコンパイラに指示します。|  
-|[/nologo](../../../csharp/language-reference/compiler-options/nologo-compiler-option.md)|コンパイラの著作権情報が表示されないようにします。|  
-|[/recurse](../../../csharp/language-reference/compiler-options/recurse-compiler-option.md)|コンパイルするソース ファイルをサブディレクトリで検索します。|  
-|[/subsystemversion](../../../csharp/language-reference/compiler-options/subsystemversion-compiler-option.md)|実行可能ファイルが使用できるサブシステムの最低限のバージョンを指定します。|  
-|[/unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md)|[unsafe](../../../csharp/language-reference/keywords/unsafe.md) キーワードを使用するコードのコンパイルを有効にします。|  
-|[/utf8output](../../../csharp/language-reference/compiler-options/utf8output-compiler-option.md)|UTF-8 エンコードを使用してコンパイラ出力を表示します。|  
-|/parallel[+&#124;-]|同時実行ビルドを使用する (+) かどうかを指定します。|  
-|/checksumalgorithm:\<alg>|PDB に格納されているソース ファイルのチェックサムを計算するためのアルゴリズムを指定します。  サポートされる値は、SHA1 (既定値) または SHA256 です。|  
+|[@](../../../csharp/language-reference/compiler-options/response-file-compiler-option.md)|<span data-ttu-id="06700-196">応答ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-196">Specifies a response file.</span></span>|  
+|[<span data-ttu-id="06700-197">/?</span><span class="sxs-lookup"><span data-stu-id="06700-197">/?</span></span>](../../../csharp/language-reference/compiler-options/help-compiler-option.md)|<span data-ttu-id="06700-198">stdout にコンパイラ オプションの一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="06700-198">Lists compiler options to stdout.</span></span>|  
+|[<span data-ttu-id="06700-199">/baseaddress</span><span class="sxs-lookup"><span data-stu-id="06700-199">/baseaddress</span></span>](../../../csharp/language-reference/compiler-options/baseaddress-compiler-option.md)|<span data-ttu-id="06700-200">DLL を読み込む位置に推奨されるベース アドレスを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-200">Specifies the preferred base address at which to load a DLL.</span></span>|  
+|[<span data-ttu-id="06700-201">/codepage</span><span class="sxs-lookup"><span data-stu-id="06700-201">/codepage</span></span>](../../../csharp/language-reference/compiler-options/codepage-compiler-option.md)|<span data-ttu-id="06700-202">コンパイルですべてのソース コード ファイルに使用するコード ページを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-202">Specifies the code page to use for all source code files in the compilation.</span></span>|  
+|[<span data-ttu-id="06700-203">/help</span><span class="sxs-lookup"><span data-stu-id="06700-203">/help</span></span>](../../../csharp/language-reference/compiler-options/help-compiler-option.md)|<span data-ttu-id="06700-204">stdout にコンパイラ オプションの一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="06700-204">Lists compiler options to stdout.</span></span>|  
+|[<span data-ttu-id="06700-205">/highentropyva</span><span class="sxs-lookup"><span data-stu-id="06700-205">/highentropyva</span></span>](../../../csharp/language-reference/compiler-options/highentropyva-compiler-option.md)|<span data-ttu-id="06700-206">実行可能ファイルが ASLR (Address Space Layout Randomization) をサポートするように指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-206">Specifies that the executable file supports address space layout randomization (ASLR).</span></span>|  
+|[<span data-ttu-id="06700-207">/langversion</span><span class="sxs-lookup"><span data-stu-id="06700-207">/langversion</span></span>](../../../csharp/language-reference/compiler-options/langversion-compiler-option.md)|<span data-ttu-id="06700-208">言語バージョンのモード: Default、ISO-1、ISO-2、3、4、5、6、7、7.1、または Latest を指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-208">Specify language version mode: Default, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, or Latest</span></span> |  
+|[<span data-ttu-id="06700-209">/main</span><span class="sxs-lookup"><span data-stu-id="06700-209">/main</span></span>](../../../csharp/language-reference/compiler-options/main-compiler-option.md)|<span data-ttu-id="06700-210">**Main** メソッドの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-210">Specifies the location of the **Main** method.</span></span>|  
+|[<span data-ttu-id="06700-211">/noconfig</span><span class="sxs-lookup"><span data-stu-id="06700-211">/noconfig</span></span>](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md)|<span data-ttu-id="06700-212">csc.rsp でコンパイルにしないようコンパイラに指示します。</span><span class="sxs-lookup"><span data-stu-id="06700-212">Instructs the compiler not to compile with csc.rsp.</span></span>|  
+|[<span data-ttu-id="06700-213">/nologo</span><span class="sxs-lookup"><span data-stu-id="06700-213">/nologo</span></span>](../../../csharp/language-reference/compiler-options/nologo-compiler-option.md)|<span data-ttu-id="06700-214">コンパイラの著作権情報が表示されないようにします。</span><span class="sxs-lookup"><span data-stu-id="06700-214">Suppresses compiler banner information.</span></span>|  
+|[<span data-ttu-id="06700-215">/recurse</span><span class="sxs-lookup"><span data-stu-id="06700-215">/recurse</span></span>](../../../csharp/language-reference/compiler-options/recurse-compiler-option.md)|<span data-ttu-id="06700-216">コンパイルするソース ファイルをサブディレクトリで検索します。</span><span class="sxs-lookup"><span data-stu-id="06700-216">Searches subdirectories for source files to compile.</span></span>|  
+|[<span data-ttu-id="06700-217">/subsystemversion</span><span class="sxs-lookup"><span data-stu-id="06700-217">/subsystemversion</span></span>](../../../csharp/language-reference/compiler-options/subsystemversion-compiler-option.md)|<span data-ttu-id="06700-218">実行可能ファイルが使用できるサブシステムの最低限のバージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-218">Specifies the minimum version of the subsystem that the executable file can use.</span></span>|  
+|[<span data-ttu-id="06700-219">/unsafe</span><span class="sxs-lookup"><span data-stu-id="06700-219">/unsafe</span></span>](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md)|<span data-ttu-id="06700-220">[unsafe](../../../csharp/language-reference/keywords/unsafe.md) キーワードを使用するコードのコンパイルを有効にします。</span><span class="sxs-lookup"><span data-stu-id="06700-220">Enables compilation of code that uses the [unsafe](../../../csharp/language-reference/keywords/unsafe.md) keyword.</span></span>|  
+|[<span data-ttu-id="06700-221">/utf8output</span><span class="sxs-lookup"><span data-stu-id="06700-221">/utf8output</span></span>](../../../csharp/language-reference/compiler-options/utf8output-compiler-option.md)|<span data-ttu-id="06700-222">UTF-8 エンコードを使用してコンパイラ出力を表示します。</span><span class="sxs-lookup"><span data-stu-id="06700-222">Displays compiler output using UTF-8 encoding.</span></span>|  
+|<span data-ttu-id="06700-223">/parallel[+&#124;-]</span><span class="sxs-lookup"><span data-stu-id="06700-223">/parallel[+&#124;-]</span></span>|<span data-ttu-id="06700-224">同時実行ビルドを使用する (+) かどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-224">Specifies whether to use concurrent build (+).</span></span>|  
+|<span data-ttu-id="06700-225">/checksumalgorithm:\<alg></span><span class="sxs-lookup"><span data-stu-id="06700-225">/checksumalgorithm:\<alg></span></span>|<span data-ttu-id="06700-226">PDB に格納されているソース ファイルのチェックサムを計算するためのアルゴリズムを指定します。</span><span class="sxs-lookup"><span data-stu-id="06700-226">Specify the algorithm for calculating the source file checksum stored in PDB.</span></span>  <span data-ttu-id="06700-227">サポートされる値は、SHA1 (既定値) または SHA256 です。</span><span class="sxs-lookup"><span data-stu-id="06700-227">Supported values are: SHA1 (default) or SHA256.</span></span>|  
   
-## <a name="obsolete-options"></a>廃止されたオプション  
+## <a name="obsolete-options"></a><span data-ttu-id="06700-228">廃止されたオプション</span><span class="sxs-lookup"><span data-stu-id="06700-228">Obsolete Options</span></span>  
   
-|オプション|目的|  
+|<span data-ttu-id="06700-229">オプション</span><span class="sxs-lookup"><span data-stu-id="06700-229">Option</span></span>|<span data-ttu-id="06700-230">目的</span><span class="sxs-lookup"><span data-stu-id="06700-230">Purpose</span></span>|  
 |---|---|  
-|/incremental|インクリメンタル コンパイルを有効にします。|  
+|<span data-ttu-id="06700-231">/incremental</span><span class="sxs-lookup"><span data-stu-id="06700-231">/incremental</span></span>|<span data-ttu-id="06700-232">インクリメンタル コンパイルを有効にします。</span><span class="sxs-lookup"><span data-stu-id="06700-232">Enables incremental compilation.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [アルファベット順の C# コンパイラ オプションの一覧](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)   
- [方法: Visual Studio のコマンドラインのための環境変数を設定する](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)
-
+## <a name="see-also"></a><span data-ttu-id="06700-233">関連項目</span><span class="sxs-lookup"><span data-stu-id="06700-233">See Also</span></span>  
+ [<span data-ttu-id="06700-234">C# コンパイラ オプション</span><span class="sxs-lookup"><span data-stu-id="06700-234">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
+ [<span data-ttu-id="06700-235">アルファベット順の C# コンパイラ オプションの一覧</span><span class="sxs-lookup"><span data-stu-id="06700-235">C# Compiler Options Listed Alphabetically</span></span>](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)  
+ [<span data-ttu-id="06700-236">方法: Visual Studio のコマンドラインのための環境変数を設定する</span><span class="sxs-lookup"><span data-stu-id="06700-236">How to: Set Environment Variables for the Visual Studio Command Line</span></span>](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)

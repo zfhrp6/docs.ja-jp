@@ -1,94 +1,74 @@
 ---
 title: "-out (C# コンパイラ オプション)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /out
-dev_langs:
-- CSharp
+f1_keywords: /out
 helpviewer_keywords:
 - /out compiler option [C#]
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 332e369b6fe2de79c9063daa9e6d5c0e83f0bcc8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a6db728bc98f5223fc35268a1cce41021ff530cc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="out-c-compiler-options"></a>/out (C# コンパイラ オプション)
-**/out** オプションは、出力ファイルの名前を指定します。  
+# <a name="out-c-compiler-options"></a><span data-ttu-id="6f135-102">/out (C# コンパイラ オプション)</span><span class="sxs-lookup"><span data-stu-id="6f135-102">/out (C# Compiler Options)</span></span>
+<span data-ttu-id="6f135-103">**/out** オプションは、出力ファイルの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="6f135-103">The **/out** option specifies the name of the output file.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="6f135-104">構文</span><span class="sxs-lookup"><span data-stu-id="6f135-104">Syntax</span></span>  
   
 ```console  
 /out:filename  
 ```  
   
-## <a name="arguments"></a>引数  
+## <a name="arguments"></a><span data-ttu-id="6f135-105">引数</span><span class="sxs-lookup"><span data-stu-id="6f135-105">Arguments</span></span>  
  `filename`  
- コンパイラによって作成された出力ファイルの名前です。  
+ <span data-ttu-id="6f135-106">コンパイラによって作成された出力ファイルの名前です。</span><span class="sxs-lookup"><span data-stu-id="6f135-106">The name of the output file created by the compiler.</span></span>  
   
-## <a name="remarks"></a>コメント  
- コマンド ラインでは、コンパイル用に複数の出力ファイルを指定することができます。 コンパイラは、**/out** オプションの後に 1 つまたは複数のソース コード ファイルがあることを想定しています。 そしてすべてのソース コード ファイルがその **/out** オプションで指定された出力ファイルにコンパイルされます。  
+## <a name="remarks"></a><span data-ttu-id="6f135-107">コメント</span><span class="sxs-lookup"><span data-stu-id="6f135-107">Remarks</span></span>  
+ <span data-ttu-id="6f135-108">コマンド ラインでは、コンパイル用に複数の出力ファイルを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="6f135-108">On the command line, it is possible to specify multiple output files for your compilation.</span></span> <span data-ttu-id="6f135-109">コンパイラは、**/out** オプションの後に 1 つまたは複数のソース コード ファイルがあることを想定しています。</span><span class="sxs-lookup"><span data-stu-id="6f135-109">The compiler expects to find one or more source code files following the **/out** option.</span></span> <span data-ttu-id="6f135-110">そしてすべてのソース コード ファイルがその **/out** オプションで指定された出力ファイルにコンパイルされます。</span><span class="sxs-lookup"><span data-stu-id="6f135-110">Then, all source code files will be compiled into the output file specified by that **/out** option.</span></span>  
   
- 作成するファイルの完全な名前と拡張子を指定します。  
+ <span data-ttu-id="6f135-111">作成するファイルの完全な名前と拡張子を指定します。</span><span class="sxs-lookup"><span data-stu-id="6f135-111">Specify the full name and extension of the file you want to create.</span></span>  
   
- 出力ファイルの名前を指定しない場合:  
+ <span data-ttu-id="6f135-112">出力ファイルの名前を指定しない場合:</span><span class="sxs-lookup"><span data-stu-id="6f135-112">If you do not specify the name of the output file:</span></span>  
   
--   .exe は **Main** メソッドを含むソース コード ファイルからその名前を取得します。  
+-   <span data-ttu-id="6f135-113">.exe は **Main** メソッドを含むソース コード ファイルからその名前を取得します。</span><span class="sxs-lookup"><span data-stu-id="6f135-113">An .exe will take its name from the source code file that contains the **Main** method.</span></span>  
   
--   .dll または .netmodule は最初のソース コード ファイルからその名前を取得します。  
+-   <span data-ttu-id="6f135-114">.dll または .netmodule は最初のソース コード ファイルからその名前を取得します。</span><span class="sxs-lookup"><span data-stu-id="6f135-114">A .dll or .netmodule will take its name from the first source code file.</span></span>  
   
- 1 つの出力ファイルをコンパイルするために使用されるソース コード ファイルは、別の出力ファイルのコンパイルの同じコンパイルでは使用できません。  
+ <span data-ttu-id="6f135-115">1 つの出力ファイルをコンパイルするために使用されるソース コード ファイルは、別の出力ファイルのコンパイルの同じコンパイルでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="6f135-115">A source code file used to compile one output file cannot be used in the same compilation for the compilation of another output file.</span></span>  
   
- コマンド ラインのコンパイルで複数の出力ファイルを生成する場合は、出力ファイルのいずれか 1 つだけがアセンブリになれること、および (**/out** で暗黙的または明示的に) 指定された最初の出力ファイルだけがアセンブリになれることに留意してください。  
+ <span data-ttu-id="6f135-116">コマンド ラインのコンパイルで複数の出力ファイルを生成する場合は、出力ファイルのいずれか 1 つだけがアセンブリになれること、および (**/out** で暗黙的または明示的に) 指定された最初の出力ファイルだけがアセンブリになれることに留意してください。</span><span class="sxs-lookup"><span data-stu-id="6f135-116">When producing multiple output files in a command-line compilation, keep in mind that only one of the output files can be an assembly and that only the first output file specified (implicitly or explicitly with **/out**) can be the assembly.</span></span>  
   
- コンパイルの一部として生成されるすべてのモジュールが、同じくコンパイルで作成されるアセンブリに関連付けらるファイルになります。 [ildasm.exe](https://msdn.microsoft.com/library/f7dy01k1) を使用して、アセンブリ マニフェストを表示し、関連付けられているファイルを確認します。  
+ <span data-ttu-id="6f135-117">コンパイルの一部として生成されるすべてのモジュールが、同じくコンパイルで作成されるアセンブリに関連付けらるファイルになります。</span><span class="sxs-lookup"><span data-stu-id="6f135-117">Any modules produced as part of a compilation become files associated with any assembly also produced in the compilation.</span></span> <span data-ttu-id="6f135-118">[ildasm.exe](../../../framework/tools/ildasm-exe-il-disassembler.md) を使用して、アセンブリ マニフェストを表示し、関連付けられているファイルを確認します。</span><span class="sxs-lookup"><span data-stu-id="6f135-118">Use [ildasm.exe](../../../framework/tools/ildasm-exe-il-disassembler.md) to view the assembly manifest to see the associated files.</span></span>  
   
- exe をフレンド アセンブリのターゲットにするには、/out コンパイラ オプションが必要です。 詳細については、「[フレンド アセンブリ](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)」を参照してください。  
+ <span data-ttu-id="6f135-119">exe をフレンド アセンブリのターゲットにするには、/out コンパイラ オプションが必要です。</span><span class="sxs-lookup"><span data-stu-id="6f135-119">The /out compiler option is required in order for an exe to be the target of a friend assembly.</span></span> <span data-ttu-id="6f135-120">詳細については、「[フレンド アセンブリ](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6f135-120">For more information see [Friend Assemblies](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).</span></span>  
   
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="6f135-121">Visual Studio 開発環境でこのコンパイラ オプションを設定するには</span><span class="sxs-lookup"><span data-stu-id="6f135-121">To set this compiler option in the Visual Studio development environment</span></span>  
   
-1.  プロジェクトの **[プロパティ]** ページを開きます。  
+1.  <span data-ttu-id="6f135-122">プロジェクトの **[プロパティ]** ページを開きます。</span><span class="sxs-lookup"><span data-stu-id="6f135-122">Open the project's **Properties** page.</span></span>  
   
-2.  **[アプリケーション]** プロパティ ページをクリックします。  
+2.  <span data-ttu-id="6f135-123">**[アプリケーション]** プロパティ ページをクリックします。</span><span class="sxs-lookup"><span data-stu-id="6f135-123">Click the **Application** property page.</span></span>  
   
-3.  **[アセンブリ名]** プロパティを変更します。  
+3.  <span data-ttu-id="6f135-124">**[アセンブリ名]** プロパティを変更します。</span><span class="sxs-lookup"><span data-stu-id="6f135-124">Modify the **Assembly name** property.</span></span>  
   
-     このコンパイラ オプションをプログラムで設定するには: <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> は読み取り専用のプロパティで、プロジェクトの種類 (exe、ライブラリなど) と、アセンブリ名の組み合わせによって決まります。 これらのプロパティの一方または両方を変更するには、出力ファイル名を設定する必要があります。  
+     <span data-ttu-id="6f135-125">このコンパイラ オプションをプログラムで設定するには: <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> は読み取り専用のプロパティで、プロジェクトの種類 (exe、ライブラリなど) と、アセンブリ名の組み合わせによって決まります。</span><span class="sxs-lookup"><span data-stu-id="6f135-125">To set this compiler option programmatically: the <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> is a read-only property, which is determined by a combination of the project type (exe, library, and so forth) and the assembly name.</span></span> <span data-ttu-id="6f135-126">これらのプロパティの一方または両方を変更するには、出力ファイル名を設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6f135-126">Modifying one or both of these properties will be necessary to set the output file name.</span></span>  
   
-## <a name="example"></a>例  
- `t.cs` をコンパイルして出力ファイル `t.exe` とビルド `t2.cs` を作成し、モジュール出力ファイル `mymodule.netmodule` を作成します。  
+## <a name="example"></a><span data-ttu-id="6f135-127">例</span><span class="sxs-lookup"><span data-stu-id="6f135-127">Example</span></span>  
+ <span data-ttu-id="6f135-128">`t.cs` をコンパイルして出力ファイル `t.exe` とビルド `t2.cs` を作成し、モジュール出力ファイル `mymodule.netmodule` を作成します。</span><span class="sxs-lookup"><span data-stu-id="6f135-128">Compile `t.cs` and create output file `t.exe`, as well as build `t2.cs` and create module output file `mymodule.netmodule`:</span></span>  
   
 ```console  
 csc t.cs /out:mymodule.netmodule /target:module t2.cs  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [フレンド アセンブリ](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)   
- [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
-
+## <a name="see-also"></a><span data-ttu-id="6f135-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="6f135-129">See Also</span></span>  
+ [<span data-ttu-id="6f135-130">C# コンパイラ オプション</span><span class="sxs-lookup"><span data-stu-id="6f135-130">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
+ [<span data-ttu-id="6f135-131">フレンド アセンブリ</span><span class="sxs-lookup"><span data-stu-id="6f135-131">Friend Assemblies</span></span>](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+ [<span data-ttu-id="6f135-132">プロジェクトおよびソリューションのプロパティの管理</span><span class="sxs-lookup"><span data-stu-id="6f135-132">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)

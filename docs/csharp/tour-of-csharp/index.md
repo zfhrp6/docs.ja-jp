@@ -10,79 +10,76 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: ebc727cd-8112-42e7-b59c-3c2873ad661c
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 0fa7f9f906ba72b114fc59c8026b4b6c79586dd2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="a-tour-of-the-c-language"></a><span data-ttu-id="04d97-105">C# 言語のツアー</span><span class="sxs-lookup"><span data-stu-id="04d97-105">A Tour of the C# Language</span></span>  
 
-# <a name="a-tour-of-the-c-language"></a>C# 言語のツアー  
+<span data-ttu-id="04d97-106">C# ("シー シャープ" と読みます) は、シンプルで最新のタイプ セーフなオブジェクト指向のプログラミング言語です。</span><span class="sxs-lookup"><span data-stu-id="04d97-106">C# (pronounced "See Sharp") is a simple, modern, object-oriented, and type-safe programming language.</span></span> <span data-ttu-id="04d97-107">C# は C 言語ファミリーをルーツとしているため、C、C++、Java、JavaScript のプログラマーであればすぐに使いこなすことができます。</span><span class="sxs-lookup"><span data-stu-id="04d97-107">C# has its roots in the C family of languages and will be immediately familiar to C, C++, Java, and JavaScript programmers.</span></span>
 
-C# ("シー シャープ" と読みます) は、シンプルで最新のタイプ セーフなオブジェクト指向のプログラミング言語です。 C# は C 言語ファミリーをルーツとしているため、C、C++、Java、JavaScript のプログラマーであればすぐに使いこなすことができます。
+<span data-ttu-id="04d97-108">C# はオブジェクト指向言語ですが、C# にはさらに "***コンポーネント指向***" プログラミングのサポートが含まれています。</span><span class="sxs-lookup"><span data-stu-id="04d97-108">C# is an object-oriented language, but C# further includes support for ***component-oriented*** programming.</span></span> <span data-ttu-id="04d97-109">最近のソフトウェア設計では、機能を自己完結型および自己記述型パッケージの形式にしたソフトウェア コンポーネントをますます使用するようになっています。</span><span class="sxs-lookup"><span data-stu-id="04d97-109">Contemporary software design increasingly relies on software components in the form of self-contained and self-describing packages of functionality.</span></span> <span data-ttu-id="04d97-110">そのようなコンポーネントの鍵となるのは、プロパティ、メソッド、イベントを使用してプログラミング モデルを表すこと、コンポーネントについての宣言的な情報を提供する属性があること、独自のドキュメントが組み込まれていることです。</span><span class="sxs-lookup"><span data-stu-id="04d97-110">Key to such components is that they present a programming model with properties, methods, and events; they have attributes that provide declarative information about the component; and they incorporate their own documentation.</span></span> <span data-ttu-id="04d97-111">C# はこれらの概念を直接サポートする言語コンストラクトを提供しているので、非常に自然にソフトウェア コンポーネントを作成して使用することができます。</span><span class="sxs-lookup"><span data-stu-id="04d97-111">C# provides language constructs to support directly these concepts, making C# a very natural language in which to create and use software components.</span></span>
 
-C# はオブジェクト指向言語ですが、C# にはさらに "***コンポーネント指向***" プログラミングのサポートが含まれています。 最近のソフトウェア設計では、機能を自己完結型および自己記述型パッケージの形式にしたソフトウェア コンポーネントをますます使用するようになっています。 そのようなコンポーネントの鍵となるのは、プロパティ、メソッド、イベントを使用してプログラミング モデルを表すこと、コンポーネントについての宣言的な情報を提供する属性があること、独自のドキュメントが組み込まれていることです。 C# はこれらの概念を直接サポートする言語コンストラクトを提供しているので、非常に自然にソフトウェア コンポーネントを作成して使用することができます。
+<span data-ttu-id="04d97-112">C# には、堅牢で永続的なアプリケーションの構築を支援するさまざまな機能が用意されています。"***ガベージ コレクション***" は、到達不可能な使用されていないオブジェクトによって占有されているメモリを自動的に解放します。"***例外処理***" は、エラー検出とエラーからの回復のための構造化された拡張可能なアプローチを提供します。また、"***タイプ セーフ***" な設計により、初期化されていない変数の読み取り、範囲を超える配列のインデックス付け、および未確認の型キャストの実行ができないようになっています。</span><span class="sxs-lookup"><span data-stu-id="04d97-112">Several C# features aid in the construction of robust and durable applications: ***Garbage collection*** automatically reclaims memory occupied by unreachable unused objects; ***exception handling*** provides a structured and extensible approach to error detection and recovery; and the ***type-safe*** design of the language makes it impossible to read from uninitialized variables, to index arrays beyond their bounds, or to perform unchecked type casts.</span></span>
 
-C# には、堅牢で永続的なアプリケーションの構築を支援するさまざまな機能が用意されています。"***ガベージ コレクション***" は、到達不可能な使用されていないオブジェクトによって占有されているメモリを自動的に解放します。"***例外処理***" は、エラー検出とエラーからの回復のための構造化された拡張可能なアプローチを提供します。また、"***タイプ セーフ***" な設計により、初期化されていない変数の読み取り、範囲を超える配列のインデックス付け、および未確認の型キャストの実行ができないようになっています。
+<span data-ttu-id="04d97-113">C# は "***統合型システム***" を採用しています。</span><span class="sxs-lookup"><span data-stu-id="04d97-113">C# has a ***unified type system***.</span></span> <span data-ttu-id="04d97-114">`int` や `double` などのプリミティブ型を含めた C# のすべての型は、ルートとなる 1 つの `object` 型から派生しています。</span><span class="sxs-lookup"><span data-stu-id="04d97-114">All C# types, including primitive types such as `int` and `double`, inherit from a single root `object` type.</span></span> <span data-ttu-id="04d97-115">したがって、すべての型が一般的な操作のセットを共有し、すべての型の値を一貫した方法で格納、転送、操作することができます。</span><span class="sxs-lookup"><span data-stu-id="04d97-115">Thus, all types share a set of common operations, and values of any type can be stored, transported, and operated upon in a consistent manner.</span></span> <span data-ttu-id="04d97-116">さらに、C# はユーザー定義の参照型と値型の両方をサポートしているため、オブジェクトを動的に割り当てることも、軽量の構造体をインラインで格納することもできます。</span><span class="sxs-lookup"><span data-stu-id="04d97-116">Furthermore, C# supports both user-defined reference types and value types, allowing dynamic allocation of objects as well as in-line storage of lightweight structures.</span></span>
 
-C# は "***統合型システム***" を採用しています。 `int` や `double` などのプリミティブ型を含めた C# のすべての型は、ルートとなる 1 つの `object` 型から派生しています。 したがって、すべての型が一般的な操作のセットを共有し、すべての型の値を一貫した方法で格納、転送、操作することができます。 さらに、C# はユーザー定義の参照型と値型の両方をサポートしているため、オブジェクトを動的に割り当てることも、軽量の構造体をインラインで格納することもできます。
+<span data-ttu-id="04d97-117">C# のプログラムとライブラリが互換性を保ちながら時間とともに進化できるように、C# の設計では "***バージョン管理***" に大きな重点が置かれています。</span><span class="sxs-lookup"><span data-stu-id="04d97-117">To ensure that C# programs and libraries can evolve over time in a compatible manner, much emphasis has been placed on ***versioning*** in C#’s design.</span></span> <span data-ttu-id="04d97-118">多くのプログラミング言語は、この問題にほとんど注意を払っていません。その結果、それらの言語で書かれたプログラムは、依存するライブラリの新しいバージョンが導入されたときに必要以上に頻繁に中断されてしまいます。</span><span class="sxs-lookup"><span data-stu-id="04d97-118">Many programming languages pay little attention to this issue, and, as a result, programs written in those languages break more often than necessary when newer versions of dependent libraries are introduced.</span></span> <span data-ttu-id="04d97-119">C# の設計でバージョン管理の考慮の影響を直接受けている側面として、別個の `virtual` 修飾子と `override` 修飾子、メソッドのオーバーロードの解決規則、明示的なインターフェイス メンバー宣言のサポートなどがあります。</span><span class="sxs-lookup"><span data-stu-id="04d97-119">Aspects of C#’s design that were directly influenced by versioning considerations include the separate `virtual` and `override` modifiers, the rules for method overload resolution, and support for explicit interface member declarations.</span></span>
 
-C# のプログラムとライブラリが互換性を保ちながら時間とともに進化できるように、C# の設計では "***バージョン管理***" に大きな重点が置かれています。 多くのプログラミング言語は、この問題にほとんど注意を払っていません。その結果、それらの言語で書かれたプログラムは、依存するライブラリの新しいバージョンが導入されたときに必要以上に頻繁に中断されてしまいます。 C# の設計でバージョン管理の考慮の影響を直接受けている側面として、別個の `virtual` 修飾子と `override` 修飾子、メソッドのオーバーロードの解決規則、明示的なインターフェイス メンバー宣言のサポートなどがあります。
+## <a name="hello-world"></a><span data-ttu-id="04d97-120">Hello world</span><span class="sxs-lookup"><span data-stu-id="04d97-120">Hello world</span></span>
 
-## <a name="hello-world"></a>Hello world
-
-"Hello, World" は、プログラミング言語を紹介するために伝統的に使用されているプログラムです。 これを C# で記述すると次のようになります。
+<span data-ttu-id="04d97-121">"Hello, World" は、プログラミング言語を紹介するために伝統的に使用されているプログラムです。</span><span class="sxs-lookup"><span data-stu-id="04d97-121">The "Hello, World" program is traditionally used to introduce a programming language.</span></span> <span data-ttu-id="04d97-122">これを C# で記述すると次のようになります。</span><span class="sxs-lookup"><span data-stu-id="04d97-122">Here it is in C#:</span></span>
 
 [!code-csharp[Hello World](../../../samples/snippets/csharp/tour/hello/Program.cs#L1-L8)]
 
-通常、C# のソース ファイルのファイル拡張子は `.cs` です。 "Hello, World" プログラムを `hello.cs` ファイルに格納したと想定すると、このプログラムは次のようにコマンド ラインを使用してコンパイルできます。
+<span data-ttu-id="04d97-123">通常、C# のソース ファイルのファイル拡張子は `.cs` です。</span><span class="sxs-lookup"><span data-stu-id="04d97-123">C# source files typically have the file extension `.cs`.</span></span> <span data-ttu-id="04d97-124">"Hello, World" プログラムを `hello.cs` ファイルに格納したと想定すると、このプログラムは次のようにコマンド ラインを使用してコンパイルできます。</span><span class="sxs-lookup"><span data-stu-id="04d97-124">Assuming that the "Hello, World" program is stored in the file `hello.cs`, the program might be compiled using the command line:</span></span>
 
 ```console
 csc hello.cs
 ```
 
-これにより、hello.exe という名前の実行可能アセンブリが生成されます。 このアプリケーションを実行すると、次のような出力が生成されます。
+<span data-ttu-id="04d97-125">これにより、hello.exe という名前の実行可能アセンブリが生成されます。</span><span class="sxs-lookup"><span data-stu-id="04d97-125">which produces an executable assembly named hello.exe.</span></span> <span data-ttu-id="04d97-126">このアプリケーションを実行すると、次のような出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="04d97-126">The output produced by this application when it is run is:</span></span>
 
 ```console
 Hello, World
 ```
 
 > [!IMPORTANT]
-> `csc` コマンドは完全なフレームワークに対してコンパイルを実行します。プラットフォームによっては使用できない場合があります。
+> <span data-ttu-id="04d97-127">`csc` コマンドは完全なフレームワークに対してコンパイルを実行します。プラットフォームによっては使用できない場合があります。</span><span class="sxs-lookup"><span data-stu-id="04d97-127">The `csc` command compiles for the full framework, and may not be available on all platforms.</span></span>
 
 
-"Hello, World" プログラムは `System` 名前空間を参照する `using` ディレクティブで始まります。 名前空間は、C# のプログラムとライブラリを階層的に整理するための手段です。 名前空間には、型と他の名前空間が含まれます。たとえば、`System` 名前空間には多数の型 (プログラムで参照される `Console` クラスなど) と、他の多数の名前空間 (`IO` や `Collections` など) が含まれます。 特定の名前空間を参照する `using` ディレクティブを使用すると、その名前空間のメンバーである型を修飾せずに使用できます。 `using` ディレクティブにより、プログラムで `Console.WriteLine` を `System.Console.WriteLine` の省略形として使用できます。
+<span data-ttu-id="04d97-128">"Hello, World" プログラムは `System` 名前空間を参照する `using` ディレクティブで始まります。</span><span class="sxs-lookup"><span data-stu-id="04d97-128">The "Hello, World" program starts with a `using` directive that references the `System` namespace.</span></span> <span data-ttu-id="04d97-129">名前空間は、C# のプログラムとライブラリを階層的に整理するための手段です。</span><span class="sxs-lookup"><span data-stu-id="04d97-129">Namespaces provide a hierarchical means of organizing C# programs and libraries.</span></span> <span data-ttu-id="04d97-130">名前空間には、型と他の名前空間が含まれます。たとえば、`System` 名前空間には多数の型 (プログラムで参照される `Console` クラスなど) と、他の多数の名前空間 (`IO` や `Collections` など) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="04d97-130">Namespaces contain types and other namespaces—for example, the `System` namespace contains a number of types, such as the `Console` class referenced in the program, and a number of other namespaces, such as `IO` and `Collections`.</span></span> <span data-ttu-id="04d97-131">特定の名前空間を参照する `using` ディレクティブを使用すると、その名前空間のメンバーである型を修飾せずに使用できます。</span><span class="sxs-lookup"><span data-stu-id="04d97-131">A `using` directive that references a given namespace enables unqualified use of the types that are members of that namespace.</span></span> <span data-ttu-id="04d97-132">`using` ディレクティブにより、プログラムで `Console.WriteLine` を `System.Console.WriteLine` の省略形として使用できます。</span><span class="sxs-lookup"><span data-stu-id="04d97-132">Because of the `using` directive, the program can use `Console.WriteLine` as shorthand for `System.Console.WriteLine`.</span></span>
 
-"Hello, World" プログラムで宣言された `Hello` クラスにはメンバーが 1 つあります。`Main` という名前のメソッドです。 `Main` メソッドは static 修飾子を使用して宣言されています。 インスタンス メソッドが `this` で囲んだ特定のオブジェクト インスタンスを参照できるのに対し、静的メソッドは特定のオブジェクトを参照せずに機能します。 規則により、`Main` という名前の静的メソッドはプログラムのエントリ ポイントとして使用されます。
+<span data-ttu-id="04d97-133">"Hello, World" プログラムで宣言された `Hello` クラスにはメンバーが 1 つあります。`Main` という名前のメソッドです。</span><span class="sxs-lookup"><span data-stu-id="04d97-133">The `Hello` class declared by the "Hello, World" program has a single member, the method named `Main`.</span></span> <span data-ttu-id="04d97-134">`Main` メソッドは static 修飾子を使用して宣言されています。</span><span class="sxs-lookup"><span data-stu-id="04d97-134">The `Main` method is declared with the static modifier.</span></span> <span data-ttu-id="04d97-135">インスタンス メソッドが `this` で囲んだ特定のオブジェクト インスタンスを参照できるのに対し、静的メソッドは特定のオブジェクトを参照せずに機能します。</span><span class="sxs-lookup"><span data-stu-id="04d97-135">While instance methods can reference a particular enclosing object instance using the keyword `this`, static methods operate without reference to a particular object.</span></span> <span data-ttu-id="04d97-136">規則により、`Main` という名前の静的メソッドはプログラムのエントリ ポイントとして使用されます。</span><span class="sxs-lookup"><span data-stu-id="04d97-136">By convention, a static method named `Main` serves as the entry point of a program.</span></span>
 
-プログラムの出力は、`System` 名前空間にある `Console` クラスの `WriteLine` メソッドによって生成されます。 このクラスは、コンパイラによって自動的に参照される、標準のクラス ライブラリで提供されています。
+<span data-ttu-id="04d97-137">プログラムの出力は、`System` 名前空間にある `Console` クラスの `WriteLine` メソッドによって生成されます。</span><span class="sxs-lookup"><span data-stu-id="04d97-137">The output of the program is produced by the `WriteLine` method of the `Console` class in the `System` namespace.</span></span> <span data-ttu-id="04d97-138">このクラスは、コンパイラによって自動的に参照される、標準のクラス ライブラリで提供されています。</span><span class="sxs-lookup"><span data-stu-id="04d97-138">This class is provided by the standard class libraries, which, by default, are automatically referenced by the compiler.</span></span>
 
-C# について学ぶべきことはまだたくさんあります。  以下のトピックで、C# 言語の各要素の概要について説明しています。 これらの概要では C# 言語のすべての要素に関する基本情報が提供されており、各要素をさらに深く知るために必要な情報を得ることができます。
+<span data-ttu-id="04d97-139">C# について学ぶべきことはまだたくさんあります。</span><span class="sxs-lookup"><span data-stu-id="04d97-139">There's a lot more to learn about C#.</span></span>  <span data-ttu-id="04d97-140">以下のトピックで、C# 言語の各要素の概要について説明しています。</span><span class="sxs-lookup"><span data-stu-id="04d97-140">The following topics provide an overview of the elements of the C# language.</span></span> <span data-ttu-id="04d97-141">これらの概要では C# 言語のすべての要素に関する基本情報が提供されており、各要素をさらに深く知るために必要な情報を得ることができます。</span><span class="sxs-lookup"><span data-stu-id="04d97-141">These overviews will provide basic information about all elements of the language and give you the information necessary to dive deeper into elements of the C# language:</span></span>
 
-* [プログラムの構造](program-structure.md)
-    - C# 言語を構成する主要な概念である "***プログラム***"、"***名前空間***"、"***型***"、"***メンバー***"、"***アセンブリ***" について説明します。
-* [型と変数](types-and-variables.md)
-    - C# 言語における"***値型***"、"***参照型***"、"***変数***" について説明します。
-* [式](expressions.md)
-    - "***式***" は "***オペランド***" と "***演算子***" で構成されます。 式は値を生成します。
-* [ステートメント](statements.md)
-    - "***ステートメント***" はプログラムの処理を表すために使用されます。
-* [クラスとオブジェクト](classes-and-objects.md)
-    - "***クラス***" は C# の最も基本的な型です。 "***オブジェクト***" はクラスのインスタンスです。 クラスは "***メンバー***" を使用して構築されます。メンバーについてもこのトピックで説明します。
-* [構造体](structs.md)
-    - "***構造体***" はデータ構造で、クラスとは異なり値型です。
-* [配列](arrays.md)
-    - "***配列***" はデータ構造で、算出されたインデックスを介してアクセスされる多くの変数を含みます。
-* [インターフェイス](interfaces.md)
-    - "***インターフェイス***" は、クラスと構造体によって実装できるコントラクトを定義します。 1 つのインターフェイスには、メソッド、プロパティ、イベント、およびインデクサーが含まれる場合があります。 インターフェイスでは、定義するメンバーの実装は行いません。インターフェイスを実装するクラスまたは構造体によって提供される必要があるメンバーを指定するだけです。
-* [列挙型](enums.md)
-    - "***列挙型***" は、一連の名前付き定数を使用する固有の値の型です。
-* [デリゲート](delegates.md)
-    - "***デリゲート型***" は、特定のパラメーター リストおよび戻り値を使用してメソッドへの参照を表します。 デリゲートを使用すれば、変数に割り当ててパラメーターとして渡すことのできるエンティティとして、メソッドを処理できます。 デリゲートはまた、他のいくつかの言語にみられる関数ポインターの概念に似ていますが、関数ポインターとは異なり、デリゲートはオブジェクト指向でタイプ セーフです。
-* [属性](attributes.md)
-    * "***属性***" を使用すると、プログラムで型、メンバー、その他のエンティティに関する追加の宣言的な情報を指定できます。
+* [<span data-ttu-id="04d97-142">プログラムの構造</span><span class="sxs-lookup"><span data-stu-id="04d97-142">Program Structure</span></span>](program-structure.md)
+    - <span data-ttu-id="04d97-143">C# 言語を構成する主要な概念である "***プログラム***"、"***名前空間***"、"***型***"、"***メンバー***"、"***アセンブリ***" について説明します。</span><span class="sxs-lookup"><span data-stu-id="04d97-143">Learn the key organizational concepts in the C# language: ***programs***, ***namespaces***, ***types***, ***members***, and ***assemblies***.</span></span>
+* [<span data-ttu-id="04d97-144">型と変数</span><span class="sxs-lookup"><span data-stu-id="04d97-144">Types and Variables</span></span>](types-and-variables.md)
+    - <span data-ttu-id="04d97-145">C# 言語における"***値型***"、"***参照型***"、"***変数***" について説明します。</span><span class="sxs-lookup"><span data-stu-id="04d97-145">Learn about ***value types***, ***reference types***, and ***variables*** in the C# language.</span></span>
+* [<span data-ttu-id="04d97-146">式</span><span class="sxs-lookup"><span data-stu-id="04d97-146">Expressions</span></span>](expressions.md)
+    - <span data-ttu-id="04d97-147">"***式***" は "***オペランド***" と "***演算子***" で構成されます。</span><span class="sxs-lookup"><span data-stu-id="04d97-147">***Expressions*** are constructed from ***operands*** and ***operators***.</span></span> <span data-ttu-id="04d97-148">式は値を生成します。</span><span class="sxs-lookup"><span data-stu-id="04d97-148">Expressions produce a value.</span></span>
+* [<span data-ttu-id="04d97-149">ステートメント</span><span class="sxs-lookup"><span data-stu-id="04d97-149">Statements</span></span>](statements.md)
+    - <span data-ttu-id="04d97-150">"***ステートメント***" はプログラムの処理を表すために使用されます。</span><span class="sxs-lookup"><span data-stu-id="04d97-150">You use ***statements*** to express the actions of a program.</span></span>
+* [<span data-ttu-id="04d97-151">クラスとオブジェクト</span><span class="sxs-lookup"><span data-stu-id="04d97-151">Classes and objects</span></span>](classes-and-objects.md)
+    - <span data-ttu-id="04d97-152">"***クラス***" は C# の最も基本的な型です。</span><span class="sxs-lookup"><span data-stu-id="04d97-152">***Classes*** are the most fundamental of C#'s types.</span></span> <span data-ttu-id="04d97-153">"***オブジェクト***" はクラスのインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="04d97-153">***Objects*** are instances of a class.</span></span> <span data-ttu-id="04d97-154">クラスは "***メンバー***" を使用して構築されます。メンバーについてもこのトピックで説明します。</span><span class="sxs-lookup"><span data-stu-id="04d97-154">Classes are built using ***members***, which are also covered in this topic.</span></span>
+* [<span data-ttu-id="04d97-155">構造体</span><span class="sxs-lookup"><span data-stu-id="04d97-155">Structs</span></span>](structs.md)
+    - <span data-ttu-id="04d97-156">"***構造体***" はデータ構造で、クラスとは異なり値型です。</span><span class="sxs-lookup"><span data-stu-id="04d97-156">***Structs*** are data structures that, unlike classes, are value types.</span></span>
+* [<span data-ttu-id="04d97-157">配列</span><span class="sxs-lookup"><span data-stu-id="04d97-157">Arrays</span></span>](arrays.md)
+    - <span data-ttu-id="04d97-158">"***配列***" はデータ構造で、算出されたインデックスを介してアクセスされる多くの変数を含みます。</span><span class="sxs-lookup"><span data-stu-id="04d97-158">An ***array*** is a data structure that contains a number of variables that are accessed through computed indices.</span></span>
+* [<span data-ttu-id="04d97-159">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="04d97-159">Interfaces</span></span>](interfaces.md)
+    - <span data-ttu-id="04d97-160">"***インターフェイス***" は、クラスと構造体によって実装できるコントラクトを定義します。</span><span class="sxs-lookup"><span data-stu-id="04d97-160">An ***interface*** defines a contract that can be implemented by classes and structs.</span></span> <span data-ttu-id="04d97-161">1 つのインターフェイスには、メソッド、プロパティ、イベント、およびインデクサーが含まれる場合があります。</span><span class="sxs-lookup"><span data-stu-id="04d97-161">An interface can contain methods, properties, events, and indexers.</span></span> <span data-ttu-id="04d97-162">インターフェイスでは、定義するメンバーの実装は行いません。インターフェイスを実装するクラスまたは構造体によって提供される必要があるメンバーを指定するだけです。</span><span class="sxs-lookup"><span data-stu-id="04d97-162">An interface does not provide implementations of the members it defines—it merely specifies the members that must be supplied by classes or structs that implement the interface.</span></span>
+* [<span data-ttu-id="04d97-163">列挙型</span><span class="sxs-lookup"><span data-stu-id="04d97-163">Enums</span></span>](enums.md)
+    - <span data-ttu-id="04d97-164">"***列挙型***" は、一連の名前付き定数を使用する固有の値の型です。</span><span class="sxs-lookup"><span data-stu-id="04d97-164">An ***enum type*** is a distinct value type with a set of named constants.</span></span>
+* [<span data-ttu-id="04d97-165">デリゲート</span><span class="sxs-lookup"><span data-stu-id="04d97-165">Delegates</span></span>](delegates.md)
+    - <span data-ttu-id="04d97-166">"***デリゲート型***" は、特定のパラメーター リストおよび戻り値を使用してメソッドへの参照を表します。</span><span class="sxs-lookup"><span data-stu-id="04d97-166">A ***delegate type*** represents references to methods with a particular parameter list and return type.</span></span> <span data-ttu-id="04d97-167">デリゲートを使用すれば、変数に割り当ててパラメーターとして渡すことのできるエンティティとして、メソッドを処理できます。</span><span class="sxs-lookup"><span data-stu-id="04d97-167">Delegates make it possible to treat methods as entities that can be assigned to variables and passed as parameters.</span></span> <span data-ttu-id="04d97-168">デリゲートはまた、他のいくつかの言語にみられる関数ポインターの概念に似ていますが、関数ポインターとは異なり、デリゲートはオブジェクト指向でタイプ セーフです。</span><span class="sxs-lookup"><span data-stu-id="04d97-168">Delegates are similar to the concept of function pointers found in some other languages, but unlike function pointers, delegates are object-oriented and type-safe.</span></span>
+* [<span data-ttu-id="04d97-169">属性</span><span class="sxs-lookup"><span data-stu-id="04d97-169">Attributes</span></span>](attributes.md)
+    * <span data-ttu-id="04d97-170">"***属性***" を使用すると、プログラムで型、メンバー、その他のエンティティに関する追加の宣言的な情報を指定できます。</span><span class="sxs-lookup"><span data-stu-id="04d97-170">***Attributes*** enable programs to specify additional declarative information about types, members, and other entities.</span></span>
 
 >[!div class="step-by-step"]
-[次へ](program-structure.md)
-
+[<span data-ttu-id="04d97-171">次へ</span><span class="sxs-lookup"><span data-stu-id="04d97-171">Next</span></span>](program-structure.md)

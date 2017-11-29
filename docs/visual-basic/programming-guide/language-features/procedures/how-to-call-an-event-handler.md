@@ -1,86 +1,69 @@
 ---
-title: "方法: Visual Basic でイベント ハンドラーを呼び出す |Microsoft ドキュメント"
+title: "方法 : Visual Basic でイベント ハンドラーを呼び出す"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - Visual Basic code, procedures
-- event handlers, calling
+- event handlers [Visual Basic], calling
 - event handlers
-- procedures, event handlers
-- procedures, calling
+- procedures [Visual Basic], event handlers
+- procedures [Visual Basic], calling
 ms.assetid: 72e18ef8-144e-40df-a1f4-066a57271e28
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c5b300feca3415d1283d24179795a4ae92c61e52
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 52b4b6ca8b03d8301535d6aeedc3bd0190d8527f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-call-an-event-handler-in-visual-basic"></a>方法 : Visual Basic でイベント ハンドラーを呼び出す
-*イベント*操作または発生は、-など、マウス クリックするか、与信限度を超えています: 認識コードを記述できる、いくつかのプログラム コンポーネントによって応答します。 *イベント ハンドラー*イベントに応答を記述するコードに示します。  
+# <a name="how-to-call-an-event-handler-in-visual-basic"></a><span data-ttu-id="df66e-102">方法 : Visual Basic でイベント ハンドラーを呼び出す</span><span class="sxs-lookup"><span data-stu-id="df66e-102">How to: Call an Event Handler in Visual Basic</span></span>
+<span data-ttu-id="df66e-103">*イベント*アクションまたはイベントの発生は、-、マウスなどクリックやクレジットの上限を超えています: 認識によってプログラム コンポーネントによって、コードを記述できます応答します。</span><span class="sxs-lookup"><span data-stu-id="df66e-103">An *event* is an action or occurrence — such as a mouse click or a credit limit exceeded — that is recognized by some program component, and for which you can write code to respond.</span></span> <span data-ttu-id="df66e-104">*イベント ハンドラー*イベントに応答を記述するコードです。</span><span class="sxs-lookup"><span data-stu-id="df66e-104">An *event handler* is the code you write to respond to an event.</span></span>  
   
- イベント ハンドラーに[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]は、`Sub`プロシージャです。 ただし、通常呼び出さないことと同じ方法の`Sub`プロシージャです。 代わりに、イベントのハンドラーとプロシージャを識別します。 これを行うか、[処理](../../../../visual-basic/language-reference/statements/handles-clause.md)句と[WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md)変数、または、 [AddHandler ステートメント](../../../../visual-basic/language-reference/statements/addhandler-statement.md)します。 使用して、`Handles`句内のイベント ハンドラーを宣言する既定の方法は、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]です。 これは、統合開発環境 (IDE) でプログラミングするときに、デザイナーによって、イベント ハンドラーが書き込まれる方法です。 `AddHandler`ステートメントが実行時に動的にイベントを発生させるために適しています。  
+ <span data-ttu-id="df66e-105">イベント ハンドラーに[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]は、`Sub`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="df66e-105">An event handler in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] is a `Sub` procedure.</span></span> <span data-ttu-id="df66e-106">ただし、通常呼び出さないことと同じ方法とその他の`Sub`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="df66e-106">However, you do not normally call it the same way as other `Sub` procedures.</span></span> <span data-ttu-id="df66e-107">代わりに、イベントのハンドラーとしてプロシージャを識別します。</span><span class="sxs-lookup"><span data-stu-id="df66e-107">Instead, you identify the procedure as a handler for the event.</span></span> <span data-ttu-id="df66e-108">これを行うか、[処理](../../../../visual-basic/language-reference/statements/handles-clause.md)句と[WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md)変数、または、 [AddHandler ステートメント](../../../../visual-basic/language-reference/statements/addhandler-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="df66e-108">You can do this either with a [Handles](../../../../visual-basic/language-reference/statements/handles-clause.md) clause and a [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md) variable, or with an [AddHandler Statement](../../../../visual-basic/language-reference/statements/addhandler-statement.md).</span></span> <span data-ttu-id="df66e-109">使用して、`Handles`句内のイベント ハンドラーを宣言する既定の方法は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="df66e-109">Using a `Handles` clause is the default way to declare an event handler in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span></span> <span data-ttu-id="df66e-110">これは、統合開発環境 (IDE) でプログラミングするときにイベント ハンドラーが、デザイナーによって書き込まれる方法です。</span><span class="sxs-lookup"><span data-stu-id="df66e-110">This is the way the event handlers are written by the designers when you program in the integrated development environment (IDE).</span></span> <span data-ttu-id="df66e-111">`AddHandler`ステートメントが実行時に動的にイベントを発生させるために適しています。</span><span class="sxs-lookup"><span data-stu-id="df66e-111">The `AddHandler` statement is suitable for raising events dynamically at run time.</span></span>  
   
- イベントが発生したときに[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]自動的にイベント ハンドラーのプロシージャを呼び出します。 イベントにアクセスできる任意のコードは実行することによって発生するようを原因となる、 [RaiseEvent ステートメント](../../../../visual-basic/language-reference/statements/raiseevent-statement.md)します。  
+ <span data-ttu-id="df66e-112">イベントが発生する、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]自動的にイベント ハンドラーのプロシージャを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="df66e-112">When the event occurs, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] automatically calls the event handler procedure.</span></span> <span data-ttu-id="df66e-113">イベントへのアクセスを持つあらゆるコードそれが原因で実行することによって発生する、 [RaiseEvent ステートメント](../../../../visual-basic/language-reference/statements/raiseevent-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="df66e-113">Any code that has access to the event can cause it to occur by executing a [RaiseEvent Statement](../../../../visual-basic/language-reference/statements/raiseevent-statement.md).</span></span>  
   
- 同じイベントには、1 つ以上のイベント ハンドラーを関連付けることができます。 場合によっては、イベントからハンドラーを切り離すこともできます。 詳細については、次を参照してください。[イベント](../../../../visual-basic/programming-guide/language-features/events/index.md)です。  
+ <span data-ttu-id="df66e-114">同じイベントには、1 つ以上のイベント ハンドラーを関連付けることができます。</span><span class="sxs-lookup"><span data-stu-id="df66e-114">You can associate more than one event handler with the same event.</span></span> <span data-ttu-id="df66e-115">場合によっては、イベントからハンドラーを切り離すこともできます。</span><span class="sxs-lookup"><span data-stu-id="df66e-115">In some cases you can dissociate a handler from an event.</span></span> <span data-ttu-id="df66e-116">詳細については、「[イベント](../../../../visual-basic/programming-guide/language-features/events/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df66e-116">For more information, see [Events](../../../../visual-basic/programming-guide/language-features/events/index.md).</span></span>  
   
-### <a name="to-call-an-event-handler-using-handles-and-withevents"></a>ハンドルおよび WithEvents を使用してイベント ハンドラーを呼び出す  
+### <a name="to-call-an-event-handler-using-handles-and-withevents"></a><span data-ttu-id="df66e-117">ハンドルおよび WithEvents を使用して、イベント ハンドラーを呼び出す</span><span class="sxs-lookup"><span data-stu-id="df66e-117">To call an event handler using Handles and WithEvents</span></span>  
   
-1.  で、イベントが宣言されていることを確認、 [Event ステートメント](../../../../visual-basic/language-reference/statements/event-statement.md)します。  
+1.  <span data-ttu-id="df66e-118">必ず、イベントが、 [Event ステートメント](../../../../visual-basic/language-reference/statements/event-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="df66e-118">Make sure the event is declared with an [Event Statement](../../../../visual-basic/language-reference/statements/event-statement.md).</span></span>  
   
-2.  レベルを使用して、クラス、モジュールまたはオブジェクト変数を宣言、 [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md)キーワードです。 `As`この変数は、イベントを発生させるクラスを指定する必要があります。  
+2.  <span data-ttu-id="df66e-119">レベルを使用して、クラス、モジュールまたはオブジェクト変数を宣言、 [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md)キーワード。</span><span class="sxs-lookup"><span data-stu-id="df66e-119">Declare an object variable at module or class level, using the [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md) keyword.</span></span> <span data-ttu-id="df66e-120">`As`この変数は、イベントを発生させるクラスを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df66e-120">The `As` clause for this variable must specify the class that raises the event.</span></span>  
   
-3.  イベント処理の宣言で`Sub`の手順を追加、[処理](../../../../visual-basic/language-reference/statements/handles-clause.md)句を指定する、`WithEvents`変数、およびイベント名。  
+3.  <span data-ttu-id="df66e-121">イベント処理の宣言で`Sub`の手順を追加、[処理](../../../../visual-basic/language-reference/statements/handles-clause.md)句を指定する、`WithEvents`変数、およびイベント名。</span><span class="sxs-lookup"><span data-stu-id="df66e-121">In the declaration of the event-handling `Sub` procedure, add a [Handles](../../../../visual-basic/language-reference/statements/handles-clause.md) clause that specifies the `WithEvents` variable and the event name.</span></span>  
   
-4.  イベントが発生したときに[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]を自動的に呼び出して、`Sub`プロシージャです。 コードを使用して、`RaiseEvent`ステートメントが発生するイベントをします。  
+4.  <span data-ttu-id="df66e-122">イベントが発生するときに[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を自動的に呼び出して、`Sub`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="df66e-122">When the event occurs, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] automatically calls the `Sub` procedure.</span></span> <span data-ttu-id="df66e-123">コードを使用して、`RaiseEvent`ステートメントに発生するイベントです。</span><span class="sxs-lookup"><span data-stu-id="df66e-123">Your code can use a `RaiseEvent` statement to make the event occur.</span></span>  
   
-     次の例は、イベントを定義し、`WithEvents`イベントを発生させるクラスを参照する変数。 イベント処理`Sub`プロシージャは、`Handles`句クラスとイベントの処理を指定します。  
+     <span data-ttu-id="df66e-124">次の例は、イベントを定義し、`WithEvents`イベントを発生させるクラスを参照する変数。</span><span class="sxs-lookup"><span data-stu-id="df66e-124">The following example defines an event and a `WithEvents` variable that refers to the class that raises the event.</span></span> <span data-ttu-id="df66e-125">イベント処理`Sub`プロシージャの使用、`Handles`句をクラスと処理イベントを指定します。</span><span class="sxs-lookup"><span data-stu-id="df66e-125">The event-handling `Sub` procedure uses a `Handles` clause to specify the class and event it handles.</span></span>  
   
-     [!code-vb[VbVbcnProcedures&4;](./codesnippet/VisualBasic/how-to-call-an-event-handler_1.vb)]  
+     [!code-vb[VbVbcnProcedures#4](./codesnippet/VisualBasic/how-to-call-an-event-handler_1.vb)]  
   
-### <a name="to-call-an-event-handler-using-addhandler"></a>AddHandler を使用してイベント ハンドラーを呼び出す  
+### <a name="to-call-an-event-handler-using-addhandler"></a><span data-ttu-id="df66e-126">AddHandler を使用して、イベント ハンドラーを呼び出す</span><span class="sxs-lookup"><span data-stu-id="df66e-126">To call an event handler using AddHandler</span></span>  
   
-1.  で、イベントが宣言されていることを確認、`Event`ステートメントです。  
+1.  <span data-ttu-id="df66e-127">必ず、イベントが、`Event`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="df66e-127">Make sure the event is declared with an `Event` statement.</span></span>  
   
-2.  実行、 [AddHandler ステートメント](../../../../visual-basic/language-reference/statements/addhandler-statement.md)イベント処理を動的に接続する`Sub`イベントにプロシージャです。  
+2.  <span data-ttu-id="df66e-128">実行、 [AddHandler ステートメント](../../../../visual-basic/language-reference/statements/addhandler-statement.md)イベント処理を動的に接続する`Sub`イベントを持つプロシージャ。</span><span class="sxs-lookup"><span data-stu-id="df66e-128">Execute an [AddHandler Statement](../../../../visual-basic/language-reference/statements/addhandler-statement.md) to dynamically connect the event-handling `Sub` procedure with the event.</span></span>  
   
-3.  イベントが発生したときに[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]を自動的に呼び出して、`Sub`プロシージャです。 コードを使用して、`RaiseEvent`ステートメントが発生するイベントをします。  
+3.  <span data-ttu-id="df66e-129">イベントが発生するときに[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を自動的に呼び出して、`Sub`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="df66e-129">When the event occurs, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] automatically calls the `Sub` procedure.</span></span> <span data-ttu-id="df66e-130">コードを使用して、`RaiseEvent`ステートメントに発生するイベントです。</span><span class="sxs-lookup"><span data-stu-id="df66e-130">Your code can use a `RaiseEvent` statement to make the event occur.</span></span>  
   
-     次の例、`Sub`を処理する手順、<xref:System.Windows.Forms.Form.Closing>フォームのイベント</xref:System.Windows.Forms.Form.Closing>。 次を使用して、 [AddHandler ステートメント](../../../../visual-basic/language-reference/statements/addhandler-statement.md)に関連付けるには、 `catchClose` <xref:System.Windows.Forms.Form.Closing>.</xref:System.Windows.Forms.Form.Closing>のイベント ハンドラーとプロシージャ  
+     <span data-ttu-id="df66e-131">次の例では定義、`Sub`を処理するプロシージャ、<xref:System.Windows.Forms.Form.Closing>フォームのイベントです。</span><span class="sxs-lookup"><span data-stu-id="df66e-131">The following example defines a `Sub` procedure to handle the <xref:System.Windows.Forms.Form.Closing> event of a form.</span></span> <span data-ttu-id="df66e-132">次を使用して、 [AddHandler ステートメント](../../../../visual-basic/language-reference/statements/addhandler-statement.md)に関連付けるには、`catchClose`のイベント ハンドラーとプロシージャ<xref:System.Windows.Forms.Form.Closing>です。</span><span class="sxs-lookup"><span data-stu-id="df66e-132">It then uses the [AddHandler Statement](../../../../visual-basic/language-reference/statements/addhandler-statement.md) to associate the `catchClose` procedure as an event handler for <xref:System.Windows.Forms.Form.Closing>.</span></span>  
   
-     [!code-vb[VbVbcnProcedures&#5;](./codesnippet/VisualBasic/how-to-call-an-event-handler_2.vb)]  
+     [!code-vb[VbVbcnProcedures#5](./codesnippet/VisualBasic/how-to-call-an-event-handler_2.vb)]  
   
-     実行することによって、イベントからイベント ハンドラーを切り離すこともできます、 [RemoveHandler ステートメント](../../../../visual-basic/language-reference/statements/removehandler-statement.md)します。  
+     <span data-ttu-id="df66e-133">実行することによってイベントからイベント ハンドラーの関連付けを解除することができます、 [RemoveHandler ステートメント](../../../../visual-basic/language-reference/statements/removehandler-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="df66e-133">You can dissociate an event handler from an event by executing the [RemoveHandler Statement](../../../../visual-basic/language-reference/statements/removehandler-statement.md).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [手順](./index.md)   
- [Sub プロシージャ](./sub-procedures.md)   
- [Sub ステートメント](../../../../visual-basic/language-reference/statements/sub-statement.md)   
- [AddressOf 演算子](../../../../visual-basic/language-reference/operators/addressof-operator.md)   
- [方法: プロシージャを作成します。](./how-to-create-a-procedure.md)   
- [方法 : 値を返さないプロシージャを呼び出す](./how-to-call-a-procedure-that-does-not-return-a-value.md)
+## <a name="see-also"></a><span data-ttu-id="df66e-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="df66e-134">See Also</span></span>  
+ [<span data-ttu-id="df66e-135">手順</span><span class="sxs-lookup"><span data-stu-id="df66e-135">Procedures</span></span>](./index.md)  
+ [<span data-ttu-id="df66e-136">Sub プロシージャ</span><span class="sxs-lookup"><span data-stu-id="df66e-136">Sub Procedures</span></span>](./sub-procedures.md)  
+ [<span data-ttu-id="df66e-137">Sub ステートメント</span><span class="sxs-lookup"><span data-stu-id="df66e-137">Sub Statement</span></span>](../../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [<span data-ttu-id="df66e-138">AddressOf 演算子</span><span class="sxs-lookup"><span data-stu-id="df66e-138">AddressOf Operator</span></span>](../../../../visual-basic/language-reference/operators/addressof-operator.md)  
+ [<span data-ttu-id="df66e-139">方法 : プロシージャを作成する</span><span class="sxs-lookup"><span data-stu-id="df66e-139">How to: Create a Procedure</span></span>](./how-to-create-a-procedure.md)  
+ [<span data-ttu-id="df66e-140">方法 : 値を返さないプロシージャを呼び出す</span><span class="sxs-lookup"><span data-stu-id="df66e-140">How to: Call a Procedure that Does Not Return a Value</span></span>](./how-to-call-a-procedure-that-does-not-return-a-value.md)

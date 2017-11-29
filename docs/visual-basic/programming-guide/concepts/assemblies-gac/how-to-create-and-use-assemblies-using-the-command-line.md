@@ -1,43 +1,35 @@
 ---
-title: "方法: を作成し、コマンドライン (Visual Basic) を使用してアセンブリを使用する |Microsoft ドキュメント"
+title: "方法: を作成し、コマンドライン (Visual Basic) を使用してアセンブリを使用します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 229ff9fb-1bd1-403b-946b-526104864c60
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 363bca806736e5540165ea96e9b4fe60d0968098
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 72f3e91f9fb88019f937dcd281aa14ab4e887daf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-create-and-use-assemblies-using-the-command-line-visual-basic"></a>方法: を作成し、コマンドライン (Visual Basic) を使用してアセンブリを使用します。
-アセンブリ、またはダイナミック リンク ライブラリ (DLL) は、実行時に、プログラムにリンクされます。 ビルドと DLL の使用例として、次のシナリオを考慮してください。  
+# <a name="how-to-create-and-use-assemblies-using-the-command-line-visual-basic"></a><span data-ttu-id="113ff-102">方法: を作成し、コマンドライン (Visual Basic) を使用してアセンブリを使用します。</span><span class="sxs-lookup"><span data-stu-id="113ff-102">How to: Create and Use Assemblies Using the Command Line (Visual Basic)</span></span>
+<span data-ttu-id="113ff-103">アセンブリとは、ダイナミック リンク ライブラリ (DLL) のことで、実行時にプログラムにリンクされます。</span><span class="sxs-lookup"><span data-stu-id="113ff-103">An assembly, or a dynamic linking library (DLL), is linked to your program at run time.</span></span> <span data-ttu-id="113ff-104">DLL のビルド例および使用例として、次に示すシナリオを考えてみます。</span><span class="sxs-lookup"><span data-stu-id="113ff-104">To demonstrate building and using a DLL, consider the following scenario:</span></span>  
   
--   `MathLibrary.DLL`: 実行時に呼び出されるメソッドを含むライブラリ ファイル。 この例では、DLL は、2 つのメソッドを含まれています。`Add`と`Multiply`です。  
+-   <span data-ttu-id="113ff-105">`MathLibrary.DLL`: 実行時に呼び出されるメソッドが格納されているライブラリ ファイル。</span><span class="sxs-lookup"><span data-stu-id="113ff-105">`MathLibrary.DLL`: The library file that contains the methods to be called at run time.</span></span> <span data-ttu-id="113ff-106">この例では、DLL には 2 つのメソッド `Add` と `Multiply` が含まれています。</span><span class="sxs-lookup"><span data-stu-id="113ff-106">In this example, the DLL contains two methods, `Add` and `Multiply`.</span></span>  
   
--   `Add`メソッドを含むソース ファイル:`Add`です。 そのパラメーターの合計を返します。 クラス`AddClass`メソッドが含まれている`Add`名前空間のメンバーである`UtilityMethods`です。  
+-   <span data-ttu-id="113ff-107">`Add`: `Add` メソッドが格納されているソース ファイル。</span><span class="sxs-lookup"><span data-stu-id="113ff-107">`Add`: The source file that contains the method `Add`.</span></span> <span data-ttu-id="113ff-108">パラメーターの和を返します。</span><span class="sxs-lookup"><span data-stu-id="113ff-108">It returns the sum of its parameters.</span></span> <span data-ttu-id="113ff-109">`Add` メソッドを含む `AddClass` クラスは `UtilityMethods` 名前空間のメンバーです。</span><span class="sxs-lookup"><span data-stu-id="113ff-109">The class `AddClass` that contains the method `Add` is a member of the namespace `UtilityMethods`.</span></span>  
   
--   `Mult`メソッドを含むソース コード:`Multiply`です。 これは、そのパラメーターの積を返します。 クラス`MultiplyClass`メソッドが含まれている`Multiply`名前空間のメンバーである`UtilityMethods`です。  
+-   <span data-ttu-id="113ff-110">`Mult`: `Multiply` メソッドが格納されているソース コード。</span><span class="sxs-lookup"><span data-stu-id="113ff-110">`Mult`: The source code that contains the method `Multiply`.</span></span> <span data-ttu-id="113ff-111">パラメーターの積を返します。</span><span class="sxs-lookup"><span data-stu-id="113ff-111">It returns the product of its parameters.</span></span> <span data-ttu-id="113ff-112">`Multiply` メソッドを含む `MultiplyClass` クラスも `UtilityMethods` 名前空間のメンバーです。</span><span class="sxs-lookup"><span data-stu-id="113ff-112">The class `MultiplyClass` that contains the method `Multiply` is also a member of the namespace `UtilityMethods`.</span></span>  
   
--   `TestCode`: 格納しているファイル、`Main`メソッドです。 DLL ファイル内の合計と実行時引数の積を計算するのにメソッドを使用します。  
+-   <span data-ttu-id="113ff-113">`TestCode`: `Main` メソッドが格納されているファイル。</span><span class="sxs-lookup"><span data-stu-id="113ff-113">`TestCode`: The file that contains the `Main` method.</span></span> <span data-ttu-id="113ff-114">DLL ファイルのメソッドを使用して、実行時引数の和と積を計算します。</span><span class="sxs-lookup"><span data-stu-id="113ff-114">It uses the methods in the DLL file to calculate the sum and the product of the run-time arguments.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="113ff-115">例</span><span class="sxs-lookup"><span data-stu-id="113ff-115">Example</span></span>  
   
 ```vb  
 ' File: Add.vb   
@@ -96,45 +88,45 @@ End Module
 ' 1234 * 5678 = 7006652  
 ```  
   
- このファイルには、DLL のメソッドを使用するアルゴリズムが含まれている`Add`と`Multiply`です。 コマンド プロンプトから入力した引数の解析で始まる`num1`と`num2`です。 使用して合計を計算し、`Add`メソッドを`AddClass`クラス、および製品を使用して、`Multiply`メソッドを`MultiplyClass`クラスです。  
+ <span data-ttu-id="113ff-116">このファイルには、DLL のメソッド `Add` と `Multiply` を使用するアルゴリズムが格納されています。</span><span class="sxs-lookup"><span data-stu-id="113ff-116">This file contains the algorithm that uses the DLL methods, `Add` and `Multiply`.</span></span> <span data-ttu-id="113ff-117">最初に、コマンド ラインから入力された引数 `num1` と `num2` を解析します。</span><span class="sxs-lookup"><span data-stu-id="113ff-117">It starts with parsing the arguments entered from the command line, `num1` and `num2`.</span></span> <span data-ttu-id="113ff-118">次に、`AddClass` クラスの `Add` メソッドを使用して和を計算し、`MultiplyClass` クラスの `Multiply` メソッドを使って積を計算します。</span><span class="sxs-lookup"><span data-stu-id="113ff-118">Then it calculates the sum by using the `Add` method on the `AddClass` class, and the product by using the `Multiply` method on the `MultiplyClass` class.</span></span>  
   
- 注意して、`Imports`ファイルの先頭にあるステートメントでは、次のように、コンパイル時に DLL のメソッドを参照する非修飾クラス名を使用することができます。  
+ <span data-ttu-id="113ff-119">注意して、`Imports`ファイルの先頭のステートメントでは、メソッドを参照、DLL、コンパイル時に次のように、非修飾クラス名を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="113ff-119">Notice that the  `Imports` statement at the beginning of the file enables you to use the unqualified class names to reference the DLL methods at compile time, as follows:</span></span>  
   
 ```vb  
 MultiplyClass.Multiply(num1, num2)  
 ```  
   
- それ以外の場合、次のように完全修飾名を使用しなければなりません。  
+ <span data-ttu-id="113ff-120">ディレクティブを指定しない場合は、次のように、完全修飾名を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="113ff-120">Otherwise, you have to use the fully qualified names, as follows:</span></span>  
   
 ```vb  
 UtilityMethods.MultiplyClass.Multiply(num1, num2)  
 ```  
   
-## <a name="execution"></a>実行  
- プログラムを実行するには、次のように&2; つの数値の後に、EXE ファイルの名前を入力します。  
+## <a name="execution"></a><span data-ttu-id="113ff-121">実行</span><span class="sxs-lookup"><span data-stu-id="113ff-121">Execution</span></span>  
+ <span data-ttu-id="113ff-122">プログラムを実行するには、次のように、EXE ファイルの名前と 2 つの数値を順に入力します。</span><span class="sxs-lookup"><span data-stu-id="113ff-122">To run the program, enter the name of the EXE file, followed by two numbers, as follows:</span></span>  
   
  `TestCode 1234 5678`  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- ファイルをビルドする`MathLibrary.DLL`、2 つのファイルをコンパイル`Add`と`Mult`次のコマンドラインを使用しています。  
+## <a name="compiling-the-code"></a><span data-ttu-id="113ff-123">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="113ff-123">Compiling the Code</span></span>  
+ <span data-ttu-id="113ff-124">`MathLibrary.DLL` ファイルをビルドするには、次のコマンド ラインを使用して、`Add` ファイルと `Mult` ファイルをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="113ff-124">To build the file `MathLibrary.DLL`, compile the two files `Add` and `Mult` by using the following command line.</span></span>  
   
 ```vb  
 vbc /target:library /out:MathLibrary.DLL Add.vb Mult.vb  
 ```  
   
- [/Target (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/target.md)コンパイラ オプションを指定すると、EXE ファイルではなく、DLL を出力します。 [/Out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md) DLL のファイル名を指定するファイル名を続けてコンパイラ オプションを使用します。 それ以外の場合、コンパイラが最初のファイルを使用して (`Add.vb`) として、DLL の名前。  
+ <span data-ttu-id="113ff-125">[/Target (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/target.md)コンパイラ オプション、EXE ファイルではなく、DLL を出力するようにコンパイラに指示します。</span><span class="sxs-lookup"><span data-stu-id="113ff-125">The [/target (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/target.md) compiler option tells the compiler to output a DLL instead of an EXE file.</span></span> <span data-ttu-id="113ff-126">[/Out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md) DLL ファイル名を指定するファイル名を続けてコンパイラ オプションを使用します。</span><span class="sxs-lookup"><span data-stu-id="113ff-126">The [/out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md) compiler option followed by a file name is used to specify the DLL file name.</span></span> <span data-ttu-id="113ff-127">このオプションを指定しないと、コンパイラは最初のファイル (`Add.vb`) を DLL の名前として使用します。</span><span class="sxs-lookup"><span data-stu-id="113ff-127">Otherwise, the compiler uses the first file (`Add.vb`) as the name of the DLL.</span></span>  
   
- 実行可能ファイルをビルドする`TestCode.exe`、次のコマンドラインを使用します。  
+ <span data-ttu-id="113ff-128">実行可能ファイル `TestCode.exe` をビルドするには、次のコマンド ラインを使用します。</span><span class="sxs-lookup"><span data-stu-id="113ff-128">To build the executable file, `TestCode.exe`, use the following command line:</span></span>  
   
 ```vb  
 vbc /out:TestCode.exe /reference:MathLibrary.DLL TestCode.vb  
 ```  
   
- **/Out**コンパイラ オプションは、EXE ファイルを出力するようにコンパイラに指示し、出力ファイルの名前を指定 (`TestCode.exe`)。 このコンパイラ オプションは省略できます。 [/Reference (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md)コンパイラ オプションは、DLL ファイルをこのプログラムを使用してファイルを指定します。  
+ <span data-ttu-id="113ff-129">**/out** コンパイラ オプションは、EXE ファイルを出力するようにコンパイラに指示し、出力ファイルの名前 (`TestCode.exe`) を指定します。</span><span class="sxs-lookup"><span data-stu-id="113ff-129">The **/out** compiler option tells the compiler to output an EXE file and specifies the name of the output file (`TestCode.exe`).</span></span> <span data-ttu-id="113ff-130">このコンパイラ オプションは省略できます。</span><span class="sxs-lookup"><span data-stu-id="113ff-130">This compiler option is optional.</span></span> <span data-ttu-id="113ff-131">[/Reference (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md)コンパイラ オプションは、DLL ファイルをこのプログラムを使用するファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="113ff-131">The [/reference (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md) compiler option specifies the DLL file or files that this program uses.</span></span>  
   
- コマンドラインからのビルドの詳細については、次を参照してください。 と[コマンドラインからのビルド](../../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)します。  
+ <span data-ttu-id="113ff-132">コマンドラインからのビルドの詳細については、次を参照してください。 および[コマンドラインからのビルド](../../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)です。</span><span class="sxs-lookup"><span data-stu-id="113ff-132">For more information about building from the command line, see  and [Building from the Command Line](../../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [プログラミングの概念](../../../../visual-basic/programming-guide/concepts/index.md)   
- [アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)   
- [DLL 関数を保持するクラスを作成します。](http://msdn.microsoft.com/library/e08e4c34-0223-45f7-aa55-a3d8dd979b0f)
+## <a name="see-also"></a><span data-ttu-id="113ff-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="113ff-133">See Also</span></span>  
+ [<span data-ttu-id="113ff-134">プログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="113ff-134">Programming Concepts</span></span>](../../../../visual-basic/programming-guide/concepts/index.md)  
+ [<span data-ttu-id="113ff-135">アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="113ff-135">Assemblies and the Global Assembly Cache (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+ [<span data-ttu-id="113ff-136">DLL 関数を保持するクラスの作成</span><span class="sxs-lookup"><span data-stu-id="113ff-136">Creating a Class to Hold DLL Functions</span></span>](../../../../framework/interop/creating-a-class-to-hold-dll-functions.md)

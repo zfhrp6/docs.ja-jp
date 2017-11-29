@@ -19,7 +19,7 @@
 ### [方法: WIF を使用してクレーム対応 ASP.NET Web フォーム アプリケーションをビルドする](how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)
 ### [方法: フォームベースの認証を使用するクレーム対応 ASP.NET アプリケーションをビルドする](claims-aware-aspnet-app-forms-authentication.md)
 ### [方法: Windows 認証を使用するクレーム対応 ASP.NET アプリケーションをビルドする](how-to-build-claims-aware-aspnet-app-using-windows-authentication.md)
-### [方法: WIF トレースを使用してクレーム対応のアプリケーションとサービスをデバッグする](how-to-debug-claims-aware-applications-and-services-using-wif-tracing.md)
+### [方法: WIF トレースを使用してクレーム対応アプリケーションおよびサービスをデバッグする](how-to-debug-claims-aware-applications-and-services-using-wif-tracing.md)
 ### [方法: WIF を使用してサインイン状態を表示する](how-to-display-signed-in-status-using-wif.md)
 ### [方法: WIF トレースの有効化](how-to-enable-wif-tracing.md)
 ### [方法: メッセージ リプレイ検出を有効にする](how-to-enable-token-replay-detection.md)

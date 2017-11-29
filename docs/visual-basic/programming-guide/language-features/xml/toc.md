@@ -17,6 +17,3 @@
 ### [方法: XML 子要素にアクセスする](how-to-access-xml-child-elements.md)
 ### [方法: XML 属性にアクセスする](how-to-access-xml-attributes.md)
 ### [方法 : XML 名前空間プレフィックスを宣言して使用する](how-to-declare-and-use-xml-namespace-prefixes.md)
-## [XML IntelliSense](xml-intellisense.md)
-### [方法 : XML IntelliSense を有効にする](how-to-enable-xml-intellisense.md)
-### [XML to Schema ウィザード](xml-to-schema-wizard.md)

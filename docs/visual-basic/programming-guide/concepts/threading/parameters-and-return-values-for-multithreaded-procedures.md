@@ -1,36 +1,28 @@
 ---
-title: "パラメーターと戻り値のマルチ スレッド プロシージャ (Visual Basic) |Microsoft ドキュメント"
+title: "パラメーターと戻り値のマルチ スレッド プロシージャ (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: cbdce172-7ff6-41a9-bb21-53a7c6f538a5
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d5d8adde531d31aa6bf353f53bd4cfecc084f515
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 071e0aa916e4b3464c7c0cbff6596cabc6b67906
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="parameters-and-return-values-for-multithreaded-procedures-visual-basic"></a>パラメーターと戻り値のマルチ スレッド プロシージャ (Visual Basic)
-スレッド クラスのコンス トラクターは、引数を使用しないと、値を返さないプロシージャへの参照を渡す必要があるためにを提供し、マルチ スレッド アプリケーションで値を返すには、複雑なです。 次のセクションでは、パラメーターを指定して、個別のスレッドでプロシージャから値を返す単純な方法を示します。  
+# <a name="parameters-and-return-values-for-multithreaded-procedures-visual-basic"></a><span data-ttu-id="8da4d-102">パラメーターと戻り値のマルチ スレッド プロシージャ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8da4d-102">Parameters and Return Values for Multithreaded Procedures (Visual Basic)</span></span>
+<span data-ttu-id="8da4d-103">マルチスレッド アプリケーションでの値の受け渡しは複雑です。それは、引数を受け取らず値を返さないプロシージャへの参照をスレッド クラスのコンストラクターに渡す必要があるためです。</span><span class="sxs-lookup"><span data-stu-id="8da4d-103">Supplying and returning values in a multithreaded application is complicated because the constructor for the thread class must be passed a reference to a procedure that takes no arguments and returns no value.</span></span> <span data-ttu-id="8da4d-104">以下のセクションでは、異なるスレッドのプロシージャからパラメーターを指定して値を返す単純な方法を示します。</span><span class="sxs-lookup"><span data-stu-id="8da4d-104">The following sections show some simple ways to supply parameters and return values from procedures on separate threads.</span></span>  
   
-## <a name="supplying-parameters-for-multithreaded-procedures"></a>マルチ スレッド プロシージャのパラメーターの指定  
- マルチ スレッドのメソッド呼び出しのパラメーターを指定する最善の方法では、クラスで、対象のメソッドをラップし、その新しいスレッドへのパラメーターとして使用するクラスのフィールドを定義します。 このアプローチの利点は、新しいスレッドを開始するたびに、独自のパラメーターを使用して、クラスの新しいインスタンスを作成します。 たとえば、次のコードのように、三角形の面積を計算する関数があるとします。  
+## <a name="supplying-parameters-for-multithreaded-procedures"></a><span data-ttu-id="8da4d-105">マルチスレッド プロシージャのパラメーターの指定</span><span class="sxs-lookup"><span data-stu-id="8da4d-105">Supplying Parameters for Multithreaded Procedures</span></span>  
+ <span data-ttu-id="8da4d-106">マルチスレッド メソッドの呼び出しにパラメーターを指定する最良の方法は、クラスにターゲット メソッドをラップし、新規スレッドのパラメーターとして機能するフィールドをそのクラスに対して定義することです。</span><span class="sxs-lookup"><span data-stu-id="8da4d-106">The best way to supply parameters for a multithreaded method call is to wrap the target method in a class and define fields for that class that will serve as parameters for the new thread.</span></span> <span data-ttu-id="8da4d-107">この方法の利点は、新規スレッドを開始するたびに独自のパラメーターでクラスの新規インスタンスを作成できることです。</span><span class="sxs-lookup"><span data-stu-id="8da4d-107">The advantage of this approach is that you can create a new instance of the class, with its own parameters, every time you want to start a new thread.</span></span> <span data-ttu-id="8da4d-108">たとえば、次のコードに示すように三角形の面積を計算する関数があるとします。</span><span class="sxs-lookup"><span data-stu-id="8da4d-108">For example, suppose you have a function that calculates the area of a triangle, as in the following code:</span></span>  
   
 ```vb  
 Function CalcArea(ByVal Base As Double, ByVal Height As Double) As Double  
@@ -38,7 +30,7 @@ Function CalcArea(ByVal Base As Double, ByVal Height As Double) As Double
 End Function  
 ```  
   
- ラップするクラスを作成できますが、`CalcArea`機能し、次のように入力パラメーターを格納するフィールドを作成します。  
+ <span data-ttu-id="8da4d-109">次に示すように、`CalcArea` 関数をラップして入力パラメーターを格納するフィールドを作成するクラスを記述できます。</span><span class="sxs-lookup"><span data-stu-id="8da4d-109">You can write a class that wraps the `CalcArea` function and creates fields to store input parameters, as follows:</span></span>  
   
 ```vb  
 Class AreaClass  
@@ -52,7 +44,7 @@ Class AreaClass
 End Class  
 ```  
   
- 使用する、 `AreaClass`、作成することができます、`AreaClass`オブジェクトし、設定、`Base`と`Height`次のコードに示すようにプロパティ。  
+ <span data-ttu-id="8da4d-110">`AreaClass` を使用するには、次のコードに示すように `AreaClass` オブジェクトを作成し、`Base` プロパティと `Height` プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="8da4d-110">To use the `AreaClass`, you can create an `AreaClass` object, and set the `Base` and `Height` properties as shown in the following code:</span></span>  
   
 ```vb  
 Protected Sub TestArea()  
@@ -65,12 +57,12 @@ Protected Sub TestArea()
 End Sub  
 ```  
   
- 注意して、`TestArea`プロシージャがの値をチェックしていない、`Area`フィールド呼び出した後、`CalcArea`メソッドです。 `CalcArea`別のスレッドで実行される、`Area`を呼び出した後すぐに確認する場合に設定するフィールドは保証されません`Thread.Start`します。 次のセクションでは、マルチ スレッド プロシージャから値を返す方について説明します。  
+ <span data-ttu-id="8da4d-111">`TestArea` プロシージャは `CalcArea` メソッドの呼び出し後に `Area` フィールドの値を確認しないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="8da4d-111">Notice that the `TestArea` procedure does not check the value of the `Area` field after calling the `CalcArea` method.</span></span> <span data-ttu-id="8da4d-112">`CalcArea` は別のスレッドで実行されるため、`Thread.Start` を呼び出した直後に確認する場合は、`Area` フィールドが設定されているとは限りません。</span><span class="sxs-lookup"><span data-stu-id="8da4d-112">Because `CalcArea` runs on a separate thread, the `Area` field is not guaranteed to be set if you check it immediately after calling `Thread.Start`.</span></span> <span data-ttu-id="8da4d-113">次のセクションでは、マルチスレッド プロシージャから値を返す適切な方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="8da4d-113">The next section discusses a better way to return values from multithreaded procedures.</span></span>  
   
-## <a name="returning-values-from-multithreaded-procedures"></a>マルチ スレッド プロシージャから値を返す  
- 個別のスレッドで実行されるプロシージャからの戻り値は複雑にするという事実の手順は、関数には使用できません`ByRef`引数。 値を返す最も簡単な方法は、使用する、 <xref:System.ComponentModel.BackgroundWorker>、スレッドを管理およびタスクを完了すると、イベントを発生させるイベント ハンドラーを持つ結果を処理するコンポーネント</xref:System.ComponentModel.BackgroundWorker>。  
+## <a name="returning-values-from-multithreaded-procedures"></a><span data-ttu-id="8da4d-114">マルチスレッド プロシージャから値を返す</span><span class="sxs-lookup"><span data-stu-id="8da4d-114">Returning Values from Multithreaded Procedures</span></span>  
+ <span data-ttu-id="8da4d-115">異なるスレッドで実行されるプロシージャの場合、値を返す動作は複雑になります。プロシージャは関数にすることができず、`ByRef` 引数を使用できないからです。</span><span class="sxs-lookup"><span data-stu-id="8da4d-115">Returning values from procedures that run on separate threads is complicated by the fact that the procedures cannot be functions and cannot use `ByRef` arguments.</span></span> <span data-ttu-id="8da4d-116">値を返す最も簡単な方法は、<xref:System.ComponentModel.BackgroundWorker> コンポーネントを使ってスレッドを管理し、タスクが完了したときにイベントを生成し、結果をイベント ハンドラーで処理することです。</span><span class="sxs-lookup"><span data-stu-id="8da4d-116">The easiest way to return values is to use the <xref:System.ComponentModel.BackgroundWorker> component to manage your threads and raise an event when the task is done, and process the results with an event handler.</span></span>  
   
- 次の例では、別のスレッドで実行中のプロシージャからのイベントを発生させることによって、値を返します。  
+ <span data-ttu-id="8da4d-117">次の例では、別のスレッドで実行中のプロシージャからイベントを発生させて値を返します。</span><span class="sxs-lookup"><span data-stu-id="8da4d-117">The following example returns a value by raising an event from a procedure running on a separate thread:</span></span>  
   
 ```vb  
 Private Class AreaClass2  
@@ -116,13 +108,13 @@ Private Sub BackgroundWorker1_RunWorkerCompleted(
 End Sub  
 ```  
   
- パラメーターを指定し、オプションのパラメーターを使用して、スレッド プールのスレッドに値を返す`ByVal`の状態オブジェクト変数、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>メソッド</xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>。 スレッド タイマー スレッドは、この目的でも、状態オブジェクトをサポートします。 詳細については、スレッド プールとスレッド タイマーは、次を参照してください。[スレッド プール (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)[スレッド プール](http://msdn.microsoft.com/library/4b8bb2c8-8ca4-457c-9afd-d11bc9a05701)と[スレッド タイマー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-timers.md)します。  
+ <span data-ttu-id="8da4d-118">スレッド プールのスレッドにパラメーターと戻り値を提供するには、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> メソッドの省略可能な `ByVal` 状態オブジェクト変数を使用します。</span><span class="sxs-lookup"><span data-stu-id="8da4d-118">You can provide parameters and return values to thread-pool threads by using the optional `ByVal` state-object variable of the <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> method.</span></span> <span data-ttu-id="8da4d-119">スレッド タイマーのスレッドもこの目的で状態オブジェクトをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="8da4d-119">Thread-timer threads also support a state object for this purpose.</span></span> <span data-ttu-id="8da4d-120">スレッド プールおよびスレッド タイマーについては、次を参照してください。[スレッド プール (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)[スレッド プール](http://msdn.microsoft.com/library/4b8bb2c8-8ca4-457c-9afd-d11bc9a05701)と[スレッド タイマー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-timers.md)です。</span><span class="sxs-lookup"><span data-stu-id="8da4d-120">For information on thread pooling and thread timers, see [Thread Pooling (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)[Thread Pooling](http://msdn.microsoft.com/library/4b8bb2c8-8ca4-457c-9afd-d11bc9a05701) and [Thread Timers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-timers.md).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [チュートリアル: BackgroundWorker コンポーネント (Visual Basic) でのマルチ スレッド](../../../../visual-basic/programming-guide/concepts/threading/walkthrough-multithreading-with-the-backgroundworker-component.md)   
- [スレッド プール (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)   
- [スレッドの同期 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-synchronization.md)   
- [イベント](../../../../visual-basic/programming-guide/language-features/events/index.md)   
- [マルチ スレッド アプリケーション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/multithreaded-applications.md)   
- [デリゲート](../../../../visual-basic/programming-guide/language-features/delegates/index.md)   
- [コンポーネントのマルチ スレッド](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)
+## <a name="see-also"></a><span data-ttu-id="8da4d-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="8da4d-121">See Also</span></span>  
+ [<span data-ttu-id="8da4d-122">チュートリアル: BackgroundWorker コンポーネントでのマルチスレッド (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8da4d-122">Walkthrough: Multithreading with the BackgroundWorker Component (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/threading/walkthrough-multithreading-with-the-backgroundworker-component.md)  
+ [<span data-ttu-id="8da4d-123">スレッド プール (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8da4d-123">Thread Pooling (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)  
+ [<span data-ttu-id="8da4d-124">スレッドの同期 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8da4d-124">Thread Synchronization (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/threading/thread-synchronization.md)  
+ [<span data-ttu-id="8da4d-125">イベント</span><span class="sxs-lookup"><span data-stu-id="8da4d-125">Events</span></span>](../../../../visual-basic/programming-guide/language-features/events/index.md)  
+ [<span data-ttu-id="8da4d-126">マルチスレッド アプリケーション (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8da4d-126">Multithreaded Applications (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/threading/multithreaded-applications.md)  
+ [<span data-ttu-id="8da4d-127">デリゲート</span><span class="sxs-lookup"><span data-stu-id="8da4d-127">Delegates</span></span>](../../../../visual-basic/programming-guide/language-features/delegates/index.md)  
+ [<span data-ttu-id="8da4d-128">コンポーネントのマルチスレッド</span><span class="sxs-lookup"><span data-stu-id="8da4d-128">Multithreading in Components</span></span>](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)

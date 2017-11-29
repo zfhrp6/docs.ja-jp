@@ -9,112 +9,109 @@ ms.topic: article
 ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 5c8b6e2d14a14724a040bed5cc58c5ffef3ce520
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
+# <a name="samples-and-tutorials"></a><span data-ttu-id="5c80d-104">サンプルおよびチュートリアル</span><span class="sxs-lookup"><span data-stu-id="5c80d-104">Samples and tutorials</span></span>
 
-# <a name="samples-and-tutorials"></a>サンプルおよびチュートリアル
+<span data-ttu-id="5c80d-105">.NET ドキュメントには、.NET について学習できるサンプルとチュートリアルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="5c80d-105">The .NET documentation contains a set of samples and tutorials that teach you about .NET.</span></span> <span data-ttu-id="5c80d-106">ここでは、.NET Core、ASP.NET Core、C# のサンプルを検索、表示、ダウンロードする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-106">This topic describes how to find, view, and download .NET Core, ASP.NET Core, and C# samples and tutorials.</span></span> <span data-ttu-id="5c80d-107">F# プログラミング言語の学習に最適なリソースは [F# Foundation のサイト](http://fsharp.org/learn.html)にあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-107">Find resources to learn the F# programming language on the [F# Foundation's site](http://fsharp.org/learn.html).</span></span> <span data-ttu-id="5c80d-108">オンライン コード エディターを使用した C# の学習に関心がある場合は、[インタラクティブ チュートリアル](http://go.microsoft.com/fwlink/p/?LinkId=817234)をお試しください。</span><span class="sxs-lookup"><span data-stu-id="5c80d-108">If you're interested in exploring C# using an online code editor, try these [interactive tutorials](http://go.microsoft.com/fwlink/p/?LinkId=817234).</span></span> <span data-ttu-id="5c80d-109">サンプル コードの表示とダウンロード方法については、「[サンプルの表示とダウンロード](#viewing-and-downloading-samples)」セクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5c80d-109">For instructions on how to view and download sample code, see the [Viewing and downloading samples](#viewing-and-downloading-samples) section.</span></span>
 
-.NET ドキュメントには、.NET について学習できるサンプルとチュートリアルが含まれています。 ここでは、.NET Core、ASP.NET Core、C# のサンプルを検索、表示、ダウンロードする方法について説明します。 F# プログラミング言語の学習に最適なリソースは [F# Foundation のサイト](http://fsharp.org/learn.html)にあります。 オンライン コード エディターを使用した C# の学習に関心がある場合は、[インタラクティブ チュートリアル](http://go.microsoft.com/fwlink/p/?LinkId=817234)をお試しください。 サンプル コードの表示とダウンロード方法については、「[サンプルの表示とダウンロード](#viewing-and-downloading-samples)」セクションをご覧ください。
+## <a name="net-core"></a><span data-ttu-id="5c80d-110">.NET Core</span><span class="sxs-lookup"><span data-stu-id="5c80d-110">.NET Core</span></span>
 
-## <a name="net-core"></a>.NET Core
+### <a name="samples"></a><span data-ttu-id="5c80d-111">サンプル</span><span class="sxs-lookup"><span data-stu-id="5c80d-111">Samples</span></span>
 
-### <a name="samples"></a>サンプル
+<span data-ttu-id="5c80d-112">**[dotnet テストを使用した .NET Core での単体テスト](../core/testing/unit-testing-with-dotnet-test.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-112">**[Unit Testing in .NET Core using dotnet test](../core/testing/unit-testing-with-dotnet-test.md)**</span></span>
 
-**[dotnet テストを使用した .NET Core での単体テスト](../core/testing/unit-testing-with-dotnet-test.md)**
+<span data-ttu-id="5c80d-113">このガイドでは、ASP.NET Core の Web アプリと、関連する単体テストの作成方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-113">This guide shows you how to create an ASP.NET Core web app and associated unit tests.</span></span> <span data-ttu-id="5c80d-114">最初に単純な Web サービス アプリを作成し、それからテストを追加します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-114">It starts by creating a simple web service app and then adds tests.</span></span> <span data-ttu-id="5c80d-115">さらに多くのテストを作成し、新機能実装を指導します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-115">It continues with creating more tests to guide implementing new features.</span></span> <span data-ttu-id="5c80d-116">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-116">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このガイドでは、ASP.NET Core の Web アプリと、関連する単体テストの作成方法について説明します。 最初に単純な Web サービス アプリを作成し、それからテストを追加します。 さらに多くのテストを作成し、新機能実装を指導します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/unit-testing-using-dotnet-test)は、GitHub の dotnet/docs リポジトリにあります。
+### <a name="tutorials"></a><span data-ttu-id="5c80d-117">チュートリアル</span><span class="sxs-lookup"><span data-stu-id="5c80d-117">Tutorials</span></span>
 
-### <a name="tutorials"></a>チュートリアル
+<span data-ttu-id="5c80d-118">**[CLI ツールを使用する .NET Core コンソール アプリの作成: 手順ガイド](../core/tutorials/using-with-xplat-cli.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-118">**[Writing .NET Core console apps using the CLI tools: A step-by-step guide](../core/tutorials/using-with-xplat-cli.md)**</span></span>
 
-**[CLI ツールを使用する .NET Core コンソール アプリの作成: 手順ガイド](../core/tutorials/using-with-xplat-cli.md)**
+<span data-ttu-id="5c80d-119">このガイドでは、.NET Core CLI ツールを使用してクロスプラットフォーム コンソール アプリを作成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-119">This guide shows you how to use the .NET Core CLI tooling to build cross-platform console apps.</span></span> <span data-ttu-id="5c80d-120">基本的なコンソール アプリから始めて、最終的にテストを含む複数プロジェクトまで拡張します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-120">It starts with a basic console app and eventually spans multiple projects, including testing.</span></span> <span data-ttu-id="5c80d-121">段階的に機能を追加し、作業を進めながらナレッジを構築します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-121">You add features step-by-step, building your knowledge as you go.</span></span> <span data-ttu-id="5c80d-122">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/console-apps)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-122">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/core/console-apps) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このガイドでは、.NET Core CLI ツールを使用してクロスプラットフォーム コンソール アプリを作成する方法を説明します。 基本的なコンソール アプリから始めて、最終的にテストを含む複数プロジェクトまで拡張します。 段階的に機能を追加し、作業を進めながらナレッジを構築します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/console-apps)は、GitHub の dotnet/docs リポジトリにあります。
+<span data-ttu-id="5c80d-123">**[クロス プラットフォーム ツールによるライブラリの作成](../core/tutorials/libraries.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-123">**[Writing Libraries with Cross Platform Tools](../core/tutorials/libraries.md)**</span></span>
 
-**[クロス プラットフォーム ツールによるライブラリの作成](../core/tutorials/libraries.md)**
+<span data-ttu-id="5c80d-124">このサンプルでは、クロスプラットフォーム CLI ツールを使用して .NET 用ライブラリを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-124">This sample covers how to write libraries for .NET using cross-platform CLI tools.</span></span> <span data-ttu-id="5c80d-125">これらのツールは、サポートされる任意のオペレーティング システムで動作する効率的で低レベルのエクスペリエンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-125">These tools provide an efficient and low-level experience that works across any supported operating system.</span></span> <span data-ttu-id="5c80d-126">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/framework/libraries/frameworks-library)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-126">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/framework/libraries/frameworks-library) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このサンプルでは、クロスプラットフォーム CLI ツールを使用して .NET 用ライブラリを作成する方法について説明します。 これらのツールは、サポートされる任意のオペレーティング システムで動作する効率的で低レベルのエクスペリエンスを提供します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/framework/libraries/frameworks-library)は、GitHub の dotnet/docs リポジトリにあります。
+## <a name="aspnet-core"></a><span data-ttu-id="5c80d-127">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="5c80d-127">ASP.NET Core</span></span>
 
-## <a name="aspnet-core"></a>ASP.NET Core
+<span data-ttu-id="5c80d-128">[ASP.NET Core のチュートリアル](/aspnet/core/tutorials/)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5c80d-128">See the [ASP.NET Core tutorials](/aspnet/core/tutorials/).</span></span> <span data-ttu-id="5c80d-129">ASP.NET Core に関するドキュメントの記事の多くには、サンプルへのリンクが含まれています。</span><span class="sxs-lookup"><span data-stu-id="5c80d-129">Many articles in the ASP.NET Core documentation have links to samples written for them.</span></span>
 
-[ASP.NET Core のチュートリアル](/aspnet/core/tutorials/)をご覧ください。 ASP.NET Core に関するドキュメントの記事の多くには、サンプルへのリンクが含まれています。
+## <a name="c-language"></a><span data-ttu-id="5c80d-130">C# 言語</span><span class="sxs-lookup"><span data-stu-id="5c80d-130">C# language</span></span>
 
-## <a name="c-language"></a>C# 言語
+### <a name="samples"></a><span data-ttu-id="5c80d-131">サンプル</span><span class="sxs-lookup"><span data-stu-id="5c80d-131">Samples</span></span>
 
-### <a name="samples"></a>サンプル
+<span data-ttu-id="5c80d-132">**[反復子](../csharp/iterators.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-132">**[Iterators](../csharp/iterators.md)**</span></span>
 
-**[反復子](../csharp/iterators.md)**
+<span data-ttu-id="5c80d-133">このサンプルは、C# 反復子の作成と使用のための構文および機能を示しています。</span><span class="sxs-lookup"><span data-stu-id="5c80d-133">This sample demonstrates the syntax and features for creating and consuming C# iterators.</span></span> <span data-ttu-id="5c80d-134">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/iterators)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-134">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/csharp/iterators) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このサンプルは、C# 反復子の作成と使用のための構文および機能を示しています。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/iterators)は、GitHub の dotnet/docs リポジトリにあります。
+<span data-ttu-id="5c80d-135">**[インデクサー](../csharp/indexers.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-135">**[Indexers](../csharp/indexers.md)**</span></span>
 
-**[インデクサー](../csharp/indexers.md)**
+<span data-ttu-id="5c80d-136">このサンプルは、C# インデクサーの構文および機能を示しています。</span><span class="sxs-lookup"><span data-stu-id="5c80d-136">This sample demonstrates the syntax and features for C# indexers.</span></span> <span data-ttu-id="5c80d-137">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/indexers)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-137">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/csharp/indexers) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このサンプルは、C# インデクサーの構文および機能を示しています。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/indexers)は、GitHub の dotnet/docs リポジトリにあります。
+<span data-ttu-id="5c80d-138">**[デリゲートとイベント](../csharp/delegates-events.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-138">**[Delegates and Events](../csharp/delegates-events.md)**</span></span>
 
-**[デリゲートとイベント](../csharp/delegates-events.md)**
+<span data-ttu-id="5c80d-139">このサンプルは、C# デリゲートとイベントの構文および機能を示しています。</span><span class="sxs-lookup"><span data-stu-id="5c80d-139">This sample demonstrates the syntax and features for C# delegates and events.</span></span> <span data-ttu-id="5c80d-140">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/delegates-and-events)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-140">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/csharp/delegates-and-events) is available in the dotnet/docs repository on GitHub.</span></span> <span data-ttu-id="5c80d-141">イベントに重点を置いた [2 つ目のサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/events)も、同じリポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-141">A [second sample](https://github.com/dotnet/docs/tree/master/samples/csharp/events) focused on events is also in the same repository.</span></span>
 
-このサンプルは、C# デリゲートとイベントの構文および機能を示しています。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/delegates-and-events)は、GitHub の dotnet/docs リポジトリにあります。 イベントに重点を置いた [2 つ目のサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/events)も、同じリポジトリにあります。
+<span data-ttu-id="5c80d-142">**[式ツリー](../csharp/expression-trees.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-142">**[Expression Trees](../csharp/expression-trees.md)**</span></span>
 
-**[式ツリー](../csharp/expression-trees.md)**
+<span data-ttu-id="5c80d-143">このサンプルは、式ツリーを使用して解決できる問題の多くを示しています。</span><span class="sxs-lookup"><span data-stu-id="5c80d-143">This sample demonstrates many of the problems that can be solved by using Expression Trees.</span></span> <span data-ttu-id="5c80d-144">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/expression-trees)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-144">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/csharp/expression-trees) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このサンプルは、式ツリーを使用して解決できる問題の多くを示しています。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/expression-trees)は、GitHub の dotnet/docs リポジトリにあります。
+<span data-ttu-id="5c80d-145">**LINQ のサンプル**</span><span class="sxs-lookup"><span data-stu-id="5c80d-145">**LINQ Samples**</span></span>
 
-**LINQ のサンプル**
+<span data-ttu-id="5c80d-146">この一連のサンプルは、統合言語クエリ (LINQ) の多くの機能を示しています。</span><span class="sxs-lookup"><span data-stu-id="5c80d-146">This series of samples demonstrate many of the features of Language Integrated Query (LINQ).</span></span> <span data-ttu-id="5c80d-147">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/linq/csharp)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-147">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/core/linq/csharp) is available in the dotnet/docs repository on GitHub.</span></span>
 
-この一連のサンプルは、統合言語クエリ (LINQ) の多くの機能を示しています。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/core/linq/csharp)は、GitHub の dotnet/docs リポジトリにあります。
+### <a name="tutorials"></a><span data-ttu-id="5c80d-148">チュートリアル</span><span class="sxs-lookup"><span data-stu-id="5c80d-148">Tutorials</span></span>
 
-### <a name="tutorials"></a>チュートリアル
+<span data-ttu-id="5c80d-149">**[コンソール アプリケーション](../csharp/tutorials/console-teleprompter.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-149">**[Console Application](../csharp/tutorials/console-teleprompter.md)**</span></span>
 
-**[コンソール アプリケーション](../csharp/tutorials/console-teleprompter.md)**
+<span data-ttu-id="5c80d-150">このチュートリアルでは、コンソール I/O、コンソール アプリの構造、タスクベースの非同期プログラミング モデルの基礎について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-150">This tutorial demonstrates Console I/O, the structure of a console app, and the basics of the task-based asynchronous programming model.</span></span> <span data-ttu-id="5c80d-151">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-151">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このチュートリアルでは、コンソール I/O、コンソール アプリの構造、タスクベースの非同期プログラミング モデルの基礎について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-teleprompter)は、GitHub の dotnet/docs リポジトリにあります。
+<span data-ttu-id="5c80d-152">**[REST クライアント](../csharp/tutorials/console-webapiclient.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-152">**[REST Client](../csharp/tutorials/console-webapiclient.md)**</span></span>
 
-**[REST クライアント](../csharp/tutorials/console-webapiclient.md)**
+<span data-ttu-id="5c80d-153">このチュートリアルでは、Web 通信、JSON シリアル化、C# 言語でのオブジェクト指向の機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-153">This tutorial demonstrates web communications, JSON serialization, and object-oriented features of the C# language.</span></span> <span data-ttu-id="5c80d-154">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-154">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このチュートリアルでは、Web 通信、JSON シリアル化、C# 言語でのオブジェクト指向の機能について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-webapiclient)は、GitHub の dotnet/docs リポジトリにあります。
+<span data-ttu-id="5c80d-155">**[LINQ の使用](../csharp/tutorials/working-with-linq.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-155">**[Working with LINQ](../csharp/tutorials/working-with-linq.md)**</span></span>
 
-**[LINQ の使用](../csharp/tutorials/working-with-linq.md)**
+<span data-ttu-id="5c80d-156">このチュートリアルでは、LINQ の多くの機能と、それをサポートする言語要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-156">This tutorial demonstrates many of the features of LINQ and the language elements that support it.</span></span> <span data-ttu-id="5c80d-157">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-linq)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-157">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-linq) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このチュートリアルでは、LINQ の多くの機能と、それをサポートする言語要素について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/console-linq)は、GitHub の dotnet/docs リポジトリにあります。
+<span data-ttu-id="5c80d-158">**[Docker でホストされているマイクロサービス](../csharp/tutorials/microservices.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-158">**[Microservices hosted in Docker](../csharp/tutorials/microservices.md)**</span></span>
 
-**[Docker でホストされているマイクロサービス](../csharp/tutorials/microservices.md)**
+<span data-ttu-id="5c80d-159">このチュートリアルでは、ASP.NET Core のマイクロ サービスの構築と、これを Docker でホストする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-159">This tutorial demonstrates building an ASP.NET Core microservice and hosting it in Docker.</span></span> <span data-ttu-id="5c80d-160">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-160">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このチュートリアルでは、ASP.NET Core のマイクロ サービスの構築と、これを Docker でホストする方法について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice)は、GitHub の dotnet/docs リポジトリにあります。
+<span data-ttu-id="5c80d-161">**[Visual Studio for Mac を使用した macOS での .NET Core の概要](../core/tutorials/using-on-mac-vs.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-161">**[Getting started with .NET Core on macOS using Visual Studio for Mac](../core/tutorials/using-on-mac-vs.md)**</span></span>
 
-**[Visual Studio for Mac を使用した macOS での .NET Core の概要](../core/tutorials/using-on-mac-vs.md)**
+<span data-ttu-id="5c80d-162">このチュートリアルでは、Visual Studio for Mac を使用した、簡単な .NET Core コンソール アプリを構築する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-162">This tutorial shows you how to build a simple .NET Core console app using Visual Studio for Mac.</span></span>
 
-このチュートリアルでは、Visual Studio for Mac を使用した、簡単な .NET Core コンソール アプリを構築する方法を示します。
+<span data-ttu-id="5c80d-163">**[Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築](../core/tutorials/using-on-mac-vs-full-solution.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-163">**[Building a complete .NET Core solution on macOS using Visual Studio for Mac](../core/tutorials/using-on-mac-vs-full-solution.md)**</span></span>
 
-**[Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築](../core/tutorials/using-on-mac-vs-full-solution.md)**
+<span data-ttu-id="5c80d-164">このチュートリアルでは、再利用可能なライブラリと単体テストを含む完全な .NET Core ソリューションを構築する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-164">This tutorial shows you how to build a complete .NET Core solution that includes a reusable library and unit testing.</span></span>
 
-このチュートリアルでは、再利用可能なライブラリと単体テストを含む完全な .NET Core ソリューションを構築する方法を示します。
+## <a name="deploying-to-containers"></a><span data-ttu-id="5c80d-165">コンテナーへの展開</span><span class="sxs-lookup"><span data-stu-id="5c80d-165">Deploying to containers</span></span>
 
-## <a name="deploying-to-containers"></a>コンテナーへの展開
+<span data-ttu-id="5c80d-166">**[Windows Docker コンテナーでの ASP.NET MVC アプリケーションの実行](../framework/docker/aspnetmvc.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-166">**[Running ASP.NET MVC Applications in Windows Docker Containers](../framework/docker/aspnetmvc.md)**</span></span>
 
-**[Windows Docker コンテナーでの ASP.NET MVC アプリケーションの実行](../framework/docker/aspnetmvc.md)**
+<span data-ttu-id="5c80d-167">このチュートリアルでは、Windows Docker コンテナーで既存の ASP.NET MVC アプリを展開する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-167">This tutorial demonstrates how to deploy an existing ASP.NET MVC app in a Windows Docker Container.</span></span> <span data-ttu-id="5c80d-168">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/framework/docker/MVCRandomAnswerGenerator)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-168">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/framework/docker/MVCRandomAnswerGenerator) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このチュートリアルでは、Windows Docker コンテナーで既存の ASP.NET MVC アプリを展開する方法について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/framework/docker/MVCRandomAnswerGenerator)は、GitHub の dotnet/docs リポジトリにあります。
+<span data-ttu-id="5c80d-169">**[Windows コンテナーでの .NET Framework コンソール アプリケーションの実行](../framework/docker/console.md)**</span><span class="sxs-lookup"><span data-stu-id="5c80d-169">**[Running .NET Framework Console Applications in Windows Containers](../framework/docker/console.md)**</span></span>
 
-**[Windows コンテナーでの .NET Framework コンソール アプリケーションの実行](../framework/docker/console.md)**
+<span data-ttu-id="5c80d-170">このチュートリアルでは、Windows コンテナーで既存のコンソール アプリを展開する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-170">This tutorial demonstrates how to deploy an existing console app in a Windows container.</span></span> <span data-ttu-id="5c80d-171">[完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator)は、GitHub の dotnet/docs リポジトリにあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-171">The [completed sample](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator) is available in the dotnet/docs repository on GitHub.</span></span>
 
-このチュートリアルでは、Windows コンテナーで既存のコンソール アプリを展開する方法について説明します。 [完全なサンプル](https://github.com/dotnet/docs/tree/master/samples/framework/docker/ConsoleRandomAnswerGenerator)は、GitHub の dotnet/docs リポジトリにあります。
+## <a name="viewing-and-downloading-samples"></a><span data-ttu-id="5c80d-172">サンプルの表示とダウンロード</span><span class="sxs-lookup"><span data-stu-id="5c80d-172">Viewing and downloading samples</span></span>
 
-## <a name="viewing-and-downloading-samples"></a>サンプルの表示とダウンロード
+<span data-ttu-id="5c80d-173">多くのトピックには、GitHub から表示またはダウンロードできるソース コードとサンプルが示されています。</span><span class="sxs-lookup"><span data-stu-id="5c80d-173">Many topics show source code and samples that are available for viewing or download from GitHub.</span></span> <span data-ttu-id="5c80d-174">サンプルを表示するには、サンプルへのリンクをクリックしてください。</span><span class="sxs-lookup"><span data-stu-id="5c80d-174">To view a sample, just follow the sample link.</span></span> <span data-ttu-id="5c80d-175">コードをダウンロードするには、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="5c80d-175">To download the code, follow these instructions:</span></span>
 
-多くのトピックには、GitHub から表示またはダウンロードできるソース コードとサンプルが示されています。 サンプルを表示するには、サンプルへのリンクをクリックしてください。 コードをダウンロードするには、次の手順に従います。
-
-1. 次の手順のいずれかを実行して、サンプル コードを含むリポジトリをダウンロードします。
-   * リポジトリの ZIP ファイルをローカル システムにダウンロードします。 圧縮アーカイブを解凍します。
-   * リポジトリを[フォーク](https://help.github.com/articles/fork-a-repo/)し、フォークしたものをローカル システムに[クローン](https://help.github.com/articles/cloning-a-repository/)します。 フォークとクローンを使用すると、作成したフォークに変更をコミットし、公式のドキュメントのリポジトリに対するプル要求を作成することで、ドキュメントに貢献できます。 詳細については、「[.NET Documentation Contributing Guide (.NET ドキュメント貢献ガイド](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md)」と「[ASP.NET Docs Contributing Guide (ASP.NET ドキュメント貢献ガイド)](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md)」をご覧ください。
-   * リポジトリをローカル環境にクローンします。 ローカル システムにドキュメントのリポジトリを直接クローンすると、公式のリポジトリに対して直接コミットできないため、後でドキュメントに貢献できなくなります。 後でドキュメントに貢献する可能性がある場合は、前述のフォークとクローンの手順を使用してください。
-1. リポジトリ フォルダー内のサンプルがある場所に移動します。 サンプルへのリンクをクリックすると、サンプルがある場所への相対パスがブラウザーのアドレス バーに表示されます。
-1. サンプルを実行するには、次のいくつかのオプションがあります。
-   * [dotnet CLI ツール](../core/tools/index.md)を使用する: コンソール ウィンドウで、サンプルのフォルダーに移動し、dotnet CLI コマンドを使用します。
-   * [Visual Studio](https://www.visualstudio.com/) または [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/) を使用する: メニュー バーから **[ファイル] > [開く] > [プロジェクト/ソリューション]** の順に選択し、サンプルを開きます。次にサンプルのプロジェクト フォルダーに移動し、プロジェクト ファイル (*.csproj* または *.fsproj*) を選択します。
-   * [Visual Studio Code](https://code.visualstudio.com/) を使用する: メニュー バーから **[ファイル] > [フォルダーを開く]** の順に選択し、サンプルのプロジェクト フォルダーを選択してサンプルを開きます。
-   * .NET Core プロジェクトをサポートする別の IDE を使用する。
-
+1. <span data-ttu-id="5c80d-176">次の手順のいずれかを実行して、サンプル コードを含むリポジトリをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="5c80d-176">Download the repository that contains the sample code by performing one of the following procedures:</span></span>
+   * <span data-ttu-id="5c80d-177">リポジトリの ZIP ファイルをローカル システムにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="5c80d-177">Download a ZIP of the repository to your local system.</span></span> <span data-ttu-id="5c80d-178">圧縮アーカイブを解凍します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-178">Un-ZIP the compressed archive.</span></span>
+   * <span data-ttu-id="5c80d-179">リポジトリを[フォーク](https://help.github.com/articles/fork-a-repo/)し、フォークしたものをローカル システムに[クローン](https://help.github.com/articles/cloning-a-repository/)します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-179">[Fork](https://help.github.com/articles/fork-a-repo/) the repository and [clone](https://help.github.com/articles/cloning-a-repository/) the fork to your local system.</span></span> <span data-ttu-id="5c80d-180">フォークとクローンを使用すると、作成したフォークに変更をコミットし、公式のドキュメントのリポジトリに対するプル要求を作成することで、ドキュメントに貢献できます。</span><span class="sxs-lookup"><span data-stu-id="5c80d-180">Forking and cloning permits you to make contributions to the documentation by committing changes to your fork and then creating a pull request for the official docs repository.</span></span> <span data-ttu-id="5c80d-181">詳細については、「[.NET Documentation Contributing Guide (.NET ドキュメント貢献ガイド](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md)」と「[ASP.NET Docs Contributing Guide (ASP.NET ドキュメント貢献ガイド)](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5c80d-181">For more information, see the [.NET Documentation Contributing Guide](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md) and the [ASP.NET Docs Contributing Guide](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md).</span></span>
+   * <span data-ttu-id="5c80d-182">リポジトリをローカル環境にクローンします。</span><span class="sxs-lookup"><span data-stu-id="5c80d-182">Clone the repository locally.</span></span> <span data-ttu-id="5c80d-183">ローカル システムにドキュメントのリポジトリを直接クローンすると、公式のリポジトリに対して直接コミットできないため、後でドキュメントに貢献できなくなります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-183">If you clone a docs repository directly to your local system, you won't be able to make commits directly against the official repository, so you won't be able to make documentation contributions later.</span></span> <span data-ttu-id="5c80d-184">後でドキュメントに貢献する可能性がある場合は、前述のフォークとクローンの手順を使用してください。</span><span class="sxs-lookup"><span data-stu-id="5c80d-184">Use the fork and clone procedure previously described if you want to preserve the opportunity to contribute to the documentation later.</span></span>
+1. <span data-ttu-id="5c80d-185">リポジトリ フォルダー内のサンプルがある場所に移動します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-185">Navigate within the repository's folders to the sample's location.</span></span> <span data-ttu-id="5c80d-186">サンプルへのリンクをクリックすると、サンプルがある場所への相対パスがブラウザーのアドレス バーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="5c80d-186">The relative path to the sample's location appears in your browser's address bar when you follow the link to the sample.</span></span>
+1. <span data-ttu-id="5c80d-187">サンプルを実行するには、次のいくつかのオプションがあります。</span><span class="sxs-lookup"><span data-stu-id="5c80d-187">To run a sample, you have several options:</span></span>
+   * <span data-ttu-id="5c80d-188">[dotnet CLI ツール](../core/tools/index.md)を使用する: コンソール ウィンドウで、サンプルのフォルダーに移動し、dotnet CLI コマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-188">Use the [dotnet CLI tools](../core/tools/index.md): In a console window, navigate to the sample's folder and use dotnet CLI commands.</span></span>
+   * <span data-ttu-id="5c80d-189">[Visual Studio](https://www.visualstudio.com/) または [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/) を使用する: メニュー バーから **[ファイル] > [開く] > [プロジェクト/ソリューション]** の順に選択し、サンプルを開きます。次にサンプルのプロジェクト フォルダーに移動し、プロジェクト ファイル (*.csproj* または *.fsproj*) を選択します。</span><span class="sxs-lookup"><span data-stu-id="5c80d-189">Use [Visual Studio](https://www.visualstudio.com/) or [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/): Open the sample by selecting **File > Open > Project/Solution** from the menu bar, navigate to the sample project folder, and select the project file (*.csproj* or *.fsproj*).</span></span>
+   * <span data-ttu-id="5c80d-190">[Visual Studio Code](https://code.visualstudio.com/) を使用する: メニュー バーから **[ファイル] > [フォルダーを開く]** の順に選択し、サンプルのプロジェクト フォルダーを選択してサンプルを開きます。</span><span class="sxs-lookup"><span data-stu-id="5c80d-190">Use [Visual Studio Code](https://code.visualstudio.com/): Open the sample by selecting **File > Open Folder** from the menu bar and selecting the sample's project folder.</span></span>
+   * <span data-ttu-id="5c80d-191">.NET Core プロジェクトをサポートする別の IDE を使用する。</span><span class="sxs-lookup"><span data-stu-id="5c80d-191">Use a different IDE that supports .NET Core projects.</span></span>

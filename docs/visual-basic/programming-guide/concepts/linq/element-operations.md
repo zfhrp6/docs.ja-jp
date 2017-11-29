@@ -1,50 +1,42 @@
 ---
-title: "要素操作 (Visual Basic) |Microsoft ドキュメント"
+title: "要素の操作 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 5fcb0631-dce5-45ff-8abb-353cae21e14f
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 70a66b1cdbcc03a743fb43d497e40c8ae032c0aa
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 0b476907182573d62ba76e8e9f7b02417805dc10
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="element-operations-visual-basic"></a>要素操作 (Visual Basic)
-要素操作では、シーケンスから単一の特定要素が返されます。  
+# <a name="element-operations-visual-basic"></a><span data-ttu-id="ff6af-102">要素の操作 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ff6af-102">Element Operations (Visual Basic)</span></span>
+<span data-ttu-id="ff6af-103">要素操作では、シーケンスから単一の特定の要素が返されます。</span><span class="sxs-lookup"><span data-stu-id="ff6af-103">Element operations return a single, specific element from a sequence.</span></span>  
   
- 次のセクションでは、要素の操作を実行する標準クエリ演算子のメソッドが一覧表示します。  
+ <span data-ttu-id="ff6af-104">次のセクションでは、要素操作を実行する標準クエリ演算子のメソッドの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-104">The standard query operator methods that perform element operations are listed in the following section.</span></span>  
   
-## <a name="methods"></a>メソッド  
+## <a name="methods"></a><span data-ttu-id="ff6af-105">メソッド</span><span class="sxs-lookup"><span data-stu-id="ff6af-105">Methods</span></span>  
   
-|メソッド名|説明|Visual Basic のクエリ式の構文|説明|  
+|<span data-ttu-id="ff6af-106">メソッド名</span><span class="sxs-lookup"><span data-stu-id="ff6af-106">Method Name</span></span>|<span data-ttu-id="ff6af-107">説明</span><span class="sxs-lookup"><span data-stu-id="ff6af-107">Description</span></span>|<span data-ttu-id="ff6af-108">Visual Basic のクエリ式の構文</span><span class="sxs-lookup"><span data-stu-id="ff6af-108">Visual Basic Query Expression Syntax</span></span>|<span data-ttu-id="ff6af-109">説明</span><span class="sxs-lookup"><span data-stu-id="ff6af-109">More Information</span></span>|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|ElementAt|コレクション内の指定したインデックス位置にある要素を返します。|該当なし。|<xref:System.Linq.Enumerable.ElementAt%2A?displayProperty=fullName></xref:System.Linq.Enumerable.ElementAt%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.ElementAt%2A?displayProperty=fullName></xref:System.Linq.Queryable.ElementAt%2A?displayProperty=fullName>|  
-|ElementAtOrDefault|インデックスが範囲外にある場合は、コレクションまたは既定値で指定したインデックス位置にある要素を返します。|該当なし。|<xref:System.Linq.Enumerable.ElementAtOrDefault%2A?displayProperty=fullName></xref:System.Linq.Enumerable.ElementAtOrDefault%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.ElementAtOrDefault%2A?displayProperty=fullName></xref:System.Linq.Queryable.ElementAtOrDefault%2A?displayProperty=fullName>|  
-|First|コレクションの最初の要素または条件を満たす最初の要素を返します。|該当なし。|<xref:System.Linq.Enumerable.First%2A?displayProperty=fullName></xref:System.Linq.Enumerable.First%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.First%2A?displayProperty=fullName></xref:System.Linq.Queryable.First%2A?displayProperty=fullName>|  
-|Firstordefault 演算子|コレクションの最初の要素または条件を満たす最初の要素を返します。 このような要素が存在しない場合は、既定値を返します。|該当なし。|<xref:System.Linq.Enumerable.FirstOrDefault%2A?displayProperty=fullName></xref:System.Linq.Enumerable.FirstOrDefault%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%2A?displayProperty=fullName></xref:System.Linq.Queryable.FirstOrDefault%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%60%601%28System.Linq.IQueryable%7B%60%600%7D%29?displayProperty=fullName></xref:System.Linq.Queryable.FirstOrDefault%60%601%28System.Linq.IQueryable%7B%60%600%7D%29?displayProperty=fullName>|  
-|末尾|コレクションの最後の要素または条件を満たす、最後の要素を返します。|該当なし。|<xref:System.Linq.Enumerable.Last%2A?displayProperty=fullName></xref:System.Linq.Enumerable.Last%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Last%2A?displayProperty=fullName></xref:System.Linq.Queryable.Last%2A?displayProperty=fullName>|  
-|LastOrDefault|コレクションの最後の要素または条件を満たす、最後の要素を返します。 このような要素が存在しない場合は、既定値を返します。|該当なし。|<xref:System.Linq.Enumerable.LastOrDefault%2A?displayProperty=fullName></xref:System.Linq.Enumerable.LastOrDefault%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.LastOrDefault%2A?displayProperty=fullName></xref:System.Linq.Queryable.LastOrDefault%2A?displayProperty=fullName>|  
-|Single|コレクションの唯一の要素または条件を満たす、唯一の要素を返します。|該当なし。|<xref:System.Linq.Enumerable.Single%2A?displayProperty=fullName></xref:System.Linq.Enumerable.Single%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.Single%2A?displayProperty=fullName></xref:System.Linq.Queryable.Single%2A?displayProperty=fullName>|  
-|SingleOrDefault|コレクションの唯一の要素または条件を満たす、唯一の要素を返します。 このような要素が存在しないか、コレクションに&1; 個の要素が含まれていない場合は、既定値を返します。|該当なし。|<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=fullName></xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=fullName><br /><br /> <xref:System.Linq.Queryable.SingleOrDefault%2A?displayProperty=fullName></xref:System.Linq.Queryable.SingleOrDefault%2A?displayProperty=fullName>|  
+|<span data-ttu-id="ff6af-110">ElementAt</span><span class="sxs-lookup"><span data-stu-id="ff6af-110">ElementAt</span></span>|<span data-ttu-id="ff6af-111">コレクション内の指定されたインデックス位置にある要素を返します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-111">Returns the element at a specified index in a collection.</span></span>|<span data-ttu-id="ff6af-112">該当なし。</span><span class="sxs-lookup"><span data-stu-id="ff6af-112">Not applicable.</span></span>|<xref:System.Linq.Enumerable.ElementAt%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ElementAt%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="ff6af-113">ElementAtOrDefault</span><span class="sxs-lookup"><span data-stu-id="ff6af-113">ElementAtOrDefault</span></span>|<span data-ttu-id="ff6af-114">コレクション内の指定したインデックス位置にある要素を返します。インデックスが範囲外の場合は既定値を返します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-114">Returns the element at a specified index in a collection or a default value if the index is out of range.</span></span>|<span data-ttu-id="ff6af-115">該当なし。</span><span class="sxs-lookup"><span data-stu-id="ff6af-115">Not applicable.</span></span>|<xref:System.Linq.Enumerable.ElementAtOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ElementAtOrDefault%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="ff6af-116">First</span><span class="sxs-lookup"><span data-stu-id="ff6af-116">First</span></span>|<span data-ttu-id="ff6af-117">コレクションの最初の要素、または条件を満たす最初の要素を返します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-117">Returns the first element of a collection, or the first element that satisfies a condition.</span></span>|<span data-ttu-id="ff6af-118">該当なし。</span><span class="sxs-lookup"><span data-stu-id="ff6af-118">Not applicable.</span></span>|<xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.First%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="ff6af-119">FirstOrDefault</span><span class="sxs-lookup"><span data-stu-id="ff6af-119">FirstOrDefault</span></span>|<span data-ttu-id="ff6af-120">コレクションの最初の要素、または条件を満たす最初の要素を返します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-120">Returns the first element of a collection, or the first element that satisfies a condition.</span></span> <span data-ttu-id="ff6af-121">そのような要素が存在しない場合は、既定値を返します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-121">Returns a default value if no such element exists.</span></span>|<span data-ttu-id="ff6af-122">該当なし。</span><span class="sxs-lookup"><span data-stu-id="ff6af-122">Not applicable.</span></span>|<xref:System.Linq.Enumerable.FirstOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%60%601%28System.Linq.IQueryable%7B%60%600%7D%29?displayProperty=nameWithType>|  
+|<span data-ttu-id="ff6af-123">末尾</span><span class="sxs-lookup"><span data-stu-id="ff6af-123">Last</span></span>|<span data-ttu-id="ff6af-124">コレクションの最後の要素、または条件を満たす最後の要素を返します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-124">Returns the last element of a collection, or the last element that satisfies a condition.</span></span>|<span data-ttu-id="ff6af-125">該当なし。</span><span class="sxs-lookup"><span data-stu-id="ff6af-125">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Last%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Last%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="ff6af-126">LastOrDefault</span><span class="sxs-lookup"><span data-stu-id="ff6af-126">LastOrDefault</span></span>|<span data-ttu-id="ff6af-127">コレクションの最後の要素、または条件を満たす最後の要素を返します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-127">Returns the last element of a collection, or the last element that satisfies a condition.</span></span> <span data-ttu-id="ff6af-128">そのような要素が存在しない場合は、既定値を返します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-128">Returns a default value if no such element exists.</span></span>|<span data-ttu-id="ff6af-129">該当なし。</span><span class="sxs-lookup"><span data-stu-id="ff6af-129">Not applicable.</span></span>|<xref:System.Linq.Enumerable.LastOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.LastOrDefault%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="ff6af-130">Single</span><span class="sxs-lookup"><span data-stu-id="ff6af-130">Single</span></span>|<span data-ttu-id="ff6af-131">コレクションの唯一の要素、または条件を満たす唯一の要素を返します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-131">Returns the only element of a collection, or the only element that satisfies a condition.</span></span>|<span data-ttu-id="ff6af-132">該当なし。</span><span class="sxs-lookup"><span data-stu-id="ff6af-132">Not applicable.</span></span>|<xref:System.Linq.Enumerable.Single%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Single%2A?displayProperty=nameWithType>|  
+|<span data-ttu-id="ff6af-133">SingleOrDefault</span><span class="sxs-lookup"><span data-stu-id="ff6af-133">SingleOrDefault</span></span>|<span data-ttu-id="ff6af-134">コレクションの唯一の要素、または条件を満たす唯一の要素を返します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-134">Returns the only element of a collection, or the only element that satisfies a condition.</span></span> <span data-ttu-id="ff6af-135">そのような要素が存在しない場合、またはコレクションの要素が 1 つだけでない場合は、既定値を返します。</span><span class="sxs-lookup"><span data-stu-id="ff6af-135">Returns a default value if no such element exists or the collection does not contain exactly one element.</span></span>|<span data-ttu-id="ff6af-136">該当なし。</span><span class="sxs-lookup"><span data-stu-id="ff6af-136">Not applicable.</span></span>|<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SingleOrDefault%2A?displayProperty=nameWithType>|  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Linq></xref:System.Linq>   
- [標準クエリ演算子の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [方法: ファイルまたはディレクトリ ツリー (LINQ) (Visual Basic) 内のファイル サイズの大きい照会](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)
+## <a name="see-also"></a><span data-ttu-id="ff6af-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="ff6af-137">See Also</span></span>  
+ <xref:System.Linq>  
+ [<span data-ttu-id="ff6af-138">標準クエリ演算子の概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ff6af-138">Standard Query Operators Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [<span data-ttu-id="ff6af-139">方法: ファイルまたはディレクトリ ツリー (LINQ) (Visual Basic) 内のファイル サイズの大きいクエリ</span><span class="sxs-lookup"><span data-stu-id="ff6af-139">How to: Query for the Largest File or Files in a Directory Tree (LINQ) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)

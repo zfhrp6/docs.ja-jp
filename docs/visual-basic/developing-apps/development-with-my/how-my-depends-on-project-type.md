@@ -1,92 +1,74 @@
 ---
-title: "どのように私はプロジェクトの種類 (Visual Basic) に依存します |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "プロジェクトの種類に応じた My の機能 (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
-helpviewer_keywords:
-- _MYTYPE
+helpviewer_keywords: _MYTYPE
 ms.assetid: c188b38e-bd9d-4121-9983-41ea6a94d28e
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d193dade94980f04b31605ea6fa968f9fa7d0ad6
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 4a37bf43096931597278974099becb9be6ae133d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-my-depends-on-project-type-visual-basic"></a>プロジェクトの種類に応じた My の機能 (Visual Basic)
-`My`特定のプロジェクトの種類で必要なオブジェクトのみを公開します。 たとえば、`My.Forms`オブジェクトは、Windows フォーム アプリケーションで使用できますが、コンソール アプリケーションでは使用できません。 このトピックを説明する`My`オブジェクトは、異なる種類のプロジェクトで使用できます。  
+# <a name="how-my-depends-on-project-type-visual-basic"></a><span data-ttu-id="64fba-102">プロジェクトの種類に応じた My の機能 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="64fba-102">How My Depends on Project Type (Visual Basic)</span></span>
+<span data-ttu-id="64fba-103">`My`特定のプロジェクトの種類で必要なオブジェクトのみを公開します。</span><span class="sxs-lookup"><span data-stu-id="64fba-103">`My` exposes only those objects required by a particular project type.</span></span> <span data-ttu-id="64fba-104">たとえば、`My.Forms`オブジェクトは、Windows フォーム アプリケーションで使用できますが、コンソール アプリケーションでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="64fba-104">For example, the `My.Forms` object is available in a Windows Forms application but not available in a console application.</span></span> <span data-ttu-id="64fba-105">このトピックの内容を説明する`My`オブジェクトは、異なる種類のプロジェクトで使用できます。</span><span class="sxs-lookup"><span data-stu-id="64fba-105">This topic describes which `My` objects are available in different project types.</span></span>  
   
-## <a name="my-in-windows-applications-and-web-sites"></a>自分の Windows アプリケーションや Web サイト  
- `My`現在、プロジェクトの種類内で使用されるオブジェクトのみを公開します。適用されないオブジェクトを抑制します。 たとえば、次の図は、 `My` Windows フォーム プロジェクトのオブジェクト モデルです。  
+## <a name="my-in-windows-applications-and-web-sites"></a><span data-ttu-id="64fba-106">自分の Windows アプリケーションや Web サイト</span><span class="sxs-lookup"><span data-stu-id="64fba-106">My in Windows Applications and Web Sites</span></span>  
+ <span data-ttu-id="64fba-107">`My`現在、プロジェクトの種類に便利なオブジェクトのみを公開します。適用されないオブジェクトを抑制します。</span><span class="sxs-lookup"><span data-stu-id="64fba-107">`My` exposes only objects that are useful in the current project type; it suppresses objects that are not applicable.</span></span> <span data-ttu-id="64fba-108">たとえば、次の図は、 `My` Windows フォーム プロジェクトでのオブジェクト モデルです。</span><span class="sxs-lookup"><span data-stu-id="64fba-108">For example, the following image shows the `My` object model in a Windows Forms project.</span></span>  
   
- ![図形の Windows フォーム アプリケーションで](../../../visual-basic/developing-apps/development-with-my/media/myinwinform.png "MyInWinForm")  
+ <span data-ttu-id="64fba-109">![図形の Windows フォーム アプリケーションで](../../../visual-basic/developing-apps/development-with-my/media/myinwinform.png "MyInWinForm")</span><span class="sxs-lookup"><span data-stu-id="64fba-109">![Shape of My in a Windows Forms application](../../../visual-basic/developing-apps/development-with-my/media/myinwinform.png "MyInWinForm")</span></span>  
   
- Web サイト プロジェクトで`My`Web 開発者に関連するオブジェクトを公開 (など、`My.Request`と`My.Response`オブジェクト)、関連性の低いオブジェクト制限しながら (など、`My.Forms`オブジェクト)。 次の図は、 `My` Web サイト プロジェクトのオブジェクト モデル。  
+ <span data-ttu-id="64fba-110">Web サイト プロジェクトで`My`Web 開発者に関連するオブジェクトを公開 (など、`My.Request`と`My.Response`オブジェクト)、関連するではないオブジェクトを制限しながら (など、`My.Forms`オブジェクト)。</span><span class="sxs-lookup"><span data-stu-id="64fba-110">In a Web site project, `My` exposes objects that are relevant to a Web developer (such as the `My.Request` and `My.Response` objects) while suppressing objects that are not relevant (such as the `My.Forms` object).</span></span> <span data-ttu-id="64fba-111">次の図は、 `My` Web サイト プロジェクトのオブジェクト モデル。</span><span class="sxs-lookup"><span data-stu-id="64fba-111">The following image shows the `My` object model in a Web site project:</span></span>  
   
- ![図形の Web アプリケーションで](../../../visual-basic/developing-apps/development-with-my/media/myinweb.png "MyInWeb")  
+ <span data-ttu-id="64fba-112">![図形の Web アプリケーションで](../../../visual-basic/developing-apps/development-with-my/media/myinweb.png "MyInWeb")</span><span class="sxs-lookup"><span data-stu-id="64fba-112">![Shape of My in a Web application](../../../visual-basic/developing-apps/development-with-my/media/myinweb.png "MyInWeb")</span></span>  
   
-## <a name="project-details"></a>プロジェクトの詳細  
- 次の表では`My`8 プロジェクトの種類のオブジェクトが既定で有効にします。 Windows アプリケーション、クラス ライブラリ、コンソール アプリケーション、Windows コントロール ライブラリ、Web コントロール ライブラリ、Windows サービス、空白、および Web サイトです。  
+## <a name="project-details"></a><span data-ttu-id="64fba-113">プロジェクトの詳細</span><span class="sxs-lookup"><span data-stu-id="64fba-113">Project Details</span></span>  
+ <span data-ttu-id="64fba-114">次の表では`My`8 プロジェクトの種類のオブジェクトが既定で有効にします。 Windows アプリケーション、クラス ライブラリ、コンソール アプリケーション、Windows コントロール ライブラリ、Web コントロール ライブラリ、Windows サービス、空、および Web サイトです。</span><span class="sxs-lookup"><span data-stu-id="64fba-114">The following table shows which `My` objects are enabled by default for eight project types: Windows application, class Library, console application, Windows control library, Web control library, Windows service, empty, and Web site.</span></span>  
   
- 次の&3; つのバージョンがある、`My.Application`オブジェクト、2 つのバージョン、`My.Computer`オブジェクト、および&2; つのバージョンの`My.User`オブジェクトの詳細については、これらのバージョンは、表の脚注で指定します。  
+ <span data-ttu-id="64fba-115">3 つのバージョンがある、`My.Application`オブジェクト、2 つのバージョン、`My.Computer`オブジェクト、および 2 つのバージョンの`My.User`オブジェクトです。 これらのバージョンに関する詳細は、表の後に、脚注で指定します。</span><span class="sxs-lookup"><span data-stu-id="64fba-115">There are three versions of the `My.Application` object, two versions of the `My.Computer` object, and two versions of `My.User` object; details about these versions are given in the footnotes after the table.</span></span>  
   
-|My オブジェクト|Windows アプリケーション|クラス ライブラリ|コンソール アプリケーション|Windows コントロール ライブラリ|Web コントロール ライブラリ|Windows サービス|Empty|Web サイト|  
+|<span data-ttu-id="64fba-116">My オブジェクト</span><span class="sxs-lookup"><span data-stu-id="64fba-116">My Object</span></span>|<span data-ttu-id="64fba-117">Windows アプリケーション</span><span class="sxs-lookup"><span data-stu-id="64fba-117">Windows Application</span></span>|<span data-ttu-id="64fba-118">クラス ライブラリ</span><span class="sxs-lookup"><span data-stu-id="64fba-118">Class Library</span></span>|<span data-ttu-id="64fba-119">コンソール アプリケーション</span><span class="sxs-lookup"><span data-stu-id="64fba-119">Console Application</span></span>|<span data-ttu-id="64fba-120">Windows コントロール ライブラリ</span><span class="sxs-lookup"><span data-stu-id="64fba-120">Windows Control Library</span></span>|<span data-ttu-id="64fba-121">Web コントロール ライブラリ</span><span class="sxs-lookup"><span data-stu-id="64fba-121">Web Control Library</span></span>|<span data-ttu-id="64fba-122">Windows サービス</span><span class="sxs-lookup"><span data-stu-id="64fba-122">Windows Service</span></span>|<span data-ttu-id="64fba-123">Empty</span><span class="sxs-lookup"><span data-stu-id="64fba-123">Empty</span></span>|<span data-ttu-id="64fba-124">Web サイト</span><span class="sxs-lookup"><span data-stu-id="64fba-124">Web Site</span></span>|  
 |---|---|---|---|---|---|---|---|---|  
-|`My.Application`|**Yes** <sup>1</sup>|**Yes** <sup>2</sup>|**Yes** <sup>3</sup>|**Yes** <sup>2</sup>|いいえ|**Yes** <sup>3</sup>|いいえ|いいえ|  
-|`My.Computer`|**Yes** <sup>4</sup>|**Yes** <sup>4</sup>|**Yes** <sup>4</sup>|**Yes** <sup>4</sup>|**Yes** <sup>5</sup>|**Yes** <sup>4</sup>|いいえ|**Yes** <sup>5</sup>|  
-|`My.Forms`|**はい**|いいえ|いいえ|**はい**|いいえ|いいえ|いいえ|いいえ|  
-|`My.Log`|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|**はい**|  
-|`My.Request`|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|**はい**|  
-|`My.Resources`|**はい**|**はい**|**はい**|**はい**|**はい**|**はい**|いいえ|いいえ|  
-|`My.Response`|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|いいえ|**はい**|  
-|`My.Settings`|**はい**|**はい**|**はい**|**はい**|**はい**|**はい**|いいえ|いいえ|  
-|`My.User`|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>7</sup>|**Yes** <sup>6</sup>|いいえ|**Yes** <sup>7</sup>|  
-|`My.WebServices`|**はい**|**はい**|**はい**|**はい**|**はい**|**はい**|いいえ|いいえ|  
+|`My.Application`|<span data-ttu-id="64fba-125">**[はい]** <sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-125">**Yes** <sup>1</sup></span></span>|<span data-ttu-id="64fba-126">**[はい]** <sup>2</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-126">**Yes** <sup>2</sup></span></span>|<span data-ttu-id="64fba-127">**[はい]** <sup>3</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-127">**Yes** <sup>3</sup></span></span>|<span data-ttu-id="64fba-128">**[はい]** <sup>2</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-128">**Yes** <sup>2</sup></span></span>|<span data-ttu-id="64fba-129">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-129">No</span></span>|<span data-ttu-id="64fba-130">**[はい]** <sup>3</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-130">**Yes** <sup>3</sup></span></span>|<span data-ttu-id="64fba-131">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-131">No</span></span>|<span data-ttu-id="64fba-132">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-132">No</span></span>|  
+|`My.Computer`|<span data-ttu-id="64fba-133">**[はい]** <sup>4</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-133">**Yes** <sup>4</sup></span></span>|<span data-ttu-id="64fba-134">**[はい]** <sup>4</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-134">**Yes** <sup>4</sup></span></span>|<span data-ttu-id="64fba-135">**[はい]** <sup>4</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-135">**Yes** <sup>4</sup></span></span>|<span data-ttu-id="64fba-136">**[はい]** <sup>4</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-136">**Yes** <sup>4</sup></span></span>|<span data-ttu-id="64fba-137">**[はい]** <sup>5</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-137">**Yes** <sup>5</sup></span></span>|<span data-ttu-id="64fba-138">**[はい]** <sup>4</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-138">**Yes** <sup>4</sup></span></span>|<span data-ttu-id="64fba-139">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-139">No</span></span>|<span data-ttu-id="64fba-140">**[はい]** <sup>5</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-140">**Yes** <sup>5</sup></span></span>|  
+|`My.Forms`|<span data-ttu-id="64fba-141">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-141">**Yes**</span></span>|<span data-ttu-id="64fba-142">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-142">No</span></span>|<span data-ttu-id="64fba-143">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-143">No</span></span>|<span data-ttu-id="64fba-144">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-144">**Yes**</span></span>|<span data-ttu-id="64fba-145">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-145">No</span></span>|<span data-ttu-id="64fba-146">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-146">No</span></span>|<span data-ttu-id="64fba-147">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-147">No</span></span>|<span data-ttu-id="64fba-148">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-148">No</span></span>|  
+|`My.Log`|<span data-ttu-id="64fba-149">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-149">No</span></span>|<span data-ttu-id="64fba-150">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-150">No</span></span>|<span data-ttu-id="64fba-151">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-151">No</span></span>|<span data-ttu-id="64fba-152">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-152">No</span></span>|<span data-ttu-id="64fba-153">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-153">No</span></span>|<span data-ttu-id="64fba-154">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-154">No</span></span>|<span data-ttu-id="64fba-155">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-155">No</span></span>|<span data-ttu-id="64fba-156">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-156">**Yes**</span></span>|  
+|`My.Request`|<span data-ttu-id="64fba-157">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-157">No</span></span>|<span data-ttu-id="64fba-158">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-158">No</span></span>|<span data-ttu-id="64fba-159">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-159">No</span></span>|<span data-ttu-id="64fba-160">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-160">No</span></span>|<span data-ttu-id="64fba-161">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-161">No</span></span>|<span data-ttu-id="64fba-162">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-162">No</span></span>|<span data-ttu-id="64fba-163">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-163">No</span></span>|<span data-ttu-id="64fba-164">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-164">**Yes**</span></span>|  
+|`My.Resources`|<span data-ttu-id="64fba-165">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-165">**Yes**</span></span>|<span data-ttu-id="64fba-166">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-166">**Yes**</span></span>|<span data-ttu-id="64fba-167">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-167">**Yes**</span></span>|<span data-ttu-id="64fba-168">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-168">**Yes**</span></span>|<span data-ttu-id="64fba-169">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-169">**Yes**</span></span>|<span data-ttu-id="64fba-170">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-170">**Yes**</span></span>|<span data-ttu-id="64fba-171">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-171">No</span></span>|<span data-ttu-id="64fba-172">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-172">No</span></span>|  
+|`My.Response`|<span data-ttu-id="64fba-173">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-173">No</span></span>|<span data-ttu-id="64fba-174">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-174">No</span></span>|<span data-ttu-id="64fba-175">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-175">No</span></span>|<span data-ttu-id="64fba-176">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-176">No</span></span>|<span data-ttu-id="64fba-177">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-177">No</span></span>|<span data-ttu-id="64fba-178">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-178">No</span></span>|<span data-ttu-id="64fba-179">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-179">No</span></span>|<span data-ttu-id="64fba-180">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-180">**Yes**</span></span>|  
+|`My.Settings`|<span data-ttu-id="64fba-181">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-181">**Yes**</span></span>|<span data-ttu-id="64fba-182">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-182">**Yes**</span></span>|<span data-ttu-id="64fba-183">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-183">**Yes**</span></span>|<span data-ttu-id="64fba-184">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-184">**Yes**</span></span>|<span data-ttu-id="64fba-185">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-185">**Yes**</span></span>|<span data-ttu-id="64fba-186">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-186">**Yes**</span></span>|<span data-ttu-id="64fba-187">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-187">No</span></span>|<span data-ttu-id="64fba-188">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-188">No</span></span>|  
+|`My.User`|<span data-ttu-id="64fba-189">**[はい]** <sup>6</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-189">**Yes** <sup>6</sup></span></span>|<span data-ttu-id="64fba-190">**[はい]** <sup>6</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-190">**Yes** <sup>6</sup></span></span>|<span data-ttu-id="64fba-191">**[はい]** <sup>6</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-191">**Yes** <sup>6</sup></span></span>|<span data-ttu-id="64fba-192">**[はい]** <sup>6</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-192">**Yes** <sup>6</sup></span></span>|<span data-ttu-id="64fba-193">**[はい]** <sup>7</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-193">**Yes** <sup>7</sup></span></span>|<span data-ttu-id="64fba-194">**[はい]** <sup>6</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-194">**Yes** <sup>6</sup></span></span>|<span data-ttu-id="64fba-195">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-195">No</span></span>|<span data-ttu-id="64fba-196">**[はい]** <sup>7</sup></span><span class="sxs-lookup"><span data-stu-id="64fba-196">**Yes** <sup>7</sup></span></span>|  
+|`My.WebServices`|<span data-ttu-id="64fba-197">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-197">**Yes**</span></span>|<span data-ttu-id="64fba-198">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-198">**Yes**</span></span>|<span data-ttu-id="64fba-199">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-199">**Yes**</span></span>|<span data-ttu-id="64fba-200">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-200">**Yes**</span></span>|<span data-ttu-id="64fba-201">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-201">**Yes**</span></span>|<span data-ttu-id="64fba-202">**はい**</span><span class="sxs-lookup"><span data-stu-id="64fba-202">**Yes**</span></span>|<span data-ttu-id="64fba-203">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-203">No</span></span>|<span data-ttu-id="64fba-204">いいえ</span><span class="sxs-lookup"><span data-stu-id="64fba-204">No</span></span>|  
   
- <sup>1</sup> Windows フォームのバージョンの`My.Application`です。 コンソールのバージョンからの派生元 (メモ 3 を参照してください)。アプリケーションの windows を操作するためのサポートを追加し、提供、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]アプリケーション モデルです。  
+ <span data-ttu-id="64fba-205"><sup>1</sup> Windows フォームのバージョンの`My.Application`します。</span><span class="sxs-lookup"><span data-stu-id="64fba-205"><sup>1</sup> Windows Forms version of `My.Application`.</span></span> <span data-ttu-id="64fba-206">コンソールのバージョンから派生した (注 3 を参照してください)。アプリケーションの windows と対話するためのサポートを追加し、提供、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アプリケーション モデルです。</span><span class="sxs-lookup"><span data-stu-id="64fba-206">Derives from the console version (see Note 3); adds support for interacting with the application's windows and provides the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Application model.</span></span>  
   
- <sup>2</sup>ライブラリ版の`My.Application`です。 アプリケーションで必要な基本機能を提供します。 をアプリケーション ログに書き込むと、アプリケーションの情報にアクセスするメンバーを提供します。  
+ <span data-ttu-id="64fba-207"><sup>2</sup>ライブラリ版の`My.Application`します。</span><span class="sxs-lookup"><span data-stu-id="64fba-207"><sup>2</sup> Library version of `My.Application`.</span></span> <span data-ttu-id="64fba-208">アプリケーションで必要な基本的な機能を提供します: アプリケーション ログに書き込むと、アプリケーションの情報にアクセスするメンバーを提供します。</span><span class="sxs-lookup"><span data-stu-id="64fba-208">Provides the basic functionality needed by an application: provides members for writing to the application log and accessing application information.</span></span>  
   
- <sup>3</sup>のバージョンのコンソール`My.Application`します。 ライブラリのバージョンからの派生元 (メモ 2 を参照)、アプリケーションのコマンドライン引数と ClickOnce 配置の情報にアクセスするための追加メンバーを追加します。  
+ <span data-ttu-id="64fba-209"><sup>3</sup>コンソールのバージョンの`My.Application`します。</span><span class="sxs-lookup"><span data-stu-id="64fba-209"><sup>3</sup> Console version of `My.Application`.</span></span> <span data-ttu-id="64fba-210">ライブラリのバージョンからの派生元 (メモ 2 を参照)、し、アプリケーションのコマンドライン引数と ClickOnce 配置の情報にアクセスするための追加メンバーを追加します。</span><span class="sxs-lookup"><span data-stu-id="64fba-210">Derives from the library version (see Note 2), and adds additional members for accessing the application's command-line arguments and ClickOnce deployment information.</span></span>  
   
- <sup>4</sup>の Windows バージョン`My.Computer`です。 サーバーのバージョンからの派生元 (メモ 5 を参照)、キーボード、画面、およびマウスなどのクライアント コンピューター上の有効なオブジェクトへのアクセスを提供します。  
+ <span data-ttu-id="64fba-211"><sup>4</sup> Windows 版の`My.Computer`します。</span><span class="sxs-lookup"><span data-stu-id="64fba-211"><sup>4</sup> Windows version of `My.Computer`.</span></span> <span data-ttu-id="64fba-212">サーバーのバージョンからの派生元 (メモ 5 を参照)、し、キーボード、画面、およびマウスなどのクライアント コンピューターで役に立つオブジェクトへのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="64fba-212">Derives from the Server version (see Note 5), and provides access to useful objects on a client machine, such as the keyboard, screen, and mouse.</span></span>  
   
- <sup>5</sup>のサーバー バージョン`My.Computer`です。 名前、時計、およびなどへのアクセスなど、コンピューターに関する基本情報を提供します。  
+ <span data-ttu-id="64fba-213"><sup>5</sup>のサーバー バージョン`My.Computer`します。</span><span class="sxs-lookup"><span data-stu-id="64fba-213"><sup>5</sup> Server version of `My.Computer`.</span></span> <span data-ttu-id="64fba-214">名前、時計、およびなどへのアクセスなど、コンピューターに関する基本情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="64fba-214">Provides basic information about the computer, such as the name, access to the clock, and so on.</span></span>  
   
- <sup>6</sup>の Windows バージョン`My.User`です。 このオブジェクトは、スレッドの現在の id に関連付けられます。  
+ <span data-ttu-id="64fba-215"><sup>6</sup> Windows 版の`My.User`します。</span><span class="sxs-lookup"><span data-stu-id="64fba-215"><sup>6</sup> Windows version of `My.User`.</span></span> <span data-ttu-id="64fba-216">このオブジェクトは、スレッドの現在の id に関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="64fba-216">This object is associated with the thread's current identity.</span></span>  
   
- <sup>7</sup>の web バージョン`My.User`です。 このオブジェクトは、アプリケーションの現在の HTTP 要求のユーザー id に関連付けられます。  
+ <span data-ttu-id="64fba-217"><sup>7</sup>の web バージョン`My.User`します。</span><span class="sxs-lookup"><span data-stu-id="64fba-217"><sup>7</sup> Web version of `My.User`.</span></span> <span data-ttu-id="64fba-218">このオブジェクトは、アプリケーションの現在の HTTP 要求のユーザー id に関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="64fba-218">This object is associated with the user identity of the application's current HTTP request.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase></xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>   
- <xref:Microsoft.VisualBasic.Devices.Computer></xref:Microsoft.VisualBasic.Devices.Computer>   
- <xref:Microsoft.VisualBasic.Logging.Log></xref:Microsoft.VisualBasic.Logging.Log>   
- <xref:Microsoft.VisualBasic.ApplicationServices.User></xref:Microsoft.VisualBasic.ApplicationServices.User>   
- [利用可能なオブジェクトのカスタマイズ ](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)   
- [条件付きコンパイル](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)   
- [/define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)   
- [My.Forms オブジェクト](../../../visual-basic/language-reference/objects/my-forms-object.md)   
- [My.Request オブジェクト](../../../visual-basic/language-reference/objects/my-request-object.md)   
- [My.Response オブジェクト](../../../visual-basic/language-reference/objects/my-response-object.md)   
- [My.WebServices オブジェクト](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+## <a name="see-also"></a><span data-ttu-id="64fba-219">関連項目</span><span class="sxs-lookup"><span data-stu-id="64fba-219">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>  
+ <xref:Microsoft.VisualBasic.Devices.Computer>  
+ <xref:Microsoft.VisualBasic.Logging.Log>  
+ <xref:Microsoft.VisualBasic.ApplicationServices.User>  
+ [<span data-ttu-id="64fba-220">My で利用可能なオブジェクトのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="64fba-220">Customizing Which Objects are Available in My</span></span>](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)  
+ [<span data-ttu-id="64fba-221">条件付きコンパイル</span><span class="sxs-lookup"><span data-stu-id="64fba-221">Conditional Compilation</span></span>](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)  
+ [<span data-ttu-id="64fba-222">/define (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="64fba-222">/define (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/define.md)  
+ [<span data-ttu-id="64fba-223">My.Forms オブジェクト</span><span class="sxs-lookup"><span data-stu-id="64fba-223">My.Forms Object</span></span>](../../../visual-basic/language-reference/objects/my-forms-object.md)  
+ [<span data-ttu-id="64fba-224">My.Request オブジェクト</span><span class="sxs-lookup"><span data-stu-id="64fba-224">My.Request Object</span></span>](../../../visual-basic/language-reference/objects/my-request-object.md)  
+ [<span data-ttu-id="64fba-225">My.Response オブジェクト</span><span class="sxs-lookup"><span data-stu-id="64fba-225">My.Response Object</span></span>](../../../visual-basic/language-reference/objects/my-response-object.md)  
+ [<span data-ttu-id="64fba-226">My.WebServices オブジェクト</span><span class="sxs-lookup"><span data-stu-id="64fba-226">My.WebServices Object</span></span>](../../../visual-basic/language-reference/objects/my-webservices-object.md)

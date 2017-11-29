@@ -1,88 +1,71 @@
 ---
-title: "COM 相互運用 (Visual Basic) の概要 |Microsoft ドキュメント"
+title: "COM 相互運用の概要 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - interop assemblies
-- COM interop, about COM interop
+- COM interop [Visual Basic], about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8866dbadca040c57ed2b59540dd2c341eb81758c
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 81a9d0fc7036ff1b821c46687541311f26113212
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="introduction-to-com-interop-visual-basic"></a>COM 相互運用の概要 (Visual Basic)
-コンポーネント オブジェクト モデル (COM) には、他のコンポーネントやアプリケーションをホストする機能を公開するオブジェクトことができます。 COM オブジェクトは、基本となる Windows 長年にわたってプログラミングされていますが、共通言語ランタイム (CLR) 用に設計されたアプリケーションでは、多くの利点が提供しています。  
+# <a name="introduction-to-com-interop-visual-basic"></a><span data-ttu-id="aaf70-102">COM 相互運用の概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="aaf70-102">Introduction to COM Interop (Visual Basic)</span></span>
+<span data-ttu-id="aaf70-103">コンポーネント オブジェクト モデル (COM) は、他のコンポーネントおよびホスト アプリケーションには、その機能を公開するオブジェクトを付与します。</span><span class="sxs-lookup"><span data-stu-id="aaf70-103">The Component Object Model (COM) lets an object expose its functionality to other components and to host applications.</span></span> <span data-ttu-id="aaf70-104">COM オブジェクトは、Windows 長年にわたってプログラミングの基本されていますが、共通言語ランタイム (CLR) 用に設計されたアプリケーションでは、多くの利点が提供しています。</span><span class="sxs-lookup"><span data-stu-id="aaf70-104">While COM objects have been fundamental to Windows programming for many years, applications designed for the common language runtime (CLR) offer many advantages.</span></span>  
   
- [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションが最終的に置き換わります com 開発 それまでは、使用またはを使用して COM オブジェクトを作成する必要があります[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]します。 Com 相互運用性または*COM 相互運用機能*への移行中に既存の COM オブジェクトを使用することができます、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]独自のペースでします。  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]<span data-ttu-id="aaf70-105">アプリケーションが最終的に置き換わります com 開発</span><span class="sxs-lookup"><span data-stu-id="aaf70-105"> applications will eventually replace those developed with COM.</span></span> <span data-ttu-id="aaf70-106">それまでは、使用するかを使用して COM オブジェクトを作成する必要があります[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="aaf70-106">Until then, you may have to use or create COM objects by using [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].</span></span> <span data-ttu-id="aaf70-107">Com 相互運用性または*COM 相互運用*への移行中に既存の COM オブジェクトを使用することができます、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]独自のペースでします。</span><span class="sxs-lookup"><span data-stu-id="aaf70-107">Interoperability with COM, or *COM interop*, enables you to use existing COM objects while transitioning to the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] at your own pace.</span></span>  
   
- 使用して、 [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)] COM コンポーネントを作成するには、登録しない COM 相互運用機能を使用することができます。 これによって、どの DLL バージョンを有効にすると、1 つ以上のバージョンが、コンピューターにインストールされて、により、エンドユーザーは XCOPY または FTP を使用のコンピューターに適切なディレクトリにアプリケーションをコピーする実行できる場合を制御できます。 詳細については、次を参照してください。 [Registration-free COM 相互運用機能](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)です。  
+ <span data-ttu-id="aaf70-108">使用して、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] COM コンポーネントを作成するには、登録しない COM 相互運用を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="aaf70-108">By using the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] to create COM components, you can use registration-free COM interop.</span></span> <span data-ttu-id="aaf70-109">場合に複数のバージョンがコンピューターでは、インストールされている、エンドユーザーは XCOPY または FTP を使用のコンピューターに適切なディレクトリにアプリケーションをコピーする実行できる DLL バージョンが有効になっているかを制御できます。</span><span class="sxs-lookup"><span data-stu-id="aaf70-109">This lets you control which DLL version is enabled when more than one version is installed on a computer, and lets end users use XCOPY or FTP to copy your application to an appropriate directory on their computer where it can be run.</span></span> <span data-ttu-id="aaf70-110">詳細については、次を参照してください。[登録しない COM 相互運用](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)です。</span><span class="sxs-lookup"><span data-stu-id="aaf70-110">For more information, see [Registration-Free COM Interop](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd).</span></span>  
   
-## <a name="managed-code-and-data"></a>マネージ コードとデータ  
- 用に開発されたコード、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]と呼ばれます*マネージ コード*、CLR によって使用されるメタデータが含まれています。 によって使用されるデータ[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションと呼ばれる*管理データ*型の割り当て、メモリを再利用、および実行のチェックなど、ランタイムがデータに関連するタスクを管理するためです。 既定では、[!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]マネージ コードとデータを使用して、アンマネージ コードと相互運用機能アセンブリを (このページの後半で説明します) を使用して COM オブジェクトのデータにアクセスすることができます。  
+## <a name="managed-code-and-data"></a><span data-ttu-id="aaf70-111">マネージ コードとデータ</span><span class="sxs-lookup"><span data-stu-id="aaf70-111">Managed Code and Data</span></span>  
+ <span data-ttu-id="aaf70-112">用に開発されたコード、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]呼びます*マネージ コード*、CLR によって使用されるメタデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="aaf70-112">Code developed for the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] is referred to as *managed code*, and contains metadata that is used by the CLR.</span></span> <span data-ttu-id="aaf70-113">によって使用されるデータ[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]アプリケーションと呼びます*管理データ*の割り当てとメモリを再利用を実行する型のチェックなど、ランタイムがデータに関連するタスクを管理するためです。</span><span class="sxs-lookup"><span data-stu-id="aaf70-113">Data used by [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] applications is called *managed data* because the runtime manages data-related tasks such as allocating and reclaiming memory and performing type checking.</span></span> <span data-ttu-id="aaf70-114">既定では、Visual Basic .NET を使用してマネージ コードと、データが、アンマネージ コードと相互運用機能アセンブリを (このページの後半で説明します) を使用して COM オブジェクトのデータにアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="aaf70-114">By default, Visual Basic .NET uses managed code and data, but you can access the unmanaged code and data of COM objects using interop assemblies (described later on this page).</span></span>  
   
-## <a name="assemblies"></a>アセンブリ  
- アセンブリの主な構成要素とは、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションです。 これは、ビルド、バージョン管理、および&1; つまたは複数のファイルを含む単一の実装の単位として配置される機能のコレクションです。 各アセンブリには、アセンブリ マニフェストが含まれています。  
+## <a name="assemblies"></a><span data-ttu-id="aaf70-115">アセンブリ</span><span class="sxs-lookup"><span data-stu-id="aaf70-115">Assemblies</span></span>  
+ <span data-ttu-id="aaf70-116">アセンブリは、の主なビルド ブロック、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="aaf70-116">An assembly is the primary building block of a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] application.</span></span> <span data-ttu-id="aaf70-117">これは、ビルド、バージョン管理、および 1 つまたは複数のファイルを含む単一の実装の単位として配置される機能のコレクション。</span><span class="sxs-lookup"><span data-stu-id="aaf70-117">It is a collection of functionality that is built, versioned, and deployed as a single implementation unit containing one or more files.</span></span> <span data-ttu-id="aaf70-118">各アセンブリには、アセンブリ マニフェストが含まれています。</span><span class="sxs-lookup"><span data-stu-id="aaf70-118">Each assembly contains an assembly manifest.</span></span>  
   
-## <a name="type-libraries-and-assembly-manifests"></a>タイプ ライブラリとアセンブリのマニフェスト  
- タイプ ライブラリでは、メンバー名やデータ型など、COM オブジェクトの特性について説明します。 アセンブリのマニフェストの同じ機能を実行する[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションです。 次の情報を示します。  
+## <a name="type-libraries-and-assembly-manifests"></a><span data-ttu-id="aaf70-119">タイプ ライブラリとアセンブリのマニフェスト</span><span class="sxs-lookup"><span data-stu-id="aaf70-119">Type Libraries and Assembly Manifests</span></span>  
+ <span data-ttu-id="aaf70-120">タイプ ライブラリでは、メンバー名とデータ型など、COM オブジェクトの特性について説明します。</span><span class="sxs-lookup"><span data-stu-id="aaf70-120">Type libraries describe characteristics of COM objects, such as member names and data types.</span></span> <span data-ttu-id="aaf70-121">アセンブリ マニフェストの同じ機能を実行する[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="aaf70-121">Assembly manifests perform the same function for [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] applications.</span></span> <span data-ttu-id="aaf70-122">次の項目について例を示します。</span><span class="sxs-lookup"><span data-stu-id="aaf70-122">They include information about the following:</span></span>  
   
--   アセンブリの id、バージョン、カルチャ、およびデジタル署名します。  
+-   <span data-ttu-id="aaf70-123">アセンブリの id、バージョン、カルチャ、およびデジタル署名します。</span><span class="sxs-lookup"><span data-stu-id="aaf70-123">Assembly identity, version, culture, and digital signature.</span></span>  
   
--   アセンブリの実装を構成するファイルです。  
+-   <span data-ttu-id="aaf70-124">アセンブリの実装を構成するファイル。</span><span class="sxs-lookup"><span data-stu-id="aaf70-124">Files that make up the assembly implementation.</span></span>  
   
--   型と、アセンブリを構成するリソースです。 これには、アセンブリからエクスポートされるものが含まれています。  
+-   <span data-ttu-id="aaf70-125">型およびアセンブリを構成するリソース。</span><span class="sxs-lookup"><span data-stu-id="aaf70-125">Types and resources that make up the assembly.</span></span> <span data-ttu-id="aaf70-126">これには、アセンブリからエクスポートされるものが含まれています。</span><span class="sxs-lookup"><span data-stu-id="aaf70-126">This includes those that are exported from it.</span></span>  
   
--   他のアセンブリに依存関係をコンパイルします。  
+-   <span data-ttu-id="aaf70-127">他のアセンブリに対する依存関係をコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="aaf70-127">Compile-time dependencies on other assemblies.</span></span>  
   
--   アセンブリを正しく実行するために必要なアクセス許可です。  
+-   <span data-ttu-id="aaf70-128">アセンブリを正しく実行するために必要なアクセス許可です。</span><span class="sxs-lookup"><span data-stu-id="aaf70-128">Permissions required for the assembly to run correctly.</span></span>  
   
- アセンブリおよびアセンブリのマニフェストの詳細については、次を参照してください。[アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)します。  
+ <span data-ttu-id="aaf70-129">アセンブリおよびアセンブリ マニフェストの詳細については、次を参照してください。[アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="aaf70-129">For more information about assemblies and assembly manifests, see [Assemblies and the Global Assembly Cache](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md).</span></span>  
   
-### <a name="importing-and-exporting-type-libraries"></a>インポートおよびタイプ ライブラリをエクスポートします。  
- [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]タイプ ライブラリから情報をインポートできる Tlbimp ユーティリティが含まれています、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションです。 Tlbexp ユーティリティを使用して、アセンブリからタイプ ライブラリを生成できます。  
+### <a name="importing-and-exporting-type-libraries"></a><span data-ttu-id="aaf70-130">インポートおよびタイプ ライブラリをエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="aaf70-130">Importing and Exporting Type Libraries</span></span>  
+ [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]<span data-ttu-id="aaf70-131">タイプ ライブラリから情報をインポートできる Tlbimp ユーティリティが含まれています、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="aaf70-131"> contains a utility, Tlbimp, that lets you import information from a type library into a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] application.</span></span> <span data-ttu-id="aaf70-132">Tlbexp ユーティリティを使用して、アセンブリからタイプ ライブラリを生成できます。</span><span class="sxs-lookup"><span data-stu-id="aaf70-132">You can generate type libraries from assemblies by using the Tlbexp utility.</span></span>  
   
- Tlbimp と Tlbexp については、次を参照してください。 [Tlbimp.exe (タイプ ライブラリ インポーター)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)と[Tlbexp.exe (タイプ ライブラリ エクスポーター)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)します。  
+ <span data-ttu-id="aaf70-133">Tlbimp と Tlbexp については、次を参照してください。 [Tlbimp.exe (タイプ ライブラリ インポーター)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)と[Tlbexp.exe (タイプ ライブラリ エクスポーター)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)です。</span><span class="sxs-lookup"><span data-stu-id="aaf70-133">For information about Tlbimp and Tlbexp, see [Tlbimp.exe (Type Library Importer)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382) and [Tlbexp.exe (Type Library Exporter)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d).</span></span>  
   
-## <a name="interop-assemblies"></a>相互運用機能アセンブリ  
- 相互運用機能アセンブリは[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]ブリッジ マネージ リソースとアンマネージ間するアセンブリ コードに、それと等価に COM オブジェクト メンバーのマッピング[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]メンバーを管理します。 によって作成された相互運用機能アセンブリ[!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]の相互運用マーシャ リングなどの COM オブジェクトの使用の詳細を処理します。  
+## <a name="interop-assemblies"></a><span data-ttu-id="aaf70-134">相互運用機能アセンブリ</span><span class="sxs-lookup"><span data-stu-id="aaf70-134">Interop Assemblies</span></span>  
+ <span data-ttu-id="aaf70-135">相互運用機能アセンブリは[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ブリッジ マネージ リソースとアンマネージ間をアセンブリ コードに、マッピングの COM オブジェクトのメンバーに相当する[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]メンバーを管理します。</span><span class="sxs-lookup"><span data-stu-id="aaf70-135">Interop assemblies are [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] assemblies that bridge between managed and unmanaged code, mapping COM object members to equivalent [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] managed members.</span></span> <span data-ttu-id="aaf70-136">Visual Basic .NET で作成された相互運用機能アセンブリは、多くの相互運用マーシャ リングなどの COM オブジェクトの操作の詳細を処理します。</span><span class="sxs-lookup"><span data-stu-id="aaf70-136">Interop assemblies created by Visual Basic .NET handle many of the details of working with COM objects, such as interoperability marshaling.</span></span>  
   
-## <a name="interoperability-marshaling"></a>相互運用マーシャ リング  
- すべて[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]アプリケーションを使用するプログラミング言語に関係なく、オブジェクトの相互運用性を有効にする一般的な種類のセットを共有します。 パラメーターと COM オブジェクトの戻り値もマネージ コードで使用されるものとは異なるデータ型を使用します。 *相互運用マーシャ リング*パッケージ パラメーターと戻り値を等価のデータ型のプロセスは、COM オブジェクトとの間を移動します。 詳細については、次を参照してください。[相互運用マーシャ リング](http://msdn.microsoft.com/library/115f7a2f-d422-4605-ab36-13a8dd28142a)します。  
+## <a name="interoperability-marshaling"></a><span data-ttu-id="aaf70-137">相互運用マーシャ リング</span><span class="sxs-lookup"><span data-stu-id="aaf70-137">Interoperability Marshaling</span></span>  
+ <span data-ttu-id="aaf70-138">すべて[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]アプリケーションを使用するプログラミング言語に関係なく、オブジェクトの相互運用性を有効にする一般的な種類のセットを共有します。</span><span class="sxs-lookup"><span data-stu-id="aaf70-138">All [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] applications share a set of common types that enable interoperability of objects, regardless of the programming language that is used.</span></span> <span data-ttu-id="aaf70-139">パラメーターおよび COM オブジェクトの戻り値は、マネージ コードで使用されるものとは異なるデータ型を使用して場合があります。</span><span class="sxs-lookup"><span data-stu-id="aaf70-139">The parameters and return values of COM objects sometimes use data types that differ from those used in managed code.</span></span> <span data-ttu-id="aaf70-140">*相互運用マーシャ リング*はパッケージ パラメーターと同等のデータ型に戻り値の処理、COM オブジェクトとの間を移動します。</span><span class="sxs-lookup"><span data-stu-id="aaf70-140">*Interoperability marshaling* is the process of packaging parameters and return values into equivalent data types as they move to and from COM objects.</span></span> <span data-ttu-id="aaf70-141">詳細については、次を参照してください。[相互運用マーシャ リング](../../../framework/interop/interop-marshaling.md)です。</span><span class="sxs-lookup"><span data-stu-id="aaf70-141">For more information, see [Interop Marshaling](../../../framework/interop/interop-marshaling.md).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [COM 相互運用機能](../../../visual-basic/programming-guide/com-interop/index.md)   
- [チュートリアル: COM オブジェクトによる継承の実装](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)   
- [アンマネージ コードとの相互運用](https://msdn.microsoft.com/library/sd10k43k)   
- [相互運用性のトラブルシューティング](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)   
- [アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)   
- [Tlbimp.exe (タイプ ライブラリ インポーター)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)   
- [Tlbexp.exe (タイプ ライブラリ エクスポーター)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)   
- [相互運用マーシャ リング](http://msdn.microsoft.com/library/115f7a2f-d422-4605-ab36-13a8dd28142a)   
- [登録を必要としない COM 相互運用機能](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)
+## <a name="see-also"></a><span data-ttu-id="aaf70-142">関連項目</span><span class="sxs-lookup"><span data-stu-id="aaf70-142">See Also</span></span>  
+ [<span data-ttu-id="aaf70-143">COM 相互運用</span><span class="sxs-lookup"><span data-stu-id="aaf70-143">COM Interop</span></span>](../../../visual-basic/programming-guide/com-interop/index.md)  
+ [<span data-ttu-id="aaf70-144">チュートリアル : COM オブジェクトによる継承の実装</span><span class="sxs-lookup"><span data-stu-id="aaf70-144">Walkthrough: Implementing Inheritance with COM Objects</span></span>](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
+ [<span data-ttu-id="aaf70-145">アンマネージ コードとの相互運用</span><span class="sxs-lookup"><span data-stu-id="aaf70-145">Interoperating with Unmanaged Code</span></span>](https://msdn.microsoft.com/library/sd10k43k)  
+ [<span data-ttu-id="aaf70-146">相互運用性のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="aaf70-146">Troubleshooting Interoperability</span></span>](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)  
+ [<span data-ttu-id="aaf70-147">アセンブリとグローバル アセンブリ キャッシュ</span><span class="sxs-lookup"><span data-stu-id="aaf70-147">Assemblies and the Global Assembly Cache</span></span>](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+ [<span data-ttu-id="aaf70-148">Tlbimp.exe (タイプ ライブラリ インポーター)</span><span class="sxs-lookup"><span data-stu-id="aaf70-148">Tlbimp.exe (Type Library Importer)</span></span>](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)  
+ [<span data-ttu-id="aaf70-149">Tlbexp.exe (タイプ ライブラリ エクスポーター)</span><span class="sxs-lookup"><span data-stu-id="aaf70-149">Tlbexp.exe (Type Library Exporter)</span></span>](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)  
+ [<span data-ttu-id="aaf70-150">相互運用マーシャリング</span><span class="sxs-lookup"><span data-stu-id="aaf70-150">Interop Marshaling</span></span>](../../../framework/interop/interop-marshaling.md)  
+ [<span data-ttu-id="aaf70-151">登録を必要としない COM 相互運用機能</span><span class="sxs-lookup"><span data-stu-id="aaf70-151">Registration-Free COM Interop</span></span>](http://msdn.microsoft.com/library/90f308b9-82dc-414a-bce1-77e0155e56bd)

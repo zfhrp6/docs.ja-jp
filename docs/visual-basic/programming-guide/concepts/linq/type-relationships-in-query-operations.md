@@ -1,16 +1,13 @@
 ---
-title: "クエリ操作 (Visual Basic) でリレーションシップを入力 |Microsoft ドキュメント"
+title: "クエリ操作での型の関係 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - variable relationships [LINQ in Visual Basic]
 - type information inferred [LINQ in Visual Basic]
@@ -21,99 +18,118 @@ helpviewer_keywords:
 - inferring type information [LINQ in Visual Basic]
 - relationships [LINQ in Visual Basic]
 ms.assetid: b5ff4da5-f3fd-4a8e-aaac-1cbf52fa16f6
-caps.latest.revision: 34
-author: stevehoag
-ms.author: shoag
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a966b69feca7a7021cafbccb7971913ea781c479
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "34"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 1b93188475dd2bb00aea044ff178028eb87e00d4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="type-relationships-in-query-operations-visual-basic"></a>クエリ操作での型の関係 (Visual Basic)
-使用される変数[!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)]クエリ操作は、厳密に型指定し、相互に互換性がある必要があります。 厳密な型指定は、データ ソース、クエリ自体、およびクエリの実行に使用されます。 次の図は、説明に使用される用語の識別、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]クエリ。 クエリの部分の詳細については、次を参照してください。[基本的なクエリ操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)します。  
+# <a name="type-relationships-in-query-operations-visual-basic"></a><span data-ttu-id="8f234-102">クエリ操作での型の関係 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8f234-102">Type Relationships in Query Operations (Visual Basic)</span></span>
+<span data-ttu-id="8f234-103">使用される変数[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]クエリ操作は、厳密に型指定し、相互に互換性がある必要があります。</span><span class="sxs-lookup"><span data-stu-id="8f234-103">Variables used in [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] query operations are strongly typed and must be compatible with each other.</span></span> <span data-ttu-id="8f234-104">厳密な型指定は、データ ソース、クエリ自体、およびクエリの実行に使用されます。</span><span class="sxs-lookup"><span data-stu-id="8f234-104">Strong typing is used in the data source, in the query itself, and in the query execution.</span></span> <span data-ttu-id="8f234-105">次の図は、説明に使用される用語の識別、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。</span><span class="sxs-lookup"><span data-stu-id="8f234-105">The following illustration identifies terms used to describe a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query.</span></span> <span data-ttu-id="8f234-106">クエリの部分についての詳細については、次を参照してください。[基本的なクエリ操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)です。</span><span class="sxs-lookup"><span data-stu-id="8f234-106">For more information about the parts of a query, see [Basic Query Operations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).</span></span>  
   
- ![要素が強調表示された擬似コード クエリ。](../../../../visual-basic/programming-guide/concepts/linq/media/sjltyperels.png "SJLtypeRels")  
-LINQ クエリの部分  
+ <span data-ttu-id="8f234-107">![要素が強調表示された擬似コード クエリ。] (../../../../visual-basic/programming-guide/concepts/linq/media/sjltyperels.png "SJLtypeRels")</span><span class="sxs-lookup"><span data-stu-id="8f234-107">![Pseudocode query with elements highlighted.](../../../../visual-basic/programming-guide/concepts/linq/media/sjltyperels.png "SJLtypeRels")</span></span>  
+<span data-ttu-id="8f234-108">LINQ クエリの部分</span><span class="sxs-lookup"><span data-stu-id="8f234-108">Parts of a LINQ query</span></span>  
   
- クエリの範囲変数の型のデータ ソース内の要素の型と互換性があります。 クエリ変数の型と互換性があるシーケンスの要素で定義されている、`Select`句。 最後に、シーケンスの要素の型もする必要がありますで使用されているループ制御変数の型と互換性のある、`For Each`クエリを実行するステートメントです。 この厳密な型指定すると、コンパイル時に型のエラーの識別が容易になります。  
+ <span data-ttu-id="8f234-109">クエリで範囲変数の型は、データ ソース内の要素の型と互換性のあるする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8f234-109">The type of the range variable in the query must be compatible with the type of the elements in the data source.</span></span> <span data-ttu-id="8f234-110">クエリ変数の型で定義されたシーケンスの要素と互換性のある必要があります、`Select`句。</span><span class="sxs-lookup"><span data-stu-id="8f234-110">The type of the query variable must be compatible with the sequence element defined in the `Select` clause.</span></span> <span data-ttu-id="8f234-111">最後に、シーケンスの要素の型もする必要がありますで使用されているループ コントロール変数の型と互換性のある、`For Each`クエリを実行するステートメント。</span><span class="sxs-lookup"><span data-stu-id="8f234-111">Finally, the type of the sequence elements also must be compatible with the type of the loop control variable that is used in the `For Each` statement that executes the query.</span></span> <span data-ttu-id="8f234-112">この厳密な型指定には、コンパイル時に型のエラーの識別が容易にします。</span><span class="sxs-lookup"><span data-stu-id="8f234-112">This strong typing facilitates identification of type errors at compile time.</span></span>  
   
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]により、厳密な型指定便利とも呼ばれるローカル型推論を実装することによって*暗黙の型指定*します。 機能は、前の例で使用して、全体で使用されることが表示されます、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]サンプルとドキュメントです。 Visual basic でローカル型推論を使用するだけで完了、`Dim`せずステートメント、`As`句。 次の例で`city`を文字列として厳密に型指定します。  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="8f234-113">容易厳密な型指定とも呼ばれるローカル型推論を実装することによって*暗黙の型指定*です。</span><span class="sxs-lookup"><span data-stu-id="8f234-113"> makes strong typing convenient by implementing local type inference, also known as *implicit typing*.</span></span> <span data-ttu-id="8f234-114">機能は、前の例で使用して、全体で使用されることが表示されます、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]のサンプルとドキュメントです。</span><span class="sxs-lookup"><span data-stu-id="8f234-114">That feature is used in the previous example, and you will see it used throughout the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] samples and documentation.</span></span> <span data-ttu-id="8f234-115">Visual basic でローカル型推論を使用するだけで完了、`Dim`ステートメントなし、`As`句。</span><span class="sxs-lookup"><span data-stu-id="8f234-115">In Visual Basic, local type inference is accomplished simply by using a `Dim` statement without an `As` clause.</span></span> <span data-ttu-id="8f234-116">次の例では、`city`を文字列として厳密に型指定します。</span><span class="sxs-lookup"><span data-stu-id="8f234-116">In the following example, `city` is strongly typed as a string.</span></span>  
   
- [!code-vb[VbLINQTypeRels&#1;](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_1.vb)]  
+ [!code-vb[VbLINQTypeRels#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_1.vb)]  
   
 > [!NOTE]
->  ローカル型推論場合にのみの機能`Option Infer`に設定されている`On`します。 詳細については、次を参照してください。 [Option Infer ステートメント](../../../../visual-basic/language-reference/statements/option-infer-statement.md)します。  
+>  <span data-ttu-id="8f234-117">ローカル型推論は場合にのみ機能`Option Infer`に設定されている`On`です。</span><span class="sxs-lookup"><span data-stu-id="8f234-117">Local type inference works only when `Option Infer` is set to `On`.</span></span> <span data-ttu-id="8f234-118">詳細については、次を参照してください。 [Option Infer ステートメント](../../../../visual-basic/language-reference/statements/option-infer-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="8f234-118">For more information, see [Option Infer Statement](../../../../visual-basic/language-reference/statements/option-infer-statement.md).</span></span>  
   
- ただし、クエリでローカル型推論を使用する場合でも、同じ型の関係がデータ ソース内の変数、クエリ変数、およびクエリの実行ループの間存在します。 作成しているときにこれらの型の関係の基本を理解するおくと便利です[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]クエリ、またはサンプルとドキュメントのコード例を使用します。  
+ <span data-ttu-id="8f234-119">ただし、クエリでローカル型推論を使用する場合でも同じ型の関係は、データ ソース内の変数、クエリ変数、およびクエリの実行ループの間に存在します。</span><span class="sxs-lookup"><span data-stu-id="8f234-119">However, even if you use local type inference in a query, the same type relationships are present among the variables in the data source, the query variable, and the query execution loop.</span></span> <span data-ttu-id="8f234-120">作成しているときにこれらの型の関係の基本を理解すると便利ですが[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ、または作業用サンプルとドキュメントのコード例を使用します。</span><span class="sxs-lookup"><span data-stu-id="8f234-120">It is useful to have a basic understanding of these type relationships when you are writing [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries, or working with the samples and code examples in the documentation.</span></span>  
   
- たとえば、データ ソースから返される型に一致しない範囲変数の明示的な型を指定する必要があります。 範囲変数の型を指定するにを使用して、`As`句。 その結果、エラーに変換すると、[縮小変換](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)と`Option Strict`に設定されている`On`します。 そのため、データ ソースから取得した値を変換を実行することをお勧めします。 使用して明示的な範囲変数の型へのデータ ソースからの値を変換することができます、<xref:System.Linq.Enumerable.Cast%2A>メソッド</xref:System.Linq.Enumerable.Cast%2A>。 選択した値をキャストすることも、`Select`句の範囲変数の型に違いは、明示的な型にします。 これらのポイントは、次のコードに示します。  
+ <span data-ttu-id="8f234-121">たとえば、データ ソースから返される型と一致しない範囲変数の明示的な型を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8f234-121">You may need to specify an explicit type for a range variable that does not match the type returned from the data source.</span></span> <span data-ttu-id="8f234-122">使用して、範囲変数の種類を指定することができます、`As`句。</span><span class="sxs-lookup"><span data-stu-id="8f234-122">You can specify the type of the range variable by using an `As` clause.</span></span> <span data-ttu-id="8f234-123">その結果、エラーに変換すると、[縮小変換](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)と`Option Strict`に設定されている`On`です。</span><span class="sxs-lookup"><span data-stu-id="8f234-123">However, this results in an error if the conversion is a [narrowing conversion](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) and `Option Strict` is set to `On`.</span></span> <span data-ttu-id="8f234-124">したがって、データ ソースから取得した値を変換を実行することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="8f234-124">Therefore, we recommend that you perform the conversion on the values retrieved from the data source.</span></span> <span data-ttu-id="8f234-125">使用して、明示的な範囲変数の型のデータ ソースからの値を変換することができます、<xref:System.Linq.Enumerable.Cast%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="8f234-125">You can convert the values from the data source to the explicit range variable type by using the <xref:System.Linq.Enumerable.Cast%2A> method.</span></span> <span data-ttu-id="8f234-126">選択した値をキャストすることも、`Select`句の範囲変数の型とは異なる、明示的な型にします。</span><span class="sxs-lookup"><span data-stu-id="8f234-126">You can also cast the values selected in the `Select` clause to an explicit type that is different from the type of the range variable.</span></span> <span data-ttu-id="8f234-127">これらのポイントは、次のコードに示します。</span><span class="sxs-lookup"><span data-stu-id="8f234-127">These points are illustrated in the following code.</span></span>  
   
- [!code-vb[VbLINQTypeRels&4;](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_2.vb)]  
+ [!code-vb[VbLINQTypeRels#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_2.vb)]  
   
-## <a name="queries-that-return-entire-elements-of-the-source-data"></a>ソース データの全体の要素を返すクエリ  
- 例を次に、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]をソース データから選択した要素のシーケンスを返す操作のクエリを実行します。 ソース`names`文字列の配列が含まれていて、クエリの出力は次の文字 M で始まる文字列を含むシーケンスです。  
+## <a name="queries-that-return-entire-elements-of-the-source-data"></a><span data-ttu-id="8f234-128">ソース データの全体の要素を返すクエリ</span><span class="sxs-lookup"><span data-stu-id="8f234-128">Queries That Return Entire Elements of the Source Data</span></span>  
+ <span data-ttu-id="8f234-129">次の例は、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]操作、ソース データから選択した要素のシーケンスを返すクエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="8f234-129">The following example shows a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query operation that returns a sequence of elements selected from the source data.</span></span> <span data-ttu-id="8f234-130">ソース`names`文字列の配列が含まれ、クエリの出力は M という文字で始まる文字列を含むシーケンス。</span><span class="sxs-lookup"><span data-stu-id="8f234-130">The source, `names`, contains an array of strings, and the query output is a sequence containing strings that start with the letter M.</span></span>  
   
- [!code-vb[VbLINQTypeRels&#2;](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_3.vb)]  
+ [!code-vb[VbLINQTypeRels#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_3.vb)]  
   
- これは、次のコードに相当がより短く、簡単に記述します。 クエリでローカル型推論に依存するいるとは、Visual Basic では優先スタイルです。  
+ <span data-ttu-id="8f234-131">これは次のコードに相当はより短く、記述を簡単にです。</span><span class="sxs-lookup"><span data-stu-id="8f234-131">This is equivalent to the following code, but is much shorter and easier to write.</span></span> <span data-ttu-id="8f234-132">クエリでローカル型推論の依存は、Visual Basic で推奨されるスタイルです。</span><span class="sxs-lookup"><span data-stu-id="8f234-132">Reliance on local type inference in queries is the preferred style in Visual Basic.</span></span>  
   
- [!code-vb[VbLINQTypeRels&#3;](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_4.vb)]  
+ [!code-vb[VbLINQTypeRels#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_4.vb)]  
   
- 次のリレーションシップは、明示的または暗黙的に型が表示されるかどうか、前のコード例の両方に存在します。  
+ <span data-ttu-id="8f234-133">次のリレーションシップは、種類が暗黙的または明示的に決定されるかどうか、前のコード例の両方に存在します。</span><span class="sxs-lookup"><span data-stu-id="8f234-133">The following relationships exist in both of the previous code examples, whether the types are determined implicitly or explicitly.</span></span>  
   
-1.  データ ソース内の要素の種類`names`、範囲変数の型は、`name`クエリにします。  
+1.  <span data-ttu-id="8f234-134">データ ソース内の要素の型`names`、範囲変数の型は、`name`クエリにします。</span><span class="sxs-lookup"><span data-stu-id="8f234-134">The type of the elements in the data source, `names`, is the type of the range variable, `name`, in the query.</span></span>  
   
-2.  選択されているオブジェクトの種類`name`、クエリ変数の種類を決定`mNames`します。 ここで`name`は文字列であるため、クエリ変数は Visual Basic での IEnumerable (Of String)。  
+2.  <span data-ttu-id="8f234-135">選択されているオブジェクトの種類`name`、クエリ変数の種類を決定`mNames`です。</span><span class="sxs-lookup"><span data-stu-id="8f234-135">The type of the object that is selected, `name`, determines the type of the query variable, `mNames`.</span></span> <span data-ttu-id="8f234-136">ここで`name`は string では、そのため、クエリ変数は Visual Basic での IEnumerable (Of String)。</span><span class="sxs-lookup"><span data-stu-id="8f234-136">Here `name` is a string, so the query variable is IEnumerable(Of String) in Visual Basic.</span></span>  
   
-3.  定義されたクエリ`mNames`で実行される、`For Each`ループします。 ループは、クエリの実行の結果を反復処理します。 `mNames`が実行されるときに、ループの反復変数の文字列のシーケンスを返す`nm`も文字列です。  
+3.  <span data-ttu-id="8f234-137">定義されたクエリ`mNames`で実行される、`For Each`ループします。</span><span class="sxs-lookup"><span data-stu-id="8f234-137">The query defined in `mNames` is executed in the `For Each` loop.</span></span> <span data-ttu-id="8f234-138">ループは、クエリの実行の結果を反復処理します。</span><span class="sxs-lookup"><span data-stu-id="8f234-138">The loop iterates over the result of executing the query.</span></span> <span data-ttu-id="8f234-139">`mNames`が実行されると、ループの反復変数、文字列のシーケンスを返す`nm`も文字列です。</span><span class="sxs-lookup"><span data-stu-id="8f234-139">Because `mNames`, when it is executed, will return a sequence of strings, the loop iteration variable, `nm`, also is a string.</span></span>  
   
-## <a name="queries-that-return-one-field-from-selected-elements"></a>選択した要素から&1; つのフィールドを取得するクエリ  
- 例を次に、[!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)]クエリ データ ソースから選択された各要素の&1; つだけのパーツを含むシーケンスを返す操作。 クエリのコレクションを受け取って`Customer`、データ ソースとしてオブジェクトし、プロジェクトのみ、`Name`プロパティを結果にします。 顧客名は文字列であるため、クエリは、出力として文字列のシーケンスを生成します。  
+## <a name="queries-that-return-one-field-from-selected-elements"></a><span data-ttu-id="8f234-140">選択した要素から 1 つのフィールドを返すクエリ</span><span class="sxs-lookup"><span data-stu-id="8f234-140">Queries That Return One Field from Selected Elements</span></span>  
+ <span data-ttu-id="8f234-141">次の例は、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]クエリ、データ ソースから選択した各要素の一部分のみを含むシーケンスを返す操作。</span><span class="sxs-lookup"><span data-stu-id="8f234-141">The following example shows a [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] query operation that returns a sequence containing only one part of each element selected from the data source.</span></span> <span data-ttu-id="8f234-142">クエリのコレクションを受け取って`Customer`、データ ソースとしてオブジェクトおよびプロジェクトのみ、`Name`プロパティを結果にします。</span><span class="sxs-lookup"><span data-stu-id="8f234-142">The query takes a collection of `Customer` objects as its data source and projects only the `Name` property in the result.</span></span> <span data-ttu-id="8f234-143">顧客名は、文字列であるため、クエリは出力として文字列のシーケンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="8f234-143">Because the customer name is a string, the query produces a sequence of strings as output.</span></span>  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
- 変数間のリレーションシップは、単純な例のようです。  
+```vb  
+' Method GetTable returns a table of Customer objects.  
+Dim customers = db.GetTable(Of Customer)()  
+Dim custNames = From cust In customers   
+                Where cust.City = "London"   
+                Select cust.Name  
   
-1.  データ ソース内の要素の種類`customers`、範囲変数の型は、`cust`クエリにします。 型であるこの例では`Customer`です。  
+For Each custName In custNames  
+    Console.WriteLine(custName)  
+Next  
+```  
   
-2.  `Select`ステートメントから返される、`Name`の各プロパティ`Customer`オブジェクト全体ではなくオブジェクトです。 `Name`文字列であり、クエリ変数`custNames`、もう一度されません IEnumerable (Of String) の`Customer`です。  
+ <span data-ttu-id="8f234-144">変数間のリレーションシップは、単純な例のようです。</span><span class="sxs-lookup"><span data-stu-id="8f234-144">The relationships between variables are like those in the simpler example.</span></span>  
   
-3.  `custNames` 、文字列のシーケンスを表し、`For Each`ループの反復変数`custName`文字列である必要があります。  
+1.  <span data-ttu-id="8f234-145">データ ソース内の要素の型`customers`、範囲変数の型は、`cust`クエリにします。</span><span class="sxs-lookup"><span data-stu-id="8f234-145">The type of the elements in the data source, `customers`, is the type of the range variable, `cust`, in the query.</span></span> <span data-ttu-id="8f234-146">この例では型に対して`Customer`です。</span><span class="sxs-lookup"><span data-stu-id="8f234-146">In this example, that type is `Customer`.</span></span>  
   
- ローカル型推論では、前の例がなければを記述し、詳細については、次の例のようには煩雑です。  
+2.  <span data-ttu-id="8f234-147">`Select`ステートメントから返される、`Name`の各プロパティ`Customer`オブジェクト全体ではなくオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="8f234-147">The `Select` statement returns the `Name` property of each `Customer` object instead of the whole object.</span></span> <span data-ttu-id="8f234-148">`Name`文字列で、クエリ変数`custNames`、もう一度されません (文字列) の IEnumerable の`Customer`します。</span><span class="sxs-lookup"><span data-stu-id="8f234-148">Because `Name` is a string, the query variable, `custNames`, will again be IEnumerable(Of String), not of `Customer`.</span></span>  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
-## <a name="queries-that-require-anonymous-types"></a>匿名型を必要とするクエリ  
- 次の例より複雑な状況を示しています。 前の例では、すべての変数の型を明示的に指定するときに便利でした。 この例ではことはできません。 全体を選択する代わりに`Customer`データ ソースまたは各要素から&1; つのフィールドから要素、`Select`このクエリで句は、元の&2; つのプロパティを返します`Customer`オブジェクト:`Name`と`City`です。 応答で、`Select`句、コンパイラはこれら&2; つのプロパティを含む匿名型を定義します。 実行した結果`nameCityQuery`で、`For Each`ループは新しい匿名型のインスタンスのコレクション。 匿名型に使用可能な名前があるないためにの種類を指定することはできません`nameCityQuery`または`custInfo`明示的にします。 匿名の型のない型の名前があるの代わりに使用する`String`で`IEnumerable(Of String)`します。 詳細については、次を参照してください。[匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)します。  
+3.  <span data-ttu-id="8f234-149">`custNames`文字列のシーケンスを表す、`For Each`ループの反復変数`custName`文字列である必要があります。</span><span class="sxs-lookup"><span data-stu-id="8f234-149">Because `custNames` represents a sequence of strings, the `For Each` loop's iteration variable, `custName`, must be a string.</span></span>  
   
-<CodeContentPlaceHolder>2</CodeContentPlaceHolder>  
- 前の例で、すべての変数の型を指定することはありませんが、リレーションシップが同じになります。  
+ <span data-ttu-id="8f234-150">ローカル型推論、せず、前の例を記述し、次の例を理解するのには煩雑になります。</span><span class="sxs-lookup"><span data-stu-id="8f234-150">Without local type inference, the previous example would be more cumbersome to write and to understand, as the following example shows.</span></span>  
   
-1.  データ ソース内の要素の型は、クエリの範囲変数の型ではもう一度です。 この例では`cust`のインスタンスは、`Customer`です。  
+```vb  
+' Method GetTable returns a table of Customer objects.  
+ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)()  
+ Dim custNames As IEnumerable(Of String) =  
+     From cust As Customer In customers   
+     Where cust.City = "London"   
+     Select cust.Name  
   
-2.  `Select`ステートメントは、匿名型をクエリ変数を生成する`nameCityQuery`、匿名型として暗黙的に型指定する必要があります。 匿名型は、使用可能な名前を持たず、したがって、明示的に指定することはできません。  
+ For Each custName As String In custNames  
+     Console.WriteLine(custName)  
+ Next  
+```  
   
-3.  反復変数の種類、`For Each`ループは、手順 2. で作成された匿名型。 型に使用可能な名前があるないために、ループの反復変数の型は暗黙的に決定する必要があります。  
+## <a name="queries-that-require-anonymous-types"></a><span data-ttu-id="8f234-151">匿名型を必要とするクエリ</span><span class="sxs-lookup"><span data-stu-id="8f234-151">Queries That Require Anonymous Types</span></span>  
+ <span data-ttu-id="8f234-152">次の例より複雑な状況を示しています。</span><span class="sxs-lookup"><span data-stu-id="8f234-152">The following example shows a more complex situation.</span></span> <span data-ttu-id="8f234-153">前の例では、すべての変数の型を明示的に指定するときに便利でした。</span><span class="sxs-lookup"><span data-stu-id="8f234-153">In the previous example, it was inconvenient to specify types for all the variables explicitly.</span></span> <span data-ttu-id="8f234-154">この例ではことはできません。</span><span class="sxs-lookup"><span data-stu-id="8f234-154">In this example, it is impossible.</span></span> <span data-ttu-id="8f234-155">全体を選択する代わりに`Customer`データ ソース、または各要素から 1 つのフィールドからの要素、`Select`このクエリ内の句は、元の 2 つのプロパティを返します`Customer`オブジェクト:`Name`と`City`です。</span><span class="sxs-lookup"><span data-stu-id="8f234-155">Instead of selecting entire `Customer` elements from the data source, or a single field from each element, the `Select` clause in this query returns two properties of the original `Customer` object: `Name` and `City`.</span></span> <span data-ttu-id="8f234-156">応答、`Select`句、コンパイラはこれら 2 つのプロパティを含む匿名型を定義します。</span><span class="sxs-lookup"><span data-stu-id="8f234-156">In response to the `Select` clause, the compiler defines an anonymous type that contains those two properties.</span></span> <span data-ttu-id="8f234-157">実行結果`nameCityQuery`で、`For Each`ループは、新しい匿名型のインスタンスのコレクション。</span><span class="sxs-lookup"><span data-stu-id="8f234-157">The result of executing `nameCityQuery` in the `For Each` loop is a collection of instances of the new anonymous type.</span></span> <span data-ttu-id="8f234-158">型を指定することはできません、匿名型に使用可能な名前があるないため`nameCityQuery`または`custInfo`明示的にします。</span><span class="sxs-lookup"><span data-stu-id="8f234-158">Because the anonymous type has no usable name, you cannot specify the type of `nameCityQuery` or `custInfo` explicitly.</span></span> <span data-ttu-id="8f234-159">つまり、匿名型を含む名前があるない型の代わりに使用する`String`で`IEnumerable(Of String)`です。</span><span class="sxs-lookup"><span data-stu-id="8f234-159">That is, with an anonymous type, you have no type name to use in place of `String` in `IEnumerable(Of String)`.</span></span> <span data-ttu-id="8f234-160">詳細については、「[匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8f234-160">For more information, see [Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [Visual Basic における LINQ の概要](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)   
- [匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)   
- [ローカル型推論](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
- [Visual Basic における LINQ の概要](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)   
- [クエリ](../../../../visual-basic/language-reference/queries/queries.md)
+```vb  
+' Method GetTable returns a table of Customer objects.  
+Dim customers = db.GetTable(Of Customer)()  
+Dim nameCityQuery = From cust In customers   
+                    Where cust.City = "London"   
+                    Select cust.Name, cust.City  
+  
+For Each custInfo In nameCityQuery  
+    Console.WriteLine(custInfo.Name)  
+Next  
+```  
+  
+ <span data-ttu-id="8f234-161">前の例ですべての変数の型を指定することはありませんが、リレーションシップが同じになります。</span><span class="sxs-lookup"><span data-stu-id="8f234-161">Although it is not possible to specify types for all the variables in the previous example, the relationships remain the same.</span></span>  
+  
+1.  <span data-ttu-id="8f234-162">データ ソース内の要素の型が、クエリで範囲変数の型です。</span><span class="sxs-lookup"><span data-stu-id="8f234-162">The type of the elements in the data source is again the type of the range variable in the query.</span></span> <span data-ttu-id="8f234-163">この例では`cust`のインスタンスは、`Customer`です。</span><span class="sxs-lookup"><span data-stu-id="8f234-163">In this example, `cust` is an instance of `Customer`.</span></span>  
+  
+2.  <span data-ttu-id="8f234-164">`Select`ステートメントは、匿名型をクエリ変数を生成する`nameCityQuery`、匿名型として暗黙的に型指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8f234-164">Because the `Select` statement produces an anonymous type, the query variable, `nameCityQuery`, must be implicitly typed as an anonymous type.</span></span> <span data-ttu-id="8f234-165">匿名型は、使用可能な名前を持たず、したがって、明示的に指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="8f234-165">An anonymous type has no usable name, and therefore cannot be specified explicitly.</span></span>  
+  
+3.  <span data-ttu-id="8f234-166">反復変数の型、`For Each`ループは、手順 2. で作成された匿名型。</span><span class="sxs-lookup"><span data-stu-id="8f234-166">The type of the iteration variable in the `For Each` loop is the anonymous type created in step 2.</span></span> <span data-ttu-id="8f234-167">型に使用可能な名前があるないために、ループの反復変数の型は暗黙的に決定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8f234-167">Because the type has no usable name, the type of the loop iteration variable must be determined implicitly.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="8f234-168">関連項目</span><span class="sxs-lookup"><span data-stu-id="8f234-168">See Also</span></span>  
+ [<span data-ttu-id="8f234-169">Visual Basic の LINQ の概要</span><span class="sxs-lookup"><span data-stu-id="8f234-169">Getting Started with LINQ in Visual Basic</span></span>](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
+ [<span data-ttu-id="8f234-170">匿名型</span><span class="sxs-lookup"><span data-stu-id="8f234-170">Anonymous Types</span></span>](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
+ [<span data-ttu-id="8f234-171">ローカル型の推論</span><span class="sxs-lookup"><span data-stu-id="8f234-171">Local Type Inference</span></span>](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
+ [<span data-ttu-id="8f234-172">Visual Basic における LINQ の概要</span><span class="sxs-lookup"><span data-stu-id="8f234-172">Introduction to LINQ in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [<span data-ttu-id="8f234-173">LINQ</span><span class="sxs-lookup"><span data-stu-id="8f234-173">LINQ</span></span>](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
+ [<span data-ttu-id="8f234-174">クエリ</span><span class="sxs-lookup"><span data-stu-id="8f234-174">Queries</span></span>](../../../../visual-basic/language-reference/queries/queries.md)

@@ -1,44 +1,27 @@
 ---
-title: "オートメーション オブジェクトには、既定値はありません |。Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "オートメーション オブジェクトには既定値がありません"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vbrID443
+f1_keywords: vbrID443
 ms.assetid: 162641f6-5a19-4c37-8c92-17929885e87e
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8e734c32052099e5d3ad8fe3466f103fc3dded5f
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b1e141ed0868628adfa9201267275381a0be7e32
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="automation-object-does-not-have-a-default-value"></a>オートメーション オブジェクトには既定値がありません
-[!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]指定したオブジェクトの既定のメンバーを判断できません。  
+# <a name="automation-object-does-not-have-a-default-value"></a><span data-ttu-id="a4ab3-102">オートメーション オブジェクトには既定値がありません</span><span class="sxs-lookup"><span data-stu-id="a4ab3-102">Automation object does not have a default value</span></span>
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="a4ab3-103"> が、指定したオブジェクトの既定のメンバーを判断できません。</span><span class="sxs-lookup"><span data-stu-id="a4ab3-103"> cannot determine the default member for the specified object.</span></span>  
   
-### <a name="to-correct-the-error"></a>このエラーを解決するには  
+### <a name="to-correct-the-error"></a><span data-ttu-id="a4ab3-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="a4ab3-104">To correct the error</span></span>  
   
--   オブジェクトのドキュメントを確認し、プロパティまたはメソッドを明示的にご指定ください。  
+-   <span data-ttu-id="a4ab3-105">オブジェクトのドキュメントを確認し、プロパティまたはメソッドを明示的にご指定ください。</span><span class="sxs-lookup"><span data-stu-id="a4ab3-105">Check the object's documentation and give an explicit specification for the property or method.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [エラーの種類](../../visual-basic/programming-guide/language-features/error-types.md)   
- [PAVEOVER 製品のサポートとユーザー補助機能](http://msdn.microsoft.com/en-us/14e1d293-7b6d-40a6-bf3e-a92f8ee6c88c)
+## <a name="see-also"></a><span data-ttu-id="a4ab3-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="a4ab3-106">See Also</span></span>  
+ [<span data-ttu-id="a4ab3-107">エラーの種類</span><span class="sxs-lookup"><span data-stu-id="a4ab3-107">Error Types</span></span>](../../visual-basic/programming-guide/language-features/error-types.md)  
+ [<span data-ttu-id="a4ab3-108">PAVEOVER 製品のサポートとアクセシビリティ</span><span class="sxs-lookup"><span data-stu-id="a4ab3-108">PAVEOVER Product Support and Accessibility</span></span>](http://msdn.microsoft.com/en-us/14e1d293-7b6d-40a6-bf3e-a92f8ee6c88c)

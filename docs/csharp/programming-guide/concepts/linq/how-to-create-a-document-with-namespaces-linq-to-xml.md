@@ -1,38 +1,29 @@
 ---
 title: "方法 : 名前空間を持つドキュメントを作成する (C#) (LINQ to XML)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 37e63c57-f86d-47ac-88a7-2c2d107def30
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: d913cdf8b9018aa2bf91fd5a05b823e90ba63df2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cecd2012012ba789ad2c2935b6b69c282718a066
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a>方法 : 名前空間を持つドキュメントを作成する (C#) (LINQ to XML)
-このトピックでは、名前空間を持つドキュメントを作成する方法について説明します。  
+# <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a><span data-ttu-id="f79c4-102">方法 : 名前空間を持つドキュメントを作成する (C#) (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="f79c4-102">How to: Create a Document with Namespaces (C#) (LINQ to XML)</span></span>
+<span data-ttu-id="f79c4-103">このトピックでは、名前空間を持つドキュメントを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f79c4-103">This topic shows how to create documents with namespaces.</span></span>  
   
-## <a name="example"></a>例  
- 名前空間にある要素や属性を作成するには、最初に <xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して初期化します。 次に、加算演算子オーバーロードを使用して名前空間をローカル名に連結し、文字列として表します。  
+## <a name="example"></a><span data-ttu-id="f79c4-104">例</span><span class="sxs-lookup"><span data-stu-id="f79c4-104">Example</span></span>  
+ <span data-ttu-id="f79c4-105">名前空間にある要素や属性を作成するには、最初に <xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して初期化します。</span><span class="sxs-lookup"><span data-stu-id="f79c4-105">To create an element or an attribute that is in a namespace, you first declare and initialize an <xref:System.Xml.Linq.XNamespace> object.</span></span> <span data-ttu-id="f79c4-106">次に、加算演算子オーバーロードを使用して名前空間をローカル名に連結し、文字列として表します。</span><span class="sxs-lookup"><span data-stu-id="f79c4-106">You then use the addition operator overload to combine the namespace with the local name, expressed as a string.</span></span>  
   
- 次の例では、1 つの名前空間を持つドキュメントを作成します。 既定では、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] によって、このドキュメントが既定の名前空間でシリアル化されます。  
+ <span data-ttu-id="f79c4-107">次の例では、1 つの名前空間を持つドキュメントを作成します。</span><span class="sxs-lookup"><span data-stu-id="f79c4-107">The following example creates a document with one namespace.</span></span> <span data-ttu-id="f79c4-108">既定では、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] によって、このドキュメントが既定の名前空間でシリアル化されます。</span><span class="sxs-lookup"><span data-stu-id="f79c4-108">By default, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] serializes this document with a default namespace.</span></span>  
   
 ```csharp  
 // Create an XML tree in a namespace.  
@@ -43,7 +34,7 @@ XElement root = new XElement(aw + "Root",
 Console.WriteLine(root);  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="f79c4-109">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="f79c4-109">This example produces the following output:</span></span>  
   
 ```xml  
 <Root xmlns="http://www.adventure-works.com">  
@@ -51,8 +42,8 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
-## <a name="example"></a>例  
- 次の例では、1 つの名前空間を持つドキュメントを作成します。 名前空間プレフィックスを持つ名前空間を宣言する属性も作成します。 プレフィックス付きの名前空間を宣言する属性を作成するには、属性名が名前空間プレフィックスで、この名前が <xref:System.Xml.Linq.XNamespace.Xmlns%2A> 名前空間にある属性を作成します。 この属性の値は名前空間の URI です。  
+## <a name="example"></a><span data-ttu-id="f79c4-110">例</span><span class="sxs-lookup"><span data-stu-id="f79c4-110">Example</span></span>  
+ <span data-ttu-id="f79c4-111">次の例では、1 つの名前空間を持つドキュメントを作成します。</span><span class="sxs-lookup"><span data-stu-id="f79c4-111">The following example creates a document with one namespace.</span></span> <span data-ttu-id="f79c4-112">名前空間プレフィックスを持つ名前空間を宣言する属性も作成します。</span><span class="sxs-lookup"><span data-stu-id="f79c4-112">It also creates an attribute that declares the namespace with a namespace prefix.</span></span> <span data-ttu-id="f79c4-113">プレフィックス付きの名前空間を宣言する属性を作成するには、属性名が名前空間プレフィックスで、この名前が <xref:System.Xml.Linq.XNamespace.Xmlns%2A> 名前空間にある属性を作成します。</span><span class="sxs-lookup"><span data-stu-id="f79c4-113">To create an attribute that declares a namespace with a prefix, you create an attribute where the name of the attribute is the namespace prefix, and this name is in the <xref:System.Xml.Linq.XNamespace.Xmlns%2A> namespace.</span></span> <span data-ttu-id="f79c4-114">この属性の値は名前空間の URI です。</span><span class="sxs-lookup"><span data-stu-id="f79c4-114">The value of this attribute is the URI of the namespace.</span></span>  
   
 ```csharp  
 // Create an XML tree in a namespace, with a specified prefix  
@@ -64,7 +55,7 @@ XElement root = new XElement(aw + "Root",
 Console.WriteLine(root);  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="f79c4-115">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="f79c4-115">This example produces the following output:</span></span>  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com">  
@@ -72,10 +63,10 @@ Console.WriteLine(root);
 </aw:Root>  
 ```  
   
-## <a name="example"></a>例  
- 次の例では、2 つの名前空間が含まれるドキュメントを作成します。 1 つは既定の名前空間です。 もう 1 つは、プレフィックスを持つ名前空間です。  
+## <a name="example"></a><span data-ttu-id="f79c4-116">例</span><span class="sxs-lookup"><span data-stu-id="f79c4-116">Example</span></span>  
+ <span data-ttu-id="f79c4-117">次の例では、2 つの名前空間が含まれるドキュメントを作成します。</span><span class="sxs-lookup"><span data-stu-id="f79c4-117">The following example shows the creation of a document that contains two namespaces.</span></span> <span data-ttu-id="f79c4-118">1 つは既定の名前空間です。</span><span class="sxs-lookup"><span data-stu-id="f79c4-118">One is the default namespace.</span></span> <span data-ttu-id="f79c4-119">もう 1 つは、プレフィックスを持つ名前空間です。</span><span class="sxs-lookup"><span data-stu-id="f79c4-119">Another is a namespace with a prefix.</span></span>  
   
- ルート要素に名前空間属性を含めると名前空間がシリアル化され、http://www.adventure-works.com が既定の名前空間となり、www.fourthcoffee.com はプレフィックス "fc" でシリアル化されます。 既定の名前空間を宣言する属性を作成するには、"xmlns" という名前の属性を、名前空間を指定せずに作成します。 属性の値は、既定の名前空間 URI です。  
+ <span data-ttu-id="f79c4-120">ルート要素に名前空間属性を含めると名前空間がシリアル化され、http://www.adventure-works.com が既定の名前空間となり、www.fourthcoffee.com はプレフィックス "fc" でシリアル化されます。</span><span class="sxs-lookup"><span data-stu-id="f79c4-120">By including namespace attributes in the root element, the namespaces are serialized so that http://www.adventure-works.com is the default namespace, and www.fourthcoffee.com is serialized with a prefix of "fc".</span></span> <span data-ttu-id="f79c4-121">既定の名前空間を宣言する属性を作成するには、"xmlns" という名前の属性を、名前空間を指定せずに作成します。</span><span class="sxs-lookup"><span data-stu-id="f79c4-121">To create an attribute that declares a default namespace, you create an attribute with the name "xmlns", without a namespace.</span></span> <span data-ttu-id="f79c4-122">属性の値は、既定の名前空間 URI です。</span><span class="sxs-lookup"><span data-stu-id="f79c4-122">The value of the attribute is the default namespace URI.</span></span>  
   
 ```csharp  
 // The http://www.adventure-works.com namespace is forced to be the default namespace.  
@@ -93,7 +84,7 @@ XElement root = new XElement(aw + "Root",
 Console.WriteLine(root);  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="f79c4-123">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="f79c4-123">This example produces the following output:</span></span>  
   
 ```xml  
 <Root xmlns="http://www.adventure-works.com" xmlns:fc="www.fourthcoffee.com">  
@@ -105,8 +96,8 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
-## <a name="example"></a>例  
- 次の例では、名前空間プレフィックスのある名前空間を 2 つ含むドキュメントを作成します。  
+## <a name="example"></a><span data-ttu-id="f79c4-124">例</span><span class="sxs-lookup"><span data-stu-id="f79c4-124">Example</span></span>  
+ <span data-ttu-id="f79c4-125">次の例では、名前空間プレフィックスのある名前空間を 2 つ含むドキュメントを作成します。</span><span class="sxs-lookup"><span data-stu-id="f79c4-125">The following example creates a document that contains two namespaces, both with namespace prefixes.</span></span>  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -123,7 +114,7 @@ XElement root = new XElement(aw + "Root",
 Console.WriteLine(root);  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="f79c4-126">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="f79c4-126">This example produces the following output:</span></span>  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com" xmlns:fc="www.fourthcoffee.com">  
@@ -135,12 +126,12 @@ Console.WriteLine(root);
 </aw:Root>  
 ```  
   
-## <a name="example"></a>例  
- <xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して作成する代わりに、展開名を使用しても同じ結果が得られます。  
+## <a name="example"></a><span data-ttu-id="f79c4-127">例</span><span class="sxs-lookup"><span data-stu-id="f79c4-127">Example</span></span>  
+ <span data-ttu-id="f79c4-128"><xref:System.Xml.Linq.XNamespace> オブジェクトを宣言して作成する代わりに、展開名を使用しても同じ結果が得られます。</span><span class="sxs-lookup"><span data-stu-id="f79c4-128">Another way to accomplish the same result is to use expanded names instead of declaring and creating an <xref:System.Xml.Linq.XNamespace> object.</span></span>  
   
- ただし、この方法はパフォーマンスに影響を与えます。 拡張名が含まれた文字列を [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] に渡すたびに、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] は名前を解析して、アトミック化された名前空間を検索し、アトミック化された名前を見つける必要があります。 この処理は CPU 時間を消費します。 パフォーマンスが重要な場合には、<xref:System.Xml.Linq.XNamespace> オブジェクトを明示的に宣言して使用することをお勧めします。  
+ <span data-ttu-id="f79c4-129">ただし、この方法はパフォーマンスに影響を与えます。</span><span class="sxs-lookup"><span data-stu-id="f79c4-129">This approach has performance implications.</span></span> <span data-ttu-id="f79c4-130">拡張名が含まれた文字列を [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] に渡すたびに、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] は名前を解析して、アトミック化された名前空間を検索し、アトミック化された名前を見つける必要があります。</span><span class="sxs-lookup"><span data-stu-id="f79c4-130">Each time you pass a string that contains an expanded name to [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] must parse the name, find the atomized namespace, and find the atomized name.</span></span> <span data-ttu-id="f79c4-131">この処理は CPU 時間を消費します。</span><span class="sxs-lookup"><span data-stu-id="f79c4-131">This process takes CPU time.</span></span> <span data-ttu-id="f79c4-132">パフォーマンスが重要な場合には、<xref:System.Xml.Linq.XNamespace> オブジェクトを明示的に宣言して使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="f79c4-132">If performance is important, you might want to declare and use an <xref:System.Xml.Linq.XNamespace> object explicitly.</span></span>  
   
- パフォーマンスが重要な場合、詳細については、「[XName オブジェクトの事前アトミック化 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md)」を参照してください  
+ <span data-ttu-id="f79c4-133">パフォーマンスが重要な場合、詳細については、「[XName オブジェクトの事前アトミック化 (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md)」を参照してください</span><span class="sxs-lookup"><span data-stu-id="f79c4-133">If performance is an important issue, see [Pre-Atomization of XName Objects (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md) for more information</span></span>  
   
 ```csharp  
 // Create an XML tree in a namespace, with a specified prefix  
@@ -151,7 +142,7 @@ XElement root = new XElement("{http://www.adventure-works.com}Root",
 Console.WriteLine(root);  
 ```  
   
- この例を実行すると、次の出力が生成されます。  
+ <span data-ttu-id="f79c4-134">この例を実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="f79c4-134">This example produces the following output:</span></span>  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com">  
@@ -159,6 +150,5 @@ Console.WriteLine(root);
 </aw:Root>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [XML 名前空間の使用 (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
-
+## <a name="see-also"></a><span data-ttu-id="f79c4-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="f79c4-135">See Also</span></span>  
+ [<span data-ttu-id="f79c4-136">XML 名前空間の使用 (C#)</span><span class="sxs-lookup"><span data-stu-id="f79c4-136">Working with XML Namespaces (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)

@@ -1,42 +1,44 @@
 ---
-title: "方法 : ユーザー定義の例外を作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "例外, 例"
-  - "例外, ユーザー定義"
-  - "ユーザー定義例外"
+title: "方法 : ユーザー定義の例外を作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- user-defined exceptions
+- exceptions, examples
+- exceptions, user-defined
 ms.assetid: 25819a5a-f915-4fc8-b924-a76915674e04
-caps.latest.revision: 10
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 68f2093e32fe2f9fbc0f826d2293a7b7f2e3c238
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/21/2017
 ---
-# 方法 : ユーザー定義の例外を作成する
-ユーザーがプログラムによってエラー条件を識別できるようにする場合は、独自のユーザー定義例外を作成できます。  .NET Framework には、<xref:System.Exception> 基本クラスから最終的に派生した例外クラスの階層があります。  各クラスによって特定の例外が定義されているため、多くの場合は例外を作成する必要はありません。  <xref:System.Exception> クラスの派生クラスを独自の例外クラスとして作成することもできます。  
-  
- 独自の例外を作成するときには、ユーザー定義例外のクラス名の終わりに "Exception" という単語を付けておくと、コーディングの点で便利です。また、推奨される 3 つの共通コンストラクターを実装すると便利です。この推奨コンストラクターを実装する例を次に示します。  
-  
+# <a name="how-to-create-user-defined-exceptions"></a><span data-ttu-id="4ec3b-102">ユーザー定義の例外を作成する方法</span><span class="sxs-lookup"><span data-stu-id="4ec3b-102">How to create user-defined exceptions</span></span>
+
+<span data-ttu-id="4ec3b-103">.NET では、基底クラス <xref:System.Exception> から最終的に派生した例外クラスの階層構造を提供します。</span><span class="sxs-lookup"><span data-stu-id="4ec3b-103">.NET provides a hierarchy of exception classes ultimately derived from the base class <xref:System.Exception>.</span></span> <span data-ttu-id="4ec3b-104">ただし、定義済みの例外のいずれも要件を満たさない場合は、<xref:System.Exception> クラスから派生することによって、独自の例外クラスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="4ec3b-104">However, if none of the predefined exceptions meets your needs, you can create your own exception classes by deriving from the <xref:System.Exception> class.</span></span>
+
+<span data-ttu-id="4ec3b-105">独自の例外を作成するときに、ユーザー定義の例外のクラス名の末尾に "Exception" という単語を付加し、次の例で示すように、3 つの共通コンストラクターを実装します。</span><span class="sxs-lookup"><span data-stu-id="4ec3b-105">When creating your own exceptions, end the class name of the user-defined exception with the word "Exception," and implement the three common constructors, as shown in the following example.</span></span> <span data-ttu-id="4ec3b-106">例では、`EmployeeListNotFoundException` という名前の新しい例外クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="4ec3b-106">The example defines a new exception class named `EmployeeListNotFoundException`.</span></span> <span data-ttu-id="4ec3b-107">このクラスは <xref:System.Exception> から派生し、次の 3 つのコンストラクターが含まれています。</span><span class="sxs-lookup"><span data-stu-id="4ec3b-107">The class is derived from <xref:System.Exception> and includes three constructors.</span></span>
+
+[!code-cpp[dg_exceptionDesign#14](../../../samples/snippets/cpp/VS_Snippets_CLR/dg_exceptionDesign/cpp/example2.cpp#14)]
+[!code-csharp[dg_exceptionDesign#14](../../../samples/snippets/csharp/VS_Snippets_CLR/dg_exceptionDesign/cs/example2.cs#14)]
+[!code-vb[dg_exceptionDesign#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/dg_exceptionDesign/vb/example2.vb#14)]  
+
 > [!NOTE]
->  リモート処理機能を使用する場合には、サーバー \(呼び出される側\) とクライアント \(プロキシ オブジェクトまたは呼び出し元\) がユーザー定義例外のメタデータを使用できるようにしてください。  たとえば、別のアプリケーション ドメインのメソッドを呼び出すコードは、リモート呼び出しによってスローされる例外が含まれているアセンブリを検出できる必要があります。  詳細については、「[例外処理の実施](../../../docs/standard/exceptions/best-practices-for-exceptions.md)」を参照してください。  
-  
- 次の例では、新しい例外クラス `EmployeeListNotFoundException` は <xref:System.Exception> から派生しています。  3 つのコンストラクターはクラスで定義されていて、それぞれ異なるパラメーターを使用します。  
-  
-## 使用例  
- [!code-cpp[dg_exceptionDesign#14](../../../samples/snippets/cpp/VS_Snippets_CLR/dg_exceptionDesign/cpp/example2.cpp#14)]
- [!code-csharp[dg_exceptionDesign#14](../../../samples/snippets/csharp/VS_Snippets_CLR/dg_exceptionDesign/cs/example2.cs#14)]
- [!code-vb[dg_exceptionDesign#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/dg_exceptionDesign/vb/example2.vb#14)]  
-  
-## 参照  
- [方法 : Try ブロックと Catch ブロックを使用して例外をキャッチする](../../../docs/standard/exceptions/how-to-use-the-try-catch-block-to-catch-exceptions.md)   
- [方法 : catch ブロックで特定の例外を使用する](../../../docs/standard/exceptions/how-to-use-specific-exceptions-in-a-catch-block.md)   
- [例外の推奨事項](../../../docs/standard/exceptions/best-practices-for-exceptions.md)   
- [例外処理の基本事項](../../../docs/standard/exceptions/exception-handling-fundamentals.md)
+> <span data-ttu-id="4ec3b-108">リモート処理を使用している場合は、任意のユーザー定義の例外のメタデータがサーバー側 (呼び出し先) とクライアント (プロキシ オブジェクトまたは呼び出し元) で使用できることを保証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4ec3b-108">In situations where you are using remoting, you must ensure that the metadata for any user-defined exceptions is available at the server (callee) and to the client (the proxy object or caller).</span></span> <span data-ttu-id="4ec3b-109">詳細については、「[例外の推奨事項](best-practices-for-exceptions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4ec3b-109">For more information, see [Best practices for exceptions](best-practices-for-exceptions.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="4ec3b-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="4ec3b-110">See Also</span></span>  
+[<span data-ttu-id="4ec3b-111">例外</span><span class="sxs-lookup"><span data-stu-id="4ec3b-111">Exceptions</span></span>](index.md)

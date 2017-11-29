@@ -1,75 +1,56 @@
 ---
 title: "ジェネリックとリフレクション (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: cc2363eea7d5c601fc73f5f9eb14b4b07ad14cb8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 201806cca08be0633d41e10ecb7641a0f03c975b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="generics-and-reflection-c-programming-guide"></a>ジェネリックとリフレクション (C# プログラミング ガイド)
-共通言語ランタイム (CLR) は実行時にジェネリック型の情報にアクセスできるため、非ジェネリック型の場合と同じように、リフレクションを使用してジェネリック型の情報を取得できます。 詳細については、「[ランタイムのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-run-time.md)」を参照してください。  
+# <a name="generics-and-reflection-c-programming-guide"></a><span data-ttu-id="f53c5-102">ジェネリックとリフレクション (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="f53c5-102">Generics and Reflection (C# Programming Guide)</span></span>
+<span data-ttu-id="f53c5-103">共通言語ランタイム (CLR) は実行時にジェネリック型の情報にアクセスできるため、非ジェネリック型の場合と同じように、リフレクションを使用してジェネリック型の情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="f53c5-103">Because the Common Language Runtime (CLR) has access to generic type information at run time, you can use reflection to obtain information about generic types in the same way as for non-generic types.</span></span> <span data-ttu-id="f53c5-104">詳細については、「[ランタイムのジェネリック](../../../csharp/programming-guide/generics/generics-in-the-run-time.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f53c5-104">For more information, see [Generics in the Run Time](../../../csharp/programming-guide/generics/generics-in-the-run-time.md).</span></span>  
   
- [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] には、ジェネリック型の実行時の情報を有効にする新しいメンバーがいくつか <xref:System.Type> クラスに追加されています。 それらのメソッドとプロパティの使用方法の詳細については、そのクラスのドキュメントを参照してください。 <xref:System.Reflection.Emit> 名前空間にも、ジェネリックをサポートする新しいメンバーが追加されています。 「[方法: リフレクション出力を使用してジェネリック型を定義する](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)」を参照してください。  
+ <span data-ttu-id="f53c5-105">[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] には、ジェネリック型の実行時の情報を有効にする新しいメンバーがいくつか <xref:System.Type> クラスに追加されています。</span><span class="sxs-lookup"><span data-stu-id="f53c5-105">In the [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] several new members are added to the <xref:System.Type> class to enable run-time information for generic types.</span></span> <span data-ttu-id="f53c5-106">それらのメソッドとプロパティの使用方法の詳細については、そのクラスのドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="f53c5-106">See the documentation on these classes for more information on how to use these methods and properties.</span></span> <span data-ttu-id="f53c5-107"><xref:System.Reflection.Emit> 名前空間にも、ジェネリックをサポートする新しいメンバーが追加されています。</span><span class="sxs-lookup"><span data-stu-id="f53c5-107">The <xref:System.Reflection.Emit> namespace also contains new members that support generics.</span></span> <span data-ttu-id="f53c5-108">「[方法: リフレクション出力を使用してジェネリック型を定義する](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f53c5-108">See [How to: Define a Generic Type with Reflection Emit](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).</span></span>  
   
- ジェネリック リフレクションで使用する用語に関する一定の条件の一覧については、<xref:System.Type.IsGenericType%2A> プロパティの解説を参照してください。  
+ <span data-ttu-id="f53c5-109">ジェネリック リフレクションで使用する用語に関する一定の条件の一覧については、<xref:System.Type.IsGenericType%2A> プロパティの解説を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f53c5-109">For a list of the invariant conditions for terms used in generic reflection, see the <xref:System.Type.IsGenericType%2A> property remarks.</span></span>  
   
-|System.Type メンバー名|説明|  
+|<span data-ttu-id="f53c5-110">System.Type メンバー名</span><span class="sxs-lookup"><span data-stu-id="f53c5-110">System.Type Member Name</span></span>|<span data-ttu-id="f53c5-111">説明</span><span class="sxs-lookup"><span data-stu-id="f53c5-111">Description</span></span>|  
 |-----------------------------|-----------------|  
-|<xref:System.Type.IsGenericType%2A>|型がジェネリックである場合に true を返します。|  
-|<xref:System.Type.GetGenericArguments%2A>|構築された型に対して指定された型引数、またはジェネリック型定義の型パラメーターを表す `Type` オブジェクトの配列を返します。|  
-|<xref:System.Type.GetGenericTypeDefinition%2A>|現在構築されている型の基になるジェネリック型定義を返します。|  
-|<xref:System.Type.GetGenericParameterConstraints%2A>|現在のジェネリック型パラメーターの制約を表す `Type` オブジェクトの配列を返します。|  
-|<xref:System.Type.ContainsGenericParameters%2A>|型 (またはそこに含まれているいずれかの型またはメソッド) に、具体的な型の指定されていない型パラメーターが含まれている場合に true を返します。|  
-|<xref:System.Type.GenericParameterAttributes%2A>|現在のジェネリック型パラメーターの特殊な制約を説明する `GenericParameterAttributes` フラグの組み合わせを取得します。|  
-|<xref:System.Type.GenericParameterPosition%2A>|型パラメーターを表す `Type` オブジェクトの場合、その型パラメーターが宣言されたジェネリック型定義またはジェネリック メソッド定義の型パラメーター リストにおけるその位置を取得します。|  
-|<xref:System.Type.IsGenericParameter%2A>|現在の `Type` が、ジェネリック型定義またはジェネリック メソッド定義の型パラメーターを表すかどうかを示す値を取得します。|  
-|<xref:System.Type.IsGenericTypeDefinition%2A>|現在の <xref:System.Type> が、他のジェネリック型を構築できるジェネリック型の定義を表しているかどうかを示す値を取得します。 その型がジェネリック型の定義を表している場合に true を返します。|  
-|<xref:System.Type.DeclaringMethod%2A>|現在のジェネリック型パラメーターを定義したジェネリック メソッドを返します。その型パラメーターがジェネリック メソッドによって定義されたものではない場合は null を返します。|  
-|<xref:System.Type.MakeGenericType%2A>|型の配列の要素を現在のジェネリック型定義の型パラメーターで置き換え、結果の構築型を表す <xref:System.Type> オブジェクトを返します。|  
+|<xref:System.Type.IsGenericType%2A>|<span data-ttu-id="f53c5-112">型がジェネリックである場合に true を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-112">Returns true if a type is generic.</span></span>|  
+|<xref:System.Type.GetGenericArguments%2A>|<span data-ttu-id="f53c5-113">構築された型に対して指定された型引数、またはジェネリック型定義の型パラメーターを表す `Type` オブジェクトの配列を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-113">Returns an array of `Type` objects that represent the type arguments supplied for a constructed type, or the type parameters of a generic type definition.</span></span>|  
+|<xref:System.Type.GetGenericTypeDefinition%2A>|<span data-ttu-id="f53c5-114">現在構築されている型の基になるジェネリック型定義を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-114">Returns the underlying generic type definition for the current constructed type.</span></span>|  
+|<xref:System.Type.GetGenericParameterConstraints%2A>|<span data-ttu-id="f53c5-115">現在のジェネリック型パラメーターの制約を表す `Type` オブジェクトの配列を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-115">Returns an array of `Type` objects that represent the constraints on the current generic type parameter.</span></span>|  
+|<xref:System.Type.ContainsGenericParameters%2A>|<span data-ttu-id="f53c5-116">型 (またはそこに含まれているいずれかの型またはメソッド) に、具体的な型の指定されていない型パラメーターが含まれている場合に true を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-116">Returns true if the type or any of its enclosing types or methods contain type parameters for which specific types have not been supplied.</span></span>|  
+|<xref:System.Type.GenericParameterAttributes%2A>|<span data-ttu-id="f53c5-117">現在のジェネリック型パラメーターの特殊な制約を説明する `GenericParameterAttributes` フラグの組み合わせを取得します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-117">Gets a combination of `GenericParameterAttributes` flags that describe the special constraints of the current generic type parameter.</span></span>|  
+|<xref:System.Type.GenericParameterPosition%2A>|<span data-ttu-id="f53c5-118">型パラメーターを表す `Type` オブジェクトの場合、その型パラメーターが宣言されたジェネリック型定義またはジェネリック メソッド定義の型パラメーター リストにおけるその位置を取得します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-118">For a `Type` object that represents a type parameter, gets the position of the type parameter in the type parameter list of the generic type definition or generic method definition that declared the type parameter.</span></span>|  
+|<xref:System.Type.IsGenericParameter%2A>|<span data-ttu-id="f53c5-119">現在の `Type` が、ジェネリック型定義またはジェネリック メソッド定義の型パラメーターを表すかどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-119">Gets a value that indicates whether the current `Type` represents a type parameter of a generic type or method definition.</span></span>|  
+|<xref:System.Type.IsGenericTypeDefinition%2A>|<span data-ttu-id="f53c5-120">現在の <xref:System.Type> が、他のジェネリック型を構築できるジェネリック型の定義を表しているかどうかを示す値を取得します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-120">Gets a value that indicates whether the current <xref:System.Type> represents a generic type definition, from which other generic types can be constructed.</span></span> <span data-ttu-id="f53c5-121">その型がジェネリック型の定義を表している場合に true を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-121">Returns true if the type represents the definition of a generic type.</span></span>|  
+|<xref:System.Type.DeclaringMethod%2A>|<span data-ttu-id="f53c5-122">現在のジェネリック型パラメーターを定義したジェネリック メソッドを返します。その型パラメーターがジェネリック メソッドによって定義されたものではない場合は null を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-122">Returns the generic method that defined the current generic type parameter, or null if the type parameter was not defined by a generic method.</span></span>|  
+|<xref:System.Type.MakeGenericType%2A>|<span data-ttu-id="f53c5-123">型の配列の要素を現在のジェネリック型定義の型パラメーターで置き換え、結果の構築型を表す <xref:System.Type> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-123">Substitutes the elements of an array of types for the type parameters of the current generic type definition, and returns a <xref:System.Type> object representing the resulting constructed type.</span></span>|  
   
- ジェネリック メソッドの実行時の情報を有効にする新しいメンバーがいくつか <xref:System.Reflection.MethodInfo> クラスに追加されています。 ジェネリック メソッドのリフレクションで使用する用語に関する一定の条件の一覧については、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A> プロパティの解説を参照してください。  
+ <span data-ttu-id="f53c5-124">ジェネリック メソッドの実行時の情報を有効にする新しいメンバーがいくつか <xref:System.Reflection.MethodInfo> クラスに追加されています。</span><span class="sxs-lookup"><span data-stu-id="f53c5-124">In addition, new members are added to the <xref:System.Reflection.MethodInfo> class to enable run-time information for generic methods.</span></span> <span data-ttu-id="f53c5-125">ジェネリック メソッドのリフレクションで使用する用語に関する一定の条件の一覧については、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A> プロパティの解説を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f53c5-125">See the <xref:System.Reflection.MethodInfo.IsGenericMethod%2A> property remarks for a list of invariant conditions for terms used to reflect on generic methods.</span></span>  
   
-|System.Reflection.MemberInfo メンバー名|説明|  
+|<span data-ttu-id="f53c5-126">System.Reflection.MemberInfo メンバー名</span><span class="sxs-lookup"><span data-stu-id="f53c5-126">System.Reflection.MemberInfo Member Name</span></span>|<span data-ttu-id="f53c5-127">説明</span><span class="sxs-lookup"><span data-stu-id="f53c5-127">Description</span></span>|  
 |----------------------------------------------|-----------------|  
-|<xref:System.Reflection.MethodInfo.IsGenericMethod%2A>|メソッドがジェネリックである場合に true を返します。|  
-|<xref:System.Reflection.MethodInfo.GetGenericArguments%2A>|構築されたジェネリック メソッドの型引数、またはジェネリック メソッド定義の型パラメーターを表す Type オブジェクトの配列を返します。|  
-|<xref:System.Reflection.MethodInfo.GetGenericMethodDefinition%2A>|現在構築されているメソッドの基になるジェネリック メソッド定義を返します。|  
-|<xref:System.Reflection.MethodInfo.ContainsGenericParameters%2A>|メソッド (またはそこに含まれているいずれかの型) に、具体的な型の指定されていない型パラメーターが含まれている場合に true を返します。|  
-|<xref:System.Reflection.MethodInfo.IsGenericMethodDefinition%2A>|現在の <xref:System.Reflection.MethodInfo> がジェネリック メソッドの定義を表している場合に true を返します。|  
-|<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>|現在のジェネリック メソッド定義の型パラメーターを型の配列要素に置き換え、その結果構築されるメソッドを表す <xref:System.Reflection.MethodInfo> オブジェクトを返します。|  
+|<xref:System.Reflection.MethodInfo.IsGenericMethod%2A>|<span data-ttu-id="f53c5-128">メソッドがジェネリックである場合に true を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-128">Returns true if a method is generic.</span></span>|  
+|<xref:System.Reflection.MethodInfo.GetGenericArguments%2A>|<span data-ttu-id="f53c5-129">構築されたジェネリック メソッドの型引数、またはジェネリック メソッド定義の型パラメーターを表す Type オブジェクトの配列を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-129">Returns an array of Type objects that represent the type arguments of a constructed generic method or the type parameters of a generic method definition.</span></span>|  
+|<xref:System.Reflection.MethodInfo.GetGenericMethodDefinition%2A>|<span data-ttu-id="f53c5-130">現在構築されているメソッドの基になるジェネリック メソッド定義を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-130">Returns the underlying generic method definition for the current constructed method.</span></span>|  
+|<xref:System.Reflection.MethodInfo.ContainsGenericParameters%2A>|<span data-ttu-id="f53c5-131">メソッド (またはそこに含まれているいずれかの型) に、具体的な型の指定されていない型パラメーターが含まれている場合に true を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-131">Returns true if the method or any of its enclosing types contain any type parameters for which specific types have not been supplied.</span></span>|  
+|<xref:System.Reflection.MethodInfo.IsGenericMethodDefinition%2A>|<span data-ttu-id="f53c5-132">現在の <xref:System.Reflection.MethodInfo> がジェネリック メソッドの定義を表している場合に true を返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-132">Returns true if the current <xref:System.Reflection.MethodInfo> represents the definition of a generic method.</span></span>|  
+|<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>|<span data-ttu-id="f53c5-133">現在のジェネリック メソッド定義の型パラメーターを型の配列要素に置き換え、その結果構築されるメソッドを表す <xref:System.Reflection.MethodInfo> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="f53c5-133">Substitutes the elements of an array of types for the type parameters of the current generic method definition, and returns a <xref:System.Reflection.MethodInfo> object representing the resulting constructed method.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [ジェネリック](../../../csharp/programming-guide/generics/index.md)   
- [リフレクションとジェネリック型](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)   
- [ジェネリック](~/docs/standard/generics/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="f53c5-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="f53c5-134">See Also</span></span>  
+ [<span data-ttu-id="f53c5-135">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="f53c5-135">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="f53c5-136">ジェネリック</span><span class="sxs-lookup"><span data-stu-id="f53c5-136">Generics</span></span>](../../../csharp/programming-guide/generics/index.md)  
+ [<span data-ttu-id="f53c5-137">リフレクションとジェネリック型</span><span class="sxs-lookup"><span data-stu-id="f53c5-137">Reflection and Generic Types</span></span>](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)  
+ [<span data-ttu-id="f53c5-138">ジェネリック</span><span class="sxs-lookup"><span data-stu-id="f53c5-138">Generics</span></span>](~/docs/standard/generics/index.md)

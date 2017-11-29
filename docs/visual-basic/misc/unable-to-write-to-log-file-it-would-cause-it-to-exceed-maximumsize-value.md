@@ -1,38 +1,40 @@
 ---
-title: "書き込みを行うと MaximumSize 値を超えてしまうため、ログ ファイルに書き込めません | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrApplicationLog_FileExceedsMaximumSize"
+title: "書き込みを行うと MaximumSize 値を超えてしまうため、ログ ファイルに書き込めません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrApplicationLog_FileExceedsMaximumSize
 ms.assetid: 61747a9c-e460-424b-a365-73cdba9dd428
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: b4d284f9e1a79e409a41aed57ec880fc371b8332
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 書き込みを行うと MaximumSize 値を超えてしまうため、ログ ファイルに書き込めません
-次の理由により、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> クラスは、ログ ファイルに書き込むことができませんでした。  
+# <a name="unable-to-write-to-log-file-because-writing-to-it-would-cause-it-to-exceed-maximumsize-value"></a><span data-ttu-id="e2288-102">書き込みを行うと MaximumSize 値を超えてしまうため、ログ ファイルに書き込めません</span><span class="sxs-lookup"><span data-stu-id="e2288-102">Unable to write to log file because writing to it would cause it to exceed MaximumSize value</span></span>
+<span data-ttu-id="e2288-103">次の理由により、 <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> クラスは、ログ ファイルに書き込むことができませんでした。</span><span class="sxs-lookup"><span data-stu-id="e2288-103">The <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> class could not write to the log file because:</span></span>  
   
--   ログ ファイルのサイズ \(バイト単位\) が <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A> プロパティの値より大きい  
+-   <span data-ttu-id="e2288-104">ログ ファイルのサイズ (バイト単位) が <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A> プロパティの値より大きい</span><span class="sxs-lookup"><span data-stu-id="e2288-104">The log file size (in bytes) is greater than the value of the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A> property</span></span>  
   
-     —および—  
+     <span data-ttu-id="e2288-105">—および—</span><span class="sxs-lookup"><span data-stu-id="e2288-105">—and—</span></span>  
   
--   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> プロパティの値が <xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption> でした。  
+-   <span data-ttu-id="e2288-106"><xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> プロパティの値が <xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.ThrowException>でした。</span><span class="sxs-lookup"><span data-stu-id="e2288-106">The value of the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> property was <xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.ThrowException>.</span></span>  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="e2288-107">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="e2288-107">To correct this error</span></span>  
   
-1.  既存のログをアーカイブし、それらをコンピューターから削除して、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> オブジェクトが新しいログを作成できるようにします。  
+1.  <span data-ttu-id="e2288-108">既存のログをアーカイブし、それらをコンピューターから削除して、 <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> オブジェクトが新しいログを作成できるようにします。</span><span class="sxs-lookup"><span data-stu-id="e2288-108">Archive the existing logs and remove them from the computer to allow the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> object to create new logs.</span></span>  
   
-2.  <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A> プロパティの値を変更して、より大きなログを作成できるようにします。  
+2.  <span data-ttu-id="e2288-109"><xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A> プロパティの値を変更して、より大きなログを作成できるようにします。</span><span class="sxs-lookup"><span data-stu-id="e2288-109">Change the value of the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A> property to allow for larger logs.</span></span>  
   
-3.  <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> プロパティを <xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption> に設定し、ログが大きすぎる場合は、警告のないメッセージを破棄します。  
+3.  <span data-ttu-id="e2288-110"><xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> プロパティを <xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.DiscardMessages> に設定し、ログが大きすぎる場合は、警告のないメッセージを破棄します。</span><span class="sxs-lookup"><span data-stu-id="e2288-110">Set the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> property to <xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.DiscardMessages> to discard messages without warning if the log is too large.</span></span>  
   
-## 参照  
- <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A>   
- <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A>   
- <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>   
- [My.Application.Log オブジェクト](../../visual-basic/language-reference/objects/my-application-log-object.md)   
- [My.Log Object](../../visual-basic/language-reference/objects/my-log-object.md)
+## <a name="see-also"></a><span data-ttu-id="e2288-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="e2288-111">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A>  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A>  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>  
+ [<span data-ttu-id="e2288-112">My.Application.Log オブジェクト</span><span class="sxs-lookup"><span data-stu-id="e2288-112">My.Application.Log Object</span></span>](../../visual-basic/language-reference/objects/my-application-log-object.md)  
+ [<span data-ttu-id="e2288-113">My.Log オブジェクト</span><span class="sxs-lookup"><span data-stu-id="e2288-113">My.Log Object</span></span>](../../visual-basic/language-reference/objects/my-log-object.md)
