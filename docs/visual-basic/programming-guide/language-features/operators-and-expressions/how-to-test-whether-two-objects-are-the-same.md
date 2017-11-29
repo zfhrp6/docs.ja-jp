@@ -1,42 +1,41 @@
 ---
-title: "How to: Test Whether Two Objects Are the Same (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "variables [Visual Basic], reference"
-  - "Is operator [Visual Basic], comparing objects"
-  - "reference variables"
-  - "variables [Visual Basic], referring to same object"
-  - "objects [Visual Basic], variables referring to same"
-  - "Visual Basic code, operators"
+title: "方法: 2 つのオブジェクトが等しいかどうかをテストする (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- variables [Visual Basic], reference
+- Is operator [Visual Basic], comparing objects
+- reference variables [Visual Basic]
+- variables [Visual Basic], referring to same object
+- objects [Visual Basic], variables referring to same
+- Visual Basic code, operators
 ms.assetid: f760e828-8704-4256-bc2d-c22a4c93b524
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 76f5c19386cce84207f80d217326d2e3babf4e44
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# How to: Test Whether Two Objects Are the Same (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-オブジェクトを参照する 2 つの変数がある場合は、`Is` または `IsNot` 演算子、またはその両方を使用して、2 つの変数が同じインスタンスを参照しているかどうかを確認できます。  
+# <a name="how-to-test-whether-two-objects-are-the-same-visual-basic"></a><span data-ttu-id="db012-102">方法: 2 つのオブジェクトが等しいかどうかをテストする (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="db012-102">How to: Test Whether Two Objects Are the Same (Visual Basic)</span></span>
+<span data-ttu-id="db012-103">オブジェクトを参照する 2 つの変数があれば、いずれかを使用できる、`Is`または`IsNot`演算子、またはその両方を同じインスタンスを参照しているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="db012-103">If you have two variables that refer to objects, you can use either the `Is` or `IsNot` operator, or both, to determine whether they refer to the same instance.</span></span>  
   
-### 2 つのオブジェクトが等しいかどうかをテストするには  
+### <a name="to-test-whether-two-objects-are-the-same"></a><span data-ttu-id="db012-104">2 つのオブジェクトが等しいかどうかをテストするには</span><span class="sxs-lookup"><span data-stu-id="db012-104">To test whether two objects are the same</span></span>  
   
--   2 つの変数をオペランドとして、[Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) または [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md)を使用します。  
+-   <span data-ttu-id="db012-105">使用して、 [Is 演算子](../../../../visual-basic/language-reference/operators/is-operator.md)または[IsNot 演算子](../../../../visual-basic/language-reference/operators/isnot-operator.md)オペランドとして 2 つの変数にします。</span><span class="sxs-lookup"><span data-stu-id="db012-105">Use the [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) or the [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md) with the two variables as operands.</span></span>  
   
      [!code-vb[VbVbalrOperators#69](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-test-whether-two-objects-are-the-same_1.vb)]  
   
- 2 つのオブジェクトが同じインスタンスを参照しているかどうかに応じて、特定のアクションを実行することがあります。  前述の例では、`c` というコントロールをフォーム `f` 上のアクティブなコントロールと比較しています。  アクティブなコントロールがない場合、またはアクティブなコントロールが `c` と同じインスタンスでない場合は、`If` ステートメントが失敗し、プロシージャはこれ以上の処理を行わずに制御を返します。  
+ <span data-ttu-id="db012-106">2 つのオブジェクトが同じインスタンスを参照するかどうかに応じて、特定のアクションを実行する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="db012-106">You might want to take a certain action depending on whether two objects refer to the same instance.</span></span> <span data-ttu-id="db012-107">上記の例では、コントロール`c`フォームでアクティブなコントロールに対して`f`です。</span><span class="sxs-lookup"><span data-stu-id="db012-107">The preceding example compares control `c` against the active control on form `f`.</span></span> <span data-ttu-id="db012-108">アクティブなコントロールはありませんかがある場合はこれ以上が場合と同じコントロール インスタンス`c`、`If`ステートメントは失敗し、手順は、さらに処理することがなくを返します。</span><span class="sxs-lookup"><span data-stu-id="db012-108">If there is no active control, or if there is one but it is not the same control instance as `c`, then the `If` statement fails and the procedure returns without further processing.</span></span>  
   
- `Is` と `IsNot` のどちらを使用するかは、個人的な好みの問題です。  一部の式では、どちらかの方が他方より読みやすいコードになることがあります。  
+ <span data-ttu-id="db012-109">使用するかどうか`Is`または`IsNot`に個人の利便性の問題です。</span><span class="sxs-lookup"><span data-stu-id="db012-109">Whether you use `Is` or `IsNot` is a matter of personal convenience to you.</span></span> <span data-ttu-id="db012-110">1 つを指定された式に他方より読みやすくする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="db012-110">One might be easier to read than the other in a given expression.</span></span>  
   
-## 参照  
- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+## <a name="see-also"></a><span data-ttu-id="db012-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="db012-111">See Also</span></span>  
+ [<span data-ttu-id="db012-112">Visual Basic における比較演算子</span><span class="sxs-lookup"><span data-stu-id="db012-112">Comparison Operators in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)

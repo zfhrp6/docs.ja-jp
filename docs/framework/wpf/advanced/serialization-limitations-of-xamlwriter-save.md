@@ -1,52 +1,55 @@
 ---
-title: "XamlWriter.Save のシリアル化の制限 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "制限 (XamlWriter.Save の)"
-  - "シリアル化の制限 (XamlWriter.Save の)"
-  - "XamlWriter.Save, シリアル化の制限"
+title: "XamlWriter.Save のシリアル化の制限"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- XamlWriter.Save [WPF], serialization limitations of
+- limitations of XamlWriter.Save
+- serialization limitations of XamlWriter.Save
 ms.assetid: f86acc91-2b67-4039-8555-505734491d36
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 06033c6a753dd567f613f0b848e806dfa14ee77d
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# XamlWriter.Save のシリアル化の制限
-[!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] <xref:System.Windows.Markup.XamlWriter.Save%2A> を使用して、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションの内容を [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] ファイルとしてシリアル化できます。  ただし、シリアル化される対象には注意すべき制限がいくつかあります。  このトピックでは、これらの制限と全般的な考慮事項をいくつか説明します。  
+# <a name="serialization-limitations-of-xamlwritersave"></a><span data-ttu-id="b65ed-102">XamlWriter.Save のシリアル化の制限</span><span class="sxs-lookup"><span data-stu-id="b65ed-102">Serialization Limitations of XamlWriter.Save</span></span>
+<span data-ttu-id="b65ed-103">[!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] <xref:System.Windows.Markup.XamlWriter.Save%2A>の内容をシリアル化に使用できる、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションとして、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]ファイル。</span><span class="sxs-lookup"><span data-stu-id="b65ed-103">The [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] <xref:System.Windows.Markup.XamlWriter.Save%2A> can be used to serialize the contents of a [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] application as a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] file.</span></span> <span data-ttu-id="b65ed-104">ただし、シリアル化されるいくつかの重要な制限があります。</span><span class="sxs-lookup"><span data-stu-id="b65ed-104">However, there are some notable limitations in exactly what is serialized.</span></span> <span data-ttu-id="b65ed-105">このトピックでは、これらの制限事項といくつかの一般的な考慮事項が記載されています。</span><span class="sxs-lookup"><span data-stu-id="b65ed-105">These limitations and some general considerations are documented in this topic.</span></span>  
   
-   
+ 
   
 <a name="Run_Time__Not_Design_Time_Representation"></a>   
-## ランタイム \(非デザイン タイム\) 表現  
- <xref:System.Windows.Markup.XamlWriter.Save%2A> の呼び出しによるシリアル化の基本概念は、実行時にシリアル化されているオブジェクトが結果として表れることです。  元の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイルのデザイン タイム プロパティの多くは、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]がメモリ内オブジェクトとして読み込まれる時点で既に最適化されているか、失われている可能性があり、シリアル化するために<xref:System.Windows.Markup.XamlWriter.Save%2A>を呼び出したときには保持されていません。  シリアル化された結果は、アプリケーションの構築された論理ツリーを効率的に表していますが、必ずしも、これを生成した元の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] のものではありません。  これらの問題により、広範な [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] デザイン サーフェイスの一部として <xref:System.Windows.Markup.XamlWriter.Save%2A> のシリアル化を使用することが極めて困難になります。  
+## <a name="run-time-not-design-time-representation"></a><span data-ttu-id="b65ed-106">実行時、デザイン時ではない表現</span><span class="sxs-lookup"><span data-stu-id="b65ed-106">Run-Time, Not Design-Time Representation</span></span>  
+ <span data-ttu-id="b65ed-107">呼び出しによって内容がシリアル化の基本的な考え方<xref:System.Windows.Markup.XamlWriter.Save%2A>結果が実行時に、シリアル化されるオブジェクトの表現になることができます。</span><span class="sxs-lookup"><span data-stu-id="b65ed-107">The basic philosophy of what is serialized by a call to <xref:System.Windows.Markup.XamlWriter.Save%2A> is that the result will be a representation of the object being serialized, at run-time.</span></span> <span data-ttu-id="b65ed-108">元の多くのデザイン時プロパティ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ファイルが既に最適化かまたは時間によって失われる可能性を[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]がメモリ内のオブジェクトとして読み込まれると、呼び出すときに保持されない<xref:System.Windows.Markup.XamlWriter.Save%2A>をシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="b65ed-108">Many design-time properties of the original [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] file may already be optimized or lost by the time that the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] is loaded as in-memory objects, and are not preserved when you call <xref:System.Windows.Markup.XamlWriter.Save%2A> to serialize.</span></span> <span data-ttu-id="b65ed-109">シリアル化された結果は、アプリケーションは必ずしも元は、構築済みの論理ツリーの有効な表現で、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]生成します。</span><span class="sxs-lookup"><span data-stu-id="b65ed-109">The serialized result is an effective representation of the constructed logical tree of the application, but not necessarily of the original [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] that produced it.</span></span> <span data-ttu-id="b65ed-110">これらの問題非常に難しくを使用する、<xref:System.Windows.Markup.XamlWriter.Save%2A>拡張の一部としてシリアル化[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]デザイン サーフェイスです。</span><span class="sxs-lookup"><span data-stu-id="b65ed-110">These issues make it extremely difficult to use the <xref:System.Windows.Markup.XamlWriter.Save%2A> serialization as part of an extensive [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] design surface.</span></span>  
   
 <a name="Serialization_is_Self_Contained"></a>   
-## シリアル化の内部格納  
- <xref:System.Windows.Markup.XamlWriter.Save%2A> のシリアル化された出力は内部格納されます。つまり、シリアル化されたものはすべて、単一ルート要素と共に [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の単一ページ内に含まれ、[!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] 以外による外部参照はされません。  たとえば、ページがアプリケーション リソースからリソースを参照した場合、これらのリソースは、シリアル化されているページのコンポーネントであるかのように表示されます。  
+## <a name="serialization-is-self-contained"></a><span data-ttu-id="b65ed-111">シリアル化は、自己完結型</span><span class="sxs-lookup"><span data-stu-id="b65ed-111">Serialization is Self-Contained</span></span>  
+ <span data-ttu-id="b65ed-112">シリアル化された出力<xref:System.Windows.Markup.XamlWriter.Save%2A>は自己完結; は、シリアル化するすべてのアイテムに含まれている、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]単一ページで、単一のルート要素と以外の外部参照はありません[!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="b65ed-112">The serialized output of <xref:System.Windows.Markup.XamlWriter.Save%2A> is self-contained; everything that is serialized is contained inside a [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] single page, with a single root element, and no external references other than [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)].</span></span> <span data-ttu-id="b65ed-113">インスタンスの場合、ページには、アプリケーション リソースからのリソースが参照されている、これらは表示したシリアル化されるページのコンポーネント。</span><span class="sxs-lookup"><span data-stu-id="b65ed-113">For instance, if your page referenced resources from application resources, these will appear as if they were a component of the page being serialized.</span></span>  
   
 <a name="Extension_References_are_Dereferenced"></a>   
-## 拡張参照の参照解除  
- さまざまなマークアップ エクステンション形式によって作成されたオブジェクトの一般的な参照 \(`StaticResource`、`Binding` など\) は、シリアル化プロセスによって参照解除されます。  これらは、メモリ内のオブジェクトがアプリケーション ランタイムによって作成された時点で既に参照解除されており、<xref:System.Windows.Markup.XamlWriter.Save%2A> ロジックは、このようなシリアル化された出力の参照を復元するために、元の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] を再確認することはありません。  これにより、データ バインディングされた値または取得されたリソース値はすべて、ランタイム表現により前回使用された値に潜在的に固定され、ローカルに設定された他の値とこのような値を区別するための限定的または間接的な機能だけを持ちます。  また、プロジェクト内にイメージが存在するので、イメージも、元のソース参照としてではなくイメージへのオブジェクト参照としてシリアル化され、元々参照されていたいかなるファイル名または [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] も失われます。  同一ページ内で宣言されたリソースも、これらが参照されたポイントにシリアル化され、リソース コレクションのキーとしては保持されません。  
+## <a name="extension-references-are-dereferenced"></a><span data-ttu-id="b65ed-114">拡張機能の参照が逆参照します。</span><span class="sxs-lookup"><span data-stu-id="b65ed-114">Extension References are Dereferenced</span></span>  
+ <span data-ttu-id="b65ed-115">一般的なオブジェクトへの参照などのマークアップ拡張機能のさまざまな形式で行われた`StaticResource`または`Binding`、シリアル化プロセスによって逆参照されます。</span><span class="sxs-lookup"><span data-stu-id="b65ed-115">Common references to objects made by various markup extension formats, such as `StaticResource` or `Binding`, will be dereferenced by the serialization process.</span></span> <span data-ttu-id="b65ed-116">既にメモリ内オブジェクトには、アプリケーション ランタイムによって作成された時に逆参照されたこれらと<xref:System.Windows.Markup.XamlWriter.Save%2A>ロジックが、元の再表示されません[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]をシリアル化された出力には、このような参照を復元します。</span><span class="sxs-lookup"><span data-stu-id="b65ed-116">These were already dereferenced at the time that in-memory objects were created by the application runtime, and the <xref:System.Windows.Markup.XamlWriter.Save%2A> logic does not revisit the original [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] to restore such references to the serialized output.</span></span> <span data-ttu-id="b65ed-117">これは、任意のデータ バインドまたは最後に、実行時で表現したローカル設定その他の値からこのような値を区別するためにのみに制限されているか間接の機能を使用する値を指定する値を取得したリソースに可能性のあるフリーズします。</span><span class="sxs-lookup"><span data-stu-id="b65ed-117">This potentially freezes any databound or resource obtained value to be the value last used by the run-time representation, with only limited or indirect ability to distinguish such a value from any other value set locally.</span></span> <span data-ttu-id="b65ed-118">どのようなファイル名が失われる、元のソースの参照ではなく、プロジェクト内に存在するために、イメージはイメージへの参照をオブジェクトとしてシリアル化もまたは[!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]元々 参照されています。</span><span class="sxs-lookup"><span data-stu-id="b65ed-118">Images are also serialized as object references to images as they exist in the project, rather than as original source references, losing whatever filename or [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] was originally referenced.</span></span> <span data-ttu-id="b65ed-119">同じページ内で宣言されているリソースは、これらが参照されたリソース コレクションのキーとして保持されているのではなく、ポイントにシリアル化された認識されています。</span><span class="sxs-lookup"><span data-stu-id="b65ed-119">Even resources declared within the same page are seen serialized into the point where they were referenced, rather than being preserved as a key of a resource collection.</span></span>  
   
 <a name="Event_Handling_is_Not_Preserved"></a>   
-## 保持されないイベント処理  
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] を介して追加されたイベント ハンドラーがシリアル化されない場合、これらは保持されません。  分離コード \(および関連 x:Code 機能\) を持たない [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] は、ランタイム手続きロジックをシリアル化する方法がありません。  シリアル化は内蔵されていて、論理ツリーに制限されているため、イベント ハンドラーを格納するための機能がありません。  その結果、イベント ハンドラー属性 \(属性自体とハンドラーの名前を表す文字列共\) は、出力 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] から削除されます。  
+## <a name="event-handling-is-not-preserved"></a><span data-ttu-id="b65ed-120">イベント処理が保持されません。</span><span class="sxs-lookup"><span data-stu-id="b65ed-120">Event Handling is Not Preserved</span></span>  
+ <span data-ttu-id="b65ed-121">ときにイベント ハンドラーによって追加された[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]はシリアル化すると、それらは保持されません。</span><span class="sxs-lookup"><span data-stu-id="b65ed-121">When event handlers that are added through [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] are serialized, they are not preserved.</span></span> [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]<span data-ttu-id="b65ed-122">分離コードなし (および関連する X:code メカニズムがなければ) ランタイム手続き型のロジックをシリアル化の方法がありません。</span><span class="sxs-lookup"><span data-stu-id="b65ed-122"> without code-behind (and also without the related x:Code mechanism) has no way of serializing runtime procedural logic.</span></span> <span data-ttu-id="b65ed-123">シリアル化は自己完結型の論理ツリーに限定的であるために、イベント ハンドラーを格納するための機能はありません。</span><span class="sxs-lookup"><span data-stu-id="b65ed-123">Because serialization is self-contained and limited to the logical tree, there is no facility for storing the event handlers.</span></span> <span data-ttu-id="b65ed-124">出力からのイベント ハンドラー属性、属性自体と、ハンドラーの名前を示す文字列値の両方を削除するため、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="b65ed-124">As a result, event handler attributes, both the attribute itself and the string value that names the handler, are removed from the output [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].</span></span>  
   
 <a name="Realistic_Scenarios_for_Use_of_XAMLWriter_Save"></a>   
-## XAMLWriter.Save を使用するための現実的なシナリオ  
- ここに示された制限は相当な量ですが、<xref:System.Windows.Markup.XamlWriter.Save%2A> をシリアル化に使用するための適切なシナリオがいくつかあります。  
+## <a name="realistic-scenarios-for-use-of-xamlwritersave"></a><span data-ttu-id="b65ed-125">XAMLWriter.Save の使用についての現実的なシナリオ</span><span class="sxs-lookup"><span data-stu-id="b65ed-125">Realistic Scenarios for Use of XAMLWriter.Save</span></span>  
+ <span data-ttu-id="b65ed-126">ここでは、非常に大きくを使用するためのいくつかの適切なシナリオは引き続き、制限事項が表示されているときに<xref:System.Windows.Markup.XamlWriter.Save%2A>シリアル化します。</span><span class="sxs-lookup"><span data-stu-id="b65ed-126">While the limitations listed here are fairly substantial, there are still several appropriate scenarios for using <xref:System.Windows.Markup.XamlWriter.Save%2A> for serialization.</span></span>  
   
--   ベクターまたはグラフィカル出力 : レンダリングされた領域の出力を使用して、再読み込みの際に同じベクターまたはグラフィックスを再現できます。  
+-   <span data-ttu-id="b65ed-127">Vector またはグラフィカルな出力: 表示された領域の出力を使用して同じベクターまたは再読み込み時のグラフィックスを再現できます。</span><span class="sxs-lookup"><span data-stu-id="b65ed-127">Vector or graphical output: The output of the rendered area can be used to reproduce the same vector or graphics when reloaded.</span></span>  
   
--   リッチ テキストとフロー ドキュメント : テキストと要素の書式およびその中に含まれる要素のコンテインメントはすべて、出力に保持されます。  これは、クリップボードに近似した機能に役立つ場合があります。  
+-   <span data-ttu-id="b65ed-128">リッチ テキストとフロー ドキュメント: テキストとすべての要素と要素の書式設定コンテインメント内に、出力に保持されます。</span><span class="sxs-lookup"><span data-stu-id="b65ed-128">Rich text and flow documents: Text and all element formatting and element containment within it is preserved in the output.</span></span> <span data-ttu-id="b65ed-129">これは、クリップボードに近似した機能に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="b65ed-129">This can be useful for mechanisms that approximate a clipboard functionality.</span></span>  
   
--   ビジネス オブジェクト データの保持 : ビジネス オブジェクトが基本的な [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 規則 \(カスタム コンストラクターと変換に対し参照ごとのプロパティ値を提供する、など\) に従う限り、[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] データなどのデータをカスタム要素に格納した場合、これらのビジネス オブジェクトはシリアル化によって永続的なものになります。
+-   <span data-ttu-id="b65ed-130">ビジネス オブジェクト データの保持: かどうかに格納しているデータ、カスタム要素など[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]データをビジネス オブジェクトは基本的に従う限り[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]カスタム コンス トラクターと変換は参照渡しでプロパティの値を提供するなどのルールこれらのビジネス オブジェクトをする永続的なものシリアル化を使用します。</span><span class="sxs-lookup"><span data-stu-id="b65ed-130">Preserving business object data: If you have stored data in custom elements, such as [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data, so long as your business objects follow basic [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] rules such as providing custom constructors and conversion for by-reference property values, these business objects can be perpetuated through serialization.</span></span>

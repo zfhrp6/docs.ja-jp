@@ -1,288 +1,291 @@
 ---
-title: "セキュリティ (WPF) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アプリケーション セキュリティ [WPF]"
-  - "ブラウザーによってホストされるアプリケーションのセキュリティ [WPF]"
-  - "機能コントロール [WPF], セキュリティ"
-  - "Internet Explorer のセキュリティ設定 [WPF]"
-  - "Loose XAML ファイル [WPF], サンドボックスの動作"
-  - "ナビゲーションのセキュリティ [WPF]"
-  - "WebBrowser コントロール [WPF], セキュリティ"
-  - "WPF のセキュリティ"
-  - "XAML ファイル [WPF], サンドボックスの動作"
-  - "XBAP のセキュリティ [WPF]"
+title: "セキュリティ (WPF)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- XAML files [WPF], sandbox behavior
+- browser-hosted application security [WPF]
+- application security [WPF]
+- navigation security [WPF]
+- loose XAML files [WPF], sandbox behavior
+- WPF security [WPF]
+- WebBrowser control [WPF], security
+- feature controls [WPF], security
+- XBAP security [WPF]
+- Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-caps.latest.revision: 38
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 33
+caps.latest.revision: "38"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9b7abab8747272fcf23611539c29ab476c5bed48
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# セキュリティ (WPF)
-<a name="introduction"></a> [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] のスタンドアロン アプリケーションおよびブラウザー ホスト アプリケーションを開発する場合は、セキュリティ モデルを考慮する必要があります。[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] スタンドアロン アプリケーションは、Windows インストーラー \(.msi\)、XCopy、または [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)] のいずれで配置されても、無制限のアクセス許可 \([!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** アクセス許可セット\) で実行されます。  部分信頼を配置した場合は、ClickOnce を使用したスタンドアロン WPF アプリケーションはサポートされません。  ただし、完全信頼ホスト アプリケーションは、.NET Framework アドイン モデルを使用して部分信頼 <xref:System.AppDomain> を作成できます。  詳細については、「[WPF アドインの概要](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)」を参照してください。  
+# <a name="security-wpf"></a><span data-ttu-id="2375f-102">セキュリティ (WPF)</span><span class="sxs-lookup"><span data-stu-id="2375f-102">Security (WPF)</span></span>
+<span data-ttu-id="2375f-103"><a name="introduction"></a>開発するときに[!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)]スタンドアロン アプリケーションとブラウザーによってホストされるアプリケーション、セキュリティ モデルを考慮する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2375f-103"><a name="introduction"></a> When developing [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] standalone and browser-hosted applications, you must consider the security model.</span></span> [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]<span data-ttu-id="2375f-104">無制限のアクセス許可を持つスタンドアロンのアプリケーションを実行 ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust**アクセス許可セット) Windows インストーラー (.msi)、XCopy を使用して配置するかどうか、または[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="2375f-104"> standalone applications execute with unrestricted permissions ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]**FullTrust** permission set), whether deployed using Windows Installer (.msi), XCopy, or [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)].</span></span> <span data-ttu-id="2375f-105">部分的に信頼されたスタンドアロンの WPF アプリケーションを ClickOnce で展開することはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="2375f-105">Deploying partial-trust, standalone WPF applications with ClickOnce is unsupported.</span></span> <span data-ttu-id="2375f-106">ただし、完全に信頼されたホスト アプリケーションが部分的に信頼を作成できます<xref:System.AppDomain>アドインの .NET Framework モデルを使用します。</span><span class="sxs-lookup"><span data-stu-id="2375f-106">However, a full-trust host application can create a partial-trust <xref:System.AppDomain> using the .NET Framework Add-in model.</span></span> <span data-ttu-id="2375f-107">詳細については、次を参照してください。 [WPF アドイン概要](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="2375f-107">For more information, see [WPF Add-Ins Overview](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).</span></span>  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] ブラウザー ホスト アプリケーションは、[!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)] または Firefox によってホストされ、[!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] にすることも、Loose [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] ドキュメントにすることもできます。詳細については、「[WPF XAML ブラウザー アプリケーションの概要](../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)」を参照してください。  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]<span data-ttu-id="2375f-108">ブラウザー ホスト アプリケーションがによってホストされている[!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)]Firefox、またはいずれかを指定できます[!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)]またはルース[!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)]詳細については、ドキュメントを参照してください[WPF XAML ブラウザー アプリケーションの概要](../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="2375f-108"> browser-hosted applications are hosted by [!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)] or Firefox, and can be either [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] or loose [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] documents For more information, see [WPF XAML Browser Applications Overview](../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md).</span></span>  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] ブラウザー ホスト アプリケーションは、既定では部分信頼セキュリティ サンドボックス内で実行され、既定の [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] インターネット ゾーン アクセス許可セットに制限されます。  これにより、一般的な Web アプリケーションが分離されるのと同じ方法で、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] ブラウザー ホスト アプリケーションがクライアント コンピューターから効果的に分離されます。  配置 URL のセキュリティ ゾーンおよびクライアントのセキュリティ構成に応じて、XBAP は特権を完全信頼まで昇格させることができます。  詳細については、「[WPF 部分信頼セキュリティ](../../../docs/framework/wpf/wpf-partial-trust-security.md)」を参照してください。  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]<span data-ttu-id="2375f-109">既定では、既定値に限定したブラウザーによってホストされるアプリケーションが部分信頼のセキュリティのサンド ボックス内で実行[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]**インターネット**ゾーン アクセス許可セット。</span><span class="sxs-lookup"><span data-stu-id="2375f-109"> browser-hosted applications execute within a partial trust security sandbox, by default, which is limited to the default [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]**Internet** zone permission set.</span></span> <span data-ttu-id="2375f-110">これを効果的に分離[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]ことが期待する一般的な Web アプリケーションの分離と同様に、クライアント コンピューターからブラウザーでホストされるアプリケーション。</span><span class="sxs-lookup"><span data-stu-id="2375f-110">This effectively isolates [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] browser-hosted applications from the client computer in the same way that you would expect typical Web applications to be isolated.</span></span> <span data-ttu-id="2375f-111">XBAP は、デプロイメント URL およびクライアントのセキュリティ構成のセキュリティ ゾーンに基づいて、完全な信頼まで特権を昇格することができます。</span><span class="sxs-lookup"><span data-stu-id="2375f-111">An XBAP can elevate privileges, up to Full Trust, depending on the security zone of the deployment URL and the client's security configuration.</span></span> <span data-ttu-id="2375f-112">詳細については、次を参照してください。 [WPF 部分信頼セキュリティ](../../../docs/framework/wpf/wpf-partial-trust-security.md)です。</span><span class="sxs-lookup"><span data-stu-id="2375f-112">For more information, see [WPF Partial Trust Security](../../../docs/framework/wpf/wpf-partial-trust-security.md).</span></span>  
   
- ここでは、[!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] のスタンドアロン アプリケーションとブラウザー ホストアプリケーションのセキュリティ モデルについて説明します。  
+ <span data-ttu-id="2375f-113">このトピックでのセキュリティ モデルについて説明します[!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)]スタンドアロンおよびブラウザーによってホストされるアプリケーション。</span><span class="sxs-lookup"><span data-stu-id="2375f-113">This topic discusses the security model for [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] standalone and browser-hosted applications.</span></span>  
   
- このトピックは、次のセクションで構成されています。  
+ <span data-ttu-id="2375f-114">このトピックは、次のセクションで構成されています。</span><span class="sxs-lookup"><span data-stu-id="2375f-114">This topic contains the following sections:</span></span>  
   
--   [安全なナビゲーション](#SafeTopLevelNavigation)  
+-   [<span data-ttu-id="2375f-115">安全なナビゲーション</span><span class="sxs-lookup"><span data-stu-id="2375f-115">Safe Navigation</span></span>](#SafeTopLevelNavigation)  
   
--   [Web ブラウザーのセキュリティ設定](#InternetExplorerSecuritySettings)  
+-   [<span data-ttu-id="2375f-116">Web ブラウザーのセキュリティ設定</span><span class="sxs-lookup"><span data-stu-id="2375f-116">Web Browsing Software Security Settings</span></span>](#InternetExplorerSecuritySettings)  
   
--   [WebBrowser コントロールと機能コントロール](#webbrowser_control_and_feature_controls)  
+-   [<span data-ttu-id="2375f-117">WebBrowser コントロールと機能コントロール</span><span class="sxs-lookup"><span data-stu-id="2375f-117">WebBrowser Control and Feature Controls</span></span>](#webbrowser_control_and_feature_controls)  
   
--   [部分信頼クライアント アプリケーションに対する APTCA アセンブリの無効化](#APTCA)  
+-   [<span data-ttu-id="2375f-118">部分信頼クライアント アプリケーションに対する APTCA の無効化</span><span class="sxs-lookup"><span data-stu-id="2375f-118">Disabling APTCA Assemblies for Partially Trusted Client Applications</span></span>](#APTCA)  
   
--   [Loose XAML ファイルに対するサンドボックスの動作](#LooseContentSandboxing)  
+-   [<span data-ttu-id="2375f-119">Loose XAML ファイルに対するサンドボックスの動作</span><span class="sxs-lookup"><span data-stu-id="2375f-119">Sandbox Behavior for Loose XAML Files</span></span>](#LooseContentSandboxing)  
   
--   [セキュリティを向上する WPF アプリケーションを開発するためのリソース](#BestPractices)  
+-   [<span data-ttu-id="2375f-120">セキュリティを向上する WPF アプリケーションを開発するためのリソース</span><span class="sxs-lookup"><span data-stu-id="2375f-120">Resources for Developing WPF Applications that Promote Security</span></span>](#BestPractices)  
   
 <a name="SafeTopLevelNavigation"></a>   
-## 安全なナビゲーション  
- [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)] の場合、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] はアプリケーションとブラウザーという 2 種類のナビゲーションを区別します。  
+## <a name="safe-navigation"></a><span data-ttu-id="2375f-121">安全なナビゲーション</span><span class="sxs-lookup"><span data-stu-id="2375f-121">Safe Navigation</span></span>  
+ <span data-ttu-id="2375f-122">[!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)]、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]ナビゲーションの 2 つの種類に区別: アプリケーションとブラウザー。</span><span class="sxs-lookup"><span data-stu-id="2375f-122">For [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)], [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] distinguishes two types of navigation: application and browser.</span></span>  
   
- アプリケーション ナビゲーションは、ブラウザーによってホストされるアプリケーション内のコンテンツの項目間のナビゲーションです。  ブラウザー ナビゲーションは、ブラウザー自体のコンテンツと場所の URL を変更するナビゲーションです。  アプリケーション ナビゲーション \(通常は XAML\) とブラウザー ナビゲーション \(通常は HTML\) の関係を次の図に示します。  
+ <span data-ttu-id="2375f-123">*アプリケーション ナビゲーション*は、ブラウザーによってホストされるアプリケーション内のコンテンツ項目間のナビゲーションです。</span><span class="sxs-lookup"><span data-stu-id="2375f-123">*Application navigation* is navigation between items of content within an application that is hosted by a browser.</span></span> <span data-ttu-id="2375f-124">*ブラウザー ナビゲーション*は、ブラウザー自体のコンテンツとロケーション URL を変更するナビゲーションです。</span><span class="sxs-lookup"><span data-stu-id="2375f-124">*Browser navigation* is navigation that changes the content and location URL of a browser itself.</span></span> <span data-ttu-id="2375f-125">アプリケーションのナビゲーション (通常は XAML) とブラウザー ナビゲーション (通常は HTML) 間のリレーションシップは、次の図に表示されます。</span><span class="sxs-lookup"><span data-stu-id="2375f-125">The relationship between application navigation (typically XAML) and browser navigation (typically HTML) is shown in the following illustration:</span></span>
   
- ![ナビゲーションのダイアグラム](../../../docs/framework/wpf/media/safetoplevelnavigationfigure.png "SafeTopLevelNavigationFigure")  
+ <span data-ttu-id="2375f-126">![Navigation diagram](../../../docs/framework/wpf/media/safetoplevelnavigationfigure.png "SafeTopLevelNavigationFigure")</span><span class="sxs-lookup"><span data-stu-id="2375f-126">![Navigation diagram](../../../docs/framework/wpf/media/safetoplevelnavigationfigure.png "SafeTopLevelNavigationFigure")</span></span>  
   
- [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] の移動先として安全と見なされるコンテンツの種類は、主に、使用されるアプリケーション ナビゲーションとブラウザー ナビゲーションによって決まります。  
+ <span data-ttu-id="2375f-127">安全と見なされるコンテンツの種類、[!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)]への移動には、主にによって決まりますアプリケーションまたはブラウザー ナビゲーションが使用されているか。</span><span class="sxs-lookup"><span data-stu-id="2375f-127">The type of content that is considered safe for an [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] to navigate to is primarily determined by whether application navigation or browser navigation is used.</span></span>  
   
 <a name="Application_Navigation_Security"></a>   
-### アプリケーション ナビゲーションのセキュリティ  
- アプリケーション ナビゲーションが安全と見なされるのは、それが、次の 4 種類のコンテンツをサポートするパック [!INCLUDE[TLA2#tla_uri](../../../includes/tla2sharptla-uri-md.md)] で識別できる場合です。  
+### <a name="application-navigation-security"></a><span data-ttu-id="2375f-128">アプリケーション ナビゲーションのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="2375f-128">Application Navigation Security</span></span>  
+ <span data-ttu-id="2375f-129">アプリケーションのナビゲーションはパックに指定できる場合は、安全と見なされます[!INCLUDE[TLA2#tla_uri](../../../includes/tla2sharptla-uri-md.md)]、4 種類のコンテンツをサポートします。</span><span class="sxs-lookup"><span data-stu-id="2375f-129">Application navigation is considered safe if it can be identified with a pack [!INCLUDE[TLA2#tla_uri](../../../includes/tla2sharptla-uri-md.md)], which supports four types of content:</span></span>  
   
-|コンテンツ タイプ|Description|URI の例|  
-|---------------|-----------------|------------|  
-|リソース|ビルドの種類が **Resource** のプロジェクトに追加されるファイル。|`pack://application:,,,/MyResourceFile.xaml`|  
-|Content|ビルドの種類が **Content** のプロジェクトに追加されるファイル。|`pack://application:,,,/MyContentFile.xaml`|  
-|起点サイト|ビルドの種類が **None** のプロジェクトに追加されるファイル。|`pack://siteoforigin:,,,/MySiteOfOriginFile.xaml`|  
-|アプリケーション コード|コンパイルされた分離コードを含む XAML リソース、<br /><br /> または<br /><br /> ビルドの種類が **Page** のプロジェクトに追加される XAML ファイル。|`pack://application:,,,/MyResourceFile` `.xaml`|  
+|<span data-ttu-id="2375f-130">コンテンツ タイプ</span><span class="sxs-lookup"><span data-stu-id="2375f-130">Content Type</span></span>|<span data-ttu-id="2375f-131">説明</span><span class="sxs-lookup"><span data-stu-id="2375f-131">Description</span></span>|<span data-ttu-id="2375f-132">URI の例</span><span class="sxs-lookup"><span data-stu-id="2375f-132">URI Example</span></span>|  
+|------------------|-----------------|-----------------|  
+|<span data-ttu-id="2375f-133">リソース</span><span class="sxs-lookup"><span data-stu-id="2375f-133">Resource</span></span>|<span data-ttu-id="2375f-134">ビルドの種類のプロジェクトに追加されるファイル**リソース**です。</span><span class="sxs-lookup"><span data-stu-id="2375f-134">Files that are added to a project with a build type of **Resource**.</span></span>|`pack://application:,,,/MyResourceFile.xaml`|  
+|<span data-ttu-id="2375f-135">Content</span><span class="sxs-lookup"><span data-stu-id="2375f-135">Content</span></span>|<span data-ttu-id="2375f-136">ビルドの種類のプロジェクトに追加されるファイル**コンテンツ**です。</span><span class="sxs-lookup"><span data-stu-id="2375f-136">Files that are added to a project with a build type of **Content**.</span></span>|`pack://application:,,,/MyContentFile.xaml`|  
+|<span data-ttu-id="2375f-137">起点サイト</span><span class="sxs-lookup"><span data-stu-id="2375f-137">Site of origin</span></span>|<span data-ttu-id="2375f-138">ビルドの種類のプロジェクトに追加されるファイル**None**です。</span><span class="sxs-lookup"><span data-stu-id="2375f-138">Files that are added to a project with a build type of **None**.</span></span>|`pack://siteoforigin:,,,/MySiteOfOriginFile.xaml`|  
+|<span data-ttu-id="2375f-139">アプリケーション コード</span><span class="sxs-lookup"><span data-stu-id="2375f-139">Application code</span></span>|<span data-ttu-id="2375f-140">コンパイルされたコード分離を含む XAML リソース。</span><span class="sxs-lookup"><span data-stu-id="2375f-140">XAML resources that have a compiled code-behind.</span></span><br /><br /> <span data-ttu-id="2375f-141">または</span><span class="sxs-lookup"><span data-stu-id="2375f-141">-or-</span></span><br /><br /> <span data-ttu-id="2375f-142">XAML ファイルのビルドの種類のプロジェクトに追加される**ページ**です。</span><span class="sxs-lookup"><span data-stu-id="2375f-142">XAML files that are added to a project with a build type of **Page**.</span></span>|<span data-ttu-id="2375f-143">`pack://application:,,,/MyResourceFile` `.xaml`</span><span class="sxs-lookup"><span data-stu-id="2375f-143">`pack://application:,,,/MyResourceFile` `.xaml`</span></span>|  
   
 > [!NOTE]
->  アプリケーション データ ファイルとパック [!INCLUDE[TLA2#tla_uri#plural](../../../includes/tla2sharptla-urisharpplural-md.md)] の詳細については、「[WPF アプリケーションのリソース ファイル、コンテンツ ファイル、およびデータ ファイル](../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)」を参照してください。  
+>  <span data-ttu-id="2375f-144">アプリケーションのデータ ファイルとパックの詳細については[!INCLUDE[TLA2#tla_uri#plural](../../../includes/tla2sharptla-urisharpplural-md.md)]を参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)です。</span><span class="sxs-lookup"><span data-stu-id="2375f-144">For more information about application data files and pack [!INCLUDE[TLA2#tla_uri#plural](../../../includes/tla2sharptla-urisharpplural-md.md)], see [WPF Application Resource, Content, and Data Files](../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md).</span></span>  
   
- これらのコンテンツ タイプのファイルには、ユーザーまたはプログラムによって移動できます。  
+ <span data-ttu-id="2375f-145">これらのコンテンツ タイプのファイルは、ユーザーまたはプログラムを使用して移動できます。</span><span class="sxs-lookup"><span data-stu-id="2375f-145">Files of these content types can be navigated to by either the user or programmatically:</span></span>  
   
--   **ユーザー ナビゲーション**。  ユーザーは <xref:System.Windows.Documents.Hyperlink> 要素をクリックして移動します。  
+-   <span data-ttu-id="2375f-146">**ユーザー ナビゲーション**。</span><span class="sxs-lookup"><span data-stu-id="2375f-146">**User Navigation**.</span></span> <span data-ttu-id="2375f-147">ユーザーが移動する をクリックして、<xref:System.Windows.Documents.Hyperlink>要素。</span><span class="sxs-lookup"><span data-stu-id="2375f-147">The user navigates by clicking a <xref:System.Windows.Documents.Hyperlink> element.</span></span>  
   
--   **プログラム ナビゲーション**。  アプリケーションは、<xref:System.Windows.Navigation.NavigationWindow.Source%2A?displayProperty=fullName> プロパティを設定するなど、ユーザーとは無関係に移動します。  
+-   <span data-ttu-id="2375f-148">**プログラム ナビゲーション**。</span><span class="sxs-lookup"><span data-stu-id="2375f-148">**Programmatic Navigation**.</span></span> <span data-ttu-id="2375f-149">アプリケーションの移動を設定して、ユーザーを使用することがなく、<xref:System.Windows.Navigation.NavigationWindow.Source%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="2375f-149">The application navigates without involving the user, for example, by setting the <xref:System.Windows.Navigation.NavigationWindow.Source%2A?displayProperty=nameWithType> property.</span></span>  
   
 <a name="Browser_Navigation_Security"></a>   
-### ブラウザー ナビゲーションのセキュリティ  
- ブラウザー ナビゲーションは、次の条件の下でのみ安全と見なされます。  
+### <a name="browser-navigation-security"></a><span data-ttu-id="2375f-150">ブラウザー ナビゲーションのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="2375f-150">Browser Navigation Security</span></span>  
+ <span data-ttu-id="2375f-151">ブラウザー ナビゲーションは、次の条件の下でのみ安全と見なされます。</span><span class="sxs-lookup"><span data-stu-id="2375f-151">Browser navigation is considered safe only under the following conditions:</span></span>  
   
--   **ユーザー ナビゲーション**。  ユーザーは、入れ子になった <xref:System.Windows.Controls.Frame> 内ではなく、メインの <xref:System.Windows.Navigation.NavigationWindow> 内にある <xref:System.Windows.Documents.Hyperlink> 要素をクリックすることで移動する。  
+-   <span data-ttu-id="2375f-152">**ユーザー ナビゲーション**。</span><span class="sxs-lookup"><span data-stu-id="2375f-152">**User Navigation**.</span></span> <span data-ttu-id="2375f-153">ユーザーが移動する をクリックして、<xref:System.Windows.Documents.Hyperlink>メイン内にある要素<xref:System.Windows.Navigation.NavigationWindow>ではなく、入れ子になった<xref:System.Windows.Controls.Frame>です。</span><span class="sxs-lookup"><span data-stu-id="2375f-153">The user navigates by clicking a <xref:System.Windows.Documents.Hyperlink> element that is within the main <xref:System.Windows.Navigation.NavigationWindow>, not in a nested <xref:System.Windows.Controls.Frame>.</span></span>  
   
--   **ゾーン**。  移動先のコンテンツが、インターネットまたはローカル イントラネット上に存在する。  
+-   <span data-ttu-id="2375f-154">**ゾーン**。</span><span class="sxs-lookup"><span data-stu-id="2375f-154">**Zone**.</span></span> <span data-ttu-id="2375f-155">移動先のコンテンツが、インターネットまたはローカル イントラネット上に存在する。</span><span class="sxs-lookup"><span data-stu-id="2375f-155">The content being navigated to is located on the Internet or the local intranet.</span></span>  
   
--   **プロトコル**。  使用されるプロトコルは、**http**、**https**、**file**、または **mailto**。  
+-   <span data-ttu-id="2375f-156">**プロトコル**。</span><span class="sxs-lookup"><span data-stu-id="2375f-156">**Protocol**.</span></span> <span data-ttu-id="2375f-157">使用されているプロトコルは、いずれかの**http**、 **https**、**ファイル**、または**mailto**です。</span><span class="sxs-lookup"><span data-stu-id="2375f-157">The protocol being used is either **http**, **https**, **file**, or **mailto**.</span></span>  
   
- これらの条件に適合しない方法で [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] がコンテンツに移動しようとすると、<xref:System.Security.SecurityException> がスローされます。  
+ <span data-ttu-id="2375f-158">場合、[!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)]これらの条件に準拠していない方法でコンテンツに移動しようとしています、<xref:System.Security.SecurityException>がスローされます。</span><span class="sxs-lookup"><span data-stu-id="2375f-158">If an [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] attempts to navigate to content in a manner that does not comply with these conditions, a <xref:System.Security.SecurityException> is thrown.</span></span>  
   
 <a name="InternetExplorerSecuritySettings"></a>   
-## Web ブラウザーのセキュリティ設定  
- コンピューターのセキュリティ設定により、Web ブラウザーに付与されるアクセス権が決まります。  Web ブラウザーには、Internet Explorer や PresentationHost.exe など、[WinINet](http://go.microsoft.com/fwlink/?LinkId=179379) API または [UrlMon](http://go.microsoft.com/fwlink/?LinkId=179383) API を使用するアプリケーションやコンポーネントがあります。  
+## <a name="web-browsing-software-security-settings"></a><span data-ttu-id="2375f-159">Web ブラウザーのセキュリティ設定</span><span class="sxs-lookup"><span data-stu-id="2375f-159">Web Browsing Software Security Settings</span></span>  
+ <span data-ttu-id="2375f-160">コンピューターのセキュリティ設定によって、Web ブラウザーに付与されるアクセス権が決まります。</span><span class="sxs-lookup"><span data-stu-id="2375f-160">The security settings on your computer determine the access that any Web browsing software is granted.</span></span> <span data-ttu-id="2375f-161">Web ブラウザーでは、すべてのアプリケーションまたはを使用するコンポーネントが含まれています、 [WinINet](http://go.microsoft.com/fwlink/?LinkId=179379)または[UrlMon](http://go.microsoft.com/fwlink/?LinkId=179383) Api では、Internet Explorer、PresentationHost.exe などです。</span><span class="sxs-lookup"><span data-stu-id="2375f-161">Web browsing software includes any application or component that uses the [WinINet](http://go.microsoft.com/fwlink/?LinkId=179379) or [UrlMon](http://go.microsoft.com/fwlink/?LinkId=179383) APIs, including Internet Explorer and PresentationHost.exe.</span></span>  
   
- [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] は、[!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] での実行が可能な機能を構成できる機構を備えています。これらの機能には、次のものがあります。  
+ [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]<span data-ttu-id="2375f-162">またはを実行するのには許可されている機能を構成できますメカニズムを備えています[!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]次を含みます。</span><span class="sxs-lookup"><span data-stu-id="2375f-162"> provides a mechanism by which you can configure the functionality that is allowed to be executed by or from [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)], including the following:</span></span>  
   
--   [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)] 依存コンポーネント  
+-   [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)]<span data-ttu-id="2375f-163"> 依存コンポーネント</span><span class="sxs-lookup"><span data-stu-id="2375f-163">-reliant components</span></span>  
   
--   ActiveX コントロールおよびプラグイン  
+-   <span data-ttu-id="2375f-164">ActiveX コントロールおよびプラグイン</span><span class="sxs-lookup"><span data-stu-id="2375f-164">ActiveX controls and plug-ins</span></span>  
   
--   ダウンロード  
+-   <span data-ttu-id="2375f-165">ダウンロード</span><span class="sxs-lookup"><span data-stu-id="2375f-165">Downloads</span></span>  
   
--   スクリプト  
+-   <span data-ttu-id="2375f-166">[スクリプティング]</span><span class="sxs-lookup"><span data-stu-id="2375f-166">Scripting</span></span>  
   
--   ユーザー認証  
+-   <span data-ttu-id="2375f-167">ユーザー認証</span><span class="sxs-lookup"><span data-stu-id="2375f-167">User Authentication</span></span>  
   
- このような方法でセキュリティ保護できる機能のコレクションは、**インターネット**、**イントラネット**、**信頼済みサイト**、および**制限付きサイト**の各ゾーンのゾーン単位で構成されます。  次の手順では、セキュリティ設定を構成する方法について説明します。  
+ <span data-ttu-id="2375f-168">に対して、ゾーンごとにこの方法でセキュリティで保護することができる機能のコレクションが構成されている、**インターネット**、**イントラネット**、**信頼済みサイト**、および**制限付きサイト**ゾーンです。</span><span class="sxs-lookup"><span data-stu-id="2375f-168">The collection of functionality that can be secured in this way is configured on a per-zone basis for the **Internet**, **Intranet**, **Trusted Sites**, and **Restricted Sites** zones.</span></span> <span data-ttu-id="2375f-169">次の手順では、セキュリティ設定の構成方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2375f-169">The following steps describe how to configure your security settings:</span></span>  
   
-1.  **コントロール パネル**を開きます。  
+1.  <span data-ttu-id="2375f-170">**[コントロール パネル]**を開きます。</span><span class="sxs-lookup"><span data-stu-id="2375f-170">Open **Control Panel**.</span></span>  
   
-2.  **\[ネットワークとインターネット\]** をクリックし、**\[インターネット オプション\]** をクリックします。  
+2.  <span data-ttu-id="2375f-171">をクリックして**ネットワークとインターネット** をクリックし、**インターネット オプション**です。</span><span class="sxs-lookup"><span data-stu-id="2375f-171">Click **Network and Internet** and then click **Internet Options**.</span></span>  
   
-     \[インターネット オプション\] ダイアログ ボックスが表示されます。  
+     <span data-ttu-id="2375f-172">[インターネット オプション] ダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="2375f-172">The Internet Options dialog box appears.</span></span>  
   
-3.  **\[セキュリティ\]** タブで、セキュリティ設定を構成するゾーンを選択します。  
+3.  <span data-ttu-id="2375f-173">**セキュリティ** タブのセキュリティ設定を構成するゾーンを選択します。</span><span class="sxs-lookup"><span data-stu-id="2375f-173">On the **Security** tab, select the zone to configure the security settings for.</span></span>  
   
-4.  **\[レベルのカスタマイズ\]** をクリックします。  
+4.  <span data-ttu-id="2375f-174">クリックして、**レベルのカスタマイズ**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="2375f-174">Click the **Custom Level** button.</span></span>  
   
-     **\[セキュリティの設定\]** ダイアログ ボックスが表示されるので、選択したゾーンのセキュリティ設定を構成します。  
+     <span data-ttu-id="2375f-175">**セキュリティ設定** ダイアログ ボックスが表示され、選択されたゾーンのセキュリティ設定を構成することができます。</span><span class="sxs-lookup"><span data-stu-id="2375f-175">The **Security Settings** dialog box appears and you can configure the security settings for the selected zone.</span></span>  
   
-     ![&#91;セキュリティ設定&#93; ダイアログ ボックス](../../../docs/framework/wpf/media/wpfsecurityfigure1.PNG "WPFSecurityFigure1")  
+     <span data-ttu-id="2375f-176">![[セキュリティ設定] ダイアログ ボックス](../../../docs/framework/wpf/media/wpfsecurityfigure1.PNG "WPFSecurityFigure1")</span><span class="sxs-lookup"><span data-stu-id="2375f-176">![Security Settings dialog box](../../../docs/framework/wpf/media/wpfsecurityfigure1.PNG "WPFSecurityFigure1")</span></span>  
   
 > [!NOTE]
->  \[インターネット オプション\] ダイアログ ボックスは、Internet Explorer から開くこともできます。  **\[ツール\]** をクリックし、**\[インターネット オプション\]** をクリックします。  
+>  <span data-ttu-id="2375f-177">[インターネット オプション] ダイアログ ボックスは、Internet Explorer から開くこともできます。</span><span class="sxs-lookup"><span data-stu-id="2375f-177">You can also get to the Internet Options dialog box from Internet Explorer.</span></span> <span data-ttu-id="2375f-178">をクリックして**ツール** をクリックし、**インターネット オプション**です。</span><span class="sxs-lookup"><span data-stu-id="2375f-178">Click **Tools** and then click **Internet Options**.</span></span>  
   
- [!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)] 以降では、特に [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)] を対象にした次のセキュリティ設定があります。  
+ <span data-ttu-id="2375f-179">以降で[!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)]、について具体的には次のセキュリティ設定[!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)]が含まれています。</span><span class="sxs-lookup"><span data-stu-id="2375f-179">Starting with [!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)], the following security settings specifically for [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)] are included:</span></span>  
   
--   **Loose XAML**。  [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] が Loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] ファイルに移動できるかどうかを制御します  \(\[有効\]、\[無効\]、および \[ダイアログを表示する\] オプション\)。  
+-   <span data-ttu-id="2375f-180">**Loose XAML**。</span><span class="sxs-lookup"><span data-stu-id="2375f-180">**Loose XAML**.</span></span> <span data-ttu-id="2375f-181">コントロールかどうか[!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]に移動し、失われたことができます[!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)]ファイル。</span><span class="sxs-lookup"><span data-stu-id="2375f-181">Controls whether [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] can navigate to and loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] files.</span></span> <span data-ttu-id="2375f-182">([有効]、[無効]、および [ダイアログを表示する] オプション)。</span><span class="sxs-lookup"><span data-stu-id="2375f-182">(Enable, Disable, and Prompt options).</span></span>  
   
--   **XAML ブラウザー アプリケーション**。  [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] が [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)] に移動して実行できるかどうかを制御します   \(\[有効\]、\[無効\]、および \[ダイアログを表示する\] オプション\)。  
+-   <span data-ttu-id="2375f-183">**XAML ブラウザー アプリケーション**。</span><span class="sxs-lookup"><span data-stu-id="2375f-183">**XAML browser applications**.</span></span> <span data-ttu-id="2375f-184">コントロールかどうか[!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]に移動して、実行[!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="2375f-184">Controls whether [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] can navigate to and run [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)].</span></span> <span data-ttu-id="2375f-185">([有効]、[無効]、および [ダイアログを表示する] オプション)。</span><span class="sxs-lookup"><span data-stu-id="2375f-185">(Enable, Disable, and Prompt options).</span></span>  
   
- 既定では、これらの設定は **\[インターネット\]**、**\[イントラネット\]**、および **\[信頼済みサイト\]** の各ゾーンではすべて有効になり、**\[制限付きサイト\]** ゾーンでは無効になります。  
+ <span data-ttu-id="2375f-186">既定では、これらの設定はすべて有効になっているため、**インターネット**、**ローカル イントラネット**、および**信頼済みサイト**ゾーン、および無効にするには**制限付きサイト**ゾーンです。</span><span class="sxs-lookup"><span data-stu-id="2375f-186">By default, these settings are all enabled for the **Internet**, **Local intranet**, and **Trusted sites** zones, and disabled for the **Restricted sites** zone.</span></span>  
   
 <a name="Security_Settings_for_IE6_and_Below"></a>   
-### セキュリティ関連の WPF レジストリの設定  
- \[インターネット オプション\] から使用できるセキュリティ設定以外に、セキュリティ上重要なさまざまな WPF 機能を選択的にブロックするために次のレジストリ値を使用できます。  値は次のキーで定義されます。  
+### <a name="security-related-wpf-registry-settings"></a><span data-ttu-id="2375f-187">セキュリティ関連の WPF レジストリの設定</span><span class="sxs-lookup"><span data-stu-id="2375f-187">Security-related WPF Registry Settings</span></span>  
+ <span data-ttu-id="2375f-188">[インターネット オプション] から使用できるセキュリティ設定以外に、セキュリティ上重要なさまざまな WPF 機能を選択的にブロックするために次のレジストリ値を使用できます。</span><span class="sxs-lookup"><span data-stu-id="2375f-188">In addition to the security settings available through the Internet Options, the following registry values are available for selectively blocking a number of security-sensitive WPF features.</span></span> <span data-ttu-id="2375f-189">値は次のキーで定義されます。</span><span class="sxs-lookup"><span data-stu-id="2375f-189">The values are defined under the following key:</span></span>  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\Windows Presentation Foundation\Features`  
   
- 設定可能な値を次の表に示します。  
+ <span data-ttu-id="2375f-190">設定可能な値を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="2375f-190">The following table lists the values that can be set.</span></span>  
   
-|値名|値型|値のデータ|  
-|--------|--------|-----------|  
-|XBAPDisallow|REG\_DWORD|許可しない場合は 1、許可する場合は 0。|  
-|LooseXamlDisallow|REG\_DWORD|許可しない場合は 1、許可する場合は 0。|  
-|WebBrowserDisallow|REG\_DWORD|許可しない場合は 1、許可する場合は 0。|  
-|MediaAudioDisallow|REG\_DWORD|許可しない場合は 1、許可する場合は 0。|  
-|MediaImageDisallow|REG\_DWORD|許可しない場合は 1、許可する場合は 0。|  
-|MediaVideoDisallow|REG\_DWORD|許可しない場合は 1、許可する場合は 0。|  
-|ScriptInteropDisallow|REG\_DWORD|許可しない場合は 1、許可する場合は 0。|  
+|<span data-ttu-id="2375f-191">値名</span><span class="sxs-lookup"><span data-stu-id="2375f-191">Value Name</span></span>|<span data-ttu-id="2375f-192">値型</span><span class="sxs-lookup"><span data-stu-id="2375f-192">Value Type</span></span>|<span data-ttu-id="2375f-193">値のデータ</span><span class="sxs-lookup"><span data-stu-id="2375f-193">Value Data</span></span>|  
+|----------------|----------------|----------------|  
+|<span data-ttu-id="2375f-194">XBAPDisallow</span><span class="sxs-lookup"><span data-stu-id="2375f-194">XBAPDisallow</span></span>|<span data-ttu-id="2375f-195">REG_DWORD</span><span class="sxs-lookup"><span data-stu-id="2375f-195">REG_DWORD</span></span>|<span data-ttu-id="2375f-196">許可しない場合は 1、許可する場合は 0。</span><span class="sxs-lookup"><span data-stu-id="2375f-196">1 to disallow; 0 to allow.</span></span>|  
+|<span data-ttu-id="2375f-197">LooseXamlDisallow</span><span class="sxs-lookup"><span data-stu-id="2375f-197">LooseXamlDisallow</span></span>|<span data-ttu-id="2375f-198">REG_DWORD</span><span class="sxs-lookup"><span data-stu-id="2375f-198">REG_DWORD</span></span>|<span data-ttu-id="2375f-199">許可しない場合は 1、許可する場合は 0。</span><span class="sxs-lookup"><span data-stu-id="2375f-199">1 to disallow; 0 to allow.</span></span>|  
+|<span data-ttu-id="2375f-200">WebBrowserDisallow</span><span class="sxs-lookup"><span data-stu-id="2375f-200">WebBrowserDisallow</span></span>|<span data-ttu-id="2375f-201">REG_DWORD</span><span class="sxs-lookup"><span data-stu-id="2375f-201">REG_DWORD</span></span>|<span data-ttu-id="2375f-202">許可しない場合は 1、許可する場合は 0。</span><span class="sxs-lookup"><span data-stu-id="2375f-202">1 to disallow; 0 to allow.</span></span>|  
+|<span data-ttu-id="2375f-203">MediaAudioDisallow</span><span class="sxs-lookup"><span data-stu-id="2375f-203">MediaAudioDisallow</span></span>|<span data-ttu-id="2375f-204">REG_DWORD</span><span class="sxs-lookup"><span data-stu-id="2375f-204">REG_DWORD</span></span>|<span data-ttu-id="2375f-205">許可しない場合は 1、許可する場合は 0。</span><span class="sxs-lookup"><span data-stu-id="2375f-205">1 to disallow; 0 to allow.</span></span>|  
+|<span data-ttu-id="2375f-206">MediaImageDisallow</span><span class="sxs-lookup"><span data-stu-id="2375f-206">MediaImageDisallow</span></span>|<span data-ttu-id="2375f-207">REG_DWORD</span><span class="sxs-lookup"><span data-stu-id="2375f-207">REG_DWORD</span></span>|<span data-ttu-id="2375f-208">許可しない場合は 1、許可する場合は 0。</span><span class="sxs-lookup"><span data-stu-id="2375f-208">1 to disallow; 0 to allow.</span></span>|  
+|<span data-ttu-id="2375f-209">MediaVideoDisallow</span><span class="sxs-lookup"><span data-stu-id="2375f-209">MediaVideoDisallow</span></span>|<span data-ttu-id="2375f-210">REG_DWORD</span><span class="sxs-lookup"><span data-stu-id="2375f-210">REG_DWORD</span></span>|<span data-ttu-id="2375f-211">許可しない場合は 1、許可する場合は 0。</span><span class="sxs-lookup"><span data-stu-id="2375f-211">1 to disallow; 0 to allow.</span></span>|  
+|<span data-ttu-id="2375f-212">ScriptInteropDisallow</span><span class="sxs-lookup"><span data-stu-id="2375f-212">ScriptInteropDisallow</span></span>|<span data-ttu-id="2375f-213">REG_DWORD</span><span class="sxs-lookup"><span data-stu-id="2375f-213">REG_DWORD</span></span>|<span data-ttu-id="2375f-214">許可しない場合は 1、許可する場合は 0。</span><span class="sxs-lookup"><span data-stu-id="2375f-214">1 to disallow; 0 to allow.</span></span>|  
   
 <a name="webbrowser_control_and_feature_controls"></a>   
-## WebBrowser コントロールと機能コントロール  
- WPF <xref:System.Windows.Controls.WebBrowser> コントロールを使用すると、Web コンテンツをホストできます。  WPF <xref:System.Windows.Controls.WebBrowser> コントロールは、基になる WebBrowser ActiveX コントロールをラップします。  WPF では、WPF <xref:System.Windows.Controls.WebBrowser> コントロールを使用して信頼されていない Web コンテンツをホストするときに、アプリケーションの保護を一部サポートします。  ただし、一部のセキュリティ機能は、<xref:System.Windows.Controls.WebBrowser> コントロールを使用してアプリケーションによって直接適用する必要があります。  WebBrowser ActiveX コントロールの詳細については、「[WebBrowser Control Overviews and Tutorials \(WebBrowser コントロールの概要とチュートリアル\)](http://go.microsoft.com/fwlink/?LinkId=179388)」を参照してください。  
+## <a name="webbrowser-control-and-feature-controls"></a><span data-ttu-id="2375f-215">WebBrowser コントロールと機能コントロール</span><span class="sxs-lookup"><span data-stu-id="2375f-215">WebBrowser Control and Feature Controls</span></span>  
+ <span data-ttu-id="2375f-216">WPF<xref:System.Windows.Controls.WebBrowser>コントロールは、Web コンテンツをホストするために使用できます。</span><span class="sxs-lookup"><span data-stu-id="2375f-216">The WPF <xref:System.Windows.Controls.WebBrowser> control can be used to host Web content.</span></span> <span data-ttu-id="2375f-217">WPF<xref:System.Windows.Controls.WebBrowser>コントロールは、基になる WebBrowser ActiveX コントロールをラップします。</span><span class="sxs-lookup"><span data-stu-id="2375f-217">The WPF <xref:System.Windows.Controls.WebBrowser> control wraps the underlying WebBrowser ActiveX control.</span></span> <span data-ttu-id="2375f-218">WPF では、WPF を使用すると、アプリケーションを保護するためのサポートが用意されています<xref:System.Windows.Controls.WebBrowser>ホストへのコントロールには、Web コンテンツが信頼されていません。</span><span class="sxs-lookup"><span data-stu-id="2375f-218">WPF provides some support for securing your application when you use the WPF <xref:System.Windows.Controls.WebBrowser> control to host untrusted Web content.</span></span> <span data-ttu-id="2375f-219">使用してアプリケーションによって直接ただし、一部のセキュリティ機能を適用する必要があります、<xref:System.Windows.Controls.WebBrowser>コントロール。</span><span class="sxs-lookup"><span data-stu-id="2375f-219">However, some security features must be applied directly by the applications using the <xref:System.Windows.Controls.WebBrowser> control.</span></span> <span data-ttu-id="2375f-220">WebBrowser ActiveX コントロールの詳細については、次を参照してください。 [WebBrowser コントロールの概要とチュートリアル](http://go.microsoft.com/fwlink/?LinkId=179388)です。</span><span class="sxs-lookup"><span data-stu-id="2375f-220">For more information about the WebBrowser ActiveX control, see [WebBrowser Control Overviews and Tutorials](http://go.microsoft.com/fwlink/?LinkId=179388).</span></span>  
   
 > [!NOTE]
->  このセクションの内容は、<xref:System.Windows.Controls.Frame> コントロールにも当てはまります。このコントロールは、<xref:System.Windows.Controls.WebBrowser> を使用して HTML コンテンツに移動するためです。  
+>  <span data-ttu-id="2375f-221">このセクションにも適用されます、<xref:System.Windows.Controls.Frame>制御が使用されるため、 <xref:System.Windows.Controls.WebBrowser> HTML コンテンツに移動します。</span><span class="sxs-lookup"><span data-stu-id="2375f-221">This section also applies to the <xref:System.Windows.Controls.Frame> control since it uses the <xref:System.Windows.Controls.WebBrowser> to navigate to HTML content.</span></span>  
   
- WPF <xref:System.Windows.Controls.WebBrowser> コントロールを使用して信頼されていない Web コンテンツをホストする場合、アプリケーションでは、部分信頼 <xref:System.AppDomain> を使用して、悪意のある HTML スクリプト コードからアプリケーション コードを分離する必要があります。  これは、特に、アプリケーションが <xref:System.Windows.Controls.WebBrowser.InvokeScript%2A> メソッドと <xref:System.Windows.Controls.WebBrowser.ObjectForScripting%2A> プロパティを使用してホストされたスクリプトと対話している場合に当てはまります。  詳細については、「[WPF アドインの概要](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)」を参照してください。  
+ <span data-ttu-id="2375f-222">場合は、WPF<xref:System.Windows.Controls.WebBrowser>コントロールを使用して、信頼されていない Web コンテンツをホスト、アプリケーションは部分的に信頼を使用する必要があります<xref:System.AppDomain>アプリケーション コードが悪意のある HTML スクリプト コードから分離されるためです。</span><span class="sxs-lookup"><span data-stu-id="2375f-222">If the WPF <xref:System.Windows.Controls.WebBrowser> control is used to host untrusted Web content, your application should use a partial-trust <xref:System.AppDomain> to help insulate your application code from potentially malicious HTML script code.</span></span> <span data-ttu-id="2375f-223">これを使用して、アプリケーションがホストされているスクリプトと対話する場合、特に、<xref:System.Windows.Controls.WebBrowser.InvokeScript%2A>メソッドおよび<xref:System.Windows.Controls.WebBrowser.ObjectForScripting%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="2375f-223">This is especially true if your application is interacting with the hosted script by using the <xref:System.Windows.Controls.WebBrowser.InvokeScript%2A> method and the <xref:System.Windows.Controls.WebBrowser.ObjectForScripting%2A> property.</span></span> <span data-ttu-id="2375f-224">詳細については、次を参照してください。 [WPF アドイン概要](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="2375f-224">For more information, see [WPF Add-Ins Overview](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).</span></span>  
   
- アプリケーションで WPF <xref:System.Windows.Controls.WebBrowser> コントロールを使用する場合は、セキュリティを強化して攻撃を軽減するもう 1 つの方法として、Internet Explorer 機能コントロールを有効にする方法があります。  機能コントロールは Internet Explorer の追加機能で、これにより、管理者および開発者は、WebBrowser ActiveX コントロールをホストする Internet Explorer およびアプリケーションの機能を構成できます。WebBrowser ActiveX コントロールは、WPF <xref:System.Windows.Controls.WebBrowser> コントロールによってラップされます。  機能コントロールを構成するには、[CoInternetSetFeatureEnabled](http://go.microsoft.com/fwlink/?LinkId=179394) 関数を使用するか、レジストリの値を変更します。  機能コントロールの詳細については、「[Introduction to Feature Controls \(機能コントロールの概要\)](http://go.microsoft.com/fwlink/?LinkID=179390)」および「[Internet Feature Controls \(インターネット機能コントロール\)](http://go.microsoft.com/fwlink/?LinkID=179392)」を参照してください。  
+ <span data-ttu-id="2375f-225">アプリケーションは、WPF を使用する場合<xref:System.Windows.Controls.WebBrowser>を Internet Explorer の機能のコントロールを有効にするはのセキュリティを強化し、攻撃を緩和する別の方法を制御します。</span><span class="sxs-lookup"><span data-stu-id="2375f-225">If your application uses the WPF <xref:System.Windows.Controls.WebBrowser> control, another way to increase security and mitigate attacks is to enable Internet Explorer feature controls.</span></span> <span data-ttu-id="2375f-226">機能のコントロールは、Internet Explorer と WebBrowser ActiveX コントロールをホストするアプリケーションの機能を構成するには、管理者および開発者ができるようにする Internet Explorer に追加する、WPF<xref:System.Windows.Controls.WebBrowser>ラップを制御します。</span><span class="sxs-lookup"><span data-stu-id="2375f-226">Feature controls are additions to Internet Explorer that allow administrators and developers to configure features of Internet Explorer and applications that host the WebBrowser ActiveX control, which the WPF <xref:System.Windows.Controls.WebBrowser> control wraps.</span></span> <span data-ttu-id="2375f-227">コントロールの機能を使用して構成することができます、 [CoInternetSetFeatureEnabled](http://go.microsoft.com/fwlink/?LinkId=179394)関数、レジストリの値を変更することによってです。</span><span class="sxs-lookup"><span data-stu-id="2375f-227">Feature controls can be configured by using the [CoInternetSetFeatureEnabled](http://go.microsoft.com/fwlink/?LinkId=179394) function or by changing values in the registry.</span></span> <span data-ttu-id="2375f-228">機能のコントロールの詳細については、次を参照してください。[機能コントロールの概要](http://go.microsoft.com/fwlink/?LinkId=179390)と[インターネット機能を制御](http://go.microsoft.com/fwlink/?LinkId=179392)です。</span><span class="sxs-lookup"><span data-stu-id="2375f-228">For more information about feature controls, see [Introduction to Feature Controls](http://go.microsoft.com/fwlink/?LinkId=179390) and [Internet Feature Controls](http://go.microsoft.com/fwlink/?LinkId=179392).</span></span>  
   
- WPF <xref:System.Windows.Controls.WebBrowser> コントロールを使用するスタンドアロン WPF アプリケーションを開発している場合は、アプリケーションに対して次の機能コントロールが自動的に有効になります。  
+ <span data-ttu-id="2375f-229">WPF を使用するスタンドアロン WPF アプリケーションを開発しているかどうか<xref:System.Windows.Controls.WebBrowser>コントロール、WPF アプリケーションの次の機能のコントロールを自動的に有効にします。</span><span class="sxs-lookup"><span data-stu-id="2375f-229">If you are developing a standalone WPF application that uses the WPF <xref:System.Windows.Controls.WebBrowser> control, WPF automatically enables the following feature controls for your application.</span></span>  
   
-|機能コントロール|  
-|--------------|  
-|FEATURE\_MIME\_HANDLING|  
-|FEATURE\_MIME\_SNIFFING|  
-|FEATURE\_OBJECT\_CACHING|  
-|FEATURE\_SAFE\_BINDTOOBJECT|  
-|FEATURE\_WINDOW\_RESTRICTIONS|  
-|FEATURE\_ZONE\_ELEVATION|  
-|FEATURE\_RESTRICT\_FILEDOWNLOAD|  
-|FEATURE\_RESTRICT\_ACTIVEXINSTALL|  
-|FEATURE\_ADDON\_MANAGEMENT|  
-|FEATURE\_HTTP\_USERNAME\_PASSWORD\_DISABLE|  
-|FEATURE\_SECURITYBAND|  
-|FEATURE\_UNC\_SAVEDFILECHECK|  
-|FEATURE\_VALIDATE\_NAVIGATE\_URL|  
-|FEATURE\_DISABLE\_TELNET\_PROTOCOL|  
-|FEATURE\_WEBOC\_POPUPMANAGEMENT|  
-|FEATURE\_DISABLE\_LEGACY\_COMPRESSION|  
-|FEATURE\_SSLUX|  
+|<span data-ttu-id="2375f-230">機能コントロール</span><span class="sxs-lookup"><span data-stu-id="2375f-230">Feature Control</span></span>|  
+|---------------------|  
+|<span data-ttu-id="2375f-231">FEATURE_MIME_HANDLING</span><span class="sxs-lookup"><span data-stu-id="2375f-231">FEATURE_MIME_HANDLING</span></span>|  
+|<span data-ttu-id="2375f-232">FEATURE_MIME_SNIFFING</span><span class="sxs-lookup"><span data-stu-id="2375f-232">FEATURE_MIME_SNIFFING</span></span>|  
+|<span data-ttu-id="2375f-233">FEATURE_OBJECT_CACHING</span><span class="sxs-lookup"><span data-stu-id="2375f-233">FEATURE_OBJECT_CACHING</span></span>|  
+|<span data-ttu-id="2375f-234">FEATURE_SAFE_BINDTOOBJECT</span><span class="sxs-lookup"><span data-stu-id="2375f-234">FEATURE_SAFE_BINDTOOBJECT</span></span>|  
+|<span data-ttu-id="2375f-235">FEATURE_WINDOW_RESTRICTIONS</span><span class="sxs-lookup"><span data-stu-id="2375f-235">FEATURE_WINDOW_RESTRICTIONS</span></span>|  
+|<span data-ttu-id="2375f-236">FEATURE_ZONE_ELEVATION</span><span class="sxs-lookup"><span data-stu-id="2375f-236">FEATURE_ZONE_ELEVATION</span></span>|  
+|<span data-ttu-id="2375f-237">FEATURE_RESTRICT_FILEDOWNLOAD</span><span class="sxs-lookup"><span data-stu-id="2375f-237">FEATURE_RESTRICT_FILEDOWNLOAD</span></span>|  
+|<span data-ttu-id="2375f-238">FEATURE_RESTRICT_ACTIVEXINSTALL</span><span class="sxs-lookup"><span data-stu-id="2375f-238">FEATURE_RESTRICT_ACTIVEXINSTALL</span></span>|  
+|<span data-ttu-id="2375f-239">FEATURE_ADDON_MANAGEMENT</span><span class="sxs-lookup"><span data-stu-id="2375f-239">FEATURE_ADDON_MANAGEMENT</span></span>|  
+|<span data-ttu-id="2375f-240">FEATURE_HTTP_USERNAME_PASSWORD_DISABLE</span><span class="sxs-lookup"><span data-stu-id="2375f-240">FEATURE_HTTP_USERNAME_PASSWORD_DISABLE</span></span>|  
+|<span data-ttu-id="2375f-241">FEATURE_SECURITYBAND</span><span class="sxs-lookup"><span data-stu-id="2375f-241">FEATURE_SECURITYBAND</span></span>|  
+|<span data-ttu-id="2375f-242">FEATURE_UNC_SAVEDFILECHECK</span><span class="sxs-lookup"><span data-stu-id="2375f-242">FEATURE_UNC_SAVEDFILECHECK</span></span>|  
+|<span data-ttu-id="2375f-243">FEATURE_VALIDATE_NAVIGATE_URL</span><span class="sxs-lookup"><span data-stu-id="2375f-243">FEATURE_VALIDATE_NAVIGATE_URL</span></span>|  
+|<span data-ttu-id="2375f-244">FEATURE_DISABLE_TELNET_PROTOCOL</span><span class="sxs-lookup"><span data-stu-id="2375f-244">FEATURE_DISABLE_TELNET_PROTOCOL</span></span>|  
+|<span data-ttu-id="2375f-245">FEATURE_WEBOC_POPUPMANAGEMENT</span><span class="sxs-lookup"><span data-stu-id="2375f-245">FEATURE_WEBOC_POPUPMANAGEMENT</span></span>|  
+|<span data-ttu-id="2375f-246">FEATURE_DISABLE_LEGACY_COMPRESSION</span><span class="sxs-lookup"><span data-stu-id="2375f-246">FEATURE_DISABLE_LEGACY_COMPRESSION</span></span>|  
+|<span data-ttu-id="2375f-247">FEATURE_SSLUX</span><span class="sxs-lookup"><span data-stu-id="2375f-247">FEATURE_SSLUX</span></span>|  
   
- これらの機能コントロールは無条件で有効になるため、完全信頼アプリケーションに悪影響が及ぶ場合があります。  この場合、特定のアプリケーションとそのアプリケーションがホストしているコンテンツに対するセキュリティ上のリスクがなければ、対応する機能コントロールを無効にできます。  
+ <span data-ttu-id="2375f-248">これらの機能コントロールは無条件で有効になるため、完全信頼アプリケーションに悪影響が及ぶ場合があります。</span><span class="sxs-lookup"><span data-stu-id="2375f-248">Since these feature controls are enabled unconditionally, a full-trust application might be impaired by them.</span></span> <span data-ttu-id="2375f-249">この場合、特定のアプリケーションとそのアプリケーションがホストしているコンテンツにセキュリティ上のリスクがなければ、対応する機能コントロールを無効にできます。</span><span class="sxs-lookup"><span data-stu-id="2375f-249">In this case, if there is no security risk for the specific application and the content it is hosting, the corresponding feature control can be disabled.</span></span>  
   
- 機能コントロールは、WebBrowser ActiveX オブジェクトをインスタンス化するプロセスによって適用されます。  そのため、信頼されていないコンテンツに移動できるスタンドアロン アプリケーションを作成する場合は、その他の機能コントロールを有効にすることを検討する必要があります。  
-  
-> [!NOTE]
->  この推奨事項は、MSHTML および SHDOCVW ホスト セキュリティの一般的な推奨事項に基づいています。  詳細については、「[The MSHTML Host Security FAQ: Part I of II \(MSHTML ホスト セキュリティに関する FAQ: 第 I 部\)](http://go.microsoft.com/fwlink/?LinkId=179396)」および「[The MSHTML Host Security FAQ: Part II of II \(MSHTML ホスト セキュリティに関する FAQ: 第 II 部\)](http://go.microsoft.com/fwlink/?LinkId=179415)」を参照してください。  
-  
- 実行可能ファイルでは、レジストリ値を 1 に設定することで、次の機能コントロールを有効にすることを検討してください。  
-  
-|機能コントロール|  
-|--------------|  
-|FEATURE\_ACTIVEX\_REPURPOSEDETECTION|  
-|FEATURE\_BLOCK\_LMZ\_IMG|  
-|FEATURE\_BLOCK\_LMZ\_OBJECT|  
-|FEATURE\_BLOCK\_LMZ\_SCRIPT|  
-|FEATURE\_RESTRICT\_RES\_TO\_LMZ|  
-|FEATURE\_RESTRICT\_ABOUT\_PROTOCOL\_IE7|  
-|FEATURE\_SHOW\_APP\_PROTOCOL\_WARN\_DIALOG|  
-|FEATURE\_LOCALMACHINE\_LOCKDOWN|  
-|FEATURE\_FORCE\_ADDR\_AND\_STATUS|  
-|FEATURE\_RESTRICTED\_ZONE\_WHEN\_FILE\_NOT\_FOUND|  
-  
- 実行可能ファイルでは、レジストリ値を 0 に設定することで、次の機能コントロールを無効にすることを検討してください。  
-  
-|機能コントロール|  
-|--------------|  
-|FEATURE\_ENABLE\_SCRIPT\_PASTE\_URLACTION\_IF\_PROMPT|  
-  
- WPF <xref:System.Windows.Controls.WebBrowser> コントロールを含む部分信頼 [!INCLUDE[TLA#tla_xbap](../../../includes/tlasharptla-xbap-md.md)] を [!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)] で実行する場合、WPF は、Internet Explorer プロセスのアドレス空間で WebBrowser ActiveX コントロールをホストします。  WebBrowser ActiveX コントロールは [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] プロセスでホストされるため、Internet Explorer のすべての機能コントロールは、WebBrowser ActiveX コントロールに対しても有効になります。  
-  
- Internet Explorer で実行されている XBAP にも、標準のスタンドアロン アプリケーションよりも高いレベルのセキュリティが適用されます。  このセキュリティの強化の理由は、[!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)] および [!INCLUDE[win7](../../../includes/win7-md.md)] では、既定で、Internet Explorer \(および WebBrowser ActiveX コントロール\) が保護モードで実行されるためです。  保護モードの詳細については、「[保護モードの Internet Explorer の理解と機能](http://go.microsoft.com/fwlink/?LinkId=179393)」を参照してください。  
+ <span data-ttu-id="2375f-250">WebBrowser ActiveX オブジェクトをインスタンス化するプロセスでは、機能は、制御が適用されます。</span><span class="sxs-lookup"><span data-stu-id="2375f-250">Feature controls are applied by the process instantiating the WebBrowser ActiveX object.</span></span> <span data-ttu-id="2375f-251">そのため、信頼されていないコンテンツに移動できるスタンドアロン アプリケーションを作成する場合は、その他の機能コントロールを有効にすることを検討すべきです。</span><span class="sxs-lookup"><span data-stu-id="2375f-251">Therefore, if you are creating a stand-alone application that can navigate to untrusted content, you should seriously consider enabling additional feature controls.</span></span>  
   
 > [!NOTE]
->  WPF <xref:System.Windows.Controls.WebBrowser> コントロールを含む XBAP を Firefox で実行しようとすると、インターネット ゾーン内に存在するため、<xref:System.Security.SecurityException> がスローされます。  これは、WPF セキュリティ ポリシーが原因です。  
+>  <span data-ttu-id="2375f-252">この推奨事項は、MSHTML および SHDOCVW ホスト セキュリティの一般的な推奨事項に基づいています。</span><span class="sxs-lookup"><span data-stu-id="2375f-252">This recommendation is based on general recommendations for MSHTML and SHDOCVW host security.</span></span> <span data-ttu-id="2375f-253">詳細については、次を参照してください。 [、MSHTML ホストのセキュリティに関する FAQ: II の第 1 部](http://go.microsoft.com/fwlink/?LinkId=179396)と[、MSHTML ホストのセキュリティに関する FAQ: パート II II](http://go.microsoft.com/fwlink/?LinkId=179415)です。</span><span class="sxs-lookup"><span data-stu-id="2375f-253">For more information, see [The MSHTML Host Security FAQ: Part I of II](http://go.microsoft.com/fwlink/?LinkId=179396) and [The MSHTML Host Security FAQ: Part II of II](http://go.microsoft.com/fwlink/?LinkId=179415).</span></span>  
+  
+ <span data-ttu-id="2375f-254">実行可能ファイルでは、レジストリ値を 1 に設定して以下の機能コントロールを有効にすることを検討してください。</span><span class="sxs-lookup"><span data-stu-id="2375f-254">For your executable, consider enabling the following feature controls by setting the registry value to 1.</span></span>  
+  
+|<span data-ttu-id="2375f-255">機能コントロール</span><span class="sxs-lookup"><span data-stu-id="2375f-255">Feature Control</span></span>|  
+|---------------------|  
+|<span data-ttu-id="2375f-256">FEATURE_ACTIVEX_REPURPOSEDETECTION</span><span class="sxs-lookup"><span data-stu-id="2375f-256">FEATURE_ACTIVEX_REPURPOSEDETECTION</span></span>|  
+|<span data-ttu-id="2375f-257">FEATURE_BLOCK_LMZ_IMG</span><span class="sxs-lookup"><span data-stu-id="2375f-257">FEATURE_BLOCK_LMZ_IMG</span></span>|  
+|<span data-ttu-id="2375f-258">FEATURE_BLOCK_LMZ_OBJECT</span><span class="sxs-lookup"><span data-stu-id="2375f-258">FEATURE_BLOCK_LMZ_OBJECT</span></span>|  
+|<span data-ttu-id="2375f-259">FEATURE_BLOCK_LMZ_SCRIPT</span><span class="sxs-lookup"><span data-stu-id="2375f-259">FEATURE_BLOCK_LMZ_SCRIPT</span></span>|  
+|<span data-ttu-id="2375f-260">FEATURE_RESTRICT_RES_TO_LMZ</span><span class="sxs-lookup"><span data-stu-id="2375f-260">FEATURE_RESTRICT_RES_TO_LMZ</span></span>|  
+|<span data-ttu-id="2375f-261">FEATURE_RESTRICT_ABOUT_PROTOCOL_IE7</span><span class="sxs-lookup"><span data-stu-id="2375f-261">FEATURE_RESTRICT_ABOUT_PROTOCOL_IE7</span></span>|  
+|<span data-ttu-id="2375f-262">FEATURE_SHOW_APP_PROTOCOL_WARN_DIALOG</span><span class="sxs-lookup"><span data-stu-id="2375f-262">FEATURE_SHOW_APP_PROTOCOL_WARN_DIALOG</span></span>|  
+|<span data-ttu-id="2375f-263">FEATURE_LOCALMACHINE_LOCKDOWN</span><span class="sxs-lookup"><span data-stu-id="2375f-263">FEATURE_LOCALMACHINE_LOCKDOWN</span></span>|  
+|<span data-ttu-id="2375f-264">FEATURE_FORCE_ADDR_AND_STATUS</span><span class="sxs-lookup"><span data-stu-id="2375f-264">FEATURE_FORCE_ADDR_AND_STATUS</span></span>|  
+|<span data-ttu-id="2375f-265">FEATURE_RESTRICTED_ZONE_WHEN_FILE_NOT_FOUND</span><span class="sxs-lookup"><span data-stu-id="2375f-265">FEATURE_RESTRICTED_ZONE_WHEN_FILE_NOT_FOUND</span></span>|  
+  
+ <span data-ttu-id="2375f-266">実行可能ファイルでは、レジストリ値を 0 に設定して以下の機能コントロールを無効にすることを検討してください。</span><span class="sxs-lookup"><span data-stu-id="2375f-266">For your executable, consider disabling the following feature control by setting the registry value to 0.</span></span>  
+  
+|<span data-ttu-id="2375f-267">機能コントロール</span><span class="sxs-lookup"><span data-stu-id="2375f-267">Feature Control</span></span>|  
+|---------------------|  
+|<span data-ttu-id="2375f-268">FEATURE_ENABLE_SCRIPT_PASTE_URLACTION_IF_PROMPT</span><span class="sxs-lookup"><span data-stu-id="2375f-268">FEATURE_ENABLE_SCRIPT_PASTE_URLACTION_IF_PROMPT</span></span>|  
+  
+ <span data-ttu-id="2375f-269">部分的に信頼を実行する場合[!INCLUDE[TLA#tla_xbap](../../../includes/tlasharptla-xbap-md.md)]WPF が含まれている<xref:System.Windows.Controls.WebBrowser>で制御[!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)]WPF は、Internet Explorer プロセスのアドレス空間内の WebBrowser ActiveX コントロールをホストします。</span><span class="sxs-lookup"><span data-stu-id="2375f-269">If you run a partial-trust [!INCLUDE[TLA#tla_xbap](../../../includes/tlasharptla-xbap-md.md)] that includes a WPF <xref:System.Windows.Controls.WebBrowser> control in [!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)], WPF hosts the WebBrowser ActiveX control in the address space of the Internet Explorer process.</span></span> <span data-ttu-id="2375f-270">内の WebBrowser ActiveX コントロールがホストされているため、[!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]プロセス、WebBrowser ActiveX コントロールのすべての Internet Explorer の機能のコントロールも有効にします。</span><span class="sxs-lookup"><span data-stu-id="2375f-270">Since the WebBrowser ActiveX control is hosted in the [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] process, all of the feature controls for Internet Explorer are also enabled for the WebBrowser ActiveX control.</span></span>  
+  
+ <span data-ttu-id="2375f-271">Internet Explorer で実行されている XBAP にも、標準のスタンドアロン アプリケーションよりも高いレベルのセキュリティが適用されます。</span><span class="sxs-lookup"><span data-stu-id="2375f-271">XBAPs running in Internet Explorer also get an additional level of security compared to normal standalone applications.</span></span> <span data-ttu-id="2375f-272">この追加のセキュリティは、Internet Explorer、およびそのため、WebBrowser ActiveX コントロールで実行されるため保護モードでは既定で[!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)]と[!INCLUDE[win7](../../../includes/win7-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="2375f-272">This additional security is because Internet Explorer, and therefore the WebBrowser ActiveX control, runs in protected mode by default on [!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)] and [!INCLUDE[win7](../../../includes/win7-md.md)].</span></span> <span data-ttu-id="2375f-273">保護モードの詳細については、次を参照してください。[を理解すると、保護モードの Internet Explorer で作業して](http://go.microsoft.com/fwlink/?LinkId=179393)です。</span><span class="sxs-lookup"><span data-stu-id="2375f-273">For more information about protected mode, see [Understanding and Working in Protected Mode Internet Explorer](http://go.microsoft.com/fwlink/?LinkId=179393).</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="2375f-274">含む、WPF XBAP を実行しようとするかどうかは<xref:System.Windows.Controls.WebBrowser>firefox の場合、インターネット ゾーンでのコントロール、<xref:System.Security.SecurityException>がスローされます。</span><span class="sxs-lookup"><span data-stu-id="2375f-274">If you try to run an XBAP that includes a WPF <xref:System.Windows.Controls.WebBrowser> control in Firefox, while in the Internet zone, a <xref:System.Security.SecurityException> will be thrown.</span></span> <span data-ttu-id="2375f-275">これは、WPF セキュリティ ポリシーが原因です。</span><span class="sxs-lookup"><span data-stu-id="2375f-275">This is due to WPF security policy.</span></span>  
   
 <a name="APTCA"></a>   
-## 部分信頼クライアント アプリケーションに対する APTCA アセンブリの無効化  
- マネージ アセンブリを [!INCLUDE[TLA#tla_gac](../../../includes/tlasharptla-gac-md.md)] にインストールした場合、ユーザーは、インストールの際に明示的なアクセス許可を提供する必要があるので、これらは完全信頼になります。  完全信頼であるため、これらのアセンブリは完全信頼マネージ クライアント アプリケーションのみが使用できます。  それらを部分信頼アプリケーションで使用できるようにする場合は、<xref:System.Security.AllowPartiallyTrustedCallersAttribute> \(APTCA\) という属性を設定する必要があります。  この属性は、部分信頼で実行しても安全であることがテストで確認されたアセンブリだけに設定する必要があります。  
+## <a name="disabling-aptca-assemblies-for-partially-trusted-client-applications"></a><span data-ttu-id="2375f-276">部分信頼クライアント アプリケーションに対する APTCA の無効化</span><span class="sxs-lookup"><span data-stu-id="2375f-276">Disabling APTCA Assemblies for Partially Trusted Client Applications</span></span>  
+ <span data-ttu-id="2375f-277">マネージ アセンブリがインストールされている場合、[!INCLUDE[TLA#tla_gac](../../../includes/tlasharptla-gac-md.md)]になる完全に信頼されているため、ユーザーがそれらをインストールするアクセス許可が明示的に指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2375f-277">When managed assemblies are installed into the [!INCLUDE[TLA#tla_gac](../../../includes/tlasharptla-gac-md.md)], they become fully trusted because the user must provide explicit permission to install them.</span></span> <span data-ttu-id="2375f-278">完全に信頼されているため、これらを使用できるのは完全信頼マネージ クライアント アプリケーションのみです。</span><span class="sxs-lookup"><span data-stu-id="2375f-278">Because they are fully trusted, only fully trusted managed client applications can use them.</span></span> <span data-ttu-id="2375f-279">部分的に信頼されたアプリケーションをそれらを使用できるように、これらと共に設定されなければなりません、 <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA)。</span><span class="sxs-lookup"><span data-stu-id="2375f-279">To allow partially trusted applications to use them, they must be marked with the <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA).</span></span> <span data-ttu-id="2375f-280">この属性は、部分信頼で実行しても安全であるとテストで確認されたアセンブリだけに設定します。</span><span class="sxs-lookup"><span data-stu-id="2375f-280">Only assemblies that have been tested to be safe for execution in partial trust should be marked with this attribute.</span></span>  
   
- ただし、APTCA アセンブリは、[!INCLUDE[TLA2#tla_gac](../../../includes/tla2sharptla-gac-md.md)] にインストールされた後にセキュリティの欠陥を露呈する可能性があります。  セキュリティの欠陥が発見された場合、アセンブリの発行者は、既存のインストールでの問題を解決し、問題の発見後に配置される可能性のあるインストールに備えるためのセキュリティ更新プログラムを作成できます。  更新プログラムの 1 つのオプションは、アセンブリをアンインストールすることですが、アンインストールにより、このアセンブリを使用する完全信頼クライアント アプリケーションが破損するおそれがあります。  
+ <span data-ttu-id="2375f-281">ただし、可能であれば、APTCA アセンブリにインストール後にセキュリティ上の欠陥が発生すること、[!INCLUDE[TLA2#tla_gac](../../../includes/tla2sharptla-gac-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="2375f-281">However, it is possible for an APTCA assembly to exhibit a security flaw after being installed into the [!INCLUDE[TLA2#tla_gac](../../../includes/tla2sharptla-gac-md.md)].</span></span> <span data-ttu-id="2375f-282">セキュリティ上の欠陥が検出されたら、アセンブリの発行者は、既存のインストールでの問題を解決し、問題発見後に発生する可能性があるインストールに備えるため、セキュリティ更新プログラムを作成できます。</span><span class="sxs-lookup"><span data-stu-id="2375f-282">Once a security flaw is discovered, assembly publishers can produce a security update to fix the problem on existing installations, and to protect against installations that may occur after the problem is discovered.</span></span> <span data-ttu-id="2375f-283">更新プログラムの 1 つのオプションとして、アセンブリのアンインストールが考えられますが、その場合はこのアセンブリを使用する他の完全信頼クライアント アプリケーションを破損するおそれがあります。</span><span class="sxs-lookup"><span data-stu-id="2375f-283">One option for the update is to uninstall the assembly, although that may break other fully trusted client applications that use the assembly.</span></span>  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] は、APTCA アセンブリをアンインストールせずに、部分信頼 [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)] アプリケーションに対して APTCA アセンブリを無効にできる機構を備えています。  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]<span data-ttu-id="2375f-284">部分的な信頼で APTCA アセンブリを無効にするメカニズムを備えています[!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)]APTCA アセンブリをアンインストールせずにします。</span><span class="sxs-lookup"><span data-stu-id="2375f-284"> provides a mechanism by which an APTCA assembly can be disabled for partially trusted [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)] without uninstalling the APTCA assembly.</span></span>  
   
- APTCA アセンブリを無効にするには、特別なレジストリ キーを作成する必要があります。  
+ <span data-ttu-id="2375f-285">APTCA アセンブリを無効にするには、特殊なレジストリ キーを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2375f-285">To disable an APTCA assembly, you have to create a special registry key:</span></span>  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\policy\APTCA\<AssemblyFullName>, FileVersion=<AssemblyFileVersion>`  
   
- 例を次に示します。  
+ <span data-ttu-id="2375f-286">次のコードは一例を示しています。</span><span class="sxs-lookup"><span data-stu-id="2375f-286">The following shows an example:</span></span>  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\policy\APTCA\aptcagac, Version=1.0.0.0, Culture=neutral, PublicKeyToken=215e3ac809a0fea7, FileVersion=1.0.0.0`  
   
- このキーにより、APTCA アセンブリのエントリが設定されます。  また、アセンブリを有効または無効にする値をこのキーに作成する必要があります。  値の詳細を次に示します。  
+ <span data-ttu-id="2375f-287">このキーにより、APTCA アセンブリのエントリが設定されます。</span><span class="sxs-lookup"><span data-stu-id="2375f-287">This key establishes an entry for the APTCA assembly.</span></span> <span data-ttu-id="2375f-288">また、アセンブリを有効または無効にする値をこのキーに作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2375f-288">You also have to create a value in this key that enables or disables the assembly.</span></span> <span data-ttu-id="2375f-289">値の詳細を次に示します。</span><span class="sxs-lookup"><span data-stu-id="2375f-289">The following are the details of the value:</span></span>  
   
--   値の名前 : **APTCA\_FLAG**。  
+-   <span data-ttu-id="2375f-290">値の名前: **APTCA_FLAG**です。</span><span class="sxs-lookup"><span data-stu-id="2375f-290">Value Name: **APTCA_FLAG**.</span></span>  
   
--   値の型 : **REG\_DWORD**。  
+-   <span data-ttu-id="2375f-291">値の種類: **REG_DWORD**です。</span><span class="sxs-lookup"><span data-stu-id="2375f-291">Value Type: **REG_DWORD**.</span></span>  
   
--   値のデータ : 無効にする場合は **1**、有効にする場合は **0**。  
+-   <span data-ttu-id="2375f-292">値のデータ: **1** ; を無効にするには**0**を有効にします。</span><span class="sxs-lookup"><span data-stu-id="2375f-292">Value Data: **1** to disable; **0** to enable.</span></span>  
   
- 部分信頼クライアント アプリケーションに対してアセンブリを無効にする必要がある場合は、レジストリ キーおよび値を作成する更新プログラムを作成できます。  
+ <span data-ttu-id="2375f-293">部分信頼クライアント アプリケーションに対してアセンブリを無効にする必要がある場合は、レジストリ キーおよび値を作成する更新プログラムを作成します。</span><span class="sxs-lookup"><span data-stu-id="2375f-293">If an assembly has to be disabled for partially trusted client applications, you can write an update that creates the registry key and value.</span></span>  
   
 > [!NOTE]
->  コア [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)] アセンブリは、マネージ アプリケーションを実行するために必要であるため、この方法で無効にしても影響を受けません。  APTCA アセンブリの無効化のサポートは、主に、サードパーティ アプリケーションを対象にしたものです。  
+>  <span data-ttu-id="2375f-294">コア[!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)]マネージ アプリケーションを実行するために必要であるために、この方法で無効にしても、アセンブリを受けません。</span><span class="sxs-lookup"><span data-stu-id="2375f-294">Core [!INCLUDE[TLA2#tla_winfx](../../../includes/tla2sharptla-winfx-md.md)] assemblies are not affected by disabling them in this way because they are required for managed applications to run.</span></span> <span data-ttu-id="2375f-295">APTCA アセンブリの無効化のサポートは、主にサードパーティ アプリケーションを対象にしたものです。</span><span class="sxs-lookup"><span data-stu-id="2375f-295">Support for disabling APTCA assemblies is primarily targeted to third-party applications.</span></span>  
   
 <a name="LooseContentSandboxing"></a>   
-## Loose XAML ファイルに対するサンドボックスの動作  
- Loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] ファイルは、分離コード、イベント ハンドラー、またはアプリケーション固有のアセンブリに依存しない、マークアップのみの XAML ファイルです。  ブラウザーから Loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] ファイルに直接移動するときは、既定のインターネット ゾーン アクセス許可セットに基づいてファイルがセキュリティ サンドボックスに読み込まれます。  
+## <a name="sandbox-behavior-for-loose-xaml-files"></a><span data-ttu-id="2375f-296">Loose XAML ファイルに対するサンドボックスの動作</span><span class="sxs-lookup"><span data-stu-id="2375f-296">Sandbox Behavior for Loose XAML Files</span></span>  
+ <span data-ttu-id="2375f-297">厳密でない[!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)]ファイルは、分離コード、イベント ハンドラー、またはアプリケーション固有のアセンブリに依存しないマークアップのみの XAML ファイル。</span><span class="sxs-lookup"><span data-stu-id="2375f-297">Loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] files are markup-only XAML files that do not depend on any code-behind, event handler, or application-specific assembly.</span></span> <span data-ttu-id="2375f-298">失われたときに[!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)]ブラウザーから直接ファイルが移動先、既定のインターネット ゾーン アクセス許可セットに基づくセキュリティ サンド ボックスに読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="2375f-298">When loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] files are navigated to directly from the browser, they are loaded in a security sandbox based on the default Internet zone permission set.</span></span>  
   
- 一方、スタンドアロン アプリケーションの <xref:System.Windows.Navigation.NavigationWindow> または <xref:System.Windows.Controls.Frame> から Loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] ファイルに移動した場合は、セキュリティ動作が異なります。  
+ <span data-ttu-id="2375f-299">ただし、このセキュリティ動作は厳密でない場合は、異なる[!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)]いずれかのファイルが移動先、<xref:System.Windows.Navigation.NavigationWindow>または<xref:System.Windows.Controls.Frame>スタンドアロン アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="2375f-299">However, the security behavior is different when loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] files are navigated to from either a <xref:System.Windows.Navigation.NavigationWindow> or <xref:System.Windows.Controls.Frame> in a standalone application.</span></span>  
   
- どちらの場合も、移動先の Loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] ファイルは、ホスト アプリケーションのアクセス許可を継承します。  ただし、この動作はセキュリティの観点からは望ましくない場合があります。特に、Loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] ファイルが信頼されていないエンティティまたは不明エンティティによって生成された場合には問題があります。  この種のコンテンツは外部コンテンツと呼ばれ、外部コンテンツにナビゲートされたときに外部コンテンツを分離するように <xref:System.Windows.Controls.Frame> と <xref:System.Windows.Navigation.NavigationWindow> を構成できます。  分離するには、次の <xref:System.Windows.Controls.Frame> と <xref:System.Windows.Navigation.NavigationWindow> の例に示されているように、**SandboxExternalContent** プロパティを true に設定します。  
+ <span data-ttu-id="2375f-300">どちらの場合も、緩やかな[!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)]への移動がファイルは、ホスト アプリケーションのアクセス許可を継承します。</span><span class="sxs-lookup"><span data-stu-id="2375f-300">In both cases, the loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] file that is navigated to inherits the permissions of its host application.</span></span> <span data-ttu-id="2375f-301">ただし、この動作できない可能性があります、厳密でない場合は特に、セキュリティの観点から望ましい[!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)]ファイルは、信頼されていないか、不明なしたエンティティが作成されました。</span><span class="sxs-lookup"><span data-stu-id="2375f-301">However, this behavior may be undesirable from a security perspective, particularly if a loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] file was produced by an entity that is either not trusted or unknown.</span></span> <span data-ttu-id="2375f-302">この種類のコンテンツと呼ばれます*外部コンテンツ*、および両方<xref:System.Windows.Controls.Frame>と<xref:System.Windows.Navigation.NavigationWindow>に移動したときにこれを分離するように構成できます。</span><span class="sxs-lookup"><span data-stu-id="2375f-302">This type of content is known as *external content*, and both <xref:System.Windows.Controls.Frame> and <xref:System.Windows.Navigation.NavigationWindow> can be configured to isolate it when navigated to.</span></span> <span data-ttu-id="2375f-303">設定の分離が実現、 **、SandboxExternalContent**プロパティを true の次の例に示すように<xref:System.Windows.Controls.Frame>と<xref:System.Windows.Navigation.NavigationWindow>:</span><span class="sxs-lookup"><span data-stu-id="2375f-303">Isolation is achieved by setting the **SandboxExternalContent** property to true, as shown in the following examples for <xref:System.Windows.Controls.Frame> and <xref:System.Windows.Navigation.NavigationWindow>:</span></span>  
   
- [!code-xml[SecurityOverviewSnippets#FrameMARKUP](../../../samples/snippets/csharp/VS_Snippets_Wpf/SecurityOverviewSnippets/CS/Window2.xaml#framemarkup)]  
+ [!code-xaml[SecurityOverviewSnippets#FrameMARKUP](../../../samples/snippets/csharp/VS_Snippets_Wpf/SecurityOverviewSnippets/CS/Window2.xaml#framemarkup)]  
   
- [!code-xml[SecurityOverviewSnippets#NavigationWindowMARKUP](../../../samples/snippets/csharp/VS_Snippets_Wpf/SecurityOverviewSnippets/CS/Window1.xaml#navigationwindowmarkup)]  
+ [!code-xaml[SecurityOverviewSnippets#NavigationWindowMARKUP](../../../samples/snippets/csharp/VS_Snippets_Wpf/SecurityOverviewSnippets/CS/Window1.xaml#navigationwindowmarkup)]  
   
- このように設定すると、外部コンテンツは、アプリケーションをホストするプロセスとは異なるプロセスに読み込まれます。  このプロセスは既定のインターネット ゾーン アクセス許可セットに限定されており、ホスト アプリケーションとクライアント コンピューターから外部コンテンツを効果的に分離します。  
+ <span data-ttu-id="2375f-304">このように設定すると、外部コンテンツは、アプリケーションをホストするプロセスとは異なるプロセスに読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="2375f-304">With this setting, external content will be loaded into a process that is separate from the process that is hosting the application.</span></span> <span data-ttu-id="2375f-305">このプロセスは既定のインターネット ゾーン アクセス許可セットに限定されており、ホスト アプリケーションとクライアント コンピューターから外部コンテンツを効果的に分離します。</span><span class="sxs-lookup"><span data-stu-id="2375f-305">This process is restricted to the default Internet zone permission set, effectively isolating it from the hosting application and the client computer.</span></span>  
   
 > [!NOTE]
->  スタンドアロン アプリケーションの <xref:System.Windows.Navigation.NavigationWindow> または <xref:System.Windows.Controls.Frame> から Loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] ファイルへの移動を、WPF のブラウザーのホスト処理インフラストラクチャ \(PresentationHost プロセスを含む\) に基づいて実装しても、[!INCLUDE[wiprlhext](../../../includes/wiprlhext-md.md)] および [!INCLUDE[win7](../../../includes/win7-md.md)] 上の Internet Explorer でコンテンツを直接読み込む場合 \(この場合も PresentationHost を使用\) よりもセキュリティ レベルは若干低くなります。これは、Web ブラウザーを使用しているスタンドアロン WPF アプリケーションに、Internet Explorer の保護モード セキュリティ機能が追加されていないためです。  
+>  <span data-ttu-id="2375f-306">にもかかわらず loose へのナビゲーション[!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)]からいずれかのファイル、<xref:System.Windows.Navigation.NavigationWindow>または<xref:System.Windows.Controls.Frame>スタンドアロンのアプリケーションが実装されている PresentationHost プロセスに関連するインフラストラクチャをホストする WPF ブラウザーに基づくセキュリティ レベルとはInternet Explorer で直接、コンテンツが読み込まれるときによりも若干小さい[!INCLUDE[wiprlhext](../../../includes/wiprlhext-md.md)]と[!INCLUDE[win7](../../../includes/win7-md.md)](これもよい PresentationHost 経由)。</span><span class="sxs-lookup"><span data-stu-id="2375f-306">Even though navigation to loose [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] files from either a <xref:System.Windows.Navigation.NavigationWindow> or <xref:System.Windows.Controls.Frame> in a standalone application is implemented based on the WPF browser hosting infrastructure, involving the PresentationHost process, the security level is slightly less than when the content is loaded directly in Internet Explorer on [!INCLUDE[wiprlhext](../../../includes/wiprlhext-md.md)] and [!INCLUDE[win7](../../../includes/win7-md.md)] (which would still be through PresentationHost).</span></span> <span data-ttu-id="2375f-307">これは、Web ブラウザーを使用しているスタンドアロン WPF アプリケーションに、Internet Explorer の保護モード セキュリティ機能が追加されていないためです。</span><span class="sxs-lookup"><span data-stu-id="2375f-307">This is because a standalone WPF application using a Web browser does not provide the additional Protected Mode security feature of Internet Explorer.</span></span>  
   
 <a name="BestPractices"></a>   
-## セキュリティを向上する WPF アプリケーションを開発するためのリソース  
- セキュリティを向上する [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの開発に役立つその他のリソースを次に示します。  
+## <a name="resources-for-developing-wpf-applications-that-promote-security"></a><span data-ttu-id="2375f-308">セキュリティを向上する WPF アプリケーションを開発するためのリソース</span><span class="sxs-lookup"><span data-stu-id="2375f-308">Resources for Developing WPF Applications that Promote Security</span></span>  
+ <span data-ttu-id="2375f-309">開発するのに役立つその他のリソースは、次のとおり[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]セキュリティを向上するアプリケーション。</span><span class="sxs-lookup"><span data-stu-id="2375f-309">The following are some additional resources to help develop [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] applications that promote security:</span></span>  
   
-|区分|リソース|  
-|--------|----------|  
-|マネージ コード|[patterns & practices アプリケーション セキュリティ ガイダンス インデックス](http://go.microsoft.com/fwlink/?LinkId=117426)|  
-|[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]|[コード アクセス セキュリティ](../../../docs/framework/misc/code-access-security.md)|  
-|[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]|[ClickOnce のセキュリティと配置](../Topic/ClickOnce%20Security%20and%20Deployment.md)|  
-|[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[WPF 部分信頼セキュリティ](../../../docs/framework/wpf/wpf-partial-trust-security.md)|  
+|<span data-ttu-id="2375f-310">区分</span><span class="sxs-lookup"><span data-stu-id="2375f-310">Area</span></span>|<span data-ttu-id="2375f-311">リソース</span><span class="sxs-lookup"><span data-stu-id="2375f-311">Resource</span></span>|  
+|----------|--------------|  
+|<span data-ttu-id="2375f-312">マネージ コード</span><span class="sxs-lookup"><span data-stu-id="2375f-312">Managed code</span></span>|[<span data-ttu-id="2375f-313">patterns & practices アプリケーション セキュリティ ガイダンス インデックス</span><span class="sxs-lookup"><span data-stu-id="2375f-313">Patterns and Practices Security Guidance for Applications</span></span>](http://go.microsoft.com/fwlink/?LinkId=117426)|  
+|[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]|[<span data-ttu-id="2375f-314">コード アクセス セキュリティ</span><span class="sxs-lookup"><span data-stu-id="2375f-314">Code Access Security</span></span>](../../../docs/framework/misc/code-access-security.md)|  
+|[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]|[<span data-ttu-id="2375f-315">ClickOnce のセキュリティと配置</span><span class="sxs-lookup"><span data-stu-id="2375f-315">ClickOnce Security and Deployment</span></span>](/visualstudio/deployment/clickonce-security-and-deployment)|  
+|[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[<span data-ttu-id="2375f-316">WPF 部分信頼セキュリティ</span><span class="sxs-lookup"><span data-stu-id="2375f-316">WPF Partial Trust Security</span></span>](../../../docs/framework/wpf/wpf-partial-trust-security.md)|  
   
-## 参照  
- [WPF 部分信頼セキュリティ](../../../docs/framework/wpf/wpf-partial-trust-security.md)   
- [WPF のセキュリティ方針 \- プラットフォーム セキュリティ](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)   
- [WPF のセキュリティ方針 \- セキュリティ エンジニアリング](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)   
- [patterns & practices アプリケーション セキュリティ ガイダンス インデックス](http://go.microsoft.com/fwlink/?LinkId=117426)   
- [コード アクセス セキュリティ](../../../docs/framework/misc/code-access-security.md)   
- [ClickOnce のセキュリティと配置](../Topic/ClickOnce%20Security%20and%20Deployment.md)   
- [XAML の概要 \(WPF\)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+## <a name="see-also"></a><span data-ttu-id="2375f-317">関連項目</span><span class="sxs-lookup"><span data-stu-id="2375f-317">See Also</span></span>  
+ [<span data-ttu-id="2375f-318">WPF 部分信頼セキュリティ</span><span class="sxs-lookup"><span data-stu-id="2375f-318">WPF Partial Trust Security</span></span>](../../../docs/framework/wpf/wpf-partial-trust-security.md)  
+ [<span data-ttu-id="2375f-319">WPF のセキュリティ方針 - プラットフォーム セキュリティ</span><span class="sxs-lookup"><span data-stu-id="2375f-319">WPF Security Strategy - Platform Security</span></span>](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
+ [<span data-ttu-id="2375f-320">WPF のセキュリティ方針 - セキュリティ エンジニアリング</span><span class="sxs-lookup"><span data-stu-id="2375f-320">WPF Security Strategy - Security Engineering</span></span>](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)  
+ [<span data-ttu-id="2375f-321">patterns & practices アプリケーション セキュリティ ガイダンス インデックス</span><span class="sxs-lookup"><span data-stu-id="2375f-321">Patterns and Practices Security Guidance for Applications</span></span>](http://go.microsoft.com/fwlink/?LinkId=117426)  
+ [<span data-ttu-id="2375f-322">コード アクセス セキュリティ</span><span class="sxs-lookup"><span data-stu-id="2375f-322">Code Access Security</span></span>](../../../docs/framework/misc/code-access-security.md)  
+ [<span data-ttu-id="2375f-323">ClickOnce のセキュリティと配置</span><span class="sxs-lookup"><span data-stu-id="2375f-323">ClickOnce Security and Deployment</span></span>](/visualstudio/deployment/clickonce-security-and-deployment)  
+ [<span data-ttu-id="2375f-324">XAML の概要 (WPF)</span><span class="sxs-lookup"><span data-stu-id="2375f-324">XAML Overview (WPF)</span></span>](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

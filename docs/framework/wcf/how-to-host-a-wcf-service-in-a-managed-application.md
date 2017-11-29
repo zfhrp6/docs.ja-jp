@@ -1,109 +1,112 @@
 ---
-title: "方法 : マネージ アプリケーションで WCF サービスをホストする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: "方法 : マネージ アプリケーションで WCF サービスをホストする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 5eb29db0-b6dc-4e77-8c68-0a62f79d743b
-caps.latest.revision: 42
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 42
+caps.latest.revision: "42"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ca834c097f7e8cea14337fece651b2b3059d06b5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : マネージ アプリケーションで WCF サービスをホストする
-マネージ アプリケーションでサービスをホストするには、マネージ アプリケーション コード内にサービスのコードを埋め込み、サービスのエンドポイントをコードで強制的に定義するか、構成を使用して宣言により定義してから、または既定のエンドポイントを使用して、<xref:System.ServiceModel.ServiceHost> のインスタンスを作成します。  
+# <a name="how-to-host-a-wcf-service-in-a-managed-application"></a><span data-ttu-id="8ca9d-102">方法 : マネージ アプリケーションで WCF サービスをホストする</span><span class="sxs-lookup"><span data-stu-id="8ca9d-102">How to: Host a WCF Service in a Managed Application</span></span>
+<span data-ttu-id="8ca9d-103">マネージ アプリケーションでサービスをホストするには、マネージ アプリケーション コード内にサービスのコードを埋め込み、サービスのエンドポイントをコードで強制的に定義するか、構成を使用して宣言により定義してから、または既定のエンドポイントを使用して、<xref:System.ServiceModel.ServiceHost> のインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-103">To host a service inside a managed application, embed the code for the service inside the managed application code, define an endpoint for the service either imperatively in code, declaratively through configuration, or using default endpoints, and then create an instance of <xref:System.ServiceModel.ServiceHost>.</span></span>  
   
- メッセージの受信を開始するには、<xref:System.ServiceModel.ServiceHost> で <xref:System.ServiceModel.ICommunicationObject.Open%2A> を呼び出します。これにより、サービスのリスナーが作成されて開きます。この方法によるサービスのホストは、マネージ アプリケーション自体がホスト作業を行うため、"自己ホスト" と呼ばれることがあります。サービスを閉じるには、<xref:System.ServiceModel.ServiceHost> で <xref:System.ServiceModel.Channels.CommunicationObject.Close%2A?displayProperty=fullName> を呼び出します。  
+ <span data-ttu-id="8ca9d-104">メッセージの受信を開始するには、<xref:System.ServiceModel.ICommunicationObject.Open%2A> で <xref:System.ServiceModel.ServiceHost> を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-104">To start receiving messages, call <xref:System.ServiceModel.ICommunicationObject.Open%2A> on <xref:System.ServiceModel.ServiceHost>.</span></span> <span data-ttu-id="8ca9d-105">これにより、サービスのリスナーが作成されて開きます。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-105">This creates and opens the listener for the service.</span></span> <span data-ttu-id="8ca9d-106">この方法によるサービスのホストは、マネージ アプリケーション自体がホスト作業を行うため、"自己ホスト" と呼ばれることがあります。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-106">Hosting a service in this way is often referred to as "self-hosting" because the managed application is doing the hosting work itself.</span></span> <span data-ttu-id="8ca9d-107">サービスを閉じるには、<xref:System.ServiceModel.Channels.CommunicationObject.Close%2A?displayProperty=nameWithType> で <xref:System.ServiceModel.ServiceHost> を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-107">To close the service, call <xref:System.ServiceModel.Channels.CommunicationObject.Close%2A?displayProperty=nameWithType> on <xref:System.ServiceModel.ServiceHost>.</span></span>  
   
- サービスは、マネージ Windows サービス、インターネット インフォメーション サービス \(IIS\)、または Windows プロセス アクティブ化サービス \(WAS\) でホストすることもできます。サービスのホスティング[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)」を参照してください。  
+ <span data-ttu-id="8ca9d-108">サービスは、マネージ Windows サービス、インターネット インフォメーション サービス (IIS)、または Windows プロセス アクティブ化サービス (WAS) でホストすることもできます。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-108">A service can also be hosted in a managed Windows service, in Internet Information Services (IIS), or in Windows Process Activation Service (WAS).</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="8ca9d-109">サービスのオプションをホストするを参照してください[ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-109"> hosting options for a service, see [Hosting Services](../../../docs/framework/wcf/hosting-services.md).</span></span>  
   
- マネージ アプリケーションでのサービスのホストは、展開するインフラストラクチャが最小限で済むため、最も柔軟性があります。マネージ アプリケーションでのホスティング サービス[!INCLUDE[crabout](../../../includes/crabout-md.md)]、[マネージ アプリケーションのホスト](../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)」を参照してください。  
+ <span data-ttu-id="8ca9d-110">マネージ アプリケーションでのサービスのホスティングは、展開するインフラストラクチャが最小限で済むため、最も柔軟性があります。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-110">Hosting a service in a managed application is the most flexible option because it requires the least infrastructure to deploy.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="8ca9d-111">マネージ アプリケーションでサービスをホストするを参照してください[マネージ アプリケーションのホスト](../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-111"> hosting services in managed applications, see [Hosting in a Managed Application](../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md).</span></span>  
   
- 次の手順では、自己ホスト型サービスをコンソール アプリケーションに実装する方法を示します。  
+ <span data-ttu-id="8ca9d-112">次の手順では、自己ホスト型サービスをコンソール アプリケーションに実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-112">The following procedure demonstrates how to implement a self-hosted service in a console application.</span></span>  
   
-### 自己ホスト型サービスを作成するには  
+### <a name="to-create-a-self-hosted-service"></a><span data-ttu-id="8ca9d-113">自己ホスト型サービスを作成するには</span><span class="sxs-lookup"><span data-stu-id="8ca9d-113">To create a self-hosted service</span></span>  
   
-1.  [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] を開き、**\[ファイル\]** メニューの **\[新規作成\]**、**\[プロジェクト\]** の順にクリックします。  
+1.  <span data-ttu-id="8ca9d-114">開いている[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]選択**新規**、**プロジェクト.**から、**ファイル**メニュー。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-114">Open [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] and select **New**, **Project...** from the **File** menu.</span></span>  
   
-2.  **\[インストールされているテンプレート\]** ボックスで **\[Visual C\#\]**、**\[Windows\]** または **\[Visual Basic\]**、**\[Windows\]** を選択します。[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] の設定に応じて、選択した内容の 1 つまたは両方が **\[インストールされているテンプレート\]** ボックスの **\[他の言語\]** ノードに表示されます。  
+2.  <span data-ttu-id="8ca9d-115">**インストールされたテンプレート**一覧で、 **Visual c#**、 **Windows**または**Visual Basic**、 **Windows**.</span><span class="sxs-lookup"><span data-stu-id="8ca9d-115">In the **Installed Templates** list, select **Visual C#**, **Windows** or **Visual Basic**, **Windows**.</span></span> <span data-ttu-id="8ca9d-116">によって、[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]設定、これらの両方またはいずれかの可能性があります、**他の言語**内のノード、**インストールされたテンプレート** ボックスの一覧です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-116">Depending on your [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] settings, one or both of these may be under the **Other Languages** node in the **Installed Templates** list.</span></span>  
   
-3.  **\[Windows\]**  ボックスから **\[コンソール アプリケーション\]** を選択します。**\[名前\]** ボックスに「`SelfHost`」と入力して **\[OK\]** をクリックします。  
+3.  <span data-ttu-id="8ca9d-117">選択**コンソール アプリケーション**から、 **Windows**  ボックスの一覧です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-117">Select **Console Application** from the **Windows** list.</span></span> <span data-ttu-id="8ca9d-118">型`SelfHost`で、**名前**ボックスし、をクリックして**OK**です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-118">Type `SelfHost` in the **Name** box and click **OK**.</span></span>  
   
-4.  **ソリューション エクスプローラー**で **\[SelfHost\]** を右クリックし、**\[参照の追加\]** をクリックします。**\[.NET\]** タブの **\[System.ServiceModel\]** をクリックし、**\[OK\]** をクリックします。  
+4.  <span data-ttu-id="8ca9d-119">右クリック**SelfHost**で**ソリューション エクスプ ローラー**選択**参照の追加.**.選択**System.ServiceModel**から、 **.NET**  タブでをクリックし、 **OK**です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-119">Right-click **SelfHost** in **Solution Explorer** and select **Add Reference...**. Select **System.ServiceModel** from the **.NET** tab and click **OK**.</span></span>  
   
     > [!TIP]
-    >  **ソリューション エクスプローラー** ウィンドウが表示されない場合は、**\[表示\]** メニューの **\[ソリューション エクスプローラー\]** をクリックします。  
+    >  <span data-ttu-id="8ca9d-120">場合、**ソリューション エクスプ ローラー**ウィンドウが表示されている、select**ソリューション エクスプ ローラー**から、**ビュー**メニュー。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-120">If the **Solution Explorer** window is not visible, select **Solution Explorer** from the **View** menu.</span></span>  
   
-5.  まだ開いていない場合は、**ソリューション エクスプローラー**で **\[Program.cs\]** または **\[Module1.vb\]** をダブルクリックして、コード ウィンドウで開きます。ファイルの先頭に次のステートメントを追加します。  
+5.  <span data-ttu-id="8ca9d-121">ダブルクリックして**Program.cs**または**Module1.vb**で**ソリューション エクスプ ローラー**がまだ開いていない場合、コード ウィンドウで開きます。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-121">Double-click **Program.cs** or **Module1.vb** in **Solution Explorer** to open it in the code window if it is not already open.</span></span> <span data-ttu-id="8ca9d-122">ファイルの先頭に次のステートメントを追加します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-122">Add the following statements at the top of the file.</span></span>  
   
      [!code-csharp[CFX_SelfHost4#1](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_selfhost4/cs/program.cs#1)]
      [!code-vb[CFX_SelfHost4#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#1)]  
   
-6.  サービス コントラクトを定義して実装します。この例では、サービスへの入力に基づいてメッセージを返す `HelloWorldService` を定義します。  
+6.  <span data-ttu-id="8ca9d-123">サービス コントラクトを定義して実装します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-123">Define and implement a service contract.</span></span> <span data-ttu-id="8ca9d-124">この例では、サービスへの入力に基づいてメッセージを返す `HelloWorldService` を定義します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-124">This example defines a `HelloWorldService` that returns a message based on the input to the service.</span></span>  
   
      [!code-csharp[CFX_SelfHost4#2](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_selfhost4/cs/program.cs#2)]
      [!code-vb[CFX_SelfHost4#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#2)]  
   
     > [!NOTE]
-    >  サービス インターフェイスを定義および実装する方法[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[方法 : サービス コントラクトを定義する](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)」および「[方法 : サービス コントラクトを実装する](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)」を参照してください。  
+    >  [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="8ca9d-125">方法を定義し、サービス インターフェイスを実装して参照してください[する方法: サービス コントラクトを定義する](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)と[する方法: サービス コントラクトを実装する](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-125"> how to define and implement a service interface, see [How to: Define a Service Contract](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md) and [How to: Implement a Service Contract](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md).</span></span>  
   
-7.  `Main` メソッドの上部で、サービスのベース アドレスで <xref:System.Uri> クラスのインスタンスを作成します。  
+7.  <span data-ttu-id="8ca9d-126">`Main` メソッドの上部で、サービスのベース アドレスで <xref:System.Uri> クラスのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-126">At the top of the `Main` method, create an instance of the <xref:System.Uri> class with the base address for the service.</span></span>  
   
      [!code-csharp[CFX_SelfHost4#3](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_selfhost4/cs/program.cs#3)]
      [!code-vb[CFX_SelfHost4#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#3)]  
   
-8.  <xref:System.ServiceModel.ServiceHost> クラスのインスタンスを作成して、サービス型を表す <xref:System.Type> とベース アドレス URI \(Uniform Resource Identifier\) を [ServiceHost\(Type, Uri\<xref:System.ServiceModel.ServiceHost.%23ctor%28System.Type%2CSystem.Uri%5B%5D%29> に渡します。メタデータ公開を有効にして、<xref:System.ServiceModel.ServiceHost> で <xref:System.ServiceModel.ICommunicationObject.Open%2A> メソッドを呼び出し、サービスを初期化してメッセージを受信する準備をします。  
+8.  <span data-ttu-id="8ca9d-127"><xref:System.ServiceModel.ServiceHost> クラスのインスタンスを作成して、サービス型を表す <xref:System.Type> とベース アドレス URI (Uniform Resource Identifier) を <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Type%2CSystem.Uri%5B%5D%29> に渡します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-127">Create an instance of the <xref:System.ServiceModel.ServiceHost> class, passing a <xref:System.Type> that represents the service type and the base address Uniform Resource Identifier (URI) to the <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Type%2CSystem.Uri%5B%5D%29>.</span></span> <span data-ttu-id="8ca9d-128">メタデータ公開を有効にして、<xref:System.ServiceModel.ICommunicationObject.Open%2A> で <xref:System.ServiceModel.ServiceHost> メソッドを呼び出し、サービスを初期化してメッセージを受信する準備をします。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-128">Enable metadata publishing, and then call the <xref:System.ServiceModel.ICommunicationObject.Open%2A> method on the <xref:System.ServiceModel.ServiceHost> to initialize the service and prepare it to receive messages.</span></span>  
   
      [!code-csharp[CFX_SelfHost4#4](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_selfhost4/cs/program.cs#4)]
-     <!-- TODO: review snippet reference [!code-vb[CFX_SelfHost4#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#4)]  -->  
+     [!code-vb[CFX_SelfHost4#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#4)]       
   
     > [!NOTE]
-    >  この例では、既定のエンドポイントを使用するので、このサービスには構成ファイルは必要ありません。エンドポイントが構成されていない場合、ランタイムは、サービスによって実装されたサービス コントラクトごとに 1 つのエンドポイントを各ベース アドレスに作成します。既定のエンドポイント[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)」および「[WCF サービスの簡略化された構成](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)」を参照してください。  
+    >  <span data-ttu-id="8ca9d-129">この例では、既定のエンドポイントを使用するので、このサービスには構成ファイルは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-129">This example uses default endpoints, and no configuration file is required for this service.</span></span> <span data-ttu-id="8ca9d-130">エンドポイントが構成されていない場合、ランタイムは、サービスによって実装されたサービス コントラクトごとに 1 つのエンドポイントを各ベース アドレスに作成します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-130">If no endpoints are configured, then the runtime creates one endpoint for each base address for each service contract implemented by the service.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="8ca9d-131">既定のエンドポイントを参照してください[簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-131"> default endpoints, see [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>  
   
-9. Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。  
+9. <span data-ttu-id="8ca9d-132">Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-132">Press CTRL+SHIFT+B to build the solution.</span></span>  
   
-### サービスをテストするには  
+### <a name="to-test-the-service"></a><span data-ttu-id="8ca9d-133">サービスをテストするには</span><span class="sxs-lookup"><span data-stu-id="8ca9d-133">To test the service</span></span>  
   
-1.  Ctrl キーを押しながら F5 キーを押してサービスを実行します。  
+1.  <span data-ttu-id="8ca9d-134">Ctrl キーを押しながら F5 キーを押してサービスを実行します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-134">Press Ctrl + F5 to run the service.</span></span>  
   
-2.  **\[WCF のテスト用クライアント\]** を開きます。  
-  
-    > [!TIP]
-    >  **\[WCF のテスト用クライアント\]** を開くには、[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] コマンド プロンプトを開いて、**WcfTestClient.exe** を実行します。  
-  
-3.  **\[ファイル\]** メニューの **\[サービスの追加\]** をクリックします。  
-  
-4.  アドレス ボックスに「`http://localhost:8080/hello`」と入力し、**\[OK\]** をクリックします。  
+2.  <span data-ttu-id="8ca9d-135">開いている**WCF テスト クライアント**です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-135">Open **WCF Test Client**.</span></span>  
   
     > [!TIP]
-    >  サービスが実行していることを確認してください。サービスが実行していない場合、この手順は失敗します。コードでベース アドレスを変更した場合は、この手順で、変更したアドレスを使用します。  
+    >  <span data-ttu-id="8ca9d-136">開くには**WCF テスト クライアント**を開き、[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]コマンド プロンプトを実行**WcfTestClient.exe**です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-136">To open **WCF Test Client**, open a [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] command prompt and execute **WcfTestClient.exe**.</span></span>  
   
-5.  **\[マイ サービス プロジェクト\]** ノードの **\[SayHello\]** をダブルクリックします。自分の名前を **\[要求\]** ボックスの **\[値\]** 列に入力して、**\[起動\]** をクリックします。応答メッセージが **\[応答\]** ボックスに表示されます。  
+3.  <span data-ttu-id="8ca9d-137">選択**サービスを追加しています.**から、**ファイル**メニュー。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-137">Select **Add Service...** from the **File** menu.</span></span>  
   
-## 使用例  
- `HelloWorldService` 型のサービスをホストする <xref:System.ServiceModel.ServiceHost> オブジェクトを作成し、<xref:System.ServiceModel.ServiceHost> で <xref:System.ServiceModel.ICommunicationObject.Open%2A> メソッドを呼び出す例を、次に示します。ベース アドレスがコードで指定され、メタデータ公開が有効化されていて、既定のエンドポイントが使用されています。  
+4.  <span data-ttu-id="8ca9d-138">型`http://localhost:8080/hello`クリックおよびアドレス ボックスに**OK**です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-138">Type `http://localhost:8080/hello` into the address box and click **OK**.</span></span>  
+  
+    > [!TIP]
+    >  <span data-ttu-id="8ca9d-139">サービスが実行していることを確認してください。サービスが実行していない場合、この手順は失敗します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-139">Make sure the service is running or else this step fails.</span></span> <span data-ttu-id="8ca9d-140">コードでベース アドレスを変更した場合は、この手順で、変更したアドレスを使用します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-140">If you have changed the base address in the code, then use the modified base address in this step.</span></span>  
+  
+5.  <span data-ttu-id="8ca9d-141">ダブルクリックして**SayHello**下にある、**マイ サービス プロジェクト**ノード。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-141">Double-click **SayHello** under the **My Service Projects** node.</span></span> <span data-ttu-id="8ca9d-142">名前を入力、**値**内の列、**要求**ボックスの一覧し、をクリックして**Invoke**です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-142">Type your name into the **Value** column in the **Request** list, and click **Invoke**.</span></span> <span data-ttu-id="8ca9d-143">応答メッセージに表示されます、**応答** ボックスの一覧です。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-143">A reply message appears in the **Response** list.</span></span>  
+  
+## <a name="example"></a><span data-ttu-id="8ca9d-144">例</span><span class="sxs-lookup"><span data-stu-id="8ca9d-144">Example</span></span>  
+ <span data-ttu-id="8ca9d-145"><xref:System.ServiceModel.ServiceHost> 型のサービスをホストする `HelloWorldService` オブジェクトを作成し、<xref:System.ServiceModel.ICommunicationObject.Open%2A> で <xref:System.ServiceModel.ServiceHost> メソッドを呼び出す例を、次に示します。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-145">The following example creates a <xref:System.ServiceModel.ServiceHost> object to host a service of type `HelloWorldService`, and then calls the <xref:System.ServiceModel.ICommunicationObject.Open%2A> method on <xref:System.ServiceModel.ServiceHost>.</span></span> <span data-ttu-id="8ca9d-146">ベース アドレスがコードで指定され、メタデータ公開が有効化されていて、既定のエンドポイントが使用されています。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-146">A base address is provided in code, metadata publishing is enabled, and default endpoints are used.</span></span>  
   
  [!code-csharp[CFX_SelfHost4#5](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_selfhost4/cs/program.cs#5)]
  [!code-vb[CFX_SelfHost4#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#5)]  
   
-## 参照  
- <xref:System.Uri>   
- <xref:System.Configuration.ConfigurationManager.AppSettings%2A>   
- <xref:System.Configuration.ConfigurationManager>   
- [方法 : IIS で WCF サービスをホストする](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)   
- [自己ホスト](../../../docs/framework/wcf/samples/self-host.md)   
- [ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)   
- [方法 : サービス コントラクトを定義する](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)   
- [方法 : サービス コントラクトを実装する](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)   
- [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)   
- [サービスとクライアントを構成するためのバインディングの使用](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)   
- [システム標準のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)
+## <a name="see-also"></a><span data-ttu-id="8ca9d-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="8ca9d-147">See Also</span></span>  
+ <xref:System.Uri>  
+ <xref:System.Configuration.ConfigurationManager.AppSettings%2A>  
+ <xref:System.Configuration.ConfigurationManager>  
+ [<span data-ttu-id="8ca9d-148">方法 : IIS で WCF サービスをホストする</span><span class="sxs-lookup"><span data-stu-id="8ca9d-148">How to: Host a WCF Service in IIS</span></span>](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)  
+ [<span data-ttu-id="8ca9d-149">自己ホストします。</span><span class="sxs-lookup"><span data-stu-id="8ca9d-149">Self-Host</span></span>](../../../docs/framework/wcf/samples/self-host.md)  
+ [<span data-ttu-id="8ca9d-150">ホスティング サービス</span><span class="sxs-lookup"><span data-stu-id="8ca9d-150">Hosting Services</span></span>](../../../docs/framework/wcf/hosting-services.md)  
+ [<span data-ttu-id="8ca9d-151">方法: サービス コントラクトを定義する</span><span class="sxs-lookup"><span data-stu-id="8ca9d-151">How to: Define a Service Contract</span></span>](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)  
+ [<span data-ttu-id="8ca9d-152">方法: サービス コントラクトを実装する</span><span class="sxs-lookup"><span data-stu-id="8ca9d-152">How to: Implement a Service Contract</span></span>](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)  
+ [<span data-ttu-id="8ca9d-153">ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)</span><span class="sxs-lookup"><span data-stu-id="8ca9d-153">ServiceModel Metadata Utility Tool (Svcutil.exe)</span></span>](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
+ [<span data-ttu-id="8ca9d-154">サービスとクライアントを構成するためのバインディングの使用</span><span class="sxs-lookup"><span data-stu-id="8ca9d-154">Using Bindings to Configure Services and Clients</span></span>](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
+ [<span data-ttu-id="8ca9d-155">システム標準のバインディング</span><span class="sxs-lookup"><span data-stu-id="8ca9d-155">System-Provided Bindings</span></span>](../../../docs/framework/wcf/system-provided-bindings.md)

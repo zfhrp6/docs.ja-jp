@@ -1,51 +1,54 @@
 ---
-title: "方法 : IIS でサービス以外のワークフローをホストする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : IIS でサービス以外のワークフローをホストする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f362562c-767d-401b-8257-916616568fd4
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 892875fb8340220dc152f91ab2239257c7b96fb8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : IIS でサービス以外のワークフローをホストする
-ワークフロー サービスではないワークフローは IIS\/WAS でホストできます。  これは他の人が作成したワークフローをホストする必要がある場合に役に立ちます。  たとえば、ワークフロー デザイナーを再ホストして、ユーザーが独自のワークフローを作成できるようにする場合がその例です。  IIS でサービス以外のワークフローをホストすると、プロセス リサイクル、アイドル シャットダウン、処理状況の監視、メッセージ ベースのアクティブ化などの機能をサポートできます。  IIS でホストされるワークフロー サービスには <xref:System.ServiceModel.Activities.Receive> アクティビティが含まれ、IIS がメッセージを受け取るとアクティブ化されます。  サービス以外のワークフローにはメッセージング アクティビティは含まれないので、既定ではメッセージを送信することによってアクティブ化できません。  <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> からクラスを派生させ、そのワークフローのインスタンスを作成する操作を含むサービス コントラクトを定義する必要があります。  このトピックでは、単純なワークフローを作成して、クライアントがワークフローのアクティブ化に使用できるサービス コントラクトを定義し、そのサービス コントラクトを使ってワークフロー作成のリクエストをリッスンする <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> からクラスを派生させる方法を説明します。  
+# <a name="how-to-host-a-non-service-workflow-in-iis"></a><span data-ttu-id="5c8b2-102">方法 : IIS でサービス以外のワークフローをホストする</span><span class="sxs-lookup"><span data-stu-id="5c8b2-102">How to: Host a non-service workflow in IIS</span></span>
+<span data-ttu-id="5c8b2-103">ワークフロー サービスではないワークフローは IIS/WAS でホストできます。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-103">Workflows that are not workflow services can be hosted under IIS/WAS.</span></span> <span data-ttu-id="5c8b2-104">これは他の人が作成したワークフローをホストする必要がある場合に役に立ちます。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-104">This is useful when you need to host a workflow written by somebody else.</span></span> <span data-ttu-id="5c8b2-105">たとえば、ワークフロー デザイナーを再ホストして、ユーザーが独自のワークフローを作成できるようにする場合がその例です。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-105">For example, if you rehost the workflow designer and allow users to create their own workflows.</span></span>  <span data-ttu-id="5c8b2-106">IIS でサービス以外のワークフローをホストすると、プロセス リサイクル、アイドル シャットダウン、処理状況の監視、メッセージ ベースのアクティブ化などの機能をサポートできます。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-106">Hosting non-service workflows in IIS provides support for features like process recycling, idle shutdown, process health monitoring, and message-based activation.</span></span> <span data-ttu-id="5c8b2-107">IIS でホストされるワークフロー サービスには <xref:System.ServiceModel.Activities.Receive> アクティビティが含まれ、IIS がメッセージを受け取るとアクティブ化されます。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-107">Workflow services hosted in IIS contain <xref:System.ServiceModel.Activities.Receive> activities and are activated when a message is received by IIS.</span></span> <span data-ttu-id="5c8b2-108">サービス以外のワークフローにはメッセージング アクティビティは含まれないので、既定ではメッセージを送信することによってアクティブ化できません。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-108">Non-service workflows do not contain messaging activities, and by default cannot be activated by sending a message.</span></span>  <span data-ttu-id="5c8b2-109"><xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> からクラスを派生させ、そのワークフローのインスタンスを作成する操作を含むサービス コントラクトを定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-109">You must derive a class from <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> and define a service contract that contains operations to create an instance of the workflow.</span></span> <span data-ttu-id="5c8b2-110">このトピックでは、手順、単純なワークフローを作成、クライアントが、ワークフローをアクティブ化に使用できるサービス コントラクトを定義およびからクラスを派生する<xref:System.ServiceModel.Activities.WorkflowHostingEndpoint>ワークフロー作成のリクエストをリッスンするように、サービス コントラクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-110">This topic will walk you through creating a simple workflow, defining a service contract a client can use to activate the workflow, and deriving a class from <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> which uses the service contract to listen for workflow creating requests.</span></span>  
   
-### 単純なワークフローの作成  
+### <a name="create-a-simple-workflow"></a><span data-ttu-id="5c8b2-111">単純なワークフローの作成</span><span class="sxs-lookup"><span data-stu-id="5c8b2-111">Create a simple workflow</span></span>  
   
-1.  `CreationEndpointTest` という名前で、新しい空の [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] ソリューションを作成します。  
+1.  <span data-ttu-id="5c8b2-112">[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] という名前で、新しい空の `CreationEndpointTest` ソリューションを作成します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-112">Create a new [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] empty solution called `CreationEndpointTest`.</span></span>  
   
-2.  `SimpleWorkflow` という新しい WCF ワークフロー サービス アプリケーション プロジェクトをソリューションに追加します。  ワークフロー デザイナーが開きます。  
+2.  <span data-ttu-id="5c8b2-113">`SimpleWorkflow` という新しい WCF ワークフロー サービス アプリケーション プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-113">Add a new WCF Workflow Service Application project called `SimpleWorkflow` to the solution.</span></span> <span data-ttu-id="5c8b2-114">ワークフロー デザイナーが開きます。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-114">The workflow designer will open.</span></span>  
   
-3.  ReceiveRequest アクティビティと SendResponse アクティビティを削除します。  ワークフローはこれらのアクティビティによってワークフロー サービスになります。  ここではワークフロー サービスを使用しないので、これらのアクティビティは必要ありません。  
+3.  <span data-ttu-id="5c8b2-115">ReceiveRequest アクティビティと SendResponse アクティビティを削除します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-115">Delete the ReceiveRequest and SendResponse activities.</span></span> <span data-ttu-id="5c8b2-116">ワークフローはこれらのアクティビティによってワークフロー サービスになります。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-116">These activities are what makes a workflow a workflow service.</span></span> <span data-ttu-id="5c8b2-117">ここではワークフロー サービスを使用しないので、これらのアクティビティは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-117">Since we are not working with a workflow service, we no longer need them.</span></span>  
   
-4.  シーケンス アクティビティの DisplayName を "Sequential Workflow" に設定します。  
+4.  <span data-ttu-id="5c8b2-118">DisplayName を"Sequential Workflow"にシーケンス アクティビティを設定します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-118">Set the DisplayName for the sequence activity to "Sequential Workflow".</span></span>  
   
-5.  Service1.xamlx を Workflow1.xamlx という名前に変更します。  
+5.  <span data-ttu-id="5c8b2-119">Service1.xamlx を Workflow1.xamlx という名前に変更します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-119">Rename Service1.xamlx to Workflow1.xamlx.</span></span>  
   
-6.  シーケンス アクティビティの外でデザイナーをクリックして、Name プロパティと ConfigurationName プロパティを "Workflow1" に設定します。  
+6.  <span data-ttu-id="5c8b2-120">シーケンス アクティビティの外でデザイナーをクリックし、Name プロパティと ConfigurationName プロパティを"Workflow1"に設定</span><span class="sxs-lookup"><span data-stu-id="5c8b2-120">Click the designer outside of the sequence activity, and set the Name and ConfigurationName properties to "Workflow1"</span></span>  
   
-7.  <xref:System.Activities.Statements.WriteLine> アクティビティを <xref:System.Activities.Statements.Sequence> にドラッグします。  <xref:System.Activities.Statements.WriteLine> アクティビティはツールボックスの **\[プリミティブ\]** セクションにあります。  <xref:System.Activities.Statements.WriteLine> アクティビティの <xref:System.Activities.Statements.WriteLine.Text%2A> プロパティを "Hello, world" に設定します。  
+7.  <span data-ttu-id="5c8b2-121"><xref:System.Activities.Statements.WriteLine> アクティビティを <xref:System.Activities.Statements.Sequence> にドラッグします。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-121">Drag a <xref:System.Activities.Statements.WriteLine> activity into the <xref:System.Activities.Statements.Sequence>.</span></span> <span data-ttu-id="5c8b2-122"><xref:System.Activities.Statements.WriteLine>アクティビティは含まれて、**プリミティブ**ツールボックスのセクションです。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-122">The <xref:System.Activities.Statements.WriteLine> activity can be found in the **Primitives** section of the toolbox.</span></span> <span data-ttu-id="5c8b2-123">設定、<xref:System.Activities.Statements.WriteLine.Text%2A>のプロパティ、<xref:System.Activities.Statements.WriteLine>アクティビティに「こんにちは, world」です。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-123">Set the <xref:System.Activities.Statements.WriteLine.Text%2A> property of the <xref:System.Activities.Statements.WriteLine> activity to "Hello, world".</span></span>  
   
-     この時点で、ワークフローは次の図のようになります。  
+     <span data-ttu-id="5c8b2-124">この時点で、ワークフローは次の図のようになります。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-124">The workflow should now look like the following diagram.</span></span>  
   
-     ![単純なワークフロー](../../../../docs/framework/wcf/feature-details/media/simpleworkflow.png "SimpleWorkflow")  
+     <span data-ttu-id="5c8b2-125">![単純なワークフロー](../../../../docs/framework/wcf/feature-details/media/simpleworkflow.png "SimpleWorkflow")</span><span class="sxs-lookup"><span data-stu-id="5c8b2-125">![A simple workflow](../../../../docs/framework/wcf/feature-details/media/simpleworkflow.png "SimpleWorkflow")</span></span>  
   
-### ワークフロー作成サービス コントラクトの作成  
+### <a name="create-the-workflow-creation-service-contract"></a><span data-ttu-id="5c8b2-126">ワークフロー作成サービス コントラクトの作成</span><span class="sxs-lookup"><span data-stu-id="5c8b2-126">Create the workflow creation service contract</span></span>  
   
-1.  `CreationEndpointTest` に `Shared` という新しいクラス ライブラリ プロジェクトを追加します。  
+1.  <span data-ttu-id="5c8b2-127">`Shared` に `CreationEndpointTest` という新しいクラス ライブラリ プロジェクトを追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-127">Add a new class library project called `Shared` to the `CreationEndpointTest` solution.</span></span>  
   
-2.  System.ServiceModel.dll、System.Configuration、および System.ServiceModel.Activities への参照を `Shared` プロジェクトに追加します。  
+2.  <span data-ttu-id="5c8b2-128">System.ServiceModel.dll、System.Configuration、および System.ServiceModel.Activities への参照を `Shared` プロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-128">Add a reference to System.ServiceModel.dll, System.Configuration, and System.ServiceModel.Activities to the `Shared` project.</span></span>  
   
-3.  Class1.cs ファイルの名前を IWorkflowCreation.cs に変更し、次のコードをそのファイルに追加します。  
+3.  <span data-ttu-id="5c8b2-129">Class1.cs ファイルの名前を IWorkflowCreation.cs に変更し、次のコードをそのファイルに追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-129">Rename the Class1.cs file to IWorkflowCreation.cs and the following code to the file.</span></span>  
   
     ```  
     using System;  
@@ -69,11 +72,11 @@ caps.handback.revision: 7
     }  
     ```  
   
-     このコントラクトは 2 つの操作を定義します。どちらも作成したサービス以外のワークフローの新しいインスタンスを作成します。  1 つは生成されたインスタンス ID を持つ新しいインスタンスを作成し、もう 1 つは新しいワークフロー インスタンスのインスタンス ID を指定できるようにします。  どちらの方法でも、新しいワークフロー インスタンスにパラメーターを渡すことができます。  このコントラクトは <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> によって公開され、クライアントがサービス以外のワークフローの新しいインスタンスを作成できるようにします。  
+     <span data-ttu-id="5c8b2-130">このコントラクトは 2 つの操作を定義します。どちらも作成したサービス以外のワークフローの新しいインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-130">This contract defines two operations both create a new instance of the non-service workflow you just created.</span></span> <span data-ttu-id="5c8b2-131">1 つは生成されたインスタンス ID を持つ新しいインスタンスを作成し、もう 1 つは新しいワークフロー インスタンスのインスタンス ID を指定できるようにします。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-131">One creates a new instance with a generated instance ID and the other allows you to specify the instance ID for the new workflow instance.</span></span>  <span data-ttu-id="5c8b2-132">どちらの方法でも、新しいワークフロー インスタンスにパラメーターを渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-132">Both methods allow you to pass in parameters to the new workflow instance.</span></span> <span data-ttu-id="5c8b2-133">このコントラクトによって公開される、<xref:System.ServiceModel.Activities.WorkflowHostingEndpoint>にクライアントがサービス以外のワークフローの新しいインスタンスを作成できるようにします。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-133">This contract will be exposed by the <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> to allow clients to create new instances of a non-service workflow.</span></span>  
   
-### WorkflowHostingEndpoint からのクラスの派生  
+### <a name="derive-a-class-from-workflowhostingendpoint"></a><span data-ttu-id="5c8b2-134">WorkflowHostingEndpoint からのクラスの派生</span><span class="sxs-lookup"><span data-stu-id="5c8b2-134">Derive a class from WorkflowHostingEndpoint</span></span>  
   
-1.  `CreationEndpoint` という <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> から派生された新しいクラスを `Shared` プロジェクトに追加します。  
+1.  <span data-ttu-id="5c8b2-135">いう新しいクラスを追加`CreationEndpoint`から派生した<xref:System.ServiceModel.Activities.WorkflowHostingEndpoint>を`Shared`プロジェクト。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-135">Add a new class called `CreationEndpoint` derived from <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> to the `Shared` project.</span></span>  
   
     ```  
     using System;  
@@ -92,7 +95,7 @@ caps.handback.revision: 7
     }  
     ```  
   
-2.  `defaultBaseUri` というローカルの静的 <xref:System.Uri> 変数を `CreationEndpoint` クラスに追加します。  
+2.  <span data-ttu-id="5c8b2-136"><xref:System.Uri> というローカルの静的 `defaultBaseUri` 変数を `CreationEndpoint` クラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-136">Add a local static <xref:System.Uri> variable called `defaultBaseUri` to the `CreationEndpoint` class.</span></span>  
   
     ```  
     public class CreationEndpoint : WorkflowHostingEndpoint  
@@ -101,7 +104,7 @@ caps.handback.revision: 7
     }  
     ```  
   
-3.  `CreationEndpoint` クラスに次のコンストラクターを追加します。  基本コンストラクターへの呼び出しに `IWorkflowCreation` サービス コントラクトを指定することに注意してください。  
+3.  <span data-ttu-id="5c8b2-137">`CreationEndpoint` クラスに次のコンストラクターを追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-137">Add the following constructor to the `CreationEndpoint` class.</span></span> <span data-ttu-id="5c8b2-138">基本コンストラクターへの呼び出しに `IWorkflowCreation` サービス コントラクトを指定することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-138">Notice we specify the `IWorkflowCreation` service contract in the call to the base constructor.</span></span>  
   
     ```  
     public CreationEndpoint(Binding binding, EndpointAddress address)  
@@ -110,7 +113,7 @@ caps.handback.revision: 7
        }  
     ```  
   
-4.  `CreationEndpoint` クラスに次の既定のコンストラクターを追加します。  
+4.  <span data-ttu-id="5c8b2-139">`CreationEndpoint` クラスに次の既定のコンストラクターを追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-139">Add the following default constructor to the `CreationEndpoint` class.</span></span>  
   
     ```  
     public CreationEndpoint()  
@@ -120,7 +123,7 @@ caps.handback.revision: 7
        }  
     ```  
   
-5.  `DefaultBaseUri` という静的プロパティを `CreationEndpoint` クラスに追加します。  このプロパティは既定のベース URI の保持に使用されます \(指定されない場合\)。  
+5.  <span data-ttu-id="5c8b2-140">`DefaultBaseUri` という静的プロパティを `CreationEndpoint` クラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-140">Add a static `DefaultBaseUri` property to the `CreationEndpoint` class.</span></span> <span data-ttu-id="5c8b2-141">このプロパティは既定のベース URI の保持に使用されます (指定されない場合)。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-141">This property will be used to hold a default base URI if one is not provided.</span></span>  
   
     ```  
     static Uri DefaultBaseUri  
@@ -138,7 +141,7 @@ caps.handback.revision: 7
      }  
     ```  
   
-6.  作成エンドポイントに使用する既定のバインディングを取得するための次のメソッドを作成します。  
+6.  <span data-ttu-id="5c8b2-142">作成エンドポイントに使用する既定のバインディングを取得するための次のメソッドを作成します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-142">Create the following method to get the default binding to use for the creation endpoint.</span></span>  
   
     ```  
     //defaults to NetNamedPipeBinding  
@@ -148,7 +151,7 @@ caps.handback.revision: 7
     }  
     ```  
   
-7.  <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint.OnGetInstanceId%2A> メソッドをオーバーライドしてワークフロー インスタンス ID を返します。  `Action` ヘッダーが "Create" で終わる場合は空の GUID を返し、`Action` ヘッダーが "CreateWithInstanceId" で終わる場合はメソッドに渡す GUID を返します。  それ以外の場合は、<xref:System.InvalidOperationException> がスローされます。  これらの `Action` ヘッダーは `IWorkflowCreation` サービス コントラクトで定義した 2 つの操作に対応しています。  
+7.  <span data-ttu-id="5c8b2-143"><xref:System.ServiceModel.Activities.WorkflowHostingEndpoint.OnGetInstanceId%2A> メソッドをオーバーライドしてワークフロー インスタンス ID を返します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-143">Override the <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint.OnGetInstanceId%2A> method to return the workflow instance ID.</span></span> <span data-ttu-id="5c8b2-144">場合、`Action`場合、ヘッダーが"Create"では空の GUID を返します、`Action`ヘッダーが"CreateWithInstanceId"return メソッドに渡す GUID で終了します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-144">If the `Action` header ends with "Create" return an empty GUID, if the `Action` header ends with "CreateWithInstanceId" return the GUID passed into the method.</span></span> <span data-ttu-id="5c8b2-145">それ以外の場合は、<xref:System.InvalidOperationException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-145">Otherwise, throw an <xref:System.InvalidOperationException>.</span></span> <span data-ttu-id="5c8b2-146">これらの `Action` ヘッダーは `IWorkflowCreation` サービス コントラクトで定義した 2 つの操作に対応しています。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-146">These `Action` headers correspond to the two operations defined in the `IWorkflowCreation` service contract.</span></span>  
   
     ```  
     protected override Guid OnGetInstanceId(object[] inputs, OperationContext operationContext)  
@@ -170,7 +173,7 @@ caps.handback.revision: 7
     }  
     ```  
   
-8.  <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint.OnGetCreationContext%2A> メソッドをオーバーライドして <xref:System.ServiceModel.Activities.WorkflowCreationContext> を作成し、ワークフローに引数があれば追加し、クライアントにインスタンス ID を送信して、<xref:System.ServiceModel.Activities.WorkflowCreationContext> を返します。  
+8.  <span data-ttu-id="5c8b2-147"><xref:System.ServiceModel.Activities.WorkflowHostingEndpoint.OnGetCreationContext%2A> メソッドをオーバーライドして <xref:System.ServiceModel.Activities.WorkflowCreationContext> を作成し、ワークフローに引数があれば追加し、クライアントにインスタンス ID を送信して、<xref:System.ServiceModel.Activities.WorkflowCreationContext> を返します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-147">Override the <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint.OnGetCreationContext%2A> method to create a <xref:System.ServiceModel.Activities.WorkflowCreationContext> and add any arguments for the workflow, send the instance ID to the client, and then return the <xref:System.ServiceModel.Activities.WorkflowCreationContext>.</span></span>  
   
     ```  
     protected override WorkflowCreationContext OnGetCreationContext(object[] inputs, OperationContext operationContext, Guid instanceId, WorkflowHostingResponseContext responseContext)  
@@ -198,11 +201,11 @@ caps.handback.revision: 7
     }  
     ```  
   
-### WorkflowCreationEndpoint の構成を可能にする標準エンドポイント要素の作成  
+### <a name="create-a-standard-endpoint-element-to-allow-you-to-configure-the-workflowcreationendpoint"></a><span data-ttu-id="5c8b2-148">WorkflowCreationEndpoint の構成を可能にする標準エンドポイント要素の作成</span><span class="sxs-lookup"><span data-stu-id="5c8b2-148">Create a standard endpoint element to allow you to configure the WorkflowCreationEndpoint</span></span>  
   
-1.  `CreationEndpoint` プロジェクトの Shared への参照を追加します。  
+1.  <span data-ttu-id="5c8b2-149">`CreationEndpoint` プロジェクトの Shared への参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-149">Add a reference to Shared in the `CreationEndpoint` project</span></span>  
   
-2.  `CreationEndpointElement` という <xref:System.ServiceModel.Configuration.StandardEndpointElement> から派生された新しいクラスを `CreationEndpoint` プロジェクトに追加します。  このクラスは web.config ファイル内の `CreationEndpoint` を表します。  
+2.  <span data-ttu-id="5c8b2-150">`CreationEndpointElement` という <xref:System.ServiceModel.Configuration.StandardEndpointElement> から派生された新しいクラスを `CreationEndpoint` プロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-150">Add a new class called `CreationEndpointElement`, derived from <xref:System.ServiceModel.Configuration.StandardEndpointElement> to the `CreationEndpoint` project.</span></span> <span data-ttu-id="5c8b2-151">このクラスは web.config ファイル内の `CreationEndpoint` を表します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-151">This class will represent a `CreationEndpoint` in a web.config file.</span></span>  
   
     ```  
     using System;  
@@ -220,7 +223,7 @@ caps.handback.revision: 7
        }  
     ```  
   
-3.  エンドポイントの型を返すために `EndpointType` というプロパティを追加します。  
+3.  <span data-ttu-id="5c8b2-152">エンドポイントの型を返すために `EndpointType` というプロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-152">Add a property called `EndpointType` to return the type of the endpoint.</span></span>  
   
     ```  
     protected override Type EndpointType  
@@ -229,17 +232,16 @@ caps.handback.revision: 7
     }  
     ```  
   
-4.  <xref:System.ServiceModel.Configuration.StandardEndpointElement.CreateServiceEndpoint%2A> メソッドをオーバーライドし、`CreationEndpoint` を返します。  
+4.  <span data-ttu-id="5c8b2-153"><xref:System.ServiceModel.Configuration.StandardEndpointElement.CreateServiceEndpoint%2A> メソッドをオーバーライドし、`CreationEndpoint` を返します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-153">Override the <xref:System.ServiceModel.Configuration.StandardEndpointElement.CreateServiceEndpoint%2A> method and return a new `CreationEndpoint`.</span></span>  
   
     ```  
     protected override ServiceEndpoint CreateServiceEndpoint(ContractDescription contractDescription)  
     {  
        return new CreationEndpoint();  
     }  
-  
     ```  
   
-5.  <xref:System.ServiceModel.Configuration.StandardEndpointElement.OnApplyConfiguration%2A>、<xref:System.ServiceModel.Configuration.StandardEndpointElement.OnApplyConfiguration%2A>、<xref:System.ServiceModel.Configuration.StandardEndpointElement.OnInitializeAndValidate%2A>、および <xref:System.ServiceModel.Configuration.StandardEndpointElement.OnInitializeAndValidate%2A> の各メソッドをオーバーロードします。  これらのメソッドは定義する必要があるだけで、コードを追加する必要はありません。  
+5.  <span data-ttu-id="5c8b2-154"><xref:System.ServiceModel.Configuration.StandardEndpointElement.OnApplyConfiguration%2A>、<xref:System.ServiceModel.Configuration.StandardEndpointElement.OnApplyConfiguration%2A>、<xref:System.ServiceModel.Configuration.StandardEndpointElement.OnInitializeAndValidate%2A>、および <xref:System.ServiceModel.Configuration.StandardEndpointElement.OnInitializeAndValidate%2A> の各メソッドをオーバーロードします。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-154">Overload the <xref:System.ServiceModel.Configuration.StandardEndpointElement.OnApplyConfiguration%2A>, <xref:System.ServiceModel.Configuration.StandardEndpointElement.OnApplyConfiguration%2A>, <xref:System.ServiceModel.Configuration.StandardEndpointElement.OnInitializeAndValidate%2A>, and <xref:System.ServiceModel.Configuration.StandardEndpointElement.OnInitializeAndValidate%2A> methods.</span></span> <span data-ttu-id="5c8b2-155">これらのメソッドは定義する必要があるだけで、コードを追加する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-155">These methods just need to be defined, you do not need to add any code to them.</span></span>  
   
     ```  
     protected override void OnApplyConfiguration(ServiceEndpoint endpoint, ChannelEndpointElement channelEndpointElement)  
@@ -259,7 +261,7 @@ caps.handback.revision: 7
     }  
     ```  
   
-6.  `CreationEndpoint` のコレクション クラスを `CreationEndpoint` プロジェクト内の CreationEndpointElement.cs ファイルに追加します。  このクラスは構成によって使用され、web.config ファイル内に `CreationEndpoint` のインスタンス数を格納します。  
+6.  <span data-ttu-id="5c8b2-156">`CreationEndpoint` のコレクション クラスを `CreationEndpoint` プロジェクト内の CreationEndpointElement.cs ファイルに追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-156">Add the collection class for `CreationEndpoint` to the CreationEndpointElement.cs file in the `CreationEndpoint` project.</span></span> <span data-ttu-id="5c8b2-157">このクラスは構成によって使用され、web.config ファイル内に `CreationEndpoint` のインスタンス数を格納します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-157">This class is used by configuration to hold a number of `CreationEndpoint` instances in a web.config file.</span></span>  
   
     ```  
     public class CreationEndpointCollection : StandardEndpointCollectionElement<CreationEndpoint, CreationEndpointElement>  
@@ -267,17 +269,17 @@ caps.handback.revision: 7
     }  
     ```  
   
-7.  ソリューションをビルドします。  
+7.  <span data-ttu-id="5c8b2-158">ソリューションをビルドします。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-158">Build the solution.</span></span>  
   
-### IIS でのワークフローのホスト  
+### <a name="host-the-workflow-in-iis"></a><span data-ttu-id="5c8b2-159">IIS でのワークフローのホスト</span><span class="sxs-lookup"><span data-stu-id="5c8b2-159">Host the workflow in IIS</span></span>  
   
-1.  IIS 内に `MyCreationEndpoint` という新しいアプリケーションを作成します。  
+1.  <span data-ttu-id="5c8b2-160">IIS 内に `MyCreationEndpoint` という新しいアプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-160">Create a new application called `MyCreationEndpoint` in IIS.</span></span>  
   
-2.  ワークフロー デザイナーによって生成された workflow1.xaml というファイルをアプリケーション ディレクトリにコピーして、その名前を workflow1.xamlx に変更します。  
+2.  <span data-ttu-id="5c8b2-161">ワークフロー デザイナーによって生成された workflow1.xaml というファイルをアプリケーション ディレクトリにコピーして、その名前を workflow1.xamlx に変更します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-161">Copy the workflow1.xaml file generated by the workflow designer to the application directory and rename it to workflow1.xamlx.</span></span>  
   
-3.  shared.dll と CreationEndpoint.dll というファイルをアプリケーションの bin ディレクトリにコピーします \(bin ディレクトリは存在しなければ作成します\)。  
+3.  <span data-ttu-id="5c8b2-162">shared.dll と CreationEndpoint.dll というファイルをアプリケーションの bin ディレクトリにコピーします (bin ディレクトリは存在しなければ作成します)。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-162">Copy the shared.dll and CreationEndpoint.dll files to the application’s bin directory (create the bin directory if it is not present).</span></span>  
   
-4.  `CreationEndpoint` プロジェクト内の Web.config ファイルの内容を次のコードで置き換えます。  
+4.  <span data-ttu-id="5c8b2-163">`CreationEndpoint` プロジェクト内の Web.config ファイルの内容を次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-163">Replace the contents of the Web.config file in the `CreationEndpoint` project with the following code.</span></span>  
   
     ```xaml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -288,9 +290,9 @@ caps.handback.revision: 7
     </configuration>  
     ```  
   
-5.  `<system.web>` 要素の後に、次の構成コードを追加して、`CreationEndpoint` を登録します。  
+5.  <span data-ttu-id="5c8b2-164">`<system.web>` 要素の後に、次の構成コードを追加して、`CreationEndpoint` を登録します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-164">After the `<system.web>` element, register `CreationEndpoint` by adding the following configuration code.</span></span>  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
         <!--register CreationEndpoint-->  
         <serviceHostingEnvironment multipleSiteBindingsEnabled="true" />  
@@ -300,24 +302,22 @@ caps.handback.revision: 7
           </endpointExtensions>  
         </extensions>  
     </system.serviceModel>  
-  
     ```  
   
-     これによって、`CreationEndpointCollection` クラスが登録され、web.config ファイル内で `CreationEndpoint` を構成できるようになります。  
+     <span data-ttu-id="5c8b2-165">これによって、`CreationEndpointCollection` クラスが登録され、web.config ファイル内で `CreationEndpoint` を構成できるようになります。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-165">This registers the `CreationEndpointCollection` class so you can configure a `CreationEndpoint` in a web.config file.</span></span>  
   
-6.  受信メッセージをリッスンする `CreationEndpoint` と共に `<service>` 要素を \<\/extensions\> タグの後に追加します。  
+6.  <span data-ttu-id="5c8b2-166">追加、`<service>`要素 (後、 \</extensions > タグ) と、`CreationEndpoint`受信メッセージをリッスンします。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-166">Add a `<service>` element (after the \</extensions> tag) with a `CreationEndpoint` which will listen for incoming messages.</span></span>  
   
-    ```  
+    ```xml  
     <services>  
           <!-- add endpoint to service-->  
           <service name="Workflow1" behaviorConfiguration="basicConfig" >  
             <endpoint kind="creationEndpoint" binding="basicHttpBinding" address=""/>  
           </service>  
         </services>  
-  
     ```  
   
-7.  サービス メタデータを有効にするために、\<behaviors\> 要素を \<\/services\> タグの後に追加します。  
+7.  <span data-ttu-id="5c8b2-167">追加、\<動作 > 要素 (後、 \</サービス > タグ) をサービス メタデータを有効にします。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-167">Add a \<behaviors> element (after the \</services> tag) to enable service metadata.</span></span>  
   
     ```xml  
     <behaviors>  
@@ -327,22 +327,21 @@ caps.handback.revision: 7
             </behavior>  
           </serviceBehaviors>  
         </behaviors>  
-  
     ```  
   
-8.  web.config ファイルを IIS アプリケーション ディレクトリにコピーします。  
+8.  <span data-ttu-id="5c8b2-168">web.config ファイルを IIS アプリケーション ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-168">Copy the web.config to your IIS application directory.</span></span>  
   
-9. 作成エンドポイントが機能しているかどうかをテストするために、Internet Explorer を起動して http:\/\/localhost\/MyCreationEndpoint\/Workflow1.xamlx を表示します。  Internet Explorer には次のような画面が表示されます。  
+9. <span data-ttu-id="5c8b2-169">作成エンドポイントが機能しているかどうかをテストするために、Internet Explorer を起動して http://localhost/MyCreationEndpoint/Workflow1.xamlx を表示します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-169">Test to see if the creation endpoint is working by starting Internet Explorer and browsing to http://localhost/MyCreationEndpoint/Workflow1.xamlx.</span></span> <span data-ttu-id="5c8b2-170">Internet Explorer には次のような画面が表示されます。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-170">Internet Explorer should display the following screen:</span></span>  
   
-     ![サービスのテスト](../../../../docs/framework/wcf/feature-details/media/testservice.gif "TestService")  
+     <span data-ttu-id="5c8b2-171">![サービスのテスト](../../../../docs/framework/wcf/feature-details/media/testservice.gif "TestService")</span><span class="sxs-lookup"><span data-stu-id="5c8b2-171">![Testing the service](../../../../docs/framework/wcf/feature-details/media/testservice.gif "TestService")</span></span>  
   
-### CreationEndpoint を呼び出すクライアントの作成  
+### <a name="create-a-client-that-will-call-the-creationendpoint"></a><span data-ttu-id="5c8b2-172">CreationEndpoint を呼び出すクライアントの作成</span><span class="sxs-lookup"><span data-stu-id="5c8b2-172">Create a client that will call the CreationEndpoint.</span></span>  
   
-1.  新しいコンソール アプリケーションを `CreationEndpointTest` ソリューションに追加します。  
+1.  <span data-ttu-id="5c8b2-173">新しいコンソール アプリケーションを `CreationEndpointTest` ソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-173">Add a new Console application to the `CreationEndpointTest` solution.</span></span>  
   
-2.  System.ServiceModel.dll、System.ServiceModel.Activities、および `Shared` プロジェクトへの参照を追加します。  
+2.  <span data-ttu-id="5c8b2-174">System.ServiceModel.dll、System.ServiceModel.Activities、および `Shared` プロジェクトへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-174">Add references to System.ServiceModel.dll, System.ServiceModel.Activities, and the `Shared` project.</span></span>  
   
-3.  `Main` メソッド内に `IWorkflowCreation` 型の <xref:System.ServiceModel.ChannelFactory%601> を作成して、<xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A> を呼び出します。  これはプロキシを返します。  次に、そのプロキシの `Create` を呼び出して、IIS でホストされるワークフロー インスタンスを作成します。  
+3.  <span data-ttu-id="5c8b2-175">`Main`メソッドを作成、<xref:System.ServiceModel.ChannelFactory%601>型の`IWorkflowCreation`を呼び出すと<xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A>です。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-175">In the `Main` method create a <xref:System.ServiceModel.ChannelFactory%601> of type `IWorkflowCreation` and call <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A>.</span></span> <span data-ttu-id="5c8b2-176">これはプロキシを返します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-176">This will return a proxy.</span></span> <span data-ttu-id="5c8b2-177">次に、そのプロキシの `Create` を呼び出して、IIS でホストされるワークフロー インスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-177">You can then call `Create` on that proxy to create the workflow instance hosted under IIS:</span></span>  
   
     ```  
     using System.Text;  
@@ -374,19 +373,17 @@ caps.handback.revision: 7
     }  
     ```  
   
-4.  CreationEndpointClient を実行します。  出力の内容は次のようになります。  
+4.  <span data-ttu-id="5c8b2-178">CreationEndpointClient を実行します。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-178">Run the CreationEndpointClient.</span></span> <span data-ttu-id="5c8b2-179">出力の内容は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-179">The output should look like the following:</span></span>  
   
     ```Output  
-  
-                "Workflow Instance created using CreationEndpoint added in config.  Instance Id: 0875dac0-2b8b-473e-b3cc-abcb235e9693  
-    Press return to exit ...    
+    Workflow Instance created using CreationEndpoint added in config. Instance Id: 0875dac0-2b8b-473e-b3cc-abcb235e9693Press return to exit ...  
     ```  
   
     > [!NOTE]
-    >  ワークフローの出力は表示されません。これはコンソール出力を持たない IIS を使って実行しているためです。  
+    >  <span data-ttu-id="5c8b2-180">ワークフローの出力は表示されません。これはコンソール出力を持たない IIS を使って実行しているためです。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-180">You will not see the output of the workflow because it is running under IIS which has no console output.</span></span>  
   
-## 使用例  
- 以下はこのサンプルの完全なコードです。  
+## <a name="example"></a><span data-ttu-id="5c8b2-181">例</span><span class="sxs-lookup"><span data-stu-id="5c8b2-181">Example</span></span>  
+ <span data-ttu-id="5c8b2-182">以下はこのサンプルの完全なコードです。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-182">The following is the complete code for this sample.</span></span>  
   
 ```xaml  
 <!-— workflow1.xamlx -->  
@@ -430,7 +427,6 @@ caps.handback.revision: 7
     <p:WriteLine sap:VirtualizedContainerService.HintSize="211,61" Text="Hello, world" />  
   </p:Sequence>  
 </WorkflowService>  
-  
 ```  
   
 ```csharp  
@@ -488,7 +484,6 @@ namespace CreationEndpointTest
     {  
     }  
 }  
-  
 ```  
   
 ```xml  
@@ -521,7 +516,6 @@ namespace CreationEndpointTest
     </behaviors>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
 ```csharp  
@@ -545,7 +539,6 @@ namespace Shared
         void CreateWithInstanceId(IDictionary<string, object> inputs, Guid instanceId);  
     }  
 }  
-  
 ```  
   
 ```csharp  
@@ -649,7 +642,6 @@ namespace Shared
         }  
     }  
 }  
-  
 ```  
   
 ```csharp  
@@ -686,17 +678,16 @@ namespace CreationClient
     }  
   
 }  
-  
 ```  
   
- この例では `IWorkflowCreation` を実装するサービスを実装しないので、わかりにくい可能性があります。  これは、`CreationEndpoint` がユーザーに代わって実装するためです。  
+ <span data-ttu-id="5c8b2-183">この例では `IWorkflowCreation` を実装するサービスを実装しないので、わかりにくい可能性があります。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-183">This example may seem confusing because you never implement a service that implements `IWorkflowCreation`.</span></span> <span data-ttu-id="5c8b2-184">これは、`CreationEndpoint` がユーザーに代わって実装するためです。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-184">This is because the `CreationEndpoint` does this for you.</span></span>  
   
-## 参照  
- [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)   
- [インターネット インフォメーション サービスでのホスティング](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)   
- [インターネット インフォメーション サービス ホスティングのベスト プラクティス](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)   
- [インターネット インフォメーション サービスのホスティング手順](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)   
- [Windows Workflow のアーキテクチャ](../../../../docs/framework/windows-workflow-foundation//architecture.md)   
- [WorkflowHostingEndpoint 再開ブックマーク](../../../../docs/framework/windows-workflow-foundation/samples/workflowhostingendpoint-resume-bookmark.md)   
- [ワークフロー デザイナーのホスト変更](../../../../docs/framework/windows-workflow-foundation//rehosting-the-workflow-designer.md)   
- [Windows Workflow の概要](../../../../docs/framework/windows-workflow-foundation//overview.md)
+## <a name="see-also"></a><span data-ttu-id="5c8b2-185">関連項目</span><span class="sxs-lookup"><span data-stu-id="5c8b2-185">See Also</span></span>  
+ [<span data-ttu-id="5c8b2-186">ワークフロー サービス</span><span class="sxs-lookup"><span data-stu-id="5c8b2-186">Workflow Services</span></span>](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [<span data-ttu-id="5c8b2-187">インターネット インフォメーション サービスをホストしています。</span><span class="sxs-lookup"><span data-stu-id="5c8b2-187">Hosting in Internet Information Services</span></span>](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
+ [<span data-ttu-id="5c8b2-188">インターネット インフォメーション サービス ホスティングのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="5c8b2-188">Internet Information Services Hosting Best Practices</span></span>](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)  
+ [<span data-ttu-id="5c8b2-189">インターネット情報サービスのホスティング手順</span><span class="sxs-lookup"><span data-stu-id="5c8b2-189">Internet Information Service Hosting Instructions</span></span>](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
+ [<span data-ttu-id="5c8b2-190">Windows Workflow のアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="5c8b2-190">Windows Workflow Architecture</span></span>](../../../../docs/framework/windows-workflow-foundation/architecture.md)  
+ [<span data-ttu-id="5c8b2-191">WorkflowHostingEndpoint 再開ブックマーク</span><span class="sxs-lookup"><span data-stu-id="5c8b2-191">WorkflowHostingEndpoint Resume Bookmark</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/workflowhostingendpoint-resume-bookmark.md)  
+ [<span data-ttu-id="5c8b2-192">ワークフロー デザイナーのホスト変更</span><span class="sxs-lookup"><span data-stu-id="5c8b2-192">Rehosting the Workflow Designer</span></span>](../../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
+ [<span data-ttu-id="5c8b2-193">Windows Workflow の概要</span><span class="sxs-lookup"><span data-stu-id="5c8b2-193">Windows Workflow Overview</span></span>](../../../../docs/framework/windows-workflow-foundation/overview.md)

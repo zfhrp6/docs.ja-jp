@@ -1,72 +1,74 @@
 ---
-title: "インターネット インフォメーション サービスでのホスティング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ホスティング サービス [WCF], IIS"
+title: "インターネット インフォメーション サービスでのホスティング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: hosting services [WCF], IIS
 ms.assetid: ddae14e8-143c-442d-b660-2046809b2d43
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dc0a2692e105588d482156dfa870d8e587008b8d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# インターネット インフォメーション サービスでのホスティング
-インターネット インフォメーション サービス \(IIS\) アプリケーションの中に [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをホストする 1 つのオプションがあります。  このホスティング モデルは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] や ASP.NET Web サービス \(ASMX\) が使用するモデルと似ています。  
+# <a name="hosting-in-internet-information-services"></a><span data-ttu-id="0f2c9-102">インターネット インフォメーション サービスでのホスティング</span><span class="sxs-lookup"><span data-stu-id="0f2c9-102">Hosting in Internet Information Services</span></span>
+<span data-ttu-id="0f2c9-103">インターネット インフォメーション サービス (IIS) アプリケーションの中に [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをホストする 1 つのオプションがあります。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-103">One option for hosting [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services is inside of an Internet Information Services (IIS) application.</span></span> <span data-ttu-id="0f2c9-104">このホスティング モデルは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] や ASP.NET Web サービス (ASMX) が使用するモデルと似ています。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-104">This hosting model is similar to the model used by [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] and ASP.NET Web services (ASMX) Web Services.</span></span>  
   
-## IIS バージョン  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] をホストできるオペレーティング システムと IIS バージョンの組み合わせは次のとおりです。  
+## <a name="versions-of-iis"></a><span data-ttu-id="0f2c9-105">IIS バージョン</span><span class="sxs-lookup"><span data-stu-id="0f2c9-105">Versions of IIS</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="0f2c9-106"> をホストできるオペレーティング システムと IIS バージョンの組み合わせは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-106"> can be hosted on the following versions of IIS on the following operating systems:</span></span>  
   
--   [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] 上で IIS 5.1 を使用。  この環境は、後で [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] などのサーバー オペレーティング システムに展開される、IIS ホスト型アプリケーションの設計と開発に役立ちます。  
+-   <span data-ttu-id="0f2c9-107">[!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] 上で IIS 5.1 を使用。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-107">IIS 5.1 on [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)].</span></span> <span data-ttu-id="0f2c9-108">この環境は、後で [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] などのサーバー オペレーティング システムに展開される、IIS ホスト型アプリケーションの設計と開発に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-108">This environment is useful for the design and development of IIS-hosted applications that are later deployed on a server operating system such as [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].</span></span>  
   
--   [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] に対する [!INCLUDE[iis601](../../../../includes/iis601-md.md)]。  [!INCLUDE[iis601](../../../../includes/iis601-md.md)] は、スケーラビリティと信頼性を向上し、アプリケーションの分離を実現する高度なプロセス モデルを提供します。  この環境は、HTTP 通信のみを使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの本運用展開に適しています。  
+-   [!INCLUDE[iis601](../../../../includes/iis601-md.md)]<span data-ttu-id="0f2c9-109"> に対する [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-109"> on [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].</span></span> [!INCLUDE[iis601](../../../../includes/iis601-md.md)]<span data-ttu-id="0f2c9-110"> は、スケーラビリティと信頼性を向上し、アプリケーションの分離を実現する高度なプロセス モデルを提供します。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-110"> provides an advanced process model that offers improved scalability, reliability, and application isolation.</span></span> <span data-ttu-id="0f2c9-111">この環境は、HTTP 通信のみを使用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの本運用展開に適しています。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-111">This environment is suitable for production deployment of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services that use HTTP communication exclusively.</span></span>  
   
--   [!INCLUDE[wv](../../../../includes/wv-md.md)] および [!INCLUDE[lserver](../../../../includes/lserver-md.md)] 上で IIS 7.0 を使用。  IIS 7.0 は、[!INCLUDE[iis601](../../../../includes/iis601-md.md)] と同じ高度なプロセス モデルを提供しますが、Windows プロセス アクティブ化サービス \(WAS\) を使用して、HTTP 以外のプロトコル経由でのアクティブ化とネットワーク通信を可能にします。  この環境は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされる任意のネットワーク プロトコル \(HTTP、net.tcp、net.pipe、net.msmq など\) で通信を行う [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの開発に適しています。  WAS [!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[Windows プロセス アクティブ化サービスでのホスティング](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)」を参照してください。  
+-   <span data-ttu-id="0f2c9-112">[!INCLUDE[wv](../../../../includes/wv-md.md)] および [!INCLUDE[lserver](../../../../includes/lserver-md.md)] 上で IIS 7.0 を使用。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-112">IIS 7.0 on [!INCLUDE[wv](../../../../includes/wv-md.md)] and [!INCLUDE[lserver](../../../../includes/lserver-md.md)].</span></span> <span data-ttu-id="0f2c9-113">IIS 7.0 は、[!INCLUDE[iis601](../../../../includes/iis601-md.md)] と同じ高度なプロセス モデルを提供しますが、Windows プロセス アクティブ化サービス (WAS) を使用して、HTTP 以外のプロトコル経由でのアクティブ化とネットワーク通信を可能にします。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-113">IIS 7.0 provides the same advanced process model as [!INCLUDE[iis601](../../../../includes/iis601-md.md)], but uses the Windows Process Activation Service (WAS) to allow activation and network communication over protocols other than HTTP.</span></span> <span data-ttu-id="0f2c9-114">この環境は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされる任意のネットワーク プロトコル (HTTP、net.tcp、net.pipe、net.msmq など) で通信を行う [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの開発に適しています。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-114">This environment is suitable for the development of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services that communicate over any network protocol supported by [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] (including HTTP, net.tcp, net.pipe, and net.msmq).</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0f2c9-115">参照してください[Windows Process Activation Service でのホスティング](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)です。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-115"> WAS, see [Hosting in Windows Process Activation Service](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).</span></span>  
   
--   [Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496) は、[!INCLUDE[iisver](../../../../includes/iisver-md.md)] および Windows Process Activation Service \(WAS\) と連携して、NET4 WCF および WF のサービスのための充実したアプリケーションのホスト環境を提供します。  この利点には、プロセス ライフサイクル管理、プロセス リサイクル、共有ホスティング、迅速な障害保護、プロセスの孤立化、オンデマンド アクティブ化、状態監視などがあります。  詳細については、「[AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=196494)」および「[AppFabric ホスティングの概念](http://go.microsoft.com/fwlink/?LinkId=196495)」を参照してください。  
+-   <span data-ttu-id="0f2c9-116">[Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496)連動[!INCLUDE[iisver](../../../../includes/iisver-md.md)]およびリッチ アプリケーションをホストして、NET4 WCF および WF のサービスの環境を提供する Windows プロセス アクティブ化サービス (WAS) です。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-116">[Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=196496) works with [!INCLUDE[iisver](../../../../includes/iisver-md.md)] and Windows Process Activation Service (WAS) to provide a rich application hosting environment for NET4 WCF and WF services.</span></span> <span data-ttu-id="0f2c9-117">この利点には、プロセス ライフサイクル管理、プロセス リサイクル、共有ホスティング、迅速な障害保護、プロセスの孤立化、オンデマンド アクティブ化、状態監視などがあります。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-117">These benefits include process life-cycle management, process recycling, shared hosting, rapid failure protection, process orphaning, on-demand activation, and health monitoring.</span></span> <span data-ttu-id="0f2c9-118">詳細については、次を参照してください。 [AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=196494)と[AppFabric ホスティングの概念](http://go.microsoft.com/fwlink/?LinkId=196495)です。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-118">For detailed information, see [AppFabric Hosting Features](http://go.microsoft.com/fwlink/?LinkId=196494) and [AppFabric Hosting Concepts](http://go.microsoft.com/fwlink/?LinkId=196495).</span></span>  
   
-## IIS ホスティングの利点  
- IIS で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホスティングすることには、いくつかの利点があります。  
+## <a name="benefits-of-iis-hosting"></a><span data-ttu-id="0f2c9-119">IIS ホスティングの利点</span><span class="sxs-lookup"><span data-stu-id="0f2c9-119">Benefits of IIS Hosting</span></span>  
+ <span data-ttu-id="0f2c9-120">IIS で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホスティングすることには、いくつかの利点があります。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-120">Hosting [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services in IIS has several benefits:</span></span>  
   
--   IIS でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アプリケーションや ASMX などの他の種類の IIS アプリケーションと同じように展開、管理されます。  
+-   <span data-ttu-id="0f2c9-121">IIS でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アプリケーションや ASMX などの他の種類の IIS アプリケーションと同じように展開、管理されます。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-121">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services hosted in IIS are deployed and managed like any other type of IIS application, including [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] applications and ASMX.</span></span>  
   
--   IIS はプロセスのアクティブ化、状態管理、リサイクル機能を提供し、ホストされるアプリケーションの信頼性を向上します。  
+-   <span data-ttu-id="0f2c9-122">IIS はプロセスのアクティブ化、状態管理、リサイクル機能を提供し、ホストされるアプリケーションの信頼性を向上します。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-122">IIS provides process activation, health management, and recycling capabilities to increase the reliability of hosted applications.</span></span>  
   
--   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] と同様に、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] でホストされた [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 共有ホスティング モデルを利用できます。このモデルでは、共通のワーカー プロセス内に複数のアプリケーションが存在し、サーバー密度とスケーラビリティが向上します。  
+-   <span data-ttu-id="0f2c9-123">[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] と同様に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でホストされた [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] サービスは [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 共有ホスティング モデルを利用できます。このモデルでは、共通のワーカー プロセス内に複数のアプリケーションが存在し、サーバー密度とスケーラビリティが向上します。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-123">Like [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services hosted in [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] can take advantage of the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] shared hosting model where multiple applications reside in a common worker process for improved server density and scalability.</span></span>  
   
--   IIS でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、[!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] と同じ動的なコンパイル モデルを使用します。これにより、ホストされるサービスの開発と展開が簡素化されます。  
+-   <span data-ttu-id="0f2c9-124">IIS でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、[!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] と同じ動的なコンパイル モデルを使用します。これにより、ホストされるサービスの開発と展開が簡素化されます。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-124">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services hosted in IIS use the same dynamic compilation model as [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)], which simplifies development and deployment of hosted services.</span></span>  
   
- IIS で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホストすることを決定する場合、IIS 5.1 と [!INCLUDE[iis601](../../../../includes/iis601-md.md)] は HTTP 通信のみに限定されることに注意することが重要です。  ホスト環境の選択[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)」を参照してください。  
+ <span data-ttu-id="0f2c9-125">IIS で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスをホストすることを決定する場合、IIS 5.1 と [!INCLUDE[iis601](../../../../includes/iis601-md.md)] は HTTP 通信のみに限定されることに注意することが重要です。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-125">When deciding to host [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services in IIS, it is important to remember that IIS 5.1 and [!INCLUDE[iis601](../../../../includes/iis601-md.md)] are limited to HTTP communication only.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0f2c9-126">ホスティング環境を選択するを参照してください[ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-126"> choosing a hosting environment, see [Hosting Services](../../../../docs/framework/wcf/hosting-services.md).</span></span>  
   
-## IIS にホストされた WCF サービスの展開  
- IIS でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの開発と展開を行うには、次のタスクを実行します。  
+## <a name="deploying-an-iis-hosted-wcf-service"></a><span data-ttu-id="0f2c9-127">IIS にホストされた WCF サービスの展開</span><span class="sxs-lookup"><span data-stu-id="0f2c9-127">Deploying an IIS-Hosted WCF Service</span></span>  
+ <span data-ttu-id="0f2c9-128">IIS でホストされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの開発と展開を行うには、次のタスクを実行します。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-128">Developing and deploying an IIS-hosted [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service consists of the following tasks:</span></span>  
   
--   IIS、ASP.NET、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、および [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] HTTP アクティブ化コンポーネントが正しくインストールおよび登録されていることを確認します。  
+-   <span data-ttu-id="0f2c9-129">IIS、ASP.NET、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、および [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] HTTP アクティブ化コンポーネントが正しくインストールおよび登録されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-129">Ensure that IIS, ASP.NET, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] and the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] HTTP activation component are correctly installed and registered.</span></span>  
   
--   新しい IIS アプリケーションを作成するか、既存の [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アプリケーションを再利用します。  
+-   <span data-ttu-id="0f2c9-130">新しい IIS アプリケーションを作成するか、既存の [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] アプリケーションを再利用します。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-130">Create a new IIS application, or reuse an existing [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] application.</span></span>  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス用の .svc ファイルを作成します。  
+-   <span data-ttu-id="0f2c9-131">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス用の .svc ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-131">Create a .svc file for the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service.</span></span>  
   
--   IIS アプリケーションにサービス実装を展開します。  
+-   <span data-ttu-id="0f2c9-132">IIS アプリケーションにサービス実装を展開します。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-132">Deploy the service implementation to the IIS application.</span></span>  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを構成します。  
+-   <span data-ttu-id="0f2c9-133">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを構成します。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-133">Configure the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service.</span></span>  
   
- 各タスクの説明については、「[インターネット インフォメーション サービスでホストされる WCF サービスの配置](../../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md)」を参照してください。  
+ <span data-ttu-id="0f2c9-134">これらの各タスクの詳細については、次を参照してください。[インターネット WCF サービスを展開する](../../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md)です。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-134">For a discussion of each of these tasks, see [Deploying an Internet Information Services-Hosted WCF Service](../../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md).</span></span>  
   
-## WCF サービスと ASP.NET  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] とサイド バイ サイドでホストするか、または [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 互換モードでホストできます。この互換モードでは、サービスは [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web アプリケーション プラットフォームが提供する機能を最大限に活用できます。  これらの機能の詳細については、「[WCF サービスと ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)」を参照してください。  
+## <a name="wcf-services-and-aspnet"></a><span data-ttu-id="0f2c9-135">WCF サービスと ASP.NET</span><span class="sxs-lookup"><span data-stu-id="0f2c9-135">WCF Services and ASP.NET</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="0f2c9-136"> サービスは、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] とサイド バイ サイドでホストするか、または [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 互換モードでホストできます。この互換モードでは、サービスは [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web アプリケーション プラットフォームが提供する機能を最大限に活用できます。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-136"> services can be hosted either side-by-side with [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] or in [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Compatibility Mode in which services can take full advantage of features provided by the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web application platform.</span></span> <span data-ttu-id="0f2c9-137">これらの機能の詳細については、次を参照してください。 [WCF サービスと ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)です。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-137">For a discussion of these features, see [WCF Services and ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).</span></span>  
   
-## 参照  
- [ServiceHostFactory を使用したホストの拡張](../../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md)   
- [インターネット インフォメーション サービスでホストされる WCF サービスの配置](../../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md)   
- [WCF サービスと ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)   
- [インターネット インフォメーション サービス ホスティングのベスト プラクティス](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)   
- [Windows Communication Foundation での Internet Information Services 7.0 の構成](../../../../docs/framework/wcf/feature-details/configuring-iis-for-wcf.md)   
- [AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=201276)
+## <a name="see-also"></a><span data-ttu-id="0f2c9-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="0f2c9-138">See Also</span></span>  
+ [<span data-ttu-id="0f2c9-139">ServiceHostFactory を使用したホストの拡張</span><span class="sxs-lookup"><span data-stu-id="0f2c9-139">Extending Hosting Using ServiceHostFactory</span></span>](../../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md)  
+ [<span data-ttu-id="0f2c9-140">インターネット インフォメーション サービスでホストされる WCF サービスの配置</span><span class="sxs-lookup"><span data-stu-id="0f2c9-140">Deploying an Internet Information Services-Hosted WCF Service</span></span>](../../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md)  
+ [<span data-ttu-id="0f2c9-141">WCF サービスと ASP.NET</span><span class="sxs-lookup"><span data-stu-id="0f2c9-141">WCF Services and ASP.NET</span></span>](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)  
+ [<span data-ttu-id="0f2c9-142">インターネット インフォメーション サービス ホスティングのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="0f2c9-142">Internet Information Services Hosting Best Practices</span></span>](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)  
+ [<span data-ttu-id="0f2c9-143">Windows Communication Foundation 用インターネット インフォメーション サービス 7.0 を構成します。</span><span class="sxs-lookup"><span data-stu-id="0f2c9-143">Configuring Internet Information Services 7.0 for Windows Communication Foundation</span></span>](../../../../docs/framework/wcf/feature-details/configuring-iis-for-wcf.md)  
+ [<span data-ttu-id="0f2c9-144">Windows Server App Fabric のホスティング機能</span><span class="sxs-lookup"><span data-stu-id="0f2c9-144">Windows Server App Fabric Hosting Features</span></span>](http://go.microsoft.com/fwlink/?LinkId=201276)

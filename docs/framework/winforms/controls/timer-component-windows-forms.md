@@ -1,50 +1,51 @@
 ---
-title: "Timer コンポーネント (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Timer コンポーネント [Windows フォーム]"
-  - "タイマー"
-  - "タイマー, 作成"
+title: "Timer コンポーネント (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Timer component [Windows Forms]
+- timers
+- timers [Windows Forms], creating
 ms.assetid: 6700e534-6382-43d5-98ed-14205435fff7
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 154c60112e74371f0d4d9afb2fbb38aaa32221c7
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# Timer コンポーネント (Windows フォーム)
-Windows フォーム <xref:System.Windows.Forms.Timer> は、一定の間隔でイベントを発生させるコンポーネントです。  このコンポーネントは、Windows フォームの環境用に設計されています。  
+# <a name="timer-component-windows-forms"></a><span data-ttu-id="bc24f-102">Timer コンポーネント (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="bc24f-102">Timer Component (Windows Forms)</span></span>
+<span data-ttu-id="bc24f-103">Windows フォーム <xref:System.Windows.Forms.Timer> は、一定の間隔でイベントを発生させるコンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="bc24f-103">The Windows Forms <xref:System.Windows.Forms.Timer> is a component that raises an event at regular intervals.</span></span> <span data-ttu-id="bc24f-104">このコンポーネントは、Windows フォームの環境用に設計されています。</span><span class="sxs-lookup"><span data-stu-id="bc24f-104">This component is designed for a Windows Forms environment.</span></span>  
   
-## このセクションの内容  
- [Timer コンポーネントの概要](../../../../docs/framework/winforms/controls/timer-component-overview-windows-forms.md)  
- アプリケーションが定期的なイベントに応答するよう設定できる <xref:System.Windows.Forms.Timer> コンポーネントの一般的な概念について説明しています。  
+## <a name="in-this-section"></a><span data-ttu-id="bc24f-105">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="bc24f-105">In This Section</span></span>  
+ [<span data-ttu-id="bc24f-106">Timer コンポーネントの概要</span><span class="sxs-lookup"><span data-stu-id="bc24f-106">Timer Component Overview</span></span>](../../../../docs/framework/winforms/controls/timer-component-overview-windows-forms.md)  
+ <span data-ttu-id="bc24f-107">アプリケーションが定期的なイベントに応答するよう設定できる <xref:System.Windows.Forms.Timer> コンポーネントの一般的な概念について説明しています。</span><span class="sxs-lookup"><span data-stu-id="bc24f-107">Introduces the general concepts of the <xref:System.Windows.Forms.Timer> component, which allows you to set up your application to respond to periodic events.</span></span>  
   
- [Windows フォームの Timer コンポーネントの Interval プロパティの制限](../../../../docs/framework/winforms/controls/limitations-of-the-timer-component-interval-property.md)  
- タイマーの間隔で、使用方法に影響を与える可能性がある既知の制限事項について説明します。  
+ [<span data-ttu-id="bc24f-108">Windows フォームの Timer コンポーネントの Interval プロパティの制限</span><span class="sxs-lookup"><span data-stu-id="bc24f-108">Limitations of the Windows Forms Timer Component's Interval Property</span></span>](../../../../docs/framework/winforms/controls/limitations-of-the-timer-component-interval-property.md)  
+ <span data-ttu-id="bc24f-109">タイマーの間隔で、使用方法に影響を与える可能性がある既知の制限事項について説明します。</span><span class="sxs-lookup"><span data-stu-id="bc24f-109">Describes known limitations of the timer's interval that may affect how you can use it.</span></span>  
   
- [方法 : Windows フォームの Timer コンポーネントを使用して一定間隔でプロシージャを実行する](../../../../docs/framework/winforms/controls/run-procedures-at-set-intervals-with-wf-timer-component.md)  
- 一定の時間間隔で Windows ベースのアプリケーションに応答する方法について説明します。  
+ [<span data-ttu-id="bc24f-110">方法: Windows フォームの Timer コンポーネントを使用して一定間隔でプロシージャを実行する</span><span class="sxs-lookup"><span data-stu-id="bc24f-110">How to: Run Procedures at Set Intervals with the Windows Forms Timer Component</span></span>](../../../../docs/framework/winforms/controls/run-procedures-at-set-intervals-with-wf-timer-component.md)  
+ <span data-ttu-id="bc24f-111">一定の時間間隔で Windows ベースのアプリケーションに応答する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="bc24f-111">Describes how to react to timed intervals in your Windows-based applications.</span></span>  
   
-## 関連項目  
- <xref:System.Windows.Forms.Timer?displayProperty=fullName> クラス  
- Windows フォームで使用されるクラスとそのメンバーに関するリファレンス情報を提供します。  
+## <a name="reference"></a><span data-ttu-id="bc24f-112">参照</span><span class="sxs-lookup"><span data-stu-id="bc24f-112">Reference</span></span>  
+ <span data-ttu-id="bc24f-113"><xref:System.Windows.Forms.Timer?displayProperty=nameWithType> クラス</span><span class="sxs-lookup"><span data-stu-id="bc24f-113"><xref:System.Windows.Forms.Timer?displayProperty=nameWithType> class</span></span>  
+ <span data-ttu-id="bc24f-114">Windows フォームで使用されるクラスとそのメンバーに関するリファレンス情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="bc24f-114">Provides reference information on the class, used for Windows Forms timers, and its members.</span></span>  
   
- <xref:System.Timers.Timer?displayProperty=fullName> クラス  
- サーバー ベースのタイマーによって使用される <xref:System.Timers.Timer?displayProperty=fullName> クラスのリファレンス情報について説明します。  
+ <span data-ttu-id="bc24f-115"><xref:System.Timers.Timer?displayProperty=nameWithType> クラス</span><span class="sxs-lookup"><span data-stu-id="bc24f-115"><xref:System.Timers.Timer?displayProperty=nameWithType> class</span></span>  
+ <span data-ttu-id="bc24f-116">サーバー ベースのタイマーによって使用される <xref:System.Timers.Timer?displayProperty=nameWithType> クラスのリファレンス情報について説明します。</span><span class="sxs-lookup"><span data-stu-id="bc24f-116">Provides reference information on the <xref:System.Timers.Timer?displayProperty=nameWithType> class that is used by server-based timers.</span></span>  
   
-## 関連項目  
- [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Windows フォーム コントロールの完全な一覧を、使用に関する情報リンクと共に提供します。  
+## <a name="related-sections"></a><span data-ttu-id="bc24f-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="bc24f-117">Related Sections</span></span>  
+ [<span data-ttu-id="bc24f-118">Windows フォームで使用するコントロール</span><span class="sxs-lookup"><span data-stu-id="bc24f-118">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ <span data-ttu-id="bc24f-119">Windows フォーム コントロールの完全な一覧を、使用に関する情報リンクと共に提供します。</span><span class="sxs-lookup"><span data-stu-id="bc24f-119">Provides a complete list of Windows Forms controls, with links to information on their use.</span></span>  
   
- [Visual Basic 6.0 ユーザー向けの Timer コントロール](http://msdn.microsoft.com/ja-jp/38e5184a-1e50-45cf-b936-dae566c0cfc5)  
- 以前のバージョンと比較して、Visual Basic のタイマー機能がどのように変更されたか説明します。
+ [<span data-ttu-id="bc24f-120">Visual Basic 6.0 ユーザー向けの timer コントロール</span><span class="sxs-lookup"><span data-stu-id="bc24f-120">Timer Control for Visual Basic 6.0 Users</span></span>](http://msdn.microsoft.com/en-us/38e5184a-1e50-45cf-b936-dae566c0cfc5)  
+ <span data-ttu-id="bc24f-121">以前のバージョンと比較して、Visual Basic のタイマー機能がどのように変更されたか説明します。</span><span class="sxs-lookup"><span data-stu-id="bc24f-121">Describes how timer functionality has changed in Visual Basic as compared to previous versions.</span></span>

@@ -1,54 +1,36 @@
 ---
-title: "スタートアップ フォームが指定されていない |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "スタートアップ フォームが指定されていません。"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vbrAppModel_NoStartupForm
-dev_langs:
-- VB
+f1_keywords: vbrAppModel_NoStartupForm
 ms.assetid: 8e04af49-4bef-49de-a7ec-e407e9873da7
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 598bbdb7e2269f568a0dcf120cb2e8c5c8bc6812
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: fdffc182ee66497d68aafb7dc37cfef75b4d2e9f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="a-startup-form-has-not-been-specified"></a>スタートアップ フォームが指定されていません。
-アプリケーションを使用して、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>クラスしますが、スタートアップ フォームを指定していません</xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>。  
+# <a name="a-startup-form-has-not-been-specified"></a><span data-ttu-id="75d2a-102">スタートアップ フォームが指定されていません。</span><span class="sxs-lookup"><span data-stu-id="75d2a-102">A startup form has not been specified</span></span>
+<span data-ttu-id="75d2a-103">アプリケーションを使用して、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>クラスが、スタートアップ フォームが指定されていません。</span><span class="sxs-lookup"><span data-stu-id="75d2a-103">The application uses the <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> class but does not specify the startup form.</span></span>  
   
- これは、場合に発生することができます、**アプリケーション フレームワークを有効にする**プロジェクト デザイナー チェック ボックスが選択されているが、**スタートアップ フォーム**が指定されていません。 詳細については、次を参照してください。[アプリケーション ページで、プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)します。  
+ <span data-ttu-id="75d2a-104">これは、場合に発生することができます、**有効にするアプリケーション フレームワーク**プロジェクト デザイナー チェック ボックスが選択されているが、**スタートアップ フォーム**が指定されていません。</span><span class="sxs-lookup"><span data-stu-id="75d2a-104">This can occur if the **Enable application framework** check box is selected in the project designer but the **Startup form** is not specified.</span></span> <span data-ttu-id="75d2a-105">詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="75d2a-105">For more information, see [Application Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).</span></span>  
   
-## <a name="to-correct-this-error"></a>このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="75d2a-106">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="75d2a-106">To correct this error</span></span>  
   
-1.  アプリケーションのスタートアップ オブジェクトを指定します。  
+1.  <span data-ttu-id="75d2a-107">アプリケーションのスタートアップ オブジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="75d2a-107">Specify a startup object for the application.</span></span>  
   
-     詳細については、次を参照してください。[アプリケーション ページで、プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)します。  
+     <span data-ttu-id="75d2a-108">詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="75d2a-108">For more information, see [Application Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).</span></span>  
   
-2.  オーバーライド、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>を設定するメソッド、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>プロパティをスタートアップ フォーム</xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A></xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>。  
+2.  <span data-ttu-id="75d2a-109">上書き、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>を設定するメソッド、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>スタートアップ フォームにプロパティです。</span><span class="sxs-lookup"><span data-stu-id="75d2a-109">Override the <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A> method to set the <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A> property to the startup form.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase></xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>   
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A></xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>   
- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A></xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>   
- [Visual Basic アプリケーション モデルの概要](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)
+## <a name="see-also"></a><span data-ttu-id="75d2a-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="75d2a-110">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>  
+ [<span data-ttu-id="75d2a-111">Visual Basic アプリケーション モデルの概要</span><span class="sxs-lookup"><span data-stu-id="75d2a-111">Overview of the Visual Basic Application Model</span></span>](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)

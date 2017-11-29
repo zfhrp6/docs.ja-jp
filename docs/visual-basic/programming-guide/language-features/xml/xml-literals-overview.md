@@ -1,89 +1,72 @@
 ---
-title: "XML リテラルの概要 (Visual Basic) |Microsoft ドキュメント"
+title: "XML リテラルの概要 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - XML literals [Visual Basic], about XML literals
 - declaring XML literals [Visual Basic]
 - LINQ to XML [Visual Basic], XML literals
 - literals [Visual Basic], XML
 ms.assetid: 37987c15-4ab8-471b-bd45-399816bfb57f
-caps.latest.revision: 27
+caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 57d036910ba9e49385caca28de222a8a8e28ec56
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 59ce79995025692428263120f9c21c7baf5cf231
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="xml-literals-overview-visual-basic"></a>XML リテラルの概要 (Visual Basic)
-*XML リテラル*に直接 XML を組み込むことができます、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コードです。 XML リテラルの構文を表す[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]オブジェクト、およびそれには、XML 1.0 の構文に似ています。 これにより、コード、最終的な XML と同じ構造では、XML 要素やドキュメントをプログラムで作成が簡単にします。  
+# <a name="xml-literals-overview-visual-basic"></a><span data-ttu-id="2c9ad-102">XML リテラルの概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2c9ad-102">XML Literals Overview (Visual Basic)</span></span>
+<span data-ttu-id="2c9ad-103">*XML リテラル*に直接 XML を組み込むことができます、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コード。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-103">An *XML literal* allows you to incorporate XML directly into your [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] code.</span></span> <span data-ttu-id="2c9ad-104">XML リテラルの構文を表します[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト、およびそれには、XML 1.0 の構文に似ています。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-104">The XML literal syntax represents [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objects, and it is the similar to the XML 1.0 syntax.</span></span> <span data-ttu-id="2c9ad-105">これにより、簡単に、コードが、最終的な XML と同じ構造を有して XML 要素やドキュメントをプログラムで作成します。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-105">This makes it easier to create XML elements and documents programmatically because your code has the same structure as the final XML.</span></span>  
   
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]XML リテラルをコンパイル[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]オブジェクトです。 [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]作成して、XML を操作するための簡単なオブジェクト モデルとこのモデルとも統合されて提供[!INCLUDE[vbteclinqext](../../../../csharp/getting-started/includes/vbteclinqext_md.md)]します。 詳細については、 <xref:System.Xml.Linq.XElement>。</xref:System.Xml.Linq.XElement>を参照してください。  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="2c9ad-106">XML リテラルをコンパイル[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-106"> compiles XML literals into [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objects.</span></span> [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="2c9ad-107">密接に連携、統合、単純なオブジェクト モデルの作成と、XML を操作し、このモデルを提供[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-107"> provides a simple object model for creating and manipulating XML, and this model integrates well with [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].</span></span> <span data-ttu-id="2c9ad-108">詳細については、「<xref:System.Xml.Linq.XElement>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-108">For more information, see <xref:System.Xml.Linq.XElement>.</span></span>  
   
- 埋め込むことができます、 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] XML リテラル内の式。 アプリケーションの作成、実行時に、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]オブジェクト リテラルごとに、埋め込まれた式の値を組み込むことにします。 これにより、XML リテラルの中の動的なコンテンツを指定できます。 詳細については、次を参照してください。 [XML での埋め込み式](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)します。  
+ <span data-ttu-id="2c9ad-109">埋め込むことができます、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] XML リテラル内の式。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-109">You can embed a [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] expression in an XML literal.</span></span> <span data-ttu-id="2c9ad-110">アプリケーションを作成、実行時に、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]リテラルごとに埋め込み式の値を組み込むためのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-110">At run time, your application creates a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] object for each literal, incorporating the values of the embedded expressions.</span></span> <span data-ttu-id="2c9ad-111">これにより、XML リテラル内の動的なコンテンツを指定できます。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-111">This lets you specify dynamic content inside an XML literal.</span></span> <span data-ttu-id="2c9ad-112">詳細については、次を参照してください。 [XML での埋め込み式](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)です。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-112">For more information, see [Embedded Expressions in XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).</span></span>  
   
- XML リテラルの構文と XML 1.0 の構文の違いについての詳細については、次を参照してください。 [XML リテラルと XML 1.0 仕様](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)します。  
+ <span data-ttu-id="2c9ad-113">XML リテラルの構文と XML 1.0 の構文の違いの詳細については、次を参照してください。 [XML リテラルと XML 1.0 仕様](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)です。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-113">For more information about the differences between the XML literal syntax and the XML 1.0 syntax, see [XML Literals and the XML 1.0 Specification](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).</span></span>  
   
-## <a name="simple-literals"></a>単純なリテラル  
- 作成することができます、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]内のオブジェクト、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コードを入力するか、有効な XML に貼り付けることです。 リテラル XML 要素を返します、<xref:System.Xml.Linq.XElement>オブジェクト</xref:System.Xml.Linq.XElement>。 詳細については、次を参照してください。 [XML 要素リテラル](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)と[XML リテラルと XML 1.0 仕様](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)します。 次の例では、いくつかの子要素を持つ XML 要素を作成します。  
+## <a name="simple-literals"></a><span data-ttu-id="2c9ad-114">単純なリテラル</span><span class="sxs-lookup"><span data-stu-id="2c9ad-114">Simple Literals</span></span>  
+ <span data-ttu-id="2c9ad-115">作成することができます、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]内のオブジェクト、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を入力するか貼り付けを行って有効な XML コードです。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-115">You can create a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] object in your [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] code by typing or pasting in valid XML.</span></span> <span data-ttu-id="2c9ad-116">リテラル XML 要素を返します、<xref:System.Xml.Linq.XElement>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-116">An XML element literal returns an <xref:System.Xml.Linq.XElement> object.</span></span> <span data-ttu-id="2c9ad-117">詳細については、次を参照してください。 [XML 要素リテラル](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)と[XML リテラルと XML 1.0 仕様](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)です。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-117">For more information, see [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) and [XML Literals and the XML 1.0 Specification](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).</span></span> <span data-ttu-id="2c9ad-118">次の例では、いくつかの子要素を持つ XML 要素を作成します。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-118">The following example creates an XML element that has several child elements.</span></span>  
   
- [!code-vb[VbXMLSamples&#5;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_1.vb)]  
+ [!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_1.vb)]  
   
- XML ドキュメントを作成して、XML リテラルを開始できます`<?xml version="1.0"?>`の次の例に示すようにします。 XML ドキュメント リテラル返します、<xref:System.Xml.Linq.XDocument>オブジェクト</xref:System.Xml.Linq.XDocument>。 詳細については、次を参照してください。 [XML ドキュメント リテラル](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)します。  
+ <span data-ttu-id="2c9ad-119">XML ドキュメントを作成するには、XML リテラルでを起動して`<?xml version="1.0"?>`の次の例に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-119">You can create an XML document by starting an XML literal with `<?xml version="1.0"?>`, as shown in the following example.</span></span> <span data-ttu-id="2c9ad-120">XML ドキュメント リテラルを返します、<xref:System.Xml.Linq.XDocument>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-120">An XML document literal returns an <xref:System.Xml.Linq.XDocument> object.</span></span> <span data-ttu-id="2c9ad-121">詳細については、次を参照してください。 [XML ドキュメント リテラル](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)です。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-121">For more information, see [XML Document Literal](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md).</span></span>  
   
- [!code-vb[VbXMLSamples&6;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
+ [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
   
 > [!NOTE]
->  XML リテラルの構文で[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]XML 1.0 仕様で構文と同じではありません。 詳細については、次を参照してください。 [XML リテラルと XML 1.0 仕様](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)します。  
+>  <span data-ttu-id="2c9ad-122">XML リテラルの構文で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]構文、XML 1.0 仕様で同じではありません。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-122">The XML literal syntax in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] is not identical to the syntax in the XML 1.0 specification.</span></span> <span data-ttu-id="2c9ad-123">詳細については、次を参照してください。 [XML リテラルと XML 1.0 仕様](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)です。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-123">For more information, see [XML Literals and the XML 1.0 Specification](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).</span></span>  
   
-## <a name="line-continuation"></a>行の連結  
- XML リテラルは、行継続文字 (空白のアンダー スコアを入力してシーケンス) を使用することがなく複数行にまたがることができます。 これにより、簡単に XML ドキュメントをコード内の XML リテラルを比較します。  
+## <a name="line-continuation"></a><span data-ttu-id="2c9ad-124">行の連結</span><span class="sxs-lookup"><span data-stu-id="2c9ad-124">Line Continuation</span></span>  
+ <span data-ttu-id="2c9ad-125">XML リテラルは、行継続文字 (空白-アンダー スコアを入力してシーケンス) を使用することがなく複数行にまたがることができます。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-125">An XML literal can span multiple lines without using line continuation characters (the space-underscore-enter sequence).</span></span> <span data-ttu-id="2c9ad-126">これにより、XML リテラルの XML ドキュメントのコードで簡単に比較します。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-126">This makes it easier to compare XML literals in code with XML documents.</span></span>  
   
- コンパイラは、XML リテラルの一部として、行継続文字を処理します。 属している場合にのみに領域アンダー スコアを入力シーケンスを使用する必要がありますので、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]オブジェクトです。  
+ <span data-ttu-id="2c9ad-127">コンパイラは、XML リテラルの一部として行継続文字を処理します。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-127">The compiler treats line continuation characters as part of an XML literal.</span></span> <span data-ttu-id="2c9ad-128">属している場合にのみ領域アンダー スコアを入力シーケンスを使用する必要がありますので、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-128">Therefore, you should use the space-underscore-enter sequence only when it belongs in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] object.</span></span>  
   
- ただし、組み込み式に複数の行がある場合は、行継続文字を必要操作を行います。 詳細については、次を参照してください。 [XML での埋め込み式](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)します。  
+ <span data-ttu-id="2c9ad-129">ただし、組み込み式に複数の行がある場合は、行継続文字を必要しないでください。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-129">However, you do need line continuation characters if you have a multiline expression in an embedded expression.</span></span> <span data-ttu-id="2c9ad-130">詳細については、次を参照してください。 [XML での埋め込み式](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)です。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-130">For more information, see [Embedded Expressions in XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).</span></span>  
   
-## <a name="embedding-queries-in-xml-literals"></a>XML リテラルでクエリの埋め込み  
- 組み込み式では、クエリを使用できます。 これを行うときに、クエリによって返される要素が XML 要素に追加されます。 これにより、XML リテラルに、ユーザーのクエリの結果などの動的コンテンツを追加できます。  
+## <a name="embedding-queries-in-xml-literals"></a><span data-ttu-id="2c9ad-131">XML リテラルでクエリの埋め込み</span><span class="sxs-lookup"><span data-stu-id="2c9ad-131">Embedding Queries in XML Literals</span></span>  
+ <span data-ttu-id="2c9ad-132">埋め込み式の中では、クエリを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-132">You can use a query in an embedded expression.</span></span> <span data-ttu-id="2c9ad-133">これを行うときに、クエリによって返される要素が XML 要素に追加されます。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-133">When you do this, the elements returned by the query are added to the XML element.</span></span> <span data-ttu-id="2c9ad-134">これにより、XML リテラルに、ユーザーのクエリの結果などの動的なコンテンツを追加できます。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-134">This lets you add dynamic content, such as the result of a user's query, to an XML literal.</span></span>  
   
- メンバーからの XML 要素を作成する次のコードが埋め込まれたクエリを使用するなど、`phoneNumbers2`配列をそれらの要素の子として追加`contact2`します。  
+ <span data-ttu-id="2c9ad-135">次のコードがのメンバーからの XML 要素を作成する埋め込みクエリを使用するなど、`phoneNumbers2`配列し、それらの要素を追加してからの子として`contact2`です。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-135">For example, the following code uses an embedded query to create XML elements from the members of the `phoneNumbers2` array and then add those elements as children of `contact2`.</span></span>  
   
- [!code-vb[VbXMLSamples&#7;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_3.vb)]  
+ [!code-vb[VbXMLSamples#7](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_3.vb)]  
   
-## <a name="how-the-compiler-creates-objects-from-xml-literals"></a>コンパイラが XML リテラルからオブジェクトを作成する方法  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コンパイラでは、XML リテラルを変換と同等の呼び出しに[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]を構築するコンス トラクター、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]オブジェクトです。 たとえば、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コンパイラを使用して、次のコード例をへの呼び出しに変換されます、 <xref:System.Xml.Linq.XProcessingInstruction>XML バージョン手順では、コンス トラクターを呼び出し、<xref:System.Xml.Linq.XElement>のコンス トラクター、 `<contact>`、`<name>`と`<phone>`要素、およびへの呼び出し、<xref:System.Xml.Linq.XAttribute>のコンス トラクター、`type`属性</xref:System.Xml.Linq.XAttribute></xref:System.Xml.Linq.XElement></xref:System.Xml.Linq.XProcessingInstruction>。 具体的には、次のサンプルでは、属性から得られる、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コンパイラが呼び出す、<xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29>コンス トラクターを&2; 回クリックします</xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29>。 最初は値を渡す`type`の`name`パラメーターと値の`home`の`value`パラメーター。 2 つ目は、値を渡すも`type`の`name`パラメーターが、値`work`の`value`パラメーター。  
+## <a name="how-the-compiler-creates-objects-from-xml-literals"></a><span data-ttu-id="2c9ad-136">コンパイラが XML リテラルからオブジェクトを作成する方法</span><span class="sxs-lookup"><span data-stu-id="2c9ad-136">How the Compiler Creates Objects from XML Literals</span></span>  
+ <span data-ttu-id="2c9ad-137">[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラは、該当するショートカットへの呼び出しに XML リテラルを変換[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]を構築するコンス トラクター、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-137">The [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compiler translates XML literals into calls to the equivalent [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] constructors to build up the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] object.</span></span> <span data-ttu-id="2c9ad-138">たとえば、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラを使用して、次のコード例をへの呼び出しに変換されます、 <xref:System.Xml.Linq.XProcessingInstruction> XML バージョン命令のコンス トラクターを呼び出し、<xref:System.Xml.Linq.XElement>のコンス トラクター、 `<contact>`、 `<name>`、および`<phone>`要素、およびへの呼び出し、<xref:System.Xml.Linq.XAttribute>のコンス トラクター、`type`属性。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-138">For example, the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compiler will translate the following code example into a call to the <xref:System.Xml.Linq.XProcessingInstruction> constructor for the XML version instruction, calls to the <xref:System.Xml.Linq.XElement> constructor for the `<contact>`, `<name>`, and `<phone>` elements, and calls to the <xref:System.Xml.Linq.XAttribute> constructor for the `type` attribute.</span></span> <span data-ttu-id="2c9ad-139">具体的には、次のサンプルでは、属性から得られる、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラを呼び出す、<xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29>コンス トラクターを 2 回クリックします。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-139">Specifically, given the attributes in the following sample, the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compiler will call the <xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29> constructor twice.</span></span> <span data-ttu-id="2c9ad-140">1 つ目は、値を渡す`type`の`name`パラメーターと値を`home`の`value`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-140">The first will pass the value `type` for the `name` parameter and the value `home` for the `value` parameter.</span></span> <span data-ttu-id="2c9ad-141">2 つ目は、値を渡すも`type`の`name`パラメーターは、値`work`の`value`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="2c9ad-141">The second will also pass the value `type` for the `name` parameter, but the value `work` for the `value` parameter.</span></span>  
   
- [!code-vb[VbXMLSamples&6;](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
+ [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Linq.XElement>   
- [Visual Basic で XML を作成します。](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)   
- [XML での埋め込み式](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)   
- [XML ドキュメント リテラル](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)   
- [XML 要素リテラル](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)   
- [XML リテラル](../../../../visual-basic/language-reference/xml-literals/index.md)
+## <a name="see-also"></a><span data-ttu-id="2c9ad-142">関連項目</span><span class="sxs-lookup"><span data-stu-id="2c9ad-142">See Also</span></span>  
+ <xref:System.Xml.Linq.XElement>  
+ [<span data-ttu-id="2c9ad-143">Visual Basic での XML の作成</span><span class="sxs-lookup"><span data-stu-id="2c9ad-143">Creating XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
+ [<span data-ttu-id="2c9ad-144">XML での埋め込み式</span><span class="sxs-lookup"><span data-stu-id="2c9ad-144">Embedded Expressions in XML</span></span>](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)  
+ [<span data-ttu-id="2c9ad-145">XML ドキュメント リテラル</span><span class="sxs-lookup"><span data-stu-id="2c9ad-145">XML Document Literal</span></span>](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)  
+ [<span data-ttu-id="2c9ad-146">XML 要素リテラル</span><span class="sxs-lookup"><span data-stu-id="2c9ad-146">XML Element Literal</span></span>](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)  
+ [<span data-ttu-id="2c9ad-147">XML リテラル</span><span class="sxs-lookup"><span data-stu-id="2c9ad-147">XML Literals</span></span>](../../../../visual-basic/language-reference/xml-literals/index.md)

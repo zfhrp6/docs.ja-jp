@@ -1,52 +1,55 @@
 ---
-title: "IIS と WAS における構成ベースのアクティブ化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "IIS と WAS における構成ベースのアクティブ化"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6a927e1f-b905-4ee5-ad0f-78265da38238
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 116d7ec11f141e813aa960b28289031e0cfa8999
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# IIS と WAS における構成ベースのアクティブ化
-インターネット インフォメーション サービス \(IIS: Internet Information Services\) または Windows プロセス アクティブ化サービス \(WAS\) で [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをホストする場合は、.svc ファイルを用意する必要があります。.svc ファイルには、サービスの名前と、オプションのカスタム サービス ホスト ファクトリが含まれています。この追加ファイルによって、管理のオーバーヘッドが増加します。構成ベースのアクティブ化機能により、.svc ファイルを用意する必要がなくなり、関連するオーバーヘッドも発生しません。  
+# <a name="configuration-based-activation-in-iis-and-was"></a><span data-ttu-id="fe41d-102">IIS と WAS における構成ベースのアクティブ化</span><span class="sxs-lookup"><span data-stu-id="fe41d-102">Configuration-Based Activation in IIS and WAS</span></span>
+<span data-ttu-id="fe41d-103">インターネット インフォメーション サービス (IIS: Internet Information Services) または Windows プロセス アクティブ化サービス (WAS) で [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスをホストする場合は、.svc ファイルを用意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fe41d-103">Normally when hosting a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service under Internet Information Services (IIS) or Windows Process Activation Service (WAS), you must provide a .svc file.</span></span> <span data-ttu-id="fe41d-104">.svc ファイルには、サービスの名前と、オプションのカスタム サービス ホスト ファクトリが含まれています。</span><span class="sxs-lookup"><span data-stu-id="fe41d-104">The .svc file contains the name of the service and an optional custom service host factory.</span></span> <span data-ttu-id="fe41d-105">この追加ファイルによって、管理のオーバーヘッドが増加します。</span><span class="sxs-lookup"><span data-stu-id="fe41d-105">This additional file adds manageability overhead.</span></span> <span data-ttu-id="fe41d-106">構成ベースのアクティブ化機能により、.svc ファイルを用意する必要がなくなり、関連するオーバーヘッドも発生しません。</span><span class="sxs-lookup"><span data-stu-id="fe41d-106">The configuration-based activation feature removes the requirement to have a .svc file and therefore the associated overhead.</span></span>  
   
-## 構成ベースのアクティブ化  
- 構成ベースのアクティブ化では、以前は .svc ファイルに配置されていたメタデータを受け取り、それを Web.config ファイルに配置します。\<`serviceHostingEnvironment`\> 要素内には \<`serviceActivations`\> 要素があります。\<`serviceActivations`\> 要素内には、ホストされる各サービスに 1 つずつの \<`add`\> 要素が 1 つ以上あります。\<`add`\> 要素に含まれている属性を使用すると、サービスおよびサービス型 \(サービス ホスト ファクトリ\) の相対アドレスを設定できます。次の構成コード例は、このセクションの使用方法を示しています。  
+## <a name="configuration-based-activation"></a><span data-ttu-id="fe41d-107">構成ベースのアクティブ化</span><span class="sxs-lookup"><span data-stu-id="fe41d-107">Configuration-Based Activation</span></span>  
+ <span data-ttu-id="fe41d-108">構成ベースのアクティブ化では、以前は .svc ファイルに配置されていたメタデータを受け取り、それを Web.config ファイルに配置します。</span><span class="sxs-lookup"><span data-stu-id="fe41d-108">Configuration-based activation takes the metadata that used to be placed in the .svc file and places it in the Web.config file.</span></span> <span data-ttu-id="fe41d-109">内で、<`serviceHostingEnvironment`> 要素は、<`serviceActivations`> 要素。</span><span class="sxs-lookup"><span data-stu-id="fe41d-109">Within the<`serviceHostingEnvironment`> element there is a <`serviceActivations`> element.</span></span> <span data-ttu-id="fe41d-110">内で、<`serviceActivations`> 要素が 1 つ以上 <`add`> 要素、各ホステッド サービスに 1 つです。</span><span class="sxs-lookup"><span data-stu-id="fe41d-110">Within the <`serviceActivations`> element are one or more <`add`> elements, one for each hosted service.</span></span> <span data-ttu-id="fe41d-111"><`add`> 要素には属性の場合、サービスおよびサービスの種類、サービス ホスト ファクトリの相対アドレスを設定することができます。</span><span class="sxs-lookup"><span data-stu-id="fe41d-111">The <`add`> element contains attributes that let you set the relative address for the service and the service type or a service host factory.</span></span> <span data-ttu-id="fe41d-112">次の構成コード例は、このセクションの使用方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="fe41d-112">The following configuration example code shows how this section is used.</span></span>  
   
 > [!NOTE]
->  各 \<`add`\> 要素では、サービスまたはファクトリ属性を指定する必要があります。サービスとファクトリ属性の両方を指定することもできます。  
+>  <span data-ttu-id="fe41d-113">各 <`add`> 要素には、サービスまたは factory 属性を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fe41d-113">Each <`add`> element must specify a service or a factory attribute.</span></span> <span data-ttu-id="fe41d-114">サービスとファクトリ属性の両方を指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="fe41d-114">Specifying both service and factory attributes is allowed.</span></span>  
   
-```  
+```xml  
 <serviceHostingEnvironment>  
   <serviceActivations>  
-    <add relativeAddress="MyServiceAddress" service="Service" factory=”MyServiceHostFactory”/>  
+    <add relativeAddress="MyServiceAddress" service="Service" factory="MyServiceHostFactory"/>  
   </serviceActivations>  
 </serviceHostingEnvironment>  
 ```  
   
- このコードを Web.config ファイルに含めると、サービス ソース コードをアプリケーションの App\_Code ディレクトリに配置するか、コンパイル済みアセンブリをアプリケーションの Bin ディレクトリに配置することができます。  
+ <span data-ttu-id="fe41d-115">このコードを Web.config ファイルに含めると、サービス ソース コードをアプリケーションの App_Code ディレクトリに配置するか、コンパイル済みアセンブリをアプリケーションの Bin ディレクトリに配置することができます。</span><span class="sxs-lookup"><span data-stu-id="fe41d-115">With this in the Web.config file, you can place the service source code in the App_Code directory of the application or a complied assembly in the Bin directory of the application.</span></span>  
   
 > [!NOTE]
->  -   構成ベースのアクティブ化機能を使用する場合、.svc ファイルのインライン コードはサポートされません。  
-> -   `relativeAddress` 属性は、"\<sub\-directory\>\/service.svc" や "~\/\<sub\-directory\/service.svc" などの相対アドレスに設定する必要があります。  
-> -   WCF と関連付けられている既知の拡張子を持たない相対アドレスを登録すると、構成例外がスローされます。  
-> -   指定された相対アドレスは、仮想アプリケーションのルートが基準になります。  
-> -   構成の階層的モデルにより、コンピューター レベルおよびサイト レベルの登録された相対アドレスは、仮想アプリケーションによって継承されます。  
-> -   構成ファイル内での登録は、.svc、.xamlx、.xoml、またはその他のファイルでの設定よりも優先されます。  
-> -   IIS\/WAS に送信された URI 内の \\ \(円記号\) は、自動的に \/ \(スラッシュ\) に変換されます。\\ を含む相対アドレスが追加され、その相対アドレスを使用する URI を IIS に送信した場合は、円記号がスラッシュに変換されるため、IIS では、それを相対アドレスと一致させることができません。IIS は、一致するものが見つからなかったことを示すトレース情報を送信します。  
+>  -   <span data-ttu-id="fe41d-116">構成ベースのアクティブ化機能を使用する場合、.svc ファイルのインライン コードはサポートされません。</span><span class="sxs-lookup"><span data-stu-id="fe41d-116">When using configuration-based activation, inline code in .svc files is not supported.</span></span>  
+> -   <span data-ttu-id="fe41d-117">`relativeAddress`属性をなどの相対アドレスに設定する必要があります"\<サブディレクトリ >/service.svc"または"~/\<directory サブ/service.svc"です。</span><span class="sxs-lookup"><span data-stu-id="fe41d-117">The `relativeAddress` attribute must be set to a relative address such as "\<sub-directory>/service.svc" or "~/\<sub-directory/service.svc".</span></span>  
+> -   <span data-ttu-id="fe41d-118">WCF と関連付けられている既知の拡張子を持たない相対アドレスを登録すると、構成例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="fe41d-118">A configuration exception is thrown if you register a relative address that does not have a known extension associated with WCF.</span></span>  
+> -   <span data-ttu-id="fe41d-119">指定された相対アドレスは、仮想アプリケーションのルートが基準になります。</span><span class="sxs-lookup"><span data-stu-id="fe41d-119">The relative address specified is relative to the root of the virtual application.</span></span>  
+> -   <span data-ttu-id="fe41d-120">構成の階層的モデルにより、コンピューター レベルおよびサイト レベルの登録された相対アドレスは、仮想アプリケーションによって継承されます。</span><span class="sxs-lookup"><span data-stu-id="fe41d-120">Due to the hierarchical model of configuration, the registered relative addresses at machine and site level are inherited by virtual applications.</span></span>  
+> -   <span data-ttu-id="fe41d-121">構成ファイル内での登録は、.svc、.xamlx、.xoml、またはその他のファイルでの設定よりも優先されます。</span><span class="sxs-lookup"><span data-stu-id="fe41d-121">Registrations in a configuration file take precedence over settings in a .svc, .xamlx, .xoml, or other file.</span></span>  
+> -   <span data-ttu-id="fe41d-122">IIS/WAS に送信された URI 内の \ (円記号) は、自動的に / (スラッシュ) に変換されます。</span><span class="sxs-lookup"><span data-stu-id="fe41d-122">Any ‘\’ (backslashes) in a URI sent to IIS/WAS are automatically converted to a ‘/’ (forward slash).</span></span> <span data-ttu-id="fe41d-123">\ を含む相対アドレスが追加され、その相対アドレスを使用する URI を IIS に送信した場合は、円記号がスラッシュに変換されるため、IIS では、それを相対アドレスと一致させることができません。</span><span class="sxs-lookup"><span data-stu-id="fe41d-123">If a relative address is added that contains a ‘\’ and you send IIS a URI that uses the relative address, the backslash is converted to a forward slash and IIS cannot match it to the relative address.</span></span> <span data-ttu-id="fe41d-124">IIS は、一致するものが見つからなかったことを示すトレース情報を送信します。</span><span class="sxs-lookup"><span data-stu-id="fe41d-124">IIS sends out trace information that indicates that there are no matches found.</span></span>  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.ServiceActivations%2A>   
- [ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)   
- [ワークフロー サービスのホストの概要](../../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)   
- [\<serviceHostingEnvironment\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)   
- [AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=201276)
+## <a name="see-also"></a><span data-ttu-id="fe41d-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="fe41d-125">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.ServiceActivations%2A>  
+ [<span data-ttu-id="fe41d-126">ホスティング サービス</span><span class="sxs-lookup"><span data-stu-id="fe41d-126">Hosting Services</span></span>](../../../../docs/framework/wcf/hosting-services.md)  
+ [<span data-ttu-id="fe41d-127">ホスト ワークフロー サービスの概要</span><span class="sxs-lookup"><span data-stu-id="fe41d-127">Hosting Workflow Services Overview</span></span>](../../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)  
+ [<span data-ttu-id="fe41d-128">\<serviceHostingEnvironment ></span><span class="sxs-lookup"><span data-stu-id="fe41d-128">\<serviceHostingEnvironment></span></span>](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)  
+ [<span data-ttu-id="fe41d-129">Windows Server App Fabric のホスティング機能</span><span class="sxs-lookup"><span data-stu-id="fe41d-129">Windows Server App Fabric Hosting Features</span></span>](http://go.microsoft.com/fwlink/?LinkId=201276)

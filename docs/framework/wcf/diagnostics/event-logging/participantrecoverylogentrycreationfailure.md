@@ -1,31 +1,34 @@
 ---
-title: "ParticipantRecoveryLogEntryCreationFailure | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ParticipantRecoveryLogEntryCreationFailure
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0bda0f08-7614-40f8-912a-06f5a99393e6
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 11427dfa34bed3ee920e1bb30e956604a9b0b251
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ParticipantRecoveryLogEntryCreationFailure
-ID : 141  
+# <a name="participantrecoverylogentrycreationfailure"></a><span data-ttu-id="44bcc-102">ParticipantRecoveryLogEntryCreationFailure</span><span class="sxs-lookup"><span data-stu-id="44bcc-102">ParticipantRecoveryLogEntryCreationFailure</span></span>
+<span data-ttu-id="44bcc-103">Id: 141</span><span class="sxs-lookup"><span data-stu-id="44bcc-103">Id: 141</span></span>  
   
- 重大度 : エラー  
+ <span data-ttu-id="44bcc-104">重大度 : エラー</span><span class="sxs-lookup"><span data-stu-id="44bcc-104">Severity: Error</span></span>  
   
- カテゴリ : TransactionBridge  
+ <span data-ttu-id="44bcc-105">カテゴリ : TransactionBridge</span><span class="sxs-lookup"><span data-stu-id="44bcc-105">Category: TransactionBridge</span></span>  
   
-## 説明  
- このイベントは、回復ログのエントリを参加要素の参加リスト用に生成できなかったことを示します。トランザクションは中止されます。イベントには、トランザクション ID、参加リスト ID、例外、プロセス名、およびプロセス ID が表示されます。  
+## <a name="description"></a><span data-ttu-id="44bcc-106">説明</span><span class="sxs-lookup"><span data-stu-id="44bcc-106">Description</span></span>  
+ <span data-ttu-id="44bcc-107">このイベントは、回復ログのエントリを参加要素の参加リスト用に生成できなかったことを示します。</span><span class="sxs-lookup"><span data-stu-id="44bcc-107">This event indicates that arecovery log entry could not be generated for a participant enlistment.</span></span> <span data-ttu-id="44bcc-108">トランザクションは中止されます。</span><span class="sxs-lookup"><span data-stu-id="44bcc-108">The transaction will be aborted.</span></span> <span data-ttu-id="44bcc-109">イベントには、トランザクション ID、参加リスト ID、例外、プロセス名、およびプロセス ID が表示されます。</span><span class="sxs-lookup"><span data-stu-id="44bcc-109">The event lists the Transaction ID, Enlistment ID, exception, process name and process ID.</span></span>  
   
-## 参照  
- [イベント ログ](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)   
- [イベント一覧](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a><span data-ttu-id="44bcc-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="44bcc-110">See Also</span></span>  
+ [<span data-ttu-id="44bcc-111">イベントのログ記録</span><span class="sxs-lookup"><span data-stu-id="44bcc-111">Event Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
+ [<span data-ttu-id="44bcc-112">イベントの一般的なリファレンス</span><span class="sxs-lookup"><span data-stu-id="44bcc-112">Events General Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

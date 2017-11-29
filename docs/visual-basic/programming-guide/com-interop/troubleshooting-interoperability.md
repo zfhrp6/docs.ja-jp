@@ -1,161 +1,144 @@
 ---
-title: "相互運用性 (Visual Basic) のトラブルシューティング |Microsoft ドキュメント"
+title: "相互運用性のトラブルシューティング (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - interop, deploying assemblies
 - assemblies [Visual Basic]
 - interop, installing assemblies that share components
 - COM objects, troubleshooting
 - interop, sharing components
-- troubleshooting interoperability
+- troubleshooting interoperability [Visual Basic]
 - interoperability, troubleshooting
-- COM interop, troubleshooting
+- COM interop [Visual Basic], troubleshooting
 - assemblies [Visual Basic], deploying
 - troubleshooting Visual Basic, interoperability
 - interop assemblies
 - interoperability, sharing components
 - shared components, using with assemblies
 ms.assetid: b324cc1e-b03c-4f39-aea6-6a6d5bfd0e37
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cbc37638ed5c57b94356c2d189f36b66202ceba5
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 988d07fe08a6a78ae295d13f694c55a3b8f9d2e4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="troubleshooting-interoperability-visual-basic"></a>相互運用性のトラブルシューティング (Visual Basic)
-マネージ コードと COM の相互運用するときに、 [!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]、次の一般的な問題が発生する可能性があります。  
+# <a name="troubleshooting-interoperability-visual-basic"></a><span data-ttu-id="fcd21-102">相互運用性のトラブルシューティング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fcd21-102">Troubleshooting Interoperability (Visual Basic)</span></span>
+<span data-ttu-id="fcd21-103">マネージ コードと COM の相互運用するときに、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、1 つ以上の次の一般的な問題が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="fcd21-103">When you interoperate between COM and the managed code of the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], you may encounter one or more of the following common issues.</span></span>  
   
-##  <a name="vbconinteroperabilitymarshalinganchor1"></a>相互運用マーシャ リング  
- いないデータ型を使用する必要がありますの一部では、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]です。 相互運用機能アセンブリ、COM オブジェクトに対する作業のほとんどを処理することはマネージ オブジェクトが COM に公開するときに使用されるデータ型を制御する必要があります。 たとえば、クラス ライブラリ内の構造体を指定する必要があります、`BStr`アンマネージ型 Visual Basic 6.0 およびそれ以前のバージョンで作成された COM オブジェクトに送信される文字列。 このような場合に使用することができます、<xref:System.Runtime.InteropServices.MarshalAsAttribute>アンマネージ型として公開するマネージ型が発生する属性</xref:System.Runtime.InteropServices.MarshalAsAttribute>。  
+##  <span data-ttu-id="fcd21-104"><a name="vbconinteroperabilitymarshalinganchor1"></a>相互運用マーシャ リング</span><span class="sxs-lookup"><span data-stu-id="fcd21-104"><a name="vbconinteroperabilitymarshalinganchor1"></a> Interop Marshaling</span></span>  
+ <span data-ttu-id="fcd21-105">れていないデータ型を使用する必要がありますの一部、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="fcd21-105">At times, you may have to use data types that are not part of the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].</span></span> <span data-ttu-id="fcd21-106">相互運用機能アセンブリ、COM オブジェクトの作業のほとんどを処理することはマネージ オブジェクトが COM に公開するときに使用されるデータ型を制御する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcd21-106">Interop assemblies handle most of the work for COM objects, but you may have to control the data types that are used when managed objects are exposed to COM.</span></span> <span data-ttu-id="fcd21-107">たとえば、クラス ライブラリ内の構造を指定する必要があります、`BStr`アンマネージ型 Visual Basic 6.0 とそれ以前のバージョンで作成された COM オブジェクトに送信される文字列。</span><span class="sxs-lookup"><span data-stu-id="fcd21-107">For example, structures in class libraries must specify the `BStr` unmanaged type on strings sent to COM objects created by Visual Basic 6.0 and earlier versions.</span></span> <span data-ttu-id="fcd21-108">このような場合に使用することができます、<xref:System.Runtime.InteropServices.MarshalAsAttribute>アンマネージ型として公開するマネージ型が発生する属性。</span><span class="sxs-lookup"><span data-stu-id="fcd21-108">In such cases, you can use the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute to cause managed types to be exposed as unmanaged types.</span></span>  
   
-##  <a name="vbconinteroperabilitymarshalinganchor2"></a>アンマネージ コードへの固定長文字列のエクスポート  
- Visual Basic 6.0 およびそれ以前のバージョンでは、文字列は null 終端文字なしバイトのシーケンスとして COM オブジェクトにエクスポートされます。 他の言語との互換性のため[!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]文字列をエクスポートするときに終了文字が含まれています。 この非互換性に対処する最善の方法は、文字列の配列として、終了文字に関連付けられていないをエクスポートする`Byte`または`Char`です。  
+##  <span data-ttu-id="fcd21-109"><a name="vbconinteroperabilitymarshalinganchor2"></a>アンマネージ コードへの固定長文字列のエクスポート</span><span class="sxs-lookup"><span data-stu-id="fcd21-109"><a name="vbconinteroperabilitymarshalinganchor2"></a> Exporting Fixed-Length Strings to Unmanaged Code</span></span>  
+ <span data-ttu-id="fcd21-110">Visual Basic 6.0 とそれ以前のバージョンでは、文字列は、終端の null 文字を使用せずにバイトのシーケンスとして COM オブジェクトにエクスポートされます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-110">In Visual Basic 6.0 and earlier versions, strings are exported to COM objects as sequences of bytes without a null termination character.</span></span> <span data-ttu-id="fcd21-111">他の言語と互換性のため、Visual Basic .NET には、文字列をエクスポートするときに終了文字が含まれます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-111">For compatibility with other languages, Visual Basic .NET includes a termination character when exporting strings.</span></span> <span data-ttu-id="fcd21-112">この非互換性に対処する最善の方法では、文字列の配列として、終了文字がないをエクスポート`Byte`または`Char`です。</span><span class="sxs-lookup"><span data-stu-id="fcd21-112">The best way to address this incompatibility is to export strings that lack the termination character as arrays of `Byte` or `Char`.</span></span>  
   
-##  <a name="vbconinteroperabilitymarshalinganchor3"></a>継承階層のエクスポート  
- マネージ クラスが COM オブジェクトとして公開されるときに階層が平坦化します。 たとえば場合は、メンバーを持つ基本クラスを定義し、COM オブジェクトとして公開されている派生クラスで基本クラスを継承すると、COM オブジェクトに、派生クラスを使用するクライアントされません継承されたメンバーを使用すること。 基本クラスのメンバーは、基底クラスのインスタンスとしてのみ COM オブジェクトからアクセスできるし、基本クラスが COM オブジェクトとしても作成する場合にのみです。  
+##  <span data-ttu-id="fcd21-113"><a name="vbconinteroperabilitymarshalinganchor3"></a>継承階層のエクスポート</span><span class="sxs-lookup"><span data-stu-id="fcd21-113"><a name="vbconinteroperabilitymarshalinganchor3"></a> Exporting Inheritance Hierarchies</span></span>  
+ <span data-ttu-id="fcd21-114">マネージ クラスが COM オブジェクトとして公開されるときに階層が平坦化します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-114">Managed class hierarchies flatten out when exposed as COM objects.</span></span> <span data-ttu-id="fcd21-115">など、メンバーを持つ基本クラスを定義し、COM オブジェクトとして公開されている派生クラスで基底クラスを継承する場合、COM オブジェクトで、派生クラスを使用するクライアントされませんを継承されたメンバーを使用できません。</span><span class="sxs-lookup"><span data-stu-id="fcd21-115">For example, if you define a base class with a member, and then inherit the base class in a derived class that is exposed as a COM object, clients that use the derived class in the COM object will not be able to use the inherited members.</span></span> <span data-ttu-id="fcd21-116">基本クラスのメンバーは、基底クラスのインスタンスとしてのみ COM オブジェクトからアクセスできるし、基本クラスが COM オブジェクトとして作成も場合のみです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-116">Base class members can be accessed from COM objects only as instances of a base class, and then only if the base class is also created as a COM object.</span></span>  
   
-## <a name="overloaded-methods"></a>オーバーロードされたメソッド  
- オーバー ロードされたでメソッドを作成できますが、 [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]COM でサポートされていません オーバー ロードされたメソッドを含むクラスが COM オブジェクトとして公開されているオーバー ロードされたメソッドの新しいメソッド名が生成されます。  
+## <a name="overloaded-methods"></a><span data-ttu-id="fcd21-117">オーバーロードされたメソッド</span><span class="sxs-lookup"><span data-stu-id="fcd21-117">Overloaded Methods</span></span>  
+ <span data-ttu-id="fcd21-118">オーバー ロードされたでメソッドを作成できますが、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、COM によってサポートされていません</span><span class="sxs-lookup"><span data-stu-id="fcd21-118">Although you can create overloaded methods with [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], they are not supported by COM.</span></span> <span data-ttu-id="fcd21-119">オーバー ロードされたメソッドを含むクラスは、COM オブジェクトとして公開される、ときに、オーバー ロードされたメソッドの新しいメソッド名が生成されます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-119">When a class that contains overloaded methods is exposed as a COM object, new method names are generated for the overloaded methods.</span></span>  
   
- たとえばの&2; つのオーバー ロードを持つクラス、`Synch`メソッドです。 新しいの生成されたメソッド名にすることが、クラスが COM オブジェクトとして公開されているときに`Synch`と`Synch_2`です。  
+ <span data-ttu-id="fcd21-120">たとえばの 2 つのオーバー ロードを持つクラスである、`Synch`メソッドです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-120">For example, consider a class that has two overloads of the `Synch` method.</span></span> <span data-ttu-id="fcd21-121">クラスが COM オブジェクトとして公開されている新しい生成されたメソッド名こと`Synch`と`Synch_2`です。</span><span class="sxs-lookup"><span data-stu-id="fcd21-121">When the class is exposed as a COM object, the new generated method names could be `Synch` and `Synch_2`.</span></span>  
   
- 名前を変更すると、COM オブジェクトのコンシューマー向けの&2; つの問題が発生することができます。  
+ <span data-ttu-id="fcd21-122">名前を変更すると、COM オブジェクトのコンシューマーの 2 つの問題が発生ことができます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-122">The renaming can cause two problems for consumers of the COM object.</span></span>  
   
-1.  クライアントでは、生成されたメソッド名は予期しない可能性があります。  
+1.  <span data-ttu-id="fcd21-123">クライアントでは、生成されたメソッド名が予期しない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="fcd21-123">Clients might not expect the generated method names.</span></span>  
   
-2.  新しいオーバー ロードがクラスまたはその基本クラスに追加されたときに、COM オブジェクトとして公開するクラスで生成されたメソッド名を変更できます。 バージョン管理の問題がある可能性があります。  
+2.  <span data-ttu-id="fcd21-124">新しいオーバー ロードがクラスまたはその基本クラスに追加されたときに、COM オブジェクトとして公開されているクラスで生成されたメソッド名を変更できます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-124">The generated method names in the class exposed as a COM object can change when new overloads are added to the class or its base class.</span></span> <span data-ttu-id="fcd21-125">これにより、バージョン管理の問題が発生することができます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-125">This can cause versioning problems.</span></span>  
   
- 両方の問題を解決するために各メソッドに、COM オブジェクトとして公開されるオブジェクトを開発するときに、オーバー ロードを使用する代わりに、一意の名前を指定します。  
+ <span data-ttu-id="fcd21-126">両方の問題を解決するには、各メソッドに、COM オブジェクトとして公開されるオブジェクトを開発するときに、オーバー ロードを使用する代わりに、一意の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-126">To solve both problems, give each method a unique name, instead of using overloading, when you develop objects that will be exposed as COM objects.</span></span>  
   
-##  <a name="vbconinteroperabilitymarshalinganchor4"></a>相互運用機能アセンブリを介して COM オブジェクトの使用  
- 表す COM オブジェクトのマネージ コードに置き換わる場合とほとんど同じように相互運用機能アセンブリを使用するとします。 ただし、これらはのでラッパーと実際の COM オブジェクトは、相互運用機能アセンブリと標準のアセンブリを使用して違いです。 相違点には、クラス、およびパラメーターと戻り値のデータ型の公開が含まれます。  
+##  <span data-ttu-id="fcd21-127"><a name="vbconinteroperabilitymarshalinganchor4"></a>相互運用機能アセンブリを介して COM オブジェクトの使用</span><span class="sxs-lookup"><span data-stu-id="fcd21-127"><a name="vbconinteroperabilitymarshalinganchor4"></a> Use of COM Objects Through Interop Assemblies</span></span>  
+ <span data-ttu-id="fcd21-128">相互運用機能アセンブリを使用して、それらが表す COM オブジェクトに置き換わるマネージ コードが場合とほとんど同じようにします。</span><span class="sxs-lookup"><span data-stu-id="fcd21-128">You use interop assemblies almost as if they are managed code replacements for the COM objects they represent.</span></span> <span data-ttu-id="fcd21-129">ただし、ラッパーや実際の COM オブジェクトは、ためには、相互運用機能アセンブリと標準のアセンブリを使用して違いです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-129">However, because they are wrappers and not actual COM objects, there are some differences between using interop assemblies and standard assemblies.</span></span> <span data-ttu-id="fcd21-130">相違点には、クラス、およびパラメーターと戻り値のデータ型の露出が含まれます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-130">These areas of difference include the exposure of classes, and data types for parameters and return values.</span></span>  
   
-##  <a name="vbconinteroperabilitymarshalinganchor5"></a>両方のインターフェイスとして公開されるクラスとクラス  
- 標準アセンブリのクラスとは異なり、COM クラスは、インターフェイスおよび COM クラスを表すクラスの両方との相互運用機能アセンブリで公開されます。 インターフェイスの名前は、COM クラスの場合と同じです。 相互運用機能のクラスの名前は元の COM クラスと同じですが、"Class"が追加の単語です。 たとえば、COM オブジェクトの相互運用機能アセンブリへの参照を含むプロジェクトがあるとします。 COM クラスの名前は場合`MyComClass`、IntelliSense やオブジェクト ブラウザーには、という名前のインターフェイスを表示する`MyComClass`という名前のクラスと`MyComClassClass`です。  
+##  <span data-ttu-id="fcd21-131"><a name="vbconinteroperabilitymarshalinganchor5"></a>両方のインターフェイスとして公開されるクラスとクラス</span><span class="sxs-lookup"><span data-stu-id="fcd21-131"><a name="vbconinteroperabilitymarshalinganchor5"></a> Classes Exposed as Both Interfaces and Classes</span></span>  
+ <span data-ttu-id="fcd21-132">標準のアセンブリのクラスとは異なり、COM クラスは、COM クラスを表すクラスとインターフェイスの両方と相互運用機能アセンブリで公開されます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-132">Unlike classes in standard assemblies, COM classes are exposed in interop assemblies as both an interface and a class that represents the COM class.</span></span> <span data-ttu-id="fcd21-133">インターフェイスの名前は、COM クラスのものと同じです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-133">The interface's name is identical to that of the COM class.</span></span> <span data-ttu-id="fcd21-134">相互運用機能のクラスの名前は、元の COM クラスのものと同じですが、"Class"が追加の単語でします。</span><span class="sxs-lookup"><span data-stu-id="fcd21-134">The name of the interop class is the same as that of the original COM class, but with the word "Class" appended.</span></span> <span data-ttu-id="fcd21-135">たとえば、COM オブジェクトの相互運用機能アセンブリへの参照とプロジェクトがあるとします。</span><span class="sxs-lookup"><span data-stu-id="fcd21-135">For example, suppose you have a project with a reference to an interop assembly for a COM object.</span></span> <span data-ttu-id="fcd21-136">COM クラスの名前は場合`MyComClass`、IntelliSense やオブジェクト ブラウザーには、という名前のインターフェイスを表示する`MyComClass`という名前のクラスと`MyComClassClass`です。</span><span class="sxs-lookup"><span data-stu-id="fcd21-136">If the COM class is named `MyComClass`, IntelliSense and the Object Browser show an interface named `MyComClass` and a class named `MyComClassClass`.</span></span>  
   
-##  <a name="vbconinteroperabilitymarshalinganchor6"></a>.NET Framework クラスのインスタンスを作成します。  
- インスタンスを作成する、一般に、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]クラスを使用して、`New`クラス名を含むステートメント。 相互運用機能アセンブリによって表される COM クラスは、1 つのケースを使用することができます、`New`ステートメント インターフェイスを使用します。 使用して COM クラスを使用している場合を除き、`Inherits`ステートメント、クラスと同様に、インターフェイスを使用することができます。 次のコードを作成する方法の例、 `Command` Microsoft ActiveX データ オブジェクト 2.8 ライブラリ COM オブジェクトへの参照を含むプロジェクト内のオブジェクト。  
+##  <span data-ttu-id="fcd21-137"><a name="vbconinteroperabilitymarshalinganchor6"></a>.NET Framework クラスのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-137"><a name="vbconinteroperabilitymarshalinganchor6"></a> Creating Instances of a .NET Framework Class</span></span>  
+ <span data-ttu-id="fcd21-138">インスタンスを作成する、一般に、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]クラスを使用して、`New`ステートメントをクラス名でします。</span><span class="sxs-lookup"><span data-stu-id="fcd21-138">Generally, you create an instance of a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] class using the `New` statement with a class name.</span></span> <span data-ttu-id="fcd21-139">相互運用機能アセンブリによって表される COM クラスが 1 つのケースが使用することができます、`New`ステートメント インターフェイスを使用します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-139">Having a COM class represented by an interop assembly is the one case in which you can use the `New` statement with an interface.</span></span> <span data-ttu-id="fcd21-140">クラスを COM を使用している場合を除き、`Inherits`ステートメントでは、クラスと同様に、インターフェイスを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-140">Unless you are using the COM class with an `Inherits` statement, you can use the interface just as you would a class.</span></span> <span data-ttu-id="fcd21-141">次のコードを作成する方法を示しています、`Command`を持つ、Microsoft ActiveX データ オブジェクト 2.8 ライブラリ COM オブジェクトへの参照をプロジェクト内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="fcd21-141">The following code demonstrates how to create a `Command` object in a project that has a reference to the Microsoft ActiveX Data Objects 2.8 Library COM object:</span></span>  
   
- [!code-vb[VbVbalrInterop&#20;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_1.vb)]  
+ [!code-vb[VbVbalrInterop#20](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_1.vb)]  
   
- ただし、COM クラスは、派生クラスで、ベースとして使用されている場合は、次のコードのように、COM クラスを表す相互運用機能クラスを使用する必要があります。  
+ <span data-ttu-id="fcd21-142">ただし、COM クラスは、派生クラスで、ベースとして使用されている場合は、次のコードのように、COM クラスを表す相互運用機能のクラスを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcd21-142">However, if you are using the COM class as the base for a derived class, you must use the interop class that represents the COM class, as in the following code:</span></span>  
   
- [!code-vb[VbVbalrInterop #&21;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_2.vb)]  
+ [!code-vb[VbVbalrInterop#21](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_2.vb)]  
   
 > [!NOTE]
->  相互運用機能アセンブリは、暗黙的に COM クラスを表すインターフェイスを実装します。 使用していけません、`Implements`これらのインターフェイスまたはエラーを実装するステートメントになります。  
+>  <span data-ttu-id="fcd21-143">相互運用機能アセンブリは、暗黙的に COM クラスを表すインターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-143">Interop assemblies implicitly implement interfaces that represent COM classes.</span></span> <span data-ttu-id="fcd21-144">使用するべきされません、`Implements`これらのインターフェイスまたはエラーを実装するステートメントが発生します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-144">You should not try to use the `Implements` statement to implement these interfaces or an error will result.</span></span>  
   
-##  <a name="vbconinteroperabilitymarshalinganchor7"></a>パラメーターと戻り値のデータ型  
- 相互運用機能アセンブリのメンバーは、標準のアセンブリのメンバーとは異なり、元のオブジェクトの宣言で使用されているとは異なるデータ型があります。 相互運用機能アセンブリは COM 型を互換性のある共通言語ランタイム型に暗黙的に変換しますが、両方の側で実行時エラーを回避するために使用されるデータ型に注意する必要があります。 たとえば、Visual Basic 6.0 以前のバージョンでは、型の値で作成された COM オブジェクトで`Integer`前提としています、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]同等型`Short`します。 使用する前に、インポートされたメンバーの特性を調べるオブジェクト ブラウザーを使用することをお勧めします。  
+##  <span data-ttu-id="fcd21-145"><a name="vbconinteroperabilitymarshalinganchor7"></a>パラメーターと戻り値のデータ型</span><span class="sxs-lookup"><span data-stu-id="fcd21-145"><a name="vbconinteroperabilitymarshalinganchor7"></a> Data Types for Parameters and Return Values</span></span>  
+ <span data-ttu-id="fcd21-146">相互運用機能アセンブリのメンバーは、標準のアセンブリのメンバーとは異なり、元のオブジェクトの宣言で使用されるものとは異なるデータ型があります。</span><span class="sxs-lookup"><span data-stu-id="fcd21-146">Unlike members of standard assemblies, interop assembly members may have data types that differ from those used in the  original object declaration.</span></span> <span data-ttu-id="fcd21-147">相互運用機能アセンブリは COM 型を互換性のある共通言語ランタイムの型に暗黙的に変換しますが、両方の側で実行時エラーを回避するために使用されるデータ型に注意を払う必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcd21-147">Although interop assemblies implicitly convert COM types to compatible common language runtime types, you should pay attention to the data types that are used by both sides to prevent runtime errors.</span></span> <span data-ttu-id="fcd21-148">たとえば、Visual Basic 6.0 と以前のバージョンでは、型の値で作成された COM オブジェクトで`Integer`前提としています、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]同等の型、`Short`です。</span><span class="sxs-lookup"><span data-stu-id="fcd21-148">For example, in COM objects created in Visual Basic 6.0 and earlier versions, values of type `Integer` assume the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] equivalent type, `Short`.</span></span> <span data-ttu-id="fcd21-149">使用する前に、インポートされたメンバーの特性を調べるオブジェクト ブラウザーを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="fcd21-149">It is recommended that you use the Object Browser to examine the characteristics of imported members before you use them.</span></span>  
   
-##  <a name="vbconinteroperabilitymarshalinganchor8"></a>モジュール レベルの COM メソッド  
- 使用して COM クラスのインスタンスを作成することでほとんどの COM オブジェクトが使用される、`New`キーワードと、オブジェクトのメソッドを呼び出しています。 この規則の例外は、COM オブジェクトを含む`AppObj`または`GlobalMultiUse`COM クラスです。 このようなクラスで、モジュール レベル メソッドのように[!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]クラスです。 Visual Basic 6.0 とそれ以前のバージョンが暗黙的に作成このようなオブジェクトのインスタンスを最初にそれらのメソッドのいずれかを呼び出すことです。 たとえば、Visual Basic 6.0 で、参照を追加できます 3.6 DAO オブジェクト ライブラリを呼び出し、`DBEngine`インスタンスを作成せずメソッド。  
+##  <span data-ttu-id="fcd21-150"><a name="vbconinteroperabilitymarshalinganchor8"></a>モジュール レベルの COM メソッド</span><span class="sxs-lookup"><span data-stu-id="fcd21-150"><a name="vbconinteroperabilitymarshalinganchor8"></a> Module level COM methods</span></span>  
+ <span data-ttu-id="fcd21-151">ほとんどの COM オブジェクトが COM を使用するクラスのインスタンスを作成することで使用される、`New`キーワードと、オブジェクトのメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-151">Most COM objects are used by creating an instance of a COM class using the `New` keyword and then calling methods of the object.</span></span> <span data-ttu-id="fcd21-152">このルールに 1 つの例外とは、COM オブジェクトを含む`AppObj`または`GlobalMultiUse`COM クラスです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-152">One exception to this rule involves COM objects that contain `AppObj` or `GlobalMultiUse` COM classes.</span></span> <span data-ttu-id="fcd21-153">このようなクラスには、モジュール レベルの Visual Basic .NET クラス メソッドに似ています。</span><span class="sxs-lookup"><span data-stu-id="fcd21-153">Such classes resemble module level methods in Visual Basic .NET classes.</span></span> <span data-ttu-id="fcd21-154">Visual Basic 6.0 とそれ以前のバージョンが暗黙的に作成のようなオブジェクトのインスタンスを最初にそれらのメソッドのいずれかを呼び出すことです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-154">Visual Basic 6.0 and earlier versions implicitly create instances of such objects for you the first time that you call one of their methods.</span></span> <span data-ttu-id="fcd21-155">たとえば、Visual Basic 6.0 で追加できます DAO 3.6 オブジェクト ライブラリおよび呼び出しへの参照、`DBEngine`インスタンスを作成せずメソッド。</span><span class="sxs-lookup"><span data-stu-id="fcd21-155">For example, in Visual Basic 6.0 you can add a reference to the Microsoft DAO 3.6 Object Library and call the `DBEngine` method without first creating an instance:</span></span>  
   
-```  
+```vb  
 Dim db As DAO.Database  
 ' Open the database.  
 Set db = DBEngine.OpenDatabase("C:\nwind.mdb")  
 ' Use the database object.  
 ```  
   
- [!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]それらのメソッドを使用する前に常に COM オブジェクトのインスタンスを作成することが必要です。 これらのメソッドを使用する[!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]、目的のクラスの変数を宣言し、新しいキーワードを使用して、オブジェクト変数にオブジェクトを割り当てます。 `Shared`ことを確認する場合に、キーワードを使用できるクラスの&1; つのインスタンスを作成します。  
+ <span data-ttu-id="fcd21-156">Visual Basic .NET では、そのメソッドを使用する前に常に COM オブジェクトのインスタンスを作成することが必要です。</span><span class="sxs-lookup"><span data-stu-id="fcd21-156">Visual Basic .NET requires that you always create instances of COM objects before you can use their methods.</span></span> <span data-ttu-id="fcd21-157">これらのメソッドを使用して、Visual Basic を希望のクラスの変数を宣言し、新しいキーワードを使用して、オブジェクト変数にオブジェクトを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-157">To use these methods in Visual Basic, declare a variable of the desired class and use the new keyword to assign the object to the object variable.</span></span> <span data-ttu-id="fcd21-158">`Shared`ことを確認するときに、キーワードを使用できるクラスの 1 つのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-158">The `Shared` keyword can be used when you want to make sure that only one instance of the class is created.</span></span>  
   
- [!code-vb[VbVbalrInterop 第&23;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_3.vb)]  
+ [!code-vb[VbVbalrInterop#23](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_3.vb)]  
   
-##  <a name="vbconinteroperabilitymarshalinganchor9"></a>イベント ハンドラーで処理されないエラー  
- 1 つの一般的な相互運用機能の問題には、COM オブジェクトによって生成されるイベントを処理するイベント ハンドラーでエラーが含まれています。 具体的にを使用してエラーをチェックする場合を除き、このようなエラーは無視されます`On Error`または`Try...Catch...Finally`ステートメントです。 たとえば、次の例からは、 [!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)] Microsoft ActiveX データ オブジェクト 2.8 ライブラリ COM オブジェクトへの参照を含むプロジェクトです。  
+##  <span data-ttu-id="fcd21-159"><a name="vbconinteroperabilitymarshalinganchor9"></a>イベント ハンドラーで処理されないエラー</span><span class="sxs-lookup"><span data-stu-id="fcd21-159"><a name="vbconinteroperabilitymarshalinganchor9"></a> Unhandled Errors in Event Handlers</span></span>  
+ <span data-ttu-id="fcd21-160">1 つの一般的な相互運用の問題には、COM オブジェクトによって生成されるイベントを処理するイベント ハンドラーでエラーが含まれます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-160">One common interop problem involves errors in event handlers that handle events raised by COM objects.</span></span> <span data-ttu-id="fcd21-161">具体的を使用してエラーをチェックする場合を除き、このようなエラーは無視されます`On Error`または`Try...Catch...Finally`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-161">Such errors are ignored unless you specifically check for errors using `On Error` or `Try...Catch...Finally` statements.</span></span> <span data-ttu-id="fcd21-162">たとえば、次の例は、Microsoft ActiveX データ オブジェクト 2.8 ライブラリ COM オブジェクトへの参照を含む Visual Basic .NET プロジェクトです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-162">For example, the following example is from a Visual Basic .NET project that has a reference to the Microsoft ActiveX Data Objects 2.8 Library COM object.</span></span>  
   
- [!code-vb[VbVbalrInterop #&24;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_4.vb)]  
+ [!code-vb[VbVbalrInterop#24](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_4.vb)]  
   
- この例では、予期したとおりにエラーが発生します。 ただし、なしの例と同じしようとすると、`Try...Catch...Finally`使用する場合と同様、ブロック、エラーは無視されます、`OnError Resume Next`ステートメントです。 エラー処理がなければ&0; による除算はサイレント モードで失敗します。 このようなエラーが処理されない例外エラーを発生しないことが COM オブジェクトからのイベントを処理するイベント ハンドラーで例外処理のいくつかの形式を使用することが重要です。  
+ <span data-ttu-id="fcd21-163">この例では、期待どおりにエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-163">This example raises an error as expected.</span></span> <span data-ttu-id="fcd21-164">ただし、せず同じ例を実行する場合、`Try...Catch...Finally`使用する場合と同様、ブロック、エラーは無視されます、`OnError Resume Next`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-164">However, if you try the same example without the `Try...Catch...Finally` block, the error is ignored as if you used the `OnError Resume Next` statement.</span></span> <span data-ttu-id="fcd21-165">エラー処理がなければ 0 による除算はサイレント モードで失敗します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-165">Without error handling, the division by zero silently fails.</span></span> <span data-ttu-id="fcd21-166">このようなエラーは、ハンドルされない例外エラーを発生させることはありません、それが COM オブジェクトからのイベントを処理するイベント ハンドラーでの例外処理のいくつかの形式を使用することが重要です。</span><span class="sxs-lookup"><span data-stu-id="fcd21-166">Because such errors never raise unhandled exception errors, it is important that you use some form of exception handling in event handlers that handle events from COM objects.</span></span>  
   
-### <a name="understanding-com-interop-errors"></a>COM 相互運用機能の問題を理解します。  
- エラー処理がない相互運用呼び出しは多くの場合、ほとんどの情報を提供するエラーを生成します。 可能であれば、構造化エラーが発生したときに、問題に関する詳細情報を提供する処理を使用します。 これはするアプリケーションをデバッグする場合に特に役立ちます。 例:  
+### <a name="understanding-com-interop-errors"></a><span data-ttu-id="fcd21-167">COM 相互運用の問題を理解します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-167">Understanding COM interop errors</span></span>  
+ <span data-ttu-id="fcd21-168">エラー処理がない相互運用呼び出しで生成されるエラー情報を過不足なくを提供します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-168">Without error handling, interop calls often generate errors that provide little information.</span></span> <span data-ttu-id="fcd21-169">可能な限り、構造化エラーが発生したときに、問題に関する詳細情報を提供する処理を使用します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-169">Whenever possible, use structured error handling to provide more information about problems when they occur.</span></span> <span data-ttu-id="fcd21-170">これはれるアプリケーションをデバッグするときに特に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-170">This can be especially helpful when you debug applications.</span></span> <span data-ttu-id="fcd21-171">例:</span><span class="sxs-lookup"><span data-stu-id="fcd21-171">For example:</span></span>  
   
- [!code-vb[VbVbalrInterop&#25;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_5.vb)]  
+ [!code-vb[VbVbalrInterop#25](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_5.vb)]  
   
- 例外オブジェクトの内容を確認するには、エラーの説明、HRESULT、および COM エラーのソースなどの情報が表示されます。  
+ <span data-ttu-id="fcd21-172">例外オブジェクトの内容を確認するには、エラーの説明、HRESULT、および COM エラーのソースなどの情報が表示されます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-172">You can find information such as the error description, HRESULT, and the source of COM errors by examining the contents of the exception object.</span></span>  
   
-##  <a name="vbconinteroperabilitymarshalinganchor10"></a>ActiveX コントロールに関する問題  
- Visual Basic 6.0 で使用するほとんどの ActiveX コントロールが扱う[!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]難しくありません。 主な例外は、コンテナー コントロールまたはその他のコントロールを視覚的に格納しているコントロールです。 正しく動作しない古いコントロールの例をいくつか[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]は次のようになります。  
+##  <span data-ttu-id="fcd21-173"><a name="vbconinteroperabilitymarshalinganchor10"></a>ActiveX コントロールに関する問題</span><span class="sxs-lookup"><span data-stu-id="fcd21-173"><a name="vbconinteroperabilitymarshalinganchor10"></a> ActiveX Control Issues</span></span>  
+ <span data-ttu-id="fcd21-174">Visual Basic 6.0 で動作するほとんどの ActiveX コントロールは、Visual Basic .NET で問題なく動作します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-174">Most ActiveX controls that work with Visual Basic 6.0 work with Visual Basic .NET without trouble.</span></span> <span data-ttu-id="fcd21-175">主な例外は、コンテナーのコントロール、またはその他のコントロールを視覚的に格納しているコントロールです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-175">The main exceptions are container controls, or controls that visually contain other controls.</span></span> <span data-ttu-id="fcd21-176">正常に動作しない古いコントロールの例をいくつか[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]次に示します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-176">Some examples of older controls that do not work correctly with [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] are as follows:</span></span>  
   
--   Microsoft フォーム 2.0 フレーム コントロール  
+-   <span data-ttu-id="fcd21-177">Microsoft フォーム 2.0 フレーム コントロール</span><span class="sxs-lookup"><span data-stu-id="fcd21-177">Microsoft Forms 2.0 Frame control</span></span>  
   
--   アップダウン コントロール、スピン コントロールとも呼ばれます  
+-   <span data-ttu-id="fcd21-178">アップダウン コントロール、スピン コントロールとも呼ばれます</span><span class="sxs-lookup"><span data-stu-id="fcd21-178">Up-Down control, also known as the spin control</span></span>  
   
--   Sheridan タブ コントロール  
+-   <span data-ttu-id="fcd21-179">Sheridan タブ コントロール</span><span class="sxs-lookup"><span data-stu-id="fcd21-179">Sheridan Tab Control</span></span>  
   
- サポートされていない ActiveX コントロールに関する問題のいくつかの回避策のみがあります。 既存のコントロールを移行する[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]元のソース コードを所有している場合。 それ以外の場合、更新、ソフトウェア ベンダーに確認することができます。NET と互換性のあるバージョンの置換をコントロールには、ActiveX コントロールがサポートされていません。  
+ <span data-ttu-id="fcd21-180">サポートされていない ActiveX コントロールの問題のいくつかの回避策のみがあります。</span><span class="sxs-lookup"><span data-stu-id="fcd21-180">There are only a few workarounds for unsupported ActiveX control problems.</span></span> <span data-ttu-id="fcd21-181">既存のコントロールを移行する[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]元のソース コードを所有している場合。</span><span class="sxs-lookup"><span data-stu-id="fcd21-181">You can migrate existing controls to [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] if you own the original source code.</span></span> <span data-ttu-id="fcd21-182">それ以外の場合、更新、ソフトウェア ベンダーに確認することができます。置換するコントロールの NET と互換性のあるバージョンには、ActiveX コントロールがサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="fcd21-182">Otherwise, you can check with software vendors for updated .NET-compatible versions of controls to replace unsupported ActiveX controls.</span></span>  
   
-##  <a name="vbconinteroperabilitymarshalinganchor11"></a>コントロールの ByRef の読み取り専用プロパティの引き渡し  
- [!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]渡すと場合があります"エラー 0x800A017F CTL_E_SETNOTSUPPORTED"などの COM エラーを発生させる`ReadOnly`として、一部の古い ActiveX コントロールのプロパティ`ByRef`他のプロシージャのパラメーターです。 Visual Basic 6.0 からプロシージャ呼び出しでは、エラーが発生せず、パラメーターとして扱われます値で渡すと同様です。 表示されるエラー メッセージ、[!INCLUDE[vbprvblong](../../../visual-basic/developing-apps/customizing-extending-my/includes/vbprvblong_md.md)]プロパティがないプロパティを変更しようとしていることを報告する COM オブジェクトは、`Set`プロシージャです。  
+##  <span data-ttu-id="fcd21-183"><a name="vbconinteroperabilitymarshalinganchor11"></a>コントロールの ByRef の読み取り専用プロパティの引き渡し</span><span class="sxs-lookup"><span data-stu-id="fcd21-183"><a name="vbconinteroperabilitymarshalinganchor11"></a> Passing ReadOnly Properties of Controls ByRef</span></span>  
+ <span data-ttu-id="fcd21-184">Visual Basic .NET 場合がありますを発生させます"エラー 0x800A017F CTL_E_SETNOTSUPPORTED"などの COM エラーを渡す場合`ReadOnly`として、一部の古い ActiveX コントロールのプロパティ`ByRef`他のプロシージャのパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-184">Visual Basic .NET sometimes raises COM errors such as, "Error 0x800A017F CTL_E_SETNOTSUPPORTED", when you pass `ReadOnly` properties of some older ActiveX controls as `ByRef` parameters to other procedures.</span></span> <span data-ttu-id="fcd21-185">Visual Basic 6.0 からプロシージャ呼び出しでは、エラーは発生せず、パラメーターとして扱われます値で渡すと同様です。</span><span class="sxs-lookup"><span data-stu-id="fcd21-185">Similar procedure calls from Visual Basic 6.0 do not raise an error, and the parameters are treated as if you passed them by value.</span></span> <span data-ttu-id="fcd21-186">Visual Basic .NET のエラー メッセージは、プロパティを持たないプロパティを変更しようとしていることを示す`Set`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-186">The Visual Basic .NET error message indicates that you are trying to change a property that does not have a property `Set` procedure.</span></span>  
   
- 呼び出されるプロシージャにアクセスできる場合を使用してこのエラーを回避できる、`ByVal`が受け取るパラメーターを宣言するキーワード`ReadOnly`プロパティです。 例:  
+ <span data-ttu-id="fcd21-187">呼び出されるプロシージャにアクセスできる場合を使用してこのエラーを防ぐことができます、`ByVal`を受け取るパラメーターを宣言するキーワード`ReadOnly`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="fcd21-187">If you have access to the procedure being called, you can prevent this error by using the `ByVal` keyword to declare parameters that accept `ReadOnly` properties.</span></span> <span data-ttu-id="fcd21-188">例:</span><span class="sxs-lookup"><span data-stu-id="fcd21-188">For example:</span></span>  
   
- [!code-vb[VbVbalrInterop #&26;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_6.vb)]  
+ [!code-vb[VbVbalrInterop#26](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_6.vb)]  
   
- 呼び出されるプロシージャのソース コードへのアクセスがあるない場合は、呼び出し元のプロシージャの周囲に角かっこの追加のセットを追加することで値によって渡されるプロパティを強制できます。 たとえば、プロジェクトでは、Microsoft ActiveX データ オブジェクト 2.8 ライブラリ COM オブジェクトへの参照を含む、次のように使用します。  
+ <span data-ttu-id="fcd21-189">呼び出されるプロシージャのソース コードへのアクセスがない、余分な呼び出し元のプロシージャの前後にかっこのセットを追加することで値によって渡されるプロパティを強制することができます。</span><span class="sxs-lookup"><span data-stu-id="fcd21-189">If you do not have access to the source code for the procedure being called, you can force the property to be passed by value by adding an extra set of brackets around the calling procedure.</span></span> <span data-ttu-id="fcd21-190">たとえば、プロジェクトでは、Microsoft ActiveX データ オブジェクト 2.8 ライブラリ COM オブジェクトへの参照を含む、次のように使用します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-190">For example, in a project that has a reference to the Microsoft ActiveX Data Objects 2.8 Library COM object, you can use:</span></span>  
   
- [!code-vb[VbVbalrInterop #&27;](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_7.vb)]  
+ [!code-vb[VbVbalrInterop#27](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_7.vb)]  
   
-##  <a name="vbconinteroperabilitymarshalinganchor12"></a>相互運用機能を公開するアセンブリを展開します。  
- COM インターフェイスを公開するアセンブリを展開すると、特殊な課題が表示されます。 たとえば、別のアプリケーションは、同じ COM アセンブリを参照と、潜在的な問題が発生します。 新しいバージョンのアセンブリをインストールすると、別のアプリケーションは、アセンブリの旧バージョンを使用しても、このような状況が一般的です。 DLL を共有するアセンブリをアンインストールする場合することができ意図せずに使用できない他のアセンブリ。  
+##  <span data-ttu-id="fcd21-191"><a name="vbconinteroperabilitymarshalinganchor12"></a>相互運用機能を公開するアセンブリを展開します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-191"><a name="vbconinteroperabilitymarshalinganchor12"></a> Deploying Assemblies That Expose Interop</span></span>  
+ <span data-ttu-id="fcd21-192">COM インターフェイスを公開するアセンブリの展開の課題がいくつか一意です。</span><span class="sxs-lookup"><span data-stu-id="fcd21-192">Deploying assemblies that expose COM interfaces presents some unique challenges.</span></span> <span data-ttu-id="fcd21-193">たとえば、別のアプリケーションは、同じ COM アセンブリを参照と、潜在的な問題が発生します。</span><span class="sxs-lookup"><span data-stu-id="fcd21-193">For example, a potential problem occurs when separate applications reference the same COM assembly.</span></span> <span data-ttu-id="fcd21-194">アセンブリの新しいバージョンがインストールされているし、別のアプリケーションがまだ古いバージョンのアセンブリを使用して、このような状況が一般的です。</span><span class="sxs-lookup"><span data-stu-id="fcd21-194">This situation is common when a new version of an assembly is installed and another application is still using the old version of the assembly.</span></span> <span data-ttu-id="fcd21-195">場合は、DLL を共有するアセンブリをアンインストールすると、することができます意図せずに使用できなくなったを他のアセンブリ。</span><span class="sxs-lookup"><span data-stu-id="fcd21-195">If you uninstall an assembly that shares a DLL, you can unintentionally make it unavailable to the other assemblies.</span></span>  
   
- この問題を回避するには、共有アセンブリをグローバル アセンブリ キャッシュ (GAC) にインストールして、コンポーネントのマージ モジュールを使用する必要があります。 GAC にアプリケーションをインストールできない場合は、これでバージョン固有のサブディレクトリで CommonFilesFolder にインストールしてください。  
+ <span data-ttu-id="fcd21-196">この問題を回避するのには、共有アセンブリをグローバル アセンブリ キャッシュ (GAC) にインストールして、コンポーネントのマージ モジュールを使用してください。</span><span class="sxs-lookup"><span data-stu-id="fcd21-196">To avoid this problem, you should install shared assemblies to the Global Assembly Cache (GAC) and use a MergeModule for the component.</span></span> <span data-ttu-id="fcd21-197">GAC にアプリケーションをインストールできない場合は、これでバージョンに固有のサブディレクトリに CommonFilesFolder にインストールしてください。</span><span class="sxs-lookup"><span data-stu-id="fcd21-197">If you cannot install the application in the GAC, it should be installed to CommonFilesFolder in a version-specific subdirectory.</span></span>  
   
- 共有されていないアセンブリは、呼び出し元のアプリケーションと同じディレクトリにサイド バイ サイドで配置する必要があります。  
+ <span data-ttu-id="fcd21-198">共有されていないアセンブリは、呼び出し元のアプリケーションを使用してディレクトリにサイド バイ サイドで配置する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcd21-198">Assemblies that are not shared should be located side by side in the directory with the calling application.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute></xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [COM 相互運用機能](../../../visual-basic/programming-guide/com-interop/index.md)   
- [Tlbimp.exe (タイプ ライブラリ インポーター)](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)   
- [Tlbexp.exe (タイプ ライブラリ エクスポーター)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)   
- [チュートリアル: COM オブジェクトによる継承の実装](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)   
- [Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)   
- [グローバル アセンブリ キャッシュ](http://msdn.microsoft.com/library/cf5eacd0-d3ec-4879-b6da-5fd5e4372202)
+## <a name="see-also"></a><span data-ttu-id="fcd21-199">関連項目</span><span class="sxs-lookup"><span data-stu-id="fcd21-199">See Also</span></span>  
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+ [<span data-ttu-id="fcd21-200">COM 相互運用</span><span class="sxs-lookup"><span data-stu-id="fcd21-200">COM Interop</span></span>](../../../visual-basic/programming-guide/com-interop/index.md)  
+ [<span data-ttu-id="fcd21-201">Tlbimp.exe (タイプ ライブラリ インポーター)</span><span class="sxs-lookup"><span data-stu-id="fcd21-201">Tlbimp.exe (Type Library Importer)</span></span>](http://msdn.microsoft.com/library/ec0a8d63-11b3-4acd-b398-da1e37e97382)  
+ [<span data-ttu-id="fcd21-202">Tlbexp.exe (タイプ ライブラリ エクスポーター)</span><span class="sxs-lookup"><span data-stu-id="fcd21-202">Tlbexp.exe (Type Library Exporter)</span></span>](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)  
+ [<span data-ttu-id="fcd21-203">チュートリアル : COM オブジェクトによる継承の実装</span><span class="sxs-lookup"><span data-stu-id="fcd21-203">Walkthrough: Implementing Inheritance with COM Objects</span></span>](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
+ [<span data-ttu-id="fcd21-204">Inherits ステートメント</span><span class="sxs-lookup"><span data-stu-id="fcd21-204">Inherits Statement</span></span>](../../../visual-basic/language-reference/statements/inherits-statement.md)  
+ [<span data-ttu-id="fcd21-205">グローバル アセンブリ キャッシュ</span><span class="sxs-lookup"><span data-stu-id="fcd21-205">Global Assembly Cache</span></span>](../../../framework/app-domains/gac.md)

@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.Channels.ConnectionPoolLeaseTimeoutReached | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.Channels.ConnectionPoolLeaseTimeoutReached
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bba612da-25ab-4051-916a-c0fba1ae6189
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 30a5f44d456011b283cf7fe39ddacbe789aa75a6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.Channels.ConnectionPoolLeaseTimeoutReached
-System.ServiceModel.Channels.ConnectionPoolLeaseTimeoutReached  
+# <a name="systemservicemodelchannelsconnectionpoolleasetimeoutreached"></a><span data-ttu-id="a9c34-102">System.ServiceModel.Channels.ConnectionPoolLeaseTimeoutReached</span><span class="sxs-lookup"><span data-stu-id="a9c34-102">System.ServiceModel.Channels.ConnectionPoolLeaseTimeoutReached</span></span>
+<span data-ttu-id="a9c34-103">System.ServiceModel.Channels.ConnectionPoolLeaseTimeoutReached</span><span class="sxs-lookup"><span data-stu-id="a9c34-103">System.ServiceModel.Channels.ConnectionPoolLeaseTimeoutReached</span></span>  
   
-## 説明  
- 接続がこの接続プールの接続リース タイムアウトを超えたため、閉じられました。  
+## <a name="description"></a><span data-ttu-id="a9c34-104">説明</span><span class="sxs-lookup"><span data-stu-id="a9c34-104">Description</span></span>  
+ <span data-ttu-id="a9c34-105">接続がこの接続プールの接続リース タイムアウトを超えたため、閉じられました。</span><span class="sxs-lookup"><span data-stu-id="a9c34-105">A connection has exceeded the connection lease timeout of this connection pool and been closed.</span></span>  
   
-## 参照  
- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="a9c34-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="a9c34-106">See Also</span></span>  
+ [<span data-ttu-id="a9c34-107">トレース</span><span class="sxs-lookup"><span data-stu-id="a9c34-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="a9c34-108">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="a9c34-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="a9c34-109">管理と診断</span><span class="sxs-lookup"><span data-stu-id="a9c34-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

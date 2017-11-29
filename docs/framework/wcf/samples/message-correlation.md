@@ -1,29 +1,32 @@
 ---
-title: "メッセージ相関 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "メッセージ相関"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 54b7b7d9ba247f329fbf3c9040c641e3194d3bfb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# メッセージ相関
-このサンプルでは、メッセージ キュー \(MSMQ\) アプリケーションで MSMQ メッセージを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに送信する方法と、要求または応答のシナリオで、メッセージを送信側のアプリケーションと受信側のアプリケーション間で相互に関連付ける方法を示します。このサンプルでは、msmqIntegrationBinding バインディングを使用します。この場合、サービスは自己ホスト型コンソール アプリケーションで、サービスがキュー内のメッセージを受信したかどうかを監視できます。k  
+# <a name="message-correlation"></a><span data-ttu-id="d4523-102">メッセージ相関</span><span class="sxs-lookup"><span data-stu-id="d4523-102">Message Correlation</span></span>
+<span data-ttu-id="d4523-103">このサンプルでは、メッセージ キュー (MSMQ) アプリケーションで MSMQ メッセージを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスに送信する方法と、要求または応答のシナリオで、メッセージを送信側のアプリケーションと受信側のアプリケーション間で相互に関連付ける方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d4523-103">This sample demonstrates how a Message Queuing (MSMQ) application can send an MSMQ message to a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service and how messages can be correlated between sender and receiver applications in a request/response scenario.</span></span> <span data-ttu-id="d4523-104">このサンプルでは、msmqIntegrationBinding バインディングを使用します。</span><span class="sxs-lookup"><span data-stu-id="d4523-104">This sample uses the msmqIntegrationBinding binding.</span></span> <span data-ttu-id="d4523-105">この場合、サービスは自己ホスト型コンソール アプリケーションで、サービスがキュー内のメッセージを受信したかどうかを監視できます。</span><span class="sxs-lookup"><span data-stu-id="d4523-105">The service in this case is a self-hosted console application to allow you to observe the service that receives queued messages.</span></span> <span data-ttu-id="d4523-106">k</span><span class="sxs-lookup"><span data-stu-id="d4523-106">k</span></span>  
   
- サービスは、送信側からの受信メッセージを処理し、送信側に応答メッセージを返信します。送信側は、受信した応答を、最初に送信した要求に関連付けます。メッセージの `MessageID` プロパティと `CorrelationID` プロパティを使用すると、要求メッセージと応答メッセージが関連付けられます。  
+ <span data-ttu-id="d4523-107">サービスは、送信側からの受信メッセージを処理し、送信側に応答メッセージを返信します。</span><span class="sxs-lookup"><span data-stu-id="d4523-107">The service processes the message received from the sender and sends a response message back to the sender.</span></span> <span data-ttu-id="d4523-108">送信側は、受信した応答を、最初に送信した要求に関連付けます。</span><span class="sxs-lookup"><span data-stu-id="d4523-108">The sender correlates the response it received to the request it sent originally.</span></span> <span data-ttu-id="d4523-109">メッセージの `MessageID` プロパティと `CorrelationID` プロパティを使用すると、要求メッセージと応答メッセージが関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="d4523-109">The `MessageID` and `CorrelationID` properties of the message are used to correlate the request and response messages.</span></span>  
   
- `IOrderProcessor` サービス コントラクトは、キューでの使用に適した一方向サービス操作を定義します。MSMQ メッセージには Action ヘッダーがないので、さまざまな MSMQ メッセージを操作コントラクトに自動的にマッピングすることはできません。したがってこの場合、存在する操作コントラクトは 1 つだけです。サービス内に複数の操作コントラクトを定義する場合は、ディスパッチする操作コントラクトを決定するために使用できる、MSMQ メッセージ内のヘッダー \(ラベルや correlationID など\) に関する情報をアプリケーションで提供する必要があります。これについては、「[カスタム Demux](../../../../docs/framework/wcf/samples/custom-demux.md)」を参照してください。  
+ <span data-ttu-id="d4523-110">`IOrderProcessor` サービス コントラクトは、キューでの使用に適した一方向サービス操作を定義します。</span><span class="sxs-lookup"><span data-stu-id="d4523-110">The `IOrderProcessor` service contract defines a one-way service operation that is suitable for use with queuing.</span></span> <span data-ttu-id="d4523-111">MSMQ メッセージには Action ヘッダーがないので、さまざまな MSMQ メッセージを操作コントラクトに自動的にマッピングすることはできません。</span><span class="sxs-lookup"><span data-stu-id="d4523-111">An MSMQ message does not have an Action header, so it is not possible to map different MSMQ messages to operation contracts automatically.</span></span> <span data-ttu-id="d4523-112">したがってこの場合、存在する操作コントラクトは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="d4523-112">Therefore, there can be only one operation contract in this case.</span></span> <span data-ttu-id="d4523-113">サービス内に複数の操作コントラクトを定義する場合は、ディスパッチする操作コントラクトを決定するために使用できる、MSMQ メッセージ内のヘッダー (ラベルや correlationID など) に関する情報をアプリケーションで提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d4523-113">If you want to define more operation contracts in the service, the application must provide information as to which header in the MSMQ message (for example, the label, or correlationID) can be used to decide which operation contract to dispatch.</span></span> <span data-ttu-id="d4523-114">これに示されている、[カスタム Demux](../../../../docs/framework/wcf/samples/custom-demux.md)です。</span><span class="sxs-lookup"><span data-stu-id="d4523-114">This is demonstrated in the [Custom Demux](../../../../docs/framework/wcf/samples/custom-demux.md).</span></span>  
   
- さらに、MSMQ メッセージには、操作コントラクトの別のパラメータにマッピングされるヘッダーに関する情報は含まれません。したがって、操作コントラクトに存在するパラメータは 1 つだけです。パラメータは <xref:System.ServiceModel.MSMQIntegration.MsmqMessage%601> 型の `MsmqMessage<T>` です。これには、基になる MSMQ メッセージが含まれます。`MsmqMessage<T>` クラスの型 "T" は、シリアル化されて MSMQ メッセージ本文に含まれているデータを表します。このサンプルでは、`PurchaseOrder` 型がシリアル化されて MSMQ メッセージ本文になっています。  
+ <span data-ttu-id="d4523-115">さらに、MSMQ メッセージには、操作コントラクトの別のパラメータにマッピングされるヘッダーに関する情報は含まれません。</span><span class="sxs-lookup"><span data-stu-id="d4523-115">The MSMQ message also does not contain information as to which headers are mapped to the different parameters of the operation contract.</span></span> <span data-ttu-id="d4523-116">したがって、操作コントラクトに存在するパラメータは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="d4523-116">Therefore, there can be only one parameter in the operation contract.</span></span> <span data-ttu-id="d4523-117">型のパラメーターが<!--zz <xref:System.ServiceModel.MSMQIntegration.MsmqMessage%601>`MsmqMessage<T>`-->、`System.ServiceModel.MSMQIntegration.MsmqMessage`基になる MSMQ メッセージが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d4523-117">The parameter is of type <!--zz <xref:System.ServiceModel.MSMQIntegration.MsmqMessage%601>`MsmqMessage<T>`--> , `System.ServiceModel.MSMQIntegration.MsmqMessage` which contains the underlying MSMQ message.</span></span> <span data-ttu-id="d4523-118">`MsmqMessage<T>` クラスの型 "T" は、シリアル化されて MSMQ メッセージ本文に含まれているデータを表します。</span><span class="sxs-lookup"><span data-stu-id="d4523-118">The type "T" in the `MsmqMessage<T>` class represents the data that is serialized into the MSMQ message body.</span></span> <span data-ttu-id="d4523-119">このサンプルでは、`PurchaseOrder` 型がシリアル化されて MSMQ メッセージ本文になっています。</span><span class="sxs-lookup"><span data-stu-id="d4523-119">In this sample, the `PurchaseOrder` type is serialized into the MSMQ message body.</span></span>  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -33,10 +36,9 @@ public interface IOrderProcessor
     [OperationContract(IsOneWay = true, Action = "*")]  
     void SubmitPurchaseOrder(MsmqMessage<PurchaseOrder> msg);  
 }  
-  
 ```  
   
- このサービス操作は発注書を処理し、サービス コンソール ウィンドウにその発注書の内容と状態を表示します。<xref:System.ServiceModel.OperationBehaviorAttribute> はこの操作を構成してキューを伴うトランザクションに登録し、操作が返されたときにトランザクションに完了とマークします。`PurchaseOrder` には、サービスで処理する必要のある発注の詳細が含まれています。  
+ <span data-ttu-id="d4523-120">このサービス操作は発注書を処理し、サービス コンソール ウィンドウにその発注書の内容と状態を表示します。</span><span class="sxs-lookup"><span data-stu-id="d4523-120">The service operation processes the purchase order and displays the contents of the purchase order and its status in the service console window.</span></span> <span data-ttu-id="d4523-121"><xref:System.ServiceModel.OperationBehaviorAttribute> はこの操作を構成してキューを伴うトランザクションに登録し、操作が返されたときにトランザクションに完了とマークします。</span><span class="sxs-lookup"><span data-stu-id="d4523-121">The <xref:System.ServiceModel.OperationBehaviorAttribute> configures the operation to enlist in a transaction with the queue and to mark the transaction complete when the operation returns.</span></span> <span data-ttu-id="d4523-122">`PurchaseOrder` には、サービスで処理する必要のある発注の詳細が含まれています。</span><span class="sxs-lookup"><span data-stu-id="d4523-122">The `PurchaseOrder` contains the order details that must be processed by the service.</span></span>  
   
 ```  
 // Service class that implements the service contract.  
@@ -71,15 +73,13 @@ public class OrderProcessorService : IOrderProcessor
         client.Close();  
     }  
 }  
-  
 ```  
   
- サービスは、MSMQ メッセージをキューに送信するためにカスタム クライアント `OrderResponseClient` を使用します。メッセージを受信して処理するアプリケーションが MSMQ アプリケーションであり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションではないので、2 つのアプリケーション間に暗黙のサービス コントラクトはありません。したがって、このシナリオでは Svcutil.exe ツールを使用してプロキシを作成することはできません。  
+ <span data-ttu-id="d4523-123">サービスは、MSMQ メッセージをキューに送信するためにカスタム クライアント `OrderResponseClient` を使用します。</span><span class="sxs-lookup"><span data-stu-id="d4523-123">The service uses a custom client `OrderResponseClient` to send the MSMQ message to the queue.</span></span> <span data-ttu-id="d4523-124">メッセージを受信して処理するアプリケーションが MSMQ アプリケーションであり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションではないので、2 つのアプリケーション間で暗黙のサービス コントラクトはありません。</span><span class="sxs-lookup"><span data-stu-id="d4523-124">Because the application that receives and processes the message is an MSMQ application and not a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application, there is no implicit service contract between the two applications.</span></span> <span data-ttu-id="d4523-125">したがって、このシナリオでは Svcutil.exe ツールを使用してプロキシを作成することはできません。</span><span class="sxs-lookup"><span data-stu-id="d4523-125">So we cannot create a proxy using the Svcutil.exe tool in this scenario.</span></span>  
   
- カスタム プロキシは基本的に、`msmqIntegrationBinding` バインディングを使用してメッセージを送信するすべての [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションで同じです。他のプロキシと異なり、サービス操作の範囲は含まれません。メッセージ送信操作のみです。  
+ <span data-ttu-id="d4523-126">カスタム プロキシは基本的に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングを使用してメッセージを送信するすべての `msmqIntegrationBinding` アプリケーションで同じです。</span><span class="sxs-lookup"><span data-stu-id="d4523-126">The custom proxy is essentially the same for all [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] applications that use the `msmqIntegrationBinding` binding to send messages.</span></span> <span data-ttu-id="d4523-127">他のプロキシと異なり、サービス操作の範囲は含まれません。</span><span class="sxs-lookup"><span data-stu-id="d4523-127">Unlike other proxies, it does not include a range of service operations.</span></span> <span data-ttu-id="d4523-128">メッセージ送信操作のみです。</span><span class="sxs-lookup"><span data-stu-id="d4523-128">It is a submit message operation only.</span></span>  
   
 ```  
-  
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderResponse  
 {  
@@ -107,10 +107,9 @@ public partial class OrderResponseClient : System.ServiceModel.ClientBase<IOrder
         base.Channel.SendOrderResponse(msg);  
     }  
 }  
-  
 ```  
   
- サービスは自己ホスト型です。MSMQ 統合トランスポートを使用する場合、使用するキューをあらかじめ作成しておく必要があります。手動で作成することもコードで作成することもできます。このサンプルでは、キューの存在を確認して、必要な場合は作成するための <xref:System.Messaging> コードがサービスに含まれています。キュー名は構成ファイルから読み込まれます。  
+ <span data-ttu-id="d4523-129">サービスは自己ホスト型です。</span><span class="sxs-lookup"><span data-stu-id="d4523-129">The service is self hosted.</span></span> <span data-ttu-id="d4523-130">MSMQ 統合トランスポートを使用する場合、使用するキューをあらかじめ作成しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="d4523-130">When using the MSMQ integration transport, the queue used must be created in advance.</span></span> <span data-ttu-id="d4523-131">手動で作成することもコードで作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="d4523-131">This can be done manually or through code.</span></span> <span data-ttu-id="d4523-132">このサンプルでは、キューの存在を確認して、必要な場合は作成するための <xref:System.Messaging> コードがサービスに含まれています。</span><span class="sxs-lookup"><span data-stu-id="d4523-132">In this sample, the service contains <xref:System.Messaging> code to check for the existence of the queue and create it if necessary.</span></span> <span data-ttu-id="d4523-133">キュー名は構成ファイルから読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="d4523-133">The queue name is read from the configuration file.</span></span>  
   
 ```  
 public static void Main()  
@@ -134,12 +133,11 @@ public static void Main()
             serviceHost.Close();  
       }  
 }  
-  
 ```  
   
- 発注要求が送信される MSMQ キューは、構成ファイルの appSettings セクションで指定されます。クライアントおよびサービスのエンドポイントは、構成ファイルの system.serviceModel セクションで定義されます。どちらも `msmqIntegrationbinding` バインディングを指定します。  
+ <span data-ttu-id="d4523-134">発注要求が送信される MSMQ キューは、構成ファイルの appSettings セクションで指定されます。</span><span class="sxs-lookup"><span data-stu-id="d4523-134">The MSMQ queue to which the order requests are sent is specified in the appSettings section of the configuration file.</span></span> <span data-ttu-id="d4523-135">クライアントおよびサービスのエンドポイントは、構成ファイルの system.serviceModel セクションで定義されます。</span><span class="sxs-lookup"><span data-stu-id="d4523-135">The client and service endpoints are defined in the system.serviceModel section of the configuration file.</span></span> <span data-ttu-id="d4523-136">どちらも `msmqIntegrationbinding` バインディングを指定します。</span><span class="sxs-lookup"><span data-stu-id="d4523-136">Both specify the `msmqIntegrationbinding` binding.</span></span>  
   
-```  
+```xml  
 <appSettings>  
   <add key="orderQueueName" value=".\private$\Orders" />  
 </appSettings>  
@@ -174,10 +172,9 @@ public static void Main()
   </bindings>  
   
 </system.serviceModel>  
-  
 ```  
   
- クライアント アプリケーションは <xref:System.Messaging> を使用して、非揮発性メッセージとトランザクション メッセージをキューに送信します。メッセージの本文には発注書が含まれます。  
+ <span data-ttu-id="d4523-137">クライアント アプリケーションは <xref:System.Messaging> を使用して、非揮発性メッセージとトランザクション メッセージをキューに送信します。</span><span class="sxs-lookup"><span data-stu-id="d4523-137">The client application uses <xref:System.Messaging> to send a durable and transactional message to the queue.</span></span> <span data-ttu-id="d4523-138">メッセージの本文には発注書が含まれます。</span><span class="sxs-lookup"><span data-stu-id="d4523-138">The message's body contains the purchase order.</span></span>  
   
 ```  
 static void PlaceOrder()  
@@ -221,21 +218,20 @@ static void PlaceOrder()
     orderMessageID = msg.Id;  
     Console.WriteLine("Placed the order, waiting for response...");  
 }  
-  
 ```  
   
- 発注の応答を受信する MSMQ キューは、構成ファイルの appSettings セクションで指定されます。次のサンプル構成を参照してください。  
+ <span data-ttu-id="d4523-139">発注の応答を受信する MSMQ キューは、構成ファイルの appSettings セクションで指定されます。次のサンプル構成を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d4523-139">The MSMQ queue from which the order responses are received is specified in an appSettings section of the configuration file, as shown in the following sample configuration.</span></span>  
   
 > [!NOTE]
->  キュー名では、ドット \(.\) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイント アドレスでは msmq.formatname スキームが指定され、ローカル コンピューターを表す "localhost" が使用されます。URI の msmq.formatname の後には、MSMQ ガイドラインに沿って正しく書式設定された形式名が続きます。  
+>  <span data-ttu-id="d4523-140">キュー名では、ドット (.) を使用してローカル コンピューターを表し、バックスラッシュを使用してパスを区切ります。</span><span class="sxs-lookup"><span data-stu-id="d4523-140">The queue name uses a dot (.) for the local computer and backslash separators in its path.</span></span> <span data-ttu-id="d4523-141">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイント アドレスでは msmq.formatname スキームが指定され、ローカル コンピューターを表す "localhost" が使用されます。</span><span class="sxs-lookup"><span data-stu-id="d4523-141">The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] endpoint address specifies a msmq.formatname scheme, and uses "localhost" for the local computer.</span></span> <span data-ttu-id="d4523-142">URI の msmq.formatname の後には、MSMQ ガイドラインに沿って正しく書式設定された形式名が続きます。</span><span class="sxs-lookup"><span data-stu-id="d4523-142">A properly formed format name follows msmq.formatname in the URI according to MSMQ guidelines.</span></span>  
   
-```  
+```xml  
 <appSettings>  
     <add key=" orderResponseQueueName" value=".\private$\Orders" />  
 </appSettings>  
 ```  
   
- クライアント アプリケーションは、サービスに送信する発注要求メッセージの `messageID` を保存し、サービスからの応答を待機します。応答がキューに到着すると、クライアントは発注メッセージの `correlationID` プロパティを使用して、送信した発注メッセージと応答を関連付けます。このプロパティには、クライアントが最初にサービスに送信した発注メッセージの `messageID` が含まれています。  
+ <span data-ttu-id="d4523-143">クライアント アプリケーションは、サービスに送信する発注要求メッセージの `messageID` を保存し、サービスからの応答を待機します。</span><span class="sxs-lookup"><span data-stu-id="d4523-143">The client application saves the `messageID` of the order request message that it sends to the service and waits for a response from the service.</span></span> <span data-ttu-id="d4523-144">応答がキューに到着すると、クライアントは発注メッセージの `correlationID` プロパティを使用して、送信した発注メッセージと応答を関連付けます。このプロパティには、クライアントが最初にサービスに送信した発注メッセージの `messageID` が含まれています。</span><span class="sxs-lookup"><span data-stu-id="d4523-144">Once a response arrives in the queue the client correlates it with the order message it sent using the `correlationID` property of the message, which contains the `messageID` of the order message that the client sent to the service originally.</span></span>  
   
 ```  
 static void DisplayOrderStatus()  
@@ -276,57 +272,56 @@ static void DisplayOrderStatus()
     }  
   }  
 }  
-  
 ```  
   
- サンプルを実行すると、クライアントとサービスのアクティビティがサービスとクライアントの両方のコンソール ウィンドウに表示されます。サービスがクライアントからメッセージを受信し、クライアントに応答を返信するアクティビティを参照できます。クライアントでは、サービスから受信した応答が表示されます。どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。  
+ <span data-ttu-id="d4523-145">サンプルを実行すると、クライアントとサービスのアクティビティがサービスとクライアントの両方のコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="d4523-145">When you run the sample, the client and service activities are displayed in both the service and client console windows.</span></span> <span data-ttu-id="d4523-146">サービスがクライアントからメッセージを受信し、クライアントに応答を返信するアクティビティを参照できます。</span><span class="sxs-lookup"><span data-stu-id="d4523-146">You can see the service receive messages from the client and sends a response back to the client.</span></span> <span data-ttu-id="d4523-147">クライアントでは、サービスから受信した応答が表示されます。</span><span class="sxs-lookup"><span data-stu-id="d4523-147">The client displays the response received from the service.</span></span> <span data-ttu-id="d4523-148">どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。</span><span class="sxs-lookup"><span data-stu-id="d4523-148">Press ENTER in each console window to shut down the service and client.</span></span>  
   
 > [!NOTE]
->  このサンプルを実行するには、メッセージ キュー \(MSMQ\) がインストールされている必要があります。インストールの手順については、「参照」セクションを参照してください。  
+>  <span data-ttu-id="d4523-149">このサンプルを実行するには、メッセージ キュー (MSMQ) がインストールされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="d4523-149">This sample requires the installation of Message Queuing (MSMQ).</span></span> <span data-ttu-id="d4523-150">インストールの手順については、「参照」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="d4523-150">See the MSMQ installation instructions in the See Also section.</span></span>  
   
-### サンプルをセットアップ、ビルド、および実行するには  
+### <a name="to-setup-build-and-run-the-sample"></a><span data-ttu-id="d4523-151">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="d4523-151">To setup, build, and run the sample</span></span>  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  <span data-ttu-id="d4523-152">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="d4523-152">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  サービスを最初に実行すると、サービスはキューが存在するかどうかを確認します。キューが存在しない場合、サービスによってキューが作成されます。最初にサービスを実行してキューを作成することも、MSMQ キュー マネージャーでキューを作成することもできます。Windows 2008 でキューを作成するには、次の手順に従います。  
+2.  <span data-ttu-id="d4523-153">サービスを最初に実行すると、サービスはキューが存在するかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="d4523-153">If the service is run first, it will check to ensure that the queue is present.</span></span> <span data-ttu-id="d4523-154">キューが存在しない場合、サービスによってキューが作成されます。</span><span class="sxs-lookup"><span data-stu-id="d4523-154">If the queue is not present, the service will create one.</span></span> <span data-ttu-id="d4523-155">最初にサービスを実行してキューを作成することも、MSMQ キュー マネージャーでキューを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="d4523-155">You can run the service first to create the queue, or you can create one via the MSMQ Queue Manager.</span></span> <span data-ttu-id="d4523-156">Windows 2008 でキューを作成するには、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="d4523-156">Follow these steps to create a queue in Windows 2008.</span></span>  
   
-    1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] でサーバー マネージャーを開きます。  
+    1.  <span data-ttu-id="d4523-157">[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] でサーバー マネージャーを開きます。</span><span class="sxs-lookup"><span data-stu-id="d4523-157">Open Server Manager in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].</span></span>  
   
-    2.  **\[機能\]** タブを展開します。  
+    2.  <span data-ttu-id="d4523-158">展開して、**機能**タブです。</span><span class="sxs-lookup"><span data-stu-id="d4523-158">Expand the **Features** tab.</span></span>  
   
-    3.  **\[プライベート メッセージ キュー\]** を右クリックし、**\[新規作成\]**、**\[専用キュー\]** の順にクリックします。  
+    3.  <span data-ttu-id="d4523-159">右クリック**プライベート メッセージ キュー**を選択して**新規**、**プライベート キュー**です。</span><span class="sxs-lookup"><span data-stu-id="d4523-159">Right-click **Private Message Queues**, and select **New**, **Private Queue**.</span></span>  
   
-    4.  **\[トランザクション\]** ボックスをオンにします。  
+    4.  <span data-ttu-id="d4523-160">チェック、**トランザクション**ボックス。</span><span class="sxs-lookup"><span data-stu-id="d4523-160">Check the **Transactional** box.</span></span>  
   
-    5.  新しいキューの名前として、「`ServiceModelSamplesTransacted`」と入力します。  
+    5.  <span data-ttu-id="d4523-161">入力`ServiceModelSamplesTransacted`として、新しいキューの名前。</span><span class="sxs-lookup"><span data-stu-id="d4523-161">Enter `ServiceModelSamplesTransacted` as the name of the new queue.</span></span>  
   
-3.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+3.  <span data-ttu-id="d4523-162">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="d4523-162">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-4.  単一コンピューター構成でサンプルを実行するには、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+4.  <span data-ttu-id="d4523-163">単一コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="d4523-163">To run the sample in a single-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
-### サンプルを複数のコンピューターで実行するには  
+### <a name="to-run-the-sample-across-computers"></a><span data-ttu-id="d4523-164">サンプルを複数のコンピューターで実行するには</span><span class="sxs-lookup"><span data-stu-id="d4523-164">To run the sample across computers</span></span>  
   
-1.  サービスのプログラム ファイルを、言語固有のフォルダーにある \\service\\bin\\ フォルダーからサービス コンピューターにコピーします。  
+1.  <span data-ttu-id="d4523-165">サービスのプログラム ファイルを、言語固有のフォルダーにある \service\bin\ フォルダーからサービス コンピューターにコピーします。</span><span class="sxs-lookup"><span data-stu-id="d4523-165">Copy the service program files from the \service\bin\ folder, under the language-specific folder, to the service computer.</span></span>  
   
-2.  クライアント プログラム ファイルを、言語固有のフォルダーにある \\client\\bin\\ フォルダーからクライアント コンピューターにコピーします。  
+2.  <span data-ttu-id="d4523-166">クライアント プログラム ファイルを、言語固有のフォルダーにある \client\bin\ フォルダーからクライアント コンピューターにコピーします。</span><span class="sxs-lookup"><span data-stu-id="d4523-166">Copy the client program files from the \client\bin\ folder, under the language-specific folder, to the client computer.</span></span>  
   
-3.  Client.exe.config ファイルを開き、orderQueueName を変更して "." の代わりにサービス コンピューター名を指定します。  
+3.  <span data-ttu-id="d4523-167">Client.exe.config ファイルを開き、orderQueueName を変更して "." の代わりにサービス コンピューター名を指定します。</span><span class="sxs-lookup"><span data-stu-id="d4523-167">In the Client.exe.config file, change the orderQueueName to specify the service computer name instead of ".".</span></span>  
   
-4.  Service.exe.config ファイルで、クライアント エンドポイントのアドレスを変更して "." の代わりにクライアント コンピューター名を指定します。  
+4.  <span data-ttu-id="d4523-168">Service.exe.config ファイルで、クライアント エンドポイントのアドレスを変更して "." の代わりにクライアント コンピューター名を指定します。</span><span class="sxs-lookup"><span data-stu-id="d4523-168">In the Service.exe.config file, change the client endpoint address to specify the client computer name instead of ".".</span></span>  
   
-5.  サービス コンピューターで、コマンド プロンプトから Service.exe を起動します。  
+5.  <span data-ttu-id="d4523-169">サービス コンピューターで、コマンド プロンプトから Service.exe を起動します。</span><span class="sxs-lookup"><span data-stu-id="d4523-169">On the service computer, launch Service.exe from a command prompt.</span></span>  
   
-6.  クライアント コンピューターで、コマンド プロンプトから Client.exe を起動します。  
+6.  <span data-ttu-id="d4523-170">クライアント コンピューターで、コマンド プロンプトから Client.exe を起動します。</span><span class="sxs-lookup"><span data-stu-id="d4523-170">On the client computer, launch Client.exe from a command prompt.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="d4523-171">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="d4523-171">The samples may already be installed on your computer.</span></span> <span data-ttu-id="d4523-172">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="d4523-172">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="d4523-173">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="d4523-173">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="d4523-174">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="d4523-174">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`  
   
-## 参照  
- [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)   
- [メッセージ キュー](http://go.microsoft.com/fwlink/?LinkId=94968)
+## <a name="see-also"></a><span data-ttu-id="d4523-175">関連項目</span><span class="sxs-lookup"><span data-stu-id="d4523-175">See Also</span></span>  
+ [<span data-ttu-id="d4523-176">WCF でのキュー</span><span class="sxs-lookup"><span data-stu-id="d4523-176">Queuing in WCF</span></span>](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
+ [<span data-ttu-id="d4523-177">メッセージ キュー</span><span class="sxs-lookup"><span data-stu-id="d4523-177">Message Queuing</span></span>](http://go.microsoft.com/fwlink/?LinkId=94968)

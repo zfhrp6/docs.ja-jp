@@ -1,37 +1,36 @@
 ---
-title: "Object Variable Assignment (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Nothing keyword, object variable assignment"
-  - "object variables, initializing"
-  - "variables [Visual Basic], initializing"
-  - "objects [Visual Basic], current instance"
-  - "object variables, assigning"
-  - "variables [Visual Basic], object variables"
-  - "current instance, defined"
-  - "variables [Visual Basic], assigning"
-  - "assignment statements, object variable assignment"
-  - "Me keyword, as object variable"
+title: "オブジェクト変数への代入 (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Nothing keyword [Visual Basic], object variable assignment
+- object variables [Visual Basic], initializing
+- variables [Visual Basic], initializing
+- objects [Visual Basic], current instance
+- object variables [Visual Basic], assigning
+- variables [Visual Basic], object variables
+- current instance [Visual Basic], defined
+- variables [Visual Basic], assigning
+- assignment statements [Visual Basic], object variable assignment
+- Me keyword [Visual Basic], as object variable
 ms.assetid: 3706811d-fd40-44fe-8727-d692e8e55d6d
-caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: eb6b53bebddc1c9cf1b9088e96ded36a5e1c5242
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Object Variable Assignment (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-オブジェクト変数にオブジェクトを代入するには、通常の代入ステートメントを使用します。  次に示す例のように、オブジェクト式または [Nothing](../../../../visual-basic/language-reference/nothing.md) キーワードを代入できます。  
+# <a name="object-variable-assignment-visual-basic"></a><span data-ttu-id="8636c-102">オブジェクト変数への代入 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8636c-102">Object Variable Assignment (Visual Basic)</span></span>
+<span data-ttu-id="8636c-103">通常の代入ステートメントを使用して、オブジェクト変数にオブジェクトを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="8636c-103">You use a normal assignment statement to assign an object to an object variable.</span></span> <span data-ttu-id="8636c-104">オブジェクト式を割り当てることができます、または[Nothing](../../../../visual-basic/language-reference/nothing.md)キーワードとして次の例を示しています。</span><span class="sxs-lookup"><span data-stu-id="8636c-104">You can assign an object expression or the [Nothing](../../../../visual-basic/language-reference/nothing.md) keyword, as the following example illustrates.</span></span>  
   
 ```  
 Dim thisObject As Object  
@@ -41,20 +40,20 @@ thisObject = Form1
 thisObject = Nothing  
 ```  
   
- `Nothing` は、変数に現在代入されているオブジェクトがないことを表します。  
+ <span data-ttu-id="8636c-105">`Nothing`変数に現在割り当てられているオブジェクトが存在しないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="8636c-105">`Nothing` means there is no object currently assigned to the variable.</span></span>  
   
-## 初期化  
- コードが実行を開始すると、オブジェクト変数は `Nothing` に初期化されます。  宣言に初期化が含まれている場合は、この宣言ステートメントが実行されるたびに、指定した値に再初期化されます。  
+## <a name="initialization"></a><span data-ttu-id="8636c-106">初期化</span><span class="sxs-lookup"><span data-stu-id="8636c-106">Initialization</span></span>  
+ <span data-ttu-id="8636c-107">コードが実行されている変数に初期化されるオブジェクトを開始するとき`Nothing`です。</span><span class="sxs-lookup"><span data-stu-id="8636c-107">When your code begins running, your object variables are initialized to `Nothing`.</span></span> <span data-ttu-id="8636c-108">宣言には初期化が含まれているが、宣言ステートメントの実行時に指定した値に再初期化されます。</span><span class="sxs-lookup"><span data-stu-id="8636c-108">Those whose declarations include initialization are reinitialized to the values you specify when the declaration statements are executed.</span></span>  
   
- [New](../../../../visual-basic/language-reference/operators/new-operator.md) キーワードを使用すると、宣言に初期化を含めることができます。  次に示す宣言ステートメントは、オブジェクト変数 `testUri` と `ver` を宣言し、特定のオブジェクトを代入します。  それぞれ適切なクラスのオーバーロードされたコンストラクターのいずれか 1 つを使用してオブジェクトを初期化します。  
+ <span data-ttu-id="8636c-109">使用して、宣言で初期化を含めることができます、[新規](../../../../visual-basic/language-reference/operators/new-operator.md)キーワード。</span><span class="sxs-lookup"><span data-stu-id="8636c-109">You can include initialization in your declaration by using the [New](../../../../visual-basic/language-reference/operators/new-operator.md) keyword.</span></span> <span data-ttu-id="8636c-110">次の宣言ステートメントは、オブジェクト変数を宣言`testUri`と`ver`しそれらに特定のオブジェクトを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="8636c-110">The following declaration statements declare object variables `testUri` and `ver` and assign specific objects to them.</span></span> <span data-ttu-id="8636c-111">それぞれは、オブジェクトを初期化するために、適切なクラスのオーバー ロードされたコンス トラクターのいずれかを使用します。</span><span class="sxs-lookup"><span data-stu-id="8636c-111">Each uses one of the overloaded constructors of the appropriate class to initialize the object.</span></span>  
   
 ```  
 Dim testUri As New System.Uri("http://www.microsoft.com")  
 Dim ver As New System.Version(6, 1, 0)  
 ```  
   
-## 関連付けの解除  
- オブジェクト変数を `Nothing` に設定すると、変数と特定のオブジェクトとの関連付けは失われます。  このため、変数を変更するときに誤ってオブジェクトを変更してしまうことがなくなります。  また、次の例のように、オブジェクト変数が有効なオブジェクトを指しているかどうかをテストすることもできます。  
+## <a name="disassociation"></a><span data-ttu-id="8636c-112">関連付けの解除</span><span class="sxs-lookup"><span data-stu-id="8636c-112">Disassociation</span></span>  
+ <span data-ttu-id="8636c-113">オブジェクト変数を設定`Nothing`と特定のオブジェクト変数の関連付けは失われます。</span><span class="sxs-lookup"><span data-stu-id="8636c-113">Setting an object variable to `Nothing` discontinues the association of the variable with any specific object.</span></span> <span data-ttu-id="8636c-114">こうと、誤って、変数を変更することによって、オブジェクトを変更します。</span><span class="sxs-lookup"><span data-stu-id="8636c-114">This prevents you from accidentally changing the object by changing the variable.</span></span> <span data-ttu-id="8636c-115">次の例のように、オブジェクト変数が有効なオブジェクトをポイントするかどうかをテストすることもできます。</span><span class="sxs-lookup"><span data-stu-id="8636c-115">It also allows you to test whether the object variable points to a valid object, as the following example shows.</span></span>  
   
 ```  
 If otherObject IsNot Nothing Then  
@@ -62,16 +61,16 @@ If otherObject IsNot Nothing Then
 End If  
 ```  
   
- 変数が他のアプリケーションのオブジェクトを参照している場合は、アプリケーションが終了されているのか、単にオブジェクトが無効になっているのかをこのテストで調べることはできません。  
+ <span data-ttu-id="8636c-116">変数が参照するオブジェクトが別のアプリケーションの場合は、このテストはそのアプリケーションが終了またはだけオブジェクトを無効にするかどうかを判断できません。</span><span class="sxs-lookup"><span data-stu-id="8636c-116">If the object your variable refers to is in another application, this test cannot determine whether that application has terminated or just invalidated the object.</span></span>  
   
- 値が `Nothing` のオブジェクト変数は、*null 参照*とも呼ばれます。  
+ <span data-ttu-id="8636c-117">オブジェクト変数の値を持つ`Nothing`とも呼びます、 *null 参照*です。</span><span class="sxs-lookup"><span data-stu-id="8636c-117">An object variable with a value of `Nothing` is also called a *null reference*.</span></span>  
   
-## 現在のインスタンス  
- オブジェクトの*現在のインスタンス*とは、その内部で現在コードが実行されているインスタンスです。  すべてのコードはプロシージャ内で実行されるため、現在のインスタンスは、呼び出されたプロシージャでのインスタンスになります。  
+## <a name="current-instance"></a><span data-ttu-id="8636c-118">現在のインスタンス</span><span class="sxs-lookup"><span data-stu-id="8636c-118">Current Instance</span></span>  
+ <span data-ttu-id="8636c-119">*現在のインスタンス*オブジェクトのあるコードが実行されています。</span><span class="sxs-lookup"><span data-stu-id="8636c-119">The *current instance* of an object is the one in which the code is currently executing.</span></span> <span data-ttu-id="8636c-120">プロシージャ内のすべてのコードが実行されるため、現在のインスタンスは呼び出されたプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="8636c-120">Since all code executes inside a procedure, the current instance is the one in which the procedure was invoked.</span></span>  
   
- `Me` キーワードは、現在のインスタンスを参照するオブジェクト変数として機能します。  プロシージャが [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) でない場合は、`Me` キーワードを使って現在のインスタンスへのポインターを取得できます。  共有プロシージャをクラスの特定のインスタンスに関連付けることはできません。  
+ <span data-ttu-id="8636c-121">`Me`キーワードは、現在のインスタンスを参照するオブジェクト変数として機能します。</span><span class="sxs-lookup"><span data-stu-id="8636c-121">The `Me` keyword acts as an object variable referring to the current instance.</span></span> <span data-ttu-id="8636c-122">プロシージャがない場合[Shared](../../../../visual-basic/language-reference/modifiers/shared.md)、使用できる、`Me`キーワードを現在のインスタンスへのポインターを取得します。</span><span class="sxs-lookup"><span data-stu-id="8636c-122">If a procedure is not [Shared](../../../../visual-basic/language-reference/modifiers/shared.md), it can use the `Me` keyword to obtain a pointer to the current instance.</span></span> <span data-ttu-id="8636c-123">クラスの特定のインスタンスに関連付けられている共有プロシージャは使用できません。</span><span class="sxs-lookup"><span data-stu-id="8636c-123">Shared procedures cannot be associated with a specific instance of a class.</span></span>  
   
- `Me` キーワードは、他のモジュールのプロシージャに現在のインスタンスを渡す場合に特に便利です。  たとえば、多数の XML ドキュメントがあり、標準テキストをそれらすべてに追加するとします。  これを実行するプロシージャを定義する例を次に示します。  
+ <span data-ttu-id="8636c-124">使用して`Me`は現在のインスタンスを別のモジュール内のプロシージャに渡すために特に便利です。</span><span class="sxs-lookup"><span data-stu-id="8636c-124">Using `Me` is particularly useful for passing the current instance to a procedure in another module.</span></span> <span data-ttu-id="8636c-125">たとえば、XML ドキュメントの数があるし、それらのすべてにいくつかの標準的なテキストを追加するとします。</span><span class="sxs-lookup"><span data-stu-id="8636c-125">For example, suppose you have a number of XML documents and wish to add some standard text to all of them.</span></span> <span data-ttu-id="8636c-126">次の例では、これを行うプロシージャを定義します。</span><span class="sxs-lookup"><span data-stu-id="8636c-126">The following example defines a procedure to do this.</span></span>  
   
 ```  
 Sub addStandardText(XmlDoc As System.Xml.XmlDocument)  
@@ -79,16 +78,16 @@ Sub addStandardText(XmlDoc As System.Xml.XmlDocument)
 End Sub  
 ```  
   
- 次に、この定義したプロシージャをすべての XML ドキュメント オブジェクトで呼び出し、引数として現在のインスタンスを渡します。  次に例を示します。  
+ <span data-ttu-id="8636c-127">すべての XML ドキュメント オブジェクトは、プロシージャを呼び出す可能性がありますし、現在のインスタンスを引数として渡します。</span><span class="sxs-lookup"><span data-stu-id="8636c-127">Every XML document object could then call the procedure and pass its current instance as an argument.</span></span> <span data-ttu-id="8636c-128">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="8636c-128">The following example demonstrates this.</span></span>  
   
 ```  
 addStandardText(Me)  
 ```  
   
-## 参照  
- [Object Variables](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)   
- [Object Variable Declaration](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)   
- [Object Variable Values](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)   
- [How to: Declare an Object Variable and Assign an Object to It in Visual Basic](../../../../visual-basic/programming-guide/language-features/variables/how-to-declare-an-object-variable-and-assign-an-object-to-it.md)   
- [How to: Make an Object Variable Not Refer to Any Instance](../../../../visual-basic/programming-guide/language-features/variables/how-to-make-an-object-variable-not-refer-to-any-instance.md)   
- [Me, My, MyBase, and MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
+## <a name="see-also"></a><span data-ttu-id="8636c-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="8636c-129">See Also</span></span>  
+ [<span data-ttu-id="8636c-130">オブジェクト変数</span><span class="sxs-lookup"><span data-stu-id="8636c-130">Object Variables</span></span>](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)  
+ [<span data-ttu-id="8636c-131">オブジェクト変数の宣言</span><span class="sxs-lookup"><span data-stu-id="8636c-131">Object Variable Declaration</span></span>](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)  
+ [<span data-ttu-id="8636c-132">オブジェクト変数の値</span><span class="sxs-lookup"><span data-stu-id="8636c-132">Object Variable Values</span></span>](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)  
+ [<span data-ttu-id="8636c-133">方法: オブジェクト変数を宣言し、Visual Basic でオブジェクトを割り当てます</span><span class="sxs-lookup"><span data-stu-id="8636c-133">How to: Declare an Object Variable and Assign an Object to It in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/variables/how-to-declare-an-object-variable-and-assign-an-object-to-it.md)  
+ [<span data-ttu-id="8636c-134">方法: オブジェクト変数がインスタンスを参照しないようにする</span><span class="sxs-lookup"><span data-stu-id="8636c-134">How to: Make an Object Variable Not Refer to Any Instance</span></span>](../../../../visual-basic/programming-guide/language-features/variables/how-to-make-an-object-variable-not-refer-to-any-instance.md)  
+ [<span data-ttu-id="8636c-135">Me、My、MyBase、および MyClass</span><span class="sxs-lookup"><span data-stu-id="8636c-135">Me, My, MyBase, and MyClass</span></span>](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)

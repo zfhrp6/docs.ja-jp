@@ -1,68 +1,71 @@
 ---
-title: "トランスポート セキュリティでの偽装の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トランスポート セキュリティでの偽装の使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 426df8cb-6337-4262-b2c0-b96c2edf21a9
-caps.latest.revision: 12
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 906d45ccba7185e82aed82626a13034f2e97422d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# トランスポート セキュリティでの偽装の使用
-*偽装*とは、サーバー アプリケーションがクライアントの ID を獲得する機能です。リソースへのアクセスを検証するときに、サービスでは偽装が広く使用されます。サーバー アプリケーションはサービス アカウントを使用して実行されますが、クライアントの接続を受け入れたサーバーは、クライアントの資格情報を使用してアクセス チェックが実行できるようにクライアントを偽装します。トランスポート セキュリティは、資格情報を渡すこと、および渡された資格情報を使用して通信をセキュリティで保護することの 2 つの機構から成ります。このトピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトランスポート セキュリティと共に偽装機能を使用する方法について説明します。メッセージ セキュリティを使用した偽装[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[委任と偽装](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)」を参照してください。  
+# <a name="using-impersonation-with-transport-security"></a><span data-ttu-id="e773b-102">トランスポート セキュリティでの偽装の使用</span><span class="sxs-lookup"><span data-stu-id="e773b-102">Using Impersonation with Transport Security</span></span>
+<span data-ttu-id="e773b-103">*権限借用*クライアントの id で実行するサーバー アプリケーションの機能です。</span><span class="sxs-lookup"><span data-stu-id="e773b-103">*Impersonation* is the ability of a server application to take on the identity of the client.</span></span> <span data-ttu-id="e773b-104">リソースへのアクセスを検証するときに、サービスでは偽装が広く使用されます。</span><span class="sxs-lookup"><span data-stu-id="e773b-104">It is common for services to use impersonation when validating access to resources.</span></span> <span data-ttu-id="e773b-105">サーバー アプリケーションはサービス アカウントを使用して実行されますが、クライアントの接続を受け入れたサーバーは、クライアントの資格情報を使用してアクセス チェックが実行できるようにクライアントを偽装します。</span><span class="sxs-lookup"><span data-stu-id="e773b-105">The server application runs using a service account, but when the server accepts a client connection, it impersonates the client so that access checks are performed using the client's credentials.</span></span> <span data-ttu-id="e773b-106">トランスポート セキュリティは、資格情報を渡すこと、および渡された資格情報を使用して通信をセキュリティで保護することの 2 つの機構から成ります。</span><span class="sxs-lookup"><span data-stu-id="e773b-106">Transport security is a mechanism both for passing credentials and securing communication using those credentials.</span></span> <span data-ttu-id="e773b-107">このトピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のトランスポート セキュリティと共に偽装機能を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e773b-107">This topic describes using transport security in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] with the impersonation feature.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="e773b-108">メッセージ セキュリティを使用して偽装を参照してください[委任と偽装](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)です。</span><span class="sxs-lookup"><span data-stu-id="e773b-108"> impersonation using message security, see [Delegation and Impersonation](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).</span></span>  
   
-## 5 つの偽装レベル  
- トランスポート セキュリティでは、次の表で説明するように 5 つの偽装レベルを使用します。  
+## <a name="five-impersonation-levels"></a><span data-ttu-id="e773b-109">5 つの偽装レベル</span><span class="sxs-lookup"><span data-stu-id="e773b-109">Five Impersonation Levels</span></span>  
+ <span data-ttu-id="e773b-110">トランスポート セキュリティでは、次の表で説明するように 5 つの偽装レベルを使用します。</span><span class="sxs-lookup"><span data-stu-id="e773b-110">Transport security makes use of five levels of impersonation, as described in the following table.</span></span>  
   
-|偽装レベル|説明|  
-|-----------|--------|  
-|None|サーバー アプリケーションは、クライアントの偽装を試みません。|  
-|Anonymous|サーバー アプリケーションはクライアントの資格情報に対してアクセス チェックを実行できますが、クライアントの ID に関する情報は一切受け取りません。この偽装レベルは、名前付きパイプなど、コンピューター上での通信にのみ意味があります。リモート接続で `Anonymous` レベルを使用すると、Identify レベルの偽装に昇格されます。|  
-|Identify|サーバー アプリケーションは、クライアントの ID を認識し、クライアントの資格情報に対するアクセスの検証を実行できますが、クライアントを偽装することはできません。トークン プロバイダーによって別の偽装レベルが提供されない限り、Identify レベルは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の SSPI 資格情報で使用される既定の偽装レベルになります。|  
-|Impersonate|サーバー アプリケーションは、アクセス チェックを実行できるだけでなく、クライアントとしてサーバー コンピューターのリソースにアクセスできます。偽装されたトークンにはネットワーク資格情報が含まれないため、サーバー アプリケーションはクライアントの ID を使用してリモート コンピューター上のリソースにアクセスできません。|  
-|Delegate|`Impersonate` と同じ機能に加えて、Delegate レベルの偽装では、サーバー アプリケーションがクライアントの ID を使用してリモート コンピューターのリソースにアクセスし、この ID を他のアプリケーションに渡すことができます。<br /><br /> **重要** これらの追加の機能を使用するには、ドメイン コントローラー上でそのサーバーのドメイン アカウントが委任先として信頼できるものとしてマークされている必要があります。このレベルの偽装は、機密としてマークされているクライアント ドメイン アカウントでは使用できません。|  
+|<span data-ttu-id="e773b-111">偽装レベル</span><span class="sxs-lookup"><span data-stu-id="e773b-111">Impersonation level</span></span>|<span data-ttu-id="e773b-112">説明</span><span class="sxs-lookup"><span data-stu-id="e773b-112">Description</span></span>|  
+|-------------------------|-----------------|  
+|<span data-ttu-id="e773b-113">なし</span><span class="sxs-lookup"><span data-stu-id="e773b-113">None</span></span>|<span data-ttu-id="e773b-114">サーバー アプリケーションは、クライアントの偽装を試みません。</span><span class="sxs-lookup"><span data-stu-id="e773b-114">The server application does not attempt to impersonate the client.</span></span>|  
+|<span data-ttu-id="e773b-115">Anonymous</span><span class="sxs-lookup"><span data-stu-id="e773b-115">Anonymous</span></span>|<span data-ttu-id="e773b-116">サーバー アプリケーションはクライアントの資格情報に対してアクセス チェックを実行できますが、クライアントの ID に関する情報は一切受け取りません。</span><span class="sxs-lookup"><span data-stu-id="e773b-116">The server application can perform access checks against the client's credentials, but does not receive any information about the client's identity.</span></span> <span data-ttu-id="e773b-117">この偽装レベルは、名前付きパイプなど、コンピューター上での通信にのみ意味があります。</span><span class="sxs-lookup"><span data-stu-id="e773b-117">This impersonation level is meaningful only for on-machine communication, such as named pipes.</span></span> <span data-ttu-id="e773b-118">リモート接続で `Anonymous` レベルを使用すると、Identify レベルの偽装に昇格されます。</span><span class="sxs-lookup"><span data-stu-id="e773b-118">Using `Anonymous` with a remote connection promotes the impersonation level to Identify.</span></span>|  
+|<span data-ttu-id="e773b-119">Identify</span><span class="sxs-lookup"><span data-stu-id="e773b-119">Identify</span></span>|<span data-ttu-id="e773b-120">サーバー アプリケーションは、クライアントの ID を認識し、クライアントの資格情報に対するアクセスの検証を実行できますが、クライアントを偽装することはできません。</span><span class="sxs-lookup"><span data-stu-id="e773b-120">The server application knows the client's identity and can perform access validation against the client's credentials, but cannot impersonate the client.</span></span> <span data-ttu-id="e773b-121">トークン プロバイダーによって別の偽装レベルが提供されない限り、Identify レベルは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の SSPI 資格情報で使用される既定の偽装レベルになります。</span><span class="sxs-lookup"><span data-stu-id="e773b-121">Identify is the default impersonation level used with SSPI credentials in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] unless the token provider provides a different impersonation level.</span></span>|  
+|<span data-ttu-id="e773b-122">Impersonate</span><span class="sxs-lookup"><span data-stu-id="e773b-122">Impersonate</span></span>|<span data-ttu-id="e773b-123">サーバー アプリケーションは、アクセス チェックを実行できるだけでなく、クライアントとしてサーバー コンピューターのリソースにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="e773b-123">The server application can access resources on the server machine as the client in addition to performing access checks.</span></span> <span data-ttu-id="e773b-124">偽装されたトークンにはネットワーク資格情報が含まれないため、サーバー アプリケーションはクライアントの ID を使用してリモート コンピューター上のリソースにアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="e773b-124">The server application cannot access resources on remote machines using the client's identity because the impersonated token does not have network credentials</span></span>|  
+|<span data-ttu-id="e773b-125">Delegate</span><span class="sxs-lookup"><span data-stu-id="e773b-125">Delegate</span></span>|<span data-ttu-id="e773b-126">`Impersonate` と同じ機能に加えて、Delegate レベルの偽装では、サーバー アプリケーションがクライアントの ID を使用してリモート コンピューターのリソースにアクセスし、この ID を他のアプリケーションに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="e773b-126">In addition to having the same capabilities as `Impersonate`, the Delegate impersonation level also enables the server application to access resources on remote machines using the client's identity and to pass the identity to other applications.</span></span><br /><br /> <span data-ttu-id="e773b-127">**重要な**サーバーのドメイン アカウントをマークする必要がありますをこれらの追加機能を使用するドメイン コント ローラー上で委任に対して信頼します。</span><span class="sxs-lookup"><span data-stu-id="e773b-127">**Important** The server domain account must be marked as trusted for delegation on the domain controller to use these additional features.</span></span> <span data-ttu-id="e773b-128">このレベルの偽装は、機密としてマークされているクライアント ドメイン アカウントでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="e773b-128">This level of impersonation cannot be used with client domain accounts marked as sensitive.</span></span>|  
   
- トランスポート セキュリティで最も多く使用されるレベルは、`Identify` および `Impersonate` です。`None` および `Anonymous` レベルは、通常の使用にはお勧めしません。トランスポートの多くでは認証でこのレベルの使用をサポートしていません。`Delegate` レベルの機能は強力であり、使用に際しては注意が必要です。資格情報を委任するアクセス許可は、信頼できるサーバー アプリケーションにのみ与える必要があります。  
+ <span data-ttu-id="e773b-129">トランスポート セキュリティで最もよく使用されるレベルは`Identify`と`Impersonate`です。</span><span class="sxs-lookup"><span data-stu-id="e773b-129">The levels most commonly used with transport security are `Identify` and `Impersonate`.</span></span> <span data-ttu-id="e773b-130">`None` および `Anonymous` レベルは、通常の使用にはお勧めしません。トランスポートの多くでは認証でこのレベルの使用をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="e773b-130">The levels `None` and `Anonymous` are not recommended for typical use, and many transports do not support using those levels with authentication.</span></span> <span data-ttu-id="e773b-131">`Delegate` レベルの機能は強力であり、使用に際しては注意が必要です。</span><span class="sxs-lookup"><span data-stu-id="e773b-131">The `Delegate` level is a powerful feature that should be used with care.</span></span> <span data-ttu-id="e773b-132">資格情報を委任するアクセス許可は、信頼できるサーバー アプリケーションにのみ与える必要があります。</span><span class="sxs-lookup"><span data-stu-id="e773b-132">Only trusted server applications should be given the permission to delegate credentials.</span></span>  
   
- `Impersonate` または `Delegate` レベルで偽装を使用するには、サーバー アプリケーションが `SeImpersonatePrivilege` 特権を持っている必要があります。管理者グループのアカウントまたはサービス SID \(Network Service、Local Service、または Local System\) を持つアカウントでアプリケーションを実行している場合は、アプリケーションに既定でこの特権があります。偽装ではクライアントとサーバーの相互認証は必要ありません。NTLM など、偽装をサポートする認証方式の中には、相互認証を使用できないものもあります。  
+ <span data-ttu-id="e773b-133">`Impersonate` または `Delegate` レベルで偽装を使用するには、サーバー アプリケーションが `SeImpersonatePrivilege` 特権を持っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="e773b-133">Using impersonation at the `Impersonate` or `Delegate` levels requires the server application to have the `SeImpersonatePrivilege` privilege.</span></span> <span data-ttu-id="e773b-134">管理者グループのアカウントまたはサービス SID (Network Service、Local Service、または Local System) を持つアカウントでアプリケーションを実行している場合は、アプリケーションに既定でこの特権があります。</span><span class="sxs-lookup"><span data-stu-id="e773b-134">An application has this privilege by default if it is running on an account in the Administrators group or on an account with a Service SID (Network Service, Local Service, or Local System).</span></span> <span data-ttu-id="e773b-135">偽装ではクライアントとサーバーの相互認証は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="e773b-135">Impersonation does not require mutual authentication of the client and server.</span></span> <span data-ttu-id="e773b-136">NTLM など、偽装をサポートする認証方式の中には、相互認証を使用できないものもあります。</span><span class="sxs-lookup"><span data-stu-id="e773b-136">Some authentication schemes that support impersonation, such as NTLM, cannot be used with mutual authentication.</span></span>  
   
-## 偽装でのトランスポート固有の問題  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] におけるトランスポートの選択は、選択できる偽装のレベルに影響を与えます。ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の標準 HTTP トランスポートと名前付きパイプ トランスポートに影響する問題について説明します。カスタム トランスポートには、偽装のサポートに関して独自の制限があります。  
+## <a name="transport-specific-issues-with-impersonation"></a><span data-ttu-id="e773b-137">偽装でのトランスポート固有の問題</span><span class="sxs-lookup"><span data-stu-id="e773b-137">Transport-Specific Issues with Impersonation</span></span>  
+ <span data-ttu-id="e773b-138">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] におけるトランスポートの選択は、選択できる偽装のレベルに影響を与えます。</span><span class="sxs-lookup"><span data-stu-id="e773b-138">The choice of a transport in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] affects the possible choices for impersonation.</span></span> <span data-ttu-id="e773b-139">ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の標準 HTTP トランスポートと名前付きパイプ トランスポートに影響する問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="e773b-139">This section describes issues affecting the standard HTTP and named pipe transports in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span> <span data-ttu-id="e773b-140">カスタム トランスポートには、偽装のサポートに関して独自の制限があります。</span><span class="sxs-lookup"><span data-stu-id="e773b-140">Custom transports have their own restrictions on support for impersonation.</span></span>  
   
-### 名前付きパイプ トランスポート  
- 次の項目が名前付きパイプ トランスポートと共に使用されます。  
+### <a name="named-pipe-transport"></a><span data-ttu-id="e773b-141">名前付きパイプ トランスポート</span><span class="sxs-lookup"><span data-stu-id="e773b-141">Named Pipe Transport</span></span>  
+ <span data-ttu-id="e773b-142">次の項目が名前付きパイプ トランスポートと共に使用されます。</span><span class="sxs-lookup"><span data-stu-id="e773b-142">The following items are used with the named pipe transport:</span></span>  
   
--   名前付きパイプ トランスポートはローカル コンピューター上のみで使用します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の名前付きパイプでは、コンピューター間の接続が明示的に禁止されています。  
+-   <span data-ttu-id="e773b-143">名前付きパイプ トランスポートはローカル コンピューター上のみで使用します。</span><span class="sxs-lookup"><span data-stu-id="e773b-143">The named pipe transport is intended for use only on the local machine.</span></span> <span data-ttu-id="e773b-144">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の名前付きパイプでは、コンピューター間の接続が明示的に禁止されています。</span><span class="sxs-lookup"><span data-stu-id="e773b-144">The named pipe transport in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] explicitly disallows cross-machine connections.</span></span>  
   
--   名前付きパイプは、`Impersonate` または `Delegate` 偽装レベルでは使用できません。これらの偽装レベルでは、名前付きパイプはコンピューター上で保障されません。  
+-   <span data-ttu-id="e773b-145">名前付きパイプは、`Impersonate` または `Delegate` 偽装レベルでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="e773b-145">Named pipes cannot be used with the `Impersonate` or `Delegate` impersonation level.</span></span> <span data-ttu-id="e773b-146">これらの偽装レベルでは、名前付きパイプはコンピューター上で保障されません。</span><span class="sxs-lookup"><span data-stu-id="e773b-146">The named pipe cannot enforce the on-machine guarantee at these impersonation levels.</span></span>  
   
- 名前付きパイプ[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[トランスポートの選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="e773b-147">名前付きパイプを参照してください[トランスポート選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)です。</span><span class="sxs-lookup"><span data-stu-id="e773b-147"> named pipes, see [Choosing a Transport](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).</span></span>  
   
-### HTTP トランスポート  
- HTTP トランスポートを使用するバインディング \(<xref:System.ServiceModel.WSHttpBinding> と <xref:System.ServiceModel.BasicHttpBinding>\) では、「[HTTP 認証の理解](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md)」で説明するように、いくつかの認証方式がサポートされます。サポートされる偽装レベルは、認証方式によって異なります。次の項目が HTTP トランスポートと共に使用されます。  
+### <a name="http-transport"></a><span data-ttu-id="e773b-148">HTTP トランスポート</span><span class="sxs-lookup"><span data-stu-id="e773b-148">HTTP Transport</span></span>  
+ <span data-ttu-id="e773b-149">HTTP トランスポートを使用するバインディング (<xref:System.ServiceModel.WSHttpBinding>と<xref:System.ServiceModel.BasicHttpBinding>) で説明したようにいくつかの認証スキームをサポート[Understanding HTTP 認証](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md)です。</span><span class="sxs-lookup"><span data-stu-id="e773b-149">The bindings that use the HTTP transport (<xref:System.ServiceModel.WSHttpBinding> and <xref:System.ServiceModel.BasicHttpBinding>) support several authentication schemes, as explained in [Understanding HTTP Authentication](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md).</span></span> <span data-ttu-id="e773b-150">サポートされる偽装レベルは、認証方式によって異なります。</span><span class="sxs-lookup"><span data-stu-id="e773b-150">The impersonation level supported depends on the authentication scheme.</span></span> <span data-ttu-id="e773b-151">次の項目が HTTP トランスポートと共に使用されます。</span><span class="sxs-lookup"><span data-stu-id="e773b-151">The following items are used with the HTTP transport:</span></span>  
   
--   `Anonymous` 認証方式は偽装を無視します。  
+-   <span data-ttu-id="e773b-152">`Anonymous` 認証方式は偽装を無視します。</span><span class="sxs-lookup"><span data-stu-id="e773b-152">The `Anonymous` authentication scheme ignores impersonation.</span></span>  
   
--   `Basic` 認証方式は `Delegate` レベルのみをサポートします。これより低い偽装レベルは、アップグレードされます。  
+-   <span data-ttu-id="e773b-153">`Basic`のみ認証スキームをサポート、`Delegate`レベル。</span><span class="sxs-lookup"><span data-stu-id="e773b-153">The `Basic` authentication scheme supports only the `Delegate` level.</span></span> <span data-ttu-id="e773b-154">これより低い偽装レベルは、アップグレードされます。</span><span class="sxs-lookup"><span data-stu-id="e773b-154">All lower impersonation levels are upgraded.</span></span>  
   
--   `Digest` 認証方式では、`Impersonate` レベルと `Delegate` レベルのみをサポートします。  
+-   <span data-ttu-id="e773b-155">`Digest` 認証方式では、`Impersonate` レベルと `Delegate` レベルのみをサポートします。</span><span class="sxs-lookup"><span data-stu-id="e773b-155">The `Digest` authentication scheme supports only the `Impersonate` and `Delegate` levels.</span></span>  
   
--   `NTLM` 認証方式は、直接またはネゴシエーション経由で選択可能で、ローカル コンピューターで `Delegate` レベルのみをサポートします。  
+-   <span data-ttu-id="e773b-156">`NTLM` 認証方式は、直接またはネゴシエーション経由で選択可能で、ローカル コンピューターで `Delegate` レベルのみをサポートします。</span><span class="sxs-lookup"><span data-stu-id="e773b-156">The `NTLM` authentication scheme, selectable either directly or through negotiation, supports only the `Delegate` level on the local machine.</span></span>  
   
--   Kerberos 認証方式は、ネゴシエーション経由でのみ選択可能で、サポートされるすべての偽装レベルで使用できます。  
+-   <span data-ttu-id="e773b-157">Kerberos 認証方式は、ネゴシエーション経由でのみ選択可能で、サポートされるすべての偽装レベルで使用できます。</span><span class="sxs-lookup"><span data-stu-id="e773b-157">The Kerberos authentication scheme, which can only be selected through negotiation, can be used with any supported impersonation level.</span></span>  
   
- HTTP トランスポート[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[トランスポートの選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="e773b-158">HTTP トランスポートを参照してください[トランスポート選択](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)です。</span><span class="sxs-lookup"><span data-stu-id="e773b-158"> the HTTP transport, see [Choosing a Transport](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).</span></span>  
   
-## 参照  
- [委任と偽装](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)   
- [承認](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)   
- [方法 : サービスでクライアントに偽装する](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)   
- [HTTP 認証の理解](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md)
+## <a name="see-also"></a><span data-ttu-id="e773b-159">関連項目</span><span class="sxs-lookup"><span data-stu-id="e773b-159">See Also</span></span>  
+ [<span data-ttu-id="e773b-160">委任と偽装</span><span class="sxs-lookup"><span data-stu-id="e773b-160">Delegation and Impersonation</span></span>](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)  
+ [<span data-ttu-id="e773b-161">承認</span><span class="sxs-lookup"><span data-stu-id="e773b-161">Authorization</span></span>](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)  
+ [<span data-ttu-id="e773b-162">方法: サービスでクライアントに偽装する</span><span class="sxs-lookup"><span data-stu-id="e773b-162">How to: Impersonate a Client on a Service</span></span>](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)  
+ [<span data-ttu-id="e773b-163">HTTP 認証の理解</span><span class="sxs-lookup"><span data-stu-id="e773b-163">Understanding HTTP Authentication</span></span>](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md)

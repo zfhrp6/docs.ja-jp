@@ -1,31 +1,34 @@
 ---
-title: "方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "マネージ HTML DOM, 変更 (要素のスタイルを)"
+title: "方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: managed HTML DOM [Windows Forms], changing styles on elements
 ms.assetid: 154e8d9f-3e2d-4e8b-a6f3-c85a070e9cc1
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 968dd4210e13e301ba2f0ca24617df23706cefc0
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する
-HTML のスタイルを使用してドキュメントの外観と要素を制御できます。  <xref:System.Windows.Forms.HtmlDocument> および <xref:System.Windows.Forms.HtmlElement> は、次の形式のスタイル文字列を設定する <xref:System.Windows.Forms.HtmlElement.Style%2A> プロパティをサポートします。  
+# <a name="how-to-change-styles-on-an-element-in-the-managed-html-document-object-model"></a><span data-ttu-id="51de2-102">方法 : マネージ HTML DOM (Document Object Model) の要素のスタイルを変更する</span><span class="sxs-lookup"><span data-stu-id="51de2-102">How to: Change Styles on an Element in the Managed HTML Document Object Model</span></span>
+<span data-ttu-id="51de2-103">Html 形式でスタイルを使用すると、ドキュメントとその要素の外観を制御します。</span><span class="sxs-lookup"><span data-stu-id="51de2-103">You can use styles in HTML to control the appearance of a document and its elements.</span></span> <span data-ttu-id="51de2-104"><xref:System.Windows.Forms.HtmlDocument>および<xref:System.Windows.Forms.HtmlElement>サポート<xref:System.Windows.Forms.HtmlElement.Style%2A>次の形式のスタイルの文字列を使用するプロパティ。</span><span class="sxs-lookup"><span data-stu-id="51de2-104"><xref:System.Windows.Forms.HtmlDocument> and <xref:System.Windows.Forms.HtmlElement> support <xref:System.Windows.Forms.HtmlElement.Style%2A> properties that take style strings of the following format:</span></span>  
   
  `name1:value1;...;nameN:valueN;`  
   
- これは、フォントを Arial に設定し、すべてのテキストを太字に設定するスタイル文字列を持つ `DIV` です。  
+ <span data-ttu-id="51de2-105">ここでは、`DIV`フォントを太字で表示するには、Arial およびすべてのテキストに設定するスタイルの文字列で。</span><span class="sxs-lookup"><span data-stu-id="51de2-105">Here is a `DIV` with a style string that sets the font to Arial and all text to bold:</span></span>  
   
  `<DIV style="font-face:arial;font-weight:bold;">`  
   
@@ -33,19 +36,19 @@ HTML のスタイルを使用してドキュメントの外観と要素を制御
   
  `</DIV>`  
   
- <xref:System.Windows.Forms.HtmlElement.Style%2A> プロパティを使用してスタイルを操作する場合の問題点は、文字列への個々のスタイル設定の追加や削除が面倒なことです。  たとえば、ユーザーがカーソルを `DIV` 上に配置するたびに直前のテキストを斜体で表示し、カーソルを `DIV` から離したときに斜体をオフにする手順は複雑になります。  この方法で多数のスタイルを操作する必要がある場合には、時間が問題になります。  
+ <span data-ttu-id="51de2-106">使用してスタイルを操作すると、問題、<xref:System.Windows.Forms.HtmlElement.Style%2A>プロパティが煩雑に追加し、文字列から個別のスタイル設定を削除することが検証されます。</span><span class="sxs-lookup"><span data-stu-id="51de2-106">The problem with manipulating styles using the <xref:System.Windows.Forms.HtmlElement.Style%2A> property is that it can prove cumbersome to add to and remove individual style settings from the string.</span></span> <span data-ttu-id="51de2-107">たとえば、ユーザーが経由で、カーソルを移動するたびに斜体の以前のテキストをレンダリングするための複雑な手順はなります、 `DIV`、斜体、カーソルのままにするとオフを受け取ると、`DIV`です。</span><span class="sxs-lookup"><span data-stu-id="51de2-107">For example, it would become a complex procedure for you to render the previous text in italics whenever the user positions the cursor over the `DIV`, and take italics off when the cursor leaves the `DIV`.</span></span> <span data-ttu-id="51de2-108">多数のこのようなスタイルを操作する必要がある場合は、時間を問題になります。</span><span class="sxs-lookup"><span data-stu-id="51de2-108">Time would become an issue if you need to manipulate a large number of styles in this manner.</span></span>  
   
- 次のプロシージャには、HTML ドキュメントのスタイルと要素を簡単に操作するために使用できるコードが含まれています。  このプロシージャを実行するには、新しいプロジェクトの作成やフォームへのコントロールの追加など、Windows フォームの基本的なタスクの実行方法を理解している必要があります。  
+ <span data-ttu-id="51de2-109">次の手順には、HTML ドキュメントと要素のスタイルを簡単に操作に使用できるコードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="51de2-109">The following procedure contains code that you can use to easily manipulate styles on HTML documents and elements.</span></span> <span data-ttu-id="51de2-110">プロシージャでは、新しいプロジェクトを作成し、コントロールをフォームに追加するなどの Windows フォームで基本的なタスクを実行する方法を知っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="51de2-110">The procedure requires that you know how to perform basic tasks in Windows Forms, such as creating a new project and adding a control to a form.</span></span>  
   
-### Windows フォーム アプリケーションのスタイル変更を処理するには  
+### <a name="to-process-style-changes-in-a-windows-forms-application"></a><span data-ttu-id="51de2-111">Windows フォーム アプリケーションにおけるスタイルの変更を処理するには</span><span class="sxs-lookup"><span data-stu-id="51de2-111">To process style changes in a Windows Forms application</span></span>  
   
-1.  新しい Windows フォーム プロジェクトを作成します。  
+1.  <span data-ttu-id="51de2-112">新しい Windows フォーム プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="51de2-112">Create a new Windows Forms project.</span></span>  
   
-2.  新しいクラス ファイルを作成します。ファイル名の最後に、プログラミング言語に適した拡張子を付けてください。  
+2.  <span data-ttu-id="51de2-113">末尾に使用するプログラミング言語の適切な拡張子の新しいクラス ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="51de2-113">Create a new class file ending in the extension appropriate for your programming language.</span></span>  
   
-3.  このトピックの「例」にある `StyleGenerator` クラス コードをクラス ファイルにコピーし、コードを保存します。  
+3.  <span data-ttu-id="51de2-114">コピー、`StyleGenerator`クラス ファイルに、このトピックの「例」でコード クラスし、、コードを保存します。</span><span class="sxs-lookup"><span data-stu-id="51de2-114">Copy the `StyleGenerator` class code in the Example section of this topic into the class file, and save the code.</span></span>  
   
-4.  次の HTML を Test.htm という名前のファイルに保存します。  
+4.  <span data-ttu-id="51de2-115">次の HTML を Test.htm をという名前のファイルに保存します。</span><span class="sxs-lookup"><span data-stu-id="51de2-115">Save the following HTML to a file named Test.htm.</span></span>  
   
     ```  
     <HTML>  
@@ -63,23 +66,23 @@ HTML のスタイルを使用してドキュメントの外観と要素を制御
     </HTML>  
     ```  
   
-5.  `webBrowser1` という名前の <xref:System.Windows.Forms.WebBrowser> コントロールをプロジェクトのメイン フォームに追加します。  
+5.  <span data-ttu-id="51de2-116">追加、<xref:System.Windows.Forms.WebBrowser>という名前のコントロール`webBrowser1`プロジェクトのメイン フォームにします。</span><span class="sxs-lookup"><span data-stu-id="51de2-116">Add a <xref:System.Windows.Forms.WebBrowser> control named `webBrowser1` to the main form of your project.</span></span>  
   
-6.  プロジェクトのコード ファイルに次のコードを追加します。  
+6.  <span data-ttu-id="51de2-117">プロジェクトのコード ファイルに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="51de2-117">Add the following code to your project's code file.</span></span>  
   
     > [!IMPORTANT]
-    >  `webBrowser1_DocumentCompleted` イベント ハンドラーが <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> イベントのリスナーとして構成されていることを確認します。  [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] で、<xref:System.Windows.Forms.WebBrowser> コントロールをダブルクリックします。次に、テキスト エディターで、リスナーをプログラムで構成します。  
+    >  <span data-ttu-id="51de2-118">いることを確認、`webBrowser1_DocumentCompleted`のリスナーとしてイベント ハンドラーが構成されている、<xref:System.Windows.Forms.WebBrowser.DocumentCompleted>イベント。</span><span class="sxs-lookup"><span data-stu-id="51de2-118">Ensure that the `webBrowser1_DocumentCompleted` event hander is configured as a listener for the <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event.</span></span> <span data-ttu-id="51de2-119">[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]をダブルクリックして、<xref:System.Windows.Forms.WebBrowser>制御以外の場合は、テキスト エディターで、リスナーをプログラムで構成します。</span><span class="sxs-lookup"><span data-stu-id="51de2-119">In [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)], double-click on the <xref:System.Windows.Forms.WebBrowser> control; in a text editor, configure the listener programmatically.</span></span>  
   
      [!code-csharp[ManagedDOMStyles#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/Form1.cs#2)]
      [!code-vb[ManagedDOMStyles#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/Form1.vb#2)]  
   
-7.  プロジェクトを実行します。  カーソルを最初の `DIV` 上に移動して、コードの効果を確認します。  
+7.  <span data-ttu-id="51de2-120">プロジェクトを実行します。</span><span class="sxs-lookup"><span data-stu-id="51de2-120">Run the project.</span></span> <span data-ttu-id="51de2-121">カーソルの最初の実行`DIV`コードの効果を確認します。</span><span class="sxs-lookup"><span data-stu-id="51de2-121">Run your cursor over the first `DIV` to observe the effects of the code.</span></span>  
   
-## 使用例  
- `StyleGenerator` クラスの完全なコードを次のコード例に示します。このコードは、既存のスタイル値を解析し、スタイルの追加、変更、および削除をサポートし、変更要求に対応した新しいスタイル値を返します。  
+## <a name="example"></a><span data-ttu-id="51de2-122">例</span><span class="sxs-lookup"><span data-stu-id="51de2-122">Example</span></span>  
+ <span data-ttu-id="51de2-123">次のコード例の完全なコードを示しています、`StyleGenerator`クラスは、既存のスタイル値を解析するをサポートします。 追加すると、変更すると、削除、スタイル、および要求された変更で新しいスタイルの値を返します。</span><span class="sxs-lookup"><span data-stu-id="51de2-123">The following code example shows the full code for the `StyleGenerator` class, which parses an existing style value, supports adding, changing, and removing styles, and returns a new style value with the requested changes.</span></span>  
   
  [!code-csharp[ManagedDOMStyles#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/StyleGenerator.cs#1)]
  [!code-vb[ManagedDOMStyles#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/StyleGenerator.vb#1)]  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="51de2-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="51de2-124">See Also</span></span>  
  <xref:System.Windows.Forms.HtmlElement>

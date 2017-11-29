@@ -1,49 +1,50 @@
 ---
-title: "グラデーション ブラシを使用した図形の塗りつぶし | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ブラシ, グラデーション ブラシ"
-  - "例 [Windows フォーム], グラデーション ブラシ"
-  - "グラデーション ブラシ"
+title: "グラデーション ブラシを使用した図形の塗りつぶし"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- brushes [Windows Forms], gradient brushes
+- gradient brushes
+- examples [Windows Forms], gradient brushes
 ms.assetid: 2c6037b9-05bd-44c0-a22a-19584b722524
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5a1c4ab7c2ee6f7164b6158dcb4ca4721be12650
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# グラデーション ブラシを使用した図形の塗りつぶし
-グラデーション ブラシを使用して、段階的に色を変化させて 1 つの図形を塗りつぶすことができます。  たとえば、水平方向のグラデーションを使用して、図形の左端から右端に移動するにつれて色が段階的に変化するように図形を塗りつぶすことができます。  左端が黒 \(赤、緑、青の各要素が \(0, 0, 0\) で表される\) で右端が赤 \(255, 0, 0\) の四角形があると想定します。  この四角形の幅が 256 ピクセルだとすると、あるピクセルの赤の要素は、その左側にあるピクセルの赤の要素よりも 1 大きい値になります。  一列に並んだピクセルの左端のピクセルの色要素は \(0, 0, 0\)、2 番目のピクセルは \(1, 0, 0\)、3 番目のピクセルは \(2, 0, 0\) となり、その後も同様に、色要素が \(255, 0, 0\) の右端のピクセルに達するまで続いていきます。  これらの補間色の値によって色のグラデーションが構成されます。  
+# <a name="using-a-gradient-brush-to-fill-shapes"></a><span data-ttu-id="0bb50-102">グラデーション ブラシを使用した図形の塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="0bb50-102">Using a Gradient Brush to Fill Shapes</span></span>
+<span data-ttu-id="0bb50-103">グラデーション ブラシを使用して、図形を塗りつぶす色が徐々 に変化させることができます。</span><span class="sxs-lookup"><span data-stu-id="0bb50-103">You can use a gradient brush to fill a shape with a gradually changing color.</span></span> <span data-ttu-id="0bb50-104">たとえば、色、形状の左端から右端に移動する段階的に変化するように図形を塗りつぶすに水平方向のグラデーションを使用できます。</span><span class="sxs-lookup"><span data-stu-id="0bb50-104">For example, you can use a horizontal gradient to fill a shape with color that changes gradually as you move from the left edge of the shape to the right edge.</span></span> <span data-ttu-id="0bb50-105">黒を左の端で四角形を想像してください (0, 0, 0 は、赤、緑、および青のコンポーネントによって表されます)、右端が赤 (255, 0, 0) とします。</span><span class="sxs-lookup"><span data-stu-id="0bb50-105">Imagine a rectangle with a left edge that is black (represented by red, green, and blue components 0, 0, 0) and a right edge that is red (represented by 255, 0, 0).</span></span> <span data-ttu-id="0bb50-106">四角形が 256 ピクセルである場合は、いずれかの左側にあるピクセルの赤の要素より大きい値を特定のピクセルの赤の要素になります。</span><span class="sxs-lookup"><span data-stu-id="0bb50-106">If the rectangle is 256 pixels wide, the red component of a given pixel will be one greater than the red component of the pixel to its left.</span></span> <span data-ttu-id="0bb50-107">行の左端のピクセルの色要素 (0, 0, 0)、2 番目のピクセルが (1, 0, 0)、3 番目のピクセルが (2, 0, 0)、し、右端のピクセルの色要素 (255, 0, 0) に達するまでします。</span><span class="sxs-lookup"><span data-stu-id="0bb50-107">The leftmost pixel in a row has color components (0, 0, 0), the second pixel has (1, 0, 0), the third pixel has (2, 0, 0), and so on, until you get to the rightmost pixel, which has color components (255, 0, 0).</span></span> <span data-ttu-id="0bb50-108">これらの色の補間値は、色のグラデーションを構成します。</span><span class="sxs-lookup"><span data-stu-id="0bb50-108">These interpolated color values make up the color gradient.</span></span>  
   
- 線形グラデーションでは、水平方向、垂直方向、または指定した斜線と並行方向に移動するにつれて色が変化します。  パス グラデーションでは、パスの内側および境界周辺を移動するにつれて色が変化します。  パス グラデーションをカスタマイズして、さまざまな効果を得ることができます。  
+ <span data-ttu-id="0bb50-109">線形グラデーションは、水平、垂直方向に移動または並列斜めの指定した行に色を変更します。</span><span class="sxs-lookup"><span data-stu-id="0bb50-109">A linear gradient changes color as you move horizontally, vertically, or parallel to a specified slanted line.</span></span> <span data-ttu-id="0bb50-110">パス グラデーションは、内側およびパスの境界を移動すると、色を変更します。</span><span class="sxs-lookup"><span data-stu-id="0bb50-110">A path gradient changes color as you move about the interior and boundary of a path.</span></span> <span data-ttu-id="0bb50-111">さまざまな効果を実現するためにパス グラデーションをカスタマイズすることができます。</span><span class="sxs-lookup"><span data-stu-id="0bb50-111">You can customize path gradients to achieve a wide variety of effects.</span></span>  
   
- 線形グラデーション ブラシで塗りつぶした四角形と、パス グラデーション ブラシで塗りつぶした楕円を次の図に示します。  
+ <span data-ttu-id="0bb50-112">次の図は、四角形が線形グラデーション ブラシで塗りつぶされパス グラデーション ブラシで塗りつぶした楕円を示します。</span><span class="sxs-lookup"><span data-stu-id="0bb50-112">The following illustration shows a rectangle filled with a linear gradient brush and an ellipse filled with a path gradient brush.</span></span>  
   
- ![グラデーション](../../../../docs/framework/winforms/advanced/media/gradient2.png "gradient2")  
+ <span data-ttu-id="0bb50-113">![グラデーション](../../../../docs/framework/winforms/advanced/media/gradient2.png "gradient2")</span><span class="sxs-lookup"><span data-stu-id="0bb50-113">![Gradient](../../../../docs/framework/winforms/advanced/media/gradient2.png "gradient2")</span></span>  
   
-## このセクションの内容  
- [方法 : 線形グラデーションを作成する](../../../../docs/framework/winforms/advanced/how-to-create-a-linear-gradient.md)  
- <xref:System.Drawing.Drawing2D.LinearGradientBrush> クラスを使用して線形グラデーションを作成する方法を示します。  
+## <a name="in-this-section"></a><span data-ttu-id="0bb50-114">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="0bb50-114">In This Section</span></span>  
+ [<span data-ttu-id="0bb50-115">方法: 線形グラデーションを作成する</span><span class="sxs-lookup"><span data-stu-id="0bb50-115">How to: Create a Linear Gradient</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-a-linear-gradient.md)  
+ <span data-ttu-id="0bb50-116">線形グラデーションを使用して、作成する方法を示しています、<xref:System.Drawing.Drawing2D.LinearGradientBrush>クラスです。</span><span class="sxs-lookup"><span data-stu-id="0bb50-116">Shows how to create a linear gradient using the <xref:System.Drawing.Drawing2D.LinearGradientBrush> class.</span></span>  
   
- [方法 : パス グラデーションを作成する](../../../../docs/framework/winforms/advanced/how-to-create-a-path-gradient.md)  
- <xref:System.Drawing.Drawing2D.PathGradientBrush> クラスを使用してパス グラデーションを作成する方法を説明します。  
+ [<span data-ttu-id="0bb50-117">方法: パス グラデーションを作成する</span><span class="sxs-lookup"><span data-stu-id="0bb50-117">How to: Create a Path Gradient</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-a-path-gradient.md)  
+ <span data-ttu-id="0bb50-118">パス グラデーションを使用して、作成する方法について説明します、<xref:System.Drawing.Drawing2D.PathGradientBrush>クラスです。</span><span class="sxs-lookup"><span data-stu-id="0bb50-118">Describes how to create a path gradient using the <xref:System.Drawing.Drawing2D.PathGradientBrush> class.</span></span>  
   
- [方法 : グラデーションに対してガンマ補正を適用する](../../../../docs/framework/winforms/advanced/how-to-apply-gamma-correction-to-a-gradient.md)  
- グラデーション ブラシでガンマ補正を使用する方法を説明します。  
+ [<span data-ttu-id="0bb50-119">方法: グラデーションに対してガンマ補正を適用する</span><span class="sxs-lookup"><span data-stu-id="0bb50-119">How to: Apply Gamma Correction to a Gradient</span></span>](../../../../docs/framework/winforms/advanced/how-to-apply-gamma-correction-to-a-gradient.md)  
+ <span data-ttu-id="0bb50-120">グラデーション ブラシでガンマ補正を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0bb50-120">Explains how to use gamma correction with a gradient brush.</span></span>  
   
-## 関連項目  
- <xref:System.Drawing.Drawing2D.LinearGradientBrush?displayProperty=fullName>  
- このクラスについて説明し、そのすべてのメンバーへのリンクを示します。  
+## <a name="reference"></a><span data-ttu-id="0bb50-121">参照</span><span class="sxs-lookup"><span data-stu-id="0bb50-121">Reference</span></span>  
+ <xref:System.Drawing.Drawing2D.LinearGradientBrush?displayProperty=nameWithType>  
+ <span data-ttu-id="0bb50-122">このクラスの説明を表すし、そのすべてのメンバーへのリンクがあります。</span><span class="sxs-lookup"><span data-stu-id="0bb50-122">Contains a description of this class and has links to all of its members.</span></span>  
   
- <xref:System.Drawing.Drawing2D.PathGradientBrush?displayProperty=fullName>  
- このクラスについて説明し、そのすべてのメンバーへのリンクを示します。
+ <xref:System.Drawing.Drawing2D.PathGradientBrush?displayProperty=nameWithType>  
+ <span data-ttu-id="0bb50-123">このクラスの説明を表すし、そのすべてのメンバーへのリンクがあります。</span><span class="sxs-lookup"><span data-stu-id="0bb50-123">Contains a description of this class and has links to all of its members.</span></span>

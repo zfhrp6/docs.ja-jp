@@ -1,68 +1,69 @@
 ---
-title: "方法: カスタム アクティビティ テンプレートを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法: カスタム アクティビティ テンプレートを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6760a5cc-6eb8-465f-b4fa-f89b39539429
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 90c92295bbccc7cf7e50a9da5bd52110d9d26a3b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: カスタム アクティビティ テンプレートを作成する
-カスタム複合アクティビティなどのアクティビティの構成のカスタマイズには、カスタム アクティビティ テンプレートが使用されるため、手動で各アクティビティを個別に作成し、そのプロパティおよびその他の設定を構成する必要はありません。このようなカスタム テンプレートは、[!INCLUDE[wfd1](../../../includes/wfd1-md.md)] 上の **\[ツールボックス\]** または再ホストされたデザイナーから利用できるようにすることが可能です。ユーザーは、ここから構成済みのデザイン サーフェイスにカスタム テンプレートをドラッグできます。[!INCLUDE[wfd2](../../../includes/wfd2-md.md)] には以下のようなテンプレートの例が梱包されます: [SendAndReceiveReply テンプレート デザイナー](../Topic/SendAndReceiveReply%20Template%20Designer.md) および [メッセージング アクティビティ デザイナー](../Topic/Messaging%20Activity%20Designers.md) の [ReceiveAndSendReply テンプレート デザイナー](../Topic/ReceiveAndSendReply%20Template%20Designer.md) カテゴリ。  
+# <a name="how-to-create-a-custom-activity-template"></a><span data-ttu-id="448ec-102">方法: カスタム アクティビティ テンプレートを作成する</span><span class="sxs-lookup"><span data-stu-id="448ec-102">How to: Create a Custom Activity Template</span></span>
+<span data-ttu-id="448ec-103">カスタム複合アクティビティなどのアクティビティの構成のカスタマイズには、カスタム アクティビティ テンプレートが使用されるため、手動で各アクティビティを個別に作成し、そのプロパティおよびその他の設定を構成する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="448ec-103">Custom activity templates are used to customize the configuration of activities, including custom composite activities, so that users do not have to create each activity individually and configure their properties and other settings manually.</span></span> <span data-ttu-id="448ec-104">これらのカスタム テンプレートで使用できる、**ツールボックス**上、[!INCLUDE[wfd1](../../../includes/wfd1-md.md)]または再ホストされたデザイナーでは、元のユーザーに画面にドラッグできる、構成済みのデザインからです。</span><span class="sxs-lookup"><span data-stu-id="448ec-104">These custom templates can be made available in the **Toolbox** on the [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] or from a rehosted designer, from which users can drag them onto the preconfigured design surface.</span></span> [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]<span data-ttu-id="448ec-105">このようなテンプレートの良い例が付属しています。 [SendAndReceiveReply テンプレート デザイナー](/visualstudio/workflow-designer/sendandreceivereply-template-designer)と[ReceiveAndSendReply テンプレート デザイナー](/visualstudio/workflow-designer/receiveandsendreply-template-designer)で、[メッセージング アクティビティ デザイナー](/visualstudio/workflow-designer/messaging-activity-designers)カテゴリ。</span><span class="sxs-lookup"><span data-stu-id="448ec-105"> ships with good examples of such templates: the [SendAndReceiveReply Template Designer](/visualstudio/workflow-designer/sendandreceivereply-template-designer) and the [ReceiveAndSendReply Template Designer](/visualstudio/workflow-designer/receiveandsendreply-template-designer) in the [Messaging Activity Designers](/visualstudio/workflow-designer/messaging-activity-designers) category.</span></span>  
   
- このトピックの最初の手順では、**Delay** アクティビティのカスタム アクティビティ テンプレートを作成する方法について説明し、2 番目の手順では、[!INCLUDE[wfd2](../../../includes/wfd2-md.md)]でカスタム アクティビティ テンプレートを利用できるようにしてカスタム テンプレートが機能することを確認する方法について簡単に説明します。  
+ <span data-ttu-id="448ec-106">このトピックの最初の手順は、カスタム アクティビティ テンプレートを作成する方法を説明、**遅延**アクティビティと 2 番目の手順について簡単にする方法について説明で使用できるように、[!INCLUDE[wfd2](../../../includes/wfd2-md.md)]カスタム テンプレートが機能することを確認します。</span><span class="sxs-lookup"><span data-stu-id="448ec-106">The first procedure in this topic describes how to create a custom activity template for a **Delay** activity and the second procedure describes briefly how to make it available in a [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] to verify that the custom template works.</span></span>  
   
- カスタム アクティビティ テンプレートに <xref:System.Activities.Presentation.IActivityTemplateFactory> を実装する必要があります。このインターフェイスには単一の <xref:System.Activities.Presentation.IActivityTemplateFactory.Create%2A> メソッドがあり、このメソッドを使用して、テンプレートで使用されるアクティビティ インスタンスを作成および構成できます。  
+ <span data-ttu-id="448ec-107">カスタム アクティビティ テンプレートに <xref:System.Activities.Presentation.IActivityTemplateFactory> を実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="448ec-107">Custom activity templates must implement the <xref:System.Activities.Presentation.IActivityTemplateFactory>.</span></span> <span data-ttu-id="448ec-108">このインターフェイスには単一の <xref:System.Activities.Presentation.IActivityTemplateFactory.Create%2A> メソッドがあり、このメソッドを使用して、テンプレートで使用されるアクティビティ インスタンスを作成および構成できます。</span><span class="sxs-lookup"><span data-stu-id="448ec-108">The interface has a single <xref:System.Activities.Presentation.IActivityTemplateFactory.Create%2A> method with which you can create and configure the activity instances used in the template.</span></span>  
   
-### Delay アクティビティのテンプレートを作成するには  
+### <a name="to-create-a-template-for-the-delay-activity"></a><span data-ttu-id="448ec-109">Delay アクティビティのテンプレートを作成するには</span><span class="sxs-lookup"><span data-stu-id="448ec-109">To create a template for the Delay activity</span></span>  
   
-1.  [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を起動します。  
+1.  <span data-ttu-id="448ec-110">[!INCLUDE[vs2010](../../../includes/vs2010-md.md)] を起動します。</span><span class="sxs-lookup"><span data-stu-id="448ec-110">Start [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].</span></span>  
   
-2.  **\[ファイル\]** メニューの **\[新規作成\]** をポイントし、**\[プロジェクト\]** をクリックします。  
+2.  <span data-ttu-id="448ec-111">**ファイル**] メニューのをポイント**新規**、し、[**プロジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="448ec-111">On the **File** menu, point to **New**, and then select **Project**.</span></span>  
   
-     **\[新しいプロジェクト\]** ダイアログ ボックスが表示されます。  
+     <span data-ttu-id="448ec-112">**[新しいプロジェクト]** ダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="448ec-112">The **New Project** dialog box opens.</span></span>  
   
-3.  **\[プロジェクトの種類\]** ペインで、プログラミング言語の設定に応じて、**\[Visual C\#\]** プロジェクトまたは **\[Visual Basic\]** グループから **\[ワークフロー\]** を選択します。  
+3.  <span data-ttu-id="448ec-113">**プロジェクトの種類**ペインで、**ワークフロー**いずれかから、 **Visual c#**プロジェクトまたは**Visual Basic**に応じてグループ化、言語の優先順位。</span><span class="sxs-lookup"><span data-stu-id="448ec-113">In the **Project Types** pane, select **Workflow** from either the **Visual C#** projects or **Visual Basic** groupings depending on your language preference.</span></span>  
   
-4.  **\[テンプレート\]** ペインで **\[アクティビティ ライブラリ\]** をクリックします。  
+4.  <span data-ttu-id="448ec-114">**テンプレート**ペインで、**アクティビティ ライブラリ**です。</span><span class="sxs-lookup"><span data-stu-id="448ec-114">In the **Templates** pane, select **Activity Library**.</span></span>  
   
-5.  **\[名前\]** ボックスに、「`DelayActivityTemplate`」と入力します。  
+5.  <span data-ttu-id="448ec-115">**名前**ボックスに、入力`DelayActivityTemplate`です。</span><span class="sxs-lookup"><span data-stu-id="448ec-115">In the **Name** box, enter `DelayActivityTemplate`.</span></span>  
   
-6.  **\[場所\]** テキスト ボックスと **\[ソリューション名\]** テキスト ボックスの既定の設定を受け入れ、**\[OK\]** をクリックします。  
+6.  <span data-ttu-id="448ec-116">既定値を受け入れます、**場所**と**ソリューション名**テキスト ボックス、およびクリック**[ok]**です。</span><span class="sxs-lookup"><span data-stu-id="448ec-116">Accept the defaults in the **Location** and **Solution name** text boxes, and then click **OK**.</span></span>  
   
-7.  **ソリューション エクスプローラー**で、DelayActivityTemplate プロジェクトの \[参照設定\] ディレクトリを右クリックし、**\[参照の追加\]** をクリックして **\[参照の追加\]** ダイアログ ボックスを開きます。  
+7.  <span data-ttu-id="448ec-117">DelayActivityTemplate プロジェクトの 参照設定 ディレクトリを右クリックして**ソリューション エクスプ ローラー**選択**参照の追加**を開くには、**参照の追加** ダイアログ ボックス。</span><span class="sxs-lookup"><span data-stu-id="448ec-117">Right-click the References directory of the DelayActivityTemplate project in **Solution Explorer** and choose **Add Reference** to open the **Add Reference** dialog box.</span></span>  
   
-8.  **\[.NET\]** タブに移動し、左側の **\[コンポーネント名\]** 列から **\[PresentationFramework\]** を選択します。**\[OK\]** をクリックして PresentationFramework.dll ファイルへの参照を追加します。  
+8.  <span data-ttu-id="448ec-118">移動、 **.NET**タブおよび選択**PresentationFramework**から、**コンポーネント名**クリックして左列**OK**参照を追加するにはPresentationFramework.dll ファイル。</span><span class="sxs-lookup"><span data-stu-id="448ec-118">Go to the **.NET** tab and select **PresentationFramework** from the **Component Name** column on the left and click **OK** to add a reference to the PresentationFramework.dll file.</span></span>  
   
-9. この手順を繰り返して、System.Activities.Presentation.dll ファイルと WindowsBase.dll ファイルへの参照を追加します。  
+9. <span data-ttu-id="448ec-119">この手順を繰り返して、System.Activities.Presentation.dll ファイルと WindowsBase.dll ファイルへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="448ec-119">Repeat this procedure to add references to the System.Activities.Presentation.dll and the WindowsBase.dll files.</span></span>  
   
-10. **ソリューション エクスプローラー**で、DelayActivityTemplate プロジェクトを右クリックして **\[追加\]** をポイントし、**\[新しい項目\]** をクリックして **\[新しい項目の追加\]** ダイアログ ボックスを開きます。  
+10. <span data-ttu-id="448ec-120">DelayActivityTemplate プロジェクトを右クリックして**ソリューション エクスプ ローラー**選択**追加**し**新しい項目の**を開くには、 **の新しい項目の追加** ダイアログ ボックス。</span><span class="sxs-lookup"><span data-stu-id="448ec-120">Right-click the DelayActivityTemplate project in **Solution Explorer** and choose **Add** and then **New Item** to open the **Add New Item** dialog box.</span></span>  
   
-11. **\[クラス\]** テンプレートを選択し、"MyDelayTemplate" という名前を付けて、**\[OK\]** をクリックします。  
+11. <span data-ttu-id="448ec-121">選択、**クラス**テンプレート、MyDelayTemplate、という名前をクリック**OK**です。</span><span class="sxs-lookup"><span data-stu-id="448ec-121">Select the **Class** template, name it MyDelayTemplate, and then click **OK**.</span></span>  
   
-12. MyDelayTemplate.cs ファイルを開き、次のステートメントを追加します。  
+12. <span data-ttu-id="448ec-122">MyDelayTemplate.cs ファイルを開き、次のステートメントを追加します。</span><span class="sxs-lookup"><span data-stu-id="448ec-122">Open the MyDelayTemplate.cs file and add the following statements.</span></span>  
   
     ```  
-  
     //Namespaces added  
     using System.Activities;  
     using System.Activities.Statements;  
     using System.Activities.Presentation;  
     using System.Windows;  
-  
     ```  
   
-13. 次のコードを使用して、`MyDelayActivity` クラスを持つ <xref:System.Activities.Presentation.IActivityTemplateFactory> を実装します。これにより、10 秒間の遅延が構成されます。  
+13. <span data-ttu-id="448ec-123">次のコードを使用して、<xref:System.Activities.Presentation.IActivityTemplateFactory> クラスを持つ `MyDelayActivity` を実装します。</span><span class="sxs-lookup"><span data-stu-id="448ec-123">Implement the <xref:System.Activities.Presentation.IActivityTemplateFactory> with the `MyDelayActivity` class with the following code.</span></span> <span data-ttu-id="448ec-124">これにより、10 秒間の遅延が構成されます。</span><span class="sxs-lookup"><span data-stu-id="448ec-124">This configures the delay to have a duration of 10 seconds.</span></span>  
   
     ```  
-  
     public sealed class MyDelayActivity : IActivityTemplateFactory  
     {  
         public Activity Create(System.Windows.DependencyObject target)  
@@ -75,36 +76,34 @@ caps.handback.revision: 4
             };  
         }  
     }  
-  
     ```  
   
-14. **\[ビルド\]** メニューの **\[ソリューションのビルド\]** をクリックして、DelayActivityTemplate.dll ファイルを生成します。  
+14. <span data-ttu-id="448ec-125">選択**ソリューションのビルド**から、**ビルド**メニュー DelayActivityTemplate.dll ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="448ec-125">Select **Build Solution** from the **Build** menu to generate the DelayActivityTemplate.dll file.</span></span>  
   
-### ワークフロー デザイナーでテンプレートを利用できるようにするには  
+### <a name="to-make-the-template-available-in-a-workflow-designer"></a><span data-ttu-id="448ec-126">ワークフロー デザイナーでテンプレートを利用できるようにするには</span><span class="sxs-lookup"><span data-stu-id="448ec-126">To make the template available in a Workflow Designer</span></span>  
   
-1.  **ソリューション エクスプローラー**で、DelayActivityTemplate ソリューションを右クリックして **\[追加\]** をポイントし、**\[新しいプロジェクト\]** をクリックして **\[新しいプロジェクトの追加\]** ダイアログ ボックスを開きます。  
+1.  <span data-ttu-id="448ec-127">DelayActivityTemplate ソリューションを右クリックして**ソリューション エクスプ ローラー**選択**追加**し**新しいプロジェクト**を開くには、 **の新しいプロジェクトの追加**  ダイアログ ボックス。</span><span class="sxs-lookup"><span data-stu-id="448ec-127">Right-click the DelayActivityTemplate solution in **Solution Explorer** and choose **Add** and then **New Project** to open the **Add New Project** dialog box.</span></span>  
   
-2.  **\[ワークフロー コンソール アプリケーション\]** テンプレートを選択し、"`CustomActivityTemplateApp`" という名前を付けて、**\[OK\]** をクリックします。  
+2.  <span data-ttu-id="448ec-128">選択、**ワークフロー コンソール アプリケーション**テンプレート、名前を付けます`CustomActivityTemplateApp`、順にクリック**[ok]**です。</span><span class="sxs-lookup"><span data-stu-id="448ec-128">Select the **Workflow Console Application** template, name it `CustomActivityTemplateApp`, and then click **OK**.</span></span>  
   
-3.  **ソリューション エクスプローラー**で、CustomActivityTemplateApp プロジェクトの \[参照設定\] ディレクトリを右クリックし、**\[参照の追加\]** をクリックして **\[参照の追加\]** ダイアログ ボックスを開きます。  
+3.  <span data-ttu-id="448ec-129">CustomActivityTemplateApp プロジェクトの [参照設定] ディレクトリを右クリックして**ソリューション エクスプ ローラー**選択**参照の追加**を開くには、**参照の追加**ダイアログボックスです。</span><span class="sxs-lookup"><span data-stu-id="448ec-129">Right-click the References directory of the CustomActivityTemplateApp project in **Solution Explorer** and choose **Add Reference** to open the **Add Reference** dialog box.</span></span>  
   
-4.  **\[プロジェクト\]** タブに移動し、左側の **\[プロジェクト名\]** 列から **\[DelayActivityTemplate\]** を選択します。**\[OK\]** をクリックして、最初の手順で作成した DelayActivityTemplate.dll ファイルへの参照を追加します。  
+4.  <span data-ttu-id="448ec-130">移動して、**プロジェクト**タブおよび選択**DelayActivityTemplate**から、**プロジェクト名**クリックして左の列**OK**を追加する、最初の手順で作成した DelayActivityTemplate.dll ファイルへの参照します。</span><span class="sxs-lookup"><span data-stu-id="448ec-130">Go to the **Projects** tab and select **DelayActivityTemplate** from the **Project Name** column on the left and click **OK** to add a reference to the DelayActivityTemplate.dll file that you created in the first procedure.</span></span>  
   
-5.  **ソリューション エクスプローラー**で CustomActivityTemplateApp プロジェクトを右クリックし、**\[ビルド\]** をクリックしてアプリケーションをコンパイルします。  
+5.  <span data-ttu-id="448ec-131">CustomActivityTemplateApp プロジェクトを右クリックして**ソリューション エクスプ ローラー**選択**ビルド**アプリケーションをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="448ec-131">Right-click the CustomActivityTemplateApp project in **Solution Explorer** and choose **Build** to compile the application.</span></span>  
   
-6.  **ソリューション エクスプローラー**で CustomActivityTemplateApp プロジェクトを右クリックして **\[スタートアップ プロジェクトに設定\]** をクリックします。  
+6.  <span data-ttu-id="448ec-132">CustomActivityTemplateApp プロジェクトを右クリックして**ソリューション エクスプ ローラー**選択**スタートアップ プロジェクトとして設定**です。</span><span class="sxs-lookup"><span data-stu-id="448ec-132">Right-click the CustomActivityTemplateApp project in **Solution Explorer** and choose **Set as Startup Project**.</span></span>  
   
-7.  **\[デバッグ\]** メニューの **\[デバッグなしで開始\]** をクリックして、cmd.exe ウィンドウから要求されたら任意のキーを押して続行します。  
+7.  <span data-ttu-id="448ec-133">選択**デバッグなしで開始**から、**デバッグ**メニューとキーを押して任意のキーを cmd.exe ウィンドウから入力を求められたらを続行します。</span><span class="sxs-lookup"><span data-stu-id="448ec-133">Select **Start Without Debugging** from the **Debug** menu and press any key to continue when prompted from the cmd.exe window.</span></span>  
   
-8.  Workflow1.xaml ファイルを開き、**\[ツールボックス\]** を開きます。  
+8.  <span data-ttu-id="448ec-134">Workflow1.xaml ファイルを開き、開き、**ツールボックス**です。</span><span class="sxs-lookup"><span data-stu-id="448ec-134">Open the Workflow1.xaml file and open the **Toolbox**.</span></span>  
   
-9. **DelayActivityTemplate** カテゴリの **MyDelayActivity** テンプレートを見つけます。デザイン サーフェイスにドラッグします。**\[プロパティ\]** ウィンドウで、`Duration` プロパティが 10 秒に設定されていることを確認します。  
+9. <span data-ttu-id="448ec-135">検索、 **MyDelayActivity**でテンプレート、 **DelayActivityTemplate**カテゴリ。</span><span class="sxs-lookup"><span data-stu-id="448ec-135">Locate the **MyDelayActivity** template in the **DelayActivityTemplate** category.</span></span> <span data-ttu-id="448ec-136">デザイン サーフェイスにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="448ec-136">Drag it onto the design surface.</span></span> <span data-ttu-id="448ec-137">ことを確認、**プロパティ**ウィンドウを`Duration`プロパティが 10 秒に設定されています。</span><span class="sxs-lookup"><span data-stu-id="448ec-137">Confirm in the **Properties** window that the `Duration` property has been set to 10 seconds.</span></span>  
   
-## 使用例  
- MyDelayActivity.cs ファイルには次のコードが含まれます。  
+## <a name="example"></a><span data-ttu-id="448ec-138">例</span><span class="sxs-lookup"><span data-stu-id="448ec-138">Example</span></span>  
+ <span data-ttu-id="448ec-139">MyDelayActivity.cs ファイルには次のコードが含まれます。</span><span class="sxs-lookup"><span data-stu-id="448ec-139">The MyDelayActivity.cs file should contain the following code.</span></span>  
   
 ```  
-  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -131,9 +130,8 @@ namespace DelayActivityTemplate
         }  
     }  
 }  
-  
 ```  
   
-## 参照  
- <xref:System.Activities.Presentation.IActivityTemplateFactory>   
- [ワークフロー デザイン操作のカスタマイズ](../../../docs/framework/windows-workflow-foundation//customizing-the-workflow-design-experience.md)
+## <a name="see-also"></a><span data-ttu-id="448ec-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="448ec-140">See Also</span></span>  
+ <xref:System.Activities.Presentation.IActivityTemplateFactory>  
+ [<span data-ttu-id="448ec-141">ワークフロー デザイン操作のカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="448ec-141">Customizing the Workflow Design Experience</span></span>](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)

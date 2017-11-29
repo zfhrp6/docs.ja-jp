@@ -1,154 +1,159 @@
 ---
-title: "イメージ、描画、およびビジュアルによる塗りつぶし | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ブラシ, 描画による塗りつぶし"
-  - "ブラシ, イメージによる塗りつぶし"
-  - "ブラシ, 塗りつぶし (ビジュアルによる)"
-  - "塗りつぶし (ビジュアルによる)"
-  - "描画, 描画を使用"
-  - "描画, イメージを使用"
+title: "イメージ、描画、およびビジュアルによる塗りつぶし"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- brushes [WPF], painting with drawings
+- painting [WPF], with drawings
+- painting [WPF], with images
+- painting with visuals [WPF]
+- brushes [WPF], painting with images
+- brushes [WPF], painting with visuals
 ms.assetid: 779aac3f-8d41-49d8-8130-768244aa2240
-caps.latest.revision: 28
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 27
+caps.latest.revision: "28"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 16c3184c329fa83ddf091326c97d6faf2e2c88f5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# イメージ、描画、およびビジュアルによる塗りつぶし
-ここでは、<xref:System.Windows.Media.ImageBrush> オブジェクト、<xref:System.Windows.Media.DrawingBrush> オブジェクト、および <xref:System.Windows.Media.VisualBrush> オブジェクトを使用して領域をイメージ、<xref:System.Windows.Media.Drawing>、または <xref:System.Windows.Media.Visual> で塗りつぶす方法について説明します。  
-  
-   
+# <a name="painting-with-images-drawings-and-visuals"></a><span data-ttu-id="34747-102">イメージ、描画、およびビジュアルによる塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="34747-102">Painting with Images, Drawings, and Visuals</span></span>
+<span data-ttu-id="34747-103">このトピックを使用する方法について説明<xref:System.Windows.Media.ImageBrush>、 <xref:System.Windows.Media.DrawingBrush>、および<xref:System.Windows.Media.VisualBrush>、イメージを使用して領域を描画するオブジェクト、 <xref:System.Windows.Media.Drawing>、または<xref:System.Windows.Media.Visual>です。</span><span class="sxs-lookup"><span data-stu-id="34747-103">This topic describes how to use <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, and <xref:System.Windows.Media.VisualBrush> objects to paint an area with an image, a <xref:System.Windows.Media.Drawing>, or a <xref:System.Windows.Media.Visual>.</span></span>  
+    
   
 <a name="prereqs"></a>   
-## 必要条件  
- このトピックを理解するには、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] で提供されるさまざまな種類のブラシとその基本的な機能に精通している必要があります。  詳細については、「[WPF のブラシの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md)」を参照してください。  
+## <a name="prerequisites"></a><span data-ttu-id="34747-104">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="34747-104">Prerequisites</span></span>  
+ <span data-ttu-id="34747-105">このトピックを理解するには、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] に用意されているさまざまな種類のブラシとその基本的な機能を理解している必要があります。</span><span class="sxs-lookup"><span data-stu-id="34747-105">To understand this topic, you should be familiar with the different types of brushes [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] provides and their basic features.</span></span> <span data-ttu-id="34747-106">概要については、「[WPF のブラシの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="34747-106">For an introduction, see the [WPF Brushes Overview](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md).</span></span>  
   
 <a name="image"></a>   
-## イメージで領域を塗りつぶす  
- <xref:System.Windows.Media.ImageBrush> は、<xref:System.Windows.Media.ImageSource> で領域を塗りつぶします。  <xref:System.Windows.Media.ImageBrush> で使用される最も一般的な種類の <xref:System.Windows.Media.ImageSource> は <xref:System.Windows.Media.Imaging.BitmapImage> で、これは 1 個のビットマップ グラフィックを表します。  <xref:System.Windows.Media.DrawingImage> を使用しても、<xref:System.Windows.Media.Drawing> オブジェクトによる塗りつぶしは可能ですが、代わりに <xref:System.Windows.Media.DrawingBrush> を使用する方が簡単です。  <xref:System.Windows.Media.ImageSource> オブジェクトの詳細については、「[イメージングの概要](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)」を参照してください。  
+## <a name="paint-an-area-with-an-image"></a><span data-ttu-id="34747-107">イメージで領域を塗りつぶす</span><span class="sxs-lookup"><span data-stu-id="34747-107">Paint an Area with an Image</span></span>  
+ <span data-ttu-id="34747-108"><xref:System.Windows.Media.ImageBrush>領域を塗りつぶします、<xref:System.Windows.Media.ImageSource>です。</span><span class="sxs-lookup"><span data-stu-id="34747-108">An <xref:System.Windows.Media.ImageBrush> paints an area with an <xref:System.Windows.Media.ImageSource>.</span></span> <span data-ttu-id="34747-109">最も一般的な種類<xref:System.Windows.Media.ImageSource>で使用する、<xref:System.Windows.Media.ImageBrush>は、 <xref:System.Windows.Media.Imaging.BitmapImage>、ビットマップ グラフィックをについて説明します。</span><span class="sxs-lookup"><span data-stu-id="34747-109">The most common type of <xref:System.Windows.Media.ImageSource> to use with an <xref:System.Windows.Media.ImageBrush> is a <xref:System.Windows.Media.Imaging.BitmapImage>, which describes a bitmap graphic.</span></span> <span data-ttu-id="34747-110">使用することができます、<xref:System.Windows.Media.DrawingImage>ペイントを使用する、<xref:System.Windows.Media.Drawing>オブジェクトが簡単に使用できる、<xref:System.Windows.Media.DrawingBrush>代わりにします。</span><span class="sxs-lookup"><span data-stu-id="34747-110">You can use a <xref:System.Windows.Media.DrawingImage> to paint using a <xref:System.Windows.Media.Drawing> object, but it is simpler to use a <xref:System.Windows.Media.DrawingBrush> instead.</span></span> <span data-ttu-id="34747-111">詳細については<xref:System.Windows.Media.ImageSource>、オブジェクトを参照してください、[イメージングの概要](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="34747-111">For more information about <xref:System.Windows.Media.ImageSource> objects, see the [Imaging Overview](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md).</span></span>  
   
- <xref:System.Windows.Media.ImageBrush> で塗りつぶすには、<xref:System.Windows.Media.Imaging.BitmapImage> を作成し、このオブジェクトを使用してビットマップ コンテンツを読み込みます。  次に、<xref:System.Windows.Media.Imaging.BitmapImage> を使用して、<xref:System.Windows.Media.ImageBrush> の <xref:System.Windows.Media.ImageBrush.ImageSource%2A> プロパティを設定します。  最後に、塗りつぶす対象のオブジェクトに <xref:System.Windows.Media.ImageBrush> を適用します。  [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] では、<xref:System.Windows.Media.ImageBrush> の <xref:System.Windows.Media.ImageBrush.ImageSource%2A> プロパティに、読み込むイメージのパスを設定するだけでもかまいません。  
+ <span data-ttu-id="34747-112">描くに、 <xref:System.Windows.Media.ImageBrush>、作成、<xref:System.Windows.Media.Imaging.BitmapImage>およびビットマップ コンテンツの読み込みに使用します。</span><span class="sxs-lookup"><span data-stu-id="34747-112">To paint with an <xref:System.Windows.Media.ImageBrush>, create a <xref:System.Windows.Media.Imaging.BitmapImage> and use it to load the bitmap content.</span></span> <span data-ttu-id="34747-113">次に、使用、<xref:System.Windows.Media.Imaging.BitmapImage>を設定する、<xref:System.Windows.Media.ImageBrush.ImageSource%2A>のプロパティ、<xref:System.Windows.Media.ImageBrush>です。</span><span class="sxs-lookup"><span data-stu-id="34747-113">Then, use the <xref:System.Windows.Media.Imaging.BitmapImage> to set the <xref:System.Windows.Media.ImageBrush.ImageSource%2A> property of the <xref:System.Windows.Media.ImageBrush>.</span></span> <span data-ttu-id="34747-114">最後に、適用、<xref:System.Windows.Media.ImageBrush>を描画するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="34747-114">Finally, apply the <xref:System.Windows.Media.ImageBrush> to the object you want to paint.</span></span>  <span data-ttu-id="34747-115">[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]、だけでも設定することができます、<xref:System.Windows.Media.ImageBrush.ImageSource%2A>のプロパティ、<xref:System.Windows.Media.ImageBrush>読み込む画像のパスを使用します。</span><span class="sxs-lookup"><span data-stu-id="34747-115">In [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], you can also just set the <xref:System.Windows.Media.ImageBrush.ImageSource%2A> property of the <xref:System.Windows.Media.ImageBrush> with the path of the image to load.</span></span>  
   
- すべての <xref:System.Windows.Media.Brush> オブジェクトと同様に、<xref:System.Windows.Media.ImageBrush> は、図形、パネル、コントロール、およびテキストなどのオブジェクトの塗りつぶしに使用できます。  <xref:System.Windows.Media.ImageBrush> で適用できるいくつかの効果を次の図に示します。  
+ <span data-ttu-id="34747-116">などのすべて<xref:System.Windows.Media.Brush>、オブジェクト、<xref:System.Windows.Media.ImageBrush>図形、パネル、コントロール、およびテキストなどのオブジェクトの描画に使用できます。</span><span class="sxs-lookup"><span data-stu-id="34747-116">Like all <xref:System.Windows.Media.Brush> objects, an <xref:System.Windows.Media.ImageBrush> can be used to paint objects such as shapes, panels, controls, and text.</span></span> <span data-ttu-id="34747-117">次の図に、一部の効果を実現できる、<xref:System.Windows.Media.ImageBrush>です。</span><span class="sxs-lookup"><span data-stu-id="34747-117">The following illustration shows some effects that can be achieved with an <xref:System.Windows.Media.ImageBrush>.</span></span>  
   
- ![ImageBrush の出力例](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-imagebrushexamples.png "wcpsdk\_mmgraphics\_imagebrushexamples")  
-ImageBrush によって塗りつぶされたオブジェクト  
+ <span data-ttu-id="34747-118">![ImageBrush の出力例](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-imagebrushexamples.gif "wcpsdk_mmgraphics_imagebrushexamples")</span><span class="sxs-lookup"><span data-stu-id="34747-118">![ImageBrush output examples](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-imagebrushexamples.gif "wcpsdk_mmgraphics_imagebrushexamples")</span></span>  
+<span data-ttu-id="34747-119">ImageBrush で描画されたオブジェクト</span><span class="sxs-lookup"><span data-stu-id="34747-119">Objects painted by an ImageBrush</span></span>  
   
- <xref:System.Windows.Media.ImageBrush> の既定の設定では、対象の領域を完全に塗りつぶすようにイメージが引き伸ばされるので、塗りつぶす領域の縦横比がイメージの縦横比と異なる場合にイメージがゆがむことがあります。  この動作を変更するには、<xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティを既定値の <xref:System.Windows.Media.Stretch> から <xref:System.Windows.Media.Stretch>、<xref:System.Windows.Media.Stretch>、または <xref:System.Windows.Media.Stretch> に変更します。  <xref:System.Windows.Media.ImageBrush> は <xref:System.Windows.Media.TileBrush> の型の 1 つであるので、イメージ ブラシで出力領域を塗りつぶす方法を正確に指定でき、パターンを作成することもできます。  高度な <xref:System.Windows.Media.TileBrush> 機能の詳細については、「[TileBrush の概要](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)」を参照してください。  
+ <span data-ttu-id="34747-120">既定では、<xref:System.Windows.Media.ImageBrush>端まで拡大を完全に領域を埋めるには、そのイメージ描画、イメージを引き伸ばして塗りつぶされる領域は、イメージよりも縦横比が異なる場合。</span><span class="sxs-lookup"><span data-stu-id="34747-120">By default, an <xref:System.Windows.Media.ImageBrush> stretches its image to completely fill the area being painted, possibly distorting the image if the painted area has a different aspect ratio than the image.</span></span> <span data-ttu-id="34747-121">この動作を変更するには変更することによって、<xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティの既定値から<xref:System.Windows.Media.Stretch.Fill>に<xref:System.Windows.Media.Stretch.None>、 <xref:System.Windows.Media.Stretch.Uniform>、または<xref:System.Windows.Media.Stretch.UniformToFill>です。</span><span class="sxs-lookup"><span data-stu-id="34747-121">You can change this behavior by changing the <xref:System.Windows.Media.TileBrush.Stretch%2A> property from its default value of <xref:System.Windows.Media.Stretch.Fill> to <xref:System.Windows.Media.Stretch.None>, <xref:System.Windows.Media.Stretch.Uniform>, or <xref:System.Windows.Media.Stretch.UniformToFill>.</span></span> <span data-ttu-id="34747-122"><xref:System.Windows.Media.ImageBrush>の種類は、 <xref:System.Windows.Media.TileBrush>、でもパターンの作成し、正確にイメージ ブラシが出力領域を塗りつぶす方法を指定できます。</span><span class="sxs-lookup"><span data-stu-id="34747-122">Because <xref:System.Windows.Media.ImageBrush> is a type of <xref:System.Windows.Media.TileBrush>, you can specify exactly how an image brush fills the output area and even create patterns.</span></span> <span data-ttu-id="34747-123">詳細設定の詳細については<xref:System.Windows.Media.TileBrush>機能を参照してください、 [TileBrush 概要](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="34747-123">For more information about advanced <xref:System.Windows.Media.TileBrush> features, see the [TileBrush Overview](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md).</span></span>  
   
 <a name="fillingpanelwithimage"></a>   
-## 例 : ビットマップ イメージでオブジェクトを塗りつぶす  
- <xref:System.Windows.Media.ImageBrush> を使用して <xref:System.Windows.Controls.Canvas> の <xref:System.Windows.Controls.Panel.Background%2A> を塗りつぶす例を次に示します。  
+## <a name="example-paint-an-object-with-a-bitmap-image"></a><span data-ttu-id="34747-124">例: ビットマップ イメージによるオブジェクトの塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="34747-124">Example: Paint an Object with a Bitmap Image</span></span>  
+ <span data-ttu-id="34747-125">次の例では、<xref:System.Windows.Media.ImageBrush>を描画する、<xref:System.Windows.Controls.Panel.Background%2A>の<xref:System.Windows.Controls.Canvas>です。</span><span class="sxs-lookup"><span data-stu-id="34747-125">The following example uses an <xref:System.Windows.Media.ImageBrush> to paint the <xref:System.Windows.Controls.Panel.Background%2A> of a <xref:System.Windows.Controls.Canvas>.</span></span>  
   
- [!code-xml[BrushOverviewExamples_snip#GraphicsMMImageBrushAsCanvasBackgroundExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/ImageBrushExample.xaml#graphicsmmimagebrushascanvasbackgroundexamplewholepage)]  
+ [!code-xaml[BrushOverviewExamples_snip#GraphicsMMImageBrushAsCanvasBackgroundExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/ImageBrushExample.xaml#graphicsmmimagebrushascanvasbackgroundexamplewholepage)]  
   
  [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMImageBrushAsCanvasBackgroundExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/ImageBrushExample.cs#graphicsmmimagebrushascanvasbackgroundexamplewholepage)]
  [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMImageBrushAsCanvasBackgroundExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/imagebrushexample.vb#graphicsmmimagebrushascanvasbackgroundexamplewholepage)]  
   
 <a name="drawingbrushintro"></a>   
-## 描画を使用して領域を塗りつぶす  
- <xref:System.Windows.Media.DrawingBrush> を使用すると、図形、テキスト、イメージ、およびビデオで領域を塗りつぶすことができます。  描画ブラシ内の図形自体も、単色、グラデーション、イメージ、または別の <xref:System.Windows.Media.DrawingBrush> で塗りつぶすことができます。  <xref:System.Windows.Media.DrawingBrush> のいくつかの使用例を次の図に示します。  
+## <a name="paint-an-area-with-a-drawing"></a><span data-ttu-id="34747-126">描画を使用して領域を塗りつぶす</span><span class="sxs-lookup"><span data-stu-id="34747-126">Paint an Area with a Drawing</span></span>  
+ <span data-ttu-id="34747-127">A<xref:System.Windows.Media.DrawingBrush>図形、テキスト、イメージ、およびビデオを使用して領域を描画することができます。</span><span class="sxs-lookup"><span data-stu-id="34747-127">A <xref:System.Windows.Media.DrawingBrush> enables you to paint an area with shapes, text, images, and video.</span></span> <span data-ttu-id="34747-128">描画ブラシ内部の図形が自体を描画する純色、グラデーション、イメージ、または別<xref:System.Windows.Media.DrawingBrush>です。</span><span class="sxs-lookup"><span data-stu-id="34747-128">Shapes inside a drawing brush may themselves be painted with a solid color, gradient, image, or even another <xref:System.Windows.Media.DrawingBrush>.</span></span> <span data-ttu-id="34747-129">次の図に示しますのいくつかの使用、<xref:System.Windows.Media.DrawingBrush>です。</span><span class="sxs-lookup"><span data-stu-id="34747-129">The following illustration demonstrates some uses of a <xref:System.Windows.Media.DrawingBrush>.</span></span>  
   
- ![DrawingBrush の出力例](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-drawingbrushexamples.png "wcpsdk\_mmgraphics\_drawingbrushexamples")  
-DrawingBrush によって塗りつぶされたオブジェクト  
+ <span data-ttu-id="34747-130">![DrawingBrush の出力例](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-drawingbrushexamples.png "wcpsdk_mmgraphics_drawingbrushexamples")</span><span class="sxs-lookup"><span data-stu-id="34747-130">![DrawingBrush output examples](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-drawingbrushexamples.png "wcpsdk_mmgraphics_drawingbrushexamples")</span></span>  
+<span data-ttu-id="34747-131">DrawingBrush で塗りつぶされたオブジェクト</span><span class="sxs-lookup"><span data-stu-id="34747-131">Objects painted by a DrawingBrush</span></span>  
   
- <xref:System.Windows.Media.DrawingBrush> は、<xref:System.Windows.Media.Drawing> オブジェクトで領域を塗りつぶします。  <xref:System.Windows.Media.Drawing> オブジェクトは、図形、ビットマップ、ビデオ、またはテキスト行などの表示されるコンテンツを記述します。  異なる種類の描画は、異なる種類のコンテンツを記述します。  描画オブジェクトのさまざまな種類を次の一覧に示します。  
+ <span data-ttu-id="34747-132">A<xref:System.Windows.Media.DrawingBrush>領域を塗りつぶします、<xref:System.Windows.Media.Drawing>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="34747-132">A <xref:System.Windows.Media.DrawingBrush> paints an area with a <xref:System.Windows.Media.Drawing> object.</span></span> <span data-ttu-id="34747-133">A<xref:System.Windows.Media.Drawing>オブジェクトには、図形、ビットマップ、ビデオ、または行のテキストなど、表示されているコンテンツがについて説明します。</span><span class="sxs-lookup"><span data-stu-id="34747-133">A <xref:System.Windows.Media.Drawing> object describes visible content, such as a shape, bitmap, video, or a line of text.</span></span> <span data-ttu-id="34747-134">さまざまな種類の描画で、さまざまな種類のコンテンツを記述します。</span><span class="sxs-lookup"><span data-stu-id="34747-134">Different types of drawings describe different types of content.</span></span> <span data-ttu-id="34747-135">次の一覧に、さまざまな種類の描画オブジェクトを示します。</span><span class="sxs-lookup"><span data-stu-id="34747-135">The following is a list of the different types of drawing objects.</span></span>  
   
--   <xref:System.Windows.Media.GeometryDrawing> – 図形を描画します。  
+-   <span data-ttu-id="34747-136"><xref:System.Windows.Media.GeometryDrawing>– 図形を描画します。</span><span class="sxs-lookup"><span data-stu-id="34747-136"><xref:System.Windows.Media.GeometryDrawing> – Draws a shape.</span></span>  
   
--   <xref:System.Windows.Media.ImageDrawing> – イメージを描画します。  
+-   <span data-ttu-id="34747-137"><xref:System.Windows.Media.ImageDrawing>– イメージを描画します。</span><span class="sxs-lookup"><span data-stu-id="34747-137"><xref:System.Windows.Media.ImageDrawing> – Draws an image.</span></span>  
   
--   <xref:System.Windows.Media.GlyphRunDrawing> – テキストを描画します。  
+-   <span data-ttu-id="34747-138"><xref:System.Windows.Media.GlyphRunDrawing>– テキストを描画します。</span><span class="sxs-lookup"><span data-stu-id="34747-138"><xref:System.Windows.Media.GlyphRunDrawing> – Draws text.</span></span>  
   
--   <xref:System.Windows.Media.VideoDrawing> – オーディオまたはビデオ ファイルを再生します。  
+-   <span data-ttu-id="34747-139"><xref:System.Windows.Media.VideoDrawing>– オーディオまたはビデオ ファイルを再生します。</span><span class="sxs-lookup"><span data-stu-id="34747-139"><xref:System.Windows.Media.VideoDrawing> – Plays an audio or video file.</span></span>  
   
--   <xref:System.Windows.Media.DrawingGroup> – その他の描画を描画します。  他の描画を 1 つの複合描画に結合するには、描画グループを使用します。  
+-   <span data-ttu-id="34747-140"><xref:System.Windows.Media.DrawingGroup>– 他の描画を描画します。</span><span class="sxs-lookup"><span data-stu-id="34747-140"><xref:System.Windows.Media.DrawingGroup> – Draws other drawings.</span></span> <span data-ttu-id="34747-141">他の描画を 1 つの複合描画に結合するには、描画グループを使用します。</span><span class="sxs-lookup"><span data-stu-id="34747-141">Use a drawing group to combine other drawings into a single composite drawing.</span></span>  
   
- <xref:System.Windows.Media.Drawing> オブジェクトの詳細については、「[Drawing オブジェクトの概要](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)」を参照してください。  
+ <span data-ttu-id="34747-142">詳細については<xref:System.Windows.Media.Drawing>、オブジェクトを参照してください、[描画オブジェクトの概要](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="34747-142">For more information about <xref:System.Windows.Media.Drawing> objects, see the [Drawing Objects Overview](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md).</span></span>  
   
- <xref:System.Windows.Media.ImageBrush> と同様に、<xref:System.Windows.Media.DrawingBrush> は <xref:System.Windows.Media.DrawingBrush.Drawing%2A> を引き伸ばして出力領域を塗りつぶします。  この動作をオーバーライドするには、<xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティを、既定の設定である <xref:System.Windows.Media.Stretch> から別の設定に変更します。  詳細については、<xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティのトピックを参照してください。  
+ <span data-ttu-id="34747-143">同様に、 <xref:System.Windows.Media.ImageBrush>、<xref:System.Windows.Media.DrawingBrush>伸縮その<xref:System.Windows.Media.DrawingBrush.Drawing%2A>出力領域に挿入します。</span><span class="sxs-lookup"><span data-stu-id="34747-143">Like an <xref:System.Windows.Media.ImageBrush>, a <xref:System.Windows.Media.DrawingBrush> stretches its <xref:System.Windows.Media.DrawingBrush.Drawing%2A> to fill its output area.</span></span> <span data-ttu-id="34747-144">この動作をオーバーライドするには、変更することによって、<xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティの既定の設定から<xref:System.Windows.Media.Stretch.Fill>です。</span><span class="sxs-lookup"><span data-stu-id="34747-144">You can override this behavior by changing the <xref:System.Windows.Media.TileBrush.Stretch%2A> property from its default setting of <xref:System.Windows.Media.Stretch.Fill>.</span></span> <span data-ttu-id="34747-145">詳細については、<xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティを参照してください。</span><span class="sxs-lookup"><span data-stu-id="34747-145">For more information, see the <xref:System.Windows.Media.TileBrush.Stretch%2A> property.</span></span>  
   
 <a name="fillingareawithdrawingbrushexample"></a>   
-## 例 : 描画を使用してオブジェクトを塗りつぶす  
- 3 つの楕円の描画を使用してオブジェクトを塗りつぶす方法を次の例に示します。  楕円の記述には、<xref:System.Windows.Media.GeometryDrawing> を使用しています。  
+## <a name="example-paint-an-object-with-a-drawing"></a><span data-ttu-id="34747-146">例: 描画によるオブジェクトの塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="34747-146">Example: Paint an Object with a Drawing</span></span>  
+ <span data-ttu-id="34747-147">次の例は、3 つの楕円の描画によってオブジェクトを塗りつぶす方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="34747-147">The following example shows how to paint an object with a drawing of three ellipses.</span></span> <span data-ttu-id="34747-148">A<xref:System.Windows.Media.GeometryDrawing>省略記号を表すために使用します。</span><span class="sxs-lookup"><span data-stu-id="34747-148">A <xref:System.Windows.Media.GeometryDrawing> is used to describe the ellipses.</span></span>  
   
- [!code-xml[BrushOverviewExamples_snip#GraphicsMMDrawingBrushAsButtonBackgroundExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/DrawingBrushExample.xaml#graphicsmmdrawingbrushasbuttonbackgroundexample)]  
+ [!code-xaml[BrushOverviewExamples_snip#GraphicsMMDrawingBrushAsButtonBackgroundExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/DrawingBrushExample.xaml#graphicsmmdrawingbrushasbuttonbackgroundexample)]  
   
  [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMDrawingBrushAsButtonBackgroundExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/DrawingBrushExample.cs#graphicsmmdrawingbrushasbuttonbackgroundexample1)]
  [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMDrawingBrushAsButtonBackgroundExample1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/drawingbrushexample.vb#graphicsmmdrawingbrushasbuttonbackgroundexample1)]  
   
 <a name="visualbrushsection"></a>   
-## ビジュアルで領域を塗りつぶす  
- すべてのブラシの中で最も用途が広く、多くの機能を持つ <xref:System.Windows.Media.VisualBrush> は、<xref:System.Windows.Media.Visual> で領域を塗りつぶします。  <xref:System.Windows.Media.Visual> は低レベルのグラフィックス型で、多数の有用なグラフィカル コンポーネントの先祖として使用されます。  たとえば、<xref:System.Windows.Window> クラス、<xref:System.Windows.FrameworkElement> クラス、および <xref:System.Windows.Controls.Control> クラスはすべて、<xref:System.Windows.Media.Visual> オブジェクトの一種です。  <xref:System.Windows.Media.VisualBrush> による領域の塗りつぶしには、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のほぼすべてのグラフィカル オブジェクトが使用可能です。  
+## <a name="paint-an-area-with-a-visual"></a><span data-ttu-id="34747-149">ビジュアルで領域を塗りつぶす</span><span class="sxs-lookup"><span data-stu-id="34747-149">Paint an Area with a Visual</span></span>  
+ <span data-ttu-id="34747-150">最も便利で、すべてのブラシの強力な<xref:System.Windows.Media.VisualBrush>領域を塗りつぶします、<xref:System.Windows.Media.Visual>です。</span><span class="sxs-lookup"><span data-stu-id="34747-150">The most versatile and powerful of all the  brushes, the <xref:System.Windows.Media.VisualBrush> paints an area with a <xref:System.Windows.Media.Visual>.</span></span> <span data-ttu-id="34747-151">A<xref:System.Windows.Media.Visual>は多くの便利なグラフィカルなコンポーネントの先祖として機能する低レベルのグラフィカルな型です。</span><span class="sxs-lookup"><span data-stu-id="34747-151">A <xref:System.Windows.Media.Visual> is a low-level graphical type that serves as the ancestor of many useful graphical components.</span></span> <span data-ttu-id="34747-152">たとえば、 <xref:System.Windows.Window>、 <xref:System.Windows.FrameworkElement>、および<xref:System.Windows.Controls.Control>クラスは、すべての種類の<xref:System.Windows.Media.Visual>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="34747-152">For example, the <xref:System.Windows.Window>, <xref:System.Windows.FrameworkElement>, and <xref:System.Windows.Controls.Control> classes are all types of <xref:System.Windows.Media.Visual> objects.</span></span> <span data-ttu-id="34747-153">使用して、 <xref:System.Windows.Media.VisualBrush>、ほぼすべて領域を塗りつぶすことができます[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]グラフィカル オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="34747-153">Using a <xref:System.Windows.Media.VisualBrush>, you can paint areas with almost any [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] graphical object.</span></span>  
   
 > [!NOTE]
->  <xref:System.Windows.Media.VisualBrush> は、一種の <xref:System.Windows.Freezable> オブジェクトですが、その <xref:System.Windows.Media.VisualBrush.Visual%2A> プロパティが `null` 以外の値に設定されている場合は、フリーズする \(読み取り専用にする\) ことはできません。  
+>  <span data-ttu-id="34747-154"><xref:System.Windows.Media.VisualBrush>の種類は、<xref:System.Windows.Freezable>オブジェクトを固定することはできません (読み取り専用に) とその<xref:System.Windows.Media.VisualBrush.Visual%2A>プロパティが以外の値に設定`null`です。</span><span class="sxs-lookup"><span data-stu-id="34747-154">Although <xref:System.Windows.Media.VisualBrush> is a type of <xref:System.Windows.Freezable> object, it cannot be frozen (made read-only) when its <xref:System.Windows.Media.VisualBrush.Visual%2A> property is set to a value other than `null`.</span></span>  
   
- <xref:System.Windows.Media.VisualBrush> の <xref:System.Windows.Media.VisualBrush.Visual%2A> コンテンツを指定するには、2 とおりの方法があります。  
+ <span data-ttu-id="34747-155">2 つの方法を指定する、<xref:System.Windows.Media.VisualBrush.Visual%2A>のコンテンツ、<xref:System.Windows.Media.VisualBrush>です。</span><span class="sxs-lookup"><span data-stu-id="34747-155">There are two ways to specify the <xref:System.Windows.Media.VisualBrush.Visual%2A> content of a <xref:System.Windows.Media.VisualBrush>.</span></span>  
   
--   新しい <xref:System.Windows.Media.Visual> を作成し、このビジュアルを使用して <xref:System.Windows.Media.VisualBrush> の <xref:System.Windows.Media.VisualBrush.Visual%2A> プロパティを設定します。  例については、後の「[例 : ビジュアルを使用してオブジェクトを塗りつぶす](#examplevisualbrush1)」を参照してください。  
+-   <span data-ttu-id="34747-156">新しい<xref:System.Windows.Media.Visual>設定を使用して、<xref:System.Windows.Media.VisualBrush.Visual%2A>のプロパティ、<xref:System.Windows.Media.VisualBrush>です。</span><span class="sxs-lookup"><span data-stu-id="34747-156">Create a new <xref:System.Windows.Media.Visual> and use it to set the <xref:System.Windows.Media.VisualBrush.Visual%2A> property of the <xref:System.Windows.Media.VisualBrush>.</span></span> <span data-ttu-id="34747-157">例については、この後の「[例: ビジュアルによるオブジェクトの塗りつぶし](#examplevisualbrush1)」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="34747-157">For an example, see the [Example: Paint an Object with a Visual](#examplevisualbrush1) section that follows.</span></span>  
   
--   既存の <xref:System.Windows.Media.Visual> を使用して、ターゲットの <xref:System.Windows.Media.Visual> の複製イメージを作成します。  次に、<xref:System.Windows.Media.VisualBrush> を使用して反射や拡大などの効果を作成します。  例については、「[例 : 反射を作成する](#examplevisualbrush2)」を参照してください。  
+-   <span data-ttu-id="34747-158">既存の使用<xref:System.Windows.Media.Visual>、ターゲットの重複するイメージを作成する<xref:System.Windows.Media.Visual>です。</span><span class="sxs-lookup"><span data-stu-id="34747-158">Use an existing <xref:System.Windows.Media.Visual>, which creates a duplicate image of the target <xref:System.Windows.Media.Visual>.</span></span> <span data-ttu-id="34747-159">使用してできます、<xref:System.Windows.Media.VisualBrush>リフレクションや拡大などの興味深い効果を作成します。</span><span class="sxs-lookup"><span data-stu-id="34747-159">You can then use the <xref:System.Windows.Media.VisualBrush> to create interesting effects, such as reflection and magnification.</span></span> <span data-ttu-id="34747-160">例については、「[方法 : 反射を作成する](#examplevisualbrush2)」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="34747-160">For an example, see the [Example: Create a Reflection](#examplevisualbrush2) section.</span></span>  
   
- <xref:System.Windows.Media.VisualBrush> の <xref:System.Windows.Media.VisualBrush.Visual%2A> を新たに定義したときに、その <xref:System.Windows.Media.Visual> が <xref:System.Windows.UIElement> \(パネルやコントロールなど\) ならば、<xref:System.Windows.Media.VisualBrush.AutoLayoutContent%2A> プロパティが `true` に設定されている場合に <xref:System.Windows.UIElement> およびその子要素に基づいてレイアウト システムが実行されます。  ただし、ルートの <xref:System.Windows.UIElement> は実質的にシステムのその他の部分から切り離され、スタイルや外部レイアウトがこの境界を通過することはできません。  したがって、ルートの <xref:System.Windows.UIElement> のサイズは明示的に指定してください。その唯一の親が <xref:System.Windows.Media.VisualBrush> であるために、描画される領域に合わせて自身のサイズが自動的に設定されることはないからです。  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] でのレイアウトの詳細については、「[レイアウト](../../../../docs/framework/wpf/advanced/layout.md)」を参照してください。  
+ <span data-ttu-id="34747-161">新しいを定義するとき<xref:System.Windows.Media.VisualBrush.Visual%2A>の<xref:System.Windows.Media.VisualBrush>ことと<xref:System.Windows.Media.Visual>は、<xref:System.Windows.UIElement>で (パネルやコントロール)、レイアウト システムが実行されます、<xref:System.Windows.UIElement>とその子要素と、<xref:System.Windows.Media.VisualBrush.AutoLayoutContent%2A>プロパティに設定されている`true`です。</span><span class="sxs-lookup"><span data-stu-id="34747-161">When you define a new <xref:System.Windows.Media.VisualBrush.Visual%2A> for a <xref:System.Windows.Media.VisualBrush> and that <xref:System.Windows.Media.Visual> is a <xref:System.Windows.UIElement> (such as a panel or control), the layout system runs on the <xref:System.Windows.UIElement> and its child elements when the <xref:System.Windows.Media.VisualBrush.AutoLayoutContent%2A> property is set to `true`.</span></span> <span data-ttu-id="34747-162">ただし、ルート<xref:System.Windows.UIElement>は基本的に、システムの残りの部分から分離: スタイル、および外部のレイアウトは、この境界を超えることはできません。</span><span class="sxs-lookup"><span data-stu-id="34747-162">However, the root <xref:System.Windows.UIElement> is essentially isolated from the rest of the system: styles, and external layout can't permeate this boundary.</span></span> <span data-ttu-id="34747-163">そのため、ルートのサイズを指定する必要があります明示的に<xref:System.Windows.UIElement>のみ親があるため、<xref:System.Windows.Media.VisualBrush>し、そのため、できませんサイズを自動的に塗りつぶされている領域にします。</span><span class="sxs-lookup"><span data-stu-id="34747-163">Therefore, you should explicitly specify the size of the root <xref:System.Windows.UIElement>, because its only parent is the <xref:System.Windows.Media.VisualBrush> and therefore it cannot automatically size itself to the area being painted.</span></span> <span data-ttu-id="34747-164">[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] でのレイアウトの詳細については、「[レイアウト](../../../../docs/framework/wpf/advanced/layout.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="34747-164">For more information about layout in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], see the [Layout](../../../../docs/framework/wpf/advanced/layout.md).</span></span>  
   
- <xref:System.Windows.Media.ImageBrush> や <xref:System.Windows.Media.DrawingBrush> と同様に、<xref:System.Windows.Media.VisualBrush> で出力領域を塗りつぶすときはコンテンツが引き伸ばされます。  この動作をオーバーライドするには、<xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティを、既定の設定である <xref:System.Windows.Media.Stretch> から別の設定に変更します。  詳細については、<xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティのトピックを参照してください。  
+ <span data-ttu-id="34747-165">同様に<xref:System.Windows.Media.ImageBrush>と<xref:System.Windows.Media.DrawingBrush>、<xref:System.Windows.Media.VisualBrush>出力領域に挿入するには、そのコンテンツを拡大します。</span><span class="sxs-lookup"><span data-stu-id="34747-165">Like <xref:System.Windows.Media.ImageBrush> and  <xref:System.Windows.Media.DrawingBrush>, a <xref:System.Windows.Media.VisualBrush> stretches its content to fill its output area.</span></span> <span data-ttu-id="34747-166">この動作をオーバーライドするには、変更することによって、<xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティの既定の設定から<xref:System.Windows.Media.Stretch.Fill>です。</span><span class="sxs-lookup"><span data-stu-id="34747-166">You can override this behavior by changing the <xref:System.Windows.Media.TileBrush.Stretch%2A> property from its default setting of <xref:System.Windows.Media.Stretch.Fill>.</span></span> <span data-ttu-id="34747-167">詳細については、<xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティを参照してください。</span><span class="sxs-lookup"><span data-stu-id="34747-167">For more information, see the <xref:System.Windows.Media.TileBrush.Stretch%2A> property.</span></span>  
   
 <a name="examplevisualbrush1"></a>   
-## 例 : ビジュアルを使用してオブジェクトを塗りつぶす  
- 次の例では、いくつかのコントロールと 1 つのパネルを使用して四角形を塗りつぶします。  
+## <a name="example-paint-an-object-with-a-visual"></a><span data-ttu-id="34747-168">例: ビジュアルによるオブジェクトの塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="34747-168">Example: Paint an Object with a Visual</span></span>  
+ <span data-ttu-id="34747-169">次の例では、さまざまなコントロールとパネルを使用して四角形を塗りつぶします。</span><span class="sxs-lookup"><span data-stu-id="34747-169">In the following example, several controls and a panel are used to paint a rectangle.</span></span>  
   
- [!code-xml[BrushOverviewExamples_snip#GraphicsMMVisualBrushAsRectangleBackgroundExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/VisualBrushExample.xaml#graphicsmmvisualbrushasrectanglebackgroundexample)]  
+ [!code-xaml[BrushOverviewExamples_snip#GraphicsMMVisualBrushAsRectangleBackgroundExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/VisualBrushExample.xaml#graphicsmmvisualbrushasrectanglebackgroundexample)]  
   
  [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMVisualBrushAsRectangleBackgroundExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/VisualBrushExample.cs#graphicsmmvisualbrushasrectanglebackgroundexample1)]
  [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMVisualBrushAsRectangleBackgroundExample1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/visualbrushexample.vb#graphicsmmvisualbrushasrectanglebackgroundexample1)]  
   
 <a name="examplevisualbrush2"></a>   
-## 例 : 鏡像を作成する  
- 前の例では、背景として使用するために <xref:System.Windows.Media.Visual> を新規作成する方法を示しました。  <xref:System.Windows.Media.VisualBrush> を使用して既存のビジュアルを表示することもできます。この機能を使用すると、反射や拡大などのユニークな視覚効果を作成できます。  次の例では、<xref:System.Windows.Media.VisualBrush> を使用して、複数の要素が含まれる <xref:System.Windows.Controls.Border> の鏡像を作成します。  この例が生成する出力を次の図に示します。  
+## <a name="example-create-a-reflection"></a><span data-ttu-id="34747-170">方法 : 反射を作成する</span><span class="sxs-lookup"><span data-stu-id="34747-170">Example: Create a Reflection</span></span>  
+ <span data-ttu-id="34747-171">前の例では、新しいを作成する方法を示しました<xref:System.Windows.Media.Visual>の背景として使用します。</span><span class="sxs-lookup"><span data-stu-id="34747-171">The preceding example showed how to create a new <xref:System.Windows.Media.Visual> for use as a background.</span></span> <span data-ttu-id="34747-172">使用することも、<xref:System.Windows.Media.VisualBrush>を既存の visual; を表示するこの機能では、反射や拡大などの興味深いビジュアル効果を生成することができます。</span><span class="sxs-lookup"><span data-stu-id="34747-172">You can also use a <xref:System.Windows.Media.VisualBrush> to display an existing visual; this capability enables you to produce interesting visual effects, such as reflections and magnification.</span></span> <span data-ttu-id="34747-173">次の例では、<xref:System.Windows.Media.VisualBrush>の反射、<xref:System.Windows.Controls.Border>いくつかの要素を格納しています。</span><span class="sxs-lookup"><span data-stu-id="34747-173">The following example uses a <xref:System.Windows.Media.VisualBrush> to create a reflection of a <xref:System.Windows.Controls.Border> that contains several elements.</span></span> <span data-ttu-id="34747-174">次の図は、この例で生成される出力を示しています。</span><span class="sxs-lookup"><span data-stu-id="34747-174">The following illustration shows the output that this example produces.</span></span>  
   
- ![反映された Visual オブジェクト](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-visualbrush-reflection-small.png "graphicsmm\_visualbrush\_reflection\_small")  
-ビジュアル オブジェクトの鏡像  
+ <span data-ttu-id="34747-175">![A ビジュアル オブジェクトの反映](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-visualbrush-reflection-small.jpg "graphicsmm_visualbrush_reflection_small")</span><span class="sxs-lookup"><span data-stu-id="34747-175">![A reflected Visual object](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-visualbrush-reflection-small.jpg "graphicsmm_visualbrush_reflection_small")</span></span>  
+<span data-ttu-id="34747-176">反映された Visual オブジェクト</span><span class="sxs-lookup"><span data-stu-id="34747-176">A reflected Visual object</span></span>  
   
  [!code-csharp[visualbrush_markup_snip#GraphicsMMVisualBrushReflectionExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/visualbrush_markup_snip/CSharp/ReflectionExample.cs#graphicsmmvisualbrushreflectionexamplewholepage)]
  [!code-vb[visualbrush_markup_snip#GraphicsMMVisualBrushReflectionExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/visualbrush_markup_snip/visualbasic/reflectionexample.vb#graphicsmmvisualbrushreflectionexamplewholepage)]
- [!code-xml[visualbrush_markup_snip#GraphicsMMVisualBrushReflectionExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/visualbrush_markup_snip/XAML/ReflectionExample.xaml#graphicsmmvisualbrushreflectionexamplewholepage)]  
+ [!code-xaml[visualbrush_markup_snip#GraphicsMMVisualBrushReflectionExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/visualbrush_markup_snip/XAML/ReflectionExample.xaml#graphicsmmvisualbrushreflectionexamplewholepage)]  
   
- この他の、画面の一部分を拡大する方法や鏡像を作成する方法の例については、[VisualBrush のサンプル](http://go.microsoft.com/fwlink/?LinkID=160049)を参照してください。  
+ <span data-ttu-id="34747-177">画面の一部を引き伸ばす方法と反射を作成する方法のその他の例については、「[VisualBrush のサンプル](http://go.microsoft.com/fwlink/?LinkID=160049)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="34747-177">For additional examples that show how to magnify portions of the screen and how to create reflections, see the [VisualBrush Sample](http://go.microsoft.com/fwlink/?LinkID=160049).</span></span>  
   
 <a name="tilebrush"></a>   
-## TileBrush の機能  
- <xref:System.Windows.Media.ImageBrush>、<xref:System.Windows.Media.DrawingBrush>、および <xref:System.Windows.Media.VisualBrush> は、<xref:System.Windows.Media.TileBrush> オブジェクトの一種です。  <xref:System.Windows.Media.TileBrush> オブジェクトを使用すると、イメージ、描画、またはビジュアルで領域を塗りつぶす方法を細かく制御できます。  たとえば、引き伸ばした単一のイメージで領域をただ塗りつぶすのではなく、パターンを作成する一連のイメージ タイルで領域を塗りつぶすことができます。  
+## <a name="tilebrush-features"></a><span data-ttu-id="34747-178">TileBrush の機能</span><span class="sxs-lookup"><span data-stu-id="34747-178">TileBrush Features</span></span>  
+ <span data-ttu-id="34747-179"><xref:System.Windows.Media.ImageBrush>、 <xref:System.Windows.Media.DrawingBrush>、および<xref:System.Windows.Media.VisualBrush>種類<xref:System.Windows.Media.TileBrush>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="34747-179"><xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, and <xref:System.Windows.Media.VisualBrush> are types of <xref:System.Windows.Media.TileBrush> objects.</span></span> <span data-ttu-id="34747-180"><xref:System.Windows.Media.TileBrush>オブジェクトを提供するイメージ、図形、または visual で領域を描画する方法を細かく制御が大幅に向上します。</span><span class="sxs-lookup"><span data-stu-id="34747-180"><xref:System.Windows.Media.TileBrush> objects provide you with a great deal of control over how an area is painted with an image, drawing, or visual.</span></span> <span data-ttu-id="34747-181">たとえば、1 つのイメージを引き伸ばして領域を塗りつぶす代わりに、一連のイメージ タイルでパターンを作って領域を塗りつぶすことができます。</span><span class="sxs-lookup"><span data-stu-id="34747-181">For example, instead of just painting an area with a single stretched image, you can paint an area with a series of image tiles that create a pattern.</span></span>  
   
- <xref:System.Windows.Media.TileBrush> には、コンテンツ、タイル、および出力領域の 3 つの主要コンポーネントがあります。  
+ <span data-ttu-id="34747-182">A<xref:System.Windows.Media.TileBrush>は 3 つの主なコンポーネントがあります。 コンテンツ、タイル、および、出力領域。</span><span class="sxs-lookup"><span data-stu-id="34747-182">A <xref:System.Windows.Media.TileBrush> has three primary components: content, tiles, and the output area.</span></span>  
   
- ![TileBrush コンポーネント](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-defaultcontentprojection2.png "wcpsdk\_mmgraphics\_defaultcontentprojection2")  
-1 つのタイルを使用する TileBrush のコンポーネント  
+ <span data-ttu-id="34747-183">![TileBrush コンポーネント](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-defaultcontentprojection2.png "wcpsdk_mmgraphics_defaultcontentprojection2")</span><span class="sxs-lookup"><span data-stu-id="34747-183">![TileBrush components](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-defaultcontentprojection2.png "wcpsdk_mmgraphics_defaultcontentprojection2")</span></span>  
+<span data-ttu-id="34747-184">1 つのタイルが TileBrush のコンポーネント</span><span class="sxs-lookup"><span data-stu-id="34747-184">Components of a TileBrush with a single tile</span></span>  
   
- ![並べて表示された TileBrush のコンポーネント](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tiledprojection.png "graphicsmm\_tiledprojection")  
-複数のタイルを使用する TileBrush のコンポーネント  
+ <span data-ttu-id="34747-185">![並べて表示された TileBrush のコンポーネント](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tiledprojection.png "graphicsmm_tiledprojection")</span><span class="sxs-lookup"><span data-stu-id="34747-185">![Components of a tiled TileBrush](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tiledprojection.png "graphicsmm_tiledprojection")</span></span>  
+<span data-ttu-id="34747-186">複数のタイルを使用する TileBrush のコンポーネント</span><span class="sxs-lookup"><span data-stu-id="34747-186">Components of a TileBrush with multiple tiles</span></span>  
   
- <xref:System.Windows.Media.TileBrush> オブジェクトの、並べて表示する機能の詳細については、「[TileBrush の概要](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)」を参照してください。  
+ <span data-ttu-id="34747-187">タイルの機能の詳細については<xref:System.Windows.Media.TileBrush>、オブジェクトを参照してください、 [TileBrush 概要](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="34747-187">For more information about the tiling features of <xref:System.Windows.Media.TileBrush> objects, see the [TileBrush Overview](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Media.ImageBrush>   
- <xref:System.Windows.Media.DrawingBrush>   
- <xref:System.Windows.Media.VisualBrush>   
- <xref:System.Windows.Media.TileBrush>   
- [TileBrush の概要](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)   
- [WPF のブラシの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md)   
- [イメージングの概要](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)   
- [Drawing オブジェクトの概要](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)   
- [不透明マスクの概要](../../../../docs/framework/wpf/graphics-multimedia/opacity-masks-overview.md)   
- [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)   
- [ImageBrush のサンプル](http://go.microsoft.com/fwlink/?LinkID=160005)   
- [VisualBrush のサンプル](http://go.microsoft.com/fwlink/?LinkID=160049)
+## <a name="see-also"></a><span data-ttu-id="34747-188">関連項目</span><span class="sxs-lookup"><span data-stu-id="34747-188">See Also</span></span>  
+ <xref:System.Windows.Media.ImageBrush>  
+ <xref:System.Windows.Media.DrawingBrush>  
+ <xref:System.Windows.Media.VisualBrush>  
+ <xref:System.Windows.Media.TileBrush>  
+ [<span data-ttu-id="34747-189">TileBrush の概要</span><span class="sxs-lookup"><span data-stu-id="34747-189">TileBrush Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)  
+ [<span data-ttu-id="34747-190">WPF のブラシの概要</span><span class="sxs-lookup"><span data-stu-id="34747-190">WPF Brushes Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md)  
+ [<span data-ttu-id="34747-191">イメージングの概要</span><span class="sxs-lookup"><span data-stu-id="34747-191">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
+ [<span data-ttu-id="34747-192">Drawing オブジェクトの概要</span><span class="sxs-lookup"><span data-stu-id="34747-192">Drawing Objects Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)  
+ [<span data-ttu-id="34747-193">不透明度マスクの概要</span><span class="sxs-lookup"><span data-stu-id="34747-193">Opacity Masks Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/opacity-masks-overview.md)  
+ [<span data-ttu-id="34747-194">WPF グラフィックス レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="34747-194">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
+ [<span data-ttu-id="34747-195">ImageBrush のサンプル</span><span class="sxs-lookup"><span data-stu-id="34747-195">ImageBrush Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=160005)  
+ [<span data-ttu-id="34747-196">VisualBrush のサンプル</span><span class="sxs-lookup"><span data-stu-id="34747-196">VisualBrush Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=160049)

@@ -1,42 +1,45 @@
 ---
-title: "方法 : クライアントのメッセージを検査または変更する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : クライアントのメッセージを検査または変更する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b8256335-f1c2-419f-b862-9f220ccad84c
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 164e19891e576b6d310839a1221ad8ed0d315444
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : クライアントのメッセージを検査または変更する
-<xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=fullName> を実装し、それをクライアントのランタイムに追加することで、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの送受信メッセージを検査または変更できます。  詳細については、「[クライアントの拡張](../../../../docs/framework/wcf/extending/extending-clients.md)」を参照してください。  サービスの同等の機能は、<xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=fullName> です。  コード例全体については、「[メッセージ インスペクター](../../../../docs/framework/wcf/samples/message-inspectors.md)」のサンプルを参照してください。  
+# <a name="how-to-inspect-or-modify-messages-on-the-client"></a><span data-ttu-id="9c3e7-102">方法 : クライアントのメッセージを検査または変更する</span><span class="sxs-lookup"><span data-stu-id="9c3e7-102">How to: Inspect or Modify Messages on the Client</span></span>
+<span data-ttu-id="9c3e7-103">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を実装し、それをクライアントのランタイムに追加することで、<xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> クライアントの送受信メッセージを検査または変更できます。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-103">You can inspect or modify the incoming or outgoing messages across a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client by implementing a <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> and inserting it into the client runtime.</span></span> <span data-ttu-id="9c3e7-104">詳細については、次を参照してください。[を拡張するクライアント](../../../../docs/framework/wcf/extending/extending-clients.md)です。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-104">For more information, see [Extending Clients](../../../../docs/framework/wcf/extending/extending-clients.md).</span></span> <span data-ttu-id="9c3e7-105">サービスの同等の機能は、<xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType> です。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-105">The equivalent feature on the service is the <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>.</span></span> <span data-ttu-id="9c3e7-106">完全なコード例については、[メッセージ インスペクタ](../../../../docs/framework/wcf/samples/message-inspectors.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-106">For a complete code example see the [Message Inspectors](../../../../docs/framework/wcf/samples/message-inspectors.md) sample.</span></span>  
   
-### メッセージを検査または変更するには  
+### <a name="to-inspect-or-modify-messages"></a><span data-ttu-id="9c3e7-107">メッセージを検査または変更するには</span><span class="sxs-lookup"><span data-stu-id="9c3e7-107">To inspect or modify messages</span></span>  
   
-1.  <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=fullName> インターフェイスを実装します。  
+1.  <span data-ttu-id="9c3e7-108"><xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-108">Implement the <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> interface.</span></span>  
   
-2.  クライアント メッセージ インスペクターを挿入するスコープに応じて、<xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=fullName> または <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=fullName> を実装します。  <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=fullName> を使用すると、エンドポイント レベルで動作を変更できます。  <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=fullName> を使用すると、コントラクト レベルで動作を変更できます。  
+2.  <span data-ttu-id="9c3e7-109">クライアント メッセージ インスペクターを挿入するスコープに応じて、<xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> または <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> を実装します。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-109">Implement a <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> or <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> depending upon the scope at which you want to insert the client message inspector.</span></span> <span data-ttu-id="9c3e7-110"><xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType>使用すると、エンドポイント レベルでの動作を変更できます。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-110"><xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> allows you to change behavior at the endpoint level.</span></span> <span data-ttu-id="9c3e7-111"><xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType>コントラクト レベルの動作を変更できます。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-111"><xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> allows you to change behavior at the contract level.</span></span>  
   
-3.  <xref:System.ServiceModel.ChannelFactory%601?displayProperty=fullName> で <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=fullName> メソッドまたは <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=fullName> メソッドを呼び出す前に、動作を追加します。  詳細については、「[動作を使用したランタイムの構成と拡張](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)」を参照してください。  
+3.  <span data-ttu-id="9c3e7-112"><xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> で <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> メソッドまたは <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> メソッドを呼び出す前に、動作を追加します。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-112">Insert the behavior prior to calling the <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> or the <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> method on the <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>.</span></span> <span data-ttu-id="9c3e7-113">詳細については、「[を構成して、ランタイムのビヘイビアーの使用を拡張する](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)です。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-113">For details, see [Configuring and Extending the Runtime with Behaviors](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).</span></span>  
   
-## 使用例  
- 下のコード例では、次の項目を順番に示しています。  
+## <a name="example"></a><span data-ttu-id="9c3e7-114">例</span><span class="sxs-lookup"><span data-stu-id="9c3e7-114">Example</span></span>  
+ <span data-ttu-id="9c3e7-115">下のコード例では、次の項目を順番に示しています。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-115">The following code examples show, in order:</span></span>  
   
--   クライアント インスペクター実装  
+-   <span data-ttu-id="9c3e7-116">クライアント インスペクター実装</span><span class="sxs-lookup"><span data-stu-id="9c3e7-116">A client inspector implementation.</span></span>  
   
--   インスペクターを挿入するエンドポイント動作  
+-   <span data-ttu-id="9c3e7-117">インスペクターを挿入するエンドポイント動作</span><span class="sxs-lookup"><span data-stu-id="9c3e7-117">An endpoint behavior that inserts the inspector.</span></span>  
   
--   構成ファイルで動作を追加できるようにする <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> 派生クラス。  
+-   <span data-ttu-id="9c3e7-118">構成ファイルで動作を追加できるようにする <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> 派生クラス。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-118">A <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>- derived class that allows you to add the behavior in a configuration file.</span></span>  
   
--   クライアント メッセージ インスペクターをクライアント ランタイムに挿入するエンドポイント動作を追加する構成ファイル。  
+-   <span data-ttu-id="9c3e7-119">クライアント メッセージ インスペクターをクライアント ランタイムに挿入するエンドポイント動作を追加する構成ファイル。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-119">A configuration file that adds the endpoint behavior which inserts the client message inspector into the client runtime.</span></span>  
   
 ```csharp  
 // Client message inspector  
@@ -57,7 +60,6 @@ public class SimpleMessageInspector : IClientMessageInspector
         return null;  
     }  
 }  
-  
 ```  
   
 ```csharp  
@@ -102,10 +104,9 @@ public class SimpleBehaviorExtensionElement : BehaviorExtensionElement
         return new SimpleEndpointBehavior();  
     }  
 }  
-  
 ```  
   
-```vb  
+```xml
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
     <system.serviceModel>  
@@ -132,10 +133,9 @@ public class SimpleBehaviorExtensionElement : BehaviorExtensionElement
       </extensions>  
     </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-## 参照  
- <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=fullName>   
- <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=fullName>   
- [動作を使用したランタイムの構成と拡張](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+## <a name="see-also"></a><span data-ttu-id="9c3e7-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="9c3e7-120">See Also</span></span>  
+ <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType>  
+ <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>  
+ [<span data-ttu-id="9c3e7-121">構成して、ランタイムのビヘイビアーの使用を拡張します。</span><span class="sxs-lookup"><span data-stu-id="9c3e7-121">Configuring and Extending the Runtime with Behaviors</span></span>](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

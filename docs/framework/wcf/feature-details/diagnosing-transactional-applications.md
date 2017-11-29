@@ -1,112 +1,115 @@
 ---
-title: "トランザクション アプリケーションの診断 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トランザクション アプリケーションの診断"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4a993492-1088-4d10-871b-0c09916af05f
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 81c16e8a1b61a408abe92cd346c84d0a4fb6ff44
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# トランザクション アプリケーションの診断
-このトピックでは、トランザクションのアプリケーションをトラブルシューティングするために、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されている管理機能および診断機能の使用方法について説明します。  
+# <a name="diagnosing-transactional-applications"></a><span data-ttu-id="78d2f-102">トランザクション アプリケーションの診断</span><span class="sxs-lookup"><span data-stu-id="78d2f-102">Diagnosing Transactional Applications</span></span>
+<span data-ttu-id="78d2f-103">このトピックでは、トランザクションのアプリケーションをトラブルシューティングするために、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] に用意されている管理機能および診断機能の使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-103">This topic describes how to use the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] management and diagnostics feature to troubleshoot a transactional application.</span></span>  
   
-## パフォーマンス カウンター  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、トランザクション アプリケーションのパフォーマンスを測定するための、標準のパフォーマンス カウンターが用意されています。  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「[WCF パフォーマンス カウンター](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md)」を参照してください。  
+## <a name="performance-counters"></a><span data-ttu-id="78d2f-104">パフォーマンス カウンター</span><span class="sxs-lookup"><span data-stu-id="78d2f-104">Performance Counters</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="78d2f-105"> には、トランザクション アプリケーションのパフォーマンスを測定するための、標準のパフォーマンス カウンターが用意されています。</span><span class="sxs-lookup"><span data-stu-id="78d2f-105"> provides a standard set of performance counters for you to measure your transactional application's performance.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="78d2f-106">[パフォーマンス カウンター](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-106"> [Performance Counters](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md).</span></span>  
   
- パフォーマンス カウンターには次の表に示すように、サービス、エンドポイント、操作の 3 つのレベルがあります。  
+ <span data-ttu-id="78d2f-107">パフォーマンス カウンターには次の表に示すように、サービス、エンドポイント、操作の 3 つのレベルがあります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-107">Performance counters are scoped to three different levels: service, endpoint, and operation, as described in the following tables.</span></span>  
   
-### サービス パフォーマンス カウンター  
+### <a name="service-performance-counters"></a><span data-ttu-id="78d2f-108">サービス パフォーマンス カウンター</span><span class="sxs-lookup"><span data-stu-id="78d2f-108">Service Performance Counters</span></span>  
   
-|パフォーマンス カウンター|説明|  
-|-------------------|--------|  
-|トランザクション フロー|このサービスで操作に対して実行されたトランザクションの数です。  このカウンターは、サービスに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。|  
-|1 秒あたりのトランザクション フロー|このサービスの操作に対して実行された 1 秒あたりのトランザクションの数です。  このカウンターは、サービスに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。|  
-|コミットされたトランザクション操作|このサービスで、結果がコミットされた状態で完了したトランザクション操作の数です。  そのような操作中に実行された作業は完全にコミットされました。  リソースは、操作で実行された作業に応じて更新されます。|  
-|1 秒あたりのコミットされたトランザクション操作|このサービスで、結果がコミットされた状態で完了したトランザクション操作の 1 秒あたりの数です。  そのような操作中に実行された作業は完全にコミットされました。  リソースは、操作で実行された作業に応じて更新されます。|  
-|中止されたトランザクション操作|このサービスで、結果が中止された状態で完了したトランザクション操作の数です。  そのような操作中に実行された作業はロールバックされました。  リソースは、それぞれの直前の状態に復元されました。|  
-|1 秒あたりの中止されたトランザクション操作|このサービスで、結果が中止された状態で完了したトランザクション操作の 1 秒あたりの数です。  そのような操作中に実行された作業はロールバックされました。  リソースは、それぞれの直前の状態に復元されました。|  
-|不明なトランザクション操作|このサービスで、結果が不明な状態で完了したトランザクション操作の数です。  結果が不明な作業は中間状態になります。  リソースは、保留中となります。|  
-|1 秒あたりの不明なトランザクション操作|このサービスで、結果が不明な状態で完了したトランザクション操作の 1 秒あたりの数です。  結果が不明な作業は中間状態になります。  リソースは、保留中となります。|  
+|<span data-ttu-id="78d2f-109">パフォーマンス カウンター</span><span class="sxs-lookup"><span data-stu-id="78d2f-109">Performance counter</span></span>|<span data-ttu-id="78d2f-110">説明</span><span class="sxs-lookup"><span data-stu-id="78d2f-110">Description</span></span>|  
+|-------------------------|-----------------|  
+|<span data-ttu-id="78d2f-111">トランザクション フロー</span><span class="sxs-lookup"><span data-stu-id="78d2f-111">Transactions Flowed</span></span>|<span data-ttu-id="78d2f-112">このサービスで操作に対して実行されたトランザクションの数です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-112">The number of transactions that flowed to operations in this service.</span></span> <span data-ttu-id="78d2f-113">このカウンターは、サービスに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-113">This counter is incremented any time a transaction is present in the message that is sent to the service.</span></span>|  
+|<span data-ttu-id="78d2f-114">1 秒あたりのトランザクション フロー</span><span class="sxs-lookup"><span data-stu-id="78d2f-114">Transactions Flowed Per Second</span></span>|<span data-ttu-id="78d2f-115">このサービスの操作に対して実行された 1 秒あたりのトランザクションの数です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-115">The number of transactions that flowed to operations in this service within each second.</span></span> <span data-ttu-id="78d2f-116">このカウンターは、サービスに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-116">This counter is incremented any time a transaction is present in the message that is sent to the service.</span></span>|  
+|<span data-ttu-id="78d2f-117">コミットされたトランザクション操作</span><span class="sxs-lookup"><span data-stu-id="78d2f-117">Transacted Operations Committed</span></span>|<span data-ttu-id="78d2f-118">このサービスで、結果がコミットされた状態で完了したトランザクション操作の数です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-118">The number of transacted operations performed, whose transaction has completed with the outcome committed in this service.</span></span> <span data-ttu-id="78d2f-119">そのような操作中に実行された作業は完全にコミットされました。</span><span class="sxs-lookup"><span data-stu-id="78d2f-119">Work done under such operations is fully committed.</span></span> <span data-ttu-id="78d2f-120">リソースは、操作で実行された作業に応じて更新されます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-120">Resources are updated in accordance with the work done in the operation.</span></span>|  
+|<span data-ttu-id="78d2f-121">1 秒あたりのコミットされたトランザクション操作</span><span class="sxs-lookup"><span data-stu-id="78d2f-121">Transacted Operations Committed Per Second</span></span>|<span data-ttu-id="78d2f-122">このサービスで、結果がコミットされた状態で完了したトランザクション操作の 1 秒あたりの数です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-122">The number of transacted operations performed, whose transaction has completed with the outcome committed in this service within each second.</span></span> <span data-ttu-id="78d2f-123">そのような操作中に実行された作業は完全にコミットされました。</span><span class="sxs-lookup"><span data-stu-id="78d2f-123">Work done under such operations is fully committed.</span></span> <span data-ttu-id="78d2f-124">リソースは、操作で実行された作業に応じて更新されます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-124">Resources are updated in accordance with the work done in the operation.</span></span>|  
+|<span data-ttu-id="78d2f-125">中止されたトランザクション操作</span><span class="sxs-lookup"><span data-stu-id="78d2f-125">Transacted Operations Aborted</span></span>|<span data-ttu-id="78d2f-126">このサービスで、結果が中止された状態で完了したトランザクション操作の数です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-126">The number of transacted operations performed, whose transaction has completed with the outcome aborted in this service.</span></span> <span data-ttu-id="78d2f-127">そのような操作中に実行された作業はロールバックされました。</span><span class="sxs-lookup"><span data-stu-id="78d2f-127">Work done under such operations is rolled back.</span></span> <span data-ttu-id="78d2f-128">リソースは、それぞれの直前の状態に復元されました。</span><span class="sxs-lookup"><span data-stu-id="78d2f-128">Resources are reverted to their previous state.</span></span>|  
+|<span data-ttu-id="78d2f-129">1 秒あたりの中止されたトランザクション操作</span><span class="sxs-lookup"><span data-stu-id="78d2f-129">Transacted Operations Aborted Per Second</span></span>|<span data-ttu-id="78d2f-130">このサービスで、結果が中止された状態で完了したトランザクション操作の 1 秒あたりの数です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-130">The number of transacted operations performed, whose transaction has completed with the outcome aborted in this service within each second.</span></span> <span data-ttu-id="78d2f-131">そのような操作中に実行された作業はロールバックされました。</span><span class="sxs-lookup"><span data-stu-id="78d2f-131">Work done under such operations is rolled back.</span></span> <span data-ttu-id="78d2f-132">リソースは、それぞれの直前の状態に復元されました。</span><span class="sxs-lookup"><span data-stu-id="78d2f-132">Resources are reverted to their previous state.</span></span>|  
+|<span data-ttu-id="78d2f-133">不明なトランザクション操作</span><span class="sxs-lookup"><span data-stu-id="78d2f-133">Transacted Operations In Doubt</span></span>|<span data-ttu-id="78d2f-134">このサービスで、結果が不明な状態で完了したトランザクション操作の数です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-134">The number of transacted operations performed, whose transaction has completed with an outcome in doubt in this service.</span></span> <span data-ttu-id="78d2f-135">結果が不明な作業は中間状態になります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-135">Work done with an outcome in doubt is in an indeterminate state.</span></span> <span data-ttu-id="78d2f-136">リソースは、保留中となります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-136">Resources are held pending outcome.</span></span>|  
+|<span data-ttu-id="78d2f-137">1 秒あたりの不明なトランザクション操作</span><span class="sxs-lookup"><span data-stu-id="78d2f-137">Transacted Operations In Doubt Per Second</span></span>|<span data-ttu-id="78d2f-138">このサービスで、結果が不明な状態で完了したトランザクション操作の 1 秒あたりの数です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-138">The number of transacted operations performed, whose transaction has completed with an outcome in doubt in this service within each second.</span></span> <span data-ttu-id="78d2f-139">結果が不明な作業は中間状態になります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-139">Work done with an outcome in doubt is in an indeterminate state.</span></span> <span data-ttu-id="78d2f-140">リソースは、保留中となります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-140">Resources are held pending outcome.</span></span>|  
   
-### エンドポイントのパフォーマンス カウンター  
+### <a name="endpoint-performance-counters"></a><span data-ttu-id="78d2f-141">エンドポイントのパフォーマンス カウンター</span><span class="sxs-lookup"><span data-stu-id="78d2f-141">Endpoint Performance Counters</span></span>  
   
-|パフォーマンス カウンター|説明|  
-|-------------------|--------|  
-|トランザクション フロー|このエンドポイントでの操作に対して実行されたトランザクションの数。  このカウンターは、エンドポイントに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。|  
-|1 秒あたりのトランザクション フロー|毎秒ごとにこのエンドポイントでの操作に対して実行されたトランザクションの数。  このカウンターは、エンドポイントに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。|  
+|<span data-ttu-id="78d2f-142">パフォーマンス カウンター</span><span class="sxs-lookup"><span data-stu-id="78d2f-142">Performance counter</span></span>|<span data-ttu-id="78d2f-143">説明</span><span class="sxs-lookup"><span data-stu-id="78d2f-143">Description</span></span>|  
+|-------------------------|-----------------|  
+|<span data-ttu-id="78d2f-144">トランザクション フロー</span><span class="sxs-lookup"><span data-stu-id="78d2f-144">Transactions Flowed</span></span>|<span data-ttu-id="78d2f-145">このエンドポイントでの操作に対して実行されたトランザクションの数。</span><span class="sxs-lookup"><span data-stu-id="78d2f-145">The number of transactions that flowed to operations at this endpoint.</span></span> <span data-ttu-id="78d2f-146">このカウンターは、エンドポイントに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-146">This counter is incremented any time a transaction is present in the message that is sent to the endpoint.</span></span>|  
+|<span data-ttu-id="78d2f-147">1 秒あたりのトランザクション フロー</span><span class="sxs-lookup"><span data-stu-id="78d2f-147">Transactions Flowed Per Second</span></span>|<span data-ttu-id="78d2f-148">毎秒ごとにこのエンドポイントでの操作に対して実行されたトランザクションの数。</span><span class="sxs-lookup"><span data-stu-id="78d2f-148">The number of transactions that flowed to operations at this endpoint within each second.</span></span> <span data-ttu-id="78d2f-149">このカウンターは、エンドポイントに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-149">This counter is incremented any time a transaction is present in the message that is sent to the endpoint.</span></span>|  
   
-### 操作パフォーマンス カウンター  
+### <a name="operation-performance-counters"></a><span data-ttu-id="78d2f-150">操作パフォーマンス カウンター</span><span class="sxs-lookup"><span data-stu-id="78d2f-150">Operation Performance Counters</span></span>  
   
-|パフォーマンス カウンター|説明|  
-|-------------------|--------|  
-|トランザクション フロー|このエンドポイントでの操作に対して実行されたトランザクションの数。  このカウンターは、エンドポイントに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。|  
-|1 秒あたりのトランザクション フロー|毎秒ごとにこのエンドポイントでの操作に対して実行されたトランザクションの数。  このカウンターは、エンドポイントに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。|  
+|<span data-ttu-id="78d2f-151">パフォーマンス カウンター</span><span class="sxs-lookup"><span data-stu-id="78d2f-151">Performance counter</span></span>|<span data-ttu-id="78d2f-152">説明</span><span class="sxs-lookup"><span data-stu-id="78d2f-152">Description</span></span>|  
+|-------------------------|-----------------|  
+|<span data-ttu-id="78d2f-153">トランザクション フロー</span><span class="sxs-lookup"><span data-stu-id="78d2f-153">Transactions Flowed</span></span>|<span data-ttu-id="78d2f-154">このエンドポイントでの操作に対して実行されたトランザクションの数。</span><span class="sxs-lookup"><span data-stu-id="78d2f-154">The number of transactions that flowed to operations at this endpoint.</span></span> <span data-ttu-id="78d2f-155">このカウンターは、エンドポイントに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-155">This counter is incremented any time a transaction is present in the message that is sent to the endpoint.</span></span>|  
+|<span data-ttu-id="78d2f-156">1 秒あたりのトランザクション フロー</span><span class="sxs-lookup"><span data-stu-id="78d2f-156">Transactions Flowed Per Second</span></span>|<span data-ttu-id="78d2f-157">毎秒ごとにこのエンドポイントでの操作に対して実行されたトランザクションの数。</span><span class="sxs-lookup"><span data-stu-id="78d2f-157">The number of transactions that flowed to operations at this endpoint within each second.</span></span> <span data-ttu-id="78d2f-158">このカウンターは、エンドポイントに送信されたメッセージにトランザクションがある場合は常にインクリメントされます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-158">This counter is incremented any time a transaction is present in the message that is sent to the endpoint.</span></span>|  
   
-## WMI \(Windows Management Instrumentation\)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WMI \(Windows Management Instrumentation\) プロバイダーを介して実行時のサービスの検査データを公開します。  WMI データへのアクセス[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[診断用の WMI \(Windows Management Instrumentation\) の使用](../../../../docs/framework/wcf/diagnostics/wmi/index.md)」を参照してください。  
+## <a name="windows-management-instrumentation"></a><span data-ttu-id="78d2f-159">WMI (Windows Management Instrumentation)</span><span class="sxs-lookup"><span data-stu-id="78d2f-159">Windows Management Instrumentation</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="78d2f-160"> は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] WMI (Windows Management Instrumentation) プロバイダーを介して実行時のサービスの検査データを公開します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-160"> exposes inspection data of a service at run time through a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Windows Management Instrumentation (WMI) provider.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="78d2f-161">WMI データにアクセスするを参照してください[診断の Windows Management Instrumentation を使用して](../../../../docs/framework/wcf/diagnostics/wmi/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-161"> accessing WMI data, see [Using Windows Management Instrumentation for Diagnostics](../../../../docs/framework/wcf/diagnostics/wmi/index.md).</span></span>  
   
- WMI プロパティには、サービスに適用されるトランザクション設定を示す読み取り専用のプロパティが多数あります。  次の表にこれらの設定をすべて示します。  
+ <span data-ttu-id="78d2f-162">WMI プロパティには、サービスに適用されるトランザクション設定を示す読み取り専用のプロパティが多数あります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-162">A number of read-only WMI properties indicate the applied transaction settings for a service.</span></span> <span data-ttu-id="78d2f-163">次の表にこれらの設定をすべて示します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-163">The following tables list all of these settings.</span></span>  
   
- サービスの `ServiceBehaviorAttribute` には、次のプロパティがあります。  
+ <span data-ttu-id="78d2f-164">サービスの `ServiceBehaviorAttribute` には、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-164">On a service, the `ServiceBehaviorAttribute` has the following properties.</span></span>  
   
-|名前|種類|説明|  
-|--------|--------|--------|  
-|ReleaseServiceInstanceOnTransactionComplete|ブール型|現在のトランザクションの完了時に、サービス オブジェクトをリサイクルするかどうかを指定します。|  
-|TransactionAutoCompleteOnSessionClose|ブール型|現在のセッションの終了時に、保留中のトランザクションを完了するかどうかを指定します。|  
-|TransactionIsolationLevel|<xref:System.Transactions.IsolationLevel> 列挙体の有効な値を含む文字列。|このサービスがサポートするトランザクションの分離レベルを指定します。|  
-|TransactionTimeout|<xref:System.DateTime>|トランザクションを完了しなければならない期間を指定します。|  
+|<span data-ttu-id="78d2f-165">名前</span><span class="sxs-lookup"><span data-stu-id="78d2f-165">Name</span></span>|<span data-ttu-id="78d2f-166">種類</span><span class="sxs-lookup"><span data-stu-id="78d2f-166">Type</span></span>|<span data-ttu-id="78d2f-167">説明</span><span class="sxs-lookup"><span data-stu-id="78d2f-167">Description</span></span>|  
+|----------|----------|-----------------|  
+|<span data-ttu-id="78d2f-168">ReleaseServiceInstanceOnTransactionComplete</span><span class="sxs-lookup"><span data-stu-id="78d2f-168">ReleaseServiceInstanceOnTransactionComplete</span></span>|<span data-ttu-id="78d2f-169">ブール型</span><span class="sxs-lookup"><span data-stu-id="78d2f-169">Boolean</span></span>|<span data-ttu-id="78d2f-170">現在のトランザクションの完了時に、サービス オブジェクトをリサイクルするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-170">Specifies whether the service object is recycled when the current transaction completes.</span></span>|  
+|<span data-ttu-id="78d2f-171">TransactionAutoCompleteOnSessionClose</span><span class="sxs-lookup"><span data-stu-id="78d2f-171">TransactionAutoCompleteOnSessionClose</span></span>|<span data-ttu-id="78d2f-172">ブール型</span><span class="sxs-lookup"><span data-stu-id="78d2f-172">Boolean</span></span>|<span data-ttu-id="78d2f-173">現在のセッションの終了時に、保留中のトランザクションを完了するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-173">Specifies whether pending transactions are completed when the current session closes.</span></span>|  
+|<span data-ttu-id="78d2f-174">TransactionIsolationLevel</span><span class="sxs-lookup"><span data-stu-id="78d2f-174">TransactionIsolationLevel</span></span>|<span data-ttu-id="78d2f-175"><xref:System.Transactions.IsolationLevel> 列挙体の有効な値を含む文字列。</span><span class="sxs-lookup"><span data-stu-id="78d2f-175">A string that contains a valid value of the <xref:System.Transactions.IsolationLevel> enumeration.</span></span>|<span data-ttu-id="78d2f-176">このサービスがサポートするトランザクションの分離レベルを指定します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-176">Specifies the transaction isolation level that this service supports.</span></span>|  
+|<span data-ttu-id="78d2f-177">TransactionTimeout</span><span class="sxs-lookup"><span data-stu-id="78d2f-177">TransactionTimeout</span></span>|<xref:System.DateTime>|<span data-ttu-id="78d2f-178">トランザクションを完了しなければならない期間を指定します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-178">Specifies the period within which a transaction must complete.</span></span>|  
   
- `ServiceTimeoutsBehavior` には、次のプロパティがあります。  
+ <span data-ttu-id="78d2f-179">`ServiceTimeoutsBehavior` には、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-179">The `ServiceTimeoutsBehavior` has the following property.</span></span>  
   
-|名前|種類|説明|  
-|--------|--------|--------|  
-|TransactionTimeout|<xref:System.DateTime>|トランザクションを完了しなければならない期間を指定します。|  
+|<span data-ttu-id="78d2f-180">名前</span><span class="sxs-lookup"><span data-stu-id="78d2f-180">Name</span></span>|<span data-ttu-id="78d2f-181">種類</span><span class="sxs-lookup"><span data-stu-id="78d2f-181">Type</span></span>|<span data-ttu-id="78d2f-182">説明</span><span class="sxs-lookup"><span data-stu-id="78d2f-182">Description</span></span>|  
+|----------|----------|-----------------|  
+|<span data-ttu-id="78d2f-183">TransactionTimeout</span><span class="sxs-lookup"><span data-stu-id="78d2f-183">TransactionTimeout</span></span>|<xref:System.DateTime>|<span data-ttu-id="78d2f-184">トランザクションを完了しなければならない期間を指定します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-184">Specifies the period within which a transaction must complete.</span></span>|  
   
- バインディングの `TransactionFlowBindingElement` には、次のプロパティがあります。  
+ <span data-ttu-id="78d2f-185">バインディングの `TransactionFlowBindingElement` には、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-185">On a binding, the `TransactionFlowBindingElement` has the following properties.</span></span>  
   
-|名前|種類|説明|  
-|--------|--------|--------|  
-|TransactionProtocol|<xref:System.ServiceModel.TransactionProtocol> 型の有効な値を含む文字列。|トランザクションをフローさせるために使用するトランザクション プロトコルを指定します。|  
-|TransactionFlow|ブール型|受信トランザクション フローを有効にするかどうかを指定します。|  
+|<span data-ttu-id="78d2f-186">名前</span><span class="sxs-lookup"><span data-stu-id="78d2f-186">Name</span></span>|<span data-ttu-id="78d2f-187">種類</span><span class="sxs-lookup"><span data-stu-id="78d2f-187">Type</span></span>|<span data-ttu-id="78d2f-188">説明</span><span class="sxs-lookup"><span data-stu-id="78d2f-188">Description</span></span>|  
+|----------|----------|-----------------|  
+|<span data-ttu-id="78d2f-189">TransactionProtocol</span><span class="sxs-lookup"><span data-stu-id="78d2f-189">TransactionProtocol</span></span>|<span data-ttu-id="78d2f-190"><xref:System.ServiceModel.TransactionProtocol> 型の有効な値を含む文字列。</span><span class="sxs-lookup"><span data-stu-id="78d2f-190">A string that contains a valid value of the <xref:System.ServiceModel.TransactionProtocol> type.</span></span>|<span data-ttu-id="78d2f-191">トランザクションをフローさせるために使用するトランザクション プロトコルを指定します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-191">Specifies the transaction protocol to use in flowing a transaction.</span></span>|  
+|<span data-ttu-id="78d2f-192">TransactionFlow</span><span class="sxs-lookup"><span data-stu-id="78d2f-192">TransactionFlow</span></span>|<span data-ttu-id="78d2f-193">ブール型</span><span class="sxs-lookup"><span data-stu-id="78d2f-193">Boolean</span></span>|<span data-ttu-id="78d2f-194">受信トランザクション フローを有効にするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-194">Specifies whether incoming transaction flow is enabled.</span></span>|  
   
- 操作の `OperationBehaviorAttribute` には、次のプロパティがあります。  
+ <span data-ttu-id="78d2f-195">操作の `OperationBehaviorAttribute` には、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-195">On an operation, the `OperationBehaviorAttribute` has the following properties:</span></span>  
   
-|名前|種類|説明|  
-|--------|--------|--------|  
-|TransactionAutoComplete|ブール型|未処理の例外が発生しなかった場合に、現在のトランザクションを自動的にコミットするかどうかを指定します。|  
-|TransactionScopeRequired|ブール型|操作がトランザクションを必要とするかどうかを指定します。|  
+|<span data-ttu-id="78d2f-196">名前</span><span class="sxs-lookup"><span data-stu-id="78d2f-196">Name</span></span>|<span data-ttu-id="78d2f-197">種類</span><span class="sxs-lookup"><span data-stu-id="78d2f-197">Type</span></span>|<span data-ttu-id="78d2f-198">説明</span><span class="sxs-lookup"><span data-stu-id="78d2f-198">Description</span></span>|  
+|----------|----------|-----------------|  
+|<span data-ttu-id="78d2f-199">TransactionAutoComplete</span><span class="sxs-lookup"><span data-stu-id="78d2f-199">TransactionAutoComplete</span></span>|<span data-ttu-id="78d2f-200">ブール型</span><span class="sxs-lookup"><span data-stu-id="78d2f-200">Boolean</span></span>|<span data-ttu-id="78d2f-201">未処理の例外が発生しなかった場合に、現在のトランザクションを自動的にコミットするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-201">Specifies whether to automatically commit the current transaction if no unhandled exceptions occur.</span></span>|  
+|<span data-ttu-id="78d2f-202">TransactionScopeRequired</span><span class="sxs-lookup"><span data-stu-id="78d2f-202">TransactionScopeRequired</span></span>|<span data-ttu-id="78d2f-203">ブール型</span><span class="sxs-lookup"><span data-stu-id="78d2f-203">Boolean</span></span>|<span data-ttu-id="78d2f-204">操作がトランザクションを必要とするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-204">Specifies whether the operation requires a transaction.</span></span>|  
   
- 操作の `TransactionFlowAttribute` には、次のプロパティがあります。  
+ <span data-ttu-id="78d2f-205">操作の `TransactionFlowAttribute` には、次のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-205">On an operation, the `TransactionFlowAttribute` has the following properties.</span></span>  
   
-|名前|種類|説明|  
-|--------|--------|--------|  
-|TransactionFlowOption|<xref:System.ServiceModel.TransactionFlowOption> 列挙体の有効な値を含む文字列。|トランザクション フローが要求される範囲を指定します。|  
+|<span data-ttu-id="78d2f-206">名前</span><span class="sxs-lookup"><span data-stu-id="78d2f-206">Name</span></span>|<span data-ttu-id="78d2f-207">種類</span><span class="sxs-lookup"><span data-stu-id="78d2f-207">Type</span></span>|<span data-ttu-id="78d2f-208">説明</span><span class="sxs-lookup"><span data-stu-id="78d2f-208">Description</span></span>|  
+|----------|----------|-----------------|  
+|<span data-ttu-id="78d2f-209">TransactionFlowOption</span><span class="sxs-lookup"><span data-stu-id="78d2f-209">TransactionFlowOption</span></span>|<span data-ttu-id="78d2f-210"><xref:System.ServiceModel.TransactionFlowOption> 列挙体の有効な値を含む文字列。</span><span class="sxs-lookup"><span data-stu-id="78d2f-210">A string that contains a valid value of the <xref:System.ServiceModel.TransactionFlowOption> enumeration.</span></span>|<span data-ttu-id="78d2f-211">トランザクション フローが要求される範囲を指定します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-211">Specifies the extent to which transaction flow is required.</span></span>|  
   
-## トレース  
- トレースを使用すると、トランザクション アプリケーションにおけるエラーを監視および分析できます。  トレースは次の方法を使用して有効にできます。  
+## <a name="tracing"></a><span data-ttu-id="78d2f-212">トレース</span><span class="sxs-lookup"><span data-stu-id="78d2f-212">Tracing</span></span>  
+ <span data-ttu-id="78d2f-213">トレースを使用すると、トランザクション アプリケーションにおけるエラーを監視および分析できます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-213">Traces enable you to monitor and analyze faults in your transactional applications.</span></span> <span data-ttu-id="78d2f-214">トレースは次の方法を使用して有効にできます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-214">You can enable tracing using the following ways:</span></span>  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の標準トレース  
+-   <span data-ttu-id="78d2f-215">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の標準トレース</span><span class="sxs-lookup"><span data-stu-id="78d2f-215">Standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] tracing</span></span>  
   
-     このトレースは、通常の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションのトレースと同じものです。  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「[トレースの構成](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)」を参照してください。  
+     <span data-ttu-id="78d2f-216">このトレースは、通常の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションのトレースと同じものです。</span><span class="sxs-lookup"><span data-stu-id="78d2f-216">This type of tracing is the same as tracing any [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="78d2f-217">[トレースの構成](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-217"> [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).</span></span>  
   
--   WS\-AtomicTransaction トレース  
+-   <span data-ttu-id="78d2f-218">WS-AtomicTransaction トレース</span><span class="sxs-lookup"><span data-stu-id="78d2f-218">WS-AtomicTransaction tracing</span></span>  
   
-     WS\-AtomicTransaction トレースは、[WS\-AtomicTransaction 構成ユーティリティ \(wsatConfig.exe\)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)を使用して有効にすることができます。  このトレースでは、トランザクションの状態とシステム内の参加要素を把握できます。  内部のサービス モデル トレースも有効にするには、`HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` レジストリ キーを <xref:System.Diagnostics.SourceLevels> 列挙体の有効な値に設定します。  メッセージ ログは、他の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションと同じ方法で有効にできます。  
+     <span data-ttu-id="78d2f-219">Ws-atomictransaction トレースを使用して有効にすることができます、 [Ws-atomictransaction 構成ユーティリティ (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)です。</span><span class="sxs-lookup"><span data-stu-id="78d2f-219">WS-AtomicTransaction tracing can be enabled by using the [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md).</span></span> <span data-ttu-id="78d2f-220">このトレースでは、トランザクションの状態とシステム内の参加要素を把握できます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-220">Such tracing provides insight into the state of transactions and participants within a system.</span></span> <span data-ttu-id="78d2f-221">内部のサービス モデル トレースも有効にするには、`HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` レジストリ キーを <xref:System.Diagnostics.SourceLevels> 列挙体の有効な値に設定します。</span><span class="sxs-lookup"><span data-stu-id="78d2f-221">To also enable internal Service Model tracing, you can set the `HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` registry key to a valid value of the <xref:System.Diagnostics.SourceLevels> enumeration.</span></span> <span data-ttu-id="78d2f-222">メッセージ ログは、他の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションと同じ方法で有効にできます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-222">You can enable message logging in the same way as other [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] applications.</span></span>  
   
--   `System.Transactions` トレース  
+-   <span data-ttu-id="78d2f-223">`System.Transactions` トレース</span><span class="sxs-lookup"><span data-stu-id="78d2f-223">`System.Transactions` tracing</span></span>  
   
-     OleTransactions プロトコルを使用する場合、プロトコル メッセージはトレースできません。  <xref:System.Transactions> インフラストラクチャではトレースがサポートされるため \(OleTransactions を使用\)、ユーザーはトランザクションで発生したイベントを確認できます。  <xref:System.Transactions> アプリケーションのトレースを有効にするには、`App.config` 構成ファイルに次のコードを含めます。  
+     <span data-ttu-id="78d2f-224">OleTransactions プロトコルを使用する場合、プロトコル メッセージはトレースできません。</span><span class="sxs-lookup"><span data-stu-id="78d2f-224">When using the OleTransactions protocol, protocol messages cannot be traced.</span></span> <span data-ttu-id="78d2f-225"><xref:System.Transactions> インフラストラクチャではトレースがサポートされるため (OleTransactions を使用)、ユーザーはトランザクションで発生したイベントを確認できます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-225">The tracing support the <xref:System.Transactions> infrastructure provides (which uses OleTransactions) allows users to view events that occurred to the transactions.</span></span> <span data-ttu-id="78d2f-226"><xref:System.Transactions> アプリケーションのトレースを有効にするには、`App.config` 構成ファイルに次のコードを含めます。</span><span class="sxs-lookup"><span data-stu-id="78d2f-226">To enable tracing for a <xref:System.Transactions> application, include the following code in the `App.config` configuration file.</span></span>  
   
-    ```  
+    ```xml  
     <configuration>  
       <system.diagnostics>  
          <sources>  
@@ -125,9 +128,9 @@ caps.handback.revision: 8
     </configuration>  
     ```  
   
-     [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でも使用されるので、このコードにより、<xref:System.Transactions> のトレースも有効になります。  
+     <span data-ttu-id="78d2f-227">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャは [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でも使用されるので、このコードにより、<xref:System.Transactions> のトレースも有効になります。</span><span class="sxs-lookup"><span data-stu-id="78d2f-227">This also enables [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] tracing, as [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] also utilizes the <xref:System.Transactions> infrastructure.</span></span>  
   
-## 参照  
- [管理と診断](../../../../docs/framework/wcf/diagnostics/index.md)   
- [トレースの構成](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)   
- [WS\-AtomicTransaction 構成ユーティリティ \(wsatConfig.exe\)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+## <a name="see-also"></a><span data-ttu-id="78d2f-228">関連項目</span><span class="sxs-lookup"><span data-stu-id="78d2f-228">See Also</span></span>  
+ [<span data-ttu-id="78d2f-229">管理と診断</span><span class="sxs-lookup"><span data-stu-id="78d2f-229">Administration and Diagnostics</span></span>](../../../../docs/framework/wcf/diagnostics/index.md)  
+ [<span data-ttu-id="78d2f-230">トレースの構成</span><span class="sxs-lookup"><span data-stu-id="78d2f-230">Configuring Tracing</span></span>](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
+ [<span data-ttu-id="78d2f-231">WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe)</span><span class="sxs-lookup"><span data-stu-id="78d2f-231">WS-AtomicTransaction Configuration Utility (wsatConfig.exe)</span></span>](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)

@@ -1,96 +1,91 @@
 ---
-title: "Common Tasks Performed with Visual Basic Operators | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "operators [Visual Basic], logical"
-  - "operators [Visual Basic], string concatenation"
-  - "operators [Visual Basic], bitwise"
-  - "operators [Visual Basic], bit-shift"
-  - "operators [Visual Basic], arithmetic"
-  - "operators [Visual Basic], string comparison"
-  - "operators [Visual Basic], concatenation"
-  - "Visual Basic code, operators"
-  - "operators [Visual Basic], comparison"
-  - "operators [Visual Basic], short-circuiting logical"
+title: "Visual Basic の演算子で実行される一般的なタスク"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- operators [Visual Basic], logical
+- operators [Visual Basic], string concatenation
+- operators [Visual Basic], bitwise
+- operators [Visual Basic], bit-shift
+- operators [Visual Basic], arithmetic
+- operators [Visual Basic], string comparison
+- operators [Visual Basic], concatenation
+- Visual Basic code, operators
+- operators [Visual Basic], comparison
+- operators [Visual Basic], short-circuiting logical
 ms.assetid: d181afe5-fafa-460f-a13b-81203f6f4587
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 0886bc0365f37f964c4c4872a7b1624ec7388067
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Common Tasks Performed with Visual Basic Operators
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-演算子は、*オペランド*と呼ばれる 1 つまたは複数の式を使用してさまざまな演算を実行します。  
+# <a name="common-tasks-performed-with-visual-basic-operators"></a><span data-ttu-id="cbb79-102">Visual Basic の演算子で実行される一般的なタスク</span><span class="sxs-lookup"><span data-stu-id="cbb79-102">Common Tasks Performed with Visual Basic Operators</span></span>
+<span data-ttu-id="cbb79-103">演算子と呼ばれる 1 つまたは複数の式に関連する多くの一般的なタスクを実行する*オペランド*です。</span><span class="sxs-lookup"><span data-stu-id="cbb79-103">Operators perform many common tasks involving one or more expressions called *operands*.</span></span>  
   
-## 算術演算子とビット シフト演算子  
- 使用可能な算術演算子とビット シフト演算子を次の表に使します。  
+## <a name="arithmetic-and-bit-shift-tasks"></a><span data-ttu-id="cbb79-104">算術演算子とビット シフトのタスク</span><span class="sxs-lookup"><span data-stu-id="cbb79-104">Arithmetic and Bit-shift Tasks</span></span>  
+ <span data-ttu-id="cbb79-105">次の表は、使用可能な算術演算子とビット シフト操作をまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="cbb79-105">The following table summarizes the available arithmetic and bit-shift operations.</span></span>  
   
-|||  
-|-|-|  
-|目的|参照項目|  
-|一方の数値を他方の数値に足す|[\+ Operator](../../../../visual-basic/language-reference/operators/addition-operator.md)|  
-|一方の数値を他方の数値から引く|[\- Operator](../../../../visual-basic/language-reference/operators/subtraction-operator.md)|  
-|数値の符号を反転させる|[\- Operator](../../../../visual-basic/language-reference/operators/subtraction-operator.md)|  
-|一方の数値に他方の数値を掛ける|[\* Operator](../../../../visual-basic/language-reference/operators/multiplication-operator.md)|  
-|一方の数値を他方の数値で割る|[\/ Operator](../../../../visual-basic/language-reference/operators/floating-point-division-operator.md)|  
-|一方の数値を他方の数値で割ったときの商を求める \(剰余は求めない\)|[\\ Operator](../../../../visual-basic/language-reference/operators/integer-division-operator.md)|  
-|一方の数値を他方の数値で割ったときの剰余を求める \(商は求めない\)|[Mod 演算子](../../../../visual-basic/language-reference/operators/mod-operator.md)|  
-|一方の数値を他方の数値で累乗する|[^ Operator](../../../../visual-basic/language-reference/operators/exponentiation-operator.md)|  
-|数値のビット パターンを左にシフトする|[\<\< Operator](../../../../visual-basic/language-reference/operators/left-shift-operator.md)|  
-|数値のビット パターンを右にシフトする|[\>\> Operator](../../../../visual-basic/language-reference/operators/right-shift-operator.md)|  
+|<span data-ttu-id="cbb79-106">目的</span><span class="sxs-lookup"><span data-stu-id="cbb79-106">To</span></span>|<span data-ttu-id="cbb79-107">参照トピック</span><span class="sxs-lookup"><span data-stu-id="cbb79-107">See</span></span>|  
+|---|---|  
+|<span data-ttu-id="cbb79-108">別の 1 つの数値を追加します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-108">Add one numeric value to another</span></span>|[<span data-ttu-id="cbb79-109">+ 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-109">+ Operator</span></span>](../../../../visual-basic/language-reference/operators/addition-operator.md)|  
+|<span data-ttu-id="cbb79-110">別の 1 つの数値を減算します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-110">Subtract one numeric value from another</span></span>|[<span data-ttu-id="cbb79-111">-演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cbb79-111">- Operator (Visual Basic)</span></span>](../../../../visual-basic/language-reference/operators/subtraction-operator.md)|  
+|<span data-ttu-id="cbb79-112">数値の符号を反転します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-112">Reverse the sign of a numeric value</span></span>|[<span data-ttu-id="cbb79-113">-演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cbb79-113">- Operator (Visual Basic)</span></span>](../../../../visual-basic/language-reference/operators/subtraction-operator.md)|  
+|<span data-ttu-id="cbb79-114">別の 1 つの数値を乗算します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-114">Multiply one numeric value by another</span></span>|[<span data-ttu-id="cbb79-115">* 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-115">* Operator</span></span>](../../../../visual-basic/language-reference/operators/multiplication-operator.md)|  
+|<span data-ttu-id="cbb79-116">1 つの数値を別に分割します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-116">Divide one numeric value into another</span></span>|[<span data-ttu-id="cbb79-117">/演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cbb79-117">/ Operator (Visual Basic)</span></span>](../../../../visual-basic/language-reference/operators/floating-point-division-operator.md)|  
+|<span data-ttu-id="cbb79-118">1 (剰余) することがなくで除算して数値の商を見つける</span><span class="sxs-lookup"><span data-stu-id="cbb79-118">Find the quotient of one numeric value divided by another (without the remainder)</span></span>|[<span data-ttu-id="cbb79-119">\ 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cbb79-119">\ Operator (Visual Basic)</span></span>](../../../../visual-basic/language-reference/operators/integer-division-operator.md)|  
+|<span data-ttu-id="cbb79-120">数値の値が除算 (商) することがなく 1 つの残りの部分を検索します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-120">Find the remainder of one numeric value divided by another (without the quotient)</span></span>|[<span data-ttu-id="cbb79-121">Mod 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-121">Mod Operator</span></span>](../../../../visual-basic/language-reference/operators/mod-operator.md)|  
+|<span data-ttu-id="cbb79-122">別の電源を 1 つの数値を発生させる</span><span class="sxs-lookup"><span data-stu-id="cbb79-122">Raise one numeric value to the power of another</span></span>|[<span data-ttu-id="cbb79-123">^ 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-123">^ Operator</span></span>](../../../../visual-basic/language-reference/operators/exponentiation-operator.md)|  
+|<span data-ttu-id="cbb79-124">数値の値のビット パターンを左にシフトします。</span><span class="sxs-lookup"><span data-stu-id="cbb79-124">Shift the bit pattern of a numeric value to the left</span></span>|[<span data-ttu-id="cbb79-125"><\<演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-125"><\< Operator</span></span>](../../../../visual-basic/language-reference/operators/left-shift-operator.md)|  
+|<span data-ttu-id="cbb79-126">数値の値のビット パターンを右にシフトします。</span><span class="sxs-lookup"><span data-stu-id="cbb79-126">Shift the bit pattern of a numeric value to the right</span></span>|[<span data-ttu-id="cbb79-127">>> 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-127">>> Operator</span></span>](../../../../visual-basic/language-reference/operators/right-shift-operator.md)|  
   
-## 比較演算子  
- 使用可能な比較演算子を次の表に示します。  
+## <a name="comparison-tasks"></a><span data-ttu-id="cbb79-128">比較演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-128">Comparison Tasks</span></span>  
+ <span data-ttu-id="cbb79-129">次の表は、使用可能な比較操作をまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="cbb79-129">The following table summarizes the available comparison operations.</span></span>  
   
-|||  
-|-|-|  
-|目的|参照項目|  
-|2 つの値が等しいことを確認する|`=` 演算子 \([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)\)|  
-|2 つの値が等しくないことを確認する|`<>` 演算子 \([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)\)|  
-|一方の値が他方の値より小さいことを確認する|`<` 演算子 \([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)\)|  
-|一方の値が他方の値より大きいことを確認する|`>` 演算子 \([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)\)|  
-|一方の値が他方の値以下であることを確認する|`<=` 演算子 \([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)\)|  
-|一方の値が他方の値以上であることを確認する|`>=` 演算子 \([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)\)|  
-|2 つのオブジェクト変数が同じオブジェクト インスタンスを参照していることを確認する|[Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md)|  
-|2 つのオブジェクト変数が別のオブジェクト インスタンスを参照していることを確認する|[IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md)|  
-|オブジェクトが特定の型であることを確認する|[TypeOf Operator](../../../../visual-basic/language-reference/operators/typeof-operator.md)|  
+|<span data-ttu-id="cbb79-130">目的</span><span class="sxs-lookup"><span data-stu-id="cbb79-130">To</span></span>|<span data-ttu-id="cbb79-131">参照トピック</span><span class="sxs-lookup"><span data-stu-id="cbb79-131">See</span></span>|  
+|---|---|  
+|<span data-ttu-id="cbb79-132">2 つの値が等しいかどうかの判断します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-132">Determine whether two values are equal</span></span>|<span data-ttu-id="cbb79-133">`=`演算子 ([Visual Basic における比較演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span><span class="sxs-lookup"><span data-stu-id="cbb79-133">`=` Operator ([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span></span>|  
+|<span data-ttu-id="cbb79-134">2 つの値が等しくないかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-134">Determine whether two values are unequal</span></span>|<span data-ttu-id="cbb79-135">`<>`演算子 ([Visual Basic における比較演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span><span class="sxs-lookup"><span data-stu-id="cbb79-135">`<>` Operator ([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span></span>|  
+|<span data-ttu-id="cbb79-136">1 つの値が他よりも小さいかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-136">Determine whether one value is less than another</span></span>|<span data-ttu-id="cbb79-137">`<`演算子 ([Visual Basic における比較演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span><span class="sxs-lookup"><span data-stu-id="cbb79-137">`<` Operator ([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span></span>|  
+|<span data-ttu-id="cbb79-138">1 つの値が他よりも大きいかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-138">Determine whether one value is greater than another</span></span>|<span data-ttu-id="cbb79-139">`>`演算子 ([Visual Basic における比較演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span><span class="sxs-lookup"><span data-stu-id="cbb79-139">`>` Operator ([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span></span>|  
+|<span data-ttu-id="cbb79-140">1 つの値が別に少ないかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-140">Determine whether one value is less than or equal to another</span></span>|<span data-ttu-id="cbb79-141">`<=`演算子 ([Visual Basic における比較演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span><span class="sxs-lookup"><span data-stu-id="cbb79-141">`<=` Operator ([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span></span>|  
+|<span data-ttu-id="cbb79-142">1 つの値がより大きいかに等しいかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-142">Determine whether one value is greater than or equal to another</span></span>|<span data-ttu-id="cbb79-143">`>=`演算子 ([Visual Basic における比較演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span><span class="sxs-lookup"><span data-stu-id="cbb79-143">`>=` Operator ([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))</span></span>|  
+|<span data-ttu-id="cbb79-144">2 つのオブジェクト変数が同じオブジェクト インスタンスを参照しているかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-144">Determine whether two object variables refer to the same object instance</span></span>|[<span data-ttu-id="cbb79-145">Is 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-145">Is Operator</span></span>](../../../../visual-basic/language-reference/operators/is-operator.md)|  
+|<span data-ttu-id="cbb79-146">2 つのオブジェクト変数が別のオブジェクト インスタンスを参照しているかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-146">Determine whether two object variables refer to different object instances</span></span>|[<span data-ttu-id="cbb79-147">IsNot 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-147">IsNot Operator</span></span>](../../../../visual-basic/language-reference/operators/isnot-operator.md)|  
+|<span data-ttu-id="cbb79-148">オブジェクトが特定の種類がかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-148">Determine whether an object is of a specific type</span></span>|[<span data-ttu-id="cbb79-149">TypeOf 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-149">TypeOf Operator</span></span>](../../../../visual-basic/language-reference/operators/typeof-operator.md)|  
   
-## 連結演算子  
- 使用可能な連結演算子を次の表に示します。  
+## <a name="concatenation-tasks"></a><span data-ttu-id="cbb79-150">連結演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-150">Concatenation Tasks</span></span>  
+ <span data-ttu-id="cbb79-151">次の表は、使用可能な連結演算をまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="cbb79-151">The following table summarizes the available concatenation operations.</span></span>  
   
-|||  
-|-|-|  
-|目的|参照項目|  
-|複数の文字列を 1 つの文字列に結合する|`&` 演算子 \([Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)\)|  
-|数値を文字列値に結合する|`+` 演算子 \([Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)\)|  
+|<span data-ttu-id="cbb79-152">目的</span><span class="sxs-lookup"><span data-stu-id="cbb79-152">To</span></span>|<span data-ttu-id="cbb79-153">参照トピック</span><span class="sxs-lookup"><span data-stu-id="cbb79-153">See</span></span>|  
+|---|---|  
+|<span data-ttu-id="cbb79-154">複数の文字列を 1 つの文字列に結合します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-154">Join multiple strings into a single string</span></span>|<span data-ttu-id="cbb79-155">`&`演算子 ([Visual Basic の連結演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md))</span><span class="sxs-lookup"><span data-stu-id="cbb79-155">`&` Operator ([Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md))</span></span>|  
+|<span data-ttu-id="cbb79-156">数値の値を文字列値との結合します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-156">Join numeric values with string values</span></span>|<span data-ttu-id="cbb79-157">`+`演算子 ([Visual Basic の連結演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md))</span><span class="sxs-lookup"><span data-stu-id="cbb79-157">`+` Operator ([Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md))</span></span>|  
   
-## 論理演算子とビット処理演算子  
- 使用可能な論理演算子とビット処理演算子を次の表に示します。  
+## <a name="logical-and-bitwise-tasks"></a><span data-ttu-id="cbb79-158">論理/ビットごとのタスク</span><span class="sxs-lookup"><span data-stu-id="cbb79-158">Logical and Bitwise Tasks</span></span>  
+ <span data-ttu-id="cbb79-159">次の表は、使用可能な論理/ビット処理操作をまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="cbb79-159">The following table summarizes the available logical and bitwise operations.</span></span>  
   
-|||  
-|-|-|  
-|目的|参照項目|  
-|ブール値の論理否定を求める|[Not Operator](../../../../visual-basic/language-reference/operators/not-operator.md)|  
-|2 つのブール値の論理積を求める|[And Operator](../../../../visual-basic/language-reference/operators/and-operator.md)|  
-|2 つのブール値の包括的論理和を求める|[Or Operator](../../../../visual-basic/language-reference/operators/or-operator.md)|  
-|2 つのブール値の排他的論理和を求める|[Xor Operator](../../../../visual-basic/language-reference/operators/xor-operator.md)|  
-|2 つのブール値の論理積をショートサーキットで求める|[AndAlso Operator](../../../../visual-basic/language-reference/operators/andalso-operator.md)|  
-|2 つのブール値の包括的論理和をショート サーキットで求める|[OrElse Operator](../../../../visual-basic/language-reference/operators/orelse-operator.md)|  
-|2 つの整数値のビットごとの論理積を求める|[And Operator](../../../../visual-basic/language-reference/operators/and-operator.md)|  
-|2 つの整数値のビットごとの包括的論理和を求める|[Or Operator](../../../../visual-basic/language-reference/operators/or-operator.md)|  
-|2 つの整数値のビットごとの排他的論理和を求める|[Xor Operator](../../../../visual-basic/language-reference/operators/xor-operator.md)|  
-|整数値のビットごとの論理否定を求める|[Not Operator](../../../../visual-basic/language-reference/operators/not-operator.md)|  
+|<span data-ttu-id="cbb79-160">目的</span><span class="sxs-lookup"><span data-stu-id="cbb79-160">To</span></span>|<span data-ttu-id="cbb79-161">参照トピック</span><span class="sxs-lookup"><span data-stu-id="cbb79-161">See</span></span>|  
+|---|---|  
+|<span data-ttu-id="cbb79-162">ブール値で論理否定演算を実行します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-162">Perform logical negation on a Boolean value</span></span>|[<span data-ttu-id="cbb79-163">Not 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-163">Not Operator</span></span>](../../../../visual-basic/language-reference/operators/not-operator.md)|  
+|<span data-ttu-id="cbb79-164">2 つのブール値の論理積します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-164">Perform logical conjunction on two Boolean values</span></span>|[<span data-ttu-id="cbb79-165">And 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-165">And Operator</span></span>](../../../../visual-basic/language-reference/operators/and-operator.md)|  
+|<span data-ttu-id="cbb79-166">2 つのブール値に対する包括的論理和を実行します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-166">Perform inclusive logical disjunction on two Boolean values</span></span>|[<span data-ttu-id="cbb79-167">Or 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-167">Or Operator</span></span>](../../../../visual-basic/language-reference/operators/or-operator.md)|  
+|<span data-ttu-id="cbb79-168">2 つのブール値に対する排他的論理和演算を実行します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-168">Perform exclusive logical disjunction on two Boolean values</span></span>|[<span data-ttu-id="cbb79-169">Xor 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-169">Xor Operator</span></span>](../../../../visual-basic/language-reference/operators/xor-operator.md)|  
+|<span data-ttu-id="cbb79-170">2 つのブール値に対するショート サーキット論理積を実行します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-170">Perform short-circuited logical conjunction on two Boolean values</span></span>|[<span data-ttu-id="cbb79-171">AndAlso 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-171">AndAlso Operator</span></span>](../../../../visual-basic/language-reference/operators/andalso-operator.md)|  
+|<span data-ttu-id="cbb79-172">2 つのブール値に対するショート サーキットの包括的論理和を実行します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-172">Perform short-circuited inclusive logical disjunction on two Boolean values</span></span>|[<span data-ttu-id="cbb79-173">OrElse 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-173">OrElse Operator</span></span>](../../../../visual-basic/language-reference/operators/orelse-operator.md)|  
+|<span data-ttu-id="cbb79-174">2 つの整数値のビットごとの論理積を実行します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-174">Perform bit-by-bit logical conjunction on two integral values</span></span>|[<span data-ttu-id="cbb79-175">And 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-175">And Operator</span></span>](../../../../visual-basic/language-reference/operators/and-operator.md)|  
+|<span data-ttu-id="cbb79-176">2 つの整数値のビットごとの包括的論理和を実行します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-176">Perform bit-by-bit inclusive logical disjunction on two integral values</span></span>|[<span data-ttu-id="cbb79-177">Or 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-177">Or Operator</span></span>](../../../../visual-basic/language-reference/operators/or-operator.md)|  
+|<span data-ttu-id="cbb79-178">2 つの整数値のビットごとの排他的論理和演算を実行します。</span><span class="sxs-lookup"><span data-stu-id="cbb79-178">Perform bit-by-bit exclusive logical disjunction on two integral values</span></span>|[<span data-ttu-id="cbb79-179">Xor 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-179">Xor Operator</span></span>](../../../../visual-basic/language-reference/operators/xor-operator.md)|  
+|<span data-ttu-id="cbb79-180">整数値のビットごとの論理否定演算を実行します</span><span class="sxs-lookup"><span data-stu-id="cbb79-180">Perform bit-by-bit logical negation on an integral value</span></span>|[<span data-ttu-id="cbb79-181">Not 演算子</span><span class="sxs-lookup"><span data-stu-id="cbb79-181">Not Operator</span></span>](../../../../visual-basic/language-reference/operators/not-operator.md)|  
   
-## 参照  
- [Operators and Expressions](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)   
- [Operators Listed by Functionality](../../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+## <a name="see-also"></a><span data-ttu-id="cbb79-182">関連項目</span><span class="sxs-lookup"><span data-stu-id="cbb79-182">See Also</span></span>  
+ [<span data-ttu-id="cbb79-183">演算子および式</span><span class="sxs-lookup"><span data-stu-id="cbb79-183">Operators and Expressions</span></span>](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
+ [<span data-ttu-id="cbb79-184">機能別の演算子一覧</span><span class="sxs-lookup"><span data-stu-id="cbb79-184">Operators Listed by Functionality</span></span>](../../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)

@@ -1,56 +1,60 @@
 ---
-title: "直線と曲線のアンチエイリアシング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "アンチエイリアシング"
-  - "アンチエイリアシング, スムージング モード"
-  - "GDI+, アンチエイリアシング"
+title: "直線と曲線のアンチエイリアシング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- antialiasing
+- antialiasing [Windows Forms], smoothing modes
+- GDI+, antialiasing
 ms.assetid: 810da1a4-c136-4abf-88df-68e49efdd8d4
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d69d635fbdd8720937cd189826c1496b8126ddef
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 直線と曲線のアンチエイリアシング
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] を使用して直線を描画する場合は、直線の開始点と終了点を指定しますが、直線上のそれぞれのピクセルについての情報を指定する必要はありません。  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] とディスプレイ ドライバー ソフトウェアによって、特定の表示デバイス上で直線を表示するためにどのピクセルをオンにするかが決定されます。  
+# <a name="antialiasing-with-lines-and-curves"></a><span data-ttu-id="e06b0-102">直線と曲線のアンチエイリアシング</span><span class="sxs-lookup"><span data-stu-id="e06b0-102">Antialiasing with Lines and Curves</span></span>
+<span data-ttu-id="e06b0-103">使用すると[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]線を描画するには、開始点と、1 行の終了点を提供するが、行に個々 のピクセルに関する情報を指定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="e06b0-103">When you use [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] to draw a line, you provide the starting point and ending point of the line, but you do not have to provide any information about the individual pixels on the line.</span></span> [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]<span data-ttu-id="e06b0-104">どのピクセルはオンにする特定のディスプレイ デバイスで、行の表示を決定するディスプレイ ドライバー ソフトウェアと連携して動作します。</span><span class="sxs-lookup"><span data-stu-id="e06b0-104"> works in conjunction with the display driver software to determine which pixels will be turned on to show the line on a particular display device.</span></span>  
   
-## エイリアシング  
- 点 \(4, 2\) と点 \(16, 10\) を結ぶ赤い直線を表示するとします。  座標系の原点が左上隅で、座標系の単位がピクセルであると仮定します。  また、x 軸が右向き、y 軸が下向きであると仮定します。  多色の背景上に描画された、赤い直線を拡大した表示を次の図に示します。  
+## <a name="aliasing"></a><span data-ttu-id="e06b0-105">エイリアス</span><span class="sxs-lookup"><span data-stu-id="e06b0-105">Aliasing</span></span>  
+ <span data-ttu-id="e06b0-106">(4, 2) のポイントからは点 (16, 10) に移動するまっすぐ赤い線を検討してください。</span><span class="sxs-lookup"><span data-stu-id="e06b0-106">Consider the straight red line that goes from the point (4, 2) to the point (16, 10).</span></span> <span data-ttu-id="e06b0-107">座標系では、左上隅の原点とメジャーの単位がピクセルであることを想定しています。</span><span class="sxs-lookup"><span data-stu-id="e06b0-107">Assume the coordinate system has its origin in the upper-left corner and that the unit of measure is the pixel.</span></span> <span data-ttu-id="e06b0-108">X 軸がダウンして、右、y 軸を指していると想定されます。</span><span class="sxs-lookup"><span data-stu-id="e06b0-108">Also assume that the x-axis points to the right and the y-axis points down.</span></span> <span data-ttu-id="e06b0-109">次の図は、色付きの背景に描画される赤色の線の拡大表示を示します。</span><span class="sxs-lookup"><span data-stu-id="e06b0-109">The following illustration shows an enlarged view of the red line drawn on a multicolored background.</span></span>  
   
- ![線 &#40;アンチエイリアシングなし&#41;](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art33.png "AboutGdip02\_Art33")  
+ <span data-ttu-id="e06b0-110">![行、(アンチエイリアシングなし)](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art33.gif "AboutGdip02_Art33")</span><span class="sxs-lookup"><span data-stu-id="e06b0-110">![Line, no antialiasing](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art33.gif "AboutGdip02_Art33")</span></span>  
   
- 直線のレンダリングに使用された赤いピクセルは不透明です。  直線上には、部分的に透明なピクセルはありません。  直線をこの方法でレンダリングすると、直線の輪郭がぎざぎざになり、細かい階段状になった直線が表示されます。  このように階段状の表示を使用して直線を表現する手法をエイリアシングと呼びます。階段状の表示は、理論上の直線です。  
+ <span data-ttu-id="e06b0-111">行を表示するために使用される赤いピクセルは不透明です。</span><span class="sxs-lookup"><span data-stu-id="e06b0-111">The red pixels used to render the line are opaque.</span></span> <span data-ttu-id="e06b0-112">行には、部分的に透明はありません。</span><span class="sxs-lookup"><span data-stu-id="e06b0-112">There are no partially transparent pixels in the line.</span></span> <span data-ttu-id="e06b0-113">この種類の行の表示は、行、ギザギザと行では、階段します。</span><span class="sxs-lookup"><span data-stu-id="e06b0-113">This type of line rendering gives the line a jagged appearance, and the line looks somewhat like a staircase.</span></span> <span data-ttu-id="e06b0-114">この手法を表す線、階段のエイリアスと呼びます階段は、理論上の行のエイリアスです。</span><span class="sxs-lookup"><span data-stu-id="e06b0-114">This technique of representing a line with a staircase is called aliasing; the staircase is an alias for the theoretical line.</span></span>  
   
-## アンチエイリアシング  
- エイリアシングよりも高度な直線のレンダリング手法では、不透明なピクセルと共に部分的に透明なピクセルを使用します。  各ピクセルは、ピクセルから直線までの距離に応じて、純色の赤または赤と背景色をブレンドした色に設定されます。  このようなレンダリングをアンチエイリアシングと呼び、この手法で生成される直線は、人間の目にはより滑らかに映ります。  アンチエイリアシングで直線を生成するために、特定のピクセルと背景がどのようにブレンドされるかを次の図に示します。  
+## <a name="antialiasing"></a><span data-ttu-id="e06b0-115">アンチエイリアシング</span><span class="sxs-lookup"><span data-stu-id="e06b0-115">Antialiasing</span></span>  
+ <span data-ttu-id="e06b0-116">不透明なピクセルおよび半透明なピクセルを使用して行を表示するためのより高度な手法が含まれます。</span><span class="sxs-lookup"><span data-stu-id="e06b0-116">A more sophisticated technique for rendering a line involves using partially transparent pixels along with opaque pixels.</span></span> <span data-ttu-id="e06b0-117">ピクセルが、純粋な赤に設定または赤の背景色をブレンド、閉じる方法によっては行にします。</span><span class="sxs-lookup"><span data-stu-id="e06b0-117">Pixels are set to pure red, or to some blend of red and the background color, depending on how close they are to the line.</span></span> <span data-ttu-id="e06b0-118">この種類のレンダリングのアンチエイリアシングと人間の目がより滑らかとして認識するための行の結果します。</span><span class="sxs-lookup"><span data-stu-id="e06b0-118">This type of rendering is called antialiasing and results in a line that the human eye perceives as more smooth.</span></span> <span data-ttu-id="e06b0-119">次の図は、アンチ エイリアス処理された行を生成するためにバック グラウンドで特定のピクセルを統合する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e06b0-119">The following illustration shows how certain pixels are blended with the background to produce an antialiased line.</span></span>  
   
- ![アンチエイリアシング線](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art34.png "AboutGdip02\_Art34")  
+ <span data-ttu-id="e06b0-120">![アンチエイリアシング線](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art34.gif "AboutGdip02_Art34")</span><span class="sxs-lookup"><span data-stu-id="e06b0-120">![Antialiasing a Line](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art34.gif "AboutGdip02_Art34")</span></span>  
   
- アンチエイリアシング \(平滑化\) は、曲線にも適用できます。  平滑化された楕円を拡大した表示を次の図に示します。  
+ <span data-ttu-id="e06b0-121">スムージングとも呼ばれます (アンチエイリアシング) は、曲線にも適用できます。</span><span class="sxs-lookup"><span data-stu-id="e06b0-121">Antialiasing, also called smoothing, can also be applied to curves.</span></span> <span data-ttu-id="e06b0-122">次の図は、平滑化された楕円の拡大表示を示します。</span><span class="sxs-lookup"><span data-stu-id="e06b0-122">The following illustration shows an enlarged view of a smoothed ellipse.</span></span>  
   
- ![アンチエイリアシング曲線](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art35.png "AboutGdip02\_Art35")  
+ <span data-ttu-id="e06b0-123">![アンチエイリアシング曲線](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art35.gif "AboutGdip02_Art35")</span><span class="sxs-lookup"><span data-stu-id="e06b0-123">![Antialiasing Curves](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art35.gif "AboutGdip02_Art35")</span></span>  
   
- 実サイズの同じ楕円にアンチエイリアシングを適用していない例と、アンチエイリアシングを適用した例を次の図に示します。  
+ <span data-ttu-id="e06b0-124">次の図は、実際のサイズ、1 回 (アンチエイリアシング) と 1 回 (アンチエイリアシング) で同じ楕円を示します。</span><span class="sxs-lookup"><span data-stu-id="e06b0-124">The following illustration shows the same ellipse in its actual size, once without antialiasing and once with antialiasing.</span></span>  
   
- ![アンチエイリアシング例](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art36.gif "AboutGdip02\_Art36")  
+ <span data-ttu-id="e06b0-125">![アンチエイリアシング例](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art36.gif "AboutGdip02_Art36")</span><span class="sxs-lookup"><span data-stu-id="e06b0-125">![Antialiasing example](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art36.gif "AboutGdip02_Art36")</span></span>  
   
- アンチエイリアシングを適用した直線および曲線を描画するには、<xref:System.Drawing.Graphics> クラスのインスタンスを作成し、その <xref:System.Drawing.Graphics.SmoothingMode%2A> プロパティを <xref:System.Drawing.Drawing2D.SmoothingMode> または <xref:System.Drawing.Drawing2D.SmoothingMode> に設定します。  次に、同じ <xref:System.Drawing.Graphics> クラスのいずれかの描画メソッドを呼び出します。  
+ <span data-ttu-id="e06b0-126">直線と曲線のアンチエイリアシングの使用を描画するには、インスタンスを作成する、<xref:System.Drawing.Graphics>クラスし、設定、<xref:System.Drawing.Graphics.SmoothingMode%2A>プロパティを<xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias>または<xref:System.Drawing.Drawing2D.SmoothingMode.HighQuality>です。</span><span class="sxs-lookup"><span data-stu-id="e06b0-126">To draw lines and curves that use antialiasing, create an instance of the <xref:System.Drawing.Graphics> class and set its <xref:System.Drawing.Graphics.SmoothingMode%2A> property to <xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias> or <xref:System.Drawing.Drawing2D.SmoothingMode.HighQuality>.</span></span> <span data-ttu-id="e06b0-127">描画メソッドの 1 つを同じに呼び出して<xref:System.Drawing.Graphics>クラスです。</span><span class="sxs-lookup"><span data-stu-id="e06b0-127">Then call one of the drawing methods of that same <xref:System.Drawing.Graphics> class.</span></span>  
   
  [!code-csharp[LinesCurvesAndShapes#81](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#81)]
  [!code-vb[LinesCurvesAndShapes#81](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#81)]  
   
-## 参照  
- <xref:System.Drawing.Drawing2D.SmoothingMode?displayProperty=fullName>   
- [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
- [方法 : テキストでのアンチエイリアシングの使用](../../../../docs/framework/winforms/advanced/how-to-use-antialiasing-with-text.md)
+## <a name="see-also"></a><span data-ttu-id="e06b0-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="e06b0-128">See Also</span></span>  
+ <xref:System.Drawing.Drawing2D.SmoothingMode?displayProperty=nameWithType>  
+ [<span data-ttu-id="e06b0-129">直線、曲線、および図形</span><span class="sxs-lookup"><span data-stu-id="e06b0-129">Lines, Curves, and Shapes</span></span>](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [<span data-ttu-id="e06b0-130">方法: テキストでのアンチエイリアシングの使用</span><span class="sxs-lookup"><span data-stu-id="e06b0-130">How to: Use Antialiasing with Text</span></span>](../../../../docs/framework/winforms/advanced/how-to-use-antialiasing-with-text.md)

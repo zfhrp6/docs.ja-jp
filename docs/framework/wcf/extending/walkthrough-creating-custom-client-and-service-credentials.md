@@ -1,129 +1,135 @@
 ---
-title: "チュートリアル: カスタム クライアントおよびサービスの資格情報を作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "チュートリアル: カスタム クライアントおよびサービスの資格情報を作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 2b5ba5c3-0c6c-48e9-9e46-54acaec443ba
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6eae3a91856feff83e8e199cf552a987d99d5ba2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル: カスタム クライアントおよびサービスの資格情報を作成する
-このトピックでは、クライアントおよびサービスにカスタム資格情報を実装する方法と、これをアプリケーション コードから使用する方法について説明します。  
+# <a name="walkthrough-creating-custom-client-and-service-credentials"></a><span data-ttu-id="0c899-102">チュートリアル: カスタム クライアントおよびサービスの資格情報を作成する</span><span class="sxs-lookup"><span data-stu-id="0c899-102">Walkthrough: Creating Custom Client and Service Credentials</span></span>
+<span data-ttu-id="0c899-103">このトピックでは、クライアントおよびサービスにカスタム資格情報を実装する方法と、これをアプリケーション コードから使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0c899-103">This topic shows how to implement custom client and service credentials and how to use custom credentials from application code.</span></span>  
   
-## 資格情報拡張クラス  
- <xref:System.ServiceModel.Description.ClientCredentials> クラスおよび <xref:System.ServiceModel.Description.ServiceCredentials> クラスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] セキュリティ拡張のメイン エントリ ポイントです。これらの資格情報クラスでは、アプリケーション コードから資格情報を設定し、資格情報の種類をセキュリティ トークンに変換する API を提供します \(*"セキュリティ トークン"* とは、SOAP メッセージ内の資格情報を送信するために使用される形式です\)。これらの資格情報クラスの役割は、次の 2 つの領域に分けることができます。  
+## <a name="credentials-extensibility-classes"></a><span data-ttu-id="0c899-104">資格情報拡張クラス</span><span class="sxs-lookup"><span data-stu-id="0c899-104">Credentials Extensibility Classes</span></span>  
+ <span data-ttu-id="0c899-105"><xref:System.ServiceModel.Description.ClientCredentials> クラスおよび <xref:System.ServiceModel.Description.ServiceCredentials> クラスは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] セキュリティ拡張のメイン エントリ ポイントです。</span><span class="sxs-lookup"><span data-stu-id="0c899-105">The <xref:System.ServiceModel.Description.ClientCredentials> and <xref:System.ServiceModel.Description.ServiceCredentials> classes are the main entry points to the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] security extensibility.</span></span> <span data-ttu-id="0c899-106">これらの資格情報クラスでは、アプリケーション コードから資格情報を設定し、資格情報の種類をセキュリティ トークンに変換する API を提供します </span><span class="sxs-lookup"><span data-stu-id="0c899-106">These credentials classes provide the APIs that enable application code to set credentials information and to convert credential types into security tokens.</span></span> <span data-ttu-id="0c899-107">(*セキュリティ トークン*は SOAP メッセージ内の資格情報を送信するためのフォームです)。これらの資格情報クラスの役割は、次の 2 つの領域に分けることができます。</span><span class="sxs-lookup"><span data-stu-id="0c899-107">(*Security tokens* are the form used to transmit credential information inside SOAP messages.) The responsibilities of these credentials classes can be divided into two areas:</span></span>  
   
--   アプリケーションで資格情報を設定するための API を提供します。  
+-   <span data-ttu-id="0c899-108">アプリケーションで資格情報を設定するための API を提供します。</span><span class="sxs-lookup"><span data-stu-id="0c899-108">Provide the APIs for applications to set credentials information.</span></span>  
   
--   <xref:System.IdentityModel.Selectors.SecurityTokenManager> 実装のファクトリとして動作します。  
+-   <span data-ttu-id="0c899-109"><xref:System.IdentityModel.Selectors.SecurityTokenManager> 実装のファクトリとして動作します。</span><span class="sxs-lookup"><span data-stu-id="0c899-109">Perform as a factory for <xref:System.IdentityModel.Selectors.SecurityTokenManager> implementations.</span></span>  
   
- <xref:System.ServiceModel.Description.ClientCredentials> クラスと <xref:System.ServiceModel.Description.ServiceCredentials> クラスは、どちらも <xref:System.IdentityModel.Selectors.SecurityTokenManager> を返すためのコントラクトを定義する <xref:System.ServiceModel.Security.SecurityCredentialsManager> 抽象クラスから継承されます。  
+ <span data-ttu-id="0c899-110"><xref:System.ServiceModel.Description.ClientCredentials> クラスと <xref:System.ServiceModel.Description.ServiceCredentials> クラスは、どちらも <xref:System.ServiceModel.Security.SecurityCredentialsManager> を返すためのコントラクトを定義する <xref:System.IdentityModel.Selectors.SecurityTokenManager> 抽象クラスから継承されます。</span><span class="sxs-lookup"><span data-stu-id="0c899-110">Both the <xref:System.ServiceModel.Description.ClientCredentials> and the <xref:System.ServiceModel.Description.ServiceCredentials> classes inherit from the abstract <xref:System.ServiceModel.Security.SecurityCredentialsManager> class that defines the contract for returning the <xref:System.IdentityModel.Selectors.SecurityTokenManager>.</span></span>  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] 資格情報クラス、およびこれらのクラスが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ アーキテクチャに組み込まれるしくみの詳細については、「[Security Architecture](http://msdn.microsoft.com/ja-jp/16593476-d36a-408d-808c-ae6fd483e28f)」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0c899-111">資格情報クラスとにどのように適合する、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]セキュリティ アーキテクチャを参照してください[セキュリティ アーキテクチャ](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)です。</span><span class="sxs-lookup"><span data-stu-id="0c899-111"> the credentials classes and how they fit into the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] security architecture, see [Security Architecture](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f).</span></span>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で提供される既定の実装では、システム指定の資格情報の種類をサポートし、これらの資格情報の種類を処理できるセキュリティ トークン マネージャーを作成します。  
+ <span data-ttu-id="0c899-112">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] で提供される既定の実装では、システム指定の資格情報の種類をサポートし、これらの資格情報の種類を処理できるセキュリティ トークン マネージャーを作成します。</span><span class="sxs-lookup"><span data-stu-id="0c899-112">The default implementations provided in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] support the system-provided credential types and create a security token manager that is capable of handling those credentials types.</span></span>  
   
-## カスタマイズする理由  
- クライアントまたはサービスの資格情報クラスをカスタマイズする場合、いくつかの理由があります。最大の理由として、システム指定の資格情報の種類の処理について、特に以下の必要性が生じたために [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の既定のセキュリティ動作を変更する必要があることが挙げられます。  
+## <a name="reasons-to-customize"></a><span data-ttu-id="0c899-113">カスタマイズする理由</span><span class="sxs-lookup"><span data-stu-id="0c899-113">Reasons to Customize</span></span>  
+ <span data-ttu-id="0c899-114">クライアントまたはサービスの資格情報クラスをカスタマイズする場合、いくつかの理由があります。</span><span class="sxs-lookup"><span data-stu-id="0c899-114">There are multiple reasons for customizing either client or service credential classes.</span></span> <span data-ttu-id="0c899-115">最大の理由として、システム指定の資格情報の種類の処理について、特に以下の必要性が生じたために [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の既定のセキュリティ動作を変更する必要があることが挙げられます。</span><span class="sxs-lookup"><span data-stu-id="0c899-115">Foremost is the requirement to change the default [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] security behavior with regard to handling system-provided credential types, especially for the following reasons:</span></span>  
   
--   他の拡張ポイントを使用した場合には不可能な変更  
+-   <span data-ttu-id="0c899-116">他の拡張ポイントを使用した場合には不可能な変更</span><span class="sxs-lookup"><span data-stu-id="0c899-116">Changes that are not possible using other extensibility points.</span></span>  
   
--   新しい資格情報の種類の追加  
+-   <span data-ttu-id="0c899-117">新しい資格情報の種類の追加</span><span class="sxs-lookup"><span data-stu-id="0c899-117">Adding new credential types.</span></span>  
   
--   新しいカスタム セキュリティ トークンの種類の追加  
+-   <span data-ttu-id="0c899-118">新しいカスタム セキュリティ トークンの種類の追加</span><span class="sxs-lookup"><span data-stu-id="0c899-118">Adding new custom security token types.</span></span>  
   
- このトピックでは、カスタムのクライアント資格情報およびサービス資格情報を実装する方法と、これをアプリケーション コードから使用する方法について説明します。  
+ <span data-ttu-id="0c899-119">このトピックでは、カスタムのクライアント資格情報およびサービス資格情報を実装する方法と、これをアプリケーション コードから使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0c899-119">This topic describes how to implement custom client and service credentials and how to use them from application code.</span></span>  
   
-## 最初の手順  
- 資格情報をカスタマイズする理由は、資格情報の準備、セキュリティ トークンのシリアル化、または認証に関する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の動作を変更することにあるため、カスタム資格情報クラスの作成は最初の手順にすぎません。このセクションの他のトピックでは、カスタムのシリアライザーと認証システムを作成する方法について説明します。カスタム資格情報クラスの作成は、このような観点からすると、一連のトピックの最初の手順になります。これに続く処理 \(カスタムのシリアライザーおよび認証システムの作成\) は、カスタム資格情報の作成後にのみ可能になります。このトピックに基づく他のトピックには、次のものがあります。  
+## <a name="first-in-a-series"></a><span data-ttu-id="0c899-120">最初の手順</span><span class="sxs-lookup"><span data-stu-id="0c899-120">First in a Series</span></span>  
+ <span data-ttu-id="0c899-121">資格情報をカスタマイズする理由は、資格情報の準備、セキュリティ トークンのシリアル化、または認証に関する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の動作を変更することにあるため、カスタム資格情報クラスの作成は最初の手順にすぎません。</span><span class="sxs-lookup"><span data-stu-id="0c899-121">Creating a custom credentials class is only the first step, because the reason for customizing credentials is to change [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] behavior regarding credentials provisioning, security token serialization, or authentication.</span></span> <span data-ttu-id="0c899-122">このセクションの他のトピックでは、カスタムのシリアライザーと認証システムを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0c899-122">Other topics in this section describe how to create custom serializers and authenticators.</span></span> <span data-ttu-id="0c899-123">カスタム資格情報クラスの作成は、このような観点からすると、一連のトピックの最初の手順になります。</span><span class="sxs-lookup"><span data-stu-id="0c899-123">In this regard, creating custom credential class is the first topic in the series.</span></span> <span data-ttu-id="0c899-124">これに続く処理 (カスタムのシリアライザーおよび認証システムの作成) は、カスタム資格情報の作成後にのみ可能になります。</span><span class="sxs-lookup"><span data-stu-id="0c899-124">Subsequent actions (creating custom serializers and authenticators) can be done only after creating custom credentials.</span></span> <span data-ttu-id="0c899-125">このトピックに基づく他のトピックには、次のものがあります。</span><span class="sxs-lookup"><span data-stu-id="0c899-125">Additional topics that build upon this topic include:</span></span>  
   
--   [方法 : カスタム セキュリティ トークン プロバイダーを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
+-   [<span data-ttu-id="0c899-126">方法: カスタム セキュリティ トークン プロバイダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="0c899-126">How to: Create a Custom Security Token Provider</span></span>](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
   
--   [方法 : カスタム セキュリティ トークン認証システムを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
+-   [<span data-ttu-id="0c899-127">方法: カスタム セキュリティ トークン認証システムを作成します。</span><span class="sxs-lookup"><span data-stu-id="0c899-127">How to: Create a Custom Security Token Authenticator</span></span>](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
   
--   [方法 : カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md).  
+-   <span data-ttu-id="0c899-128">[方法: カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)です。</span><span class="sxs-lookup"><span data-stu-id="0c899-128">[How to: Create a Custom Token](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md).</span></span>  
   
-## 手順  
+## <a name="procedures"></a><span data-ttu-id="0c899-129">手順</span><span class="sxs-lookup"><span data-stu-id="0c899-129">Procedures</span></span>  
   
-#### カスタム クライアント資格情報を実装するには  
+#### <a name="to-implement-custom-client-credentials"></a><span data-ttu-id="0c899-130">カスタム クライアント資格情報を実装するには</span><span class="sxs-lookup"><span data-stu-id="0c899-130">To implement custom client credentials</span></span>  
   
-1.  <xref:System.ServiceModel.Description.ClientCredentials> クラスから派生する新しいクラスを定義します。  
+1.  <span data-ttu-id="0c899-131"><xref:System.ServiceModel.Description.ClientCredentials> クラスから派生する新しいクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="0c899-131">Define a new class derived from the <xref:System.ServiceModel.Description.ClientCredentials> class.</span></span>  
   
-2.  省略可能。新しい資格情報の種類に新しいメソッドまたはプロパティを追加します。新しい資格情報の種類を追加しない場合は、この手順を省略します。次の例では、`CreditCardNumber` プロパティを追加します。  
+2.  <span data-ttu-id="0c899-132">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0c899-132">Optional.</span></span> <span data-ttu-id="0c899-133">新しい資格情報の種類に新しいメソッドまたはプロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="0c899-133">Add new methods or properties for new credential types.</span></span> <span data-ttu-id="0c899-134">新しい資格情報の種類を追加しない場合は、この手順を省略します。</span><span class="sxs-lookup"><span data-stu-id="0c899-134">If you do not add new credential types, skip this step.</span></span> <span data-ttu-id="0c899-135">次の例では、`CreditCardNumber` プロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="0c899-135">The following example adds a `CreditCardNumber` property.</span></span>  
   
-3.  <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> メソッドをオーバーライドします。カスタム クライアント資格情報が使用されると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ インフラストラクチャによってこのメソッドが自動的に呼び出されます。このメソッドは、<xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスの実装のインスタンスを作成して返す役割を担います。  
+3.  <span data-ttu-id="0c899-136"><xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="0c899-136">Override the <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> method.</span></span> <span data-ttu-id="0c899-137">カスタム クライアント資格情報が使用されると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティ インフラストラクチャによってこのメソッドが自動的に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="0c899-137">This method is automatically called by [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] security infrastructure when the custom client credential is used.</span></span> <span data-ttu-id="0c899-138">このメソッドは、<xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスの実装のインスタンスを作成して返す役割を担います。</span><span class="sxs-lookup"><span data-stu-id="0c899-138">This method is responsible for creating and returning an instance of an implementation of the <xref:System.IdentityModel.Selectors.SecurityTokenManager> class.</span></span>  
   
     > [!IMPORTANT]
-    >  カスタム セキュリティ トークン マネージャーを作成するために、<xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> メソッドがオーバーライドされることに注意する必要があります。<xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> から派生したセキュリティ トークン マネージャーは、実際のセキュリティ トークンを作成するために、<xref:System.IdentityModel.Selectors.SecurityTokenProvider> から派生したカスタム セキュリティ トークン プロバイダーを返す必要があります。このパターンに従ってセキュリティ トークンを作成しないと、<xref:System.ServiceModel.ChannelFactory> オブジェクトがキャッシュされたとき \(これは、WCF クライアント プロキシの既定の動作です\)、権限の昇格攻撃を受ける可能性があり、アプリケーションが正常に機能しない場合があります。カスタム資格情報オブジェクトは、<xref:System.ServiceModel.ChannelFactory> の一部としてキャッシュされます。ただし、カスタム <xref:System.IdentityModel.Selectors.SecurityTokenManager> がすべての呼び出し時に作成され、これにより、トークン作成ロジックが <xref:System.IdentityModel.Selectors.SecurityTokenManager> にある限り、セキュリティの脅威が軽減されます。  
+    >  <span data-ttu-id="0c899-139">カスタム セキュリティ トークン マネージャーを作成するために、<xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> メソッドがオーバーライドされることに注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0c899-139">It is important to note that the <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> method is overridden to create a custom security token manager.</span></span> <span data-ttu-id="0c899-140"><xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> から派生したセキュリティ トークン マネージャーは、実際のセキュリティ トークンを作成するために、<xref:System.IdentityModel.Selectors.SecurityTokenProvider> から派生したカスタム セキュリティ トークン プロバイダーを返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="0c899-140">The security token manager, derived from <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>, must return a custom security token provider, derived from <xref:System.IdentityModel.Selectors.SecurityTokenProvider>, to create the actual security token.</span></span> <span data-ttu-id="0c899-141">このパターンに従ってセキュリティ トークンを作成しないと、<xref:System.ServiceModel.ChannelFactory> オブジェクトがキャッシュされたとき (これは、WCF クライアント プロキシの既定の動作です)、権限の昇格攻撃を受ける可能性があり、アプリケーションが正常に機能しない場合があります。</span><span class="sxs-lookup"><span data-stu-id="0c899-141">If you do not follow this pattern for creating security tokens, your application may function incorrectly when <xref:System.ServiceModel.ChannelFactory> objects are cached (which is the default behavior for WCF client proxies), potentially resulting in an elevation of privilege attack.</span></span> <span data-ttu-id="0c899-142">カスタム資格情報オブジェクトは、<xref:System.ServiceModel.ChannelFactory> の一部としてキャッシュされます。</span><span class="sxs-lookup"><span data-stu-id="0c899-142">The custom credential object is cached as part of the <xref:System.ServiceModel.ChannelFactory>.</span></span> <span data-ttu-id="0c899-143">ただし、カスタム <xref:System.IdentityModel.Selectors.SecurityTokenManager> がすべての呼び出し時に作成され、これにより、トークン作成ロジックが <xref:System.IdentityModel.Selectors.SecurityTokenManager> にある限り、セキュリティの脅威が軽減されます。</span><span class="sxs-lookup"><span data-stu-id="0c899-143">However, the custom <xref:System.IdentityModel.Selectors.SecurityTokenManager> is created on every invocation, which mitigates the security threat as long as the token creation logic is placed in the <xref:System.IdentityModel.Selectors.SecurityTokenManager>.</span></span>  
   
-4.  <xref:System.ServiceModel.Description.ClientCredentials.CloneCore%2A> メソッドをオーバーライドします。  
+4.  <span data-ttu-id="0c899-144"><xref:System.ServiceModel.Description.ClientCredentials.CloneCore%2A> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="0c899-144">Override the <xref:System.ServiceModel.Description.ClientCredentials.CloneCore%2A> method.</span></span>  
   
      [!code-csharp[c_CustomCredentials#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#1)]
      [!code-vb[c_CustomCredentials#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/client/client.vb#1)]  
   
-#### カスタム クライアント セキュリティ トークン マネージャーを実装するには  
+#### <a name="to-implement-a-custom-client-security-token-manager"></a><span data-ttu-id="0c899-145">カスタム クライアント セキュリティ トークン マネージャーを実装するには</span><span class="sxs-lookup"><span data-stu-id="0c899-145">To implement a custom client security token manager</span></span>  
   
-1.  <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> から派生する新しいクラスを定義します。  
+1.  <span data-ttu-id="0c899-146"><xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> から派生する新しいクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="0c899-146">Define a new class derived from <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>.</span></span>  
   
-2.  省略可能。カスタム <xref:System.IdentityModel.Selectors.SecurityTokenProvider> 実装を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> メソッドをオーバーライドします。カスタム セキュリティ トークン プロバイダー[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[方法 : カスタム セキュリティ トークン プロバイダーを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)」を参照してください。  
+2.  <span data-ttu-id="0c899-147">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0c899-147">Optional.</span></span> <span data-ttu-id="0c899-148">カスタム <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> 実装を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenProvider> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="0c899-148">Override the <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> method if a custom <xref:System.IdentityModel.Selectors.SecurityTokenProvider> implementation must be created.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0c899-149">カスタム セキュリティ トークン プロバイダーを参照してください[する方法: カスタム セキュリティ トークン プロバイダーを作成](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)です。</span><span class="sxs-lookup"><span data-stu-id="0c899-149"> custom security token providers, see [How to: Create a Custom Security Token Provider](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md).</span></span>  
   
-3.  省略可能。カスタム <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> 実装を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29> メソッドをオーバーライドします。カスタム セキュリティ トークン認証システム[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[方法 : カスタム セキュリティ トークン認証システムを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)」を参照してください。  
+3.  <span data-ttu-id="0c899-150">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0c899-150">Optional.</span></span> <span data-ttu-id="0c899-151">カスタム <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29> 実装を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="0c899-151">Override the <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29> method if a custom <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> implementation must be created.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0c899-152">カスタム セキュリティ トークン認証システムを参照してください[する方法: カスタム セキュリティ トークン認証システムを作成](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)です。</span><span class="sxs-lookup"><span data-stu-id="0c899-152"> custom security token authenticators, see [How to: Create a Custom Security Token Authenticator](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md).</span></span>  
   
-4.  省略可能。カスタム <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%2A> メソッドをオーバーライドします。カスタム セキュリティ トークンおよびカスタム セキュリティ トークン シリアライザー[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[方法 : カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)」を参照してください。  
+4.  <span data-ttu-id="0c899-153">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0c899-153">Optional.</span></span> <span data-ttu-id="0c899-154">カスタム <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%2A> を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenSerializer> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="0c899-154">Override the <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%2A> method if a custom <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> must be created.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0c899-155">カスタム セキュリティ トークンと、カスタム セキュリティ トークン シリアライザーを参照してください。[する方法: カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)です。</span><span class="sxs-lookup"><span data-stu-id="0c899-155"> custom security tokens and custom security token serializers, see [How to: Create a Custom Token](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md).</span></span>  
   
      [!code-csharp[c_CustomCredentials#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#2)]
      [!code-vb[c_CustomCredentials#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/client/client.vb#2)]  
   
-#### アプリケーション コードによるカスタム クライアント資格情報を使用するには  
+#### <a name="to-use-a-custom-client-credentials-from-application-code"></a><span data-ttu-id="0c899-156">アプリケーション コードによるカスタム クライアント資格情報を使用するには</span><span class="sxs-lookup"><span data-stu-id="0c899-156">To use a custom client credentials from application code</span></span>  
   
-1.  サービス インターフェイスを表す、生成されたクライアントのインスタンスを作成するか、または通信の対象となるサービスを指す <xref:System.ServiceModel.ChannelFactory> のインスタンスを作成します。  
+1.  <span data-ttu-id="0c899-157">サービス インターフェイスを表す、生成されたクライアントのインスタンスを作成するか、または通信の対象となるサービスを指す <xref:System.ServiceModel.ChannelFactory> のインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="0c899-157">Either create an instance of the generated client that represents the service interface, or create an instance of the <xref:System.ServiceModel.ChannelFactory> pointing to a service you want to communicate with.</span></span>  
   
-2.  <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> コレクションから、システム指定のクライアント資格情報の動作を削除します。このコレクションには、<xref:System.ServiceModel.ChannelFactory.Endpoint%2A> プロパティからアクセスできます。  
+2.  <span data-ttu-id="0c899-158"><xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> コレクションから、システム指定のクライアント資格情報の動作を削除します。このコレクションには、<xref:System.ServiceModel.ChannelFactory.Endpoint%2A> プロパティからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="0c899-158">Remove the system-provided client credentials behavior from the <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> collection, which can be accessed through the <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> property.</span></span>  
   
-3.  カスタム資格情報クラスの新しいインスタンスを作成し、<xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> コレクションに追加します。このコレクションには、<xref:System.ServiceModel.ChannelFactory.Endpoint%2A> プロパティからアクセスできます。  
+3.  <span data-ttu-id="0c899-159">カスタム資格情報クラスの新しいインスタンスを作成し、<xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> コレクションに追加します。このコレクションには、<xref:System.ServiceModel.ChannelFactory.Endpoint%2A> プロパティからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="0c899-159">Create a new instance of a custom client credentials class and add it to the <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> collection, which can be accessed through the <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> property.</span></span>  
   
      [!code-csharp[c_CustomCredentials#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#3)]
      [!code-vb[c_CustomCredentials#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/client/client.vb#3)]  
   
- 上記の手順は、アプリケーション コードからクライアント資格情報を使用する方法を示しています。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の資格情報は、アプリケーション構成ファイルを使用して構成することもできます。ソースの変更、再コンパイル、再展開を行うことなくアプリケーションのパラメーターを変更できるため、ハードコーディングを行うよりもアプリケーション構成ファイルの使用を一般にお勧めします。  
+ <span data-ttu-id="0c899-160">上記の手順は、アプリケーション コードからクライアント資格情報を使用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="0c899-160">The previous procedure shows how to use client credentials from application code.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="0c899-161"> の資格情報は、アプリケーション構成ファイルを使用して構成することもできます。</span><span class="sxs-lookup"><span data-stu-id="0c899-161"> credentials can also be configured using the application configuration file.</span></span> <span data-ttu-id="0c899-162">ソースの変更、再コンパイル、再展開を行うことなくアプリケーションのパラメーターを変更できるため、ハードコーディングを行うよりもアプリケーション構成ファイルの使用を一般にお勧めします。</span><span class="sxs-lookup"><span data-stu-id="0c899-162">Using application configuration is often preferable to hard-coding because it enables modification of application parameters without having to modify the source, recompiling, and redeployment.</span></span>  
   
- 次の手順では、カスタム資格情報の構成をサポートする方法について説明します。  
+ <span data-ttu-id="0c899-163">次の手順では、カスタム資格情報の構成をサポートする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0c899-163">The next procedure describes how to provide support for configuration of custom credentials.</span></span>  
   
-#### カスタム クライアント資格情報の構成ハンドラーの作成  
+#### <a name="creating-a-configuration-handler-for-custom-client-credentials"></a><span data-ttu-id="0c899-164">カスタム クライアント資格情報の構成ハンドラーの作成</span><span class="sxs-lookup"><span data-stu-id="0c899-164">Creating a configuration handler for custom client credentials</span></span>  
   
-1.  <xref:System.ServiceModel.Configuration.ClientCredentialsElement> から派生する新しいクラスを定義します。  
+1.  <span data-ttu-id="0c899-165"><xref:System.ServiceModel.Configuration.ClientCredentialsElement> から派生する新しいクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="0c899-165">Define a new class derived from <xref:System.ServiceModel.Configuration.ClientCredentialsElement>.</span></span>  
   
-2.  省略可能。アプリケーション構成を通じて公開する必要があるすべての追加構成パラメーターのプロパティを追加します。次の例では、`CreditCardNumber` という名前のプロパティを追加します。  
+2.  <span data-ttu-id="0c899-166">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0c899-166">Optional.</span></span> <span data-ttu-id="0c899-167">アプリケーション構成を通じて公開する必要があるすべての追加構成パラメーターのプロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="0c899-167">Add properties for all additional configuration parameters that you want to expose through application configuration.</span></span> <span data-ttu-id="0c899-168">次の例では、`CreditCardNumber` という名前のプロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="0c899-168">The example below adds one property named `CreditCardNumber`.</span></span>  
   
-3.  <xref:System.ServiceModel.Configuration.BehaviorExtensionElement.BehaviorType%2A> プロパティをオーバーライドして、構成要素によって作成されたカスタム クライアント資格情報クラスの型を返します。  
+3.  <span data-ttu-id="0c899-169"><xref:System.ServiceModel.Configuration.BehaviorExtensionElement.BehaviorType%2A> プロパティをオーバーライドして、構成要素によって作成されたカスタム クライアント資格情報クラスの型を返します。</span><span class="sxs-lookup"><span data-stu-id="0c899-169">Override the <xref:System.ServiceModel.Configuration.BehaviorExtensionElement.BehaviorType%2A> property to return the type of the custom client credentials class created with the configuration element.</span></span>  
   
-4.  <xref:System.ServiceModel.Configuration.BehaviorExtensionElement.CreateBehavior%2A> メソッドをオーバーライドします。このメソッドは、構成ファイルから読み込まれた設定に基づいてカスタム資格情報クラスのインスタンスを作成して返す役割を担います。このメソッドから <xref:System.ServiceModel.Configuration.ClientCredentialsElement.ApplyConfiguration%28System.ServiceModel.Description.ClientCredentials%29> 基本メソッドを呼び出し、カスタム クライアント資格情報インスタンスに読み込まれたシステム指定の資格情報の設定を取得します。  
+4.  <span data-ttu-id="0c899-170"><xref:System.ServiceModel.Configuration.BehaviorExtensionElement.CreateBehavior%2A> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="0c899-170">Override the <xref:System.ServiceModel.Configuration.BehaviorExtensionElement.CreateBehavior%2A> method.</span></span> <span data-ttu-id="0c899-171">このメソッドは、構成ファイルから読み込まれた設定に基づいてカスタム資格情報クラスのインスタンスを作成して返す役割を担います。</span><span class="sxs-lookup"><span data-stu-id="0c899-171">The method is responsible for creating and returning an instance of the custom credential class based on the settings loaded from the configuration file.</span></span> <span data-ttu-id="0c899-172">このメソッドから <xref:System.ServiceModel.Configuration.ClientCredentialsElement.ApplyConfiguration%28System.ServiceModel.Description.ClientCredentials%29> 基本メソッドを呼び出し、カスタム クライアント資格情報インスタンスに読み込まれたシステム指定の資格情報の設定を取得します。</span><span class="sxs-lookup"><span data-stu-id="0c899-172">Call the base <xref:System.ServiceModel.Configuration.ClientCredentialsElement.ApplyConfiguration%28System.ServiceModel.Description.ClientCredentials%29> method from this method to retrieve the system-provided credentials settings loaded into your custom client credentials instance.</span></span>  
   
-5.  省略可能。手順 2. で追加のプロパティを追加している場合は、<xref:System.Configuration.ConfigurationElement.Properties%2A> プロパティをオーバーライドして、追加した構成設定が構成フレームワークから認識されるよう登録します。追加したプロパティを基本クラスのプロパティと結合して、このカスタム クライアント資格情報の構成要素を通じてシステム指定の設定が構成されるようにします。  
+5.  <span data-ttu-id="0c899-173">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0c899-173">Optional.</span></span> <span data-ttu-id="0c899-174">手順 2. で追加のプロパティを追加している場合は、<xref:System.Configuration.ConfigurationElement.Properties%2A> プロパティをオーバーライドして、追加した構成設定が構成フレームワークから認識されるよう登録します。</span><span class="sxs-lookup"><span data-stu-id="0c899-174">If you added additional properties in step 2, you need to override the <xref:System.Configuration.ConfigurationElement.Properties%2A> property in order to register your additional configuration settings for the configuration framework to recognize them.</span></span> <span data-ttu-id="0c899-175">追加したプロパティを基本クラスのプロパティと結合して、このカスタム クライアント資格情報の構成要素を通じてシステム指定の設定が構成されるようにします。</span><span class="sxs-lookup"><span data-stu-id="0c899-175">Combine your properties with the base class properties to allow the system-provided settings to be configured through this custom client credentials configuration element.</span></span>  
   
      [!code-csharp[c_CustomCredentials#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#7)]
      [!code-vb[c_CustomCredentials#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/service/service.vb#7)]  
   
- 構成ハンドラー クラスを作成したら、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の構成フレームワークに統合できます。これにより、次の手順で示すように、カスタム クライアント資格情報をクライアント エンドポイント動作要素で使用できるようになります。  
+ <span data-ttu-id="0c899-176">構成ハンドラー クラスを作成したら、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の構成フレームワークに統合できます。</span><span class="sxs-lookup"><span data-stu-id="0c899-176">Once you have the configuration handler class, it can be integrated into the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] configuration framework.</span></span> <span data-ttu-id="0c899-177">これにより、次の手順で示すように、カスタム クライアント資格情報をクライアント エンドポイント動作要素で使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="0c899-177">That enables the custom client credentials to be used in the client endpoint behavior elements, as shown in the next procedure.</span></span>  
   
-#### カスタム クライアント資格情報構成ハンドラーをアプリケーション構成に登録して使用するには  
+#### <a name="to-register-and-use-a-custom-client-credentials-configuration-handler-in-the-application-configuration"></a><span data-ttu-id="0c899-178">カスタム クライアント資格情報構成ハンドラーをアプリケーション構成に登録して使用するには</span><span class="sxs-lookup"><span data-stu-id="0c899-178">To register and use a custom client credentials configuration handler in the application configuration</span></span>  
   
-1.  \<`extensions`\> 要素、および \<`behaviorExtensions`\> 要素を構成ファイルに追加します。  
+1.  <span data-ttu-id="0c899-179">追加する <`extensions`> 要素と <`behaviorExtensions`> 要素を構成ファイル。</span><span class="sxs-lookup"><span data-stu-id="0c899-179">Add an <`extensions`> element and a <`behaviorExtensions`> element to the configuration file.</span></span>  
   
-2.  \<`add`\> 要素を \<`behaviorExtensions`\> 要素に追加し、`name` 属性を適切な値に設定します。  
+2.  <span data-ttu-id="0c899-180">追加、<`add`> 要素を <`behaviorExtensions`> 要素、`name`属性を適切な値にします。</span><span class="sxs-lookup"><span data-stu-id="0c899-180">Add an <`add`> element to the <`behaviorExtensions`> element and set the `name` attribute to an appropriate value.</span></span>  
   
-3.  `type` 属性を完全修飾型名に設定します。また、アセンブリ名と他のアセンブリ属性を含めます。  
+3.  <span data-ttu-id="0c899-181">`type` 属性を完全修飾型名に設定します。</span><span class="sxs-lookup"><span data-stu-id="0c899-181">Set the `type` attribute to the fully-qualified type name.</span></span> <span data-ttu-id="0c899-182">また、アセンブリ名と他のアセンブリ属性を含めます。</span><span class="sxs-lookup"><span data-stu-id="0c899-182">Also include the assembly name and other assembly attributes.</span></span>  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
       <extensions>  
         <behaviorExtensions>  
@@ -133,9 +139,9 @@ caps.handback.revision: 13
     <system.serviceModel>  
     ```  
   
-4.  構成ハンドラーの登録後は、システム指定の \<`clientCredentials`\> 要素の代わりに、同じ構成ファイル内でカスタム資格情報要素を使用できます。システム指定のプロパティと、構成ハンドラーの実装に追加した任意の新規プロパティのどちらも使用できます。次の例では、`creditCardNumber` 属性を使用して、カスタム プロパティの値を設定します。  
+4.  <span data-ttu-id="0c899-183">構成ハンドラーを登録すると、カスタムの資格情報要素は、システム指定の代わりに、同じ構成ファイル内で使用できます <`clientCredentials`> 要素。</span><span class="sxs-lookup"><span data-stu-id="0c899-183">After registering your configuration handler, the custom credentials element can be used inside the same configuration file instead of the system-provided <`clientCredentials`> element.</span></span> <span data-ttu-id="0c899-184">システム指定のプロパティと、構成ハンドラーの実装に追加した任意の新規プロパティのどちらも使用できます。</span><span class="sxs-lookup"><span data-stu-id="0c899-184">You can use both the system-provided properties and any new properties that you have added to your configuration handler implementation.</span></span> <span data-ttu-id="0c899-185">次の例では、`creditCardNumber` 属性を使用して、カスタム プロパティの値を設定します。</span><span class="sxs-lookup"><span data-stu-id="0c899-185">The following example sets the value of a custom property using the `creditCardNumber` attribute.</span></span>  
   
-    ```  
+    ```xml  
     <behaviors>  
       <endpointBehaviors>  
         <behavior name="myClientCredentialsBehavior">  
@@ -145,52 +151,52 @@ caps.handback.revision: 13
     </behaviors>  
     ```  
   
-#### カスタム サービス資格情報を実装するには  
+#### <a name="to-implement-custom-service-credentials"></a><span data-ttu-id="0c899-186">カスタム サービス資格情報を実装するには</span><span class="sxs-lookup"><span data-stu-id="0c899-186">To implement custom service credentials</span></span>  
   
-1.  <xref:System.ServiceModel.Description.ServiceCredentials> から派生する新しいクラスを定義します。  
+1.  <span data-ttu-id="0c899-187"><xref:System.ServiceModel.Description.ServiceCredentials> から派生する新しいクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="0c899-187">Define a new class derived from <xref:System.ServiceModel.Description.ServiceCredentials>.</span></span>  
   
-2.  省略可能。追加している新しい資格情報の値に API を提供するために新しいプロパティを追加します。新しい資格情報の値を追加しない場合は、この手順を省略します。次の例では、`AdditionalCertificate` プロパティを追加します。  
+2.  <span data-ttu-id="0c899-188">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0c899-188">Optional.</span></span> <span data-ttu-id="0c899-189">追加している新しい資格情報の値に API を提供するために新しいプロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="0c899-189">Add new properties to provide APIs for new credential values that are being added.</span></span> <span data-ttu-id="0c899-190">新しい資格情報の値を追加しない場合は、この手順を省略します。</span><span class="sxs-lookup"><span data-stu-id="0c899-190">If you do not add new credential values, skip this step.</span></span> <span data-ttu-id="0c899-191">次の例では、`AdditionalCertificate` プロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="0c899-191">The following example adds an `AdditionalCertificate` property.</span></span>  
   
-3.  <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> メソッドをオーバーライドします。カスタム クライアント資格情報が使用されると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャによって、このメソッドが自動的に呼び出されます。このメソッドは、<xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスの実装のインスタンスを作成して返す役割を担います \(次の手順で説明\)。  
+3.  <span data-ttu-id="0c899-192"><xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="0c899-192">Override the <xref:System.ServiceModel.Security.SecurityCredentialsManager.CreateSecurityTokenManager%2A> method.</span></span> <span data-ttu-id="0c899-193">カスタム クライアント資格情報が使用されると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] インフラストラクチャによって、このメソッドが自動的に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="0c899-193">This method is automatically called by the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastructure when the custom client credential is used.</span></span> <span data-ttu-id="0c899-194">このメソッドは、<xref:System.IdentityModel.Selectors.SecurityTokenManager> クラスの実装のインスタンスを作成して返す役割を担います (次の手順で説明)。</span><span class="sxs-lookup"><span data-stu-id="0c899-194">The method is responsible for creating and returning an instance of an implementation of the <xref:System.IdentityModel.Selectors.SecurityTokenManager> class (described in the next procedure).</span></span>  
   
-4.  省略可能。<xref:System.ServiceModel.Description.ServiceCredentials.CloneCore%2A> メソッドをオーバーライドします。この手順は、カスタム クライアント資格情報の実装に新しいプロパティまたは内部フィールドを追加する場合にのみ必要になります。  
+4.  <span data-ttu-id="0c899-195">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0c899-195">Optional.</span></span> <span data-ttu-id="0c899-196"><xref:System.ServiceModel.Description.ServiceCredentials.CloneCore%2A> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="0c899-196">Override the <xref:System.ServiceModel.Description.ServiceCredentials.CloneCore%2A> method.</span></span> <span data-ttu-id="0c899-197">この手順は、カスタム クライアント資格情報の実装に新しいプロパティまたは内部フィールドを追加する場合にのみ必要になります。</span><span class="sxs-lookup"><span data-stu-id="0c899-197">This is required only if adding new properties or internal fields to the custom client credentials implementation.</span></span>  
   
      [!code-csharp[c_CustomCredentials#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#4)]
      [!code-vb[c_CustomCredentials#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/service/service.vb#4)]  
   
-#### カスタム サービス セキュリティ トークン マネージャーを実装するには  
+#### <a name="to-implement-a-custom-service-security-token-manager"></a><span data-ttu-id="0c899-198">カスタム サービス セキュリティ トークン マネージャーを実装するには</span><span class="sxs-lookup"><span data-stu-id="0c899-198">To implement a custom service security token manager</span></span>  
   
-1.  <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> クラスから派生する新しいクラスを定義します。  
+1.  <span data-ttu-id="0c899-199"><xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> クラスから派生する新しいクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="0c899-199">Define a new class derived from the <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> class.</span></span>  
   
-2.  省略可能。カスタム <xref:System.IdentityModel.Selectors.SecurityTokenProvider> 実装を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%2A> メソッドをオーバーライドします。カスタム セキュリティ トークン プロバイダー[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[方法 : カスタム セキュリティ トークン プロバイダーを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)」を参照してください。  
+2.  <span data-ttu-id="0c899-200">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0c899-200">Optional.</span></span> <span data-ttu-id="0c899-201">カスタム <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%2A> 実装を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenProvider> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="0c899-201">Override the <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%2A> method if a custom <xref:System.IdentityModel.Selectors.SecurityTokenProvider> implementation must be created.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0c899-202">カスタム セキュリティ トークン プロバイダーを参照してください[する方法: カスタム セキュリティ トークン プロバイダーを作成](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)です。</span><span class="sxs-lookup"><span data-stu-id="0c899-202"> custom security token providers, see [How to: Create a Custom Security Token Provider](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md).</span></span>  
   
-3.  省略可能。カスタム <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> 実装を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%2A> メソッドをオーバーライドします。カスタム セキュリティ トークン認証システム[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[方法 : カスタム セキュリティ トークン認証システムを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)」を参照してください。  
+3.  <span data-ttu-id="0c899-203">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0c899-203">Optional.</span></span> <span data-ttu-id="0c899-204">カスタム <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%2A> 実装を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="0c899-204">Override the <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%2A> method if a custom <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> implementation must be created.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0c899-205">カスタム セキュリティ トークン認証システムを参照してください[する方法: カスタム セキュリティ トークン認証システムを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)トピックです。</span><span class="sxs-lookup"><span data-stu-id="0c899-205"> custom security token authenticators, see [How to: Create a Custom Security Token Authenticator](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md) topic.</span></span>  
   
-4.  省略可能。カスタム <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%2A> メソッドをオーバーライドします。カスタム セキュリティ トークンおよびカスタム セキュリティ トークン シリアライザー[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[方法 : カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)」を参照してください。  
+4.  <span data-ttu-id="0c899-206">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="0c899-206">Optional.</span></span> <span data-ttu-id="0c899-207">カスタム <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%28System.IdentityModel.Selectors.SecurityTokenVersion%29> を作成する必要がある場合は、<xref:System.IdentityModel.Selectors.SecurityTokenSerializer> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="0c899-207">Override the <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%28System.IdentityModel.Selectors.SecurityTokenVersion%29> method if a custom <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> must be created.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="0c899-208">カスタム セキュリティ トークンと、カスタム セキュリティ トークン シリアライザーを参照してください。[する方法: カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)です。</span><span class="sxs-lookup"><span data-stu-id="0c899-208"> custom security tokens and custom security token serializers, see [How to: Create a Custom Token](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md).</span></span>  
   
      [!code-csharp[c_CustomCredentials#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#5)]
      [!code-vb[c_CustomCredentials#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/service/service.vb#5)]  
   
-#### アプリケーション コードによるカスタム サービス資格情報を使用するには  
+#### <a name="to-use-custom-service-credentials-from-application-code"></a><span data-ttu-id="0c899-209">アプリケーション コードによるカスタム サービス資格情報を使用するには</span><span class="sxs-lookup"><span data-stu-id="0c899-209">To use custom service credentials from application code</span></span>  
   
-1.  <xref:System.ServiceModel.ServiceHost> のインスタンスを作成します。  
+1.  <span data-ttu-id="0c899-210"><xref:System.ServiceModel.ServiceHost> のインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="0c899-210">Create an instance of the <xref:System.ServiceModel.ServiceHost>.</span></span>  
   
-2.  <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> コレクションから、システム指定のサービス資格情報の動作を削除します。  
+2.  <span data-ttu-id="0c899-211"><xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> コレクションから、システム指定のサービス資格情報の動作を削除します。</span><span class="sxs-lookup"><span data-stu-id="0c899-211">Remove the system-provided service credentials behavior from the <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> collection.</span></span>  
   
-3.  カスタム サービス資格情報クラスの新しいインスタンスを作成し、これを <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> コレクションに追加します。  
+3.  <span data-ttu-id="0c899-212">カスタム サービス資格情報クラスの新しいインスタンスを作成し、これを <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> コレクションに追加します。</span><span class="sxs-lookup"><span data-stu-id="0c899-212">Create a new instance of the custom service credentials class and add it to the <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> collection.</span></span>  
   
      [!code-csharp[c_CustomCredentials#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#6)]
      [!code-vb[c_CustomCredentials#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/service/service.vb#6)]  
   
- 前の「`To create a configuration handler for custom client credentials`」および「`To register and use a custom client credentials configuration handler in the application configuration`」で説明した手順を使用して構成にサポートを追加します。構成ハンドラーの基本クラスとして、<xref:System.ServiceModel.Configuration.ClientCredentialsElement> クラスではなく <xref:System.ServiceModel.Configuration.ServiceCredentialsElement> クラスを使用する点のみが異なります。カスタム サービス資格情報要素は、システム指定の `<serviceCredentials>` 要素を使用する場合にいつでも使用できます。  
+ <span data-ttu-id="0c899-213">前の「`To create a configuration handler for custom client credentials`」および「`To register and use a custom client credentials configuration handler in the application configuration`」で説明した手順を使用して構成にサポートを追加します。構成ハンドラーの基本クラスとして、<xref:System.ServiceModel.Configuration.ServiceCredentialsElement> クラスではなく <xref:System.ServiceModel.Configuration.ClientCredentialsElement> クラスを使用する点のみが異なります。</span><span class="sxs-lookup"><span data-stu-id="0c899-213">Add support for configuration using the steps described previously in the procedures "`To create a configuration handler for custom client credentials`" and "`To register and use a custom client credentials configuration handler in the application configuration`." The only difference is to use the <xref:System.ServiceModel.Configuration.ServiceCredentialsElement> class instead of the <xref:System.ServiceModel.Configuration.ClientCredentialsElement> class as a base class for the configuration handler.</span></span> <span data-ttu-id="0c899-214">カスタム サービス資格情報要素は、システム指定の `<serviceCredentials>` 要素を使用する場合にいつでも使用できます。</span><span class="sxs-lookup"><span data-stu-id="0c899-214">The custom service credential element can then be used wherever the system-provided `<serviceCredentials>` element is used.</span></span>  
   
-## 参照  
- <xref:System.ServiceModel.Description.ClientCredentials>   
- <xref:System.ServiceModel.Description.ServiceCredentials>   
- <xref:System.ServiceModel.Security.SecurityCredentialsManager>   
- <xref:System.IdentityModel.Selectors.SecurityTokenManager>   
- <xref:System.ServiceModel.Configuration.ClientCredentialsElement>   
- <xref:System.ServiceModel.Configuration.ServiceCredentialsElement>   
- [方法 : カスタム セキュリティ トークン プロバイダーを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)   
- [方法 : カスタム セキュリティ トークン認証システムを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)   
- [方法 : カスタム トークンを作成する](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)
+## <a name="see-also"></a><span data-ttu-id="0c899-215">関連項目</span><span class="sxs-lookup"><span data-stu-id="0c899-215">See Also</span></span>  
+ <xref:System.ServiceModel.Description.ClientCredentials>  
+ <xref:System.ServiceModel.Description.ServiceCredentials>  
+ <xref:System.ServiceModel.Security.SecurityCredentialsManager>  
+ <xref:System.IdentityModel.Selectors.SecurityTokenManager>  
+ <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  
+ <xref:System.ServiceModel.Configuration.ServiceCredentialsElement>  
+ [<span data-ttu-id="0c899-216">方法: カスタム セキュリティ トークン プロバイダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="0c899-216">How to: Create a Custom Security Token Provider</span></span>](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
+ [<span data-ttu-id="0c899-217">方法: カスタム セキュリティ トークン認証システムを作成します。</span><span class="sxs-lookup"><span data-stu-id="0c899-217">How to: Create a Custom Security Token Authenticator</span></span>](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
+ [<span data-ttu-id="0c899-218">方法: カスタム トークンを作成します。</span><span class="sxs-lookup"><span data-stu-id="0c899-218">How to: Create a Custom Token</span></span>](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)

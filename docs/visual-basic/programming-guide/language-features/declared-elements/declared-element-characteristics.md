@@ -1,73 +1,72 @@
 ---
-title: "Declared Element Characteristics (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "declared elements, lifetime"
-  - "access levels, declared elements"
-  - "declared elements, scope"
-  - "visibility, declared elements"
-  - "elements, programming"
-  - "scope, declared elements"
-  - "lifetime, declared elements"
-  - "declared elements, access level"
-  - "data types [Visual Basic], declared elements"
-  - "declared elements, visibility"
+title: "宣言された要素の特性 (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- declared elements [Visual Basic], lifetime
+- access levels, declared elements
+- declared elements [Visual Basic], scope
+- visibility [Visual Basic], declared elements
+- elements [Visual Basic], programming
+- scope [Visual Basic], declared elements
+- lifetime [Visual Basic], declared elements
+- declared elements [Visual Basic], access level
+- data types [Visual Basic], declared elements
+- declared elements [Visual Basic], visibility
 ms.assetid: 1bc40fb8-b67c-4428-90a4-76b630ae2583
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 26ee27d3a1d085c6ab45ae850dbdac700aa208a9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Declared Element Characteristics (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-宣言された要素の*特性*は、コードとその要素とのやり取りに影響します。  宣言された各要素には、次の特性の 1 つ以上が関連付けられています。  
+# <a name="declared-element-characteristics-visual-basic"></a><span data-ttu-id="6b6e3-102">宣言された要素の特性 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6b6e3-102">Declared Element Characteristics (Visual Basic)</span></span>
+<span data-ttu-id="6b6e3-103">A*特性*宣言された要素のコードとの対話方法に影響する要素の特定の側面がします。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-103">A *characteristic* of a declared element is an aspect of that element that affects how code can interact with it.</span></span> <span data-ttu-id="6b6e3-104">宣言された各要素には、関連付けられている次の特性の 1 つ以上があります。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-104">Every declared element has one or more of the following characteristics associated with it:</span></span>  
   
--   *データ型* \- 要素が保持できる値およびその格納方法です。  詳細については、「[Data Types](../../../../visual-basic/language-reference/data-types/data-type-summary.md)」を参照してください。  
+-   <span data-ttu-id="6b6e3-105">*データ型*— 要素が保持できる値、およびそれらの値を格納するしくみです。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-105">*Data type* — the values the element can hold, and how it stores those values.</span></span> <span data-ttu-id="6b6e3-106">詳細については、次を参照してください。[データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md)です。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-106">For more information, see [Data Types](../../../../visual-basic/language-reference/data-types/data-type-summary.md).</span></span>  
   
--   *有効期間* \- 実行時間のうち、その要素を使用できる期間です。  詳細については、「[Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)」を参照してください。  
+-   <span data-ttu-id="6b6e3-107">*有効期間*— 要素が使用可能である実行時間の期間。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-107">*Lifetime* — the period of execution time during which the element is available for use.</span></span> <span data-ttu-id="6b6e3-108">詳細については、次を参照してください。 [Visual Basic における有効期間](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)です。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-108">For more information, see [Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).</span></span>  
   
--   *スコープ* \- 名前に修飾子を付けずに要素を参照できる全コードの範囲です。  詳細については、「[How to: Control the Scope of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)」を参照してください。  
+-   <span data-ttu-id="6b6e3-109">*スコープ*: その名前を修飾せず、要素を参照するすべてのコードのセット。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-109">*Scope* — the set of all code that can refer to the element without qualifying its name.</span></span> <span data-ttu-id="6b6e3-110">詳細については、次を参照してください。[する方法: 変数のスコープを制御](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)です。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-110">For more information, see [How to: Control the Scope of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md).</span></span>  
   
--   *アクセス レベル* \- コードがこの要素を利用するためのアクセス許可です。  詳細については、「[How to: Control the Availability of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md)」を参照してください。  
+-   <span data-ttu-id="6b6e3-111">*アクセス レベル*— できるようにするコードのアクセス許可の要素を使用します。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-111">*Access level* — the permission for code to make use of the element.</span></span> <span data-ttu-id="6b6e3-112">詳細については、次を参照してください。[する方法: 変数の可用性を制御](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md)です。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-112">For more information, see [How to: Control the Availability of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md).</span></span>  
   
-## 要素の特性  
- 宣言された要素、およびそれぞれの要素に適用される特性を次の表に示します。  
+## <a name="characteristics-of-the-elements"></a><span data-ttu-id="6b6e3-113">要素の特性</span><span class="sxs-lookup"><span data-stu-id="6b6e3-113">Characteristics of the Elements</span></span>  
+ <span data-ttu-id="6b6e3-114">次の表は、宣言された要素と 1 つずつに適用される特性を示します。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-114">The following table shows the declared elements and the characteristics that apply to each one.</span></span>  
   
-|要素|\[データ型\]|有効期間|スコープ <sup>1</sup>|アクセス レベル|  
-|--------|--------------|----------|-----------------------|--------------|  
-|変数|○|○|○|○|  
-|定数|○|Ｘ|○|○|  
-|列挙型|○|Ｘ|○|○|  
-|Structure|Ｘ|Ｘ|○|○|  
-|プロパティ|○|○|○|○|  
-|メソッド|Ｘ|○|○|○|  
-|プロシージャ \(`Sub` または `Function`\)|Ｘ|○|○|○|  
-|プロシージャ パラメーター|○|○|○|Ｘ|  
-|関数の戻り値|○|○|○|Ｘ|  
-|\[演算子\]|○|Ｘ|○|○|  
-|Interface|Ｘ|Ｘ|○|○|  
-|Class|Ｘ|Ｘ|○|○|  
-|Event|Ｘ|Ｘ|○|○|  
-|Delegate|Ｘ|Ｘ|○|○|  
+|<span data-ttu-id="6b6e3-115">要素</span><span class="sxs-lookup"><span data-stu-id="6b6e3-115">Element</span></span>|<span data-ttu-id="6b6e3-116">データ型</span><span class="sxs-lookup"><span data-stu-id="6b6e3-116">Data Type</span></span>|<span data-ttu-id="6b6e3-117">有効期間</span><span class="sxs-lookup"><span data-stu-id="6b6e3-117">Lifetime</span></span>|<span data-ttu-id="6b6e3-118">スコープ<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="6b6e3-118">Scope <sup>1</sup></span></span>|<span data-ttu-id="6b6e3-119">アクセス レベル</span><span class="sxs-lookup"><span data-stu-id="6b6e3-119">Access Level</span></span>|  
+|-------------|---------------|--------------|------------------------|------------------|  
+|<span data-ttu-id="6b6e3-120">変数</span><span class="sxs-lookup"><span data-stu-id="6b6e3-120">Variable</span></span>|<span data-ttu-id="6b6e3-121">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-121">Yes</span></span>|<span data-ttu-id="6b6e3-122">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-122">Yes</span></span>|<span data-ttu-id="6b6e3-123">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-123">Yes</span></span>|<span data-ttu-id="6b6e3-124">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-124">Yes</span></span>|  
+|<span data-ttu-id="6b6e3-125">定数</span><span class="sxs-lookup"><span data-stu-id="6b6e3-125">Constant</span></span>|<span data-ttu-id="6b6e3-126">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-126">Yes</span></span>|<span data-ttu-id="6b6e3-127">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-127">No</span></span>|<span data-ttu-id="6b6e3-128">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-128">Yes</span></span>|<span data-ttu-id="6b6e3-129">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-129">Yes</span></span>|  
+|<span data-ttu-id="6b6e3-130">列挙</span><span class="sxs-lookup"><span data-stu-id="6b6e3-130">Enumeration</span></span>|<span data-ttu-id="6b6e3-131">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-131">Yes</span></span>|<span data-ttu-id="6b6e3-132">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-132">No</span></span>|<span data-ttu-id="6b6e3-133">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-133">Yes</span></span>|<span data-ttu-id="6b6e3-134">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-134">Yes</span></span>|  
+|<span data-ttu-id="6b6e3-135">構造体</span><span class="sxs-lookup"><span data-stu-id="6b6e3-135">Structure</span></span>|<span data-ttu-id="6b6e3-136">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-136">No</span></span>|<span data-ttu-id="6b6e3-137">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-137">No</span></span>|<span data-ttu-id="6b6e3-138">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-138">Yes</span></span>|<span data-ttu-id="6b6e3-139">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-139">Yes</span></span>|  
+|<span data-ttu-id="6b6e3-140">プロパティ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-140">Property</span></span>|<span data-ttu-id="6b6e3-141">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-141">Yes</span></span>|<span data-ttu-id="6b6e3-142">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-142">Yes</span></span>|<span data-ttu-id="6b6e3-143">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-143">Yes</span></span>|<span data-ttu-id="6b6e3-144">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-144">Yes</span></span>|  
+|<span data-ttu-id="6b6e3-145">メソッド</span><span class="sxs-lookup"><span data-stu-id="6b6e3-145">Method</span></span>|<span data-ttu-id="6b6e3-146">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-146">No</span></span>|<span data-ttu-id="6b6e3-147">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-147">Yes</span></span>|<span data-ttu-id="6b6e3-148">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-148">Yes</span></span>|<span data-ttu-id="6b6e3-149">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-149">Yes</span></span>|  
+|<span data-ttu-id="6b6e3-150">プロシージャ (`Sub`または`Function`)</span><span class="sxs-lookup"><span data-stu-id="6b6e3-150">Procedure (`Sub` or `Function`)</span></span>|<span data-ttu-id="6b6e3-151">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-151">No</span></span>|<span data-ttu-id="6b6e3-152">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-152">Yes</span></span>|<span data-ttu-id="6b6e3-153">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-153">Yes</span></span>|<span data-ttu-id="6b6e3-154">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-154">Yes</span></span>|  
+|<span data-ttu-id="6b6e3-155">プロシージャ パラメーター</span><span class="sxs-lookup"><span data-stu-id="6b6e3-155">Procedure parameter</span></span>|<span data-ttu-id="6b6e3-156">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-156">Yes</span></span>|<span data-ttu-id="6b6e3-157">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-157">Yes</span></span>|<span data-ttu-id="6b6e3-158">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-158">Yes</span></span>|<span data-ttu-id="6b6e3-159">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-159">No</span></span>|  
+|<span data-ttu-id="6b6e3-160">関数の戻り値</span><span class="sxs-lookup"><span data-stu-id="6b6e3-160">Function return</span></span>|<span data-ttu-id="6b6e3-161">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-161">Yes</span></span>|<span data-ttu-id="6b6e3-162">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-162">Yes</span></span>|<span data-ttu-id="6b6e3-163">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-163">Yes</span></span>|<span data-ttu-id="6b6e3-164">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-164">No</span></span>|  
+|<span data-ttu-id="6b6e3-165">演算子</span><span class="sxs-lookup"><span data-stu-id="6b6e3-165">Operator</span></span>|<span data-ttu-id="6b6e3-166">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-166">Yes</span></span>|<span data-ttu-id="6b6e3-167">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-167">No</span></span>|<span data-ttu-id="6b6e3-168">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-168">Yes</span></span>|<span data-ttu-id="6b6e3-169">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-169">Yes</span></span>|  
+|<span data-ttu-id="6b6e3-170">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="6b6e3-170">Interface</span></span>|<span data-ttu-id="6b6e3-171">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-171">No</span></span>|<span data-ttu-id="6b6e3-172">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-172">No</span></span>|<span data-ttu-id="6b6e3-173">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-173">Yes</span></span>|<span data-ttu-id="6b6e3-174">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-174">Yes</span></span>|  
+|<span data-ttu-id="6b6e3-175">クラス</span><span class="sxs-lookup"><span data-stu-id="6b6e3-175">Class</span></span>|<span data-ttu-id="6b6e3-176">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-176">No</span></span>|<span data-ttu-id="6b6e3-177">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-177">No</span></span>|<span data-ttu-id="6b6e3-178">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-178">Yes</span></span>|<span data-ttu-id="6b6e3-179">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-179">Yes</span></span>|  
+|<span data-ttu-id="6b6e3-180">イベント</span><span class="sxs-lookup"><span data-stu-id="6b6e3-180">Event</span></span>|<span data-ttu-id="6b6e3-181">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-181">No</span></span>|<span data-ttu-id="6b6e3-182">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-182">No</span></span>|<span data-ttu-id="6b6e3-183">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-183">Yes</span></span>|<span data-ttu-id="6b6e3-184">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-184">Yes</span></span>|  
+|<span data-ttu-id="6b6e3-185">Delegate</span><span class="sxs-lookup"><span data-stu-id="6b6e3-185">Delegate</span></span>|<span data-ttu-id="6b6e3-186">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-186">No</span></span>|<span data-ttu-id="6b6e3-187">いいえ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-187">No</span></span>|<span data-ttu-id="6b6e3-188">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-188">Yes</span></span>|<span data-ttu-id="6b6e3-189">はい</span><span class="sxs-lookup"><span data-stu-id="6b6e3-189">Yes</span></span>|  
   
- <sup>1</sup> スコープは*参照範囲*と呼ばれる場合もあります。  
+ <span data-ttu-id="6b6e3-190"><sup>1</sup>スコープとも呼ば*可視性*です。</span><span class="sxs-lookup"><span data-stu-id="6b6e3-190"><sup>1</sup> Scope is sometimes referred to as *visibility*.</span></span>  
   
-## 参照  
- [Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/index.md)   
- [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
- [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
- [Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)   
- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)   
- [Access Levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)   
- [データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [変数宣言](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
+## <a name="see-also"></a><span data-ttu-id="6b6e3-191">関連項目</span><span class="sxs-lookup"><span data-stu-id="6b6e3-191">See Also</span></span>  
+ [<span data-ttu-id="6b6e3-192">宣言された要素</span><span class="sxs-lookup"><span data-stu-id="6b6e3-192">Declared Elements</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/index.md)  
+ [<span data-ttu-id="6b6e3-193">Declared Element Names</span><span class="sxs-lookup"><span data-stu-id="6b6e3-193">Declared Element Names</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
+ [<span data-ttu-id="6b6e3-194">宣言された要素の参照</span><span class="sxs-lookup"><span data-stu-id="6b6e3-194">References to Declared Elements</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
+ [<span data-ttu-id="6b6e3-195">Visual Basic における有効期間</span><span class="sxs-lookup"><span data-stu-id="6b6e3-195">Lifetime in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
+ [<span data-ttu-id="6b6e3-196">Visual Basic におけるスコープ</span><span class="sxs-lookup"><span data-stu-id="6b6e3-196">Scope in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
+ [<span data-ttu-id="6b6e3-197">Visual Basic でのアクセス レベル</span><span class="sxs-lookup"><span data-stu-id="6b6e3-197">Access levels in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
+ [<span data-ttu-id="6b6e3-198">データの種類</span><span class="sxs-lookup"><span data-stu-id="6b6e3-198">Data Types</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [<span data-ttu-id="6b6e3-199">変数宣言</span><span class="sxs-lookup"><span data-stu-id="6b6e3-199">Variable Declaration</span></span>](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)

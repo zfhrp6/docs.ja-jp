@@ -1,90 +1,73 @@
 ---
-title: "方法: 引数 (Visual Basic) を値渡しを強制する |Microsoft ドキュメント"
+title: "方法: 引数の値渡しを強制する (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- procedures, arguments
-- procedures, parameters
+- procedures [Visual Basic], arguments
+- procedures [Visual Basic], parameters
 - procedure arguments
 - Visual Basic code, procedures
 - arguments [Visual Basic], ByVal
 - arguments [Visual Basic], passing by value
 - procedure parameters
-- procedures, calling
+- procedures [Visual Basic], calling
 - arguments [Visual Basic], in parentheses
-- procedure arguments, in parentheses
+- procedure arguments [Visual Basic], in parentheses
 - arguments [Visual Basic], changing value
 ms.assetid: 77b4f2d2-1055-4c2f-a521-874d1db86946
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: eea3466534f1797170ae4bc72afbcba899929911
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: fdb2df7e114f49c23db9f5b322ca9dd32135ac88
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-force-an-argument-to-be-passed-by-value-visual-basic"></a>方法: 引数の値渡しを強制する (Visual Basic)
-プロシージャの宣言では、引き渡し方法を決定します。 パラメーターが宣言されている場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]参照によって、対応する引数を渡すが必要です。 これにより、呼び出し元のコードで引数を基になるプログラミングの要素の値を変更する手順です。 このような変更を基になる要素を保護する場合をオーバーライドできます、`ByRef`引き渡し方法の手順で呼び出す引数の名前をかっこで囲みます。 このかっこは、呼び出しで引数リストを囲むかっこに追加します。  
+# <a name="how-to-force-an-argument-to-be-passed-by-value-visual-basic"></a><span data-ttu-id="2724e-102">方法: 引数の値渡しを強制する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2724e-102">How to: Force an Argument to Be Passed by Value (Visual Basic)</span></span>
+<span data-ttu-id="2724e-103">プロシージャ宣言では、引き渡し方法を決定します。</span><span class="sxs-lookup"><span data-stu-id="2724e-103">The procedure declaration determines the passing mechanism.</span></span> <span data-ttu-id="2724e-104">パラメーターが宣言されている場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]参照によって、対応する引数を渡すが必要です。</span><span class="sxs-lookup"><span data-stu-id="2724e-104">If a parameter is declared [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] expects to pass the corresponding argument by reference.</span></span> <span data-ttu-id="2724e-105">これにより、呼び出し元のコードで引数の基になるプログラミング要素の値を変更する手順です。</span><span class="sxs-lookup"><span data-stu-id="2724e-105">This allows the procedure to change the value of the programming element underlying the argument in the calling code.</span></span> <span data-ttu-id="2724e-106">このような変更を基になる要素を保護する場合は、オーバーライドできます、`ByRef`引き渡し方法の手順では引数の名前をかっこで囲んだ呼び出します。</span><span class="sxs-lookup"><span data-stu-id="2724e-106">If you wish to protect the underlying element against such change, you can override the `ByRef` passing mechanism in the procedure call by enclosing the argument name in parentheses.</span></span> <span data-ttu-id="2724e-107">このかっこは、呼び出しで引数リストを囲むかっこだけでなく、します。</span><span class="sxs-lookup"><span data-stu-id="2724e-107">These parentheses are in addition to the parentheses enclosing the argument list in the call.</span></span>  
   
- 呼び出し元のコードを上書きできません、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)メカニズムです。  
+ <span data-ttu-id="2724e-108">呼び出し元のコードがオーバーライドすることはできません、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)メカニズムです。</span><span class="sxs-lookup"><span data-stu-id="2724e-108">The calling code cannot override a [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) mechanism.</span></span>  
   
-### <a name="to-force-an-argument-to-be-passed-by-value"></a>引数の値渡しを強制するには  
+### <a name="to-force-an-argument-to-be-passed-by-value"></a><span data-ttu-id="2724e-109">引数の値渡しを強制するには</span><span class="sxs-lookup"><span data-stu-id="2724e-109">To force an argument to be passed by value</span></span>  
   
--   対応するパラメーターが宣言されている場合`ByVal`の手順では、追加の手順を実行する必要はありません。 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]既に、引数の値渡しを期待しています。  
+-   <span data-ttu-id="2724e-110">対応するパラメーターが宣言されている場合`ByVal`の手順では、追加の手順を実行する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="2724e-110">If the corresponding parameter is declared `ByVal` in the procedure, you do not need to take any additional steps.</span></span> [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="2724e-111">引数の値渡しを既にが必要です。</span><span class="sxs-lookup"><span data-stu-id="2724e-111"> already expects to pass the argument by value.</span></span>  
   
--   対応するパラメーターが宣言されている場合`ByRef`の手順でプロシージャの呼び出しにかっこで囲まれた引数を囲みます。  
+-   <span data-ttu-id="2724e-112">対応するパラメーターが宣言されている場合`ByRef`の手順で、プロシージャ呼び出しでのかっこ内に引数を囲みます。</span><span class="sxs-lookup"><span data-stu-id="2724e-112">If the corresponding parameter is declared `ByRef` in the procedure, enclose the argument in parentheses in the procedure call.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、オーバーライド、`ByRef`パラメーター宣言します。 強制的の呼び出しで`ByVal`かっこの&2; つのレベルに注意してください。  
+## <a name="example"></a><span data-ttu-id="2724e-113">例</span><span class="sxs-lookup"><span data-stu-id="2724e-113">Example</span></span>  
+ <span data-ttu-id="2724e-114">次の例よりも優先、`ByRef`パラメーター宣言します。</span><span class="sxs-lookup"><span data-stu-id="2724e-114">The following example overrides a `ByRef` parameter declaration.</span></span> <span data-ttu-id="2724e-115">強制する呼び出しで`ByVal`かっこの 2 つのレベルに注意してください。</span><span class="sxs-lookup"><span data-stu-id="2724e-115">In the call that forces `ByVal`, note the two levels of parentheses.</span></span>  
   
- [!code-vb[VbVbcnProcedures&#39;](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_1.vb)]  
+ [!code-vb[VbVbcnProcedures#39](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_1.vb)]  
   
- [!code-vb[VbVbcnProcedures #&40;](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_2.vb)]  
+ [!code-vb[VbVbcnProcedures#40](./codesnippet/VisualBasic/how-to-force-an-argument-to-be-passed-by-value_2.vb)]  
   
- `str`引数リスト内で余分なかっこで囲まれた、`setNewString`プロシージャが呼び出し元のコードにはその値を変更できませんと`MsgBox`ByVal が渡された場合は、「を置き換えることはできません」が表示されます。 `str`囲まれていない余分なかっこで囲まれた、プロシージャを変更できますが、および`MsgBox`「inString 引数の新しい値はこれです。」が表示されます。  
+ <span data-ttu-id="2724e-116">ときに`str`引数リスト内で余分なかっこで囲まれて、`setNewString`プロシージャが呼び出し元のコードでは、その値を変更ことはできませんと`MsgBox`ByVal を越えた場合は、「を置換できません」が表示されます。</span><span class="sxs-lookup"><span data-stu-id="2724e-116">When `str` is enclosed in extra parentheses within the argument list, the `setNewString` procedure cannot change its value in the calling code, and `MsgBox` displays "Cannot be replaced if passed ByVal".</span></span> <span data-ttu-id="2724e-117">ときに`str`囲まれていない追加のかっこ内にプロシージャを変更できますが、および`MsgBox`「inString 引数の新しい値はこのです」が表示されます。</span><span class="sxs-lookup"><span data-stu-id="2724e-117">When `str` is not enclosed in extra parentheses, the procedure can change it, and `MsgBox` displays "This is a new value for the inString argument."</span></span>  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- 参照渡しで変数を渡す場合は、使用、`ByRef`キーワードを明示的に指定します。  
+## <a name="compiling-the-code"></a><span data-ttu-id="2724e-118">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="2724e-118">Compiling the Code</span></span>  
+ <span data-ttu-id="2724e-119">参照によって変数を渡す際に使用する必要あります、`ByRef`このメカニズムを指定するキーワードです。</span><span class="sxs-lookup"><span data-stu-id="2724e-119">When you pass a variable by reference, you must use the `ByRef` keyword to specify this mechanism.</span></span>  
   
- 既定で[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]は引数の値渡しします。 いずれかを指定することをお勧めします[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード パラメーターを宣言します。 これは、コードを読みやすくするためです。  
+ <span data-ttu-id="2724e-120">既定で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]は引数の値渡しします。</span><span class="sxs-lookup"><span data-stu-id="2724e-120">The default in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] is to pass arguments by value.</span></span> <span data-ttu-id="2724e-121">いずれかを指定することをお勧め、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード パラメーターを宣言します。</span><span class="sxs-lookup"><span data-stu-id="2724e-121">However, it is good programming practice to include either the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword with every declared parameter.</span></span> <span data-ttu-id="2724e-122">これにより、コードを読みやすくします。</span><span class="sxs-lookup"><span data-stu-id="2724e-122">This makes your code easier to read.</span></span>  
   
-## <a name="robust-programming"></a>信頼性の高いプログラミング  
- プロシージャ パラメーターを宣言する場合は、 [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)コードの適切な実行は呼び出し元のコードの基になる要素に変更できることを依存している可能性があります。 呼び出し元のコードは、引数をかっこで囲んででこの呼び出し元のメカニズムをオーバーライドする場合、または変更できない引数を渡す場合は、プロシージャは、基になる要素を変更できません。 これは、呼び出し元のコードで予期しない結果となる可能性があります。  
+## <a name="robust-programming"></a><span data-ttu-id="2724e-123">信頼性の高いプログラミング</span><span class="sxs-lookup"><span data-stu-id="2724e-123">Robust Programming</span></span>  
+ <span data-ttu-id="2724e-124">プロシージャ パラメーターを宣言する場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、正しいコードの実行は呼び出し元のコードに基になる要素を変更することに依存しています。</span><span class="sxs-lookup"><span data-stu-id="2724e-124">If a procedure declares a parameter [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), the correct execution of the code might depend on being able to change the underlying element in the calling code.</span></span> <span data-ttu-id="2724e-125">呼び出し元のコードは、引数をかっこで囲んででこの呼び出し元のメカニズムをオーバーライドする場合、または変更できない引数を渡す場合は、プロシージャは、基になる要素を変更できません。</span><span class="sxs-lookup"><span data-stu-id="2724e-125">If the calling code overrides this calling mechanism by enclosing the argument in parentheses, or if it passes a nonmodifiable argument, the procedure cannot change the underlying element.</span></span> <span data-ttu-id="2724e-126">これにより、呼び出し元のコードで予期しない結果が生じる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2724e-126">This might produce unexpected results in the calling code.</span></span>  
   
-## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- 呼び出し元のコードで引数を基になる値を変更する手順を可能にすることは潜在的なリスクは常にします。 この値を変更し、使用する前に有効性を確認する準備を期待することを確認します。  
+## <a name="net-framework-security"></a><span data-ttu-id="2724e-127">.NET Framework セキュリティ</span><span class="sxs-lookup"><span data-stu-id="2724e-127">.NET Framework Security</span></span>  
+ <span data-ttu-id="2724e-128">呼び出し元のコードで引数の基になる値を変更するプロシージャを許可するのには潜在的なリスクは常にします。</span><span class="sxs-lookup"><span data-stu-id="2724e-128">There is always a potential risk in allowing a procedure to change the value underlying an argument in the calling code.</span></span> <span data-ttu-id="2724e-129">この値を変更してを使用する前の有効性を確認する準備を行うことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="2724e-129">Make sure you expect this value to be changed, and be prepared to check it for validity before using it.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [手順](./index.md)   
- [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)   
- [方法: プロシージャに引数を渡す](./how-to-pass-arguments-to-a-procedure.md)   
- [値渡しと参照による引数渡し](./passing-arguments-by-value-and-by-reference.md)   
- [引数と変更できない引数の違い](./differences-between-modifiable-and-nonmodifiable-arguments.md)   
- [値と参照渡しの引数を渡しの違い](./differences-between-passing-an-argument-by-value-and-by-reference.md)   
- [方法: プロシージャ引数の値を変更します。](./how-to-change-the-value-of-a-procedure-argument.md)   
- [方法: プロシージャ引数の値は変更しないように](./how-to-protect-a-procedure-argument-against-value-changes.md)   
- [位置と名前による引数渡し](./passing-arguments-by-position-and-by-name.md)   
- [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+## <a name="see-also"></a><span data-ttu-id="2724e-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="2724e-130">See Also</span></span>  
+ [<span data-ttu-id="2724e-131">手順</span><span class="sxs-lookup"><span data-stu-id="2724e-131">Procedures</span></span>](./index.md)  
+ [<span data-ttu-id="2724e-132">プロシージャのパラメーターと引数</span><span class="sxs-lookup"><span data-stu-id="2724e-132">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)  
+ [<span data-ttu-id="2724e-133">方法: プロシージャに引数を渡す</span><span class="sxs-lookup"><span data-stu-id="2724e-133">How to: Pass Arguments to a Procedure</span></span>](./how-to-pass-arguments-to-a-procedure.md)  
+ [<span data-ttu-id="2724e-134">引数の値渡しと参照渡し</span><span class="sxs-lookup"><span data-stu-id="2724e-134">Passing Arguments by Value and by Reference</span></span>](./passing-arguments-by-value-and-by-reference.md)  
+ [<span data-ttu-id="2724e-135">変更できる引数と変更できない引数の違い</span><span class="sxs-lookup"><span data-stu-id="2724e-135">Differences Between Modifiable and Nonmodifiable Arguments</span></span>](./differences-between-modifiable-and-nonmodifiable-arguments.md)  
+ [<span data-ttu-id="2724e-136">引数の値渡しと参照渡しの違い</span><span class="sxs-lookup"><span data-stu-id="2724e-136">Differences Between Passing an Argument By Value and By Reference</span></span>](./differences-between-passing-an-argument-by-value-and-by-reference.md)  
+ [<span data-ttu-id="2724e-137">方法: プロシージャ引数の値を変更する</span><span class="sxs-lookup"><span data-stu-id="2724e-137">How to: Change the Value of a Procedure Argument</span></span>](./how-to-change-the-value-of-a-procedure-argument.md)  
+ [<span data-ttu-id="2724e-138">方法: プロシージャ引数の値が変化しないようにする</span><span class="sxs-lookup"><span data-stu-id="2724e-138">How to: Protect a Procedure Argument Against Value Changes</span></span>](./how-to-protect-a-procedure-argument-against-value-changes.md)  
+ [<span data-ttu-id="2724e-139">位置と名前による引数渡し</span><span class="sxs-lookup"><span data-stu-id="2724e-139">Passing Arguments by Position and by Name</span></span>](./passing-arguments-by-position-and-by-name.md)  
+ [<span data-ttu-id="2724e-140">値型と参照型</span><span class="sxs-lookup"><span data-stu-id="2724e-140">Value Types and Reference Types</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
