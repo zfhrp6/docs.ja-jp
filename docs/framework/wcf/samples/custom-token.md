@@ -1,39 +1,42 @@
 ---
-title: "カスタム トークン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム トークン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 19593e61cc640068ac7c90a6abbd6ea0d6a3ff08
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# カスタム トークン
-このサンプルでは、カスタム トークンの実装を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションに追加する方法を示します。  この例では、`CreditCardToken` を使用して、クライアントのクレジット カードに関する情報をサーバーに安全に渡します。  このトークンは、WS\-Security メッセージ ヘッダー内で渡され、対称セキュリティ バインディング要素を使用してメッセージ本文と他のメッセージ ヘッダーと共に署名および暗号化されます。  これは、組み込みのトークンでは不十分な場合に役立ちます。  このサンプルでは、組み込みのトークンのいずれかを使用する代わりに、カスタム セキュリティ トークンをサービスに提供する方法を示します。  サービスは、要求\/応答通信パターンを定義するコントラクトを実装します。  
+# <a name="custom-token"></a><span data-ttu-id="e1fb1-102">カスタム トークン</span><span class="sxs-lookup"><span data-stu-id="e1fb1-102">Custom Token</span></span>
+<span data-ttu-id="e1fb1-103">このサンプルでは、カスタム トークンの実装を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションに追加する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-103">This sample demonstrates how to add a custom token implementation into a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] application.</span></span> <span data-ttu-id="e1fb1-104">この例では、`CreditCardToken` を使用して、クライアントのクレジット カードに関する情報をサーバーに安全に渡します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-104">The example uses a `CreditCardToken` to securely pass information about client credit cards to the service.</span></span> <span data-ttu-id="e1fb1-105">このトークンは、WS-Security メッセージ ヘッダー内で渡され、対称セキュリティ バインディング要素を使用してメッセージ本文と他のメッセージ ヘッダーと共に署名および暗号化されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-105">The token is passed in the WS-Security message header and is signed and encrypted using the symmetric security binding element along with message body and other message headers.</span></span> <span data-ttu-id="e1fb1-106">これは、組み込みのトークンでは不十分な場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-106">This is useful in cases where the built-in tokens are not sufficient.</span></span> <span data-ttu-id="e1fb1-107">このサンプルでは、組み込みのトークンのいずれかを使用する代わりに、カスタム セキュリティ トークンをサービスに提供する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-107">This sample demonstrates how to provide a custom security token to a service instead of using one of the built-in tokens.</span></span> <span data-ttu-id="e1fb1-108">サービスは、要求/応答通信パターンを定義するコントラクトを実装します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-108">The service implements a contract that defines a request-reply communication pattern.</span></span>  
   
 > [!NOTE]
->  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
+>  <span data-ttu-id="e1fb1-109">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-109">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- このサンプルに示されている手順の概要は次のとおりです。  
+ <span data-ttu-id="e1fb1-110">このサンプルに示されている手順の概要は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-110">To summarize, this sample demonstrates the following:</span></span>  
   
--   クライアントがカスタム セキュリティ トークンをサービスに渡す方法。  
+-   <span data-ttu-id="e1fb1-111">クライアントがカスタム セキュリティ トークンをサービスに渡す方法。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-111">How a client can pass a custom security token to a service.</span></span>  
   
--   サービスがカスタム セキュリティ トークンを使用および検証する方法。  
+-   <span data-ttu-id="e1fb1-112">サービスがカスタム セキュリティ トークンを使用および検証する方法。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-112">How the service can consume and validate a custom security token.</span></span>  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス コードが、カスタム セキュリティ トークンを含む、受信したセキュリティ トークンに関する情報を取得する方法。  
+-   <span data-ttu-id="e1fb1-113">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス コードが、カスタム セキュリティ トークンを含む、受信したセキュリティ トークンに関する情報を取得する方法。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-113">How the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service code can obtain the information about received security tokens including the custom security token.</span></span>  
   
--   サーバーの X.509 証明書を使用して、メッセージの暗号化や署名に使用する対称キーを保護する方法。  
+-   <span data-ttu-id="e1fb1-114">サーバーの X.509 証明書を使用して、メッセージの暗号化や署名に使用する対称キーを保護する方法。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-114">How the server's X.509 certificate is used to protect the symmetric key used for message encryption and signature.</span></span>  
   
-## カスタム セキュリティ トークンを使用したクライアント認証  
- サービスは単一エンドポイントを公開します。エンドポイントは、`BindingHelper` クラスと `EchoServiceHost` クラスを使用してプログラムによって作成されます。  エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。  バインディングは、`SymmetricSecurityBindingElement` と `HttpTransportBindingElement` を使用して、カスタム バインディングとして構成されます。  このサンプルでは、`SymmetricSecurityBindingElement` を設定してサービスの X.509 証明書を使用し、送信中の対称キーを保護して、WS\-Security メッセージ ヘッダー内でカスタム `CreditCardToken` を署名および暗号化されたセキュリティ トークンとして渡します。  この動作により、クライアント認証に使用されるサービス資格情報と、サービス X.509 証明書に関する情報が指定されます。  
+## <a name="client-authentication-using-a-custom-security-token"></a><span data-ttu-id="e1fb1-115">カスタム セキュリティ トークンを使用したクライアント認証</span><span class="sxs-lookup"><span data-stu-id="e1fb1-115">Client Authentication Using a Custom Security Token</span></span>  
+ <span data-ttu-id="e1fb1-116">サービスは単一エンドポイントを公開します。エンドポイントは、`BindingHelper` クラスと `EchoServiceHost` クラスを使用してプログラムによって作成されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-116">The service exposes a single endpoint that is programmatically created using `BindingHelper` and `EchoServiceHost` classes.</span></span> <span data-ttu-id="e1fb1-117">エンドポイントは、アドレス、バインディング、およびコントラクトがそれぞれ 1 つずつで構成されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-117">The endpoint consists of an address, a binding, and a contract.</span></span> <span data-ttu-id="e1fb1-118">バインディングは、`SymmetricSecurityBindingElement` と `HttpTransportBindingElement` を使用して、カスタム バインディングとして構成されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-118">The binding is configured with a custom binding using `SymmetricSecurityBindingElement` and `HttpTransportBindingElement`.</span></span> <span data-ttu-id="e1fb1-119">このサンプルでは、`SymmetricSecurityBindingElement` を設定してサービスの X.509 証明書を使用し、送信中の対称キーを保護して、WS-Security メッセージ ヘッダー内でカスタム `CreditCardToken` を署名および暗号化されたセキュリティ トークンとして渡します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-119">This sample sets the `SymmetricSecurityBindingElement` to use a service's X.509 certificate to protect the symmetric key during transmission and to pass a custom `CreditCardToken` in a WS-Security message header as a signed and encrypted security token.</span></span> <span data-ttu-id="e1fb1-120">この動作により、クライアント認証に使用されるサービス資格情報と、サービス X.509 証明書に関する情報が指定されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-120">The behavior specifies the service credentials that are to be used for client authentication and also information about the service X.509 certificate.</span></span>  
   
 ```  
 public static class BindingHelper  
@@ -54,7 +57,7 @@ public static class BindingHelper
 }  
 ```  
   
- メッセージ内のクレジット カード トークンを使用するため、このサンプルではカスタム サービス資格情報を使用してこの機能を実現します。  サービス資格情報クラスは `CreditCardServiceCredentials` クラス内にあり、`EchoServiceHost.InitializeRuntime` メソッド内のサービス ホストの動作コレクションに追加されます。  
+ <span data-ttu-id="e1fb1-121">メッセージ内のクレジット カード トークンを使用するため、このサンプルではカスタム サービス資格情報を使用してこの機能を実現します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-121">To consume a credit card token in the message, the sample uses custom service credentials to provide this functionality.</span></span> <span data-ttu-id="e1fb1-122">サービス資格情報クラスは `CreditCardServiceCredentials` クラス内にあり、`EchoServiceHost.InitializeRuntime` メソッド内のサービス ホストの動作コレクションに追加されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-122">The service credentials class is located in the `CreditCardServiceCredentials` class and is added to the behaviors collections of the service host in the `EchoServiceHost.InitializeRuntime` method.</span></span>  
   
 ```  
 class EchoServiceHost : ServiceHost  
@@ -89,10 +92,9 @@ class EchoServiceHost : ServiceHost
         base.InitializeRuntime();  
     }  
 }  
-  
 ```  
   
- クライアント エンドポイントは、サービス エンドポイントと同様の方法で構成されます。  クライアントは、同じ `BindingHelper` クラスを使用してバインディングを作成します。  セットアップの残りの部分は、`Client` クラスにあります。  クライアントはさらに、`CreditCardClientCredentials` インスタンスを適切なデータと共にクライアント エンドポイントの動作コレクションに追加することによって、`CreditCardToken` に含まれる情報とサービス X.509 証明書に関する情報をセットアップ コード内に設定します。  サンプルでは、サービス証明書として、サブジェクト名が `CN=localhost` に設定された X.509 証明書を使用しています。  
+ <span data-ttu-id="e1fb1-123">クライアント エンドポイントは、サービス エンドポイントと同様の方法で構成されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-123">The client endpoint is configured in a similar manner as the service endpoint.</span></span> <span data-ttu-id="e1fb1-124">クライアントは、同じ `BindingHelper` クラスを使用してバインディングを作成します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-124">The client uses the same `BindingHelper` class to create a binding.</span></span> <span data-ttu-id="e1fb1-125">セットアップの残りの部分は、`Client` クラスにあります。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-125">The rest of the setup is located in the `Client` class.</span></span> <span data-ttu-id="e1fb1-126">クライアントはさらに、`CreditCardToken` インスタンスを適切なデータと共にクライアント エンドポイントの動作コレクションに追加することによって、`CreditCardClientCredentials` に含まれる情報とサービス X.509 証明書に関する情報をセットアップ コード内に設定します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-126">The client also sets information to be contained in the `CreditCardToken` and information about the service X.509 certificate in the setup code by adding a `CreditCardClientCredentials` instance with the proper data to the client endpoint behaviors collection.</span></span> <span data-ttu-id="e1fb1-127">サンプルでは、サービス証明書として、サブジェクト名が `CN=localhost` に設定された X.509 証明書を使用しています。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-127">The sample uses X.509 certificate with subject name set to `CN=localhost` as the service certificate.</span></span>  
   
 ```  
 Binding creditCardBinding = BindingHelper.CreateCreditCardBinding();  
@@ -122,10 +124,10 @@ Console.WriteLine("Echo service returned: {0}", client.Echo());
 channelFactory.Close();  
 ```  
   
-## カスタム セキュリティ トークンの実装  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でカスタム セキュリティ トークンを有効にするには、カスタム セキュリティ トークンのオブジェクト表現を作成します。  サンプルのこの表現は、`CreditCardToken` クラスにあります。  このオブジェクト表現は、セキュリティ トークンのすべての関連情報を保持し、セキュリティ トークンに含まれるセキュリティ キーのリストを提供します。  この場合、クレジット カード セキュリティ トークンにはセキュリティ キーが含まれません。  
+## <a name="custom-security-token-implementation"></a><span data-ttu-id="e1fb1-128">カスタム セキュリティ トークンの実装</span><span class="sxs-lookup"><span data-stu-id="e1fb1-128">Custom Security Token Implementation</span></span>  
+ <span data-ttu-id="e1fb1-129">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でカスタム セキュリティ トークンを有効にするには、カスタム セキュリティ トークンのオブジェクト表現を作成します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-129">To enable a custom security token in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], create an object representation of the custom security token.</span></span> <span data-ttu-id="e1fb1-130">サンプルのこの表現は、`CreditCardToken` クラスにあります。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-130">The sample has this representation in the `CreditCardToken` class.</span></span> <span data-ttu-id="e1fb1-131">このオブジェクト表現は、セキュリティ トークンのすべての関連情報を保持し、セキュリティ トークンに含まれるセキュリティ キーのリストを提供します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-131">The object representation is responsible for holding all relevant security token information and to provide a list of security keys contained in the security token.</span></span> <span data-ttu-id="e1fb1-132">この場合、クレジット カード セキュリティ トークンにはセキュリティ キーが含まれません。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-132">In this case, the credit card security token does not contain any security key.</span></span>  
   
- 次のセクションでは、カスタム トークンを有効にして通信回線を介して送信し、さらに [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントで使用するために必要な手順について説明します。  
+ <span data-ttu-id="e1fb1-133">次のセクションでは、カスタム トークンを有効にして通信回線を介して送信し、さらに [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] エンドポイントで使用するために必要な手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-133">The next section describes what must be done to enable a custom token to be transmitted over the wire and consumed by a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] endpoint.</span></span>  
   
 ```  
 class CreditCardToken : SecurityToken  
@@ -160,15 +162,14 @@ class CreditCardToken : SecurityToken
     public override DateTime ValidTo { get { return this.cardInfo.ExpirationDate; } }  
     public override string Id { get { return this.id; } }  
 }  
-  
 ```  
   
-## カスタム クレジット カード トークンのメッセージへの提供とメッセージからの取得  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ トークン シリアライザーは、セキュリティ トークンのオブジェクト表現をメッセージの XML から作成するほか、XML 形式のセキュリティ トークンを作成します。  また、セキュリティ トークンを指すキー識別子の読み取りと書き込みなど、他の機能も備えていますが、この例ではセキュリティ トークン関連の機能だけを使用します。  カスタム トークンを有効にするには、独自のセキュリティ トークン シリアライザーを実装する必要があります。  このサンプルでは、この目的のために `CreditCardSecurityTokenSerializer` クラスを使用します。  
+## <a name="getting-the-custom-credit-card-token-to-and-from-the-message"></a><span data-ttu-id="e1fb1-134">カスタム クレジット カード トークンのメッセージへの提供とメッセージからの取得</span><span class="sxs-lookup"><span data-stu-id="e1fb1-134">Getting the Custom Credit Card Token to and from the Message</span></span>  
+ <span data-ttu-id="e1fb1-135">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ トークン シリアライザーは、セキュリティ トークンのオブジェクト表現をメッセージの XML から作成するほか、XML 形式のセキュリティ トークンを作成します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-135">Security token serializers in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] are responsible for creating an object representation of security tokens from the XML in the message and creating a XML form of the security tokens.</span></span> <span data-ttu-id="e1fb1-136">また、セキュリティ トークンを指すキー識別子の読み取りと書き込みなど、他の機能も備えていますが、この例ではセキュリティ トークン関連の機能だけを使用します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-136">They are also responsible for other functionality such as reading and writing key identifiers pointing to security tokens, but this example uses only security token-related functionality.</span></span> <span data-ttu-id="e1fb1-137">カスタム トークンを有効にするには、独自のセキュリティ トークン シリアライザーを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-137">To enable a custom token you must implement your own security token serializer.</span></span> <span data-ttu-id="e1fb1-138">このサンプルでは、この目的のために `CreditCardSecurityTokenSerializer` クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-138">This sample uses the `CreditCardSecurityTokenSerializer` class for this purpose.</span></span>  
   
- サービス側では、カスタム シリアライザーは XML 形式のカスタム トークンを読み取り、そこからカスタム トークンのオブジェクト表現を作成します。  
+ <span data-ttu-id="e1fb1-139">サービス側では、カスタム シリアライザーは XML 形式のカスタム トークンを読み取り、そこからカスタム トークンのオブジェクト表現を作成します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-139">On the service, the custom serializer reads the XML form of the custom token and creates the custom token object representation from it.</span></span>  
   
- クライアント側では、`CreditCardSecurityTokenSerializer` クラスが、セキュリティ トークンのオブジェクト表現に含まれる情報を XML ライターに書き込みます。  
+ <span data-ttu-id="e1fb1-140">クライアント側では、`CreditCardSecurityTokenSerializer` クラスが、セキュリティ トークンのオブジェクト表現に含まれる情報を XML ライターに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-140">On the client, the `CreditCardSecurityTokenSerializer` class writes the information contained in the security token object representation into the XML writer.</span></span>  
   
 ```  
 public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer  
@@ -251,20 +252,20 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
 }  
 ```  
   
-## トークン プロバイダー クラスとトークン認証システム クラスの作成方法  
- クライアントとサービスの資格情報は、セキュリティ トークン マネージャーのインスタンスを提供します。  セキュリティ トークン マネージャーのインスタンスを使用すると、トークン プロバイダー、トークン認証システム、およびトークン シリアライザーを取得できます。  
+## <a name="how-token-provider-and-token-authenticator-classes-are-created"></a><span data-ttu-id="e1fb1-141">トークン プロバイダー クラスとトークン認証システム クラスの作成方法</span><span class="sxs-lookup"><span data-stu-id="e1fb1-141">How Token Provider and Token Authenticator Classes are Created</span></span>  
+ <span data-ttu-id="e1fb1-142">クライアントとサービスの資格情報は、セキュリティ トークン マネージャーのインスタンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-142">Client and service credentials are responsible for providing the security token manager instance.</span></span> <span data-ttu-id="e1fb1-143">セキュリティ トークン マネージャーのインスタンスを使用すると、トークン プロバイダー、トークン認証システム、およびトークン シリアライザーを取得できます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-143">The security token manager instance is used to get token providers, token authenticators and token serializers.</span></span>  
   
- トークン プロバイダーは、クライアントまたはサービスの資格情報に含まれる情報に基づいて、トークンのオブジェクト表現を作成します。  次に、トークンのオブジェクト表現は、\(前のセクションで説明したとおり\) トークン シリアライザーを使用してメッセージに書き込まれます。  
+ <span data-ttu-id="e1fb1-144">トークン プロバイダーは、クライアントまたはサービスの資格情報に含まれる情報に基づいて、トークンのオブジェクト表現を作成します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-144">The token provider creates an object representation of the token based on the information contained in the client or service credentials.</span></span> <span data-ttu-id="e1fb1-145">次に、トークンのオブジェクト表現は、(前のセクションで説明したとおり) トークン シリアライザーを使用してメッセージに書き込まれます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-145">The token object representation is then written to the message using the token serializer (discussed in the previous section).</span></span>  
   
- トークン認証システムは、到着したメッセージ内のトークンを検証します。  受信トークンのオブジェクト表現は、トークン シリアライザーによって作成されます。  このオブジェクト表現は、次に、検証のためトークン認証システムに渡されます。  トークンが正常に検証されたら、トークン認証システムは `IAuthorizationPolicy` オブジェクトのコレクションを返します。このオブジェクトはトークンに含まれる情報を表します。  この情報は、承認に関する決定を行ったり、アプリケーションに対するクレームを提供したりするために、後でメッセージ処理中に使用されます。  この例では、クレジット カード トークンの認証システムはこの目的のために `CreditCardTokenAuthorizationPolicy` を使用します。  
+ <span data-ttu-id="e1fb1-146">トークン認証システムは、到着したメッセージ内のトークンを検証します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-146">The token authenticator validates tokens that arrive in the message.</span></span> <span data-ttu-id="e1fb1-147">受信トークンのオブジェクト表現は、トークン シリアライザーによって作成されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-147">The incoming token object representation is created by the token serializer.</span></span> <span data-ttu-id="e1fb1-148">このオブジェクト表現は、次に、検証のためトークン認証システムに渡されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-148">This object representation is then passed to the token authenticator for validation.</span></span> <span data-ttu-id="e1fb1-149">トークンが正常に検証されたら、トークン認証システムは `IAuthorizationPolicy` オブジェクトのコレクションを返します。このオブジェクトはトークンに含まれる情報を表します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-149">After the token is successfully validated, the token authenticator returns a collection of `IAuthorizationPolicy` objects that represent the information contained in the token.</span></span> <span data-ttu-id="e1fb1-150">この情報は、承認に関する決定を行ったり、アプリケーションに対するクレームを提供したりするために、後でメッセージ処理中に使用されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-150">This information is used later during the message processing to perform authorization decisions and to provide claims for the application.</span></span> <span data-ttu-id="e1fb1-151">この例では、クレジット カード トークンの認証システムはこの目的のために `CreditCardTokenAuthorizationPolicy` を使用します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-151">In this example, the credit card token authenticator uses `CreditCardTokenAuthorizationPolicy` for this purpose.</span></span>  
   
- トークン シリアライザーは、トークンのオブジェクト表現を通信回線に送り、通信回線からトークンのオブジェクト表現を受け取ります。  これについては、前のセクションで説明したとおりです。  
+ <span data-ttu-id="e1fb1-152">トークン シリアライザーは、トークンのオブジェクト表現を通信回線に送り、通信回線からトークンのオブジェクト表現を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-152">The token serializer is responsible for getting the object representation of the token to and from the wire.</span></span> <span data-ttu-id="e1fb1-153">これについては、前のセクションで説明したとおりです。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-153">This is discussed in the previous section.</span></span>  
   
- このサンプルでは、トークン プロバイダーはクライアントでのみ使用し、トークン認証システムはサービスでのみ使用します。これは、クレジット カード トークンの送信はクライアントからサービスへの方向でのみ行うためです。  
+ <span data-ttu-id="e1fb1-154">このサンプルでは、トークン プロバイダーはクライアントでのみ使用し、トークン認証システムはサービスでのみ使用します。これは、クレジット カード トークンの送信はクライアントからサービスへの方向でのみ行うためです。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-154">In this sample, we use a token provider only on the client and a token authenticator only on the service, because we want to transmit a credit card token only in the client-to-service direction.</span></span>  
   
- クライアント側の機能は `CreditCardClientCrendentials`、`CreditCardClientCredentialsSecurityTokenManager`、および `CreditCardTokenProvider` クラスにあります。  
+ <span data-ttu-id="e1fb1-155">クライアント側の機能は `CreditCardClientCrendentials`、`CreditCardClientCredentialsSecurityTokenManager`、および `CreditCardTokenProvider` クラスにあります。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-155">The functionality on the client is located in the `CreditCardClientCrendentials`, `CreditCardClientCredentialsSecurityTokenManager` and `CreditCardTokenProvider` classes.</span></span>  
   
- サービス側の機能は `CreditCardServiceCredentials`、`CreditCardServiceCredentialsSecurityTokenManager`、`CreditCardTokenAuthenticator`、および `CreditCardTokenAuthorizationPolicy` クラスにあります。  
+ <span data-ttu-id="e1fb1-156">サービス側の機能は `CreditCardServiceCredentials`、`CreditCardServiceCredentialsSecurityTokenManager`、`CreditCardTokenAuthenticator`、および `CreditCardTokenAuthorizationPolicy` クラスにあります。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-156">On the service, the functionality resides in the `CreditCardServiceCredentials`, `CreditCardServiceCredentialsSecurityTokenManager`, `CreditCardTokenAuthenticator` and `CreditCardTokenAuthorizationPolicy` classes.</span></span>  
   
 ```  
     public class CreditCardClientCredentials : ClientCredentials  
@@ -506,11 +507,10 @@ public class CreditCardServiceCredentialsSecurityTokenManager : ServiceCredentia
             return true;  
         }  
     }  
-  
 ```  
   
-## 呼び出し元の情報の表示  
- 呼び出し元の情報を表示するには、次のサンプル コードに示すように `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` を使用します。  `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` には、現在の呼び出し元に関連付けられている承認クレームが含まれています。  クレームは、`AuthorizationPolicies` コレクションの `CreditCardToken` クラスによって提供されます。  
+## <a name="displaying-the-callers-information"></a><span data-ttu-id="e1fb1-157">呼び出し元の情報の表示</span><span class="sxs-lookup"><span data-stu-id="e1fb1-157">Displaying the Callers' Information</span></span>  
+ <span data-ttu-id="e1fb1-158">呼び出し元の情報を表示するには、次のサンプル コードに示すように `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` を使用します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-158">To display the caller's information, use the `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` as shown in the following sample code.</span></span> <span data-ttu-id="e1fb1-159">`ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` には、現在の呼び出し元に関連付けられている承認クレームが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-159">The `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` contains authorization claims associated with the current caller.</span></span> <span data-ttu-id="e1fb1-160">クレームは、`CreditCardToken` コレクションの `AuthorizationPolicies` クラスによって提供されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-160">The claims are supplied by the `CreditCardToken` class in its `AuthorizationPolicies` collection.</span></span>  
   
 ```  
 bool TryGetStringClaimValue(ClaimSet claimSet, string claimType, out string claimValue)  
@@ -551,21 +551,20 @@ string GetCallerCreditCardNumber()
 }  
 ```  
   
- このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。  クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+ <span data-ttu-id="e1fb1-161">このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-161">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="e1fb1-162">クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-162">Press ENTER in the client window to shut down the client.</span></span>  
   
-## セットアップ バッチ ファイル  
- このサンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してサーバーを構成し、サーバー証明書ベースのセキュリティを必要とする、IIS でホストされるアプリケーションを実行できるようになります。  このバッチ ファイルは、複数のコンピューターを使用する場合またはホストなしの場合に応じて変更する必要があります。  
+## <a name="setup-batch-file"></a><span data-ttu-id="e1fb1-163">セットアップ バッチ ファイル</span><span class="sxs-lookup"><span data-stu-id="e1fb1-163">Setup Batch File</span></span>  
+ <span data-ttu-id="e1fb1-164">このサンプルに用意されている Setup.bat バッチ ファイルを使用すると、適切な証明書を使用してサーバーを構成し、サーバー証明書ベースのセキュリティを必要とする、IIS でホストされるアプリケーションを実行できるようになります。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-164">The Setup.bat batch file included with this sample allows you to configure the server with relevant certificates to run the IIS-hosted application that requires server certificate-based security.</span></span> <span data-ttu-id="e1fb1-165">このバッチ ファイルは、複数のコンピューターを使用する場合またはホストなしの場合に応じて変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-165">This batch file must be modified to work across computers or to work in a non-hosted case.</span></span>  
   
- 次に、バッチ ファイルのセクションのうち、該当する構成で実行するために変更が必要となる部分を示します。  
+ <span data-ttu-id="e1fb1-166">次に、バッチ ファイルのセクションのうち、該当する構成で実行するために変更が必要となる部分を示します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-166">The following provides a brief overview of the different sections of the batch files so that they can be modified to run in the appropriate configuration.</span></span>  
   
--   サーバー証明書の作成 :  
+-   <span data-ttu-id="e1fb1-167">サーバー証明書の作成 :</span><span class="sxs-lookup"><span data-stu-id="e1fb1-167">Creating the server certificate:</span></span>  
   
-     `Setup.bat` バッチ ファイルの次の行は、使用するサーバー証明書を作成します。  `%SERVER_NAME%`  変数はサーバー名です。  この変数を変更して、使用するサーバー名を指定します。  このバッチ ファイルでの既定は localhost です。  `%SERVER_NAME%` 変数を変更する場合は、Client.cs ファイルと Service.cs ファイル全体を参照して、localhost のすべてのインスタンスを Setup.bat スクリプトで使用するサーバー名に置き換える必要があります。  
+     <span data-ttu-id="e1fb1-168">`Setup.bat` バッチ ファイルの次の行は、使用するサーバー証明書を作成します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-168">The following lines from the `Setup.bat` batch file create the server certificate to be used.</span></span> <span data-ttu-id="e1fb1-169">`%SERVER_NAME%` 変数はサーバー名です。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-169">The `%SERVER_NAME%` variable specifies the server name.</span></span> <span data-ttu-id="e1fb1-170">この変数を変更して、使用するサーバー名を指定します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-170">Change this variable to specify your own server name.</span></span> <span data-ttu-id="e1fb1-171">このバッチ ファイルでの既定は localhost です。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-171">The default in this batch file is localhost.</span></span> <span data-ttu-id="e1fb1-172">`%SERVER_NAME%` 変数を変更する場合は、Client.cs ファイルと Service.cs ファイル全体を参照して、localhost のすべてのインスタンスを Setup.bat スクリプトで使用するサーバー名に置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-172">If you change the `%SERVER_NAME%` variable, you must go through the Client.cs and Service.cs files and replace all instances of localhost with the server name that you use in the Setup.bat script.</span></span>  
   
-     証明書は、`LocalMachine` ストアの場所の My \(Personal\) ストアに保存されます。  証明書は、IIS でホストされるサービスの LocalMachine ストアに保存されます。  自己ホスト型サービスの場合、バッチ ファイルで文字列 LocalMachine を CurrentUser に置き換えて、クライアント証明書を CurrentUser ストアの場所に保存します。  
+     <span data-ttu-id="e1fb1-173">証明書は、`LocalMachine` ストアの場所の My (Personal) ストアに保存されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-173">The certificate is stored in My (Personal) store under the `LocalMachine` store location.</span></span> <span data-ttu-id="e1fb1-174">証明書は、IIS でホストされるサービスの LocalMachine ストアに保存されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-174">The certificate is stored in the LocalMachine store for the IIS-hosted services.</span></span> <span data-ttu-id="e1fb1-175">自己ホスト型サービスの場合、バッチ ファイルで文字列 LocalMachine を CurrentUser に置き換えて、クライアント証明書を CurrentUser ストアの場所に保存します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-175">For self-hosted services, you should modify the batch file to store the client certificate in the CurrentUser store location by replacing the string LocalMachine with CurrentUser.</span></span>  
   
     ```  
-  
     echo ************  
     echo Server cert setup starting  
     echo %SERVER_NAME%  
@@ -573,23 +572,20 @@ string GetCallerCreditCardNumber()
     echo making server cert  
     echo ************  
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
-  
     ```  
   
--   サーバー証明書のクライアントの信頼された証明書ストアへのインストール。  
+-   <span data-ttu-id="e1fb1-176">サーバー証明書のクライアントの信頼された証明書ストアへのインストール。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-176">Installing the server certificate into client's trusted certificate store:</span></span>  
   
-     Setup.bat バッチ ファイルの次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。  この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないからです。  マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。  
+     <span data-ttu-id="e1fb1-177">Setup.bat バッチ ファイルの次の行は、サーバー証明書をクライアントの信頼されたユーザーのストアにコピーします。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-177">The following lines in the Setup.bat batch file copy the server certificate into the client trusted people store.</span></span> <span data-ttu-id="e1fb1-178">この手順が必要なのは、Makecert.exe によって生成される証明書がクライアント システムにより暗黙には信頼されないからです。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-178">This step is required because certificates generated by Makecert.exe are not implicitly trusted by the client system.</span></span> <span data-ttu-id="e1fb1-179">マイクロソフト発行の証明書など、クライアントの信頼されたルート証明書に基づいた証明書が既にある場合は、クライアント証明書ストアにサーバー証明書を配置するこの手順は不要です。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-179">If you already have a certificate that is rooted in a client trusted root certificate—for example, a Microsoft issued certificate—this step of populating the client certificate store with the server certificate is not required.</span></span>  
   
     ```  
-  
     echo ************  
     echo copying server cert to client's TrustedPeople store  
     echo ************  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
-  
     ```  
   
--   IIS でホストされるサービスから証明書の秘密キーへのアクセスを有効にするには、IIS でホストされる処理が実行されているユーザー アカウントに、秘密キーへの適切なアクセス許可を付与する必要があります。  これは、Setup.bat スクリプトの最後の手順によって実現されます。  
+-   <span data-ttu-id="e1fb1-180">IIS でホストされるサービスから証明書の秘密キーへのアクセスを有効にするには、IIS でホストされる処理が実行されているユーザー アカウントに、秘密キーへの適切なアクセス許可を付与する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-180">To enable access to the certificate private key from the IIS-hosted service, the user account under which the IIS-hosted process is running must be granted appropriate permissions for the private key.</span></span> <span data-ttu-id="e1fb1-181">これは、Setup.bat スクリプトの最後の手順によって実現されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-181">This is accomplished by last steps in the Setup.bat script.</span></span>  
   
     ```  
     echo ************  
@@ -603,49 +599,49 @@ string GetCallerCreditCardNumber()
     ```  
   
 > [!NOTE]
->  Setup.bat バッチ ファイルは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトから実行します。  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト内で設定された PATH 環境変数は、Setup.bat スクリプトで必要な実行可能ファイルが格納されているディレクトリを指しています。  
+>  <span data-ttu-id="e1fb1-182">Setup.bat バッチ ファイルは、[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプトから実行します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-182">The Setup.bat batch file is designed to be run from a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt.</span></span> <span data-ttu-id="e1fb1-183">[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト内で設定された PATH 環境変数は、Setup.bat スクリプトで必要な実行可能ファイルが格納されているディレクトリを指しています。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-183">The PATH environment variable set within the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt points to the directory that contains executables required by the Setup.bat script.</span></span>  
   
-#### サンプルをセットアップしてビルドするには  
+#### <a name="to-set-up-and-build-the-sample"></a><span data-ttu-id="e1fb1-184">サンプルをセットアップしてビルドするには</span><span class="sxs-lookup"><span data-stu-id="e1fb1-184">To set up and build the sample</span></span>  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  <span data-ttu-id="e1fb1-185">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-185">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  ソリューションをビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  <span data-ttu-id="e1fb1-186">指示に従って、ソリューションをビルドする[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-186">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-#### サンプルを同じコンピューターで実行するには  
+#### <a name="to-run-the-sample-on-the-same-computer"></a><span data-ttu-id="e1fb1-187">サンプルを同じコンピューターで実行するには</span><span class="sxs-lookup"><span data-stu-id="e1fb1-187">To run the sample on the same computer</span></span>  
   
-1.  管理特権で [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト ウィンドウを開き、サンプルのインストール フォルダーから Setup.bat を実行します。  これにより、サンプルの実行に必要なすべての証明書がインストールされます。Makecert.exe が存在するフォルダーがパスに含まれていることを確認します。  
+1.  <span data-ttu-id="e1fb1-188">管理特権で [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] コマンド プロンプト ウィンドウを開き、サンプルのインストール フォルダーから Setup.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-188">Open a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt window with administrator privileges and run Setup.bat from the sample install folder.</span></span> <span data-ttu-id="e1fb1-189">これにより、サンプルの実行に必要なすべての証明書がインストールされます。Makecert.exe が存在するフォルダーがパスに含まれていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-189">This installs all the certificates required for running the sample.Make sure that the path includes the folder where Makecert.exe is located.</span></span>  
   
 > [!NOTE]
->  サンプルの使用が終わったら、Cleanup.bat を実行して証明書を削除してください。  他のセキュリティ サンプルでも同じ証明書を使用します。  
+>  <span data-ttu-id="e1fb1-190">サンプルの使用が終わったら、Cleanup.bat を実行して証明書を削除してください。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-190">Be sure to remove the certificates by running Cleanup.bat when finished with the sample.</span></span> <span data-ttu-id="e1fb1-191">他のセキュリティ サンプルでも同じ証明書を使用します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-191">Other security samples use the same certificates.</span></span>  
   
-1.  Client.exe を client\\bin ディレクトリで起動します。  クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。  
+1.  <span data-ttu-id="e1fb1-192">Client.exe を client\bin ディレクトリで起動します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-192">Launch Client.exe from client\bin directory.</span></span> <span data-ttu-id="e1fb1-193">クライアント アクティビティがクライアントのコンソール アプリケーションに表示されます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-193">Client activity is displayed on the client console application.</span></span>  
   
-2.  クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+2.  <span data-ttu-id="e1fb1-194">クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-194">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
   
-#### サンプルを複数のコンピューターで実行するには  
+#### <a name="to-run-the-sample-across-computer"></a><span data-ttu-id="e1fb1-195">サンプルを複数のコンピューターで実行するには</span><span class="sxs-lookup"><span data-stu-id="e1fb1-195">To run the sample across computer</span></span>  
   
-1.  サービス コンピューターにサービス バイナリ用のディレクトリを作成します。  
+1.  <span data-ttu-id="e1fb1-196">サービス コンピューターにサービス バイナリ用のディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-196">Create a directory on the service computer for the service binaries.</span></span>  
   
-2.  サービス プログラム ファイルを、サービス コンピューターのサービス ディレクトリにコピーします。  必ず CreditCardFile.txt をコピーしてください。これを行わない場合、クレジット カードの認証システムはクライアントから送信されたクレジット カード情報を検証できません。  Setup.bat ファイルと Cleanup.bat ファイルもサービス コンピューターにコピーします。  
+2.  <span data-ttu-id="e1fb1-197">サービス プログラム ファイルを、サービス コンピューターのサービス ディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-197">Copy the service program files into the service directory on the service computer.</span></span> <span data-ttu-id="e1fb1-198">必ず CreditCardFile.txt をコピーしてください。これを行わない場合、クレジット カードの認証システムはクライアントから送信されたクレジット カード情報を検証できません。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-198">Do not forget to copy CreditCardFile.txt; otherwise the credit card authenticator cannot validate credit card information sent from the client.</span></span> <span data-ttu-id="e1fb1-199">Setup.bat ファイルと Cleanup.bat ファイルもサービス コンピューターにコピーします。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-199">Also copy the Setup.bat and Cleanup.bat files to the service computer.</span></span>  
   
-3.  コンピューターの完全修飾ドメイン名を含むサブジェクト名を持つサーバー証明書が必要です。  `%SERVER_NAME%` 変数を、サービスがホストされるコンピューターの完全修飾名に変更すると、Setup.bat を使用してこの証明書を作成できます。  Setup.bat ファイルは、管理特権を使用して開いた Visual Studio コマンド プロンプトで実行する必要があります。  
+3.  <span data-ttu-id="e1fb1-200">コンピューターの完全修飾ドメイン名を含むサブジェクト名を持つサーバー証明書が必要です。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-200">You must have a server certificate with the subject name that contains the fully-qualified domain name of the computer.</span></span> <span data-ttu-id="e1fb1-201">`%SERVER_NAME%` 変数を、サービスがホストされるコンピューターの完全修飾名に変更すると、Setup.bat を使用してこの証明書を作成できます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-201">You can create one using the Setup.bat if you change the `%SERVER_NAME%` variable to fully-qualified name of the computer where the service is hosted.</span></span> <span data-ttu-id="e1fb1-202">Setup.bat ファイルは、管理特権を使用して開いた Visual Studio コマンド プロンプトで実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-202">Note that the Setup.bat file must be run in a Visual Studio command prompt opened with administrator privileges.</span></span>  
   
-4.  サーバー証明書をクライアントの CurrentUser\-TrustedPeople ストアにコピーします。  このようにする必要があるのは、サーバー証明書が信頼できる発行元から発行されていない場合のみです。  
+4.  <span data-ttu-id="e1fb1-203">サーバー証明書をクライアントの CurrentUser-TrustedPeople ストアにコピーします。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-203">Copy the server certificate into the CurrentUser-TrustedPeople store on the client.</span></span> <span data-ttu-id="e1fb1-204">このようにする必要があるのは、サーバー証明書が信頼できる発行元から発行されていない場合のみです。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-204">You must do this only if the server certificate is not issued by a trusted issuer.</span></span>  
   
-5.  EchoServiceHost.cs ファイルで、証明書のサブジェクト名の値を localhost から完全修飾コンピューター名に変更します。  
+5.  <span data-ttu-id="e1fb1-205">EchoServiceHost.cs ファイルで、証明書のサブジェクト名の値を localhost から完全修飾コンピューター名に変更します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-205">In the EchoServiceHost.cs file, change the value of the certificate subject name to specify a fully-qualified computer name instead of localhost.</span></span>  
   
-6.  クライアント プログラム ファイルを、言語固有のフォルダーにある \\client\\bin\\ フォルダーからクライアント コンピューターにコピーします。  
+6.  <span data-ttu-id="e1fb1-206">クライアント プログラム ファイルを、言語固有のフォルダーにある \client\bin\ フォルダーからクライアント コンピューターにコピーします。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-206">Copy the client program files from the \client\bin\ folder, under the language-specific folder, to the client computer.</span></span>  
   
-7.  Client.cs ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。  
+7.  <span data-ttu-id="e1fb1-207">Client.cs ファイルで、エンドポイントのアドレス値をサービスの新しいアドレスに合わせます。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-207">In the Client.cs file, change the address value of the endpoint to match the new address of your service.</span></span>  
   
-8.  Client.cs ファイルで、サービス X.509 証明書のサブジェクト名を localhost からリモート ホストの完全修飾コンピューター名に変更します。  
+8.  <span data-ttu-id="e1fb1-208">Client.cs ファイルで、サービス X.509 証明書のサブジェクト名を localhost からリモート ホストの完全修飾コンピューター名に変更します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-208">In the Client.cs file change the subject name of the service X.509 certificate to match the fully-qualified computer name of the remote host instead of localhost.</span></span>  
   
-9. クライアント コンピューターで、コマンド プロンプト ウィンドウから Client.exe を起動します。  
+9. <span data-ttu-id="e1fb1-209">クライアント コンピューターで、コマンド プロンプト ウィンドウから Client.exe を起動します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-209">On the client computer, launch Client.exe from a command prompt window.</span></span>  
   
-10. クライアントとサービス間で通信できない場合は、「[Troubleshooting Tips](http://msdn.microsoft.com/ja-jp/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。  
+10. <span data-ttu-id="e1fb1-210">クライアントとサービス間で通信できない場合は、「 [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-210">If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).</span></span>  
   
-#### サンプルの実行後にクリーンアップするには  
+#### <a name="to-clean-up-after-the-sample"></a><span data-ttu-id="e1fb1-211">サンプルの実行後にクリーンアップするには</span><span class="sxs-lookup"><span data-stu-id="e1fb1-211">To clean up after the sample</span></span>  
   
-1.  サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。  
+1.  <span data-ttu-id="e1fb1-212">サンプルの実行が終わったら、サンプル フォルダーにある Cleanup.bat を実行します。</span><span class="sxs-lookup"><span data-stu-id="e1fb1-212">Run Cleanup.bat in the samples folder once you have finished running the sample.</span></span>  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="e1fb1-213">関連項目</span><span class="sxs-lookup"><span data-stu-id="e1fb1-213">See Also</span></span>

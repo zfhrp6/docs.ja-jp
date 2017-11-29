@@ -1,48 +1,51 @@
 ---
-title: "方法 : GridView を実装する ListView で行のスタイルを設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "行のスタイル設定、GridView コントロール"
-  - "スタイル設定 (GridView を実装する ListView の行を)"
-  - "ListView コントロール、Gridview を含む行のスタイル設定"
+title: "方法 : GridView を実装する ListView で行のスタイルを設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- GridView controls [WPF], styling rows
+- styling rows in ListViews implementing GridViews [WPF]
+- ListView controls [WPF], styling rows with GridViews
 ms.assetid: 2e406ba2-70a0-4e62-841f-0934859de76e
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c51f6cc5c35200267aa84960655fd734a937a7c5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : GridView を実装する ListView で行のスタイルを設定する
-内の行のスタイルを設定する方法を示します、 <xref:System.Windows.Controls.ListView>を実装するコントロール、 <xref:System.Windows.Controls.GridView><xref:System.Windows.Controls.ListView.View%2A>モードです。  
+# <a name="how-to-style-a-row-in-a-listview-that-implements-a-gridview"></a><span data-ttu-id="9ec95-102">方法 : GridView を実装する ListView で行のスタイルを設定する</span><span class="sxs-lookup"><span data-stu-id="9ec95-102">How to: Style a Row in a ListView That Implements a GridView</span></span>
+<span data-ttu-id="9ec95-103">この例は、内の行のスタイルを設定する方法を示しています、<xref:System.Windows.Controls.ListView>を実装するコントロール、 <xref:System.Windows.Controls.GridView> <xref:System.Windows.Controls.ListView.View%2A>モード。</span><span class="sxs-lookup"><span data-stu-id="9ec95-103">This example shows how to style a row in a <xref:System.Windows.Controls.ListView> control that implements a <xref:System.Windows.Controls.GridView><xref:System.Windows.Controls.ListView.View%2A> mode.</span></span>  
   
-## <a name="example"></a>例  
- 内の行のスタイルを設定することができます、 <xref:System.Windows.Controls.ListView>コントロールを設定して、 <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>上、 <xref:System.Windows.Controls.ListView>コントロールです。 として表される項目のスタイルを設定<xref:System.Windows.Controls.ListViewItem>のオブジェクト。 <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>参照、 <xref:System.Windows.Controls.ControlTemplate>オブジェクト、行の内容を表示するために使用します。  
+## <a name="example"></a><span data-ttu-id="9ec95-104">例</span><span class="sxs-lookup"><span data-stu-id="9ec95-104">Example</span></span>  
+ <span data-ttu-id="9ec95-105">内の行のスタイルを設定することができます、<xref:System.Windows.Controls.ListView>コントロールを設定して、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>上、<xref:System.Windows.Controls.ListView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="9ec95-105">You can style a row in a <xref:System.Windows.Controls.ListView> control by setting an <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> on the <xref:System.Windows.Controls.ListView> control.</span></span> <span data-ttu-id="9ec95-106">として表されるアイテムのスタイル設定<xref:System.Windows.Controls.ListViewItem>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9ec95-106">Set the style for its items that are represented as <xref:System.Windows.Controls.ListViewItem> objects.</span></span> <span data-ttu-id="9ec95-107"><xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>参照、<xref:System.Windows.Controls.ControlTemplate>行のコンテンツの表示に使用されるオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9ec95-107">The <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> references the <xref:System.Windows.Controls.ControlTemplate> objects that are used to display the row content.</span></span>  
   
- 次の例の抽出元で、完全なサンプルに格納されている楽曲情報のコレクションを表示する、[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]データベースです。 データベースの各曲が格納された rating フィールドをこのフィールドの値が曲情報の行を表示する方法を指定します。  
+ <span data-ttu-id="9ec95-108">次の例の抽出元である完全なサンプルは、[!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]データベースに格納されている楽曲情報のコレクションを表示します。</span><span class="sxs-lookup"><span data-stu-id="9ec95-108">The complete sample, which the following examples are extracted from, displays a collection of song information that is stored in an [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] database.</span></span> <span data-ttu-id="9ec95-109">データベースの各曲にはレーティングフィールドがあり、このフィールドの値が曲情報の行を表示する方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="9ec95-109">Each song in the database has a rating field and the value of this field specifies how to display a row of song information.</span></span>  
   
- 次の例は、定義する方法を示しています。 <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>の、 <xref:System.Windows.Controls.ListViewItem>曲のコレクション内の曲を表すオブジェクト。 <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>参照<xref:System.Windows.Controls.ControlTemplate>楽曲情報の行を表示する方法を指定するオブジェクト。  
+ <span data-ttu-id="9ec95-110">次の例は、定義する方法を示しています。<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>の、<xref:System.Windows.Controls.ListViewItem>曲のコレクション内の曲を表すオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9ec95-110">The following example shows how to define <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> for the <xref:System.Windows.Controls.ListViewItem> objects that represent the songs in the song collection.</span></span> <span data-ttu-id="9ec95-111"><xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>参照<xref:System.Windows.Controls.ControlTemplate>楽曲情報の行を表示する方法を指定するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9ec95-111">The <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> references <xref:System.Windows.Controls.ControlTemplate> objects that specify how to display a row of song information.</span></span>  
   
- [!code-xml[ListViewItemStyleSnippet#ItemContainerStyle](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewItemStyleSnippet/CS/Window1.xaml#itemcontainerstyle)]  
+ [!code-xaml[ListViewItemStyleSnippet#ItemContainerStyle](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewItemStyleSnippet/CS/Window1.xaml#itemcontainerstyle)]  
   
- 例を次に、 <xref:System.Windows.Controls.ControlTemplate>テキスト文字列を追加する`"Strongly Recommended"`行にします。 このテンプレートで参照される、 <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>し、曲の格付けがある 5 (5) の値が表示されます。 <xref:System.Windows.Controls.ControlTemplate>を含む、 <xref:System.Windows.Controls.GridViewRowPresenter>オブジェクトで定義されている列の行の内容をレイアウトする、 <xref:System.Windows.Controls.GridView>表示モード。  
+ <span data-ttu-id="9ec95-112">次の例は、<xref:System.Windows.Controls.ControlTemplate>テキスト文字列を追加する`"Strongly Recommended"`行にします。</span><span class="sxs-lookup"><span data-stu-id="9ec95-112">The following example shows a <xref:System.Windows.Controls.ControlTemplate> that adds the text string `"Strongly Recommended"` to the row.</span></span> <span data-ttu-id="9ec95-113">このテンプレートが参照されている、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>し、曲の評価がある 5 (5) の値が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9ec95-113">This template is referenced in the <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> and displays when the song's rating has a value of 5 (five).</span></span> <span data-ttu-id="9ec95-114"><xref:System.Windows.Controls.ControlTemplate>が含まれています、<xref:System.Windows.Controls.GridViewRowPresenter>で定義されている列の行の内容をレイアウトするオブジェクト、<xref:System.Windows.Controls.GridView>表示モード。</span><span class="sxs-lookup"><span data-stu-id="9ec95-114">The <xref:System.Windows.Controls.ControlTemplate> includes a <xref:System.Windows.Controls.GridViewRowPresenter> object that lays out the contents of the row in columns as defined by the <xref:System.Windows.Controls.GridView> view mode.</span></span>  
   
- [!code-xml[ListViewItemStyleSnippet#ControlTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewItemStyleSnippet/CS/Window1.xaml#controltemplate)]  
+ [!code-xaml[ListViewItemStyleSnippet#ControlTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewItemStyleSnippet/CS/Window1.xaml#controltemplate)]  
   
- 次の例では定義<xref:System.Windows.Controls.GridView>します。  
+ <span data-ttu-id="9ec95-115">次の例では定義<xref:System.Windows.Controls.GridView>です。</span><span class="sxs-lookup"><span data-stu-id="9ec95-115">The following example defines <xref:System.Windows.Controls.GridView>.</span></span>  
   
- [!code-xml[ListViewItemStyleSnippet#GridView](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewItemStyleSnippet/CS/Window1.xaml#gridview)]  
+ [!code-xaml[ListViewItemStyleSnippet#GridView](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewItemStyleSnippet/CS/Window1.xaml#gridview)]  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Windows.Controls.ListView>   
- <xref:System.Windows.Controls.GridView>   
- [操作方法に関するトピック](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)   
- [ListView の概要](../../../../docs/framework/wpf/controls/listview-overview.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+## <a name="see-also"></a><span data-ttu-id="9ec95-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="9ec95-116">See Also</span></span>  
+ <xref:System.Windows.Controls.ListView>  
+ <xref:System.Windows.Controls.GridView>  
+ [<span data-ttu-id="9ec95-117">方法トピック</span><span class="sxs-lookup"><span data-stu-id="9ec95-117">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
+ [<span data-ttu-id="9ec95-118">ListView の概要</span><span class="sxs-lookup"><span data-stu-id="9ec95-118">ListView Overview</span></span>](../../../../docs/framework/wpf/controls/listview-overview.md)  
+ [<span data-ttu-id="9ec95-119">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="9ec95-119">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)

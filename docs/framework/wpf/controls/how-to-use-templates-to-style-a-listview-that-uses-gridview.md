@@ -1,50 +1,52 @@
 ---
-title: "方法 : テンプレートを使用して、GridView を使用する ListView のスタイルを設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ListView コントロール, スタイル設定"
+title: "方法 : テンプレートを使用して、GridView を使用する ListView のスタイルを設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: ListView controls [WPF], styling
 ms.assetid: 94bf964b-96c8-4bdf-a0c3-f5271b7cb565
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 246c144a18d7c1014096a6e37ad09b6eec5ad932
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : テンプレートを使用して、GridView を使用する ListView のスタイルを設定する
-<xref:System.Windows.DataTemplate> オブジェクトと <xref:System.Windows.Style> オブジェクトを使用して、<xref:System.Windows.Controls.GridView> 表示モードを使用する <xref:System.Windows.Controls.ListView> コントロールの外観を指定する方法を次の例に示します。  
+# <a name="how-to-use-templates-to-style-a-listview-that-uses-gridview"></a><span data-ttu-id="637cd-102">方法 : テンプレートを使用して、GridView を使用する ListView のスタイルを設定する</span><span class="sxs-lookup"><span data-stu-id="637cd-102">How to: Use Templates to Style a ListView That Uses GridView</span></span>
+<span data-ttu-id="637cd-103">この例を使用する方法を示しています、<xref:System.Windows.DataTemplate>と<xref:System.Windows.Style>の外観を指定するオブジェクト、<xref:System.Windows.Controls.ListView>を使用するコントロール、<xref:System.Windows.Controls.GridView>表示モード。</span><span class="sxs-lookup"><span data-stu-id="637cd-103">This example shows how to use the <xref:System.Windows.DataTemplate> and <xref:System.Windows.Style> objects to specify the appearance of a <xref:System.Windows.Controls.ListView> control that uses a <xref:System.Windows.Controls.GridView> view mode.</span></span>  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Controls.GridViewColumn> の列ヘッダーの外観をカスタマイズする <xref:System.Windows.Style> オブジェクトと <xref:System.Windows.DataTemplate> オブジェクトを示します。  
+## <a name="example"></a><span data-ttu-id="637cd-104">例</span><span class="sxs-lookup"><span data-stu-id="637cd-104">Example</span></span>  
+ <span data-ttu-id="637cd-105">次の例に示さ<xref:System.Windows.Style>と<xref:System.Windows.DataTemplate>列のヘッダーの外観をカスタマイズするオブジェクト、<xref:System.Windows.Controls.GridViewColumn>です。</span><span class="sxs-lookup"><span data-stu-id="637cd-105">The following examples show <xref:System.Windows.Style> and <xref:System.Windows.DataTemplate> objects that customize the appearance of a column header for a <xref:System.Windows.Controls.GridViewColumn>.</span></span>  
   
- [!code-xml[ListViewTemplate#GridViewHeaderStyle](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewheaderstyle)]  
+ [!code-xaml[ListViewTemplate#GridViewHeaderStyle](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewheaderstyle)]  
   
- [!code-xml[ListViewTemplate#GridViewHeaderTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewheadertemplate)]  
+ [!code-xaml[ListViewTemplate#GridViewHeaderTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewheadertemplate)]  
   
- これらの <xref:System.Windows.Style> オブジェクトと <xref:System.Windows.DataTemplate> オブジェクトを使用して <xref:System.Windows.Controls.GridViewColumn> の <xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A> プロパティと <xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A> プロパティを設定する方法を次の例に示します。  <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> プロパティでは、列のセルのコンテンツが定義されています。  
+ <span data-ttu-id="637cd-106">次の例は、これらを使用する方法を示しています。<xref:System.Windows.Style>と<xref:System.Windows.DataTemplate>を設定するオブジェクト、<xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A>と<xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A>のプロパティ、<xref:System.Windows.Controls.GridViewColumn>です。</span><span class="sxs-lookup"><span data-stu-id="637cd-106">The following example shows how to use these <xref:System.Windows.Style> and <xref:System.Windows.DataTemplate> objects to set the <xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A> and <xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A> properties of a <xref:System.Windows.Controls.GridViewColumn>.</span></span> <span data-ttu-id="637cd-107"><xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>プロパティは、列のセルのコンテンツを定義します。</span><span class="sxs-lookup"><span data-stu-id="637cd-107">The <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> property defines the content of the column cells.</span></span>  
   
- [!code-xml[ListViewTemplate#GridViewColumnTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewcolumntemplate)]  
+ [!code-xaml[ListViewTemplate#GridViewColumnTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewcolumntemplate)]  
   
- <xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A> と <xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A> の他にも、<xref:System.Windows.Controls.GridView> コントロールには、列ヘッダーの外観をカスタマイズするために使用できるプロパティがいくつかあります。  詳細については、「[GridView の列ヘッダー スタイルおｙびテンプレートの概要](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)」を参照してください。  
+ <span data-ttu-id="637cd-108"><xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A>と<xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A>は 2 つの列ヘッダーの外観をカスタマイズに使用できるいくつかのプロパティののみ、<xref:System.Windows.Controls.GridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="637cd-108">The <xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A> and <xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A> are only two of several properties that you can use to customize column header appearance for a <xref:System.Windows.Controls.GridView> control.</span></span> <span data-ttu-id="637cd-109">詳細については、[GridView の列ヘッダーのスタイルとテンプレートの概要](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="637cd-109">For more information, see [GridView Column Header Styles and Templates Overview](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md).</span></span>  
   
- 次の例では、<xref:System.Windows.Controls.GridViewColumn> のセルの外観をカスタマイズする <xref:System.Windows.DataTemplate> を定義する方法を示します。  
+ <span data-ttu-id="637cd-110">次の例は、定義する方法を示します、<xref:System.Windows.DataTemplate>内のセルの外観をカスタマイズする、<xref:System.Windows.Controls.GridViewColumn>です。</span><span class="sxs-lookup"><span data-stu-id="637cd-110">The following example shows how to define a <xref:System.Windows.DataTemplate> that customizes the appearance of the cells in a <xref:System.Windows.Controls.GridViewColumn>.</span></span>  
   
- [!code-xml[ListViewTemplate#GridViewCellTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewcelltemplate)]  
+ [!code-xaml[ListViewTemplate#GridViewCellTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewcelltemplate)]  
   
- 次の例では、この <xref:System.Windows.DataTemplate> を使用して <xref:System.Windows.Controls.GridViewColumn> セルのコンテンツを定義する方法を示します。  このテンプレートは、前の <xref:System.Windows.Controls.GridViewColumn> の例で示した <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> プロパティの代わりに使用されています。  
+ <span data-ttu-id="637cd-111">次の例は、これを使用する方法を示しています。<xref:System.Windows.DataTemplate>のコンテンツを定義する、<xref:System.Windows.Controls.GridViewColumn>セル。</span><span class="sxs-lookup"><span data-stu-id="637cd-111">The following example shows how to use this <xref:System.Windows.DataTemplate> to define the content of a <xref:System.Windows.Controls.GridViewColumn> cell.</span></span> <span data-ttu-id="637cd-112">代わりにこのテンプレートを使用、 <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> 、前に表示されるプロパティ<xref:System.Windows.Controls.GridViewColumn>例です。</span><span class="sxs-lookup"><span data-stu-id="637cd-112">This template is used instead of the <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> property that is shown in the previous <xref:System.Windows.Controls.GridViewColumn> example.</span></span>  
   
- [!code-xml[ListViewTemplate#CellTemplateProperty](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#celltemplateproperty)]  
+ [!code-xaml[ListViewTemplate#CellTemplateProperty](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#celltemplateproperty)]  
   
-## 参照  
- <xref:System.Windows.Controls.ListView>   
- <xref:System.Windows.Controls.GridView>   
- [GridView の概要](../../../../docs/framework/wpf/controls/gridview-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)   
- [ListView の概要](../../../../docs/framework/wpf/controls/listview-overview.md)
+## <a name="see-also"></a><span data-ttu-id="637cd-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="637cd-113">See Also</span></span>  
+ <xref:System.Windows.Controls.ListView>  
+ <xref:System.Windows.Controls.GridView>  
+ [<span data-ttu-id="637cd-114">GridView の概要</span><span class="sxs-lookup"><span data-stu-id="637cd-114">GridView Overview</span></span>](../../../../docs/framework/wpf/controls/gridview-overview.md)  
+ [<span data-ttu-id="637cd-115">方法トピック</span><span class="sxs-lookup"><span data-stu-id="637cd-115">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
+ [<span data-ttu-id="637cd-116">ListView の概要</span><span class="sxs-lookup"><span data-stu-id="637cd-116">ListView Overview</span></span>](../../../../docs/framework/wpf/controls/listview-overview.md)

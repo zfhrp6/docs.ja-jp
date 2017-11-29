@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - application protocols, sockets
 - sending data, sockets
@@ -25,27 +23,26 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: fd85bc88-e06c-467d-a30d-9fd7cffcfca1
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3f8bffcd94f3fb9c516e2201bd932480ab51c1a5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 263d8a82bf70ac86e776f28d660ef08c58a33384
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="using-an-asynchronous-client-socket"></a>非同期クライアント ソケットの使用
-ネットワーク操作が完了するまで待機している間、非同期クライアント ソケットはアプリケーションを一時停止しません。 標準の .NET Framework 非同期プログラミング モデルを使用して、1 つのスレッドでネットワーク接続を処理しながら、アプリケーションは元のスレッドで実行を継続します。 ネットワークの使用量が多いアプリケーションや、ネットワーク操作が完了するのを待機してから完了することができないアプリケーションの場合、非同期ソケットが適しています。  
+# <a name="using-an-asynchronous-client-socket"></a><span data-ttu-id="f4fce-102">非同期クライアント ソケットの使用</span><span class="sxs-lookup"><span data-stu-id="f4fce-102">Using an Asynchronous Client Socket</span></span>
+<span data-ttu-id="f4fce-103">ネットワーク操作が完了するまで待機している間、非同期クライアント ソケットはアプリケーションを一時停止しません。</span><span class="sxs-lookup"><span data-stu-id="f4fce-103">An asynchronous client socket does not suspend the application while waiting for network operations to complete.</span></span> <span data-ttu-id="f4fce-104">標準の .NET Framework 非同期プログラミング モデルを使用して、1 つのスレッドでネットワーク接続を処理しながら、アプリケーションは元のスレッドで実行を継続します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-104">Instead, it uses the standard .NET Framework asynchronous programming model to process the network connection on one thread while the application continues to run on the original thread.</span></span> <span data-ttu-id="f4fce-105">ネットワークの使用量が多いアプリケーションや、ネットワーク操作が完了するのを待機してから完了することができないアプリケーションの場合、非同期ソケットが適しています。</span><span class="sxs-lookup"><span data-stu-id="f4fce-105">Asynchronous sockets are appropriate for applications that make heavy use of the network or that cannot wait for network operations to complete before continuing.</span></span>  
   
- 非同期メソッドの場合、<xref:System.Net.Sockets.Socket> クラスは .NET Framework の名前付けパターンに従います。たとえば、同期の <xref:System.Net.Sockets.Socket.Receive%2A> メソッドは非同期の <xref:System.Net.Sockets.Socket.BeginReceive%2A> メソッドと <xref:System.Net.Sockets.Socket.EndReceive%2A> メソッドに対応します。  
+ <span data-ttu-id="f4fce-106">非同期メソッドの場合、<xref:System.Net.Sockets.Socket> クラスは .NET Framework の名前付けパターンに従います。たとえば、同期の <xref:System.Net.Sockets.Socket.Receive%2A> メソッドは非同期の <xref:System.Net.Sockets.Socket.BeginReceive%2A> メソッドと <xref:System.Net.Sockets.Socket.EndReceive%2A> メソッドに対応します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-106">The <xref:System.Net.Sockets.Socket> class follows the .NET Framework naming pattern for asynchronous methods; for example, the synchronous <xref:System.Net.Sockets.Socket.Receive%2A> method corresponds to the asynchronous <xref:System.Net.Sockets.Socket.BeginReceive%2A> and <xref:System.Net.Sockets.Socket.EndReceive%2A> methods.</span></span>  
   
- 非同期操作には、操作の結果を返すコールバック メソッドが必要です。 結果を知る必要がないアプリケーションの場合、コールバック メソッドは必要ありません。 このセクションのコード例では、ネットワーク デバイスへの接続を開始するメソッドと接続を完了するコールバック メソッド、データの送信を開始するメソッドと送信を完了するコールバック メソッド、およびデータの受信を開始するメソッドとデータの受信を終了するコールバック メソッドの使用方法を説明します。  
+ <span data-ttu-id="f4fce-107">非同期操作には、操作の結果を返すコールバック メソッドが必要です。</span><span class="sxs-lookup"><span data-stu-id="f4fce-107">Asynchronous operations require a callback method to return the result of the operation.</span></span> <span data-ttu-id="f4fce-108">結果を知る必要がないアプリケーションの場合、コールバック メソッドは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="f4fce-108">If your application does not need to know the result, then no callback method is required.</span></span> <span data-ttu-id="f4fce-109">このセクションのコード例では、ネットワーク デバイスへの接続を開始するメソッドと接続を完了するコールバック メソッド、データの送信を開始するメソッドと送信を完了するコールバック メソッド、およびデータの受信を開始するメソッドとデータの受信を終了するコールバック メソッドの使用方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-109">The example code in this section demonstrates using a method to start connecting to a network device and a callback method to complete the connection, a method to start sending data and a callback method to complete the send, and a method to start receiving data and a callback method to end receiving data.</span></span>  
   
- 非同期ソケットは、システム スレッド プールの複数のスレッドを使用して、ネットワーク接続を処理します。 1 つのスレッドは、データの送信または受信の開始を担当し、他のスレッドは、ネットワーク デバイスへの接続を完了し、データを送信または受信します。 以下の例では、<xref:System.Threading.ManualResetEvent?displayProperty=fullName> クラスのインスタンスを使用してメイン スレッドの実行を停止し、実行を続行できるようになったらシグナルを送ります。  
+ <span data-ttu-id="f4fce-110">非同期ソケットは、システム スレッド プールの複数のスレッドを使用して、ネットワーク接続を処理します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-110">Asynchronous sockets use multiple threads from the system thread pool to process network connections.</span></span> <span data-ttu-id="f4fce-111">1 つのスレッドは、データの送信または受信の開始を担当し、他のスレッドは、ネットワーク デバイスへの接続を完了し、データを送信または受信します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-111">One thread is responsible for initiating the sending or receiving of data; other threads complete the connection to the network device and send or receive the data.</span></span> <span data-ttu-id="f4fce-112">以下の例では、<xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> クラスのインスタンスを使用してメイン スレッドの実行を停止し、実行を続行できるようになったらシグナルを送ります。</span><span class="sxs-lookup"><span data-stu-id="f4fce-112">In the following examples, instances of the <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> class are used to suspend execution of the main thread and signal when execution can continue.</span></span>  
   
- 次の例では、非同期ソケットをネットワーク デバイスに接続するために、`Connect` メソッドで **Socket** を開始してから <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=fullName> メソッドを呼び出し、ネットワーク デバイスを表すリモート エンドポイント、connect のコールバック メソッド、および状態オブジェクト (クライアントの **Socket**) を渡します。このオブジェクトは、非同期呼び出しの間で状態を渡すために使用されます。 この例では、指定した **Socket** を指定したエンドポイントに接続する `Connect` メソッドを実装します。 `connectDone` というグローバル **ManualResetEvent** があるとします。  
+ <span data-ttu-id="f4fce-113">次の例では、非同期ソケットをネットワーク デバイスに接続するために、`Connect` メソッドで **Socket** を開始してから <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=nameWithType> メソッドを呼び出し、ネットワーク デバイスを表すリモート エンドポイント、connect のコールバック メソッド、および状態オブジェクト (クライアントの **Socket**) を渡します。このオブジェクトは、非同期呼び出しの間で状態を渡すために使用されます。</span><span class="sxs-lookup"><span data-stu-id="f4fce-113">In the following example, to connect an asynchronous socket to a network device, the `Connect` method initializes a **Socket** and then calls the <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=nameWithType> method, passing a remote endpoint that represents the network device, the connect callback method, and a state object (the client **Socket**), which is used to pass state information between asynchronous calls.</span></span> <span data-ttu-id="f4fce-114">この例では、指定した **Socket** を指定したエンドポイントに接続する `Connect` メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-114">The example implements the `Connect` method to connect the specified **Socket** to the specified endpoint.</span></span> <span data-ttu-id="f4fce-115">`connectDone` というグローバル **ManualResetEvent** があるとします。</span><span class="sxs-lookup"><span data-stu-id="f4fce-115">It assumes a global **ManualResetEvent** named `connectDone`.</span></span>  
   
 ```vb  
 Public Shared Sub Connect(remoteEP As EndPoint, client As Socket)  
@@ -65,7 +62,7 @@ public static void Connect(EndPoint remoteEP, Socket client) {
 }  
 ```  
   
- connect のコールバック メソッド `ConnectCallback` は <xref:System.AsyncCallback> デリゲートを実装します。 リモート デバイスが使用できるようになるとリモート デバイスに接続してから、**ManualResetEvent** `connectDone` を設定して接続が完了したというシグナルをアプリケーションのスレッドに送ります。 次のコードでは、`ConnectCallback` メソッドを実装します。  
+ <span data-ttu-id="f4fce-116">connect のコールバック メソッド `ConnectCallback` は <xref:System.AsyncCallback> デリゲートを実装します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-116">The connect callback method `ConnectCallback` implements the <xref:System.AsyncCallback> delegate.</span></span> <span data-ttu-id="f4fce-117">リモート デバイスが使用できるようになるとリモート デバイスに接続してから、**ManualResetEvent** `connectDone` を設定して接続が完了したというシグナルをアプリケーションのスレッドに送ります。</span><span class="sxs-lookup"><span data-stu-id="f4fce-117">It connects to the remote device when the remote device is available and then signals the application thread that the connection is complete by setting the **ManualResetEvent** `connectDone`.</span></span> <span data-ttu-id="f4fce-118">次のコードでは、`ConnectCallback` メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-118">The following code implements the `ConnectCallback` method.</span></span>  
   
 ```vb  
 Private Shared Sub ConnectCallback(ar As IAsyncResult)  
@@ -107,7 +104,7 @@ private static void ConnectCallback(IAsyncResult ar) {
 }  
 ```  
   
- 例のメソッド `Send` は指定した文字列データを ASCII 形式でエンコードし、指定したソケットが示すネットワーク デバイスに非同期に送信します。 次の例では、`Send` メソッドを実装します。  
+ <span data-ttu-id="f4fce-119">例のメソッド `Send` は指定した文字列データを ASCII 形式でエンコードし、指定したソケットが示すネットワーク デバイスに非同期に送信します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-119">The example method `Send` encodes the specified string data in ASCII format and sends it asynchronously to the network device represented by the specified socket.</span></span> <span data-ttu-id="f4fce-120">次の例では、`Send` メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-120">The following example implements the `Send` method.</span></span>  
   
 ```vb  
 Private Shared Sub Send(client As Socket, data As [String])  
@@ -131,7 +128,7 @@ private static void Send(Socket client, String data) {
 }  
 ```  
   
- send のコールバック メソッド `SendCallback` は <xref:System.AsyncCallback> デリゲートを実装します。 ネットワーク デバイスに受信する準備が整ったらデータを送信します。 次の例では、`SendCallback` メソッドを実装します。 `sendDone` というグローバル **ManualResetEvent** があるとします。  
+ <span data-ttu-id="f4fce-121">send のコールバック メソッド `SendCallback` は <xref:System.AsyncCallback> デリゲートを実装します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-121">The send callback method `SendCallback` implements the <xref:System.AsyncCallback> delegate.</span></span> <span data-ttu-id="f4fce-122">ネットワーク デバイスに受信する準備が整ったらデータを送信します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-122">It sends the data when the network device is ready to receive.</span></span> <span data-ttu-id="f4fce-123">次の例では、`SendCallback` メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-123">The following example shows the implementation of the `SendCallback` method.</span></span> <span data-ttu-id="f4fce-124">`sendDone` というグローバル **ManualResetEvent** があるとします。</span><span class="sxs-lookup"><span data-stu-id="f4fce-124">It assumes a global **ManualResetEvent** named `sendDone`.</span></span>  
   
 ```vb  
 Private Shared Sub SendCallback(ar As IAsyncResult)  
@@ -169,7 +166,7 @@ private static void SendCallback(IAsyncResult ar) {
 }  
 ```  
   
- クライアント ソケットからデータを読み取るには、非同期呼び出しの間で値を渡す状態オブジェクトが必要です。 次のクラスは、クライアント ソケットからデータを受信する状態オブジェクトの例です。 クライアント ソケットのフィールド、受信したデータのバッキング フィールド、受信データ文字列を保持する <xref:System.Text.StringBuilder> が含まれています。 これらのフィールドを状態オブジェクトに格納することで、複数の呼び出し間で値を保持し、クライアント ソケットからデータ読み取ることができます。  
+ <span data-ttu-id="f4fce-125">クライアント ソケットからデータを読み取るには、非同期呼び出しの間で値を渡す状態オブジェクトが必要です。</span><span class="sxs-lookup"><span data-stu-id="f4fce-125">Reading data from a client socket requires a state object that passes values between asynchronous calls.</span></span> <span data-ttu-id="f4fce-126">次のクラスは、クライアント ソケットからデータを受信する状態オブジェクトの例です。</span><span class="sxs-lookup"><span data-stu-id="f4fce-126">The following class is an example state object for receiving data from a client socket.</span></span> <span data-ttu-id="f4fce-127">クライアント ソケットのフィールド、受信したデータのバッキング フィールド、受信データ文字列を保持する <xref:System.Text.StringBuilder> が含まれています。</span><span class="sxs-lookup"><span data-stu-id="f4fce-127">It contains a field for the client socket, a buffer for the received data, and a <xref:System.Text.StringBuilder> to hold the incoming data string.</span></span> <span data-ttu-id="f4fce-128">これらのフィールドを状態オブジェクトに格納することで、複数の呼び出し間で値を保持し、クライアント ソケットからデータ読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="f4fce-128">Placing these fields in the state object allows their values to be preserved across multiple calls to read data from the client socket.</span></span>  
   
 ```vb  
 Public Class StateObject  
@@ -197,7 +194,7 @@ public class StateObject {
 }  
 ```  
   
- 例の `Receive` メソッドは、状態オブジェクトを設定してから、**BeginReceive** メソッドを呼び出してクライアント ソケットからデータを非同期に読み取ります。 `Receive` メソッドを実装する例を次に示します。  
+ <span data-ttu-id="f4fce-129">例の `Receive` メソッドは、状態オブジェクトを設定してから、**BeginReceive** メソッドを呼び出してクライアント ソケットからデータを非同期に読み取ります。</span><span class="sxs-lookup"><span data-stu-id="f4fce-129">The example `Receive` method sets up the state object and then calls the **BeginReceive** method to read the data from the client socket asynchronously.</span></span> <span data-ttu-id="f4fce-130">`Receive` メソッドを実装する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-130">The following example implements the `Receive` method.</span></span>  
   
 ```vb  
 Private Shared Sub Receive(client As Socket)  
@@ -231,9 +228,9 @@ private static void Receive(Socket client) {
 }  
 ```  
   
- receive のコールバック メソッド `ReceiveCallback` は **AsyncCallback** デリゲートを実装します。 このコールバック メソッドはネットワーク デバイスからデータを受信し、メッセージ文字列を構築します。 また、ネットワークからデータ バッファーに 1 から数バイトのデータを読み取ってから、クライアントから送信されたデータが完了するまで、**BeginReceive** メソッドを再び呼び出します。 クライアントからすべてのデータを読み取ると、`ReceiveCallback` は **ManualResetEvent** `sendDone` を設定することで、データが完了したというシグナルをアプリケーション スレッドに送ります。  
+ <span data-ttu-id="f4fce-131">receive のコールバック メソッド `ReceiveCallback` は **AsyncCallback** デリゲートを実装します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-131">The receive callback method `ReceiveCallback` implements the **AsyncCallback** delegate.</span></span> <span data-ttu-id="f4fce-132">このコールバック メソッドはネットワーク デバイスからデータを受信し、メッセージ文字列を構築します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-132">It receives the data from the network device and builds a message string.</span></span> <span data-ttu-id="f4fce-133">また、ネットワークからデータ バッファーに 1 から数バイトのデータを読み取ってから、クライアントから送信されたデータが完了するまで、**BeginReceive** メソッドを再び呼び出します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-133">It reads one or more bytes of data from the network into the data buffer and then calls the **BeginReceive** method again until the data sent by the client is complete.</span></span> <span data-ttu-id="f4fce-134">クライアントからすべてのデータを読み取ると、`ReceiveCallback` は **ManualResetEvent** `sendDone` を設定することで、データが完了したというシグナルをアプリケーション スレッドに送ります。</span><span class="sxs-lookup"><span data-stu-id="f4fce-134">Once all the data is read from the client, `ReceiveCallback` signals the application thread that the data is complete by setting the **ManualResetEvent** `sendDone`.</span></span>  
   
- 次のコード例では、`ReceiveCallback` メソッドを実装します。 受け取った文字列を保持する `response` というグローバル文字列と、`receiveDone` というグローバル **ManualResetEvent** があります。 ネットワーク セッションを正常に終了するには、サーバーがクライアント ソケットをシャットダウンする必要があります。  
+ <span data-ttu-id="f4fce-135">次のコード例では、`ReceiveCallback` メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="f4fce-135">The following example code implements the `ReceiveCallback` method.</span></span> <span data-ttu-id="f4fce-136">受け取った文字列を保持する `response` というグローバル文字列と、`receiveDone` というグローバル **ManualResetEvent** があります。</span><span class="sxs-lookup"><span data-stu-id="f4fce-136">It assumes a global string named `response` that holds the received string and a global **ManualResetEvent** named `receiveDone`.</span></span> <span data-ttu-id="f4fce-137">ネットワーク セッションを正常に終了するには、サーバーがクライアント ソケットをシャットダウンする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f4fce-137">The server must shut down the client socket gracefully to end the network session.</span></span>  
   
 ```vb  
 Private Shared Sub ReceiveCallback(ar As IAsyncResult)  
@@ -297,8 +294,7 @@ private static void ReceiveCallback( IAsyncResult ar ) {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)   
- [リッスン (ソケットで)](../../../docs/framework/network-programming/listening-with-sockets.md)   
- [非同期クライアント ソケットの例](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)
-
+## <a name="see-also"></a><span data-ttu-id="f4fce-138">関連項目</span><span class="sxs-lookup"><span data-stu-id="f4fce-138">See Also</span></span>  
+ [<span data-ttu-id="f4fce-139">同期クライアント ソケットの使用</span><span class="sxs-lookup"><span data-stu-id="f4fce-139">Using a Synchronous Client Socket</span></span>](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)  
+ [<span data-ttu-id="f4fce-140">リッスン (ソケットで)</span><span class="sxs-lookup"><span data-stu-id="f4fce-140">Listening with Sockets</span></span>](../../../docs/framework/network-programming/listening-with-sockets.md)  
+ [<span data-ttu-id="f4fce-141">非同期クライアント ソケットの例</span><span class="sxs-lookup"><span data-stu-id="f4fce-141">Asynchronous Client Socket Example</span></span>](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)

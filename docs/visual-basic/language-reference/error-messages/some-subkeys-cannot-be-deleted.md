@@ -1,31 +1,30 @@
 ---
-title: "Some subkeys cannot be deleted | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
+title: "一部のサブキーが削除できません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
 ms.assetid: 14562137-af43-4972-84c1-a380a90f7d6c
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 1551170042ab12e3ec630d86c9c001ed5690dbd4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Some subkeys cannot be deleted
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-レジストリ キーの削除が行われましたが、一部に削除できないサブキーがあるため処理が失敗しました。  多くの場合、この原因はアクセス許可がないことです。  
+# <a name="some-subkeys-cannot-be-deleted"></a><span data-ttu-id="86ac2-102">一部のサブキーが削除できません</span><span class="sxs-lookup"><span data-stu-id="86ac2-102">Some subkeys cannot be deleted</span></span>
+<span data-ttu-id="86ac2-103">レジストリ キーの削除が試行されましたが、一部のサブキーを削除できないために、操作が失敗しました。</span><span class="sxs-lookup"><span data-stu-id="86ac2-103">An attempt has been made to delete a registry key, but the operation failed because some subkeys cannot be deleted.</span></span> <span data-ttu-id="86ac2-104">通常これは、アクセス許可がないのためです。</span><span class="sxs-lookup"><span data-stu-id="86ac2-104">Usually this is due to a lack of permissions.</span></span>  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="86ac2-105">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="86ac2-105">To correct this error</span></span>  
   
--   指定したサブキーを削除するための十分なアクセス許可があることを確認します。  
+-   <span data-ttu-id="86ac2-106">指定したサブキーを削除するための十分なアクセス許可があることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="86ac2-106">Make sure you have sufficient permissions to delete the specified subkeys.</span></span>  
   
-## 参照  
- <xref:Microsoft.VisualBasic.MyServices.RegistryProxy?displayProperty=fullName>   
- <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>   
- <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>   
+## <a name="see-also"></a><span data-ttu-id="86ac2-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="86ac2-107">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.MyServices.RegistryProxy?displayProperty=nameWithType>  
+ <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>  
+ <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>  
  <xref:System.Security.Permissions.RegistryPermission>

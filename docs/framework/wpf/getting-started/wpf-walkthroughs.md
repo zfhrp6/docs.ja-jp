@@ -1,60 +1,63 @@
 ---
-title: "WPF のチュートリアル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "チュートリアル [WPF]"
-  - "WPF チュートリアル"
+title: "WPF のチュートリアル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- walkthroughs [WPF]
+- WPF walkthroughs [WPF]
 ms.assetid: c29bde96-0389-4aff-a9fb-cd678f66b7f7
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9c4c67033711575e0e13785fd448114a6042d8e8
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# WPF のチュートリアル
-チュートリアルでは、一般的なシナリオでの操作手順を詳しく説明します。  このため、製品や特定の機能領域について知るための最初のステップとして適しています。  
+# <a name="wpf-walkthroughs"></a><span data-ttu-id="a251c-102">WPF のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="a251c-102">WPF Walkthroughs</span></span>
+<span data-ttu-id="a251c-103">チュートリアルでは、一般的なシナリオの手順を説明します。</span><span class="sxs-lookup"><span data-stu-id="a251c-103">Walkthroughs give step-by-step instructions for common scenarios.</span></span> <span data-ttu-id="a251c-104">このため、製品や特定の機能領域について知るための最初のステップとして適しています。</span><span class="sxs-lookup"><span data-stu-id="a251c-104">This makes them a good place to start learning about the product or a particular feature area.</span></span>  
   
- このトピックには、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] のチュートリアルへのリンクが含まれています。  
+ <span data-ttu-id="a251c-105">このトピックへのリンクが含まれています。[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]チュートリアルです。</span><span class="sxs-lookup"><span data-stu-id="a251c-105">This topic contains links to [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] walkthroughs.</span></span>  
   
-## WPF デザイナーのチュートリアル  
+## <a name="wpf-designer-walkthroughs"></a><span data-ttu-id="a251c-106">WPF デザイナーのチュートリアル</span><span class="sxs-lookup"><span data-stu-id="a251c-106">WPF Designer Walkthroughs</span></span>  
   
-|Title|Description|  
+|<span data-ttu-id="a251c-107">タイトル</span><span class="sxs-lookup"><span data-stu-id="a251c-107">Title</span></span>|<span data-ttu-id="a251c-108">説明</span><span class="sxs-lookup"><span data-stu-id="a251c-108">Description</span></span>|  
 |-----------|-----------------|  
-|[チュートリアル : WPF デザイナーでの簡単な WPF アプリケーションの作成](http://msdn.microsoft.com/ja-jp/2d412231-dbdf-4e69-b060-4f2b246c2027)|[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]による簡単な WPF アプリケーションのビルド方法を説明します。|  
-|[チュートリアル : 動的レイアウトの構築](http://msdn.microsoft.com/ja-jp/483aafbb-b29d-435a-b956-8e4f67cd4a0f)|<xref:System.Windows.Controls.Grid> パネル コントロールを使用した動的レイアウトの作成方法を説明します。|  
-|[チュートリアル : WPF デザイナーによるサイズ変更可能なアプリケーションの作成](http://msdn.microsoft.com/ja-jp/18f5271e-4dc6-4eef-bc20-bb8862045d2e)|実行時にユーザーがサイズ変更できるウィンドウ レイアウトの作成方法を説明します。|  
-|[チュートリアル: WPF デザイナーによるデータ バインディングの作成](http://msdn.microsoft.com/ja-jp/8a79ed20-d59f-46b8-944f-6fd5dbb4e278)|[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]を使用してコントロールにデータを接続するデータ バインディングを作成する方法を説明します。|  
-|[チュートリアル: デザイナーでの DesignInstance によるデータへのバインド](http://msdn.microsoft.com/ja-jp/a4d3747a-bd43-42bc-b66d-477856a6769c)|実行時に割り当てられるデータ コンテキストのデザイン時に [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]を使用してデータ バインディングを作成する方法を説明します。|  
+|[<span data-ttu-id="a251c-109">チュートリアル: WPF デザイナーでの単純な WPF アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="a251c-109">Walkthrough: Building a Simple WPF Application with the WPF Designer</span></span>](http://msdn.microsoft.com/en-us/2d412231-dbdf-4e69-b060-4f2b246c2027)|<span data-ttu-id="a251c-110">単純な WPF アプリケーションをビルドする方法を示します、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="a251c-110">Demonstrates how to build a simple WPF application with the [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].</span></span>|  
+|[<span data-ttu-id="a251c-111">チュートリアル: 動的なレイアウトを構築します。</span><span class="sxs-lookup"><span data-stu-id="a251c-111">Walkthrough: Constructing a Dynamic Layout</span></span>](http://msdn.microsoft.com/en-us/483aafbb-b29d-435a-b956-8e4f67cd4a0f)|<span data-ttu-id="a251c-112">使用して動的なレイアウトを作成する方法を示します、<xref:System.Windows.Controls.Grid>コントロールのパネルです。</span><span class="sxs-lookup"><span data-stu-id="a251c-112">Demonstrates creating a dynamic layout by using a <xref:System.Windows.Controls.Grid> panel control.</span></span>|  
+|[<span data-ttu-id="a251c-113">チュートリアル: WPF デザイナーを使用して、サイズ変更可能なアプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="a251c-113">Walkthrough: Creating a Resizable Application by Using the WPF Designer</span></span>](http://msdn.microsoft.com/en-us/18f5271e-4dc6-4eef-bc20-bb8862045d2e)|<span data-ttu-id="a251c-114">実行時に、ユーザーがサイズ変更できるウィンドウ レイアウトを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a251c-114">Demonstrates how to create window layouts that are resizable by the user at run time.</span></span>|  
+|[<span data-ttu-id="a251c-115">チュートリアル: データ WPF デザイナーを使用してバインディングの作成</span><span class="sxs-lookup"><span data-stu-id="a251c-115">Walkthrough: Creating a Data Binding by Using the WPF Designer</span></span>](http://msdn.microsoft.com/en-us/8a79ed20-d59f-46b8-944f-6fd5dbb4e278)|<span data-ttu-id="a251c-116">使用する方法を示します、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]コントロールにデータを接続しているデータ バインディングを作成します。</span><span class="sxs-lookup"><span data-stu-id="a251c-116">Demonstrates how to use the [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] to create data bindings that connect data to a control.</span></span>|  
+|[<span data-ttu-id="a251c-117">チュートリアル: デザイナーでのデータにバインドする、DesignInstance の使用</span><span class="sxs-lookup"><span data-stu-id="a251c-117">Walkthrough: Using a DesignInstance to Bind to Data in the Designer</span></span>](http://msdn.microsoft.com/en-us/a4d3747a-bd43-42bc-b66d-477856a6769c)|<span data-ttu-id="a251c-118">使用する方法を示します、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]実行時に割り当てられているデータ コンテキストのデザイン時にデータ バインディングを作成します。</span><span class="sxs-lookup"><span data-stu-id="a251c-118">Demonstrates how to use the [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] to create data bindings at design time for a data context that is assigned at run time.</span></span>|  
   
-## WPF のチュートリアル  
+## <a name="wpf-walkthroughs"></a><span data-ttu-id="a251c-119">WPF のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="a251c-119">WPF Walkthroughs</span></span>  
   
-|Title|Description|  
+|<span data-ttu-id="a251c-120">タイトル</span><span class="sxs-lookup"><span data-stu-id="a251c-120">Title</span></span>|<span data-ttu-id="a251c-121">説明</span><span class="sxs-lookup"><span data-stu-id="a251c-121">Description</span></span>|  
 |-----------|-----------------|  
-|[チュートリアル: WPF の概要](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)|コントロール、レイアウト、データ バインドなど、WPF の多数の一般的な機能を使用した WPF アプリケーションの作成について説明します。|  
-|[XAML を使用したボタンの作成](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)|アニメーション ボタンの作成方法について説明します。|  
-|[Microsoft Expression Blend を使用してボタンを作成する](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)|Microsoft Expression Blend を使用して、カスタマイズされたボタンを作成するプロセスを説明します。|  
-|[チュートリアル: DataGrid コントロールで SQL Server データベースのデータを表示する](../../../../docs/framework/wpf/controls/walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|SQL Server データベースからデータを取得して、<xref:System.Windows.Controls.DataGrid> コントロールでそのデータを表示する方法を説明します。|  
+|[<span data-ttu-id="a251c-122">チュートリアル: 初めての WPF デスクトップ アプリケーション</span><span class="sxs-lookup"><span data-stu-id="a251c-122">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)|<span data-ttu-id="a251c-123">WPF コントロール、レイアウトやデータ バインディングなどの一般的な機能の多くを使用して、WPF アプリケーションの作成について説明します。</span><span class="sxs-lookup"><span data-stu-id="a251c-123">Demonstrates creating a WPF application using many of the common features of WPF including controls, layout and data binding.</span></span>|  
+|[<span data-ttu-id="a251c-124">XAML を使用したボタンの作成</span><span class="sxs-lookup"><span data-stu-id="a251c-124">Create a Button by Using XAML</span></span>](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-xaml.md)|<span data-ttu-id="a251c-125">アニメーションのボタンを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a251c-125">Demonstrates how to create an animated button.</span></span>|  
+|[<span data-ttu-id="a251c-126">Microsoft Expression Blend を使用してボタンを作成する</span><span class="sxs-lookup"><span data-stu-id="a251c-126">Create a Button by Using Microsoft Expression Blend</span></span>](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)|<span data-ttu-id="a251c-127">Microsoft Expression Blend を使用して、カスタマイズされたボタンを作成するプロセスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="a251c-127">Demonstrates the process of creating a customized button by using Microsoft Expression Blend.</span></span>|  
+|[<span data-ttu-id="a251c-128">チュートリアル: DataGrid コントロールで SQL Server データベースのデータを表示する</span><span class="sxs-lookup"><span data-stu-id="a251c-128">Walkthrough: Display Data from a SQL Server Database in a DataGrid Control</span></span>](../../../../docs/framework/wpf/controls/walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|<span data-ttu-id="a251c-129">SQL Server データベースからデータを取得しでそのデータを表示する方法を示します、<xref:System.Windows.Controls.DataGrid>コントロール。</span><span class="sxs-lookup"><span data-stu-id="a251c-129">Demonstrates how to retrieve data from a SQL Server database and display that data in a <xref:System.Windows.Controls.DataGrid> control.</span></span>|  
   
-## WPF における移行と相互運用性  
+## <a name="migration-and-interoperability-in-wpf"></a><span data-ttu-id="a251c-130">移行と WPF の相互運用性</span><span class="sxs-lookup"><span data-stu-id="a251c-130">Migration and Interoperability in WPF</span></span>  
   
-|Title|Description|  
+|<span data-ttu-id="a251c-131">タイトル</span><span class="sxs-lookup"><span data-stu-id="a251c-131">Title</span></span>|<span data-ttu-id="a251c-132">説明</span><span class="sxs-lookup"><span data-stu-id="a251c-132">Description</span></span>|  
 |-----------|-----------------|  
-|[チュートリアル: WPF での Windows フォーム コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)|WPF アプリケーションで Windows フォーム <xref:System.Windows.Forms.MaskedTextBox?displayProperty=fullName> コントロールをホストする方法を説明します。|  
-|[チュートリアル: WPF での Windows フォーム複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションで [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] データ エントリ複合コントロールをホストする方法を説明します。|  
-|[チュートリアル: Windows フォームでの WPF 複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)|Windows フォーム アプリケーションで WPF データ エントリ複合コントロールをホストする方法を説明します。|  
-|[チュートリアル: WPF での Windows フォーム コントロールの配置](../../../../docs/framework/wpf/advanced/walkthrough-arranging-windows-forms-controls-in-wpf.md)|WPF レイアウト機能を使用してハイブリッド アプリケーションに Windows フォーム コントロールを配置する方法を説明します。|  
-|[チュートリアル : ハイブリッド アプリケーションでのデータへのバインディング](../../../../docs/framework/wpf/advanced/walkthrough-binding-to-data-in-hybrid-applications.md)|Windows フォーム コントロールと WPF コントロールの両方を含むハイブリッド アプリケーションで、データ バインディングを使用する方法を説明します。|  
+|[<span data-ttu-id="a251c-133">チュートリアル: WPF での Windows フォーム コントロールのホスト</span><span class="sxs-lookup"><span data-stu-id="a251c-133">Walkthrough: Hosting a Windows Forms Control in WPF</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)|<span data-ttu-id="a251c-134">Windows フォームをホストする方法を示します<xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType>WPF アプリケーションで制御します。</span><span class="sxs-lookup"><span data-stu-id="a251c-134">Demonstrates how to host a Windows Forms <xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType> control in a WPF application.</span></span>|  
+|[<span data-ttu-id="a251c-135">チュートリアル: WPF での Windows フォーム複合コントロールのホスト</span><span class="sxs-lookup"><span data-stu-id="a251c-135">Walkthrough: Hosting a Windows Forms Composite Control in WPF</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)|<span data-ttu-id="a251c-136">ホストする方法を示します、[!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)]の複合コントロールをデータ エントリ、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="a251c-136">Demonstrates how to host a [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] data-entry composite control in a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application.</span></span>|  
+|[<span data-ttu-id="a251c-137">チュートリアル: Windows フォームでの WPF 複合コントロールのホスト</span><span class="sxs-lookup"><span data-stu-id="a251c-137">Walkthrough: Hosting a WPF Composite Control in Windows Forms</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)|<span data-ttu-id="a251c-138">Windows フォーム アプリケーションで、WPF データ エントリの複合コントロールをホストする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a251c-138">Demonstrates how to host a WPF data-entry composite control in a Windows Forms application.</span></span>|  
+|[<span data-ttu-id="a251c-139">チュートリアル: WPF での Windows フォーム コントロールの配置</span><span class="sxs-lookup"><span data-stu-id="a251c-139">Walkthrough: Arranging Windows Forms Controls in WPF</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-arranging-windows-forms-controls-in-wpf.md)|<span data-ttu-id="a251c-140">WPF レイアウト機能を使用して、ハイブリッド アプリケーションで Windows フォーム コントロールを配置する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a251c-140">Demonstrates how to use WPF layout features to arrange Windows Forms controls in a hybrid application.</span></span>|  
+|[<span data-ttu-id="a251c-141">チュートリアル: ハイブリッド アプリケーションでのデータへのバインディング</span><span class="sxs-lookup"><span data-stu-id="a251c-141">Walkthrough: Binding to Data in Hybrid Applications</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-binding-to-data-in-hybrid-applications.md)|<span data-ttu-id="a251c-142">Windows フォームと WPF の両方のコントロールを含むハイブリッド アプリケーションでデータ バインディングを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a251c-142">Demonstrates how to use data binding in hybrid applications that include both Windows Forms and WPF controls.</span></span>|  
   
-## 関連項目  
+## <a name="related-sections"></a><span data-ttu-id="a251c-143">関連項目</span><span class="sxs-lookup"><span data-stu-id="a251c-143">Related Sections</span></span>  
   
-|Title|Description|  
+|<span data-ttu-id="a251c-144">タイトル</span><span class="sxs-lookup"><span data-stu-id="a251c-144">Title</span></span>|<span data-ttu-id="a251c-145">説明</span><span class="sxs-lookup"><span data-stu-id="a251c-145">Description</span></span>|  
 |-----------|-----------------|  
-|[Visual Studio Walkthroughs](http://msdn.microsoft.com/ja-jp/f5399a1f-2d3d-42fb-b989-134ccda2159f)|Visual Studio でのプログラミングのあらゆる領域に関連するチュートリアルの一覧を示します。|
+|[<span data-ttu-id="a251c-146">Visual Studio のチュートリアル</span><span class="sxs-lookup"><span data-stu-id="a251c-146">Visual Studio Walkthroughs</span></span>](http://msdn.microsoft.com/en-us/f5399a1f-2d3d-42fb-b989-134ccda2159f)|<span data-ttu-id="a251c-147">Visual Studio でのプログラミングのすべての領域には、チュートリアルの関連する一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="a251c-147">Gives a related list of walkthroughs for all areas of programming in Visual Studio.</span></span>|

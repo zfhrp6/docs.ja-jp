@@ -1,103 +1,107 @@
 ---
-title: "チュートリアル : Windows フォーム DataGridView コントロールのデータの妥当性検査 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ [Windows フォーム], 検証"
-  - "データ グリッド, 検証 (データを)"
-  - "データの妥当性検査, Windows フォーム"
-  - "DataGridView コントロール [Windows フォーム], データの妥当性検査"
-  - "検証 (データを), Windows フォーム"
-  - "チュートリアル [Windows フォーム], DataGridView コントロール"
+title: "チュートリアル : Windows フォーム DataGridView コントロールのデータの妥当性検査"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- validating data [Windows Forms], Windows Forms
+- data [Windows Forms], validation
+- DataGridView control [Windows Forms], data validation
+- data grids [Windows Forms], validating data
+- data validation [Windows Forms], Windows Forms
+- walkthroughs [Windows Forms], DataGridView control
 ms.assetid: a4f1d015-2969-430c-8ea2-b612d179c290
-caps.latest.revision: 22
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4b460afb393c1b88b34281a8db1b61203e5c5962
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : Windows フォーム DataGridView コントロールのデータの妥当性検査
-データ入力機能をユーザーに表示する場合、フォームに入力されたデータの妥当性検査を行うことが必要になる場合があります。  <xref:System.Windows.Forms.DataGridView> クラスには、データがデータ ストアにコミットされる前に妥当性検査を実行できる便利な手段が用意されています。  現在のセルが変更されたときに <xref:System.Windows.Forms.DataGridView> で発生する <xref:System.Windows.Forms.DataGridView.CellValidating> イベントを処理することで、データの妥当性検査を行うことができます。  
+# <a name="walkthrough-validating-data-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="822ee-102">チュートリアル : Windows フォーム DataGridView コントロールのデータの妥当性検査</span><span class="sxs-lookup"><span data-stu-id="822ee-102">Walkthrough: Validating Data in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="822ee-103">データ エントリの機能をユーザーに表示するときに頻繁に、フォームに入力データを検証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="822ee-103">When you display data entry functionality to users, you frequently have to validate the data entered into your form.</span></span> <span data-ttu-id="822ee-104"><xref:System.Windows.Forms.DataGridView>クラスには、データがデータ ストアにコミットする前に検証を実行する便利な方法が用意されています。</span><span class="sxs-lookup"><span data-stu-id="822ee-104">The <xref:System.Windows.Forms.DataGridView> class provides a convenient way to perform validation before data is committed to the data store.</span></span> <span data-ttu-id="822ee-105">データを検証するには、処理することにより、<xref:System.Windows.Forms.DataGridView.CellValidating>によって発生するイベント、<xref:System.Windows.Forms.DataGridView>現在のセルが変更されたとき。</span><span class="sxs-lookup"><span data-stu-id="822ee-105">You can validate data by handling the <xref:System.Windows.Forms.DataGridView.CellValidating> event, which is raised by the <xref:System.Windows.Forms.DataGridView> when the current cell changes.</span></span>  
   
- このチュートリアルでは、Northwind サンプル データベースの `Customers` テーブルから行を取得し、<xref:System.Windows.Forms.DataGridView> コントロールに表示します。  ユーザーが `CompanyName` 列のセルを編集し、そのセルから離れようとすると、<xref:System.Windows.Forms.DataGridView.CellValidating> イベント ハンドラーは新しい会社名文字列が空でないかどうかを確認し、新しい値が空の文字列の場合、<xref:System.Windows.Forms.DataGridView> は空でない文字列が入力されるまで、ユーザーのカーソルがそのセルから移動できないようにします。  
+ <span data-ttu-id="822ee-106">このチュートリアルから行を取得する、 `Customers` 、Northwind サンプル データベースのテーブルに表示して、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="822ee-106">In this walkthrough, you will retrieve rows from the `Customers` table in the Northwind sample database and display them in a <xref:System.Windows.Forms.DataGridView> control.</span></span> <span data-ttu-id="822ee-107">ユーザーが内のセルを編集するときに、`CompanyName`列と、セルのままにすると、<xref:System.Windows.Forms.DataGridView.CellValidating>イベント ハンドラーは新しい会社名の文字列を新しい値が空の文字列である場合は空ではありません確認を検査して、<xref:System.Windows.Forms.DataGridView>により、ユーザーのカーソル。セルから空でない文字列を入力するまでです。</span><span class="sxs-lookup"><span data-stu-id="822ee-107">When a user edits a cell in the `CompanyName` column and tries to leave the cell, the <xref:System.Windows.Forms.DataGridView.CellValidating> event handler will examine new company name string to make sure it is not empty; if the new value is an empty string, the <xref:System.Windows.Forms.DataGridView> will prevent the user's cursor from leaving the cell until a non-empty string is entered.</span></span>  
   
- このトピックのコードを単一のリストとしてコピーするには、「[方法 : Windows フォーム DataGridView コントロールのデータを検証する](../../../../docs/framework/winforms/controls/how-to-validate-data-in-the-windows-forms-datagridview-control.md)」を参照してください。  
+ <span data-ttu-id="822ee-108">このトピックの「単一のリストとしてコードをコピーするに、を参照してください。[する方法: Windows フォーム DataGridView コントロール内データの検証](../../../../docs/framework/winforms/controls/how-to-validate-data-in-the-windows-forms-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="822ee-108">To copy the code in this topic as a single listing, see [How to: Validate Data in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/how-to-validate-data-in-the-windows-forms-datagridview-control.md).</span></span>  
   
-## 必須コンポーネント  
- このチュートリアルを完了するための要件は次のとおりです。  
+## <a name="prerequisites"></a><span data-ttu-id="822ee-109">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="822ee-109">Prerequisites</span></span>  
+ <span data-ttu-id="822ee-110">このチュートリアルを完了するための要件は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="822ee-110">In order to complete this walkthrough, you will need:</span></span>  
   
--   Northwind SQL Server サンプル データベースがインストールされたサーバーへのアクセス  
+-   <span data-ttu-id="822ee-111">SQL Server の Northwind サンプル データベースがあるサーバーにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="822ee-111">Access to a server that has the Northwind SQL Server sample database.</span></span>  
   
-## フォームの作成  
+## <a name="creating-the-form"></a><span data-ttu-id="822ee-112">フォームの作成</span><span class="sxs-lookup"><span data-stu-id="822ee-112">Creating the Form</span></span>  
   
-#### DataGridView に入力されたデータの妥当性検査を行うには  
+#### <a name="to-validate-data-entered-in-a-datagridview"></a><span data-ttu-id="822ee-113">DataGridView で入力したデータを検証するには</span><span class="sxs-lookup"><span data-stu-id="822ee-113">To validate data entered in a DataGridView</span></span>  
   
-1.  <xref:System.Windows.Forms.Form> から派生し、<xref:System.Windows.Forms.DataGridView> コントロールおよび <xref:System.Windows.Forms.BindingSource> コンポーネントを含むクラスを作成します。  
+1.  <span data-ttu-id="822ee-114">派生するクラスを作成する<xref:System.Windows.Forms.Form>が含まれています、<xref:System.Windows.Forms.DataGridView>コントロールと<xref:System.Windows.Forms.BindingSource>コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="822ee-114">Create a class that derives from <xref:System.Windows.Forms.Form> and contains a <xref:System.Windows.Forms.DataGridView> control and a <xref:System.Windows.Forms.BindingSource> component.</span></span>  
   
-     次のコード例は、基本的な初期化処理を行い、`Main` メソッドを含みます。  
+     <span data-ttu-id="822ee-115">次のコード例は、基本的な初期化を提供しが含まれています、`Main`メソッドです。</span><span class="sxs-lookup"><span data-stu-id="822ee-115">The following code example provides basic initialization and includes a `Main` method.</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#01](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#01)]
      [!code-vb[System.Windows.Forms.DataGridViewDataValidation#01](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#01)]  
     [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#02](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#02)]
     [!code-vb[System.Windows.Forms.DataGridViewDataValidation#02](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#02)]  
   
-2.  フォームのクラス定義に、データベースへの接続の詳細を処理するメソッドを実装します。  
+2.  <span data-ttu-id="822ee-116">データベースへの接続の詳細を処理するためのフォームのクラス定義内のメソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="822ee-116">Implement a method in your form's class definition for handling the details of connecting to the database.</span></span>  
   
-     このコード例では、データが入力された <xref:System.Data.DataTable> オブジェクトを返す  `GetData`  メソッドを使用します。  `connectionString` 変数には、使用するデータベースに適した値を設定してください。  
+     <span data-ttu-id="822ee-117">このコード例では、`GetData`設定されてを返すメソッド<xref:System.Data.DataTable>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="822ee-117">This code example uses a `GetData` method that returns a populated <xref:System.Data.DataTable> object.</span></span> <span data-ttu-id="822ee-118">設定することを必ず、`connectionString`変数をデータベースを適切な値にします。</span><span class="sxs-lookup"><span data-stu-id="822ee-118">Be sure that you set the `connectionString` variable to a value that is appropriate for your database.</span></span>  
   
     > [!IMPORTANT]
-    >  接続文字列内にパスワードなどの機密情報を格納すると、アプリケーションのセキュリティに影響を及ぼすことがあります。  データベースへのアクセスを制御する方法としては、Windows 認証 \(統合セキュリティとも呼ばれます\) を使用する方が安全です。  詳細については、「[接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)」を参照してください。  
+    >  <span data-ttu-id="822ee-119">接続文字列内に機密情報 (パスワードなど) を格納すると、アプリケーションのセキュリティに影響を及ぼすことがあります。</span><span class="sxs-lookup"><span data-stu-id="822ee-119">Storing sensitive information, such as a password, within the connection string can affect the security of your application.</span></span> <span data-ttu-id="822ee-120">データベースへのアクセスを制御するより安全な方法は、Windows 認証とも呼ばれる統合セキュリティを使用します。</span><span class="sxs-lookup"><span data-stu-id="822ee-120">Using Windows Authentication, also known as integrated security, is a more secure way to control access to a database.</span></span> <span data-ttu-id="822ee-121">詳細については、「[接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="822ee-121">For more information, see [Protecting Connection Information](../../../../docs/framework/data/adonet/protecting-connection-information.md).</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#30](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#30)]
      [!code-vb[System.Windows.Forms.DataGridViewDataValidation#30](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#30)]  
   
-3.  <xref:System.Windows.Forms.DataGridView> と <xref:System.Windows.Forms.BindingSource> の初期化、およびデータ バインディングの設定を行うために、フォームの <xref:System.Windows.Forms.Form.Load> イベントのハンドラーを実装します。  
+3.  <span data-ttu-id="822ee-122">フォームの用のハンドラーを実装<xref:System.Windows.Forms.Form.Load>を初期化するイベント、<xref:System.Windows.Forms.DataGridView>と<xref:System.Windows.Forms.BindingSource>し、データ バインディングを設定します。</span><span class="sxs-lookup"><span data-stu-id="822ee-122">Implement a handler for your form's <xref:System.Windows.Forms.Form.Load> event that initializes the <xref:System.Windows.Forms.DataGridView> and <xref:System.Windows.Forms.BindingSource> and sets up the data binding.</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#10)]
      [!code-vb[System.Windows.Forms.DataGridViewDataValidation#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#10)]  
   
-4.  <xref:System.Windows.Forms.DataGridView> コントロールの <xref:System.Windows.Forms.DataGridView.CellValidating> イベントおよび <xref:System.Windows.Forms.DataGridView.CellEndEdit> イベントのハンドラーを実装します。  
+4.  <span data-ttu-id="822ee-123">ハンドラーを実装、<xref:System.Windows.Forms.DataGridView>コントロールの<xref:System.Windows.Forms.DataGridView.CellValidating>と<xref:System.Windows.Forms.DataGridView.CellEndEdit>イベント。</span><span class="sxs-lookup"><span data-stu-id="822ee-123">Implement handlers for the <xref:System.Windows.Forms.DataGridView> control's <xref:System.Windows.Forms.DataGridView.CellValidating> and <xref:System.Windows.Forms.DataGridView.CellEndEdit> events.</span></span>  
   
-     <xref:System.Windows.Forms.DataGridView.CellValidating> イベント ハンドラーでは、`CompanyName` 列のセルの値が空であるかどうかを調べます。  セルの値が妥当性検査に合格しなかった場合は、<xref:System.Windows.Forms.DataGridViewCellValidatingEventArgs?displayProperty=fullName> クラスの <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> プロパティを `true` に設定します。  これにより、<xref:System.Windows.Forms.DataGridView> コントロールはカーソルがそのセルから移動することを禁止します。  その行の <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A> プロパティに説明文字列を設定します。  これにより、エラー アイコンと、エラー テキストを含むツールヒントが表示されます。  <xref:System.Windows.Forms.DataGridView.CellEndEdit> イベント ハンドラーでは、行の <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A> プロパティに空の文字列を設定します。  <xref:System.Windows.Forms.DataGridView.CellEndEdit> イベントは、セルの編集モードが終了した場合にのみ発生します。そのためには、セルが妥当性検査に合格することが必要です。  
+     <span data-ttu-id="822ee-124"><xref:System.Windows.Forms.DataGridView.CellValidating>イベント ハンドラーが判断したかどうかのセルの値、`CompanyName`列は空です。</span><span class="sxs-lookup"><span data-stu-id="822ee-124">The <xref:System.Windows.Forms.DataGridView.CellValidating> event handler is where you determine whether the value of a cell in the `CompanyName` column is empty.</span></span> <span data-ttu-id="822ee-125">セルの値には、検証が失敗した場合、設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewCellValidatingEventArgs?displayProperty=nameWithType>クラスを`true`です。</span><span class="sxs-lookup"><span data-stu-id="822ee-125">If the cell value fails validation, set the <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> property of the <xref:System.Windows.Forms.DataGridViewCellValidatingEventArgs?displayProperty=nameWithType> class to `true`.</span></span> <span data-ttu-id="822ee-126">これにより、<xref:System.Windows.Forms.DataGridView>コントロールをセルからカーソルを防ぐためにします。</span><span class="sxs-lookup"><span data-stu-id="822ee-126">This causes the <xref:System.Windows.Forms.DataGridView> control to prevent the cursor from leaving the cell.</span></span> <span data-ttu-id="822ee-127">設定、<xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A>説明の文字列には、行のプロパティです。</span><span class="sxs-lookup"><span data-stu-id="822ee-127">Set the <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A> property on the row to an explanatory string.</span></span> <span data-ttu-id="822ee-128">これには、エラー テキストを含むツールヒントにエラー アイコンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="822ee-128">This displays an error icon with a ToolTip that contains the error text.</span></span> <span data-ttu-id="822ee-129"><xref:System.Windows.Forms.DataGridView.CellEndEdit> 、イベント ハンドラーを設定、<xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A>の行に空の文字列のプロパティです。</span><span class="sxs-lookup"><span data-stu-id="822ee-129">In the <xref:System.Windows.Forms.DataGridView.CellEndEdit> event handler, set the <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A> property on the row to the empty string.</span></span> <span data-ttu-id="822ee-130"><xref:System.Windows.Forms.DataGridView.CellEndEdit>セルが編集モードは、検証が失敗した場合に行うことはできませんに終了する場合にのみ発生します。</span><span class="sxs-lookup"><span data-stu-id="822ee-130">The <xref:System.Windows.Forms.DataGridView.CellEndEdit> event occurs only when the cell exits edit mode, which it cannot do if it fails validation.</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#20](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#20)]
      [!code-vb[System.Windows.Forms.DataGridViewDataValidation#20](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#20)]  
   
-## アプリケーションのテスト  
- フォームをテストして、期待どおりに動作することを確認します。  
+## <a name="testing-the-application"></a><span data-ttu-id="822ee-131">アプリケーションのテスト</span><span class="sxs-lookup"><span data-stu-id="822ee-131">Testing the Application</span></span>  
+ <span data-ttu-id="822ee-132">フォームをテストして、期待どおりに動作することを確認します。</span><span class="sxs-lookup"><span data-stu-id="822ee-132">You can now test the form to make sure it behaves as expected.</span></span>  
   
-#### フォームをテストするには  
+#### <a name="to-test-the-form"></a><span data-ttu-id="822ee-133">フォームをテストするには</span><span class="sxs-lookup"><span data-stu-id="822ee-133">To test the form</span></span>  
   
--   アプリケーションをコンパイルして実行します。  
+-   <span data-ttu-id="822ee-134">アプリケーションをコンパイルして実行します。</span><span class="sxs-lookup"><span data-stu-id="822ee-134">Compile and run the application.</span></span>  
   
-     <xref:System.Windows.Forms.DataGridView> に、`Customers` テーブルからのデータが入力されて表示されます。  `CompanyName` 列内のセルをダブルクリックすると、値を編集できます。  すべての文字を削除してから、Tab キーを押してそのセルから離れようとすると、<xref:System.Windows.Forms.DataGridView> によって阻止されます。  空でない文字列をセルに入力すると、<xref:System.Windows.Forms.DataGridView> コントロールはセルから離れることを許可します。  
+     <span data-ttu-id="822ee-135">表示されます、<xref:System.Windows.Forms.DataGridView>からのデータが格納された、`Customers`テーブル。</span><span class="sxs-lookup"><span data-stu-id="822ee-135">You will see a <xref:System.Windows.Forms.DataGridView> filled with data from the `Customers` table.</span></span> <span data-ttu-id="822ee-136">内のセルをダブルクリックすると、`CompanyName`列、値を編集することができます。</span><span class="sxs-lookup"><span data-stu-id="822ee-136">When you double-click a cell in the `CompanyName` column, you can edit the value.</span></span> <span data-ttu-id="822ee-137">すべての文字を削除して、セルを終了する TAB キーを押して、<xref:System.Windows.Forms.DataGridView>終了できないようにします。</span><span class="sxs-lookup"><span data-stu-id="822ee-137">If you delete all the characters and hit the TAB key to exit the cell, the <xref:System.Windows.Forms.DataGridView> prevents you from exiting.</span></span> <span data-ttu-id="822ee-138">セルに空でない文字列を入力すると、<xref:System.Windows.Forms.DataGridView>コントロールでは、セルを終了することができます。</span><span class="sxs-lookup"><span data-stu-id="822ee-138">When you type a non-empty string into the cell, the <xref:System.Windows.Forms.DataGridView> control lets you exit the cell.</span></span>  
   
-## 次の手順  
- このアプリケーションでは、<xref:System.Windows.Forms.DataGridView> コントロールの機能について基本を理解できます。  次のような方法を使用すると、<xref:System.Windows.Forms.DataGridView> コントロールの外観および動作をカスタマイズできます。  
+## <a name="next-steps"></a><span data-ttu-id="822ee-139">次の手順</span><span class="sxs-lookup"><span data-stu-id="822ee-139">Next Steps</span></span>  
+ <span data-ttu-id="822ee-140">このアプリケーションでは、基本を理解、<xref:System.Windows.Forms.DataGridView>コントロールの機能です。</span><span class="sxs-lookup"><span data-stu-id="822ee-140">This application gives you a basic understanding of the <xref:System.Windows.Forms.DataGridView> control's capabilities.</span></span> <span data-ttu-id="822ee-141">動作と外観をカスタマイズすることができます、<xref:System.Windows.Forms.DataGridView>いくつかの方法で制御します。</span><span class="sxs-lookup"><span data-stu-id="822ee-141">You can customize the appearance and behavior of the <xref:System.Windows.Forms.DataGridView> control in several ways:</span></span>  
   
--   輪郭およびヘッダー スタイルを変更します。  詳細については、「[方法 : Windows フォーム DataGridView コントロールの境界線とグリッド線のスタイルを変更する](../../../../docs/framework/winforms/controls/change-the-border-and-gridline-styles-in-the-datagrid.md)」を参照してください。  
+-   <span data-ttu-id="822ee-142">境界線とヘッダーのスタイルを変更します。</span><span class="sxs-lookup"><span data-stu-id="822ee-142">Change border and header styles.</span></span> <span data-ttu-id="822ee-143">詳細については、次を参照してください。[する方法: 境界と Windows フォーム DataGridView コントロールでのグリッド線のスタイルを変更する](../../../../docs/framework/winforms/controls/change-the-border-and-gridline-styles-in-the-datagrid.md)です。</span><span class="sxs-lookup"><span data-stu-id="822ee-143">For more information, see [How to: Change the Border and Gridline Styles in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/change-the-border-and-gridline-styles-in-the-datagrid.md).</span></span>  
   
--   <xref:System.Windows.Forms.DataGridView> コントロールへのユーザー入力の許可または制限。  詳細については、「[方法 : Windows フォーム DataGridView コントロールで行が追加および削除されないようにする](../../../../docs/framework/winforms/controls/prevent-row-addition-and-deletion-datagridview.md)」および「[方法 : Windows フォームの DataGridView コントロールで列を読み取り専用にする](../../../../docs/framework/winforms/controls/how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md)」を参照してください。  
+-   <span data-ttu-id="822ee-144">有効にするか、ユーザー入力を制限、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="822ee-144">Enable or restrict user input to the <xref:System.Windows.Forms.DataGridView> control.</span></span> <span data-ttu-id="822ee-145">詳細については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールで防止行の追加および削除](../../../../docs/framework/winforms/controls/prevent-row-addition-and-deletion-datagridview.md)、と[する方法: Windows フォーム DataGridView コントロールで列読み取り専用のため](../../../../docs/framework/winforms/controls/how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="822ee-145">For more information, see [How to: Prevent Row Addition and Deletion in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/prevent-row-addition-and-deletion-datagridview.md), and [How to: Make Columns Read-Only in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md).</span></span>  
   
--   ユーザー入力に対するデータベース関連エラーの検査。  詳細については、「[チュートリアル : Windows フォーム DataGridView コントロールでのデータ入力中に発生したエラーの処理](../../../../docs/framework/winforms/controls/handling-errors-that-occur-during-data-entry-in-the-datagrid.md)」を参照してください。  
+-   <span data-ttu-id="822ee-146">データベースに関連するエラーのユーザー入力を確認してください。</span><span class="sxs-lookup"><span data-stu-id="822ee-146">Check user input for database-related errors.</span></span> <span data-ttu-id="822ee-147">詳細については、次を参照してください。[チュートリアル: Windows フォーム DataGridView コントロールでのデータ入力中に発生したエラーの処理](../../../../docs/framework/winforms/controls/handling-errors-that-occur-during-data-entry-in-the-datagrid.md)です。</span><span class="sxs-lookup"><span data-stu-id="822ee-147">For more information, see [Walkthrough: Handling Errors that Occur During Data Entry in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/handling-errors-that-occur-during-data-entry-in-the-datagrid.md).</span></span>  
   
--   仮想モードを使用した大量のデータの処理。  詳細については、「[チュートリアル : Windows フォーム DataGridView コントロールでの仮想モードの実装](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)」を参照してください。  
+-   <span data-ttu-id="822ee-148">仮想モードを使用して、非常に大きなデータ セットを処理します。</span><span class="sxs-lookup"><span data-stu-id="822ee-148">Handle very large data sets using virtual mode.</span></span> <span data-ttu-id="822ee-149">詳細については、次を参照してください。[チュートリアル: Windows フォーム DataGridView コントロールでの仮想モードを実装する](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="822ee-149">For more information, see [Walkthrough: Implementing Virtual Mode in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md).</span></span>  
   
--   セルの外観をカスタマイズします。  詳細については、「[方法 : Windows フォームの DataGridView コントロールのセルの外観をカスタマイズする](../../../../docs/framework/winforms/controls/customize-the-appearance-of-cells-in-the-datagrid.md)」および「[方法 : Windows フォーム DataGridView コントロールのフォントと色のスタイルを設定する](../../../../docs/framework/winforms/controls/how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md)」を参照してください。  
+-   <span data-ttu-id="822ee-150">セルの外観をカスタマイズします。</span><span class="sxs-lookup"><span data-stu-id="822ee-150">Customize the appearance of cells.</span></span> <span data-ttu-id="822ee-151">詳細については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールのセルの外観をカスタマイズ](../../../../docs/framework/winforms/controls/customize-the-appearance-of-cells-in-the-datagrid.md)と[する方法: フォントの設定と Windows フォーム DataGridView コントロールでの色のスタイル](../../../../docs/framework/winforms/controls/how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="822ee-151">For more information, see [How to: Customize the Appearance of Cells in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/customize-the-appearance-of-cells-in-the-datagrid.md) and [How to: Set Font and Color Styles in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.BindingSource>   
- [Windows フォーム DataGridView コントロールでのデータ入力](../../../../docs/framework/winforms/controls/data-entry-in-the-windows-forms-datagridview-control.md)   
- [方法 : Windows フォーム DataGridView コントロールのデータを検証する](../../../../docs/framework/winforms/controls/how-to-validate-data-in-the-windows-forms-datagridview-control.md)   
- [チュートリアル : Windows フォーム DataGridView コントロールでのデータ入力中に発生したエラーの処理](../../../../docs/framework/winforms/controls/handling-errors-that-occur-during-data-entry-in-the-datagrid.md)   
- [接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)
+## <a name="see-also"></a><span data-ttu-id="822ee-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="822ee-152">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.BindingSource>  
+ [<span data-ttu-id="822ee-153">Windows フォーム DataGridView コントロールでのデータ入力</span><span class="sxs-lookup"><span data-stu-id="822ee-153">Data Entry in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/data-entry-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="822ee-154">方法: Windows フォーム DataGridView コントロールのデータを検証する</span><span class="sxs-lookup"><span data-stu-id="822ee-154">How to: Validate Data in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-validate-data-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="822ee-155">チュートリアル: Windows フォーム DataGridView コントロールでのデータ入力中に発生したエラーの処理</span><span class="sxs-lookup"><span data-stu-id="822ee-155">Walkthrough: Handling Errors that Occur During Data Entry in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/handling-errors-that-occur-during-data-entry-in-the-datagrid.md)  
+ [<span data-ttu-id="822ee-156">接続情報の保護</span><span class="sxs-lookup"><span data-stu-id="822ee-156">Protecting Connection Information</span></span>](../../../../docs/framework/data/adonet/protecting-connection-information.md)

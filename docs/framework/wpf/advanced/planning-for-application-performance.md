@@ -1,51 +1,54 @@
 ---
-title: "アプリケーション パフォーマンスの計画 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アプリケーション, 最適化"
-  - "WPF アプリケーション, 最適化"
+title: "アプリケーション パフォーマンスの計画"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- applications [WPF], optimizing
+- WPF application [WPF], optimizing
 ms.assetid: c91bd0c5-a193-46ff-9da1-eb7a3a76a3b3
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f47f56e28064c852e5d8f721bdb3a0f73172c12a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# アプリケーション パフォーマンスの計画
-パフォーマンスの目標を達成できるかどうかは、適切なパフォーマンス計画を立てられるかどうかにかかっています。  すべての製品の開発は計画から始まります。  このトピックでは、適切なパフォーマンス計画を立てるためのごく簡単なルールをいくつか紹介します。  
+# <a name="planning-for-application-performance"></a><span data-ttu-id="66567-102">アプリケーション パフォーマンスの計画</span><span class="sxs-lookup"><span data-stu-id="66567-102">Planning for Application Performance</span></span>
+<span data-ttu-id="66567-103">パフォーマンスの目標を達成できるは、どの程度する戦略を作成するパフォーマンスによって異なります。</span><span class="sxs-lookup"><span data-stu-id="66567-103">The success of achieving your performance goals depends on how well you develop your performance strategy.</span></span> <span data-ttu-id="66567-104">計画は、任意の製品の開発の最初のステージです。</span><span class="sxs-lookup"><span data-stu-id="66567-104">Planning is the first stage in developing any product.</span></span> <span data-ttu-id="66567-105">このトピックでは、良好なパフォーマンスの戦略を開発するためのいくつかの非常に単純な規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="66567-105">This topic describes a few very simple rules for developing a good performance strategy.</span></span>  
   
-## シナリオの観点から考える  
- シナリオを利用して、アプリケーションの重要なコンポーネントに的を絞ることができます。  シナリオは、顧客や競合製品から導き出されるのが一般的です。  常に顧客をよく観察し、顧客が自分たちの製品や競合他社の製品のどこに引き付けられているのかを解明します。  顧客のフィードバックは、アプリケーションの主要なシナリオを特定するうえで役に立ちます。  たとえば、起動時に使用されるコンポーネントを設計している場合は、そのコンポーネントが呼び出されるのは一般にアプリケーションの起動時の 1 回だけであるため、  起動時間がキー シナリオになります。  そのほか、一連のアニメーションの目的のフレーム レートや、アプリケーションの最大作業セットなどがキー シナリオになる場合もあります。  
+## <a name="think-in-terms-of-scenarios"></a><span data-ttu-id="66567-106">シナリオの観点から考える</span><span class="sxs-lookup"><span data-stu-id="66567-106">Think in Terms of Scenarios</span></span>  
+ <span data-ttu-id="66567-107">シナリオを使用するアプリケーションの重要なコンポーネントに注目します。</span><span class="sxs-lookup"><span data-stu-id="66567-107">Scenarios can help you focus on the critical components of your application.</span></span> <span data-ttu-id="66567-108">シナリオは、一般に、お客様、および競合製品から派生します。</span><span class="sxs-lookup"><span data-stu-id="66567-108">Scenarios are generally derived from your customers, as well as competitive products.</span></span> <span data-ttu-id="66567-109">常に、お客様を調査し、どのような楽しいに興奮しており、製品、および競合他社製品を調べる。</span><span class="sxs-lookup"><span data-stu-id="66567-109">Always study your customers and find out what really makes them excited about your product, and your competitors' products.</span></span> <span data-ttu-id="66567-110">お客様のフィードバックは、アプリケーションの主要なシナリオを決定するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="66567-110">Your customers' feedback can help you to determine your application's primary scenario.</span></span> <span data-ttu-id="66567-111">たとえば、起動時に使用されるコンポーネントをデザインする場合は、可能性の高いアプリケーションの起動時に、コンポーネントを 1 回だけ呼び出すことです。</span><span class="sxs-lookup"><span data-stu-id="66567-111">For instance, if you are designing a component that will be used at startup, it is likely that the component will be called only once, when the application starts up.</span></span> <span data-ttu-id="66567-112">起動時に、主要なシナリオになります。</span><span class="sxs-lookup"><span data-stu-id="66567-112">Startup time becomes your key scenario.</span></span> <span data-ttu-id="66567-113">主要なシナリオの他の例には、目的のフレーム レート、アニメーション シーケンスと、最大作業アプリケーションのセットが可能性があります。</span><span class="sxs-lookup"><span data-stu-id="66567-113">Other examples of key scenarios could be the desired frame rate for animation sequences, or the maximum working set allowed for the application.</span></span>  
   
-## 目標を定義する  
- 目標は、アプリケーションのパフォーマンスが高いか低いかの判断に役立ちます。  すべてのシナリオで目標を定義する必要があります。  パフォーマンスの目標はすべて、顧客の期待に基づいて定義します。  アプリケーション開発サイクルの早い段階では未解決の問題もまだ多く、パフォーマンスの目標を設定するのが困難な場合もあります。  しかし、まったく目標を設定しないよりは、初期目標を設定してそれを後から修正する方が良いと言えます。  
+## <a name="define-goals"></a><span data-ttu-id="66567-114">目標を定義します。</span><span class="sxs-lookup"><span data-stu-id="66567-114">Define Goals</span></span>  
+ <span data-ttu-id="66567-115">目標を使用して、アプリケーションのパフォーマンスが高いか低いかどうかを判断するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="66567-115">Goals help you to determine whether an application is performing faster or slower.</span></span> <span data-ttu-id="66567-116">シナリオのすべての目標を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="66567-116">You should define goals for all of your scenarios.</span></span> <span data-ttu-id="66567-117">定義するすべてのパフォーマンスの目標は、顧客が期待に基づいている必要があります。</span><span class="sxs-lookup"><span data-stu-id="66567-117">All performance goals that you define should be based on your customers' expectations.</span></span> <span data-ttu-id="66567-118">アプリケーションの開発の早い段階で目標順番に表示する、まだ多くの未解決の問題がある場合にセットのパフォーマンスが困難な場合があります。</span><span class="sxs-lookup"><span data-stu-id="66567-118">It may be difficult to set performance goals early on in the application development cycle, when there are still many unresolved issues.</span></span> <span data-ttu-id="66567-119">ただし、初期の目標を設定およびしないより目標に後でそれを変更することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="66567-119">However, it is better to set an initial goal and revise it later than not to have a goal at all.</span></span>  
   
-## プラットフォームを理解する  
- アプリケーション開発サイクルでは、測定、調査、改良\/修正というサイクルを常に維持します。  開発サイクルの始めから終わりまで、信頼できる安定した環境でアプリケーションのパフォーマンスを測定する必要があります。  外部要因による変動は避けるようにしてください。  たとえば、パフォーマンスをテストするときには、ウイルス対策ソフトウェアや自動更新 \(SMS など\) を無効にして、それらがパフォーマンス テストの結果に影響しないようにする必要があります。  アプリケーションのパフォーマンスの測定が完了したら、最大の効果を得るにはどこを変更すればよいのかを特定します。  アプリケーションに変更を加えた後、再び同じサイクルを開始します。  
+## <a name="understand-your-platform"></a><span data-ttu-id="66567-120">プラットフォームを理解します。</span><span class="sxs-lookup"><span data-stu-id="66567-120">Understand Your Platform</span></span>  
+ <span data-ttu-id="66567-121">測定、調査、アプリケーションの開発サイクル中に再設定/修正のサイクルを常に維持します。</span><span class="sxs-lookup"><span data-stu-id="66567-121">Always maintain the cycle of measuring, investigating, refining/correcting during your application development cycle.</span></span> <span data-ttu-id="66567-122">開発サイクルの終わりに、最初から、信頼性の高い安定した環境でアプリケーションのパフォーマンスを測定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="66567-122">From the beginning to the end of the development cycle, you need to measure your application's performance in a reliable, stable environment.</span></span> <span data-ttu-id="66567-123">外部の要因によって変動を避ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="66567-123">You should avoid variability caused by external factors.</span></span> <span data-ttu-id="66567-124">たとえば、パフォーマンスをテストするときにウイルス対策ソフトウェアや SMS などの任意の自動更新を無効にする、パフォーマンスに影響しないようにの順序でテスト結果必要があります。</span><span class="sxs-lookup"><span data-stu-id="66567-124">For example, when testing performance, you should disable anti-virus or any automatic update such as SMS, in order not to impact performance test results.</span></span> <span data-ttu-id="66567-125">アプリケーションのパフォーマンスを測定するしたら、最大の機能強化の原因となる変更を識別します。</span><span class="sxs-lookup"><span data-stu-id="66567-125">Once you have measured your application's performance, you need to identify the changes that will result in the biggest improvements.</span></span> <span data-ttu-id="66567-126">アプリケーションを変更した後は、もう一度、サイクルを開始します。</span><span class="sxs-lookup"><span data-stu-id="66567-126">Once you have modified your application, start the cycle again.</span></span>  
   
-## パフォーマンス チューニングを反復プロセスにする  
- 使用する各機能の相対負荷を知る必要があります。  たとえば、[!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)] のリフレクションを使用すると、一般にコンピューティング リソースの面でパフォーマンスへの影響が大きくなります。したがって、この機能は適切な判断に基づいて使用する必要があります。  リフレクションを使用しないようにするということではありません。ただ、アプリケーションのパフォーマンスの要件と、使用する機能のパフォーマンスへの影響とのバランスに注意する必要があるということです。  
+## <a name="make-performance-tuning-an-iterative-process"></a><span data-ttu-id="66567-127">パフォーマンス チューニングを反復処理</span><span class="sxs-lookup"><span data-stu-id="66567-127">Make Performance Tuning an Iterative Process</span></span>  
+ <span data-ttu-id="66567-128">使用して各機能の相対的なコストを把握する必要があります。</span><span class="sxs-lookup"><span data-stu-id="66567-128">You should know the relative cost of each feature you will use.</span></span> <span data-ttu-id="66567-129">リフレクションの使用例、[!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)]は通常、パフォーマンス、慎重に使用するためのコンピューティング リソースの観点から負荷がかかります。</span><span class="sxs-lookup"><span data-stu-id="66567-129">For example, the use of reflection in [!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)] is generally performance intensive in terms of computing resources, so you would want to use it judiciously.</span></span> <span data-ttu-id="66567-130">ありません、リフレクションの使用を避けるためにのみ必要がある、アプリケーションのパフォーマンス要件を使用する機能のパフォーマンスに対する要求とのバランスをとるように注意してくださかった。</span><span class="sxs-lookup"><span data-stu-id="66567-130">This does not mean to avoid the use of reflection, only that you should be careful to balance the performance requirements of your application with the performance demands of the features you use.</span></span>  
   
-## 豊かなグラフィックスを目指す  
- スケーラブルなアプローチで [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションのパフォーマンスの目標を達成するための主な手法の 1 つとして、豊かで複雑なグラフィックスを目指します。  最初は常に、パフォーマンスへの影響が最も少ないリソースを使用してシナリオの目標を達成します。  それらの目標を達成できたら、今度は、パフォーマンスへの影響が大きい機能を使用して豊かなグラフィックスを目指します。シナリオの目標は常に念頭に置いておきます。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] はきわめて機能豊富なプラットフォームであり、多彩なグラフィックス機能が用意されています。  パフォーマンスへの影響が大きい機能を何も考えずに使用すると、アプリケーション全体のパフォーマンスが低下する可能性があります。  
+## <a name="build-towards-graphical-richness"></a><span data-ttu-id="66567-131">豊かなグラフィックスを作り上げてください。</span><span class="sxs-lookup"><span data-stu-id="66567-131">Build Towards Graphical Richness</span></span>  
+ <span data-ttu-id="66567-132">キーの手法を実現するスケーラブルなアプローチを作成するため[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]豊かなグラフィックスと複雑さを作り上げてには、アプリケーションのパフォーマンスです。</span><span class="sxs-lookup"><span data-stu-id="66567-132">A key technique for creating a scalable approach towards achieving [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application performance is to build towards graphical richness and complexity.</span></span> <span data-ttu-id="66567-133">常に最低のパフォーマンス負荷の高いリソースを使用して、シナリオの目標を達成すると開始します。</span><span class="sxs-lookup"><span data-stu-id="66567-133">Always start with using the least performance intensive resources to achieve your scenario goals.</span></span> <span data-ttu-id="66567-134">これらの目標を達成すると、機能を使用して複数のパフォーマンス負荷の高い常にシナリオの目標を念頭を豊かなグラフィックス ビルドします。</span><span class="sxs-lookup"><span data-stu-id="66567-134">Once you achieve these goals, build towards graphic richness by using more performance intensive features, always keeping your scenario goals in mind.</span></span> <span data-ttu-id="66567-135">ただし、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]非常に豊富なプラットフォームは、非常に多彩なグラフィック機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="66567-135">Remember, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] is a very rich platform and provides very rich graphic features.</span></span> <span data-ttu-id="66567-136">考えずパフォーマンス負荷の高い機能を使用すると、アプリケーション全体のパフォーマンスに悪影響を与えることができます。</span><span class="sxs-lookup"><span data-stu-id="66567-136">Using performance intensive features without thinking can negatively impact your overall application performance.</span></span>  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] コントロールは本質的に拡張性が高く、コントロールの動作を変えずに外観を広範にカスタマイズすることができます。  スタイル、データ テンプレート、およびコントロール テンプレートを活用することにより、パフォーマンスの要件に対応したカスタマイズ可能な[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] を作成し、徐々に発展させていくことができます。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="66567-137">コントロールは、広く使用されているカスタマイズの場合、コントロールの動作を変更しない中に、表示されるようにすることでは本質的に拡張できます。</span><span class="sxs-lookup"><span data-stu-id="66567-137"> controls are inherently extensible by allowing for wide-spread customization of their appearance, while not altering their control behavior.</span></span> <span data-ttu-id="66567-138">活用してスタイル、データ テンプレート、およびコントロール テンプレートを作成し、カスタマイズ可能な増分進化[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]パフォーマンス要件に適合します。</span><span class="sxs-lookup"><span data-stu-id="66567-138">By taking advantage of styles, data templates, and control templates, you can create and incrementally evolve a customizable [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] that adapts to your performance requirements.</span></span>  
   
-## 参照  
- [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)   
- [ハードウェアの活用](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)   
- [レイアウトとデザイン](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)   
- [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)   
- [オブジェクトの動作](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)   
- [アプリケーション リソース](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)   
- [テキスト](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)   
- [データ バインド](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)   
- [パフォーマンスに関するその他の推奨事項](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
+## <a name="see-also"></a><span data-ttu-id="66567-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="66567-139">See Also</span></span>  
+ [<span data-ttu-id="66567-140">WPF アプリケーションのパフォーマンスの最適化</span><span class="sxs-lookup"><span data-stu-id="66567-140">Optimizing WPF Application Performance</span></span>](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
+ [<span data-ttu-id="66567-141">ハードウェアの活用</span><span class="sxs-lookup"><span data-stu-id="66567-141">Taking Advantage of Hardware</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  
+ [<span data-ttu-id="66567-142">レイアウトとデザイン</span><span class="sxs-lookup"><span data-stu-id="66567-142">Layout and Design</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
+ [<span data-ttu-id="66567-143">2D グラフィックスとイメージング</span><span class="sxs-lookup"><span data-stu-id="66567-143">2D Graphics and Imaging</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
+ [<span data-ttu-id="66567-144">オブジェクトの動作</span><span class="sxs-lookup"><span data-stu-id="66567-144">Object Behavior</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
+ [<span data-ttu-id="66567-145">アプリケーション リソース</span><span class="sxs-lookup"><span data-stu-id="66567-145">Application Resources</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
+ [<span data-ttu-id="66567-146">テキスト</span><span class="sxs-lookup"><span data-stu-id="66567-146">Text</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
+ [<span data-ttu-id="66567-147">データ バインディング</span><span class="sxs-lookup"><span data-stu-id="66567-147">Data Binding</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
+ [<span data-ttu-id="66567-148">パフォーマンスに関するその他の推奨事項</span><span class="sxs-lookup"><span data-stu-id="66567-148">Other Performance Recommendations</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

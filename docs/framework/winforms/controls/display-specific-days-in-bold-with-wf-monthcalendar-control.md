@@ -1,47 +1,50 @@
 ---
-title: "方法 : Windows フォームの MonthCalendar コントロールを使用して特定の日付を太字で表示する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "予定表, 表示 (日付を太字で)"
-  - "例 [Windows フォーム], 予定表コントロール"
-  - "GetDayBold イベント"
-  - "MonthCalendar コントロール [Windows フォーム], 日付 (太字で表示される)"
+title: "方法 : Windows フォームの MonthCalendar コントロールを使用して特定の日付を太字で表示する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- calendars [Windows Forms], displaying dates in bold
+- examples [Windows Forms], calendar controls
+- GetDayBold event
+- MonthCalendar control [Windows Forms], dates displayed in bold
 ms.assetid: 8b20db5b-8118-4825-90e8-2c45c186ac7d
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 18a199592a8bfbef2e4a15b056e37af6d885f5f8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームの MonthCalendar コントロールを使用して特定の日付を太字で表示する
-Windows フォームの <xref:System.Windows.Forms.MonthCalendar> コントロールでは、日付を太字で表示できます。これは、単独の日付でも、毎年または毎月繰り返される特定の日付でもかまいません。  祝日や週末など、特別な日を目立つように表示する場合に便利です。  
+# <a name="how-to-display-specific-days-in-bold-with-the-windows-forms-monthcalendar-control"></a><span data-ttu-id="3bf29-102">方法 : Windows フォームの MonthCalendar コントロールを使用して特定の日付を太字で表示する</span><span class="sxs-lookup"><span data-stu-id="3bf29-102">How to: Display Specific Days in Bold with the Windows Forms MonthCalendar Control</span></span>
+<span data-ttu-id="3bf29-103">Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロールは、単数形の日付として、または繰り返しごとに、太字での日数を表示できます。</span><span class="sxs-lookup"><span data-stu-id="3bf29-103">The Windows Forms <xref:System.Windows.Forms.MonthCalendar> control can display days in bold type, either as singular dates or on a repeating basis.</span></span> <span data-ttu-id="3bf29-104">休日や週末などの特別な日を目立たせるこれを行う場合があります。</span><span class="sxs-lookup"><span data-stu-id="3bf29-104">You might do this to draw attention to special dates, such as holidays and weekends.</span></span>  
   
- この機能は、3 つのプロパティによって制御します。  <xref:System.Windows.Forms.MonthCalendar.BoldedDates%2A> プロパティには、単独の日付が含まれます。  <xref:System.Windows.Forms.MonthCalendar.AnnuallyBoldedDates%2A> プロパティには、毎年太字で表示する日付が含まれます。  <xref:System.Windows.Forms.MonthCalendar.MonthlyBoldedDates%2A> プロパティには、毎月太字で表示する日付が含まれます。  これらの各プロパティには、<xref:System.DateTime> オブジェクトの配列が含まれます。  太字で表示する日付を追加または削除するには、<xref:System.DateTime> オブジェクトを追加または削除します。  
+ <span data-ttu-id="3bf29-105">次の 3 つのプロパティは、この機能を制御します。</span><span class="sxs-lookup"><span data-stu-id="3bf29-105">Three properties control this feature.</span></span> <span data-ttu-id="3bf29-106"><xref:System.Windows.Forms.MonthCalendar.BoldedDates%2A>プロパティには、1 つの日付が含まれています。</span><span class="sxs-lookup"><span data-stu-id="3bf29-106">The <xref:System.Windows.Forms.MonthCalendar.BoldedDates%2A> property contains single dates.</span></span> <span data-ttu-id="3bf29-107"><xref:System.Windows.Forms.MonthCalendar.AnnuallyBoldedDates%2A>プロパティには、毎年を太字で表示される日付が含まれています。</span><span class="sxs-lookup"><span data-stu-id="3bf29-107">The <xref:System.Windows.Forms.MonthCalendar.AnnuallyBoldedDates%2A> property contains dates that appear in bold every year.</span></span> <span data-ttu-id="3bf29-108"><xref:System.Windows.Forms.MonthCalendar.MonthlyBoldedDates%2A>プロパティには、すべての月を太字で表示される日付が含まれています。</span><span class="sxs-lookup"><span data-stu-id="3bf29-108">The <xref:System.Windows.Forms.MonthCalendar.MonthlyBoldedDates%2A> property contains dates that appear in bold every month.</span></span> <span data-ttu-id="3bf29-109">これらの各プロパティの配列を含む<xref:System.DateTime>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="3bf29-109">Each of these properties contains an array of <xref:System.DateTime> objects.</span></span> <span data-ttu-id="3bf29-110">を追加またはこれらの一覧から日付を削除するには、追加または削除する必要があります、<xref:System.DateTime>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="3bf29-110">To add or remove a date from one of these lists, you must add or remove a <xref:System.DateTime> object.</span></span>  
   
-### 日付を太字で表示するには  
+### <a name="to-make-a-date-appear-in-bold-type"></a><span data-ttu-id="3bf29-111">日付を太字で表示するには</span><span class="sxs-lookup"><span data-stu-id="3bf29-111">To make a date appear in bold type</span></span>  
   
-1.  <xref:System.DateTime> オブジェクトを複数個作成します。  
+1.  <span data-ttu-id="3bf29-112">作成、<xref:System.DateTime>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="3bf29-112">Create the <xref:System.DateTime> objects.</span></span>  
   
     ```vb  
     Dim myVacation1 As Date = New DateTime(2001, 6, 10)  
     Dim myVacation2 As Date = New DateTime(2001, 6, 17)  
-  
     ```  
   
     ```csharp  
     DateTime myVacation1 = new DateTime(2001, 6, 10);  
     DateTime myVacation2 = new DateTime(2001, 6, 17);  
-  
     ```  
   
     ```cpp  
@@ -49,18 +52,16 @@ Windows フォームの <xref:System.Windows.Forms.MonthCalendar> コントロ�
     DateTime myVacation2 = DateTime(2001, 6, 17);  
     ```  
   
-2.  <xref:System.Windows.Forms.MonthCalendar> コントロールの <xref:System.Windows.Forms.MonthCalendar.AddBoldedDate%2A>、<xref:System.Windows.Forms.MonthCalendar.AddAnnuallyBoldedDate%2A>、または <xref:System.Windows.Forms.MonthCalendar.AddMonthlyBoldedDate%2A> メソッドを呼び出して、1 つの日付を太字にします。  
+2.  <span data-ttu-id="3bf29-113">呼び出して 1 つの日付を太字、 <xref:System.Windows.Forms.MonthCalendar.AddBoldedDate%2A>、 <xref:System.Windows.Forms.MonthCalendar.AddAnnuallyBoldedDate%2A>、または<xref:System.Windows.Forms.MonthCalendar.AddMonthlyBoldedDate%2A>のメソッド、<xref:System.Windows.Forms.MonthCalendar>コントロール。</span><span class="sxs-lookup"><span data-stu-id="3bf29-113">Make a single date bold by calling the <xref:System.Windows.Forms.MonthCalendar.AddBoldedDate%2A>, <xref:System.Windows.Forms.MonthCalendar.AddAnnuallyBoldedDate%2A>, or <xref:System.Windows.Forms.MonthCalendar.AddMonthlyBoldedDate%2A> method of the <xref:System.Windows.Forms.MonthCalendar> control.</span></span>  
   
     ```vb  
     MonthCalendar1.AddBoldedDate(myVacation1)  
     MonthCalendar1.AddBoldedDate(myVacation2)  
-  
     ```  
   
     ```csharp  
     monthCalendar1.AddBoldedDate(myVacation1);  
     monthCalendar1.AddBoldedDate(myVacation2);  
-  
     ```  
   
     ```cpp  
@@ -68,20 +69,18 @@ Windows フォームの <xref:System.Windows.Forms.MonthCalendar> コントロ�
     monthCalendar1->AddBoldedDate(myVacation2);  
     ```  
   
-     または  
+     <span data-ttu-id="3bf29-114">または</span><span class="sxs-lookup"><span data-stu-id="3bf29-114">–or–</span></span>  
   
-     いくつかの日付を一度に太字にするには、<xref:System.DateTime> オブジェクトの配列を作成して、いずれかのプロパティに割り当てます。  
+     <span data-ttu-id="3bf29-115">日付のセットを太字に一度にすべての配列を作成することで<xref:System.DateTime>オブジェクトおよびプロパティのいずれかに割り当てるとします。</span><span class="sxs-lookup"><span data-stu-id="3bf29-115">Make a set of dates bold all at once by creating an array of <xref:System.DateTime> objects and assigning it to one of the properties.</span></span>  
   
     ```vb  
     Dim VacationDates As DateTime() = {myVacation1, myVacation2}  
     MonthCalendar1.BoldedDates = VacationDates  
-  
     ```  
   
     ```csharp  
     DateTime[] VacationDates = {myVacation1, myVacation2};  
     monthCalendar1.BoldedDates = VacationDates;  
-  
     ```  
   
     ```cpp  
@@ -89,20 +88,18 @@ Windows フォームの <xref:System.Windows.Forms.MonthCalendar> コントロ�
     monthCalendar1->BoldedDates = VacationDates;  
     ```  
   
-### 日付を通常のフォントで表示するには  
+### <a name="to-make-a-date-appear-in-the-regular-font"></a><span data-ttu-id="3bf29-116">日付を通常のフォントで表示するには</span><span class="sxs-lookup"><span data-stu-id="3bf29-116">To make a date appear in the regular font</span></span>  
   
-1.  <xref:System.Windows.Forms.MonthCalendar.RemoveBoldedDate%2A> メソッド、<xref:System.Windows.Forms.MonthCalendar.RemoveAnnuallyBoldedDate%2A> メソッド、または <xref:System.Windows.Forms.MonthCalendar.RemoveMonthlyBoldedDate%2A> メソッドを呼び出して、1 つの太字の日付を通常のフォントに戻します。  
+1.  <span data-ttu-id="3bf29-117">1 つの太字で表示される日付を呼び出すことによって通常フォントで表示、 <xref:System.Windows.Forms.MonthCalendar.RemoveBoldedDate%2A>、 <xref:System.Windows.Forms.MonthCalendar.RemoveAnnuallyBoldedDate%2A>、または<xref:System.Windows.Forms.MonthCalendar.RemoveMonthlyBoldedDate%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="3bf29-117">Make a single bolded date appear in the regular font by calling the <xref:System.Windows.Forms.MonthCalendar.RemoveBoldedDate%2A>, <xref:System.Windows.Forms.MonthCalendar.RemoveAnnuallyBoldedDate%2A>, or <xref:System.Windows.Forms.MonthCalendar.RemoveMonthlyBoldedDate%2A> method.</span></span>  
   
     ```vb  
     MonthCalendar1.RemoveBoldedDate(myVacation1)  
     MonthCalendar1.RemoveBoldedDate(myVacation2)  
-  
     ```  
   
     ```csharp  
     monthCalendar1.RemoveBoldedDate(myVacation1);  
     monthCalendar1.RemoveBoldedDate(myVacation2);  
-  
     ```  
   
     ```cpp  
@@ -110,42 +107,38 @@ Windows フォームの <xref:System.Windows.Forms.MonthCalendar> コントロ�
     monthCalendar1->RemoveBoldedDate(myVacation2);  
     ```  
   
-     または  
+     <span data-ttu-id="3bf29-118">または</span><span class="sxs-lookup"><span data-stu-id="3bf29-118">–or–</span></span>  
   
-     <xref:System.Windows.Forms.MonthCalendar.RemoveAllBoldedDates%2A> メソッド、<xref:System.Windows.Forms.MonthCalendar.RemoveAllAnnuallyBoldedDates%2A> メソッド、または <xref:System.Windows.Forms.MonthCalendar.RemoveAllMonthlyBoldedDates%2A> メソッドを呼び出して、いずれかのリストから太字の日付をすべて削除します。  
+     <span data-ttu-id="3bf29-119">3 つのリストのいずれかから呼び出すことによって、太字で表示される日付をすべてを削除、 <xref:System.Windows.Forms.MonthCalendar.RemoveAllBoldedDates%2A>、 <xref:System.Windows.Forms.MonthCalendar.RemoveAllAnnuallyBoldedDates%2A>、または<xref:System.Windows.Forms.MonthCalendar.RemoveAllMonthlyBoldedDates%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="3bf29-119">Remove all the bolded dates from one of the three lists by calling the <xref:System.Windows.Forms.MonthCalendar.RemoveAllBoldedDates%2A>, <xref:System.Windows.Forms.MonthCalendar.RemoveAllAnnuallyBoldedDates%2A>, or <xref:System.Windows.Forms.MonthCalendar.RemoveAllMonthlyBoldedDates%2A> method.</span></span>  
   
     ```vb  
     MonthCalendar1.RemoveAllBoldedDates()  
-  
     ```  
   
     ```csharp  
     monthCalendar1.RemoveAllBoldedDates();  
-  
     ```  
   
     ```cpp  
     monthCalendar1->RemoveAllBoldedDates();  
     ```  
   
-2.  <xref:System.Windows.Forms.MonthCalendar.UpdateBoldedDates%2A> メソッドを呼び出して、フォントの外観を更新します。  
+2.  <span data-ttu-id="3bf29-120">呼び出して、フォントの外観を更新、<xref:System.Windows.Forms.MonthCalendar.UpdateBoldedDates%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="3bf29-120">Update the appearance of the font by calling the <xref:System.Windows.Forms.MonthCalendar.UpdateBoldedDates%2A> method.</span></span>  
   
     ```vb  
     MonthCalendar1.UpdateBoldedDates()  
-  
     ```  
   
     ```csharp  
     monthCalendar1.UpdateBoldedDates();  
-  
     ```  
   
     ```cpp  
     monthCalendar1->UpdateBoldedDates();  
     ```  
   
-## 参照  
- [MonthCalendar コントロール](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)   
- [方法 : Windows フォームの MonthCalendar コントロールで日付の範囲を選択する](../../../../docs/framework/winforms/controls/how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)   
- [方法 : Windows フォームの MonthCalendar コントロールの外観を変更する](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)   
- [方法 : Windows フォームの MonthCalendar コントロールにおいて複数の月を表示する](../../../../docs/framework/winforms/controls/display-more-than-one-month-wf-monthcalendar-control.md)
+## <a name="see-also"></a><span data-ttu-id="3bf29-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="3bf29-121">See Also</span></span>  
+ [<span data-ttu-id="3bf29-122">MonthCalendar コントロール</span><span class="sxs-lookup"><span data-stu-id="3bf29-122">MonthCalendar Control</span></span>](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)  
+ [<span data-ttu-id="3bf29-123">方法: Windows フォームの MonthCalendar コントロールで日付の範囲を選択する</span><span class="sxs-lookup"><span data-stu-id="3bf29-123">How to: Select a Range of Dates in the Windows Forms MonthCalendar Control</span></span>](../../../../docs/framework/winforms/controls/how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)  
+ [<span data-ttu-id="3bf29-124">方法: Windows フォームの MonthCalendar コントロールの外観を変更する</span><span class="sxs-lookup"><span data-stu-id="3bf29-124">How to: Change the Windows Forms MonthCalendar Control's Appearance</span></span>](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)  
+ [<span data-ttu-id="3bf29-125">方法: Windows フォームの MonthCalendar コントロールにおいて複数の月を表示する</span><span class="sxs-lookup"><span data-stu-id="3bf29-125">How to: Display More than One Month in the Windows Forms MonthCalendar Control</span></span>](../../../../docs/framework/winforms/controls/display-more-than-one-month-wf-monthcalendar-control.md)

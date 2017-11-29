@@ -1,74 +1,77 @@
 ---
-title: "SQL Server の承認とアクセス許可 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "SQL Server の承認と権限"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 0916ca83cae40d1deda2e1126fd7b7ebab46a23c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# SQL Server の承認とアクセス許可
-データベース オブジェクトを作成する際は、ユーザーがそれらのオブジェクトにアクセスできるように明示的に権限を付与する必要があります。  セキュリティ保護可能なすべてのオブジェクトには、権限ステートメントを使ってプリンシパルに付与することのできる権限が関連付けられています。  
+# <a name="authorization-and-permissions-in-sql-server"></a><span data-ttu-id="c90a7-102">SQL Server の承認と権限</span><span class="sxs-lookup"><span data-stu-id="c90a7-102">Authorization and Permissions in SQL Server</span></span>
+<span data-ttu-id="c90a7-103">データベース オブジェクトを作成する際は、ユーザーがそれらのオブジェクトにアクセスできるように明示的に権限を付与する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c90a7-103">When you create database objects, you must explicitly grant permissions to make them accessible to users.</span></span> <span data-ttu-id="c90a7-104">セキュリティ保護可能なすべてのオブジェクトには、権限ステートメントを使ってプリンシパルに付与することのできる権限が関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="c90a7-104">Every securable object has permissions that can be granted to a principal using permission statements.</span></span>  
   
-## 最小特権の原則  
- LUA \(最小限の特権しか持たないユーザー アカウント\) アプローチによるアプリケーション開発は、セキュリティ上の脅威に対抗する多層防御の重要な部分を占めます。  LUA アプローチを用いることで、ユーザーに最小特権の原則に従った行動を要求し、常に制限ユーザー アカウントでログオンしてもらうことができます。  固定サーバー ロールを使用すると、意図せず管理タスクが実行されてしまう可能性があるため、`sysadmin` 固定サーバー ロールの使用は厳しく制限されることになります。  
+## <a name="the-principle-of-least-privilege"></a><span data-ttu-id="c90a7-105">最小特権の原則</span><span class="sxs-lookup"><span data-stu-id="c90a7-105">The Principle of Least Privilege</span></span>  
+ <span data-ttu-id="c90a7-106">LUA (最小限の特権しか持たないユーザー アカウント) アプローチによるアプリケーション開発は、セキュリティ上の脅威に対抗する多層防御の重要な部分を占めます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-106">Developing an application using a least-privileged user account (LUA) approach is an important part of a defensive, in-depth strategy for countering security threats.</span></span> <span data-ttu-id="c90a7-107">LUA アプローチを用いることで、ユーザーに最小特権の原則に従った行動を要求し、常に制限ユーザー アカウントでログオンしてもらうことができます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-107">The LUA approach ensures that users follow the principle of least privilege and always log on with limited user accounts.</span></span> <span data-ttu-id="c90a7-108">固定サーバー ロールを使用すると、意図せず管理タスクが実行されてしまう可能性があるため、`sysadmin` 固定サーバー ロールの使用は厳しく制限されることになります。</span><span class="sxs-lookup"><span data-stu-id="c90a7-108">Administrative tasks are broken out using fixed server roles, and the use of the `sysadmin` fixed server role is severely restricted.</span></span>  
   
- データベース ユーザーに権限を付与する際は、常に最小特権の原則に従うようにしてください。  ユーザーまたはロールが各自のタスクを実行するために必要な最小限の権限だけを付与します。  
+ <span data-ttu-id="c90a7-109">データベース ユーザーに権限を付与する際は、常に最小特権の原則に従うようにしてください。</span><span class="sxs-lookup"><span data-stu-id="c90a7-109">Always follow the principle of least privilege when granting permissions to database users.</span></span> <span data-ttu-id="c90a7-110">ユーザーまたはロールが各自のタスクを実行するために必要な最小限の権限だけを付与します。</span><span class="sxs-lookup"><span data-stu-id="c90a7-110">Grant the minimum permissions necessary to a user or role to accomplish a given task.</span></span>  
   
 > [!IMPORTANT]
->  アプリケーションの開発とテストに LUA アプローチを使用した場合、開発プロセスの難易度は上がります。  オブジェクトの作成やコードの記述は、LUA アカウントとして行うよりも、システム管理者またはデータベース所有者として行う方が簡単です。  高度な権限がなければ正常に動作しないケースも考えられます。しかし、逆に、高い特権を持つアカウントでアプリケーションを開発していると、最小限の特権しか持たないユーザーが、そのアプリケーションを使った場合にどのような制限が生じるかといった影響が見えにくくなります。  なんらかの機能が利用できなかった場合に、ユーザーに過剰な権限を付与して再試行させるというやり方では、アプリケーションに攻撃の隙が生じてしまいます。  LUA アカウントでログオンしてアプリケーションの設計、開発、およびテストを行うことにより、統制のとれたセキュリティ計画が実現します。意図しない問題の発生を防ぎ、その場しのぎの措置でシステム特権を与えるといった誘惑にかられることもありません。  Windows 認証を使ってアプリケーションを配置する場合でも、テスト時には SQL Server ログインを使用できます。  
+>  <span data-ttu-id="c90a7-111">アプリケーションの開発とテストに LUA アプローチを使用した場合、開発プロセスの難易度は上がります。</span><span class="sxs-lookup"><span data-stu-id="c90a7-111">Developing and testing an application using the LUA approach adds a degree of difficulty to the development process.</span></span> <span data-ttu-id="c90a7-112">オブジェクトの作成やコードの記述は、LUA アカウントとして行うよりも、システム管理者またはデータベース所有者として行う方が簡単です。</span><span class="sxs-lookup"><span data-stu-id="c90a7-112">It is easier to create objects and write code while logged on as a system administrator or database owner than it is using a LUA account.</span></span> <span data-ttu-id="c90a7-113">高度な権限がなければ正常に動作しないケースも考えられます。しかし、逆に、高い特権を持つアカウントでアプリケーションを開発していると、最小限の特権しか持たないユーザーが、そのアプリケーションを使った場合にどのような制限が生じるかといった影響が見えにくくなります。</span><span class="sxs-lookup"><span data-stu-id="c90a7-113">However, developing applications using a highly privileged account can obfuscate the impact of reduced functionality when least privileged users attempt to run an application that requires elevated permissions in order to function correctly.</span></span> <span data-ttu-id="c90a7-114">なんらかの機能が利用できなかった場合に、ユーザーに過剰な権限を付与して再試行させるというやり方では、アプリケーションに攻撃の隙が生じてしまいます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-114">Granting excessive permissions to users in order to reacquire lost functionality can leave your application vulnerable to attack.</span></span> <span data-ttu-id="c90a7-115">LUA アカウントでログオンしてアプリケーションの設計、開発、およびテストを行うことにより、統制のとれたセキュリティ計画が実現します。意図しない問題の発生を防ぎ、その場しのぎの措置でシステム特権を与えるといった誘惑にかられることもありません。</span><span class="sxs-lookup"><span data-stu-id="c90a7-115">Designing, developing and testing your application logged on with a LUA account enforces a disciplined approach to security planning that eliminates unpleasant surprises and the temptation to grant elevated privileges as a quick fix.</span></span> <span data-ttu-id="c90a7-116">Windows 認証を使ってアプリケーションを配置する場合でも、テスト時には SQL Server ログインを使用できます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-116">You can use a SQL Server login for testing even if your application is intended to deploy using Windows authentication.</span></span>  
   
-## ロール ベースの権限  
- ユーザーに対して権限を付与するのではなく、ロールに対して権限を付与した方がセキュリティの管理がシンプルになります。  ロールに割り当てられた権限セットは、そのロールのすべてのメンバーによって継承されます。  ユーザーごとに別個の権限セットを作成するよりも、ロールに対してユーザーを追加したり、ロールからユーザーを削除したりする方が容易です。  ロールは入れ子にすることができます \(ただし、あまり階層が深すぎると、パフォーマンスが低下する場合があります\)。  固定データベース ロールにユーザーを追加することで、権限の割り当てを簡素化することもできます。  
+## <a name="role-based-permissions"></a><span data-ttu-id="c90a7-117">ロール ベースの権限</span><span class="sxs-lookup"><span data-stu-id="c90a7-117">Role-Based Permissions</span></span>  
+ <span data-ttu-id="c90a7-118">ユーザーに対して権限を付与するのではなく、ロールに対して権限を付与した方がセキュリティの管理がシンプルになります。</span><span class="sxs-lookup"><span data-stu-id="c90a7-118">Granting permissions to roles rather than to users simplifies security administration.</span></span> <span data-ttu-id="c90a7-119">ロールに割り当てられた権限セットは、そのロールのすべてのメンバーによって継承されます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-119">Permission sets that are assigned to roles are inherited by all members of the role.</span></span> <span data-ttu-id="c90a7-120">ユーザーごとに別個の権限セットを作成するよりも、ロールに対してユーザーを追加したり、ロールからユーザーを削除したりする方が容易です。</span><span class="sxs-lookup"><span data-stu-id="c90a7-120">It is easier to add or remove users from a role than it is to recreate separate permission sets for individual users.</span></span> <span data-ttu-id="c90a7-121">ロールは入れ子にすることができます (ただし、あまり階層が深すぎると、パフォーマンスが低下する場合があります)。</span><span class="sxs-lookup"><span data-stu-id="c90a7-121">Roles can be nested; however, too many levels of nesting can degrade performance.</span></span> <span data-ttu-id="c90a7-122">固定データベース ロールにユーザーを追加することで、権限の割り当てを簡素化することもできます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-122">You can also add users to fixed database roles to simplify assigning permissions.</span></span>  
   
- 権限をスキーマ レベルで付与できます。  ユーザーは、スキーマに新しく作成されたすべてのオブジェクトの権限を自動的に継承するため、新しいオブジェクトが作成されるたびに権限を付与する必要はありません。  
+ <span data-ttu-id="c90a7-123">権限をスキーマ レベルで付与できます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-123">You can grant permissions at the schema level.</span></span> <span data-ttu-id="c90a7-124">ユーザーは、スキーマに新しく作成されたすべてのオブジェクトの権限を自動的に継承するため、新しいオブジェクトが作成されるたびに権限を付与する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="c90a7-124">Users automatically inherit permissions on all new objects created in the schema; you do not need to grant permissions as new objects are created.</span></span>  
   
-## プロシージャ コードを介した権限  
- ストアド プロシージャやユーザー定義関数などのモジュールを介してデータ アクセスをカプセル化すると、アプリケーションに保護層を追加できます。  権限をストアド プロシージャまたは関数に対してのみ付与することで、テーブルなど、基になるオブジェクトへの権限を拒否し、データベース オブジェクトがユーザーによって直接操作されるのを防ぐことができます。  SQL Server では、これを所有権の継承によって実現しています。  
+## <a name="permissions-through-procedural-code"></a><span data-ttu-id="c90a7-125">プロシージャ コードを介した権限</span><span class="sxs-lookup"><span data-stu-id="c90a7-125">Permissions Through Procedural Code</span></span>  
+ <span data-ttu-id="c90a7-126">ストアド プロシージャやユーザー定義関数などのモジュールを介してデータ アクセスをカプセル化すると、アプリケーションに保護層を追加できます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-126">Encapsulating data access through modules such as stored procedures and user-defined functions provides an additional layer of protection around your application.</span></span> <span data-ttu-id="c90a7-127">権限をストアド プロシージャまたは関数に対してのみ付与することで、テーブルなど、基になるオブジェクトへの権限を拒否し、データベース オブジェクトがユーザーによって直接操作されるのを防ぐことができます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-127">You can prevent users from directly interacting with database objects by granting permissions only to stored procedures or functions while denying permissions to underlying objects such as tables.</span></span> <span data-ttu-id="c90a7-128">SQL Server では、これを所有権の継承によって実現しています。</span><span class="sxs-lookup"><span data-stu-id="c90a7-128">SQL Server achieves this by ownership chaining.</span></span>  
   
-## 権限ステートメント  
- Transact\-SQL の 3 つの権限ステートメントを次の表で説明します。  
+## <a name="permission-statements"></a><span data-ttu-id="c90a7-129">権限ステートメント</span><span class="sxs-lookup"><span data-stu-id="c90a7-129">Permission Statements</span></span>  
+ <span data-ttu-id="c90a7-130">Transact-SQL の 3 つの権限ステートメントを次の表で説明します。</span><span class="sxs-lookup"><span data-stu-id="c90a7-130">The three Transact-SQL permission statements are described in the following table.</span></span>  
   
-|権限ステートメント|説明|  
-|---------------|--------|  
-|GRANT|権限を付与します。|  
-|REVOKE|権限を取り消します。  これは、新しいオブジェクトの既定の状態です。  ユーザーまたはロールから取り消された権限は、引き続きそのプリンシパルが割り当てられている他のグループまたはロールから継承できます。|  
-|DENY|権限を継承できないように取り消します。  DENY はすべての権限に優先しますが、オブジェクトの所有者または `sysadmin` のメンバーには適用されません。  `public` ロールに対してオブジェクトの権限を拒否 \(DENY\) した場合、オブジェクトの所有者および `sysadmin` のメンバーを除くすべてのユーザーおよびロールの権限が拒否されます。|  
+|<span data-ttu-id="c90a7-131">権限ステートメント</span><span class="sxs-lookup"><span data-stu-id="c90a7-131">Permission Statement</span></span>|<span data-ttu-id="c90a7-132">説明</span><span class="sxs-lookup"><span data-stu-id="c90a7-132">Description</span></span>|  
+|--------------------------|-----------------|  
+|<span data-ttu-id="c90a7-133">GRANT</span><span class="sxs-lookup"><span data-stu-id="c90a7-133">GRANT</span></span>|<span data-ttu-id="c90a7-134">権限を付与します。</span><span class="sxs-lookup"><span data-stu-id="c90a7-134">Grants a permission.</span></span>|  
+|<span data-ttu-id="c90a7-135">REVOKE</span><span class="sxs-lookup"><span data-stu-id="c90a7-135">REVOKE</span></span>|<span data-ttu-id="c90a7-136">権限を取り消します。</span><span class="sxs-lookup"><span data-stu-id="c90a7-136">Revokes a permission.</span></span> <span data-ttu-id="c90a7-137">これは、新しいオブジェクトの既定の状態です。</span><span class="sxs-lookup"><span data-stu-id="c90a7-137">This is the default state of a new object.</span></span> <span data-ttu-id="c90a7-138">ユーザーまたはロールから取り消された権限は、引き続きそのプリンシパルが割り当てられている他のグループまたはロールから継承できます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-138">A permission revoked from a user or role can still be inherited from other groups or roles to which the principal is assigned.</span></span>|  
+|<span data-ttu-id="c90a7-139">DENY</span><span class="sxs-lookup"><span data-stu-id="c90a7-139">DENY</span></span>|<span data-ttu-id="c90a7-140">権限を継承できないように取り消します。</span><span class="sxs-lookup"><span data-stu-id="c90a7-140">DENY revokes a permission so that it cannot be inherited.</span></span> <span data-ttu-id="c90a7-141">DENY はすべての権限に優先しますが、オブジェクトの所有者または `sysadmin` のメンバーには適用されません。</span><span class="sxs-lookup"><span data-stu-id="c90a7-141">DENY takes precedence over all permissions, except DENY does not apply to object owners or members of `sysadmin`.</span></span> <span data-ttu-id="c90a7-142">`public` ロールに対してオブジェクトの権限を拒否 (DENY) した場合、オブジェクトの所有者および `sysadmin` のメンバーを除くすべてのユーザーおよびロールの権限が拒否されます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-142">If you DENY permissions on an object to the `public` role it is denied to all users and roles except for object owners and `sysadmin` members.</span></span>|  
   
--   GRANT ステートメントでは、データベース ユーザーによる継承が可能な権限をグループまたはロールに割り当てることができます。  ただし、DENY ステートメントは、他のすべての権限ステートメントに優先します。  そのため、権限を拒否されたユーザーが、別のロールからそれを継承することはできません。  
-  
-> [!NOTE]
->  `sysadmin` 固定サーバー ロールのメンバーおよびオブジェクトの所有者の権限を拒否することはできません。  
-  
-## 所有権の継承  
- SQL Server では、権限を付与されているプリンシパル以外、オブジェクトにアクセスすることはできません。  複数のデータベース オブジェクトが、相互にアクセスするシーケンスは、チェーンと呼ばれます。  SQL Server は、チェーン内のリンクをたどる際、個々の項目に個別にアクセスする場合とは異なる方法で権限を評価します。  チェーンを介してオブジェクトにアクセスする場合、SQL Server は最初にオブジェクトの所有者と、呼び出し元オブジェクト \(つまり、チェーンにおける直前のリンク\) の所有者とを比較します。  オブジェクトの所有者がどちらも同じであれば、参照されているオブジェクトに対する権限はチェックされません。  あるオブジェクトが、所有者の異なる別のオブジェクトにアクセスする場合、所有権の継承が途切れるため、必ず呼び出し元のセキュリティ コンテキストが SQL Server によってチェックされます。  
-  
-## プロシージャ コードと所有権の継承  
- ユーザーに、テーブルのデータを選択するストアド プロシージャを実行するための権限が付与されていると仮定します。  ストアド プロシージャの所有者とテーブルの所有者が同じであった場合、このユーザーには、テーブルに対する権限を付与する必要はなく、権限を拒否することも可能です。  ただし、ストアド プロシージャの所有者とテーブルの所有者が異なる場合、SQL Server は、そのユーザーがテーブルに対する権限を持っているかどうかを必ずチェックした上でデータへのアクセスを許可します。  
+-   <span data-ttu-id="c90a7-143">GRANT ステートメントでは、データベース ユーザーによる継承が可能な権限をグループまたはロールに割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-143">The GRANT statement can assign permissions to a group or role that can be inherited by database users.</span></span> <span data-ttu-id="c90a7-144">ただし、DENY ステートメントは、他のすべての権限ステートメントに優先します。</span><span class="sxs-lookup"><span data-stu-id="c90a7-144">However, the DENY statement takes precedence over all other permission statements.</span></span> <span data-ttu-id="c90a7-145">そのため、権限を拒否されたユーザーが、別のロールからそれを継承することはできません。</span><span class="sxs-lookup"><span data-stu-id="c90a7-145">Therefore, a user who has been denied a permission cannot inherit it from another role.</span></span>  
   
 > [!NOTE]
->  動的 SQL ステートメントの場合、所有権の継承は適用されません。  SQL ステートメントを実行するプロシージャを呼び出すには、その呼び出し元に、基になるテーブルへの権限が付与されている必要があるため、SQL インジェクション攻撃に対してアプリケーションが脆弱になってしまいます。  SQL Server では、基になるテーブルへの権限を付与しなくても済むように、権限の借用や証明書によるモジュールへの署名など、新しいメカニズムが用意されています。  これらを CLR のストアド プロシージャと組み合わせて使用することも可能です。  
+>  <span data-ttu-id="c90a7-146">`sysadmin` 固定サーバー ロールのメンバーおよびオブジェクトの所有者の権限を拒否することはできません。</span><span class="sxs-lookup"><span data-stu-id="c90a7-146">Members of the `sysadmin` fixed server role and object owners cannot be denied permissions.</span></span>  
   
-## 外部リソース  
- 詳細については、次のリソースを参照してください。  
+## <a name="ownership-chains"></a><span data-ttu-id="c90a7-147">所有権の継承</span><span class="sxs-lookup"><span data-stu-id="c90a7-147">Ownership Chains</span></span>  
+ <span data-ttu-id="c90a7-148">SQL Server では、権限を付与されているプリンシパル以外、オブジェクトにアクセスすることはできません。</span><span class="sxs-lookup"><span data-stu-id="c90a7-148">SQL Server ensures that only principals that have been granted permission can access objects.</span></span> <span data-ttu-id="c90a7-149">複数のデータベース オブジェクトが、相互にアクセスするシーケンスは、チェーンと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-149">When multiple database objects access each other, the sequence is known as a chain.</span></span> <span data-ttu-id="c90a7-150">SQL Server は、チェーン内のリンクをたどる際、個々の項目に個別にアクセスする場合とは異なる方法で権限を評価します。</span><span class="sxs-lookup"><span data-stu-id="c90a7-150">When SQL Server is traversing the links in the chain, it evaluates permissions differently than it would if it were accessing each item separately.</span></span> <span data-ttu-id="c90a7-151">チェーンを介してオブジェクトにアクセスする場合、SQL Server は最初にオブジェクトの所有者と、呼び出し元オブジェクト (つまり、チェーンにおける直前のリンク) の所有者とを比較します。</span><span class="sxs-lookup"><span data-stu-id="c90a7-151">When an object is accessed through a chain, SQL Server first compares the object's owner to the owner of the calling object (the previous link in the chain).</span></span> <span data-ttu-id="c90a7-152">オブジェクトの所有者がどちらも同じであれば、参照されているオブジェクトに対する権限はチェックされません。</span><span class="sxs-lookup"><span data-stu-id="c90a7-152">If both objects have the same owner, permissions on the referenced object are not checked.</span></span> <span data-ttu-id="c90a7-153">あるオブジェクトが、所有者の異なる別のオブジェクトにアクセスする場合、所有権の継承が途切れるため、必ず呼び出し元のセキュリティ コンテキストが SQL Server によってチェックされます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-153">Whenever an object accesses another object that has a different owner, the ownership chain is broken and SQL Server must check the caller's security context.</span></span>  
   
-|リソース|説明|  
-|----------|--------|  
-|SQL Server オンライン ブックの「[権限 \(データベース エンジン\)](http://msdn.microsoft.com/library/ms191291.aspx)」|権限の階層、カタログ ビュー、および固定サーバー ロールと固定データベース ロールの権限について説明します。|  
+## <a name="procedural-code-and-ownership-chaining"></a><span data-ttu-id="c90a7-154">プロシージャ コードと所有権の継承</span><span class="sxs-lookup"><span data-stu-id="c90a7-154">Procedural Code and Ownership Chaining</span></span>  
+ <span data-ttu-id="c90a7-155">ユーザーに、テーブルのデータを選択するストアド プロシージャを実行するための権限が付与されていると仮定します。</span><span class="sxs-lookup"><span data-stu-id="c90a7-155">Suppose that a user is granted execute permissions on a stored procedure that selects data from a table.</span></span> <span data-ttu-id="c90a7-156">ストアド プロシージャの所有者とテーブルの所有者が同じであった場合、このユーザーには、テーブルに対する権限を付与する必要はなく、権限を拒否することも可能です。</span><span class="sxs-lookup"><span data-stu-id="c90a7-156">If the stored procedure and the table have the same owner, the user doesn't need to be granted any permissions on the table and can even be denied permissions.</span></span> <span data-ttu-id="c90a7-157">ただし、ストアド プロシージャの所有者とテーブルの所有者が異なる場合、SQL Server は、そのユーザーがテーブルに対する権限を持っているかどうかを必ずチェックした上でデータへのアクセスを許可します。</span><span class="sxs-lookup"><span data-stu-id="c90a7-157">However, if the stored procedure and the table have different owners, SQL Server must check the user's permissions on the table before allowing access to the data.</span></span>  
   
-## 参照  
- [ADO.NET アプリケーションのセキュリティ保護](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
- [SQL Server におけるアプリケーション セキュリティのシナリオ](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)   
- [認証](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)   
- [SQL Server のサーバー ロールとデータベース ロール](../../../../../docs/framework/data/adonet/sql/server-and-database-roles-in-sql-server.md)   
- [SQL Server における所有権とユーザーとスキーマの分離](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+> [!NOTE]
+>  <span data-ttu-id="c90a7-158">動的 SQL ステートメントの場合、所有権の継承は適用されません。</span><span class="sxs-lookup"><span data-stu-id="c90a7-158">Ownership chaining does not apply in the case of dynamic SQL statements.</span></span> <span data-ttu-id="c90a7-159">SQL ステートメントを実行するプロシージャを呼び出すには、その呼び出し元に、基になるテーブルへの権限が付与されている必要があるため、SQL インジェクション攻撃に対してアプリケーションが脆弱になってしまいます。</span><span class="sxs-lookup"><span data-stu-id="c90a7-159">To call a procedure that executes an SQL statement, the caller must be granted permissions on the underlying tables, leaving your application vulnerable to SQL Injection attack.</span></span> <span data-ttu-id="c90a7-160">SQL Server では、基になるテーブルへの権限を付与しなくても済むように、権限の借用や証明書によるモジュールへの署名など、新しいメカニズムが用意されています。</span><span class="sxs-lookup"><span data-stu-id="c90a7-160">SQL Server provides new mechanisms, such as impersonation and signing modules with certificates, that do not require granting permissions on the underlying tables.</span></span> <span data-ttu-id="c90a7-161">これらを CLR のストアド プロシージャと組み合わせて使用することも可能です。</span><span class="sxs-lookup"><span data-stu-id="c90a7-161">These can also be used with CLR stored procedures.</span></span>  
+  
+## <a name="external-resources"></a><span data-ttu-id="c90a7-162">外部リソース</span><span class="sxs-lookup"><span data-stu-id="c90a7-162">External Resources</span></span>  
+ <span data-ttu-id="c90a7-163">詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="c90a7-163">For more information, see the following resources.</span></span>  
+  
+|<span data-ttu-id="c90a7-164">リソース</span><span class="sxs-lookup"><span data-stu-id="c90a7-164">Resource</span></span>|<span data-ttu-id="c90a7-165">説明</span><span class="sxs-lookup"><span data-stu-id="c90a7-165">Description</span></span>|  
+|--------------|-----------------|  
+|<span data-ttu-id="c90a7-166">[アクセス許可](http://msdn.microsoft.com/library/ms191291.aspx)SQL Server オンライン ブック</span><span class="sxs-lookup"><span data-stu-id="c90a7-166">[Permissions](http://msdn.microsoft.com/library/ms191291.aspx) in SQL Server Books Online</span></span>|<span data-ttu-id="c90a7-167">権限の階層、カタログ ビュー、および固定サーバー ロールと固定データベース ロールの権限について説明します。</span><span class="sxs-lookup"><span data-stu-id="c90a7-167">Contains topics describing permissions hierarchy, catalog views, and permissions of fixed server and database roles.</span></span>|  
+  
+## <a name="see-also"></a><span data-ttu-id="c90a7-168">関連項目</span><span class="sxs-lookup"><span data-stu-id="c90a7-168">See Also</span></span>  
+ [<span data-ttu-id="c90a7-169">ADO.NET アプリケーションのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="c90a7-169">Securing ADO.NET Applications</span></span>](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ [<span data-ttu-id="c90a7-170">SQL Server におけるアプリケーション セキュリティ シナリオ</span><span class="sxs-lookup"><span data-stu-id="c90a7-170">Application Security Scenarios in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
+ [<span data-ttu-id="c90a7-171">SQL Server での認証</span><span class="sxs-lookup"><span data-stu-id="c90a7-171">Authentication in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)  
+ [<span data-ttu-id="c90a7-172">サーバーと SQL server データベース ロール</span><span class="sxs-lookup"><span data-stu-id="c90a7-172">Server and Database Roles in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/server-and-database-roles-in-sql-server.md)  
+ [<span data-ttu-id="c90a7-173">所有権と SQL Server のユーザーとスキーマの分離</span><span class="sxs-lookup"><span data-stu-id="c90a7-173">Ownership and User-Schema Separation in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md)  
+ [<span data-ttu-id="c90a7-174">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="c90a7-174">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

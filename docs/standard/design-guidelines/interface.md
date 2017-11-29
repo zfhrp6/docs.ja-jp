@@ -1,63 +1,61 @@
 ---
-title: "インターフェイスのデザイン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "インターフェイス [.NET Framework] のデザイン ガイドライン"
-  - "型のデザインのガイドライン、インターフェイス"
-  - "クラス ライブラリ デザインのガイドライン [.NET Framework] インターフェイス"
+title: "インターフェイスのデザイン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- interfaces [.NET Framework], design guidelines
+- type design guidelines, interfaces
+- class library design guidelines [.NET Framework], interfaces
 ms.assetid: a016bd18-6710-4358-9438-9f190a295392
-caps.latest.revision: 12
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: d04011622321638e1f3b0c5f4d270f840c7070e1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# インターフェイスのデザイン
-ほとんどの Api は、クラスと構造体を使用して、最適なモデル化、またはインターフェイスがより適切な唯一のオプションの場合もあります。  
+# <a name="interface-design"></a><span data-ttu-id="9199f-102">インターフェイスのデザイン</span><span class="sxs-lookup"><span data-stu-id="9199f-102">Interface Design</span></span>
+<span data-ttu-id="9199f-103">ほとんどの Api は、クラスと構造体を使用して、最適なモデル化、ある場合、またはインターフェイスがより適切な唯一のオプションします。</span><span class="sxs-lookup"><span data-stu-id="9199f-103">Although most APIs are best modeled using classes and structs, there are cases in which interfaces are more appropriate or are the only option.</span></span>  
   
- CLR は多重継承をサポートしていません \(つまり、CLR クラスできない複数の基本クラスから継承\) が、基本クラスから継承するだけでなく、1 つまたは複数のインターフェイスを実装する型。 したがって、インターフェイスは、多重継承の効果を実現するためによく使用されます。 たとえば、 <xref:System.IDisposable> インターフェイスにより、参加する継承階層の独立した disposability をサポートする型です。  
+ <span data-ttu-id="9199f-104">CLR は多重継承をサポートしていません (つまり、CLR クラスは継承できません 1 つ以上の基底クラスから) が、基本クラスから継承するだけでなく、1 つまたは複数のインターフェイスを実装する型。</span><span class="sxs-lookup"><span data-stu-id="9199f-104">The CLR does not support multiple inheritance (i.e., CLR classes cannot inherit from more than one base class), but it does allow types to implement one or more interfaces in addition to inheriting from a base class.</span></span> <span data-ttu-id="9199f-105">そのため、インターフェイスは、複数の継承の効果を実現するためによく使用されます。</span><span class="sxs-lookup"><span data-stu-id="9199f-105">Therefore, interfaces are often used to achieve the effect of multiple inheritance.</span></span> <span data-ttu-id="9199f-106">たとえば、<xref:System.IDisposable>インターフェイスにより、参加する継承階層の独立した disposability をサポートする型です。</span><span class="sxs-lookup"><span data-stu-id="9199f-106">For example, <xref:System.IDisposable> is an interface that allows types to support disposability independent of any other inheritance hierarchy in which they want to participate.</span></span>  
   
- どの定義で、インターフェイスは、適切なその他の状況では、いくつかの値の型を含むいくつかの種類によってサポートされる共通のインターフェイスを作成するのにです。 値型が以外の型から継承できない <xref:System.ValueType>, 、インターフェイスを実装することができますは、共通の基本型を提供するためには、唯一のオプションは、インターフェイスを使用しています。  
+ <span data-ttu-id="9199f-107">どのを定義するインターフェイスが適切な他の状況は、いくつかの値の型を含む、いくつかの種類でサポートできる共通のインターフェイスを作成するのにです。</span><span class="sxs-lookup"><span data-stu-id="9199f-107">The other situation in which defining an interface is appropriate is in creating a common interface that can be supported by several types, including some value types.</span></span> <span data-ttu-id="9199f-108">値の型が以外の値の型から継承できません<xref:System.ValueType>インターフェイスを実装することができますが、共通の基本型を提供するための唯一のオプションは、インターフェイスを使用します。</span><span class="sxs-lookup"><span data-stu-id="9199f-108">Value types cannot inherit from types other than <xref:System.ValueType>, but they can implement interfaces, so using an interface is the only option in order to provide a common base type.</span></span>  
   
- **✓ は** 一部共通の API を値型を含む一連の型でサポートする必要がある場合は、インターフェイスを定義します。  
+ <span data-ttu-id="9199f-109">**✓ しないで**いくつかの一般的な API 値の型を含む型のセットでサポートする必要がある場合は、インターフェイスを定義します。</span><span class="sxs-lookup"><span data-stu-id="9199f-109">**✓ DO** define an interface if you need some common API to be supported by a set of types that includes value types.</span></span>  
   
- **✓ を検討してください** 既に別の型から継承した型でその機能をサポートする必要がある場合は、インターフェイスを定義します。  
+ <span data-ttu-id="9199f-110">**✓ を検討してください**既に他の型を継承する型でその機能をサポートする必要がある場合は、インターフェイスを定義します。</span><span class="sxs-lookup"><span data-stu-id="9199f-110">**✓ CONSIDER** defining an interface if you need to support its functionality on types that already inherit from some other type.</span></span>  
   
- **X 回避** マーカー インターフェイス \(メンバーを持たないインターフェイス\) を使用します。  
+ <span data-ttu-id="9199f-111">**避け x**マーカー インターフェイス (メンバーを持たないインターフェイス) を使用します。</span><span class="sxs-lookup"><span data-stu-id="9199f-111">**X AVOID** using marker interfaces (interfaces with no members).</span></span>  
   
- 特定の特性 \(マーカー\) されているクラスをマークする必要がある場合は、一般に、インターフェイスではなく、カスタム属性を使用します。  
+ <span data-ttu-id="9199f-112">特定の特性 (マーカー) を持つものとしてクラスをマークする必要がある場合は、一般に、インターフェイスではなく、カスタム属性を使用します。</span><span class="sxs-lookup"><span data-stu-id="9199f-112">If you need to mark a class as having a specific characteristic (marker), in general, use a custom attribute rather than an interface.</span></span>  
   
- **✓ は** インターフェイスの実装は、少なくとも 1 つの型を提供します。  
+ <span data-ttu-id="9199f-113">**✓ しないで**インターフェイスの実装は、少なくとも 1 つの型を提供します。</span><span class="sxs-lookup"><span data-stu-id="9199f-113">**✓ DO** provide at least one type that is an implementation of an interface.</span></span>  
   
- これにより、インターフェイスの設計を検証します。 たとえば、 <xref:System.Collections.Generic.List%601> の実装には、 <xref:System.Collections.Generic.IList%601> インターフェイスです。  
+ <span data-ttu-id="9199f-114">これにより、インターフェイスの設計を検証するを行っています。</span><span class="sxs-lookup"><span data-stu-id="9199f-114">Doing this helps to validate the design of the interface.</span></span> <span data-ttu-id="9199f-115">たとえば、<xref:System.Collections.Generic.List%601>に実装されて、<xref:System.Collections.Generic.IList%601>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="9199f-115">For example, <xref:System.Collections.Generic.List%601> is an implementation of the <xref:System.Collections.Generic.IList%601> interface.</span></span>  
   
- **✓ は** を定義する各インターフェイスを使用するには、少なくとも 1 つの API を提供 \(パラメーターやプロパティとして、インターフェイスを取得するメソッドは、インターフェイスとして型指定された\)。  
+ <span data-ttu-id="9199f-116">**✓ しないで**を定義する各インターフェイスを使用するには、少なくとも 1 つの API を提供 (パラメーターまたはプロパティとして、インターフェイス メソッドは、インターフェイスとして型指定された)。</span><span class="sxs-lookup"><span data-stu-id="9199f-116">**✓ DO** provide at least one API that consumes each interface you define (a method taking the interface as a parameter or a property typed as the interface).</span></span>  
   
- これにより、インターフェイスのデザインを検証します。 たとえば、 <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=fullName> 消費、 <xref:System.Collections.Generic.IComparer%601?displayProperty=fullName> インターフェイスです。  
+ <span data-ttu-id="9199f-117">インターフェイスの設計を検証するには、これによりを行っています。</span><span class="sxs-lookup"><span data-stu-id="9199f-117">Doing this helps to validate the interface design.</span></span> <span data-ttu-id="9199f-118">たとえば、<xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType>消費、<xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="9199f-118">For example, <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> consumes the <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> interface.</span></span>  
   
- **X のしないで** 以前に出荷されたインターフェイスにメンバーを追加します。  
+ <span data-ttu-id="9199f-119">**X しないで**以前に出荷されたインターフェイスにメンバーを追加します。</span><span class="sxs-lookup"><span data-stu-id="9199f-119">**X DO NOT** add members to an interface that has previously shipped.</span></span>  
   
- この操作と、インターフェイスの実装が損なわします。 バージョン管理の問題を回避するために、新しいインターフェイスを作成する必要があります。  
+ <span data-ttu-id="9199f-120">これにより、インターフェイスの実装の使用できなくなります。</span><span class="sxs-lookup"><span data-stu-id="9199f-120">Doing so would break implementations of the interface.</span></span> <span data-ttu-id="9199f-121">バージョン管理の問題を回避するために、新しいインターフェイスを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9199f-121">You should create a new interface in order to avoid versioning problems.</span></span>  
   
- これらのガイドライン」に記載されている状況以外でマネージ コードの再利用可能なライブラリをデザイン インターフェイスではなく、クラスを選択してください、一般に。  
+ <span data-ttu-id="9199f-122">を除き、これらのガイドライン」に説明されている場合、マネージ コードの再利用可能なライブラリをデザイン インターフェイスではなく、クラスを選択してください、一般に。</span><span class="sxs-lookup"><span data-stu-id="9199f-122">Except for the situations described in these guidelines, you should, in general, choose classes rather than interfaces in designing managed code reusable libraries.</span></span>  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ <span data-ttu-id="9199f-123">*部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*</span><span class="sxs-lookup"><span data-stu-id="9199f-123">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ <span data-ttu-id="9199f-124">*ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*</span><span class="sxs-lookup"><span data-stu-id="9199f-124">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## 参照  
- [型デザインのガイドライン](../../../docs/standard/design-guidelines/type.md)   
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a><span data-ttu-id="9199f-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="9199f-125">See Also</span></span>  
+ [<span data-ttu-id="9199f-126">型のデザインのガイドライン</span><span class="sxs-lookup"><span data-stu-id="9199f-126">Type Design Guidelines</span></span>](../../../docs/standard/design-guidelines/type.md)  
+ [<span data-ttu-id="9199f-127">フレームワーク デザインのガイドライン</span><span class="sxs-lookup"><span data-stu-id="9199f-127">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)

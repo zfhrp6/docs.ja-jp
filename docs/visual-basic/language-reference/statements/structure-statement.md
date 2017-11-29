@@ -1,126 +1,124 @@
 ---
-title: "Structure Statement | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Structure"
-  - "Structure"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "user-defined types, Structure statement"
-  - "compound data types"
-  - "Structure keyword"
-  - "Structure statement"
-  - "UDT (user-defined types)"
-  - "types [Visual Basic], user-defined"
+title: "Structure ステートメント"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.Structure
+- Structure
+helpviewer_keywords:
+- user-defined types [Visual Basic], Structure statement
+- compound data types [Visual Basic]
+- Structure keyword [Visual Basic]
+- Structure statement [Visual Basic]
+- UDT (user-defined types)
+- types [Visual Basic], user-defined
 ms.assetid: 9bd1deea-2a89-4cdc-812c-6dcbb947c391
-caps.latest.revision: 28
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 43211bb10793acf3bfe0c1d7a35791114170ee7d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Structure Statement
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-構造体の名前を宣言し、構造体を構成する変数、プロパティ、イベント、およびプロシージャの定義を提供します。  
+# <a name="structure-statement"></a><span data-ttu-id="fa784-102">Structure ステートメント</span><span class="sxs-lookup"><span data-stu-id="fa784-102">Structure Statement</span></span>
+<span data-ttu-id="fa784-103">構造体の名前を宣言し、構造体を構成する変数、プロパティ、イベント、およびプロシージャの定義を提供します。</span><span class="sxs-lookup"><span data-stu-id="fa784-103">Declares the name of a structure and introduces the definition of the variables, properties, events, and procedures that the structure comprises.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="fa784-104">構文</span><span class="sxs-lookup"><span data-stu-id="fa784-104">Syntax</span></span>  
   
 ```  
-[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Partial ] _  
-Structure name [ ( Of typelist ) ]  
-    [ Implements interfacenames ]  
+[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Partial ] _  
+Structure name [ ( Of typelist ) ]  
+    [ Implements interfacenames ]  
     [ datamemberdeclarations ]  
-    [ methodmemberdeclarations ]  
+    [ methodmemberdeclarations ]  
 End Structure  
 ```  
   
-## 指定項目  
+## <a name="parts"></a><span data-ttu-id="fa784-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="fa784-105">Parts</span></span>  
   
-|||  
-|-|-|  
-|用語|定義|  
-|`attributelist`|省略可能です。  「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。|  
-|`accessmodifier`|省略可能です。  次のいずれかの値を指定します。<br /><br /> -   [Public](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|  
-|`Shadows`|省略可能です。  「[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。|  
-|`Partial`|省略可能です。  構造体の部分定義を示します。  「[Partial](../../../visual-basic/language-reference/modifiers/partial.md)」を参照してください。|  
-|`name`|必ず指定します。  この構造体の名前です。  「[Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|  
-|`Of`|省略可能です。  これがジェネリックな構造体であることを指定します。|  
-|`typelist`|[Of](../../../visual-basic/language-reference/statements/of-clause.md) キーワードを使用する場合は必ず指定します。  この構造体の型パラメーター リストを指定します。  「[型リスト](../../../visual-basic/language-reference/statements/type-list.md)」を参照してください。|  
-|`Implements`|省略可能です。  この構造体が、複数のインターフェイスのメンバーを実装していることを示します。  「[Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md)」を参照してください。|  
-|`interfacenames`|`Implements` ステートメントを使用する場合は必ず指定します。  この構造体が実装するインターフェイスの名前を指定します。|  
-|`datamemberdeclarations`|必須です。  構造体の*データ メンバー*を宣言する、0 個または 1 つ以上の `Const`、`Dim`、`Enum`、または `Event` ステートメントを指定します。|  
-|`methodmemberdeclarations`|省略可能です。  構造体の*メソッド メンバー*として機能する、`Function`、`Operator`、`Property`、または `Sub` の各プロシージャの宣言を 0 またはそれ以上指定します。|  
-|`End Structure`|必ず指定します。  `Structure` の定義を終了します。|  
+|<span data-ttu-id="fa784-106">用語</span><span class="sxs-lookup"><span data-stu-id="fa784-106">Term</span></span>|<span data-ttu-id="fa784-107">定義</span><span class="sxs-lookup"><span data-stu-id="fa784-107">Definition</span></span>|  
+|---|---|  
+|`attributelist`|<span data-ttu-id="fa784-108">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fa784-108">Optional.</span></span> <span data-ttu-id="fa784-109">参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-109">See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).</span></span>|  
+|`accessmodifier`|<span data-ttu-id="fa784-110">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fa784-110">Optional.</span></span> <span data-ttu-id="fa784-111">次のいずれかの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="fa784-111">Can be one of the following:</span></span><br /><br /> <span data-ttu-id="fa784-112">-   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)</span><span class="sxs-lookup"><span data-stu-id="fa784-112">-   [Public](../../../visual-basic/language-reference/modifiers/public.md)</span></span><br /><span data-ttu-id="fa784-113">-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)</span><span class="sxs-lookup"><span data-stu-id="fa784-113">-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)</span></span><br /><span data-ttu-id="fa784-114">-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)</span><span class="sxs-lookup"><span data-stu-id="fa784-114">-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)</span></span><br /><span data-ttu-id="fa784-115">-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)</span><span class="sxs-lookup"><span data-stu-id="fa784-115">-   [Private](../../../visual-basic/language-reference/modifiers/private.md)</span></span><br />-   `Protected Friend`<br /><br /> <span data-ttu-id="fa784-116">参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-116">See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>|  
+|`Shadows`|<span data-ttu-id="fa784-117">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fa784-117">Optional.</span></span> <span data-ttu-id="fa784-118">参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-118">See [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).</span></span>|  
+|`Partial`|<span data-ttu-id="fa784-119">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fa784-119">Optional.</span></span> <span data-ttu-id="fa784-120">構造体の部分定義を示します。</span><span class="sxs-lookup"><span data-stu-id="fa784-120">Indicates a partial definition of the structure.</span></span> <span data-ttu-id="fa784-121">参照してください[部分](../../../visual-basic/language-reference/modifiers/partial.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-121">See [Partial](../../../visual-basic/language-reference/modifiers/partial.md).</span></span>|  
+|`name`|<span data-ttu-id="fa784-122">必須です。</span><span class="sxs-lookup"><span data-stu-id="fa784-122">Required.</span></span> <span data-ttu-id="fa784-123">この構造体の名前です。</span><span class="sxs-lookup"><span data-stu-id="fa784-123">Name of this structure.</span></span> <span data-ttu-id="fa784-124">参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-124">See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span></span>|  
+|`Of`|<span data-ttu-id="fa784-125">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fa784-125">Optional.</span></span> <span data-ttu-id="fa784-126">これがジェネリックな構造体であることを指定します。</span><span class="sxs-lookup"><span data-stu-id="fa784-126">Specifies that this is a generic structure.</span></span>|  
+|`typelist`|<span data-ttu-id="fa784-127">使用するかどうかは必ず、[の](../../../visual-basic/language-reference/statements/of-clause.md)キーワード。</span><span class="sxs-lookup"><span data-stu-id="fa784-127">Required if you use the [Of](../../../visual-basic/language-reference/statements/of-clause.md) keyword.</span></span> <span data-ttu-id="fa784-128">この構造体の型パラメーター リストを指定します。</span><span class="sxs-lookup"><span data-stu-id="fa784-128">List of type parameters for this structure.</span></span> <span data-ttu-id="fa784-129">参照してください[のリストを入力](../../../visual-basic/language-reference/statements/type-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-129">See [Type List](../../../visual-basic/language-reference/statements/type-list.md).</span></span>|  
+|`Implements`|<span data-ttu-id="fa784-130">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fa784-130">Optional.</span></span> <span data-ttu-id="fa784-131">この構造体が、複数のインターフェイスのメンバーを実装していることを示します。</span><span class="sxs-lookup"><span data-stu-id="fa784-131">Indicates that this structure implements the members of one or more interfaces.</span></span> <span data-ttu-id="fa784-132">参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-132">See [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md).</span></span>|  
+|`interfacenames`|<span data-ttu-id="fa784-133">`Implements` ステートメントを使用する場合は必ず指定します。</span><span class="sxs-lookup"><span data-stu-id="fa784-133">Required if you use the `Implements` statement.</span></span> <span data-ttu-id="fa784-134">この構造体が実装するインターフェイスの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="fa784-134">The names of the interfaces this structure implements.</span></span>|  
+|`datamemberdeclarations`|<span data-ttu-id="fa784-135">必須です。</span><span class="sxs-lookup"><span data-stu-id="fa784-135">Required.</span></span> <span data-ttu-id="fa784-136">0 個以上`Const`、 `Dim`、 `Enum`、または`Event`宣言ステートメント*データ メンバー*構造体の。</span><span class="sxs-lookup"><span data-stu-id="fa784-136">Zero or more `Const`, `Dim`, `Enum`, or `Event` statements declaring *data members* of the structure.</span></span>|  
+|`methodmemberdeclarations`|<span data-ttu-id="fa784-137">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fa784-137">Optional.</span></span> <span data-ttu-id="fa784-138">0 個以上の宣言`Function`、 `Operator`、 `Property`、または`Sub`として使用するプロシージャ*メソッド メンバー*構造体の。</span><span class="sxs-lookup"><span data-stu-id="fa784-138">Zero or more declarations of `Function`, `Operator`, `Property`, or `Sub` procedures, which serve as *method members* of the structure.</span></span>|  
+|`End Structure`|<span data-ttu-id="fa784-139">必須です。</span><span class="sxs-lookup"><span data-stu-id="fa784-139">Required.</span></span> <span data-ttu-id="fa784-140">`Structure` の定義を終了します。</span><span class="sxs-lookup"><span data-stu-id="fa784-140">Terminates the `Structure` definition.</span></span>|  
   
-## 解説  
- `Structure` ステートメントは、カスタマイズできる複合値型を定義します。  *構造体*は、以前のバージョンの Visual Basic にあったユーザー定義型 \(UDT: User\-Defined Type\) を一般化したものです。  詳細については、「[Structures](../../../visual-basic/programming-guide/language-features/data-types/structures.md)」を参照してください。  
+## <a name="remarks"></a><span data-ttu-id="fa784-141">コメント</span><span class="sxs-lookup"><span data-stu-id="fa784-141">Remarks</span></span>  
+ <span data-ttu-id="fa784-142">`Structure` ステートメントは、カスタマイズできる複合値型を定義します。</span><span class="sxs-lookup"><span data-stu-id="fa784-142">The `Structure` statement defines a composite value type that you can customize.</span></span> <span data-ttu-id="fa784-143">A*構造*の以前のバージョンの Visual Basic のユーザー定義型 (UDT) を一般化しました。</span><span class="sxs-lookup"><span data-stu-id="fa784-143">A *structure* is a generalization of the user-defined type (UDT) of previous versions of Visual Basic.</span></span> <span data-ttu-id="fa784-144">詳細については、次を参照してください。[構造](../../../visual-basic/programming-guide/language-features/data-types/structures.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-144">For more information, see [Structures](../../../visual-basic/programming-guide/language-features/data-types/structures.md).</span></span>  
   
- 構造体は、クラスと同じ機能の多くをサポートします。  たとえば、構造体は、プロパティやプロシージャを持つことができ、インターフェイスを実装でき、パラメーター化されたコンストラクターを持つことができます。  ただし、継承、宣言、および使用方法に関しては、構造体とクラスの間には大きな違いがあります。  また、クラスは参照型ですが、構造体は値型です。  詳細については、「[Structures and Classes](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)」を参照してください。  
+ <span data-ttu-id="fa784-145">構造体は、クラスと同じ機能の多くをサポートします。</span><span class="sxs-lookup"><span data-stu-id="fa784-145">Structures support many of the same features as classes.</span></span> <span data-ttu-id="fa784-146">たとえば、構造体は、プロパティやプロシージャを持つことができ、インターフェイスを実装でき、パラメーター化されたコンストラクターを持つことができます。</span><span class="sxs-lookup"><span data-stu-id="fa784-146">For example, structures can have properties and procedures, they can implement interfaces, and they can have parameterized constructors.</span></span> <span data-ttu-id="fa784-147">ただし、継承、宣言、および使用方法に関しては、構造体とクラスの間には大きな違いがあります。</span><span class="sxs-lookup"><span data-stu-id="fa784-147">However, there are significant differences between structures and classes in areas such as inheritance, declarations, and usage.</span></span> <span data-ttu-id="fa784-148">また、クラスは参照型ですが、構造体は値型です。</span><span class="sxs-lookup"><span data-stu-id="fa784-148">Also, classes are reference types and structures are value types.</span></span> <span data-ttu-id="fa784-149">詳細については、次を参照してください。[構造体とクラス](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-149">For more information, see [Structures and Classes](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md).</span></span>  
   
- `Structure` は、名前空間またはモジュール レベルでのみ使用できます。  つまり、構造体の*宣言コンテキスト*は、ソース ファイル、名前空間、クラス、構造体、モジュール、またはインターフェイスのいずれかである必要があり、プロシージャまたはブロックでは宣言できません。  詳細については、「[Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
+ <span data-ttu-id="fa784-150">`Structure` は、名前空間またはモジュール レベルでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="fa784-150">You can use `Structure` only at namespace or module level.</span></span> <span data-ttu-id="fa784-151">つまり、*宣言コンテキスト*構造体のソース ファイル、名前空間、クラス、構造体、モジュール、またはインターフェイスである必要があります、プロシージャまたはブロックすることはできません。</span><span class="sxs-lookup"><span data-stu-id="fa784-151">This means the *declaration context* for a structure must be a source file, namespace, class, structure, module, or interface, and cannot be a procedure or block.</span></span> <span data-ttu-id="fa784-152">詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fa784-152">For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span></span>  
   
- 既定で、構造体のアクセス レベルは [Friend](../../../visual-basic/language-reference/modifiers/friend.md) です。  アクセス修飾子を使用してこれらのアクセス レベルを調整できます。  詳細については、「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ <span data-ttu-id="fa784-153">既定の構造体[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)アクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa784-153">Structures default to [Friend](../../../visual-basic/language-reference/modifiers/friend.md) access.</span></span> <span data-ttu-id="fa784-154">アクセス修飾子を使用してこれらのアクセス レベルを調整できます。</span><span class="sxs-lookup"><span data-stu-id="fa784-154">You can adjust their access levels with the access modifiers.</span></span> <span data-ttu-id="fa784-155">詳細については、次を参照してください。 [Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-155">For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
   
-## 規則  
+## <a name="rules"></a><span data-ttu-id="fa784-156">ルール</span><span class="sxs-lookup"><span data-stu-id="fa784-156">Rules</span></span>  
   
--   **入れ子。**構造体の内部に別の構造体を定義できます。  外側の構造体は*包含構造体*と呼ばれ、内側の構造体は*入れ子構造体*と呼ばれます。  ただし、包含構造体をとおして入れ子構造体のメンバーにアクセスすることはできません。  入れ子構造体のメンバーにアクセスするには、入れ子構造体のデータ型の変数を宣言する必要があります。  
+-   <span data-ttu-id="fa784-157">**入れ子にするとします。**</span><span class="sxs-lookup"><span data-stu-id="fa784-157">**Nesting.**</span></span> <span data-ttu-id="fa784-158">構造体の内部に別の構造体を定義できます。</span><span class="sxs-lookup"><span data-stu-id="fa784-158">You can define one structure within another.</span></span> <span data-ttu-id="fa784-159">外側の構造体が呼び出された、*構造体を含む*、内側の構造体が呼び出されて、*構造を入れ子になった*です。</span><span class="sxs-lookup"><span data-stu-id="fa784-159">The outer structure is called the *containing structure*, and the inner structure is called a *nested structure*.</span></span> <span data-ttu-id="fa784-160">ただし、包含構造体をとおして入れ子構造体のメンバーにアクセスすることはできません。</span><span class="sxs-lookup"><span data-stu-id="fa784-160">However, you cannot access a nested structure's members through the containing structure.</span></span> <span data-ttu-id="fa784-161">入れ子構造体のメンバーにアクセスするには、入れ子構造体のデータ型の変数を宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fa784-161">Instead, you must declare a variable of the nested structure's data type.</span></span>  
   
--   **メンバーの宣言。**構造体のすべてのメンバーを宣言する必要があります。  構造体からは何も継承できないため、構造体のメンバーを [Protected](../../../visual-basic/language-reference/modifiers/protected.md) または `Protected Friend` にすることはできません。  ただし、構造体そのものを`Protected` または `Protected Friend` にすることはできます。  
+-   <span data-ttu-id="fa784-162">**メンバーの宣言。**</span><span class="sxs-lookup"><span data-stu-id="fa784-162">**Member Declaration.**</span></span> <span data-ttu-id="fa784-163">構造体のすべてのメンバーを宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fa784-163">You must declare every member of a structure.</span></span> <span data-ttu-id="fa784-164">構造体のメンバーにすることはできません[Protected](../../../visual-basic/language-reference/modifiers/protected.md)または`Protected Friend`のため、構造体からは何も継承します。</span><span class="sxs-lookup"><span data-stu-id="fa784-164">A structure member cannot be [Protected](../../../visual-basic/language-reference/modifiers/protected.md) or `Protected Friend` because nothing can inherit from a structure.</span></span> <span data-ttu-id="fa784-165">ただし、構造体そのものを`Protected` または `Protected Friend` にすることはできます。</span><span class="sxs-lookup"><span data-stu-id="fa784-165">The structure itself, however, can be `Protected` or `Protected Friend`.</span></span>  
   
-     0 個または 1 つ以上の非共有変数または非共有の非カスタム イベントを構造体内で宣言することができます。  非共有ではあっても、定数、プロパティ、およびプロシージャだけを宣言することはできません。  
+     <span data-ttu-id="fa784-166">0 個または 1 つ以上の非共有変数または非共有の非カスタム イベントを構造体内で宣言することができます。</span><span class="sxs-lookup"><span data-stu-id="fa784-166">You can declare zero or more nonshared variables or nonshared, noncustom events in a structure.</span></span> <span data-ttu-id="fa784-167">非共有ではあっても、定数、プロパティ、およびプロシージャだけを宣言することはできません。</span><span class="sxs-lookup"><span data-stu-id="fa784-167">You cannot have only constants, properties, and procedures, even if some of them are nonshared.</span></span>  
   
--   **初期化。**構造体の非共有データ メンバーの値を宣言の一部として初期化することはできません。  構造体のパラメーター化されたコンストラクターを使ってそのようなデータ メンバーを初期化するか、または構造体のインスタンスを作成した後にメンバーに値を割り当てる必要があります。  
+-   <span data-ttu-id="fa784-168">**初期化します。**</span><span class="sxs-lookup"><span data-stu-id="fa784-168">**Initialization.**</span></span> <span data-ttu-id="fa784-169">構造体の非共有データ メンバーの値を宣言の一部として初期化することはできません。</span><span class="sxs-lookup"><span data-stu-id="fa784-169">You cannot initialize the value of any nonshared data member of a structure as part of its declaration.</span></span> <span data-ttu-id="fa784-170">構造体のパラメーター化されたコンストラクターを使ってそのようなデータ メンバーを初期化するか、または構造体のインスタンスを作成した後にメンバーに値を割り当てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="fa784-170">You must either initialize such a data member by means of a parameterized constructor on the structure, or assign a value to the member after you have created an instance of the structure.</span></span>  
   
--   **継承。**構造体は、<xref:System.ValueType> 以外の型を継承できません。すべての構造体が、この型を継承します。  特に、構造体は別の構造体を継承できません。  
+-   <span data-ttu-id="fa784-171">**継承。**</span><span class="sxs-lookup"><span data-stu-id="fa784-171">**Inheritance.**</span></span> <span data-ttu-id="fa784-172">構造体は、<xref:System.ValueType> 以外の型を継承できません。すべての構造体が、この型を継承します。</span><span class="sxs-lookup"><span data-stu-id="fa784-172">A structure cannot inherit from any type other than <xref:System.ValueType>, from which all structures inherit.</span></span> <span data-ttu-id="fa784-173">特に、構造体は別の構造体を継承できません。</span><span class="sxs-lookup"><span data-stu-id="fa784-173">In particular, one structure cannot inherit from another.</span></span>  
   
-     たとえ <xref:System.ValueType> を指定するためであっても、[Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md) を構造体の定義で使用することはできません。  
+     <span data-ttu-id="fa784-174">使用することはできません、 [Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)構造体の定義を指定するも<xref:System.ValueType>します。</span><span class="sxs-lookup"><span data-stu-id="fa784-174">You cannot use the [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md) in a structure definition, even to specify <xref:System.ValueType>.</span></span>  
   
--   **実装。**構造体で [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md) を使用する場合、`interfacenames` に指定するすべてのインターフェイスに定義されたすべてのメンバーを実装する必要があります。  
+-   <span data-ttu-id="fa784-175">**実装です。**</span><span class="sxs-lookup"><span data-stu-id="fa784-175">**Implementation.**</span></span> <span data-ttu-id="fa784-176">構造体で使用する場合、 [Implements ステートメント](../../../visual-basic/language-reference/statements/implements-statement.md)で指定したすべてのインターフェイスによって定義されたすべてのメンバーを実装する必要があります`interfacenames`です。</span><span class="sxs-lookup"><span data-stu-id="fa784-176">If the structure uses the [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md), you must implement every member defined by every interface you specify in `interfacenames`.</span></span>  
   
--   **既定のプロパティ。**構造体には、[Default](../../../visual-basic/language-reference/modifiers/default.md) 修飾子を使って、最大で 1 つのプロパティを*既定のプロパティ*として指定できます。  詳細については、「[Default](../../../visual-basic/language-reference/modifiers/default.md)」を参照してください。  
+-   <span data-ttu-id="fa784-177">**既定のプロパティ。**</span><span class="sxs-lookup"><span data-stu-id="fa784-177">**Default Property.**</span></span> <span data-ttu-id="fa784-178">構造体として最大で 1 つのプロパティを指定できます、*既定のプロパティ*を使用して、[既定](../../../visual-basic/language-reference/modifiers/default.md)修飾子です。</span><span class="sxs-lookup"><span data-stu-id="fa784-178">A structure can specify at most one property as its *default property*, using the [Default](../../../visual-basic/language-reference/modifiers/default.md) modifier.</span></span> <span data-ttu-id="fa784-179">詳細については、次を参照してください。[既定](../../../visual-basic/language-reference/modifiers/default.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-179">For more information, see [Default](../../../visual-basic/language-reference/modifiers/default.md).</span></span>  
   
-## 動作  
+## <a name="behavior"></a><span data-ttu-id="fa784-180">動作</span><span class="sxs-lookup"><span data-stu-id="fa784-180">Behavior</span></span>  
   
--   **アクセス レベル。**構造体の内部では、各メンバーを独自のアクセス レベルで宣言できます。  既定で、すべての構造体メンバーのアクセス レベルは [Public](../../../visual-basic/language-reference/modifiers/public.md) です。  構造体そのものにこれより厳しいアクセス レベルを指定した場合は、たとえアクセス修飾子を使ってメンバーのアクセス レベルを調整していても、メンバーへのアクセスが自動的に制限されることに注意してください。  
+-   <span data-ttu-id="fa784-181">**アクセス レベル。**</span><span class="sxs-lookup"><span data-stu-id="fa784-181">**Access Level.**</span></span> <span data-ttu-id="fa784-182">構造体の内部では、各メンバーを独自のアクセス レベルで宣言できます。</span><span class="sxs-lookup"><span data-stu-id="fa784-182">Within a structure, you can declare each member with its own access level.</span></span> <span data-ttu-id="fa784-183">既定ですべての構造体メンバー[パブリック](../../../visual-basic/language-reference/modifiers/public.md)アクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa784-183">All structure members default to [Public](../../../visual-basic/language-reference/modifiers/public.md) access.</span></span> <span data-ttu-id="fa784-184">構造体そのものにこれより厳しいアクセス レベルを指定した場合は、たとえアクセス修飾子を使ってメンバーのアクセス レベルを調整していても、メンバーへのアクセスが自動的に制限されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="fa784-184">Note that if the structure itself has a more restricted access level, this automatically restricts access to its members, even if you adjust their access levels with the access modifiers.</span></span>  
   
--   **スコープ。**構造体は、そこに含まれる名前空間、クラス、構造体、またはモジュールをスコープとします。  
+-   <span data-ttu-id="fa784-185">**スコープです。**</span><span class="sxs-lookup"><span data-stu-id="fa784-185">**Scope.**</span></span> <span data-ttu-id="fa784-186">構造体は、そこに含まれる名前空間、クラス、構造体、またはモジュールをスコープとします。</span><span class="sxs-lookup"><span data-stu-id="fa784-186">A structure is in scope throughout its containing namespace, class, structure, or module.</span></span>  
   
-     すべての構造体メンバーのスコープは、構造体全体になります。  
+     <span data-ttu-id="fa784-187">すべての構造体メンバーのスコープは、構造体全体になります。</span><span class="sxs-lookup"><span data-stu-id="fa784-187">The scope of every structure member is the entire structure.</span></span>  
   
--   **有効期間。**構造体に有効期間はありません。  ただし、構造体の各インスタンスには、他のインスタンスに依存しない独自の有効期間があります。  
+-   <span data-ttu-id="fa784-188">**有効期間。**</span><span class="sxs-lookup"><span data-stu-id="fa784-188">**Lifetime.**</span></span> <span data-ttu-id="fa784-189">構造体に有効期間はありません。</span><span class="sxs-lookup"><span data-stu-id="fa784-189">A structure does not itself have a lifetime.</span></span> <span data-ttu-id="fa784-190">ただし、構造体の各インスタンスには、他のインスタンスに依存しない独自の有効期間があります。</span><span class="sxs-lookup"><span data-stu-id="fa784-190">Rather, each instance of that structure has a lifetime independent of all other instances.</span></span>  
   
-     インスタンスの有効期間は、[New Operator](../../../visual-basic/language-reference/operators/new-operator.md) 句で作成された時点で開始されます。  インスタンスに含まれる変数の有効期間が終わった時点で、そのインスタンスの有効期間は終わります。  
+     <span data-ttu-id="fa784-191">インスタンスの有効期間がそれを作成するときに開始、 [New 演算子](../../../visual-basic/language-reference/operators/new-operator.md)句。</span><span class="sxs-lookup"><span data-stu-id="fa784-191">The lifetime of an instance begins when it is created by a [New Operator](../../../visual-basic/language-reference/operators/new-operator.md) clause.</span></span> <span data-ttu-id="fa784-192">インスタンスに含まれる変数の有効期間が終わった時点で、そのインスタンスの有効期間は終わります。</span><span class="sxs-lookup"><span data-stu-id="fa784-192">It ends when the lifetime of the variable that holds it ends.</span></span>  
   
-     構造体インスタンスの有効期間を延長することはできません。  静的構造体に相当する機能は、モジュールに用意されています。  詳細については、「[Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)」を参照してください。  
+     <span data-ttu-id="fa784-193">構造体インスタンスの有効期間を延長することはできません。</span><span class="sxs-lookup"><span data-stu-id="fa784-193">You cannot extend the lifetime of a structure instance.</span></span> <span data-ttu-id="fa784-194">静的構造体に相当する機能は、モジュールに用意されています。</span><span class="sxs-lookup"><span data-stu-id="fa784-194">An approximation to static structure functionality is provided by a module.</span></span> <span data-ttu-id="fa784-195">詳細については、次を参照してください。[モジュール ステートメント](../../../visual-basic/language-reference/statements/module-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-195">For more information, see [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md).</span></span>  
   
-     構造体メンバーの有効期間は、それを宣言する方法と場所で決まります。  詳細については、「[Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)」の「有効期間」を参照してください。  
+     <span data-ttu-id="fa784-196">構造体メンバーの有効期間は、それを宣言する方法と場所で決まります。</span><span class="sxs-lookup"><span data-stu-id="fa784-196">Structure members have lifetimes depending on how and where they are declared.</span></span> <span data-ttu-id="fa784-197">詳細についてを参照してください「の有効期間」[クラス ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-197">For more information, see "Lifetime" in [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md).</span></span>  
   
--   **修飾。**構造体の外部にあるコードでは、メンバーの名前をその構造体の名前で修飾する必要があります。  
+-   <span data-ttu-id="fa784-198">**パス名です。**</span><span class="sxs-lookup"><span data-stu-id="fa784-198">**Qualification.**</span></span> <span data-ttu-id="fa784-199">構造体の外部にあるコードでは、メンバーの名前をその構造体の名前で修飾する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fa784-199">Code outside a structure must qualify a member's name with the name of that structure.</span></span>  
   
-     入れ子構造体の内部のコードでプログラミング要素を修飾なしで参照した場合、Visual Basic はその要素をまず入れ子構造体の内部で探し、その次にコンテナー構造体の内部で探します。この手順が、最も外側のコンテナー要素にまで繰り返されます。  詳細については、「[References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)」を参照してください。  
+     <span data-ttu-id="fa784-200">入れ子構造体の内部のコードでプログラミング要素を修飾なしで参照した場合、Visual Basic はその要素をまず入れ子構造体の内部で探し、その次にコンテナー構造体の内部で探します。この手順が、最も外側のコンテナー要素にまで繰り返されます。</span><span class="sxs-lookup"><span data-stu-id="fa784-200">If code inside a nested structure makes an unqualified reference to a programming element, Visual Basic searches for the element first in the nested structure, then in its containing structure, and so on out to the outermost containing element.</span></span> <span data-ttu-id="fa784-201">詳細については、次を参照してください。[宣言された要素への参照](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)です。</span><span class="sxs-lookup"><span data-stu-id="fa784-201">For more information, see [References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).</span></span>  
   
--   **メモリの使用量。** 他のすべての複合データ型と同様に、構造体の総メモリ使用量を計算する場合、各メンバーのストレージ割り当ての公称サイズを単に合計しただけでは安全ではありません。  さらに、メモリ内に格納される順序が宣言の順序と同じであると仮定するのも安全ではありません。  構造体のストレージ レイアウトを制御する必要がある場合は、<xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性を `Structure` ステートメントに適用します。  
+-   <span data-ttu-id="fa784-202">**メモリ使用量。**</span><span class="sxs-lookup"><span data-stu-id="fa784-202">**Memory Consumption.**</span></span> <span data-ttu-id="fa784-203"> 他のすべての複合データ型と同様に、構造体の総メモリ使用量を計算する場合、各メンバーのストレージ割り当ての公称サイズを単に合計しただけでは安全ではありません。</span><span class="sxs-lookup"><span data-stu-id="fa784-203">As with all composite data types, you cannot safely calculate the total memory consumption of a structure by adding together the nominal storage allocations of its members.</span></span> <span data-ttu-id="fa784-204">さらに、メモリ内に格納される順序が宣言の順序と同じであると仮定するのも安全ではありません。</span><span class="sxs-lookup"><span data-stu-id="fa784-204">Furthermore, you cannot safely assume that the order of storage in memory is the same as your order of declaration.</span></span> <span data-ttu-id="fa784-205">構造体のストレージ レイアウトを制御する必要がある場合は、<xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性を `Structure` ステートメントに適用します。</span><span class="sxs-lookup"><span data-stu-id="fa784-205">If you need to control the storage layout of a structure, you can apply the <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute to the `Structure` statement.</span></span>  
   
-## 使用例  
- 次の例では、`Structure` ステートメントを使って、従業員に関連のある複数のデータを定義しています。  データ項目の機密性に応じて `Public`、`Friend`、`Private` の各メンバーを使用する方法が示されています。  プロシージャ、プロパティ、およびイベント メンバーも示されています。  
+## <a name="example"></a><span data-ttu-id="fa784-206">例</span><span class="sxs-lookup"><span data-stu-id="fa784-206">Example</span></span>  
+ <span data-ttu-id="fa784-207">次の例では、`Structure` ステートメントを使って、従業員に関連のある複数のデータを定義しています。</span><span class="sxs-lookup"><span data-stu-id="fa784-207">The following example uses the `Structure` statement to define a set of related data for an employee.</span></span> <span data-ttu-id="fa784-208">データ項目の機密性に応じて `Public`、`Friend`、`Private` の各メンバーを使用する方法が示されています。</span><span class="sxs-lookup"><span data-stu-id="fa784-208">It shows the use of `Public`, `Friend`, and `Private` members to reflect the sensitivity of the data items.</span></span> <span data-ttu-id="fa784-209">プロシージャ、プロパティ、およびイベント メンバーも示されています。</span><span class="sxs-lookup"><span data-stu-id="fa784-209">It also shows procedure, property, and event members.</span></span>  
   
  [!code-vb[VbVbalrStatements#57](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/structure-statement_1.vb)]  
   
-## 参照  
- [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)   
- [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)   
- [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)   
- [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)   
- [Const Statement](../../../visual-basic/language-reference/statements/const-statement.md)   
- [Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md)   
- [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md)   
- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)   
- [Structures and Classes](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)
+## <a name="see-also"></a><span data-ttu-id="fa784-210">関連項目</span><span class="sxs-lookup"><span data-stu-id="fa784-210">See Also</span></span>  
+ [<span data-ttu-id="fa784-211">Class ステートメント</span><span class="sxs-lookup"><span data-stu-id="fa784-211">Class Statement</span></span>](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [<span data-ttu-id="fa784-212">Interface ステートメント</span><span class="sxs-lookup"><span data-stu-id="fa784-212">Interface Statement</span></span>](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [<span data-ttu-id="fa784-213">Module ステートメント</span><span class="sxs-lookup"><span data-stu-id="fa784-213">Module Statement</span></span>](../../../visual-basic/language-reference/statements/module-statement.md)  
+ [<span data-ttu-id="fa784-214">Dim ステートメント</span><span class="sxs-lookup"><span data-stu-id="fa784-214">Dim Statement</span></span>](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [<span data-ttu-id="fa784-215">Const ステートメント</span><span class="sxs-lookup"><span data-stu-id="fa784-215">Const Statement</span></span>](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [<span data-ttu-id="fa784-216">Enum ステートメント</span><span class="sxs-lookup"><span data-stu-id="fa784-216">Enum Statement</span></span>](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [<span data-ttu-id="fa784-217">Event ステートメント</span><span class="sxs-lookup"><span data-stu-id="fa784-217">Event Statement</span></span>](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [<span data-ttu-id="fa784-218">Operator ステートメント</span><span class="sxs-lookup"><span data-stu-id="fa784-218">Operator Statement</span></span>](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [<span data-ttu-id="fa784-219">Property ステートメント</span><span class="sxs-lookup"><span data-stu-id="fa784-219">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="fa784-220">構造体とクラス</span><span class="sxs-lookup"><span data-stu-id="fa784-220">Structures and Classes</span></span>](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)

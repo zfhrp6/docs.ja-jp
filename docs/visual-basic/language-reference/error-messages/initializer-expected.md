@@ -1,44 +1,42 @@
 ---
-title: "Initializer expected | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30996"
-  - "bc30996"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30996"
+title: "初期化子が必要です"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30996
+- bc30996
+helpviewer_keywords: BC30996
 ms.assetid: 6e183fe0-8888-43ed-a062-01571079455f
-caps.latest.revision: 6
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 46ff91ec240212571f7ec9f26e82d9d128263545
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Initializer expected
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-次の例では、初期化リストが空のオブジェクト初期化子を使用して、クラスのインスタンスを宣言しています。  
+# <a name="initializer-expected"></a><span data-ttu-id="34984-102">初期化子が必要です</span><span class="sxs-lookup"><span data-stu-id="34984-102">Initializer expected</span></span>
+<span data-ttu-id="34984-103">初期化リストが空で、次の例で示すように、オブジェクト初期化子を使用して、クラスのインスタンスを宣言しようとしました。</span><span class="sxs-lookup"><span data-stu-id="34984-103">You have tried to declare an instance of a class by using an object initializer in which the initialization list is empty, as shown in the following example.</span></span>  
   
  `' Not valid.`  
   
  `' Dim aStudent As New Student With {}`  
   
- 次の例のように、初期化子リスト内で少なくとも 1 つのフィールドまたはプロパティが初期化されている必要があります。  
+ <span data-ttu-id="34984-104">次の例で示すように、少なくとも 1 つのフィールドまたはプロパティは初期化子リストで初期化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="34984-104">At least one field or property must be initialized in the initializer list, as shown in the following example.</span></span>  
   
  `Dim aStudent As New Student With {.year = "Senior"}`  
   
- **Error ID:** BC30996  
+ <span data-ttu-id="34984-105">**エラー ID:** BC30996</span><span class="sxs-lookup"><span data-stu-id="34984-105">**Error ID:** BC30996</span></span>  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="34984-106">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="34984-106">To correct this error</span></span>  
   
-1.  初期化子内で少なくとも 1 つのフィールドまたはプロパティを初期化します。オブジェクト初期化子は使用しません。  
+1.  <span data-ttu-id="34984-107">少なくとも 1 つのフィールドまたはプロパティの初期化子で初期化またはオブジェクト初期化子を使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="34984-107">Initialize at least one field or property in the initializer, or do not use an object initializer.</span></span>  
   
-## 参照  
- [Object Initializers: Named and Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)   
- [How to: Declare an Object by Using an Object Initializer](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)
+## <a name="see-also"></a><span data-ttu-id="34984-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="34984-108">See Also</span></span>  
+ [<span data-ttu-id="34984-109">オブジェクト初期化子 : 名前付きの型と匿名型</span><span class="sxs-lookup"><span data-stu-id="34984-109">Object Initializers: Named and Anonymous Types</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
+ [<span data-ttu-id="34984-110">方法 : オブジェクト初期化子を使用してオブジェクトを宣言する</span><span class="sxs-lookup"><span data-stu-id="34984-110">How to: Declare an Object by Using an Object Initializer</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)

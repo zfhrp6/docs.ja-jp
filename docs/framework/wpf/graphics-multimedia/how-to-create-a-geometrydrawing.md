@@ -1,44 +1,46 @@
 ---
-title: "方法 : GeometryDrawing を作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, GeometryDrawing"
-  - "GeometryDrawing クラス"
-  - "グラフィックス, GeometryDrawing クラス"
-  - "レンダリング可能な図形"
-  - "形状, レンダリング可能"
+title: "方法 : GeometryDrawing を作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- shapes [WPF], renderable
+- renderable shapes [WPF]
+- graphics [WPF], GeometryDrawing class
+- classes [WPF], GeometryDrawing
 ms.assetid: 11d3c096-91ba-4d41-9bba-aeac0db70f97
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7f0fa86a9786e5440db9fec0cee76c5ed28363b8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : GeometryDrawing を作成する
-この例では、<xref:System.Windows.Media.GeometryDrawing> を作成して表示する方法を示します。  <xref:System.Windows.Media.GeometryDrawing> を使用すると、<xref:System.Windows.Media.Pen> と <xref:System.Windows.Media.Brush> を <xref:System.Windows.Media.Geometry> に関連付けることで、塗りつぶしとアウトラインを使用して図形を作成できます。  <xref:System.Windows.Media.GeometryDrawing.Geometry%2A> は図形の構造を記述し、<xref:System.Windows.Media.GeometryDrawing.Brush%2A> は図形の塗りつぶしを記述し、<xref:System.Windows.Media.GeometryDrawing.Pen%2A> は図形のアウトラインを記述します。  
+# <a name="how-to-create-a-geometrydrawing"></a><span data-ttu-id="00364-102">方法 : GeometryDrawing を作成する</span><span class="sxs-lookup"><span data-stu-id="00364-102">How to: Create a GeometryDrawing</span></span>
+<span data-ttu-id="00364-103">この例を作成し、表示する方法を示しています、<xref:System.Windows.Media.GeometryDrawing>です。</span><span class="sxs-lookup"><span data-stu-id="00364-103">This example shows how to create and display a <xref:System.Windows.Media.GeometryDrawing>.</span></span> <span data-ttu-id="00364-104">A<xref:System.Windows.Media.GeometryDrawing>を関連付けることで作成して、アウトラインの図形を作成することができます、<xref:System.Windows.Media.Pen>と<xref:System.Windows.Media.Brush>で、<xref:System.Windows.Media.Geometry>です。</span><span class="sxs-lookup"><span data-stu-id="00364-104">A <xref:System.Windows.Media.GeometryDrawing> enables you to create shape with a fill and an outline by associating a <xref:System.Windows.Media.Pen> and a <xref:System.Windows.Media.Brush> with a <xref:System.Windows.Media.Geometry>.</span></span> <span data-ttu-id="00364-105"><xref:System.Windows.Media.GeometryDrawing.Geometry%2A>図形の構造について説明します、 <xref:System.Windows.Media.GeometryDrawing.Brush%2A> 、図形の塗りつぶしをについて説明し、<xref:System.Windows.Media.GeometryDrawing.Pen%2A>図形の輪郭をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="00364-105">The <xref:System.Windows.Media.GeometryDrawing.Geometry%2A> describes the shape's structure, the <xref:System.Windows.Media.GeometryDrawing.Brush%2A> describes the shape's fill, and the <xref:System.Windows.Media.GeometryDrawing.Pen%2A> describes the shape's outline.</span></span>  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Media.GeometryDrawing> を使用して図形をレンダリングします。  図形は、1 つの <xref:System.Windows.Media.GeometryGroup> と 2 つの <xref:System.Windows.Media.EllipseGeometry> オブジェクトによって示されます。  図形の内部は <xref:System.Windows.Media.LinearGradientBrush> で塗りつぶし、図形のアウトラインは <xref:System.Windows.Media.Brushes.Black%2A> <xref:System.Windows.Media.Pen> で描画します。  <xref:System.Windows.Media.GeometryDrawing> は、<xref:System.Windows.Media.ImageDrawing> と <xref:System.Windows.Controls.Image> 要素を使用して表示されます。  
+## <a name="example"></a><span data-ttu-id="00364-106">例</span><span class="sxs-lookup"><span data-stu-id="00364-106">Example</span></span>  
+ <span data-ttu-id="00364-107">次の例では、<xref:System.Windows.Media.GeometryDrawing>図形を表示するためにします。</span><span class="sxs-lookup"><span data-stu-id="00364-107">The following example uses a <xref:System.Windows.Media.GeometryDrawing> to render a shape.</span></span> <span data-ttu-id="00364-108">図形は、<xref:System.Windows.Media.GeometryGroup>と 2 つ<xref:System.Windows.Media.EllipseGeometry>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="00364-108">The shape is described by a <xref:System.Windows.Media.GeometryGroup> and two <xref:System.Windows.Media.EllipseGeometry> objects.</span></span> <span data-ttu-id="00364-109">図形の内部を描画すると、<xref:System.Windows.Media.LinearGradientBrush>でアウトラインを描画し、 <xref:System.Windows.Media.Brushes.Black%2A> <xref:System.Windows.Media.Pen>です。</span><span class="sxs-lookup"><span data-stu-id="00364-109">The shape's interior is painted with a <xref:System.Windows.Media.LinearGradientBrush> and its outline is drawn with a <xref:System.Windows.Media.Brushes.Black%2A> <xref:System.Windows.Media.Pen>.</span></span> <span data-ttu-id="00364-110"><xref:System.Windows.Media.GeometryDrawing>を使用して、表示、<xref:System.Windows.Media.ImageDrawing>と<xref:System.Windows.Controls.Image>要素。</span><span class="sxs-lookup"><span data-stu-id="00364-110">The <xref:System.Windows.Media.GeometryDrawing> is displayed using an <xref:System.Windows.Media.ImageDrawing> and an <xref:System.Windows.Controls.Image> element.</span></span>  
   
  [!code-csharp[DrawingMiscSnippets_snip#GeometryDrawingExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/GeometryDrawingExample.cs#geometrydrawingexamplewholepage)]
- [!code-xml[DrawingMiscSnippets_snip#GeometryDrawingExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/GeometryDrawingExample.xaml#geometrydrawingexamplewholepage)]  
+ [!code-xaml[DrawingMiscSnippets_snip#GeometryDrawingExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/GeometryDrawingExample.xaml#geometrydrawingexamplewholepage)]  
   
- 結果として作成される <xref:System.Windows.Media.GeometryDrawing> を次の図に示します。  
+ <span data-ttu-id="00364-111">次の図は、結果として得られる<xref:System.Windows.Media.GeometryDrawing>です。</span><span class="sxs-lookup"><span data-stu-id="00364-111">The following illustration shows the resulting <xref:System.Windows.Media.GeometryDrawing>.</span></span>  
   
- ![2 つの楕円の GeometryDrawing](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-geodraw.png "graphicsmm\_geodraw")  
+ <span data-ttu-id="00364-112">![楕円 2 つの楕円の GeometryDrawing](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-geodraw.jpg "graphicsmm_geodraw")</span><span class="sxs-lookup"><span data-stu-id="00364-112">![A GeometryDrawing of two ellipses](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-geodraw.jpg "graphicsmm_geodraw")</span></span>  
   
- さらに複雑な描画を作成するには、<xref:System.Windows.Media.DrawingGroup> を使用して、複数の描画オブジェクトを 1 つの複合描画に結合できます。  
+ <span data-ttu-id="00364-113">複雑な図面を作成するには、描画を使用して 1 つの複合に複数の描画オブジェクトを結合できます、<xref:System.Windows.Media.DrawingGroup>です。</span><span class="sxs-lookup"><span data-stu-id="00364-113">To create more complex drawings, you can combine multiple drawing objects into a single composite drawing using a <xref:System.Windows.Media.DrawingGroup>.</span></span>  
   
-## 参照  
- <xref:System.Windows.Media.DrawingGroup>   
- [Drawing オブジェクトの概要](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)   
- [ジオメトリの概要](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)   
- [複合描画を作成する](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-drawing.md)
+## <a name="see-also"></a><span data-ttu-id="00364-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="00364-114">See Also</span></span>  
+ <xref:System.Windows.Media.DrawingGroup>  
+ [<span data-ttu-id="00364-115">Drawing オブジェクトの概要</span><span class="sxs-lookup"><span data-stu-id="00364-115">Drawing Objects Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)  
+ [<span data-ttu-id="00364-116">ジオメトリの概要</span><span class="sxs-lookup"><span data-stu-id="00364-116">Geometry Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)  
+ [<span data-ttu-id="00364-117">複合描画を作成する</span><span class="sxs-lookup"><span data-stu-id="00364-117">Create a Composite Drawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-drawing.md)

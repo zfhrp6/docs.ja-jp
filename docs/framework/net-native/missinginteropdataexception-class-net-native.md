@@ -5,88 +5,89 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: eab4bcf8-9f5f-4731-87d8-842748a6062a
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 540ffc4aba7150c8ccac31b23162f35fec416f44
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 0a7e1c02b6404f9511032d18f260726d1493d202
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="missinginteropdataexception-class-net-native"></a>MissingInteropDataException クラス (.NET ネイティブ)
-**Windows 10 の Windows アプリ用 .NET ([!INCLUDE[net_native](../../../includes/net-native-md.md)]のみ)**  
+# <a name="missinginteropdataexception-class-net-native"></a><span data-ttu-id="c744f-102">MissingInteropDataException クラス (.NET ネイティブ)</span><span class="sxs-lookup"><span data-stu-id="c744f-102">MissingInteropDataException Class (.NET Native)</span></span>
+<span data-ttu-id="c744f-103">**Windows 10 の Windows アプリ用 .NET ([!INCLUDE[net_native](../../../includes/net-native-md.md)]のみ)**</span><span class="sxs-lookup"><span data-stu-id="c744f-103">**.NET for Windows apps for Windows 10, [!INCLUDE[net_native](../../../includes/net-native-md.md)] only**</span></span>  
   
- この例外は、手動マーシャリング メソッドが呼び出されたが、型のメタデータがスタティック分析でも、ランタイム ディレクティブ ファイルにも見つからない場合にスローされます。  
+ <span data-ttu-id="c744f-104">この例外は、手動マーシャリング メソッドが呼び出されたが、型のメタデータがスタティック分析でも、ランタイム ディレクティブ ファイルにも見つからない場合にスローされます。</span><span class="sxs-lookup"><span data-stu-id="c744f-104">The exception that is thrown when a manual marshaling method is called, but metadata for a type isn't found by static analysis or in a runtime directives file.</span></span>  
   
- **名前空間:** System.Runtime.CompilerServices  
+ <span data-ttu-id="c744f-105">**名前空間:** System.Runtime.CompilerServices</span><span class="sxs-lookup"><span data-stu-id="c744f-105">**Namespace:** System.Runtime.CompilerServices</span></span>  
   
 > [!IMPORTANT]
->  `MissingInteropDataException` クラスは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用のみを目的としています。 サード パーティのコードで使用することを目的としていません。また、アプリケーション コードで、例外を処理する必要はありません。 代わりに、[ランタイム ディレクティブ ファイル](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)にエントリを追加することにより、例外を除去します。 詳細については、「解説」を参照してください。  
+>  <span data-ttu-id="c744f-106">`MissingInteropDataException` クラスは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用のみを目的としています。</span><span class="sxs-lookup"><span data-stu-id="c744f-106">The `MissingInteropDataException` class is intended solely for internal use by the [!INCLUDE[net_native](../../../includes/net-native-md.md)] tool chain.</span></span> <span data-ttu-id="c744f-107">サード パーティのコードで使用することを目的としていません。また、アプリケーション コードで、例外を処理する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="c744f-107">It is not intended for use in third-party code, nor should you handle the exception in your application code.</span></span> <span data-ttu-id="c744f-108">代わりに、[ランタイム ディレクティブ ファイル](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)にエントリを追加することにより、例外を除去します。</span><span class="sxs-lookup"><span data-stu-id="c744f-108">Instead, you eliminate the exception by adding entries to your [runtime directives file](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).</span></span> <span data-ttu-id="c744f-109">詳細については、「解説」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c744f-109">For more information, see the Remarks section.</span></span>  
   
-## <a name="syntax"></a>構文  
- [!code-csharp[ProjectN#21](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missinginteropdataexception_syntax1.cs#21)] [!code-vb[ProjectN#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/projectn/vb/missinginteropdataexception_syntax1.vb#21)]  
+## <a name="syntax"></a><span data-ttu-id="c744f-110">構文</span><span class="sxs-lookup"><span data-stu-id="c744f-110">Syntax</span></span>  
+ [!code-csharp[ProjectN#21](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missinginteropdataexception_syntax1.cs#21)]
+ [!code-vb[ProjectN#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/projectn/vb/missinginteropdataexception_syntax1.vb#21)]  
   
- `MissingInteropDataException` クラスには次のメンバーがあります。  
+ <span data-ttu-id="c744f-111">`MissingInteropDataException` クラスには次のメンバーがあります。</span><span class="sxs-lookup"><span data-stu-id="c744f-111">The `MissingInteropDataException` class has the following members:</span></span>  
   
-## <a name="constructors"></a>コンストラクター  
+## <a name="constructors"></a><span data-ttu-id="c744f-112">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="c744f-112">Constructors</span></span>  
   
-|コンストラクター|説明|  
+|<span data-ttu-id="c744f-113">コンストラクター</span><span class="sxs-lookup"><span data-stu-id="c744f-113">Constructor</span></span>|<span data-ttu-id="c744f-114">説明</span><span class="sxs-lookup"><span data-stu-id="c744f-114">Description</span></span>|  
 |-----------------|-----------------|  
-|`public MissingInteropDataException(String resourceId, Type pertinentType)`|エラーとデータが欠落している型について説明するシステム提供のメッセージの ID を使用して、`MissingInteropDataException` クラスの新しいインスタンスを初期化します。 このコンストラクターは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用専用です。|  
+|`public MissingInteropDataException(String resourceId, Type pertinentType)`|<span data-ttu-id="c744f-115">エラーとデータが欠落している型について説明するシステム提供のメッセージの ID を使用して、`MissingInteropDataException` クラスの新しいインスタンスを初期化します。</span><span class="sxs-lookup"><span data-stu-id="c744f-115">Initializes a new instance of the `MissingInteropDataException` class by using the ID of a system-supplied message that describes the error and the type whose data is missing.</span></span> <span data-ttu-id="c744f-116">このコンストラクターは [!INCLUDE[net_native](../../../includes/net-native-md.md)] ツール チェーンによる内部使用専用です。</span><span class="sxs-lookup"><span data-stu-id="c744f-116">This constructor is for internal use by the [!INCLUDE[net_native](../../../includes/net-native-md.md)] tool chain only.</span></span>|  
   
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a><span data-ttu-id="c744f-117">プロパティ</span><span class="sxs-lookup"><span data-stu-id="c744f-117">Properties</span></span>  
   
-|プロパティ|説明|  
+|<span data-ttu-id="c744f-118">プロパティ</span><span class="sxs-lookup"><span data-stu-id="c744f-118">Property</span></span>|<span data-ttu-id="c744f-119">説明</span><span class="sxs-lookup"><span data-stu-id="c744f-119">Description</span></span>|  
 |--------------|-----------------|  
-|`public IDictionary Data { get; }`|例外に関する追加のユーザー定義情報を提供する、キー/値ペアのコレクションを取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
-|`public string HelpLink { get; set; }`|この例外に関連付けられているヘルプ ファイルへのリンクを取得または設定します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
-|`public int HResult { get; protected set; }`|特定の例外に割り当てられた、コード化された数値である、`HRESULT` を取得または設定します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
-|`public Exception InnerException { get; }`|現在の例外を引き起こした例外を取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
-|`public string Message { get; }`|現在の例外を説明するメッセージを取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
-|`public Type MissingType { get; private set; }`|データが欠落している型を取得または設定します。|  
-|`public string Source { get; set; }`|エラーの原因になったアプリまたはオブジェクトの名前を取得または設定します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
-|`public string StackTrace { get; }`|呼び出し履歴で直前のフレームの文字列形式を取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
-|`public MethodBase TargetSite { get; }`|現在の例外をスローしたメソッドを取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public IDictionary Data { get; }`|<span data-ttu-id="c744f-120">例外に関する追加のユーザー定義情報を提供する、キー/値ペアのコレクションを取得します。</span><span class="sxs-lookup"><span data-stu-id="c744f-120">Gets a collection of key/value pairs that provide additional user-defined information about the exception.</span></span> <span data-ttu-id="c744f-121">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-121">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
+|`public string HelpLink { get; set; }`|<span data-ttu-id="c744f-122">この例外に関連付けられているヘルプ ファイルへのリンクを取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="c744f-122">Gets or sets a link to the help file associated with this exception.</span></span> <span data-ttu-id="c744f-123">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-123">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
+|`public int HResult { get; protected set; }`|<span data-ttu-id="c744f-124">特定の例外に割り当てられた、コード化された数値である、`HRESULT` を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="c744f-124">Gets or sets the `HRESULT`, which is a coded numeric value that is assigned to a specific exception.</span></span> <span data-ttu-id="c744f-125">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-125">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
+|`public Exception InnerException { get; }`|<span data-ttu-id="c744f-126">現在の例外を引き起こした例外を取得します。</span><span class="sxs-lookup"><span data-stu-id="c744f-126">Gets the exception that caused the current exception.</span></span> <span data-ttu-id="c744f-127">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-127">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
+|`public string Message { get; }`|<span data-ttu-id="c744f-128">現在の例外を説明するメッセージを取得します。</span><span class="sxs-lookup"><span data-stu-id="c744f-128">Gets a message that describes the current exception.</span></span> <span data-ttu-id="c744f-129">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-129">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
+|`public Type MissingType { get; private set; }`|<span data-ttu-id="c744f-130">データが欠落している型を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="c744f-130">Gets or sets the type whose data is missing.</span></span>|  
+|`public string Source { get; set; }`|<span data-ttu-id="c744f-131">エラーの原因になったアプリまたはオブジェクトの名前を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="c744f-131">Gets or sets the name of the app or object that caused the error.</span></span> <span data-ttu-id="c744f-132">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-132">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
+|`public string StackTrace { get; }`|<span data-ttu-id="c744f-133">呼び出し履歴で直前のフレームの文字列形式を取得します。</span><span class="sxs-lookup"><span data-stu-id="c744f-133">Gets a string representation of the immediate frames on the call stack.</span></span> <span data-ttu-id="c744f-134">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-134">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
+|`public MethodBase TargetSite { get; }`|<span data-ttu-id="c744f-135">現在の例外をスローしたメソッドを取得します。</span><span class="sxs-lookup"><span data-stu-id="c744f-135">Gets the method that threw the current exception.</span></span> <span data-ttu-id="c744f-136">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-136">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
   
-## <a name="methods"></a>メソッド  
+## <a name="methods"></a><span data-ttu-id="c744f-137">メソッド</span><span class="sxs-lookup"><span data-stu-id="c744f-137">Methods</span></span>  
   
-|メソッド|説明|  
+|<span data-ttu-id="c744f-138">メソッド</span><span class="sxs-lookup"><span data-stu-id="c744f-138">Method</span></span>|<span data-ttu-id="c744f-139">説明</span><span class="sxs-lookup"><span data-stu-id="c744f-139">Description</span></span>|  
 |------------|-----------------|  
-|`public bool Equals(Object obj)`|指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。  (<xref:System.Object> から継承。)|  
-|`protected void Finalize()`|オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。 (<xref:System.Object> から継承。)|  
-|`public Exception GetBaseException()`|1 つ以上の後続の例外の根本原因である例外を返します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
-|`public int GetHashCode()`|`MissingInteropDataException` インスタンスのハッシュ コードを返します。   (<xref:System.Object> から継承。)|  
-|`public void GetObjectData(SerializationInfo info, StreamingContext context)`|例外に関する情報を使用して、<xref:System.Runtime.Serialization.SerializationInfo> オブジェクトを設定します。  (<xref:System.Exception?displayProperty=fullName> から継承。)|  
-|`public Type GetType()`|現在のインスタンスのランタイム型を取得します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
-|`protected Object MemberwiseClone()`|現在のオブジェクトの簡易コピーを作成します。 (<xref:System.Object> から継承。)|  
-|`public string ToString()`|現在の例外の文字列形式を返します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`public bool Equals(Object obj)`|<span data-ttu-id="c744f-140">指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="c744f-140">Determines whether the specified object is equal to the current object.</span></span>  <span data-ttu-id="c744f-141">(<xref:System.Object> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-141">(Inherited from <xref:System.Object>.)</span></span>|  
+|`protected void Finalize()`|<span data-ttu-id="c744f-142">オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</span><span class="sxs-lookup"><span data-stu-id="c744f-142">Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.</span></span> <span data-ttu-id="c744f-143">(<xref:System.Object> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-143">(Inherited from <xref:System.Object>.)</span></span>|  
+|`public Exception GetBaseException()`|<span data-ttu-id="c744f-144">1 つ以上の後続の例外の根本原因である例外を返します。</span><span class="sxs-lookup"><span data-stu-id="c744f-144">Returns the exception that is the root cause of one or more subsequent exceptions.</span></span> <span data-ttu-id="c744f-145">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-145">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
+|`public int GetHashCode()`|<span data-ttu-id="c744f-146">`MissingInteropDataException` インスタンスのハッシュ コードを返します。</span><span class="sxs-lookup"><span data-stu-id="c744f-146">Returns a hash code for a `MissingInteropDataException` instance.</span></span>   <span data-ttu-id="c744f-147">(<xref:System.Object> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-147">(Inherited from <xref:System.Object>.)</span></span>|  
+|`public void GetObjectData(SerializationInfo info, StreamingContext context)`|<span data-ttu-id="c744f-148">例外に関する情報を使用して、<xref:System.Runtime.Serialization.SerializationInfo> オブジェクトを設定します。</span><span class="sxs-lookup"><span data-stu-id="c744f-148">Sets a <xref:System.Runtime.Serialization.SerializationInfo> object with information about the exception.</span></span>  <span data-ttu-id="c744f-149">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-149">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
+|`public Type GetType()`|<span data-ttu-id="c744f-150">現在のインスタンスのランタイム型を取得します。</span><span class="sxs-lookup"><span data-stu-id="c744f-150">Gets the runtime type of the current instance.</span></span> <span data-ttu-id="c744f-151">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-151">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
+|`protected Object MemberwiseClone()`|<span data-ttu-id="c744f-152">現在のオブジェクトの簡易コピーを作成します。</span><span class="sxs-lookup"><span data-stu-id="c744f-152">Creates a shallow copy of the current object.</span></span> <span data-ttu-id="c744f-153">(<xref:System.Object> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-153">(Inherited from <xref:System.Object>.)</span></span>|  
+|`public string ToString()`|<span data-ttu-id="c744f-154">現在の例外の文字列形式を返します。</span><span class="sxs-lookup"><span data-stu-id="c744f-154">Returns the string representation of the current exception.</span></span> <span data-ttu-id="c744f-155">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-155">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
   
-## <a name="events"></a>イベント  
+## <a name="events"></a><span data-ttu-id="c744f-156">イベント</span><span class="sxs-lookup"><span data-stu-id="c744f-156">Events</span></span>  
   
-|Event|説明|  
+|<span data-ttu-id="c744f-157">Event</span><span class="sxs-lookup"><span data-stu-id="c744f-157">Event</span></span>|<span data-ttu-id="c744f-158">説明</span><span class="sxs-lookup"><span data-stu-id="c744f-158">Description</span></span>|  
 |-----------|-----------------|  
-|`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|例外がシリアル化され、例外に関するシリアル化されたデータを含む例外状態オブジェクトが作成されたときに発生します。 (<xref:System.Exception?displayProperty=fullName> から継承。)|  
+|`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|<span data-ttu-id="c744f-159">例外がシリアル化され、例外に関するシリアル化されたデータを含む例外状態オブジェクトが作成されたときに発生します。</span><span class="sxs-lookup"><span data-stu-id="c744f-159">Occurs when an exception is serialized to create an exception state object that contains serialized data about the exception.</span></span> <span data-ttu-id="c744f-160">(<xref:System.Exception?displayProperty=nameWithType> から継承。)</span><span class="sxs-lookup"><span data-stu-id="c744f-160">(Inherited from <xref:System.Exception?displayProperty=nameWithType>.)</span></span>|  
   
-## <a name="usage-details"></a>使用方法の詳細  
- `MissingInteropDataException` 例外は、型情報が使用できないために COM または Windows ランタイム コンポーネントへのメソッド呼び出しが正常に行えない場合にスローされます。  
+## <a name="usage-details"></a><span data-ttu-id="c744f-161">使用方法の詳細</span><span class="sxs-lookup"><span data-stu-id="c744f-161">Usage Details</span></span>  
+ <span data-ttu-id="c744f-162">`MissingInteropDataException` 例外は、型情報が使用できないために COM または Windows ランタイム コンポーネントへのメソッド呼び出しが正常に行えない場合にスローされます。</span><span class="sxs-lookup"><span data-stu-id="c744f-162">The `MissingInteropDataException` exception is thrown when a method call to a COM or Windows Runtime component cannot be made successfully because type information isn't available.</span></span>  
   
- 実行時にアプリで使用できるメタデータは、ランタイム ディレクティブ (XML 構成) ファイルの *.rd.xml により定義されます。 アプリからこの例外がスローされないようにするには、このファイルを変更して、実行時に存在する必要があるメタデータを定義する必要があります。 このエラーに対する最も一般的な対処法は、ランタイム ディレクティブ ファイルの適切なプログラム要素に `MarshalObject`、`MarshalDelegate`、または `MarshalStructure` 属性を追加することです。 このファイルの形式の詳細については、「[Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)」(ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス) を参照してください。  
+ <span data-ttu-id="c744f-163">実行時にアプリで使用できるメタデータは、ランタイム ディレクティブ (XML 構成) ファイルの *.rd.xml により定義されます。</span><span class="sxs-lookup"><span data-stu-id="c744f-163">The metadata that is available to an app at run time is defined by the runtime directives (XML configuration) file, *.rd.xml.</span></span> <span data-ttu-id="c744f-164">アプリからこの例外がスローされないようにするには、このファイルを変更して、実行時に存在する必要があるメタデータを定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c744f-164">To prevent your app from throwing this exception, you must modify this file to define the metadata that must be present at run time.</span></span> <span data-ttu-id="c744f-165">このエラーに対する最も一般的な対処法は、ランタイム ディレクティブ ファイルの適切なプログラム要素に `MarshalObject`、`MarshalDelegate`、または `MarshalStructure` 属性を追加することです。</span><span class="sxs-lookup"><span data-stu-id="c744f-165">Most commonly, you address this error by adding a `MarshalObject`, `MarshalDelegate`, or `MarshalStructure` attribute to an appropriate program element in the runtime directives file.</span></span> <span data-ttu-id="c744f-166">このファイルの形式の詳細については、「[Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)」(ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c744f-166">For information about the format of this file, see [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).</span></span>  
   
 > [!IMPORTANT]
->  この例外はアプリケーションで必要なメタデータを実行時に使用できないことを示しているため、この例外に `try`/`catch` ブロックで対処しないでください。 代わりに、例外の原因を診断し、その原因を解消するために、ランタイム ディレクティブ ファイルに適切なエントリを追加します。  
+>  <span data-ttu-id="c744f-167">この例外はアプリケーションで必要なメタデータを実行時に使用できないことを示しているため、この例外に `try`/`catch` ブロックで対処しないでください。</span><span class="sxs-lookup"><span data-stu-id="c744f-167">Because this exception indicates that metadata needed by your application isn’t available at run time, you shouldn’t handle this exception in a `try`/`catch` block.</span></span> <span data-ttu-id="c744f-168">代わりに、例外の原因を診断し、その原因を解消するために、ランタイム ディレクティブ ファイルに適切なエントリを追加します。</span><span class="sxs-lookup"><span data-stu-id="c744f-168">Instead, you should diagnose the cause of the exception and eliminate it by adding the appropriate entry to a runtime directives file.</span></span>  
   
- `MissingInteropDataException` クラスには、正常なメソッド呼び出しのためにどの型のメタデータが必要かを示す、1 つの一意メンバーである `MissingType` プロパティが含まれています。 その他のメンバーはすべて基底クラス <xref:System.Exception?displayProperty=fullName> から継承されます。  
+ <span data-ttu-id="c744f-169">`MissingInteropDataException` クラスには、正常なメソッド呼び出しのためにどの型のメタデータが必要かを示す、1 つの一意メンバーである `MissingType` プロパティが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c744f-169">The `MissingInteropDataException` class contains a single unique member, the `MissingType` property, that indicates the type whose metadata is needed for a successful method call.</span></span> <span data-ttu-id="c744f-170">その他のメンバーはすべて基底クラス <xref:System.Exception?displayProperty=nameWithType> から継承されます。</span><span class="sxs-lookup"><span data-stu-id="c744f-170">All remaining members are inherited from the base class, <xref:System.Exception?displayProperty=nameWithType>.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Exception?displayProperty=fullName>   
- [MissingMetadataException クラス](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)   
- [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-
+## <a name="see-also"></a><span data-ttu-id="c744f-171">関連項目</span><span class="sxs-lookup"><span data-stu-id="c744f-171">See Also</span></span>  
+ <xref:System.Exception?displayProperty=nameWithType>  
+ [<span data-ttu-id="c744f-172">MissingMetadataException クラス</span><span class="sxs-lookup"><span data-stu-id="c744f-172">MissingMetadataException Class</span></span>](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)  
+ [<span data-ttu-id="c744f-173">ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス</span><span class="sxs-lookup"><span data-stu-id="c744f-173">Runtime Directives (rd.xml) Configuration File Reference</span></span>](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)

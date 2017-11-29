@@ -1,44 +1,47 @@
 ---
-title: "方法 : アニメーションを反復する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アニメーション, 繰り返し"
-  - "RepeatBehavior プロパティ (タイムラインの)"
-  - "反復 (アニメーションを)"
-  - "タイムラインの RepeatBehavior プロパティ"
+title: "方法 : アニメーションを反復する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- RepeatBehavior property of timelines [WPF]
+- repeating animating [WPF]
+- Timelines RepeatBehavior property [WPF]
+- animation [WPF], repeating
 ms.assetid: e6f3b068-eeeb-47fd-8d40-8848c31f1e1e
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d2f942771e01c2b7fae989f73779672edb8ba2f4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : アニメーションを反復する
-アニメーションの繰り返し動作を制御するために <xref:System.Windows.Media.Animation.Timeline> の <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> プロパティを使用する方法を次の例に示します。  
+# <a name="how-to-repeat-an-animation"></a><span data-ttu-id="3edca-102">方法 : アニメーションを反復する</span><span class="sxs-lookup"><span data-stu-id="3edca-102">How to: Repeat an Animation</span></span>
+<span data-ttu-id="3edca-103">この例を使用する方法を示しています、<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>のプロパティ、<xref:System.Windows.Media.Animation.Timeline>アニメーションの繰り返し動作を制御するためにします。</span><span class="sxs-lookup"><span data-stu-id="3edca-103">This example shows how to use the <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> property of a <xref:System.Windows.Media.Animation.Timeline> in order to control the repeat behavior of an animation.</span></span>  
   
-## 使用例  
- <xref:System.Windows.Media.Animation.Timeline> コントロールの <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> プロパティは、アニメーションが単純継続時間を繰り返す回数を制御します。  <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> を使用して、<xref:System.Windows.Media.Animation.Timeline> が特定の回数 \(反復カウント\) または指定した期間、繰り返すことを指定できます。  いずれの場合も、アニメーションは、要求されたカウントまたは期間を満たすのに必要な回数だけ実行を繰り返します。  
+## <a name="example"></a><span data-ttu-id="3edca-104">例</span><span class="sxs-lookup"><span data-stu-id="3edca-104">Example</span></span>  
+ <span data-ttu-id="3edca-105"><xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>のプロパティ、<xref:System.Windows.Media.Animation.Timeline>アニメーションが一定時間の再生を繰り返す回数を制御します。</span><span class="sxs-lookup"><span data-stu-id="3edca-105">The <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> property of a <xref:System.Windows.Media.Animation.Timeline> controls how many times an animation repeats its simple duration.</span></span> <span data-ttu-id="3edca-106">使用して<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>を指定することができます、<xref:System.Windows.Media.Animation.Timeline>回数だけ繰り返されます (反復カウント) か、指定された期間。</span><span class="sxs-lookup"><span data-stu-id="3edca-106">By using <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>, you can specify that a <xref:System.Windows.Media.Animation.Timeline> repeats for a certain number of times (an iteration count) or for a specified time period.</span></span> <span data-ttu-id="3edca-107">いずれの場合は、アニメーションは、要求されたカウントまたは期間を入力するために必要な数だけの先頭、末尾実行を通過します。</span><span class="sxs-lookup"><span data-stu-id="3edca-107">In either case, the animation goes through as many beginning-to-end runs that it needs in order to fill the requested count or duration.</span></span>  
   
- 既定では、タイムラインの反復カウントは 1.0 です。これは、再生回数が 1 回で、繰り返されないことを意味します。  ただし、<xref:System.Windows.Media.Animation.Timeline> の <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> プロパティを <xref:System.Windows.Media.Animation.RepeatBehavior.Forever%2A> に設定した場合、タイムラインは無限に繰り返します。  
+ <span data-ttu-id="3edca-108">既定では、タイムラインは 1.0 では、これは、1 回だけ再生繰り返さないでの繰り返し回数があります。</span><span class="sxs-lookup"><span data-stu-id="3edca-108">By default, timelines have a repeat count of 1.0, which means they play one time and do not repeat.</span></span> <span data-ttu-id="3edca-109">ただし、設定した場合、<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>のプロパティ、<xref:System.Windows.Media.Animation.Timeline>に<xref:System.Windows.Media.Animation.RepeatBehavior.Forever%2A>タイムラインを無限に繰り返します。</span><span class="sxs-lookup"><span data-stu-id="3edca-109">However, if you set the <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> property of a <xref:System.Windows.Media.Animation.Timeline> to <xref:System.Windows.Media.Animation.RepeatBehavior.Forever%2A>, the timeline repeats indefinitely.</span></span>  
   
- <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> プロパティを使用してアニメーションの繰り返し動作を制御する方法を次の例に示します。  この例は、それぞれの四角形で異なる種類の繰り返し動作を使用する 5 つの四角形の <xref:System.Windows.FrameworkElement.Width%2A> プロパティをアニメーション化しています。  
+ <span data-ttu-id="3edca-110">次の例を使用する方法を示しています、<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>アニメーションの繰り返し動作を制御するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="3edca-110">The following example shows how to use the <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> property to control the repeat behavior of an animation.</span></span> <span data-ttu-id="3edca-111">例では、アニメーション、<xref:System.Windows.FrameworkElement.Width%2A>さまざまな種類の繰り返し動作を使用して各四角形で 5 つの四角形のプロパティです。</span><span class="sxs-lookup"><span data-stu-id="3edca-111">The example animates the <xref:System.Windows.FrameworkElement.Width%2A> property of five rectangles with each rectangle using a different type of repeat behavior.</span></span>  
   
- [!code-xml[timingbehaviors_snip#RepeatBehaviorWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/RepeatBehaviorExample.xaml#repeatbehaviorwholepage)]  
+ [!code-xaml[timingbehaviors_snip#RepeatBehaviorWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/RepeatBehaviorExample.xaml#repeatbehaviorwholepage)]  
   
- サンプル全体については、[アニメーションのタイミング動作のサンプル](http://go.microsoft.com/fwlink/?LinkID=159970)を参照してください。  
+ <span data-ttu-id="3edca-112">サンプル全体については、次を参照してください。[アニメーション タイミング動作サンプル](http://go.microsoft.com/fwlink/?LinkID=159970)です。</span><span class="sxs-lookup"><span data-stu-id="3edca-112">For the complete sample, see [Animation Timing Behavior Sample](http://go.microsoft.com/fwlink/?LinkID=159970).</span></span>  
   
-## 参照  
- [反復サイクル中にアニメーション値を累積する](../../../../docs/framework/wpf/graphics-multimedia/how-to-accumulate-animation-values-during-repeat-cycles.md)   
- [タイムラインを自動的に反転するかどうかを指定する](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-whether-a-timeline-automatically-reverses.md)   
- [方法のトピック](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)   
- [Animation and Timing](http://msdn.microsoft.com/ja-jp/7d83765b-d5ae-41b1-b423-80206e1124aa)   
- [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
- [アニメーションのタイミング動作のサンプル](http://go.microsoft.com/fwlink/?LinkID=159970)
+## <a name="see-also"></a><span data-ttu-id="3edca-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="3edca-113">See Also</span></span>  
+ [<span data-ttu-id="3edca-114">反復サイクル中にアニメーション値を累積する</span><span class="sxs-lookup"><span data-stu-id="3edca-114">Accumulate Animation Values During Repeat Cycles</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-accumulate-animation-values-during-repeat-cycles.md)  
+ [<span data-ttu-id="3edca-115">タイムラインを自動的に反転するかどうかを指定する</span><span class="sxs-lookup"><span data-stu-id="3edca-115">Specify Whether a Timeline Automatically Reverses</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-whether-a-timeline-automatically-reverses.md)  
+ [<span data-ttu-id="3edca-116">方法トピック</span><span class="sxs-lookup"><span data-stu-id="3edca-116">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)  
+ [<span data-ttu-id="3edca-117">アニメーションおよびタイミング</span><span class="sxs-lookup"><span data-stu-id="3edca-117">Animation and Timing</span></span>](http://msdn.microsoft.com/en-us/7d83765b-d5ae-41b1-b423-80206e1124aa)  
+ [<span data-ttu-id="3edca-118">アニメーションの概要</span><span class="sxs-lookup"><span data-stu-id="3edca-118">Animation Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [<span data-ttu-id="3edca-119">アニメーションのタイミング動作のサンプル</span><span class="sxs-lookup"><span data-stu-id="3edca-119">Animation Timing Behavior Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=159970)

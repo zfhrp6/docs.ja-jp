@@ -1,41 +1,37 @@
 ---
-title: "ソース Office Open XML ドキュメント (Visual Basic) を作成する |Microsoft ドキュメント"
+title: "ソース Office Open XML ドキュメント (Visual Basic) を作成します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 61ccd6fb-0c47-4075-afdf-5b5021330f21
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 928a3c34836464e7603c485b64c9c426913ae7b2
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: c573f703ea3d7550dabd994f538e28e197874715
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="creating-the-source-office-open-xml-document-visual-basic"></a>ソース Office Open XML ドキュメント (Visual Basic) を作成します。
-このトピックでは、このチュートリアルの他の例で使用する Office Open XML WordprocessingML ドキュメントを作成する方法について説明します。 この手順に従うと、それぞれの例に記載されているとおりの出力が得られます。  
+# <a name="creating-the-source-office-open-xml-document-visual-basic"></a><span data-ttu-id="a0425-102">ソース Office Open XML ドキュメント (Visual Basic) を作成します。</span><span class="sxs-lookup"><span data-stu-id="a0425-102">Creating the Source Office Open XML Document (Visual Basic)</span></span>
+<span data-ttu-id="a0425-103">このトピックでは、このチュートリアルの他の例で使用する Office Open XML WordprocessingML ドキュメントを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a0425-103">This topic shows how to create the Office Open XML WordprocessingML document that the other examples in this tutorial use.</span></span> <span data-ttu-id="a0425-104">この手順に従うと、それぞれの例に記載されているとおりの出力が得られます。</span><span class="sxs-lookup"><span data-stu-id="a0425-104">If you follow these instructions, your output will match the output provided in each example.</span></span>  
   
- ただし、このチュートリアルの例では、任意の有効な WordprocessingML ドキュメントを使用できます。  
+ <span data-ttu-id="a0425-105">ただし、このチュートリアルの例では、任意の有効な WordprocessingML ドキュメントを使用できます。</span><span class="sxs-lookup"><span data-stu-id="a0425-105">However, the examples in this tutorial will work with any valid WordprocessingML document.</span></span>  
   
- このチュートリアルで使用するドキュメントを作成するには、Microsoft Office 2007 が必要か、または以降がインストールされて、または Microsoft Office 2003 と Microsoft Office Compatibility Pack for Word、Excel、および PowerPoint 2007 File Formats する必要があります。  
+ <span data-ttu-id="a0425-106">このチュートリアルで使用するドキュメントを作成するには、Microsoft Office 2007 以降がインストールされているか、Microsoft Office 2003 と Word/Excel/PowerPoint 2007 ファイル形式用 Microsoft Office 互換機能パックを所有している必要があります。</span><span class="sxs-lookup"><span data-stu-id="a0425-106">To create the document that this tutorial uses, you must either have Microsoft Office 2007 or later installed, or you must have Microsoft Office 2003 with the Microsoft Office Compatibility Pack for Word, Excel, and PowerPoint 2007 File Formats.</span></span>  
   
-## <a name="creating-the-wordprocessingml-document"></a>WordprocessingML ドキュメントの作成  
+## <a name="creating-the-wordprocessingml-document"></a><span data-ttu-id="a0425-107">WordprocessingML ドキュメントの作成</span><span class="sxs-lookup"><span data-stu-id="a0425-107">Creating the WordprocessingML Document</span></span>  
   
-#### <a name="to-create-the-wordprocessingml-document"></a>WordprocessingML ドキュメントを作成するには  
+#### <a name="to-create-the-wordprocessingml-document"></a><span data-ttu-id="a0425-108">WordprocessingML ドキュメントを作成するには</span><span class="sxs-lookup"><span data-stu-id="a0425-108">To create the WordprocessingML document</span></span>  
   
-1.  新しい Microsoft Word 文書を作成します。  
+1.  <span data-ttu-id="a0425-109">新しい Microsoft Word 文書を作成します。</span><span class="sxs-lookup"><span data-stu-id="a0425-109">Create a new Microsoft Word document.</span></span>  
   
-2.  新しい文書に次のテキストを貼り付けます。  
+2.  <span data-ttu-id="a0425-110">新しい文書に次のテキストを貼り付けます。</span><span class="sxs-lookup"><span data-stu-id="a0425-110">Paste the following text into the new document:</span></span>  
   
     ```  
     Parsing WordprocessingML with LINQ to XML  
@@ -55,16 +51,16 @@ ms.lasthandoff: 03/13/2017
     Hello World  
     ```  
   
-3.  "見出し 1" スタイルを使用して最初の行を書式設定します。  
+3.  <span data-ttu-id="a0425-111">"見出し 1" スタイルを使用して最初の行を書式設定します。</span><span class="sxs-lookup"><span data-stu-id="a0425-111">Format the first line with the style "Heading 1".</span></span>  
   
-4.  Visual Basic コードを含む行を選択します。 最初の行は `Imports` キーワードで始まります。 最後の行は、"End Class"です。 クーリエ フォントを使用してこれらの行を書式設定します。 これらの行を新しいスタイルで書式設定し、このスタイルに "Code" という名前を付けます。  
+4.  <span data-ttu-id="a0425-112">Visual Basic コードを含む行を選択します。</span><span class="sxs-lookup"><span data-stu-id="a0425-112">Select the lines that contain the Visual Basic code.</span></span> <span data-ttu-id="a0425-113">最初の行は `Imports` キーワードで始まります。</span><span class="sxs-lookup"><span data-stu-id="a0425-113">The first line starts with the `Imports` keyword.</span></span> <span data-ttu-id="a0425-114">最後の行は、「End クラス」です。</span><span class="sxs-lookup"><span data-stu-id="a0425-114">The last line is "End Class".</span></span> <span data-ttu-id="a0425-115">クーリエ フォントを使用してこれらの行を書式設定します。</span><span class="sxs-lookup"><span data-stu-id="a0425-115">Format the lines with the courier font.</span></span> <span data-ttu-id="a0425-116">これらの行を新しいスタイルで書式設定し、このスタイルに "Code" という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="a0425-116">Format them with a new style, and name the new style "Code".</span></span>  
   
-5.  最後に、出力が含まれる行全体を選択し、`Code` スタイルを使用して書式設定します。  
+5.  <span data-ttu-id="a0425-117">最後に、出力が含まれる行全体を選択し、`Code` スタイルを使用して書式設定します。</span><span class="sxs-lookup"><span data-stu-id="a0425-117">Finally, select the entire line that contains the output, and format it with the `Code` style.</span></span>  
   
-6.  ドキュメントを保存し、SampleDoc.docx という名前を付けます。  
+6.  <span data-ttu-id="a0425-118">ドキュメントを保存し、SampleDoc.docx という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="a0425-118">Save the document, and name it SampleDoc.docx.</span></span>  
   
     > [!NOTE]
-    >  Microsoft Word 2003 を使用している場合は、選択**Word 2007 文書**で、**ファイルの種類**ボックスの一覧です。  
+    >  <span data-ttu-id="a0425-119">Microsoft Word 2003 を使用している場合、**[ファイルの種類]** ボックスの一覧の **[Word 2007 文書]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="a0425-119">If you are using Microsoft Word 2003, select **Word 2007 Document** in the **Save as Type** drop-down list.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+## <a name="see-also"></a><span data-ttu-id="a0425-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="a0425-120">See Also</span></span>  
+ [<span data-ttu-id="a0425-121">チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作</span><span class="sxs-lookup"><span data-stu-id="a0425-121">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

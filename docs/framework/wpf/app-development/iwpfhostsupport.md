@@ -1,44 +1,46 @@
 ---
-title: "IWpfHostSupport | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IWpfHostSupport インターフェイス"
+title: IWpfHostSupport
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: IWpfHostSupport interface [WPF]
 ms.assetid: cc5a0281-de81-4cc1-87e4-0e46b1a811e9
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 85d4ed09d6c5ca17e148d531e6aac483ff737d51
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# IWpfHostSupport
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] コンテンツを PresentationHost.exe を介してホストするアプリケーションは、ホストと PresentationHost.exe を統合するポイントを提供するために、このインターフェイスを実装します。  
+# <a name="iwpfhostsupport"></a><span data-ttu-id="b6da9-102">IWpfHostSupport</span><span class="sxs-lookup"><span data-stu-id="b6da9-102">IWpfHostSupport</span></span>
+<span data-ttu-id="b6da9-103">ホストするアプリケーション[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]PresentationHost.exe 経由のコンテンツは、ホストと PresentationHost.exe 間の統合ポイントを提供するには、このインターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="b6da9-103">Applications that host [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] content via PresentationHost.exe implement this interface to provide a point of integration between the host and PresentationHost.exe.</span></span>  
   
-## 解説  
- Web ブラウザーなどの [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] アプリケーションは、[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] や Loose XAML などの [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] コンテンツをホストできます。  [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] アプリケーションは、[!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] コンテンツをホストするために、[WebBrowser コントロール](http://go.microsoft.com/fwlink/?LinkId=97911)のインスタンスを作成します。  [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] をホストするには、PresentationHost.exe のインスタンスを作成します。これにより、ホストされる [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] コンテンツを [WebBrowser コントロール](http://go.microsoft.com/fwlink/?LinkId=97911)で表示するために、ホストに提供します。  
+## <a name="remarks"></a><span data-ttu-id="b6da9-104">コメント</span><span class="sxs-lookup"><span data-stu-id="b6da9-104">Remarks</span></span>  
+ [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]<span data-ttu-id="b6da9-105">Web ブラウザーなどのアプリケーションをホストできます[!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)]コンテンツを含む[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]XAML が失われるとします。</span><span class="sxs-lookup"><span data-stu-id="b6da9-105"> applications such as Web browsers can host [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] content, including [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] and loose XAML.</span></span> <span data-ttu-id="b6da9-106">ホストに[!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)]コンテンツ、[!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]アプリケーションのインスタンスを作成する、 [WebBrowser コントロール](http://go.microsoft.com/fwlink/?LinkId=97911)です。</span><span class="sxs-lookup"><span data-stu-id="b6da9-106">To host [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] content, [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] applications create an instance of the [WebBrowser control](http://go.microsoft.com/fwlink/?LinkId=97911).</span></span> <span data-ttu-id="b6da9-107">ホストされる[!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)]PresentationHost.exe、提供、ホスト型のインスタンスを作成[!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)]で表示するホストへのコンテンツ、 [WebBrowser コントロール](http://go.microsoft.com/fwlink/?LinkId=97911)です。</span><span class="sxs-lookup"><span data-stu-id="b6da9-107">To be hosted, [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] creates an instance of PresentationHost.exe, which provides the hosted [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] content to the host for display in the [WebBrowser control](http://go.microsoft.com/fwlink/?LinkId=97911).</span></span>  
   
- `IWpfHostSupport` で有効化される統合により、PresentationHost.exe では次のことが可能になります。  
+ <span data-ttu-id="b6da9-108">有効になっている統合`IWpfHostSupport`に PresentationHost.exe を許可。</span><span class="sxs-lookup"><span data-stu-id="b6da9-108">The integration enabled by `IWpfHostSupport` allows PresentationHost.exe to:</span></span>  
   
--   ホスト アプリケーションに必要な未加工の入力デバイス \(ヒューマン インターフェイス デバイス\) を検出して登録する。  
+-   <span data-ttu-id="b6da9-109">検出し、ホスト アプリケーションが有用で生入力デバイス (ヒューマン インターフェイス デバイス) を登録します。</span><span class="sxs-lookup"><span data-stu-id="b6da9-109">Discover and register with the raw input devices (Human Interface Devices) that the host application is interested in.</span></span>  
   
--   登録された未加工の入力デバイスからの入力メッセージを受け取り、適切なメッセージをホスト アプリケーションに転送する。  
+-   <span data-ttu-id="b6da9-110">ホスト アプリケーションに登録済みの生の入力デバイスと適切なメッセージを転送からの入力メッセージを受信します。</span><span class="sxs-lookup"><span data-stu-id="b6da9-110">Receive input messages from the registered raw input devices and forward appropriate messages to the host application.</span></span>  
   
--   ホスト アプリケーションに対して、進行状況とエラーに関するカスタム ユーザー インターフェイスの有無を照会する。  
+-   <span data-ttu-id="b6da9-111">進行状況とエラーのカスタム ユーザー インターフェイスのホスト アプリケーションのクエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="b6da9-111">Query the host application for custom progress and error user interfaces.</span></span>  
   
 > [!NOTE]
->  この API は、ローカルのクライアント コンピューターでのみ使用できます。  
+>  <span data-ttu-id="b6da9-112">この API は、ローカル クライアント コンピューターでの使用のみを目的とし、サポートされています。</span><span class="sxs-lookup"><span data-stu-id="b6da9-112">This API is only intended and supported for use on the local client machine</span></span>  
   
-## メンバー  
+## <a name="members"></a><span data-ttu-id="b6da9-113">メンバー</span><span class="sxs-lookup"><span data-stu-id="b6da9-113">Members</span></span>  
   
-|メンバー|Description|  
-|----------|-----------------|  
-|[GetRawInputDevices](../../../../docs/framework/wpf/app-development/getrawinputdevices.md)|ホスト アプリケーションに必要な入力ロー デバイス \(ヒューマン インターフェイス デバイス\) を PresentationHost.exe が検出できるようにします。|  
-|[FilterInputMessage](../../../../docs/framework/wpf/app-development/filterinputmessage.md)|E\_NOTIMPL が返されない限り、メッセージを受け取るたびに PresentationHost.exe によって呼び出されます。|  
-|[GetCustomUI](../../../../docs/framework/wpf/app-development/getcustomui.md)|既定では、PresentationHost.exe には、WPF コンテンツの配置時に表示される、独自の配置状況と配置エラーのユーザー インターフェイスが備わっています。|
+|<span data-ttu-id="b6da9-114">メンバー</span><span class="sxs-lookup"><span data-stu-id="b6da9-114">Member</span></span>|<span data-ttu-id="b6da9-115">説明</span><span class="sxs-lookup"><span data-stu-id="b6da9-115">Description</span></span>|  
+|------------|-----------------|  
+|[<span data-ttu-id="b6da9-116">GetRawInputDevices</span><span class="sxs-lookup"><span data-stu-id="b6da9-116">GetRawInputDevices</span></span>](../../../../docs/framework/wpf/app-development/getrawinputdevices.md)|<span data-ttu-id="b6da9-117">PresentationHost.exe が、ホスト アプリケーションに必要な未加工入力デバイス (ヒューマン インターフェイス デバイス) を検出できるようにします。</span><span class="sxs-lookup"><span data-stu-id="b6da9-117">Allows PresentationHost.exe to discover the raw input devices (Human Interface Devices) that the host application is interested in.</span></span>|  
+|[<span data-ttu-id="b6da9-118">FilterInputMessage</span><span class="sxs-lookup"><span data-stu-id="b6da9-118">FilterInputMessage</span></span>](../../../../docs/framework/wpf/app-development/filterinputmessage.md)|<span data-ttu-id="b6da9-119">E_NOTIMPL が返されない限り、メッセージを受信するたびに PresentationHost.exe によって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="b6da9-119">Called by PresentationHost.exe whenever a message is received unless E_NOTIMPL is returned.</span></span>|  
+|[<span data-ttu-id="b6da9-120">GetCustomUI</span><span class="sxs-lookup"><span data-stu-id="b6da9-120">GetCustomUI</span></span>](../../../../docs/framework/wpf/app-development/getcustomui.md)|<span data-ttu-id="b6da9-121">既定では、PresentationHost.exe は、独自の展開の進行状況と配置エラー WPF コンテンツが展開されているときに表示されるユーザー インターフェイス。</span><span class="sxs-lookup"><span data-stu-id="b6da9-121">By default, PresentationHost.exe provides its own deployment progress and deployment error user interfaces that are displayed when WPF content is deployed.</span></span>|

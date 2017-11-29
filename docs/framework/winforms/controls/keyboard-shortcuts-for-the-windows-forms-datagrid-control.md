@@ -1,64 +1,65 @@
 ---
-title: "Windows フォームの DataGrid コントロール内の移動に使用できるキーボード ショートカット | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "DataGrid コントロール [Windows フォーム], 移動キー"
-  - "ショートカット キー, DataGrid コントロール"
+title: "Windows フォームの DataGrid コントロール内の移動に使用できるキーボード ショートカット"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- keyboard shortcuts [Windows Forms], DataGrid control
+- DataGrid control [Windows Forms], navigation keys
 ms.assetid: a01780f9-20d5-4f5f-808f-c790c9a007a5
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7ac73652d5f017fe43d1745866de38cd7eeccf8e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォームの DataGrid コントロール内の移動に使用できるキーボード ショートカット
+# <a name="keyboard-shortcuts-for-the-windows-forms-datagrid-control"></a><span data-ttu-id="02f05-102">Windows フォームの DataGrid コントロール内の移動に使用できるキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="02f05-102">Keyboard Shortcuts for the Windows Forms DataGrid Control</span></span>
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
+>  <span data-ttu-id="02f05-103"><xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。</span><span class="sxs-lookup"><span data-stu-id="02f05-103">The <xref:System.Windows.Forms.DataGridView> control replaces and adds functionality to the <xref:System.Windows.Forms.DataGrid> control; however, the <xref:System.Windows.Forms.DataGrid> control is retained for both backward compatibility and future use, if you choose.</span></span> <span data-ttu-id="02f05-104">詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="02f05-104">For more information, see [Differences Between the Windows Forms DataGridView and DataGrid Controls](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).</span></span>  
   
- Windows フォームの <xref:System.Windows.Forms.DataGrid> コントロール内の移動に使用できるキーボード ショートカットの一覧を示します。  
+ <span data-ttu-id="02f05-105">次の表に、Windows フォーム内のナビゲーションに使用できるキーボード ショートカット<xref:System.Windows.Forms.DataGrid>コントロール。</span><span class="sxs-lookup"><span data-stu-id="02f05-105">The following table lists the keyboard shortcuts that can be used for navigation within the Windows Forms <xref:System.Windows.Forms.DataGrid> control:</span></span>  
   
-|動作|Shortcut|  
-|--------|--------------|  
-|現在のセルへの入力を終了し、次のセルへ移動します。<br /><br /> フォーカスが子テーブルのリンクにある場合は、その子テーブルに移動します。|Enter|  
-|セル内が編集モードの場合は、セルの編集をキャンセルします。<br /><br /> マーキー選択の場合は、該当する行の編集をキャンセルします。|Esc|  
-|セルを編集するときに、カーソル位置の前にある文字列を削除します。|BackSpace|  
-|セルを編集するときに、カーソル位置の後にある文字列を削除します。|Del|  
-|現在の行にある最初のセルに移動します。|Home|  
-|現在の行にある最後のセルに移動します。|End|  
-|現在のセルの文字列を強調表示し、行の最後にカーソルを位置付けます。  セルをダブルクリックするのと同じ動作になります。|F2|  
-|セルにフォーカスがある場合は、同一行の次のセルに移動します。<br /><br /> フォーカスが行の最後のセルにある場合は、その行の最初の子テーブルへのリンクへ移動し、展開します。<br /><br /> 子リンクにフォーカスがある場合は、次の子リンクに移動します。<br /><br /> 最後の子リンクにフォーカスがある場合は、次の行の最初のセルに移動します。|Tab|  
-|セルにフォーカスがある場合は、同一行の 1 つ前のセルに移動します。<br /><br /> 行の最初のセルにフォーカスがある場合は、1 つ前の行の最後に展開された子テーブルへのリンク、または 1 つ前の行の最後のセルに移動します。<br /><br /> 子リンクにフォーカスがある場合は、1 つ前の子リンクに移動します。<br /><br /> 最初の子リンクにフォーカスがある場合は、1 つ前の行の最後のセルに移動します。|Shift \+ Tab|  
-|タブ オーダー内の次のコントロールに移動します。|Ctrl \+ Tab|  
-|タブ オーダー内の 1 つ前のコントロールに移動します。|Ctrl \+ Shift \+ Tab|  
-|子テーブル内の場合は、親テーブルへ移動します。  \[戻る\] をクリックするのと同じ動作になります。|Alt \+ ←|  
-|子テーブルへのリンクを展開します。  Alt キーを押しながら ↓ キーを押すと、選択されているリンクだけでなく、すべてのリンクが展開されます。|Alt \+ ↓ または Ctrl \+ プラス記号 \(\+\)|  
-|子テーブルへのリンクを折りたたみます。  Alt キーを押しながら ↑ キーを押すと、選択されているリンクだけでなく、すべてのリンクが折りたたまれます。|Alt \+ ↑ または Ctrl \+ マイナス記号 \(\-\)|  
-|矢印の方向にある最も遠い、空白でないセルへ移動します。|Ctrl \+ 方向キー|  
-|選択範囲を矢印の方向に 1 行分拡張します \(子テーブルのリンクは除外します\)。|Shift \+ ↑ または Shift \+ ↓|  
-|矢印の方向にある最も遠い、空白でない行まで選択範囲を拡張します \(子テーブルのリンクは除きます\)。|Ctrl \+ Shift \+ ↑ または Ctrl \+ Shift \+ ↓|  
-|左上のセルへ移動します。|Ctrl \+ Home|  
-|右下のセルへ移動します。|Ctrl \+ End|  
-|一番上の行まで選択範囲を拡張します。|Ctrl \+ Shift \+ Home|  
-|一番下の行まで選択範囲を拡張します。|Ctrl \+ Shift \+ End|  
-|現在の行を選択します \(子テーブルのリンクは除きます\)。|Shift \+ Space|  
-|グリッド全体を選択します \(子テーブルのリンクは除きます\)。|Ctrl \+ A|  
-|子テーブル内の場合は、親テーブルの行を表示します。|Ctrl \+ PageDown|  
-|子テーブル内の場合は、親テーブルの行を非表示にします。|Ctrl \+ PageUp|  
-|選択範囲を 1 画面分下に拡張します \(子テーブルのリンクは除きます\)。|Shift \+ PageDown|  
-|選択範囲を 1 画面分上に拡張します \(子テーブルのリンクは除きます\)。|Shift \+ PageUp|  
-|現在の行で <xref:System.Windows.Forms.DataGrid.EndEdit%2A> メソッドを呼び出します。|Ctrl \+ Enter|  
-|編集モードのときにセルに <xref:System.DBNull.Value?displayProperty=fullName> 値を入力します。|Ctrl \+ 0|  
+|<span data-ttu-id="02f05-106">アクション</span><span class="sxs-lookup"><span data-stu-id="02f05-106">Action</span></span>|<span data-ttu-id="02f05-107">ショートカット</span><span class="sxs-lookup"><span data-stu-id="02f05-107">Shortcut</span></span>|  
+|------------|--------------|  
+|<span data-ttu-id="02f05-108">セルの入力を完了し、次のセルに下に移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-108">Complete a cell entry and move down to the next cell.</span></span><br /><br /> <span data-ttu-id="02f05-109">子テーブルのリンクにフォーカスがある場合は、そのテーブルに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-109">If focus is on a child table link, navigate to that table.</span></span>|<span data-ttu-id="02f05-110">Enter</span><span class="sxs-lookup"><span data-stu-id="02f05-110">ENTER</span></span>|  
+|<span data-ttu-id="02f05-111">セルの編集モードの場合は、セルの編集をキャンセルします。</span><span class="sxs-lookup"><span data-stu-id="02f05-111">Cancel cell editing if in cell edit mode.</span></span><br /><br /> <span data-ttu-id="02f05-112">マーキーの選択の場合は、行の編集をキャンセルします。</span><span class="sxs-lookup"><span data-stu-id="02f05-112">If in marquee selection, cancel editing on the row.</span></span>|<span data-ttu-id="02f05-113">Esc</span><span class="sxs-lookup"><span data-stu-id="02f05-113">ESC</span></span>|  
+|<span data-ttu-id="02f05-114">セルを編集するときは、挿入ポイントの直前にある文字を削除します。</span><span class="sxs-lookup"><span data-stu-id="02f05-114">Delete the character before the insertion point when editing a cell.</span></span>|<span data-ttu-id="02f05-115">BACKSPACE キー</span><span class="sxs-lookup"><span data-stu-id="02f05-115">BACKSPACE</span></span>|  
+|<span data-ttu-id="02f05-116">セルの編集時に、挿入位置より後に文字を削除します。</span><span class="sxs-lookup"><span data-stu-id="02f05-116">Delete the character after the insertion point when editing a cell.</span></span>|<span data-ttu-id="02f05-117">Del</span><span class="sxs-lookup"><span data-stu-id="02f05-117">DELETE</span></span>|  
+|<span data-ttu-id="02f05-118">現在の行の最初のセルに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-118">Move to the first cell in the current row.</span></span>|<span data-ttu-id="02f05-119">ホーム</span><span class="sxs-lookup"><span data-stu-id="02f05-119">HOME</span></span>|  
+|<span data-ttu-id="02f05-120">最後の現在の行のセルに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-120">Move to the last cell in the current row.</span></span>|<span data-ttu-id="02f05-121">End</span><span class="sxs-lookup"><span data-stu-id="02f05-121">END</span></span>|  
+|<span data-ttu-id="02f05-122">現在のセル内の文字を強調表示し、行の末尾にカーソルを置きます。</span><span class="sxs-lookup"><span data-stu-id="02f05-122">Highlight characters in the current cell and position the insertion point at the end of the line.</span></span> <span data-ttu-id="02f05-123">セルをダブルクリックした場合と同じ動作です。</span><span class="sxs-lookup"><span data-stu-id="02f05-123">Same behavior as double-clicking a cell.</span></span>|<span data-ttu-id="02f05-124">F2</span><span class="sxs-lookup"><span data-stu-id="02f05-124">F2</span></span>|  
+|<span data-ttu-id="02f05-125">セルにフォーカスがある場合は、次の行セルに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-125">If focus is on a cell, move to the next cell in the row.</span></span><br /><br /> <span data-ttu-id="02f05-126">行の最後のセルにフォーカスがある場合は、行の最初の子テーブルのリンクに移動し、それを展開します。</span><span class="sxs-lookup"><span data-stu-id="02f05-126">If focus is on the last cell in a row, move to the first child table link of the row and expand it.</span></span><br /><br /> <span data-ttu-id="02f05-127">子のリンクにフォーカスがある場合は、次の子リンクに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-127">If focus is on a child link, move to the next child link.</span></span><br /><br /> <span data-ttu-id="02f05-128">最後の子リンクにフォーカスがある場合は、次の行の最初のセルに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-128">If focus is on the last child link, move to the first cell of the next row.</span></span>|<span data-ttu-id="02f05-129">Tab</span><span class="sxs-lookup"><span data-stu-id="02f05-129">TAB</span></span>|  
+|<span data-ttu-id="02f05-130">セルにフォーカスがある場合は、行の前のセルに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-130">If focus is on a cell, move to the previous cell in the row.</span></span><br /><br /> <span data-ttu-id="02f05-131">行の最初のセルにフォーカスがある場合は、前の行の最後の展開された子テーブルのリンクに移動または最後の前の行のセルに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-131">If focus is on the first cell in a row, move to the last expanded child table link of the previous row, or move to the last cell of the previous row.</span></span><br /><br /> <span data-ttu-id="02f05-132">子のリンクにフォーカスがある場合は、以前の子へのリンクに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-132">If focus is on a child link, move to the previous child link.</span></span><br /><br /> <span data-ttu-id="02f05-133">最初の子リンクにフォーカスがある場合、最後のセルに移動前の行。</span><span class="sxs-lookup"><span data-stu-id="02f05-133">If focus is on the first child link, move to the last cell of the previous row.</span></span>|<span data-ttu-id="02f05-134">Shift + Tab</span><span class="sxs-lookup"><span data-stu-id="02f05-134">SHIFT+TAB</span></span>|  
+|<span data-ttu-id="02f05-135">タブ オーダーの次のコントロールに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-135">Move to the next control in the tab order.</span></span>|<span data-ttu-id="02f05-136">Ctrl + Tab</span><span class="sxs-lookup"><span data-stu-id="02f05-136">CTRL+TAB</span></span>|  
+|<span data-ttu-id="02f05-137">タブ オーダー内の前のコントロールに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-137">Move to the previous control in the tab order.</span></span>|<span data-ttu-id="02f05-138">Ctrl + Shift + Tab</span><span class="sxs-lookup"><span data-stu-id="02f05-138">CTRL+SHIFT+TAB</span></span>|  
+|<span data-ttu-id="02f05-139">子テーブルの場合、親テーブルに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-139">Move up to the parent table if in a child table.</span></span> <span data-ttu-id="02f05-140">[戻る] ボタンをクリックした場合と同じ動作です。</span><span class="sxs-lookup"><span data-stu-id="02f05-140">Same behavior as clicking the Back button.</span></span>|<span data-ttu-id="02f05-141">Alt + ←</span><span class="sxs-lookup"><span data-stu-id="02f05-141">ALT+LEFT ARROW</span></span>|  
+|<span data-ttu-id="02f05-142">子テーブルのリンクを展開します。</span><span class="sxs-lookup"><span data-stu-id="02f05-142">Expand child table links.</span></span> <span data-ttu-id="02f05-143">Alt キーを押しながら下方向は、選択されているだけでなく、すべてのリンクを展開します。</span><span class="sxs-lookup"><span data-stu-id="02f05-143">ALT+DOWN ARROW expands all links, not just the ones selected.</span></span>|<span data-ttu-id="02f05-144">Alt キーを押しながら下方向キーまたは CTRL + プラス記号</span><span class="sxs-lookup"><span data-stu-id="02f05-144">ALT+DOWN ARROW or CTRL+PLUS SIGN</span></span>|  
+|<span data-ttu-id="02f05-145">子テーブルのリンクを折りたたみます。</span><span class="sxs-lookup"><span data-stu-id="02f05-145">Collapse child table links.</span></span> <span data-ttu-id="02f05-146">ALT + 上向き矢印は、選択されているだけでなく、すべてのリンクを折りたたみます。</span><span class="sxs-lookup"><span data-stu-id="02f05-146">ALT+UP ARROW collapses all links, not just the ones selected.</span></span>|<span data-ttu-id="02f05-147">Alt キーを押しながら上方向キーまたは CTRL + マイナス記号</span><span class="sxs-lookup"><span data-stu-id="02f05-147">ALT+UP ARROW or CTRL+MINUS SIGN</span></span>|  
+|<span data-ttu-id="02f05-148">矢印の方向でよりもはるかに空白以外のセルに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-148">Move to the farthest nonblank cell in the direction of the arrow.</span></span>|<span data-ttu-id="02f05-149">CTRL キーを押しながら方向</span><span class="sxs-lookup"><span data-stu-id="02f05-149">CTRL+ARROW</span></span>|  
+|<span data-ttu-id="02f05-150">(子テーブルのリンクを除く) の矢印の方向に 1 行ずつ選択を拡張します。</span><span class="sxs-lookup"><span data-stu-id="02f05-150">Extend the selection one row in the direction of the arrow (excluding child table links).</span></span>|<span data-ttu-id="02f05-151">SHIFT キーを押しながら上/下方向</span><span class="sxs-lookup"><span data-stu-id="02f05-151">SHIFT+UP/DOWN ARROW</span></span>|  
+|<span data-ttu-id="02f05-152">(子テーブルのリンクを除く) の矢印の方向でよりもはるかに空白行まで選択範囲を拡張します。</span><span class="sxs-lookup"><span data-stu-id="02f05-152">Extend the selection to farthest nonblank row in the direction of the arrow (excluding child table links).</span></span>|<span data-ttu-id="02f05-153">CTRL + SHIFT + 上向きまたは下向き矢印</span><span class="sxs-lookup"><span data-stu-id="02f05-153">CTRL+SHIFT+ UP/DOWN ARROW</span></span>|  
+|<span data-ttu-id="02f05-154">左上隅のセルに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-154">Move to the upper-left cell.</span></span>|<span data-ttu-id="02f05-155">CTRL + HOME</span><span class="sxs-lookup"><span data-stu-id="02f05-155">CTRL+HOME</span></span>|  
+|<span data-ttu-id="02f05-156">右下隅のセルに移動します。</span><span class="sxs-lookup"><span data-stu-id="02f05-156">Move to the lower-right cell.</span></span>|<span data-ttu-id="02f05-157">CTRL キーを押しながら END キー</span><span class="sxs-lookup"><span data-stu-id="02f05-157">CTRL+END</span></span>|  
+|<span data-ttu-id="02f05-158">選択範囲を先頭の行を拡張します。</span><span class="sxs-lookup"><span data-stu-id="02f05-158">Extend the selection to the top row.</span></span>|<span data-ttu-id="02f05-159">CTRL + SHIFT + ホーム</span><span class="sxs-lookup"><span data-stu-id="02f05-159">CTRL+SHIFT+HOME</span></span>|  
+|<span data-ttu-id="02f05-160">一番下の行を選択範囲を拡大します。</span><span class="sxs-lookup"><span data-stu-id="02f05-160">Extend the selection to the bottom row.</span></span>|<span data-ttu-id="02f05-161">CTRL キーを押しながら SHIFT キーを押しながら END</span><span class="sxs-lookup"><span data-stu-id="02f05-161">CTRL+SHIFT+END</span></span>|  
+|<span data-ttu-id="02f05-162">(子テーブルのリンクを除く)、現在の行を選択します。</span><span class="sxs-lookup"><span data-stu-id="02f05-162">Select the current row (excluding child table links).</span></span>|<span data-ttu-id="02f05-163">SHIFT キーを押しながら SPACE キー</span><span class="sxs-lookup"><span data-stu-id="02f05-163">SHIFT+SPACEBAR</span></span>|  
+|<span data-ttu-id="02f05-164">グリッド全体 (子テーブルのリンクを除く) を選択します。</span><span class="sxs-lookup"><span data-stu-id="02f05-164">Select the entire grid (excluding child table links).</span></span>|<span data-ttu-id="02f05-165">Ctrl + A</span><span class="sxs-lookup"><span data-stu-id="02f05-165">CTRL+A</span></span>|  
+|<span data-ttu-id="02f05-166">子テーブルにある場合、親の行を表示します。</span><span class="sxs-lookup"><span data-stu-id="02f05-166">Display the parent row when in a child table.</span></span>|<span data-ttu-id="02f05-167">Ctrl + PageDown</span><span class="sxs-lookup"><span data-stu-id="02f05-167">CTRL+PAGE DOWN</span></span>|  
+|<span data-ttu-id="02f05-168">子テーブルにある場合、親の行を非表示にします。</span><span class="sxs-lookup"><span data-stu-id="02f05-168">Hide the parent row when in a child table.</span></span>|<span data-ttu-id="02f05-169">Ctrl + PageUp</span><span class="sxs-lookup"><span data-stu-id="02f05-169">CTRL+PAGE UP</span></span>|  
+|<span data-ttu-id="02f05-170">(子テーブルのリンクを除く) 1 画面下に、選択範囲を拡張します。</span><span class="sxs-lookup"><span data-stu-id="02f05-170">Extend the selection down one screen (excluding child table links).</span></span>|<span data-ttu-id="02f05-171">Shift + PageDown</span><span class="sxs-lookup"><span data-stu-id="02f05-171">SHIFT+PAGE DOWN</span></span>|  
+|<span data-ttu-id="02f05-172">(子テーブルのリンクを除く) 1 つの画面上に、選択範囲を拡張します。</span><span class="sxs-lookup"><span data-stu-id="02f05-172">Extend the selection up one screen (excluding child table links).</span></span>|<span data-ttu-id="02f05-173">Shift + PageUp</span><span class="sxs-lookup"><span data-stu-id="02f05-173">SHIFT+PAGE UP</span></span>|  
+|<span data-ttu-id="02f05-174">呼び出す、<xref:System.Windows.Forms.DataGrid.EndEdit%2A>現在の行のメソッドです。</span><span class="sxs-lookup"><span data-stu-id="02f05-174">Call the <xref:System.Windows.Forms.DataGrid.EndEdit%2A> method for the current row.</span></span>|<span data-ttu-id="02f05-175">Ctrl + Enter</span><span class="sxs-lookup"><span data-stu-id="02f05-175">CTRL+ENTER</span></span>|  
+|<span data-ttu-id="02f05-176">入力、<xref:System.DBNull.Value?displayProperty=nameWithType>編集モードでのセルに値。</span><span class="sxs-lookup"><span data-stu-id="02f05-176">Enter a <xref:System.DBNull.Value?displayProperty=nameWithType> value into a cell when in edit mode.</span></span>|<span data-ttu-id="02f05-177">Ctrl + 0</span><span class="sxs-lookup"><span data-stu-id="02f05-177">CTRL+0</span></span>|  
   
-## 参照  
- [DataGrid コントロールの概要](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)   
- [DataGrid コントロール](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="02f05-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="02f05-178">See Also</span></span>  
+ [<span data-ttu-id="02f05-179">DataGrid コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="02f05-179">DataGrid Control Overview</span></span>](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)  
+ [<span data-ttu-id="02f05-180">DataGrid コントロール</span><span class="sxs-lookup"><span data-stu-id="02f05-180">DataGrid Control</span></span>](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)

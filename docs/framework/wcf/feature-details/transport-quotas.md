@@ -1,123 +1,125 @@
 ---
-title: "トランスポート クォータ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "トランスポート クォータ [WCF]"
+title: "トランスポート クォータ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: transport quotas [WCF]
 ms.assetid: 3e71dd3d-f981-4d9c-9c06-ff8abb61b717
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 78a7b421b2ac1a7ef8323a5ab31e536a489f09e0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# トランスポート クォータ
-トランスポート クォータは、接続がリソースを過剰に消費している時期を特定するポリシー機構です。クォータとは、クォータ値を超えた場合に、それ以上のリソースの使用を禁止する確実な制限です。トランスポート クォータは、悪質な、または意図的でないサービス拒否攻撃を防ぎます。  
+# <a name="transport-quotas"></a><span data-ttu-id="678ea-102">トランスポート クォータ</span><span class="sxs-lookup"><span data-stu-id="678ea-102">Transport Quotas</span></span>
+<span data-ttu-id="678ea-103">トランスポート クォータは、接続がリソースを過剰に消費している時期を特定するポリシー機構です。</span><span class="sxs-lookup"><span data-stu-id="678ea-103">Transport quotas are a policy mechanism for deciding when a connection is consuming excessive resources.</span></span> <span data-ttu-id="678ea-104">クォータとは、クォータ値を超えた場合に、それ以上のリソースの使用を禁止する確実な制限です。</span><span class="sxs-lookup"><span data-stu-id="678ea-104">A quota is a hard limit that prevents the use of additional resources once the quota value is exceeded.</span></span> <span data-ttu-id="678ea-105">トランスポート クォータは、悪質な、または意図的でないサービス拒否攻撃を防ぎます。</span><span class="sxs-lookup"><span data-stu-id="678ea-105">Transport quotas prevent either malicious or unintentional denial of service attacks.</span></span>  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] トランスポートのクォータの既定値は、控えめなリソース割り当てに基づいています。これらの既定値は開発環境、および小規模のインストール シナリオに適しています。インストールでリソースが不足している場合、または追加リソースが使用可能であるにもかかわらず接続が制限されている場合、サービス管理者は、トランスポート クォータを確認し、個別のクォータ値を調整する必要があります。  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="678ea-106"> トランスポートのクォータの既定値は、控えめなリソース割り当てに基づいています。</span><span class="sxs-lookup"><span data-stu-id="678ea-106"> transports have default quota values that are based on a conservative allocation of resources.</span></span> <span data-ttu-id="678ea-107">これらの既定値は開発環境、および小規模のインストール シナリオに適しています。</span><span class="sxs-lookup"><span data-stu-id="678ea-107">These default values are suitable for development environments and small installation scenarios.</span></span> <span data-ttu-id="678ea-108">インストールでリソースが不足している場合、または追加リソースが使用可能であるにもかかわらず接続が制限されている場合、サービス管理者は、トランスポート クォータを確認し、個別のクォータ値を調整する必要があります。</span><span class="sxs-lookup"><span data-stu-id="678ea-108">Service administrators should review transport quotas and tune individual quota values if an installation is running out of resources or if connections are being limited despite the availability of additional resources.</span></span>  
   
-## トランスポート クォータの種類  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のトランスポートには 3 種類のクォータがあります。  
+## <a name="types-of-transport-quotas"></a><span data-ttu-id="678ea-109">トランスポート クォータの種類</span><span class="sxs-lookup"><span data-stu-id="678ea-109">Types of Transport Quotas</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="678ea-110"> のトランスポートには 3 種類のクォータがあります。</span><span class="sxs-lookup"><span data-stu-id="678ea-110"> transports have three types of quotas:</span></span>  
   
--   *"タイムアウト"* は、長時間リソースを停滞させることによるサービス拒否攻撃を軽減します。  
+-   <span data-ttu-id="678ea-111">*タイムアウト*サービス拒否攻撃を長時間にわたってのリソースを停滞を軽減します。</span><span class="sxs-lookup"><span data-stu-id="678ea-111">*Timeouts* mitigate denial of service attacks that rely on tying up resources for an extended period of time.</span></span>  
   
--   *"メモリ割り当ての制限"* は、単一の接続によってシステム メモリが消耗され、他の接続へのサービス拒否が発生することを防止します。  
+-   <span data-ttu-id="678ea-112">*メモリ割り当ての制限*システム メモリの消耗され、他の接続にサービス拒否の 1 つの接続を防ぐためです。</span><span class="sxs-lookup"><span data-stu-id="678ea-112">*Memory allocation limits* prevent a single connection from exhausting system memory and denying service to other connections.</span></span>  
   
--   *"コレクション サイズの制限"* は、間接的に割り当てられるメモリ、または供給に制限のあるリソースの消費を抑制します。  
+-   <span data-ttu-id="678ea-113">*コレクション サイズの制限*間接的にメモリを割り当てる、または供給に制限されているリソースの消費をバインドします。</span><span class="sxs-lookup"><span data-stu-id="678ea-113">*Collection size limits* bound the consumption of resources that indirectly allocate memory or are in limited supply.</span></span>  
   
-## トランスポート クォータの説明  
- ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の標準トランスポートである、HTTP\(S\)、TCP\/IP、および名前つきパイプで利用できるトランスポート クォータについて説明します。カスタム トランスポートでは、このリストに含まれない独自の構成可能なクォータを公開できます。カスタム トランスポートのクォータについては、ドキュメントを参照してください。  
+## <a name="transport-quota-descriptions"></a><span data-ttu-id="678ea-114">トランスポート クォータの説明</span><span class="sxs-lookup"><span data-stu-id="678ea-114">Transport Quota Descriptions</span></span>  
+ <span data-ttu-id="678ea-115">ここでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の標準トランスポートである、HTTP(S)、TCP/IP、および名前つきパイプで利用できるトランスポート クォータについて説明します。</span><span class="sxs-lookup"><span data-stu-id="678ea-115">This section describes the transport quotas available for the standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] transports: HTTP(S), TCP/IP, and named pipes.</span></span> <span data-ttu-id="678ea-116">カスタム トランスポートでは、このリストに含まれない独自の構成可能なクォータを公開できます。</span><span class="sxs-lookup"><span data-stu-id="678ea-116">Custom transports can expose their own configurable quotas not included in this list.</span></span> <span data-ttu-id="678ea-117">カスタム トランスポートのクォータについては、ドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="678ea-117">Consult the documentation for a custom transport to find out about its quotas.</span></span>  
   
- 各クォータ設定では、種類、最小値、および既定値を設定します。クォータの最大値は、クォータの種類によって制限されます。コンピューターの制限により、クォータを最大値に設定できない場合もあります。  
+ <span data-ttu-id="678ea-118">各クォータ設定では、種類、最小値、および既定値を設定します。</span><span class="sxs-lookup"><span data-stu-id="678ea-118">Each quota setting has a type, minimum value, and default value.</span></span> <span data-ttu-id="678ea-119">クォータの最大値は、クォータの種類によって制限されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-119">The maximum value of a quota is limited by its type.</span></span> <span data-ttu-id="678ea-120">コンピューターの制限により、クォータを最大値に設定できない場合もあります。</span><span class="sxs-lookup"><span data-stu-id="678ea-120">Due to machine limitations, it is not always possible to set a quota to its maximum value.</span></span>  
   
-|名前|型|最小<br /><br /> value|Default<br /><br /> value|説明|  
-|--------|-------|------------------|-----------------------|--------|  
-|`ChannelInitializationTimeout`|TimeSpan|1 目盛り|5 秒|最初の読み取り中に、接続が前文の送信を待機する最大時間。このデータは、認証が行われる前に受信されます。この設定は一般に、`ReceiveTimeout` クォータ値よりも大幅に小さな値になります。|  
-|`CloseTimeout`|TimeSpan|0|1 分|接続の終了を待機する最大時間。これを超えるとトランスポートで例外が発生します。|  
-|`ConnectionBufferSize`|整数|1|8 KB|基となるトランスポートの送信および受信バッファーのサイズ \(バイト単位\)。サイズの大きなメッセージを送信する場合、バッファー サイズを増やすとスループットを向上させることができます。|  
-|`IdleTimeout`|TimeSpan|0|2 分|プールされた接続が閉じられるまで、アイドル状態を維持できる最大時間。<br /><br /> この設定はプールされた接続にのみ適用されます。|  
-|`LeaseTimeout`|TimeSpan|0|5 分|プールされたアクティブな接続の最長有効期間。指定した期間が経過すると、現在の要求の処理後、接続は閉じられます。<br /><br /> この設定はプールされた接続にのみ適用されます。|  
-|`ListenBacklog`|整数|1|10|リスナーで未処理にできる接続の最大数。エンドポイントへの接続がこれ以上増加すると拒否されます。|  
-|`MaxBufferPoolSize`|Long|0|512 KB|トランスポートで再使用可能なメッセージ バッファーのプール専用にするメモリの最大値 \(バイト単位\)。プールがメッセージ バッファーを供給できない場合、新しいバッファーが一時的な使用のために割り当てられます。<br /><br /> 多数のチャネル ファクトリまたはリスナーを作成するインストールでは、バッファー プールに多くのメモリが割り当てられることがあります。このバッファー サイズを縮小すると、このシナリオにおけるメモリ使用量を大幅に削減できることがあります。|  
-|`MaxBufferSize`|整数|1|64 KB|ストリーミング データ用に使用されるバッファーの最大サイズ \(バイト単位\)。このトランスポート クォータが設定されていない、またはトランスポートがストリーミングを使用しない場合、このクォータ値は `MaxReceivedMessageSize` クォータ値と <xref:System.Int32.MaxValue> の小さい方と同じになります。|  
-|`MaxOutboundConnectionsPerEndpoint`|整数|1|10|特定のエンドポイントに関連付けることのできる送信接続の最大数。<br /><br /> この設定はプールされた接続にのみ適用されます。|  
-|`MaxOutputDelay`|TimeSpan|0|200 ミリ秒|送信操作後に 1 回の操作で追加メッセージをバッチ処理するために待機する最大時間。基になるトランスポートのバッファーがいっぱいになると、メッセージはより早い時期に送信されます。追加のメッセージの送信によって遅延時間がリセットされることはありません。|  
-|`MaxPendingAccepts`|整数|1|1|リスナーで待機状態にできるチャネルの受け入れの最大数。<br /><br /> 受け入れの完了と新しい受け入れの開始との間には、時間的な間隔があります。このコレクション サイズを大きくすると、この時間間隔内に接続するクライアントが切断されるのを防ぎます。|  
-|`MaxPendingConnections`|整数|1|10|アプリケーションによる受け入れをリスナーで待機できる最大接続数。このクォータ値を超過すると、新規の受信接続は受け入れられるのを待機せずに切断されます。<br /><br /> メッセージ セキュリティのような接続機能では、クライアントは複数の接続を開くことがあります。このクォータ値を設定する場合、サービス管理者はこのような追加の接続も考慮する必要があります。|  
-|`MaxReceivedMessageSize`|Long|1|64 KB|ヘッダーを含む、受信メッセージの最大サイズ \(バイト単位\)。これを超えるとトランスポートで例外が発生します。|  
-|`OpenTimeout`|TimeSpan|0|1 分|接続の確立を待機する最大時間。これを超えるとトランスポートで例外が発生します。|  
-|`ReceiveTimeout`|TimeSpan|0|10 分|読み取り操作の完了を待機する最大時間。これを超えるとトランスポートで例外が発生します。|  
-|`SendTimeout`|Timespan|0|1 分|書き込み操作の完了を待機する最大時間。これを超えるとトランスポートで例外が発生します。|  
+|<span data-ttu-id="678ea-121">名前</span><span class="sxs-lookup"><span data-stu-id="678ea-121">Name</span></span>|<span data-ttu-id="678ea-122">型</span><span class="sxs-lookup"><span data-stu-id="678ea-122">Type</span></span>|<span data-ttu-id="678ea-123">最小</span><span class="sxs-lookup"><span data-stu-id="678ea-123">Min.</span></span><br /><br /> <span data-ttu-id="678ea-124">value</span><span class="sxs-lookup"><span data-stu-id="678ea-124">value</span></span>|<span data-ttu-id="678ea-125">既定</span><span class="sxs-lookup"><span data-stu-id="678ea-125">Default</span></span><br /><br /> <span data-ttu-id="678ea-126">value</span><span class="sxs-lookup"><span data-stu-id="678ea-126">value</span></span>|<span data-ttu-id="678ea-127">説明</span><span class="sxs-lookup"><span data-stu-id="678ea-127">Description</span></span>|  
+|----------|----------|--------------------|-----------------------|-----------------|  
+|`ChannelInitializationTimeout`|<span data-ttu-id="678ea-128">TimeSpan</span><span class="sxs-lookup"><span data-stu-id="678ea-128">TimeSpan</span></span>|<span data-ttu-id="678ea-129">1 目盛り</span><span class="sxs-lookup"><span data-stu-id="678ea-129">1 tick</span></span>|<span data-ttu-id="678ea-130">5 秒</span><span class="sxs-lookup"><span data-stu-id="678ea-130">5 sec</span></span>|<span data-ttu-id="678ea-131">最初の読み取り中に、接続が前文の送信を待機する最大時間。</span><span class="sxs-lookup"><span data-stu-id="678ea-131">Maximum time to wait for a connection to send the preamble during the initial read.</span></span> <span data-ttu-id="678ea-132">このデータは、認証が行われる前に受信されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-132">This data is received before authentication occurs.</span></span> <span data-ttu-id="678ea-133">この設定は一般に、`ReceiveTimeout` クォータ値よりも大幅に小さな値になります。</span><span class="sxs-lookup"><span data-stu-id="678ea-133">This setting is generally much smaller than the `ReceiveTimeout` quota value.</span></span>|  
+|`CloseTimeout`|<span data-ttu-id="678ea-134">TimeSpan</span><span class="sxs-lookup"><span data-stu-id="678ea-134">TimeSpan</span></span>|<span data-ttu-id="678ea-135">0</span><span class="sxs-lookup"><span data-stu-id="678ea-135">0</span></span>|<span data-ttu-id="678ea-136">1 分</span><span class="sxs-lookup"><span data-stu-id="678ea-136">1 min</span></span>|<span data-ttu-id="678ea-137">接続の終了を待機する最大時間。これを超えるとトランスポートで例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="678ea-137">Maximum time to wait for a connection to close before the transport raises an exception.</span></span>|  
+|`ConnectionBufferSize`|<span data-ttu-id="678ea-138">整数型</span><span class="sxs-lookup"><span data-stu-id="678ea-138">Integer</span></span>|<span data-ttu-id="678ea-139">1</span><span class="sxs-lookup"><span data-stu-id="678ea-139">1</span></span>|<span data-ttu-id="678ea-140">8 KB</span><span class="sxs-lookup"><span data-stu-id="678ea-140">8 KB</span></span>|<span data-ttu-id="678ea-141">基となるトランスポートの送信および受信バッファーのサイズ (バイト単位)。</span><span class="sxs-lookup"><span data-stu-id="678ea-141">Size, in bytes, of the transmit and receive buffers of the underlying transport.</span></span> <span data-ttu-id="678ea-142">サイズの大きなメッセージを送信する場合、バッファー サイズを増やすとスループットを向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="678ea-142">Increasing the buffer size can improve throughput when sending large messages.</span></span>|  
+|`IdleTimeout`|<span data-ttu-id="678ea-143">TimeSpan</span><span class="sxs-lookup"><span data-stu-id="678ea-143">TimeSpan</span></span>|<span data-ttu-id="678ea-144">0</span><span class="sxs-lookup"><span data-stu-id="678ea-144">0</span></span>|<span data-ttu-id="678ea-145">2 分</span><span class="sxs-lookup"><span data-stu-id="678ea-145">2 min</span></span>|<span data-ttu-id="678ea-146">プールされた接続が閉じられるまで、アイドル状態を維持できる最大時間。</span><span class="sxs-lookup"><span data-stu-id="678ea-146">Maximum time a pooled connection can remain idle before being closed.</span></span><br /><br /> <span data-ttu-id="678ea-147">この設定はプールされた接続にのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-147">This setting only applies to pooled connections.</span></span>|  
+|`LeaseTimeout`|<span data-ttu-id="678ea-148">TimeSpan</span><span class="sxs-lookup"><span data-stu-id="678ea-148">TimeSpan</span></span>|<span data-ttu-id="678ea-149">0</span><span class="sxs-lookup"><span data-stu-id="678ea-149">0</span></span>|<span data-ttu-id="678ea-150">5 分</span><span class="sxs-lookup"><span data-stu-id="678ea-150">5 min</span></span>|<span data-ttu-id="678ea-151">プールされたアクティブな接続の最長有効期間。</span><span class="sxs-lookup"><span data-stu-id="678ea-151">Maximum lifetime of an active pooled connection.</span></span> <span data-ttu-id="678ea-152">指定した期間が経過すると、現在の要求の処理後、接続は閉じられます。</span><span class="sxs-lookup"><span data-stu-id="678ea-152">After the specified time elapses, the connection closes once the current request is serviced.</span></span><br /><br /> <span data-ttu-id="678ea-153">この設定はプールされた接続にのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-153">This setting only applies to pooled connections.</span></span>|  
+|`ListenBacklog`|<span data-ttu-id="678ea-154">整数型</span><span class="sxs-lookup"><span data-stu-id="678ea-154">Integer</span></span>|<span data-ttu-id="678ea-155">1</span><span class="sxs-lookup"><span data-stu-id="678ea-155">1</span></span>|<span data-ttu-id="678ea-156">10</span><span class="sxs-lookup"><span data-stu-id="678ea-156">10</span></span>|<span data-ttu-id="678ea-157">リスナーで未処理にできる接続の最大数。エンドポイントへの接続がこれ以上増加すると拒否されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-157">Maximum number of connections that the listener can have unserviced before additional connections to that endpoint are denied.</span></span>|  
+|`MaxBufferPoolSize`|<span data-ttu-id="678ea-158">Long</span><span class="sxs-lookup"><span data-stu-id="678ea-158">Long</span></span>|<span data-ttu-id="678ea-159">0</span><span class="sxs-lookup"><span data-stu-id="678ea-159">0</span></span>|<span data-ttu-id="678ea-160">512 KB</span><span class="sxs-lookup"><span data-stu-id="678ea-160">512 KB</span></span>|<span data-ttu-id="678ea-161">トランスポートで再使用可能なメッセージ バッファーのプール専用にするメモリの最大値 (バイト単位)。</span><span class="sxs-lookup"><span data-stu-id="678ea-161">Maximum memory, in bytes, that the transport devotes to pooling reusable message buffers.</span></span> <span data-ttu-id="678ea-162">プールがメッセージ バッファーを供給できない場合、新しいバッファーが一時的な使用のために割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="678ea-162">When the pool cannot supply a message buffer, a new buffer is allocated for temporary use.</span></span><br /><br /> <span data-ttu-id="678ea-163">多数のチャネル ファクトリまたはリスナーを作成するインストールでは、バッファー プールに多くのメモリが割り当てられることがあります。</span><span class="sxs-lookup"><span data-stu-id="678ea-163">Installations that create many channel factories or listeners can allocate large amounts of memory for buffer pools.</span></span> <span data-ttu-id="678ea-164">このバッファー サイズを縮小すると、このシナリオにおけるメモリ使用量を大幅に削減できることがあります。</span><span class="sxs-lookup"><span data-stu-id="678ea-164">Reducing this buffer size can greatly reduce memory usage in this scenario.</span></span>|  
+|`MaxBufferSize`|<span data-ttu-id="678ea-165">整数型</span><span class="sxs-lookup"><span data-stu-id="678ea-165">Integer</span></span>|<span data-ttu-id="678ea-166">1</span><span class="sxs-lookup"><span data-stu-id="678ea-166">1</span></span>|<span data-ttu-id="678ea-167">64 KB</span><span class="sxs-lookup"><span data-stu-id="678ea-167">64 KB</span></span>|<span data-ttu-id="678ea-168">ストリーミング データ用に使用されるバッファーの最大サイズ (バイト単位)。</span><span class="sxs-lookup"><span data-stu-id="678ea-168">Maximum size, in bytes, of a buffer used for streaming data.</span></span> <span data-ttu-id="678ea-169">このトランスポート クォータが設定されていない、またはトランスポートがストリーミングを使用しない場合、このクォータ値は `MaxReceivedMessageSize` クォータ値と <xref:System.Int32.MaxValue> の小さい方と同じになります。</span><span class="sxs-lookup"><span data-stu-id="678ea-169">If this transport quota is not set, or the transport is not using streaming, then the quota value is the same as the smaller of the `MaxReceivedMessageSize` quota value and <xref:System.Int32.MaxValue>.</span></span>|  
+|`MaxOutboundConnectionsPerEndpoint`|<span data-ttu-id="678ea-170">整数型</span><span class="sxs-lookup"><span data-stu-id="678ea-170">Integer</span></span>|<span data-ttu-id="678ea-171">1</span><span class="sxs-lookup"><span data-stu-id="678ea-171">1</span></span>|<span data-ttu-id="678ea-172">10</span><span class="sxs-lookup"><span data-stu-id="678ea-172">10</span></span>|<span data-ttu-id="678ea-173">特定のエンドポイントに関連付けることのできる送信接続の最大数。</span><span class="sxs-lookup"><span data-stu-id="678ea-173">Maximum number of outgoing connections that can be associated with a particular endpoint.</span></span><br /><br /> <span data-ttu-id="678ea-174">この設定はプールされた接続にのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-174">This setting only applies to pooled connections.</span></span>|  
+|`MaxOutputDelay`|<span data-ttu-id="678ea-175">TimeSpan</span><span class="sxs-lookup"><span data-stu-id="678ea-175">TimeSpan</span></span>|<span data-ttu-id="678ea-176">0</span><span class="sxs-lookup"><span data-stu-id="678ea-176">0</span></span>|<span data-ttu-id="678ea-177">200 ミリ秒</span><span class="sxs-lookup"><span data-stu-id="678ea-177">200 ms</span></span>|<span data-ttu-id="678ea-178">送信操作後に 1 回の操作で追加メッセージをバッチ処理するために待機する最大時間。</span><span class="sxs-lookup"><span data-stu-id="678ea-178">Maximum time to wait after a send operation for batching additional messages in a single operation.</span></span> <span data-ttu-id="678ea-179">基になるトランスポートのバッファーがいっぱいになると、メッセージはより早い時期に送信されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-179">Messages are sent earlier if the buffer of the underlying transport becomes full.</span></span> <span data-ttu-id="678ea-180">追加のメッセージの送信によって遅延時間がリセットされることはありません。</span><span class="sxs-lookup"><span data-stu-id="678ea-180">Sending additional messages does not reset the delay period.</span></span>|  
+|`MaxPendingAccepts`|<span data-ttu-id="678ea-181">整数型</span><span class="sxs-lookup"><span data-stu-id="678ea-181">Integer</span></span>|<span data-ttu-id="678ea-182">1</span><span class="sxs-lookup"><span data-stu-id="678ea-182">1</span></span>|<span data-ttu-id="678ea-183">1</span><span class="sxs-lookup"><span data-stu-id="678ea-183">1</span></span>|<span data-ttu-id="678ea-184">リスナーで待機状態にできるチャネルの受け入れの最大数。</span><span class="sxs-lookup"><span data-stu-id="678ea-184">Maximum number of accepts for channels that the listener can have waiting.</span></span><br /><br /> <span data-ttu-id="678ea-185">受け入れの完了と新しい受け入れの開始との間には、時間的な間隔があります。</span><span class="sxs-lookup"><span data-stu-id="678ea-185">There is an interval of time between the accept completing and a new accept starting.</span></span> <span data-ttu-id="678ea-186">このコレクション サイズを大きくすると、この時間間隔内に接続するクライアントが切断されるのを防ぎます。</span><span class="sxs-lookup"><span data-stu-id="678ea-186">Increasing this collection size can prevent clients that connect during this interval from being dropped.</span></span>|  
+|`MaxPendingConnections`|<span data-ttu-id="678ea-187">整数型</span><span class="sxs-lookup"><span data-stu-id="678ea-187">Integer</span></span>|<span data-ttu-id="678ea-188">1</span><span class="sxs-lookup"><span data-stu-id="678ea-188">1</span></span>|<span data-ttu-id="678ea-189">10</span><span class="sxs-lookup"><span data-stu-id="678ea-189">10</span></span>|<span data-ttu-id="678ea-190">アプリケーションによる受け入れをリスナーで待機できる最大接続数。</span><span class="sxs-lookup"><span data-stu-id="678ea-190">Maximum number of connections that the listener can have waiting to be accepted by the application.</span></span> <span data-ttu-id="678ea-191">このクォータ値を超過すると、新規の受信接続は受け入れられるのを待機せずに切断されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-191">When this quota value is exceeded, new incoming connections are dropped rather than waiting to be accepted.</span></span><br /><br /> <span data-ttu-id="678ea-192">メッセージ セキュリティのような接続機能では、クライアントは複数の接続を開くことがあります。</span><span class="sxs-lookup"><span data-stu-id="678ea-192">Connection features such as message security can cause a client to open more than one connection.</span></span> <span data-ttu-id="678ea-193">このクォータ値を設定する場合、サービス管理者はこのような追加の接続も考慮する必要があります。</span><span class="sxs-lookup"><span data-stu-id="678ea-193">Service administrators should account for these additional connections when setting this quota value.</span></span>|  
+|`MaxReceivedMessageSize`|<span data-ttu-id="678ea-194">Long</span><span class="sxs-lookup"><span data-stu-id="678ea-194">Long</span></span>|<span data-ttu-id="678ea-195">1</span><span class="sxs-lookup"><span data-stu-id="678ea-195">1</span></span>|<span data-ttu-id="678ea-196">64 KB</span><span class="sxs-lookup"><span data-stu-id="678ea-196">64 KB</span></span>|<span data-ttu-id="678ea-197">ヘッダーを含む、受信メッセージの最大サイズ (バイト単位)。これを超えるとトランスポートで例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="678ea-197">Maximum size, in bytes, of a received message, including headers, before the transport raises an exception.</span></span>|  
+|`OpenTimeout`|<span data-ttu-id="678ea-198">TimeSpan</span><span class="sxs-lookup"><span data-stu-id="678ea-198">TimeSpan</span></span>|<span data-ttu-id="678ea-199">0</span><span class="sxs-lookup"><span data-stu-id="678ea-199">0</span></span>|<span data-ttu-id="678ea-200">1 分</span><span class="sxs-lookup"><span data-stu-id="678ea-200">1 min</span></span>|<span data-ttu-id="678ea-201">接続の確立を待機する最大時間。これを超えるとトランスポートで例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="678ea-201">Maximum time to wait for a connection to be established before the transport raises an exception.</span></span>|  
+|`ReceiveTimeout`|<span data-ttu-id="678ea-202">TimeSpan</span><span class="sxs-lookup"><span data-stu-id="678ea-202">TimeSpan</span></span>|<span data-ttu-id="678ea-203">0</span><span class="sxs-lookup"><span data-stu-id="678ea-203">0</span></span>|<span data-ttu-id="678ea-204">10 分</span><span class="sxs-lookup"><span data-stu-id="678ea-204">10 min</span></span>|<span data-ttu-id="678ea-205">読み取り操作の完了を待機する最大時間。これを超えるとトランスポートで例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="678ea-205">Maximum time to wait for a read operation to complete before the transport raises an exception.</span></span>|  
+|`SendTimeout`|<span data-ttu-id="678ea-206">Timespan</span><span class="sxs-lookup"><span data-stu-id="678ea-206">Timespan</span></span>|<span data-ttu-id="678ea-207">0</span><span class="sxs-lookup"><span data-stu-id="678ea-207">0</span></span>|<span data-ttu-id="678ea-208">1 分</span><span class="sxs-lookup"><span data-stu-id="678ea-208">1 min</span></span>|<span data-ttu-id="678ea-209">書き込み操作の完了を待機する最大時間。これを超えるとトランスポートで例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="678ea-209">Maximum time to wait for a write operation to complete before the transport raises an exception.</span></span>|  
   
- トランスポート クォータ `MaxPendingConnections` および `MaxOutboundConnectionsPerEndpoint` は、バインディングまたは構成を使用して設定される場合には、`MaxConnections` トランスポート クォータと呼ばれる単一のクォータに結合されます。これらのクォータ値を個別に設定できるのは、バインド要素に限られます。`MaxConnections` トランスポート クォータでは、最小値と既定値が同じになります。  
+ <span data-ttu-id="678ea-210">トランスポート クォータ `MaxPendingConnections` および `MaxOutboundConnectionsPerEndpoint` は、バインディングまたは構成を使用して設定される場合には、`MaxConnections` トランスポート クォータと呼ばれる単一のクォータに結合されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-210">The transport quotas `MaxPendingConnections` and `MaxOutboundConnectionsPerEndpoint` are combined into a single transport quota called `MaxConnections` when set through the binding or configuration.</span></span> <span data-ttu-id="678ea-211">これらのクォータ値を個別に設定できるのは、バインド要素に限られます。</span><span class="sxs-lookup"><span data-stu-id="678ea-211">Only the binding element allows setting these quota values individually.</span></span> <span data-ttu-id="678ea-212">`MaxConnections` トランスポート クォータでは、最小値と既定値が同じになります。</span><span class="sxs-lookup"><span data-stu-id="678ea-212">The `MaxConnections` transport quota has the same minimum and default values.</span></span>  
   
-## トランスポート クォータの設定  
- トランスポート クォータは、トランスポート バインド要素、トランスポート バンディング、アプリケーション構成、またはホスト ポリシーを介して設定されます。このドキュメントでは、ホスト ポリシーを介したトランスポートの設定については説明しません。ホスト ポリシー クォータの設定については、基になるトランスポートのドキュメントを参照してください。Http.sys ドライバーのクォータ設定については「[HTTP および HTTPS の構成](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)」を参照してください。HTTP、TCP\/IP、および名前付きパイプの接続で Windows の制限を構成する詳細については、マイクロソフト サポート技術情報を検索してください。  
+## <a name="setting-transport-quotas"></a><span data-ttu-id="678ea-213">トランスポート クォータの設定</span><span class="sxs-lookup"><span data-stu-id="678ea-213">Setting Transport Quotas</span></span>  
+ <span data-ttu-id="678ea-214">トランスポート クォータは、トランスポート バインド要素、トランスポート バンディング、アプリケーション構成、またはホスト ポリシーを介して設定されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-214">Transport quotas are set through the transport binding element, the transport binding, application configuration, or host policy.</span></span> <span data-ttu-id="678ea-215">このドキュメントでは、ホスト ポリシーを介したトランスポートの設定については説明しません。</span><span class="sxs-lookup"><span data-stu-id="678ea-215">This document does not cover setting transports through host policy.</span></span> <span data-ttu-id="678ea-216">ホスト ポリシー クォータの設定については、基になるトランスポートのドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="678ea-216">Consult the documentation for the underlying transport to discover the settings for host policy quotas.</span></span> <span data-ttu-id="678ea-217">[を構成する HTTP および HTTPS](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md) Http.sys ドライバーのクォータの設定について説明します。</span><span class="sxs-lookup"><span data-stu-id="678ea-217">The [Configuring HTTP and HTTPS](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md) topic describes quota settings for the Http.sys driver.</span></span> <span data-ttu-id="678ea-218">HTTP、TCP/IP、および名前付きパイプの接続で Windows の制限を構成する詳細については、マイクロソフト サポート技術情報を検索してください。</span><span class="sxs-lookup"><span data-stu-id="678ea-218">Search the Microsoft Knowledge Base for more information about configuring Windows limits on HTTP, TCP/IP, and named pipe connections.</span></span>  
   
- 他の種類のクォータは、トランスポートへ間接的に適用されます。トランスポートがメッセージをバイトに変換するために使用するメッセージ エンコーダーには、独自のクォータ設定があります。ただし、これらのクォータは使用されているトランスポートの種類に依存しません。  
+ <span data-ttu-id="678ea-219">他の種類のクォータは、トランスポートへ間接的に適用されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-219">Other types of quotas apply indirectly to transports.</span></span> <span data-ttu-id="678ea-220">トランスポートがメッセージをバイトに変換するために使用するメッセージ エンコーダーには、独自のクォータ設定があります。</span><span class="sxs-lookup"><span data-stu-id="678ea-220">The message encoder that the transport uses to transform a message into bytes can have its own quota settings.</span></span> <span data-ttu-id="678ea-221">ただし、これらのクォータは使用されているトランスポートの種類に依存しません。</span><span class="sxs-lookup"><span data-stu-id="678ea-221">However, these quotas are independent of the type of transport being used.</span></span>  
   
-### バインド要素によるトランスポート クォータの制御  
- バインド要素を介してトランスポート クォータを設定した場合、トランスポートの動作を最も柔軟に制御できます。閉じる、開く、受信、送信の各操作の既定のタイムアウトは、チャネルを構築したときにバインディングから設定されます。  
+### <a name="controlling-transport-quotas-from-the-binding-element"></a><span data-ttu-id="678ea-222">バインド要素によるトランスポート クォータの制御</span><span class="sxs-lookup"><span data-stu-id="678ea-222">Controlling Transport Quotas from the Binding Element</span></span>  
+ <span data-ttu-id="678ea-223">バインド要素を介してトランスポート クォータを設定した場合、トランスポートの動作を最も柔軟に制御できます。</span><span class="sxs-lookup"><span data-stu-id="678ea-223">Setting transport quotas through the binding element offers the greatest flexibility in controlling the transport's behavior.</span></span> <span data-ttu-id="678ea-224">閉じる、開く、受信、送信の各操作の既定のタイムアウトは、チャネルを構築したときにバインディングから設定されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-224">The default timeouts for Close, Open, Receive, and Send operations are taken from the binding when a channel is built.</span></span>  
   
-|名前|HTTP|TCP\/IP|名前付きパイプ|  
-|--------|----------|-------------|-------------|  
-|`ChannelInitializationTimeout`||X|X|  
+|<span data-ttu-id="678ea-225">名前</span><span class="sxs-lookup"><span data-stu-id="678ea-225">Name</span></span>|<span data-ttu-id="678ea-226">HTTP</span><span class="sxs-lookup"><span data-stu-id="678ea-226">HTTP</span></span>|<span data-ttu-id="678ea-227">TCP/IP</span><span class="sxs-lookup"><span data-stu-id="678ea-227">TCP/IP</span></span>|<span data-ttu-id="678ea-228">名前付きパイプ</span><span class="sxs-lookup"><span data-stu-id="678ea-228">Named pipe</span></span>|  
+|----------|----------|-------------|----------------|  
+|`ChannelInitializationTimeout`||<span data-ttu-id="678ea-229">X</span><span class="sxs-lookup"><span data-stu-id="678ea-229">X</span></span>|<span data-ttu-id="678ea-230">X</span><span class="sxs-lookup"><span data-stu-id="678ea-230">X</span></span>|  
 |`CloseTimeout`||||  
-|`ConnectionBufferSize`||X|X|  
-|`IdleTimeout`||X|X|  
-|`LeaseTimeout`||X||  
-|`ListenBacklog`||X||  
-|`MaxBufferPoolSize`|X|X|X|  
-|`MaxBufferSize`|X|X|X|  
-|`MaxOutboundConnectionsPerEndpoint`||X|X|  
-|`MaxOutputDelay`||X|X|  
-|`MaxPendingAccepts`||X|X|  
-|`MaxPendingConnections`||X|X|  
-|`MaxReceivedMessageSize`|X|X|X|  
+|`ConnectionBufferSize`||<span data-ttu-id="678ea-231">X</span><span class="sxs-lookup"><span data-stu-id="678ea-231">X</span></span>|<span data-ttu-id="678ea-232">X</span><span class="sxs-lookup"><span data-stu-id="678ea-232">X</span></span>|  
+|`IdleTimeout`||<span data-ttu-id="678ea-233">X</span><span class="sxs-lookup"><span data-stu-id="678ea-233">X</span></span>|<span data-ttu-id="678ea-234">X</span><span class="sxs-lookup"><span data-stu-id="678ea-234">X</span></span>|  
+|`LeaseTimeout`||<span data-ttu-id="678ea-235">X</span><span class="sxs-lookup"><span data-stu-id="678ea-235">X</span></span>||  
+|`ListenBacklog`||<span data-ttu-id="678ea-236">X</span><span class="sxs-lookup"><span data-stu-id="678ea-236">X</span></span>||  
+|`MaxBufferPoolSize`|<span data-ttu-id="678ea-237">X</span><span class="sxs-lookup"><span data-stu-id="678ea-237">X</span></span>|<span data-ttu-id="678ea-238">X</span><span class="sxs-lookup"><span data-stu-id="678ea-238">X</span></span>|<span data-ttu-id="678ea-239">X</span><span class="sxs-lookup"><span data-stu-id="678ea-239">X</span></span>|  
+|`MaxBufferSize`|<span data-ttu-id="678ea-240">X</span><span class="sxs-lookup"><span data-stu-id="678ea-240">X</span></span>|<span data-ttu-id="678ea-241">X</span><span class="sxs-lookup"><span data-stu-id="678ea-241">X</span></span>|<span data-ttu-id="678ea-242">X</span><span class="sxs-lookup"><span data-stu-id="678ea-242">X</span></span>|  
+|`MaxOutboundConnectionsPerEndpoint`||<span data-ttu-id="678ea-243">X</span><span class="sxs-lookup"><span data-stu-id="678ea-243">X</span></span>|<span data-ttu-id="678ea-244">X</span><span class="sxs-lookup"><span data-stu-id="678ea-244">X</span></span>|  
+|`MaxOutputDelay`||<span data-ttu-id="678ea-245">X</span><span class="sxs-lookup"><span data-stu-id="678ea-245">X</span></span>|<span data-ttu-id="678ea-246">X</span><span class="sxs-lookup"><span data-stu-id="678ea-246">X</span></span>|  
+|`MaxPendingAccepts`||<span data-ttu-id="678ea-247">X</span><span class="sxs-lookup"><span data-stu-id="678ea-247">X</span></span>|<span data-ttu-id="678ea-248">X</span><span class="sxs-lookup"><span data-stu-id="678ea-248">X</span></span>|  
+|`MaxPendingConnections`||<span data-ttu-id="678ea-249">X</span><span class="sxs-lookup"><span data-stu-id="678ea-249">X</span></span>|<span data-ttu-id="678ea-250">X</span><span class="sxs-lookup"><span data-stu-id="678ea-250">X</span></span>|  
+|`MaxReceivedMessageSize`|<span data-ttu-id="678ea-251">X</span><span class="sxs-lookup"><span data-stu-id="678ea-251">X</span></span>|<span data-ttu-id="678ea-252">X</span><span class="sxs-lookup"><span data-stu-id="678ea-252">X</span></span>|<span data-ttu-id="678ea-253">X</span><span class="sxs-lookup"><span data-stu-id="678ea-253">X</span></span>|  
 |`OpenTimeout`||||  
 |`ReceiveTimeout`||||  
 |`SendTimeout`||||  
   
-### バインディングによるトランスポート クォータの制御  
- バインディングによるトランスポート クォータの設定では、選択対象のクォータがセットにまとめられます。ただし、最も一般的に使用するクォータ値にはアクセスできます。  
+### <a name="controlling-transport-quotas-from-the-binding"></a><span data-ttu-id="678ea-254">バインディングによるトランスポート クォータの制御</span><span class="sxs-lookup"><span data-stu-id="678ea-254">Controlling Transport Quotas from the Binding</span></span>  
+ <span data-ttu-id="678ea-255">バインディングによるトランスポート クォータの設定では、選択対象のクォータがセットにまとめられます。ただし、最も一般的に使用するクォータ値にはアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="678ea-255">Setting transport quotas through the binding offers a simplified set of quotas to choose from while still giving access to the most common quota values.</span></span>  
   
-|名前|HTTP|TCP\/IP|名前付きパイプ|  
-|--------|----------|-------------|-------------|  
+|<span data-ttu-id="678ea-256">名前</span><span class="sxs-lookup"><span data-stu-id="678ea-256">Name</span></span>|<span data-ttu-id="678ea-257">HTTP</span><span class="sxs-lookup"><span data-stu-id="678ea-257">HTTP</span></span>|<span data-ttu-id="678ea-258">TCP/IP</span><span class="sxs-lookup"><span data-stu-id="678ea-258">TCP/IP</span></span>|<span data-ttu-id="678ea-259">名前付きパイプ</span><span class="sxs-lookup"><span data-stu-id="678ea-259">Named pipe</span></span>|  
+|----------|----------|-------------|----------------|  
 |`ChannelInitializationTimeout`||||  
-|`CloseTimeout`|X|X|X|  
+|`CloseTimeout`|<span data-ttu-id="678ea-260">X</span><span class="sxs-lookup"><span data-stu-id="678ea-260">X</span></span>|<span data-ttu-id="678ea-261">X</span><span class="sxs-lookup"><span data-stu-id="678ea-261">X</span></span>|<span data-ttu-id="678ea-262">X</span><span class="sxs-lookup"><span data-stu-id="678ea-262">X</span></span>|  
 |`ConnectionBufferSize`||||  
 |`IdleTimeout`||||  
 |`LeaseTimeout`||||  
-|`ListenBacklog`||X||  
-|`MaxBufferPoolSize`|X|X|X|  
-|`MaxBufferSize`|1|X|X|  
-|`MaxOutboundConnectionsPerEndpoint`||2|2|  
+|`ListenBacklog`||<span data-ttu-id="678ea-263">X</span><span class="sxs-lookup"><span data-stu-id="678ea-263">X</span></span>||  
+|`MaxBufferPoolSize`|<span data-ttu-id="678ea-264">X</span><span class="sxs-lookup"><span data-stu-id="678ea-264">X</span></span>|<span data-ttu-id="678ea-265">X</span><span class="sxs-lookup"><span data-stu-id="678ea-265">X</span></span>|<span data-ttu-id="678ea-266">X</span><span class="sxs-lookup"><span data-stu-id="678ea-266">X</span></span>|  
+|`MaxBufferSize`|<span data-ttu-id="678ea-267">1</span><span class="sxs-lookup"><span data-stu-id="678ea-267">1</span></span>|<span data-ttu-id="678ea-268">X</span><span class="sxs-lookup"><span data-stu-id="678ea-268">X</span></span>|<span data-ttu-id="678ea-269">X</span><span class="sxs-lookup"><span data-stu-id="678ea-269">X</span></span>|  
+|`MaxOutboundConnectionsPerEndpoint`||<span data-ttu-id="678ea-270">2</span><span class="sxs-lookup"><span data-stu-id="678ea-270">2</span></span>|<span data-ttu-id="678ea-271">2</span><span class="sxs-lookup"><span data-stu-id="678ea-271">2</span></span>|  
 |`MaxOutputDelay`||||  
 |`MaxPendingAccepts`||||  
-|`MaxPendingConnections`||2|2|  
-|`MaxReceivedMessageSize`|X|X|X|  
-|`OpenTimeout`|X|X|X|  
-|`ReceiveTimeout`|X|X|X|  
-|`SendTimeout`|X|X|X|  
+|`MaxPendingConnections`||<span data-ttu-id="678ea-272">2</span><span class="sxs-lookup"><span data-stu-id="678ea-272">2</span></span>|<span data-ttu-id="678ea-273">2</span><span class="sxs-lookup"><span data-stu-id="678ea-273">2</span></span>|  
+|`MaxReceivedMessageSize`|<span data-ttu-id="678ea-274">X</span><span class="sxs-lookup"><span data-stu-id="678ea-274">X</span></span>|<span data-ttu-id="678ea-275">X</span><span class="sxs-lookup"><span data-stu-id="678ea-275">X</span></span>|<span data-ttu-id="678ea-276">X</span><span class="sxs-lookup"><span data-stu-id="678ea-276">X</span></span>|  
+|`OpenTimeout`|<span data-ttu-id="678ea-277">X</span><span class="sxs-lookup"><span data-stu-id="678ea-277">X</span></span>|<span data-ttu-id="678ea-278">X</span><span class="sxs-lookup"><span data-stu-id="678ea-278">X</span></span>|<span data-ttu-id="678ea-279">X</span><span class="sxs-lookup"><span data-stu-id="678ea-279">X</span></span>|  
+|`ReceiveTimeout`|<span data-ttu-id="678ea-280">X</span><span class="sxs-lookup"><span data-stu-id="678ea-280">X</span></span>|<span data-ttu-id="678ea-281">X</span><span class="sxs-lookup"><span data-stu-id="678ea-281">X</span></span>|<span data-ttu-id="678ea-282">X</span><span class="sxs-lookup"><span data-stu-id="678ea-282">X</span></span>|  
+|`SendTimeout`|<span data-ttu-id="678ea-283">X</span><span class="sxs-lookup"><span data-stu-id="678ea-283">X</span></span>|<span data-ttu-id="678ea-284">X</span><span class="sxs-lookup"><span data-stu-id="678ea-284">X</span></span>|<span data-ttu-id="678ea-285">X</span><span class="sxs-lookup"><span data-stu-id="678ea-285">X</span></span>|  
   
-1.  `MaxBufferSize` トランスポート クォータは、`BasicHttp` バインディングでのみ使用可能です。`WSHttp` バインディングは、ストリーミング トランスポート モードがサポートされないシナリオに対応します。  
+1.  <span data-ttu-id="678ea-286">`MaxBufferSize` トランスポート クォータは、`BasicHttp` バインディングでのみ使用可能です。</span><span class="sxs-lookup"><span data-stu-id="678ea-286">The `MaxBufferSize` transport quota is only available on the `BasicHttp` binding.</span></span> <span data-ttu-id="678ea-287">`WSHttp` バインディングは、ストリーミング トランスポート モードがサポートされないシナリオに対応します。</span><span class="sxs-lookup"><span data-stu-id="678ea-287">The `WSHttp` bindings are for scenarios that do not support streamed transport modes.</span></span>  
   
-2.  トランスポート クォータ `MaxPendingConnections` および `MaxOutboundConnectionsPerEndpoint` は、`MaxConnections` トランスポート クォータと呼ばれる単一のクォータに結合されます。  
+2.  <span data-ttu-id="678ea-288">トランスポート クォータ `MaxPendingConnections` および `MaxOutboundConnectionsPerEndpoint` は、`MaxConnections` トランスポート クォータと呼ばれる単一のクォータに結合されます。</span><span class="sxs-lookup"><span data-stu-id="678ea-288">The transport quotas `MaxPendingConnections` and `MaxOutboundConnectionsPerEndpoint` are combined into a single transport quota called `MaxConnections`.</span></span>  
   
-### 構成によるトランスポート クォータの制御  
- アプリケーション構成からバインディング上のプロパティに直接アクセスして、同じトランスポート クォータを設定できます。構成ファイルでは、トランスポート クォータの名前は必ず小文字で始めます。たとえば、バインディングの `CloseTimeout` プロパティは構成では `closeTimeout` 設定に対応し、バインディングの `MaxConnections` プロパティは構成では `maxConnections` 設定に対応します。  
+### <a name="controlling-transport-quotas-from-configuration"></a><span data-ttu-id="678ea-289">構成によるトランスポート クォータの制御</span><span class="sxs-lookup"><span data-stu-id="678ea-289">Controlling Transport Quotas from Configuration</span></span>  
+ <span data-ttu-id="678ea-290">アプリケーション構成からバインディング上のプロパティに直接アクセスして、同じトランスポート クォータを設定できます。</span><span class="sxs-lookup"><span data-stu-id="678ea-290">Application configuration can set the same transport quotas as directly accessing properties on a binding.</span></span> <span data-ttu-id="678ea-291">構成ファイルでは、トランスポート クォータの名前は必ず小文字で始めます。</span><span class="sxs-lookup"><span data-stu-id="678ea-291">In configuration files, the name of a transport quota always starts with a lowercase letter.</span></span> <span data-ttu-id="678ea-292">たとえば、バインディングの `CloseTimeout` プロパティは構成では `closeTimeout` 設定に対応し、バインディングの `MaxConnections` プロパティは構成では `maxConnections` 設定に対応します。</span><span class="sxs-lookup"><span data-stu-id="678ea-292">For example, the `CloseTimeout` property on a binding corresponds to the `closeTimeout` setting in configuration and the `MaxConnections` property on a binding corresponds to the `maxConnections` setting in configuration.</span></span>  
   
-## 参照  
- <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>   
- <xref:System.ServiceModel.Channels.HttpTransportBindingElement>   
- <xref:System.ServiceModel.Channels.TcpTransportBindingElement>   
- <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>   
- <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>   
+## <a name="see-also"></a><span data-ttu-id="678ea-293">関連項目</span><span class="sxs-lookup"><span data-stu-id="678ea-293">See Also</span></span>  
+ <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
+ <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
+ <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
+ <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>  
+ <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>  
  <xref:System.ServiceModel.Channels.TransportBindingElement>

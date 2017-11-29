@@ -1,45 +1,49 @@
 ---
-title: "Windows フォームでの電源管理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "バッテリ状態"
-  - "電源状態"
+title: "Windows フォームでの電源管理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- battery states
+- power states
 ms.assetid: ad04a801-5682-4d88-92c5-26eb9cdb209a
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e12f39a63a4f81e6deec4512a4e18ad2bda7e5e0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォームでの電源管理
-Windows フォーム アプリケーションでは、Windows オペレーティング システムの電源管理機能を利用できます。  コンピューターの電源状態を監視し、状態が変化したときにアクションを実行できます。  たとえば、ポータブル コンピューターでアプリケーションを実行している場合、コンピューターの充電が一定レベルを下回ったときにアプリケーションの特定の機能を無効にできます。  
+# <a name="power-management-in-windows-forms"></a><span data-ttu-id="0dda9-102">Windows フォームでの電源管理</span><span class="sxs-lookup"><span data-stu-id="0dda9-102">Power Management in Windows Forms</span></span>
+<span data-ttu-id="0dda9-103">Windows フォーム アプリケーションを利用、電源管理機能の Windows オペレーティング システムにできます。</span><span class="sxs-lookup"><span data-stu-id="0dda9-103">Your Windows Forms applications can take advantage of the power management features in the Windows operating system.</span></span> <span data-ttu-id="0dda9-104">アプリケーションでは、コンピューターの電源の状態を監視でき、状態の変更が発生したときにアクションを実行することができます。</span><span class="sxs-lookup"><span data-stu-id="0dda9-104">Your applications can monitor the power status of a computer and take action when a status change occurs.</span></span> <span data-ttu-id="0dda9-105">たとえば、アプリがポータブル コンピューターで実行されている場合可能性がある、コンピューターのバッテリ充電量が一定のレベルを下回ったときに、アプリケーションで特定の機能を無効にします。</span><span class="sxs-lookup"><span data-stu-id="0dda9-105">For example, if your application is running on a portable computer, you might want to disable certain features in your application when the computer's battery charge falls under a certain level.</span></span>  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] では、オペレーティング システムを中断または再開したり、AC 電源やバッテリの状態が変化したりした場合など、電源状態が変化したときに発生する <xref:Microsoft.Win32.SystemEvents.PowerModeChanged> イベントを利用できます。  <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> クラスの <xref:System.Windows.Forms.SystemInformation> プロパティを使用すると、次のコード例に示すように現在の状態を照会できます。  
+ <span data-ttu-id="0dda9-106">[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]提供、<xref:Microsoft.Win32.SystemEvents.PowerModeChanged>電源の状態、または AC 電源の状態またはバッテリの状態が変更されたときにユーザーを中断またはオペレーティング システムを再開する場合などに変更があるときに発生するイベントです。</span><span class="sxs-lookup"><span data-stu-id="0dda9-106">The [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] provides a <xref:Microsoft.Win32.SystemEvents.PowerModeChanged> event that occurs whenever there is a change in power status, such as when a user suspends or resumes the operating system, or when the AC power status or battery status changes.</span></span> <span data-ttu-id="0dda9-107"><xref:System.Windows.Forms.SystemInformation.PowerStatus%2A>のプロパティ、<xref:System.Windows.Forms.SystemInformation>できるクラスは次のコード例に示すように現在の状態では、クエリを使用します。</span><span class="sxs-lookup"><span data-stu-id="0dda9-107">The <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> property of the <xref:System.Windows.Forms.SystemInformation> class can be used to query for the current status, as shown in the following code example.</span></span>  
   
  [!code-csharp[PowerMode#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/powermode/cs/form1.cs#1)]
  [!code-vb[PowerMode#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/powermode/vb/form1.vb#1)]  
   
- <xref:System.Windows.Forms.BatteryChargeStatus> 列挙値の他に、<xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> プロパティにも、バッテリ容量 \(<xref:System.Windows.Forms.PowerStatus.BatteryFullLifetime%2A>\)、バッテリの充電率 \(<xref:System.Windows.Forms.PowerStatus.BatteryLifePercent%2A>、<xref:System.Windows.Forms.PowerStatus.BatteryLifeRemaining%2A>\) を確認する列挙値が含まれています。  
+ <span data-ttu-id="0dda9-108">以外にも、<xref:System.Windows.Forms.BatteryChargeStatus>列挙型、<xref:System.Windows.Forms.SystemInformation.PowerStatus%2A>プロパティには、バッテリ容量を決定するための列挙型も含まれています (<xref:System.Windows.Forms.PowerStatus.BatteryFullLifetime%2A>) およびバッテリの充電の割合 (<xref:System.Windows.Forms.PowerStatus.BatteryLifePercent%2A>、 <xref:System.Windows.Forms.PowerStatus.BatteryLifeRemaining%2A>)。</span><span class="sxs-lookup"><span data-stu-id="0dda9-108">Besides the <xref:System.Windows.Forms.BatteryChargeStatus> enumerations, the <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> property also contains enumerations for determining battery capacity (<xref:System.Windows.Forms.PowerStatus.BatteryFullLifetime%2A>) and battery charge percentage (<xref:System.Windows.Forms.PowerStatus.BatteryLifePercent%2A>, <xref:System.Windows.Forms.PowerStatus.BatteryLifeRemaining%2A>).</span></span>  
   
- <xref:System.Windows.Forms.Application> の <xref:System.Windows.Forms.Application.SetSuspendState%2A> メソッドを使用すると、コンピューターを休止モードまたは中断モードに設定できます。  `force` 引数を `false` に設定すると、中断のためのアクセス許可を要求するすべてのアプリケーションにイベントがブロードキャストされます。  また、`disableWakeEvent` 引数を `true` に設定すると、すべての wake イベントが無効になります。  
+ <span data-ttu-id="0dda9-109">使用することができます、<xref:System.Windows.Forms.Application.SetSuspendState%2A>のメソッド、<xref:System.Windows.Forms.Application>コンピューターを休止状態または中断モードにします。</span><span class="sxs-lookup"><span data-stu-id="0dda9-109">You can use the <xref:System.Windows.Forms.Application.SetSuspendState%2A> method of the <xref:System.Windows.Forms.Application> to put a computer into hibernation or suspend mode.</span></span> <span data-ttu-id="0dda9-110">場合、`force`に設定されている引数`false`、オペレーティング システムが中断するアクセス許可を要求するすべてのアプリケーションにイベントをブロードキャストします。</span><span class="sxs-lookup"><span data-stu-id="0dda9-110">If the `force` argument is set to `false`, the operating system will broadcast an event to all applications requesting permission to suspend.</span></span> <span data-ttu-id="0dda9-111">場合、`disableWakeEvent`に設定されている引数`true`、オペレーティング システムのスリープ解除のすべてのイベントを無効にします。</span><span class="sxs-lookup"><span data-stu-id="0dda9-111">If the `disableWakeEvent` argument is set to `true`, the operating system disables all wake events.</span></span>  
   
- 次のコード例は、コンピューターを休止モードに設定する方法を示しています。  
+ <span data-ttu-id="0dda9-112">次のコード例では、コンピューターを休止状態にする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="0dda9-112">The following code example demonstrates how to put a computer into hibernation.</span></span>  
   
  [!code-csharp[PowerMode#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/powermode/cs/form1.cs#2)]
  [!code-vb[PowerMode#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/powermode/vb/form1.vb#2)]  
   
-## 参照  
- <xref:Microsoft.Win32.SystemEvents.PowerModeChanged>   
- <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A>   
- <xref:System.Windows.Forms.Application.SetSuspendState%2A>   
+## <a name="see-also"></a><span data-ttu-id="0dda9-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="0dda9-113">See Also</span></span>  
+ <xref:Microsoft.Win32.SystemEvents.PowerModeChanged>  
+ <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A>  
+ <xref:System.Windows.Forms.Application.SetSuspendState%2A>  
  <xref:Microsoft.Win32.SystemEvents.SessionSwitch>

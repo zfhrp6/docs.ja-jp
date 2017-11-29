@@ -1,110 +1,113 @@
 ---
-title: "インク入力コントロールの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "収集 (インク ストロークを)"
-  - "DynamicRenderer オブジェクト"
-  - "インク入力コントロール"
-  - "インク ストローク, 収集"
-  - "インク ストローク, 管理"
-  - "インク, 描画"
-  - "入力 (マウスから), 受け入れ"
-  - "管理 (インク ストロークを)"
-  - "マウス入力, 受け入れ"
-  - "レンダリング インク"
-  - "StylusPlugIn オブジェクト"
+title: "インク入力コントロールの作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ink strokes [WPF], managing
+- managing ink strokes [WPF]
+- ink input control [WPF]
+- input from mouse [WPF], accepting
+- mouse input [WPF], accepting
+- ink [WPF], rendering
+- ink strokes [WPF], collecting
+- rendering ink [WPF]
+- collecting ink strokes [WPF]
+- DynamicRenderer objects [WPF]
+- StylusPlugIn objects [WPF]
 ms.assetid: c31f3a67-cb3f-4ded-af9e-ed21f6575b26
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2cfc6553fe9dd176d2aa557df906141c13a5f425
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# インク入力コントロールの作成
-インクのレンダリングを動的にも静的にも行うカスタム コントロールを作成できます。  つまり、ユーザーがストロークを描画したときに、タブレット ペンから "流れる" ようにインクが表示されるようにインクをレンダリングしたり、タブレット ペンからの入力、クリップボードからの貼り付け、ファイルからの読み込みのいずれかによってインクをコントロールに追加した後にそのインクを表示したりします。  インクを動的にレンダリングするには、コントロールが <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> を使用する必要があります。  インクを静的にレンダリングするには、スタイラス イベント メソッド \(<xref:System.Windows.UIElement.OnStylusDown%2A>、<xref:System.Windows.UIElement.OnStylusMove%2A>、および <xref:System.Windows.UIElement.OnStylusUp%2A>\) をオーバーライドして、<xref:System.Windows.Input.StylusPoint> データの収集、ストロークの作成、これらのメソッドの \(コントロール上でインクをレンダリングする\) <xref:System.Windows.Controls.InkPresenter> への追加を行う必要があります。  
+# <a name="creating-an-ink-input-control"></a><span data-ttu-id="9bc99-102">インク入力コントロールの作成</span><span class="sxs-lookup"><span data-stu-id="9bc99-102">Creating an Ink Input Control</span></span>
+<span data-ttu-id="9bc99-103">カスタム コントロールを動的に作成し、インクを静的に描画します。</span><span class="sxs-lookup"><span data-stu-id="9bc99-103">You can create a custom control that dynamically and statically renders ink.</span></span> <span data-ttu-id="9bc99-104">つまり、ユーザーは、タブレット ペンをからには、「フロー」、それ以降後のインクの表示を追加するコントロールにタブレット ペンを使用して、クリップボードから貼り付けるか、ファイルから読み込まれたを表示するインク ストロークを描画インクをレンダリングします。</span><span class="sxs-lookup"><span data-stu-id="9bc99-104">That is, render ink as a user draws a stroke, causing the ink to appear to "flow" from the tablet pen, and display ink after it is added to the control, either via the tablet pen, pasted from the Clipboard, or loaded from a file.</span></span> <span data-ttu-id="9bc99-105">インクを動的に表示するには、するために、コントロールを使用する必要があります、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>です。</span><span class="sxs-lookup"><span data-stu-id="9bc99-105">To dynamically render ink, your control must use a <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>.</span></span> <span data-ttu-id="9bc99-106">静的にインクをレンダリングするには、スタイラス イベント メソッドをオーバーライドする必要があります (<xref:System.Windows.UIElement.OnStylusDown%2A>、 <xref:System.Windows.UIElement.OnStylusMove%2A>、および<xref:System.Windows.UIElement.OnStylusUp%2A>) を収集する<xref:System.Windows.Input.StylusPoint>データ、ストロークの作成に追加して、 <xref:System.Windows.Controls.InkPresenter> (がコントロール上のインクをレンダリング)。</span><span class="sxs-lookup"><span data-stu-id="9bc99-106">To statically render ink, you must override the stylus event methods (<xref:System.Windows.UIElement.OnStylusDown%2A>, <xref:System.Windows.UIElement.OnStylusMove%2A>, and <xref:System.Windows.UIElement.OnStylusUp%2A>) to collect <xref:System.Windows.Input.StylusPoint> data, create strokes, and add them to an <xref:System.Windows.Controls.InkPresenter> (which renders the ink on the control).</span></span>  
   
- このトピックは、次の内容で構成されています。  
+ <span data-ttu-id="9bc99-107">このトピックは、次の内容で構成されています。</span><span class="sxs-lookup"><span data-stu-id="9bc99-107">This topic contains the following subsections:</span></span>  
   
--   [方法 : スタイラス ポイント データを収集してインク ストロークを作成する](#CollectingStylusPointDataAndCreatingInkStrokes)  
+-   [<span data-ttu-id="9bc99-108">方法: スタイラス ポイント データを収集およびインク ストロークの作成</span><span class="sxs-lookup"><span data-stu-id="9bc99-108">How to: Collect Stylus Point Data and Create Ink Strokes</span></span>](#CollectingStylusPointDataAndCreatingInkStrokes)  
   
--   [方法 : コントロールでマウスからの入力を受け付けられるようにする](#EnablingYourControlToAcceptInputTromTheMouse)  
+-   [<span data-ttu-id="9bc99-109">方法: マウスからの入力を受け入れるようにコントロールを有効にします。</span><span class="sxs-lookup"><span data-stu-id="9bc99-109">How to: Enable Your Control to Accept Input from the Mouse</span></span>](#EnablingYourControlToAcceptInputTromTheMouse)  
   
--   [スタイラスおよびマウス双方からの入力](#PuttingItTogether)  
+-   [<span data-ttu-id="9bc99-110">これをまとめる</span><span class="sxs-lookup"><span data-stu-id="9bc99-110">Putting it together</span></span>](#PuttingItTogether)  
   
--   [追加のプラグインと DynamicRenderer の使用](#UsingAdditionalPluginsAndDynamicRenderers)  
+-   [<span data-ttu-id="9bc99-111">その他のプラグインと DynamicRenderers を使用します。</span><span class="sxs-lookup"><span data-stu-id="9bc99-111">Using Additional Plug-ins and DynamicRenderers</span></span>](#UsingAdditionalPluginsAndDynamicRenderers)  
   
--   [まとめ](#AdvancedInkHandling_Conclusion)  
+-   [<span data-ttu-id="9bc99-112">まとめ</span><span class="sxs-lookup"><span data-stu-id="9bc99-112">Conclusion</span></span>](#AdvancedInkHandling_Conclusion)  
   
 <a name="CollectingStylusPointDataAndCreatingInkStrokes"></a>   
-## 方法 : スタイラス ポイント データを収集してインク ストロークを作成する  
- インク ストロークを収集して管理するコントロールを作成するには、次の手順を実行します。  
+## <a name="how-to-collect-stylus-point-data-and-create-ink-strokes"></a><span data-ttu-id="9bc99-113">方法: スタイラス ポイント データを収集およびインク ストロークの作成</span><span class="sxs-lookup"><span data-stu-id="9bc99-113">How to: Collect Stylus Point Data and Create Ink Strokes</span></span>  
+ <span data-ttu-id="9bc99-114">収集してインクを管理するコントロールを作成するには、ストロークは次の操作を行います。</span><span class="sxs-lookup"><span data-stu-id="9bc99-114">To create a control that collects and manages ink strokes do the following:</span></span>  
   
-1.  <xref:System.Windows.Controls.Control> のクラス、または <xref:System.Windows.Controls.Control> の派生クラスのいずれか \(<xref:System.Windows.Controls.Label> など\) を派生します。  
+1.  <span data-ttu-id="9bc99-115">クラスを派生<xref:System.Windows.Controls.Control>から派生したクラスのいずれかまたは<xref:System.Windows.Controls.Control>など<xref:System.Windows.Controls.Label>です。</span><span class="sxs-lookup"><span data-stu-id="9bc99-115">Derive a class from <xref:System.Windows.Controls.Control> or one of the classes derived from <xref:System.Windows.Controls.Control>, such as <xref:System.Windows.Controls.Label>.</span></span>  
   
      [!code-csharp[AdvancedInkTopicsSamples#20](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#20)]  
     [!code-csharp[AdvancedInkTopicsSamples#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControlSnippets.cs#14)]  
     [!code-csharp[AdvancedInkTopicsSamples#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControlSnippets.cs#15)]  
   
-2.  <xref:System.Windows.Controls.InkPresenter> をそのクラスに追加し、<xref:System.Windows.Controls.ContentControl.Content%2A> プロパティを新しい <xref:System.Windows.Controls.InkPresenter> に設定します。  
+2.  <span data-ttu-id="9bc99-116">追加、<xref:System.Windows.Controls.InkPresenter>をクラスに設定し、<xref:System.Windows.Controls.ContentControl.Content%2A>を新しいプロパティ<xref:System.Windows.Controls.InkPresenter>です。</span><span class="sxs-lookup"><span data-stu-id="9bc99-116">Add an <xref:System.Windows.Controls.InkPresenter> to the class and set the <xref:System.Windows.Controls.ContentControl.Content%2A> property to the new <xref:System.Windows.Controls.InkPresenter>.</span></span>  
   
      [!code-csharp[AdvancedInkTopicsSamples#16](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControlSnippets.cs#16)]  
   
-3.  <xref:System.Windows.Controls.InkPresenter.AttachVisuals%2A> メソッドを呼び出して <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> の <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A> を <xref:System.Windows.Controls.InkPresenter> に割り当て、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> を <xref:System.Windows.UIElement.StylusPlugIns%2A> コレクションに追加します。  これにより、コントロールによってスタイラス ポイント データが収集されたとおりに <xref:System.Windows.Controls.InkPresenter> がインクを表示できるようになります。  
+3.  <span data-ttu-id="9bc99-117">アタッチ、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A>の<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>を<xref:System.Windows.Controls.InkPresenter>を呼び出して、<xref:System.Windows.Controls.InkPresenter.AttachVisuals%2A>メソッドを追加し、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>を<xref:System.Windows.UIElement.StylusPlugIns%2A>コレクション。</span><span class="sxs-lookup"><span data-stu-id="9bc99-117">Attach the <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A> of the <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> to the <xref:System.Windows.Controls.InkPresenter> by calling the <xref:System.Windows.Controls.InkPresenter.AttachVisuals%2A> method, and add the <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> to the <xref:System.Windows.UIElement.StylusPlugIns%2A> collection.</span></span> <span data-ttu-id="9bc99-118">これにより、<xref:System.Windows.Controls.InkPresenter>スタイラス ポイントのデータがコントロールによって収集されたインクを表示します。</span><span class="sxs-lookup"><span data-stu-id="9bc99-118">This allows the <xref:System.Windows.Controls.InkPresenter> to display the ink as the stylus point data is collected by your control.</span></span>  
   
      [!code-csharp[AdvancedInkTopicsSamples#17](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControlSnippets.cs#17)]  
     [!code-csharp[AdvancedInkTopicsSamples#18](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControlSnippets.cs#18)]  
   
-4.  <xref:System.Windows.UIElement.OnStylusDown%2A> メソッドをオーバーライドします。  このメソッドでは、<xref:System.Windows.Input.Stylus.Capture%2A> を呼び出してスタイラスをキャプチャします。  スタイラスをキャプチャすることにより、コントロールは、スタイラスがコントロールの境界を離れても <xref:System.Windows.UIElement.StylusMove> イベントおよび <xref:System.Windows.UIElement.StylusUp> イベントを継続して受け取ります。  これは、厳密には必須ではありませんが、快適なユーザー エクスペリエンスのためには、たいてい必要です。  新しい <xref:System.Windows.Input.StylusPointCollection> を作成し、<xref:System.Windows.Input.StylusPoint> データを収集します。  最後に、<xref:System.Windows.Input.StylusPoint> データの最初のセットを <xref:System.Windows.Input.StylusPointCollection> に追加します。  
+4.  <span data-ttu-id="9bc99-119"><xref:System.Windows.UIElement.OnStylusDown%2A> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="9bc99-119">Override the <xref:System.Windows.UIElement.OnStylusDown%2A> method.</span></span>  <span data-ttu-id="9bc99-120">このメソッドを呼び出してスタイラスのキャプチャ<xref:System.Windows.Input.Stylus.Capture%2A>です。</span><span class="sxs-lookup"><span data-stu-id="9bc99-120">In this method, capture the stylus with a call to <xref:System.Windows.Input.Stylus.Capture%2A>.</span></span> <span data-ttu-id="9bc99-121">コントロールが受信を続けるには、スタイラスをキャプチャして<xref:System.Windows.UIElement.StylusMove>と<xref:System.Windows.UIElement.StylusUp>スタイラスがコントロールの境界から出た場合でもイベント。</span><span class="sxs-lookup"><span data-stu-id="9bc99-121">By capturing the stylus, your control will to continue to receive <xref:System.Windows.UIElement.StylusMove> and <xref:System.Windows.UIElement.StylusUp> events even if the stylus leaves the control's boundaries.</span></span> <span data-ttu-id="9bc99-122">これはなく厳密に必須ですが、優れたユーザー エクスペリエンスのほとんどの場合に必要です。</span><span class="sxs-lookup"><span data-stu-id="9bc99-122">This is not strictly mandatory, but almost always desired for a good user experience.</span></span> <span data-ttu-id="9bc99-123">新しい<xref:System.Windows.Input.StylusPointCollection>を収集する<xref:System.Windows.Input.StylusPoint>データ。</span><span class="sxs-lookup"><span data-stu-id="9bc99-123">Create a new <xref:System.Windows.Input.StylusPointCollection> to gather <xref:System.Windows.Input.StylusPoint> data.</span></span> <span data-ttu-id="9bc99-124">最後に、追加の初期セット<xref:System.Windows.Input.StylusPoint>にデータを<xref:System.Windows.Input.StylusPointCollection>です。</span><span class="sxs-lookup"><span data-stu-id="9bc99-124">Finally, add the initial set of <xref:System.Windows.Input.StylusPoint> data to the <xref:System.Windows.Input.StylusPointCollection>.</span></span>  
   
      [!code-csharp[AdvancedInkTopicsSamples#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#7)]  
   
-5.  <xref:System.Windows.UIElement.OnStylusMove%2A> メソッドをオーバーライドし、<xref:System.Windows.Input.StylusPoint> データを、作成しておいた <xref:System.Windows.Input.StylusPointCollection> オブジェクトに追加します。  
+5.  <span data-ttu-id="9bc99-125">上書き、<xref:System.Windows.UIElement.OnStylusMove%2A>メソッドを追加し、<xref:System.Windows.Input.StylusPoint>にデータを<xref:System.Windows.Input.StylusPointCollection>先ほど作成したオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9bc99-125">Override the <xref:System.Windows.UIElement.OnStylusMove%2A> method and add the <xref:System.Windows.Input.StylusPoint> data to the <xref:System.Windows.Input.StylusPointCollection> object that you created earlier.</span></span>  
   
      [!code-csharp[AdvancedInkTopicsSamples#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#8)]  
   
-6.  <xref:System.Windows.UIElement.OnStylusUp%2A> メソッドをオーバーライドし、<xref:System.Windows.Input.StylusPointCollection> データを持つ新しい <xref:System.Windows.Ink.Stroke> を作成します。  作成した新しい <xref:System.Windows.Ink.Stroke> を <xref:System.Windows.Controls.InkPresenter> の <xref:System.Windows.Controls.InkPresenter.Strokes%2A> コレクションに追加し、スタイラス キャプチャを解放します。  
+6.  <span data-ttu-id="9bc99-126">上書き、<xref:System.Windows.UIElement.OnStylusUp%2A>メソッドされ、新しい作成<xref:System.Windows.Ink.Stroke>で、<xref:System.Windows.Input.StylusPointCollection>データ。</span><span class="sxs-lookup"><span data-stu-id="9bc99-126">Override the <xref:System.Windows.UIElement.OnStylusUp%2A> method and create a new <xref:System.Windows.Ink.Stroke> with the <xref:System.Windows.Input.StylusPointCollection> data.</span></span> <span data-ttu-id="9bc99-127">新しい追加<xref:System.Windows.Ink.Stroke>に作成した、<xref:System.Windows.Controls.InkPresenter.Strokes%2A>のコレクション、<xref:System.Windows.Controls.InkPresenter>と解放のスタイラスをキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="9bc99-127">Add the new <xref:System.Windows.Ink.Stroke> you created to the <xref:System.Windows.Controls.InkPresenter.Strokes%2A> collection of the <xref:System.Windows.Controls.InkPresenter> and release stylus capture.</span></span>  
   
      [!code-csharp[AdvancedInkTopicsSamples#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#10)]  
   
 <a name="EnablingYourControlToAcceptInputTromTheMouse"></a>   
-## 方法 : コントロールでマウスからの入力を受け付けられるようにする  
- 前の例で作成したコントロールをアプリケーションに追加して実行した場合に、マウスを入力デバイスとして使用すると、ストロークが永続化されないことがわかります。  マウスを入力デバイスとして使用する場合にもストロークを永続化するには、次の手順を実行します。  
+## <a name="how-to-enable-your-control-to-accept-input-from-the-mouse"></a><span data-ttu-id="9bc99-128">方法: マウスからの入力を受け入れるようにコントロールを有効にします。</span><span class="sxs-lookup"><span data-stu-id="9bc99-128">How to: Enable Your Control to Accept Input from the Mouse</span></span>  
+ <span data-ttu-id="9bc99-129">場合は、実行、および入力デバイスとして、マウスを使用してアプリケーションに前のコントロールを追加、ストロークは保持されませんがわかります。</span><span class="sxs-lookup"><span data-stu-id="9bc99-129">If you add the preceding control to your application, run it, and use the mouse as an input device, you will notice that the strokes are not persisted.</span></span> <span data-ttu-id="9bc99-130">永続化するには、ストローク入力デバイスとして、マウスを使用すると、次の操作を行います。</span><span class="sxs-lookup"><span data-stu-id="9bc99-130">To persist the strokes when the mouse is used as the input device do the following:</span></span>  
   
-1.  <xref:System.Windows.UIElement.OnMouseLeftButtonDown%2A> をオーバーライドし、新しい <xref:System.Windows.Input.StylusPointCollection> を作成します。イベント発生時のマウスの位置を取得し、そのポイント データを使用して <xref:System.Windows.Input.StylusPoint> を作成して、その <xref:System.Windows.Input.StylusPoint> を <xref:System.Windows.Input.StylusPointCollection> に追加します。  
+1.  <span data-ttu-id="9bc99-131">上書き、<xref:System.Windows.UIElement.OnMouseLeftButtonDown%2A>され、新しい作成<xref:System.Windows.Input.StylusPointCollection>イベントが発生したときに、マウスの位置を取得し、作成、<xref:System.Windows.Input.StylusPoint>ポイント データを使用して、追加、<xref:System.Windows.Input.StylusPoint>を<xref:System.Windows.Input.StylusPointCollection>です。</span><span class="sxs-lookup"><span data-stu-id="9bc99-131">Override the <xref:System.Windows.UIElement.OnMouseLeftButtonDown%2A> and create a new <xref:System.Windows.Input.StylusPointCollection> Get the position of the mouse when the event occurred and create a <xref:System.Windows.Input.StylusPoint> using the point data and add the <xref:System.Windows.Input.StylusPoint> to the <xref:System.Windows.Input.StylusPointCollection>.</span></span>  
   
      [!code-csharp[AdvancedInkTopicsSamples#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#11)]  
   
-2.  <xref:System.Windows.UIElement.OnMouseMove%2A> メソッドをオーバーライドします。  イベント発生時のマウスの位置を取得し、そのポイント データを使用して <xref:System.Windows.Input.StylusPoint> を作成します。  <xref:System.Windows.Input.StylusPoint> を作成しておいた <xref:System.Windows.Input.StylusPointCollection> オブジェクトに追加します。  
+2.  <span data-ttu-id="9bc99-132"><xref:System.Windows.UIElement.OnMouseMove%2A> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="9bc99-132">Override the <xref:System.Windows.UIElement.OnMouseMove%2A> method.</span></span> <span data-ttu-id="9bc99-133">イベントが発生したときに、マウスの位置を取得し、作成、<xref:System.Windows.Input.StylusPoint>ポイント データを使用します。</span><span class="sxs-lookup"><span data-stu-id="9bc99-133">Get the position of the mouse when the event occurred and create a <xref:System.Windows.Input.StylusPoint> using the point data.</span></span>  <span data-ttu-id="9bc99-134">追加、<xref:System.Windows.Input.StylusPoint>を<xref:System.Windows.Input.StylusPointCollection>先ほど作成したオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9bc99-134">Add the <xref:System.Windows.Input.StylusPoint> to the <xref:System.Windows.Input.StylusPointCollection> object that you created earlier.</span></span>  
   
      [!code-csharp[AdvancedInkTopicsSamples#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#12)]  
   
-3.  <xref:System.Windows.UIElement.OnMouseLeftButtonUp%2A> メソッドをオーバーライドします。  <xref:System.Windows.Input.StylusPointCollection> データを持つ新しい <xref:System.Windows.Ink.Stroke> を作成し、作成したその新しい <xref:System.Windows.Ink.Stroke> を <xref:System.Windows.Controls.InkPresenter> の <xref:System.Windows.Controls.InkPresenter.Strokes%2A> コレクションに追加します。  
+3.  <span data-ttu-id="9bc99-135"><xref:System.Windows.UIElement.OnMouseLeftButtonUp%2A> メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="9bc99-135">Override the <xref:System.Windows.UIElement.OnMouseLeftButtonUp%2A> method.</span></span>  <span data-ttu-id="9bc99-136">新規作成<xref:System.Windows.Ink.Stroke>で、<xref:System.Windows.Input.StylusPointCollection>データ、追加、新しい<xref:System.Windows.Ink.Stroke>に作成した、<xref:System.Windows.Controls.InkPresenter.Strokes%2A>のコレクション、<xref:System.Windows.Controls.InkPresenter>です。</span><span class="sxs-lookup"><span data-stu-id="9bc99-136">Create a new <xref:System.Windows.Ink.Stroke> with the <xref:System.Windows.Input.StylusPointCollection> data, and add the new <xref:System.Windows.Ink.Stroke> you created to the <xref:System.Windows.Controls.InkPresenter.Strokes%2A> collection of the <xref:System.Windows.Controls.InkPresenter>.</span></span>  
   
      [!code-csharp[AdvancedInkTopicsSamples#13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#13)]  
   
 <a name="PuttingItTogether"></a>   
-## スタイラスおよびマウス双方からの入力  
- ユーザーがマウスまたはペンのいずれかを使用した場合にインクを収集するカスタム コントロールの例を次に示します。  
+## <a name="putting-it-together"></a><span data-ttu-id="9bc99-137">これをまとめる</span><span class="sxs-lookup"><span data-stu-id="9bc99-137">Putting it together</span></span>  
+ <span data-ttu-id="9bc99-138">次の例は、カスタム コントロール、ユーザーは、マウスやペンのいずれかで使用する場合は、インクを収集します。</span><span class="sxs-lookup"><span data-stu-id="9bc99-138">The following example is a custom control that collects ink when the user uses either the mouse or the pen.</span></span>  
   
  [!code-csharp[AdvancedInkTopicsSamples#20](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#20)]  
 [!code-csharp[AdvancedInkTopicsSamples#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#6)]  
   
 <a name="UsingAdditionalPluginsAndDynamicRenderers"></a>   
-## 追加のプラグインと DynamicRenderer の使用  
- InkCanvas と同様に、カスタム コントロールでも、カスタム <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> オブジェクトや追加の <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> オブジェクトを使用できます。  これらのオブジェクトを <xref:System.Windows.UIElement.StylusPlugIns%2A> コレクションに追加します。  <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> 内での <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> オブジェクトの順番は、インクが描画されるときの外観に影響します。  たとえば、`dynamicRenderer` という <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> およびタブレット ペンのインクをオフセットする `translatePlugin` というカスタムの <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> があるとします。  `translatePlugin` が <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> 内の最初の <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> で、`dynamicRenderer` が 2 番目の場合、ユーザーがペンを動かすと、"流れる" インクがオフセットされます。  `dynamicRenderer` が最初で、`translatePlugin` が 2 番目の場合、インクは、ユーザーがペンを持ち上げるまでオフセットされません。  
+## <a name="using-additional-plug-ins-and-dynamicrenderers"></a><span data-ttu-id="9bc99-139">その他のプラグインと DynamicRenderers を使用します。</span><span class="sxs-lookup"><span data-stu-id="9bc99-139">Using Additional Plug-ins and DynamicRenderers</span></span>  
+ <span data-ttu-id="9bc99-140">InkCanvas と同様に、カスタム コントロールがカスタムを持つことができます<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>および追加<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9bc99-140">Like the InkCanvas, your custom control can have custom <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> and additional <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> objects.</span></span> <span data-ttu-id="9bc99-141">これらは追加、<xref:System.Windows.UIElement.StylusPlugIns%2A>コレクション。</span><span class="sxs-lookup"><span data-stu-id="9bc99-141">Add these to the <xref:System.Windows.UIElement.StylusPlugIns%2A> collection.</span></span> <span data-ttu-id="9bc99-142">順序、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>内のオブジェクト、<xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>がレンダリングされるとき、インクの外観に影響します。</span><span class="sxs-lookup"><span data-stu-id="9bc99-142">The order of the <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> objects in the <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> affects the appearance of the ink when it is rendered.</span></span> <span data-ttu-id="9bc99-143">あると、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>と呼ばれる`dynamicRenderer`とカスタム<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>と呼ばれる`translatePlugin`タブレット ペンのインクをオフセットします。</span><span class="sxs-lookup"><span data-stu-id="9bc99-143">Suppose you have a <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> called `dynamicRenderer` and a custom <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> called `translatePlugin` that offsets the ink from the tablet pen.</span></span> <span data-ttu-id="9bc99-144">場合`translatePlugin`最初<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>で、<xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>と`dynamicRenderer`2 つ目は、ユーザーがペンを移動すると、「流れ出て」、インクがオフセットされます。</span><span class="sxs-lookup"><span data-stu-id="9bc99-144">If `translatePlugin` is the first <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> in the <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>, and `dynamicRenderer` is the second, the ink that "flows" will be offset as the user moves the pen.</span></span> <span data-ttu-id="9bc99-145">場合`dynamicRenderer`は最初、および`translatePlugin`インクは、ユーザーがペンを持ち上げるまでオフセットされませんが 2 番目、します。</span><span class="sxs-lookup"><span data-stu-id="9bc99-145">If `dynamicRenderer` is first, and `translatePlugin` is second, the ink will not be offset until the user lifts the pen.</span></span>  
   
 <a name="AdvancedInkHandling_Conclusion"></a>   
-## まとめ  
- スタイラス イベント メソッドのオーバーライドにより、インクを収集してレンダリングするカスタム コントロールを作成できます。  独自のコントロールを作成し、独自の <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> クラスを派生させ、それらのクラスを <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> に挿入することにより、デジタル インクで想定できるすべての動作を事実上実装できます。  生成されたとおりの <xref:System.Windows.Input.StylusPoint> データにアクセスできるため、アプリケーションの必要に応じて <xref:System.Windows.Input.Stylus> 入力をカスタマイズし、画面上にレンダリングすることができるようになります。  <xref:System.Windows.Input.StylusPoint> データにそのように低いレベルでアクセスできるため、インク コレクションの実装とアプリケーションに最適なパフォーマンスでのレンダリングを実現できます。  
+## <a name="conclusion"></a><span data-ttu-id="9bc99-146">まとめ</span><span class="sxs-lookup"><span data-stu-id="9bc99-146">Conclusion</span></span>  
+ <span data-ttu-id="9bc99-147">収集し、スタイラス イベント メソッドをオーバーライドすることでインクをレンダリングするコントロールを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="9bc99-147">You can create a control that collects and renders ink by overriding the stylus event methods.</span></span> <span data-ttu-id="9bc99-148">独自のコントロールを作成すると、派生する独自<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>クラス、およびそれらの挿入に<xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>、デジタル インクで考えられるあらゆる動作を実装することができます。</span><span class="sxs-lookup"><span data-stu-id="9bc99-148">By creating your own control, deriving your own <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> classes, and inserting them the into <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>, you can implement virtually any behavior imaginable with digital ink.</span></span> <span data-ttu-id="9bc99-149">アクセスがある、<xref:System.Windows.Input.StylusPoint>データが生成された、カスタマイズする機会が提供<xref:System.Windows.Input.Stylus>の入力し、し、アプリケーションの必要に応じて画面に表示します。</span><span class="sxs-lookup"><span data-stu-id="9bc99-149">You have access to the <xref:System.Windows.Input.StylusPoint> data as it is generated, giving you the opportunity to  customize <xref:System.Windows.Input.Stylus> input and render it on the screen as appropriate for your application.</span></span> <span data-ttu-id="9bc99-150">このような低レベルのアクセス権があるため、<xref:System.Windows.Input.StylusPoint>データ、最適なパフォーマンスで、アプリケーションのレンダリングし、インクのコレクションを実装することができます。</span><span class="sxs-lookup"><span data-stu-id="9bc99-150">Because you have such low-level access to the <xref:System.Windows.Input.StylusPoint> data, you can implement ink collection and render it with optimal performance for your application.</span></span>  
   
-## 参照  
- [高度なインク処理](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)   
- [Accessing and Manipulating Pen Input \(ペン入力のアクセスと操作\)](http://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)
+## <a name="see-also"></a><span data-ttu-id="9bc99-151">関連項目</span><span class="sxs-lookup"><span data-stu-id="9bc99-151">See Also</span></span>  
+ [<span data-ttu-id="9bc99-152">高度なインク処理</span><span class="sxs-lookup"><span data-stu-id="9bc99-152">Advanced Ink Handling</span></span>](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)  
+ [<span data-ttu-id="9bc99-153">アクセスとペン入力を操作します。</span><span class="sxs-lookup"><span data-stu-id="9bc99-153">Accessing and Manipulating Pen Input</span></span>](http://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)

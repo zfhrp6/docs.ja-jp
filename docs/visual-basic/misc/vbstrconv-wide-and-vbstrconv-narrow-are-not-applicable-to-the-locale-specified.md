@@ -1,45 +1,28 @@
 ---
-title: "VbStrConv.Wide と VbStrConv.Narrow が指定されたロケールには適用されません。Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "VbStrConv.Wide および VbStrConv.Narrow は、指定されたロケールに適用できません"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vbrArgument_WideNarrowNotApplicable
+f1_keywords: vbrArgument_WideNarrowNotApplicable
 ms.assetid: 5811098c-b124-4caf-8a2b-f81f12f1d5f5
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9424a1f747b1294ee7bdb8ef42187d2b311baa9c
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 23c3dcf269d66fd590f67c609cb3ca494496ebdf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="vbstrconvwide-and-vbstrconvnarrow-are-not-applicable-to-the-locale-specified"></a>VbStrConv.Wide および VbStrConv.Narrow は、指定されたロケールに適用できません
-アプリケーションは `VbStrConv` 列挙型のメンバー `Wide` または `Narrow`を使おうとしていますが、これらのメンバーは指定されたロケールには適用できません。  
+# <a name="vbstrconvwide-and-vbstrconvnarrow-are-not-applicable-to-the-locale-specified"></a><span data-ttu-id="88a33-102">VbStrConv.Wide および VbStrConv.Narrow は、指定されたロケールに適用できません</span><span class="sxs-lookup"><span data-stu-id="88a33-102">VbStrConv.Wide and VbStrConv.Narrow are not applicable to the locale specified</span></span>
+<span data-ttu-id="88a33-103">アプリケーションは `VbStrConv` 列挙型のメンバー `Wide` または `Narrow`を使おうとしていますが、これらのメンバーは指定されたロケールには適用できません。</span><span class="sxs-lookup"><span data-stu-id="88a33-103">The application is attempting to use the `VbStrConv` enumeration members `Wide` or `Narrow`, which are not applicable to the specified locale.</span></span>  
   
-## <a name="to-correct-this-error"></a>このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="88a33-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="88a33-104">To correct this error</span></span>  
   
-1.  `VbStrConv.Wide` または `VbStrConv.Narrow`のいずれかを削除します。  
+1.  <span data-ttu-id="88a33-105">`VbStrConv.Wide` または `VbStrConv.Narrow`のいずれかを削除します。</span><span class="sxs-lookup"><span data-stu-id="88a33-105">Remove either `VbStrConv.Wide` or `VbStrConv.Narrow`.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Globalization>   
- [NOTINBUILD VbStrConv 列挙型](http://msdn.microsoft.com/en-us/59f83dd9-6361-47df-a836-02ba9d4cb936)   
- [.NET Framework ベースの国際対応アプリケーションの概要](https://docs.microsoft.com/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)
+## <a name="see-also"></a><span data-ttu-id="88a33-106">関連項目</span><span class="sxs-lookup"><span data-stu-id="88a33-106">See Also</span></span>  
+ <xref:System.Globalization>  
+ [<span data-ttu-id="88a33-107">ビルド内にありません: VbStrConv 列挙型</span><span class="sxs-lookup"><span data-stu-id="88a33-107">NOTINBUILD VbStrConv Enumeration</span></span>](http://msdn.microsoft.com/en-us/59f83dd9-6361-47df-a836-02ba9d4cb936)  
+ [<span data-ttu-id="88a33-108">.NET Framework ベースの国際対応アプリケーションの概要</span><span class="sxs-lookup"><span data-stu-id="88a33-108">Introduction to International Applications Based on the .NET Framework</span></span>](/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)

@@ -5,29 +5,27 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 106e1ae03a39594aab907e130c139b84f579257d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: f4e4eebce1779f1b32a74819fea19fb23204b80c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="ltapplicationgt-element-net-native"></a>&lt;Application&gt; 要素 (.NET ネイティブ)
-実行時にリフレクションに使用可能なメタデータを持つアプリケーション全体の型と型のメンバーのコンテナーとして機能し、アプリ内のすべてのプログラム要素にランタイム リフレクション ポリシーを適用します。  
+# <a name="ltapplicationgt-element-net-native"></a><span data-ttu-id="d817e-102">&lt;Application&gt; 要素 (.NET ネイティブ)</span><span class="sxs-lookup"><span data-stu-id="d817e-102">&lt;Application&gt; Element (.NET Native)</span></span>
+<span data-ttu-id="d817e-103">実行時にリフレクションに使用可能なメタデータを持つアプリケーション全体の型と型のメンバーのコンテナーとして機能し、アプリ内のすべてのプログラム要素にランタイム リフレクション ポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="d817e-103">Serves as a container for application-wide types and type members whose metadata is available for reflection at run time, and applies runtime reflection policy to all the program elements in an app.</span></span>  
   
- \<Directives> 要素  
-\<Application> 要素 (rd.xml)  
+ <span data-ttu-id="d817e-104">\<Directives> 要素</span><span class="sxs-lookup"><span data-stu-id="d817e-104">\<Directives> Element</span></span>  
+<span data-ttu-id="d817e-105">\<Application> 要素 (rd.xml)</span><span class="sxs-lookup"><span data-stu-id="d817e-105">\<Application> Element (rd.xml)</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="d817e-106">構文</span><span class="sxs-lookup"><span data-stu-id="d817e-106">Syntax</span></span>  
   
 ```xml  
 <Application Activate="policy_setting"  
@@ -42,62 +40,61 @@ ms.lasthandoff: 08/21/2017
              MarshalStructure="policy_setting" />  
 ```  
   
-## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。 「子要素」の表では、ポリシーは実行時に特定のプログラム要素で使用可能になるメタデータの種類を示します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="d817e-107">属性および要素</span><span class="sxs-lookup"><span data-stu-id="d817e-107">Attributes and Elements</span></span>  
+ <span data-ttu-id="d817e-108">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="d817e-108">The following sections describe attributes, child elements, and parent elements.</span></span> <span data-ttu-id="d817e-109">「子要素」の表では、ポリシーは実行時に特定のプログラム要素で使用可能になるメタデータの種類を示します。</span><span class="sxs-lookup"><span data-stu-id="d817e-109">In the Child Elements table, policy refers to the kind of metadata that is made available for particular program elements at run time.</span></span>  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a><span data-ttu-id="d817e-110">属性</span><span class="sxs-lookup"><span data-stu-id="d817e-110">Attributes</span></span>  
   
-|属性|属性の型|説明|  
+|<span data-ttu-id="d817e-111">属性</span><span class="sxs-lookup"><span data-stu-id="d817e-111">Attribute</span></span>|<span data-ttu-id="d817e-112">属性の型</span><span class="sxs-lookup"><span data-stu-id="d817e-112">Attribute type</span></span>|<span data-ttu-id="d817e-113">説明</span><span class="sxs-lookup"><span data-stu-id="d817e-113">Description</span></span>|  
 |---------------|--------------------|-----------------|  
-|`Activate`|リフレクション|省略可能な属性です。 コンストラクターへの実行時アクセスを制御して、インスタンスのアクティブ化を有効にします。|  
-|`Browse`|リフレクション|省略可能な属性です。 型に関する情報の照会や型の列挙を制御しますが、実行時の動的アクセスは有効にしません。|  
-|`Dynamic`|リフレクション|省略可能な属性です。 コンストラクター、メソッド、フィールド、プロパティ、およびイベントを含むすべての型のメンバーへの実行時アクセスを制御して、動的プログラミングを有効にします。|  
-|`Serialize`|シリアル化|省略可能な属性です。 コンストラクター、フィールド、およびプロパティへの実行時アクセスを制御し、Newtonsoft の JSON シリアライザーなどのライブラリによって型インスタンスをシリアル化および逆シリアル化できるようにします。|  
-|`DataContractSerializer`|シリアル化|省略可能な属性です。 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=fullName> クラスを使用するシリアル化のポリシーを制御します。|  
-|`DataContractJsonSerializer`|シリアル化|省略可能な属性です。 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=fullName> クラスを使用する JSON シリアル化のポリシーを制御します。|  
-|`XmlSerializer`|シリアル化|省略可能な属性です。 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName> クラスを使用する XML シリアル化のポリシーを制御します。|  
-|`MarshalObject`|Interop|省略可能な属性です。 Windows ランタイムと COM に参照型をマーシャリングするためのポリシーを制御します。|  
-|`MarshalDelegate`|Interop|省略可能な属性です。 ネイティブ コードへの関数ポインターとしてデリゲート型をマーシャリングするためのポリシーを制御します。|  
-|`MarshalStructure`|Interop|省略可能な属性です。 ネイティブ コードに構造体をマーシャリングするためのポリシーを制御します。|  
+|`Activate`|<span data-ttu-id="d817e-114">リフレクション</span><span class="sxs-lookup"><span data-stu-id="d817e-114">Reflection</span></span>|<span data-ttu-id="d817e-115">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="d817e-115">Optional attribute.</span></span> <span data-ttu-id="d817e-116">コンストラクターへの実行時アクセスを制御して、インスタンスのアクティブ化を有効にします。</span><span class="sxs-lookup"><span data-stu-id="d817e-116">Controls runtime access to constructors to enable activation of instances.</span></span>|  
+|`Browse`|<span data-ttu-id="d817e-117">リフレクション</span><span class="sxs-lookup"><span data-stu-id="d817e-117">Reflection</span></span>|<span data-ttu-id="d817e-118">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="d817e-118">Optional attribute.</span></span> <span data-ttu-id="d817e-119">型に関する情報の照会や型の列挙を制御しますが、実行時の動的アクセスは有効にしません。</span><span class="sxs-lookup"><span data-stu-id="d817e-119">Controls querying for information about or enumerating the types, but does not enable any dynamic access at run time.</span></span>|  
+|`Dynamic`|<span data-ttu-id="d817e-120">リフレクション</span><span class="sxs-lookup"><span data-stu-id="d817e-120">Reflection</span></span>|<span data-ttu-id="d817e-121">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="d817e-121">Optional attribute.</span></span> <span data-ttu-id="d817e-122">コンストラクター、メソッド、フィールド、プロパティ、およびイベントを含むすべての型のメンバーへの実行時アクセスを制御して、動的プログラミングを有効にします。</span><span class="sxs-lookup"><span data-stu-id="d817e-122">Controls runtime access to all type members, including constructors, methods, fields, properties, and events, to enable dynamic programming.</span></span>|  
+|`Serialize`|<span data-ttu-id="d817e-123">シリアル化</span><span class="sxs-lookup"><span data-stu-id="d817e-123">Serialization</span></span>|<span data-ttu-id="d817e-124">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="d817e-124">Optional attribute.</span></span> <span data-ttu-id="d817e-125">コンストラクター、フィールド、およびプロパティへの実行時アクセスを制御し、Newtonsoft の JSON シリアライザーなどのライブラリによって型インスタンスをシリアル化および逆シリアル化できるようにします。</span><span class="sxs-lookup"><span data-stu-id="d817e-125">Controls runtime access to constructors, fields, and properties, to enable type instances to be serialized and deserialized by libraries such as the Newtonsoft JSON serializer.</span></span>|  
+|`DataContractSerializer`|<span data-ttu-id="d817e-126">シリアル化</span><span class="sxs-lookup"><span data-stu-id="d817e-126">Serialization</span></span>|<span data-ttu-id="d817e-127">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="d817e-127">Optional Attribute.</span></span> <span data-ttu-id="d817e-128"><xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> クラスを使用するシリアル化のポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="d817e-128">Controls policy for serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> class.</span></span>|  
+|`DataContractJsonSerializer`|<span data-ttu-id="d817e-129">シリアル化</span><span class="sxs-lookup"><span data-stu-id="d817e-129">Serialization</span></span>|<span data-ttu-id="d817e-130">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="d817e-130">Optional Attribute.</span></span> <span data-ttu-id="d817e-131"><xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> クラスを使用する JSON シリアル化のポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="d817e-131">Controls policy for JSON serialization that uses the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> class.</span></span>|  
+|`XmlSerializer`|<span data-ttu-id="d817e-132">シリアル化</span><span class="sxs-lookup"><span data-stu-id="d817e-132">Serialization</span></span>|<span data-ttu-id="d817e-133">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="d817e-133">Optional Attribute.</span></span> <span data-ttu-id="d817e-134"><xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> クラスを使用する XML シリアル化のポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="d817e-134">Controls policy for XML serialization that uses the <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> class.</span></span>|  
+|`MarshalObject`|<span data-ttu-id="d817e-135">Interop</span><span class="sxs-lookup"><span data-stu-id="d817e-135">Interop</span></span>|<span data-ttu-id="d817e-136">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="d817e-136">Optional Attribute.</span></span> <span data-ttu-id="d817e-137">Windows ランタイムと COM に参照型をマーシャリングするためのポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="d817e-137">Controls policy for marshaling reference types to Windows Runtime and COM.</span></span>|  
+|`MarshalDelegate`|<span data-ttu-id="d817e-138">Interop</span><span class="sxs-lookup"><span data-stu-id="d817e-138">Interop</span></span>|<span data-ttu-id="d817e-139">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="d817e-139">Optional Attribute.</span></span> <span data-ttu-id="d817e-140">ネイティブ コードへの関数ポインターとしてデリゲート型をマーシャリングするためのポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="d817e-140">Controls policy for marshaling delegate types as function pointers to native code.</span></span>|  
+|`MarshalStructure`|<span data-ttu-id="d817e-141">Interop</span><span class="sxs-lookup"><span data-stu-id="d817e-141">Interop</span></span>|<span data-ttu-id="d817e-142">省略可能な属性です。</span><span class="sxs-lookup"><span data-stu-id="d817e-142">Optional Attribute.</span></span> <span data-ttu-id="d817e-143">ネイティブ コードに構造体をマーシャリングするためのポリシーを制御します。</span><span class="sxs-lookup"><span data-stu-id="d817e-143">Controls policy for marshaling structures to native code.</span></span>|  
   
-## <a name="all-attributes"></a>すべての属性  
+## <a name="all-attributes"></a><span data-ttu-id="d817e-144">すべての属性</span><span class="sxs-lookup"><span data-stu-id="d817e-144">All attributes</span></span>  
   
-|値|説明|  
+|<span data-ttu-id="d817e-145">値</span><span class="sxs-lookup"><span data-stu-id="d817e-145">Value</span></span>|<span data-ttu-id="d817e-146">説明</span><span class="sxs-lookup"><span data-stu-id="d817e-146">Description</span></span>|  
 |-----------|-----------------|  
-|*policy_setting*|アプリで型に適用する、このポリシーの設定です。 指定できる値は、`All`、`Auto`、`Excluded`、`Public`、`PublicAndInternal`、`Required Public`、`Required PublicAndInternal`、および `Required All` です。 詳細については、「[ランタイム ディレクティブのポリシー設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)」を参照してください。|  
+|<span data-ttu-id="d817e-147">*policy_setting*</span><span class="sxs-lookup"><span data-stu-id="d817e-147">*policy_setting*</span></span>|<span data-ttu-id="d817e-148">アプリで型に適用する、このポリシーの設定です。</span><span class="sxs-lookup"><span data-stu-id="d817e-148">The setting for this policy to apply to the types in the app.</span></span> <span data-ttu-id="d817e-149">指定できる値は、`All`、`Auto`、`Excluded`、`Public`、`PublicAndInternal`、`Required Public`、`Required PublicAndInternal`、および `Required All` です。</span><span class="sxs-lookup"><span data-stu-id="d817e-149">Possible values are `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, and `Required All`.</span></span> <span data-ttu-id="d817e-150">詳細については、「[ランタイム ディレクティブのポリシー設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d817e-150">For more information, see [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md).</span></span>|  
   
-### <a name="child-elements"></a>子要素  
+### <a name="child-elements"></a><span data-ttu-id="d817e-151">子要素</span><span class="sxs-lookup"><span data-stu-id="d817e-151">Child Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="d817e-152">要素</span><span class="sxs-lookup"><span data-stu-id="d817e-152">Element</span></span>|<span data-ttu-id="d817e-153">説明</span><span class="sxs-lookup"><span data-stu-id="d817e-153">Description</span></span>|  
 |-------------|-----------------|  
-|[\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md)|特定のアセンブリ内のすべての型にポリシーを適用します。|  
-|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|特定の名前空間内のすべての型にポリシーを適用します。|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|クラスや構造体などの特定の型にポリシーを適用します。|  
-|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|構築されたジェネリック型にポリシーを適用します。 たとえば、[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) 要素を使用して `List<String>` 型のポリシーを定義できます。|  
-|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|特定の型のメソッドにポリシーを適用します。|  
-|[\<MethodInstantiation>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|構築されたジェネリック メソッドにポリシーを適用します。|  
-|[\<Property>](../../../docs/framework/net-native/property-element-net-native.md)|特定の型のプロパティにポリシーを適用します。|  
-|[\<Field>](../../../docs/framework/net-native/field-element-net-native.md)|特定の型のフィールドにポリシーを適用します。|  
-|[\<Event>](../../../docs/framework/net-native/event-element-net-native.md)|特定の型のイベントにポリシーを適用します。|  
+|[<span data-ttu-id="d817e-154">\<Assembly></span><span class="sxs-lookup"><span data-stu-id="d817e-154">\<Assembly></span></span>](../../../docs/framework/net-native/assembly-element-net-native.md)|<span data-ttu-id="d817e-155">特定のアセンブリ内のすべての型にポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="d817e-155">Applies policy to all the types in a particular assembly.</span></span>|  
+|[<span data-ttu-id="d817e-156">\<Namespace></span><span class="sxs-lookup"><span data-stu-id="d817e-156">\<Namespace></span></span>](../../../docs/framework/net-native/namespace-element-net-native.md)|<span data-ttu-id="d817e-157">特定の名前空間内のすべての型にポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="d817e-157">Applies policy to all the types in a particular namespace.</span></span>|  
+|[<span data-ttu-id="d817e-158">\<Type></span><span class="sxs-lookup"><span data-stu-id="d817e-158">\<Type></span></span>](../../../docs/framework/net-native/type-element-net-native.md)|<span data-ttu-id="d817e-159">クラスや構造体などの特定の型にポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="d817e-159">Applies policy to a particular type, such as a class or structure.</span></span>|  
+|[<span data-ttu-id="d817e-160">\<TypeInstantiation></span><span class="sxs-lookup"><span data-stu-id="d817e-160">\<TypeInstantiation></span></span>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|<span data-ttu-id="d817e-161">構築されたジェネリック型にポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="d817e-161">Applies policy to a constructed generic type.</span></span> <span data-ttu-id="d817e-162">たとえば、[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) 要素を使用して `List<String>` 型のポリシーを定義できます。</span><span class="sxs-lookup"><span data-stu-id="d817e-162">For example, a [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element could be used to define policy for a `List<String>` type.</span></span>|  
+|[<span data-ttu-id="d817e-163">\<Method></span><span class="sxs-lookup"><span data-stu-id="d817e-163">\<Method></span></span>](../../../docs/framework/net-native/method-element-net-native.md)|<span data-ttu-id="d817e-164">特定の型のメソッドにポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="d817e-164">Applies policy to a method on a particular type.</span></span>|  
+|[<span data-ttu-id="d817e-165">\<MethodInstantiation></span><span class="sxs-lookup"><span data-stu-id="d817e-165">\<MethodInstantiation></span></span>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|<span data-ttu-id="d817e-166">構築されたジェネリック メソッドにポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="d817e-166">Applies policy to a constructed generic method.</span></span>|  
+|[<span data-ttu-id="d817e-167">\<Property></span><span class="sxs-lookup"><span data-stu-id="d817e-167">\<Property></span></span>](../../../docs/framework/net-native/property-element-net-native.md)|<span data-ttu-id="d817e-168">特定の型のプロパティにポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="d817e-168">Applies policy to a property on a particular type.</span></span>|  
+|[<span data-ttu-id="d817e-169">\<Field></span><span class="sxs-lookup"><span data-stu-id="d817e-169">\<Field></span></span>](../../../docs/framework/net-native/field-element-net-native.md)|<span data-ttu-id="d817e-170">特定の型のフィールドにポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="d817e-170">Applies policy to a field on a particular type.</span></span>|  
+|[<span data-ttu-id="d817e-171">\<Event></span><span class="sxs-lookup"><span data-stu-id="d817e-171">\<Event></span></span>](../../../docs/framework/net-native/event-element-net-native.md)|<span data-ttu-id="d817e-172">特定の型のイベントにポリシーを適用します。</span><span class="sxs-lookup"><span data-stu-id="d817e-172">Applies policy to an event on a particular type.</span></span>|  
   
-### <a name="parent-elements"></a>親要素  
+### <a name="parent-elements"></a><span data-ttu-id="d817e-173">親要素</span><span class="sxs-lookup"><span data-stu-id="d817e-173">Parent Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="d817e-174">要素</span><span class="sxs-lookup"><span data-stu-id="d817e-174">Element</span></span>|<span data-ttu-id="d817e-175">説明</span><span class="sxs-lookup"><span data-stu-id="d817e-175">Description</span></span>|  
 |-------------|-----------------|  
-|[\<Directives>](../../../docs/framework/net-native/directives-element-net-native.md)|ランタイム ディレクティブ ファイルのルート要素です。|  
+|[<span data-ttu-id="d817e-176">\<Directives></span><span class="sxs-lookup"><span data-stu-id="d817e-176">\<Directives></span></span>](../../../docs/framework/net-native/directives-element-net-native.md)|<span data-ttu-id="d817e-177">ランタイム ディレクティブ ファイルのルート要素です。</span><span class="sxs-lookup"><span data-stu-id="d817e-177">The root element of a runtime directives file.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- [\<Directives>](../../../docs/framework/net-native/directives-element-net-native.md) 要素には、0 または 1 個の `<Application>` 要素を含めることができます。 1 つのリフレクション ディレクティブ ファイルに複数の `<Application>` 要素を含めることはサポートされていません。  
+## <a name="remarks"></a><span data-ttu-id="d817e-178">コメント</span><span class="sxs-lookup"><span data-stu-id="d817e-178">Remarks</span></span>  
+ <span data-ttu-id="d817e-179">[\<Directives>](../../../docs/framework/net-native/directives-element-net-native.md) 要素には、0 または 1 個の `<Application>` 要素を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="d817e-179">The [\<Directives>](../../../docs/framework/net-native/directives-element-net-native.md) element can contain zero or one `<Application>` element.</span></span> <span data-ttu-id="d817e-180">1 つのリフレクション ディレクティブ ファイルに複数の `<Application>` 要素を含めることはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="d817e-180">Multiple `<Application>` elements in a single reflection directives file are not supported.</span></span>  
   
- `<Application>` 要素は、次の 2 とおりの方法で使用できます。  
+ <span data-ttu-id="d817e-181">`<Application>` 要素は、次の 2 とおりの方法で使用できます。</span><span class="sxs-lookup"><span data-stu-id="d817e-181">The `<Application>` element can be used in one of two ways:</span></span>  
   
--   実行時に必要なメタデータを持つプログラム要素を定義するためのコンテナーとして。 この場合、`<Application>` 要素に属性は必要ありません。 コンパイル時に、コンパイラ ツールは、.NET Framework コア ライブラリを含むすべてのライブラリで、`<Application>` 要素の子要素により示されるプログラム要素を検索します。 一方、[\<Library>](../../../docs/framework/net-native/library-element-net-native.md) の子要素により示されるプログラム要素を検索する場合、コンパイラ ツールは [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) 要素により指定されたライブラリのみを検索します。  
+-   <span data-ttu-id="d817e-182">実行時に必要なメタデータを持つプログラム要素を定義するためのコンテナーとして。</span><span class="sxs-lookup"><span data-stu-id="d817e-182">As a container to define the program elements whose metadata is needed at run time.</span></span> <span data-ttu-id="d817e-183">この場合、`<Application>` 要素に属性は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="d817e-183">In this case, the `<Application>` element need not have any attributes.</span></span> <span data-ttu-id="d817e-184">コンパイル時に、コンパイラ ツールは、.NET Framework コア ライブラリを含むすべてのライブラリで、`<Application>` 要素の子要素により示されるプログラム要素を検索します。</span><span class="sxs-lookup"><span data-stu-id="d817e-184">At compile time, compiler tools search all libraries, including .NET Framework core libraries, for program elements identified by child elements of the `<Application>` element.</span></span> <span data-ttu-id="d817e-185">一方、[\<Library>](../../../docs/framework/net-native/library-element-net-native.md) の子要素により示されるプログラム要素を検索する場合、コンパイラ ツールは [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) 要素により指定されたライブラリのみを検索します。</span><span class="sxs-lookup"><span data-stu-id="d817e-185">In contrast, compiler tools search only the library designated by the [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) element for program elements identified by the child elements of [\<Library>](../../../docs/framework/net-native/library-element-net-native.md).</span></span>  
   
--   リフレクション、シリアル化、および相互運用に関するアプリケーション全体のポリシーを設定する要素として。 `<Application>` 要素の属性はアプリケーション全体のポリシーを定義します。このポリシーは、`<Application>` 要素または [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) 要素により定義される子要素によってオーバーライドできます。  
+-   <span data-ttu-id="d817e-186">リフレクション、シリアル化、および相互運用に関するアプリケーション全体のポリシーを設定する要素として。</span><span class="sxs-lookup"><span data-stu-id="d817e-186">As an element that sets application-wide policy for reflection, serialization, and interop.</span></span> <span data-ttu-id="d817e-187">`<Application>` 要素の属性はアプリケーション全体のポリシーを定義します。このポリシーは、`<Application>` 要素または [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) 要素により定義される子要素によってオーバーライドできます。</span><span class="sxs-lookup"><span data-stu-id="d817e-187">The attributes of the `<Application>` element define application-wide policy, which may be overridden by the child elements defined by the `<Application>` or [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) element.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [\<Library> 要素](../../../docs/framework/net-native/library-element-net-native.md)   
- [\<Directives> 要素](../../../docs/framework/net-native/directives-element-net-native.md)   
- [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)   
- [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-
+## <a name="see-also"></a><span data-ttu-id="d817e-188">関連項目</span><span class="sxs-lookup"><span data-stu-id="d817e-188">See Also</span></span>  
+ [<span data-ttu-id="d817e-189">\<ライブラリ > 要素</span><span class="sxs-lookup"><span data-stu-id="d817e-189">\<Library> Element</span></span>](../../../docs/framework/net-native/library-element-net-native.md)  
+ [<span data-ttu-id="d817e-190">\<ディレクティブ > 要素</span><span class="sxs-lookup"><span data-stu-id="d817e-190">\<Directives> Element</span></span>](../../../docs/framework/net-native/directives-element-net-native.md)  
+ [<span data-ttu-id="d817e-191">ランタイム ディレクティブ要素</span><span class="sxs-lookup"><span data-stu-id="d817e-191">Runtime Directive Elements</span></span>](../../../docs/framework/net-native/runtime-directive-elements.md)  
+ [<span data-ttu-id="d817e-192">ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス</span><span class="sxs-lookup"><span data-stu-id="d817e-192">Runtime Directives (rd.xml) Configuration File Reference</span></span>](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)

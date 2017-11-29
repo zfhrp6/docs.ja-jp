@@ -1,57 +1,63 @@
 ---
-title: "方法 : コレクションにバインドして選択に基づく情報を表示する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "データ バインディング, バインド (コレクションに)"
-  - "データ バインディング, 作成 (データ コレクションのビューを)"
-  - "データ バインディング, 選択 (ビューのデータを)"
-  - "データ コレクション, 選択 (ビューのデータを)"
+title: "方法 : コレクションにバインドして選択に基づく情報を表示する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- data collections [WPF], selecting data for views
+- data binding [WPF], creating views of data collections
+- data binding [WPF], selecting data for views
+- data binding [WPF], binding to collections
 ms.assetid: 952a7d76-dd29-49e5-86f5-32c4530e70eb
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e92621e7e62750ae5ad73158232ccdabfb22287a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : コレクションにバインドして選択に基づく情報を表示する
-簡単なマスター詳細シナリオには、<xref:System.Windows.Controls.ListBox> のようなデータ バインドされた <xref:System.Windows.Controls.ItemsControl> があります。  ユーザー選択に基づいて、選択された項目に関する情報をさらに表示します。  このシナリオを実装する方法を次の例に示します。  
+# <a name="how-to-bind-to-a-collection-and-display-information-based-on-selection"></a><span data-ttu-id="21cc7-102">方法 : コレクションにバインドして選択に基づく情報を表示する</span><span class="sxs-lookup"><span data-stu-id="21cc7-102">How to: Bind to a Collection and Display Information Based on Selection</span></span>
+<span data-ttu-id="21cc7-103">マスター/詳細形式の単純なシナリオでデータ バインドがある<xref:System.Windows.Controls.ItemsControl>など、<xref:System.Windows.Controls.ListBox>です。</span><span class="sxs-lookup"><span data-stu-id="21cc7-103">In a simple master-detail scenario, you have a data-bound <xref:System.Windows.Controls.ItemsControl> such as a <xref:System.Windows.Controls.ListBox>.</span></span> <span data-ttu-id="21cc7-104">詳細については、選択した項目を表示するユーザーの選択に基づいて、です。</span><span class="sxs-lookup"><span data-stu-id="21cc7-104">Based on user selection, you display more information about the selected item.</span></span> <span data-ttu-id="21cc7-105">この例では、このシナリオを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="21cc7-105">This example shows how to implement this scenario.</span></span>  
   
-## 使用例  
- この例では、`People` は `Person` クラスの <xref:System.Collections.ObjectModel.ObservableCollection%601> です。  この `Person` クラスには、`FirstName`、`LastName`、および `HomeTown` という 3 つのプロパティが含まれ、すべて `string` 型です。  
+## <a name="example"></a><span data-ttu-id="21cc7-106">例</span><span class="sxs-lookup"><span data-stu-id="21cc7-106">Example</span></span>  
+ <span data-ttu-id="21cc7-107">この例では`People`は、<xref:System.Collections.ObjectModel.ObservableCollection%601>の`Person`クラスです。</span><span class="sxs-lookup"><span data-stu-id="21cc7-107">In this example, `People` is an <xref:System.Collections.ObjectModel.ObservableCollection%601> of `Person` classes.</span></span> <span data-ttu-id="21cc7-108">これは、`Person`クラスには、3 つのプロパティが含まれています: `FirstName`、 `LastName`、および`HomeTown`、すべての種類の`string`します。</span><span class="sxs-lookup"><span data-stu-id="21cc7-108">This `Person` class contains three properties: `FirstName`, `LastName`, and `HomeTown`, all of type `string`.</span></span>  
   
- [!code-xml[CollectionBinding#Source](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Window1.xaml#source)]  
-[!code-xml[CollectionBinding#UI](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Window1.xaml#ui)]  
+ [!code-xaml[CollectionBinding#Source](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Window1.xaml#source)]  
+[!code-xaml[CollectionBinding#UI](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Window1.xaml#ui)]  
   
- <xref:System.Windows.Controls.ContentControl> は、`Person` の情報の提示方法を定義する、次のような <xref:System.Windows.DataTemplate> を使用します。  
+ <span data-ttu-id="21cc7-109"><xref:System.Windows.Controls.ContentControl> 、次を使用して<xref:System.Windows.DataTemplate>を定義する方法の詳細について、`Person`が表示されます。</span><span class="sxs-lookup"><span data-stu-id="21cc7-109">The <xref:System.Windows.Controls.ContentControl> uses the following <xref:System.Windows.DataTemplate> that defines how the information of a `Person` is presented:</span></span>  
   
- [!code-xml[CollectionBinding#DetailTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Window1.xaml#detailtemplate)]  
+ [!code-xaml[CollectionBinding#DetailTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Window1.xaml#detailtemplate)]  
   
- この例が生成するスクリーンショットを次に示します。  <xref:System.Windows.Controls.ContentControl> は、選択されている人の他のプロパティを示します。  
+ <span data-ttu-id="21cc7-110">この例の生成のスクリーン ショットを次に示します。</span><span class="sxs-lookup"><span data-stu-id="21cc7-110">The following is a screenshot of what the example produces.</span></span> <span data-ttu-id="21cc7-111"><xref:System.Windows.Controls.ContentControl>選択されているユーザーの他のプロパティを示しています。</span><span class="sxs-lookup"><span data-stu-id="21cc7-111">The <xref:System.Windows.Controls.ContentControl> shows the other properties of the person selected.</span></span>  
   
- ![コレクションへのバインディング](../../../../docs/framework/wpf/data/media/databinding-collectionbindingsample.png "DataBinding\_CollectionBindingSample")  
+ <span data-ttu-id="21cc7-112">![コレクションへのバインド](../../../../docs/framework/wpf/data/media/databinding-collectionbindingsample.png "DataBinding_CollectionBindingSample")</span><span class="sxs-lookup"><span data-stu-id="21cc7-112">![Binding to a collection](../../../../docs/framework/wpf/data/media/databinding-collectionbindingsample.png "DataBinding_CollectionBindingSample")</span></span>  
   
- この例では、次の 2 つの点に注意する必要があります。  
+ <span data-ttu-id="21cc7-113">この例では注意する 2 つの点は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="21cc7-113">The two things to notice in this example are:</span></span>  
   
-1.  <xref:System.Windows.Controls.ListBox> と <xref:System.Windows.Controls.ContentControl> は、同じソースにバインドしています。  どちらのコントロールもコレクション オブジェクト全体にバインドしているので、どちらのバインディングの <xref:System.Windows.Data.Binding.Path%2A> プロパティも指定されていません。  
+1.  <span data-ttu-id="21cc7-114"><xref:System.Windows.Controls.ListBox>と<xref:System.Windows.Controls.ContentControl>同じソースにバインドします。</span><span class="sxs-lookup"><span data-stu-id="21cc7-114">The <xref:System.Windows.Controls.ListBox> and the <xref:System.Windows.Controls.ContentControl> bind to the same source.</span></span> <span data-ttu-id="21cc7-115"><xref:System.Windows.Data.Binding.Path%2A>コレクション オブジェクト全体に両方のコントロールをバインドするため、どちらのバインディングのプロパティが指定されていません。</span><span class="sxs-lookup"><span data-stu-id="21cc7-115">The <xref:System.Windows.Data.Binding.Path%2A> properties of both bindings are not specified because both controls are binding to the entire collection object.</span></span>  
   
-2.  この例が動作するには、<xref:System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItem%2A> プロパティを `true` に設定する必要があります。  このプロパティを設定すると、選択されている項目は常に <xref:System.Windows.Controls.ItemCollection.CurrentItem%2A> として設定されます。  または、<xref:System.Windows.Controls.ListBox> が <xref:System.Windows.Data.CollectionViewSource> からデータを取得する場合は、選択と現在の項目が自動的に同期されます。  
+2.  <span data-ttu-id="21cc7-116">設定する必要があります、<xref:System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItem%2A>プロパティを`true`これを行います。</span><span class="sxs-lookup"><span data-stu-id="21cc7-116">You must set the <xref:System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItem%2A> property to `true` for this to work.</span></span> <span data-ttu-id="21cc7-117">このプロパティを設定すると、選択した項目として常に設定されている、<xref:System.Windows.Controls.ItemCollection.CurrentItem%2A>です。</span><span class="sxs-lookup"><span data-stu-id="21cc7-117">Setting this property ensures that the selected item is always set as the <xref:System.Windows.Controls.ItemCollection.CurrentItem%2A>.</span></span> <span data-ttu-id="21cc7-118">また場合、<xref:System.Windows.Controls.ListBox>からデータを取得、 <xref:System.Windows.Data.CollectionViewSource>、選択範囲と通貨を自動的に同期します。</span><span class="sxs-lookup"><span data-stu-id="21cc7-118">Alternatively, if the <xref:System.Windows.Controls.ListBox> gets it data from a <xref:System.Windows.Data.CollectionViewSource>, it synchronizes selection and currency automatically.</span></span>  
   
- `Person` クラスが次のように `ToString` メソッドをオーバーライドすることに注意してください。  既定では、<xref:System.Windows.Controls.ListBox> は `ToString` を呼び出して、バインドされたコレクション内の各オブジェクトの文字列表現を表示します。  これにより、各 `Person` は <xref:System.Windows.Controls.ListBox> の名前として表示されます。  
+ <span data-ttu-id="21cc7-119">なお、`Person`クラスのオーバーライド、`ToString`メソッドは次のようです。</span><span class="sxs-lookup"><span data-stu-id="21cc7-119">Note that the `Person` class overrides the `ToString` method the following way.</span></span> <span data-ttu-id="21cc7-120">既定では、<xref:System.Windows.Controls.ListBox>呼び出し`ToString`し、バインドされたコレクションの各オブジェクトの文字列表現を表示します。</span><span class="sxs-lookup"><span data-stu-id="21cc7-120">By default, the <xref:System.Windows.Controls.ListBox> calls `ToString` and displays a string representation of each object in the bound collection.</span></span> <span data-ttu-id="21cc7-121">その理由は各`Person`の最初の名前として表示されます、<xref:System.Windows.Controls.ListBox>です。</span><span class="sxs-lookup"><span data-stu-id="21cc7-121">That is why each `Person` appears as a first name in the <xref:System.Windows.Controls.ListBox>.</span></span>  
   
  [!code-csharp[CollectionBinding#ToString](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Data.cs#tostring)]
  [!code-vb[CollectionBinding#ToString](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CollectionBinding/VisualBasic/Person.vb#tostring)]  
   
-## 参照  
- [階層データでマスター詳細パターンを使用する](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md)   
- [階層 XML データでマスター詳細パターンを使用する](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [データ テンプレートの概要](../../../../docs/framework/wpf/data/data-templating-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="21cc7-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="21cc7-122">See Also</span></span>  
+ [<span data-ttu-id="21cc7-123">階層データでマスター詳細パターンを使用する</span><span class="sxs-lookup"><span data-stu-id="21cc7-123">Use the Master-Detail Pattern with Hierarchical Data</span></span>](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md)  
+ [<span data-ttu-id="21cc7-124">階層 XML データでマスター詳細パターンを使用する</span><span class="sxs-lookup"><span data-stu-id="21cc7-124">Use the Master-Detail Pattern with Hierarchical XML Data</span></span>](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)  
+ [<span data-ttu-id="21cc7-125">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="21cc7-125">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="21cc7-126">データ テンプレートの概要</span><span class="sxs-lookup"><span data-stu-id="21cc7-126">Data Templating Overview</span></span>](../../../../docs/framework/wpf/data/data-templating-overview.md)  
+ [<span data-ttu-id="21cc7-127">方法トピック</span><span class="sxs-lookup"><span data-stu-id="21cc7-127">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

@@ -1,80 +1,63 @@
 ---
-title: "方法: プロシージャ引数の値が変更された (Visual Basic) を保護する |Microsoft ドキュメント"
+title: "方法: プロシージャ引数の値が変化しないようにする (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- procedures, arguments
-- procedures, parameters
+- procedures [Visual Basic], arguments
+- procedures [Visual Basic], parameters
 - procedure arguments
 - arguments [Visual Basic], passing by reference
 - Visual Basic code, procedures
 - arguments [Visual Basic], ByVal
 - arguments [Visual Basic], passing by value
 - procedure parameters
-- procedures, calling
+- procedures [Visual Basic], calling
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: d2b7c766-ce16-4d2c-8d79-3fc0e7ba2227
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6e18f7ceefeec9c1f422d0eae4e727700ebd8b6e
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 7975cbbc38c39223a4af5c87ac6bb090be548f2d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a>方法: プロシージャ引数の値が変化しないようにする (Visual Basic)
-プロシージャとパラメーターを宣言する場合は、 [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]プロシージャのコードに呼び出し元のコードで引数を基になるプログラミング要素への直接の参照を提供します。 これにより、呼び出し元のコードで引数を基になる値を変更するプロシージャです。 場合によってはの呼び出し元のコードは、このような変更から保護します。  
+# <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a><span data-ttu-id="4e8d0-102">方法: プロシージャ引数の値が変化しないようにする (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4e8d0-102">How to: Protect a Procedure Argument Against Value Changes (Visual Basic)</span></span>
+<span data-ttu-id="4e8d0-103">プロシージャがパラメーターとしてを宣言する場合[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロシージャのコードに呼び出し元のコードで引数の基になるプログラミング要素への直接参照を提供します。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-103">If a procedure declares a parameter as [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] gives the procedure code a direct reference to the programming element underlying the argument in the calling code.</span></span> <span data-ttu-id="4e8d0-104">これにより、プロシージャが呼び出し元のコードで引数の基になる値を変更します。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-104">This permits the procedure to change the value underlying the argument in the calling code.</span></span> <span data-ttu-id="4e8d0-105">場合によっては呼び出し元のコードは、このような変更を防ぐためにする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-105">In some cases the calling code might want to protect against such a change.</span></span>  
   
- 対応するパラメーターを宣言することで、引数を変更から常に保護することができます[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)の手順です。 によって自動的に指定した引数を変更できるようにする場合、それを宣言できます`ByRef`させて、呼び出し元のコードの各呼び出しにおいて引き渡し方法を決定します。 これは、対応する引数を値渡しするかっこで囲むか、参照渡しにかっこで囲まないとで実行します。 詳細については、次を参照してください。[方法: 引数を値渡しを強制](./how-to-force-an-argument-to-be-passed-by-value.md)します。  
+ <span data-ttu-id="4e8d0-106">対応するパラメーターを宣言することで、変更から引数を保護できます常に[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)の手順でします。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-106">You can always protect an argument from change by declaring the corresponding parameter [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) in the procedure.</span></span> <span data-ttu-id="4e8d0-107">によって自動的に指定された引数を変更できるようにする場合は、宣言できる`ByRef`させて、呼び出し元のコードの各呼び出しに渡すメカニズムを確認します。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-107">If you want to be able to change a given argument in some cases but not others, you can declare it `ByRef` and let the calling code determine the passing mechanism in each call.</span></span> <span data-ttu-id="4e8d0-108">これは、対応する引数を値渡しをかっこで囲むか、参照渡しをかっこで囲まないとで実行します。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-108">It does this by enclosing the corresponding argument in parentheses to pass it by value, or not enclosing it in parentheses to pass it by reference.</span></span> <span data-ttu-id="4e8d0-109">詳細については、次を参照してください。[する方法: 引数を値渡しを強制](./how-to-force-an-argument-to-be-passed-by-value.md)です。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-109">For more information, see [How to: Force an Argument to Be Passed by Value](./how-to-force-an-argument-to-be-passed-by-value.md).</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、その要素の配列変数を実行して、操作を&2; つの手順を示します。 `increase`プロシージャが単に各要素に&1; を追加します。 `replace`プロシージャでは、パラメーターに新しい配列を割り当てます`a()`し、各要素に&1; を追加します。 ただし、再割り当てには、呼び出し元のコードで基になる配列変数は変わりません。  
+## <a name="example"></a><span data-ttu-id="4e8d0-110">例</span><span class="sxs-lookup"><span data-stu-id="4e8d0-110">Example</span></span>  
+ <span data-ttu-id="4e8d0-111">次の例では、その要素の配列変数を行い、操作を 2 つの手順を示します。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-111">The following example shows two procedures that take an array variable and operate on its elements.</span></span> <span data-ttu-id="4e8d0-112">`increase`プロシージャが単に各要素に 1 を追加します。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-112">The `increase` procedure simply adds one to each element.</span></span> <span data-ttu-id="4e8d0-113">`replace`プロシージャがパラメーターに新しい配列を割り当てます`a()`し、各要素に 1 を追加します。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-113">The `replace` procedure assigns a new array to the parameter `a()` and then adds one to each element.</span></span> <span data-ttu-id="4e8d0-114">ただし、再割り当てでは、呼び出し元のコードに基になる、配列変数には影響しません。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-114">However, the reassignment does not affect the underlying array variable in the calling code.</span></span>  
   
- [!code-vb[VbVbcnProcedures&#35;](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_1.vb)]  
+ [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_1.vb)]  
   
- [!code-vb[VbVbcnProcedures #&38;](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_2.vb)]  
+ [!code-vb[VbVbcnProcedures#38](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_2.vb)]  
   
- [!code-vb[VbVbcnProcedures #&37;](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_3.vb)]  
+ [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/how-to-protect-a-procedure-argument-against-value-changes_3.vb)]  
   
- 最初の`MsgBox`表示を呼び出して"increase(n) 後: 11、21、31、41"です。 配列`n`、参照型では、`replace`引き渡し方法は、そのメンバーを変更できます`ByVal`します。  
+ <span data-ttu-id="4e8d0-115">最初の`MsgBox`表示を呼び出して"increase(n) 後: 11、21、31、41"です。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-115">The first `MsgBox` call displays "After increase(n): 11, 21, 31, 41".</span></span> <span data-ttu-id="4e8d0-116">配列`n`、参照型では、`replace`引き渡し方法になっても、そのメンバーを変更できます`ByVal`です。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-116">Because the array `n` is a reference type, `replace` can change its members, even though the passing mechanism is `ByVal`.</span></span>  
   
- 2 番目`MsgBox`表示を呼び出して"目後: 11、21、31、41"です。 `n`は`ByVal`、`replace`変数を変更することはできません`n`を新しい配列を割り当てることで呼び出し元のコードにします。 ときに`replace`配列の新しいインスタンスを作成`k`し、ローカル変数に代入`a`への参照が失われた`n`して呼び出し元のコードに渡されます。 メンバーが変更されたとき`a`、ローカルの配列のみ`k`が影響を受けます。 したがって、`replace`配列の値は増分されません`n`呼び出し元のコードにします。  
+ <span data-ttu-id="4e8d0-117">2 番目`MsgBox`表示を呼び出して"目後: 41、11、21、31"です。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-117">The second `MsgBox` call displays "After replace(n): 11, 21, 31, 41".</span></span> <span data-ttu-id="4e8d0-118">`n`渡される`ByVal`、`replace`変数を変更することはできません`n`を新しい配列を割り当てることによって、呼び出し元のコードにします。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-118">Because `n` is passed `ByVal`, `replace` cannot modify the variable `n` in the calling code by assigning a new array to it.</span></span> <span data-ttu-id="4e8d0-119">ときに`replace`配列の新しいインスタンスを作成`k`し、ローカル変数に代入`a`への参照が失われた`n`呼び出し元のコードで渡される入力します。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-119">When `replace` creates the new array instance `k` and assigns it to the local variable `a`, it loses the reference to `n` passed in by the calling code.</span></span> <span data-ttu-id="4e8d0-120">メンバーが変更されたとき`a`、ローカルの配列のみ`k`が影響を受けます。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-120">When it changes the members of `a`, only the local array `k` is affected.</span></span> <span data-ttu-id="4e8d0-121">したがって、`replace`配列の値をインクリメントしない`n`呼び出し元のコードにします。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-121">Therefore, `replace` does not increment the values of array `n` in the calling code.</span></span>  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- 既定で[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]は引数の値渡しします。 いずれかを指定することをお勧めします[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード パラメーターを宣言します。 これは、コードを読みやすくするためです。  
+## <a name="compiling-the-code"></a><span data-ttu-id="4e8d0-122">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="4e8d0-122">Compiling the Code</span></span>  
+ <span data-ttu-id="4e8d0-123">既定で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]は引数の値渡しします。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-123">The default in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] is to pass arguments by value.</span></span> <span data-ttu-id="4e8d0-124">いずれかを指定することをお勧め、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワード パラメーターを宣言します。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-124">However, it is good programming practice to include either the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword with every declared parameter.</span></span> <span data-ttu-id="4e8d0-125">これにより、コードを読みやすくします。</span><span class="sxs-lookup"><span data-stu-id="4e8d0-125">This makes your code easier to read.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [手順](./index.md)   
- [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)   
- [方法: プロシージャに引数を渡す](./how-to-pass-arguments-to-a-procedure.md)   
- [値渡しと参照による引数渡し](./passing-arguments-by-value-and-by-reference.md)   
- [引数と変更できない引数の違い](./differences-between-modifiable-and-nonmodifiable-arguments.md)   
- [値と参照渡しの引数を渡しの違い](./differences-between-passing-an-argument-by-value-and-by-reference.md)   
- [方法: プロシージャ引数の値を変更します。](./how-to-change-the-value-of-a-procedure-argument.md)   
- [方法: 引数値渡しを強制します。](./how-to-force-an-argument-to-be-passed-by-value.md)   
- [位置と名前による引数渡し](./passing-arguments-by-position-and-by-name.md)   
- [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+## <a name="see-also"></a><span data-ttu-id="4e8d0-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="4e8d0-126">See Also</span></span>  
+ [<span data-ttu-id="4e8d0-127">手順</span><span class="sxs-lookup"><span data-stu-id="4e8d0-127">Procedures</span></span>](./index.md)  
+ [<span data-ttu-id="4e8d0-128">プロシージャのパラメーターと引数</span><span class="sxs-lookup"><span data-stu-id="4e8d0-128">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)  
+ [<span data-ttu-id="4e8d0-129">方法: プロシージャに引数を渡す</span><span class="sxs-lookup"><span data-stu-id="4e8d0-129">How to: Pass Arguments to a Procedure</span></span>](./how-to-pass-arguments-to-a-procedure.md)  
+ [<span data-ttu-id="4e8d0-130">引数の値渡しと参照渡し</span><span class="sxs-lookup"><span data-stu-id="4e8d0-130">Passing Arguments by Value and by Reference</span></span>](./passing-arguments-by-value-and-by-reference.md)  
+ [<span data-ttu-id="4e8d0-131">変更できる引数と変更できない引数の違い</span><span class="sxs-lookup"><span data-stu-id="4e8d0-131">Differences Between Modifiable and Nonmodifiable Arguments</span></span>](./differences-between-modifiable-and-nonmodifiable-arguments.md)  
+ [<span data-ttu-id="4e8d0-132">引数の値渡しと参照渡しの違い</span><span class="sxs-lookup"><span data-stu-id="4e8d0-132">Differences Between Passing an Argument By Value and By Reference</span></span>](./differences-between-passing-an-argument-by-value-and-by-reference.md)  
+ [<span data-ttu-id="4e8d0-133">方法: プロシージャ引数の値を変更する</span><span class="sxs-lookup"><span data-stu-id="4e8d0-133">How to: Change the Value of a Procedure Argument</span></span>](./how-to-change-the-value-of-a-procedure-argument.md)  
+ [<span data-ttu-id="4e8d0-134">方法: 引数の値渡しを強制する</span><span class="sxs-lookup"><span data-stu-id="4e8d0-134">How to: Force an Argument to Be Passed by Value</span></span>](./how-to-force-an-argument-to-be-passed-by-value.md)  
+ [<span data-ttu-id="4e8d0-135">位置と名前による引数渡し</span><span class="sxs-lookup"><span data-stu-id="4e8d0-135">Passing Arguments by Position and by Name</span></span>](./passing-arguments-by-position-and-by-name.md)  
+ [<span data-ttu-id="4e8d0-136">値型と参照型</span><span class="sxs-lookup"><span data-stu-id="4e8d0-136">Value Types and Reference Types</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

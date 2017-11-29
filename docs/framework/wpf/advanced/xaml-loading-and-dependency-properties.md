@@ -1,55 +1,60 @@
 ---
-title: "XAML 読み込みと依存関係プロパティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "カスタム依存関係プロパティ"
-  - "依存関係プロパティ, XAML 読み込みおよび"
-  - "読み込み (XML データを) "
+title: "XAML 読み込みと依存関係プロパティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- custom dependency properties [WPF]
+- dependency properties [WPF], XAML loading and
+- loading XML data [WPF]
 ms.assetid: 6eea9f4e-45ce-413b-a266-f08238737bf2
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 97970a8a292eee43b01b1eab235376ae9b8e6fad
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XAML 読み込みと依存関係プロパティ
-現在の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 実装の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサは、依存関係プロパティに最初から対応しています。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサは、バイナリ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] を読み込むとき、および依存関係プロパティである属性を処理するときに、依存関係プロパティ用のプロパティ システム メソッドを使用します。  この結果、プロパティ ラッパーは実質的に省略されます。  カスタムの依存関係プロパティを実装するときには、この動作を考慮に入れて、プロパティ システム メソッド <xref:System.Windows.DependencyObject.GetValue%2A> および <xref:System.Windows.DependencyObject.SetValue%2A> 以外のコードをプロパティ ラッパーに記述することは避ける必要があります。  
+# <a name="xaml-loading-and-dependency-properties"></a><span data-ttu-id="3f356-102">XAML 読み込みと依存関係プロパティ</span><span class="sxs-lookup"><span data-stu-id="3f356-102">XAML Loading and Dependency Properties</span></span>
+<span data-ttu-id="3f356-103">現在[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]の実装、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサは、本質的に依存関係プロパティに注意してください。</span><span class="sxs-lookup"><span data-stu-id="3f356-103">The current [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementation of its [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processor is inherently dependency property aware.</span></span> <span data-ttu-id="3f356-104">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]バイナリを読み込むときに、プロセッサが依存関係プロパティのシステムのプロパティのメソッドを使用[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]と依存関係プロパティの属性を処理します。</span><span class="sxs-lookup"><span data-stu-id="3f356-104">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processor uses property system methods for dependency properties when loading binary [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] and processing attributes that are dependency properties.</span></span> <span data-ttu-id="3f356-105">これにより、プロパティのラッパーが実質的にはスキップします。</span><span class="sxs-lookup"><span data-stu-id="3f356-105">This effectively bypasses the property wrappers.</span></span> <span data-ttu-id="3f356-106">この動作を考慮する必要があり、システムのプロパティ メソッド以外のプロパティのラッパーで、他のコードを配置しないでくださいカスタム依存関係プロパティを実装するときに<xref:System.Windows.DependencyObject.GetValue%2A>と<xref:System.Windows.DependencyObject.SetValue%2A>です。</span><span class="sxs-lookup"><span data-stu-id="3f356-106">When you implement custom dependency properties, you must account for this behavior and should avoid placing any other code in your property wrapper other than the property system methods <xref:System.Windows.DependencyObject.GetValue%2A> and <xref:System.Windows.DependencyObject.SetValue%2A>.</span></span>  
   
-   
   
 <a name="prerequisites"></a>   
-## 必要条件  
- このトピックは、依存関係プロパティを使用と作成の両面から理解していることと、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」および「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」を通読していることを前提としています。  また、「[XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)」および「[XAML 構文の詳細](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)」も通読している必要があります。  
+## <a name="prerequisites"></a><span data-ttu-id="3f356-107">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="3f356-107">Prerequisites</span></span>  
+ <span data-ttu-id="3f356-108">このトピックでは、コンシューマーと作成者の両方の依存関係プロパティを理解して、読み取りが[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)と[依存関係プロパティのカスタム](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)です。</span><span class="sxs-lookup"><span data-stu-id="3f356-108">This topic assumes that you understand dependency properties both as consumer and author and have read [Dependency Properties Overview](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md) and [Custom Dependency Properties](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md).</span></span> <span data-ttu-id="3f356-109">必要がありますもを読んだ[XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)と[XAML 構文の詳細](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)です。</span><span class="sxs-lookup"><span data-stu-id="3f356-109">You should also have read [XAML Overview (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) and [XAML Syntax In Detail](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).</span></span>  
   
 <a name="implementation"></a>   
-## WPF XAML ローダーの実装とパフォーマンス  
- 実装上の理由から、プロパティを依存関係プロパティとして指定して、プロパティ システムの <xref:System.Windows.DependencyObject.SetValue%2A> メソッドを使用して設定する方が、プロパティ ラッパーおよびその setter を使用するよりも、処理の負荷が抑えられます。  その理由は、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサは、マークアップとさまざまな文字列の構造で示された、型とメンバーの関係を把握し、それだけを頼りに、基になるコードのオブジェクト モデル全体を推論する必要があるためです。  
+## <a name="the-wpf-xaml-loader-implementation-and-performance"></a><span data-ttu-id="3f356-110">XAML の WPF ローダーの実装とパフォーマンス</span><span class="sxs-lookup"><span data-stu-id="3f356-110">The WPF XAML Loader Implementation, and Performance</span></span>  
+ <span data-ttu-id="3f356-111">負荷の大きい計算コストが低い依存関係プロパティとしてプロパティを識別し、プロパティ システムへのアクセスは実装上の理由から、<xref:System.Windows.DependencyObject.SetValue%2A>なく、プロパティのラッパーと、set アクセス操作子を使用して設定します。</span><span class="sxs-lookup"><span data-stu-id="3f356-111">For implementation reasons, it is computationally less expensive to identify a property as a dependency property and access the property system <xref:System.Windows.DependencyObject.SetValue%2A> method to set it, rather than using the property wrapper and its setter.</span></span> <span data-ttu-id="3f356-112">これは、ため、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサは、オブジェクト モデル全体の型およびメンバーのマークアップとさまざまな文字列の構造で示されたリレーションシップを知ることのみを基になるコードを推測する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3f356-112">This is because a [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processor must infer the entire object model of the backing code based only on knowing the type and member relationships that are indicated by the structure of the markup and various strings.</span></span>  
   
- 型は xmlns とアセンブリ属性の組み合わせで検索されますが、メンバーの識別、属性として設定された値をどれがサポートするかの判断、およびプロパティ値がどの型をサポートするかの解決は、<xref:System.Reflection.PropertyInfo> によるリフレクションを多用することになります。  任意の型の依存関係プロパティは、プロパティ システムを通じてストレージ テーブルとしてアクセスできます。このため、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 実装の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサは、このテーブルを使用します。そして、プロパティ *ABC* を設定するには、依存関係プロパティ識別子 *ABCProperty* を使用して、所属する <xref:System.Windows.DependencyObject.SetValue%2A> 派生型の <xref:System.Windows.DependencyObject> を呼び出す方が効率がよいと推論します。  
+ <span data-ttu-id="3f356-113">種類は、xmlns とアセンブリの属性が属性として設定されているをサポートすることを決定する、メンバーを識別するの組み合わせによって検索され、広範なリフレクション プロパティの値をサポートするどのような種類がそれ以外の場合は解決する必要があります。使用して<xref:System.Reflection.PropertyInfo>です。</span><span class="sxs-lookup"><span data-stu-id="3f356-113">The type is looked up through a combination of xmlns and assembly attributes, but identifying the members, determining which could support being set as an attribute, and resolving what types the property values support would otherwise require extensive reflection using <xref:System.Reflection.PropertyInfo>.</span></span> <span data-ttu-id="3f356-114">特定の種類の依存関係プロパティがプロパティ システムを通じてストレージ テーブルとしてアクセスできるため、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]の実装、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサは、このテーブルを使用しのプロパティを指定された*ABC*呼び出すことによってより効率的に設定できる<xref:System.Windows.DependencyObject.SetValue%2A>に含まれている<xref:System.Windows.DependencyObject>依存関係プロパティの識別子を使用して、型を派生*ABCProperty*です。</span><span class="sxs-lookup"><span data-stu-id="3f356-114">Because dependency properties on a given type are accessible as a storage table through the property system, the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementation of its [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processor uses this table and infers that any given property *ABC* can be more efficiently set by calling <xref:System.Windows.DependencyObject.SetValue%2A> on the containing <xref:System.Windows.DependencyObject> derived type, using the dependency property identifier *ABCProperty*.</span></span>  
   
 <a name="implications"></a>   
-## カスタム依存関係プロパティでの影響  
- 現在の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 実装の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサでは、プロパティ設定の動作でラッパーが完全に省略されるため、カスタム依存関係プロパティのラッパーの set の定義には、追加的なロジックを記述しないことが必要です。  追加的なロジックを set の定義に記述した場合、プロパティがコードではなく [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] で設定されたときには、ロジックは実行されません。  
+## <a name="implications-for-custom-dependency-properties"></a><span data-ttu-id="3f356-115">カスタム依存関係プロパティの影響</span><span class="sxs-lookup"><span data-stu-id="3f356-115">Implications for Custom Dependency Properties</span></span>  
+ <span data-ttu-id="3f356-116">現在[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]の実装、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロパティの設定のプロセッサの動作がまったくラッパーをバイパスする、カスタムの依存関係プロパティのラッパーのセットの定義に追加のロジックを配置する必要がありますされません。</span><span class="sxs-lookup"><span data-stu-id="3f356-116">Because the current [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementation of the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processor behavior for property setting bypasses the wrappers entirely, you should not put any additional logic into the set definitions of the wrapper for your custom dependency property.</span></span> <span data-ttu-id="3f356-117">セットの定義でこのようなロジックを配置するかどうかは、プロパティ設定されている場合、ロジックは実行されません[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]コードではなくです。</span><span class="sxs-lookup"><span data-stu-id="3f356-117">If you put such logic in the set definition, then the logic will not be executed when the property is set in [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] rather than in code.</span></span>  
   
- 同様に、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサが [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 処理からプロパティ値を取得するときにも、ラッパーではなく <xref:System.Windows.DependencyObject.GetValue%2A> が使用されます。  したがって、`get` の定義では、<xref:System.Windows.DependencyObject.GetValue%2A> の呼び出し以外に追加的な処理を実装することは避ける必要があります。  
+ <span data-ttu-id="3f356-118">同様に、その他のさまざまな、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]からプロパティ値を取得するプロセッサ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]処理の使用も<xref:System.Windows.DependencyObject.GetValue%2A>ラッパーを使用してではなくです。</span><span class="sxs-lookup"><span data-stu-id="3f356-118">Similarly, other aspects of the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processor that obtain property values from [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processing also use <xref:System.Windows.DependencyObject.GetValue%2A> rather than using the wrapper.</span></span> <span data-ttu-id="3f356-119">そのため、またしないでで実装、`get`を超えて定義、<xref:System.Windows.DependencyObject.GetValue%2A>呼び出します。</span><span class="sxs-lookup"><span data-stu-id="3f356-119">Therefore, you should also avoid any additional implementation in the `get` definition beyond the <xref:System.Windows.DependencyObject.GetValue%2A> call.</span></span>  
   
- 次の例は、依存関係プロパティで推奨される定義方法です。ラッパーを使用して、プロパティ識別子は `public` `static` `readonly` フィールドとして格納し、`get` と `set` の定義には、依存関係プロパティのバッキングを定義するために必要なプロパティ システム メソッド以外のコードは含まれていません。  
+ <span data-ttu-id="3f356-120">次の例は、ラッパーでとしてプロパティの識別子を格納する場所と推奨される依存関係プロパティの定義、 `public` `static` `readonly`フィールド、および`get`と`set`定義にコードが含まれていませんバックアップの依存関係プロパティを定義するために必要なプロパティ システム方法です。</span><span class="sxs-lookup"><span data-stu-id="3f356-120">The following example is a recommended dependency property definition with wrappers, where the property identifier is stored as a `public` `static` `readonly` field, and the `get` and `set` definitions contain no code beyond the necessary property system methods that define the dependency property backing.</span></span>  
   
  [!code-csharp[WPFAquariumSln#AGWithWrapper](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#agwithwrapper)]
  [!code-vb[WPFAquariumSln#AGWithWrapper](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#agwithwrapper)]  
   
-## 参照  
- [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)   
- [XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)   
- [コレクション型依存関係プロパティ](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)   
- [依存関係プロパティのセキュリティ](../../../../docs/framework/wpf/advanced/dependency-property-security.md)   
- [DependencyObject の安全なコンストラクター パターン](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)
+## <a name="see-also"></a><span data-ttu-id="3f356-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="3f356-121">See Also</span></span>  
+ [<span data-ttu-id="3f356-122">依存関係プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="3f356-122">Dependency Properties Overview</span></span>](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [<span data-ttu-id="3f356-123">XAML の概要 (WPF)</span><span class="sxs-lookup"><span data-stu-id="3f356-123">XAML Overview (WPF)</span></span>](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
+ [<span data-ttu-id="3f356-124">依存関係プロパティのメタデータ</span><span class="sxs-lookup"><span data-stu-id="3f356-124">Dependency Property Metadata</span></span>](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
+ [<span data-ttu-id="3f356-125">コレクション型依存関係プロパティ</span><span class="sxs-lookup"><span data-stu-id="3f356-125">Collection-Type Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)  
+ [<span data-ttu-id="3f356-126">依存関係プロパティのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="3f356-126">Dependency Property Security</span></span>](../../../../docs/framework/wpf/advanced/dependency-property-security.md)  
+ [<span data-ttu-id="3f356-127">DependencyObject の安全なコンストラクター パターン</span><span class="sxs-lookup"><span data-stu-id="3f356-127">Safe Constructor Patterns for DependencyObjects</span></span>](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)

@@ -1,49 +1,55 @@
 ---
-title: "方法 : グラデーション ストップの位置または色をアニメーション化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アニメーション, 色 (GradientStop オブジェクトの)"
-  - "アニメーション, 位置 (GradientStop オブジェクトの)"
-  - "色, アニメーション化"
-  - "GradientStop オブジェクト, アニメーション化 (色を)"
-  - "GradientStop オブジェクト, アニメーション化 (位置を)"
-  - "位置, アニメーション化"
+title: "方法 : グラデーション ストップの位置または色をアニメーション化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- position [WPF], animating
+- animation [WPF], position of GradientStop objects
+- GradientStop objects [WPF], animating color of
+- colors [WPF], animating
+- animation [WPF], color of GradientStop objects
+- GradientStop objects [WPF], animating position of
 ms.assetid: 6f5b8b47-6c32-4b8e-98ee-fdf6515ec843
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 968d285d8a3345da9810f0ba4797bf8b2e33d36e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : グラデーション ストップの位置または色をアニメーション化する
-この例では、<xref:System.Windows.Media.GradientStop> オブジェクトの <xref:System.Windows.Media.GradientStop.Color%2A> および <xref:System.Windows.Media.GradientStop.Offset%2A> をアニメーション表示する方法を説明します。  
+# <a name="how-to-animate-the-position-or-color-of-a-gradient-stop"></a><span data-ttu-id="73b3d-102">方法 : グラデーション ストップの位置または色をアニメーション化する</span><span class="sxs-lookup"><span data-stu-id="73b3d-102">How to: Animate the Position or Color of a Gradient Stop</span></span>
+<span data-ttu-id="73b3d-103">この例は、アニメーション化する方法を示しています、<xref:System.Windows.Media.GradientStop.Color%2A>と<xref:System.Windows.Media.GradientStop.Offset%2A>の<xref:System.Windows.Media.GradientStop>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="73b3d-103">This example shows how to animate the <xref:System.Windows.Media.GradientStop.Color%2A> and <xref:System.Windows.Media.GradientStop.Offset%2A> of <xref:System.Windows.Media.GradientStop> objects.</span></span>  
   
-## 使用例  
- <xref:System.Windows.Media.LinearGradientBrush> の内部に 3 つのグラデーション終了位置をアニメーション化する例を次に示します。  この例では、それぞれが異なるグラデーション終了位置をアニメーション化する 3 つのアニメーションを使用しています。  
+## <a name="example"></a><span data-ttu-id="73b3d-104">例</span><span class="sxs-lookup"><span data-stu-id="73b3d-104">Example</span></span>  
+ <span data-ttu-id="73b3d-105">次の例の内側の 3 つのグラデーションの分岐点をアニメーション化、<xref:System.Windows.Media.LinearGradientBrush>です。</span><span class="sxs-lookup"><span data-stu-id="73b3d-105">The following example animates three gradient stops inside a <xref:System.Windows.Media.LinearGradientBrush>.</span></span> <span data-ttu-id="73b3d-106">この例では、別のグラデーションの分岐点をアニメーション化の 3 つのアニメーションでは。</span><span class="sxs-lookup"><span data-stu-id="73b3d-106">The example uses three animations, each of which animates a different gradient stop:</span></span>  
   
--   最初のアニメーション <xref:System.Windows.Media.Animation.DoubleAnimation> は、最初のグラデーション終了位置の <xref:System.Windows.Media.GradientStop.Offset%2A> を 0.0 から 1.0 までアニメーション化し、0.0 まで戻します。  その結果、グラデーションの最初の色は、四角形の左側から右側の方向に変化し、左側に戻ります。  
+-   <span data-ttu-id="73b3d-107">最初のアニメーション、 <xref:System.Windows.Media.Animation.DoubleAnimation>、最初にグラデーション終了位置のアニメーション化<xref:System.Windows.Media.GradientStop.Offset%2A>0.0 ~ 1.0 から 0.0 に戻ります。</span><span class="sxs-lookup"><span data-stu-id="73b3d-107">The first animation, a <xref:System.Windows.Media.Animation.DoubleAnimation>, animates the first gradient stop's <xref:System.Windows.Media.GradientStop.Offset%2A> from 0.0 to 1.0 and then back to 0.0.</span></span> <span data-ttu-id="73b3d-108">その結果、最初の色、グラデーションのシフト左側にある四角形の右側に、左側に戻ります。</span><span class="sxs-lookup"><span data-stu-id="73b3d-108">As a result, the first color in the gradient shifts from the left side to the right side of the rectangle and then back to the left side.</span></span>  
   
--   2 番目のアニメーション <xref:System.Windows.Media.Animation.ColorAnimation> は、2 番目のグラデーション終了位置の <xref:System.Windows.Media.GradientStop.Color%2A> を <xref:System.Windows.Media.Colors.Purple%2A> から <xref:System.Windows.Media.Colors.Yellow%2A> の方向にアニメーション化し、<xref:System.Windows.Media.Colors.Purple%2A> に戻します。  その結果、グラデーションの中間の色は、紫色から黄色に変化し、紫色に戻ります。  
+-   <span data-ttu-id="73b3d-109">2 番目のアニメーション、 <xref:System.Windows.Media.Animation.ColorAnimation>、2 番目のグラデーションのアニメーション化<xref:System.Windows.Media.GradientStop.Color%2A>から<xref:System.Windows.Media.Colors.Purple%2A>に<xref:System.Windows.Media.Colors.Yellow%2A>に戻ると<xref:System.Windows.Media.Colors.Purple%2A>です。</span><span class="sxs-lookup"><span data-stu-id="73b3d-109">The second animation, a <xref:System.Windows.Media.Animation.ColorAnimation>, animates the second gradient stop's <xref:System.Windows.Media.GradientStop.Color%2A> from <xref:System.Windows.Media.Colors.Purple%2A> to <xref:System.Windows.Media.Colors.Yellow%2A> and then back to <xref:System.Windows.Media.Colors.Purple%2A>.</span></span> <span data-ttu-id="73b3d-110">その結果、黄色および紫へ、グラデーションの中間色を紫から変更します。</span><span class="sxs-lookup"><span data-stu-id="73b3d-110">As a result, the middle color in the gradient changes from purple to yellow and back to purple.</span></span>  
   
--   3 番目のアニメーションである、もう 1 つの <xref:System.Windows.Media.Animation.ColorAnimation> は、3 番目のグラデーション終了位置の <xref:System.Windows.Media.GradientStop.Color%2A> の不透明度を \-1 だけアニメーション化した後、元に戻ります。  その結果、グラデーションの3 番目の色は消えていき、再び不透明になります。  
+-   <span data-ttu-id="73b3d-111">3 番目のアニメーションでは、別<xref:System.Windows.Media.Animation.ColorAnimation>、3 番目のグラデーション ストップの不透明度をアニメーション化<xref:System.Windows.Media.GradientStop.Color%2A>-1 でし、バックアップします。</span><span class="sxs-lookup"><span data-stu-id="73b3d-111">The third animation, another <xref:System.Windows.Media.Animation.ColorAnimation>, animates the opacity of the third gradient stop's <xref:System.Windows.Media.GradientStop.Color%2A> by -1 and then back.</span></span> <span data-ttu-id="73b3d-112">結果として、3 番目の色、グラデーションはフェードアウトし、し、再び不透明になります。</span><span class="sxs-lookup"><span data-stu-id="73b3d-112">As a result, the third color in the gradient fades away and then becomes opaque again.</span></span>  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMGradientAnimationExamplesWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/GradientStopAnimationExample.cs#graphicsmmgradientanimationexampleswholepage)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMGradientAnimationExamplesWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/gradientstopanimationexample.vb#graphicsmmgradientanimationexampleswholepage)]
- [!code-xml[BrushesIntroduction_snip#GraphicsMMGradientAnimationExamplesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/GradientStopAnimationExample.xaml#graphicsmmgradientanimationexampleswholepage)]  
+ [!code-xaml[BrushesIntroduction_snip#GraphicsMMGradientAnimationExamplesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/GradientStopAnimationExample.xaml#graphicsmmgradientanimationexampleswholepage)]  
   
- この例では <xref:System.Windows.Media.LinearGradientBrush> を使用していますが、このプロセスは、<xref:System.Windows.Media.RadialGradientBrush> 内部で <xref:System.Windows.Media.GradientStop> オブジェクトをアニメーション化する場合でも同じです。  
+ <span data-ttu-id="73b3d-113">この例を使用しますが、 <xref:System.Windows.Media.LinearGradientBrush>、プロセスは、アニメーション化する同じ<xref:System.Windows.Media.GradientStop>の内部オブジェクト、<xref:System.Windows.Media.RadialGradientBrush>です。</span><span class="sxs-lookup"><span data-stu-id="73b3d-113">Although this example uses a <xref:System.Windows.Media.LinearGradientBrush>, the process is the same for animating <xref:System.Windows.Media.GradientStop> objects inside a <xref:System.Windows.Media.RadialGradientBrush>.</span></span>  
   
- その他の例については、[ブラシのサンプル](http://go.microsoft.com/fwlink/?LinkID=159973)を参照してください。  
+ <span data-ttu-id="73b3d-114">その他の例では、次を参照してください。、[ブラシ サンプル](http://go.microsoft.com/fwlink/?LinkID=159973)です。</span><span class="sxs-lookup"><span data-stu-id="73b3d-114">For additional examples, see the [Brushes Sample](http://go.microsoft.com/fwlink/?LinkID=159973).</span></span>  
   
-## 参照  
- <xref:System.Windows.Media.GradientStop>   
- [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
- [ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)
+## <a name="see-also"></a><span data-ttu-id="73b3d-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="73b3d-115">See Also</span></span>  
+ <xref:System.Windows.Media.GradientStop>  
+ [<span data-ttu-id="73b3d-116">アニメーションの概要</span><span class="sxs-lookup"><span data-stu-id="73b3d-116">Animation Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [<span data-ttu-id="73b3d-117">ストーリーボードの概要</span><span class="sxs-lookup"><span data-stu-id="73b3d-117">Storyboards Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)

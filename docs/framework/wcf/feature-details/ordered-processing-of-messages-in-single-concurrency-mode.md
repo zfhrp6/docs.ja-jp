@@ -1,26 +1,29 @@
 ---
-title: "Single 同時実行モードでメッセージを順番に処理する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Single 同時実行モードでメッセージを順番に処理する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a90f5662-a796-46cd-ae33-30a4072838af
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a1acf4c3edb51500c2ead2e4ba33c6d3cc9c953f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Single 同時実行モードでメッセージを順番に処理する
-WCF では、基になるチャネルがセッションフルでない場合、メッセージを処理する順序については保証されません。たとえば、セッションフル チャネルではない MsmqInputChannel を使用する WCF サービスでは、メッセージを順番に処理できません。開発者には、セッションを使用しないで、順番どおりの処理動作が必要な場合があります。このトピックでは、サービスが Single 同時実行モードで実行されている場合に、この動作を構成する方法について説明します。  
+# <a name="ordered-processing-of-messages-in-single-concurrency-mode"></a><span data-ttu-id="a58b2-102">Single 同時実行モードでメッセージを順番に処理する</span><span class="sxs-lookup"><span data-stu-id="a58b2-102">Ordered Processing of Messages in Single Concurrency Mode</span></span>
+<span data-ttu-id="a58b2-103">基になるチャネルがセッションフルでない限り、WCF は、メッセージが処理される順序に関する保証はありません。</span><span class="sxs-lookup"><span data-stu-id="a58b2-103">WCF makes no guarantees about the order in which messages are processed, unless the underlying channel is sessionful.</span></span>  <span data-ttu-id="a58b2-104">インスタンスの順序でメッセージを処理する、セッションの多いチャネルではない MsmqInputChannel を使用する WCF サービスは失敗します。</span><span class="sxs-lookup"><span data-stu-id="a58b2-104">For instance, a WCF service that uses MsmqInputChannel, which is not a sessionful channel, will fail to process messages in order.</span></span> <span data-ttu-id="a58b2-105">状況によっては、開発者可能性があります順番に処理動作をしますが、セッションを使用するには。</span><span class="sxs-lookup"><span data-stu-id="a58b2-105">There are some circumstances where a developer may want the in order processing behavior but not want to use sessions.</span></span> <span data-ttu-id="a58b2-106">このトピックでは、サービスが Single 同時実行モードで実行されている場合にこの動作を構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a58b2-106">This topic describes how to configure this behavior when a service is running in Single Concurrency Mode.</span></span>  
   
-## 順番に従ったメッセージの処理  
- <xref:System.ServiceModel.ServiceBehaviorAttribute.EnsureOrderedDispatch%2A> という名前の新しい属性が <xref:System.ServiceModel.ServiceBehaviorAttribute> に追加されました。<xref:System.ServiceModel.ServiceBehaviorAttribute.EnsureOrderedDispatch%2A> を true に設定し、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> を <xref:System.ServiceModel.ConcurrencyMode> に設定すると、サービスに送信されたメッセージは順番に処理されます。次のコード スニペットは、これらの属性の設定方法を示しています。  
+## <a name="in-order-message-processing"></a><span data-ttu-id="a58b2-107">順番に従ったメッセージの処理</span><span class="sxs-lookup"><span data-stu-id="a58b2-107">In-order Message Processing</span></span>  
+ <span data-ttu-id="a58b2-108"><xref:System.ServiceModel.ServiceBehaviorAttribute.EnsureOrderedDispatch%2A> という名前の新しい属性が <xref:System.ServiceModel.ServiceBehaviorAttribute> に追加されました。</span><span class="sxs-lookup"><span data-stu-id="a58b2-108">A new attribute called <xref:System.ServiceModel.ServiceBehaviorAttribute.EnsureOrderedDispatch%2A> has been added to the <xref:System.ServiceModel.ServiceBehaviorAttribute>.</span></span> <span data-ttu-id="a58b2-109"><xref:System.ServiceModel.ServiceBehaviorAttribute.EnsureOrderedDispatch%2A> を true に設定し、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> を <xref:System.ServiceModel.ConcurrencyMode.Single> に設定すると、サービスに送信されたメッセージは順番に処理されます。</span><span class="sxs-lookup"><span data-stu-id="a58b2-109">When <xref:System.ServiceModel.ServiceBehaviorAttribute.EnsureOrderedDispatch%2A> is set to true and <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> is set to <xref:System.ServiceModel.ConcurrencyMode.Single> messages sent to the service will be processed in order.</span></span> <span data-ttu-id="a58b2-110">次のコードは、これらの属性の設定方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="a58b2-110">The following code snippet illustrates how to set these attributes.</span></span>  
   
 ```  
 [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Single, EnsureOrderedDispatch = true )]  
@@ -28,11 +31,10 @@ WCF では、基になるチャネルがセッションフルでない場合、�
     {  
          // ...  
     }  
-  
 ```  
   
- <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> を他の値に設定すると、<xref:System.InvalidOperationException> がスローされます。  
+ <span data-ttu-id="a58b2-111"><xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> をその他の値に設定すると、<xref:System.InvalidOperationException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="a58b2-111">If <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> is set to any other value, an <xref:System.InvalidOperationException> is thrown.</span></span>  
   
-## 参照  
- [セッション、インスタンス化、および同時実行](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)   
- [同時実行](../../../../docs/framework/wcf/samples/concurrency.md)
+## <a name="see-also"></a><span data-ttu-id="a58b2-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="a58b2-112">See Also</span></span>  
+ [<span data-ttu-id="a58b2-113">セッション、インスタンス化、および同時実行</span><span class="sxs-lookup"><span data-stu-id="a58b2-113">Sessions, Instancing, and Concurrency</span></span>](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)  
+ [<span data-ttu-id="a58b2-114">同時実行</span><span class="sxs-lookup"><span data-stu-id="a58b2-114">Concurrency</span></span>](../../../../docs/framework/wcf/samples/concurrency.md)

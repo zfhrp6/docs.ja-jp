@@ -1,114 +1,118 @@
 ---
-title: "変換の行列表現 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "アフィン変換"
-  - "複合変換"
-  - "線形変換"
-  - "行列"
-  - "変換, 複合"
-  - "変換, リニア"
-  - "変換, 行列表現"
-  - "変換, 変換"
-  - "平行移動 (行列表現内の)"
-  - "ベクター"
+title: "変換の行列表現"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- composite transformations
+- transformations [Windows Forms], linear
+- matrices
+- translations in matrix representation
+- transformations [Windows Forms], composite
+- vectors
+- linear transformations
+- transformations [Windows Forms], matrix representation of
+- transformations [Windows Forms], translation
+- affine transformations
 ms.assetid: 0659fe00-9e0c-41c4-9118-016f2404c905
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 10babac22fd94bd00b14b7f861fe99469d3ecbda
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 変換の行列表現
-m×n 行列とは、m 行 n 列に配列された数値の集まりです。  いくつかの行列を次の図に示します。  
+# <a name="matrix-representation-of-transformations"></a><span data-ttu-id="c6fed-102">変換の行列表現</span><span class="sxs-lookup"><span data-stu-id="c6fed-102">Matrix Representation of Transformations</span></span>
+<span data-ttu-id="c6fed-103">M × n マトリックスは、一連の数字が m 個の行と n 個の列に配置します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-103">An m×n matrix is a set of numbers arranged in m rows and n columns.</span></span> <span data-ttu-id="c6fed-104">次の図は、いくつかのマトリックスを示します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-104">The following illustration shows several matrices.</span></span>  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art04.png "AboutGdip05\_art04")  
+ <span data-ttu-id="c6fed-105">![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art04.gif "AboutGdip05_art04")</span><span class="sxs-lookup"><span data-stu-id="c6fed-105">![Transformations](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art04.gif "AboutGdip05_art04")</span></span>  
   
- 同じサイズの 2 つの行列を加算するには、個々の要素を加算します。  行列加算の 2 つの例を次の図に示します。  
+ <span data-ttu-id="c6fed-106">個々 の要素を追加することで、同じサイズの 2 つの行列を作成できます。</span><span class="sxs-lookup"><span data-stu-id="c6fed-106">You can add two matrices of the same size by adding individual elements.</span></span> <span data-ttu-id="c6fed-107">次の図は、マトリックスの追加の 2 つの例を示します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-107">The following illustration shows two examples of matrix addition.</span></span>  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art05.png "AboutGdip05\_art05")  
+ <span data-ttu-id="c6fed-108">![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art05.gif "AboutGdip05_art05")</span><span class="sxs-lookup"><span data-stu-id="c6fed-108">![Transformations](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art05.gif "AboutGdip05_art05")</span></span>  
   
- m×n 行列に n×p 行列を掛け合わせることができ、その結果は m×p 行列になります。  1 番目の行列の列数が、2 番目の行列の行数と同じである必要があります。  たとえば、4 × 2 行列に 2 × 3 行列を掛け合わせて、4 × 3 行列を生成できます。  
+ <span data-ttu-id="c6fed-109">M × n 行列を乗算するためには、n × p 行列によってと、結果は m × p 行列。</span><span class="sxs-lookup"><span data-stu-id="c6fed-109">An m×n matrix can be multiplied by an n×p matrix, and the result is an m×p matrix.</span></span> <span data-ttu-id="c6fed-110">1 番目の行列内の列の数は、2 番目の行列内の行の数と同じである必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6fed-110">The number of columns in the first matrix must be the same as the number of rows in the second matrix.</span></span> <span data-ttu-id="c6fed-111">たとえば、4 × 2 マトリックスは、4 × 3 マトリックスを生成するために 2 × 3 行列を掛けることができます。</span><span class="sxs-lookup"><span data-stu-id="c6fed-111">For example, a 4×2 matrix can be multiplied by a 2×3 matrix to produce a 4×3 matrix.</span></span>  
   
- 平面上の点および行列の行と列は、ベクターであると考えることができます。  たとえば、\(2, 5\) は 2 つの要素を持つベクターであり、\(3, 7, 1\) は 3 つの要素を持つベクターです。  2 つのベクターのドット積は、次のように定義されます。  
+ <span data-ttu-id="c6fed-112">平面と行およびマトリックスの列内のポイントは、ベクターと考えることができます。</span><span class="sxs-lookup"><span data-stu-id="c6fed-112">Points in the plane and rows and columns of a matrix can be thought of as vectors.</span></span> <span data-ttu-id="c6fed-113">たとえば、(2, 5) は、2 つのコンポーネントを持つベクトルと (3, 7, 1) は、3 つのコンポーネントを持つベクトル。</span><span class="sxs-lookup"><span data-stu-id="c6fed-113">For example, (2, 5) is a vector with two components, and (3, 7, 1) is a vector with three components.</span></span> <span data-ttu-id="c6fed-114">2 つのベクトルのドット積の定義は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="c6fed-114">The dot product of two vectors is defined as follows:</span></span>  
   
- \(a, b\) × \(c, d\) \= ac \+ bd  
+ <span data-ttu-id="c6fed-115">(a、b) • (c、d) = ac + bd</span><span class="sxs-lookup"><span data-stu-id="c6fed-115">(a, b) • (c, d) = ac + bd</span></span>  
   
- \(a, b, c\) × \(d, e, f\) \= ad \+ be \+ cf  
+ <span data-ttu-id="c6fed-116">(a、b、c) • (d、e、f) = ad + する + cf</span><span class="sxs-lookup"><span data-stu-id="c6fed-116">(a, b, c) • (d, e, f) = ad + be + cf</span></span>  
   
- たとえば、\(2, 3\) と \(5, 4\) のドット積は \(2\)\(5\) \+ \(3\)\(4\) \= 22 です。  \(2, 5, 1\) と \(4, 3, 1\) のドット積は \(2\)\(4\) \+ \(5\)\(3\) \+ \(1\)\(1\) \= 24 です。  2 つのベクターのドット積は、別のベクターではなく 1 つの数値になります。  また、ドット積を計算できるのは、2 つのベクターの要素の数が同じ場合だけです。  
+ <span data-ttu-id="c6fed-117">たとえばのドット積 (2, 3) と (5, 4) は (2)(5) + (3)(4) = 22。</span><span class="sxs-lookup"><span data-stu-id="c6fed-117">For example, the dot product of (2, 3) and (5, 4) is (2)(5) + (3)(4) = 22.</span></span> <span data-ttu-id="c6fed-118">(2, 5, 1) とのドット積と (4, 3, 1) が (2)(4) + (5)(3) + (1)(1) = 24。</span><span class="sxs-lookup"><span data-stu-id="c6fed-118">The dot product of (2, 5, 1) and (4, 3, 1) is (2)(4) + (5)(3) + (1)(1) = 24.</span></span> <span data-ttu-id="c6fed-119">2 つのベクトルのドット積は番号、別のベクトルであることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="c6fed-119">Note that the dot product of two vectors is a number, not another vector.</span></span> <span data-ttu-id="c6fed-120">ドット積を計算できるは、2 つのベクトルのコンポーネントの数が同じ場合だけにも注意してください。</span><span class="sxs-lookup"><span data-stu-id="c6fed-120">Also note that you can calculate the dot product only if the two vectors have the same number of components.</span></span>  
   
- A\(i, j\) は、行列 A の i 行目、j 列目のエントリであるとします。  たとえば、A\(3, 2\) は行列 A の 3 行目、2 列目のエントリです。  A、B、および C の 3 つの行列があり、AB \= C であるとします。  C のエントリは次のように計算されます。  
+ <span data-ttu-id="c6fed-121">Let A(i, j) には、i 番目の行と jth 列の行列 A にエントリがあります。</span><span class="sxs-lookup"><span data-stu-id="c6fed-121">Let A(i, j) be the entry in matrix A in the ith row and the jth column.</span></span> <span data-ttu-id="c6fed-122">たとえば、A (3, 2) の 3 番目の行と 2 番目の列の行列 A エントリです。</span><span class="sxs-lookup"><span data-stu-id="c6fed-122">For example A(3, 2) is the entry in matrix A in the 3rd row and the 2nd column.</span></span> <span data-ttu-id="c6fed-123">たとえば、A、B、および C は、マトリックス、および AB C. を =C のエントリは、次のように計算されます。</span><span class="sxs-lookup"><span data-stu-id="c6fed-123">Suppose A, B, and C are matrices, and AB = C. The entries of C are calculated as follows:</span></span>  
   
- C\(i, j\) \= \(A の i 行\) × \(B の j 列\)  
+ <span data-ttu-id="c6fed-124">C (i, j) = (A の行 i) • (B の列 j)</span><span class="sxs-lookup"><span data-stu-id="c6fed-124">C(i, j) = (row i of A) • (column j of B)</span></span>  
   
- 行列乗算のいくつかの例を次の図に示します。  
+ <span data-ttu-id="c6fed-125">次の図は、行列乗算のいくつかの例を示します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-125">The following illustration shows several examples of matrix multiplication.</span></span>  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art06.png "AboutGdip05\_art06")  
+ <span data-ttu-id="c6fed-126">![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art06.gif "AboutGdip05_art06")</span><span class="sxs-lookup"><span data-stu-id="c6fed-126">![Transformations](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art06.gif "AboutGdip05_art06")</span></span>  
   
- 平面上の各点を 1 × 2 行列と考えると、その点を、2 × 2 行列を掛け合わせることによって変換できます。  点 \(2, 1\) に適用されるいくつかの変換を次の図に示します。  
+ <span data-ttu-id="c6fed-127">1 x 2 行列平面上のポイントの場合は、2 × 2 の行列で乗算そのポイントを変換することができます。</span><span class="sxs-lookup"><span data-stu-id="c6fed-127">If you think of a point in a plane as a 1×2 matrix, you can transform that point by multiplying it by a 2×2 matrix.</span></span> <span data-ttu-id="c6fed-128">次の図は、点 (2, 1) に適用されるいくつかの変換を示します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-128">The following illustration shows several transformations applied to the point (2, 1).</span></span>  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art07.gif "AboutGdip05\_art07")  
+ <span data-ttu-id="c6fed-129">![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art07.gif "AboutGdip05_art07")</span><span class="sxs-lookup"><span data-stu-id="c6fed-129">![Transformations](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art07.gif "AboutGdip05_art07")</span></span>  
   
- 上の図に示す変換は、すべて線形変換です。  線形変換ではない平行移動などの変換は、2 × 2 行列による乗算では表現できません。  点 \(2, 1\) を 90°回転してから、x 方向に 3 単位、y 方向に 4 単位平行移動するとします。  この変換を実行するには、行列乗算の後で行列加算を実行します。  
+ <span data-ttu-id="c6fed-130">すべての前の図に示すように、変換は、線形変換です。</span><span class="sxs-lookup"><span data-stu-id="c6fed-130">All of the transformations shown in the preceding figure are linear transformations.</span></span> <span data-ttu-id="c6fed-131">変換など、他の特定の変換を使用して、線形ではありません、2 × 2 の行列で乗算では表現できません。</span><span class="sxs-lookup"><span data-stu-id="c6fed-131">Certain other transformations, such as translation, are not linear, and cannot be expressed as multiplication by a 2×2 matrix.</span></span> <span data-ttu-id="c6fed-132">場合を考えます最初に、点 (2, 1)、90 ° 回転して、x 軸方向の 3 つの単位を変換および y 方向の 4 つの単位を変換します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-132">Suppose you want to start with the point (2, 1), rotate it 90 degrees, translate it 3 units in the x direction, and translate it 4 units in the y direction.</span></span> <span data-ttu-id="c6fed-133">行列加算続けて行列乗算を使用して、これを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="c6fed-133">You can accomplish this by using a matrix multiplication followed by a matrix addition.</span></span>  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art08.gif "AboutGdip05\_art08")  
+ <span data-ttu-id="c6fed-134">![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art08.gif "AboutGdip05_art08")</span><span class="sxs-lookup"><span data-stu-id="c6fed-134">![Transformations](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art08.gif "AboutGdip05_art08")</span></span>  
   
- 線形変換 \(2 × 2 行列による乗算\) の後で平行移動 \(1 × 2 行列の加算\) を実行することを、アフィン変換と呼びます。  1 つのアフィン変換を 2 つの行列 \(線形変換用の行列と平行移動用の行列\) の組み合わせに格納する代わりに、この変換全体を 1 つの 3 × 3 行列に格納できます。  この方法を使用するには、平面上の各点を、3 番目の座標としてダミー座標を持つ 1 × 3 行列に格納する必要があります。  通常の手法では、3 番目の座標はすべて 1 にします。  たとえば、点 \(2, 1\) を行列 \[2 1 1\] で表します。  アフィン変換 \(90°の回転、x 方向に 3 単位の平行移動、y 方向に 4 単位の平行移動\) を 1 つの 3 × 3 行列による乗算として表現する例を次の図に示します。  
+ <span data-ttu-id="c6fed-135">翻訳 (1 x 2 行列の追加) を続けて線形変換 (2 × 2 の行列で乗算) は、アフィン変換と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="c6fed-135">A linear transformation (multiplication by a 2×2 matrix) followed by a translation (addition of a 1×2 matrix) is called an affine transformation.</span></span> <span data-ttu-id="c6fed-136">マトリックス (1 つは線形) および変換用の 1 つのペアのアフィン変換を格納する代わりに 3 × 3 行列変換全体を格納を開始します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-136">An alternative to storing an affine transformation in a pair of matrices (one for the linear part and one for the translation) is to store the entire transformation in a 3×3 matrix.</span></span> <span data-ttu-id="c6fed-137">この作業をするためには、平面内のポイントをダミー サード座標で 1 × 3 行列に格納する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6fed-137">To make this work, a point in the plane must be stored in a 1×3 matrix with a dummy 3rd coordinate.</span></span> <span data-ttu-id="c6fed-138">通常の手法はすべて 3 番目の座標を 1 にします。</span><span class="sxs-lookup"><span data-stu-id="c6fed-138">The usual technique is to make all 3rd coordinates equal to 1.</span></span> <span data-ttu-id="c6fed-139">たとえば、ポイント (2, 1) は、[2 1 1] マトリックスで表されます。</span><span class="sxs-lookup"><span data-stu-id="c6fed-139">For example, the point (2, 1) is represented by the matrix [2 1 1].</span></span> <span data-ttu-id="c6fed-140">次の図に、アフィン変換 (90 度回転させます。 x 軸方向に 3 単位、y 方向の 4 つの単位に変換) で 1 つ 3 × 3 行列の乗算で表されます。</span><span class="sxs-lookup"><span data-stu-id="c6fed-140">The following illustration shows an affine transformation (rotate 90 degrees; translate 3 units in the x direction, 4 units in the y direction) expressed as multiplication by a single 3×3 matrix.</span></span>  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art09.png "AboutGdip05\_art09")  
+ <span data-ttu-id="c6fed-141">![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art09.gif "AboutGdip05_art09")</span><span class="sxs-lookup"><span data-stu-id="c6fed-141">![Transformations](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art09.gif "AboutGdip05_art09")</span></span>  
   
- 上の例では、点 \(2, 1\) が点 \(2, 6\) に割り当てられます。  3 × 3 行列の 3 番目の列には、数値 0, 0, 1 が格納されています。  アフィン変換の 3 × 3 行列では、常にこの数値は同じです。  重要な数値は、列 1 と列 2 にある 6 個の数値です。  行列の左上の 2 × 2 部分が線形変換を表し、3 番目の行の最初の 2 つのエントリが平行移動を表します。  
+ <span data-ttu-id="c6fed-142">前の例では、点 (2, 1) は、ポイント (2, 6) にマップされます。</span><span class="sxs-lookup"><span data-stu-id="c6fed-142">In the preceding example, the point (2, 1) is mapped to the point (2, 6).</span></span> <span data-ttu-id="c6fed-143">3 × 3 行列の 3 番目の列に数値 0, 0, 1 が含まれていることを注意してください。</span><span class="sxs-lookup"><span data-stu-id="c6fed-143">Note that the third column of the 3×3 matrix contains the numbers 0, 0, 1.</span></span> <span data-ttu-id="c6fed-144">アフィン変換の 3 × 3 行列の場合と常になります。</span><span class="sxs-lookup"><span data-stu-id="c6fed-144">This will always be the case for the 3×3 matrix of an affine transformation.</span></span> <span data-ttu-id="c6fed-145">重要な数値は、列 1 および 2 の 6 つの番号です。</span><span class="sxs-lookup"><span data-stu-id="c6fed-145">The important numbers are the six numbers in columns 1 and 2.</span></span> <span data-ttu-id="c6fed-146">マトリックスの左上の 2 × 2 部分は、変換の線形の一部を表し、3 番目の行の最初の 2 つのエントリが平行移動を表します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-146">The upper-left 2×2 portion of the matrix represents the linear part of the transformation, and the first two entries in the 3rd row represent the translation.</span></span>  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art10.gif "AboutGdip05\_art10")  
+ <span data-ttu-id="c6fed-147">![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art10.gif "AboutGdip05_art10")</span><span class="sxs-lookup"><span data-stu-id="c6fed-147">![Transformations](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art10.gif "AboutGdip05_art10")</span></span>  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] では、アフィン変換を <xref:System.Drawing.Drawing2D.Matrix> オブジェクトに格納できます。  アフィン変換を表す行列の 3 番目の列は常に \(0, 0, 1\) であるため、<xref:System.Drawing.Drawing2D.Matrix> を構築するときには、最初の 2 列にある 6 個の数値だけを指定します。  `Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)` ステートメントによって、上の図に示す行列が構築されます。  
+ <span data-ttu-id="c6fed-148">[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]でアフィン変換を格納することができます、<xref:System.Drawing.Drawing2D.Matrix>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c6fed-148">In [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] you can store an affine transformation in a <xref:System.Drawing.Drawing2D.Matrix> object.</span></span> <span data-ttu-id="c6fed-149">表すアフィン変換行列の 3 番目の列は常にあるため (0, 0, 1) を構築するとき、最初の 2 つの列で 6 つの数字のみを指定する、<xref:System.Drawing.Drawing2D.Matrix>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c6fed-149">Because the third column of a matrix that represents an affine transformation is always (0, 0, 1), you specify only the six numbers in the first two columns when you construct a <xref:System.Drawing.Drawing2D.Matrix> object.</span></span> <span data-ttu-id="c6fed-150">ステートメント`Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)`前の図に示すように、マトリックスを構築します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-150">The statement `Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)` constructs the matrix shown in the preceding figure.</span></span>  
   
-## 複合変換  
- 複合変換は、複数の変換を 1 つずつ連続して実行します。  次の一覧に示す行列と変換を考えてみます。  
+## <a name="composite-transformations"></a><span data-ttu-id="c6fed-151">複合変換</span><span class="sxs-lookup"><span data-stu-id="c6fed-151">Composite Transformations</span></span>  
+ <span data-ttu-id="c6fed-152">複合変換とは、変換後、その他の 1 つのシーケンスです。</span><span class="sxs-lookup"><span data-stu-id="c6fed-152">A composite transformation is a sequence of transformations, one followed by the other.</span></span> <span data-ttu-id="c6fed-153">マトリックスおよび次の一覧内の変換を考慮してください。</span><span class="sxs-lookup"><span data-stu-id="c6fed-153">Consider the matrices and transformations in the following list:</span></span>  
   
 |||  
 |-|-|  
-|行列 A|90°の回転|  
-|行列 B|x 方向にファクター 2 のスケーリング|  
-|行列 C|y 方向に 3 単位の平行移動|  
+|<span data-ttu-id="c6fed-154">行列 A</span><span class="sxs-lookup"><span data-stu-id="c6fed-154">Matrix A</span></span>|<span data-ttu-id="c6fed-155">90 度回転します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-155">Rotate 90 degrees</span></span>|  
+|<span data-ttu-id="c6fed-156">マトリックス B</span><span class="sxs-lookup"><span data-stu-id="c6fed-156">Matrix B</span></span>|<span data-ttu-id="c6fed-157">X 軸方向の 2 倍の拡大縮小します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-157">Scale by a factor of 2 in the x direction</span></span>|  
+|<span data-ttu-id="c6fed-158">マトリックス C</span><span class="sxs-lookup"><span data-stu-id="c6fed-158">Matrix C</span></span>|<span data-ttu-id="c6fed-159">Y 方向の 3 つの単位に変換します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-159">Translate 3 units in the y direction</span></span>|  
   
- 行列 \[2 1 1\] で表される点 \(2, 1\) に A、B、C を順に掛け合わせると、点 \(2, 1\) に対して 3 つの変換が上の一覧の順序で適用されます。  
+ <span data-ttu-id="c6fed-160">かどうかはまず、点 (2, 1): [2 1 1] マトリックスで表される — しを a、B、C、点 (2, 1) が使用される順番で 3 つの変換し、します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-160">If we start with the point (2, 1) — represented by the matrix [2 1 1] — and multiply by A, then B, then C, the point (2, 1) will undergo the three transformations in the order listed.</span></span>  
   
- \[2 1 1\]ABC \= \[\-2 5 1\]  
+ <span data-ttu-id="c6fed-161">[2 1 1]ABC [-2 5 1] を =</span><span class="sxs-lookup"><span data-stu-id="c6fed-161">[2 1 1]ABC = [-2 5 1]</span></span>  
   
- 複合変換の 3 つの部分を 3 つの異なる行列に格納する代わりに、A、B、C をすべて掛け合わせることで、この複合変換全体を格納する 1 つの 3 × 3 行列を得ることができます。  ABC \= D であるとします。  この場合、ある点に D を掛け合わせると、その点に A、B、C を順に掛け合わせた場合と同じ結果が得られます。  
+ <span data-ttu-id="c6fed-162">はなく 3 つの独立した行列に複合変換の 3 つの部分を格納は、A を掛けることができますを複合変換全体を格納する 1 つの 3 倍 3 行列を取得するには、同時に、B、および C です。</span><span class="sxs-lookup"><span data-stu-id="c6fed-162">Rather than store the three parts of the composite transformation in three separate matrices, you can multiply A, B, and C together to get a single 3×3 matrix that stores the entire composite transformation.</span></span> <span data-ttu-id="c6fed-163">たとえば、ABC D. を =D を掛けたポイントが A、B、C を掛けたポイントと同じ結果を提供し、</span><span class="sxs-lookup"><span data-stu-id="c6fed-163">Suppose ABC = D. Then a point multiplied by D gives the same result as a point multiplied by A, then B, then C.</span></span>  
   
- \[2 1 1\]D \= \[\-2 5 1\]  
+ <span data-ttu-id="c6fed-164">[2 1 1]D = [-2 5 1]</span><span class="sxs-lookup"><span data-stu-id="c6fed-164">[2 1 1]D = [-2 5 1]</span></span>  
   
- A、B、C、D の各行列を次の図に示します。  
+ <span data-ttu-id="c6fed-165">次の図に、A、B、C および D のマトリックス</span><span class="sxs-lookup"><span data-stu-id="c6fed-165">The following illustration shows the matrices A, B, C, and D.</span></span>  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art12.png "AboutGdip05\_art12")  
+ <span data-ttu-id="c6fed-166">![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art12.gif "AboutGdip05_art12")</span><span class="sxs-lookup"><span data-stu-id="c6fed-166">![Transformations](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art12.gif "AboutGdip05_art12")</span></span>  
   
- 個々の変換を表す行列を掛け合わせることにより、1 つの複合変換の行列を作成できるということは、連続するアフィン変換の任意の組み合わせを 1 つの <xref:System.Drawing.Drawing2D.Matrix> オブジェクトに格納できることを意味します。  
+ <span data-ttu-id="c6fed-167">複合変換の行列を個々 の変換行列を乗算することによって作成できますが、ファクトは 1 つのアフィン変換の任意のシーケンスを格納できることを意味<xref:System.Drawing.Drawing2D.Matrix>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c6fed-167">The fact that the matrix of a composite transformation can be formed by multiplying the individual transformation matrices means that any sequence of affine transformations can be stored in a single <xref:System.Drawing.Drawing2D.Matrix> object.</span></span>  
   
 > [!CAUTION]
->  変換の順序が重要です。  一般に、回転、スケーリング、平行移動の順序で実行される変換は、スケーリング、回転、平行移動の順序で実行される変換と異なります。  同様に、行列乗算でも順序が重要です。  一般に、ABC と BAC は異なります。  
+>  <span data-ttu-id="c6fed-168">複合変換の順序が重要です。</span><span class="sxs-lookup"><span data-stu-id="c6fed-168">The order of a composite transformation is important.</span></span> <span data-ttu-id="c6fed-169">一般に、回転してから、スケールを設定し、変換が同じではありません、スケーリング、回転、しに変換します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-169">In general, rotate, then scale, then translate is not the same as scale, then rotate, then translate.</span></span> <span data-ttu-id="c6fed-170">同様に、行列乗算の順序が重要です。</span><span class="sxs-lookup"><span data-stu-id="c6fed-170">Similarly, the order of matrix multiplication is important.</span></span> <span data-ttu-id="c6fed-171">一般に、ABC はいない BAC と同じです。</span><span class="sxs-lookup"><span data-stu-id="c6fed-171">In general, ABC is not the same as BAC.</span></span>  
   
- <xref:System.Drawing.Drawing2D.Matrix> クラスには、複合変換を作成するためのメソッドとして、<xref:System.Drawing.Drawing2D.Matrix.Multiply%2A>、<xref:System.Drawing.Drawing2D.Matrix.Rotate%2A>、<xref:System.Drawing.Drawing2D.Matrix.RotateAt%2A>、<xref:System.Drawing.Drawing2D.Matrix.Scale%2A>、<xref:System.Drawing.Drawing2D.Matrix.Shear%2A>、および <xref:System.Drawing.Drawing2D.Matrix.Translate%2A> が用意されています。  30°の回転、y 方向にファクター 2 のスケーリング、x 方向に 5 単位の平行移動を順に実行する複合変換の行列の作成例を次に示します。  
+ <span data-ttu-id="c6fed-172"><xref:System.Drawing.Drawing2D.Matrix>クラスが複合変換を作成するためのいくつかのメソッドを提供します。 <xref:System.Drawing.Drawing2D.Matrix.Multiply%2A>、 <xref:System.Drawing.Drawing2D.Matrix.Rotate%2A>、 <xref:System.Drawing.Drawing2D.Matrix.RotateAt%2A>、 <xref:System.Drawing.Drawing2D.Matrix.Scale%2A>、 <xref:System.Drawing.Drawing2D.Matrix.Shear%2A>、および<xref:System.Drawing.Drawing2D.Matrix.Translate%2A>です。</span><span class="sxs-lookup"><span data-stu-id="c6fed-172">The <xref:System.Drawing.Drawing2D.Matrix> class provides several methods for building a composite transformation: <xref:System.Drawing.Drawing2D.Matrix.Multiply%2A>, <xref:System.Drawing.Drawing2D.Matrix.Rotate%2A>, <xref:System.Drawing.Drawing2D.Matrix.RotateAt%2A>, <xref:System.Drawing.Drawing2D.Matrix.Scale%2A>, <xref:System.Drawing.Drawing2D.Matrix.Shear%2A>, and <xref:System.Drawing.Drawing2D.Matrix.Translate%2A>.</span></span> <span data-ttu-id="c6fed-173">次の例では、回転角度 (30) し、y 方向の 2 倍のスケールを設定し、x 軸方向に 5 単位に変換する複合変換の行列を作成します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-173">The following example creates the matrix of a composite transformation that first rotates 30 degrees, then scales by a factor of 2 in the y direction, and then translates 5 units in the x direction:</span></span>  
   
  [!code-csharp[System.Drawing.CoordinateSystems#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.CoordinateSystems#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/VB/Class1.vb#11)]  
   
- この行列を次の図に示します。  
+ <span data-ttu-id="c6fed-174">次の図は、マトリックスを示します。</span><span class="sxs-lookup"><span data-stu-id="c6fed-174">The following illustration shows the matrix.</span></span>  
   
- ![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art13.png "AboutGdip05\_art13")  
+ <span data-ttu-id="c6fed-175">![変換](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art13.gif "AboutGdip05_art13")</span><span class="sxs-lookup"><span data-stu-id="c6fed-175">![Transformations](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art13.gif "AboutGdip05_art13")</span></span>  
   
-## 参照  
- [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)   
- [マネージ GDI\+ での変換の使用](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)
+## <a name="see-also"></a><span data-ttu-id="c6fed-176">関連項目</span><span class="sxs-lookup"><span data-stu-id="c6fed-176">See Also</span></span>  
+ [<span data-ttu-id="c6fed-177">座標系と変換</span><span class="sxs-lookup"><span data-stu-id="c6fed-177">Coordinate Systems and Transformations</span></span>](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
+ [<span data-ttu-id="c6fed-178">マネージ GDI+ での変換の使用</span><span class="sxs-lookup"><span data-stu-id="c6fed-178">Using Transformations in Managed GDI+</span></span>](../../../../docs/framework/winforms/advanced/using-transformations-in-managed-gdi.md)

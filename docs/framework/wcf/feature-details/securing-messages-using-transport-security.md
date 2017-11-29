@@ -1,109 +1,112 @@
 ---
-title: "トランスポート セキュリティを使用したメッセージのセキュリティ保護 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トランスポート セキュリティを使用したメッセージのセキュリティ保護"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9029771a-097e-448a-a13a-55d2878330b8
-caps.latest.revision: 21
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: f36351c04b3849b5364e00cec55769628d89af11
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# トランスポート セキュリティを使用したメッセージのセキュリティ保護
-ここでは、キューに送信されるメッセージをセキュリティで保護するために使用できるメッセージ キュー \(MSMQ\) トランスポート セキュリティについて説明します。  
+# <a name="securing-messages-using-transport-security"></a><span data-ttu-id="c8b0c-102">トランスポート セキュリティを使用したメッセージのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="c8b0c-102">Securing Messages Using Transport Security</span></span>
+<span data-ttu-id="c8b0c-103">ここでは、キューに送信されるメッセージをセキュリティで保護するために使用できるメッセージ キュー (MSMQ) トランスポート セキュリティについて説明します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-103">This section discusses Message Queuing (MSMQ) transport security that you can use to secure messages sent to a queue.</span></span>  
   
 > [!NOTE]
->  このトピックに進む前に、「[セキュリティの概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)」に目を通すことをお勧めします。  
+>  <span data-ttu-id="c8b0c-104">このトピック全体を読み取る前にお勧めお読みになる[セキュリティの基本概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)です。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-104">Before reading through this topic, it is recommended that you read [Security Concepts](../../../../docs/framework/wcf/feature-details/security-concepts.md).</span></span>  
   
- 次の図は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用する、キューに置かれた通信の概念モデルを表したものです。この図および用語を使用して、トランスポート セキュリティの概念について解説します。  
+ <span data-ttu-id="c8b0c-105">次の図は、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用する、キューに置かれた通信の概念モデルを表したものです。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-105">The following illustration provides a conceptual model of queued communication using [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span> <span data-ttu-id="c8b0c-106">この図および用語を使用して、トランスポート セキュリティの概念について解説します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-106">This illustration and terminology is used to explain transport security concepts.</span></span>  
   
- ![キューに置かれたアプリケーションの図](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Distributed\-Queue\-Figure")  
+ <span data-ttu-id="c8b0c-107">![アプリケーション ダイアグラムをキューに置かれた](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "分散キュー図")</span><span class="sxs-lookup"><span data-stu-id="c8b0c-107">![Queued Application Diagram](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Distributed-Queue-Figure")</span></span>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と <xref:System.ServiceModel.NetMsmqBinding> を使用してキューに置かれたメッセージを送信すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージは MSMQ メッセージの本文として添付されます。トランスポート セキュリティは、MSMQ メッセージ全体 \(MSMQ メッセージ ヘッダーまたはプロパティ、およびメッセージ本文\) をセキュリティで保護します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージは MSMQ メッセージの本文であるために、このメッセージもトランスポート セキュリティで保護されます。  
+ <span data-ttu-id="c8b0c-108">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] と <xref:System.ServiceModel.NetMsmqBinding> を使用してキューに置かれたメッセージを送信すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージは MSMQ メッセージの本文として添付されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-108">When sending queued messages using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] with <xref:System.ServiceModel.NetMsmqBinding>, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] message is attached as a body of the MSMQ message.</span></span> <span data-ttu-id="c8b0c-109">トランスポート セキュリティは、MSMQ メッセージ全体 (MSMQ メッセージ ヘッダーまたはプロパティ、およびメッセージ本文) をセキュリティで保護します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-109">Transport security secures the entire MSMQ message (MSMQ message headers or properties and the message body).</span></span> <span data-ttu-id="c8b0c-110">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージは MSMQ メッセージの本文であるために、このメッセージもトランスポート セキュリティで保護されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-110">Because it is the body of the MSMQ message, using transport security also secures the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] message.</span></span>  
   
- トランスポート セキュリティの背後にある重要な概念は、メッセージがターゲット キューに到達するためには、クライアントがセキュリティ要件を満たす必要があるという点です。これは、メッセージ セキュリティとは異なります。メッセージ セキュリティでは、メッセージを受信するアプリケーションに対してメッセージが保護されます。  
+ <span data-ttu-id="c8b0c-111">トランスポート セキュリティの背後にある重要な概念は、メッセージがターゲット キューに到達するためには、クライアントがセキュリティ要件を満たす必要があるという点です。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-111">The key concept behind transport security is that the client has to meet security requirements to get the message to the target queue.</span></span> <span data-ttu-id="c8b0c-112">これは、メッセージ セキュリティとは異なります。メッセージ セキュリティでは、メッセージを受信するアプリケーションに対してメッセージが保護されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-112">This is unlike Message security, where the message is secured for the application that receives the message.</span></span>  
   
- <xref:System.ServiceModel.NetMsmqBinding> と <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> を使用するトランスポート セキュリティは、転送キューとターゲット キュー間を移動している MSMQ メッセージがセキュリティで保護される方法に影響します。この場合、"セキュリティで保護される" とは次のことを意味します。  
+ <span data-ttu-id="c8b0c-113"><xref:System.ServiceModel.NetMsmqBinding> と <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> を使用するトランスポート セキュリティは、転送キューとターゲット キュー間を移動している MSMQ メッセージがセキュリティで保護される方法に影響します。この場合、"セキュリティで保護される" とは次のことを意味します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-113">Transport security using <xref:System.ServiceModel.NetMsmqBinding> and <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> impacts how MSMQ messages are secured in-transit between the transmission queue and the target queue where secured implies:</span></span>  
   
--   メッセージが改ざんされないように、メッセージに署名する。  
+-   <span data-ttu-id="c8b0c-114">メッセージが改ざんされないように、メッセージに署名する。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-114">Signing the message to ensure it is not tampered with.</span></span>  
   
--   メッセージが読み取られたり、改ざんされたりしないしないように、メッセージを暗号化する。これは推奨事項ですが、必須ではありません。  
+-   <span data-ttu-id="c8b0c-115">メッセージが読み取られたり、改ざんされたりしないしないように、メッセージを暗号化する。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-115">Encrypting the message to ensure that it cannot be seen or tampered with.</span></span> <span data-ttu-id="c8b0c-116">これは推奨事項ですが、必須ではありません。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-116">This is recommended but optional.</span></span>  
   
--   否認防止のため、ターゲット キュー マネージャーがメッセージの送信者を識別する。  
+-   <span data-ttu-id="c8b0c-117">否認防止のため、ターゲット キュー マネージャーがメッセージの送信者を識別する。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-117">The target queue manager that identifies the sender of the message for non-repudiation.</span></span>  
   
- MSMQ では、認証とは別に、ターゲット キューがアクセス制御リスト \(ACL: Access Control List\) を持っており、これで、ターゲット キューにメッセージを送信するためのアクセス許可がクライアントに与えられているどうかをチェックします。ターゲット キューからメッセージを受信するためのアクセス許可があるかどうかのチェックは、受信側のアプリケーションに対しても行われます。  
+ <span data-ttu-id="c8b0c-118">MSMQ では、認証とは別に、ターゲット キューがアクセス制御リスト (ACL: Access Control List) を持っており、これで、ターゲット キューにメッセージを送信するためのアクセス許可がクライアントに与えられているどうかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-118">In MSMQ, independent of authentication, the target queue has an access control list (ACL) to check whether the client has permission to send the message to the target queue.</span></span> <span data-ttu-id="c8b0c-119">ターゲット キューからメッセージを受信するためのアクセス許可があるかどうかのチェックは、受信側のアプリケーションに対しても行われます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-119">The receiving application is also checked for permission to receive the message from the target queue.</span></span>  
   
-## WCF MSMQ トランスポート セキュリティのプロパティ  
- MSMQ では、Windows セキュリティを使用して認証を行います。Windows セキュリティは、Windows セキュリティ識別子 \(SID: Security Identifier\) を使用してクライアントを識別し、クライアントの認証時に、証明機関として Active Directory ディレクトリ サービスを使用します。このため、MSMQ を Active Directory 統合と共にインストールする必要があります。クライアントの識別には Windows ドメインの SID が使用されるため、このセキュリティ オプションは、クライアントとサービスの両方が同じ Windows ドメインに属している場合にのみ有効です。  
+## <a name="wcf-msmq-transport-security-properties"></a><span data-ttu-id="c8b0c-120">WCF MSMQ トランスポート セキュリティのプロパティ</span><span class="sxs-lookup"><span data-stu-id="c8b0c-120">WCF MSMQ Transport Security Properties</span></span>  
+ <span data-ttu-id="c8b0c-121">MSMQ では、Windows セキュリティを使用して認証を行います。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-121">MSMQ uses Windows security for authentication.</span></span> <span data-ttu-id="c8b0c-122">Windows セキュリティは、Windows セキュリティ識別子 (SID: Security Identifier) を使用してクライアントを識別し、クライアントの認証時に、証明機関として Active Directory ディレクトリ サービスを使用します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-122">It uses the Windows security identifier (SID) to identify the client and uses Active Directory directory service as the certificate authority when authenticating the client.</span></span> <span data-ttu-id="c8b0c-123">このため、MSMQ を Active Directory 統合と共にインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-123">This requires MSMQ to be installed with Active Directory integration.</span></span> <span data-ttu-id="c8b0c-124">クライアントの識別には Windows ドメインの SID が使用されるため、このセキュリティ オプションは、クライアントとサービスの両方が同じ Windows ドメインに属している場合にのみ有効です。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-124">Because the Windows domain SID is used to identify the client, this security option is only meaningful when both the client and service are part of the same Windows domain.</span></span>  
   
- また、MSMQ は、Active Directory に登録されていないメッセージに証明書を添付する機能も提供します。この場合は、添付された証明書を使用してメッセージが署名されたことが保証されます。  
+ <span data-ttu-id="c8b0c-125">また、MSMQ は、Active Directory に登録されていないメッセージに証明書を添付する機能も提供します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-125">MSMQ also provides the ability to attach a certificate with the message that is not registered with Active Directory.</span></span> <span data-ttu-id="c8b0c-126">この場合は、添付された証明書を使用してメッセージが署名されたことが保証されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-126">In this case, it ensures that the message was signed using the attached certificate.</span></span>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、両方のオプションが MSMQ トランスポート セキュリティの一部として提供されます。これらのオプションは、トランスポート セキュリティの中核です。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="c8b0c-127"> では、両方のオプションが MSMQ トランスポート セキュリティの一部として提供されます。これらのオプションは、トランスポート セキュリティの中核です。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-127"> provides both these options as part of MSMQ transport security and they are the key pivot for transport security.</span></span>  
   
- 既定では、トランスポート セキュリティが有効になります。  
+ <span data-ttu-id="c8b0c-128">既定では、トランスポート セキュリティが有効になります。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-128">By default, transport security is turned on.</span></span>  
   
- これらの基本事項に基づいて、以降のセクションでは <xref:System.ServiceModel.NetMsmqBinding> および <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> に結び付けられたトランスポート セキュリティのプロパティについて詳しく説明します。  
+ <span data-ttu-id="c8b0c-129">これらの基本事項に基づいて、以降のセクションでは <xref:System.ServiceModel.NetMsmqBinding> および <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> に結び付けられたトランスポート セキュリティのプロパティについて詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-129">Given these basics, the following sections detail transport security properties bundled with <xref:System.ServiceModel.NetMsmqBinding> and <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>.</span></span>  
   
-#### MSMQ 認証モード  
- <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> は、Windows ドメインのセキュリティと外部の証明書ベースのセキュリティのどちらを使用してメッセージを保護するかを決定します。どちらの認証モードでも、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のキューに置かれたトランスポート チャネルは、サービス構成で指定された `CertificateValidationMode` を使用します。証明書検証モードは、証明書の有効性を確認するために使用される機構を指定します。  
+#### <a name="msmq-authentication-mode"></a><span data-ttu-id="c8b0c-130">MSMQ 認証モード</span><span class="sxs-lookup"><span data-stu-id="c8b0c-130">MSMQ Authentication Mode</span></span>  
+ <span data-ttu-id="c8b0c-131"><xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> は、Windows ドメインのセキュリティと外部の証明書ベースのセキュリティのどちらを使用してメッセージを保護するかを決定します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-131">The <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> dictates whether to use the Windows domain security or an external certificate-based security to secure the message.</span></span> <span data-ttu-id="c8b0c-132">どちらの認証モードでも、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のキューに置かれたトランスポート チャネルは、サービス構成で指定された `CertificateValidationMode` を使用します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-132">In both authentication modes, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] queued transport channel uses the `CertificateValidationMode` specified in the service configuration.</span></span> <span data-ttu-id="c8b0c-133">証明書検証モードは、証明書の有効性を確認するために使用される機構を指定します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-133">The certificate validation mode specifies the mechanism used to check the validity of the certificate.</span></span>  
   
- トランスポート セキュリティが有効になっている場合、既定の設定は <xref:System.ServiceModel.MsmqAuthenticationMode> です。  
+ <span data-ttu-id="c8b0c-134">トランスポート セキュリティが有効になっている場合、既定の設定は <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain> です。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-134">When transport security is turned on, the default setting is <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>.</span></span>  
   
-#### Windows ドメイン認証モード  
- Windows セキュリティを選択した場合は、Active Directory 統合をインストールする必要があります。既定のトランスポート セキュリティ モードは <xref:System.ServiceModel.MsmqAuthenticationMode> です。このモードを設定すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネルは MSMQ メッセージに Windows SID を添付し、Active Directory から取得した内部証明書を使用します。MSMQ は、この内部証明書を使用してメッセージをセキュリティで保護します。受信側キュー マネージャーは、Active Directory を使用して一致する証明書を検索し、クライアントを認証します。また、SID がクライアントの SID と一致するかどうかをチェックします。この認証手順は、認証を要求するようにターゲット キューがマークされていない場合でも、内部的 \(`WindowsDomain` 認証モードの場合\) または外部的 \(`Certificate` 認証モードの場合\) に生成された証明書がメッセージに添付されているときに実行されます。  
-  
-> [!NOTE]
->  キューを作成する際に認証キューとしてマークすることにより、そのキューにメッセージを送信するクライアントに対して認証を求めることができます。これにより、認証されたメッセージだけをキューに受け入れることができます。  
-  
- また、メッセージに添付された SID は、キューにメッセージを送信する権限をクライアントが持つことを確認するためにターゲット キューの ACL をチェックする目的でも使用されます。  
-  
-#### 証明書認証モード  
- 証明書認証モードを選択した場合は、Active Directory 統合をインストールする必要がありません。実際、\(Active Directory 統合をインストールせずに\) MSMQ をワークグループ モードでインストールしている場合や、SOAP リライアブル メッセージ プロトコル \(SRMP: SOAP Reliable Messaging Protocol\) 転送プロトコルを使用してメッセージをキューに送信する場合など、<xref:System.ServiceModel.MsmqAuthenticationMode> だけが機能するというケースもあります。  
-  
- <xref:System.ServiceModel.MsmqAuthenticationMode> を使用して [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージを送信した場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネルは Windows SID を MSMQ メッセージに添付しません。そのため、ターゲット キューの ACL は、キューへの送信に対して `Anonymous` ユーザー アクセスを許可する必要があります。受信側キュー マネージャーは、証明書を使用して MSMQ メッセージが署名されたかどうかをチェックしますが、認証は行いません。  
-  
- クレームと ID 情報を持つ証明書は、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のキューに置かれたトランスポート チャネルによって <xref:System.ServiceModel.ServiceSecurityContext> 内に設定されます。サービスは、この情報を使用して独自の方式で送信者の認証を行います。  
-  
-### MSMQ の保護レベル  
- 保護レベルは、MSMQ メッセージが改ざんされないように MSMQ メッセージを保護する方法を決定します。これは、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> プロパティで指定します。既定値は、<xref:System.Net.Security.ProtectionLevel> です。  
-  
-#### 署名による保護レベル  
- MSMQ メッセージでは、`WindowsDomain` 認証モードを使用する場合は内部生成された証明書を使用して署名され、`Certificate` 認証モードを使用する場合は、外部生成された証明書を使用して署名されます。  
-  
-#### 署名と暗号化による保護レベル  
- MSMQ メッセージでは、`WindowsDomain` 認証モードを使用する場合は内部生成された証明書を使用して署名され、`Certificate` 認証モードを使用する場合は、外部生成された証明書を使用して署名されます。  
-  
- メッセージの署名に加えて、MSMQ メッセージは、ターゲット キューをホストする受信側キュー マネージャーに属する Active Directory から取得した証明書の公開キーを使用して暗号化されます。送信側キュー マネージャーは、MSMQ メッセージが送信時に暗号化されているかどうかを確認します。受信側キュー マネージャーは、内部証明書の秘密キーを使用して MSMQ メッセージを復号化し、クリア テキストでメッセージをキューに格納します \(認証と承認が完了している場合\)。  
+#### <a name="windows-domain-authentication-mode"></a><span data-ttu-id="c8b0c-135">Windows ドメイン認証モード</span><span class="sxs-lookup"><span data-stu-id="c8b0c-135">Windows Domain Authentication Mode</span></span>  
+ <span data-ttu-id="c8b0c-136">Windows セキュリティを選択した場合は、Active Directory 統合が必要となります。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-136">The choice of using Windows security requires Active Directory integration.</span></span> <span data-ttu-id="c8b0c-137"><xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain> が既定のトランスポート セキュリティ モードです。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-137"><xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain> is the default transport security mode.</span></span> <span data-ttu-id="c8b0c-138">このモードを設定すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネルは MSMQ メッセージに Windows SID を添付し、Active Directory から取得した内部証明書を使用します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-138">When this is set, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] channel attaches the Windows SID to the MSMQ message and uses its internal certificate obtained from Active Directory.</span></span> <span data-ttu-id="c8b0c-139">MSMQ は、この内部証明書を使用してメッセージをセキュリティで保護します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-139">MSMQ uses this internal certificate to secure the message.</span></span> <span data-ttu-id="c8b0c-140">受信側キュー マネージャーは、Active Directory を使用して一致する証明書を検索し、クライアントを認証します。また、SID がクライアントの SID と一致するかどうかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-140">The receiving queue manager uses Active Directory to search and find a matching certificate to authenticate the client and checks that the SID also matches that of the client.</span></span> <span data-ttu-id="c8b0c-141">この認証手順は、認証を要求するようにターゲット キューがマークされていない場合でも、内部的 (`WindowsDomain` 認証モードの場合) または外部的 (`Certificate` 認証モードの場合) に生成された証明書がメッセージに添付されているときに実行されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-141">This authentication step is executed if a certificate, either internally generated in the case of `WindowsDomain` authentication mode or externally generated in the case of `Certificate` authentication mode, is attached to the message even if the target queue is not marked as requiring authentication.</span></span>  
   
 > [!NOTE]
->  メッセージを暗号化するには、Active Directory にアクセスでき \(<xref:System.ServiceModel.NetMsmqBinding> の `UseActiveDirectory` プロパティが `true` に設定されている\)、かつ <xref:System.ServiceModel.MsmqAuthenticationMode> と <xref:System.ServiceModel.MsmqAuthenticationMode> の両方で Active Directory を使用できる必要があります。  
+>  <span data-ttu-id="c8b0c-142">キューを作成する際に認証キューとしてマークすることにより、そのキューにメッセージを送信するクライアントに対して認証を求めることができます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-142">When creating a queue, you can mark the queue as an authenticated queue to indicate that the queue requires authentication of the client sending messages to the queue.</span></span> <span data-ttu-id="c8b0c-143">これにより、認証されたメッセージだけをキューに受け入れることができます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-143">This ensures that no unauthenticated messages are accepted in the queue.</span></span>  
   
-#### 保護のないレベル  
- <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> を <xref:System.Net.Security.ProtectionLevel> に設定することにより指定されます。この値は、他の認証モードに対しては無効です。  
+ <span data-ttu-id="c8b0c-144">また、メッセージに添付された SID は、キューにメッセージを送信する権限をクライアントが持つことを確認するためにターゲット キューの ACL をチェックする目的でも使用されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-144">The SID attached with the message is also used to check against the target queue's ACL to ensure that the client has the authority to send messages to the queue.</span></span>  
+  
+#### <a name="certificate-authentication-mode"></a><span data-ttu-id="c8b0c-145">証明書認証モード</span><span class="sxs-lookup"><span data-stu-id="c8b0c-145">Certificate Authentication Mode</span></span>  
+ <span data-ttu-id="c8b0c-146">証明書認証モードを選択した場合は、Active Directory 統合をインストールする必要がありません。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-146">The choice of using certificate authentication mode does not require Active Directory integration.</span></span> <span data-ttu-id="c8b0c-147">実際、(Active Directory 統合をインストールせずに) MSMQ をワークグループ モードでインストールしている場合や、SOAP リライアブル メッセージ プロトコル (SRMP: SOAP Reliable Messaging Protocol) 転送プロトコルを使用してメッセージをキューに送信する場合など、<xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> だけが機能するというケースもあります。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-147">In fact, in some cases, such as when MSMQ is installed in workgroup mode (without Active Directory integration) or when using the SOAP Reliable Messaging Protocol (SRMP) transfer protocol to send messages to the queue, only <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> works.</span></span>  
+  
+ <span data-ttu-id="c8b0c-148">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> メッセージを送信した場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] チャネルは Windows SID を MSMQ メッセージに添付しません。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-148">When sending a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] message with <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate>, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] channel does not attach a Windows SID to the MSMQ message.</span></span> <span data-ttu-id="c8b0c-149">そのため、ターゲット キューの ACL は、キューへの送信に対して `Anonymous` ユーザー アクセスを許可する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-149">As such, the target queue ACL must allow for `Anonymous` user access to send to the queue.</span></span> <span data-ttu-id="c8b0c-150">受信側キュー マネージャーは、証明書を使用して MSMQ メッセージが署名されたかどうかをチェックしますが、認証は行いません。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-150">The receiving queue manager checks whether the MSMQ message was signed with the certificate but does not perform any authentication.</span></span>  
+  
+ <span data-ttu-id="c8b0c-151">クレームと ID 情報を持つ証明書は、<xref:System.ServiceModel.ServiceSecurityContext> のキューに置かれたトランスポート チャネルによって [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 内に設定されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-151">The certificate with its claims and identity information is populated in the <xref:System.ServiceModel.ServiceSecurityContext> by the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] queued transport channel.</span></span> <span data-ttu-id="c8b0c-152">サービスは、この情報を使用して独自の方式で送信者の認証を行います。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-152">The service can use this information to perform its own authentication of the sender.</span></span>  
+  
+### <a name="msmq-protection-level"></a><span data-ttu-id="c8b0c-153">MSMQ の保護レベル</span><span class="sxs-lookup"><span data-stu-id="c8b0c-153">MSMQ Protection Level</span></span>  
+ <span data-ttu-id="c8b0c-154">保護レベルは、MSMQ メッセージが改ざんされないように MSMQ メッセージを保護する方法を決定します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-154">The protection level dictates how to protect the MSMQ message to ensure that it is not tampered with.</span></span> <span data-ttu-id="c8b0c-155">これは、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> プロパティで指定します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-155">It is specified in the <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> property.</span></span> <span data-ttu-id="c8b0c-156">既定値は <xref:System.Net.Security.ProtectionLevel.Sign> です。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-156">The default value is <xref:System.Net.Security.ProtectionLevel.Sign>.</span></span>  
+  
+#### <a name="sign-protection-level"></a><span data-ttu-id="c8b0c-157">署名による保護レベル</span><span class="sxs-lookup"><span data-stu-id="c8b0c-157">Sign Protection Level</span></span>  
+ <span data-ttu-id="c8b0c-158">MSMQ メッセージでは、`WindowsDomain` 認証モードを使用する場合は内部生成された証明書を使用して署名され、`Certificate` 認証モードを使用する場合は、外部生成された証明書を使用して署名されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-158">The MSMQ message is signed using the internally generated certificate when using `WindowsDomain` authentication mode or an externally generated certificate when using `Certificate` authentication mode.</span></span>  
+  
+#### <a name="sign-and-encrypt-protection-level"></a><span data-ttu-id="c8b0c-159">署名と暗号化による保護レベル</span><span class="sxs-lookup"><span data-stu-id="c8b0c-159">Sign and Encrypt Protection Level</span></span>  
+ <span data-ttu-id="c8b0c-160">MSMQ メッセージでは、`WindowsDomain` 認証モードを使用する場合は内部生成された証明書を使用して署名され、`Certificate` 認証モードを使用する場合は、外部生成された証明書を使用して署名されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-160">The MSMQ message is signed using the internally generated certificate when using `WindowsDomain` authentication mode or externally generated certificate when using `Certificate` authentication mode.</span></span>  
+  
+ <span data-ttu-id="c8b0c-161">メッセージの署名に加えて、MSMQ メッセージは、ターゲット キューをホストする受信側キュー マネージャーに属する Active Directory から取得した証明書の公開キーを使用して暗号化されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-161">In addition to signing the message, the MSMQ message is encrypted using the public key of the certificate obtained from Active Directory that belongs to the receiving queue manager that hosts the target queue.</span></span> <span data-ttu-id="c8b0c-162">送信側キュー マネージャーは、MSMQ メッセージが送信時に暗号化されているかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-162">The sending queue manager ensures that the MSMQ message is encrypted in transit.</span></span> <span data-ttu-id="c8b0c-163">受信側キュー マネージャーは、内部証明書の秘密キーを使用して MSMQ メッセージを復号化し、クリア テキストでメッセージをキューに格納します (認証と承認が完了している場合)。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-163">The receiving queue manager decrypts the MSMQ message using the private key of its internal certificate and stores the message in the queue (if authenticated and authorized) in clear text.</span></span>  
   
 > [!NOTE]
->  MSMQ メッセージが署名されている場合は、キューの状態 \(つまり、認証キューであるかどうか\) に関係なく、添付されている \(内部または外部\) 証明書を使用してメッセージが署名されているかどうかがチェックされます。  
+>  <span data-ttu-id="c8b0c-164">メッセージを暗号化するには、Active Directory にアクセスでき (`UseActiveDirectory` の <xref:System.ServiceModel.NetMsmqBinding> プロパティが `true` に設定されている)、かつ <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> と <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain> の両方で Active Directory を使用できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-164">To encrypt the message, Active Directory access is required (`UseActiveDirectory` property of <xref:System.ServiceModel.NetMsmqBinding> must be set to `true`) and can be used with both <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> and <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>.</span></span>  
   
-### MSMQ の暗号化アルゴリズム  
- 暗号化アルゴリズムは、ネットワーク上の MSMQ メッセージを暗号化するために使用されるアルゴリズムを指定します。このプロパティは、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> が <xref:System.Net.Security.ProtectionLevel> に設定されている場合にのみ使用されます。  
+#### <a name="none-protection-level"></a><span data-ttu-id="c8b0c-165">保護のないレベル</span><span class="sxs-lookup"><span data-stu-id="c8b0c-165">None Protection Level</span></span>  
+ <span data-ttu-id="c8b0c-166"><xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> を <xref:System.Net.Security.ProtectionLevel.None> に設定することにより指定されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-166">This is implied when <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> is set to <xref:System.Net.Security.ProtectionLevel.None>.</span></span> <span data-ttu-id="c8b0c-167">この値は、他の認証モードに対しては無効です。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-167">This cannot be a valid value for any other authentication modes.</span></span>  
   
- サポートされているアルゴリズムは `RC4Stream` と `AES` で、既定値は `RC4Stream` です。  
+> [!NOTE]
+>  <span data-ttu-id="c8b0c-168">MSMQ メッセージが署名されている場合は、キューの状態 (つまり、認証キューであるかどうか) に関係なく、添付されている (内部または外部) 証明書を使用してメッセージが署名されているかどうかがチェックされます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-168">If the MSMQ message is signed, MSMQ checks whether the message is signed with the attached certificate (internal or external) independent of the state of the queue, that is, authenticated queue or not.</span></span>  
   
- `AES` アルゴリズムは、送信元が MSMQ 4.0 以降をインストールしている場合にのみ使用できます。また、ターゲット キューも MSMQ 4.0 でホストされている必要があります。  
+### <a name="msmq-encryption-algorithm"></a><span data-ttu-id="c8b0c-169">MSMQ の暗号化アルゴリズム</span><span class="sxs-lookup"><span data-stu-id="c8b0c-169">MSMQ Encryption Algorithm</span></span>  
+ <span data-ttu-id="c8b0c-170">暗号化アルゴリズムは、ネットワーク上の MSMQ メッセージを暗号化するために使用されるアルゴリズムを指定します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-170">The encryption algorithm specifies the algorithm to use to encrypt the MSMQ message on the wire.</span></span> <span data-ttu-id="c8b0c-171">このプロパティは、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> を <xref:System.Net.Security.ProtectionLevel.EncryptAndSign> に設定している場合にのみ使用します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-171">This property is used only if <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> is set to <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>.</span></span>  
   
-### MSMQ ハッシュ アルゴリズム  
- ハッシュ アルゴリズムは、MSMQ メッセージのデジタル署名を作成するために使用されるアルゴリズムを指定します。受信側キュー マネージャーも、これと同じアルゴリズムを使用して MSMQ メッセージを認証します。このプロパティは、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> が <xref:System.Net.Security.ProtectionLevel> または <xref:System.Net.Security.ProtectionLevel> に設定されている場合にのみ使用されます。  
+ <span data-ttu-id="c8b0c-172">サポートされているアルゴリズムは `RC4Stream` と `AES` で、既定値は `RC4Stream` です。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-172">The supported algorithms are `RC4Stream` and `AES` and the default is `RC4Stream`.</span></span>  
   
- サポートされるアルゴリズムは、`MD5`、`SHA1`、`SHA256`、および `SHA512` です。既定値は `SHA1` です。  
+ <span data-ttu-id="c8b0c-173">`AES` アルゴリズムは、送信元が MSMQ 4.0 以降をインストールしている場合にのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-173">You can use the `AES` algorithm only if the sender has MSMQ 4.0 installed.</span></span> <span data-ttu-id="c8b0c-174">また、ターゲット キューも MSMQ 4.0 でホストされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-174">In addition, the target queue must also be hosted on MSMQ 4.0.</span></span>  
   
-## 参照  
- [Message Queuing](http://msdn.microsoft.com/ja-jp/ff917e87-05d5-478f-9430-0f560675ece1)   
- [セキュリティの概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)   
- [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+### <a name="msmq-hash-algorithm"></a><span data-ttu-id="c8b0c-175">MSMQ ハッシュ アルゴリズム</span><span class="sxs-lookup"><span data-stu-id="c8b0c-175">MSMQ Hash Algorithm</span></span>  
+ <span data-ttu-id="c8b0c-176">ハッシュ アルゴリズムは、MSMQ メッセージのデジタル署名を作成するために使用されるアルゴリズムを指定します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-176">The hash algorithm specifies the algorithm used to create a digital signature of the MSMQ message.</span></span> <span data-ttu-id="c8b0c-177">受信側キュー マネージャーも、これと同じアルゴリズムを使用して MSMQ メッセージを認証します。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-177">The receiving queue manager uses this same algorithm to authenticate the MSMQ message.</span></span> <span data-ttu-id="c8b0c-178">このプロパティは、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> が <xref:System.Net.Security.ProtectionLevel.Sign> または <xref:System.Net.Security.ProtectionLevel.EncryptAndSign> に設定されている場合にのみ使用されます。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-178">This property is used only if <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> is set to <xref:System.Net.Security.ProtectionLevel.Sign> or <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>.</span></span>  
+  
+ <span data-ttu-id="c8b0c-179">サポートされるアルゴリズムは、`MD5`、`SHA1`、`SHA256`、および `SHA512` です。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-179">The supported algorithms are `MD5`, `SHA1`, `SHA256`, and `SHA512`.</span></span> <span data-ttu-id="c8b0c-180">既定値は、`SHA1` です。</span><span class="sxs-lookup"><span data-stu-id="c8b0c-180">The default is `SHA1`.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="c8b0c-181">関連項目</span><span class="sxs-lookup"><span data-stu-id="c8b0c-181">See Also</span></span>  
+ [<span data-ttu-id="c8b0c-182">メッセージ キュー</span><span class="sxs-lookup"><span data-stu-id="c8b0c-182">Message Queuing</span></span>](http://msdn.microsoft.com/en-us/ff917e87-05d5-478f-9430-0f560675ece1)  
+ [<span data-ttu-id="c8b0c-183">セキュリティの基本概念</span><span class="sxs-lookup"><span data-stu-id="c8b0c-183">Security Concepts</span></span>](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
+ [<span data-ttu-id="c8b0c-184">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="c8b0c-184">Securing Services and Clients</span></span>](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

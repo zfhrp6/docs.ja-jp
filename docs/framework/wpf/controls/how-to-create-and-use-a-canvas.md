@@ -1,43 +1,49 @@
 ---
-title: "方法 : Canvas を作成および使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Canvas コントロール, 作成"
-  - "Canvas コントロール, 使用"
-  - "コントロール, Canvas"
+title: "方法 : Canvas を作成および使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- controls [WPF], Canvas
+- Canvas control [WPF], creating
+- Canvas control [WPF], using
 ms.assetid: 420b9487-9a15-477c-9489-a22a4dec7779
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8925b9b6cd6cea1a29592f591f9c1c89d32d49e5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Canvas を作成および使用する
-<xref:System.Windows.Controls.Canvas> のインスタンスを作成して使用する方法を次の例に示します。  
+# <a name="how-to-create-and-use-a-canvas"></a><span data-ttu-id="5ccd6-102">方法 : Canvas を作成および使用する</span><span class="sxs-lookup"><span data-stu-id="5ccd6-102">How to: Create and Use a Canvas</span></span>
+<span data-ttu-id="5ccd6-103">この例は、作成しのインスタンスを使用する方法を示しています。<xref:System.Windows.Controls.Canvas>です。</span><span class="sxs-lookup"><span data-stu-id="5ccd6-103">This example shows how to create and use an instance of <xref:System.Windows.Controls.Canvas>.</span></span>  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Controls.Canvas> の <xref:System.Windows.Controls.Canvas.SetTop%2A> メソッドと <xref:System.Windows.Controls.Canvas.SetLeft%2A> メソッドを使用して、2 つの <xref:System.Windows.Controls.TextBlock> 要素を明示的に配置しています。  また、この例では、`LightSteelBlue` の <xref:System.Windows.Controls.Control.Background%2A> 色を <xref:System.Windows.Controls.Canvas> に割り当てています。  
+## <a name="example"></a><span data-ttu-id="5ccd6-104">例</span><span class="sxs-lookup"><span data-stu-id="5ccd6-104">Example</span></span>  
+ <span data-ttu-id="5ccd6-105">2 つは、次の例が明示的に配置<xref:System.Windows.Controls.TextBlock>要素を使用して、<xref:System.Windows.Controls.Canvas.SetTop%2A>と<xref:System.Windows.Controls.Canvas.SetLeft%2A>のメソッド<xref:System.Windows.Controls.Canvas>です。</span><span class="sxs-lookup"><span data-stu-id="5ccd6-105">The following example explicitly positions two <xref:System.Windows.Controls.TextBlock> elements by using the <xref:System.Windows.Controls.Canvas.SetTop%2A> and <xref:System.Windows.Controls.Canvas.SetLeft%2A> methods of <xref:System.Windows.Controls.Canvas>.</span></span> <span data-ttu-id="5ccd6-106">例では、また割り当てます、<xref:System.Windows.Controls.Control.Background%2A>の色`LightSteelBlue`を<xref:System.Windows.Controls.Canvas>です。</span><span class="sxs-lookup"><span data-stu-id="5ccd6-106">The example also assigns a <xref:System.Windows.Controls.Control.Background%2A> color of `LightSteelBlue` to the <xref:System.Windows.Controls.Canvas>.</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] を使用して <xref:System.Windows.Controls.TextBlock> 要素を配置する場合は、<xref:System.Windows.Controls.Canvas.Top%2A> プロパティと <xref:System.Windows.Controls.Canvas.Left%2A> プロパティを使用します。  
+>  <span data-ttu-id="5ccd6-107">使用すると[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]位置に<xref:System.Windows.Controls.TextBlock>要素を使用して、<xref:System.Windows.Controls.Canvas.Top%2A>と<xref:System.Windows.Controls.Canvas.Left%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="5ccd6-107">When you use [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] to position <xref:System.Windows.Controls.TextBlock> elements, use the <xref:System.Windows.Controls.Canvas.Top%2A> and <xref:System.Windows.Controls.Canvas.Left%2A> properties.</span></span>  
   
  [!code-csharp[CanvasCode#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CanvasCode/CSharp/Canvas_Code.cs#1)]
  [!code-vb[CanvasCode#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CanvasCode/VisualBasic/canvas_vb.vb#1)]  
   
-## 参照  
- <xref:System.Windows.Controls.Canvas>   
- <xref:System.Windows.Controls.TextBlock>   
- <xref:System.Windows.Controls.Canvas.SetTop%2A>   
- <xref:System.Windows.Controls.Canvas.SetLeft%2A>   
- <xref:System.Windows.Controls.Canvas.Top%2A>   
- <xref:System.Windows.Controls.Canvas.Left%2A>   
- [パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/controls/canvas-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="5ccd6-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="5ccd6-108">See Also</span></span>  
+ <xref:System.Windows.Controls.Canvas>  
+ <xref:System.Windows.Controls.TextBlock>  
+ <xref:System.Windows.Controls.Canvas.SetTop%2A>  
+ <xref:System.Windows.Controls.Canvas.SetLeft%2A>  
+ <xref:System.Windows.Controls.Canvas.Top%2A>  
+ <xref:System.Windows.Controls.Canvas.Left%2A>  
+ [<span data-ttu-id="5ccd6-109">パネルの概要</span><span class="sxs-lookup"><span data-stu-id="5ccd6-109">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [<span data-ttu-id="5ccd6-110">方法トピック</span><span class="sxs-lookup"><span data-stu-id="5ccd6-110">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/canvas-how-to-topics.md)

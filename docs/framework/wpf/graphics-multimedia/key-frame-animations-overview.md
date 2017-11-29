@@ -1,322 +1,305 @@
 ---
-title: "キー フレーム アニメーションの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アニメーション, キー フレーム"
-  - "キー フレーム [WPF], キー フレーム アニメーションの概要"
-  - "複数のアニメーションのターゲット値"
+title: "キー フレーム アニメーションの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- animation [WPF], key-frame
+- key frames [WPF], about key-frame animations
+- multiple animation target values [WPF]
 ms.assetid: 10028f97-bb63-41fc-b8ad-663dac7ea203
-caps.latest.revision: 29
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 24
+caps.latest.revision: "29"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8c4f4179087679ff891c705cf16693fc69c808d8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# キー フレーム アニメーションの概要
-ここでは、キー フレーム アニメーションについて説明します。  キー フレーム アニメーションでは、3 つ以上のターゲット値を使用してアニメーション化し、アニメーションの補間方式を制御することができます。  
-  
- このトピックは、次のセクションで構成されています。  
-  
-<a name="autoTopLevelSectionsOUTLINE0"></a>   
--   [必要条件](#prerequisites)  
-  
--   [キー フレーム アニメーションの使用](#keyframeanimations)  
-  
--   [関連トピック](#seeAlsoToggle)  
+# <a name="key-frame-animations-overview"></a><span data-ttu-id="7521e-102">キー フレーム アニメーションの概要</span><span class="sxs-lookup"><span data-stu-id="7521e-102">Key-Frame Animations Overview</span></span>
+<span data-ttu-id="7521e-103">このトピックでは、キー フレーム アニメーションの概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="7521e-103">This topic introduces you to key-frame animations.</span></span> <span data-ttu-id="7521e-104">キー フレーム アニメーションでは、3 つ以上のターゲット値を使用してアニメーション化することができ、アニメーションの補間方式を制御できます。</span><span class="sxs-lookup"><span data-stu-id="7521e-104">Key-frame animations enable you to animate using more than two target values, and control an animation's interpolation method.</span></span>  
   
 <a name="prerequisites"></a>   
-## 必要条件  
- この概要を理解するには、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のアニメーションおよびタイムラインに精通している必要があります。  アニメーションの概要については、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」を参照してください。また、From\/To\/By アニメーションについても知っておくと役に立ちます。  詳細については、「[From\/To\/By アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/from-to-by-animations-overview.md)」を参照してください。  
+## <a name="prerequisites"></a><span data-ttu-id="7521e-105">前提条件</span><span class="sxs-lookup"><span data-stu-id="7521e-105">Prerequisites</span></span>  
+ <span data-ttu-id="7521e-106">この概要を理解するのには、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アニメーションとタイムラインを理解しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="7521e-106">To understand this overview, you should be familiar with [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] animations and timelines.</span></span> <span data-ttu-id="7521e-107">アニメーションの概要については、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7521e-107">For an introduction to animations, see the [Animation Overview](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).</span></span> <span data-ttu-id="7521e-108">さらに、From/To/By アニメーションについて理解しておくと役に立ちます。</span><span class="sxs-lookup"><span data-stu-id="7521e-108">It also helps to be familiar with From/To/By animations.</span></span> <span data-ttu-id="7521e-109">詳細については、「From/To/By アニメーションの概要」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7521e-109">For more information, see the From/To/By Animations Overview.</span></span>  
   
 <a name="whatisakeyframeanimation"></a>   
-## キー フレーム アニメーションとは  
- From\/To\/By アニメーションと同様に、キー フレーム アニメーションは、ターゲット プロパティの値をアニメーション化します。  また、<xref:System.Windows.Media.Animation.Timeline.Duration%2A> 全体でのターゲット値間の遷移を作成します。  ただし、From\/To\/By アニメーションでは 2 つの値の間の遷移が作成されますが、単一のキー フレーム アニメーションでは、任意の数のターゲット値の間の遷移を作成できます。  From\/To\/By アニメーションとは異なり、キー フレーム アニメーションには、ターゲット値を設定するために使用する From、To、または By プロパティがありません。  キー フレーム アニメーションのターゲット値は、キー フレーム オブジェクトを使用して記述します \(そのため、"キー フレーム アニメーション" と呼ばれます\)。  キー フレーム アニメーションのターゲット値を指定するには、キー フレーム オブジェクトを作成してアニメーションの <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A> コレクションに追加します。  実行時に、アニメーションは指定したフレーム間を遷移します。  
+## <a name="what-is-a-key-frame-animation"></a><span data-ttu-id="7521e-110">キー フレーム アニメーションとは</span><span class="sxs-lookup"><span data-stu-id="7521e-110">What is a Key-Frame Animation?</span></span>  
+ <span data-ttu-id="7521e-111">From/To/By アニメーションと同じように、キー フレーム アニメーションも、ターゲット プロパティの値をアニメーション化します。</span><span class="sxs-lookup"><span data-stu-id="7521e-111">Like a From/To/By animation, a key-frame animation animates the value of a target property.</span></span> <span data-ttu-id="7521e-112">上でターゲット値間の遷移が作成、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-112">It creates a transition among its target values over its <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.</span></span> <span data-ttu-id="7521e-113">ただし、From/To/By アニメーションは 2 つの値の間の遷移を作成しますが、キー フレーム アニメーションは、任意の数のターゲット値の間の遷移を作成できます。</span><span class="sxs-lookup"><span data-stu-id="7521e-113">However, while a From/To/By animation creates a transition between two values, a single key-frame animation can create transitions among any number of target values.</span></span> <span data-ttu-id="7521e-114">From/To/By アニメーションとは異なり、キー フレーム アニメーションには、ターゲット値を設定する From、To、または By プロパティはありません。</span><span class="sxs-lookup"><span data-stu-id="7521e-114">Unlike a From/To/By animation, a key frame animation has no From, To, or By properties with which to set its target values.</span></span> <span data-ttu-id="7521e-115">キー フレーム アニメーションのターゲット値は、キー フレーム オブジェクトを使用して記述されます (このため、"キー フレーム アニメーション" という用語が使用されます)。</span><span class="sxs-lookup"><span data-stu-id="7521e-115">A key-frame animation's target values are described using key frames objects (hence the term, "key-frame animation").</span></span> <span data-ttu-id="7521e-116">アニメーションのターゲット値を指定するキー フレームのオブジェクトを作成およびアニメーションに追加<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A>コレクション。</span><span class="sxs-lookup"><span data-stu-id="7521e-116">To specify the animation's target values, you create key frame objects and add them to the animation's <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A> collection.</span></span> <span data-ttu-id="7521e-117">アニメーションを実行すると、アニメーションが指定したフレームの間で遷移します。</span><span class="sxs-lookup"><span data-stu-id="7521e-117">When the animation runs, it transitions between the frames you specified.</span></span>  
   
- 一部のキー フレーム メソッドは、複数のターゲット値をサポートするだけでなく、複数の補間方式もサポートします。  アニメーションの補間方式によって、ある値から次の値へのアニメーションの遷移方法が定義されます。  補間には、[離散](GTMT)、[線形](GTMT)、および[スプライン](GTMT)の 3 種類があります。  
+ <span data-ttu-id="7521e-118">複数のターゲット値のサポートに加え、一部のキー フレーム メソッドでは、複数の補間方式もサポートします。</span><span class="sxs-lookup"><span data-stu-id="7521e-118">In addition to supporting multiple target values, some key-frame methods even support multiple interpolation methods.</span></span> <span data-ttu-id="7521e-119">アニメーションの補間方式は、1 つの値から次の値にどのように遷移するかを定義します。</span><span class="sxs-lookup"><span data-stu-id="7521e-119">An animation's interpolation method defines how it transitions from one value to the next.</span></span> <span data-ttu-id="7521e-120">補間には、離散、線形、およびスプラインの 3 つの種類があります。</span><span class="sxs-lookup"><span data-stu-id="7521e-120">There are three types of interpolations: discrete, linear, and splined.</span></span>  
   
- キー フレーム アニメーションを使用してアニメーション化するには、次の手順を実行します。  
+ <span data-ttu-id="7521e-121">キー フレーム アニメーションをアニメーション化するには、次の手順を完了します。</span><span class="sxs-lookup"><span data-stu-id="7521e-121">To animate with a key-frame animation, you complete the following steps.</span></span>  
   
--   From\/To\/By アニメーションの場合と同様に、アニメーションを宣言してその <xref:System.Windows.Media.Animation.Timeline.Duration%2A> を指定します。  
+-   <span data-ttu-id="7521e-122">アニメーションを宣言し、指定の<xref:System.Windows.Media.Animation.Timeline.Duration%2A>によって/アニメーションの場合と同様、します。</span><span class="sxs-lookup"><span data-stu-id="7521e-122">Declare the animation and specify its <xref:System.Windows.Media.Animation.Timeline.Duration%2A>, just like you would for a from/to/by animation.</span></span>  
   
--   ターゲット値ごとに、適切な型のキー フレームを作成し、その値と <xref:System.Windows.Media.Animation.KeyTime> を設定して、アニメーションの <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A> コレクションに追加します。  
+-   <span data-ttu-id="7521e-123">各ターゲット値の適切な型のキー フレームの作成、その値を設定し、 <xref:System.Windows.Media.Animation.KeyTime>、アニメーションの追加と<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A>コレクション。</span><span class="sxs-lookup"><span data-stu-id="7521e-123">For each target value, create a key frame of the appropriate type, set its value and <xref:System.Windows.Media.Animation.KeyTime>, and add it to the animation's <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A> collection.</span></span>  
   
--   From\/To\/By アニメーションの場合と同様に、アニメーションをプロパティに関連付けます。  ストーリーボードを使用してアニメーションをプロパティに適用する方法の詳細については、「[ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)」を参照してください。  
+-   <span data-ttu-id="7521e-124">From/To/By アニメーションと同じように、アニメーションをプロパティに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="7521e-124">Associate the animation with a property, just like you would with a From/To/By animation.</span></span> <span data-ttu-id="7521e-125">ストーリーボードを使用したアニメーションのプロパティへの適用の詳細については、「[ストーリー ボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7521e-125">For more information about applying an animation to a property using a storyboard, see [Storyboards Overview](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).</span></span>  
   
- 次の例では、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> を使用して、<xref:System.Windows.Shapes.Rectangle> 要素を 4 つの異なる場所にアニメーション化します。  
+ <span data-ttu-id="7521e-126">次の例では、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>アニメーション化する、 <xref:System.Windows.Shapes.Rectangle> 4 つの異なる場所に要素。</span><span class="sxs-lookup"><span data-stu-id="7521e-126">The following example uses a <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> to animate a <xref:System.Windows.Shapes.Rectangle> element to four different locations.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->  
+ [!code-xaml[keyframes_ovw_snippet#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
   
- From\/To\/By アニメーションと同様に、キー フレーム アニメーションも、マークアップおよびコードで <xref:System.Windows.Media.Animation.Storyboard> を使用するかコードで <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> メソッドを使用して、プロパティに適用することができます。  また、キー フレーム アニメーションを使用して <xref:System.Windows.Media.Animation.AnimationClock> を作成し、1 つ以上のプロパティに適用することもできます。  アニメーションを適用するさまざまな方法の詳細については、「[プロパティ アニメーションの手法の概要](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)」を参照してください。  
+ <span data-ttu-id="7521e-127">などの From/を/、アニメーション、キー フレーム アニメーションに使用できるプロパティを使用して、<xref:System.Windows.Media.Animation.Storyboard>マークアップおよびコードでまたはを使用して、<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>コード内のメソッドです。</span><span class="sxs-lookup"><span data-stu-id="7521e-127">Like a From/To/By animation, a key-frame animation can be applied to a property by using a <xref:System.Windows.Media.Animation.Storyboard> in markup and code or by using the <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> method in code.</span></span> <span data-ttu-id="7521e-128">作成するキー フレーム アニメーションを使用することも、<xref:System.Windows.Media.Animation.AnimationClock>し、1 つまたは複数のプロパティに適用します。</span><span class="sxs-lookup"><span data-stu-id="7521e-128">You may also use a key-frame animation to create an <xref:System.Windows.Media.Animation.AnimationClock> and apply it to one or more properties.</span></span> <span data-ttu-id="7521e-129">アニメーションを適用するためのさまざまなメソッドの詳細については、「[プロパティ アニメーションの手法の概要](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7521e-129">For more information about the different methods for applying animations, see the [Property Animation Techniques Overview](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md).</span></span>  
   
 <a name="animation_types"></a>   
-## キー フレーム アニメーションの種類  
- アニメーションによってプロパティ値が生成されるため、さまざまなプロパティ型に対応するさまざまな種類のアニメーションが存在します。  <xref:System.Double> を受け取るプロパティ \(要素の <xref:System.Windows.FrameworkElement.Width%2A> プロパティなど\) をアニメーション化するには、<xref:System.Double> 値を生成するアニメーションを使用します。  <xref:System.Windows.Point> を受け取るプロパティをアニメーション化するには、<xref:System.Windows.Point> 値を生成するアニメーションを使用します。他も同様です。  
+## <a name="key-frame-animation-types"></a><span data-ttu-id="7521e-130">キー フレーム アニメーションの種類</span><span class="sxs-lookup"><span data-stu-id="7521e-130">Key-Frame Animation Types</span></span>  
+ <span data-ttu-id="7521e-131">アニメーションはプロパティ値を生成するため、プロパティの型ごとに異なるアニメーションの種類があります。</span><span class="sxs-lookup"><span data-stu-id="7521e-131">Because animations generate property values, there are different animation types for different property types.</span></span> <span data-ttu-id="7521e-132">受け取るプロパティをアニメーション化する、 <xref:System.Double> (要素のなど<xref:System.Windows.FrameworkElement.Width%2A>プロパティ) を生成するアニメーションを使用する<xref:System.Double>値。</span><span class="sxs-lookup"><span data-stu-id="7521e-132">To animate a property that takes a <xref:System.Double> (such as an element's <xref:System.Windows.FrameworkElement.Width%2A> property), you use an animation that produces <xref:System.Double> values.</span></span> <span data-ttu-id="7521e-133">受け取るプロパティをアニメーション化する、 <xref:System.Windows.Point>、生成されるアニメーションを使用する<xref:System.Windows.Point>値、およびなどです。</span><span class="sxs-lookup"><span data-stu-id="7521e-133">To animate a property that takes a <xref:System.Windows.Point>, you use an animation that produces <xref:System.Windows.Point> values, and so on.</span></span>  
   
- キー フレーム アニメーション クラスは <xref:System.Windows.Media.Animation> 名前空間に属し、次の名前付け規則に従います。  
+ <span data-ttu-id="7521e-134">属しているキー フレーム アニメーション クラス、<xref:System.Windows.Media.Animation>名前空間され、次の命名規則に従います。</span><span class="sxs-lookup"><span data-stu-id="7521e-134">The key-frame animation classes belong to the <xref:System.Windows.Media.Animation> namespace and adhere to the following naming convention:</span></span>  
   
- *\<Type\>* `AnimationUsingKeyFrames`  
+ <span data-ttu-id="7521e-135">*\<Type>* `AnimationUsingKeyFrames`</span><span class="sxs-lookup"><span data-stu-id="7521e-135">*\<Type>* `AnimationUsingKeyFrames`</span></span>  
   
- ここで、*\<Type\>* はクラスによってアニメーション化される値の型です。  
+ <span data-ttu-id="7521e-136">ここで、*\<Type>*は、クラスがアニメーション化する値の型です。</span><span class="sxs-lookup"><span data-stu-id="7521e-136">Where *\<Type>* is the type of value that the class animates.</span></span>  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、次のキー フレーム アニメーション クラスが用意されています。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="7521e-137"> は、次のキー フレーム アニメーション クラスを提供します。</span><span class="sxs-lookup"><span data-stu-id="7521e-137"> provides the following key-frame animation classes.</span></span>  
   
-|プロパティの型|対応する From\/To\/By アニメーション クラス|サポートされている補間方式|  
-|-------------|-----------------------------------|-------------------|  
-|<xref:System.Boolean>|<xref:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames>|離散|  
-|<xref:System.Byte>|<xref:System.Windows.Media.Animation.ByteAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Decimal>|<xref:System.Windows.Media.Animation.DecimalAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Int16>|<xref:System.Windows.Media.Animation.Int16AnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Int32>|<xref:System.Windows.Media.Animation.Int32AnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Int64>|<xref:System.Windows.Media.Animation.Int64AnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Windows.Media.Matrix>|<xref:System.Windows.Media.Animation.MatrixAnimationUsingKeyFrames>|離散|  
-|<xref:System.Object>|<xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames>|離散|  
-|<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Windows.Media.Media3D.Quaternion>|<xref:System.Windows.Media.Animation.QuaternionAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Windows.Rect>|<xref:System.Windows.Media.Animation.RectAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Windows.Media.Media3D.Rotation3D>|<xref:System.Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Single>|<xref:System.Windows.Media.Animation.SingleAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.String>|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|離散|  
-|<xref:System.Windows.Size>|<xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Windows.Thickness>|<xref:System.Windows.Media.Animation.ThicknessAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Windows.Media.Media3D.Vector3D>|<xref:System.Windows.Media.Animation.Vector3DAnimationUsingKeyFrames>|離散、線形、スプライン|  
-|<xref:System.Windows.Vector>|<xref:System.Windows.Media.Animation.VectorAnimationUsingKeyFrames>|離散、線形、スプライン|  
+|<span data-ttu-id="7521e-138">プロパティの型</span><span class="sxs-lookup"><span data-stu-id="7521e-138">Property type</span></span>|<span data-ttu-id="7521e-139">対応するFrom/To/By アニメーションのクラス</span><span class="sxs-lookup"><span data-stu-id="7521e-139">Corresponding from/to/by animation class</span></span>|<span data-ttu-id="7521e-140">サポートされる補間方式</span><span class="sxs-lookup"><span data-stu-id="7521e-140">Interpolation methods supported</span></span>|  
+|-------------------|------------------------------------------------|-------------------------------------|  
+|<xref:System.Boolean>|<xref:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames>|<span data-ttu-id="7521e-141">離散</span><span class="sxs-lookup"><span data-stu-id="7521e-141">Discrete</span></span>|  
+|<xref:System.Byte>|<xref:System.Windows.Media.Animation.ByteAnimationUsingKeyFrames>|<span data-ttu-id="7521e-142">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-142">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|<span data-ttu-id="7521e-143">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-143">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Decimal>|<xref:System.Windows.Media.Animation.DecimalAnimationUsingKeyFrames>|<span data-ttu-id="7521e-144">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-144">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|<span data-ttu-id="7521e-145">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-145">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Int16>|<xref:System.Windows.Media.Animation.Int16AnimationUsingKeyFrames>|<span data-ttu-id="7521e-146">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-146">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Int32>|<xref:System.Windows.Media.Animation.Int32AnimationUsingKeyFrames>|<span data-ttu-id="7521e-147">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-147">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Int64>|<xref:System.Windows.Media.Animation.Int64AnimationUsingKeyFrames>|<span data-ttu-id="7521e-148">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-148">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Windows.Media.Matrix>|<xref:System.Windows.Media.Animation.MatrixAnimationUsingKeyFrames>|<span data-ttu-id="7521e-149">離散</span><span class="sxs-lookup"><span data-stu-id="7521e-149">Discrete</span></span>|  
+|<xref:System.Object>|<xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames>|<span data-ttu-id="7521e-150">離散</span><span class="sxs-lookup"><span data-stu-id="7521e-150">Discrete</span></span>|  
+|<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|<span data-ttu-id="7521e-151">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-151">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Windows.Media.Media3D.Quaternion>|<xref:System.Windows.Media.Animation.QuaternionAnimationUsingKeyFrames>|<span data-ttu-id="7521e-152">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-152">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Windows.Rect>|<xref:System.Windows.Media.Animation.RectAnimationUsingKeyFrames>|<span data-ttu-id="7521e-153">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-153">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Windows.Media.Media3D.Rotation3D>|<xref:System.Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames>|<span data-ttu-id="7521e-154">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-154">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Single>|<xref:System.Windows.Media.Animation.SingleAnimationUsingKeyFrames>|<span data-ttu-id="7521e-155">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-155">Discrete, Linear, Splined</span></span>|  
+|<xref:System.String>|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|<span data-ttu-id="7521e-156">離散</span><span class="sxs-lookup"><span data-stu-id="7521e-156">Discrete</span></span>|  
+|<xref:System.Windows.Size>|<xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>|<span data-ttu-id="7521e-157">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-157">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Windows.Thickness>|<xref:System.Windows.Media.Animation.ThicknessAnimationUsingKeyFrames>|<span data-ttu-id="7521e-158">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-158">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Windows.Media.Media3D.Vector3D>|<xref:System.Windows.Media.Animation.Vector3DAnimationUsingKeyFrames>|<span data-ttu-id="7521e-159">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-159">Discrete, Linear, Splined</span></span>|  
+|<xref:System.Windows.Vector>|<xref:System.Windows.Media.Animation.VectorAnimationUsingKeyFrames>|<span data-ttu-id="7521e-160">離散、線形、スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-160">Discrete, Linear, Splined</span></span>|  
   
 <a name="animation_target_values"></a>   
-## ターゲット値 \(キー フレーム\) およびキー時刻  
- さまざまな型のプロパティをアニメーション化するためにさまざまな種類のキー フレーム アニメーションが存在するのと同様に、キー フレーム オブジェクトにもさまざまな種類があります。このオブジェクトは、アニメーション化される値の型およびサポートされている補間方式ごとに 1 つずつあります。  キー フレームの種類は、次の名前付け規則に従います。  
+## <a name="target-values-key-frames-and-key-times"></a><span data-ttu-id="7521e-161">ターゲット値 (キー フレーム) とキー時刻</span><span class="sxs-lookup"><span data-stu-id="7521e-161">Target Values (key frames) and Key Times</span></span>  
+ <span data-ttu-id="7521e-162">さまざまな種類のプロパティをアニメーション化するための多様な種類のキー フレーム アニメーションがあるように、さまざまな種類のキー フレーム オブジェクトがあります (アニメーション化される値の型とサポートされる補間方式ごとに 1 種類のオブジェクト)。</span><span class="sxs-lookup"><span data-stu-id="7521e-162">Just as there are different types of key-frame animations for animating different property types, there are also different types of key frame objects: one for each type of value animated and interpolation method supported.</span></span> <span data-ttu-id="7521e-163">キー フレームの種類は、次の名前付け規則に従います。</span><span class="sxs-lookup"><span data-stu-id="7521e-163">Key frame types adhere to the following naming convention:</span></span>  
   
- *\<InterpolationMethod\>\<Type\>* `KeyFrame`  
+ <span data-ttu-id="7521e-164">*\<InterpolationMethod>\<Type>* `KeyFrame`</span><span class="sxs-lookup"><span data-stu-id="7521e-164">*\<InterpolationMethod>\<Type>* `KeyFrame`</span></span>  
   
- ここで、*\<InterpolationMethod\>* はキー フレームで使用される補間方式で、*\<Type\>* はクラスによってアニメーション化される値の型です。  3 つすべての補間方式をサポートするキー フレーム アニメーションでは、3 種類のキー フレームを使用できます。  たとえば、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> では <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame>、<xref:System.Windows.Media.Animation.LinearDoubleKeyFrame>、および <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame> の 3 種類のキー フレームを使用できます   \(補間方式については、後のセクションで詳しく説明します\)。  
+ <span data-ttu-id="7521e-165">ここで、*\<InterpolationMethod>*は、キー フレームで使用される補間方式であり、*\<Type>*は、クラスがアニメーション化する値の型です。</span><span class="sxs-lookup"><span data-stu-id="7521e-165">Where *\<InterpolationMethod>* is the interpolation method the key frame uses and *\<Type>* is the type of value that the class animates.</span></span> <span data-ttu-id="7521e-166">3 つの補間方式のすべてをサポートするキー フレーム アニメーションでは、3 種類のキー フレームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="7521e-166">A key-frame animation that supports all three interpolation methods will have three key frame types that you can use.</span></span> <span data-ttu-id="7521e-167">次の 3 つのキー フレームの種類を使用するなど、 <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>: <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame>、 <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame>、および<xref:System.Windows.Media.Animation.SplineDoubleKeyFrame>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-167">For example, you can use three key frame types with a <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>: <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame>, <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame>, and <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame>.</span></span> <span data-ttu-id="7521e-168">(補間方式については、後のセクションで詳しく説明します)。</span><span class="sxs-lookup"><span data-stu-id="7521e-168">(Interpolation methods are described in detail in a later section.)</span></span>  
   
- キー フレームの主な目的は、<xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> および <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> を指定することです。  すべての種類のキー フレームで、これら 2 つのプロパティが提供されます。  
+ <span data-ttu-id="7521e-169">キー フレームの主な目的を指定する、<xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>と<xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-169">The primary purpose of a key frame is to specify a <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> and a <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>.</span></span> <span data-ttu-id="7521e-170">すべての種類のキー フレームには、次の 2 つのプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="7521e-170">Every key frame type provides these two properties.</span></span>  
   
--   <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> プロパティは、そのキー フレームのターゲット値を指定します。  
+-   <span data-ttu-id="7521e-171"><xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>プロパティは、そのキー フレームのターゲット値を指定します。</span><span class="sxs-lookup"><span data-stu-id="7521e-171">The <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> property specifies the target value for that key-frame.</span></span>  
   
--   <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> プロパティは、\(アニメーションの <xref:System.Windows.Media.Animation.Timeline.Duration%2A> 内で\) キー フレームの <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> に達する時刻を指定します。  
+-   <span data-ttu-id="7521e-172"><xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>プロパティでは、タイミングを指定します (アニメーションの内<xref:System.Windows.Media.Animation.Timeline.Duration%2A>) キー フレームの<xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>に到達します。</span><span class="sxs-lookup"><span data-stu-id="7521e-172">The <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> property specifies when (within the animation's <xref:System.Windows.Media.Animation.Timeline.Duration%2A>) a key frame's <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> is reached.</span></span>  
   
- キー フレーム アニメーションが開始されると、<xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> プロパティで定義された順序でキー フレームが反復処理されます。  
+ <span data-ttu-id="7521e-173">キー フレーム アニメーションの開始時に、そのキー フレームによって定義された順序でを反復処理、<xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="7521e-173">When a key frame animation begins, iterates through its key frames in the order defined by their <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> properties.</span></span>  
   
--   0 の時点にキー フレームが存在しない場合は、アニメーションによってターゲット プロパティの現在の値と最初のキー フレームの <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> の間の遷移が作成されます。それ以外の場合は、アニメーションの出力値が最初のキー フレームの値になります。  
+-   <span data-ttu-id="7521e-174">アニメーションがターゲット プロパティの現在の値の間の遷移を作成時に 0 にキー フレームがない場合、<xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>最初のキー フレームです。 それ以外の場合、アニメーションの出力の最初のキー フレームの値の値になります。</span><span class="sxs-lookup"><span data-stu-id="7521e-174">If there is no key frame at time 0, the animation creates a transition between the target property's current value and the <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> of the first key frame; otherwise, the animation's output value becomes the value of the first key frame.</span></span>  
   
--   アニメーションでは、2 番目のキー フレームで指定された補間方式を使用して、最初のキー フレームと 2 番目のキー フレームの <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> の間の遷移が作成されます。  遷移は最初のキー フレームの <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> から開始され、2 番目のキー フレームの <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> に到達した時点で終了します。  
+-   <span data-ttu-id="7521e-175">アニメーションの間の遷移を作成する、<xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>最初と 2 番目キー フレームの 2 つ目のキー フレームによって指定された補間メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="7521e-175">The animation creates a transition between the <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> of the first and second key frames using the interpolation method specified by the second key frame.</span></span> <span data-ttu-id="7521e-176">最初のキー フレームの始まり、遷移<xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>とが終了 2 番目のキー フレームの<xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>に到達します。</span><span class="sxs-lookup"><span data-stu-id="7521e-176">The transition starts at the first key frame's <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> and ends when the second key frame's <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> is reached.</span></span>  
   
--   アニメーションが続行され、後続の各キー フレームとその前のキー フレームの間の遷移が作成されます。  
+-   <span data-ttu-id="7521e-177">アニメーションは、前後のキー フレームの間の遷移を作成しながら続行されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-177">The animation continues, creating transitions between each subsequent key frame and its preceding key frame.</span></span>  
   
--   最後に、アニメーションは、その <xref:System.Windows.Media.Animation.Timeline.Duration%2A> 以内で最大のキー時刻が指定されたキー フレームの値に遷移します。  
+-   <span data-ttu-id="7521e-178">最後で最大のキー時刻キー フレームの値をアニメーション遷移は同じか、またはアニメーションのより小さい<xref:System.Windows.Media.Animation.Timeline.Duration%2A>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-178">Finally, the animation transitions to the value of the key frame with the greatest key time that is equal to or smaller than the animation's <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.</span></span>  
   
- アニメーションの <xref:System.Windows.Media.Animation.Timeline.Duration%2A> が <xref:System.Windows.Duration.Automatic%2A> の場合、またはその <xref:System.Windows.Media.Animation.Timeline.Duration%2A> が最後のキー フレームの時刻と等しい場合、アニメーションは終了します。  アニメーションの <xref:System.Windows.Duration> が最後のキー フレームのキー時刻を超える場合、アニメーションは、その <xref:System.Windows.Duration> の最後に到達するまでキー フレームの値を保持します。  すべてのアニメーションと同様に、キー フレーム アニメーションは <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> プロパティを使用して、アクティブな期間の末尾に到達したときに最終的な値を保持するかどうかを決定します。  詳細については、「[タイミング動作の概要](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)」を参照してください。  
+ <span data-ttu-id="7521e-179">場合、アニメーションの<xref:System.Windows.Media.Animation.Timeline.Duration%2A>は<xref:System.Windows.Duration.Automatic%2A>またはその<xref:System.Windows.Media.Animation.Timeline.Duration%2A>が最後のキー フレーム アニメーションの終了の時刻と等しい。</span><span class="sxs-lookup"><span data-stu-id="7521e-179">If the animation's <xref:System.Windows.Media.Animation.Timeline.Duration%2A> is <xref:System.Windows.Duration.Automatic%2A> or its <xref:System.Windows.Media.Animation.Timeline.Duration%2A> is equal to the time of the last key frame, the animation ends.</span></span> <span data-ttu-id="7521e-180">それ以外の場合、アニメーションの<xref:System.Windows.Duration>が最後のキー フレーム アニメーション保留リストの末尾に到達するまで、キー フレーム値のキー時刻よりも大きい、<xref:System.Windows.Duration>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-180">Otherwise, if the animation's <xref:System.Windows.Duration> is greater than the key time of the last key frame, the animation holds the key frame value until it reaches the end of its <xref:System.Windows.Duration>.</span></span> <span data-ttu-id="7521e-181">すべてのアニメーションと同様に、キー フレーム アニメーションで使用されるその<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>かどうかが最終的な値保持のアクティブな期間の終了になったときに決定するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="7521e-181">Like all animations, a key-frame animation uses its <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> property to determine whether it holds it final value when it reaches the end of its active period.</span></span> <span data-ttu-id="7521e-182">詳細については、「[タイミング動作の概要](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7521e-182">For more information, see the [Timing Behaviors Overview](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md).</span></span>  
   
- 次の例では、前の例で定義した <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> オブジェクトを使用して、<xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> および <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> プロパティの動作を示します。  
+ <span data-ttu-id="7521e-183">次の例では、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>オブジェクトを示すために前の例で定義されている方法、<xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>と<xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>プロパティ作業します。</span><span class="sxs-lookup"><span data-stu-id="7521e-183">The following example uses the <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> object defined in the preceding example to demonstrate how the <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> and <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> properties work.</span></span>  
   
--   最初のキー フレームは、アニメーションの出力値を直ちに 0 に設定します。  
+-   <span data-ttu-id="7521e-184">最初のキー フレームは、アニメーションの出力値をただちに 0 に設定します。</span><span class="sxs-lookup"><span data-stu-id="7521e-184">The first key frame immediately sets the animation's output value to 0.</span></span>  
   
--   2 番目のキー フレームは、0 から 350 までアニメーション化します。  最初のキー フレームの終了時 \(0 秒の時点\) に開始され、2 秒間再生されて 0:0:2 の時点で終了します。  
+-   <span data-ttu-id="7521e-185">2 番目のキー フレームは、0 から 350 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-185">The second key frame animates from 0 to 350.</span></span> <span data-ttu-id="7521e-186">最初のキー フレームが終わった時点で開始され (時刻 = 0 秒)、2 秒間再生され、時刻 = 0:0:2 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-186">It starts after the first key frame ends (at time = 0 seconds) and plays for 2 seconds, ending at time = 0:0:2.</span></span>  
   
--   3 番目のキー フレームは、350 から 50 までアニメーション化します。  2 番目のキー フレームの終了時 \(2 秒の時点\) に開始され、5 秒間再生されて 0:0:7 の時点で終了します。  
+-   <span data-ttu-id="7521e-187">3 番目のキー フレームは、350 から 50 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-187">The third key frame animates from 350 to 50.</span></span> <span data-ttu-id="7521e-188">2 番目のキー フレームが終わった時点で開始され (時刻 = 2 秒)、5 秒間再生され、時刻 = 0:0:7 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-188">It starts when the second key frame ends (at time = 2 seconds) and plays for 5 seconds, ending at time = 0:0:7.</span></span>  
   
--   4 番目のキー フレームは、50 から 200 までアニメーション化します。  3 番目のキー フレームの終了時 \(7 秒の時点\) に開始され、1 秒間再生されて 0:0:8 の時点で終了します。  
+-   <span data-ttu-id="7521e-189">4 番目のキー フレームは、50 から 200 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-189">The fourth key frame animates from 50 to 200.</span></span> <span data-ttu-id="7521e-190">3 番目のキー フレームが終わった時点で開始され (時刻 = 7 秒)、1 秒間再生され、時刻 = 0:0:8 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-190">It starts when the third key frame ends (at time = 7 seconds) and plays for 1 second, ending at time = 0:0:8.</span></span>  
   
--   アニメーションの <xref:System.Windows.Media.Animation.Timeline.Duration%2A> プロパティが 10 秒に設定されているため、アニメーションは、0:0:10 の時点で終了するまでの 2 秒間その最終的な値を保持します。  
+-   <span data-ttu-id="7521e-191"><xref:System.Windows.Media.Animation.Timeline.Duration%2A>アニメーションのプロパティは、10 秒に設定された、アニメーションの終了前に 2 つの秒の最終的な値を保持する時間 = 0:0:10。</span><span class="sxs-lookup"><span data-stu-id="7521e-191">Because the <xref:System.Windows.Media.Animation.Timeline.Duration%2A> property of the animation was set to 10 seconds, the animation holds its final value for two seconds before ending at time = 0:0:10.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#BasicKeyFrameExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  -->  
+ [!code-xaml[keyframes_ovw_snippet#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
   
 <a name="interpolationmethods"></a>   
-## 補間方式  
- これまでのセクションで、複数の補間方式をサポートするキー フレーム アニメーションもあることについて説明しました。  アニメーションの補間は、アニメーションが期間全体でどのように値の間を遷移するかを記述します。  アニメーションで使用するキー フレームの種類を選択することで、そのキー フレーム セグメントの補間方式を定義できます。  補間方式には、線形、離散、およびスプラインの 3 種類があります。  
+## <a name="interpolation-methods"></a><span data-ttu-id="7521e-192">補間方式</span><span class="sxs-lookup"><span data-stu-id="7521e-192">Interpolation Methods</span></span>  
+ <span data-ttu-id="7521e-193">前のセクションで、一部のキー フレーム アニメーションでは複数の補間方式がサポートされることに言及しました。</span><span class="sxs-lookup"><span data-stu-id="7521e-193">The preceding sections mentioned that some key-frame animations support multiple interpolation methods.</span></span> <span data-ttu-id="7521e-194">アニメーションの補間は、その継続時間中にアニメーションがどのように遷移するかを表します。</span><span class="sxs-lookup"><span data-stu-id="7521e-194">An animation's interpolation describes how an animation transitions between values over its duration.</span></span> <span data-ttu-id="7521e-195">アニメーションで使用するキー フレームの種類を選択することで、そのキー フレーム セグメントの補間方式を定義できます。</span><span class="sxs-lookup"><span data-stu-id="7521e-195">By selecting which key frame type you use with your animation, you can define the interpolation method for that key frame segment.</span></span> <span data-ttu-id="7521e-196">補間方式には、線形、離散、およびスプラインの 3 つの種類があります。</span><span class="sxs-lookup"><span data-stu-id="7521e-196">There are three different types of interpolation methods: linear, discrete, and splined.</span></span>  
   
-### 線形補間  
- [線形補間](GTMT)では、アニメーションはセグメント期間において定率で進行します。  たとえば、キー フレーム セグメントが 5 秒間に 0 から 10 に遷移する場合、アニメーションは指定された時点で次の値を出力します。  
+### <a name="linear-interpolation"></a><span data-ttu-id="7521e-197">線形補間</span><span class="sxs-lookup"><span data-stu-id="7521e-197">Linear Interpolation</span></span>  
+ <span data-ttu-id="7521e-198">線形補間では、アニメーションは、セグメントの継続期間中、一定の率で進行します。</span><span class="sxs-lookup"><span data-stu-id="7521e-198">With linear interpolation, the animation progresses at a constant rate of the segment duration.</span></span> <span data-ttu-id="7521e-199">たとえば、キー フレーム セグメントが 5 秒間で 0 から 10 に遷移する場合、アニメーションは、指定された時間に次の値を出力します。</span><span class="sxs-lookup"><span data-stu-id="7521e-199">For example, if a key frame segment transitions from 0 to 10 over a duration of 5 seconds, the animation will output the following values at the specified times:</span></span>  
   
-|Time|出力値|  
-|----------|---------|  
-|0|0|  
-|1|2|  
-|2|4|  
-|3|6|  
-|4|8|  
-|4.25|8.5|  
-|4.5|9|  
-|5|10|  
+|<span data-ttu-id="7521e-200">時間</span><span class="sxs-lookup"><span data-stu-id="7521e-200">Time</span></span>|<span data-ttu-id="7521e-201">出力値</span><span class="sxs-lookup"><span data-stu-id="7521e-201">Output value</span></span>|  
+|----------|------------------|  
+|<span data-ttu-id="7521e-202">0</span><span class="sxs-lookup"><span data-stu-id="7521e-202">0</span></span>|<span data-ttu-id="7521e-203">0</span><span class="sxs-lookup"><span data-stu-id="7521e-203">0</span></span>|  
+|<span data-ttu-id="7521e-204">1</span><span class="sxs-lookup"><span data-stu-id="7521e-204">1</span></span>|<span data-ttu-id="7521e-205">2</span><span class="sxs-lookup"><span data-stu-id="7521e-205">2</span></span>|  
+|<span data-ttu-id="7521e-206">2</span><span class="sxs-lookup"><span data-stu-id="7521e-206">2</span></span>|<span data-ttu-id="7521e-207">4</span><span class="sxs-lookup"><span data-stu-id="7521e-207">4</span></span>|  
+|<span data-ttu-id="7521e-208">3</span><span class="sxs-lookup"><span data-stu-id="7521e-208">3</span></span>|<span data-ttu-id="7521e-209">6</span><span class="sxs-lookup"><span data-stu-id="7521e-209">6</span></span>|  
+|<span data-ttu-id="7521e-210">4</span><span class="sxs-lookup"><span data-stu-id="7521e-210">4</span></span>|<span data-ttu-id="7521e-211">8</span><span class="sxs-lookup"><span data-stu-id="7521e-211">8</span></span>|  
+|<span data-ttu-id="7521e-212">4.25</span><span class="sxs-lookup"><span data-stu-id="7521e-212">4.25</span></span>|<span data-ttu-id="7521e-213">8.5</span><span class="sxs-lookup"><span data-stu-id="7521e-213">8.5</span></span>|  
+|<span data-ttu-id="7521e-214">4.5</span><span class="sxs-lookup"><span data-stu-id="7521e-214">4.5</span></span>|<span data-ttu-id="7521e-215">9</span><span class="sxs-lookup"><span data-stu-id="7521e-215">9</span></span>|  
+|<span data-ttu-id="7521e-216">5</span><span class="sxs-lookup"><span data-stu-id="7521e-216">5</span></span>|<span data-ttu-id="7521e-217">10</span><span class="sxs-lookup"><span data-stu-id="7521e-217">10</span></span>|  
   
-### 離散補間  
- [離散補間](GTMT)では、補間なしでアニメーション機能がある値から次の値にジャンプします。  キー フレーム セグメントが 5 秒間に 0 から 10 に遷移する場合、アニメーションは指定された時点で次の値を出力します。  
+### <a name="discrete-interpolation"></a><span data-ttu-id="7521e-218">離散補間</span><span class="sxs-lookup"><span data-stu-id="7521e-218">Discrete Interpolation</span></span>  
+ <span data-ttu-id="7521e-219">離散補間では、アニメーション関数は、1 つの値から次の値に補間なしでジャンプします。</span><span class="sxs-lookup"><span data-stu-id="7521e-219">With discrete interpolation, the animation function jumps from one value to the next without interpolation.</span></span> <span data-ttu-id="7521e-220">キー フレーム セグメントが 5 秒間で 0 から 10 に遷移する場合、アニメーションは、指定された時間で次の値を出力します。</span><span class="sxs-lookup"><span data-stu-id="7521e-220">If a key frame segment transitions from 0 to 10 over a duration of 5 seconds, the animation will output the following values at the specified times:</span></span>  
   
-|Time|出力値|  
-|----------|---------|  
-|0|0|  
-|1|0|  
-|2|0|  
-|3|0|  
-|4|0|  
-|4.25|0|  
-|4.5|0|  
-|5|10|  
+|<span data-ttu-id="7521e-221">時間</span><span class="sxs-lookup"><span data-stu-id="7521e-221">Time</span></span>|<span data-ttu-id="7521e-222">出力値</span><span class="sxs-lookup"><span data-stu-id="7521e-222">Output value</span></span>|  
+|----------|------------------|  
+|<span data-ttu-id="7521e-223">0</span><span class="sxs-lookup"><span data-stu-id="7521e-223">0</span></span>|<span data-ttu-id="7521e-224">0</span><span class="sxs-lookup"><span data-stu-id="7521e-224">0</span></span>|  
+|<span data-ttu-id="7521e-225">1</span><span class="sxs-lookup"><span data-stu-id="7521e-225">1</span></span>|<span data-ttu-id="7521e-226">0</span><span class="sxs-lookup"><span data-stu-id="7521e-226">0</span></span>|  
+|<span data-ttu-id="7521e-227">2</span><span class="sxs-lookup"><span data-stu-id="7521e-227">2</span></span>|<span data-ttu-id="7521e-228">0</span><span class="sxs-lookup"><span data-stu-id="7521e-228">0</span></span>|  
+|<span data-ttu-id="7521e-229">3</span><span class="sxs-lookup"><span data-stu-id="7521e-229">3</span></span>|<span data-ttu-id="7521e-230">0</span><span class="sxs-lookup"><span data-stu-id="7521e-230">0</span></span>|  
+|<span data-ttu-id="7521e-231">4</span><span class="sxs-lookup"><span data-stu-id="7521e-231">4</span></span>|<span data-ttu-id="7521e-232">0</span><span class="sxs-lookup"><span data-stu-id="7521e-232">0</span></span>|  
+|<span data-ttu-id="7521e-233">4.25</span><span class="sxs-lookup"><span data-stu-id="7521e-233">4.25</span></span>|<span data-ttu-id="7521e-234">0</span><span class="sxs-lookup"><span data-stu-id="7521e-234">0</span></span>|  
+|<span data-ttu-id="7521e-235">4.5</span><span class="sxs-lookup"><span data-stu-id="7521e-235">4.5</span></span>|<span data-ttu-id="7521e-236">0</span><span class="sxs-lookup"><span data-stu-id="7521e-236">0</span></span>|  
+|<span data-ttu-id="7521e-237">5</span><span class="sxs-lookup"><span data-stu-id="7521e-237">5</span></span>|<span data-ttu-id="7521e-238">10</span><span class="sxs-lookup"><span data-stu-id="7521e-238">10</span></span>|  
   
- セグメント期間の最後までアニメーションの出力値が変化しないことに注目してください。  
+ <span data-ttu-id="7521e-239">アニメーションの出力値は、セグメント期間の最後の最後に達するまで変化しないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="7521e-239">Notice how the animation does not change its output value until the very end of the segment duration.</span></span>  
   
- [スプライン補間](GTMT)はより複雑です。  次のセクションを参照してください。  
+ <span data-ttu-id="7521e-240">スプライン補間はさらに複雑です。</span><span class="sxs-lookup"><span data-stu-id="7521e-240">Splined interpolation is more complex.</span></span> <span data-ttu-id="7521e-241">次のセクションで説明します。</span><span class="sxs-lookup"><span data-stu-id="7521e-241">It is described in the next section.</span></span>  
   
 <a name="anim_spline"></a>   
-### スプライン補間  
- スプライン補間を使用すると、よりリアルなタイミング効果を実現できます。  アニメーションは現実に発生する効果を模倣するために使用されることが多いため、開発者は、オブジェクトの加速と減速を細かく制御し、タイミング セグメントを緻密に操作することが必要になる場合もあります。  スプライン キー フレームを使用すると、スプライン補間でアニメーション化することができます。  他のキー フレームでは、<xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> および <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> を指定しますが、  スプライン キー フレームでは、<xref:System.Windows.Media.Animation.SplineDoubleKeyFrame.KeySpline%2A> も指定します。  <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> の単一のスプライン キー フレームの例を次に示します。  <xref:System.Windows.Media.Animation.KeySpline> プロパティに注目してください。このプロパティが、スプライン キー フレームと他の種類のキー フレームの違いです。  
+### <a name="splined-interpolation"></a><span data-ttu-id="7521e-242">スプライン補間</span><span class="sxs-lookup"><span data-stu-id="7521e-242">Splined Interpolation</span></span>  
+ <span data-ttu-id="7521e-243">スプライン補間を使用して、リアルなタイミング効果を実現できます。</span><span class="sxs-lookup"><span data-stu-id="7521e-243">Splined interpolation can be used to achieve more realistic timing effects.</span></span> <span data-ttu-id="7521e-244">アニメーションは現実世界で起こる効果を模倣するために使用されることが多いため、開発者は、オブジェクトの加速と減速を細かく制御し、タイミング セグメントを緻密に操作することが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="7521e-244">Because animations are so often used to imitate effects that occur in the real world, developers might need fine control of the acceleration and deceleration of objects, and close manipulation of timing segments.</span></span> <span data-ttu-id="7521e-245">スプライン キーフレームでは、スプライン補間を使用してアニメーション化できます。</span><span class="sxs-lookup"><span data-stu-id="7521e-245">Spline key frames enable you to animate with splined interpolation.</span></span> <span data-ttu-id="7521e-246">指定した他のキー フレーム、<xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>と<xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-246">With other key frames, you specify a <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> and <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>.</span></span> <span data-ttu-id="7521e-247">スプライン キー フレームの場合と指定することも、<xref:System.Windows.Media.Animation.SplineDoubleKeyFrame.KeySpline%2A>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-247">With a spline key frame, you also specify a <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame.KeySpline%2A>.</span></span> <span data-ttu-id="7521e-248">次の例では、1 つスプライン キー フレームの<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-248">The following example shows a single spline key frame for a <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>.</span></span> <span data-ttu-id="7521e-249">通知、 <xref:System.Windows.Media.Animation.KeySpline> ; プロパティは、どのスプライン キー フレームのキー フレームの他の種類と異なるです。</span><span class="sxs-lookup"><span data-stu-id="7521e-249">Notice the <xref:System.Windows.Media.Animation.KeySpline> property; that's what makes a spline key frame different from the other types of key frames.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->  
+ [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
   
- [3 次ベジエ曲線](GTMT)は、始点、終点、および 2 つの制御点によって定義されます。  スプライン キー フレームの <xref:System.Windows.Media.Animation.KeySpline> プロパティは、\(0,0\) から \(1,1\) に伸びるベジエ曲線の 2 つの制御点を定義します。  1 つ目の制御点はベジエ曲線の前半分の曲率を制御し、2 つ目の制御点はベジエ セグメントの残り半分の曲率を制御します。  作成された曲線は、そのスプライン キー フレームの変更率を示します。  曲線が急になるほどキー フレームの値の変更が速くなります。  曲線が平坦になるほどキー フレームの値の変更が遅くなります。  
+ <span data-ttu-id="7521e-250">3 次ベジエ曲線は、開始点、終点、および 2 つの制御点によって定義されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-250">A cubic Bezier curve is defined by a start point, an end point, and two control points.</span></span> <span data-ttu-id="7521e-251"><xref:System.Windows.Media.Animation.KeySpline>スプライン キー フレームのプロパティが (0, 0) から (1, 1) までのベジエ曲線の 2 つの制御点を定義します。</span><span class="sxs-lookup"><span data-stu-id="7521e-251">The <xref:System.Windows.Media.Animation.KeySpline> property of a spline key frame defines the two control point of a Bezier curve that extends from (0,0) to (1,1).</span></span> <span data-ttu-id="7521e-252">最初の制御点は、ベジエ曲線の前半分の曲率を制御し、2 つ目の制御点は、後半分の曲率を制御します。</span><span class="sxs-lookup"><span data-stu-id="7521e-252">The first control point controls the curve factor of the first half of the Bezier curve, and the second control point controls the curve factor of the second half of the Bezier segment.</span></span> <span data-ttu-id="7521e-253">結果として得られる曲線は、そのスプライン キー フレームの変化率を表します。</span><span class="sxs-lookup"><span data-stu-id="7521e-253">The resulting curve describes the rate of change for that spline key frame.</span></span> <span data-ttu-id="7521e-254">曲線が急であればあるほど、キー フレームの値は急激に変化します。</span><span class="sxs-lookup"><span data-stu-id="7521e-254">The steeper the curve, the faster the key frame changes its values.</span></span> <span data-ttu-id="7521e-255">曲線が平坦になると、キー フレームの値は緩やかに変化します。</span><span class="sxs-lookup"><span data-stu-id="7521e-255">As the curve gets flatter, the key frame changes its values more slowly.</span></span>  
   
- <xref:System.Windows.Media.Animation.KeySpline> を使用して、流れ落ちる水や跳ねるボールなどの物理的な軌道をシミュレートしたり、その他の "イーズイン" および "イーズアウト" 効果をモーション アニメーションに適用したりする場合があります。  背景のフェード効果やコントロール ボタンの戻り効果などのユーザー操作に関する効果の場合、スプライン補間を適用してアニメーションの変更率を特定の方法で加速または減速する場合もあります。  
+ <span data-ttu-id="7521e-256">使用する場合があります<xref:System.Windows.Media.Animation.KeySpline>をウォーター フォール、ボールなどの物理的な軌道をシミュレートするか、他の「で容易になります」および「が容易になります」効果モーション アニメーションを適用します。</span><span class="sxs-lookup"><span data-stu-id="7521e-256">You might use <xref:System.Windows.Media.Animation.KeySpline> to simulate physical trajectories like falling water or bouncing balls, or apply other "ease in" and "ease out" effects to motion animations.</span></span> <span data-ttu-id="7521e-257">背景のフェードやコントロール ボタンの復帰などのユーザー操作効果では、スプライン補間を適用して、アニメーションの変化率を特定の方法で加速したり減速したりできます。</span><span class="sxs-lookup"><span data-stu-id="7521e-257">For user interaction effects like background fades or control button rebound, you might apply splined interpolation to speed up or slow down the rate of change for an animation in a specific way.</span></span>  
   
- 次の例は、<xref:System.Windows.Media.Animation.KeySpline> を 0,1 1,0 に指定し、次に示すベジエ曲線を作成します。  
+ <span data-ttu-id="7521e-258">次の例を指定します、 <xref:System.Windows.Media.Animation.KeySpline> 0, 1 1, 0、次のベジエ曲線を作成するのです。</span><span class="sxs-lookup"><span data-stu-id="7521e-258">The following example specifies a <xref:System.Windows.Media.Animation.KeySpline> of 0,1 1,0, which creates the following Bezier curve.</span></span>  
   
- ![ベジエ曲線](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-0-1-1-0.png "graphicsmm\_keyspline\_0\_1\_1\_0")  
-制御点が \(0.0, 1.0\) および \(1.0, 0.0\) のキー スプライン  
+ <span data-ttu-id="7521e-259">![ベジエ曲線](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-0-1-1-0.png "graphicsmm_keyspline_0_1_1_0")</span><span class="sxs-lookup"><span data-stu-id="7521e-259">![A Bezier curve](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-0-1-1-0.png "graphicsmm_keyspline_0_1_1_0")</span></span>  
+<span data-ttu-id="7521e-260">制御点が (0.0, 1.0) および (1.0, 0.0) のキー スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-260">A key spline with control points (0.0, 1.0) and (1.0, 0.0)</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  -->  
+ [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
   
- このキー フレームは、開始時にすばやくアニメーション化し、減速して再度加速し、終了します。  
+ <span data-ttu-id="7521e-261">このキー フレームは、開始されると速いスピードでアニメーション化され、その後スピードが低下し、終了前に再びスピードが上がります。</span><span class="sxs-lookup"><span data-stu-id="7521e-261">This key frame animates rapidly when it begins, slows down, and then speeds up again before it ends.</span></span>  
   
- 次の例は、<xref:System.Windows.Media.Animation.KeySpline> を 0.5,0.25 0.75,1.0 に指定し、次に示すベジエ曲線を作成します。  
+ <span data-ttu-id="7521e-262">次の例を指定します、<xref:System.Windows.Media.Animation.KeySpline>の 0.5,0.25 0.75,1.0 は、次のベジエ曲線を作成します。</span><span class="sxs-lookup"><span data-stu-id="7521e-262">The following example specifies a <xref:System.Windows.Media.Animation.KeySpline> of 0.5,0.25 0.75,1.0, which creates the following Bezier curve.</span></span>  
   
- ![ベジエ曲線](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-025-050-075-10.png "graphicsmm\_keyspline\_025\_050\_075\_10")  
-制御点が \(0.25, 0.5\) および \(0.75, 1.0\) のキー スプライン  
+ <span data-ttu-id="7521e-263">![ベジエ曲線](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-025-050-075-10.png "graphicsmm_keyspline_025_050_075_10")</span><span class="sxs-lookup"><span data-stu-id="7521e-263">![A Bezier curve](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-025-050-075-10.png "graphicsmm_keyspline_025_050_075_10")</span></span>  
+<span data-ttu-id="7521e-264">制御点が (0.25, 0.5) および (0.75, 1.0) のキー スプライン</span><span class="sxs-lookup"><span data-stu-id="7521e-264">A key spline with control points (0.25, 0.5) and (0.75, 1.0)</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  -->
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  -->  
+ [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  
   
- ベジエ曲線の曲率がほとんど変化しないため、このキー フレームはほぼ定率でアニメーション化されます。終了が近づくと少し減速します。  
+ <span data-ttu-id="7521e-265">ベジエ曲線の曲率がほとんど変化しないため、このキー フレームは、ほぼ一定の率でアニメーション化され、最後の最後にわずかに減速します。</span><span class="sxs-lookup"><span data-stu-id="7521e-265">Because the curvature of the Bezier curve changes very little, this key frame animates at an almost constant rate; it slows down somewhat toward its very end.</span></span>  
   
- <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> を使用して四角形の位置をアニメーション化する例を次に示します。  <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> で <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame> オブジェクトが使用されるため、キー フレームの各値の間の遷移でスプライン補間が使用されます。  
+ <span data-ttu-id="7521e-266">次の例では、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>四角形の位置をアニメーション化します。</span><span class="sxs-lookup"><span data-stu-id="7521e-266">The following example uses a <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> to animate the position of rectangle.</span></span> <span data-ttu-id="7521e-267"><xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>使用<xref:System.Windows.Media.Animation.SplineDoubleKeyFrame>オブジェクトをそれぞれのキー フレーム値の間の遷移がスプライン補間を使用します。</span><span class="sxs-lookup"><span data-stu-id="7521e-267">Because the <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> uses <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame> objects, the transition between each key frame value uses splined interpolation.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SplinedInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  -->
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#SplinedInterpolationExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  -->  
+ [!code-xaml[keyframes_ovw_snippet#SplinedInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  
   
- スプライン補間は理解しにくいため、さまざまな設定を試してみることをお勧めします。  [キー スプライン アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160011)を使用すると、キー スプラインの値を変更して、アニメーションに表れる結果を確認することができます。  
+ <span data-ttu-id="7521e-268">スプライン補間は理解するのが難しいことがあります。さまざまな設定で実験すると理解しやすくなります。</span><span class="sxs-lookup"><span data-stu-id="7521e-268">Splined interpolation can be difficult to understand; experimenting with different settings can help.</span></span> <span data-ttu-id="7521e-269">[キー スプライン アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160011)を使用して、キー スプライン値を変更し、その結果をアニメーションで確認することができます。</span><span class="sxs-lookup"><span data-stu-id="7521e-269">The [Key Spline Animation Sample](http://go.microsoft.com/fwlink/?LinkID=160011) enables you to change key spline values and see the result it has on an animation.</span></span>  
   
 <a name="combininginterpolationmethods"></a>   
-### 補間方式の組み合わせ  
- 補間の種類が異なるキー フレームを 1 つのキー フレーム アニメーションで使用することができます。  補間の種類が異なる 2 つのキー フレーム アニメーションが交互に発生する場合、2 番目のキー フレームの補間方式を使用して、最初の値から 2 番目の値への遷移が作成されます。  
+### <a name="combining-interpolation-methods"></a><span data-ttu-id="7521e-270">補間方式の組み合わせ</span><span class="sxs-lookup"><span data-stu-id="7521e-270">Combining Interpolation Methods</span></span>  
+ <span data-ttu-id="7521e-271">補間の種類が異なるキー フレームを 1 つのキー フレーム アニメーションで使用できます。</span><span class="sxs-lookup"><span data-stu-id="7521e-271">You can use key frames with different interpolation types in a single key frame animation.</span></span> <span data-ttu-id="7521e-272">補間の種類が異なる 2 つのキー フレーム アニメーションが連続する場合は、2 番目のキー フレームの補間方式を使用して、最初の値から 2 番目の値への遷移が作成されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-272">When two key frame animations with different interpolations follow each other, the interpolation method of the second key frame is used to create the transition from the first value to the second.</span></span>  
   
- 次の例では、線形、スプライン、および離散補間を使用する <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> が作成されます。  
+ <span data-ttu-id="7521e-273">次の例で、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>を使用して線形、スプライン、および離散補間を作成します。</span><span class="sxs-lookup"><span data-stu-id="7521e-273">In the following example, a <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> is created that uses linear, splined, and discrete interpolation.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#ComboInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/InterpolationMethodsExample.xaml#combointerpolationexample)]  -->
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#ComboInterpolationExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/InterpolationMethodsExample.xaml#combointerpolationexample)]  -->  
+ [!code-xaml[keyframes_ovw_snippet#ComboInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#combointerpolationexample)]  
   
 <a name="keytimes"></a>   
-## 継続時間およびキー時刻の詳細  
- 他のアニメーションと同様に、キー フレーム アニメーションにも <xref:System.Windows.Duration> プロパティがあります。  アニメーションの <xref:System.Windows.Duration> の指定に加えて、その継続時間のどの部分を各キー フレームに割り当てるかを指定する必要があります。  指定するには、アニメーションの各キー フレームの <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> を記述します。  各キー フレームの <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> は、そのキー フレームが終了する時刻を指定します。  
+## <a name="more-about-duration-and-key-times"></a><span data-ttu-id="7521e-274">継続時間とキー時刻の詳細</span><span class="sxs-lookup"><span data-stu-id="7521e-274">More about Duration and Key Times</span></span>  
+ <span data-ttu-id="7521e-275">キー フレーム アニメーションにあるその他のアニメーションと同様に、<xref:System.Windows.Duration>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="7521e-275">Like other animations, key-frame animations have a <xref:System.Windows.Duration> property.</span></span> <span data-ttu-id="7521e-276">アニメーションを指定するだけでなく<xref:System.Windows.Duration>、各キー フレームにその期間のどの部分が指定されたを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7521e-276">In addition to specifying the animation's <xref:System.Windows.Duration>, you need to specify what portion of that duration is given to each key frame.</span></span> <span data-ttu-id="7521e-277">記述することで、これを行う、<xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>アニメーションのキー フレームの各します。</span><span class="sxs-lookup"><span data-stu-id="7521e-277">You do so by describing a   <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> for each of the animation's key frames.</span></span> <span data-ttu-id="7521e-278">各キー フレームの<xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>そのキー フレームの終了を指定します。</span><span class="sxs-lookup"><span data-stu-id="7521e-278">Each key frame's <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> specifies when that key frame ends.</span></span>  
   
- <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> プロパティは、キー時刻の再生時間を指定するわけではありません。  キー フレームが再生される時間は、そのキー フレームが終了する時刻、前のキー フレームが終了した時刻、およびアニメーションの継続時間によって決まります。  キー時刻は、時間を表す値、割合、あるいは特殊な値 \(<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> または <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>\) で指定できます。  
+ <span data-ttu-id="7521e-279"><xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>プロパティがキーの時間の再生時間を指定していません。</span><span class="sxs-lookup"><span data-stu-id="7521e-279">The <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> property does not specify how long the key time plays.</span></span> <span data-ttu-id="7521e-280">キー フレームが再生される時間の長さは、そのキー フレームの終了時刻、前のキー フレームの終了時刻、およびアニメーションの継続時間によって決まります。</span><span class="sxs-lookup"><span data-stu-id="7521e-280">The amount of time a key frame plays is determined by when the key frame ends, when the previous key frame ended, and the animation's duration.</span></span> <span data-ttu-id="7521e-281">時間の値、パーセンテージ、または特殊な値として、キー時刻を指定することがあります<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>または<xref:System.Windows.Media.Animation.KeyTime.Paced%2A>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-281">Key times may be specified as a time value, a percentage, or as the special values <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> or <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>.</span></span>  
   
- キー時刻を指定するさまざまな方法を次に示します。  
+ <span data-ttu-id="7521e-282">次の一覧で、キー時刻を指定するさまざまな方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7521e-282">The following list describes the different ways of specifying key times.</span></span>  
   
-### TimeSpan 値  
- <xref:System.TimeSpan> 値を使用して <xref:System.Windows.Media.Animation.KeyTime> を指定できます。  この値は 0 以上でアニメーションの継続時間以下でなければなりません。  継続時間が 10 秒のアニメーションとキー時刻が時間を表す値として指定される 4 つのキー フレームの例を次に示します。  
+### <a name="timespan-values"></a><span data-ttu-id="7521e-283">TimeSpan 値</span><span class="sxs-lookup"><span data-stu-id="7521e-283">TimeSpan Values</span></span>  
+ <span data-ttu-id="7521e-284">使用することは<xref:System.TimeSpan>に指定する値、<xref:System.Windows.Media.Animation.KeyTime>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-284">You may use <xref:System.TimeSpan> values to specify a <xref:System.Windows.Media.Animation.KeyTime>.</span></span> <span data-ttu-id="7521e-285">値は、0 以上、アニメーションの継続時間以下にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="7521e-285">The value should be greater than or equal to 0 and less than or equal to the animation's duration.</span></span> <span data-ttu-id="7521e-286">次の例は、継続時間が 10 秒で、キー時刻が時刻値として指定されている 4 つのキー フレームがあるアニメーションを示しています。</span><span class="sxs-lookup"><span data-stu-id="7521e-286">The following example shows an animation with a duration of 10 seconds and four key frames whose key times are specified as time values.</span></span>  
   
--   最初のキー フレームは、最初の 3 秒間に基準値から 100 までアニメーション化し、0:0:03 の時点で終了します。  
+-   <span data-ttu-id="7521e-287">最初のキー フレームは、最初の 3 秒間で基準値から 100 までアニメーション化され、時刻 = 0:0:03 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-287">The first key frame animates from the base value to 100 over the first 3 seconds, ending at time = 0:0:03.</span></span>  
   
--   2 番目のキー フレームは、100 から 200 までアニメーション化します。  最初のキー フレームの終了時 \(3 秒の時点\) に開始され、5 秒間再生されて 0:0:8 の時点で終了します。  
+-   <span data-ttu-id="7521e-288">2 番目のキー フレームは、100 から 200 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-288">The second key frame animates from 100 to 200.</span></span> <span data-ttu-id="7521e-289">最初のキー フレームが終わった時点で開始され (時刻 = 3 秒)、5 秒間再生され、時刻 = 0:0:8 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-289">It starts after the first key frame ends (at time = 3 seconds) and plays for 5 seconds, ending at time = 0:0:8.</span></span>  
   
--   3 番目のキー フレームは、200 から 500 までアニメーション化します。  2 番目のキー フレームの終了時 \(8 秒の時点\) に開始され、1 秒間再生されて 0:0:9 の時点で終了します。  
+-   <span data-ttu-id="7521e-290">3 番目のキー フレームは、200 から 500 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-290">The third key frame animates from 200 to 500.</span></span> <span data-ttu-id="7521e-291">2 番目のキー フレームが終わった時点で開始され (時刻 = 8 秒)、1 秒間再生され、時刻 = 0:0:9 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-291">It starts when the second key frame ends (at time = 8 seconds) and plays for 1 second, ending at time = 0:0:9.</span></span>  
   
--   4 番目のキー フレームは、500 から 600 までアニメーション化します。  3 番目のキー フレームの終了時 \(9 秒の時点\) に開始され、1 秒間再生されて 0:0:10 の時点で終了します。  
+-   <span data-ttu-id="7521e-292">4 番目のキー フレームは、500 から 600 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-292">The fourth key frame animates from 500 to 600.</span></span> <span data-ttu-id="7521e-293">3 番目のキー フレームが終わった時点で開始され (時刻 = 9 秒)、1 秒間再生され、時刻 = 0:0:10 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-293">It starts when the third key frame ends (at time = 9 seconds) and plays for 1 second, ending at time = 0:0:10.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#TimeSpanKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#timespankeytimeexample)]  -->
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#TimeSpanKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#timespankeytimeexample)]  -->  
+ [!code-xaml[keyframes_ovw_snippet#TimeSpanKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#timespankeytimeexample)]  
   
-### 割合の値  
- 割合の値は、キー フレームがアニメーションの <xref:System.Windows.Media.Animation.Timeline.Duration%2A> に対する特定の割合の時点で終了するように指定します。  [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] では、数値の後に `%` 記号が続く形式で割合を指定します。  コードでは、<xref:System.Windows.Media.Animation.KeyTime.FromPercent%2A> メソッドを使用して、割合を示す <xref:System.Double> を渡します。  この値は 0 以上、100% 以下でなければなりません。  継続時間が 10 秒のアニメーションとキー時刻が割合として指定される 4 つのキー フレームの例を次に示します。  
+### <a name="percentage-values"></a><span data-ttu-id="7521e-294">パーセント値</span><span class="sxs-lookup"><span data-stu-id="7521e-294">Percentage Values</span></span>  
+ <span data-ttu-id="7521e-295">キー フレームのアニメーションの割合で終了する割合値を指定<xref:System.Windows.Media.Animation.Timeline.Duration%2A>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-295">A percentage value specifies that the key frame ends at some percentage of the animation's <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.</span></span> <span data-ttu-id="7521e-296">[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] では、後ろに `%` 記号が付いた数値として指定します。</span><span class="sxs-lookup"><span data-stu-id="7521e-296">In [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], you specify the percentage as a number followed by the `%` symbol.</span></span> <span data-ttu-id="7521e-297">使用するコードでは、<xref:System.Windows.Media.Animation.KeyTime.FromPercent%2A>メソッドに渡すと、<xref:System.Double>割合を示すです。</span><span class="sxs-lookup"><span data-stu-id="7521e-297">In code, you use the <xref:System.Windows.Media.Animation.KeyTime.FromPercent%2A> method and pass it a <xref:System.Double> indicating the percentage.</span></span> <span data-ttu-id="7521e-298">値は、0 以上、100 パーセント以下にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="7521e-298">The value must be greater than or equal to 0 and less than or equal to 100 percent.</span></span> <span data-ttu-id="7521e-299">次の例は、継続時間が 10 秒で、キー時刻がパーセントとして指定されている 4 つのキー フレームがあるアニメーションを示しています。</span><span class="sxs-lookup"><span data-stu-id="7521e-299">The following example shows an animation with a duration of 10 seconds and four key frames whose key times are specified as percentages.</span></span>  
   
--   最初のキー フレームは、最初の 3 秒間に基準値から 100 までアニメーション化し、0:0:3 の時点で終了します。  
+-   <span data-ttu-id="7521e-300">最初のキー フレームは、最初の 3 秒間で基準値から 100 までアニメーション化され、時刻 = 0:0:3 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-300">The first key frame animates from the base value to 100 over the first 3 seconds, ending at time = 0:0:3.</span></span>  
   
--   2 番目のキー フレームは、100 から 200 までアニメーション化します。  最初のキー フレームの終了時 \(3 秒の時点\) に開始され、5 秒間再生されて 0:0:8 \(0.8 × 10 \= 8\) の時点で終了します。  
+-   <span data-ttu-id="7521e-301">2 番目のキー フレームは、100 から 200 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-301">The second key frame animates from 100 to 200.</span></span> <span data-ttu-id="7521e-302">最初のキー フレームが終わった時点で開始され (時刻 = 3 秒)、5 秒間再生され、時刻 = 0:0:8 (0.8 * 10 = 8) で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-302">It starts after the first key frame ends (at time = 3 seconds) and plays for 5 seconds, ending at time = 0:0:8 (0.8 * 10 = 8).</span></span>  
   
--   3 番目のキー フレームは、200 から 500 までアニメーション化します。  2 番目のキー フレームの終了時 \(8 秒の時点\) に開始され、1 秒間再生されて 0:0:9 \(0.9 × 10 \= 9\) の時点で終了します。  
+-   <span data-ttu-id="7521e-303">3 番目のキー フレームは、200 から 500 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-303">The third key frame animates from 200 to 500.</span></span> <span data-ttu-id="7521e-304">2 番目のキー フレームが終わった時点で開始され (時刻 = 8 秒)、1 秒間再生され、時刻 = 0:0:9 (0.9 * 10 = 9) で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-304">It starts when the second key frame ends (at time = 8 seconds) and plays for 1 second, ending at time = 0:0:9 (0.9 * 10 = 9).</span></span>  
   
--   4 番目のキー フレームは、500 から 600 までアニメーション化します。  3 番目のキー フレームの終了時 \(9 秒の時点\) に開始され、1 秒間再生されて 0:0:10 \(1 × 10 \= 10\) の時点で終了します。  
+-   <span data-ttu-id="7521e-305">4 番目のキー フレームは、500 から 600 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-305">The fourth key frame animates from 500 to 600.</span></span> <span data-ttu-id="7521e-306">3 番目のキー フレームが終わった時点で開始され (時刻 = 9 秒)、1 秒間再生され、時刻 = 0:0:10 (1 * 10 = 10)で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-306">It starts when the third key frame ends (at time = 9 seconds) and plays for 1 second, ending at time = 0:0:10 (1 * 10 = 10).</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PercentageKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#percentagekeytimeexample)]  -->
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PercentageKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#percentagekeytimeexample)]  -->  
+ [!code-xaml[keyframes_ovw_snippet#PercentageKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#percentagekeytimeexample)]  
   
-### 特殊な値 Uniform  
- 各キー フレームの時間が同じになるようにするには、<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> タイミングを使用します。  
+### <a name="special-value-uniform"></a><span data-ttu-id="7521e-307">特殊な値 Uniform</span><span class="sxs-lookup"><span data-stu-id="7521e-307">Special Value, Uniform</span></span>  
+ <span data-ttu-id="7521e-308">使用して<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>各キー フレームの同じ時間に対処するときにタイムアウトします。</span><span class="sxs-lookup"><span data-stu-id="7521e-308">Use <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> timing when you want each key frame to take the same amount of time.</span></span>  
   
- <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> キー時刻では、時間がキー フレームの数で均等に分割され、各キー フレームの終了時間が決まります。  継続時間が 10 秒のアニメーションとキー時刻が <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> として指定される 4 つのキー フレームの例を次に示します。  
+ <span data-ttu-id="7521e-309">A<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>キー時刻使用可能な時間均等で除算を各キー フレームの終了時刻を特定のキー フレームの数。</span><span class="sxs-lookup"><span data-stu-id="7521e-309">A <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> key time divides the available time equally by the number of key frames to determine the end time of each key frame.</span></span> <span data-ttu-id="7521e-310">次の例では、期間が 10 秒のアニメーションととして指定されたタイムアウトにキーを持つ 4 つのキー フレーム<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-310">The following example shows an animation with a duration of 10 seconds and four key frames whose key times are specified as <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>.</span></span>  
   
--   最初のキー フレームは、最初の 2.5 秒間に基準値から 100 までアニメーション化し、0:0:2.5 の時点で終了します。  
+-   <span data-ttu-id="7521e-311">最初のキー フレームは、最初の 2.5 秒間で基準値から 100 までアニメーション化され、時刻 = 0:0:2.5 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-311">The first key frame animates from the base value to 100 over the first 2.5 seconds, ending at time = 0:0:2.5.</span></span>  
   
--   2 番目のキー フレームは、100 から 200 までアニメーション化します。  最初のキー フレームの終了時 \(2.5 秒の時点\) に開始され、約 2.5 秒間再生されて 0:0:5 の時点で終了します。  
+-   <span data-ttu-id="7521e-312">2 番目のキー フレームは、100 から 200 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-312">The second key frame animates from 100 to 200.</span></span> <span data-ttu-id="7521e-313">最初のキー フレームが終わった時点で開始され (時刻 = 0:0:2.5 秒)、2.5 秒間再生され、時刻 = 0:0:5 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-313">It starts after the first key frame ends (at time = 2.5 seconds) and plays for approximately 2.5 seconds, ending at time = 0:0:5.</span></span>  
   
--   3 番目のキー フレームは、200 から 500 までアニメーション化します。  2 番目のキー フレームの終了時 \(5 秒の時点\) に開始され、2.5 秒間再生されて 0:0:7.5 の時点で終了します。  
+-   <span data-ttu-id="7521e-314">3 番目のキー フレームは、200 から 500 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-314">The third key frame animates from 200 to 500.</span></span> <span data-ttu-id="7521e-315">2 番目のキー フレームが終わった時点で開始され (時刻 = 5 秒)、2.5 秒間再生され、時刻 = 0:0:7.5 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-315">It starts when the second key frame ends (at time = 5 seconds) and plays for 2.5 seconds, ending at time = 0:0:7.5.</span></span>  
   
--   4 番目のキー フレームは、500 から 600 までアニメーション化します。  2 番目のキー フレームの終了時 \(7.5 秒の時点\) に開始され、2.5 秒間再生されて 0:0:1 の時点で終了します。  
+-   <span data-ttu-id="7521e-316">4 番目のキー フレームは、500 から 600 までアニメーション化されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-316">The fourth key frame animates from 500 to 600.</span></span> <span data-ttu-id="7521e-317">2 番目のキー フレームが終わった時点で開始され (時刻 = 7.5 秒)、2.5 秒間再生され、時刻 = 0:0:10 で終わります。</span><span class="sxs-lookup"><span data-stu-id="7521e-317">It starts when the second key frame ends (at time = 7.5 seconds) and plays for 2.5 seconds, ending at time = 0:0:1.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#UniformKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#uniformkeytimeexample)]  -->
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#UniformKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#uniformkeytimeexample)]  -->  
+ [!code-xaml[keyframes_ovw_snippet#UniformKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#uniformkeytimeexample)]  
   
-### 特殊な値 Paced  
- 定率でアニメーション化するには、<xref:System.Windows.Media.Animation.KeyTime.Paced%2A> タイミングを使用します。  
+### <a name="special-value-paced"></a><span data-ttu-id="7521e-318">特殊な値 Paced</span><span class="sxs-lookup"><span data-stu-id="7521e-318">Special Value, Paced</span></span>  
+ <span data-ttu-id="7521e-319">使用して<xref:System.Windows.Media.Animation.KeyTime.Paced%2A>一定の割合でアニメーション化するときにタイムアウトします。</span><span class="sxs-lookup"><span data-stu-id="7521e-319">Use <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> timing when you want to animate at a constant rate.</span></span>  
   
- <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> キー時刻では、各キー フレームの長さに基づいて時間が割り当てられ、各フレームの継続時間が決まります。  これにより、アニメーションの速度 \(ペース\) が一定になります。  継続時間が 10 秒のアニメーションとキー時刻が <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> として指定される 3 つのキー フレームの例を次に示します。  
+ <span data-ttu-id="7521e-320">A<xref:System.Windows.Media.Animation.KeyTime.Paced%2A>キー時刻は、各フレームの存続期間を決定するキー フレームのそれぞれの長さに従って使用可能な時間を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="7521e-320">A <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> key time allocates the available time according to the length of each of the key frames to determine the duration of each frame.</span></span>  <span data-ttu-id="7521e-321">これにより、アニメーションの速さ (ペース) を一定に保つ動作が提供されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-321">This will provide the behavior that the velocity or pace of the animation remains constant.</span></span>  <span data-ttu-id="7521e-322">次の例では、期間が 10 秒のアニメーションととして指定されたタイムアウトにキーを持つ 3 つのキー フレーム<xref:System.Windows.Media.Animation.KeyTime.Paced%2A>です。</span><span class="sxs-lookup"><span data-stu-id="7521e-322">The following example shows an animation with a duration of 10 seconds and three key frames whose key times are specified as <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>.</span></span>  
   
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PacedKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snip/CS/KeyTimesExample.xaml#pacedkeytimeexample)]  -->
- <!-- TODO: review snippet reference [!code-xml[keyframes_ovw_snip#PacedKeyTimeExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_ovw_snip/XAML/KeyTimesExample.xaml#pacedkeytimeexample)]  -->  
+ [!code-xaml[keyframes_ovw_snippet#PacedKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#pacedkeytimeexample)]  
   
- 最後のキー フレームのキー時刻が <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> または <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> の場合、解決されたキー時刻は 100% に設定されます。  マルチフレーム アニメーションの最初のキー フレームが Paced の場合、解決されたキー時刻は 0 に設定されます。  キー フレーム コレクションに含まれるキー フレームが 1 つだけで、Paced キー フレームである場合、解決されたキー時刻は 100% に設定されます。  
+ <span data-ttu-id="7521e-323">最後のキー フレームのキー時刻がある場合、注意してください。<xref:System.Windows.Media.Animation.KeyTime.Paced%2A>または<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>、解決された、キー時刻を 100% に設定されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-323">Note that, if the last key frame's key time is <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> or <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>, its resolved key time will be set to 100 percent.</span></span> <span data-ttu-id="7521e-324">マルチ フレーム アニメーションの最初のキー フレームが Paced の場合、解決されたキー時刻は 0 に設定されます </span><span class="sxs-lookup"><span data-stu-id="7521e-324">If the first key frame in a multiframe animation is paced, its resolved key time will be set to 0.</span></span> <span data-ttu-id="7521e-325">(キー フレーム コレクションにキー フレームが 1 つだけ含まれているときに、それが Paced が設定されたキー フレームの場合は、解決されたキー時刻は 100% に設定されます)。</span><span class="sxs-lookup"><span data-stu-id="7521e-325">(If the key frame collection contains only a single key frame and it is a paced key frame, its resolved key time will be set to 100 percent.)</span></span>  
   
- 1 つのキー フレーム アニメーション内の異なるキー フレームでは、異なるキー時刻を使用できます。  
+ <span data-ttu-id="7521e-326">1 つのキー フレーム アニメーション内の異なるキー フレームで異なるキー時刻を使用できます。</span><span class="sxs-lookup"><span data-stu-id="7521e-326">Different key frames within a single key frame animation may use different key time types.</span></span>  
   
 <a name="combiningkeytimes"></a>   
-## キー時刻と順序がバラバラのキー フレームの組み合わせ  
- 種類が異なる <xref:System.Windows.Media.Animation.KeyTime> の値を持つキー フレームを 1 つのアニメーションで使用することができます。  また、キー フレームは再生順に追加することをお勧めしますが、必須ではありません。  アニメーションおよびタイミング システムでは、順序がバラバラのキー フレームを解決できます。  キー時刻が無効なキー フレームは無視されます。  
+## <a name="combining-key-times-out-of-order-key-frames"></a><span data-ttu-id="7521e-327">キー時刻と順不同のキー フレームの組み合わせ</span><span class="sxs-lookup"><span data-stu-id="7521e-327">Combining Key Times, Out-Of-Order Key Frames</span></span>  
+ <span data-ttu-id="7521e-328">キー フレームを使用するには異なる<xref:System.Windows.Media.Animation.KeyTime>同じアニメーション内の型の値します。</span><span class="sxs-lookup"><span data-stu-id="7521e-328">You can use key frames with different <xref:System.Windows.Media.Animation.KeyTime> value types in the same animation.</span></span> <span data-ttu-id="7521e-329">さらに、キー フレームは再生する順序で追加することをお勧めしますが、それは必須ではありません。</span><span class="sxs-lookup"><span data-stu-id="7521e-329">And, although it's recommended that you add key frames in the order in which they should play, it's not necessary.</span></span> <span data-ttu-id="7521e-330">アニメーションとタイミング システムは、順不同のキー フレームを解決できます。</span><span class="sxs-lookup"><span data-stu-id="7521e-330">The animation and timing system is capable of resolving out of order key frames.</span></span> <span data-ttu-id="7521e-331">キー時刻が無効なキー フレームは無視されます。</span><span class="sxs-lookup"><span data-stu-id="7521e-331">Key frames with invalid key times are ignored.</span></span>  
   
- キー フレーム アニメーションのキー フレームのキー時刻を解決するための手順を次に示します。  
+ <span data-ttu-id="7521e-332">キー フレーム アニメーションのキー フレームのキー時刻が解決される手順を次に示します。</span><span class="sxs-lookup"><span data-stu-id="7521e-332">The following list describes the procedure by which key times are resolved for a key-frame animation's key frames.</span></span>  
   
-1.  <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> 値を解決します。  
+1.  <span data-ttu-id="7521e-333">解決するには<xref:System.TimeSpan><xref:System.Windows.Media.Animation.KeyTime>値。</span><span class="sxs-lookup"><span data-stu-id="7521e-333">Resolve <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> values.</span></span>  
   
-2.  アニメーションの合計補間時間 \(キー フレーム アニメーションが順方向の反復を完了するのに要する合計時間\) を決定します。  
+2.  <span data-ttu-id="7521e-334">アニメーションの*合計補間時間*を決定します。これは、キー フレーム アニメーションが順方向の反復を完了するまでにかかる合計時間です。</span><span class="sxs-lookup"><span data-stu-id="7521e-334">Determine the animation’s *total interpolation time*, the total time it takes the key-frame animation to complete a forward iteration.</span></span>  
   
-    1.  アニメーションの <xref:System.Windows.Media.Animation.Timeline.Duration%2A> が <xref:System.Windows.Duration.Automatic%2A> または <xref:System.Windows.Duration.Forever%2A> ではない場合、合計補間時間はアニメーションの <xref:System.Windows.Media.Animation.Timeline.Duration%2A> プロパティの値になります。  
+    1.  <span data-ttu-id="7521e-335">場合、アニメーションの<xref:System.Windows.Media.Animation.Timeline.Duration%2A>は<xref:System.Windows.Duration.Automatic%2A>または<xref:System.Windows.Duration.Forever%2A>、合計補間の時間のアニメーションの値は、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="7521e-335">If the animation's <xref:System.Windows.Media.Animation.Timeline.Duration%2A> is not <xref:System.Windows.Duration.Automatic%2A> or <xref:System.Windows.Duration.Forever%2A>, the total interpolation time is the value of the animation's <xref:System.Windows.Media.Animation.Timeline.Duration%2A> property.</span></span>  
   
-    2.  それ以外の場合、合計補間時間は、キー フレーム間に指定された <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> 値の中で最大の値になります \(存在する場合\)。  
+    2.  <span data-ttu-id="7521e-336">それ以外の場合、合計補間の時間が最大<xref:System.TimeSpan><xref:System.Windows.Media.Animation.KeyTime>に存在する場合、そのキー フレームの間で指定された値。</span><span class="sxs-lookup"><span data-stu-id="7521e-336">Otherwise, the total interpolation time is the largest <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> value specified among its key frames, if any exist.</span></span>  
   
-    3.  最大値が存在しない場合、合計補間時間は 1 秒です。  
+    3.  <span data-ttu-id="7521e-337">それ以外の場合、合計補間時間は 1 秒間です。</span><span class="sxs-lookup"><span data-stu-id="7521e-337">Otherwise, the total interpolation time is 1 second.</span></span>  
   
-3.  合計補間時間の値を使用して、<xref:System.Windows.Media.Animation.KeyTimeType> <xref:System.Windows.Media.Animation.KeyTime> 値を解決します。  
+3.  <span data-ttu-id="7521e-338">解決するのには、合計補間の時刻の値を使用して<xref:System.Windows.Media.Animation.KeyTimeType.Percent><xref:System.Windows.Media.Animation.KeyTime>値。</span><span class="sxs-lookup"><span data-stu-id="7521e-338">Use the total interpolation time value to resolve <xref:System.Windows.Media.Animation.KeyTimeType.Percent> <xref:System.Windows.Media.Animation.KeyTime> values.</span></span>  
   
-4.  最後のキー フレームを解決します \(前の手順で解決していない場合\)。  最後のキー フレームの <xref:System.Windows.Media.Animation.KeyTime> が <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> または <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> の場合、解決された時間は合計補間時間と等しくなります。  
+4.  <span data-ttu-id="7521e-339">前の手順で解決されていなければ、最後のキー フレームを解決します。</span><span class="sxs-lookup"><span data-stu-id="7521e-339">Resolve last key frame, if it wasn't already resolved in the previous steps.</span></span> <span data-ttu-id="7521e-340">場合、<xref:System.Windows.Media.Animation.KeyTime>キー フレームは、最後の<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>または<xref:System.Windows.Media.Animation.KeyTime.Paced%2A>、解決された時刻、合計補間の時間に等しくなります。</span><span class="sxs-lookup"><span data-stu-id="7521e-340">If the <xref:System.Windows.Media.Animation.KeyTime> of the last key frame is <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> or <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>, its resolved time will be equal to the total interpolation time.</span></span>  
   
-     最初のキー フレームの <xref:System.Windows.Media.Animation.KeyTime> が <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> で、このアニメーションに複数のキー フレームが含まれる場合、その <xref:System.Windows.Media.Animation.KeyTime> 値は 0 に解決されます。含まれるキー フレームが 1 つだけで、<xref:System.Windows.Media.Animation.KeyTime> 値が <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> の場合、その値は、前の手順で説明したように合計補間時間に解決されます。  
+     <span data-ttu-id="7521e-341">場合、<xref:System.Windows.Media.Animation.KeyTime>が最初のキー フレームの<xref:System.Windows.Media.Animation.KeyTime.Paced%2A>このアニメーションが複数のキー フレームの解決とその<xref:System.Windows.Media.Animation.KeyTime>0 です値の 1 つだけのキー フレームがある場合、その<xref:System.Windows.Media.Animation.KeyTime>値は<xref:System.Windows.Media.Animation.KeyTime.Paced%2A>、合計値に解決される。前の手順で説明されている補間時間。</span><span class="sxs-lookup"><span data-stu-id="7521e-341">If the <xref:System.Windows.Media.Animation.KeyTime> of the first key frame is <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> and this animation has more than on key frames, resolve its <xref:System.Windows.Media.Animation.KeyTime> value to zero; if there is only one key frame and its <xref:System.Windows.Media.Animation.KeyTime> value is <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>, it is resolved to the total interpolation time, as described in the preceding step.</span></span>  
   
-5.  残りの <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> 値を解決します。これらの値には、それぞれ均等な時間が割り当てられます。  この処理の間、未解決の <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> 値は一時的に <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> 値として扱われ、一時的に解決された時間が割り当てられます。  
+5.  <span data-ttu-id="7521e-342">解決するには残り<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A><xref:System.Windows.Media.Animation.KeyTime>値: それぞれ指定が、使用可能な時間の均等な割合。</span><span class="sxs-lookup"><span data-stu-id="7521e-342">Resolve remaining <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> values: they are each given an equal share of the available time.</span></span>  <span data-ttu-id="7521e-343">このプロセス中に未解決の<xref:System.Windows.Media.Animation.KeyTime.Paced%2A><xref:System.Windows.Media.Animation.KeyTime>値が一時的として扱われます<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A><xref:System.Windows.Media.Animation.KeyTime>値、および一時的な解決時間を取得します。</span><span class="sxs-lookup"><span data-stu-id="7521e-343">During this process, unresolved <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> values  are temporarily treated as <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> values, and get a temporary resolved time.</span></span>  
   
-6.  キー時刻が指定されていないキー フレームの <xref:System.Windows.Media.Animation.KeyTime> 値を、そのキー フレームの最も近くで宣言されている、解決された <xref:System.Windows.Media.Animation.KeyTime> 値を持つキー フレームを使用して解決します。  
+6.  <span data-ttu-id="7521e-344">解決するには、<xref:System.Windows.Media.Animation.KeyTime>キー フレームの値は解決されている最も近い場所に宣言されているキー フレームを使用してキー時刻を指定しない<xref:System.Windows.Media.Animation.KeyTime>値。</span><span class="sxs-lookup"><span data-stu-id="7521e-344">Resolve the <xref:System.Windows.Media.Animation.KeyTime> values of key frames with unspecified key times by using the key frames declared nearest them that have resolved <xref:System.Windows.Media.Animation.KeyTime> values.</span></span>  
   
-7.  残りの <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> 値を解決します。  <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> では、隣接するキー フレームの <xref:System.Windows.Media.Animation.KeyTime> 値を使用して時間が解決されます。  これにより、アニメーションの速度がこのキー フレームの解決された時間を基に一定になります。  
+7.  <span data-ttu-id="7521e-345">解決するには残り<xref:System.Windows.Media.Animation.KeyTime.Paced%2A><xref:System.Windows.Media.Animation.KeyTime>値。</span><span class="sxs-lookup"><span data-stu-id="7521e-345">Resolve remaining <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> values.</span></span> <span data-ttu-id="7521e-346"><xref:System.Windows.Media.Animation.KeyTime.Paced%2A><xref:System.Windows.Media.Animation.KeyTime>を使用して、<xref:System.Windows.Media.Animation.KeyTime>の近隣の値のキー フレームの解決時間を決定します。</span><span class="sxs-lookup"><span data-stu-id="7521e-346"><xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> use the <xref:System.Windows.Media.Animation.KeyTime> values of the neighboring key frames to determine their resolved time.</span></span>  <span data-ttu-id="7521e-347">目標は、アニメーションの速度がこのキー フレームの解決時間近くで一定であることを保証することです。</span><span class="sxs-lookup"><span data-stu-id="7521e-347">The goal is to ensure that the velocity of the animation is constant around this key frame's resolved time.</span></span>  
   
-8.  キー フレームを解決された時間 \(主キー\) の順に並べ替え、宣言 \(2 次キー\) の順に並べ替えます。つまり、解決されたキー フレームの <xref:System.Windows.Media.Animation.KeyTime> 値に基づく安定ソートを使用します。  
+8.  <span data-ttu-id="7521e-348">つまり解決された時刻 (主キー) の順序と (セカンダリ キー) の宣言の順序でのキー フレームを並べ替え、安定した並べ替えに使用するが、解決済みのキー フレームに基づく<xref:System.Windows.Media.Animation.KeyTime>値。</span><span class="sxs-lookup"><span data-stu-id="7521e-348">Sort key frames in order of resolved time (primary key), and order of declaration (secondary key), i.e., use a stable sort based on the resolved key frame <xref:System.Windows.Media.Animation.KeyTime> values.</span></span>  
   
-## 参照  
- <xref:System.Windows.Media.Animation.KeyTime>   
- <xref:System.Windows.Media.Animation.KeySpline>   
- <xref:System.Windows.Media.Animation.Timeline>   
- [キー スプライン アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160011)   
- [KeyFrame アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=160012)   
- [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)   
- [ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)   
- [キー フレームに関する「方法」トピック](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)   
- [タイミング動作の概要](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)
+## <a name="see-also"></a><span data-ttu-id="7521e-349">関連項目</span><span class="sxs-lookup"><span data-stu-id="7521e-349">See Also</span></span>  
+ <xref:System.Windows.Media.Animation.KeyTime>  
+ <xref:System.Windows.Media.Animation.KeySpline>  
+ <xref:System.Windows.Media.Animation.Timeline>  
+ [<span data-ttu-id="7521e-350">キー スプライン アニメーションのサンプル</span><span class="sxs-lookup"><span data-stu-id="7521e-350">Key Spline Animation Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=160011)  
+ [<span data-ttu-id="7521e-351">キーフレーム アニメーションのサンプル</span><span class="sxs-lookup"><span data-stu-id="7521e-351">KeyFrame Animation Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=160012)  
+ [<span data-ttu-id="7521e-352">アニメーションの概要</span><span class="sxs-lookup"><span data-stu-id="7521e-352">Animation Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [<span data-ttu-id="7521e-353">ストーリーボードの概要</span><span class="sxs-lookup"><span data-stu-id="7521e-353">Storyboards Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)  
+ [<span data-ttu-id="7521e-354">キー フレームに関する「方法」トピック</span><span class="sxs-lookup"><span data-stu-id="7521e-354">Key-Frame How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)  
+ [<span data-ttu-id="7521e-355">タイミング動作の概要</span><span class="sxs-lookup"><span data-stu-id="7521e-355">Timing Behaviors Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)

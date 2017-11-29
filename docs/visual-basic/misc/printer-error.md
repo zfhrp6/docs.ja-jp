@@ -1,24 +1,26 @@
 ---
-title: "プリンター エラーです | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID482"
+title: "プリンター エラーです"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID482
 ms.assetid: 0ce0c4b3-3604-4638-9363-6c9333d0cc9d
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d0581f7ef299dccd81052e5710dfbdc8215be07e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# プリンター エラーです
-プリンターで、エラーが発生しましたが、ファイルを送信したコンピューターにその他の情報は返されませんでした。  
+# <a name="printer-error"></a><span data-ttu-id="43ad6-102">プリンター エラーです</span><span class="sxs-lookup"><span data-stu-id="43ad6-102">Printer error</span></span>
+<span data-ttu-id="43ad6-103">プリンターで、エラーが発生しましたが、ファイルを送信したコンピューターにその他の情報は返されませんでした。</span><span class="sxs-lookup"><span data-stu-id="43ad6-103">An error occurred at the printer, but no other information was returned to the computer that sent the file.</span></span>  
   
-### このエラーを解決するには  
+### <a name="to-correct-the-error"></a><span data-ttu-id="43ad6-104">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="43ad6-104">To correct the error</span></span>  
   
--   プリンターを物理的に調査します。 コンピューターとプリンターの間のすべての接続が確実であることを確認します。 ほとんどのプリンターでは、"オフライン"、"用紙切れ" などのエラー情報が表示されます。  
+-   <span data-ttu-id="43ad6-105">プリンターを物理的に調査します。</span><span class="sxs-lookup"><span data-stu-id="43ad6-105">Physically examine the printer.</span></span> <span data-ttu-id="43ad6-106">コンピューターとプリンターの間のすべての接続が確実であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="43ad6-106">Make sure all connections between the computer and the printer are solid.</span></span> <span data-ttu-id="43ad6-107">ほとんどのプリンターでは、"オフライン"、"用紙切れ" などのエラー情報が表示されます。</span><span class="sxs-lookup"><span data-stu-id="43ad6-107">Most printers provide a display for error information such as "Offline" or "Out of paper."</span></span>  
   
-## 参照  
- [Error Types](../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a><span data-ttu-id="43ad6-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="43ad6-108">See Also</span></span>  
+ [<span data-ttu-id="43ad6-109">エラーの種類</span><span class="sxs-lookup"><span data-stu-id="43ad6-109">Error Types</span></span>](../../visual-basic/programming-guide/language-features/error-types.md)

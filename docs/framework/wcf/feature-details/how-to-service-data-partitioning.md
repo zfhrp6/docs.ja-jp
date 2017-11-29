@@ -1,34 +1,37 @@
 ---
-title: "サービス データのパーティションを分割する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "サービス データのパーティションを分割する方法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1ccff72e-d76b-4e36-93a2-e51f7b32dc83
-caps.latest.revision: 3
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 7104aa2fee49a21dab7fcc8392a9d4bb291203fe
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# サービス データのパーティションを分割する方法
-このトピックでは、メッセージを同じ送信先サービスの複数のインスタンスにパーティション分割するのに必要な、基本的な手順について説明します。サービス データのパーティション分割は、一般的に、優れた品質のサービスを提供するためにサービスを拡張する必要がある場合や、さまざまな顧客からの要求を特定の方法で処理する必要がある場合に使用されます。たとえば、重要な顧客 \("ゴールド" 顧客\) からのメッセージは、標準顧客からのメッセージよりも高い優先度で処理される必要がある場合があります。  
+# <a name="how-to-service-data-partitioning"></a><span data-ttu-id="62083-102">サービス データのパーティションを分割する方法</span><span class="sxs-lookup"><span data-stu-id="62083-102">How To: Service Data Partitioning</span></span>
+<span data-ttu-id="62083-103">このトピックでは、メッセージを同じ送信先サービスの複数のインスタンスにパーティション分割するのに必要な、基本的な手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="62083-103">This topic outlines the basic steps required to partition messages across multiple instances of the same destination service.</span></span> <span data-ttu-id="62083-104">サービス データのパーティション分割は、一般的に、優れた品質のサービスを提供するためにサービスを拡張する必要がある場合や、さまざまな顧客からの要求を特定の方法で処理する必要がある場合に使用されます。</span><span class="sxs-lookup"><span data-stu-id="62083-104">Service data partitioning is typically used when you need to scale a service in order to provide better quality of service, or when you need to handle requests from different customers in a specific way.</span></span> <span data-ttu-id="62083-105">たとえば、高い値または「ゴールド」顧客からのメッセージは、標準的な顧客からのメッセージよりも高い優先順位で処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="62083-105">For example, messages from high value or "Gold" customers may need to be processed at a higher priority than messages from a standard customer.</span></span>  
   
- この例では、メッセージが regularCalc サービスの 2 つのインスタンスの 1 つにルーティングされます。サービスの両方のインスタンスは同じですが、calculator1 エンドポイントで表されるサービスは、重要な顧客から受け取ったメッセージを処理し、calculator 2 エンドポイントは、その他の顧客からのメッセージを処理します。  
+ <span data-ttu-id="62083-106">この例では、メッセージが regularCalc サービスの 2 つのインスタンスの 1 つにルーティングされます。</span><span class="sxs-lookup"><span data-stu-id="62083-106">In this example, messages are routed to one of two instances of the regularCalc service.</span></span> <span data-ttu-id="62083-107">サービスの両方のインスタンスは同じですが、calculator1 エンドポイントで表されるサービスは、重要な顧客から受け取ったメッセージを処理し、calculator 2 エンドポイントは、その他の顧客からのメッセージを処理します。</span><span class="sxs-lookup"><span data-stu-id="62083-107">Both instances of the service are identical; however the service represented by the calculator1 endpoint processes messages received from high value customers, the calculator 2 endpoint processes messages from other customers</span></span>  
   
- クライアントから送信されたメッセージには、どちらのサービス インスタンスにメッセージをルーティングする必要があるかを識別するのに使用できる一意のデータはありません。各クライアントが特定の送信先サービスにデータをルーティングできるようにするため、メッセージの受信に使用される 2 つのサービス エンドポイントを実装します。  
+ <span data-ttu-id="62083-108">クライアントから送信されたメッセージには、どちらのサービス インスタンスにメッセージをルーティングする必要があるかを識別するのに使用できる一意のデータはありません。</span><span class="sxs-lookup"><span data-stu-id="62083-108">The message sent from the client does not have any unique data that can be used to identify which service instance the message should be routed to.</span></span> <span data-ttu-id="62083-109">各クライアントが特定の送信先サービスにデータをルーティングできるようにするため、メッセージの受信に使用される 2 つのサービス エンドポイントを実装します。</span><span class="sxs-lookup"><span data-stu-id="62083-109">To allow each client to route data to a specific destination service we will implement two service endpoints that will be used to receive messages.</span></span>  
   
 > [!NOTE]
->  この例では、特定のエンドポイントを使用してデータをパーティション分割しますが、ヘッダーや本文データなど、メッセージ自体に含まれている情報を使用することもできます。  
+>  <span data-ttu-id="62083-110">この例では、特定のエンドポイントを使用してデータをパーティション分割しますが、ヘッダーや本文データなど、メッセージ自体に含まれている情報を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="62083-110">While this example uses specific endpoints to partition data, this could also be accomplished using information contained within the message itself such as header or body data.</span></span>  
   
-### サービス データのパーティション分割の実装  
+### <a name="implement-service-data-partitioning"></a><span data-ttu-id="62083-111">サービス データのパーティション分割の実装</span><span class="sxs-lookup"><span data-stu-id="62083-111">Implement Service Data Partitioning</span></span>  
   
-1.  サービスによって公開されるサービス エンドポイントを指定することによって、ルーティング サービスの基本的な構成を作成します。次の例では、メッセージの受信に使用する、2 つのサービス エンドポイントを定義します。また、regularCalc サービス インスタンスへのメッセージ送信に使用する、クライアント エンドポイントも定義します。  
+1.  <span data-ttu-id="62083-112">サービスによって公開されるサービス エンドポイントを指定することによって、ルーティング サービスの基本的な構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="62083-112">Create the basic Routing Service configuration by specifying the service endpoints exposed by the service.</span></span> <span data-ttu-id="62083-113">次の例では、メッセージの受信に使用する、2 つのサービス エンドポイントを定義します。</span><span class="sxs-lookup"><span data-stu-id="62083-113">The following example defines two endpoints, which will be used to receive messages.</span></span> <span data-ttu-id="62083-114">また、regularCalc サービス インスタンスへのメッセージ送信に使用する、クライアント エンドポイントも定義します。</span><span class="sxs-lookup"><span data-stu-id="62083-114">It also defines the client endpoints, which are used to send messages to the regularCalc service instances.</span></span>  
   
     ```xml  
     <services>  
@@ -63,10 +66,9 @@ caps.handback.revision: 3
                   binding="netTcpBinding"  
                   contract="*" />  
      </client>  
-  
     ```  
   
-2.  送信先エンドポイントにメッセージをルーティングするのに使用するフィルターを定義します。この例では、EndpointName フィルターを使用して、どのサービス エンドポイントがメッセージを受信したかを判断します。次の例では、必要なルーティング セクションおよびフィルターを定義します。  
+2.  <span data-ttu-id="62083-115">送信先エンドポイントにメッセージをルーティングするのに使用するフィルターを定義します。</span><span class="sxs-lookup"><span data-stu-id="62083-115">Define the filters used to route messages to the destination endpoints.</span></span>  <span data-ttu-id="62083-116">この例では、EndpointName フィルターを使用して、どのサービス エンドポイントがメッセージを受信したかを判断します。</span><span class="sxs-lookup"><span data-stu-id="62083-116">For this example, the EndpointName filter is used to determine which service endpoint received the message.</span></span> <span data-ttu-id="62083-117">次の例では、必要なルーティング セクションおよびフィルターを定義します。</span><span class="sxs-lookup"><span data-stu-id="62083-117">The following example defines the necessary routing section and filters.</span></span>  
   
     ```xml  
     <filters>  
@@ -79,9 +81,9 @@ caps.handback.revision: 3
     </filters>  
     ```  
   
-3.  各フィルターをクライアント エンドポイントと関連付けるフィルター テーブルを定義します。この例では、メッセージの受信に使用された特定のエンドポイントに基づいて、メッセージがルーティングされます。メッセージは 2 つのフィルターのどちらかにのみ一致するため、フィルターが評価される順序をフィルターの優先順位で制御する必要はありません。  
+3.  <span data-ttu-id="62083-118">各フィルターをクライアント エンドポイントと関連付けるフィルター テーブルを定義します。</span><span class="sxs-lookup"><span data-stu-id="62083-118">Define the filter table, which associates each filter with a client endpoint.</span></span> <span data-ttu-id="62083-119">この例では、メッセージの受信に使用された特定のエンドポイントに基づいて、メッセージがルーティングされます。</span><span class="sxs-lookup"><span data-stu-id="62083-119">In this example, the message will be routed based on the specific endpoint it was received over.</span></span> <span data-ttu-id="62083-120">メッセージは 2 つのフィルターのどちらかにのみ一致するため、フィルターが評価される順序をフィルターの優先順位で制御する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="62083-120">Since the message can only match one of the two possible filters, there is no need for using filter priority to control to the order in which filters are evaluated.</span></span>  
   
-     次のコードでは、フィルター テーブルを定義し、前に定義されたフィルターを追加します。  
+     <span data-ttu-id="62083-121">次のコードでは、フィルター テーブルを定義し、前に定義されたフィルターを追加します。</span><span class="sxs-lookup"><span data-stu-id="62083-121">The following defines the filter table and adds the filters defined earlier.</span></span>  
   
     ```xml  
     <filterTables>  
@@ -91,10 +93,9 @@ caps.handback.revision: 3
          <add filterName="NormalPriority" endpointName="CalcEndpoint2"/>  
        </filterTable>  
     </filterTables>  
-  
     ```  
   
-4.  受信メッセージをテーブルに含まれているフィルターと照合して評価するには、ルーティング動作を使用して、フィルター テーブルをサービス エンドポイントと関連付ける必要があります。次の例は、filterTable1 をサービス エンドポイントと関連付ける方法を示しています。  
+4.  <span data-ttu-id="62083-122">受信メッセージをテーブルに含まれているフィルターと照合して評価するには、ルーティング動作を使用して、フィルター テーブルをサービス エンドポイントと関連付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="62083-122">To evaluate incoming messages against the filters contained in the table, you must associate the filter table with the service endpoints by using the routing behavior.</span></span> <span data-ttu-id="62083-123">次の例では、関連付けられた filterTable1 をサービス エンドポイントを示しています。</span><span class="sxs-lookup"><span data-stu-id="62083-123">The following example demonstrates associating "filterTable1" with the service endpoints:</span></span>  
   
     ```xml  
     <behaviors>  
@@ -105,11 +106,10 @@ caps.handback.revision: 3
         </behavior>  
       </serviceBehaviors>  
     </behaviors>  
-  
     ```  
   
-## 使用例  
- 構成ファイル全体の一覧を次に示します。  
+## <a name="example"></a><span data-ttu-id="62083-124">例</span><span class="sxs-lookup"><span data-stu-id="62083-124">Example</span></span>  
+ <span data-ttu-id="62083-125">構成ファイル全体の一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="62083-125">The following is a complete listing of the configuration file.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -183,5 +183,5 @@ caps.handback.revision: 3
 </configuration>  
 ```  
   
-## 参照  
- [ルーティング サービス](../../../../docs/framework/wcf/samples/routing-services.md)
+## <a name="see-also"></a><span data-ttu-id="62083-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="62083-126">See Also</span></span>  
+ [<span data-ttu-id="62083-127">ルーティング サービス</span><span class="sxs-lookup"><span data-stu-id="62083-127">Routing Services</span></span>](../../../../docs/framework/wcf/samples/routing-services.md)

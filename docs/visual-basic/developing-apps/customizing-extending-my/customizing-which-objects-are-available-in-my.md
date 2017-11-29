@@ -1,105 +1,88 @@
 ---
-title: "(Visual Basic) で利用可能なオブジェクトのカスタマイズ |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "My で利用可能なオブジェクトのカスタマイズ (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- My namespace, customizing
+- My namespace [Visual Basic], customizing
 - My namespace
 ms.assetid: 4e8279c2-ed5b-4681-8903-8a6671874000
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6791398270e4348adf356eb36a385bfbefde873c
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: e5f5be7481ee102074fe1236b91110ee6b1d2944
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="customizing-which-objects-are-available-in-my-visual-basic"></a>My で利用可能なオブジェクトのカスタマイズ (Visual Basic)
-このトピックでは、これを制御する方法について説明`My`するには、プロジェクトのオブジェクトが有効になっている`_MYTYPE`条件付きコンパイル定数です。 [!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]統合開発環境 (IDE) の維持、`_MYTYPE`プロジェクト、プロジェクトの種類との同期の条件付きコンパイル定数です。  
+# <a name="customizing-which-objects-are-available-in-my-visual-basic"></a><span data-ttu-id="b1a62-102">My で利用可能なオブジェクトのカスタマイズ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b1a62-102">Customizing Which Objects are Available in My (Visual Basic)</span></span>
+<span data-ttu-id="b1a62-103">このトピックでは、これを制御する方法について説明`My`するには、プロジェクトのオブジェクトが有効になって`_MYTYPE`条件付きコンパイル定数。</span><span class="sxs-lookup"><span data-stu-id="b1a62-103">This topic describes how you can control which `My` objects are enabled by setting your project's `_MYTYPE` conditional-compilation constant.</span></span> <span data-ttu-id="b1a62-104">[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]統合開発環境 (IDE) の保持、`_MYTYPE`プロジェクトとプロジェクトの種類の同期の条件付きコンパイル定数。</span><span class="sxs-lookup"><span data-stu-id="b1a62-104">The [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] Integrated Development Environment (IDE) keeps the `_MYTYPE` conditional-compilation constant for a project in sync with the project's type.</span></span>  
   
-## <a name="predefined-mytype-values"></a>定義済み _MYTYPE 値  
- 使用する必要があります、`/define`コンパイラ オプションを設定する、`_MYTYPE`条件付きコンパイル定数です。 値を指定するときに、`_MYTYPE`一定で囲む必要があります文字列値にバック スラッシュ/引用符 (\\") のシーケンス。 たとえば、次のように使用する可能性があります。  
+## <a name="predefined-mytype-values"></a><span data-ttu-id="b1a62-105">定義済み _MYTYPE 値</span><span class="sxs-lookup"><span data-stu-id="b1a62-105">Predefined _MYTYPE Values</span></span>  
+ <span data-ttu-id="b1a62-106">使用する必要があります、`/define`コンパイラ オプションを設定する、`_MYTYPE`条件付きコンパイル定数。</span><span class="sxs-lookup"><span data-stu-id="b1a62-106">You must use the `/define` compiler option to set the `_MYTYPE` conditional-compilation constant.</span></span> <span data-ttu-id="b1a62-107">独自の値を指定するときに、`_MYTYPE`定数、文字列値で囲みますバック スラッシュ/引用符 (\\") のシーケンス。</span><span class="sxs-lookup"><span data-stu-id="b1a62-107">When specifying your own value for the `_MYTYPE` constant, you must enclose the string value in backslash/quotation mark (\\") sequences.</span></span> <span data-ttu-id="b1a62-108">たとえば、次のように使用する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b1a62-108">For example, you could use:</span></span>  
   
 ```  
 /define:_MYTYPE=\"WindowsForms\"  
 ```  
   
- 次の表はどのような`_MYTYPE`いくつかのプロジェクトの種類には、条件付きコンパイル定数に設定します。  
+ <span data-ttu-id="b1a62-109">この表ではどのような`_MYTYPE`条件付きコンパイル定数に設定されているいくつかのプロジェクト タイプ用。</span><span class="sxs-lookup"><span data-stu-id="b1a62-109">This table shows what the `_MYTYPE` conditional-compilation constant is set to for several project types.</span></span>  
   
-|プロジェクトの種類|_MYTYPE 値|  
+|<span data-ttu-id="b1a62-110">プロジェクトの種類</span><span class="sxs-lookup"><span data-stu-id="b1a62-110">Project type</span></span>|<span data-ttu-id="b1a62-111">_MYTYPE 値</span><span class="sxs-lookup"><span data-stu-id="b1a62-111">_MYTYPE value</span></span>|  
 |------------------|--------------------|  
-|クラス ライブラリ|"Windows"|  
-|コンソール アプリケーション|「コンソール」|  
-|Web|"Web"|  
-|Web コントロール ライブラリ|"WebControl"|  
-|Windows アプリケーション|"WindowsForms"|  
-|定義したカスタムの開始時に、Windows アプリケーション`Sub Main`|"WindowsFormsWithCustomSubMain"|  
-|Windows コントロール ライブラリ|"Windows"|  
-|Windows サービス|「コンソール」|  
-|Empty|"Empty"|  
+|<span data-ttu-id="b1a62-112">クラス ライブラリ</span><span class="sxs-lookup"><span data-stu-id="b1a62-112">Class Library</span></span>|<span data-ttu-id="b1a62-113">"Windows"</span><span class="sxs-lookup"><span data-stu-id="b1a62-113">"Windows"</span></span>|  
+|<span data-ttu-id="b1a62-114">コンソール アプリケーション</span><span class="sxs-lookup"><span data-stu-id="b1a62-114">Console Application</span></span>|<span data-ttu-id="b1a62-115">"Console"</span><span class="sxs-lookup"><span data-stu-id="b1a62-115">"Console"</span></span>|  
+|<span data-ttu-id="b1a62-116">Web</span><span class="sxs-lookup"><span data-stu-id="b1a62-116">Web</span></span>|<span data-ttu-id="b1a62-117">"Web"</span><span class="sxs-lookup"><span data-stu-id="b1a62-117">"Web"</span></span>|  
+|<span data-ttu-id="b1a62-118">Web コントロール ライブラリ</span><span class="sxs-lookup"><span data-stu-id="b1a62-118">Web Control Library</span></span>|<span data-ttu-id="b1a62-119">"WebControl"</span><span class="sxs-lookup"><span data-stu-id="b1a62-119">"WebControl"</span></span>|  
+|<span data-ttu-id="b1a62-120">Windows アプリケーション</span><span class="sxs-lookup"><span data-stu-id="b1a62-120">Windows Application</span></span>|<span data-ttu-id="b1a62-121">"WindowsForms"</span><span class="sxs-lookup"><span data-stu-id="b1a62-121">"WindowsForms"</span></span>|  
+|<span data-ttu-id="b1a62-122">カスタムの開始時に、Windows アプリケーション`Sub Main`</span><span class="sxs-lookup"><span data-stu-id="b1a62-122">Windows Application, when starting with custom `Sub Main`</span></span>|<span data-ttu-id="b1a62-123">"WindowsFormsWithCustomSubMain"</span><span class="sxs-lookup"><span data-stu-id="b1a62-123">"WindowsFormsWithCustomSubMain"</span></span>|  
+|<span data-ttu-id="b1a62-124">Windows コントロール ライブラリ</span><span class="sxs-lookup"><span data-stu-id="b1a62-124">Windows Control Library</span></span>|<span data-ttu-id="b1a62-125">"Windows"</span><span class="sxs-lookup"><span data-stu-id="b1a62-125">"Windows"</span></span>|  
+|<span data-ttu-id="b1a62-126">Windows サービス</span><span class="sxs-lookup"><span data-stu-id="b1a62-126">Windows Service</span></span>|<span data-ttu-id="b1a62-127">"Console"</span><span class="sxs-lookup"><span data-stu-id="b1a62-127">"Console"</span></span>|  
+|<span data-ttu-id="b1a62-128">Empty</span><span class="sxs-lookup"><span data-stu-id="b1a62-128">Empty</span></span>|<span data-ttu-id="b1a62-129">"Empty"</span><span class="sxs-lookup"><span data-stu-id="b1a62-129">"Empty"</span></span>|  
   
 > [!NOTE]
->  すべての条件付きコンパイルの文字列比較は関係なく、大文字小文字が区別`Option Compare`ステートメントを設定します。  
+>  <span data-ttu-id="b1a62-130">すべての条件付きコンパイルの文字列比較では関係なく、大文字小文字が区別`Option Compare`ステートメントを設定します。</span><span class="sxs-lookup"><span data-stu-id="b1a62-130">All conditional-compilation string comparisons are case-sensitive, regardless of how the `Option Compare` statement is set.</span></span>  
   
-## <a name="dependent-my-compilation-constants"></a>_MY コンパイル定数  
- `_MYTYPE`条件付きコンパイル定数は、その他のいくつかの値をさらに制御`_MY`コンパイル定数。  
+## <a name="dependent-my-compilation-constants"></a><span data-ttu-id="b1a62-131">_MY コンパイル定数</span><span class="sxs-lookup"><span data-stu-id="b1a62-131">Dependent _MY Compilation Constants</span></span>  
+ <span data-ttu-id="b1a62-132">`_MYTYPE`条件付きコンパイル定数は、他のいくつかの値をさらに、制御`_MY`コンパイル定数。</span><span class="sxs-lookup"><span data-stu-id="b1a62-132">The `_MYTYPE` conditional-compilation constant, in turn, controls the values of several other `_MY` compilation constants:</span></span>  
   
-|_MYTYPE|_MYAPPLICATIONTYPE|_MYCOMPUTERTYPE|_MYFORMS|_MYUSERTYPE|_MYWEBSERVICES|  
+|<span data-ttu-id="b1a62-133">_MYTYPE</span><span class="sxs-lookup"><span data-stu-id="b1a62-133">_MYTYPE</span></span>|<span data-ttu-id="b1a62-134">_MYAPPLICATIONTYPE</span><span class="sxs-lookup"><span data-stu-id="b1a62-134">_MYAPPLICATIONTYPE</span></span>|<span data-ttu-id="b1a62-135">_MYCOMPUTERTYPE</span><span class="sxs-lookup"><span data-stu-id="b1a62-135">_MYCOMPUTERTYPE</span></span>|<span data-ttu-id="b1a62-136">_MYFORMS</span><span class="sxs-lookup"><span data-stu-id="b1a62-136">_MYFORMS</span></span>|<span data-ttu-id="b1a62-137">_MYUSERTYPE</span><span class="sxs-lookup"><span data-stu-id="b1a62-137">_MYUSERTYPE</span></span>|<span data-ttu-id="b1a62-138">_MYWEBSERVICES</span><span class="sxs-lookup"><span data-stu-id="b1a62-138">_MYWEBSERVICES</span></span>|  
 |--------------|-------------------------|----------------------|---------------|------------------|---------------------|  
-|「コンソール」|「コンソール」|"Windows"|未定義|"Windows"|TRUE|  
-|"Custom"|未定義|未定義|未定義|未定義|未定義|  
-|"Empty"|未定義|未定義|未定義|未定義|未定義|  
-|"Web"|未定義|"Web"|FALSE|"Web"|FALSE|  
-|"WebControl"|未定義|"Web"|FALSE|"Web"|TRUE|  
-|"Windows"または""|"Windows"|"Windows"|未定義|"Windows"|TRUE|  
-|"WindowsForms"|"WindowsForms"|"Windows"|TRUE|"Windows"|TRUE|  
-|"WindowsFormsWithCustomSubMain"|「コンソール」|"Windows"|TRUE|"Windows"|TRUE|  
+|<span data-ttu-id="b1a62-139">"Console"</span><span class="sxs-lookup"><span data-stu-id="b1a62-139">"Console"</span></span>|<span data-ttu-id="b1a62-140">"Console"</span><span class="sxs-lookup"><span data-stu-id="b1a62-140">"Console"</span></span>|<span data-ttu-id="b1a62-141">"Windows"</span><span class="sxs-lookup"><span data-stu-id="b1a62-141">"Windows"</span></span>|<span data-ttu-id="b1a62-142">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-142">Undefined</span></span>|<span data-ttu-id="b1a62-143">"Windows"</span><span class="sxs-lookup"><span data-stu-id="b1a62-143">"Windows"</span></span>|<span data-ttu-id="b1a62-144">TRUE</span><span class="sxs-lookup"><span data-stu-id="b1a62-144">TRUE</span></span>|  
+|<span data-ttu-id="b1a62-145">"Custom"</span><span class="sxs-lookup"><span data-stu-id="b1a62-145">"Custom"</span></span>|<span data-ttu-id="b1a62-146">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-146">Undefined</span></span>|<span data-ttu-id="b1a62-147">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-147">Undefined</span></span>|<span data-ttu-id="b1a62-148">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-148">Undefined</span></span>|<span data-ttu-id="b1a62-149">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-149">Undefined</span></span>|<span data-ttu-id="b1a62-150">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-150">Undefined</span></span>|  
+|<span data-ttu-id="b1a62-151">"Empty"</span><span class="sxs-lookup"><span data-stu-id="b1a62-151">"Empty"</span></span>|<span data-ttu-id="b1a62-152">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-152">Undefined</span></span>|<span data-ttu-id="b1a62-153">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-153">Undefined</span></span>|<span data-ttu-id="b1a62-154">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-154">Undefined</span></span>|<span data-ttu-id="b1a62-155">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-155">Undefined</span></span>|<span data-ttu-id="b1a62-156">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-156">Undefined</span></span>|  
+|<span data-ttu-id="b1a62-157">"Web"</span><span class="sxs-lookup"><span data-stu-id="b1a62-157">"Web"</span></span>|<span data-ttu-id="b1a62-158">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-158">Undefined</span></span>|<span data-ttu-id="b1a62-159">"Web"</span><span class="sxs-lookup"><span data-stu-id="b1a62-159">"Web"</span></span>|<span data-ttu-id="b1a62-160">FALSE</span><span class="sxs-lookup"><span data-stu-id="b1a62-160">FALSE</span></span>|<span data-ttu-id="b1a62-161">"Web"</span><span class="sxs-lookup"><span data-stu-id="b1a62-161">"Web"</span></span>|<span data-ttu-id="b1a62-162">FALSE</span><span class="sxs-lookup"><span data-stu-id="b1a62-162">FALSE</span></span>|  
+|<span data-ttu-id="b1a62-163">"WebControl"</span><span class="sxs-lookup"><span data-stu-id="b1a62-163">"WebControl"</span></span>|<span data-ttu-id="b1a62-164">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-164">Undefined</span></span>|<span data-ttu-id="b1a62-165">"Web"</span><span class="sxs-lookup"><span data-stu-id="b1a62-165">"Web"</span></span>|<span data-ttu-id="b1a62-166">FALSE</span><span class="sxs-lookup"><span data-stu-id="b1a62-166">FALSE</span></span>|<span data-ttu-id="b1a62-167">"Web"</span><span class="sxs-lookup"><span data-stu-id="b1a62-167">"Web"</span></span>|<span data-ttu-id="b1a62-168">TRUE</span><span class="sxs-lookup"><span data-stu-id="b1a62-168">TRUE</span></span>|  
+|<span data-ttu-id="b1a62-169">"Windows"または""</span><span class="sxs-lookup"><span data-stu-id="b1a62-169">"Windows" or ""</span></span>|<span data-ttu-id="b1a62-170">"Windows"</span><span class="sxs-lookup"><span data-stu-id="b1a62-170">"Windows"</span></span>|<span data-ttu-id="b1a62-171">"Windows"</span><span class="sxs-lookup"><span data-stu-id="b1a62-171">"Windows"</span></span>|<span data-ttu-id="b1a62-172">未定義</span><span class="sxs-lookup"><span data-stu-id="b1a62-172">Undefined</span></span>|<span data-ttu-id="b1a62-173">"Windows"</span><span class="sxs-lookup"><span data-stu-id="b1a62-173">"Windows"</span></span>|<span data-ttu-id="b1a62-174">TRUE</span><span class="sxs-lookup"><span data-stu-id="b1a62-174">TRUE</span></span>|  
+|<span data-ttu-id="b1a62-175">"WindowsForms"</span><span class="sxs-lookup"><span data-stu-id="b1a62-175">"WindowsForms"</span></span>|<span data-ttu-id="b1a62-176">"WindowsForms"</span><span class="sxs-lookup"><span data-stu-id="b1a62-176">"WindowsForms"</span></span>|<span data-ttu-id="b1a62-177">"Windows"</span><span class="sxs-lookup"><span data-stu-id="b1a62-177">"Windows"</span></span>|<span data-ttu-id="b1a62-178">TRUE</span><span class="sxs-lookup"><span data-stu-id="b1a62-178">TRUE</span></span>|<span data-ttu-id="b1a62-179">"Windows"</span><span class="sxs-lookup"><span data-stu-id="b1a62-179">"Windows"</span></span>|<span data-ttu-id="b1a62-180">TRUE</span><span class="sxs-lookup"><span data-stu-id="b1a62-180">TRUE</span></span>|  
+|<span data-ttu-id="b1a62-181">"WindowsFormsWithCustomSubMain"</span><span class="sxs-lookup"><span data-stu-id="b1a62-181">"WindowsFormsWithCustomSubMain"</span></span>|<span data-ttu-id="b1a62-182">"Console"</span><span class="sxs-lookup"><span data-stu-id="b1a62-182">"Console"</span></span>|<span data-ttu-id="b1a62-183">"Windows"</span><span class="sxs-lookup"><span data-stu-id="b1a62-183">"Windows"</span></span>|<span data-ttu-id="b1a62-184">TRUE</span><span class="sxs-lookup"><span data-stu-id="b1a62-184">TRUE</span></span>|<span data-ttu-id="b1a62-185">"Windows"</span><span class="sxs-lookup"><span data-stu-id="b1a62-185">"Windows"</span></span>|<span data-ttu-id="b1a62-186">TRUE</span><span class="sxs-lookup"><span data-stu-id="b1a62-186">TRUE</span></span>|  
   
- 既定では、未定義の条件付きコンパイル定数を解決する`FALSE`です。 既定の動作をオーバーライドするようにプロジェクトをコンパイルするときに、未定義の定数の値を指定できます。  
+ <span data-ttu-id="b1a62-187">既定では、未定義の条件付きコンパイル定数を解決する`FALSE`です。</span><span class="sxs-lookup"><span data-stu-id="b1a62-187">By default, undefined conditional-compilation constants resolve to `FALSE`.</span></span> <span data-ttu-id="b1a62-188">既定の動作を上書きするようにプロジェクトをコンパイルするときに、未定義の定数の値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="b1a62-188">You can specify values for the undefined constants when compiling your project to override the default behavior.</span></span>  
   
 > [!NOTE]
->  `_MYTYPE`設定されているプロジェクトに含まれる"Custom"に、`My`名前空間が含まれていないオブジェクトにはです。 ただし、設定`_MYTYPE`に「空の」コンパイラが追加できないように、`My`名前空間とそのオブジェクト。  
+>  <span data-ttu-id="b1a62-189">ときに`_MYTYPE`設定されているプロジェクトに含まれる"Custom"に、`My`が名前空間が含まれていないオブジェクトにはです。</span><span class="sxs-lookup"><span data-stu-id="b1a62-189">When `_MYTYPE` is set to "Custom", the project contains the `My` namespace, but it contains no objects.</span></span> <span data-ttu-id="b1a62-190">ただし、設定`_MYTYPE`を追加できない、"Empty"のように、コンパイラ、`My`名前空間とそのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="b1a62-190">However, setting `_MYTYPE` to "Empty" prevents the compiler from adding the `My` namespace and its objects.</span></span>  
   
- このテーブルの定義済みの値の効果の説明、`_MY`コンパイル定数です。  
+ <span data-ttu-id="b1a62-191">このテーブルの定義済みの値の効果の説明、`_MY`コンパイル定数。</span><span class="sxs-lookup"><span data-stu-id="b1a62-191">This table describes the effects of the predefined values of the `_MY` compilation constants.</span></span>  
   
-|定数|説明|  
+|<span data-ttu-id="b1a62-192">定数</span><span class="sxs-lookup"><span data-stu-id="b1a62-192">Constant</span></span>|<span data-ttu-id="b1a62-193">説明</span><span class="sxs-lookup"><span data-stu-id="b1a62-193">Meaning</span></span>|  
 |--------------|-------------|  
-|`_MYAPPLICATIONTYPE`|により、`My.Application`定数は、「コンソールで、」Windows"または"WindowsForms"。<br /><br /> -「コンソール」のバージョンが<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>。</xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>から派生します。 "Windows"バージョンよりも少ないメンバーです。<br />派生して"Windows"バージョン<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>そして"WindowsForms"バージョンよりも少ないメンバーを持つ</xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>。<br />-"WindowsForms"バージョンの`My.Application` <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>.</xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>から派生 場合、`TARGET`する「ため」定数が定義し、このクラスは、`Sub Main`メソッドです。|  
-|`_MYCOMPUTERTYPE`|により、`My.Computer`定数が"Web"または"Windows"の場合。<br /><br /> -派生した"Web"バージョン<xref:Microsoft.VisualBasic.Devices.ServerComputer>、"Windows"バージョンよりも少ないメンバーを持つとします</xref:Microsoft.VisualBasic.Devices.ServerComputer>。<br />-の"Windows"バージョン`My.Computer` <xref:Microsoft.VisualBasic.Devices.Computer>.</xref:Microsoft.VisualBasic.Devices.Computer>から派生|  
-|`_MYFORMS`|により、`My.Forms`定数の場合、`TRUE`です。|  
-|`_MYUSERTYPE`|により、`My.User`定数が"Web"または"Windows"の場合。<br /><br /> -の"Web"バージョン`My.User`現在の HTTP 要求のユーザー id に関連付けられています。<br />-の"Windows"バージョン`My.User`スレッドの現在のプリンシパルに関連付けられています。|  
-|`_MYWEBSERVICES`|により、`My.WebServices`定数の場合、`TRUE`です。|  
-|`_MYTYPE`|により、 `My.Log`、 `My.Request`、および`My.Response`定数は、"Web"場合は、です。|  
+|`_MYAPPLICATIONTYPE`|<span data-ttu-id="b1a62-194">により、`My.Application`定数は、「コンソールで、」Windows"または"WindowsForms"。</span><span class="sxs-lookup"><span data-stu-id="b1a62-194">Enables `My.Application`, if the constant is "Console," Windows," or "WindowsForms":</span></span><br /><br /> <span data-ttu-id="b1a62-195">-派生した"Console"バージョン<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>します。</span><span class="sxs-lookup"><span data-stu-id="b1a62-195">-   The "Console" version derives from <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>.</span></span> <span data-ttu-id="b1a62-196">"Windows"のバージョンよりも少ないメンバーがあります。</span><span class="sxs-lookup"><span data-stu-id="b1a62-196">and has fewer members than the "Windows" version.</span></span><br /><span data-ttu-id="b1a62-197">-派生した"Windows"バージョン<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>参照できますが、"WindowsForms"バージョンよりも少ないメンバー。</span><span class="sxs-lookup"><span data-stu-id="b1a62-197">-   The "Windows" version derives from <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>.and has fewer members than the "WindowsForms" version.</span></span><br /><span data-ttu-id="b1a62-198">-の"WindowsForms"バージョン`My.Application`から派生した<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>です。</span><span class="sxs-lookup"><span data-stu-id="b1a62-198">-   The "WindowsForms" version of `My.Application` derives from <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>.</span></span> <span data-ttu-id="b1a62-199">場合、 `TARGET` "winexe"である定数を定義し、クラスが含まれています、`Sub Main`メソッドです。</span><span class="sxs-lookup"><span data-stu-id="b1a62-199">If the `TARGET` constant is defined to be "winexe", then the class includes a `Sub Main` method.</span></span>|  
+|`_MYCOMPUTERTYPE`|<span data-ttu-id="b1a62-200">により、`My.Computer`定数が"Web"または"Windows"の場合。</span><span class="sxs-lookup"><span data-stu-id="b1a62-200">Enables `My.Computer`, if the constant is "Web" or "Windows":</span></span><br /><br /> <span data-ttu-id="b1a62-201">、派生して"Web"バージョン<xref:Microsoft.VisualBasic.Devices.ServerComputer>、"Windows"のバージョンよりも少ないメンバーを持つとします。</span><span class="sxs-lookup"><span data-stu-id="b1a62-201">-   The "Web" version derives from <xref:Microsoft.VisualBasic.Devices.ServerComputer>, and has fewer members than the "Windows" version.</span></span><br /><span data-ttu-id="b1a62-202">-場合は、、"Windows"バージョン`My.Computer`から派生した<xref:Microsoft.VisualBasic.Devices.Computer>です。</span><span class="sxs-lookup"><span data-stu-id="b1a62-202">-   The "Windows" version of `My.Computer` derives from <xref:Microsoft.VisualBasic.Devices.Computer>.</span></span>|  
+|`_MYFORMS`|<span data-ttu-id="b1a62-203">により、`My.Forms`定数の場合、`TRUE`です。</span><span class="sxs-lookup"><span data-stu-id="b1a62-203">Enables `My.Forms`, if the constant is `TRUE`.</span></span>|  
+|`_MYUSERTYPE`|<span data-ttu-id="b1a62-204">により、`My.User`定数が"Web"または"Windows"の場合。</span><span class="sxs-lookup"><span data-stu-id="b1a62-204">Enables `My.User`, if the constant is "Web" or "Windows":</span></span><br /><br /> <span data-ttu-id="b1a62-205">-の"Web"バージョン`My.User`の現在の HTTP 要求のユーザー id に関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="b1a62-205">-   The "Web" version of `My.User` is associated with the user identity of the current HTTP request.</span></span><br /><span data-ttu-id="b1a62-206">-場合は、、"Windows"バージョン`My.User`スレッドの現在のプリンシパルに関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="b1a62-206">-   The "Windows" version of `My.User` is associated with the thread's current principal.</span></span>|  
+|`_MYWEBSERVICES`|<span data-ttu-id="b1a62-207">により、`My.WebServices`定数の場合、`TRUE`です。</span><span class="sxs-lookup"><span data-stu-id="b1a62-207">Enables `My.WebServices`, if the constant is `TRUE`.</span></span>|  
+|`_MYTYPE`|<span data-ttu-id="b1a62-208">により、 `My.Log`、 `My.Request`、および`My.Response`定数が"Web"である場合、します。</span><span class="sxs-lookup"><span data-stu-id="b1a62-208">Enables `My.Log`, `My.Request`, and `My.Response`, if the constant is "Web".</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase></xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>   
- <xref:Microsoft.VisualBasic.Devices.Computer></xref:Microsoft.VisualBasic.Devices.Computer>   
- <xref:Microsoft.VisualBasic.Logging.Log></xref:Microsoft.VisualBasic.Logging.Log>   
- <xref:Microsoft.VisualBasic.ApplicationServices.User></xref:Microsoft.VisualBasic.ApplicationServices.User>   
- [どのように私はプロジェクトの種類に依存します](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)   
- [条件付きコンパイル](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)   
- [/define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)   
- [My.Forms オブジェクト](../../../visual-basic/language-reference/objects/my-forms-object.md)   
- [My.Request オブジェクト](../../../visual-basic/language-reference/objects/my-request-object.md)   
- [My.Response オブジェクト](../../../visual-basic/language-reference/objects/my-response-object.md)   
- [My.WebServices オブジェクト](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+## <a name="see-also"></a><span data-ttu-id="b1a62-209">関連項目</span><span class="sxs-lookup"><span data-stu-id="b1a62-209">See Also</span></span>  
+ <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>  
+ <xref:Microsoft.VisualBasic.Devices.Computer>  
+ <xref:Microsoft.VisualBasic.Logging.Log>  
+ <xref:Microsoft.VisualBasic.ApplicationServices.User>  
+ [<span data-ttu-id="b1a62-210">プロジェクトの種類に応じた My の機能</span><span class="sxs-lookup"><span data-stu-id="b1a62-210">How My Depends on Project Type</span></span>](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)  
+ [<span data-ttu-id="b1a62-211">条件付きコンパイル</span><span class="sxs-lookup"><span data-stu-id="b1a62-211">Conditional Compilation</span></span>](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)  
+ [<span data-ttu-id="b1a62-212">/define (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b1a62-212">/define (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/define.md)  
+ [<span data-ttu-id="b1a62-213">My.Forms オブジェクト</span><span class="sxs-lookup"><span data-stu-id="b1a62-213">My.Forms Object</span></span>](../../../visual-basic/language-reference/objects/my-forms-object.md)  
+ [<span data-ttu-id="b1a62-214">My.Request オブジェクト</span><span class="sxs-lookup"><span data-stu-id="b1a62-214">My.Request Object</span></span>](../../../visual-basic/language-reference/objects/my-request-object.md)  
+ [<span data-ttu-id="b1a62-215">My.Response オブジェクト</span><span class="sxs-lookup"><span data-stu-id="b1a62-215">My.Response Object</span></span>](../../../visual-basic/language-reference/objects/my-response-object.md)  
+ [<span data-ttu-id="b1a62-216">My.WebServices オブジェクト</span><span class="sxs-lookup"><span data-stu-id="b1a62-216">My.WebServices Object</span></span>](../../../visual-basic/language-reference/objects/my-webservices-object.md)

@@ -1,138 +1,120 @@
 ---
-title: "作成するインターフェイスと実装 (Visual Basic) |Microsoft ドキュメント"
+title: "作成と実装インターフェイス (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- interfaces, walkthroughs
-- interfaces, testing
-- interface implementation, walkthrough
-- interfaces, creating
+- interfaces [Visual Basic], walkthroughs
+- interfaces [Visual Basic], testing
+- interface implementation [Visual Basic], walkthrough
+- interfaces [Visual Basic], creating
 ms.assetid: ded82af2-9f52-4232-98ef-fe458180f112
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 076bc8d33e97286c31f27a2016e39a25e9cec22c
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 08bf6dc7344d4f83c8ab1908fdeb29eb4a53e142
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="walkthrough-creating-and-implementing-interfaces-visual-basic"></a>チュートリアル: インターフェイスの作成と実装 (Visual Basic)
-インターフェイスは、プロパティ、メソッド、およびイベントの特性を記述する、最大で構造体またはクラスの実装の詳細のままです。  
+# <a name="walkthrough-creating-and-implementing-interfaces-visual-basic"></a><span data-ttu-id="ad79c-102">チュートリアル: インターフェイスの作成と実装 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ad79c-102">Walkthrough: Creating and Implementing Interfaces (Visual Basic)</span></span>
+<span data-ttu-id="ad79c-103">インターフェイスは、プロパティ、メソッド、およびイベントの特性を記述が最大構造体またはクラスの実装の詳細のままにします。</span><span class="sxs-lookup"><span data-stu-id="ad79c-103">Interfaces describe the characteristics of properties, methods, and events, but leave the implementation details up to structures or classes.</span></span>  
   
- このチュートリアルでは、宣言およびインターフェイスを実装する方法を示します。  
+ <span data-ttu-id="ad79c-104">このチュートリアルでは、宣言およびインターフェイスを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ad79c-104">This walkthrough demonstrates how to declare and implement an interface.</span></span>  
   
 > [!NOTE]
->  このチュートリアルでは、ユーザー インターフェイスを作成する方法に関する情報を提供しません。  
+>  <span data-ttu-id="ad79c-105">このチュートリアルでは、ユーザー インターフェイスを作成する方法に関する情報を提供しません。</span><span class="sxs-lookup"><span data-stu-id="ad79c-105">This walkthrough doesn't provide information about how to create a user interface.</span></span>  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-define-an-interface"></a>インターフェイスを定義するには  
+### <a name="to-define-an-interface"></a><span data-ttu-id="ad79c-106">インターフェイスを定義するには</span><span class="sxs-lookup"><span data-stu-id="ad79c-106">To define an interface</span></span>  
   
-1.  新しい[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]Windows アプリケーション プロジェクト。  
+1.  <span data-ttu-id="ad79c-107">新しい [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Windows アプリケーション プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="ad79c-107">Open a new [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Windows Application project.</span></span>  
   
-2.  クリックして、プロジェクトに新しいモジュールを追加**モジュールの追加**上、**プロジェクト**メニュー。  
+2.  <span data-ttu-id="ad79c-108">クリックして、プロジェクトに新しいモジュールを追加**モジュールの追加**上、**プロジェクト**メニュー。</span><span class="sxs-lookup"><span data-stu-id="ad79c-108">Add a new module to the project by clicking **Add Module** on the **Project** menu.</span></span>  
   
-3.  新しいモジュール名前`Module1.vb` をクリック**追加**します。 新しいモジュールのコードが表示されます。  
+3.  <span data-ttu-id="ad79c-109">新しいモジュールの名前を付けます`Module1.vb` をクリック**追加**です。</span><span class="sxs-lookup"><span data-stu-id="ad79c-109">Name the new module `Module1.vb` and click **Add**.</span></span> <span data-ttu-id="ad79c-110">新しいモジュールのコードが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ad79c-110">The code for the new module is displayed.</span></span>  
   
-4.  という名前のインターフェイスを定義する`TestInterface`内`Module1`」と入力して`Interface TestInterface`間、`Module`と`End Module`ステートメント、および ENTER キーを押します。 **コード エディター**インデント、`Interface`キーワードを追加し、`End Interface`コード ブロックを形成するステートメントです。  
+4.  <span data-ttu-id="ad79c-111">という名前のインターフェイスを定義する`TestInterface`内`Module1`」と入力して`Interface TestInterface`間、`Module`と`End Module`ステートメント、および ENTER キーを押します。</span><span class="sxs-lookup"><span data-stu-id="ad79c-111">Define an interface named `TestInterface` within `Module1` by typing `Interface TestInterface` between the `Module` and `End Module` statements, and then pressing ENTER.</span></span> <span data-ttu-id="ad79c-112">**コード エディター**インデント、`Interface`キーワードを追加し、`End Interface`コード ブロックを形成するステートメント。</span><span class="sxs-lookup"><span data-stu-id="ad79c-112">The **Code Editor** indents the `Interface` keyword and adds an `End Interface` statement to form a code block.</span></span>  
   
-5.  間に次のコードを配置することで、プロパティ、メソッド、およびインターフェイスのイベントを定義、`Interface`と`End Interface`ステートメント。  
+5.  <span data-ttu-id="ad79c-113">間に次のコードを配置することで、プロパティ、メソッド、およびインターフェイスのイベントを定義、`Interface`と`End Interface`ステートメント。</span><span class="sxs-lookup"><span data-stu-id="ad79c-113">Define a property, method, and event for the interface by placing the following code between the `Interface` and `End Interface` statements:</span></span>  
   
-     [!code-vb[VbVbalrOOP #&98;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_1.vb)]  
+     [!code-vb[VbVbalrOOP#98](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_1.vb)]  
   
-## <a name="implementation"></a>実装  
- インターフェイス メンバーの宣言に使用する構文はクラス メンバーを宣言するための構文を異なることに注意してください可能性があります。 この違いは、インターフェイスが実装コードを含めることはできませんという事実を表しています。  
+## <a name="implementation"></a><span data-ttu-id="ad79c-114">実装</span><span class="sxs-lookup"><span data-stu-id="ad79c-114">Implementation</span></span>  
+ <span data-ttu-id="ad79c-115">インターフェイス メンバーを宣言するために使用する構文はクラス メンバーを宣言するための構文を異なることに注意してください可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ad79c-115">You may notice that the syntax used to declare interface members is different from the syntax used to declare class members.</span></span> <span data-ttu-id="ad79c-116">この違いは、インターフェイスが実装コードを含むことができないという事実を反映します。</span><span class="sxs-lookup"><span data-stu-id="ad79c-116">This difference reflects the fact that interfaces cannot contain implementation code.</span></span>  
   
-#### <a name="to-implement-the-interface"></a>インターフェイスを実装するには  
+#### <a name="to-implement-the-interface"></a><span data-ttu-id="ad79c-117">インターフェイスを実装するには</span><span class="sxs-lookup"><span data-stu-id="ad79c-117">To implement the interface</span></span>  
   
-1.  という名前のクラスを追加`ImplementationClass`に次のステートメントを追加することで`Module1`後に、`End Interface`ステートメント前に、`End Module`ステートメント、および ENTER キーを押します。  
+1.  <span data-ttu-id="ad79c-118">という名前のクラスを追加`ImplementationClass`に次のステートメントを追加することによって`Module1`の後に、`End Interface`ステートメント前に、`End Module`ステートメント、および ENTER キーを押します。</span><span class="sxs-lookup"><span data-stu-id="ad79c-118">Add a class named `ImplementationClass` by adding the following statement to `Module1`, after the `End Interface` statement but before the `End Module` statement, and then pressing ENTER:</span></span>  
   
-     [!code-vb[VbVbalrOOP&#99;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_2.vb)]  
+     [!code-vb[VbVbalrOOP#99](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_2.vb)]  
   
-     統合開発環境で作業している場合、**コード エディター**提供、対応する`End Class`ステートメント ENTER キーを押す。  
+     <span data-ttu-id="ad79c-119">統合開発環境で作業している場合、**コード エディター**に対応する提供`End Class`ステートメント ENTER キーを押す。</span><span class="sxs-lookup"><span data-stu-id="ad79c-119">If you are working within the integrated development environment, the **Code Editor** supplies a matching `End Class` statement when you press ENTER.</span></span>  
   
-2.  次の追加`Implements`ステートメント`ImplementationClass`を実装するクラス、インターフェイスを示しています。  
+2.  <span data-ttu-id="ad79c-120">次の追加`Implements`ステートメントを`ImplementationClass`、名前、インターフェイス、クラスを実装します。</span><span class="sxs-lookup"><span data-stu-id="ad79c-120">Add the following `Implements` statement to `ImplementationClass`, which names the interface the class implements:</span></span>  
   
-     [!code-vb[VbVbalrOOP&#100;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_3.vb)]  
+     [!code-vb[VbVbalrOOP#100](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_3.vb)]  
   
-     クラスまたは構造の上部にある他の項目とは別に表示されている場合、`Implements`ステートメントでは、クラスまたは構造体でインターフェイスを実装することを示します。  
+     <span data-ttu-id="ad79c-121">クラスまたは構造の上部にある他の項目とは別に表示されている場合、`Implements`ステートメントでは、クラスまたは構造体がインターフェイスを実装することを示します。</span><span class="sxs-lookup"><span data-stu-id="ad79c-121">When listed separately from other items at the top of a class or structure, the `Implements` statement indicates that the class or structure implements an interface.</span></span>  
   
-     統合開発環境で作業している場合、**コード エディター**で必要なクラス メンバーを実装して`TestInterface`、ENTER キーを押すし、次の手順をスキップすることができます。  
+     <span data-ttu-id="ad79c-122">統合開発環境で作業している場合、**コード エディター**で必要なクラス メンバーを実装して`TestInterface`、ENTER キーを押すし、次の手順をスキップすることができます。</span><span class="sxs-lookup"><span data-stu-id="ad79c-122">If you are working within the integrated development environment, the **Code Editor** implements the class members required by `TestInterface` when you press ENTER, and you can skip the next step.</span></span>  
   
-3.  統合開発環境で機能しない場合は、インターフェイスのすべてのメンバーを実装する必要があります`MyInterface`します。 次のコードを追加`ImplementationClass`を実装する`Event1`、 `Method1`、および`Prop1`:  
+3.  <span data-ttu-id="ad79c-123">統合開発環境で作業していない場合は、インターフェイスのすべてのメンバーを実装する必要があります`MyInterface`です。</span><span class="sxs-lookup"><span data-stu-id="ad79c-123">If you are not working within the integrated development environment, you must implement all the members of the interface `MyInterface`.</span></span> <span data-ttu-id="ad79c-124">次のコードを追加`ImplementationClass`を実装する`Event1`、 `Method1`、および`Prop1`:</span><span class="sxs-lookup"><span data-stu-id="ad79c-124">Add the following code to `ImplementationClass` to implement `Event1`, `Method1`, and `Prop1`:</span></span>  
   
-     [!code-vb[VbVbalrOOP #&101;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_4.vb)]  
+     [!code-vb[VbVbalrOOP#101](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_4.vb)]  
   
-     `Implements`ステートメント インターフェイスおよび実装するインターフェイス メンバーの名前します。  
+     <span data-ttu-id="ad79c-125">`Implements`ステートメント インターフェイスおよび実装するインターフェイス メンバーの名前します。</span><span class="sxs-lookup"><span data-stu-id="ad79c-125">The `Implements` statement names the interface and interface member being implemented.</span></span>  
   
-4.  定義が完了`Prop1`プロパティ値を格納するクラスにプライベート フィールドを追加します。  
+4.  <span data-ttu-id="ad79c-126">定義を完了`Prop1`プロパティ値を格納するクラスにプライベート フィールドを追加することで。</span><span class="sxs-lookup"><span data-stu-id="ad79c-126">Complete the definition of `Prop1` by adding a private field to the class that stored the property value:</span></span>  
   
-     [!code-vb[VbVbalrOOP #&102;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_5.vb)]  
+     [!code-vb[VbVbalrOOP#102](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_5.vb)]  
   
-     値を返す、`pval`プロパティ アクセサーを取得します。  
+     <span data-ttu-id="ad79c-127">値を返す、`pval`プロパティ アクセサーを取得します。</span><span class="sxs-lookup"><span data-stu-id="ad79c-127">Return the value of the `pval` from the property get accessor.</span></span>  
   
-     [!code-vb[VbVbalrOOP #&103;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_6.vb)]  
+     [!code-vb[VbVbalrOOP#103](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_6.vb)]  
   
-     値を設定`pval`プロパティのアクセサーを設定します。  
+     <span data-ttu-id="ad79c-128">値を設定`pval`プロパティでアクセサーを設定します。</span><span class="sxs-lookup"><span data-stu-id="ad79c-128">Set the value of `pval` in the property set accessor.</span></span>  
   
-     [!code-vb[VbVbalrOOP #&104;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_7.vb)]  
+     [!code-vb[VbVbalrOOP#104](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_7.vb)]  
   
-5.  定義が完了`Method1`によって次のコードを追加します。  
+5.  <span data-ttu-id="ad79c-129">定義を完了`Method1`次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="ad79c-129">Complete the definition of `Method1` by adding the following code.</span></span>  
   
-     [!code-vb[VbVbalrOOP #&105;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_8.vb)]  
+     [!code-vb[VbVbalrOOP#105](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_8.vb)]  
   
-#### <a name="to-test-the-implementation-of-the-interface"></a>インターフェイスの実装をテストするには  
+#### <a name="to-test-the-implementation-of-the-interface"></a><span data-ttu-id="ad79c-130">インターフェイスの実装をテストするには</span><span class="sxs-lookup"><span data-stu-id="ad79c-130">To test the implementation of the interface</span></span>  
   
-1.  プロジェクトのスタートアップ フォームを右クリックし、**ソリューション エクスプ ローラー**、 をクリック**コードの表示**します。 エディターには、スタートアップ フォームのクラスが表示されます。 既定では、スタートアップ フォームと呼ばれる`Form1`です。  
+1.  <span data-ttu-id="ad79c-131">プロジェクトをスタートアップ フォームを右クリックし、**ソリューション エクスプ ローラー**、 をクリック**コードの表示**です。</span><span class="sxs-lookup"><span data-stu-id="ad79c-131">Right-click the startup form for your project in the **Solution Explorer**, and click **View Code**.</span></span> <span data-ttu-id="ad79c-132">エディターには、スタートアップ フォームのクラスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ad79c-132">The editor displays the class for your startup form.</span></span> <span data-ttu-id="ad79c-133">既定では、スタートアップ フォームと呼ばれる`Form1`です。</span><span class="sxs-lookup"><span data-stu-id="ad79c-133">By default, the startup form is called `Form1`.</span></span>  
   
-2.  次の追加`testInstance`フィールドを`Form1`クラス。  
+2.  <span data-ttu-id="ad79c-134">次の追加`testInstance`フィールドを`Form1`クラス。</span><span class="sxs-lookup"><span data-stu-id="ad79c-134">Add the following `testInstance` field to the `Form1` class:</span></span>  
   
-     [!code-vb[VbVbalrOOP #&120;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_9.vb)]  
+     [!code-vb[VbVbalrOOP#120](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_9.vb)]  
   
-     宣言することで`testInstance`として`WithEvents`、`Form1`クラスは、そのイベントを処理できます。  
+     <span data-ttu-id="ad79c-135">宣言することによって`testInstance`として`WithEvents`、`Form1`クラスは、そのイベントを処理できます。</span><span class="sxs-lookup"><span data-stu-id="ad79c-135">By declaring `testInstance` as `WithEvents`, the `Form1` class can handle its events.</span></span>  
   
-3.  次のイベント ハンドラーを追加、`Form1`クラスによって生成されるイベントを処理する`testInstance`:  
+3.  <span data-ttu-id="ad79c-136">次のイベント ハンドラーを追加、`Form1`クラスによって生成されるイベントを処理する`testInstance`:</span><span class="sxs-lookup"><span data-stu-id="ad79c-136">Add the following event handler to the `Form1` class to handle events raised by `testInstance`:</span></span>  
   
-     [!code-vb[VbVbalrOOP #&106;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_10.vb)]  
+     [!code-vb[VbVbalrOOP#106](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_10.vb)]  
   
-4.  という名前のサブルーチンを追加`Test`に、`Form1`実装クラスをテストするクラス。  
+4.  <span data-ttu-id="ad79c-137">という名前のサブルーチンを追加`Test`を`Form1`実装クラスをテストするクラス。</span><span class="sxs-lookup"><span data-stu-id="ad79c-137">Add a subroutine named `Test` to the `Form1` class to test the implementation class:</span></span>  
   
-     [!code-vb[VbVbalrOOP #&107;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_11.vb)]  
+     [!code-vb[VbVbalrOOP#107](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_11.vb)]  
   
-     `Test`プロシージャを実装するクラスのインスタンスの作成`MyInterface`、そのインスタンスを割り当てる、`testInstance`フィールド、プロパティの設定およびインターフェイスを通じたメソッドを実行します。  
+     <span data-ttu-id="ad79c-138">`Test`プロシージャを実装するクラスのインスタンスの作成`MyInterface`、そのインスタンスに割り当てます、`testInstance`フィールド、プロパティの設定し、インターフェイス メソッドを実行します。</span><span class="sxs-lookup"><span data-stu-id="ad79c-138">The `Test` procedure creates an instance of the class that implements `MyInterface`, assigns that instance to the `testInstance` field, sets a property, and runs a method through the interface.</span></span>  
   
-5.  呼び出すコードを追加、`Test`プロシージャから、`Form1 Load`スタートアップ フォームの手順。  
+5.  <span data-ttu-id="ad79c-139">呼び出すコードを追加、`Test`プロシージャから、`Form1 Load`スタートアップ フォームの手順。</span><span class="sxs-lookup"><span data-stu-id="ad79c-139">Add code to call the `Test` procedure from the `Form1 Load` procedure of your startup form:</span></span>  
   
-     [!code-vb[VbVbalrOOP #&108;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_12.vb)]  
+     [!code-vb[VbVbalrOOP#108](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-creating-and-implementing-interfaces_12.vb)]  
   
-6.  実行、 `Test` f5 キーを押してプロシージャです。 メッセージ「Prop1 に設定されて 9」が表示されます。 クリックした後、メッセージ「Method1 の X パラメーターが 5」が表示されます。 [Ok] をクリックし、「イベント ハンドラーは、イベントをキャッチ」メッセージが表示されます。  
+6.  <span data-ttu-id="ad79c-140">実行、 `Test` f5 キーを押してプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="ad79c-140">Run the `Test` procedure by pressing F5.</span></span> <span data-ttu-id="ad79c-141">メッセージ「Prop1 に設定された 9」が表示されます。</span><span class="sxs-lookup"><span data-stu-id="ad79c-141">The message "Prop1 was set to 9" is displayed.</span></span> <span data-ttu-id="ad79c-142">クリックした後、メッセージ"Method1 の X パラメーターは、5 を is"が表示されます。</span><span class="sxs-lookup"><span data-stu-id="ad79c-142">After you click OK, the message "The X parameter for Method1 is 5" is displayed.</span></span> <span data-ttu-id="ad79c-143">[Ok]、をクリックし、「イベント ハンドラーが、イベントが発生しました」メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ad79c-143">Click OK, and the message "The event handler caught the event" is displayed.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [Implements ステートメント](../../../../visual-basic/language-reference/statements/implements-statement.md)   
- [インターフェイス](../../../../visual-basic/programming-guide/language-features/interfaces/index.md)   
- [Interface ステートメント](../../../../visual-basic/language-reference/statements/interface-statement.md)   
- [Event ステートメント](../../../../visual-basic/language-reference/statements/event-statement.md)
-
+## <a name="see-also"></a><span data-ttu-id="ad79c-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="ad79c-144">See Also</span></span>  
+ [<span data-ttu-id="ad79c-145">Implements ステートメント</span><span class="sxs-lookup"><span data-stu-id="ad79c-145">Implements Statement</span></span>](../../../../visual-basic/language-reference/statements/implements-statement.md)  
+ [<span data-ttu-id="ad79c-146">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="ad79c-146">Interfaces</span></span>](../../../../visual-basic/programming-guide/language-features/interfaces/index.md)  
+ [<span data-ttu-id="ad79c-147">Interface ステートメント</span><span class="sxs-lookup"><span data-stu-id="ad79c-147">Interface Statement</span></span>](../../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [<span data-ttu-id="ad79c-148">Event ステートメント</span><span class="sxs-lookup"><span data-stu-id="ad79c-148">Event Statement</span></span>](../../../../visual-basic/language-reference/statements/event-statement.md)

@@ -1,84 +1,64 @@
 ---
-title: "/= 演算子 (Visual Basic) |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "/= 演算子 (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vb./=
-dev_langs:
-- VB
+f1_keywords: vb./=
 helpviewer_keywords:
-- assignment statements, compound
+- assignment statements [Visual Basic], compound
 - statements [Visual Basic], compound assignment
 - /= operator [Visual Basic]
 - operator /=
-- compound assignment statements
+- compound assignment statements [Visual Basic]
 ms.assetid: a1e22d0e-8380-4761-9da1-84fb51c34821
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ab0a007f039d3dbda989bb605cb80fcf5fc7460a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 94448856072a949582e64577287134c4b975bfec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="-operator-visual-basic"></a>/= 演算子 (Visual Basic)
-変数またはプロパティの値を式の値で除算し、浮動小数点の結果を変数またはプロパティに代入します。  
+# <a name="-operator-visual-basic"></a><span data-ttu-id="3c12d-102">/= 演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3c12d-102">/= Operator (Visual Basic)</span></span>
+<span data-ttu-id="3c12d-103">変数またはプロパティの値式の値で除算し、浮動小数点の結果を変数またはプロパティに代入します。</span><span class="sxs-lookup"><span data-stu-id="3c12d-103">Divides the value of a variable or property by the value of an expression and assigns the floating-point result to the variable or property.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="3c12d-104">構文</span><span class="sxs-lookup"><span data-stu-id="3c12d-104">Syntax</span></span>  
   
 ```  
 variableorproperty /= expression  
 ```  
   
-## <a name="parts"></a>指定項目  
+## <a name="parts"></a><span data-ttu-id="3c12d-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="3c12d-105">Parts</span></span>  
  `variableorproperty`  
- 必須です。 任意の数値変数またはプロパティを使用しています。  
+ <span data-ttu-id="3c12d-106">必須です。</span><span class="sxs-lookup"><span data-stu-id="3c12d-106">Required.</span></span> <span data-ttu-id="3c12d-107">任意の数値型の変数またはプロパティ。</span><span class="sxs-lookup"><span data-stu-id="3c12d-107">Any numeric variable or property.</span></span>  
   
  `expression`  
- 必須です。 任意の数式。  
+ <span data-ttu-id="3c12d-108">必須です。</span><span class="sxs-lookup"><span data-stu-id="3c12d-108">Required.</span></span> <span data-ttu-id="3c12d-109">任意の数式。</span><span class="sxs-lookup"><span data-stu-id="3c12d-109">Any numeric expression.</span></span>  
   
-## <a name="remarks"></a>コメント  
- 左側にある要素、`/=`演算子は単純なスカラー変数、プロパティ、または配列の要素があります。 変数やプロパティにすることはできません[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)します。  
+## <a name="remarks"></a><span data-ttu-id="3c12d-110">コメント</span><span class="sxs-lookup"><span data-stu-id="3c12d-110">Remarks</span></span>  
+ <span data-ttu-id="3c12d-111">左側にある要素、`/=`演算子は、単純なスカラー変数、プロパティ、または配列の要素を指定できます。</span><span class="sxs-lookup"><span data-stu-id="3c12d-111">The element on the left side of the `/=` operator can be a simple scalar variable, a property, or an element of an array.</span></span> <span data-ttu-id="3c12d-112">変数またはプロパティにできません。 [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。</span><span class="sxs-lookup"><span data-stu-id="3c12d-112">The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).</span></span>  
   
- `/=`演算子は最初、(演算子の右側にある) の式の値で変数または (演算子の左側にある) のプロパティの値を除算します。 演算子は、その操作の浮動小数点の結果を変数やプロパティを割り当てます。  
+ <span data-ttu-id="3c12d-113">`/=`最初は、変数または (演算子の左側にある) のプロパティの値が演算子によって (演算子の右側にある) の式の値で除算します。</span><span class="sxs-lookup"><span data-stu-id="3c12d-113">The `/=` operator first divides the value of the variable or property (on the left-hand side of the operator) by the value of the expression (on the right-hand side of the operator).</span></span> <span data-ttu-id="3c12d-114">演算子は、変数やプロパティにし、その操作の浮動小数点の結果を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="3c12d-114">The operator then assigns the floating-point result of that operation to the variable or property.</span></span>  
   
- このステートメントは、代入、`Double`変数または左のプロパティの値。 If `Option Strict` is `On`, `variableorproperty` must be a `Double`. 場合`Option Strict`は`Off`、Visual Basic の暗黙的な変換を実行およびに結果として得られる値を代入`variableorproperty`、実行時に潜在的なエラーとします。 詳細については、次を参照してください。[拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)と[Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)します。  
+ <span data-ttu-id="3c12d-115">このステートメントは、代入、`Double`を変数または左側のプロパティの値。</span><span class="sxs-lookup"><span data-stu-id="3c12d-115">This statement assigns a `Double` value to the variable or property on the left.</span></span> <span data-ttu-id="3c12d-116">場合`Option Strict`は`On`、`variableorproperty`する必要があります、`Double`です。</span><span class="sxs-lookup"><span data-stu-id="3c12d-116">If `Option Strict` is `On`, `variableorproperty` must be a `Double`.</span></span> <span data-ttu-id="3c12d-117">場合`Option Strict`は`Off`、Visual Basic の暗黙的な変換を実行およびを結果として得られる値を割り当てます`variableorproperty`、実行時に可能性のあるエラーとします。</span><span class="sxs-lookup"><span data-stu-id="3c12d-117">If `Option Strict` is `Off`, Visual Basic performs an implicit conversion and assigns the resulting value to `variableorproperty`, with a possible error at run time.</span></span> <span data-ttu-id="3c12d-118">詳細については、次を参照してください。[拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)と[Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="3c12d-118">For more information, see [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) and [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md).</span></span>  
   
-## <a name="overloading"></a>オーバーロード  
- [/演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)を指定できます*オーバー ロードされた*、つまり、クラスまたは構造体を再定義できます動作オペランドは、そのクラスまたは構造体の型を持つ場合です。 オーバー ロード、`/`演算子の動作に影響、`/=`演算子。 コードで使用する場合`/=`クラスまたは構造体をオーバー ロードで`/`、その再定義された動作を確認してください。 詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)します。  
+## <a name="overloading"></a><span data-ttu-id="3c12d-119">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="3c12d-119">Overloading</span></span>  
+ <span data-ttu-id="3c12d-120">[/演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)できます*オーバー ロードされた*、つまり、あるクラスまたは構造体を再定義できますその動作オペランドは、そのクラスまたは構造体の型を持つときにします。</span><span class="sxs-lookup"><span data-stu-id="3c12d-120">The [/ Operator (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md) can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure.</span></span> <span data-ttu-id="3c12d-121">オーバー ロード、`/`演算子の動作に影響、`/=`演算子。</span><span class="sxs-lookup"><span data-stu-id="3c12d-121">Overloading the `/` operator affects the behavior of the `/=` operator.</span></span> <span data-ttu-id="3c12d-122">コードで使用する場合`/=`クラスまたはオーバー ロードする構造体で`/`、再定義された動作を確認してください。</span><span class="sxs-lookup"><span data-stu-id="3c12d-122">If your code uses `/=` on a class or structure that overloads `/`, be sure you understand its redefined behavior.</span></span> <span data-ttu-id="3c12d-123">詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。</span><span class="sxs-lookup"><span data-stu-id="3c12d-123">For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、`/=`演算子を&1; つに分割`Integer`秒を割り当て、最初の変数に、商により変数です。  
+## <a name="example"></a><span data-ttu-id="3c12d-124">例</span><span class="sxs-lookup"><span data-stu-id="3c12d-124">Example</span></span>  
+ <span data-ttu-id="3c12d-125">次の例では、`/=`演算子を 1 つに分割`Integer`変数の 2 番目と割り当て、最初の変数への商。</span><span class="sxs-lookup"><span data-stu-id="3c12d-125">The following example uses the `/=` operator to divide one `Integer` variable by a second and assign the quotient to the first variable.</span></span>  
   
- [!code-vb[VbVbalrOperators&17;](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/floating-point-division-assignment-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#17](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/floating-point-division-assignment-operator_1.vb)]  
   
-## <a name="see-also"></a>関連項目  
- [/演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)   
- [\\= 演算子](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)   
- [代入演算子](../../../visual-basic/language-reference/operators/assignment-operators.md)   
- [算術演算子](../../../visual-basic/language-reference/operators/arithmetic-operators.md)   
- [Visual Basic の演算子の優先順位](../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [機能別の演算子一覧](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
- [ステートメント](../../../visual-basic/programming-guide/language-features/statements.md)
-
+## <a name="see-also"></a><span data-ttu-id="3c12d-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="3c12d-126">See Also</span></span>  
+ [<span data-ttu-id="3c12d-127">/演算子 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3c12d-127">/ Operator (Visual Basic)</span></span>](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)  
+ [<span data-ttu-id="3c12d-128">\\= 演算子</span><span class="sxs-lookup"><span data-stu-id="3c12d-128">\\= Operator</span></span>](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)  
+ [<span data-ttu-id="3c12d-129">代入演算子</span><span class="sxs-lookup"><span data-stu-id="3c12d-129">Assignment Operators</span></span>](../../../visual-basic/language-reference/operators/assignment-operators.md)  
+ [<span data-ttu-id="3c12d-130">算術演算子</span><span class="sxs-lookup"><span data-stu-id="3c12d-130">Arithmetic Operators</span></span>](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
+ [<span data-ttu-id="3c12d-131">Visual Basic における演算子の優先順位</span><span class="sxs-lookup"><span data-stu-id="3c12d-131">Operator Precedence in Visual Basic</span></span>](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [<span data-ttu-id="3c12d-132">機能別の演算子一覧</span><span class="sxs-lookup"><span data-stu-id="3c12d-132">Operators Listed by Functionality</span></span>](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [<span data-ttu-id="3c12d-133">ステートメント</span><span class="sxs-lookup"><span data-stu-id="3c12d-133">Statements</span></span>](../../../visual-basic/programming-guide/language-features/statements.md)

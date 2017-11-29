@@ -1,86 +1,90 @@
 ---
-title: "Windows フォーム DataGridView コントロールでの Just-In-Time データ読み込みによる仮想モードの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ [Windows フォーム], 管理 (大容量のデータセットを)"
-  - "DataGridView コントロール [Windows フォーム], 大容量のデータセット"
-  - "DataGridView コントロール [Windows フォーム], 仮想モード"
-  - "例 [Windows フォーム], Just-In-Time データ読み込み"
-  - "Just-In-Time データ読み込み"
-  - "仮想モード, Just-In-Time データ読み込み"
+title: "Windows フォーム DataGridView コントロールでの Just-In-Time データ読み込みによる仮想モードの実装"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- examples [Windows Forms], just-in-time data loading
+- data [Windows Forms], managing large data sets
+- DataGridView control [Windows Forms], virtual mode
+- just-in-time data loading
+- DataGridView control [Windows Forms], large data sets
+- virtual mode [Windows Forms], just-in-time data loading
 ms.assetid: c2a052b9-423c-4ff7-91dc-d8c7c79345f6
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0bddac01a0d85ae985b54587619bcac6de5f966f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム DataGridView コントロールでの Just-In-Time データ読み込みによる仮想モードの実装
-<xref:System.Windows.Forms.DataGridView> コントロールで仮想モードを実装する 1 つの理由は、データを必要なときにのみ取得するためです。  これを *Just\-In\-Time データ読み込み*と言います。  
+# <a name="implementing-virtual-mode-with-just-in-time-data-loading-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="24211-102">Windows フォーム DataGridView コントロールでの Just-In-Time データ読み込みによる仮想モードの実装</span><span class="sxs-lookup"><span data-stu-id="24211-102">Implementing Virtual Mode with Just-In-Time Data Loading in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="24211-103">仮想モードを実装する 1 つの理由、<xref:System.Windows.Forms.DataGridView>コントロールは、必要なデータのみを取得します。</span><span class="sxs-lookup"><span data-stu-id="24211-103">One reason to implement virtual mode in the <xref:System.Windows.Forms.DataGridView> control is to retrieve data only as it is needed.</span></span> <span data-ttu-id="24211-104">これと呼ばれる*- just-in-time データ読み込み*です。</span><span class="sxs-lookup"><span data-stu-id="24211-104">This is called *just-in-time data loading*.</span></span>  
   
- たとえば、リモート データベースの大型のテーブルを操作する場合、表示に必要なデータのみを取得し、ユーザーが新しい行をスクロール表示したときにのみ追加のデータを取得して、スタートアップの遅延を避ける必要があります。  また、アプリケーションを実行するクライアント コンピューターで、データの保存に利用できるメモリの容量が制限されている場合には、データベースから新しい値を取得するときに不要なデータを破棄する必要もあります。  
+ <span data-ttu-id="24211-105">リモート データベースで非常に大きなテーブルで作業している場合などの可能性がありますを避けたいスタートアップの遅延を表示するために必要なデータのみを取得し、ユーザー ビューに新しい行をスクロールする場合にのみ、追加のデータを取得するとします。</span><span class="sxs-lookup"><span data-stu-id="24211-105">If you are working with a very large table in a remote database, for example, you might want to avoid startup delays by retrieving only the data that is necessary for display and retrieving additional data only when the user scrolls new rows into view.</span></span> <span data-ttu-id="24211-106">アプリケーションを実行しているクライアント コンピューター データの格納に使用可能なメモリ量が限られている場合、データベースから新しい値を取得するときに使用されていないデータを破棄することがもできます。</span><span class="sxs-lookup"><span data-stu-id="24211-106">If the client computers running your application have a limited amount of memory available for storing data, you might also want to discard unused data when retrieving new values from the database.</span></span>  
   
- 以下のセクションでは、Just\-In\-Time キャッシュで <xref:System.Windows.Forms.DataGridView> コントロールを使用する方法について説明します。  
+ <span data-ttu-id="24211-107">次のセクションでは、使用する方法を説明する、 <xref:System.Windows.Forms.DataGridView> ・ イン タイムのキャッシュを制御します。</span><span class="sxs-lookup"><span data-stu-id="24211-107">The following sections describe how to use a <xref:System.Windows.Forms.DataGridView> control with a just-in-time cache.</span></span>  
   
- このトピックのコードを単一のリストとしてコピーするには、「[方法 : Windows フォーム DataGridView コントロールで Just\-In\-Time データ読み込みを使用して仮想モードを実装する](../../../../docs/framework/winforms/controls/virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md)」を参照してください。  
+ <span data-ttu-id="24211-108">このトピックの「単一のリストとしてコードをコピーするに、を参照してください。[する方法: Windows フォーム DataGridView コントロールで Just-In-Time データ読み込みによる仮想モードを実装する](../../../../docs/framework/winforms/controls/virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md)です。</span><span class="sxs-lookup"><span data-stu-id="24211-108">To copy the code in this topic as a single listing, see [How to: Implement Virtual Mode with Just-In-Time Data Loading in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md).</span></span>  
   
-## フォーム  
- 次のコード例では、<xref:System.Windows.Forms.DataGridView.CellValueNeeded> イベント ハンドラー経由で `Cache` オブジェクトと対話する、読み取り専用の <xref:System.Windows.Forms.DataGridView> コントロールを含むフォームを定義しています。  `Cache` オブジェクトは、ローカルに保存された値を管理し、`DataRetriever` オブジェクトを使用して、Northwind サンプル データベースの Orders テーブルから値を取得します。  また、`Cache` クラスで必要な `IDataPageRetriever` インターフェイスを実装する `DataRetriever` オブジェクトを使用して、<xref:System.Windows.Forms.DataGridView> コントロールの行と列を初期化します。  
+## <a name="the-form"></a><span data-ttu-id="24211-109">フォーム</span><span class="sxs-lookup"><span data-stu-id="24211-109">The Form</span></span>  
+ <span data-ttu-id="24211-110">次のコード例は、読み取り専用を含むフォームを定義<xref:System.Windows.Forms.DataGridView>と連携するコントロール、`Cache`オブジェクトを介して、<xref:System.Windows.Forms.DataGridView.CellValueNeeded>イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="24211-110">The following code example defines a form containing a read-only <xref:System.Windows.Forms.DataGridView> control that interacts with a `Cache` object through a <xref:System.Windows.Forms.DataGridView.CellValueNeeded> event handler.</span></span> <span data-ttu-id="24211-111">`Cache`オブジェクトがローカルに保存された値を管理しを使用して、 `DataRetriever` Northwind サンプル データベースの Orders テーブルから値を取得するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="24211-111">The `Cache` object manages the locally stored values and uses a `DataRetriever` object to retrieve values from the Orders table of the sample Northwind database.</span></span> <span data-ttu-id="24211-112">`DataRetriever`を実装するオブジェクト、`IDataPageRetriever`必要なインターフェイスを`Cache`クラスは、初期化するために使用も、<xref:System.Windows.Forms.DataGridView>行および列を制御します。</span><span class="sxs-lookup"><span data-stu-id="24211-112">The `DataRetriever` object, which implements the `IDataPageRetriever` interface required by the `Cache` class, is also used to initialize the <xref:System.Windows.Forms.DataGridView> control rows and columns.</span></span>  
   
- `IDataPageRetriever` 型、`DataRetriever` 型、および `Cache` 型については、このトピックの後半で説明します。  
+ <span data-ttu-id="24211-113">`IDataPageRetriever`、 `DataRetriever`、および`Cache`型はこのトピックの後半で説明します。</span><span class="sxs-lookup"><span data-stu-id="24211-113">The `IDataPageRetriever`, `DataRetriever`, and `Cache` types are described later in this topic.</span></span>  
   
 > [!NOTE]
->  接続文字列内にパスワードなどの機密情報を格納すると、アプリケーションのセキュリティに影響を及ぼすことがあります。  データベースへのアクセスを制御する方法としては、Windows 認証 \(統合セキュリティとも呼ばれます\) を使用する方が安全です。  詳細については、「[接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)」を参照してください。  
+>  <span data-ttu-id="24211-114">接続文字列内に機密情報 (パスワードなど) を格納すると、アプリケーションのセキュリティに影響を及ぼすことがあります。</span><span class="sxs-lookup"><span data-stu-id="24211-114">Storing sensitive information, such as a password, within the connection string can affect the security of your application.</span></span> <span data-ttu-id="24211-115">データベースへのアクセスを制御する方法としては、Windows 認証 (統合セキュリティとも呼ばれます) を使用する方が安全です。</span><span class="sxs-lookup"><span data-stu-id="24211-115">Using Windows Authentication (also known as integrated security) is a more secure way to control access to a database.</span></span> <span data-ttu-id="24211-116">詳細については、「[接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="24211-116">For more information, see [Protecting Connection Information](../../../../docs/framework/data/adonet/protecting-connection-information.md).</span></span>  
   
  [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#100](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#100)]
  [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#100](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#100)]  
   
-## IDataPageRetriever インターフェイス  
- `DataRetriever` クラスによって実装される `IDataPageRetriever` インターフェイスを定義するコード例を次に示します。  このインターフェイスで宣言されているメソッドは、初期行インデックスと 1 ページのデータの行数を要求する `SupplyPageOfData` メソッドだけです。  これらの値は、データ ソースからデータのサブセットを取得する実装側で使用されます。  
+## <a name="the-idatapageretriever-interface"></a><span data-ttu-id="24211-117">示しますインターフェイス</span><span class="sxs-lookup"><span data-stu-id="24211-117">The IDataPageRetriever Interface</span></span>  
+ <span data-ttu-id="24211-118">次のコード例を定義、`IDataPageRetriever`によって実装されるインターフェイス、`DataRetriever`クラスです。</span><span class="sxs-lookup"><span data-stu-id="24211-118">The following code example defines the `IDataPageRetriever` interface, which is implemented by the `DataRetriever` class.</span></span> <span data-ttu-id="24211-119">このインターフェイスで宣言されている唯一の方法は、`SupplyPageOfData`メソッドで、最初の行インデックスおよびデータの 1 つのページ内の行の数のカウントが必要です。</span><span class="sxs-lookup"><span data-stu-id="24211-119">The only method declared in this interface is the `SupplyPageOfData` method, which requires an initial row index and a count of the number of rows in a single page of data.</span></span> <span data-ttu-id="24211-120">これらの値は、データ ソースからデータのサブセットを取得、実装者によって使用されます。</span><span class="sxs-lookup"><span data-stu-id="24211-120">These values are used by the implementer to retrieve a subset of data from a data source.</span></span>  
   
- `Cache` オブジェクトは、このインターフェイスの実装を構築時に使用して、データの最初の 2 ページを読み込みます。  未キャッシュのデータが必要になると、キャッシュはこれらのページのいずれかを破棄し、`IDataPageRetriever` にその値を含む新しいページを要求します。  
+ <span data-ttu-id="24211-121">A`Cache`オブジェクト構築時にこのインターフェイスの実装を使用してデータの最初の 2 つのページを読み込めません。</span><span class="sxs-lookup"><span data-stu-id="24211-121">A `Cache` object uses an implementation of this interface during construction to load two initial pages of data.</span></span> <span data-ttu-id="24211-122">キャッシュがこれらのページのいずれかを破棄しから値を含む新しいページを要求にキャッシュされていない値が必要になったら、`IDataPageRetriever`です。</span><span class="sxs-lookup"><span data-stu-id="24211-122">Whenever an uncached value is needed, the cache discards one of these pages and requests a new page containing the value from the `IDataPageRetriever`.</span></span>  
   
  [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#201](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#201)]
  [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#201](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#201)]  
   
-## DataRetriever クラス  
- 次に、`DataRetriever` クラスを定義するコード例を次に示します。このクラスは、データのページをサーバーから取得する `IDataPageRetriever` インターフェイスを実装します。  `DataRetriever` クラスは、`Columns` プロパティと `RowCount` プロパティも提供します。<xref:System.Windows.Forms.DataGridView> コントロールは、これらのプロパティを使用して、必要な列を作成し、適切な数の空の行を <xref:System.Windows.Forms.DataGridView.Rows%2A> コレクションに追加します。  空の行の追加は、テーブル内のデータがすべて存在するようにコントロールが動作するうえで必要です。  これにより、スクロール バーのスクロール ボックスが適切なサイズになり、ユーザーがテーブル内の任意の行にアクセスできるようになります。  行は、スクロール表示されたときにのみ、<xref:System.Windows.Forms.DataGridView.CellValueNeeded> イベント ハンドラーによって値が設定されます。  
+## <a name="the-dataretriever-class"></a><span data-ttu-id="24211-123">DataRetriever クラス</span><span class="sxs-lookup"><span data-stu-id="24211-123">The DataRetriever Class</span></span>  
+ <span data-ttu-id="24211-124">次のコード例を定義、`DataRetriever`クラスを実装する、`IDataPageRetriever`サーバーからのデータ ページを取得するインターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="24211-124">The following code example defines the `DataRetriever` class, which implements the `IDataPageRetriever` interface to retrieve pages of data from a server.</span></span> <span data-ttu-id="24211-125">`DataRetriever`クラスも用意されています。`Columns`と`RowCount`プロパティを、<xref:System.Windows.Forms.DataGridView>コントロールを使用して必要な列を作成し、適切な数の空の行を追加、<xref:System.Windows.Forms.DataGridView.Rows%2A>コレクション。</span><span class="sxs-lookup"><span data-stu-id="24211-125">The `DataRetriever` class also provides `Columns` and `RowCount` properties, which the <xref:System.Windows.Forms.DataGridView> control uses to create the necessary columns and to add the appropriate number of empty rows to the <xref:System.Windows.Forms.DataGridView.Rows%2A> collection.</span></span> <span data-ttu-id="24211-126">空の行を追加すると、テーブル内のすべてのデータが含まれている場合と同様に、コントロールが動作できるように、必要があります。</span><span class="sxs-lookup"><span data-stu-id="24211-126">Adding the empty rows is necessary so that the control will behave as though it contains all the data in the table.</span></span> <span data-ttu-id="24211-127">これは、スクロール バーのスクロール ボックスは、適切なサイズを持ち、ユーザーがテーブル内の任意の行にアクセスできることを意味します。</span><span class="sxs-lookup"><span data-stu-id="24211-127">This means that the scroll box in the scroll bar will have the appropriate size, and the user will be able to access any row in the table.</span></span> <span data-ttu-id="24211-128">によって、行がいっぱいになる、<xref:System.Windows.Forms.DataGridView.CellValueNeeded>ビューにスクロールする場合にのみ、イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="24211-128">The rows are filled by the <xref:System.Windows.Forms.DataGridView.CellValueNeeded> event handler only when they are scrolled into view.</span></span>  
   
  [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#200](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#200)]
  [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#200](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#200)]  
   
-## Cache クラス  
- 次に、`Cache` クラスを定義するコード例を示します。このクラスは、`IDataPageRetriever` 実装によって設定される 2 ページのデータを管理します。  `Cache` クラスは、内側の `DataPage` 構造体を定義します。この構造体は、値を 1 つのキャッシュ ページに保存する <xref:System.Data.DataTable> を含み、ページの上下の境界を表す行インデックスを計算します。  
+## <a name="the-cache-class"></a><span data-ttu-id="24211-129">キャッシュ クラス</span><span class="sxs-lookup"><span data-stu-id="24211-129">The Cache Class</span></span>  
+ <span data-ttu-id="24211-130">次のコード例を定義、`Cache`クラスを介して作成されるデータの 2 つのページ、`IDataPageRetriever`実装します。</span><span class="sxs-lookup"><span data-stu-id="24211-130">The following code example defines the `Cache` class, which manages two pages of data populated through an `IDataPageRetriever` implementation.</span></span> <span data-ttu-id="24211-131">`Cache`クラス定義の内部`DataPage`を格納する構造体、<xref:System.Data.DataTable>値を 1 つのキャッシュに格納するページと行のインデックスを作成する計算を上限と下限の境界を表してページ。</span><span class="sxs-lookup"><span data-stu-id="24211-131">The `Cache` class defines an inner `DataPage` structure, which contains a <xref:System.Data.DataTable> to store the values in a single cache page and which calculates the row indexes that represent the upper and lower boundaries of the page.</span></span>  
   
- `Cache` クラスは、構築時に 2 ページのデータを読み込みます。  <xref:System.Windows.Forms.DataGridView.CellValueNeeded> イベントが値を要求すると、`Cache` オブジェクトは、その 2 ページのいずれかに値が存在するかどうか確認し、値が存在する場合には返します。  値がローカルに存在しない場合、`Cache` は、2 つのページのうちで、現在表示されている行から遠い方のページを特定し、そのページを、要求されている値を含む新しいページと置き換えて、値を返します。  
+ <span data-ttu-id="24211-132">`Cache`クラスは、構築時にデータの 2 つのページを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="24211-132">The `Cache` class loads two pages of data at construction time.</span></span> <span data-ttu-id="24211-133">ときに、<xref:System.Windows.Forms.DataGridView.CellValueNeeded>イベントは、値を要求、`Cache`オブジェクトかどうかを値がで使用できるその 2 つのいずれかのページがあれば、それを返します。</span><span class="sxs-lookup"><span data-stu-id="24211-133">Whenever the <xref:System.Windows.Forms.DataGridView.CellValueNeeded> event requests a value, the `Cache` object determines if the value is available in one of its two pages and, if so, returns it.</span></span> <span data-ttu-id="24211-134">値が使用できないローカルで場合、`Cache`オブジェクトを調べ、その 2 つのページのうち、現在表示されている行から最も遠いし、返します、要求された値を含む新しい 1 つのページに置換します。</span><span class="sxs-lookup"><span data-stu-id="24211-134">If the value is not available locally, the `Cache` object determines which of its two pages is farthest from the currently displayed rows and replaces the page with a new one containing the requested value, which it then returns.</span></span>  
   
- データ ページの行数と、画面に同時に表示できる行数が一致することを前提に、このモデルでは、テーブルをページングしているユーザーが、直前に表示されたページに効率的に復帰できます。  
+ <span data-ttu-id="24211-135">仮定すると、データ ページ内の行の数を一度に画面に表示できる行の数と同じで、このモデルは、ページングの表に、ユーザーが効率的に、最も最近表示したページに戻りますを使用できます。</span><span class="sxs-lookup"><span data-stu-id="24211-135">Assuming that the number of rows in a data page is the same as the number of rows that can be displayed on screen at once, this model allows users paging through the table to efficiently return to the most recently viewed page.</span></span>  
   
  [!code-csharp[System.Windows.Forms.DataGridView.Virtual_lazyloading#300](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/CS/lazyloading.cs#300)]
  [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#300](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#300)]  
   
-## その他の考慮事項  
- 上記のコード例は、Just\-In\-Time データ読み込みの例として紹介されています。  そのため、最大の効率を確保するには、独自のニーズに合わせてコードを変更する必要があります。  少なくとも、キャッシュ内の 1 ページあたりのデータの行数として適切な値を選択する必要があります。  この値は、`Cache` コンストラクターに渡されます。  1 ページあたりの行数は、<xref:System.Windows.Forms.DataGridView> コントロールに同時に表示できる行数以上にする必要があります。  
+## <a name="additional-considerations"></a><span data-ttu-id="24211-136">その他の考慮事項</span><span class="sxs-lookup"><span data-stu-id="24211-136">Additional Considerations</span></span>  
+ <span data-ttu-id="24211-137">前のコード例は、just-in-time データ読み込みの例として提供されます。</span><span class="sxs-lookup"><span data-stu-id="24211-137">The previous code examples are provided as a demonstration of just-in-time data loading.</span></span> <span data-ttu-id="24211-138">独自のニーズに最も効率を実現するためにコードを変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="24211-138">You will need to modify the code for your own needs to achieve maximum efficiency.</span></span> <span data-ttu-id="24211-139">少なくとも、キャッシュ内のデータの 1 ページあたりの行の数の適切な値を選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="24211-139">At minimum, you will need to choose an appropriate value for the number of rows per page of data in the cache.</span></span> <span data-ttu-id="24211-140">この値に渡される、`Cache`コンス トラクターです。</span><span class="sxs-lookup"><span data-stu-id="24211-140">This value is passed into the `Cache` constructor.</span></span> <span data-ttu-id="24211-141">1 ページあたりの行の数にする必要がありますで同時に表示できる行の数よりも小さいか不要、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="24211-141">The number of rows per page should be no less than the number of rows that can be displayed simultaneously in your <xref:System.Windows.Forms.DataGridView> control.</span></span>  
   
- 最適な結果を得るには、パフォーマンス テストと操作性テストを実行し、システムとユーザーの要件を確認する必要があります。  考慮する必要がある要素には、アプリケーションを実行するクライアント コンピューターのメモリ容量、使用するネットワーク接続の有効帯域幅、使用するサーバーの待機時間などがあります。  帯域幅と待機時間は、ピーク使用時に測定する必要があります。  
+ <span data-ttu-id="24211-142">最良の結果をパフォーマンス テストと使いやすさは、システムと、ユーザーの要件を決定するテストを実施する必要があります。</span><span class="sxs-lookup"><span data-stu-id="24211-142">For best results, you will need to conduct performance testing and usability testing to determine the requirements of your system and your users.</span></span> <span data-ttu-id="24211-143">考慮する必要がありますをいくつかの要因は、アプリケーション、使用すると、ネットワーク接続の使用可能な帯域幅使用されるサーバーの待機時間を実行しているクライアント コンピューターにメモリの量を含めます。</span><span class="sxs-lookup"><span data-stu-id="24211-143">Several factors that you will need to take into consideration include the amount of memory in the client machines running your application, the available bandwidth of the network connection used, and the latency of the server used.</span></span> <span data-ttu-id="24211-144">帯域幅と待機時間は、ピーク時決定してください。</span><span class="sxs-lookup"><span data-stu-id="24211-144">The bandwidth and latency should be determined at times of peak usage.</span></span>  
   
- アプリケーションのスクロール性能を向上させるには、ローカルに保存されるデータ量を増やします。  ただし、起動時間を短縮するには、最初に過度のデータを読み込まないようにする必要があります。  `Cache` クラスを修正して、保存できるデータ ページ数を増大することもできます。  データ ページをより多く使用すると、スクロール効率を改善できますが、有効な帯域幅とサーバーの待機時間に応じて、データ ページの適切な行数を決める必要があります。  ページ数を少なくすると、サーバーへのアクセス頻度が増大しますが、要求したデータが返される時間が短縮します。  帯域幅よりも待機時間の方が問題になる場合は、データ ページを増やす必要があります。  
+ <span data-ttu-id="24211-145">アプリケーションのスクロールのパフォーマンスを向上させるのには、ローカルに格納されているデータの量を変更できます。</span><span class="sxs-lookup"><span data-stu-id="24211-145">To improve the scrolling performance of your application, you can increase the amount of data stored locally.</span></span> <span data-ttu-id="24211-146">起動時間を向上させるのにする必要がありますは避けてください大量のデータを最初に読み込みます。</span><span class="sxs-lookup"><span data-stu-id="24211-146">To improve startup time, however, you must avoid loading too much data initially.</span></span> <span data-ttu-id="24211-147">変更することも、`Cache`クラスを格納できるデータ ページの数を増やします。</span><span class="sxs-lookup"><span data-stu-id="24211-147">You may want to modify the `Cache` class to increase the number of data pages it can store.</span></span> <span data-ttu-id="24211-148">スクロールの効率を向上させる多くのデータ ページを使用することができますが、使用可能な帯域幅とサーバーの待機時間に応じてのデータ ページ内の行の最適な数を決定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="24211-148">Using more data pages can improve scrolling efficiency, but you will need to determine the ideal number of rows in a data page, depending on the available bandwidth and the server latency.</span></span> <span data-ttu-id="24211-149">サイズの小さいページは、サーバーより頻繁にアクセスするより短時間で要求されたデータを返します。</span><span class="sxs-lookup"><span data-stu-id="24211-149">With smaller pages, the server will be accessed more frequently, but will take less time to return the requested data.</span></span> <span data-ttu-id="24211-150">待機時間がより多くの帯域幅よりも、問題の場合は、大きなデータ ページを使用することがあります。</span><span class="sxs-lookup"><span data-stu-id="24211-150">If latency is more of an issue than bandwidth, you may want to use larger data pages.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>   
- [Windows フォーム DataGridView コントロールでのパフォーマンス チューニング](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)   
- [Windows フォーム DataGridView コントロールを拡張するための推奨される手順](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)   
- [Windows フォーム DataGridView コントロールでの仮想モード](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)   
- [チュートリアル : Windows フォーム DataGridView コントロールでの仮想モードの実装](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)   
- [方法 : Windows フォーム DataGridView コントロールで Just\-In\-Time データ読み込みを使用して仮想モードを実装する](../../../../docs/framework/winforms/controls/virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md)
+## <a name="see-also"></a><span data-ttu-id="24211-151">関連項目</span><span class="sxs-lookup"><span data-stu-id="24211-151">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>  
+ [<span data-ttu-id="24211-152">Windows フォーム DataGridView コントロールでのパフォーマンス チューニング</span><span class="sxs-lookup"><span data-stu-id="24211-152">Performance Tuning in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/performance-tuning-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="24211-153">Windows フォーム DataGridView コントロールを拡張するための推奨される手順</span><span class="sxs-lookup"><span data-stu-id="24211-153">Best Practices for Scaling the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="24211-154">Windows フォーム DataGridView コントロールでの仮想モード</span><span class="sxs-lookup"><span data-stu-id="24211-154">Virtual Mode in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="24211-155">チュートリアル: Windows フォーム DataGridView コントロールでの仮想モードの実装</span><span class="sxs-lookup"><span data-stu-id="24211-155">Walkthrough: Implementing Virtual Mode in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)  
+ [<span data-ttu-id="24211-156">方法: Windows フォーム DataGridView コントロールで Just-In-Time データ読み込みを使用して仮想モードを実装する</span><span class="sxs-lookup"><span data-stu-id="24211-156">How to: Implement Virtual Mode with Just-In-Time Data Loading in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md)

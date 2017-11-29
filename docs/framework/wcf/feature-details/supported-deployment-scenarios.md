@@ -1,53 +1,56 @@
 ---
-title: "サポートされている配置シナリオ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "サポートされている配置シナリオ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-caps.latest.revision: 20
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 22dcace51b2c73193356450b4b210d1c1a899e28
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# サポートされている配置シナリオ
-部分的に信頼されたアプリケーションでの使用のために用意されている [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 機能のサブセットは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用するための一部のシナリオ \(全部ではありません\) の要件を満たすように作成されています。 サーバーでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、セキュリティの理由により [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] の中程度の信頼アクセス許可セットでサードパーティ製アプリケーションを実行するインターネット規模の共有ホスティング プロバイダーの要件を満たします。 クライアントでは、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の部分信頼サポート機能は、[ClickOnce 展開](http://go.microsoft.com/fwlink/?LinkId=83712)または [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] の XAML ブラウザー アプリケーション \(XBAP\) テクノロジなどの展開技術の要件を満たすように設計されています。これらの技術は、信頼できないサイトからシームレスかつ安全にデスクトップ アプリケーションを展開できるようにするためのものです。  
+# <a name="supported-deployment-scenarios"></a><span data-ttu-id="73fe4-102">サポートされている配置シナリオ</span><span class="sxs-lookup"><span data-stu-id="73fe4-102">Supported Deployment Scenarios</span></span>
+<span data-ttu-id="73fe4-103">部分的に信頼されたアプリケーションでの使用のために用意されている [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 機能のサブセットは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を使用するための一部のシナリオ (全部ではありません) の要件を満たすように作成されています。</span><span class="sxs-lookup"><span data-stu-id="73fe4-103">The subset of [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] features supported for use in partially trusted applications is designed to meet the requirements of some, but not all, scenarios for using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span> <span data-ttu-id="73fe4-104">サーバーでは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、セキュリティの理由により [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] の中程度の信頼アクセス許可セットでサードパーティ製アプリケーションを実行するインターネット規模の共有ホスティング プロバイダーの要件を満たします。</span><span class="sxs-lookup"><span data-stu-id="73fe4-104">On the server, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] meets the requirements of Internet-scale shared hosting providers who run third-party applications in the [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] Medium Trust permission set for security reasons.</span></span> <span data-ttu-id="73fe4-105">クライアントでは、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の部分信頼サポート機能は、 [ClickOnce 展開](http://go.microsoft.com/fwlink/?LinkId=83712) または [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]の XAML ブラウザー アプリケーション (XBAP) テクノロジなどの展開技術の要件を満たすように設計されています。これらの技術は、信頼できないサイトからシームレスかつ安全にデスクトップ アプリケーションを展開できるようにするためのものです。</span><span class="sxs-lookup"><span data-stu-id="73fe4-105">On the client, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] partial trust support is designed to meet the requirements of deployment technologies such as [ClickOnce Deployment](http://go.microsoft.com/fwlink/?LinkId=83712) or [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]'s XAML Browser Application technology, which allow seamless and secure deployment of desktop applications from untrusted sites.</span></span>  
   
-## 最小のアクセス許可の要件  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、次の標準の名前付きアクセス許可セットのいずれかで実行されるアプリケーションの機能のサブセットをサポートします。  
+## <a name="minimum-permission-requirements"></a><span data-ttu-id="73fe4-106">最小のアクセス許可の要件</span><span class="sxs-lookup"><span data-stu-id="73fe4-106">Minimum Permission Requirements</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="73fe4-107"> では、次の標準の名前付きアクセス許可セットのいずれかで実行されるアプリケーションの機能のサブセットをサポートします。</span><span class="sxs-lookup"><span data-stu-id="73fe4-107"> supports a subset of features in applications running under either of the following standard named permission sets:</span></span>  
   
--   中程度の信頼アクセス許可  
+-   <span data-ttu-id="73fe4-108">中程度の信頼アクセス許可</span><span class="sxs-lookup"><span data-stu-id="73fe4-108">Medium Trust permissions</span></span>  
   
--   インターネット ゾーン アクセス許可  
+-   <span data-ttu-id="73fe4-109">インターネット ゾーン アクセス許可</span><span class="sxs-lookup"><span data-stu-id="73fe4-109">Internet Zone permissions</span></span>  
   
- これよりも制限の厳しいアクセス許可が設定された部分信頼アプリケーションで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用すると、実行時にセキュリティ例外が発生することがあります。  
+ <span data-ttu-id="73fe4-110">これよりも制限の厳しいアクセス許可が設定された部分信頼アプリケーションで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用すると、実行時にセキュリティ例外が発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="73fe4-110">Attempting to use [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] in partially trusted applications with more restrictive permissions may result in security exceptions at runtime.</span></span>  
   
- このようなアクセス許可セットでサポートされる機能の詳細については、「[部分信頼機能の互換性](../../../../docs/framework/wcf/feature-details/partial-trust-feature-compatibility.md)」を参照してください。  
+ <span data-ttu-id="73fe4-111">このようなアクセス許可セットでサポートされる機能の詳細については、「 [Partial Trust Feature Compatibility](../../../../docs/framework/wcf/feature-details/partial-trust-feature-compatibility.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="73fe4-111">For more information about the features supported in these permission sets, see [Partial Trust Feature Compatibility](../../../../docs/framework/wcf/feature-details/partial-trust-feature-compatibility.md).</span></span>  
   
-## サーバーでの部分信頼  
- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web アプリケーション ホスティング サービスのプロバイダー事業者の多くは、それぞれのサーバーで動作するアプリケーションが [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] の中程度の信頼アクセス許可セットを使用して実行されることを義務付けています。 その業者がトランスポートレベルのセキュリティで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]、<xref:System.ServiceModel.BasicHttpBinding>、または <xref:System.ServiceModel.WebHttpBinding> を使用する場合、<xref:System.ServiceModel.WsHttpBinding> サービスは、このような環境で動作します。  
+## <a name="partial-trust-on-the-server"></a><span data-ttu-id="73fe4-112">サーバーでの部分信頼</span><span class="sxs-lookup"><span data-stu-id="73fe4-112">Partial Trust on the Server</span></span>  
+ <span data-ttu-id="73fe4-113">[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web アプリケーション ホスティング サービスのプロバイダー事業者の多くは、それぞれのサーバーで動作するアプリケーションが [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] の中程度の信頼アクセス許可セットを使用して実行されることを義務付けています。</span><span class="sxs-lookup"><span data-stu-id="73fe4-113">Many commercial providers of [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web application hosting services mandate that applications running on their servers run in the [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] Medium Trust permission set.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="73fe4-114">サービスを使用するような環境で実行できます、 <xref:System.ServiceModel.BasicHttpBinding>、 <xref:System.ServiceModel.WebHttpBinding>、または <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> トランスポート レベルのセキュリティとします。</span><span class="sxs-lookup"><span data-stu-id="73fe4-114"> services can run in these environments provided they use the <xref:System.ServiceModel.BasicHttpBinding>, the <xref:System.ServiceModel.WebHttpBinding>, or the <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> with transport-level security.</span></span>  
   
- 信頼レベルが中程度のホスティング環境で動作する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、クライアント要求に応じて他のサーバーにメッセージを送信することによって、中間層サービスとして動作することもできます。 ホスティング環境が適切な <xref:System.Net.WebPermission> をアプリケーションに与えて、目的のサーバーに送信要求を行うようにする場合は、サーバーでの中間層のシナリオがサポートされます。  
+ <span data-ttu-id="73fe4-115">信頼レベルが中程度のホスティング環境で動作する[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスは、クライアント要求に応じて他のサーバーにメッセージを送信することによって、中間層サービスとして動作することもできます。</span><span class="sxs-lookup"><span data-stu-id="73fe4-115">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services running in Medium Trust hosting environments can also act as middle-tier services by sending messages to other servers in response to client requests.</span></span> <span data-ttu-id="73fe4-116">ホスティング環境が適切な <xref:System.Net.WebPermission> をアプリケーションに与えて、目的のサーバーに送信要求を行うようにする場合は、サーバーでの中間層のシナリオがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="73fe4-116">Middle-tier scenarios on the server are supported if the hosting environment has granted the application the appropriate <xref:System.Net.WebPermission> to make outbound requests to the desired server.</span></span>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、サポートされる SOAP バインディングのいずれか 1 つを使用する SOAP メッセージングの他にも、部分的に信頼されたアプリケーションで Web スタイルのサービスを構築するための <xref:System.ServiceModel.WebHttpBinding> をサポートします。 部分信頼では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)、[WCF 配信](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)、および [AJAX の統合と JSON のサポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md) の各機能がすべてサポートされます。  
+ <span data-ttu-id="73fe4-117">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、サポートされる SOAP バインディングのいずれか 1 つを使用する SOAP メッセージングの他にも、部分的に信頼されたアプリケーションで Web スタイルのサービスを構築するための <xref:System.ServiceModel.WebHttpBinding> をサポートします。</span><span class="sxs-lookup"><span data-stu-id="73fe4-117">In addition to SOAP messaging using one of the supported SOAP bindings, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] supports the <xref:System.ServiceModel.WebHttpBinding> for building Web-style services in partially trusted applications.</span></span> <span data-ttu-id="73fe4-118">[WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)、 [WCF 配信](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)、および[AJAX の統合と JSON サポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)の機能[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]がすべて部分的な信頼でサポートします。</span><span class="sxs-lookup"><span data-stu-id="73fe4-118">The [WCF Web HTTP Programming Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md), [WCF Syndication](../../../../docs/framework/wcf/feature-details/wcf-syndication.md), and [AJAX Integration and JSON Support](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md) features of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] are all supported in partial trust.</span></span>  
   
- ワークフロー サービスは完全信頼のアクセス許可を必要とし、部分的に信頼されたアプリケーションでは使用できません。  
+ <span data-ttu-id="73fe4-119">ワークフロー サービスは完全信頼のアクセス許可を必要とし、部分的に信頼されたアプリケーションでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="73fe4-119">Workflow Services require Full Trust permissions and cannot be used in partially trusted applications.</span></span>  
   
- [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [How To: ASP.NET 2.0 で中程度の信頼を使用する方法](http://go.microsoft.com/fwlink/?LinkId=84603)」を参照してください。  
+ [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="73fe4-120">[する方法: ASP.NET 2.0 で中程度の信頼を使用して](http://go.microsoft.com/fwlink/?LinkId=84603)です。</span><span class="sxs-lookup"><span data-stu-id="73fe4-120"> [How to: Use Medium Trust in ASP.NET 2.0](http://go.microsoft.com/fwlink/?LinkId=84603).</span></span>  
   
-## クライアントでの部分信頼  
- 信頼されていないインターネット サイトからコードをダウンロードして実行する場合、ある程度のセキュリティ対策が必要です。[ClickOnce 展開](http://go.microsoft.com/fwlink/?LinkId=83712)と [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] の XBAP テクノロジでは共に、部分信頼を利用して信頼できないコードに制限付きのアクセス許可 \(インターネット ゾーン\) を与えます。  
+## <a name="partial-trust-on-the-client"></a><span data-ttu-id="73fe4-121">クライアントでの部分信頼</span><span class="sxs-lookup"><span data-stu-id="73fe4-121">Partial Trust on the Client</span></span>  
+ <span data-ttu-id="73fe4-122">信頼されていないインターネット サイトからコードをダウンロードして実行する場合、ある程度のセキュリティ対策が必要です。</span><span class="sxs-lookup"><span data-stu-id="73fe4-122">Certain security precautions must be taken when downloading and running code from untrusted Internet sites.</span></span> <span data-ttu-id="73fe4-123">[ClickOnce 展開](http://go.microsoft.com/fwlink/?LinkId=83712) と [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]の XBAP テクノロジでは共に、部分信頼を利用して信頼できないコードに制限付きのアクセス許可 (インターネット ゾーン) を与えます。</span><span class="sxs-lookup"><span data-stu-id="73fe4-123">Both [ClickOnce Deployment](http://go.microsoft.com/fwlink/?LinkId=83712) and [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]'s XAML Browser Application (XBAP) technology make use of partial trust to grant limited permissions (Internet Zone) to untrusted code.</span></span>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、[ClickOnce 展開](http://go.microsoft.com/fwlink/?LinkId=83712)または XBAP によって展開された部分信頼のアプリケーション内からリモート サーバーと通信するときに使用できます。 インターネット ゾーン アクセス許可セットには、元のホスト用の <xref:System.Net.WebPermission> が含まれます。これにより、このようなアプリケーションは、サポートされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングのいずれかを使用してそれぞれの元のサーバーと通信できます \(「[部分信頼機能の互換性](../../../../docs/framework/wcf/feature-details/partial-trust-feature-compatibility.md)」を参照\)。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="73fe4-124"> は、 [ClickOnce 展開](http://go.microsoft.com/fwlink/?LinkId=83712) または XBAP によって展開された部分信頼のアプリケーション内からリモート サーバーと通信するときに使用できます。</span><span class="sxs-lookup"><span data-stu-id="73fe4-124"> can be used to communicate with remote servers from within partially trusted applications deployed by either [ClickOnce Deployment](http://go.microsoft.com/fwlink/?LinkId=83712) or XBAP.</span></span> <span data-ttu-id="73fe4-125">インターネット ゾーン アクセス許可セットには、元のホスト用の <xref:System.Net.WebPermission> が含まれます。これにより、このようなアプリケーションは、サポートされる [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインディングのいずれかを使用してそれぞれの元のサーバーと通信できます (「 [Partial Trust Feature Compatibility](../../../../docs/framework/wcf/feature-details/partial-trust-feature-compatibility.md)を使用するための一部のシナリオ (全部ではありません) の要件を満たすように作成されています。</span><span class="sxs-lookup"><span data-stu-id="73fe4-125">The Internet Zone permission set includes <xref:System.Net.WebPermission> for the originating host, which allows these applications to communicate with their origin server using any of the supported [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] bindings described in [Partial Trust Feature Compatibility](../../../../docs/framework/wcf/feature-details/partial-trust-feature-compatibility.md).</span></span>  
   
-## 参照  
- [コード アクセス セキュリティ](http://go.microsoft.com/fwlink/?LinkId=83717)   
- [Windows Presentation Foundation ブラウザーによってホストされるアプリケーションの概要](http://go.microsoft.com/fwlink/?LinkId=98397)   
- [部分信頼](../../../../docs/framework/wcf/feature-details/partial-trust.md)   
- [ASP.NET の中程度の信頼](http://go.microsoft.com/fwlink/?LinkId=69328)
+## <a name="see-also"></a><span data-ttu-id="73fe4-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="73fe4-126">See Also</span></span>  
+ [<span data-ttu-id="73fe4-127">コード アクセス セキュリティ</span><span class="sxs-lookup"><span data-stu-id="73fe4-127">Code Access Security</span></span>](http://go.microsoft.com/fwlink/?LinkId=83717)  
+ [<span data-ttu-id="73fe4-128">Windows Presentation Foundation ブラウザーによってホストされるアプリケーションの概要</span><span class="sxs-lookup"><span data-stu-id="73fe4-128">Windows Presentation Foundation Browser-Hosted Applications Overview</span></span>](http://go.microsoft.com/fwlink/?LinkId=98397)  
+ [<span data-ttu-id="73fe4-129">部分信頼</span><span class="sxs-lookup"><span data-stu-id="73fe4-129">Partial Trust</span></span>](../../../../docs/framework/wcf/feature-details/partial-trust.md)  
+ [<span data-ttu-id="73fe4-130">ASP.Net の中程度の信頼</span><span class="sxs-lookup"><span data-stu-id="73fe4-130">ASP.Net Medium Trust</span></span>](http://go.microsoft.com/fwlink/?LinkId=69328)

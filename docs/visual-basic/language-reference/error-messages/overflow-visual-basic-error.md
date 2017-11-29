@@ -1,35 +1,33 @@
 ---
-title: "Overflow (Visual Basic Error) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc30036"
-  - "vbc30036"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30036"
+title: "オーバーフローしました。(Visual Basic エラー)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc30036
+- vbc30036
+helpviewer_keywords: BC30036
 ms.assetid: b2c83de9-a132-449a-870b-e7c409d4d7ee
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 1a1b12002e230c7f90f2da5ebb24c5298fccbe6f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Overflow (Visual Basic Error)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-リテラルの値が、代入先のデータ型の制限を超えています。  
+# <a name="overflow-visual-basic-error"></a><span data-ttu-id="42326-102">オーバーフローしました。(Visual Basic エラー)</span><span class="sxs-lookup"><span data-stu-id="42326-102">Overflow (Visual Basic Error)</span></span>
+<span data-ttu-id="42326-103">リテラルは、割り当てられるデータ型の制限の範囲外の値を表します。</span><span class="sxs-lookup"><span data-stu-id="42326-103">A literal represents a value outside the limits of the data type to which it is being assigned.</span></span>  
   
- **Error ID:** BC30036  
+ <span data-ttu-id="42326-104">**エラー ID:** BC30036</span><span class="sxs-lookup"><span data-stu-id="42326-104">**Error ID:** BC30036</span></span>  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="42326-105">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="42326-105">To correct this error</span></span>  
   
--   代入先のデータ型の値の範囲を調べ、その範囲内に収まるようにリテラルを書き直します。  
+-   <span data-ttu-id="42326-106">データ型で、その範囲に準拠するように、そのリテラルを書き直してください。 ターゲットの値の範囲を参照してください。</span><span class="sxs-lookup"><span data-stu-id="42326-106">Consult the value range for the target data type and rewrite the literal to conform to that range.</span></span>  
   
-## 参照  
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)
+## <a name="see-also"></a><span data-ttu-id="42326-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="42326-107">See Also</span></span>  
+ [<span data-ttu-id="42326-108">データの種類</span><span class="sxs-lookup"><span data-stu-id="42326-108">Data Types</span></span>](../../../visual-basic/language-reference/data-types/data-type-summary.md)

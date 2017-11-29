@@ -1,40 +1,41 @@
 ---
-title: "方法 : PrintDialog コンポーネントを表示する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "[印刷] ダイアログ ボックス, 表示"
-  - "PrintDialog コンポーネント [Windows フォーム], 表示"
-  - "印刷 [Windows フォーム], 表示 (印刷ダイアログ ボックスを)"
+title: "方法 : PrintDialog コンポーネントを表示する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Print dialog box [Windows Forms], displaying
+- PrintDialog component [Windows Forms], displaying
+- printing [Windows Forms], displaying print dialog box
 ms.assetid: 745a8db7-0526-4b21-b09d-18e13ed32014
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7e1162a4e926d5be35f8f7bb7cdeb92264f293aa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : PrintDialog コンポーネントを表示する
-<xref:System.Windows.Forms.PrintDialog> コンポーネントは、多くのユーザーにお馴染みの Windows の標準印刷ダイアログ ボックスです。  ユーザーが簡単に使用できるため、<xref:System.Windows.Forms.PrintDialog> コンポーネントを使用することをお勧めします。  
+# <a name="how-to-display-the-printdialog-component"></a><span data-ttu-id="1ffb1-102">方法 : PrintDialog コンポーネントを表示する</span><span class="sxs-lookup"><span data-stu-id="1ffb1-102">How to: Display the PrintDialog Component</span></span>
+<span data-ttu-id="1ffb1-103"><xref:System.Windows.Forms.PrintDialog>コンポーネントは、多くのユーザーに習熟する標準の Windows 印刷 ダイアログ ボックス。</span><span class="sxs-lookup"><span data-stu-id="1ffb1-103">The <xref:System.Windows.Forms.PrintDialog> component is the standard Windows print dialog box that many of your users will be familiar with.</span></span> <span data-ttu-id="1ffb1-104">あるため、ユーザーはすぐに慣れる、使用すると役に立つなります、<xref:System.Windows.Forms.PrintDialog>コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="1ffb1-104">Because your users will be immediately comfortable with it, it would be beneficial for you to use the <xref:System.Windows.Forms.PrintDialog> component.</span></span>  
   
-### PrintDialog コンポーネントを表示するには  
+### <a name="to-display-the-printdialog-component"></a><span data-ttu-id="1ffb1-105">PrintDialog コンポーネントを表示するには</span><span class="sxs-lookup"><span data-stu-id="1ffb1-105">To display the PrintDialog component</span></span>  
   
--   アプリケーションのコードから <xref:System.Windows.Forms.Form.ShowDialog%2A> メソッドを呼び出します。  
+-   <span data-ttu-id="1ffb1-106">呼び出す、<xref:System.Windows.Forms.Form.ShowDialog%2A>メソッド アプリケーションのコード内からです。</span><span class="sxs-lookup"><span data-stu-id="1ffb1-106">Call the <xref:System.Windows.Forms.Form.ShowDialog%2A> method from within the code of your application.</span></span>  
   
-     コンポーネントが表示されると、ユーザーはそれを使用して印刷ジョブのプロパティを設定します。  この設定は、印刷ジョブに関連付けられている [PrinterSettings](frlrfSystemDrawingPrintingPrinterSettingsMembersTopic) クラス \(ユーザーが <xref:System.Windows.Forms.PrintDialog> コンポーネントを通じて [PageSetupDialog コンポーネント](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md) にアクセスしている場合は [PageSettings](frlrfSystemDrawingPrintingPageSettingsMembersTopic) クラス\) に保存されます。  その後で、設定されたプロパティを呼び出して印刷ジョブの詳細を確認できます。  
+     <span data-ttu-id="1ffb1-107">コンポーネントが表示されると、ユーザーはそれを使用して印刷ジョブのプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="1ffb1-107">Once the component is shown, users will interact with it, setting the properties of the print job.</span></span> <span data-ttu-id="1ffb1-108">これらに保存、 <!--zz <xref:System.Drawing.Printing.PrinterSetting>--> `PrinterSetting`クラス (および<xref:System.Drawing.Printing.PageSettings>クラス、ユーザーがアクセスする場合、 [PageSetupDialog コンポーネント](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)を通じて、<xref:System.Windows.Forms.PrintDialog>コンポーネント) その印刷ジョブに関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="1ffb1-108">These are saved in the <!--zz <xref:System.Drawing.Printing.PrinterSetting>--> `PrinterSetting` class (and the <xref:System.Drawing.Printing.PageSettings> class, if the user accesses the [PageSetupDialog Component](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md) through the <xref:System.Windows.Forms.PrintDialog> component) associated with that print job.</span></span> <span data-ttu-id="1ffb1-109">その後で、設定されたプロパティを呼び出して印刷ジョブの詳細を確認できます。</span><span class="sxs-lookup"><span data-stu-id="1ffb1-109">You can then make calls to the properties they set to determine the specifics of the print job.</span></span>  
   
-## 参照  
- [方法 : 標準の Windows フォーム印刷ジョブを作成する](../../../../docs/framework/winforms/advanced/how-to-create-standard-windows-forms-print-jobs.md)   
- [方法 : 実行時に PrintDialog のユーザー入力をキャプチャする](../../../../docs/framework/winforms/advanced/how-to-capture-user-input-from-a-printdialog-at-run-time.md)   
- [PrintPreviewDialog コントロール](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)   
- [PrintDialog コンポーネント](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md)   
- [Windows フォームにおける印刷のサポート](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)   
- [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)
+## <a name="see-also"></a><span data-ttu-id="1ffb1-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="1ffb1-110">See Also</span></span>  
+ [<span data-ttu-id="1ffb1-111">方法: 標準の Windows フォーム印刷ジョブを作成する</span><span class="sxs-lookup"><span data-stu-id="1ffb1-111">How to: Create Standard Windows Forms Print Jobs</span></span>](../../../../docs/framework/winforms/advanced/how-to-create-standard-windows-forms-print-jobs.md)  
+ [<span data-ttu-id="1ffb1-112">方法: 実行時に PrintDialog のユーザー入力をキャプチャする</span><span class="sxs-lookup"><span data-stu-id="1ffb1-112">How to: Capture User Input from a PrintDialog at Run Time</span></span>](../../../../docs/framework/winforms/advanced/how-to-capture-user-input-from-a-printdialog-at-run-time.md)  
+ [<span data-ttu-id="1ffb1-113">PrintPreviewDialog コントロール</span><span class="sxs-lookup"><span data-stu-id="1ffb1-113">PrintPreviewDialog Control</span></span>](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)  
+ [<span data-ttu-id="1ffb1-114">PrintDialog コンポーネント</span><span class="sxs-lookup"><span data-stu-id="1ffb1-114">PrintDialog Component</span></span>](../../../../docs/framework/winforms/controls/printdialog-component-windows-forms.md)  
+ [<span data-ttu-id="1ffb1-115">Windows フォームにおける印刷のサポート</span><span class="sxs-lookup"><span data-stu-id="1ffb1-115">Windows Forms Print Support</span></span>](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)  
+ [<span data-ttu-id="1ffb1-116">Windows フォーム コントロール</span><span class="sxs-lookup"><span data-stu-id="1ffb1-116">Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/index.md)

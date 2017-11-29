@@ -1,67 +1,68 @@
 ---
-title: "Windows フォームのイベントの順序 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "アプリケーション終了イベントの順序"
-  - "アプリケーション起動イベントの順序"
-  - "イベント [Windows フォーム], 順序"
-  - "フォーカス イベントの順序"
-  - "手順, イベントの"
-  - "検証イベント, 順序"
+title: "Windows フォームのイベントの順序"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- events [Windows Forms], order of
+- focus event order
+- application shutdown event order
+- sequence [Windows Forms], of events
+- validation events [Windows Forms], order of
+- application startup event order
 ms.assetid: e81db09b-4453-437f-b78a-62d7cd5c9829
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f822133b44f0f32224402463b4332811f8cd52b5
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# Windows フォームのイベントの順序
-Windows フォーム アプリケーションでイベントが発生する順序は、各イベントを順番に処理する必要がある開発者にとって重要な問題です。  フォームの構成要素を再描画するときなど、イベント処理に細心の注意が必要な状況では、実行時におけるイベントの正確な発生順序に気を配る必要があります。  このトピックでは、アプリケーションとコントロールの有効期間におけるいくつかの重要な段階での、イベントの順序について詳しく説明します。  マウス入力イベントの順序の詳細については、「[Windows フォームにおけるマウス イベント](../../../docs/framework/winforms/mouse-events-in-windows-forms.md)」を参照してください。  Windows フォームのイベントの概要については、「[イベントの概要](../../../docs/framework/winforms/events-overview-windows-forms.md)」を参照してください。  イベント ハンドラーの構成の詳細については、「[イベント ハンドラーの概要](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)」を参照してください。  
+# <a name="order-of-events-in-windows-forms"></a><span data-ttu-id="1d01f-102">Windows フォームのイベントの順序</span><span class="sxs-lookup"><span data-stu-id="1d01f-102">Order of Events in Windows Forms</span></span>
+<span data-ttu-id="1d01f-103">Windows フォーム アプリケーションでイベントが発生する順序は、各イベントを順番に処理する必要がある開発者にとって重要な問題です。</span><span class="sxs-lookup"><span data-stu-id="1d01f-103">The order in which events are raised in Windows Forms applications is of particular interest to developers concerned with handling each of these events in turn.</span></span> <span data-ttu-id="1d01f-104">フォームの構成要素を再描画するときなど、イベント処理に細心の注意が必要な状況では、実行時におけるイベントの正確な発生順序に気を配る必要があります。</span><span class="sxs-lookup"><span data-stu-id="1d01f-104">When a situation calls for meticulous handling of events, such as when you are redrawing parts of the form, an awareness of the precise order in which events are raised at run time is necessary.</span></span> <span data-ttu-id="1d01f-105">このトピックでは、アプリケーションとコントロールの有効期間におけるいくつかの重要な段階での、イベントの順序について詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="1d01f-105">This topic provides some details on the order of events during several important stages in the lifetime of applications and controls.</span></span> <span data-ttu-id="1d01f-106">特定の詳細については、マウス入力イベントの順序では、次を参照してください。 [Windows フォームにおけるマウス イベント](../../../docs/framework/winforms/mouse-events-in-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="1d01f-106">For specific details about the order of mouse input events, see [Mouse Events in Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md).</span></span> <span data-ttu-id="1d01f-107">Windows フォーム内のイベントの概要については、次を参照してください。[イベントの概要](../../../docs/framework/winforms/events-overview-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="1d01f-107">For an overview of events in Windows Forms, see [Events Overview](../../../docs/framework/winforms/events-overview-windows-forms.md).</span></span> <span data-ttu-id="1d01f-108">イベント ハンドラーの構成の詳細については、次を参照してください。[イベント ハンドラーの概要](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="1d01f-108">For details about the makeup of event handlers, see [Event Handlers Overview](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md).</span></span>  
   
-## アプリケーションのスタートアップ イベントとシャットダウン イベント。  
- <xref:System.Windows.Forms.Form> クラスおよび <xref:System.Windows.Forms.Control> クラスは、アプリケーションのスタートアップおよびシャットダウンに関連する一連のイベントを公開しています。  Windows フォーム アプリケーションが起動すると、メイン フォームのスタートアップ イベントが次の順序で発生します。  
+## <a name="application-startup-and-shutdown-events"></a><span data-ttu-id="1d01f-109">アプリケーションのスタートアップ イベントとシャットダウン イベント。</span><span class="sxs-lookup"><span data-stu-id="1d01f-109">Application Startup and Shutdown Events</span></span>  
+ <span data-ttu-id="1d01f-110"><xref:System.Windows.Forms.Form> クラスおよび <xref:System.Windows.Forms.Control> クラスは、アプリケーションのスタートアップおよびシャットダウンに関連する一連のイベントを公開しています。</span><span class="sxs-lookup"><span data-stu-id="1d01f-110">The <xref:System.Windows.Forms.Form> and <xref:System.Windows.Forms.Control> classes expose a set of events related to application startup and shutdown.</span></span> <span data-ttu-id="1d01f-111">Windows フォーム アプリケーションが起動すると、メイン フォームのスタートアップ イベントが次の順序で発生します。</span><span class="sxs-lookup"><span data-stu-id="1d01f-111">When a Windows Forms application starts, the startup events of the main form are raised in the following order:</span></span>  
   
--   <xref:System.Windows.Forms.Control.HandleCreated?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Control.HandleCreated?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Control.BindingContextChanged?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Control.BindingContextChanged?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.Load?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Form.Load?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Control.VisibleChanged?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Control.VisibleChanged?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.Activated?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Form.Activated?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.Shown?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Form.Shown?displayProperty=nameWithType>  
   
- アプリケーションを閉じると、メイン フォームのシャットダウン イベントが次の順序で発生します。  
+ <span data-ttu-id="1d01f-112">アプリケーションを閉じると、メイン フォームのシャットダウン イベントが次の順序で発生します。</span><span class="sxs-lookup"><span data-stu-id="1d01f-112">When an application closes, the shutdown events of the main form are raised in the following order:</span></span>  
   
--   <xref:System.Windows.Forms.Form.Closing?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.FormClosing?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Form.FormClosing?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.Closed?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Form.Closed?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.FormClosed?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Form.FormClosed?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.Deactivate?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Form.Deactivate?displayProperty=nameWithType>  
   
- <xref:System.Windows.Forms.Application> クラスの <xref:System.Windows.Forms.Application.ApplicationExit> イベントは、メイン フォームのシャットダウン イベントの後に発生します。  
+ <span data-ttu-id="1d01f-113"><xref:System.Windows.Forms.Application> クラスの <xref:System.Windows.Forms.Application.ApplicationExit> イベントは、メイン フォームのシャットダウン イベントの後に発生します。</span><span class="sxs-lookup"><span data-stu-id="1d01f-113">The <xref:System.Windows.Forms.Application.ApplicationExit> event of the <xref:System.Windows.Forms.Application> class is raised after the shutdown events of the main form.</span></span>  
   
 > [!NOTE]
->  Visual Basic 2005 には、追加のアプリケーション イベント \(<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup?displayProperty=fullName> や <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown?displayProperty=fullName> など\) があります。  
+>  <span data-ttu-id="1d01f-114">Visual Basic 2005 には、追加のアプリケーション イベント (<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup?displayProperty=nameWithType> や <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown?displayProperty=nameWithType> など) があります。</span><span class="sxs-lookup"><span data-stu-id="1d01f-114">Visual Basic 2005 includes additional application events, such as <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup?displayProperty=nameWithType> and <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown?displayProperty=nameWithType>.</span></span>  
   
-## フォーカス イベントと検証イベント  
- キーボード \(Tab、Shift \+ Tab など\) を使用するか、<xref:System.Windows.Forms.Control.Select%2A> メソッドまたは <xref:System.Windows.Forms.Control.SelectNextControl%2A> メソッドを呼び出すか、<xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> プロパティを現在のフォームに設定してフォーカスを変更すると、次の順序で <xref:System.Windows.Forms.Control> クラスのフォーカス イベントが発生します。  
+## <a name="focus-and-validation-events"></a><span data-ttu-id="1d01f-115">フォーカス イベントと検証イベント</span><span class="sxs-lookup"><span data-stu-id="1d01f-115">Focus and Validation Events</span></span>  
+ <span data-ttu-id="1d01f-116">キーボード (Tab、Shift + Tab など) を使用するか、<xref:System.Windows.Forms.Control.Select%2A> メソッドまたは <xref:System.Windows.Forms.Control.SelectNextControl%2A> メソッドを呼び出すか、<xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> プロパティを現在のフォームに設定してフォーカスを変更すると、次の順序で <xref:System.Windows.Forms.Control> クラスのフォーカス イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="1d01f-116">When you change the focus by using the keyboard (TAB, SHIFT+TAB, and so on), by calling the <xref:System.Windows.Forms.Control.Select%2A> or <xref:System.Windows.Forms.Control.SelectNextControl%2A> methods, or by setting the <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> property to the current form, focus events of the <xref:System.Windows.Forms.Control> class occur in the following order:</span></span>  
   
 -   <xref:System.Windows.Forms.Control.Enter>  
   
@@ -75,7 +76,7 @@ Windows フォーム アプリケーションでイベントが発生する順�
   
 -   <xref:System.Windows.Forms.Control.LostFocus>  
   
- マウスの使用、または <xref:System.Windows.Forms.Control.Focus%2A> メソッドの呼び出しによってフォーカスを変更すると、次の順序で <xref:System.Windows.Forms.Control> クラスのフォーカス イベントが発生します。  
+ <span data-ttu-id="1d01f-117">マウスの使用、または <xref:System.Windows.Forms.Control.Focus%2A> メソッドの呼び出しによってフォーカスを変更すると、次の順序で <xref:System.Windows.Forms.Control> クラスのフォーカス イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="1d01f-117">When you change the focus by using the mouse or by calling the <xref:System.Windows.Forms.Control.Focus%2A> method, focus events of the <xref:System.Windows.Forms.Control> class occur in the following order:</span></span>  
   
 -   <xref:System.Windows.Forms.Control.Enter>  
   
@@ -89,5 +90,5 @@ Windows フォーム アプリケーションでイベントが発生する順�
   
 -   <xref:System.Windows.Forms.Control.Validated>  
   
-## 参照  
- [Windows フォーム内でのイベント ハンドラーの作成](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="1d01f-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="1d01f-118">See Also</span></span>  
+ [<span data-ttu-id="1d01f-119">Windows フォーム内でのイベント ハンドラーの作成</span><span class="sxs-lookup"><span data-stu-id="1d01f-119">Creating Event Handlers in Windows Forms</span></span>](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)

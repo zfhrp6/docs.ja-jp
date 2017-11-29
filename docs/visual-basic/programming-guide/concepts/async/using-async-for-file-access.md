@@ -1,50 +1,42 @@
 ---
-title: "非同期ファイルへのアクセス (Visual Basic) の使用 |Microsoft ドキュメント"
+title: "ファイル アクセスにおける非同期の使用 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c989305f-08e3-4687-95c3-948465cda202
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e0e548989b1d2c32b9faf5ce0dd90ae371dfc028
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 329ae43f8752fbe8a7167b57cb710cc53c0ec247
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="using-async-for-file-access-visual-basic"></a>ファイル アクセスにおける非同期の使用 (Visual Basic)
-非同期機能を使用して、ファイルにアクセスすることができます。 非同期機能を使用すると、コールバックの使用や複数のメソッドまたはラムダ式へのコードの分割を行わずに、非同期メソッドを呼び出すことができます。 同期コードを非同期にするだけ同期メソッドの代わりに非同期のメソッドを呼び出すをコードにいくつかのキーワードを追加します。  
+# <a name="using-async-for-file-access-visual-basic"></a><span data-ttu-id="06f24-102">ファイル アクセスにおける非同期の使用 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="06f24-102">Using Async for File Access (Visual Basic)</span></span>
+<span data-ttu-id="06f24-103">非同期機能を使用して、ファイルにアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="06f24-103">You can use the Async feature to access files.</span></span> <span data-ttu-id="06f24-104">非同期機能を使用すると、コールバックの使用や複数のメソッドまたはラムダ式へのコードの分割を行わずに、非同期メソッドを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="06f24-104">By using the Async feature, you can call into asynchronous methods without using callbacks or splitting your code across multiple methods or lambda expressions.</span></span> <span data-ttu-id="06f24-105">同期コードを非同期コードにするには、同期メソッドの代わりに非同期メソッドを呼び出して、コードにいくつかのキーワードを追加するだけで済みます。</span><span class="sxs-lookup"><span data-stu-id="06f24-105">To make synchronous code asynchronous, you just call an asynchronous method instead of a synchronous method and add a few keywords to the code.</span></span>  
   
- ファイル アクセスの呼び出しを非同期処理を追加するために、次の理由を考慮することがあります。  
+ <span data-ttu-id="06f24-106">ファイル アクセスの呼び出しに非同期性を適用する利点には、次のようなものがあります。</span><span class="sxs-lookup"><span data-stu-id="06f24-106">You might consider the following reasons for adding asynchrony to file access calls:</span></span>  
   
--   非同期性により、UI アプリケーション応答性の高い、操作を起動する UI スレッドが他の作業を実行するためです。 コードを UI スレッドで実行する必要があります (たとえば、50 を超えるミリ秒) の長い時間がかかること、UI がフリーズ、I/O が完了して、UI スレッドをもう一度キーボードを処理およびマウス入力やその他のイベントまで。  
+-   <span data-ttu-id="06f24-107">非同期性により、UI アプリケーションの応答性が向上します。非同期処理を開始した UI スレッドが他の処理を実行できるためです。</span><span class="sxs-lookup"><span data-stu-id="06f24-107">Asynchrony makes UI applications more responsive because the UI thread that launches the operation can perform other work.</span></span> <span data-ttu-id="06f24-108">UI スレッドが、時間のかかるコード、たとえば 50 ミリ秒を超えるコードを実行する必要がある場合、I/O が完了して、UI スレッドがキーボードやマウス入力などのイベントを再度処理できるようになるまで、UI が停止することがあります。</span><span class="sxs-lookup"><span data-stu-id="06f24-108">If the UI thread must execute code that takes a long time (for example, more than 50 milliseconds), the UI may freeze until the I/O is complete and the UI thread can again process keyboard and mouse input and other events.</span></span>  
   
--   非同期処理では、ASP.NET のスケーラビリティおよびその他のサーバー ベースのアプリケーションがスレッドの必要性を減らすことによって向上します。 アプリケーションが応答ごとに専用のスレッドを使用して、1000 単位の要求が同時に処理されている場合は、3 桁のスレッドが必要です。 多くの場合、非同期操作は、待機中のスレッドを使用する必要ありません。 既存の I/O 完了スレッドは、最後に簡単に、使用します。  
+-   <span data-ttu-id="06f24-109">非同期性を適用すると、スレッドの必要性が軽減され、ASP.NET などのサーバー ベースのアプリケーションのスケーラビリティが向上します。</span><span class="sxs-lookup"><span data-stu-id="06f24-109">Asynchrony improves the scalability of ASP.NET and other server-based applications by reducing the need for threads.</span></span> <span data-ttu-id="06f24-110">アプリケーションが応答ごとに専用スレッドを使用している場合、1,000 個の要求を同時に処理するには、1,000 個のスレッドが必要です。</span><span class="sxs-lookup"><span data-stu-id="06f24-110">If the application uses a dedicated thread per response and a thousand requests are being handled simultaneously, a thousand threads are needed.</span></span> <span data-ttu-id="06f24-111">非同期処理では、待機中にスレッドを使用する必要がほとんどありません。</span><span class="sxs-lookup"><span data-stu-id="06f24-111">Asynchronous operations often don’t need to use a thread during the wait.</span></span> <span data-ttu-id="06f24-112">既存の I/O 完了スレッドが最後に少しだけ使用されます。</span><span class="sxs-lookup"><span data-stu-id="06f24-112">They use the existing I/O completion thread briefly at the end.</span></span>  
   
--   ファイル アクセス操作の待機時間は、現在の状況では、非常に少ない可能性がありますが、待機時間は大幅に、将来増加します。 たとえば、世界中であるサーバーにファイルを移動することがあります。  
+-   <span data-ttu-id="06f24-113">現状ではファイル アクセス操作の待機時間が非常に短くても、将来に大幅に長くなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="06f24-113">The latency of a file access operation might be very low under current conditions, but the latency may greatly increase in the future.</span></span> <span data-ttu-id="06f24-114">たとえば、地球の裏側にあるサーバーにファイルが移動される場合があります。</span><span class="sxs-lookup"><span data-stu-id="06f24-114">For example, a file may be moved to a server that's across the world.</span></span>  
   
--   追加された非同期機能を使用するオーバーヘッドは小さいです。  
+-   <span data-ttu-id="06f24-115">非同期機能の使用に伴うオーバーヘッドはわずかです。</span><span class="sxs-lookup"><span data-stu-id="06f24-115">The added overhead of using the Async feature is small.</span></span>  
   
--   非同期タスクは、並列で簡単に実行できます。  
+-   <span data-ttu-id="06f24-116">非同期タスクは簡単に並列実行できます。</span><span class="sxs-lookup"><span data-stu-id="06f24-116">Asynchronous tasks can easily be run in parallel.</span></span>  
   
-## <a name="running-the-examples"></a>例の実行  
- このトピックの例を実行するには、作成、 **WPF アプリケーション**または**Windows フォーム アプリケーション**し、追加、**ボタン**します。 ボタンの`Click`イベント、それぞれの例に最初のメソッドの呼び出しを追加します。  
+## <a name="running-the-examples"></a><span data-ttu-id="06f24-117">例の実行</span><span class="sxs-lookup"><span data-stu-id="06f24-117">Running the Examples</span></span>  
+ <span data-ttu-id="06f24-118">このトピックの例を実行するには、**WPF アプリケーション**または **Windows フォーム アプリケーション**を作成し、**ボタン**を追加します。</span><span class="sxs-lookup"><span data-stu-id="06f24-118">To run the examples in this topic, you can create a **WPF Application** or a **Windows Forms Application** and then add a **Button**.</span></span> <span data-ttu-id="06f24-119">ボタンの `Click` イベントに、それぞれの例で最初のメソッドの呼び出しを追加してください。</span><span class="sxs-lookup"><span data-stu-id="06f24-119">In the button's `Click` event, add a call to the first method in each example.</span></span>  
   
- 次の例については、次が含まれる`Imports`ステートメントです。  
+ <span data-ttu-id="06f24-120">以降の例には、次の `Imports` ステートメントを含めてください。</span><span class="sxs-lookup"><span data-stu-id="06f24-120">In the following examples, include the following `Imports` statements.</span></span>  
   
 ```vb  
 Imports System  
@@ -55,13 +47,13 @@ Imports System.Text
 Imports System.Threading.Tasks  
 ```  
   
-## <a name="use-of-the-filestream-class"></a>FileStream クラスの使用方法  
- このトピックで例として、<xref:System.IO.FileStream>クラスで、オペレーティング システム レベルで発生する非同期 I/O を原因となるオプションがあります</xref:System.IO.FileStream>。 このオプションを使用すると、多くの場合、ThreadPool のスレッドのブロックを回避できます。 指定するには、このオプションを有効にする、`useAsync=true`または`options=FileOptions.Asynchronous`のコンス トラクター呼び出しの引数。  
+## <a name="use-of-the-filestream-class"></a><span data-ttu-id="06f24-121">FileStream クラスの使用</span><span class="sxs-lookup"><span data-stu-id="06f24-121">Use of the FileStream Class</span></span>  
+ <span data-ttu-id="06f24-122">このトピックの例では、<xref:System.IO.FileStream> クラスを使用します。このクラスには、非同期 I/O をオペレーティング システム レベルで発生させるオプションが用意されています。</span><span class="sxs-lookup"><span data-stu-id="06f24-122">The examples in this topic use the <xref:System.IO.FileStream> class, which has an option that causes asynchronous I/O to occur at the operating system level.</span></span> <span data-ttu-id="06f24-123">このオプションを使用すると、多くのケースで ThreadPool スレッドがブロックされるのを回避できます。</span><span class="sxs-lookup"><span data-stu-id="06f24-123">By using this option, you can avoid blocking a ThreadPool thread in many cases.</span></span> <span data-ttu-id="06f24-124">このオプションを有効にするには、コンストラクター呼び出しで `useAsync=true` または `options=FileOptions.Asynchronous` 引数を指定します。</span><span class="sxs-lookup"><span data-stu-id="06f24-124">To enable this option, you specify the `useAsync=true` or `options=FileOptions.Asynchronous` argument in the constructor call.</span></span>  
   
- <xref:System.IO.StreamReader><xref:System.IO.StreamWriter>ファイル パスを指定して直接開くかどうか</xref:System.IO.StreamWriter></xref:System.IO.StreamReader>と、このオプションを使用することはできません。 そこで指定する場合、このオプションを使用する、<xref:System.IO.Stream>を<xref:System.IO.FileStream>クラスを開く</xref:System.IO.FileStream></xref:System.IO.Stream>。 非同期呼び出しがあること UI アプリで高速なスレッド プールのスレッドがブロックされている場合でも、待機中に UI スレッドがブロックされていないので注意してください。  
+ <span data-ttu-id="06f24-125">ファイル パスを指定して <xref:System.IO.StreamReader> と <xref:System.IO.StreamWriter> を直接開いた場合、このオプションは使用できません。</span><span class="sxs-lookup"><span data-stu-id="06f24-125">You can’t use this option with <xref:System.IO.StreamReader> and <xref:System.IO.StreamWriter> if you open them directly by specifying a file path.</span></span> <span data-ttu-id="06f24-126">一方、<xref:System.IO.FileStream> クラスによって開かれた <xref:System.IO.Stream> を使用する場合は、このオプションを使用できます。</span><span class="sxs-lookup"><span data-stu-id="06f24-126">However, you can use this option if you provide them a <xref:System.IO.Stream> that the <xref:System.IO.FileStream> class opened.</span></span> <span data-ttu-id="06f24-127">UI アプリでは、ThreadPool スレッドがブロックされた場合でも、非同期呼び出しのほうが高速です。これは、UI スレッドは待機中にブロックされないためです。</span><span class="sxs-lookup"><span data-stu-id="06f24-127">Note that asynchronous calls are faster in UI apps even if a ThreadPool thread is blocked, because the UI thread isn’t blocked during the wait.</span></span>  
   
-## <a name="writing-text"></a>テキストの書き込み  
- 次の例では、テキストをファイルに書き込みます。 Await ステートメントのそれぞれで、メソッドがすぐに終了します。 ファイル I/O が完了すると、メソッドは await ステートメントに続くステートメントから再開されます。 Async 修飾子が await ステートメントを使用するメソッドの定義に注意してください。  
+## <a name="writing-text"></a><span data-ttu-id="06f24-128">テキストの書き込み</span><span class="sxs-lookup"><span data-stu-id="06f24-128">Writing Text</span></span>  
+ <span data-ttu-id="06f24-129">次の例では、ファイルにテキストを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="06f24-129">The following example writes text to a file.</span></span> <span data-ttu-id="06f24-130">各 await ステートメントに達すると、メソッドは直ちに終了します。</span><span class="sxs-lookup"><span data-stu-id="06f24-130">At each await statement, the method immediately exits.</span></span> <span data-ttu-id="06f24-131">ファイル I/O が完了すると、メソッドは await ステートメントの後のステートメントから再開します。</span><span class="sxs-lookup"><span data-stu-id="06f24-131">When the file I/O is complete, the method resumes at the statement that follows the await statement.</span></span> <span data-ttu-id="06f24-132">await ステートメントを使用するメソッドの定義に async 修飾子が含まれていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="06f24-132">Note that the async modifier is in the definition of methods that use the await statement.</span></span>  
   
 ```vb  
 Public Async Sub ProcessWrite()  
@@ -83,17 +75,17 @@ Private Async Function WriteTextAsync(filePath As String, text As String) As Tas
 End Function  
 ```  
   
- 元の例には、ステートメントが含まれている`Await sourceStream.WriteAsync(encodedText, 0, encodedText.Length)`、これは、次の 2 つのステートメントの省略形。  
+ <span data-ttu-id="06f24-133">元の例には `Await sourceStream.WriteAsync(encodedText, 0, encodedText.Length)` ステートメントがあります。これは、次の 2 つのステートメントの省略形です。</span><span class="sxs-lookup"><span data-stu-id="06f24-133">The original example has the statement `Await sourceStream.WriteAsync(encodedText, 0, encodedText.Length)`, which is a contraction of the following two statements:</span></span>  
   
 ```vb  
 Dim theTask As Task = sourceStream.WriteAsync(encodedText, 0, encodedText.Length)  
 Await theTask  
 ```  
   
- 最初のステートメントは、タスクを返し、ファイル処理が開始します。 Await で&2; 番目のステートメントをすぐに終了し、別のタスクを返すメソッドです。 ファイルの後で処理が完了したら、実行が await の次のステートメントに返します。 詳細については、次を参照してください。[非同期プログラム (Visual Basic) の制御フロー](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)します。  
+ <span data-ttu-id="06f24-134">最初のステートメントはタスクを返し、ファイル処理を開始します。</span><span class="sxs-lookup"><span data-stu-id="06f24-134">The first statement returns a task and causes file processing to start.</span></span> <span data-ttu-id="06f24-135">await が含まれた 2 番目のステートメントによって、メソッドが直ちに終了し、別のタスクを返します。</span><span class="sxs-lookup"><span data-stu-id="06f24-135">The second statement with the await causes the method to immediately exit and return a different task.</span></span> <span data-ttu-id="06f24-136">ファイル処理が完了すると、await の後のステートメントに実行が戻ります。</span><span class="sxs-lookup"><span data-stu-id="06f24-136">When the file processing later completes, execution returns to the statement that follows the await.</span></span> <span data-ttu-id="06f24-137">詳細については、次を参照してください。 [(Visual Basic) の非同期プログラムにおける制御フロー](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)です。</span><span class="sxs-lookup"><span data-stu-id="06f24-137">For more information, see  [Control Flow in Async Programs (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md).</span></span>  
   
-## <a name="reading-text"></a>テキストの読み取り  
- 次の例では、ファイルからテキストを読み取ります。 テキストがバッファーに格納され、この場合、保存されます<xref:System.Text.StringBuilder>。</xref:System.Text.StringBuilder> 異なり、前の例で await の評価値を生成します。 <xref:System.IO.Stream.ReadAsync%2A>メソッドが返される、 <xref:System.Threading.Tasks.Task> \< <xref:System.Int32>> await の評価を生成するため、`Int32`値 (`numRead`)、操作が完了した後</xref:System.Int32></xref:System.Threading.Tasks.Task></xref:System.IO.Stream.ReadAsync%2A>。 詳細については、次を参照してください。 [Async を返す型 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)します。  
+## <a name="reading-text"></a><span data-ttu-id="06f24-138">テキストの読み取り</span><span class="sxs-lookup"><span data-stu-id="06f24-138">Reading Text</span></span>  
+ <span data-ttu-id="06f24-139">次の例では、ファイルからテキストを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="06f24-139">The following example reads text from a file.</span></span> <span data-ttu-id="06f24-140">テキストはバッファーに格納されます。この例では <xref:System.Text.StringBuilder> に配置されます。</span><span class="sxs-lookup"><span data-stu-id="06f24-140">The text is buffered and, in this case, placed into a <xref:System.Text.StringBuilder>.</span></span> <span data-ttu-id="06f24-141">前の例と異なり、await の評価で値が生成されます。</span><span class="sxs-lookup"><span data-stu-id="06f24-141">Unlike in the previous example, the evaluation of the await produces a value.</span></span> <span data-ttu-id="06f24-142"><xref:System.IO.Stream.ReadAsync%2A> メソッドによって <xref:System.Threading.Tasks.Task>\<<xref:System.Int32> が返されます。処理の完了後、await の評価によって `Int32` 値 (`numRead`) が生成されます。</span><span class="sxs-lookup"><span data-stu-id="06f24-142">The <xref:System.IO.Stream.ReadAsync%2A> method returns a <xref:System.Threading.Tasks.Task>\<<xref:System.Int32>>, so the evaluation of the await produces an `Int32` value (`numRead`) after the operation completes.</span></span> <span data-ttu-id="06f24-143">詳細については、次を参照してください。 [Async 戻り値の型 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)です。</span><span class="sxs-lookup"><span data-stu-id="06f24-143">For more information, see [Async Return Types (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md).</span></span>  
   
 ```vb  
 Public Async Sub ProcessRead()  
@@ -134,12 +126,12 @@ Private Async Function ReadTextAsync(filePath As String) As Task(Of String)
 End Function  
 ```  
   
-## <a name="parallel-asynchronous-io"></a>並列の非同期 I/O  
- 次の例では、10 個のテキスト ファイルを記述して並列処理を示します。 ファイルごとに、<xref:System.IO.Stream.WriteAsync%2A>メソッドは、タスクの一覧に追加するタスクを返します</xref:System.IO.Stream.WriteAsync%2A>。 `Await Task.WhenAll(tasks)`ステートメントは、メソッドを終了し、すべてのタスクのファイルの処理がメソッド内の再開を完了します。  
+## <a name="parallel-asynchronous-io"></a><span data-ttu-id="06f24-144">並列非同期 I/O</span><span class="sxs-lookup"><span data-stu-id="06f24-144">Parallel Asynchronous I/O</span></span>  
+ <span data-ttu-id="06f24-145">次の例では、10 個のテキスト ファイルを記述する並列処理を示します。</span><span class="sxs-lookup"><span data-stu-id="06f24-145">The following example demonstrates parallel processing by writing 10 text files.</span></span> <span data-ttu-id="06f24-146"><xref:System.IO.Stream.WriteAsync%2A> メソッドは、ファイルごとにタスクを返します。タスクはタスクの一覧に追加されます。</span><span class="sxs-lookup"><span data-stu-id="06f24-146">For each file, the <xref:System.IO.Stream.WriteAsync%2A> method returns a task that is then added to a list of tasks.</span></span> <span data-ttu-id="06f24-147">`Await Task.WhenAll(tasks)` ステートメントはメソッドを終了し、すべてのタスクのファイル処理が完了すると、メソッド内で再開します。</span><span class="sxs-lookup"><span data-stu-id="06f24-147">The `Await Task.WhenAll(tasks)` statement exits the method and resumes within the method when file processing is complete for all of the tasks.</span></span>  
   
- この例ではすべて<xref:System.IO.FileStream>のインスタンス、`Finally`タスクが完了したらをブロックします</xref:System.IO.FileStream>。 各`FileStream`で作成した代わりに、`Imports`ステートメント、`FileStream`タスクが完了する前に破棄することがあります。  
+ <span data-ttu-id="06f24-148">この例では、タスクの完了後、`Finally` ブロックのすべての <xref:System.IO.FileStream> インスタンスを閉じます。</span><span class="sxs-lookup"><span data-stu-id="06f24-148">The example closes all <xref:System.IO.FileStream> instances in a `Finally` block after the tasks are complete.</span></span> <span data-ttu-id="06f24-149">`Imports` ステートメントで `FileStream` が作成された場合は、タスクが完了する前に `FileStream` が破棄されることがあります。</span><span class="sxs-lookup"><span data-stu-id="06f24-149">If each `FileStream` was instead created in a `Imports` statement, the `FileStream` might be disposed of before the task was complete.</span></span>  
   
- すべてのパフォーマンスの向上が並列処理と非同期処理ではないからほぼ完全ことに注意してください。 非同期性のメリットは、複数のスレッドせず拘束されないことと、ユーザー インターフェイス スレッドせず拘束されないことです。  
+ <span data-ttu-id="06f24-150">パフォーマンスの向上のほとんどが、非同期処理ではなく並列処理によって実現していることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="06f24-150">Note that any performance boost is almost entirely from the parallel processing and not the asynchronous processing.</span></span> <span data-ttu-id="06f24-151">非同期性の利点は、複数のスレッドやユーザー インターフェイス スレッドが拘束されなくなる点にあります。</span><span class="sxs-lookup"><span data-stu-id="06f24-151">The advantages of asynchrony are that it doesn’t tie up multiple threads, and that it doesn’t tie up the user interface thread.</span></span>  
   
 ```vb  
 Public Async Sub ProcessWriteMult()  
@@ -175,9 +167,9 @@ Public Async Sub ProcessWriteMult()
 End Sub  
 ```  
   
- 使用する場合、<xref:System.IO.Stream.WriteAsync%2A>と<xref:System.IO.Stream.ReadAsync%2A>メソッドを指定できます、<xref:System.Threading.CancellationToken>を操作の途中で取り消すことができます</xref:System.Threading.CancellationToken></xref:System.IO.Stream.ReadAsync%2A></xref:System.IO.Stream.WriteAsync%2A>。 詳細については、次を参照してください。[微調整 Your Async アプリケーション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)と[マネージ スレッドのキャンセル](http://msdn.microsoft.com/library/eea11fe5-d8b0-4314-bb5d-8a58166fb1c3)します。  
+ <span data-ttu-id="06f24-152"><xref:System.IO.Stream.WriteAsync%2A> メソッドと <xref:System.IO.Stream.ReadAsync%2A> メソッドを使用すると、<xref:System.Threading.CancellationToken> を指定して、途中で処理をキャンセルすることができます。</span><span class="sxs-lookup"><span data-stu-id="06f24-152">When using the <xref:System.IO.Stream.WriteAsync%2A> and <xref:System.IO.Stream.ReadAsync%2A> methods, you can specify a <xref:System.Threading.CancellationToken>, which you can use to cancel the operation mid-stream.</span></span> <span data-ttu-id="06f24-153">詳細については、次を参照してください。[非同期アプリケーションの微調整 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)と[マネージ スレッドのキャンセル](../../../../standard/threading/cancellation-in-managed-threads.md)です。</span><span class="sxs-lookup"><span data-stu-id="06f24-153">For more information, see [Fine-Tuning Your Async Application (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md) and [Cancellation in Managed Threads](../../../../standard/threading/cancellation-in-managed-threads.md).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [非同期プログラミングを Async と Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)   
- [非同期の戻り値の型 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)   
- [(Visual Basic) の非同期プログラムにおける制御フロー](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)
+## <a name="see-also"></a><span data-ttu-id="06f24-154">関連項目</span><span class="sxs-lookup"><span data-stu-id="06f24-154">See Also</span></span>  
+ [<span data-ttu-id="06f24-155">Async および Await を使用した非同期プログラミング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="06f24-155">Asynchronous Programming with Async and Await (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/async/index.md)  
+ [<span data-ttu-id="06f24-156">非同期の戻り値の型 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="06f24-156">Async Return Types (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)  
+ [<span data-ttu-id="06f24-157">非同期プログラムにおける制御フロー (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="06f24-157">Control Flow in Async Programs (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)

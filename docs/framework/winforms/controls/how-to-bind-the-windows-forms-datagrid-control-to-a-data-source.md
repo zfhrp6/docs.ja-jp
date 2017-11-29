@@ -1,73 +1,74 @@
 ---
-title: "方法 : データ ソースに Windows フォーム DataGrid コントロールをバインドする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "バインド コントロール"
-  - "バインド コントロール, DataGrid コントロール"
-  - "データ バインド, DataGrid コントロール"
-  - "データ バインド コントロール, DataGrid"
-  - "DataGrid コントロール [Windows フォーム], データ バインド"
-  - "データセット [Windows フォーム], バインド (DataGrid コントロールに)"
-  - "Windows フォーム コントロール, データ バインド"
+title: "方法 : データ ソースに Windows フォーム DataGrid コントロールをバインドする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- datasets [Windows Forms], binding to DataGrid control
+- data binding [Windows Forms], DataGrid control
+- DataGrid control [Windows Forms], data binding
+- bound controls [Windows Forms], DataGrid control
+- Windows Forms controls, data binding
+- bound controls [Windows Forms]
+- data-bound controls [Windows Forms], DataGrid
 ms.assetid: 128cdb07-dfd3-4d60-9d6a-902847667c36
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 185c094b32f0de7a1a26da144601961d92a625b9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : データ ソースに Windows フォーム DataGrid コントロールをバインドする
+# <a name="how-to-bind-the-windows-forms-datagrid-control-to-a-data-source"></a><span data-ttu-id="73cbc-102">方法 : データ ソースに Windows フォーム DataGrid コントロールをバインドする</span><span class="sxs-lookup"><span data-stu-id="73cbc-102">How to: Bind the Windows Forms DataGrid Control to a Data Source</span></span>
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
+>  <span data-ttu-id="73cbc-103"><xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。</span><span class="sxs-lookup"><span data-stu-id="73cbc-103">The <xref:System.Windows.Forms.DataGridView> control replaces and adds functionality to the <xref:System.Windows.Forms.DataGrid> control; however, the <xref:System.Windows.Forms.DataGrid> control is retained for both backward compatibility and future use, if you choose.</span></span> <span data-ttu-id="73cbc-104">詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="73cbc-104">For more information, see [Differences Between the Windows Forms DataGridView and DataGrid Controls](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).</span></span>  
   
- Windows フォームの <xref:System.Windows.Forms.DataGrid> コントロールは、データ ソースの情報を表示するようにデザインされています。  実行時には <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> メソッドを呼び出してコントロールをバインドします。  各種データ ソースのデータを表示できますが、最も一般的なソースはデータセットとデータ ビューです。  
+ <span data-ttu-id="73cbc-105">Windows フォーム<xref:System.Windows.Forms.DataGrid>コントロールは具体的には、データ ソースから情報を表示するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="73cbc-105">The Windows Forms <xref:System.Windows.Forms.DataGrid> control is specifically designed to display information from a data source.</span></span> <span data-ttu-id="73cbc-106">実行時に呼び出すことによって、コントロールをバインドする、<xref:System.Windows.Forms.DataGrid.SetDataBinding%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="73cbc-106">You bind the control at run time by calling the <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> method.</span></span> <span data-ttu-id="73cbc-107">さまざまなデータ ソースからデータを表示できますが、最も一般的なソース、データセットとデータのビューです。</span><span class="sxs-lookup"><span data-stu-id="73cbc-107">Although you can display data from a variety of data sources, the most typical sources are datasets and data views.</span></span>  
   
-### プログラムによって DataGrid コントロールをデータ連結するには  
+### <a name="to-data-bind-the-datagrid-control-programmatically"></a><span data-ttu-id="73cbc-108">DataGrid コントロールをプログラムでデータ バインドする</span><span class="sxs-lookup"><span data-stu-id="73cbc-108">To data-bind the DataGrid control programmatically</span></span>  
   
-1.  データセットにデータを読み込むコードを記述します。  
+1.  <span data-ttu-id="73cbc-109">データセットを読み込むコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="73cbc-109">Write code to fill the dataset.</span></span>  
   
-     データ ソースが、データセット テーブルに基づくデータセットまたはデー タビューの場合は、そのデータセットにデータを読み込むためのコードをフォームに追加します。  
+     <span data-ttu-id="73cbc-110">データ ソースが、データセットまたはデータセットのテーブルに基づいたデータ ビューの場合は、データセットへのデータ、フォームにコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="73cbc-110">If the data source is a dataset or a data view based on a dataset table, add code to the form to fill the dataset.</span></span>  
   
-     実際に使用するコードは、データセットがデータをどこで取得するかに依存します。  データセットにデータベースのデータを直接読み込む場合は、通常はデータ アダプターの `Fill`  メソッドを呼び出します。次の例では、`DsCategories1` というデータセットにデータを読み込んでいます。  
+     <span data-ttu-id="73cbc-111">実際に使用するコードは、データセットがデータを取得する場所によって異なります。</span><span class="sxs-lookup"><span data-stu-id="73cbc-111">The exact code you use depends on where the dataset is getting data.</span></span> <span data-ttu-id="73cbc-112">データセットは、データベースから直接登録されているが、通常を呼び出した場合、`Fill`という名前のデータセットに読み込まれる次の例のように、データ アダプターの`DsCategories1`:</span><span class="sxs-lookup"><span data-stu-id="73cbc-112">If the dataset is being populated directly from a database, you typically call the `Fill` method of a data adapter, as in the following example, which populates a dataset called `DsCategories1`:</span></span>  
   
     ```vb  
     sqlDataAdapter1.Fill(DsCategories1)  
-  
     ```  
   
     ```csharp  
     sqlDataAdapter1.Fill(DsCategories1);  
-  
     ```  
   
     ```cpp  
     sqlDataAdapter1->Fill(dsCategories1);  
     ```  
   
-     XML Web サービスのデータをデータセットに読み込む場合は、通常、サービスのインスタンスを作成するコードを記述し、データセットを返すメソッドのいずれかを呼び出します。  その後、XML Web サービスからのデータセットをローカルのデータセットにマージします。  次の例は、`CategoriesService` という XML Web サービスのインスタンスを作成し、その `GetCategories` メソッドを呼び出し、結果のデータセットを `DsCategories1` というローカル データセットにマージする方法を示します。  
+     <span data-ttu-id="73cbc-113">場合は、データセットは、XML Web サービスから指定されている、通常、コードでサービスのインスタンスを作成し、データセットを返すメソッドのいずれかを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="73cbc-113">If the dataset is being filled from an XML Web service, you typically create an instance of the service in your code and then call one of its methods to return a dataset.</span></span> <span data-ttu-id="73cbc-114">XML Web サービスからのデータセットをマージするには、ローカルのデータセットにします。</span><span class="sxs-lookup"><span data-stu-id="73cbc-114">You then merge the dataset from the XML Web service into your local dataset.</span></span> <span data-ttu-id="73cbc-115">次の例と呼ばれる XML Web サービスのインスタンスを作成する方法を示しています`CategoriesService`を呼び出してその`GetCategories`メソッド、およびローカルのデータセットに結果のデータセットと呼ばれるマージ`DsCategories1`:</span><span class="sxs-lookup"><span data-stu-id="73cbc-115">The following example shows how you can create an instance of an XML Web service called `CategoriesService`, call its `GetCategories` method, and merge the resulting dataset into a local dataset called `DsCategories1`:</span></span>  
   
     ```vb  
     Dim ws As New MyProject.localhost.CategoriesService()  
     ws.Credentials = System.Net.CredentialCache.DefaultCredentials  
     DsCategories1.Merge(ws.GetCategories())  
-  
     ```  
   
     ```csharp  
     MyProject.localhost.CategoriesService ws = new MyProject.localhost.CategoriesService();  
     ws.Credentials = System.Net.CredentialCache.DefaultCredentials;  
     DsCategories1.Merge(ws.GetCategories());  
-  
     ```  
   
     ```cpp  
@@ -77,47 +78,43 @@ caps.handback.revision: 17
     dsCategories1->Merge(ws->GetCategories());  
     ```  
   
-2.  データ ソースとデータ メンバーを引数として、<xref:System.Windows.Forms.DataGrid> コントロールの <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> メソッドを呼び出します。  データ メンバーを明示的に渡す必要がない場合は、空の文字列を渡します。  
+2.  <span data-ttu-id="73cbc-116">呼び出す、<xref:System.Windows.Forms.DataGrid>コントロールの<xref:System.Windows.Forms.DataGrid.SetDataBinding%2A>メソッド、データ ソースとデータ メンバーを渡します。</span><span class="sxs-lookup"><span data-stu-id="73cbc-116">Call the <xref:System.Windows.Forms.DataGrid> control's <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> method, passing it the data source and a data member.</span></span> <span data-ttu-id="73cbc-117">データ メンバーを明示的に渡す必要がない場合は、空の文字列を渡します。</span><span class="sxs-lookup"><span data-stu-id="73cbc-117">If you do not need to explicitly pass a data member, pass an empty string.</span></span>  
   
     > [!NOTE]
-    >  グリッドのバインドを初めて実行する場合は、このコントロールの <xref:System.Windows.Forms.DataGrid.DataSource%2A> プロパティおよび <xref:System.Windows.Forms.DataGrid.DataMember%2A> プロパティを設定できます。  ただし、これらのプロパティは、一度設定するとリセットできません。  したがって、常に <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> メソッドを使用することをお勧めします。  
+    >  <span data-ttu-id="73cbc-118">最初に、グリッドをバインドする場合は、コントロールを設定することができます<xref:System.Windows.Forms.DataGrid.DataSource%2A>と<xref:System.Windows.Forms.DataGrid.DataMember%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="73cbc-118">If you are binding the grid for the first time, you can set the control's <xref:System.Windows.Forms.DataGrid.DataSource%2A> and <xref:System.Windows.Forms.DataGrid.DataMember%2A> properties.</span></span> <span data-ttu-id="73cbc-119">ただし、これらを設定したら、これらのプロパティをリセットできません。</span><span class="sxs-lookup"><span data-stu-id="73cbc-119">However, you cannot reset these properties once they have been set.</span></span> <span data-ttu-id="73cbc-120">そのため、お勧め必ず使用すること、<xref:System.Windows.Forms.DataGrid.SetDataBinding%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="73cbc-120">Therefore, it is recommended that you always use the <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> method.</span></span>  
   
-     次の例は、プログラムで `DsCustomers1` というデータセットの Customers テーブルにバインドする方法を示しています。  
+     <span data-ttu-id="73cbc-121">次の例は、プログラムによってという名前のデータセット内の Customers テーブルにバインドする方法を示しています`DsCustomers1`:。</span><span class="sxs-lookup"><span data-stu-id="73cbc-121">The following example shows how you can programmatically bind to the Customers table in a dataset called `DsCustomers1`:</span></span>  
   
     ```vb  
     DataGrid1.SetDataBinding(DsCustomers1, "Customers")  
-  
     ```  
   
     ```csharp  
     DataGrid1.SetDataBinding(DsCustomers1, "Customers");  
-  
     ```  
   
     ```cpp  
     dataGrid1->SetDataBinding(dsCustomers1, "Customers");  
     ```  
   
-     データセットに Customers テーブル以外のテーブルが存在しない場合は、代わりに次の方法でグリッドを連結できます。  
+     <span data-ttu-id="73cbc-122">Customers テーブルがデータセット内の唯一のテーブルの場合は、でしたまたはグリッドを連結するこの方法。</span><span class="sxs-lookup"><span data-stu-id="73cbc-122">If the Customers table is the only table in the dataset, you could alternatively bind the grid this way:</span></span>  
   
     ```vb  
     DataGrid1.SetDataBinding(DsCustomers1, "")  
-  
     ```  
   
     ```csharp  
     DataGrid1.SetDataBinding(DsCustomers1, "");  
-  
     ```  
   
     ```cpp  
     dataGrid1->SetDataBinding(dsCustomers1, "");  
     ```  
   
-3.  \(必要に応じて\) 適切なテーブル スタイルと列スタイルをグリッドに追加します。  テーブル スタイルがなくてもテーブルを表示できますが、その場合は最低限の書式だけが適用され、すべての列が表示されます。  
+3.  <span data-ttu-id="73cbc-123">(省略可能)グリッドに適切なテーブルのスタイルおよび列のスタイルを追加します。</span><span class="sxs-lookup"><span data-stu-id="73cbc-123">(Optional) Add the appropriate table styles and column styles to the grid.</span></span> <span data-ttu-id="73cbc-124">テーブルのスタイルがない場合、テーブルが表示されますが、最低限の書式とすべての列が表示されます。</span><span class="sxs-lookup"><span data-stu-id="73cbc-124">If there are no table styles, you will see the table, but with minimal formatting and with all columns visible.</span></span>  
   
-## 参照  
- [DataGrid コントロールの概要](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)   
- [方法 : Windows フォーム DataGrid コントロールにテーブルと列を追加する](../../../../docs/framework/winforms/controls/how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)   
- [DataGrid コントロール](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)   
- [Windows フォームでのデータ バインド](../../../../docs/framework/winforms/windows-forms-data-binding.md)
+## <a name="see-also"></a><span data-ttu-id="73cbc-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="73cbc-125">See Also</span></span>  
+ [<span data-ttu-id="73cbc-126">DataGrid コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="73cbc-126">DataGrid Control Overview</span></span>](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)  
+ [<span data-ttu-id="73cbc-127">方法: Windows フォーム DataGrid コントロールにテーブルと列を追加する</span><span class="sxs-lookup"><span data-stu-id="73cbc-127">How to: Add Tables and Columns to the Windows Forms DataGrid Control</span></span>](../../../../docs/framework/winforms/controls/how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)  
+ [<span data-ttu-id="73cbc-128">DataGrid コントロール</span><span class="sxs-lookup"><span data-stu-id="73cbc-128">DataGrid Control</span></span>](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  
+ [<span data-ttu-id="73cbc-129">Windows フォームでのデータ バインディング</span><span class="sxs-lookup"><span data-stu-id="73cbc-129">Windows Forms Data Binding</span></span>](../../../../docs/framework/winforms/windows-forms-data-binding.md)

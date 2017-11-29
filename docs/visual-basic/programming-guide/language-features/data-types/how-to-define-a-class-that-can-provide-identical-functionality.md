@@ -1,93 +1,92 @@
 ---
-title: "方法: 複数のデータ型に同一の機能を提供できるクラスを定義する (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "データ型引数、使用"
-  - "型パラメーター、定義"
-  - "データ型引数、定義"
-  - "引数 [Visual Basic]、データ型"
-  - "Of キーワード、使用"
-  - "制約、Visual Basic ジェネリック型"
-  - "ジェネリック パラメーター"
-  - "データ型パラメーター"
-  - "データ型パラメーター、使用"
-  - "ジェネリック [Visual Basic]、型パラメーターを持つクラスを定義"
-  - "データ型 [Visual Basic]、パラメーターとしての"
-  - "データ型 [Visual Basic]、引数としての"
-  - "パラメーター、型"
-  - "型引数"
-  - "型 [Visual Basic]、ジェネリック"
-  - "パラメーター、ジェネリック"
-  - "型パラメーター"
-  - "データ型引数"
-  - "パラメーター、データ型"
-  - "ジェネリック [Visual Basic]、ジェネリック型の定義"
-  - "データ型パラメーター、定義"
-  - "型引数、定義"
-  - "引数 [Visual Basic]、型"
+title: "方法: 複数のデータ型に同一の機能を提供できるクラスを定義する (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- data type arguments [Visual Basic], using
+- type parameters [Visual Basic], defining
+- data type arguments [Visual Basic], defining
+- arguments [Visual Basic], data types
+- Of keyword [Visual Basic], using
+- constraints, Visual Basic generic types
+- generic parameters
+- data type parameters
+- data type parameters [Visual Basic], using
+- generics [Visual Basic], defining classes with type parameters
+- data types [Visual Basic], as parameters
+- data types [Visual Basic], as arguments
+- parameters [Visual Basic], type
+- type arguments
+- types [Visual Basic], generic
+- parameters [Visual Basic], generic
+- type parameters
+- data type arguments
+- parameters [Visual Basic], data type
+- generics [Visual Basic], defining generic types
+- data type parameters [Visual Basic], defining
+- type arguments [Visual Basic], defining
+- arguments [Visual Basic], type
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
-caps.latest.revision: 29
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 29
+caps.latest.revision: "29"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 7cc2563f193fba9f9e30fcdfd5ea2766be16ba63
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: 複数のデータ型に同一の機能を提供できるクラスを定義する (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-複数の異なるデータ型に同一の機能を提供するオブジェクトを作成するために使用できるクラスを定義できます。 これを行うには、1 つ以上の*型パラメーター*を定義内で指定します。 このようなクラスは、さまざまなデータ型を使用するオブジェクトのテンプレートとして使用できます。 この方法で定義したクラスは、*ジェネリック クラス*と呼ばれます。  
+# <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a><span data-ttu-id="1781e-102">方法: 複数のデータ型に同一の機能を提供できるクラスを定義する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1781e-102">How to: Define a Class That Can Provide Identical Functionality on Different Data Types (Visual Basic)</span></span>
+<span data-ttu-id="1781e-103">複数の異なるデータ型に同一の機能を提供するオブジェクトを作成するために使用できるクラスを定義できます。</span><span class="sxs-lookup"><span data-stu-id="1781e-103">You can define a class from which you can create objects that provide identical functionality on different data types.</span></span> <span data-ttu-id="1781e-104">これを行うには、1 つ以上の *型パラメーター* を定義内で指定します。</span><span class="sxs-lookup"><span data-stu-id="1781e-104">To do this, you specify one or more *type parameters* in the definition.</span></span> <span data-ttu-id="1781e-105">このようなクラスは、さまざまなデータ型を使用するオブジェクトのテンプレートとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="1781e-105">The class can then serve as a template for objects that use various data types.</span></span> <span data-ttu-id="1781e-106">この方法で定義したクラスは、 *ジェネリック クラス*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="1781e-106">A class defined in this way is called a *generic class*.</span></span>  
   
- ジェネリック クラスを定義する利点は、クラスを一度だけ定義すれば、コードの中でそれを使って、さまざまなデータ型を使用する多くのオブジェクトを作成できることです。 これにより、クラスを `Object` 型で定義した場合よりパフォーマンスが向上します。  
+ <span data-ttu-id="1781e-107">ジェネリック クラスを定義する利点は、クラスを一度だけ定義すれば、コードの中でそれを使って、さまざまなデータ型を使用する多くのオブジェクトを作成できることです。</span><span class="sxs-lookup"><span data-stu-id="1781e-107">The advantage of defining a generic class is that you define it just once, and your code can use it to create many objects that use a wide variety of data types.</span></span> <span data-ttu-id="1781e-108">これにより、クラスを `Object` 型で定義した場合よりパフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="1781e-108">This results in better performance than defining the class with the `Object` type.</span></span>  
   
- クラスに加えて、ジェネリックの構造体、インターフェイス、プロシージャ、デリゲートを定義して利用することもできます。  
+ <span data-ttu-id="1781e-109">クラスに加えて、ジェネリックの構造体、インターフェイス、プロシージャ、デリゲートを定義して利用することもできます。</span><span class="sxs-lookup"><span data-stu-id="1781e-109">In addition to classes, you can also define and use generic structures, interfaces, procedures, and delegates.</span></span>  
   
-### 型パラメーターを持つクラスを定義するには  
+### <a name="to-define-a-class-with-a-type-parameter"></a><span data-ttu-id="1781e-110">型パラメーターを持つクラスを定義するには</span><span class="sxs-lookup"><span data-stu-id="1781e-110">To define a class with a type parameter</span></span>  
   
-1.  通常の方法でクラスを定義します。  
+1.  <span data-ttu-id="1781e-111">通常の方法でクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="1781e-111">Define the class in the normal way.</span></span>  
   
-2.  クラス名の直後に `(Of` *typeparameter*`)` を追加し、型パラメーターを指定します。  
+2.  <span data-ttu-id="1781e-112">クラス名の直後に `(Of` *typeparameter*`)` を追加し、型パラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="1781e-112">Add `(Of` *typeparameter*`)` immediately after the class name to specify a type parameter.</span></span>  
   
-3.  複数の型パラメーターがある場合は、かっこ内にコンマ区切りのリストを指定します。`Of` キーワードは繰り返さないでください。  
+3.  <span data-ttu-id="1781e-113">複数の型パラメーターがある場合は、かっこ内にコンマ区切りのリストを指定します。</span><span class="sxs-lookup"><span data-stu-id="1781e-113">If you have more than one type parameter, make a comma-separated list inside the parentheses.</span></span> <span data-ttu-id="1781e-114">`Of` キーワードは繰り返さないでください。</span><span class="sxs-lookup"><span data-stu-id="1781e-114">Do not repeat the `Of` keyword.</span></span>  
   
-4.  型パラメーターに対して単純な代入以外の操作を実行する場合は、その型パラメーターの後に `As` 句を付けて 1 つ以上の*制約*を追加します。 制約は、その型パラメーターに渡される型が、たとえば以下のような要件を満たすことを保証します。  
+4.  <span data-ttu-id="1781e-115">型パラメーターに対して単純な代入以外の操作を実行する場合は、その型パラメーターの後に `As` 句を付けて 1 つ以上の *制約*を追加します。</span><span class="sxs-lookup"><span data-stu-id="1781e-115">If your code performs operations on a type parameter other than simple assignment, follow that type parameter with an `As` clause to add one or more *constraints*.</span></span> <span data-ttu-id="1781e-116">制約は、その型パラメーターに渡される型が、たとえば以下のような要件を満たすことを保証します。</span><span class="sxs-lookup"><span data-stu-id="1781e-116">A constraint guarantees that the type supplied for that type parameter satisfies a requirement such as the following:</span></span>  
   
-    -   コードで実行する `>` などの演算をサポートする  
+    -   <span data-ttu-id="1781e-117">コードで実行する `>`などの演算をサポートする</span><span class="sxs-lookup"><span data-stu-id="1781e-117">Supports an operation, such as `>`, that your code performs</span></span>  
   
-    -   コードでアクセスするメソッドなどのメンバーをサポートする  
+    -   <span data-ttu-id="1781e-118">コードでアクセスするメソッドなどのメンバーをサポートする</span><span class="sxs-lookup"><span data-stu-id="1781e-118">Supports a member, such as a method, that your code accesses</span></span>  
   
-    -   パラメーターなしのコンストラクターを公開する  
+    -   <span data-ttu-id="1781e-119">パラメーターなしのコンストラクターを公開する</span><span class="sxs-lookup"><span data-stu-id="1781e-119">Exposes a parameterless constructor</span></span>  
   
-     制約を指定しない場合、コードで使用できる演算とメンバーは、[Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md) でサポートされるものだけになります。 詳細については、「[Type List](../../../../visual-basic/language-reference/statements/type-list.md)」を参照してください。  
+     <span data-ttu-id="1781e-120">制約を指定しない場合、コードで使用できる演算とメンバーは、 [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)でサポートされるものだけになります。</span><span class="sxs-lookup"><span data-stu-id="1781e-120">If you do not specify any constraints, the only operations and members your code can use are those supported by the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md).</span></span> <span data-ttu-id="1781e-121">詳細については、「 [Type List](../../../../visual-basic/language-reference/statements/type-list.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1781e-121">For more information, see [Type List](../../../../visual-basic/language-reference/statements/type-list.md).</span></span>  
   
-5.  渡された型を使って宣言する必要のある各クラス メンバーを識別し、それを `As` `typeparameter` として宣言します。 これは、内部ストレージ、プロシージャのパラメーター、戻り値に適用されます。  
+5.  <span data-ttu-id="1781e-122">渡された型を使って宣言する必要のある各クラス メンバーを識別し、それを `As` `typeparameter`として宣言します。</span><span class="sxs-lookup"><span data-stu-id="1781e-122">Identify every class member that is to be declared with a supplied type, and declare it `As` `typeparameter`.</span></span> <span data-ttu-id="1781e-123">これは、内部ストレージ、プロシージャのパラメーター、戻り値に適用されます。</span><span class="sxs-lookup"><span data-stu-id="1781e-123">This applies to internal storage, procedure parameters, and return values.</span></span>  
   
-6.  コードでは、`itemType` に渡される可能性があるすべてのデータ型でサポートされる演算とメソッドだけを使用します。  
+6.  <span data-ttu-id="1781e-124">コードでは、 `itemType`に渡される可能性があるすべてのデータ型でサポートされる演算とメソッドだけを使用します。</span><span class="sxs-lookup"><span data-stu-id="1781e-124">Be sure your code uses only operations and methods that are supported by any data type it can supply to `itemType`.</span></span>  
   
-     次のコード例は、ごく単純なリストを管理するクラスを定義しています。 このクラスは、リストを内部配列 `items` に格納します。このクラスを使用するコードでは、このリストの要素のデータ型を宣言できます。 パラメーター化されたコンストラクターを使うと、コードで `items` の上限を設定できます。既定のコンストラクターでは、この上限は 9 \(合計で 10 アイテム\) に設定されます。  
+     <span data-ttu-id="1781e-125">次のコード例は、ごく単純なリストを管理するクラスを定義しています。</span><span class="sxs-lookup"><span data-stu-id="1781e-125">The following example defines a class that manages a very simple list.</span></span> <span data-ttu-id="1781e-126">このクラスは、リストを内部配列 `items`に格納します。このクラスを使用するコードでは、このリストの要素のデータ型を宣言できます。</span><span class="sxs-lookup"><span data-stu-id="1781e-126">It holds the list in the internal array `items`, and the using code can declare the data type of the list elements.</span></span> <span data-ttu-id="1781e-127">パラメーター化されたコンストラクターを使うと、コードで `items`の上限を設定できます。既定のコンストラクターでは、この上限は 9 (合計で 10 アイテム) に設定されます。</span><span class="sxs-lookup"><span data-stu-id="1781e-127">A parameterized constructor allows the using code to set the upper bound of `items`, and the default constructor sets this to 9 (for a total of 10 items).</span></span>  
   
      [!code-vb[VbVbalrDataTypes#7](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/how-to-define-a-class-that-can-provide-identical-functionality_1.vb)]  
   
-     `simpleList` からは、`Integer` 値のリストを格納するクラス、`String` 値のリストを格納するクラス、`Date` 値のリストを格納するクラスなどを宣言できます。 リスト メンバーのデータ型が異なるだけで、これらすべてのクラスから作成されるオブジェクトの動作はまったく同じです。  
+     <span data-ttu-id="1781e-128">`simpleList` からは、 `Integer` 値のリストを格納するクラス、 `String` 値のリストを格納するクラス、 `Date` 値のリストを格納するクラスなどを宣言できます。</span><span class="sxs-lookup"><span data-stu-id="1781e-128">You can declare a class from `simpleList` to hold a list of `Integer` values, another class to hold a list of `String` values, and another to hold `Date` values.</span></span> <span data-ttu-id="1781e-129">リスト メンバーのデータ型が異なるだけで、これらすべてのクラスから作成されるオブジェクトの動作はまったく同じです。</span><span class="sxs-lookup"><span data-stu-id="1781e-129">Except for the data type of the list members, objects created from all these classes behave identically.</span></span>  
   
-     使用するコードから `itemType` に渡す型引数としては、`Boolean` や `Double` などの組み込みの型、構造体、列挙、任意の型のクラス \(アプリケーションで独自に定義したクラスを含む\) を使用できます。  
+     <span data-ttu-id="1781e-130">使用するコードから `itemType` に渡す型引数としては、 `Boolean` や `Double`などの組み込みの型、構造体、列挙、任意の型のクラス (アプリケーションで独自に定義したクラスを含む) を使用できます。</span><span class="sxs-lookup"><span data-stu-id="1781e-130">The type argument that the using code supplies to `itemType` can be an intrinsic type such as `Boolean` or `Double`, a structure, an enumeration, or any type of class, including one that your application defines.</span></span>  
   
-     `simpleList` クラスをテストするには、次のコードを使用します。  
+     <span data-ttu-id="1781e-131">`simpleList` クラスをテストするには、次のコードを使用します。</span><span class="sxs-lookup"><span data-stu-id="1781e-131">You can test the class `simpleList` with the following code.</span></span>  
   
      [!code-vb[VbVbalrDataTypes#8](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/how-to-define-a-class-that-can-provide-identical-functionality_2.vb)]  
   
-## 参照  
- [データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [Visual Basic におけるジェネリック型](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
- [言語への非依存性、および言語非依存コンポーネント](../Topic/Language%20Independence%20and%20Language-Independent%20Components.md)   
- [Of](../../../../visual-basic/language-reference/statements/of-clause.md)   
- [Type List](../../../../visual-basic/language-reference/statements/type-list.md)   
- [方法 : ジェネリック クラスを使用する](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)   
- [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+## <a name="see-also"></a><span data-ttu-id="1781e-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="1781e-132">See Also</span></span>  
+ [<span data-ttu-id="1781e-133">データの種類</span><span class="sxs-lookup"><span data-stu-id="1781e-133">Data Types</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [<span data-ttu-id="1781e-134">Visual Basic におけるジェネリック型</span><span class="sxs-lookup"><span data-stu-id="1781e-134">Generic Types in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
+ [<span data-ttu-id="1781e-135">言語への非依存性、および言語非依存コンポーネント</span><span class="sxs-lookup"><span data-stu-id="1781e-135">Language Independence and Language-Independent Components</span></span>](https://msdn.microsoft.com/library/12a7a7h3)  
+ [<span data-ttu-id="1781e-136">Of</span><span class="sxs-lookup"><span data-stu-id="1781e-136">Of</span></span>](../../../../visual-basic/language-reference/statements/of-clause.md)  
+ [<span data-ttu-id="1781e-137">型リスト</span><span class="sxs-lookup"><span data-stu-id="1781e-137">Type List</span></span>](../../../../visual-basic/language-reference/statements/type-list.md)  
+ [<span data-ttu-id="1781e-138">方法 : ジェネリック クラスを使用する</span><span class="sxs-lookup"><span data-stu-id="1781e-138">How to: Use a Generic Class</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
+ [<span data-ttu-id="1781e-139">Object 型</span><span class="sxs-lookup"><span data-stu-id="1781e-139">Object Data Type</span></span>](../../../../visual-basic/language-reference/data-types/object-data-type.md)

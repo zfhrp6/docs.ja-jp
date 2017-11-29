@@ -1,80 +1,78 @@
 ---
-title: "Optional Parameters (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "parameters, optional"
-  - "Visual Basic code, procedures"
-  - "procedures, optional arguments"
-  - "optional arguments"
-  - "named arguments, and optional arguments"
-  - "optional parameters"
-  - "Optional keyword, optional arguments"
-  - "arguments [Visual Basic], optional"
-  - "optional arguments, and named arguments"
+title: "省略可能なパラメーター (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- parameters [Visual Basic], optional
+- Visual Basic code, procedures
+- procedures [Visual Basic], optional arguments
+- optional arguments
+- named arguments [Visual Basic], and optional arguments
+- optional parameters
+- Optional keyword [Visual Basic], optional arguments
+- arguments [Visual Basic], optional
+- optional arguments [Visual Basic], and named arguments
 ms.assetid: 398d2845-1069-4e94-b934-a73b545c8b87
-caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: e57023f594cfe4cd79d59cc8541fcf18018de0ee
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Optional Parameters (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プロシージャのパラメーターを省略可能にすると、呼び出し時に引数を指定する必要がなくなります。  *省略可能なパラメーター* にするには、プロシージャ定義で `Optional` キーワードを使用します。  次の規則が適用されます。  
+# <a name="optional-parameters-visual-basic"></a><span data-ttu-id="a3e52-102">省略可能なパラメーター (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a3e52-102">Optional Parameters (Visual Basic)</span></span>
+<span data-ttu-id="a3e52-103">プロシージャのパラメーターを省略可能にすると、呼び出し時に引数を指定する必要がなくなります。</span><span class="sxs-lookup"><span data-stu-id="a3e52-103">You can specify that a procedure parameter is optional and no argument has to be supplied for it when the procedure is called.</span></span> <span data-ttu-id="a3e52-104">*省略可能なパラメーター*によって示される、`Optional`プロシージャの定義のキーワードです。</span><span class="sxs-lookup"><span data-stu-id="a3e52-104">*Optional parameters* are indicated by the `Optional` keyword in the procedure definition.</span></span> <span data-ttu-id="a3e52-105">次の規則が適用されます。</span><span class="sxs-lookup"><span data-stu-id="a3e52-105">The following rules apply:</span></span>  
   
--   プロシージャ定義のすべての省略可能なパラメーターについて、既定値を指定する必要があります。  
+-   <span data-ttu-id="a3e52-106">プロシージャ定義のすべての省略可能なパラメーターについて、既定値を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a3e52-106">Every optional parameter in the procedure definition must specify a default value.</span></span>  
   
--   省略可能なパラメーターの既定値には、定数式を指定する必要があります。  
+-   <span data-ttu-id="a3e52-107">省略可能なパラメーターの既定値には、定数式を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a3e52-107">The default value for an optional parameter must be a constant expression.</span></span>  
   
--   プロシージャ定義で省略可能なパラメーターの後に続くパラメーターは、すべて省略可能であることが必要です。  
+-   <span data-ttu-id="a3e52-108">プロシージャ定義で省略可能なパラメーターの後に続くパラメーターは、すべて省略可能であることが必要です。</span><span class="sxs-lookup"><span data-stu-id="a3e52-108">Every parameter following an optional parameter in the procedure definition must also be optional.</span></span>  
   
- 次の構文は、省略可能なパラメーターを含むプロシージャ宣言を示しています。  
+ <span data-ttu-id="a3e52-109">次の構文は、省略可能なパラメーターを含むプロシージャ宣言を示しています。</span><span class="sxs-lookup"><span data-stu-id="a3e52-109">The following syntax shows a procedure declaration with an optional parameter:</span></span>  
   
-```  
-Sub sub name(ByVal parameter1 As datatype1, Optional ByVal parameter2 As datatype2 = defaultvalue)  
+```vb  
+Sub name(ByVal parameter1 As datatype1, Optional ByVal parameter2 As datatype2 = defaultvalue)  
 ```  
   
-## 省略可能なパラメーターを使ったプロシージャ呼び出し  
- 省略可能なパラメーターを使ってプロシージャを呼び出すときには、引数を指定するかどうかを選択できます。  引数を指定しない場合は、そのパラメーターに対して宣言されている既定値が使用されます。  
+## <a name="calling-procedures-with-optional-parameters"></a><span data-ttu-id="a3e52-110">省略可能なパラメーターを使ったプロシージャ呼び出し</span><span class="sxs-lookup"><span data-stu-id="a3e52-110">Calling Procedures with Optional Parameters</span></span>  
+ <span data-ttu-id="a3e52-111">省略可能なパラメーターを使ってプロシージャを呼び出すときには、引数を指定するかどうかを選択できます。</span><span class="sxs-lookup"><span data-stu-id="a3e52-111">When you call a procedure with an optional parameter, you can choose whether to supply the argument.</span></span> <span data-ttu-id="a3e52-112">引数を指定しない場合は、そのパラメーターに対して宣言されている既定値が使用されます。</span><span class="sxs-lookup"><span data-stu-id="a3e52-112">If you do not, the procedure uses the default value declared for that parameter.</span></span>  
   
- 引数リストで省略可能な引数を省略する場合は、コンマを続けて、省略する引数の位置を表します。  次の例では、1 番目と 4 番目の引数は指定されていますが、2 番目と 3 番目の引数は省略されています。  
+ <span data-ttu-id="a3e52-113">引数リストで省略可能な引数を省略する場合は、コンマを続けて、省略する引数の位置を表します。</span><span class="sxs-lookup"><span data-stu-id="a3e52-113">When you omit one or more optional arguments in the argument list, you use successive commas to mark their positions.</span></span> <span data-ttu-id="a3e52-114">次の例では、1 番目と 4 番目の引数は指定されていますが、2 番目と 3 番目の引数は省略されています。</span><span class="sxs-lookup"><span data-stu-id="a3e52-114">The following example call supplies the first and fourth arguments but not the second or third:</span></span>  
   
+```vb  
+Sub name(argument 1, , , argument 4)  
 ```  
   
-sub name(argument 1, , , argument 4)  
-```  
+ <span data-ttu-id="a3e52-115">次の例では、`MsgBox` 関数を数回呼び出します。</span><span class="sxs-lookup"><span data-stu-id="a3e52-115">The following example makes several calls to the `MsgBox` function.</span></span> <span data-ttu-id="a3e52-116">`MsgBox` には、必須パラメーター 1 つと省略可能なパラメーターが 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="a3e52-116">`MsgBox` has one required parameter and two optional parameters.</span></span>  
   
- 次の例では、`MsgBox` 関数を数回呼び出します。  `MsgBox` には、必須パラメーター 1 つと省略可能なパラメーターが 2 つあります。  
-  
- `MsgBox` の最初の呼び出しでは、`MsgBox` で定義された順番で 3 つの引数を指定します。  2 番目の呼び出しでは、必須の引数だけを指定します。  3 番目と 4 番目の呼び出しでは、1 つ目と 3 つ目の引数を指定します。  3 番目の呼び出しでは引数を位置で指定し、4 番目の呼び出しでは引数を名前で指定します。  
+ <span data-ttu-id="a3e52-117">`MsgBox` の最初の呼び出しでは、`MsgBox` で定義された順番で 3 つの引数を指定します。</span><span class="sxs-lookup"><span data-stu-id="a3e52-117">The first call to `MsgBox` supplies all three arguments in the order that `MsgBox` defines them.</span></span> <span data-ttu-id="a3e52-118">2 番目の呼び出しでは、必須の引数だけを指定します。</span><span class="sxs-lookup"><span data-stu-id="a3e52-118">The second call supplies only the required argument.</span></span> <span data-ttu-id="a3e52-119">3 番目と 4 番目の呼び出しでは、1 つ目と 3 つ目の引数を指定します。</span><span class="sxs-lookup"><span data-stu-id="a3e52-119">The third and fourth calls supply the first and third arguments.</span></span> <span data-ttu-id="a3e52-120">3 番目の呼び出しでは引数を位置で指定し、4 番目の呼び出しでは引数を名前で指定します。</span><span class="sxs-lookup"><span data-stu-id="a3e52-120">The third call does this by position, and the fourth call does it by name.</span></span>  
   
  [!code-vb[VbVbcnProcedures#47](./codesnippet/VisualBasic/optional-parameters_1.vb)]  
   
-## 省略可能な引数があるかどうかの確認  
- 引数が省略されているのか、呼び出し元のコードで既定値が明示的に指定されているのかについて、プロシージャで実行時に検出することはできません。  この区別が必要な場合は、ありそうにない値を既定値に設定します。  次のプロシージャでは、省略可能なパラメーター  `office` を定義し、その既定値  `QJZ` をテストして、呼び出しの際にこの引数が省略されているかどうかを確認します。  
+## <a name="determining-whether-an-optional-argument-is-present"></a><span data-ttu-id="a3e52-121">省略可能な引数があるかどうかの確認</span><span class="sxs-lookup"><span data-stu-id="a3e52-121">Determining Whether an Optional Argument Is Present</span></span>  
+ <span data-ttu-id="a3e52-122">引数が省略されているのか、呼び出し元のコードで既定値が明示的に指定されているのかについて、プロシージャで実行時に検出することはできません。</span><span class="sxs-lookup"><span data-stu-id="a3e52-122">A procedure cannot detect at run time whether a given argument has been omitted or the calling code has explicitly supplied the default value.</span></span> <span data-ttu-id="a3e52-123">この区別が必要な場合は、ありそうにない値を既定値に設定します。</span><span class="sxs-lookup"><span data-stu-id="a3e52-123">If you need to make this distinction, you can set an unlikely value as the default.</span></span> <span data-ttu-id="a3e52-124">次の手順は省略可能なパラメーターを定義`office`、およびその既定値のテスト`QJZ`への呼び出しで省略されているかどうかを参照してください。</span><span class="sxs-lookup"><span data-stu-id="a3e52-124">The following procedure defines the optional parameter `office`, and tests for its default value, `QJZ`, to see if it has been omitted in the call:</span></span>  
   
  [!code-vb[VbVbcnProcedures#46](./codesnippet/VisualBasic/optional-parameters_2.vb)]  
   
- 省略可能なパラメーターが `String` などの参照型の場合は、`Nothing` を既定値として使用できます。ただし、`Nothing` が引数の値として使用されることが予想される場合を除きます。  
+ <span data-ttu-id="a3e52-125">省略可能なパラメーターが `String` などの参照型の場合は、`Nothing` を既定値として使用できます。ただし、 が引数の値として使用されることが予想される場合を除きます。</span><span class="sxs-lookup"><span data-stu-id="a3e52-125">If the optional parameter is a reference type such as a `String`, you can use `Nothing` as the default value, provided this is not an expected value for the argument.</span></span>  
   
-## 省略可能なパラメーターとオーバーロード  
- 省略可能なパラメーターを持つプロシージャを定義するには、オーバーロードを使用する方法もあります。  省略可能なパラメーターが 1 つあるとすると、パラメーターを受け取る場合と受け取らない場合の、2 つのオーバーロードされたバージョンのプロシージャを定義できます。  この方法は、省略可能なパラメーターの数が増えるにつれて複雑になります。  しかし、それぞれの省略可能な引数が呼び出しプログラムによって指定されているかどうかを確実に把握できるという利点があります。  
+## <a name="optional-parameters-and-overloading"></a><span data-ttu-id="a3e52-126">省略可能なパラメーターとオーバーロード</span><span class="sxs-lookup"><span data-stu-id="a3e52-126">Optional Parameters and Overloading</span></span>  
+ <span data-ttu-id="a3e52-127">省略可能なパラメーターを持つプロシージャを定義するには、オーバーロードを使用する方法もあります。</span><span class="sxs-lookup"><span data-stu-id="a3e52-127">Another way to define a procedure with optional parameters is to use overloading.</span></span> <span data-ttu-id="a3e52-128">省略可能なパラメーターが 1 つあるとすると、パラメーターを受け取る場合と受け取らない場合の、2 つのオーバーロードされたバージョンのプロシージャを定義できます。</span><span class="sxs-lookup"><span data-stu-id="a3e52-128">If you have one optional parameter, you can define two overloaded versions of the procedure, one accepting the parameter and one without it.</span></span> <span data-ttu-id="a3e52-129">この方法は、省略可能なパラメーターの数が増えるにつれて複雑になります。</span><span class="sxs-lookup"><span data-stu-id="a3e52-129">This approach becomes more complicated as the number of optional parameters increases.</span></span> <span data-ttu-id="a3e52-130">しかし、それぞれの省略可能な引数が呼び出しプログラムによって指定されているかどうかを確実に把握できるという利点があります。</span><span class="sxs-lookup"><span data-stu-id="a3e52-130">However, its advantage is that you can be absolutely sure whether the calling program supplied each optional argument.</span></span>  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Passing Arguments by Value and by Reference](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)   
- [Passing Arguments by Position and by Name](../../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)   
- [Parameter Arrays](../../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)   
- [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)   
- [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)   
- [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)
+## <a name="see-also"></a><span data-ttu-id="a3e52-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="a3e52-131">See Also</span></span>  
+ [<span data-ttu-id="a3e52-132">手順</span><span class="sxs-lookup"><span data-stu-id="a3e52-132">Procedures</span></span>](./index.md)  
+ [<span data-ttu-id="a3e52-133">プロシージャのパラメーターと引数</span><span class="sxs-lookup"><span data-stu-id="a3e52-133">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)  
+ [<span data-ttu-id="a3e52-134">引数の値渡しと参照渡し</span><span class="sxs-lookup"><span data-stu-id="a3e52-134">Passing Arguments by Value and by Reference</span></span>](./passing-arguments-by-value-and-by-reference.md)  
+ [<span data-ttu-id="a3e52-135">位置と名前による引数渡し</span><span class="sxs-lookup"><span data-stu-id="a3e52-135">Passing Arguments by Position and by Name</span></span>](./passing-arguments-by-position-and-by-name.md)  
+ [<span data-ttu-id="a3e52-136">パラメーター配列</span><span class="sxs-lookup"><span data-stu-id="a3e52-136">Parameter Arrays</span></span>](./parameter-arrays.md)  
+ [<span data-ttu-id="a3e52-137">プロシージャのオーバーロード</span><span class="sxs-lookup"><span data-stu-id="a3e52-137">Procedure Overloading</span></span>](./procedure-overloading.md)  
+ [<span data-ttu-id="a3e52-138">Optional</span><span class="sxs-lookup"><span data-stu-id="a3e52-138">Optional</span></span>](../../../../visual-basic/language-reference/modifiers/optional.md)  
+ [<span data-ttu-id="a3e52-139">ParamArray</span><span class="sxs-lookup"><span data-stu-id="a3e52-139">ParamArray</span></span>](../../../../visual-basic/language-reference/modifiers/paramarray.md)

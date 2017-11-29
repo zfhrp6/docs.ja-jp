@@ -1,65 +1,68 @@
 ---
-title: "Implementing the UI Automation SelectionItem Control Pattern | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Selection Item control pattern"
-  - "UI Automation, Selection Item control pattern"
-  - "control patterns, Selection Item"
+title: "UI オートメーション SelectionItem コントロール パターンの実装"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Selection Item control pattern
+- UI Automation, Selection Item control pattern
+- control patterns, Selection Item
 ms.assetid: 76b0949a-5b23-4cfc-84cc-154f713e2e12
-caps.latest.revision: 22
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 28e28faee25dd89fa646bb6e82958746b6b5932e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Implementing the UI Automation SelectionItem Control Pattern
+# <a name="implementing-the-ui-automation-selectionitem-control-pattern"></a><span data-ttu-id="bf2a5-102">UI オートメーション SelectionItem コントロール パターンの実装</span><span class="sxs-lookup"><span data-stu-id="bf2a5-102">Implementing the UI Automation SelectionItem Control Pattern</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の最新情報については、「[Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」をご覧ください。  
+>  <span data-ttu-id="bf2a5-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="bf2a5-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- このトピックでは、プロパティ、メソッド、イベントに関する情報など、<xref:System.Windows.Automation.Provider.ISelectionItemProvider> の実装のためのガイドラインと規則について説明します。 その他のリファレンスへのリンクは、概要の最後に記載します。  
+ <span data-ttu-id="bf2a5-105">このトピックでは、プロパティ、メソッド、イベントに関する情報など、 <xref:System.Windows.Automation.Provider.ISelectionItemProvider>の実装のためのガイドラインと規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-105">This topic introduces guidelines and conventions for implementing <xref:System.Windows.Automation.Provider.ISelectionItemProvider>, including information about properties, methods, and events.</span></span> <span data-ttu-id="bf2a5-106">その他のリファレンスへのリンクは、概要の最後に記載します。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-106">Links to additional references are listed at the end of the overview.</span></span>  
   
- <xref:System.Windows.Automation.SelectionItemPattern> コントロール パターンは、<xref:System.Windows.Automation.Provider.ISelectionProvider> を実装するコンテナー コントロールの個別の選択可能な子項目として機能するコントロールをサポートするために使用します。 SelectionItem コントロール パターンを実装するコントロールの例については、「[Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)」を参照してください。  
+ <span data-ttu-id="bf2a5-107"><xref:System.Windows.Automation.SelectionItemPattern> コントロール パターンは、 <xref:System.Windows.Automation.Provider.ISelectionProvider>を実装するコンテナー コントロールの個別の選択可能な子項目として機能するコントロールをサポートするために使用します。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-107">The <xref:System.Windows.Automation.SelectionItemPattern> control pattern is used to support controls that act as individual, selectable child items of container controls that implement <xref:System.Windows.Automation.Provider.ISelectionProvider>.</span></span> <span data-ttu-id="bf2a5-108">SelectionItem コントロール パターンを実装するコントロールの例については、次を参照してください[UI オートメーション クライアントのコントロール パターン マッピング。](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)</span><span class="sxs-lookup"><span data-stu-id="bf2a5-108">For examples of controls that implement the SelectionItem control pattern, see [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)</span></span>  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## 実装のガイドラインと規則  
- Selection Item コントロール パターンを実装する場合は、次のガイドラインと規則に留意してください。  
+## <a name="implementation-guidelines-and-conventions"></a><span data-ttu-id="bf2a5-109">実装のガイドラインと規則</span><span class="sxs-lookup"><span data-stu-id="bf2a5-109">Implementation Guidelines and Conventions</span></span>  
+ <span data-ttu-id="bf2a5-110">Selection Item コントロール パターンを実装する場合は、次のガイドラインと規則に留意してください。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-110">When implementing the Selection Item control pattern, note the following guidelines and conventions:</span></span>  
   
--   **\[画面のプロパティ\]** ダイアログ ボックスの **\[画面解像度\]** スライダーなどの <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot> を実装する子コントロールを管理する単一選択コントロールは <xref:System.Windows.Automation.Provider.ISelectionProvider> を実装する必要があり、その子は <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> と <xref:System.Windows.Automation.Provider.ISelectionItemProvider> の両方を実装する必要があります。  
+-   <span data-ttu-id="bf2a5-111"><xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>[画面のプロパティ] **ダイアログ ボックスの** [画面解像度] **スライダーなどの** を実装する子コントロールを管理する単一選択コントロールは <xref:System.Windows.Automation.Provider.ISelectionProvider> を実装する必要があり、その子は <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> と <xref:System.Windows.Automation.Provider.ISelectionItemProvider>の両方を実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-111">Single-selection controls that manage child controls that implement <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>, such as the **Screen Resolution** slider in the **Display Properties** dialog box, should implement <xref:System.Windows.Automation.Provider.ISelectionProvider> and their children should implement both <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> and <xref:System.Windows.Automation.Provider.ISelectionItemProvider>.</span></span>  
   
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>   
-## ISelectionItemProvider の必須メンバー  
- <xref:System.Windows.Automation.Provider.ISelectionItemProvider> の実装には、次のプロパティ、メソッド、およびイベントが必要です。  
+## <a name="required-members-for-iselectionitemprovider"></a><span data-ttu-id="bf2a5-112">ISelectionItemProvider の必須メンバー</span><span class="sxs-lookup"><span data-stu-id="bf2a5-112">Required Members for ISelectionItemProvider</span></span>  
+ <span data-ttu-id="bf2a5-113"><xref:System.Windows.Automation.Provider.ISelectionItemProvider>の実装には、次のプロパティ、メソッド、およびイベントが必要です。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-113">The following properties, methods, and events are required for implementing <xref:System.Windows.Automation.Provider.ISelectionItemProvider>.</span></span>  
   
-|必須メンバー|メンバーの型|ノート|  
-|------------|------------|---------|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|プロパティ|なし|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>|プロパティ|なし|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider.GetSelection%2A>|メソッド|なし|  
-|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|イベント|コンテナー内の選択が大幅に変更され、<xref:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit> 定数で許可されたよりも多くの <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> イベントと <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> イベントを送信する必要がある場合に発生します。|  
+|<span data-ttu-id="bf2a5-114">必須メンバー</span><span class="sxs-lookup"><span data-stu-id="bf2a5-114">Required members</span></span>|<span data-ttu-id="bf2a5-115">メンバーの型</span><span class="sxs-lookup"><span data-stu-id="bf2a5-115">Member type</span></span>|<span data-ttu-id="bf2a5-116">ノート</span><span class="sxs-lookup"><span data-stu-id="bf2a5-116">Notes</span></span>|  
+|----------------------|-----------------|-----------|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|<span data-ttu-id="bf2a5-117">プロパティ</span><span class="sxs-lookup"><span data-stu-id="bf2a5-117">Property</span></span>|<span data-ttu-id="bf2a5-118">なし</span><span class="sxs-lookup"><span data-stu-id="bf2a5-118">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>|<span data-ttu-id="bf2a5-119">プロパティ</span><span class="sxs-lookup"><span data-stu-id="bf2a5-119">Property</span></span>|<span data-ttu-id="bf2a5-120">なし</span><span class="sxs-lookup"><span data-stu-id="bf2a5-120">None</span></span>|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider.GetSelection%2A>|<span data-ttu-id="bf2a5-121">メソッド</span><span class="sxs-lookup"><span data-stu-id="bf2a5-121">Method</span></span>|<span data-ttu-id="bf2a5-122">なし</span><span class="sxs-lookup"><span data-stu-id="bf2a5-122">None</span></span>|  
+|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|<span data-ttu-id="bf2a5-123">イベント</span><span class="sxs-lookup"><span data-stu-id="bf2a5-123">Event</span></span>|<span data-ttu-id="bf2a5-124">コンテナー内の選択が大幅に変更され、 <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> 定数で許可されたよりも多くの <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> イベントと <xref:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit> イベントを送信する必要がある場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-124">Raised when a selection in a container has changed significantly and requires sending more <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> and <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> events than the <xref:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit> constant permits.</span></span>|  
   
--   <xref:System.Windows.Automation.SelectionItemPattern.Select%2A>、<xref:System.Windows.Automation.SelectionItemPattern.AddToSelection%2A>、または <xref:System.Windows.Automation.SelectionItemPattern.RemoveFromSelection%2A> の結果が単一選択項目の場合は、<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> が発生するはずです。それ以外の場合は、必要に応じて、<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>\/<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> が送信されます。  
+-   <span data-ttu-id="bf2a5-125">場合の結果、 <xref:System.Windows.Automation.SelectionItemPattern.Select%2A>、 <xref:System.Windows.Automation.SelectionItemPattern.AddToSelection%2A>、または<xref:System.Windows.Automation.SelectionItemPattern.RemoveFromSelection%2A>は単一の選択項目、<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>発生する必要があります。 それ以外の場合を送信する<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent> /  <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>に応じて。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-125">If the result of a <xref:System.Windows.Automation.SelectionItemPattern.Select%2A>, an <xref:System.Windows.Automation.SelectionItemPattern.AddToSelection%2A>, or a <xref:System.Windows.Automation.SelectionItemPattern.RemoveFromSelection%2A> is a single selected item, an <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> should be raised; otherwise send <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>/ <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> as appropriate.</span></span>  
   
 <a name="Exceptions"></a>   
-## 例外  
- プロバイダーは、次の例外をスローする必要があります。  
+## <a name="exceptions"></a><span data-ttu-id="bf2a5-126">例外</span><span class="sxs-lookup"><span data-stu-id="bf2a5-126">Exceptions</span></span>  
+ <span data-ttu-id="bf2a5-127">プロバイダーは、次の例外をスローする必要があります。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-127">Providers must throw the following exceptions.</span></span>  
   
-|例外の種類|状態|  
-|-----------|--------|  
-|<xref:System.InvalidOperationException>|次のいずれが試行された場合:<br /><br /> -   <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty> \= `true` で、既に 1 つの要素が選択されている単一選択コンテナーで <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A> が呼び出された場合。<br />-   <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty> \= `true` で、1 つの要素だけが選択されている複数選択コンテナーで <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A> が呼び出された場合。<br />-   <xref:System.Windows.Automation.SelectionPattern.CanSelectMultipleProperty> \= `false` で、既に別の要素が選択されている単一選択コンテナーで <xref:System.Windows.Automation.Provider.ISelectionItemProvider.AddToSelection%2A> が呼び出された場合。|  
+|<span data-ttu-id="bf2a5-128">例外の種類</span><span class="sxs-lookup"><span data-stu-id="bf2a5-128">Exception type</span></span>|<span data-ttu-id="bf2a5-129">状態</span><span class="sxs-lookup"><span data-stu-id="bf2a5-129">Condition</span></span>|  
+|--------------------|---------------|  
+|<xref:System.InvalidOperationException>|<span data-ttu-id="bf2a5-130">次のいずれが試行された場合:</span><span class="sxs-lookup"><span data-stu-id="bf2a5-130">When any of the following are attempted:</span></span><br /><br /> <span data-ttu-id="bf2a5-131">-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A>単一選択コンテナーで呼び出されると、 <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty>  =  `true`要素が既に選択されているとします。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-131">-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A> is called on a single-selection container where <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty> = `true` and an element is already selected.</span></span><br /><span data-ttu-id="bf2a5-132">-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A> = <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty> = `true` が呼び出された場合。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-132">-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A> is called on a multiple-selection container where <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty> = `true` and only one element is selected.</span></span><br /><span data-ttu-id="bf2a5-133">-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.AddToSelection%2A> = <xref:System.Windows.Automation.SelectionPattern.CanSelectMultipleProperty> = `false` が呼び出された場合。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-133">-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.AddToSelection%2A> is called on a single-selection container where <xref:System.Windows.Automation.SelectionPattern.CanSelectMultipleProperty> = `false` and another element is already selected.</span></span>|  
   
-## 参照  
- [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)   
- [Support Control Patterns in a UI Automation Provider](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)   
- [UI Automation Control Patterns for Clients](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)   
- [Implementing the UI Automation Selection Control Pattern](../../../docs/framework/ui-automation/implementing-the-ui-automation-selection-control-pattern.md)   
- [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)   
- [Use Caching in UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)   
- [Fragment Provider Sample](http://msdn.microsoft.com/ja-jp/778ef1bc-8610-4bc9-886e-aeff94a8a13e)
+## <a name="see-also"></a><span data-ttu-id="bf2a5-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="bf2a5-134">See Also</span></span>  
+ [<span data-ttu-id="bf2a5-135">UI オートメーション コントロール パターンの概要</span><span class="sxs-lookup"><span data-stu-id="bf2a5-135">UI Automation Control Patterns Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [<span data-ttu-id="bf2a5-136">UI オートメーション プロバイダーでコントロール パターンをサポートします。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-136">Support Control Patterns in a UI Automation Provider</span></span>](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [<span data-ttu-id="bf2a5-137">クライアントの UI オートメーション コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="bf2a5-137">UI Automation Control Patterns for Clients</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
+ [<span data-ttu-id="bf2a5-138">UI オートメーション Selection コントロール パターンを実装します。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-138">Implementing the UI Automation Selection Control Pattern</span></span>](../../../docs/framework/ui-automation/implementing-the-ui-automation-selection-control-pattern.md)  
+ [<span data-ttu-id="bf2a5-139">UI オートメーション ツリーの概要</span><span class="sxs-lookup"><span data-stu-id="bf2a5-139">UI Automation Tree Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [<span data-ttu-id="bf2a5-140">UI オートメーションにおけるキャッシュを使用します。</span><span class="sxs-lookup"><span data-stu-id="bf2a5-140">Use Caching in UI Automation</span></span>](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)  
+ [<span data-ttu-id="bf2a5-141">フラグメント プロバイダーのサンプル</span><span class="sxs-lookup"><span data-stu-id="bf2a5-141">Fragment Provider Sample</span></span>](http://msdn.microsoft.com/en-us/778ef1bc-8610-4bc9-886e-aeff94a8a13e)

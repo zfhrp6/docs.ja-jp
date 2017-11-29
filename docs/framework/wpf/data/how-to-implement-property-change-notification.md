@@ -1,38 +1,44 @@
 ---
-title: "方法 : プロパティの変更通知を実装する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "変更通知"
-  - "データ バインディング, プロパティの変更通知"
-  - "通知 (変更の)"
-  - "プロパティ, 変更通知"
+title: "方法 : プロパティの変更通知を実装する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- notifications of change [WPF]
+- data binding [WPF], property change notifications
+- change notifications [WPF]
+- properties [WPF], change notifications
 ms.assetid: 30b59d9e-8c3a-4349-aa82-4be837e841cf
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6674628acd4ea6b18f98a0ab5e20935220595de5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : プロパティの変更通知を実装する
-[バインディング ターゲット](GTMT)のプロパティに[バインディング ソース](GTMT)の動的変更が自動的に反映される \(たとえば、ユーザーがフォームを編集するとプレビュー ペインが自動的に更新される\) ようにするために、<xref:System.Windows.Data.BindingMode> または <xref:System.Windows.Data.BindingMode> バインディングをサポートするには、クラスが適切なプロパティ変更通知を提供する必要があります。  この例では、<xref:System.ComponentModel.INotifyPropertyChanged> を実装するクラスを作成する方法を示します。  
+# <a name="how-to-implement-property-change-notification"></a><span data-ttu-id="16cec-102">方法 : プロパティの変更通知を実装する</span><span class="sxs-lookup"><span data-stu-id="16cec-102">How to: Implement Property Change Notification</span></span>
+<span data-ttu-id="16cec-103">サポートする<xref:System.Windows.Data.BindingMode.OneWay>または<xref:System.Windows.Data.BindingMode.TwoWay>を自動的に (たとえば、プレビュー ウィンドウをユーザーがフォームを編集するときに自動的に更新する)、バインディング ソースの動的な変更を反映するように、バインディング ターゲット プロパティを有効にするバインディング クラス適切なプロパティの変更通知を提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="16cec-103">To support <xref:System.Windows.Data.BindingMode.OneWay> or <xref:System.Windows.Data.BindingMode.TwoWay> binding to enable your binding target properties to automatically reflect the dynamic changes of the binding source (for example, to have the preview pane updated automatically when the user edits a form), your class needs to provide the proper property changed notifications.</span></span> <span data-ttu-id="16cec-104">この例を実装するクラスを作成する方法を示しています。<xref:System.ComponentModel.INotifyPropertyChanged>です。</span><span class="sxs-lookup"><span data-stu-id="16cec-104">This example shows how to create a class that implements <xref:System.ComponentModel.INotifyPropertyChanged>.</span></span>  
   
-## 使用例  
- <xref:System.ComponentModel.INotifyPropertyChanged> を実装するには、<xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> イベントを宣言し、`OnPropertyChanged` メソッドを作成する必要があります。  次に、変更を通知する必要のある各プロパティについて、そのプロパティが更新されるたびに `OnPropertyChanged` を呼び出します。  
+## <a name="example"></a><span data-ttu-id="16cec-105">例</span><span class="sxs-lookup"><span data-stu-id="16cec-105">Example</span></span>  
+ <span data-ttu-id="16cec-106">実装する<xref:System.ComponentModel.INotifyPropertyChanged>を宣言する必要があります、<xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged>イベントを作成し、`OnPropertyChanged`メソッドです。</span><span class="sxs-lookup"><span data-stu-id="16cec-106">To implement <xref:System.ComponentModel.INotifyPropertyChanged> you need to declare the <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> event and create the `OnPropertyChanged` method.</span></span> <span data-ttu-id="16cec-107">次に、変更を通知する必要のある各プロパティについて、そのプロパティが更新されるたびに `OnPropertyChanged` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="16cec-107">Then for each property you want change notifications for, you call `OnPropertyChanged` whenever the property is updated.</span></span>  
   
  [!code-csharp[SimpleBinding#PersonClass](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Person.cs#personclass)]
  [!code-vb[SimpleBinding#PersonClass](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleBinding/VisualBasic/Person.vb#personclass)]  
   
- `Person` クラスを使用して <xref:System.Windows.Data.BindingMode> バインディングをサポートする例については、「[TextBox テキストでソースを更新するタイミングを制御する](../../../../docs/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source.md)」を参照してください。  
+ <span data-ttu-id="16cec-108">方法の例を参照する`Person`クラスをサポートするために使用できます<xref:System.Windows.Data.BindingMode.TwoWay>バインドを参照してください[ ボックスにテキストが、ソースを更新するときに制御](../../../../docs/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source.md)です。</span><span class="sxs-lookup"><span data-stu-id="16cec-108">To see an example of how the `Person` class can be used to support <xref:System.Windows.Data.BindingMode.TwoWay> binding, see [Control When the TextBox Text Updates the Source](../../../../docs/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source.md).</span></span>  
   
-## 参照  
- [バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="16cec-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="16cec-109">See Also</span></span>  
+ [<span data-ttu-id="16cec-110">バインディング ソースの概要</span><span class="sxs-lookup"><span data-stu-id="16cec-110">Binding Sources Overview</span></span>](../../../../docs/framework/wpf/data/binding-sources-overview.md)  
+ [<span data-ttu-id="16cec-111">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="16cec-111">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="16cec-112">方法トピック</span><span class="sxs-lookup"><span data-stu-id="16cec-112">How-to Topics</span></span>](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

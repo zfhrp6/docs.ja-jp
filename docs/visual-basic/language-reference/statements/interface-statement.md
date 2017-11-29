@@ -1,135 +1,130 @@
 ---
-title: "Interface Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Interface"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "interface statement [Visual Basic]"
-  - "interfaces, interface definition"
+title: "Interface ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Interface
+helpviewer_keywords:
+- interface statement [Visual Basic]
+- interfaces [Visual Basic], interface definition
 ms.assetid: 8997af73-bda3-4f79-bd41-ca396b610260
-caps.latest.revision: 26
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9418dc86ac6947ae951cb8fb757aed6e092a6668
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Interface Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-インターフェイスの名前を宣言し、インターフェイスに含まれるメンバーの定義を開始します。  
+# <a name="interface-statement-visual-basic"></a><span data-ttu-id="29db7-102">Interface ステートメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="29db7-102">Interface Statement (Visual Basic)</span></span>
+<span data-ttu-id="29db7-103">インターフェイスの名前を宣言し、インターフェイスに含まれるメンバーの定義を紹介します。</span><span class="sxs-lookup"><span data-stu-id="29db7-103">Declares the name of an interface and introduces the definitions of the members that the interface comprises.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="29db7-104">構文</span><span class="sxs-lookup"><span data-stu-id="29db7-104">Syntax</span></span>  
   
 ```  
-[ <attributelist> ] [ accessmodifier ] [ Shadows ] _  
-Interface name [ ( Of typelist ) ]  
-    [ Inherits interfacenames ]  
-    [ [ modifiers ] Property membername ]  
-    [ [ modifiers ] Function membername ]  
-    [ [ modifiers ] Sub membername ]  
-    [ [ modifiers ] Event membername ]  
-    [ [ modifiers ] Interface membername ]  
-    [ [ modifiers ] Class membername ]  
-    [ [ modifiers ] Structure membername ]  
+[ <attributelist> ] [ accessmodifier ] [ Shadows ] _  
+Interface name [ ( Of typelist ) ]  
+    [ Inherits interfacenames ]  
+    [ [ modifiers ] Property membername ]  
+    [ [ modifiers ] Function membername ]  
+    [ [ modifiers ] Sub membername ]  
+    [ [ modifiers ] Event membername ]  
+    [ [ modifiers ] Interface membername ]  
+    [ [ modifiers ] Class membername ]  
+    [ [ modifiers ] Structure membername ]  
 End Interface  
 ```  
   
-## 指定項目  
+## <a name="parts"></a><span data-ttu-id="29db7-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="29db7-105">Parts</span></span>  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`attributelist`|省略可能です。  「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。|  
-|`accessmodifier`|省略可能です。  次のいずれかになります。<br /><br /> -   [Public](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|  
-|`Shadows`|省略可能です。  「[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。|  
-|`name`|必ず指定します。  このインターフェイスの名前です。  「[Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|  
-|`Of`|省略可能です。  ジェネリック インターフェイスであることを指定します。|  
-|`typelist`|[Of](../../../visual-basic/language-reference/statements/of-clause.md) キーワードを使用する場合は必ず指定します。  このインターフェイスの型パラメーターのリストを指定します。  必要に応じて、ジェネリックの `In` 修飾子や `Out` 修飾子を使用して、それぞれの型パラメーターをバリアントとして宣言できます。  「[型リスト](../../../visual-basic/language-reference/statements/type-list.md)」を参照してください。|  
-|`Inherits`|省略可能です。  このインターフェイスが別のインターフェイスの属性およびメンバーを継承することを指定します。  「[Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md)」を参照してください。|  
-|`interfacenames`|`Inherits` ステートメントを使用する場合は必ず指定します。  このインターフェイスの派生元のインターフェイスの名前を指定します。|  
-|`modifiers`|省略可能です。  定義するインターフェイス メンバーに適した修飾子を指定します。|  
-|`Property`|省略可能です。  インターフェイスのメンバーであるプロパティを定義します。|  
-|`Function`|省略可能です。  インターフェイスのメンバーである `Function` プロシージャを定義します。|  
-|`Sub`|省略可能です。  インターフェイスのメンバーである `Sub` プロシージャを定義します。|  
-|`Event`|省略可能です。  インターフェイスのメンバーであるイベントを定義します。|  
-|`Interface`|省略可能です。  このインターフェイスの内部に入れ子になったインターフェイスを定義します。  入れ子になったインターフェイスの定義は、`End Interface` ステートメントで終了する必要があります。|  
-|`Class`|省略可能です。  インターフェイスのメンバーであるクラスを定義します。  このクラスの定義は、`End Class` ステートメントで終了する必要があります。|  
-|`Structure`|省略可能です。  インターフェイスのメンバーである構造体を定義します。  このメンバーの構造体の定義は、`End Structure` ステートメントで終了する必要があります。|  
-|`membername`|インターフェイスのメンバーとして定義したプロパティ、プロシージャ、イベント、インターフェイス、クラスまたは構造体のそれぞれに必ず指定します。  メンバーの名前です。|  
-|`End Interface`|`Interface` の定義を終了します。|  
+|<span data-ttu-id="29db7-106">用語</span><span class="sxs-lookup"><span data-stu-id="29db7-106">Term</span></span>|<span data-ttu-id="29db7-107">定義</span><span class="sxs-lookup"><span data-stu-id="29db7-107">Definition</span></span>|  
+|---|---|  
+|`attributelist`|<span data-ttu-id="29db7-108">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-108">Optional.</span></span> <span data-ttu-id="29db7-109">参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="29db7-109">See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).</span></span>|  
+|`accessmodifier`|<span data-ttu-id="29db7-110">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-110">Optional.</span></span> <span data-ttu-id="29db7-111">次のいずれかの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="29db7-111">Can be one of the following:</span></span><br /><br /> <span data-ttu-id="29db7-112">-   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)</span><span class="sxs-lookup"><span data-stu-id="29db7-112">-   [Public](../../../visual-basic/language-reference/modifiers/public.md)</span></span><br /><span data-ttu-id="29db7-113">-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)</span><span class="sxs-lookup"><span data-stu-id="29db7-113">-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)</span></span><br /><span data-ttu-id="29db7-114">-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)</span><span class="sxs-lookup"><span data-stu-id="29db7-114">-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)</span></span><br /><span data-ttu-id="29db7-115">-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)</span><span class="sxs-lookup"><span data-stu-id="29db7-115">-   [Private](../../../visual-basic/language-reference/modifiers/private.md)</span></span><br />-   `Protected Friend`<br /><br /> <span data-ttu-id="29db7-116">参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="29db7-116">See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>|  
+|`Shadows`|<span data-ttu-id="29db7-117">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-117">Optional.</span></span> <span data-ttu-id="29db7-118">参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。</span><span class="sxs-lookup"><span data-stu-id="29db7-118">See [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).</span></span>|  
+|`name`|<span data-ttu-id="29db7-119">必須です。</span><span class="sxs-lookup"><span data-stu-id="29db7-119">Required.</span></span> <span data-ttu-id="29db7-120">このインターフェイスの名前です。</span><span class="sxs-lookup"><span data-stu-id="29db7-120">Name of this interface.</span></span> <span data-ttu-id="29db7-121">参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。</span><span class="sxs-lookup"><span data-stu-id="29db7-121">See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span></span>|  
+|`Of`|<span data-ttu-id="29db7-122">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-122">Optional.</span></span> <span data-ttu-id="29db7-123">ジェネリック インターフェイスは、これを指定します。</span><span class="sxs-lookup"><span data-stu-id="29db7-123">Specifies that this is a generic interface.</span></span>|  
+|`typelist`|<span data-ttu-id="29db7-124">使用するかどうかは必ず、[の](../../../visual-basic/language-reference/statements/of-clause.md)キーワード。</span><span class="sxs-lookup"><span data-stu-id="29db7-124">Required if you use the [Of](../../../visual-basic/language-reference/statements/of-clause.md) keyword.</span></span> <span data-ttu-id="29db7-125">このインターフェイスの型パラメーターの一覧です。</span><span class="sxs-lookup"><span data-stu-id="29db7-125">List of type parameters for this interface.</span></span> <span data-ttu-id="29db7-126">必要に応じて、型パラメーターごとに宣言できますバリアントを使用して`In`と`Out`ジェネリック修飾子です。</span><span class="sxs-lookup"><span data-stu-id="29db7-126">Optionally, each type parameter can be declared variant by using `In` and `Out` generic modifiers.</span></span> <span data-ttu-id="29db7-127">参照してください[のリストを入力](../../../visual-basic/language-reference/statements/type-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="29db7-127">See [Type List](../../../visual-basic/language-reference/statements/type-list.md).</span></span>|  
+|`Inherits`|<span data-ttu-id="29db7-128">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-128">Optional.</span></span> <span data-ttu-id="29db7-129">このインターフェイスが別のインターフェイスまたはインターフェイスのメンバーと属性を継承することを示します。</span><span class="sxs-lookup"><span data-stu-id="29db7-129">Indicates that this interface inherits the attributes and members of another interface or interfaces.</span></span> <span data-ttu-id="29db7-130">参照してください[Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="29db7-130">See [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md).</span></span>|  
+|`interfacenames`|<span data-ttu-id="29db7-131">`Inherits` ステートメントを使用する場合は必ず指定します。</span><span class="sxs-lookup"><span data-stu-id="29db7-131">Required if you use the `Inherits` statement.</span></span> <span data-ttu-id="29db7-132">このインターフェイスの派生元のインターフェイスの名前。</span><span class="sxs-lookup"><span data-stu-id="29db7-132">The names of the interfaces from which this interface derives.</span></span>|  
+|`modifiers`|<span data-ttu-id="29db7-133">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-133">Optional.</span></span> <span data-ttu-id="29db7-134">定義するインターフェイス メンバーの適切な修飾子。</span><span class="sxs-lookup"><span data-stu-id="29db7-134">Appropriate modifiers for the interface member being defined.</span></span>|  
+|`Property`|<span data-ttu-id="29db7-135">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-135">Optional.</span></span> <span data-ttu-id="29db7-136">インターフェイスのメンバーであるプロパティを定義します。</span><span class="sxs-lookup"><span data-stu-id="29db7-136">Defines a property that is a member of the interface.</span></span>|  
+|`Function`|<span data-ttu-id="29db7-137">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-137">Optional.</span></span> <span data-ttu-id="29db7-138">定義、`Function`インターフェイスのメンバーであるプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="29db7-138">Defines a `Function` procedure that is a member of the interface.</span></span>|  
+|`Sub`|<span data-ttu-id="29db7-139">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-139">Optional.</span></span> <span data-ttu-id="29db7-140">定義、`Sub`インターフェイスのメンバーであるプロシージャです。</span><span class="sxs-lookup"><span data-stu-id="29db7-140">Defines a `Sub` procedure that is a member of the interface.</span></span>|  
+|`Event`|<span data-ttu-id="29db7-141">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-141">Optional.</span></span> <span data-ttu-id="29db7-142">インターフェイスのメンバーであるイベントを定義します。</span><span class="sxs-lookup"><span data-stu-id="29db7-142">Defines an event that is a member of the interface.</span></span>|  
+|`Interface`|<span data-ttu-id="29db7-143">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-143">Optional.</span></span> <span data-ttu-id="29db7-144">このインターフェイス内で入れ子になったであるインターフェイスを定義します。</span><span class="sxs-lookup"><span data-stu-id="29db7-144">Defines an interface that is a nested within this interface.</span></span> <span data-ttu-id="29db7-145">入れ子になったインターフェイスの定義が終了する必要があります、`End Interface`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="29db7-145">The nested interface definition must terminate with an `End Interface` statement.</span></span>|  
+|`Class`|<span data-ttu-id="29db7-146">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-146">Optional.</span></span> <span data-ttu-id="29db7-147">インターフェイスのメンバーであるクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="29db7-147">Defines a class that is a member of the interface.</span></span> <span data-ttu-id="29db7-148">クラスの定義が終了する必要があります、`End Class`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="29db7-148">The member class definition must terminate with an `End Class` statement.</span></span>|  
+|`Structure`|<span data-ttu-id="29db7-149">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="29db7-149">Optional.</span></span> <span data-ttu-id="29db7-150">インターフェイスのメンバーである構造体を定義します。</span><span class="sxs-lookup"><span data-stu-id="29db7-150">Defines a structure that is a member of the interface.</span></span> <span data-ttu-id="29db7-151">構造体のメンバーの定義がで終了する必要があります、`End Structure`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="29db7-151">The member structure definition must terminate with an `End Structure` statement.</span></span>|  
+|`membername`|<span data-ttu-id="29db7-152">各プロパティ、プロシージャ、イベント、インターフェイス、クラス、またはインターフェイスのメンバーとして定義された構造に必要です。</span><span class="sxs-lookup"><span data-stu-id="29db7-152">Required for each property, procedure, event, interface, class, or structure defined as a member of the interface.</span></span> <span data-ttu-id="29db7-153">メンバーの名前。</span><span class="sxs-lookup"><span data-stu-id="29db7-153">The name of the member.</span></span>|  
+|`End Interface`|<span data-ttu-id="29db7-154">`Interface` の定義を終了します。</span><span class="sxs-lookup"><span data-stu-id="29db7-154">Terminates the `Interface` definition.</span></span>|  
   
-## 解説  
- *インターフェイス*にはプロパティやプロシージャなど、クラスや構造体で実装可能なメンバーをまとめて定義します。  インターフェイスにはメンバーのシグネチャだけを定義し、内部の処理は定義しません。  
+## <a name="remarks"></a><span data-ttu-id="29db7-155">コメント</span><span class="sxs-lookup"><span data-stu-id="29db7-155">Remarks</span></span>  
+ <span data-ttu-id="29db7-156">*インターフェイス*プロパティおよびプロシージャは、クラスし、構造体を実装できますなど、メンバーのセットを定義します。</span><span class="sxs-lookup"><span data-stu-id="29db7-156">An *interface* defines a set of members, such as properties and procedures, that classes and structures can implement.</span></span> <span data-ttu-id="29db7-157">インターフェイスのメンバーとその内部機能ではない署名のみを定義します。</span><span class="sxs-lookup"><span data-stu-id="29db7-157">The interface defines only the signatures of the members and not their internal workings.</span></span>  
   
- クラスや構造体でインターフェイスを実装する場合は、そのインターフェイスに定義されたすべてのメンバーのコードを定義します。  最後に、アプリケーションがそのクラスまたは構造体からインスタンスを作成した時点でオブジェクトが存在し、メモリ内で実行されます。  詳細については、「[Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)」および「[Interfaces](../../../visual-basic/programming-guide/language-features/interfaces/index.md)」を参照してください。  
+ <span data-ttu-id="29db7-158">クラスまたは構造体、インターフェイスで定義されたすべてのメンバー コードを指定することによって、インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="29db7-158">A class or structure implements the interface by supplying code for every member defined by the interface.</span></span> <span data-ttu-id="29db7-159">最後に、アプリケーションは、そのクラスまたは構造体からのインスタンスを作成するときに、オブジェクトが存在し、メモリ内で実行します。</span><span class="sxs-lookup"><span data-stu-id="29db7-159">Finally, when the application creates an instance from that class or structure, an object exists and runs in memory.</span></span> <span data-ttu-id="29db7-160">詳細については、次を参照してください。[クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)と[インターフェイス](../../../visual-basic/programming-guide/language-features/interfaces/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="29db7-160">For more information, see [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md) and [Interfaces](../../../visual-basic/programming-guide/language-features/interfaces/index.md).</span></span>  
   
- `Interface` は、名前空間またはモジュール レベルでのみ使用できます。  つまり、インターフェイスの*宣言コンテキスト*はソース ファイル、名前空間、クラス、構造体、モジュール、またはインターフェイスのいずれかである必要があり、プロシージャまたはブロックでは宣言できません。  詳細については、「[Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
+ <span data-ttu-id="29db7-161">`Interface` は、名前空間またはモジュール レベルでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="29db7-161">You can use `Interface` only at namespace or module level.</span></span> <span data-ttu-id="29db7-162">つまり、*宣言コンテキスト*インターフェイスは、ソース ファイル、名前空間、クラス、構造体、モジュール、またはインターフェイスである必要があります、プロシージャまたはブロックすることはできません。</span><span class="sxs-lookup"><span data-stu-id="29db7-162">This means the *declaration context* for an interface must be a source file, namespace, class, structure, module, or interface, and cannot be a procedure or block.</span></span> <span data-ttu-id="29db7-163">詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="29db7-163">For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span></span>  
   
- インターフェイスには既定で [Friend](../../../visual-basic/language-reference/modifiers/friend.md) のアクセス レベルが設定されます。  アクセス修飾子を使用してこれらのアクセス レベルを調整できます。  詳細については、「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ <span data-ttu-id="29db7-164">インターフェイスの既定値は[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)アクセスします。</span><span class="sxs-lookup"><span data-stu-id="29db7-164">Interfaces default to [Friend](../../../visual-basic/language-reference/modifiers/friend.md) access.</span></span> <span data-ttu-id="29db7-165">アクセス修飾子を使用してこれらのアクセス レベルを調整できます。</span><span class="sxs-lookup"><span data-stu-id="29db7-165">You can adjust their access levels with the access modifiers.</span></span> <span data-ttu-id="29db7-166">詳細については、次を参照してください。 [Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="29db7-166">For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
   
-## 規則  
+## <a name="rules"></a><span data-ttu-id="29db7-167">ルール</span><span class="sxs-lookup"><span data-stu-id="29db7-167">Rules</span></span>  
   
--   **インターフェイスの入れ子。**インターフェイスを別のインターフェイスの内部に定義できます。  外側のインターフェイスを*包含インターフェイス*と呼び、内側のインターフェイスを*入れ子になったインターフェイス*と呼びます。  
+-   <span data-ttu-id="29db7-168">**インターフェイスの入れ子。**</span><span class="sxs-lookup"><span data-stu-id="29db7-168">**Nesting Interfaces.**</span></span> <span data-ttu-id="29db7-169">他の中で 1 つのインターフェイスを定義できます。</span><span class="sxs-lookup"><span data-stu-id="29db7-169">You can define one interface within another.</span></span> <span data-ttu-id="29db7-170">外側のインターフェイス、*インターフェイスを含む*、内部のインターフェイスを呼び出すと、*入れ子になったインターフェイス*です。</span><span class="sxs-lookup"><span data-stu-id="29db7-170">The outer interface is called the *containing interface*, and the inner interface is called a *nested interface*.</span></span>  
   
--   **メンバーの宣言。**プロパティまたはプロシージャをインターフェイスのメンバーとして宣言する場合は、その*シグネチャ*だけを定義します。  シグネチャには要素の種類 \(プロパティまたはプロシージャ\)、パラメーターとその型、および戻り値の型が含まれます。  このため、メンバーの定義にはコードを 1 行だけ使用し、`End Function` や `End Property` などの終了ステートメントをインターフェイスに定義することはできません。  
+-   <span data-ttu-id="29db7-171">**メンバーの宣言。**</span><span class="sxs-lookup"><span data-stu-id="29db7-171">**Member Declaration.**</span></span> <span data-ttu-id="29db7-172">のみを定義するインターフェイスのメンバーとして、プロパティまたはプロシージャを宣言する場合、*署名*そのプロパティまたはプロシージャのです。</span><span class="sxs-lookup"><span data-stu-id="29db7-172">When you declare a property or procedure as a member of an interface, you are defining only the *signature* of that property or procedure.</span></span> <span data-ttu-id="29db7-173">これには、要素の型 (プロパティまたはプロシージャ)、そのパラメーターとパラメーターの型、および戻り値の型が含まれます。</span><span class="sxs-lookup"><span data-stu-id="29db7-173">This includes the element type (property or procedure), its parameters and parameter types, and its return type.</span></span> <span data-ttu-id="29db7-174">このため、メンバーの定義はコード、および終端ステートメントなどの 1 行のみを使用して`End Function`または`End Property`はインターフェイスでは無効です。</span><span class="sxs-lookup"><span data-stu-id="29db7-174">Because of this, the member definition uses only one line of code, and terminating statements such as `End Function` or `End Property` are not valid in an interface.</span></span>  
   
-     これに対し、列挙体や構造体、または入れ子になったクラスやインターフェイスを定義するときには、そのデータ メンバーを含める必要があります。  
+     <span data-ttu-id="29db7-175">これに対し、列挙型または構造体、または入れ子になったクラスまたはインターフェイスを定義するときに、そのデータ メンバーを含める必要です。</span><span class="sxs-lookup"><span data-stu-id="29db7-175">In contrast, when you define an enumeration or structure, or a nested class or interface, it is necessary to include their data members.</span></span>  
   
--   **メンバー修飾子。**モジュールのメンバーを定義するときには、アクセス修飾子を使用できません。また、[Overloads](../../../visual-basic/language-reference/modifiers/overloads.md) を除くどのプロシージャ修飾子 \([Shared](../../../visual-basic/language-reference/modifiers/shared.md) など\) も指定できません。  どのメンバーでも、[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md) を使って宣言できます。また、プロパティを定義するときには、[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md) や [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md) の他に [Default](../../../visual-basic/language-reference/modifiers/default.md) を使用できます。  
+-   <span data-ttu-id="29db7-176">**メンバー修飾子。**</span><span class="sxs-lookup"><span data-stu-id="29db7-176">**Member Modifiers.**</span></span> <span data-ttu-id="29db7-177">アクセス修飾子を使用することはできませんモジュール メンバーを定義するときに指定することも[共有](../../../visual-basic/language-reference/modifiers/shared.md)またはを除き、プロシージャ修飾子[Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)です。</span><span class="sxs-lookup"><span data-stu-id="29db7-177">You cannot use any access modifiers when defining module members, nor can you specify [Shared](../../../visual-basic/language-reference/modifiers/shared.md) or any procedure modifier except [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md).</span></span> <span data-ttu-id="29db7-178">持つメンバーを宣言することができます[シャドウ](../../../visual-basic/language-reference/modifiers/shadows.md)、使用することができます[既定](../../../visual-basic/language-reference/modifiers/default.md)、プロパティを定義するときにだけでなく[読み取り専用](../../../visual-basic/language-reference/modifiers/readonly.md)または[WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)です。</span><span class="sxs-lookup"><span data-stu-id="29db7-178">You can declare any member with [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md), and you can use [Default](../../../visual-basic/language-reference/modifiers/default.md) when defining a property, as well as [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md) or [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md).</span></span>  
   
--   **継承。**インターフェイスに [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md) を使用して、1 つ以上の基本インターフェイスを指定できます。  2 つのインターフェイスに同じ名前のメンバーが定義されている場合でも、その 2 つを継承できます。  その場合、実装コードでは、実装するメンバーを指すために名前の修飾を使う必要があります。  
+-   <span data-ttu-id="29db7-179">**継承。**</span><span class="sxs-lookup"><span data-stu-id="29db7-179">**Inheritance.**</span></span> <span data-ttu-id="29db7-180">インターフェイスで使用する場合、 [Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)、1 つまたは複数の基底インターフェイスを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="29db7-180">If the interface uses the [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md), you can specify one or more base interfaces.</span></span> <span data-ttu-id="29db7-181">同じ名前のメンバーが定義されている場合でも、2 つのインターフェイスから継承することができます。</span><span class="sxs-lookup"><span data-stu-id="29db7-181">You can inherit from two interfaces even if they each define a member with the same name.</span></span> <span data-ttu-id="29db7-182">これを行う場合、実装コードは、実装するメンバーを指定する名前の修飾を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="29db7-182">If you do so, the implementing code must use name qualification to specify which member it is implementing.</span></span>  
   
-     インターフェイスには、それ自身より厳しいアクセス レベルを持つ別のインターフェイスを継承することはできません。  たとえば、`Public` インターフェイスは `Friend` インターフェイスを継承できません。  
+     <span data-ttu-id="29db7-183">インターフェイスより制限の厳しいアクセス レベルを持つ別のインターフェイスから継承できません。</span><span class="sxs-lookup"><span data-stu-id="29db7-183">An interface cannot inherit from another interface with a more restrictive access level.</span></span> <span data-ttu-id="29db7-184">たとえば、`Public`インターフェイスを継承できません、`Friend`インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="29db7-184">For example, a `Public` interface cannot inherit from a `Friend` interface.</span></span>  
   
-     インターフェイスは、自分の中に入れ子になっているインターフェイスを継承できません。  
+     <span data-ttu-id="29db7-185">インターフェイスは、内部に入れ子になったインターフェイスから継承できません。</span><span class="sxs-lookup"><span data-stu-id="29db7-185">An interface cannot inherit from an interface nested within it.</span></span>  
   
--   **実装。**クラスに [Implements](../../../visual-basic/language-reference/statements/implements-clause.md) ステートメントを使ってインターフェイスを実装するときには、そのインターフェイスに定義されているすべてのメンバーを実装する必要があります。  さらに、実装先のコードでは、各シグネチャがインターフェイスに定義された対応するシグネチャと完全に一致していることが必要です。  ただし、実装先のコードでのメンバーの名前は、インターフェイスに定義されたメンバー名と同じでなくてもかまいません。  
+-   <span data-ttu-id="29db7-186">**実装です。**</span><span class="sxs-lookup"><span data-stu-id="29db7-186">**Implementation.**</span></span> <span data-ttu-id="29db7-187">クラスを使用する場合、 [Implements](../../../visual-basic/language-reference/statements/implements-clause.md)ステートメントをこのインターフェイスを実装するインターフェイス内で定義されているすべてのメンバーを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="29db7-187">When a class uses the [Implements](../../../visual-basic/language-reference/statements/implements-clause.md) statement to implement this interface, it must implement every member defined within the interface.</span></span> <span data-ttu-id="29db7-188">さらに、各シグネチャの実装コードには、このインターフェイスで定義されている対応する署名を正確に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="29db7-188">Furthermore, each signature in the implementing code must exactly match the corresponding signature defined in this interface.</span></span> <span data-ttu-id="29db7-189">ただし、実装コードに含まれるメンバーの名前は、インターフェイスで定義されているメンバー名と一致する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="29db7-189">However, the name of the member in the implementing code does not have to match the member name as defined in the interface.</span></span>  
   
-     クラスにプロシージャを実装するとき、そのプロシージャに `Shared` を指定できません。  
+     <span data-ttu-id="29db7-190">クラスが実装する場合、プロシージャ、としてプロシージャを指定することできません`Shared`です。</span><span class="sxs-lookup"><span data-stu-id="29db7-190">When a class is implementing a procedure, it cannot designate the procedure as `Shared`.</span></span>  
   
--   **既定のプロパティ。**インターフェイスには、1 つまでのプロパティを*既定のプロパティ*として指定できます。既定のプロパティは、プロパティ名を使用せずに参照できます。  既定のプロパティを指定するには、[Default](../../../visual-basic/language-reference/modifiers/default.md) 修飾子を使って宣言します。  
+-   <span data-ttu-id="29db7-191">**既定のプロパティ。**</span><span class="sxs-lookup"><span data-stu-id="29db7-191">**Default Property.**</span></span> <span data-ttu-id="29db7-192">インターフェイスとして最大で 1 つのプロパティを指定できます、*既定プロパティ*プロパティ名を使用しない参照されていることができます。</span><span class="sxs-lookup"><span data-stu-id="29db7-192">An interface can specify at most one property as its *default property*, which can be referenced without using the property name.</span></span> <span data-ttu-id="29db7-193">宣言することによってこのようなプロパティを指定する、[既定](../../../visual-basic/language-reference/modifiers/default.md)修飾子です。</span><span class="sxs-lookup"><span data-stu-id="29db7-193">You specify such a property by declaring it with the [Default](../../../visual-basic/language-reference/modifiers/default.md) modifier.</span></span>  
   
-     つまり、インターフェイスに既定のプロパティを定義できるのは、インターフェイスが何も継承していない場合だけです。  
+     <span data-ttu-id="29db7-194">つまり、何も継承している場合にのみ、インターフェイスに、既定のプロパティを定義できますに注意してください。</span><span class="sxs-lookup"><span data-stu-id="29db7-194">Notice that this means that an interface can define a default property only if it inherits none.</span></span>  
   
-## \[動作\]  
+## <a name="behavior"></a><span data-ttu-id="29db7-195">動作</span><span class="sxs-lookup"><span data-stu-id="29db7-195">Behavior</span></span>  
   
--   **アクセス レベル。**すべてのインターフェイス メンバーは、暗黙的に [Public](../../../visual-basic/language-reference/modifiers/public.md) アクセスになります。  メンバーを定義するとき、アクセス修飾子は使用できません。  ただし、インターフェイスを実装するクラスで、実装された各メンバーに対してアクセス レベルを宣言できます。  
+-   <span data-ttu-id="29db7-196">**アクセス レベル。**</span><span class="sxs-lookup"><span data-stu-id="29db7-196">**Access Level.**</span></span> <span data-ttu-id="29db7-197">すべてのインターフェイス メンバーが暗黙的が[パブリック](../../../visual-basic/language-reference/modifiers/public.md)アクセスします。</span><span class="sxs-lookup"><span data-stu-id="29db7-197">All interface members implicitly have [Public](../../../visual-basic/language-reference/modifiers/public.md) access.</span></span> <span data-ttu-id="29db7-198">メンバーを定義するときに、アクセス修飾子を使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="29db7-198">You cannot use any access modifier when defining a member.</span></span> <span data-ttu-id="29db7-199">ただし、インターフェイスを実装するクラスでは、実装された各メンバーのアクセス レベルを宣言することができます。</span><span class="sxs-lookup"><span data-stu-id="29db7-199">However, a class implementing the interface can declare an access level for each implemented member.</span></span>  
   
-     クラスのインスタンスを変数に割り当てる場合、そのメンバーのアクセス レベルは、変数のデータ型が基のインターフェイスかそれとも実装先のクラスかによって変わります。  次に例を示します。  
+     <span data-ttu-id="29db7-200">クラスのインスタンスを変数に代入する場合、そのメンバーのアクセス レベルは、変数のデータ型が、基になるインターフェイスまたはクラスの実装がかどうかに依存できます。</span><span class="sxs-lookup"><span data-stu-id="29db7-200">If you assign a class instance to a variable, the access level of its members can depend on whether the data type of the variable is the underlying interface or the implementing class.</span></span> <span data-ttu-id="29db7-201">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="29db7-201">The following example illustrates this.</span></span>  
   
      [!code-vb[VbVbalrStatements#39](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/interface-statement_1.vb)]  
   
-     `varAsInterface` を指定してクラス メンバーにアクセスする場合は、すべてのメンバーがパブリック アクセスになります。  ただし、`varAsClass` を指定してメンバーにアクセスする場合、`Sub` プロシージャである `doSomething` はプライベート アクセスになります。  
+     <span data-ttu-id="29db7-202">を通じてクラス メンバーにアクセスする場合`varAsInterface`、すべてのパブリック アクセスがあります。</span><span class="sxs-lookup"><span data-stu-id="29db7-202">If you access class members through `varAsInterface`, they all have public access.</span></span> <span data-ttu-id="29db7-203">ただし、を通じてメンバーにアクセスする場合`varAsClass`、`Sub`プロシージャ`doSomething`プライベート アクセスします。</span><span class="sxs-lookup"><span data-stu-id="29db7-203">However, if you access members through `varAsClass`, the `Sub` procedure `doSomething` has private access.</span></span>  
   
--   **スコープ。**インターフェイスのスコープは名前空間、クラス、構造体、またはモジュール全体です。  
+-   <span data-ttu-id="29db7-204">**スコープです。**</span><span class="sxs-lookup"><span data-stu-id="29db7-204">**Scope.**</span></span> <span data-ttu-id="29db7-205">インターフェイスでは、その名前空間、クラス、構造体、またはモジュール全体にわたってスコープ内です。</span><span class="sxs-lookup"><span data-stu-id="29db7-205">An interface is in scope throughout its namespace, class, structure, or module.</span></span>  
   
-     インターフェイスのすべてのメンバーのスコープは、インターフェイス全体になります。  
+     <span data-ttu-id="29db7-206">すべてのインターフェイス メンバーのスコープは、全体のインターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="29db7-206">The scope of every interface member is the entire interface.</span></span>  
   
--   **有効期間。**インターフェイスおよびそのメンバーには、有効期間がありません。  クラスがインターフェイスを実装し、そのクラスのインスタンスとしてオブジェクトが作成されると、そのオブジェクトが有効期間 \(オブジェクトを実行しているアプリケーションが終了するまで\) を持ちます。  詳細については、「[Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)」の「有効期間」を参照してください。  
+-   <span data-ttu-id="29db7-207">**有効期間。**</span><span class="sxs-lookup"><span data-stu-id="29db7-207">**Lifetime.**</span></span> <span data-ttu-id="29db7-208">インターフェイス自体が有効期間は、また、そのメンバーをしないでください。</span><span class="sxs-lookup"><span data-stu-id="29db7-208">An interface does not itself have a lifetime, nor do its members.</span></span> <span data-ttu-id="29db7-209">ときに、クラス インターフェイスを実装し、オブジェクトとして作成されますのインスタンス クラス、オブジェクトが実行されているアプリケーション内で有効期間。</span><span class="sxs-lookup"><span data-stu-id="29db7-209">When a class implements an interface and an object is created as an instance of that class, the object has a lifetime within the application in which it is running.</span></span> <span data-ttu-id="29db7-210">詳細についてを参照してください「の有効期間」[クラス ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="29db7-210">For more information, see "Lifetime" in [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md).</span></span>  
   
-## 使用例  
- 次の例は `Interface` ステートメントを使用して、`thisInterface` という名前のインターフェイスを定義します。これを実装するには、`Property` ステートメントと `Function` ステートメントを使用する必要があります。  
+## <a name="example"></a><span data-ttu-id="29db7-211">例</span><span class="sxs-lookup"><span data-stu-id="29db7-211">Example</span></span>  
+ <span data-ttu-id="29db7-212">次の例では、`Interface`をという名前のインターフェイスを定義するステートメント`thisInterface`、これを使用して実装する必要があります、`Property`ステートメントと`Function`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="29db7-212">The following example uses the `Interface` statement to define an interface named `thisInterface`, which must be implemented with a `Property` statement and a `Function` statement.</span></span>  
   
  [!code-vb[VbVbalrStatements#40](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/interface-statement_2.vb)]  
   
- インターフェイス内で `Property` ステートメントと `Function` ステートメントで開始されたブロックが、`End Property` と `End Function` で終了していない点に注意してください。  インターフェイスには、そのメンバーのシグネチャのみを定義します。  `Property` ブロックと `Function` ブロックの完全な定義は、`thisInterface` を実装するクラスに記述されています。  
+ <span data-ttu-id="29db7-213">なお、`Property`と`Function`ステートメントは終わるブロックを導入していません`End Property`と`End Function`インターフェイス内で。</span><span class="sxs-lookup"><span data-stu-id="29db7-213">Note that the `Property` and `Function` statements do not introduce blocks ending with `End Property` and `End Function` within the interface.</span></span> <span data-ttu-id="29db7-214">インターフェイスでは、そのメンバーのシグネチャのみを定義します。</span><span class="sxs-lookup"><span data-stu-id="29db7-214">The interface defines only the signatures of its members.</span></span> <span data-ttu-id="29db7-215">完全`Property`と`Function`を実装するクラスに表示されるブロック`thisInterface`です。</span><span class="sxs-lookup"><span data-stu-id="29db7-215">The full `Property` and `Function` blocks appear in a class that implements `thisInterface`.</span></span>  
   
-## 参照  
- [Interfaces](../../../visual-basic/programming-guide/language-features/interfaces/index.md)   
- [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)   
- [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)   
- [Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md)   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)   
- [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   
- [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
- [ジェネリック インターフェイスの分散](../Topic/Variance%20in%20Generic%20Interfaces%20\(C%23%20and%20Visual%20Basic\).md)   
- [In](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)   
- [Out](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+## <a name="see-also"></a><span data-ttu-id="29db7-216">関連項目</span><span class="sxs-lookup"><span data-stu-id="29db7-216">See Also</span></span>  
+ [<span data-ttu-id="29db7-217">インターフェイス</span><span class="sxs-lookup"><span data-stu-id="29db7-217">Interfaces</span></span>](../../../visual-basic/programming-guide/language-features/interfaces/index.md)  
+ [<span data-ttu-id="29db7-218">Class ステートメント</span><span class="sxs-lookup"><span data-stu-id="29db7-218">Class Statement</span></span>](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [<span data-ttu-id="29db7-219">Module ステートメント</span><span class="sxs-lookup"><span data-stu-id="29db7-219">Module Statement</span></span>](../../../visual-basic/language-reference/statements/module-statement.md)  
+ [<span data-ttu-id="29db7-220">Structure ステートメント</span><span class="sxs-lookup"><span data-stu-id="29db7-220">Structure Statement</span></span>](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [<span data-ttu-id="29db7-221">Property ステートメント</span><span class="sxs-lookup"><span data-stu-id="29db7-221">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="29db7-222">Function ステートメント</span><span class="sxs-lookup"><span data-stu-id="29db7-222">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [<span data-ttu-id="29db7-223">Sub ステートメント</span><span class="sxs-lookup"><span data-stu-id="29db7-223">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [<span data-ttu-id="29db7-224">Visual Basic におけるジェネリック型</span><span class="sxs-lookup"><span data-stu-id="29db7-224">Generic Types in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
+ [<span data-ttu-id="29db7-225">ジェネリック インターフェイスの分散</span><span class="sxs-lookup"><span data-stu-id="29db7-225">Variance in Generic Interfaces</span></span>](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
+ [<span data-ttu-id="29db7-226">In</span><span class="sxs-lookup"><span data-stu-id="29db7-226">In</span></span>](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)  
+ [<span data-ttu-id="29db7-227">Out</span><span class="sxs-lookup"><span data-stu-id="29db7-227">Out</span></span>](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)

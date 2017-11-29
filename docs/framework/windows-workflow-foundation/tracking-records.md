@@ -1,70 +1,74 @@
 ---
-title: "追跡レコード | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "追跡レコード"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 51adbda3-bd8b-4892-a8ea-d343186472d2
-caps.latest.revision: 20
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: bfb5c297b903909af7df08f150f3e2f507ee190d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 追跡レコード
-ワークフロー ランタイムは、ワークフロー インスタンスの実行状況を追跡する追跡レコードを出力するためにインストルメント化されています。  
+# <a name="tracking-records"></a><span data-ttu-id="ec7e3-102">追跡レコード</span><span class="sxs-lookup"><span data-stu-id="ec7e3-102">Tracking Records</span></span>
+<span data-ttu-id="ec7e3-103">ワークフロー ランタイムは、ワークフロー インスタンスの実行状況を追跡する追跡レコードを出力するためにインストルメント化されています。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-103">The workflow runtime is instrumented to emit tracking records to follow the execution of a workflow instance.</span></span>  
   
-## 追跡レコード  
- 次の表で、ワークフロー ランタイムが出力する追跡レコードの詳細を説明します。  
+## <a name="tracking-records"></a><span data-ttu-id="ec7e3-104">追跡レコード</span><span class="sxs-lookup"><span data-stu-id="ec7e3-104">Tracking Records</span></span>  
+ <span data-ttu-id="ec7e3-105">次の表で、ワークフロー ランタイムが出力する追跡レコードの詳細を説明します。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-105">The following table details the tracking records that the workflow runtime emits.</span></span>  
   
-|追跡レコード|説明|  
-|------------|--------|  
-|ワークフロー ライフ サイクル レコード|ワークフロー インスタンスのライフ サイクルの多様なステージ中に出力されます。たとえば、ワークフローの開始時または完了時にレコードは出力されます。|  
-|アクティビティ ライフ サイクル レコード|アクティビティの実行状況を詳しく記録します。これらのレコードは、アクティビティをスケジュールしたとき、アクティビティが完了したとき、エラーが発生したときなど、ワークフロー アクティビティの状態を示します。|  
-|ブックマーク再開レコード|ワークフロー インスタンス内のブックマークが再開されたときに出力されます。|  
-|カスタム追跡レコード|ワークフロー作成者はカスタム追跡レコードを作成し、カスタム アクティビティ内で出力できます。|  
+|<span data-ttu-id="ec7e3-106">追跡レコード</span><span class="sxs-lookup"><span data-stu-id="ec7e3-106">Tracking record</span></span>|<span data-ttu-id="ec7e3-107">説明</span><span class="sxs-lookup"><span data-stu-id="ec7e3-107">Description</span></span>|  
+|---------------------|-----------------|  
+|<span data-ttu-id="ec7e3-108">ワークフロー ライフ サイクル レコード</span><span class="sxs-lookup"><span data-stu-id="ec7e3-108">Workflow life cycle records</span></span>|<span data-ttu-id="ec7e3-109">ワークフロー インスタンスのライフ サイクルの多様なステージ中に出力されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-109">Emitted during various stages of the life cycle of the workflow instance.</span></span> <span data-ttu-id="ec7e3-110">たとえば、ワークフローの開始時または完了時にレコードは出力されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-110">For example, a record is emitted when the workflow starts or completes.</span></span>|  
+|<span data-ttu-id="ec7e3-111">アクティビティ ライフ サイクル レコード</span><span class="sxs-lookup"><span data-stu-id="ec7e3-111">Activity life cycle records</span></span>|<span data-ttu-id="ec7e3-112">アクティビティの実行状況を詳しく記録します。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-112">Details activity execution.</span></span> <span data-ttu-id="ec7e3-113">これらのレコードは、アクティビティをスケジュールしたとき、アクティビティが完了したとき、エラーが発生したときなど、ワークフロー アクティビティの状態を示します。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-113">These records indicate the state of a workflow activity such as when an activity is scheduled, when the activity completes, or when a fault occurs.</span></span>|  
+|<span data-ttu-id="ec7e3-114">ブックマーク再開レコード</span><span class="sxs-lookup"><span data-stu-id="ec7e3-114">Bookmark resumption records</span></span>|<span data-ttu-id="ec7e3-115">ワークフロー インスタンス内のブックマークが再開されたときに出力されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-115">Emitted whenever a bookmark within a workflow instance is resumed.</span></span>|  
+|<span data-ttu-id="ec7e3-116">カスタム追跡レコード</span><span class="sxs-lookup"><span data-stu-id="ec7e3-116">Custom tracking records</span></span>|<span data-ttu-id="ec7e3-117">ワークフロー作成者はカスタム追跡レコードを作成し、カスタム アクティビティ内で出力できます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-117">A workflow author can create custom tracking records and emit them within a custom activity.</span></span>|  
   
- WF ランタイムから出力されるすべての追跡関連レコードは、基本クラス <xref:System.Activities.Tracking.TrackingRecord> から派生します。この基本クラスには一般的なデータのセットが含まれます。追跡レコードは、単純なワークフローのライフ サイクルを示します。各追跡レコードには、<xref:System.Activities.Tracking.TrackingRecord.InstanceId%2A>、<xref:System.Activities.Tracking.TrackingRecord.RecordNumber%2A> などの関連する追跡イベント、および追跡レコードの型に固有の追加情報の詳細が含まれます。  
+ <span data-ttu-id="ec7e3-118">WF ランタイムから出力されるすべての追跡関連レコードは、基本クラス <xref:System.Activities.Tracking.TrackingRecord> から派生します。この基本クラスには一般的なデータのセットが含まれます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-118">All tracking-related records emitted from the WF runtime derive from the base class <xref:System.Activities.Tracking.TrackingRecord>, which contains the common set of data.</span></span> <span data-ttu-id="ec7e3-119">追跡レコードは、単純なワークフローのライフ サイクルを示します。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-119">Tracking records show the life cycle for a simple workflow.</span></span> <span data-ttu-id="ec7e3-120">各追跡レコードには、<xref:System.Activities.Tracking.TrackingRecord.InstanceId%2A>、<xref:System.Activities.Tracking.TrackingRecord.RecordNumber%2A> などの関連する追跡イベント、および追跡レコードの型に固有の追加情報の詳細が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-120">Each tracking record contains details about the associated tracking event, such as the <xref:System.Activities.Tracking.TrackingRecord.InstanceId%2A>, <xref:System.Activities.Tracking.TrackingRecord.RecordNumber%2A>, and additional information specific to the type of tracking record.</span></span>  
   
- 次の <xref:System.Activities.Tracking.TrackingRecord> オブジェクトの型は、ワークフロー ランタイムによって出力されます。  
+ <span data-ttu-id="ec7e3-121">次の <xref:System.Activities.Tracking.TrackingRecord> オブジェクトの型は、ワークフロー ランタイムによって出力されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-121">The following types of <xref:System.Activities.Tracking.TrackingRecord> objects are emitted by the workflow runtime:</span></span>  
   
--   **WorkflowInstanceRecord** \- この <xref:System.Activities.Tracking.TrackingRecord> は、ワークフロー インスタンスのライフ サイクルを示します。たとえば、ワークフローの開始時または完了時にレコードが出力されます。また、レコードにはワークフロー インスタンスの状態が含まれます。このレコードの詳細については、「<xref:System.Activities.Tracking.WorkflowInstanceRecord>」を参照してください。  
+-   <span data-ttu-id="ec7e3-122">**WorkflowInstanceRecord** - この<xref:System.Activities.Tracking.TrackingRecord>ワークフロー インスタンスのライフ サイクルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-122">**WorkflowInstanceRecord** - This <xref:System.Activities.Tracking.TrackingRecord> describes the life cycle of the workflow instance.</span></span> <span data-ttu-id="ec7e3-123">たとえば、ワークフローの開始時または完了時にレコードが出力されます。また、レコードにはワークフロー インスタンスの状態が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-123">For example, a record is emitted when the workflow starts or completes, and contains the state of the workflow instance.</span></span> <span data-ttu-id="ec7e3-124">このレコードの詳細については、「<xref:System.Activities.Tracking.WorkflowInstanceRecord>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-124">The details of this record can be found at <xref:System.Activities.Tracking.WorkflowInstanceRecord>.</span></span>  
   
--   **WorkflowInstanceAbortedRecord** \- この <xref:System.Activities.Tracking.TrackingRecord> は、ワークフロー インスタンスの中止時に出力されます。レコードにはワークフロー インスタンスが中止された理由が含まれます。このレコードの詳細については、「<xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>」を参照してください。  
+-   <span data-ttu-id="ec7e3-125">**WorkflowInstanceAbortedRecord** - この<xref:System.Activities.Tracking.TrackingRecord>はワークフロー インスタンスが中止されると生成されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-125">**WorkflowInstanceAbortedRecord** - This <xref:System.Activities.Tracking.TrackingRecord> is emitted when a workflow instance aborts.</span></span> <span data-ttu-id="ec7e3-126">レコードにはワークフロー インスタンスが中止された理由が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-126">The record contains the reason for the workflow instance being aborted.</span></span> <span data-ttu-id="ec7e3-127">このレコードの詳細については、「<xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-127">The details of this record can be found at <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>.</span></span>  
   
--   **WorkflowInstanceUnhandledExceptionRecord** \- この <xref:System.Activities.Tracking.TrackingRecord> は、例外がワークフロー インスタンスで発生し、任意のアクティビティによって処理されない場合に出力されます。レコードには例外の詳細が含まれます。このレコードの詳細については、「<xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>」を参照してください。  
+-   <span data-ttu-id="ec7e3-128">**WorkflowInstanceUnhandledExceptionRecord** - この<xref:System.Activities.Tracking.TrackingRecord>は、例外がワークフロー インスタンスで発生し、任意のアクティビティによって処理されない場合に生成されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-128">**WorkflowInstanceUnhandledExceptionRecord** - This <xref:System.Activities.Tracking.TrackingRecord> is emitted if an exception occurs in the workflow instance and is not handled by any activity.</span></span> <span data-ttu-id="ec7e3-129">レコードには例外の詳細が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-129">The record contains the exception details.</span></span> <span data-ttu-id="ec7e3-130">このレコードの詳細については、「<xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-130">The details of this record can be found at <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>.</span></span>  
   
--   **WorkflowInstanceSuspendedRecord** \- この <xref:System.Activities.Tracking.TrackingRecord> は、ワークフロー インスタンスが一時停止されたときに出力されます。レコードにはワークフロー インスタンスが一時停止された理由が含まれます。このレコードの詳細については、「<xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>」を参照してください。  
+-   <span data-ttu-id="ec7e3-131">**WorkflowInstanceSuspendedRecord** - この<xref:System.Activities.Tracking.TrackingRecord>はワークフロー インスタンスが中断されるたびに生成されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-131">**WorkflowInstanceSuspendedRecord** - This <xref:System.Activities.Tracking.TrackingRecord> is emitted whenever a workflow instance is suspended.</span></span> <span data-ttu-id="ec7e3-132">レコードにはワークフロー インスタンスが一時停止された理由が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-132">The record contains the reason for the workflow instance being suspended.</span></span> <span data-ttu-id="ec7e3-133">このレコードの詳細については、「<xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-133">The details of this record can be found at <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>.</span></span>  
   
--   **WorkflowInstanceTerminatedRecord** \- この <xref:System.Activities.Tracking.TrackingRecord> は、ワークフロー インスタンスが終了したときに出力されます。レコードにはワークフロー インスタンスが終了した理由が含まれます。このレコードの詳細については、「<xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>」を参照してください。  
+-   <span data-ttu-id="ec7e3-134">**WorkflowInstanceTerminatedRecord** - この<xref:System.Activities.Tracking.TrackingRecord>はワークフロー インスタンスが終了するたびに生成されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-134">**WorkflowInstanceTerminatedRecord** - This <xref:System.Activities.Tracking.TrackingRecord> is emitted whenever a workflow instance is terminated.</span></span> <span data-ttu-id="ec7e3-135">レコードにはワークフロー インスタンスが終了した理由が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-135">The record contains the reason for the workflow instance being terminated.</span></span> <span data-ttu-id="ec7e3-136">このレコードの詳細については、「<xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-136">The details of this record can be found at <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>.</span></span>  
   
--   **ActivityStateRecord** \- この <xref:System.Activities.Tracking.TrackingRecord> は、ワークフロー内のアクティビティが実行されたときに出力されます。これらのレコードは、ワークフロー インスタンス内のアクティビティの状態を示します。このレコードの詳細については、「<xref:System.Activities.Tracking.ActivityStateRecord>」を参照してください。  
+-   <span data-ttu-id="ec7e3-137">**ActivityStateRecord** - この<xref:System.Activities.Tracking.TrackingRecord>は、ワークフロー内のアクティビティを実行するときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-137">**ActivityStateRecord** - This <xref:System.Activities.Tracking.TrackingRecord> is emitted when an activity within a workflow executes.</span></span> <span data-ttu-id="ec7e3-138">これらのレコードは、ワークフロー インスタンス内のアクティビティの状態を示します。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-138">These records indicate the state of the activity within the workflow instance.</span></span> <span data-ttu-id="ec7e3-139">このレコードの詳細については、「<xref:System.Activities.Tracking.ActivityStateRecord>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-139">The details of this record can be found at <xref:System.Activities.Tracking.ActivityStateRecord>.</span></span>  
   
--   **ActivityScheduledRecord** \- この <xref:System.Activities.Tracking.TrackingRecord> は、アクティビティが子のアクティビティをスケジュールするときに出力されます。このレコードには、親のアクティビティ \(スケジューリング アクティビティ\) およびスケジュール設定された子のアクティビティの両方の詳細が含まれます。このレコードの詳細については、「<xref:System.Activities.Tracking.ActivityScheduledRecord>」を参照してください。  
+-   <span data-ttu-id="ec7e3-140">**ActivityScheduledRecord** - この<xref:System.Activities.Tracking.TrackingRecord>はアクティビティが子アクティビティをスケジュールするときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-140">**ActivityScheduledRecord** - This <xref:System.Activities.Tracking.TrackingRecord> is emitted when an activity schedules a child activity.</span></span> <span data-ttu-id="ec7e3-141">このレコードには、親のアクティビティ (スケジューリング アクティビティ) およびスケジュール設定された子アクティビティの両方の詳細が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-141">This record contains details for both the parent activity (scheduling activity) and the scheduled child activity.</span></span> <span data-ttu-id="ec7e3-142">このレコードの詳細については、「<xref:System.Activities.Tracking.ActivityScheduledRecord>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-142">The details of this record can be found at <xref:System.Activities.Tracking.ActivityScheduledRecord>.</span></span>  
   
--   **FaultPropagationRecord** \- この <xref:System.Activities.Tracking.TrackingRecord> は、レコードが処理されるまで、レコードを確認するハンドラーごとに出力されます。これは、エラーがワークフロー インスタンス内でたどるパスを示すために使用されます。このレコードの詳細については、「<xref:System.Activities.Tracking.FaultPropagationRecord>」を参照してください。  
+-   <span data-ttu-id="ec7e3-143">**FaultPropagationRecord** - この<xref:System.Activities.Tracking.TrackingRecord>処理されるまでレコードを調べて各ハンドラーが生成されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-143">**FaultPropagationRecord** - This <xref:System.Activities.Tracking.TrackingRecord> is emitted for each handler that looks at the record until it is handled.</span></span> <span data-ttu-id="ec7e3-144">これは、エラーがワークフロー インスタンス内でたどるパスを示すために使用されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-144">It is used to denote the path a fault took within the workflow instance.</span></span> <span data-ttu-id="ec7e3-145">このレコードの詳細については、「<xref:System.Activities.Tracking.FaultPropagationRecord>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-145">The details of this record can be found at <xref:System.Activities.Tracking.FaultPropagationRecord>.</span></span>  
   
--   **CancelRequestedRecord** \- この <xref:System.Activities.Tracking.TrackingRecord> は、アクティビティが子のアクティビティを取り消そうとするときに出力されます。このレコードには、親のアクティビティおよび取り消される子のアクティビティの両方の詳細が含まれます。このレコードの詳細については、「<xref:System.Activities.Tracking.CancelRequestedRecord>」を参照してください。  
+-   <span data-ttu-id="ec7e3-146">**CancelRequestedRecord** - この<xref:System.Activities.Tracking.TrackingRecord>はアクティビティが子アクティビティをキャンセルしようとするときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-146">**CancelRequestedRecord** - This <xref:System.Activities.Tracking.TrackingRecord> is emitted whenever an activity tries to cancel a child activity.</span></span> <span data-ttu-id="ec7e3-147">このレコードには、親アクティビティおよび取り消される子アクティビティの両方の詳細が含まれます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-147">This record contains details for both the parent activity and the child activity that is being canceled.</span></span> <span data-ttu-id="ec7e3-148">このレコードの詳細については、「<xref:System.Activities.Tracking.CancelRequestedRecord>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-148">The details of this record can be found at <xref:System.Activities.Tracking.CancelRequestedRecord>.</span></span>  
   
--   **BookmarkResumptionRecord** \- この <xref:System.Activities.Tracking.TrackingRecord> は、正常に再開されるすべてのブックマークを追跡します。このレコードの詳細については、「<xref:System.Activities.Tracking.BookmarkResumptionRecord>」を参照してください。  
+-   <span data-ttu-id="ec7e3-149">**BookmarkResumptionRecord** - この<xref:System.Activities.Tracking.TrackingRecord>が正常に再開されるブックマークを追跡します。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-149">**BookmarkResumptionRecord** - This <xref:System.Activities.Tracking.TrackingRecord> tracks any bookmark that is successfully resumed.</span></span> <span data-ttu-id="ec7e3-150">このレコードの詳細については、「<xref:System.Activities.Tracking.BookmarkResumptionRecord>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-150">The details of this record can be found at <xref:System.Activities.Tracking.BookmarkResumptionRecord>.</span></span>  
   
--   **CustomTrackingRecord** \- この <xref:System.Activities.Tracking.TrackingRecord> は、カスタム ワークフロー アクティビティ内のワークフロー作成者によって作成および出力されます。カスタム追跡レコードには、レコードと一緒に出力されるデータを読み込むことができます。このレコードの詳細については、「<xref:System.Activities.Tracking.CustomTrackingRecord>」を参照してください。  
+-   <span data-ttu-id="ec7e3-151">**CustomTrackingRecord** - この<xref:System.Activities.Tracking.TrackingRecord>が作成され、カスタム ワークフロー アクティビティ内のワークフロー作成者によって生成されます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-151">**CustomTrackingRecord** - This <xref:System.Activities.Tracking.TrackingRecord> is created and emitted by a workflow author within a custom workflow activity.</span></span> <span data-ttu-id="ec7e3-152">カスタム追跡レコードには、レコードと一緒に出力されるデータを読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-152">Custom tracking records can be populated with data to be emitted along with the records.</span></span> <span data-ttu-id="ec7e3-153">このレコードの詳細については、「<xref:System.Activities.Tracking.CustomTrackingRecord>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-153">The details of this record can be found at <xref:System.Activities.Tracking.CustomTrackingRecord>.</span></span>  
   
- たとえば、<xref:System.Activities.Statements.WriteLine> 操作と次の順序で出力された追跡レコードを含む単純な <xref:System.Activities.Statements.Sequence> アクティビティもあります:  
+ <span data-ttu-id="ec7e3-154">単純な <xref:System.Activities.Statements.Sequence> アクティビティの例としては、追跡レコードを次の順序で出力する <xref:System.Activities.Statements.WriteLine> 操作を含めることが考えられます。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-154">For example, there could be a simple <xref:System.Activities.Statements.Sequence> activity that contains a <xref:System.Activities.Statements.WriteLine> operation with tracking records emitted in the following order:</span></span>  
   
-1.  <xref:System.Activities.Tracking.WorkflowInstanceRecord> は、ワークフローが起動していることを示します。  
+1.  <span data-ttu-id="ec7e3-155"><xref:System.Activities.Tracking.WorkflowInstanceRecord> は、ワークフローが起動していることを示します。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-155"><xref:System.Activities.Tracking.WorkflowInstanceRecord> indicates that the workflow is starting.</span></span>  
   
-2.  <xref:System.Activities.Tracking.ActivityScheduledRecord> は、アクティビティがスケジュールされたことを示します。この場合は <xref:System.Activities.Statements.Sequence> アクティビティです。  
+2.  <span data-ttu-id="ec7e3-156"><xref:System.Activities.Tracking.ActivityScheduledRecord> は、アクティビティがスケジュールされたことを示します。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-156"><xref:System.Activities.Tracking.ActivityScheduledRecord> indicates that an activity has been scheduled.</span></span> <span data-ttu-id="ec7e3-157">この場合は <xref:System.Activities.Statements.Sequence> アクティビティです。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-157">In this case it is a <xref:System.Activities.Statements.Sequence> activity.</span></span>  
   
-3.  <xref:System.Activities.Tracking.ActivityScheduledRecord> は、<xref:System.Activities.Statements.WriteLine> アクティビティを表します。  
+3.  <span data-ttu-id="ec7e3-158"><xref:System.Activities.Tracking.ActivityScheduledRecord> は、<xref:System.Activities.Statements.WriteLine> アクティビティを表します。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-158"><xref:System.Activities.Tracking.ActivityScheduledRecord> represents the <xref:System.Activities.Statements.WriteLine> activity.</span></span>  
   
-4.  2 つのアクティビティが完了していることを示す 2 つの <xref:System.Activities.Tracking.ActivityStateRecord> レコードがあります。  
+4.  <span data-ttu-id="ec7e3-159">2 つのアクティビティが完了していることを示す 2 つの <xref:System.Activities.Tracking.ActivityStateRecord> レコードがあります。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-159">There are two <xref:System.Activities.Tracking.ActivityStateRecord> records that represent the two activities completing.</span></span>  
   
-5.  <xref:System.Activities.Tracking.WorkflowInstanceRecord> は、ワークフローが完了していることを示します。  
+5.  <span data-ttu-id="ec7e3-160"><xref:System.Activities.Tracking.WorkflowInstanceRecord> は、ワークフローが完了していることを示します。</span><span class="sxs-lookup"><span data-stu-id="ec7e3-160"><xref:System.Activities.Tracking.WorkflowInstanceRecord> indicates that the workflow is completing.</span></span>  
   
-## 参照  
- [Windows Server App Fabric の監視](http://go.microsoft.com/fwlink/?LinkId=201273)   
- [App Fabric を使用したアプリケーションの監視](http://go.microsoft.com/fwlink/?LinkId=201275)
+## <a name="see-also"></a><span data-ttu-id="ec7e3-161">関連項目</span><span class="sxs-lookup"><span data-stu-id="ec7e3-161">See Also</span></span>  
+ [<span data-ttu-id="ec7e3-162">Windows Server App Fabric の監視</span><span class="sxs-lookup"><span data-stu-id="ec7e3-162">Windows Server App Fabric Monitoring</span></span>](http://go.microsoft.com/fwlink/?LinkId=201273)  
+ [<span data-ttu-id="ec7e3-163">アプリケーション App Fabric の監視</span><span class="sxs-lookup"><span data-stu-id="ec7e3-163">Monitoring Applications with App Fabric</span></span>](http://go.microsoft.com/fwlink/?LinkId=201275)

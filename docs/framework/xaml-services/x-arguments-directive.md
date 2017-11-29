@@ -1,75 +1,78 @@
 ---
-title: "x:Arguments Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "x:Arguments directive [XAML Services]"
-  - "Arguments directive in XAML [XAML Services]"
-  - "XAML [XAML Services], x:Arguments directive"
+title: "x:Arguments ディレクティブ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- x:Arguments directive [XAML Services]
+- Arguments directive in XAML [XAML Services]
+- XAML [XAML Services], x:Arguments directive
 ms.assetid: 87cc10b0-b610-4025-b6b0-ab27ca27c92e
-caps.latest.revision: 12
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 00f605bba709f0ce5f3238ccc3c6ac6cd962f0a4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# x:Arguments Directive
-XAML の既定以外のコンストラクター オブジェクト要素の宣言またはファクトリ メソッド オブジェクトの宣言の構築引数をパッケージ化します。  
+# <a name="xarguments-directive"></a><span data-ttu-id="ae6ca-102">x:Arguments ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="ae6ca-102">x:Arguments Directive</span></span>
+<span data-ttu-id="ae6ca-103">XAML では、既定以外のコンス トラクター オブジェクト要素の宣言またはファクトリ メソッドのオブジェクトの宣言は、パッケージ構築引数。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-103">Packages construction arguments for a non-default constructor object element declaration in XAML, or for a factory method object declaration.</span></span>  
   
-## XAML 要素の使用方法 \(既定以外のコンストラクター\)  
+## <a name="xaml-element-usage-nondefault-constructor"></a><span data-ttu-id="ae6ca-104">XAML 要素の使用 (既定以外のコンス トラクター)</span><span class="sxs-lookup"><span data-stu-id="ae6ca-104">XAML Element Usage (Nondefault constructor)</span></span>  
   
 ```  
-<object ...>  
+<object ...>  
   <x:Arguments>  
     oneOrMoreObjectElements  
   </x:Arguments>  
 </object>  
 ```  
   
-## XAML 要素の使用方法 \(ファクトリ メソッド\)  
+## <a name="xaml-element-usage-factory-method"></a><span data-ttu-id="ae6ca-105">XAML 要素の使用 (factory method)</span><span class="sxs-lookup"><span data-stu-id="ae6ca-105">XAML Element Usage (factory method)</span></span>  
   
 ```  
-<object x:FactoryMethod="methodName"...>  
+<object x:FactoryMethod="methodName"...>  
   <x:Arguments>  
     oneOrMoreObjectElements  
   </x:Arguments>  
 </object>  
 ```  
   
-## XAML 値  
+## <a name="xaml-values"></a><span data-ttu-id="ae6ca-106">XAML 値</span><span class="sxs-lookup"><span data-stu-id="ae6ca-106">XAML Values</span></span>  
   
 |||  
 |-|-|  
-|`oneOrMoreObjectElements`|既定以外のバッキング コンストラクターまたはファクトリ メソッドに渡される引数を指定する 1 つ以上のオブジェクト要素。<br /><br /> 標準的な使用法としては、オブジェクト要素内で初期化テキストを使用して、実際の引数値を指定します。  「例」のセクションを参照してください。<br /><br /> 要素の順序は重要です。  XAML 型の順序は、バッキング コンストラクターまたはファクトリ メソッド オーバーロードの型および型の順序に一致している必要があります。|  
-|`methodName`|`x:Arguments` の引数を処理するファクトリ メソッドの名前。|  
+|`oneOrMoreObjectElements`|<span data-ttu-id="ae6ca-107">既定以外のバッキング コンス トラクターまたはファクトリ メソッドに渡される引数を指定する 1 つまたは複数のオブジェクト要素。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-107">One or more object elements that specify arguments to be passed to the backing non-default constructor or factory method.</span></span><br /><br /> <span data-ttu-id="ae6ca-108">一般的な使用では、実際の引数の値を指定するオブジェクトの要素内で初期化のテキストを使用します。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-108">Typical usage is to use initialization text within the object elements to specify the actual argument values.</span></span> <span data-ttu-id="ae6ca-109">例のセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-109">See Examples section.</span></span><br /><br /> <span data-ttu-id="ae6ca-110">要素の順序は重要です。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-110">The order of the elements is significant.</span></span> <span data-ttu-id="ae6ca-111">XAML の型の順序では、型と一致する必要があり、バッキング コンス トラクターまたはファクトリ メソッドのオーバー ロードの順序を入力します。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-111">The XAML types in order must match the types and type order of the backing constructor or factory method overload.</span></span>|  
+|`methodName`|<span data-ttu-id="ae6ca-112">いずれかを処理するファクトリ メソッドの名前`x:Arguments`引数。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-112">The name of the factory method that should process any `x:Arguments` arguments.</span></span>|  
   
-## 依存関係  
- `x:FactoryMethod` は、`x:Arguments` が適用されるスコープと動作を修正できます。  
+## <a name="dependencies"></a><span data-ttu-id="ae6ca-113">依存関係</span><span class="sxs-lookup"><span data-stu-id="ae6ca-113">Dependencies</span></span>  
+ <span data-ttu-id="ae6ca-114">`x:FactoryMethod`スコープと動作を変更することができます、`x:Arguments`適用されます。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-114">`x:FactoryMethod` can modify the scope and behavior where `x:Arguments` applies.</span></span>  
   
- `x:FactoryMethod` が指定されていない場合は、`x:Arguments` はバッキング コンストラクターの別の \(既定以外の\) シグネチャに適用されます。  
+ <span data-ttu-id="ae6ca-115">ない場合は`x:FactoryMethod`が指定されている`x:Arguments`バッキング コンス トラクターの代替の (既定値) のシグネチャに適用されます。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-115">If no `x:FactoryMethod` is specified, `x:Arguments` applies to alternate (non-default) signatures of the backing constructors.</span></span>  
   
- `x:FactoryMethod` が指定されている場合は、`x:Arguments` は名前付きメソッドのオーバーロードに適用されます。  
+ <span data-ttu-id="ae6ca-116">場合`x:FactoryMethod`が指定されている`x:Arguments`名前のメソッドのオーバー ロードに適用されます。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-116">If `x:FactoryMethod` is specified, `x:Arguments` applies to an overload of the named method.</span></span>  
   
-## 解説  
- XAML 2006 では、既定以外の初期化が、初期化テキストを通じてサポートされます。  ただし、初期化テキストの構築方法の実用的な用途には限界があります。  初期化テキストは単一のテキスト文字列として扱われます。したがって、追加される機能は、単一のパラメーターの初期化に限られます \(コンストラクターの動作に型コンバーターが定義され、文字列からカスタム情報項目とカスタム区切り記号を解析できる場合を除く\)。  また、オブジェクト ロジックへのテキスト文字列は、実際の文字列以外のプリミティブ向けに指定された XAML パーサーの、ネイティブの既定の型コンバーターであることがあります。  
+## <a name="remarks"></a><span data-ttu-id="ae6ca-117">コメント</span><span class="sxs-lookup"><span data-stu-id="ae6ca-117">Remarks</span></span>  
+ <span data-ttu-id="ae6ca-118">XAML 2006 では、初期化のテキストを既定以外の初期化をサポートできます。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-118">XAML 2006 can support non-default initialization through initialization text.</span></span> <span data-ttu-id="ae6ca-119">ただし、初期化のテキストの構築方法の実用的なアプリケーションは制限されます。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-119">However, the practical application of an initialization text construction technique is limited.</span></span> <span data-ttu-id="ae6ca-120">初期化のテキストが 1 つのテキスト文字列として扱われますそのため、カスタム情報項目と、文字列からカスタムの区切り記号を解析できる構築動作の型コンバーターが定義されていない場合、1 つのパラメーターの初期化の機能のみ追加します。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-120">Initialization text is treated as a single text string; therefore, it only adds capability for a single parameter initialization unless a type converter is defined for the construction behavior that can parse custom information items and custom delimiters from the string.</span></span> <span data-ttu-id="ae6ca-121">また、オブジェクトのロジックをテキスト文字列を場合は true。 文字列以外のプリミティブを処理するための特定の XAML パーサーのネイティブの既定の型コンバーターにすることがあります。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-121">Also, the text string to object logic is potentially a given XAML parser's native default type converter for handling primitives other than a true string.</span></span>  
   
- `x:Arguments` XAML の使用方法は、一般的な意味合いにおけるプロパティ要素の使用方法ではありません。これは、ディレクティブのマークアップは、格納オブジェクトの要素の型を参照しないためです。  これは、マークアップを子コンテンツの既定以外として解釈する必要がある範囲が要素によって区切られる、`x:Code` などの他のディレクティブに似ています。  この場合、各オブジェクト要素の XAML 型が、引数の型に関する情報を伝達します。XAML パーサーはこの情報を基に、`x:Arguments` の使用を通じて参照しようとしているコンストラクター ファクトリ メソッドの具体的なシグネチャを特定します。  
+ <span data-ttu-id="ae6ca-122">`x:Arguments` XAML の使用法がプロパティ要素の使用、一般的な意味で、ディレクティブのマークアップが含まれるオブジェクト要素の型を参照していないためです。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-122">The `x:Arguments` XAML usage is not property element usage in the typical sense, because the directive markup does not reference the containing object element's type.</span></span> <span data-ttu-id="ae6ca-123">では他のディレクティブなど`x:Code`要素に子コンテンツの既定値以外にするマークアップを解釈する範囲境界を定めます場所。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-123">It is more akin to other directives such as `x:Code` where the element demarks a range in which the markup should be interpreted as other than the default for child contents.</span></span> <span data-ttu-id="ae6ca-124">オブジェクトの各要素の XAML の型がどの特定のコンス トラクターのファクトリ メソッドのシグネチャを決定する、XAML パーサーで使用される引数の型に関する情報がどのように通信するこの例では、`x:Arguments`参照しようとして使用します。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-124">In this case, the XAML type of each object element communicates information about the argument types, which is used by XAML parsers to determine which specific constructor factory method signature an `x:Arguments` usage is attempting to reference.</span></span>  
   
- 構築するオブジェクト要素の `x:Arguments` は、他の \(そのオブジェクト要素の\) あらゆるプロパティ要素、コンテンツ、内部テキスト、または初期化文字列の前に配置する必要があります。  `x:Arguments` 内のオブジェクト要素には、XAML 型とそのバッキング コンストラクターまたはファクトリ メソッドによって許容される属性と初期化文字列を含めることができます。  オブジェクトまたは引数に関しては、確立されているプレフィックス マッピングを参照することによって、カスタム XAML 型、つまり既定の XAML 名前空間に属さない XAML 型を指定できます。  
+ <span data-ttu-id="ae6ca-125">`x:Arguments`オブジェクト要素の構築される必要がありますの前に、他のプロパティ要素、コンテンツ、内部のテキスト、またはオブジェクト要素の初期化の文字列。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-125">`x:Arguments` for an object element being constructed must precede any other property elements, content, inner text, or initialization strings of the object element.</span></span> <span data-ttu-id="ae6ca-126">内のオブジェクト要素`x:Arguments`その XAML の型とそのバッキング コンス トラクターまたはファクトリ メソッドによって許可されている属性および初期化文字列を含むことができます。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-126">The object elements within `x:Arguments` can include attributes and initialization strings, as permitted by that XAML type and its backing constructor or factory method.</span></span> <span data-ttu-id="ae6ca-127">オブジェクトまたは引数のいずれかのカスタム XAML の型または外側にあるそれ以外の場合、既定の XAML 名前空間によって確立されたプレフィックスのマッピングを参照する XAML の型を指定できます。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-127">For either the object or the arguments, you can specify custom XAML types or XAML types that are otherwise outside the default XAML namespace by referencing established prefix mappings.</span></span>  
   
- XAML プロセッサは、`x:Arguments` に指定された引数をオブジェクトの構築に使用するかどうかを、次のガイドラインによって判断します。  `x:FactoryMethod` が指定されている場合、指定された `x:FactoryMethod` との間で情報が比較されます。`x:FactoryMethod` の値はメソッド名であり、名前付きメソッドはオーバーロードを持つことができるという点に注意してください。  `x:FactoryMethod` が指定されていない場合、そのオブジェクトのすべてのパブリック コンストラクター オーバーロードとの間で情報が比較されます。  その後、XAML 処理ロジックは、パラメーターの数を比較し、対応するアリティを持ったオーバーロードを選択します。  複数の一致がある場合、XAML プロセッサは、指定されたオブジェクト要素の XAML 型に基づいてパラメーターの型を比較します。  引き続き複数の一致がある場合、XAML プロセッサの動作は定義されていません。  `x:FactoryMethod` は指定されているが、メソッドを解決できない場合、XAML プロセッサは例外をスローします。  
+ <span data-ttu-id="ae6ca-128">XAML プロセッサに引数を指定する方法を決定する、次のガイドラインを使用して`x:Arguments`オブジェクトを構築するために使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-128">XAML processors use the following guidelines to determine how the arguments specified in `x:Arguments` should be used to construct an object.</span></span> <span data-ttu-id="ae6ca-129">場合`x:FactoryMethod`が指定されている情報と比較を指定した`x:FactoryMethod`(なおの値`x:FactoryMethod`メソッド名であり、名前付きメソッドはオーバー ロードを持つことができます。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-129">If `x:FactoryMethod` is specified, information is compared to the specified `x:FactoryMethod` (note that the value of `x:FactoryMethod` is the method name, and the named method can have overloads.</span></span> <span data-ttu-id="ae6ca-130">場合`x:FactoryMethod`が指定されていない、一連のオブジェクトのすべてのパブリック コンス トラクター オーバー ロードに情報を比較します。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-130">If `x:FactoryMethod` is not specified, information is compared to the set of all public constructor overloads of the object.</span></span> <span data-ttu-id="ae6ca-131">XAML の処理ロジックは、パラメーターの数を比較し、アリティが一致するオーバー ロードを選択します。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-131">XAML processing logic then compares the number of parameters and selects the overload with matching arity.</span></span> <span data-ttu-id="ae6ca-132">複数の一致がある場合、XAML プロセッサは必要があります指定されたオブジェクトの要素の XAML の型に基づくパラメーターの型を比較します。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-132">If there is more than one match, the XAML processor should compare the types of the parameters based on the XAML types of the provided object elements.</span></span> <span data-ttu-id="ae6ca-133">複数のまま 1 つの一致がある場合は、XAML プロセッサの動作は定義されません。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-133">If there is still more than one match, the XAML processor behavior is undefined.</span></span> <span data-ttu-id="ae6ca-134">場合、`x:FactoryMethod`が指定されているメソッドを解決することはできませんが、XAML プロセッサは、例外をスローする必要があります。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-134">If a `x:FactoryMethod` is specified but the method cannot be resolved, a XAML processor should throw an exception.</span></span>  
   
- XAML 属性の使用方法 `<x:Arguments>string</x:Arguments>` は技術的には可能です。  しかし、この方法に、初期化テキストと型コンバーターを使って実現できる以上の機能はなく、また、この構文は、XAML 2009 ファクトリ メソッドの機能を意図して設計されたものでもありません。  
+ <span data-ttu-id="ae6ca-135">XAML 属性の使用方法`<x:Arguments>string</x:Arguments>`は技術的に可能です。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-135">A XAML attribute usage `<x:Arguments>string</x:Arguments>` is technically possible.</span></span> <span data-ttu-id="ae6ca-136">ただし、これにより、ありませんでした何それ以外の場合の初期化のテキストと型コンバーターを使ってれない機能と、この構文を使用して XAML 2009 のファクトリ メソッドの機能の目的で設計ではありません。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-136">However, this provides no capabilities beyond what could be done otherwise through initialization text and type converters, and using this syntax is not the design intention of the XAML 2009 factory method features.</span></span>  
   
-## 例  
- 次の例では、既定以外のコンストラクター シグネチャと、そのシグネチャに XAML でアクセスする `x:Arguments` の使用法を示しています。  
+## <a name="examples"></a><span data-ttu-id="ae6ca-137">例</span><span class="sxs-lookup"><span data-stu-id="ae6ca-137">Examples</span></span>  
+ <span data-ttu-id="ae6ca-138">次の例は、署名、次の XAML の使用方法に既定以外のコンス トラクターを示します`x:Arguments`そのシグネチャにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-138">The following example shows a non-default constructor signature, then the XAML usage of `x:Arguments` that accesses that signature.</span></span>  
   
 ```csharp  
 public class Food {  
@@ -82,7 +85,7 @@ public class Food {
 }  
 ```  
   
-```  
+```xaml  
 <my:Food>  
     <x:Arguments>  
         <x:String>Apple</x:String>  
@@ -91,7 +94,7 @@ public class Food {
 </my:Food>  
 ```  
   
- 次の例では、ターゲット ファクトリ メソッドのシグネチャと、そのシグネチャに XAML でアクセスする `x:Arguments` の使用法を示しています。  
+ <span data-ttu-id="ae6ca-139">次の例では、ターゲット工場出荷時のメソッド シグネチャでは、次の XAML の使用方法を示しています。`x:Arguments`そのシグネチャにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="ae6ca-139">The following example shows a target factory method signature, then the XAML usage of `x:Arguments` that accesses that signature.</span></span>  
   
 ```csharp  
 public Food TryLookupFood(string name)  
@@ -105,7 +108,7 @@ public Food TryLookupFood(string name)
 }  
 ```  
   
-```  
+```xaml  
 <my:Food x:FactoryMethod="TryLookupFood">  
     <x:Arguments>  
         <x:String>Apple</x:String>  
@@ -113,6 +116,6 @@ public Food TryLookupFood(string name)
 </my:Food>  
 ```  
   
-## 参照  
- [Defining Custom Types for Use with .NET Framework XAML Services](../../../docs/framework/xaml-services/defining-custom-types-for-use-with-net-framework-xaml-services.md)   
- [XAML の概要 \(WPF\)](../../../ocs/framework/wpf/advanced/xaml-overview-wpf.md)
+## <a name="see-also"></a><span data-ttu-id="ae6ca-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="ae6ca-140">See Also</span></span>  
+ [<span data-ttu-id="ae6ca-141">.NET Framework XAML サービスで使用するためのカスタム型の定義</span><span class="sxs-lookup"><span data-stu-id="ae6ca-141">Defining Custom Types for Use with .NET Framework XAML Services</span></span>](../../../docs/framework/xaml-services/defining-custom-types-for-use-with-net-framework-xaml-services.md)  
+ [<span data-ttu-id="ae6ca-142">XAML の概要 (WPF)</span><span class="sxs-lookup"><span data-stu-id="ae6ca-142">XAML Overview (WPF)</span></span>](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

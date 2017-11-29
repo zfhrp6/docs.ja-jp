@@ -1,78 +1,77 @@
 ---
-title: "Overrides (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "Overrides"
-  - "vb.Overrides"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "properties [Visual Basic], redefining"
-  - "procedures, overriding"
-  - "procedures, redefining"
-  - "overriding"
-  - "Overrides keyword"
-  - "overriding, Overrides keyword"
-  - "properties [Visual Basic], overriding"
+title: Overrides (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- Overrides
+- vb.Overrides
+helpviewer_keywords:
+- properties [Visual Basic], redefining
+- procedures [Visual Basic], overriding
+- procedures [Visual Basic], redefining
+- overriding
+- Overrides keyword [Visual Basic]
+- overriding, Overrides keyword
+- properties [Visual Basic], overriding
 ms.assetid: 9f5e6144-ce10-465e-842b-1a8f8760af90
-caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 1bee6a6235b87a7e20f087a73bef76e0fc7bf124
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Overrides (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プロパティまたはプロシージャが基本クラスから継承された同じ名前のプロパティまたはプロシージャをオーバーライドすることを示します。  
+# <a name="overrides-visual-basic"></a><span data-ttu-id="68632-102">Overrides (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="68632-102">Overrides (Visual Basic)</span></span>
+<span data-ttu-id="68632-103">プロパティまたはプロシージャが基本クラスから継承された同じ名前のプロパティまたはプロシージャをオーバーライドすることを示します。</span><span class="sxs-lookup"><span data-stu-id="68632-103">Specifies that a property or procedure overrides an identically named property or procedure inherited from a base class.</span></span>  
   
-## 解説  
+## <a name="remarks"></a><span data-ttu-id="68632-104">コメント</span><span class="sxs-lookup"><span data-stu-id="68632-104">Remarks</span></span>  
   
-## 規則  
+## <a name="rules"></a><span data-ttu-id="68632-105">ルール</span><span class="sxs-lookup"><span data-stu-id="68632-105">Rules</span></span>  
   
--   **宣言コンテキスト。** `Overrides` は、プロパティまたはプロシージャの宣言ステートメントでのみ使用できます。  
+-   <span data-ttu-id="68632-106">**宣言コンテキスト。**</span><span class="sxs-lookup"><span data-stu-id="68632-106">**Declaration Context.**</span></span> <span data-ttu-id="68632-107">`Overrides` は、プロパティまたはプロシージャの宣言ステートメントでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="68632-107">You can use `Overrides` only in a property or procedure declaration statement.</span></span>  
   
--   **結合された修飾子。** 同じ宣言内で `Overrides` を `Shadows` または `Shared` と共に指定することはできません。  オーバーライドする要素は暗黙的にオーバーライド可能であるため、`Overridable` と `Overrides` を結合することはできません。  
+-   <span data-ttu-id="68632-108">**結合された修飾子。**</span><span class="sxs-lookup"><span data-stu-id="68632-108">**Combined Modifiers.**</span></span> <span data-ttu-id="68632-109">同じ宣言内で `Overrides` を `Shadows` または `Shared` と共に指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="68632-109">You cannot specify `Overrides` together with `Shadows` or `Shared` in the same declaration.</span></span> <span data-ttu-id="68632-110">オーバーライドする要素は暗黙的にオーバーライド可能であるため、`Overridable` と `Overrides` を結合することはできません。</span><span class="sxs-lookup"><span data-stu-id="68632-110">Because an overriding element is implicitly overridable, you cannot combine `Overridable` with `Overrides`.</span></span>  
   
--   **シグネチャの一致。** この宣言のシグネチャは、オーバーライドされるプロパティまたはプロシージャの*シグネチャ*と完全に一致する必要があります。  つまり、パラメーター リストには、同じ数のパラメーターを、同じ順序、同じデータ型で指定する必要があります。  
+-   <span data-ttu-id="68632-111">**署名が一致します。**</span><span class="sxs-lookup"><span data-stu-id="68632-111">**Matching Signatures.**</span></span> <span data-ttu-id="68632-112">この宣言のシグネチャと一致する必要があります、*署名*のプロパティまたはプロシージャをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="68632-112">The signature of this declaration must exactly match the *signature* of the property or procedure that it overrides.</span></span> <span data-ttu-id="68632-113">つまり、パラメーター リストには、同じ数のパラメーターを、同じ順序、同じデータ型で指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="68632-113">This means the parameter lists must have the same number of parameters, in the same order, with the same data types.</span></span>  
   
-     オーバーライドする宣言は、シグネチャに加え、次の点でも完全に一致している必要があります。  
+     <span data-ttu-id="68632-114">オーバーライドする宣言は、シグネチャに加え、次の点でも完全に一致している必要があります。</span><span class="sxs-lookup"><span data-stu-id="68632-114">In addition to the signature, the overriding declaration must also exactly match the following:</span></span>  
   
-    -   アクセス レベル  
+    -   <span data-ttu-id="68632-115">アクセス レベル</span><span class="sxs-lookup"><span data-stu-id="68632-115">The access level</span></span>  
   
-    -   戻り値の型 \(戻り値がある場合\)  
+    -   <span data-ttu-id="68632-116">戻り値の型 (戻り値がある場合)</span><span class="sxs-lookup"><span data-stu-id="68632-116">The return type, if any</span></span>  
   
--   **ジェネリック シグネチャ。** ジェネリック プロシージャでは、シグネチャに型パラメーターの数が含まれます。  したがって、オーバーライドする宣言は、その点でも基底クラスのバージョンに一致している必要があります。  
+-   <span data-ttu-id="68632-117">**ジェネリック シグネチャ。**</span><span class="sxs-lookup"><span data-stu-id="68632-117">**Generic Signatures.**</span></span> <span data-ttu-id="68632-118">ジェネリック プロシージャでは、シグネチャに型パラメーターの数が含まれます。</span><span class="sxs-lookup"><span data-stu-id="68632-118">For a generic procedure, the signature includes the number of type parameters.</span></span> <span data-ttu-id="68632-119">したがって、オーバーライドする宣言は、その点でも基底クラスのバージョンに一致している必要があります。</span><span class="sxs-lookup"><span data-stu-id="68632-119">Therefore, the overriding declaration must match the base class version in that respect as well.</span></span>  
   
--   **その他の一致。** この宣言は、基底クラスのバージョンのシグネチャに一致していることに加え、次の点でも基底クラスと一致している必要があります。  
+-   <span data-ttu-id="68632-120">**その他の一致。**</span><span class="sxs-lookup"><span data-stu-id="68632-120">**Additional Matching.**</span></span> <span data-ttu-id="68632-121">この宣言は、基底クラスのバージョンのシグネチャに一致していることに加え、次の点でも基底クラスと一致している必要があります。</span><span class="sxs-lookup"><span data-stu-id="68632-121">In addition to matching the signature of the base class version, this declaration must also match it in the following respects:</span></span>  
   
-    -   アクセス レベル修飾子 \([Public](../../../visual-basic/language-reference/modifiers/public.md) など\)  
+    -   <span data-ttu-id="68632-122">アクセス レベル修飾子 (など[パブリック](../../../visual-basic/language-reference/modifiers/public.md))</span><span class="sxs-lookup"><span data-stu-id="68632-122">Access-level modifier (such as [Public](../../../visual-basic/language-reference/modifiers/public.md))</span></span>  
   
-    -   各パラメーターの渡し方 \([ByVal](../../../visual-basic/language-reference/modifiers/byval.md) または [ByRef](../../../visual-basic/language-reference/modifiers/byref.md)\)  
+    -   <span data-ttu-id="68632-123">各パラメーターの渡し ([ByVal](../../../visual-basic/language-reference/modifiers/byval.md)または[ByRef](../../../visual-basic/language-reference/modifiers/byref.md))</span><span class="sxs-lookup"><span data-stu-id="68632-123">Passing mechanism of each parameter ([ByVal](../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../visual-basic/language-reference/modifiers/byref.md))</span></span>  
   
-    -   ジェネリック プロシージャの型パラメーターごとの制約リスト  
+    -   <span data-ttu-id="68632-124">ジェネリック プロシージャの型パラメーターごとの制約リスト</span><span class="sxs-lookup"><span data-stu-id="68632-124">Constraint lists on each type parameter of a generic procedure</span></span>  
   
--   **シャドウとオーバーライド。** シャドウとオーバーライドは、どちらも継承された要素を再定義しますが、その方法は大きく異なります。  詳細については、「[Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)」を参照してください。  
+-   <span data-ttu-id="68632-125">**シャドウとオーバーライドされます。**</span><span class="sxs-lookup"><span data-stu-id="68632-125">**Shadowing and Overriding.**</span></span> <span data-ttu-id="68632-126">シャドウとオーバーライドは、どちらも継承された要素を再定義しますが、その方法は大きく異なります。</span><span class="sxs-lookup"><span data-stu-id="68632-126">Both shadowing and overriding redefine an inherited element, but there are significant differences between the two approaches.</span></span> <span data-ttu-id="68632-127">詳細については、次を参照してください。 [Visual Basic におけるシャドウ](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)です。</span><span class="sxs-lookup"><span data-stu-id="68632-127">For more information, see [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).</span></span>  
   
- `Overrides` を使用する場合は、ライブラリ API と C\# が連携しやすくなるように、コンパイラが暗黙的に `Overloads` を追加します。  
+ <span data-ttu-id="68632-128">`Overrides` を使用する場合は、ライブラリ API と C# が連携しやすくなるように、コンパイラが暗黙的に `Overloads` を追加します。</span><span class="sxs-lookup"><span data-stu-id="68632-128">If you use `Overrides`, the compiler implicitly adds `Overloads` so that your library APIs work with C# more easily.</span></span>  
   
- `Overrides` 修飾子は、次のコンテキストで使用できます。  
+ <span data-ttu-id="68632-129">`Overrides` 修飾子は、次のコンテキストで使用できます。</span><span class="sxs-lookup"><span data-stu-id="68632-129">The `Overrides` modifier can be used in these contexts:</span></span>  
   
- [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [<span data-ttu-id="68632-130">Function ステートメント</span><span class="sxs-lookup"><span data-stu-id="68632-130">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="68632-131">Property ステートメント</span><span class="sxs-lookup"><span data-stu-id="68632-131">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [<span data-ttu-id="68632-132">Sub ステートメント</span><span class="sxs-lookup"><span data-stu-id="68632-132">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## 参照  
- [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)   
- [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)   
- [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)   
- [キーワード](../../../visual-basic/language-reference/keywords/index.md)   
- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)   
- [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
- [Type List](../../../visual-basic/language-reference/statements/type-list.md)
+## <a name="see-also"></a><span data-ttu-id="68632-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="68632-133">See Also</span></span>  
+ [<span data-ttu-id="68632-134">MustOverride</span><span class="sxs-lookup"><span data-stu-id="68632-134">MustOverride</span></span>](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
+ [<span data-ttu-id="68632-135">NotOverridable</span><span class="sxs-lookup"><span data-stu-id="68632-135">NotOverridable</span></span>](../../../visual-basic/language-reference/modifiers/notoverridable.md)  
+ [<span data-ttu-id="68632-136">Overridable</span><span class="sxs-lookup"><span data-stu-id="68632-136">Overridable</span></span>](../../../visual-basic/language-reference/modifiers/overridable.md)  
+ [<span data-ttu-id="68632-137">キーワード</span><span class="sxs-lookup"><span data-stu-id="68632-137">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)  
+ [<span data-ttu-id="68632-138">Visual Basic におけるシャドウ</span><span class="sxs-lookup"><span data-stu-id="68632-138">Shadowing in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)  
+ [<span data-ttu-id="68632-139">Visual Basic におけるジェネリック型</span><span class="sxs-lookup"><span data-stu-id="68632-139">Generic Types in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
+ [<span data-ttu-id="68632-140">型リスト</span><span class="sxs-lookup"><span data-stu-id="68632-140">Type List</span></span>](../../../visual-basic/language-reference/statements/type-list.md)

@@ -1,110 +1,116 @@
 ---
-title: "チュートリアル: DataGrid コントロールで SQL Server データベースのデータを表示する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール [WPF], DataGrid"
-  - "DataGrid [WPF], 表示 (SQL Server のデータを)"
+title: "チュートリアル: DataGrid コントロールで SQL Server データベースのデータを表示する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataGrid [WPF], displaying data from SQL Server
+- controls [WPF], DataGrid
 ms.assetid: 6810b048-0a23-4f86-bfa5-97f92b3cfab4
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c89ed9425920602f80a2407b7529b3eb215a2e3d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル: DataGrid コントロールで SQL Server データベースのデータを表示する
-このチュートリアルでは、SQL Server データベースからデータを取得して、<xref:System.Windows.Controls.DataGrid> コントロールでそのデータを表示します。  ADO.NET Entity Framework を使用して、データを表すエンティティ クラスを作成し、LINQ を使用して、エンティティ クラスから指定したデータを取得するためのクエリを記述します。  
+# <a name="walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control"></a><span data-ttu-id="4ae20-102">チュートリアル: DataGrid コントロールで SQL Server データベースのデータを表示する</span><span class="sxs-lookup"><span data-stu-id="4ae20-102">Walkthrough: Display Data from a SQL Server Database in a DataGrid Control</span></span>
+<span data-ttu-id="4ae20-103">このチュートリアルで、SQL Server データベースからデータを取得およびそのデータを表示、<xref:System.Windows.Controls.DataGrid>コントロール。</span><span class="sxs-lookup"><span data-stu-id="4ae20-103">In this walkthrough, you retrieve data from a SQL Server database and display that data in a <xref:System.Windows.Controls.DataGrid> control.</span></span> <span data-ttu-id="4ae20-104">LINQ を使用して、エンティティ クラスから指定されたデータを取得するクエリを記述するのにと、データを表すエンティティ クラスを作成するのにには、ADO.NET Entity Framework を使用します。</span><span class="sxs-lookup"><span data-stu-id="4ae20-104">You use the ADO.NET Entity Framework to create the entity classes that represent the data, and use LINQ to write a query that retrieves the specified data from an entity class.</span></span>  
   
-## 必須コンポーネント  
- このチュートリアルを実行するには、次のコンポーネントが必要です。  
+## <a name="prerequisites"></a><span data-ttu-id="4ae20-105">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="4ae20-105">Prerequisites</span></span>  
+ <span data-ttu-id="4ae20-106">このチュートリアルを実行するには、次のコンポーネントが必要です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-106">You need the following components to complete this walkthrough:</span></span>  
   
--   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)].  
+-   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)]<span data-ttu-id="4ae20-107">。</span><span class="sxs-lookup"><span data-stu-id="4ae20-107">.</span></span>  
   
--   AdventureWorksLT2008 サンプル データベースがアタッチされた、SQL Server または SQL Server Express の実行中のインスタンスへのアクセス。  AdventureWorksLT2008 データベースは、[CodePlex の Web サイト](http://go.microsoft.com/fwlink/?linkid=159848)からダウンロードできます。  
+-   <span data-ttu-id="4ae20-108">SQL Server または SQL Server Express が付属している、AdventureWorks サンプル データベースがあるの実行中のインスタンスへのアクセス。</span><span class="sxs-lookup"><span data-stu-id="4ae20-108">Access to a running instance of SQL Server or SQL Server Express that has the AdventureWorks sample database attached to it.</span></span> <span data-ttu-id="4ae20-109">AdventureWorks データベースをダウンロードすることができます、 [GitHub](https://github.com/Microsoft/sql-server-samples/releases)です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-109">You can download the AdventureWorks database from the [GitHub](https://github.com/Microsoft/sql-server-samples/releases).</span></span>  
   
-### エンティティ クラスを作成するには  
+### <a name="to-create-entity-classes"></a><span data-ttu-id="4ae20-110">エンティティ クラスを作成するには</span><span class="sxs-lookup"><span data-stu-id="4ae20-110">To create entity classes</span></span>  
   
-1.  Visual Basic または C\# で新しい WPF アプリケーション プロジェクトを作成して、「`DataGridSQLExample`」という名前を付けます。  
+1.  <span data-ttu-id="4ae20-111">Visual Basic または C# の場合で新しい WPF アプリケーション プロジェクトを作成し、名前`DataGridSQLExample`です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-111">Create a new WPF Application project in Visual Basic or C#, and name it `DataGridSQLExample`.</span></span>  
   
-2.  ソリューション エクスプローラーでプロジェクトを右クリックし、**\[追加\]** をポイントして、**\[新しいアイテム\]** をクリックします。  
+2.  <span data-ttu-id="4ae20-112">ソリューション エクスプ ローラーでプロジェクトを右クリックし、**追加**、し、**新しい項目の**します。</span><span class="sxs-lookup"><span data-stu-id="4ae20-112">In Solution Explorer, right-click your project, point to **Add**, and then select **New Item**.</span></span>  
   
-     \[新しい項目の追加\] ダイアログ ボックスが表示されます。  
+     <span data-ttu-id="4ae20-113">[新しい項目の追加] ダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="4ae20-113">The Add New Item dialog box appears.</span></span>  
   
-3.  \[インストールされたテンプレート\] ペインで **\[データ\]** を選択し、テンプレートの一覧で **\[ADO.NET エンティティ データ モデル\]** を選択します。  
+3.  <span data-ttu-id="4ae20-114">インストールされたテンプレート ペインで選択**データ**、テンプレートの一覧で選択および**ADO.NET エンティティ データ モデル**l です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-114">In the Installed Templates pane, select **Data** and in the list of templates, select **ADO.NET Entity Data Mode**l.</span></span>  
   
-     ![ADO.NET エンティティ データ モデルの選択](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step1.png "DataGrid\_SQL\_EF\_Step1")  
+     <span data-ttu-id="4ae20-115">![ADO.NET エンティティ データ モデルを選択して](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step1.png "DataGrid_SQL_EF_Step1")</span><span class="sxs-lookup"><span data-stu-id="4ae20-115">![Select ADO.NET Entity Data Model](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step1.png "DataGrid_SQL_EF_Step1")</span></span>  
   
-4.  ファイルに「`AdventureWorksModel.edmx`」という名前を付け、**\[追加\]** をクリックします。  
+4.  <span data-ttu-id="4ae20-116">ファイルの名前を付けます`AdventureWorksModel.edmx` をクリックし、**追加**です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-116">Name the file `AdventureWorksModel.edmx` and then click **Add**.</span></span>  
   
-     Entity Data Model ウィザードが表示されます。  
+     <span data-ttu-id="4ae20-117">Entity Data Model ウィザードが表示されます。</span><span class="sxs-lookup"><span data-stu-id="4ae20-117">The Entity Data Model Wizard appears.</span></span>  
   
-5.  \[モデルのコンテンツの選択\] 画面で、**\[データベースから生成\]** をクリックし、**\[次へ\]** をクリックします。  
+5.  <span data-ttu-id="4ae20-118">モデルのコンテンツの選択 画面で、次のように選択します。**データベースから生成** をクリックし、**次**です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-118">In the Choose Model Contents screen, select **Generate from database** and then click **Next**.</span></span>  
   
-     ![&#91;データベースから生成&#93; オプションの選択](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step2.png "DataGrid\_SQL\_EF\_Step2")  
+     <span data-ttu-id="4ae20-119">![データベース オプションから生成 を選択](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step2.png "DataGrid_SQL_EF_Step2")</span><span class="sxs-lookup"><span data-stu-id="4ae20-119">![Select Generate from database option](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step2.png "DataGrid_SQL_EF_Step2")</span></span>  
   
-6.  \[データ接続の選択\] 画面で、AdventureWorksLT2008 データベースへの接続情報を入力します。  詳細については、「[\[データ接続の選択\] ダイアログ ボックス](http://go.microsoft.com/fwlink/?LinkId=160190)」を参照してください。  
+6.  <span data-ttu-id="4ae20-120">データ接続の選択 画面で、AdventureWorksLT2008 データベースへの接続を提供します。</span><span class="sxs-lookup"><span data-stu-id="4ae20-120">In the Choose Your Data Connection screen, provide the connection to your AdventureWorksLT2008 database.</span></span> <span data-ttu-id="4ae20-121">詳細については、次を参照してください。[を選択して、データ接続 ダイアログ ボックス](http://go.microsoft.com/fwlink/?LinkId=160190)です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-121">For more information, see [Choose Your Data Connection Dialog Box](http://go.microsoft.com/fwlink/?LinkId=160190).</span></span>  
   
-     ![データベースへの接続の提供](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step3.png "DataGrid\_SQL\_EF\_Step3")  
+     <span data-ttu-id="4ae20-122">![データベースへの接続を提供](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step3.png "DataGrid_SQL_EF_Step3")</span><span class="sxs-lookup"><span data-stu-id="4ae20-122">![Provide connection to database](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step3.png "DataGrid_SQL_EF_Step3")</span></span>  
   
-7.  名前が「`AdventureWorksLT2008Entities`」であり、**\[エンティティ接続設定に名前を付けて App.Config に保存\]** チェック ボックスがオンになっていることを確認し、**\[次へ\]** をクリックします。  
+7.  <span data-ttu-id="4ae20-123">名があるかどうかを確認`AdventureWorksLT2008Entities`ことと、**エンティティ接続設定を付けて App.Config に保存** チェック ボックスを選択して、をクリックして**次**です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-123">Make sure that the name is `AdventureWorksLT2008Entities` and that the **Save entity connection settings in App.Config as** check box is selected, and then click **Next**.</span></span>  
   
-8.  \[データベース オブジェクトの選択\] 画面で、\[テーブル\] ノードを展開し、**Product** テーブルと **ProductCategory** テーブルをクリックします。  
+8.  <span data-ttu-id="4ae20-124">データベース オブジェクトの選択 画面で、テーブル ノードを展開し、選択、**製品**と**ProductCategory**テーブル。</span><span class="sxs-lookup"><span data-stu-id="4ae20-124">In the Choose Your Database Objects screen, expand the Tables node, and select the **Product** and **ProductCategory** tables.</span></span>  
   
-     エンティティ クラスはすべてのテーブルについて生成できますが、この例ではこれら 2 つのテーブルのデータのみを取得します。  
+     <span data-ttu-id="4ae20-125">テーブルのすべてのエンティティ クラスを生成することができます。ただし、この例でのみデータを取得する 2 つのテーブルからです。</span><span class="sxs-lookup"><span data-stu-id="4ae20-125">You can generate entity classes for all of the tables; however, in this example you only retrieve data from those two tables.</span></span>  
   
-     ![テーブルからの Product および ProductCategory の選択](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step4.png "DataGrid\_SQL\_EF\_Step4")  
+     <span data-ttu-id="4ae20-126">![テーブルからの Product および ProductCategory の選択](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step4.png "DataGrid_SQL_EF_Step4")</span><span class="sxs-lookup"><span data-stu-id="4ae20-126">![Select Product and ProductCategory from tables](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step4.png "DataGrid_SQL_EF_Step4")</span></span>  
   
-9. **\[完了\]** をクリックします。  
+9. <span data-ttu-id="4ae20-127">**[完了]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4ae20-127">Click **Finish**.</span></span>  
   
-     Product エンティティと ProductCategory エンティティが Entity Designer に表示されます。  
+     <span data-ttu-id="4ae20-128">エンティティ デザイナーで、Product および ProductCategory エンティティが表示されます。</span><span class="sxs-lookup"><span data-stu-id="4ae20-128">The Product and ProductCategory entities are displayed in the Entity Designer.</span></span>  
   
-     ![Product および ProductCategory エンティティ モデル](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step5.png "DataGrid\_SQL\_EF\_Step5")  
+     <span data-ttu-id="4ae20-129">![Product および ProductCategory エンティティ モデル](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step5.png "DataGrid_SQL_EF_Step5")</span><span class="sxs-lookup"><span data-stu-id="4ae20-129">![Product and ProductCategory entity models](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step5.png "DataGrid_SQL_EF_Step5")</span></span>  
   
-### データを取得して表示するには  
+### <a name="to-retrieve-and-present-the-data"></a><span data-ttu-id="4ae20-130">取得して、データの表示</span><span class="sxs-lookup"><span data-stu-id="4ae20-130">To retrieve and present the data</span></span>  
   
-1.  MainWindow.xaml ファイルを開きます。  
+1.  <span data-ttu-id="4ae20-131">MainWindow.xaml ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="4ae20-131">Open the MainWindow.xaml file.</span></span>  
   
-2.  <xref:System.Windows.Window> 上の <xref:System.Windows.FrameworkElement.Width%2A> プロパティを「450」に設定します。  
+2.  <span data-ttu-id="4ae20-132">設定、<xref:System.Windows.FrameworkElement.Width%2A>プロパティを<xref:System.Windows.Window>450 にします。</span><span class="sxs-lookup"><span data-stu-id="4ae20-132">Set the <xref:System.Windows.FrameworkElement.Width%2A> property on the <xref:System.Windows.Window> to 450.</span></span>  
   
-3.  XAML エディターで、`<Grid>` タグと `</Grid>` タグの間に次の <xref:System.Windows.Controls.DataGrid> タグを追加して、`dataGrid1` という名前の <xref:System.Windows.Controls.DataGrid> を追加します。  
+3.  <span data-ttu-id="4ae20-133">XAML エディターで、次のコードを追加<xref:System.Windows.Controls.DataGrid>タグの間、`<Grid>`と`</Grid>`タグを追加する、<xref:System.Windows.Controls.DataGrid>という`dataGrid1`です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-133">In the XAML editor, add the following <xref:System.Windows.Controls.DataGrid> tag between the `<Grid>` and `</Grid>` tags to add a <xref:System.Windows.Controls.DataGrid> named `dataGrid1`.</span></span>  
   
-     [!code-xml[DataGrid_SQL_EF_Walkthrough#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml#3)]  
+     [!code-xaml[DataGrid_SQL_EF_Walkthrough#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml#3)]  
   
-     ![DataGrid のあるウィンドウ](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step6.png "DataGrid\_SQL\_EF\_Step6")  
+     <span data-ttu-id="4ae20-134">![DataGrid のあるウィンドウ](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step6.png "DataGrid_SQL_EF_Step6")</span><span class="sxs-lookup"><span data-stu-id="4ae20-134">![Window with DataGrid](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step6.png "DataGrid_SQL_EF_Step6")</span></span>  
   
-4.  <xref:System.Windows.Window> を選択します。  
+4.  <span data-ttu-id="4ae20-135"><xref:System.Windows.Window> を選択します。</span><span class="sxs-lookup"><span data-stu-id="4ae20-135">Select the <xref:System.Windows.Window>.</span></span>  
   
-5.  プロパティ ウィンドウまたは XAML エディターを使用して、<xref:System.Windows.FrameworkElement.Loaded> イベントに対し、<xref:System.Windows.Window> のイベント ハンドラーを `Window_Loaded` という名前で作成します。  詳細については、「[方法 : 単純なイベント ハンドラーを作成する](http://msdn.microsoft.com/ja-jp/b1456e07-9dec-4354-99cf-18666b64f480)」を参照してください。  
+5.  <span data-ttu-id="4ae20-136">イベント ハンドラーを作成する [プロパティ] ウィンドウまたは XAML エディターを使用して、<xref:System.Windows.Window>という`Window_Loaded`の<xref:System.Windows.FrameworkElement.Loaded>イベント。</span><span class="sxs-lookup"><span data-stu-id="4ae20-136">Using the Properties window or XAML editor, create an event handler for the <xref:System.Windows.Window> named `Window_Loaded` for the <xref:System.Windows.FrameworkElement.Loaded> event.</span></span> <span data-ttu-id="4ae20-137">詳細については、次を参照してください。[する方法: 単純なイベント ハンドラーを作成する](http://msdn.microsoft.com/en-us/b1456e07-9dec-4354-99cf-18666b64f480)です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-137">For more information, see [How to: Create a Simple Event Handler](http://msdn.microsoft.com/en-us/b1456e07-9dec-4354-99cf-18666b64f480).</span></span>  
   
-     MainWindow.xaml の XAML を次に示します。  
+     <span data-ttu-id="4ae20-138">次は、MainWindow.xaml の XAML を示します。</span><span class="sxs-lookup"><span data-stu-id="4ae20-138">The following shows the XAML for MainWindow.xaml.</span></span>  
   
     > [!NOTE]
-    >  Visual Basic を使用している場合は、MainWindow.xaml の最初の行で、`x:Class="DataGridSQLExample.MainWindow"` を `x:Class="MainWindow"` で置換します。  
+    >  <span data-ttu-id="4ae20-139">Visual Basic で MainWindow.xaml の最初の行を使用している場合は置き換えます`x:Class="DataGridSQLExample.MainWindow"`で`x:Class="MainWindow"`です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-139">If you are using Visual Basic, in the first line of MainWindow.xaml, replace `x:Class="DataGridSQLExample.MainWindow"` with `x:Class="MainWindow"`.</span></span>  
   
-     [!code-xml[DataGrid_SQL_EF_Walkthrough#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml#1)]  
+     [!code-xaml[DataGrid_SQL_EF_Walkthrough#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml#1)]  
   
-6.  <xref:System.Windows.Window> の分離コード ファイル \(MainWindow.xaml.vb または MainWindow.xaml.cs\) を開きます。  
+6.  <span data-ttu-id="4ae20-140">分離コード ファイル (MainWindow.xaml.vb または MainWindow.xaml.cs) を開き、<xref:System.Windows.Window>です。</span><span class="sxs-lookup"><span data-stu-id="4ae20-140">Open the code-behind file (MainWindow.xaml.vb or MainWindow.xaml.cs) for the <xref:System.Windows.Window>.</span></span>  
   
-7.  次のコードを追加して、結合されたテーブルの特定の値のみを取得し、<xref:System.Windows.Controls.DataGrid> の <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> プロパティを、クエリの結果に設定します。  
+7.  <span data-ttu-id="4ae20-141">結合されたテーブルから特定の値を取得および設定するには、次のコードを追加、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のプロパティ、<xref:System.Windows.Controls.DataGrid>クエリの結果にします。</span><span class="sxs-lookup"><span data-stu-id="4ae20-141">Add the following code to retrieve only specific values from the joined tables and set the <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> property of the <xref:System.Windows.Controls.DataGrid> to the results of the query.</span></span>  
   
      [!code-csharp[DataGrid_SQL_EF_Walkthrough#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml.cs#2)]
      [!code-vb[DataGrid_SQL_EF_Walkthrough#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/VB/MainWindow.xaml.vb#2)]  
   
-8.  例を実行します。  
+8.  <span data-ttu-id="4ae20-142">例を実行します。</span><span class="sxs-lookup"><span data-stu-id="4ae20-142">Run the example.</span></span>  
   
-     <xref:System.Windows.Controls.DataGrid> にデータが表示されることを確認します。  
+     <span data-ttu-id="4ae20-143">参照する必要があります、<xref:System.Windows.Controls.DataGrid>データを表示します。</span><span class="sxs-lookup"><span data-stu-id="4ae20-143">You should see a <xref:System.Windows.Controls.DataGrid> that displays data.</span></span>  
   
-     ![SQL データベースからのデータがある DataGrid](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step7.png "DataGrid\_SQL\_EF\_Step7")  
+     <span data-ttu-id="4ae20-144">![SQL データベースからデータがある DataGrid](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step7.png "DataGrid_SQL_EF_Step7")</span><span class="sxs-lookup"><span data-stu-id="4ae20-144">![DataGrid with data from SQL database](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step7.png "DataGrid_SQL_EF_Step7")</span></span>  
   
-## 次の手順  
+## <a name="next-steps"></a><span data-ttu-id="4ae20-145">次の手順</span><span class="sxs-lookup"><span data-stu-id="4ae20-145">Next Steps</span></span>  
   
-## 参照  
- <xref:System.Windows.Controls.DataGrid>   
- [操作方法: WPF アプリケーションに Entity Framework で開始します。](http://go.microsoft.com/fwlink/?LinkId=159868)
+## <a name="see-also"></a><span data-ttu-id="4ae20-146">関連項目</span><span class="sxs-lookup"><span data-stu-id="4ae20-146">See Also</span></span>  
+ <xref:System.Windows.Controls.DataGrid>  
+ [<span data-ttu-id="4ae20-147">方法は i: どこから始めたら WPF アプリケーションで Entity Framework としますか。</span><span class="sxs-lookup"><span data-stu-id="4ae20-147">How Do I: Get Started with Entity Framework in WPF Applications?</span></span>](http://go.microsoft.com/fwlink/?LinkId=159868)

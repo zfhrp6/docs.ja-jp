@@ -1,40 +1,47 @@
 ---
-title: "カスタム追跡参加要素を作成する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム追跡参加要素を作成する方法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 1b612c7e-2381-4a7c-b07a-77030415f2a3
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ef647068e6ec757de391015f4959335c29038cfa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# カスタム追跡参加要素を作成する方法
-ワークフロー追跡により、ワークフロー実行の状態が視覚的に示されます。ワークフロー ランタイムによって、ワークフローのライフサイクル イベント、アクティビティのライフサイクル イベント、ブックマークの再開、およびエラーについて説明する追跡レコードが出力されます。これらの追跡レコードは、追跡参加要素によって使用されます。[!INCLUDE[wf](../../../includes/wf-md.md)] には、追跡レコードを Event Tracing for Windows \(ETW\) イベントとして書き込む標準の追跡参加要素が含まれています。これで要件が満たされない場合は、カスタムの追跡参加要素を作成することもできます。チュートリアルのこの手順では、`WriteLine` アクティビティの出力をキャプチャするカスタム追跡参加要素と追跡プロファイルを作成して、ユーザーに表示できるようにする方法について説明します。  
+# <a name="how-to-create-a-custom-tracking-participant"></a><span data-ttu-id="de551-102">カスタム追跡参加要素を作成する方法</span><span class="sxs-lookup"><span data-stu-id="de551-102">How to: Create a Custom Tracking Participant</span></span>
+<span data-ttu-id="de551-103">ワークフロー追跡により、ワークフロー実行の状態が視覚的に示されます。</span><span class="sxs-lookup"><span data-stu-id="de551-103">Workflow tracking provides visibility into the status of workflow execution.</span></span> <span data-ttu-id="de551-104">ワークフロー ランタイムによって、ワークフローのライフサイクル イベント、アクティビティのライフサイクル イベント、ブックマークの再開、およびエラーについて説明する追跡レコードが出力されます。</span><span class="sxs-lookup"><span data-stu-id="de551-104">The workflow runtime emits tracking records that describe workflow lifecycle events, activity lifecycle events, bookmark resumptions, and faults.</span></span> <span data-ttu-id="de551-105">これらの追跡レコードは、追跡参加要素によって使用されます。</span><span class="sxs-lookup"><span data-stu-id="de551-105">These tracking records are consumed by tracking participants.</span></span> [!INCLUDE[wf](../../../includes/wf-md.md)]<span data-ttu-id="de551-106"> には、追跡レコードを Event Tracing for Windows (ETW) イベントとして書き込む標準の追跡参加要素が含まれています。</span><span class="sxs-lookup"><span data-stu-id="de551-106"> includes a standard tracking participant that writes tracking records as Event Tracing for Windows (ETW) events.</span></span> <span data-ttu-id="de551-107">これで要件が満たされない場合は、カスタムの追跡参加要素を作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="de551-107">If that does not meet your requirements, you can also write a custom tracking participant.</span></span> <span data-ttu-id="de551-108">チュートリアルのこの手順では、`WriteLine` アクティビティの出力をキャプチャするカスタム追跡参加要素と追跡プロファイルを作成して、ユーザーに表示できるようにする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="de551-108">This tutorial step describes how to create a custom tracking participant and tracking profile that capture the output of `WriteLine` activities so that they can be displayed to the user.</span></span>  
   
 > [!NOTE]
->  チュートリアル入門の各トピックは、前のトピックに応じて異なります。このトピックを完了する前に、これまでのトピックを完了する必要があります。チュートリアルの完成版をダウンロードしたり、チュートリアルのビデオを閲覧したりするには、「[Windows Workflow Foundation \(WF45\) \- チュートリアル入門](http://go.microsoft.com/fwlink/?LinkID=248976)」を参照してください。  
+>  <span data-ttu-id="de551-109">チュートリアル入門の各トピックは、前のトピックに応じて異なります。</span><span class="sxs-lookup"><span data-stu-id="de551-109">Each topic in the Getting Started tutorial depends on the previous topics.</span></span> <span data-ttu-id="de551-110">このトピックを完了する前に、これまでのトピックを完了する必要があります。</span><span class="sxs-lookup"><span data-stu-id="de551-110">To complete this topic, you must first complete the previous topics.</span></span> <span data-ttu-id="de551-111">完成版をダウンロードまたはチュートリアルのビデオ チュートリアルを表示を参照してください。 [Windows Workflow Foundation (WF45) - チュートリアル入門](http://go.microsoft.com/fwlink/?LinkID=248976)です。</span><span class="sxs-lookup"><span data-stu-id="de551-111">To download a completed version or view a video walkthrough of the tutorial, see [Windows Workflow Foundation (WF45) - Getting Started Tutorial](http://go.microsoft.com/fwlink/?LinkID=248976).</span></span>  
   
-## このトピックの内容  
+## <a name="in-this-topic"></a><span data-ttu-id="de551-112">このトピックの内容</span><span class="sxs-lookup"><span data-stu-id="de551-112">In this topic</span></span>  
   
--   [カスタム追跡参加要素を作成するには](../../../docs/framework/windows-workflow-foundation//how-to-create-a-custom-tracking-participant.md#BKMK_CustomTrackingParticipant)  
+-   [<span data-ttu-id="de551-113">カスタム追跡参加要素を作成するには</span><span class="sxs-lookup"><span data-stu-id="de551-113">To create the custom tracking participant</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_CustomTrackingParticipant)  
   
--   [追跡プロファイルを作成して追跡参加要素を登録するには](../../../docs/framework/windows-workflow-foundation//how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile)  
+-   [<span data-ttu-id="de551-114">追跡プロファイルを作成して、追跡参加要素を登録するには</span><span class="sxs-lookup"><span data-stu-id="de551-114">To create the tracking profile and register the tracking participant</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile)  
   
--   [追跡情報を表示するには](../../../docs/framework/windows-workflow-foundation//how-to-create-a-custom-tracking-participant.md#BKMK_DisplayTracking)  
+-   [<span data-ttu-id="de551-115">追跡情報を表示するには</span><span class="sxs-lookup"><span data-stu-id="de551-115">To display the tracking information</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_DisplayTracking)  
   
--   [アプリケーションをビルドして実行するには](../../../docs/framework/windows-workflow-foundation//how-to-create-a-custom-tracking-participant.md#BKMK_BuildAndRun)  
+-   [<span data-ttu-id="de551-116">ビルドおよびアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="de551-116">To build and run the application</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_BuildAndRun)  
   
-###  <a name="BKMK_CustomTrackingParticipant"></a> カスタム追跡参加要素を作成するには  
+###  <span data-ttu-id="de551-117"><a name="BKMK_CustomTrackingParticipant"></a>カスタム追跡参加要素を作成するには</span><span class="sxs-lookup"><span data-stu-id="de551-117"><a name="BKMK_CustomTrackingParticipant"></a> To create the custom tracking participant</span></span>  
   
-1.  **ソリューション エクスプローラー**で **NumberGuessWorkflowHost** を右クリックし、**\[追加\]** をポイントして、**\[クラス\]** をクリックします。**\[名前\]** ボックスに「`StatusTrackingParticipant`」と入力し、**\[追加\]** をクリックします。  
+1.  <span data-ttu-id="de551-118">右クリック**NumberGuessWorkflowHost**で**ソリューション エクスプ ローラー**選択**追加**、**クラス**です。</span><span class="sxs-lookup"><span data-stu-id="de551-118">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **Class**.</span></span> <span data-ttu-id="de551-119">型`StatusTrackingParticipant`に、**名前**ボックスし、をクリックして**追加**です。</span><span class="sxs-lookup"><span data-stu-id="de551-119">Type `StatusTrackingParticipant` into the **Name** box, and click **Add**.</span></span>  
   
-2.  次の `using` \(または `Imports`\) ステートメントを、他の `using` \(または `Imports`\) ステートメントを含むファイルの先頭に追加します。  
+2.  <span data-ttu-id="de551-120">次の `using` (または `Imports`) ステートメントを、他の `using` (または `Imports`) ステートメントを含むファイルの先頭に追加します。</span><span class="sxs-lookup"><span data-stu-id="de551-120">Add the following `using` (or `Imports`) statements at the top of the file with the other `using` (or `Imports`) statements.</span></span>  
   
     ```vb  
     Imports System.Activities.Tracking  
@@ -46,7 +53,7 @@ caps.handback.revision: 6
     using System.IO;  
     ```  
   
-3.  `StatusTrackingParticipant` クラスを変更して、`TrackingParticipant` から継承されるようにします。  
+3.  <span data-ttu-id="de551-121">`StatusTrackingParticipant` クラスを変更して、`TrackingParticipant` から継承されるようにします。</span><span class="sxs-lookup"><span data-stu-id="de551-121">Modify the `StatusTrackingParticipant` class so that it inherits from `TrackingParticipant`.</span></span>  
   
     ```vb  
     Public Class StatusTrackingParticipant  
@@ -61,7 +68,7 @@ caps.handback.revision: 6
     }  
     ```  
   
-4.  次の `Track` メソッド オーバーライドを追加します。追跡レコードには、いくつかの種類があります。ここでは、アクティビティ追跡レコードに含まれる `WriteLine` アクティビティの出力に注目します。`TrackingRecord` が `WriteLine` アクティビティの `ActivityTrackingRecord` である場合は、ワークフローの `InstanceId` に基づいた名前の付いたファイルに `WriteLine` の `Text` が追加されます。このチュートリアルでは、ファイルはホスト アプリケーションの現在のフォルダーに保存されます。  
+4.  <span data-ttu-id="de551-122">次の `Track` メソッド オーバーライドを追加します。</span><span class="sxs-lookup"><span data-stu-id="de551-122">Add the following `Track` method override.</span></span> <span data-ttu-id="de551-123">追跡レコードには、いくつかの種類があります。</span><span class="sxs-lookup"><span data-stu-id="de551-123">There are several different types of tracking records.</span></span> <span data-ttu-id="de551-124">ここでは、アクティビティ追跡レコードに含まれる `WriteLine` アクティビティの出力に注目します。</span><span class="sxs-lookup"><span data-stu-id="de551-124">We are interested in the output of `WriteLine` activities, which are contained in activity tracking records.</span></span> <span data-ttu-id="de551-125">`TrackingRecord` が `ActivityTrackingRecord` アクティビティの `WriteLine` である場合は、ワークフローの `Text` に基づいた名前の付いたファイルに `WriteLine` の `InstanceId` が追加されます。</span><span class="sxs-lookup"><span data-stu-id="de551-125">If the `TrackingRecord` is an `ActivityTrackingRecord` for a `WriteLine` activity, the `Text` of the `WriteLine` is appended to a file named after the `InstanceId` of the workflow.</span></span> <span data-ttu-id="de551-126">このチュートリアルでは、ファイルはホスト アプリケーションの現在のフォルダーに保存されます。</span><span class="sxs-lookup"><span data-stu-id="de551-126">In this tutorial, the file is saved to the current folder of the host application.</span></span>  
   
     ```vb  
     Protected Overrides Sub Track(record As TrackingRecord, timeout As TimeSpan)  
@@ -104,13 +111,13 @@ caps.handback.revision: 6
     }  
     ```  
   
-     追跡プロファイルを指定しない場合は、既定の追跡プロファイルが使用されます。既定の追跡プロファイルを使用する場合は、すべての `ActivityStates` に関する追跡レコードが出力されます。ここでは、`WriteLine` アクティビティのライフサイクル中に 1 回だけテキストをキャプチャする必要があるため、`ActivityStates.Executing` 状態からテキストを抽出するだけです。「[追跡プロファイルを作成して追跡参加要素を登録するには](../../../docs/framework/windows-workflow-foundation//how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile)」では、`WriteLine` `ActivityStates.Executing` の追跡レコードのみが出力されるように指定する追跡プロファイルを作成します。  
+     <span data-ttu-id="de551-127">追跡プロファイルを指定しない場合は、既定の追跡プロファイルが使用されます。</span><span class="sxs-lookup"><span data-stu-id="de551-127">When no tracking profile is specified, the default tracking profile is used.</span></span> <span data-ttu-id="de551-128">既定の追跡プロファイルを使用する場合は、すべての `ActivityStates` に関する追跡レコードが出力されます。</span><span class="sxs-lookup"><span data-stu-id="de551-128">When the default tracking profile is used, tracking records are emitted for all `ActivityStates`.</span></span> <span data-ttu-id="de551-129">ここでは、`WriteLine` アクティビティのライフサイクル中に 1 回だけテキストをキャプチャする必要があるため、`ActivityStates.Executing` 状態からテキストを抽出するだけです。</span><span class="sxs-lookup"><span data-stu-id="de551-129">Because we only need to capture the text one time during the lifecycle of the `WriteLine` activity, we only extract the text from the `ActivityStates.Executing` state.</span></span> <span data-ttu-id="de551-130">[追跡プロファイルを作成して、追跡参加要素を登録する](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile)、だけを指定する追跡プロファイルが作成された`WriteLine``ActivityStates.Executing`追跡レコードが生成されます。</span><span class="sxs-lookup"><span data-stu-id="de551-130">In [To create the tracking profile and register the tracking participant](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile), a tracking profile is created that specifies that only `WriteLine` `ActivityStates.Executing` tracking records are emitted.</span></span>  
   
-###  <a name="BKMK_TrackingProfile"></a> 追跡プロファイルを作成して追跡参加要素を登録するには  
+###  <span data-ttu-id="de551-131"><a name="BKMK_TrackingProfile"></a>追跡プロファイルを作成して、追跡参加要素を登録するには</span><span class="sxs-lookup"><span data-stu-id="de551-131"><a name="BKMK_TrackingProfile"></a> To create the tracking profile and register the tracking participant</span></span>  
   
-1.  **ソリューション エクスプローラー**で **WorkflowHostForm** を右クリックし、**\[コードの表示\]** をクリックします。  
+1.  <span data-ttu-id="de551-132">右クリック**WorkflowHostForm**で**ソリューション エクスプ ローラー**選択**コードの表示**です。</span><span class="sxs-lookup"><span data-stu-id="de551-132">Right-click **WorkflowHostForm** in **Solution Explorer** and choose **View Code**.</span></span>  
   
-2.  次の `using` \(または `Imports`\) ステートメントを、他の `using` \(または `Imports`\) ステートメントを含むファイルの先頭に追加します。  
+2.  <span data-ttu-id="de551-133">次の `using` (または `Imports`) ステートメントを、他の `using` (または `Imports`) ステートメントを含むファイルの先頭に追加します。</span><span class="sxs-lookup"><span data-stu-id="de551-133">Add the following `using` (or `Imports`) statement at the top of the file with the other `using` (or `Imports`) statements.</span></span>  
   
     ```vb  
     Imports System.Activities.Tracking  
@@ -120,7 +127,7 @@ caps.handback.revision: 6
     using System.Activities.Tracking;  
     ```  
   
-3.  ワークフロー拡張機能に `StringWriter` を追加するコードの直後で、ワークフロー ライフサイクル ハンドラーの前に、`ConfigureWorkflowApplication` に次のコードを追加します。  
+3.  <span data-ttu-id="de551-134">ワークフロー拡張機能に `ConfigureWorkflowApplication` を追加するコードの直後で、ワークフロー ライフサイクル ハンドラーの前に、`StringWriter` に次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="de551-134">Add the following code to `ConfigureWorkflowApplication` just after the code that adds the `StringWriter` to the workflow extensions and before the workflow lifecycle handlers.</span></span>  
   
     ```vb  
     'Add the custom tracking participant with a tracking profile  
@@ -161,9 +168,9 @@ caps.handback.revision: 6
     wfApp.Extensions.Add(stp);  
     ```  
   
-     この追跡プロファイルでは、`Executing` 状態の `WriteLine` アクティビティのアクティビティ状態レコードのみがカスタム追跡参加要素に出力されるように指定します。  
+     <span data-ttu-id="de551-135">この追跡プロファイルでは、`WriteLine` 状態の `Executing` アクティビティのアクティビティ状態レコードのみがカスタム追跡参加要素に出力されるように指定します。</span><span class="sxs-lookup"><span data-stu-id="de551-135">This tracking profile specifies that only activity state records for `WriteLine` activities in the `Executing` state are emitted to the custom tracking participant.</span></span>  
   
-     このコードを追加した後、`ConfigureWorkflowApplication` の先頭は次の例のようになります。  
+     <span data-ttu-id="de551-136">このコードを追加した後、`ConfigureWorkflowApplication` の先頭は次の例のようになります。</span><span class="sxs-lookup"><span data-stu-id="de551-136">After adding the code, the start of `ConfigureWorkflowApplication` will look like the following example.</span></span>  
   
     ```vb  
     Private Sub ConfigureWorkflowApplication(wfApp As WorkflowApplication)  
@@ -227,11 +234,11 @@ caps.handback.revision: 6
         // Workflow lifecycle handlers...  
     ```  
   
-###  <a name="BKMK_DisplayTracking"></a> 追跡情報を表示するには  
+###  <span data-ttu-id="de551-137"><a name="BKMK_DisplayTracking"></a>追跡情報を表示するには</span><span class="sxs-lookup"><span data-stu-id="de551-137"><a name="BKMK_DisplayTracking"></a> To display the tracking information</span></span>  
   
-1.  **ソリューション エクスプローラー**で **WorkflowHostForm** を右クリックし、**\[コードの表示\]** をクリックします。  
+1.  <span data-ttu-id="de551-138">右クリック**WorkflowHostForm**で**ソリューション エクスプ ローラー**選択**コードの表示**です。</span><span class="sxs-lookup"><span data-stu-id="de551-138">Right-click **WorkflowHostForm** in **Solution Explorer** and choose **View Code**.</span></span>  
   
-2.  `InstanceId_SelectedIndexChanged` ハンドラーで、ステータス ウィンドウをクリアするコードの直後に次のコードを追加します。  
+2.  <span data-ttu-id="de551-139">`InstanceId_SelectedIndexChanged` ハンドラーで、ステータス ウィンドウをクリアするコードの直後に次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="de551-139">In the `InstanceId_SelectedIndexChanged` handler, add the following code immediately after the code that clears the status window.</span></span>  
   
     ```vb  
     'If there is tracking data for this workflow, display it  
@@ -252,7 +259,7 @@ caps.handback.revision: 6
     }  
     ```  
   
-     ワークフローの一覧で新しいワークフローを選択すると、そのワークフローの追跡レコードがステータス ウィンドウに読み込まれて表示されます。完成した `InstanceId_SelectedIndexChanged` ハンドラーは次のようになります。  
+     <span data-ttu-id="de551-140">ワークフローの一覧で新しいワークフローを選択すると、そのワークフローの追跡レコードがステータス ウィンドウに読み込まれて表示されます。</span><span class="sxs-lookup"><span data-stu-id="de551-140">When a new workflow is selected in the workflow list, the tracking records for that workflow are loaded and displayed in the status window.</span></span> <span data-ttu-id="de551-141">完成した `InstanceId_SelectedIndexChanged` ハンドラーは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="de551-141">The following example is the completed `InstanceId_SelectedIndexChanged` handler.</span></span>  
   
     ```vb  
     Private Sub InstanceId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles InstanceId.SelectedIndexChanged  
@@ -320,32 +327,31 @@ caps.handback.revision: 6
             instance.Abandon();  
         }  
     }  
-  
     ```  
   
-###  <a name="BKMK_BuildAndRun"></a> アプリケーションをビルドして実行するには  
+###  <span data-ttu-id="de551-142"><a name="BKMK_BuildAndRun"></a>ビルドおよびアプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="de551-142"><a name="BKMK_BuildAndRun"></a> To build and run the application</span></span>  
   
-1.  Ctrl キーと Shift キーを押しながら B キーを押してアプリケーションをビルドします。  
+1.  <span data-ttu-id="de551-143">Ctrl キーと Shift キーを押しながら B キーを押してアプリケーションをビルドします。</span><span class="sxs-lookup"><span data-stu-id="de551-143">Press Ctrl+Shift+B to build the application.</span></span>  
   
-2.  Ctrl キーを押しながら F5 キーを押してアプリケーションを起動します。  
+2.  <span data-ttu-id="de551-144">Ctrl キーを押しながら F5 キーを押してアプリケーションを起動します。</span><span class="sxs-lookup"><span data-stu-id="de551-144">Press Ctrl+F5 to start the application.</span></span>  
   
-3.  推測ゲームの範囲と開始するワークフローの種類を選択し、**\[New Game\]** をクリックします。**\[Guess\]** ボックスに推定値を入力し、**\[Go\]** をクリックして推定値を送信します。ワークフローの状態がステータス ウィンドウに表示されます。この出力は、`WriteLine` アクティビティからキャプチャされます。**\[Workflow Instance Id\]** ボックスの一覧で別のワークフローを選択してそのワークフローに切り替えて、現在のワークフローの状態が削除されることを確認します。以前のワークフローに戻して、次の例のように、状態が復元されることを確認します。  
+3.  <span data-ttu-id="de551-145">推測ゲームを開始、およびをクリックするワークフローの種類の範囲を選択して**新しいゲーム**です。</span><span class="sxs-lookup"><span data-stu-id="de551-145">Select a range for the guessing game and the type of workflow to start, and click **New Game**.</span></span> <span data-ttu-id="de551-146">推定値を入力、**推測**ボックスし、をクリックして**移動**推定値を送信します。</span><span class="sxs-lookup"><span data-stu-id="de551-146">Enter a guess in the **Guess** box and click **Go** to submit your guess.</span></span> <span data-ttu-id="de551-147">ワークフローの状態がステータス ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="de551-147">Note that the status of the workflow is displayed in the status window.</span></span> <span data-ttu-id="de551-148">この出力は、`WriteLine` アクティビティからキャプチャされます。</span><span class="sxs-lookup"><span data-stu-id="de551-148">This output is captured from the `WriteLine` activities.</span></span> <span data-ttu-id="de551-149">選択して、別のワークフローに切り替え、**ワークフロー インスタンス Id**コンボ ボックスと、現在のワークフローの状態が削除されたことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="de551-149">Switch to a different workflow by selecting one from the **Workflow Instance Id** combo box and note that the status of the current workflow is removed.</span></span> <span data-ttu-id="de551-150">以前のワークフローに戻して、次の例のように、状態が復元されることを確認します。</span><span class="sxs-lookup"><span data-stu-id="de551-150">Switch back to the previous workflow and note that the status is restored, similar to the following example.</span></span>  
   
     > [!NOTE]
-    >  追跡が有効になる前に開始されたワークフローに切り替えた場合、状態は表示されません。ただし、推定値を追加すると、この時点では追跡が有効になっているため、その状態が保存されます。  
+    >  <span data-ttu-id="de551-151">追跡が有効になる前に開始されたワークフローに切り替えた場合、状態は表示されません。</span><span class="sxs-lookup"><span data-stu-id="de551-151">If you switch to a workflow that was started before tracking was enabled no status is displayed.</span></span> <span data-ttu-id="de551-152">ただし、推定値を追加すると、この時点では追跡が有効になっているため、その状態が保存されます。</span><span class="sxs-lookup"><span data-stu-id="de551-152">However if you make additional guesses, their status is saved because tracking is now enabled.</span></span>  
   
- **Please enter a number between 1 and 10**   
-**Your guess is too high.**   
-**Please enter a number between 1 and 10**    
+ <span data-ttu-id="de551-153">**1 ~ 10 の間の数値を入力してください。**</span><span class="sxs-lookup"><span data-stu-id="de551-153">**Please enter a number between 1 and 10**</span></span>  
+<span data-ttu-id="de551-154">**推定値が大きすぎます。** </span><span class="sxs-lookup"><span data-stu-id="de551-154">**Your guess is too high.** </span></span>  
+<span data-ttu-id="de551-155">**1 ~ 10 の間の数値を入力してください。**</span><span class="sxs-lookup"><span data-stu-id="de551-155">**Please enter a number between 1 and 10**</span></span>    
     > [!NOTE]
-    >  この情報は、乱数の範囲を決定する場合に役立ちますが、これまでに作成された推定値に関する情報を含んでいません。この情報については、次の手順「[ワークフローの複数のバージョンを同時にホストする方法](../../../docs/framework/windows-workflow-foundation//how-to-host-multiple-versions-of-a-workflow-side-by-side.md)」で説明します。  
+    >  <span data-ttu-id="de551-156">この情報は、乱数の範囲を決定する場合に役立ちますが、これまでに作成された推定値に関する情報を含んでいません。</span><span class="sxs-lookup"><span data-stu-id="de551-156">This information is useful for determining the range of the random number, but it does not contain any information about what guesses have been previously made.</span></span> <span data-ttu-id="de551-157">この情報は、次の手順で[する方法: 複数のバージョンのホストはワークフロー サイド バイ サイドの](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md)します。</span><span class="sxs-lookup"><span data-stu-id="de551-157">This information is in the next step, [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span></span>  
   
-     ワークフロー インスタンス ID を書き留め、ゲームを最後まで実行します。  
+     <span data-ttu-id="de551-158">ワークフロー インスタンス ID を書き留め、ゲームを最後まで実行します。</span><span class="sxs-lookup"><span data-stu-id="de551-158">Make a note of the workflow instance id, and play the game through to its completion.</span></span>  
   
-4.  エクスプローラーを開き、**NumberGuessWorkflowHost\\bin\\debug** フォルダー \(プロジェクトの設定によっては **bin\\release**\) に移動します。プロジェクトの実行可能ファイルに加え、GUID ファイル名が付いたファイルがあることに注意します。前の手順で完了したワークフローのワークフロー インスタンス ID に対応するファイルを特定してメモ帳で開きます。追跡情報は、次のような情報が含まれています。  
+4.  <span data-ttu-id="de551-159">Windows エクスプ ローラーを開きに移動、 **numberguessworkflowhost \bin\debug**フォルダー (または**bin \release**プロジェクトの設定によって)。</span><span class="sxs-lookup"><span data-stu-id="de551-159">Open Windows Explorer and navigate to the **NumberGuessWorkflowHost\bin\debug** folder (or **bin\release** depending on your project settings).</span></span> <span data-ttu-id="de551-160">プロジェクトの実行可能ファイルに加え、GUID ファイル名が付いたファイルがあることに注意します。</span><span class="sxs-lookup"><span data-stu-id="de551-160">Note that in addition to the project executable files there are files with guid filenames.</span></span> <span data-ttu-id="de551-161">前の手順で完了したワークフローのワークフロー インスタンス ID に対応するファイルを特定してメモ帳で開きます。</span><span class="sxs-lookup"><span data-stu-id="de551-161">Identify the one that corresponds to the workflow instance id from the completed workflow in the previous step and open it in Notepad.</span></span> <span data-ttu-id="de551-162">追跡情報は、次のような情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="de551-162">The tracking information contains information similar to the following.</span></span>  
   
- **Please enter a number between 1 and 10**   
-**Your guess is too high.**   
-**Please enter a number between 1 and 10**   
-**Your guess is too high.**   
-**Please enter a number between 1 and 10**      この追跡データには、ユーザーの推定値だけでなく、ワークフローの最後の推定値に関する情報も含まれていません。これは、追跡情報がワークフローからの `WriteLine` 出力のみで構成されており、表示される最後のメッセージがワークフロー完了後に `Completed` ハンドラーから表示されるためです。チュートリアルの次の手順「[ワークフローの複数のバージョンを同時にホストする方法](../../../docs/framework/windows-workflow-foundation//how-to-host-multiple-versions-of-a-workflow-side-by-side.md)」では、ユーザーの推定値が表示されるように既存の `WriteLine` アクティビティを変更し、最終結果を表示する新しい `WriteLine` アクティビティを追加します。これらの変更を統合した後、「[ワークフローの複数のバージョンを同時にホストする方法](../../../docs/framework/windows-workflow-foundation//how-to-host-multiple-versions-of-a-workflow-side-by-side.md)」では、ワークフローの複数のバージョンを同時にホストする方法について説明します。
+ <span data-ttu-id="de551-163">**1 ~ 10 の間の数値を入力してください。**</span><span class="sxs-lookup"><span data-stu-id="de551-163">**Please enter a number between 1 and 10**</span></span>  
+<span data-ttu-id="de551-164">**推定値が大きすぎます。** </span><span class="sxs-lookup"><span data-stu-id="de551-164">**Your guess is too high.** </span></span>  
+<span data-ttu-id="de551-165">**1 ~ 10 の間の数値を入力してください。** </span><span class="sxs-lookup"><span data-stu-id="de551-165">**Please enter a number between 1 and 10** </span></span>  
+<span data-ttu-id="de551-166">**推定値が大きすぎます。** </span><span class="sxs-lookup"><span data-stu-id="de551-166">**Your guess is too high.** </span></span>  
+<span data-ttu-id="de551-167">**1 ~ 10 の間の数値を入力してください**だけでなく、ユーザーの推定値がない場合、この追跡データは、ワークフローの最後の推定値に関する情報。</span><span class="sxs-lookup"><span data-stu-id="de551-167">**Please enter a number between 1 and 10**      In addition to the absence of the user's guesses, this tracking data does not contain information about the final guess of the workflow.</span></span> <span data-ttu-id="de551-168">これは、追跡情報がワークフローからの `WriteLine` 出力のみで構成されており、表示される最後のメッセージがワークフロー完了後に `Completed` ハンドラーから表示されるためです。</span><span class="sxs-lookup"><span data-stu-id="de551-168">That is because the tracking information consists only of the `WriteLine` output from the workflow, and the final message that is displayed is done so from the `Completed` handler after the workflow completes.</span></span> <span data-ttu-id="de551-169">チュートリアルでは、次の手順で[する方法: ホストはワークフロー サイド バイ サイドの複数のバージョン](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md)、既存の`WriteLine`アクティビティが変更され、ユーザーの推定値と追加の表示を`WriteLine`アクティビティを追加します。最終的な結果が表示されます。</span><span class="sxs-lookup"><span data-stu-id="de551-169">In next step of the tutorial, [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md), the existing `WriteLine` activities are modified to display the user's guesses, and an additional `WriteLine` activity is added that displays the final results.</span></span> <span data-ttu-id="de551-170">これらの変更が統合されると、[する方法: ホストはワークフロー サイド バイ サイドの複数のバージョン](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md)同時に複数のバージョンのワークフローをホストする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="de551-170">After these changes are integrated, [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) demonstrates how to host multiple versions of a workflow at the same time.</span></span>

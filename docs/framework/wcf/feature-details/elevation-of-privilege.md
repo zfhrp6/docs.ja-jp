@@ -1,70 +1,73 @@
 ---
-title: "権限の昇格 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "権限の昇格 [WCF]"
-  - "セキュリティ [WCF], 権限の昇格"
+title: "権限の昇格"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- elevation of privilege [WCF]
+- security [WCF], elevation of privilege
 ms.assetid: 146e1c66-2a76-4ed3-98a5-fd77851a06d9
-caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ce245335fecd0f8735759135989bcd49ca6bf18b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 権限の昇格
-*権限の昇格*は、本来付与されたものよりも高い承認アクセス許可を攻撃者に与えた結果として発生します。たとえば、"読み取り専用" アクセス許可の権限セットを持つ攻撃者が、何らかの方法で権限セットを "読み取り\/書き込み" アクセス許可を含むものに昇格させます。  
+# <a name="elevation-of-privilege"></a><span data-ttu-id="56055-102">権限の昇格</span><span class="sxs-lookup"><span data-stu-id="56055-102">Elevation of Privilege</span></span>
+<span data-ttu-id="56055-103">*特権の昇格*攻撃者承認本来付与されたもの以外のアクセス許可を与えた結果します。</span><span class="sxs-lookup"><span data-stu-id="56055-103">*Elevation of privilege* results from giving an attacker authorization permissions beyond those initially granted.</span></span> <span data-ttu-id="56055-104">たとえば、"読み取り専用" アクセス許可の権限セットを持つ攻撃者が、何らかの方法で権限セットを "読み取り/書き込み" アクセス許可を含むものに昇格させます。</span><span class="sxs-lookup"><span data-stu-id="56055-104">For example, an attacker with a privilege set of "read only" permissions somehow elevates the set to include "read and write."</span></span>  
   
-## SAML トークンのクレームには信頼された STS による署名が必要  
- SAML \(Security Assertions Markup Language\) トークンは、発行済みトークンの既定の型である汎用 XML トークンです。SAML トークンは、通常の交換においてエンド Web サービスから信頼されたセキュリティ トークン サービス \(STS\) によって作成できます。SAML トークンには、ステートメント内にクレームが格納されます。攻撃者は、有効なトークンからクレームをコピーして新しい SAML トークンを作成し、別の発行者による署名を行うことがあります。この目的は、サーバーが発行者を検証するかどうかを確認し、検証しない場合に、この脆弱性を利用して信頼された STS が意図したものよりも高い権限を与える SAML トークンを作成することです。  
+## <a name="trusted-sts-should-sign-saml-token-claims"></a><span data-ttu-id="56055-105">SAML トークンのクレームには信頼された STS による署名が必要</span><span class="sxs-lookup"><span data-stu-id="56055-105">Trusted STS Should Sign SAML Token Claims</span></span>  
+ <span data-ttu-id="56055-106">SAML (Security Assertions Markup Language) トークンは、発行済みトークンの既定の型である汎用 XML トークンです。</span><span class="sxs-lookup"><span data-stu-id="56055-106">A Security Assertions Markup Language (SAML) token is a generic XML token that is the default type for issued tokens.</span></span> <span data-ttu-id="56055-107">SAML トークンは、通常の交換においてエンド Web サービスから信頼されたセキュリティ トークン サービス (STS) によって作成できます。</span><span class="sxs-lookup"><span data-stu-id="56055-107">A SAML token can be constructed by a Security Token Service (STS) that the end Web service trusts in a typical exchange.</span></span> <span data-ttu-id="56055-108">SAML トークンには、ステートメント内にクレームが格納されます。</span><span class="sxs-lookup"><span data-stu-id="56055-108">SAML tokens contain claims in statements.</span></span> <span data-ttu-id="56055-109">攻撃者は、有効なトークンからクレームをコピーして新しい SAML トークンを作成し、別の発行者による署名を行うことがあります。</span><span class="sxs-lookup"><span data-stu-id="56055-109">An attacker may copy the claims from a valid token, create a new SAML token, and sign it with a different issuer.</span></span> <span data-ttu-id="56055-110">この目的は、サーバーが発行者を検証するかどうかを確認し、検証しない場合に、この脆弱性を利用して信頼された STS が意図したものよりも高い権限を与える SAML トークンを作成することです。</span><span class="sxs-lookup"><span data-stu-id="56055-110">The intent is to determine whether the server is validating issuers and, if not, utilize the weakness to construct SAML tokens that allow privileges beyond those intended by a trusted STS.</span></span>  
   
- <xref:System.IdentityModel.Tokens.SamlAssertion> クラスは、SAML トークンに含まれるデジタル署名を検証します。<xref:System.ServiceModel.Security.IssuedTokenServiceCredential> クラスの <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> が <xref:System.ServiceModel.Security.X509CertificateValidationMode> に設定されている場合、既定の <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> は、SAML トークンが有効な X.509 証明書によって署名されていることを要求します。SAML トークンの発行者を信頼できるかどうか判断するには、`ChainTrust` モードだけでは不十分です。より詳細な信頼モデルを必要とするサービスは、承認ポリシーと強制ポリシーを使用して、発行済みトークン認証によって生成されたクレーム セットの発行者をチェックするか、<xref:System.ServiceModel.Security.IssuedTokenServiceCredential> の X.509 検証設定を使用して、許可する署名証明書のセットを制限できます。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]「[ID モデルを使用したクレームと承認の管理](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)」および「[フェデレーションと発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)」を参照してください。  
+ <span data-ttu-id="56055-111"><xref:System.IdentityModel.Tokens.SamlAssertion> クラスは、SAML トークンに含まれるデジタル署名を検証します。<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> クラスの <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> が <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> に設定されている場合、既定の <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust> は、SAML トークンが有効な X.509 証明書によって署名されていることを要求します。</span><span class="sxs-lookup"><span data-stu-id="56055-111">The <xref:System.IdentityModel.Tokens.SamlAssertion> class verifies the digital signature contained within a SAML token, and the default <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> requires that SAML tokens be signed by an X.509 certificate that is valid when the <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> of the <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> class is set to <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust>.</span></span> <span data-ttu-id="56055-112">SAML トークンの発行者を信頼できるかどうか判断するには、`ChainTrust` モードだけでは不十分です。</span><span class="sxs-lookup"><span data-stu-id="56055-112">`ChainTrust` mode alone is insufficient to determine whether the issuer of the SAML token is trusted.</span></span> <span data-ttu-id="56055-113">より詳細な信頼モデルを必要とするサービスは、承認ポリシーと強制ポリシーを使用して、発行済みトークン認証によって生成されたクレーム セットの発行者をチェックするか、<xref:System.ServiceModel.Security.IssuedTokenServiceCredential> の X.509 検証設定を使用して、許可する署名証明書のセットを制限できます。</span><span class="sxs-lookup"><span data-stu-id="56055-113">Services that require a more granular trust model can either use authorization and enforcement policies to check the issuer of the claim sets produced by issued token authentication or use the X.509 validation settings on <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> to restrict the set of allowed signing certificates.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="56055-114">[クレームと Id モデルによる承認の管理](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)と[フェデレーションと発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)です。</span><span class="sxs-lookup"><span data-stu-id="56055-114"> [Managing Claims and Authorization with the Identity Model](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md) and [Federation and Issued Tokens](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).</span></span>  
   
-## セキュリティ コンテキストを使用しない ID の切り替え  
- 次の内容は、[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] にのみ適用されます。  
+## <a name="switching-identity-without-a-security-context"></a><span data-ttu-id="56055-115">セキュリティ コンテキストを使用しない ID の切り替え</span><span class="sxs-lookup"><span data-stu-id="56055-115">Switching Identity Without a Security Context</span></span>  
+ <span data-ttu-id="56055-116">次の内容は、[!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] にのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="56055-116">The following applies only to [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].</span></span>  
   
- クライアントとサーバー間の接続が確立すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを開いた後に次のすべての条件に該当する場合を除き、クライアントの ID は変更されません。  
+ <span data-ttu-id="56055-117">クライアントとサーバー間の接続が確立すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを開いた後に次のすべての条件に該当する場合を除き、クライアントの ID は変更されません。</span><span class="sxs-lookup"><span data-stu-id="56055-117">When a connection is established between a client and server, the identity of the client does not change, except in one situation: after the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client is opened, if all of the following conditions are true:</span></span>  
   
--   セキュリティ コンテキストを確立するプロシージャ \(トランスポート セキュリティ セッションまたはメッセージ セキュリティ セッションを使用\) が無効になっている \(メッセージ セキュリティの場合は、<xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> プロパティが `false`  に設定されている。トランスポート セキュリティの場合は、セキュリティ セッションを確立できないトランスポート \(HTTPS など\) が使用されている\)。  
+-   <span data-ttu-id="56055-118">(トランスポート セキュリティ セッションまたはメッセージ セキュリティ セッションを使用して) セキュリティ コンテキストを確立するための手順がオフになっている (<xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A>プロパティに設定されている`false`メッセージ セキュリティまたはトランスポート セキュリティを確立するための非対応の場合トランスポート セキュリティの場合は、セッションが使用されます。</span><span class="sxs-lookup"><span data-stu-id="56055-118">The procedures to establish a security context (using a transport security session or message security session) is switched off (<xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> property is set to `false` in case of message security or transport not capable of establishing security sessions is used in transport security case.</span></span> <span data-ttu-id="56055-119">トランスポート セキュリティの場合は、セキュリティ セッションを確立できないトランスポート (HTTPS など) が使用されている)。</span><span class="sxs-lookup"><span data-stu-id="56055-119">HTTPS is one example of such transport).</span></span>  
   
--   Windows 認証を使用している。  
+-   <span data-ttu-id="56055-120">Windows 認証を使用している。</span><span class="sxs-lookup"><span data-stu-id="56055-120">You are using Windows authentication.</span></span>  
   
--   資格情報を明示的に設定していない。  
+-   <span data-ttu-id="56055-121">資格情報を明示的に設定していない。</span><span class="sxs-lookup"><span data-stu-id="56055-121">You do not explicitly set the credential.</span></span>  
   
--   偽装されたセキュリティ コンテキストでサービスを呼び出している。  
+-   <span data-ttu-id="56055-122">偽装されたセキュリティ コンテキストでサービスを呼び出している。</span><span class="sxs-lookup"><span data-stu-id="56055-122">You are calling the service under the impersonated security context.</span></span>  
   
- これらの条件に該当する場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを開いた後で、サービスに対するクライアントの認証に使用する ID が変更されることがあります \(偽装された ID ではなく、プロセス ID になります\)。この状況が発生するのは、サービスに対するクライアントの認証に使用する Windows 資格情報がすべてのメッセージと共に送信され、認証に使用する資格情報が現在のスレッドの Windows ID から取得されるためです。\(たとえば、別の呼び出し元を偽装することによって\) 現在のスレッドの Windows ID が変更された場合、メッセージに添付され、サービスに対するクライアントの認証に使用する資格情報も変更される可能性があります。  
+ <span data-ttu-id="56055-123">これらの条件に該当する場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを開いた後で、サービスに対するクライアントの認証に使用する ID が変更されることがあります (偽装された ID ではなく、プロセス ID になります)。</span><span class="sxs-lookup"><span data-stu-id="56055-123">If these conditions are true, the identity used to authenticate the client to the service might change (it might not be the impersonated identity but the process identity instead) after the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client is opened.</span></span> <span data-ttu-id="56055-124">この状況が発生するのは、サービスに対するクライアントの認証に使用する Windows 資格情報がすべてのメッセージと共に送信され、認証に使用する資格情報が現在のスレッドの Windows ID から取得されるためです。</span><span class="sxs-lookup"><span data-stu-id="56055-124">This occurs because the Windows credential used to authenticate the client to the service is transmitted with every message, and the credential used for authentication is obtained from the current thread's Windows identity.</span></span> <span data-ttu-id="56055-125">(たとえば、別の呼び出し元を偽装することによって) 現在のスレッドの Windows ID が変更された場合、メッセージに添付され、サービスに対するクライアントの認証に使用する資格情報も変更される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="56055-125">If the Windows identity of the current thread changes (for example, by impersonating a different caller), the credential that is attached to the message and used to authenticate the client to the service might also change.</span></span>  
   
- 偽装と共に Windows 認証を使用する場合に動作を確定する必要があるときは、Windows 資格情報を明示的に設定するか、サービスでセキュリティ コンテキストを確立する必要があります。これを行うには、メッセージ セキュリティ セッションまたはトランスポート セキュリティ セッションを使用します。たとえば、net.tcp トランスポートは、トランスポート セキュリティ セッションを提供します。また、サービスの呼び出し時に、クライアント操作の同期バージョンだけを使用する必要があります。メッセージ セキュリティ コンテキストを確立する場合は、構成済みセッションの更新時間よりも長い時間、サービスへの接続を開いたままにしないようにしてください。セッション更新プロセスの間にも ID が変更される可能性があるためです。  
+ <span data-ttu-id="56055-126">偽装と共に Windows 認証を使用する場合に動作を確定する必要があるときは、Windows 資格情報を明示的に設定するか、サービスでセキュリティ コンテキストを確立する必要があります。</span><span class="sxs-lookup"><span data-stu-id="56055-126">If you want to have deterministic behavior when using Windows authentication together with impersonation you need to explicitly set the Windows credential or you need to establish a security context with the service.</span></span> <span data-ttu-id="56055-127">これを行うには、メッセージ セキュリティ セッションまたはトランスポート セキュリティ セッションを使用します。</span><span class="sxs-lookup"><span data-stu-id="56055-127">To do this, use a message security session or a transport security session.</span></span> <span data-ttu-id="56055-128">たとえば、net.tcp トランスポートは、トランスポート セキュリティ セッションを提供します。</span><span class="sxs-lookup"><span data-stu-id="56055-128">For example, the net.tcp transport can provide a transport security session.</span></span> <span data-ttu-id="56055-129">また、サービスの呼び出し時に、クライアント操作の同期バージョンだけを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="56055-129">Additionally, you must use only a synchronous version of client operations when calling the service.</span></span> <span data-ttu-id="56055-130">メッセージ セキュリティ コンテキストを確立する場合は、構成済みセッションの更新時間よりも長い時間、サービスへの接続を開いたままにしないようにしてください。セッション更新プロセスの間にも ID が変更される可能性があるためです。</span><span class="sxs-lookup"><span data-stu-id="56055-130">If you establish a message security context, you should not keep the connection to the service open longer than the configured session renewal period, because the identity can also change during the session renewal process.</span></span>  
   
-### 資格情報のキャプチャ  
- 次の内容は、[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] 以降のバージョンに適用されます。  
+### <a name="credentials-capture"></a><span data-ttu-id="56055-131">資格情報のキャプチャ</span><span class="sxs-lookup"><span data-stu-id="56055-131">Credentials Capture</span></span>  
+ <span data-ttu-id="56055-132">次の内容は、[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] 以降のバージョンに適用されます。</span><span class="sxs-lookup"><span data-stu-id="56055-132">The following applies to [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)], and subsequent versions.</span></span>  
   
- クライアントまたはサービスが使用する資格情報は、現在のコンテキストのスレッドに基づきます。資格情報は、クライアントまたはサービスの `Open` メソッド \(または、非同期呼び出しの場合は `BeginOpen`\) が呼び出された場合に取得されます。<xref:System.ServiceModel.ServiceHost> クラスおよび <xref:System.ServiceModel.ClientBase%601> クラスのいずれの場合も、`Open` メソッドおよび `BeginOpen` メソッドは、<xref:System.ServiceModel.Channels.CommunicationObject> クラスの <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> メソッドおよび <xref:System.ServiceModel.Channels.CommunicationObject.BeginOpen%2A> メソッドから継承されます。  
+ <span data-ttu-id="56055-133">クライアントまたはサービスが使用する資格情報は、現在のコンテキストのスレッドに基づきます。</span><span class="sxs-lookup"><span data-stu-id="56055-133">Credentials used by the client or the service are based on the current context thread.</span></span> <span data-ttu-id="56055-134">資格情報は、クライアントまたはサービスの `Open` メソッド (または、非同期呼び出しの場合は `BeginOpen`) が呼び出された場合に取得されます。</span><span class="sxs-lookup"><span data-stu-id="56055-134">The credentials are obtained when the `Open` method (or `BeginOpen`, for asynchronous calls) of the client or service is called.</span></span> <span data-ttu-id="56055-135"><xref:System.ServiceModel.ServiceHost> クラスおよび <xref:System.ServiceModel.ClientBase%601> クラスのいずれの場合も、`Open` メソッドおよび `BeginOpen` メソッドは、<xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> クラスの <xref:System.ServiceModel.Channels.CommunicationObject.BeginOpen%2A> メソッドおよび <xref:System.ServiceModel.Channels.CommunicationObject> メソッドから継承されます。</span><span class="sxs-lookup"><span data-stu-id="56055-135">For both the <xref:System.ServiceModel.ServiceHost> and <xref:System.ServiceModel.ClientBase%601> classes, the `Open` and `BeginOpen` methods inherit from the <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> and <xref:System.ServiceModel.Channels.CommunicationObject.BeginOpen%2A> methods of the <xref:System.ServiceModel.Channels.CommunicationObject> class.</span></span>  
   
 > [!NOTE]
->  `BeginOpen` メソッドを使用する場合、キャプチャされた資格情報は、このメソッドを呼び出したプロセスの資格情報であることが保証されません。  
+>  <span data-ttu-id="56055-136">`BeginOpen` メソッドを使用する場合、キャプチャされた資格情報は、このメソッドを呼び出したプロセスの資格情報であることが保証されません。</span><span class="sxs-lookup"><span data-stu-id="56055-136">When using the `BeginOpen` method, the credentials captured cannot be guaranteed to be the credentials of the process that calls the method.</span></span>  
   
-## トークン キャッシュによる以前のデータを使用した再生の許可  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、ローカル セキュリティ機関 \(LSA\) の `LogonUser` 関数を使用して、ユーザー名とパスワードによってユーザーを認証します。ログオン関数はコストの高い操作であるため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、パフォーマンスを向上させるために、認証済みユーザーを表すトークンをキャッシュできます。キャッシュ機構は、それ以降に使用できるように `LogonUser` の結果を保存します。この機構は、既定で無効になっています。有効にするには、<xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A> プロパティを `true` に設定するか、[\<userNameAuthentication\>](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md) の `cacheLogonTokens` 属性を使用します。  
+## <a name="token-caches-allow-replay-using-obsolete-data"></a><span data-ttu-id="56055-137">トークン キャッシュによる以前のデータを使用した再生の許可</span><span class="sxs-lookup"><span data-stu-id="56055-137">Token Caches Allow Replay Using Obsolete Data</span></span>  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="56055-138"> は、ローカル セキュリティ機関 (LSA) の `LogonUser` 関数を使用して、ユーザー名とパスワードによってユーザーを認証します。</span><span class="sxs-lookup"><span data-stu-id="56055-138"> uses the local security authority (LSA) `LogonUser` function to authenticate users by user name and password.</span></span> <span data-ttu-id="56055-139">ログオン関数はコストの高い操作であるため、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、パフォーマンスを向上させるために、認証済みユーザーを表すトークンをキャッシュできます。</span><span class="sxs-lookup"><span data-stu-id="56055-139">Because the logon function is a costly operation, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] allows you to cache tokens that represent authenticated users to increase performance.</span></span> <span data-ttu-id="56055-140">キャッシュ機構は、それ以降に使用できるように `LogonUser` の結果を保存します。</span><span class="sxs-lookup"><span data-stu-id="56055-140">The caching mechanism saves the results from `LogonUser` for subsequent uses.</span></span> <span data-ttu-id="56055-141">このメカニズムは既定で無効です。有効にするには、設定、<xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A>プロパティを`true`、またはを使用して、`cacheLogonTokens`の属性、 [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md)です。</span><span class="sxs-lookup"><span data-stu-id="56055-141">This mechanism is disabled by default; to enable it, set the <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A> property to `true`, or use the `cacheLogonTokens` attribute of the [\<userNameAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md).</span></span>  
   
- <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> プロパティを <xref:System.TimeSpan> に設定するか、`userNameAuthentication` 要素の `cachedLogonTokenLifetime` 属性を使用することで、キャッシュされたトークンの有効期間 \(TTL\) を設定できます。既定値は 15 分です。Windows からユーザー アカウントが削除された場合や、パスワードが変更されている場合でも、トークンがキャッシュされている間は、同じユーザー名とパスワードを指定すると、どのクライアントもこのトークンを使用できます。TTL が終了し、トークンがキャッシュから削除されるまで、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は悪意のあるユーザーである可能性があっても、ユーザー認証を許可します。  
+ <span data-ttu-id="56055-142"><xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> プロパティを <xref:System.TimeSpan> に設定するか、`cachedLogonTokenLifetime` 要素の `userNameAuthentication` 属性を使用することで、キャッシュされたトークンの有効期間 (TTL) を設定できます。既定値は 15 分です。</span><span class="sxs-lookup"><span data-stu-id="56055-142">You can set a Time to Live (TTL) for the cached tokens by setting the <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> property to a <xref:System.TimeSpan>, or use the `cachedLogonTokenLifetime` attribute of the `userNameAuthentication` element; the default is 15 minutes.</span></span> <span data-ttu-id="56055-143">Windows からユーザー アカウントが削除された場合や、パスワードが変更されている場合でも、トークンがキャッシュされている間は、同じユーザー名とパスワードを指定すると、どのクライアントもこのトークンを使用できます。</span><span class="sxs-lookup"><span data-stu-id="56055-143">Note that while a token is cached, any client that presents the same user name and password can use the token, even if the user account is deleted from Windows or if its password has been changed.</span></span> <span data-ttu-id="56055-144">TTL が終了し、トークンがキャッシュから削除されるまで、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は悪意のあるユーザーである可能性があっても、ユーザー認証を許可します。</span><span class="sxs-lookup"><span data-stu-id="56055-144">Until the TTL expires and the token is removed from the cache, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] allows the (possibly malicious) user to authenticate.</span></span>  
   
- これをできるだけ防ぐには、`cachedLogonTokenLifetime` の設定値をユーザーが必要とする最低の期間に限定して攻撃領域を減らします。  
+ <span data-ttu-id="56055-145">これをできるだけ防ぐには、`cachedLogonTokenLifetime` の設定値をユーザーが必要とする最低の期間に限定して攻撃領域を減らします。</span><span class="sxs-lookup"><span data-stu-id="56055-145">To mitigate this: Decrease the attack window by setting the `cachedLogonTokenLifetime` value to the shortest time span your users need.</span></span>  
   
-## 発行済みトークンの承認 : 大きな値にリセットされた有効期限  
- 一定の条件下で、<xref:System.IdentityModel.Policy.AuthorizationContext> の <xref:System.IdentityModel.Policy.AuthorizationContext.ExpirationTime%2A> プロパティが予期しない大きな値 \(<xref:System.DateTime.MaxValue> フィールド値から 1 日引いた値 \(December 20, 9999\)\) に設定される場合があります。  
+## <a name="issued-token-authorization-expiration-reset-to-large-value"></a><span data-ttu-id="56055-146">発行済みトークンの承認 : 大きな値にリセットされた有効期限</span><span class="sxs-lookup"><span data-stu-id="56055-146">Issued Token Authorization: Expiration Reset to Large Value</span></span>  
+ <span data-ttu-id="56055-147">一定の条件下で、<xref:System.IdentityModel.Policy.AuthorizationContext.ExpirationTime%2A> の <xref:System.IdentityModel.Policy.AuthorizationContext> プロパティが予期しない大きな値 (<xref:System.DateTime.MaxValue> フィールド値から 1 日引いた値 (December 20, 9999)) に設定される場合があります。</span><span class="sxs-lookup"><span data-stu-id="56055-147">Under certain conditions, the <xref:System.IdentityModel.Policy.AuthorizationContext.ExpirationTime%2A> property of the <xref:System.IdentityModel.Policy.AuthorizationContext> may be set to an unexpectedly larger value (the <xref:System.DateTime.MaxValue> field value minus one day, or December 20, 9999).</span></span>  
   
- これは、<xref:System.ServiceModel.WSFederationHttpBinding>、およびクライアント資格情報の種類が発行済みトークンであるシステム提供のバインディングを使用している場合に発生します。  
+ <span data-ttu-id="56055-148">これは、<xref:System.ServiceModel.WSFederationHttpBinding>、およびクライアント資格情報の種類が発行済みトークンであるシステム提供のバインディングを使用している場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="56055-148">This occurs when using the <xref:System.ServiceModel.WSFederationHttpBinding> and any of the system-provided bindings that have an issued token as the client credential type.</span></span>  
   
- また、以下のメソッドのいずれかを使用して、カスタム バインディングを作成した場合にも発生します。  
+ <span data-ttu-id="56055-149">また、以下のメソッドのいずれかを使用して、カスタム バインドを作成した場合にも発生します。</span><span class="sxs-lookup"><span data-stu-id="56055-149">This also occurs when you create custom bindings by using one of the following methods:</span></span>  
   
 -   <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenBindingElement%2A>  
   
@@ -74,25 +77,25 @@ caps.handback.revision: 16
   
 -   <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement%2A>  
   
- これをできるだけ防ぐには、承認ポリシーによって各承認ポリシーのアクションと有効期限をチェックする必要があります。  
+ <span data-ttu-id="56055-150">これをできるだけ防ぐには、承認ポリシーによって各承認ポリシーのアクションと有効期限をチェックする必要があります。</span><span class="sxs-lookup"><span data-stu-id="56055-150">To mitigate this, the authorization policy must check the action and the expiration time of each authorization policy.</span></span>  
   
-## クライアントで予定していたものと異なる証明書をサービスで使用する場合  
- 一定の条件下で、クライアントが X.509 証明書を使用してメッセージにデジタル署名したときに、予定していたものと異なる証明書をサービスが取得する場合があります。  
+## <a name="the-service-uses-a-different-certificate-than-the-client-intended"></a><span data-ttu-id="56055-151">クライアントで予定していたものと異なる証明書をサービスで使用する場合</span><span class="sxs-lookup"><span data-stu-id="56055-151">The Service Uses a Different Certificate Than the Client Intended</span></span>  
+ <span data-ttu-id="56055-152">一定の条件下で、クライアントが X.509 証明書を使用してメッセージにデジタル署名したときに、予定していたものと異なる証明書をサービスが取得する場合があります。</span><span class="sxs-lookup"><span data-stu-id="56055-152">Under certain conditions, a client can digitally sign a message with an X.509 certificate and have the service retrieve a different certificate than the intended one.</span></span>  
   
- これは、次のような状況で発生する可能性があります。  
+ <span data-ttu-id="56055-153">これは、次のような状況で発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="56055-153">This can occur under the following circumstances:</span></span>  
   
--   クライアントが X.509 証明書を使用してメッセージにデジタル署名したときに、その X.509 証明書をメッセージに添付するのではなく、サブジェクト キー識別子を使用して証明書を参照しているだけの場合。  
+-   <span data-ttu-id="56055-154">クライアントが X.509 証明書を使用してメッセージにデジタル署名したときに、その X.509 証明書をメッセージに添付するのではなく、サブジェクト キー識別子を使用して証明書を参照しているだけの場合。</span><span class="sxs-lookup"><span data-stu-id="56055-154">The client digitally signs a message using an X.509 certificate and does not attach the X.509 certificate to the message, but rather just references the certificate using its subject key identifier.</span></span>  
   
--   サービスのコンピューターに同じ公開キーを持つ複数の証明書が格納されており、それらの証明書に含まれる情報が異なる場合。  
+-   <span data-ttu-id="56055-155">サービスのコンピューターに同じ公開キーを持つ複数の証明書が格納されており、それらの証明書に含まれる情報が異なる場合。</span><span class="sxs-lookup"><span data-stu-id="56055-155">The service's computer contains two or more certificates with the same public key, but they contain different information.</span></span>  
   
--   サービスがサブジェクト キー識別子と一致する証明書を取得したが、クライアントが使用する予定だったものではない場合。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でメッセージを取得し署名を検証すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は予定されていたものと異なる X.509 証明書の情報をクレーム セットに対応付けます。このクレーム セットは、クライアントが必要とした内容とは異なり、昇格されている可能性があります。  
+-   <span data-ttu-id="56055-156">サービスがサブジェクト キー識別子と一致する証明書を取得したが、クライアントが使用する予定だったものではない場合。</span><span class="sxs-lookup"><span data-stu-id="56055-156">The service retrieves a certificate that matches the subject key identifier, but it is not the one the client intended to use.</span></span> <span data-ttu-id="56055-157">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でメッセージを取得し署名を検証すると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は予定されていたものと異なる X.509 証明書の情報をクレーム セットに対応付けます。このクレーム セットは、クライアントが必要とした内容とは異なり、昇格されている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="56055-157">When [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] receives the message and verifies the signature, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] maps the information in the unintended X.509 certificate to a set of claims that are different and potentially elevated from what the client expected.</span></span>  
   
- これをできるだけ防ぐには、X.509 証明書を別の方法 \(<xref:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType> の使用など\) で参照します。  
+ <span data-ttu-id="56055-158">これをできるだけ防ぐには、X.509 証明書を別の方法 (<xref:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.IssuerSerial> の使用など) で参照します。</span><span class="sxs-lookup"><span data-stu-id="56055-158">To mitigate this, reference the X.509 certificate another way, such as using <xref:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.IssuerSerial>.</span></span>  
   
-## 参照  
- [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)   
- [情報の漏えい](../../../../docs/framework/wcf/feature-details/information-disclosure.md)   
- [サービス拒否](../../../../docs/framework/wcf/feature-details/denial-of-service.md)   
- [リプレイ攻撃](../../../../docs/framework/wcf/feature-details/replay-attacks.md)   
- [改変](../../../../docs/framework/wcf/feature-details/tampering.md)   
- [サポートされていないシナリオ](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
+## <a name="see-also"></a><span data-ttu-id="56055-159">関連項目</span><span class="sxs-lookup"><span data-stu-id="56055-159">See Also</span></span>  
+ [<span data-ttu-id="56055-160">セキュリティに関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="56055-160">Security Considerations</span></span>](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [<span data-ttu-id="56055-161">情報漏えいが起こる</span><span class="sxs-lookup"><span data-stu-id="56055-161">Information Disclosure</span></span>](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
+ [<span data-ttu-id="56055-162">サービス拒否が起こる</span><span class="sxs-lookup"><span data-stu-id="56055-162">Denial of Service</span></span>](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [<span data-ttu-id="56055-163">リプレイ攻撃</span><span class="sxs-lookup"><span data-stu-id="56055-163">Replay Attacks</span></span>](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
+ [<span data-ttu-id="56055-164">改ざん</span><span class="sxs-lookup"><span data-stu-id="56055-164">Tampering</span></span>](../../../../docs/framework/wcf/feature-details/tampering.md)  
+ [<span data-ttu-id="56055-165">サポートされていないシナリオ</span><span class="sxs-lookup"><span data-stu-id="56055-165">Unsupported Scenarios</span></span>](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)

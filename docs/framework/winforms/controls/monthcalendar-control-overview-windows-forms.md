@@ -1,39 +1,39 @@
 ---
-title: "MonthCalendar コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "MonthCalendar"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "予定表コントロール, Windows フォーム"
-  - "予定表, Windows フォーム コントロール"
-  - "MonthCalendar コントロール [Windows フォーム], 設定 (週の最初の曜日を)"
+title: "MonthCalendar コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: MonthCalendar
+helpviewer_keywords:
+- calendars [Windows Forms], Windows Forms controls
+- calendar controls [Windows Forms], Windows Forms
+- MonthCalendar control [Windows Forms], setting the first day of the week
 ms.assetid: 788c5325-b721-44ec-95bf-9b680ba0f6a2
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: dba245df31ad14150e57188c95ab3a980ae8d3db
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# MonthCalendar コントロールの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.MonthCalendar> コントロールを使用すると、わかりやすいグラフィカル インターフェイスを使用して、日付情報を表示および設定できます。  このコントロールはカレンダー \(曜日の下に当月の日付が配列されたグリッド\) を表示します。日付の選択範囲が強調表示されます。  月表示のキャプションの両側にある矢印ボタンをクリックして、ほかの月を選択できます。  このコントロールでは、類似した <xref:System.Windows.Forms.DateTimePicker> コントロールとは異なり、複数の日付を選択できます。  <xref:System.Windows.Forms.DateTimePicker> コントロールの詳細については、「[DateTimePicker コントロール](../../../../docs/framework/winforms/controls/datetimepicker-control-windows-forms.md)」を参照してください。  
+# <a name="monthcalendar-control-overview-windows-forms"></a><span data-ttu-id="1121e-102">MonthCalendar コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="1121e-102">MonthCalendar Control Overview (Windows Forms)</span></span>
+<span data-ttu-id="1121e-103">Windows フォーム<xref:System.Windows.Forms.MonthCalendar>コントロールがユーザーを表示し、日付情報を設定するための直感的なグラフィカル インターフェイスを表示します。</span><span class="sxs-lookup"><span data-stu-id="1121e-103">The Windows Forms <xref:System.Windows.Forms.MonthCalendar> control presents an intuitive graphical interface for users to view and set date information.</span></span> <span data-ttu-id="1121e-104">カレンダーを表示します。 は月、日、曜日、強調表示されている日付の選択範囲の下にある列に配置の番号付きの日を含むグリッドです。</span><span class="sxs-lookup"><span data-stu-id="1121e-104">The control displays a calendar: a grid containing the numbered days of the month, arranged in columns underneath the days of the week, with the selected range of dates highlighted.</span></span> <span data-ttu-id="1121e-105">月のキャプションのどちらかの側にある矢印ボタンをクリックして、別の月を選択できます。</span><span class="sxs-lookup"><span data-stu-id="1121e-105">You can select a different month by clicking the arrow buttons on either side of the month caption.</span></span> <span data-ttu-id="1121e-106">異なり、類似<xref:System.Windows.Forms.DateTimePicker>コントロール、このコントロールに 1 つ以上の日付を選択できます。</span><span class="sxs-lookup"><span data-stu-id="1121e-106">Unlike the similar <xref:System.Windows.Forms.DateTimePicker> control, you can select more than one date with this control.</span></span> <span data-ttu-id="1121e-107">詳細については、<xref:System.Windows.Forms.DateTimePicker>を制御しを参照してください[DateTimePicker コントロール](../../../../docs/framework/winforms/controls/datetimepicker-control-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="1121e-107">For more information about the <xref:System.Windows.Forms.DateTimePicker> control, see [DateTimePicker Control](../../../../docs/framework/winforms/controls/datetimepicker-control-windows-forms.md).</span></span>  
   
-## MonthCalendar コントロールの設定  
- <xref:System.Windows.Forms.MonthCalendar> コントロールの外観には、さまざまな設定方法があります。  既定では、当日の日付が丸で囲まれて表示され、グリッドの下部にも表示されます。  この機能は、<xref:System.Windows.Forms.MonthCalendar.ShowToday%2A> プロパティと <xref:System.Windows.Forms.MonthCalendar.ShowTodayCircle%2A> プロパティに `false` を設定することで変更できます。  <xref:System.Windows.Forms.MonthCalendar.ShowWeekNumbers%2A> プロパティに `true` を設定して、カレンダーに週番号を表示することもできます。  <xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A> プロパティの設定によって、複数の月を縦や横に並べて表示することもできます。  既定では週の始まりが日曜日になっていますが、<xref:System.Windows.Forms.MonthCalendar.FirstDayOfWeek%2A> プロパティで任意の曜日に変更できます。  
+## <a name="configuring-the-monthcalendar-control"></a><span data-ttu-id="1121e-108">MonthCalendar コントロールの構成</span><span class="sxs-lookup"><span data-stu-id="1121e-108">Configuring the MonthCalendar Control</span></span>  
+ <span data-ttu-id="1121e-109"><xref:System.Windows.Forms.MonthCalendar>コントロールの外観は柔軟な構成です。</span><span class="sxs-lookup"><span data-stu-id="1121e-109">The <xref:System.Windows.Forms.MonthCalendar> control's appearance is highly configurable.</span></span> <span data-ttu-id="1121e-110">既定では、今日の日付が丸で囲まれて表示され、グリッドの下部にも示されます。</span><span class="sxs-lookup"><span data-stu-id="1121e-110">By default, today's date is displayed as circled, and is also noted at the bottom of the grid.</span></span> <span data-ttu-id="1121e-111">設定してこの機能を変更することができます、<xref:System.Windows.Forms.MonthCalendar.ShowToday%2A>と<xref:System.Windows.Forms.MonthCalendar.ShowTodayCircle%2A>プロパティ`false`です。</span><span class="sxs-lookup"><span data-stu-id="1121e-111">You can change this feature by setting the <xref:System.Windows.Forms.MonthCalendar.ShowToday%2A> and <xref:System.Windows.Forms.MonthCalendar.ShowTodayCircle%2A> properties to `false`.</span></span> <span data-ttu-id="1121e-112">設定して、予定表に週番号を追加することも、<xref:System.Windows.Forms.MonthCalendar.ShowWeekNumbers%2A>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="1121e-112">You can also add week numbers to the calendar by setting the <xref:System.Windows.Forms.MonthCalendar.ShowWeekNumbers%2A> property to `true`.</span></span> <span data-ttu-id="1121e-113">設定して、<xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A>プロパティ、複数の水平方向および垂直方向に表示する月を持つことができます。</span><span class="sxs-lookup"><span data-stu-id="1121e-113">By setting the <xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A> property, you can have multiple months displayed horizontally and vertically.</span></span> <span data-ttu-id="1121e-114">既定は、日曜日が、その週の最初の日として表示されますを使用して任意の日を指定することができます、<xref:System.Windows.Forms.MonthCalendar.FirstDayOfWeek%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="1121e-114">By default, Sunday is shown as the first day of the week, but any day can be designated using the <xref:System.Windows.Forms.MonthCalendar.FirstDayOfWeek%2A> property.</span></span>  
   
- 特定の日付を太字で表示することもできます。<xref:System.DateTime> オブジェクトを <xref:System.Windows.Forms.MonthCalendar.BoldedDates%2A> プロパティに追加すると、特定の日付が一度だけ太字で表示されます。<xref:System.Windows.Forms.MonthCalendar.AnnuallyBoldedDates%2A> プロパティに追加すると、毎年太字で表示されます。<xref:System.Windows.Forms.MonthCalendar.MonthlyBoldedDates%2A> プロパティに追加すると、毎月太字で表示されます。  詳細については、「[方法 : Windows フォームの MonthCalendar コントロールを使用して特定の日付を太字で表示する](../../../../docs/framework/winforms/controls/display-specific-days-in-bold-with-wf-monthcalendar-control.md)」を参照してください。  
+ <span data-ttu-id="1121e-115">設定することもに表示される特定の日付、または月単位、1 回限りのベースで太字を追加して<xref:System.DateTime>オブジェクトを<xref:System.Windows.Forms.MonthCalendar.BoldedDates%2A>、 <xref:System.Windows.Forms.MonthCalendar.AnnuallyBoldedDates%2A>、および<xref:System.Windows.Forms.MonthCalendar.MonthlyBoldedDates%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="1121e-115">You can also set certain dates to be displayed in bold on a one-time basis, annually, or monthly, by adding <xref:System.DateTime> objects to the <xref:System.Windows.Forms.MonthCalendar.BoldedDates%2A>, <xref:System.Windows.Forms.MonthCalendar.AnnuallyBoldedDates%2A>, and <xref:System.Windows.Forms.MonthCalendar.MonthlyBoldedDates%2A> properties.</span></span> <span data-ttu-id="1121e-116">詳細については、次を参照してください。[する方法: Windows フォームの MonthCalendar コントロールでの太字の特定の日数を表示](../../../../docs/framework/winforms/controls/display-specific-days-in-bold-with-wf-monthcalendar-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="1121e-116">For more information, see [How to: Display Specific Days in Bold with the Windows Forms MonthCalendar Control](../../../../docs/framework/winforms/controls/display-specific-days-in-bold-with-wf-monthcalendar-control.md).</span></span>  
   
- <xref:System.Windows.Forms.MonthCalendar> コントロールの主要なプロパティは、<xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A> プロパティです。このプロパティは、コントロールで選択された日付の範囲を表します。  <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A> には、<xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A> プロパティに設定された選択可能な日付の数を超える値は指定できません。  ユーザーが選択できる最も古い日付と最も新しい日付は、<xref:System.Windows.Forms.MonthCalendar.MaxDate%2A> プロパティと <xref:System.Windows.Forms.MonthCalendar.MinDate%2A> プロパティで決定します。  
+ <span data-ttu-id="1121e-117">キー プロパティ、<xref:System.Windows.Forms.MonthCalendar>コントロールが<xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>コントロールで選択されている日付の範囲です。</span><span class="sxs-lookup"><span data-stu-id="1121e-117">The key property of the <xref:System.Windows.Forms.MonthCalendar> control is <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>, the range of dates selected in the control.</span></span> <span data-ttu-id="1121e-118"><xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>値が選択できる設定日数の最大数を超えることはできません、<xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="1121e-118">The <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A> value cannot exceed the maximum number of days that can be selected, set in the <xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A> property.</span></span> <span data-ttu-id="1121e-119">ユーザーが選択できる最初と最後の日付がによって決定されます、<xref:System.Windows.Forms.MonthCalendar.MaxDate%2A>と<xref:System.Windows.Forms.MonthCalendar.MinDate%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="1121e-119">The earliest and latest dates the user can select are determined by the <xref:System.Windows.Forms.MonthCalendar.MaxDate%2A> and <xref:System.Windows.Forms.MonthCalendar.MinDate%2A> properties.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.MonthCalendar>   
- [MonthCalendar コントロール](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="1121e-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="1121e-120">See Also</span></span>  
+ <xref:System.Windows.Forms.MonthCalendar>  
+ [<span data-ttu-id="1121e-121">MonthCalendar コントロール</span><span class="sxs-lookup"><span data-stu-id="1121e-121">MonthCalendar Control</span></span>](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)

@@ -1,60 +1,63 @@
 ---
-title: "方法 : スプラッシュ スクリーンを WPF アプリケーションに追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "スプラッシュ スクリーン [WPF]"
-  - "SplashScreen クラス [WPF]"
-  - "スタートアップ ウィンドウ [WPF]"
-  - "WPF, スプラッシュ スクリーン"
+title: "方法 : スプラッシュ スクリーンを WPF アプリケーションに追加する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WPF [WPF], splash screen
+- startup window [WPF]
+- SplashScreen class [WPF]
+- splash screen [WPF]
 ms.assetid: d70a25c4-5fb9-4c27-b01d-b1b8ef39b3fd
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 973f35f6bfa259490a9423bf0b69d676ad968372
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : スプラッシュ スクリーンを WPF アプリケーションに追加する
-このトピックでは、スタートアップ ウィンドウ、つまり*スプラッシュ スクリーン*を Windows Presentation Foundation \(WPF\) アプリケーションに追加する方法を示します。  
+# <a name="how-to-add-a-splash-screen-to-a-wpf-application"></a><span data-ttu-id="4b500-102">方法 : スプラッシュ スクリーンを WPF アプリケーションに追加する</span><span class="sxs-lookup"><span data-stu-id="4b500-102">How to: Add a Splash Screen to a WPF Application</span></span>
+<span data-ttu-id="4b500-103">このトピックは、[スタートアップ] ウィンドウを追加する方法を示しますまたは*スプラッシュ スクリーン*、Windows Presentation Foundation (WPF) アプリケーションにします。</span><span class="sxs-lookup"><span data-stu-id="4b500-103">This topic shows how to add a startup window, or *splash screen*, to a Windows Presentation Foundation (WPF) application.</span></span>  
   
-### 既存のイメージをスプラッシュ スクリーンとして追加するには  
+### <a name="to-add-an-existing-image-as-a-splash-screen"></a><span data-ttu-id="4b500-104">スプラッシュ スクリーンとして既存のイメージを追加するには</span><span class="sxs-lookup"><span data-stu-id="4b500-104">To add an existing image as a splash screen</span></span>  
   
-1.  スプラッシュ スクリーンに使用するイメージを作成または検索します。  Windows イメージング コンポーネント \(WIC\) によってサポートされているイメージ形式はすべて使用できます。  たとえば、BMP、GIF、JPEG、PNG、TIFF 形式などが使用できます。  
+1.  <span data-ttu-id="4b500-105">スプラッシュ スクリーンを使用するイメージを作成または選択します。</span><span class="sxs-lookup"><span data-stu-id="4b500-105">Create or find an image that you want to use for the splash screen.</span></span> <span data-ttu-id="4b500-106">Windows イメージング コンポーネント (WIC) ではサポートされているすべてのイメージ形式を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="4b500-106">You can use any image format that is supported by the Windows Imaging Component (WIC).</span></span> <span data-ttu-id="4b500-107">たとえば、BMP、GIF、JPEG、PNG、または TIFF の形式を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="4b500-107">For example, you can use the BMP, GIF, JPEG, PNG, or TIFF format.</span></span>  
   
-2.  イメージ ファイルを WPF アプリケーション プロジェクトに追加します。  詳細については、「[NIB:How to: Add Existing Items to a Project](http://msdn.microsoft.com/ja-jp/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)」を参照してください。  
+2.  <span data-ttu-id="4b500-108">WPF アプリケーション プロジェクトにイメージ ファイルを追加します。</span><span class="sxs-lookup"><span data-stu-id="4b500-108">Add the image file to the WPF Application project.</span></span> <span data-ttu-id="4b500-109">詳細については、次を参照してください。 [NIB: 方法: 既存の項目をプロジェクトに追加](http://msdn.microsoft.com/en-us/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)です。</span><span class="sxs-lookup"><span data-stu-id="4b500-109">For more information, see [NIB:How to: Add Existing Items to a Project](http://msdn.microsoft.com/en-us/15f4cfb7-78ab-457f-9f14-099a25a6a2d3).</span></span>  
   
-3.  ソリューション エクスプローラーでイメージを選択します。  
+3.  <span data-ttu-id="4b500-110">ソリューション エクスプ ローラーで、イメージを選択します。</span><span class="sxs-lookup"><span data-stu-id="4b500-110">In Solution Explorer, select the image.</span></span>  
   
-4.  \[プロパティ\] ウィンドウで、**\[ビルド アクション\]** プロパティのドロップダウン矢印をクリックします。  
+4.  <span data-ttu-id="4b500-111">[プロパティ] ウィンドウでのドロップダウン矢印をクリックして、**ビルド アクション**プロパティです。</span><span class="sxs-lookup"><span data-stu-id="4b500-111">In the Properties window, click the drop-down arrow for the **Build Action** property.</span></span>  
   
-5.  ドロップダウン リストの **\[SplashScreen\]** をクリックします。  
+5.  <span data-ttu-id="4b500-112">選択**SplashScreen**ドロップダウン リストからです。</span><span class="sxs-lookup"><span data-stu-id="4b500-112">Select **SplashScreen** from the drop-down list.</span></span>  
   
     > [!NOTE]
-    >  **\[SplashScreen\]** オプションが表示されない場合は、[!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)] SP1 以降を使用しているかどうかを確認してください。  
+    >  <span data-ttu-id="4b500-113">表示されない場合、 **SplashScreen**オプションを使用していることを確認してください[!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)]SP1 またはそれ以降。</span><span class="sxs-lookup"><span data-stu-id="4b500-113">If you do not see the **SplashScreen** option, be sure to check that you are using [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)] SP1 or later.</span></span>  
   
-6.  F5 キーを押してアプリケーションをビルドし、実行します。  
+6.  <span data-ttu-id="4b500-114">F5 キーを押してアプリケーションをビルドし、実行します。</span><span class="sxs-lookup"><span data-stu-id="4b500-114">Press F5 to build and run the application.</span></span>  
   
-     画面の中央にスプラッシュ スクリーンのイメージが表示されます。このイメージは、メインのアプリケーション ウィンドウが表示されると、フェード アウトします。  
+     <span data-ttu-id="4b500-115">スプラッシュ スクリーンのイメージは、画面の中央に表示され、アプリケーションのメイン ウィンドウが表示されたら、フェードし。</span><span class="sxs-lookup"><span data-stu-id="4b500-115">The splash screen image appears in the center of the screen, and then fades when the main application window appears.</span></span>  
   
-### アプリケーションからスプラッシュ スクリーンを削除するには  
+### <a name="to-remove-the-splash-screen-from-an-application"></a><span data-ttu-id="4b500-116">スプラッシュ スクリーンをアプリケーションから削除するには</span><span class="sxs-lookup"><span data-stu-id="4b500-116">To remove the splash screen from an application</span></span>  
   
-1.  ソリューション エクスプローラーで、スプラッシュ スクリーンのイメージを選択します。  
+1.  <span data-ttu-id="4b500-117">ソリューション エクスプ ローラーでは、スプラッシュ スクリーンのイメージを選択します。</span><span class="sxs-lookup"><span data-stu-id="4b500-117">In Solution Explorer, select the splash screen image.</span></span>  
   
-2.  \[プロパティ\] ウィンドウで、**\[ビルド アクション\]** を **\[なし\]** に設定します。  
+2.  <span data-ttu-id="4b500-118">[プロパティ] ウィンドウで、設定、**ビルド アクション**に**なし**です。</span><span class="sxs-lookup"><span data-stu-id="4b500-118">In the Properties window, set the **Build Action** to **None**.</span></span>  
   
-### アプリケーションからスプラッシュ スクリーンを削除するには  
+### <a name="to-remove-the-splash-screen-from-an-application"></a><span data-ttu-id="4b500-119">スプラッシュ スクリーンをアプリケーションから削除するには</span><span class="sxs-lookup"><span data-stu-id="4b500-119">To remove the splash screen from an application</span></span>  
   
--   ソリューション エクスプローラーで、スプラッシュ スクリーンのイメージを削除します。  
+-   <span data-ttu-id="4b500-120">ソリューション エクスプ ローラーでは、スプラッシュ スクリーンのイメージを削除します。</span><span class="sxs-lookup"><span data-stu-id="4b500-120">In Solution Explorer, delete the splash screen image.</span></span>  
   
--   スプラッシュ スクリーンのイメージをプロジェクトから除外します。  
+-   <span data-ttu-id="4b500-121">スプラッシュ スクリーンのイメージをプロジェクトから除外します。</span><span class="sxs-lookup"><span data-stu-id="4b500-121">Exclude the splash screen image from the project.</span></span>  
   
-## 参照  
- <xref:System.Windows.SplashScreen>   
- [NIB:How to: Add Existing Items to a Project](http://msdn.microsoft.com/ja-jp/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)
+## <a name="see-also"></a><span data-ttu-id="4b500-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="4b500-122">See Also</span></span>  
+ <xref:System.Windows.SplashScreen>  
+ [<span data-ttu-id="4b500-123">NIB: 方法: 既存の項目をプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="4b500-123">NIB:How to: Add Existing Items to a Project</span></span>](http://msdn.microsoft.com/en-us/15f4cfb7-78ab-457f-9f14-099a25a6a2d3)

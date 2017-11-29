@@ -1,202 +1,203 @@
 ---
-title: "チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コントロール [Windows フォーム], 配置 (TableLayoutPanel を使用した)"
-  - "TableLayoutPanel コントロール [Windows フォーム], チュートリアル"
-  - "Windows フォーム コントロール, 配置"
+title: "チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [Windows Forms], arranging with TableLayoutPanel
+- TableLayoutPanel control [Windows Forms], walkthroughs
+- Windows Forms controls, arranging
 ms.assetid: d474885e-12cc-4ab7-b997-2a23a643049b
-caps.latest.revision: 28
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b2d5c07be4ddebc3bfaa8c1979b39e3ef172a428
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置
-アプリケーションによっては、フォームのサイズを変更したり、コンテンツのサイズが変化したりしたときに、それに応じて自動的にレイアウトを調整するフォームが必要です。  動的なレイアウトが必要であり、しかも <xref:System.Windows.Forms.Control.Layout> イベントをコードで明示的に処理しない場合は、レイアウト パネルの使用を検討してください。  
+# <a name="walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel"></a><span data-ttu-id="6862f-102">チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="6862f-102">Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel</span></span>
+<span data-ttu-id="6862f-103">アプリケーションによっては、フォームのサイズを変更したり、コンテンツのサイズが変化したりしたときに、それに応じて自動的にレイアウトを調整するフォームが必要です。</span><span class="sxs-lookup"><span data-stu-id="6862f-103">Some applications require a form with a layout that arranges itself appropriately as the form is resized or as the contents change in size.</span></span> <span data-ttu-id="6862f-104">動的なレイアウトが必要であり、かつコードで <xref:System.Windows.Forms.Control.Layout> イベントを明示的に処理しない場合は、レイアウト パネルの使用をご検討ください。</span><span class="sxs-lookup"><span data-stu-id="6862f-104">When you need a dynamic layout and you do not want to handle <xref:System.Windows.Forms.Control.Layout> events explicitly in your code, consider using a layout panel.</span></span>  
   
- <xref:System.Windows.Forms.FlowLayoutPanel> コントロールや <xref:System.Windows.Forms.TableLayoutPanel> コントロールを使用すると、コントロールをフォームに直観的に配置できます。  これら 2 つのコントロールは、それぞれに含まれる子コントロールの相対位置を制御するための自動的で設定可能な機能を提供します。また、実行時に動的なレイアウト機能を提供するため、親フォームの寸法の変更に応じて子コントロールのサイズと位置を変更できます。  また、レイアウト パネルは他のレイアウト パネルの入れ子にすることもできるため、高度なユーザー インターフェイスを実現できます。  
+ <span data-ttu-id="6862f-105"><xref:System.Windows.Forms.FlowLayoutPanel> コントロールと <xref:System.Windows.Forms.TableLayoutPanel> コントロールを使用すると、コントロールをフォームに直感的な方法で配置できます。</span><span class="sxs-lookup"><span data-stu-id="6862f-105">The <xref:System.Windows.Forms.FlowLayoutPanel> control and the <xref:System.Windows.Forms.TableLayoutPanel> control provide intuitive ways to arrange controls on your form.</span></span> <span data-ttu-id="6862f-106">これら 2 つのコントロールは、それぞれに含まれる子コントロールの相対位置を制御するための自動的で構成可能な機能を提供します。また、どちらも実行時に動的なレイアウト機能を提供するため、親フォームの寸法の変更に応じて子コントロールのサイズと位置を変更できます。</span><span class="sxs-lookup"><span data-stu-id="6862f-106">Both provide an automatic, configurable ability to control the relative positions of child controls contained within them, and both give you dynamic layout features at run time, so they can resize and reposition child controls as the dimensions of the parent form change.</span></span> <span data-ttu-id="6862f-107">レイアウト パネルは他のレイアウト パネルの入れ子にすることができるため、高度なユーザー インターフェイスを実現できます。</span><span class="sxs-lookup"><span data-stu-id="6862f-107">Layout panels can be nested within layout panels, to enable the realization of sophisticated user interfaces.</span></span>  
   
- <xref:System.Windows.Forms.FlowLayoutPanel> は、その内容を特定のフロー方向 \(水平または垂直方向\) に配置します。  このコントロールの内容は、ある行から次の行、またはある列から次の列に折り返すことができます。  また、折り返さずにクリップすることもできます。  詳細については、「[チュートリアル : FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)」を参照してください。  
+ <span data-ttu-id="6862f-108"><xref:System.Windows.Forms.FlowLayoutPanel> はその内容を特定のフローの方向 (水平または垂直) に配置します。</span><span class="sxs-lookup"><span data-stu-id="6862f-108">The <xref:System.Windows.Forms.FlowLayoutPanel> arranges its contents in a specific flow direction: horizontal or vertical.</span></span> <span data-ttu-id="6862f-109">ある行から次の行、またはある列から次の列に内容をラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="6862f-109">Its contents can be wrapped from one row to the next, or from one column to the next.</span></span> <span data-ttu-id="6862f-110">また、ラップする代わりにクリップすることもできます。</span><span class="sxs-lookup"><span data-stu-id="6862f-110">Alternately, its contents can be clipped instead of wrapped.</span></span> <span data-ttu-id="6862f-111">詳細については、次を参照してください。[チュートリアル: Windows を使用して、FlowLayoutPanel をフォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)です。</span><span class="sxs-lookup"><span data-stu-id="6862f-111">For more information, see [Walkthrough: Arranging Controls on Windows Forms Using a FlowLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md).</span></span>  
   
- <xref:System.Windows.Forms.TableLayoutPanel> は、その内容をグリッドに配置し、HTML \<table\> 要素と同じような機能を提供します。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールでは、コントロールをグリッド レイアウトに配置でき、個々のコントロールの位置を正確に指定する必要がありません。  このレイアウト パネルのセルは行と列に配置され、それぞれ異なったサイズを設定できます。  セルは、行や列にまたがって結合できます。  セルには、フォームに配置できるすべての要素を格納できる他、ほとんどの点でコンテナーとして動作します。  
+ <span data-ttu-id="6862f-112"><xref:System.Windows.Forms.TableLayoutPanel> HTML と同様の機能を提供する、グリッドに内容を整列\<テーブル > 要素。</span><span class="sxs-lookup"><span data-stu-id="6862f-112">The <xref:System.Windows.Forms.TableLayoutPanel> arranges its contents in a grid, providing functionality similar to the HTML \<table> element.</span></span> <span data-ttu-id="6862f-113"><xref:System.Windows.Forms.TableLayoutPanel>コントロールでは、個々 のコントロールの位置を正確に指定することがなく、グリッド レイアウトにコントロールを配置することができます。</span><span class="sxs-lookup"><span data-stu-id="6862f-113">The <xref:System.Windows.Forms.TableLayoutPanel> control allows you to place controls in a grid layout without requiring you to precisely specify the position of each individual control.</span></span> <span data-ttu-id="6862f-114">セルは行と列に配置され、それぞれに異なるサイズを設定できます。</span><span class="sxs-lookup"><span data-stu-id="6862f-114">Its cells are arranged in rows and columns, and these can have different sizes.</span></span> <span data-ttu-id="6862f-115">セルは、行および列全体でマージできることができます。</span><span class="sxs-lookup"><span data-stu-id="6862f-115">Cells can be merged across rows and columns.</span></span> <span data-ttu-id="6862f-116">セルには、すべてのフォームを含めをコンテナーとしての他のほとんどの点での動作を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="6862f-116">Cells can contain anything a form can contain and behave in most other respects as containers.</span></span>  
   
- <xref:System.Windows.Forms.TableLayoutPanel> コントロールは、実行時に比例的なサイズ変更機能を提供するため、フォームのサイズ変更に合わせてレイアウトを滑らかに変更できます。  このため、<xref:System.Windows.Forms.TableLayoutPanel> コントロールは、データ入力フォームやアプリケーションのローカライズなどに適しています。  詳細については、「[Walkthrough: Creating a Resizable Windows Form for Data Entry](http://msdn.microsoft.com/ja-jp/e193b4fc-912a-4917-b036-b76c7a6f58ab)」および「[Walkthrough: Creating a Localizable Windows Form](http://msdn.microsoft.com/ja-jp/c5240b6e-aaca-4286-9bae-778a416edb9c)」を参照してください。  
+ <span data-ttu-id="6862f-117"><xref:System.Windows.Forms.TableLayoutPanel>コントロールも機能が備わっている比例サイズ変更、実行時に、フォームのサイズを変更、レイアウトがスムーズに変更できるようにします。</span><span class="sxs-lookup"><span data-stu-id="6862f-117">The <xref:System.Windows.Forms.TableLayoutPanel> control also provides a proportional resizing capability at run time, so your layout can change smoothly as your form is resized.</span></span> <span data-ttu-id="6862f-118">これにより、<xref:System.Windows.Forms.TableLayoutPanel>コントロールは、データ エントリ フォームとローカライズされたアプリケーションなどの目的も適しています。</span><span class="sxs-lookup"><span data-stu-id="6862f-118">This makes the <xref:System.Windows.Forms.TableLayoutPanel> control well suited for purposes such as data-entry forms and localized applications.</span></span> <span data-ttu-id="6862f-119">詳細については、次を参照してください。[チュートリアル: データ エントリのサイズ変更可能な Windows フォームの作成](http://msdn.microsoft.com/en-us/e193b4fc-912a-4917-b036-b76c7a6f58ab)と[チュートリアル: ローカライズ可能な Windows フォームの作成](http://msdn.microsoft.com/en-us/c5240b6e-aaca-4286-9bae-778a416edb9c)です。</span><span class="sxs-lookup"><span data-stu-id="6862f-119">For more information, see [Walkthrough: Creating a Resizable Windows Form for Data Entry](http://msdn.microsoft.com/en-us/e193b4fc-912a-4917-b036-b76c7a6f58ab) and [Walkthrough: Creating a Localizable Windows Form](http://msdn.microsoft.com/en-us/c5240b6e-aaca-4286-9bae-778a416edb9c).</span></span>  
   
- <xref:System.Windows.Forms.TableLayoutPanel> コントロールは、通常はレイアウト全体のコンテナーとして使用しないでください。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールは、レイアウトの各部に比例的なサイズ変更機能を提供するために使用してください。  
+ <span data-ttu-id="6862f-120">一般に、使用しないで、<xref:System.Windows.Forms.TableLayoutPanel>レイアウト全体のコンテナーと同様に制御します。</span><span class="sxs-lookup"><span data-stu-id="6862f-120">In general, you should not use a <xref:System.Windows.Forms.TableLayoutPanel> control as a container for the whole layout.</span></span> <span data-ttu-id="6862f-121">使用して<xref:System.Windows.Forms.TableLayoutPanel>コントロールをレイアウトの部分に比例してサイズ変更機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="6862f-121">Use <xref:System.Windows.Forms.TableLayoutPanel> controls to provide proportional resizing capabilities to parts of the layout.</span></span>  
   
- このチュートリアルでは、以下のタスクを行います。  
+ <span data-ttu-id="6862f-122">このチュートリアルでは、以下のタスクを行います。</span><span class="sxs-lookup"><span data-stu-id="6862f-122">Tasks illustrated in this walkthrough include:</span></span>  
   
--   Windows フォーム プロジェクトの作成  
+-   <span data-ttu-id="6862f-123">Windows フォーム プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="6862f-123">Creating a Windows Forms project</span></span>  
   
--   行と列へのコントロールの配置  
+-   <span data-ttu-id="6862f-124">行と列にコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="6862f-124">Arranging Controls in Rows and Columns</span></span>  
   
--   行と列のプロパティの設定  
+-   <span data-ttu-id="6862f-125">設定の行と列のプロパティ</span><span class="sxs-lookup"><span data-stu-id="6862f-125">Setting Row and Column Properties</span></span>  
   
--   複数行および複数列へのコントロールの拡大  
+-   <span data-ttu-id="6862f-126">コントロールで行または列のまたがりメモリ割り当てください。</span><span class="sxs-lookup"><span data-stu-id="6862f-126">Spanning Rows and Columns with a Control</span></span>  
   
--   オーバーフローの自動処理  
+-   <span data-ttu-id="6862f-127">オーバーフローの自動処理</span><span class="sxs-lookup"><span data-stu-id="6862f-127">Automatic Handling of Overflows</span></span>  
   
--   ツールボックスでのダブルクリックによるコントロールの挿入  
+-   <span data-ttu-id="6862f-128">ツールボックスでのダブルクリックによるコントロールの挿入</span><span class="sxs-lookup"><span data-stu-id="6862f-128">Inserting Controls by Double-clicking Them in the Toolbox</span></span>  
   
--   アウトラインの描画によるコントロールの挿入  
+-   <span data-ttu-id="6862f-129">アウトラインの描画によるコントロールの挿入</span><span class="sxs-lookup"><span data-stu-id="6862f-129">Inserting a Control by Drawing Its Outline</span></span>  
   
--   別の親コントロールへの既存コントロールの再割り当て  
+-   <span data-ttu-id="6862f-130">別の親コントロールへの既存コントロールの再割り当て</span><span class="sxs-lookup"><span data-stu-id="6862f-130">Reassigning Existing Controls to a Different Parent</span></span>  
   
- ここでは、これらの重要なレイアウト機能が果たす役割について理解します。  
+ <span data-ttu-id="6862f-131">終了すると、これらの重要なレイアウト機能が果たす役割について理解できます。</span><span class="sxs-lookup"><span data-stu-id="6862f-131">When you are finished, you will have an understanding of the role played by these important layout features.</span></span>  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="6862f-132">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="6862f-132">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="6862f-133">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="6862f-133">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="6862f-134">詳細については、「 [Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6862f-134">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-## プロジェクトの作成  
- 最初にプロジェクトを作成し、フォームを設定します。  
+## <a name="creating-the-project"></a><span data-ttu-id="6862f-135">プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="6862f-135">Creating the Project</span></span>  
+ <span data-ttu-id="6862f-136">最初にプロジェクトを作成し、フォームを設定します。</span><span class="sxs-lookup"><span data-stu-id="6862f-136">The first step is to create the project and set up the form.</span></span>  
   
-#### プロジェクトを作成するには  
+#### <a name="to-create-the-project"></a><span data-ttu-id="6862f-137">プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="6862f-137">To create the project</span></span>  
   
-1.  "TableLayoutPanelExample" という名前の Windows アプリケーション プロジェクトを作成します。  詳細については、「[How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
+1.  <span data-ttu-id="6862f-138">"TableLayoutPanelExample"と呼ばれる Windows アプリケーション プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="6862f-138">Create a Windows Application project called "TableLayoutPanelExample".</span></span> <span data-ttu-id="6862f-139">詳細については、次を参照してください。[する方法: Windows アプリケーション プロジェクトを作成](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)です。</span><span class="sxs-lookup"><span data-stu-id="6862f-139">For more information, see [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa) .</span></span>  
   
-2.  **Windows** **フォーム デザイナー**でフォームを選択します。  
+2.  <span data-ttu-id="6862f-140">フォームを選択、 **Windows** **フォーム デザイナー**です。</span><span class="sxs-lookup"><span data-stu-id="6862f-140">Select the form in the **Windows** **Forms Designer**.</span></span>  
   
-## 行と列へのコントロールの配置  
- <xref:System.Windows.Forms.TableLayoutPanel> コントロールを使用すると、行や列にコントロールを簡単に配置できます。  
+## <a name="arranging-controls-in-rows-and-columns"></a><span data-ttu-id="6862f-141">行と列にコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="6862f-141">Arranging Controls in Rows and Columns</span></span>  
+ <span data-ttu-id="6862f-142"><xref:System.Windows.Forms.TableLayoutPanel>コントロールでは、行と列にコントロールを簡単に配置することができます。</span><span class="sxs-lookup"><span data-stu-id="6862f-142">The <xref:System.Windows.Forms.TableLayoutPanel> control allows you to easily arrange controls into rows and columns.</span></span>  
   
-#### TableLayoutPanel を使用して、コントロールを行や列に配置するには  
+#### <a name="to-arrange-controls-in-rows-and-columns-using-a-tablelayoutpanel"></a><span data-ttu-id="6862f-143">TableLayoutPanel を使用して列と行にコントロールを配置するには</span><span class="sxs-lookup"><span data-stu-id="6862f-143">To arrange controls in rows and columns using a TableLayoutPanel</span></span>  
   
-1.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.TableLayoutPanel> コントロールをドラッグします。  既定では、<xref:System.Windows.Forms.TableLayoutPanel> コントロールには 4 つのセルがあります。  
+1.  <span data-ttu-id="6862f-144">ドラッグ、<xref:System.Windows.Forms.TableLayoutPanel>から制御、**ツールボックス**フォーム上にします。</span><span class="sxs-lookup"><span data-stu-id="6862f-144">Drag a <xref:System.Windows.Forms.TableLayoutPanel> control from the **Toolbox** onto your form.</span></span> <span data-ttu-id="6862f-145">なお、既定では、<xref:System.Windows.Forms.TableLayoutPanel>コントロールに 4 つのセルがあります。</span><span class="sxs-lookup"><span data-stu-id="6862f-145">Note that, by default, the <xref:System.Windows.Forms.TableLayoutPanel> control has four cells.</span></span>  
   
-2.  **ツールボックス**から <xref:System.Windows.Forms.Button> コントロールを <xref:System.Windows.Forms.TableLayoutPanel> コントロールにドラッグし、セルのいずれかにドロップします。  選択したセル内に <xref:System.Windows.Forms.Button> コントロールが作成されます。  
+2.  <span data-ttu-id="6862f-146">ドラッグ、<xref:System.Windows.Forms.Button>から制御、**ツールボックス**に、<xref:System.Windows.Forms.TableLayoutPanel>を制御し、セルの 1 つにドロップします。</span><span class="sxs-lookup"><span data-stu-id="6862f-146">Drag a <xref:System.Windows.Forms.Button> control from the **Toolbox** into the <xref:System.Windows.Forms.TableLayoutPanel> control and drop it into one of the cells.</span></span> <span data-ttu-id="6862f-147">なお、<xref:System.Windows.Forms.Button>コントロールが選択したセル内で作成します。</span><span class="sxs-lookup"><span data-stu-id="6862f-147">Note that the <xref:System.Windows.Forms.Button> control is created within the cell you selected.</span></span>  
   
-3.  さらに 3 つの <xref:System.Windows.Forms.Button> コントロールを、**ツールボックス**から <xref:System.Windows.Forms.TableLayoutPanel> コントロールにドラッグし、各セルにボタンを配置します。  
+3.  <span data-ttu-id="6862f-148">3 個をドラッグして<xref:System.Windows.Forms.Button>から制御、**ツールボックス**に、<xref:System.Windows.Forms.TableLayoutPanel>コントロールで、各セルにボタンが含まれていること。</span><span class="sxs-lookup"><span data-stu-id="6862f-148">Drag three more <xref:System.Windows.Forms.Button> controls from the **Toolbox** into the <xref:System.Windows.Forms.TableLayoutPanel> control, so that each cell contains a button.</span></span>  
   
-4.  2 つの列の間にある垂直方向のサイズ変更ハンドルをドラッグして左に移動します。  1 列目の <xref:System.Windows.Forms.Button> コントロールの幅が縮小しますが、2 列目の <xref:System.Windows.Forms.Button> コントロールのサイズは変更されません。  
+4.  <span data-ttu-id="6862f-149">2 つの列間の垂直方向サイズ変更ハンドルをドラッグし、左に移動します。</span><span class="sxs-lookup"><span data-stu-id="6862f-149">Grab the vertical sizing handle between the two columns and move it to the left.</span></span> <span data-ttu-id="6862f-150">なお、<xref:System.Windows.Forms.Button>中のサイズ、幅を小さくする最初の列内のコントロールのサイズが変更される、 <xref:System.Windows.Forms.Button> 2 番目の列内のコントロールが変更されていません。</span><span class="sxs-lookup"><span data-stu-id="6862f-150">Note that the <xref:System.Windows.Forms.Button> controls in the first column are resized to a smaller width, while size of the <xref:System.Windows.Forms.Button> controls in the second column is unchanged.</span></span>  
   
-5.  2 つの列の間にある垂直方向のサイズ変更ハンドルをドラッグして右に移動します。  1 列目の <xref:System.Windows.Forms.Button> コントロールが元のサイズに戻り、2 列目の <xref:System.Windows.Forms.Button> コントロールが右側に移動します。  
+5.  <span data-ttu-id="6862f-151">2 つの列間の垂直方向サイズ変更ハンドルをドラッグし、右側に移動します。</span><span class="sxs-lookup"><span data-stu-id="6862f-151">Grab the vertical sizing handle between the two columns and move it to the right.</span></span> <span data-ttu-id="6862f-152">注意してください、<xref:System.Windows.Forms.Button>最初の列内のコントロールは、元のサイズに戻るときに、 <xref:System.Windows.Forms.Button> 2 番目の列内のコントロールが右方向に移動します。</span><span class="sxs-lookup"><span data-stu-id="6862f-152">Note that the <xref:System.Windows.Forms.Button> controls in the first column return to their original size, while the <xref:System.Windows.Forms.Button> controls in the second column are moved to the right.</span></span>  
   
-6.  水平方向のサイズ変更ハンドルを上下に移動し、パネル内のコントロールが受ける影響を確認します。  
+6.  <span data-ttu-id="6862f-153">パネル内のコントロールへの影響を表示するには、上下の水平方向サイズ変更ハンドルを移動します。</span><span class="sxs-lookup"><span data-stu-id="6862f-153">Move the horizontal sizing handle up and down to see the effect on the controls in the panel.</span></span>  
   
-## ドッキングおよび固定を使用した、セル内のコントロールの配置  
- <xref:System.Windows.Forms.TableLayoutPanel> の子コントロールの固定動作は、他のコンテナー コントロールの場合と異なります。  子コントロールのドッキング動作は、他のコンテナー コントロールと同じです。  
+## <a name="positioning-controls-within-cells-using-docking-and-anchoring"></a><span data-ttu-id="6862f-154">ドッキングと固定を使用して、セル内のコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="6862f-154">Positioning Controls Within Cells Using Docking and Anchoring</span></span>  
+ <span data-ttu-id="6862f-155">アンカーで子コントロールの動作、<xref:System.Windows.Forms.TableLayoutPanel>他のコンテナー コントロールの動作と異なります。</span><span class="sxs-lookup"><span data-stu-id="6862f-155">The anchoring behavior of child controls in a <xref:System.Windows.Forms.TableLayoutPanel> differs from the behavior in other container controls.</span></span> <span data-ttu-id="6862f-156">子コントロールのドッキング動作は、他のコンテナー コントロールと同じです。</span><span class="sxs-lookup"><span data-stu-id="6862f-156">The docking behavior of child controls is the same as other container controls.</span></span>  
   
-#### セル内のコントロールの配置  
+#### <a name="positioning-controls-within-cells"></a><span data-ttu-id="6862f-157">セル内のコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="6862f-157">Positioning controls within cells</span></span>  
   
-1.  最初の <xref:System.Windows.Forms.Button> コントロールを選択します。  <xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle> に変更します。  <xref:System.Windows.Forms.Button> コントロールがセル全体に拡大します。  
+1.  <span data-ttu-id="6862f-158">最初の選択<xref:System.Windows.Forms.Button>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6862f-158">Select the first <xref:System.Windows.Forms.Button> control.</span></span> <span data-ttu-id="6862f-159"><xref:System.Windows.Forms.Control.Dock%2A> プロパティの値を <xref:System.Windows.Forms.DockStyle.Fill>に変更します。</span><span class="sxs-lookup"><span data-stu-id="6862f-159">Change the value of its <xref:System.Windows.Forms.Control.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Fill>.</span></span> <span data-ttu-id="6862f-160">なお、<xref:System.Windows.Forms.Button>コントロールを拡張すると、そのセルを入力します。</span><span class="sxs-lookup"><span data-stu-id="6862f-160">Note that the <xref:System.Windows.Forms.Button> control expands to fill its cell.</span></span>  
   
-2.  他の <xref:System.Windows.Forms.Button> コントロールのいずれかを選択します。  <xref:System.Windows.Forms.Control.Anchor%2A> プロパティの値を <xref:System.Windows.Forms.AnchorStyles> に変更します。  コントロールが移動し、その右側の境界線がセルの右側の境界線に近づきます。  境界間の距離は、<xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Margin%2A> プロパティとパネルの <xref:System.Windows.Forms.Control.Padding%2A> プロパティの合計値です。  
+2.  <span data-ttu-id="6862f-161">その他のいずれかを選択<xref:System.Windows.Forms.Button>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6862f-161">Select one of the other <xref:System.Windows.Forms.Button> controls.</span></span> <span data-ttu-id="6862f-162"><xref:System.Windows.Forms.Control.Anchor%2A> プロパティの値を <xref:System.Windows.Forms.AnchorStyles.Right>に変更します。</span><span class="sxs-lookup"><span data-stu-id="6862f-162">Change the value of its <xref:System.Windows.Forms.Control.Anchor%2A> property to <xref:System.Windows.Forms.AnchorStyles.Right>.</span></span> <span data-ttu-id="6862f-163">コントロールが移動されるよう、右罫線のセルの右側の境界線の近くに注意してください。</span><span class="sxs-lookup"><span data-stu-id="6862f-163">Note that it is moved so that its right border is near the right border of the cell.</span></span> <span data-ttu-id="6862f-164">枠線の間の距離は、の合計、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Margin%2A>プロパティと、パネルの<xref:System.Windows.Forms.Control.Padding%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="6862f-164">The distance between the borders is the sum of the <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Margin%2A> property and the panel's <xref:System.Windows.Forms.Control.Padding%2A> property.</span></span>  
   
-3.  <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Anchor%2A> プロパティの値を <xref:System.Windows.Forms.AnchorStyles> および <xref:System.Windows.Forms.AnchorStyles> に変更します。  コントロールのサイズが、<xref:System.Windows.Forms.Control.Margin%2A> 値と <xref:System.Windows.Forms.Control.Padding%2A> 値を考慮して、セルの幅に変更されます。  
+3.  <span data-ttu-id="6862f-165">値を変更、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Anchor%2A>プロパティを<xref:System.Windows.Forms.AnchorStyles.Right>と<xref:System.Windows.Forms.AnchorStyles.Left>です。</span><span class="sxs-lookup"><span data-stu-id="6862f-165">Change the value of the <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Anchor%2A> property to <xref:System.Windows.Forms.AnchorStyles.Right> and <xref:System.Windows.Forms.AnchorStyles.Left>.</span></span> <span data-ttu-id="6862f-166">コントロールが、セルの幅にサイズ設定に注意してください、<xref:System.Windows.Forms.Control.Margin%2A>と<xref:System.Windows.Forms.Control.Padding%2A>値を考慮します。</span><span class="sxs-lookup"><span data-stu-id="6862f-166">Note that the control is sized to the width of the cell, with the <xref:System.Windows.Forms.Control.Margin%2A> and <xref:System.Windows.Forms.Control.Padding%2A> values taken into account.</span></span>  
   
-4.  <xref:System.Windows.Forms.AnchorStyles> スタイルと <xref:System.Windows.Forms.AnchorStyles> スタイルを使用して、手順 2. と手順 3. を繰り返します。  
+4.  <span data-ttu-id="6862f-167">手順 2. および 3. を繰り返して、<xref:System.Windows.Forms.AnchorStyles.Top>と<xref:System.Windows.Forms.AnchorStyles.Bottom>スタイル。</span><span class="sxs-lookup"><span data-stu-id="6862f-167">Repeat steps 2 and 3 with the <xref:System.Windows.Forms.AnchorStyles.Top> and <xref:System.Windows.Forms.AnchorStyles.Bottom> styles.</span></span>  
   
-## 行と列のプロパティの設定  
- <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> コレクションと <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> コレクションを使用して、行と列のプロパティを個別に設定できます。  
+## <a name="setting-row-and-column-properties"></a><span data-ttu-id="6862f-168">設定の行と列のプロパティ</span><span class="sxs-lookup"><span data-stu-id="6862f-168">Setting Row and Column Properties</span></span>  
+ <span data-ttu-id="6862f-169">使用して行および列の個別のプロパティを設定することができます、<xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A>と<xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A>コレクション。</span><span class="sxs-lookup"><span data-stu-id="6862f-169">You can set individual properties of rows and columns by using the <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> and <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collections.</span></span>  
   
-#### 行と列のプロパティを設定するには  
+#### <a name="to-set-row-and-column-properties"></a><span data-ttu-id="6862f-170">行と列のプロパティを設定するには</span><span class="sxs-lookup"><span data-stu-id="6862f-170">To set row and column properties</span></span>  
   
-1.  **Windows フォーム デザイナー**で <xref:System.Windows.Forms.TableLayoutPanel> コントロールを選択します。  
+1.  <span data-ttu-id="6862f-171">選択、<xref:System.Windows.Forms.TableLayoutPanel>内の制御、 **Windows フォーム デザイナー**です。</span><span class="sxs-lookup"><span data-stu-id="6862f-171">Select the <xref:System.Windows.Forms.TableLayoutPanel> control in the **Windows Forms Designer**.</span></span>  
   
-2.  **\[プロパティ\]** ウィンドウで、**\[列\]** エントリの横にある省略記号ボタン \(![VisualStudioEllipsesButton スクリーンショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")\) をクリックして <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> コレクションを開きます。  
+2.  <span data-ttu-id="6862f-172">**プロパティ**開いているウィンドウ、<xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A>省略記号をクリックして、コレクション (![VisualStudioEllipsesButton スクリーン ショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) ボタン次に、**列**エントリです。</span><span class="sxs-lookup"><span data-stu-id="6862f-172">In the **Properties** windows, open the <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collection by clicking the ellipsis (![VisualStudioEllipsesButton screenshot](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) button next to the **Columns** entry.</span></span>  
   
-3.  最初の列を選択し、<xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> プロパティの値を <xref:System.Windows.Forms.SizeType> に変更します。  **\[OK\]** をクリックして変更を適用します。  最初の列の幅が、<xref:System.Windows.Forms.Button> コントロールに合わせて縮小されます。  また、列の幅が変更できなくなっていることも確認してください。  
+3.  <span data-ttu-id="6862f-173">最初の列を選択しの値を変更、<xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A>プロパティを<xref:System.Windows.Forms.SizeType.AutoSize>です。</span><span class="sxs-lookup"><span data-stu-id="6862f-173">Select the first column and change the value of its <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property to <xref:System.Windows.Forms.SizeType.AutoSize>.</span></span> <span data-ttu-id="6862f-174">をクリックして**OK**変更を確定します。</span><span class="sxs-lookup"><span data-stu-id="6862f-174">Click **OK** to accept the change.</span></span> <span data-ttu-id="6862f-175">最初の列の幅が、それに合わせて短くなることに注意してください、<xref:System.Windows.Forms.Button>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6862f-175">Note that the width of the first column is reduced to fit the <xref:System.Windows.Forms.Button> control.</span></span> <span data-ttu-id="6862f-176">列の幅がサイズ変更可能なことはありませんにも注意してください。</span><span class="sxs-lookup"><span data-stu-id="6862f-176">Also note that the width of the column is not resizable.</span></span>  
   
-4.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> コレクションを開き、最初の列を選択します。  <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> プロパティの値を <xref:System.Windows.Forms.SizeType> に変更します。  **\[OK\]** をクリックして変更を適用します。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールの幅を拡大すると、最初の列の幅が拡大します。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールの幅を縮小すると、最初の列のボタンのサイズがセルに合わせて変更されます。  また、列の幅が変更できることも確認してください。  
+4.  <span data-ttu-id="6862f-177">**プロパティ**ウィンドウを開いた、<xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A>コレクションし、最初の列を選択します。</span><span class="sxs-lookup"><span data-stu-id="6862f-177">In the **Properties** window, open the <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collection and select the first column.</span></span> <span data-ttu-id="6862f-178">値を変更、<xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A>プロパティを<xref:System.Windows.Forms.SizeType.Percent>です。</span><span class="sxs-lookup"><span data-stu-id="6862f-178">Change the value of its <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property to <xref:System.Windows.Forms.SizeType.Percent>.</span></span> <span data-ttu-id="6862f-179">をクリックして**OK**変更を確定します。</span><span class="sxs-lookup"><span data-stu-id="6862f-179">Click **OK** to accept the change.</span></span> <span data-ttu-id="6862f-180">サイズ変更、<xref:System.Windows.Forms.TableLayoutPanel>の幅を制御し、最初の列の幅が展開することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="6862f-180">Resize the <xref:System.Windows.Forms.TableLayoutPanel> control to a larger width and note that the width of the first column expands.</span></span> <span data-ttu-id="6862f-181">サイズ変更、<xref:System.Windows.Forms.TableLayoutPanel>小規模な幅を制御し、最初の列にボタンがセルに合わせてサイズことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="6862f-181">Resize the <xref:System.Windows.Forms.TableLayoutPanel> control to a smaller width and note that the buttons in the first column are sized to fit the cell.</span></span> <span data-ttu-id="6862f-182">また、列の幅がサイズ変更可能なことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="6862f-182">Also note that the width of the column is resizable.</span></span>  
   
-5.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> コレクションを開き、表示されているすべての列を選択します。  すべての <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> プロパティの値を <xref:System.Windows.Forms.SizeType> に設定します。  **\[OK\]** をクリックして変更を適用します。  <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> コレクションでも、この手順を繰り返します。  
+5.  <span data-ttu-id="6862f-183">**プロパティ**ウィンドウを開いた、<xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A>コレクションと表示されているすべての列を選択します。</span><span class="sxs-lookup"><span data-stu-id="6862f-183">In the **Properties** window, open the <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collection and select all the listed columns.</span></span> <span data-ttu-id="6862f-184">値の設定すべて<xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A>プロパティを<xref:System.Windows.Forms.SizeType.Percent>です。</span><span class="sxs-lookup"><span data-stu-id="6862f-184">Set the value of every <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property to <xref:System.Windows.Forms.SizeType.Percent>.</span></span> <span data-ttu-id="6862f-185">をクリックして**OK**変更を確定します。</span><span class="sxs-lookup"><span data-stu-id="6862f-185">Click **OK** to accept the change.</span></span> <span data-ttu-id="6862f-186">繰り返し、<xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A>コレクション。</span><span class="sxs-lookup"><span data-stu-id="6862f-186">Repeat with the <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> collection.</span></span>  
   
-6.  隅のサイズ変更ハンドルのいずれかをドラッグして、<xref:System.Windows.Forms.TableLayoutPanel> コントロールの幅と高さを共に変更します。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールのサイズの変化に応じて、行と列のサイズが変更されます。  また、行と列は、水平方向と垂直方向のサイズ変更ハンドルを使用してサイズを変更できることも確認してください。  
+6.  <span data-ttu-id="6862f-187">サイズ変更ハンドル上隅のいずれかを取得し、サイズの高さと幅を変更する、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6862f-187">Grab one of the corner resizing handles and resize both the width and height of the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span> <span data-ttu-id="6862f-188">行および列としてサイズが変更されること、<xref:System.Windows.Forms.TableLayoutPanel>コントロールのサイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="6862f-188">Note that the rows and columns are resized as the <xref:System.Windows.Forms.TableLayoutPanel> control's size changes.</span></span> <span data-ttu-id="6862f-189">行と列が水平方向サイズ変更可能なと垂直方向サイズ変更ハンドルにも注意してください。</span><span class="sxs-lookup"><span data-stu-id="6862f-189">Also note that the rows and columns are resizable with the horizontal and vertical sizing handles.</span></span>  
   
-## 複数行および複数列へのコントロールの拡大  
- <xref:System.Windows.Forms.TableLayoutPanel> コントロールは、デザイン時にいくつかの新しいプロパティをコントロールに追加します。  これらのプロパティのうちの 2 つが `RowSpan` と `ColumnSpan` です。  これら 2 つのプロパティを使用すると、コントロールを複数の行または列に拡大できます。  
+## <a name="spanning-rows-and-columns-with-a-control"></a><span data-ttu-id="6862f-190">コントロールで行または列のまたがりメモリ割り当てください。</span><span class="sxs-lookup"><span data-stu-id="6862f-190">Spanning Rows and Columns with a Control</span></span>  
+ <span data-ttu-id="6862f-191"><xref:System.Windows.Forms.TableLayoutPanel>コントロールは、デザイン時にコントロールをいくつかの新しいプロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="6862f-191">The <xref:System.Windows.Forms.TableLayoutPanel> control adds several new properties to controls at design time.</span></span> <span data-ttu-id="6862f-192">これらのプロパティの 2 つは`RowSpan`と`ColumnSpan`です。</span><span class="sxs-lookup"><span data-stu-id="6862f-192">Two of these properties are `RowSpan` and `ColumnSpan`.</span></span> <span data-ttu-id="6862f-193">コントロールの範囲より 1 つの行または列にするのには、これらのプロパティを使用できます。</span><span class="sxs-lookup"><span data-stu-id="6862f-193">You can use these properties to make a control span more than one row or column.</span></span>  
   
-#### コントロールを複数の行と列に拡大するには  
+#### <a name="to-span-rows-and-columns-with-a-control"></a><span data-ttu-id="6862f-194">コントロールで行または列にまたがること</span><span class="sxs-lookup"><span data-stu-id="6862f-194">To span rows and columns with a control</span></span>  
   
-1.  最初の列の最初の行にある <xref:System.Windows.Forms.Button> コントロールを選択します。  
+1.  <span data-ttu-id="6862f-195">選択、<xref:System.Windows.Forms.Button>コントロールの最初の行の最初の列です。</span><span class="sxs-lookup"><span data-stu-id="6862f-195">Select the <xref:System.Windows.Forms.Button> control in the first row and first column.</span></span>  
   
-2.  **\[プロパティ\]** ウィンドウで、`ColumnSpan` プロパティの値を 2 に変更します。  <xref:System.Windows.Forms.Button> コントロールが最初の列と 2 番目の列を占有します。  また、この変更に対応するために新しい行が追加されていることも確認してください。  
+2.  <span data-ttu-id="6862f-196">**プロパティ**windows での値を変更する、`ColumnSpan`プロパティを**2**です。</span><span class="sxs-lookup"><span data-stu-id="6862f-196">In the **Properties** windows, change the value of the `ColumnSpan` property to **2**.</span></span> <span data-ttu-id="6862f-197">なお、<xref:System.Windows.Forms.Button>コントロールは、最初の列と 2 番目の列を入力します。</span><span class="sxs-lookup"><span data-stu-id="6862f-197">Note that the <xref:System.Windows.Forms.Button> control fills the first column and the second column.</span></span> <span data-ttu-id="6862f-198">この変更に対応する追加の行が追加されているよりも注意してください。</span><span class="sxs-lookup"><span data-stu-id="6862f-198">Also note than an extra row has been added to accommodate this change.</span></span>  
   
-3.  `RowSpan` プロパティに対して手順 2. を繰り返します。  
+3.  <span data-ttu-id="6862f-199">手順 2. を繰り返します、`RowSpan`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="6862f-199">Repeat step 2 for the `RowSpan` property.</span></span>  
   
-## ツールボックスでのダブルクリックによるコントロールの挿入  
- **ツールボックス**でコントロールをダブルクリックすることにより、そのコントロールを <xref:System.Windows.Forms.TableLayoutPanel> コントロールに挿入できます。  
+## <a name="inserting-controls-by-double-clicking-them-in-the-toolbox"></a><span data-ttu-id="6862f-200">ツールボックスでのダブルクリックによるコントロールの挿入</span><span class="sxs-lookup"><span data-stu-id="6862f-200">Inserting Controls by Double-clicking Them in the Toolbox</span></span>  
+ <span data-ttu-id="6862f-201">設定することができます、<xref:System.Windows.Forms.TableLayoutPanel>コントロール内のコントロールをダブルクリックして、**ツールボックス**です。</span><span class="sxs-lookup"><span data-stu-id="6862f-201">You can populate your <xref:System.Windows.Forms.TableLayoutPanel> control by double-clicking controls in the **Toolbox**.</span></span>  
   
-#### ツールボックスでダブルクリックしてコントロールを挿入するには  
+#### <a name="to-insert-controls-by-double-clicking-in-the-toolbox"></a><span data-ttu-id="6862f-202">ツールボックスでダブルクリックしてコントロールを挿入するには</span><span class="sxs-lookup"><span data-stu-id="6862f-202">To insert controls by double-clicking in the Toolbox</span></span>  
   
-1.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.TableLayoutPanel> コントロールをドラッグします。  
+1.  <span data-ttu-id="6862f-203">ドラッグ、<xref:System.Windows.Forms.TableLayoutPanel>から制御、**ツールボックス**フォーム上にします。</span><span class="sxs-lookup"><span data-stu-id="6862f-203">Drag a <xref:System.Windows.Forms.TableLayoutPanel> control from the **Toolbox** onto your form.</span></span>  
   
-2.  **ツールボックス**の <xref:System.Windows.Forms.Button> コントロール アイコンをダブルクリックします。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールの最初のセルに新しいボタン コントロールが表示されます。  
+2.  <span data-ttu-id="6862f-204"><xref:System.Windows.Forms.Button> ツールボックス **の**コントロール アイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="6862f-204">Double-click the <xref:System.Windows.Forms.Button> control icon in the **Toolbox**.</span></span> <span data-ttu-id="6862f-205">新しいボタン コントロールが含まれているメモ、<xref:System.Windows.Forms.TableLayoutPanel>コントロールの最初のセル。</span><span class="sxs-lookup"><span data-stu-id="6862f-205">Note that a new button control appears in the <xref:System.Windows.Forms.TableLayoutPanel> control's first cell.</span></span>  
   
-3.  **ツールボックス**でさらにいくつかのコントロールを ダブルクリックします。  新しいコントロールが <xref:System.Windows.Forms.TableLayoutPanel> コントロールの未使用のセルに順次表示されます。  また、空のセルがない場合は、新しいコントロールを格納するために <xref:System.Windows.Forms.TableLayoutPanel> コントロールが拡大します。  
+3.  <span data-ttu-id="6862f-206">**ツールボックス**でさらにいくつかのコントロールをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="6862f-206">Double-click several more controls in the **Toolbox**.</span></span> <span data-ttu-id="6862f-207">新しいコントロールに順次表示されることに注意してください、<xref:System.Windows.Forms.TableLayoutPanel>コントロールの使用されていないセル。</span><span class="sxs-lookup"><span data-stu-id="6862f-207">Note that the new controls appear successively in the <xref:System.Windows.Forms.TableLayoutPanel> control's unoccupied cells.</span></span> <span data-ttu-id="6862f-208">また、<xref:System.Windows.Forms.TableLayoutPanel>コントロールは、新しいコントロールに合わせてセルがない場合に拡張します。</span><span class="sxs-lookup"><span data-stu-id="6862f-208">Also note that the <xref:System.Windows.Forms.TableLayoutPanel> control expands to accommodate the new controls if no open cells are available.</span></span>  
   
-## オーバーフローの自動処理  
- <xref:System.Windows.Forms.TableLayoutPanel> コントロールにコントロールを挿入していくと、新しいコントロールを挿入する空のセルがなくなることがあります。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールは、セルの数を増やすことによってこのような状況に自動的に対処します。  
+## <a name="automatic-handling-of-overflows"></a><span data-ttu-id="6862f-209">オーバーフローの自動処理</span><span class="sxs-lookup"><span data-stu-id="6862f-209">Automatic Handling of Overflows</span></span>  
+ <span data-ttu-id="6862f-210">ときにコントロールを挿入する場合は、<xref:System.Windows.Forms.TableLayoutPanel>コントロールが不足する空のセル、新しいコントロールのです。</span><span class="sxs-lookup"><span data-stu-id="6862f-210">When you are inserting controls into the <xref:System.Windows.Forms.TableLayoutPanel> control, you may run out of empty cells for your new controls.</span></span> <span data-ttu-id="6862f-211"><xref:System.Windows.Forms.TableLayoutPanel>コントロールこのような状況を自動的に処理のセルの数を増やすことで。</span><span class="sxs-lookup"><span data-stu-id="6862f-211">The <xref:System.Windows.Forms.TableLayoutPanel> control handles this situation automatically by increasing the number of cells.</span></span>  
   
-#### オーバーフローの自動処理を観察するには  
+#### <a name="to-observe-automatic-handling-of-overflows"></a><span data-ttu-id="6862f-212">オーバーフローの自動処理を確認するには</span><span class="sxs-lookup"><span data-stu-id="6862f-212">To observe automatic handling of overflows</span></span>  
   
-1.  <xref:System.Windows.Forms.TableLayoutPanel> コントロールに空のセルがある場合は、<xref:System.Windows.Forms.TableLayoutPanel> コントロールがいっぱいになるまで、新しい <xref:System.Windows.Forms.Button> コントロールを挿入していきます。  
+1.  <span data-ttu-id="6862f-213">まだ空のセルがある場合、<xref:System.Windows.Forms.TableLayoutPanel>制御、新規の挿入を続行<xref:System.Windows.Forms.Button>まで制御、<xref:System.Windows.Forms.TableLayoutPanel>コントロールが完全にします。</span><span class="sxs-lookup"><span data-stu-id="6862f-213">If there are still empty cells in the <xref:System.Windows.Forms.TableLayoutPanel> control, continue inserting new <xref:System.Windows.Forms.Button> controls until the <xref:System.Windows.Forms.TableLayoutPanel> control is full.</span></span>  
   
-2.  <xref:System.Windows.Forms.TableLayoutPanel> コントロールがいっぱいになったら、**ツールボックス**の <xref:System.Windows.Forms.Button> アイコンをダブルクリックして、新しい <xref:System.Windows.Forms.Button> コントロールを挿入します。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールでは、新しいコントロールを格納する新しいセルが作成されます。  コントロールをさらにいくつか挿入し、サイズ変更動作を確認します。  
+2.  <span data-ttu-id="6862f-214">1 回、<xref:System.Windows.Forms.TableLayoutPanel>コントロールが完全をダブルクリックして、<xref:System.Windows.Forms.Button>のアイコン、**ツールボックス**別を挿入する<xref:System.Windows.Forms.Button>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6862f-214">Once the <xref:System.Windows.Forms.TableLayoutPanel> control is full, double-click the <xref:System.Windows.Forms.Button> icon in the **Toolbox** to insert another <xref:System.Windows.Forms.Button> control.</span></span> <span data-ttu-id="6862f-215">なお、<xref:System.Windows.Forms.TableLayoutPanel>コントロールは、新しいコントロールに合わせて新しいセルを作成します。</span><span class="sxs-lookup"><span data-stu-id="6862f-215">Note that the <xref:System.Windows.Forms.TableLayoutPanel> control creates new cells to accommodate the new control.</span></span> <span data-ttu-id="6862f-216">さらに、いくつかのコントロールを挿入し、サイズ変更動作を確認します。</span><span class="sxs-lookup"><span data-stu-id="6862f-216">Insert a few more controls and observe the resizing behavior.</span></span>  
   
-3.  <xref:System.Windows.Forms.TableLayoutPanel> コントロールの <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> プロパティの値を <xref:System.Windows.Forms.TableLayoutPanelGrowStyle> に変更します。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールがいっぱいになるまで、**ツールボックス**の <xref:System.Windows.Forms.Button> アイコンをダブルクリックして、<xref:System.Windows.Forms.Button> コントロールを挿入します。  **ツールボックス**の <xref:System.Windows.Forms.Button> アイコンを再度ダブルクリックします。  追加の行と列を作成できないというエラー メッセージが **Windows フォーム デザイナー**によって表示されます。  
+3.  <span data-ttu-id="6862f-217"><xref:System.Windows.Forms.TableLayoutPanel> コントロールの <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> プロパティの値を <xref:System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize> に変更します。</span><span class="sxs-lookup"><span data-stu-id="6862f-217">Change the value of the <xref:System.Windows.Forms.TableLayoutPanel> control's <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> property to <xref:System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize>.</span></span> <span data-ttu-id="6862f-218">ダブルクリックして、<xref:System.Windows.Forms.Button>のアイコン、**ツールボックス**を挿入する<xref:System.Windows.Forms.Button>まで制御、<xref:System.Windows.Forms.TableLayoutPanel>コントロールが完全にします。</span><span class="sxs-lookup"><span data-stu-id="6862f-218">Double-click the <xref:System.Windows.Forms.Button> icon in the **Toolbox** to insert <xref:System.Windows.Forms.Button> controls until the <xref:System.Windows.Forms.TableLayoutPanel> control is full.</span></span> <span data-ttu-id="6862f-219">ダブルクリックして、<xref:System.Windows.Forms.Button>のアイコン、**ツールボックス**もう一度です。</span><span class="sxs-lookup"><span data-stu-id="6862f-219">Double-click the <xref:System.Windows.Forms.Button> icon in the **Toolbox** again.</span></span> <span data-ttu-id="6862f-220">エラー メッセージが表示されることに注意してください、 **Windows フォーム デザイナー**追加の行と列を作成できないことを通知します。</span><span class="sxs-lookup"><span data-stu-id="6862f-220">Note that you receive an error message from the **Windows Forms Designer** informing you that additional rows and columns cannot be created.</span></span>  
   
-## アウトラインの描画によるコントロールの挿入  
- セルにコントロールのアウトラインを描画することによって、コントロールを <xref:System.Windows.Forms.TableLayoutPanel> コントロールに挿入し、サイズを指定できます。  
+## <a name="inserting-a-control-by-drawing-its-outline"></a><span data-ttu-id="6862f-221">アウトラインの描画によるコントロールの挿入</span><span class="sxs-lookup"><span data-stu-id="6862f-221">Inserting a Control by Drawing Its Outline</span></span>  
+ <span data-ttu-id="6862f-222">コントロールを挿入することができます、<xref:System.Windows.Forms.TableLayoutPanel>を制御し、セルにアウトラインを描画してそのサイズを指定します。</span><span class="sxs-lookup"><span data-stu-id="6862f-222">You can insert a control into a <xref:System.Windows.Forms.TableLayoutPanel> control and specify its size by drawing its outline in a cell.</span></span>  
   
-#### アウトラインを描画してコントロールを挿入するには  
+#### <a name="to-insert-a-control-by-drawing-its-outline"></a><span data-ttu-id="6862f-223">アウトラインを描画してコントロールを挿入するには</span><span class="sxs-lookup"><span data-stu-id="6862f-223">To insert a Control by drawing its outline</span></span>  
   
-1.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.TableLayoutPanel> コントロールをドラッグします。  
+1.  <span data-ttu-id="6862f-224">ドラッグ、<xref:System.Windows.Forms.TableLayoutPanel>から制御、**ツールボックス**フォーム上にします。</span><span class="sxs-lookup"><span data-stu-id="6862f-224">Drag a <xref:System.Windows.Forms.TableLayoutPanel> control from the **Toolbox** onto your form.</span></span>  
   
-2.  **ツールボックス**の <xref:System.Windows.Forms.Button> コントロール アイコンをクリックします。  フォームにドラッグしないでください。  
+2.  <span data-ttu-id="6862f-225">**ツールボックス**で <xref:System.Windows.Forms.Button> コントロール アイコンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="6862f-225">In the **Toolbox**, click the <xref:System.Windows.Forms.Button> control icon.</span></span> <span data-ttu-id="6862f-226">フォームにドラッグしないでください。</span><span class="sxs-lookup"><span data-stu-id="6862f-226">Do not drag it onto the form.</span></span>  
   
-3.  <xref:System.Windows.Forms.TableLayoutPanel> コントロールにマウス ポインターを置きます。  ポインターが <xref:System.Windows.Forms.Button> コントロール アイコンが付いた十字カーソルに変わります。  
+3.  <span data-ttu-id="6862f-227">マウス ポインターを重ねる、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6862f-227">Move the mouse pointer over the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span> <span data-ttu-id="6862f-228">ポインターが <xref:System.Windows.Forms.Button> コントロール アイコンが付いた十字カーソルに変わることにご注意ください。</span><span class="sxs-lookup"><span data-stu-id="6862f-228">Note that the pointer changes to a crosshair with the <xref:System.Windows.Forms.Button> control icon attached.</span></span>  
   
-4.  マウス ボタンを押したままにします。  
+4.  <span data-ttu-id="6862f-229">マウス ボタンを押したままにします。</span><span class="sxs-lookup"><span data-stu-id="6862f-229">Click and hold the mouse button.</span></span>  
   
-5.  マウス ポインターをドラッグして、<xref:System.Windows.Forms.Button> コントロールのアウトラインを描画します。  適切なサイズのアウトラインを描画したら、マウス ボタンを離します。  コントロールのアウトラインを描画したセルに <xref:System.Windows.Forms.Button> コントロールが作成されます。  
+5.  <span data-ttu-id="6862f-230">マウス ポインターをドラッグして、 <xref:System.Windows.Forms.Button> コントロールのアウトラインを描画します。</span><span class="sxs-lookup"><span data-stu-id="6862f-230">Drag the mouse pointer to draw the outline of the <xref:System.Windows.Forms.Button> control.</span></span> <span data-ttu-id="6862f-231">適切なサイズのアウトラインを描画したら、マウス ボタンを離します。</span><span class="sxs-lookup"><span data-stu-id="6862f-231">When you are satisfied with the size, release the mouse button.</span></span> <span data-ttu-id="6862f-232">なお、<xref:System.Windows.Forms.Button>コントロールのアウトラインを描画するセルにコントロールを作成します。</span><span class="sxs-lookup"><span data-stu-id="6862f-232">Note that the <xref:System.Windows.Forms.Button> control is created in the cell in which you drew the control's outline.</span></span>  
   
-## 1 つのセルに配置できるコントロールの数  
- <xref:System.Windows.Forms.TableLayoutPanel> コントロールでは、セルごとに 1 つの子コントロールしか配置できません。  
+## <a name="multiple-controls-within-cells-are-not-permitted"></a><span data-ttu-id="6862f-233">セル内の複数のコントロールが許可されていません</span><span class="sxs-lookup"><span data-stu-id="6862f-233">Multiple Controls Within Cells Are Not Permitted</span></span>  
+ <span data-ttu-id="6862f-234"><xref:System.Windows.Forms.TableLayoutPanel>コントロールは、1 つのセルの 1 つだけの子コントロールを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="6862f-234">The <xref:System.Windows.Forms.TableLayoutPanel> control can contain only one child control per cell.</span></span>  
   
-#### セルに複数のコントロールを配置できないことを確認するには  
+#### <a name="to-demonstrate-that-multiple-controls-within-cells-are-not-permitted"></a><span data-ttu-id="6862f-235">セル内の複数のコントロールは使用できませんを示すために</span><span class="sxs-lookup"><span data-stu-id="6862f-235">To demonstrate that multiple controls within cells are not permitted</span></span>  
   
--   **ツールボックス**から <xref:System.Windows.Forms.Button> コントロールを <xref:System.Windows.Forms.TableLayoutPanel> コントロールにドラッグし、割り当て済みのセルのいずれかにドロップします。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールでは、割り当て済みのセルに <xref:System.Windows.Forms.Button> コントロールをドロップできないことを確認してください。  
+-   <span data-ttu-id="6862f-236">ドラッグ、<xref:System.Windows.Forms.Button>から制御、**ツールボックス**に、<xref:System.Windows.Forms.TableLayoutPanel>を制御し、使用中のセルの 1 つにドロップします。</span><span class="sxs-lookup"><span data-stu-id="6862f-236">Drag a <xref:System.Windows.Forms.Button> control from the **Toolbox** into the <xref:System.Windows.Forms.TableLayoutPanel> control and drop it into one of the occupied cells.</span></span> <span data-ttu-id="6862f-237">なお、<xref:System.Windows.Forms.TableLayoutPanel>コントロール削除はできません、<xref:System.Windows.Forms.Button>占有されたセルにコントロールを。</span><span class="sxs-lookup"><span data-stu-id="6862f-237">Note that the <xref:System.Windows.Forms.TableLayoutPanel> control does not allow you to drop the <xref:System.Windows.Forms.Button> control into the occupied cell.</span></span>  
   
-## コントロールの交換  
- <xref:System.Windows.Forms.TableLayoutPanel> コントロールでは、2 つの別個のセルに割り当てられているコントロールを交換できます。  
+## <a name="swapping-controls"></a><span data-ttu-id="6862f-238">コントロールの交換</span><span class="sxs-lookup"><span data-stu-id="6862f-238">Swapping Controls</span></span>  
+ <span data-ttu-id="6862f-239"><xref:System.Windows.Forms.TableLayoutPanel>コントロールでは、次の 2 つの異なるセルを使用していたコントロールを交換することができます。</span><span class="sxs-lookup"><span data-stu-id="6862f-239">The <xref:System.Windows.Forms.TableLayoutPanel> control enables you to swap the controls occupying two different cells.</span></span>  
   
-#### コントロールを交換するには  
+#### <a name="to-swap-controls"></a><span data-ttu-id="6862f-240">コントロールをスワップするには</span><span class="sxs-lookup"><span data-stu-id="6862f-240">To swap controls</span></span>  
   
--   割り当て済みのセルからいずれかの <xref:System.Windows.Forms.Button> コントロールをドラッグし、別の割り当て済みセルにドロップします。  2 つのコントロールがそれぞれ他方のセルに移動します。  
+-   <span data-ttu-id="6862f-241">1 つをドラッグして、<xref:System.Windows.Forms.Button>コントロールから占有セルおよび他の占有されたセルにドロップします。</span><span class="sxs-lookup"><span data-stu-id="6862f-241">Drag one of the <xref:System.Windows.Forms.Button> controls from an occupied cell and drop into onto another occupied cell.</span></span> <span data-ttu-id="6862f-242">他の 2 つのコントロールを 1 つのセルから移動することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="6862f-242">Note that the two controls are moved from one cell into the other.</span></span>  
   
-## 次の手順  
- レイアウト パネルとコントロールを組み合わせて使用すると、複雑なレイアウトを作成できます。  次に行う作業の例を示します。  
+## <a name="next-steps"></a><span data-ttu-id="6862f-243">次の手順</span><span class="sxs-lookup"><span data-stu-id="6862f-243">Next Steps</span></span>  
+ <span data-ttu-id="6862f-244">レイアウト パネルとコントロールを組み合わせて使用すると、複雑なレイアウトを作成できます。</span><span class="sxs-lookup"><span data-stu-id="6862f-244">You can achieve a complex layout using a combination of layout panels and controls.</span></span> <span data-ttu-id="6862f-245">さらに詳しく調べるための推奨事項を次に示します。</span><span class="sxs-lookup"><span data-stu-id="6862f-245">Suggestions for more exploration include:</span></span>  
   
--   いずれかの <xref:System.Windows.Forms.Button> コントロールのサイズを変更して、レイアウトの変化を確認します。  
+-   <span data-ttu-id="6862f-246">いずれかのサイズ、<xref:System.Windows.Forms.Button>より大きなサイズの注、レイアウトに影響を制御します。</span><span class="sxs-lookup"><span data-stu-id="6862f-246">Try resizing one of the <xref:System.Windows.Forms.Button> controls to a larger size and note the effect on the layout.</span></span>  
   
--   選択した複数のコントロールを <xref:System.Windows.Forms.TableLayoutPanel> コントロールに貼り付け、それらがどのように挿入されるかを確認します。  
+-   <span data-ttu-id="6862f-247">複数のコントロールの選択範囲を貼り付け、<xref:System.Windows.Forms.TableLayoutPanel>を制御し、コントロールを挿入する方法に注意してください。</span><span class="sxs-lookup"><span data-stu-id="6862f-247">Paste a selection of multiple controls into the <xref:System.Windows.Forms.TableLayoutPanel> control and note how the controls are inserted.</span></span>  
   
--   レイアウト パネルには、別のレイアウト パネルを含めることができます。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールを既存のコントロールにドロップしてみます。  
+-   <span data-ttu-id="6862f-248">レイアウト パネルには、別のレイアウト パネルを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="6862f-248">Layout panels can contain other layout panels.</span></span> <span data-ttu-id="6862f-249"><xref:System.Windows.Forms.TableLayoutPanel> コントロールを既存のコントロールにドロップしてみます。</span><span class="sxs-lookup"><span data-stu-id="6862f-249">Experiment with dropping a <xref:System.Windows.Forms.TableLayoutPanel> control into the existing control.</span></span>  
   
--   <xref:System.Windows.Forms.TableLayoutPanel> コントロールを親フォームにドッキングします。  フォームのサイズを変更し、レイアウトの変化を確認します。  
+-   <span data-ttu-id="6862f-250">ドック、<xref:System.Windows.Forms.TableLayoutPanel>親フォームを制御します。</span><span class="sxs-lookup"><span data-stu-id="6862f-250">Dock the <xref:System.Windows.Forms.TableLayoutPanel> control to the parent form.</span></span> <span data-ttu-id="6862f-251">フォームのサイズを変更し、レイアウトの変化を確認します。</span><span class="sxs-lookup"><span data-stu-id="6862f-251">Resize the form and note the effect on the layout.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.FlowLayoutPanel>   
- <xref:System.Windows.Forms.TableLayoutPanel>   
- [チュートリアル : FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)   
- [チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)   
- [Microsoft Windows User Experience, Official Guidelines for User Interface Developers and Designers Redmond, WA: Microsoft Press, 1999. \(USBN: 0\-7356\-0566\-1\)](http://www.microsoft.com/mspress/southpacific/books/book11588.htm)   
- [Walkthrough: Creating a Resizable Windows Form for Data Entry](http://msdn.microsoft.com/ja-jp/e193b4fc-912a-4917-b036-b76c7a6f58ab)   
- [Walkthrough: Creating a Localizable Windows Form](http://msdn.microsoft.com/ja-jp/c5240b6e-aaca-4286-9bae-778a416edb9c)   
- [TableLayoutPanel コントロールの推奨される手順](../../../../docs/framework/winforms/controls/best-practices-for-the-tablelayoutpanel-control.md)   
- [AutoSize プロパティの概要](../../../../docs/framework/winforms/controls/autosize-property-overview.md)   
- [方法 : Windows フォーム上のコントロールをドッキングする](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)   
- [方法 : Windows フォームにコントロールを固定する](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)   
- [チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)
+## <a name="see-also"></a><span data-ttu-id="6862f-252">関連項目</span><span class="sxs-lookup"><span data-stu-id="6862f-252">See Also</span></span>  
+ <xref:System.Windows.Forms.FlowLayoutPanel>  
+ <xref:System.Windows.Forms.TableLayoutPanel>  
+ [<span data-ttu-id="6862f-253">チュートリアル: FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="6862f-253">Walkthrough: Arranging Controls on Windows Forms Using a FlowLayoutPanel</span></span>](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)  
+ [<span data-ttu-id="6862f-254">チュートリアル: スナップ線を使用した Windows フォーム上のコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="6862f-254">Walkthrough: Arranging Controls on Windows Forms Using Snaplines</span></span>](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
+ [<span data-ttu-id="6862f-255">Microsoft Windows ユーザー エクスペリエンス、ユーザー インターフェイスの開発者とデザイナーのための公式のガイドライン。Redmond、WA: Microsoft Press、1999 年。(USBN: 0-7356-0566-1)</span><span class="sxs-lookup"><span data-stu-id="6862f-255">Microsoft Windows User Experience, Official Guidelines for User Interface Developers and Designers. Redmond, WA: Microsoft Press, 1999. (USBN: 0-7356-0566-1)</span></span>](http://www.microsoft.com/mspress/southpacific/books/book11588.htm)  
+ [<span data-ttu-id="6862f-256">チュートリアル: データ入力用のサイズ変更可能な Windows フォームの作成</span><span class="sxs-lookup"><span data-stu-id="6862f-256">Walkthrough: Creating a Resizable Windows Form for Data Entry</span></span>](http://msdn.microsoft.com/en-us/e193b4fc-912a-4917-b036-b76c7a6f58ab)  
+ [<span data-ttu-id="6862f-257">チュートリアル: ローカライズ可能な Windows フォームの作成</span><span class="sxs-lookup"><span data-stu-id="6862f-257">Walkthrough: Creating a Localizable Windows Form</span></span>](http://msdn.microsoft.com/en-us/c5240b6e-aaca-4286-9bae-778a416edb9c)  
+ [<span data-ttu-id="6862f-258">TableLayoutPanel コントロールの推奨される手順</span><span class="sxs-lookup"><span data-stu-id="6862f-258">Best Practices for the TableLayoutPanel Control</span></span>](../../../../docs/framework/winforms/controls/best-practices-for-the-tablelayoutpanel-control.md)  
+ [<span data-ttu-id="6862f-259">AutoSize プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="6862f-259">AutoSize Property Overview</span></span>](../../../../docs/framework/winforms/controls/autosize-property-overview.md)  
+ [<span data-ttu-id="6862f-260">方法: Windows フォーム上のコントロールをドッキングする</span><span class="sxs-lookup"><span data-stu-id="6862f-260">How to: Dock Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)  
+ [<span data-ttu-id="6862f-261">方法: Windows フォームにコントロールを固定する</span><span class="sxs-lookup"><span data-stu-id="6862f-261">How to: Anchor Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)  
+ [<span data-ttu-id="6862f-262">チュートリアル: Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト</span><span class="sxs-lookup"><span data-stu-id="6862f-262">Walkthrough: Laying Out Windows Forms Controls with Padding, Margins, and the AutoSize Property</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)

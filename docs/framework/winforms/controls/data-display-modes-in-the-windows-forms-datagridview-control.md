@@ -1,64 +1,65 @@
 ---
-title: "Windows フォーム DataGridView コントロールでのデータ表示モード | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ [Windows フォーム], 表示モード"
-  - "データ グリッド, 表示モード"
-  - "DataGridView コントロール [Windows フォーム], 表示モード"
+title: "Windows フォーム DataGridView コントロールでのデータ表示モード"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- data [Windows Forms], display modes
+- data grids [Windows Forms], display modes
+- DataGridView control [Windows Forms], display modes
 ms.assetid: 9755a030-3f3f-4705-a661-ba5a48a81875
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: dc7fd3d3012053d8c40edf5fdce8af45c62c98c5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム DataGridView コントロールでのデータ表示モード
-<xref:System.Windows.Forms.DataGridView> コントロールでは、バインド、非バインド、仮想の 3 つの異なるモードでデータを表示できます。  要求に基づいて最適なモードを選択します。  
+# <a name="data-display-modes-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="baa01-102">Windows フォーム DataGridView コントロールでのデータ表示モード</span><span class="sxs-lookup"><span data-stu-id="baa01-102">Data Display Modes in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="baa01-103"><xref:System.Windows.Forms.DataGridView>コントロールは、次の 3 つの異なるモードでデータを表示することができます: バインド、バインドされていない、および仮想です。</span><span class="sxs-lookup"><span data-stu-id="baa01-103">The <xref:System.Windows.Forms.DataGridView> control can display data in three distinct modes: bound, unbound, and virtual.</span></span> <span data-ttu-id="baa01-104">要件に基づいて最も適したモードを選択します。</span><span class="sxs-lookup"><span data-stu-id="baa01-104">Choose the most suitable mode based on your requirements.</span></span>  
   
-## 非バインド  
- 非バインド モードは、プログラムによって管理する、比較的少量のデータを表示するのに適しています。  このモードでは、バインド モードと違って、<xref:System.Windows.Forms.DataGridView> コントロールをデータ ソースに直接アタッチしません。  代わりに、通常、<xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A?displayProperty=fullName> メソッドを使用して、独自にコントロールにデータを設定します。  
+## <a name="unbound"></a><span data-ttu-id="baa01-105">バインドされていません。</span><span class="sxs-lookup"><span data-stu-id="baa01-105">Unbound</span></span>  
+ <span data-ttu-id="baa01-106">バインドされていないモードでは、比較的少量のプログラムで管理しているデータの表示に適しています。</span><span class="sxs-lookup"><span data-stu-id="baa01-106">Unbound mode is suitable for displaying relatively small amounts of data that you manage programmatically.</span></span> <span data-ttu-id="baa01-107">アタッチしない、<xref:System.Windows.Forms.DataGridView>バインド モードと同様に、データ ソースに直接制御します。</span><span class="sxs-lookup"><span data-stu-id="baa01-107">You do not attach the <xref:System.Windows.Forms.DataGridView> control directly to a data source as in bound mode.</span></span> <span data-ttu-id="baa01-108">代わりに、する必要があります、コントロール、自分で通常使用して設定、<xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A?displayProperty=nameWithType>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="baa01-108">Instead, you must populate the control yourself, typically by using the <xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A?displayProperty=nameWithType> method.</span></span>  
   
- 非バインド モードは、読み取り専用の静的なデータを表示する場合や、外部データ ストアと対話する独自のコードを提供する場合に特に役立ちます。  ただし、ユーザーが外部データ ソースと対話するようにする場合は、通常、バインド モードを使用します。  
+ <span data-ttu-id="baa01-109">バインドされていないモードは、データは、静的な読み取り専用、または外部データ ストアを操作するコードを提供する場合に特に便利ですがあります。</span><span class="sxs-lookup"><span data-stu-id="baa01-109">Unbound mode can be particularly useful for static, read-only data, or when you want to provide your own code that interacts with an external data store.</span></span> <span data-ttu-id="baa01-110">外部データ ソースとの対話をユーザーにする場合は、ただしは通常モードを使用するバインド。</span><span class="sxs-lookup"><span data-stu-id="baa01-110">When you want your users to interact with an external data source, however, you will typically use bound mode.</span></span>  
   
- 読み取り専用の非バインド <xref:System.Windows.Forms.DataGridView> の使用例については、「[方法 : 連結されていない Windows フォーム DataGridView コントロールを作成する](../../../../docs/framework/winforms/controls/how-to-create-an-unbound-windows-forms-datagridview-control.md)」を参照してください。  
+ <span data-ttu-id="baa01-111">読み取り専用に使用する例については、バインドされていない<xref:System.Windows.Forms.DataGridView>を参照してください[する方法: バインドされていない Windows フォームの DataGridView コントロールの作成](../../../../docs/framework/winforms/controls/how-to-create-an-unbound-windows-forms-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="baa01-111">For an example that uses a read-only unbound <xref:System.Windows.Forms.DataGridView>, see [How to: Create an Unbound Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/how-to-create-an-unbound-windows-forms-datagridview-control.md).</span></span>  
   
-## バインド  
- バインド モードは、データ ストアとの自動対話によってデータを管理するのに適しています。  <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGridView.DataSource%2A> プロパティを設定して、データ ソースに直接アタッチできます。  コントロールがデータ バインドの場合、開発者の側で明示的に管理しなくてもデータ行がプッシュおよびプルされます。  <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A> プロパティが `true` のときは、データ ソースの各列によって、対応する列がコントロールで作成されます。  独自の列を作成する場合は、このプロパティを `false` に設定し、各列の設定時に <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> プロパティを使用してバインドします。  これは、既定で生成される型以外の列型を使用するときに役立ちます。  詳細については、「[Windows フォーム DataGridView コントロールの列型](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)」を参照してください。  
+## <a name="bound"></a><span data-ttu-id="baa01-112">バインド</span><span class="sxs-lookup"><span data-stu-id="baa01-112">Bound</span></span>  
+ <span data-ttu-id="baa01-113">バインド モードは、データ ストアと自動操作を使用してデータの管理に適しています。</span><span class="sxs-lookup"><span data-stu-id="baa01-113">Bound mode is suitable for managing data using automatic interaction with the data store.</span></span> <span data-ttu-id="baa01-114">アタッチすることができます、<xref:System.Windows.Forms.DataGridView>コントロールを設定してそのデータ ソースを直接、<xref:System.Windows.Forms.DataGridView.DataSource%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="baa01-114">You can attach the <xref:System.Windows.Forms.DataGridView> control directly to its data source by setting the <xref:System.Windows.Forms.DataGridView.DataSource%2A> property.</span></span> <span data-ttu-id="baa01-115">コントロールがバインドされたデータの場合は、データ行がプッシュされ、プル、部品で明示的に管理の必要はありません。</span><span class="sxs-lookup"><span data-stu-id="baa01-115">When the control is data bound, data rows are pushed and pulled without the need of explicit management on your part.</span></span> <span data-ttu-id="baa01-116">ときに、<xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A>プロパティは`true`、データ ソース内の各列は、コントロールの作成に対応する列になります。</span><span class="sxs-lookup"><span data-stu-id="baa01-116">When the <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A> property is `true`, each column in your data source will cause a corresponding column to be created in the control.</span></span> <span data-ttu-id="baa01-117">独自の列を作成する場合は、このプロパティを設定することができます`false`を使用して、<xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A>プロパティを構成するときに、各列をバインドします。</span><span class="sxs-lookup"><span data-stu-id="baa01-117">If you prefer to create your own columns, you can set this property to `false` and use the <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> property to bind each column when you configure it.</span></span> <span data-ttu-id="baa01-118">これは、既定で生成される型以外の列の型を使用する場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="baa01-118">This is useful when you want to use a column type other than the types that are generated by default.</span></span> <span data-ttu-id="baa01-119">詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールの列型](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="baa01-119">For more information, see [Column Types in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md).</span></span>  
   
- バインド <xref:System.Windows.Forms.DataGridView> コントロールの使用例については、「[チュートリアル : Windows フォーム DataGridView コントロールのデータの妥当性検査](../../../../docs/framework/winforms/controls/walkthrough-validating-data-in-the-windows-forms-datagridview-control.md)」を参照してください。  
+ <span data-ttu-id="baa01-120">バインドを使用する例について<xref:System.Windows.Forms.DataGridView>を制御しを参照してください[チュートリアル: Windows フォーム DataGridView コントロール内のデータの検証](../../../../docs/framework/winforms/controls/walkthrough-validating-data-in-the-windows-forms-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="baa01-120">For an example that uses a bound <xref:System.Windows.Forms.DataGridView> control, see [Walkthrough: Validating Data in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/walkthrough-validating-data-in-the-windows-forms-datagridview-control.md).</span></span>  
   
- バインド モードの <xref:System.Windows.Forms.DataGridView> コントロールには、非バインド列を追加することもできます。  これは、特定の行に対する操作をユーザーが実行できるようにするボタンやリンクの列を表示するときに役立ちます。  また、バインド列に基づいて計算された値を含む列を表示する場合にも役立ちます。  計算された列のセル値は、<xref:System.Windows.Forms.DataGridView.CellFormatting> イベントのハンドラーに設定できます。  ただし、<xref:System.Data.DataSet> や <xref:System.Data.DataTable> をデータ ソースとして使用する場合は、代わりに <xref:System.Data.DataColumn.Expression%2A?displayProperty=fullName> プロパティを使用して、計算された列を生成することもできます。  この場合、<xref:System.Windows.Forms.DataGridView> コントロールは、計算された列を、データ ソース内の他の列と同じように取り扱います。  
+ <span data-ttu-id="baa01-121">バインドされていない列を追加することも、<xref:System.Windows.Forms.DataGridView>バインド モードで制御します。</span><span class="sxs-lookup"><span data-stu-id="baa01-121">You can also add unbound columns to a <xref:System.Windows.Forms.DataGridView> control in bound mode.</span></span> <span data-ttu-id="baa01-122">これは、特定の行に対してアクションを実行するユーザーを有効にするボタンやリンクの列を表示するときに便利です。</span><span class="sxs-lookup"><span data-stu-id="baa01-122">This is useful when you want to display a column of buttons or links that enable users to perform actions on specific rows.</span></span> <span data-ttu-id="baa01-123">バインドされた列から計算された値を持つ列を表示すると便利です。</span><span class="sxs-lookup"><span data-stu-id="baa01-123">It is also useful to display columns with values calculated from bound columns.</span></span> <span data-ttu-id="baa01-124">ハンドラーで計算列のセル値を設定することができます、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント。</span><span class="sxs-lookup"><span data-stu-id="baa01-124">You can populate the cell values for calculated columns in a handler for the <xref:System.Windows.Forms.DataGridView.CellFormatting> event.</span></span> <span data-ttu-id="baa01-125">使用している場合、<xref:System.Data.DataSet>または<xref:System.Data.DataTable>データ ソースとしてただしが使用する、<xref:System.Data.DataColumn.Expression%2A?displayProperty=nameWithType>代わりに、計算列を作成するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="baa01-125">If you are using a <xref:System.Data.DataSet> or <xref:System.Data.DataTable> as the data source, however, you might want to use the <xref:System.Data.DataColumn.Expression%2A?displayProperty=nameWithType> property to create a calculated column instead.</span></span> <span data-ttu-id="baa01-126">ここで、<xref:System.Windows.Forms.DataGridView>コントロールは、データ ソースの他の任意の列と同じように計算列を処理します。</span><span class="sxs-lookup"><span data-stu-id="baa01-126">In this case, the <xref:System.Windows.Forms.DataGridView> control will treat calculated column just like any other column in the data source.</span></span>  
   
- バインド モードでの非バインド列による並べ替えはサポートされません。  ユーザーによる編集が可能な値を含む非バインド列をバインド モードで作成した場合は、仮想モードを実装することで、コントロールをバインド列で並べ替えたときにこれらの値を保持する必要があります。  
+ <span data-ttu-id="baa01-127">バインド モードで非バインド列による並べ替えはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="baa01-127">Sorting by unbound columns in bound mode is not supported.</span></span> <span data-ttu-id="baa01-128">ユーザーが編集できる値を含むバインド モードで非バインド列を作成する場合は、コントロールがバインドされた列で並べ替えられたときに、これらの値を維持するために仮想モードを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="baa01-128">If you create an unbound column in bound mode that contains user-editable values, you must implement virtual mode to maintain these values when the control is sorted by a bound column.</span></span>  
   
-## Virtual  
- 仮想モードでは、独自のデータ管理操作を実装できます。  これは、コントロールをバインド列で並べ替えたときに、バインド モードで非バインド列の値を保持するために必要です。  ただし、仮想モードの主要な用途は、大量のデータとやりとりするときにパフォーマンスを最適化することです。  
+## <a name="virtual"></a><span data-ttu-id="baa01-129">仮想</span><span class="sxs-lookup"><span data-stu-id="baa01-129">Virtual</span></span>  
+ <span data-ttu-id="baa01-130">仮想モードでは、独自のデータ管理操作を実装できます。</span><span class="sxs-lookup"><span data-stu-id="baa01-130">With virtual mode, you can implement your own data management operations.</span></span> <span data-ttu-id="baa01-131">これは、コントロールがバインドされた列で並べ替えられたバインド モードで非バインド列の値を維持するために必要です。</span><span class="sxs-lookup"><span data-stu-id="baa01-131">This is necessary to maintain the values of unbound columns in bound mode when the control is sorted by bound columns.</span></span> <span data-ttu-id="baa01-132">仮想モードの主な用途は、ただし、大量のデータを扱うときにパフォーマンスを最適化するためには。</span><span class="sxs-lookup"><span data-stu-id="baa01-132">The primary use of virtual mode, however, is to optimize performance when interacting with large amounts of data.</span></span>  
   
- 管理対象であり、データ行をプッシュおよびプルするときにコードで制御するキャッシュに <xref:System.Windows.Forms.DataGridView> コントロールをアタッチします。  メモリの使用量を抑えるには、キャッシュのサイズは、現在表示されている行数と同じにする必要があります。  ユーザーが新しい行をスクロール表示すると、コードが新しいデータをキャッシュに要求し、オプションで以前のデータをメモリからフラッシュします。  
+ <span data-ttu-id="baa01-133">アタッチする、<xref:System.Windows.Forms.DataGridView>を管理するキャッシュ制御とデータ行のプッシュし、プルしたときに、コードを制御します。</span><span class="sxs-lookup"><span data-stu-id="baa01-133">You attach the <xref:System.Windows.Forms.DataGridView> control to a cache that you manage, and your code controls when data rows are pushed and pulled.</span></span> <span data-ttu-id="baa01-134">メモリ使用量を少なく抑え、キャッシュを現在表示されている行の数にほぼ同じサイズにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="baa01-134">To keep the memory footprint small, the cache should be similar in size to the number of rows currently displayed.</span></span> <span data-ttu-id="baa01-135">ユーザーは、ビューに新しい行をスクロールするときに、コードはキャッシュから新しいデータを要求し、必要に応じてメモリから古いデータをフラッシュします。</span><span class="sxs-lookup"><span data-stu-id="baa01-135">When the user scrolls new rows into view, your code requests new data from the cache and optionally flushes old data from memory.</span></span>  
   
- 仮想モードを実装する場合は、新しい行がデータ モデルで必要になる時点と、新しい行の追加をロールバックする時点を監視する必要があります。  この機能の正確な実装は、データ モデルの実装とトランザクション セマンティクス \(コミット スコープがセル レベルか、行レベルか\) によって異なります。  
+ <span data-ttu-id="baa01-136">仮想モードを実装しているときに、新しい行が必要なときにデータ モデルでは、新しい行の追加をロールバックするときに追跡する必要があります。</span><span class="sxs-lookup"><span data-stu-id="baa01-136">When you are implementing virtual mode, you will need to track when a new row is needed in the data model and when to rollback the addition of the new row.</span></span> <span data-ttu-id="baa01-137">この機能の正確な実装は、データ モデルのトランザクション セマンティクスとデータ モデルの実装に依存します。かどうかコミット スコープは、セルまたは行レベルでです。</span><span class="sxs-lookup"><span data-stu-id="baa01-137">The exact implementation of this functionality will depend on the implementation of the data model and the transaction semantics of the data model; whether commit scope is at the cell or row level.</span></span>  
   
- 仮想モードの詳細については、「[Windows フォーム DataGridView コントロールでの仮想モード](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)」を参照してください。  仮想モード イベントの使用例については、「[チュートリアル : Windows フォーム DataGridView コントロールでの仮想モードの実装](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)」を参照してください。  
+ <span data-ttu-id="baa01-138">仮想モードの詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールでの仮想モード](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="baa01-138">For more information about virtual mode, see [Virtual Mode in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md).</span></span> <span data-ttu-id="baa01-139">仮想モードのイベントを使用する方法を示す例を次を参照してください。[チュートリアル: Windows フォーム DataGridView コントロールでの仮想モードを実装する](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="baa01-139">For an example that shows how to use virtual mode events, see [Walkthrough: Implementing Virtual Mode in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridView.VirtualMode%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.BindingSource>   
- <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A?displayProperty=fullName>   
- [Windows フォーム DataGridView コントロールでのデータの表示](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)   
- [Windows フォーム DataGridView コントロールの列型](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)   
- [チュートリアル : バインドされていない Windows フォーム DataGridView コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-creating-an-unbound-windows-forms-datagridview-control.md)   
- [方法 : データを Windows フォーム DataGridView コントロールにバインドする](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-windows-forms-datagridview-control.md)   
- [Windows フォーム DataGridView コントロールでの仮想モード](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)   
- [チュートリアル : Windows フォーム DataGridView コントロールでの仮想モードの実装](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)
+## <a name="see-also"></a><span data-ttu-id="baa01-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="baa01-140">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridView.VirtualMode%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.BindingSource>  
+ <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="baa01-141">Windows フォーム DataGridView コントロールでのデータの表示</span><span class="sxs-lookup"><span data-stu-id="baa01-141">Displaying Data in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="baa01-142">Windows フォーム DataGridView コントロールの列型</span><span class="sxs-lookup"><span data-stu-id="baa01-142">Column Types in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="baa01-143">チュートリアル: バインドされていない Windows フォーム DataGridView コントロールの作成</span><span class="sxs-lookup"><span data-stu-id="baa01-143">Walkthrough: Creating an Unbound Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/walkthrough-creating-an-unbound-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="baa01-144">方法: データを Windows フォーム DataGridView コントロールにバインドする</span><span class="sxs-lookup"><span data-stu-id="baa01-144">How to: Bind Data to the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="baa01-145">Windows フォーム DataGridView コントロールでの仮想モード</span><span class="sxs-lookup"><span data-stu-id="baa01-145">Virtual Mode in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="baa01-146">チュートリアル: Windows フォーム DataGridView コントロールでの仮想モードの実装</span><span class="sxs-lookup"><span data-stu-id="baa01-146">Walkthrough: Implementing Virtual Mode in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/implementing-virtual-mode-wf-datagridview-control.md)

@@ -1,136 +1,138 @@
 ---
-title: "WPF アプリケーションの配置 (WPF) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "配置 [WPF], アプリケーション"
-  - "WPF アプリケーション, 配置"
+title: "WPF アプリケーションの配置 (WPF)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WPF applications [WPF], deployment
+- deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-caps.latest.revision: 27
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 26
+caps.latest.revision: "27"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 860549d444bcef3a25af753923955b2e3e1a3677
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WPF アプリケーションの配置 (WPF)
-ビルドが終了した [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションは配置する必要があります。  [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] および [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] には、いくつかの配置テクノロジがあります。  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの配置に使用する配置テクノロジは、アプリケーションの種類によって決まります。  このトピックでは、配置テクノロジの概要と [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションで必要とされる配置の要件に関連して配置テクノロジがどのように使用されるかについて説明します。  
+# <a name="deploying-a-wpf-application-wpf"></a><span data-ttu-id="e66fc-102">WPF アプリケーションの配置 (WPF)</span><span class="sxs-lookup"><span data-stu-id="e66fc-102">Deploying a WPF Application (WPF)</span></span>
+<span data-ttu-id="e66fc-103">ビルドされた [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] アプリケーションは、配置する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e66fc-103">After [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] applications are built, they need to be deployed.</span></span> [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]<span data-ttu-id="e66fc-104"> および [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] には、いくつかの配置テクノロジがあります。</span><span class="sxs-lookup"><span data-stu-id="e66fc-104"> and the [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] include several deployment technologies.</span></span> <span data-ttu-id="e66fc-105">[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの配置に使用される配置テクノロジは、アプリケーションの種類によって決まります。</span><span class="sxs-lookup"><span data-stu-id="e66fc-105">The deployment technology that is used to deploy a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application depends on the application type.</span></span> <span data-ttu-id="e66fc-106">このトピックでは、それぞれの配置テクノロジの概要と使用法を、それぞれの [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの種類の配置要件に関連して説明します。</span><span class="sxs-lookup"><span data-stu-id="e66fc-106">This topic provides a brief overview of each deployment technology, and how they are used in conjunction with the deployment requirements of each [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application type.</span></span>  
   
    
-  
 <a name="Deployment_Technologies"></a>   
-## 配置テクノロジ  
- [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] および [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] には、次の配置テクノロジがあります。  
+## <a name="deployment-technologies"></a><span data-ttu-id="e66fc-107">配置テクノロジ</span><span class="sxs-lookup"><span data-stu-id="e66fc-107">Deployment Technologies</span></span>  
+ [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]<span data-ttu-id="e66fc-108"> および [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] には、次のような、いくつかの配置テクノロジがあります。</span><span class="sxs-lookup"><span data-stu-id="e66fc-108"> and the [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] include several deployment technologies, including:</span></span>  
   
--   XCopy による配置。  
+-   <span data-ttu-id="e66fc-109">XCopy による配置。</span><span class="sxs-lookup"><span data-stu-id="e66fc-109">XCopy deployment.</span></span>  
   
--   [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]による配置。  
+-   [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]<span data-ttu-id="e66fc-110"> による配置。</span><span class="sxs-lookup"><span data-stu-id="e66fc-110"> deployment.</span></span>  
   
--   [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] 配置。  
+-   [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)]<span data-ttu-id="e66fc-111"> による配置。</span><span class="sxs-lookup"><span data-stu-id="e66fc-111"> deployment.</span></span>  
   
 <a name="XCopy_Deployment"></a>   
-### XCopy による配置  
- XCopy による配置は、XCopy コマンド ライン プログラムを使用して、ある場所から別の場所へファイルをコピーする配置です。  XCopy による配置は、次のような状況に適しています。  
+### <a name="xcopy-deployment"></a><span data-ttu-id="e66fc-112">XCopy による配置</span><span class="sxs-lookup"><span data-stu-id="e66fc-112">XCopy Deployment</span></span>  
+ <span data-ttu-id="e66fc-113">XCopy による配置とは、XCopy コマンド ライン プログラムを使用して、ある場所から別の場所へファイルをコピーすることです。</span><span class="sxs-lookup"><span data-stu-id="e66fc-113">XCopy deployment refers to the use of the XCopy command-line program to copy files from one location to another.</span></span> <span data-ttu-id="e66fc-114">XCopy による配置は、次のような状況に適しています。</span><span class="sxs-lookup"><span data-stu-id="e66fc-114">XCopy deployment is suitable under the following circumstances:</span></span>  
   
--   単独で使用でき、  実行するためにクライアントを更新する必要がないアプリケーションの場合。  
+-   <span data-ttu-id="e66fc-115">アプリケーションは自己完結型である。</span><span class="sxs-lookup"><span data-stu-id="e66fc-115">The application is self-contained.</span></span> <span data-ttu-id="e66fc-116">実行するためにクライアントを更新する必要がない。</span><span class="sxs-lookup"><span data-stu-id="e66fc-116">It does not need to update the client to run.</span></span>  
   
--   アプリケーション ファイルをある場所から別の場所、たとえば、ビルド場所 \(ローカル ディスクや [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] ファイル共有など\) から公開場所 \(Web サイトや [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] ファイル共有など\) へ移動する必要がある場合。  
+-   <span data-ttu-id="e66fc-117">アプリケーション ファイルをある場所から別の場所へ、たとえば、ビルド場所 (ローカル ディスク、[!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] ファイル共有など) から公開場所 (Web サイト、[!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] ファイル共有など) へ移動する必要がある。</span><span class="sxs-lookup"><span data-stu-id="e66fc-117">Application files must be moved from one location to another, such as from a build location (local disk, [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] file share, and so on) to a publish location (Web site, [!INCLUDE[TLA2#tla_unc](../../../../includes/tla2sharptla-unc-md.md)] file share, and so on).</span></span>  
   
--   シェル統合 \(\[スタート\] メニュー ショートカットやデスクトップ アイコンなど\) を必要としないアプリケーションの場合。  
+-   <span data-ttu-id="e66fc-118">アプリケーションはシェル統合 ([スタート] メニューのショートカット、デスクトップ アイコンなど) を必要としない。</span><span class="sxs-lookup"><span data-stu-id="e66fc-118">The application does not require shell integration (Start menu shortcut, desktop icon, and so on).</span></span>  
   
- XCopy は単純な配置シナリオには適していますが、複雑な配置が必要なシナリオには十分に対応できません。  特に、配置を高い信頼性で管理するためにスクリプトを作成、実行、および維持しようとすると、多くの場合に XCopy の使用はオーバーヘッドを招きます。  また、XCopy ではバージョン管理、アンインストール、およびロールバックがサポートされません。  
+ <span data-ttu-id="e66fc-119">XCopy は、単純な配置シナリオには適していますが、複雑な配置機能が必要なシナリオには十分に対応できません。</span><span class="sxs-lookup"><span data-stu-id="e66fc-119">Although XCopy is suitable for simple deployment scenarios, it is limited when more complex deployment capabilities are required.</span></span> <span data-ttu-id="e66fc-120">特に、配置を堅牢な方法で管理する場合、XCopy を使用すると、スクリプトの作成、実行、および維持というオーバーヘッドが生じます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-120">In particular, using XCopy often incurs the overhead for creating, executing, and maintaining scripts for managing deployment in a robust way.</span></span> <span data-ttu-id="e66fc-121">さらに、XCopy は、バージョン管理、アンインストール、およびロールバックをサポートしません。</span><span class="sxs-lookup"><span data-stu-id="e66fc-121">Furthermore, XCopy does not support versioning, uninstallation, or rollback.</span></span>  
   
 <a name="Windows_Installer"></a>   
-### Windows インストーラー  
- [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]を使用すると、クライアントに簡単に配布して実行できる自己完結型実行プログラムとしてアプリケーションをパッケージ化できます。  また、[!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]は、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] と共にインストールされ、デスクトップ、\[スタート\] メニュー、および \[プログラム\] コントロール パネルとの統合を可能にします。  
+### <a name="windows-installer"></a><span data-ttu-id="e66fc-122">Windows インストーラー</span><span class="sxs-lookup"><span data-stu-id="e66fc-122">Windows Installer</span></span>  
+ [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]<span data-ttu-id="e66fc-123"> を使用すると、アプリケーションを自己完結型の実行可能ファイルとしてパッケージ化でき、容易にクライアントに配布して、実行できます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-123"> allows applications to be packaged as self-contained executables that can be easily distributed to clients and run.</span></span> <span data-ttu-id="e66fc-124">さらに、[!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] は [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] と共にインストールされるため、デスクトップ、[スタート] メニュー、および [プログラム] コントロール パネルとの統合が可能です。</span><span class="sxs-lookup"><span data-stu-id="e66fc-124">Furthermore, [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] is installed with [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] and enables integration with the desktop, the Start menu, and the Programs control panel.</span></span>  
   
- [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]を使用するとアプリケーションを簡単にインストールまたはアンインストールできますが、インストールされたアプリケーションをバージョン管理の観点から最新の状態に保つ機能は提供されません。  
+ [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]<span data-ttu-id="e66fc-125"> は、アプリケーションのインストールとアンインストールを単純化しますが、インストールされたアプリケーションをバージョン管理の観点から最新に保つ機能を提供しません。</span><span class="sxs-lookup"><span data-stu-id="e66fc-125"> simplifies the installation and uninstallation of applications, but it does not provide facilities for ensuring that installed applications are kept up-to-date from a versioning standpoint.</span></span>  
   
- [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]の詳細については、「[Windows Installer Deployment](http://msdn.microsoft.com/ja-jp/121be21b-b916-43e2-8f10-8b080516d2a0)」を参照してください。  
+ <span data-ttu-id="e66fc-126">[!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] の詳細については、「[Windows インストーラー配置](http://msdn.microsoft.com/en-us/121be21b-b916-43e2-8f10-8b080516d2a0)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e66fc-126">For more information about [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)], see [Windows Installer Deployment](http://msdn.microsoft.com/en-us/121be21b-b916-43e2-8f10-8b080516d2a0).</span></span>  
   
 <a name="ClickOnce_Deployment"></a>   
-### ClickOnce の配置  
- [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] を使用すると、非 Web アプリケーションを Web スタイル アプリケーションと同じように配置できます。つまり、アプリケーションは、Web サーバーまたはファイル サーバーに公開され、これらのサーバーから配置されます。  [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] は、[!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]を使用してインストールされたアプリケーションが取得するクライアント側の機能を完全にはサポートしませんが、次の機能を備えています。  
+### <a name="clickonce-deployment"></a><span data-ttu-id="e66fc-127">ClickOnce の配置</span><span class="sxs-lookup"><span data-stu-id="e66fc-127">ClickOnce Deployment</span></span>  
+ [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)]<span data-ttu-id="e66fc-128"> を使用すると、非 Web アプリケーションを Web スタイル アプリケーションと同じように配置できます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-128"> enables Web-style application deployment for non-Web applications.</span></span> <span data-ttu-id="e66fc-129">アプリケーションは、Web サーバーまたはファイル サーバーに公開され、これらのサーバーから配置されます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-129">Applications are published to and deployed from Web or file servers.</span></span> <span data-ttu-id="e66fc-130">[!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] は、[!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] によってインストールされるアプリケーションがサポートするような広い範囲のクライアント機能をサポートするわけではありませんが、次のような機能をサポートします。</span><span class="sxs-lookup"><span data-stu-id="e66fc-130">Although [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] does not support the full range of client features that [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]-installed applications do, it does support a subset that includes the following:</span></span>  
   
--   \[スタート\] メニューおよび \[プログラム\] コントロール パネルとの統合。  
+-   <span data-ttu-id="e66fc-131">[スタート] メニューおよび [プログラム] コントロール パネルとの統合。</span><span class="sxs-lookup"><span data-stu-id="e66fc-131">Integration with the Start menu and Programs control panel.</span></span>  
   
--   バージョン管理、ロールバック、およびアンインストール。  
+-   <span data-ttu-id="e66fc-132">バージョン管理、ロールバック、およびアンインストール。</span><span class="sxs-lookup"><span data-stu-id="e66fc-132">Versioning, rollback, and uninstallation.</span></span>  
   
--   アプリケーションを常に配置場所から起動する、オンライン インストール モード。  
+-   <span data-ttu-id="e66fc-133">アプリケーションを常に配置場所から起動するオンライン インストール モード。</span><span class="sxs-lookup"><span data-stu-id="e66fc-133">Online install mode, which always launches an application from the deployment location.</span></span>  
   
--   新しいバージョンがリリースされたときの自動更新。  
+-   <span data-ttu-id="e66fc-134">新しいバージョンがリリースされたときの自動更新。</span><span class="sxs-lookup"><span data-stu-id="e66fc-134">Automatic updating when new versions are released.</span></span>  
   
--   ファイル拡張子の登録。  
+-   <span data-ttu-id="e66fc-135">ファイル拡張子の登録。</span><span class="sxs-lookup"><span data-stu-id="e66fc-135">Registration of file extensions.</span></span>  
   
- [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] の詳細については、「[ClickOnce のセキュリティと配置](../Topic/ClickOnce%20Security%20and%20Deployment.md)」を参照してください。  
+ <span data-ttu-id="e66fc-136">[!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] の詳細については、「[ClickOnce のセキュリティと配置](/visualstudio/deployment/clickonce-security-and-deployment)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e66fc-136">For more information about [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)], see [ClickOnce Security and Deployment](/visualstudio/deployment/clickonce-security-and-deployment).</span></span>  
   
 <a name="Deploying_WPF_Applications"></a>   
-## WPF アプリケーションの配置  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの配置オプションは、アプリケーションの種類によって決まります。  配置の観点から見ると、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] には、次の 3 種類の重要なアプリケーションがあります。  
+## <a name="deploying-wpf-applications"></a><span data-ttu-id="e66fc-137">WPF アプリケーションの配置</span><span class="sxs-lookup"><span data-stu-id="e66fc-137">Deploying WPF Applications</span></span>  
+ <span data-ttu-id="e66fc-138">[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの配置オプションは、アプリケーションの種類によって決まります。</span><span class="sxs-lookup"><span data-stu-id="e66fc-138">The deployment options for a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application depend on the type of application.</span></span> <span data-ttu-id="e66fc-139">配置の観点から見ると、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] には次の 3 種類のアプリケーションがあります。</span><span class="sxs-lookup"><span data-stu-id="e66fc-139">From a deployment perspective, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] has three significant application types:</span></span>  
   
--   スタンドアロン アプリケーション。  
+-   <span data-ttu-id="e66fc-140">スタンドアロン アプリケーション。</span><span class="sxs-lookup"><span data-stu-id="e66fc-140">Standalone applications.</span></span>  
   
--   マークアップのみの [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] アプリケーション。  
+-   <span data-ttu-id="e66fc-141">マークアップのみの [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] アプリケーション。</span><span class="sxs-lookup"><span data-stu-id="e66fc-141">Markup-only [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] applications.</span></span>  
   
--   [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].  
+-   [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]<span data-ttu-id="e66fc-142">。</span><span class="sxs-lookup"><span data-stu-id="e66fc-142">.</span></span>  
   
 <a name="Deploying_Standalone_Applications"></a>   
-### スタンドアロン アプリケーションの配置  
- スタンドアロン アプリケーションは [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] または [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]を使用して配置されます。  いずれの場合も、スタンドアロン アプリケーションを実行するにはアプリケーションが完全に信頼されている必要があります。  [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]を使用して配置されたスタンドアロン アプリケーションには、完全な信頼が自動的に与えられます。  [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] を使用して配置されたスタンドアロン アプリケーションには、完全な信頼が自動的に与えられません。  代わりに、スタンドアロン アプリケーションをインストールする前に、[!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] に表示されるセキュリティ警告ダイアログを受け入れる必要があります。  受け入れた場合は、スタンドアロン アプリケーションがインストールされ、完全な信頼が与えられます。  受け入れない場合、スタンドアロン アプリケーションはインストールされません。  
+### <a name="deploying-standalone-applications"></a><span data-ttu-id="e66fc-143">スタンドアロン アプリケーションの配置</span><span class="sxs-lookup"><span data-stu-id="e66fc-143">Deploying Standalone Applications</span></span>  
+ <span data-ttu-id="e66fc-144">スタンドアロン アプリケーションは、[!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] または [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] を使用して配置されます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-144">Standalone applications are deployed using either [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] or [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)].</span></span> <span data-ttu-id="e66fc-145">いずれの場合も、スタンドアロン アプリケーションを実行するには、アプリケーションが完全に信頼されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="e66fc-145">Either way, standalone applications require full trust to run.</span></span> <span data-ttu-id="e66fc-146">[!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] を使用して配置されたスタンドアロン アプリケーションには、完全な信頼が自動的に付与されます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-146">Full trust is automatically granted to standalone applications that are deployed using [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)].</span></span> <span data-ttu-id="e66fc-147">[!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] を使用して配置されたスタンドアロン アプリケーションには、完全な信頼は自動的に付与されません。</span><span class="sxs-lookup"><span data-stu-id="e66fc-147">Standalone applications that are deployed using [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] are not automatically granted full trust.</span></span> <span data-ttu-id="e66fc-148">代わりに、スタンドアロン アプリケーションをインストールする前に、[!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] は [セキュリティ警告] ダイアログを表示し、ユーザーがそれを受け入れる必要があります。</span><span class="sxs-lookup"><span data-stu-id="e66fc-148">Instead, [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] displays a security warning dialog that users must accept before a standalone application is installed.</span></span> <span data-ttu-id="e66fc-149">受け入れた場合、スタンドアロン アプリケーションがインストールされ、完全な信頼が付与されます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-149">If accepted, the standalone application is installed and granted full trust.</span></span> <span data-ttu-id="e66fc-150">受け入れなかった場合、スタンドアロン アプリケーションはインストールされません。</span><span class="sxs-lookup"><span data-stu-id="e66fc-150">If not, the standalone application is not installed.</span></span>  
   
 <a name="Deploying_Markup_Only_XAML_Applications"></a>   
-### マークアップのみの XAML アプリケーションの配置  
- 通常、マークアップのみの [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページは [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] ページのように Web サーバーに公開され、[!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] を使用して表示できます。  マークアップのみの [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページは、部分信頼セキュリティ サンドボックス内で実行され、インターネット ゾーン アクセス許可セットに定義された制約が適用されます。  これにより、[!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] ベース Web アプリケーションと同等のセキュリティ サンドボックスが提供されます。  
+### <a name="deploying-markup-only-xaml-applications"></a><span data-ttu-id="e66fc-151">マークアップのみの XAML アプリケーションの配置</span><span class="sxs-lookup"><span data-stu-id="e66fc-151">Deploying Markup-Only XAML Applications</span></span>  
+ <span data-ttu-id="e66fc-152">マークアップのみの [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページは、通常、[!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] ページと同様に Web サーバーに公開され、[!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] を使用して表示できます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-152">Markup-only [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pages are usually published to Web servers, like [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] pages, and can be viewed using [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)].</span></span> <span data-ttu-id="e66fc-153">マークアップのみの [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページは、部分信頼セキュリティ サンドボックス内で実行され、インターネット ゾーン アクセス許可セットによって定義された制約が適用されます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-153">Markup-only [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pages run within a partial-trust security sandbox with restrictions that are defined by the Internet zone permission set.</span></span> <span data-ttu-id="e66fc-154">これにより、[!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] ベースの Web アプリケーションと同等のセキュリティ サンドボックスが提供されます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-154">This provides an equivalent security sandbox to [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)]-based Web applications.</span></span>  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションのセキュリティの詳細については、「[セキュリティ](../../../../docs/framework/wpf/security-wpf.md)」を参照してください。  
+ <span data-ttu-id="e66fc-155">[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションのセキュリティの詳細については、「[セキュリティ](../../../../docs/framework/wpf/security-wpf.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e66fc-155">For more information about security for [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications, see [Security](../../../../docs/framework/wpf/security-wpf.md).</span></span>  
   
- マークアップのみの [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページは、XCopy または [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]を使用してローカル ファイル システムにインストールできます。  ページは、[!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] または [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] エクスプローラーを使用して表示できます。  
+ <span data-ttu-id="e66fc-156">マークアップのみの [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページは、XCopy または [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] を使用してローカル ファイル システムにインストールできます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-156">Markup-only [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pages can be installed to the local file system by using either XCopy or [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)].</span></span> <span data-ttu-id="e66fc-157">これらのページは、[!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] または [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] エクスプ ローラーを使用して表示できます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-157">These pages can be viewed using [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] or [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] Explorer.</span></span>  
   
- XAML の詳細については、「[XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)」を参照してください。  
+ <span data-ttu-id="e66fc-158">XAML の詳細については、「[XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e66fc-158">For more information about XAML, see [XAML Overview (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).</span></span>  
   
 <a name="Deploying_XAML_Browser_Applications"></a>   
-### XAML ブラウザー アプリケーションの配置  
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] は、次の 3 つのファイルを配置する必要がある、コンパイル済みのアプリケーションです。  
+### <a name="deploying-xaml-browser-applications"></a><span data-ttu-id="e66fc-159">XAML ブラウザー アプリケーションの配置</span><span class="sxs-lookup"><span data-stu-id="e66fc-159">Deploying XAML Browser Applications</span></span>  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]<span data-ttu-id="e66fc-160"> は、次の 3 つのファイルを配置する必要があるコンパイル済みのアプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="e66fc-160"> are compiled applications that require the following three files to be deployed:</span></span>  
   
--   *ApplicationName*.exe: 実行可能アセンブリ アプリケーション ファイル。  
+-   <span data-ttu-id="e66fc-161">*ApplicationName*.exe: 実行可能アセンブリのアプリケーション ファイル。</span><span class="sxs-lookup"><span data-stu-id="e66fc-161">*ApplicationName*.exe: The executable assembly application file.</span></span>  
   
--   *ApplicationName*.xbap: 配置マニフェスト。  
+-   <span data-ttu-id="e66fc-162">*ApplicationName*.xbap: 配置マニフェスト。</span><span class="sxs-lookup"><span data-stu-id="e66fc-162">*ApplicationName*.xbap: The deployment manifest.</span></span>  
   
--   *ApplicationName*.exe.manifest: アプリケーション マニフェスト。  
+-   <span data-ttu-id="e66fc-163">*ApplicationName*.exe.manifest: アプリケーション マニフェスト。</span><span class="sxs-lookup"><span data-stu-id="e66fc-163">*ApplicationName*.exe.manifest: The application manifest.</span></span>  
   
 > [!NOTE]
->  配置マニフェストおよびアプリケーション マニフェストの詳細については、「[WPF アプリケーションのビルド](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)」を参照してください。  
+>  <span data-ttu-id="e66fc-164">配置マニフェストおよびアプリケーション マニフェストの詳細については、「[WPF アプリケーションのビルド](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e66fc-164">For more information about deployment and application manifests, see [Building a WPF Application](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md).</span></span>  
   
- これらのファイルは、[!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] がビルドされるときに生成されます。  詳細については、「[方法 : 新しい WPF ブラウザー アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/ja-jp/72ef4d90-e163-42a1-8df0-ea7ccfd1901f)」を参照してください。  マークアップのみの [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページと同様に、[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] は通常 Web サーバーに公開され、[!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] を使用して表示されます。  
+ <span data-ttu-id="e66fc-165">これらのファイルは、[!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] がビルドされるときに生成されます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-165">These files are produced when an [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] is built.</span></span> <span data-ttu-id="e66fc-166">詳細については、「[方法: 新しい WPF ブラウザー アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/en-us/72ef4d90-e163-42a1-8df0-ea7ccfd1901f)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e66fc-166">For more information, see [How to: Create a New WPF Browser Application Project](http://msdn.microsoft.com/en-us/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).</span></span> <span data-ttu-id="e66fc-167">マークアップのみの [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページと同様に、[!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] は、通常、Web サーバーに更改され、[!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] を使用して表示されます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-167">Like markup-only [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pages, [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] are typically published to a Web server and viewed using [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)].</span></span>  
   
- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] は、任意の配置技術を使用してクライアントに配置できます。  ただし、[!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] には次の機能が備わっているので、この方法をお勧めします。  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]<span data-ttu-id="e66fc-168"> は、任意の配置技術を使用してクライアントに配置できます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-168"> can be deployed to clients using any of the deployment techniques.</span></span> <span data-ttu-id="e66fc-169">ただし、次の機能を備えている [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] をお勧めします。</span><span class="sxs-lookup"><span data-stu-id="e66fc-169">However, [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] is recommended since it provides the following capabilities:</span></span>  
   
-1.  新しいバージョンが公開されたときの自動更新。  
+1.  <span data-ttu-id="e66fc-170">新しいバージョンが公開されたときの自動更新。</span><span class="sxs-lookup"><span data-stu-id="e66fc-170">Automatic updates when a new version is published.</span></span>  
   
-2.  完全な信頼で実行される [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] の特権の昇格。  
+2.  <span data-ttu-id="e66fc-171">完全な信頼で実行する [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] の特権の昇格。</span><span class="sxs-lookup"><span data-stu-id="e66fc-171">Elevation privileges for the [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] running with full trust.</span></span>  
   
- 既定では、ClickOnce によって、.deploy という拡張子のアプリケーション ファイルが公開されます。  これは問題になる可能性がありますが、無効にできます。  詳細については、「[ClickOnce 配置でのサーバーおよびクライアント構成の問題](../Topic/Server%20and%20Client%20Configuration%20Issues%20in%20ClickOnce%20Deployments.md)」を参照してください。  
+ <span data-ttu-id="e66fc-172">既定では、ClickOnce は、.deploy 拡張子を持つアプリケーション ファイルを公開します。</span><span class="sxs-lookup"><span data-stu-id="e66fc-172">By default, ClickOnce publishes application files with the .deploy extension.</span></span> <span data-ttu-id="e66fc-173">これは問題になる可能性がありますが、無効にできます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-173">This can be problematic, but can be disabled.</span></span> <span data-ttu-id="e66fc-174">詳細については、「[ClickOnce 配置でのサーバーおよびクライアント構成の問題](/visualstudio/deployment/server-and-client-configuration-issues-in-clickonce-deployments)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e66fc-174">For more information, see [Server and Client Configuration Issues in ClickOnce Deployments](/visualstudio/deployment/server-and-client-configuration-issues-in-clickonce-deployments).</span></span>  
   
- [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] の配置の詳細については、「[WPF XAML ブラウザー アプリケーションの概要](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)」を参照してください。  
+ <span data-ttu-id="e66fc-175">[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] の配置の詳細については、「[WPF XAML ブラウザー アプリケーションの概要](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e66fc-175">For more information about deploying [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)], see [WPF XAML Browser Applications Overview](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md).</span></span>  
   
 <a name="Installing__NET_Framework_3_0"></a>   
-## .NET Framework のインストール  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションを実行するには、クライアントに [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] がインストールされている必要があります。  [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] では、ブラウザーでホストされる [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションを表示するときに、クライアントに [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされているかどうかが自動で検出されます。  [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされていない場合、[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] によって、インストールを要求するメッセージが表示されます。  
+## <a name="installing-the-net-framework"></a><span data-ttu-id="e66fc-176">.NET Framework のインストール</span><span class="sxs-lookup"><span data-stu-id="e66fc-176">Installing the .NET Framework</span></span>  
+ <span data-ttu-id="e66fc-177">[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションを実行するには、クライアントに [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] がインストールされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="e66fc-177">To run a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application, the [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] must be installed on the client.</span></span> [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]<span data-ttu-id="e66fc-178"> は、ブラウザーでホストされる [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションが表示されるとき、クライアントに [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされているかどうかを自動的に検出します。</span><span class="sxs-lookup"><span data-stu-id="e66fc-178"> automatically detects whether clients are installed with [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] when [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] browser-hosted applications are viewed.</span></span> <span data-ttu-id="e66fc-179">[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされていない場合、[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] はユーザーにインストールを求めます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-179">If the [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] is not installed, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] prompts users to install it.</span></span>  
   
- [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされているかどうかを検出するために、[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] には、.xaml、.xps、.xbap、および .application の拡張子を持つコンテンツ ファイルのフォールバック [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] ハンドラーとして登録されているブートストラップ アプリケーションが含まれています。  これらの種類のファイルに移動するときに、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がクライアントにインストールされていないと、ブートストラップ アプリケーションによってインストールに同意することが要求されます。  ユーザーがインストールに同意しない場合、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] もアプリケーションもインストールされません。  
+ <span data-ttu-id="e66fc-180">[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がインストールされているかどうかを検出するために、[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] には、.xaml、.xps、および .application の拡張子を持つコンテンツ ファイルのフォールバック [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] ハンドラーとして登録されているブートストラップ アプリケーションが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e66fc-180">To detect whether the [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] is installed, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] includes a bootstrapper application that is registered as the fallback [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] handler for content files with the following extensions: .xaml, .xps, .xbap, and .application.</span></span> <span data-ttu-id="e66fc-181">これらのファイルの種類に移動するとき、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がクライアントにインストールされていなかった場合、ブートス トラップ アプリケーションはインストールの許可を求めます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-181">If you navigate to these file types and the [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] is not installed on the client, the bootstrapper application requests permission to install it.</span></span> <span data-ttu-id="e66fc-182">許可が与えられなかった場合、[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] もアプリケーションもインストールされません。</span><span class="sxs-lookup"><span data-stu-id="e66fc-182">If permission is not provided, neither the [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] nor the application is installed.</span></span>  
   
- 同意した場合は、[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] で [!INCLUDE[TLA#tla_bits](../../../../includes/tlasharptla-bits-md.md)] を使用して [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] がダウンロードされ、インストールされます。  [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] が正しくインストールされると、最初に要求されたファイルが新しいブラウザー ウィンドウで開きます。  
+ <span data-ttu-id="e66fc-183">許可が与えられた場合、[!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] は [!INCLUDE[TLA#tla_bits](../../../../includes/tlasharptla-bits-md.md)] を使用して [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] をダウンロードし、インストールします。</span><span class="sxs-lookup"><span data-stu-id="e66fc-183">If permission is granted, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] downloads and installs the [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] using the [!INCLUDE[TLA#tla_bits](../../../../includes/tlasharptla-bits-md.md)].</span></span> <span data-ttu-id="e66fc-184">[!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] が正常にインストールされた後、最初に要求されたファイルが新しいブラウザー ウィンドウで開きます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-184">After successful installation of the [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)], the originally requested file is opened in a new browser window.</span></span>  
   
- [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] の自動検出機能は、[!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] 以降がインストールされている [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)] クライアント、[!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)] クライアント、および [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] クライアントで利用できます。  
+ [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)]<span data-ttu-id="e66fc-185"> の自動検出は、[!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] 以降がインストールされている [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)]、[!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)]、および [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] クライアントで利用できます。</span><span class="sxs-lookup"><span data-stu-id="e66fc-185"> auto-detection is available on [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)], and [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] clients that have [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] or later installed.</span></span>  
   
- 詳細については、「[.NET Framework およびアプリケーションの配置](../../../../docs/framework/deployment/net-framework-and-applications.md)」を参照してください。  
+ <span data-ttu-id="e66fc-186">詳細については、「[.NET Framework およびアプリケーションの配置](../../../../docs/framework/deployment/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e66fc-186">For more information, see [Deploying the .NET Framework and Applications](../../../../docs/framework/deployment/index.md).</span></span>  
   
-## 参照  
- [WPF アプリケーションのビルド](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)   
- [セキュリティ](../../../../docs/framework/wpf/security-wpf.md)
+## <a name="see-also"></a><span data-ttu-id="e66fc-187">関連項目</span><span class="sxs-lookup"><span data-stu-id="e66fc-187">See Also</span></span>  
+ [<span data-ttu-id="e66fc-188">WPF アプリケーションのビルド</span><span class="sxs-lookup"><span data-stu-id="e66fc-188">Building a WPF Application</span></span>](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
+ [<span data-ttu-id="e66fc-189">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="e66fc-189">Security</span></span>](../../../../docs/framework/wpf/security-wpf.md)

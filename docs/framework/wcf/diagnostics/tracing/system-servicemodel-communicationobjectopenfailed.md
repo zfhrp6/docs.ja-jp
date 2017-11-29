@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.CommunicationObjectOpenFailed | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.CommunicationObjectOpenFailed
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8e188528-c4f4-499e-9ac2-a2fac4742f29
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f1e7d4aecff1da27a7a980ad3eec17c3a82e5862
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.CommunicationObjectOpenFailed
-通信オブジェクトを開けませんでした。  
+# <a name="systemservicemodelcommunicationobjectopenfailed"></a><span data-ttu-id="582bc-102">System.ServiceModel.CommunicationObjectOpenFailed</span><span class="sxs-lookup"><span data-stu-id="582bc-102">System.ServiceModel.CommunicationObjectOpenFailed</span></span>
+<span data-ttu-id="582bc-103">通信オブジェクトを開けませんでした。</span><span class="sxs-lookup"><span data-stu-id="582bc-103">A communication object failed to open.</span></span>  
   
-## 説明  
- Open メソッドの実行中に例外がスローされたため、通信オブジェクトを開けませんでした。この付近のトレースに例外に関する詳細が含まれている可能性があります。  
+## <a name="description"></a><span data-ttu-id="582bc-104">説明</span><span class="sxs-lookup"><span data-stu-id="582bc-104">Description</span></span>  
+ <span data-ttu-id="582bc-105">Open メソッドの実行中に例外がスローされたため、通信オブジェクトを開けませんでした。</span><span class="sxs-lookup"><span data-stu-id="582bc-105">A communication object failed to open because an exception was thrown during the execution of its Open method.</span></span> <span data-ttu-id="582bc-106">この付近のトレースに例外に関する詳細が含まれている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="582bc-106">Another nearby trace might contain details about the exception.</span></span>  
   
-## 参照  
- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="582bc-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="582bc-107">See Also</span></span>  
+ [<span data-ttu-id="582bc-108">トレース</span><span class="sxs-lookup"><span data-stu-id="582bc-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="582bc-109">トレースを使用して、アプリケーションのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="582bc-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="582bc-110">管理と診断</span><span class="sxs-lookup"><span data-stu-id="582bc-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

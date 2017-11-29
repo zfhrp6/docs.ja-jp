@@ -1,43 +1,44 @@
 ---
-title: "ユーザ補助ガイドラインをサポートする Windows フォーム コントロールのプロパティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "アクセシビリティ, Windows フォーム コントロール プロパティ"
-  - "Windows フォーム, アクセシビリティ プロパティ (コントロールの)"
+title: "ユーザ補助ガイドラインをサポートする Windows フォーム コントロールのプロパティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms, accessibility properties of controls
+- accessibility [Windows Forms], Windows Forms control properties
 ms.assetid: ad3567a6-313b-4708-9e15-f487a831f049
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9ca18b35b90b028054e68a0a14fecc819a6c20b9
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# ユーザ補助ガイドラインをサポートする Windows フォーム コントロールのプロパティ
-Windows フォームの標準ツールボックス上のコントロールは、キーボード フォーカスの公開や画面要素の公開など、ユーザー補助ガイドラインの多くをサポートしています。  
+# <a name="properties-on-windows-forms-controls-that-support-accessibility-guidelines"></a><span data-ttu-id="4ffa1-102">ユーザ補助ガイドラインをサポートする Windows フォーム コントロールのプロパティ</span><span class="sxs-lookup"><span data-stu-id="4ffa1-102">Properties on Windows Forms Controls That Support Accessibility Guidelines</span></span>
+<span data-ttu-id="4ffa1-103">Windows フォームの標準的なツールボックス上のコントロールは、キーボード フォーカスを公開することや、画面要素を公開するなど、ユーザー補助ガイドラインの多くをサポートします。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-103">Controls on the standard toolbox for Windows Forms support many of the accessibility guidelines, including exposing the keyboard focus and exposing the screen elements.</span></span>  
   
-## ユーザー補助の事前計画  
- これらのコントロールのプロパティを使うと、次の表に示すように、他のユーザー補助ガイドラインをサポートできます。  また、プログラムの各機能にアクセスするメニューも使う必要があります。  
+## <a name="planning-ahead-for-accessibility"></a><span data-ttu-id="4ffa1-104">ユーザー補助の事前の計画</span><span class="sxs-lookup"><span data-stu-id="4ffa1-104">Planning Ahead for Accessibility</span></span>  
+ <span data-ttu-id="4ffa1-105">コントロールのプロパティは、次の表に示すように、その他のユーザー補助ガイドラインをサポートするために使用できます。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-105">The controls' properties can be used to support other accessibility guidelines as shown in the following table.</span></span> <span data-ttu-id="4ffa1-106">さらに、プログラムの機能へのアクセスを提供するのにメニューを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-106">Additionally, you should use menus to provide access to program features.</span></span>  
   
-|コントロール プロパティ|ユーザー補助に関する考慮点|  
-|------------------|-------------------|  
-|AccessibleDescription|スクリーン リーダーなどのユーザー補助機能に対する説明が報告されます。  ユーザー補助機能とは、障碍を持つユーザーがコンピューターをより効果的に使用できるように特別に設計されたプログラムや装置です。|  
-|AccessibleName|ユーザー補助機能に対して報告される名前です。|  
-|AccessibleRole|ユーザー インターフェイスの要素の使用方法を記述します。|  
-|TabIndex|フォームでのフォーカスの移動順序を指定します。  固有のラベルを持たないコントロール \(テキスト ボックスなど\) では、関連するラベルがタブ オーダーで直前になるように配置する必要があります。|  
-|テキスト|"&" 文字を使用してアクセス キーを作成します。  アクセス キーの使い方は、機能へのキーボード アクセスの一部として公開されています。|  
-|Font Size|フォント サイズが調整できない場合は、10 ポイント以上に設定する必要があります。  フォームのフォント サイズが設定されると、それ以降、フォームに追加されるコントロールにはすべて同じフォント サイズが使用されます。|  
-|Forecolor|このプロパティが既定値に設定されると、フォーム上でユーザーの色設定が使用されます。|  
-|Backcolor|このプロパティが既定値に設定されると、フォーム上でユーザーの色設定が使用されます。|  
-|BackgroundImage|テキストが読みやすくなるように、このプロパティは空白のままにします。|  
+|<span data-ttu-id="4ffa1-107">コントロールのプロパティ</span><span class="sxs-lookup"><span data-stu-id="4ffa1-107">Control Property</span></span>|<span data-ttu-id="4ffa1-108">ユーザー補助機能に関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="4ffa1-108">Considerations for Accessibility</span></span>|  
+|----------------------|--------------------------------------|  
+|<span data-ttu-id="4ffa1-109">AccessibleDescription</span><span class="sxs-lookup"><span data-stu-id="4ffa1-109">AccessibleDescription</span></span>|<span data-ttu-id="4ffa1-110">説明については、スクリーン リーダーなどのユーザー補助機能に報告されます。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-110">The description is reported to accessibility aids such as screen readers.</span></span> <span data-ttu-id="4ffa1-111">ユーザー補助機能は専用のプログラムおよびデバイスで、障碍を持つユーザーがコンピューターをより効果的に使用するよう助けます。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-111">Accessibility aids are specialized programs and devices that help people with disabilities use computers more effectively.</span></span>|  
+|<span data-ttu-id="4ffa1-112">AccessibleName</span><span class="sxs-lookup"><span data-stu-id="4ffa1-112">AccessibleName</span></span>|<span data-ttu-id="4ffa1-113">ユーザー補助機能に報告される名前です。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-113">The name that will be reported to the accessibility aids.</span></span>|  
+|<span data-ttu-id="4ffa1-114">AccessibleRole</span><span class="sxs-lookup"><span data-stu-id="4ffa1-114">AccessibleRole</span></span>|<span data-ttu-id="4ffa1-115">ユーザー インターフェイスの要素の使用方法をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-115">Describes the use of the element in the user interface.</span></span>|  
+|<span data-ttu-id="4ffa1-116">TabIndex</span><span class="sxs-lookup"><span data-stu-id="4ffa1-116">TabIndex</span></span>|<span data-ttu-id="4ffa1-117">フォームで実用的な移動パスを作成します。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-117">Creates a sensible navigational path through the form.</span></span> <span data-ttu-id="4ffa1-118">など、関連するラベルのタブ オーダーの直前に、テキスト ボックスに、固有のラベルを持たないコントロールの重要です。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-118">It is important for controls without intrinsic labels, such as text boxes, to have their associated label immediately precede them in the tab order.</span></span>|  
+|<span data-ttu-id="4ffa1-119">テキスト</span><span class="sxs-lookup"><span data-stu-id="4ffa1-119">Text</span></span>|<span data-ttu-id="4ffa1-120">"&"の文字を使用して、アクセス キーを作成します。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-120">Use the "&" character to create access keys.</span></span> <span data-ttu-id="4ffa1-121">アクセス キーの使用は、機能を文書化されたキーボード アクセスを提供する部分です。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-121">Using access keys is part of providing documented keyboard access to features.</span></span>|  
+|<span data-ttu-id="4ffa1-122">フォント サイズ</span><span class="sxs-lookup"><span data-stu-id="4ffa1-122">Font Size</span></span>|<span data-ttu-id="4ffa1-123">フォント サイズが調整可能でない場合は、10 ポイント以上に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-123">If the font size is not adjustable, then it should be set to 10 points or larger.</span></span> <span data-ttu-id="4ffa1-124">フォームのフォント サイズを設定すると、後からフォームに追加されるすべてのコントロールが同じサイズになります。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-124">Once the form's font size is set, all the controls added to the form thereafter will have the same size.</span></span>|  
+|<span data-ttu-id="4ffa1-125">前景色</span><span class="sxs-lookup"><span data-stu-id="4ffa1-125">Forecolor</span></span>|<span data-ttu-id="4ffa1-126">このプロパティが既定値に設定されている場合、フォームにユーザーのカラー設定が使用されます。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-126">If this property is set to the default, then the user's color preferences will be used on the form.</span></span>|  
+|<span data-ttu-id="4ffa1-127">背景色</span><span class="sxs-lookup"><span data-stu-id="4ffa1-127">Backcolor</span></span>|<span data-ttu-id="4ffa1-128">このプロパティが既定値に設定されている場合、フォームにユーザーのカラー設定が使用されます。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-128">If this property is set to the default, then the user's color preferences will be used on the form.</span></span>|  
+|<span data-ttu-id="4ffa1-129">BackgroundImage</span><span class="sxs-lookup"><span data-stu-id="4ffa1-129">BackgroundImage</span></span>|<span data-ttu-id="4ffa1-130">このプロパティは、テキストを読みやすくする場合は空白のままにします。</span><span class="sxs-lookup"><span data-stu-id="4ffa1-130">Leave this property blank to make text more readable.</span></span>|  
   
-## 参照  
- [チュートリアル : ユーザー補助対応の Windows ベースのアプリケーションの作成](../../../../docs/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application.md)
+## <a name="see-also"></a><span data-ttu-id="4ffa1-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="4ffa1-131">See Also</span></span>  
+ [<span data-ttu-id="4ffa1-132">チュートリアル: ユーザー補助対応の Windows ベースのアプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="4ffa1-132">Walkthrough: Creating an Accessible Windows-based Application</span></span>](../../../../docs/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application.md)

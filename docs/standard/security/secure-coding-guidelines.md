@@ -1,86 +1,90 @@
 ---
-title: "安全なコーディングのガイドライン | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "コード セキュリティ"
-  - "コード セキュリティ, オプション"
-  - "コード, セキュリティ"
-  - "コンポーネント [.NET Framework], セキュリティ"
-  - "ライブラリ コード (保護されたリソースを公開する)"
-  - "マネージ ラッパー (ネイティブなコード実装の)"
-  - "再利用可能なコンポーネント"
-  - "安全なコーディング"
-  - "安全なコーディング, オプション"
-  - "セキュリティ [.NET Framework], コーディングのガイドライン"
-  - "セキュリティに中立的なコード"
+title: "安全なコーディングのガイドライン"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- managed wrapper to native code implementation
+- secure coding
+- reusable components
+- library code that exposes protected resources
+- code, security
+- code security
+- secure coding, options
+- components [.NET Framework], security
+- code security, options
+- security-neutral code
+- security [.NET Framework], coding guidelines
 ms.assetid: 4f882d94-262b-4494-b0a6-ba9ba1f5f177
-caps.latest.revision: 20
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "20"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 3be1a51db31f18255eabe633cdeaeb860f9c8ce7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 安全なコーディングのガイドライン
-エビデンスベース セキュリティとコード アクセス セキュリティは、セキュリティを実現するための強力で明示的なメカニズムを提供します。 ほとんどのアプリケーション コードは、.NET Framework によって実装されるインフラストラクチャを単純に使用することができます。 場合によっては、アプリケーション特有の追加のセキュリティが必要になります。これは、セキュリティ システムを拡張するか、または新しい特有の方法を使用して構築されます。  
+# <a name="secure-coding-guidelines"></a><span data-ttu-id="cc6c3-102">安全なコーディングのガイドライン</span><span class="sxs-lookup"><span data-stu-id="cc6c3-102">Secure Coding Guidelines</span></span>
+<span data-ttu-id="cc6c3-103">エビデンスベース セキュリティとコード アクセス セキュリティは、セキュリティを実現するための強力で明示的なメカニズムを提供します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-103">Evidence-based security and code access security provide very powerful, explicit mechanisms to implement security.</span></span> <span data-ttu-id="cc6c3-104">ほとんどのアプリケーション コードは、.NET Framework によって実装されるインフラストラクチャを単純に使用することができます。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-104">Most application code can simply use the infrastructure implemented by the .NET Framework.</span></span> <span data-ttu-id="cc6c3-105">場合によっては、アプリケーション特有の追加のセキュリティが必要になります。これは、セキュリティ システムを拡張するか、または新しい特有の方法を使用して構築されます。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-105">In some cases, additional application-specific security is required, built either by extending the security system or by using new ad hoc methods.</span></span>  
   
- .NET Framework によって課されるアクセス許可やコード内で課される他の手段により防御機構を設けて、悪意のあるコードが知られたくない情報を入手したり、他の望ましくないアクションを実行したりすることを防ぐ必要があります。 また、信頼されるコードを使用するすべての想定されるシナリオで、セキュリティと使いやすさのバランスを取る必要があります。  
+ <span data-ttu-id="cc6c3-106">.NET Framework によって課されるアクセス許可やコード内で課される他の手段により防御機構を設けて、悪意のあるコードが知られたくない情報を入手したり、他の望ましくないアクションを実行したりすることを防ぐ必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-106">Using the .NET Framework-enforced permissions and other enforcement in your code, you should erect barriers to prevent malicious code from obtaining information that you do not want it to have or performing other undesirable actions.</span></span> <span data-ttu-id="cc6c3-107">また、信頼されるコードを使用するすべての想定されるシナリオで、セキュリティと使いやすさのバランスを取る必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-107">Additionally, you must strike a balance between security and usability in all the expected scenarios using trusted code.</span></span>  
   
- この概要では、セキュリティ システムと連携するようコードを設計するさまざまな方法を説明します。  
+ <span data-ttu-id="cc6c3-108">この概要では、セキュリティ システムと連携するようコードを設計するさまざまな方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-108">This overview describes the different ways code can be designed to work with the security system.</span></span>  
   
-> [!NOTE]
->  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] では、.NET Framework のセキュリティ モデルと用語に重要な変更が加えられています。 これらの変更について詳しくは、「[セキュリティの変更点](../../../docs/framework/security/security-changes.md)」をご覧ください。  
+## <a name="securing-resource-access"></a><span data-ttu-id="cc6c3-109">リソース アクセスの保護</span><span class="sxs-lookup"><span data-stu-id="cc6c3-109">Securing Resource Access</span></span>  
+ <span data-ttu-id="cc6c3-110">コードを設計して作成する場合、作成元が不明なコードを使用したり呼び出したりする際は特に、コードがリソースに対して持つアクセス権の保護と制限を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-110">When designing and writing your code, you need to protect and limit the access that code has to resources, especially when using or invoking code of unknown origin.</span></span> <span data-ttu-id="cc6c3-111">そのため、コードの安全性を確保するために次の点に注意します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-111">So, keep in mind the following techniques to ensure your code is secure:</span></span>  
   
-## コード アクセス セキュリティと部分的に信頼できるコード  
- .NET Framework には、コード アクセス セキュリティ \(CAS\) と呼ばれる、同一アプリケーションで実行される各種コードにさまざまな信頼レベルを強制的に適用するメカニズムが備わっています。  .NET Framework ではコード アクセス セキュリティはコードの分離を保証しないため、部分的にしか信頼できないコード \(特に発生元が不明なコード\) とのセキュリティ境界としてコード アクセス セキュリティを使用してはなりません。 発生元の不明なコードの読み込みと実行に関しては、他のセキュリティ対策を適切に導入することなく行わないようにしてください。  
+-   <span data-ttu-id="cc6c3-112">コード アクセス セキュリティ (CAS) を使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-112">Do not use Code Access Security (CAS).</span></span>  
   
- このポリシーは .NET Framework のすべてのバージョンに適用されますが、Silverlight に含まれる .NET Framework には適用されません。  
+-   <span data-ttu-id="cc6c3-113">部分的に信頼されたコードを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-113">Do not use partial trusted code.</span></span>  
   
-## セキュリティ中立なコード  
- セキュリティ中立なコードは、セキュリティ システムに対して明示的な操作を何も行いません。 これは何であれ自分が受け取ったアクセス許可を使用して動作します。 保護された操作 \(ファイルの使用やネットワーキングなど\) に関連したセキュリティ例外をアプリケーションがキャッチしなかった場合はハンドルされない例外になるとはいえ、セキュリティ中立なコードは .NET Framework のセキュリティ テクノロジを活用します。  
+-   <span data-ttu-id="cc6c3-114">.NET リモート処理を使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-114">Do not use .NET Remoting.</span></span>  
   
- セキュリティ中立なライブラリは、理解しておくべき特別な特性を持っています。 ファイルを使用したり、アンマネージ コードを呼び出したりする API 要素をライブラリで提供していると仮定します。これらの操作に対応するアクセス許可を持っていないコードは、記述どおりに動作しません。 しかし、コードがアクセス許可を持っているとしても、そのコードを呼び出すアプリケーション コードが同じアクセス許可を持っていなければ、正しく機能しません。 呼び出し元のコードが正しいアクセス許可を持っていない場合、コード アクセス セキュリティのスタック ウォークの結果として <xref:System.Security.SecurityException> が発生します。  
+-   <span data-ttu-id="cc6c3-115">分散コンポーネント オブジェクト モデル (DCOM) を使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-115">Do not use Distributed Component Object Model (DCOM).</span></span>  
   
-## 再利用可能なコンポーネントではないアプリケーション コード  
- 作成するコードがアプリケーションの一部であって、他のコードから呼び出されることがなければ、セキュリティは単純であり、特殊なコーディングは不要な場合があります。 ただし、悪意のあるコードがそのコードを呼び出す可能性があることを忘れないでください。 悪意のあるコードによるリソースへのアクセスをコード アクセス セキュリティが阻止する可能性もありますが、機密情報を含んだフィールドやプロパティの値をそのようなコードが読み取ることも考えられます。  
+-   <span data-ttu-id="cc6c3-116">バイナリ フォーマッタを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-116">Do not use binary formatters.</span></span>  
   
- また、コードがインターネットやその他の信頼できないソースからのユーザー入力を受け付ける場合には、悪意のある入力にも注意する必要があります。  
+ <span data-ttu-id="cc6c3-117">部分的に信頼されたコードでは、コード アクセス セキュリティとセキュリティが透過的なコードはセキュリティ境界としてサポートされません。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-117">Code Access Security and Security-Transparent Code will not be supported as a security boundary with partially trusted code.</span></span> <span data-ttu-id="cc6c3-118">発生元の不明なコードの読み込みと実行に関しては、他のセキュリティ対策を適切に導入することなく行わないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-118">We advise against loading and executing code of unknown origins without putting alternative security measures in place.</span></span> <span data-ttu-id="cc6c3-119">代わりのセキュリティ対策は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-119">The alternative security measures are:</span></span>  
   
-## ネイティブ コードの実装のマネージ ラッパー  
- 一般にこのシナリオは、何らかの有用な機能がネイティブ コードで実装されており、これをマネージ コードで利用したいというケースに該当します。 マネージ ラッパーは、プラットフォーム呼び出しか COM 相互運用を使用して簡単に作成できます。 ただしこの場合には、操作を成功させるために、ラッパーの呼び出し元がアンマネージ コードの権利を持っている必要があります。 つまり既定のポリシーでは、イントラネットやインターネットからダウンロードされたコードはラッパーでは機能しません。  
+-   <span data-ttu-id="cc6c3-120">仮想化</span><span class="sxs-lookup"><span data-stu-id="cc6c3-120">Virtualization</span></span>  
   
- これらのラッパーを使用するすべてのアプリケーションにアンマネージ コードの権利を与えるよりも、これらの権利をラッパー コードのみに与える方が望ましいと言えます。 基になる機能が何もリソースを公開しておらず、かつ実装も同様に安全である場合、ラッパーは、自分の権利をアサートしさえすれば、あらゆるコードが自分を通して呼び出しを行えるようにできます。 リソースが関係する場合のセキュリティ コーディングは、次のセクションで説明するライブラリ コードのケースと同じです。 ラッパーはこれらのリソースに対して呼び出し元を公開する可能性があるため、ネイティブ コードの安全性を慎重に確認する必要があり、その責任はラッパーにあります。  
+-   <span data-ttu-id="cc6c3-121">AppContainers</span><span class="sxs-lookup"><span data-stu-id="cc6c3-121">AppContainers</span></span>  
   
-## 保護されたリソースを公開するライブラリ コード  
- これはセキュリティ コーディングのアプローチとして最も強力なものであるため、方法を間違えるなら最も危険性の高いものともなります。ライブラリは他のコードに対し、\(.NET Framework のクラスが使用するリソースのアクセス許可を課すのと同じように\) 他の手段では使用できない特定のリソースにアクセスするためのインターフェイスとして機能します。 どこでリソースを公開しようと、コードはまずそのリソースに適したアクセス許可を要求し \(つまりセキュリティ チェックを実行しなければなりません\)、それから通常は実際の操作を実行するための権利をアサートする必要があります。  
+-   <span data-ttu-id="cc6c3-122">オペレーティング システム (OS) のユーザーおよびアクセス許可</span><span class="sxs-lookup"><span data-stu-id="cc6c3-122">Operating system (OS) users and permissions</span></span>  
   
-## 関連トピック  
+-   <span data-ttu-id="cc6c3-123">Hyper-V コンテナー</span><span class="sxs-lookup"><span data-stu-id="cc6c3-123">Hyper-V containers</span></span>  
   
-|タイトル|説明|  
-|----------|--------|  
-|[方法 : サンドボックスで部分信頼コードを実行する](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)|制限されたセキュリティ環境で、部分的に信頼されたアプリケーションを実行する方法について説明します。これにより、付与されるコード アクセス許可が制限されます。|  
-|[状態データの保護](../../../docs/standard/security/securing-state-data.md)|プライベート メンバーを保護する方法について説明します。|  
-|[メソッド アクセスの保護](../../../docs/framework/misc/securing-method-access.md)|部分的に信頼されたコードによって呼び出されることからメソッドを保護する方法について説明します。|  
-|[ラッパー コードの保護](../../../docs/framework/misc/securing-wrapper-code.md)|他のコードをラップするコードのセキュリティ問題について説明します。|  
-|[セキュリティとパブリックの読み取り専用配列フィールド](../../../docs/framework/misc/security-and-public-read-only-array-fields.md)|.NET Framework ライブラリ内にある、パブリックな読み取り専用の配列を使用するコードのセキュリティ問題について説明します。|  
-|[例外処理の保護](../../../docs/framework/misc/securing-exception-handling.md)|例外を処理するためのセキュリティ問題について説明します。|  
-|[セキュリティとユーザー入力](../../../docs/standard/security/security-and-user-input.md)|ユーザー入力を受け取るアプリケーションのセキュリティ問題について説明します。|  
-|[セキュリティとリモート処理の考慮事項](../../../docs/framework/misc/security-and-remoting-considerations.md)|アプリケーション ドメインをまたいで通信するアプリケーションのセキュリティ問題について説明します。|  
-|[セキュリティとシリアル化](../../../docs/framework/misc/security-and-serialization.md)|オブジェクトをシリアル化するときのセキュリティ問題について説明します。|  
-|[セキュリティと競合状態](../../../docs/standard/security/security-and-race-conditions.md)|コードで競合状態を回避する方法について説明します。|  
-|[セキュリティと実行時のコード生成](../../../docs/standard/security/security-and-on-the-fly-code-generation.md)|動的なコードを生成するアプリケーションのセキュリティ問題について説明します。|  
-|[セキュリティとセットアップの問題](../Topic/Security%20and%20Setup%20Issues.md)|アプリケーションのテストとセットアップに関する注意点について説明します。|  
-|[コード アクセス セキュリティ](../../../docs/framework/misc/code-access-security.md)|.NET Framework のコード アクセス セキュリティについて詳しく説明し、コードで使用するための手順を示します。|  
-|[ロール ベース セキュリティ](../../../docs/standard/security/role-based-security.md)|.NET Framework のロールベース セキュリティについて詳しく説明し、コードで使用するための手順を示します。|
+## <a name="security-neutral-code"></a><span data-ttu-id="cc6c3-124">セキュリティ中立なコード</span><span class="sxs-lookup"><span data-stu-id="cc6c3-124">Security-Neutral Code</span></span>  
+ <span data-ttu-id="cc6c3-125">セキュリティ中立なコードは、セキュリティ システムに対して明示的な操作を何も行いません。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-125">Security-neutral code does nothing explicit with the security system.</span></span> <span data-ttu-id="cc6c3-126">これは何であれ自分が受け取ったアクセス許可を使用して動作します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-126">It runs with whatever permissions it receives.</span></span> <span data-ttu-id="cc6c3-127">保護された操作 (ファイルの使用やネットワーキングなど) に関連したセキュリティ例外をアプリケーションがキャッチしなかった場合はハンドルされない例外になるとはいえ、セキュリティ中立なコードは .NET Framework のセキュリティ テクノロジを活用します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-127">Although applications that fail to catch security exceptions associated with protected operations (such as using files, networking, and so on) can result in an unhandled exception, security-neutral code still takes advantage of the .NET Framework security technologies.</span></span>  
+  
+ <span data-ttu-id="cc6c3-128">セキュリティ中立なライブラリは、理解しておくべき特別な特性を持っています。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-128">A security-neutral library has special characteristics that you should understand.</span></span> <span data-ttu-id="cc6c3-129">ファイルを使用したり、アンマネージ コードを呼び出したりする API 要素をライブラリで提供していると仮定します。これらの操作に対応するアクセス許可を持っていないコードは、記述どおりに動作しません。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-129">Suppose your library provides API elements that use files or call unmanaged code; if your code does not have the corresponding permission, it will not run as described.</span></span> <span data-ttu-id="cc6c3-130">しかし、コードがアクセス許可を持っているとしても、そのコードを呼び出すアプリケーション コードが同じアクセス許可を持っていなければ、正しく機能しません。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-130">However, even if the code has the permission, any application code that calls it must have the same permission in order to work.</span></span> <span data-ttu-id="cc6c3-131">呼び出し元のコードに必要な権限がない場合、<xref:System.Security.SecurityException>コード アクセス セキュリティのスタック ウォークの結果として表示されます。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-131">If the calling code does not have the right permission, a <xref:System.Security.SecurityException> appears as a result of the code access security stack walk.</span></span>  
+  
+## <a name="application-code-that-is-not-a-reusable-component"></a><span data-ttu-id="cc6c3-132">再利用可能なコンポーネントではないアプリケーション コード</span><span class="sxs-lookup"><span data-stu-id="cc6c3-132">Application Code That Is Not a Reusable Component</span></span>  
+ <span data-ttu-id="cc6c3-133">作成するコードがアプリケーションの一部であって、他のコードから呼び出されることがなければ、セキュリティは単純であり、特殊なコーディングは不要な場合があります。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-133">If your code is part of an application that will not be called by other code, security is simple and special coding might not be required.</span></span> <span data-ttu-id="cc6c3-134">ただし、悪意のあるコードがそのコードを呼び出す可能性があることを忘れないでください。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-134">However, remember that malicious code can call your code.</span></span> <span data-ttu-id="cc6c3-135">悪意のあるコードによるリソースへのアクセスをコード アクセス セキュリティが阻止する可能性もありますが、機密情報を含んだフィールドやプロパティの値をそのようなコードが読み取ることも考えられます。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-135">While code access security might stop malicious code from accessing resources, such code could still read values of your fields or properties that might contain sensitive information.</span></span>  
+  
+ <span data-ttu-id="cc6c3-136">また、コードがインターネットやその他の信頼できないソースからのユーザー入力を受け付ける場合には、悪意のある入力にも注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-136">Additionally, if your code accepts user input from the Internet or other unreliable sources, you must be careful about malicious input.</span></span>  
+  
+## <a name="managed-wrapper-to-native-code-implementation"></a><span data-ttu-id="cc6c3-137">ネイティブ コードの実装のマネージ ラッパー</span><span class="sxs-lookup"><span data-stu-id="cc6c3-137">Managed Wrapper to Native Code Implementation</span></span>  
+ <span data-ttu-id="cc6c3-138">一般にこのシナリオは、何らかの有用な機能がネイティブ コードで実装されており、これをマネージ コードで利用したいというケースに該当します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-138">Typically in this scenario, some useful functionality is implemented in native code that you want to make available to managed code.</span></span> <span data-ttu-id="cc6c3-139">マネージ ラッパーは、プラットフォーム呼び出しか COM 相互運用を使用して簡単に作成できます。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-139">Managed wrappers are easy to write using either platform invoke or COM interop.</span></span> <span data-ttu-id="cc6c3-140">ただしこの場合には、操作を成功させるために、ラッパーの呼び出し元がアンマネージ コードの権利を持っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-140">However, if you do this, callers of your wrappers must have unmanaged code rights in order to succeed.</span></span> <span data-ttu-id="cc6c3-141">つまり既定のポリシーでは、イントラネットやインターネットからダウンロードされたコードはラッパーでは機能しません。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-141">Under default policy, this means that code downloaded from an intranet or the Internet will not work with the wrappers.</span></span>  
+  
+ <span data-ttu-id="cc6c3-142">これらのラッパーを使用するすべてのアプリケーションにアンマネージ コードの権利を与えるよりも、これらの権利をラッパー コードのみに与える方が望ましいと言えます。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-142">Instead of giving all applications that use these wrappers unmanaged code rights, it is better to give these rights only to the wrapper code.</span></span> <span data-ttu-id="cc6c3-143">基になる機能が何もリソースを公開しておらず、かつ実装も同様に安全である場合、ラッパーは、自分の権利をアサートしさえすれば、あらゆるコードが自分を通して呼び出しを行えるようにできます。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-143">If the underlying functionality exposes no resources and the implementation is likewise safe, the wrapper only needs to assert its rights, which enables any code to call through it.</span></span> <span data-ttu-id="cc6c3-144">リソースが関係する場合のセキュリティ コーディングは、次のセクションで説明するライブラリ コードのケースと同じです。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-144">When resources are involved, security coding should be the same as the library code case described in the next section.</span></span> <span data-ttu-id="cc6c3-145">ラッパーはこれらのリソースに対して呼び出し元を公開する可能性があるため、ネイティブ コードの安全性を慎重に確認する必要があり、その責任はラッパーにあります。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-145">Because the wrapper is potentially exposing callers to these resources, careful verification of the safety of the native code is necessary and is the wrapper's responsibility.</span></span>  
+  
+## <a name="library-code-that-exposes-protected-resources"></a><span data-ttu-id="cc6c3-146">保護されたリソースを公開するライブラリ コード</span><span class="sxs-lookup"><span data-stu-id="cc6c3-146">Library Code That Exposes Protected Resources</span></span>  
+ <span data-ttu-id="cc6c3-147">これはセキュリティ コーディングのアプローチとして最も強力なものであるため、方法を間違えるなら最も危険性の高いものともなります。ライブラリは他のコードに対し、(.NET Framework のクラスが使用するリソースのアクセス許可を課すのと同じように) 他の手段では使用できない特定のリソースにアクセスするためのインターフェイスとして機能します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-147">This is the most powerful and hence potentially dangerous (if done incorrectly) approach for security coding: Your library serves as an interface for other code to access certain resources that are not otherwise available, just as the classes of the .NET Framework enforce permissions for the resources they use.</span></span> <span data-ttu-id="cc6c3-148">どこでリソースを公開しようと、コードはまずそのリソースに適したアクセス許可を要求し (つまりセキュリティ チェックを実行しなければなりません)、それから通常は実際の操作を実行するための権利をアサートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-148">Wherever you expose a resource, your code must first demand the permission appropriate to the resource (that is, it must perform a security check) and then typically assert its rights to perform the actual operation.</span></span>  
+  
+## <a name="related-topics"></a><span data-ttu-id="cc6c3-149">関連トピック</span><span class="sxs-lookup"><span data-stu-id="cc6c3-149">Related Topics</span></span>  
+  
+|<span data-ttu-id="cc6c3-150">タイトル</span><span class="sxs-lookup"><span data-stu-id="cc6c3-150">Title</span></span>|<span data-ttu-id="cc6c3-151">説明</span><span class="sxs-lookup"><span data-stu-id="cc6c3-151">Description</span></span>|  
+|-----------|-----------------|  
+|[<span data-ttu-id="cc6c3-152">状態データの保護</span><span class="sxs-lookup"><span data-stu-id="cc6c3-152">Securing State Data</span></span>](../../../docs/standard/security/securing-state-data.md)|<span data-ttu-id="cc6c3-153">プライベート メンバーを保護する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-153">Describes how to protect private members.</span></span>|  
+|[<span data-ttu-id="cc6c3-154">セキュリティとユーザー入力</span><span class="sxs-lookup"><span data-stu-id="cc6c3-154">Security and User Input</span></span>](../../../docs/standard/security/security-and-user-input.md)|<span data-ttu-id="cc6c3-155">ユーザー入力を受け取るアプリケーションのセキュリティ問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-155">Describes security concerns for applications that accept user input.</span></span>|  
+|[<span data-ttu-id="cc6c3-156">セキュリティと競合状態</span><span class="sxs-lookup"><span data-stu-id="cc6c3-156">Security and Race Conditions</span></span>](../../../docs/standard/security/security-and-race-conditions.md)|<span data-ttu-id="cc6c3-157">コードで競合状態を回避する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-157">Describes how to avoid race conditions in your code.</span></span>|  
+|[<span data-ttu-id="cc6c3-158">セキュリティと実行時のコード生成</span><span class="sxs-lookup"><span data-stu-id="cc6c3-158">Security and On-the-Fly Code Generation</span></span>](../../../docs/standard/security/security-and-on-the-fly-code-generation.md)|<span data-ttu-id="cc6c3-159">動的なコードを生成するアプリケーションのセキュリティ問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-159">Describes security concerns for applications that generate dynamic code.</span></span>|  
+|[<span data-ttu-id="cc6c3-160">ロール ベースのセキュリティ</span><span class="sxs-lookup"><span data-stu-id="cc6c3-160">Role-Based Security</span></span>](../../../docs/standard/security/role-based-security.md)|<span data-ttu-id="cc6c3-161">.NET Framework のロールベース セキュリティについて詳しく説明し、コードで使用するための手順を示します。</span><span class="sxs-lookup"><span data-stu-id="cc6c3-161">Describes .NET Framework role-based security in detail and provides instructions for using it in your code.</span></span>|

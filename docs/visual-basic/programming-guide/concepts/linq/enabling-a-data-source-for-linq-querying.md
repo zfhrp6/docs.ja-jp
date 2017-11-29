@@ -1,64 +1,56 @@
 ---
-title: "LINQ Querying2 のデータ ソースの有効化 |Microsoft ドキュメント"
+title: "LINQ Querying2 のデータ ソースの有効化"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: c412f0cf-ff0e-4993-ab3d-1b49e23f00f8
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 34bdc4e056d982799eac35eb2398dd3f23f6f351
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 2a6ec979c4c7ed36a9b9f56b04de762fe4ec7fec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="enabling-a-data-source-for-linq-querying"></a>データ ソースの LINQ クエリの有効化
-さまざまな方法で拡張する[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]でクエリを実行する任意のデータ ソースを有効にする、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]パターンです。 データ ソースは、いくつか例を挙げると、データ構造体、Web サービス、ファイル システム、またはデータベースの場合があります。 クエリの構文とパターンは変わらないため、[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] パターンを使用すると、クライアントは [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリが有効になっているデータ ソースを簡単にクエリできます。 方法[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]を拡張できるこれらのデータをソースには、次が含まれます。  
+# <a name="enabling-a-data-source-for-linq-querying"></a><span data-ttu-id="c8c5c-102">データ ソースの LINQ クエリの有効化</span><span class="sxs-lookup"><span data-stu-id="c8c5c-102">Enabling a Data Source for LINQ Querying</span></span>
+<span data-ttu-id="c8c5c-103">[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] を拡張して、データ ソースを [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] パターンでクエリできるようにする方法はいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-103">There are various ways to extend [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] to enable any data source to be queried in the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pattern.</span></span> <span data-ttu-id="c8c5c-104">データ ソースは、いくつか例を挙げると、データ構造体、Web サービス、ファイル システム、またはデータベースの場合があります。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-104">The data source might be a data structure, a Web service, a file system, or a database, to name some.</span></span> <span data-ttu-id="c8c5c-105">クエリの構文とパターンは変わらないため、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] パターンを使用すると、クライアントは [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリが有効になっているデータ ソースを簡単にクエリできます。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-105">The [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pattern makes it easy for clients to query a data source for which [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] querying is enabled, because the syntax and pattern of the query does not change.</span></span> <span data-ttu-id="c8c5c-106">[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] は、次の方法によってこれらのデータ ソースに拡張することができます。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-106">The ways in which [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] can be extended to these data sources include the following:</span></span>  
   
--   実装する、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスを有効にするのには、タイプで[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]その型のオブジェクトを照会します</xref:System.Collections.Generic.IEnumerable%601>。  
+-   <span data-ttu-id="c8c5c-107">型に <xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装し、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] でその型のオブジェクト クエリを実行できるようにする。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-107">Implementing the <xref:System.Collections.Generic.IEnumerable%601> interface in a type to enable [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] to Objects querying of that type.</span></span>  
   
--   標準クエリ演算子メソッドのなど作成<xref:System.Linq.Enumerable.Where%2A>と<xref:System.Linq.Enumerable.Select%2A>ユーザー設定を有効にする、型を拡張する[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]その型のクエリを実行します</xref:System.Linq.Enumerable.Select%2A></xref:System.Linq.Enumerable.Where%2A>。  
+-   <span data-ttu-id="c8c5c-108">型を拡張する <xref:System.Linq.Enumerable.Where%2A> や <xref:System.Linq.Enumerable.Select%2A> などの標準クエリ演算子メソッドを作成し、その型のカスタム [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリを有効にする。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-108">Creating standard query operator methods such as <xref:System.Linq.Enumerable.Where%2A> and <xref:System.Linq.Enumerable.Select%2A> that extend a type, to enable custom [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] querying of that type.</span></span>  
   
--   実装するデータ ソースのプロバイダーを作成する、<xref:System.Linq.IQueryable%601>インターフェイス</xref:System.Linq.IQueryable%601>。 このインターフェイスを実装したプロバイダーは、式ツリーの形式で [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリを受け取ります。プロバイダーはこれをカスタマイズされた方法 (たとえばリモート) で実行できます。  
+-   <span data-ttu-id="c8c5c-109">データ ソース用に、<xref:System.Linq.IQueryable%601> インターフェイスを実装したプロバイダーを作成する。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-109">Creating a provider for your data source that implements the <xref:System.Linq.IQueryable%601> interface.</span></span> <span data-ttu-id="c8c5c-110">このインターフェイスを実装したプロバイダーは、式ツリーの形式で [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリを受け取ります。プロバイダーはこれをカスタマイズされた方法 (たとえばリモート) で実行できます。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-110">A provider that implements this interface receives [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries in the form of expression trees, which it can execute in a custom way, for example remotely.</span></span>  
   
--   既存の活用、データ ソースのプロバイダーを作成する[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]テクノロジです。 そのようなプロバイダーは、クエリだけでなく、挿入、更新、および削除などの操作や、ユーザー定義型のマッピングも有効にします。  
+-   <span data-ttu-id="c8c5c-111">データ ソース用に、既存の [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] テクノロジを利用するプロバイダーを作成する。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-111">Creating a provider for your data source that takes advantage of an existing [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] technology.</span></span> <span data-ttu-id="c8c5c-112">そのようなプロバイダーは、クエリだけでなく、挿入、更新、および削除などの操作や、ユーザー定義型のマッピングも有効にします。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-112">Such a provider would enable not only querying, but also insert, update, and delete operations and mapping for user-defined types.</span></span>  
   
- このトピックでは、これらのオプションについて説明します。  
+ <span data-ttu-id="c8c5c-113">このトピックでは、これらのオプションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-113">This topic discusses these options.</span></span>  
   
-## <a name="how-to-enable-linq-querying-of-your-data-source"></a>データ ソースの LINQ クエリを有効にする方法  
+## <a name="how-to-enable-linq-querying-of-your-data-source"></a><span data-ttu-id="c8c5c-114">データ ソースの LINQ クエリを有効にする方法</span><span class="sxs-lookup"><span data-stu-id="c8c5c-114">How to Enable LINQ Querying of Your Data Source</span></span>  
   
-### <a name="in-memory-data"></a>インメモリ データ  
- 2 つの方法が有効にできます[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]メモリ内のデータのクエリを実行します。 実装する型の場合は、データ<xref:System.Collections.Generic.IEnumerable%601>を使用して、データを照会する[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]オブジェクトにします</xref:System.Collections.Generic.IEnumerable%601>。 実装することで、型の列挙体を有効にする意味が行わないかどうか、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスを定義できます[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]標準クエリ演算子メソッドをその型または作成[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]標準クエリ演算子メソッド型を拡張する</xref:System.Collections.Generic.IEnumerable%601>。 標準クエリ演算子のカスタム実装は、結果を返すために遅延実行を使用する必要があります。  
+### <a name="in-memory-data"></a><span data-ttu-id="c8c5c-115">インメモリ データ</span><span class="sxs-lookup"><span data-stu-id="c8c5c-115">In-Memory Data</span></span>  
+ <span data-ttu-id="c8c5c-116">インメモリ データの [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリを有効にする方法は 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-116">There are two ways you can enable [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] querying of in-memory data.</span></span> <span data-ttu-id="c8c5c-117">データ型が <xref:System.Collections.Generic.IEnumerable%601> を実装する型の場合、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] to Objects を使用してデータをクエリすることができます。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-117">If the data is of a type that implements <xref:System.Collections.Generic.IEnumerable%601>, you can query the data by using [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] to Objects.</span></span> <span data-ttu-id="c8c5c-118"><xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装して型の列挙体を有効にしても意味がない場合は、その型の [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] 標準クエリ演算子メソッドを定義するか、または型を拡張する [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] 標準クエリ演算子メソッドを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-118">If it does not make sense to enable enumeration of your type by implementing the <xref:System.Collections.Generic.IEnumerable%601> interface, you can define [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] standard query operator methods in that type or create [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] standard query operator methods that extend the type.</span></span> <span data-ttu-id="c8c5c-119">標準クエリ演算子のカスタム実装は、結果を返すために遅延実行を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-119">Custom implementations of the standard query operators should use deferred execution to return the results.</span></span>  
   
-### <a name="remote-data"></a>リモート データ  
- 有効にするための最適なオプション[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]を実装するのには、リモート データ ソースのクエリ、<xref:System.Linq.IQueryable%601>インターフェイス</xref:System.Linq.IQueryable%601>。 しかしこれは、[!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)] などのプロバイダーをデータ ソースに対して拡張することとは別です。 既存の拡張するためにプロバイダー モデル[!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]テクノロジなど[!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)] でその他の型のデータ ソースが利用[!INCLUDE[vs_orcas_long](../../../../csharp/misc/includes/vs_orcas_long_md.md)]します。  
+### <a name="remote-data"></a><span data-ttu-id="c8c5c-120">リモート データ</span><span class="sxs-lookup"><span data-stu-id="c8c5c-120">Remote Data</span></span>  
+ <span data-ttu-id="c8c5c-121">リモート データ ソースの [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリを有効にするための最善の選択肢は、<xref:System.Linq.IQueryable%601> インターフェイスを実装することです。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-121">The best option for enabling [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] querying of a remote data source is to implement the <xref:System.Linq.IQueryable%601> interface.</span></span> <span data-ttu-id="c8c5c-122">しかしこれは、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] などのプロバイダーをデータ ソースに対して拡張することとは別です。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-122">However, this differs from extending a provider such as [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] for a data source.</span></span> <span data-ttu-id="c8c5c-123">[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] では、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] などの既存の [!INCLUDE[vs_orcas_long](~/includes/vs-orcas-long-md.md)] テクノロジを別の型のデータ ソースに拡張するためにプロバイダー モデルを使用することができません。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-123">No provider models for extending existing [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] technologies, such as [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], to other types of data source are available in [!INCLUDE[vs_orcas_long](~/includes/vs-orcas-long-md.md)].</span></span>  
   
-## <a name="iqueryable-linq-providers"></a>IQueryable LINQ プロバイダー  
- [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)]実装したプロバイダー<xref:System.Linq.IQueryable%601>複雑度に大きく異なることができます</xref:System.Linq.IQueryable%601>。 このセクションでは、さまざまなレベルの複雑度について説明します。  
+## <a name="iqueryable-linq-providers"></a><span data-ttu-id="c8c5c-124">IQueryable LINQ プロバイダー</span><span class="sxs-lookup"><span data-stu-id="c8c5c-124">IQueryable LINQ Providers</span></span>  
+ <span data-ttu-id="c8c5c-125"><xref:System.Linq.IQueryable%601> を実装する [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーの複雑度にはかなりのばらつきがあります。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-125">[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] providers that implement <xref:System.Linq.IQueryable%601> can vary widely in their complexity.</span></span> <span data-ttu-id="c8c5c-126">このセクションでは、さまざまなレベルの複雑度について説明します。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-126">This section discusses the different levels of complexity.</span></span>  
   
- 複雑度が低めの `IQueryable` プロバイダーは、多くの場合、Web サービスの単一のメソッドとやり取りします。 この種のプロバイダーは処理するクエリに特定の情報を受け取るので非常に高い固有性を持ちます。 クローズされた型システムを持ち、おそらく&1; つの結果型を公開します。 たとえばを使用するクエリの実行のほとんどがローカルで発生する、<xref:System.Linq.Enumerable>標準クエリ演算子の実装</xref:System.Linq.Enumerable>。 複雑度が低めのプロバイダーは、クエリを表す式ツリーのメソッド呼び出し式を&1; つだけ調べ、残りのクエリのロジックは他の場所で処理されるようにします。  
+ <span data-ttu-id="c8c5c-127">複雑度が低めの `IQueryable` プロバイダーは、多くの場合、Web サービスの単一のメソッドとやり取りします。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-127">A less complex `IQueryable` provider might interface with a single method of a Web service.</span></span> <span data-ttu-id="c8c5c-128">この種のプロバイダーは処理するクエリに特定の情報を受け取るので非常に高い固有性を持ちます。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-128">This type of provider is very specific because it expects specific information in the queries that it handles.</span></span> <span data-ttu-id="c8c5c-129">クローズされた型システムを持ち、おそらく 1 つの結果型を公開します。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-129">It has a closed type system, perhaps exposing a single result type.</span></span> <span data-ttu-id="c8c5c-130">クエリはほとんどの場合、標準クエリ演算子の <xref:System.Linq.Enumerable> 実装などを使用して、ローカルで実行されます。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-130">Most of the execution of the query occurs locally, for example by using the <xref:System.Linq.Enumerable> implementations of the standard query operators.</span></span> <span data-ttu-id="c8c5c-131">複雑度が低めのプロバイダーは、クエリを表す式ツリーのメソッド呼び出し式を 1 つだけ調べ、残りのクエリのロジックは他の場所で処理されるようにします。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-131">A less complex provider might examine only one method call expression in the expression tree that represents the query, and let the remaining logic of the query be handled elsewhere.</span></span>  
   
- 複雑度が中レベルの `IQueryable` プロバイダーは、部分的に表現力が豊かなクエリ言語を持つデータ ソースを対象とします。 そのプロバイダーが Web サービスを対象とする場合、Web サービスの複数のメソッドとやり取りし、クエリが提示する問題に基づいて呼び出すメソッドを選択します。 中レベルの複雑度のプロバイダーは、簡単なプロバイダーより型システムが豊富ですが、それでもその種類は限られています。 たとえば、このレベルのプロバイダーは走査できる一対多リレーションシップを持つ型を公開する場合がありますが、ユーザー定義型のマッピング テクノロジは提供しません。  
+ <span data-ttu-id="c8c5c-132">複雑度が中レベルの `IQueryable` プロバイダーは、部分的に表現力が豊かなクエリ言語を持つデータ ソースを対象とします。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-132">An `IQueryable` provider of medium complexity might target a data source that has a partially expressive query language.</span></span> <span data-ttu-id="c8c5c-133">そのプロバイダーが Web サービスを対象とする場合、Web サービスの複数のメソッドとやり取りし、クエリが提示する問題に基づいて呼び出すメソッドを選択します。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-133">If it targets a Web service, it might interface with more than one method of the Web service and select the method to call based on the question that the query poses.</span></span> <span data-ttu-id="c8c5c-134">中レベルの複雑度のプロバイダーは、簡単なプロバイダーより型システムが豊富ですが、それでもその種類は限られています。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-134">A provider of medium complexity would have a richer type system than a simple provider, but it would still be a fixed type system.</span></span> <span data-ttu-id="c8c5c-135">たとえば、このレベルのプロバイダーは走査できる一対多リレーションシップを持つ型を公開する場合がありますが、ユーザー定義型のマッピング テクノロジは提供しません。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-135">For example, the provider might expose types that have one-to-many relationships that can be traversed, but it would not provide mapping technology for user-defined types.</span></span>  
   
- `IQueryable` プロバイダーなどの複雑な [!INCLUDE[vbtecdlinq](../../../../csharp/includes/vbtecdlinq_md.md)] プロバイダーは [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] クエリ一式を、SQL などの表現力が豊かなクエリ言語に変換する場合があります。 複雑なプロバイダーは、それほど複雑でないプロバイダーより一般的です。これは、より多様な質問をクエリで処理できるためです。 さらに、オープンな型システムを持つため、ユーザー定義型をマップするために広範なインフラストラクチャを含める必要があります。 複雑なプロバイダーの開発には、多大な労力を要します。  
+ <span data-ttu-id="c8c5c-136">`IQueryable` プロバイダーなどの複雑な [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] プロバイダーは [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ一式を、SQL などの表現力が豊かなクエリ言語に変換する場合があります。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-136">A complex `IQueryable` provider, such as the [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] provider, might translate complete [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries to an expressive query language, such as SQL.</span></span> <span data-ttu-id="c8c5c-137">複雑なプロバイダーは、それほど複雑でないプロバイダーより一般的です。これは、より多様な質問をクエリで処理できるためです。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-137">A complex provider is more general than a less complex provider, because it can handle a wider variety of questions in the query.</span></span> <span data-ttu-id="c8c5c-138">さらに、オープンな型システムを持つため、ユーザー定義型をマップするために広範なインフラストラクチャを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-138">It also has an open type system and therefore must contain extensive infrastructure to map user-defined types.</span></span> <span data-ttu-id="c8c5c-139">複雑なプロバイダーの開発には、多大な労力を要します。</span><span class="sxs-lookup"><span data-stu-id="c8c5c-139">Developing a complex provider requires a significant amount of effort.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Linq.IQueryable%601></xref:System.Linq.IQueryable%601>   
- <xref:System.Collections.Generic.IEnumerable%601></xref:System.Collections.Generic.IEnumerable%601>   
- <xref:System.Linq.Enumerable></xref:System.Linq.Enumerable>   
- [標準クエリ演算子の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+## <a name="see-also"></a><span data-ttu-id="c8c5c-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="c8c5c-140">See Also</span></span>  
+ <xref:System.Linq.IQueryable%601>  
+ <xref:System.Collections.Generic.IEnumerable%601>  
+ <xref:System.Linq.Enumerable>  
+ [<span data-ttu-id="c8c5c-141">標準クエリ演算子の概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c8c5c-141">Standard Query Operators Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [<span data-ttu-id="c8c5c-142">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c8c5c-142">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)

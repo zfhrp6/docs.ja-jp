@@ -1,36 +1,28 @@
 ---
-title: "方法: 一連のフォルダー (LINQ) (Visual Basic) のバイト数の合計数を問い合わせる |Microsoft ドキュメント"
+title: "方法: 一連のフォルダー (LINQ) (Visual Basic) のバイト数の合計数をクエリ"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: bfe85ed2-44dc-4ef1-aac7-241622b80a69
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 668a8a4d89f7b81c3aef9b4e1a46ad749c4a8341
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b200581f4876400727c63e86e3ccf4a44c67914b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-visual-basic"></a>方法: 一連のフォルダー (LINQ) (Visual Basic) のバイト数の合計数を問い合わせる
-この例では、指定したフォルダー内のすべてのファイルとそのすべてのサブフォルダーで使用されるバイトの総数を取得する方法を示します。  
+# <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-visual-basic"></a><span data-ttu-id="d82d3-102">方法: 一連のフォルダー (LINQ) (Visual Basic) のバイト数の合計数をクエリ</span><span class="sxs-lookup"><span data-stu-id="d82d3-102">How to: Query for the Total Number of Bytes in a Set of Folders (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="d82d3-103">この例では、指定したフォルダーとそのすべてのサブフォルダーに格納されている全ファイルの合計バイト数を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d82d3-103">This example shows how to retrieve the total number of bytes used by all the files in a specified folder and all its subfolders.</span></span>  
   
-## <a name="example"></a>例  
- <xref:System.Linq.Enumerable.Sum%2A>メソッドを追加で選択されているすべてのアイテムの値、`select`句</xref:System.Linq.Enumerable.Sum%2A>。 <xref:System.Linq.Enumerable.Min%2A>または<xref:System.Linq.Enumerable.Max%2A><xref:System.Linq.Enumerable.Sum%2A>。</xref:System.Linq.Enumerable.Sum%2A>の代わりにメソッド</xref:System.Linq.Enumerable.Max%2A></xref:System.Linq.Enumerable.Min%2A>を呼び出すことによって指定されたディレクトリ ツリー内の最大または最小のファイルを取得するには、このクエリを簡単に変更することができます。  
+## <a name="example"></a><span data-ttu-id="d82d3-104">例</span><span class="sxs-lookup"><span data-stu-id="d82d3-104">Example</span></span>  
+ <span data-ttu-id="d82d3-105"><xref:System.Linq.Enumerable.Sum%2A> は、`select` 句で選択されたすべての項目の値を加算するメソッドです。</span><span class="sxs-lookup"><span data-stu-id="d82d3-105">The <xref:System.Linq.Enumerable.Sum%2A> method adds the values of all the items selected in the `select` clause.</span></span> <span data-ttu-id="d82d3-106">このクエリに少し変更を加え、<xref:System.Linq.Enumerable.Sum%2A> の代わりに <xref:System.Linq.Enumerable.Min%2A> メソッドまたは <xref:System.Linq.Enumerable.Max%2A> メソッドを呼び出せば、指定したディレクトリ ツリーの最大ファイルまたは最小ファイルを取得することができます。</span><span class="sxs-lookup"><span data-stu-id="d82d3-106">You can easily modify this query to retrieve the biggest or smallest file in the specified directory tree by calling the <xref:System.Linq.Enumerable.Min%2A> or <xref:System.Linq.Enumerable.Max%2A> method instead of <xref:System.Linq.Enumerable.Sum%2A>.</span></span>  
   
 ```vb  
 Module QueryTotalBytes  
@@ -84,13 +76,13 @@ Module QueryTotalBytes
 End Module  
 ```  
   
- 指定したディレクトリ ツリー内のバイト数をカウントするした場合これより効率的にデータ ソースとしてリスト コレクションを作成するオーバーヘッドが発生し、LINQ クエリを作成しなくても実行できます。 LINQ アプローチの有用性は、クエリがより複雑なまたは同じデータ ソースに対して複数のクエリを実行するときに増加します。  
+ <span data-ttu-id="d82d3-107">指定したディレクトリ ツリー内のバイト数をカウントするだけならば、LINQ クエリを作成せずに行う方が効率的です。LINQ クエリでは、データ ソースとしてリスト コレクションを作成する際のオーバーヘッドが発生します。</span><span class="sxs-lookup"><span data-stu-id="d82d3-107">If you only have to count the number of bytes in a specified directory tree, you can do this more efficiently without creating a LINQ query, which incurs the overhead of creating the list collection as a data source.</span></span> <span data-ttu-id="d82d3-108">LINQ を使ったアプローチは、クエリが複雑化するか、同じデータ ソースに対して複数のクエリを実行する必要があるときに利便性が増します。</span><span class="sxs-lookup"><span data-stu-id="d82d3-108">The usefulness of the LINQ approach increases as the query becomes more complex, or when you have to run multiple queries against the same data source.</span></span>  
   
- クエリは、ファイル長を取得する別のメソッドを呼び出します。 これは、ファイルが別のスレッドの後で削除された場合に発生する例外を使用するために、<xref:System.IO.FileInfo>への呼び出しでオブジェクトが作成された`GetFiles`</xref:System.IO.FileInfo>。 にもかかわらず、<xref:System.IO.FileInfo>オブジェクトが既に作成されて、例外が発生する可能性があるため、<xref:System.IO.FileInfo>オブジェクトは、更新しようとしますその<xref:System.IO.FileInfo.Length%2A>プロパティへのアクセスは、最初に、最新の長さを持つプロパティです。</xref:System.IO.FileInfo.Length%2A> </xref:System.IO.FileInfo> </xref:System.IO.FileInfo> 。 クエリの外部の try-catch ブロックでこの操作を配置することでコードは、副作用を引き起こす可能性のあるクエリでの操作を防ぐためのルールに従います。 一般に、アプリケーションが不明な状態で残っていないことを確認する例外を処理する時は、十分な注意を考慮しなければなりません。  
+ <span data-ttu-id="d82d3-109">このクエリは、ファイルの長さを取得するために別のメソッドを呼び出しています。</span><span class="sxs-lookup"><span data-stu-id="d82d3-109">The query calls out to a separate method to obtain the file length.</span></span> <span data-ttu-id="d82d3-110">その理由は、`GetFiles` の呼び出しで <xref:System.IO.FileInfo> オブジェクトが作成された後に別のスレッドでファイルが削除された場合に発生する可能性のある例外を処理するためです。</span><span class="sxs-lookup"><span data-stu-id="d82d3-110">It does this in order to consume the possible exception that will be raised if the file was deleted on another thread after the <xref:System.IO.FileInfo> object was created in the call to `GetFiles`.</span></span> <span data-ttu-id="d82d3-111"><xref:System.IO.FileInfo> オブジェクトの作成後であっても、例外は発生する可能性があります。<xref:System.IO.FileInfo> オブジェクトは、<xref:System.IO.FileInfo.Length%2A> プロパティが最初にアクセスされたときに最新の長さに基づいてそのプロパティを更新しようと試みるためです。</span><span class="sxs-lookup"><span data-stu-id="d82d3-111">Even though the <xref:System.IO.FileInfo> object has already been created, the exception can occur because a <xref:System.IO.FileInfo> object will try to refresh its <xref:System.IO.FileInfo.Length%2A> property with the most current length the first time the property is accessed.</span></span> <span data-ttu-id="d82d3-112">この操作をクエリの外側の try-catch ブロックに置くことで、"副作用の原因となりうるような操作はクエリ内では行わない" という原則に従っているのです。</span><span class="sxs-lookup"><span data-stu-id="d82d3-112">By putting this operation in a try-catch block outside the query, the code follows the rule of avoiding operations in queries that can cause side-effects.</span></span> <span data-ttu-id="d82d3-113">一般に、アプリケーションが不明な状態に陥ることのないよう、例外を処理する際には十分な注意が必要です。</span><span class="sxs-lookup"><span data-stu-id="d82d3-113">In general, great care must be taken when you consume exceptions to make sure that an application is not left in an unknown state.</span></span>  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+## <a name="compiling-the-code"></a><span data-ttu-id="d82d3-114">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="d82d3-114">Compiling the Code</span></span>  
+ <span data-ttu-id="d82d3-115">.NET Framework version 3.5 以降では、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメント。</span><span class="sxs-lookup"><span data-stu-id="d82d3-115">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a   `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
- [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="d82d3-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="d82d3-116">See Also</span></span>  
+ [<span data-ttu-id="d82d3-117">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d82d3-117">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
+ [<span data-ttu-id="d82d3-118">LINQ とファイル ディレクトリ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d82d3-118">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -1,145 +1,148 @@
 ---
-title: "グラフィックスの描画層 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "グラフィックスの描画層"
-  - "グラフィックス, パフォーマンス"
-  - "グラフィックス, 描画層"
-  - "描画 (グラフィックスを)"
-  - "描画層"
+title: "グラフィックスの描画層"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- graphics [WPF], performance
+- rendering graphics [WPF]
+- rendering tiers [WPF]
+- graphics rendering tiers [WPF]
+- graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-caps.latest.revision: 44
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 43
+caps.latest.revision: "44"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4a64ca2f0da2e10a3042b5f9c30baf3caa37534e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# グラフィックスの描画層
-描画層は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを実行するデバイスのグラフィックス ハードウェアの機能およびパフォーマンスのレベルを定義します。  
+# <a name="graphics-rendering-tiers"></a><span data-ttu-id="3bdd1-102">グラフィックスの描画層</span><span class="sxs-lookup"><span data-stu-id="3bdd1-102">Graphics Rendering Tiers</span></span>
+<span data-ttu-id="3bdd1-103">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを実行するデバイスのグラフィックス ハードウェア性能は描画層で決まります。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-103">A rendering tier defines a level of graphics hardware capability and performance for a device that runs a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application.</span></span>  
   
-   
+
   
 <a name="graphics_hardware"></a>   
-## グラフィックス ハードウェア  
- 描画層のレベルに大きく影響するグラフィックス ハードウェアの機能は、次のとおりです。  
+## <a name="graphics-hardware"></a><span data-ttu-id="3bdd1-104">グラフィックス ハードウェア</span><span class="sxs-lookup"><span data-stu-id="3bdd1-104">Graphics Hardware</span></span>  
+ <span data-ttu-id="3bdd1-105">描画層に最も影響を与えるグラフィックス ハードウェアの機能:</span><span class="sxs-lookup"><span data-stu-id="3bdd1-105">The features of the graphics hardware that most impact the rendering tier levels are:</span></span>  
   
--   **ビデオ RAM** グラフィックス ハードウェアのビデオ メモリの量によって、グラフィックスを合成する際に使用できるバッファーのサイズと数が決まります。  
+-   <span data-ttu-id="3bdd1-106">**ビデオ RAM** グラフィックス ハードウェアのビデオ メモリの量で、グラフィックスの構築に利用できるバッファーのサイズと数が決まります。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-106">**Video RAM** The amount of video memory on the graphics hardware determines the size and number of buffers that can be used for compositing graphics.</span></span>  
   
--   **ピクセル シェーダー** ピクセル シェーダーは、ピクセル単位で効果を計算するグラフィックス処理関数です。  表示するグラフィックスの解像度によっては、各表示フレームの処理に数百万ピクセルが必要な場合もあります。  
+-   <span data-ttu-id="3bdd1-107">**ピクセル シェーダー** ピクセル シェーダーは、ピクセル単位で効果を計算するグラフィックス処理機能です。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-107">**Pixel Shader** A pixel shader is a graphics processing function that calculates effects on a per-pixel basis.</span></span> <span data-ttu-id="3bdd1-108">表示されるグラフィックスの解像度によっては、各表示フレームの処理に数百万単位のピクセルが必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-108">Depending on the resolution of the displayed graphics, there could be several million pixels that need to be processed for each display frame.</span></span>  
   
--   **頂点シェーダー** 頂点シェーダーは、オブジェクトの頂点データの算術演算を実行するグラフィックス処理関数です。  
+-   <span data-ttu-id="3bdd1-109">**頂点シェーダー** 頂点シェーダーは、オブジェクトの頂点データに数学演算を実行するグラフィックス処理機能です。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-109">**Vertex Shader** A vertex shader is a graphics processing function that performs mathematical operations on the vertex data of the object.</span></span>  
   
--   **マルチテクスチャのサポート** マルチテクスチャがサポートされていると、3D グラフィックス オブジェクトのブレンド操作を行うときに、2 つ以上の別個のテクスチャを適用できます。  マルチテクスチャのサポートの度合いは、グラフィックス ハードウェアのマルチテクスチャ ユニットの数によって決まります。  
+-   <span data-ttu-id="3bdd1-110">**マルチテクスチャ サポート** マルチテクスチャ サポートとは、3D グラフィックス オブジェクトにブレンド操作を実行するとき、2 つ以上の異なるテクスチャを適用できる機能のことです。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-110">**Multitexture Support** Multitexture support refers to the ability to apply two or more distinct textures during a blending operation on a 3D graphics object.</span></span> <span data-ttu-id="3bdd1-111">マルチテクスチャ サポートの度合いは、グラフィックス ハードウェア上のマルチテクスチャ ユニットの数で決まります。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-111">The degree of multitexture support is determined by the number of multitexture units on the graphics hardware.</span></span>  
   
 <a name="rendering_tier_definitions"></a>   
-## 描画層の定義  
- グラフィックス ハードウェアの機能によって、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションの表示能力が決まります。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] システムは、次の 3 つの描画階層を定義します。  
+## <a name="rendering-tier-definitions"></a><span data-ttu-id="3bdd1-112">描画層の定義</span><span class="sxs-lookup"><span data-stu-id="3bdd1-112">Rendering Tier Definitions</span></span>  
+ <span data-ttu-id="3bdd1-113">グラフィックス ハードウェアの機能により [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションのレンダリング能力が決まります。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-113">The features of the graphics hardware determine the rendering capability of a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application.</span></span> <span data-ttu-id="3bdd1-114">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] システムには次の 3 つの描画層があります。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-114">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] system defines three rendering tiers:</span></span>  
   
--   **描画層 0** グラフィックス ハードウェアの加速が使用されません。  すべてのグラフィックス機能で、ソフトウェア アクセラレータを使用します。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン レベルは Version 9.0 未満です。  
+-   <span data-ttu-id="3bdd1-115">**描画層 0** グラフィックス ハードウェアの高速化はありません。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-115">**Rendering Tier 0** No graphics hardware acceleration.</span></span> <span data-ttu-id="3bdd1-116">すべてのグラフィックス機能でソフトウェア高速化が利用されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-116">All graphics features use software acceleration.</span></span> <span data-ttu-id="3bdd1-117">[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] バージョン レベルはバージョン 9.0 より前です。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-117">The [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] version level is less than version 9.0.</span></span>  
   
--   **描画層 1** 一部のグラフィックス機能で、グラフィックス ハードウェア アクセラレータを使用します。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン レベルは Version 9.0 以上です。  
+-   <span data-ttu-id="3bdd1-118">**描画層 1** 一部のグラフィックス機能でグラフィックス ハードウェア高速が利用されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-118">**Rendering Tier 1** Some graphics features use graphics hardware acceleration.</span></span> <span data-ttu-id="3bdd1-119">[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] バージョンのレベルはバージョン 9.0 以上です。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-119">The [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] version level is greater than or equal to version 9.0.</span></span>  
   
--   **描画層 2** ほとんどのグラフィックス機能でグラフィックス ハードウェアの加速を使用します。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン レベルは Version 9.0 以上です。  
+-   <span data-ttu-id="3bdd1-120">**描画層 2** ほとんどのグラフィックス機能でグラフィックス ハードウェア高速が利用されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-120">**Rendering Tier 2** Most graphics features use graphics hardware acceleration.</span></span> <span data-ttu-id="3bdd1-121">[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] バージョンのレベルはバージョン 9.0 以上です。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-121">The [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] version level is greater than or equal to version 9.0.</span></span>  
   
- <xref:System.Windows.Media.RenderCapability.Tier%2A?displayProperty=fullName> プロパティを使用すると、アプリケーションの実行時に描画層を取得できます。  描画層を使用すると、特定のハードウェア アクセラレータ グラフィックス機能がデバイスでサポートされているかどうかを確認できます。  アプリケーションは、デバイスでサポートされている描画層に応じて、実行時に異なるコード パスを受け取ることができます。  
+ <span data-ttu-id="3bdd1-122"><xref:System.Windows.Media.RenderCapability.Tier%2A?displayProperty=nameWithType>プロパティでは、アプリケーション実行時の描画層を取得することができます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-122">The <xref:System.Windows.Media.RenderCapability.Tier%2A?displayProperty=nameWithType> property allows you to retrieve the rendering tier at application run time.</span></span> <span data-ttu-id="3bdd1-123">描画層を利用し、特定のハードウェア高速化グラフィックス機能にデバイスが対応しているか判断します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-123">You use the rendering tier to determine whether the device supports certain hardware-accelerated graphics features.</span></span> <span data-ttu-id="3bdd1-124">その後、デバイスでサポートされている描画層に基づき、アプリケーションが実行時にさまざまなコード パスを取ります。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-124">Your application can then take different code paths at run time depending on the rendering tier supported by the device.</span></span>  
   
-### 描画層 0  
- 描画層の値 0 は、デバイスのアプリケーションに使用できるグラフィックス ハードウェア アクセラレータがないことを示します。  この描画層では、すべてのグラフィックスがハードウェア アクセラレータを使用せずにソフトウェアで描画されることを想定する必要があります。  この層の機能は、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] の 9.0 未満の Version に対応します。  
+### <a name="rendering-tier-0"></a><span data-ttu-id="3bdd1-125">描画層 0</span><span class="sxs-lookup"><span data-stu-id="3bdd1-125">Rendering Tier 0</span></span>  
+ <span data-ttu-id="3bdd1-126">0 値の描画層は、デバイスのアプリケーションでグラフィックス ハードウェア高速化を利用できないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-126">A rendering tier value of 0 means that there is no graphics hardware acceleration available for the application on the device.</span></span> <span data-ttu-id="3bdd1-127">この層レベルでは、ハードウェア高速化がなく、すべてのグラフィックスがソフトウェアにより描画されるものと想定してください。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-127">At this tier level, you should assume that all graphics will be rendered by software with no hardware acceleration.</span></span> <span data-ttu-id="3bdd1-128">この層の機能は、9.0 より前のバージョンの [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] に相当します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-128">This tier's functionality corresponds to a [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] version that is less than 9.0.</span></span>  
   
-### 描画層 1 および描画層 2  
+### <a name="rendering-tier-1-and-rendering-tier-2"></a><span data-ttu-id="3bdd1-129">描画層 1 と描画層 2</span><span class="sxs-lookup"><span data-stu-id="3bdd1-129">Rendering Tier 1 and Rendering Tier 2</span></span>  
   
 > [!NOTE]
->  .NET Framework 4 以降、描画層 1 は、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 以降をサポートするグラフィックス ハードウェアのみを含むように再定義されています。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 7 または 8 をサポートするグラフィックス ハードウェアは、描画層 0 と定義されています。  
+>  <span data-ttu-id="3bdd1-130">.NET Framework 4 より、描画層 1 が再定義され、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 9.0 以上をサポートするグラフィックスのみが含まれます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-130">Starting in the .NET Framework 4, rendering tier 1 has been redefined to only include graphics hardware that supports [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 9.0 or greater.</span></span> <span data-ttu-id="3bdd1-131">[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 7 または 8 をサポートするグラフィックス ハードウェアは現在、描画層 0 として定義されています。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-131">Graphics hardware that supports [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 7 or 8 is now defined as rendering tier 0.</span></span>  
   
- 描画層の値 1 または 2 は、必要なシステム リソースが使用可能であり、枯渇していない場合に、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のほとんどのグラフィックス機能がハードウェア アクセラレータを使用することを示します。  これは、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] の 9.0 以上の Version に対応します。  
+ <span data-ttu-id="3bdd1-132">描画層の値 1 または 2 は、必要なシステム リソースがあり、枯渇していなければ、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のグラフィックス機能のほとんどでハードウェア高速化が利用されることを意味します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-132">A rendering tier value of 1 or 2 means that most of the graphics features of [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] will use hardware acceleration if the necessary system resources are available and have not been exhausted.</span></span> <span data-ttu-id="3bdd1-133">これは 9.0 以上のバージョンの [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] に相当します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-133">This corresponds to a [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] version that is greater than or equal to 9.0.</span></span>  
   
- 描画層 1 と描画層 2 のグラフィックス ハードウェア要件の違いを次の表に示します。  
+ <span data-ttu-id="3bdd1-134">次の表は、描画層 1 と描画層 2 のグラフィックス ハードウェア要件の違いをまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-134">The following table shows the differences in graphics hardware requirements for rendering tier 1 and rendering tier 2:</span></span>  
   
-|機能|層 1|層 2|  
-|--------|---------|---------|  
-|[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン|9.0 以上であることが必要です。|9.0 以上であることが必要です。|  
-|ビデオ RAM|60 MB 以上であることが必要です。|120 MB 以上であることが必要です。|  
-|ピクセル シェーダー|バージョン レベルは、2.0 以上であることが必要です。|バージョン レベルは、2.0 以上であることが必要です。|  
-|頂点シェーダー|要件は特にありません。|バージョン レベルは、2.0 以上であることが必要です。|  
-|マルチテクスチャ単位|要件は特にありません。|単位数は、4 以上であることが必要です。|  
+|<span data-ttu-id="3bdd1-135">特性</span><span class="sxs-lookup"><span data-stu-id="3bdd1-135">Feature</span></span>|<span data-ttu-id="3bdd1-136">層 1</span><span class="sxs-lookup"><span data-stu-id="3bdd1-136">Tier 1</span></span>|<span data-ttu-id="3bdd1-137">層 2</span><span class="sxs-lookup"><span data-stu-id="3bdd1-137">Tier 2</span></span>|  
+|-------------|------------|------------|  
+|[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]<span data-ttu-id="3bdd1-138"> のバージョン</span><span class="sxs-lookup"><span data-stu-id="3bdd1-138"> version</span></span>|<span data-ttu-id="3bdd1-139">9.0 以上が要求されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-139">Must be greater than or equal to 9.0.</span></span>|<span data-ttu-id="3bdd1-140">9.0 以上が要求されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-140">Must be greater than or equal to 9.0.</span></span>|  
+|<span data-ttu-id="3bdd1-141">ビデオ RAM</span><span class="sxs-lookup"><span data-stu-id="3bdd1-141">Video RAM</span></span>|<span data-ttu-id="3bdd1-142">60MB 以上が要求されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-142">Must be greater than or equal to 60MB.</span></span>|<span data-ttu-id="3bdd1-143">120MB 以上が要求されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-143">Must be greater than or equal to 120MB.</span></span>|  
+|<span data-ttu-id="3bdd1-144">ピクセル シェーダー</span><span class="sxs-lookup"><span data-stu-id="3bdd1-144">Pixel shader</span></span>|<span data-ttu-id="3bdd1-145">バージョン 2.0 以上が要求されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-145">Version level must greater than or equal to 2.0.</span></span>|<span data-ttu-id="3bdd1-146">バージョン 2.0 以上が要求されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-146">Version level must greater than or equal to 2.0.</span></span>|  
+|<span data-ttu-id="3bdd1-147">頂点シェーダー</span><span class="sxs-lookup"><span data-stu-id="3bdd1-147">Vertex shader</span></span>|<span data-ttu-id="3bdd1-148">要件はありません。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-148">No requirement.</span></span>|<span data-ttu-id="3bdd1-149">バージョン 2.0 以上が要求されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-149">Version level must greater than or equal to 2.0.</span></span>|  
+|<span data-ttu-id="3bdd1-150">マルチテクスチャ ユニット</span><span class="sxs-lookup"><span data-stu-id="3bdd1-150">Multitexture units</span></span>|<span data-ttu-id="3bdd1-151">要件はありません。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-151">No requirement.</span></span>|<span data-ttu-id="3bdd1-152">ユニット数が 4 以上であることが要求されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-152">Number of units must greater than or equal to 4.</span></span>|  
   
- 描画層 1 および描画層 2 では、以下の機能がハードウェア アクセラレータによって加速されます。  
+ <span data-ttu-id="3bdd1-153">次の機能は、描画層 1 と描画層 2 でハードウェア高速化されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-153">The following features and capabilities are hardware accelerated for rendering tier 1 and rendering tier 2:</span></span>  
   
-|機能|説明|  
-|--------|--------|  
-|2D レンダリング|ほとんどの 2D レンダリングがサポートされています。|  
-|3D ラスタライズ|ほとんどの 3D ラスタライズがサポートされています。|  
-|3D 異方性フィルタリング|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、3D コンテンツの描画時に異方性フィルタリングの使用が試行されます。  異方性フィルタリングとは、カメラから遠く、視線角度のきつい位置にあるサーフェイス上のテクスチャの画質を向上させる手法です。|  
-|3D ミップマップ|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、3D コンテンツの描画時にミップマップの使用が試行されます。ミップマップを使用すると、テクスチャが <xref:System.Windows.Controls.Viewport3D> の狭い視野を占める場合にテクスチャの描画品質が向上します。|  
-|放射状グラデーション|サポートされますが、大きなオブジェクトでは <xref:System.Windows.Media.RadialGradientBrush> を使用しないでください。|  
-|3D の光源計算|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、頂点ごとの光源処理を実行します。そのため、メッシュに適用されている各素材の頂点ごとに光の強さを計算する必要があります。|  
-|テキストの描画|サブピクセル フォントの描画では、グラフィックス ハードウェアで利用可能なピクセル シェーダーを使用します。|  
+|<span data-ttu-id="3bdd1-154">特性</span><span class="sxs-lookup"><span data-stu-id="3bdd1-154">Feature</span></span>|<span data-ttu-id="3bdd1-155">ノート</span><span class="sxs-lookup"><span data-stu-id="3bdd1-155">Notes</span></span>|  
+|-------------|-----------|  
+|<span data-ttu-id="3bdd1-156">2D 描画</span><span class="sxs-lookup"><span data-stu-id="3bdd1-156">2D rendering</span></span>|<span data-ttu-id="3bdd1-157">ほとんどの 2D 描画をサポートします。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-157">Most 2D rendering is supported.</span></span>|  
+|<span data-ttu-id="3bdd1-158">3D ラスター化</span><span class="sxs-lookup"><span data-stu-id="3bdd1-158">3D rasterization</span></span>|<span data-ttu-id="3bdd1-159">ほとんどの 3D ラスター化をサポートします。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-159">Most 3D rasterization is supported.</span></span>|  
+|<span data-ttu-id="3bdd1-160">3D 異方性フィルター処理</span><span class="sxs-lookup"><span data-stu-id="3bdd1-160">3D anisotropic filtering</span></span>|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="3bdd1-161"> は 3D コンテンツを描画するとき、異方性フィルター処理を試行します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-161"> attempts to use anisotropic filtering when rendering 3D content.</span></span> <span data-ttu-id="3bdd1-162">異方性フィルター処理は、カメラから遠くにあり、カメラに対して急な角度が付く表面の画質を上げます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-162">Anisotropic filtering refers to enhancing the image quality of textures on surfaces that are far away and steeply angled with respect to the camera.</span></span>|  
+|<span data-ttu-id="3bdd1-163">3D MIP マッピング</span><span class="sxs-lookup"><span data-stu-id="3bdd1-163">3D MIP mapping</span></span>|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="3bdd1-164"> は 3D コンテンツを描画するとき、MIP マッピングを試行します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-164"> attempts to use MIP mapping when rendering 3D content.</span></span> <span data-ttu-id="3bdd1-165">テクスチャの小さい視野を占有するときに、MIP マッピングがテクスチャのレンダリング品質を向上させる、<xref:System.Windows.Controls.Viewport3D>です。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-165">MIP mapping improves the quality of texture rendering when a texture occupies a smaller field of view in a <xref:System.Windows.Controls.Viewport3D>.</span></span>|  
+|<span data-ttu-id="3bdd1-166">放射状グラデーション</span><span class="sxs-lookup"><span data-stu-id="3bdd1-166">Radial gradients</span></span>|<span data-ttu-id="3bdd1-167">サポートされていますの使用を避けるため<xref:System.Windows.Media.RadialGradientBrush>ラージ オブジェクトにします。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-167">While supported, avoid the use of <xref:System.Windows.Media.RadialGradientBrush> on large objects.</span></span>|  
+|<span data-ttu-id="3bdd1-168">3D ライティング計算</span><span class="sxs-lookup"><span data-stu-id="3bdd1-168">3D lighting calculations</span></span>|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="3bdd1-169"> は頂点ごとに照明を実行します。つまり、メッシュに適用される素材ごとに各頂点で光の強度を計算する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-169"> performs per-vertex lighting, which means that a light intensity must be calculated at each vertex for each material applied to a mesh.</span></span>|  
+|<span data-ttu-id="3bdd1-170">テキスト描画</span><span class="sxs-lookup"><span data-stu-id="3bdd1-170">Text rendering</span></span>|<span data-ttu-id="3bdd1-171">サブピクセル フォント描画では、グラフィックス ハードウェアのピクセル シェーダーを利用します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-171">Sub-pixel font rendering uses available pixel shaders on the graphics hardware.</span></span>|  
   
- 描画層 2 に対してのみ、以下の機能がハードウェア アクセラレータによって加速されます。  
+ <span data-ttu-id="3bdd1-172">次の機能は、描画層 2 でのみハードウェア高速化されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-172">The following features and capabilities are hardware accelerated only for rendering tier 2:</span></span>  
   
-|機能|説明|  
-|--------|--------|  
-|3D アンチエイリアシング|3D アンチエイリアシングは、Windows Display Driver Model \(WDDM\) をサポートするオペレーティング システム \([!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)]、[!INCLUDE[win7](../../../../includes/win7-md.md)] など\) でのみサポートされます。|  
+|<span data-ttu-id="3bdd1-173">特性</span><span class="sxs-lookup"><span data-stu-id="3bdd1-173">Feature</span></span>|<span data-ttu-id="3bdd1-174">ノート</span><span class="sxs-lookup"><span data-stu-id="3bdd1-174">Notes</span></span>|  
+|-------------|-----------|  
+|<span data-ttu-id="3bdd1-175">3D アンチエイリアス</span><span class="sxs-lookup"><span data-stu-id="3bdd1-175">3D anti-aliasing</span></span>|<span data-ttu-id="3bdd1-176">3D アンチエイリアシングは、[!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] や [!INCLUDE[win7](../../../../includes/win7-md.md)] など、Windows Display Driver Model (WDDM) 対応のオペレーティング システムでのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-176">3D anti-aliasing is supported only on operating systems that support Windows Display Driver Model (WDDM), such as [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] and [!INCLUDE[win7](../../../../includes/win7-md.md)].</span></span>|  
   
- 以下の機能はハードウェア アクセラレータによって加速されません。  
+ <span data-ttu-id="3bdd1-177">次の機能はハードウェア高速化**されません**。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-177">The following features and capabilities are **not** hardware accelerated:</span></span>  
   
-|機能|説明|  
-|--------|--------|  
-|印刷されるコンテンツ|印刷されるすべてのコンテンツが、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ソフトウェア パイプラインによって表示されます。|  
-|<xref:System.Windows.Media.Imaging.RenderTargetBitmap> を使用する、ラスタライズされたコンテンツ|すべてのコンテンツが、<xref:System.Windows.Media.Imaging.RenderTargetBitmap> の <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> メソッドによって描画されます。|  
-|<xref:System.Windows.Media.TileBrush> を使用する、並べて表示されるコンテンツ|すべての並べて表示されるコンテンツにおいて <xref:System.Windows.Media.TileBrush> の <xref:System.Windows.Media.TileBrush.TileMode%2A> プロパティが <xref:System.Windows.Media.TileMode> に設定されます。|  
-|グラフィックス ハードウェアの最大テクスチャ サイズを超えるサーフェイス。|ほとんどのグラフィックス ハードウェアでは、大型のサーフェイスのサイズは 2048 x 2048 ピクセルまたは 4096 x 4096 ピクセルです。|  
-|必要なビデオ RAM 容量がグラフィックス ハードウェアのメモリ容量を上回るすべての操作|Windows SDK の [WPF Performance Suite](../Topic/WPF%20Performance%20Suite.md) に付属する Perforator ツールを使用して、アプリケーション ビデオ RAM の使用量を監視できます。|  
-|レイヤード ウィンドウ|レイヤード ウィンドウを使用すると、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションで、コンテンツを四角形以外のウィンドウの画面に描画できます。  Windows Display Driver Model \(WDDM\) をサポートするオペレーティング システム \([!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)]、[!INCLUDE[win7](../../../../includes/win7-md.md)] など\) では、レイヤード ウィンドウはハードウェア アクセラレータによって加速されます。  [!INCLUDE[winxp](../../../../includes/winxp-md.md)] などのその他のシステムでは、レイヤード ウィンドウはハードウェア アクセラレータを使用せずにソフトウェアで描画されます。<br /><br /> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でレイヤード ウィンドウを有効にするには、<xref:System.Windows.Window> の次のプロパティを設定します。<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> \= <xref:System.Windows.WindowStyle><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> \= `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> \= <xref:System.Windows.Media.Brushes.Transparent%2A>|  
+|<span data-ttu-id="3bdd1-178">特性</span><span class="sxs-lookup"><span data-stu-id="3bdd1-178">Feature</span></span>|<span data-ttu-id="3bdd1-179">ノート</span><span class="sxs-lookup"><span data-stu-id="3bdd1-179">Notes</span></span>|  
+|-------------|-----------|  
+|<span data-ttu-id="3bdd1-180">印刷コンテンツ</span><span class="sxs-lookup"><span data-stu-id="3bdd1-180">Printed content</span></span>|<span data-ttu-id="3bdd1-181">印刷コンテンツはすべて、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ソフトウェア パイプラインを利用して描画されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-181">All printed content is rendered using the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] software pipeline.</span></span>|  
+|<span data-ttu-id="3bdd1-182">使用するラスタライズされたコンテンツ<xref:System.Windows.Media.Imaging.RenderTargetBitmap></span><span class="sxs-lookup"><span data-stu-id="3bdd1-182">Rasterized content that uses <xref:System.Windows.Media.Imaging.RenderTargetBitmap></span></span>|<span data-ttu-id="3bdd1-183">すべてのコンテンツを使用して、<xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A>メソッドの<xref:System.Windows.Media.Imaging.RenderTargetBitmap>します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-183">Any content rendered by using the <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> method of <xref:System.Windows.Media.Imaging.RenderTargetBitmap>.</span></span>|  
+|<span data-ttu-id="3bdd1-184">タイルを使用するコンテンツ<xref:System.Windows.Media.TileBrush></span><span class="sxs-lookup"><span data-stu-id="3bdd1-184">Tiled content that uses <xref:System.Windows.Media.TileBrush></span></span>|<span data-ttu-id="3bdd1-185">いずれかでコンテンツを並べて表示、<xref:System.Windows.Media.TileBrush.TileMode%2A>のプロパティ、<xref:System.Windows.Media.TileBrush>に設定されている<xref:System.Windows.Media.TileMode.Tile>です。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-185">Any tiled content in which the <xref:System.Windows.Media.TileBrush.TileMode%2A> property of the <xref:System.Windows.Media.TileBrush> is set to <xref:System.Windows.Media.TileMode.Tile>.</span></span>|  
+|<span data-ttu-id="3bdd1-186">グラフィックス ハードウェアの最大テクスチャ サイズを超過する表面</span><span class="sxs-lookup"><span data-stu-id="3bdd1-186">Surfaces that exceed the maximum texture size of the graphics hardware</span></span>|<span data-ttu-id="3bdd1-187">ほとんどのグラフィックス ハードウェアの場合、大きな表面のサイズは 2048x2048 ピクセルか 4096x4096 ピクセルになります。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-187">For most graphics hardware, large surfaces are 2048x2048 or 4096x4096 pixels in size.</span></span>|  
+|<span data-ttu-id="3bdd1-188">ビデオ RAM 要件がグラフィックス ハードウェアのメモリを超える操作</span><span class="sxs-lookup"><span data-stu-id="3bdd1-188">Any operation whose video RAM requirement exceeds the memory of the graphics hardware</span></span>|<span data-ttu-id="3bdd1-189">Windows SDK の [WPF Performance Suite](http://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e) に含まれる Perforator ツールを利用し、アプリケーションのビデオ RAM 使用率を監視できます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-189">You can monitor application video RAM usage by using the Perforator tool that is included in the [WPF Performance Suite](http://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e) in the Windows SDK.</span></span>|  
+|<span data-ttu-id="3bdd1-190">レイヤード ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="3bdd1-190">Layered windows</span></span>|<span data-ttu-id="3bdd1-191">レイヤード ウィンドウを利用することで、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションは四角形以外のウィンドウ内の画面にコンテンツを描画できます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-191">Layered windows allow [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications to render content to the screen in a non-rectangular window.</span></span> <span data-ttu-id="3bdd1-192">[!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] や [!INCLUDE[win7](../../../../includes/win7-md.md)] など、Windows Display Driver Model (WDDM) 対応のオペレーティング システムでは、レイヤード ウィンドウがハードウェア高速化されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-192">On operating systems that support Windows Display Driver Model (WDDM), such as [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] and [!INCLUDE[win7](../../../../includes/win7-md.md)], layered windows are hardware accelerated.</span></span> <span data-ttu-id="3bdd1-193">[!INCLUDE[winxp](../../../../includes/winxp-md.md)] のような他のシステムの場合、ハードウェア高速化なしで、ソフトウェアによりレイヤード ウィンドウが描画されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-193">On other systems, such as [!INCLUDE[winxp](../../../../includes/winxp-md.md)], layered windows are rendered by software with no hardware acceleration.</span></span><br /><br /> <span data-ttu-id="3bdd1-194">レイヤード ウィンドウで有効にすることができます[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]以下に設定して<xref:System.Windows.Window>プロパティ。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-194">You can enable layered windows in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] by setting the following <xref:System.Windows.Window> properties:</span></span><br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> = <xref:System.Windows.WindowStyle.None><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> = `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> = <xref:System.Windows.Media.Brushes.Transparent%2A>|  
   
 <a name="other_resources"></a>   
-## その他のリソース  
- 次の技術情報は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションのパフォーマンス特性の分析に役立ちます。  
+## <a name="other-resources"></a><span data-ttu-id="3bdd1-195">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="3bdd1-195">Other Resources</span></span>  
+ <span data-ttu-id="3bdd1-196">次のリソースは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションのパフォーマンス特性の分析に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-196">The following resources can help you analyze the performance characteristics of your [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application.</span></span>  
   
-### グラフィックス レンダリングのレジストリ設定  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のレンダリングを制御するために 4 つのレジストリ設定が用意されています。  
+### <a name="graphics-rendering-registry-settings"></a><span data-ttu-id="3bdd1-197">グラフィックス レンダリングのレジストリ設定</span><span class="sxs-lookup"><span data-stu-id="3bdd1-197">Graphics Rendering Registry Settings</span></span>  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="3bdd1-198"> には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の描画を制御するためのレジストリ設定が 4 つあります。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-198"> provides four registry settings for controlling [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rendering:</span></span>  
   
-|設定|Description|  
-|--------|-----------------|  
-|**Disable Hardware Acceleration Option**|ハードウェア アクセラレータを有効にするかどうかを指定します。|  
-|**Maximum Multisample Value**|[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] コンテンツのアンチエイリアシングのマルチサンプリングの度合いを指定します。|  
-|**Required Video Driver Date Setting**|2004 年 11 月より前にリリースされたドライバーに対してハードウェア アクセラレータをシステムで無効にするかどうかを指定します。|  
-|**Use Reference Rasterizer Option**|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でリファレンス ラスタライザーを使用するかどうかを指定します。|  
+|<span data-ttu-id="3bdd1-199">設定</span><span class="sxs-lookup"><span data-stu-id="3bdd1-199">Setting</span></span>|<span data-ttu-id="3bdd1-200">説明</span><span class="sxs-lookup"><span data-stu-id="3bdd1-200">Description</span></span>|  
+|-------------|-----------------|  
+|<span data-ttu-id="3bdd1-201">**Disable Hardware Acceleration Option (ハードウェア高速化オプションを無効にする)**</span><span class="sxs-lookup"><span data-stu-id="3bdd1-201">**Disable Hardware Acceleration Option**</span></span>|<span data-ttu-id="3bdd1-202">ハードウェア高速化を有効にするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-202">Specifies whether hardware acceleration should be enabled.</span></span>|  
+|<span data-ttu-id="3bdd1-203">**Maximum Multisample Value (最大マルチサンプル値)**</span><span class="sxs-lookup"><span data-stu-id="3bdd1-203">**Maximum Multisample Value**</span></span>|<span data-ttu-id="3bdd1-204">[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] コンテンツをアンチエイリアシングするためのマルチサンプリングの度合いを指定します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-204">Specifies the degree of multisampling for antialiasing [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] content.</span></span>|  
+|<span data-ttu-id="3bdd1-205">**Required Video Driver Date Setting (ビデオ ドライバーの日付設定が必須)**</span><span class="sxs-lookup"><span data-stu-id="3bdd1-205">**Required Video Driver Date Setting**</span></span>|<span data-ttu-id="3bdd1-206">2004 年 11 月より前にリリースされたドライバーについて、ハードウェア高速化を無効にするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-206">Specifies whether the system disables hardware acceleration for drivers released before November 2004.</span></span>|  
+|<span data-ttu-id="3bdd1-207">**Use Reference Rasterizer Option (リファレンス ラスタライザー オプションを使用する)**</span><span class="sxs-lookup"><span data-stu-id="3bdd1-207">**Use Reference Rasterizer Option**</span></span>|<span data-ttu-id="3bdd1-208">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でリファレンス ラスタライザーを使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-208">Specifies whether [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] should use the reference rasterizer.</span></span>|  
   
- これらの設定には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レジストリ設定の参照方法を認識している外部構成ユーティリティを使用してアクセスできます。  また、これらの設定は、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] レジストリ エディターを使用して値に直接アクセスして作成または変更することもできます。  詳細については、「[グラフィックス レンダリングのレジストリ設定](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)」を参照してください。  
+ <span data-ttu-id="3bdd1-209">これらの設定には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レジストリ設定の参照方法を認識する外部構成ユーティリティを使用してアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-209">These settings can be accessed by any external configuration utility that knows how to reference the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] registry settings.</span></span> <span data-ttu-id="3bdd1-210">これらの設定は、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] レジストリ エディターを使用して値に直接アクセスして作成または変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-210">These settings can also be created or modified by accessing the values directly by using the [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Registry Editor.</span></span> <span data-ttu-id="3bdd1-211">詳細については、「[グラフィックス レンダリングのレジストリ設定](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-211">For more information, see [Graphics Rendering Registry Settings](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md).</span></span>  
   
-### WPF パフォーマンス プロファイリング ツール  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、アプリケーションの実行時の動作を分析したり、適用可能なパフォーマンス最適化の種類を決定できるパフォーマンス プロファイリング ツール スイートを提供します。  [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] ツール \(WPF Performance Suite\) に含まれるパフォーマンス プロファイリング ツールを次の表に示します。  
+### <a name="wpf-performance-profiling-tools"></a><span data-ttu-id="3bdd1-212">WPF パフォーマンス プロファイリング データ</span><span class="sxs-lookup"><span data-stu-id="3bdd1-212">WPF Performance Profiling Tools</span></span>  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="3bdd1-213"> にはパフォーマンス プロファイリング ツールのセットがあります。アプリケーションの実行時動作を分析したり、適用できるパフォーマンス最適化の種類を決定したりできます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-213"> provides a suite of performance profiling tools that allow you to analyze the run-time behavior of your application and determine the types of performance optimizations you can apply.</span></span> <span data-ttu-id="3bdd1-214">次の表は、[!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] ツール、WPF Performance Suite に含まれるパフォーマンス プロファイリング ツールをまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-214">The following table lists the performance profiling tools that are included in the [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] tool, WPF Performance Suite:</span></span>  
   
-|ツール|Description|  
-|---------|-----------------|  
-|Perforator|レンダリング動作の分析に使用します。|  
-|ビジュアル プロファイラー|ビジュアル ツリーの要素による [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] サービス \(レイアウトやイベント処理など\) の使用状況に関するプロファイリングで使用します。|  
+|<span data-ttu-id="3bdd1-215">ツール</span><span class="sxs-lookup"><span data-stu-id="3bdd1-215">Tool</span></span>|<span data-ttu-id="3bdd1-216">説明</span><span class="sxs-lookup"><span data-stu-id="3bdd1-216">Description</span></span>|  
+|----------|-----------------|  
+|<span data-ttu-id="3bdd1-217">Perforator</span><span class="sxs-lookup"><span data-stu-id="3bdd1-217">Perforator</span></span>|<span data-ttu-id="3bdd1-218">描画動作を分析します。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-218">Use for analyzing rendering behavior.</span></span>|  
+|<span data-ttu-id="3bdd1-219">ビジュアル プロファイラー</span><span class="sxs-lookup"><span data-stu-id="3bdd1-219">Visual Profiler</span></span>|<span data-ttu-id="3bdd1-220">ビジュアル ツリーの要素による [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] サービス (レイアウトやイベント処理など) の使用状況をプロファイルします。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-220">Use for profiling the use of [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] services, such as layout and event handling, by elements in the visual tree.</span></span>|  
   
- WPF Performance Suite では、パフォーマンス データを多彩なグラフィカル ビューで表示できます。  WPF のパフォーマンス ツールの詳細については、「[WPF Performance Suite](../Topic/WPF%20Performance%20Suite.md)」を参照してください。  
+ <span data-ttu-id="3bdd1-221">WPF Performance Suite では、パフォーマンス データを豊富な機能でグラフィカルに表示できます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-221">The WPF Performance Suite provides a rich, graphical view of performance data.</span></span> <span data-ttu-id="3bdd1-222">WPF パフォーマンス ツールの詳細については、「[WPF Performance Suite](http://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-222">For more information about WPF performance tools, see [WPF Performance Suite](http://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e).</span></span>  
   
-### DirectX 診断ツール  
- [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツール \(Dxdiag.exe\) は、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 関連の問題のトラブルシューティングを支援します。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツールの既定のインストール フォルダーは次のとおりです。  
+### <a name="directx-diagnostic-tool"></a><span data-ttu-id="3bdd1-223">DirectX 診断ツール</span><span class="sxs-lookup"><span data-stu-id="3bdd1-223">DirectX Diagnostic Tool</span></span>  
+ <span data-ttu-id="3bdd1-224">[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツール、Dxdiag.exe は、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 関連の問題解決に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-224">The [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Diagnostic Tool, Dxdiag.exe, is designed to help you troubleshoot [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]-related issues.</span></span> <span data-ttu-id="3bdd1-225">[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツールの既定のインストール フォルダー:</span><span class="sxs-lookup"><span data-stu-id="3bdd1-225">The default installation folder for the [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Diagnostic Tool is:</span></span>  
   
  `~\Windows\System32`  
   
- [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツールを実行すると、メイン ウィンドウに一連のタブが表示され、これらのタブを使用して [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 関連の情報を表示および診断することができます。  たとえば、\[システム\] タブにはコンピューターに関するシステム情報が表示され、コンピューターにインストールされている [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョンが示されます。  
+ <span data-ttu-id="3bdd1-226">[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 診断ツールを実行すると、メイン ウィンドウにタブ セットが表示されます。このタブ セットで [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] 関連の情報を表示し、診断できます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-226">When you run the [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Diagnostic Tool, the main window contains a set of tabs that allow you to display and diagnose [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]-related information.</span></span> <span data-ttu-id="3bdd1-227">たとえば、**[システム]** タブにはコンピューターに関するシステム情報とコンピューターにインストールされている [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="3bdd1-227">For example, the **System** tab provides system information about your computer and specifies the version of [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] that is installed on your computer.</span></span>  
   
- ![スクリーンショット: DirectX 診断ツール](../../../../docs/framework/wpf/advanced/media/directxdiagnostictool-01.png "DirectXDiagnosticTool\_01")  
-DirectX 診断ツールのメイン ウィンドウ  
+ <span data-ttu-id="3bdd1-228">![スクリーン ショット: DirectX 診断ツール](../../../../docs/framework/wpf/advanced/media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")</span><span class="sxs-lookup"><span data-stu-id="3bdd1-228">![Screenhot: DirectX Diagnostic Tool](../../../../docs/framework/wpf/advanced/media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")</span></span>  
+<span data-ttu-id="3bdd1-229">DirectX 診断ツールのメイン ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="3bdd1-229">DirectX Diagnostic Tool main window</span></span>  
   
-## 参照  
- <xref:System.Windows.Media.RenderCapability>   
- <xref:System.Windows.Media.RenderOptions>   
- [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)   
- [WPF Performance Suite](../Topic/WPF%20Performance%20Suite.md)   
- [グラフィックス レンダリングのレジストリ設定](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)   
- [アニメーションのヒントとテクニック](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)
+## <a name="see-also"></a><span data-ttu-id="3bdd1-230">関連項目</span><span class="sxs-lookup"><span data-stu-id="3bdd1-230">See Also</span></span>  
+ <xref:System.Windows.Media.RenderCapability>  
+ <xref:System.Windows.Media.RenderOptions>  
+ [<span data-ttu-id="3bdd1-231">WPF アプリケーションのパフォーマンスの最適化</span><span class="sxs-lookup"><span data-stu-id="3bdd1-231">Optimizing WPF Application Performance</span></span>](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
+ [<span data-ttu-id="3bdd1-232">WPF Performance Suite</span><span class="sxs-lookup"><span data-stu-id="3bdd1-232">WPF Performance Suite</span></span>](http://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e)  
+ [<span data-ttu-id="3bdd1-233">グラフィックス レンダリングのレジストリ設定</span><span class="sxs-lookup"><span data-stu-id="3bdd1-233">Graphics Rendering Registry Settings</span></span>](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)  
+ [<span data-ttu-id="3bdd1-234">アニメーションのヒントとテクニック</span><span class="sxs-lookup"><span data-stu-id="3bdd1-234">Animation Tips and Tricks</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)

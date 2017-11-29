@@ -1,34 +1,32 @@
 ---
-title: "Control Flow Summary (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "decision structures"
+title: "制御フローの概要 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords: decision structures [Visual Basic]
 ms.assetid: 6885d426-fa87-4e1c-881f-f0e9ec8d98af
-caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 06a3148c72e4b3ff6ab88642b885029ea0a669aa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Control Flow Summary (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-Visual Basic 言語のキーワードとランタイム ライブラリ メンバーを、目的と使用方法に応じて編成しました。  
+# <a name="control-flow-summary-visual-basic"></a><span data-ttu-id="96914-102">制御フローの概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="96914-102">Control Flow Summary (Visual Basic)</span></span>
+<span data-ttu-id="96914-103">Visual Basic 言語のキーワードとランタイム ライブラリ メンバーを、目的と使用方法に応じて編成しました。</span><span class="sxs-lookup"><span data-stu-id="96914-103">Visual Basic language keywords and run-time library members are organized by purpose and use.</span></span>  
   
-|アクション|言語要素|  
-|-----------|----------|  
-|分岐|[GoTo](../../../visual-basic/language-reference/statements/goto-statement.md) および [On Error](../../../visual-basic/language-reference/statements/on-error-statement.md)|  
-|プログラムの終了または一時停止|[End](../../../visual-basic/language-reference/statements/end-statement.md)、[Exit](../../../visual-basic/language-reference/statements/exit-statement.md)、および [Stop](../../../visual-basic/language-reference/statements/stop-statement.md)|  
-|ループ|[Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md)、[For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)、[For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)、[While...End While](../../../visual-basic/language-reference/statements/while-end-while-statement.md)、および [With](../../../visual-basic/language-reference/statements/with-end-with-statement.md)|  
-|条件判断|<xref:Microsoft.VisualBasic.Interaction.Choose%2A>、[If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)、[Select Case](../../../visual-basic/language-reference/statements/select-case-statement.md)、および <xref:Microsoft.VisualBasic.Interaction.Switch%2A>|  
-|プロシージャの使用|[Call](../../../visual-basic/language-reference/statements/call-statement.md)、[Function](../../../visual-basic/language-reference/statements/function-statement.md)、[Property](../../../visual-basic/language-reference/statements/property-statement.md)、および [Sub](../../../visual-basic/language-reference/statements/sub-statement.md)|  
+|<span data-ttu-id="96914-104">アクション</span><span class="sxs-lookup"><span data-stu-id="96914-104">Action</span></span>|<span data-ttu-id="96914-105">言語要素</span><span class="sxs-lookup"><span data-stu-id="96914-105">Language element</span></span>|  
+|------------|----------------------|  
+|<span data-ttu-id="96914-106">分岐</span><span class="sxs-lookup"><span data-stu-id="96914-106">Branch.</span></span>|<span data-ttu-id="96914-107">[GoTo](../../../visual-basic/language-reference/statements/goto-statement.md)、[エラー](../../../visual-basic/language-reference/statements/on-error-statement.md)</span><span class="sxs-lookup"><span data-stu-id="96914-107">[GoTo](../../../visual-basic/language-reference/statements/goto-statement.md), [On Error](../../../visual-basic/language-reference/statements/on-error-statement.md)</span></span>|  
+|<span data-ttu-id="96914-108">プログラムの終了または一時停止</span><span class="sxs-lookup"><span data-stu-id="96914-108">Exit or pause the program.</span></span>|<span data-ttu-id="96914-109">[終了](../../../visual-basic/language-reference/statements/end-statement.md)、[終了](../../../visual-basic/language-reference/statements/exit-statement.md)、[停止](../../../visual-basic/language-reference/statements/stop-statement.md)</span><span class="sxs-lookup"><span data-stu-id="96914-109">[End](../../../visual-basic/language-reference/statements/end-statement.md), [Exit](../../../visual-basic/language-reference/statements/exit-statement.md), [Stop](../../../visual-basic/language-reference/statements/stop-statement.md)</span></span>|  
+|<span data-ttu-id="96914-110">ループ</span><span class="sxs-lookup"><span data-stu-id="96914-110">Loop.</span></span>|<span data-ttu-id="96914-111">[操作を行います。ループ](../../../visual-basic/language-reference/statements/do-loop-statement.md)、[をしています.[次へ]](../../../visual-basic/language-reference/statements/for-next-statement.md)、[ごとにしています.[次へ]](../../../visual-basic/language-reference/statements/for-each-next-statement.md)、[中.中に終了](../../../visual-basic/language-reference/statements/while-end-while-statement.md)、[と](../../../visual-basic/language-reference/statements/with-end-with-statement.md)</span><span class="sxs-lookup"><span data-stu-id="96914-111">[Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md), [For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md), [For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md), [While...End While](../../../visual-basic/language-reference/statements/while-end-while-statement.md), [With](../../../visual-basic/language-reference/statements/with-end-with-statement.md)</span></span>|  
+|<span data-ttu-id="96914-112">条件判断</span><span class="sxs-lookup"><span data-stu-id="96914-112">Make decisions.</span></span>|<span data-ttu-id="96914-113"><xref:Microsoft.VisualBasic.Interaction.Choose%2A>、[場合.そうしたら。。。Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)、 [Select Case](../../../visual-basic/language-reference/statements/select-case-statement.md)、<xref:Microsoft.VisualBasic.Interaction.Switch%2A></span><span class="sxs-lookup"><span data-stu-id="96914-113"><xref:Microsoft.VisualBasic.Interaction.Choose%2A>, [If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md), [Select Case](../../../visual-basic/language-reference/statements/select-case-statement.md), <xref:Microsoft.VisualBasic.Interaction.Switch%2A></span></span>|  
+|<span data-ttu-id="96914-114">プロシージャの使用</span><span class="sxs-lookup"><span data-stu-id="96914-114">Use procedures.</span></span>|<span data-ttu-id="96914-115">[呼び出す](../../../visual-basic/language-reference/statements/call-statement.md)、[関数](../../../visual-basic/language-reference/statements/function-statement.md)、[プロパティ](../../../visual-basic/language-reference/statements/property-statement.md)、 [Sub](../../../visual-basic/language-reference/statements/sub-statement.md)</span><span class="sxs-lookup"><span data-stu-id="96914-115">[Call](../../../visual-basic/language-reference/statements/call-statement.md), [Function](../../../visual-basic/language-reference/statements/function-statement.md), [Property](../../../visual-basic/language-reference/statements/property-statement.md), [Sub](../../../visual-basic/language-reference/statements/sub-statement.md)</span></span>|  
   
-## 参照  
- [キーワード](../../../visual-basic/language-reference/keywords/index.md)   
- [Visual Basic Runtime Library Members](../../../visual-basic/language-reference/runtime-library-members.md)
+## <a name="see-also"></a><span data-ttu-id="96914-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="96914-116">See Also</span></span>  
+ [<span data-ttu-id="96914-117">キーワード</span><span class="sxs-lookup"><span data-stu-id="96914-117">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)  
+ [<span data-ttu-id="96914-118">Visual Basic ランタイム ライブラリのメンバー</span><span class="sxs-lookup"><span data-stu-id="96914-118">Visual Basic Runtime Library Members</span></span>](../../../visual-basic/language-reference/runtime-library-members.md)

@@ -1,127 +1,124 @@
 ---
-title: "Class Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Class"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "class modules"
-  - "Class statement"
-  - "classes [Visual Basic], fields"
-  - "fields, of classes"
-  - "class types, class statements"
-  - "classes [Visual Basic], creating"
-  - "classes [Visual Basic], data members"
-  - "data members, of classes"
+title: "Class ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Class
+helpviewer_keywords:
+- class modules
+- Class statement [Visual Basic]
+- classes [Visual Basic], fields
+- fields [Visual Basic], of classes
+- class types [Visual Basic], class statements
+- classes [Visual Basic], creating
+- classes [Visual Basic], data members
+- data members [Visual Basic], of classes
 ms.assetid: f2664f38-eb5a-4d4b-a374-1d041521fb6c
-caps.latest.revision: 29
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 29
+caps.latest.revision: "29"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: df86ef0eec67d96f2f997dc5dac7ee2357c6362b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Class Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-クラスの名前を宣言し、そのクラスを構成する変数、プロパティ、イベント、およびプロシージャの定義を示します。  
+# <a name="class-statement-visual-basic"></a><span data-ttu-id="fbd11-102">Class ステートメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fbd11-102">Class Statement (Visual Basic)</span></span>
+<span data-ttu-id="fbd11-103">クラスの名前を宣言し、変数、プロパティ、イベント、およびクラスを構成するプロシージャの定義が追加されました。</span><span class="sxs-lookup"><span data-stu-id="fbd11-103">Declares the name of a class and introduces the definition of the variables, properties, events, and procedures that the class comprises.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="fbd11-104">構文</span><span class="sxs-lookup"><span data-stu-id="fbd11-104">Syntax</span></span>  
   
 ```  
-[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ MustInherit | NotInheritable ] [ Partial ] _  
-Class name [ ( Of typelist ) ]  
-    [ Inherits classname ]  
-    [ Implements interfacenames ]  
-    [ statements ]  
+[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ MustInherit | NotInheritable ] [ Partial ] _  
+Class name [ ( Of typelist ) ]  
+    [ Inherits classname ]  
+    [ Implements interfacenames ]  
+    [ statements ]  
 End Class  
 ```  
   
-## 指定項目  
+## <a name="parts"></a><span data-ttu-id="fbd11-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="fbd11-105">Parts</span></span>  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`attributelist`|省略可能です。  「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。|  
-|`accessmodifier`|省略可能です。  次のいずれかになります。<br /><br /> -   [Public](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|  
-|`Shadows`|省略可能です。  「[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。|  
-|`MustInherit`|省略可能です。  「[MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)」を参照してください。|  
-|`NotInheritable`|省略可能です。  「[NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)」を参照してください。|  
-|`Partial`|省略可能です。  クラスの部分定義であることを示します。  「[Partial](../../../visual-basic/language-reference/modifiers/partial.md)」を参照してください。|  
-|`name`|必ず指定します。  このクラスの名前です。  「[Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|  
-|`Of`|省略可能です。  これがジェネリック クラスであることを指定します。|  
-|`typelist`|[Of](../../../visual-basic/language-reference/statements/of-clause.md) キーワードを使用する場合は必ず指定します。  このクラスの型パラメーターの一覧を指定します。  「[型リスト](../../../visual-basic/language-reference/statements/type-list.md)」を参照してください。|  
-|`Inherits`|省略可能です。  このクラスが他のクラスのメンバーを継承することを示します。  「[Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md)」を参照してください。|  
-|`classname`|`Inherits` ステートメントを使用する場合は必ず指定します。  このクラスの派生元となるクラスの名前です。|  
-|`Implements`|省略可能です。  このクラスが、1 つ以上のインターフェイスのメンバーを実装していることを示します。  「[Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md)」を参照してください。|  
-|`interfacenames`|`Implements` ステートメントを使用する場合は必ず指定します。  このクラスが実装するインターフェイスの名前を指定します。|  
-|`statements`|省略可能です。  このクラスのメンバーを定義するステートメントを指定します。|  
-|`End Class`|必ず指定します。  `Class` 定義を終了します。|  
+|<span data-ttu-id="fbd11-106">用語</span><span class="sxs-lookup"><span data-stu-id="fbd11-106">Term</span></span>|<span data-ttu-id="fbd11-107">定義</span><span class="sxs-lookup"><span data-stu-id="fbd11-107">Definition</span></span>|  
+|---|---|  
+|`attributelist`|<span data-ttu-id="fbd11-108">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-108">Optional.</span></span> <span data-ttu-id="fbd11-109">参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-109">See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).</span></span>|  
+|`accessmodifier`|<span data-ttu-id="fbd11-110">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-110">Optional.</span></span> <span data-ttu-id="fbd11-111">次のいずれかの値を指定します。</span><span class="sxs-lookup"><span data-stu-id="fbd11-111">Can be one of the following:</span></span><br /><br /> <span data-ttu-id="fbd11-112">-   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)</span><span class="sxs-lookup"><span data-stu-id="fbd11-112">-   [Public](../../../visual-basic/language-reference/modifiers/public.md)</span></span><br /><span data-ttu-id="fbd11-113">-   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)</span><span class="sxs-lookup"><span data-stu-id="fbd11-113">-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)</span></span><br /><span data-ttu-id="fbd11-114">-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)</span><span class="sxs-lookup"><span data-stu-id="fbd11-114">-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)</span></span><br /><span data-ttu-id="fbd11-115">-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)</span><span class="sxs-lookup"><span data-stu-id="fbd11-115">-   [Private](../../../visual-basic/language-reference/modifiers/private.md)</span></span><br />-   `Protected Friend`<br /><br /> <span data-ttu-id="fbd11-116">参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-116">See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>|  
+|`Shadows`|<span data-ttu-id="fbd11-117">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-117">Optional.</span></span> <span data-ttu-id="fbd11-118">参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-118">See [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).</span></span>|  
+|`MustInherit`|<span data-ttu-id="fbd11-119">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-119">Optional.</span></span> <span data-ttu-id="fbd11-120">参照してください[MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-120">See [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).</span></span>|  
+|`NotInheritable`|<span data-ttu-id="fbd11-121">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-121">Optional.</span></span> <span data-ttu-id="fbd11-122">参照してください[NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-122">See [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md).</span></span>|  
+|`Partial`|<span data-ttu-id="fbd11-123">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-123">Optional.</span></span> <span data-ttu-id="fbd11-124">クラスの部分定義を示します。</span><span class="sxs-lookup"><span data-stu-id="fbd11-124">Indicates a partial definition of the class.</span></span> <span data-ttu-id="fbd11-125">参照してください[部分](../../../visual-basic/language-reference/modifiers/partial.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-125">See [Partial](../../../visual-basic/language-reference/modifiers/partial.md).</span></span>|  
+|`name`|<span data-ttu-id="fbd11-126">必須です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-126">Required.</span></span> <span data-ttu-id="fbd11-127">このクラスの名前です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-127">Name of this class.</span></span> <span data-ttu-id="fbd11-128">参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-128">See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span></span>|  
+|`Of`|<span data-ttu-id="fbd11-129">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-129">Optional.</span></span> <span data-ttu-id="fbd11-130">これは、ジェネリック クラスであることを指定します。</span><span class="sxs-lookup"><span data-stu-id="fbd11-130">Specifies that this is a generic class.</span></span>|  
+|`typelist`|<span data-ttu-id="fbd11-131">使用するかどうかは必ず、[の](../../../visual-basic/language-reference/statements/of-clause.md)キーワード。</span><span class="sxs-lookup"><span data-stu-id="fbd11-131">Required if you use the [Of](../../../visual-basic/language-reference/statements/of-clause.md) keyword.</span></span> <span data-ttu-id="fbd11-132">このクラスの型パラメーターの一覧。</span><span class="sxs-lookup"><span data-stu-id="fbd11-132">List of type parameters for this class.</span></span> <span data-ttu-id="fbd11-133">参照してください[のリストを入力](../../../visual-basic/language-reference/statements/type-list.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-133">See [Type List](../../../visual-basic/language-reference/statements/type-list.md).</span></span>|  
+|`Inherits`|<span data-ttu-id="fbd11-134">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-134">Optional.</span></span> <span data-ttu-id="fbd11-135">このクラスが別のクラスのメンバーを継承することを示します。</span><span class="sxs-lookup"><span data-stu-id="fbd11-135">Indicates that this class inherits the members of another class.</span></span> <span data-ttu-id="fbd11-136">参照してください[Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-136">See [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md).</span></span>|  
+|`classname`|<span data-ttu-id="fbd11-137">`Inherits` ステートメントを使用する場合は必ず指定します。</span><span class="sxs-lookup"><span data-stu-id="fbd11-137">Required if you use the `Inherits` statement.</span></span> <span data-ttu-id="fbd11-138">このクラスの派生元となるクラスの名前。</span><span class="sxs-lookup"><span data-stu-id="fbd11-138">The name of the class from which this class derives.</span></span>|  
+|`Implements`|<span data-ttu-id="fbd11-139">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-139">Optional.</span></span> <span data-ttu-id="fbd11-140">このクラスで、1 つまたは複数のインターフェイスのメンバーを実装することを示します。</span><span class="sxs-lookup"><span data-stu-id="fbd11-140">Indicates that this class implements the members of one or more interfaces.</span></span> <span data-ttu-id="fbd11-141">参照してください[ステートメントを実装します](../../../visual-basic/language-reference/statements/implements-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-141">See [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md).</span></span>|  
+|`interfacenames`|<span data-ttu-id="fbd11-142">`Implements` ステートメントを使用する場合は必ず指定します。</span><span class="sxs-lookup"><span data-stu-id="fbd11-142">Required if you use the `Implements` statement.</span></span> <span data-ttu-id="fbd11-143">このクラスが実装するインターフェイスの名前。</span><span class="sxs-lookup"><span data-stu-id="fbd11-143">The names of the interfaces this class implements.</span></span>|  
+|`statements`|<span data-ttu-id="fbd11-144">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-144">Optional.</span></span> <span data-ttu-id="fbd11-145">このクラスのメンバーを定義するステートメント。</span><span class="sxs-lookup"><span data-stu-id="fbd11-145">Statements which define the members of this class.</span></span>|  
+|`End Class`|<span data-ttu-id="fbd11-146">必須です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-146">Required.</span></span> <span data-ttu-id="fbd11-147">`Class` の定義を終了します。</span><span class="sxs-lookup"><span data-stu-id="fbd11-147">Terminates the `Class` definition.</span></span>|  
   
-## 解説  
- `Class` ステートメントは新しいデータ型を定義します。  *クラス*はオブジェクト指向プログラミング \(OOP: Object\-Oriented Programming\) の基本的なビルド ブロックです。  詳細については、「[Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)」を参照してください。  
+## <a name="remarks"></a><span data-ttu-id="fbd11-148">コメント</span><span class="sxs-lookup"><span data-stu-id="fbd11-148">Remarks</span></span>  
+ <span data-ttu-id="fbd11-149">A`Class`ステートメントが、新しいデータ型を定義します。</span><span class="sxs-lookup"><span data-stu-id="fbd11-149">A `Class` statement defines a new data type.</span></span> <span data-ttu-id="fbd11-150">A*クラス*オブジェクト指向プログラミング (OOP) の基本的なビルド ブロックです。</span><span class="sxs-lookup"><span data-stu-id="fbd11-150">A *class* is a fundamental building block of object-oriented programming (OOP).</span></span> <span data-ttu-id="fbd11-151">詳細については、次を参照してください。[クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-151">For more information, see [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).</span></span>  
   
- `Class` は、名前空間またはモジュール レベルでのみ使用できます。  つまり、クラスの*宣言コンテキスト*は、ソース ファイル、名前空間、クラス、構造体、モジュール、またはインターフェイスのいずれかである必要があり、プロシージャまたはブロックでは宣言できません。  詳細については、「[Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
+ <span data-ttu-id="fbd11-152">`Class` は、名前空間またはモジュール レベルでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="fbd11-152">You can use `Class` only at namespace or module level.</span></span> <span data-ttu-id="fbd11-153">つまり、*宣言コンテキスト*クラスのソース ファイル、名前空間、クラス、構造体、モジュール、またはインターフェイスである必要があります、プロシージャまたはブロックすることはできません。</span><span class="sxs-lookup"><span data-stu-id="fbd11-153">This means the *declaration context* for a class must be a source file, namespace, class, structure, module, or interface, and cannot be a procedure or block.</span></span> <span data-ttu-id="fbd11-154">詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fbd11-154">For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span></span>  
   
- クラスの各インスタンスは、他のインスタンスからは独立した有効期間を持ちます。  インスタンスの有効期間は、[New Operator](../../../visual-basic/language-reference/operators/new-operator.md) 句または <xref:Microsoft.VisualBasic.Interaction.CreateObject%2A> などの関数で作成されたときに開始します。  インスタンスを参照している変数がすべて [Nothing](../../../visual-basic/language-reference/nothing.md) に設定されるか、他のクラスのインスタンスに設定されると、インスタンスの有効期間は終了します。  
+ <span data-ttu-id="fbd11-155">クラスの各インスタンスには、その他のすべてのインスタンスの独立した有効期間があります。</span><span class="sxs-lookup"><span data-stu-id="fbd11-155">Each instance of a class has a lifetime independent of all other instances.</span></span> <span data-ttu-id="fbd11-156">これを作成するときにこの有効期間が開始、 [New 演算子](../../../visual-basic/language-reference/operators/new-operator.md)句またはなどの関数によって<xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-156">This lifetime begins when it is created by a [New Operator](../../../visual-basic/language-reference/operators/new-operator.md) clause or by a function such as <xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>.</span></span> <span data-ttu-id="fbd11-157">インスタンスを指すすべての変数に設定されている時に終了[Nothing](../../../visual-basic/language-reference/nothing.md)またはその他のクラスのインスタンスにします。</span><span class="sxs-lookup"><span data-stu-id="fbd11-157">It ends when all variables pointing to the instance have been set to [Nothing](../../../visual-basic/language-reference/nothing.md) or to instances of other classes.</span></span>  
   
- 既定では、クラスのアクセス レベルは [Friend](../../../visual-basic/language-reference/modifiers/friend.md) です。  アクセス修飾子を使用してこれらのアクセス レベルを調整できます。  詳細については、「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ <span data-ttu-id="fbd11-158">クラスの既定値は[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)アクセスします。</span><span class="sxs-lookup"><span data-stu-id="fbd11-158">Classes default to [Friend](../../../visual-basic/language-reference/modifiers/friend.md) access.</span></span> <span data-ttu-id="fbd11-159">アクセス修飾子を使用してこれらのアクセス レベルを調整できます。</span><span class="sxs-lookup"><span data-stu-id="fbd11-159">You can adjust their access levels with the access modifiers.</span></span> <span data-ttu-id="fbd11-160">詳細については、次を参照してください。 [Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-160">For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
   
-## 規則  
+## <a name="rules"></a><span data-ttu-id="fbd11-161">ルール</span><span class="sxs-lookup"><span data-stu-id="fbd11-161">Rules</span></span>  
   
--   **入れ子。**クラス内に別のクラスを定義できます。  外側のクラスは*包含クラス*、内側のクラスは*入れ子クラス*と呼ばれます。  
+-   <span data-ttu-id="fbd11-162">**入れ子にするとします。**</span><span class="sxs-lookup"><span data-stu-id="fbd11-162">**Nesting.**</span></span> <span data-ttu-id="fbd11-163">他の中で 1 つのクラスを定義できます。</span><span class="sxs-lookup"><span data-stu-id="fbd11-163">You can define one class within another.</span></span> <span data-ttu-id="fbd11-164">外側のクラス、*クラスを含む*、内部クラスを呼び出すと、*入れ子になったクラス*です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-164">The outer class is called the *containing class*, and the inner class is called a *nested class*.</span></span>  
   
--   **継承。**クラスが [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md)を使用している場合は、1 つの基本クラスまたはインターフェイスのみを指定できます。  複数の要素を継承することはできません。  
+-   <span data-ttu-id="fbd11-165">**継承。**</span><span class="sxs-lookup"><span data-stu-id="fbd11-165">**Inheritance.**</span></span> <span data-ttu-id="fbd11-166">クラスで使用する場合、 [Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)、基底クラスまたはインターフェイスの 1 つだけを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="fbd11-166">If the class uses the [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md), you can specify only one base class or interface.</span></span> <span data-ttu-id="fbd11-167">クラスは、複数の要素から継承できません。</span><span class="sxs-lookup"><span data-stu-id="fbd11-167">A class cannot inherit from more than one element.</span></span>  
   
-     自分よりもアクセス レベルの厳しいクラスは継承できません。  たとえば、`Public` クラスは `Friend` クラスを継承できません。  
+     <span data-ttu-id="fbd11-168">クラスより制限の厳しいアクセス レベルを持つ別のクラスから継承できません。</span><span class="sxs-lookup"><span data-stu-id="fbd11-168">A class cannot inherit from another class with a more restrictive access level.</span></span> <span data-ttu-id="fbd11-169">たとえば、`Public`クラスから継承できません、`Friend`クラスです。</span><span class="sxs-lookup"><span data-stu-id="fbd11-169">For example, a `Public` class cannot inherit from a `Friend` class.</span></span>  
   
-     中に入れ子になったクラスは継承できません。  
+     <span data-ttu-id="fbd11-170">クラスは、内部に入れ子になったクラスから継承できません。</span><span class="sxs-lookup"><span data-stu-id="fbd11-170">A class cannot inherit from a class nested within it.</span></span>  
   
--   **実装。**クラスが [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md)を使用している場合は、`interfacenames` に指定したすべてのインターフェイスで定義されているメンバーをすべて実装する必要があります。  ただし、基本クラスのメンバーを再実装する必要はありません。  詳細については、「[Implements](../../../visual-basic/language-reference/statements/implements-clause.md)」の「再実装」を参照してください。  
+-   <span data-ttu-id="fbd11-171">**実装です。**</span><span class="sxs-lookup"><span data-stu-id="fbd11-171">**Implementation.**</span></span> <span data-ttu-id="fbd11-172">クラスで使用する場合、 [Implements ステートメント](../../../visual-basic/language-reference/statements/implements-statement.md)で指定したすべてのインターフェイスによって定義されたすべてのメンバーを実装する必要があります`interfacenames`です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-172">If the class uses the [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md), you must implement every member defined by every interface you specify in `interfacenames`.</span></span> <span data-ttu-id="fbd11-173">この例外は、基底クラスのメンバーの再実装が必要です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-173">An exception to this is reimplementation of a base class member.</span></span> <span data-ttu-id="fbd11-174">詳細についてを参照してください再実装が「必要」 [Implements](../../../visual-basic/language-reference/statements/implements-clause.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-174">For more information, see "Reimplementation" in [Implements](../../../visual-basic/language-reference/statements/implements-clause.md).</span></span>  
   
--   **既定のプロパティ。**クラス内の最大 1 つのプロパティを*既定のプロパティ*として指定できます。  詳細については、「[Default](../../../visual-basic/language-reference/modifiers/default.md)」を参照してください。  
+-   <span data-ttu-id="fbd11-175">**既定のプロパティ。**</span><span class="sxs-lookup"><span data-stu-id="fbd11-175">**Default Property.**</span></span> <span data-ttu-id="fbd11-176">クラスとして最大で 1 つのプロパティを指定できます、*既定プロパティ*です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-176">A class can specify at most one property as its *default property*.</span></span> <span data-ttu-id="fbd11-177">詳細については、次を参照してください。[既定](../../../visual-basic/language-reference/modifiers/default.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-177">For more information, see [Default](../../../visual-basic/language-reference/modifiers/default.md).</span></span>  
   
-## \[動作\]  
+## <a name="behavior"></a><span data-ttu-id="fbd11-178">動作</span><span class="sxs-lookup"><span data-stu-id="fbd11-178">Behavior</span></span>  
   
--   **アクセス レベル。**クラス内では、それぞれのメンバーにアクセス レベルを宣言できます。  変数と定数を除くクラス メンバーは既定で [Public](../../../visual-basic/language-reference/modifiers/public.md) アクセスになります。変数と定数は既定で [Private](../../../visual-basic/language-reference/modifiers/private.md) アクセスになります。  クラスのアクセス レベルの方がメンバーのアクセス レベルよりも厳しいときは、クラスのアクセス レベルが優先されます。  
+-   <span data-ttu-id="fbd11-179">**アクセス レベル。**</span><span class="sxs-lookup"><span data-stu-id="fbd11-179">**Access Level.**</span></span> <span data-ttu-id="fbd11-180">クラス内では、各メンバーを独自のアクセス レベルを宣言できます。</span><span class="sxs-lookup"><span data-stu-id="fbd11-180">Within a class, you can declare each member with its own access level.</span></span> <span data-ttu-id="fbd11-181">クラス メンバーは既定[パブリック](../../../visual-basic/language-reference/modifiers/public.md)へのアクセス、変数および定数を除く既定[プライベート](../../../visual-basic/language-reference/modifiers/private.md)アクセスします。</span><span class="sxs-lookup"><span data-stu-id="fbd11-181">Class members default to [Public](../../../visual-basic/language-reference/modifiers/public.md) access, except variables and constants, which default to [Private](../../../visual-basic/language-reference/modifiers/private.md) access.</span></span> <span data-ttu-id="fbd11-182">クラスがそのメンバーの 1 つ以上のアクセスが制限されたよりする場合は、クラスのアクセス レベルが優先されます。</span><span class="sxs-lookup"><span data-stu-id="fbd11-182">When a class has more restricted access than one of its members, the class access level takes precedence.</span></span>  
   
--   **スコープ。**クラスのスコープは、そのクラスを含んでいる名前空間、クラス、構造体、またはモジュールになります。  
+-   <span data-ttu-id="fbd11-183">**スコープです。**</span><span class="sxs-lookup"><span data-stu-id="fbd11-183">**Scope.**</span></span> <span data-ttu-id="fbd11-184">クラスは、そのを含む名前空間、クラス、構造体、またはモジュール全体にわたってスコープ内です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-184">A class is in scope throughout its containing namespace, class, structure, or module.</span></span>  
   
-     すべてのクラス メンバーのスコープは、クラス全体になります。  
+     <span data-ttu-id="fbd11-185">すべてのクラス メンバーのスコープは、クラス全体です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-185">The scope of every class member is the entire class.</span></span>  
   
-     **有効期間。**Visual Basic は静的クラスをサポートしません。  静的クラスと同等の機能はモジュールで実現されます。  詳細については、「[Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)」を参照してください。  
+     <span data-ttu-id="fbd11-186">**有効期間。**</span><span class="sxs-lookup"><span data-stu-id="fbd11-186">**Lifetime.**</span></span> <span data-ttu-id="fbd11-187">Visual Basic は、静的クラスをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="fbd11-187">Visual Basic does not support static classes.</span></span> <span data-ttu-id="fbd11-188">静的クラスと同等の機能は、モジュールによって提供されます。</span><span class="sxs-lookup"><span data-stu-id="fbd11-188">The functional equivalent of a static class is provided by a module.</span></span> <span data-ttu-id="fbd11-189">詳細については、次を参照してください。[モジュール ステートメント](../../../visual-basic/language-reference/statements/module-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-189">For more information, see [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md).</span></span>  
   
-     クラス メンバーの有効期間は、宣言された方法と場所によって左右されます。  詳細については、「[Lifetime in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)」を参照してください。  
+     <span data-ttu-id="fbd11-190">クラスのメンバーには、宣言されている方法と場所に応じて有効期間があります。</span><span class="sxs-lookup"><span data-stu-id="fbd11-190">Class members have lifetimes depending on how and where they are declared.</span></span> <span data-ttu-id="fbd11-191">詳細については、次を参照してください。 [Visual Basic における有効期間](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-191">For more information, see [Lifetime in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).</span></span>  
   
--   **修飾。**クラス外部のコードがメンバーにアクセスするときには、メンバー名をクラス名で修飾する必要があります。  
+-   <span data-ttu-id="fbd11-192">**パス名です。**</span><span class="sxs-lookup"><span data-stu-id="fbd11-192">**Qualification.**</span></span> <span data-ttu-id="fbd11-193">クラスの外側のコードでは、そのクラスの名前を持つメンバーの名前を修飾する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fbd11-193">Code outside a class must qualify a member's name with the name of that class.</span></span>  
   
-     入れ子クラスの内部のコードがプログラミング要素に対する非修飾参照を行った場合、Visual Basic は目的の要素をまず入れ子クラス内で検索し、次にそのコンテナー クラス内で検索し、同様にして一番外側のコンテナー要素まで検索します。  
+     <span data-ttu-id="fbd11-194">入れ子になったクラス内のコード、プログラミング要素への参照を修飾されていない場合は、Visual Basic 要素を検索、まず、入れ子になったクラスで、そのクラスを含むなど外側のコンテナー要素にします。</span><span class="sxs-lookup"><span data-stu-id="fbd11-194">If code inside a nested class makes an unqualified reference to a programming element, Visual Basic searches for the element first in the nested class, then in its containing class, and so on out to the outermost containing element.</span></span>  
   
-## クラスとモジュール  
- これらの要素はよく似ていますが、重要な相違点がいくつかあります。  
+## <a name="classes-and-modules"></a><span data-ttu-id="fbd11-195">クラスとモジュール</span><span class="sxs-lookup"><span data-stu-id="fbd11-195">Classes and Modules</span></span>  
+ <span data-ttu-id="fbd11-196">これらの要素がある多くの類似点がいくつかの重要な違いがあります。</span><span class="sxs-lookup"><span data-stu-id="fbd11-196">These elements have many similarities, but there are some important differences as well.</span></span>  
   
--   **用語。**以前のバージョンの Visual Basic には、*クラス モジュール* \(.cls ファイル\) と*標準モジュール* \(.bas ファイル\) という 2 種類のモジュールがありました。  現在のバージョンでは、これらをそれぞれ*クラス*と*モジュール*と呼びます。  
+-   <span data-ttu-id="fbd11-197">**用語集。**</span><span class="sxs-lookup"><span data-stu-id="fbd11-197">**Terminology.**</span></span> <span data-ttu-id="fbd11-198">以前のバージョンの Visual Basic モジュールの 2 つの種類を認識する:*クラス モジュール*(.cls ファイル) と*標準モジュール*(.bas ファイル)。</span><span class="sxs-lookup"><span data-stu-id="fbd11-198">Previous versions of Visual Basic recognize two types of modules: *class modules* (.cls files) and *standard modules* (.bas files).</span></span> <span data-ttu-id="fbd11-199">現在のバージョンを呼び出す*クラス*と*モジュール*、それぞれします。</span><span class="sxs-lookup"><span data-stu-id="fbd11-199">The current version calls these *classes* and *modules*, respectively.</span></span>  
   
--   **共有メンバー。**クラスのメンバーを共有メンバーにするかインスタンス メンバーにするかを制御できます。  
+-   <span data-ttu-id="fbd11-200">**共有メンバー。**</span><span class="sxs-lookup"><span data-stu-id="fbd11-200">**Shared Members.**</span></span> <span data-ttu-id="fbd11-201">クラスのメンバーは、共有するかどうか、またはインスタンス メンバーを制御できます。</span><span class="sxs-lookup"><span data-stu-id="fbd11-201">You can control whether a member of a class is a shared or instance member.</span></span>  
   
--   **オブジェクト指向。**クラスはオブジェクト指向ですが、モジュールはオブジェクト指向ではありません。  クラスについては 1 つ以上のインスタンスを作成できます。  詳細については、「[Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)」を参照してください。  
+-   <span data-ttu-id="fbd11-202">**オブジェクトの方向。**</span><span class="sxs-lookup"><span data-stu-id="fbd11-202">**Object Orientation.**</span></span> <span data-ttu-id="fbd11-203">クラスは、オブジェクト指向しますが、モジュールがないです。</span><span class="sxs-lookup"><span data-stu-id="fbd11-203">Classes are object-oriented, but modules are not.</span></span> <span data-ttu-id="fbd11-204">クラスの 1 つまたは複数のインスタンスを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="fbd11-204">You can create one or more instances of a class.</span></span> <span data-ttu-id="fbd11-205">詳細については、次を参照してください。[クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="fbd11-205">For more information, see [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).</span></span>  
   
-## 使用例  
- 次の例では、`Class` ステートメントを使用してクラスといくつかのメンバーを定義しています。  
+## <a name="example"></a><span data-ttu-id="fbd11-206">例</span><span class="sxs-lookup"><span data-stu-id="fbd11-206">Example</span></span>  
+ <span data-ttu-id="fbd11-207">次の例では、`Class`クラスといくつかのメンバーを定義するステートメント。</span><span class="sxs-lookup"><span data-stu-id="fbd11-207">The following example uses a `Class` statement to define a class and several members.</span></span>  
   
  [!code-vb[VbVbalrStatements#62](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/class-statement_1.vb)]  
   
-## 参照  
- [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)   
- [Structures and Classes](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)   
- [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)   
- [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)   
- [Object Lifetime: How Objects Are Created and Destroyed](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)   
- [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
- [方法 : ジェネリック クラスを使用する](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
+## <a name="see-also"></a><span data-ttu-id="fbd11-208">関連項目</span><span class="sxs-lookup"><span data-stu-id="fbd11-208">See Also</span></span>  
+ [<span data-ttu-id="fbd11-209">クラスとオブジェクト</span><span class="sxs-lookup"><span data-stu-id="fbd11-209">Objects and Classes</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
+ [<span data-ttu-id="fbd11-210">構造体とクラス</span><span class="sxs-lookup"><span data-stu-id="fbd11-210">Structures and Classes</span></span>](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)  
+ [<span data-ttu-id="fbd11-211">Interface ステートメント</span><span class="sxs-lookup"><span data-stu-id="fbd11-211">Interface Statement</span></span>](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [<span data-ttu-id="fbd11-212">Module ステートメント</span><span class="sxs-lookup"><span data-stu-id="fbd11-212">Module Statement</span></span>](../../../visual-basic/language-reference/statements/module-statement.md)  
+ [<span data-ttu-id="fbd11-213">Property ステートメント</span><span class="sxs-lookup"><span data-stu-id="fbd11-213">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="fbd11-214">オブジェクトの有効期間 : オブジェクトの作成と破棄</span><span class="sxs-lookup"><span data-stu-id="fbd11-214">Object Lifetime: How Objects Are Created and Destroyed</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)  
+ [<span data-ttu-id="fbd11-215">Visual Basic におけるジェネリック型</span><span class="sxs-lookup"><span data-stu-id="fbd11-215">Generic Types in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
+ [<span data-ttu-id="fbd11-216">方法 : ジェネリック クラスを使用する</span><span class="sxs-lookup"><span data-stu-id="fbd11-216">How to: Use a Generic Class</span></span>](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)

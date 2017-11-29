@@ -5,78 +5,74 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - interop marshaling, arrays
 - arrays, interop marshaling
 ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 72b9cf51936df7b3b2055823ff33f7561640608f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: ab9a72607f5201164f31d9e4cfdf058e9af804ae
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="default-marshaling-for-arrays"></a>配列に対する既定のマーシャリング
-全体がマネージ コードで構成されるアプリケーションでは、共通言語ランタイムは、配列型を In/Out パラメーターとして渡します。 これに対し、相互運用マーシャラーは、既定で In パラメーターとして配列を渡します。  
+# <a name="default-marshaling-for-arrays"></a><span data-ttu-id="761ac-102">配列に対する既定のマーシャリング</span><span class="sxs-lookup"><span data-stu-id="761ac-102">Default Marshaling for Arrays</span></span>
+<span data-ttu-id="761ac-103">全体がマネージ コードで構成されるアプリケーションでは、共通言語ランタイムは、配列型を In/Out パラメーターとして渡します。</span><span class="sxs-lookup"><span data-stu-id="761ac-103">In an application consisting entirely of managed code, the common language runtime passes array types as In/Out parameters.</span></span> <span data-ttu-id="761ac-104">これに対し、相互運用マーシャラーは、既定で In パラメーターとして配列を渡します。</span><span class="sxs-lookup"><span data-stu-id="761ac-104">In contrast, the interop marshaler passes an array as In parameters by default.</span></span>  
   
- [ピン留め最適化](../../../docs/framework/interop/copying-and-pinning.md)を使用すると、同じアパートメント内のオブジェクトと対話するときに、blittable 配列を In/Out パラメーターとして操作しているように見せることができます。 ただし、後でコードをコンピューター間のプロキシを生成するために使用されるタイプ ライブラリにエクスポートし、そのライブラリがアパートメント間で呼び出しをマーシャリングするために使用される場合は、呼び出しで In パラメーターの動作を true に戻すことができます。  
+ <span data-ttu-id="761ac-105">[ピン留め最適化](../../../docs/framework/interop/copying-and-pinning.md)を使用すると、同じアパートメント内のオブジェクトと対話するときに、blittable 配列を In/Out パラメーターとして操作しているように見せることができます。</span><span class="sxs-lookup"><span data-stu-id="761ac-105">With [pinning optimization](../../../docs/framework/interop/copying-and-pinning.md), a blittable array can appear to operate as an In/Out parameter when interacting with objects in the same apartment.</span></span> <span data-ttu-id="761ac-106">ただし、後でコードをコンピューター間のプロキシを生成するために使用されるタイプ ライブラリにエクスポートし、そのライブラリがアパートメント間で呼び出しをマーシャリングするために使用される場合は、呼び出しで In パラメーターの動作を true に戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="761ac-106">However, if you later export the code to a type library used to generate the cross-machine proxy, and that library is used to marshal your calls across apartments, the calls can revert to true In parameter behavior.</span></span>  
   
- 配列は本質的に複雑で、マネージ配列とアンマネージ配列間の違いが、他の非 blittable 型より多くの情報を保証します。 このトピックでは、マーシャリング配列に関する以下の情報を示します。  
+ <span data-ttu-id="761ac-107">配列は本質的に複雑で、マネージ配列とアンマネージ配列間の違いが、他の非 blittable 型より多くの情報を保証します。</span><span class="sxs-lookup"><span data-stu-id="761ac-107">Arrays are complex by nature, and the distinctions between managed and unmanaged arrays warrant more information than other non-blittable types.</span></span> <span data-ttu-id="761ac-108">このトピックでは、マーシャリング配列に関する以下の情報を示します。</span><span class="sxs-lookup"><span data-stu-id="761ac-108">This topic provides the following information on marshaling arrays:</span></span>  
   
--   [マネージ配列](#cpcondefaultmarshalingforarraysanchor1)  
+-   [<span data-ttu-id="761ac-109">マネージ配列</span><span class="sxs-lookup"><span data-stu-id="761ac-109">Managed Arrays</span></span>](#cpcondefaultmarshalingforarraysanchor1)  
   
--   [アンマネージ配列](#cpcondefaultmarshalingforarraysanchor2)  
+-   [<span data-ttu-id="761ac-110">アンマネージ配列</span><span class="sxs-lookup"><span data-stu-id="761ac-110">Unmanaged Arrays</span></span>](#cpcondefaultmarshalingforarraysanchor2)  
   
--   [.NET コードへの配列パラメーターの引き渡し](#cpcondefaultmarshalingforarraysanchor3)  
+-   [<span data-ttu-id="761ac-111">.NET コードへの配列パラメーターの引き渡し</span><span class="sxs-lookup"><span data-stu-id="761ac-111">Passing Array Parameters to .NET Code</span></span>](#cpcondefaultmarshalingforarraysanchor3)  
   
--   [COM への配列の引き渡し](#cpcondefaultmarshalingforarraysanchor4)  
+-   [<span data-ttu-id="761ac-112">COM への配列の引き渡し</span><span class="sxs-lookup"><span data-stu-id="761ac-112">Passing Arrays to COM</span></span>](#cpcondefaultmarshalingforarraysanchor4)  
   
 <a name="cpcondefaultmarshalingforarraysanchor1"></a>   
-## <a name="managed-arrays"></a>マネージ配列  
- マネージ配列型は異なっても、<xref:System.Array?displayProperty=fullName> クラスはすべての配列型の基底クラスです。 **System.Array** クラスには、ランク、長さ、および配列の下限と上限を決定するためのプロパティに加え、配列のアクセス、並べ替え、検索、コピー、および作成するためのメソッドがあります。  
+## <a name="managed-arrays"></a><span data-ttu-id="761ac-113">マネージ配列</span><span class="sxs-lookup"><span data-stu-id="761ac-113">Managed Arrays</span></span>  
+ <span data-ttu-id="761ac-114">マネージ配列型は異なっても、<xref:System.Array?displayProperty=nameWithType> クラスはすべての配列型の基底クラスです。</span><span class="sxs-lookup"><span data-stu-id="761ac-114">Managed array types can vary; however, the <xref:System.Array?displayProperty=nameWithType> class is the base class of all array types.</span></span> <span data-ttu-id="761ac-115">**System.Array** クラスには、ランク、長さ、および配列の下限と上限を決定するためのプロパティに加え、配列のアクセス、並べ替え、検索、コピー、および作成するためのメソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="761ac-115">The **System.Array** class has properties for determining the rank, length, and lower and upper bounds of an array, as well as methods for accessing, sorting, searching, copying, and creating arrays.</span></span>  
   
- これらの配列型は動的で、基底クラス ライブラリで定義されている対応する静的型はありません。 要素型とランクのそれぞれの組み合わせを配列の別個の型として考えると便利です。 このため、整数の 1 次元配列の型は double 型の 1 次元配列の型とは異なります。 同様に、整数の 2 次元配列は整数の 1 次元配列とは異なります。 型を比較するときに、配列の境界は考慮されません。  
+ <span data-ttu-id="761ac-116">これらの配列型は動的で、基底クラス ライブラリで定義されている対応する静的型はありません。</span><span class="sxs-lookup"><span data-stu-id="761ac-116">These array types are dynamic and do not have a corresponding static type defined in the base class library.</span></span> <span data-ttu-id="761ac-117">要素型とランクのそれぞれの組み合わせを配列の別個の型として考えると便利です。</span><span class="sxs-lookup"><span data-stu-id="761ac-117">It is convenient to think of each combination of element type and rank as a distinct type of array.</span></span> <span data-ttu-id="761ac-118">このため、整数の 1 次元配列の型は double 型の 1 次元配列の型とは異なります。</span><span class="sxs-lookup"><span data-stu-id="761ac-118">Therefore, a one-dimensional array of integers is of a different type than a one-dimensional array of double types.</span></span> <span data-ttu-id="761ac-119">同様に、整数の 2 次元配列は整数の 1 次元配列とは異なります。</span><span class="sxs-lookup"><span data-stu-id="761ac-119">Similarly a two-dimensional array of integers is different from a one-dimensional array of integers.</span></span> <span data-ttu-id="761ac-120">型を比較するときに、配列の境界は考慮されません。</span><span class="sxs-lookup"><span data-stu-id="761ac-120">The bounds of the array are not considered when comparing types.</span></span>  
   
- 次の表に示すように、マネージ配列の任意のインスタンスは、特定の要素の型、ランク、および下限があります。  
+ <span data-ttu-id="761ac-121">次の表に示すように、マネージ配列の任意のインスタンスは、特定の要素の型、ランク、および下限があります。</span><span class="sxs-lookup"><span data-stu-id="761ac-121">As the following table shows, any instance of a managed array must be of a specific element type, rank, and lower bound.</span></span>  
   
-|マネージ配列型|要素型|順位|下限|シグネチャの表記|  
+|<span data-ttu-id="761ac-122">マネージ配列型</span><span class="sxs-lookup"><span data-stu-id="761ac-122">Managed array type</span></span>|<span data-ttu-id="761ac-123">要素型</span><span class="sxs-lookup"><span data-stu-id="761ac-123">Element type</span></span>|<span data-ttu-id="761ac-124">順位</span><span class="sxs-lookup"><span data-stu-id="761ac-124">Rank</span></span>|<span data-ttu-id="761ac-125">下限</span><span class="sxs-lookup"><span data-stu-id="761ac-125">Lower bound</span></span>|<span data-ttu-id="761ac-126">シグネチャの表記</span><span class="sxs-lookup"><span data-stu-id="761ac-126">Signature notation</span></span>|  
 |------------------------|------------------|----------|-----------------|------------------------|  
-|**ELEMENT_TYPE_ARRAY**|型で指定。|ランクで指定。|必要に応じて境界で指定。|*type* **[** *n*,*m* **]**|  
-|**ELEMENT_TYPE_CLASS**|不明|不明|不明|**System.Array**|  
-|**ELEMENT_TYPE_SZARRAY**|型で指定。|1|0|*type* **[** *n* **]**|  
+|<span data-ttu-id="761ac-127">**ELEMENT_TYPE_ARRAY**</span><span class="sxs-lookup"><span data-stu-id="761ac-127">**ELEMENT_TYPE_ARRAY**</span></span>|<span data-ttu-id="761ac-128">型で指定。</span><span class="sxs-lookup"><span data-stu-id="761ac-128">Specified by type.</span></span>|<span data-ttu-id="761ac-129">ランクで指定。</span><span class="sxs-lookup"><span data-stu-id="761ac-129">Specified by rank.</span></span>|<span data-ttu-id="761ac-130">必要に応じて境界で指定。</span><span class="sxs-lookup"><span data-stu-id="761ac-130">Optionally specified by bounds.</span></span>|<span data-ttu-id="761ac-131">*type* **[** *n*,*m* **]**</span><span class="sxs-lookup"><span data-stu-id="761ac-131">*type* **[** *n*,*m* **]**</span></span>|  
+|<span data-ttu-id="761ac-132">**ELEMENT_TYPE_CLASS**</span><span class="sxs-lookup"><span data-stu-id="761ac-132">**ELEMENT_TYPE_CLASS**</span></span>|<span data-ttu-id="761ac-133">不明</span><span class="sxs-lookup"><span data-stu-id="761ac-133">Unknown</span></span>|<span data-ttu-id="761ac-134">不明</span><span class="sxs-lookup"><span data-stu-id="761ac-134">Unknown</span></span>|<span data-ttu-id="761ac-135">不明</span><span class="sxs-lookup"><span data-stu-id="761ac-135">Unknown</span></span>|<span data-ttu-id="761ac-136">**System.Array**</span><span class="sxs-lookup"><span data-stu-id="761ac-136">**System.Array**</span></span>|  
+|<span data-ttu-id="761ac-137">**ELEMENT_TYPE_SZARRAY**</span><span class="sxs-lookup"><span data-stu-id="761ac-137">**ELEMENT_TYPE_SZARRAY**</span></span>|<span data-ttu-id="761ac-138">型で指定。</span><span class="sxs-lookup"><span data-stu-id="761ac-138">Specified by type.</span></span>|<span data-ttu-id="761ac-139">1</span><span class="sxs-lookup"><span data-stu-id="761ac-139">1</span></span>|<span data-ttu-id="761ac-140">0</span><span class="sxs-lookup"><span data-stu-id="761ac-140">0</span></span>|<span data-ttu-id="761ac-141">*type* **[** *n* **]**</span><span class="sxs-lookup"><span data-stu-id="761ac-141">*type* **[** *n* **]**</span></span>|  
   
 <a name="cpcondefaultmarshalingforarraysanchor2"></a>   
-## <a name="unmanaged-arrays"></a>アンマネージ配列  
- アンマネージ配列は、COM スタイルのセーフ配列または固定長または可変長の C スタイルの配列です。 セーフ配列は、関連付けられた配列データの型、ランク、および境界を格納する自己記述型の配列です。 C スタイル配列は下限が 0 に固定された 1 次元型の配列です。 マーシャリング サービスには、両方の配列型の制限されたサポートがあります。  
+## <a name="unmanaged-arrays"></a><span data-ttu-id="761ac-142">アンマネージ配列</span><span class="sxs-lookup"><span data-stu-id="761ac-142">Unmanaged Arrays</span></span>  
+ <span data-ttu-id="761ac-143">アンマネージ配列は、COM スタイルのセーフ配列または固定長または可変長の C スタイルの配列です。</span><span class="sxs-lookup"><span data-stu-id="761ac-143">Unmanaged arrays are either COM-style safe arrays or C-style arrays with fixed or variable length.</span></span> <span data-ttu-id="761ac-144">セーフ配列は、関連付けられた配列データの型、ランク、および境界を格納する自己記述型の配列です。</span><span class="sxs-lookup"><span data-stu-id="761ac-144">Safe arrays are self-describing arrays that carry the type, rank, and bounds of the associated array data.</span></span> <span data-ttu-id="761ac-145">C スタイル配列は下限が 0 に固定された 1 次元型の配列です。</span><span class="sxs-lookup"><span data-stu-id="761ac-145">C-style arrays are one-dimensional typed arrays with a fixed lower bound of 0.</span></span> <span data-ttu-id="761ac-146">マーシャリング サービスには、両方の配列型の制限されたサポートがあります。</span><span class="sxs-lookup"><span data-stu-id="761ac-146">The marshaling service has limited support for both types of arrays.</span></span>  
   
 <a name="cpcondefaultmarshalingforarraysanchor3"></a>   
-## <a name="passing-array-parameters-to-net-code"></a>.NET コードへの配列パラメーターの引き渡し  
- C スタイル配列とセーフ配列は、どちらもセーフ配列または C スタイル配列としてアンマネージ コードから .NET コードに渡すことができます。 次の表に、アンマネージ型の値とインポートされた型を示します。  
+## <a name="passing-array-parameters-to-net-code"></a><span data-ttu-id="761ac-147">.NET コードへの配列パラメーターの引き渡し</span><span class="sxs-lookup"><span data-stu-id="761ac-147">Passing Array Parameters to .NET Code</span></span>  
+ <span data-ttu-id="761ac-148">C スタイル配列とセーフ配列は、どちらもセーフ配列または C スタイル配列としてアンマネージ コードから .NET コードに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="761ac-148">Both C-style arrays and safe arrays can be passed to .NET code from unmanaged code as either a safe array or a C-style array.</span></span> <span data-ttu-id="761ac-149">次の表に、アンマネージ型の値とインポートされた型を示します。</span><span class="sxs-lookup"><span data-stu-id="761ac-149">The following table shows the unmanaged type value and the imported type.</span></span>  
   
-|アンマネージ型|インポートされた型|  
+|<span data-ttu-id="761ac-150">アンマネージ型</span><span class="sxs-lookup"><span data-stu-id="761ac-150">Unmanaged type</span></span>|<span data-ttu-id="761ac-151">インポートされた型</span><span class="sxs-lookup"><span data-stu-id="761ac-151">Imported type</span></span>|  
 |--------------------|-------------------|  
-|**SafeArray(** *Type* **)**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> ランク = 1、下限 = 0。 サイズはマネージ シグネチャで指定された場合にのみ判明します。 ランク = 1 または下限 = 0 ではないセーフ配列は、**SZARRAY** としてマーシャリングできません。|  
-|*Type*  **[]**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> ランク = 1、下限 = 0。 サイズはマネージ シグネチャで指定された場合にのみ判明します。|  
+|<span data-ttu-id="761ac-152">**SafeArray(** *Type* **)**</span><span class="sxs-lookup"><span data-stu-id="761ac-152">**SafeArray(** *Type* **)**</span></span>|<span data-ttu-id="761ac-153">**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**</span><span class="sxs-lookup"><span data-stu-id="761ac-153">**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**</span></span><br /><br /> <span data-ttu-id="761ac-154">ランク = 1、下限 = 0。</span><span class="sxs-lookup"><span data-stu-id="761ac-154">Rank = 1, lower bound = 0.</span></span> <span data-ttu-id="761ac-155">サイズはマネージ シグネチャで指定された場合にのみ判明します。</span><span class="sxs-lookup"><span data-stu-id="761ac-155">Size is known only if provided in the managed signature.</span></span> <span data-ttu-id="761ac-156">ランク = 1 または下限 = 0 ではないセーフ配列は、**SZARRAY** としてマーシャリングできません。</span><span class="sxs-lookup"><span data-stu-id="761ac-156">Safe arrays that are not rank = 1 or lower bound = 0 cannot be marshaled as **SZARRAY**.</span></span>|  
+|<span data-ttu-id="761ac-157">*Type*  **[]**</span><span class="sxs-lookup"><span data-stu-id="761ac-157">*Type*  **[]**</span></span>|<span data-ttu-id="761ac-158">**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**</span><span class="sxs-lookup"><span data-stu-id="761ac-158">**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**</span></span><br /><br /> <span data-ttu-id="761ac-159">ランク = 1、下限 = 0。</span><span class="sxs-lookup"><span data-stu-id="761ac-159">Rank = 1, lower bound = 0.</span></span> <span data-ttu-id="761ac-160">サイズはマネージ シグネチャで指定された場合にのみ判明します。</span><span class="sxs-lookup"><span data-stu-id="761ac-160">Size is known only if provided in the managed signature.</span></span>|  
   
-### <a name="safe-arrays"></a>セーフ配列  
- セーフ配列がタイプ ライブラリから .NET アセンブリにインポートされるときに、配列は既知の型 (**int** など) の 1 次元配列に変換されます。 パラメーターに適用される同じ型変換規則は、配列要素にも適用されます。 たとえば、**BSTR** 型のセーフ配列は文字列のマネージ配列になり、バリアントのセーフ配列はオブジェクトのマネージ配列になります。 **SAFEARRAY** 要素型はタイプ ライブラリからキャプチャされ、<xref:System.Runtime.InteropServices.UnmanagedType> 列挙型の **SAFEARRAY** 値に保存されます。  
+### <a name="safe-arrays"></a><span data-ttu-id="761ac-161">セーフ配列</span><span class="sxs-lookup"><span data-stu-id="761ac-161">Safe Arrays</span></span>  
+ <span data-ttu-id="761ac-162">セーフ配列がタイプ ライブラリから .NET アセンブリにインポートされるときに、配列は既知の型 (**int** など) の 1 次元配列に変換されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-162">When a safe array is imported from a type library to a .NET assembly, the array is converted to a one-dimensional array of a known type (such as **int**).</span></span> <span data-ttu-id="761ac-163">パラメーターに適用される同じ型変換規則は、配列要素にも適用されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-163">The same type conversion rules that apply to parameters also apply to array elements.</span></span> <span data-ttu-id="761ac-164">たとえば、**BSTR** 型のセーフ配列は文字列のマネージ配列になり、バリアントのセーフ配列はオブジェクトのマネージ配列になります。</span><span class="sxs-lookup"><span data-stu-id="761ac-164">For example, a safe array of **BSTR** types becomes a managed array of strings and a safe array of variants becomes a managed array of objects.</span></span> <span data-ttu-id="761ac-165">**SAFEARRAY** 要素型はタイプ ライブラリからキャプチャされ、<xref:System.Runtime.InteropServices.UnmanagedType> 列挙型の **SAFEARRAY** 値に保存されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-165">The **SAFEARRAY** element type is captured from the type library and saved in the **SAFEARRAY** value of the <xref:System.Runtime.InteropServices.UnmanagedType> enumeration.</span></span>  
   
- セーフ配列のランクと境界はタイプ ライブラリからは判断できないため、ランクは 1 に等しく下限は 0 に等しいと見なされます。 ランクと境界は、[タイプ ライブラリ インポーター (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) によって生成されるマネージ シグネチャで定義する必要があります。 実行時にメソッドに渡されるランクが異なる場合、<xref:System.Runtime.InteropServices.SafeArrayRankMismatchException> がスローされます。 実行時に渡される配列の型が異なる場合、<xref:System.Runtime.InteropServices.SafeArrayTypeMismatchException> がスローされます。 次の例は、マネージ コードとアンマネージ コードでのセーフ配列を示しています。  
+ <span data-ttu-id="761ac-166">セーフ配列のランクと境界はタイプ ライブラリからは判断できないため、ランクは 1 に等しく下限は 0 に等しいと見なされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-166">Because the rank and bounds of the safe array cannot be determined from the type library, the rank is assumed to equal 1 and the lower bound is assumed to equal 0.</span></span> <span data-ttu-id="761ac-167">ランクと境界は、[タイプ ライブラリ インポーター (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) によって生成されるマネージ シグネチャで定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="761ac-167">The rank and bounds must be defined in the managed signature produced by the [Type Library Importer (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md).</span></span> <span data-ttu-id="761ac-168">実行時にメソッドに渡されるランクが異なる場合、<xref:System.Runtime.InteropServices.SafeArrayRankMismatchException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-168">If the rank passed to the method at run time differs, a <xref:System.Runtime.InteropServices.SafeArrayRankMismatchException> is thrown.</span></span> <span data-ttu-id="761ac-169">実行時に渡される配列の型が異なる場合、<xref:System.Runtime.InteropServices.SafeArrayTypeMismatchException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-169">If the type of the array passed at run time differs, a <xref:System.Runtime.InteropServices.SafeArrayTypeMismatchException> is thrown.</span></span> <span data-ttu-id="761ac-170">次の例は、マネージ コードとアンマネージ コードでのセーフ配列を示しています。</span><span class="sxs-lookup"><span data-stu-id="761ac-170">The following example shows safe arrays in managed and unmanaged code.</span></span>  
   
- **アンマネージ シグネチャ**  
+ <span data-ttu-id="761ac-171">**アンマネージ シグネチャ**</span><span class="sxs-lookup"><span data-stu-id="761ac-171">**Unmanaged signature**</span></span>  
   
 ```  
 HRESULT New1([in] SAFEARRAY( int ) ar);  
@@ -84,7 +80,7 @@ HRESULT New2([in] SAFEARRAY( DATE ) ar);
 HRESULT New3([in, out] SAFEARRAY( BSTR ) *ar);  
 ```  
   
- **マネージ シグネチャ**  
+ <span data-ttu-id="761ac-172">**マネージ シグネチャ**</span><span class="sxs-lookup"><span data-stu-id="761ac-172">**Managed signature**</span></span>  
   
 ```vb  
 Sub New1(<MarshalAs(UnmanagedType.SafeArray, SafeArraySubType:=VT_I4)> _  
@@ -103,20 +99,20 @@ void New3([MarshalAs(UnmanagedType.SafeArray, SafeArraySubType=VT_BSTR)]
    ref String[] ar);  
 ```  
   
- 多次元配列 (0 以外の値にバインドされたセーフ配列) は、Tlbimp.exe によって生成されたメソッド シグネチャが、**ELEMENT_TYPE_SZARRAY** ではなく **ELEMENT_TYPE_ARRAY** の要素型を示すように変更された場合に、マネージ コードにマーシャリングできます。 または、Tlbimp.exe で **/sysarray** スイッチを使用してすべての配列を <xref:System.Array?displayProperty=fullName> オブジェクトとしてインポートできます。 渡される配列が多次元配列だとわかっている場合は、Tlbimp.exe で生成された Microsoft Intermediate Language (MSIL) コードを編集してから再コンパイルすることができます。 MSIL コードの変更方法の詳細については、「[Customizing Runtime Callable Wrappers](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be)」(ランタイム呼び出し可能ラッパーのカスタマイズ) を参照してください。  
+ <span data-ttu-id="761ac-173">多次元配列 (0 以外の値にバインドされたセーフ配列) は、Tlbimp.exe によって生成されたメソッド シグネチャが、**ELEMENT_TYPE_SZARRAY** ではなく **ELEMENT_TYPE_ARRAY** の要素型を示すように変更された場合に、マネージ コードにマーシャリングできます。</span><span class="sxs-lookup"><span data-stu-id="761ac-173">Multidimensional, or nonzero-bound safe arrays, can be marshaled into managed code if the method signature produced by Tlbimp.exe is modified to indicate an element type of **ELEMENT_TYPE_ARRAY** instead of **ELEMENT_TYPE_SZARRAY**.</span></span> <span data-ttu-id="761ac-174">または、Tlbimp.exe で **/sysarray** スイッチを使用してすべての配列を <xref:System.Array?displayProperty=nameWithType> オブジェクトとしてインポートできます。</span><span class="sxs-lookup"><span data-stu-id="761ac-174">Alternatively, you can use the **/sysarray** switch with Tlbimp.exe to import all arrays as <xref:System.Array?displayProperty=nameWithType> objects.</span></span> <span data-ttu-id="761ac-175">渡される配列が多次元配列だとわかっている場合は、Tlbimp.exe で生成された Microsoft Intermediate Language (MSIL) コードを編集してから再コンパイルすることができます。</span><span class="sxs-lookup"><span data-stu-id="761ac-175">In cases where the array being passed is known to be multidimensional, you can edit the Microsoft intermediate language (MSIL) code produced by Tlbimp.exe and then recompile it.</span></span> <span data-ttu-id="761ac-176">MSIL コードの変更方法の詳細については、「[Customizing Runtime Callable Wrappers](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be)」(ランタイム呼び出し可能ラッパーのカスタマイズ) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="761ac-176">For details about how to modify MSIL code, see [Customizing Runtime Callable Wrappers](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be).</span></span>  
   
-### <a name="c-style-arrays"></a>C スタイル配列  
- C スタイル配列がタイプ ライブラリから .NET アセンブリにインポートされると、その配列は **ELEMENT_TYPE_SZARRAY** に変換されます。  
+### <a name="c-style-arrays"></a><span data-ttu-id="761ac-177">C スタイル配列</span><span class="sxs-lookup"><span data-stu-id="761ac-177">C-Style Arrays</span></span>  
+ <span data-ttu-id="761ac-178">C スタイル配列がタイプ ライブラリから .NET アセンブリにインポートされると、その配列は **ELEMENT_TYPE_SZARRAY** に変換されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-178">When a C-style array is imported from a type library to a .NET assembly, the array is converted to **ELEMENT_TYPE_SZARRAY**.</span></span>  
   
- 配列要素型は、タイプ ライブラリから決定され、インポート中は保持されます。 パラメーターに適用される同じ変換規則は、配列の要素にも適用されます。 たとえば、**LPStr** 型の配列は、**String** 型の配列になります。 Tlbimp.exe は配列要素型をキャプチャし、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性をパラメーターに適用します。  
+ <span data-ttu-id="761ac-179">配列要素型は、タイプ ライブラリから決定され、インポート中は保持されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-179">The array element type is determined from the type library and preserved during the import.</span></span> <span data-ttu-id="761ac-180">パラメーターに適用される同じ変換規則は、配列の要素にも適用されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-180">The same conversion rules that apply to parameters also apply to array elements.</span></span> <span data-ttu-id="761ac-181">たとえば、**LPStr** 型の配列は、**String** 型の配列になります。</span><span class="sxs-lookup"><span data-stu-id="761ac-181">For example, an array of **LPStr** types becomes an array of **String** types.</span></span> <span data-ttu-id="761ac-182">Tlbimp.exe は配列要素型をキャプチャし、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性をパラメーターに適用します。</span><span class="sxs-lookup"><span data-stu-id="761ac-182">Tlbimp.exe captures the array element type and applies the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute to the parameter.</span></span>  
   
- 配列ランクは 1 と等しいと見なされます。 ランクが 1 より大きい場合、配列は 1 次元配列として列優先順でマーシャリングされます。 下限は常に = 0 です。  
+ <span data-ttu-id="761ac-183">配列ランクは 1 と等しいと見なされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-183">The array rank is assumed to equal 1.</span></span> <span data-ttu-id="761ac-184">ランクが 1 より大きい場合、配列は 1 次元配列として列優先順でマーシャリングされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-184">If the rank is greater than 1, the array is marshaled as a one-dimensional array in column-major order.</span></span> <span data-ttu-id="761ac-185">下限は常に = 0 です。</span><span class="sxs-lookup"><span data-stu-id="761ac-185">The lower bound always equals 0.</span></span>  
   
- タイプ ライブラリには、固定長または可変長の配列を含めることができます。 Tlbimp.exe は、タイプ ライブラリから固定長配列のみをインポートできます。これは、タイプ ライブラリに可変長配列をマーシャリングするために必要な情報が不足しているためです。 固定長配列では、サイズはタイプ ライブラリからインポートされ、パラメーターに適用される **MarshalAsAttribute** でキャプチャされます。  
+ <span data-ttu-id="761ac-186">タイプ ライブラリには、固定長または可変長の配列を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="761ac-186">Type libraries can contain arrays of fixed or variable length.</span></span> <span data-ttu-id="761ac-187">Tlbimp.exe は、タイプ ライブラリから固定長配列のみをインポートできます。これは、タイプ ライブラリに可変長配列をマーシャリングするために必要な情報が不足しているためです。</span><span class="sxs-lookup"><span data-stu-id="761ac-187">Tlbimp.exe can import only fixed-length arrays from type libraries because type libraries lack the information needed to marshal variable-length arrays.</span></span> <span data-ttu-id="761ac-188">固定長配列では、サイズはタイプ ライブラリからインポートされ、パラメーターに適用される **MarshalAsAttribute** でキャプチャされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-188">With fixed-length arrays, the size is imported from the type library and captured in the **MarshalAsAttribute** that is applied to the parameter.</span></span>  
   
- 次の例に示すように、可変長配列を含むタイプ ライブラリを手動で定義する必要があります。  
+ <span data-ttu-id="761ac-189">次の例に示すように、可変長配列を含むタイプ ライブラリを手動で定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="761ac-189">You must manually define type libraries containing variable-length arrays, as shown in the following example.</span></span>  
   
- **アンマネージ シグネチャ**  
+ <span data-ttu-id="761ac-190">**アンマネージ シグネチャ**</span><span class="sxs-lookup"><span data-stu-id="761ac-190">**Unmanaged signature**</span></span>  
   
 ```  
 HRESULT New1(int ar[10]);  
@@ -124,7 +120,7 @@ HRESULT New2(double ar[10][20]);
 HRESULT New3(LPWStr ar[10]);  
 ```  
   
- **マネージ シグネチャ**  
+ <span data-ttu-id="761ac-191">**マネージ シグネチャ**</span><span class="sxs-lookup"><span data-stu-id="761ac-191">**Managed signature**</span></span>  
   
 ```vb  
 Sub New1(<MarshalAs(UnmanagedType.LPArray, SizeConst=10)> _  
@@ -143,9 +139,9 @@ void New2([MarshalAs(UnmanagedType.LPArray,
    ArraySubType=UnmanagedType.LPWStr, SizeConst=10)] String[] ar);  
 ```  
   
- インターフェイス定義言語 (IDL) ソース内の配列に **size_is** 属性または **length_is** 属性を適用してサイズをクライアントに伝達することができますが、Microsoft インターフェイス定義言語 (MIDL) コンパイラはその情報をタイプ ライブラリに伝達しません。 サイズがわからないと、相互運用マーシャリング サービスが配列要素をマーシャリングできません。 その結果、可変長配列は参照引数としてインポートされます。 例:  
+ <span data-ttu-id="761ac-192">インターフェイス定義言語 (IDL) ソース内の配列に **size_is** 属性または **length_is** 属性を適用してサイズをクライアントに伝達することができますが、Microsoft インターフェイス定義言語 (MIDL) コンパイラはその情報をタイプ ライブラリに伝達しません。</span><span class="sxs-lookup"><span data-stu-id="761ac-192">Although you can apply the **size_is** or **length_is** attributes to an array in Interface Definition Language (IDL) source to convey the size to a client, the Microsoft Interface Definition Language (MIDL) compiler does not propagate that information to the type library.</span></span> <span data-ttu-id="761ac-193">サイズがわからないと、相互運用マーシャリング サービスが配列要素をマーシャリングできません。</span><span class="sxs-lookup"><span data-stu-id="761ac-193">Without knowing the size, the interop marshaling service cannot marshal the array elements.</span></span> <span data-ttu-id="761ac-194">その結果、可変長配列は参照引数としてインポートされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-194">Consequently, variable-length arrays are imported as reference arguments.</span></span> <span data-ttu-id="761ac-195">例:</span><span class="sxs-lookup"><span data-stu-id="761ac-195">For example:</span></span>  
   
- **アンマネージ シグネチャ**  
+ <span data-ttu-id="761ac-196">**アンマネージ シグネチャ**</span><span class="sxs-lookup"><span data-stu-id="761ac-196">**Unmanaged signature**</span></span>  
   
 ```  
 HRESULT New1(int ar[]);  
@@ -153,7 +149,7 @@ HRESULT New2(int ArSize, [size_is(ArSize)] double ar[]);
 HRESULT New3(int ElemCnt, [length_is(ElemCnt)] LPStr ar[]);  
 ```  
   
- **マネージ シグネチャ**  
+ <span data-ttu-id="761ac-197">**マネージ シグネチャ**</span><span class="sxs-lookup"><span data-stu-id="761ac-197">**Managed signature**</span></span>  
   
 ```vb  
 Sub New1(ByRef ar As Integer)  
@@ -167,9 +163,9 @@ void New2(ref double ar);
 void New3(ref String ar);   
 ```  
   
- Tlbimp.exe によって生成された Microsoft Intermediate Language (MSIL) コードを編集して、マーシャラーに配列サイズを提供してから再コンパイルすることができます。 MSIL コードの変更方法の詳細については、「[Customizing Runtime Callable Wrappers](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be)」(ランタイム呼び出し可能ラッパーのカスタマイズ) を参照してください。 配列内の要素の数を示すには、次の方法のいずれかの方法で、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 型をマネージ メソッド定義の配列パラメーターに適用します。  
+ <span data-ttu-id="761ac-198">Tlbimp.exe によって生成された Microsoft Intermediate Language (MSIL) コードを編集して、マーシャラーに配列サイズを提供してから再コンパイルすることができます。</span><span class="sxs-lookup"><span data-stu-id="761ac-198">You can provide the marshaler with the array size by editing the Microsoft intermediate language (MSIL) code produced by Tlbimp.exe and then recompiling it.</span></span> <span data-ttu-id="761ac-199">MSIL コードの変更方法の詳細については、「[Customizing Runtime Callable Wrappers](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be)」(ランタイム呼び出し可能ラッパーのカスタマイズ) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="761ac-199">For details about how to modify MSIL code, see [Customizing Runtime Callable Wrappers](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be).</span></span> <span data-ttu-id="761ac-200">配列内の要素の数を示すには、次の方法のいずれかの方法で、<xref:System.Runtime.InteropServices.MarshalAsAttribute> 型をマネージ メソッド定義の配列パラメーターに適用します。</span><span class="sxs-lookup"><span data-stu-id="761ac-200">To indicate the number of elements in the array, apply the <xref:System.Runtime.InteropServices.MarshalAsAttribute> type to the array parameter of the managed method definition in one of the following ways:</span></span>  
   
--   配列内の要素数を含む別のパラメーターを特定します。 パラメーターは位置によって識別され、最初のパラメーターは番号 0 から始まります。     
+-   <span data-ttu-id="761ac-201">配列内の要素数を含む別のパラメーターを特定します。</span><span class="sxs-lookup"><span data-stu-id="761ac-201">Identify another parameter that contains the number of elements in the array.</span></span> <span data-ttu-id="761ac-202">パラメーターは位置によって識別され、最初のパラメーターは番号 0 から始まります。</span><span class="sxs-lookup"><span data-stu-id="761ac-202">The parameters are identified by position, starting with the first parameter as number 0.</span></span>     
   
     ```vb  
     Sub [New](ElemCnt As Integer, _  
@@ -183,7 +179,7 @@ void New3(ref String ar);
        [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=0)] int[] ar );  
     ```  
   
--   配列のサイズを定数として定義します。 例:  
+-   <span data-ttu-id="761ac-203">配列のサイズを定数として定義します。</span><span class="sxs-lookup"><span data-stu-id="761ac-203">Define the size of the array as a constant.</span></span> <span data-ttu-id="761ac-204">例:</span><span class="sxs-lookup"><span data-stu-id="761ac-204">For example:</span></span>  
   
     ```vb  
     Sub [New](\<MarshalAs(UnmanagedType.LPArray, SizeConst:=128)> _  
@@ -195,29 +191,29 @@ void New3(ref String ar);
        [MarshalAs(UnmanagedType.LPArray, SizeConst=128)] int[] ar );  
     ```  
   
- アンマネージ コードからマネージ コードに配列をマーシャリングする場合、マーシャラーはパラメーターに関連付けられた **MarshalAsAttribute** をチェックして配列サイズを決定します。 配列サイズが指定されていない場合は、1 つの要素のみがマーシャリングされます。  
+ <span data-ttu-id="761ac-205">アンマネージ コードからマネージ コードに配列をマーシャリングする場合、マーシャラーはパラメーターに関連付けられた **MarshalAsAttribute** をチェックして配列サイズを決定します。</span><span class="sxs-lookup"><span data-stu-id="761ac-205">When marshaling arrays from unmanaged code to managed code, the marshaler checks the **MarshalAsAttribute** associated with the parameter to determine the array size.</span></span> <span data-ttu-id="761ac-206">配列サイズが指定されていない場合は、1 つの要素のみがマーシャリングされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-206">If the array size is not specified, only one element is marshaled.</span></span>  
   
 > [!NOTE]
->  **MarshalAsAttribute** は、マネージ配列のアンマネージ コードへのマーシャリングには影響しません。 その方向では、配列サイズは検査で決定されます。 マネージ配列のサブセットをマーシャリングする方法はありません。  
+>  <span data-ttu-id="761ac-207">**MarshalAsAttribute** は、マネージ配列のアンマネージ コードへのマーシャリングには影響しません。</span><span class="sxs-lookup"><span data-stu-id="761ac-207">The **MarshalAsAttribute** has no effect on marshaling managed arrays to unmanaged code.</span></span> <span data-ttu-id="761ac-208">その方向では、配列サイズは検査で決定されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-208">In that direction, the array size is determined by examination.</span></span> <span data-ttu-id="761ac-209">マネージ配列のサブセットをマーシャリングする方法はありません。</span><span class="sxs-lookup"><span data-stu-id="761ac-209">There is no way to marshal a subset of a managed array.</span></span>  
   
- 相互運用マーシャラーは、**CoTaskMemAlloc** メソッドと **CoTaskMemFree** メソッドを使用してメモリの割り当てと取得を行います。 アンマネージ コードによって実行されるメモリの割り当てでは、これらのメソッドも使用する必要があります。  
+ <span data-ttu-id="761ac-210">相互運用マーシャラーは、**CoTaskMemAlloc** メソッドと **CoTaskMemFree** メソッドを使用してメモリの割り当てと取得を行います。</span><span class="sxs-lookup"><span data-stu-id="761ac-210">The interop marshaler uses the **CoTaskMemAlloc** and **CoTaskMemFree** methods to allocate and retrieve memory.</span></span> <span data-ttu-id="761ac-211">アンマネージ コードによって実行されるメモリの割り当てでは、これらのメソッドも使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="761ac-211">Memory allocation performed by unmanaged code must also use these methods.</span></span>  
   
 <a name="cpcondefaultmarshalingforarraysanchor4"></a>   
-## <a name="passing-arrays-to-com"></a>COM への配列の引き渡し  
- すべてのマネージ配列型は、マネージ コードからアンマネージ コードに渡すことができます。 次の表に示すように、マネージ型とそれに適用される属性に応じて、セーフ配列または C スタイル配列として配列にアクセスできます。  
+## <a name="passing-arrays-to-com"></a><span data-ttu-id="761ac-212">COM への配列の引き渡し</span><span class="sxs-lookup"><span data-stu-id="761ac-212">Passing Arrays to COM</span></span>  
+ <span data-ttu-id="761ac-213">すべてのマネージ配列型は、マネージ コードからアンマネージ コードに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="761ac-213">All managed array types can be passed to unmanaged code from managed code.</span></span> <span data-ttu-id="761ac-214">次の表に示すように、マネージ型とそれに適用される属性に応じて、セーフ配列または C スタイル配列として配列にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="761ac-214">Depending on the managed type and the attributes applied to it, the array can be accessed as a safe array or a C-style array, as shown in the following table.</span></span>  
   
-|マネージ配列型|エクスポート|  
+|<span data-ttu-id="761ac-215">マネージ配列型</span><span class="sxs-lookup"><span data-stu-id="761ac-215">Managed array type</span></span>|<span data-ttu-id="761ac-216">エクスポート</span><span class="sxs-lookup"><span data-stu-id="761ac-216">Exported as</span></span>|  
 |------------------------|-----------------|  
-|**ELEMENT_TYPE_SZARRAY** **\<** *type* **>**|<xref:System.Runtime.InteropServices.UnmanagedType> **.SafeArray(** *type* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> 型はシグネチャで提供されます。 ランクは常に 1 で、下限は常に 0 です。 サイズは実行時に常に把握されています。|  
-|**ELEMENT_TYPE_ARRAY** **\<** *type* **>** **\<** *rank* **>**[**\<** *bounds* **>**]|**UnmanagedType.SafeArray(** *type* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> 型、ランク、境界はシグネチャで提供されます。 サイズは実行時に常に把握されています。|  
-|**ELEMENT_TYPE_CLASS** **\<**<xref:System.Array?displayProperty=fullName>**>**|**UT_Interface**<br /><br /> **UnmanagedType.SafeArray(** *type* **)**<br /><br /> 型、ランク、境界、およびサイズは実行時に常に把握されています。|  
+|<span data-ttu-id="761ac-217">**ELEMENT_TYPE_SZARRAY** **\<** *type* **>**</span><span class="sxs-lookup"><span data-stu-id="761ac-217">**ELEMENT_TYPE_SZARRAY** **\<** *type* **>**</span></span>|<span data-ttu-id="761ac-218"><xref:System.Runtime.InteropServices.UnmanagedType> **.SafeArray(** *type* **)**</span><span class="sxs-lookup"><span data-stu-id="761ac-218"><xref:System.Runtime.InteropServices.UnmanagedType> **.SafeArray(** *type* **)**</span></span><br /><br /> <span data-ttu-id="761ac-219">**UnmanagedType.LPArray**</span><span class="sxs-lookup"><span data-stu-id="761ac-219">**UnmanagedType.LPArray**</span></span><br /><br /> <span data-ttu-id="761ac-220">型はシグネチャで提供されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-220">Type is provided in the signature.</span></span> <span data-ttu-id="761ac-221">ランクは常に 1 で、下限は常に 0 です。</span><span class="sxs-lookup"><span data-stu-id="761ac-221">Rank is always 1, lower bound is always 0.</span></span> <span data-ttu-id="761ac-222">サイズは実行時に常に把握されています。</span><span class="sxs-lookup"><span data-stu-id="761ac-222">Size is always known at run time.</span></span>|  
+|<span data-ttu-id="761ac-223">**ELEMENT_TYPE_ARRAY** **\<** *type* **>** **\<** *rank* **>**[**\<** *bounds* **>**]</span><span class="sxs-lookup"><span data-stu-id="761ac-223">**ELEMENT_TYPE_ARRAY** **\<** *type* **>** **\<** *rank* **>**[**\<** *bounds* **>**]</span></span>|<span data-ttu-id="761ac-224">**UnmanagedType.SafeArray(** *type* **)**</span><span class="sxs-lookup"><span data-stu-id="761ac-224">**UnmanagedType.SafeArray(** *type* **)**</span></span><br /><br /> <span data-ttu-id="761ac-225">**UnmanagedType.LPArray**</span><span class="sxs-lookup"><span data-stu-id="761ac-225">**UnmanagedType.LPArray**</span></span><br /><br /> <span data-ttu-id="761ac-226">型、ランク、境界はシグネチャで提供されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-226">Type, rank, bounds are provided in the signature.</span></span> <span data-ttu-id="761ac-227">サイズは実行時に常に把握されています。</span><span class="sxs-lookup"><span data-stu-id="761ac-227">Size is always known at run time.</span></span>|  
+|<span data-ttu-id="761ac-228">**ELEMENT_TYPE_CLASS** **\<**<xref:System.Array?displayProperty=nameWithType>**>**</span><span class="sxs-lookup"><span data-stu-id="761ac-228">**ELEMENT_TYPE_CLASS** **\<**<xref:System.Array?displayProperty=nameWithType>**>**</span></span>|<span data-ttu-id="761ac-229">**UT_Interface**</span><span class="sxs-lookup"><span data-stu-id="761ac-229">**UT_Interface**</span></span><br /><br /> <span data-ttu-id="761ac-230">**UnmanagedType.SafeArray(** *type* **)**</span><span class="sxs-lookup"><span data-stu-id="761ac-230">**UnmanagedType.SafeArray(** *type* **)**</span></span><br /><br /> <span data-ttu-id="761ac-231">型、ランク、境界、およびサイズは実行時に常に把握されています。</span><span class="sxs-lookup"><span data-stu-id="761ac-231">Type, rank, bounds, and size are always known at run time.</span></span>|  
   
- LPSTR または LPWSTR を含む構造体の配列に関連する OLE オートメーションの制限があります。  そのため、**String** フィールドは **UnmanagedType.BSTR** としてマーシャリングする必要があります。 この操作を行わない場合、例外がスローされます。  
+ <span data-ttu-id="761ac-232">LPSTR または LPWSTR を含む構造体の配列に関連する OLE オートメーションの制限があります。</span><span class="sxs-lookup"><span data-stu-id="761ac-232">There is a limitation in OLE Automation relating to arrays of structures that contain LPSTR or LPWSTR.</span></span>  <span data-ttu-id="761ac-233">そのため、**String** フィールドは **UnmanagedType.BSTR** としてマーシャリングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="761ac-233">Therefore, **String** fields have to be marshaled as **UnmanagedType.BSTR**.</span></span> <span data-ttu-id="761ac-234">この操作を行わない場合、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-234">Otherwise, an exception will be thrown.</span></span>  
   
-### <a name="elementtypeszarray"></a>ELEMENT_TYPE_SZARRAY  
- **ELEMENT_TYPE_SZARRAY** パラメーター (1 次元配列) を含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **SAFEARRAY** に変換されます。 同じ変換規則が配列要素型に適用されます。 マネージ配列の内容はマネージ メモリから **SAFEARRAY** に自動的にコピーされます。 例:  
+### <a name="elementtypeszarray"></a><span data-ttu-id="761ac-235">ELEMENT_TYPE_SZARRAY</span><span class="sxs-lookup"><span data-stu-id="761ac-235">ELEMENT_TYPE_SZARRAY</span></span>  
+ <span data-ttu-id="761ac-236">**ELEMENT_TYPE_SZARRAY** パラメーター (1 次元配列) を含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **SAFEARRAY** に変換されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-236">When a method containing an **ELEMENT_TYPE_SZARRAY** parameter (one-dimensional array) is exported from a .NET assembly to a type library, the array parameter is converted to a **SAFEARRAY** of a given type.</span></span> <span data-ttu-id="761ac-237">同じ変換規則が配列要素型に適用されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-237">The same conversion rules apply to the array element types.</span></span> <span data-ttu-id="761ac-238">マネージ配列の内容はマネージ メモリから **SAFEARRAY** に自動的にコピーされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-238">The contents of the managed array are automatically copied from managed memory into the **SAFEARRAY**.</span></span> <span data-ttu-id="761ac-239">例:</span><span class="sxs-lookup"><span data-stu-id="761ac-239">For example:</span></span>  
   
-#### <a name="managed-signature"></a>マネージ シグネチャ  
+#### <a name="managed-signature"></a><span data-ttu-id="761ac-240">マネージ シグネチャ</span><span class="sxs-lookup"><span data-stu-id="761ac-240">Managed signature</span></span>  
   
 ```vb  
 Sub [New](ar() As Long)  
@@ -229,18 +225,18 @@ void New(long[] ar );
 void New(String[] ar );  
 ```  
   
-#### <a name="unmanaged-signature"></a>アンマネージ シグネチャ  
+#### <a name="unmanaged-signature"></a><span data-ttu-id="761ac-241">アンマネージ シグネチャ</span><span class="sxs-lookup"><span data-stu-id="761ac-241">Unmanaged signature</span></span>  
   
 ```  
 HRESULT New([in] SAFEARRAY( long ) ar);   
 HRESULT New([in] SAFEARRAY( BSTR ) ar);  
 ```  
   
- セーフ配列のランクは常に 1 で、下限は常に 0 です。 サイズは実行時に渡されるマネージ配列のサイズによって決まります。  
+ <span data-ttu-id="761ac-242">セーフ配列のランクは常に 1 で、下限は常に 0 です。</span><span class="sxs-lookup"><span data-stu-id="761ac-242">The rank of the safe arrays is always 1 and the lower bound is always 0.</span></span> <span data-ttu-id="761ac-243">サイズは実行時に渡されるマネージ配列のサイズによって決まります。</span><span class="sxs-lookup"><span data-stu-id="761ac-243">The size is determined at run time by the size of the managed array being passed.</span></span>  
   
- <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用することで、配列を C スタイル配列としてマーシャリングすることもできます。 例:  
+ <span data-ttu-id="761ac-244"><xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用することで、配列を C スタイル配列としてマーシャリングすることもできます。</span><span class="sxs-lookup"><span data-stu-id="761ac-244">The array can also be marshaled as a C-style array by using the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute.</span></span> <span data-ttu-id="761ac-245">例:</span><span class="sxs-lookup"><span data-stu-id="761ac-245">For example:</span></span>  
   
-#### <a name="managed-signature"></a>マネージ シグネチャ  
+#### <a name="managed-signature"></a><span data-ttu-id="761ac-246">マネージ シグネチャ</span><span class="sxs-lookup"><span data-stu-id="761ac-246">Managed signature</span></span>  
   
 ```vb  
 Sub [New](<MarshalAs(UnmanagedType.LPArray, SizeParamIndex:=1)> _  
@@ -262,7 +258,7 @@ void New([MarshalAs(UnmanagedType.LPArray, ArraySubType=
    String [] ar, int size );  
 ```  
   
-#### <a name="unmanaged-signature"></a>アンマネージ シグネチャ  
+#### <a name="unmanaged-signature"></a><span data-ttu-id="761ac-247">アンマネージ シグネチャ</span><span class="sxs-lookup"><span data-stu-id="761ac-247">Unmanaged signature</span></span>  
   
 ```  
 HRESULT New(long ar[]);   
@@ -270,12 +266,12 @@ HRESULT New(BSTR ar[]);
 HRESULT New(LPStr ar[]);  
 ```  
   
- マーシャラーには配列をマーシャリングするために必要な長さ情報がありますが、配列の長さは通常、呼び出し先に長さを伝えるために個別の引数として渡されます。  
+ <span data-ttu-id="761ac-248">マーシャラーには配列をマーシャリングするために必要な長さ情報がありますが、配列の長さは通常、呼び出し先に長さを伝えるために個別の引数として渡されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-248">Although the marshaler has the length information needed to marshal the array, the array length is usually passed as a separate argument to convey the length to the callee.</span></span>  
   
-### <a name="elementtypearray"></a>ELEMENT_TYPE_ARRAY  
- **ELEMENT_TYPE_ARRAY** パラメーターを含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **SAFEARRAY** に変換されます。 マネージ配列の内容はマネージ メモリから **SAFEARRAY** に自動的にコピーされます。 例:  
+### <a name="elementtypearray"></a><span data-ttu-id="761ac-249">ELEMENT_TYPE_ARRAY</span><span class="sxs-lookup"><span data-stu-id="761ac-249">ELEMENT_TYPE_ARRAY</span></span>  
+ <span data-ttu-id="761ac-250">**ELEMENT_TYPE_ARRAY** パラメーターを含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **SAFEARRAY** に変換されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-250">When a method containing an **ELEMENT_TYPE_ARRAY** parameter is exported from a .NET assembly to a type library, the array parameter is converted to a **SAFEARRAY** of a given type.</span></span> <span data-ttu-id="761ac-251">マネージ配列の内容はマネージ メモリから **SAFEARRAY** に自動的にコピーされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-251">The contents of the managed array are automatically copied from managed memory into the **SAFEARRAY**.</span></span> <span data-ttu-id="761ac-252">例:</span><span class="sxs-lookup"><span data-stu-id="761ac-252">For example:</span></span>  
   
-#### <a name="managed-signature"></a>マネージ シグネチャ  
+#### <a name="managed-signature"></a><span data-ttu-id="761ac-253">マネージ シグネチャ</span><span class="sxs-lookup"><span data-stu-id="761ac-253">Managed signature</span></span>  
   
 ```vb  
 Sub [New](ar(,) As Long)  
@@ -287,18 +283,18 @@ void New( long [,] ar );
 void New( String [,] ar );  
 ```  
   
-#### <a name="unmanaged-signature"></a>アンマネージ シグネチャ  
+#### <a name="unmanaged-signature"></a><span data-ttu-id="761ac-254">アンマネージ シグネチャ</span><span class="sxs-lookup"><span data-stu-id="761ac-254">Unmanaged signature</span></span>  
   
 ```  
 HRESULT New([in] SAFEARRAY( long ) ar);   
 HRESULT New([in] SAFEARRAY( BSTR ) ar);  
 ```  
   
- セーフ配列のランク、サイズ、およ境界は、マネージ配列の特性によって実行時に決定されます。  
+ <span data-ttu-id="761ac-255">セーフ配列のランク、サイズ、およ境界は、マネージ配列の特性によって実行時に決定されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-255">The rank, size, and bounds of the safe arrays are determined at run time by the characteristics of the managed array.</span></span>  
   
- <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を適用することで、配列を C スタイル配列としてマーシャリングすることもできます。 例:  
+ <span data-ttu-id="761ac-256"><xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を適用することで、配列を C スタイル配列としてマーシャリングすることもできます。</span><span class="sxs-lookup"><span data-stu-id="761ac-256">The array can also be marshaled as a C-style array by applying the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute.</span></span> <span data-ttu-id="761ac-257">例:</span><span class="sxs-lookup"><span data-stu-id="761ac-257">For example:</span></span>  
   
-#### <a name="managed-signature"></a>マネージ シグネチャ  
+#### <a name="managed-signature"></a><span data-ttu-id="761ac-258">マネージ シグネチャ</span><span class="sxs-lookup"><span data-stu-id="761ac-258">Managed signature</span></span>  
   
 ```vb  
 Sub [New](<MarshalAs(UnmanagedType.LPARRAY, SizeParamIndex:=1)> _  
@@ -316,16 +312,16 @@ void New([MarshalAs(UnmanagedType.LPARRAY,
    String [,] ar, int size );  
 ```  
   
-#### <a name="unmanaged-signature"></a>アンマネージ シグネチャ  
+#### <a name="unmanaged-signature"></a><span data-ttu-id="761ac-259">アンマネージ シグネチャ</span><span class="sxs-lookup"><span data-stu-id="761ac-259">Unmanaged signature</span></span>  
   
 ```  
 HRESULT New(long ar[]);   
 HRESULT New(LPStr ar[]);  
 ```  
   
- 入れ子にされた配列をマーシャリングすることはできません。 たとえば、次のシグネチャを[タイプ ライブラリ エクスポーター (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) を使用してエクスポートすると、エラーが発生します。  
+ <span data-ttu-id="761ac-260">入れ子にされた配列をマーシャリングすることはできません。</span><span class="sxs-lookup"><span data-stu-id="761ac-260">Nested arrays cannot be marshaled.</span></span> <span data-ttu-id="761ac-261">たとえば、次のシグネチャを[タイプ ライブラリ エクスポーター (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) を使用してエクスポートすると、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="761ac-261">For example, the following signature generates an error when exported with the [Type Library Exporter (Tlbexp.exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md).</span></span>  
   
-#### <a name="managed-signature"></a>マネージ シグネチャ  
+#### <a name="managed-signature"></a><span data-ttu-id="761ac-262">マネージ シグネチャ</span><span class="sxs-lookup"><span data-stu-id="761ac-262">Managed signature</span></span>  
   
 ```vb  
 Sub [New](ar()()() As Long)  
@@ -335,10 +331,10 @@ Sub [New](ar()()() As Long)
 void New(long [][][] ar );  
 ```  
   
-### <a name="elementtypeclass-systemarray"></a>ELEMENT_TYPE_CLASS \<System.Array>  
- <xref:System.Array?displayProperty=fullName> パラメーターを含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **_Array** インターフェイスに変換されます。 マネージ配列の内容には、**_Array** インターフェイスのメソッドとプロパティを介してのみアクセスできます。 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用することで、**System.Array** を **SAFEARRAY** としてマーシャリングすることもできます。 セーフ配列としてマーシャリングすると、配列要素はバリアントとしてマーシャリングされます。 例:  
+### <a name="elementtypeclass-systemarray"></a><span data-ttu-id="761ac-263">ELEMENT_TYPE_CLASS \<System.Array></span><span class="sxs-lookup"><span data-stu-id="761ac-263">ELEMENT_TYPE_CLASS \<System.Array></span></span>  
+ <span data-ttu-id="761ac-264"><xref:System.Array?displayProperty=nameWithType> パラメーターを含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **_Array** インターフェイスに変換されます。</span><span class="sxs-lookup"><span data-stu-id="761ac-264">When a method containing a <xref:System.Array?displayProperty=nameWithType> parameter is exported from a .NET assembly to a type library, the array parameter is converted to an **_Array** interface.</span></span> <span data-ttu-id="761ac-265">マネージ配列の内容には、**_Array** インターフェイスのメソッドとプロパティを介してのみアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="761ac-265">The contents of the managed array are accessible only through the methods and properties of the **_Array** interface.</span></span> <span data-ttu-id="761ac-266"><xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用することで、**System.Array** を **SAFEARRAY** としてマーシャリングすることもできます。</span><span class="sxs-lookup"><span data-stu-id="761ac-266">**System.Array** can also be marshaled as a **SAFEARRAY** by using the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute.</span></span> <span data-ttu-id="761ac-267">セーフ配列としてマーシャリングすると、配列要素はバリアントとしてマーシャリングされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-267">When marshaled as a safe array, the array elements are marshaled as variants.</span></span> <span data-ttu-id="761ac-268">例:</span><span class="sxs-lookup"><span data-stu-id="761ac-268">For example:</span></span>  
   
-#### <a name="managed-signature"></a>マネージ シグネチャ  
+#### <a name="managed-signature"></a><span data-ttu-id="761ac-269">マネージ シグネチャ</span><span class="sxs-lookup"><span data-stu-id="761ac-269">Managed signature</span></span>  
   
 ```vb  
 Sub New1( ar As System.Array )  
@@ -350,17 +346,17 @@ void New1( System.Array ar );
 void New2( [MarshalAs(UnmanagedType.Safe array)] System.Array ar );  
 ```  
   
-#### <a name="unmanaged-signature"></a>アンマネージ シグネチャ  
+#### <a name="unmanaged-signature"></a><span data-ttu-id="761ac-270">アンマネージ シグネチャ</span><span class="sxs-lookup"><span data-stu-id="761ac-270">Unmanaged signature</span></span>  
   
 ```  
 HRESULT New([in] _Array *ar);   
 HRESULT New([in] SAFEARRAY(VARIANT) ar);  
 ```  
   
-### <a name="arrays-within-structures"></a>構造体内の配列  
- アンマネージ構造体には、埋め込まれた配列を含めることができます。 既定では、これらの埋め込まれた配列フィールドは SAFEARRAY としてマーシャリングされます。 次の例では、`s1` が構造体そのものに直接割り当てられている埋め込まれた配列です。  
+### <a name="arrays-within-structures"></a><span data-ttu-id="761ac-271">構造体内の配列</span><span class="sxs-lookup"><span data-stu-id="761ac-271">Arrays within Structures</span></span>  
+ <span data-ttu-id="761ac-272">アンマネージ構造体には、埋め込まれた配列を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="761ac-272">Unmanaged structures can contain embedded arrays.</span></span> <span data-ttu-id="761ac-273">既定では、これらの埋め込まれた配列フィールドは SAFEARRAY としてマーシャリングされます。</span><span class="sxs-lookup"><span data-stu-id="761ac-273">By default, these embedded array fields are marshaled as a SAFEARRAY.</span></span> <span data-ttu-id="761ac-274">次の例では、`s1` が構造体そのものに直接割り当てられている埋め込まれた配列です。</span><span class="sxs-lookup"><span data-stu-id="761ac-274">In the following example, `s1` is an embedded array that is allocated directly within the structure itself.</span></span>  
   
-#### <a name="unmanaged-representation"></a>アンマネージ表現  
+#### <a name="unmanaged-representation"></a><span data-ttu-id="761ac-275">アンマネージ表現</span><span class="sxs-lookup"><span data-stu-id="761ac-275">Unmanaged representation</span></span>  
   
 ```  
 struct MyStruct {  
@@ -368,7 +364,7 @@ struct MyStruct {
 }  
 ```  
   
- <xref:System.Runtime.InteropServices.UnmanagedType> としてマーシャリングできる配列で、<xref:System.Runtime.InteropServices.MarshalAsAttribute> フィールドを設定する必要があります。 サイズは定数としてのみ設定できます。 次のコードは、`MyStruct` の対応するマネージ定義を示しています。  
+ <span data-ttu-id="761ac-276"><xref:System.Runtime.InteropServices.UnmanagedType> としてマーシャリングできる配列で、<xref:System.Runtime.InteropServices.MarshalAsAttribute> フィールドを設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="761ac-276">Arrays can be marshaled as <xref:System.Runtime.InteropServices.UnmanagedType>, which requires you to set the <xref:System.Runtime.InteropServices.MarshalAsAttribute> field.</span></span> <span data-ttu-id="761ac-277">サイズは定数としてのみ設定できます。</span><span class="sxs-lookup"><span data-stu-id="761ac-277">The size can be set only as a constant.</span></span> <span data-ttu-id="761ac-278">次のコードは、`MyStruct` の対応するマネージ定義を示しています。</span><span class="sxs-lookup"><span data-stu-id="761ac-278">The following code shows the corresponding managed definition of `MyStruct`.</span></span>  
   
 ```vb  
 Public Structure <StructLayout(LayoutKind.Sequential)> MyStruct  
@@ -384,9 +380,8 @@ public struct MyStruct {
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)   
- [Blittable 型と非 Blittable 型](../../../docs/framework/interop/blittable-and-non-blittable-types.md)   
- [方向属性](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)   
- [コピーと固定](../../../docs/framework/interop/copying-and-pinning.md)
-
+## <a name="see-also"></a><span data-ttu-id="761ac-279">関連項目</span><span class="sxs-lookup"><span data-stu-id="761ac-279">See Also</span></span>  
+ [<span data-ttu-id="761ac-280">既定のマーシャリング動作</span><span class="sxs-lookup"><span data-stu-id="761ac-280">Default Marshaling Behavior</span></span>](../../../docs/framework/interop/default-marshaling-behavior.md)  
+ [<span data-ttu-id="761ac-281">Blittable 型と非 Blittable 型</span><span class="sxs-lookup"><span data-stu-id="761ac-281">Blittable and Non-Blittable Types</span></span>](../../../docs/framework/interop/blittable-and-non-blittable-types.md)  
+ [<span data-ttu-id="761ac-282">方向属性</span><span class="sxs-lookup"><span data-stu-id="761ac-282">Directional Attributes</span></span>](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
+ [<span data-ttu-id="761ac-283">コピーと固定</span><span class="sxs-lookup"><span data-stu-id="761ac-283">Copying and Pinning</span></span>](../../../docs/framework/interop/copying-and-pinning.md)

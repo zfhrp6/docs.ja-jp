@@ -1,89 +1,88 @@
 ---
-title: "Shadows (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Shadows"
-  - "shadows"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "shadowing"
-  - "duplicate names"
-  - "scope, shadowing"
-  - "Shadows keyword"
-  - "names, shadowing"
+title: Shadows (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.Shadows
+- shadows
+helpviewer_keywords:
+- shadowing
+- duplicate names [Visual Basic]
+- scope [Visual Basic], shadowing
+- Shadows keyword [Visual Basic]
+- names [Visual Basic], shadowing
 ms.assetid: 6bf687cd-0544-4797-b51b-911125ec57c6
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: bb767c372cc05d61d569227af8eef0dc3c67489b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Shadows (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-宣言されたプログラミング要素が、基本クラスにある、同じ名前を持つ要素またはオーバーロードされる要素を宣言し直すことを示します。  
+# <a name="shadows-visual-basic"></a><span data-ttu-id="62990-102">Shadows (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="62990-102">Shadows (Visual Basic)</span></span>
+<span data-ttu-id="62990-103">宣言されたプログラミング要素を宣言し、同じ名前を持つ要素は、または基底クラスのオーバー ロードされる要素のセットを非表示にすることを指定します。</span><span class="sxs-lookup"><span data-stu-id="62990-103">Specifies that a declared programming element redeclares and hides an identically named element, or set of overloaded elements, in a base class.</span></span>  
   
-## 解説  
- シャドウ \(*名前による隠ぺい*とも呼ばれます\) の主な目的は、クラス メンバーの定義を保持することにあります。  基本クラスは、既に定義されている要素と同じ名前の要素を作成するように変更される可能性もあります。  このような場合、`Shadows` 修飾子を指定してあると、派生クラスを通じた参照は新しい基本クラスの要素に解決されず、派生クラスで定義したメンバーに解決されます。  
+## <a name="remarks"></a><span data-ttu-id="62990-104">コメント</span><span class="sxs-lookup"><span data-stu-id="62990-104">Remarks</span></span>  
+ <span data-ttu-id="62990-105">シャドウの主な目的は、(とも呼ばれるは*名前による隠ぺい*) をクラスのメンバーの定義を維持しています。</span><span class="sxs-lookup"><span data-stu-id="62990-105">The main purpose of shadowing (which is also known as *hiding by name*) is to preserve the definition of your class members.</span></span> <span data-ttu-id="62990-106">基本クラスがありますを変えることが定義されている 1 つとして同じ名前の要素を作成します。</span><span class="sxs-lookup"><span data-stu-id="62990-106">The base class might undergo a change that creates an element with the same name as one you have already defined.</span></span> <span data-ttu-id="62990-107">この場合、`Shadows`修飾子強制的に実行をするメンバーに解決するのには、クラスを参照する基本クラスの新しい要素の代わりに定義された、します。</span><span class="sxs-lookup"><span data-stu-id="62990-107">If this happens, the `Shadows` modifier forces references through your class to be resolved to the member you defined, instead of to the new base class element.</span></span>  
   
- シャドウとオーバーライドは、どちらも継承された要素を再定義しますが、そのアプローチは大きく異なります。  詳細については、「[Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)」を参照してください。  
+ <span data-ttu-id="62990-108">シャドウとオーバーライドは、どちらも継承された要素を再定義しますが、その方法は大きく異なります。</span><span class="sxs-lookup"><span data-stu-id="62990-108">Both shadowing and overriding redefine an inherited element, but there are significant differences between the two approaches.</span></span> <span data-ttu-id="62990-109">詳細については、次を参照してください。 [Visual Basic におけるシャドウ](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)です。</span><span class="sxs-lookup"><span data-stu-id="62990-109">For more information, see [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).</span></span>  
   
-## 規則  
+## <a name="rules"></a><span data-ttu-id="62990-110">ルール</span><span class="sxs-lookup"><span data-stu-id="62990-110">Rules</span></span>  
   
--   **宣言コンテキスト。** `Shadows` は、クラス レベルでのみ使用できます。  つまり、`Shadows` 要素の宣言コンテキストはクラスであることが必要で、ソース ファイル、名前空間、インターフェイス、モジュール、構造体、またはプロシージャでは宣言できません。  
+-   <span data-ttu-id="62990-111">**宣言コンテキスト。**</span><span class="sxs-lookup"><span data-stu-id="62990-111">**Declaration Context.**</span></span> <span data-ttu-id="62990-112">使用することができます`Shadows`クラス レベルでのみです。</span><span class="sxs-lookup"><span data-stu-id="62990-112">You can use `Shadows` only at class level.</span></span> <span data-ttu-id="62990-113">つまりの宣言コンテキスト、`Shadows`要素がクラスである必要があり、ソース ファイル、名前空間、インターフェイス、モジュール、構造体、またはプロシージャにすることはできません。</span><span class="sxs-lookup"><span data-stu-id="62990-113">This means the declaration context for a `Shadows` element must be a class, and cannot be a source file, namespace, interface, module, structure, or procedure.</span></span>  
   
-     1 つの宣言ステートメントに宣言できるシャドウ要素は 1 つだけです。  
+     <span data-ttu-id="62990-114">1 つの宣言ステートメントで 1 つだけのシャドウ要素を宣言することができます。</span><span class="sxs-lookup"><span data-stu-id="62990-114">You can declare only one shadowing element in a single declaration statement.</span></span>  
   
--   **結合された修飾子。**同じ変数宣言で `Shadows` を、`Overloads`、`Overrides`、または `Static` と同時に指定することはできません。  
+-   <span data-ttu-id="62990-115">**結合された修飾子。**</span><span class="sxs-lookup"><span data-stu-id="62990-115">**Combined Modifiers.**</span></span> <span data-ttu-id="62990-116">指定することはできません`Shadows`と共に`Overloads`、 `Overrides`、または`Static`同じ宣言内で。</span><span class="sxs-lookup"><span data-stu-id="62990-116">You cannot specify `Shadows` together with `Overloads`, `Overrides`, or `Static` in the same declaration.</span></span>  
   
--   **要素の型。**宣言された要素は、他の任意の種類の要素でシャドウできます。  プロパティまたはプロシージャを別のプロパティまたはプロシージャでシャドウする場合、パラメーターおよび戻り値の型は、基本クラスのプロパティまたはプロシージャのパラメーターおよび戻り値の型と一致しなくてもかまいません。  
+-   <span data-ttu-id="62990-117">**要素の型。**</span><span class="sxs-lookup"><span data-stu-id="62990-117">**Element Types.**</span></span> <span data-ttu-id="62990-118">宣言された要素は、他の任意の種類の要素でシャドウできます。</span><span class="sxs-lookup"><span data-stu-id="62990-118">You can shadow any kind of declared element with any other kind.</span></span> <span data-ttu-id="62990-119">プロパティまたはプロシージャを別のプロパティまたはプロシージャをシャドウする場合、パラメーターと戻り値の型はありません、基底クラスのプロパティまたはプロシージャのものと一致します。</span><span class="sxs-lookup"><span data-stu-id="62990-119">If you shadow a property or procedure with another property or procedure, the parameters and the return type do not have to match those in the base class property or procedure.</span></span>  
   
--   **アクセス。**通常、シャドウされた基本クラスの要素は、その要素をシャドウする派生クラスからは使用できません。  ただし、次の点に注意してください。  
+-   <span data-ttu-id="62990-120">**アクセスします。**</span><span class="sxs-lookup"><span data-stu-id="62990-120">**Accessing.**</span></span> <span data-ttu-id="62990-121">基本クラスの影付きの要素は、それをシャドウする派生クラス内で通常利用ではありません。</span><span class="sxs-lookup"><span data-stu-id="62990-121">The shadowed element in the base class is normally unavailable from within the derived class that shadows it.</span></span> <span data-ttu-id="62990-122">ただし、次の考慮事項が適用されます。</span><span class="sxs-lookup"><span data-stu-id="62990-122">However, the following considerations apply.</span></span>  
   
-    -   シャドウする要素が、その要素を参照するコードからアクセス不可能である場合、参照はシャドウされる要素に解決されます。  たとえば、`Private` 要素が基本クラスの要素をシャドウした場合、その `Private` 要素へのアクセス許可を持たないコードは、基本クラスの要素へ代わりにアクセスします。  
+    -   <span data-ttu-id="62990-123">シャドウする要素が参照するコードからアクセスできない場合は、シャドウされた要素への参照は解決されます。</span><span class="sxs-lookup"><span data-stu-id="62990-123">If the shadowing element is not accessible from the code referring to it, the reference is resolved to the shadowed element.</span></span> <span data-ttu-id="62990-124">たとえば場合、`Private`要素をシャドウする基本クラスの要素では、コードへのアクセス許可がない、`Private`要素は、基底クラス要素を代わりにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="62990-124">For example, if a `Private` element shadows a base class element, code that does not have permission to access the `Private` element accesses the base class element instead.</span></span>  
   
-    -   要素をシャドウした場合でも、基本クラスの型で宣言されたオブジェクトを使用すると、シャドウされた要素にアクセスできます。  `MyBase` を使用してアクセスすることもできます。  
+    -   <span data-ttu-id="62990-125">要素をシャドウする場合は、基底クラスの型で宣言されたオブジェクトをシャドウされた要素を引き続きアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="62990-125">If you shadow an element, you can still access the shadowed element through an object declared with the type of the base class.</span></span> <span data-ttu-id="62990-126">を通じてアクセスすることも`MyBase`します。</span><span class="sxs-lookup"><span data-stu-id="62990-126">You can also access it through `MyBase`.</span></span>  
   
- 修飾子 `Shadows` は、次の構文で使用します。  
+ <span data-ttu-id="62990-127">`Shadows` 修飾子は、次のコンテキストで使用できます。</span><span class="sxs-lookup"><span data-stu-id="62990-127">The `Shadows` modifier can be used in these contexts:</span></span>  
   
- [Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [<span data-ttu-id="62990-128">Class ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-128">Class Statement</span></span>](../../../visual-basic/language-reference/statements/class-statement.md)  
   
- [Const ステートメント](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [<span data-ttu-id="62990-129">Const ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-129">Const Statement</span></span>](../../../visual-basic/language-reference/statements/const-statement.md)  
   
- [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [<span data-ttu-id="62990-130">Declare ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-130">Declare Statement</span></span>](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
- [Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [<span data-ttu-id="62990-131">Delegate ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-131">Delegate Statement</span></span>](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
- [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [<span data-ttu-id="62990-132">Dim ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-132">Dim Statement</span></span>](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
- [Enum ステートメント](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [<span data-ttu-id="62990-133">Enum ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-133">Enum Statement</span></span>](../../../visual-basic/language-reference/statements/enum-statement.md)  
   
- [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [<span data-ttu-id="62990-134">Event ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-134">Event Statement</span></span>](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [<span data-ttu-id="62990-135">Function ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-135">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [<span data-ttu-id="62990-136">Interface ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-136">Interface Statement</span></span>](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
- [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="62990-137">Property ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-137">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Structure ステートメント](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [<span data-ttu-id="62990-138">Structure ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-138">Structure Statement</span></span>](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
- [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [<span data-ttu-id="62990-139">Sub ステートメント</span><span class="sxs-lookup"><span data-stu-id="62990-139">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## 参照  
- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)   
- [Static](../../../visual-basic/language-reference/modifiers/static.md)   
- [Private](../../../visual-basic/language-reference/modifiers/private.md)   
- [Me, My, MyBase, and MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)   
- [Inheritance Basics](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)   
- [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)   
- [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)   
- [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)   
- [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)   
- [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)   
- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+## <a name="see-also"></a><span data-ttu-id="62990-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="62990-140">See Also</span></span>  
+ [<span data-ttu-id="62990-141">Shared</span><span class="sxs-lookup"><span data-stu-id="62990-141">Shared</span></span>](../../../visual-basic/language-reference/modifiers/shared.md)  
+ [<span data-ttu-id="62990-142">Static</span><span class="sxs-lookup"><span data-stu-id="62990-142">Static</span></span>](../../../visual-basic/language-reference/modifiers/static.md)  
+ [<span data-ttu-id="62990-143">Private</span><span class="sxs-lookup"><span data-stu-id="62990-143">Private</span></span>](../../../visual-basic/language-reference/modifiers/private.md)  
+ [<span data-ttu-id="62990-144">Me、My、MyBase、および MyClass</span><span class="sxs-lookup"><span data-stu-id="62990-144">Me, My, MyBase, and MyClass</span></span>](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)  
+ [<span data-ttu-id="62990-145">継承の基本</span><span class="sxs-lookup"><span data-stu-id="62990-145">Inheritance Basics</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)  
+ [<span data-ttu-id="62990-146">MustOverride</span><span class="sxs-lookup"><span data-stu-id="62990-146">MustOverride</span></span>](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
+ [<span data-ttu-id="62990-147">NotOverridable</span><span class="sxs-lookup"><span data-stu-id="62990-147">NotOverridable</span></span>](../../../visual-basic/language-reference/modifiers/notoverridable.md)  
+ [<span data-ttu-id="62990-148">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="62990-148">Overloads</span></span>](../../../visual-basic/language-reference/modifiers/overloads.md)  
+ [<span data-ttu-id="62990-149">Overridable</span><span class="sxs-lookup"><span data-stu-id="62990-149">Overridable</span></span>](../../../visual-basic/language-reference/modifiers/overridable.md)  
+ [<span data-ttu-id="62990-150">Overrides</span><span class="sxs-lookup"><span data-stu-id="62990-150">Overrides</span></span>](../../../visual-basic/language-reference/modifiers/overrides.md)  
+ [<span data-ttu-id="62990-151">Visual Basic におけるシャドウ</span><span class="sxs-lookup"><span data-stu-id="62990-151">Shadowing in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

@@ -1,42 +1,42 @@
 ---
-title: "ListBox コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ListBox"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "リスト ボックス, リスト ボックスの概要"
-  - "ListBox コントロール [Windows フォーム], ListBox コントロールの概要"
+title: "ListBox コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: ListBox
+helpviewer_keywords:
+- list boxes [Windows Forms], about list boxes
+- ListBox control [Windows Forms], about ListBox control
 ms.assetid: 37ea226b-6fc8-4c70-936a-c6af4e0cad4c
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6e73d76a2d9b31a87bf5a693b5ffa387d7ab5cef
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ListBox コントロールの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.ListBox> コントロールを使用すると、リストが表示され、ユーザーは 1 つ以上の項目を選択できます。  項目の合計数が表示限度を超えた場合は、<xref:System.Windows.Forms.ListBox> コントロールにスクロール バーが自動的に追加されます。  <xref:System.Windows.Forms.ListBox.MultiColumn%2A> プロパティを `true` に設定した場合は、項目が複数列で表示され、水平スクロール バーが表示されます。  <xref:System.Windows.Forms.ListBox.MultiColumn%2A> プロパティを `false` に設定した場合は、項目が単一列で表示され、垂直スクロール バーが表示されます。  <xref:System.Windows.Forms.ListBox.ScrollAlwaysVisible%2A> を `true` に設定している場合は、項目数に関係なくスクロール バーが表示されます。  <xref:System.Windows.Forms.ListBox.SelectionMode%2A> プロパティでは、一度に選択できるリスト項目の数を指定します。  
+# <a name="listbox-control-overview-windows-forms"></a><span data-ttu-id="6196d-102">ListBox コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="6196d-102">ListBox Control Overview (Windows Forms)</span></span>
+<span data-ttu-id="6196d-103">Windows フォーム<xref:System.Windows.Forms.ListBox>コントロールには、ユーザーが 1 つまたは複数の項目を選択できる一覧が表示されます。</span><span class="sxs-lookup"><span data-stu-id="6196d-103">A Windows Forms <xref:System.Windows.Forms.ListBox> control displays a list from which the user can select one or more items.</span></span> <span data-ttu-id="6196d-104">スクロール バーが自動的に追加する項目の合計数が表示できる数を超えた場合、<xref:System.Windows.Forms.ListBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6196d-104">If the total number of items exceeds the number that can be displayed, a scroll bar is automatically added to the <xref:System.Windows.Forms.ListBox> control.</span></span> <span data-ttu-id="6196d-105">ときに、<xref:System.Windows.Forms.ListBox.MultiColumn%2A>プロパティに設定されている`true`、リスト ボックス項目を複数の列に表示して、水平スクロール バーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="6196d-105">When the <xref:System.Windows.Forms.ListBox.MultiColumn%2A> property is set to `true`, the list box displays items in multiple columns and a horizontal scroll bar appears.</span></span> <span data-ttu-id="6196d-106">ときに、<xref:System.Windows.Forms.ListBox.MultiColumn%2A>プロパティに設定されている`false`、リスト ボックス項目を 1 つの列で表示して、垂直スクロール バーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="6196d-106">When the <xref:System.Windows.Forms.ListBox.MultiColumn%2A> property is set to `false`, the list box displays items in a single column and a vertical scroll bar appears.</span></span> <span data-ttu-id="6196d-107">ときに<xref:System.Windows.Forms.ListBox.ScrollAlwaysVisible%2A>に設定されている`true`項目の数に関係なく、スクロール バーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="6196d-107">When <xref:System.Windows.Forms.ListBox.ScrollAlwaysVisible%2A> is set to `true`, the scroll bar appears regardless of the number of items.</span></span> <span data-ttu-id="6196d-108"><xref:System.Windows.Forms.ListBox.SelectionMode%2A>プロパティは、一度に選択できるリスト項目の数を決定します。</span><span class="sxs-lookup"><span data-stu-id="6196d-108">The <xref:System.Windows.Forms.ListBox.SelectionMode%2A> property determines how many list items can be selected at a time.</span></span>  
   
-## ListBox コントロールの変更方法  
- <xref:System.Windows.Forms.ListBox.SelectedIndex%2A> プロパティは、リスト ボックス内で最初に選択した項目に対応する整数値を取得します。  コードの <xref:System.Windows.Forms.ListBox.SelectedIndex%2A> 値を変更することによって、選択した項目をプログラムで変更できます。リスト内の対応する項目が、Windows フォーム上に強調表示されます。  選択項目がない場合、<xref:System.Windows.Forms.ListBox.SelectedIndex%2A> 値は \-1 となります。  リストの最初の項目を選択した場合、<xref:System.Windows.Forms.ListBox.SelectedIndex%2A> 値は 0 となります。  複数の項目が選択されている場合、<xref:System.Windows.Forms.ListBox.SelectedIndex%2A> 値は、リストの最上位に表示される選択項目を表します。  <xref:System.Windows.Forms.ListBox.SelectedItem%2A> プロパティは <xref:System.Windows.Forms.ListBox.SelectedIndex%2A> に似ていますが、項目自体 \(通常は文字列値\) を返す点が異なります。  <xref:System.Windows.Forms.ListBox.ObjectCollection.Count%2A> プロパティは、リスト内の項目数を表します。<xref:System.Windows.Forms.ListBox.SelectedIndex%2A> はゼロから始まるため、<xref:System.Windows.Forms.ListBox.ObjectCollection.Count%2A> プロパティの値は、<xref:System.Windows.Forms.ListBox.SelectedIndex%2A> の最大値よりも常に 1 大きくなります。  
+## <a name="ways-to-change-the-listbox-control"></a><span data-ttu-id="6196d-109">ListBox コントロールを変更する方法</span><span class="sxs-lookup"><span data-stu-id="6196d-109">Ways to Change the ListBox Control</span></span>  
+ <span data-ttu-id="6196d-110"><xref:System.Windows.Forms.ListBox.SelectedIndex%2A>プロパティは、リスト ボックスで選択した最初の項目に対応する整数値を返します。</span><span class="sxs-lookup"><span data-stu-id="6196d-110">The <xref:System.Windows.Forms.ListBox.SelectedIndex%2A> property returns an integer value that corresponds to the first selected item in the list box.</span></span> <span data-ttu-id="6196d-111">変更することで、選択した項目をプログラムで変更することができます、<xref:System.Windows.Forms.ListBox.SelectedIndex%2A>コード内の値以外の場合は、リスト内の対応する項目は、Windows フォームで、強調表示されます。</span><span class="sxs-lookup"><span data-stu-id="6196d-111">You can programmatically change the selected item by changing the <xref:System.Windows.Forms.ListBox.SelectedIndex%2A> value in code; the corresponding item in the list will appear highlighted on the Windows Form.</span></span> <span data-ttu-id="6196d-112">項目が選択されていない場合、<xref:System.Windows.Forms.ListBox.SelectedIndex%2A>値は-1。</span><span class="sxs-lookup"><span data-stu-id="6196d-112">If no item is selected, the <xref:System.Windows.Forms.ListBox.SelectedIndex%2A> value is -1.</span></span> <span data-ttu-id="6196d-113">一覧の最初の項目が選択されている場合、<xref:System.Windows.Forms.ListBox.SelectedIndex%2A>値は 0 です。</span><span class="sxs-lookup"><span data-stu-id="6196d-113">If the first item in the list is selected, the <xref:System.Windows.Forms.ListBox.SelectedIndex%2A> value is 0.</span></span> <span data-ttu-id="6196d-114">複数の項目を選択すると、<xref:System.Windows.Forms.ListBox.SelectedIndex%2A>値は、一覧の先頭に表示される選択したアイテムを反映します。</span><span class="sxs-lookup"><span data-stu-id="6196d-114">When multiple items are selected, the <xref:System.Windows.Forms.ListBox.SelectedIndex%2A> value reflects the selected item that appears first in the list.</span></span> <span data-ttu-id="6196d-115"><xref:System.Windows.Forms.ListBox.SelectedItem%2A>プロパティは<xref:System.Windows.Forms.ListBox.SelectedIndex%2A>文字列値では通常、アイテム自体が返されます。</span><span class="sxs-lookup"><span data-stu-id="6196d-115">The <xref:System.Windows.Forms.ListBox.SelectedItem%2A> property is similar to <xref:System.Windows.Forms.ListBox.SelectedIndex%2A>, but returns the item itself, usually a string value.</span></span> <span data-ttu-id="6196d-116"><xref:System.Windows.Forms.ListBox.ObjectCollection.Count%2A>プロパティには、一覧で、項目の数との値が反映されます、<xref:System.Windows.Forms.ListBox.ObjectCollection.Count%2A>プロパティは常に 1 つ以上の最も可能性のある<xref:System.Windows.Forms.ListBox.SelectedIndex%2A>ので値<xref:System.Windows.Forms.ListBox.SelectedIndex%2A>は 0 から始まる。</span><span class="sxs-lookup"><span data-stu-id="6196d-116">The <xref:System.Windows.Forms.ListBox.ObjectCollection.Count%2A> property reflects the number of items in the list, and the value of the <xref:System.Windows.Forms.ListBox.ObjectCollection.Count%2A> property is always one more than the largest possible <xref:System.Windows.Forms.ListBox.SelectedIndex%2A> value because <xref:System.Windows.Forms.ListBox.SelectedIndex%2A> is zero-based.</span></span>  
   
- <xref:System.Windows.Forms.ListBox> コントロールの項目を追加または削除するには、<xref:System.Windows.Forms.ListBox.ObjectCollection.Add%2A> メソッド、<xref:System.Windows.Forms.ListBox.ObjectCollection.Insert%2A> メソッド、<xref:System.Windows.Forms.ListBox.ObjectCollection.Clear%2A> メソッド、または <xref:System.Windows.Forms.ListBox.ObjectCollection.Remove%2A> メソッドを使用します。  デザイン時に <xref:System.Windows.Forms.ListBox.Items%2A> プロパティを使用して、リストに項目を追加することもできます。  
+ <span data-ttu-id="6196d-117">項目を追加または削除、<xref:System.Windows.Forms.ListBox>コントロールを使用して、 <xref:System.Windows.Forms.ListBox.ObjectCollection.Add%2A>、 <xref:System.Windows.Forms.ListBox.ObjectCollection.Insert%2A>、<xref:System.Windows.Forms.ListBox.ObjectCollection.Clear%2A>または<xref:System.Windows.Forms.ListBox.ObjectCollection.Remove%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="6196d-117">To add or delete items in a <xref:System.Windows.Forms.ListBox> control, use the <xref:System.Windows.Forms.ListBox.ObjectCollection.Add%2A>, <xref:System.Windows.Forms.ListBox.ObjectCollection.Insert%2A>, <xref:System.Windows.Forms.ListBox.ObjectCollection.Clear%2A> or <xref:System.Windows.Forms.ListBox.ObjectCollection.Remove%2A> method.</span></span> <span data-ttu-id="6196d-118">使用して、リストに項目を追加することができます、<xref:System.Windows.Forms.ListBox.Items%2A>デザイン時プロパティです。</span><span class="sxs-lookup"><span data-stu-id="6196d-118">Alternatively, you can add items to the list by using the <xref:System.Windows.Forms.ListBox.Items%2A> property at design time.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.ListBox>   
- [方法 : Windows フォームの ComboBox、ListBox、または CheckedListBox コントロールに項目を追加または削除する](../../../../docs/framework/winforms/controls/add-and-remove-items-from-a-wf-combobox.md)   
- [方法 : Windows フォーム ComboBox、ListBox、または CheckedListBox コントロールを並べ替える](../../../../docs/framework/winforms/controls/sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)   
- [方法 : Windows フォームの ComboBox または ListBox コントロールをデータにバインドする ](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)   
- [ComboBox コントロールの概要](../../../../docs/framework/winforms/controls/combobox-control-overview-windows-forms.md)   
- [CheckedListBox コントロールの概要](../../../../docs/framework/winforms/controls/checkedlistbox-control-overview-windows-forms.md)   
- [オプションのリストを表示するための Windows フォーム コントロール](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)   
- [方法 : Windows フォーム ComboBox、ListBox、または CheckedListBox コントロールのルックアップ テーブルを作成する](../../../../docs/framework/winforms/controls/create-a-lookup-table-for-a-wf-combobox-listbox.md)
+## <a name="see-also"></a><span data-ttu-id="6196d-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="6196d-119">See Also</span></span>  
+ <xref:System.Windows.Forms.ListBox>  
+ [<span data-ttu-id="6196d-120">方法: Windows フォームの ComboBox、ListBox、または CheckedListBox コントロールに項目を追加または削除する</span><span class="sxs-lookup"><span data-stu-id="6196d-120">How to: Add and Remove Items from a Windows Forms ComboBox, ListBox, or CheckedListBox Control</span></span>](../../../../docs/framework/winforms/controls/add-and-remove-items-from-a-wf-combobox.md)  
+ [<span data-ttu-id="6196d-121">方法: Windows フォーム ComboBox、ListBox、または CheckedListBox コントロールを並べ替える</span><span class="sxs-lookup"><span data-stu-id="6196d-121">How to: Sort the Contents of a Windows Forms ComboBox, ListBox, or CheckedListBox Control</span></span>](../../../../docs/framework/winforms/controls/sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)  
+ [<span data-ttu-id="6196d-122">方法: Windows フォームの ComboBox または ListBox コントロールをデータにバインドする</span><span class="sxs-lookup"><span data-stu-id="6196d-122">How to: Bind a Windows Forms ComboBox or ListBox Control to Data</span></span>](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)  
+ [<span data-ttu-id="6196d-123">ComboBox コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="6196d-123">ComboBox Control Overview</span></span>](../../../../docs/framework/winforms/controls/combobox-control-overview-windows-forms.md)  
+ [<span data-ttu-id="6196d-124">CheckedListBox コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="6196d-124">CheckedListBox Control Overview</span></span>](../../../../docs/framework/winforms/controls/checkedlistbox-control-overview-windows-forms.md)  
+ [<span data-ttu-id="6196d-125">オプションのリストを表示するための Windows フォーム コントロール</span><span class="sxs-lookup"><span data-stu-id="6196d-125">Windows Forms Controls Used to List Options</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)  
+ [<span data-ttu-id="6196d-126">方法: Windows フォーム ComboBox、ListBox、または CheckedListBox コントロールのルックアップ テーブルを作成する</span><span class="sxs-lookup"><span data-stu-id="6196d-126">How to: Create a Lookup Table for a Windows Forms ComboBox, ListBox, or CheckedListBox Control</span></span>](../../../../docs/framework/winforms/controls/create-a-lookup-table-for-a-wf-combobox-listbox.md)

@@ -1,108 +1,111 @@
 ---
-title: "DataGrid コントロールの既定のキーボード動作とマウス動作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "DataGrid [WPF], キーボード動作"
-  - "DataGrid [WPF], マウスの動作"
-  - "キーボード動作 [WPF], DataGrid"
-  - "マウスの動作 [WPF], DataGrid"
+title: "DataGrid コントロールの既定のキーボード動作とマウス動作"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DataGrid [WPF], keyboard behavior
+- DataGrid [WPF], mouse behavior
+- keyboard behavior [WPF], DataGrid
+- mouse behavior [WPF], DataGrid
 ms.assetid: 563b8854-ca39-4d97-8235-17eaa0f93c8d
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ddbbab88a22a4350626a36f79236aab67da24a7f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataGrid コントロールの既定のキーボード動作とマウス動作
-このトピックでは、ユーザーがキーボードとマウスを使用して <xref:System.Windows.Controls.DataGrid> コントロールと対話する方法について説明します。  
+# <a name="default-keyboard-and-mouse-behavior-in-the-datagrid-control"></a><span data-ttu-id="cb01b-102">DataGrid コントロールの既定のキーボード動作とマウス動作</span><span class="sxs-lookup"><span data-stu-id="cb01b-102">Default Keyboard and Mouse Behavior in the DataGrid Control</span></span>
+<span data-ttu-id="cb01b-103">このトピックとユーザーの対話方法について説明します、<xref:System.Windows.Controls.DataGrid>キーボードとマウスを使用して制御します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-103">This topic describes how users can interact with the <xref:System.Windows.Controls.DataGrid> control by using the keyboard and mouse.</span></span>  
   
- <xref:System.Windows.Controls.DataGrid> に対する標準的な対話操作には、ナビゲーション、選択、編集などがあります。  選択動作は、<xref:System.Windows.Controls.DataGrid.SelectionMode%2A> プロパティおよび <xref:System.Windows.Controls.DataGrid.SelectionUnit%2A> プロパティの影響を受けます。  このトピックで説明した動作の前提となる既定値は、<xref:System.Windows.Controls.DataGridSelectionMode?displayProperty=fullName> および <xref:System.Windows.Controls.DataGridSelectionUnit?displayProperty=fullName> です。  これらの値を変更すると、ここでの説明内容とは動作が異なる場合があります。  セルが編集モードになっている場合、<xref:System.Windows.Controls.DataGrid> の標準キーボードの動作は、編集コントロールによってオーバーライドされます。  
+ <span data-ttu-id="cb01b-104">一般的な対話、<xref:System.Windows.Controls.DataGrid>ナビゲーション、選択、および編集が含まれます。</span><span class="sxs-lookup"><span data-stu-id="cb01b-104">Typical interactions with the <xref:System.Windows.Controls.DataGrid> include navigation, selection, and editing.</span></span> <span data-ttu-id="cb01b-105">選択の動作の影響を受ける、<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>と<xref:System.Windows.Controls.DataGrid.SelectionUnit%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="cb01b-105">Selection behavior is affected by the <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> and <xref:System.Windows.Controls.DataGrid.SelectionUnit%2A> properties.</span></span> <span data-ttu-id="cb01b-106">このトピックで説明されている動作を起こす既定値は<xref:System.Windows.Controls.DataGridSelectionMode.Extended?displayProperty=nameWithType>と<xref:System.Windows.Controls.DataGridSelectionUnit.FullRow?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="cb01b-106">The default values that cause the behavior described in this topic are <xref:System.Windows.Controls.DataGridSelectionMode.Extended?displayProperty=nameWithType> and <xref:System.Windows.Controls.DataGridSelectionUnit.FullRow?displayProperty=nameWithType>.</span></span> <span data-ttu-id="cb01b-107">これらの値を変更すると、説明されているとは異なる動作が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cb01b-107">Changing these values might cause behavior that is different from that described.</span></span> <span data-ttu-id="cb01b-108">セルが編集モードのときは、編集コントロールがの標準キーボード動作をオーバーライド可能性があります、<xref:System.Windows.Controls.DataGrid>です。</span><span class="sxs-lookup"><span data-stu-id="cb01b-108">When a cell is in edit mode, the editing control might override the standard keyboard behavior of the <xref:System.Windows.Controls.DataGrid>.</span></span>  
   
-## キーボードの既定の動作  
- <xref:System.Windows.Controls.DataGrid> におけるキーボードの既定の動作を次の表に示します。  
+## <a name="default-keyboard-behavior"></a><span data-ttu-id="cb01b-109">既定のキーボードの動作</span><span class="sxs-lookup"><span data-stu-id="cb01b-109">Default Keyboard Behavior</span></span>  
+ <span data-ttu-id="cb01b-110">次の表に、既定のキーボード動作、<xref:System.Windows.Controls.DataGrid>です。</span><span class="sxs-lookup"><span data-stu-id="cb01b-110">The following table lists the default keyboard behavior for the <xref:System.Windows.Controls.DataGrid>.</span></span>  
   
-|キーまたはキーの組み合わせ|Description|  
-|-------------------|-----------------|  
-|↓|現在のセルの 1 つ下のセルにフォーカスを移動します。  フォーカスが最後の行にある場合は、何も行いません。|  
-|↑|現在のセルの 1 つ上のセルにフォーカスを移動します。  フォーカスが最初の行にある場合は、何も行いません。|  
-|←|同じ行の 1 つ前のセルにフォーカスを移動します。  フォーカスが行の最初のセルにある場合は、何も行いません。|  
-|→|同じ行の次のセルにフォーカスを移動します。  フォーカスが行の最後のセルにある場合は、何も行いません。|  
-|Home|現在の行の最初のセルにフォーカスを移動します。|  
-|End|現在の行の最後のセルにフォーカスを移動します。|  
-|PageDown|行がグループ化されていない場合、完全に表示されている行数分、コントロールを下にスクロールします。  完全に表示されている最後の行にフォーカスを移動します。列は変更しません。<br /><br /> 行がグループ化されている場合、<xref:System.Windows.Controls.DataGrid> 内の最後の行にフォーカスを移動します。列は変更されません。|  
-|PageUp|行がグループ化されていない場合、完全に表示されている行数分、コントロールを上にスクロールします。  現在表示されている最初の行にフォーカスを移動します。列は変更しません。<br /><br /> 行がグループ化されている場合、<xref:System.Windows.Controls.DataGrid> 内の先頭の行にフォーカスを移動します。列は変更されません。|  
-|Tab|現在の行の次のセルにフォーカスを移動します。  行の最後のセルにフォーカスがあるときは、次の行の最初のセルにフォーカスを移動します。  コントロールの最後のセルにフォーカスがあるときは、親コンテナーのタブ オーダーで次のコントロールにフォーカスを移動します。<br /><br /> 現在のセルが編集モードになっている場合、Tab キーを押すと、フォーカスが現在の行から移動します。その行に対して行われた変更は、フォーカスが変わる前にコミットされます。|  
-|Shift \+ Tab|現在の行の前のセルにフォーカスを移動します。  行の最初のセルにフォーカスがあるときは、1 つ前の行の最後のセルにフォーカスを移動します。  コントロールの最初のセルにフォーカスがある場合は、親コンテナーのタブ オーダーで 1 つ前のコントロールにフォーカスを移動します。<br /><br /> 現在のセルが編集モードになっている場合、Tab キーを押すと、フォーカスが現在の行から移動します。その行に対して行われた変更は、フォーカスが変わる前にコミットされます。|  
-|Ctrl \+ ↓|現在の列の最後のセルにフォーカスを移動します。|  
-|Ctrl \+ ↑|現在の列の最初のセルにフォーカスを移動します。|  
-|Ctrl \+ →|現在の行の最後のセルにフォーカスを移動します。|  
-|Ctrl \+ ←|現在の行の最初のセルにフォーカスを移動します。|  
-|Ctrl \+ Home|コントロール内の最初のセルにフォーカスを移動します。|  
-|Ctrl \+ End|コントロール内の最後のセルにフォーカスを移動します。|  
-|Ctrl \+ PageDown|PageDown と同じです。|  
-|Ctrl \+ PageUp|PageUp と同じです。|  
-|F2|<xref:System.Windows.Controls.DataGrid.IsReadOnly%2A?displayProperty=fullName> プロパティが `false` で、現在の列の <xref:System.Windows.Controls.DataGridColumn.IsReadOnly%2A?displayProperty=fullName> プロパティが `false` の場合、現在のセルを編集モードに設定します。|  
-|Enter|現在のセルおよび行への変更をコミットし、現在のセルの 1 つ下のセルにフォーカスを移動します。  フォーカスが最後の行にある場合は、変更をコミットし、フォーカスは移動しません。|  
-|Esc|コントロールが編集モードの場合は、編集を取り消し、コントロール内で行われた変更をすべて元に戻します。  基になるデータ ソースに <xref:System.ComponentModel.IEditableObject> が実装されている場合、Esc キーを 2 回押すと、行全体の編集モードが取り消されます。|  
-|BackSpace|セルを編集するときに、カーソル位置の前にある文字を削除します。|  
-|Del|セルを編集するときに、カーソル位置の後にある文字を削除します。|  
-|Ctrl \+ Enter|現在のセルに対して行われた変更をコミットします。フォーカスは移動しません。|  
-|Ctrl \+ A|<xref:System.Windows.Controls.DataGrid.SelectionMode%2A> が <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合、<xref:System.Windows.Controls.DataGrid> 内のすべての行を選択します。|  
+|<span data-ttu-id="cb01b-111">キーまたはキーの組み合わせ</span><span class="sxs-lookup"><span data-stu-id="cb01b-111">Key or key combination</span></span>|<span data-ttu-id="cb01b-112">説明</span><span class="sxs-lookup"><span data-stu-id="cb01b-112">Description</span></span>|  
+|----------------------------|-----------------|  
+|<span data-ttu-id="cb01b-113">↓</span><span class="sxs-lookup"><span data-stu-id="cb01b-113">DOWN ARROW</span></span>|<span data-ttu-id="cb01b-114">現在のセルの直下のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-114">Moves the focus to the cell directly below the current cell.</span></span> <span data-ttu-id="cb01b-115">最後の行にフォーカスがある場合は、下矢印キーを押して何も行われません。</span><span class="sxs-lookup"><span data-stu-id="cb01b-115">If the focus is in the last row, pressing the DOWN ARROW does nothing.</span></span>|  
+|<span data-ttu-id="cb01b-116">↑</span><span class="sxs-lookup"><span data-stu-id="cb01b-116">UP ARROW</span></span>|<span data-ttu-id="cb01b-117">現在のセルの上に直接セルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-117">Moves the focus to the cell directly above the current cell.</span></span> <span data-ttu-id="cb01b-118">最初の行にフォーカスがある場合は、上方向キーを押して何も行われません。</span><span class="sxs-lookup"><span data-stu-id="cb01b-118">If the focus is in the first row, pressing the UP ARROW does nothing.</span></span>|  
+|<span data-ttu-id="cb01b-119">←</span><span class="sxs-lookup"><span data-stu-id="cb01b-119">LEFT ARROW</span></span>|<span data-ttu-id="cb01b-120">行の前のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-120">Moves the focus to the previous cell in the row.</span></span> <span data-ttu-id="cb01b-121">行の最初のセルにフォーカスがある場合は、左矢印キーを押すと何も行われません。</span><span class="sxs-lookup"><span data-stu-id="cb01b-121">If the focus is in the first cell in the row, pressing the LEFT ARROW does nothing.</span></span>|  
+|<span data-ttu-id="cb01b-122">→</span><span class="sxs-lookup"><span data-stu-id="cb01b-122">RIGHT ARROW</span></span>|<span data-ttu-id="cb01b-123">次の行のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-123">Moves the focus to the next cell in the row.</span></span> <span data-ttu-id="cb01b-124">行の最後のセルにフォーカスがある場合は、右矢印キーを押して何も行われません。</span><span class="sxs-lookup"><span data-stu-id="cb01b-124">If the focus is in the last cell in the row, pressing the RIGHT ARROW does nothing.</span></span>|  
+|<span data-ttu-id="cb01b-125">ホーム</span><span class="sxs-lookup"><span data-stu-id="cb01b-125">HOME</span></span>|<span data-ttu-id="cb01b-126">現在の行の最初のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-126">Moves the focus to the first cell in the current row.</span></span>|  
+|<span data-ttu-id="cb01b-127">End</span><span class="sxs-lookup"><span data-stu-id="cb01b-127">END</span></span>|<span data-ttu-id="cb01b-128">現在の行の最後のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-128">Moves the focus to the last cell in the current row.</span></span>|  
+|<span data-ttu-id="cb01b-129">PAGE DOWN</span><span class="sxs-lookup"><span data-stu-id="cb01b-129">PAGE DOWN</span></span>|<span data-ttu-id="cb01b-130">行がグループ化されていない場合は、完全に表示されている行の数でコントロールを下をスクロールします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-130">If rows are not grouped, scrolls the control downward by the number of rows that are fully displayed.</span></span> <span data-ttu-id="cb01b-131">列を変更することがなく、最後に完全に表示されている行に、フォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-131">Moves the focus to the last fully displayed row without changing columns.</span></span><br /><br /> <span data-ttu-id="cb01b-132">行がグループ化されている場合は、最後の行にフォーカスを移動、<xref:System.Windows.Controls.DataGrid>列を変更することがなくです。</span><span class="sxs-lookup"><span data-stu-id="cb01b-132">If rows are grouped, moves the focus to the last row in the <xref:System.Windows.Controls.DataGrid> without changing columns.</span></span>|  
+|<span data-ttu-id="cb01b-133">PAGE UP</span><span class="sxs-lookup"><span data-stu-id="cb01b-133">PAGE UP</span></span>|<span data-ttu-id="cb01b-134">行がグループ化されていない場合、完全に表示されている行の数でコントロールを上方向へスクロールします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-134">If rows are not grouped, scrolls the control upward by the number of rows that are fully displayed.</span></span> <span data-ttu-id="cb01b-135">最初の表示されている行の列を変更せずにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-135">Moves focus to the first displayed row without changing columns.</span></span><br /><br /> <span data-ttu-id="cb01b-136">行がグループ化されている場合は、最初の行にフォーカスを移動、<xref:System.Windows.Controls.DataGrid>列を変更することがなくです。</span><span class="sxs-lookup"><span data-stu-id="cb01b-136">If rows are grouped, moves the focus to the first row in the <xref:System.Windows.Controls.DataGrid> without changing columns.</span></span>|  
+|<span data-ttu-id="cb01b-137">Tab</span><span class="sxs-lookup"><span data-stu-id="cb01b-137">TAB</span></span>|<span data-ttu-id="cb01b-138">現在の行の次のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-138">Moves the focus to the next cell in the current row.</span></span> <span data-ttu-id="cb01b-139">行の最後のセルにフォーカスがある場合は、次の行の最初のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-139">If the focus is in the last cell of the row, moves the focus to the first cell in the next row.</span></span> <span data-ttu-id="cb01b-140">コントロール内の最後のセルにフォーカスがある場合は、親コンテナーのタブ オーダーの次のコントロールにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-140">If the focus is in the last cell in the control, moves the focus to the next control in the tab order of the parent container.</span></span><br /><br /> <span data-ttu-id="cb01b-141">現在のセルが編集モードとし、現在の行からを移動する タブの原因がフォーカスを押すと、行に対して行われた変更がコミット フォーカスを変更する前にいます。 場合、</span><span class="sxs-lookup"><span data-stu-id="cb01b-141">If the current cell is in edit mode and pressing TAB causes focus to move away from the current row, any changes that were made to the row are committed before focus is changed.</span></span>|  
+|<span data-ttu-id="cb01b-142">Shift + Tab</span><span class="sxs-lookup"><span data-stu-id="cb01b-142">SHIFT+TAB</span></span>|<span data-ttu-id="cb01b-143">現在の行の前のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-143">Moves the focus to the previous cell in the current row.</span></span> <span data-ttu-id="cb01b-144">行の最初のセルにフォーカスがある場合は、前の行の最後のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-144">If the focus is already in the first cell of the row, moves the focus to the last cell in the previous row.</span></span> <span data-ttu-id="cb01b-145">コントロール内の最初のセルにフォーカスがある場合は、親コンテナーのタブ オーダーの前のコントロールにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-145">If the focus is in the first cell in the control, moves the focus to the previous control in the tab order of the parent container.</span></span><br /><br /> <span data-ttu-id="cb01b-146">現在のセルが編集モードとし、現在の行からを移動する タブの原因がフォーカスを押すと、行に対して行われた変更がコミット フォーカスを変更する前にいます。 場合、</span><span class="sxs-lookup"><span data-stu-id="cb01b-146">If the current cell is in edit mode and pressing TAB causes focus to move away from the current row, any changes that were made to the row are committed before focus is changed.</span></span>|  
+|<span data-ttu-id="cb01b-147">Ctrl +↓</span><span class="sxs-lookup"><span data-stu-id="cb01b-147">CTRL+DOWN ARROW</span></span>|<span data-ttu-id="cb01b-148">現在の列の最後のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-148">Moves the focus to the last cell in the current column.</span></span>|  
+|<span data-ttu-id="cb01b-149">Ctrl + ↑</span><span class="sxs-lookup"><span data-stu-id="cb01b-149">CTRL+UP ARROW</span></span>|<span data-ttu-id="cb01b-150">現在の列の最初のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-150">Moves the focus to the first cell in the current column.</span></span>|  
+|<span data-ttu-id="cb01b-151">Ctrl + →</span><span class="sxs-lookup"><span data-stu-id="cb01b-151">CTRL+RIGHT ARROW</span></span>|<span data-ttu-id="cb01b-152">現在の行の最後のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-152">Moves the focus to the last cell in the current row.</span></span>|  
+|<span data-ttu-id="cb01b-153">Ctrl + ←</span><span class="sxs-lookup"><span data-stu-id="cb01b-153">CTRL+LEFT ARROW</span></span>|<span data-ttu-id="cb01b-154">現在の行の最初のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-154">Moves the focus to the first cell in the current row.</span></span>|  
+|<span data-ttu-id="cb01b-155">CTRL + HOME</span><span class="sxs-lookup"><span data-stu-id="cb01b-155">CTRL+HOME</span></span>|<span data-ttu-id="cb01b-156">コントロール内の最初のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-156">Moves the focus to the first cell in the control.</span></span>|  
+|<span data-ttu-id="cb01b-157">CTRL キーを押しながら END キー</span><span class="sxs-lookup"><span data-stu-id="cb01b-157">CTRL+END</span></span>|<span data-ttu-id="cb01b-158">コントロール内の最後のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-158">Moves the focus to the last cell in the control.</span></span>|  
+|<span data-ttu-id="cb01b-159">Ctrl + PageDown</span><span class="sxs-lookup"><span data-stu-id="cb01b-159">CTRL+PAGE DOWN</span></span>|<span data-ttu-id="cb01b-160">PAGEDOWN と同じです。</span><span class="sxs-lookup"><span data-stu-id="cb01b-160">Same as PAGE DOWN.</span></span>|  
+|<span data-ttu-id="cb01b-161">Ctrl + PageUp</span><span class="sxs-lookup"><span data-stu-id="cb01b-161">CTRL+PAGE UP</span></span>|<span data-ttu-id="cb01b-162">ページの上と同じです。</span><span class="sxs-lookup"><span data-stu-id="cb01b-162">Same as PAGE UP.</span></span>|  
+|<span data-ttu-id="cb01b-163">F2</span><span class="sxs-lookup"><span data-stu-id="cb01b-163">F2</span></span>|<span data-ttu-id="cb01b-164">場合、<xref:System.Windows.Controls.DataGrid.IsReadOnly%2A?displayProperty=nameWithType>プロパティは`false`と<xref:System.Windows.Controls.DataGridColumn.IsReadOnly%2A?displayProperty=nameWithType>プロパティは`false`現在の列のセルの編集モードに現在のセルを挿入します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-164">If the <xref:System.Windows.Controls.DataGrid.IsReadOnly%2A?displayProperty=nameWithType> property is `false` and the <xref:System.Windows.Controls.DataGridColumn.IsReadOnly%2A?displayProperty=nameWithType> property is `false` for the current column, puts the current cell into cell edit mode.</span></span>|  
+|<span data-ttu-id="cb01b-165">Enter</span><span class="sxs-lookup"><span data-stu-id="cb01b-165">ENTER</span></span>|<span data-ttu-id="cb01b-166">現在のセルと行に変更をコミットし、現在のセルの直下のセルにフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-166">Commits any changes to the current cell and row and moves the focus to the cell directly below the current cell.</span></span> <span data-ttu-id="cb01b-167">最後の行にフォーカスがある場合は、フォーカスを移動させることがなく変更をコミットします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-167">If the focus is in the last row, commits any changes without moving the focus.</span></span>|  
+|<span data-ttu-id="cb01b-168">ESC</span><span class="sxs-lookup"><span data-stu-id="cb01b-168">ESC</span></span>|<span data-ttu-id="cb01b-169">コントロールが編集モードである場合は、編集をキャンセルし、コントロールに加えられた変更を元に戻します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-169">If the control is in edit mode, cancels the edit and reverts any changes that were made in the control.</span></span> <span data-ttu-id="cb01b-170">場合は、基になるデータ ソースを実装して<xref:System.ComponentModel.IEditableObject>、行全体の編集モードをキャンセル、2 回目の esc キーを押します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-170">If the underlying data source implements <xref:System.ComponentModel.IEditableObject>, pressing ESC a second time cancels edit mode for the entire row.</span></span>|  
+|<span data-ttu-id="cb01b-171">BACKSPACE キー</span><span class="sxs-lookup"><span data-stu-id="cb01b-171">BACKSPACE</span></span>|<span data-ttu-id="cb01b-172">セルを編集するときは、カーソルより前に、の文字を削除します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-172">Deletes the character before the cursor when editing a cell.</span></span>|  
+|<span data-ttu-id="cb01b-173">Del</span><span class="sxs-lookup"><span data-stu-id="cb01b-173">DELETE</span></span>|<span data-ttu-id="cb01b-174">セルの編集時に、カーソルより後の文字を削除します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-174">Deletes the character after the cursor when editing a cell.</span></span>|  
+|<span data-ttu-id="cb01b-175">Ctrl + Enter</span><span class="sxs-lookup"><span data-stu-id="cb01b-175">CTRL+ENTER</span></span>|<span data-ttu-id="cb01b-176">現在のセルにフォーカスを移動せず変更をコミットします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-176">Commits any changes to the current cell without moving the focus.</span></span>|  
+|<span data-ttu-id="cb01b-177">Ctrl + A</span><span class="sxs-lookup"><span data-stu-id="cb01b-177">CTRL+A</span></span>|<span data-ttu-id="cb01b-178">場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>のすべての行を選択、<xref:System.Windows.Controls.DataGrid>です。</span><span class="sxs-lookup"><span data-stu-id="cb01b-178">If <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> is set to <xref:System.Windows.Controls.DataGridSelectionMode.Extended>, selects all rows in the <xref:System.Windows.Controls.DataGrid>.</span></span>|  
   
-## 選択キー  
- <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> プロパティが <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合は、移動動作は変更されません。ただし、Shift \(Ctrl \+ Shift を含む\) キーを押しながらキーボードを使用する移動では、複数行の選択範囲が変更されます。  移動を開始する前に、コントロールは現在の行をアンカー行としてマークします。  Shift キーを押しながら移動すると、アンカー行と現在の行の間のすべての行が選択範囲に含められます。  
+## <a name="selection-keys"></a><span data-ttu-id="cb01b-179">選択キー</span><span class="sxs-lookup"><span data-stu-id="cb01b-179">Selection Keys</span></span>  
+ <span data-ttu-id="cb01b-180">場合、<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>プロパティに設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>ナビゲーションの動作は変わりませんが (CTRL + SHIFT を含む) shift キーを押しながらキーボードで移動すると、複数行の選択が変更されます。</span><span class="sxs-lookup"><span data-stu-id="cb01b-180">If the <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> property is set to <xref:System.Windows.Controls.DataGridSelectionMode.Extended>, the navigation behavior does not change, but navigating with the keyboard while pressing SHIFT (including CTRL+SHIFT) will modify a multi-row selection.</span></span> <span data-ttu-id="cb01b-181">ナビゲーションが開始する前に、コントロールは、アンカー行として、現在の行をマークします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-181">Before navigation starts, the control marks the current row as an anchor row.</span></span> <span data-ttu-id="cb01b-182">Shift キーを押しながら移動するときに、選択範囲には、アンカー行と、現在の行の間のすべての行が含まれています。</span><span class="sxs-lookup"><span data-stu-id="cb01b-182">When you navigate while pressing SHIFT, the selection includes all rows between the anchor row and the current row.</span></span>  
   
- 次の選択キーでは、複数行の選択範囲が変更されます。  
+ <span data-ttu-id="cb01b-183">次の選択キーは、複数行の選択を変更します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-183">The following selection keys modify multi-row selection.</span></span>  
   
--   Shift \+ ↓  
+-   <span data-ttu-id="cb01b-184">Shift + ↓</span><span class="sxs-lookup"><span data-stu-id="cb01b-184">SHIFT+DOWN ARROW</span></span>  
   
--   Shift \+ ↑  
+-   <span data-ttu-id="cb01b-185">Shift + ↑</span><span class="sxs-lookup"><span data-stu-id="cb01b-185">SHIFT+UP ARROW</span></span>  
   
--   Shift \+ PageDown  
+-   <span data-ttu-id="cb01b-186">Shift + PageDown</span><span class="sxs-lookup"><span data-stu-id="cb01b-186">SHIFT+PAGE DOWN</span></span>  
   
--   Shift \+ PageUp  
+-   <span data-ttu-id="cb01b-187">Shift + PageUp</span><span class="sxs-lookup"><span data-stu-id="cb01b-187">SHIFT+PAGE UP</span></span>  
   
--   Ctrl \+ Shift \+ ↓  
+-   <span data-ttu-id="cb01b-188">Ctrl + Shift + ↓</span><span class="sxs-lookup"><span data-stu-id="cb01b-188">CTRL+SHIFT+DOWN ARROW</span></span>  
   
--   Ctrl \+ Shift \+ ↑  
+-   <span data-ttu-id="cb01b-189">Ctrl + Shift + ↑</span><span class="sxs-lookup"><span data-stu-id="cb01b-189">CTRL+SHIFT+UP ARROW</span></span>  
   
--   Ctrl \+ Shift \+ Home  
+-   <span data-ttu-id="cb01b-190">CTRL + SHIFT + ホーム</span><span class="sxs-lookup"><span data-stu-id="cb01b-190">CTRL+SHIFT+HOME</span></span>  
   
--   Ctrl \+ Shift \+ End  
+-   <span data-ttu-id="cb01b-191">CTRL キーを押しながら SHIFT キーを押しながら END</span><span class="sxs-lookup"><span data-stu-id="cb01b-191">CTRL+SHIFT+END</span></span>  
   
-## マウスの既定の動作  
- <xref:System.Windows.Controls.DataGrid> におけるマウスの既定の動作を次の表に示します。  
+## <a name="default-mouse-behavior"></a><span data-ttu-id="cb01b-192">マウスの既定の動作</span><span class="sxs-lookup"><span data-stu-id="cb01b-192">Default Mouse Behavior</span></span>  
+ <span data-ttu-id="cb01b-193">次の表に、マウス デフォルトでは、<xref:System.Windows.Controls.DataGrid>です。</span><span class="sxs-lookup"><span data-stu-id="cb01b-193">The following table lists the default mouse behavior for the <xref:System.Windows.Controls.DataGrid>.</span></span>  
   
-|マウス操作|Description|  
-|-----------|-----------------|  
-|未選択の行をクリック|クリックした行が現在の行になり、クリックしたセルが現在のセルになります。|  
-|現在のセルをクリック|現在のセルを編集モードにします。|  
-|列ヘッダー セルをドラッグ|<xref:System.Windows.Controls.DataGrid.CanUserReorderColumns%2A?displayProperty=fullName> プロパティが `true` で、現在の列の <xref:System.Windows.Controls.DataGridColumn.CanUserReorder%2A?displayProperty=fullName> プロパティが `true` の場合、列を移動して別の位置にドロップできます。|  
-|列ヘッダーの区切りをドラッグ|<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=fullName> プロパティが `true` で、現在の列の <xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=fullName> プロパティが `true` の場合、列のサイズが変更されます。|  
-|列ヘッダーの区切りをダブルクリック|現在の列の <xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=fullName> プロパティが `true` で、<xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=fullName> プロパティが `true` である場合、<xref:System.Windows.Controls.DataGridLength.Auto%2A> サイズ変更モードを使用して列のサイズを自動調整します。|  
-|列ヘッダー セルをクリック|<xref:System.Windows.Controls.DataGrid.CanUserSortColumns%2A?displayProperty=fullName> プロパティが `true` で、現在の列の <xref:System.Windows.Controls.DataGridColumn.CanUserSort%2A?displayProperty=fullName> プロパティが `true` の場合、列の並べ替えが実行されます。<br /><br /> 既に並べ替えられた列のヘッダーをクリックすると、逆順で並べ替えが行われます。<br /><br /> Shift キーを押しながら複数の列ヘッダーをクリックすると、クリックした順番で、複数の列に基づいて並べ替えが適用されます。|  
-|Ctrl キーを押しながら行をクリック|<xref:System.Windows.Controls.DataGrid.SelectionMode%2A> が <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合、不連続の複数の行を選択できます。<br /><br /> 既に行が選択されている場合、行の選択を解除します。|  
-|Shift キーを押しながら行をクリック|<xref:System.Windows.Controls.DataGrid.SelectionMode%2A> が <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合、連続する複数の行を選択できます。|  
-|行グループ ヘッダーをクリック|グループの展開または折りたたみを行います。|  
-|<xref:System.Windows.Controls.DataGrid> の左上隅の \[すべて選択\] ボタンをクリック|<xref:System.Windows.Controls.DataGrid.SelectionMode%2A> が <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合、<xref:System.Windows.Controls.DataGrid> 内のすべての行を選択します。|  
+|<span data-ttu-id="cb01b-194">マウス操作</span><span class="sxs-lookup"><span data-stu-id="cb01b-194">Mouse action</span></span>|<span data-ttu-id="cb01b-195">説明</span><span class="sxs-lookup"><span data-stu-id="cb01b-195">Description</span></span>|  
+|------------------|-----------------|  
+|<span data-ttu-id="cb01b-196">選択されていない行をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-196">Click an unselected row</span></span>|<span data-ttu-id="cb01b-197">クリックされた行は、現在の行、およびクリックされたセルの現在のセルになります。</span><span class="sxs-lookup"><span data-stu-id="cb01b-197">Makes the clicked row the current row, and the clicked cell the current cell.</span></span>|  
+|<span data-ttu-id="cb01b-198">現在のセルをクリックします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-198">Click the current cell</span></span>|<span data-ttu-id="cb01b-199">現在のセルを実行すると、編集モードにします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-199">Puts the current cell into edit mode.</span></span>|  
+|<span data-ttu-id="cb01b-200">列のヘッダー セルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-200">Drag a column header cell</span></span>|<span data-ttu-id="cb01b-201">場合、<xref:System.Windows.Controls.DataGrid.CanUserReorderColumns%2A?displayProperty=nameWithType>プロパティは`true`と<xref:System.Windows.Controls.DataGridColumn.CanUserReorder%2A?displayProperty=nameWithType>プロパティは`true`現在の列の列に移動できるように、新しい場所に削除できます。</span><span class="sxs-lookup"><span data-stu-id="cb01b-201">If the <xref:System.Windows.Controls.DataGrid.CanUserReorderColumns%2A?displayProperty=nameWithType> property is `true` and the <xref:System.Windows.Controls.DataGridColumn.CanUserReorder%2A?displayProperty=nameWithType> property is `true` for the current column, moves the column so that it can be dropped into a new position.</span></span>|  
+|<span data-ttu-id="cb01b-202">列ヘッダーの区切り線をドラッグします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-202">Drag a column header separator</span></span>|<span data-ttu-id="cb01b-203">場合、<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType>プロパティは`true`と<xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=nameWithType>プロパティは`true`現在の列の列のサイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-203">If the <xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType> property is `true` and the <xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=nameWithType> property is `true` for the current column, resizes the column.</span></span>|  
+|<span data-ttu-id="cb01b-204">列ヘッダーの区切り線をダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-204">Double-click a column header separator</span></span>|<span data-ttu-id="cb01b-205">場合、<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType>プロパティは`true`と<xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=nameWithType>プロパティは`true`サイズが自動的に、現在の列の列を使用して、<xref:System.Windows.Controls.DataGridLength.Auto%2A>サイズ変更モード。</span><span class="sxs-lookup"><span data-stu-id="cb01b-205">If the <xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType> property is `true` and the <xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=nameWithType> property is `true` for the current column, auto-sizes the column using the <xref:System.Windows.Controls.DataGridLength.Auto%2A> sizing mode.</span></span>|  
+|<span data-ttu-id="cb01b-206">列ヘッダー セルをクリックします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-206">Click a column header cell</span></span>|<span data-ttu-id="cb01b-207">場合、<xref:System.Windows.Controls.DataGrid.CanUserSortColumns%2A?displayProperty=nameWithType>プロパティは`true`と<xref:System.Windows.Controls.DataGridColumn.CanUserSort%2A?displayProperty=nameWithType>プロパティは`true`現在の列の列を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="cb01b-207">If the <xref:System.Windows.Controls.DataGrid.CanUserSortColumns%2A?displayProperty=nameWithType> property is `true` and the <xref:System.Windows.Controls.DataGridColumn.CanUserSort%2A?displayProperty=nameWithType> property is `true` for the current column, sorts the column.</span></span><br /><br /> <span data-ttu-id="cb01b-208">まだ並べ替えられている列のヘッダーをクリックすると、その列の並べ替えの方向は逆です。</span><span class="sxs-lookup"><span data-stu-id="cb01b-208">Clicking the header of a column that is already sorted will reverse the sort direction of that column.</span></span><br /><br /> <span data-ttu-id="cb01b-209">SHIFT キーを押しながら複数の列見出しをクリックした順番で複数の列で並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="cb01b-209">Pressing the SHIFT key while clicking multiple column headers will sort by multiple columns in the order clicked.</span></span>|  
+|<span data-ttu-id="cb01b-210">Ctrl キーを押しながら、行をクリックして</span><span class="sxs-lookup"><span data-stu-id="cb01b-210">CTRL+click a row</span></span>|<span data-ttu-id="cb01b-211">場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>、連続しない複数行の選択状態を変更します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-211">If <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> is set to <xref:System.Windows.Controls.DataGridSelectionMode.Extended>, modifies a non-contiguous multi-row selection.</span></span><br /><br /> <span data-ttu-id="cb01b-212">行は既に選択されている場合は、行を選択解除します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-212">If the row is already selected, deselects the row.</span></span>|  
+|<span data-ttu-id="cb01b-213">SHIFT + 行をクリックしてください</span><span class="sxs-lookup"><span data-stu-id="cb01b-213">SHIFT+click a row</span></span>|<span data-ttu-id="cb01b-214">場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>、連続する複数の行の選択を変更します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-214">If <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> is set to <xref:System.Windows.Controls.DataGridSelectionMode.Extended>, modifies a contiguous multi-row selection.</span></span>|  
+|<span data-ttu-id="cb01b-215">行グループ ヘッダーをクリックします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-215">Click a row group header</span></span>|<span data-ttu-id="cb01b-216">展開またはグループを折りたたみます。</span><span class="sxs-lookup"><span data-stu-id="cb01b-216">Expands or collapses the group.</span></span>|  
+|<span data-ttu-id="cb01b-217">左上隅にある [すべて選択] ボタンをクリックして、<xref:System.Windows.Controls.DataGrid></span><span class="sxs-lookup"><span data-stu-id="cb01b-217">Click the Select All button at the top left corner of the <xref:System.Windows.Controls.DataGrid></span></span>|<span data-ttu-id="cb01b-218">場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>のすべての行を選択、<xref:System.Windows.Controls.DataGrid>です。</span><span class="sxs-lookup"><span data-stu-id="cb01b-218">If <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> is set to <xref:System.Windows.Controls.DataGridSelectionMode.Extended>, selects all rows in the <xref:System.Windows.Controls.DataGrid>.</span></span>|  
   
-## マウスによる選択  
- <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> プロパティが <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合、Ctrl キーまたは Shift キーを押しながら行をクリックすると複数行の選択範囲が変更されます。  
+## <a name="mouse-selection"></a><span data-ttu-id="cb01b-219">マウスの選択</span><span class="sxs-lookup"><span data-stu-id="cb01b-219">Mouse Selection</span></span>  
+ <span data-ttu-id="cb01b-220">場合、<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>プロパティに設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>、ctrl キーまたは shift キーを押しながら、行をクリックすると、複数の行の選択が変更されます。</span><span class="sxs-lookup"><span data-stu-id="cb01b-220">If the <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> property is set to <xref:System.Windows.Controls.DataGridSelectionMode.Extended>, clicking a row while pressing CTRL or SHIFT will modify a multi-row selection.</span></span>  
   
- Ctrl キーを押しながら行をクリックすると、その行の選択状態は変化しますが、その他のすべての行は現在の選択状態を保持します。  隣接しない行を選択するにはこの方法を使用します。  
+ <span data-ttu-id="cb01b-221">CTRL キーを押しながら、行をクリックすると、行は、その他のすべての行が現在の選択状態を保持の選択状態を変更します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-221">When you click a row while pressing CTRL, the row will change its selection state while all other rows retain their current selection state.</span></span> <span data-ttu-id="cb01b-222">連続していない行を選択します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-222">Do this to select non-adjacent rows.</span></span>  
   
- Shift キーを押しながら特定の行をクリックした場合、現在の行とアンカー行 \(クリックの前に選択されていた行\) の間のすべての行が選択されます。  それ以降、Shift キーを押しながらクリックすると、現在の行は変更されますが、アンカー行は変更されません。  隣接する行の範囲を選択するにはこの方法を使用します。  
+ <span data-ttu-id="cb01b-223">Shift キーを押しながら、行をクリックすると、選択範囲には、現在の行と、クリックする前に、現在の行の位置にあるアンカー行の間のすべての行が含まれています。</span><span class="sxs-lookup"><span data-stu-id="cb01b-223">When you click a row while pressing SHIFT, the selection includes all rows between the current row and an anchor row located at the position of the current row prior to the click.</span></span> <span data-ttu-id="cb01b-224">Shift キーを押しながらそれ以降のクリックでは、現在の行がアンカー行ではなくを変更します。</span><span class="sxs-lookup"><span data-stu-id="cb01b-224">Subsequent clicks while pressing SHIFT change the current row, but not the anchor row.</span></span> <span data-ttu-id="cb01b-225">隣接する行の範囲 を選択しないでください。</span><span class="sxs-lookup"><span data-stu-id="cb01b-225">Do this to select a range of adjacent rows.</span></span>  
   
- Ctrl キーを押しながら Shift キーを押すと、離れて存在する隣接行範囲を選択できます。  そのためには、前の説明に従い、Shift キーを押しながらのクリック操作で、1 つ目の範囲を選択します。  1 つ目の行範囲を選択したら、Ctrl キーを押しながらのクリック操作で、次の範囲内の先頭行をまず選択し、Ctrl キーと Shift キーを押した状態で、その範囲の最後の行をクリックします。  
+ <span data-ttu-id="cb01b-226">隣接する行の連続していない範囲を選択するには、CTRL + SHIFT を組み合わせて指定できます。</span><span class="sxs-lookup"><span data-stu-id="cb01b-226">CTRL+SHIFT can be combined to select non-adjacent ranges of adjacent rows.</span></span> <span data-ttu-id="cb01b-227">これを行うには、shift キーを使用して、最初の範囲を選択 + 前述のようにクリックします。</span><span class="sxs-lookup"><span data-stu-id="cb01b-227">To do this, select the first range by using SHIFT+click as described earlier.</span></span> <span data-ttu-id="cb01b-228">行の最初の範囲を選択した後、ctrl キーを押し + をクリックして [次へ] の範囲内で最初の行を選択、CTRL + SHIFT を押しながら次の範囲の最後の行をクリックできます。</span><span class="sxs-lookup"><span data-stu-id="cb01b-228">After the first range of rows is selected, use CTRL+click to select the first row in the next range, and then click the last row in the next range while pressing CTRL+SHIFT.</span></span>  
   
-## 参照  
- <xref:System.Windows.Controls.DataGrid>   
+## <a name="see-also"></a><span data-ttu-id="cb01b-229">関連項目</span><span class="sxs-lookup"><span data-stu-id="cb01b-229">See Also</span></span>  
+ <xref:System.Windows.Controls.DataGrid>  
  <xref:System.Windows.Controls.DataGrid.SelectionMode%2A>

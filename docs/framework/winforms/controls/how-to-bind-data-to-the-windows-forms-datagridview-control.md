@@ -1,68 +1,73 @@
 ---
-title: "方法 : データを Windows フォーム DataGridView コントロールにバインドする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ バインド, DataGridView コントロール"
-  - "データ バインド, グリッド"
-  - "DataGridView コントロール [Windows フォーム], データ バインド"
+title: "方法 : データを Windows フォーム DataGridView コントロールにバインドする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- data binding [Windows Forms], grids
+- data binding [Windows Forms], DataGridView control
+- DataGridView control [Windows Forms], data binding
 ms.assetid: 1660f69c-5711-45d2-abc1-e25bc6779124
-caps.latest.revision: 30
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 63194d01d5de1eab9d71376e472a70613f83d1ad
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : データを Windows フォーム DataGridView コントロールにバインドする
-<xref:System.Windows.Forms.DataGridView> コントロールは標準 Windows フォームのデータ バインディング モデルをサポートするため、各種のデータ ソースにバインドします。  ただし、ほとんどの状況では、データ ソースとの対話の詳細を管理する <xref:System.Windows.Forms.BindingSource> コンポーネントにバインドします。  <xref:System.Windows.Forms.BindingSource> コンポーネントは Windows フォームのデータ ソースを表すことができ、データの場所を選択または変更するときに、優れた柔軟性を提供します。  <xref:System.Windows.Forms.DataGridView> コントロールでサポートされているデータ ソースの詳細については、「[DataGridView コントロールの概要](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)」を参照してください。  
+# <a name="how-to-bind-data-to-the-windows-forms-datagridview-control"></a><span data-ttu-id="6dfa9-102">方法 : データを Windows フォーム DataGridView コントロールにバインドする</span><span class="sxs-lookup"><span data-stu-id="6dfa9-102">How to: Bind Data to the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="6dfa9-103"><xref:System.Windows.Forms.DataGridView> コントロールは標準 Windows フォームのデータ バインディング モデルをサポートするため、各種のデータ ソースにバインドします。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-103">The <xref:System.Windows.Forms.DataGridView> control supports the standard Windows Forms data binding model, so it will bind to a variety of data sources.</span></span> <span data-ttu-id="6dfa9-104">ただし、ほとんどの状況では、データ ソースとの対話の詳細を管理する <xref:System.Windows.Forms.BindingSource> コンポーネントにバインドします。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-104">In most circumstances, however, you will bind to a <xref:System.Windows.Forms.BindingSource> component which will manage the details of interacting with the data source.</span></span> <span data-ttu-id="6dfa9-105"><xref:System.Windows.Forms.BindingSource> コンポーネントは Windows フォームのデータ ソースを表すことができ、データの場所を選択または変更するときに、優れた柔軟性を提供します。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-105">The <xref:System.Windows.Forms.BindingSource> component can represent any Windows Forms data source and gives you great flexibility when choosing or modifying the location of your data.</span></span> <span data-ttu-id="6dfa9-106">サポートされるデータ ソースの詳細については、<xref:System.Windows.Forms.DataGridView>を制御しを参照してください[DataGridView コントロールの概要](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-106">For more information about the data sources supported by the <xref:System.Windows.Forms.DataGridView> control, see [DataGridView Control Overview](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md).</span></span>  
   
- Visual Studio では、このタスクに対する広範なサポートが用意されています。  「[方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする](http://msdn.microsoft.com/library/33w255ac\(v=vs.110\))」も参照してください。  
+ <span data-ttu-id="6dfa9-107">Visual Studio では、このタスクに対する広範なサポートが用意されています。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-107">There is extensive support for this task in Visual Studio.</span></span>  <span data-ttu-id="6dfa9-108">「[方法 : デザイナーを使用してデータを Windows フォーム DataGridView コントロールにバインドする](http://msdn.microsoft.com/library/33w255ac\(v=vs.110\))」も参照してください。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-108">Also see [How to: Bind Data to the Windows Forms DataGridView Control Using the Designer](http://msdn.microsoft.com/library/33w255ac\(v=vs.110\)).</span></span>  
   
-## プロシージャ  
+## <a name="procedure"></a><span data-ttu-id="6dfa9-109">プロシージャ</span><span class="sxs-lookup"><span data-stu-id="6dfa9-109">Procedure</span></span>  
   
-#### DataGridView コントロールをデータに接続するには  
+#### <a name="to-connect-a-datagridview-control-to-data"></a><span data-ttu-id="6dfa9-110">DataGridView コントロールをデータに接続するには</span><span class="sxs-lookup"><span data-stu-id="6dfa9-110">To connect a DataGridView control to data</span></span>  
   
-1.  データベースからデータを取得する操作の詳細を処理するメソッドを実装します。  次のコード例では、<xref:System.Data.SqlClient.SqlDataAdapter> コンポーネントを初期化する `GetData` メソッドを実装し、これを使用して <xref:System.Data.DataTable> に値を設定します。  次に、<xref:System.Data.DataTable> が <xref:System.Windows.Forms.BindingSource> コンポーネントにバインドされます。  `connectionString` 変数は、使用しているデータベースに合った値に設定してください。  Northwind SQL Server サンプル データベースがインストールされているサーバーにアクセスする必要があります。  
+1.  <span data-ttu-id="6dfa9-111">データベースからデータを取得する操作の詳細を処理するメソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-111">Implement a method to handle the details of retrieving data from a database.</span></span> <span data-ttu-id="6dfa9-112">次のコード例では、<xref:System.Data.SqlClient.SqlDataAdapter> コンポーネントを初期化する `GetData` メソッドを実装し、これを使用して <xref:System.Data.DataTable> に値を設定します。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-112">The following code example implements a `GetData` method that initializes a <xref:System.Data.SqlClient.SqlDataAdapter> component and uses it to populate a <xref:System.Data.DataTable>.</span></span> <span data-ttu-id="6dfa9-113">次に、<xref:System.Data.DataTable> が <xref:System.Windows.Forms.BindingSource> コンポーネントにバインドされます。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-113">The <xref:System.Data.DataTable> is then bound to the <xref:System.Windows.Forms.BindingSource> component.</span></span> <span data-ttu-id="6dfa9-114">`connectionString` 変数は、使用しているデータベースに合った値に設定してください。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-114">Be sure to set the `connectionString` variable to a value that is appropriate for your database.</span></span> <span data-ttu-id="6dfa9-115">Northwind SQL Server サンプル データベースがインストールされているサーバーにアクセスする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-115">You will need access to a server with the Northwind SQL Server sample database installed.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridViewBoundEditable#20](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/cpp/datagridviewboundeditable.cpp#20)]
      [!code-csharp[System.Windows.Forms.DataGridViewBoundEditable#20](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/CS/datagridviewboundeditable.cs#20)]
      [!code-vb[System.Windows.Forms.DataGridViewBoundEditable#20](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/VB/datagridviewboundeditable.vb#20)]  
   
-2.  フォームの <xref:System.Windows.Forms.Form.Load> イベント ハンドラーで、<xref:System.Windows.Forms.DataGridView> コントロールを <xref:System.Windows.Forms.BindingSource> コンポーネントにバインドし、`GetData` メソッドを呼び出してデータベースからデータを取得します。  
+2.  <span data-ttu-id="6dfa9-116">フォームの <xref:System.Windows.Forms.Form.Load> イベント ハンドラーで、<xref:System.Windows.Forms.DataGridView> コントロールを <xref:System.Windows.Forms.BindingSource> コンポーネントにバインドし、`GetData` メソッドを呼び出してデータベースからデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-116">In your form's <xref:System.Windows.Forms.Form.Load> event handler, bind the <xref:System.Windows.Forms.DataGridView> control to the <xref:System.Windows.Forms.BindingSource> component and call the `GetData` method to retrieve the data from the database.</span></span>  
   
      [!code-cpp[System.Windows.Forms.DataGridViewBoundEditable#10](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/cpp/datagridviewboundeditable.cpp#10)]
      [!code-csharp[System.Windows.Forms.DataGridViewBoundEditable#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/CS/datagridviewboundeditable.cs#10)]
      [!code-vb[System.Windows.Forms.DataGridViewBoundEditable#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/VB/datagridviewboundeditable.vb#10)]  
   
-## 使用例  
- 次の完全なコード例では、データベースからデータを再読み込みし、データベースに変更を送信するためのボタンを提供します。  
+## <a name="example"></a><span data-ttu-id="6dfa9-117">例</span><span class="sxs-lookup"><span data-stu-id="6dfa9-117">Example</span></span>  
+ <span data-ttu-id="6dfa9-118">次の完全なコード例では、データベースからデータを再読み込みし、データベースに変更を送信するためのボタンを提供します。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-118">The following complete code example provides buttons for reloading data from the database and submitting changes to the database.</span></span>  
   
  [!code-cpp[System.Windows.Forms.DataGridViewBoundEditable#00](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/cpp/datagridviewboundeditable.cpp#00)]
  [!code-csharp[System.Windows.Forms.DataGridViewBoundEditable#00](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/CS/datagridviewboundeditable.cs#00)]
  [!code-vb[System.Windows.Forms.DataGridViewBoundEditable#00](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/VB/datagridviewboundeditable.vb#00)]  
   
-## コードのコンパイル  
- この例で必要な要素は次のとおりです。  
+## <a name="compiling-the-code"></a><span data-ttu-id="6dfa9-119">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="6dfa9-119">Compiling the Code</span></span>  
+ <span data-ttu-id="6dfa9-120">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-120">This example requires:</span></span>  
   
--   System、System.Windows.Forms、System.Data、および System.XML の各アセンブリへの参照。  
+-   <span data-ttu-id="6dfa9-121">System、System.Windows.Forms、System.Data、および System.XML の各アセンブリへの参照。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-121">References to the System, System.Windows.Forms, System.Data, and System.XML assemblies.</span></span>  
   
- [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] または [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] のコマンド ラインからこの例をビルドする方法の詳細は、「[コマンド ラインからのビルド](../Topic/Building%20from%20the%20Command%20Line%20\(Visual%20Basic\).md)」または「[csc.exe を使用したコマンド ラインからのビルド](../../../../ocs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)」を参照してください。  また、コードを新しいプロジェクトに貼り付けることにより、[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] でこの例をビルドすることもできます。  「[方法 : 完成した Windows フォーム コードの例を Visual Studio を使ってコンパイルして実行する](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\))」も参照してください。  
+ <span data-ttu-id="6dfa9-122">[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] または [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] のコマンド ラインからこの例をビルドする方法については、「[コマンド ラインからのビルド](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md)」または「[csc.exe を使用したコマンド ラインからのビルド](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-122">For information about building this example from the command line for [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] or [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span></span> <span data-ttu-id="6dfa9-123">また、コードを新しいプロジェクトに貼り付けることにより、[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] でこの例をビルドすることもできます。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-123">You can also build this example in [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] by pasting the code into a new project.</span></span>  <span data-ttu-id="6dfa9-124">「[方法: 完成した Windows フォーム コードの例を Visual Studio を使ってコンパイルして実行する](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\))」も参照してください。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-124">Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span></span>  
   
-## .NET Framework セキュリティ  
- 接続文字列内に機密情報 \(パスワードなど\) を格納すると、アプリケーションのセキュリティに影響を及ぼすことがあります。  データベースへのアクセスを制御する方法としては、Windows 認証 \(統合セキュリティとも呼ばれます\) を使用する方が安全です。  詳細については、「[接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)」を参照してください。  
+## <a name="net-framework-security"></a><span data-ttu-id="6dfa9-125">.NET Framework セキュリティ</span><span class="sxs-lookup"><span data-stu-id="6dfa9-125">.NET Framework Security</span></span>  
+ <span data-ttu-id="6dfa9-126">接続文字列内に機密情報 (パスワードなど) を格納すると、アプリケーションのセキュリティに影響を及ぼすことがあります。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-126">Storing sensitive information, such as a password, within the connection string can affect the security of your application.</span></span> <span data-ttu-id="6dfa9-127">データベースへのアクセスを制御する方法としては、Windows 認証 (統合セキュリティとも呼ばれます) を使用する方が安全です。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-127">Using Windows Authentication (also known as integrated security) is a more secure way to control access to a database.</span></span> <span data-ttu-id="6dfa9-128">詳細については、「[接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6dfa9-128">For more information, see [Protecting Connection Information](../../../../docs/framework/data/adonet/protecting-connection-information.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.BindingSource>   
- [Windows フォーム DataGridView コントロールでのデータの表示](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)   
- [接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)
+## <a name="see-also"></a><span data-ttu-id="6dfa9-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="6dfa9-129">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.BindingSource>  
+ [<span data-ttu-id="6dfa9-130">Windows フォーム DataGridView コントロールでのデータの表示</span><span class="sxs-lookup"><span data-stu-id="6dfa9-130">Displaying Data in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="6dfa9-131">接続情報の保護</span><span class="sxs-lookup"><span data-stu-id="6dfa9-131">Protecting Connection Information</span></span>](../../../../docs/framework/data/adonet/protecting-connection-information.md)

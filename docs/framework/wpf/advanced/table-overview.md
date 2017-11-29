@@ -1,58 +1,64 @@
 ---
-title: "テーブルの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ドキュメント, テーブル"
-  - "フロー コンテンツ要素 [WPF], テーブル"
-  - "テーブル"
+title: "テーブルの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- flow content elements [WPF], Table
+- documents [WPF], tables
+- tables [WPF]
 ms.assetid: 5e1105f4-8fc4-473a-ba55-88c8e71386e6
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bb9edf0439c985af015d6badd11c026449a82f57
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# テーブルの概要
-<xref:System.Windows.Documents.Table> は、フロー ドキュメント コンテンツのグリッド式の表示をサポートする、ブロック レベルの要素です。  この要素は、その柔軟性により非常に便利ですが、正しく理解して使用するのが難しいとも言えます。  
+# <a name="table-overview"></a><span data-ttu-id="61cdf-102">テーブルの概要</span><span class="sxs-lookup"><span data-stu-id="61cdf-102">Table Overview</span></span>
+<span data-ttu-id="61cdf-103"><xref:System.Windows.Documents.Table>グリッド ベース フロー ドキュメントの内容の表示形式をサポートするブロック レベル要素です。</span><span class="sxs-lookup"><span data-stu-id="61cdf-103"><xref:System.Windows.Documents.Table> is a block level element that supports grid-based presentation of Flow document content.</span></span> <span data-ttu-id="61cdf-104">この要素は、その柔軟性により非常に便利ですが、正しく理解して使用するのが難しいとも言えます。</span><span class="sxs-lookup"><span data-stu-id="61cdf-104">The flexibility of this element makes it very useful, but also makes it more complicated to understand and use correctly.</span></span>  
   
- このトピックは、次のセクションで構成されています。  
+ <span data-ttu-id="61cdf-105">このトピックは、次のセクションで構成されています。</span><span class="sxs-lookup"><span data-stu-id="61cdf-105">This topic contains the following sections.</span></span>  
   
--   [テーブルの基本](#table_basics)  
+-   [<span data-ttu-id="61cdf-106">テーブルの基本</span><span class="sxs-lookup"><span data-stu-id="61cdf-106">Table Basics</span></span>](#table_basics)  
   
--   [テーブルとグリッドの相違点](#table_vs_Grid)  
+-   [<span data-ttu-id="61cdf-107">テーブルとグリッドの相違点</span><span class="sxs-lookup"><span data-stu-id="61cdf-107">How is Table Different then Grid?</span></span>](#table_vs_Grid)  
   
--   [テーブルの基本構造](#basic_table_structure)  
+-   [<span data-ttu-id="61cdf-108">テーブルの基本構造</span><span class="sxs-lookup"><span data-stu-id="61cdf-108">Basic Table Structure</span></span>](#basic_table_structure)  
   
--   [テーブルの内容](#table_containment)  
+-   [<span data-ttu-id="61cdf-109">テーブルの内容</span><span class="sxs-lookup"><span data-stu-id="61cdf-109">Table Containment</span></span>](#table_containment)  
   
--   [行のグループ化](#row_groupings)  
+-   [<span data-ttu-id="61cdf-110">行グループ</span><span class="sxs-lookup"><span data-stu-id="61cdf-110">Row Groupings</span></span>](#row_groupings)  
   
--   [背景のレンダリングの優先順位](#rednering_precedence)  
+-   [<span data-ttu-id="61cdf-111">背景のレンダリングの優先順位</span><span class="sxs-lookup"><span data-stu-id="61cdf-111">Background Rendering Precedence</span></span>](#rendering_precedence)  
   
--   [複数の行または列にまたがるセル](#spanning_rows_or_columns)  
+-   [<span data-ttu-id="61cdf-112">複数の行または列にまたがるセル</span><span class="sxs-lookup"><span data-stu-id="61cdf-112">Spanning Rows or Columns</span></span>](#spanning_rows_or_columns)  
   
--   [テーブルとコードのバインディング](#building_a_table_with_code)  
+-   [<span data-ttu-id="61cdf-113">テーブルとコードのバインディング</span><span class="sxs-lookup"><span data-stu-id="61cdf-113">Building a Table With Code</span></span>](#building_a_table_with_code)  
   
--   [関連トピック](#see_also)  
+-   <span data-ttu-id="61cdf-114">関連トピック</span><span class="sxs-lookup"><span data-stu-id="61cdf-114">[Related Topics]</span></span> 
   
 <a name="table_basics"></a>   
-## テーブルの基本  
+## <a name="table-basics"></a><span data-ttu-id="61cdf-115">テーブルの基本</span><span class="sxs-lookup"><span data-stu-id="61cdf-115">Table Basics</span></span>  
   
 <a name="table_vs_Grid"></a>   
-### テーブルとグリッドの相違点  
- <xref:System.Windows.Documents.Table> と <xref:System.Windows.Controls.Grid> には共通の機能がいくつかありますが、それぞれが最も適している状況は異なります。  <xref:System.Windows.Documents.Table> は、フロー コンテンツ内で使用するために設計されています \(フロー コンテンツの詳細については、「[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)」を参照してください\)。  グリッドは、フォーム内 \(基本的にはフロー コンテンツ外の任意の場所\) で使用するのに最適です。  <xref:System.Windows.Documents.FlowDocument> 内では、<xref:System.Windows.Documents.Table> は改ページ位置の自動修正、列の再配置、およびコンテンツの選択をサポートしますが、<xref:System.Windows.Controls.Grid> はサポートしません。  一方、<xref:System.Windows.Controls.Grid> は、さまざまな理由から <xref:System.Windows.Documents.FlowDocument> の外で使用するのに適しています。たとえば、<xref:System.Windows.Controls.Grid> は行と列のインデックスに基づいて要素を追加しますが、<xref:System.Windows.Documents.Table> は追加しません。  <xref:System.Windows.Controls.Grid> 要素により、子のコンテンツのレイヤーを表示でき、1 つの "セル" 内に複数の要素を含むことができます。<xref:System.Windows.Documents.Table> は、レイヤー表示をサポートしません。  <xref:System.Windows.Controls.Grid> の子要素は、"セル" 境界の領域に対して絶対位置で配置できます。  <xref:System.Windows.Documents.Table> は、この機能をサポートしていません。  最後に、<xref:System.Windows.Controls.Grid> は <xref:System.Windows.Documents.Table> よりもリソースの使用量が少ないため、パフォーマンスを向上させるには <xref:System.Windows.Controls.Grid> の使用をお勧めします。  
+### <a name="how-is-table-different-then-grid"></a><span data-ttu-id="61cdf-116">テーブルとグリッドの相違点</span><span class="sxs-lookup"><span data-stu-id="61cdf-116">How is Table Different then Grid?</span></span>  
+ <span data-ttu-id="61cdf-117"><xref:System.Windows.Documents.Table>および<xref:System.Windows.Controls.Grid>各はさまざまなシナリオに最適なはいくつかの一般的な機能を共有します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-117"><xref:System.Windows.Documents.Table> and <xref:System.Windows.Controls.Grid> share some common functionality, but each is best suited for different scenarios.</span></span> <span data-ttu-id="61cdf-118">A<xref:System.Windows.Documents.Table>フロー コンテンツ内で使用するために設計されていますが (を参照してください[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)フロー コンテンツの詳細については)。</span><span class="sxs-lookup"><span data-stu-id="61cdf-118">A <xref:System.Windows.Documents.Table> is designed for use within flow content (see [Flow Document Overview](../../../../docs/framework/wpf/advanced/flow-document-overview.md) for more information on flow content).</span></span> <span data-ttu-id="61cdf-119">グリッドは、フォーム内で最適に使用される (基本的に任意の場所以外のフロー コンテンツ)。</span><span class="sxs-lookup"><span data-stu-id="61cdf-119">Grids are best used inside of forms (basically anywhere outside of flow content).</span></span> <span data-ttu-id="61cdf-120">内で、 <xref:System.Windows.Documents.FlowDocument>、<xref:System.Windows.Documents.Table>サポート フロー コンテンツの動作などの改ページ、列の折り返し、およびコンテンツの選択中に、<xref:System.Windows.Controls.Grid>しません。</span><span class="sxs-lookup"><span data-stu-id="61cdf-120">Within a <xref:System.Windows.Documents.FlowDocument>, <xref:System.Windows.Documents.Table> supports flow content behaviors like pagination, column reflow, and content selection while a <xref:System.Windows.Controls.Grid> does not.</span></span> <span data-ttu-id="61cdf-121">A<xref:System.Windows.Controls.Grid>一方は最適以外で使用される、<xref:System.Windows.Documents.FlowDocument>さまざまな理由<xref:System.Windows.Controls.Grid>行と列のインデックスに基づいて要素を追加<xref:System.Windows.Documents.Table>しません。</span><span class="sxs-lookup"><span data-stu-id="61cdf-121">A <xref:System.Windows.Controls.Grid> on the other hand is best used outside of a <xref:System.Windows.Documents.FlowDocument> for many reasons including <xref:System.Windows.Controls.Grid> adds elements based on a row and column index, <xref:System.Windows.Documents.Table> does not.</span></span> <span data-ttu-id="61cdf-122"><xref:System.Windows.Controls.Grid>要素により、1 つの「セル」内に存在する 1 つ以上の要素を許可する子コンテンツの重ね順</span><span class="sxs-lookup"><span data-stu-id="61cdf-122">The <xref:System.Windows.Controls.Grid> element allows layering of child content, allowing more than one element to exist within a single "cell."</span></span> <span data-ttu-id="61cdf-123"><xref:System.Windows.Documents.Table>重ね順をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="61cdf-123"><xref:System.Windows.Documents.Table> does not support layering.</span></span> <span data-ttu-id="61cdf-124">子要素、 <xref:System.Windows.Controls.Grid> 「セル」境界外部の領域と相対的絶対位置に配置できます。</span><span class="sxs-lookup"><span data-stu-id="61cdf-124">Child elements of a <xref:System.Windows.Controls.Grid> can be absolutely positioned relative to the area of their "cell" boundaries.</span></span> <span data-ttu-id="61cdf-125"><xref:System.Windows.Documents.Table>この機能はサポートしません。</span><span class="sxs-lookup"><span data-stu-id="61cdf-125"><xref:System.Windows.Documents.Table> does not support this feature.</span></span> <span data-ttu-id="61cdf-126">最後に、<xref:System.Windows.Controls.Grid>少ないリソースを必要とし、<xref:System.Windows.Documents.Table>ので使用を検討して、<xref:System.Windows.Controls.Grid>パフォーマンスを向上させるためにします。</span><span class="sxs-lookup"><span data-stu-id="61cdf-126">Finally, a <xref:System.Windows.Controls.Grid> requires less resources then a <xref:System.Windows.Documents.Table> so consider using a <xref:System.Windows.Controls.Grid> to improve performance.</span></span>  
   
 <a name="basic_table_structure"></a>   
-### テーブルの基本構造  
- <xref:System.Windows.Documents.Table> は、列 \(<xref:System.Windows.Documents.TableColumn> 要素で表されます\) と行 \(<xref:System.Windows.Documents.TableRow> 要素で表されます\) で構成されたグリッド式の表示を提供します。  <xref:System.Windows.Documents.TableColumn> 要素はコンテンツをホストせず、単に列と列の特性を定義します。  <xref:System.Windows.Documents.TableRow> 要素は、<xref:System.Windows.Documents.TableRowGroup> 要素でホストされる必要があり、これによってテーブルの行のグループ化が定義されます。  <xref:System.Windows.Documents.TableCell> 要素はテーブルで表示される実際のコンテンツを格納し、<xref:System.Windows.Documents.TableRow> 要素でホストされる必要があります。  <xref:System.Windows.Documents.TableCell> には、<xref:System.Windows.Documents.Block> から派生した要素しか格納できません。  <xref:System.Windows.Documents.TableCell> に対する有効な子要素は次のとおりです。  
+### <a name="basic-table-structure"></a><span data-ttu-id="61cdf-127">テーブルの基本構造</span><span class="sxs-lookup"><span data-stu-id="61cdf-127">Basic Table Structure</span></span>  
+ <span data-ttu-id="61cdf-128"><xref:System.Windows.Documents.Table>列から成るグリッド ベースのプレゼンテーションを提供 (によって表される<xref:System.Windows.Documents.TableColumn>要素) と行 (によって表される<xref:System.Windows.Documents.TableRow>要素)。</span><span class="sxs-lookup"><span data-stu-id="61cdf-128"><xref:System.Windows.Documents.Table> provides a grid-based presentation consisting of columns (represented by <xref:System.Windows.Documents.TableColumn> elements) and rows (represented by <xref:System.Windows.Documents.TableRow> elements).</span></span> <span data-ttu-id="61cdf-129"><xref:System.Windows.Documents.TableColumn>要素は、コンテンツをホストしていません。単に列と列の特性を定義します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-129"><xref:System.Windows.Documents.TableColumn> elements do not host content; they simply define columns and characteristics of columns.</span></span> <span data-ttu-id="61cdf-130"><xref:System.Windows.Documents.TableRow>要素でホストされる必要があります、<xref:System.Windows.Documents.TableRowGroup>要素は、テーブルの行のグループを定義します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-130"><xref:System.Windows.Documents.TableRow> elements must be hosted in a <xref:System.Windows.Documents.TableRowGroup> element, which defines a grouping of rows for the table.</span></span> <span data-ttu-id="61cdf-131"><xref:System.Windows.Documents.TableCell>テーブルに表示する実際のコンテンツが含まれる要素をホストする必要があります、<xref:System.Windows.Documents.TableRow>要素。</span><span class="sxs-lookup"><span data-stu-id="61cdf-131"><xref:System.Windows.Documents.TableCell> elements, which contain the actual content to be presented by the table, must be hosted in a <xref:System.Windows.Documents.TableRow> element.</span></span> <span data-ttu-id="61cdf-132"><xref:System.Windows.Documents.TableCell>派生した要素のみを含めることが<xref:System.Windows.Documents.Block>です。</span><span class="sxs-lookup"><span data-stu-id="61cdf-132"><xref:System.Windows.Documents.TableCell> may only contain elements that derive from <xref:System.Windows.Documents.Block>.</span></span>  <span data-ttu-id="61cdf-133">有効な子要素、<xref:System.Windows.Documents.TableCell>が含まれます。</span><span class="sxs-lookup"><span data-stu-id="61cdf-133">Valid child elements for a <xref:System.Windows.Documents.TableCell> include.</span></span>  
   
 -   <xref:System.Windows.Documents.BlockUIContainer>  
   
@@ -65,22 +71,22 @@ caps.handback.revision: 15
 -   <xref:System.Windows.Documents.Table>  
   
 > [!NOTE]
->  <xref:System.Windows.Documents.TableCell> 要素は、テキスト コンテンツを直接ホストすることはできません。  <xref:System.Windows.Documents.TableCell> など、フロー コンテンツ要素の格納規則の詳細については、「[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)」を参照してください。  
+>  <span data-ttu-id="61cdf-134"><xref:System.Windows.Documents.TableCell>要素は、テキスト コンテンツを直接ホスト可能性があります。</span><span class="sxs-lookup"><span data-stu-id="61cdf-134"><xref:System.Windows.Documents.TableCell> elements may not directly host text content.</span></span> <span data-ttu-id="61cdf-135">などの要素のコンテンツ フローの包含規則の詳細については<xref:System.Windows.Documents.TableCell>を参照してください[フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="61cdf-135">For more information about the containment rules for flow content elements like <xref:System.Windows.Documents.TableCell>, see [Flow Document Overview](../../../../docs/framework/wpf/advanced/flow-document-overview.md).</span></span>  
   
 > [!NOTE]
->  <xref:System.Windows.Documents.Table> は、<xref:System.Windows.Controls.Grid> 要素と似ていますが、より多くの機能を備えています。そのため、さらに多くのリソースのオーバーヘッドを必要とします。  
+>  <span data-ttu-id="61cdf-136"><xref:System.Windows.Documents.Table>に似ていますが、<xref:System.Windows.Controls.Grid>要素が、多くの機能があり、したがって、大きいリソースのオーバーヘッドが必要です。</span><span class="sxs-lookup"><span data-stu-id="61cdf-136"><xref:System.Windows.Documents.Table> is similar to the <xref:System.Windows.Controls.Grid> element but has more capabilities and, therefore, requires greater resource overhead.</span></span>  
   
- 次の例では、[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] を使用して単純な 2 × 3 のテーブルを定義しています。  
+ <span data-ttu-id="61cdf-137">次の例では、単純な 2 x 3 テーブル[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="61cdf-137">The following example defines a simple 2 x 3 table with [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)].</span></span>  
   
- [!code-xml[TableSnippets2#_Table_BasicLayout](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml#_table_basiclayout)]  
+ [!code-xaml[TableSnippets2#_Table_BasicLayout](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml#_table_basiclayout)]  
   
- この例の表示結果を次の図に示します。  
+ <span data-ttu-id="61cdf-138">この例の表示結果を次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-138">The following figure shows how this example renders.</span></span>  
   
- ![スクリーンショット: 基本的なテーブルの描画](../../../../docs/framework/wpf/advanced/media/basictablerrender.png "BasicTablerRender")  
+ <span data-ttu-id="61cdf-139">![スクリーンショット: 基本的なテーブルの描画] (../../../../docs/framework/wpf/advanced/media/basictablerrender.png "BasicTablerRender")</span><span class="sxs-lookup"><span data-stu-id="61cdf-139">![Screenshot: Render a basic table](../../../../docs/framework/wpf/advanced/media/basictablerrender.png "BasicTablerRender")</span></span>  
   
 <a name="table_containment"></a>   
-### テーブルの内容  
- <xref:System.Windows.Documents.Table> は <xref:System.Windows.Documents.Block> 要素から派生し、<xref:System.Windows.Documents.Block> レベル要素の共通規則に従います。  <xref:System.Windows.Documents.Table> 要素は、次の要素に含めることができます。  
+### <a name="table-containment"></a><span data-ttu-id="61cdf-140">テーブルの内容</span><span class="sxs-lookup"><span data-stu-id="61cdf-140">Table Containment</span></span>  
+ <span data-ttu-id="61cdf-141"><xref:System.Windows.Documents.Table>派生した、<xref:System.Windows.Documents.Block>要素の一般的な規則に準拠している<xref:System.Windows.Documents.Block>レベルの要素。</span><span class="sxs-lookup"><span data-stu-id="61cdf-141"><xref:System.Windows.Documents.Table> derives from the <xref:System.Windows.Documents.Block> element, and adheres to the common rules for <xref:System.Windows.Documents.Block> level elements.</span></span>  <span data-ttu-id="61cdf-142">A<xref:System.Windows.Documents.Table>要素は、次の要素のいずれかが含まれる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="61cdf-142">A <xref:System.Windows.Documents.Table> element may be contained by any of the following elements:</span></span>  
   
 -   <xref:System.Windows.Documents.FlowDocument>  
   
@@ -97,20 +103,20 @@ caps.handback.revision: 15
 -   <xref:System.Windows.Documents.Figure>  
   
 <a name="row_groupings"></a>   
-### 行のグループ化  
- <xref:System.Windows.Documents.TableRowGroup> 要素を使用すると、テーブル内の行を任意にグループ化できます。この場合、テーブル内のすべての行は行グループに属する必要があります。  多くの場合、行グループ内の行は共通の目的を共有しており、1 つのグループとしてスタイルを設定できます。  一般に、行のグループ化は、テーブルに格納された主要コンテンツから、特別な目的を持つ行 \(タイトル行、ヘッダー行、フッター行など\) を分離するために使用します。  
+### <a name="row-groupings"></a><span data-ttu-id="61cdf-143">行グループ</span><span class="sxs-lookup"><span data-stu-id="61cdf-143">Row Groupings</span></span>  
+ <span data-ttu-id="61cdf-144"><xref:System.Windows.Documents.TableRowGroup>要素がテーブル内の行を任意にグループ化する方法を提供します。 テーブル内のすべての行が行グループに属する必要があります。</span><span class="sxs-lookup"><span data-stu-id="61cdf-144">The <xref:System.Windows.Documents.TableRowGroup> element provides a way to arbitrarily group rows within a table; every row in a table must belong to a row grouping.</span></span>  <span data-ttu-id="61cdf-145">多くの場合、行グループ内の行は共通の目的を共有しており、1 つのグループとしてスタイルを設定できます。</span><span class="sxs-lookup"><span data-stu-id="61cdf-145">Rows within a row group often share a common intent, and may be styled as a group.</span></span>  <span data-ttu-id="61cdf-146">一般に、行のグループ化は、テーブルに格納された主要コンテンツから、特別な目的を持つ行 (タイトル行、ヘッダー行、フッター行など) を分離するために使用します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-146">A common use for row groupings is to separate special-purpose rows, such as a title, header, and footer rows, from the primary content contained by the table.</span></span>  
   
- 次の例では [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] を使用して、スタイルが設定されたヘッダー行とフッター行を使用したテーブルを定義しています。  
+ <span data-ttu-id="61cdf-147">次の例で[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]スタイル設定されたヘッダーとフッター行を含むテーブルを定義します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-147">The following example uses [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] to define a table with styled header and footer rows.</span></span>  
   
- [!code-xml[TableSnippets2#_Table_RowGroups](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml#_table_rowgroups)]  
+ [!code-xaml[TableSnippets2#_Table_RowGroups](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml#_table_rowgroups)]  
   
- この例の表示結果を次の図に示します。  
+ <span data-ttu-id="61cdf-148">この例の表示結果を次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-148">The following figure shows how this example renders.</span></span>  
   
- ![スクリーンショット: テーブル行グループ](../../../../docs/framework/wpf/advanced/media/table-rowgroups.png "Table\_RowGroups")  
+ <span data-ttu-id="61cdf-149">![スクリーンショット: テーブル行グループ] (../../../../docs/framework/wpf/advanced/media/table-rowgroups.png "Table_RowGroups")</span><span class="sxs-lookup"><span data-stu-id="61cdf-149">![Screenshot: Table row groups](../../../../docs/framework/wpf/advanced/media/table-rowgroups.png "Table_RowGroups")</span></span>  
   
-<a name="renderning_precedence"></a>   
-### 背景のレンダリングの優先順位  
- テーブル要素は、次の順序で \([z オーダー](GTMT) の低い項目から高い項目へ\) レンダリングされます。  この順序は変更できません。  たとえば、これらの要素には、確立された順序をオーバーライドするための "Z オーダー" プロパティは用意されていません。  
+<a name="rendering_precedence"></a>   
+### <a name="background-rendering-precedence"></a><span data-ttu-id="61cdf-150">背景のレンダリングの優先順位</span><span class="sxs-lookup"><span data-stu-id="61cdf-150">Background Rendering Precedence</span></span>  
+ <span data-ttu-id="61cdf-151">テーブル要素は、次の順序でレンダリングされます (優先順位の低い項目から高い項目の z オーダー)。</span><span class="sxs-lookup"><span data-stu-id="61cdf-151">Table elements render in the following order (z-order from lowest to highest).</span></span> <span data-ttu-id="61cdf-152">この順序は変更できません。</span><span class="sxs-lookup"><span data-stu-id="61cdf-152">This order cannot be changed.</span></span> <span data-ttu-id="61cdf-153">たとえば、これらの要素には、確立された順序をオーバーライドするための "Z オーダー" プロパティは用意されていません。</span><span class="sxs-lookup"><span data-stu-id="61cdf-153">For example, there is no "Z-order" property for these elements that you can use to override this established order.</span></span>  
   
 1.  <xref:System.Windows.Documents.Table>  
   
@@ -122,65 +128,65 @@ caps.handback.revision: 15
   
 5.  <xref:System.Windows.Documents.TableCell>  
   
- テーブル内のこれらの各要素に対して背景色を定義する例を次に示します。  
+ <span data-ttu-id="61cdf-154">テーブル内のこれらの各要素に対して背景色を定義する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-154">Consider the following example, which defines background colors for each of these elements within a table.</span></span>  
   
- [!code-xml[TableSnippets2#_Table_ZOrder](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml#_table_zorder)]  
+ [!code-xaml[TableSnippets2#_Table_ZOrder](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml#_table_zorder)]  
   
- 次の図は、この例の表示結果 \(背景色のみ表示\) を示したものです。  
+ <span data-ttu-id="61cdf-155">次の図は、この例の表示結果 (背景色のみ表示) を示したものです。</span><span class="sxs-lookup"><span data-stu-id="61cdf-155">The following figure shows how this example renders (showing background colors only).</span></span>  
   
- ![スクリーンショット: テーブル z オーダー](../../../../docs/framework/wpf/advanced/media/table-zorder.png "Table\_ZOrder")  
+ <span data-ttu-id="61cdf-156">![スクリーンショット: テーブル z オーダー] (../../../../docs/framework/wpf/advanced/media/table-zorder.png "Table_ZOrder")</span><span class="sxs-lookup"><span data-stu-id="61cdf-156">![Screenshot: Table z&#45;order](../../../../docs/framework/wpf/advanced/media/table-zorder.png "Table_ZOrder")</span></span>  
   
 <a name="spanning_rows_or_columns"></a>   
-### 複数の行または列にまたがるセル  
- テーブルのセルは、複数の行または列にまたがるように構成することができます。この場合、それぞれ <xref:System.Windows.Documents.TableCell.RowSpan%2A> 属性または <xref:System.Windows.Documents.TableCell.ColumnSpan%2A> 属性を使用します。  
+### <a name="spanning-rows-or-columns"></a><span data-ttu-id="61cdf-157">複数の行または列にまたがるセル</span><span class="sxs-lookup"><span data-stu-id="61cdf-157">Spanning Rows or Columns</span></span>  
+ <span data-ttu-id="61cdf-158">テーブルのセルを使用して複数の行または列にまたがるように構成できます、<xref:System.Windows.Documents.TableCell.RowSpan%2A>または<xref:System.Windows.Documents.TableCell.ColumnSpan%2A>属性をそれぞれします。</span><span class="sxs-lookup"><span data-stu-id="61cdf-158">Table cells may be configured to span multiple rows or columns by using the <xref:System.Windows.Documents.TableCell.RowSpan%2A> or <xref:System.Windows.Documents.TableCell.ColumnSpan%2A> attributes, respectively.</span></span>  
   
- 3 つの列にまたがるセルの例を次に示します。  
+ <span data-ttu-id="61cdf-159">3 つの列にまたがるセルの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-159">Consider the following example, in which a cell spans three columns.</span></span>  
   
- [!code-xml[TableSnippets2#_Table_ColumnSpan](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml#_table_columnspan)]  
+ [!code-xaml[TableSnippets2#_Table_ColumnSpan](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml#_table_columnspan)]  
   
- この例の表示結果を次の図に示します。  
+ <span data-ttu-id="61cdf-160">この例の表示結果を次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-160">The following figure shows how this example renders.</span></span>  
   
- ![スクリーンショット: 3 つの列すべてにまたがるセル](../../../../docs/framework/wpf/advanced/media/table-columnspan.png "Table\_ColumnSpan")  
+ <span data-ttu-id="61cdf-161">![スクリーンショット: 3 つの列すべてにまたがるセル] (../../../../docs/framework/wpf/advanced/media/table-columnspan.png "Table_ColumnSpan")</span><span class="sxs-lookup"><span data-stu-id="61cdf-161">![Screenshot: Cell spanning all three columns](../../../../docs/framework/wpf/advanced/media/table-columnspan.png "Table_ColumnSpan")</span></span>  
   
 <a name="building_a_table_with_code"></a>   
-## テーブルとコードのバインディング  
- 次の例は、プログラムで <xref:System.Windows.Documents.Table> を作成してデータを格納する方法を示しています。  テーブルの内容は、5 行 \(<xref:System.Windows.Documents.Table.RowGroups%2A> オブジェクトに含まれる <xref:System.Windows.Documents.TableRow> オブジェクトで指定\) と 6 列 \(<xref:System.Windows.Documents.TableColumn> オブジェクトで指定\) に配分されます。  行はさまざまな表示目的に使用されます。たとえば、タイトル行はテーブル全体のタイトルの設定に使用され、ヘッダー行はテーブル内のデータ列の説明、フッター行は要約情報の格納に使用されます。  "タイトル"、"ヘッダー"、および "フッター" 行の概念はテーブルに固有のものではなく、単純に異なる特性を持つ行です。  テーブルのセルには実際の内容が格納されます。テキスト、画像、またはその他のほとんどすべての [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] 要素を格納できます。  
+## <a name="building-a-table-with-code"></a><span data-ttu-id="61cdf-162">テーブルとコードのバインディング</span><span class="sxs-lookup"><span data-stu-id="61cdf-162">Building a Table With Code</span></span>  
+ <span data-ttu-id="61cdf-163">次の例は、プログラムで作成する方法を示して、<xref:System.Windows.Documents.Table>し、コンテンツを設定します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-163">The following examples show how to programmatically create a <xref:System.Windows.Documents.Table> and populate it with content.</span></span> <span data-ttu-id="61cdf-164">テーブルの内容は、5 つの行に分配する (によって表される<xref:System.Windows.Documents.TableRow>に含まれるオブジェクト、<xref:System.Windows.Documents.Table.RowGroups%2A>オブジェクト) と 6 つの列 (によって表される<xref:System.Windows.Documents.TableColumn>オブジェクト)。</span><span class="sxs-lookup"><span data-stu-id="61cdf-164">The contents of the table are apportioned into five rows (represented by <xref:System.Windows.Documents.TableRow> objects contained in a <xref:System.Windows.Documents.Table.RowGroups%2A> object) and six columns (represented by <xref:System.Windows.Documents.TableColumn> objects).</span></span> <span data-ttu-id="61cdf-165">たとえば、タイトル行はテーブル全体のタイトルの設定に使用され、ヘッダー行はテーブル内のデータ列の説明、フッター行は要約情報の格納に使用されます。</span><span class="sxs-lookup"><span data-stu-id="61cdf-165">The rows are used for different presentation purposes, including a title row intended to title the entire table, a header row to describe the columns of data in the table, and a footer row with summary information.</span></span>  <span data-ttu-id="61cdf-166">"タイトル"、"ヘッダー"、"フッター" 行の概念はテーブルに固有のものではなく、単純に異なる特性を持つ行です。</span><span class="sxs-lookup"><span data-stu-id="61cdf-166">Note that the notion of "title", "header", and "footer" rows are not inherent to the table; these are simply rows with different characteristics.</span></span> <span data-ttu-id="61cdf-167">テキスト、画像、またはその他のほとんどので構成されることができます、実際のコンテンツを含むテーブル セルが[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]要素。</span><span class="sxs-lookup"><span data-stu-id="61cdf-167">Table cells contain the actual content, which can be comprised of text, images, or nearly any other [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] element.</span></span>  
   
- まず、<xref:System.Windows.Documents.Table> を格納する <xref:System.Windows.Documents.FlowDocument> を作成し、新しい <xref:System.Windows.Documents.Table> を作成して <xref:System.Windows.Documents.FlowDocument> に追加します。  
+ <span data-ttu-id="61cdf-168">最初に、<xref:System.Windows.Documents.FlowDocument>が作成されるホストに、 <xref:System.Windows.Documents.Table>、され、新しい<xref:System.Windows.Documents.Table>が作成され、コンテンツの追加、<xref:System.Windows.Documents.FlowDocument>です。</span><span class="sxs-lookup"><span data-stu-id="61cdf-168">First, a <xref:System.Windows.Documents.FlowDocument> is created to host the <xref:System.Windows.Documents.Table>, and a new <xref:System.Windows.Documents.Table> is created and added to the contents of the <xref:System.Windows.Documents.FlowDocument>.</span></span>  
   
  [!code-csharp[TableSnippets#_TableCreate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets/CSharp/Table.cs#_tablecreate)]
  [!code-vb[TableSnippets#_TableCreate](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tablecreate)]  
   
- 次に、6 つの <xref:System.Windows.Documents.TableColumn> オブジェクトを作成してテーブルの <xref:System.Windows.Documents.Table.Columns%2A> コレクションに追加し、書式を適用します。  
+ <span data-ttu-id="61cdf-169">次に、6<xref:System.Windows.Documents.TableColumn>オブジェクトが作成され、テーブルに追加された<xref:System.Windows.Documents.Table.Columns%2A>コレクション、書式を適用します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-169">Next, six <xref:System.Windows.Documents.TableColumn> objects are created and added to the table's <xref:System.Windows.Documents.Table.Columns%2A> collection, with some formatting applied.</span></span>  
   
 > [!NOTE]
->  テーブルの <xref:System.Windows.Documents.Table.Columns%2A> コレクションでは、標準のゼロから始まるインデックスを使用します。  
+>  <span data-ttu-id="61cdf-170">なお、テーブルの<xref:System.Windows.Documents.Table.Columns%2A>コレクションで標準の 0 から始まるインデックスを使用します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-170">Note that the table's <xref:System.Windows.Documents.Table.Columns%2A> collection uses standard zero-based indexing.</span></span>  
   
  [!code-csharp[TableSnippets#_TableCreateColumns](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets/CSharp/Table.cs#_tablecreatecolumns)]
  [!code-vb[TableSnippets#_TableCreateColumns](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tablecreatecolumns)]  
   
- 次に、タイトル行を作成してテーブルに追加し、書式を適用します。  タイトル行には、テーブルの 6 つの列にまたがる 1 つのセルが格納されます。  
+ <span data-ttu-id="61cdf-171">次に、タイトル行を作成してテーブルに追加し、書式を適用します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-171">Next, a title row is created and added to the table with some formatting applied.</span></span>  <span data-ttu-id="61cdf-172">タイトル行には、テーブルの 6 つの列にまたがる 1 つのセルが格納されます。</span><span class="sxs-lookup"><span data-stu-id="61cdf-172">The title row happens to contain a single cell that spans all six columns in the table.</span></span>  
   
  [!code-csharp[TableSnippets#_TableAddTitleRow](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets/CSharp/Table.cs#_tableaddtitlerow)]
  [!code-vb[TableSnippets#_TableAddTitleRow](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tableaddtitlerow)]  
   
- 次に、ヘッダー行を作成してテーブルに追加し、ヘッダー行のセルを作成してデータを格納します。  
+ <span data-ttu-id="61cdf-173">次に、ヘッダー行を作成してテーブルに追加し、ヘッダー行のセルを作成してデータを格納します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-173">Next, a header row is created and added to the table, and the cells in the header row are created and populated with content.</span></span>  
   
  [!code-csharp[TableSnippets#_TableAddHeaderRow](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets/CSharp/Table.cs#_tableaddheaderrow)]
  [!code-vb[TableSnippets#_TableAddHeaderRow](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tableaddheaderrow)]  
   
- 次に、データ行を作成してテーブルに追加し、この行のセルを作成してデータを格納します。  この行の作成は、ヘッダー行の作成に似ていますが、適用する書式が少し異なります。  
+ <span data-ttu-id="61cdf-174">次に、データ行を作成してテーブルに追加し、この行のセルを作成してデータを格納します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-174">Next, a row for data is created and added to the table, and the cells in this row are created and populated with content.</span></span>  <span data-ttu-id="61cdf-175">この行の作成はヘッダー行の作成に似ていますが、適用する書式が少し異なります。</span><span class="sxs-lookup"><span data-stu-id="61cdf-175">Building this row is similar to building the header row, with slightly different formatting applied.</span></span>  
   
  [!code-csharp[TableSnippets#_TableAddDataRow](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets/CSharp/Table.cs#_tableadddatarow)]
  [!code-vb[TableSnippets#_TableAddDataRow](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tableadddatarow)]  
   
- 最後に、フッター行を作成して追加し、書式を設定します。  タイトル行と同様に、フッター行には、テーブルの 6 つの列にまたがる 1 つのセルが格納されます。  
+ <span data-ttu-id="61cdf-176">最後に、フッター行を作成して追加し、書式を設定します。</span><span class="sxs-lookup"><span data-stu-id="61cdf-176">Finally, a footer row is created, added, and formatted.</span></span>  <span data-ttu-id="61cdf-177">タイトル行と同様に、フッター行にはテーブルの 6 つの列にまたがる 1 つのセルが格納されます。</span><span class="sxs-lookup"><span data-stu-id="61cdf-177">Like the title row, the footer contains a single cell that spans all six columns in the table.</span></span>  
   
  [!code-csharp[TableSnippets#_TableAddFooterRow](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets/CSharp/Table.cs#_tableaddfooterrow)]
  [!code-vb[TableSnippets#_TableAddFooterRow](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tableaddfooterrow)]  
   
-## 参照  
- [フロー ドキュメントの概要](../../../../docs/framework/wpf/advanced/flow-document-overview.md)   
- [XAML を使用してテーブルを定義する](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)   
- [WPF のドキュメント](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)   
- [フロー コンテンツ要素を使用する](../../../../docs/framework/wpf/advanced/how-to-use-flow-content-elements.md)
+## <a name="see-also"></a><span data-ttu-id="61cdf-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="61cdf-178">See Also</span></span>  
+ [<span data-ttu-id="61cdf-179">フロー ドキュメントの概要</span><span class="sxs-lookup"><span data-stu-id="61cdf-179">Flow Document Overview</span></span>](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
+ [<span data-ttu-id="61cdf-180">XAML を使用してテーブルを定義する</span><span class="sxs-lookup"><span data-stu-id="61cdf-180">Define a Table with XAML</span></span>](../../../../docs/framework/wpf/advanced/how-to-define-a-table-with-xaml.md)  
+ [<span data-ttu-id="61cdf-181">WPF のドキュメント</span><span class="sxs-lookup"><span data-stu-id="61cdf-181">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [<span data-ttu-id="61cdf-182">フロー コンテンツ要素を使用する</span><span class="sxs-lookup"><span data-stu-id="61cdf-182">Use Flow Content Elements</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-flow-content-elements.md)

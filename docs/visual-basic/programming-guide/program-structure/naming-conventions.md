@@ -1,57 +1,56 @@
 ---
-title: "Visual Basic Naming Conventions | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "names, Visual Basic rules"
-  - "naming conventions"
-  - "naming conventions, Visual Basic"
-  - "Visual Basic code, naming conventions"
-  - "conventions, Visual Basic coding"
-  - "names, naming conventions"
-  - "naming conventions, classes"
+title: "Visual Basic の名前付け規則"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- names [Visual Basic], Visual Basic rules
+- naming conventions
+- naming conventions [Visual Basic], Visual Basic
+- Visual Basic code, naming conventions
+- conventions [Visual Basic], Visual Basic coding
+- names [Visual Basic], naming conventions
+- naming conventions [Visual Basic], classes
 ms.assetid: 164949a4-2a7c-4736-9d82-9c3078e2e56c
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: a59139b57568810de80de764388eeffa5f8d7ac9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Visual Basic Naming Conventions
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-Visual Basic アプリケーションの要素に名前を付ける場合は、最初の文字を英字、漢字、ひらがな、カタカナ、アンダースコア \(\_\) のいずれかにする必要があります。  ただし、アンダースコアで始まる名前は [言語への非依存性、および言語非依存コンポーネント](../Topic/Language%20Independence%20and%20Language-Independent%20Components.md) \(CLS\) に準拠しないので注意してください。  
+# <a name="visual-basic-naming-conventions"></a><span data-ttu-id="2370f-102">Visual Basic の名前付け規則</span><span class="sxs-lookup"><span data-stu-id="2370f-102">Visual Basic Naming Conventions</span></span>
+<span data-ttu-id="2370f-103">要素は、Visual Basic アプリケーションの名前、ときに、その名前の最初の文字は、文字は英字またはアンダー スコアにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="2370f-103">When you name an element in your Visual Basic application, the first character of that name must be an alphabetic character or an underscore.</span></span> <span data-ttu-id="2370f-104">ただし、アンダー スコアで始まる名前に準拠していないこと、[言語非依存および言語非依存コンポーネント](https://msdn.microsoft.com/library/12a7a7h3)(CLS)。</span><span class="sxs-lookup"><span data-stu-id="2370f-104">Note, however, that names beginning with an underscore are not compliant with the [Language Independence and Language-Independent Components](https://msdn.microsoft.com/library/12a7a7h3) (CLS).</span></span>  
   
- 名前付けには以下の推奨事項が適用されます。  
+ <span data-ttu-id="2370f-105">次の提案は、名前付けに適用されます。</span><span class="sxs-lookup"><span data-stu-id="2370f-105">The following suggestions apply to naming.</span></span>  
   
--   `FindLastRecord` や `RedrawMyForm` のように、名前の各単語は大文字で開始します。  
+-   <span data-ttu-id="2370f-106">としてでは大文字で名前の独立した各単語を開始`FindLastRecord`と`RedrawMyForm`です。</span><span class="sxs-lookup"><span data-stu-id="2370f-106">Begin each separate word in a name with a capital letter, as in `FindLastRecord` and `RedrawMyForm`.</span></span>  
   
--   `InitNameArray` や `CloseDialog` のように、関数名とメソッド名は動詞で開始します。  
+-   <span data-ttu-id="2370f-107">開始、動詞を使用して、関数、およびメソッドの名前として`InitNameArray`または`CloseDialog`です。</span><span class="sxs-lookup"><span data-stu-id="2370f-107">Begin function and method names with a verb, as in `InitNameArray` or `CloseDialog`.</span></span>  
   
--   `EmployeeName` や `CarAccessory` のように、クラス、構造体、モジュール、およびプロパティの名前は名詞で開始します。  
+-   <span data-ttu-id="2370f-108">開始クラス、構造体、モジュール、および、名詞とプロパティ名として`EmployeeName`または`CarAccessory`です。</span><span class="sxs-lookup"><span data-stu-id="2370f-108">Begin class, structure, module, and property names with a noun, as in `EmployeeName` or `CarAccessory`.</span></span>  
   
--   インターフェイス名は "I" で開始し、その後には `IComponent` のように名詞または名詞句を続けるか、または `IPersistable` のようにインターフェイスの動作を説明する形容詞を続けます。  アンダースコアは使用しないでください。また、省略形を使用すると混乱を招く可能性があるため、使用しないようにしてください。  
+-   <span data-ttu-id="2370f-109">プレフィックスが付いているインターフェイスを開始"I"、続けて名詞または名詞句の場合と同様に`IComponent`、またはインターフェイスの動作を説明するような形容詞`IPersistable`です。</span><span class="sxs-lookup"><span data-stu-id="2370f-109">Begin interface names with the prefix "I", followed by a noun or a noun phrase, like `IComponent`, or with an adjective describing the interface's behavior, like `IPersistable`.</span></span> <span data-ttu-id="2370f-110">および使用しないで、アンダー スコア、略語で混乱可能性があるために、慎重に、省略形を使用します。</span><span class="sxs-lookup"><span data-stu-id="2370f-110">Do not use the underscore, and use abbreviations sparingly, because abbreviations can cause confusion.</span></span>  
   
--   イベント ハンドラー名はイベントの種類を説明する名詞で開始し、その後にサフィックス "`EventHandler`" を付け、"`MouseEventHandler`" のように記述します。  
+-   <span data-ttu-id="2370f-111">で始め、名詞が続くイベントの種類を説明するイベント ハンドラー名、"`EventHandler`「サフィックスで」`MouseEventHandler`"です。</span><span class="sxs-lookup"><span data-stu-id="2370f-111">Begin event handler names with a noun describing the type of event followed by the "`EventHandler`" suffix, as in "`MouseEventHandler`".</span></span>  
   
--   イベント引数クラスの名前には、サフィックス "`EventArgs`" を含めます。  
+-   <span data-ttu-id="2370f-112">イベント引数クラスの名前が含まれる、"`EventArgs`"サフィックス。</span><span class="sxs-lookup"><span data-stu-id="2370f-112">In names of event argument classes, include the "`EventArgs`" suffix.</span></span>  
   
--   イベントに前後の概念がある場合は、"`ControlAdd`" や "`ControlAdded`" のように現在形または過去形を使用します。  
+-   <span data-ttu-id="2370f-113">ある場合、イベントの概念"before"または"after"サフィックスで使用、現在時制または過去時制として"`ControlAdd`「または」`ControlAdded`"です。</span><span class="sxs-lookup"><span data-stu-id="2370f-113">If an event has a concept of "before" or "after," use a suffix in present or past tense, as in "`ControlAdd`" or "`ControlAdded`".</span></span>  
   
--   長い用語や頻繁に使用する用語は、省略形を使って名前を適切な長さにします。たとえば、"Hypertext Markup Language" の代わりに "HTML" を使用します。  通常、32 文字より長い変数名は、解像度の低いディスプレイでは読みにくくなります。  省略形は、必ずアプリケーション全体で統一してください。  プロジェクト内で "HTML" と "Hypertext Markup Language" の両方を不規則に使用すると混乱が生じます。  
+-   <span data-ttu-id="2370f-114">長であるか、または頻繁に使用される用語では、たとえば、"HTML"、「ハイパー テキスト マークアップ言語」ではなく、適切な名前の長さを保持する略語を使用します。</span><span class="sxs-lookup"><span data-stu-id="2370f-114">For long or frequently used terms, use abbreviations to keep name lengths reasonable, for example, "HTML", instead of "Hypertext Markup Language".</span></span> <span data-ttu-id="2370f-115">一般に、32 文字を超える変数の名前は画面解像度の低い設定読みにくくします。</span><span class="sxs-lookup"><span data-stu-id="2370f-115">In general, variable names greater than 32 characters are difficult to read on a monitor set to a low resolution.</span></span> <span data-ttu-id="2370f-116">また、省略形は、アプリケーション全体で一貫性のあることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="2370f-116">Also, make sure your abbreviations are consistent throughout the entire application.</span></span> <span data-ttu-id="2370f-117">"HTML"と「ハイパー テキスト マークアップ言語」の間でのプロジェクト内にランダムに切り替え、混乱を招く可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2370f-117">Randomly switching in a project between "HTML" and "Hypertext Markup Language" can lead to confusion.</span></span>  
   
--   外部スコープにある名前と同じ名前を内部スコープで使用することは避けてください。  不正な変数にアクセスされるとエラーが発生します。  同じ名前の変数とキーワードの間で競合が発生した場合は、適切なタイプ ライブラリを先頭に付けてキーワードを識別する必要があります。  たとえば `Date` という変数がある場合は、<xref:System.DateTime.Date%2A?displayProperty=fullName> の呼び出しによってのみ、組み込み関数 `Date` を使用できます。  
+-   <span data-ttu-id="2370f-118">外側のスコープでの名前と同じである内部スコープでの名前を使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="2370f-118">Avoid using names in an inner scope that are the same as names in an outer scope.</span></span> <span data-ttu-id="2370f-119">エラーは、不正な変数にアクセスした場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="2370f-119">Errors can result if the wrong variable is accessed.</span></span> <span data-ttu-id="2370f-120">変数と同じ名前のキーワードの間の競合が発生した場合は、適切なタイプ ライブラリで前にキーワードを識別する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2370f-120">If a conflict occurs between a variable and the keyword of the same name, you must identify the keyword by preceding it with the appropriate type library.</span></span> <span data-ttu-id="2370f-121">たとえば、という名前の変数がある場合`Date`、組み込みを使用することができます`Date`関数を呼び出すことによってのみ<xref:System.DateTime.Date%2A?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="2370f-121">For example, if you have a variable called `Date`, you can use the intrinsic `Date` function only by calling <xref:System.DateTime.Date%2A?displayProperty=nameWithType>.</span></span>  
   
-## 参照  
- [Keywords as Element Names in Code](../../../visual-basic/programming-guide/program-structure/keywords-as-element-names-in-code.md)   
- [Me, My, MyBase, and MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)   
- [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
- [プログラム構造とコード規則](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)   
- [Visual Basic Language Reference](../../../visual-basic/language-reference/index.md)
+## <a name="see-also"></a><span data-ttu-id="2370f-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="2370f-122">See Also</span></span>  
+ [<span data-ttu-id="2370f-123">コード内の要素名としてのキーワード</span><span class="sxs-lookup"><span data-stu-id="2370f-123">Keywords as Element Names in Code</span></span>](../../../visual-basic/programming-guide/program-structure/keywords-as-element-names-in-code.md)  
+ [<span data-ttu-id="2370f-124">Me、My、MyBase、および MyClass</span><span class="sxs-lookup"><span data-stu-id="2370f-124">Me, My, MyBase, and MyClass</span></span>](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)  
+ [<span data-ttu-id="2370f-125">Declared Element Names</span><span class="sxs-lookup"><span data-stu-id="2370f-125">Declared Element Names</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
+ [<span data-ttu-id="2370f-126">プログラム構造とコード規則</span><span class="sxs-lookup"><span data-stu-id="2370f-126">Program Structure and Code Conventions</span></span>](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
+ [<span data-ttu-id="2370f-127">Visual Basic の言語リファレンス</span><span class="sxs-lookup"><span data-stu-id="2370f-127">Visual Basic Language Reference</span></span>](../../../visual-basic/language-reference/index.md)

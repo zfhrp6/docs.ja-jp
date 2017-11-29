@@ -1,174 +1,180 @@
 ---
-title: "ダイアログ ボックスの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "モードレス ダイアログ ボックス"
-  - "ダイアログ ボックス"
-  - "メッセージ ボックス"
-  - "モーダル ダイアログ ボックス"
+title: "ダイアログ ボックスの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- modeless dialog boxes [WPF]
+- dialog boxes [WPF]
+- message boxes [WPF]
+- modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
-caps.latest.revision: 25
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 24
+caps.latest.revision: "25"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d14d3bb167fc3e027371c28147720cf2a098c136
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ダイアログ ボックスの概要
-スタンドアロン アプリケーションは通常、メイン ウィンドウがどのアプリケーションが機能して、使用してデータを処理する機能を公開、メインのデータをある[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]メカニズムは、メニュー バー、ツールバー、およびステータス バーと同様にします。 また、他のウィンドウで、次の操作を表示することも重要なアプリケーション。  
+# <a name="dialog-boxes-overview"></a><span data-ttu-id="1fd76-102">ダイアログ ボックスの概要</span><span class="sxs-lookup"><span data-stu-id="1fd76-102">Dialog Boxes Overview</span></span>
+<span data-ttu-id="1fd76-103">スタンドアロン アプリケーションは通常、メイン ウィンドウが対象で、アプリケーションが動作して、を介してそのデータを処理する機能を公開、メイン データをある[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]メカニズムは、メニュー バー、ツールバー、およびステータス バーと同様にします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-103">Standalone applications typically have a main window that both displays the main data over which the application operates and exposes the functionality to process that data through [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mechanisms like menu bars, tool bars, and status bars.</span></span> <span data-ttu-id="1fd76-104">重要なアプリケーションは、次のようなことをするための追加のウィンドウを表示することもあります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-104">A non-trivial application may also display additional windows to do the following:</span></span>  
   
--   ユーザーに固有の情報を表示します。  
+-   <span data-ttu-id="1fd76-105">固有の情報をユーザーに表示する。</span><span class="sxs-lookup"><span data-stu-id="1fd76-105">Display specific information to users.</span></span>  
   
--   ユーザーから情報を収集します。  
+-   <span data-ttu-id="1fd76-106">ユーザーから情報を収集する。</span><span class="sxs-lookup"><span data-stu-id="1fd76-106">Gather information from users.</span></span>  
   
--   両方を表示し、情報を収集します。  
+-   <span data-ttu-id="1fd76-107">情報の表示と収集の両方を行う。</span><span class="sxs-lookup"><span data-stu-id="1fd76-107">Both display and gather information.</span></span>  
   
- これらの種類のウィンドウと呼ばれる*ダイアログ ボックス*、し、2 種類があります: モーダルとモードレスです。  
+ <span data-ttu-id="1fd76-108">これらの種類のウィンドウと呼ばれる* ダイアログ ボックス*、し、2 種類があります: モーダルとモードレスです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-108">These types of windows are known as *dialog boxes*, and there are two types: modal and modeless.</span></span>  
   
- A*モーダル*関数には、引き続きユーザーからの追加データが必要がある場合、関数によってダイアログ ボックスが表示されます。 関数は、データを収集するモーダル ダイアログ ボックスに依存しているため、モーダル ダイアログ ボックスも防止、ユーザーが開いている間に、アプリケーションの他のウィンドウをアクティブ化します。 モーダル ダイアログ ボックスでキーを押して、モーダル ダイアログ ボックスを終了するときにユーザーはほとんどの場合、 **OK**または**キャンセル** ボタンをクリックします。 キーを押して、 **OK**  ボタンをクリックことを示し、ユーザー データが入力されたデータに対して処理を続行する関数を希望します。 キーを押して、**キャンセル**ボタンは、ユーザーが、関数が完全に実行を停止することを示します。 開く、保存、およびデータを印刷するには、モーダル ダイアログ ボックスの最も一般的な例を示します。  
+ <span data-ttu-id="1fd76-109">A*モーダル*関数には、引き続きユーザーからの追加データが必要がある場合、関数によってダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-109">A *modal* dialog box is displayed by a function when the function needs additional data from a user to continue.</span></span> <span data-ttu-id="1fd76-110">機能は、モーダル ダイアログ ボックスに依存してデータを収集するため、モーダル ダイアログ ボックスが開いている間、ユーザーはアプリケーション内の他のウィンドウをアクティブ化することはできません。</span><span class="sxs-lookup"><span data-stu-id="1fd76-110">Because the function depends on the modal dialog box to gather data, the modal dialog box also prevents a user from activating other windows in the application while it remains open.</span></span> <span data-ttu-id="1fd76-111">ほとんどの場合、モーダル ダイアログ ボックスで、ユーザー キーを押して、モーダル ダイアログ ボックスを終了する場合はシグナルを**OK**または**キャンセル**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-111">In most cases, a modal dialog box allows a user to signal when they have finished with the modal dialog box by pressing either an **OK** or **Cancel** button.</span></span> <span data-ttu-id="1fd76-112">キーを押して、 **OK**ボタンは、こと、ユーザーがデータを入力し、データ処理を継続する関数を示します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-112">Pressing the **OK** button indicates that a user has entered data and wants the function to continue processing with that data.</span></span> <span data-ttu-id="1fd76-113">キーを押して、**キャンセル**ボタンは、ユーザーが、関数が完全に実行を停止することを示します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-113">Pressing the **Cancel** button indicates that a user wants to stop the function from executing altogether.</span></span> <span data-ttu-id="1fd76-114">モーダル ダイアログ ボックスの最も一般的な例は、データを開く、保存する、および印刷するために表示されます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-114">The most common examples of modal dialog boxes are shown to open, save, and print data.</span></span>  
   
- A*モードレス*ダイアログ ボックスで、その一方を防ぐ、ユーザーが開いている間、他のウィンドウをアクティブ化します。 たとえば、ユーザーがドキュメント内の特定の単語の出現箇所を検索したい場合でも、メイン ウィンドウ対象の単語が探しているユーザー入力を要求するダイアログ ボックスが多くの場合、開きます。 単語なると、ユーザーは、ドキュメントの編集によって妨げ、ただし、ダイアログ ボックスがモーダルである必要ありませんから。 モードレス ダイアログ ボックスは、少なくとも、**閉じる** ダイアログ ボックスを閉じるボタンをクリックしなどの特定の機能を実行するその他のボタンを提供することがあります、**次を検索**word search の検索条件に一致する次の単語を検索する ボタンをクリックします。  
+ <span data-ttu-id="1fd76-115">A*モードレス*ダイアログ ボックスで、その一方は防止しません、ユーザーが開いている間、他のウィンドウをアクティブ化します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-115">A *modeless* dialog box, on the other hand, does not prevent a user from activating other windows while it is open.</span></span> <span data-ttu-id="1fd76-116">たとえば、ユーザーがドキュメント内の特定の単語の出現箇所を検索する場合、メイン ウィンドウは、多くの場合、ダイアログ ボックスを開いて、検索する単語をユーザーに尋ねます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-116">For example, if a user wants to find occurrences of a particular word in a document, a main window will often open a dialog box to ask a user what word they are looking for.</span></span> <span data-ttu-id="1fd76-117">しかし、単語の検索中もユーザーはドキュメントを編集できるため、ダイアログ ボックスがモーダルである必要はありません。</span><span class="sxs-lookup"><span data-stu-id="1fd76-117">Since finding a word doesn't prevent a user from editing the document, however, the dialog box doesn't need to be modal.</span></span> <span data-ttu-id="1fd76-118">モードレス ダイアログ ボックスは、少なくとも、**閉じる** ダイアログ ボックスを閉じるボタンをクリックしなどの特定の機能を実行するその他のボタンを提供する場合があります、**次を検索**ボタン、次へ を検索する単語が単語の検索の検索条件に一致します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-118">A modeless dialog box at least provides a **Close** button to close the dialog box, and may provide additional buttons to execute specific functions, such as a **Find Next** button to find the next word that matches the find criteria of a word search.</span></span>  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]ダイアログ ボックス、メッセージ ボックス、コモン ダイアログ ボックスでは、カスタム ダイアログ ボックスなどの複数の種類を作成できます。 このトピックでは、それぞれ、[ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984)一致する例を示します。  
+ [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]<span data-ttu-id="1fd76-119"> では、メッセージ ボックス、コモン ダイアログ ボックス、カスタム ダイアログ ボックスなど、いくつかの種類のダイアログ ボックスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-119"> allows you to create several types of dialog boxes, including message boxes, common dialog boxes, and custom dialog boxes.</span></span> <span data-ttu-id="1fd76-120">このトピックでは、それぞれ、[ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984)一致する例を示します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-120">This topic discusses each, and the [Dialog Box Sample](http://go.microsoft.com/fwlink/?LinkID=159984) provides matching examples.</span></span>  
   
-   
+ 
   
 <a name="Message_Boxes"></a>   
-## <a name="message-boxes"></a>メッセージ ボックス  
- A*メッセージ ボックス*テキストの情報を表示し、ユーザーのボタンで、意思決定を行うことを許可するように使用できるダイアログ ボックスです。 次の図は、テキストの情報を表示、質問を質問に答える&3; つのボタンをユーザーに提供するメッセージ ボックスを表示します。  
+## <a name="message-boxes"></a><span data-ttu-id="1fd76-121">メッセージ ボックス</span><span class="sxs-lookup"><span data-stu-id="1fd76-121">Message Boxes</span></span>  
+ <span data-ttu-id="1fd76-122">A*メッセージ ボックス*テキストの情報を表示し、ボタンを持つ意思決定を行うようにするために使用できるダイアログ ボックスです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-122">A *message box* is a dialog box that can be used to display textual information and to allow users to make decisions with buttons.</span></span> <span data-ttu-id="1fd76-123">次の図は、テキスト情報と質問を表示して、ユーザーが質問に回答するための 3 つのボタンを表示するメッセージ ボックスを示しています。</span><span class="sxs-lookup"><span data-stu-id="1fd76-123">The following figure shows a message box that displays textual information, asks a question, and provides the user with three buttons to answer the question.</span></span>  
   
- ![[ワード プロセッサ] ダイアログ ボックス](../Image/DialogBoxesOverviewFigure1.png "DialogBoxesOverviewFigure1")  
+ <span data-ttu-id="1fd76-124">![[Word Processor] ダイアログ ボックス](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure1.png "DialogBoxesOverviewFigure1")</span><span class="sxs-lookup"><span data-stu-id="1fd76-124">![Word Processor dialog box](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure1.png "DialogBoxesOverviewFigure1")</span></span>  
   
- 使用するメッセージ ボックスを作成する、<xref:System.Windows.MessageBox>クラスです。                  <xref:System.Windows.MessageBox>メッセージ ボックスのテキスト、タイトル、アイコン、およびボタン、次のようなコードを使用して構成することができます。  
+ <span data-ttu-id="1fd76-125">使用するメッセージ ボックスを作成する、<xref:System.Windows.MessageBox>クラスです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-125">To create a message box, you use the <xref:System.Windows.MessageBox> class.</span></span> <span data-ttu-id="1fd76-126"><xref:System.Windows.MessageBox>メッセージ ボックスのテキスト、タイトル、アイコン、およびボタンは、次のようにコードを使用して構成することができます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-126"><xref:System.Windows.MessageBox> lets you configure the message box text, title, icon, and buttons, using code like the following.</span></span>  
   
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxconfigurecodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxconfigurecodebehind)]  
   
- メッセージ ボックスを表示するのにを呼び出します、 `static`<xref:System.Windows.MessageBox.Show%2A>メソッドを次のコードに示すようにします。  
+ <span data-ttu-id="1fd76-127">表示するには、メッセージ ボックスを呼び出す、 `static` <xref:System.Windows.MessageBox.Show%2A>メソッドを次のコードに示すようにします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-127">To show a message box, you call the `static`<xref:System.Windows.MessageBox.Show%2A> method, as demonstrated in the following code.</span></span>  
   
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxShowCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxshowcodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxShowCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxshowcodebehind)]  
   
- メッセージ ボックスを表示するコードを検出して、ユーザーの決定 (どのボタンが押された) を処理する場合、コードは、次のコードに示すようにメッセージ ボックスの結果を検査できます。  
+ <span data-ttu-id="1fd76-128">メッセージ ボックスを表示するコードで、ユーザーの決定 (どのボタンが押されたか) を検出して処理する必要があるときには、コードは、次のコードに示されているように、メッセージ ボックスの結果を検査できます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-128">When code that shows a message box needs to detect and process the user's decision (which button was pressed), the code can inspect the message box result, as shown in the following code.</span></span>  
   
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxShowAndResultCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxshowandresultcodebehind1)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxShowAndResultCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxshowandresultcodebehind1)]  
   
- メッセージ ボックスの使用の詳細については、次を参照してください。<xref:System.Windows.MessageBox>、[メッセージ ボックス サンプル](http://go.microsoft.com/fwlink/?LinkID=160023)、および[ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984)します。  
+ <span data-ttu-id="1fd76-129">メッセージ ボックスの使用の詳細については、次を参照してください。 <xref:System.Windows.MessageBox>、 [MessageBox サンプル](http://go.microsoft.com/fwlink/?LinkID=160023)、および[ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984)です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-129">For more information on using message boxes, see <xref:System.Windows.MessageBox>, [MessageBox Sample](http://go.microsoft.com/fwlink/?LinkID=160023), and [Dialog Box Sample](http://go.microsoft.com/fwlink/?LinkID=159984).</span></span>  
   
- <xref:System.Windows.MessageBox>簡単なダイアログ ボックス ユーザー エクスペリエンスを使用する利点を提供することがあります<xref:System.Windows.MessageBox>は部分信頼セキュリティ サンド ボックス内で実行されるアプリケーションで表示できるウィンドウの唯一の種類は、(を参照してください[セキュリティ](../../../../docs/framework/wpf/security-wpf.md)) など[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]します。  
+ <span data-ttu-id="1fd76-130"><xref:System.Windows.MessageBox>単純なダイアログ ボックス ユーザー エクスペリエンスを使用する利点を提供することがあります<xref:System.Windows.MessageBox>部分信頼セキュリティ サンド ボックス内で実行されるアプリケーションで表示できるウィンドウの唯一の型では、(を参照してください[セキュリティ](../../../../docs/framework/wpf/security-wpf.md)) など[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-130">Although <xref:System.Windows.MessageBox> may offer a simple dialog box user experience, the advantage of using <xref:System.Windows.MessageBox> is that is the only type of window that can be shown by applications that run within a partial trust security sandbox (see [Security](../../../../docs/framework/wpf/security-wpf.md)), such as [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].</span></span>  
   
- ほとんどのダイアログ ボックスは表示のテキストを選択 (チェック ボックス) 相互に排他的な選択 (オプション ボタン) を含むメッセージ ボックスの結果よりもさらに複雑なデータを収集して、リスト (リスト ボックス、コンボ ボックス、ドロップダウン リスト ボックス) を選択します。 これらの[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]いくつかの一般的なダイアログ ボックスが表示され、いずれかの使用を完全信頼で実行されているアプリケーションに制限されていますが、独自のダイアログ ボックスを作成することができます。  
+ <span data-ttu-id="1fd76-131">ほとんどのダイアログ ボックスは、テキスト、選択 (チェック ボックス)、相互に排他的な選択 (オプション ボタン)、リスト選択 (リスト ボックス、コンボ ボックス、ドロップダウン リスト ボックス) など、メッセージ ボックスの結果よりも複雑なデータを表示し、収集します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-131">Most dialog boxes display and gather more complex data than the result of a message box, including text, selection (check boxes), mutually exclusive selection (radio buttons), and list selection (list boxes, combo boxes, drop-down list boxes).</span></span> <span data-ttu-id="1fd76-132">これらのオプション、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]いくつかの一般的なダイアログ ボックスを提供し、いずれかの使用は完全信頼で実行されているアプリケーションに限定されますが、独自のダイアログ ボックスを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-132">For these, [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] provides several common dialog boxes and allows you to create your own dialog boxes, although the use of either is limited to applications running with full trust.</span></span>  
   
 <a name="Common_Dialogs"></a>   
-## <a name="common-dialog-boxes"></a>コモン ダイアログ ボックス  
- [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]さまざまなファイルを開く、保存、および印刷用のダイアログ ボックスを含むすべてのアプリケーションに共通する再利用可能なダイアログ ボックスを実装します。 これらのダイアログ ボックスがオペレーティング システムによって実装されているために、により、ユーザー エクスペリエンスの一貫性は、オペレーティング システムで実行されるすべてのアプリケーション間で共有できます。ユーザーが&1; つのアプリケーションで、オペレーティング システムによって提供されるダイアログ ボックスの使用経験がほとんどの場合は、他のアプリケーションでは、そのダイアログ ボックスを使用する方法について説明する必要はありません。 これらのダイアログ ボックスがすべてのアプリケーションで使用できると呼ばれますので、一貫したユーザー エクスペリエンスを提供するのに役立つ、ため*コモン ダイアログ ボックス*します。  
+## <a name="common-dialog-boxes"></a><span data-ttu-id="1fd76-133">コモン ダイアログ ボックス</span><span class="sxs-lookup"><span data-stu-id="1fd76-133">Common Dialog Boxes</span></span>  
+ [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]<span data-ttu-id="1fd76-134"> は、ファイルを開く、ファイルを保存する、印刷するためのダイアログ ボックスなど、すべてのアプリケーションに共通の、さまざまな再利用可能なダイアログ ボックスを実装します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-134"> implements a variety of reusable dialog boxes that are common to all applications, including dialog boxes for opening files, saving files, and printing.</span></span> <span data-ttu-id="1fd76-135">これらのダイアログ ボックスはオペレーティング システムによって実装されるため、そのオペレーティング システム上で実行するすべてのアプリケーション間で共有でき、ユーザー エクスペリエンスの一貫性を保つことができます。ユーザーが 1 つのアプリケーションで、オペレーティング システムによって提供されるダイアログ ボックスの使用に慣れると、他のアプリケーションでも、そのダイアログ ボックスの使用法を学ぶ必要はありません。</span><span class="sxs-lookup"><span data-stu-id="1fd76-135">Since these dialog boxes are implemented by the operating system, they can be shared among all the applications that run on the operating system, which helps user experience consistency; when users are familiar with the use of an operating system-provided dialog box in one application, they don't need to learn how to use that dialog box in other applications.</span></span> <span data-ttu-id="1fd76-136">これらのダイアログ ボックスはすべてのアプリケーションで使用され、一貫性のあるユーザー エクスペリエンスを提供するのに役立つ、ために、それらと呼ばれます。*コモン ダイアログ ボックス*です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-136">Because these dialog boxes are available to all applications and because they help provide a consistent user experience, they are known as *common dialog boxes*.</span></span>  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]開いているファイルの保存にファイル、および印刷ダイアログ ボックスをカプセル化し、それらがスタンドアロン アプリケーションで使用するため、マネージ クラスを公開します。 このトピックでは、それぞれの簡単な概要を説明します。  
+ [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]<span data-ttu-id="1fd76-137"> は、ファイルを開く、ファイルを保存する、および印刷コモン ダイアログ ボックスをカプセル化して、スタンドアロン アプリケーションで使用できるマネージ クラスとして公開します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-137"> encapsulates the open file, save file, and print common dialog boxes and exposes them as managed classes for you to use in standalone applications.</span></span> <span data-ttu-id="1fd76-138">このトピックでは、それぞれの概要を簡単に説明します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-138">This topic provides a brief overview of each.</span></span>  
   
 <a name="Open_File_Dialog"></a>   
-### <a name="open-file-dialog"></a>ファイルを開く ダイアログ  
- ファイルを開く機能は次の図に示すようにファイルを開く ダイアログ ボックスを使用して、開くファイルの名前を取得します。  
+### <a name="open-file-dialog"></a><span data-ttu-id="1fd76-139">[ファイルを開く] ダイアログ ボックス</span><span class="sxs-lookup"><span data-stu-id="1fd76-139">Open File Dialog</span></span>  
+ <span data-ttu-id="1fd76-140">[ファイルを開く] ダイアログ ボックスは、次の図に示されているように、開くファイルの名前を取得するために、ファイルを開く機能によって使用されます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-140">The open file dialog box, shown in the following figure, is used by file opening functionality to retrieve the name of a file to open.</span></span>  
   
- ![[開く] ダイアログ ボックス](../Image/DialogBoxesOverviewFigure2.png "DialogBoxesOverviewFigure2")  
+ <span data-ttu-id="1fd76-141">![[開く] ダイアログ ボックス](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure2.png "DialogBoxesOverviewFigure2")</span><span class="sxs-lookup"><span data-stu-id="1fd76-141">![Open dialog box](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure2.png "DialogBoxesOverviewFigure2")</span></span>  
   
- 一般的なファイルを開く ダイアログ ボックスは、 <xref:Microsoft.Win32.OpenFileDialog>クラスに配置されていると、 <xref:Microsoft.Win32>名前空間。 次のコードでは、作成、構成、および、1 つを表示する方法と結果を処理する方法を示します。  
+ <span data-ttu-id="1fd76-142">一般的なファイルを開く ダイアログ ボックスとして実装されている、<xref:Microsoft.Win32.OpenFileDialog>クラスし、内にある、<xref:Microsoft.Win32>名前空間。</span><span class="sxs-lookup"><span data-stu-id="1fd76-142">The common open file dialog box is implemented as the <xref:Microsoft.Win32.OpenFileDialog> class and is located in the <xref:Microsoft.Win32> namespace.</span></span> <span data-ttu-id="1fd76-143">次のコードは、[ファイルを開く] ダイアログ ボックスの作成、構成、および表示の方法と、結果を処理する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="1fd76-143">The following code shows how to create, configure, and show one, and how to process the result.</span></span>  
   
  [!code-csharp[DialogBoxesOverviewSnippets#OpenFileDialogBoxCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#openfiledialogboxcodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#OpenFileDialogBoxCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#openfiledialogboxcodebehind)]  
   
- ファイルを開く ダイアログ ボックスの詳細については、次を参照してください。 <xref:Microsoft.Win32.OpenFileDialog?displayProperty=fullName>します。  
+ <span data-ttu-id="1fd76-144">ファイルを開く ダイアログ ボックスの詳細については、次を参照してください。<xref:Microsoft.Win32.OpenFileDialog?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-144">For more information on the open file dialog box, see <xref:Microsoft.Win32.OpenFileDialog?displayProperty=nameWithType>.</span></span>  
   
 > [!NOTE]
->  <xref:Microsoft.Win32.OpenFileDialog>を安全にファイル名を取得する部分信頼で実行されているアプリケーションで使用できます (を参照してください[セキュリティ](../../../../docs/framework/wpf/security-wpf.md))。  
+>  <span data-ttu-id="1fd76-145"><xref:Microsoft.Win32.OpenFileDialog>ファイル名を安全に取得する部分的な信頼で実行されているアプリケーションで使用できます (を参照してください[セキュリティ](../../../../docs/framework/wpf/security-wpf.md))。</span><span class="sxs-lookup"><span data-stu-id="1fd76-145"><xref:Microsoft.Win32.OpenFileDialog> can be used to safely retrieve file names by applications running with partial trust (see [Security](../../../../docs/framework/wpf/security-wpf.md)).</span></span>  
   
 <a name="Save_File_Dialog"></a>   
-### <a name="save-file-dialog-box"></a>[保存] ダイアログ ボックスのファイル  
- 保存先を保存するファイルの名前を取得するファイルの保存機能によって次の図に示すように、ファイル ダイアログ ボックスを使用します。  
+### <a name="save-file-dialog-box"></a><span data-ttu-id="1fd76-146">[ファイルの保存] ダイアログ ボックス</span><span class="sxs-lookup"><span data-stu-id="1fd76-146">Save File Dialog Box</span></span>  
+ <span data-ttu-id="1fd76-147">[ファイルの保存] ダイアログ ボックスは、次の図に示されているように、保存するファイルの名前を取得するために、ファイルを保存する機能によって使用されます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-147">The save file dialog box, shown in the following figure, is used by file saving functionality to retrieve the name of a file to save.</span></span>  
   
- ![名前を付けて保存 ダイアログ ボックス](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure3.png "DialogBoxesOverviewFigure3")  
+ <span data-ttu-id="1fd76-148">![[名前を付けて保存] ダイアログ ボックス](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure3.png "DialogBoxesOverviewFigure3")</span><span class="sxs-lookup"><span data-stu-id="1fd76-148">![Save As dialog box](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure3.png "DialogBoxesOverviewFigure3")</span></span>  
   
- 一般的な保存ファイル ダイアログ ボックスとして実装、 <xref:Microsoft.Win32.SaveFileDialog>クラスに配置されていると、 <xref:Microsoft.Win32>名前空間。 次のコードでは、作成、構成、および、1 つを表示する方法と結果を処理する方法を示します。  
+ <span data-ttu-id="1fd76-149">一般的な保存ファイル ダイアログ ボックスとして実装、<xref:Microsoft.Win32.SaveFileDialog>クラス、および内にある、<xref:Microsoft.Win32>名前空間。</span><span class="sxs-lookup"><span data-stu-id="1fd76-149">The common save file dialog box is implemented as the <xref:Microsoft.Win32.SaveFileDialog> class, and is located in the <xref:Microsoft.Win32> namespace.</span></span> <span data-ttu-id="1fd76-150">次のコードは、[ファイルを開く] ダイアログ ボックスの作成、構成、および表示の方法と、結果を処理する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="1fd76-150">The following code shows how to create, configure, and show one, and how to process the result.</span></span>  
   
  [!code-csharp[DialogBoxesOverviewSnippets#SaveFileDialogBoxCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#savefiledialogboxcodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#SaveFileDialogBoxCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#savefiledialogboxcodebehind)]  
   
- 保存の詳細については [ファイル] ダイアログ ボックスは、「 <xref:Microsoft.Win32.SaveFileDialog?displayProperty=fullName>します。  
+ <span data-ttu-id="1fd76-151">保存の詳細については [ファイル] ダイアログ ボックスを参照してください<xref:Microsoft.Win32.SaveFileDialog?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-151">For more information on the save file dialog box, see <xref:Microsoft.Win32.SaveFileDialog?displayProperty=nameWithType>.</span></span>  
   
 <a name="Print_Dialog"></a>   
-### <a name="print-dialog-box"></a>[印刷] ダイアログ ボックス  
- 次の図に示すように、印刷ダイアログ ボックスを選択し、ユーザーがデータの印刷には、プリンターを構成する印刷機能によって使用されます。  
+### <a name="print-dialog-box"></a><span data-ttu-id="1fd76-152">[印刷] ダイアログ ボックス</span><span class="sxs-lookup"><span data-stu-id="1fd76-152">Print Dialog Box</span></span>  
+ <span data-ttu-id="1fd76-153">次の図に示されているように、[印刷] ダイアログ ボックスは、ユーザーがデータを印刷するプリンターを選択し、構成するために、印刷機能によって使用されます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-153">The print dialog box, shown in the following figure, is used by printing functionality to choose and configure the printer that a user would like to print data to.</span></span>  
   
- ![印刷ダイアログ ボックスで](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure4.png "DialogBoxesOverviewFigure4")  
+ <span data-ttu-id="1fd76-154">![[印刷] ダイアログ ボックス](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure4.png "DialogBoxesOverviewFigure4")</span><span class="sxs-lookup"><span data-stu-id="1fd76-154">![Print dialog box](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure4.png "DialogBoxesOverviewFigure4")</span></span>  
   
- 一般的な印刷ダイアログ ボックスは、 <xref:System.Windows.Controls.PrintDialog>クラスでありにある、 <xref:System.Windows.Controls>名前空間。 次のコードでは、作成、構成、および&1; つを表示する方法を示します。  
+ <span data-ttu-id="1fd76-155">一般的な印刷ダイアログ ボックスは、<xref:System.Windows.Controls.PrintDialog>クラス、および内にある、<xref:System.Windows.Controls>名前空間。</span><span class="sxs-lookup"><span data-stu-id="1fd76-155">The common print dialog box is implemented as the <xref:System.Windows.Controls.PrintDialog> class, and is located in the <xref:System.Windows.Controls> namespace.</span></span> <span data-ttu-id="1fd76-156">次のコードは、[印刷] ダイアログ ボックスの作成、構成、および表示の方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="1fd76-156">The following code shows how to create, configure, and show one.</span></span>  
   
  [!code-csharp[DialogBoxesOverviewSnippets#PrintDialogBoxCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#printdialogboxcodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#PrintDialogBoxCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#printdialogboxcodebehind)]  
   
- [印刷] ダイアログ ボックスの詳細については、次を参照してください。 <xref:System.Windows.Controls.PrintDialog?displayProperty=fullName>します。 印刷の詳細については[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]を参照してください[印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)します。  
+ <span data-ttu-id="1fd76-157">詳細については、[印刷] ダイアログ ボックスで、次を参照してください。<xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-157">For more information on the print dialog box, see <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType>.</span></span> <span data-ttu-id="1fd76-158">印刷の詳細については[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]を参照してください[印刷の概要](../../../../docs/framework/wpf/advanced/printing-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-158">For detailed discussion of printing in [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], see [Printing Overview](../../../../docs/framework/wpf/advanced/printing-overview.md).</span></span>  
   
 <a name="Custom_Dialog_Boxes"></a>   
-## <a name="custom-dialog-boxes"></a>カスタム ダイアログ ボックス  
- コモン ダイアログ ボックスが便利で、可能な場合に使用する必要があります、ドメイン固有のダイアログ ボックスの要件はサポートしていません。 このような場合は、独自のダイアログ ボックスを作成する必要があります。 おわかりのとおり、ダイアログ ボックスは、特殊な動作とウィンドウです。                  <xref:System.Windows.Window>これらの動作を実装して、その結果を使用する<xref:System.Windows.Window>カスタム モーダルとモードレスのダイアログ ボックスを作成します。  
+## <a name="custom-dialog-boxes"></a><span data-ttu-id="1fd76-159">カスタム ダイアログ ボックス</span><span class="sxs-lookup"><span data-stu-id="1fd76-159">Custom Dialog Boxes</span></span>  
+ <span data-ttu-id="1fd76-160">コモン ダイアログ ボックスは便利であり、可能なときにはコモン ダイアログ ボックスを使用する必要がありますが、ドメイン固有のダイアログ ボックスの要件はサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="1fd76-160">While common dialog boxes are useful, and should be used when possible, they do not support the requirements of domain-specific dialog boxes.</span></span> <span data-ttu-id="1fd76-161">このような場合は、独自のダイアログ ボックスを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-161">In these cases, you need to create your own dialog boxes.</span></span> <span data-ttu-id="1fd76-162">これから説明するように、ダイアログ ボックスは、特殊な動作を持つウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-162">As we'll see, a dialog box is a window with special behaviors.</span></span> <span data-ttu-id="1fd76-163"><xref:System.Windows.Window>これらの動作を実装して、その結果を使用する<xref:System.Windows.Window>カスタム モーダルとモードレスのダイアログ ボックスを作成します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-163"><xref:System.Windows.Window> implements those behaviors and, consequently, you use <xref:System.Windows.Window> to create custom modal and modeless dialog boxes.</span></span>  
   
 <a name="Creating_a_Modal_Custom_Dialog_Box"></a>   
-### <a name="creating-a-modal-custom-dialog-box"></a>カスタムのモーダル ダイアログ ボックスを作成します。  
- このトピックは、使用する方法を示しています。<xref:System.Windows.Window>、通常のモーダル ダイアログ ボックスの実装を作成するを使用して、`Margins`ようなダイアログ ボックス (を参照してください[ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984))。 `Margins`  ダイアログ ボックスが次の図に示すようにします。  
+### <a name="creating-a-modal-custom-dialog-box"></a><span data-ttu-id="1fd76-164">モーダルのカスタム ダイアログ ボックスの作成</span><span class="sxs-lookup"><span data-stu-id="1fd76-164">Creating a Modal Custom Dialog Box</span></span>  
+ <span data-ttu-id="1fd76-165">このトピックは、使用する方法を示します<xref:System.Windows.Window>、通常のモーダル ダイアログ ボックスの実装を作成するを使用して、`Margins`例として、ダイアログ ボックス (を参照してください[ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984))。</span><span class="sxs-lookup"><span data-stu-id="1fd76-165">This topic shows how to use <xref:System.Windows.Window> to create a typical modal dialog box implementation, using the `Margins` dialog box as an example (see [Dialog Box Sample](http://go.microsoft.com/fwlink/?LinkID=159984)).</span></span> <span data-ttu-id="1fd76-166">`Margins`  ダイアログ ボックスが次の図に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-166">The `Margins` dialog box is shown in the following figure.</span></span>  
   
- ![[余白] ダイアログ ボックス](../Image/DialogBoxesOverviewFigure5.png "DialogBoxesOverviewFigure5")  
+ <span data-ttu-id="1fd76-167">![[余白] ダイアログ ボックス](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure5.png "DialogBoxesOverviewFigure5")</span><span class="sxs-lookup"><span data-stu-id="1fd76-167">![Margins dialog box](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure5.png "DialogBoxesOverviewFigure5")</span></span>  
   
-#### <a name="configuring-a-modal-dialog-box"></a>モーダル ダイアログ ボックスを構成します。  
- 一般的なダイアログ ボックスのユーザー インターフェイスには、次の項目が含まれます。  
+#### <a name="configuring-a-modal-dialog-box"></a><span data-ttu-id="1fd76-168">モーダル ダイアログ ボックスの構成</span><span class="sxs-lookup"><span data-stu-id="1fd76-168">Configuring a Modal Dialog Box</span></span>  
+ <span data-ttu-id="1fd76-169">一般的なダイアログ ボックスのユーザー インターフェイスには、次の項目が含まれます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-169">The user interface for a typical dialog box includes the following:</span></span>  
   
--   必要なデータを収集するために必要なさまざまなコントロールです。  
+-   <span data-ttu-id="1fd76-170">必要なデータを収集するために必要なさまざまなコントロール。</span><span class="sxs-lookup"><span data-stu-id="1fd76-170">The various controls that are required to gather the desired data.</span></span>  
   
--   表示、 **OK**ユーザーがクリックすると、関数に戻り、ダイアログ ボックスを閉じるし、処理を続行 ボタンをクリックします。  
+-   <span data-ttu-id="1fd76-171">表示、 **OK**ボタン ユーザーがクリックすると、関数に戻り、ダイアログ ボックスを閉じるし、処理を続行します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-171">Showing an **OK** button that users click to close the dialog box, return to the function, and continue processing.</span></span>  
   
--   表示、**キャンセル**クリックするダイアログ ボックスを終了し、関数の処理を停止する ボタンをクリックします。  
+-   <span data-ttu-id="1fd76-172">表示、**キャンセル** ダイアログ ボックスを閉じるし、関数の処理を停止するユーザーがクリックしたボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-172">Showing a **Cancel** button that users click to close the dialog box and stop the function from further processing.</span></span>  
   
--   表示、**閉じる**タイトル バー ボタンをクリックします。  
+-   <span data-ttu-id="1fd76-173">表示、**閉じる**タイトル バーのボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-173">Showing a **Close** button in the title bar.</span></span>  
   
--   アイコンを表示しています。  
+-   <span data-ttu-id="1fd76-174">アイコンの表示。</span><span class="sxs-lookup"><span data-stu-id="1fd76-174">Showing an icon.</span></span>  
   
--   Showing                                          **Minimize**,                                          **Maximize**, and                                          **Restore** buttons.  
+-   <span data-ttu-id="1fd76-175">表示**最小化**、**最大化**、および**復元**ボタン。</span><span class="sxs-lookup"><span data-stu-id="1fd76-175">Showing **Minimize**, **Maximize**, and **Restore** buttons.</span></span>  
   
--   表示、**システム**メニューを最小化、最大化、復元、およびダイアログ ボックスを閉じます。  
+-   <span data-ttu-id="1fd76-176">表示、**システム**メニューを最小限に抑える、最大化、復元、およびダイアログ ボックスを閉じます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-176">Showing a **System** menu to minimize, maximize, restore, and close the dialog box.</span></span>  
   
--   上部およびダイアログ ボックスを開いたウィンドウの中央に開いています。  
+-   <span data-ttu-id="1fd76-177">ダイアログ ボックスは、ダイアログ ボックスを開いたウィンドウの上と中央に開きます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-177">Opening above and in the center of the window that opened the dialog box.</span></span>  
   
--   ダイアログ ボックスでは、それぞれ ダイアログ ボックスが小さすぎることを防止し、便利な既定のサイズをユーザーに提供するには、既定値と最小の両方を設定する必要があります。 したがって、可能なサイズ変更可能なディメンションを指定する必要があります。  
+-   <span data-ttu-id="1fd76-178">ダイアログ ボックスは、可能な場合はサイズ変更可能である必要があるため、ダイアログ ボックスが小さくなりすぎるのを避け、便利な既定サイズをユーザーに提供するために、既定の寸法と最小寸法の両方を設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-178">Dialog boxes should be resizable where possible so, to prevent the dialog box from being too small, and to provide the user with a useful default size, you need to set both default and a minimum dimensions respectively.</span></span>  
   
--   原因となるキーボード ショートカットとして構成するか、ESC キーを押して、**キャンセル** ボタンを押します。 これを設定するのには、 <xref:System.Windows.Controls.Button.IsCancel%2A>のプロパティ、**キャンセル**ボタン`true`します。  
+-   <span data-ttu-id="1fd76-179">原因となるショートカットとして構成する必要があります、ESC キーを押して、**キャンセル** ボタンを押します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-179">Pressing the ESC key should be configured as a keyboard shortcut that causes the **Cancel** button to be pressed.</span></span> <span data-ttu-id="1fd76-180">これを実現するには、<xref:System.Windows.Controls.Button.IsCancel%2A>のプロパティ、**キャンセル** ボタンをクリックして`true`です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-180">This is achieved by setting the <xref:System.Windows.Controls.Button.IsCancel%2A> property of the **Cancel** button to `true`.</span></span>  
   
--   原因となるキーボード ショートカットとして構成する必要があります (または戻り値) の入力キーを押して、 **ok**  ボタンを押します。 これを設定するのには、 <xref:System.Windows.Controls.Button.IsDefault%2A>のプロパティ、 **[ok]**ボタン`true`します。  
+-   <span data-ttu-id="1fd76-181">原因となるショートカットとして構成する必要がありますを入力してください (または戻り値) のキーを押して、 **OK**  ボタンを押します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-181">Pressing the ENTER (or RETURN) key should be configured as a keyboard shortcut that causes the **OK** button to be pressed.</span></span> <span data-ttu-id="1fd76-182">これを実現するには、<xref:System.Windows.Controls.Button.IsDefault%2A>のプロパティ、 **OK**ボタン`true`です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-182">This is achieved by setting the <xref:System.Windows.Controls.Button.IsDefault%2A> property of the **OK** button `true`.</span></span>  
   
- 次のコードでは、この構成を示します。  
+ <span data-ttu-id="1fd76-183">次のコードは、この構成の例を示しています。</span><span class="sxs-lookup"><span data-stu-id="1fd76-183">The following code demonstrates this configuration.</span></span>  
   
- [!code-xml[DialogBoxSample#MarginsDialogBoxMainBitsMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsdialogboxmainbitsmarkup1)]  
-[!code-xml[DialogBoxSample#MarginsDialogBoxMainBitsMARKUP2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsdialogboxmainbitsmarkup2)]  
+ [!code-xaml[DialogBoxSample#MarginsDialogBoxMainBitsMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsdialogboxmainbitsmarkup1)]  
+[!code-xaml[DialogBoxSample#MarginsDialogBoxMainBitsMARKUP2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsdialogboxmainbitsmarkup2)]  
   
  [!code-csharp[DialogBoxSample#MarginsDialogBoxMainBitsCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxmainbitscodebehind1)]
  [!code-vb[DialogBoxSample#MarginsDialogBoxMainBitsCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxmainbitscodebehind1)]  
 [!code-csharp[DialogBoxSample#MarginsDialogBoxMainBitsCODEBEHIND2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxmainbitscodebehind2)]
 [!code-vb[DialogBoxSample#MarginsDialogBoxMainBitsCODEBEHIND2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxmainbitscodebehind2)]  
   
- ダイアログ ボックスのユーザー エクスペリエンスは、ダイアログ ボックスを開くウィンドウのメニュー バーにも及びます。 メニュー項目が、関数を続行するには、ダイアログ ボックスでユーザーとの対話を必要とする関数を実行すると、関数のメニュー項目は、次のように、ヘッダーに省略記号があります。  
+ <span data-ttu-id="1fd76-184">ダイアログ ボックスのユーザー エクスペリエンスは、ダイアログ ボックスを開くウィンドウのメニュー バーにも及びます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-184">The user experience for a dialog box also extends into the menu bar of the window that opens the dialog box.</span></span> <span data-ttu-id="1fd76-185">メニュー項目が、機能の続行には、ダイアログ ボックスでのユーザーの操作を必要とする機能を実行するときには、次に示されているように、その機能のメニュー項目の見出しに省略記号を付けます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-185">When a menu item runs a function that requires user interaction through a dialog box before the function can continue, the menu item for the function will have an ellipsis in its header, as shown here.</span></span>  
   
- [!code-xml[DialogBoxSample#MainWindowMarginsDialogBoxMenuItemMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#mainwindowmarginsdialogboxmenuitemmarkup1)]  
-[!code-xml[DialogBoxSample#MainWindowMarginsDialogBoxMenuItemMARKUP2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#mainwindowmarginsdialogboxmenuitemmarkup2)]  
+ [!code-xaml[DialogBoxSample#MainWindowMarginsDialogBoxMenuItemMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#mainwindowmarginsdialogboxmenuitemmarkup1)]  
+[!code-xaml[DialogBoxSample#MainWindowMarginsDialogBoxMenuItemMARKUP2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#mainwindowmarginsdialogboxmenuitemmarkup2)]  
   
- メニュー項目は、バージョン情報 ダイアログ ボックスなどのユーザーの操作を必要としない ダイアログ ボックスを表示する関数を実行すると、省略記号は必要ありません。  
+ <span data-ttu-id="1fd76-186">メニュー項目が、[バージョン情報] ダイアログ ボックスなど、ユーザーの操作を必要としないダイアログ ボックスを表示する機能を実行するときには、省略記号は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="1fd76-186">When a menu item runs a function that displays a dialog box which does not require user interaction, such as an About dialog box, an ellipsis is not required.</span></span>  
   
-#### <a name="opening-a-modal-dialog-box"></a>モーダル ダイアログ ボックスを開く  
- ダイアログ ボックスは、通常、ワード プロセッサで、ドキュメントの余白を設定するなどのドメイン固有の機能を実行するメニュー項目を選択すると、ユーザーの結果として表示されます。 ダイアログ ボックスとウィンドウを表示する方法は、追加のダイアログ ボックスに固有の構成が必要ですが通常のウィンドウを表示に似ています。 インスタンス化するプロセス全体、構成、およびダイアログ ボックスを開くは、次のコードに表示が。  
+#### <a name="opening-a-modal-dialog-box"></a><span data-ttu-id="1fd76-187">モーダル ダイアログ ボックスを開く</span><span class="sxs-lookup"><span data-stu-id="1fd76-187">Opening a Modal Dialog Box</span></span>  
+ <span data-ttu-id="1fd76-188">ダイアログ ボックスは、通常、ワード プロセッサでドキュメントの余白を設定するなど、ドメイン固有の機能を実行するためにユーザーがメニュー項目を選択した結果として表示されます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-188">A dialog box is typically shown as a result of a user selecting a menu item to perform a domain-specific function, such as setting the margins of a document in a word processor.</span></span> <span data-ttu-id="1fd76-189">ウィンドウをダイアログ ボックスとして表示するのは、通常のウィンドウを表示するのと同様ですが、ダイアログ ボックス固有の追加の構成が必要です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-189">Showing a window as a dialog box is similar to showing a normal window, although it requires additional dialog box-specific configuration.</span></span> <span data-ttu-id="1fd76-190">ダイアログ ボックスのインスタンス化、構成、および開くプロセスの全体を、次のコードに示します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-190">The entire process of instantiating, configuring, and opening a dialog box is shown in the following code.</span></span>  
   
  [!code-csharp[DialogBoxSample#OpenMarginsDialogCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogcodebehind1)]
  [!code-vb[DialogBoxSample#OpenMarginsDialogCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogcodebehind1)]  
@@ -179,42 +185,42 @@ caps.handback.revision: 24
 [!code-csharp[DialogBoxSample#OpenMarginsDialogCODEBEHIND4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogcodebehind4)]
 [!code-vb[DialogBoxSample#OpenMarginsDialogCODEBEHIND4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogcodebehind4)]  
   
- ここでは、渡された既定の情報 (現在のマージン) ダイアログ ボックスにします。 設定されても、 <xref:System.Windows.Window.Owner%2A?displayProperty=fullName>  ダイアログ ボックスが表示されているウィンドウへの参照を持つプロパティです。 一般に、必ず設定してダイアログ ボックスの所有者に、すべてのダイアログ ボックスに共通するウィンドウの状態関連の動作を提供する (を参照してください[WPF ウィンドウの概要](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md)の詳細)。  
+ <span data-ttu-id="1fd76-191">ここでは、コードは、既定の情報 (現在の余白) をダイアログ ボックスに渡しています。</span><span class="sxs-lookup"><span data-stu-id="1fd76-191">Here, the code is passing default information (the current margins) to the dialog box.</span></span> <span data-ttu-id="1fd76-192">設定されるも、 <xref:System.Windows.Window.Owner%2A?displayProperty=nameWithType>  ダイアログ ボックスが表示されているウィンドウへの参照を持つプロパティです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-192">It is also setting the <xref:System.Windows.Window.Owner%2A?displayProperty=nameWithType> property with a reference to the window that is showing the dialog box.</span></span> <span data-ttu-id="1fd76-193">一般に、必ず設定してすべてのダイアログ ボックスに共通するウィンドウの状態関連の動作を提供する ダイアログ ボックスの所有者 (を参照してください[WPF Windows 概要](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md)詳細については)。</span><span class="sxs-lookup"><span data-stu-id="1fd76-193">In general, you should always set the owner for a dialog box to provide window state-related behaviors that are common to all dialog boxes (see [WPF Windows Overview](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md) for more information).</span></span>  
   
 > [!NOTE]
->  サポートするために所有者を指定する必要があります[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]ダイアログ ボックスのための自動化 (を参照してください[UI オートメーションの概要](../../../../docs/framework/ui-automation/ui-automation-overview.md))。  
+>  <span data-ttu-id="1fd76-194">サポートするために所有者を指定する必要があります[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] ダイアログ ボックスのオートメーション (を参照してください[UI オートメーションの概要](../../../../docs/framework/ui-automation/ui-automation-overview.md))。</span><span class="sxs-lookup"><span data-stu-id="1fd76-194">You must provide an owner to support [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] automation for dialog boxes (see [UI Automation Overview](../../../../docs/framework/ui-automation/ui-automation-overview.md)).</span></span>  
   
- 呼び出しでモーダルとして表示されます ダイアログ ボックスを構成した後、 <xref:System.Windows.Window.ShowDialog%2A>メソッドです。  
+ <span data-ttu-id="1fd76-195">呼び出しでモーダルとして表示されます ダイアログ ボックスを構成した後、<xref:System.Windows.Window.ShowDialog%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-195">After the dialog box is configured, it is shown modally by calling the <xref:System.Windows.Window.ShowDialog%2A> method.</span></span>  
   
-#### <a name="validating-user-provided-data"></a>ユーザー指定のデータの検証  
- ダイアログ ボックスが開かれ、ユーザーは、必要なデータ、ダイアログ ボックスが提供されているデータが次の理由で有効であることを保証します。  
+#### <a name="validating-user-provided-data"></a><span data-ttu-id="1fd76-196">ユーザー指定データの検証</span><span class="sxs-lookup"><span data-stu-id="1fd76-196">Validating User-Provided Data</span></span>  
+ <span data-ttu-id="1fd76-197">ダイアログ ボックスが開かれ、ユーザーが必要なデータを指定すると、ダイアログ ボックスは、指定されたデータが有効であることを確認する必要があります。これは、次のような理由からです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-197">When a dialog box is opened and the user provides the required data, a dialog box is responsible for ensuring that the provided data is valid for the following reasons:</span></span>  
   
--   セキュリティの観点からは、すべての入力を検証する必要があります。  
+-   <span data-ttu-id="1fd76-198">セキュリティの観点から、すべての入力を検証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-198">From a security perspective, all input should be validated.</span></span>  
   
--   ドメイン固有の観点から、データの検証には、例外をスローする可能性のあるコードによって処理されてから正しくないデータができないようにします。  
+-   <span data-ttu-id="1fd76-199">ドメイン固有の観点から、データの検証は、誤ったデータがコードによって処理されて、例外がスローされるのを防ぎます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-199">From a domain-specific perspective, data validation prevents erroneous data from being processed by the code, which could potentially throw exceptions.</span></span>  
   
--   ユーザー エクスペリエンスの観点から ダイアログ ボックスは、表示することによって、入力したデータが無効ユーザーを支援することができます。  
+-   <span data-ttu-id="1fd76-200">ユーザー エクスペリエンスの観点から、ダイアログ ボックスは、入力したデータが無効であることを示すことによって、ユーザーを支援できます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-200">From a user-experience perspective, a dialog box can help users by showing them which data they have entered is invalid.</span></span>  
   
--   パフォーマンスの観点から多階層アプリケーションのデータの検証は、アプリケーションが Web サービスまたはサーバー ベースのデータベースで構成される場合に特にに、クライアントとアプリケーション層の間のラウンド トリップの回数を削減できます。  
+-   <span data-ttu-id="1fd76-201">パフォーマンスの観点から、多層アプリケーションでのデータの検証は、特に、アプリケーションが Web サービスまたはサーバーベースのデータベースで構成される場合、クライアント層とアプリケーション層の間のラウンド トリップの回数を減らすことができます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-201">From a performance perspective, data validation in a multi-tier application can reduce the number of round trips between the client and the application tiers, particularly when the application is composed of Web services or server-based databases.</span></span>  
   
- バインドされたコントロールを検証する[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]バインドに関連付けることの検証規則を定義する必要があります。 派生するカスタム クラスの検証ルールは<xref:System.Windows.Controls.ValidationRule>します。 次の例では、検証規則`MarginValidationRule`、バインドされた値がどのチェック、<xref:System.Double>と指定した範囲内にあります。  
+ <span data-ttu-id="1fd76-202">バインドされたコントロールを検証する[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]、検証規則を定義し、バインドに関連付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-202">To validate a bound control in [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], you need to define a validation rule and associate it with the binding.</span></span> <span data-ttu-id="1fd76-203">検証規則はから派生するカスタム クラス<xref:System.Windows.Controls.ValidationRule>です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-203">A validation rule is a custom class that derives from <xref:System.Windows.Controls.ValidationRule>.</span></span> <span data-ttu-id="1fd76-204">次の例では、検証規則、 `MarginValidationRule`、バインドされた値は、どのチェック、<xref:System.Double>と指定された範囲内にあります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-204">The following example shows a validation rule, `MarginValidationRule`, which checks that a bound value is a <xref:System.Double> and is within a specified range.</span></span>  
   
  [!code-csharp[DialogBoxSample#MarginValidationRuleCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginValidationRule.cs#marginvalidationrulecode)]
  [!code-vb[DialogBoxSample#MarginValidationRuleCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginValidationRule.vb#marginvalidationrulecode)]  
   
- このコードは、オーバーライドすることで、検証規則の検証ロジックを実装、<xref:System.Windows.Controls.ValidationRule.Validate%2A>データ検証を返す、適切なメソッド<xref:System.Windows.Controls.ValidationResult>します。  
+ <span data-ttu-id="1fd76-205">オーバーライドすることでこのコードで、検証規則の検証ロジックが実装されている、<xref:System.Windows.Controls.ValidationRule.Validate%2A>メソッドでは、データを検証し、適切な返します<xref:System.Windows.Controls.ValidationResult>です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-205">In this code, the validation logic of a validation rule is implemented by overriding the <xref:System.Windows.Controls.ValidationRule.Validate%2A> method, which validates the data and returns an appropriate <xref:System.Windows.Controls.ValidationResult>.</span></span>  
   
- バインドされたコントロールと検証規則を関連付けるには、次のマークアップを使用します。  
+ <span data-ttu-id="1fd76-206">検証規則をバインド コントロールに関連付けるには、次のマークアップを使用します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-206">To associate the validation rule with the bound control, you use the following markup.</span></span>  
   
- [!code-xml[DialogBoxSample#MarginsValidationMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsvalidationmarkup1)]  
-[!code-xml[DialogBoxSample#MarginsValidationMARKUP2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsvalidationmarkup2)]  
-[!code-xml[DialogBoxSample#MarginsValidationMARKUP3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsvalidationmarkup3)]  
+ [!code-xaml[DialogBoxSample#MarginsValidationMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsvalidationmarkup1)]  
+[!code-xaml[DialogBoxSample#MarginsValidationMARKUP2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsvalidationmarkup2)]  
+[!code-xaml[DialogBoxSample#MarginsValidationMARKUP3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsvalidationmarkup3)]  
   
- 検証規則が関連付けられている[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]が自動的に適用して、バインドされたコントロールにデータが入力されるとします。 コントロールには、無効なデータが含まれている[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]次の図に示すように無効なコントロールの周囲に赤い境界線が表示されます。  
+ <span data-ttu-id="1fd76-207">検証規則が関連付けられている[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]自動的に適用されますが、バインドされたコントロールにデータが入力されるとします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-207">Once the validation rule is associated, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] will automatically apply it when data is entered into the bound control.</span></span> <span data-ttu-id="1fd76-208">コントロールには、無効なデータが含まれている[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]次の図に示すように、無効なコントロール周囲に赤い境界線が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-208">When a control contains invalid data, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] will display a red border around the invalid control, as shown in the following figure.</span></span>  
   
- ![無効な左余白](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure7.png "DialogBoxesOverviewFigure7")  
+ <span data-ttu-id="1fd76-209">![無効な左余白](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure7.png "DialogBoxesOverviewFigure7")</span><span class="sxs-lookup"><span data-stu-id="1fd76-209">![Invalid left margin](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure7.png "DialogBoxesOverviewFigure7")</span></span>  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]有効なデータを入力するまで無効なコントロール、ユーザーは制限されません。 これは、ダイアログ ボックスの適切な動作ユーザーは、データが有効かどうか、ダイアログ ボックスのコントロールを自由に移動できる必要があります。 この場合、ユーザーは、無効なデータを入力できる、 **OK**  ボタンをクリックします。 このため、コードも必要があるダイアログ ボックスのすべてのコントロールを検証する際にボックス、 **OK**ボタンを処理することにより、 <xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベントです。  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]<span data-ttu-id="1fd76-210"> は、ユーザーが有効なデータを入力するまで、ユーザーを無効なコントロールに制限するわけではありません。</span><span class="sxs-lookup"><span data-stu-id="1fd76-210"> does not restrict a user to the invalid control until they have entered valid data.</span></span> <span data-ttu-id="1fd76-211">これは、ダイアログ ボックスとして適切な動作です。データが有効かどうかにかかわらず、ユーザーはダイアログ ボックス内のコントロールを自由に移動できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-211">This is good behavior for a dialog box; a user should be able to freely navigate the controls in a dialog box whether or not data is valid.</span></span> <span data-ttu-id="1fd76-212">ただし、これは、無効なデータとキーを押して、ユーザーが入力、 **OK**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-212">However, this means a user can enter invalid data and press the **OK** button.</span></span> <span data-ttu-id="1fd76-213">このため、コードも必要があるダイアログ内のすべてのコントロールを検証するときにボックス、 **[ok]**ボタンを処理することにより、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。</span><span class="sxs-lookup"><span data-stu-id="1fd76-213">For this reason, your code also needs to validate all controls in a dialog box when the **OK** button is pressed by handling the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event.</span></span>  
   
  [!code-csharp[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxvalidationcodebehind1)]
  [!code-vb[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxvalidationcodebehind1)]  
@@ -223,14 +229,14 @@ caps.handback.revision: 24
 [!code-csharp[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxvalidationcodebehind3)]
 [!code-vb[DialogBoxSample#MarginsDialogBoxValidationCODEBEHIND3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxvalidationcodebehind3)]  
   
- このコードは、ウィンドウ上のすべての依存関係オブジェクトを列挙し、いずれかが無効な場合 (によって返される<xref:System.Windows.Controls.Validation.GetHasError%2A>、無効なコントロールがフォーカスを取得、`IsValid`メソッドを返します。 `false`、ウィンドウが無効とみなされるとします。  
+ <span data-ttu-id="1fd76-214">このコードは、ウィンドウ上のすべての依存関係オブジェクトを列挙し、いずれかが有効ではない場合 (によって返される<xref:System.Windows.Controls.Validation.GetHasError%2A>、無効なコントロールがフォーカスを取得、`IsValid`メソッドを返します。 `false`、ウィンドウは無効とみなされるとします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-214">This code enumerates all dependency objects on a window and, if any are invalid (as returned by <xref:System.Windows.Controls.Validation.GetHasError%2A>, the invalid control gets the focus, the `IsValid` method returns `false`, and the window is considered invalid.</span></span>  
   
- ダイアログ ボックスが有効なそのことができます安全を閉じて戻ります。 戻り値のプロセスの一環として、呼び出し元の関数に結果を返すが必要です。  
+ <span data-ttu-id="1fd76-215">ダイアログ ボックスが有効な場合は、安全に閉じて、戻ることができます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-215">Once a dialog box is valid, it can safely close and return.</span></span> <span data-ttu-id="1fd76-216">復帰プロセスの一環として、呼び出し元の機能に結果を返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-216">As part of the return process, it needs to return a result to the calling function.</span></span>  
   
-#### <a name="setting-the-modal-dialog-result"></a>モーダル ダイアログ ボックスの結果を設定します。  
- 使用して、ダイアログ ボックスを開く<xref:System.Windows.Window.ShowDialog%2A>メソッドを呼び出す場合と基本的には: を使用して、ダイアログ ボックスを開いたコード<xref:System.Windows.Window.ShowDialog%2A>されるまで待機する<xref:System.Windows.Window.ShowDialog%2A>を返します。 <xref:System.Windows.Window.ShowDialog%2A>を返す場合は、それを呼び出したコードが必要かどうかに基づくした処理を続行するか、処理を停止するかどうかを決定する、ユーザーが押された、 **[ok]**ボタンまたは**キャンセル** ボタンをクリックします。 ユーザーの選択を返す必要があります ダイアログ ボックスをこの決定を容易にする、<xref:System.Boolean>から返される値、 <xref:System.Windows.Window.ShowDialog%2A>メソッドです。  
+#### <a name="setting-the-modal-dialog-result"></a><span data-ttu-id="1fd76-217">モーダル ダイアログ ボックスの結果を設定する</span><span class="sxs-lookup"><span data-stu-id="1fd76-217">Setting the Modal Dialog Result</span></span>  
+ <span data-ttu-id="1fd76-218">使用してダイアログ ボックスを開く<xref:System.Windows.Window.ShowDialog%2A>メソッドを呼び出す場合と基本的には: コードを使用して、ダイアログ ボックスを開いた<xref:System.Windows.Window.ShowDialog%2A>までを待ちます<xref:System.Windows.Window.ShowDialog%2A>を返します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-218">Opening a dialog box using <xref:System.Windows.Window.ShowDialog%2A> is fundamentally like calling a method: the code that opened the dialog box using <xref:System.Windows.Window.ShowDialog%2A> waits until <xref:System.Windows.Window.ShowDialog%2A> returns.</span></span> <span data-ttu-id="1fd76-219">ときに<xref:System.Windows.Window.ShowDialog%2A>を返します、呼び出し元のコードが必要かどうかに基づくした処理を続行するか、処理を停止するかどうかを決定する場合は、ユーザーが押された、 **[ok]**ボタンまたは**キャンセル**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-219">When <xref:System.Windows.Window.ShowDialog%2A> returns, the code that called it needs to decide whether to continue processing or stop processing, based on whether the user pressed the **OK** button or the **Cancel** button.</span></span> <span data-ttu-id="1fd76-220">としてユーザーの選択を返す必要があります ダイアログ ボックスをこの決定を容易にする、<xref:System.Boolean>から返される値、<xref:System.Windows.Window.ShowDialog%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-220">To facilitate this decision, the dialog box needs to return the user's choice as a <xref:System.Boolean> value that is returned from the <xref:System.Windows.Window.ShowDialog%2A> method.</span></span>  
   
- ときに、 **OK**  ボタンをクリックすると、 <xref:System.Windows.Window.ShowDialog%2A>返す必要があります`true`します。 これを設定するのには、 <xref:System.Windows.Window.DialogResult%2A>際に、ダイアログ ボックスのプロパティ ボックス、 **OK**  ボタンをクリックします。  
+ <span data-ttu-id="1fd76-221">ときに、 **OK**ボタンをクリックすると、<xref:System.Windows.Window.ShowDialog%2A>返す必要があります`true`です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-221">When the **OK** button is clicked, <xref:System.Windows.Window.ShowDialog%2A> should return `true`.</span></span> <span data-ttu-id="1fd76-222">これを実現するには、<xref:System.Windows.Window.DialogResult%2A>プロパティ ダイアログ ボックスのボックス、 **[ok]**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-222">This is achieved by setting the <xref:System.Windows.Window.DialogResult%2A> property of the dialog box when the **OK** button is clicked.</span></span>  
   
  [!code-csharp[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxokresultsetcodebehind1)]
  [!code-vb[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxokresultsetcodebehind1)]  
@@ -241,9 +247,9 @@ caps.handback.revision: 24
 [!code-csharp[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxokresultsetcodebehind4)]
 [!code-vb[DialogBoxSample#MarginsDialogBoxOKResultSetCODEBEHIND4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxokresultsetcodebehind4)]  
   
- その設定に注意してください、 <xref:System.Windows.Window.DialogResult%2A>プロパティを明示的に呼び出す必要性を軽減するウィンドウが自動的に閉じるがも<xref:System.Windows.Window.Close%2A>します。  
+ <span data-ttu-id="1fd76-223">その設定に注意してください、<xref:System.Windows.Window.DialogResult%2A>プロパティを明示的に呼び出す必要性が軽減されるウィンドウを自動的に閉じるをによりも<xref:System.Windows.Window.Close%2A>します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-223">Note that setting the <xref:System.Windows.Window.DialogResult%2A> property also causes the window to close automatically, which alleviates the need to explicitly call <xref:System.Windows.Window.Close%2A>.</span></span>  
   
- ときに、**キャンセル** ボタンをクリックすると、 <xref:System.Windows.Window.ShowDialog%2A>返す必要があります`false`、設定も必要があります、 <xref:System.Windows.Window.DialogResult%2A>プロパティです。  
+ <span data-ttu-id="1fd76-224">ときに、**キャンセル**ボタンをクリックすると、<xref:System.Windows.Window.ShowDialog%2A>返す必要があります`false`の設定も必要があります、<xref:System.Windows.Window.DialogResult%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-224">When the **Cancel** button is clicked, <xref:System.Windows.Window.ShowDialog%2A> should return `false`, which also requires setting the <xref:System.Windows.Window.DialogResult%2A> property.</span></span>  
   
  [!code-csharp[DialogBoxSample#MarginsDialogBoxCancelResultSetCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxcancelresultsetcodebehind1)]
  [!code-vb[DialogBoxSample#MarginsDialogBoxCancelResultSetCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxcancelresultsetcodebehind1)]  
@@ -252,14 +258,14 @@ caps.handback.revision: 24
 [!code-csharp[DialogBoxSample#MarginsDialogBoxCancelResultSetCODEBEHIND3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml.cs#marginsdialogboxcancelresultsetcodebehind3)]
 [!code-vb[DialogBoxSample#MarginsDialogBoxCancelResultSetCODEBEHIND3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MarginsDialogBox.xaml.vb#marginsdialogboxcancelresultsetcodebehind3)]  
   
- ときにボタンの<xref:System.Windows.Controls.Button.IsCancel%2A>プロパティに設定されて`true`、いずれかのユーザーが押した、**キャンセル** ボタンまたは ESC キー <xref:System.Windows.Window.DialogResult%2A>に自動的に設定されている`false`します。 次のマークアップを処理する必要はありません、上記のコードと同じ効果を持つ、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベントです。  
+ <span data-ttu-id="1fd76-225">ときに、ボタンの<xref:System.Windows.Controls.Button.IsCancel%2A>プロパティに設定されている`true`いずれかを押すと、**キャンセル**ボタンまたは ESC キー<xref:System.Windows.Window.DialogResult%2A>に自動的に設定されている`false`です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-225">When a button's <xref:System.Windows.Controls.Button.IsCancel%2A> property is set to `true` and the user presses either the **Cancel** button or the ESC key, <xref:System.Windows.Window.DialogResult%2A> is automatically set to `false`.</span></span> <span data-ttu-id="1fd76-226">次のマークアップが上記のコードで処理する必要がない場合と同様、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。</span><span class="sxs-lookup"><span data-stu-id="1fd76-226">The following markup has the same effect as the preceding code, without the need to handle the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event.</span></span>  
   
- [!code-xml[DialogBoxSample#MarginsDialogDefaultCancelMARKUP](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsdialogdefaultcancelmarkup)]  
+ [!code-xaml[DialogBoxSample#MarginsDialogDefaultCancelMARKUP](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MarginsDialogBox.xaml#marginsdialogdefaultcancelmarkup)]  
   
- ダイアログ ボックスが自動的に返します`false`、ユーザーが押したとき、**閉じる**タイトル バー ボタンをクリックするかを選択、**閉じる**からメニュー項目、**システム**メニュー。  
+ <span data-ttu-id="1fd76-227">ダイアログ ボックスが自動的に返します`false`、ユーザーが押したとき、**閉じる**タイトル バー ボタンをクリックするか、**閉じる**からメニュー項目、**システム**メニュー。</span><span class="sxs-lookup"><span data-stu-id="1fd76-227">A dialog box automatically returns `false` when a user presses the **Close** button in the title bar or chooses the **Close** menu item from the **System** menu.</span></span>  
   
-#### <a name="processing-data-returned-from-a-modal-dialog-box"></a>モーダル ダイアログ ボックスから返されるデータの処理  
- ときに<xref:System.Windows.Window.DialogResult%2A>設定 ダイアログ ボックスで開いた関数は、調べることによってダイアログ ボックスの結果を取得できます、 <xref:System.Windows.Window.DialogResult%2A>プロパティと<xref:System.Windows.Window.ShowDialog%2A>を返します。  
+#### <a name="processing-data-returned-from-a-modal-dialog-box"></a><span data-ttu-id="1fd76-228">モーダル ダイアログ ボックスから返されたデータの処理</span><span class="sxs-lookup"><span data-stu-id="1fd76-228">Processing Data Returned from a Modal Dialog Box</span></span>  
+ <span data-ttu-id="1fd76-229">ときに<xref:System.Windows.Window.DialogResult%2A>設定されているダイアログ ボックスでは、によって開いたとき、関数は、検査することによってダイアログ ボックスの結果を取得できます、<xref:System.Windows.Window.DialogResult%2A>プロパティと<xref:System.Windows.Window.ShowDialog%2A>を返します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-229">When <xref:System.Windows.Window.DialogResult%2A> is set by a dialog box, the function that opened it can get the dialog box result by inspecting the <xref:System.Windows.Window.DialogResult%2A> property when <xref:System.Windows.Window.ShowDialog%2A> returns.</span></span>  
   
  [!code-csharp[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogprocessreturncodebehind1)]
  [!code-vb[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogprocessreturncodebehind1)]  
@@ -270,25 +276,25 @@ caps.handback.revision: 24
 [!code-csharp[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openmarginsdialogprocessreturncodebehind4)]
 [!code-vb[DialogBoxSample#OpenMarginsDialogProcessReturnCODEBEHIND4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openmarginsdialogprocessreturncodebehind4)]  
   
- ダイアログの結果が場合`true`、関数として使用するキューを取得して、ユーザーが指定したデータを処理します。  
+ <span data-ttu-id="1fd76-230">ダイアログの結果が場合`true`、関数として使用するキューを取得して、ユーザーによって提供されるデータを処理します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-230">If the dialog result is `true`, the function uses that as a cue to retrieve and process the data provided by the user.</span></span>  
   
 > [!NOTE]
->  後に<xref:System.Windows.Window.ShowDialog%2A>が返されると、ダイアログ ボックスを再度開くことはできません。 代わりに、新しいインスタンスを作成する必要があります。  
+>  <span data-ttu-id="1fd76-231">後に<xref:System.Windows.Window.ShowDialog%2A>が返されると、ダイアログ ボックスを再度開くことはできません。</span><span class="sxs-lookup"><span data-stu-id="1fd76-231">After <xref:System.Windows.Window.ShowDialog%2A> has returned, a dialog box cannot be reopened.</span></span> <span data-ttu-id="1fd76-232">代わりに、新しいインスタンスを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-232">Instead, you need to create a new instance.</span></span>  
   
- ダイアログの結果が場合`false`関数が適切に処理を終了する必要があります。  
+ <span data-ttu-id="1fd76-233">ダイアログの結果が場合`false`関数が適切に処理を終了する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-233">If the dialog result is `false`, the function should end processing appropriately.</span></span>  
   
 <a name="Creating_a_Modeless_Custom_Dialog_Box"></a>   
-### <a name="creating-a-modeless-custom-dialog-box"></a>モードレスのカスタム ダイアログ ボックスを作成します。  
- モードレス ダイアログ ボックスでは、次の図に示すように [検索] ダイアログ ボックスなど、同じ基本的な外観モーダル ダイアログ ボックスとしてです。  
+### <a name="creating-a-modeless-custom-dialog-box"></a><span data-ttu-id="1fd76-234">モードレス カスタム ダイアログ ボックスの作成</span><span class="sxs-lookup"><span data-stu-id="1fd76-234">Creating a Modeless Custom Dialog Box</span></span>  
+ <span data-ttu-id="1fd76-235">次の図に示されている [検索] ダイアログ ボックスなどのモードレス ダイアログ ボックスは、基本的な外観はモーダル ダイアログ ボックスと同じです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-235">A modeless dialog box, such as the Find Dialog Box shown in the following figure, has the same fundamental appearance as the modal dialog box.</span></span>  
   
- ![[検索] ダイアログ ボックス](../Image/DialogBoxesOverviewFigure6.PNG "DialogBoxesOverviewFigure6")  
+ <span data-ttu-id="1fd76-236">![[検索] ダイアログ ボックス](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure6.PNG "DialogBoxesOverviewFigure6")</span><span class="sxs-lookup"><span data-stu-id="1fd76-236">![Find dialog box](../../../../docs/framework/wpf/app-development/media/dialogboxesoverviewfigure6.PNG "DialogBoxesOverviewFigure6")</span></span>  
   
- 動作がわずかに異なるように、次のセクションで説明します。  
+ <span data-ttu-id="1fd76-237">しかし、次のセクションで説明するように、動作は少し異なります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-237">However, the behavior is slightly different, as described in the following sections.</span></span>  
   
-#### <a name="opening-a-modeless-dialog-box"></a>モードレス ダイアログ ボックスを開く  
- 呼び出して、モードレス ダイアログ ボックスが開かれる、<xref:System.Windows.Window.Show%2A>メソッドです。  
+#### <a name="opening-a-modeless-dialog-box"></a><span data-ttu-id="1fd76-238">モードレス ダイアログ ボックスを開く</span><span class="sxs-lookup"><span data-stu-id="1fd76-238">Opening a Modeless Dialog Box</span></span>  
+ <span data-ttu-id="1fd76-239">呼び出すことによって、モードレス ダイアログ ボックスが開かれ、<xref:System.Windows.Window.Show%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-239">A modeless dialog box is opened by calling the <xref:System.Windows.Window.Show%2A> method.</span></span>  
   
- [!code-xml[DialogBoxSample#OpenFindDialogMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#openfinddialogmarkup1)]  
+ [!code-xaml[DialogBoxSample#OpenFindDialogMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml#openfinddialogmarkup1)]  
   
  [!code-csharp[DialogBoxSample#OpenFindDialogCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openfinddialogcodebehind1)]
  [!code-vb[DialogBoxSample#OpenFindDialogCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openfinddialogcodebehind1)]  
@@ -297,22 +303,22 @@ caps.handback.revision: 24
 [!code-csharp[DialogBoxSample#OpenFindDialogCODEBEHIND3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openfinddialogcodebehind3)]
 [!code-vb[DialogBoxSample#OpenFindDialogCODEBEHIND3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openfinddialogcodebehind3)]  
   
- 異なり<xref:System.Windows.Window.ShowDialog%2A>、<xref:System.Windows.Window.Show%2A>が直ちに返されます。 その結果、呼び出し元のウィンドウはモードレス ダイアログ ボックスが閉じられるし、そのため、知らないダイアログ ボックスの結果を確認するか、さらに処理するためのダイアログ ボックスからデータを取得するタイミングを判断できません。 代わりに、ダイアログ ボックスでは、呼び出し元のウィンドウで処理するためにデータを返す別の方法を作成する必要があります。  
+ <span data-ttu-id="1fd76-240">異なり<xref:System.Windows.Window.ShowDialog%2A>、<xref:System.Windows.Window.Show%2A>が直ちに返されます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-240">Unlike <xref:System.Windows.Window.ShowDialog%2A>, <xref:System.Windows.Window.Show%2A> returns immediately.</span></span> <span data-ttu-id="1fd76-241">その結果、呼び出し元のウィンドウは、モードレス ダイアログ ボックスが閉じられたことを知ることができず、したがって、ダイアログ ボックスの結果を確認するタイミングを判断したり、ダイアログ ボックスからデータを取得して、さらに処理したりすることができません。</span><span class="sxs-lookup"><span data-stu-id="1fd76-241">Consequently, the calling window cannot tell when the modeless dialog box is closed and, therefore, does not know when to check for a dialog box result or get data from the dialog box for further processing.</span></span> <span data-ttu-id="1fd76-242">代わりに、ダイアログ ボックスは、別の方法を作成して、呼び出し元のウィンドウに処理用のデータを返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-242">Instead, the dialog box needs to create an alternative way to return data to the calling window for processing.</span></span>  
   
-#### <a name="processing-data-returned-from-a-modeless-dialog-box"></a>モードレス ダイアログ ボックスから返されるデータの処理  
- この例では、 `FindDialogBox`&1; つまたは複数の検索テキストが検索されている特定の頻度に応じて、メイン ウィンドウに結果を返す可能性があります。 モードレス ダイアログ ボックスはモーダル ダイアログ ボックスと同様、プロパティを使用して結果を返すことができます。 ただし、ダイアログ ボックスを所有しているウィンドウは、これらのプロパティを確認するタイミングを認識する必要があります。 これを有効にする方法の&1; つでは、テキストが見つかったときに発生するイベントを実装する ダイアログ ボックスです。                                  `FindDialogBox`実装して、`TextFoundEvent`ときに最初この目的のためには、デリゲートが必要です。  
+#### <a name="processing-data-returned-from-a-modeless-dialog-box"></a><span data-ttu-id="1fd76-243">モードレス ダイアログ ボックスから返されたデータの処理</span><span class="sxs-lookup"><span data-stu-id="1fd76-243">Processing Data Returned from a Modeless Dialog Box</span></span>  
+ <span data-ttu-id="1fd76-244">この例では、 `FindDialogBox` 1 つまたは複数の検索、テキストが検索されている特定の頻度に応じて、メイン ウィンドウに結果を返すことがあります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-244">In this example, the `FindDialogBox` may return one or more find results to the main window, depending on the text being searched for without any specific frequency.</span></span> <span data-ttu-id="1fd76-245">モーダル ダイアログ ボックスと同様、モードレス ダイアログ ボックスは、プロパティを使用して結果を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-245">As with a modal dialog box, a modeless dialog box can return results using properties.</span></span> <span data-ttu-id="1fd76-246">ただし、ダイアログ ボックスを所有しているウィンドウは、それらのプロパティを確認するタイミングを知る必要があります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-246">However, the window that owns the dialog box needs to know when to check those properties.</span></span> <span data-ttu-id="1fd76-247">これを可能にする方法の 1 つは、ダイアログ ボックスで、テキストが見つかったときに発生するイベントを実装することです。</span><span class="sxs-lookup"><span data-stu-id="1fd76-247">One way to enable this is for the dialog box to implement an event that is raised whenever text is found.</span></span> <span data-ttu-id="1fd76-248">`FindDialogBox`実装する、`TextFoundEvent`ときに最初この目的のためには、デリゲートが必要です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-248">`FindDialogBox` implements the `TextFoundEvent` for this purpose, which first requires a delegate.</span></span>  
   
  [!code-csharp[DialogBoxSample#TextFoundEventHandlerCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/TextFoundEventHandler.cs#textfoundeventhandlercode)]
  [!code-vb[DialogBoxSample#TextFoundEventHandlerCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/TextFoundEventHandler.vb#textfoundeventhandlercode)]  
   
- Using the                                  `TextFoundEventHandler` delegate,                                  `FindDialogBox` implements the                                  `TextFoundEvent`.  
+ <span data-ttu-id="1fd76-249">使用して、`TextFoundEventHandler`デリゲート`FindDialogBox`を実装する、`TextFoundEvent`です。</span><span class="sxs-lookup"><span data-stu-id="1fd76-249">Using the `TextFoundEventHandler` delegate, `FindDialogBox` implements the `TextFoundEvent`.</span></span>  
   
  [!code-csharp[DialogBoxSample#TextFoundEventCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#textfoundeventcodebehind1)]
  [!code-vb[DialogBoxSample#TextFoundEventCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#textfoundeventcodebehind1)]  
 [!code-csharp[DialogBoxSample#TextFoundEventCODEBEHIND2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#textfoundeventcodebehind2)]
 [!code-vb[DialogBoxSample#TextFoundEventCODEBEHIND2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#textfoundeventcodebehind2)]  
   
- その結果、`Find`検索結果が見つかった場合は、イベントを発生させることができます。  
+ <span data-ttu-id="1fd76-250">その結果、`Find`検索結果が見つかった場合は、イベントを発生させることができます。</span><span class="sxs-lookup"><span data-stu-id="1fd76-250">Consequently, `Find` can raise the event when a search result is found.</span></span>  
   
  [!code-csharp[DialogBoxSample#TextFoundEventRaiseCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#textfoundeventraisecodebehind1)]
  [!code-vb[DialogBoxSample#TextFoundEventRaiseCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#textfoundeventraisecodebehind1)]  
@@ -325,30 +331,30 @@ caps.handback.revision: 24
 [!code-csharp[DialogBoxSample#TextFoundEventRaiseCODEBEHIND5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#textfoundeventraisecodebehind5)]
 [!code-vb[DialogBoxSample#TextFoundEventRaiseCODEBEHIND5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#textfoundeventraisecodebehind5)]  
   
- オーナー ウィンドウは、登録し、このイベントを処理する必要があります。  
+ <span data-ttu-id="1fd76-251">そのとき、所有者ウィンドウは、このイベントを登録し、処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1fd76-251">The owner window then needs to register with and handle this event.</span></span>  
   
  [!code-csharp[DialogBoxSample#OpenFindDialogResultCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openfinddialogresultcodebehind1)]
  [!code-vb[DialogBoxSample#OpenFindDialogResultCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openfinddialogresultcodebehind1)]  
 [!code-csharp[DialogBoxSample#OpenFindDialogResultCODEBEHIND2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/MainWindow.xaml.cs#openfinddialogresultcodebehind2)]
 [!code-vb[DialogBoxSample#OpenFindDialogResultCODEBEHIND2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/MainWindow.xaml.vb#openfinddialogresultcodebehind2)]  
   
-#### <a name="closing-a-modeless-dialog-box"></a>モードレス ダイアログ ボックスを閉じる  
- <xref:System.Windows.Window.DialogResult%2A>システムを使用してモードレスのダイアログを閉じることができる設定する必要はありませんたとえば、次のメカニズムを提供します。  
+#### <a name="closing-a-modeless-dialog-box"></a><span data-ttu-id="1fd76-252">モードレス ダイアログ ボックスを閉じる</span><span class="sxs-lookup"><span data-stu-id="1fd76-252">Closing a Modeless Dialog Box</span></span>  
+ <span data-ttu-id="1fd76-253"><xref:System.Windows.Window.DialogResult%2A>システムを使用して、モードレス ダイアログ ボックスを閉じることができます、設定する必要はありません、たとえば、次のメカニズムを提供します。</span><span class="sxs-lookup"><span data-stu-id="1fd76-253">Because <xref:System.Windows.Window.DialogResult%2A> does not need to be set, a modeless dialog can be closed using system provide mechanisms, including the following:</span></span>  
   
--   クリックすると、**閉じる**タイトル バー ボタンをクリックします。  
+-   <span data-ttu-id="1fd76-254">クリックすると、**閉じる**タイトル バーのボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-254">Clicking the **Close** button in the title bar.</span></span>  
   
--   Alt キーを押しながら f4 キーを押すとします。  
+-   <span data-ttu-id="1fd76-255">Alt キーを押しながら F4 キーを押す。</span><span class="sxs-lookup"><span data-stu-id="1fd76-255">Pressing ALT+F4.</span></span>  
   
--   Choosing                                          **Close** from the                                          **System** menu.  
+-   <span data-ttu-id="1fd76-256">選択する**閉じる**から、**システム**メニュー。</span><span class="sxs-lookup"><span data-stu-id="1fd76-256">Choosing **Close** from the **System** menu.</span></span>  
   
- また、コードを呼び出すことができます<xref:System.Windows.Window.Close%2A>ときに、**閉じる** ボタンをクリックします。  
+ <span data-ttu-id="1fd76-257">また、コードを呼び出すことができます<xref:System.Windows.Window.Close%2A>ときに、**閉じる**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1fd76-257">Alternatively, your code can call <xref:System.Windows.Window.Close%2A> when the **Close** button is clicked.</span></span>  
   
  [!code-csharp[DialogBoxSample#FindDialogCloseCODEBEHIND1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#finddialogclosecodebehind1)]
  [!code-vb[DialogBoxSample#FindDialogCloseCODEBEHIND1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#finddialogclosecodebehind1)]  
 [!code-csharp[DialogBoxSample#FindDialogCloseCODEBEHIND2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs#finddialogclosecodebehind2)]
 [!code-vb[DialogBoxSample#FindDialogCloseCODEBEHIND2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb#finddialogclosecodebehind2)]  
   
-## <a name="see-also"></a>関連項目  
- [ポップアップの概要](../../../../docs/framework/wpf/controls/popup-overview.md)   
- [ダイアログ ボックスのサンプル](http://go.microsoft.com/fwlink/?LinkID=159984)   
- [ColorPicker カスタム コントロールのサンプル](http://go.microsoft.com/fwlink/?LinkID=159977)
+## <a name="see-also"></a><span data-ttu-id="1fd76-258">関連項目</span><span class="sxs-lookup"><span data-stu-id="1fd76-258">See Also</span></span>  
+ [<span data-ttu-id="1fd76-259">ポップアップの概要</span><span class="sxs-lookup"><span data-stu-id="1fd76-259">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)  
+ [<span data-ttu-id="1fd76-260">ダイアログ ボックスのサンプル</span><span class="sxs-lookup"><span data-stu-id="1fd76-260">Dialog Box Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=159984)  
+ [<span data-ttu-id="1fd76-261">ColorPicker カスタム コントロールのサンプル</span><span class="sxs-lookup"><span data-stu-id="1fd76-261">ColorPicker Custom Control Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=159977)

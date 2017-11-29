@@ -1,91 +1,74 @@
 ---
-title: "方法: 演算子プロシージャ (Visual Basic) を呼び出す |Microsoft ドキュメント"
+title: "方法: 演算子プロシージャを呼び出す (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- operator procedures, calling
-- procedures, operator
-- procedure calls, operator overloading
-- syntax, Operator procedures
+- operator procedures [Visual Basic], calling
+- procedures [Visual Basic], operator
+- procedure calls [Visual Basic], operator overloading
+- syntax [Visual Basic], Operator procedures
 - operators [Visual Basic], overloading
-- return values, Operator procedures
-- overloaded operators, calling
+- return values [Visual Basic], Operator procedures
+- overloaded operators [Visual Basic], calling
 - operator overloading
 ms.assetid: 0dce42cc-f0b0-4c14-9f62-018b21f33497
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2403e7a8270c17a8db5417cd8394fd47c373d493
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 0abff0a81ebcdacb59b69d0c307bb4aa219906c3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-call-an-operator-procedure-visual-basic"></a>方法: 演算子プロシージャを呼び出す (Visual Basic)
-演算子プロシージャを呼び出すには、式で演算子のシンボルを使用します。 場合、変換演算子を呼び出す、 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)に値を別の&1; つのデータ型に変換します。  
+# <a name="how-to-call-an-operator-procedure-visual-basic"></a><span data-ttu-id="5ac46-102">方法: 演算子プロシージャを呼び出す (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5ac46-102">How to: Call an Operator Procedure (Visual Basic)</span></span>
+<span data-ttu-id="5ac46-103">演算子プロシージャを呼び出すには、式で演算子のシンボルを使用します。</span><span class="sxs-lookup"><span data-stu-id="5ac46-103">You call an operator procedure by using the operator symbol in an expression.</span></span> <span data-ttu-id="5ac46-104">場合は、変換演算子を呼び出す、 [CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)に値を別の 1 つのデータ型に変換します。</span><span class="sxs-lookup"><span data-stu-id="5ac46-104">In the case of a conversion operator, you call the [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md) to convert a value from one data type to another.</span></span>  
   
- 演算子プロシージャを明示的に呼び出す必要はありません。 同様に、演算子を使用する、または`CType`関数、代入ステートメント、または式、演算子を使用すると、通常は同じようにします。 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]演算子プロシージャの呼び出しを使用します。  
+ <span data-ttu-id="5ac46-105">演算子プロシージャを明示的に呼び出すことはありません。</span><span class="sxs-lookup"><span data-stu-id="5ac46-105">You do not call operator procedures explicitly.</span></span> <span data-ttu-id="5ac46-106">同様に、演算子を使用する、または`CType`関数、代入ステートメントまたは式、演算子を通常使用するのと同様にします。</span><span class="sxs-lookup"><span data-stu-id="5ac46-106">You just use the operator, or the `CType` function, in an assignment statement or an expression, the same way you ordinarily use an operator.</span></span> [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="5ac46-107">演算子プロシージャ呼び出しを行います。</span><span class="sxs-lookup"><span data-stu-id="5ac46-107"> makes the call to the operator procedure.</span></span>  
   
- クラスまたは構造体で、演算子を定義することと呼ばれる*オーバー ロード*演算子。  
+ <span data-ttu-id="5ac46-108">クラスまたは構造体で演算子を定義とも呼びます*オーバー ロード*演算子。</span><span class="sxs-lookup"><span data-stu-id="5ac46-108">Defining an operator on a class or structure is also called *overloading* the operator.</span></span>  
   
-### <a name="to-call-an-operator-procedure"></a>演算子プロシージャを呼び出す  
+### <a name="to-call-an-operator-procedure"></a><span data-ttu-id="5ac46-109">演算子プロシージャを呼び出しています</span><span class="sxs-lookup"><span data-stu-id="5ac46-109">To call an operator procedure</span></span>  
   
-1.  通常の方法で、式の中で演算子のシンボルを使用します。  
+1.  <span data-ttu-id="5ac46-110">通常の方法で、式で演算子のシンボルを使用します。</span><span class="sxs-lookup"><span data-stu-id="5ac46-110">Use the operator symbol in an expression in the ordinary way.</span></span>  
   
-2.  オペランドのデータ型が適切な演算子の場合と、正しい順序であることを確認します。  
+2.  <span data-ttu-id="5ac46-111">オペランドのデータ型が演算子の場合、正しい順序では適切であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="5ac46-111">Be sure the data types of the operands are appropriate for the operator, and in the correct order.</span></span>  
   
-3.  演算子は、期待どおりに、式の値に作用します。  
+3.  <span data-ttu-id="5ac46-112">演算子は、期待どおりに、式の値に作用します。</span><span class="sxs-lookup"><span data-stu-id="5ac46-112">The operator contributes to the value of the expression as expected.</span></span>  
   
-### <a name="to-call-a-conversion-operator-procedure"></a>変換演算子プロシージャを呼び出す  
+### <a name="to-call-a-conversion-operator-procedure"></a><span data-ttu-id="5ac46-113">変換演算子プロシージャを呼び出しています</span><span class="sxs-lookup"><span data-stu-id="5ac46-113">To call a conversion operator procedure</span></span>  
   
-1.  使用`CType`式の内部です。  
+1.  <span data-ttu-id="5ac46-114">使用して`CType`式の内部です。</span><span class="sxs-lookup"><span data-stu-id="5ac46-114">Use `CType` inside an expression.</span></span>  
   
-2.  オペランドのデータ型が適切な変換して、正しい順序であることを確認します。  
+2.  <span data-ttu-id="5ac46-115">オペランドのデータ型は、変換して、正しい順序で適切なことを確認します。</span><span class="sxs-lookup"><span data-stu-id="5ac46-115">Be sure the data types of the operands are appropriate for the conversion, and in the correct order.</span></span>  
   
-3.  `CType`変換演算子プロシージャの呼び出しを変換後の値を返します。  
+3.  <span data-ttu-id="5ac46-116">`CType`変換演算子プロシージャの呼び出しを変換後の値を返します。</span><span class="sxs-lookup"><span data-stu-id="5ac46-116">`CType` calls the conversion operator procedure and returns the converted value.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、2 つ作成されます<xref:System.TimeSpan>構造体、それらを加算、および&3; つ目の結果を格納<xref:System.TimeSpan>構造体</xref:System.TimeSpan></xref:System.TimeSpan>。 <xref:System.TimeSpan>構造体がいくつかの標準的な演算子をオーバー ロードする演算子プロシージャを定義します</xref:System.TimeSpan>。  
+## <a name="example"></a><span data-ttu-id="5ac46-117">例</span><span class="sxs-lookup"><span data-stu-id="5ac46-117">Example</span></span>  
+ <span data-ttu-id="5ac46-118">次の例では、2 つ作成されます<xref:System.TimeSpan>構造体を加算してを 3 つ目の結果を格納<xref:System.TimeSpan>構造体。</span><span class="sxs-lookup"><span data-stu-id="5ac46-118">The following example creates two <xref:System.TimeSpan> structures, adds them together, and stores the result in a third <xref:System.TimeSpan> structure.</span></span> <span data-ttu-id="5ac46-119"><xref:System.TimeSpan>構造体は、いくつかの標準的な演算子をオーバー ロードする演算子プロシージャを定義します。</span><span class="sxs-lookup"><span data-stu-id="5ac46-119">The <xref:System.TimeSpan> structure defines operator procedures to overload several standard operators.</span></span>  
   
- [!code-vb[VbVbcnProcedures #&29;](./codesnippet/VisualBasic/how-to-call-an-operator-procedure_1.vb)]  
+ [!code-vb[VbVbcnProcedures#29](./codesnippet/VisualBasic/how-to-call-an-operator-procedure_1.vb)]  
   
- <xref:System.TimeSpan>、標準のオーバー ロード`+`演算子で、前の例では演算子プロシージャの値を計算するとき`combinedSpan`</xref:System.TimeSpan>。  
+ <span data-ttu-id="5ac46-120"><xref:System.TimeSpan>標準をオーバー ロード`+`演算子を前の例では演算子プロシージャの値を計算するとき`combinedSpan`です。</span><span class="sxs-lookup"><span data-stu-id="5ac46-120">Because <xref:System.TimeSpan> overloads the standard `+` operator, the previous example calls an operator procedure when it calculates the value of `combinedSpan`.</span></span>  
   
- メッセージ交換演算子プロシージャの呼び出しの例は、次を参照してください。[方法: クラスを定義演算子を使用して](./how-to-use-a-class-that-defines-operators.md)します。  
+ <span data-ttu-id="5ac46-121">メッセージ交換演算子プロシージャの呼び出しの例は、次を参照してください。[する方法: クラスにその定義の演算子を使用して](./how-to-use-a-class-that-defines-operators.md)です。</span><span class="sxs-lookup"><span data-stu-id="5ac46-121">For an example of calling a conversation operator procedure, see [How to: Use a Class that Defines Operators](./how-to-use-a-class-that-defines-operators.md).</span></span>  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- 使用する演算子を定義、クラスまたは構造体を使用していることを確認します。  
+## <a name="compiling-the-code"></a><span data-ttu-id="5ac46-122">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="5ac46-122">Compiling the Code</span></span>  
+ <span data-ttu-id="5ac46-123">使用する演算子を定義クラスまたは構造体を使用していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="5ac46-123">Be sure the class or structure you are using defines the operator you want to use.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [演算子プロシージャ](./operator-procedures.md)   
- [方法: 演算子を定義](./how-to-define-an-operator.md)   
- [方法: 変換演算子を定義します。](./how-to-define-a-conversion-operator.md)   
- [Operator ステートメント](../../../../visual-basic/language-reference/statements/operator-statement.md)   
- [拡大変換](../../../../visual-basic/language-reference/modifiers/widening.md)   
- [縮小変換](../../../../visual-basic/language-reference/modifiers/narrowing.md)   
- [Structure ステートメント](../../../../visual-basic/language-reference/statements/structure-statement.md)   
- [方法: 構造体を宣言](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)   
- [明示的および暗黙的な変換](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
- [拡大変換と縮小変換](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+## <a name="see-also"></a><span data-ttu-id="5ac46-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="5ac46-124">See Also</span></span>  
+ [<span data-ttu-id="5ac46-125">演算子プロシージャ</span><span class="sxs-lookup"><span data-stu-id="5ac46-125">Operator Procedures</span></span>](./operator-procedures.md)  
+ [<span data-ttu-id="5ac46-126">方法 : 演算子を定義する</span><span class="sxs-lookup"><span data-stu-id="5ac46-126">How to: Define an Operator</span></span>](./how-to-define-an-operator.md)  
+ [<span data-ttu-id="5ac46-127">方法 : 変換演算子を定義する</span><span class="sxs-lookup"><span data-stu-id="5ac46-127">How to: Define a Conversion Operator</span></span>](./how-to-define-a-conversion-operator.md)  
+ [<span data-ttu-id="5ac46-128">Operator ステートメント</span><span class="sxs-lookup"><span data-stu-id="5ac46-128">Operator Statement</span></span>](../../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [<span data-ttu-id="5ac46-129">Widening</span><span class="sxs-lookup"><span data-stu-id="5ac46-129">Widening</span></span>](../../../../visual-basic/language-reference/modifiers/widening.md)  
+ [<span data-ttu-id="5ac46-130">Narrowing</span><span class="sxs-lookup"><span data-stu-id="5ac46-130">Narrowing</span></span>](../../../../visual-basic/language-reference/modifiers/narrowing.md)  
+ [<span data-ttu-id="5ac46-131">Structure ステートメント</span><span class="sxs-lookup"><span data-stu-id="5ac46-131">Structure Statement</span></span>](../../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [<span data-ttu-id="5ac46-132">方法 : 構造体を宣言する</span><span class="sxs-lookup"><span data-stu-id="5ac46-132">How to: Declare a Structure</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
+ [<span data-ttu-id="5ac46-133">暗黙の型変換と明示的な型変換</span><span class="sxs-lookup"><span data-stu-id="5ac46-133">Implicit and Explicit Conversions</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
+ [<span data-ttu-id="5ac46-134">拡大変換と縮小変換</span><span class="sxs-lookup"><span data-stu-id="5ac46-134">Widening and Narrowing Conversions</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

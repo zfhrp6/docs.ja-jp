@@ -1,176 +1,221 @@
 ---
-title: "チュートリアル: Visual Studio (Visual Basic) のアセンブリをマネージ型からの埋め込み |Microsoft ドキュメント"
+title: "チュートリアル: Visual Studio (Visual Basic) でのマネージ アセンブリから型の埋め込み"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 56ed12ba-adff-4e9c-a668-7fcba80c4795
-caps.latest.revision: 3
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: adc58e081cd9b874a841d84b11d92cbffb6ba6b8
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "3"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 4411b40d8ffbdf2b74c49152db675286d91b43ea
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-visual-basic"></a>チュートリアル: Visual Studio (Visual Basic) でのマネージ アセンブリから型の埋め込み
-厳密な名前のマネージ アセンブリから型情報を埋め込む場合は、バージョンに依存しないを実現するために、アプリケーションの種類を疎結合できます。 つまり、バージョンごとに再コンパイルすることがなくマネージ ライブラリの複数のバージョンからの型を使用するプログラムを書き込むことができます。  
+# <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-visual-basic"></a><span data-ttu-id="4b06f-102">チュートリアル: Visual Studio (Visual Basic) でのマネージ アセンブリから型の埋め込み</span><span class="sxs-lookup"><span data-stu-id="4b06f-102">Walkthrough: Embedding Types from Managed Assemblies in Visual Studio (Visual Basic)</span></span>
+<span data-ttu-id="4b06f-103">厳密な名前を持つマネージ アセンブリから型情報を埋め込むと、アプリケーション内で型を疎結合して、バージョンに依存しないプログラムを実現できます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-103">If you embed type information from a strong-named managed assembly, you can loosely couple types in an application to achieve version independence.</span></span> <span data-ttu-id="4b06f-104">つまり、各バージョン用の再コンパイルを必要とすることなく、マネージ ライブラリの複数のバージョンから型を使用するプログラムを記述できます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-104">That is, your program can be written to use types from multiple versions of a managed library without having to be recompiled for each version.</span></span>  
   
- 型の埋め込みは COM 相互運用の Microsoft Office からのオートメーション オブジェクトを使用するアプリケーションなどでよく使用します。 型情報を埋め込むと、Microsoft Office の異なるコンピューター上の異なるバージョンを使用するプログラムの同じビルドができます。 ただし、完全に管理されたソリューションを埋め込み型を使用することもできます。  
+ <span data-ttu-id="4b06f-105">型の埋め込みは、COM 相互運用と共によく使用されます (Microsoft Office からのオートメーション オブジェクトを使用するアプリケーションなど)。</span><span class="sxs-lookup"><span data-stu-id="4b06f-105">Type embedding is frequently used with COM interop, such as an application that uses automation objects from Microsoft Office.</span></span> <span data-ttu-id="4b06f-106">型情報を埋め込むと、同じビルドのプログラムを、別のコンピューター上にある別バージョンの Microsoft Office と連携させることができます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-106">Embedding type information enables the same build of a program to work with different versions of Microsoft Office on different computers.</span></span> <span data-ttu-id="4b06f-107">ただし、型の埋め込みは完全なマネージ ソリューションと共に使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-107">However, you can also use type embedding with a fully managed solution.</span></span>  
   
- 次の特性を持つアセンブリから型情報を埋め込むことができます。  
+ <span data-ttu-id="4b06f-108">型情報は、次の特性を持つアセンブリから埋め込むことができます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-108">Type information can be embedded from an assembly that has the following characteristics:</span></span>  
   
--   アセンブリは、少なくとも&1; つのパブリック インターフェイスを公開します。  
+-   <span data-ttu-id="4b06f-109">アセンブリが、少なくとも 1 つのパブリック インターフェイスを公開している。</span><span class="sxs-lookup"><span data-stu-id="4b06f-109">The assembly exposes at least one public interface.</span></span>  
   
--   埋め込みのインターフェイスが付いた、`ComImport`属性と`Guid`属性 (および一意の GUID)。  
+-   <span data-ttu-id="4b06f-110">埋め込みインターフェイスに `ComImport` 属性と `Guid` 属性 (および一意の GUID) が付けられている。</span><span class="sxs-lookup"><span data-stu-id="4b06f-110">The embedded interfaces are annotated with a `ComImport` attribute and a `Guid` attribute (and a unique GUID).</span></span>  
   
--   アセンブリが付いた、`ImportedFromTypeLib`属性または`PrimaryInteropAssembly`属性、およびアセンブリ レベル`Guid`属性です。 (既定では、Visual Basic プロジェクト テンプレートには、アセンブリ レベルが含まれて`Guid`属性です)。  
+-   <span data-ttu-id="4b06f-111">アセンブリに、`ImportedFromTypeLib` 属性または `PrimaryInteropAssembly` 属性、およびアセンブリ レベルの `Guid` 属性が付けられている。</span><span class="sxs-lookup"><span data-stu-id="4b06f-111">The assembly is annotated with the `ImportedFromTypeLib` attribute or the `PrimaryInteropAssembly` attribute, and an assembly-level `Guid` attribute.</span></span> <span data-ttu-id="4b06f-112">(既定では、Visual Basic プロジェクト テンプレートには、アセンブリ レベルが含まれて`Guid`属性です)。</span><span class="sxs-lookup"><span data-stu-id="4b06f-112">(By default, Visual Basic project templates include an assembly-level `Guid` attribute.)</span></span>  
   
- 埋め込むことができるパブリック インターフェイスを指定したら、それらのインターフェイスを実装するランタイム クラスを作成できます。 クライアント プログラムをパブリック インターフェイスと設定を含むアセンブリを参照することでデザイン時にこれらのインターフェイスの型情報を埋め込むことができますし、`Embed Interop Types`プロパティへの参照の`True`です。 これは、コマンド ライン コンパイラを使用してを使用して、アセンブリの参照に相当する、`/link`コンパイラ オプション。 クライアント プログラムは、これらのインターフェイスとして型指定されたランタイム オブジェクトのインスタンスを読み込むことができます。 厳密な名前のランタイム アセンブリの新しいバージョンを作成する場合、クライアント プログラムは、更新されたランタイム アセンブリを再コンパイルするのにはありません。 代わりに、クライアント プログラムは、どちらのバージョンのランタイム アセンブリは、パブリック インターフェイスの場合、埋め込み型情報を使用して、使用可能なを使用し続けます。  
+ <span data-ttu-id="4b06f-113">埋め込み可能なパブリック インターフェイスを指定したら、それらのインターフェイスを実装するランタイム クラスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-113">After you have specified the public interfaces that can be embedded, you can create runtime classes that implement those interfaces.</span></span> <span data-ttu-id="4b06f-114">その後、クライアント プログラムは、パブリック インターフェイスを含んだアセンブリを参照し、参照の `Embed Interop Types` プロパティを `True` に設定することで、デザイン時にそれらのインターフェイスの型情報を埋め込むことができます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-114">A client program can then embed the type information for those interfaces at design time by referencing the assembly that contains the public interfaces and setting the `Embed Interop Types` property of the reference to `True`.</span></span> <span data-ttu-id="4b06f-115">これは、コマンド ライン コンパイラを使用し、`/link` コンパイラ オプションを使用してアセンブリを参照することに相当します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-115">This is equivalent to using the command line compiler and referencing the assembly by using the `/link` compiler option.</span></span> <span data-ttu-id="4b06f-116">クライアント プログラムはその後、それらのインターフェイスとして型指定されたランタイム オブジェクトのインスタンスを読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-116">The client program can then load instances of your runtime objects typed as those interfaces.</span></span> <span data-ttu-id="4b06f-117">厳密な名前を持つランタイム アセンブリの新バージョンを作成した場合、クライアント プログラムを、更新後のランタイム アセンブリで再コンパイルする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="4b06f-117">If you create a new version of your strong-named runtime assembly, the client program does not have to be recompiled with the updated runtime assembly.</span></span> <span data-ttu-id="4b06f-118">クライアント プログラムでは、パブリック インターフェイスの埋め込み型情報を使用して、利用可能なバージョンをどちらでも引き続き使用できます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-118">Instead, the client program continues to use whichever version of the runtime assembly is available to it, using the embedded type information for the public interfaces.</span></span>  
   
- 型の埋め込みの主な機能は、COM 相互運用機能アセンブリから型情報の埋め込みをサポートするためにはであるために完全に管理されたソリューションの種類の情報を埋め込む場合に次の制限が適用されます。  
+ <span data-ttu-id="4b06f-119">型埋め込みの主な機能は、COM 相互運用アセンブリからの型情報の埋め込みをサポートすることなので、完全なマネージ ソリューションで型情報を埋め込む場合には、次の制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-119">Because the primary function of type embedding is to support embedding of type information from COM interop assemblies, the following limitations apply when you embed type information in a fully managed solution:</span></span>  
   
--   COM 相互運用機能に固有の属性のみが埋め込まれます。その他の属性は無視されます。  
+-   <span data-ttu-id="4b06f-120">COM 相互運用に固有の属性のみが埋め込まれます。その他の属性は無視されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-120">Only attributes specific to COM interop are embedded; other attributes are ignored.</span></span>  
   
--   型がジェネリック パラメーターを使用してジェネリック パラメーターの型は、埋め込みの型には、その型がアセンブリの境界を越えて使用できません。 アセンブリの境界を越えるの例としては、別のアセンブリからメソッドの呼び出しをまたは型の派生型から別のアセンブリで定義されています。  
+-   <span data-ttu-id="4b06f-121">型がジェネリック パラメーターを使用していて、ジェネリック パラメーターの型が埋め込み型である場合、その型はアセンブリの境界を越えて使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="4b06f-121">If a type uses generic parameters and the type of the generic parameter is an embedded type, that type cannot be used across an assembly boundary.</span></span> <span data-ttu-id="4b06f-122">アセンブリの境界を越える場合の例としては、別のアセンブリからメソッドを呼び出す場合や、別のアセンブリで定義されている型から型を派生させる場合が挙げられます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-122">Examples of crossing an assembly boundary include calling a method from another assembly or a deriving a type from a type defined in another assembly.</span></span>  
   
--   定数は埋め込まれません。  
+-   <span data-ttu-id="4b06f-123">定数は埋め込まれません。</span><span class="sxs-lookup"><span data-stu-id="4b06f-123">Constants are not embedded.</span></span>  
   
--   <xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName>クラスは、キーとして埋め込み型をサポートしていません</xref:System.Collections.Generic.Dictionary%602?displayProperty=fullName>。 キーとして埋め込み型をサポートするために、独自のディクショナリ型を実装することができます。  
+-   <span data-ttu-id="4b06f-124"><xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> クラスでは、埋め込み型をキーとして利用できません。</span><span class="sxs-lookup"><span data-stu-id="4b06f-124">The <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> class does not support an embedded type as a key.</span></span> <span data-ttu-id="4b06f-125">埋め込み型をキーとしてサポートするために、独自のディクショナリ型を実装することは可能です。</span><span class="sxs-lookup"><span data-stu-id="4b06f-125">You can implement your own dictionary type to support an embedded type as a key.</span></span>  
   
- このチュートリアルでは、次の操作を行います。  
+ <span data-ttu-id="4b06f-126">このチュートリアルでは、次のタスクを行います。</span><span class="sxs-lookup"><span data-stu-id="4b06f-126">In this walkthrough, you will do the following:</span></span>  
   
--   埋め込むことができる型情報を格納するパブリック インターフェイスを持つ厳密な名前のアセンブリを作成します。  
+-   <span data-ttu-id="4b06f-127">埋め込み可能な型情報を含んだパブリック インターフェイスを持つ、厳密な名前付きのアセンブリを作成する。</span><span class="sxs-lookup"><span data-stu-id="4b06f-127">Create a strong-named assembly that has a public interface that contains type information that can be embedded.</span></span>  
   
--   パブリック インターフェイスを実装する厳密な名前のランタイム アセンブリを作成します。  
+-   <span data-ttu-id="4b06f-128">そのパブリック インターフェイスを実装する、厳密な名前付きのランタイム アセンブリを作成する。</span><span class="sxs-lookup"><span data-stu-id="4b06f-128">Create a strong-named runtime assembly that implements that public interface.</span></span>  
   
--   パブリック インターフェイスから型情報を埋め込むし、ランタイム アセンブリからクラスのインスタンスを作成するクライアント プログラムを作成します。  
+-   <span data-ttu-id="4b06f-129">パブリック インターフェイスから型情報を埋め込み、ランタイム アセンブリからクラスのインスタンスを作成する、クライアント プログラムを作成する。</span><span class="sxs-lookup"><span data-stu-id="4b06f-129">Create a client program that embeds the type information from the public interface and creates an instance of the class from the runtime assembly.</span></span>  
   
--   変更し、ランタイム アセンブリを再構築します。  
+-   <span data-ttu-id="4b06f-130">ランタイム アセンブリを変更し、リビルドする。</span><span class="sxs-lookup"><span data-stu-id="4b06f-130">Modify and rebuild the runtime assembly.</span></span>  
   
--   クライアント プログラムを再コンパイルしなくても新しいバージョンのランタイム アセンブリが使用されていることをクライアントのプログラムを実行します。  
+-   <span data-ttu-id="4b06f-131">クライアント プログラムを実行して、新バージョンのランタイム アセンブリが、クライアント プログラムを再コンパイルしなくても使用されていることを確認する。</span><span class="sxs-lookup"><span data-stu-id="4b06f-131">Run the client program to see that the new version of the runtime assembly is being used without having to recompile the client program.</span></span>  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-## <a name="creating-an-interface"></a>インターフェイスを作成します。  
+## <a name="creating-an-interface"></a><span data-ttu-id="4b06f-132">インターフェイスの作成</span><span class="sxs-lookup"><span data-stu-id="4b06f-132">Creating an Interface</span></span>  
   
-#### <a name="to-create-the-type-equivalence-interface-project"></a>型の等価性インターフェイス プロジェクトを作成するには  
+#### <a name="to-create-the-type-equivalence-interface-project"></a><span data-ttu-id="4b06f-133">型等価性インターフェイス プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="4b06f-133">To create the type equivalence interface project</span></span>  
   
-1.  Visual Studio での**ファイル** メニューをポイント**新規** をクリックし、**プロジェクト**します。  
+1.  <span data-ttu-id="4b06f-134">Visual Studio で、**[ファイル]** メニューの **[新規作成]** をポイントし、**[プロジェクト]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-134">In Visual Studio, on the **File** menu, point to **New** and then click **Project**.</span></span>  
   
-2.  **新しいプロジェクト**ダイアログ ボックスで、**プロジェクトの種類** ウィンドウで、ことを確認して**Windows**が選択されています。 選択**クラス ライブラリ**で、**テンプレート**ウィンドウです。 **名**ボックスに、入力`TypeEquivalenceInterface`、 をクリックし、 **OK**します。 新しいプロジェクトが作成されます。  
+2.  <span data-ttu-id="4b06f-135">**[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、**[Windows]** が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-135">In the **New Project** dialog box, in the **Project Types** pane, make sure that **Windows** is selected.</span></span> <span data-ttu-id="4b06f-136">**[テンプレート]** ペインで **[クラス ライブラリ]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-136">Select **Class Library** in the **Templates** pane.</span></span> <span data-ttu-id="4b06f-137">**[名前]** ボックスに `TypeEquivalenceInterface` と入力して、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-137">In the **Name** box, type `TypeEquivalenceInterface`, and then click **OK**.</span></span> <span data-ttu-id="4b06f-138">新しいプロジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-138">The new project is created.</span></span>  
   
-3.  **ソリューション エクスプ ローラー**Class1.vb ファイルを右クリックし、クリックして、**の名前を変更**します。 ファイルを`ISampleInterface.vb`ENTER キーを押します。 ファイルの名前変更の名前も変更は、クラスに`ISampleInterface`します。 このクラスは、クラスのパブリック インターフェイスを表します。  
+3.  <span data-ttu-id="4b06f-139">**ソリューション エクスプ ローラー**Class1.vb ファイルを右クリックし、クリックして、**の名前を変更**です。</span><span class="sxs-lookup"><span data-stu-id="4b06f-139">In **Solution Explorer**, right-click the Class1.vb file and click **Rename**.</span></span> <span data-ttu-id="4b06f-140">ファイルの名前を `ISampleInterface.vb` に変更し、Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-140">Rename the file to `ISampleInterface.vb` and press ENTER.</span></span> <span data-ttu-id="4b06f-141">ファイルの名前を変更すると、クラスの名前も `ISampleInterface` に変更されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-141">Renaming the file will also rename the class to `ISampleInterface`.</span></span> <span data-ttu-id="4b06f-142">このクラスは、クラスのパブリック インターフェイスを表します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-142">This class will represent the public interface for the class.</span></span>  
   
-4.  TypeEquivalenceInterface プロジェクトを右クリックし、クリックして**プロパティ**します。 **[コンパイル]** タブをクリックします。 など、開発用コンピューター上の有効な場所に出力パスを設定`C:\TypeEquivalenceSample`します。 この場所は、このチュートリアルの後の手順でも使用されます。  
+4.  <span data-ttu-id="4b06f-143">TypeEquivalenceInterface プロジェクトを右クリックし、**[プロパティ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-143">Right-click the TypeEquivalenceInterface project and click **Properties**.</span></span> <span data-ttu-id="4b06f-144">**[コンパイル]** タブをクリックします。開発用コンピューター上の有効な場所への出力パスを設定します (`C:\TypeEquivalenceSample` など)。</span><span class="sxs-lookup"><span data-stu-id="4b06f-144">Click the **Compile** tab. Set the output path to a valid location on your development computer, such as `C:\TypeEquivalenceSample`.</span></span> <span data-ttu-id="4b06f-145">この場所は、このチュートリアルの後の手順でも使用されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-145">This location will also be used in a later step in this walkthrough.</span></span>  
   
-5.  クリックしても、プロジェクトのプロパティを編集している間、**署名** タブをクリックします。 選択、**アセンブリに署名**オプション。 **厳密な名前キー ファイルを選択して**一覧で、クリックして** <New...> **</New...> 。 **キー ファイル名**ボックスに、入力`key.snk`します。 クリア、**パスワードでキー ファイルを保護する**チェック ボックスをオンします。 **[OK]** をクリックします。  
+5.  <span data-ttu-id="4b06f-146">プロジェクト プロパティの編集を続けたまま、**[署名]** タブをクリックします。**[アセンブリの署名]** オプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-146">While still editing the project properties, click the **Signing** tab. Select the **Sign the assembly** option.</span></span> <span data-ttu-id="4b06f-147">**[厳密な名前のキー ファイルを選択してください]** ボックスの一覧で **[<新規作成...>]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-147">In the **Choose a strong name key file** list, click **<New...>**.</span></span> <span data-ttu-id="4b06f-148">**[キー ファイル名]** ボックスに、「`key.snk`」と入力します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-148">In the **Key file name** box, type `key.snk`.</span></span> <span data-ttu-id="4b06f-149">**[キーファイルをパスワードで保護する]** チェック ボックスをオフにします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-149">Clear the **Protect my key file with a password** check box.</span></span> <span data-ttu-id="4b06f-150">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-150">Click **OK**.</span></span>  
   
-6.  ISampleInterface.vb ファイルを開きます。 ISampleInterface インターフェイスを作成する ISampleInterface クラス ファイルに次のコードを追加します。  
+6.  <span data-ttu-id="4b06f-151">ISampleInterface.vb ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-151">Open the ISampleInterface.vb file.</span></span> <span data-ttu-id="4b06f-152">ISampleInterface クラス ファイルに、ISampleInterface インターフェイスを作成するための次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-152">Add the following code to the ISampleInterface class file to create the ISampleInterface interface.</span></span>  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
-7.  **ツール** メニューのをクリックして**Guid の作成**します。 **GUID の作成**ダイアログ ボックスで、をクリックして**レジストリ形式** をクリックし、**コピー**します。 [ **終了**] をクリックします。  
+    ```vb  
+    Imports System.Runtime.InteropServices  
   
-8.  `Guid`属性、サンプルの GUID を削除しからコピーした GUID を貼り付けます、 **GUID の作成** ダイアログ ボックス。 コピーした GUID には、中かっこ ({}) を削除します。  
+    <ComImport()>  
+    <Guid("8DA56996-A151-4136-B474-32784559F6DF")>  
+    Public Interface ISampleInterface  
+        Sub GetUserInput()  
+        ReadOnly Property UserInput As String  
+    End Interface  
+    ```  
   
-9. **プロジェクト**] メニューのをクリックして**[すべてのファイル**します。  
+7.  <span data-ttu-id="4b06f-153">**[ツール]** メニューの **[GUID の作成]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-153">On the **Tools** menu, click **Create Guid**.</span></span> <span data-ttu-id="4b06f-154">**[GUID の作成]**ダイアログ ボックスで、**[レジストリ形式]** をクリックし、**[コピー]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-154">In the **Create GUID** dialog box, click **Registry Format** and then click **Copy**.</span></span> <span data-ttu-id="4b06f-155">**[終了]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-155">Click **Exit**.</span></span>  
   
-10. **ソリューション エクスプ ローラー**、展開、 **My Project**フォルダーです。 AssemblyInfo.vb をダブルクリックします。 ファイルに次の属性を追加します。  
+8.  <span data-ttu-id="4b06f-156">`Guid` 属性で、サンプルの GUID を削除し、**[GUID の作成]** ダイアログ ボックスからコピーした GUID を貼り付けます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-156">In the `Guid` attribute, delete the sample GUID and paste in the GUID that you copied from the **Create GUID** dialog box.</span></span> <span data-ttu-id="4b06f-157">コピーした GUID から中かっこ ({}) を削除します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-157">Remove the braces ({}) from the copied GUID.</span></span>  
   
-<CodeContentPlaceHolder>1</CodeContentPlaceHolder>  
-     ファイルを保存します。  
+9. <span data-ttu-id="4b06f-158">**[プロジェクト]** メニューの **[すべてのファイルを表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-158">On the **Project** menu, click **Show All Files**.</span></span>  
   
-11. プロジェクトを保存します。  
+10. <span data-ttu-id="4b06f-159">**ソリューション エクスプ ローラー**、展開、 **My Project**フォルダーです。</span><span class="sxs-lookup"><span data-stu-id="4b06f-159">In **Solution Explorer**, expand the **My Project** folder.</span></span> <span data-ttu-id="4b06f-160">AssemblyInfo.vb をダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-160">Double-click the AssemblyInfo.vb.</span></span> <span data-ttu-id="4b06f-161">ファイルに次の属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-161">Add the following attribute to the file.</span></span>  
   
-12. TypeEquivalenceInterface プロジェクトを右クリックし、クリックして**ビルド**します。 クラス ライブラリの .dll ファイルがコンパイルされ、指定したビルドの出力パス (たとえば、C:\TypeEquivalenceSample) に保存されます。  
+    ```vb  
+    <Assembly: ImportedFromTypeLib("")>  
+    ```  
   
-## <a name="creating-a-runtime-class"></a>ランタイム クラスの作成  
+     <span data-ttu-id="4b06f-162">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-162">Save the file.</span></span>  
   
-#### <a name="to-create-the-type-equivalence-runtime-project"></a>型の等価性のランタイム プロジェクトを作成するには  
+11. <span data-ttu-id="4b06f-163">プロジェクトを保存します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-163">Save the project.</span></span>  
   
-1.  Visual Studio での**ファイル** メニューをポイント**新規** をクリックし、**プロジェクト**します。  
+12. <span data-ttu-id="4b06f-164">TypeEquivalenceInterface プロジェクトを右クリックし、**[ビルド]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-164">Right-click the TypeEquivalenceInterface project and click **Build**.</span></span> <span data-ttu-id="4b06f-165">クラス ライブラリの .dll ファイルがコンパイルされ、指定したビルド出力パス (たとえば、C:\TypeEquivalenceSample) に保存されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-165">The class library .dll file is compiled and saved to the specified build output path (for example, C:\TypeEquivalenceSample).</span></span>  
   
-2.  **新しいプロジェクト**ダイアログ ボックスで、**プロジェクトの種類** ウィンドウで、ことを確認して**Windows**が選択されています。 選択**クラス ライブラリ**で、**テンプレート**ウィンドウです。 **名**ボックスに、入力`TypeEquivalenceRuntime`、 をクリックし、 **OK**します。 新しいプロジェクトが作成されます。  
+## <a name="creating-a-runtime-class"></a><span data-ttu-id="4b06f-166">ランタイム クラスの作成</span><span class="sxs-lookup"><span data-stu-id="4b06f-166">Creating a Runtime Class</span></span>  
   
-3.  **ソリューション エクスプ ローラー**Class1.vb ファイルを右クリックし、クリックして、**の名前を変更**します。 ファイルを`SampleClass.vb`ENTER キーを押します。 クラスの名前を変更も、ファイルの名前を変更する`SampleClass`です。 このクラスは実装、`ISampleInterface`インターフェイスです。  
+#### <a name="to-create-the-type-equivalence-runtime-project"></a><span data-ttu-id="4b06f-167">型等価性ランタイム プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="4b06f-167">To create the type equivalence runtime project</span></span>  
   
-4.  TypeEquivalenceRuntime プロジェクトを右クリックし、クリックして**プロパティ**します。 **[コンパイル]** タブをクリックします。 たとえば、TypeEquivalenceInterface プロジェクトで使用した同じ場所に出力パスを設定`C:\TypeEquivalenceSample`します。  
+1.  <span data-ttu-id="4b06f-168">Visual Studio で、**[ファイル]** メニューの **[新規作成]** をポイントし、**[プロジェクト]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-168">In Visual Studio, on the **File** menu, point to **New** and then click **Project**.</span></span>  
   
-5.  クリックしても、プロジェクトのプロパティを編集している間、**署名** タブをクリックします。 選択、**アセンブリに署名**オプション。 **厳密な名前キー ファイルを選択して**一覧で、クリックして** <New...> **</New...> 。 **キー ファイル名**ボックスに、入力`key.snk`します。 クリア、**パスワードでキー ファイルを保護する**チェック ボックスをオンします。 **[OK]** をクリックします。  
+2.  <span data-ttu-id="4b06f-169">**[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、**[Windows]** が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-169">In the **New Project** dialog box, in the **Project Types** pane, make sure that **Windows** is selected.</span></span> <span data-ttu-id="4b06f-170">**[テンプレート]** ペインで **[クラス ライブラリ]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-170">Select **Class Library** in the **Templates** pane.</span></span> <span data-ttu-id="4b06f-171">**[名前]** ボックスに `TypeEquivalenceRuntime` と入力して、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-171">In the **Name** box, type `TypeEquivalenceRuntime`, and then click **OK**.</span></span> <span data-ttu-id="4b06f-172">新しいプロジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-172">The new project is created.</span></span>  
   
-6.  TypeEquivalenceRuntime プロジェクトを右クリックし、クリックして**参照の追加**します。 クリックして、**参照**タブし、出力パスのフォルダーを参照します。 TypeEquivalenceInterface.dll ファイルを選択し、クリックして**OK**します。  
+3.  <span data-ttu-id="4b06f-173">**ソリューション エクスプ ローラー**Class1.vb ファイルを右クリックし、クリックして、**の名前を変更**です。</span><span class="sxs-lookup"><span data-stu-id="4b06f-173">In **Solution Explorer**, right-click the Class1.vb file and click **Rename**.</span></span> <span data-ttu-id="4b06f-174">ファイルの名前を `SampleClass.vb` に変更し、Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-174">Rename the file to `SampleClass.vb` and press ENTER.</span></span> <span data-ttu-id="4b06f-175">ファイルの名前を変更すると、クラスの名前も `SampleClass` に変更されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-175">Renaming the file also renames the class to `SampleClass`.</span></span> <span data-ttu-id="4b06f-176">このクラスが `ISampleInterface` インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-176">This class will implement the `ISampleInterface` interface.</span></span>  
   
-7.  **プロジェクト**] メニューのをクリックして**[すべてのファイル**します。  
+4.  <span data-ttu-id="4b06f-177">TypeEquivalenceRuntime プロジェクトを右クリックし、**[プロパティ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-177">Right-click the TypeEquivalenceRuntime project and click **Properties**.</span></span> <span data-ttu-id="4b06f-178">**[コンパイル]** タブをクリックします。出力パスを、TypeEquivalenceInterface プロジェクトで使用したのと同じ場所に設定します (たとえば、`C:\TypeEquivalenceSample`)。</span><span class="sxs-lookup"><span data-stu-id="4b06f-178">Click the **Compile** tab. Set the output path to the same location you used in the TypeEquivalenceInterface project, for example, `C:\TypeEquivalenceSample`.</span></span>  
   
-8.  **ソリューション エクスプ ローラー**、展開、**参照**フォルダーです。 TypeEquivalenceInterface 参照を選択します。 TypeEquivalenceInterface 参照の [プロパティ] ウィンドウで、設定、**特定のバージョン**プロパティを**False**します。  
+5.  <span data-ttu-id="4b06f-179">プロジェクト プロパティの編集を続けたまま、**[署名]** タブをクリックします。**[アセンブリの署名]** オプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-179">While still editing the project properties, click the **Signing** tab. Select the **Sign the assembly** option.</span></span> <span data-ttu-id="4b06f-180">**[厳密な名前のキー ファイルを選択してください]** ボックスの一覧で **[<新規作成...>]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-180">In the **Choose a strong name key file** list, click **<New...>**.</span></span> <span data-ttu-id="4b06f-181">**[キー ファイル名]** ボックスに、「`key.snk`」と入力します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-181">In the **Key file name** box, type `key.snk`.</span></span> <span data-ttu-id="4b06f-182">**[キーファイルをパスワードで保護する]** チェック ボックスをオフにします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-182">Clear the **Protect my key file with a password** check box.</span></span> <span data-ttu-id="4b06f-183">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-183">Click **OK**.</span></span>  
   
-9. SampleClass クラスを作成する SampleClass クラス ファイルに次のコードを追加します。  
+6.  <span data-ttu-id="4b06f-184">TypeEquivalenceRuntime プロジェクトを右クリックし、**[参照の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-184">Right-click the TypeEquivalenceRuntime project and click **Add Reference**.</span></span> <span data-ttu-id="4b06f-185">**[参照]** タブをクリックし、出力パスのフォルダーを参照します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-185">Click the **Browse** tab and browse to the output path folder.</span></span> <span data-ttu-id="4b06f-186">TypeEquivalenceInterface.dll ファイルを選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-186">Select the TypeEquivalenceInterface.dll file and click **OK**.</span></span>  
   
-<CodeContentPlaceHolder>2</CodeContentPlaceHolder>  
-10. プロジェクトを保存します。  
+7.  <span data-ttu-id="4b06f-187">**[プロジェクト]** メニューの **[すべてのファイルを表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-187">On the **Project** menu, click **Show All Files**.</span></span>  
   
-11. TypeEquivalenceRuntime プロジェクトを右クリックし、クリックして**ビルド**します。 クラス ライブラリの .dll ファイルがコンパイルされ、指定したビルドの出力パス (たとえば、C:\TypeEquivalenceSample) に保存されます。  
+8.  <span data-ttu-id="4b06f-188">**ソリューション エクスプローラー**で、**[参照]** フォルダーを展開します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-188">In **Solution Explorer**, expand the **References** folder.</span></span> <span data-ttu-id="4b06f-189">TypeEquivalenceInterface 参照を選択します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-189">Select the TypeEquivalenceInterface reference.</span></span> <span data-ttu-id="4b06f-190">TypeEquivalenceInterface 参照の [プロパティ] ウィンドウで、**[特定バージョン]** プロパティを **[False]** に設定します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-190">In the Properties window for the TypeEquivalenceInterface reference, set the **Specific Version** property to **False**.</span></span>  
   
-## <a name="creating-a-client-project"></a>クライアント プロジェクトの作成  
+9. <span data-ttu-id="4b06f-191">SampleClass クラス ファイルに、SampleClass クラスを作成するための次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-191">Add the following code to the SampleClass class file to create the SampleClass class.</span></span>  
   
-#### <a name="to-create-the-type-equivalence-client-project"></a>型の等価性のクライアント プロジェクトを作成するには  
+    ```vb  
+    Imports TypeEquivalenceInterface  
   
-1.  Visual Studio での**ファイル** メニューをポイント**新規** をクリックし、**プロジェクト**します。  
+    Public Class SampleClass  
+        Implements ISampleInterface  
   
-2.  **新しいプロジェクト**ダイアログ ボックスで、**プロジェクトの種類** ウィンドウで、ことを確認して**Windows**が選択されています。 選択**コンソール アプリケーション**で、**テンプレート**ウィンドウです。 **名**ボックスに、入力`TypeEquivalenceClient`、 をクリックし、 **OK**します。 新しいプロジェクトが作成されます。  
+        Private p_UserInput As String  
+        Public ReadOnly Property UserInput() As String Implements ISampleInterface.UserInput  
+            Get  
+                Return p_UserInput  
+            End Get  
+        End Property  
   
-3.  TypeEquivalenceClient プロジェクトを右クリックし、クリックして**プロパティ**します。 **[コンパイル]** タブをクリックします。 たとえば、TypeEquivalenceInterface プロジェクトで使用した同じ場所に出力パスを設定`C:\TypeEquivalenceSample`します。  
+        Public Sub GetUserInput() Implements ISampleInterface.GetUserInput  
+            Console.WriteLine("Please enter a value:")  
+            p_UserInput = Console.ReadLine()  
+        End Sub  
+    End Class  
+    ```  
   
-4.  TypeEquivalenceClient プロジェクトを右クリックし、クリックして**参照の追加**します。 クリックして、**参照**タブし、出力パスのフォルダーを参照します。 TypeEquivalenceInterface.dll ファイル (TypeEquivalenceRuntime.dll ではない) を選択し、クリックして**OK**します。  
+10. <span data-ttu-id="4b06f-192">プロジェクトを保存します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-192">Save the project.</span></span>  
   
-5.  **プロジェクト**] メニューのをクリックして**[すべてのファイル**します。  
+11. <span data-ttu-id="4b06f-193">TypeEquivalenceRuntime プロジェクトを右クリックし、**[ビルド]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-193">Right-click the TypeEquivalenceRuntime project and click **Build**.</span></span> <span data-ttu-id="4b06f-194">クラス ライブラリの .dll ファイルがコンパイルされ、指定したビルド出力パス (たとえば、C:\TypeEquivalenceSample) に保存されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-194">The class library .dll file is compiled and saved to the specified build output path (for example, C:\TypeEquivalenceSample).</span></span>  
   
-6.  **ソリューション エクスプ ローラー**、展開、**参照**フォルダーです。 TypeEquivalenceInterface 参照を選択します。 TypeEquivalenceInterface 参照の [プロパティ] ウィンドウで、設定、 **Embed Interop Types**プロパティを**True**します。  
+## <a name="creating-a-client-project"></a><span data-ttu-id="4b06f-195">クライアント プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="4b06f-195">Creating a Client Project</span></span>  
   
-7.  Module1.vb ファイルをクライアント プログラムを作成するには、次のコードを追加します。  
+#### <a name="to-create-the-type-equivalence-client-project"></a><span data-ttu-id="4b06f-196">型等価性クライアント プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="4b06f-196">To create the type equivalence client project</span></span>  
   
-<CodeContentPlaceHolder>3</CodeContentPlaceHolder>  
-8.  ビルドして、プログラムを実行するには、CTRL + F5 キーを押します。  
+1.  <span data-ttu-id="4b06f-197">Visual Studio で、**[ファイル]** メニューの **[新規作成]** をポイントし、**[プロジェクト]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-197">In Visual Studio, on the **File** menu, point to **New** and then click **Project**.</span></span>  
   
-## <a name="modifying-the-interface"></a>インターフェイスを変更します。  
+2.  <span data-ttu-id="4b06f-198">**[新しいプロジェクト]** ダイアログ ボックスの **[プロジェクトの種類]** ペインで、**[Windows]** が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-198">In the **New Project** dialog box, in the **Project Types** pane, make sure that **Windows** is selected.</span></span> <span data-ttu-id="4b06f-199">**[テンプレート]** ペインの **[コンソール アプリケーション]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-199">Select **Console Application** in the **Templates** pane.</span></span> <span data-ttu-id="4b06f-200">**[名前]** ボックスに `TypeEquivalenceClient` と入力して、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-200">In the **Name** box, type `TypeEquivalenceClient`, and then click **OK**.</span></span> <span data-ttu-id="4b06f-201">新しいプロジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-201">The new project is created.</span></span>  
   
-#### <a name="to-modify-the-interface"></a>インターフェイスを変更するには  
+3.  <span data-ttu-id="4b06f-202">TypeEquivalenceClient プロジェクトを右クリックし、**[プロパティ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-202">Right-click the TypeEquivalenceClient project and click **Properties**.</span></span> <span data-ttu-id="4b06f-203">**[コンパイル]** タブをクリックします。出力パスを、TypeEquivalenceInterface プロジェクトで使用したのと同じ場所に設定します (たとえば、`C:\TypeEquivalenceSample`)。</span><span class="sxs-lookup"><span data-stu-id="4b06f-203">Click the **Compile** tab. Set the output path to the same location you used in the TypeEquivalenceInterface project, for example, `C:\TypeEquivalenceSample`.</span></span>  
   
-1.  Visual Studio での**ファイル** メニューをポイント**開く**、順にクリック**プロジェクト/ソリューション**します。  
+4.  <span data-ttu-id="4b06f-204">TypeEquivalenceClient プロジェクトを右クリックし、**[参照の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-204">Right-click the TypeEquivalenceClient project and click **Add Reference**.</span></span> <span data-ttu-id="4b06f-205">**[参照]** タブをクリックし、出力パスのフォルダーを参照します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-205">Click the **Browse** tab and browse to the output path folder.</span></span> <span data-ttu-id="4b06f-206">TypeEquivalenceInterface.dll ファイル (TypeEquivalenceRuntime.dll ではない) を選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-206">Select the TypeEquivalenceInterface.dll file (not the TypeEquivalenceRuntime.dll) and click **OK**.</span></span>  
   
-2.  **プロジェクトを開く**ダイアログ ボックスで、TypeEquivalenceInterface プロジェクトを右クリックし、をクリックして**プロパティ**します。 **[アプリケーション]** タブをクリックします。 クリックして、**アセンブリ情報** ボタンをクリックします。 変更、**アセンブリ バージョン**と**ファイル バージョン**値`2.0.0.0`です。  
+5.  <span data-ttu-id="4b06f-207">**[プロジェクト]** メニューの **[すべてのファイルを表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-207">On the **Project** menu, click **Show All Files**.</span></span>  
   
-3.  ISampleInterface.vb ファイルを開きます。 ISampleInterface インターフェイスには、次のコード行を追加します。  
+6.  <span data-ttu-id="4b06f-208">**ソリューション エクスプローラー**で、**[参照]** フォルダーを展開します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-208">In **Solution Explorer**, expand the **References** folder.</span></span> <span data-ttu-id="4b06f-209">TypeEquivalenceInterface 参照を選択します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-209">Select the TypeEquivalenceInterface reference.</span></span> <span data-ttu-id="4b06f-210">TypeEquivalenceInterface 参照の [プロパティ] ウィンドウで、**[相互運用型の埋め込み]** プロパティを **[True]** に設定します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-210">In the Properties window for the TypeEquivalenceInterface reference, set the **Embed Interop Types** property to **True**.</span></span>  
   
-<CodeContentPlaceHolder>4</CodeContentPlaceHolder>  
-     ファイルを保存します。  
+7.  <span data-ttu-id="4b06f-211">クライアント プログラムを作成する、Module1.vb ファイルに次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-211">Add the following code to the Module1.vb file to create the client program.</span></span>  
   
-4.  プロジェクトを保存します。  
+    ```vb  
+    Imports TypeEquivalenceInterface  
+    Imports System.Reflection  
   
-5.  TypeEquivalenceInterface プロジェクトを右クリックし、クリックして**ビルド**します。 クラス ライブラリの .dll ファイルの新しいバージョンがコンパイルされ、指定したビルド出力パス (たとえば、C:\TypeEquivalenceSample) に保存されます。  
+    Module Module1  
   
-## <a name="modifying-the-runtime-class"></a>ランタイム クラスの変更  
+        Sub Main()  
+            Dim sampleAssembly = Assembly.Load("TypeEquivalenceRuntime")  
+            Dim sampleClass As ISampleInterface = CType( _  
+                sampleAssembly.CreateInstance("TypeEquivalenceRuntime.SampleClass"), ISampleInterface)  
+            sampleClass.GetUserInput()  
+            Console.WriteLine(sampleClass.UserInput)  
+            Console.WriteLine(sampleAssembly.GetName().Version)  
+            Console.ReadLine()  
+        End Sub  
   
-#### <a name="to-modify-the-runtime-class"></a>ランタイム クラスを変更するには  
+    End Module  
+    ```  
   
-1.  Visual Studio での**ファイル** メニューをポイント**開く**、順にクリック**プロジェクト/ソリューション**します。  
+8.  <span data-ttu-id="4b06f-212">Ctrl キーを押しながら F5 キーを押して、プログラムをビルドおよび実行します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-212">Press CTRL+F5 to build and run the program.</span></span>  
   
-2.  **プロジェクトを開く** ダイアログ ボックスで、TypeEquivalenceRuntime プロジェクトを右クリックし、クリックして**プロパティ**します。 **[アプリケーション]** タブをクリックします。 クリックして、**アセンブリ情報** ボタンをクリックします。 変更、**アセンブリ バージョン**と**ファイル バージョン**値`2.0.0.0`です。  
+## <a name="modifying-the-interface"></a><span data-ttu-id="4b06f-213">インターフェイスの変更</span><span class="sxs-lookup"><span data-stu-id="4b06f-213">Modifying the Interface</span></span>  
   
-3.  SampleClass.vbfile を開きます。 SampleClass クラスに次のコード行を追加します。  
+#### <a name="to-modify-the-interface"></a><span data-ttu-id="4b06f-214">インターフェイスを変更するには</span><span class="sxs-lookup"><span data-stu-id="4b06f-214">To modify the interface</span></span>  
+  
+1.  <span data-ttu-id="4b06f-215">Visual Studio で、**[ファイル]** メニューの **[開く]** をポイントし、**[プロジェクト/ソリューション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-215">In Visual Studio, on the **File** menu, point to **Open**, and then click **Project/Solution**.</span></span>  
+  
+2.  <span data-ttu-id="4b06f-216">**[プロジェクトを開く]** ダイアログ ボックスで、TypeEquivalenceInterface プロジェクトを右クリックし、**[プロパティ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-216">In the **Open Project** dialog box, right-click the TypeEquivalenceInterface project, and then click **Properties**.</span></span> <span data-ttu-id="4b06f-217">**[アプリケーション]** タブをクリックします。**[アセンブリ情報]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-217">Click the **Application** tab. Click the **Assembly Information** button.</span></span> <span data-ttu-id="4b06f-218">**[アセンブリ バージョン]** と **[ファイル バージョン]** の値を `2.0.0.0` に変更します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-218">Change the **Assembly Version** and **File Version** values to `2.0.0.0`.</span></span>  
+  
+3.  <span data-ttu-id="4b06f-219">ISampleInterface.vb ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-219">Open the ISampleInterface.vb file.</span></span> <span data-ttu-id="4b06f-220">ISampleInterface インターフェイスに、次のコード行を追加します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-220">Add the following line of code to the ISampleInterface interface.</span></span>  
+  
+    ```vb  
+    Function GetDate() As Date  
+    ```  
+  
+     <span data-ttu-id="4b06f-221">ファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-221">Save the file.</span></span>  
+  
+4.  <span data-ttu-id="4b06f-222">プロジェクトを保存します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-222">Save the project.</span></span>  
+  
+5.  <span data-ttu-id="4b06f-223">TypeEquivalenceInterface プロジェクトを右クリックし、**[ビルド]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-223">Right-click the TypeEquivalenceInterface project and click **Build**.</span></span> <span data-ttu-id="4b06f-224">クラス ライブラリ .dll ファイルの新バージョンがコンパイルされ、指定したビルド出力パス (たとえば、C:\TypeEquivalenceSample) に保存されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-224">A new version of the class library .dll file is compiled and saved in the specified build output path (for example, C:\TypeEquivalenceSample).</span></span>  
+  
+## <a name="modifying-the-runtime-class"></a><span data-ttu-id="4b06f-225">ランタイム クラスの変更</span><span class="sxs-lookup"><span data-stu-id="4b06f-225">Modifying the Runtime Class</span></span>  
+  
+#### <a name="to-modify-the-runtime-class"></a><span data-ttu-id="4b06f-226">ランタイム クラスを変更するには</span><span class="sxs-lookup"><span data-stu-id="4b06f-226">To modify the runtime class</span></span>  
+  
+1.  <span data-ttu-id="4b06f-227">Visual Studio で、**[ファイル]** メニューの **[開く]** をポイントし、**[プロジェクト/ソリューション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-227">In Visual Studio, on the **File** menu, point to **Open**, and then click **Project/Solution**.</span></span>  
+  
+2.  <span data-ttu-id="4b06f-228">**[プロジェクトを開く]** ダイアログ ボックスで、TypeEquivalenceRuntime プロジェクトを右クリックし、**[プロパティ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-228">In the **Open Project** dialog box, right-click the TypeEquivalenceRuntime project and click **Properties**.</span></span> <span data-ttu-id="4b06f-229">**[アプリケーション]** タブをクリックします。**[アセンブリ情報]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-229">Click the **Application** tab. Click the **Assembly Information** button.</span></span> <span data-ttu-id="4b06f-230">**[アセンブリ バージョン]** と **[ファイル バージョン]** の値を `2.0.0.0` に変更します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-230">Change the **Assembly Version** and **File Version** values to `2.0.0.0`.</span></span>  
+  
+3.  <span data-ttu-id="4b06f-231">SampleClass.vbfile を開きます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-231">Open the SampleClass.vbfile.</span></span> <span data-ttu-id="4b06f-232">SampleClass クラスに次のコード行を追加します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-232">Add the following lines of code to the SampleClass class.</span></span>  
   
 ```vb  
 Public Function GetDate() As DateTime Implements ISampleInterface.GetDate  
@@ -180,15 +225,14 @@ End Function
   
      Save the file.  
   
-4.  プロジェクトを保存します。  
+4.  <span data-ttu-id="4b06f-233">プロジェクトを保存します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-233">Save the project.</span></span>  
   
-5.  TypeEquivalenceRuntime プロジェクトを右クリックし、クリックして**ビルド**します。 クラス ライブラリの .dll ファイルの更新バージョンがコンパイルされ、以前に指定したビルド出力パス (たとえば、C:\TypeEquivalenceSample) に保存されます。  
+5.  <span data-ttu-id="4b06f-234">TypeEquivalenceRuntime プロジェクトを右クリックし、**[ビルド]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4b06f-234">Right-click the TypeEquivalenceRuntime project and click **Build**.</span></span> <span data-ttu-id="4b06f-235">クラス ライブラリ .dll ファイルの更新バージョンがコンパイルされ、前に指定したビルド出力パス (たとえば、C:\TypeEquivalenceSample) に保存されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-235">An updated version of the class library .dll file is compiled and saved in the previously specified build output path (for example, C:\TypeEquivalenceSample).</span></span>  
   
-6.  ファイル エクスプ ローラーでは、出力パスのフォルダー (たとえば、C:\TypeEquivalenceSample) を開きます。 プログラムを実行する TypeEquivalenceClient.exe をダブルクリックします。 プログラムは、再コンパイルされたことがなく TypeEquivalenceRuntime アセンブリの新しいバージョンに反映されます。  
+6.  <span data-ttu-id="4b06f-236">ファイル エクスプローラーで、出力パスのフォルダー (たとえば、C:\TypeEquivalenceSample) を開きます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-236">In File Explorer, open the output path folder (for example, C:\TypeEquivalenceSample).</span></span> <span data-ttu-id="4b06f-237">TypeEquivalenceClient.exe をダブルクリックして、プログラムを実行します。</span><span class="sxs-lookup"><span data-stu-id="4b06f-237">Double-click the TypeEquivalenceClient.exe to run the program.</span></span> <span data-ttu-id="4b06f-238">プログラムでは、再コンパイルを行わなくても、新バージョンの TypeEquivalenceRuntime アセンブリが反映されます。</span><span class="sxs-lookup"><span data-stu-id="4b06f-238">The program will reflect the new version of the TypeEquivalenceRuntime assembly without having been recompiled.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [/link (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/link.md)   
- [プログラミングの概念](../../../../visual-basic/programming-guide/concepts/index.md)   
- [アセンブリを使用したプログラミング](http://msdn.microsoft.com/library/25918b15-701d-42c7-95fc-c290d08648d6)   
- [アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="4b06f-239">関連項目</span><span class="sxs-lookup"><span data-stu-id="4b06f-239">See Also</span></span>  
+ [<span data-ttu-id="4b06f-240">/link (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4b06f-240">/link (Visual Basic)</span></span>](../../../../visual-basic/reference/command-line-compiler/link.md)  
+ [<span data-ttu-id="4b06f-241">プログラミングの概念</span><span class="sxs-lookup"><span data-stu-id="4b06f-241">Programming Concepts</span></span>](../../../../visual-basic/programming-guide/concepts/index.md)  
+ [<span data-ttu-id="4b06f-242">アセンブリを使用したプログラミング</span><span class="sxs-lookup"><span data-stu-id="4b06f-242">Programming with Assemblies</span></span>](../../../../framework/app-domains/programming-with-assemblies.md)  
+ [<span data-ttu-id="4b06f-243">アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4b06f-243">Assemblies and the Global Assembly Cache (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)

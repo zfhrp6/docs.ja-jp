@@ -1,73 +1,74 @@
 ---
-title: "Windows フォーム DataGridView コントロールにおける新規レコード行の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "DataGridView コントロール [Windows フォーム], 追加 (新規レコード行を)"
-  - "DataGridView コントロール [Windows フォーム], データ エントリ"
-  - "行, 新規レコード"
+title: "Windows フォーム DataGridView コントロールにおける新規レコード行の使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DataGridView control [Windows Forms], adding rows for new records
+- rows [Windows Forms], new records
+- DataGridView control [Windows Forms], data entry
 ms.assetid: 6110f1ea-9794-442c-a98a-f104a1feeaf4
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f4633a70f6c3d010e6cc75236778cf2fd59c0e05
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム DataGridView コントロールにおける新規レコード行の使用
-アプリケーションでデータを編集するために <xref:System.Windows.Forms.DataGridView> を使用するときは、多くの場合、新しいデータ行をデータ ストアに追加する機能をユーザーに提供します。  <xref:System.Windows.Forms.DataGridView> コントロールはこの機能をサポートし、追加される新しいレコード行は常に最後の行として表示されます。  この行のヘッダーには、アスタリスク \(\*\) の記号が表示されます。  以下のセクションでは、新規レコード行を有効にしてプログラミングするときの考慮事項について説明します。  
+# <a name="using-the-row-for-new-records-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="2758d-102">Windows フォーム DataGridView コントロールにおける新規レコード行の使用</span><span class="sxs-lookup"><span data-stu-id="2758d-102">Using the Row for New Records in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="2758d-103">使用すると、<xref:System.Windows.Forms.DataGridView>アプリケーション内のデータを編集するため、多くの場合、データ ストアに新しい行のデータを追加する機能をユーザーに付与します。</span><span class="sxs-lookup"><span data-stu-id="2758d-103">When you use a <xref:System.Windows.Forms.DataGridView> for editing data in your application, you will often want to give your users the ability to add new rows of data to the data store.</span></span> <span data-ttu-id="2758d-104"><xref:System.Windows.Forms.DataGridView>コントロールは、最後の行として常に表示されている、新しいレコードの行を指定してこの機能をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="2758d-104">The <xref:System.Windows.Forms.DataGridView> control supports this functionality by providing a row for new records, which is always shown as the last row.</span></span> <span data-ttu-id="2758d-105">行のヘッダーにアスタリスク (*) 記号が付きます。</span><span class="sxs-lookup"><span data-stu-id="2758d-105">It is marked with an asterisk (*) symbol in its row header.</span></span> <span data-ttu-id="2758d-106">次のセクションでは、新しいレコードの行でプログラムが有効な場合の考慮事項について説明します。</span><span class="sxs-lookup"><span data-stu-id="2758d-106">The following sections discuss some of the things you should consider when you program with the row for new records enabled.</span></span>  
   
-## 新規レコード行の表示  
- <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> プロパティを使用して、新規レコード行を表示するかどうかを指定します。  このプロパティの既定値は `true` です。  
+## <a name="displaying-the-row-for-new-records"></a><span data-ttu-id="2758d-107">新しいレコードの行を表示します。</span><span class="sxs-lookup"><span data-stu-id="2758d-107">Displaying the Row for New Records</span></span>  
+ <span data-ttu-id="2758d-108">使用して、<xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A>新しいレコードの行を表示するかどうかを示すプロパティです。</span><span class="sxs-lookup"><span data-stu-id="2758d-108">Use the <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> property to indicate whether the row for new records is displayed.</span></span> <span data-ttu-id="2758d-109">このプロパティの既定値は `true` です。</span><span class="sxs-lookup"><span data-stu-id="2758d-109">The default value of this property is `true`.</span></span>  
   
- データがバインドされている場合、コントロールの <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> プロパティとデータ ソースの <xref:System.ComponentModel.IBindingList.AllowNew%2A?displayProperty=fullName> プロパティが共に `true` であると、新規レコード行が表示されます。  これらのプロパティのいずれかが `false` の場合、行は表示されません。  
+ <span data-ttu-id="2758d-110">新しいレコードの行が表示されるデータのバインドの場合の場合、<xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A>コントロールのプロパティと<xref:System.ComponentModel.IBindingList.AllowNew%2A?displayProperty=nameWithType>データ ソースのプロパティが両方とも`true`です。</span><span class="sxs-lookup"><span data-stu-id="2758d-110">For the data bound case, the row for new records will be shown if the <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> property of the control and the <xref:System.ComponentModel.IBindingList.AllowNew%2A?displayProperty=nameWithType> property of the data source are both `true`.</span></span> <span data-ttu-id="2758d-111">いずれかの場合`false`その行は表示されません。</span><span class="sxs-lookup"><span data-stu-id="2758d-111">If either is `false` then the row will not be shown.</span></span>  
   
-## 新規レコード行への既定のデータの読み込み  
- ユーザーが新規レコード行を現在の行として選択すると、<xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded> イベントを生成します。  
+## <a name="populating-the-row-for-new-records-with-default-data"></a><span data-ttu-id="2758d-112">既定のデータの新しいレコードの行を設定します。</span><span class="sxs-lookup"><span data-stu-id="2758d-112">Populating the Row for New Records with Default Data</span></span>  
+ <span data-ttu-id="2758d-113">ユーザーが現在の行と新しいレコードの行を選択するとき、<xref:System.Windows.Forms.DataGridView>制御が発生し、<xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded>イベント。</span><span class="sxs-lookup"><span data-stu-id="2758d-113">When the user selects the row for new records as the current row, the <xref:System.Windows.Forms.DataGridView> control raises the <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded> event.</span></span>  
   
- このイベントは新しい <xref:System.Windows.Forms.DataGridViewRow> へのアクセスを可能にし、新しい行に既定のデータを読み込むことができるようにします。  詳細については、「[方法 : Windows フォーム DataGridView コントロールの新しい行に既定値を指定する](../../../../docs/framework/winforms/controls/specify-default-values-for-new-rows-in-the-datagrid.md)」を参照してください。  
+ <span data-ttu-id="2758d-114">このイベントは、新しいへのアクセスを提供<xref:System.Windows.Forms.DataGridViewRow>既定のデータを新しい行に設定することができます。</span><span class="sxs-lookup"><span data-stu-id="2758d-114">This event provides access to the new <xref:System.Windows.Forms.DataGridViewRow> and enables you to populate the new row with default data.</span></span> <span data-ttu-id="2758d-115">詳細については、次を参照してください[する方法: Windows フォーム DataGridView コントロールの新しい行の既定値の指定。](../../../../docs/framework/winforms/controls/specify-default-values-for-new-rows-in-the-datagrid.md)</span><span class="sxs-lookup"><span data-stu-id="2758d-115">For more information, see [How to: Specify Default Values for New Rows in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/specify-default-values-for-new-rows-in-the-datagrid.md)</span></span>  
   
-## 行コレクション  
- 新規レコード行は、<xref:System.Windows.Forms.DataGridView> コントロールの <xref:System.Windows.Forms.DataGridView.Rows%2A> コレクションに含まれますが、次の 2 つの点で動作の仕方が異なります。  
+## <a name="the-rows-collection"></a><span data-ttu-id="2758d-116">行のコレクション</span><span class="sxs-lookup"><span data-stu-id="2758d-116">The Rows Collection</span></span>  
+ <span data-ttu-id="2758d-117">新しいレコードの行が含まれている、<xref:System.Windows.Forms.DataGridView>コントロールの<xref:System.Windows.Forms.DataGridView.Rows%2A>コレクションが、2 つの点で動作が異なります。</span><span class="sxs-lookup"><span data-stu-id="2758d-117">The row for new records is contained in the <xref:System.Windows.Forms.DataGridView> control's <xref:System.Windows.Forms.DataGridView.Rows%2A> collection but behaves differently in two respects:</span></span>  
   
--   新規レコード行は、プログラムによって <xref:System.Windows.Forms.DataGridView.Rows%2A> コレクションから削除できません。  削除しようとすると、<xref:System.InvalidOperationException> がスローされます。  また、新規レコード行は、ユーザーが削除することもできません。  <xref:System.Windows.Forms.DataGridViewRowCollection.Clear%2A?displayProperty=fullName> メソッドは、この行を <xref:System.Windows.Forms.DataGridView.Rows%2A> コレクションから削除しません。  
+-   <span data-ttu-id="2758d-118">新しいレコードの行を削除できません、<xref:System.Windows.Forms.DataGridView.Rows%2A>コレクション プログラムでします。</span><span class="sxs-lookup"><span data-stu-id="2758d-118">The row for new records cannot be removed from the <xref:System.Windows.Forms.DataGridView.Rows%2A> collection programmatically.</span></span> <span data-ttu-id="2758d-119"><xref:System.InvalidOperationException>が、これが試行された場合にスローされます。</span><span class="sxs-lookup"><span data-stu-id="2758d-119">An <xref:System.InvalidOperationException> is thrown if this is attempted.</span></span> <span data-ttu-id="2758d-120">また、ユーザーは、新しいレコードの行を削除できません。</span><span class="sxs-lookup"><span data-stu-id="2758d-120">The user also cannot delete the row for new records.</span></span> <span data-ttu-id="2758d-121"><xref:System.Windows.Forms.DataGridViewRowCollection.Clear%2A?displayProperty=nameWithType>メソッドでは、この行からは削除されません、<xref:System.Windows.Forms.DataGridView.Rows%2A>コレクション。</span><span class="sxs-lookup"><span data-stu-id="2758d-121">The <xref:System.Windows.Forms.DataGridViewRowCollection.Clear%2A?displayProperty=nameWithType> method does not remove this row from the <xref:System.Windows.Forms.DataGridView.Rows%2A> collection.</span></span>  
   
--   新規レコード行の後に行を追加できません。  そのように設定しようとすると、<xref:System.InvalidOperationException> が生成されます。  このため、新規レコード行は、常に <xref:System.Windows.Forms.DataGridView> コントロールの最後の行になります。  行を追加する、<xref:System.Windows.Forms.DataGridViewRowCollection> のメソッド \(<xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A>、<xref:System.Windows.Forms.DataGridViewRowCollection.AddCopy%2A>、および<xref:System.Windows.Forms.DataGridViewRowCollection.AddCopies%2A>\) はすべて、新規レコード行が存在するときに挿入メソッドを内部的に呼び出します。  
+-   <span data-ttu-id="2758d-122">新しいレコードに対して行の後に行を追加されません。</span><span class="sxs-lookup"><span data-stu-id="2758d-122">No row can be added after the row for new records.</span></span> <span data-ttu-id="2758d-123"><xref:System.InvalidOperationException>これが試行された場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="2758d-123">An <xref:System.InvalidOperationException> is raised if this is attempted.</span></span> <span data-ttu-id="2758d-124">その結果、新しいレコードの行は常に最後の行に、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="2758d-124">As a result, the row for new records is always the last row in the <xref:System.Windows.Forms.DataGridView> control.</span></span> <span data-ttu-id="2758d-125">メソッドを<xref:System.Windows.Forms.DataGridViewRowCollection>行を追加する —<xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A>、 <xref:System.Windows.Forms.DataGridViewRowCollection.AddCopy%2A>、および<xref:System.Windows.Forms.DataGridViewRowCollection.AddCopies%2A>— すべてメソッドを呼び出す挿入内部的に新しいレコードの行が存在する場合。</span><span class="sxs-lookup"><span data-stu-id="2758d-125">The methods on <xref:System.Windows.Forms.DataGridViewRowCollection> that add rows—<xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A>, <xref:System.Windows.Forms.DataGridViewRowCollection.AddCopy%2A>, and <xref:System.Windows.Forms.DataGridViewRowCollection.AddCopies%2A>—all call insertion methods internally when the row for new records is present.</span></span>  
   
-## 新規レコード行のビジュアル カスタマイズ  
- 新規レコード行は、<xref:System.Windows.Forms.DataGridView.RowTemplate%2A> プロパティで指定された行に基づいて作成されます。  この行に指定されていないセル スタイルは、他のプロパティから継承されます。  セル スタイルの継承の詳細については、「[Windows フォーム DataGridView コントロールでのセルのスタイル](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)」を参照してください。  
+## <a name="visual-customization-of-the-row-for-new-records"></a><span data-ttu-id="2758d-126">新しいレコードに対して行の視覚的なカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="2758d-126">Visual Customization of the Row for New Records</span></span>  
+ <span data-ttu-id="2758d-127">指定される行に基づいて新しいレコードの行が作成されるとき、<xref:System.Windows.Forms.DataGridView.RowTemplate%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="2758d-127">When the row for new records is created, it is based on the row specified by the <xref:System.Windows.Forms.DataGridView.RowTemplate%2A> property.</span></span> <span data-ttu-id="2758d-128">この行に指定されていない任意のセル スタイルは、その他のプロパティから継承されます。</span><span class="sxs-lookup"><span data-stu-id="2758d-128">Any cell styles that are not specified for this row are inherited from other properties.</span></span> <span data-ttu-id="2758d-129">セル スタイルの継承の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのセル スタイル](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="2758d-129">For more information about cell style inheritance, see [Cell Styles in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md).</span></span>  
   
- 新規レコード行のセルに表示される初期値は、各セルの <xref:System.Windows.Forms.DataGridViewCell.DefaultNewRowValue%2A> プロパティから取得されます。  セルの種類が <xref:System.Windows.Forms.DataGridViewImageCell> の場合、このプロパティはプレースホルダー イメージを返します。  それ以外の場合は、`null` を返します。  このプロパティは、カスタム値を返すようにオーバーライドできます。  ただし、セルの初期値は、新規レコード行にフォーカスが入ったときに <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded> イベント ハンドラーによって置き換えることができます。  
+ <span data-ttu-id="2758d-130">新しいレコードは各セルから取り出したの行内のセルに表示される初期値<xref:System.Windows.Forms.DataGridViewCell.DefaultNewRowValue%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="2758d-130">The initial values displayed by cells in the row for new records are retrieved from each cell's <xref:System.Windows.Forms.DataGridViewCell.DefaultNewRowValue%2A> property.</span></span> <span data-ttu-id="2758d-131">型のセルの<xref:System.Windows.Forms.DataGridViewImageCell>、このプロパティは、プレース ホルダー イメージを返します。</span><span class="sxs-lookup"><span data-stu-id="2758d-131">For cells of type <xref:System.Windows.Forms.DataGridViewImageCell>, this property returns a placeholder image.</span></span> <span data-ttu-id="2758d-132">このプロパティを返しますそれ以外の場合、`null`です。</span><span class="sxs-lookup"><span data-stu-id="2758d-132">Otherwise, this property returns `null`.</span></span> <span data-ttu-id="2758d-133">カスタム値を返すには、このプロパティをオーバーライドすることができます。</span><span class="sxs-lookup"><span data-stu-id="2758d-133">You can override this property to return a custom value.</span></span> <span data-ttu-id="2758d-134">ただし、これらの初期値に置換できます、<xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded>フォーカスが新しいレコードの行を入力するときにイベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="2758d-134">However, these initial values can be replaced by a <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded> event handler when focus enters the row for new records.</span></span>  
   
- この行のヘッダーの標準アイコン \(矢印またはアスタリスク\) は公開されません。  このアイコンをカスタマイズする場合は、カスタムの <xref:System.Windows.Forms.DataGridViewRowHeaderCell> クラスを作成する必要があります。  
+ <span data-ttu-id="2758d-135">矢印またはアスタリスクは、この行のヘッダーの標準的なアイコンがパブリックに公開されていません。</span><span class="sxs-lookup"><span data-stu-id="2758d-135">The standard icons for this row's header, which are an arrow or an asterisk, are not exposed publicly.</span></span> <span data-ttu-id="2758d-136">アイコンをカスタマイズする場合は、カスタムを作成する必要があります。<xref:System.Windows.Forms.DataGridViewRowHeaderCell>クラスです。</span><span class="sxs-lookup"><span data-stu-id="2758d-136">If you want to customize the icons, you will need to create a custom <xref:System.Windows.Forms.DataGridViewRowHeaderCell> class.</span></span>  
   
- 標準アイコンは、行ヘッダー セルで使用されている <xref:System.Windows.Forms.DataGridViewCellStyle> の <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A> プロパティを使用します。  標準アイコンは、表示領域が不十分な場合は描画されません。  
+ <span data-ttu-id="2758d-137">標準のアイコンを使用して、<xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewCellStyle>行ヘッダー セルで使用します。</span><span class="sxs-lookup"><span data-stu-id="2758d-137">The standard icons use the <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A> property of the <xref:System.Windows.Forms.DataGridViewCellStyle> in use by the row header cell.</span></span> <span data-ttu-id="2758d-138">それらを完全に表示するには、十分な領域がない場合は、標準のアイコンは表示されません。</span><span class="sxs-lookup"><span data-stu-id="2758d-138">The standard icons are not rendered if there is not enough space to display them completely.</span></span>  
   
- 行ヘッダー セルに文字列値が設定され、テキストとアイコンの両方を表示する十分な領域がない場合は、アイコンが最初に無効にされます。  
+ <span data-ttu-id="2758d-139">行ヘッダー セルに設定すると、文字列値が設定されている場合、テキストとアイコンの両方の十分な空き領域がない場合は、アイコンが最初に削除されます。</span><span class="sxs-lookup"><span data-stu-id="2758d-139">If the row header cell has a string value set, and if there is not enough room for both the text and icon, the icon is dropped first.</span></span>  
   
-## 並べ替え  
- 非バインド モードでは、ユーザーが <xref:System.Windows.Forms.DataGridView> のコンテンツを並べ替えた場合でも、新規レコードは常に <xref:System.Windows.Forms.DataGridView> の最後に追加されます。  行を正確な位置に並べ替えるには、再度並べ替えを適用する必要があります。この動作は、<xref:System.Windows.Forms.ListView> コントロールの動作に似ています。  
+## <a name="sorting"></a><span data-ttu-id="2758d-140">並べ替え</span><span class="sxs-lookup"><span data-stu-id="2758d-140">Sorting</span></span>  
+ <span data-ttu-id="2758d-141">バインドされていないモードで新しいレコードを常に追加の末尾に、 <xref:System.Windows.Forms.DataGridView> 、ユーザーがの内容を並べ替える場合でも、<xref:System.Windows.Forms.DataGridView>です。</span><span class="sxs-lookup"><span data-stu-id="2758d-141">In unbound mode, new records will always be added to the end of the <xref:System.Windows.Forms.DataGridView> even if the user has sorted the content of the <xref:System.Windows.Forms.DataGridView>.</span></span> <span data-ttu-id="2758d-142">ユーザーが、正しい位置に行を並べ替えるために再度並べ替えを適用する必要があります。この動作はに似ていますが、<xref:System.Windows.Forms.ListView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="2758d-142">The user will need to apply the sort again in order to sort the row to the correct position; this behavior is similar to that of the <xref:System.Windows.Forms.ListView> control.</span></span>  
   
- データ バインド モードと仮想モードでは、並べ替えを適用したときの挿入動作は、データ モデルの実装によって異なります。  [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] では、行がすぐに正確な位置に並べ替えられます。  
+ <span data-ttu-id="2758d-143">データのバインドと仮想モードの場合、並べ替えが適用されるときに、カーソル動作は、データ モデルの実装に依存してになります。</span><span class="sxs-lookup"><span data-stu-id="2758d-143">In data bound and virtual modes, the insertion behavior when a sort is applied will be dependent on the implementation of the data model.</span></span> <span data-ttu-id="2758d-144">[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]行が正しい位置にすぐに並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="2758d-144">For [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], the row is immediately sorted into the correct position.</span></span>  
   
-## 新規レコード行に関するその他の注意  
- この行の <xref:System.Windows.Forms.DataGridViewRow.Visible%2A> プロパティは、`false` に設定できません。  そのように設定しようとすると、<xref:System.InvalidOperationException> が生成されます。  
+## <a name="other-notes-on-the-row-for-new-records"></a><span data-ttu-id="2758d-145">新しいレコードの行の他の注意事項</span><span class="sxs-lookup"><span data-stu-id="2758d-145">Other Notes on the Row for New Records</span></span>  
+ <span data-ttu-id="2758d-146">設定することはできません、<xref:System.Windows.Forms.DataGridViewRow.Visible%2A>プロパティには、この行の`false`します。</span><span class="sxs-lookup"><span data-stu-id="2758d-146">You cannot set the <xref:System.Windows.Forms.DataGridViewRow.Visible%2A> property of this row to `false`.</span></span> <span data-ttu-id="2758d-147"><xref:System.InvalidOperationException>これが試行された場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="2758d-147">An <xref:System.InvalidOperationException> is raised if this is attempted.</span></span>  
   
- 新規レコード行は、常に未選択の状態で作成されます。  
+ <span data-ttu-id="2758d-148">新しいレコードの行は、選択されていない状態で常に作成されます。</span><span class="sxs-lookup"><span data-stu-id="2758d-148">The row for new records is always created in the unselected state.</span></span>  
   
-## 仮想モード  
- 仮想モードを実装する場合は、新規レコード行がデータ モデルで必要になる時点と、新規レコード行の追加をロールバックする時点を監視する必要があります。  この機能の正確な実装は、データ モデルの実装とそのトランザクション セマンティクス \(たとえば、コミット スコープがセル レベルか、行レベルかなど\) によって異なります。  詳細については、「[Windows フォーム DataGridView コントロールでの仮想モード](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)」を参照してください。  
+## <a name="virtual-mode"></a><span data-ttu-id="2758d-149">仮想モード</span><span class="sxs-lookup"><span data-stu-id="2758d-149">Virtual Mode</span></span>  
+ <span data-ttu-id="2758d-150">仮想モードを実装している場合は、データ モデルと、行の追加をロールバックする時点で新しいレコードの行が必要なときに追跡する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2758d-150">If you are implementing virtual mode, you will need to track when a row for new records is needed in the data model and when to roll back the addition of the row.</span></span> <span data-ttu-id="2758d-151">この機能の正確な実装によって異なります、データ モデルとそのトランザクションのセマンティクスの実装など、コミットのスコープがセルまたは行レベルにあるかどうか。</span><span class="sxs-lookup"><span data-stu-id="2758d-151">The exact implementation of this functionality depends on the implementation of the data model and its transaction semantics, for example, whether commit scope is at the cell or row level.</span></span> <span data-ttu-id="2758d-152">詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールでの仮想モード](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="2758d-152">For more information, see [Virtual Mode in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded?displayProperty=fullName>   
- [Windows フォーム DataGridView コントロールでのデータ入力](../../../../docs/framework/winforms/controls/data-entry-in-the-windows-forms-datagridview-control.md)   
- [方法 : Windows フォーム DataGridView コントロールの新しい行に既定値を指定する](../../../../docs/framework/winforms/controls/specify-default-values-for-new-rows-in-the-datagrid.md)
+## <a name="see-also"></a><span data-ttu-id="2758d-153">関連項目</span><span class="sxs-lookup"><span data-stu-id="2758d-153">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded?displayProperty=nameWithType>  
+ [<span data-ttu-id="2758d-154">Windows フォーム DataGridView コントロールでのデータ入力</span><span class="sxs-lookup"><span data-stu-id="2758d-154">Data Entry in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/data-entry-in-the-windows-forms-datagridview-control.md)  
+ [<span data-ttu-id="2758d-155">方法: Windows フォーム DataGridView コントロールの新しい行に既定値を指定する</span><span class="sxs-lookup"><span data-stu-id="2758d-155">How to: Specify Default Values for New Rows in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/specify-default-values-for-new-rows-in-the-datagrid.md)

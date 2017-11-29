@@ -1,48 +1,40 @@
 ---
-title: "方法: 大きな XML ドキュメント (Visual Basic) のストリーミング変換を実行 |Microsoft ドキュメント"
+title: "方法: 大きな XML ドキュメント (Visual Basic) のストリーミング変換を実行します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 3d954cc9-4b3c-4b47-8132-ff7541cff53b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f35e42e29e316fe1610a011263aa68e622fb95a5
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: d211cbd1c94d485e0c41d23eb12dcae28ae7ad6e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-perform-streaming-transform-of-large-xml-documents-visual-basic"></a>方法: 大きな XML ドキュメント (Visual Basic) のストリーミング変換を実行
-大きな XML ファイルを変換して、アプリケーションのメモリ使用量を予想できるようにアプリケーションを作成しなければならない場合があります。 非常に大きな XML ファイルを XML ツリーに設定しようとすると、ファイルのサイズに比例してメモリが過剰に使用されます。 したがって、代わりにストリーミングの手法を使用する必要があります。  
+# <a name="how-to-perform-streaming-transform-of-large-xml-documents-visual-basic"></a><span data-ttu-id="22ff2-102">方法: 大きな XML ドキュメント (Visual Basic) のストリーミング変換を実行します。</span><span class="sxs-lookup"><span data-stu-id="22ff2-102">How to: Perform Streaming Transform of Large XML Documents (Visual Basic)</span></span>
+<span data-ttu-id="22ff2-103">大きな XML ファイルを変換して、アプリケーションのメモリ使用量を予想できるようにアプリケーションを作成しなければならない場合があります。</span><span class="sxs-lookup"><span data-stu-id="22ff2-103">Sometimes you have to transform large XML files, and write your application so that the memory footprint of the application is predictable.</span></span> <span data-ttu-id="22ff2-104">非常に大きな XML ファイルを XML ツリーに設定しようとすると、ファイルのサイズに比例してメモリが過剰に使用されます。</span><span class="sxs-lookup"><span data-stu-id="22ff2-104">If you try to populate an XML tree with a very large XML file, your memory usage will be proportional to the size of the file (that is, excessive).</span></span> <span data-ttu-id="22ff2-105">したがって、代わりにストリーミングの手法を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="22ff2-105">Therefore, you should use a streaming technique instead.</span></span>  
   
- ストリーミングの手法は、ソース ドキュメントを&1; 回だけ処理する必要がある場合に適しており、ドキュメントの順序で要素を処理できます。 一部の標準クエリ演算子でなど<xref:System.Linq.Enumerable.OrderBy%2A>、そのソースを反復処理する、すべてのデータを収集、並べ替えられて、および最終的に、シーケンスの最初の項目が生成されます</xref:System.Linq.Enumerable.OrderBy%2A>。 最初の項目を生成する前にソースを具体化するクエリ演算子を使用すると、アプリケーションのメモリ使用量を低く維持することができないので注意してください。  
+ <span data-ttu-id="22ff2-106">ストリーミングの手法は、ソース ドキュメントを 1 回だけ処理する必要がある場合に適しており、ドキュメントの順序で要素を処理できます。</span><span class="sxs-lookup"><span data-stu-id="22ff2-106">Streaming techniques are best applied in situations where you need to process the source document only once, and you can process the elements in document order.</span></span> <span data-ttu-id="22ff2-107"><xref:System.Linq.Enumerable.OrderBy%2A> などの一部の標準クエリ演算子では、ソースが反復処理され、すべてのデータが収集され並べ替えられて、最終的にはシーケンス内の最初の項目が生成されます。</span><span class="sxs-lookup"><span data-stu-id="22ff2-107">Certain standard query operators, such as <xref:System.Linq.Enumerable.OrderBy%2A>, iterate their source, collect all of the data, sort it, and then finally yield the first item in the sequence.</span></span> <span data-ttu-id="22ff2-108">最初の項目を生成する前にソースを具体化するクエリ演算子を使用すると、アプリケーションのメモリ使用量を低く維持することができないので注意してください。</span><span class="sxs-lookup"><span data-stu-id="22ff2-108">Note that if you use a query operator that materializes its source before yielding the first item, you will not retain a small memory footprint for your application.</span></span>  
   
- 説明したテクニックを使用する場合でも[方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)、変換されたドキュメントのメモリ使用量が非常に高いを含む XML ツリーをアセンブルしようとする場合。  
+ <span data-ttu-id="22ff2-109">説明した手法を使用する場合でも[する方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)、変換後のドキュメントでは、メモリ使用率が高すぎるされますを含む XML ツリーをアセンブルしようとする場合。</span><span class="sxs-lookup"><span data-stu-id="22ff2-109">Even if you use the technique described in [How to: Stream XML Fragments with Access to Header Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md), if you try to assemble an XML tree that contains the transformed document, memory usage will be too great.</span></span>  
   
- 主な方法は&2; つあります。 1 つの方法は、 <xref:System.Xml.Linq.XStreamingElement>。</xref:System.Xml.Linq.XStreamingElement>の遅延処理の特性を使用するには 別の方法は、作成する、<xref:System.Xml.XmlWriter>の機能を使用して[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter>に要素を書き込む</xref:System.Xml.XmlWriter> このトピックでは、両方の方法について説明します。  
+ <span data-ttu-id="22ff2-110">主な方法は 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="22ff2-110">There are two main approaches.</span></span> <span data-ttu-id="22ff2-111">1 つは、<xref:System.Xml.Linq.XStreamingElement> の遅延処理の特性を使用する方法です。</span><span class="sxs-lookup"><span data-stu-id="22ff2-111">One approach is to use the deferred processing characteristics of <xref:System.Xml.Linq.XStreamingElement>.</span></span> <span data-ttu-id="22ff2-112">もう 1 つは、<xref:System.Xml.XmlWriter> を作成し、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の機能を使用して <xref:System.Xml.XmlWriter> に要素を書き込む方法です。</span><span class="sxs-lookup"><span data-stu-id="22ff2-112">Another approach is to create an <xref:System.Xml.XmlWriter>, and use the capabilities of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to write elements to an <xref:System.Xml.XmlWriter>.</span></span> <span data-ttu-id="22ff2-113">このトピックでは、両方の方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="22ff2-113">This topic demonstrates both approaches.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、例では、ビルド[方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)します。  
+## <a name="example"></a><span data-ttu-id="22ff2-114">例</span><span class="sxs-lookup"><span data-stu-id="22ff2-114">Example</span></span>  
+ <span data-ttu-id="22ff2-115">次の例の例でビルド[する方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)です。</span><span class="sxs-lookup"><span data-stu-id="22ff2-115">The following example builds on the example in [How to: Stream XML Fragments with Access to Header Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md).</span></span>  
   
- この例の遅延実行機能を使用して<xref:System.Xml.Linq.XStreamingElement>してストリーム出力します</xref:System.Xml.Linq.XStreamingElement>。 この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。  
+ <span data-ttu-id="22ff2-116">この例では、<xref:System.Xml.Linq.XStreamingElement> の遅延実行機能を使用してストリーム出力しています。</span><span class="sxs-lookup"><span data-stu-id="22ff2-116">This example uses the deferred execution capabilities of <xref:System.Xml.Linq.XStreamingElement> to stream the output.</span></span> <span data-ttu-id="22ff2-117">この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。</span><span class="sxs-lookup"><span data-stu-id="22ff2-117">This example can transform a very large document while maintaining a small memory footprint.</span></span>  
   
- カスタム軸 (`StreamCustomerItem`) は、`Customer`、`Name`、`Item` の各要素を含んだドキュメントを前提として記述されています。また、それらの要素は、次に示す Source.xml ドキュメントと同じように配置されます。 ただし、より堅牢に実装する場合は、無効なドキュメントの解析にも対応するようにします。  
+ <span data-ttu-id="22ff2-118">カスタム軸 (`StreamCustomerItem`) は、`Customer`、`Name`、`Item` の各要素を含んだドキュメントを前提として記述されています。また、それらの要素は、次に示す Source.xml ドキュメントと同じように配置されます。</span><span class="sxs-lookup"><span data-stu-id="22ff2-118">Note that the custom axis (`StreamCustomerItem`) is specifically written so that it expects a document that has `Customer`, `Name`, and `Item` elements, and that those elements will be arranged as in the following Source.xml document.</span></span> <span data-ttu-id="22ff2-119">ただし、より堅牢に実装する場合は、無効なドキュメントの解析にも対応するようにします。</span><span class="sxs-lookup"><span data-stu-id="22ff2-119">A more robust implementation, however, would be prepared to parse an invalid document.</span></span>  
   
- ソース ドキュメント Source.xml を次に示します。  
+ <span data-ttu-id="22ff2-120">ソース ドキュメント Source.xml を次に示します。</span><span class="sxs-lookup"><span data-stu-id="22ff2-120">The following is the source document, Source.xml:</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>   
@@ -214,7 +206,7 @@ Public Class StreamCustomerItemEnumerator
 End Class  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="22ff2-121">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="22ff2-121">This code produces the following output:</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -262,16 +254,16 @@ End Class
 </Root>  
 ```  
   
-## <a name="example"></a>例  
- 次の例は、の例でもビルド[方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)します。  
+## <a name="example"></a><span data-ttu-id="22ff2-122">例</span><span class="sxs-lookup"><span data-stu-id="22ff2-122">Example</span></span>  
+ <span data-ttu-id="22ff2-123">次の例は、上の例でも構築[する方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)です。</span><span class="sxs-lookup"><span data-stu-id="22ff2-123">The following example also builds on the example in [How to: Stream XML Fragments with Access to Header Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md).</span></span>  
   
- この例の機能を使用して[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter>に要素を書き込む この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。  
+ <span data-ttu-id="22ff2-124">この例では、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の機能を使用して <xref:System.Xml.XmlWriter> に要素を書き込みます。</span><span class="sxs-lookup"><span data-stu-id="22ff2-124">This example uses the capability of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to write elements to an <xref:System.Xml.XmlWriter>.</span></span> <span data-ttu-id="22ff2-125">この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。</span><span class="sxs-lookup"><span data-stu-id="22ff2-125">This example can transform a very large document while maintaining a small memory footprint.</span></span>  
   
- カスタム軸 (`StreamCustomerItem`) は、`Customer`、`Name`、`Item` の各要素を含んだドキュメントを前提として記述されています。また、それらの要素は、次に示す Source.xml ドキュメントと同じように配置されます。 ただし、より堅牢に実装する場合は、ソース ドキュメントを XSD で検証するか、無効なドキュメントの解析にも対応するようにします。  
+ <span data-ttu-id="22ff2-126">カスタム軸 (`StreamCustomerItem`) は、`Customer`、`Name`、`Item` の各要素を含んだドキュメントを前提として記述されています。また、それらの要素は、次に示す Source.xml ドキュメントと同じように配置されます。</span><span class="sxs-lookup"><span data-stu-id="22ff2-126">Note that the custom axis (`StreamCustomerItem`) is specifically written so that it expects a document that has `Customer`, `Name`, and `Item` elements, and that those elements will be arranged as in the following Source.xml document.</span></span> <span data-ttu-id="22ff2-127">ただし、より堅牢に実装する場合は、ソース ドキュメントを XSD で検証するか、無効なドキュメントの解析にも対応するようにします。</span><span class="sxs-lookup"><span data-stu-id="22ff2-127">A more robust implementation, however, would either validate the source document with an XSD, or would be prepared to parse an invalid document.</span></span>  
   
- この例でも、このトピックの前の例と同じソース ドキュメント Source.xml を使用します。 生成される出力も同じになります。  
+ <span data-ttu-id="22ff2-128">この例でも、このトピックの前の例と同じソース ドキュメント Source.xml を使用します。</span><span class="sxs-lookup"><span data-stu-id="22ff2-128">This example uses the same source document, Source.xml, as the previous example in this topic.</span></span> <span data-ttu-id="22ff2-129">生成される出力も同じになります。</span><span class="sxs-lookup"><span data-stu-id="22ff2-129">It also produces exactly the same output.</span></span>  
   
- <xref:System.Xml.Linq.XStreamingElement>XML は<xref:System.Xml.XmlWriter>。</xref:System.Xml.XmlWriter>を記述するより優先される出力のストリーミングに</xref:System.Xml.Linq.XStreamingElement>使用します。  
+ <span data-ttu-id="22ff2-130"><xref:System.Xml.Linq.XStreamingElement> に書き込むよりも、<xref:System.Xml.XmlWriter> を使用して出力 XML をストリーミングすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="22ff2-130">Using <xref:System.Xml.Linq.XStreamingElement> for streaming the output XML is preferred over writing to an <xref:System.Xml.XmlWriter>.</span></span>  
   
 ```vb  
 Module Module1  
@@ -409,7 +401,7 @@ Public Class StreamCustomerItemEnumerator
 End Class  
 ```  
   
- このコードを実行すると、次の出力が生成されます。  
+ <span data-ttu-id="22ff2-131">このコードを実行すると、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="22ff2-131">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -456,5 +448,5 @@ End Class
 </Root>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+## <a name="see-also"></a><span data-ttu-id="22ff2-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="22ff2-132">See Also</span></span>  
+ [<span data-ttu-id="22ff2-133">高度な LINQ to XML プログラミング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="22ff2-133">Advanced LINQ to XML Programming (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

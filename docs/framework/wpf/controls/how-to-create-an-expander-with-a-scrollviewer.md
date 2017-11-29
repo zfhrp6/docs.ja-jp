@@ -1,39 +1,42 @@
 ---
-title: "方法 : ScrollViewer を持つエキスパンダーを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール [WPF], Expander"
-  - "コントロール [WPF], ScrollViewer"
-  - "Expander コントロール, 作成"
-  - "ScrollViewer コントロール, Expander コントロールを備えた"
+title: "方法 : ScrollViewer を持つエキスパンダーを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [WPF], Expander
+- ScrollViewer control [WPF], with Expander control
+- Expander control [WPF], creating
+- controls [WPF], ScrollViewer
 ms.assetid: 2ad124d2-2406-4157-aaf2-64e067298f01
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 817fb8d04e680335aff726db84cdfb9630b4cdf4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ScrollViewer を持つエキスパンダーを作成する
-この例では、イメージやテキストなどの複雑なコンテンツを格納した <xref:System.Windows.Controls.Expander> コントロールを作成する方法を示します。  また、この例では、<xref:System.Windows.Controls.Expander> のコンテンツを <xref:System.Windows.Controls.ScrollViewer> コントロールで囲む方法も示します。  
+# <a name="how-to-create-an-expander-with-a-scrollviewer"></a><span data-ttu-id="6cf6e-102">方法 : ScrollViewer を持つエキスパンダーを作成する</span><span class="sxs-lookup"><span data-stu-id="6cf6e-102">How to: Create an Expander with a ScrollViewer</span></span>
+<span data-ttu-id="6cf6e-103">この例を作成する方法を示しています、<xref:System.Windows.Controls.Expander>イメージやテキストなどの複雑なコンテンツを格納するコントロール。</span><span class="sxs-lookup"><span data-stu-id="6cf6e-103">This example shows how to create an <xref:System.Windows.Controls.Expander> control that contains complex content, such as an image and text.</span></span> <span data-ttu-id="6cf6e-104">この例ものコンテンツを囲む、<xref:System.Windows.Controls.Expander>で、<xref:System.Windows.Controls.ScrollViewer>コントロール。</span><span class="sxs-lookup"><span data-stu-id="6cf6e-104">The example also encloses the content of the <xref:System.Windows.Controls.Expander> in a <xref:System.Windows.Controls.ScrollViewer> control.</span></span>  
   
-## 使用例  
- <xref:System.Windows.Controls.Expander> の作成方法を次の例に示します。  この例では、<xref:System.Windows.Controls.HeaderedContentControl.Header%2A> を定義するために、イメージとテキストを含む <xref:System.Windows.Controls.Primitives.BulletDecorator> コントロールを使用しています。  <xref:System.Windows.Controls.ScrollViewer> コントロールは、展開されたコンテンツをスクロールするメソッドを提供します。  
+## <a name="example"></a><span data-ttu-id="6cf6e-105">例</span><span class="sxs-lookup"><span data-stu-id="6cf6e-105">Example</span></span>  
+ <span data-ttu-id="6cf6e-106">次の例を作成する方法を示しています、<xref:System.Windows.Controls.Expander>です。</span><span class="sxs-lookup"><span data-stu-id="6cf6e-106">The following example shows how to create an <xref:System.Windows.Controls.Expander>.</span></span> <span data-ttu-id="6cf6e-107">この例では、<xref:System.Windows.Controls.Primitives.BulletDecorator>を定義するのには画像とテキストを含むコントロール、<xref:System.Windows.Controls.HeaderedContentControl.Header%2A>です。</span><span class="sxs-lookup"><span data-stu-id="6cf6e-107">The example uses a <xref:System.Windows.Controls.Primitives.BulletDecorator> control, which contains an image and text, in order to define the <xref:System.Windows.Controls.HeaderedContentControl.Header%2A>.</span></span> <span data-ttu-id="6cf6e-108">A<xref:System.Windows.Controls.ScrollViewer>コントロールに展開されたコンテンツをスクロールするためのメソッドが用意されています。</span><span class="sxs-lookup"><span data-stu-id="6cf6e-108">A <xref:System.Windows.Controls.ScrollViewer> control provides a method for scrolling the expanded content.</span></span>  
   
- この例では、コンテンツに対してではなく、<xref:System.Windows.Controls.ScrollViewer> に対して <xref:System.Windows.FrameworkElement.Height%2A> プロパティを設定していることに注意してください。  <xref:System.Windows.FrameworkElement.Height%2A> をコンテンツに対して設定すると、<xref:System.Windows.Controls.ScrollViewer> はコンテンツのスクロールを許可しなくなります。  <xref:System.Windows.FrameworkElement.Width%2A> プロパティは <xref:System.Windows.Controls.Expander> コントロールで設定され、この設定は、<xref:System.Windows.Controls.HeaderedContentControl.Header%2A> および展開されたコンテンツに対して適用されます。  
+ <span data-ttu-id="6cf6e-109">例では、セット、<xref:System.Windows.FrameworkElement.Height%2A>プロパティを<xref:System.Windows.Controls.ScrollViewer>の代わりに、コンテンツにします。</span><span class="sxs-lookup"><span data-stu-id="6cf6e-109">Note that the example sets the <xref:System.Windows.FrameworkElement.Height%2A> property on the <xref:System.Windows.Controls.ScrollViewer> instead of on the content.</span></span> <span data-ttu-id="6cf6e-110">場合、 <xref:System.Windows.FrameworkElement.Height%2A> 、コンテンツに設定されている、<xref:System.Windows.Controls.ScrollViewer>ユーザー コンテンツをスクロールすることはできません。</span><span class="sxs-lookup"><span data-stu-id="6cf6e-110">If the <xref:System.Windows.FrameworkElement.Height%2A> is set on the content, the <xref:System.Windows.Controls.ScrollViewer> does not allow the user to scroll the content.</span></span> <span data-ttu-id="6cf6e-111"><xref:System.Windows.FrameworkElement.Width%2A>プロパティが設定されて、<xref:System.Windows.Controls.Expander>に制御し、この設定が適用されます、<xref:System.Windows.Controls.HeaderedContentControl.Header%2A>と展開されたコンテンツ。</span><span class="sxs-lookup"><span data-stu-id="6cf6e-111">The <xref:System.Windows.FrameworkElement.Width%2A> property is set on the <xref:System.Windows.Controls.Expander> control and this setting applies to the <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> and the expanded content.</span></span>  
   
- [!code-xml[ExpanderRichContent#CreateExpander](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml#createexpander)]  
+ [!code-xaml[ExpanderRichContent#CreateExpander](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml#createexpander)]  
   
  [!code-csharp[ExpanderRichContent#CreateExpanderCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml.cs#createexpandercode)]  
   
-## 参照  
- <xref:System.Windows.Controls.Expander>   
- [エキスパンダーの概要](../../../../docs/framework/wpf/controls/expander-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/controls/expander-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="6cf6e-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="6cf6e-112">See Also</span></span>  
+ <xref:System.Windows.Controls.Expander>  
+ [<span data-ttu-id="6cf6e-113">エキスパンダーの概要</span><span class="sxs-lookup"><span data-stu-id="6cf6e-113">Expander Overview</span></span>](../../../../docs/framework/wpf/controls/expander-overview.md)  
+ [<span data-ttu-id="6cf6e-114">方法トピック</span><span class="sxs-lookup"><span data-stu-id="6cf6e-114">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/expander-how-to-topics.md)

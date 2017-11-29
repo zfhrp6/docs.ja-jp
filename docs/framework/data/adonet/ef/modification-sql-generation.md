@@ -1,46 +1,49 @@
 ---
-title: "変更 SQL 生成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "変更 SQL 生成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 0c41f818c554b61dd6e63818627cb494f7c01577
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 変更 SQL 生成
-ここでは、SQL:1999 準拠のデータベース プロバイダーのための変更 SQL 生成モジュールを開発する方法について説明します。  このモジュールは、変更コマンド ツリーを適切な SQL INSERT ステートメント、UPDATE ステートメント、または DELETE ステートメントに変換します。  
+# <a name="modification-sql-generation"></a><span data-ttu-id="d9f2e-102">変更 SQL 生成</span><span class="sxs-lookup"><span data-stu-id="d9f2e-102">Modification SQL Generation</span></span>
+<span data-ttu-id="d9f2e-103">ここでは、SQL:1999 準拠のデータベース プロバイダーのための変更 SQL 生成モジュールを開発する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-103">This section discusses how to develop a modification SQL generation module for your (SQL:1999-compliant database) provider.</span></span> <span data-ttu-id="d9f2e-104">このモジュールは、変更コマンド ツリーを適切な SQL INSERT ステートメント、UPDATE ステートメント、または DELETE ステートメントに変換します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-104">This module is responsible for translating a modification command tree into the appropriate SQL INSERT, UPDATE or DELETE statements.</span></span>  
   
- SELECT ステートメントでの SQL 生成の詳細については、「[SQL 生成](../../../../../docs/framework/data/adonet/ef/sql-generation.md)」を参照してください。  
+ <span data-ttu-id="d9f2e-105">SQL 生成の select ステートメントの詳細については、次を参照してください。 [SQL 生成](../../../../../docs/framework/data/adonet/ef/sql-generation.md)です。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-105">For information about SQL generation for select statements, see [SQL Generation](../../../../../docs/framework/data/adonet/ef/sql-generation.md).</span></span>  
   
-## 変更コマンド ツリーの概要  
- 変更 SQL 生成モジュールは、指定された入力 DbModificationCommandTree に基づいて、データベースに固有の変更 SQL ステートメントを生成します。  
+## <a name="overview-of-modification-command-trees"></a><span data-ttu-id="d9f2e-106">変更コマンド ツリーの概要</span><span class="sxs-lookup"><span data-stu-id="d9f2e-106">Overview of Modification Command Trees</span></span>  
+ <span data-ttu-id="d9f2e-107">変更 SQL 生成モジュールは、指定された入力 DbModificationCommandTree に基づいて、データベースに固有の変更 SQL ステートメントを生成します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-107">The modification SQL generation module generates database-specific modification SQL statements based on a given input DbModificationCommandTree.</span></span>  
   
- DbModificationCommandTree は、DbCommandTree から継承される変更 DML 操作 \(挿入、更新、または削除操作\) のオブジェクト モデル表現です。  DbModificationCommandTree には、次の 3 つの実装があります。  
+ <span data-ttu-id="d9f2e-108">DbModificationCommandTree は、DbCommandTree から継承される変更 DML 操作 (挿入、更新、または削除操作) のオブジェクト モデル表現です。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-108">A DbModificationCommandTree is an object model representation of a modification DML operation (an insert, an update, or a delete operation), inheriting from DbCommandTree.</span></span> <span data-ttu-id="d9f2e-109">DbModificationCommandTree には、次の 3 つの実装があります。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-109">There are three implementations of DbModificationCommandTree:</span></span>  
   
--   DbInsertCommandTree  
+-   <span data-ttu-id="d9f2e-110">DbInsertCommandTree</span><span class="sxs-lookup"><span data-stu-id="d9f2e-110">DbInsertCommandTree</span></span>  
   
--   DbUpdateCommandTree  
+-   <span data-ttu-id="d9f2e-111">DbUpdateCommandTree</span><span class="sxs-lookup"><span data-stu-id="d9f2e-111">DbUpdateCommandTree</span></span>  
   
--   DbDeleteCommandTree  
+-   <span data-ttu-id="d9f2e-112">DbDeleteCommandTree</span><span class="sxs-lookup"><span data-stu-id="d9f2e-112">DbDeleteCommandTree</span></span>  
   
- DbModificationCommandTree と、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] によって生成されるその実装は、常に単一行の操作を表します。  ここでは、これら 3 つの種類の実装と、.NET Framework Version 3.5 における制約について説明します。  
+ <span data-ttu-id="d9f2e-113">DbModificationCommandTree とその実装によって生成される、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]常に単一行の操作を表します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-113">DbModificationCommandTree and its implementations that are produced by the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] always represent a single row operation.</span></span> <span data-ttu-id="d9f2e-114">ここでは、これら 3 つの種類の実装と、.NET Framework Version 3.5 における制約について説明します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-114">This section describes these types with their constraints in the .NET Framework version 3.5.</span></span>  
   
- ![図](../../../../../docs/framework/data/adonet/ef/media/558ba7b3-dd19-48d0-b91e-30a76415bf5f.gif "558ba7b3\-dd19\-48d0\-b91e\-30a76415bf5f")  
+ <span data-ttu-id="d9f2e-115">![ダイアグラム](../../../../../docs/framework/data/adonet/ef/media/558ba7b3-dd19-48d0-b91e-30a76415bf5f.gif "558ba7b3-dd19-48d0-b91e-30a76415bf5f")</span><span class="sxs-lookup"><span data-stu-id="d9f2e-115">![Diagram](../../../../../docs/framework/data/adonet/ef/media/558ba7b3-dd19-48d0-b91e-30a76415bf5f.gif "558ba7b3-dd19-48d0-b91e-30a76415bf5f")</span></span>  
   
- DbModificationCommandTree には、変更操作のターゲット セットを表す Target プロパティがあります。  入力セットを定義する Target の Expression プロパティは、常に DbScanExpression です。  DbScanExpression は、テーブルまたはビューを表すことができます。また、Target の "Defining Query" メタデータ プロパティが null 以外の場合は、クエリによって定義されたデータのセットを表すことができます。  
+ <span data-ttu-id="d9f2e-116">DbModificationCommandTree には、変更操作のターゲット セットを表す Target プロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-116">DbModificationCommandTree has a Target property that represents the target set for the modification operation.</span></span> <span data-ttu-id="d9f2e-117">入力セットを定義する Target の Expression プロパティは、常に DbScanExpression です。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-117">The Target’s Expression property, which defines the input set is always DbScanExpression.</span></span>  <span data-ttu-id="d9f2e-118">DbScanExpression は、どちらか、テーブルまたはビューを表すことができます、または一連のデータ定義クエリを使用した場合は、メタデータ プロパティの"Defining Query"、ターゲットが null 以外です。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-118">A DbScanExpression can either represent a table or a view, or a set of data defined with a query if the metadata property "Defining Query" of its Target is non-null.</span></span>  
   
- モデル内で定義クエリを使用してセットが定義されているが、対応する変更操作のための関数が指定されていない場合、クエリを表す DbScanExpression は、変更のターゲットとしてプロバイダーにのみ影響を与えます。  プロバイダーによっては、このようなシナリオはサポートされません \(たとえば、SqlClient ではサポートされません\)。  
+ <span data-ttu-id="d9f2e-119">モデル内で定義クエリを使用してセットが定義されているが、対応する変更操作のための関数が指定されていない場合、クエリを表す DbScanExpression は、変更のターゲットとしてプロバイダーにのみ影響を与えます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-119">A DbScanExpression that represents a query could only reach a provider as a target of modification if the set was defined by using a defining query in the model but no function was provided for the corresponding modification operation.</span></span> <span data-ttu-id="d9f2e-120">プロバイダーによっては、このようなシナリオはサポートされません (たとえば、SqlClient ではサポートされません)。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-120">Providers may not be able to support such a scenario (SqlClient, for example, does not).</span></span>  
   
- DbInsertCommandTree は、コマンド ツリーとして表現される、単一行の挿入操作を表します。  
+ <span data-ttu-id="d9f2e-121">DbInsertCommandTree は、コマンド ツリーとして表現される、単一行の挿入操作を表します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-121">DbInsertCommandTree represents a single row insert operation expressed as a command tree.</span></span>  
   
 ```  
 public sealed class DbInsertCommandTree : DbModificationCommandTree {  
@@ -49,99 +52,99 @@ public sealed class DbInsertCommandTree : DbModificationCommandTree {
 }  
 ```  
   
- DbUpdateCommandTree は、コマンド ツリーとして表現される、単一行の更新操作を表します。  
+ <span data-ttu-id="d9f2e-122">DbUpdateCommandTree は、コマンド ツリーとして表現される、単一行の更新操作を表します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-122">DbUpdateCommandTree represents a single-row update operation expressed as a command tree.</span></span>  
   
- DbDeleteCommandTree は、コマンド ツリーとして表現される、単一行の削除操作を表します。  
+ <span data-ttu-id="d9f2e-123">DbDeleteCommandTree は、コマンド ツリーとして表現される、単一行の削除操作を表します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-123">DbDeleteCommandTree represents a single row delete operation expressed as a command tree.</span></span>  
   
-### 変更コマンド ツリーのプロパティの制限  
- 変更コマンド ツリーのプロパティに対して、次の情報および制限が適用されます。  
+### <a name="restrictions-on-modification-command-tree-properties"></a><span data-ttu-id="d9f2e-124">変更コマンド ツリーのプロパティの制限</span><span class="sxs-lookup"><span data-stu-id="d9f2e-124">Restrictions on Modification Command Tree Properties</span></span>  
+ <span data-ttu-id="d9f2e-125">変更コマンド ツリーのプロパティに対して、次の情報および制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-125">The following information and restrictions apply to the modification command tree properties.</span></span>  
   
-#### DbInsertCommandTree および DbUpdateCommandTree の Returning  
- null 以外の場合、Returning は、コマンドがリーダーを返すことを示します。  null の場合、コマンドは、影響を受けた \(挿入または更新された\) 行の数を示すスカラー値を返します。  
+#### <a name="returning-in-dbinsertcommandtree-and-dbupdatecommandtree"></a><span data-ttu-id="d9f2e-126">DbInsertCommandTree および DbUpdateCommandTree の Returning</span><span class="sxs-lookup"><span data-stu-id="d9f2e-126">Returning in DbInsertCommandTree and DbUpdateCommandTree</span></span>  
+ <span data-ttu-id="d9f2e-127">null 以外の場合、Returning は、コマンドがリーダーを返すことを示します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-127">When non-null, Returning indicates that the command returns a reader.</span></span> <span data-ttu-id="d9f2e-128">null の場合、コマンドは、影響を受けた (挿入または更新された) 行の数を示すスカラー値を返します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-128">Otherwise, the command should return a scalar value indicating the number of rows affected (inserted or updated).</span></span>  
   
- Returning 値は、挿入または更新された行に基づいて返される結果の射影を指定します。  この値は、行を表す DbNewInstanceExpression 型である必要があります。その各引数は、対応する DbModificationCommandTree の Target への参照を表す DbVariableReferenceExpression に対する DbPropertyExpression になります。  Returning プロパティで使用されている DbPropertyExpressions で表されるプロパティは、常にストア生成値または計算値となります。  DbInsertCommandTree では、行が挿入されるテーブルの 1 つ以上のプロパティがストア生成値または計算値として指定されている \(ssdl で StoreGeneratedPattern.Identity または StoreGeneratedPattern.Computed とマークされている\) 場合、Returning は null ではありません。  DbUpdateCommandTrees では、行が更新されるテーブルの 1 つ以上のプロパティがストア計算値として指定されている \(ssdl で StoreGeneratedPattern.Computed とマークされている\) 場合、Returning は null ではありません。  
+ <span data-ttu-id="d9f2e-129">Returning 値は、挿入または更新された行に基づいて返される結果の射影を指定します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-129">The Returning value specifies a projection of results to be returned based on the inserted or the updated row.</span></span> <span data-ttu-id="d9f2e-130">この値は、行を表す DbNewInstanceExpression 型である必要があります。その各引数は、対応する DbModificationCommandTree の Target への参照を表す DbVariableReferenceExpression に対する DbPropertyExpression になります。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-130">It can only be of type DbNewInstanceExpression representing a row, with each of its arguments being a DbPropertyExpression over a DbVariableReferenceExpression representing a reference to the Target of the corresponding DbModificationCommandTree.</span></span> <span data-ttu-id="d9f2e-131">Returning プロパティで使用されている DbPropertyExpressions で表されるプロパティは、常にストア生成値または計算値となります。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-131">The properties represented by the DbPropertyExpressions used in the property Returning are always store generated or computed values.</span></span> <span data-ttu-id="d9f2e-132">DbInsertCommandTree では、行が挿入されるテーブルの 1 つ以上のプロパティがストア生成値または計算値として指定されている (ssdl で StoreGeneratedPattern.Identity または StoreGeneratedPattern.Computed とマークされている) 場合、Returning は null ではありません。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-132">In DbInsertCommandTree, Returning is not null when at least one property of the table in which the row is being inserted is specified as store generated or computed (marked as StoreGeneratedPattern.Identity or StoreGeneratedPattern.Computed in the ssdl).</span></span> <span data-ttu-id="d9f2e-133">DbUpdateCommandTrees では、行が更新されるテーブルの 1 つ以上のプロパティがストア計算値として指定されている (ssdl で StoreGeneratedPattern.Computed とマークされている) 場合、Returning は null ではありません。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-133">In DbUpdateCommandTrees, Returning is not null when at least one property of the table in which the row is being updated is specified as store computed (marked as StoreGeneratedPattern.Computed in the ssdl).</span></span>  
   
-#### DbInsertCommandTree および DbUpdateCommandTree の SetClauses  
- SetClauses は、挿入または更新操作を定義する insert set 句または update set 句のリストを指定します。  
+#### <a name="setclauses-in-dbinsertcommandtree-and-dbupdatecommandtree"></a><span data-ttu-id="d9f2e-134">DbInsertCommandTree および DbUpdateCommandTree の SetClauses</span><span class="sxs-lookup"><span data-stu-id="d9f2e-134">SetClauses in DbInsertCommandTree and DbUpdateCommandTree</span></span>  
+ <span data-ttu-id="d9f2e-135">SetClauses は、挿入または更新操作を定義する insert set 句または update set 句のリストを指定します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-135">SetClauses specifies the list of insert or update set clauses that define the insert or update operation.</span></span>  
   
 ```  
 The elements of the list are specified as type DbModificationClause, which specifies a single clause in an insert or update modification operation. DbSetClause inherits from DbModificationClause and specifies the clause in a modification operation that sets the value of a property. Beginning in version 3.5 of the .NET Framework, all elements in SetClauses are of type SetClause.   
 ```  
   
- Property は、更新する必要があるプロパティを指定します。  これは常に、対応する DbModificationCommandTree の Target への参照を表す、DbVariableReferenceExpression に対する DbPropertyExpression です。  
+ <span data-ttu-id="d9f2e-136">Property は、更新する必要があるプロパティを指定します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-136">Property specifies the property that should be updated.</span></span> <span data-ttu-id="d9f2e-137">これは常に、対応する DbModificationCommandTree の Target への参照を表す、DbVariableReferenceExpression に対する DbPropertyExpression です。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-137">It is always a DbPropertyExpression over a DbVariableReferenceExpression, which represents a reference to the Target of the corresponding DbModificationCommandTree.</span></span>  
   
- Value は、プロパティを更新するための新しい値を指定します。  DbConstantExpression 型または DbNullExpression 型を使用できます。  
+ <span data-ttu-id="d9f2e-138">Value は、プロパティを更新するための新しい値を指定します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-138">Value specifies the new value with which to update the property.</span></span> <span data-ttu-id="d9f2e-139">DbConstantExpression 型または DbNullExpression 型を使用できます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-139">It is either of type DbConstantExpression or DbNullExpression.</span></span>  
   
-#### DbUpdateCommandTree および DbDeleteCommandTree の Predicate  
- Predicate は、ターゲット コレクションのどのメンバーを更新または削除する必要があるかを判定するために使用される述語を指定します。  これは、DbExpressions の次のサブセットから構成される式ツリーです。  
+#### <a name="predicate-in-dbupdatecommandtree-and-dbdeletecommandtree"></a><span data-ttu-id="d9f2e-140">DbUpdateCommandTree および DbDeleteCommandTree の Predicate</span><span class="sxs-lookup"><span data-stu-id="d9f2e-140">Predicate in DbUpdateCommandTree and DbDeleteCommandTree</span></span>  
+ <span data-ttu-id="d9f2e-141">Predicate は、ターゲット コレクションのどのメンバーを更新または削除する必要があるかを判定するために使用される述語を指定します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-141">Predicate specifies the predicate used to determine which members of the target collection should be updated or deleted.</span></span> <span data-ttu-id="d9f2e-142">これは、DbExpressions の次のサブセットから構成される式ツリーです。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-142">It is an expression tree built of the following subset of DbExpressions:</span></span>  
   
--   Equals 型の DbComparisonExpression。右辺の子は以下のように制限される DbPropertyExression、左辺の子は DbConstantExpression です。  
+-   <span data-ttu-id="d9f2e-143">Equals 型の DbComparisonExpression。右辺の子は以下のように制限される DbPropertyExression、左辺の子は DbConstantExpression です。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-143">DbComparisonExpression of kind Equals, with the right child being a DbPropertyExression as restricted below and the left child a DbConstantExpression.</span></span>  
   
--   DbConstantExpression  
+-   <span data-ttu-id="d9f2e-144">DbConstantExpression</span><span class="sxs-lookup"><span data-stu-id="d9f2e-144">DbConstantExpression</span></span>  
   
--   以下のように制限される、DbPropertyExpresison に対する DbIsNullExpression。  
+-   <span data-ttu-id="d9f2e-145">以下のように制限される、DbPropertyExpresison に対する DbIsNullExpression。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-145">DbIsNullExpression over a DbPropertyExpresison as restricted below</span></span>  
   
--   対応する DbModificationCommandTree の Target への参照を表す、DbVariableReferenceExpression に対する DbPropertyExpression。  
+-   <span data-ttu-id="d9f2e-146">対応する DbModificationCommandTree の Target への参照を表す、DbVariableReferenceExpression に対する DbPropertyExpression。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-146">DbPropertyExpression over a DbVariableReferenceExpression representing a reference to the Target of the corresponding DbModificationCommandTree.</span></span>  
   
--   DbAndExpression。  
+-   <span data-ttu-id="d9f2e-147">DbAndExpression。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-147">DbAndExpression</span></span>  
   
--   DbNotExpression  
+-   <span data-ttu-id="d9f2e-148">DbNotExpression</span><span class="sxs-lookup"><span data-stu-id="d9f2e-148">DbNotExpression</span></span>  
   
--   DbOrExpression。  
+-   <span data-ttu-id="d9f2e-149">DbOrExpression。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-149">DbOrExpression</span></span>  
   
-## サンプル プロバイダーでの変更 SQL 生成  
- [Entity Framework サンプル プロバイダー](http://go.microsoft.com/fwlink/?LinkId=180616) では、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] をサポートする ADO.NET データ プロバイダーのコンポーネントを説明しています。  このサンプルは、SQL Server 2005 データベースを対象としており、System.Data.SqlClient ADO.NET 2.0 データ プロバイダーの最上位にラッパーとして実装されます。  
+## <a name="modification-sql-generation-in-the-sample-provider"></a><span data-ttu-id="d9f2e-150">サンプル プロバイダーでの変更 SQL 生成</span><span class="sxs-lookup"><span data-stu-id="d9f2e-150">Modification SQL Generation in the Sample Provider</span></span>  
+ <span data-ttu-id="d9f2e-151">[Entity Framework サンプル プロバイダー](http://go.microsoft.com/fwlink/?LinkId=180616)をサポートする ADO.NET データ プロバイダーのコンポーネントを示しています、[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-151">The [Entity Framework Sample Provider](http://go.microsoft.com/fwlink/?LinkId=180616) demonstrates the components of ADO.NET Data Providers that support the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].</span></span> <span data-ttu-id="d9f2e-152">このサンプルは、SQL Server 2005 データベースを対象としており、System.Data.SqlClient ADO.NET 2.0 データ プロバイダーの最上位にラッパーとして実装されます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-152">It targets a SQL Server 2005 database and is implemented as a wrapper on top of System.Data.SqlClient ADO.NET 2.0 Data Provider.</span></span>  
   
- SQL Generation\\DmlSqlGenerator.cs ファイル内にあるサンプル プロバイダーの変更 SQL 生成モジュールは、DbModificationCommandTree を入力として受け取り、単一の変更 SQL ステートメントを生成します。この後に、DbModificationCommandTree によって指定された場合にリーダーを返す SELECT ステートメントが続く場合もあります。  生成されたコマンドの構造は、対象の SQL Server データベースの影響を受けます。  
+ <span data-ttu-id="d9f2e-153">SQL Generation\DmlSqlGenerator.cs ファイル内にあるサンプル プロバイダーの変更 SQL 生成モジュールは、DbModificationCommandTree を入力として受け取り、単一の変更 SQL ステートメントを生成します。この後に、DbModificationCommandTree によって指定された場合にリーダーを返す SELECT ステートメントが続く場合もあります。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-153">The modification SQL generation module of the sample provider (located in the file SQL Generation\DmlSqlGenerator.cs) takes an input DbModificationCommandTree and produces a single modification SQL statement possibly followed by a select statement to return a reader if specified by the DbModificationCommandTree.</span></span> <span data-ttu-id="d9f2e-154">生成されたコマンドの構造は、対象の SQL Server データベースの影響を受けます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-154">Note that the shape of the commands generated is affected by the target SQL Server database.</span></span>  
   
-### ヘルパー クラス: ExpressionTranslator  
- ExpressionTranslator は、DbExpression 型のすべての変更コマンド ツリー プロパティのための一般的な軽量のトランスレーターです。  このトランスレーターは、変更コマンド ツリーのプロパティを制限する式の型の変換のみをサポートし、特定の制約を考慮して構築されています。  
+### <a name="helper-classes-expressiontranslator"></a><span data-ttu-id="d9f2e-155">ヘルパー クラス: ExpressionTranslator</span><span class="sxs-lookup"><span data-stu-id="d9f2e-155">Helper Classes: ExpressionTranslator</span></span>  
+ <span data-ttu-id="d9f2e-156">ExpressionTranslator は、DbExpression 型のすべての変更コマンド ツリー プロパティのための一般的な軽量のトランスレーターです。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-156">ExpressionTranslator serves as a common lightweight translator for all modification command tree properties of type DbExpression.</span></span> <span data-ttu-id="d9f2e-157">このトランスレーターは、変更コマンド ツリーのプロパティを制限する式の型の変換のみをサポートし、特定の制約を考慮して構築されています。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-157">It supports translation of only the expression types to which the properties of the modification command tree are constrained and is built with the particular constraints in mind.</span></span>  
   
- 以降では、特定の式の型へのアクセスについて説明します \(重要度の低い変換を含むノードは省略しています\)。  
+ <span data-ttu-id="d9f2e-158">以降では、特定の式の型へのアクセスについて説明します (重要度の低い変換を含むノードは省略しています)。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-158">The following information discusses visiting specific expression types (nodes with trivial translations are omitted).</span></span>  
   
-### DbComparisonExpression  
- preserveMemberValues を true に設定して ExpressionTranslator を構築したときに、右辺の定数が \(DbNullExpression ではなく\) DbConstantExpression である場合、左辺のオペランド \(DbPropertyExpressions\) が DbConstantExpression に関連付けられます。  これは、返される Select ステートメントを、影響を受けた行を識別するために生成する必要がある場合に使用されます。  
+### <a name="dbcomparisonexpression"></a><span data-ttu-id="d9f2e-159">DbComparisonExpression</span><span class="sxs-lookup"><span data-stu-id="d9f2e-159">DbComparisonExpression</span></span>  
+ <span data-ttu-id="d9f2e-160">preserveMemberValues を true に設定して ExpressionTranslator を構築したときに、右辺の定数が (DbNullExpression ではなく) DbConstantExpression である場合、左辺のオペランド (DbPropertyExpressions) が DbConstantExpression に関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-160">When the ExpressionTranslator is constructed with preserveMemberValues = true, and when the constant to the right is a DbConstantExpression (instead of DbNullExpression), it associates the left operand (a DbPropertyExpressions) with that DbConstantExpression.</span></span> <span data-ttu-id="d9f2e-161">これは、返される Select ステートメントを、影響を受けた行を識別するために生成する必要がある場合に使用されます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-161">That is used if a return Select statement needs to be generated to identify the affected row.</span></span>  
   
-### DbConstantExpression  
- アクセスされる定数のそれぞれに対して、パラメーターが作成されます。  
+### <a name="dbconstantexpression"></a><span data-ttu-id="d9f2e-162">DbConstantExpression</span><span class="sxs-lookup"><span data-stu-id="d9f2e-162">DbConstantExpression</span></span>  
+ <span data-ttu-id="d9f2e-163">アクセスされる定数のそれぞれに対して、パラメーターが作成されます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-163">For each visited constant a parameter is created.</span></span>  
   
-### DbPropertyExpression  
- DbPropertyExpression のインスタンスが常に入力テーブルを表す場合、生成によって別名が作成される状況を除き \(テーブル変数が使用されたときの更新シナリオでのみこの状況が発生します\)、入力に別名を指定する必要はありません。変換には既定でプロパティ名が使用されます。  
+### <a name="dbpropertyexpression"></a><span data-ttu-id="d9f2e-164">DbPropertyExpression</span><span class="sxs-lookup"><span data-stu-id="d9f2e-164">DbPropertyExpression</span></span>  
+ <span data-ttu-id="d9f2e-165">DbPropertyExpression のインスタンスが常に入力テーブルを表す場合、生成によって別名が作成される状況を除き (テーブル変数が使用されたときの更新シナリオでのみこの状況が発生します)、入力に別名を指定する必要はありません。変換には既定でプロパティ名が使用されます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-165">Given that the Instance of the DbPropertyExpression always represents the input table, unless the generation has created an alias (which only happens in update scenarios when a table variable is used), no alias needs to be specified for the input; the translation defaults to the property name.</span></span>  
   
-## 挿入 SQL コマンドの生成  
- サンプル プロバイダーで指定されている DbInsertCommandTree に対して生成される挿入コマンドは、以下に示す 2 つの挿入テンプレートのどちらかに基づいています。  
+## <a name="generating-an-insert-sql-command"></a><span data-ttu-id="d9f2e-166">挿入 SQL コマンドの生成</span><span class="sxs-lookup"><span data-stu-id="d9f2e-166">Generating an Insert SQL Command</span></span>  
+ <span data-ttu-id="d9f2e-167">サンプル プロバイダーで指定されている DbInsertCommandTree に対して生成される挿入コマンドは、以下に示す 2 つの挿入テンプレートのどちらかに基づいています。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-167">For a given DbInsertCommandTree in the sample provider, the generated insert command follows one of the two insert templates below.</span></span>  
   
- 1 つ目のテンプレートには、SetClauses のリストの値を受け取って挿入を実行するコマンドと、挿入された行の Returning プロパティが null 以外の場合にその Returning プロパティで指定されたプロパティを返す SELECT ステートメントが含まれています。  行が挿入された場合、述語要素 "@@ROWCOUNT \> 0" は true に設定されます。  述語要素 "keyMemberI \=  keyValueI &#124; scope\_identity\(\)" は、keyMemeberI がストア生成キーの場合にのみ "keyMemberI \=  scope\_identity\(\)" という構造をとります。これは、ID \(ストア生成の ID\) 列に挿入された最後の ID 値が scope\_identity\(\) によって返されるためです。  
+ <span data-ttu-id="d9f2e-168">1 つ目のテンプレートには、SetClauses のリストの値を受け取って挿入を実行するコマンドと、挿入された行の Returning プロパティが null 以外の場合にその Returning プロパティで指定されたプロパティを返す SELECT ステートメントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-168">The first template has a command to perform the insert given the values in the list of SetClauses, and a SELECT statement to return the properties specified in the Returning property for the inserted row if the Returning property was not null.</span></span> <span data-ttu-id="d9f2e-169">述語要素"@@ROWCOUNT > 0"行が挿入された場合は true です。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-169">The predicate element "@@ROWCOUNT > 0" is true if a row was inserted.</span></span> <span data-ttu-id="d9f2e-170">述語要素"keyMemberI = keyValueI &#124;です。scope_identity()"図形は、"keyMemberI = scope_identity()"scope_identity は、id (ストア生成の) 列に挿入された最後の id 値を返すために、keyMemeberI がストア生成のキーが場合にのみです。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-170">The predicate element "keyMemberI =  keyValueI &#124; scope_identity()" takes the shape  "keyMemberI =  scope_identity()" only if keyMemeberI is a store-generated key, because scope_identity() returns the last identity value inserted into an identity (store-generated) column.</span></span>  
   
 ```  
 -- first insert Template  
-INSERT <target>   [ (setClauseProperty0, .. setClausePropertyN)]    
+INSERT <target>   [ (setClauseProperty0, .. setClausePropertyN)]    
 VALUES (setClauseValue0, .. setClauseValueN) |  DEFAULT VALUES   
   
 [SELECT <returning>   
- FROM <target>   
+ FROM <target>  
  WHERE @@ROWCOUNT > 0 AND keyMember0 = keyValue0 AND .. keyMemberI =  keyValueI | scope_identity()  .. AND  keyMemberN = keyValueN]  
 ```  
   
- 2 番目のテンプレートが必要となるのは、挿入操作で行の挿入を指定するとき、主キーがストア生成値であるが整数型ではないために、scope\_identity\(\) でそのキーを使用できない場合です。  このテンプレートは、複合ストア生成キーがある場合にも使用されます。  
+ <span data-ttu-id="d9f2e-171">2 番目のテンプレートが必要となるのは、挿入操作で行の挿入を指定するとき、主キーがストア生成値であるが整数型ではないために、scope_identity() でそのキーを使用できない場合です。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-171">The second template is needed if the insert specifies inserting a row where the primary key is store-generated but is not an integer type and therefore can't be used with scope_identity()).</span></span> <span data-ttu-id="d9f2e-172">このテンプレートは、複合ストア生成キーがある場合にも使用されます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-172">It is also used if there is a compound store-generated key.</span></span>  
   
 ```  
 -- second insert template  
 DECLARE @generated_keys TABLE [(keyMember0, … keyMemberN)  
   
-INSERT <target>   [ (setClauseProperty0, .. setClausePropertyN)]    
- OUTPUT inserted.KeyMember0, …, inserted.KeyMemberN INTO @generated_keys  
- VALUES (setClauseValue0, .. setClauseValueN) |  DEFAULT VALUES   
+INSERT <target>   [ (setClauseProperty0, .. setClausePropertyN)]    
+ OUTPUT inserted.KeyMember0, …, inserted.KeyMemberN INTO @generated_keys  
+ VALUES (setClauseValue0, .. setClauseValueN) |  DEFAULT VALUES  
   
 [SELECT <returning_over_t>   
- FROM @generated_keys  AS g   
+ FROM @generated_keys  AS g  
 JOIN <target> AS t ON g.KeyMember0 = t.KeyMember0 AND … g.KeyMemberN = t.KeyMemberN  
- WHERE @@ROWCOUNT > 0   
+ WHERE @@ROWCOUNT > 0  
 ```  
   
- サンプル プロバイダーに含まれるモデルの使用例を次に示します。  この例では、DbInsertCommandTree から挿入コマンドを生成しています。  
+ <span data-ttu-id="d9f2e-173">サンプル プロバイダーに含まれるモデルの使用例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-173">The following is an example that uses the model that is included with the sample provider.</span></span> <span data-ttu-id="d9f2e-174">この例では、DbInsertCommandTree から挿入コマンドを生成しています。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-174">It generates an insert command from a DbInsertCommandTree.</span></span>  
   
- 次のコードは、Category を挿入します。  
+ <span data-ttu-id="d9f2e-175">次のコードは、Category を挿入します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-175">The following code inserts a Category:</span></span>  
   
 ```  
 using (NorthwindEntities northwindContext = new NorthwindEntities()) {  
@@ -153,7 +156,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 }  
 ```  
   
- このコードでは、プロバイダーに渡される次のコマンド ツリーを生成します。  
+ <span data-ttu-id="d9f2e-176">このコードでは、プロバイダーに渡される次のコマンド ツリーを生成します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-176">This code produces the following command tree, which is passed to the provider:</span></span>  
   
 ```  
 DbInsertCommandTree  
@@ -182,7 +185,7 @@ DbInsertCommandTree
       |_Var(target).CategoryID  
 ```  
   
- サンプル プロバイダーによって生成されるストア コマンドは、次の SQL ステートメントです。  
+ <span data-ttu-id="d9f2e-177">サンプル プロバイダーによって生成されるストア コマンドは、次の SQL ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-177">The store command that the sample provider produces is the following SQL statement:</span></span>  
   
 ```  
 insert [dbo].[Categories]([CategoryName], [Description], [Picture])  
@@ -192,27 +195,27 @@ from [dbo].[Categories]
 where @@ROWCOUNT > 0 and [CategoryID] = scope_identity()  
 ```  
   
-## 更新 SQL コマンドの生成  
- 指定された DbUpdateCommandTree に対して、以下に示すテンプレートに基づいて、更新コマンドが生成されます。  
+## <a name="generating-an-update-sql-command"></a><span data-ttu-id="d9f2e-178">更新 SQL コマンドの生成</span><span class="sxs-lookup"><span data-stu-id="d9f2e-178">Generating an Update SQL Command</span></span>  
+ <span data-ttu-id="d9f2e-179">指定された DbUpdateCommandTree に対して、以下に示すテンプレートに基づいて、更新コマンドが生成されます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-179">For a given DbUpdateCommandTree, the generated update command is based on the following template:</span></span>  
   
 ```  
 -- UPDATE Template   
-UPDATE <target>   
+UPDATE <target>   
 SET setClauseProprerty0 = setClauseValue0,  .. setClauseProprertyN = setClauseValueN  | @i = 0  
 WHERE <predicate>  
   
 [SELECT <returning>   
- FROM <target>   
+ FROM <target>  
  WHERE @@ROWCOUNT > 0 AND keyMember0 = keyValue0 AND .. keyMemberI =  keyValueI | scope_identity()  .. AND  keyMemberN = keyValueN]  
 ```  
   
- set 句が指定されない場合にのみ、仮の set 句 \("@i \= 0"\) が設定されます。  これは、ストア計算列が再計算されるようにするためです。  
+ <span data-ttu-id="d9f2e-180">Set 句が偽の set 句 ("@i = 0") set 句が指定されていない場合にのみです。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-180">The set clause has the fake set clause ("@i = 0") only if no set clauses are specified.</span></span> <span data-ttu-id="d9f2e-181">これは、ストア計算列が再計算されるようにするためです。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-181">This is to ensure that any store-computed columns are recomputed.</span></span>  
   
- Returning プロパティが null でない場合にのみ、SELECT ステートメントが生成され、Returning プロパティに指定されたプロパティが返されます。  
+ <span data-ttu-id="d9f2e-182">Returning プロパティが null でない場合にのみ、SELECT ステートメントが生成され、Returning プロパティに指定されたプロパティが返されます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-182">Only if the Returning property is not null, a select statement is generated to return the properties specified in the Returning property.</span></span>  
   
- 次の例では、サンプル プロバイダーに含まれるモデルを使用して、更新コマンドを生成します。  
+ <span data-ttu-id="d9f2e-183">次の例では、サンプル プロバイダーに含まれるモデルを使用して、更新コマンドを生成します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-183">The following example uses the model that is included with the sample provider to generate an update command.</span></span>  
   
- 次のユーザー コードは、Category を更新します。  
+ <span data-ttu-id="d9f2e-184">次のユーザー コードは、Category を更新します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-184">The following user code updates a Category:</span></span>  
   
 ```  
 using (NorthwindEntities northwindContext = new NorthwindEntities()) {  
@@ -222,7 +225,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 }  
 ```  
   
- このユーザー コードは、プロバイダーに渡される次のコマンド ツリーを生成します。  
+ <span data-ttu-id="d9f2e-185">このユーザー コードは、プロバイダーに渡される次のコマンド ツリーを生成します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-185">This user code produces the following command tree, which is passed to the provider:</span></span>  
   
 ```  
 DbUpdateCommandTree  
@@ -243,7 +246,7 @@ DbUpdateCommandTree
 |_Returning   
 ```  
   
- サンプル プロバイダーによって、次のストア コマンドが生成されます。  
+ <span data-ttu-id="d9f2e-186">サンプル プロバイダーによって、次のストア コマンドが生成されます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-186">The sample provider produces the following store command:</span></span>  
   
 ```  
 update [dbo].[Categories]  
@@ -251,18 +254,18 @@ set [CategoryName] = @p0
 where ([CategoryID] = @p1)   
 ```  
   
-### 削除 SQL コマンドの生成  
- 指定された DbDeleteCommandTree に対して、以下に示すテンプレートに基づいて、削除コマンドが生成されます。  
+### <a name="generating-a-delete-sql-command"></a><span data-ttu-id="d9f2e-187">削除 SQL コマンドの生成</span><span class="sxs-lookup"><span data-stu-id="d9f2e-187">Generating a Delete SQL Command</span></span>  
+ <span data-ttu-id="d9f2e-188">指定された DbDeleteCommandTree に対して、以下に示すテンプレートに基づいて、削除コマンドが生成されます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-188">For a given DbDeleteCommandTree, the generated DELETE command is based on the following template:</span></span>  
   
 ```  
 -- DELETE Template   
-DELETE <target>   
+DELETE <target>   
 WHERE <predicate>  
 ```  
   
- 次の例では、サンプル プロバイダーに含まれるモデルを使用して、削除コマンドを生成します。  
+ <span data-ttu-id="d9f2e-189">次の例では、サンプル プロバイダーに含まれるモデルを使用して、削除コマンドを生成します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-189">The following example uses the model that is included with the sample provider to generate a delete command.</span></span>  
   
- 次のユーザー コードは、Category を削除します。  
+ <span data-ttu-id="d9f2e-190">次のユーザー コードは、Category を削除します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-190">The following user code deletes a Category:</span></span>  
   
 ```  
 using (NorthwindEntities northwindContext = new NorthwindEntities()) {  
@@ -272,7 +275,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 }  
 ```  
   
- このユーザー コードは、プロバイダーに渡される次のコマンド ツリーを生成します。  
+ <span data-ttu-id="d9f2e-191">このユーザー コードは、プロバイダーに渡される次のコマンド ツリーを生成します。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-191">This user code produces the following command tree, which is passed to the provider.</span></span>  
   
 ```  
 DbDeleteCommandTree  
@@ -286,12 +289,12 @@ DbDeleteCommandTree
     |_10  
 ```  
   
- サンプル プロバイダーによって、次のストア コマンドが生成されます。  
+ <span data-ttu-id="d9f2e-192">サンプル プロバイダーによって、次のストア コマンドが生成されます。</span><span class="sxs-lookup"><span data-stu-id="d9f2e-192">The following store command is produced by the sample provider:</span></span>  
   
 ```  
 delete [dbo].[Categories]  
 where ([CategoryID] = @p0)  
 ```  
   
-## 参照  
- [Entity Framework データ プロバイダーの作成](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)
+## <a name="see-also"></a><span data-ttu-id="d9f2e-193">関連項目</span><span class="sxs-lookup"><span data-stu-id="d9f2e-193">See Also</span></span>  
+ [<span data-ttu-id="d9f2e-194">Entity Framework データ プロバイダーの作成</span><span class="sxs-lookup"><span data-stu-id="d9f2e-194">Writing an Entity Framework Data Provider</span></span>](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)

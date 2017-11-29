@@ -1,92 +1,75 @@
 ---
-title: "上位変換 (Visual Basic) を入力 |Microsoft ドキュメント"
+title: "型の上位変換 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- declared elements, scope
-- visibility, declared elements
-- Partial keyword, unexpected results with type promotion
-- scope, declared elements
-- scope, Visual Basic
+- declared elements [Visual Basic], scope
+- visibility [Visual Basic], declared elements
+- Partial keyword [Visual Basic], unexpected results with type promotion
+- scope [Visual Basic], declared elements
+- scope [Visual Basic], Visual Basic
 - type promotion
-- declared elements, visibility
+- declared elements [Visual Basic], visibility
 ms.assetid: 035eeb15-e4c5-4288-ab3c-6bd5d22f7051
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d732e765fc28eaedc0deab477dbf9955a40e97c9
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: f3a55c023afe7afe96f862f0b3cbbdb03a15b902
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="type-promotion-visual-basic"></a>型の上位変換 (Visual Basic)
-モジュールでのプログラミング要素を宣言するときに[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]モジュールを含む名前空間には、そのスコープを昇格させます。 これと呼ばれます。*の上位変換の入力*します。  
+# <a name="type-promotion-visual-basic"></a><span data-ttu-id="c25b1-102">型の上位変換 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c25b1-102">Type Promotion (Visual Basic)</span></span>
+<span data-ttu-id="c25b1-103">モジュールの場合でのプログラミング要素を宣言するときに[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]モジュールを含む名前空間には、そのスコープを昇格させます。</span><span class="sxs-lookup"><span data-stu-id="c25b1-103">When you declare a programming element in a module, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] promotes its scope to the namespace containing the module.</span></span> <span data-ttu-id="c25b1-104">これは呼ば*プロモーションを入力*です。</span><span class="sxs-lookup"><span data-stu-id="c25b1-104">This is known as *type promotion*.</span></span>  
   
- 次の例では、モジュールのスケルトンの定義とモジュールの&2; つのメンバーを示します。  
+ <span data-ttu-id="c25b1-105">次の例では、モジュールのスケルトン定義し、そのモジュールの 2 つのメンバーを示します。</span><span class="sxs-lookup"><span data-stu-id="c25b1-105">The following example shows a skeleton definition of a module and two members of that module.</span></span>  
   
- [!code-vb[VbVbalrDeclaredElements&#1;](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_1.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#1](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_1.vb)]  
   
- 内で`projModule`プログラミング、モジュール レベルで宣言されている要素に昇格`projNamespace`します。 前の例で`basicEnum`と`innerClass`昇格されますが、`numberSub`モジュール レベルで宣言されていないためにではありません。  
+ <span data-ttu-id="c25b1-106">内で`projModule`プログラミング、モジュール レベルで宣言された要素に昇格`projNamespace`です。</span><span class="sxs-lookup"><span data-stu-id="c25b1-106">Within `projModule`, programming elements declared at module level are promoted to `projNamespace`.</span></span> <span data-ttu-id="c25b1-107">前の例で`basicEnum`と`innerClass`昇格されますが、`numberSub`モジュール レベルで宣言されていないためにではありません。</span><span class="sxs-lookup"><span data-stu-id="c25b1-107">In the preceding example, `basicEnum` and `innerClass` are promoted, but `numberSub` is not, because it is not declared at module level.</span></span>  
   
-## <a name="effect-of-type-promotion"></a>型の上位変換の効果  
- 型の上位変換の効果は、修飾文字列がモジュール名を含める必要がないことです。 次の例では、前の例では、手順&2; つの呼び出しをでいます。  
+## <a name="effect-of-type-promotion"></a><span data-ttu-id="c25b1-108">型の昇格の効果</span><span class="sxs-lookup"><span data-stu-id="c25b1-108">Effect of Type Promotion</span></span>  
+ <span data-ttu-id="c25b1-109">型の昇格の効果は、修飾文字列は、モジュール名を含めるには必要ありません。</span><span class="sxs-lookup"><span data-stu-id="c25b1-109">The effect of type promotion is that a qualification string does not need to include the module name.</span></span> <span data-ttu-id="c25b1-110">次の例では、前の例で、プロシージャに 2 つの呼び出しをさせます。</span><span class="sxs-lookup"><span data-stu-id="c25b1-110">The following example makes two calls to the procedure in the preceding example.</span></span>  
   
- [!code-vb[VbVbalrDeclaredElements&#2;](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_2.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#2](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_2.vb)]  
   
- 前の例では、最初の呼び出しは、完全な修飾文字列を使用します。 ただし、これはないために必要な型の上位変換のためです。 もう&1; つを呼び出すもアクセス モジュールのメンバーを含めずに`projModule`修飾文字列。  
+ <span data-ttu-id="c25b1-111">前の例では、最初の呼び出しは、完全修飾文字列を使用します。</span><span class="sxs-lookup"><span data-stu-id="c25b1-111">In the preceding example, the first call uses complete qualification strings.</span></span> <span data-ttu-id="c25b1-112">ただし、これはいないために必要な型の昇格のためです。</span><span class="sxs-lookup"><span data-stu-id="c25b1-112">However, this is not necessary because of type promotion.</span></span> <span data-ttu-id="c25b1-113">2 番目せずに呼び出すもアクセス モジュールのメンバーを含む`projModule`修飾文字列にします。</span><span class="sxs-lookup"><span data-stu-id="c25b1-113">The second call also accesses the module's members without including `projModule` in the qualification strings.</span></span>  
   
-## <a name="defeat-of-type-promotion"></a>型の上位変換の無効化  
- 名前空間には、モジュール メンバーと同じ名前のメンバーが既に、型の上位変換は、モジュール メンバーの無効化です。 次の例では、列挙型と同じ名前空間内のモジュールのスケルトンの定義を示します。  
+## <a name="defeat-of-type-promotion"></a><span data-ttu-id="c25b1-114">型の上位変換の無効化</span><span class="sxs-lookup"><span data-stu-id="c25b1-114">Defeat of Type Promotion</span></span>  
+ <span data-ttu-id="c25b1-115">名前空間は、モジュール メンバーと同じ名前のメンバーを既に持っている場合の型の昇格がそのモジュール メンバーの無効化します。</span><span class="sxs-lookup"><span data-stu-id="c25b1-115">If the namespace already has a member with the same name as a module member, type promotion is defeated for that module member.</span></span> <span data-ttu-id="c25b1-116">次の例は、列挙体と同じ名前空間内のモジュールのスケルトン定義を示しています。</span><span class="sxs-lookup"><span data-stu-id="c25b1-116">The following example shows a skeleton definition of an enumeration and a module within the same namespace.</span></span>  
   
- [!code-vb[VbVbalrDeclaredElements&#3;](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_3.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#3](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_3.vb)]  
   
- 前の例で[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]クラスに昇格できません`abc`に`thisNameSpace`名前空間レベルで同じ名前の列挙型が既に存在します。 アクセスする`abcSub`、完全修飾文字列を使用する必要があります`thisNamespace.thisModule.abc.abcSub`します。 ただし、クラス`xyz`はまだ昇格し、アクセスできる`xyzSub`短い修飾文字列`thisNamespace.xyz.xyzSub`します。  
+ <span data-ttu-id="c25b1-117">前の例で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]昇格できません。 クラス`abc`に`thisNameSpace`名前空間レベルで同じ名前を持つ列挙型が既に存在します。</span><span class="sxs-lookup"><span data-stu-id="c25b1-117">In the preceding example, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] cannot promote class `abc` to `thisNameSpace` because there is already an enumeration with the same name at namespace level.</span></span> <span data-ttu-id="c25b1-118">アクセスする`abcSub`、完全修飾文字列を使用する必要があります`thisNamespace.thisModule.abc.abcSub`です。</span><span class="sxs-lookup"><span data-stu-id="c25b1-118">To access `abcSub`, you must use the full qualification string `thisNamespace.thisModule.abc.abcSub`.</span></span> <span data-ttu-id="c25b1-119">ただし、クラス`xyz`がまだ昇格し、アクセスできる`xyzSub`短い修飾文字列`thisNamespace.xyz.xyzSub`です。</span><span class="sxs-lookup"><span data-stu-id="c25b1-119">However, class `xyz` is still promoted, and you can access `xyzSub` with the shorter qualification string `thisNamespace.xyz.xyzSub`.</span></span>  
   
-### <a name="defeat-of-type-promotion-for-partial-types"></a>部分型の型の上位変換の無効化  
- クラスまたは構造体、モジュールの中で使用する場合、[部分](../../../../visual-basic/language-reference/modifiers/partial.md)キーワード、型の上位変換が自動的に無効化にそのクラスまたは構造体、名前空間には同じ名前のメンバーであるかどうか。 モジュールの他の要素は現在の型の上位変換します。  
+### <a name="defeat-of-type-promotion-for-partial-types"></a><span data-ttu-id="c25b1-120">部分型の型の上位変換の無効化</span><span class="sxs-lookup"><span data-stu-id="c25b1-120">Defeat of Type Promotion for Partial Types</span></span>  
+ <span data-ttu-id="c25b1-121">クラスまたはモジュール内の構造体で使用する場合、[部分](../../../../visual-basic/language-reference/modifiers/partial.md)キーワード、型の上位変換が自動的に無効化のクラスまたは構造体、名前空間を持つ同じ名前のメンバーであるかどうか。</span><span class="sxs-lookup"><span data-stu-id="c25b1-121">If a class or structure inside a module uses the [Partial](../../../../visual-basic/language-reference/modifiers/partial.md) keyword, type promotion is automatically defeated for that class or structure, whether or not the namespace has a member with the same name.</span></span> <span data-ttu-id="c25b1-122">モジュールの他の要素は、型の昇格も対象です。</span><span class="sxs-lookup"><span data-stu-id="c25b1-122">Other elements in the module are still eligible for type promotion.</span></span>  
   
- **結果。** 部分的な定義の型の上位変換の無効化には、予期しない結果とさらにコンパイル エラーがあります。 次の例では、うちの&1; つは、モジュール内のクラスのスケルトンの部分的な定義を示します。  
+ <span data-ttu-id="c25b1-123">**影響します。**</span><span class="sxs-lookup"><span data-stu-id="c25b1-123">**Consequences.**</span></span> <span data-ttu-id="c25b1-124">部分定義の型の上位変換の無効化には、予期しない結果とコンパイラ エラーも可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c25b1-124">Defeat of type promotion of a partial definition can cause unexpected results and even compiler errors.</span></span> <span data-ttu-id="c25b1-125">次の例では、モジュール内の 1 つは、クラスのスケルトンの部分定義を示します。</span><span class="sxs-lookup"><span data-stu-id="c25b1-125">The following example shows skeleton partial definitions of a class, one of which is inside a module.</span></span>  
   
- [!code-vb[VbVbalrDeclaredElements&4;](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_4.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#4](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_4.vb)]  
   
- 前の例では、開発者は、コンパイラの&2; つの部分定義をマージする`sampleClass`です。 ただし、コンパイラが部分定義内のプロモーションを考慮されません`sampleModule`します。 その結果、2 つの個別のクラスをコンパイルしようという名前を`sampleClass`ですが、パスのさまざまな修飾します。  
+ <span data-ttu-id="c25b1-126">前の例では、開発者は、コンパイラの 2 つの部分定義をマージする`sampleClass`です。</span><span class="sxs-lookup"><span data-stu-id="c25b1-126">In the preceding example, the developer might expect the compiler to merge the two partial definitions of `sampleClass`.</span></span> <span data-ttu-id="c25b1-127">ただし、コンパイラが部分定義内の昇格を考慮されません`sampleModule`です。</span><span class="sxs-lookup"><span data-stu-id="c25b1-127">However, the compiler does not consider promotion for the partial definition inside `sampleModule`.</span></span> <span data-ttu-id="c25b1-128">2 つの独立したクラスをコンパイルしようとしてという名前をその結果、`sampleClass`ですが、パスのさまざまな修飾します。</span><span class="sxs-lookup"><span data-stu-id="c25b1-128">As a result, it attempts to compile two separate and distinct classes, both named `sampleClass` but with different qualification paths.</span></span>  
   
- コンパイラは、完全修飾されたパスがまったく同じ場合にのみ、部分定義をマージします。  
+ <span data-ttu-id="c25b1-129">コンパイラは、完全修飾されたパスがまったく同じ場合にのみ、部分定義をマージします。</span><span class="sxs-lookup"><span data-stu-id="c25b1-129">The compiler merges partial definitions only when their fully qualified paths are identical.</span></span>  
   
-## <a name="recommendations"></a>推奨事項  
- 次の推奨事項は、プログラミング習慣を表します。  
+## <a name="recommendations"></a><span data-ttu-id="c25b1-130">推奨事項</span><span class="sxs-lookup"><span data-stu-id="c25b1-130">Recommendations</span></span>  
+ <span data-ttu-id="c25b1-131">次の推奨事項は、適切なプログラミング手法を表します。</span><span class="sxs-lookup"><span data-stu-id="c25b1-131">The following recommendations represent good programming practice.</span></span>  
   
--   **一意の名前。** プログラミングの要素の名前付けを完全に制御がある場合は常には一意の名前をすべての場所で使用します。 同じ名前では、余分に修飾が必要し、するコードが読みにくくします。 微妙なエラーと予期しない結果になることもします。  
+-   <span data-ttu-id="c25b1-132">**一意の名前。**</span><span class="sxs-lookup"><span data-stu-id="c25b1-132">**Unique Names.**</span></span> <span data-ttu-id="c25b1-133">プログラミング要素の名前付けを完全に制御がある場合は、は常に一意の名前をあらゆる場所で使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c25b1-133">When you have full control over the naming of programming elements, it is always a good idea to use unique names everywhere.</span></span> <span data-ttu-id="c25b1-134">同じ名前では、余分な修飾子が必要し、読みにくく、コードを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="c25b1-134">Identical names require extra qualification and can make your code harder to read.</span></span> <span data-ttu-id="c25b1-135">微妙なエラーと予期しない結果になることができますも。</span><span class="sxs-lookup"><span data-stu-id="c25b1-135">They can also lead to subtle errors and unexpected results.</span></span>  
   
--   **完全に修飾されます。** モジュールと同じ名前空間の他の要素を使用している、最も安全な方法が、常にすべてのプログラミング要素を完全に修飾を使用します。 型の上位変換がモジュール メンバーの無効化すると、そのメンバーを完全修飾せず、別のプログラミング要素をアクセスしてしまう可能性があります。  
+-   <span data-ttu-id="c25b1-136">**完全に修飾します。**</span><span class="sxs-lookup"><span data-stu-id="c25b1-136">**Full Qualification.**</span></span> <span data-ttu-id="c25b1-137">モジュールと同じ名前空間の他の要素を使用している、最も安全な手法はすべてのプログラミング要素の完全修飾を常に使用することです。</span><span class="sxs-lookup"><span data-stu-id="c25b1-137">When you are working with modules and other elements in the same namespace, the safest approach is to always use full qualification for all programming elements.</span></span> <span data-ttu-id="c25b1-138">型の昇格がモジュール メンバーの無効化、そのメンバーを完全に指定していない場合は、誤って別のプログラミング要素にアクセスするでした。</span><span class="sxs-lookup"><span data-stu-id="c25b1-138">If type promotion is defeated for a module member and you do not fully qualify that member, you could inadvertently access a different programming element.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [Module ステートメント](../../../../visual-basic/language-reference/statements/module-statement.md)   
- [Namespace ステートメント](../../../../visual-basic/language-reference/statements/namespace-statement.md)   
- [部分的です](../../../../visual-basic/language-reference/modifiers/partial.md)   
- [Visual Basic におけるスコープ](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)   
- [方法: 変数のスコープを制御します。](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)   
- [宣言された要素の参照](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+## <a name="see-also"></a><span data-ttu-id="c25b1-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="c25b1-139">See Also</span></span>  
+ [<span data-ttu-id="c25b1-140">Module ステートメント</span><span class="sxs-lookup"><span data-stu-id="c25b1-140">Module Statement</span></span>](../../../../visual-basic/language-reference/statements/module-statement.md)  
+ [<span data-ttu-id="c25b1-141">Namespace ステートメント</span><span class="sxs-lookup"><span data-stu-id="c25b1-141">Namespace Statement</span></span>](../../../../visual-basic/language-reference/statements/namespace-statement.md)  
+ [<span data-ttu-id="c25b1-142">Partial</span><span class="sxs-lookup"><span data-stu-id="c25b1-142">Partial</span></span>](../../../../visual-basic/language-reference/modifiers/partial.md)  
+ [<span data-ttu-id="c25b1-143">Visual Basic におけるスコープ</span><span class="sxs-lookup"><span data-stu-id="c25b1-143">Scope in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
+ [<span data-ttu-id="c25b1-144">方法: 変数のスコープを制御する</span><span class="sxs-lookup"><span data-stu-id="c25b1-144">How to: Control the Scope of a Variable</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)  
+ [<span data-ttu-id="c25b1-145">宣言された要素の参照</span><span class="sxs-lookup"><span data-stu-id="c25b1-145">References to Declared Elements</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)

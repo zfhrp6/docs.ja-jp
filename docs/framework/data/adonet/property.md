@@ -1,53 +1,56 @@
 ---
-title: "プロパティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: property
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a941c53f-fc97-42c2-8832-0fb9f1d55c06
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: c052c53488fde0ea767a46f51ef349dd6a7d2766
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# プロパティ
-*プロパティ*は、[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)および[複合型](../../../../docs/framework/data/adonet/complex-type.md)に不可欠な構成要素です。  プロパティは、エンティティ型または複合型のインスタンスに含まれるデータの形と特性を定義します。  概念モデルのプロパティは、クラスに定義されるプロパティに似ています。  クラスのプロパティがクラスの構造を定義し、オブジェクトに関する情報を伝達するのと同様に、概念モデルのプロパティはエンティティ型の構造を定義し、エンティティ型のインスタンスに関する情報を伝達します。  
+# <a name="property"></a><span data-ttu-id="bbe57-102">property</span><span class="sxs-lookup"><span data-stu-id="bbe57-102">property</span></span>
+<span data-ttu-id="bbe57-103">*プロパティ*の基本的なビルディング ブロックは、[エンティティ型](../../../../docs/framework/data/adonet/entity-type.md)と[複合型](../../../../docs/framework/data/adonet/complex-type.md)です。</span><span class="sxs-lookup"><span data-stu-id="bbe57-103">*Properties* are the fundamental building blocks of [entity types](../../../../docs/framework/data/adonet/entity-type.md) and [complex types](../../../../docs/framework/data/adonet/complex-type.md).</span></span> <span data-ttu-id="bbe57-104">プロパティは、エンティティ型または複合型のインスタンスに含まれるデータの形と特性を定義します。</span><span class="sxs-lookup"><span data-stu-id="bbe57-104">Properties define the shape and characteristics of data that an entity type instance or complex type instance will contain.</span></span> <span data-ttu-id="bbe57-105">概念モデルのプロパティは、クラスに定義されるプロパティに似ています。</span><span class="sxs-lookup"><span data-stu-id="bbe57-105">Properties in a conceptual model are analogous to properties defined on a class.</span></span> <span data-ttu-id="bbe57-106">クラスのプロパティがクラスの構造を定義し、オブジェクトに関する情報を伝達するのと同様に、概念モデルのプロパティはエンティティ型の構造を定義し、エンティティ型のインスタンスに関する情報を伝達します。</span><span class="sxs-lookup"><span data-stu-id="bbe57-106">In the same way that properties on a class define the shape of the class and carry information about objects, properties in a conceptual model define the shape of an entity type and carry information about entity type instances.</span></span>  
   
 > [!NOTE]
->  このトピックで説明するプロパティは、ナビゲーション プロパティとは異なります。  詳細については、「[ナビゲーション プロパティ](../../../../docs/framework/data/adonet/navigation-property.md)」を参照してください。  
+>  <span data-ttu-id="bbe57-107">このトピックで説明するプロパティは、ナビゲーション プロパティとは異なります。</span><span class="sxs-lookup"><span data-stu-id="bbe57-107">Properties, as described in this topic, are different from navigation properties.</span></span> <span data-ttu-id="bbe57-108">詳細については、次を参照してください。[ナビゲーション プロパティ](../../../../docs/framework/data/adonet/navigation-property.md)です。</span><span class="sxs-lookup"><span data-stu-id="bbe57-108">For more information, see [navigation properties](../../../../docs/framework/data/adonet/navigation-property.md).</span></span>  
   
- プロパティの定義には、次の情報が含まれます。  
+ <span data-ttu-id="bbe57-109">プロパティの定義には、次の情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="bbe57-109">A property definition contains the following information:</span></span>  
   
--   プロパティ名。  \(必須\)  
+-   <span data-ttu-id="bbe57-110">プロパティ名。</span><span class="sxs-lookup"><span data-stu-id="bbe57-110">A property name.</span></span> <span data-ttu-id="bbe57-111">(必須)</span><span class="sxs-lookup"><span data-stu-id="bbe57-111">(Required)</span></span>  
   
--   プロパティの型。  \(必須\)  
+-   <span data-ttu-id="bbe57-112">プロパティの型。</span><span class="sxs-lookup"><span data-stu-id="bbe57-112">A property type.</span></span> <span data-ttu-id="bbe57-113">(必須)</span><span class="sxs-lookup"><span data-stu-id="bbe57-113">(Required)</span></span>  
   
--   一連の[ファセット](../../../../docs/framework/data/adonet/facet.md)。  \(オプション\)。  
+-   <span data-ttu-id="bbe57-114">一連の[ファセット](../../../../docs/framework/data/adonet/facet.md)です。</span><span class="sxs-lookup"><span data-stu-id="bbe57-114">A set of [facets](../../../../docs/framework/data/adonet/facet.md).</span></span> <span data-ttu-id="bbe57-115">(オプション)。</span><span class="sxs-lookup"><span data-stu-id="bbe57-115">(Optional)</span></span>  
   
- プロパティには、プリミティブ データ \(文字列、整数、ブール値など\) または構造化データ \(複合型\) を含めることができます。  プリミティブ型のプロパティは、スカラー プロパティとも呼ばれます。  詳細については、「[Entity Data Model: プリミティブ データ型](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md)」を参照してください。  
+ <span data-ttu-id="bbe57-116">プロパティには、プリミティブ データ (文字列、整数、ブール値など) または構造化データ (複合型) を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="bbe57-116">A property can contain primitive data (such as a string, an integer, or a Boolean value), or structured data (such as a complex type).</span></span> <span data-ttu-id="bbe57-117">プリミティブ型のプロパティは、スカラー プロパティとも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="bbe57-117">Properties that are of primitive type are also called scalar properties.</span></span> <span data-ttu-id="bbe57-118">詳細については、次を参照してください。 [Entity Data Model: プリミティブ データ型](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md)です。</span><span class="sxs-lookup"><span data-stu-id="bbe57-118">For more information, see [Entity Data Model: Primitive Data Types](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md).</span></span>  
   
 > [!NOTE]
->  複合型自体に、複合型のプロパティを指定することができます。  
+>  <span data-ttu-id="bbe57-119">複合型自体に、複合型のプロパティを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="bbe57-119">A complex type can, itself, have properties that are complex types.</span></span>  
   
-## 例  
- 下のダイアグラムは、`Book`、`Publisher`、および `Author` という 3 つのエンティティ型の概念モデルを示しています。  各エンティティ型には、いくつかのプロパティがありますが、ダイアグラムには各プロパティの型情報が示されていません。  [エンティティ キー](../../../../docs/framework/data/adonet/entity-key.md)のプロパティには、"\(キー\)" と示されています。  
+## <a name="example"></a><span data-ttu-id="bbe57-120">例</span><span class="sxs-lookup"><span data-stu-id="bbe57-120">Example</span></span>  
+ <span data-ttu-id="bbe57-121">下のダイアグラムは、`Book`、`Publisher`、および `Author` という 3 つのエンティティ型の概念モデルを示しています。</span><span class="sxs-lookup"><span data-stu-id="bbe57-121">The diagram below shows a conceptual model with three entity types: `Book`, `Publisher`, and `Author`.</span></span> <span data-ttu-id="bbe57-122">各エンティティ型には、いくつかのプロパティがありますが、ダイアグラムには各プロパティの型情報が示されていません。</span><span class="sxs-lookup"><span data-stu-id="bbe57-122">Each entity type has several properties, although type information for each property is not conveyed in the diagram.</span></span> <span data-ttu-id="bbe57-123">プロパティを[エンティティ キー](../../../../docs/framework/data/adonet/entity-key.md) (キー) と示されています。</span><span class="sxs-lookup"><span data-stu-id="bbe57-123">Properties that are [entity keys](../../../../docs/framework/data/adonet/entity-key.md) are denoted with (Key).</span></span>  
   
- ![モデル例](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
+ <span data-ttu-id="bbe57-124">![モデルの例](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")</span><span class="sxs-lookup"><span data-stu-id="bbe57-124">![Example Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")</span></span>  
   
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) では、概念スキーマ定義言語 \([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)\) と呼ばれるドメイン固有言語 \(DSL\) を使用して概念モデルを定義します。  次の CSDL は、`Book` エンティティ型 \(上のダイアグラムに示されたように\) を定義し、XML 属性により各プロパティの型と名前を示しています。  ファセット `Nullable` \(省略可能\) も XML 属性により定義されています。  
+ <span data-ttu-id="bbe57-125">[ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md)概念スキーマ定義言語と呼ばれるドメイン固有言語 (DSL) を使用して ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) 概念モデルを定義します。</span><span class="sxs-lookup"><span data-stu-id="bbe57-125">The [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) uses a domain-specific language (DSL) called conceptual schema definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) to define conceptual models.</span></span> <span data-ttu-id="bbe57-126">次の CSDL は、`Book` エンティティ型 (上のダイアグラムに示されたように) を定義し、XML 属性により各プロパティの型と名前を示しています。</span><span class="sxs-lookup"><span data-stu-id="bbe57-126">The following CSDL defines the `Book` entity type (as shown in the diagram above) and indicates the type and name of each property by using XML attributes.</span></span> <span data-ttu-id="bbe57-127">ファセット `Nullable` (省略可能) も XML 属性により定義されています。</span><span class="sxs-lookup"><span data-stu-id="bbe57-127">An optional facet, `Nullable`, is also defined by using an XML attribute.</span></span>  
   
  [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
   
- ダイアグラムに示されたいずれかのプロパティが複合型のプロパティであることも考えられます。  たとえば、`Publisher` エンティティ型の `Address` プロパティは、`StreetAddress`、`City`、`StateOrProvince`、`Country`、`PostalCode` などいくつかのスカラー プロパティから構成された複合型のプロパティである可能性があります。  このような複合型の CSDL 表現は、次のようになります。  
+ <span data-ttu-id="bbe57-128">ダイアグラムに示されたいずれかのプロパティが複合型のプロパティであることも考えられます。</span><span class="sxs-lookup"><span data-stu-id="bbe57-128">It is possible that one of the properties shown in the diagram is a complex type property.</span></span> <span data-ttu-id="bbe57-129">たとえば、`Address` エンティティ型の `Publisher` プロパティは、`StreetAddress`、`City`、`StateOrProvince`、`Country`、`PostalCode` などいくつかのスカラー プロパティから構成された複合型のプロパティである可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bbe57-129">For example, the `Address` property on the `Publisher` entity type could be a complex type property composed of several scalar properties, such as `StreetAddress`, `City`, `StateOrProvince`, `Country`, and `PostalCode`.</span></span> <span data-ttu-id="bbe57-130">このような複合型の CSDL 表現は、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="bbe57-130">The CSDL representation of such a complex type would be as follows:</span></span>  
   
  [!code-xml[EDM_Example_Model#ComplexTypeExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books2.edmx#complextypeexample)]  
   
-## 参照  
- [Entity Data Model キーの概念](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)   
- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+## <a name="see-also"></a><span data-ttu-id="bbe57-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="bbe57-131">See Also</span></span>  
+ [<span data-ttu-id="bbe57-132">エンティティ データ モデルの主要な概念</span><span class="sxs-lookup"><span data-stu-id="bbe57-132">Entity Data Model Key Concepts</span></span>](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [<span data-ttu-id="bbe57-133">エンティティ データ モデル</span><span class="sxs-lookup"><span data-stu-id="bbe57-133">Entity Data Model</span></span>](../../../../docs/framework/data/adonet/entity-data-model.md)

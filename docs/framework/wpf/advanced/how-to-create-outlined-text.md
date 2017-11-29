@@ -1,65 +1,71 @@
 ---
-title: "方法 : 中抜きの文字列を作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "グラデーション ブラシ"
-  - "線形グラデーション ブラシ"
-  - "中抜きの文字列"
-  - "タイポグラフィ, 線形グラデーション ブラシ"
-  - "タイポグラフィ, 中抜き効果"
+title: "方法 : 中抜きの文字列を作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- typography [WPF], linear gradient brush
+- outlined text [WPF]
+- gradient brush [WPF]
+- linear gradient brush [WPF]
+- typography [WPF], outline effects
 ms.assetid: 4aa3cf6e-1953-4f26-8230-7c1409e5f28d
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 76d0dcf63f9d8a66106f4bcdc52a2bf98c75cdc4
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : 中抜きの文字列を作成する
-通常、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションでテキスト文字列に装飾を追加する場合は、別個の文字、つまりグリフのコレクションとしてのテキストを使用します。  たとえば、線形グラデーション ブラシを作成し、それを <xref:System.Windows.Controls.TextBox> オブジェクトの <xref:System.Windows.Controls.Control.Foreground%2A> プロパティに適用できます。  テキスト ボックスを表示または編集すると、テキスト文字列の現在の文字セットに、線形グラデーション ブラシが自動的に適用されます。  
+# <a name="how-to-create-outlined-text"></a><span data-ttu-id="5b131-102">方法 : 中抜きの文字列を作成する</span><span class="sxs-lookup"><span data-stu-id="5b131-102">How to: Create Outlined Text</span></span>
+<span data-ttu-id="5b131-103">ほとんどの場合、テキスト文字列内に装飾を追加するときに、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションでは、個別の文字、またはグリフのコレクションの観点からテキストを使用しています。</span><span class="sxs-lookup"><span data-stu-id="5b131-103">In most cases, when you are adding ornamentation to text strings in your [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] application, you are using text in terms of a collection of discrete characters, or glyphs.</span></span> <span data-ttu-id="5b131-104">たとえば、線形グラデーション ブラシを作成し、適用、<xref:System.Windows.Controls.Control.Foreground%2A>のプロパティ、<xref:System.Windows.Controls.TextBox>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5b131-104">For example, you could create a linear gradient brush and apply it to the <xref:System.Windows.Controls.Control.Foreground%2A> property of a <xref:System.Windows.Controls.TextBox> object.</span></span> <span data-ttu-id="5b131-105">表示またはテキスト ボックスを編集するときに、現在のテキスト文字列の文字のセットに線形グラデーション ブラシが自動的に適用します。</span><span class="sxs-lookup"><span data-stu-id="5b131-105">When you display or edit the text box, the linear gradient brush is automatically applied to the current set of characters in the text string.</span></span>  
   
- ![線形グラデーション ブラシで表示されるテキスト](../../../../docs/framework/wpf/advanced/media/outlinedtext01.png "OutlinedText01")  
-テキスト ボックスに適用された線形グラデーション ブラシの例  
+ <span data-ttu-id="5b131-106">![線形グラデーション ブラシで表示されるテキスト](../../../../docs/framework/wpf/advanced/media/outlinedtext01.jpg "OutlinedText01")</span><span class="sxs-lookup"><span data-stu-id="5b131-106">![Text displayed with a linear gradient brush](../../../../docs/framework/wpf/advanced/media/outlinedtext01.jpg "OutlinedText01")</span></span>  
+<span data-ttu-id="5b131-107">テキスト ボックスに適用された線形グラデーション ブラシの例</span><span class="sxs-lookup"><span data-stu-id="5b131-107">Example of a linear gradient brush applied to a text box</span></span>  
   
- テキストを <xref:System.Windows.Media.Geometry> オブジェクトに変換し、人の目をひきつける他の種類のテキストを作成することもできます。  たとえば、テキスト文字列のアウトラインに基づいて <xref:System.Windows.Media.Geometry> オブジェクトを作成できます。  
+ <span data-ttu-id="5b131-108">ただし、変換することもにテキストを<xref:System.Windows.Media.Geometry>オブジェクト、その他の種類の視覚的に豊富なテキストを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="5b131-108">However, you can also convert text into <xref:System.Windows.Media.Geometry> objects, allowing you to create other types of visually rich text.</span></span> <span data-ttu-id="5b131-109">たとえば、作成した、<xref:System.Windows.Media.Geometry>テキスト文字列のアウトラインに基づいてオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5b131-109">For example, you could create a <xref:System.Windows.Media.Geometry> object based on the outline of a text string.</span></span>  
   
- ![線形グラデーション ブラシを使用するテキスト アウトライン](../../../../docs/framework/wpf/advanced/media/outlinedtext02.png "OutlinedText02")  
-アウトライン ジオメトリのテキストに適用された線形グラデーション ブラシの例  
+ <span data-ttu-id="5b131-110">![線形グラデーション ブラシを使用するテキスト アウトライン](../../../../docs/framework/wpf/advanced/media/outlinedtext02.jpg "OutlinedText02")</span><span class="sxs-lookup"><span data-stu-id="5b131-110">![Text outline using a linear gradient brush](../../../../docs/framework/wpf/advanced/media/outlinedtext02.jpg "OutlinedText02")</span></span>  
+<span data-ttu-id="5b131-111">テキストのアウトライン ジオメトリに適用される線形グラデーション ブラシの例</span><span class="sxs-lookup"><span data-stu-id="5b131-111">Example of a linear gradient brush applied to the outline geometry of text</span></span>  
   
- テキストを <xref:System.Windows.Media.Geometry> オブジェクトに変換すると、テキストは文字の集まりではなくなります。つまり、文字列内の文字を変更することはできません。  ただし、変換されたテキストのストロークおよび塗りつぶしのプロパティを変更することで、テキストの外観を変えることができます。  ストロークは、変換したテキストのアウトラインを参照します。塗りつぶしは、変換したテキストのアウトラインの内側の領域を参照します。  
+ <span data-ttu-id="5b131-112">テキストに変換するときに、<xref:System.Windows.Media.Geometry>オブジェクト、文字のコレクションではなくなりました: テキスト文字列内の文字を変更することはできません。</span><span class="sxs-lookup"><span data-stu-id="5b131-112">When text is converted to a <xref:System.Windows.Media.Geometry> object, it is no longer a collection of characters—you cannot modify the characters in the text string.</span></span> <span data-ttu-id="5b131-113">ただし、変換されたテキストのストロークおよび塗りつぶしのプロパティを変更することで、テキストの外観を変えることができます。</span><span class="sxs-lookup"><span data-stu-id="5b131-113">However, you can affect the appearance of the converted text by modifying its stroke and fill properties.</span></span> <span data-ttu-id="5b131-114">ストロークは、変換したテキストのアウトラインを参照します。塗りつぶしは、変換したテキストのアウトラインの内側の領域を参照します。</span><span class="sxs-lookup"><span data-stu-id="5b131-114">The stroke refers to the outline of the converted text; the fill refers to the area inside the outline of the converted text.</span></span>  
   
- 変換されたテキストのストロークおよび塗りつぶしを変更して、視覚効果を作成するいくつかの方法を次の例に示します。  
+ <span data-ttu-id="5b131-115">次の例では、変換されたテキストの塗りつぶし、ストロークを変更して視覚効果を作成するいくつかの方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5b131-115">The following examples illustrate several ways of creating visual effects by modifying the stroke and fill of converted text.</span></span>  
   
- ![塗りつぶしとストロークに別の色を使用するテキスト](../../../../docs/framework/wpf/advanced/media/outlinedtext03.png "OutlinedText03")  
-ストロークおよび塗りつぶしを別々の色に設定した例  
+ <span data-ttu-id="5b131-116">![塗りつぶしとストロークを別の色を含むテキスト](../../../../docs/framework/wpf/advanced/media/outlinedtext03.jpg "OutlinedText03")</span><span class="sxs-lookup"><span data-stu-id="5b131-116">![Text with different colors for fill and stroke](../../../../docs/framework/wpf/advanced/media/outlinedtext03.jpg "OutlinedText03")</span></span>  
+<span data-ttu-id="5b131-117">ストロークと塗りつぶしを別々の色に設定した例</span><span class="sxs-lookup"><span data-stu-id="5b131-117">Example of setting stroke and fill to different colors</span></span>  
   
- ![ストロークに適用されるイメージ ブラシを含むテキスト](../../../../docs/framework/wpf/advanced/media/outlinedtext04.png "OutlinedText04")  
-ストロークに適用したイメージ ブラシの例  
+ <span data-ttu-id="5b131-118">![ストロークに適用されるイメージ ブラシを含むテキスト](../../../../docs/framework/wpf/advanced/media/outlinedtext04.jpg "OutlinedText04")</span><span class="sxs-lookup"><span data-stu-id="5b131-118">![Text with image brush applied to stroke](../../../../docs/framework/wpf/advanced/media/outlinedtext04.jpg "OutlinedText04")</span></span>  
+<span data-ttu-id="5b131-119">ストロークに適用したイメージ ブラシの例</span><span class="sxs-lookup"><span data-stu-id="5b131-119">Example of an image brush applied to the stroke</span></span>  
   
- 変換されたテキストの境界ボックスの四角形または強調表示を変更することもできます。  変換されたテキストのストロークおよび強調表示を変更して、視覚効果を作成する方法の一例を次に示します。  
+ <span data-ttu-id="5b131-120">境界ボックスの四角形、または変換されたテキストの強調表示を変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="5b131-120">It is also possible to modify the bounding box rectangle, or highlight, of the converted text.</span></span> <span data-ttu-id="5b131-121">次の例は、ストロークおよび変換されたテキストの強調表示を変更することによって、視覚効果を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="5b131-121">The following example illustrates a way to creating visual effects by modifying the stroke and highlight of converted text.</span></span>  
   
- ![ストロークに適用されるイメージ ブラシを含むテキスト](../../../../docs/framework/wpf/advanced/media/outlinedtext05.png "OutlinedText05")  
-ストロークおよび強調表示に適用したイメージ ブラシの例  
+ <span data-ttu-id="5b131-122">![ストロークに適用されるイメージ ブラシを含むテキスト](../../../../docs/framework/wpf/advanced/media/outlinedtext05.jpg "OutlinedText05")</span><span class="sxs-lookup"><span data-stu-id="5b131-122">![Text with image brush applied to stroke](../../../../docs/framework/wpf/advanced/media/outlinedtext05.jpg "OutlinedText05")</span></span>  
+<span data-ttu-id="5b131-123">ストロークと強調表示に適用したイメージ ブラシの例</span><span class="sxs-lookup"><span data-stu-id="5b131-123">Example of an image brush applied to the stroke and highlight</span></span>  
   
-## 使用例  
- テキストを <xref:System.Windows.Media.Geometry> オブジェクトに変換する場合の要点は、<xref:System.Windows.Media.FormattedText> オブジェクトを使用することです。  このオブジェクトを作成したら、<xref:System.Windows.Media.FormattedText.BuildGeometry%2A> メソッドと <xref:System.Windows.Media.FormattedText.BuildHighlightGeometry%2A> メソッドを使用して、テキストを <xref:System.Windows.Media.Geometry> オブジェクトに変換できます。  最初のメソッドは、書式設定されたテキストのジオメトリを返します。2 番目のメソッドは、書式設定されたテキストの境界ボックスのジオメトリを返します。  <xref:System.Windows.Media.FormattedText> オブジェクトを作成し、書式設定されたテキストとその境界ボックスのジオメトリを取得する方法を次のコード例に示します。  
+## <a name="example"></a><span data-ttu-id="5b131-124">例</span><span class="sxs-lookup"><span data-stu-id="5b131-124">Example</span></span>  
+ <span data-ttu-id="5b131-125">テキストを変換するキー、<xref:System.Windows.Media.Geometry>オブジェクトは、使用する、<xref:System.Windows.Media.FormattedText>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5b131-125">The key to converting text to a <xref:System.Windows.Media.Geometry> object is to use the <xref:System.Windows.Media.FormattedText> object.</span></span> <span data-ttu-id="5b131-126">使用することがこのオブジェクトを作成した後、<xref:System.Windows.Media.FormattedText.BuildGeometry%2A>と<xref:System.Windows.Media.FormattedText.BuildHighlightGeometry%2A>をテキストに変換するメソッド<xref:System.Windows.Media.Geometry>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5b131-126">Once you have created this object, you can use the <xref:System.Windows.Media.FormattedText.BuildGeometry%2A> and <xref:System.Windows.Media.FormattedText.BuildHighlightGeometry%2A> methods to convert the text to <xref:System.Windows.Media.Geometry> objects.</span></span> <span data-ttu-id="5b131-127">最初のメソッドは、フォーマットされたテキストのジオメトリを返します2 番目のメソッドは、境界ボックスの書式設定されたテキストのジオメトリを返します。</span><span class="sxs-lookup"><span data-stu-id="5b131-127">The first method returns the geometry of the formatted text; the second method returns the geometry of the formatted text's bounding box.</span></span> <span data-ttu-id="5b131-128">次のコード例を作成する方法を示しています、<xref:System.Windows.Media.FormattedText>オブジェクトの書式設定されたテキストと、境界ボックスのジオメトリを取得するとします。</span><span class="sxs-lookup"><span data-stu-id="5b131-128">The following code example shows how to create a <xref:System.Windows.Media.FormattedText> object and to retrieve the geometries of the formatted text and its bounding box.</span></span>  
   
  [!code-csharp[OutlineTextControlViewer#CreateText](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs#createtext)]
  [!code-vb[OutlineTextControlViewer#CreateText](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb#createtext)]  
   
- 取得された <xref:System.Windows.Media.Geometry> オブジェクトを表示するには、変換されたテキストを表示しているオブジェクトの <xref:System.Windows.Media.DrawingContext> にアクセスする必要があります。  これらのコード例では、ユーザー定義のレンダリングをサポートするクラスの派生カスタム コントロール オブジェクトを作成することで、これを行います。  
+ <span data-ttu-id="5b131-129">取得した表示するために、<xref:System.Windows.Media.Geometry>オブジェクトにアクセスする必要があります、<xref:System.Windows.Media.DrawingContext>変換されたテキストが表示されているオブジェクトの。</span><span class="sxs-lookup"><span data-stu-id="5b131-129">In order to display the retrieved the <xref:System.Windows.Media.Geometry> objects, you need to access the <xref:System.Windows.Media.DrawingContext> of the object that is displaying the converted text.</span></span> <span data-ttu-id="5b131-130">これらのコード例では、これはユーザー定義のレンダリングをサポートするクラスから派生したカスタム コントロール オブジェクトを作成することで行われます。</span><span class="sxs-lookup"><span data-stu-id="5b131-130">In these code examples, this is done by creating a custom control object that is derived from a class that supports user-defined rendering.</span></span>  
   
- カスタム コントロールで <xref:System.Windows.Media.Geometry> オブジェクトを表示するには、<xref:System.Windows.UIElement.OnRender%2A> メソッドのオーバーライドを提供します。  オーバーライドしたメソッドでは、<xref:System.Windows.Media.DrawingContext.DrawGeometry%2A> メソッドを使用して <xref:System.Windows.Media.Geometry> オブジェクトを描画する必要があります。  
+ <span data-ttu-id="5b131-131">表示する<xref:System.Windows.Media.Geometry>、カスタム コントロール内のオブジェクトのオーバーライドを提供する、<xref:System.Windows.UIElement.OnRender%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="5b131-131">To display <xref:System.Windows.Media.Geometry> objects in the custom control, provide an override for the <xref:System.Windows.UIElement.OnRender%2A> method.</span></span> <span data-ttu-id="5b131-132">オーバーライドされたメソッドを使用する必要があります、<xref:System.Windows.Media.DrawingContext.DrawGeometry%2A>を描画するメソッド、<xref:System.Windows.Media.Geometry>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5b131-132">Your overridden method should use the <xref:System.Windows.Media.DrawingContext.DrawGeometry%2A> method to draw the <xref:System.Windows.Media.Geometry> objects.</span></span>  
   
  [!code-csharp[OutlineTextControlViewer#OnRender](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs#onrender)]
  [!code-vb[OutlineTextControlViewer#OnRender](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb#onrender)]  
   
-## 参照  
- [書式設定されたテキストの描画](../../../../docs/framework/wpf/advanced/drawing-formatted-text.md)
+## <a name="see-also"></a><span data-ttu-id="5b131-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="5b131-133">See Also</span></span>  
+ [<span data-ttu-id="5b131-134">書式設定されたテキストの描画</span><span class="sxs-lookup"><span data-stu-id="5b131-134">Drawing Formatted Text</span></span>](../../../../docs/framework/wpf/advanced/drawing-formatted-text.md)

@@ -1,72 +1,75 @@
 ---
-title: "DataGrid | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール [WPF], DataGrid"
-  - "DataGrid [WPF], 一般的なタスク"
-  - "DataGrid [WPF], カスタマイズ (外観を)"
-  - "DataGrid の列型 [WPF]"
-  - "DataGrid の列 [WPF], 使用"
-  - "DataGrid コントロール [WPF]"
-  - "DataGrid のシナリオ [WPF]"
+title: DataGrid
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DataGrid column types [WPF]
+- DataGrid scenarios [WPF]
+- DataGrid control [WPF]
+- controls [WPF], DataGrid
+- DataGrid [WPF], common tasks for
+- DataGrid [WPF], customizing the appearance of
+- DataGrid columns [WPF], using
 ms.assetid: bf89ea63-79b6-422b-bc9f-0485ad803216
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 63eb1b7aec0c65192f67035fc7bc624fa1d2ae81
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataGrid
-<xref:System.Windows.Controls.DataGrid> コントロールでは、SQL データベース、LINQ クエリ、バインドできる他のデータ ソースなどのさまざまなソースのデータを表示および編集できます。  詳細については、「[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)」を参照してください。  
+# <a name="datagrid"></a><span data-ttu-id="60eb4-102">DataGrid</span><span class="sxs-lookup"><span data-stu-id="60eb4-102">DataGrid</span></span>
+<span data-ttu-id="60eb4-103"><xref:System.Windows.Controls.DataGrid>コントロールでは、表示および SQL データベース、LINQ クエリ、またはその他のバインド可能なデータ ソースからなど、さまざまなソースからデータを編集することができます。</span><span class="sxs-lookup"><span data-stu-id="60eb4-103">The <xref:System.Windows.Controls.DataGrid> control enables you to display and edit data from many different sources, such as from a SQL database, LINQ query, or any other bindable data source.</span></span> <span data-ttu-id="60eb4-104">詳しくは、「[バインディング ソースの概要](../../../../docs/framework/wpf/data/binding-sources-overview.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="60eb4-104">For more information, see [Binding Sources Overview](../../../../docs/framework/wpf/data/binding-sources-overview.md).</span></span>  
   
- 列には、テキスト、<xref:System.Windows.Controls.ComboBox> などのコントロール、イメージやボタンなどのその他の WPF コンテンツ、またはテンプレートに格納されるコンテンツを表示できます。  <xref:System.Windows.Controls.DataGridTemplateColumn> を使用して、テンプレートに定義されたデータを表示できます。  既定で提供される列の型を次の表に示します。  
+ <span data-ttu-id="60eb4-105">列がなど、コントロールのテキストを表示することができます、 <xref:System.Windows.Controls.ComboBox>、またはイメージ、ボタン、またはテンプレートに含まれるすべてのコンテンツなどその他の WPF コンテンツ。</span><span class="sxs-lookup"><span data-stu-id="60eb4-105">Columns can display text, controls, such as a <xref:System.Windows.Controls.ComboBox>, or any other WPF content, such as images, buttons, or any content contained in a template.</span></span> <span data-ttu-id="60eb4-106">使用することができます、<xref:System.Windows.Controls.DataGridTemplateColumn>テンプレートで定義されているデータを表示します。</span><span class="sxs-lookup"><span data-stu-id="60eb4-106">You can use a <xref:System.Windows.Controls.DataGridTemplateColumn> to display data defined in a template.</span></span> <span data-ttu-id="60eb4-107">次の表には、既定で用意されている列の型が一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="60eb4-107">The following table lists the column types that are provided by default.</span></span>  
   
-|生成された列の型|\[データ型\]|  
-|--------------|--------------|  
+|<span data-ttu-id="60eb4-108">生成された列の型</span><span class="sxs-lookup"><span data-stu-id="60eb4-108">Generated Column Type</span></span>|<span data-ttu-id="60eb4-109">データの種類</span><span class="sxs-lookup"><span data-stu-id="60eb4-109">Data Type</span></span>|  
+|---------------------------|---------------|  
 |<xref:System.Windows.Controls.DataGridTextColumn>|<xref:System.String>|  
 |<xref:System.Windows.Controls.DataGridCheckBoxColumn>|<xref:System.Boolean>|  
 |<xref:System.Windows.Controls.DataGridComboBoxColumn>|<xref:System.Enum>|  
 |<xref:System.Windows.Controls.DataGridHyperlinkColumn>|<xref:System.Uri>|  
   
- <xref:System.Windows.Controls.DataGrid> では、セルのフォント、色、サイズなどの表示形式をカスタマイズできます。  <xref:System.Windows.Controls.DataGrid> では、他の WPF コントロールのスタイルとテンプレート機能のすべてをサポートしています。  <xref:System.Windows.Controls.DataGrid> には、編集、並べ替え、および検証に関する、既定の動作とカスタマイズできる動作も用意されています。  
+ <span data-ttu-id="60eb4-110"><xref:System.Windows.Controls.DataGrid>セルのフォント、色、サイズなどの外観をカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="60eb4-110"><xref:System.Windows.Controls.DataGrid> can be customized in appearance, such as cell font, color, and size.</span></span> <span data-ttu-id="60eb4-111"><xref:System.Windows.Controls.DataGrid>他の WPF コントロールのすべてのスタイルとテンプレートの機能をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="60eb4-111"><xref:System.Windows.Controls.DataGrid> supports all styling and templating functionality of other WPF controls.</span></span> <span data-ttu-id="60eb4-112"><xref:System.Windows.Controls.DataGrid>既定値と編集、並べ替え、および検証のカスタマイズ可能な動作にも含まれます。</span><span class="sxs-lookup"><span data-stu-id="60eb4-112"><xref:System.Windows.Controls.DataGrid> also includes default and customizable behaviors for editing, sorting, and validation.</span></span>  
   
- 次の表に、<xref:System.Windows.Controls.DataGrid> に共通のタスクの一部と、それらの実行方法を示します。  関連する API を表示することによって、詳細やサンプル コードを参照できます。  
+ <span data-ttu-id="60eb4-113">次の表の一般的なタスク<xref:System.Windows.Controls.DataGrid>およびそれを達成する方法です。</span><span class="sxs-lookup"><span data-stu-id="60eb4-113">The following table lists some of the common tasks for <xref:System.Windows.Controls.DataGrid> and how to accomplish them.</span></span> <span data-ttu-id="60eb4-114">関連する API を表示すると、詳細情報とサンプル コードが表示されます。</span><span class="sxs-lookup"><span data-stu-id="60eb4-114">By viewing the related API, you can find more information and sample code.</span></span>  
   
-|シナリオ|方法|  
-|----------|--------|  
-|背景色の変更|<xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A> プロパティを 2 以上に設定し、<xref:System.Windows.Media.Brush> を <xref:System.Windows.Controls.DataGrid.RowBackground%2A> および <xref:System.Windows.Controls.DataGrid.AlternatingRowBackground%2A> プロパティに割り当てます。|  
-|セルと行の選択動作の定義|<xref:System.Windows.Controls.DataGrid.SelectionMode%2A> プロパティおよび <xref:System.Windows.Controls.DataGrid.SelectionUnit%2A> プロパティを設定します。|  
-|ヘッダー、セル、および行の視覚的な外観のカスタマイズ|新しい <xref:System.Windows.Style> を <xref:System.Windows.Controls.DataGrid.ColumnHeaderStyle%2A>、<xref:System.Windows.Controls.DataGrid.RowHeaderStyle%2A>、<xref:System.Windows.Controls.DataGrid.CellStyle%2A>、または <xref:System.Windows.Controls.DataGrid.RowStyle%2A> プロパティに適用します。|  
-|サイズ変更オプションの設定|<xref:System.Windows.FrameworkElement.Height%2A>、<xref:System.Windows.FrameworkElement.MaxHeight%2A>、<xref:System.Windows.FrameworkElement.MinHeight%2A>、<xref:System.Windows.FrameworkElement.Width%2A>、<xref:System.Windows.FrameworkElement.MaxWidth%2A>、または <xref:System.Windows.FrameworkElement.MinWidth%2A> の各プロパティを設定します。  詳細については、「[DataGrid コントロールのサイズ変更方法](../../../../docs/framework/wpf/controls/sizing-options-in-the-datagrid-control.md)」を参照してください。|  
-|選択されたアイテムへのアクセス|選択されたセルを取得するには <xref:System.Windows.Controls.DataGrid.SelectedCells%2A> プロパティをチェックし、選択された行を取得するには <xref:System.Windows.Controls.Primitives.MultiSelector.SelectedItems%2A> プロパティをチェックします。  詳細については、<xref:System.Windows.Controls.DataGrid.SelectedCells%2A> を参照してください。|  
-|エンド ユーザーとの対話をカスタマイズ|<xref:System.Windows.Controls.DataGrid.CanUserAddRows%2A> プロパティ、<xref:System.Windows.Controls.DataGrid.CanUserDeleteRows%2A> プロパティ、<xref:System.Windows.Controls.DataGrid.CanUserReorderColumns%2A> プロパティ、<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A> プロパティ、<xref:System.Windows.Controls.DataGrid.CanUserResizeRows%2A> プロパティおよび <xref:System.Windows.Controls.DataGrid.CanUserSortColumns%2A> プロパティを設定します。|  
-|自動生成された列のキャンセルまたは変更|<xref:System.Windows.Controls.DataGrid.AutoGeneratingColumn> イベントを処理します。|  
-|列の固定|<xref:System.Windows.Controls.DataGrid.FrozenColumnCount%2A> プロパティを 1 に設定し、<xref:System.Windows.Controls.DataGridColumn.DisplayIndex%2A> プロパティを 0 に設定することによって列を左端の位置に移動します。|  
-|データ ソースとしての XML データの使用|<xref:System.Windows.Controls.DataGrid> の <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> を、項目のコレクションを表す XPath クエリにバインドします。  <xref:System.Windows.Controls.DataGrid> に各列を作成します。  バインディングの XPath を、項目のソースのプロパティを取得するクエリに設定することによって各列をバインドします。  例については、「<xref:System.Windows.Controls.DataGridTextColumn>」を参照してください。|  
+|<span data-ttu-id="60eb4-115">シナリオ</span><span class="sxs-lookup"><span data-stu-id="60eb4-115">Scenario</span></span>|<span data-ttu-id="60eb4-116">方法</span><span class="sxs-lookup"><span data-stu-id="60eb4-116">Approach</span></span>|  
+|--------------|--------------|  
+|<span data-ttu-id="60eb4-117">代替背景色</span><span class="sxs-lookup"><span data-stu-id="60eb4-117">Alternating background colors</span></span>|<span data-ttu-id="60eb4-118">設定、<xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A>を 2 以上のプロパティを割り当てます、<xref:System.Windows.Media.Brush>を<xref:System.Windows.Controls.DataGrid.RowBackground%2A>と<xref:System.Windows.Controls.DataGrid.AlternatingRowBackground%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="60eb4-118">Set the <xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A> property to 2 or more, and then assign a <xref:System.Windows.Media.Brush> to the <xref:System.Windows.Controls.DataGrid.RowBackground%2A> and <xref:System.Windows.Controls.DataGrid.AlternatingRowBackground%2A> properties.</span></span>|  
+|<span data-ttu-id="60eb4-119">セルおよび行の選択の動作を定義します。</span><span class="sxs-lookup"><span data-stu-id="60eb4-119">Define cell and row selection behavior</span></span>|<span data-ttu-id="60eb4-120"><xref:System.Windows.Controls.DataGrid.SelectionMode%2A> プロパティと <xref:System.Windows.Controls.DataGrid.SelectionUnit%2A> プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="60eb4-120">Set the <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> and <xref:System.Windows.Controls.DataGrid.SelectionUnit%2A> properties.</span></span>|  
+|<span data-ttu-id="60eb4-121">ヘッダー、セル、および行の外観をカスタマイズします。</span><span class="sxs-lookup"><span data-stu-id="60eb4-121">Customize the visual appearance of headers, cells, and rows</span></span>|<span data-ttu-id="60eb4-122">新しい適用<xref:System.Windows.Style>を<xref:System.Windows.Controls.DataGrid.ColumnHeaderStyle%2A>、 <xref:System.Windows.Controls.DataGrid.RowHeaderStyle%2A>、 <xref:System.Windows.Controls.DataGrid.CellStyle%2A>、または<xref:System.Windows.Controls.DataGrid.RowStyle%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="60eb4-122">Apply a new <xref:System.Windows.Style> to the <xref:System.Windows.Controls.DataGrid.ColumnHeaderStyle%2A>, <xref:System.Windows.Controls.DataGrid.RowHeaderStyle%2A>, <xref:System.Windows.Controls.DataGrid.CellStyle%2A>, or <xref:System.Windows.Controls.DataGrid.RowStyle%2A> properties.</span></span>|  
+|<span data-ttu-id="60eb4-123">サイズ変更オプションを設定します。</span><span class="sxs-lookup"><span data-stu-id="60eb4-123">Set sizing options</span></span>|<span data-ttu-id="60eb4-124">設定、 <xref:System.Windows.FrameworkElement.Height%2A>、 <xref:System.Windows.FrameworkElement.MaxHeight%2A>、 <xref:System.Windows.FrameworkElement.MinHeight%2A>、 <xref:System.Windows.FrameworkElement.Width%2A>、 <xref:System.Windows.FrameworkElement.MaxWidth%2A>、または<xref:System.Windows.FrameworkElement.MinWidth%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="60eb4-124">Set the <xref:System.Windows.FrameworkElement.Height%2A>, <xref:System.Windows.FrameworkElement.MaxHeight%2A>, <xref:System.Windows.FrameworkElement.MinHeight%2A>, <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.MaxWidth%2A>, or <xref:System.Windows.FrameworkElement.MinWidth%2A> properties.</span></span> <span data-ttu-id="60eb4-125">詳細については、次を参照してください。 [DataGrid コントロールのサイズ変更オプション](../../../../docs/framework/wpf/controls/sizing-options-in-the-datagrid-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="60eb4-125">For more information, see [Sizing Options in the DataGrid Control](../../../../docs/framework/wpf/controls/sizing-options-in-the-datagrid-control.md).</span></span>|  
+|<span data-ttu-id="60eb4-126">項目にアクセスするを選択</span><span class="sxs-lookup"><span data-stu-id="60eb4-126">Access selected items</span></span>|<span data-ttu-id="60eb4-127">チェック、 <xref:System.Windows.Controls.DataGrid.SelectedCells%2A> 、選択したセルを取得するプロパティと<xref:System.Windows.Controls.Primitives.MultiSelector.SelectedItems%2A>選択した行を取得するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="60eb4-127">Check the <xref:System.Windows.Controls.DataGrid.SelectedCells%2A> property to get the selected cells and the <xref:System.Windows.Controls.Primitives.MultiSelector.SelectedItems%2A> property to get the selected rows.</span></span> <span data-ttu-id="60eb4-128">詳細については、「<xref:System.Windows.Controls.DataGrid.SelectedCells%2A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="60eb4-128">For more information, see <xref:System.Windows.Controls.DataGrid.SelectedCells%2A>.</span></span>|  
+|<span data-ttu-id="60eb4-129">エンドユーザーとの対話をカスタマイズします。</span><span class="sxs-lookup"><span data-stu-id="60eb4-129">Customize end-user interactions</span></span>|<span data-ttu-id="60eb4-130">設定、 <xref:System.Windows.Controls.DataGrid.CanUserAddRows%2A>、 <xref:System.Windows.Controls.DataGrid.CanUserDeleteRows%2A>、 <xref:System.Windows.Controls.DataGrid.CanUserReorderColumns%2A>、 <xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A>、 <xref:System.Windows.Controls.DataGrid.CanUserResizeRows%2A>、および<xref:System.Windows.Controls.DataGrid.CanUserSortColumns%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="60eb4-130">Set the <xref:System.Windows.Controls.DataGrid.CanUserAddRows%2A>, <xref:System.Windows.Controls.DataGrid.CanUserDeleteRows%2A>, <xref:System.Windows.Controls.DataGrid.CanUserReorderColumns%2A>, <xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A>, <xref:System.Windows.Controls.DataGrid.CanUserResizeRows%2A>, and <xref:System.Windows.Controls.DataGrid.CanUserSortColumns%2A> properties.</span></span>|  
+|<span data-ttu-id="60eb4-131">キャンセルまたは自動的に生成された列の変更</span><span class="sxs-lookup"><span data-stu-id="60eb4-131">Cancel or change auto-generated columns</span></span>|<span data-ttu-id="60eb4-132">処理、<xref:System.Windows.Controls.DataGrid.AutoGeneratingColumn>イベント。</span><span class="sxs-lookup"><span data-stu-id="60eb4-132">Handle the <xref:System.Windows.Controls.DataGrid.AutoGeneratingColumn> event.</span></span>|  
+|<span data-ttu-id="60eb4-133">列を固定します。</span><span class="sxs-lookup"><span data-stu-id="60eb4-133">Freeze a column</span></span>|<span data-ttu-id="60eb4-134">設定、 <xref:System.Windows.Controls.DataGrid.FrozenColumnCount%2A> 1 を設定して、左端の位置に移動、列のプロパティ、<xref:System.Windows.Controls.DataGridColumn.DisplayIndex%2A>プロパティを 0 にします。</span><span class="sxs-lookup"><span data-stu-id="60eb4-134">Set the <xref:System.Windows.Controls.DataGrid.FrozenColumnCount%2A> property to 1 and move the column to the left-most position by setting the <xref:System.Windows.Controls.DataGridColumn.DisplayIndex%2A> property to 0.</span></span>|  
+|<span data-ttu-id="60eb4-135">XML データをデータ ソースとして使用します。</span><span class="sxs-lookup"><span data-stu-id="60eb4-135">Use XML data as the data source</span></span>|<span data-ttu-id="60eb4-136">バインド、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>上、<xref:System.Windows.Controls.DataGrid>項目のコレクションを表す XPath クエリにします。</span><span class="sxs-lookup"><span data-stu-id="60eb4-136">Bind the <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> on the <xref:System.Windows.Controls.DataGrid> to the XPath query that represents the collection of items.</span></span> <span data-ttu-id="60eb4-137">内の各列を作成、<xref:System.Windows.Controls.DataGrid>です。</span><span class="sxs-lookup"><span data-stu-id="60eb4-137">Create each column in the <xref:System.Windows.Controls.DataGrid>.</span></span> <span data-ttu-id="60eb4-138">項目のソースのプロパティを取得するクエリへのバインドで、XPath を設定して各列をバインドします。</span><span class="sxs-lookup"><span data-stu-id="60eb4-138">Bind each column by setting the XPath on the binding to the query that gets the property on the item source.</span></span> <span data-ttu-id="60eb4-139">例については、「<xref:System.Windows.Controls.DataGridTextColumn>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="60eb4-139">For an example, see <xref:System.Windows.Controls.DataGridTextColumn>.</span></span>|  
   
-## 関連トピック  
+## <a name="related-topics"></a><span data-ttu-id="60eb4-140">関連トピック</span><span class="sxs-lookup"><span data-stu-id="60eb4-140">Related Topics</span></span>  
   
-|Title|Description|  
+|<span data-ttu-id="60eb4-141">タイトル</span><span class="sxs-lookup"><span data-stu-id="60eb4-141">Title</span></span>|<span data-ttu-id="60eb4-142">説明</span><span class="sxs-lookup"><span data-stu-id="60eb4-142">Description</span></span>|  
 |-----------|-----------------|  
-|[チュートリアル: DataGrid コントロールで SQL Server データベースのデータを表示する](../../../../docs/framework/wpf/controls/walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|新しい WPF プロジェクトを設定し、Entity Framework の要素を追加し、ソースを設定し、<xref:System.Windows.Controls.DataGrid> にデータを表示する方法について説明します。|  
-|[方法: DataGrid コントロールに行の詳細を追加する](../../../../docs/framework/wpf/controls/how-to-add-row-details-to-a-datagrid-control.md)|<xref:System.Windows.Controls.DataGrid> の行の詳細を作成する方法について説明します。|  
-|[方法: DataGrid コントロールを使用して検証を実装する](../../../../docs/framework/wpf/controls/how-to-implement-validation-with-the-datagrid-control.md)|<xref:System.Windows.Controls.DataGrid> のセルと行の値を検証し、検証フィードバックを表示する方法について説明します。|  
-|[DataGrid コントロールの既定のキーボード動作とマウス動作](../../../../docs/framework/wpf/controls/default-keyboard-and-mouse-behavior-in-the-datagrid-control.md)|キーボードとマウスを使用して <xref:System.Windows.Controls.DataGrid> コントロールと対話する方法について説明します。|  
-|[方法: DataGrid コントロールでデータをグループ化、並べ替え、およびフィルター処理する](../../../../docs/framework/wpf/controls/how-to-group-sort-and-filter-data-in-the-datagrid-control.md)|グループ化、並べ替え、フィルターなどを適用することによって、さまざまな角度から <xref:System.Windows.Controls.DataGrid> でデータを表示する方法について説明します。|  
-|[DataGrid コントロールのサイズ変更方法](../../../../docs/framework/wpf/controls/sizing-options-in-the-datagrid-control.md)|<xref:System.Windows.Controls.DataGrid> での絶対サイズ設定および自動サイズ設定を制御する方法について説明します。|  
+|[<span data-ttu-id="60eb4-143">チュートリアル: DataGrid コントロールで SQL Server データベースのデータを表示する</span><span class="sxs-lookup"><span data-stu-id="60eb4-143">Walkthrough: Display Data from a SQL Server Database in a DataGrid Control</span></span>](../../../../docs/framework/wpf/controls/walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|<span data-ttu-id="60eb4-144">Entity Framework 要素を追加、新しい WPF プロジェクトの設定をソースを設定し、内のデータを表示する方法について説明します、<xref:System.Windows.Controls.DataGrid>です。</span><span class="sxs-lookup"><span data-stu-id="60eb4-144">Describes how to set up a new WPF project, add an Entity Framework Element, set the source, and display the data in a <xref:System.Windows.Controls.DataGrid>.</span></span>|  
+|[<span data-ttu-id="60eb4-145">方法: DataGrid コントロールに行の詳細を追加する</span><span class="sxs-lookup"><span data-stu-id="60eb4-145">How to: Add Row Details to a DataGrid Control</span></span>](../../../../docs/framework/wpf/controls/how-to-add-row-details-to-a-datagrid-control.md)|<span data-ttu-id="60eb4-146">行の詳細を作成する方法について説明します、<xref:System.Windows.Controls.DataGrid>です。</span><span class="sxs-lookup"><span data-stu-id="60eb4-146">Describes how to create row details for a <xref:System.Windows.Controls.DataGrid>.</span></span>|  
+|[<span data-ttu-id="60eb4-147">方法: DataGrid コントロールを使用して検証を実装する</span><span class="sxs-lookup"><span data-stu-id="60eb4-147">How to: Implement Validation with the DataGrid Control</span></span>](../../../../docs/framework/wpf/controls/how-to-implement-validation-with-the-datagrid-control.md)|<span data-ttu-id="60eb4-148">内の値を検証する方法について説明<xref:System.Windows.Controls.DataGrid>セルと行、および検証のフィードバックを表示します。</span><span class="sxs-lookup"><span data-stu-id="60eb4-148">Describes how to validate values in <xref:System.Windows.Controls.DataGrid> cells and rows, and display validation feedback.</span></span>|  
+|[<span data-ttu-id="60eb4-149">DataGrid コントロールの既定のキーボード動作とマウス動作</span><span class="sxs-lookup"><span data-stu-id="60eb4-149">Default Keyboard and Mouse Behavior in the DataGrid Control</span></span>](../../../../docs/framework/wpf/controls/default-keyboard-and-mouse-behavior-in-the-datagrid-control.md)|<span data-ttu-id="60eb4-150">対話する方法について説明します、<xref:System.Windows.Controls.DataGrid>キーボードとマウスを使用して制御します。</span><span class="sxs-lookup"><span data-stu-id="60eb4-150">Describes how to interact with the <xref:System.Windows.Controls.DataGrid> control by using the keyboard and mouse.</span></span>|  
+|[<span data-ttu-id="60eb4-151">方法: DataGrid コントロールでデータをグループ化、並べ替え、およびフィルター処理する</span><span class="sxs-lookup"><span data-stu-id="60eb4-151">How to: Group, Sort, and Filter Data in the DataGrid Control</span></span>](../../../../docs/framework/wpf/controls/how-to-group-sort-and-filter-data-in-the-datagrid-control.md)|<span data-ttu-id="60eb4-152">データを表示する方法について説明、<xref:System.Windows.Controls.DataGrid>によってグループ化、並べ替え、およびデータのフィルター処理のさまざまな方法でします。</span><span class="sxs-lookup"><span data-stu-id="60eb4-152">Describes how to view data in a <xref:System.Windows.Controls.DataGrid> in different ways by grouping, sorting, and filtering the data.</span></span>|  
+|[<span data-ttu-id="60eb4-153">DataGrid コントロールのサイズ変更方法</span><span class="sxs-lookup"><span data-stu-id="60eb4-153">Sizing Options in the DataGrid Control</span></span>](../../../../docs/framework/wpf/controls/sizing-options-in-the-datagrid-control.md)|<span data-ttu-id="60eb4-154">絶対と自動サイズ変更を制御する方法について説明します、<xref:System.Windows.Controls.DataGrid>です。</span><span class="sxs-lookup"><span data-stu-id="60eb4-154">Describes how to control absolute and automatic sizing in the <xref:System.Windows.Controls.DataGrid>.</span></span>|  
   
-## 参照  
- <xref:System.Windows.Controls.DataGrid>   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [データ テンプレートの概要](../../../../docs/framework/wpf/data/data-templating-overview.md)   
- [コントロール](../../../../docs/framework/wpf/controls/index.md)   
- [WPF のコンテンツ モデル](../../../../docs/framework/wpf/controls/wpf-content-model.md)
+## <a name="see-also"></a><span data-ttu-id="60eb4-155">関連項目</span><span class="sxs-lookup"><span data-stu-id="60eb4-155">See Also</span></span>  
+ <xref:System.Windows.Controls.DataGrid>  
+ [<span data-ttu-id="60eb4-156">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="60eb4-156">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="60eb4-157">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="60eb4-157">Data Binding Overview</span></span>](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="60eb4-158">データ テンプレートの概要</span><span class="sxs-lookup"><span data-stu-id="60eb4-158">Data Templating Overview</span></span>](../../../../docs/framework/wpf/data/data-templating-overview.md)  
+ [<span data-ttu-id="60eb4-159">コントロール</span><span class="sxs-lookup"><span data-stu-id="60eb4-159">Controls</span></span>](../../../../docs/framework/wpf/controls/index.md)  
+ [<span data-ttu-id="60eb4-160">WPF のコンテンツ モデル</span><span class="sxs-lookup"><span data-stu-id="60eb4-160">WPF Content Model</span></span>](../../../../docs/framework/wpf/controls/wpf-content-model.md)

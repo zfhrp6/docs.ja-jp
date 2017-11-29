@@ -1,97 +1,98 @@
 ---
-title: "方法 : 複合コントロールを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "複合コントロール, 作成"
-  - "ユーザー コントロール [Windows フォーム], 作成"
-  - "ユーザー コントロール [Windows フォーム], 継承"
-  - "UserControl クラス, 作成 (複合コントロールを)"
+title: "方法 : 複合コントロールを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- UserControl class [Windows Forms], creating composite controls
+- user controls [Windows Forms], creating
+- user controls [Windows Forms], inheriting from
+- composite controls [Windows Forms], creating
 ms.assetid: 79c9cf05-5ab6-4a18-886d-88a64748b098
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 72c68568f0178956d6154f0b3a070e69b6ff0502
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 複合コントロールを作成する
-複合コントロールはさまざまな方法で使用できます。  Windows デスクトップ アプリケーション プロジェクトの一部として作成し、そのプロジェクトのフォームでだけ使用することもできます。  また、Windows コントロール ライブラリ プロジェクトで作成し、プロジェクトをアセンブリにコンパイルして、コントロールを他のプロジェクトで使用することもできます。  さらに、そのコントロールから継承し、ビジュアル継承を使用して、特定の用途に合わせて簡単にカスタマイズすることもできます。  
+# <a name="how-to-author-composite-controls"></a><span data-ttu-id="de402-102">方法 : 複合コントロールを作成する</span><span class="sxs-lookup"><span data-stu-id="de402-102">How to: Author Composite Controls</span></span>
+<span data-ttu-id="de402-103">複合コントロールはさまざまな方法で使用できます。</span><span class="sxs-lookup"><span data-stu-id="de402-103">Composite controls can be employed in many ways.</span></span> <span data-ttu-id="de402-104">Windows デスクトップ アプリケーション プロジェクトの一部として複合コントロールを作成し、プロジェクト内のフォーム上でのみ使用することができます。</span><span class="sxs-lookup"><span data-stu-id="de402-104">You can author them as part of a Windows desktop application project, and use them only on forms in the project.</span></span> <span data-ttu-id="de402-105">または、Windows コントロール ライブラリ プロジェクトで複合コントロールを作成し、プロジェクトをアセンブリにコンパイルして、他のプロジェクトで使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="de402-105">Or you can author them in a Windows Control Library project, compile the project into an assembly, and use the controls in other projects.</span></span> <span data-ttu-id="de402-106">そのコントロールから継承することや、ビジュアル継承を使用して特殊な用途のために簡単にカスタマイズすることまでできます。</span><span class="sxs-lookup"><span data-stu-id="de402-106">You can even inherit from them, and use visual inheritance to customize them quickly for special purposes.</span></span>  
   
 > [!NOTE]
->  Web フォームで使用する複合コントロールを作成する場合は、「[Developing Custom ASP.NET Server Controls](../Topic/Developing%20Custom%20ASP.NET%20Server%20Controls.md)」を参照してください。  
+>  <span data-ttu-id="de402-107">Web フォームで使用する複合コントロールを作成する場合は、「[カスタム ASP.NET サーバー コントロールの開発](http://msdn.microsoft.com/library/fbe26c16-cff4-4089-b3dd-877411f0c0ef)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="de402-107">If you want to author a composite control to use on Web Forms, see [Developing Custom ASP.NET Server Controls](http://msdn.microsoft.com/library/fbe26c16-cff4-4089-b3dd-877411f0c0ef).</span></span>  
 >   
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="de402-108">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="de402-108">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="de402-109">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="de402-109">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="de402-110">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="de402-110">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### 複合コントロールを作成するには  
+### <a name="to-author-a-composite-control"></a><span data-ttu-id="de402-111">複合コントロールを作成するには</span><span class="sxs-lookup"><span data-stu-id="de402-111">To author a composite control</span></span>  
   
-1.  `DemoControlHost` という新しい **Windows アプリケーション** プロジェクトを開きます。  
+1.  <span data-ttu-id="de402-112">`DemoControlHost` という新しい **Windows アプリケーション** プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="de402-112">Open a new **Windows Application** project called `DemoControlHost`.</span></span>  
   
-2.  **\[プロジェクト\]** メニューの **\[ユーザー コントロールの追加\]** をクリックします。  
+2.  <span data-ttu-id="de402-113">**[プロジェクト]** メニューの **[ユーザー コントロールの追加]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="de402-113">On the **Project**menu, click **Add User Control**.</span></span>  
   
-3.  **\[新しい項目の追加\]** ダイアログ ボックスで、クラス ファイル \(.vb ファイルまたは .cs ファイル\) に複合コントロールの名前を付けます。  
+3.  <span data-ttu-id="de402-114">**[新しい項目の追加]** ダイアログ ボックスで、クラス ファイル (.vb または .cs ファイル) に複合コントロールに付ける名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="de402-114">In the **Add New Item** dialog box, give the class file (.vb or .cs file) the name you want the composite control to have.</span></span>  
   
-4.  **\[追加\]** をクリックして複合コントロールのクラス ファイルを作成します。  
+4.  <span data-ttu-id="de402-115">**[追加]** をクリックして、複合コントロールのクラス ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="de402-115">Click the **Add** button to create the class file for the composite control.</span></span>  
   
-5.  コントロールを**ツールボックス**から複合コントロール領域に追加します。  
+5.  <span data-ttu-id="de402-116">複合コントロールのサーフェスに **[ツールボックス]** からコントロールを追加します。</span><span class="sxs-lookup"><span data-stu-id="de402-116">Add controls from the **Toolbox** to the composite control surface.</span></span>  
   
-6.  複合コントロールまたはその内在コントロールから発生したイベントを処理するために、イベント プロシージャにコードを記述します。  
+6.  <span data-ttu-id="de402-117">複合コントロールまたはその内在コントロールによって発生したイベントを処理するために、イベント プロシージャにコードを配置します。</span><span class="sxs-lookup"><span data-stu-id="de402-117">Place code in event procedures, to handle events raised by the composite control or by its constituent controls.</span></span>  
   
-7.  プロンプトが表示されたら、複合コントロールのデザイナーを閉じ、ファイルを保存します。  
+7.  <span data-ttu-id="de402-118">複合コントロールのデザイナーを閉じて、メッセージが表示されたらファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="de402-118">Close the designer for the composite control, and save the file when you are prompted.</span></span>  
   
-8.  **\[ビルド\]** メニューの **\[ソリューションのビルド\]** をクリックします。  
+8.  <span data-ttu-id="de402-119">**[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="de402-119">On the **Build** menu, click **Build Solution**.</span></span>  
   
-     カスタム コントロールを**ツールボックス**に表示するには、プロジェクトをビルドする必要があります。  
+     <span data-ttu-id="de402-120">カスタム コントロールが **[ツールボックス]** に表示されるようにプロジェクトをビルドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="de402-120">The project must be built in order for custom controls to appear in the **Toolbox**.</span></span>  
   
-9. **ツールボックス**の **\[DemoControlHost\]** タブを使用して、コントロールのインスタンスを `Form1` に追加します。  
+9. <span data-ttu-id="de402-121">**[ツールボックス]** の **[DemoControlHost]** タブを使用して、コントロールのインスタンスを `Form1` に追加します。</span><span class="sxs-lookup"><span data-stu-id="de402-121">Use the **DemoControlHost** tab of the **Toolbox** to add instances of your control to `Form1`.</span></span>  
   
-### コントロール クラス ライブラリを作成するには  
+### <a name="to-author-a-control-class-library"></a><span data-ttu-id="de402-122">コントロール クラス ライブラリを作成するには</span><span class="sxs-lookup"><span data-stu-id="de402-122">To author a control class library</span></span>  
   
-1.  新しい **Windows コントロール ライブラリ** プロジェクトを開きます。  
+1.  <span data-ttu-id="de402-123">新しい **Windows コントロール ライブラリ** プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="de402-123">Open a new **Windows Control Library** project.</span></span>  
   
-     既定では、プロジェクトに複合コントロールが含まれています。  
+     <span data-ttu-id="de402-124">既定では、プロジェクトに複合コントロールが含まれます。</span><span class="sxs-lookup"><span data-stu-id="de402-124">By default, the project contains a composite control.</span></span>  
   
-2.  上記の手順に従って、コントロールおよびコードを追加します。  
+2.  <span data-ttu-id="de402-125">上記の手順の説明に従ってコントロールとコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="de402-125">Add controls and code as described in the procedure above.</span></span>  
   
-3.  継承したクラスを変更しないコントロールを選択し、このコントロールの **Modifiers** プロパティを **Private** に設定します。  
+3.  <span data-ttu-id="de402-126">継承クラスで変更しないコントロールを選択して、このコントロールの **Modifiers** プロパティを **Private** に設定します。</span><span class="sxs-lookup"><span data-stu-id="de402-126">Choose a control you do not want inheriting classes to change, and set the **Modifiers** property of this control to **Private**.</span></span>  
   
-4.  DLL をビルドします。  
+4.  <span data-ttu-id="de402-127">DLL をビルドします。</span><span class="sxs-lookup"><span data-stu-id="de402-127">Build the DLL.</span></span>  
   
-### コントロール クラス ライブラリの複合コントロールから継承するには  
+### <a name="to-inherit-from-a-composite-control-in-a-control-class-library"></a><span data-ttu-id="de402-128">コントロール クラス ライブラリの複合コントロールから継承するには</span><span class="sxs-lookup"><span data-stu-id="de402-128">To inherit from a composite control in a control class library</span></span>  
   
-1.  **\[ファイル\]** メニューの **\[追加\]** をポイントし、**\[新しいプロジェクト\]** をクリックして新しい **Windows アプリケーション** プロジェクトをソリューションに追加します。  
+1.  <span data-ttu-id="de402-129">**[ファイル]** メニューで、**[追加]** をポイントし、**[新しいプロジェクト]** を選択して、新しい **Windows アプリケーション** プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="de402-129">On the **File** menu, point to **Add** and select **New Project** to add a new **Windows Application** project to the solution.</span></span>  
   
-2.  **ソリューション エクスプローラー**にある新しいプロジェクトの **\[参照設定\]** フォルダーを右クリックし、**\[参照の追加\]** をクリックして **\[参照の追加\]** ダイアログ ボックスを開きます。  
+2.  <span data-ttu-id="de402-130">**ソリューション エクスプローラー**で、新しいプロジェクトの **[参照設定]** フォルダーを右クリックし、**[参照の追加]** をクリックして **[参照の追加]** ダイアログ ボックスを開きます。</span><span class="sxs-lookup"><span data-stu-id="de402-130">In **Solution Explorer**, right-click the **References** folder for the new project and choose **Add Reference** to open the **Add Reference** dialog box.</span></span>  
   
-3.  **\[プロジェクト\]** タブをクリックし、コントロール ライブラリ プロジェクトをダブルクリックします。  
+3.  <span data-ttu-id="de402-131">**[プロジェクト]** タブを選択し、コントロール ライブラリ プロジェクトをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="de402-131">Select the **Projects** tab and double-click your control library project.</span></span>  
   
-4.  **\[ビルド\]** メニューの **\[ソリューションのビルド\]** をクリックします。  
+4.  <span data-ttu-id="de402-132">**[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="de402-132">On the **Build** menu, click **Build Solution**.</span></span>  
   
-5.  **ソリューション エクスプローラー**でコントロール ライブラリ プロジェクトを右クリックし、ショートカット メニューの **\[新しい項目の追加\]** をクリックします。  
+5.  <span data-ttu-id="de402-133">**ソリューション エクスプローラー**で、コントロール ライブラリ プロジェクトを右クリックし、ショートカット メニューの **[新しい項目の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="de402-133">In **Solution Explorer**, right-click your control library project and select **Add New Item** from the shortcut menu.</span></span>  
   
-6.  **\[新しい項目の追加\]** ダイアログ ボックスの **\[継承されたユーザー コントロール\]** テンプレートをクリックします。  
+6.  <span data-ttu-id="de402-134">**[新しい項目の追加]** ダイアログ ボックスの **[継承されたユーザー コントロール]** テンプレートを選択します。</span><span class="sxs-lookup"><span data-stu-id="de402-134">Select the **Inherited User Control** template from the **Add New Item** dialog box.</span></span>  
   
-7.  **\[新しい項目の追加\]** ダイアログ ボックスで、継承するコントロールをダブルクリックします。  
+7.  <span data-ttu-id="de402-135">**[継承ピッカー]** ダイアログ ボックスで、継承元のコントロールをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="de402-135">In the **Inheritance Picker** dialog box, double-click the control you want to inherit from.</span></span>  
   
-     新しいコントロールがプロジェクトに追加されます。  
+     <span data-ttu-id="de402-136">新しいコントロールがプロジェクトに追加されます。</span><span class="sxs-lookup"><span data-stu-id="de402-136">A new control is added to your project.</span></span>  
   
-8.  新しいコントロールのビジュアル デザイナーを開き、必要な内在コントロールを追加します。  
+8.  <span data-ttu-id="de402-137">新しいコントロールのビジュアル デザイナーを開き、別の内在コントロールを追加します。</span><span class="sxs-lookup"><span data-stu-id="de402-137">Open the visual designer for the new control and add additional constituent controls.</span></span>  
   
-     DLL の複合コントロールから継承された内在コントロールが表示され、**Modifiers** プロパティが **Public** であるコントロールのプロパティを変更できます。  **Modifiers** プロパティが **Private** であるコントロールについては、プロパティを変更できません。  
+     <span data-ttu-id="de402-138">DLL の複合コントロールから継承された内在コントロールを表示し、**Modifiers** プロパティが **Public** であるコントロールのプロパティを変更することができます。</span><span class="sxs-lookup"><span data-stu-id="de402-138">You can see the constituent controls that were inherited from the composite control in your DLL, and you can alter the properties of controls whose **Modifiers** property is **Public**.</span></span> <span data-ttu-id="de402-139">**Modifiers** プロパティが **Private** であるコントロールのプロパティを変更することはできません。</span><span class="sxs-lookup"><span data-stu-id="de402-139">You cannot change the properties of the control whose **Modifiers** property is **Private**.</span></span>  
   
-## 参照  
- [チュートリアル : Visual Basic による複合コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)   
- [チュートリアル : Visual C\# による複合コントロールの作成](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)   
- [チュートリアル : Visual Basic による Windows フォーム コントロールからの継承](../../../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)   
- [チュートリアル : Visual C\# による Windows フォーム コントロールからの継承](../../../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)   
- [コントロールの種類に関するアドバイス](../../../../docs/framework/winforms/controls/control-type-recommendations.md)   
- [方法 : Windows フォームのコントロールを作成する](../../../../docs/framework/winforms/controls/how-to-author-controls-for-windows-forms.md)   
- [さまざまなカスタム コントロール](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)
+## <a name="see-also"></a><span data-ttu-id="de402-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="de402-140">See Also</span></span>  
+ [<span data-ttu-id="de402-141">チュートリアル: Visual Basic による複合コントロールの作成</span><span class="sxs-lookup"><span data-stu-id="de402-141">Walkthrough: Authoring a Composite Control with Visual Basic</span></span>](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  
+ [<span data-ttu-id="de402-142">チュートリアル: Visual C# による複合コントロールの作成</span><span class="sxs-lookup"><span data-stu-id="de402-142">Walkthrough: Authoring a Composite Control with Visual C#</span></span>](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)  
+ [<span data-ttu-id="de402-143">チュートリアル: Visual Basic による Windows フォーム コントロールからの継承</span><span class="sxs-lookup"><span data-stu-id="de402-143">Walkthrough: Inheriting from a Windows Forms Control with Visual Basic</span></span>](../../../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)  
+ [<span data-ttu-id="de402-144">チュートリアル: Visual C# による Windows フォーム コントロールからの継承</span><span class="sxs-lookup"><span data-stu-id="de402-144">Walkthrough: Inheriting from a Windows Forms Control with Visual C#</span></span>](../../../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)  
+ [<span data-ttu-id="de402-145">コントロールの種類に関するアドバイス</span><span class="sxs-lookup"><span data-stu-id="de402-145">Control Type Recommendations</span></span>](../../../../docs/framework/winforms/controls/control-type-recommendations.md)  
+ [<span data-ttu-id="de402-146">方法: Windows フォームのコントロールを作成する</span><span class="sxs-lookup"><span data-stu-id="de402-146">How to: Author Controls for Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-author-controls-for-windows-forms.md)  
+ [<span data-ttu-id="de402-147">さまざまなカスタム コントロール</span><span class="sxs-lookup"><span data-stu-id="de402-147">Varieties of Custom Controls</span></span>](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)

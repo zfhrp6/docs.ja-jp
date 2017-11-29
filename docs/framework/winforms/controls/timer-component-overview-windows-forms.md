@@ -1,35 +1,35 @@
 ---
-title: "Timer コンポーネントの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Timer"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Timer コンポーネント [Windows フォーム], Timer コンポーネントの概要"
-  - "タイマー, タイマーの概要"
+title: "Timer コンポーネントの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: Timer
+helpviewer_keywords:
+- Timer component [Windows Forms], about Timer components
+- timers [Windows Forms], about timers
 ms.assetid: e672c05b-a8b6-4b26-9e4d-9223aa9e3873
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ea78cadae6e033bc54274e5428ba5e8c6410259d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Timer コンポーネントの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.Timer> は、一定の間隔でイベントを発生させるコンポーネントです。  このコンポーネントは、Windows フォーム環境で使用します。  サーバー環境に適したタイマーが必要な場合は、「[Introduction to Server\-Based Timers](http://msdn.microsoft.com/ja-jp/adc0bc0a-a519-4812-bafc-fb9d1a5801fc)」を参照してください。  
+# <a name="timer-component-overview-windows-forms"></a><span data-ttu-id="7abd7-102">Timer コンポーネントの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="7abd7-102">Timer Component Overview (Windows Forms)</span></span>
+<span data-ttu-id="7abd7-103">Windows フォーム <xref:System.Windows.Forms.Timer> は、一定の間隔でイベントを発生させるコンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="7abd7-103">The Windows Forms <xref:System.Windows.Forms.Timer> is a component that raises an event at regular intervals.</span></span> <span data-ttu-id="7abd7-104">このコンポーネントは、Windows フォームの環境用に設計されています。</span><span class="sxs-lookup"><span data-stu-id="7abd7-104">This component is designed for a Windows Forms environment.</span></span> <span data-ttu-id="7abd7-105">サーバー環境に適したタイマーが必要な場合は、「[サーバー ベースのタイマーの概要](http://msdn.microsoft.com/en-us/adc0bc0a-a519-4812-bafc-fb9d1a5801fc)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7abd7-105">If you need a timer that is suitable for a server environment, see [Introduction to Server-Based Timers](http://msdn.microsoft.com/en-us/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).</span></span>  
   
-## 主要なプロパティ、メソッド、およびイベント  
- 間隔は <xref:System.Windows.Forms.Timer.Interval%2A> プロパティで定義し、値はミリ秒単位で指定します。  このコンポーネントを有効にすると、<xref:System.Windows.Forms.Timer.Tick> イベントが一定の間隔で発生します。  実行するコードは、ここに記述します。  詳細については、「[方法 : Windows フォームの Timer コンポーネントを使用して一定間隔でプロシージャを実行する](../../../../docs/framework/winforms/controls/run-procedures-at-set-intervals-with-wf-timer-component.md)」を参照してください。  <xref:System.Windows.Forms.Timer> コンポーネントの主要なメソッドは、タイマーをオンおよびオフにする <xref:System.Windows.Forms.Timer.Start%2A> と <xref:System.Windows.Forms.Timer.Stop%2A> です。  タイマーをオフにすると、タイマーはリセットされます。<xref:System.Windows.Forms.Timer> コンポーネントを一時停止する方法はありません。  
+## <a name="key-properties-methods-and-events"></a><span data-ttu-id="7abd7-106">キー プロパティ、メソッド、およびイベント</span><span class="sxs-lookup"><span data-stu-id="7abd7-106">Key Properties, Methods, and Events</span></span>  
+ <span data-ttu-id="7abd7-107">間隔の長さがによって定義された、<xref:System.Windows.Forms.Timer.Interval%2A>プロパティ、値を持つ単位はミリ秒です。</span><span class="sxs-lookup"><span data-stu-id="7abd7-107">The length of the intervals is defined by the <xref:System.Windows.Forms.Timer.Interval%2A> property, whose value is in milliseconds.</span></span> <span data-ttu-id="7abd7-108">コンポーネントが有効にすると、<xref:System.Windows.Forms.Timer.Tick>イベントが発生したすべての間隔。</span><span class="sxs-lookup"><span data-stu-id="7abd7-108">When the component is enabled, the <xref:System.Windows.Forms.Timer.Tick> event is raised every interval.</span></span> <span data-ttu-id="7abd7-109">これは、実行するコードを追加することです。</span><span class="sxs-lookup"><span data-stu-id="7abd7-109">This is where you would add code to be executed.</span></span> <span data-ttu-id="7abd7-110">詳細については、次を参照してください。[する方法: Windows フォームの Timer コンポーネントの設定間隔でプロシージャの実行](../../../../docs/framework/winforms/controls/run-procedures-at-set-intervals-with-wf-timer-component.md)です。</span><span class="sxs-lookup"><span data-stu-id="7abd7-110">For more information, see [How to: Run Procedures at Set Intervals with the Windows Forms Timer Component](../../../../docs/framework/winforms/controls/run-procedures-at-set-intervals-with-wf-timer-component.md).</span></span> <span data-ttu-id="7abd7-111">主要なメソッド、<xref:System.Windows.Forms.Timer>コンポーネントは<xref:System.Windows.Forms.Timer.Start%2A>と<xref:System.Windows.Forms.Timer.Stop%2A>タイマーをオンまたはオフにします。</span><span class="sxs-lookup"><span data-stu-id="7abd7-111">The key methods of the <xref:System.Windows.Forms.Timer> component are <xref:System.Windows.Forms.Timer.Start%2A> and <xref:System.Windows.Forms.Timer.Stop%2A>, which turn the timer on and off.</span></span> <span data-ttu-id="7abd7-112">タイマーをオフにすると、ときにリセットされます。一時停止する方法はありません、<xref:System.Windows.Forms.Timer>コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="7abd7-112">When the timer is switched off, it resets; there is no way to pause a <xref:System.Windows.Forms.Timer> component.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.Timer>   
- [Timer コンポーネント](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)   
- [Windows フォームの Timer コンポーネントの Interval プロパティの制限](../../../../docs/framework/winforms/controls/limitations-of-the-timer-component-interval-property.md)
+## <a name="see-also"></a><span data-ttu-id="7abd7-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="7abd7-113">See Also</span></span>  
+ <xref:System.Windows.Forms.Timer>  
+ [<span data-ttu-id="7abd7-114">Timer コンポーネント</span><span class="sxs-lookup"><span data-stu-id="7abd7-114">Timer Component</span></span>](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)  
+ [<span data-ttu-id="7abd7-115">Windows フォームの Timer コンポーネントの Interval プロパティの制限</span><span class="sxs-lookup"><span data-stu-id="7abd7-115">Limitations of the Windows Forms Timer Component's Interval Property</span></span>](../../../../docs/framework/winforms/controls/limitations-of-the-timer-component-interval-property.md)

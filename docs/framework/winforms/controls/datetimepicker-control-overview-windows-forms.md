@@ -1,38 +1,38 @@
 ---
-title: "DateTimePicker コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "DateTimePicker"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "日時指定コントロール"
-  - "DateTimePicker コントロール [Windows フォーム], 概要"
+title: "DateTimePicker コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: DateTimePicker
+helpviewer_keywords:
+- DateTimePicker control [Windows Forms], about
+- date and time picker controls
 ms.assetid: 501af106-e9fc-4efc-b9b3-c9d8dcaf8c5c
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a97eecc43614c84867e9dbdd527dbebd7dfd426e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DateTimePicker コントロールの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.DateTimePicker> コントロールは、日付や時間のリストから 1 つの項目を選択するためのコントロールです。  このコントロールで日付を表す場合、テキスト表示された日付のドロップダウン リストと、その隣の下向きの矢印をクリックしたときに表示されるグリッドの 2 つの部分で構成されます。  グリッドは、複数の日付を選択できる <xref:System.Windows.Forms.MonthCalendar> コントロールに似ています。  <xref:System.Windows.Forms.MonthCalendar> コントロールの詳細については、「[MonthCalendar コントロールの概要](../../../../docs/framework/winforms/controls/monthcalendar-control-overview-windows-forms.md)」を参照してください。  
+# <a name="datetimepicker-control-overview-windows-forms"></a><span data-ttu-id="25b9e-102">DateTimePicker コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="25b9e-102">DateTimePicker Control Overview (Windows Forms)</span></span>
+<span data-ttu-id="25b9e-103">Windows フォーム<xref:System.Windows.Forms.DateTimePicker>コントロールによりユーザーは日付または時刻の一覧から 1 つの項目を選択します。</span><span class="sxs-lookup"><span data-stu-id="25b9e-103">The Windows Forms <xref:System.Windows.Forms.DateTimePicker> control allows the user to select a single item from a list of dates or times.</span></span> <span data-ttu-id="25b9e-104">2 つの部分に表示される日付の表示に使用する場合: テキスト、および一覧の横の下向きの矢印をクリックしたときに表示されるグリッドで表される日付のドロップダウン リスト。</span><span class="sxs-lookup"><span data-stu-id="25b9e-104">When used to represent a date, it appears in two parts: a drop-down list with a date represented in text, and a grid that appears when you click on the down-arrow next to the list.</span></span> <span data-ttu-id="25b9e-105">次のように、グリッド、<xref:System.Windows.Forms.MonthCalendar>コントロールで、複数の日付を選択するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="25b9e-105">The grid looks like the <xref:System.Windows.Forms.MonthCalendar> control, which can be used for selecting multiple dates.</span></span> <span data-ttu-id="25b9e-106">詳細については、<xref:System.Windows.Forms.MonthCalendar>を制御しを参照してください[MonthCalendar コントロールの概要](../../../../docs/framework/winforms/controls/monthcalendar-control-overview-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="25b9e-106">For more information on the <xref:System.Windows.Forms.MonthCalendar> control, see [MonthCalendar Control Overview](../../../../docs/framework/winforms/controls/monthcalendar-control-overview-windows-forms.md).</span></span>  
   
-## 主要なプロパティ  
- 日付の代わりに時間の指定と編集を行うコントロールとして <xref:System.Windows.Forms.DateTimePicker> を表示する場合は、<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A> プロパティに `true` を設定し、<xref:System.Windows.Forms.DateTimePicker.Format%2A> プロパティに <xref:System.Windows.Forms.DateTimePickerFormat> を設定します。  詳細については、「[方法 : DateTimePicker コントロールを使用して時間を表示する](../../../../docs/framework/winforms/controls/how-to-display-time-with-the-datetimepicker-control.md)」を参照してください。  
+## <a name="key-properties"></a><span data-ttu-id="25b9e-107">キー プロパティ</span><span class="sxs-lookup"><span data-stu-id="25b9e-107">Key Properties</span></span>  
+ <span data-ttu-id="25b9e-108">希望する場合、<xref:System.Windows.Forms.DateTimePicker>ピッキングまたは日付ではなく時間を編集するためのコントロールとして表示するには設定、<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティを`true`と<xref:System.Windows.Forms.DateTimePicker.Format%2A>プロパティを<xref:System.Windows.Forms.DateTimePickerFormat.Time>です。</span><span class="sxs-lookup"><span data-stu-id="25b9e-108">If you wish the <xref:System.Windows.Forms.DateTimePicker> to appear as a control for picking or editing times instead of dates, set the <xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A> property to `true` and the <xref:System.Windows.Forms.DateTimePicker.Format%2A> property to <xref:System.Windows.Forms.DateTimePickerFormat.Time>.</span></span> <span data-ttu-id="25b9e-109">詳細については、次を参照してください。[する方法: DateTimePicker コントロールに表示時間](../../../../docs/framework/winforms/controls/how-to-display-time-with-the-datetimepicker-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="25b9e-109">For more information see [How to: Display Time with the DateTimePicker Control](../../../../docs/framework/winforms/controls/how-to-display-time-with-the-datetimepicker-control.md).</span></span>  
   
- <xref:System.Windows.Forms.DateTimePicker.ShowCheckBox%2A> プロパティに `true` を設定すると、コントロールの選択した日付の横に、チェック ボックスが表示されます。  チェック ボックスをオンにすると、選択した日時の値を更新できます。  チェック ボックスをオフにすると、値は利用できません。  
+ <span data-ttu-id="25b9e-110">ときに、<xref:System.Windows.Forms.DateTimePicker.ShowCheckBox%2A>プロパティに設定されている`true`コントロールで選択した日付の横にあるチェック ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="25b9e-110">When the <xref:System.Windows.Forms.DateTimePicker.ShowCheckBox%2A> property is set to `true`, a check box is displayed next to the selected date in the control.</span></span> <span data-ttu-id="25b9e-111">チェック ボックスをオンにすると、選択した日付と時刻の値を更新できます。</span><span class="sxs-lookup"><span data-stu-id="25b9e-111">When the check box is checked, the selected date-time value can be updated.</span></span> <span data-ttu-id="25b9e-112">チェック ボックスが空の場合は、値が使用できなくなったが表示されます。</span><span class="sxs-lookup"><span data-stu-id="25b9e-112">When the check box is empty, the value appears unavailable.</span></span>  
   
- 日付と時間の範囲を決定するのは、コントロールの <xref:System.Windows.Forms.DateTimePicker.MaxDate%2A> プロパティと <xref:System.Windows.Forms.DateTimePicker.MinDate%2A> プロパティです。  <xref:System.Windows.Forms.DateTimePicker.Value%2A> プロパティには、コントロールに設定されている現在の日付と時間が格納されています。  詳細については、「[方法 : Windows フォームの DateTimePicker コントロールを使用して日付を設定および取得する](../../../../docs/framework/winforms/controls/how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)」を参照してください。  値は <xref:System.Windows.Forms.DateTimePickerFormat>、<xref:System.Windows.Forms.DateTimePickerFormat>、<xref:System.Windows.Forms.DateTimePickerFormat>、または <xref:System.Windows.Forms.DateTimePickerFormat> の 4 つの形式で表示できます。これは <xref:System.Windows.Forms.DateTimePicker.Format%2A> プロパティで設定します。  Custom 形式を選択した場合は、<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A> プロパティに適切な文字列を設定する必要があります。  詳細については、「[方法 : Windows フォームの DateTimePicker コントロールを使用してカスタム形式で日付を表示する](../../../../docs/framework/winforms/controls/display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)」を参照してください。  
+ <span data-ttu-id="25b9e-113">コントロールの<xref:System.Windows.Forms.DateTimePicker.MaxDate%2A>と<xref:System.Windows.Forms.DateTimePicker.MinDate%2A>プロパティは、日付と時刻の範囲を決定します。</span><span class="sxs-lookup"><span data-stu-id="25b9e-113">The control's <xref:System.Windows.Forms.DateTimePicker.MaxDate%2A> and <xref:System.Windows.Forms.DateTimePicker.MinDate%2A> properties determine the range of dates and times.</span></span> <span data-ttu-id="25b9e-114"><xref:System.Windows.Forms.DateTimePicker.Value%2A>プロパティには、現在の日付と時刻に設定されているコントロールが含まれています。</span><span class="sxs-lookup"><span data-stu-id="25b9e-114">The <xref:System.Windows.Forms.DateTimePicker.Value%2A> property contains the current date and time the control is set to.</span></span> <span data-ttu-id="25b9e-115">詳細については、「[する方法: セットと Windows フォームの DateTimePicker コントロールを使用して日付を返す](../../../../docs/framework/winforms/controls/how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="25b9e-115">For details, see [How to: Set and Return Dates with the Windows Forms DateTimePicker Control](../../../../docs/framework/winforms/controls/how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md).</span></span> <span data-ttu-id="25b9e-116">によって設定される、4 つの形式で値を表示することができます、<xref:System.Windows.Forms.DateTimePicker.Format%2A>プロパティ: <xref:System.Windows.Forms.DateTimePickerFormat.Long>、 <xref:System.Windows.Forms.DateTimePickerFormat.Short>、 <xref:System.Windows.Forms.DateTimePickerFormat.Time>、または<xref:System.Windows.Forms.DateTimePickerFormat.Custom>です。</span><span class="sxs-lookup"><span data-stu-id="25b9e-116">The values can be displayed in four formats, which are set by the <xref:System.Windows.Forms.DateTimePicker.Format%2A> property: <xref:System.Windows.Forms.DateTimePickerFormat.Long>, <xref:System.Windows.Forms.DateTimePickerFormat.Short>, <xref:System.Windows.Forms.DateTimePickerFormat.Time>, or <xref:System.Windows.Forms.DateTimePickerFormat.Custom>.</span></span> <span data-ttu-id="25b9e-117">設定する必要があります、カスタム書式を選択している場合、<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティを適切な文字列にします。</span><span class="sxs-lookup"><span data-stu-id="25b9e-117">If a custom format is selected, you must set the <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A> property to an appropriate string.</span></span> <span data-ttu-id="25b9e-118">詳細については、「[する方法: Windows フォームの DateTimePicker コントロールを備えたカスタム形式で日付を表示](../../../../docs/framework/winforms/controls/display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="25b9e-118">For details, see [How to: Display a Date in a Custom Format with the Windows Forms DateTimePicker Control](../../../../docs/framework/winforms/controls/display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md).</span></span>  
   
-## 参照  
- [方法 : Windows フォームの DateTimePicker コントロールを使用してカスタム形式で日付を表示する](../../../../docs/framework/winforms/controls/display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)   
- [方法 : Windows フォームの DateTimePicker コントロールを使用して日付を設定および取得する](../../../../docs/framework/winforms/controls/how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)
+## <a name="see-also"></a><span data-ttu-id="25b9e-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="25b9e-119">See Also</span></span>  
+ [<span data-ttu-id="25b9e-120">方法: Windows フォームの DateTimePicker コントロールを使用してカスタム形式で日付を表示する</span><span class="sxs-lookup"><span data-stu-id="25b9e-120">How to: Display a Date in a Custom Format with the Windows Forms DateTimePicker Control</span></span>](../../../../docs/framework/winforms/controls/display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)  
+ [<span data-ttu-id="25b9e-121">方法: Windows フォームの DateTimePicker コントロールを使用して日付を設定および取得する</span><span class="sxs-lookup"><span data-stu-id="25b9e-121">How to: Set and Return Dates with the Windows Forms DateTimePicker Control</span></span>](../../../../docs/framework/winforms/controls/how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)

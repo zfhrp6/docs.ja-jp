@@ -1,107 +1,89 @@
 ---
-title: "My.Resources オブジェクト |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "My.Resources オブジェクト"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
 f1_keywords:
 - My.Resources
 - My.Resources.MyResources.ResourceManager
 - My.Resources.MyResources.Culture
-dev_langs:
-- VB
-helpviewer_keywords:
-- My.Resources object
+helpviewer_keywords: My.Resources object
 ms.assetid: 34c3f2dc-7b87-432c-9d5f-17ea666bb266
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6ad5bd4e33438256719b59cb0936cf6bc8525ab1
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b2a2de7229f59e7deea29fe4186a5e466459d9fa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="myresources-object"></a>My.Resources オブジェクト
-アプリケーションのリソースにアクセスするためには、プロパティとクラスを提供します。  
+# <a name="myresources-object"></a><span data-ttu-id="05df0-102">My.Resources オブジェクト</span><span class="sxs-lookup"><span data-stu-id="05df0-102">My.Resources Object</span></span>
+<span data-ttu-id="05df0-103">アプリケーションのリソースにアクセスするには、プロパティとクラスを提供します。</span><span class="sxs-lookup"><span data-stu-id="05df0-103">Provides properties and classes for accessing the application's resources.</span></span>  
   
-## <a name="remarks"></a>コメント  
- `My.Resources`オブジェクトがアプリケーションのリソースへのアクセスを提供しを使用すると動的にアプリケーションのリソースを取得します。 詳細については、次を参照してください。[を管理するアプリケーションのリソース (.NET)](https://docs.microsoft.com/visualstudio/ide/managing-application-resources-dotnet)します。  
+## <a name="remarks"></a><span data-ttu-id="05df0-104">コメント</span><span class="sxs-lookup"><span data-stu-id="05df0-104">Remarks</span></span>  
+ <span data-ttu-id="05df0-105">`My.Resources`オブジェクトがアプリケーションのリソースへのアクセスを提供および使用すると動的にアプリケーションのリソースを取得します。</span><span class="sxs-lookup"><span data-stu-id="05df0-105">The `My.Resources` object provides access to the application's resources and lets you dynamically retrieve resources for your application.</span></span> <span data-ttu-id="05df0-106">詳細については、次を参照してください。[を管理するアプリケーションのリソース (.NET)](/visualstudio/ide/managing-application-resources-dotnet)です。</span><span class="sxs-lookup"><span data-stu-id="05df0-106">For more information, see [Managing Application Resources (.NET)](/visualstudio/ide/managing-application-resources-dotnet).</span></span>  
   
- `My.Resources`オブジェクトはグローバル リソースだけを公開します。 フォームに関連付けられているリソース ファイルへのアクセスは行いません。 フォームのフォーム リソースにアクセスする必要があります。 詳しくは、「[チュートリアル: Windows フォームのローカリゼーション](http://msdn.microsoft.com/en-us/9a96220d-a19b-4de0-9f48-01e5d82679e5)」をご覧ください。  
+ <span data-ttu-id="05df0-107">`My.Resources`オブジェクトはグローバル リソースのみを公開します。</span><span class="sxs-lookup"><span data-stu-id="05df0-107">The `My.Resources` object exposes only global resources.</span></span> <span data-ttu-id="05df0-108">フォームに関連付けられているリソース ファイルへのアクセスは提供されません。</span><span class="sxs-lookup"><span data-stu-id="05df0-108">It does not provide access to resource files associated with forms.</span></span> <span data-ttu-id="05df0-109">フォームからフォーム リソースにアクセスする必要があります。</span><span class="sxs-lookup"><span data-stu-id="05df0-109">You must access the form resources from the form.</span></span> <span data-ttu-id="05df0-110">詳しくは、「[チュートリアル: Windows フォームのローカリゼーション](http://msdn.microsoft.com/en-us/9a96220d-a19b-4de0-9f48-01e5d82679e5)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="05df0-110">For more information, see [Walkthrough: Localizing Windows Forms](http://msdn.microsoft.com/en-us/9a96220d-a19b-4de0-9f48-01e5d82679e5).</span></span>  
   
- アプリケーションのカルチャに固有のリソース ファイルにアクセスできる、`My.Resources`オブジェクトです。 既定では、`My.Resources`オブジェクトのカルチャに対応するリソース ファイルからリソースを検索、<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.UICulture%2A>プロパティ</xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.UICulture%2A>。 ただし、この動作をオーバーライドし、リソースに使用する特定のカルチャを指定できます。 詳細については、次を参照してください。[デスクトップ アプリでのリソース](http://msdn.microsoft.com/library/8ad495d4-2941-40cf-bf64-e82e85825890)します。  
+ <span data-ttu-id="05df0-111">アプリケーションのカルチャに固有のリソース ファイルにアクセスすることができます、`My.Resources`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="05df0-111">You can access the application's culture-specific resource files from the `My.Resources` object.</span></span> <span data-ttu-id="05df0-112">既定では、`My.Resources`オブジェクト内のカルチャに一致するリソース ファイルからリソースを検索、<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.UICulture%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="05df0-112">By default, the `My.Resources` object looks up resources from the resource file that matches the culture in the <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.UICulture%2A> property.</span></span> <span data-ttu-id="05df0-113">ただし、この動作をオーバーライドし、リソースを使用する特定のカルチャを指定できます。</span><span class="sxs-lookup"><span data-stu-id="05df0-113">However, you can override this behavior and specify a particular culture to use for the resources.</span></span> <span data-ttu-id="05df0-114">詳細については、「[デスクトップ アプリケーションのリソース](../../../framework/resources/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="05df0-114">For more information, see [Resources in Desktop Apps](../../../framework/resources/index.md).</span></span>  
   
-## <a name="properties"></a>プロパティ  
- プロパティ、`My.Resources`オブジェクトが、アプリケーションのリソースへの読み取り専用のアクセスを提供します。 追加またはリソースを削除するを使用して、**プロジェクト デザイナー**します。 詳細については、次を参照してください。[方法: リソース追加または削除](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d)します。 使用して追加のリソースにアクセスすることができます、**プロジェクト デザイナー**を使用して`My.Resources.``resourceName`します。  
+## <a name="properties"></a><span data-ttu-id="05df0-115">プロパティ</span><span class="sxs-lookup"><span data-stu-id="05df0-115">Properties</span></span>  
+ <span data-ttu-id="05df0-116">プロパティ、`My.Resources`オブジェクトは、アプリケーションのリソースへの読み取り専用のアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="05df0-116">The properties of the `My.Resources` object provide read-only access to your application's resources.</span></span> <span data-ttu-id="05df0-117">追加またはリソースを削除するを使用して、**プロジェクト デザイナー**です。</span><span class="sxs-lookup"><span data-stu-id="05df0-117">To add or remove resources, use the **Project Designer**.</span></span> <span data-ttu-id="05df0-118">詳細については、次を参照してください。[する方法: リソース追加や削除](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d)です。</span><span class="sxs-lookup"><span data-stu-id="05df0-118">For more information, see [How to: Add or Remove Resources](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d).</span></span> <span data-ttu-id="05df0-119">によって追加されるリソースにアクセスすることができます、**プロジェクト デザイナー**を使用して`My.Resources.``resourceName`です。</span><span class="sxs-lookup"><span data-stu-id="05df0-119">You can access resources added through the **Project Designer** by using `My.Resources.``resourceName`.</span></span>  
   
- 追加またはでプロジェクトを選択してリソース ファイルを削除することも**ソリューション エクスプ ローラー**をクリックすると、**新しい項目の追加**または**既存項目の追加**から、**プロジェクト**メニュー。 使用して、この方法で追加のリソースにアクセスすることができます`My.Resources.``resourceFileName`.`resourceName`します。  
+ <span data-ttu-id="05df0-120">追加またはでプロジェクトを選択してリソース ファイルを削除することができますも**ソリューション エクスプ ローラー**をクリックすると、**新しい項目の追加**または**既存項目の追加**から、 **プロジェクト**メニュー。</span><span class="sxs-lookup"><span data-stu-id="05df0-120">You can also add or remove resource files by selecting your project in **Solution Explorer** and clicking **Add New Item** or **Add Existing Item** from the **Project** menu.</span></span> <span data-ttu-id="05df0-121">使用してこのような追加リソースにアクセスすることができます`My.Resources.``resourceFileName`.`resourceName`です。</span><span class="sxs-lookup"><span data-stu-id="05df0-121">You can access resources added in this manner by using `My.Resources.``resourceFileName`.`resourceName`.</span></span>  
   
- 各リソースには、名前、カテゴリ、および値、およびこれらのリソース設定で、リソースにアクセスするプロパティの表示方法を決定する、`My.Resources`オブジェクトです。 追加するリソースの**プロジェクト デザイナー**:  
+ <span data-ttu-id="05df0-122">各リソースの名前、カテゴリ、および、値があり、これらのリソース設定でのリソースにアクセスするプロパティの表示方法を決定、`My.Resources`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="05df0-122">Each resource has a name, category, and value, and these resource settings determine how the property to access the resource appears in the `My.Resources` object.</span></span> <span data-ttu-id="05df0-123">追加するリソースの**プロジェクト デザイナー**:</span><span class="sxs-lookup"><span data-stu-id="05df0-123">For resources added in the **Project Designer**:</span></span>  
   
--   名前、プロパティの名前を決定します。  
+-   <span data-ttu-id="05df0-124">名前、プロパティの名前を決定します。</span><span class="sxs-lookup"><span data-stu-id="05df0-124">The name determines the name of the property,</span></span>  
   
--   リソース データは、プロパティの値  
+-   <span data-ttu-id="05df0-125">リソース データは、プロパティの値</span><span class="sxs-lookup"><span data-stu-id="05df0-125">The resource data is the value of the property,</span></span>  
   
--   カテゴリは、プロパティの型を決定します。  
+-   <span data-ttu-id="05df0-126">カテゴリは、プロパティの型を決定します。</span><span class="sxs-lookup"><span data-stu-id="05df0-126">The category determines the type of the property:</span></span>  
   
-|カテゴリ|プロパティのデータ型|  
+|<span data-ttu-id="05df0-127">カテゴリ</span><span class="sxs-lookup"><span data-stu-id="05df0-127">Category</span></span>|<span data-ttu-id="05df0-128">プロパティのデータ型</span><span class="sxs-lookup"><span data-stu-id="05df0-128">Property data type</span></span>|  
 |---|---|  
-|**文字列**|[String](../../../visual-basic/language-reference/data-types/string-data-type.md)|  
-|**イメージ**|<xref:System.Drawing.Bitmap></xref:System.Drawing.Bitmap>|  
-|**アイコン**|<xref:System.Drawing.Icon></xref:System.Drawing.Icon>|  
-|**オーディオ**|<xref:System.IO.UnmanagedMemoryStream></xref:System.IO.UnmanagedMemoryStream><br /><br /> <xref:System.IO.UnmanagedMemoryStream>クラスから派生する、<xref:System.IO.Stream>クラスなど、ストリームを受け取るメソッドを使用できるように、<xref:Microsoft.VisualBasic.Devices.Audio.Play%2A>メソッド</xref:Microsoft.VisualBasic.Devices.Audio.Play%2A></xref:System.IO.Stream></xref:System.IO.UnmanagedMemoryStream>。|  
-|**ファイル**|-   [文字列](../../../visual-basic/language-reference/data-types/string-data-type.md)テキスト ファイルにします。<br />-<xref:System.Drawing.Bitmap>の画像ファイル</xref:System.Drawing.Bitmap>。<br />-<xref:System.Drawing.Icon>アイコン ファイル</xref:System.Drawing.Icon>。<br />-<xref:System.IO.UnmanagedMemoryStream>のサウンド ファイル</xref:System.IO.UnmanagedMemoryStream>。|  
-|**その他**|デザイナーの情報によって判断**型**列です。|  
+|<span data-ttu-id="05df0-129">**文字列**</span><span class="sxs-lookup"><span data-stu-id="05df0-129">**Strings**</span></span>|[<span data-ttu-id="05df0-130">String</span><span class="sxs-lookup"><span data-stu-id="05df0-130">String</span></span>](../../../visual-basic/language-reference/data-types/string-data-type.md)|  
+|<span data-ttu-id="05df0-131">**イメージ**</span><span class="sxs-lookup"><span data-stu-id="05df0-131">**Images**</span></span>|<xref:System.Drawing.Bitmap>|  
+|<span data-ttu-id="05df0-132">**アイコン**</span><span class="sxs-lookup"><span data-stu-id="05df0-132">**Icons**</span></span>|<xref:System.Drawing.Icon>|  
+|<span data-ttu-id="05df0-133">**オーディオ**</span><span class="sxs-lookup"><span data-stu-id="05df0-133">**Audio**</span></span>|<xref:System.IO.UnmanagedMemoryStream><br /><br /> <span data-ttu-id="05df0-134"><xref:System.IO.UnmanagedMemoryStream>から派生したクラス、<xref:System.IO.Stream>など、ストリームを取るメソッドで使用できるように、クラス、<xref:Microsoft.VisualBasic.Devices.Audio.Play%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="05df0-134">The <xref:System.IO.UnmanagedMemoryStream> class derives from the <xref:System.IO.Stream> class, so it can be used with methods that take streams, such as the <xref:Microsoft.VisualBasic.Devices.Audio.Play%2A> method.</span></span>|  
+|<span data-ttu-id="05df0-135">**ファイル**</span><span class="sxs-lookup"><span data-stu-id="05df0-135">**Files**</span></span>|<span data-ttu-id="05df0-136">-   [文字列](../../../visual-basic/language-reference/data-types/string-data-type.md)テキスト ファイルにします。</span><span class="sxs-lookup"><span data-stu-id="05df0-136">-   [String](../../../visual-basic/language-reference/data-types/string-data-type.md) for text files.</span></span><br /><span data-ttu-id="05df0-137">-   <xref:System.Drawing.Bitmap>イメージ ファイル。</span><span class="sxs-lookup"><span data-stu-id="05df0-137">-   <xref:System.Drawing.Bitmap> for image files.</span></span><br /><span data-ttu-id="05df0-138">-   <xref:System.Drawing.Icon>アイコン ファイルです。</span><span class="sxs-lookup"><span data-stu-id="05df0-138">-   <xref:System.Drawing.Icon> for icon files.</span></span><br /><span data-ttu-id="05df0-139">-   <xref:System.IO.UnmanagedMemoryStream>音声ファイル。</span><span class="sxs-lookup"><span data-stu-id="05df0-139">-   <xref:System.IO.UnmanagedMemoryStream> for sound files.</span></span>|  
+|<span data-ttu-id="05df0-140">**その他**</span><span class="sxs-lookup"><span data-stu-id="05df0-140">**Other**</span></span>|<span data-ttu-id="05df0-141">デザイナーの内の情報によって決まります**型**列です。</span><span class="sxs-lookup"><span data-stu-id="05df0-141">Determined by the information in the designer's **Type** column.</span></span>|  
   
-## <a name="classes"></a>クラス  
- `My.Resources`オブジェクトは各リソース ファイルを共有のプロパティを持つクラスとして公開します。 クラス名は、リソース ファイルの名前と同じです。 前のセクションで説明したように、リソース ファイル内のリソースは、クラスのプロパティとして公開されます。  
+## <a name="classes"></a><span data-ttu-id="05df0-142">クラス</span><span class="sxs-lookup"><span data-stu-id="05df0-142">Classes</span></span>  
+ <span data-ttu-id="05df0-143">`My.Resources`オブジェクトは、共有のプロパティを持つクラスとして各リソース ファイルを公開します。</span><span class="sxs-lookup"><span data-stu-id="05df0-143">The `My.Resources` object exposes each resource file as a class with shared properties.</span></span> <span data-ttu-id="05df0-144">クラス名は、リソース ファイルの名前と同じです。</span><span class="sxs-lookup"><span data-stu-id="05df0-144">The class name is the same as the name of the resource file.</span></span> <span data-ttu-id="05df0-145">前のセクションで説明した、リソース ファイル内のリソースが、クラスのプロパティとして公開されます。</span><span class="sxs-lookup"><span data-stu-id="05df0-145">As described in the previous section, the resources in a resource file are exposed as properties in the class.</span></span>  
   
-## <a name="example"></a>例  
- この例では、フォームのタイトルを設定するという名前の文字列リソース`Form1Title`アプリケーションのリソース ファイルにします。 例を実行するには、アプリケーションが必要という名前の文字列`Form1Title`リソース ファイルにします。 詳細については、次を参照してください。[方法: リソース追加または削除](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d)します。  
+## <a name="example"></a><span data-ttu-id="05df0-146">例</span><span class="sxs-lookup"><span data-stu-id="05df0-146">Example</span></span>  
+ <span data-ttu-id="05df0-147">この例では、という名前の文字列リソースをフォームのタイトルを設定`Form1Title`アプリケーション リソース ファイルにします。</span><span class="sxs-lookup"><span data-stu-id="05df0-147">This example sets the title of a form to the string resource named `Form1Title` in the application resource file.</span></span> <span data-ttu-id="05df0-148">例が動作するには、アプリケーションが必要という名前の文字列`Form1Title`リソース ファイル。</span><span class="sxs-lookup"><span data-stu-id="05df0-148">For the example to work, the application must have a string named `Form1Title` in its resource file.</span></span> <span data-ttu-id="05df0-149">詳細については、次を参照してください。[する方法: リソース追加や削除](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d)です。</span><span class="sxs-lookup"><span data-stu-id="05df0-149">For more information, see [How to: Add or Remove Resources](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d).</span></span>  
   
- [!code-vb[VbVbalrMyResources&#1;](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_1.vb)]  
+ [!code-vb[VbVbalrMyResources#1](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_1.vb)]  
   
-## <a name="example"></a>例  
- この例では、フォームのアイコンを設定するという名前のアイコン`Form1Icon`アプリケーションのリソース ファイルに格納されています。 例を実行するには、アプリケーションが必要という名前のアイコン`Form1Icon`リソース ファイルにします。  
+## <a name="example"></a><span data-ttu-id="05df0-150">例</span><span class="sxs-lookup"><span data-stu-id="05df0-150">Example</span></span>  
+ <span data-ttu-id="05df0-151">この例は、という名前のアイコンをフォームのアイコンを設定`Form1Icon`アプリケーションのリソース ファイルに格納されています。</span><span class="sxs-lookup"><span data-stu-id="05df0-151">This example sets the icon of the form to the icon named `Form1Icon` that is stored in the application's resource file.</span></span> <span data-ttu-id="05df0-152">例が動作するには、アプリケーションが必要という名前のアイコン`Form1Icon`リソース ファイル。</span><span class="sxs-lookup"><span data-stu-id="05df0-152">For the example to work, the application must have an icon named `Form1Icon` in its resource file.</span></span>  
   
- [!code-vb[VbVbalrMyResources&#2;](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_2.vb)]  
+ [!code-vb[VbVbalrMyResources#2](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_2.vb)]  
   
-## <a name="example"></a>例  
- この例では、フォームの背景イメージを設定という名前のイメージ リソースを`Form1Background`がアプリケーションのリソース ファイル内にあります。 この例を実行するには、アプリケーションが必要という名前のイメージ リソース`Form1Background`リソース ファイルにします。  
+## <a name="example"></a><span data-ttu-id="05df0-153">例</span><span class="sxs-lookup"><span data-stu-id="05df0-153">Example</span></span>  
+ <span data-ttu-id="05df0-154">この例では、という名前のイメージ リソースをフォームの背景イメージを設定`Form1Background`アプリケーションのリソース ファイルであります。</span><span class="sxs-lookup"><span data-stu-id="05df0-154">This example sets the background image of a form to the image resource named `Form1Background`, which is in the application resource file.</span></span> <span data-ttu-id="05df0-155">この例を実行するアプリケーションが必要という名前のイメージ リソース`Form1Background`リソース ファイル。</span><span class="sxs-lookup"><span data-stu-id="05df0-155">For this example to work, the application must have an image resource named `Form1Background` in its resource file.</span></span>  
   
- [!code-vb[VbVbalrMyResources&#3;](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_3.vb)]  
+ [!code-vb[VbVbalrMyResources#3](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_3.vb)]  
   
-## <a name="example"></a>例  
- この例は、名前付きオーディオ リソースとして格納されているサウンドを再生`Form1Greeting`アプリケーションのリソース ファイルにします。 例を実行するには、アプリケーションが必要というオーディオ リソース`Form1Greeting`リソース ファイルにします。 `My.Computer.Audio.Play`メソッドは、Windows フォーム アプリケーションでのみ使用します。  
+## <a name="example"></a><span data-ttu-id="05df0-156">例</span><span class="sxs-lookup"><span data-stu-id="05df0-156">Example</span></span>  
+ <span data-ttu-id="05df0-157">この例は、という名前のオーディオ リソースとして格納されているサウンドを再生`Form1Greeting`アプリケーションのリソース ファイルにします。</span><span class="sxs-lookup"><span data-stu-id="05df0-157">This example plays the sound that is stored as an audio resource named `Form1Greeting` in the application's resource file.</span></span> <span data-ttu-id="05df0-158">アプリケーションの例が機能するには、名前付きオーディオ リソースがある必要があります`Form1Greeting`リソース ファイル。</span><span class="sxs-lookup"><span data-stu-id="05df0-158">For the example to work, the application must have an audio resource named `Form1Greeting` in its resource file.</span></span> <span data-ttu-id="05df0-159">`My.Computer.Audio.Play`メソッドは、Windows フォーム アプリケーションでのみ使用します。</span><span class="sxs-lookup"><span data-stu-id="05df0-159">The `My.Computer.Audio.Play` method is available only for Windows Forms applications.</span></span>  
   
- [!code-vb[VbVbalrMyResources&4;](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_4.vb)]  
+ [!code-vb[VbVbalrMyResources#4](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_4.vb)]  
   
-## <a name="example"></a>例  
- この例では、アプリケーションの文字列リソースのフランス語のカルチャのバージョンを取得します。 リソースが名前付き`Message`です。 カルチャを変更すること、`My.Resources`オブジェクトを使用して、 <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeUICulture%2A>.</xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeUICulture%2A>の例  
+## <a name="example"></a><span data-ttu-id="05df0-160">例</span><span class="sxs-lookup"><span data-stu-id="05df0-160">Example</span></span>  
+ <span data-ttu-id="05df0-161">この例では、アプリケーションの文字列リソースのフランス語のカルチャのバージョンを取得します。</span><span class="sxs-lookup"><span data-stu-id="05df0-161">This example retrieves the French-culture version of a  string resource of the application.</span></span> <span data-ttu-id="05df0-162">リソースが名前付き`Message`します。</span><span class="sxs-lookup"><span data-stu-id="05df0-162">The resource is named `Message`.</span></span> <span data-ttu-id="05df0-163">カルチャを変更すること、`My.Resources`オブジェクトを使用して、この例では<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeUICulture%2A>します。</span><span class="sxs-lookup"><span data-stu-id="05df0-163">To change the culture that the `My.Resources` object uses, the example uses <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeUICulture%2A>.</span></span>  
   
- この例を実行するには、アプリケーションが必要という名前の文字列`Message`でのリソース ファイル、およびアプリケーションが必要にあり用、そのリソース ファイルのフランス語のカルチャのバージョン。 詳細については、次を参照してください。[方法: リソース追加または削除](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d)します。 アプリケーションには、リソース ファイルのフランス語のカルチャのバージョンがない場合、`My.Resource`オブジェクトは、既定のカルチャ リソース ファイルからリソースを取得します。  
+ <span data-ttu-id="05df0-164">この例を実行するアプリケーションが必要という名前の文字列`Message`に、リソース ファイル、およびアプリケーションはがリソース ファイルで、あり用のフランス語のカルチャのバージョン。</span><span class="sxs-lookup"><span data-stu-id="05df0-164">For this example to work, the application must have a string named `Message` in its resource file, and the application should have the French-culture version of that resource file, Resources.fr-FR.resx.</span></span> <span data-ttu-id="05df0-165">詳細については、次を参照してください。[する方法: リソース追加や削除](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d)です。</span><span class="sxs-lookup"><span data-stu-id="05df0-165">For more information, see [How to: Add or Remove Resources](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d).</span></span> <span data-ttu-id="05df0-166">アプリケーションには、リソース ファイルのフランス語のカルチャ バージョンがない場合、`My.Resource`オブジェクトは、既定のカルチャのリソース ファイルからリソースを取得します。</span><span class="sxs-lookup"><span data-stu-id="05df0-166">If the application does not have the French-culture version of the resource file, the `My.Resource` object retrieves the resource from the default-culture resource file.</span></span>  
   
- [!code-vb[VbVbalrMyResources&#10;](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_5.vb)]  
+ [!code-vb[VbVbalrMyResources#10](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_5.vb)]  
   
-## <a name="see-also"></a>関連項目  
- [方法: リソース追加または削除](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d)   
- [アプリケーションのリソース (.NET) の管理](https://docs.microsoft.com/visualstudio/ide/managing-application-resources-dotnet)   
- [デスクトップ アプリでのリソース](http://msdn.microsoft.com/library/8ad495d4-2941-40cf-bf64-e82e85825890)   
- [チュートリアル: Windows フォームのローカリゼーション](http://msdn.microsoft.com/en-us/9a96220d-a19b-4de0-9f48-01e5d82679e5)
+## <a name="see-also"></a><span data-ttu-id="05df0-167">関連項目</span><span class="sxs-lookup"><span data-stu-id="05df0-167">See Also</span></span>  
+ [<span data-ttu-id="05df0-168">方法: リソースを追加または削除する</span><span class="sxs-lookup"><span data-stu-id="05df0-168">How to: Add or Remove Resources</span></span>](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d)  
+ [<span data-ttu-id="05df0-169">アプリケーション リソースの管理 (.NET)</span><span class="sxs-lookup"><span data-stu-id="05df0-169">Managing Application Resources (.NET)</span></span>](/visualstudio/ide/managing-application-resources-dotnet)  
+ [<span data-ttu-id="05df0-170">デスクトップ アプリケーションのリソース</span><span class="sxs-lookup"><span data-stu-id="05df0-170">Resources in Desktop Apps</span></span>](../../../framework/resources/index.md)  
+ [<span data-ttu-id="05df0-171">チュートリアル: Windows フォームのローカリゼーション</span><span class="sxs-lookup"><span data-stu-id="05df0-171">Walkthrough: Localizing Windows Forms</span></span>](http://msdn.microsoft.com/en-us/9a96220d-a19b-4de0-9f48-01e5d82679e5)

@@ -1,78 +1,76 @@
 ---
-title: "CType 関数 (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.CType"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "式の変換結果"
-  - "明示的なデータ型の変換"
-  - "CType 関数"
-  - "変換、式"
+title: "CType 関数 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.CType
+helpviewer_keywords:
+- expression conversion results
+- explicit data type conversions [Visual Basic]
+- CType function
+- conversions [Visual Basic], expression
 ms.assetid: dd4b29e7-6fa1-428c-877e-69955420bb72
-caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 6118ca5f73a0d446842c33859e0623032082bcd8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# CType 関数 (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-任意の式を、指定されたデータ型、オブジェクト、構造体、クラス、またはインターフェイスに明示的に変換し、その結果を返します。  
+# <a name="ctype-function-visual-basic"></a><span data-ttu-id="d39f2-102">CType 関数 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d39f2-102">CType Function (Visual Basic)</span></span>
+<span data-ttu-id="d39f2-103">任意の式を、指定されたデータ型、オブジェクト、構造体、クラス、またはインターフェイスに明示的に変換し、その結果を返します。</span><span class="sxs-lookup"><span data-stu-id="d39f2-103">Returns the result of explicitly converting an expression to a specified data type, object, structure, class, or interface.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="d39f2-104">構文</span><span class="sxs-lookup"><span data-stu-id="d39f2-104">Syntax</span></span>  
   
 ```  
 CType(expression, typename)  
 ```  
   
-## 指定項目  
+## <a name="parts"></a><span data-ttu-id="d39f2-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="d39f2-105">Parts</span></span>  
  `expression`  
- 任意の有効な式。  `expression` の値が `typename` で許可されている範囲内でない場合、Visual Basic が例外をスローします。  
+ <span data-ttu-id="d39f2-106">任意の有効な式。</span><span class="sxs-lookup"><span data-stu-id="d39f2-106">Any valid expression.</span></span> <span data-ttu-id="d39f2-107">`expression` の値が `typename` で許可されている範囲内でない場合、Visual Basic が例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="d39f2-107">If the value of `expression` is outside the range allowed by `typename`, Visual Basic throws an exception.</span></span>  
   
  `typename`  
- `Dim` ステートメントの `As` 句で有効な任意の式。つまり、任意のデータ型、オブジェクト、構造体、クラス、またはインターフェイスの名前を指定します。  
+ <span data-ttu-id="d39f2-108">`As` ステートメントの `Dim` 句で有効な任意の式。つまり、任意のデータ型、オブジェクト、構造体、クラス、またはインターフェイスの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="d39f2-108">Any expression that is legal within an `As` clause in a `Dim` statement, that is, the name of any data type, object, structure, class, or interface.</span></span>  
   
-## 解説  
+## <a name="remarks"></a><span data-ttu-id="d39f2-109">コメント</span><span class="sxs-lookup"><span data-stu-id="d39f2-109">Remarks</span></span>  
   
 > [!TIP]
->  次の関数を使用して型変換を実行することもできます。  
+>  <span data-ttu-id="d39f2-110">次の関数を使用して型変換を実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="d39f2-110">You can also use the following functions to perform a type conversion:</span></span>  
 >   
->  -   特定のデータ型への変換を実行する、`CByte`、`CDbl`、`CInt` などの型変換関数。  詳細については、「[Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)」を参照してください。  
-> -   [DirectCast Operator](../../../visual-basic/language-reference/operators/directcast-operator.md) または [TryCast Operator](../../../visual-basic/language-reference/operators/trycast-operator.md)。  これらの演算子では、一方の型が他方の型を継承または実装している必要があります。  これらの場合は、`Object` データ型との間で変換を行うときに、`CType` よりもいくらかパフォーマンスが向上します。  
+>  -   <span data-ttu-id="d39f2-111">特定のデータ型への変換を実行する、`CByte`、`CDbl`、`CInt` などの型変換関数。</span><span class="sxs-lookup"><span data-stu-id="d39f2-111">Type conversion functions such as `CByte`, `CDbl`, and `CInt` that perform a conversion to a specific data type.</span></span> <span data-ttu-id="d39f2-112">詳細については、次を参照してください。[型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)です。</span><span class="sxs-lookup"><span data-stu-id="d39f2-112">For more information, see [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md).</span></span>  
+> -   <span data-ttu-id="d39f2-113">[DirectCast 演算子](../../../visual-basic/language-reference/operators/directcast-operator.md)または[TryCast 演算子](../../../visual-basic/language-reference/operators/trycast-operator.md)です。</span><span class="sxs-lookup"><span data-stu-id="d39f2-113">[DirectCast Operator](../../../visual-basic/language-reference/operators/directcast-operator.md) or [TryCast Operator](../../../visual-basic/language-reference/operators/trycast-operator.md).</span></span> <span data-ttu-id="d39f2-114">これらの演算子では、一方の型が他方の型を継承または実装している必要があります。</span><span class="sxs-lookup"><span data-stu-id="d39f2-114">These operators require that one type inherit from or implement the other type.</span></span> <span data-ttu-id="d39f2-115">これらの場合は、`CType` データ型との間で変換を行うときに、`Object` よりもいくらかパフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="d39f2-115">They can provide somewhat better performance than `CType` when converting to and from the `Object` data type.</span></span>  
   
- `CType` は、インラインでコンパイルされます。つまり、変換コードは、式を評価するコードに含まれます。  場合によっては、変換を実行するプロシージャが呼び出されないため、コードの実行速度が速くなります。  
+ <span data-ttu-id="d39f2-116">`CType` は、インラインでコンパイルされます。つまり、変換コードは、式を評価するコードに含まれます。</span><span class="sxs-lookup"><span data-stu-id="d39f2-116">`CType` is compiled inline, which means that the conversion code is part of the code that evaluates the expression.</span></span> <span data-ttu-id="d39f2-117">場合によっては、変換を実行するプロシージャが呼び出されないため、コードの実行速度が速くなります。</span><span class="sxs-lookup"><span data-stu-id="d39f2-117">In some cases, the code runs faster because no procedures are called to perform the conversion.</span></span>  
   
- `Integer` から `Date` など、`expression` から `typename` への変換が定義されていない場合、Visual Basic はコンパイル時のエラー メッセージを表示します。  
+ <span data-ttu-id="d39f2-118">`expression` から `typename` など、`Integer` から `Date` への変換が定義されていない場合、Visual Basic はコンパイル時のエラー メッセージを表示します。</span><span class="sxs-lookup"><span data-stu-id="d39f2-118">If no conversion is defined from `expression` to `typename` (for example, from `Integer` to `Date`), Visual Basic displays a compile-time error message.</span></span>  
   
- 実行時に変換が失敗すると、適切な例外がスローされます。  縮小変換が失敗した場合、最もよくスローされるのは <xref:System.OverflowException> です。  変換が定義されていない場合、<xref:System.InvalidCastException> がスローされます。  たとえば、これは、`expression` が `Object` 型で、実行時の型が `typename` への変換を持たない場合に起こります。  
+ <span data-ttu-id="d39f2-119">実行時に変換が失敗すると、適切な例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="d39f2-119">If a conversion fails at run time, the appropriate exception is thrown.</span></span> <span data-ttu-id="d39f2-120">縮小変換が失敗した場合、最もよくスローされるのは <xref:System.OverflowException> です。</span><span class="sxs-lookup"><span data-stu-id="d39f2-120">If a narrowing conversion fails, an <xref:System.OverflowException> is the most common result.</span></span> <span data-ttu-id="d39f2-121">変換が定義されていない場合、<xref:System.InvalidCastException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="d39f2-121">If the conversion is undefined, an <xref:System.InvalidCastException> in thrown.</span></span> <span data-ttu-id="d39f2-122">たとえば、これは、`expression` が `Object` 型で、実行時の型が `typename` への変換を持たない場合に起こります。</span><span class="sxs-lookup"><span data-stu-id="d39f2-122">For example, this can happen  if `expression` is of type `Object` and its run-time type has no conversion to `typename`.</span></span>  
   
- `expression` または `typename` のデータ型が、定義したクラスまたは構造体の場合、そのクラスまたは構造体に `CType` を変換演算子として定義できます。  これにより、`CType` は*オーバーロードされた演算子*として機能します。  この方法を利用する場合、定義したクラスまたは構造体からの変換、またはこのクラスまたは構造体への変換の動作 \(スローする例外など\) を制御できます。  
+ <span data-ttu-id="d39f2-123">`expression` または `typename` のデータ型が、定義したクラスまたは構造体の場合、そのクラスまたは構造体に `CType` を変換演算子として定義できます。</span><span class="sxs-lookup"><span data-stu-id="d39f2-123">If the data type of `expression` or `typename` is a class or structure you've defined, you can define `CType` on that class or structure as a conversion operator.</span></span> <span data-ttu-id="d39f2-124">これにより、`CType`として機能する*オーバー ロードされた演算子*です。</span><span class="sxs-lookup"><span data-stu-id="d39f2-124">This makes `CType` act as an *overloaded operator*.</span></span> <span data-ttu-id="d39f2-125">この方法を利用する場合、定義したクラスまたは構造体からの変換、またはこのクラスまたは構造体への変換の動作 (スローする例外など) を制御できます。</span><span class="sxs-lookup"><span data-stu-id="d39f2-125">If you do this, you can control the behavior of conversions to and from your class or structure, including the exceptions that can be thrown.</span></span>  
   
-## オーバーロード  
- `CType` 演算子も、コードの外部で定義されたクラスまたは構造体でオーバーロードできます。  このようなクラスまたは構造体からの変換、またはこのクラスまたは構造体への変換を行う場合は、その `CType` 演算子の動作を確認してください。  詳細については、「[Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+## <a name="overloading"></a><span data-ttu-id="d39f2-126">オーバーロード</span><span class="sxs-lookup"><span data-stu-id="d39f2-126">Overloading</span></span>  
+ <span data-ttu-id="d39f2-127">`CType` 演算子も、コードの外部で定義されたクラスまたは構造体でオーバーロードできます。</span><span class="sxs-lookup"><span data-stu-id="d39f2-127">The `CType` operator can also be overloaded on a class or structure defined outside your code.</span></span> <span data-ttu-id="d39f2-128">このようなクラスまたは構造体からの変換、またはこのクラスまたは構造体への変換を行う場合は、その `CType` 演算子の動作を確認してください。</span><span class="sxs-lookup"><span data-stu-id="d39f2-128">If your code converts to or from such a class or structure, be sure you understand the behavior of its `CType` operator.</span></span> <span data-ttu-id="d39f2-129">詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。</span><span class="sxs-lookup"><span data-stu-id="d39f2-129">For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).</span></span>  
   
-## 動的オブジェクトの変換  
- 動的オブジェクトの型変換は、<xref:System.Dynamic.DynamicObject.TryConvert%2A> メソッドまたは <xref:System.Dynamic.DynamicMetaObject.BindConvert%2A> メソッドを使用するユーザー定義の動的変換によって実行されます。  動的オブジェクトを使用する場合は、<xref:Microsoft.VisualBasic.Conversion.CTypeDynamic%2A> メソッドを使用して動的オブジェクトを変換します。  
+## <a name="converting-dynamic-objects"></a><span data-ttu-id="d39f2-130">動的オブジェクトの変換</span><span class="sxs-lookup"><span data-stu-id="d39f2-130">Converting Dynamic Objects</span></span>  
+ <span data-ttu-id="d39f2-131">動的オブジェクトの型変換は、<xref:System.Dynamic.DynamicObject.TryConvert%2A> メソッドまたは <xref:System.Dynamic.DynamicMetaObject.BindConvert%2A> メソッドを使用するユーザー定義の動的変換によって実行されます。</span><span class="sxs-lookup"><span data-stu-id="d39f2-131">Type conversions of dynamic objects are performed by user-defined dynamic conversions that use the <xref:System.Dynamic.DynamicObject.TryConvert%2A> or <xref:System.Dynamic.DynamicMetaObject.BindConvert%2A> methods.</span></span> <span data-ttu-id="d39f2-132">動的オブジェクトを使用する場合は、<xref:Microsoft.VisualBasic.Conversion.CTypeDynamic%2A> メソッドを使用して動的オブジェクトを変換します。</span><span class="sxs-lookup"><span data-stu-id="d39f2-132">If you're working with dynamic objects, use the <xref:Microsoft.VisualBasic.Conversion.CTypeDynamic%2A> method to convert the dynamic object.</span></span>  
   
-## 使用例  
- `CType` 関数を使用して任意の式を `Single` データ型に変換する例を次に示します。  
+## <a name="example"></a><span data-ttu-id="d39f2-133">例</span><span class="sxs-lookup"><span data-stu-id="d39f2-133">Example</span></span>  
+ <span data-ttu-id="d39f2-134">`CType` 関数を使用して任意の式を `Single` データ型に変換する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="d39f2-134">The following example uses the `CType` function to convert an expression to the `Single` data type.</span></span>  
   
  [!code-vb[VbVbalrFunctions#24](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/ctype-function_1.vb)]  
   
- その他の例については、「[Implicit and Explicit Conversions](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)」を参照してください。  
+ <span data-ttu-id="d39f2-135">その他の例では、次を参照してください。[暗黙的および明示的な変換](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)です。</span><span class="sxs-lookup"><span data-stu-id="d39f2-135">For additional examples, see [Implicit and Explicit Conversions](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md).</span></span>  
   
-## 参照  
- <xref:System.OverflowException>   
- <xref:System.InvalidCastException>   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [Conversion Functions](../../../visual-basic/language-reference/functions/conversion-functions.md)   
- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)   
- [How to: Define a Conversion Operator](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)   
- [.NET Framework における型変換](../Topic/Type%20Conversion%20in%20the%20.NET%20Framework.md)
+## <a name="see-also"></a><span data-ttu-id="d39f2-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="d39f2-136">See Also</span></span>  
+ <xref:System.OverflowException>  
+ <xref:System.InvalidCastException>  
+ [<span data-ttu-id="d39f2-137">データ型変換関数</span><span class="sxs-lookup"><span data-stu-id="d39f2-137">Type Conversion Functions</span></span>](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [<span data-ttu-id="d39f2-138">変換関数</span><span class="sxs-lookup"><span data-stu-id="d39f2-138">Conversion Functions</span></span>](../../../visual-basic/language-reference/functions/conversion-functions.md)  
+ [<span data-ttu-id="d39f2-139">Operator ステートメント</span><span class="sxs-lookup"><span data-stu-id="d39f2-139">Operator Statement</span></span>](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [<span data-ttu-id="d39f2-140">方法 : 変換演算子を定義する</span><span class="sxs-lookup"><span data-stu-id="d39f2-140">How to: Define a Conversion Operator</span></span>](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)  
+ [<span data-ttu-id="d39f2-141">.NET Framework における型変換</span><span class="sxs-lookup"><span data-stu-id="d39f2-141">Type Conversion in the .NET Framework</span></span>](http://msdn.microsoft.com/library/ba36154f-064c-47d3-9f05-72f93a7ca96d)

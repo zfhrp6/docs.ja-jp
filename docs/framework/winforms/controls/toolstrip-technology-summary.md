@@ -1,132 +1,133 @@
 ---
-title: "ToolStrip テクノロジの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "メニュー [Windows フォーム], テクノロジの概要"
-  - "ステータス バー, テクノロジの概要"
-  - "ツール バー [Windows フォーム], テクノロジの概要"
-  - "ToolStrip コントロール [Windows フォーム], テクノロジの概要"
+title: "ToolStrip テクノロジの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ToolStrip control [Windows Forms], technology summary
+- status bars [Windows Forms], technology summary
+- toolbars [Windows Forms], technology summary
+- menus [Windows Forms], technology summary
 ms.assetid: e8d61973-7af9-429f-9df5-05a899c15a7b
-caps.latest.revision: 27
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 27
+caps.latest.revision: "27"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 75b340bfb2d9106827d39a3253f65f3c2419bd94
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ToolStrip テクノロジの概要
-ここでは、`ToolStrip` コントロールおよびその使用をサポートしているクラスの概要について説明します。  
+# <a name="toolstrip-technology-summary"></a><span data-ttu-id="cc9e7-102">ToolStrip テクノロジの概要</span><span class="sxs-lookup"><span data-stu-id="cc9e7-102">ToolStrip Technology Summary</span></span>
+<span data-ttu-id="cc9e7-103">ここでは、`ToolStrip` コントロールおよびその使用をサポートしているクラスの概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-103">This topic summarizes information about the `ToolStrip` control and the classes that support its use.</span></span>  
   
- `ToolStrip` コントロールとその関連クラスは、ツール バー、ステータス バー、メニューを作成するための完全なソリューションを提供します。  
+ <span data-ttu-id="cc9e7-104">`ToolStrip` コントロールとその関連クラスは、ツール バー、ステータス バー、メニューを作成するための完全なソリューションを提供します。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-104">The `ToolStrip` control and its associated classes provide a complete solution for creating toolbars, status bars, and menus.</span></span>  
   
-## 名前空間  
- <xref:System.Windows.Forms?displayProperty=fullName>  
+## <a name="namespaces"></a><span data-ttu-id="cc9e7-105">名前空間</span><span class="sxs-lookup"><span data-stu-id="cc9e7-105">Namespaces</span></span>  
+ <xref:System.Windows.Forms?displayProperty=nameWithType>  
   
-## 背景  
- `ToolStrip` コントロールと関連クラスを使用すると、外観と動作に一貫性がある、プロフェッショナル レベルの高度なツール バー機能を作成できます。  `ToolStrip` コントロールとクラスでは、以前のコントロールから次の点が改善されました。  
+## <a name="background"></a><span data-ttu-id="cc9e7-106">背景</span><span class="sxs-lookup"><span data-stu-id="cc9e7-106">Background</span></span>  
+ <span data-ttu-id="cc9e7-107">`ToolStrip` コントロールと関連クラスを使用すると、外観と動作に一貫性がある、プロフェッショナル レベルの高度なツール バー機能を作成できます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-107">With the `ToolStrip` control and its associated classes, you can create advanced toolbar functionality that has consistent and professional appearance and behavior.</span></span> <span data-ttu-id="cc9e7-108">`ToolStrip` コントロールとクラスでは、以前のコントロールから次の点が改善されました。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-108">The `ToolStrip` control and classes offer the following improvements over previous controls:</span></span>  
   
--   より一貫性のあるイベント モデル。  
+-   <span data-ttu-id="cc9e7-109">より一貫性のあるイベント モデル。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-109">A more consistent event model.</span></span>  
   
--   タスク一覧と項目コレクション エディターを含む、より一貫性のあるデザイン時動作。  
+-   <span data-ttu-id="cc9e7-110">タスク一覧と項目コレクション エディターを含む、より一貫性のあるデザイン時動作。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-110">A more consistent design-time behavior that contains task lists and item collection editors.</span></span>  
   
--   `ToolStripManager` と `ToolStripRenderer` を使用したカスタム描画。  
+-   <span data-ttu-id="cc9e7-111">`ToolStripManager` と `ToolStripRenderer` を使用したカスタム描画。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-111">Custom rendering with `ToolStripManager` and `ToolStripRenderer`.</span></span>  
   
--   `ToolStripContainer` と `ToolStripPanel` を使用したビルトイン ラフティング \(ドッキング時にツール領域内の水平スペースと垂直スペースを共有すること\)。  
+-   <span data-ttu-id="cc9e7-112">`ToolStripContainer` と `ToolStripPanel` を使用したビルトイン ラフティング (ドッキング時にツール領域内の水平スペースと垂直スペースを共有すること)。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-112">Built-in rafting (sharing of horizontal or vertical space within the tool area when docked) with the `ToolStripContainer` and `ToolStripPanel`.</span></span>  
   
--   <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> プロパティを使用した、デザイン時および実行時の項目の並べ替え。  
+-   <span data-ttu-id="cc9e7-113"><xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> プロパティを使用した、デザイン時および実行時の項目の並べ替え。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-113">Design-time and run-time reordering of items with the <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> property.</span></span>  
   
--   <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> プロパティを使用した、オーバーフロー メニューへの項目の再配置。  
+-   <span data-ttu-id="cc9e7-114"><xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> プロパティを使用した、オーバーフロー メニューへの項目の再配置。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-114">Relocation of items to an overflow menu with the <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> property.</span></span>  
   
--   `ToolStripContainer`、`ToolStripPanel`、`ToolStripContentPanel` を使用した、自由に構成可能なコントロール位置。  
+-   <span data-ttu-id="cc9e7-115">`ToolStripContainer`、`ToolStripPanel`、`ToolStripContentPanel` を使用した、自由に構成可能なコントロール位置。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-115">Completely configurable control location with the `ToolStripContainer`, `ToolStripPanel`, and `ToolStripContentPanel`.</span></span>  
   
--   `ToolStripControlHost` を使用した、`ToolStrip`、従来のコントロール、またはカスタム コントロールのホスト。  
+-   <span data-ttu-id="cc9e7-116">`ToolStripControlHost` を使用した、`ToolStrip`、従来のコントロール、またはカスタム コントロールのホスト。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-116">Hosting of `ToolStrip`, traditional, or custom controls using `ToolStripControlHost`.</span></span>  
   
--   `ToolStripPanel` を使用した `ToolStrip` コントロールのマージ。  
+-   <span data-ttu-id="cc9e7-117">`ToolStripPanel` を使用した `ToolStrip` コントロールのマージ。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-117">Merging of `ToolStrip` controls using `ToolStripPanel`.</span></span>  
   
- `ToolStrip` は、`MenuStrip`、`ContextMenuStrip`、`StatusStrip` の拡張可能な基底クラスです。  これらのコントロールは、共通の動作とイベント処理を継承する <xref:System.Windows.Forms.ToolStripItem> コンテナーで、それぞれの実装で適切な動作を処理できるように拡張されています。  <xref:System.Windows.Forms.ToolStripItem> から派生するコントロールについて、次の表に示します。  `ToolStrip` 基底クラスでは、コントロールの描画、ユーザー入力、ドラッグ アンド ドロップの各イベントを処理します。  
+ <span data-ttu-id="cc9e7-118">`ToolStrip` は、`MenuStrip`、`ContextMenuStrip`、`StatusStrip` の拡張可能な基底クラスです。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-118">`ToolStrip` is the extensible base class for `MenuStrip`, `ContextMenuStrip`, and `StatusStrip`.</span></span> <span data-ttu-id="cc9e7-119">これらのコントロールは、共通の動作とイベント処理を継承する <xref:System.Windows.Forms.ToolStripItem> コンテナーで、それぞれの実装で適切な動作を処理できるように拡張されています。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-119">These controls are <xref:System.Windows.Forms.ToolStripItem> containers that inherit common behavior and event handling, extended so that each implementation deals with the behavior that is appropriate for it.</span></span> <span data-ttu-id="cc9e7-120"><xref:System.Windows.Forms.ToolStripItem> から派生するコントロールについて、次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-120">Controls that derive from <xref:System.Windows.Forms.ToolStripItem> are listed in the following table.</span></span> <span data-ttu-id="cc9e7-121">`ToolStrip` 基底クラスでは、コントロールの描画、ユーザー入力、ドラッグ アンド ドロップの各イベントを処理します。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-121">The base `ToolStrip` class handles painting, user input, and drag-and-drop events for these controls.</span></span>  
   
- `ToolStrip`、`MenuStrip`、`ContextMenuStrip`、`StatusStrip` の各コントロールは、以前のツール バー、メニュー、ショートカット メニュー、ステータス バーの各コントロールに置き換わるものです。ただし、これらのコントロールも下位互換性の目的で保持されています。  
+ <span data-ttu-id="cc9e7-122">`ToolStrip`、`MenuStrip`、`ContextMenuStrip`、`StatusStrip` の各コントロールは、以前のツール バー、メニュー、ショートカット メニュー、ステータス バーの各コントロールに置き換わるものです。ただし、これらのコントロールも下位互換性の目的で保持されています。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-122">The `ToolStrip`, `MenuStrip`, `ContextMenuStrip`, and `StatusStrip` controls replace the previous toolbar, menu, shortcut menu, and status bar controls, although those controls are retained for backward compatibility.</span></span>  
   
-## ToolStrip のクラスの概要  
- テクノロジ分野でグループ化した ToolStrip クラスを次の表に示します。  
+## <a name="toolstrip-classes-at-a-glance"></a><span data-ttu-id="cc9e7-123">ToolStrip のクラスの概要</span><span class="sxs-lookup"><span data-stu-id="cc9e7-123">ToolStrip Classes at a Glance</span></span>  
+ <span data-ttu-id="cc9e7-124">テクノロジ分野でグループ化した ToolStrip クラスを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-124">The following table shows the ToolStrip classes grouped by technology area.</span></span>  
   
-|テクノロジ分野|クラス|  
-|-------------|---------|  
-|ツール バー、ステータス、メニューのコンテナー|<xref:System.Windows.Forms.ToolStrip><br /><br /> <xref:System.Windows.Forms.MenuStrip><br /><br /> <xref:System.Windows.Forms.ContextMenuStrip><br /><br /> <xref:System.Windows.Forms.StatusStrip><br /><br /> <xref:System.Windows.Forms.ToolStripDropDownMenu>|  
-|ToolStrip 項目|<xref:System.Windows.Forms.ToolStripLabel><br /><br /> <xref:System.Windows.Forms.ToolStripDropDownItem><br /><br /> <xref:System.Windows.Forms.ToolStripMenuItem><br /><br /> <xref:System.Windows.Forms.ToolStripButton><br /><br /> <xref:System.Windows.Forms.ToolStripStatusLabel><br /><br /> <xref:System.Windows.Forms.ToolStripSeparator><br /><br /> <xref:System.Windows.Forms.ToolStripControlHost><br /><br /> <xref:System.Windows.Forms.ToolStripComboBox><br /><br /> <xref:System.Windows.Forms.ToolStripTextBox><br /><br /> <xref:System.Windows.Forms.ToolStripProgressBar><br /><br /> <xref:System.Windows.Forms.ToolStripDropDownButton><br /><br /> <xref:System.Windows.Forms.ToolStripSplitButton>|  
-|場所|<xref:System.Windows.Forms.ToolStripContainer><br /><br /> <xref:System.Windows.Forms.ToolStripContentPanel><br /><br /> <xref:System.Windows.Forms.ToolStripPanel>|  
-|プレゼンテーションと描画|<xref:System.Windows.Forms.ToolStripManager><br /><br /> <xref:System.Windows.Forms.ToolStripRenderer><br /><br /> <xref:System.Windows.Forms.ToolStripProfessionalRenderer><br /><br /> <xref:System.Windows.Forms.ToolStripRenderMode><br /><br /> <xref:System.Windows.Forms.ToolStripManagerRenderMode>|  
+|<span data-ttu-id="cc9e7-125">テクノロジ分野</span><span class="sxs-lookup"><span data-stu-id="cc9e7-125">Technology area</span></span>|<span data-ttu-id="cc9e7-126">クラス</span><span class="sxs-lookup"><span data-stu-id="cc9e7-126">Class</span></span>|  
+|---------------------|-----------|  
+|<span data-ttu-id="cc9e7-127">ツール バー、ステータス、メニューのコンテナー</span><span class="sxs-lookup"><span data-stu-id="cc9e7-127">Toolbar, Status, and Menu containers</span></span>|<xref:System.Windows.Forms.ToolStrip><br /><br /> <xref:System.Windows.Forms.MenuStrip><br /><br /> <xref:System.Windows.Forms.ContextMenuStrip><br /><br /> <xref:System.Windows.Forms.StatusStrip><br /><br /> <xref:System.Windows.Forms.ToolStripDropDownMenu>|  
+|<span data-ttu-id="cc9e7-128">ToolStrip 項目</span><span class="sxs-lookup"><span data-stu-id="cc9e7-128">ToolStrip items</span></span>|<xref:System.Windows.Forms.ToolStripLabel><br /><br /> <xref:System.Windows.Forms.ToolStripDropDownItem><br /><br /> <xref:System.Windows.Forms.ToolStripMenuItem><br /><br /> <xref:System.Windows.Forms.ToolStripButton><br /><br /> <xref:System.Windows.Forms.ToolStripStatusLabel><br /><br /> <xref:System.Windows.Forms.ToolStripSeparator><br /><br /> <xref:System.Windows.Forms.ToolStripControlHost><br /><br /> <xref:System.Windows.Forms.ToolStripComboBox><br /><br /> <xref:System.Windows.Forms.ToolStripTextBox><br /><br /> <xref:System.Windows.Forms.ToolStripProgressBar><br /><br /> <xref:System.Windows.Forms.ToolStripDropDownButton><br /><br /> <xref:System.Windows.Forms.ToolStripSplitButton>|  
+|<span data-ttu-id="cc9e7-129">場所</span><span class="sxs-lookup"><span data-stu-id="cc9e7-129">Location</span></span>|<xref:System.Windows.Forms.ToolStripContainer><br /><br /> <xref:System.Windows.Forms.ToolStripContentPanel><br /><br /> <xref:System.Windows.Forms.ToolStripPanel>|  
+|<span data-ttu-id="cc9e7-130">プレゼンテーションと描画</span><span class="sxs-lookup"><span data-stu-id="cc9e7-130">Presentation and rendering</span></span>|<xref:System.Windows.Forms.ToolStripManager><br /><br /> <xref:System.Windows.Forms.ToolStripRenderer><br /><br /> <xref:System.Windows.Forms.ToolStripProfessionalRenderer><br /><br /> <xref:System.Windows.Forms.ToolStripRenderMode><br /><br /> <xref:System.Windows.Forms.ToolStripManagerRenderMode>|  
   
-## ToolStrip のデザイン時機能  
- <xref:System.Windows.Forms.ToolStrip> ファミリのコントロールには、実用的なアプリケーションを短期間で作成できるように、埋め込み先での編集とユーザー インターフェイスの基盤の定義を行うための豊富なツールとテンプレートのセットが用意されています。  
+## <a name="toolstrip-design-time-features"></a><span data-ttu-id="cc9e7-131">ToolStrip のデザイン時機能</span><span class="sxs-lookup"><span data-stu-id="cc9e7-131">ToolStrip Design-Time Features</span></span>  
+ <span data-ttu-id="cc9e7-132"><xref:System.Windows.Forms.ToolStrip> ファミリのコントロールには、実用的なアプリケーションを短期間で作成できるように、埋め込み先での編集とユーザー インターフェイスの基盤の定義を行うための豊富なツールとテンプレートのセットが用意されています。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-132">The <xref:System.Windows.Forms.ToolStrip> family of controls provides a rich set of tools and templates for in-place editing and defining the foundation of the user interface so that you can quickly create a working application.</span></span>  
   
-### タスク ダイアログ ボックス  
- Visual Studio のデザイナーでコントロールのスマート タグをクリックすると、タスク一覧が表示されます。タスク一覧からは、よく使用する多くのコマンドに簡単にアクセスできます。  
+### <a name="task-dialog-boxes"></a><span data-ttu-id="cc9e7-133">タスク ダイアログ ボックス</span><span class="sxs-lookup"><span data-stu-id="cc9e7-133">Task Dialog Boxes</span></span>  
+ <span data-ttu-id="cc9e7-134">Visual Studio のデザイナーでコントロールのスマート タグをクリックすると、タスク一覧が表示されます。タスク一覧からは、よく使用する多くのコマンドに簡単にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-134">In Visual Studio, clicking the smart tag on a control in the designer displays a task list for convenient access to many frequently used commands.</span></span>  
   
--   [\[MenuStrip タスク\] ダイアログ ボックス](http://msdn.microsoft.com/library/ms233645\(v=vs.110\))  
+-   <span data-ttu-id="cc9e7-135">[[MenuStrip タスク] ダイアログ ボックス](http://msdn.microsoft.com/library/ms233645\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="cc9e7-135">[MenuStrip Tasks Dialog Box](http://msdn.microsoft.com/library/ms233645\(v=vs.110\))</span></span>  
   
--   [\[ToolStrip タスク\] ダイアログ ボックス](http://msdn.microsoft.com/library/ms233648\(v=vs.110\))  
+-   <span data-ttu-id="cc9e7-136">[[ToolStrip タスク] ダイアログ ボックス](http://msdn.microsoft.com/library/ms233648\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="cc9e7-136">[ToolStrip Tasks Dialog Box](http://msdn.microsoft.com/library/ms233648\(v=vs.110\))</span></span>  
   
--   [\[ContextMenuStrip タスク\] ダイアログ ボックス](http://msdn.microsoft.com/library/ms233646\(v=vs.110\))  
+-   <span data-ttu-id="cc9e7-137">[[ContextMenuStrip タスク] ダイアログ ボックス](http://msdn.microsoft.com/library/ms233646\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="cc9e7-137">[ContextMenuStrip Tasks Dialog Box](http://msdn.microsoft.com/library/ms233646\(v=vs.110\))</span></span>  
   
--   [\[StatusStrip タスク\] ダイアログ ボックス](http://msdn.microsoft.com/library/ms233642\(v=vs.110\))  
+-   <span data-ttu-id="cc9e7-138">[[StatusStrip タスク] ダイアログ ボックス](http://msdn.microsoft.com/library/ms233642\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="cc9e7-138">[StatusStrip Tasks Dialog Box](http://msdn.microsoft.com/library/ms233642\(v=vs.110\))</span></span>  
   
--   [\[ToolStripContainer タスク\] ダイアログ ボックス](http://msdn.microsoft.com/library/ms233647\(v=vs.110\))  
+-   <span data-ttu-id="cc9e7-139">[[ToolStripContainer タスク] ダイアログ ボックス](http://msdn.microsoft.com/library/ms233647\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="cc9e7-139">[ToolStripContainer Tasks Dialog Box](http://msdn.microsoft.com/library/ms233647\(v=vs.110\))</span></span>  
   
-### 項目コレクション エディター  
- Visual Studio で、タスク一覧の \[**項目の編集**\] をクリックするか、コントロールを右クリックしてショートカット メニューの \[**項目の編集**\] を選択すると、そのコントロールのコレクション エディターが表示されます。  コレクション エディターを使用すると、コントロールに含まれる項目の追加、削除、並べ替えを行うことができます。  また、コントロールとコントロール項目のプロパティを表示および変更することもできます。  
+### <a name="items-collection-editors"></a><span data-ttu-id="cc9e7-140">項目コレクション エディター</span><span class="sxs-lookup"><span data-stu-id="cc9e7-140">Items Collection Editors</span></span>  
+ <span data-ttu-id="cc9e7-141">Visual Studio をクリックすると**アイテムの編集**タスクの一覧またはクリックし、コントロールを右クリックして**アイテムの編集**ショートカット メニューで、コントロールのコレクション エディターが表示されます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-141">In Visual Studio, when you click **Edit Items** on the task list or right-click the control and select **Edit Items** in the shortcut menu, the collection editor for the control is displayed.</span></span> <span data-ttu-id="cc9e7-142">コレクション エディターを使用すると、コントロールに含まれる項目の追加、削除、並べ替えを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-142">Collection editors let you add, remove, and reorder items that the control contains.</span></span> <span data-ttu-id="cc9e7-143">また、コントロールとコントロール項目のプロパティを表示および変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-143">You can also view and change the properties for the control and the control's items.</span></span>  
   
--   [MenuStrip Items コレクション エディター](http://msdn.microsoft.com/library/ms233625\(v=vs.110\))  
+-   <span data-ttu-id="cc9e7-144">[MenuStrip Items コレクション エディター](http://msdn.microsoft.com/library/ms233625\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="cc9e7-144">[MenuStrip Items Collection Editor](http://msdn.microsoft.com/library/ms233625\(v=vs.110\))</span></span>  
   
--   [StatusStrip Items コレクション エディター](http://msdn.microsoft.com/library/ms233631\(v=vs.110\))  
+-   <span data-ttu-id="cc9e7-145">[StatusStrip Items コレクション エディター](http://msdn.microsoft.com/library/ms233631\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="cc9e7-145">[StatusStrip Items Collection Editor](http://msdn.microsoft.com/library/ms233631\(v=vs.110\))</span></span>  
   
--   [ContextMenuStrip Items コレクション エディター](http://msdn.microsoft.com/library/ms233641\(v=vs.110\))  
+-   <span data-ttu-id="cc9e7-146">[ContextMenuStrip Items コレクション エディター](http://msdn.microsoft.com/library/ms233641\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="cc9e7-146">[ContextMenuStrip Items Collection Editor](http://msdn.microsoft.com/library/ms233641\(v=vs.110\))</span></span>  
   
--   [ToolStrip Items コレクション エディター](http://msdn.microsoft.com/library/ms233643\(v=vs.110\))  
+-   <span data-ttu-id="cc9e7-147">[ToolStrip Items コレクション エディター](http://msdn.microsoft.com/library/ms233643\(v=vs.110\))</span><span class="sxs-lookup"><span data-stu-id="cc9e7-147">[ToolStrip Items Collection Editor](http://msdn.microsoft.com/library/ms233643\(v=vs.110\))</span></span>  
   
-## コントロールのホスト  
- <xref:System.Windows.Forms.ToolStripControlHost> クラスは、<xref:System.Windows.Forms.ToolStripComboBox> コントロール、<xref:System.Windows.Forms.ToolStripTextBox> コントロール、<xref:System.Windows.Forms.ToolStripProgressBar> コントロールのためのビルトイン ラッパーを提供します。  その他の既存のコントロールまたは COM コントロールを <xref:System.Windows.Forms.ToolStripControlHost> でホストすることもできます。  
+## <a name="hosting-controls"></a><span data-ttu-id="cc9e7-148">コントロールのホスト</span><span class="sxs-lookup"><span data-stu-id="cc9e7-148">Hosting Controls</span></span>  
+ <span data-ttu-id="cc9e7-149"><xref:System.Windows.Forms.ToolStripControlHost> クラスは、<xref:System.Windows.Forms.ToolStripComboBox> コントロール、<xref:System.Windows.Forms.ToolStripTextBox> コントロール、<xref:System.Windows.Forms.ToolStripProgressBar> コントロールのためのビルトイン ラッパーを提供します。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-149">The <xref:System.Windows.Forms.ToolStripControlHost> class provides built-in wrappers for <xref:System.Windows.Forms.ToolStripComboBox>, <xref:System.Windows.Forms.ToolStripTextBox>, and <xref:System.Windows.Forms.ToolStripProgressBar> controls.</span></span> <span data-ttu-id="cc9e7-150">その他の既存のコントロールまたは COM コントロールを <xref:System.Windows.Forms.ToolStripControlHost> でホストすることもできます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-150">You can also host any other existing or COM control in a <xref:System.Windows.Forms.ToolStripControlHost>.</span></span>  
   
- コントロール ホストの例については、[方法 : ToolStripControlHost を使用して Windows フォーム コントロールをラップする](../../../../docs/framework/winforms/controls/how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost.md) を参照してください。  
+ <span data-ttu-id="cc9e7-151">コントロールをホストしているの例は、次を参照してください。[する方法: Windows フォーム コントロールをラップする ToolStripControlHost](../../../../docs/framework/winforms/controls/how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost.md)です。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-151">For an example of control hosting, see [How to: Wrap a Windows Forms Control with ToolStripControlHost](../../../../docs/framework/winforms/controls/how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost.md).</span></span>  
   
-## レンダリング  
- <xref:System.Windows.Forms.ToolStrip> クラスでは、他の Windows フォーム コントロールとは大きく異なる描画スキームを実装します。  このスキームを使用すると、スタイルとテーマを簡単に適用できます。  
+## <a name="rendering"></a><span data-ttu-id="cc9e7-152">[レンダリング]</span><span class="sxs-lookup"><span data-stu-id="cc9e7-152">Rendering</span></span>  
+ <span data-ttu-id="cc9e7-153"><xref:System.Windows.Forms.ToolStrip> クラスでは、他の Windows フォーム コントロールとは大きく異なる描画スキームを実装します。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-153"><xref:System.Windows.Forms.ToolStrip> classes implement a rendering scheme that is significantly different from other Windows Forms controls.</span></span> <span data-ttu-id="cc9e7-154">このスキームを使用すると、スタイルとテーマを簡単に適用できます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-154">With this scheme, you can easily apply styles and themes.</span></span>  
   
- <xref:System.Windows.Forms.ToolStrip> とそこに含まれるすべての <xref:System.Windows.Forms.ToolStripItem> オブジェクトにスタイルを適用する場合、<xref:System.Windows.Forms.ToolStripItem.Paint> イベントを項目ごとに処理する必要はありません。  代わりに、<xref:System.Windows.Forms.ToolStrip.RenderMode%2A> プロパティを <xref:System.Windows.Forms.ToolStripRenderMode> 値のいずれかに設定できます \(<xref:System.Windows.Forms.ToolStripRenderMode> を除きます\)。  さらに別の方法として、<xref:System.Windows.Forms.ToolStripRenderer> クラスを継承する任意のクラスに <xref:System.Windows.Forms.ToolStrip.Renderer%2A> を直接設定することもできます。  このプロパティを設定すると、<xref:System.Windows.Forms.ToolStrip.RenderMode%2A> が自動的に設定されます。  
+ <span data-ttu-id="cc9e7-155"><xref:System.Windows.Forms.ToolStrip> とそこに含まれるすべての <xref:System.Windows.Forms.ToolStripItem> オブジェクトにスタイルを適用する場合、<xref:System.Windows.Forms.ToolStripItem.Paint> イベントを項目ごとに処理する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-155">To apply a style to a <xref:System.Windows.Forms.ToolStrip> and all the <xref:System.Windows.Forms.ToolStripItem> objects it contains, you do not have to handle the <xref:System.Windows.Forms.ToolStripItem.Paint> event for each item.</span></span> <span data-ttu-id="cc9e7-156">代わりに、<xref:System.Windows.Forms.ToolStrip.RenderMode%2A> プロパティを <xref:System.Windows.Forms.ToolStripRenderMode> 値のいずれかに設定できます (<xref:System.Windows.Forms.ToolStripRenderMode.Custom> を除きます)。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-156">Instead, you can set the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> property to one of the <xref:System.Windows.Forms.ToolStripRenderMode> values other than <xref:System.Windows.Forms.ToolStripRenderMode.Custom>.</span></span> <span data-ttu-id="cc9e7-157">さらに別の方法として、<xref:System.Windows.Forms.ToolStripRenderer> クラスを継承する任意のクラスに <xref:System.Windows.Forms.ToolStrip.Renderer%2A> を直接設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-157">Alternatively, you can set the <xref:System.Windows.Forms.ToolStrip.Renderer%2A> directly to any class that inherits from the <xref:System.Windows.Forms.ToolStripRenderer> class.</span></span> <span data-ttu-id="cc9e7-158">このプロパティを設定すると、<xref:System.Windows.Forms.ToolStrip.RenderMode%2A> が自動的に設定されます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-158">Setting this property automatically sets the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A>.</span></span>  
   
- <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> を <xref:System.Windows.Forms.ToolStripRenderMode> に設定し、<xref:System.Windows.Forms.ToolStripManager.RenderMode%2A> または <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> プロパティをそれぞれ任意の <xref:System.Windows.Forms.ToolStripManagerRenderMode> または <xref:System.Windows.Forms.ToolStripRenderer> 値に設定すると、同じアプリケーション内の複数の <xref:System.Windows.Forms.ToolStrip> オブジェクトに同じスタイルを適用できます。  
+ <span data-ttu-id="cc9e7-159"><xref:System.Windows.Forms.ToolStrip.RenderMode%2A> を <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode> に設定し、<xref:System.Windows.Forms.ToolStripManager.RenderMode%2A> または <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> プロパティをそれぞれ任意の <xref:System.Windows.Forms.ToolStripManagerRenderMode> または <xref:System.Windows.Forms.ToolStripRenderer> 値に設定すると、同じアプリケーション内の複数の <xref:System.Windows.Forms.ToolStrip> オブジェクトに同じスタイルを適用できます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-159">You can apply the same style to multiple <xref:System.Windows.Forms.ToolStrip> objects in the same application by setting the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> to <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode> and setting the <xref:System.Windows.Forms.ToolStripManager.RenderMode%2A> or <xref:System.Windows.Forms.ToolStripManager.Renderer%2A> property to <xref:System.Windows.Forms.ToolStripManagerRenderMode> that you want or <xref:System.Windows.Forms.ToolStripRenderer> value, respectively.</span></span>  
   
- レンダリングの例については、[方法 : Windows フォームに ToolStrip コントロールのカスタム レンダラーを作成して設定する](../../../../docs/framework/winforms/controls/create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md) を参照してください。  
+ <span data-ttu-id="cc9e7-160">レンダリングの例については、次を参照してください。[する方法: を作成し、Windows フォームに ToolStrip コントロールのカスタム レンダラーを設定](../../../../docs/framework/winforms/controls/create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)です。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-160">For examples of rendering, see [How to: Create and Set a Custom Renderer for the ToolStrip Control in Windows Forms](../../../../docs/framework/winforms/controls/create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md).</span></span>  
   
-## スタイルとテーマ  
- <xref:System.Windows.Forms.ToolStrip> とその関連クラスは、表示スタイルとカスタムの外観を容易にサポートします。この場合、<xref:System.Windows.Forms.ToolStripItem.OnPaint%2A> メソッドを項目ごとにオーバーライドする必要はありません。  <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> と、<xref:System.Windows.Forms.ToolStrip.RenderMode%2A> プロパティおよび <xref:System.Windows.Forms.ToolStrip.Renderer%2A> プロパティを使用します。  
+## <a name="styles-and-themes"></a><span data-ttu-id="cc9e7-161">スタイルとテーマ</span><span class="sxs-lookup"><span data-stu-id="cc9e7-161">Styles and Themes</span></span>  
+ <span data-ttu-id="cc9e7-162"><xref:System.Windows.Forms.ToolStrip> とその関連クラスは、表示スタイルとカスタムの外観を容易にサポートします。この場合、<xref:System.Windows.Forms.ToolStripItem.OnPaint%2A> メソッドを項目ごとにオーバーライドする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-162"><xref:System.Windows.Forms.ToolStrip> and associated classes provide an easy way to support visual styles and custom appearance that do not require overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A> methods for each item.</span></span> <span data-ttu-id="cc9e7-163"><xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> と、<xref:System.Windows.Forms.ToolStrip.RenderMode%2A> プロパティおよび <xref:System.Windows.Forms.ToolStrip.Renderer%2A> プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-163">Use the <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> and the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> and <xref:System.Windows.Forms.ToolStrip.Renderer%2A> properties.</span></span>  
   
-## ラフティングとドッキング  
- <xref:System.Windows.Forms.ToolStrip> コントロールは、ラフティング、ドッキング、または絶対位置を指定して配置できます。  <xref:System.Windows.Forms.ToolStrip> 項目は、コンテナーの <xref:System.Windows.Forms.ToolStrip.LayoutEngine%2A> によってレイアウトされます。  
+## <a name="rafting-and-docking"></a><span data-ttu-id="cc9e7-164">ラフティングとドッキング</span><span class="sxs-lookup"><span data-stu-id="cc9e7-164">Rafting and Docking</span></span>  
+ <span data-ttu-id="cc9e7-165"><xref:System.Windows.Forms.ToolStrip> コントロールは、ラフティング、ドッキング、または絶対位置を指定して配置できます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-165">You can raft, dock, or absolutely position <xref:System.Windows.Forms.ToolStrip> controls.</span></span> <span data-ttu-id="cc9e7-166"><xref:System.Windows.Forms.ToolStrip> 項目は、コンテナーの <xref:System.Windows.Forms.ToolStrip.LayoutEngine%2A> によってレイアウトされます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-166"><xref:System.Windows.Forms.ToolStrip> items are laid out by the <xref:System.Windows.Forms.ToolStrip.LayoutEngine%2A> of the container.</span></span>  
   
- *ラフティング*は、水平スペースまたは垂直スペースを共有するためのツール バーの機能です。  Windows フォームでは、<xref:System.Windows.Forms.ToolStrip>、<xref:System.Windows.Forms.MenuStrip>、<xref:System.Windows.Forms.StatusStrip> の各コントロールの配置とラフティングを行うときに、フォームの左側、右側、上側、下側にパネルを持つ <xref:System.Windows.Forms.ToolStripContainer> を使用できます。  複数の <xref:System.Windows.Forms.ToolStrip> コントロールを左右の <xref:System.Windows.Forms.ToolStripContainer> に配置すると、コントロールは垂直方向に積み重ねられます。  上または下の <xref:System.Windows.Forms.ToolStripContainer> に配置すると、コントロールは水平方向に積み重ねられます。  <xref:System.Windows.Forms.ToolStripContainer> の中央の <xref:System.Windows.Forms.ToolStripContentPanel> を使用すると、従来のコントロールをフォーム上に配置できます。  
+ <span data-ttu-id="cc9e7-167">*ラフティング*水平または垂直のスペースを共有するツールバーの機能です。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-167">*Rafting* is the ability of toolbars to share horizontal or vertical space.</span></span> <span data-ttu-id="cc9e7-168">Windows フォームでは、<xref:System.Windows.Forms.ToolStrip>、<xref:System.Windows.Forms.MenuStrip>、<xref:System.Windows.Forms.StatusStrip> の各コントロールの配置とラフティングを行うときに、フォームの左側、右側、上側、下側にパネルを持つ <xref:System.Windows.Forms.ToolStripContainer> を使用できます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-168">A Windows form can have a <xref:System.Windows.Forms.ToolStripContainer> that in turn has panels on the form's left, right, top, and bottom sides for positioning and rafting <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, and <xref:System.Windows.Forms.StatusStrip> controls.</span></span> <span data-ttu-id="cc9e7-169">複数の <xref:System.Windows.Forms.ToolStrip> コントロールを左右の <xref:System.Windows.Forms.ToolStripContainer> に配置すると、コントロールは垂直方向に積み重ねられます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-169">Multiple <xref:System.Windows.Forms.ToolStrip> controls stack vertically if you put them in the left or right <xref:System.Windows.Forms.ToolStripContainer>.</span></span> <span data-ttu-id="cc9e7-170">上または下の <xref:System.Windows.Forms.ToolStripContainer> に配置すると、コントロールは水平方向に積み重ねられます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-170">They stack horizontally if you put them in the top or bottom <xref:System.Windows.Forms.ToolStripContainer>.</span></span> <span data-ttu-id="cc9e7-171"><xref:System.Windows.Forms.ToolStripContainer> の中央の <xref:System.Windows.Forms.ToolStripContentPanel> を使用すると、従来のコントロールをフォーム上に配置できます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-171">You can use the central <xref:System.Windows.Forms.ToolStripContentPanel> of the <xref:System.Windows.Forms.ToolStripContainer> to position traditional controls on the form.</span></span>  
   
- 一部または全部の <xref:System.Windows.Forms.ToolStripContainer> コントロールを、デザイン時に直接選択して削除できます。  <xref:System.Windows.Forms.ToolStripContainer> は展開および折りたたみが可能で、内部のコントロールに合わせてサイズ調整されます。  
+ <span data-ttu-id="cc9e7-172">一部または全部の <xref:System.Windows.Forms.ToolStripContainer> コントロールを、デザイン時に直接選択して削除できます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-172">Any or all <xref:System.Windows.Forms.ToolStripContainer> controls are directly selectable at design time and can be deleted.</span></span> <span data-ttu-id="cc9e7-173"><xref:System.Windows.Forms.ToolStripContainer> は展開および折りたたみが可能で、内部のコントロールに合わせてサイズ調整されます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-173">A <xref:System.Windows.Forms.ToolStripContainer> is expandable and collapsible, and resizes with the controls that it contains.</span></span>  
   
- *ドッキング* は、コントロールの位置をフォームの左側、右側、上側、または下側に単純に指定することです。  
+ <span data-ttu-id="cc9e7-174">*ドッキング*フォームの左、右、上、または下の辺に、コントロールの単純な位置を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-174">*Docking* is the specifying of a control's simple location on the form's left, right, top, or bottom side.</span></span>  
   
- ドッキングよりもラフティングの方が有利な点は、<xref:System.Windows.Forms.ToolStrip>、<xref:System.Windows.Forms.MenuStrip>、<xref:System.Windows.Forms.StatusStrip> の各コントロールが他のコントロールと水平スペースまたは垂直スペースを共有できることです。  
+ <span data-ttu-id="cc9e7-175">ドッキングよりもラフティングの方が有利な点は、<xref:System.Windows.Forms.ToolStrip>、<xref:System.Windows.Forms.MenuStrip>、<xref:System.Windows.Forms.StatusStrip> の各コントロールが他のコントロールと水平スペースまたは垂直スペースを共有できることです。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-175">The advantage of rafting over docking is that <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, and <xref:System.Windows.Forms.StatusStrip> controls can share horizontal or vertical space with other controls.</span></span>  
   
- ほとんどの <xref:System.Windows.Forms.ToolStrip> コントロールは、他のコントロールと同様、ラフティングを使用せずにフォームにドッキングできます。  また、<xref:System.Windows.Forms.ToolStrip> コントロールを <xref:System.Windows.Forms.ToolStripContainer> 外に移動し、`Dock` プロパティを `None` に設定することによって、コントロールをフォーム上の任意の配置することもできます。また、それぞれの <xref:System.Windows.Forms.Control.Location%2A> プロパティを設定して、コントロールの絶対位置を指定することもできます。  「[方法 : ToolStrip を ToolStripContainer からフォームに移動する](../../../../docs/framework/winforms/controls/how-to-move-a-toolstrip-out-of-a-toolstripcontainer-onto-a-form.md)」を参照してください。  
+ <span data-ttu-id="cc9e7-176">ほとんどの <xref:System.Windows.Forms.ToolStrip> コントロールは、他のコントロールと同様、ラフティングを使用せずにフォームにドッキングできます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-176">Most of the <xref:System.Windows.Forms.ToolStrip> controls can be docked to the form like other controls instead of using rafting.</span></span> <span data-ttu-id="cc9e7-177">また、<xref:System.Windows.Forms.ToolStrip> コントロールを <xref:System.Windows.Forms.ToolStripContainer> 外に移動し、`Dock` プロパティを `None` に設定することによって、コントロールをフォーム上の任意の配置することもできます。また、それぞれの <xref:System.Windows.Forms.Control.Location%2A> プロパティを設定して、コントロールの絶対位置を指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-177">You can also specify that a <xref:System.Windows.Forms.ToolStrip> control be freely positioned on the form by removing it from its <xref:System.Windows.Forms.ToolStripContainer> and setting its `Dock` property to `None`, or you can specify its absolute position by setting the respective <xref:System.Windows.Forms.Control.Location%2A> property.</span></span> <span data-ttu-id="cc9e7-178">参照してください[する方法: ToolStrip を toolstripcontainer からフォームに移動](../../../../docs/framework/winforms/controls/how-to-move-a-toolstrip-out-of-a-toolstripcontainer-onto-a-form.md)です。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-178">See [How to: Move a ToolStrip Out of a ToolStripContainer onto a Form](../../../../docs/framework/winforms/controls/how-to-move-a-toolstrip-out-of-a-toolstripcontainer-onto-a-form.md).</span></span>  
   
- 1 つ以上の <xref:System.Windows.Forms.ToolStripPanel> コントロールを使用すると、柔軟性が高まります。特に、マルチ ドキュメント インターフェイス \(MDI: Multiple Document Interface\) アプリケーションの場合、または <xref:System.Windows.Forms.ToolStripContainer> が不要な場合には、これが当てはまります。  <xref:System.Windows.Forms.ToolStripPanel> には、<xref:System.Windows.Forms.ToolStrip> コントロールの配置とラフティングのためにドッキングできる領域が用意されていますが、従来のコントロールには用意されていません。  既定では、<xref:System.Windows.Forms.ToolStripPanel> はデザイナーの \[**ツールボックス**\] に表示されませんが、\[**ツールボックス**\] を右クリックして \[**アイテムの選択**\] をクリックすると配置できます。  また、他のクラスと同様に、<xref:System.Windows.Forms.ToolStripPanel> にプログラムからアクセスすることもできます。  
+ <span data-ttu-id="cc9e7-179">1 つ以上の <xref:System.Windows.Forms.ToolStripPanel> コントロールを使用すると、柔軟性が高まります。特に、マルチ ドキュメント インターフェイス (MDI: Multiple Document Interface) アプリケーションの場合、または <xref:System.Windows.Forms.ToolStripContainer> が不要な場合には、これが当てはまります。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-179">Use one or more <xref:System.Windows.Forms.ToolStripPanel> controls for more flexibility, especially for Multiple Document Interface (MDI) applications, or if you do not need a <xref:System.Windows.Forms.ToolStripContainer>.</span></span> <span data-ttu-id="cc9e7-180"><xref:System.Windows.Forms.ToolStripPanel> には、<xref:System.Windows.Forms.ToolStrip> コントロールの配置とラフティングのためにドッキングできる領域が用意されていますが、従来のコントロールには用意されていません。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-180">A <xref:System.Windows.Forms.ToolStripPanel> provides a dockable space for locating and rafting <xref:System.Windows.Forms.ToolStrip> controls but not traditional controls.</span></span> <span data-ttu-id="cc9e7-181">既定では、<xref:System.Windows.Forms.ToolStripPanel>がデザイナーにない**ツールボックス**を右クリックしてそのを配置することができますが、**ツールボックス**、順にクリック**アイテムの選択**です。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-181">By default, the <xref:System.Windows.Forms.ToolStripPanel> does not appear in the designer **Toolbox**, but you can put it there by right-clicking the **Toolbox**, and then click **Choose Items**.</span></span> <span data-ttu-id="cc9e7-182">また、他のクラスと同様に、<xref:System.Windows.Forms.ToolStripPanel> にプログラムからアクセスすることもできます。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-182">You can also programmatically access the <xref:System.Windows.Forms.ToolStripPanel> like any other class.</span></span>  
   
- <xref:System.Windows.Forms.ToolStrip>、<xref:System.Windows.Forms.MenuStrip>、および <xref:System.Windows.Forms.StatusStrip> を使用すると、項目はオーバーフローします。  これは、Microsoft Office ツール バーの項目の動作と似ています。  
+ <span data-ttu-id="cc9e7-183"><xref:System.Windows.Forms.ToolStrip>、<xref:System.Windows.Forms.MenuStrip>、および <xref:System.Windows.Forms.StatusStrip> を使用すると、項目はオーバーフローします。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-183">The <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, and <xref:System.Windows.Forms.StatusStrip> let items overflow.</span></span> <span data-ttu-id="cc9e7-184">これは、Microsoft Office ツール バーの項目の動作と似ています。</span><span class="sxs-lookup"><span data-stu-id="cc9e7-184">This is similar to the way these items behave on Microsoft Office toolbars.</span></span>  
   
-## 参照  
- [ToolStrip コントロールの概要](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)   
- [ToolStrip コントロールのアーキテクチャ](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)
+## <a name="see-also"></a><span data-ttu-id="cc9e7-185">関連項目</span><span class="sxs-lookup"><span data-stu-id="cc9e7-185">See Also</span></span>  
+ [<span data-ttu-id="cc9e7-186">ToolStrip コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="cc9e7-186">ToolStrip Control Overview</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
+ [<span data-ttu-id="cc9e7-187">ToolStrip コントロールのアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="cc9e7-187">ToolStrip Control Architecture</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)

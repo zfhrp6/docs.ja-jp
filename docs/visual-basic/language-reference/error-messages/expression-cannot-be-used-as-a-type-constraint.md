@@ -1,58 +1,56 @@
 ---
-title: "&#39;&lt;expression&gt;&#39; cannot be used as a type constraint | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc32061"
-  - "vbc32061"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC32061"
+title: "&#39;です。&lt;式&gt;&#39; 型制約として使用することはできません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc32061
+- vbc32061
+helpviewer_keywords: BC32061
 ms.assetid: b17821b7-fa14-4397-a211-6e2a14079f09
-caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 054c05747491afb02601df00225a703560cbe91c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &#39;&lt;expression&gt;&#39; cannot be used as a type constraint
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-型パラメーターに対する有効な制約を表さない式が、制約リストに含まれています。  
+# <a name="39ltexpressiongt39-cannot-be-used-as-a-type-constraint"></a><span data-ttu-id="d2344-102">&#39;です。&lt;式&gt;&#39; 型制約として使用することはできません</span><span class="sxs-lookup"><span data-stu-id="d2344-102">&#39;&lt;expression&gt;&#39; cannot be used as a type constraint</span></span>
+<span data-ttu-id="d2344-103">制約リストに、型パラメーターについて有効な制約を表していない式が含まれています。</span><span class="sxs-lookup"><span data-stu-id="d2344-103">A constraint list includes an expression that does not represent a valid constraint on a type parameter.</span></span>  
   
- 制約リストには、型パラメーターに渡される型引数に対する要件を設定します。  次の要件を任意に組み合わせて指定できます。  
+ <span data-ttu-id="d2344-104">制約リストでは、型パラメーターに渡される型引数の要件が適用されます。</span><span class="sxs-lookup"><span data-stu-id="d2344-104">A constraint list imposes requirements on the type argument passed to the type parameter.</span></span> <span data-ttu-id="d2344-105">次の要件を任意の組み合わせで指定できます。</span><span class="sxs-lookup"><span data-stu-id="d2344-105">You can specify the following requirements in any combination:</span></span>  
   
--   型引数は、1 つまたは複数のインターフェイスを実装する。  
+-   <span data-ttu-id="d2344-106">型引数が 1 つまたは複数のインターフェイスを実装する必要があります</span><span class="sxs-lookup"><span data-stu-id="d2344-106">The type argument must implement one or more interfaces</span></span>  
   
--   型引数は、最大で 1 つのクラスを継承する必要があります。  
+-   <span data-ttu-id="d2344-107">型引数は、最大で 1 つのクラスから継承する必要があります</span><span class="sxs-lookup"><span data-stu-id="d2344-107">The type argument must inherit from at most one class</span></span>  
   
--   型引数は、作成側のコードがアクセスできるパラメーターなしのコンストラクターを公開する必要があります \(`New` 制約を含む\)。  
+-   <span data-ttu-id="d2344-108">型引数は、作成元のコードがアクセスできるパラメーターなしのコンストラクターを公開する必要があります ( `New` 制約を含む)</span><span class="sxs-lookup"><span data-stu-id="d2344-108">The type argument must expose a parameterless constructor that the creating code can access (include the `New` constraint)</span></span>  
   
- 特定のクラスまたはインターフェイスを制約リストに含めない場合は、次のいずれかを指定することで、より汎用的な要件を設定できます。  
+ <span data-ttu-id="d2344-109">制約リストに特定のクラスまたはインターフェイスを何も含めない場合は、次のいずれかを指定することによって一般的な要件を設定できます。</span><span class="sxs-lookup"><span data-stu-id="d2344-109">If you do not include any specific class or interface in the constraint list, you can impose a more general requirement by specifying one of the following:</span></span>  
   
--   型引数は、値型である必要があります \(`Structure` 制約を含む\)。  
+-   <span data-ttu-id="d2344-110">型引数は値型である必要があります ( `Structure` 制約を含む)</span><span class="sxs-lookup"><span data-stu-id="d2344-110">The type argument must be a value type (include the `Structure` constraint)</span></span>  
   
--   型引数は、参照型である必要があります \(`Class` 制約を含む\)。  
+-   <span data-ttu-id="d2344-111">型引数は参照型である必要があります ( `Class` 制約を含む)</span><span class="sxs-lookup"><span data-stu-id="d2344-111">The type argument must be a reference type (include the `Class` constraint)</span></span>  
   
- 同じ型パラメーターに対して `Structure` と `Class` の両方を指定することはできません。また、これらを複数回指定することもできません。  
+ <span data-ttu-id="d2344-112">同じ型パラメーターに `Structure` と `Class` の両方を指定することはできません。また、どちらも複数回指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="d2344-112">You cannot specify both `Structure` and `Class` for the same type parameter, and you cannot specify either one more than once.</span></span>  
   
- **Error ID:** BC32061  
+ <span data-ttu-id="d2344-113">**エラー ID:** BC32061</span><span class="sxs-lookup"><span data-stu-id="d2344-113">**Error ID:** BC32061</span></span>  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="d2344-114">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="d2344-114">To correct this error</span></span>  
   
--   式と各要素のスペルが正しいかどうかを確認します。  
+-   <span data-ttu-id="d2344-115">式とその要素のスペルが正しいことを確認します。</span><span class="sxs-lookup"><span data-stu-id="d2344-115">Verify that the expression and its elements are spelled correctly.</span></span>  
   
--   式が上記の要件を満たしていない場合は、制約リストから式を削除します。  
+-   <span data-ttu-id="d2344-116">式が上記の要件リストを満たしていない場合は、制約リストから削除します。</span><span class="sxs-lookup"><span data-stu-id="d2344-116">If the expression does not qualify for the preceding list of requirements, remove it from the constraint list.</span></span>  
   
--   式がインターフェイスまたはクラスを参照する場合は、コンパイラがそのインターフェイスまたはクラスにアクセスできることを確認します。  場合によっては、有効な名前かどうかを確認することや、プロジェクトに参照を追加することが必要です。  詳細については、「[References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)」の「プロジェクトへの参照」を参照してください。  
+-   <span data-ttu-id="d2344-117">式でインターフェイスまたはクラスを参照する場合、コンパイラにそのインターフェイスまたはクラスへのアクセス権があることを確認します。</span><span class="sxs-lookup"><span data-stu-id="d2344-117">If the expression refers to an interface or class, verify that the compiler has access to that interface or class.</span></span> <span data-ttu-id="d2344-118">その名前を修飾し、プロジェクトに参照を追加することが必要な場合があります。</span><span class="sxs-lookup"><span data-stu-id="d2344-118">You might need to qualify its name, and you might need to add a reference to your project.</span></span> <span data-ttu-id="d2344-119">詳細についてを参照してください「の参照をプロジェクト」[宣言された要素への参照](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)です。</span><span class="sxs-lookup"><span data-stu-id="d2344-119">For more information, see "References to Projects" in [References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).</span></span>  
   
-## 参照  
- [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
- [Value Types and Reference Types](../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)   
- [References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
- [方法: &#91;参照の追加&#93; ダイアログ ボックスを使用して参照を追加または削除する](http://msdn.microsoft.com/ja-jp/3bd75d61-f00c-47c0-86a2-dd1f20e231c9)
+## <a name="see-also"></a><span data-ttu-id="d2344-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="d2344-120">See Also</span></span>  
+ [<span data-ttu-id="d2344-121">Visual Basic におけるジェネリック型</span><span class="sxs-lookup"><span data-stu-id="d2344-121">Generic Types in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
+ [<span data-ttu-id="d2344-122">値型と参照型</span><span class="sxs-lookup"><span data-stu-id="d2344-122">Value Types and Reference Types</span></span>](../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
+ [<span data-ttu-id="d2344-123">宣言された要素の参照</span><span class="sxs-lookup"><span data-stu-id="d2344-123">References to Declared Elements</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
+ <span data-ttu-id="d2344-124">[NIB 方法: [参照の追加] ダイアログ ボックスを使用して参照を追加または削除する](http://msdn.microsoft.com/en-us/3bd75d61-f00c-47c0-86a2-dd1f20e231c9)</span><span class="sxs-lookup"><span data-stu-id="d2344-124">[NIB How to: Add or Remove References By Using the Add Reference Dialog Box](http://msdn.microsoft.com/en-us/3bd75d61-f00c-47c0-86a2-dd1f20e231c9)</span></span>

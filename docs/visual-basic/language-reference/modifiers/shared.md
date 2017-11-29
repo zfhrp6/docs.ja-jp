@@ -1,61 +1,59 @@
 ---
-title: "Shared (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Shared"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Shared keyword"
-  - "members, shared"
-  - "shared members"
-  - "nonshared"
-  - "shared elements"
-  - "elements, shared"
+title: Shared (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Shared
+helpviewer_keywords:
+- Shared keyword [Visual Basic]
+- members [Visual Basic], shared
+- shared members
+- nonshared
+- shared [elements VB]
+- elements [Visual Basic], shared
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: fce13c308a449e63eacc2bc4c94c274c7e25506a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Shared (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-宣言された 1 つ以上のプログラミング要素が、クラス全体または構造体全体に関連付けられ、クラスまたは構造体の特定のインスタンスに関連付けられないことを指定します。  
+# <a name="shared-visual-basic"></a><span data-ttu-id="010fe-102">Shared (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="010fe-102">Shared (Visual Basic)</span></span>
+<span data-ttu-id="010fe-103">1 つまたは複数の宣言されたプログラミング要素がクラスまたは構造体全体、いないに関連付けられているクラスまたは構造体の特定のインスタンスを指定します。</span><span class="sxs-lookup"><span data-stu-id="010fe-103">Specifies that one or more declared programming elements are associated with a class or structure at large, and not with a specific instance of the class or structure.</span></span>  
   
-## 解説  
+## <a name="remarks"></a><span data-ttu-id="010fe-104">コメント</span><span class="sxs-lookup"><span data-stu-id="010fe-104">Remarks</span></span>  
   
-## Shared を使用する状況  
- *非共有*であるクラスまたは構造体のメンバーを共有すると、各インスタンスがメンバーのコピーを別々に保持するのではなく、すべてのインスタンスがそのメンバーを使用できます。  このことは、たとえば、変数の値をアプリケーション全体で参照する場合に便利です。  そのような変数を `Shared` で宣言した場合、すべてのインスタンスがストレージ内の同じ場所にアクセスするため、あるインスタンスが変数の値を変更すると、すべてのインスタンスが変更後の値にアクセスするようになります。  
+## <a name="when-to-use-shared"></a><span data-ttu-id="010fe-105">共有を使用する場合</span><span class="sxs-lookup"><span data-stu-id="010fe-105">When to Use Shared</span></span>  
+ <span data-ttu-id="010fe-106">クラスまたは構造体のメンバーを共有できるように、すべてのインスタンスではなくより*非共有*、各インスタンスが独自のコピーを保持します。</span><span class="sxs-lookup"><span data-stu-id="010fe-106">Sharing a member of a class or structure makes it available to every instance, rather than *nonshared*, where each instance keeps its own copy.</span></span> <span data-ttu-id="010fe-107">これは、変数の値は、アプリケーション全体に適用される場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="010fe-107">This is useful, for example, if the value of a variable applies to the entire application.</span></span> <span data-ttu-id="010fe-108">その変数を宣言する場合`Shared`、すべてのインスタンスが同じストレージの場所にアクセスし、およびすべてのインスタンスにアクセス、更新された値が 1 つのインスタンスは、変数の値を変更する場合。</span><span class="sxs-lookup"><span data-stu-id="010fe-108">If you declare that variable to be `Shared`, then all instances access the same storage location, and if one instance changes the variable's value, all instances access the updated value.</span></span>  
   
- 共有メンバーとして宣言したからといって、アクセス レベルが変更されるわけではありません。  たとえば、クラスのメンバーを、共有プライベート メンバーとして宣言することも \(クラス内でのアクセスのみ可能\)、非共有のパブリック メンバーとして宣言することも可能です。  詳細については、「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ <span data-ttu-id="010fe-109">共有しても、メンバーのアクセス レベルは変わりません。</span><span class="sxs-lookup"><span data-stu-id="010fe-109">Sharing does not alter the access level of a member.</span></span> <span data-ttu-id="010fe-110">たとえば、クラス メンバーを共有できるおよびプライベート (クラス内からのみアクセスできる)、または非共有と公開します。</span><span class="sxs-lookup"><span data-stu-id="010fe-110">For example, a class member can be shared and private (accessible only from within the class), or nonshared and public.</span></span> <span data-ttu-id="010fe-111">詳細については、次を参照してください。 [Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="010fe-111">For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
   
-## 規則  
+## <a name="rules"></a><span data-ttu-id="010fe-112">ルール</span><span class="sxs-lookup"><span data-stu-id="010fe-112">Rules</span></span>  
   
--   **宣言コンテキスト。** `Shared` は、モジュール レベルでのみ使用できます。  つまり、`Shared` 要素の宣言コンテキストは、ソース ファイル、名前空間、プロシージャではなく、クラスまたは構造体である必要があります。  
+-   <span data-ttu-id="010fe-113">**宣言コンテキスト。**</span><span class="sxs-lookup"><span data-stu-id="010fe-113">**Declaration Context.**</span></span> <span data-ttu-id="010fe-114">`Shared` は、モジュール レベルでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="010fe-114">You can use `Shared` only at module level.</span></span> <span data-ttu-id="010fe-115">つまりの宣言コンテキスト、`Shared`要素は、クラスまたは構造体にある必要があるあり、ソース ファイル、名前空間、またはプロシージャにすることはできません。</span><span class="sxs-lookup"><span data-stu-id="010fe-115">This means the declaration context for a `Shared` element must be a class or structure, and cannot be a source file, namespace, or procedure.</span></span>  
   
--   **結合された修飾子。**同じ宣言内で `Shared` を [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)、[Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)、[NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)、[MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)、または [Static](../../../visual-basic/language-reference/modifiers/static.md) と共に指定することはできません。  
+-   <span data-ttu-id="010fe-116">**結合された修飾子。**</span><span class="sxs-lookup"><span data-stu-id="010fe-116">**Combined Modifiers.**</span></span> <span data-ttu-id="010fe-117">指定することはできません`Shared`と共に[オーバーライド](../../../visual-basic/language-reference/modifiers/overrides.md)、 [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)、 [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)、 [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)、または[静的](../../../visual-basic/language-reference/modifiers/static.md)同じ宣言内で。</span><span class="sxs-lookup"><span data-stu-id="010fe-117">You cannot specify `Shared` together with [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md), [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md), [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md), [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md), or [Static](../../../visual-basic/language-reference/modifiers/static.md) in the same declaration.</span></span>  
   
--   **アクセス。**共有要素にアクセスするには、そのクラスや構造体の特定のインスタンスの変数名ではなく、クラスや構造体の名前を使用して共有要素を修飾します。  共有メンバーにアクセスするために、そのクラスや構造体のインスタンスを作成する必要もありません。  
+-   <span data-ttu-id="010fe-118">**アクセスします。**</span><span class="sxs-lookup"><span data-stu-id="010fe-118">**Accessing.**</span></span> <span data-ttu-id="010fe-119">共有要素にアクセスするには、そのクラスまたは構造体の特定のインスタンスの変数名ではなく、そのクラスまたは構造体の名前を修飾します。</span><span class="sxs-lookup"><span data-stu-id="010fe-119">You access a shared element by qualifying it with its class or structure name, not with the variable name of a specific instance of its class or structure.</span></span> <span data-ttu-id="010fe-120">でも、クラスまたはその共有メンバーにアクセスする構造体のインスタンスを作成する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="010fe-120">You do not even have to create an instance of a class or structure to access its shared members.</span></span>  
   
-     次の例は、<xref:System.Double> 構造体で公開されている共有プロシージャ <xref:System.Double.IsNaN%2A> を呼び出します。  
+     <span data-ttu-id="010fe-121">次の例には、共有プロシージャが呼び出される<xref:System.Double.IsNaN%2A>によって公開されている、<xref:System.Double>構造体。</span><span class="sxs-lookup"><span data-stu-id="010fe-121">The following example calls the shared procedure <xref:System.Double.IsNaN%2A> exposed by the <xref:System.Double> structure.</span></span>  
   
      `If Double.IsNaN(result) Then MsgBox("Result is mathematically undefined.")`  
   
--   **暗黙の共有。** [Const Statement](../../../visual-basic/language-reference/statements/const-statement.md) で `Shared` 修飾子を使うことはできませんが、定数は暗黙的に共有されます。  同様に、モジュールやインターフェイスのメンバーは `Shared` では宣言できませんが、暗黙的に共有されます。  
+-   <span data-ttu-id="010fe-122">**暗黙の型を共有します。**</span><span class="sxs-lookup"><span data-stu-id="010fe-122">**Implicit Sharing.**</span></span> <span data-ttu-id="010fe-123">使用することはできません、`Shared`の修飾子、 [Const ステートメント](../../../visual-basic/language-reference/statements/const-statement.md)定数が暗黙的に共有しますが、できます。</span><span class="sxs-lookup"><span data-stu-id="010fe-123">You cannot use the `Shared` modifier in a [Const Statement](../../../visual-basic/language-reference/statements/const-statement.md), but constants are implicitly shared.</span></span> <span data-ttu-id="010fe-124">同様に、するには、モジュールまたはインターフェイスのメンバーを宣言することはできません`Shared`、暗黙的に共有されますが、します。</span><span class="sxs-lookup"><span data-stu-id="010fe-124">Similarly, you cannot declare a member of a module or an interface to be `Shared`, but they are implicitly shared.</span></span>  
   
-## \[動作\]  
+## <a name="behavior"></a><span data-ttu-id="010fe-125">動作</span><span class="sxs-lookup"><span data-stu-id="010fe-125">Behavior</span></span>  
   
--   **ストレージ。**共有変数や共有イベントは、そのクラスや構造体のインスタンスが何回作成されたとしても、メモリに一度だけ格納されます。  同様に、共有プロシージャや共有プロパティは、ローカル変数を 1 セットだけ保持します。  
+-   <span data-ttu-id="010fe-126">**記憶域。**</span><span class="sxs-lookup"><span data-stu-id="010fe-126">**Storage.**</span></span> <span data-ttu-id="010fe-127">共有変数またはイベントは、そのクラスまたは構造体の数またはいくつかのインスタンスに関係なくを作成する、1 回だけメモリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="010fe-127">A shared variable or event is stored in memory only once, no matter how many or few instances you create of its class or structure.</span></span> <span data-ttu-id="010fe-128">同様に、共有プロシージャまたはプロパティには、ローカル変数の 1 つだけのセットを保持します。</span><span class="sxs-lookup"><span data-stu-id="010fe-128">Similarly, a shared procedure or property holds only one set of local variables.</span></span>  
   
--   **インスタンス変数を使用したアクセス。**クラスや構造体の特定のインスタンスを格納する変数の名前で修飾して、共有要素にアクセスすることが可能です。  この方法で予期しない動作が起きることは通常ありませんが、コンパイラは警告メッセージを表示し、変数名ではなくクラス名や構造体名を使ってアクセスします。  
+-   <span data-ttu-id="010fe-129">**アクセスするインスタンス変数を使用します。**</span><span class="sxs-lookup"><span data-stu-id="010fe-129">**Accessing through an Instance Variable.**</span></span> <span data-ttu-id="010fe-130">クラスまたは構造体の特定のインスタンスを格納する変数の名前で修飾することにより共有要素にアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="010fe-130">It is possible to access a shared element by qualifying it with the name of a variable that contains a specific instance of its class or structure.</span></span> <span data-ttu-id="010fe-131">この動作は通常どおり、コンパイラは警告メッセージを生成し、変数ではなく、クラスまたは構造体の名前を使ってアクセスします。</span><span class="sxs-lookup"><span data-stu-id="010fe-131">Although this usually works as expected, the compiler generates a warning message and makes the access through the class or structure name instead of the variable.</span></span>  
   
--   **インスタンス式を使用したアクセス。**クラスや構造体のインスタンスを返す式を使用して共有要素にアクセスした場合、コンパイラは式を評価せず、クラス名や構造体名を使ってアクセスします。  この式を使ってインスタンスを返す他に何か別の処理も実行しようとしていた場合は、予期しない結果になります。  次に例を示します。  
+-   <span data-ttu-id="010fe-132">**インスタンス式からアクセスします。**</span><span class="sxs-lookup"><span data-stu-id="010fe-132">**Accessing through an Instance Expression.**</span></span> <span data-ttu-id="010fe-133">共有要素をそのクラスまたは構造体のインスタンスを返す式を使用してアクセスする場合、コンパイラで式を評価するのではなく、クラスまたは構造体の名前を使ってアクセスを行います。</span><span class="sxs-lookup"><span data-stu-id="010fe-133">If you access a shared element through an expression that returns an instance of its class or structure, the compiler makes the access through the class or structure name instead of evaluating the expression.</span></span> <span data-ttu-id="010fe-134">その他のアクションだけでなく、インスタンスを返すことを実行する式を対象とした場合、予期しない結果が生成されます。</span><span class="sxs-lookup"><span data-stu-id="010fe-134">This produces unexpected results if you intended the expression to perform other actions as well as returning the instance.</span></span> <span data-ttu-id="010fe-135">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="010fe-135">The following example illustrates this.</span></span>  
   
     ```  
     Sub main()  
@@ -83,26 +81,26 @@ caps.handback.revision: 16
     End Class  
     ```  
   
-     このコード例では、インスタンスを使って共有変数 `total` に 2 度アクセスしていますが、コンパイラは 2 度とも警告メッセージを生成します。  どちらの場合も、コンパイラは直接 `shareTotal` クラスを使ってアクセスし、インスタンスを使用しません。  プロシージャ `returnClass` を呼び出そうとしていた部分では、`returnClass` の呼び出しが行われないため、ここに追加されている "Function returnClass\(\) called" というメッセージの表示は実行されません。  
+     <span data-ttu-id="010fe-136">上記の例では、コンパイラ警告メッセージを生成、共有変数にアクセスするコードのどちらの時刻`total`インスタンスを経由します。</span><span class="sxs-lookup"><span data-stu-id="010fe-136">In the preceding example, the compiler generates a warning message both times the code accesses the shared variable `total` through an instance.</span></span> <span data-ttu-id="010fe-137">クラスから直接アクセスは、各ケース`shareTotal`を行わないと、インスタンスを使用します。</span><span class="sxs-lookup"><span data-stu-id="010fe-137">In each case it makes the access directly through the class `shareTotal` and does not make use of any instance.</span></span> <span data-ttu-id="010fe-138">プロシージャに目的の呼び出しの場合`returnClass`、つまりへの呼び出しも生成しません`returnClass`ので、"関数 returnClass() と呼ばれる"を表示する追加のアクションは実行されません。</span><span class="sxs-lookup"><span data-stu-id="010fe-138">In the case of the intended call to the procedure `returnClass`, this means it does not even generate a call to `returnClass`, so the additional action of displaying "Function returnClass() called" is not performed.</span></span>  
   
- 修飾子 `Shared` は、次の構文で使用します。  
+ <span data-ttu-id="010fe-139">`Shared` 修飾子は、次のコンテキストで使用できます。</span><span class="sxs-lookup"><span data-stu-id="010fe-139">The `Shared` modifier can be used in these contexts:</span></span>  
   
- [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [<span data-ttu-id="010fe-140">Dim ステートメント</span><span class="sxs-lookup"><span data-stu-id="010fe-140">Dim Statement</span></span>](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
- [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [<span data-ttu-id="010fe-141">Event ステートメント</span><span class="sxs-lookup"><span data-stu-id="010fe-141">Event Statement</span></span>](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [<span data-ttu-id="010fe-142">Function ステートメント</span><span class="sxs-lookup"><span data-stu-id="010fe-142">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [Operator ステートメント](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [<span data-ttu-id="010fe-143">Operator ステートメント</span><span class="sxs-lookup"><span data-stu-id="010fe-143">Operator Statement</span></span>](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
- [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="010fe-144">Property ステートメント</span><span class="sxs-lookup"><span data-stu-id="010fe-144">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [<span data-ttu-id="010fe-145">Sub ステートメント</span><span class="sxs-lookup"><span data-stu-id="010fe-145">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## 参照  
- [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)   
- [Static](../../../visual-basic/language-reference/modifiers/static.md)   
- [Lifetime in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)   
- [Procedures](../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Structures](../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
- [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+## <a name="see-also"></a><span data-ttu-id="010fe-146">関連項目</span><span class="sxs-lookup"><span data-stu-id="010fe-146">See Also</span></span>  
+ [<span data-ttu-id="010fe-147">Shadows</span><span class="sxs-lookup"><span data-stu-id="010fe-147">Shadows</span></span>](../../../visual-basic/language-reference/modifiers/shadows.md)  
+ [<span data-ttu-id="010fe-148">Static</span><span class="sxs-lookup"><span data-stu-id="010fe-148">Static</span></span>](../../../visual-basic/language-reference/modifiers/static.md)  
+ [<span data-ttu-id="010fe-149">Visual Basic における有効期間</span><span class="sxs-lookup"><span data-stu-id="010fe-149">Lifetime in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
+ [<span data-ttu-id="010fe-150">手順</span><span class="sxs-lookup"><span data-stu-id="010fe-150">Procedures</span></span>](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
+ [<span data-ttu-id="010fe-151">構造体</span><span class="sxs-lookup"><span data-stu-id="010fe-151">Structures</span></span>](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
+ [<span data-ttu-id="010fe-152">クラスとオブジェクト</span><span class="sxs-lookup"><span data-stu-id="010fe-152">Objects and Classes</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
