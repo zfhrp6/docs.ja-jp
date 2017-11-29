@@ -1,48 +1,51 @@
 ---
-title: "サービス : チャネル リスナーとチャネル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "サービス : チャネル リスナーとチャネル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8ccbe0e8-7e55-441d-80de-5765f67542fa
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f991ebe2be79313bbcf51b41944f84886b1a0b8d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# サービス : チャネル リスナーとチャネル
-チャネル オブジェクトには、チャネル、チャネル リスナー、およびチャネル ファクトリという 3 つのカテゴリがあります。チャネルはアプリケーションおよびチャネル スタックとのインターフェイスです。チャネル リスナーは受信 \(またはリッスン\) する側のチャネルを作成する役割を果たします。通常は、新しい受信メッセージまたは接続への応答を行います。チャネル ファクトリは送信側のチャネルを作成し、エンドポイントとの通信を開始する役割を果たします。  
+# <a name="service-channel-listeners-and-channels"></a><span data-ttu-id="4caf0-102">サービス : チャネル リスナーとチャネル</span><span class="sxs-lookup"><span data-stu-id="4caf0-102">Service: Channel Listeners and Channels</span></span>
+<span data-ttu-id="4caf0-103">チャネル オブジェクトには、チャネル、チャネル リスナー、およびチャネル ファクトリという 3 つのカテゴリがあります。</span><span class="sxs-lookup"><span data-stu-id="4caf0-103">There are three categories of channel objects: channels, channel listeners and channel factories.</span></span> <span data-ttu-id="4caf0-104">チャネルはアプリケーションおよびチャネル スタックとのインターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="4caf0-104">Channels are the interface between the application and the channel stack.</span></span> <span data-ttu-id="4caf0-105">チャネル リスナーは受信 (またはリッスン) する側のチャネルを作成する役割を果たします。通常は、新しい受信メッセージまたは接続への応答を行います。</span><span class="sxs-lookup"><span data-stu-id="4caf0-105">Channel listeners are responsible for creating channels on the receive (or listen) side, typically in response to a new incoming message or connection.</span></span> <span data-ttu-id="4caf0-106">チャネル ファクトリは送信側のチャネルを作成し、エンドポイントとの通信を開始する役割を果たします。</span><span class="sxs-lookup"><span data-stu-id="4caf0-106">Channel factories are responsible for creating channels on the send side to initiate communication with an endpoint.</span></span>  
   
-## チャネル リスナーとチャネル  
- チャネル リスナーには、チャネルを作成し、下の層またはネットワークからメッセージを受信する役割があります。受信されたメッセージは、チャネル リスナーによって作成されるチャネルを使用して、上の層に配信されます。  
+## <a name="channel-listeners-and-channels"></a><span data-ttu-id="4caf0-107">チャネル リスナーとチャネル</span><span class="sxs-lookup"><span data-stu-id="4caf0-107">Channel Listeners and Channels</span></span>  
+ <span data-ttu-id="4caf0-108">チャネル リスナーには、チャネルを作成し、下の層またはネットワークからメッセージを受信する役割があります。</span><span class="sxs-lookup"><span data-stu-id="4caf0-108">Channel listeners are responsible for creating channels and receiving messages from the layer below or from the network.</span></span> <span data-ttu-id="4caf0-109">受信されたメッセージは、チャネル リスナーによって作成されるチャネルを使用して、上の層に配信されます。</span><span class="sxs-lookup"><span data-stu-id="4caf0-109">Received messages are delivered to the layer above using a channel that is created by the channel listener.</span></span>  
   
- メッセージを受信して上の層に配信するプロセスを次の図に示します。  
+ <span data-ttu-id="4caf0-110">メッセージを受信して上の層に配信するプロセスを次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="4caf0-110">The following diagram illustrates the process of receiving messages and delivering them to the layer above.</span></span>  
   
- ![チャネル リスナーとチャネル](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure1highlevelc.gif "wcfc\_WCFChannelsigure1HighLevelc")  
-メッセージを受信してチャネル経由で上の層に配信するチャネル リスナー。  
+ <span data-ttu-id="4caf0-111">![チャネル リスナーとチャネル](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure1highlevelc.gif "wcfc_WCFChannelsigure1HighLevelc")</span><span class="sxs-lookup"><span data-stu-id="4caf0-111">![Channel listeners and channels](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure1highlevelc.gif "wcfc_WCFChannelsigure1HighLevelc")</span></span>  
+<span data-ttu-id="4caf0-112">メッセージを受信してチャネル経由で上の層に配信するチャネル リスナー。</span><span class="sxs-lookup"><span data-stu-id="4caf0-112">A channel listener receiving messages and delivering to the layer above through channels.</span></span>  
   
- このプロセスは、概念上、各チャネル内のキューとしてモデル化できますが、実際には実装がキューを使用しない場合もあります。チャネル リスナーには、下の層またはネットワークからメッセージを受信し、キューに配置する役割があります。また、チャネルには、キューからメッセージを取得し、上の層から \(たとえば、チャネル上で `Receive` を呼び出すことによって\) メッセージが要求されたときにそのメッセージを渡す役割があります。  
+ <span data-ttu-id="4caf0-113">このプロセスは、概念上、各チャネル内のキューとしてモデル化できますが、実際には実装がキューを使用しない場合もあります。</span><span class="sxs-lookup"><span data-stu-id="4caf0-113">The process can be conceptually modeled as a queue inside each channel although the implementation may not actually use a queue.</span></span> <span data-ttu-id="4caf0-114">チャネル リスナーには、下の層またはネットワークからメッセージを受信し、キューに配置する役割があります。</span><span class="sxs-lookup"><span data-stu-id="4caf0-114">The channel listener is responsible for receiving messages from the layer below or the network and putting them in the queue.</span></span> <span data-ttu-id="4caf0-115">また、チャネルには、キューからメッセージを取得し、上の層から (たとえば、チャネル上で `Receive` を呼び出すことによって) メッセージが要求されたときにそのメッセージを渡す役割があります。</span><span class="sxs-lookup"><span data-stu-id="4caf0-115">The channel is responsible for getting messages from the queue and handing them to the layer above when that layer asks for a message, for example by calling `Receive` on the channel.</span></span>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] には、このプロセスに対する基本クラス ヘルパーが用意されています \(ここで説明するチャネル ヘルパー クラスのダイアグラムについては、「[チャネル モデルの概要](../../../../docs/framework/wcf/extending/channel-model-overview.md)」を参照してください\)。  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="4caf0-116"> には、このプロセスに対する基本クラス ヘルパーが用意されています</span><span class="sxs-lookup"><span data-stu-id="4caf0-116"> provides base class helpers for this process.</span></span> <span data-ttu-id="4caf0-117">(このトピックで説明するチャネルのヘルパー クラスのダイアグラムの場合、次を参照してください[チャネル モデルの概要](../../../../docs/framework/wcf/extending/channel-model-overview.md)。)。</span><span class="sxs-lookup"><span data-stu-id="4caf0-117">(For a diagram of the channel helper classes discussed in this topic, see [Channel Model Overview](../../../../docs/framework/wcf/extending/channel-model-overview.md).)</span></span>  
   
--   <xref:System.ServiceModel.Channels.CommunicationObject> クラスには <xref:System.ServiceModel.ICommunicationObject> が実装され、[チャネルの開発](../../../../docs/framework/wcf/extending/developing-channels.md) の手順 2. で説明されているステート マシンが強制実行されます。  
+-   <span data-ttu-id="4caf0-118"><xref:System.ServiceModel.Channels.CommunicationObject>クラスが実装する<xref:System.ServiceModel.ICommunicationObject>し、適用のステップ 2 で説明されているステート マシン[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)です。</span><span class="sxs-lookup"><span data-stu-id="4caf0-118">The <xref:System.ServiceModel.Channels.CommunicationObject> class implements <xref:System.ServiceModel.ICommunicationObject> and enforces the state machine described in step 2 of [Developing Channels](../../../../docs/framework/wcf/extending/developing-channels.md).</span></span>  
   
--   <xref:System.ServiceModel.Channels.ChannelManagerBase> クラスには <xref:System.ServiceModel.Channels.CommunicationObject> が実装され、<xref:System.ServiceModel.Channels.ChannelFactoryBase> と <xref:System.ServiceModel.Channels.ChannelListenerBase> の統合基本クラスが提供されます。<xref:System.ServiceModel.Channels.ChannelManagerBase> クラスは、<xref:System.ServiceModel.Channels.IChannel> を実装する基本クラスである <xref:System.ServiceModel.Channels.ChannelBase> との組み合わせによって動作します。  
+-   <span data-ttu-id="4caf0-119"><xref:System.ServiceModel.Channels.ChannelManagerBase> クラスには <xref:System.ServiceModel.Channels.CommunicationObject> が実装され、<xref:System.ServiceModel.Channels.ChannelFactoryBase> と <xref:System.ServiceModel.Channels.ChannelListenerBase> の統合基本クラスが提供されます。</span><span class="sxs-lookup"><span data-stu-id="4caf0-119">The <xref:System.ServiceModel.Channels.ChannelManagerBase> class implements <xref:System.ServiceModel.Channels.CommunicationObject> and provides a unified base class for <xref:System.ServiceModel.Channels.ChannelFactoryBase> and <xref:System.ServiceModel.Channels.ChannelListenerBase>.</span></span> <span data-ttu-id="4caf0-120"><xref:System.ServiceModel.Channels.ChannelManagerBase> クラスは、<xref:System.ServiceModel.Channels.ChannelBase> を実装する基本クラスである <xref:System.ServiceModel.Channels.IChannel> との組み合わせによって動作します。</span><span class="sxs-lookup"><span data-stu-id="4caf0-120">The <xref:System.ServiceModel.Channels.ChannelManagerBase> class works in conjunction with <xref:System.ServiceModel.Channels.ChannelBase>, which is a base class that implements <xref:System.ServiceModel.Channels.IChannel>.</span></span>  
   
--   ``  <xref:System.ServiceModel.Channels.ChannelFactoryBase> クラスでは、<xref:System.ServiceModel.Channels.ChannelManagerBase> および <xref:System.ServiceModel.Channels.IChannelFactory> が実装され、`CreateChannel` オーバーロードが `OnCreateChannel` 抽象メソッドに統合されます。  
+-   <span data-ttu-id="4caf0-121">'<xref:System.ServiceModel.Channels.ChannelFactoryBase>クラスが実装する<xref:System.ServiceModel.Channels.ChannelManagerBase>と<xref:System.ServiceModel.Channels.IChannelFactory>し、統合、`CreateChannel`を 1 つにオーバー ロード`OnCreateChannel`抽象メソッドです。</span><span class="sxs-lookup"><span data-stu-id="4caf0-121">The``<xref:System.ServiceModel.Channels.ChannelFactoryBase> class implements <xref:System.ServiceModel.Channels.ChannelManagerBase> and <xref:System.ServiceModel.Channels.IChannelFactory> and consolidates the `CreateChannel` overloads into one `OnCreateChannel` abstract method.</span></span>  
   
--   <xref:System.ServiceModel.Channels.ChannelListenerBase> クラスは、<xref:System.ServiceModel.Channels.IChannelListener> を実装しています。基本状態管理を行います。  
+-   <span data-ttu-id="4caf0-122"><xref:System.ServiceModel.Channels.ChannelListenerBase> クラスは、<xref:System.ServiceModel.Channels.IChannelListener> を実装しています。</span><span class="sxs-lookup"><span data-stu-id="4caf0-122">The <xref:System.ServiceModel.Channels.ChannelListenerBase> class implements <xref:System.ServiceModel.Channels.IChannelListener>.</span></span> <span data-ttu-id="4caf0-123">基本状態管理を行います。</span><span class="sxs-lookup"><span data-stu-id="4caf0-123">It takes care of basic state management.</span></span>  
   
- 次の説明は、「[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)」のサンプルに基づいています。  
+ <span data-ttu-id="4caf0-124">次の説明がに基づいて、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="4caf0-124">The following discussion is based upon the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span>  
   
-## チャネル リスナーの作成  
- サンプルに実装されている ``UdpChannelListener は、<xref:System.ServiceModel.Channels.ChannelListenerBase> クラスから派生します。単一の UDP ソケットを使用して、データグラムを受信します。`OnOpen` メソッドは、非同期ループ内で UDP ソケットを使用してデータを受信します。その後、メッセージ エンコーディング システムを使用して、データを次のようにメッセージに変換します。  
+## <a name="creating-a-channel-listener"></a><span data-ttu-id="4caf0-125">チャネル リスナーの作成</span><span class="sxs-lookup"><span data-stu-id="4caf0-125">Creating a Channel Listener</span></span>  
+ <span data-ttu-id="4caf0-126">' から派生して、サンプルを実装する UdpChannelListener、<xref:System.ServiceModel.Channels.ChannelListenerBase>クラスです。</span><span class="sxs-lookup"><span data-stu-id="4caf0-126">The``UdpChannelListener that the sample implements derives from the <xref:System.ServiceModel.Channels.ChannelListenerBase> class.</span></span> <span data-ttu-id="4caf0-127">単一の UDP ソケットを使用して、データグラムを受信します。</span><span class="sxs-lookup"><span data-stu-id="4caf0-127">It uses a single UDP socket to receive datagrams.</span></span> <span data-ttu-id="4caf0-128">`OnOpen` メソッドは、非同期ループ内で UDP ソケットを使用してデータを受信します。</span><span class="sxs-lookup"><span data-stu-id="4caf0-128">The `OnOpen` method receives data using the UDP socket in an asynchronous loop.</span></span> <span data-ttu-id="4caf0-129">その後、メッセージ エンコーディング システムを使用して、データを次のようにメッセージに変換します。</span><span class="sxs-lookup"><span data-stu-id="4caf0-129">The data are then converted into messages using the message encoding system:</span></span>  
   
 ```  
 message = UdpConstants.MessageEncoder.ReadMessage(  
@@ -51,7 +54,7 @@ message = UdpConstants.MessageEncoder.ReadMessage(
 );  
 ```  
   
- 複数のソースから到着するメッセージが同じデータグラム チャネルで表されるので、`UdpChannelListener` はシングルトン リスナーです。このリスナーに同時に関連付けられるアクティブな <xref:System.ServiceModel.Channels.IChannel>`` は、最大 1 つです。このサンプルでは、<xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> メソッドによって返されるチャネルがその後破棄される場合のみ、もう 1 つ生成されます。メッセージが受信されると、このシングルトン チャネルのキューに置かれます。  
+ <span data-ttu-id="4caf0-130">複数のソースから到着するメッセージが同じデータグラム チャネルで表されるので、`UdpChannelListener` はシングルトン リスナーです。</span><span class="sxs-lookup"><span data-stu-id="4caf0-130">Because the same datagram channel represents messages that arrive from a number of sources, the `UdpChannelListener` is a singleton listener.</span></span> <span data-ttu-id="4caf0-131">ほとんどの 1 つのアクティブである<xref:System.ServiceModel.Channels.IChannel>'、時に、このリスナーに関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="4caf0-131">There is at most one active <xref:System.ServiceModel.Channels.IChannel>``associated with this listener at a time.</span></span> <span data-ttu-id="4caf0-132">このサンプルでは、<xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> メソッドによって返されるチャネルがその後破棄される場合のみ、もう 1 つ生成されます。</span><span class="sxs-lookup"><span data-stu-id="4caf0-132">The sample generates another one only if a channel that is returned by the <xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> method is subsequently disposed.</span></span> <span data-ttu-id="4caf0-133">メッセージが受信されると、このシングルトン チャネルのキューに置かれます。</span><span class="sxs-lookup"><span data-stu-id="4caf0-133">When a message is received, it is enqueued into this singleton channel.</span></span>  
   
-### UdpInputChannel  
- `UdpInputChannel` クラスは、<xref:System.ServiceModel.Channels.IInputChannel> を実装しています。このクラスは `UdpChannelListener` のソケットによって設定される受信メッセージのキューで構成されています。これらのメッセージは、<xref:System.ServiceModel.Channels.IInputChannel.Receive%2A> メソッドによってキューから削除されます。
+### <a name="udpinputchannel"></a><span data-ttu-id="4caf0-134">UdpInputChannel</span><span class="sxs-lookup"><span data-stu-id="4caf0-134">UdpInputChannel</span></span>  
+ <span data-ttu-id="4caf0-135">`UdpInputChannel` クラスは、<xref:System.ServiceModel.Channels.IInputChannel> を実装しています。</span><span class="sxs-lookup"><span data-stu-id="4caf0-135">The `UdpInputChannel` class implements <xref:System.ServiceModel.Channels.IInputChannel>.</span></span> <span data-ttu-id="4caf0-136">このクラスは `UdpChannelListener` のソケットによって設定される受信メッセージのキューで構成されています。</span><span class="sxs-lookup"><span data-stu-id="4caf0-136">It consists of a queue of incoming messages that is populated by the `UdpChannelListener`'s socket.</span></span> <span data-ttu-id="4caf0-137">これらのメッセージは、<xref:System.ServiceModel.Channels.IInputChannel.Receive%2A> メソッドによってキューから削除されます。</span><span class="sxs-lookup"><span data-stu-id="4caf0-137">These messages are dequeued by the <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A> method.</span></span>

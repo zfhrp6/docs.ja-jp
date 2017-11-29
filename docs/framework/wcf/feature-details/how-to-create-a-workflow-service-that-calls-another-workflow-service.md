@@ -1,51 +1,54 @@
 ---
-title: "方法: 別のワークフロー サービスを呼び出すワークフロー サービスを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法: 別のワークフロー サービスを呼び出すワークフロー サービスを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 99b3ee3e-aeb7-4e6f-8321-60fe6140eb67
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a0a3b9f77445e8629fb67d099c6d7944044897fb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法: 別のワークフロー サービスを呼び出すワークフロー サービスを作成する
-ワークフロー サービスでは、別のワークフロー サービスから情報を取得することが必要になる場合があります。このトピックでは、別のワークフロー サービスからワークフロー サービスを呼び出す方法について説明します。このトピックでは、2 つのワークフロー サービスを作成します。入力文字列を反転させるメソッドを持つワークフロー サービスと、その最初のサービスを使用して文字列を反転させた後、入力文字列を大文字に変換するワークフロー サービスです。  
+# <a name="how-to-create-a-workflow-service-that-calls-another-workflow-service"></a><span data-ttu-id="7518b-102">方法: 別のワークフロー サービスを呼び出すワークフロー サービスを作成する</span><span class="sxs-lookup"><span data-stu-id="7518b-102">How to: Create a Workflow Service That Calls Another Workflow Service</span></span>
+<span data-ttu-id="7518b-103">ワークフロー サービスでは、別のワークフロー サービスから情報を取得することが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="7518b-103">It is sometimes necessary for a workflow service to obtain information from another workflow service.</span></span>  <span data-ttu-id="7518b-104">このトピックでは、別のワークフロー サービスからワークフロー サービスを呼び出す方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7518b-104">This topic demonstrates how to call one workflow service from another.</span></span> <span data-ttu-id="7518b-105">このトピックでは、2 つのワークフロー サービスを作成します。入力文字列を反転させるメソッドを持つワークフロー サービスと、その最初のサービスを使用して文字列を反転させた後、入力文字列を大文字に変換するワークフロー サービスです。</span><span class="sxs-lookup"><span data-stu-id="7518b-105">In this topic, we’ll create two workflow services; one that has a method that reverses the input string, and another that converts the input string to uppercase after reversing the string that uses the first service.</span></span>  
   
-### Reverser ワークフロー サービスを作成するには  
+### <a name="to-create-the-reverser-workflow-service"></a><span data-ttu-id="7518b-106">Reverser ワークフロー サービスを作成するには</span><span class="sxs-lookup"><span data-stu-id="7518b-106">To create the Reverser workflow service</span></span>  
   
-1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を管理者として実行します。  
+1.  <span data-ttu-id="7518b-107">[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を管理者として実行します。</span><span class="sxs-lookup"><span data-stu-id="7518b-107">Run [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] as an administrator.</span></span>  
   
-2.  **\[ファイル\]**、**\[新規作成\]**、**\[プロジェクト\]** の順にクリックします。**\[インストールされたテンプレート\]** ペインの **\[ワークフロー\]** ノードで、**\[WCF ワークフロー サービス アプリケーション\]** を選択します。ソリューションに `NestedServices` という名前を付けて、**\[OK\]** をクリックします。  
+2.  <span data-ttu-id="7518b-108">選択**ファイル**、**新しいプロジェクト**です。</span><span class="sxs-lookup"><span data-stu-id="7518b-108">Select **File**, **New Project**.</span></span> <span data-ttu-id="7518b-109">下にある、**ワークフロー**内のノード、**インストールされたテンプレート**ペインで、 **WCF ワークフロー サービス アプリケーション**です。</span><span class="sxs-lookup"><span data-stu-id="7518b-109">Under the **Workflow** node in the **Installed Templates** pane, select **WCF Workflow Service Application**.</span></span> <span data-ttu-id="7518b-110">ソリューションの名前を付けます`NestedServices` をクリックし、 **ok**です。</span><span class="sxs-lookup"><span data-stu-id="7518b-110">Name the solution `NestedServices` and then click **OK**.</span></span>  
   
-3.  **\[サーバー\]** の **\[ローカル IIS Web サーバーを使用する\]** が選択されていることを確認します。**\[仮想ディレクトリの作成\]** をクリックします。仮想ディレクトリが正しく作成されたことを示すダイアログ ボックスで **\[OK\]** をクリックします。  
+3.  <span data-ttu-id="7518b-111">**サーバー**、ことを確認して**ローカル IIS Web サーバー**が選択されています。</span><span class="sxs-lookup"><span data-stu-id="7518b-111">Under **Servers**, make sure that **Use Local IIS Web Server** is selected.</span></span> <span data-ttu-id="7518b-112">をクリックして**仮想ディレクトリを作成**です。</span><span class="sxs-lookup"><span data-stu-id="7518b-112">Click **Create Virtual Directory**.</span></span> <span data-ttu-id="7518b-113">をクリックして**OK**仮想ディレクトリが正常に作成されたことを示すダイアログ ボックスでします。</span><span class="sxs-lookup"><span data-stu-id="7518b-113">Click **OK** in the dialog box stating that the virtual directory was successfully created.</span></span>  
   
-4.  ソリューション エクスプローラーで、Service1.xamlx を `StringReverserService.xamlx` という名前に変更します。  
+4.  <span data-ttu-id="7518b-114">ソリューション エクスプ ローラーで、名前を変更する Service1.xamlx`StringReverserService.xamlx`です。</span><span class="sxs-lookup"><span data-stu-id="7518b-114">In Solution Explorer, rename Service1.xamlx to `StringReverserService.xamlx`.</span></span>  
   
-5.  新しいプロジェクトの **\[プロジェクトのプロパティ\]** ページで、**\[Web\]** タブをクリックします。**\[開始動作\]** を **\[ページを指定する\]** に設定し、StringReverserService.xamlx を開始するページとして選択します。  
+5.  <span data-ttu-id="7518b-115">**プロジェクト プロパティ**、新しいプロジェクトのページで、をクリックして、 **Web**タブです。設定、**開始動作**に**特定のページ**StringReverserService.xamlx を開始するページとしてを選択します。</span><span class="sxs-lookup"><span data-stu-id="7518b-115">On the **Project Properties** page for the new project, click the **Web** tab. Set the **Start Action** to **Specific Page**, and select StringReverserService.xamlx as the page to start.</span></span>  
   
-6.  デザイナーで StringReverserService.xamlx を開いて、既存の `ReceiveRequest` アクティビティおよび `SendReply` アクティビティを削除し、`ReceiveAndSendReply` アクティビティを既存のシーケンス アクティビティにドラッグします。  
+6.  <span data-ttu-id="7518b-116">デザイナーで StringReverserService.xamlx を開いて、既存の `ReceiveRequest` アクティビティおよび `SendReply` アクティビティを削除し、`ReceiveAndSendReply` アクティビティを既存のシーケンス アクティビティにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="7518b-116">Open StringReverserService.xamlx in the designer and delete the existing `ReceiveRequest` and `SendReply` activities, and then drag a `ReceiveAndSendReply` activity into the existing sequence activity.</span></span>  
   
-    1.  **\[OperationName\]** を \[ReverseString\] に設定します。  
+    1.  <span data-ttu-id="7518b-117">設定、 **OperationName** ReverseString にします。</span><span class="sxs-lookup"><span data-stu-id="7518b-117">Set the **OperationName** to ReverseString.</span></span>  
   
-    2.  **\[ServiceContractName\]** を \[IReverseString\] に設定します。  
+    2.  <span data-ttu-id="7518b-118">設定、 **ServiceContractName** [ireversestring] にします。</span><span class="sxs-lookup"><span data-stu-id="7518b-118">Set the **ServiceContractName** to IReverseString.</span></span>  
   
-    3.  **\[CanCreateInstance\]** チェック ボックスをオンにします。  
+    3.  <span data-ttu-id="7518b-119">選択、 **CanCreateInstance**チェック ボックスをオンします。</span><span class="sxs-lookup"><span data-stu-id="7518b-119">Select the **CanCreateInstance** check box.</span></span>  
   
-7.  **\[SequentialService\]** アクティビティを選択し、デザイナーの下部にある **\[変数\]** タブをクリックします。StringToReverse と ReversedStringToReturn という文字列型の 2 つの新しい変数を作成します。  
+7.  <span data-ttu-id="7518b-120">選択、 **SequentialService**クリックして、アクティビティ、**変数**デザイナーの下部にあるタブ。</span><span class="sxs-lookup"><span data-stu-id="7518b-120">Select the **SequentialService** activity, and then click the **Variables** tab at the bottom of the designer.</span></span> <span data-ttu-id="7518b-121">StringToReverse と ReversedStringToReturn という文字列型の 2 つの新しい変数を作成します。</span><span class="sxs-lookup"><span data-stu-id="7518b-121">Create two new variables named StringToReverse and ReversedStringToReturn of type String.</span></span>  
   
-8.  **Receive** アクティビティの **\[定義\]** リンクをクリックします。**\[パラメーター\]** をクリックし、StringToReverse に代入する InputString という文字列型のパラメーターを作成します。  
+8.  <span data-ttu-id="7518b-122">クリックして、**定義**内のリンク、**受信**アクティビティ。</span><span class="sxs-lookup"><span data-stu-id="7518b-122">Click the **Define** link in the **Receive** activity.</span></span> <span data-ttu-id="7518b-123">クリックして、**パラメーター**、型 String StringToReverse に代入する InputString というパラメーターを作成します。</span><span class="sxs-lookup"><span data-stu-id="7518b-123">Click the  **Parameters**, and create a parameter named InputString of type String that assigns to StringToReverse.</span></span>  
   
-9. **SendReplyToReceive** アクティビティの **\[定義\]** リンクをクリックします。**\[パラメーター\]** をクリックし、ReversedStringToReturn に代入される  ReversedString という文字列型のパラメーターを作成します。  
+9. <span data-ttu-id="7518b-124">クリックして、**定義**内のリンク、 **SendReplyToReceive**アクティビティ。</span><span class="sxs-lookup"><span data-stu-id="7518b-124">Click the **Define** link in the **SendReplyToReceive** activity.</span></span> <span data-ttu-id="7518b-125">クリックして、**パラメーター**文字列の型、ReversedStringToReturn に代入される ReversedString というパラメーターを作成します。</span><span class="sxs-lookup"><span data-stu-id="7518b-125">Click the **Parameters**, and create a parameter named ReversedString of type String, assigned to ReversedStringToReturn.</span></span>  
   
-10. サービスのロジックを実装するには、StringLibrary というプロジェクトで新しいクラスを作成します。クラスの定義を次のコードに置き換えます。  
+10. <span data-ttu-id="7518b-126">サービスのロジックを実装するには、StringLibrary というプロジェクトで新しいクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="7518b-126">To implement the logic for the service, create a new class in the project called StringLibrary.</span></span>  <span data-ttu-id="7518b-127">クラスの定義を次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="7518b-127">Replace the class definition with the following code.</span></span>  
   
     ```  
     public class StringLibrary  
@@ -57,40 +60,39 @@ caps.handback.revision: 7
                 return new String(charArray);  
             }  
         }  
-  
     ```  
   
-11. 入力で ReverseString メソッドを呼び出すには、ツールボックスから **InvokeMethod** アクティビティを **Receive** アクティビティと **SendReply** アクティビティの間の空白にドラッグします。アクティビティのプロパティを次のように設定します。  
+11. <span data-ttu-id="7518b-128">入力で ReverseString メソッドを呼び出すには、ドラッグ、 **InvokeMethod**間の空白にアクティビティをツールボックス、**受信**と**SendReply**アクティビティ。</span><span class="sxs-lookup"><span data-stu-id="7518b-128">To call the ReverseString method on the input, drag an **InvokeMethod** activity from the toolbox to the space between the **Receive** and **SendReply** activities.</span></span> <span data-ttu-id="7518b-129">アクティビティのプロパティを次のように設定します。</span><span class="sxs-lookup"><span data-stu-id="7518b-129">Set the properties of the activity as follows:</span></span>  
   
-    1.  **\[MethodName\]**: ReverseString  
+    1.  <span data-ttu-id="7518b-130">**MethodName**: ReverseString</span><span class="sxs-lookup"><span data-stu-id="7518b-130">**MethodName**: ReverseString</span></span>  
   
-    2.  **\[結果\]**: ReversedStringToReturn  
+    2.  <span data-ttu-id="7518b-131">**結果**: ReversedStringToReturn</span><span class="sxs-lookup"><span data-stu-id="7518b-131">**Result**: ReversedStringToReturn</span></span>  
   
-    3.  **\[パラメーター\]**: 新しいパラメーターを作成し、**\[方向\]** を \[イン\]、**\[型\]** を \[文字列\]、**\[値\]** を \[StringToReverse\] に設定します。  
+    3.  <span data-ttu-id="7518b-132">**パラメーター**: 新しいパラメーターを作成、**方向**で、**型**文字列の**値**StringToReverse のです。</span><span class="sxs-lookup"><span data-stu-id="7518b-132">**Parameters**: Create a new parameter with a **Direction** of In, a **Type** of String, and a **Value** of StringToReverse.</span></span>  
   
-    4.  **\[TargetType\]**: NestedServices.StringLibrary  
+    4.  <span data-ttu-id="7518b-133">**TargetType**: NestedServices.StringLibrary</span><span class="sxs-lookup"><span data-stu-id="7518b-133">**TargetType**: NestedServices.StringLibrary</span></span>  
   
-12. F5 キーを押して、サービスをテストします。表示される \[WCF テスト クライアント\] で、ReverseString\(\) メソッドをダブルクリックします。\[要求\] ペインで、InputString パラメーターの \[値\] に 「`Sample`」と入力します。**\[起動\]** をクリックします。サービスにより "elpmaS" が返されます。  
+12. <span data-ttu-id="7518b-134">F5 キーを押して、サービスをテストします。</span><span class="sxs-lookup"><span data-stu-id="7518b-134">Test the service by pressing F5.</span></span> <span data-ttu-id="7518b-135">表示される [WCF テスト クライアント] で、ReverseString() メソッドをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="7518b-135">In the WCF Test Client that appears, double-click the ReverseString() method.</span></span> <span data-ttu-id="7518b-136">要求ペインで、次のように入力します。 `Sample` 、InputString パラメーターの値。</span><span class="sxs-lookup"><span data-stu-id="7518b-136">In the Request pane, enter `Sample` for the Value of the InputString parameter.</span></span> <span data-ttu-id="7518b-137">をクリックして**呼び出す**です。</span><span class="sxs-lookup"><span data-stu-id="7518b-137">Click **Invoke**.</span></span> <span data-ttu-id="7518b-138">サービスにより "elpmaS" が返されます。</span><span class="sxs-lookup"><span data-stu-id="7518b-138">The service should return "elpmaS".</span></span>  
   
-### UpperCaser ワークフロー サービスを作成するには  
+### <a name="to-create-the-uppercaser-workflow-service"></a><span data-ttu-id="7518b-139">UpperCaser ワークフロー サービスを作成するには</span><span class="sxs-lookup"><span data-stu-id="7518b-139">To create the UpperCaser workflow service</span></span>  
   
-1.  NestedServices プロジェクトを右クリックして、**\[追加\]**、**\[新しい項目\]** の順に選択します。**\[ワークフロー\]** ノードで、**\[WCF ワークフロー サービス\]** を選択し、新しいサービスに `UpperCaserService` という名前を付けます。**\[追加\]** をクリックします。これにより、UpperCaserService.xamlx という新しいワークフロー サービスがプロジェクトに追加されます。  
+1.  <span data-ttu-id="7518b-140">NestedServices プロジェクトを右クリックし **追加**、**新しい項目の**します。</span><span class="sxs-lookup"><span data-stu-id="7518b-140">Right-click the NestedServices project and select **Add**, **New Item**.</span></span> <span data-ttu-id="7518b-141">**ワークフロー**ノード、 **WCF ワークフロー サービス**、新しいサービスの名前と`UpperCaserService`です。</span><span class="sxs-lookup"><span data-stu-id="7518b-141">In the **Workflow** node, select **WCF Workflow Service**, and name the new service `UpperCaserService`.</span></span> <span data-ttu-id="7518b-142">**[追加]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7518b-142">Click **Add**.</span></span> <span data-ttu-id="7518b-143">これにより、UpperCaserService.xamlx という新しいワークフロー サービスがプロジェクトに追加されます。</span><span class="sxs-lookup"><span data-stu-id="7518b-143">This should add a new workflow service called UpperCaserService.xamlx to the project.</span></span>  
   
-2.  デザイナーで UpperCaserService.xamlx を開いて、既存の **ReceiveRequest** アクティビティおよび `SendReply` アクティビティを削除し、`ReceiveAndSendReply` アクティビティを既存のシーケンス アクティビティにドラッグします。  
+2.  <span data-ttu-id="7518b-144">デザイナーで UpperCaserService.xamlx を開いて、既存の削除**ReceiveRequest**と`SendReply`アクティビティ、およびドラッグ、`ReceiveAndSendReply`アクティビティを既存のシーケンス アクティビティにします。</span><span class="sxs-lookup"><span data-stu-id="7518b-144">Open UpperCaserService.xamlx in the designer and delete the existing **ReceiveRequest** and `SendReply` activities, and drag a `ReceiveAndSendReply` activity into the existing sequence activity.</span></span>  
   
-    1.  **\[OperationName\]** を \[UpperCaseString\] に設定します。  
+    1.  <span data-ttu-id="7518b-145">設定、 **OperationName** UpperCaseString にします。</span><span class="sxs-lookup"><span data-stu-id="7518b-145">Set the **OperationName** to UpperCaseString.</span></span>  
   
-    2.  **\[ServiceContractName\]** を \[IUpperCaseString\] に設定します。  
+    2.  <span data-ttu-id="7518b-146">設定、 **ServiceContractName** [iuppercasestring] にします。</span><span class="sxs-lookup"><span data-stu-id="7518b-146">Set the **ServiceContractName** to IUpperCaseString.</span></span>  
   
-    3.  **\[CanCreateInstance\]** チェック ボックスをオンにします。  
+    3.  <span data-ttu-id="7518b-147">選択、 **CanCreateInstance**チェック ボックスをオンします。</span><span class="sxs-lookup"><span data-stu-id="7518b-147">Select the **CanCreateInstance** check box.</span></span>  
   
-3.  SequentialService アクティビティを選択し、デザイナーの下部にある **\[変数\]** タブをクリックします。StringToUpper、StringToReverse、StringToReturn という文字列型の 3 つの新しい変数を作成します。  
+3.  <span data-ttu-id="7518b-148">SequentialService アクティビティを選択し、クリックして、**変数**デザイナーの下部にあるタブ。</span><span class="sxs-lookup"><span data-stu-id="7518b-148">Select the SequentialService activity, and then click the **Variables** tab at the bottom of the designer.</span></span> <span data-ttu-id="7518b-149">StringToUpper、StringToReverse、StringToReturn という文字列型の 3 つの新しい変数を作成します。</span><span class="sxs-lookup"><span data-stu-id="7518b-149">Create three new variables named StringToUpper, StringToReverse, and StringToReturn of type String.</span></span>  
   
-4.  **Receive** アクティビティの **\[定義\]** リンクをクリックします。**\[パラメーター\]** をクリックし、StringToUpper に代入する InputString という文字列型のパラメーターを作成します。  
+4.  <span data-ttu-id="7518b-150">クリックして、**定義**内のリンク、**受信**アクティビティ。</span><span class="sxs-lookup"><span data-stu-id="7518b-150">Click the **Define** link in the **Receive** activity.</span></span> <span data-ttu-id="7518b-151">クリックして、**パラメーター**、型 String StringToUpper に代入する InputString というパラメーターを作成します。</span><span class="sxs-lookup"><span data-stu-id="7518b-151">Click the **Parameters**, and create a parameter named InputString of type String that assigns to StringToUpper.</span></span>  
   
-5.  **SendReplyToReceive** アクティビティの **\[定義\]** リンクをクリックします。**\[パラメーター\]** をクリックし、StringToReturn に代入される ModifiedString という文字列型のパラメーターを作成します。  
+5.  <span data-ttu-id="7518b-152">クリックして、**定義**内のリンク、 **SendReplyToReceive**アクティビティ。</span><span class="sxs-lookup"><span data-stu-id="7518b-152">Click the **Define** link in the **SendReplyToReceive** activity.</span></span> <span data-ttu-id="7518b-153">クリックして、**パラメーター**文字列型の StringToReturn に代入される ModifiedString というパラメーターを作成します。</span><span class="sxs-lookup"><span data-stu-id="7518b-153">Click the **Parameters**, and create a parameter named ModifiedString of type String, assigned to StringToReturn.</span></span>  
   
-6.  サービスのロジックを実装するには、次のコードを使用して、StringLibrary クラスで新しいメソッドを作成します。  
+6.  <span data-ttu-id="7518b-154">サービスのロジックを実装するには、次のコードを使用して、StringLibrary クラスで新しいメソッドを作成します。</span><span class="sxs-lookup"><span data-stu-id="7518b-154">To implement the logic for the service, create a new method in the StringLibrary class using the following code.</span></span>  
   
     ```  
     public static String UpperCaseString(string StringToUpperCase)  
@@ -98,34 +100,33 @@ caps.handback.revision: 7
          return StringToUpperCase.ToUpper();  
   
     }  
-  
     ```  
   
-7.  入力で UpperCaseString メソッドを呼び出すには、ツールボックスから **InvokeMethod** アクティビティを **Receive** アクティビティと **SendReply** アクティビティの間の空白にドラッグします。アクティビティのプロパティを次のように設定します。  
+7.  <span data-ttu-id="7518b-155">入力で UpperCaseString メソッドを呼び出すには、ドラッグ、 **InvokeMethod**間の空白にアクティビティをツールボックス、**受信**と**SendReply**アクティビティ。</span><span class="sxs-lookup"><span data-stu-id="7518b-155">To call the UpperCaseString method on the input, drag an **InvokeMethod** activity from the toolbox to the space between the **Receive** and **SendReply** activities.</span></span> <span data-ttu-id="7518b-156">アクティビティのプロパティを次のように設定します。</span><span class="sxs-lookup"><span data-stu-id="7518b-156">Set the properties of the activity as follows:</span></span>  
   
-    1.  **\[MethodName\]**: UpperCaseString  
+    1.  <span data-ttu-id="7518b-157">**MethodName**: UpperCaseString</span><span class="sxs-lookup"><span data-stu-id="7518b-157">**MethodName**: UpperCaseString</span></span>  
   
-    2.  **\[結果\]**: StringToReverse  
+    2.  <span data-ttu-id="7518b-158">**結果**: StringToReverse</span><span class="sxs-lookup"><span data-stu-id="7518b-158">**Result**: StringToReverse</span></span>  
   
-    3.  **\[パラメーター\]**: 新しいパラメーターを作成し、**\[方向\]** を \[イン\]、**\[型\]** を \[文字列\]、**\[値\]** を \[StringToUpper\] に設定します。  
+    3.  <span data-ttu-id="7518b-159">**パラメーター**: 新しいパラメーターを作成、**方向**で、**型**文字列の**値**StringToUpper のです。</span><span class="sxs-lookup"><span data-stu-id="7518b-159">**Parameters**: Create a new parameter with a **Direction** of In, a **Type** of String, and a **Value** of StringToUpper.</span></span>  
   
-    4.  **\[TargetType\]**: NestedServices.StringLibrary  
+    4.  <span data-ttu-id="7518b-160">**TargetType**: NestedServices.StringLibrary</span><span class="sxs-lookup"><span data-stu-id="7518b-160">**TargetType**: NestedServices.StringLibrary</span></span>  
   
-8.  ここで、修正済みの文字列で最初のサービスを呼び出します。プロジェクトを右クリックし、**\[サービス参照の追加\]** をクリックします。http:\/\/localhost\/NestedServices\/StringReverserService.xamlx でサービス参照をサービスに追加し、プロジェクトをビルドして最初の Web サービスにアクセスするカスタム アクティビティを作成します。  
+8.  <span data-ttu-id="7518b-161">ここで、修正済みの文字列で最初のサービスを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="7518b-161">We’ll now call the first service on the modified string.</span></span> <span data-ttu-id="7518b-162">プロジェクトを右クリックし **サービス参照の追加**です。</span><span class="sxs-lookup"><span data-stu-id="7518b-162">Right-click the project and select **Add Service Reference**.</span></span> <span data-ttu-id="7518b-163">http://localhost/NestedServices/StringReverserService.xamlx でサービス参照をサービスに追加し、プロジェクトをビルドして最初の Web サービスにアクセスするカスタム アクティビティを作成します。</span><span class="sxs-lookup"><span data-stu-id="7518b-163">Add a service reference to the service at http://localhost/NestedServices/StringReverserService.xamlx and build the project to create a custom activity to access the first Web service.</span></span>  
   
-9. 新しいアクティビティのインスタンスを、**InvokeMethod** アクティビティと **SendReplyToReceive** アクティビティの間のワークフローにドラッグします。変数 StringToReverse を新しいアクティビティの InputString プロパティに、変数 StringToReturn を StringToReturn プロパティに割り当てます。  
+9. <span data-ttu-id="7518b-164">新しいアクティビティのインスタンス、ワークフローにドラッグ間、 **InvokeMethod**アクティビティおよび**SendReplyToReceive**アクティビティ。</span><span class="sxs-lookup"><span data-stu-id="7518b-164">Drag an instance of the new activity onto the workflow, between the **InvokeMethod** activity and the **SendReplyToReceive** activities.</span></span> <span data-ttu-id="7518b-165">変数 StringToReverse を新しいアクティビティの InputString プロパティに、変数 StringToReturn を StringToReturn プロパティに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="7518b-165">Assign the variable StringToReverse to the InputString property of the new activity, and the variable StringToReturn to the StringToReturn property.</span></span>  
   
-10. NestedServices プロジェクトの \[プロパティ\] ページを開き、**\[Web\]** タブの **\[ページを指定する\]** を UpperCaserService.xamlx に変更します。  
+10. <span data-ttu-id="7518b-166">NestedServices プロジェクトのプロパティ ページを開き、変更、**特定ページ**で、 **Web**を UpperCaserService.xamlx にタブです。</span><span class="sxs-lookup"><span data-stu-id="7518b-166">Open the Properties page for the NestedServices project, and change the **Specific Page** in the **Web** tab to UpperCaserService.xamlx.</span></span>  
   
-11. F5 キーを押して、サービスをテストします。表示される \[WCF テスト クライアント\] で、ReverseString\(\) メソッドをダブルクリックします。\[要求\] ペインで、InputString パラメーターの \[値\] に 「`Sample`」と入力します。**\[起動\]** をクリックします。サービスにより "ELPMAS" が返されます。  
+11. <span data-ttu-id="7518b-167">F5 キーを押して、サービスをテストします。</span><span class="sxs-lookup"><span data-stu-id="7518b-167">Test the service by pressing F5.</span></span> <span data-ttu-id="7518b-168">表示される [WCF テスト クライアント] で、ReverseString() メソッドをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="7518b-168">In the WCF Test Client that appears, double-click the ReverseString() method.</span></span> <span data-ttu-id="7518b-169">要求ペインで、次のように入力します。 `Sample` 、InputString パラメーターの値。</span><span class="sxs-lookup"><span data-stu-id="7518b-169">In the Request pane, enter `Sample` for the Value of the InputString parameter.</span></span> <span data-ttu-id="7518b-170">をクリックして**呼び出す**です。</span><span class="sxs-lookup"><span data-stu-id="7518b-170">Click **Invoke**.</span></span> <span data-ttu-id="7518b-171">サービスにより "ELPMAS" が返されます。</span><span class="sxs-lookup"><span data-stu-id="7518b-171">The service should return "ELPMAS".</span></span>  
   
-### サービスを呼び出すクライアントを作成するには  
+### <a name="to-create-a-client-to-call-the-services"></a><span data-ttu-id="7518b-172">サービスを呼び出すクライアントを作成するには</span><span class="sxs-lookup"><span data-stu-id="7518b-172">To create a client to call the services</span></span>  
   
-1.  クライアントという新しいコンソール アプリケーション プロジェクトをソリューションに追加します。  
+1.  <span data-ttu-id="7518b-173">クライアントという新しいコンソール アプリケーション プロジェクトをソリューションに追加します。</span><span class="sxs-lookup"><span data-stu-id="7518b-173">Add a new Console application project called Client to the solution.</span></span>  
   
-2.  クライアント プロジェクトを右クリックして、**\[サービス参照の追加\]** をクリックします。表示されるウィンドウで、**\[探索\]** をクリックします。StringReverserService.xamlx を選択し、名前空間として「ReverseService」と入力します。**\[OK\]** をクリックします。  
+2.  <span data-ttu-id="7518b-174">クライアント プロジェクトを右クリックし **サービス参照の追加**です。</span><span class="sxs-lookup"><span data-stu-id="7518b-174">Right-click the Client project and select **Add Service Reference**.</span></span> <span data-ttu-id="7518b-175">表示されるウィンドウで  **Discover**です。</span><span class="sxs-lookup"><span data-stu-id="7518b-175">In the window that appears, click **Discover**.</span></span> <span data-ttu-id="7518b-176">StringReverserService.xamlx を選択し、名前空間として「ReverseService」と入力します。</span><span class="sxs-lookup"><span data-stu-id="7518b-176">Select StringReverserService.xamlx, and enter ReverseService as the namespace.</span></span>  <span data-ttu-id="7518b-177">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7518b-177">Click **OK**.</span></span>  
   
-3.  Program.cs の Main メソッドを次のコードで置き換えます。  
+3.  <span data-ttu-id="7518b-178">Program.cs の Main メソッドを次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="7518b-178">Replace the Main method in Program.cs with the following code.</span></span>  
   
     ```  
     static void Main(string[] args)  
@@ -136,5 +137,4 @@ caps.handback.revision: 7
         Console.WriteLine("Output from service: {0}", service.ReverseString(input));  
         Console.ReadKey();  
     }  
-  
     ```

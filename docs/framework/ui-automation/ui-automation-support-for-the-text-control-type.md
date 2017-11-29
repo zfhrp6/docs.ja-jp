@@ -1,98 +1,101 @@
 ---
-title: "UI Automation Support for the Text Control Type | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Text control type"
-  - "UI Automation, Text control type"
-  - "control types, Text"
+title: "UI オートメーションによる Text コントロール型のサポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Text control type
+- UI Automation, Text control type
+- control types, Text
 ms.assetid: ab0d0ada-8a71-4547-9c03-aadf675938f2
-caps.latest.revision: 19
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: edb2a41b7bb335ace8a937d64365ed40ecf8a4e2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# UI Automation Support for the Text Control Type
+# <a name="ui-automation-support-for-the-text-control-type"></a><span data-ttu-id="e77b6-102">UI オートメーションによる Text コントロール型のサポート</span><span class="sxs-lookup"><span data-stu-id="e77b6-102">UI Automation Support for the Text Control Type</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の最新情報については、「[Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  <span data-ttu-id="e77b6-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="e77b6-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="e77b6-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e77b6-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- このトピックでは、Text コントロール型の [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] サポートについて説明します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] でのコントロール型とは、コントロールが <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> プロパティを使用するために満たす必要がある一連の条件のことです。 これらの条件には、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のプロパティ値、およびコントロール パターンに関する特定のガイドラインが含まれます。  
+ <span data-ttu-id="e77b6-105">このトピックでは、Text コントロール型の [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] サポートについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e77b6-105">This topic provides information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] support for the Text control type.</span></span> <span data-ttu-id="e77b6-106">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]でのコントロール型とは、コントロールが <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> プロパティを使用するために満たす必要がある一連の条件のことです。</span><span class="sxs-lookup"><span data-stu-id="e77b6-106">In [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], a control type is a set of conditions that a control must meet in order to use the <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> property.</span></span> <span data-ttu-id="e77b6-107">これらの条件には、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のプロパティ値、およびコントロール パターンに関する特定のガイドラインが含まれます。</span><span class="sxs-lookup"><span data-stu-id="e77b6-107">The conditions include specific guidelines for [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] property values and control patterns.</span></span>  
   
- テキスト コントロールは、画面上のテキストを表す、基本的なユーザー インターフェイス項目です。  
+ <span data-ttu-id="e77b6-108">テキスト コントロールは、画面上のテキストを表す、基本的なユーザー インターフェイス項目です。</span><span class="sxs-lookup"><span data-stu-id="e77b6-108">Text controls are the basic user interface item that represents a piece of text on the screen.</span></span>  
   
- 以降のセクションで、Text コントロール型に必要な [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、プロパティ、コントロール パターン、およびイベントを定義します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の要件は、[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、[!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]、または [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] であるかどうかに関係なく、すべてのテキスト コントロールに適用されます。  
+ <span data-ttu-id="e77b6-109">以降のセクションで、Text コントロール型に必要な [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、プロパティ、コントロール パターン、およびイベントを定義します。</span><span class="sxs-lookup"><span data-stu-id="e77b6-109">The following sections define the required [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, properties, control patterns, and events for the Text control type.</span></span> <span data-ttu-id="e77b6-110">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の要件は、 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]、または [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]であるかどうかに関係なく、すべてのテキスト コントロールに適用されます。</span><span class="sxs-lookup"><span data-stu-id="e77b6-110">The [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requirements apply to all text controls, whether [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], or [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].</span></span>  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
-## 必須の UI オートメーション ツリー構造  
- 次の表に、テキスト コントロールに関連する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューとコンテンツ ビューを示し、それぞれのビューに含めることができる内容について説明します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーの詳細については、「[UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)」を参照してください。  
+## <a name="required-ui-automation-tree-structure"></a><span data-ttu-id="e77b6-111">必須の UI オートメーション ツリー構造</span><span class="sxs-lookup"><span data-stu-id="e77b6-111">Required UI Automation Tree Structure</span></span>  
+ <span data-ttu-id="e77b6-112">次の表に、テキスト コントロールに関連する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューとコンテンツ ビューを示し、それぞれのビューに含めることができる内容について説明します。</span><span class="sxs-lookup"><span data-stu-id="e77b6-112">The following table depicts the control view and the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree that pertains to text controls and describes what can be contained in each view.</span></span> <span data-ttu-id="e77b6-113">詳細については、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ツリーを参照してください[UI オートメーション ツリーの概要](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="e77b6-113">For more information on the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree, see [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).</span></span>  
   
-|コントロール ビュー|コンテンツ ビュー|  
-|----------------|---------------|  
-|テキスト|テキスト \(コンテンツの場合\)|  
+|<span data-ttu-id="e77b6-114">コントロール ビュー</span><span class="sxs-lookup"><span data-stu-id="e77b6-114">Control View</span></span>|<span data-ttu-id="e77b6-115">コンテンツ ビュー</span><span class="sxs-lookup"><span data-stu-id="e77b6-115">Content View</span></span>|  
+|------------------|------------------|  
+|<span data-ttu-id="e77b6-116">テキスト</span><span class="sxs-lookup"><span data-stu-id="e77b6-116">Text</span></span>|<span data-ttu-id="e77b6-117">テキスト (コンテンツの場合)</span><span class="sxs-lookup"><span data-stu-id="e77b6-117">Text (if content)</span></span>|  
   
- テキスト コントロールは、単独でラベルとして使用することも、フォーム上の静的テキストとして使用することもできます。 また、次の構造に含めることもできます。  
+ <span data-ttu-id="e77b6-118">テキスト コントロールは、単独でラベルとして使用することも、フォーム上の静的テキストとして使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="e77b6-118">A text control can be used alone as a label or as static text on a form.</span></span> <span data-ttu-id="e77b6-119">また、次の構造に含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="e77b6-119">It can also be contained within the structure of a:</span></span>  
   
--   ListItem  
+-   <span data-ttu-id="e77b6-120">ListItem</span><span class="sxs-lookup"><span data-stu-id="e77b6-120">ListItem</span></span>  
   
--   TreeItem  
+-   <span data-ttu-id="e77b6-121">TreeItem</span><span class="sxs-lookup"><span data-stu-id="e77b6-121">TreeItem</span></span>  
   
--   DataItem  
+-   <span data-ttu-id="e77b6-122">DataItem</span><span class="sxs-lookup"><span data-stu-id="e77b6-122">DataItem</span></span>  
   
- テキストは多くの場合、別のコントロールの `NameProperty` によって表示されるため、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューにテキスト コントロールは含まれないことがあります。 たとえば、コンボ ボックス コントロールのラベル付けに使用されるテキストは、そのコントロールの `NameProperty` 値を使用して公開されます。 コンボ ボックス コントロールが UI オートメーション ツリーのコンテンツ ビューに存在するので、テキスト コントロールがこのビューに存在する必要はありません。 コンテンツ ビューに、テキスト コントロールの子が存在することはありません。  
+ <span data-ttu-id="e77b6-123">テキストは多くの場合、別のコントロールの [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] によって表示されるため、 `NameProperty` ツリーのコンテンツ ビューにテキスト コントロールは含まれないことがあります。</span><span class="sxs-lookup"><span data-stu-id="e77b6-123">Text controls may not be in the Content View of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree because text is often displayed through the `NameProperty` of another control.</span></span> <span data-ttu-id="e77b6-124">たとえば、コンボ ボックス コントロールのラベル付けに使用されるテキストは、そのコントロールの `NameProperty` 値を使用して公開されます。</span><span class="sxs-lookup"><span data-stu-id="e77b6-124">For example the text that is used to label a Combo Box control is exposed through the control's `NameProperty` value.</span></span> <span data-ttu-id="e77b6-125">コンボ ボックス コントロールが UI オートメーション ツリーのコンテンツ ビューに存在するので、テキスト コントロールがこのビューに存在する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="e77b6-125">Because the Combo Box control is in the content view of the UI Automation Tree, it is not necessary for the text control to be there.</span></span> <span data-ttu-id="e77b6-126">コンテンツ ビューに、テキスト コントロールの子が存在することはありません。</span><span class="sxs-lookup"><span data-stu-id="e77b6-126">Text controls always have 0 children in the content view</span></span>  
   
 <a name="Required_UI_Automation_Properties"></a>   
-## 必須の UI オートメーション プロパティ  
- 次の表に、テキスト コンロトールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの詳細については、「[UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)」を参照してください。  
+## <a name="required-ui-automation-properties"></a><span data-ttu-id="e77b6-127">必須の UI オートメーション プロパティ</span><span class="sxs-lookup"><span data-stu-id="e77b6-127">Required UI Automation Properties</span></span>  
+ <span data-ttu-id="e77b6-128">次の表に、テキスト コンロトールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。</span><span class="sxs-lookup"><span data-stu-id="e77b6-128">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties whose value or definition is especially relevant to text controls.</span></span> <span data-ttu-id="e77b6-129">詳細については[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]プロパティを参照してください[クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)です。</span><span class="sxs-lookup"><span data-stu-id="e77b6-129">For more information on [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties, see [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).</span></span>  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|値|ノート|  
-|---------------------------------------------------------------------------------|-------|---------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|「ノート」を参照。|このプロパティの値は、アプリケーション内のすべてのコントロールで一意である必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|「ノート」を参照。|コントロール全体を格納する最も外側の四角形。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|「ノート」を参照。|四角形領域が存在する場合にサポートされます。 四角形領域の内側にクリック不可能な点が存在し、特別なヒット テストを実行する場合は、クリック可能な点をオーバーライドして提供します。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|「ノート」を参照。|コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|「ノート」を参照。|常に、テキスト バー コントロールが表示するテキストが、そのコントロールの名前になります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|テキスト コントロールに静的なテキスト ラベルはありません。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|テキスト|この値は、すべての UI フレームワークで同じです。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|「テキスト」|Text コントロール型に対応する、ローカライズされた文字列。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|状況に依存|テキスト コントロールに、別のコントロールの NameProperty で公開されていない情報が含まれている場合、テキスト コントロールはコンテンツになります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|テキスト コントロールは、常にコントロールである必要があります。|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="e77b6-130"> プロパティ</span><span class="sxs-lookup"><span data-stu-id="e77b6-130"> Property</span></span>|<span data-ttu-id="e77b6-131">値</span><span class="sxs-lookup"><span data-stu-id="e77b6-131">Value</span></span>|<span data-ttu-id="e77b6-132">ノート</span><span class="sxs-lookup"><span data-stu-id="e77b6-132">Notes</span></span>|  
+|------------------------------------------------------------------------------------|-----------|-----------|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|<span data-ttu-id="e77b6-133">ノートを参照してください。</span><span class="sxs-lookup"><span data-stu-id="e77b6-133">See notes.</span></span>|<span data-ttu-id="e77b6-134">このプロパティの値は、アプリケーションのすべてのコントロールで一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e77b6-134">The value of this property needs to be unique across all controls in an application.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|<span data-ttu-id="e77b6-135">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e77b6-135">See notes.</span></span>|<span data-ttu-id="e77b6-136">コントロール全体を格納する最も外側の四角形。</span><span class="sxs-lookup"><span data-stu-id="e77b6-136">The outermost rectangle that contains the whole control.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|<span data-ttu-id="e77b6-137">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e77b6-137">See notes.</span></span>|<span data-ttu-id="e77b6-138">四角形領域が存在する場合にサポートされます。</span><span class="sxs-lookup"><span data-stu-id="e77b6-138">Supported if there is a bounding rectangle.</span></span> <span data-ttu-id="e77b6-139">四角形領域内にクリック不可能な点が存在し、特別なヒット テストを実行する場合は、オーバーライドしてクリック可能な点を提供します。</span><span class="sxs-lookup"><span data-stu-id="e77b6-139">If not every point within the bounding rectangle is clickable, and you perform specialized hit testing, then override and provide a clickable point.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|<span data-ttu-id="e77b6-140">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e77b6-140">See notes.</span></span>|<span data-ttu-id="e77b6-141">コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e77b6-141">If the control can receive keyboard focus, it must support this property.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|<span data-ttu-id="e77b6-142">「ノート」を参照。</span><span class="sxs-lookup"><span data-stu-id="e77b6-142">See notes.</span></span>|<span data-ttu-id="e77b6-143">常に、テキスト バー コントロールが表示するテキストが、そのコントロールの名前になります。</span><span class="sxs-lookup"><span data-stu-id="e77b6-143">The text bar control's name is always the txt that it displays.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|<span data-ttu-id="e77b6-144">テキスト コントロールに静的なテキスト ラベルはありません。</span><span class="sxs-lookup"><span data-stu-id="e77b6-144">Text controls do not have a static text label.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|<span data-ttu-id="e77b6-145">テキスト</span><span class="sxs-lookup"><span data-stu-id="e77b6-145">Text</span></span>|<span data-ttu-id="e77b6-146">この値は、すべての UI フレームワークで同じです。</span><span class="sxs-lookup"><span data-stu-id="e77b6-146">This value is the same for all UI frameworks.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|<span data-ttu-id="e77b6-147">「テキスト」</span><span class="sxs-lookup"><span data-stu-id="e77b6-147">"text"</span></span>|<span data-ttu-id="e77b6-148">Text コントロール型に対応する、ローカライズされた文字列。</span><span class="sxs-lookup"><span data-stu-id="e77b6-148">Localized string corresponding to the text control type.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|<span data-ttu-id="e77b6-149">状況に依存</span><span class="sxs-lookup"><span data-stu-id="e77b6-149">Depends</span></span>|<span data-ttu-id="e77b6-150">テキスト コントロールに、別のコントロールの NameProperty で公開されていない情報が含まれている場合、テキスト コントロールはコンテンツになります。</span><span class="sxs-lookup"><span data-stu-id="e77b6-150">The text control will be content if it contains information not exposed in another control's NameProperty.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|<span data-ttu-id="e77b6-151">True</span><span class="sxs-lookup"><span data-stu-id="e77b6-151">True</span></span>|<span data-ttu-id="e77b6-152">テキスト コントロールは、常にコントロールである必要があります。</span><span class="sxs-lookup"><span data-stu-id="e77b6-152">The text control must always be a control.</span></span>|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
-## 必須の UI オートメーション コントロール パターン  
- 次の表に、テキスト コントロールでサポートする必要がある [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。 コントロール パターンの詳細については、「[UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」を参照してください。  
+## <a name="required-ui-automation-control-patterns"></a><span data-ttu-id="e77b6-153">必須の UI オートメーション コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="e77b6-153">Required UI Automation Control Patterns</span></span>  
+ <span data-ttu-id="e77b6-154">次の表に、テキスト コントロールでサポートする必要がある [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。</span><span class="sxs-lookup"><span data-stu-id="e77b6-154">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] control patterns required to be supported by text controls.</span></span> <span data-ttu-id="e77b6-155">コントロール パターンの詳細については、「 [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e77b6-155">For more information on control patterns, see [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).</span></span>  
   
-|コントロール パターン|Support|ノート|  
-|-----------------|-------------|---------|  
-|<xref:System.Windows.Automation.Provider.IValueProvider>|Never|テキストが ValuePattern をサポートすることはありません。 テキストが編集可能な場合、それは Edit コントロール型です。|  
-|<xref:System.Windows.Automation.Provider.ITextProvider>|状況に依存|テキストはアクセシビリティを向上させるために Text コントロール パターンをサポートする必要がありますが、必須ではありません。 テキストにさまざまなスタイルや属性 \(たとえば、色、太字、斜体など\) がある場合、Text コントロール パターンを使用すると便利です。これは、フレームワークに依存します。|  
-|<xref:System.Windows.Automation.Provider.ITableItemProvider>|状況に依存|テキスト要素がテーブル コントロール内に含まれている場合は、サポートする必要があります。|  
-|<xref:System.Windows.Automation.Provider.IRangeValueProvider>|状況に依存|テキスト要素がテーブル コントロール内に含まれている場合は、サポートする必要があります。|  
+|<span data-ttu-id="e77b6-156">コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="e77b6-156">Control Pattern</span></span>|<span data-ttu-id="e77b6-157">Support</span><span class="sxs-lookup"><span data-stu-id="e77b6-157">Support</span></span>|<span data-ttu-id="e77b6-158">ノート</span><span class="sxs-lookup"><span data-stu-id="e77b6-158">Notes</span></span>|  
+|---------------------|-------------|-----------|  
+|<xref:System.Windows.Automation.Provider.IValueProvider>|<span data-ttu-id="e77b6-159">Never</span><span class="sxs-lookup"><span data-stu-id="e77b6-159">Never</span></span>|<span data-ttu-id="e77b6-160">テキストが ValuePattern をサポートすることはありません。</span><span class="sxs-lookup"><span data-stu-id="e77b6-160">Text never supports ValuePattern.</span></span> <span data-ttu-id="e77b6-161">テキストが編集可能な場合、それは Edit コントロール型です。</span><span class="sxs-lookup"><span data-stu-id="e77b6-161">If the text is editable, this it is the Edit control type.</span></span>|  
+|<xref:System.Windows.Automation.Provider.ITextProvider>|<span data-ttu-id="e77b6-162">状況に依存</span><span class="sxs-lookup"><span data-stu-id="e77b6-162">Depends</span></span>|<span data-ttu-id="e77b6-163">テキストはアクセシビリティを向上させるために Text コントロール パターンをサポートする必要がありますが、必須ではありません。</span><span class="sxs-lookup"><span data-stu-id="e77b6-163">Text should support the Text control pattern for better accessibility; however, it is not required.</span></span> <span data-ttu-id="e77b6-164">テキストにさまざまなスタイルや属性 (たとえば、色、太字、斜体など) がある場合、Text コントロール パターンを使用すると便利です。これは、フレームワークに依存します。</span><span class="sxs-lookup"><span data-stu-id="e77b6-164">The Text control pattern is useful when the text has rich style and attributes (for example, color, bold, and italics).Depends on framework.</span></span>|  
+|<xref:System.Windows.Automation.Provider.ITableItemProvider>|<span data-ttu-id="e77b6-165">状況に依存</span><span class="sxs-lookup"><span data-stu-id="e77b6-165">Depends</span></span>|<span data-ttu-id="e77b6-166">テキスト要素がテーブル コントロール内に含まれている場合は、サポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e77b6-166">If the text element is contained within a Table control, this must be supported.</span></span>|  
+|<xref:System.Windows.Automation.Provider.IRangeValueProvider>|<span data-ttu-id="e77b6-167">状況に依存</span><span class="sxs-lookup"><span data-stu-id="e77b6-167">Depends</span></span>|<span data-ttu-id="e77b6-168">テキスト要素がテーブル コントロール内に含まれている場合は、サポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e77b6-168">If the text element is contained within a table control, this must be supported.</span></span>|  
   
 <a name="Required_UI_Automation_Events"></a>   
-## 必須の UI オートメーション イベント  
- 次の表に、すべてのテキスト コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。 イベントの詳細については、「[UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」を参照してください。  
+## <a name="required-ui-automation-events"></a><span data-ttu-id="e77b6-169">必須の UI オートメーション イベント</span><span class="sxs-lookup"><span data-stu-id="e77b6-169">Required UI Automation Events</span></span>  
+ <span data-ttu-id="e77b6-170">次の表に、すべてのテキスト コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。</span><span class="sxs-lookup"><span data-stu-id="e77b6-170">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] events required to be supported by all text controls.</span></span> <span data-ttu-id="e77b6-171">イベントの詳細については、「 [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e77b6-171">For more information about events, see [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md).</span></span>  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|Support|ノート|  
-|--------------------------------------------------------------------------------|-------------|---------|  
-|<xref:System.Windows.Automation.TextPatternIdentifiers.TextSelectionChangedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> プロパティ変更イベント。|Never|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必要|なし|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="e77b6-172"> イベント</span><span class="sxs-lookup"><span data-stu-id="e77b6-172"> Event</span></span>|<span data-ttu-id="e77b6-173">Support</span><span class="sxs-lookup"><span data-stu-id="e77b6-173">Support</span></span>|<span data-ttu-id="e77b6-174">ノート</span><span class="sxs-lookup"><span data-stu-id="e77b6-174">Notes</span></span>|  
+|---------------------------------------------------------------------------------|-------------|-----------|  
+|<xref:System.Windows.Automation.TextPatternIdentifiers.TextSelectionChangedEvent>|<span data-ttu-id="e77b6-175">必要</span><span class="sxs-lookup"><span data-stu-id="e77b6-175">Required</span></span>|<span data-ttu-id="e77b6-176">なし</span><span class="sxs-lookup"><span data-stu-id="e77b6-176">None</span></span>|  
+|<xref:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent>|<span data-ttu-id="e77b6-177">必須</span><span class="sxs-lookup"><span data-stu-id="e77b6-177">Required</span></span>|<span data-ttu-id="e77b6-178">なし</span><span class="sxs-lookup"><span data-stu-id="e77b6-178">None</span></span>|  
+|<span data-ttu-id="e77b6-179"><xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="e77b6-179"><xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> property-changed event.</span></span>|<span data-ttu-id="e77b6-180">必要</span><span class="sxs-lookup"><span data-stu-id="e77b6-180">Required</span></span>|<span data-ttu-id="e77b6-181">なし</span><span class="sxs-lookup"><span data-stu-id="e77b6-181">None</span></span>|  
+|<span data-ttu-id="e77b6-182"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="e77b6-182"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> property-changed event.</span></span>|<span data-ttu-id="e77b6-183">必要</span><span class="sxs-lookup"><span data-stu-id="e77b6-183">Required</span></span>|<span data-ttu-id="e77b6-184">なし</span><span class="sxs-lookup"><span data-stu-id="e77b6-184">None</span></span>|  
+|<span data-ttu-id="e77b6-185"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="e77b6-185"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> property-changed event.</span></span>|<span data-ttu-id="e77b6-186">必要</span><span class="sxs-lookup"><span data-stu-id="e77b6-186">Required</span></span>|<span data-ttu-id="e77b6-187">なし</span><span class="sxs-lookup"><span data-stu-id="e77b6-187">None</span></span>|  
+|<span data-ttu-id="e77b6-188"><xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="e77b6-188"><xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> property-changed event.</span></span>|<span data-ttu-id="e77b6-189">必要</span><span class="sxs-lookup"><span data-stu-id="e77b6-189">Required</span></span>|<span data-ttu-id="e77b6-190">なし</span><span class="sxs-lookup"><span data-stu-id="e77b6-190">None</span></span>|  
+|<span data-ttu-id="e77b6-191"><xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="e77b6-191"><xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> property-changed event.</span></span>|<span data-ttu-id="e77b6-192">Never</span><span class="sxs-lookup"><span data-stu-id="e77b6-192">Never</span></span>|<span data-ttu-id="e77b6-193">なし</span><span class="sxs-lookup"><span data-stu-id="e77b6-193">None</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|<span data-ttu-id="e77b6-194">必須</span><span class="sxs-lookup"><span data-stu-id="e77b6-194">Required</span></span>|<span data-ttu-id="e77b6-195">なし</span><span class="sxs-lookup"><span data-stu-id="e77b6-195">None</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|<span data-ttu-id="e77b6-196">必須</span><span class="sxs-lookup"><span data-stu-id="e77b6-196">Required</span></span>|<span data-ttu-id="e77b6-197">なし</span><span class="sxs-lookup"><span data-stu-id="e77b6-197">None</span></span>|  
   
-## 参照  
- <xref:System.Windows.Automation.ControlType.Text>   
- [UI Automation Control Types Overview](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)   
- [UI Automation Overview](../../../docs/framework/ui-automation/ui-automation-overview.md)
+## <a name="see-also"></a><span data-ttu-id="e77b6-198">関連項目</span><span class="sxs-lookup"><span data-stu-id="e77b6-198">See Also</span></span>  
+ <xref:System.Windows.Automation.ControlType.Text>  
+ [<span data-ttu-id="e77b6-199">UI オートメーション コントロール型の概要</span><span class="sxs-lookup"><span data-stu-id="e77b6-199">UI Automation Control Types Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
+ [<span data-ttu-id="e77b6-200">UI オートメーションの概要</span><span class="sxs-lookup"><span data-stu-id="e77b6-200">UI Automation Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-overview.md)

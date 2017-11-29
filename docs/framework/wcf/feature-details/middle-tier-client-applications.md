@@ -1,46 +1,49 @@
 ---
-title: "中間層クライアント アプリケーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "中間層クライアント アプリケーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f9714a64-d0ae-4a98-bca0-5d370fdbd631
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 893fa027d2f1eb4fa3782b9119f6ae2d4a78d700
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 中間層クライアント アプリケーション
-ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用する中間層クライアント アプリケーション固有のさまざまな問題について説明します。  
+# <a name="middle-tier-client-applications"></a><span data-ttu-id="ed437-102">中間層クライアント アプリケーション</span><span class="sxs-lookup"><span data-stu-id="ed437-102">Middle-Tier Client Applications</span></span>
+<span data-ttu-id="ed437-103">ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用する中間層クライアント アプリケーション固有のさまざまな問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="ed437-103">This topic discusses various issues specific to middle-tier client applications that use [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span>  
   
-## 中間層クライアントのパフォーマンス向上  
- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] を使用する Web サービスなど従来の通信技術と比べ、豊富な機能セットを備えた [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント インスタンスの作成が複雑になる場合があります。  たとえば、<xref:System.ServiceModel.ChannelFactory%601> オブジェクトを開いている場合、サービスとの間にセキュリティで保護されたセッションを確立できますが、そのぶんクライアント インスタンスの起動時間が長くなります。  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントはいくつかの呼び出しを実行してから閉じるため、通常、このような追加機能がクライアント アプリケーションに大きな影響を与えることはありません。  
+## <a name="increasing-middle-tier-client-performance"></a><span data-ttu-id="ed437-104">中間層クライアントのパフォーマンス向上</span><span class="sxs-lookup"><span data-stu-id="ed437-104">Increasing Middle-Tier Client Performance</span></span>  
+ <span data-ttu-id="ed437-105">[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] を使用する Web サービスなど従来の通信技術と比べ、豊富な機能セットを備えた [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント インスタンスの作成が複雑になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="ed437-105">Compared to previous communications technologies, such as Web services using [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], the creation of a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client instance can be more complex due to the rich feature set of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span> <span data-ttu-id="ed437-106">たとえば、<xref:System.ServiceModel.ChannelFactory%601> オブジェクトを開いている場合、サービスとの間にセキュリティで保護されたセッションを確立できますが、そのぶんクライアント インスタンスの起動時間が長くなります。</span><span class="sxs-lookup"><span data-stu-id="ed437-106">For example, when a <xref:System.ServiceModel.ChannelFactory%601> object is opened it can establish a secure session with the service, a procedure that increases the startup time for the client instance.</span></span> <span data-ttu-id="ed437-107">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントはいくつかの呼び出しを実行してから閉じるため、通常、このような追加機能がクライアント アプリケーションに大きな影響を与えることはありません。</span><span class="sxs-lookup"><span data-stu-id="ed437-107">Typically, these additional feature capabilities do not affect client applications greatly since the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client makes several calls, and then closes.</span></span>  
   
- ただし、中間層クライアント アプリケーションは、多くの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトをすばやく作成できるので、その結果、初期化要件が増加します。  サービスを呼び出すときに中間層アプリケーションのパフォーマンスを向上させる方法は主に 2 つあります。  
+ <span data-ttu-id="ed437-108">ただし、中間層クライアント アプリケーションは、多くの [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトをすばやく作成できるので、その結果、初期化要件が増加します。</span><span class="sxs-lookup"><span data-stu-id="ed437-108">Middle-tier client applications, however, can create many [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client objects quickly and, as a result, experience increased initialization requirements.</span></span> <span data-ttu-id="ed437-109">サービスを呼び出すときに中間層アプリケーションのパフォーマンスを向上させる方法は主に 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="ed437-109">There are two main approaches to increasing the performance of middle-tier applications when calling services:</span></span>  
   
--   [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトをキャッシュし、以降の呼び出しで可能であればそれを再利用します。  
+-   <span data-ttu-id="ed437-110">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント オブジェクトをキャッシュし、以降の呼び出しで可能であればそれを再利用します。</span><span class="sxs-lookup"><span data-stu-id="ed437-110">Cache the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client object and reuse it for subsequent calls where possible.</span></span>  
   
--   <xref:System.ServiceModel.ChannelFactory%601> オブジェクトを作成し、そのオブジェクトを使用して呼び出しごとに新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント チャネルを作成します。  
+-   <span data-ttu-id="ed437-111"><xref:System.ServiceModel.ChannelFactory%601> オブジェクトを作成し、そのオブジェクトを使用して呼び出しごとに新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント チャネルを作成します。</span><span class="sxs-lookup"><span data-stu-id="ed437-111">Create a <xref:System.ServiceModel.ChannelFactory%601> object and then use that object to create new [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client channel objects for each call.</span></span>  
   
- これらの方法を使用するときに検討すべきいくつかの問題があります。  
+ <span data-ttu-id="ed437-112">これらの方法を使用するときに検討すべきいくつかの問題があります。</span><span class="sxs-lookup"><span data-stu-id="ed437-112">Issues to consider when using these approaches include:</span></span>  
   
--   サービスがセッションを使用してクライアント固有の状態を維持する場合、サービスの状態が中間層クライアントの状態に関連付けられているため、クライアント層の複数の要求を持つ中間層の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを再利用することはできません。  
+-   <span data-ttu-id="ed437-113">サービスがセッションを使用してクライアント固有の状態を維持する場合、サービスの状態が中間層クライアントの状態に関連付けられているため、クライアント層の複数の要求を持つ中間層の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントを再利用することはできません。</span><span class="sxs-lookup"><span data-stu-id="ed437-113">If the service is maintaining a client-specific state by using a session, then you cannot reuse the middle-tier [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client with multiple-client tier requests because the service's state is tied to that of the middle-tier client.</span></span>  
   
--   サービスがクライアントごとに認証を実行する必要がある場合、中間層のクライアント資格情報を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント \(または <xref:System.ServiceModel.ChannelFactory%601>\) の作成後に変更できないため、中間層の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント \(または [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント チャネル オブジェクト\) を再利用するのではなく、受信要求ごとに新しいクライアントを中間層に作成する必要があります。  
+-   <span data-ttu-id="ed437-114">サービスがクライアントごとに認証を実行する必要がある場合、中間層のクライアント資格情報を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント (または [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]) の作成後に変更できないため、中間層の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント (または <xref:System.ServiceModel.ChannelFactory%601> クライアント チャネル オブジェクト) を再利用するのではなく、受信要求ごとに新しいクライアントを中間層に作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed437-114">If the service must perform authentication on a per-client basis, you must create a new client for each incoming request on the middle tier instead of reusing the middle-tier [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client (or [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client channel object) because the client credentials of the middle tier cannot be modified after the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client (or <xref:System.ServiceModel.ChannelFactory%601>) has been created.</span></span>  
   
--   チャネルにより作成されたチャネルとクライアントは、スレッド セーフですが複数のメッセージをネットワークに同時に書き込むことをサポートしていない場合があります。  大容量メッセージ \(特にストリーミング\) を送信すると、送信操作はブロックされ別の送信が完了するまで待機する場合があります。  チャネルを再利用するサービスに制御フローが戻った場合、これにより、同時性の欠如とデッドロックの可能性という 2 種類の問題が発生します \(つまり、共有クライアントがサービスを呼び出すと、そのコード パスは結果的に共有クライアントにコールバックします\)。  これは、再利用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの型には左右されません。  
+-   <span data-ttu-id="ed437-115">チャネルにより作成されたチャネルとクライアントは、スレッド セーフですが複数のメッセージをネットワークに同時に書き込むことをサポートしていない場合があります。</span><span class="sxs-lookup"><span data-stu-id="ed437-115">While channels and clients created by the channels are thread-safe, they might not support writing more than one message to the wire concurrently.</span></span> <span data-ttu-id="ed437-116">大容量メッセージ (特にストリーミング) を送信すると、送信操作はブロックされ別の送信が完了するまで待機する場合があります。</span><span class="sxs-lookup"><span data-stu-id="ed437-116">If you are sending large messages, particularly if streaming, the send operation might block waiting for another send to complete.</span></span> <span data-ttu-id="ed437-117">チャネルを再利用するサービスに制御フローが戻った場合、これにより、同時性の欠如とデッドロックの可能性という 2 種類の問題が発生します (つまり、共有クライアントがサービスを呼び出すと、そのコード パスは結果的に共有クライアントにコールバックします)。</span><span class="sxs-lookup"><span data-stu-id="ed437-117">This causes two sorts of problems: a lack of concurrency and the possibility of deadlock if the flow of control returns to the service reusing the channel (that is, the shared client calls a service whose code path results in a callback to the shared client).</span></span> <span data-ttu-id="ed437-118">これは、再利用する [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの型には左右されません。</span><span class="sxs-lookup"><span data-stu-id="ed437-118">This is true regardless of the type of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client you reuse.</span></span>  
   
--   チャネルを共有しているかどうかに関係なく、エラーの発生したチャネルを処理する必要があります。  ただし、チャネルを再利用するときに、エラーの発生しているチャネルは複数の保留中の要求を削除するか送信することができます。  
+-   <span data-ttu-id="ed437-119">チャネルを共有しているかどうかに関係なく、エラーの発生したチャネルを処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed437-119">You must handle faulted channels regardless of whether you share the channel.</span></span> <span data-ttu-id="ed437-120">ただし、チャネルを再利用するときに、エラーの発生しているチャネルは複数の保留中の要求を削除するか送信することができます。</span><span class="sxs-lookup"><span data-stu-id="ed437-120">When channels are reused, however, a faulting channel can take down more than one pending request or send.</span></span>  
   
- 複数の要求に対してクライアントを再利用するためのベスト プラクティスが示された例については、「[ASP.NET クライアントでのデータ バインディング](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md)」を参照してください。  
+ <span data-ttu-id="ed437-121">複数の要求用のクライアントを再利用するためのベスト プラクティスを示す例を次を参照してください。 [ASP.NET クライアントでのデータ バインディング](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md)です。</span><span class="sxs-lookup"><span data-stu-id="ed437-121">For an example that demonstrates best practices for reusing a client for multiple requests, see [Data Binding in an ASP.NET Client](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md).</span></span>  
   
- さらに、<xref:System.Xml.Serialization.XmlSerializer> を使用してシリアル化できるデータ型を使用するクライアントの起動時のパフォーマンスを向上したり、実行時にこのようなデータ型のシリアル化コードを生成およびコンパイルしたりできます \(この場合、起動時のパフォーマンスが低下することがあります\)。  [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を使用すると、必要なシリアル化コードをアプリケーションのコンパイル済みアセンブリから生成することで、このようなアプリケーションの起動時のパフォーマンスを改善できます。  詳細については、「[方法 : XmlSerializer を使用する WCF クライアント アプリケーションの起動時間を短縮する](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)」を参照してください。  
+ <span data-ttu-id="ed437-122">さらに、<xref:System.Xml.Serialization.XmlSerializer> を使用してシリアル化できるデータ型を使用するクライアントの起動時のパフォーマンスを向上したり、実行時にこのようなデータ型のシリアル化コードを生成およびコンパイルしたりできます (この場合、起動時のパフォーマンスが低下することがあります)。</span><span class="sxs-lookup"><span data-stu-id="ed437-122">In addition, you can increase the startup performance for those clients that use data types that are serializable using the <xref:System.Xml.Serialization.XmlSerializer> generate and compile serialization code for those data types at runtime, which can result in slow start-up performance.</span></span> <span data-ttu-id="ed437-123">[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)アプリケーションのコンパイル済みアセンブリから、必要なシリアル化コードを生成することによってこれらのアプリケーションの起動時のパフォーマンスを向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="ed437-123">The [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) can improve start-up performance for these applications by generating the necessary serialization code from the compiled assemblies for the application.</span></span> <span data-ttu-id="ed437-124">詳細については、次を参照してください。[する方法: スタートアップ時間の WCF クライアント アプリケーション、XmlSerializer を使用してを向上させる](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)です。</span><span class="sxs-lookup"><span data-stu-id="ed437-124">For more information, see [How to: Improve the Startup Time of WCF Client Applications using the XmlSerializer](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).</span></span>  
   
-## 参照  
- [WCF クライアントを使用したサービスへのアクセス](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)
+## <a name="see-also"></a><span data-ttu-id="ed437-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="ed437-125">See Also</span></span>  
+ [<span data-ttu-id="ed437-126">WCF クライアントを使用したサービスへのアクセス</span><span class="sxs-lookup"><span data-stu-id="ed437-126">Accessing Services Using a WCF Client</span></span>](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)

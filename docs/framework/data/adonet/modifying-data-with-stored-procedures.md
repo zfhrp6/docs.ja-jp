@@ -1,29 +1,35 @@
 ---
-title: "ストアド プロシージャでのデータの変更 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ストアド プロシージャでのデータの変更"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 7d8e9a46-1af6-4a02-bf61-969d77ae07e0
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 1f8f0c37e5ac84d878f1d443d2bcc1e8ded099a6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ストアド プロシージャでのデータの変更
-ストアド プロシージャは、入力パラメーターとしてデータを受け取り、出力パラメーター、結果セット、または戻り値としてデータを返すことができます。  以下のサンプルでは、入力パラメーター、出力パラメーター、および戻り値が ADO.NET によってどのようにやり取りされるかを示したものです。  この例では、主キー列が SQL Server データベースの ID 列であるテーブルに新しいレコードを挿入しています。  
+# <a name="modifying-data-with-stored-procedures"></a><span data-ttu-id="70dcf-102">ストアド プロシージャでのデータの変更</span><span class="sxs-lookup"><span data-stu-id="70dcf-102">Modifying Data with Stored Procedures</span></span>
+<span data-ttu-id="70dcf-103">ストアド プロシージャは、入力パラメーターとしてデータを受け取り、出力パラメーター、結果セット、または戻り値としてデータを返すことができます。</span><span class="sxs-lookup"><span data-stu-id="70dcf-103">Stored procedures can accept data as input parameters and can return data as output parameters, result sets, or return values.</span></span> <span data-ttu-id="70dcf-104">以下のサンプルでは、入力パラメーター、出力パラメーター、および戻り値が ADO.NET によってどのようにやり取りされるかを示したものです。</span><span class="sxs-lookup"><span data-stu-id="70dcf-104">The sample below illustrates how ADO.NET sends and receives input parameters, output parameters, and return values.</span></span> <span data-ttu-id="70dcf-105">この例では、主キー列が SQL Server データベースの ID 列であるテーブルに新しいレコードを挿入しています。</span><span class="sxs-lookup"><span data-stu-id="70dcf-105">The example inserts a new record into a table where the primary key column is an identity column in a SQL Server database.</span></span>  
   
 > [!NOTE]
->  SQL Server のストアド プロシージャで、<xref:System.Data.SqlClient.SqlDataAdapter> を使用してデータを編集または削除する場合、ストアド プロシージャの定義に SET NOCOUNT ON は使用しないでください。  処理された行数がゼロとして返され、`DataAdapter` によって同時実行の競合として解釈されてしまいます。  この場合、<xref:System.Data.DBConcurrencyException> がスローされます。  
+>  <span data-ttu-id="70dcf-106">SQL Server のストアド プロシージャで、<xref:System.Data.SqlClient.SqlDataAdapter> を使用してデータを編集または削除する場合、ストアド プロシージャの定義に SET NOCOUNT ON は使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="70dcf-106">If you are using SQL Server stored procedures to edit or delete data using a <xref:System.Data.SqlClient.SqlDataAdapter>, make sure that you do not use SET NOCOUNT ON in the stored procedure definition.</span></span> <span data-ttu-id="70dcf-107">処理された行数がゼロとして返され、`DataAdapter` によって同時実行の競合として解釈されてしまいます。</span><span class="sxs-lookup"><span data-stu-id="70dcf-107">This causes the rows affected count returned to be zero, which the `DataAdapter` interprets as a concurrency conflict.</span></span> <span data-ttu-id="70dcf-108">この場合、<xref:System.Data.DBConcurrencyException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="70dcf-108">In this event, a <xref:System.Data.DBConcurrencyException> will be thrown.</span></span>  
   
-## 例  
- この例では、次のストアド プロシージャを使用して、**Northwind** **Categories** テーブルに新しいカテゴリを挿入します。  このストアド プロシージャは **CategoryName** 列の値を入力パラメーターとして受け取り、SCOPE\_IDENTITY\(\) 関数を使用して ID フィールド **CategoryID** の新しい値を取得し、その値を出力パラメーター内に返します。  RETURN ステートメントは、@@ROWCOUNT 関数を使用して、挿入された行の数を返します。  
+## <a name="example"></a><span data-ttu-id="70dcf-109">例</span><span class="sxs-lookup"><span data-stu-id="70dcf-109">Example</span></span>  
+ <span data-ttu-id="70dcf-110">このサンプルでは、次のストアド プロシージャを使用してに新しいカテゴリを挿入、 **Northwind** **カテゴリ**テーブル。</span><span class="sxs-lookup"><span data-stu-id="70dcf-110">The sample uses the following stored procedure to insert a new category into the **Northwind** **Categories** table.</span></span> <span data-ttu-id="70dcf-111">ストアド プロシージャ値を受け取り、 **CategoryName** 、SCOPE_IDENTITY() を使用して、入力パラメーターとして列が id フィールドの新しい値を取得する関数**CategoryID**、返す出力パラメーターです。</span><span class="sxs-lookup"><span data-stu-id="70dcf-111">The stored procedure takes the value in the **CategoryName** column as an input parameter and uses the SCOPE_IDENTITY() function to retrieve the new value of the identity field, **CategoryID**, and return it in an output parameter.</span></span> <span data-ttu-id="70dcf-112">RETURN ステートメントを使用して、@@ROWCOUNT挿入された行の数を返す関数。</span><span class="sxs-lookup"><span data-stu-id="70dcf-112">The RETURN statement uses the @@ROWCOUNT function to return the number of rows inserted.</span></span>  
   
 ```  
 CREATE PROCEDURE dbo.InsertCategory  
@@ -35,16 +41,16 @@ SET @Identity = SCOPE_IDENTITY()
 RETURN @@ROWCOUNT  
 ```  
   
- 上述の `InsertCategory` ストアド プロシージャを <xref:System.Data.SqlClient.SqlDataAdapter> の <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> のソースとして使用する例を次に示します。  `@Identity` 出力パラメーターは、<xref:System.Data.SqlClient.SqlDataAdapter> の `Update` メソッドが呼び出され、データベースにレコードが挿入された後で <xref:System.Data.DataSet> に反映されます。  戻り値も取得されます。  
+ <span data-ttu-id="70dcf-113">上述の `InsertCategory` ストアド プロシージャを <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> の <xref:System.Data.SqlClient.SqlDataAdapter> のソースとして使用する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="70dcf-113">The following code example uses the `InsertCategory` stored procedure shown above as the source for the <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> of the <xref:System.Data.SqlClient.SqlDataAdapter>.</span></span> <span data-ttu-id="70dcf-114">`@Identity` 出力パラメーターは、<xref:System.Data.DataSet> の `Update` メソッドが呼び出され、データベースにレコードが挿入された後で <xref:System.Data.SqlClient.SqlDataAdapter> に反映されます。</span><span class="sxs-lookup"><span data-stu-id="70dcf-114">The `@Identity` output parameter will be reflected in the <xref:System.Data.DataSet> after the record has been inserted into the database when the `Update` method of the <xref:System.Data.SqlClient.SqlDataAdapter> is called.</span></span> <span data-ttu-id="70dcf-115">戻り値も取得されます。</span><span class="sxs-lookup"><span data-stu-id="70dcf-115">The code also retrieves the return value.</span></span>  
   
 > [!NOTE]
->  <xref:System.Data.OleDb.OleDbDataAdapter> を使用する場合、**ReturnValue** の <xref:System.Data.ParameterDirection> を含むパラメーターを他のパラメーターより先に指定する必要があります。  
+>  <span data-ttu-id="70dcf-116">使用する場合、<xref:System.Data.OleDb.OleDbDataAdapter>を持つパラメーターを指定する必要があります、<xref:System.Data.ParameterDirection>の**ReturnValue**他のパラメーターの前にします。</span><span class="sxs-lookup"><span data-stu-id="70dcf-116">When using the <xref:System.Data.OleDb.OleDbDataAdapter>, you must specify parameters with a <xref:System.Data.ParameterDirection> of **ReturnValue** before the other parameters.</span></span>  
   
  [!code-csharp[DataWorks SqlClient.SprocIdentityReturn#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.SprocIdentityReturn/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.SprocIdentityReturn#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.SprocIdentityReturn/VB/source.vb#1)]  
   
-## 参照  
- [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)   
- [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [コマンドの実行](../../../../docs/framework/data/adonet/executing-a-command.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="70dcf-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="70dcf-117">See Also</span></span>  
+ [<span data-ttu-id="70dcf-118">ADO.NET でのデータの取得および変更</span><span class="sxs-lookup"><span data-stu-id="70dcf-118">Retrieving and Modifying Data in ADO.NET</span></span>](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [<span data-ttu-id="70dcf-119">Dataadapter と Datareader</span><span class="sxs-lookup"><span data-stu-id="70dcf-119">DataAdapters and DataReaders</span></span>](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [<span data-ttu-id="70dcf-120">コマンドの実行</span><span class="sxs-lookup"><span data-stu-id="70dcf-120">Executing a Command</span></span>](../../../../docs/framework/data/adonet/executing-a-command.md)  
+ [<span data-ttu-id="70dcf-121">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="70dcf-121">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,31 +1,36 @@
 ---
-title: "&lt;httpTransport&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: '&lt;httpTransport&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8b30c065-b32a-4fa3-8eb4-5537a9c6b897
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6aacdb254b12e5c1b344b43c2fbf2e94681c1f6f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;httpTransport&gt;
-カスタム バインディングの SOAP メッセージを送信する HTTP トランスポートを指定します。  
+# <a name="lthttptransportgt"></a><span data-ttu-id="a4fae-102">&lt;httpTransport&gt;</span><span class="sxs-lookup"><span data-stu-id="a4fae-102">&lt;httpTransport&gt;</span></span>
+<span data-ttu-id="a4fae-103">カスタム バインドの SOAP メッセージを送信する HTTP トランスポートを指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-103">Specifies an HTTP transport for transmitting SOAP messages for a custom binding.</span></span>  
   
-## 構文  
+ <span data-ttu-id="a4fae-104">\<system.serviceModel ></span><span class="sxs-lookup"><span data-stu-id="a4fae-104">\<system.serviceModel></span></span>  
+<span data-ttu-id="a4fae-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="a4fae-105">\<bindings></span></span>  
+<span data-ttu-id="a4fae-106">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="a4fae-106">\<customBinding></span></span>  
+<span data-ttu-id="a4fae-107">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="a4fae-107">\<binding></span></span>  
+<span data-ttu-id="a4fae-108">\<httpTransport ></span><span class="sxs-lookup"><span data-stu-id="a4fae-108">\<httpTransport></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="a4fae-109">構文</span><span class="sxs-lookup"><span data-stu-id="a4fae-109">Syntax</span></span>  
   
+```xml  
 <httpTransport  
     allowCookies=Boolean"  
     authenticationScheme="Digest/Negotiate/Ntlm/Basic/Anonymous"  
@@ -42,46 +47,46 @@ IntegratedWindowsAuthentication: Specifies Windows authentication"
         useDefaultWebProxy="Boolean" />  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="a4fae-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="a4fae-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="a4fae-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="a4fae-112">属性</span><span class="sxs-lookup"><span data-stu-id="a4fae-112">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|allowCookies|クライアントがクッキーを受け入れて、それらを今後の要求に反映させるかどうかを指定するブール値です。  既定値は、`false` です。<br /><br /> この属性はクッキーを使用する ASMX Web サービスと対話する場合に使用できます。  この方法で、サーバーから返されるクッキーを、それ以降のサービスに対するすべてのクライアント要求に自動的にコピーできます。|  
-|authenticationScheme|HTTP リスナーにより処理されているクライアント要求の認証に使用するプロトコルを指定します。  以下の値が有効です。<br /><br /> -   Digest: ダイジェスト認証を指定します。<br />-   Negotiate: クライアントとネゴシエートし、認証方式を決定します。  クライアントとサーバーの両方が Kerberos をサポートする場合は、この方式が使用されます。それ以外の場合は NTLM が使用されます。<br />-   Ntlm: NTLM 認証を指定します。<br />-   Basic: 基本認証を指定します。<br />-   Anonymous: 匿名認証を指定します。<br /><br /> 既定は Anonymous です。  この属性は <xref:System.Net.AuthenticationSchemes> 型です。  この属性は 1 回だけ設定できます。|  
-|bypassProxyOnLocal|ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示すブール値。  既定値は、`false` です。<br /><br /> ローカル アドレスは、ローカル LAN またはイントラネット上にあるアドレスです。<br /><br /> [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は、サービス アドレスが http:\/\/localhost で始まる場合は常にプロキシを無視します。<br /><br /> クライアントが同じマシン上のサービスと対話するときにプロキシを経由させる場合は、localhost ではなくホスト名を使用する必要があります。|  
-|hostnameComparisonMode|URI の解析に使用する HTTP ホスト名比較モードを指定します。  有効な値は次のとおりです。<br /><br /> -   StrongWildcard: \("\+"\) は、指定されたスキーム、ポート、および相対 URI のコンテキストで存在するすべてのホスト名に一致します。<br />-   Exact: ワイルドカードなし。<br />-   WeakWildcard: \("\*"\) は、StrongWildcard ではっきりとは一致しない、指定されたスキーム、ポート、および相対 URI のコンテキストで存在するすべてのホスト名に一致します。<br /><br /> 既定値は StrongWildcard です。  この属性は <xref:System.ServiceModel.HostnameComparisonMode> 型です。|  
-|keepAliveEnabled|インターネット リソースへの永続的な接続を行うかどうかを示すブール値。|  
-|maxBufferSize|バッファーの最大サイズを指定する正の整数です。  既定値は 524288 です|  
-|proxyAddress|HTTP プロキシのアドレスを指定する URI。  `useSystemWebProxy` が `true` の場合、この設定を `null` にする必要があります。  既定値は、`null` です。|  
-|proxyAuthenticationScheme|HTTP プロキシにより処理されているクライアント要求の認証に使用するプロトコルを指定します。  以下の値が有効です。<br /><br /> -   None: 認証は実行されません。<br />-   Digest: ダイジェスト認証を指定します。<br />-   Negotiate: クライアントとネゴシエートし、認証方式を決定します。  クライアントとサーバーの両方が Kerberos をサポートする場合は、この方式が使用されます。それ以外の場合は NTLM が使用されます。<br />-   Ntlm: NTLM 認証を指定します。<br />-   Basic: 基本認証を指定します。<br />-   Anonymous: 匿名認証を指定します。<br />-   IntegratedWindowsAuthentication: Windows 認証を指定します。<br /><br /> 既定は Anonymous です。  この属性は <xref:System.Net.AuthenticationSchemes> 型です。|  
-|realm|プロキシおよびサーバーで使用するレルムを指定する文字列です。  既定値は空の文字列です。<br /><br /> サーバーは、レルムを使用して、保護されたリソースをパーティションに分割します。  パーティションごとに、独自の認証方式と承認データベースの両方、またはそのいずれかを指定できます。  レルムは、基本認証およびダイジェスト認証だけに使用されます。  クライアントが正常に認証されると、その認証は特定のレルムのすべてのリソースに対して有効となります。  レルムの詳細については、http:\/\/www.ietf.org の RFC 2617 を参照してください。|  
-|transferMode|メッセージが要求や応答をバッファーするか、ストリーミングするかを指定します。  以下の値が有効です。<br /><br /> -   Buffered: 要求メッセージと応答メッセージをバッファーします。<br />-   Streamed: 要求メッセージと応答メッセージをストリーミングします。<br />-   StreamedRequest: 要求メッセージをストリーミングし、応答メッセージをバッファーします。<br />-   StreamedResponse: 要求メッセージをバッファーし、応答メッセージをストリーミングします。<br /><br /> 既定値はバッファーです。  この属性は <xref:System.ServiceModel.TransferMode> 型です。|  
-|unsafeConnectionNtlmAuthentication|サーバー上で安全ではない接続共有を有効にするかどうかを指定するブール値です。  既定値は、`false` です。  有効な場合、NTLM 認証は、TCP 接続ごとに 1 回実行されます。|  
-|useDefaultWebProxy|ユーザー固有の設定ではなく、コンピューター全体のプロキシ設定を使用するかどうかを指定するブール値です。  既定値は、`true` です。|  
+|<span data-ttu-id="a4fae-113">属性</span><span class="sxs-lookup"><span data-stu-id="a4fae-113">Attribute</span></span>|<span data-ttu-id="a4fae-114">説明</span><span class="sxs-lookup"><span data-stu-id="a4fae-114">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="a4fae-115">allowCookies</span><span class="sxs-lookup"><span data-stu-id="a4fae-115">allowCookies</span></span>|<span data-ttu-id="a4fae-116">クライアントがクッキーを受け入れて、それらを今後の要求に反映させるかどうかを指定するブール値です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-116">A Boolean value that specifies whether the client accepts cookies and propagates them on future requests.</span></span> <span data-ttu-id="a4fae-117">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-117">The default is `false`.</span></span><br /><br /> <span data-ttu-id="a4fae-118">この属性はクッキーを使用する ASMX Web サービスと対話する場合に使用できます。</span><span class="sxs-lookup"><span data-stu-id="a4fae-118">You can use this attribute when you interact with ASMX Web services that use cookies.</span></span> <span data-ttu-id="a4fae-119">この方法で、サーバーから返されるクッキーを、それ以降のサービスに対するすべてのクライアント要求に自動的にコピーできます。</span><span class="sxs-lookup"><span data-stu-id="a4fae-119">In this way, you can be sure that the cookies returned from the server are automatically copied to all future client requests for that service.</span></span>|  
+|<span data-ttu-id="a4fae-120">authenticationScheme</span><span class="sxs-lookup"><span data-stu-id="a4fae-120">authenticationScheme</span></span>|<span data-ttu-id="a4fae-121">HTTP リスナーにより処理されているクライアント要求の認証に使用するプロトコルを指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-121">Specifies the protocol used to authenticate client requests being processed by an HTTP listener.</span></span> <span data-ttu-id="a4fae-122">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-122">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="a4fae-123">-Digest: ダイジェスト認証を指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-123">-   Digest: Specifies digest authentication.</span></span><br /><span data-ttu-id="a4fae-124">-Negotiate: クライアントとネゴシエートし認証方式を決定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-124">-   Negotiate: Negotiates with the client to determine the authentication scheme.</span></span> <span data-ttu-id="a4fae-125">クライアントとサーバーの両方が Kerberos をサポートする場合は、この方式が使用されます。それ以外の場合は NTLM が使用されます。</span><span class="sxs-lookup"><span data-stu-id="a4fae-125">If both client and server support Kerberos, it is used; otherwise, NTLM is used.</span></span><br /><span data-ttu-id="a4fae-126">-Ntlm: NTLM 認証を指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-126">-   Ntlm: Specifies NTLM authentication.</span></span><br /><span data-ttu-id="a4fae-127">-基本: は、基本認証を指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-127">-   Basic: Specifies basic authentication.</span></span><br /><span data-ttu-id="a4fae-128">-Anonymous: 匿名認証を指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-128">-   Anonymous: Specifies anonymous authentication.</span></span><br /><br /> <span data-ttu-id="a4fae-129">既定は Anonymous です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-129">The default is Anonymous.</span></span> <span data-ttu-id="a4fae-130">この属性は <xref:System.Net.AuthenticationSchemes> 型です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-130">This attribute is of type <xref:System.Net.AuthenticationSchemes>.</span></span> <span data-ttu-id="a4fae-131">この属性は 1 回だけ設定できます。</span><span class="sxs-lookup"><span data-stu-id="a4fae-131">This attribute can only be set once.</span></span>|  
+|<span data-ttu-id="a4fae-132">bypassProxyOnLocal</span><span class="sxs-lookup"><span data-stu-id="a4fae-132">bypassProxyOnLocal</span></span>|<span data-ttu-id="a4fae-133">ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示すブール値。</span><span class="sxs-lookup"><span data-stu-id="a4fae-133">A Boolean value that indicates whether to bypass the proxy server for local addresses.</span></span> <span data-ttu-id="a4fae-134">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-134">The default is `false`.</span></span><br /><br /> <span data-ttu-id="a4fae-135">ローカル アドレスは、ローカル LAN またはイントラネット上にあるアドレスです。</span><span class="sxs-lookup"><span data-stu-id="a4fae-135">A local address is one that is on the local LAN or intranet.</span></span><br /><br /> [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]<span data-ttu-id="a4fae-136"> は、サービス アドレスが http://localhost で始まる場合は常にプロキシを無視します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-136"> always ignores the proxy if the service address begins with http://localhost.</span></span><br /><br /> <span data-ttu-id="a4fae-137">クライアントが同じマシン上のサービスと対話するときにプロキシを経由させる場合は、localhost ではなくホスト名を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a4fae-137">You should use the host name rather than localhost if you want clients to go through a proxy when talking to services on the same machine.</span></span>|  
+|<span data-ttu-id="a4fae-138">hostnameComparisonMode</span><span class="sxs-lookup"><span data-stu-id="a4fae-138">hostnameComparisonMode</span></span>|<span data-ttu-id="a4fae-139">URI の解析に使用する HTTP ホスト名比較モードを指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-139">Specifies the HTTP hostname comparison mode used to parse URIs.</span></span> <span data-ttu-id="a4fae-140">有効な値は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a4fae-140">Valid values are,</span></span><br /><br /> <span data-ttu-id="a4fae-141">-StrongWildcard: (「+」)、指定されたスキーム、ポートと相対 URI のコンテキストですべてのホスト名に一致します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-141">-   StrongWildcard: ("+") matches all possible hostnames in the context of the specified scheme, port and relative URI.</span></span><br /><span data-ttu-id="a4fae-142">厳密: ワイルドカードは使用できません。</span><span class="sxs-lookup"><span data-stu-id="a4fae-142">-   Exact: no wildcards</span></span><br /><span data-ttu-id="a4fae-143">-WeakWildcard: ("*") または厳密なワイルドカードのメカニズムにより、指定されたスキーム、ポートと対応していない明示的に相対の UIR のコンテキストですべての可能なホスト名と一致します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-143">-   WeakWildcard: ("*") matches all possible hostname in the context of the specified scheme, port and relative UIR that have not been matched explicitly or through the strong wildcard mechanism.</span></span><br /><br /> <span data-ttu-id="a4fae-144">既定値は StrongWildcard です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-144">The default is StrongWildcard.</span></span> <span data-ttu-id="a4fae-145">この属性は `System.ServiceModel.HostnameComparisonMode` 型です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-145">This attribute is of type `System.ServiceModel.HostnameComparisonMode`.</span></span>|  
+|<span data-ttu-id="a4fae-146">keepAliveEnabled</span><span class="sxs-lookup"><span data-stu-id="a4fae-146">keepAliveEnabled</span></span>|<span data-ttu-id="a4fae-147">インターネット リソースへの永続的な接続を行うかどうかを示すブール値。</span><span class="sxs-lookup"><span data-stu-id="a4fae-147">A Boolean value that specifies whether to make a persistent connection to the internet resource.</span></span>|  
+|<span data-ttu-id="a4fae-148">maxBufferSize</span><span class="sxs-lookup"><span data-stu-id="a4fae-148">maxBufferSize</span></span>|<span data-ttu-id="a4fae-149">バッファーの最大サイズを指定する正の整数です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-149">A positive integer that specifies the maximum size of the buffer.</span></span> <span data-ttu-id="a4fae-150">既定値は 524288 です</span><span class="sxs-lookup"><span data-stu-id="a4fae-150">The default is 524288</span></span>|  
+|<span data-ttu-id="a4fae-151">proxyAddress</span><span class="sxs-lookup"><span data-stu-id="a4fae-151">proxyAddress</span></span>|<span data-ttu-id="a4fae-152">HTTP プロキシのアドレスを指定する URI。</span><span class="sxs-lookup"><span data-stu-id="a4fae-152">A URI that specifies the address of the HTTP proxy.</span></span> <span data-ttu-id="a4fae-153">`useSystemWebProxy` が `true` の場合、この設定を `null` にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="a4fae-153">If `useSystemWebProxy` is `true`, this setting must be `null`.</span></span> <span data-ttu-id="a4fae-154">既定値は、`null` です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-154">The default is `null`.</span></span>|  
+|<span data-ttu-id="a4fae-155">proxyAuthenticationScheme</span><span class="sxs-lookup"><span data-stu-id="a4fae-155">proxyAuthenticationScheme</span></span>|<span data-ttu-id="a4fae-156">HTTP プロキシにより処理されているクライアント要求の認証に使用するプロトコルを指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-156">Specifies the protocol used for authenticating client requests being processed by an HTTP proxy.</span></span> <span data-ttu-id="a4fae-157">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-157">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="a4fae-158">-None: 認証は実行されません。</span><span class="sxs-lookup"><span data-stu-id="a4fae-158">-   None: No authentication is performed.</span></span><br /><span data-ttu-id="a4fae-159">-Digest: ダイジェスト認証を指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-159">-   Digest: Specifies digest authentication.</span></span><br /><span data-ttu-id="a4fae-160">-Negotiate: クライアントとネゴシエートし認証方式を決定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-160">-   Negotiate: Negotiates with the client to determine the authentication scheme.</span></span> <span data-ttu-id="a4fae-161">クライアントとサーバーの両方が Kerberos をサポートする場合は、この方式が使用されます。それ以外の場合は NTLM が使用されます。</span><span class="sxs-lookup"><span data-stu-id="a4fae-161">If both client and server support Kerberos, it is used; otherwise, NTLM is used.</span></span><br /><span data-ttu-id="a4fae-162">-Ntlm: NTLM 認証を指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-162">-   Ntlm: Specifies NTLM authentication.</span></span><br /><span data-ttu-id="a4fae-163">-基本: は、基本認証を指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-163">-   Basic: Specifies basic authentication.</span></span><br /><span data-ttu-id="a4fae-164">-Anonymous: 匿名認証を指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-164">-   Anonymous: Specifies anonymous authentication.</span></span><br /><span data-ttu-id="a4fae-165">-IntegratedWindowsAuthentication: Windows 認証を指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-165">-   IntegratedWindowsAuthentication: Specifies Windows authentication.</span></span><br /><br /> <span data-ttu-id="a4fae-166">既定は Anonymous です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-166">The default is Anonymous.</span></span> <span data-ttu-id="a4fae-167">この属性は <xref:System.Net.AuthenticationSchemes> 型です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-167">This attribute is of type <xref:System.Net.AuthenticationSchemes>.</span></span>|  
+|<span data-ttu-id="a4fae-168">realm</span><span class="sxs-lookup"><span data-stu-id="a4fae-168">realm</span></span>|<span data-ttu-id="a4fae-169">プロキシおよびサーバーで使用するレルムを指定する文字列です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-169">A string that specifies the realm to use on the proxy/server.</span></span> <span data-ttu-id="a4fae-170">既定値は空の文字列です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-170">The default is an empty string.</span></span><br /><br /> <span data-ttu-id="a4fae-171">サーバーは、レルムを使用して、保護されたリソースをパーティションに分割します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-171">Servers use realms to partition protected resources.</span></span> <span data-ttu-id="a4fae-172">パーティションごとに、独自の認証方式と承認データベースの両方、またはそのいずれかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="a4fae-172">Each partition can have its own authentication scheme and/or authorization database.</span></span> <span data-ttu-id="a4fae-173">レルムは、基本認証およびダイジェスト認証だけに使用されます。</span><span class="sxs-lookup"><span data-stu-id="a4fae-173">Realms are used only for basic and digest authentication.</span></span> <span data-ttu-id="a4fae-174">クライアントが正常に認証されると、その認証は特定のレルムのすべてのリソースに対して有効となります。</span><span class="sxs-lookup"><span data-stu-id="a4fae-174">After a client successfully authenticates, the authentication is valid for all resources in a given realm.</span></span> <span data-ttu-id="a4fae-175">レルムの詳細については、http://www.ietf.org の RFC 2617 を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a4fae-175">For a detailed description of realms, see RFC 2617 at http://www.ietf.org.</span></span>|  
+|<span data-ttu-id="a4fae-176">transferMode</span><span class="sxs-lookup"><span data-stu-id="a4fae-176">transferMode</span></span>|<span data-ttu-id="a4fae-177">メッセージが要求や応答をバッファーするか、ストリーミングするかを指定します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-177">Specifies whether messages are buffered or streamed or a request or response.</span></span> <span data-ttu-id="a4fae-178">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-178">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="a4fae-179">-Buffered: 要求および応答メッセージをバッファーします。</span><span class="sxs-lookup"><span data-stu-id="a4fae-179">-   Buffered: The request and response messages are buffered.</span></span><br /><span data-ttu-id="a4fae-180">ストリーミングを使用: 要求および応答メッセージをストリーミングします。</span><span class="sxs-lookup"><span data-stu-id="a4fae-180">-   Streamed: The request and response messages are streamed.</span></span><br /><span data-ttu-id="a4fae-181">-StreamedRequest: 要求メッセージをストリーミングし、応答メッセージをバッファーします。</span><span class="sxs-lookup"><span data-stu-id="a4fae-181">-   StreamedRequest: The request message is streamed and the response message is buffered.</span></span><br /><span data-ttu-id="a4fae-182">-StreamedResponse: 要求メッセージをバッファーし、応答メッセージをストリーミングします。</span><span class="sxs-lookup"><span data-stu-id="a4fae-182">-   StreamedResponse: The request message is buffered and the response message is streamed.</span></span><br /><br /> <span data-ttu-id="a4fae-183">既定値はバッファーです。</span><span class="sxs-lookup"><span data-stu-id="a4fae-183">The default is Buffered.</span></span> <span data-ttu-id="a4fae-184">この属性は <xref:System.ServiceModel.TransferMode> 型です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-184">This attribute is of type <xref:System.ServiceModel.TransferMode> .</span></span>|  
+|<span data-ttu-id="a4fae-185">unsafeConnectionNtlmAuthentication</span><span class="sxs-lookup"><span data-stu-id="a4fae-185">unsafeConnectionNtlmAuthentication</span></span>|<span data-ttu-id="a4fae-186">サーバー上で安全ではない接続共有を有効にするかどうかを指定するブール値です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-186">A Boolean value that specifies whether Unsafe Connection Sharing is enabled on the server.</span></span> <span data-ttu-id="a4fae-187">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-187">The default is `false`.</span></span> <span data-ttu-id="a4fae-188">有効な場合、NTLM 認証は、TCP 接続ごとに 1 回実行されます。</span><span class="sxs-lookup"><span data-stu-id="a4fae-188">If enabled, NTLM authentication is performed once on each TCP connection.</span></span>|  
+|<span data-ttu-id="a4fae-189">useDefaultWebProxy</span><span class="sxs-lookup"><span data-stu-id="a4fae-189">useDefaultWebProxy</span></span>|<span data-ttu-id="a4fae-190">ユーザー固有の設定ではなく、コンピューター全体のプロキシ設定を使用するかどうかを指定するブール値です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-190">A Boolean value that specifies whether the machine-wide proxy settings are used rather than the user specific settings.</span></span> <span data-ttu-id="a4fae-191">既定値は、`true` です。</span><span class="sxs-lookup"><span data-stu-id="a4fae-191">The default is `true`.</span></span>|  
   
-### 子要素  
- なし  
+### <a name="child-elements"></a><span data-ttu-id="a4fae-192">子要素</span><span class="sxs-lookup"><span data-stu-id="a4fae-192">Child Elements</span></span>  
+ <span data-ttu-id="a4fae-193">なし</span><span class="sxs-lookup"><span data-stu-id="a4fae-193">None</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="a4fae-194">親要素</span><span class="sxs-lookup"><span data-stu-id="a4fae-194">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<binding\>](../../../../../docs/framework/misc/binding.md)|カスタム バインドのすべてのバインド機能を定義します。|  
+|<span data-ttu-id="a4fae-195">要素</span><span class="sxs-lookup"><span data-stu-id="a4fae-195">Element</span></span>|<span data-ttu-id="a4fae-196">説明</span><span class="sxs-lookup"><span data-stu-id="a4fae-196">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="a4fae-197">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="a4fae-197">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)|<span data-ttu-id="a4fae-198">カスタム バインドのすべてのバインド機能を定義します。</span><span class="sxs-lookup"><span data-stu-id="a4fae-198">Defines all binding capabilities of the custom binding.</span></span>|  
   
-## 解説  
- `httpTransport` 要素は、HTTP トランスポート プロトコルを実装するカスタム バインディングを作成する場合の開始点となります。  HTTP は、相互運用性のために使用される主要なトランスポートです。  [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は、他の非 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] Web サービス スタックとの相互運用性を保証するために、このトランスポートをサポートします。  
+## <a name="remarks"></a><span data-ttu-id="a4fae-199">コメント</span><span class="sxs-lookup"><span data-stu-id="a4fae-199">Remarks</span></span>  
+ <span data-ttu-id="a4fae-200">`httpTransport` 要素は、HTTP トランスポート プロトコルを実装するカスタム バインディングを作成する場合の開始点となります。</span><span class="sxs-lookup"><span data-stu-id="a4fae-200">The `httpTransport` element is the starting point for creating a custom binding that implements the HTTP transport protocol.</span></span> <span data-ttu-id="a4fae-201">HTTP は、相互運用性のために使用される主要なトランスポートです。</span><span class="sxs-lookup"><span data-stu-id="a4fae-201">HTTP is the primary transport used for interoperability purposes.</span></span> <span data-ttu-id="a4fae-202">[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] は、他の非 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] Web サービス スタックとの相互運用性を保証するために、このトランスポートをサポートします。</span><span class="sxs-lookup"><span data-stu-id="a4fae-202">This transport is supported by the [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] to ensure interoperability with other non-[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] Web services stacks.</span></span>  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.HttpTransportElement>   
- <xref:System.ServiceModel.Channels.HttpTransportBindingElement>   
- <xref:System.ServiceModel.Channels.TransportBindingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- [トランスポート](../../../../../docs/framework/wcf/feature-details/transports.md)   
- [トランスポートの選択](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [バインディングの拡張](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [カスタム バインディング](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
- [\<customBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+## <a name="see-also"></a><span data-ttu-id="a4fae-203">関連項目</span><span class="sxs-lookup"><span data-stu-id="a4fae-203">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.HttpTransportElement>  
+ <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
+ <xref:System.ServiceModel.Channels.TransportBindingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ [<span data-ttu-id="a4fae-204">トランスポート</span><span class="sxs-lookup"><span data-stu-id="a4fae-204">Transports</span></span>](../../../../../docs/framework/wcf/feature-details/transports.md)  
+ [<span data-ttu-id="a4fae-205">トランスポートの選択</span><span class="sxs-lookup"><span data-stu-id="a4fae-205">Choosing a Transport</span></span>](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
+ [<span data-ttu-id="a4fae-206">バインディング</span><span class="sxs-lookup"><span data-stu-id="a4fae-206">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="a4fae-207">バインディングの拡張</span><span class="sxs-lookup"><span data-stu-id="a4fae-207">Extending Bindings</span></span>](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [<span data-ttu-id="a4fae-208">カスタム バインド</span><span class="sxs-lookup"><span data-stu-id="a4fae-208">Custom Bindings</span></span>](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [<span data-ttu-id="a4fae-209">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="a4fae-209">\<customBinding></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

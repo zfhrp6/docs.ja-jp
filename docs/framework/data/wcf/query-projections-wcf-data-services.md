@@ -1,93 +1,99 @@
 ---
-title: "クエリ射影 (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "射影 [WCF Data Services]"
-  - "クエリ射影 [WCF Data Services]"
-  - "WCF Data Services, 射影"
-  - "WCF Data Services, 照会"
+title: "クエリ射影 (WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- projection [WCF Data Services]
+- WCF Data Services, projection
+- query projection [WCF Data Services]
+- WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a3546bf13eefd14f6bdc119541262cdfdc25e863
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# クエリ射影 (WCF Data Services)
-射影は [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] の機能の 1 つであり、エンティティの特定のプロパティのみが応答で返されるように指定することで、クエリによって返されるフィードのデータの量を減らします。  詳細については、「[OData: Select システム クエリ オプション \($select\)](http://go.microsoft.com/fwlink/?LinkId=186076)」を参照してください。  
+# <a name="query-projections-wcf-data-services"></a><span data-ttu-id="6021a-102">クエリ射影 (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="6021a-102">Query Projections (WCF Data Services)</span></span>
+<span data-ttu-id="6021a-103">プロジェクション内のメカニズムを提供する、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]応答で返されるエンティティの特定のプロパティのみを指定することで、クエリによって返されるフィード内のデータの量を削減します。</span><span class="sxs-lookup"><span data-stu-id="6021a-103">Projection provides a mechanism in the [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] to reduce the amount of data in the feed returned by a query by specifying that only certain properties of an entity are returned in the response.</span></span> <span data-ttu-id="6021a-104">詳細については、次を参照してください。 [OData: Select システム クエリ オプション ($select)](http://go.microsoft.com/fwlink/?LinkId=186076)です。</span><span class="sxs-lookup"><span data-stu-id="6021a-104">For more information, see [OData: Select System Query Option ($select)](http://go.microsoft.com/fwlink/?LinkId=186076).</span></span>  
   
- このトピックでは、クエリ射影を定義する方法、エンティティ型、エンティティ型以外の要件、射影された結果に対する更新、射影された型の作成について説明すると共に、射影に関する注意事項をリストします。  
+ <span data-ttu-id="6021a-105">このトピックでは、クエリ射影を定義する方法、エンティティ型、エンティティ型以外の要件、射影された結果に対する更新、射影された型の作成について説明すると共に、射影に関する注意事項をリストします。</span><span class="sxs-lookup"><span data-stu-id="6021a-105">This topic describes how to define a query projection, what the requirements are for entity and non-entity types, making updates to projected results, creating projected types, and lists some projection considerations.</span></span>  
   
-## クエリ射影の定義  
- クエリに射影句を追加するには、URI で `$select` クエリ オプションを使用するか、LINQ クエリで [select](../Topic/select%20clause%20\(C%23%20Reference\).md) 句 \(Visual Basic の場合は [Select](../Topic/Select%20Clause%20\(Visual%20Basic\).md)\) を使用します。  返されたエンティティ データは、クライアント上のエンティティ型またはエンティティ型以外に射影できます。  このトピックでは、LINQ クエリで `select` 句を使用する例を取り上げます。  
+## <a name="defining-a-query-projection"></a><span data-ttu-id="6021a-106">クエリ射影の定義</span><span class="sxs-lookup"><span data-stu-id="6021a-106">Defining a Query Projection</span></span>  
+ <span data-ttu-id="6021a-107">できます句を追加するプロジェクション クエリに使用するか、`$select`クエリ オプションを URI でまたはを使用して、[選択](~/docs/csharp/language-reference/keywords/select-clause.md)句 ([選択](~/docs/visual-basic/language-reference/queries/select-clause.md)Visual Basic で)、LINQ クエリでします。</span><span class="sxs-lookup"><span data-stu-id="6021a-107">You can add a projection clause to a query either by using the `$select` query option in a URI or by using the [select](~/docs/csharp/language-reference/keywords/select-clause.md) clause ([Select](~/docs/visual-basic/language-reference/queries/select-clause.md) in Visual Basic) in a LINQ query.</span></span> <span data-ttu-id="6021a-108">返されたエンティティ データは、クライアント上のエンティティ型またはエンティティ型以外に射影できます。</span><span class="sxs-lookup"><span data-stu-id="6021a-108">Returned entity data can be projected into either entity types or non-entity types on the client.</span></span> <span data-ttu-id="6021a-109">このトピックでは、LINQ クエリで `select` 句を使用する例を取り上げます。</span><span class="sxs-lookup"><span data-stu-id="6021a-109">Examples in this topic demonstrate how to use the `select` clause in a LINQ query.</span></span>  
   
 > [!IMPORTANT]
->  射影された型に対して行った更新を保存すると、データ サービスでデータの損失が発生する場合があります。  詳細については、「[射影時の注意事項](#considerations)」を参照してください。  
+>  <span data-ttu-id="6021a-110">射影された型に対して行った更新を保存すると、データ サービスでデータの損失が発生する場合があります。</span><span class="sxs-lookup"><span data-stu-id="6021a-110">Data loss might occur in the data service when you save updates that were made to projected types.</span></span> <span data-ttu-id="6021a-111">詳細については、次を参照してください。[射影に関する注意点](#considerations)です。</span><span class="sxs-lookup"><span data-stu-id="6021a-111">For more information, see [Projection Considerations](#considerations).</span></span>  
   
-## エンティティ型およびエンティティ型以外の要件  
- エンティティ型には、エンティティ キーを構成する 1 つ以上の Identity プロパティが必要です。  エンティティ型は、次のいずれかの方法によりクライアントで定義されます。  
+## <a name="requirements-for-entity-and-non-entity-types"></a><span data-ttu-id="6021a-112">エンティティ型およびエンティティ型以外の要件</span><span class="sxs-lookup"><span data-stu-id="6021a-112">Requirements for Entity and Non-Entity Types</span></span>  
+ <span data-ttu-id="6021a-113">エンティティ型には、エンティティ キーを構成する 1 つ以上の Identity プロパティが必要です。</span><span class="sxs-lookup"><span data-stu-id="6021a-113">Entity types must have one or more identity properties that make up the entity key.</span></span> <span data-ttu-id="6021a-114">エンティティ型は、次のいずれかの方法によりクライアントで定義されます。</span><span class="sxs-lookup"><span data-stu-id="6021a-114">Entity types are defined on clients in one of the following ways:</span></span>  
   
--   <xref:System.Data.Services.Common.DataServiceKeyAttribute> または <xref:System.Data.Services.Common.DataServiceEntityAttribute> を型に適用する。  
+-   <span data-ttu-id="6021a-115"><xref:System.Data.Services.Common.DataServiceKeyAttribute> または <xref:System.Data.Services.Common.DataServiceEntityAttribute> を型に適用する。</span><span class="sxs-lookup"><span data-stu-id="6021a-115">By applying the <xref:System.Data.Services.Common.DataServiceKeyAttribute> or <xref:System.Data.Services.Common.DataServiceEntityAttribute> to the type.</span></span>  
   
--   型に `ID` という名前のプロパティがある場合。  
+-   <span data-ttu-id="6021a-116">型に `ID` という名前のプロパティがある場合。</span><span class="sxs-lookup"><span data-stu-id="6021a-116">When the type has a property named `ID`.</span></span>  
   
--   型に *type*`ID` という名前のプロパティがあり、*type* が型の名前である場合。  
+-   <span data-ttu-id="6021a-117">型がという名前のプロパティを持つ場合に*型*`ID`ここで、*型*型の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="6021a-117">When the type has a property named *type*`ID`, where *type* is the name of the type.</span></span>  
   
- 既定では、クライアントで定義された型にクエリ結果を射影した場合、射影で要求されたプロパティがクライアント型に存在する必要があります。  ただし、<xref:System.Data.Services.Client.DataServiceContext> の <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> プロパテに `true` という値を指定した場合、射影で指定されたプロパティがクライアント型に含まれる必要はありません。  
+ <span data-ttu-id="6021a-118">既定では、クライアントで定義された型にクエリ結果を射影した場合、射影で要求されたプロパティがクライアント型に存在する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6021a-118">By default, when you project query results into a type defined at the client, the properties requested in the projection must exist in the client type.</span></span> <span data-ttu-id="6021a-119">ただし、`true` の <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> プロパテに <xref:System.Data.Services.Client.DataServiceContext> という値を指定した場合、射影で指定されたプロパティがクライアント型に含まれる必要はありません。</span><span class="sxs-lookup"><span data-stu-id="6021a-119">However, when you specify a value of `true` for the <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> property of the <xref:System.Data.Services.Client.DataServiceContext>, properties specified in the projection are not required to occur in the client type.</span></span>  
   
-### 射影された結果に対する更新  
- クエリ結果をクライアント上のエンティティ型に射影する場合、<xref:System.Data.Services.Client.DataServiceContext> はそれらのオブジェクトを追跡し、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> メソッドが呼び出されるとデータ サービスに更新内容が送り返されます。  ただし、クライアント上のエンティティ型以外に射影されたデータの更新内容は、データ サービスに送り返すことはできません。  これは、エンティティ インスタンスを識別するキーがなければ、データ サービスはデータ ソース内の正しいエンティティを更新できないためです。  エンティティ型以外は <xref:System.Data.Services.Client.DataServiceContext> にはアタッチされません。  
+### <a name="making-updates-to-projected-results"></a><span data-ttu-id="6021a-120">射影された結果に対する更新</span><span class="sxs-lookup"><span data-stu-id="6021a-120">Making Updates to Projected Results</span></span>  
+ <span data-ttu-id="6021a-121">クエリ結果をクライアント上のエンティティ型に射影する場合、<xref:System.Data.Services.Client.DataServiceContext> はそれらのオブジェクトを追跡し、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> メソッドが呼び出されるとデータ サービスに更新内容が送り返されます。</span><span class="sxs-lookup"><span data-stu-id="6021a-121">When you project query results into entity types on the client, the <xref:System.Data.Services.Client.DataServiceContext> can track those objects with updates to be sent back to the data service when the <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> method is called.</span></span> <span data-ttu-id="6021a-122">ただし、クライアント上のエンティティ型以外に射影されたデータの更新内容は、データ サービスに送り返すことはできません。</span><span class="sxs-lookup"><span data-stu-id="6021a-122">However, updates that are made to data projected into non-entity types on the client cannot be sent back to the data service.</span></span> <span data-ttu-id="6021a-123">これは、エンティティ インスタンスを識別するキーがなければ、データ サービスはデータ ソース内の正しいエンティティを更新できないためです。</span><span class="sxs-lookup"><span data-stu-id="6021a-123">This is because without a key to identify the entity instance, the data service cannot update the correct entity in the data source.</span></span> <span data-ttu-id="6021a-124">エンティティ型以外は <xref:System.Data.Services.Client.DataServiceContext> にはアタッチされません。</span><span class="sxs-lookup"><span data-stu-id="6021a-124">Non-entity types are not attached to the <xref:System.Data.Services.Client.DataServiceContext>.</span></span>  
   
- データ サービスで定義されたエンティティ型の 1 つ以上のプロパティが、エンティティの射影先のクライアント型に含まれない場合、新しいエンティティの挿入には、これらの欠損しているプロパティは含まれません。  この場合、欠損しているこれらのプロパティは既存のエンティティに対する更新にも含まれません。  そのようなプロパティに対する値が存在する場合、データ ソースの定義に従い、更新ではその値がそのプロパティの既定値としてリセットされます。  
+ <span data-ttu-id="6021a-125">データ サービスで定義されたエンティティ型の 1 つ以上のプロパティが、エンティティの射影先のクライアント型に含まれない場合、新しいエンティティの挿入には、これらの欠損しているプロパティは含まれません。</span><span class="sxs-lookup"><span data-stu-id="6021a-125">When one or more properties of an entity type defined in the data service do not occur in the client type into which the entity is projected, inserts of new entities will not contain these missing properties.</span></span> <span data-ttu-id="6021a-126">この場合、既存のエンティティに行われた更新は**も**これら欠損しているプロパティは含まれません。</span><span class="sxs-lookup"><span data-stu-id="6021a-126">In this case, updates that are made to existing entities will **also** not include these missing properties.</span></span> <span data-ttu-id="6021a-127">そのようなプロパティに対する値が存在する場合、データ ソースの定義に従い、更新ではその値がそのプロパティの既定値としてリセットされます。</span><span class="sxs-lookup"><span data-stu-id="6021a-127">When a value exists for such a property, the update resets it to the default value for the property, as defined in the data source.</span></span>  
   
-### 射影型の作成  
- 次の例では、`Customers` 型のアドレス関連のプロパティを、クライアントで定義されエンティティ型として属性化された新しい `CustomerAddress` 型に射影する匿名の LINQ クエリを使用します。  
+### <a name="creating-projected-types"></a><span data-ttu-id="6021a-128">射影型の作成</span><span class="sxs-lookup"><span data-stu-id="6021a-128">Creating Projected Types</span></span>  
+ <span data-ttu-id="6021a-129">次の例では、`Customers` 型のアドレス関連のプロパティを、クライアントで定義されエンティティ型として属性化された新しい `CustomerAddress` 型に射影する匿名の LINQ クエリを使用します。</span><span class="sxs-lookup"><span data-stu-id="6021a-129">The following example uses an anonymous LINQ query that projects the address-related properties of the `Customers` type into a new `CustomerAddress` type, which is defined on the client and is attributed as an entity type:</span></span>  
   
  [!code-csharp[Astoria Northwind Client#SelectCustomerAddressSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#selectcustomeraddressspecific)]
  [!code-vb[Astoria Northwind Client#SelectCustomerAddressSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#selectcustomeraddressspecific)]  
   
- この例では、コンストラクターを呼び出す代わりに、オブジェクト初期化子パターンを使用して `CustmerAddress` 型の新しいインスタンスを作成します。  コンストラクターは、エンティティ型への射影ではサポートされていませんが、エンティティ型以外および匿名型への射影では使用できます。  `CustomerAddress` は、エンティティ型であるため、変更を加えてデータ サービスに送り返すことができます。  
+ <span data-ttu-id="6021a-130">この例では、コンストラクターを呼び出す代わりに、オブジェクト初期化子パターンを使用して `CustmerAddress` 型の新しいインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="6021a-130">In this example, the object initializer pattern is used to create a new instance of the `CustmerAddress` type instead of calling a constructor.</span></span> <span data-ttu-id="6021a-131">コンストラクターは、エンティティ型への射影ではサポートされていませんが、エンティティ型以外および匿名型への射影では使用できます。</span><span class="sxs-lookup"><span data-stu-id="6021a-131">Constructors are not supported when projecting into entity types, but they can be used when projecting into non-entity and anonymous types.</span></span> <span data-ttu-id="6021a-132">`CustomerAddress` は、エンティティ型であるため、変更を加えてデータ サービスに送り返すことができます。</span><span class="sxs-lookup"><span data-stu-id="6021a-132">Because `CustomerAddress` is an entity type, changes can be made and sent back to the data service.</span></span>  
   
- さらに、`Customer` 型からのデータは、匿名型ではなく `CustomerAddress` エンティティ型のインスタンスに射影されます。  匿名型への射影はサポートされていますが、匿名型はエンティティ型以外として扱われるので、データは読み取り専用です。  
+ <span data-ttu-id="6021a-133">さらに、`Customer` 型からのデータは、匿名型ではなく `CustomerAddress` エンティティ型のインスタンスに射影されます。</span><span class="sxs-lookup"><span data-stu-id="6021a-133">Also, the data from the `Customer` type is projected into an instance of the `CustomerAddress` entity type instead of an anonymous type.</span></span> <span data-ttu-id="6021a-134">匿名型への射影はサポートされていますが、匿名型はエンティティ型以外として扱われるので、データは読み取り専用です。</span><span class="sxs-lookup"><span data-stu-id="6021a-134">Projection into anonymous types is supported, but the data is read-only because anonymous types are treated as non-entity types.</span></span>  
   
- <xref:System.Data.Services.Client.DataServiceContext> の <xref:System.Data.Services.Client.MergeOption> 設定は、クエリ射影時の ID 解決に使用されます。  これは、`Customer` 型のインスタンスが <xref:System.Data.Services.Client.DataServiceContext> に存在する場合、同じ ID を持つ `CustomerAddress` のインスタンスは <xref:System.Data.Services.Client.MergeOption> で設定された ID 解決ルールに従うことを意味します。  
+ <span data-ttu-id="6021a-135"><xref:System.Data.Services.Client.MergeOption> の <xref:System.Data.Services.Client.DataServiceContext> 設定は、クエリ射影時の ID 解決に使用されます。</span><span class="sxs-lookup"><span data-stu-id="6021a-135">The <xref:System.Data.Services.Client.MergeOption> settings of the <xref:System.Data.Services.Client.DataServiceContext> are used for identity resolution during query projection.</span></span> <span data-ttu-id="6021a-136">これは、`Customer` 型のインスタンスが <xref:System.Data.Services.Client.DataServiceContext> に存在する場合、同じ ID を持つ `CustomerAddress` のインスタンスは <xref:System.Data.Services.Client.MergeOption> で設定された ID 解決ルールに従うことを意味します。</span><span class="sxs-lookup"><span data-stu-id="6021a-136">This means that if an instance of the `Customer` type already exists in the <xref:System.Data.Services.Client.DataServiceContext>, an instance of `CustomerAddress` with the same identity will follow the identity resolution rules set by the <xref:System.Data.Services.Client.MergeOption></span></span>  
   
- 次の表では、結果をエンティティ型またはエンティティ型以外に射影する場合の動作について説明します。  
+ <span data-ttu-id="6021a-137">次の表では、結果をエンティティ型またはエンティティ型以外に射影する場合の動作について説明します。</span><span class="sxs-lookup"><span data-stu-id="6021a-137">The following table describes the behaviors when projecting results into entity and non-entity types:</span></span>  
   
-|動作|エンティティ型|エンティティ型以外|  
-|--------|-------------|---------------|  
-|初期化子を使用して新しい射影インスタンスを作成する。例:<br /><br /> [!code-csharp[Astoria Northwind Client#ProjectWithInitializer](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#projectwithinitializer)]
- [!code-vb[Astoria Northwind Client#ProjectWithInitializer](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#projectwithinitializer)]|サポート状況|サポート状況|  
-|コンストラクターを使用して新しい射影インスタンスを作成する。例:<br /><br /> [!code-csharp[Astoria Northwind Client#ProjectWithConstructor](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#projectwithconstructor)]
- [!code-vb[Astoria Northwind Client#ProjectWithConstructor](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#projectwithconstructor)]|<xref:System.NotSupportedException> 発生|サポート状況|  
-|射影を使用してプロパティ値を変換する。例:<br /><br /> [!code-csharp[Astoria Northwind Client#ProjectWithTransform](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#projectwithtransform)]
- [!code-vb[Astoria Northwind Client#ProjectWithTransform](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#projectwithtransform)]<br /><br /> この変換は、エンティティ型では混乱の原因となり、別のエンティティに属するデータ ソース内のデータを上書きする可能性があるため、サポートされません。|<xref:System.NotSupportedException> 発生|サポート状況|  
+|<span data-ttu-id="6021a-138">動作</span><span class="sxs-lookup"><span data-stu-id="6021a-138">Action</span></span>|<span data-ttu-id="6021a-139">エンティティ型</span><span class="sxs-lookup"><span data-stu-id="6021a-139">Entity Type</span></span>|<span data-ttu-id="6021a-140">エンティティ型以外</span><span class="sxs-lookup"><span data-stu-id="6021a-140">Non-Entity Type</span></span>|  
+|------------|-----------------|----------------------|  
+|<span data-ttu-id="6021a-141">初期化子を使用して新しい射影インスタンスを作成する。例: </span><span class="sxs-lookup"><span data-stu-id="6021a-141">Creating a new projected instance by using initializers, as in the following example:</span></span><br /><br /> [!code-csharp[Astoria Northwind Client#ProjectWithInitializer](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#projectwithinitializer)]
+ [!code-vb[Astoria Northwind Client#ProjectWithInitializer](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#projectwithinitializer)]|<span data-ttu-id="6021a-142">サポート状況</span><span class="sxs-lookup"><span data-stu-id="6021a-142">Supported</span></span>|<span data-ttu-id="6021a-143">サポート状況</span><span class="sxs-lookup"><span data-stu-id="6021a-143">Supported</span></span>|  
+|<span data-ttu-id="6021a-144">コンストラクターを使用して新しい射影インスタンスを作成する。例: </span><span class="sxs-lookup"><span data-stu-id="6021a-144">Creating a new projected instance by using constructors, as in the following example:</span></span><br /><br /> [!code-csharp[Astoria Northwind Client#ProjectWithConstructor](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#projectwithconstructor)]
+ [!code-vb[Astoria Northwind Client#ProjectWithConstructor](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#projectwithconstructor)]|<span data-ttu-id="6021a-145"><xref:System.NotSupportedException> 発生</span><span class="sxs-lookup"><span data-stu-id="6021a-145">A <xref:System.NotSupportedException> is raised.</span></span>|<span data-ttu-id="6021a-146">サポート状況</span><span class="sxs-lookup"><span data-stu-id="6021a-146">Supported</span></span>|  
+|<span data-ttu-id="6021a-147">射影を使用してプロパティ値を変換する。例: </span><span class="sxs-lookup"><span data-stu-id="6021a-147">Using projection to transform a property value, as in the following example:</span></span><br /><br /> [!code-csharp[Astoria Northwind Client#ProjectWithTransform](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#projectwithtransform)]
+ [!code-vb[Astoria Northwind Client#ProjectWithTransform](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#projectwithtransform)]<br /><br /> <span data-ttu-id="6021a-148">この変換は、エンティティ型では混乱の原因となり、別のエンティティに属するデータ ソース内のデータを上書きする可能性があるため、サポートされません。</span><span class="sxs-lookup"><span data-stu-id="6021a-148">This transformation is not supported for entity types because it can lead to confusion and potentially overwriting the data in the data source that belongs to another entity.</span></span>|<span data-ttu-id="6021a-149"><xref:System.NotSupportedException> 発生</span><span class="sxs-lookup"><span data-stu-id="6021a-149">A <xref:System.NotSupportedException> is raised.</span></span>|<span data-ttu-id="6021a-150">サポート状況</span><span class="sxs-lookup"><span data-stu-id="6021a-150">Supported</span></span>|  
   
 <a name="considerations"></a>   
-## 射影時の注意事項  
- クエリ射影を定義する場合は、次の点にも注意してください。  
+## <a name="projection-considerations"></a><span data-ttu-id="6021a-151">射影時の注意事項</span><span class="sxs-lookup"><span data-stu-id="6021a-151">Projection Considerations</span></span>  
+ <span data-ttu-id="6021a-152">クエリ射影を定義する場合は、次の点にも注意してください。</span><span class="sxs-lookup"><span data-stu-id="6021a-152">The following additional considerations apply when defining a query projection.</span></span>  
   
--   Atom 形式のフィードを独自に定義する場合、カスタム マッピングが定義されているすべてのエンティティ プロパティが射影に含まれることを確認する必要があります。  マップされているエンティティ プロパティがこの射影に含まれていない場合、データの損失が発生することがあります。  詳細については、「[フィードのカスタマイズ](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md)」を参照してください。  
+-   <span data-ttu-id="6021a-153">Atom 形式のフィードを独自に定義する場合、カスタム マッピングが定義されているすべてのエンティティ プロパティが射影に含まれることを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6021a-153">When you define custom feeds for the Atom format, you must make sure that all entity properties that have custom mappings defined are included in the projection.</span></span> <span data-ttu-id="6021a-154">マップされているエンティティ プロパティがこの射影に含まれていない場合、データの損失が発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="6021a-154">When a mapped entity property is not included in the projection, data loss might occur.</span></span> <span data-ttu-id="6021a-155">詳細については、次を参照してください。[フィードのカスタマイズ](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="6021a-155">For more information, see [Feed Customization](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).</span></span>  
   
--   データ サービスのデータ モデルのエンティティのすべてのプロパティを含まない射影型に挿入を行った場合、クライアントで射影に含まれていないプロパティは既定値に設定されます。  
+-   <span data-ttu-id="6021a-156">データ サービスのデータ モデルのエンティティのすべてのプロパティを含まない射影型に挿入を行った場合、クライアントで射影に含まれていないプロパティは既定値に設定されます。</span><span class="sxs-lookup"><span data-stu-id="6021a-156">When inserts are made to a projected type that does not contain all of the properties of the entity in the data model of the data service, the properties not included in the projection at the client are set to their default values.</span></span>  
   
--   データ サービスのデータ モデルのエンティティのすべてのプロパティを含まない射影影型に対して更新を行った場合、クライアントで射影に含まれていない既存の値は初期化されていない既定値で上書きされます。  
+-   <span data-ttu-id="6021a-157">データ サービスのデータ モデルのエンティティのすべてのプロパティを含まない射影影型に対して更新を行った場合、クライアントで射影に含まれていない既存の値は初期化されていない既定値で上書きされます。</span><span class="sxs-lookup"><span data-stu-id="6021a-157">When updates are made to a projected type that does not contain all of the properties of the entity in the data model of the data service, existing values not included in the projection on the client will be overwritten with uninitialized default values.</span></span>  
   
--   射影に複合プロパティが含まれる場合、複合オブジェクト全体が返される必要があります。  
+-   <span data-ttu-id="6021a-158">射影に複合プロパティが含まれる場合、複合オブジェクト全体が返される必要があります。</span><span class="sxs-lookup"><span data-stu-id="6021a-158">When a projection includes a complex property, the entire complex object must be returned.</span></span>  
   
--   射影にナビゲーション プロパティが含まれる場合、<xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> メソッドを呼び出す必要はなく、関連オブジェクトが暗黙的に読み込まれます。  射影されたクエリでの <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> メソッドの使用はサポートされません。  
+-   <span data-ttu-id="6021a-159">射影にナビゲーション プロパティが含まれる場合、<xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> メソッドを呼び出す必要はなく、関連オブジェクトが暗黙的に読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="6021a-159">When a projection includes a navigation property, the related objects are loaded implicitly without having to call the <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> method.</span></span> <span data-ttu-id="6021a-160">射影されたクエリでの <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> メソッドの使用はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="6021a-160">The <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> method is not supported for use in a projected query.</span></span>  
   
--   クライアント上のクエリ射影クエリは、要求 URI の `$select` クエリ オプションを使用するように変換されます。  `$select` クエリ オプションをサポートしない、以前のバージョンの [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] に対して射影のあるクエリを実行すると、エラーが返されます。これは、データ サービスの <xref:System.Data.Services.DataServiceBehavior> の <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> が <xref:System.Data.Services.Common.DataServiceProtocolVersion> という値に設定されている場合にも発生します。  詳細については、「[データ サービスのバージョン管理](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md)」を参照してください。  
+-   <span data-ttu-id="6021a-161">クライアント上のクエリ射影クエリは、要求 URI の `$select` クエリ オプションを使用するように変換されます。</span><span class="sxs-lookup"><span data-stu-id="6021a-161">Query projections queries on the client are translated to use the `$select` query option in the request URI.</span></span> <span data-ttu-id="6021a-162">[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クエリ オプションをサポートしない `$select` の以前のバージョンに対して、射影のあるクエリを実行すると、エラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="6021a-162">When a query with projection is executed against a previous version of [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] that does not support the `$select` query option, an error is returned.</span></span> <span data-ttu-id="6021a-163">これは、データ サービスの  <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> の <xref:System.Data.Services.DataServiceBehavior> が <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1> という値に設定されている場合にも発生します。</span><span class="sxs-lookup"><span data-stu-id="6021a-163">This can also happen when the <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> of the <xref:System.Data.Services.DataServiceBehavior> for the data service is set to a value of <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1>.</span></span> <span data-ttu-id="6021a-164">詳細については、次を参照してください。[データ サービスのバージョン管理](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="6021a-164">For more information, see [Data Service Versioning](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).</span></span>  
   
- 詳細については、「[方法: クエリ結果を射影する](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)」を参照してください。  
+ <span data-ttu-id="6021a-165">詳細については、次を参照してください。[する方法: プロジェクトのクエリ結果](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="6021a-165">For more information, see [How to: Project Query Results](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md).</span></span>  
   
-## 参照  
- [データ サービスのクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
+## <a name="see-also"></a><span data-ttu-id="6021a-166">関連項目</span><span class="sxs-lookup"><span data-stu-id="6021a-166">See Also</span></span>  
+ [<span data-ttu-id="6021a-167">データ サービスに対するクエリ</span><span class="sxs-lookup"><span data-stu-id="6021a-167">Querying the Data Service</span></span>](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)

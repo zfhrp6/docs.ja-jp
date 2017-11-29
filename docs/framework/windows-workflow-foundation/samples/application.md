@@ -1,34 +1,38 @@
 ---
-title: "アプリケーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "アプリケーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 22d27e12-ab04-432b-9695-9f74e098cff3
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 8f71b07f34a0bd110c1c0f6202ca4962de9d8109
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# アプリケーション
-このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] のワークフロー アプリケーション関連のサンプルが含まれています。  
+# <a name="application"></a><span data-ttu-id="e878f-102">アプリケーション</span><span class="sxs-lookup"><span data-stu-id="e878f-102">Application</span></span>
+<span data-ttu-id="e878f-103">このセクションには、[!INCLUDE[wf](../../../../includes/wf-md.md)] のワークフロー アプリケーション関連のサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e878f-103">This section contains samples related to workflow applications in [!INCLUDE[wf](../../../../includes/wf-md.md)].</span></span>  
   
-## このセクションの内容  
- [ドキュメント承認プロセス](../../../../docs/framework/windows-workflow-foundation/samples/document-approval-process.md)  
- 基幹業務アプリケーションでのワークフローの使用方法を示します。  
+## <a name="in-this-section"></a><span data-ttu-id="e878f-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="e878f-104">In This Section</span></span>  
+ [<span data-ttu-id="e878f-105">ドキュメント承認プロセス</span><span class="sxs-lookup"><span data-stu-id="e878f-105">Document Approval Process</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/document-approval-process.md)  
+ <span data-ttu-id="e878f-106">基幹業務アプリケーションでのワークフローの使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e878f-106">Demonstrates using a workflow in a line-of-business application.</span></span>  
   
- [企業の購買プロセス](../../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)  
- ウィンドウ内および Web ホスト アプリケーションでのワークフローの使用方法を示します。  
+ [<span data-ttu-id="e878f-107">企業の購買プロセス</span><span class="sxs-lookup"><span data-stu-id="e878f-107">Corporate Purchase Process</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)  
+ <span data-ttu-id="e878f-108">ウィンドウ内および Web ホスト アプリケーションでのワークフローの使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e878f-108">Demonstrates using a workflow in a window- and Web-hosted application.</span></span>  
   
- [雇用プロセス](../../../../docs/framework/windows-workflow-foundation/samples/hiring-process.md)  
- メッセージング アクティビティ、およびワークフロー サービスとしてホストされる 2 つのワークフローを使用して、ビジネス プロセスを実装する方法を示します。  
+ [<span data-ttu-id="e878f-109">雇用プロセス</span><span class="sxs-lookup"><span data-stu-id="e878f-109">Hiring Process</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/hiring-process.md)  
+ <span data-ttu-id="e878f-110">メッセージング アクティビティ、およびワークフロー サービスとしてホストされる 2 つのワークフローを使用して、ビジネス プロセスを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e878f-110">Demonstrates how to implement a business process using messaging activities and two workflows hosted as workflow services.</span></span>  
   
- [ビジュアル ワークフロー追跡](../../../../docs/framework/windows-workflow-foundation/samples/visual-workflow-tracking.md)  
- メッセージング アクティビティ、およびワークフロー サービスとしてホストされる 2 つのワークフローを使用して、ビジネス プロセスを実装する方法を示します。  
+ [<span data-ttu-id="e878f-111">ビジュアル ワークフロー追跡</span><span class="sxs-lookup"><span data-stu-id="e878f-111">Visual Workflow Tracking</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/visual-workflow-tracking.md)  
+ <span data-ttu-id="e878f-112">メッセージング アクティビティ、およびワークフロー サービスとしてホストされる 2 つのワークフローを使用して、ビジネス プロセスを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e878f-112">Demonstrates how to implement a business process using messaging activities and two workflows hosted as workflow services.</span></span>  
   
- [中断されたインスタンスの管理](../../../../docs/framework/windows-workflow-foundation/samples/suspended-instance-management.md)  
- 中断されているワークフロー インスタンスを管理する方法を示します。
+ [<span data-ttu-id="e878f-113">中断されたインスタンスの管理</span><span class="sxs-lookup"><span data-stu-id="e878f-113">Suspended Instance Management</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/suspended-instance-management.md)  
+ <span data-ttu-id="e878f-114">中断されているワークフロー インスタンスを管理する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e878f-114">Demonstrates how to manage workflow instances that have been suspended.</span></span>

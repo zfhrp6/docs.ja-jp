@@ -1,30 +1,40 @@
 ---
-title: "&lt;messageSenderAuthentication&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;messageSenderAuthentication&gt; 要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8d979dfc-a6f9-42ec-96d5-7fbc13a48118
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3f73a72398d183e5b758f69edb7bc034f30ed80a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;messageSenderAuthentication&gt; 要素
-ピアツーピア メッセージ送信者の認証オプションを指定します。  
+# <a name="ltmessagesenderauthenticationgt-element"></a><span data-ttu-id="2342c-102">&lt;messageSenderAuthentication&gt; 要素</span><span class="sxs-lookup"><span data-stu-id="2342c-102">&lt;messageSenderAuthentication&gt; element</span></span>
+<span data-ttu-id="2342c-103">ピアツーピア メッセージ送信者の認証オプションを指定します。</span><span class="sxs-lookup"><span data-stu-id="2342c-103">Specifies authentication options for peer-to-peer message senders.</span></span>  
   
- ピア ツー ピア プログラミングの詳細については、「[ピアツーピア ネットワーク](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)」を参照してください。  
+ <span data-ttu-id="2342c-104">ピア ツー ピア プログラミングの詳細については、次を参照してください。[ピア ツー ピア ネットワー キング](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)です。</span><span class="sxs-lookup"><span data-stu-id="2342c-104">For more information about peer-to-peer programming, see [Peer-to-Peer Networking](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).</span></span>  
   
-## 構文  
+ <span data-ttu-id="2342c-105">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="2342c-105">\<system.ServiceModel></span></span>  
+<span data-ttu-id="2342c-106">\<ビヘイビアー ></span><span class="sxs-lookup"><span data-stu-id="2342c-106">\<behaviors></span></span>  
+<span data-ttu-id="2342c-107">\<endpointBehaviors ></span><span class="sxs-lookup"><span data-stu-id="2342c-107">\<endpointBehaviors></span></span>  
+<span data-ttu-id="2342c-108">\<動作 ></span><span class="sxs-lookup"><span data-stu-id="2342c-108">\<behavior></span></span>  
+<span data-ttu-id="2342c-109">\<clientCredentials ></span><span class="sxs-lookup"><span data-stu-id="2342c-109">\<clientCredentials></span></span>  
+<span data-ttu-id="2342c-110">\<ピア ></span><span class="sxs-lookup"><span data-stu-id="2342c-110">\<peer></span></span>  
+<span data-ttu-id="2342c-111">\<messageSenderAuthentication ></span><span class="sxs-lookup"><span data-stu-id="2342c-111">\<messageSenderAuthentication></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="2342c-112">構文</span><span class="sxs-lookup"><span data-stu-id="2342c-112">Syntax</span></span>  
   
+```xml  
 <messageSenderAuthentication  
 customCertificateValidatorType= "namespace.typeName, [,AssemblyName] [,Version=version number] [,Culture=culture] [,PublicKeyToken=token]"  
 certificateValidationMode = "ChainTrust/None/PeerTrust/PeerOrChainTrust/Custom"  
@@ -33,58 +43,58 @@ trustedStoreLocation="CurrentUser/LocalMachine"
 />  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="2342c-113">属性および要素</span><span class="sxs-lookup"><span data-stu-id="2342c-113">Attributes and Elements</span></span>  
+ <span data-ttu-id="2342c-114">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="2342c-114">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="2342c-115">属性</span><span class="sxs-lookup"><span data-stu-id="2342c-115">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|customCertificateValidatorType|カスタム型の検証に使用される型およびアセンブリです。  `certificateValidationMode` が `Custom` に設定されている場合は、この属性を設定する必要があります。|  
-|certifcateValidationMode|資格情報の検証に使用される 3 つのモードのいずれかを指定します。  `Custom` に設定されている場合、`customCertificateValidator` も指定する必要があります。|  
-|revocationMode|証明書失効リスト \(CRL\) のチェックに使用されるモードのいずれかです。|  
-|trustedStoreLocation|2 つのシステム格納場所 \(`LocalMachine` または `CurrentUser`\) のいずれかです。  この値は、サービス証明書がクライアントにネゴシエートされるときに使用されます。  指定された格納場所の **\[信頼されたユーザー\]** ストアに対して検証が実行されます。|  
+|<span data-ttu-id="2342c-116">属性</span><span class="sxs-lookup"><span data-stu-id="2342c-116">Attribute</span></span>|<span data-ttu-id="2342c-117">説明</span><span class="sxs-lookup"><span data-stu-id="2342c-117">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="2342c-118">customCertificateValidatorType</span><span class="sxs-lookup"><span data-stu-id="2342c-118">customCertificateValidatorType</span></span>|<span data-ttu-id="2342c-119">カスタム型の検証に使用される型およびアセンブリです。</span><span class="sxs-lookup"><span data-stu-id="2342c-119">A type and assembly used to validate a custom type.</span></span> <span data-ttu-id="2342c-120">`certificateValidationMode` が `Custom` に設定されている場合は、この属性を設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2342c-120">This attribute must be set when `certificateValidationMode` is set to `Custom`.</span></span>|  
+|<span data-ttu-id="2342c-121">certifcateValidationMode</span><span class="sxs-lookup"><span data-stu-id="2342c-121">certifcateValidationMode</span></span>|<span data-ttu-id="2342c-122">資格情報の検証に使用される 3 つのモードのいずれかを指定します。</span><span class="sxs-lookup"><span data-stu-id="2342c-122">Specifies one of three modes used to validate credentials.</span></span> <span data-ttu-id="2342c-123">`Custom` に設定されている場合、`customCertificateValidator` も指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2342c-123">If set to `Custom`, then a `customCertificateValidator` must also be supplied.</span></span>|  
+|<span data-ttu-id="2342c-124">revocationMode</span><span class="sxs-lookup"><span data-stu-id="2342c-124">revocationMode</span></span>|<span data-ttu-id="2342c-125">証明書失効リスト (CRL) のチェックに使用されるモードのいずれかです。</span><span class="sxs-lookup"><span data-stu-id="2342c-125">One of the modes used to check for a revoked certificate lists (CRL).</span></span>|  
+|<span data-ttu-id="2342c-126">trustedStoreLocation</span><span class="sxs-lookup"><span data-stu-id="2342c-126">trustedStoreLocation</span></span>|<span data-ttu-id="2342c-127">2 つのシステム格納場所 (`LocalMachine` または `CurrentUser`) のいずれかです。</span><span class="sxs-lookup"><span data-stu-id="2342c-127">One of the two system store locations: `LocalMachine` or `CurrentUser`.</span></span> <span data-ttu-id="2342c-128">この値は、サービス証明書がクライアントにネゴシエートされるときに使用されます。</span><span class="sxs-lookup"><span data-stu-id="2342c-128">This value is used when a service certificate is negotiated to the client.</span></span> <span data-ttu-id="2342c-129">に対して検証が実行、**信頼されたユーザー**指定されたストアの場所に格納します。</span><span class="sxs-lookup"><span data-stu-id="2342c-129">Validation is performed against the **Trusted People** store in the specified store location.</span></span>|  
   
-## customCertificateValidatorType 属性  
+## <a name="customcertificatevalidatortype-attribute"></a><span data-ttu-id="2342c-130">customCertificateValidatorType 属性</span><span class="sxs-lookup"><span data-stu-id="2342c-130">customCertificateValidatorType Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|String|省略可能です。  タイプ名およびアセンブリと、タイプの検索に使用される他のデータを指定します。  少なくとも、名前空間とタイプ名が必要です。  省略可能な情報は、アセンブリ名、バージョン番号、カルチャ、および公開キー トークンです。|  
+|<span data-ttu-id="2342c-131">値</span><span class="sxs-lookup"><span data-stu-id="2342c-131">Value</span></span>|<span data-ttu-id="2342c-132">説明</span><span class="sxs-lookup"><span data-stu-id="2342c-132">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="2342c-133">String</span><span class="sxs-lookup"><span data-stu-id="2342c-133">String</span></span>|<span data-ttu-id="2342c-134">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="2342c-134">Optional.</span></span> <span data-ttu-id="2342c-135">タイプ名およびアセンブリと、タイプの検索に使用される他のデータを指定します。</span><span class="sxs-lookup"><span data-stu-id="2342c-135">Specifies the type name and assembly and other data used to find the type.</span></span> <span data-ttu-id="2342c-136">少なくとも、名前空間とタイプ名が必要です。</span><span class="sxs-lookup"><span data-stu-id="2342c-136">At minimum, a namespace and type name are required.</span></span> <span data-ttu-id="2342c-137">省略可能な情報は、アセンブリ名、バージョン番号、カルチャ、および公開キー トークンです。</span><span class="sxs-lookup"><span data-stu-id="2342c-137">Optional information includes: assembly name, version number, culture, and public key token.</span></span>|  
   
-## certificateValidationMode 属性  
+## <a name="certificatevalidationmode-attribute"></a><span data-ttu-id="2342c-138">certificateValidationMode 属性</span><span class="sxs-lookup"><span data-stu-id="2342c-138">certificateValidationMode Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|列挙型|省略可能です。  `None`、`PeerTrust`、`ChainTrust`、`PeerOrChainTrust`、`Custom` のいずれかの値にします。  既定値は、`ChainTrust` です。  既定値は、`ChainTrust` です。<br /><br /> 詳細については、「[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。|  
+|<span data-ttu-id="2342c-139">値</span><span class="sxs-lookup"><span data-stu-id="2342c-139">Value</span></span>|<span data-ttu-id="2342c-140">説明</span><span class="sxs-lookup"><span data-stu-id="2342c-140">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="2342c-141">列挙型</span><span class="sxs-lookup"><span data-stu-id="2342c-141">Enumeration</span></span>|<span data-ttu-id="2342c-142">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="2342c-142">Optional.</span></span> <span data-ttu-id="2342c-143">`None`、`PeerTrust`、`ChainTrust`、`PeerOrChainTrust`、`Custom` のいずれかの値にします。</span><span class="sxs-lookup"><span data-stu-id="2342c-143">One of the following values: `None`, `PeerTrust`, `ChainTrust`, `PeerOrChainTrust`, `Custom`.</span></span> <span data-ttu-id="2342c-144">既定値は、`ChainTrust` です。</span><span class="sxs-lookup"><span data-stu-id="2342c-144">The default is `ChainTrust`.</span></span> <span data-ttu-id="2342c-145">既定値は、`ChainTrust` です。</span><span class="sxs-lookup"><span data-stu-id="2342c-145">The default is `ChainTrust`.</span></span><br /><br /> <span data-ttu-id="2342c-146">詳細については、次を参照してください。[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。</span><span class="sxs-lookup"><span data-stu-id="2342c-146">For more information, see [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span>|  
   
-## revocationMode 属性  
+## <a name="revocationmode-attribute"></a><span data-ttu-id="2342c-147">revocationMode 属性</span><span class="sxs-lookup"><span data-stu-id="2342c-147">revocationMode Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|列挙型|`NoCheck`、`Online`、`Offline` のいずれかの値にします。  既定値は、`Online` です。<br /><br /> 詳細については、「[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)」を参照してください。|  
+|<span data-ttu-id="2342c-148">値</span><span class="sxs-lookup"><span data-stu-id="2342c-148">Value</span></span>|<span data-ttu-id="2342c-149">説明</span><span class="sxs-lookup"><span data-stu-id="2342c-149">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="2342c-150">列挙型</span><span class="sxs-lookup"><span data-stu-id="2342c-150">Enumeration</span></span>|<span data-ttu-id="2342c-151">`NoCheck`、`Online`、`Offline` のいずれかの値にします。</span><span class="sxs-lookup"><span data-stu-id="2342c-151">One of the following values: `NoCheck`, `Online`, `Offline`.</span></span> <span data-ttu-id="2342c-152">既定値は、`Online` です。</span><span class="sxs-lookup"><span data-stu-id="2342c-152">The default is `Online`.</span></span><br /><br /> <span data-ttu-id="2342c-153">詳細については、次を参照してください。[証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)です。</span><span class="sxs-lookup"><span data-stu-id="2342c-153">For more information, see [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span>|  
   
-## trustedStoreLocation 属性  
+## <a name="trustedstorelocation-attribute"></a><span data-ttu-id="2342c-154">trustedStoreLocation 属性</span><span class="sxs-lookup"><span data-stu-id="2342c-154">trustedStoreLocation Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|列挙型|`LocalMachine` または `CurrentUser` のいずれかの値にします。  既定値は、`CurrentUser` です。  クライアント アプリケーションがシステム アカウントで実行されている場合、証明書は通常 `LocalMachine` の下にあります。  クライアント アプリケーションがユーザー アカウントで実行されている場合、証明書は通常 `CurrentUser` の下にあります。  既定値は、`CurrentUser` です。|  
+|<span data-ttu-id="2342c-155">値</span><span class="sxs-lookup"><span data-stu-id="2342c-155">Value</span></span>|<span data-ttu-id="2342c-156">説明</span><span class="sxs-lookup"><span data-stu-id="2342c-156">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="2342c-157">列挙型</span><span class="sxs-lookup"><span data-stu-id="2342c-157">Enumeration</span></span>|<span data-ttu-id="2342c-158">`LocalMachine` または `CurrentUser` のいずれかの値にします。</span><span class="sxs-lookup"><span data-stu-id="2342c-158">One of the following values: `LocalMachine` or `CurrentUser`.</span></span> <span data-ttu-id="2342c-159">既定値は、`CurrentUser` です。</span><span class="sxs-lookup"><span data-stu-id="2342c-159">The default is `CurrentUser`.</span></span> <span data-ttu-id="2342c-160">クライアント アプリケーションがシステム アカウントで実行されている場合、証明書は通常 `LocalMachine` の下にあります。</span><span class="sxs-lookup"><span data-stu-id="2342c-160">If the client application is running under a system account then the certificate is typically under `LocalMachine`.</span></span> <span data-ttu-id="2342c-161">クライアント アプリケーションがユーザー アカウントで実行されている場合、証明書は通常 `CurrentUser` の下にあります。</span><span class="sxs-lookup"><span data-stu-id="2342c-161">If the client application is running under a user account then the certificate is typically in `CurrentUser`.</span></span> <span data-ttu-id="2342c-162">既定値は、`CurrentUser` です。</span><span class="sxs-lookup"><span data-stu-id="2342c-162">The default is `CurrentUser`.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="2342c-163">子要素</span><span class="sxs-lookup"><span data-stu-id="2342c-163">Child Elements</span></span>  
+ <span data-ttu-id="2342c-164">なし。</span><span class="sxs-lookup"><span data-stu-id="2342c-164">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="2342c-165">親要素</span><span class="sxs-lookup"><span data-stu-id="2342c-165">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<peer\>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|ピア サービスに対するクライアントの認証に使用される資格情報を指定します。|  
+|<span data-ttu-id="2342c-166">要素</span><span class="sxs-lookup"><span data-stu-id="2342c-166">Element</span></span>|<span data-ttu-id="2342c-167">説明</span><span class="sxs-lookup"><span data-stu-id="2342c-167">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="2342c-168">\<ピア ></span><span class="sxs-lookup"><span data-stu-id="2342c-168">\<peer></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|<span data-ttu-id="2342c-169">ピア サービスに対するクライアントの認証に使用される資格情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="2342c-169">Specifies a credential used for authenticating the client to a peer service.</span></span>|  
   
-## 解説  
- メッセージ認証を選択した場合は、この要素を構成する必要があります。  出力チャネルでは、各メッセージは、[\<certificate\>](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-element.md) が提供する認証を使用して署名されます。  すべてのメッセージは、アプリケーションに配信される前に、この要素の `customCertificateValidatorType` 属性で指定した検証を使用してメッセージ資格情報がチェックされます。  検証は、資格情報を受け入れることも拒否することもできます。  
+## <a name="remarks"></a><span data-ttu-id="2342c-170">コメント</span><span class="sxs-lookup"><span data-stu-id="2342c-170">Remarks</span></span>  
+ <span data-ttu-id="2342c-171">メッセージ認証を選択した場合は、この要素を構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2342c-171">This element must be configured if message authentication is chosen.</span></span> <span data-ttu-id="2342c-172">出力チャネルの各メッセージに署名によって提供される証明書を使って[\<証明書 >](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-element.md)です。</span><span class="sxs-lookup"><span data-stu-id="2342c-172">For output channels, each message is signed using the certificate provided by [\<certificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-element.md).</span></span> <span data-ttu-id="2342c-173">すべてのメッセージは、アプリケーションに配信される前に、この要素の `customCertificateValidatorType` 属性で指定した検証を使用してメッセージ資格情報がチェックされます。</span><span class="sxs-lookup"><span data-stu-id="2342c-173">All messages, before delivered to the application, are checked against the message credential using the validator specified by the `customCertificateValidatorType` attribute of this element.</span></span> <span data-ttu-id="2342c-174">検証は、資格情報を受け入れることも拒否することもできます。</span><span class="sxs-lookup"><span data-stu-id="2342c-174">The validator can either accept or reject the credential.</span></span>  
   
-## 使用例  
- 次のコードは、メッセージ送信者検証モードを `PeerOrChainTrust` に設定します。  
+## <a name="example"></a><span data-ttu-id="2342c-175">例</span><span class="sxs-lookup"><span data-stu-id="2342c-175">Example</span></span>  
+ <span data-ttu-id="2342c-176">次のコードは、メッセージ送信者検証モードを `PeerOrChainTrust` に設定します。</span><span class="sxs-lookup"><span data-stu-id="2342c-176">The following code sets the message sender validation mode to `PeerOrChainTrust`.</span></span>  
   
-```  
+```xml  
 <behaviors>  
  <endpointBehaviors>  
   <behavior name="MyEndpointBehavior">  
@@ -102,13 +112,13 @@ trustedStoreLocation="CurrentUser/LocalMachine"
  </endpointBehaviors>  
 ```  
   
-## 参照  
- <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>   
- <xref:System.ServiceModel.Security.PeerCredential.MessageSenderAuthentication%2A>   
- <xref:System.ServiceModel.Configuration.PeerCredentialElement.MessageSenderAuthentication%2A>   
- <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>   
- [証明書の使用](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
- [ピアツーピア ネットワーク](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)   
- [Peer Channel Message Authentication](http://msdn.microsoft.com/ja-jp/80e73386-514e-4c30-9e4a-b9ca8c173a95)   
- [Peer Channel Custom Authentication](http://msdn.microsoft.com/ja-jp/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)   
- [セキュリティによるピア チャネル アプリケーションの保護](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
+## <a name="see-also"></a><span data-ttu-id="2342c-177">関連項目</span><span class="sxs-lookup"><span data-stu-id="2342c-177">See Also</span></span>  
+ <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>  
+ <xref:System.ServiceModel.Security.PeerCredential.MessageSenderAuthentication%2A>  
+ <xref:System.ServiceModel.Configuration.PeerCredentialElement.MessageSenderAuthentication%2A>  
+ <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>  
+ [<span data-ttu-id="2342c-178">証明書の使用</span><span class="sxs-lookup"><span data-stu-id="2342c-178">Working with Certificates</span></span>](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
+ [<span data-ttu-id="2342c-179">ピア ツー ピア ネットワーク</span><span class="sxs-lookup"><span data-stu-id="2342c-179">Peer-to-Peer Networking</span></span>](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
+ [<span data-ttu-id="2342c-180">ピア チャネル メッセージの認証</span><span class="sxs-lookup"><span data-stu-id="2342c-180">Peer Channel Message Authentication</span></span>](http://msdn.microsoft.com/en-us/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
+ [<span data-ttu-id="2342c-181">ピア チャネル カスタム認証</span><span class="sxs-lookup"><span data-stu-id="2342c-181">Peer Channel Custom Authentication</span></span>](http://msdn.microsoft.com/en-us/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
+ [<span data-ttu-id="2342c-182">ピア チャネル アプリケーションのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="2342c-182">Securing Peer Channel Applications</span></span>](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)

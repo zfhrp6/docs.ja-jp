@@ -1,30 +1,33 @@
 ---
-title: "浮動小数点数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "浮動小数点数"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 73c218c6-1c44-4402-a167-4f6262629a91
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: c3e8ac8b5a97c62bb173fba57ac8aeb26a1dad42
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 浮動小数点数
-このトピックでは、開発者が [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] で浮動小数点数を扱う際によく遭遇する問題について説明します。  これらはコンピューターによる浮動小数点数の格納方法に起因する問題であり、<xref:System.Data.SqlClient> や <xref:System.Data.OracleClient> など、特定のプロバイダーに固有の問題ではありません。  
+# <a name="floating-point-numbers"></a><span data-ttu-id="d20d5-102">浮動小数点数</span><span class="sxs-lookup"><span data-stu-id="d20d5-102">Floating-Point Numbers</span></span>
+<span data-ttu-id="d20d5-103">このトピックでは、開発者が [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] で浮動小数点数を扱う際によく遭遇する問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="d20d5-103">This topic describes some of the issues that developers frequently encounter when they work with floating-point numbers in [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].</span></span> <span data-ttu-id="d20d5-104">これらはコンピューターによる浮動小数点数の格納方法に起因する問題であり、<xref:System.Data.SqlClient> や <xref:System.Data.OracleClient> など、特定のプロバイダーに固有の問題ではありません。</span><span class="sxs-lookup"><span data-stu-id="d20d5-104">These issues are caused by the way that computers store floating-point numbers, and are not specific to a particular provider such as <xref:System.Data.SqlClient> or <xref:System.Data.OracleClient>.</span></span>  
   
- 通常、浮動小数点数には正確なバイナリ表現がありません。  その代わり、数値の近似値がコンピューターによって格納されます。  浮動小数点数を表現するために使用されるバイナリ桁数はそのときどきで異なります。  浮動小数点数をある表現から別の表現に変換した場合、その数値の最下位の桁がわずかに変わってしまう場合があります。  一般に、変換が発生するのは型をキャストしたときです。  この差異は、変換を 1 つのデータベース内で行うか、データベースの値を表す型間で行うか、型と型の間で行うかに関係なく生じます。  このような差が生じてしまう関係上、論理的には等しくなるはずの数値でも、最下位の桁の値が異なる場合があります。  数値の有効桁数が、本来の桁数よりも大きくなったり小さくなったりすることもあります。  また、数値を文字列として表した場合に、期待した値が得られない場合もあります。  
+ <span data-ttu-id="d20d5-105">通常、浮動小数点数には正確なバイナリ表現がありません。</span><span class="sxs-lookup"><span data-stu-id="d20d5-105">Floating-point numbers generally do not have an exact binary representation.</span></span> <span data-ttu-id="d20d5-106">その代わり、数値の近似値がコンピューターによって格納されます。</span><span class="sxs-lookup"><span data-stu-id="d20d5-106">Instead, the computer stores an approximation of the number.</span></span> <span data-ttu-id="d20d5-107">浮動小数点数を表現するために使用されるバイナリ桁数はそのときどきで異なります。</span><span class="sxs-lookup"><span data-stu-id="d20d5-107">At different times, different numbers of binary digits may be used to represent the number.</span></span> <span data-ttu-id="d20d5-108">浮動小数点数をある表現から別の表現に変換した場合、その数値の最下位の桁がわずかに変わってしまう場合があります。</span><span class="sxs-lookup"><span data-stu-id="d20d5-108">When a floating point number is converted from one representation to another representation, the least significant digits of that number may vary slightly.</span></span> <span data-ttu-id="d20d5-109">一般に、変換が発生するのは型をキャストしたときです。</span><span class="sxs-lookup"><span data-stu-id="d20d5-109">Conversion typically occurs when the number is cast from one type to another type.</span></span> <span data-ttu-id="d20d5-110">この差異は、変換を 1 つのデータベース内で行うか、データベースの値を表す型間で行うか、型と型の間で行うかに関係なく生じます。</span><span class="sxs-lookup"><span data-stu-id="d20d5-110">The variation occurs whether the conversion occurs within a database, between types that represent database values, or between types.</span></span> <span data-ttu-id="d20d5-111">このような差が生じてしまう関係上、論理的には等しくなるはずの数値でも、最下位の桁の値が異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="d20d5-111">Because of these changes, numbers that would logically be equal may have changes in their least-significant digits that cause them to have different values.</span></span> <span data-ttu-id="d20d5-112">数値の有効桁数が、本来の桁数よりも大きくなったり小さくなったりすることもあります。</span><span class="sxs-lookup"><span data-stu-id="d20d5-112">The number of digits of precision in the number may be larger or smaller than expected.</span></span> <span data-ttu-id="d20d5-113">また、数値を文字列として表した場合に、期待した値が得られない場合もあります。</span><span class="sxs-lookup"><span data-stu-id="d20d5-113">When formatted as a string, the number may not show the expected value.</span></span>  
   
- こうした影響を最小限に抑えるには、使用できる数値型のうち、最も近い型を使用する必要があります。  たとえば、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] を使用している場合、実数型の Transact\-SQL 値を浮動小数点型の値に変換すると、厳密には数値が変わってしまう場合があります。  同様に、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] では、<xref:System.Single> を <xref:System.Double> に変換すると、予想外の結果になることがあります。  いずれの場合も、最善の方法は、アプリケーションのすべての値に同じ数値型を使用することです。  固定精度の decimal 型を使用したり、あらかじめ浮動小数点数を固定精度の decimal 型にキャストしておく方法もあります。  
+ <span data-ttu-id="d20d5-114">こうした影響を最小限に抑えるには、使用できる数値型のうち、最も近い型を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d20d5-114">To minimize these effects, you should use the closest match between numeric types that is available to you.</span></span> <span data-ttu-id="d20d5-115">たとえば、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] を使用している場合、実数型の Transact-SQL 値を浮動小数点型の値に変換すると、厳密には数値が変わってしまう場合があります。</span><span class="sxs-lookup"><span data-stu-id="d20d5-115">For example, if you are working with [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)], the exact numeric value may change if you convert a Transact-SQL value of real type to a value of float type.</span></span> <span data-ttu-id="d20d5-116">同様に、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] では、<xref:System.Single> を <xref:System.Double> に変換すると、予想外の結果になることがあります。</span><span class="sxs-lookup"><span data-stu-id="d20d5-116">In the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], converting a <xref:System.Single> to a <xref:System.Double> may also produce unexpected results.</span></span> <span data-ttu-id="d20d5-117">いずれの場合も、最善の方法は、アプリケーションのすべての値に同じ数値型を使用することです。</span><span class="sxs-lookup"><span data-stu-id="d20d5-117">In both of these cases, a good strategy is to make all the values in the application use the same numeric type.</span></span> <span data-ttu-id="d20d5-118">固定精度の decimal 型を使用したり、あらかじめ浮動小数点数を固定精度の decimal 型にキャストしておく方法もあります。</span><span class="sxs-lookup"><span data-stu-id="d20d5-118">You can also use a fixed-precision decimal type, or cast floating-point numbers to a fixed-precision decimal type before you work with them.</span></span>  
   
- 等価比較の問題を回避するには、最下位桁の差異を無視できるようにアプリケーションをコーディングすることを検討してください。  たとえば、2 つの数値の等価性を比較するのではなく、一方の数値からもう一方の数値を減算するようにします。  その差が丸め処理の許容範囲内であれば、2 つの数値が等価であるものとして処理できます。  
+ <span data-ttu-id="d20d5-119">等価比較の問題を回避するには、最下位桁の差異を無視できるようにアプリケーションをコーディングすることを検討してください。</span><span class="sxs-lookup"><span data-stu-id="d20d5-119">To work around problems with equality comparison, consider coding your application so that variations in the least significant digits are ignored.</span></span> <span data-ttu-id="d20d5-120">たとえば、2 つの数値の等価性を比較するのではなく、一方の数値からもう一方の数値を減算するようにします。</span><span class="sxs-lookup"><span data-stu-id="d20d5-120">For example, instead of comparing to see whether two numbers are equal, subtract one number from the other number.</span></span> <span data-ttu-id="d20d5-121">その差が丸め処理の許容範囲内であれば、2 つの数値が等価であるものとして処理できます。</span><span class="sxs-lookup"><span data-stu-id="d20d5-121">If the difference is within an acceptable margin of rounding, your application can treat the numbers as if they are the same.</span></span>  
   
-## 参照  
- [浮動小数点数の精度の低下](../Topic/Why%20Floating-Point%20Numbers%20May%20Lose%20Precision.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="d20d5-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="d20d5-122">See Also</span></span>  
+ [<span data-ttu-id="d20d5-123">浮動小数点数の精度の低下</span><span class="sxs-lookup"><span data-stu-id="d20d5-123">Why Floating-Point Numbers May Lose Precision</span></span>](http://msdn.microsoft.com/library/1acb1add-ac06-4134-a2fd-aff13d8c4c15)  
+ [<span data-ttu-id="d20d5-124">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="d20d5-124">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

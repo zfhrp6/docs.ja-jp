@@ -1,39 +1,42 @@
 ---
-title: "方法 : ASP.NET Web サービス クライアント コードを Windows Communication Foundation に移行する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : ASP.NET Web サービス クライアント コードを Windows Communication Foundation に移行する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2e0a22a7-e1d5-4718-8997-4319a7cd9027
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d77e07cca938b67f5b79416ac4d8fdef96739ed2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : ASP.NET Web サービス クライアント コードを Windows Communication Foundation に移行する
-次の手順では、ASP.NET Web サービス クライアント コードを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行するために従う必要のある大まかな手順を説明します。  
+# <a name="how-to-migrate-aspnet-web-service-client-code-to-the-windows-communication-foundation"></a><span data-ttu-id="bc512-102">方法 : ASP.NET Web サービス クライアント コードを Windows Communication Foundation に移行する</span><span class="sxs-lookup"><span data-stu-id="bc512-102">How to: Migrate ASP.NET Web Service Client Code to the Windows Communication Foundation</span></span>
+<span data-ttu-id="bc512-103">次の手順では、ASP.NET Web サービス クライアント コードを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] に移行するために従う必要のある大まかな手順を説明します。</span><span class="sxs-lookup"><span data-stu-id="bc512-103">The following procedure describes the broad steps that need to be followed to migrate ASP.NET Web Service client code to [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
   
-## 手順  
+## <a name="procedure"></a><span data-ttu-id="bc512-104">プロシージャ</span><span class="sxs-lookup"><span data-stu-id="bc512-104">Procedure</span></span>  
   
-#### ASP.NET Web サービス クライアント コードを WCF に移行するには  
+#### <a name="to-migrate-aspnet-web-service-client-code-to-wcf"></a><span data-ttu-id="bc512-105">ASP.NET Web サービス クライアント コードを WCF に移行するには</span><span class="sxs-lookup"><span data-stu-id="bc512-105">To migrate ASP.NET Web Service client code to WCF</span></span>  
   
-1.  クライアントの包括的なテスト セットが存在することを確認します。  
+1.  <span data-ttu-id="bc512-106">クライアントの包括的なテスト セットが存在することを確認します。</span><span class="sxs-lookup"><span data-stu-id="bc512-106">Ensure that a comprehensive set of tests exist for the client.</span></span>  
   
-2.  Visual Studio 2005 を使用して、クライアント アプリケーションを .NET 2.0 にアップグレードします。テスト セットを実行します。  
+2.  <span data-ttu-id="bc512-107">Visual Studio 2005 を使用して、クライアント アプリケーションを .NET 2.0 にアップグレードします。</span><span class="sxs-lookup"><span data-stu-id="bc512-107">Use Visual Studio 2005 to upgrade the client application to .NET 2.0.</span></span> <span data-ttu-id="bc512-108">テスト セットを実行します。</span><span class="sxs-lookup"><span data-stu-id="bc512-108">Run the set of tests.</span></span>  
   
-3.  クライアント プロジェクトから ASP.NET クライアント コードを削除します。このコードは、WSDL.exe ツールを使用して生成したモジュールにあります。  
+3.  <span data-ttu-id="bc512-109">クライアント プロジェクトから ASP.NET クライアント コードを削除します。</span><span class="sxs-lookup"><span data-stu-id="bc512-109">Remove ASP.NET client code from the client project.</span></span> <span data-ttu-id="bc512-110">このコードは、WSDL.exe ツールを使用して生成したモジュールにあります。</span><span class="sxs-lookup"><span data-stu-id="bc512-110">That code is in modules generated using the WSDL.exe tool.</span></span>  
   
-4.  [ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を使用して、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント コードを生成します。このコードをクライアント プロジェクトに追加し、構成の出力をクライアントの既存の構成ファイルにマージします。  
+4.  <span data-ttu-id="bc512-111">生成[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアント コードを使用して、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。</span><span class="sxs-lookup"><span data-stu-id="bc512-111">Generate [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client code using the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span> <span data-ttu-id="bc512-112">このコードをクライアント プロジェクトに追加し、構成の出力をクライアントの既存の構成ファイルにマージします。</span><span class="sxs-lookup"><span data-stu-id="bc512-112">Add that code to the client project and merge the configuration output into the client’s existing configuration file.</span></span>  
   
-5.  アプリケーションをコンパイルします。以前の ASP.NET クライアント型への参照を新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント型への参照に置き換えることで、コンパイル エラーを修正します。  
+5.  <span data-ttu-id="bc512-113">アプリケーションをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="bc512-113">Compile the application.</span></span> <span data-ttu-id="bc512-114">以前の ASP.NET クライアント型への参照を新しい [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント型への参照に置き換えることで、コンパイル エラーを修正します。</span><span class="sxs-lookup"><span data-stu-id="bc512-114">Repair the compilation errors by replacing references to the former ASP.NET client types with references to the new [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client types.</span></span>  
   
-6.  テスト セットを実行します。  
+6.  <span data-ttu-id="bc512-115">テスト セットを実行します。</span><span class="sxs-lookup"><span data-stu-id="bc512-115">Run the set of tests.</span></span>  
   
-## 参照  
- [方法 : ASP.NET Web サービス コードを Windows Communication Foundation に移行する](../../../../docs/framework/wcf/feature-details/migrate-asp-net-web-service-to-wcf.md)
+## <a name="see-also"></a><span data-ttu-id="bc512-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="bc512-116">See Also</span></span>  
+ [<span data-ttu-id="bc512-117">方法: ASP.NET Web サービスのコードを Windows Communication Foundation に移行</span><span class="sxs-lookup"><span data-stu-id="bc512-117">How to: Migrate ASP.NET Web Service Code to the Windows Communication Foundation</span></span>](../../../../docs/framework/wcf/feature-details/migrate-asp-net-web-service-to-wcf.md)

@@ -1,55 +1,59 @@
 ---
-title: "カスタム アクティビティの設計と実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム アクティビティの設計と実装"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4e30e63d-6e33-4842-a7a4-ce807cef1fad
-caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f9243761803bc8b68ce37b3d3ad310e8bb7f93d9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# カスタム アクティビティの設計と実装
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] のカスタム アクティビティを作成するには、システム標準アクティビティを複合アクティビティにアセンブルするか、<xref:System.Activities.CodeActivity>、<xref:System.Activities.AsyncCodeActivity>、または <xref:System.Activities.NativeActivity> から派生する新しい型を作成します。  ここでは、いずれかのメソッドを使用してカスタム アクティビティを作成する方法について説明します。  
+# <a name="designing-and-implementing-custom-activities"></a><span data-ttu-id="36681-102">カスタム アクティビティの設計と実装</span><span class="sxs-lookup"><span data-stu-id="36681-102">Designing and Implementing Custom Activities</span></span>
+<span data-ttu-id="36681-103">[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] のカスタム アクティビティを作成するには、システム標準アクティビティを複合アクティビティにアセンブルするか、<xref:System.Activities.CodeActivity>、<xref:System.Activities.AsyncCodeActivity>、または <xref:System.Activities.NativeActivity> から派生する新しい型を作成します。</span><span class="sxs-lookup"><span data-stu-id="36681-103">Custom activities in [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] are created by either assembling system-provided activities into composite activities or by creating new types that derive from <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, or <xref:System.Activities.NativeActivity>.</span></span> <span data-ttu-id="36681-104">ここでは、いずれかのメソッドを使用してカスタム アクティビティを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-104">This section describes how to create custom activities with either method.</span></span>  
   
 > [!IMPORTANT]
->  既定では、カスタム アクティビティは、ワークフロー デザイナー内で、アクティビティ名を含む単純な四角形として表示されます。  ワーク フロー デザイナーでアクティビティのカスタム ビジュアル表現を指定するには、カスタム デザイナーを作成する必要があります。  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]「[カスタム アクティビティ デザイナーおよびテンプレートの使用](../../../docs/framework/windows-workflow-foundation//using-custom-activity-designers-and-templates.md)」を参照してください。  
+>  <span data-ttu-id="36681-105">既定では、カスタム アクティビティは、ワークフロー デザイナー内で、アクティビティ名を含む単純な四角形として表示されます。</span><span class="sxs-lookup"><span data-stu-id="36681-105">Custom activities by default display within the workflow designer as a simple rectangle with the activity’s name.</span></span> <span data-ttu-id="36681-106">ワーク フロー デザイナーでアクティビティのカスタム ビジュアル表現を指定するには、カスタム デザイナーを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="36681-106">To provide a custom visual representation of your activity in the workflow designer you must also create a custom designer.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="36681-107">[カスタム アクティビティ デザイナーおよびテンプレートを使用して](../../../docs/framework/windows-workflow-foundation/using-custom-activity-designers-and-templates.md)です。</span><span class="sxs-lookup"><span data-stu-id="36681-107"> [Using Custom Activity Designers and Templates](../../../docs/framework/windows-workflow-foundation/using-custom-activity-designers-and-templates.md).</span></span>  
   
-## このセクションの内容  
- [アクティビティ作成オプション](../../../docs/framework/windows-workflow-foundation//activity-authoring-options-in-wf.md)  
- [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] で使用できる作成スタイルについて説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="36681-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="36681-108">In This Section</span></span>  
+ [<span data-ttu-id="36681-109">アクティビティ作成オプション</span><span class="sxs-lookup"><span data-stu-id="36681-109">Activity Authoring Options</span></span>](../../../docs/framework/windows-workflow-foundation/activity-authoring-options-in-wf.md)  
+ <span data-ttu-id="36681-110">[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] で使用できる作成スタイルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-110">Discusses the authoring styles available in [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)].</span></span>  
   
- [カスタム アクティビティの使用](../../../docs/framework/windows-workflow-foundation//using-a-custom-activity.md)  
- ワークフロー プロジェクトにカスタム アクティビティを追加する方法について説明します。  
+ [<span data-ttu-id="36681-111">カスタム アクティビティの使用</span><span class="sxs-lookup"><span data-stu-id="36681-111">Using a custom activity</span></span>](../../../docs/framework/windows-workflow-foundation/using-a-custom-activity.md)  
+ <span data-ttu-id="36681-112">ワークフロー プロジェクトにカスタム アクティビティを追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-112">Describes how to add a custom activity to a workflow project.</span></span>  
   
- [非同期アクティビティの作成](../../../docs/framework/windows-workflow-foundation//creating-asynchronous-activities-in-wf.md)  
- 非同期アクティビティを作成する方法について説明します。  
+  [<span data-ttu-id="36681-113">非同期アクティビティの作成</span><span class="sxs-lookup"><span data-stu-id="36681-113">Creating Asynchronous Activities</span></span>](../../../docs/framework/windows-workflow-foundation/creating-asynchronous-activities-in-wf.md)  
+ <span data-ttu-id="36681-114">非同期アクティビティを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-114">Describes how to create asynchronous activities.</span></span>  
   
- [アクティビティ検証の構成](../../../docs/framework/windows-workflow-foundation//configuring-activity-validation.md)  
- アクティビティの検証を使用して、アクティビティを実行する前にその構成エラーを特定および報告する方法について説明します。  
+ [<span data-ttu-id="36681-115">アクティビティ検証の構成</span><span class="sxs-lookup"><span data-stu-id="36681-115">Configuring Activity Validation</span></span>](../../../docs/framework/windows-workflow-foundation/configuring-activity-validation.md)  
+ <span data-ttu-id="36681-116">アクティビティの検証を使用して、アクティビティを実行する前にその構成エラーを特定および報告する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-116">Describes how activity validation can be used to identify and report errors in an activity’s configuration prior to its execution.</span></span>  
   
- [実行時におけるアクティビティの作成](../../../docs/framework/windows-workflow-foundation//creating-an-activity-at-runtime-with-dynamicactivity.md)  
- <xref:System.Activities.DynamicActivity> を使用して実行時にアクティビティを作成する方法について説明します。  
+ [<span data-ttu-id="36681-117">実行時におけるアクティビティの作成</span><span class="sxs-lookup"><span data-stu-id="36681-117">Creating an Activity at Runtime</span></span>](../../../docs/framework/windows-workflow-foundation/creating-an-activity-at-runtime-with-dynamicactivity.md)  
+ <span data-ttu-id="36681-118"><xref:System.Activities.DynamicActivity> を使用して実行時にアクティビティを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-118">Discusses how to create activities at runtime using <xref:System.Activities.DynamicActivity>.</span></span>  
   
- [ワークフロー実行プロパティ](../../../docs/framework/windows-workflow-foundation//workflow-execution-properties.md)  
- ワークフロー実行プロパティを使用して、アクティビティの環境にコンテキスト固有のプロパティを追加する方法について説明します。  
+ [<span data-ttu-id="36681-119">ワークフロー実行プロパティ</span><span class="sxs-lookup"><span data-stu-id="36681-119">Workflow Execution Properties</span></span>](../../../docs/framework/windows-workflow-foundation/workflow-execution-properties.md)  
+ <span data-ttu-id="36681-120">ワークフロー実行プロパティを使用して、アクティビティの環境にコンテキスト固有のプロパティを追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-120">Describes how to use workflow execution properties to add context specific properties to an activity’s environment</span></span>  
   
- [アクティビティ デリゲートの使用](../../../docs/framework/windows-workflow-foundation//using-activity-delegates.md)  
- アクティビティ デリゲートを含むアクティビティを作成および使用する方法について説明します。  
+ [<span data-ttu-id="36681-121">アクティビティ デリゲートの使用</span><span class="sxs-lookup"><span data-stu-id="36681-121">Using Activity Delegates</span></span>](../../../docs/framework/windows-workflow-foundation/using-activity-delegates.md)  
+ <span data-ttu-id="36681-122">アクティビティ デリゲートを含むアクティビティを作成および使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-122">Discusses how to author and use activities that contain activity delegates.</span></span>  
   
- [アクティビティのローカライズ](../../../docs/framework/windows-workflow-foundation//activity-localization.md)  
- アクティビティの文字列リソースのローカライズを使用する方法について説明します。  
+ [<span data-ttu-id="36681-123">アクティビティのローカライズ</span><span class="sxs-lookup"><span data-stu-id="36681-123">Activity Localization</span></span>](../../../docs/framework/windows-workflow-foundation/activity-localization.md)  
+ <span data-ttu-id="36681-124">アクティビティの文字列リソースのローカライズを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-124">Describes how to use localization of string resources in activities.</span></span>  
   
- [アクティビティ拡張機能の使用](../../../docs/framework/windows-workflow-foundation//using-activity-extensions.md)  
- アクティビティ拡張機能を作成および使用する方法について説明します。  
+ [<span data-ttu-id="36681-125">アクティビティ拡張機能の使用</span><span class="sxs-lookup"><span data-stu-id="36681-125">Using Activity Extensions</span></span>](../../../docs/framework/windows-workflow-foundation/using-activity-extensions.md)  
+ <span data-ttu-id="36681-126">アクティビティ拡張機能を作成および使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-126">Describes how to author and use activity extensions.</span></span>  
   
- [ワークフローからの OData フィードの利用](../../../docs/framework/windows-workflow-foundation//consuming-odata-feeds-from-a-workflow.md)  
- ワークフローから WCF Data Service を呼び出すためのいくつかの方法について説明します。  
+ [<span data-ttu-id="36681-127">ワークフローからの OData フィードの利用</span><span class="sxs-lookup"><span data-stu-id="36681-127">Consuming OData Feeds from a Workflow</span></span>](../../../docs/framework/windows-workflow-foundation/consuming-odata-feeds-from-a-workflow.md)  
+ <span data-ttu-id="36681-128">ワークフローから WCF Data Service を呼び出すためのいくつかの方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-128">Describes several methods for calling a WCF Data Service from a workflow.</span></span>  
   
- [アクティビティ定義のスコープ設定と表示](../../../docs/framework/windows-workflow-foundation//activity-definition-scoping-and-visibility.md)  
- アクティビティのデータのスコープとメンバーの参照範囲を定義するためのオプションおよび規則について説明します。
+ [<span data-ttu-id="36681-129">アクティビティ定義のスコープ設定と表示</span><span class="sxs-lookup"><span data-stu-id="36681-129">Activity Definition Scoping and Visibility</span></span>](../../../docs/framework/windows-workflow-foundation/activity-definition-scoping-and-visibility.md)  
+ <span data-ttu-id="36681-130">アクティビティのデータのスコープとメンバーの参照範囲を定義するためのオプションおよび規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="36681-130">Describes the options and rules for defining data scoping and member visibility for activities.</span></span>

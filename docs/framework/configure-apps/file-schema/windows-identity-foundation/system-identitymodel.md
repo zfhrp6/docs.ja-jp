@@ -1,57 +1,61 @@
 ---
-title: "&lt;system.identityModel&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;system.identityModel&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 210ce7e9-d07b-400c-800f-5f525dcf95e8
-caps.latest.revision: 5
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 356dd1531f093282a1a8463b7d697400f8b45862
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;system.identityModel&gt;
-アプリケーションでんだ Windows アイデンティティ基盤 \(ぜ\) オプションを有効にする構成を提供します。  
+# <a name="ltsystemidentitymodelgt"></a><span data-ttu-id="163a0-102">&lt;system.identityModel&gt;</span><span class="sxs-lookup"><span data-stu-id="163a0-102">&lt;system.identityModel&gt;</span></span>
+<span data-ttu-id="163a0-103">アプリケーションで Windows Identity Foundation (WIF) オプションを有効にするための構成を提供します。</span><span class="sxs-lookup"><span data-stu-id="163a0-103">Provides configuration for enabling Windows Identity Foundation (WIF) options in applications.</span></span>  
   
- \<system.identityModel\>  
+ <span data-ttu-id="163a0-104">\<system.identityModel ></span><span class="sxs-lookup"><span data-stu-id="163a0-104">\<system.identityModel></span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="163a0-105">構文</span><span class="sxs-lookup"><span data-stu-id="163a0-105">Syntax</span></span>  
   
-```  
+```xml  
 <system.identityModel>  
 </system.identityModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="163a0-106">属性および要素</span><span class="sxs-lookup"><span data-stu-id="163a0-106">Attributes and Elements</span></span>  
+ <span data-ttu-id="163a0-107">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="163a0-107">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
- なし  
+### <a name="attributes"></a><span data-ttu-id="163a0-108">属性</span><span class="sxs-lookup"><span data-stu-id="163a0-108">Attributes</span></span>  
+ <span data-ttu-id="163a0-109">なし</span><span class="sxs-lookup"><span data-stu-id="163a0-109">None</span></span>  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="163a0-110">子要素</span><span class="sxs-lookup"><span data-stu-id="163a0-110">Child Elements</span></span>  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<identityConfiguration\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|サービス ・ レベルの id の設定を指定します。|  
+|<span data-ttu-id="163a0-111">要素</span><span class="sxs-lookup"><span data-stu-id="163a0-111">Element</span></span>|<span data-ttu-id="163a0-112">説明</span><span class="sxs-lookup"><span data-stu-id="163a0-112">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="163a0-113">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="163a0-113">\<identityConfiguration></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|<span data-ttu-id="163a0-114">サービス レベルの id 設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="163a0-114">Specifies service-level identity settings.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="163a0-115">親要素</span><span class="sxs-lookup"><span data-stu-id="163a0-115">Parent Elements</span></span>  
   
-|要素|Description|  
-|--------|-----------------|  
-|`<configuration>`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
+|<span data-ttu-id="163a0-116">要素</span><span class="sxs-lookup"><span data-stu-id="163a0-116">Element</span></span>|<span data-ttu-id="163a0-117">説明</span><span class="sxs-lookup"><span data-stu-id="163a0-117">Description</span></span>|  
+|-------------|-----------------|  
+|`<configuration>`|<span data-ttu-id="163a0-118">共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。</span><span class="sxs-lookup"><span data-stu-id="163a0-118">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
   
-## 解説  
- 追加、 `<system.identityModel>`してたんだ Windows アイデンティティ基盤 \(ぜ\) を使用するアプリケーション、サービスを構成するには、構成ファイルのセクション。  `<system.identityModel>`要素で表される、 <xref:System.IdentityModel.Configuration.SystemIdentityModelSection>クラス。  
+## <a name="remarks"></a><span data-ttu-id="163a0-119">コメント</span><span class="sxs-lookup"><span data-stu-id="163a0-119">Remarks</span></span>  
+ <span data-ttu-id="163a0-120">追加、`<system.identityModel>`サービスまたは Windows Identity Foundation (WIF) を使用するアプリケーションを構成する構成ファイルにセクションです。</span><span class="sxs-lookup"><span data-stu-id="163a0-120">Add a `<system.identityModel>` section to the configuration file to configure a service or application to use Windows Identity Foundation (WIF).</span></span> <span data-ttu-id="163a0-121">`<system.identityModel>`要素として表されます、<xref:System.IdentityModel.Configuration.SystemIdentityModelSection>クラスです。</span><span class="sxs-lookup"><span data-stu-id="163a0-121">The `<system.identityModel>` element is represented by the <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> class.</span></span>  
   
-## 使用例  
- 追加する方法の例を示します、 `<system.identityModel>`するには、構成ファイルのセクション。  構成セクションと名前空間の宣言でを最初に追加する必要があります、 `<configSections>`要素。  追加することができ、 `<system.IdentityModel>` 1 つまたは複数の識別情報の構成を指定するのには、構成ファイルの要素。  
+## <a name="example"></a><span data-ttu-id="163a0-122">例</span><span class="sxs-lookup"><span data-stu-id="163a0-122">Example</span></span>  
+ <span data-ttu-id="163a0-123">次の例は、追加する方法を示します、`<system.identityModel>`構成ファイルにセクションです。</span><span class="sxs-lookup"><span data-stu-id="163a0-123">The following example shows how to add a `<system.identityModel>` section to a configuration file.</span></span> <span data-ttu-id="163a0-124">構成セクションと名前空間の宣言を追加する必要があります最初、`<configSections>`要素。</span><span class="sxs-lookup"><span data-stu-id="163a0-124">You must first add the configuration section and namespace declaration under the `<configSections>` element.</span></span> <span data-ttu-id="163a0-125">追加することができ、`<system.IdentityModel>`要素を構成ファイルを 1 つまたは複数の id 構成を指定します。</span><span class="sxs-lookup"><span data-stu-id="163a0-125">Then you can add the `<system.IdentityModel>` element to your configuration file to specify one or more identity configurations.</span></span>  
   
-```  
+```xml  
 <configuration>  
   <configSections>  
     <!--WIF 4.5 sections -->  
@@ -80,5 +84,5 @@ caps.handback.revision: 5
 </configuration>  
 ```  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="163a0-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="163a0-126">See Also</span></span>  
  <xref:System.IdentityModel.Configuration.SystemIdentityModelSection>

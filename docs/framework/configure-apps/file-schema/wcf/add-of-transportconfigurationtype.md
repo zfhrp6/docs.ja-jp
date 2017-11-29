@@ -1,31 +1,35 @@
 ---
-title: "&lt;transportConfigurationType&gt; の &lt;add&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: "&lt;transportConfigurationType&gt; の &lt;add&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 03d79db9-571d-4534-acef-d05e5467b257
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: cb00a5d5a2b4f64cdce6832faef4822b63f426d2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;transportConfigurationType&gt; の &lt;add&gt;
-この要素は、特定のトランスポートの種類を識別するキーと値のペアです。  
+# <a name="ltaddgt-of-lttransportconfigurationtypegt"></a><span data-ttu-id="5050d-102">&lt;transportConfigurationType&gt; の &lt;add&gt;</span><span class="sxs-lookup"><span data-stu-id="5050d-102">&lt;add&gt; of &lt;transportConfigurationType&gt;</span></span>
+<span data-ttu-id="5050d-103">この要素は、特定のトランスポートの種類を識別するキーと値のペアです。</span><span class="sxs-lookup"><span data-stu-id="5050d-103">This element is a key/value pair, which identifies the type of a particular transport.</span></span>  
   
-## 構文  
+ <span data-ttu-id="5050d-104">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="5050d-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="5050d-105">\<ServiceHostingEnvironment ></span><span class="sxs-lookup"><span data-stu-id="5050d-105">\<ServiceHostingEnvironment></span></span>  
+<span data-ttu-id="5050d-106">\<transportConfigurationTypes ></span><span class="sxs-lookup"><span data-stu-id="5050d-106">\<transportConfigurationTypes></span></span>  
+<span data-ttu-id="5050d-107">\<add></span><span class="sxs-lookup"><span data-stu-id="5050d-107">\<add></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="5050d-108">構文</span><span class="sxs-lookup"><span data-stu-id="5050d-108">Syntax</span></span>  
   
+```xml  
 <serviceHostingEnvironment>   
    <transportConfigurationTypes>  
       <add name="String"  
@@ -34,28 +38,28 @@ caps.handback.revision: 12
 </serviceHostingEnvironment>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="5050d-109">属性および要素</span><span class="sxs-lookup"><span data-stu-id="5050d-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="5050d-110">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="5050d-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="5050d-111">属性</span><span class="sxs-lookup"><span data-stu-id="5050d-111">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|name|必須の文字列属性です。<br /><br /> トランスポートの種類を一意に識別するユーザー定義キーを含みます。|  
-|transportConfigurationType|特定のトランスポートを実装する種類を含む文字列。|  
+|<span data-ttu-id="5050d-112">属性</span><span class="sxs-lookup"><span data-stu-id="5050d-112">Attribute</span></span>|<span data-ttu-id="5050d-113">説明</span><span class="sxs-lookup"><span data-stu-id="5050d-113">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="5050d-114">name</span><span class="sxs-lookup"><span data-stu-id="5050d-114">name</span></span>|<span data-ttu-id="5050d-115">必須の文字列属性です。</span><span class="sxs-lookup"><span data-stu-id="5050d-115">Required String attribute.</span></span><br /><br /> <span data-ttu-id="5050d-116">トランスポートの種類を一意に識別するユーザー定義キーを含みます。</span><span class="sxs-lookup"><span data-stu-id="5050d-116">Contains a user-defined key that uniquely identifies the transport type.</span></span>|  
+|<span data-ttu-id="5050d-117">transportConfigurationType</span><span class="sxs-lookup"><span data-stu-id="5050d-117">transportConfigurationType</span></span>|<span data-ttu-id="5050d-118">特定のトランスポートを実装する種類を含む文字列。</span><span class="sxs-lookup"><span data-stu-id="5050d-118">A string that contains the type that implements the specific transport.</span></span>|  
   
-### 子要素  
- なし  
+### <a name="child-elements"></a><span data-ttu-id="5050d-119">子要素</span><span class="sxs-lookup"><span data-stu-id="5050d-119">Child Elements</span></span>  
+ <span data-ttu-id="5050d-120">なし</span><span class="sxs-lookup"><span data-stu-id="5050d-120">None</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="5050d-121">親要素</span><span class="sxs-lookup"><span data-stu-id="5050d-121">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<transportConfigurationTypes\>](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|特定のトランスポートを実装する型のコレクション。|  
+|<span data-ttu-id="5050d-122">要素</span><span class="sxs-lookup"><span data-stu-id="5050d-122">Element</span></span>|<span data-ttu-id="5050d-123">説明</span><span class="sxs-lookup"><span data-stu-id="5050d-123">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="5050d-124">\<transportConfigurationTypes ></span><span class="sxs-lookup"><span data-stu-id="5050d-124">\<transportConfigurationTypes></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|<span data-ttu-id="5050d-125">特定のトランスポートを実装する型のコレクション。</span><span class="sxs-lookup"><span data-stu-id="5050d-125">A collection of types that implement the specific transport.</span></span>|  
   
-## 使用例  
+## <a name="example"></a><span data-ttu-id="5050d-126">例</span><span class="sxs-lookup"><span data-stu-id="5050d-126">Example</span></span>  
   
-```  
+```xml  
 <serviceHostingEnvironment>   
    <transportConfigurationTypes>  
       <add name="net.udp"  
@@ -64,8 +68,8 @@ caps.handback.revision: 12
 </serviceHostingEnvironment>  
 ```  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.TransportConfigurationTypeElement>   
- <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>   
- <xref:System.ServiceModel.ServiceHostingEnvironment>   
- [ホスト](../../../../../docs/framework/wcf/feature-details/hosting.md)
+## <a name="see-also"></a><span data-ttu-id="5050d-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="5050d-127">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.TransportConfigurationTypeElement>  
+ <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>  
+ <xref:System.ServiceModel.ServiceHostingEnvironment>  
+ [<span data-ttu-id="5050d-128">ホスティング</span><span class="sxs-lookup"><span data-stu-id="5050d-128">Hosting</span></span>](../../../../../docs/framework/wcf/feature-details/hosting.md)

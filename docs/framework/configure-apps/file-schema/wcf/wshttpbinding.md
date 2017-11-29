@@ -5,35 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-helpviewer_keywords:
-- wsHttpBinding Element
+helpviewer_keywords: wsHttpBinding Element
 ms.assetid: 0eee8ced-ad68-427d-b95a-97260e98deed
-caps.latest.revision: 30
+caps.latest.revision: "30"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b4530878c342d1350c216e449e1d5444862d03c0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 1368b4a677e5cce7b666c94a6f3ddd919e72f7c9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="ltwshttpbindinggt"></a>&lt;wsHttpBinding&gt;
-双方向サービス コントラクト以外に適した、安全で信頼のおける相互操作可能なバインディングを定義します。 バインディングは、信頼のための WS-ReliableMessaging、およびメッセージのセキュリティと認証のための WS-Security を実装します。 トランスポートは HTTP、メッセージ エンコーディングは Text/XML エンコーディングです。  
+# <a name="ltwshttpbindinggt"></a><span data-ttu-id="15728-102">&lt;wsHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="15728-102">&lt;wsHttpBinding&gt;</span></span>
+<span data-ttu-id="15728-103">双方向サービス コントラクト以外に適した、安全で信頼のおける相互操作可能なバインディングを定義します。</span><span class="sxs-lookup"><span data-stu-id="15728-103">Defines a secure, reliable, interoperable binding suitable for non-duplex service contracts.</span></span> <span data-ttu-id="15728-104">バインディングは、信頼のための WS-ReliableMessaging、およびメッセージのセキュリティと認証のための WS-Security を実装します。</span><span class="sxs-lookup"><span data-stu-id="15728-104">The binding implements the following specifications: WS-Reliable Messaging for reliability, and WS-Security for message security and authentication.</span></span> <span data-ttu-id="15728-105">トランスポートは HTTP、メッセージ エンコーディングは Text/XML エンコーディングです。</span><span class="sxs-lookup"><span data-stu-id="15728-105">The transport is HTTP, and message encoding is Text/XML encoding.</span></span>  
   
- \<システムです。ServiceModel >  
-\<バインド >  
-\<wsHttpBinding >  
+ <span data-ttu-id="15728-106">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="15728-106">\<system.ServiceModel></span></span>  
+<span data-ttu-id="15728-107">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="15728-107">\<bindings></span></span>  
+<span data-ttu-id="15728-108">\<wsHttpBinding ></span><span class="sxs-lookup"><span data-stu-id="15728-108">\<wsHttpBinding></span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="15728-109">構文</span><span class="sxs-lookup"><span data-stu-id="15728-109">Syntax</span></span>  
   
 ```xml  
 <wsHttpBinding>  
@@ -71,47 +65,47 @@ ms.lasthandoff: 09/25/2017
 </wsHttpBinding>  
 ```  
   
-## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="15728-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="15728-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="15728-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="15728-111">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a><span data-ttu-id="15728-112">属性</span><span class="sxs-lookup"><span data-stu-id="15728-112">Attributes</span></span>  
   
-|属性|説明|  
+|<span data-ttu-id="15728-113">属性</span><span class="sxs-lookup"><span data-stu-id="15728-113">Attribute</span></span>|<span data-ttu-id="15728-114">説明</span><span class="sxs-lookup"><span data-stu-id="15728-114">Description</span></span>|  
 |---------------|-----------------|  
-|allowCookies|クライアントがクッキーを受け入れて、それらを今後の要求に反映させるかどうかを指定するブール値です。 既定値は false です。<br /><br /> クッキーを使用する ASMX Web サービスと対話する場合にこのプロパティを使用できます。 この方法で、サーバーから返されるクッキーを、それ以降のサービスに対するすべてのクライアント要求に自動的にコピーできます。|  
-|bypassProxyOnLocal|ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示すブール値。 既定値は、`false` です。|  
-|closeTimeout|クローズ操作が完了するまでの期間を指定する <xref:System.TimeSpan> 値。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
-|hostnameComparisonMode|URI の解析に使用する HTTP ホスト名比較モードを指定します。 この属性は <xref:System.ServiceModel.HostNameComparisonMode> 型で、URI が一致したときにサービスへのアクセスにホスト名を使用するかどうかを指定します。 既定値は <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard> で、一致しているホスト名を無視します。|  
-|maxBufferPoolSize|このバインディングに使用するバッファー プール サイズの上限を指定する整数。 既定は 524,288 バイト (512 * 1024) です。 Windows Communication Foundation (WCF) では、多くの部分でバッファーを使用します。 使用するたびに毎回バッファーを作成および破壊すると負荷が高くなります。バッファーのガベージ コレクションも同様です。 バッファー プールを使用すると、バッファーをプールから取得して使用し、作業が終わったらプールに戻すことができます。 これで、バッファーの作成と破棄のオーバーヘッドを回避できます。|  
-|maxReceivedMessageSize|このバインディングで構成されるチャネルで受信可能な最大メッセージ サイズ (ヘッダーを含む) をバイト単位で指定する正の整数。 この制限を超えるメッセージの送信者が、SOAP エラーを受信します。 メッセージは受信者によって破棄され、トレース ログにこのイベントのエントリが作成されます。 既定値は 65536 です。|  
-|messageEncoding|メッセージのエンコードに使用されるエンコーダーを定義します。 以下の値が有効です。<br /><br /> : テキストは、テキスト メッセージ エンコーダーを使用します。<br />Mtom: は、メッセージ Transmission Organization Mechanism 1.0 (MTOM) エンコーダーを使用します。<br />-既定値はテキストです。<br /><br /> この属性は <xref:System.ServiceModel.WSMessageEncoding> 型です。|  
-|name|バインディングの構成名を格納する文字列です。 この値は、バインディングの ID として使用されるため、一意にする必要があります。 [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。 既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。|  
-|openTimeout|実行中の操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
-|proxyAddress|HTTP プロキシのアドレスを指定する URI。 `useSystemWebProxy` が `true` の場合、この設定を `null` にする必要があります。 既定値は、`null` です。|  
-|receiveTimeout|受信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
-|sendTimeout|送信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
-|textEncoding|バインドでメッセージの発行に使用される文字セット エンコーディングを指定します。 以下の値が有効です。<br /><br /> -UnicodeFffeTextEncoding: Unicode BigEndian エンコーディングします。<br />-Utf16TextEncoding: 16 ビット エンコーディング。<br />-Utf8TextEncoding: 8 ビット エンコーディング。<br /><br /> 既定値は Utf8TextEncoding です。<br /><br /> この属性は <xref:System.Text.Encoding> 型です。|  
-|transactionFlow|バインディングが WS-Transactions のフローをサポートするかどうかを指定するブール値です。 既定値は、`false` です。|  
-|useDefaultWebProxy|システムの自動設定 HTTP プロキシを使用するかどうかを指定するブール値。 既定値は、`true` です。|  
+|<span data-ttu-id="15728-115">allowCookies</span><span class="sxs-lookup"><span data-stu-id="15728-115">allowCookies</span></span>|<span data-ttu-id="15728-116">クライアントがクッキーを受け入れて、それらを今後の要求に反映させるかどうかを指定するブール値です。</span><span class="sxs-lookup"><span data-stu-id="15728-116">A Boolean value that indicates whether the client accepts cookies and propagates them on future requests.</span></span> <span data-ttu-id="15728-117">既定値は false です。</span><span class="sxs-lookup"><span data-stu-id="15728-117">The default is false.</span></span><br /><br /> <span data-ttu-id="15728-118">クッキーを使用する ASMX Web サービスと対話する場合にこのプロパティを使用できます。</span><span class="sxs-lookup"><span data-stu-id="15728-118">You can use this property when you interact with ASMX Web services that use cookies.</span></span> <span data-ttu-id="15728-119">この方法で、サーバーから返されるクッキーを、それ以降のサービスに対するすべてのクライアント要求に自動的にコピーできます。</span><span class="sxs-lookup"><span data-stu-id="15728-119">In this way, you can be sure that the cookies returned from the server are automatically copied to all future client requests for that service.</span></span>|  
+|<span data-ttu-id="15728-120">bypassProxyOnLocal</span><span class="sxs-lookup"><span data-stu-id="15728-120">bypassProxyOnLocal</span></span>|<span data-ttu-id="15728-121">ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示すブール値。</span><span class="sxs-lookup"><span data-stu-id="15728-121">A Boolean value that indicates whether to bypass the proxy server for local addresses.</span></span> <span data-ttu-id="15728-122">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="15728-122">The default is `false`.</span></span>|  
+|<span data-ttu-id="15728-123">closeTimeout</span><span class="sxs-lookup"><span data-stu-id="15728-123">closeTimeout</span></span>|<span data-ttu-id="15728-124">クローズ操作が完了するまでの期間を指定する <xref:System.TimeSpan> 値。</span><span class="sxs-lookup"><span data-stu-id="15728-124">A <xref:System.TimeSpan> value that specifies the interval of time provided for a close operation to complete.</span></span> <span data-ttu-id="15728-125">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="15728-125">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="15728-126">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="15728-126">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="15728-127">hostnameComparisonMode</span><span class="sxs-lookup"><span data-stu-id="15728-127">hostnameComparisonMode</span></span>|<span data-ttu-id="15728-128">URI の解析に使用する HTTP ホスト名比較モードを指定します。</span><span class="sxs-lookup"><span data-stu-id="15728-128">Specifies the HTTP hostname comparison mode used to parse URIs.</span></span> <span data-ttu-id="15728-129">この属性は <xref:System.ServiceModel.HostNameComparisonMode> 型で、URI が一致したときにサービスへのアクセスにホスト名を使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="15728-129">This attribute is of type <xref:System.ServiceModel.HostNameComparisonMode>, which indicates whether the hostname is used to reach the service when matching on the URI.</span></span> <span data-ttu-id="15728-130">既定値は <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard> で、一致しているホスト名を無視します。</span><span class="sxs-lookup"><span data-stu-id="15728-130">The default value is <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, which ignores the hostname in the match.</span></span>|  
+|<span data-ttu-id="15728-131">maxBufferPoolSize</span><span class="sxs-lookup"><span data-stu-id="15728-131">maxBufferPoolSize</span></span>|<span data-ttu-id="15728-132">このバインディングに使用するバッファー プール サイズの上限を指定する整数。</span><span class="sxs-lookup"><span data-stu-id="15728-132">An integer that specifies the maximum buffer pool size for this binding.</span></span> <span data-ttu-id="15728-133">既定は 524,288 バイト (512 * 1024) です。</span><span class="sxs-lookup"><span data-stu-id="15728-133">The default is 524,288 bytes (512 * 1024).</span></span> <span data-ttu-id="15728-134">Windows Communication Foundation (WCF) では、多くの部分でバッファーを使用します。</span><span class="sxs-lookup"><span data-stu-id="15728-134">Many parts of Windows Communication Foundation (WCF) use buffers.</span></span> <span data-ttu-id="15728-135">使用するたびに毎回バッファーを作成および破壊すると負荷が高くなります。バッファーのガベージ コレクションも同様です。</span><span class="sxs-lookup"><span data-stu-id="15728-135">Creating and destroying buffers each time they are used is expensive, and garbage collection for buffers is also expensive.</span></span> <span data-ttu-id="15728-136">バッファー プールを使用すると、バッファーをプールから取得して使用し、作業が終わったらプールに戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="15728-136">With buffer pools, you can take a buffer from the pool, use it, and return it to the pool once you are done.</span></span> <span data-ttu-id="15728-137">これで、バッファーの作成と破棄のオーバーヘッドを回避できます。</span><span class="sxs-lookup"><span data-stu-id="15728-137">Thus the overhead in creating and destroying buffers is avoided.</span></span>|  
+|<span data-ttu-id="15728-138">maxReceivedMessageSize</span><span class="sxs-lookup"><span data-stu-id="15728-138">maxReceivedMessageSize</span></span>|<span data-ttu-id="15728-139">このバインディングで構成されるチャネルで受信可能な最大メッセージ サイズ (ヘッダーを含む) をバイト単位で指定する正の整数。</span><span class="sxs-lookup"><span data-stu-id="15728-139">A positive integer that specifies the maximum message size, in bytes, including headers, that can be received on a channel configured with this binding.</span></span> <span data-ttu-id="15728-140">この制限を超えるメッセージの送信者が、SOAP エラーを受信します。</span><span class="sxs-lookup"><span data-stu-id="15728-140">The sender of a message exceeding this limit will receive a SOAP fault.</span></span> <span data-ttu-id="15728-141">メッセージは受信者によって破棄され、トレース ログにこのイベントのエントリが作成されます。</span><span class="sxs-lookup"><span data-stu-id="15728-141">The receiver drops the message and creates an entry of the event in the trace log.</span></span> <span data-ttu-id="15728-142">既定値は 65536 です。</span><span class="sxs-lookup"><span data-stu-id="15728-142">The default is 65536.</span></span>|  
+|<span data-ttu-id="15728-143">messageEncoding</span><span class="sxs-lookup"><span data-stu-id="15728-143">messageEncoding</span></span>|<span data-ttu-id="15728-144">メッセージのエンコードに使用されるエンコーダーを定義します。</span><span class="sxs-lookup"><span data-stu-id="15728-144">Defines the encoder used to encode the message.</span></span> <span data-ttu-id="15728-145">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="15728-145">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="15728-146">: テキストは、テキスト メッセージ エンコーダーを使用します。</span><span class="sxs-lookup"><span data-stu-id="15728-146">-   Text: Use a text message encoder.</span></span><br /><span data-ttu-id="15728-147">Mtom: は、メッセージ Transmission Organization Mechanism 1.0 (MTOM) エンコーダーを使用します。</span><span class="sxs-lookup"><span data-stu-id="15728-147">-   Mtom: Use a Message Transmission Organization Mechanism 1.0 (MTOM) encoder.</span></span><br /><span data-ttu-id="15728-148">-既定値はテキストです。</span><span class="sxs-lookup"><span data-stu-id="15728-148">-   The default is Text.</span></span><br /><br /> <span data-ttu-id="15728-149">この属性は <xref:System.ServiceModel.WSMessageEncoding> 型です。</span><span class="sxs-lookup"><span data-stu-id="15728-149">This attribute is of type <xref:System.ServiceModel.WSMessageEncoding>.</span></span>|  
+|<span data-ttu-id="15728-150">name</span><span class="sxs-lookup"><span data-stu-id="15728-150">name</span></span>|<span data-ttu-id="15728-151">バインディングの構成名を格納する文字列です。</span><span class="sxs-lookup"><span data-stu-id="15728-151">A string that contains the configuration name of the binding.</span></span> <span data-ttu-id="15728-152">この値は、バインディングの ID として使用されるため、一意にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="15728-152">This value should be unique because it is used as an identification for the binding.</span></span> <span data-ttu-id="15728-153">[!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。</span><span class="sxs-lookup"><span data-stu-id="15728-153">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="15728-154">既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="15728-154">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>|  
+|<span data-ttu-id="15728-155">openTimeout</span><span class="sxs-lookup"><span data-stu-id="15728-155">openTimeout</span></span>|<span data-ttu-id="15728-156">実行中の操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="15728-156">A <xref:System.TimeSpan> value that specifies the interval of time provided for an open operation to complete.</span></span> <span data-ttu-id="15728-157">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="15728-157">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="15728-158">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="15728-158">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="15728-159">proxyAddress</span><span class="sxs-lookup"><span data-stu-id="15728-159">proxyAddress</span></span>|<span data-ttu-id="15728-160">HTTP プロキシのアドレスを指定する URI。</span><span class="sxs-lookup"><span data-stu-id="15728-160">A URI that specifies the address of the HTTP proxy.</span></span> <span data-ttu-id="15728-161">`useSystemWebProxy` が `true` の場合、この設定を `null` にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="15728-161">If `useSystemWebProxy` is `true`, this setting must be `null`.</span></span> <span data-ttu-id="15728-162">既定値は、`null` です。</span><span class="sxs-lookup"><span data-stu-id="15728-162">The default is `null`.</span></span>|  
+|<span data-ttu-id="15728-163">receiveTimeout</span><span class="sxs-lookup"><span data-stu-id="15728-163">receiveTimeout</span></span>|<span data-ttu-id="15728-164">受信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="15728-164">A <xref:System.TimeSpan> value that specifies the interval of time provided for a receive operation to complete.</span></span> <span data-ttu-id="15728-165">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="15728-165">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="15728-166">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="15728-166">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="15728-167">sendTimeout</span><span class="sxs-lookup"><span data-stu-id="15728-167">sendTimeout</span></span>|<span data-ttu-id="15728-168">送信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="15728-168">A <xref:System.TimeSpan> value that specifies the interval of time provided for a send operation to complete.</span></span> <span data-ttu-id="15728-169">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="15728-169">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="15728-170">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="15728-170">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="15728-171">textEncoding</span><span class="sxs-lookup"><span data-stu-id="15728-171">textEncoding</span></span>|<span data-ttu-id="15728-172">バインドでメッセージの発行に使用される文字セット エンコーディングを指定します。</span><span class="sxs-lookup"><span data-stu-id="15728-172">Specifies the character set encoding to be used for emitting messages on the binding.</span></span> <span data-ttu-id="15728-173">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="15728-173">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="15728-174">-UnicodeFffeTextEncoding: Unicode BigEndian エンコーディングします。</span><span class="sxs-lookup"><span data-stu-id="15728-174">-   UnicodeFffeTextEncoding: Unicode BigEndian encoding.</span></span><br /><span data-ttu-id="15728-175">-Utf16TextEncoding: 16 ビット エンコーディング。</span><span class="sxs-lookup"><span data-stu-id="15728-175">-   Utf16TextEncoding: 16-bit encoding.</span></span><br /><span data-ttu-id="15728-176">-Utf8TextEncoding: 8 ビット エンコーディング。</span><span class="sxs-lookup"><span data-stu-id="15728-176">-   Utf8TextEncoding: 8-bit encoding.</span></span><br /><br /> <span data-ttu-id="15728-177">既定値は Utf8TextEncoding です。</span><span class="sxs-lookup"><span data-stu-id="15728-177">The default is Utf8TextEncoding.</span></span><br /><br /> <span data-ttu-id="15728-178">この属性は <xref:System.Text.Encoding> 型です。</span><span class="sxs-lookup"><span data-stu-id="15728-178">This attribute is of type <xref:System.Text.Encoding>.</span></span>|  
+|<span data-ttu-id="15728-179">transactionFlow</span><span class="sxs-lookup"><span data-stu-id="15728-179">transactionFlow</span></span>|<span data-ttu-id="15728-180">バインディングが WS-Transactions のフローをサポートするかどうかを指定するブール値です。</span><span class="sxs-lookup"><span data-stu-id="15728-180">A Boolean value that specifies whether the binding supports flowing WS-Transactions.</span></span> <span data-ttu-id="15728-181">既定値は、`false` です。</span><span class="sxs-lookup"><span data-stu-id="15728-181">The default is `false`.</span></span>|  
+|<span data-ttu-id="15728-182">useDefaultWebProxy</span><span class="sxs-lookup"><span data-stu-id="15728-182">useDefaultWebProxy</span></span>|<span data-ttu-id="15728-183">システムの自動設定 HTTP プロキシを使用するかどうかを指定するブール値。</span><span class="sxs-lookup"><span data-stu-id="15728-183">A Boolean value that specifies whether the system’s auto-configured HTTP proxy is used.</span></span> <span data-ttu-id="15728-184">既定値は、`true` です。</span><span class="sxs-lookup"><span data-stu-id="15728-184">The default is `true`.</span></span>|  
   
-### <a name="child-elements"></a>子要素  
+### <a name="child-elements"></a><span data-ttu-id="15728-185">子要素</span><span class="sxs-lookup"><span data-stu-id="15728-185">Child Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="15728-186">要素</span><span class="sxs-lookup"><span data-stu-id="15728-186">Element</span></span>|<span data-ttu-id="15728-187">説明</span><span class="sxs-lookup"><span data-stu-id="15728-187">Description</span></span>|  
 |-------------|-----------------|  
-|[\<セキュリティ >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|バインディングのセキュリティ設定を定義します。 この要素は <xref:System.ServiceModel.Configuration.WSHttpSecurityElement> 型です。|  
-|[\<ある readerQuotas >](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|このバインドを使用して設定されるエンドポイントにより処理可能な、SOAP メッセージの複雑さに対する制約を定義します。 この要素は <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> 型です。|  
-|[reliableSession](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)|チャネルのエンドポイント間に信頼できるセッションを確立するかどうかを指定します。|  
+|[<span data-ttu-id="15728-188">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="15728-188">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|<span data-ttu-id="15728-189">バインディングのセキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="15728-189">Defines the security settings for the binding.</span></span> <span data-ttu-id="15728-190">この要素は <xref:System.ServiceModel.Configuration.WSHttpSecurityElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="15728-190">This element is of type <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>.</span></span>|  
+|[<span data-ttu-id="15728-191">\<ある readerQuotas ></span><span class="sxs-lookup"><span data-stu-id="15728-191">\<readerQuotas></span></span>](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|<span data-ttu-id="15728-192">このバインドを使用して設定されるエンドポイントにより処理可能な、SOAP メッセージの複雑さに対する制約を定義します。</span><span class="sxs-lookup"><span data-stu-id="15728-192">Defines the constraints on the complexity of SOAP messages that can be processed by endpoints configured with this binding.</span></span> <span data-ttu-id="15728-193">この要素は <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="15728-193">This element is of type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.</span></span>|  
+|[<span data-ttu-id="15728-194">reliableSession</span><span class="sxs-lookup"><span data-stu-id="15728-194">reliableSession</span></span>](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)|<span data-ttu-id="15728-195">チャネルのエンドポイント間に信頼できるセッションを確立するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="15728-195">Specifies if reliable sessions are established between channel endpoints.</span></span>|  
   
-### <a name="parent-elements"></a>親要素  
+### <a name="parent-elements"></a><span data-ttu-id="15728-196">親要素</span><span class="sxs-lookup"><span data-stu-id="15728-196">Parent Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="15728-197">要素</span><span class="sxs-lookup"><span data-stu-id="15728-197">Element</span></span>|<span data-ttu-id="15728-198">説明</span><span class="sxs-lookup"><span data-stu-id="15728-198">Description</span></span>|  
 |-------------|-----------------|  
-|[\<バインド >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。|  
+|[<span data-ttu-id="15728-199">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="15728-199">\<bindings></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|<span data-ttu-id="15728-200">この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。</span><span class="sxs-lookup"><span data-stu-id="15728-200">This element holds a collection of standard and custom bindings.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- `WSHttpBinding` は `BasicHttpBinding` に似ていますが、より多くの Web サービス機能を提供します。 BasicHttpBinding と同じように HTTP トランスポートを使用し、メッセージ セキュリティを提供します。さらに、トランザクション、信頼できるメッセージング、および WS-Addressing も提供します。これらは、既定で有効化になっているか、または単一の制御設定で使用できるようになります。  
+## <a name="remarks"></a><span data-ttu-id="15728-201">コメント</span><span class="sxs-lookup"><span data-stu-id="15728-201">Remarks</span></span>  
+ <span data-ttu-id="15728-202">`WSHttpBinding` は `BasicHttpBinding` に似ていますが、より多くの Web サービス機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="15728-202">The `WSHttpBinding` is similar to the `BasicHttpBinding` but provides more Web service features.</span></span> <span data-ttu-id="15728-203">BasicHttpBinding と同じように HTTP トランスポートを使用し、メッセージ セキュリティを提供します。さらに、トランザクション、信頼できるメッセージング、および WS-Addressing も提供します。これらは、既定で有効化になっているか、または単一の制御設定で使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="15728-203">It uses the HTTP transport and provides message security, as does BasicHttpBinding, but it also provides transactions, reliable messaging, and WS-Addressing, either enabled by default or available through a single control setting.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="15728-204">例</span><span class="sxs-lookup"><span data-stu-id="15728-204">Example</span></span>  
   
 ```xml  
 <configuration>  
@@ -150,11 +144,10 @@ ms.lasthandoff: 09/25/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.WSHttpBinding>   
- <xref:System.ServiceModel.Configuration.WSHttpBindingElement>   
- [バインド](../../../../../docs/framework/wcf/bindings.md)   
- [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<バインド >](../../../../../docs/framework/misc/binding.md)
-
+## <a name="see-also"></a><span data-ttu-id="15728-205">関連項目</span><span class="sxs-lookup"><span data-stu-id="15728-205">See Also</span></span>  
+ <xref:System.ServiceModel.WSHttpBinding>  
+ <xref:System.ServiceModel.Configuration.WSHttpBindingElement>  
+ [<span data-ttu-id="15728-206">バインディング</span><span class="sxs-lookup"><span data-stu-id="15728-206">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="15728-207">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="15728-207">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="15728-208">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="15728-208">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [<span data-ttu-id="15728-209">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="15728-209">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)

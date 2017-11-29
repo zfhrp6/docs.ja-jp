@@ -1,72 +1,74 @@
 ---
-title: "&lt;ipv6&gt; 要素 (ネットワーク設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/ipv6"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#ipv6"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<ipv6> 要素"
-  - "ipv6 要素"
+title: "&lt;ipv6&gt;要素 (ネットワーク設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/ipv6
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#ipv6
+helpviewer_keywords:
+- <ipv6> element
+- ipv6 element
 ms.assetid: 10b79aef-327b-4718-a892-e11f55e4d169
-caps.latest.revision: 19
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: dd5366b4110d9ec2290e2669919575e07e8ec98a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;ipv6&gt; 要素 (ネットワーク設定)
-<xref:System.Net.Dns> クラスにある旧形式のメンバーで Internet Protocol Version 6 \(IPv6\) に対応できるようにします。  
+# <a name="ltipv6gt-element-network-settings"></a><span data-ttu-id="8ede7-102">&lt;ipv6&gt;要素 (ネットワーク設定)</span><span class="sxs-lookup"><span data-stu-id="8ede7-102">&lt;ipv6&gt; Element (Network Settings)</span></span>
+<span data-ttu-id="8ede7-103">により、インターネット プロトコル バージョン 6 (IPv6) の廃止されたメンバーからの応答、<xref:System.Net.Dns>クラスです。</span><span class="sxs-lookup"><span data-stu-id="8ede7-103">Enables Internet Protocol version 6 (IPv6) responses from obsolete members of the <xref:System.Net.Dns> class.</span></span>  
   
-## 構文  
+ <span data-ttu-id="8ede7-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="8ede7-104">\<configuration></span></span>  
+<span data-ttu-id="8ede7-105">\<system.net ></span><span class="sxs-lookup"><span data-stu-id="8ede7-105">\<system.net></span></span>  
+<span data-ttu-id="8ede7-106">\<設定 ></span><span class="sxs-lookup"><span data-stu-id="8ede7-106">\<settings></span></span>  
+<span data-ttu-id="8ede7-107">\<ipv6 ></span><span class="sxs-lookup"><span data-stu-id="8ede7-107">\<ipv6></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="8ede7-108">構文</span><span class="sxs-lookup"><span data-stu-id="8ede7-108">Syntax</span></span>  
   
-      <ipv6  
+```xml  
+<ipv6  
   enabled="true|false"  
-/ipv6>  
+/>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="8ede7-109">属性および要素</span><span class="sxs-lookup"><span data-stu-id="8ede7-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="8ede7-110">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="8ede7-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="8ede7-111">属性</span><span class="sxs-lookup"><span data-stu-id="8ede7-111">Attributes</span></span>  
   
-|**Attribute**|**説明**|  
-|-------------------|------------|  
-|`enabled`|<xref:System.Net.Dns> クラスのメンバーが Internet Protocol Version 6 \(IPv6\) のアドレスを返すかどうかを指定します。  既定値は `false` です。|  
+|<span data-ttu-id="8ede7-112">**属性**</span><span class="sxs-lookup"><span data-stu-id="8ede7-112">**Attribute**</span></span>|<span data-ttu-id="8ede7-113">**説明**</span><span class="sxs-lookup"><span data-stu-id="8ede7-113">**Description**</span></span>|  
+|-------------------|---------------------|  
+|`enabled`|<span data-ttu-id="8ede7-114">指定するかどうかのメンバー、<xref:System.Net.Dns>クラスは、インターネット プロトコル バージョン 6 (IPv6) アドレスを返します。</span><span class="sxs-lookup"><span data-stu-id="8ede7-114">Specifies whether members of the <xref:System.Net.Dns> class return Internet Protocol version 6 (IPv6) addresses.</span></span> <span data-ttu-id="8ede7-115">既定値は `false` です。</span><span class="sxs-lookup"><span data-stu-id="8ede7-115">The default value is `false`.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="8ede7-116">子要素</span><span class="sxs-lookup"><span data-stu-id="8ede7-116">Child Elements</span></span>  
+ <span data-ttu-id="8ede7-117">なし。</span><span class="sxs-lookup"><span data-stu-id="8ede7-117">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="8ede7-118">親要素</span><span class="sxs-lookup"><span data-stu-id="8ede7-118">Parent Elements</span></span>  
   
-|**要素**|**説明**|  
-|------------|------------|  
-|[設定](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
+|<span data-ttu-id="8ede7-119">**要素**</span><span class="sxs-lookup"><span data-stu-id="8ede7-119">**Element**</span></span>|<span data-ttu-id="8ede7-120">**説明**</span><span class="sxs-lookup"><span data-stu-id="8ede7-120">**Description**</span></span>|  
+|-----------------|---------------------|  
+|[<span data-ttu-id="8ede7-121">設定</span><span class="sxs-lookup"><span data-stu-id="8ede7-121">settings</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<span data-ttu-id="8ede7-122"><xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。</span><span class="sxs-lookup"><span data-stu-id="8ede7-122">Configures basic network options for the <xref:System.Net> namespace.</span></span>|  
   
-## 解説  
- この設定を行うと、<xref:System.Net.Dns> クラスの <xref:System.Net.Dns.BeginGetHostByName%2A>、<xref:System.Net.Dns.BeginResolve%2A>、<xref:System.Net.Dns.EndGetHostByName%2A>、<xref:System.Net.Dns.EndResolve%2A>、<xref:System.Net.Dns.GetHostByAddress%2A>、<xref:System.Net.Dns.GetHostByName%2A>、および <xref:System.Net.Dns.Resolve%2A> の旧形式のメンバーで、IPv6 のサポートが有効になります。  <xref:System.Net?displayProperty=fullName> 名前空間の他のメンバーでは、オペレーティング システムで IPv6 が有効であれば、IPv6 形式のアドレスを返すことができます。  
+## <a name="remarks"></a><span data-ttu-id="8ede7-123">コメント</span><span class="sxs-lookup"><span data-stu-id="8ede7-123">Remarks</span></span>  
+ <span data-ttu-id="8ede7-124">この設定により、IPv6 のサポートの廃止されたメンバーの<xref:System.Net.Dns>クラス: <xref:System.Net.Dns.BeginGetHostByName%2A>、 <xref:System.Net.Dns.BeginResolve%2A>、 <xref:System.Net.Dns.EndGetHostByName%2A>、 <xref:System.Net.Dns.EndResolve%2A>、 <xref:System.Net.Dns.GetHostByAddress%2A>、 <xref:System.Net.Dns.GetHostByName%2A>、および<xref:System.Net.Dns.Resolve%2A>です。</span><span class="sxs-lookup"><span data-stu-id="8ede7-124">This setting enables IPv6 support for the obsolete members of the <xref:System.Net.Dns> class: <xref:System.Net.Dns.BeginGetHostByName%2A>, <xref:System.Net.Dns.BeginResolve%2A>, <xref:System.Net.Dns.EndGetHostByName%2A>, <xref:System.Net.Dns.EndResolve%2A>, <xref:System.Net.Dns.GetHostByAddress%2A>, <xref:System.Net.Dns.GetHostByName%2A>, and <xref:System.Net.Dns.Resolve%2A>.</span></span> <span data-ttu-id="8ede7-125">他のメンバー、<xref:System.Net?displayProperty=nameWithType>名前空間、IPv6 アドレスが表示されるオペレーティング システムで IPv6 が有効になっている場合。</span><span class="sxs-lookup"><span data-stu-id="8ede7-125">For other members of the <xref:System.Net?displayProperty=nameWithType> namespace, IPv6 addresses may be returned if IPv6 is enabled in the operating system.</span></span>  
   
-## 構成ファイル  
- この要素は、アプリケーション構成ファイルまたはマシン構成ファイル \(Machine.config\) で使用できます。  
+## <a name="configuration-files"></a><span data-ttu-id="8ede7-126">構成ファイル</span><span class="sxs-lookup"><span data-stu-id="8ede7-126">Configuration Files</span></span>  
+ <span data-ttu-id="8ede7-127">この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。</span><span class="sxs-lookup"><span data-stu-id="8ede7-127">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## 使用例  
- <xref:System.Net.Dns> クラスの IPv6 サポートを有効にするコード例を次に示します。  
+## <a name="example"></a><span data-ttu-id="8ede7-128">例</span><span class="sxs-lookup"><span data-stu-id="8ede7-128">Example</span></span>  
+ <span data-ttu-id="8ede7-129">次の例の IPv6 サポートを有効にする方法を示しています、<xref:System.Net.Dns>クラスです。</span><span class="sxs-lookup"><span data-stu-id="8ede7-129">The following example shows how to enable IPv6 support for the <xref:System.Net.Dns> class.</span></span>  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <settings>  
@@ -76,8 +78,8 @@ caps.handback.revision: 19
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Net?displayProperty=fullName>   
- <xref:System.Net.Dns?displayProperty=fullName>   
- <xref:System.Net.Sockets.Socket.OSSupportsIPv6%2A?displayProperty=fullName>   
- [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+## <a name="see-also"></a><span data-ttu-id="8ede7-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="8ede7-130">See Also</span></span>  
+ <xref:System.Net?displayProperty=nameWithType>  
+ <xref:System.Net.Dns?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.Socket.OSSupportsIPv6%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="8ede7-131">ネットワーク設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="8ede7-131">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

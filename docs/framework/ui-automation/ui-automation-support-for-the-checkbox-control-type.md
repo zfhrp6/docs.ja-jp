@@ -1,88 +1,91 @@
 ---
-title: "UI Automation Support for the CheckBox Control Type | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-bcl"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "CheckBox control type"
-  - "control types, CheckBox"
-  - "UI Automation, CheckBox control type"
+title: "UI オートメーションによる CheckBox コントロール型のサポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-bcl
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- CheckBox control type
+- control types, CheckBox
+- UI Automation, CheckBox control type
 ms.assetid: 9c2a0e70-3a39-4ba9-96ea-a7fe531fae9f
-caps.latest.revision: 31
-author: "Xansky"
-ms.author: "mhopkins"
-manager: "markl"
-caps.handback.revision: 31
+caps.latest.revision: "31"
+author: Xansky
+ms.author: mhopkins
+manager: markl
+ms.openlocfilehash: 68338a81f7beee9beaa4269b213d7afb03f49251
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# UI Automation Support for the CheckBox Control Type
+# <a name="ui-automation-support-for-the-checkbox-control-type"></a><span data-ttu-id="f3230-102">UI オートメーションによる CheckBox コントロール型のサポート</span><span class="sxs-lookup"><span data-stu-id="f3230-102">UI Automation Support for the CheckBox Control Type</span></span>
 > [!NOTE]
->  このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] の最新情報については、「[Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。  
+>  <span data-ttu-id="f3230-103">このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージ <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="f3230-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="f3230-104">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](http://go.microsoft.com/fwlink/?LinkID=156746)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f3230-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- このトピックでは、CheckBox コントロール型の [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] サポートについて説明します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] でのコントロール型とは、コントロールが <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> プロパティを使用するために満たす必要がある一連の条件のことです。 これらの条件には、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のプロパティ値、およびコントロール パターンに関する特定のガイドラインが含まれます。  
+ <span data-ttu-id="f3230-105">このトピックでは、CheckBox コントロール型の [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] サポートについて説明します。</span><span class="sxs-lookup"><span data-stu-id="f3230-105">This topic provides information about [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] support for the CheckBox control type.</span></span> <span data-ttu-id="f3230-106">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]でのコントロール型とは、コントロールが <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> プロパティを使用するために満たす必要がある一連の条件のことです。</span><span class="sxs-lookup"><span data-stu-id="f3230-106">In [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], a control type is a set of conditions that a control must meet in order to use the <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> property.</span></span> <span data-ttu-id="f3230-107">これらの条件には、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のプロパティ値、およびコントロール パターンに関する特定のガイドラインが含まれます。</span><span class="sxs-lookup"><span data-stu-id="f3230-107">The conditions include specific guidelines for [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] property values and control patterns.</span></span>  
   
- チェック ボックスは、ユーザーが対話的にその状態を循環させることが可能な状態を示すために使用されるオブジェクトです。 チェック ボックスでは、2 項 \(はい\/いいえ\)、\(オン\/オフ\) または 3 項 \(オン\/オフ、不定\) のいずれかのオプションをユーザーに提示できます。  
+ <span data-ttu-id="f3230-108">チェック ボックスは、ユーザーが対話的にその状態を循環させることが可能な状態を示すために使用されるオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="f3230-108">A check box is an object used to indicate a state that users can interact with to cycle through that state.</span></span> <span data-ttu-id="f3230-109">チェック ボックスでは、2 項 (はい/いいえ)、(オン/オフ) または 3 項 (オン/オフ、不定) のいずれかのオプションをユーザーに提示できます。</span><span class="sxs-lookup"><span data-stu-id="f3230-109">Check boxes either present a binary (Yes/No), (On/Off), or tertiary (On, Off, Indeterminate) option to the user.</span></span>  
   
- 以降のセクションで、CheckBox コントロール型に必要な [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、プロパティ、コントロール パターン、およびイベントを定義します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 要件は、[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、[!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]、または [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] であるかに関わらず、すべてのチェック ボックス コントロールに適用されます。  
+ <span data-ttu-id="f3230-110">以降のセクションで、CheckBox コントロール型に必要な [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリー構造、プロパティ、コントロール パターン、およびイベントを定義します。</span><span class="sxs-lookup"><span data-stu-id="f3230-110">The following sections define the required [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, properties, control patterns, and events for the CheckBox control type.</span></span> <span data-ttu-id="f3230-111">[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 要件は、 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]、または [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]であるかに関わらず、すべてのチェック ボックス コントロールに適用されます。</span><span class="sxs-lookup"><span data-stu-id="f3230-111">The [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requirements apply to all check box controls, whether [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], or [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].</span></span>  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
-## 必須の UI オートメーション ツリー構造  
- 次の表に、チェック ボックス コントロールに関連する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューとコンテンツ ビューを示し、それぞれのビューに含めることができる内容について説明します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーの詳細については、「[UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)」を参照してください。  
+## <a name="required-ui-automation-tree-structure"></a><span data-ttu-id="f3230-112">必須の UI オートメーション ツリー構造</span><span class="sxs-lookup"><span data-stu-id="f3230-112">Required UI Automation Tree Structure</span></span>  
+ <span data-ttu-id="f3230-113">次の表に、チェック ボックス コントロールに関連する [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューとコンテンツ ビューを示し、それぞれのビューに含めることができる内容について説明します。</span><span class="sxs-lookup"><span data-stu-id="f3230-113">The following table depicts the control view and the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree that pertains to check box controls and describes what can be contained in each view.</span></span> <span data-ttu-id="f3230-114">詳細については、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ツリーを参照してください[UI オートメーション ツリーの概要](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="f3230-114">For more information on the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree, see [UI Automation Tree Overview](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).</span></span>  
   
-|コントロール ビュー|コンテンツ ビュー|  
-|----------------|---------------|  
-|CheckBox|CheckBox|  
+|<span data-ttu-id="f3230-115">コントロール ビュー</span><span class="sxs-lookup"><span data-stu-id="f3230-115">Control View</span></span>|<span data-ttu-id="f3230-116">コンテンツ ビュー</span><span class="sxs-lookup"><span data-stu-id="f3230-116">Content View</span></span>|  
+|------------------|------------------|  
+|<span data-ttu-id="f3230-117">CheckBox</span><span class="sxs-lookup"><span data-stu-id="f3230-117">CheckBox</span></span>|<span data-ttu-id="f3230-118">CheckBox</span><span class="sxs-lookup"><span data-stu-id="f3230-118">CheckBox</span></span>|  
   
 > [!NOTE]
->  チェック ボックスは、コントロールやコンテンツ ビュー内に子要素を持つことはありません。 コントロールに子要素を入れる必要があるのであれば、それは別のコントロール型を使用する必要があるということです。  
+>  <span data-ttu-id="f3230-119">チェック ボックスは、コントロールやコンテンツ ビュー内に子要素を持つことはありません。</span><span class="sxs-lookup"><span data-stu-id="f3230-119">Check boxes never have child elements in the control or content view.</span></span> <span data-ttu-id="f3230-120">コントロールに子要素を入れる必要があるのであれば、それは別のコントロール型を使用する必要があるということです。</span><span class="sxs-lookup"><span data-stu-id="f3230-120">If the control does need to contain child elements this indicates that another control type should be used.</span></span>  
   
-### 必須の UI オートメーション プロパティ  
- 次の表に、チェック ボックス コンロトールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティの詳細については、「[UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)」を参照してください。  
+### <a name="required-ui-automation-properties"></a><span data-ttu-id="f3230-121">必須の UI オートメーション プロパティ</span><span class="sxs-lookup"><span data-stu-id="f3230-121">Required UI Automation Properties</span></span>  
+ <span data-ttu-id="f3230-122">次の表に、チェック ボックス コンロトールに特に関連する値または定義を持つ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティを示します。</span><span class="sxs-lookup"><span data-stu-id="f3230-122">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties whose value or definition is especially relevant to check box controls.</span></span> <span data-ttu-id="f3230-123">詳細については[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]プロパティを参照してください[クライアントの UI オートメーション プロパティ](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)です。</span><span class="sxs-lookup"><span data-stu-id="f3230-123">For more information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties, see [UI Automation Properties for Clients](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).</span></span>  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|値|ノート|  
-|---------------------------------------------------------------------------------|-------|---------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|ノートを参照してください。|このプロパティの値は、アプリケーション内のすべてのコントロールで一意である必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|ノートを参照してください。|コントロール全体を格納する最も外側の四角形。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|ノートを参照してください。|四角形領域が存在する場合にサポートされます。 四角形領域の内側にクリック不可能な点が存在し、特別なヒット テストを実行する場合は、クリック可能な点をオーバーライドして提供します。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|CheckBox|この値は、すべての UI フレームワークで同じです。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|このプロパティの値は、常に True にする必要があります。 つまり、チェック ボックス コントロールが常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューに含まれている必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|このプロパティの値は、常に True にする必要があります。 つまり、チェック ボックス コントロールが常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューに含まれている必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|ノートを参照してください。|コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|チェック ボックスはそれ自体がラベルであるコントロールです。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"チェック ボックス"|CheckBox コントロール型に対応する、ローカライズされた文字列。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|ノートを参照してください。|チェック ボックス コントロールの `Name` プロパティの値は、切り替えの状態を保持するボックスの横に表示されるテキストです。|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="f3230-124"> プロパティ</span><span class="sxs-lookup"><span data-stu-id="f3230-124"> Property</span></span>|<span data-ttu-id="f3230-125">値</span><span class="sxs-lookup"><span data-stu-id="f3230-125">Value</span></span>|<span data-ttu-id="f3230-126">ノート</span><span class="sxs-lookup"><span data-stu-id="f3230-126">Notes</span></span>|  
+|------------------------------------------------------------------------------------|-----------|-----------|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|<span data-ttu-id="f3230-127">ノートを参照してください。</span><span class="sxs-lookup"><span data-stu-id="f3230-127">See notes.</span></span>|<span data-ttu-id="f3230-128">このプロパティの値は、アプリケーションのすべてのコントロールで一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="f3230-128">The value of this property needs to be unique across all controls in an application.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|<span data-ttu-id="f3230-129">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f3230-129">See notes.</span></span>|<span data-ttu-id="f3230-130">コントロール全体を格納する最も外側の四角形。</span><span class="sxs-lookup"><span data-stu-id="f3230-130">The outermost rectangle that contains the whole control.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|<span data-ttu-id="f3230-131">「ノート」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f3230-131">See notes.</span></span>|<span data-ttu-id="f3230-132">四角形領域が存在する場合にサポートされます。</span><span class="sxs-lookup"><span data-stu-id="f3230-132">Supported if there is a bounding rectangle.</span></span> <span data-ttu-id="f3230-133">四角形領域の内側にクリック不可能な点が存在し、特別なヒット テストを実行する場合は、クリック可能な点をオーバーライドして提供します。</span><span class="sxs-lookup"><span data-stu-id="f3230-133">If not every point within the bounding rectangle is clickable, and you perform specialized hit testing, then override and provide a clickable point.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|<span data-ttu-id="f3230-134">CheckBox</span><span class="sxs-lookup"><span data-stu-id="f3230-134">CheckBox</span></span>|<span data-ttu-id="f3230-135">この値は、すべての UI フレームワークで同じです。</span><span class="sxs-lookup"><span data-stu-id="f3230-135">This value is the same for all UI frameworks.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|<span data-ttu-id="f3230-136">True</span><span class="sxs-lookup"><span data-stu-id="f3230-136">True</span></span>|<span data-ttu-id="f3230-137">このプロパティの値は、常に True にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f3230-137">The value of this property must always be True.</span></span> <span data-ttu-id="f3230-138">つまり、チェック ボックス コントロールが常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコンテンツ ビューに含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="f3230-138">This means that the check box control must always be included in the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|<span data-ttu-id="f3230-139">True</span><span class="sxs-lookup"><span data-stu-id="f3230-139">True</span></span>|<span data-ttu-id="f3230-140">このプロパティの値は、常に True にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f3230-140">The value of this property must always be True.</span></span> <span data-ttu-id="f3230-141">つまり、チェック ボックス コントロールが常に [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューに含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="f3230-141">This means that the check box control must always be included in the control view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|<span data-ttu-id="f3230-142">ノートを参照してください。</span><span class="sxs-lookup"><span data-stu-id="f3230-142">See notes.</span></span>|<span data-ttu-id="f3230-143">コントロールがキーボード フォーカスを受け取ることができる場合は、このプロパティをサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f3230-143">If the control can receive keyboard focus, it must support this property.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|<span data-ttu-id="f3230-144">チェック ボックスはそれ自体がラベルであるコントロールです。</span><span class="sxs-lookup"><span data-stu-id="f3230-144">Check boxes are self-labeling controls.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|<span data-ttu-id="f3230-145">"チェック ボックス"</span><span class="sxs-lookup"><span data-stu-id="f3230-145">"check box"</span></span>|<span data-ttu-id="f3230-146">CheckBox コントロール型に対応する、ローカライズされた文字列。</span><span class="sxs-lookup"><span data-stu-id="f3230-146">Localized string corresponding to the CheckBox control type.</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|<span data-ttu-id="f3230-147">ノートを参照してください。</span><span class="sxs-lookup"><span data-stu-id="f3230-147">See notes.</span></span>|<span data-ttu-id="f3230-148">チェック ボックス コントロールの `Name` プロパティの値は、切り替えの状態を保持するボックスの横に表示されるテキストです。</span><span class="sxs-lookup"><span data-stu-id="f3230-148">The value of the check box control's `Name` property is the text that is displayed beside the box that maintains the toggle state.</span></span>|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
-## 必須の UI オートメーション コントロール パターン  
- 次の表に、すべてのチェック ボックス コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。 コントロール パターンの詳細については、「[UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」を参照してください。  
+## <a name="required-ui-automation-control-patterns"></a><span data-ttu-id="f3230-149">必須の UI オートメーション コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="f3230-149">Required UI Automation Control Patterns</span></span>  
+ <span data-ttu-id="f3230-150">次の表に、すべてのチェック ボックス コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コントロール パターンを示します。</span><span class="sxs-lookup"><span data-stu-id="f3230-150">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] control patterns required to be supported by all check box controls.</span></span> <span data-ttu-id="f3230-151">コントロール パターンの詳細については、「 [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f3230-151">For more information about control patterns, see [UI Automation Control Patterns Overview](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).</span></span>  
   
-|コントロール パターン|Support|ノート|  
-|-----------------|-------------|---------|  
-|<xref:System.Windows.Automation.Provider.IToggleProvider>|必要|チェック ボックスで、プログラムを使用して内部の状態をいつでも循環できるようにします。|  
+|<span data-ttu-id="f3230-152">コントロール パターン</span><span class="sxs-lookup"><span data-stu-id="f3230-152">Control Pattern</span></span>|<span data-ttu-id="f3230-153">Support</span><span class="sxs-lookup"><span data-stu-id="f3230-153">Support</span></span>|<span data-ttu-id="f3230-154">ノート</span><span class="sxs-lookup"><span data-stu-id="f3230-154">Notes</span></span>|  
+|---------------------|-------------|-----------|  
+|<xref:System.Windows.Automation.Provider.IToggleProvider>|<span data-ttu-id="f3230-155">必要</span><span class="sxs-lookup"><span data-stu-id="f3230-155">Required</span></span>|<span data-ttu-id="f3230-156">チェック ボックスで、プログラムを使用して内部の状態をいつでも循環できるようにします。</span><span class="sxs-lookup"><span data-stu-id="f3230-156">Allows the check box to be cycled through its internal states programmatically.</span></span>|  
   
 <a name="Required_UI_Automation_Events"></a>   
-## 必須の UI オートメーション イベント  
- 次の表に、すべてのチェック ボックス コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。 イベントの詳細については、「[UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」を参照してください。  
+## <a name="required-ui-automation-events"></a><span data-ttu-id="f3230-157">必須の UI オートメーション イベント</span><span class="sxs-lookup"><span data-stu-id="f3230-157">Required UI Automation Events</span></span>  
+ <span data-ttu-id="f3230-158">次の表に、すべてのチェック ボックス コントロールでサポートされなければならない [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベントを示します。</span><span class="sxs-lookup"><span data-stu-id="f3230-158">The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] events required to be supported by all check box controls.</span></span> <span data-ttu-id="f3230-159">イベントの詳細については、「 [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f3230-159">For more information about events, see [UI Automation Events Overview](../../../docs/framework/ui-automation/ui-automation-events-overview.md).</span></span>  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] イベント|Support|ノート|  
-|--------------------------------------------------------------------------------|-------------|---------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。|必須|なし|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必要|なし|  
-|<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> プロパティ変更イベント。|必須|なし|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]<span data-ttu-id="f3230-160"> イベント</span><span class="sxs-lookup"><span data-stu-id="f3230-160"> Event</span></span>|<span data-ttu-id="f3230-161">Support</span><span class="sxs-lookup"><span data-stu-id="f3230-161">Support</span></span>|<span data-ttu-id="f3230-162">ノート</span><span class="sxs-lookup"><span data-stu-id="f3230-162">Notes</span></span>|  
+|---------------------------------------------------------------------------------|-------------|-----------|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|<span data-ttu-id="f3230-163">必要</span><span class="sxs-lookup"><span data-stu-id="f3230-163">Required</span></span>|<span data-ttu-id="f3230-164">なし</span><span class="sxs-lookup"><span data-stu-id="f3230-164">None</span></span>|  
+|<span data-ttu-id="f3230-165"><xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="f3230-165"><xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> property-changed event.</span></span>|<span data-ttu-id="f3230-166">必要</span><span class="sxs-lookup"><span data-stu-id="f3230-166">Required</span></span>|<span data-ttu-id="f3230-167">なし</span><span class="sxs-lookup"><span data-stu-id="f3230-167">None</span></span>|  
+|<span data-ttu-id="f3230-168"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="f3230-168"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> property-changed event.</span></span>|<span data-ttu-id="f3230-169">必要</span><span class="sxs-lookup"><span data-stu-id="f3230-169">Required</span></span>|<span data-ttu-id="f3230-170">なし</span><span class="sxs-lookup"><span data-stu-id="f3230-170">None</span></span>|  
+|<span data-ttu-id="f3230-171"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="f3230-171"><xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> property-changed event.</span></span>|<span data-ttu-id="f3230-172">必要</span><span class="sxs-lookup"><span data-stu-id="f3230-172">Required</span></span>|<span data-ttu-id="f3230-173">なし</span><span class="sxs-lookup"><span data-stu-id="f3230-173">None</span></span>|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|<span data-ttu-id="f3230-174">必須</span><span class="sxs-lookup"><span data-stu-id="f3230-174">Required</span></span>|<span data-ttu-id="f3230-175">なし</span><span class="sxs-lookup"><span data-stu-id="f3230-175">None</span></span>|  
+|<span data-ttu-id="f3230-176"><xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> プロパティ変更イベント。</span><span class="sxs-lookup"><span data-stu-id="f3230-176"><xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> property-changed event.</span></span>|<span data-ttu-id="f3230-177">必要</span><span class="sxs-lookup"><span data-stu-id="f3230-177">Required</span></span>|<span data-ttu-id="f3230-178">なし</span><span class="sxs-lookup"><span data-stu-id="f3230-178">None</span></span>|  
   
 <a name="Default_Action"></a>   
-## 既定の動作  
- チェック ボックスの既定の動作では、ラジオ ボタンにフォーカスが設定されて、その現在の状態を切り替えます。 前述のように、チェック ボックスでは、2 項 \(はい\/いいえ\)、\(オン\/オフ\) または 3 項 \(オン\/オフ、不定\) のいずれかの決定項目をユーザーに提示します。 チェック ボックスが 2 項の場合、既定の動作では、「オン」の状態が「オフ」になり、「オフ」の状態が「オン」になります。 3 項のチェック ボックスで、既定の動作では、ユーザーがコントロールに連続するマウス クリックを送信した場合と同じ順序で、チェック ボックスの状態を切り替えます。  
+## <a name="default-action"></a><span data-ttu-id="f3230-179">既定の動作</span><span class="sxs-lookup"><span data-stu-id="f3230-179">Default Action</span></span>  
+ <span data-ttu-id="f3230-180">チェック ボックスの既定の動作では、ラジオ ボタンにフォーカスが設定されて、その現在の状態を切り替えます。</span><span class="sxs-lookup"><span data-stu-id="f3230-180">The default action of the check box is to cause a radio button to become focused and toggle its current state.</span></span> <span data-ttu-id="f3230-181">前述のように、チェック ボックスでは、2 項 (はい/いいえ)、(オン/オフ) または 3 項 (オン/オフ、不定) のいずれかの決定項目をユーザーに提示します。</span><span class="sxs-lookup"><span data-stu-id="f3230-181">As mentioned previously, check boxes either present a binary (Yes/No) (On/Off) decision to the user or a tertiary (On, Off, Indeterminate).</span></span> <span data-ttu-id="f3230-182">チェック ボックスが 2 項の場合、既定の動作では、「オン」の状態が「オフ」になり、「オフ」の状態が「オン」になります。</span><span class="sxs-lookup"><span data-stu-id="f3230-182">If the check box is binary the default action causes the "on" state to become "off" or the "off" state to become "on".</span></span> <span data-ttu-id="f3230-183">3 項のチェック ボックスで、既定の動作では、ユーザーがコントロールに連続するマウス クリックを送信した場合と同じ順序で、チェック ボックスの状態を切り替えます。</span><span class="sxs-lookup"><span data-stu-id="f3230-183">In a tertiary state check box the default action cycles through the states of the check box in the same order as if the user had sent successive mouse clicks to the control.</span></span>  
   
-## 参照  
- <xref:System.Windows.Automation.ControlType.CheckBox>   
- [UI Automation Control Types Overview](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)   
- [UI Automation Overview](../../../docs/framework/ui-automation/ui-automation-overview.md)
+## <a name="see-also"></a><span data-ttu-id="f3230-184">関連項目</span><span class="sxs-lookup"><span data-stu-id="f3230-184">See Also</span></span>  
+ <xref:System.Windows.Automation.ControlType.CheckBox>  
+ [<span data-ttu-id="f3230-185">UI オートメーション コントロール型の概要</span><span class="sxs-lookup"><span data-stu-id="f3230-185">UI Automation Control Types Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
+ [<span data-ttu-id="f3230-186">UI オートメーションの概要</span><span class="sxs-lookup"><span data-stu-id="f3230-186">UI Automation Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-overview.md)

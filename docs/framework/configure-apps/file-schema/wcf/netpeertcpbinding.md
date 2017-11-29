@@ -5,32 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- netPeerBinding element
+helpviewer_keywords: netPeerBinding element
 ms.assetid: 2dd77ada-a176-47c7-a740-900b279f1aad
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: db7fcfcd4d86bd3ed2bfc7aff033684a0ea14d74
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: bf978034e25d0d644803eed98fc73a60952d817b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="ltnetpeertcpbindinggt"></a>&lt;netPeerTcpBinding&gt;
-ピア チャネル固有の TCP メッセージングのバインディングを定義します。  
+# <a name="ltnetpeertcpbindinggt"></a><span data-ttu-id="bf605-102">&lt;netPeerTcpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="bf605-102">&lt;netPeerTcpBinding&gt;</span></span>
+<span data-ttu-id="bf605-103">ピア チャネル固有の TCP メッセージングのバインディングを定義します。</span><span class="sxs-lookup"><span data-stu-id="bf605-103">Defines a binding for peer channel specific TCP messaging.</span></span>  
   
- \<システムです。ServiceModel >  
-\<バインド >  
-\<netPeerTcpBinding >  
+ <span data-ttu-id="bf605-104">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="bf605-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="bf605-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="bf605-105">\<bindings></span></span>  
+<span data-ttu-id="bf605-106">\<netPeerTcpBinding ></span><span class="sxs-lookup"><span data-stu-id="bf605-106">\<netPeerTcpBinding></span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="bf605-107">構文</span><span class="sxs-lookup"><span data-stu-id="bf605-107">Syntax</span></span>  
   
 ```xml  
 <netPeerBinding>  
@@ -50,42 +47,42 @@ ms.lasthandoff: 09/25/2017
 </netPeerBinding>  
 ```  
   
-## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="bf605-108">属性および要素</span><span class="sxs-lookup"><span data-stu-id="bf605-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="bf605-109">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="bf605-109">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a><span data-ttu-id="bf605-110">属性</span><span class="sxs-lookup"><span data-stu-id="bf605-110">Attributes</span></span>  
   
-|属性|説明|  
+|<span data-ttu-id="bf605-111">属性</span><span class="sxs-lookup"><span data-stu-id="bf605-111">Attribute</span></span>|<span data-ttu-id="bf605-112">説明</span><span class="sxs-lookup"><span data-stu-id="bf605-112">Description</span></span>|  
 |---------------|-----------------|  
-|closeTimeout|クローズ操作が完了するまでの期間を指定する <xref:System.TimeSpan> 値。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
-|listenIPAddress|ピア ノードが TCP メッセージをリッスンする IP アドレスを指定する文字列です。 既定値は、`null` です。|  
-|maxBufferPoolSize|このバインディングに使用するバッファー プール サイズの上限を指定する整数。 既定は 524,288 バイト (512 * 1024) です。 Windows Communication Foundation (WCF) では、多くの部分でバッファーを使用します。 使用するたびに毎回バッファーを作成および破壊すると負荷が高くなります。バッファーのガベージ コレクションも同様です。 バッファー プールを使用すると、バッファーをプールから取得して使用し、作業が終わったらプールに戻すことができます。 これで、バッファーの作成と破棄のオーバーヘッドを回避できます。|  
-|maxReceivedMessageSize|このバインディングで構成されるチャネルで受信可能な最大メッセージ サイズ (ヘッダーを含む) をバイト単位で指定する正の整数。 この制限を超えるメッセージの送信者が、SOAP エラーを受信します。 メッセージは受信者によって破棄され、トレース ログにこのイベントのエントリが作成されます。 既定値は 65536 です。|  
-|name|バインディングの構成名を格納する文字列です。 この値は、バインディングの ID として使用されるため、一意にする必要があります。 [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。 既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。|  
-|openTimeout|実行中の操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
-|ポート|このバインディングがピア チャネルの TCP メッセージを処理するネットワーク インターフェイス ポートを指定する整数です。 この値の有効値の範囲は <xref:System.Net.IPEndPoint.MinPort> ～ <xref:System.Net.IPEndPoint.MaxPort> です。 既定値は 0 です。|  
-|receiveTimeout|受信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:10:00 です。|  
-|sendTimeout|送信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
+|<span data-ttu-id="bf605-113">closeTimeout</span><span class="sxs-lookup"><span data-stu-id="bf605-113">closeTimeout</span></span>|<span data-ttu-id="bf605-114">クローズ操作が完了するまでの期間を指定する <xref:System.TimeSpan> 値。</span><span class="sxs-lookup"><span data-stu-id="bf605-114">A <xref:System.TimeSpan> value that specifies the interval of time provided for a close operation to complete.</span></span> <span data-ttu-id="bf605-115">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="bf605-115">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="bf605-116">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="bf605-116">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="bf605-117">listenIPAddress</span><span class="sxs-lookup"><span data-stu-id="bf605-117">listenIPAddress</span></span>|<span data-ttu-id="bf605-118">ピア ノードが TCP メッセージをリッスンする IP アドレスを指定する文字列です。</span><span class="sxs-lookup"><span data-stu-id="bf605-118">A string that specifies an IP address on which the peer node will listen for TCP messages.</span></span> <span data-ttu-id="bf605-119">既定値は、`null` です。</span><span class="sxs-lookup"><span data-stu-id="bf605-119">The default is `null`.</span></span>|  
+|<span data-ttu-id="bf605-120">maxBufferPoolSize</span><span class="sxs-lookup"><span data-stu-id="bf605-120">maxBufferPoolSize</span></span>|<span data-ttu-id="bf605-121">このバインディングに使用するバッファー プール サイズの上限を指定する整数。</span><span class="sxs-lookup"><span data-stu-id="bf605-121">An integer that specifies the maximum buffer pool size for this binding.</span></span> <span data-ttu-id="bf605-122">既定は 524,288 バイト (512 * 1024) です。</span><span class="sxs-lookup"><span data-stu-id="bf605-122">The default is 524,288 bytes (512 * 1024).</span></span> <span data-ttu-id="bf605-123">Windows Communication Foundation (WCF) では、多くの部分でバッファーを使用します。</span><span class="sxs-lookup"><span data-stu-id="bf605-123">Many parts of Windows Communication Foundation (WCF) use buffers.</span></span> <span data-ttu-id="bf605-124">使用するたびに毎回バッファーを作成および破壊すると負荷が高くなります。バッファーのガベージ コレクションも同様です。</span><span class="sxs-lookup"><span data-stu-id="bf605-124">Creating and destroying buffers each time they are used is expensive, and garbage collection for buffers is also expensive.</span></span> <span data-ttu-id="bf605-125">バッファー プールを使用すると、バッファーをプールから取得して使用し、作業が終わったらプールに戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="bf605-125">With buffer pools, you can take a buffer from the pool, use it, and return it to the pool once you are done.</span></span> <span data-ttu-id="bf605-126">これで、バッファーの作成と破棄のオーバーヘッドを回避できます。</span><span class="sxs-lookup"><span data-stu-id="bf605-126">Thus the overhead in creating and destroying buffers is avoided.</span></span>|  
+|<span data-ttu-id="bf605-127">maxReceivedMessageSize</span><span class="sxs-lookup"><span data-stu-id="bf605-127">maxReceivedMessageSize</span></span>|<span data-ttu-id="bf605-128">このバインディングで構成されるチャネルで受信可能な最大メッセージ サイズ (ヘッダーを含む) をバイト単位で指定する正の整数。</span><span class="sxs-lookup"><span data-stu-id="bf605-128">A positive integer that specifies the maximum message size, in bytes, including headers, that can be received on a channel configured with this binding.</span></span> <span data-ttu-id="bf605-129">この制限を超えるメッセージの送信者が、SOAP エラーを受信します。</span><span class="sxs-lookup"><span data-stu-id="bf605-129">The sender of a message exceeding this limit will receive a SOAP fault.</span></span> <span data-ttu-id="bf605-130">メッセージは受信者によって破棄され、トレース ログにこのイベントのエントリが作成されます。</span><span class="sxs-lookup"><span data-stu-id="bf605-130">The receiver drops the message and creates an entry of the event in the trace log.</span></span> <span data-ttu-id="bf605-131">既定値は 65536 です。</span><span class="sxs-lookup"><span data-stu-id="bf605-131">The default is 65536.</span></span>|  
+|<span data-ttu-id="bf605-132">name</span><span class="sxs-lookup"><span data-stu-id="bf605-132">name</span></span>|<span data-ttu-id="bf605-133">バインディングの構成名を格納する文字列です。</span><span class="sxs-lookup"><span data-stu-id="bf605-133">A string that contains the configuration name of the binding.</span></span> <span data-ttu-id="bf605-134">この値は、バインディングの ID として使用されるため、一意にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="bf605-134">This value should be unique because it is used as an identification for the binding.</span></span> <span data-ttu-id="bf605-135">[!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。</span><span class="sxs-lookup"><span data-stu-id="bf605-135">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="bf605-136">既定の構成と無名のバインディングおよび動作の詳細については、次を参照してください。[簡略化された構成](../../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="bf605-136">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>|  
+|<span data-ttu-id="bf605-137">openTimeout</span><span class="sxs-lookup"><span data-stu-id="bf605-137">openTimeout</span></span>|<span data-ttu-id="bf605-138">実行中の操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="bf605-138">A <xref:System.TimeSpan> value that specifies the interval of time provided for an open operation to complete.</span></span> <span data-ttu-id="bf605-139">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="bf605-139">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="bf605-140">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="bf605-140">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="bf605-141">ポート</span><span class="sxs-lookup"><span data-stu-id="bf605-141">port</span></span>|<span data-ttu-id="bf605-142">このバインディングがピア チャネルの TCP メッセージを処理するネットワーク インターフェイス ポートを指定する整数です。</span><span class="sxs-lookup"><span data-stu-id="bf605-142">An integer that specifies the network interface port on which this binding will process peer channel TCP messages.</span></span> <span data-ttu-id="bf605-143">この値の有効値の範囲は <xref:System.Net.IPEndPoint.MinPort> ～ <xref:System.Net.IPEndPoint.MaxPort> です。</span><span class="sxs-lookup"><span data-stu-id="bf605-143">This value must be between <xref:System.Net.IPEndPoint.MinPort> and <xref:System.Net.IPEndPoint.MaxPort>.</span></span> <span data-ttu-id="bf605-144">既定値は 0 です。</span><span class="sxs-lookup"><span data-stu-id="bf605-144">The default is 0.</span></span>|  
+|<span data-ttu-id="bf605-145">receiveTimeout</span><span class="sxs-lookup"><span data-stu-id="bf605-145">receiveTimeout</span></span>|<span data-ttu-id="bf605-146">受信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="bf605-146">A <xref:System.TimeSpan> value that specifies the interval of time provided for a receive operation to complete.</span></span> <span data-ttu-id="bf605-147">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="bf605-147">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="bf605-148">既定値は 00:10:00 です。</span><span class="sxs-lookup"><span data-stu-id="bf605-148">The default is 00:10:00.</span></span>|  
+|<span data-ttu-id="bf605-149">sendTimeout</span><span class="sxs-lookup"><span data-stu-id="bf605-149">sendTimeout</span></span>|<span data-ttu-id="bf605-150">送信操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。</span><span class="sxs-lookup"><span data-stu-id="bf605-150">A <xref:System.TimeSpan> value that specifies the interval of time provided for a send operation to complete.</span></span> <span data-ttu-id="bf605-151">この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="bf605-151">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="bf605-152">既定値は 00:01:00 です。</span><span class="sxs-lookup"><span data-stu-id="bf605-152">The default is 00:01:00.</span></span>|  
   
-### <a name="child-elements"></a>子要素  
+### <a name="child-elements"></a><span data-ttu-id="bf605-153">子要素</span><span class="sxs-lookup"><span data-stu-id="bf605-153">Child Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="bf605-154">要素</span><span class="sxs-lookup"><span data-stu-id="bf605-154">Element</span></span>|<span data-ttu-id="bf605-155">説明</span><span class="sxs-lookup"><span data-stu-id="bf605-155">Description</span></span>|  
 |-------------|-----------------|  
-|[\<ある readerQuotas >](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|このバインドを使用して設定されるエンドポイントにより処理可能な、SOAP メッセージの複雑さに対する制約を定義します。 この要素は <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> 型です。|  
-|[\<競合回避モジュール >](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|ピア メッシュ ID を解決してピア メッシュ内のノードのエンドポイント ID アドレスを取得するために、このバインディングによって使用されるピア リゾルバーを指定します。|  
-|[\<セキュリティ >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netpeerbinding.md)|メッセージのセキュリティ設定を定義します。 この要素は <xref:System.ServiceModel.Configuration.PeerSecurityElement> 型です。|  
+|[<span data-ttu-id="bf605-156">\<ある readerQuotas ></span><span class="sxs-lookup"><span data-stu-id="bf605-156">\<readerQuotas></span></span>](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|<span data-ttu-id="bf605-157">このバインドを使用して設定されるエンドポイントにより処理可能な、SOAP メッセージの複雑さに対する制約を定義します。</span><span class="sxs-lookup"><span data-stu-id="bf605-157">Defines the constraints on the complexity of SOAP messages that can be processed by endpoints configured with this binding.</span></span> <span data-ttu-id="bf605-158">この要素は <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="bf605-158">This element is of type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.</span></span>|  
+|[<span data-ttu-id="bf605-159">\<競合回避モジュール ></span><span class="sxs-lookup"><span data-stu-id="bf605-159">\<resolver></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|<span data-ttu-id="bf605-160">ピア メッシュ ID を解決してピア メッシュ内のノードのエンドポイント ID アドレスを取得するために、このバインディングによって使用されるピア リゾルバーを指定します。</span><span class="sxs-lookup"><span data-stu-id="bf605-160">Specifies a peer resolver used by this binding to resolve a peer mesh ID to the endpoint IP addresses of nodes within the peer mesh.</span></span>|  
+|[<span data-ttu-id="bf605-161">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="bf605-161">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netpeerbinding.md)|<span data-ttu-id="bf605-162">メッセージのセキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="bf605-162">Defines the security settings for the message.</span></span> <span data-ttu-id="bf605-163">この要素は <xref:System.ServiceModel.Configuration.PeerSecurityElement> 型です。</span><span class="sxs-lookup"><span data-stu-id="bf605-163">This element is of type <xref:System.ServiceModel.Configuration.PeerSecurityElement>.</span></span>|  
   
-### <a name="parent-elements"></a>親要素  
+### <a name="parent-elements"></a><span data-ttu-id="bf605-164">親要素</span><span class="sxs-lookup"><span data-stu-id="bf605-164">Parent Elements</span></span>  
   
-|要素|説明|  
+|<span data-ttu-id="bf605-165">要素</span><span class="sxs-lookup"><span data-stu-id="bf605-165">Element</span></span>|<span data-ttu-id="bf605-166">説明</span><span class="sxs-lookup"><span data-stu-id="bf605-166">Description</span></span>|  
 |-------------|-----------------|  
-|[\<バインド >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。|  
+|[<span data-ttu-id="bf605-167">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="bf605-167">\<bindings></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|<span data-ttu-id="bf605-168">この要素には、標準バインディングおよびカスタム バインディングのコレクションが保持されます。</span><span class="sxs-lookup"><span data-stu-id="bf605-168">This element holds a collection of standard and custom bindings.</span></span>|  
   
-## <a name="remarks"></a>コメント  
- このバインディングは、TCP を介したピア トランスポートを使用するピア ツー ピア アプリケーションまたはマルチパーティ アプリケーションの作成をサポートします。 各ピア ノードは、この種類のバイディングを使用して定義された複数のピア チャネルをホストできます。  
+## <a name="remarks"></a><span data-ttu-id="bf605-169">コメント</span><span class="sxs-lookup"><span data-stu-id="bf605-169">Remarks</span></span>  
+ <span data-ttu-id="bf605-170">このバインディングは、TCP を介したピア トランスポートを使用するピア ツー ピア アプリケーションまたはマルチパーティ アプリケーションの作成をサポートします。</span><span class="sxs-lookup"><span data-stu-id="bf605-170">This binding provides support for the creation of peer-to-peer or multiparty applications using peer transport over TCP.</span></span> <span data-ttu-id="bf605-171">各ピア ノードは、この種類のバイディングを使用して定義された複数のピア チャネルをホストできます。</span><span class="sxs-lookup"><span data-stu-id="bf605-171">Each peer node can host multiple peer channels defined with this binding type.</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、ピア チャネルを使用してマルチパーティ通信を実現する、NetPeerTcpBinding バインディングを使用する方法を示します。 このバインディングの使用の詳細なシナリオでは、次を参照してください。 [Net ピア TCP](http://msdn.microsoft.com/en-us/31f4db66-edb2-40a6-b92a-14098e92acae)です。  
+## <a name="example"></a><span data-ttu-id="bf605-172">例</span><span class="sxs-lookup"><span data-stu-id="bf605-172">Example</span></span>  
+ <span data-ttu-id="bf605-173">次の例では、ピア チャネルを使用してマルチパーティ通信を実現する、NetPeerTcpBinding バインディングを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="bf605-173">The following example demonstrates using the NetPeerTcpBinding binding, which provides multiparty communication using a peer channel.</span></span> <span data-ttu-id="bf605-174">このバインディングの使用の詳細なシナリオでは、次を参照してください。 [Net ピア TCP](http://msdn.microsoft.com/en-us/31f4db66-edb2-40a6-b92a-14098e92acae)です。</span><span class="sxs-lookup"><span data-stu-id="bf605-174">For a detailed scenario of using this binding, see [Net Peer TCP](http://msdn.microsoft.com/en-us/31f4db66-edb2-40a6-b92a-14098e92acae).</span></span>  
   
 ```xml  
 <configuration>  
@@ -113,13 +110,12 @@ ms.lasthandoff: 09/25/2017
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.NetPeerTcpBinding>   
- <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement>   
- [バインド](../../../../../docs/framework/wcf/bindings.md)   
- [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<バインド >](../../../../../docs/framework/misc/binding.md)   
- [Net ピア TCP](http://msdn.microsoft.com/en-us/31f4db66-edb2-40a6-b92a-14098e92acae)   
- [ピア ツー ピア ネットワーク](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)
-
+## <a name="see-also"></a><span data-ttu-id="bf605-175">関連項目</span><span class="sxs-lookup"><span data-stu-id="bf605-175">See Also</span></span>  
+ <xref:System.ServiceModel.NetPeerTcpBinding>  
+ <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement>  
+ [<span data-ttu-id="bf605-176">バインディング</span><span class="sxs-lookup"><span data-stu-id="bf605-176">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="bf605-177">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="bf605-177">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="bf605-178">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="bf605-178">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [<span data-ttu-id="bf605-179">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="bf605-179">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)  
+ [<span data-ttu-id="bf605-180">Net ピア TCP</span><span class="sxs-lookup"><span data-stu-id="bf605-180">Net Peer TCP</span></span>](http://msdn.microsoft.com/en-us/31f4db66-edb2-40a6-b92a-14098e92acae)  
+ [<span data-ttu-id="bf605-181">ピア ツー ピア ネットワーク</span><span class="sxs-lookup"><span data-stu-id="bf605-181">Peer-to-Peer Networking</span></span>](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)

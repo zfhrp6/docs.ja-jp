@@ -1,68 +1,66 @@
 ---
-title: "WCF Data Services クライアント ライブラリ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "HTML"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "DataServiceContext クラス, DataServiceContext クラスについて"
-  - "DataServiceQuery クラス, DataServiceQuery クラスについて"
-  - "WCF Data Services, クライアント ライブラリ"
+title: "WCF Data Services クライアント ライブラリ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF Data Services, client library
+- DataServiceQuery class, about DataServiceQuery class
+- DataServiceContext class, about DataServiceContext class
 ms.assetid: 21075e50-8917-413e-a8ea-35a0f6e65aa5
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1e321200ce4b3582d154c5a188584c9e0b12c10d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WCF Data Services クライアント ライブラリ
-HTTP 要求を送信し、データ サービスが返す [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィールドを処理できるアプリケーションは [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] ベースのデータ サービスと対話できます。この相互運用性によって、広範な Web 対応アプリケーションから [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] ベースのサービスにアクセスすることが可能になります。  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] には、.NET Framework ベースのアプリケーションまたは Silverlight ベースのアプリケーションから [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードを使用する際のプログラミング エクスペリエンスを向上させるクライアント ライブラリが含まれています。  
+# <a name="wcf-data-services-client-library"></a><span data-ttu-id="6f1c0-102">WCF Data Services クライアント ライブラリ</span><span class="sxs-lookup"><span data-stu-id="6f1c0-102">WCF Data Services Client Library</span></span>
+<span data-ttu-id="6f1c0-103">HTTP 要求を送信し、データ サービスが返す [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] フィードを処理できるのであれば、どのようなアプリケーションでも [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] ベースのデータ サービスと対話できます。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-103">Any application can interact with an [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]-based data service if it can send an HTTP request and process the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed that a data service returns.</span></span> <span data-ttu-id="6f1c0-104">この相互運用性によって、広範な Web 対応アプリケーションから [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] ベースのサービスにアクセスすることが可能になります。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-104">This interoperability enables you to access [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-based services from a broad range of Web-enabled applications.</span></span> [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]<span data-ttu-id="6f1c0-105">使用する際に、豊富なプログラミングの経験を提供するクライアント ライブラリを含む[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].NET Framework や Silverlight ベースのアプリケーションからのフィードです。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-105"> includes client libraries that provide a richer programming experience when you consume [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feeds from .NET Framework or Silverlight-based applications.</span></span>  
   
- クライアント ライブラリの 2 つの主要なクラスは、<xref:System.Data.Services.Client.DataServiceContext> クラスと <xref:System.Data.Services.Client.DataServiceQuery%601> クラスです。  <xref:System.Data.Services.Client.DataServiceContext> クラスは、特定のデータ サービスに対してサポートされている操作をカプセル化します。  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスはステートレスですが、コンテキストはステートレスではありません。  このため <xref:System.Data.Services.Client.DataServiceContext> クラスを使用すると、変更管理などの機能をサポートするためにデータ サービスとの対話操作間におけるクライアントの状態を保持できます。  このクラスは、ID の管理と変更の追跡も行います。  <xref:System.Data.Services.Client.DataServiceQuery%601> クラスは、特定のエンティティ セットに対するクエリを表します。  
+ <span data-ttu-id="6f1c0-106">クライアント ライブラリの 2 つの主要なクラスは、<xref:System.Data.Services.Client.DataServiceContext> クラスと <xref:System.Data.Services.Client.DataServiceQuery%601> クラスです。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-106">The two main classes of the client library are the <xref:System.Data.Services.Client.DataServiceContext> class and the <xref:System.Data.Services.Client.DataServiceQuery%601> class.</span></span> <span data-ttu-id="6f1c0-107"><xref:System.Data.Services.Client.DataServiceContext> クラスは、特定のデータ サービスに対してサポートされている操作をカプセル化します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-107">The <xref:System.Data.Services.Client.DataServiceContext> class encapsulates operations that are supported against a specified data service.</span></span> <span data-ttu-id="6f1c0-108">[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] サービスはステートレスですが、コンテキストはステートレスではありません。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-108">Although [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] services are stateless, the context is not.</span></span> <span data-ttu-id="6f1c0-109">したがって、使用することができます、<xref:System.Data.Services.Client.DataServiceContext>変更管理などの機能をサポートするために、データ サービスとのやり取りの間でクライアントの状態を維持するクラス。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-109">Therefore, you can use the <xref:System.Data.Services.Client.DataServiceContext> class to maintain state on the client between interactions with the data service in order to support features such as change management.</span></span> <span data-ttu-id="6f1c0-110">このクラスは、ID の管理と変更の追跡も行います。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-110">This class also manages identities and tracks changes.</span></span> <span data-ttu-id="6f1c0-111"><xref:System.Data.Services.Client.DataServiceQuery%601> クラスは、特定のエンティティ セットに対するクエリを表します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-111">The <xref:System.Data.Services.Client.DataServiceQuery%601> class represents a query against a specific entity set.</span></span>  
   
- このセクションでは、クライアント ライブラリを使用して .NET Framework クライアント アプリケーションからデータにアクセスしてデータを変更する方法について説明します。  Silverlight ベースのアプリケーションによる [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリの使用方法の詳細については、「[WCF Data Services \(Silverlight\)](http://go.microsoft.com/fwlink/?LinkId=186016)」を参照してください。  その他の種類のアプリケーションで [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードを使用する場合は、それぞれに対応したクライアント ライブラリが用意されています。  詳細については、「[OData SDK](http://go.microsoft.com/fwlink/?LinkID=185796)」を参照してください。  
+ <span data-ttu-id="6f1c0-112">このセクションでは、クライアント ライブラリを使用して .NET Framework クライアント アプリケーションからデータにアクセスしてデータを変更する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-112">This section describes how to use client libraries to access and change data from a .NET Framework client application.</span></span> <span data-ttu-id="6f1c0-113">使用する方法についての詳細、 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Silverlight ベースのアプリケーションでは、クライアント ライブラリを参照してください[WCF Data Services (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=186016)です。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-113">For more information about how to use the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] client library with a Silverlight-based application, see [WCF Data Services (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=186016).</span></span> <span data-ttu-id="6f1c0-114">その他のクライアント ライブラリが用意されて使用できるようにする、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]他の種類のアプリケーションでフィードします。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-114">Other client libraries are available that enable you to consume an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed in other kinds of applications.</span></span> <span data-ttu-id="6f1c0-115">詳細については、次を参照してください。、 [OData SDK](http://go.microsoft.com/fwlink/?LinkID=185796)です。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-115">For more information, see the [OData SDK](http://go.microsoft.com/fwlink/?LinkID=185796).</span></span>  
   
-## このセクションの内容  
- [データ サービス クライアント ライブラリの生成](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)  
- クライアント ライブラリ、および [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードに基づくクライアント データ サービス クラスを生成する方法について説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="6f1c0-116">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="6f1c0-116">In This Section</span></span>  
+ [<span data-ttu-id="6f1c0-117">データ サービス クライアント ライブラリの生成</span><span class="sxs-lookup"><span data-stu-id="6f1c0-117">Generating the Data Service Client Library</span></span>](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)  
+ <span data-ttu-id="6f1c0-118">クライアント ライブラリおよびに基づくクライアント データ サービス クラスを生成する方法について説明します[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]フィードします。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-118">Describes how to generate a client library and client data service classes that are based on [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feeds.</span></span>  
   
- [データ サービスのクエリ](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
- クライアント ライブラリを使用して .NET Framework ベースのアプリケーションからデータ サービスを照会する方法について説明します。  
+ [<span data-ttu-id="6f1c0-119">データ サービスに対するクエリ</span><span class="sxs-lookup"><span data-stu-id="6f1c0-119">Querying the Data Service</span></span>](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
+ <span data-ttu-id="6f1c0-120">クライアント ライブラリを使用して .NET Framework ベースのアプリケーションからデータ サービスを照会する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-120">Describes how to query a data service from a .NET Framework-based application by using client libraries.</span></span>  
   
- [遅延コンテンツの読み込み](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)  
- 最初のクエリ応答に含まれない追加のコンテンツを読み込む方法について説明します。  
+ [<span data-ttu-id="6f1c0-121">遅延コンテンツの読み込み</span><span class="sxs-lookup"><span data-stu-id="6f1c0-121">Loading Deferred Content</span></span>](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)  
+ <span data-ttu-id="6f1c0-122">最初のクエリ応答に含まれない追加のコンテンツを読み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-122">Describes how to load additional content not included in the initial query response.</span></span>  
   
- [データ サービスの更新](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)  
- クライアント ライブラリを使用してエンティティおよびリレーションシップを作成、変更、および削除する方法について説明します。  
+ [<span data-ttu-id="6f1c0-123">データ サービスの更新</span><span class="sxs-lookup"><span data-stu-id="6f1c0-123">Updating the Data Service</span></span>](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)  
+ <span data-ttu-id="6f1c0-124">クライアント ライブラリを使用してエンティティおよびリレーションシップを作成、変更、および削除する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-124">Describes how to create, modify, and delete entities and relationships by using the client libraries.</span></span>  
   
- [非同期操作](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
- 非同期でデータ サービスを操作するためにクライアント ライブラリで提供される機能について説明します。  
+ [<span data-ttu-id="6f1c0-125">非同期操作</span><span class="sxs-lookup"><span data-stu-id="6f1c0-125">Asynchronous Operations</span></span>](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
+ <span data-ttu-id="6f1c0-126">非同期でデータ サービスを操作するためにクライアント ライブラリで提供される機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-126">Describes the facilities provided by the client libraries for working with a data service in an asynchronous manner.</span></span>  
   
- [バッチ処理](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)  
- クライアント ライブラリを使用して複数の要求を 1 つのバッチでデータ サービスに送信する方法について説明します。  
+ [<span data-ttu-id="6f1c0-127">操作のバッチ処理</span><span class="sxs-lookup"><span data-stu-id="6f1c0-127">Batching Operations</span></span>](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)  
+ <span data-ttu-id="6f1c0-128">クライアント ライブラリを使用して複数の要求を 1 つのバッチでデータ サービスに送信する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-128">Describes how to send multiple requests to the data service in a single batch by using the client libraries.</span></span>  
   
- [コントロールへのデータのバインド](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)  
- コントロールをデータ サービスによって返される [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードにバインドする方法について説明します。  
+ [<span data-ttu-id="6f1c0-129">コントロールへのデータ バインディング</span><span class="sxs-lookup"><span data-stu-id="6f1c0-129">Binding Data to Controls</span></span>](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)  
+ <span data-ttu-id="6f1c0-130">コントロールにバインドする方法について説明します、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]データ サービスによって返されるフィード。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-130">Describes how to bind controls to a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed returned by a data service.</span></span>  
   
- [サービス操作の呼び出し](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md)  
- クライアント ライブラリを使用してサービス操作を呼び出す方法について説明します。  
+ [<span data-ttu-id="6f1c0-131">サービス操作の呼び出し</span><span class="sxs-lookup"><span data-stu-id="6f1c0-131">Calling Service Operations</span></span>](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md)  
+ <span data-ttu-id="6f1c0-132">クライアント ライブラリを使用してサービス操作を呼び出す方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-132">Describes how to use the client library to call service operations.</span></span>  
   
- [データ サービス コンテキストの管理](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)  
- クライアント ライブラリの動作を管理するオプションについて説明します。  
+ [<span data-ttu-id="6f1c0-133">データ サービス コンテキストを管理します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-133">Managing the Data Service Context</span></span>](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)  
+ <span data-ttu-id="6f1c0-134">クライアント ライブラリの動作を管理するオプションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-134">Describes options for managing the behavior of the client library.</span></span>  
   
- [バイナリ データの操作](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)  
- データ サービスによってデータ ストリームとして返されるバイナリ データにアクセスしてバイナリ データを変更する方法について説明します。  
+ [<span data-ttu-id="6f1c0-135">バイナリ データの操作</span><span class="sxs-lookup"><span data-stu-id="6f1c0-135">Working with Binary Data</span></span>](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)  
+ <span data-ttu-id="6f1c0-136">データ サービスによってデータ ストリームとして返されるバイナリ データにアクセスしてバイナリ データを変更する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6f1c0-136">Describes how to access and change binary data returned by the data service as a data stream.</span></span>  
   
-## 参照  
- [WCF Data Services の定義](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)   
- [概要](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
+## <a name="see-also"></a><span data-ttu-id="6f1c0-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="6f1c0-137">See Also</span></span>  
+ [<span data-ttu-id="6f1c0-138">WCF Data Services の定義</span><span class="sxs-lookup"><span data-stu-id="6f1c0-138">Defining WCF Data Services</span></span>](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
+ [<span data-ttu-id="6f1c0-139">はじめに</span><span class="sxs-lookup"><span data-stu-id="6f1c0-139">Getting Started</span></span>](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)

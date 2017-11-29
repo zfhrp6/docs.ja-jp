@@ -5,29 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- lazy initialization in .NET, how to perform
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: lazy initialization in .NET, how to perform
 ms.assetid: 8cd68620-dcc3-4f20-8835-c728a6820e71
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: ab1ae0eae8d78d4b7f14444e78ff5a741fe02d95
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: b616aa284b6f7fff01b3b1fbfb15f2ceb54c9663
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-perform-lazy-initialization-of-objects"></a>方法: オブジェクトの遅延初期化を実行する
-<xref:System.Lazy%601?displayProperty=fullName> クラスは、オブジェクトの遅延初期化とインスタンス化を実行する操作を簡略化します。 オブジェクトを限定的に初期化すれば、不要なオブジェクトを作成する必要がなくなります。また、オブジェクトに初めてアクセスするときまで、そのオブジェクトの初期化を延期できます。 詳細については、「[限定的な初期化](../../../docs/framework/performance/lazy-initialization.md)」を参照してください。  
+# <a name="how-to-perform-lazy-initialization-of-objects"></a><span data-ttu-id="4ffd5-102">方法: オブジェクトの遅延初期化を実行する</span><span class="sxs-lookup"><span data-stu-id="4ffd5-102">How to: Perform Lazy Initialization of Objects</span></span>
+<span data-ttu-id="4ffd5-103"><xref:System.Lazy%601?displayProperty=nameWithType> クラスは、オブジェクトの遅延初期化とインスタンス化を実行する操作を簡略化します。</span><span class="sxs-lookup"><span data-stu-id="4ffd5-103">The <xref:System.Lazy%601?displayProperty=nameWithType> class simplifies the work of performing lazy initialization and instantiation of objects.</span></span> <span data-ttu-id="4ffd5-104">オブジェクトを限定的に初期化すれば、不要なオブジェクトを作成する必要がなくなります。また、オブジェクトに初めてアクセスするときまで、そのオブジェクトの初期化を延期できます。</span><span class="sxs-lookup"><span data-stu-id="4ffd5-104">By initializing objects in a lazy manner, you can avoid having to create them at all if they are never needed, or you can postpone their initialization until they are first accessed.</span></span> <span data-ttu-id="4ffd5-105">詳細については、「[限定的な初期化](../../../docs/framework/performance/lazy-initialization.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4ffd5-105">For more information, see [Lazy Initialization](../../../docs/framework/performance/lazy-initialization.md).</span></span>  
   
-## <a name="example"></a>例  
- 次の例では、<xref:System.Lazy%601> で値を初期化する方法を示します。 `someCondition` 変数を true または false に設定する他の一部のコードでは、遅延変数は必要ないものとします。  
+## <a name="example"></a><span data-ttu-id="4ffd5-106">例</span><span class="sxs-lookup"><span data-stu-id="4ffd5-106">Example</span></span>  
+ <span data-ttu-id="4ffd5-107">次の例では、<xref:System.Lazy%601> で値を初期化する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4ffd5-107">The following example shows how to initialize a value with <xref:System.Lazy%601>.</span></span> <span data-ttu-id="4ffd5-108">`someCondition` 変数を true または false に設定する他の一部のコードでは、遅延変数は必要ないものとします。</span><span class="sxs-lookup"><span data-stu-id="4ffd5-108">Assume that the lazy variable might not be needed, depending on some other code that sets the `someCondition` variable to true or false.</span></span>  
   
 ```vb  
 Dim someCondition As Boolean = False  
@@ -77,12 +77,12 @@ End Sub
 }  
 ```  
   
-## <a name="example"></a>例  
- 次の例では、<xref:System.Threading.ThreadLocal%601?displayProperty=fullName> クラスを使用して、現在のスレッド上の現在のオブジェクト インスタンスでのみ表示される型を初期化する方法を示します。  
+## <a name="example"></a><span data-ttu-id="4ffd5-109">例</span><span class="sxs-lookup"><span data-stu-id="4ffd5-109">Example</span></span>  
+ <span data-ttu-id="4ffd5-110">次の例では、<xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> クラスを使用して、現在のスレッド上の現在のオブジェクト インスタンスでのみ表示される型を初期化する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4ffd5-110">The following example shows how to use the <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> class to initialize a type that is visible only to the current object instance on the current thread.</span></span>  
   
- [!code-csharp[CDS#13](../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds2.cs#13)] [!code-vb[CDS#13](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/lazyhowto.vb#13)]  
+ [!code-csharp[CDS#13](../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds2.cs#13)]
+ [!code-vb[CDS#13](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/lazyhowto.vb#13)]  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Threading.LazyInitializer?displayProperty=fullName>   
- [遅延初期化](../../../docs/framework/performance/lazy-initialization.md)
-
+## <a name="see-also"></a><span data-ttu-id="4ffd5-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="4ffd5-111">See Also</span></span>  
+ <xref:System.Threading.LazyInitializer?displayProperty=nameWithType>  
+ [<span data-ttu-id="4ffd5-112">遅延初期化</span><span class="sxs-lookup"><span data-stu-id="4ffd5-112">Lazy Initialization</span></span>](../../../docs/framework/performance/lazy-initialization.md)

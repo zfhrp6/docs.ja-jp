@@ -1,45 +1,49 @@
 ---
-title: "非永続化ワークフロー インスタンス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "非永続化ワークフロー インスタンス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 5e01af77-6b14-4964-91a5-7dfd143449c0
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 8efaba416511856d7d2e0a70e171eed2d8e2e96b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 非永続化ワークフロー インスタンス
-状態が永続するワークフローの新しいインスタンスを <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> に作成すると、サービス ホストはそのサービスのエントリをインスタンス ストアに作成します。その後、ワークフロー インスタンスが初めて永続化されると、<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> は現在のインスタンス状態を格納します。ワークフローが Windows プロセス アクティブ化サービスにホストされている場合は、インスタンスが初めて永続化するとサービス配置データもインスタンス ストアに書き込まれます。  
+# <a name="non-persisted-workflow-instances"></a><span data-ttu-id="f310d-102">非永続化ワークフロー インスタンス</span><span class="sxs-lookup"><span data-stu-id="f310d-102">Non-Persisted Workflow Instances</span></span>
+<span data-ttu-id="f310d-103">状態が永続するワークフローの新しいインスタンスを <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> に作成すると、サービス ホストはそのサービスのエントリをインスタンス ストアに作成します。</span><span class="sxs-lookup"><span data-stu-id="f310d-103">When a new instance of a workflow is created that persists its state in the <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, the service host creates an entry for that service in the instance store.</span></span> <span data-ttu-id="f310d-104">その後、ワークフロー インスタンスが初めて永続化されると、<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> は現在のインスタンス状態を格納します。</span><span class="sxs-lookup"><span data-stu-id="f310d-104">Subsequently, when the workflow instance is persisted for the first time, the <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> stores the current instance state.</span></span> <span data-ttu-id="f310d-105">ワークフローが Windows プロセス アクティブ化サービスにホストされている場合は、インスタンスが初めて永続化するとサービス配置データもインスタンス ストアに書き込まれます。</span><span class="sxs-lookup"><span data-stu-id="f310d-105">If the workflow is hosted in the Windows Process Activation Service, the service deployment data is also written to the instance store when the instance is persisted for the first time.</span></span>  
   
- ワークフロー インスタンスが永続化されていない場合、インスタンスの状態は**非永続化**状態です。この状態の場合、アプリケーション ドメインのリサイクル、ホストの障害、またはコンピューターの障害の後にワークフロー インスタンスを回復することはできません。  
+ <span data-ttu-id="f310d-106">ワークフロー インスタンスが永続化されていない限り、**非永続化**状態です。</span><span class="sxs-lookup"><span data-stu-id="f310d-106">As long as the workflow instance has not been persisted, it is in a **non-persisted** state.</span></span> <span data-ttu-id="f310d-107">この状態の場合、アプリケーション ドメインのリサイクル、ホストの障害、またはコンピューターの障害の後にワークフロー インスタンスを回復することはできません。</span><span class="sxs-lookup"><span data-stu-id="f310d-107">While in this state, the workflow instance cannot be recovered after an application domain recycle, host failure, or computer failure.</span></span>  
   
-## 非永続化状態  
- 次のような場合、まだ永続化されていない永続性ワークフロー インスタンスが非永続的状態のままになります。  
+## <a name="the-non-persisted-state"></a><span data-ttu-id="f310d-108">非永続化状態</span><span class="sxs-lookup"><span data-stu-id="f310d-108">The Non-Persisted State</span></span>  
+ <span data-ttu-id="f310d-109">次のような場合、まだ永続化されていない永続性ワークフロー インスタンスが非永続的状態のままになります。</span><span class="sxs-lookup"><span data-stu-id="f310d-109">Durable workflow instances that have not been persisted remain in a non-persisted state in the following cases:</span></span>  
   
--   ワークフロー インスタンスが初めて永続化される前にサービス ホストがクラッシュした場合。ワークフロー インスタンスはインスタンス ストアに残り、回復されません。関連付けられるメッセージが受信されると、ワークフロー インスタンスが再びアクティブになります。  
+-   <span data-ttu-id="f310d-110">ワークフロー インスタンスが初めて永続化される前にサービス ホストがクラッシュした場合。</span><span class="sxs-lookup"><span data-stu-id="f310d-110">The service host crashes before the workflow instance is persisted for the first time.</span></span> <span data-ttu-id="f310d-111">ワークフロー インスタンスはインスタンス ストアに残り、回復されません。</span><span class="sxs-lookup"><span data-stu-id="f310d-111">The workflow instance remains in the instance store and is not recovered.</span></span> <span data-ttu-id="f310d-112">関連付けられるメッセージが受信されると、ワークフロー インスタンスが再びアクティブになります。</span><span class="sxs-lookup"><span data-stu-id="f310d-112">If a correlated message arrives, the workflow instance becomes active again.</span></span>  
   
--   ワークフロー インスタンスが初めて永続化される前にインスタンスで例外が発生した場合。返される <xref:System.Activities.UnhandledExceptionAction> に応じて、次のシナリオが発生します。  
+-   <span data-ttu-id="f310d-113">ワークフロー インスタンスが初めて永続化される前にインスタンスで例外が発生した場合。</span><span class="sxs-lookup"><span data-stu-id="f310d-113">The workflow instance experiences an exception before it is persisted for the first time.</span></span> <span data-ttu-id="f310d-114">返される <xref:System.Activities.UnhandledExceptionAction> に応じて、次のシナリオが発生します。</span><span class="sxs-lookup"><span data-stu-id="f310d-114">Depending on the <xref:System.Activities.UnhandledExceptionAction> returned, the following scenarios occur:</span></span>  
   
-    -   <xref:System.Activities.UnhandledExceptionAction> が <xref:System.Activities.UnhandledExceptionAction> に設定されている場合:  例外が発生すると、サービス配置情報がインスタンス ストアに書き込まれ、ワークフロー インスタンスがメモリからアンロードされます。ワークフロー インスタンスは非永続化状態となり、再読み込みできません。  
+    -   <span data-ttu-id="f310d-115"><xref:System.Activities.UnhandledExceptionAction> が <xref:System.Activities.UnhandledExceptionAction.Abort> に設定されている場合:  例外が発生すると、サービス配置情報がインスタンス ストアに書き込まれ、ワークフロー インスタンスがメモリからアンロードされます。</span><span class="sxs-lookup"><span data-stu-id="f310d-115"><xref:System.Activities.UnhandledExceptionAction> is set to <xref:System.Activities.UnhandledExceptionAction.Abort>: When an exception occurs, service deployment information is written to the instance store, and the workflow instance is unloaded from memory.</span></span> <span data-ttu-id="f310d-116">ワークフロー インスタンスは非永続化状態となり、再読み込みできません。</span><span class="sxs-lookup"><span data-stu-id="f310d-116">The workflow instance remains in a non-persisted state and cannot be reloaded.</span></span>  
   
-    -   <xref:System.Activities.UnhandledExceptionAction> が <xref:System.Activities.UnhandledExceptionAction> または <xref:System.Activities.UnhandledExceptionAction> に設定されている場合:  例外が発生すると、サービス配置情報がインスタンス ストアに書き込まれ、アクティビティ インスタンスの状態が <xref:System.Activities.ActivityInstanceState> に設定されます。  
+    -   <span data-ttu-id="f310d-117"><xref:System.Activities.UnhandledExceptionAction> が <xref:System.Activities.UnhandledExceptionAction.Cancel> または <xref:System.Activities.UnhandledExceptionAction.Terminate> に設定されている場合:  例外が発生すると、サービス配置情報がインスタンス ストアに書き込まれ、アクティビティ インスタンスの状態が <xref:System.Activities.ActivityInstanceState.Closed> に設定されます。</span><span class="sxs-lookup"><span data-stu-id="f310d-117"><xref:System.Activities.UnhandledExceptionAction> is set to <xref:System.Activities.UnhandledExceptionAction.Cancel> or <xref:System.Activities.UnhandledExceptionAction.Terminate>: When an exception occurs, service deployment information is written to the instance store, and the activity instance state is set to <xref:System.Activities.ActivityInstanceState.Closed>.</span></span>  
   
- アンロードされている非永続化ワークフロー インスタンスが発生するリスクを最低限に抑えるため、ライフサイクルの早い段階でワークフローを永続化することをお勧めします。  
+ <span data-ttu-id="f310d-118">アンロードされている非永続化ワークフロー インスタンスが発生するリスクを最低限に抑えるため、ライフサイクルの早い段階でワークフローを永続化することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="f310d-118">To minimize the risk of encountering unloaded non-persisted workflow instances, we recommend persisting the workflow early in its life cycle.</span></span>  
   
-## 非永続化インスタンスの検出と削除  
- <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> は非永続化ワークフロー インスタンスをインスタンス ストアから削除しません。非永続化ワークフロー インスタンスが関連付けられている期限切れのロックの所有者も削除されません。  
+## <a name="detection-and-removal-of-non-persisted-instances"></a><span data-ttu-id="f310d-119">非永続化インスタンスの検出と削除</span><span class="sxs-lookup"><span data-stu-id="f310d-119">Detection and Removal of Non-Persisted Instances</span></span>  
+ <span data-ttu-id="f310d-120"><xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> は非永続化ワークフロー インスタンスをインスタンス ストアから削除しません。</span><span class="sxs-lookup"><span data-stu-id="f310d-120">The <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> does not remove any non-persisted workflow instances from the instance store.</span></span> <span data-ttu-id="f310d-121">非永続化ワークフロー インスタンスが関連付けられている期限切れのロックの所有者も削除されません。</span><span class="sxs-lookup"><span data-stu-id="f310d-121">It also does not remove any expired lock owners that have non-persisted workflow instances associated with them.</span></span>  
   
- 管理者は定期的にインスタンス ストアの非永続化インスタンスを調べることをお勧めします。管理者はこのワークフローが相関メッセージを受信しないことがわかっている限り、これらのインスタンスをインスタンス ストアから削除することができます。たとえば、数か月にわたってデータベースに残っているインスタンスがある場合、そのワークフローの通常の有効期間が数日程度なら、クラッシュした初期化済みのインスタンスと見なしても問題ありません。  
+ <span data-ttu-id="f310d-122">管理者は定期的にインスタンス ストアの非永続化インスタンスを調べることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="f310d-122">We recommend that the administrator periodically checks the instance store for non-persisted instances.</span></span> <span data-ttu-id="f310d-123">管理者はこのワークフローが相関メッセージを受信しないことがわかっている限り、これらのインスタンスをインスタンス ストアから削除することができます。</span><span class="sxs-lookup"><span data-stu-id="f310d-123">Administrators can remove those instances from the instance store as long as they know that this workflow will not receive correlated messages.</span></span> <span data-ttu-id="f310d-124">たとえば、数か月にわたってデータベースに残っているインスタンスがある場合、そのワークフローの通常の有効期間が数日程度なら、クラッシュした初期化済みのインスタンスと見なしても問題ありません。</span><span class="sxs-lookup"><span data-stu-id="f310d-124">For example, if the instance has been in the database for several months and it is known that the workflow typically has a lifetime of several days, it would be safe to assume that this was an initialized instance that had crashed.</span></span>  
   
- SQL Workflow Instance Store 内の非永続化インスタンスを見つけるには、次の SQL クエリを使用できます。  
+ <span data-ttu-id="f310d-125">SQL Workflow Instance Store 内の非永続化インスタンスを見つけるには、次の SQL クエリを使用できます。</span><span class="sxs-lookup"><span data-stu-id="f310d-125">To find non-persisted instances in the SQL Workflow Instance Store you can use the following SQL queries:</span></span>  
   
--   このクエリは、まだ永続化されていないすべてのインスタンスを検索し、その ID と作成時刻 \(UTC 時刻で格納\) を返します。  
+-   <span data-ttu-id="f310d-126">このクエリは、まだ永続化されていないすべてのインスタンスを検索し、その ID と作成時刻 (UTC 時刻で格納) を返します。</span><span class="sxs-lookup"><span data-stu-id="f310d-126">This query finds all instances that have not been persisted, and returns the ID and creation time (stored in UTC time) for them.</span></span>  
   
     ```sql  
     select InstanceId, CreationTime   
@@ -47,7 +51,7 @@ caps.handback.revision: 5
         where IsInitialized = 0  
     ```  
   
--   このクエリは、まだ永続化されておらず、読み込まれてもいないすべてのインスタンスを検索し、その ID と作成時刻 \(UTC 時刻で格納\) を返します。  
+-   <span data-ttu-id="f310d-127">このクエリは、まだ永続化されておらず、読み込まれてもいないすべてのインスタンスを検索し、その ID と作成時刻 (UTC 時刻で格納) を返します。</span><span class="sxs-lookup"><span data-stu-id="f310d-127">This query finds all instances that have not been persisted, and that are not loaded, and returns the ID and creation time (stored in UTC time) for them.</span></span>  
   
     ```sql  
     select InstanceId, CreationTime   
@@ -56,7 +60,7 @@ caps.handback.revision: 5
             and CurrentMachine is NULL  
     ```  
   
--   このクエリは、まだ永続化されていない中断されたすべてのインスタンスを検索し、その ID、作成時刻 \(UTC 時刻で格納\)、中断の理由、およびその例外名を返します。  
+-   <span data-ttu-id="f310d-128">このクエリは、まだ永続化されていない中断されたすべてのインスタンスを検索し、その ID、作成時刻 (UTC 時刻で格納)、中断の理由、およびその例外名を返します。</span><span class="sxs-lookup"><span data-stu-id="f310d-128">This query finds all suspended instances that have not been persisted, and returns the ID, creation time (stored in UTC time), suspension reason, and exception name for them.</span></span>  
   
     ```sql  
     select InstanceId, CreationTime, SuspensionReason, SuspensionExceptionName   
@@ -65,13 +69,12 @@ caps.handback.revision: 5
             and IsSuspended = 1  
     ```  
   
- 非永続化インスタンスを削除する際は注意してください。一般に、<xref:System.ServiceModel.Activities.WorkflowServiceHost> によって作成された非永続化インスタンスは、中断されている場合や読み込まれていない場合は安全に削除できます。これらの特定のインスタンスは、次の SQL コマンドを正しいインスタンス ID に置き換えて使用し、`[System.Activities.DurableInstancing].[Instances]` ビューから削除することで、ストアから削除することが可能です。  
+ <span data-ttu-id="f310d-129">非永続化インスタンスを削除する際は注意してください。</span><span class="sxs-lookup"><span data-stu-id="f310d-129">Use care when you are deleting non-persisted instances.</span></span> <span data-ttu-id="f310d-130">一般に、<xref:System.ServiceModel.Activities.WorkflowServiceHost> によって作成された非永続化インスタンスは、中断されている場合や読み込まれていない場合は安全に削除できます。</span><span class="sxs-lookup"><span data-stu-id="f310d-130">In general, it is safe to remove non-persisted instances created by <xref:System.ServiceModel.Activities.WorkflowServiceHost> that are suspended or are not loaded.</span></span> <span data-ttu-id="f310d-131">これらの特定のインスタンスは、次の SQL コマンドを正しいインスタンス ID に置き換えて使用し、`[System.Activities.DurableInstancing].[Instances]` ビューから削除することで、ストアから削除することが可能です。</span><span class="sxs-lookup"><span data-stu-id="f310d-131">Those specific instances can be deleted from the store by deleting them from the `[System.Activities.DurableInstancing].[Instances]` view by using the following SQL command, substituting the correct instance ID.</span></span>  
   
 ```sql  
 delete [System.Activities.DurableInstancing].[Instances]   
     where InstanceId=’078a9bc4-ada5-4f9e-8cce-b0eb0009995f’  
-  
 ```  
   
 > [!WARNING]
->  作成されたばかりでまだ永続化されていないインスタンスもあるため、非永続的インスタンスをすべて削除することはお勧めしません。
+>  <span data-ttu-id="f310d-132">作成されたばかりでまだ永続化されていないインスタンスもあるため、非永続的インスタンスをすべて削除することはお勧めしません。</span><span class="sxs-lookup"><span data-stu-id="f310d-132">We do not recommend removing all non-persisted instances because this includes instances that have just been created and have not yet been persisted.</span></span>

@@ -1,67 +1,70 @@
 ---
-title: "x:FactoryMethod Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "XAML. x:FactoryMethod directive [XAML Services]"
-  - "FactoryMethod directive in XAML [XAML Services]"
-  - "x:FactoryMethod directive [XAML Services]"
+title: "x:FactoryMethod ディレクティブ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- XAML. x:FactoryMethod directive [XAML Services]
+- FactoryMethod directive in XAML [XAML Services]
+- x:FactoryMethod directive [XAML Services]
 ms.assetid: 829bcbdf-5318-4afb-9a03-c310e0d2f23d
-caps.latest.revision: 8
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 0d53db49961c2a75e4547f6b57240cefd2cc17c3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# x:FactoryMethod Directive
-XAML プロセッサが、バッキング型を解決した後にオブジェクトを初期化するために使用する、コンストラクター以外のメソッドを指定します。  
+# <a name="xfactorymethod-directive"></a><span data-ttu-id="43d02-102">x:FactoryMethod ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="43d02-102">x:FactoryMethod Directive</span></span>
+<span data-ttu-id="43d02-103">XAML プロセッサが、バッキング型の解決後、オブジェクトを初期化するために使用するコンス トラクター以外の方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="43d02-103">Specifies a method other than a constructor that a XAML processor should use to initialize an object after resolving its backing type.</span></span>  
   
-## XAML 属性の使用方法、x:Arguments なし  
+## <a name="xaml-attribute-usage-no-xarguments"></a><span data-ttu-id="43d02-104">XAML 属性の使用方法、x: 引数なし</span><span class="sxs-lookup"><span data-stu-id="43d02-104">XAML Attribute Usage, no x:Arguments</span></span>  
   
 ```  
-<object x:FactoryMethod="methodname"...>  
+<object x:FactoryMethod="methodname"...>  
   ...  
 </object>  
 ```  
   
-## XAML 属性の使用方法、要素としての x:Arguments  
+## <a name="xaml-attribute-usage-xarguments-as-elements"></a><span data-ttu-id="43d02-105">XAML 属性の使用方法、要素として X:arguments</span><span class="sxs-lookup"><span data-stu-id="43d02-105">XAML Attribute Usage, x:Arguments as Element(s)</span></span>  
   
 ```  
-<object x:FactoryMethod="methodname"...>  
+<object x:FactoryMethod="methodname"...>  
   <x:Arguments>  
     oneOrMoreObjectElements  
   </x:Arguments>  
 </object>  
 ```  
   
-## XAML 値  
+## <a name="xaml-values"></a><span data-ttu-id="43d02-106">XAML 値</span><span class="sxs-lookup"><span data-stu-id="43d02-106">XAML Values</span></span>  
   
 |||  
 |-|-|  
-|`methodname`|XAML プロセッサが、`object` として指定されるインスタンスを初期化するために、XAML プロセッサが呼び出すメソッドの文字列メソッド名。  「解説」を参照してください。|  
-|`oneOrMoreObjectElements`|ファクトリ メソッド パラメーターを指定するオブジェクトの、1 つ以上のオブジェクト要素。  ファクトリ メソッドに引数が渡される順序を指定するので、順序は重要です。|  
+|`methodname`|<span data-ttu-id="43d02-107">XAML プロセッサは、として指定されたインスタンスを初期化するために呼び出すメソッドの文字列のメソッド名`object`です。</span><span class="sxs-lookup"><span data-stu-id="43d02-107">The string method name of a method that XAML processors call to initialize the instance specified as `object`.</span></span> <span data-ttu-id="43d02-108">「解説」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="43d02-108">See Remarks.</span></span>|  
+|`oneOrMoreObjectElements`|<span data-ttu-id="43d02-109">ファクトリ メソッドのパラメーターを指定するオブジェクトのオブジェクトの要素の 1 つ以上</span><span class="sxs-lookup"><span data-stu-id="43d02-109">One or more object elements for objects that specify factory method parameters.</span></span> <span data-ttu-id="43d02-110">順序は重要です。ファクトリ メソッドに引数を渡す必要があります、順序を示します。</span><span class="sxs-lookup"><span data-stu-id="43d02-110">Order is significant; it signifies the order in which arguments should be passed to the factory method.</span></span>|  
   
-## 解説  
- `methodname` がインスタンス メソッドである場合、修飾できません。  
+## <a name="remarks"></a><span data-ttu-id="43d02-111">コメント</span><span class="sxs-lookup"><span data-stu-id="43d02-111">Remarks</span></span>  
+ <span data-ttu-id="43d02-112">場合`methodname`インスタンス メソッドでは、修飾することはできません。</span><span class="sxs-lookup"><span data-stu-id="43d02-112">If `methodname` is an instance method, it cannot be qualified.</span></span>  
   
- ファクトリ メソッドとしての静的メソッドはサポートされます。  `methodname` が静的メソッドである場合、`methodname` は *typeName*.*methodName* の組み合わせとして指定されます。ここで、*typeName* は、静的ファクトリ メソッドを定義するクラスの名前です。  *typeName* は、マップされた xmlns の型を表す場合は、プレフィックスで修飾されています。  *typeName* は、`typeof(``object``)` とは異なる型のこともあります。  
+ <span data-ttu-id="43d02-113">ファクトリ メソッドと静的メソッドがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="43d02-113">Static methods as factory methods are supported.</span></span> <span data-ttu-id="43d02-114">場合`methodname`静的メソッドでは、`methodname`として提供される、 *typeName*.*methodName*の組み合わせを*typeName*静的ファクトリ メソッドを定義するクラスの名前します。</span><span class="sxs-lookup"><span data-stu-id="43d02-114">If `methodname` is a static method, `methodname` is provided as a *typeName*.*methodName* combination, where *typeName* names the class that defines the static factory method.</span></span> <span data-ttu-id="43d02-115">*typeName*マップされた xmlns で型を参照している場合のプレフィックスで修飾することができます。</span><span class="sxs-lookup"><span data-stu-id="43d02-115">*typeName* can be prefix-qualified if referring to a type in a mapped xmlns.</span></span> <span data-ttu-id="43d02-116">*typeName*とは異なる型を指定できます`typeof(``object``)`です。</span><span class="sxs-lookup"><span data-stu-id="43d02-116">*typeName* can be a different type than `typeof(``object``)`.</span></span>  
   
- ファクトリ メソッドは、関連するオブジェクト要素をサポートする型の、宣言済みパブリック メソッドである必要があります。  
+ <span data-ttu-id="43d02-117">工場出荷時のメソッドは、関連するオブジェクトの要素をサポートする型の宣言されたパブリック メソッドである必要があります。</span><span class="sxs-lookup"><span data-stu-id="43d02-117">The factory method must be a declared public method of the type that backs the relevant object element.</span></span>  
   
- ファクトリ メソッドは、関連オブジェクトに割り当てることができるインスタンスを返す必要があります。  ファクトリ メソッドが null 値を返すことはありません。  
+ <span data-ttu-id="43d02-118">工場出荷時のメソッドは、関連するオブジェクトに割り当てることができるインスタンスを返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="43d02-118">The factory method must return an instance that is assignable to the relevant object.</span></span> <span data-ttu-id="43d02-119">ファクトリ メソッドにする必要があります null を返すことはありません。</span><span class="sxs-lookup"><span data-stu-id="43d02-119">Factory methods should never return null.</span></span>  
   
- `x:Arguments` は、ファクトリ メソッドのシグネチャの最優先の一致の原則に従います。  一致においては、最初にパラメーター数が評価されます。  パラメーター数に 1 つ以上の一致が見られる場合、パラメーター型が評価され、最優先の一致が決定されます。  評価のこのフェーズの後にあいまいさが残る場合は、XAML プロセッサの動作は未定義です。  
+ <span data-ttu-id="43d02-120">`x:Arguments`ファクトリ メソッドのシグネチャに最も適しているの原則で動作します。</span><span class="sxs-lookup"><span data-stu-id="43d02-120">`x:Arguments` operates on a principle of best match for signatures of factory methods.</span></span> <span data-ttu-id="43d02-121">パラメーターの数を最初に評価に一致します。</span><span class="sxs-lookup"><span data-stu-id="43d02-121">Matching evaluates the parameter count first.</span></span> <span data-ttu-id="43d02-122">パラメーターの数に一致する 1 つ以上の場合は、パラメーターの型がで評価されると最適な組み合わせが決定されます。</span><span class="sxs-lookup"><span data-stu-id="43d02-122">If there is more than one possible match for a parameter count, parameter type is then evaluated and best match is determined.</span></span> <span data-ttu-id="43d02-123">評価のこのフェーズの後にあいまいさが残る、XAML プロセッサの動作は未定義です。</span><span class="sxs-lookup"><span data-stu-id="43d02-123">If there is still ambiguity after this phase of evaluation, XAML processor behavior is undefined.</span></span>  
   
- `x:FactoryMethod` 要素の使用方法は、一般的な意味合いにおけるプロパティ要素の使用方法ではありません。これは、ディレクティブのマークアップは、格納オブジェクトの要素の型を参照しないためです。  要素の使用方法は、属性の使用方法よりも一般的ではないとされています。  `x:Arguments` \(属性または要素の使用方法\) は、`x:FactoryMethod` 要素の使用方法と共に使用できますが、「使用方法」のセクションには具体的に示されません。  
+ <span data-ttu-id="43d02-124">`x:FactoryMethod`要素の使用法がプロパティ要素の使用、一般的な意味で、ディレクティブのマークアップが含まれるオブジェクト要素の型を参照していないためです。</span><span class="sxs-lookup"><span data-stu-id="43d02-124">The `x:FactoryMethod` element usage is not property element usage in the typical sense, because the directive markup does not reference the containing object element's type.</span></span> <span data-ttu-id="43d02-125">推測要素の使用方法は、属性の使用方法ほど一般的です。</span><span class="sxs-lookup"><span data-stu-id="43d02-125">It is expected that element usage is less common than attribute usage.</span></span> <span data-ttu-id="43d02-126">`x:Arguments`と共に使用できます (属性または要素のいずれかの利用率)`x:FactoryMethod`要素の使用方法が、これは具体的には表示されません使用状況のセクションでします。</span><span class="sxs-lookup"><span data-stu-id="43d02-126">`x:Arguments` (either attribute or element usage) can be used along with `x:FactoryMethod` element usage, but this is not specifically shown in the Usage sections.</span></span>  
   
- 要素としての `x:FactoryMethod` はその他のプロパティ要素、要素として指定される `x:Arguments`、およびコンテンツ\/内部テキスト\/初期化テキストの前に配置される必要があります。  
+ <span data-ttu-id="43d02-127">`x:FactoryMethod`要素には、その他のすべてのプロパティ要素が前に指定する必要があります、としてはいずれかで始まる必要があります`x:Arguments`も、要素として提供されており、コンテンツ/内部のテキスト/初期化のテキストの前にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="43d02-127">`x:FactoryMethod` as an element must precede any other property elements, must precede any `x:Arguments` also provided as elements, and must precede any content/inner text/initialization text.</span></span>  
   
-## 参照  
- [x:Arguments Directive](../../../docs/framework/xaml-services/x-arguments-directive.md)
+## <a name="see-also"></a><span data-ttu-id="43d02-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="43d02-128">See Also</span></span>  
+ [<span data-ttu-id="43d02-129">x:Arguments ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="43d02-129">x:Arguments Directive</span></span>](../../../docs/framework/xaml-services/x-arguments-directive.md)

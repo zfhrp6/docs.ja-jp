@@ -1,53 +1,54 @@
 ---
-title: "Button コントロール (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Button コントロール [Windows フォーム]"
-  - "ボタン"
+title: "Button コントロール (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- buttons
+- Button control [Windows Forms]
 ms.assetid: d38bc40c-8040-4f19-9e88-2c665b0ab80b
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 1dd584896dd8698dc881eb00186c6a550f36c75f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Button コントロール (Windows フォーム)
-Windows フォームの `Button` コントロールを使用すると、ユーザーはそれをクリックしてアクションを実行できます。  `Button` コントロールには、テキストとイメージの両方を表示できます。  ボタンをクリックすると、ボタンを実際に押して離したかのように表示されます。  
+# <a name="button-control-windows-forms"></a><span data-ttu-id="fce73-102">Button コントロール (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="fce73-102">Button Control (Windows Forms)</span></span>
+<span data-ttu-id="fce73-103">Windows フォームの `Button` コントロールを使用すると、ユーザーはそれをクリックしてアクションを実行できます。</span><span class="sxs-lookup"><span data-stu-id="fce73-103">The Windows Forms `Button` control allows the user to click it to perform an action.</span></span> <span data-ttu-id="fce73-104">`Button` コントロールには、テキストとイメージの両方を表示できます。</span><span class="sxs-lookup"><span data-stu-id="fce73-104">The `Button` control can display both text and images.</span></span> <span data-ttu-id="fce73-105">ボタンをクリックすると、ボタンを実際に押して離したかのように表示されます。</span><span class="sxs-lookup"><span data-stu-id="fce73-105">When the button is clicked, it looks as if it is being pushed in and released.</span></span>  
   
-## このセクションの内容  
- [Button コントロールの概要](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)  
- このコントロールについて、および主な機能とプロパティについて説明します。  
+## <a name="in-this-section"></a><span data-ttu-id="fce73-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="fce73-106">In This Section</span></span>  
+ [<span data-ttu-id="fce73-107">Button コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="fce73-107">Button Control Overview</span></span>](../../../../docs/framework/winforms/controls/button-control-overview-windows-forms.md)  
+ <span data-ttu-id="fce73-108">このコントロールの用途、主な機能、およびプロパティについて説明します。</span><span class="sxs-lookup"><span data-stu-id="fce73-108">Explains what this control is and its key features and properties.</span></span>  
   
- [方法 : Windows フォームのボタンのクリックに応答する](../../../../docs/framework/winforms/controls/how-to-respond-to-windows-forms-button-clicks.md)  
- Windows フォームでのボタンの基本的な使用法について説明します。  
+ [<span data-ttu-id="fce73-109">方法: Windows フォームのボタンのクリックに応答する</span><span class="sxs-lookup"><span data-stu-id="fce73-109">How to: Respond to Windows Forms Button Clicks</span></span>](../../../../docs/framework/winforms/controls/how-to-respond-to-windows-forms-button-clicks.md)  
+ <span data-ttu-id="fce73-110">Windows フォームでのボタンの基本的な使用法について説明します。</span><span class="sxs-lookup"><span data-stu-id="fce73-110">Explains the most basic use of a button on a Windows Form.</span></span>  
   
- [方法 : Windows フォームの Button コントロールを承認ボタンとして指定する](../../../../docs/framework/winforms/controls/how-to-designate-a-windows-forms-button-as-the-accept-button.md)  
- `Button` コントロールを承認ボタン \(既定のボタン\) として設定する方法を説明します。  
+ [<span data-ttu-id="fce73-111">方法: Windows フォームの Button コントロールを承認ボタンとして指定する</span><span class="sxs-lookup"><span data-stu-id="fce73-111">How to: Designate a Windows Forms Button as the Accept Button</span></span>](../../../../docs/framework/winforms/controls/how-to-designate-a-windows-forms-button-as-the-accept-button.md)  
+ <span data-ttu-id="fce73-112">`Button` コントロールを承認ボタン (既定のボタン) として設定する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="fce73-112">Explains how to designate a `Button` control to be the accept button, also known as the default button.</span></span>  
   
- [方法 : Windows フォームの Button コントロールをキャンセル ボタンとして指定する](../../../../docs/framework/winforms/controls/how-to-designate-a-windows-forms-button-as-the-cancel-button.md)  
- `Button` コントロールをキャンセル ボタンとして設定する方法を説明します。このボタンは、ユーザーが Esc キーを押すとクリックされます  
+ [<span data-ttu-id="fce73-113">方法: Windows フォームの Button コントロールをキャンセル ボタンとして指定する</span><span class="sxs-lookup"><span data-stu-id="fce73-113">How to: Designate a Windows Forms Button as the Cancel Button</span></span>](../../../../docs/framework/winforms/controls/how-to-designate-a-windows-forms-button-as-the-cancel-button.md)  
+ <span data-ttu-id="fce73-114">`Button` コントロールをキャンセル ボタンとして設定する方法を説明します。このボタンは、ユーザーが Esc キーを押すとクリックされます</span><span class="sxs-lookup"><span data-stu-id="fce73-114">Explains how to designate a `Button` control to be the cancel button, which is clicked whenever the user presses the ESC key.</span></span>  
   
- [Windows フォームの Button コントロールを選択する方法](../../../../docs/framework/winforms/controls/ways-to-select-a-windows-forms-button-control.md)  
- ボタンを選択する方法の一覧を示します。  
+ [<span data-ttu-id="fce73-115">Windows フォームの Button コントロールを選択する方法</span><span class="sxs-lookup"><span data-stu-id="fce73-115">Ways to Select a Windows Forms Button Control</span></span>](../../../../docs/framework/winforms/controls/ways-to-select-a-windows-forms-button-control.md)  
+ <span data-ttu-id="fce73-116">ボタンを選択する方法の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="fce73-116">Lists methods of selecting a button.</span></span>  
   
- 「[方法 : デザイナーを使用して Windows フォームの Button コントロールを承認ボタンとして指定する](../../../../docs/framework/winforms/controls/designate-a-wf-button-as-the-accept-button-using-the-designer.md)」と「[方法 : デザイナーを使用して Windows フォームの Button コントロールをキャンセル ボタンとして指定する](../../../../docs/framework/winforms/controls/designate-a-wf-button-as-the-cancel-button-using-the-designer.md)」も参照してください。  
+ <span data-ttu-id="fce73-117">参照してください[する方法: デザイナーとして受け入れるボタンを使用して、Windows フォームの button コントロールを指定する](../../../../docs/framework/winforms/controls/designate-a-wf-button-as-the-accept-button-using-the-designer.md)と[する方法: デザイナーをキャンセル ボタンを使用して、として Windows フォームの button コントロールを指定する](../../../../docs/framework/winforms/controls/designate-a-wf-button-as-the-cancel-button-using-the-designer.md)です。</span><span class="sxs-lookup"><span data-stu-id="fce73-117">Also see [How to: Designate a Windows Forms Button as the Accept Button Using the Designer](../../../../docs/framework/winforms/controls/designate-a-wf-button-as-the-accept-button-using-the-designer.md) and [How to: Designate a Windows Forms Button as the Cancel Button Using the Designer](../../../../docs/framework/winforms/controls/designate-a-wf-button-as-the-cancel-button-using-the-designer.md).</span></span>  
   
-## 関連項目  
- <xref:System.Windows.Forms.Button> クラス  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+## <a name="reference"></a><span data-ttu-id="fce73-118">参照</span><span class="sxs-lookup"><span data-stu-id="fce73-118">Reference</span></span>  
+ <span data-ttu-id="fce73-119"><xref:System.Windows.Forms.Button> クラス</span><span class="sxs-lookup"><span data-stu-id="fce73-119"><xref:System.Windows.Forms.Button> class</span></span>  
+ <span data-ttu-id="fce73-120">このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="fce73-120">Describes this class and has links to all its members.</span></span>  
   
-## 関連項目  
- [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Windows フォーム コントロールの完全な一覧を、使用に関する情報リンクと共に提供します。  
+## <a name="related-sections"></a><span data-ttu-id="fce73-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="fce73-121">Related Sections</span></span>  
+ [<span data-ttu-id="fce73-122">Windows フォームで使用するコントロール</span><span class="sxs-lookup"><span data-stu-id="fce73-122">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ <span data-ttu-id="fce73-123">Windows フォーム コントロールの完全な一覧を、使用に関する情報リンクと共に提供します。</span><span class="sxs-lookup"><span data-stu-id="fce73-123">Provides a complete list of Windows Forms controls, with links to information on their use.</span></span>  
   
- 「[ダイアログ ボックスへのユーザー入力](http://msdn.microsoft.com/ja-jp/63ad8645-6842-45e8-b215-73f778e29a55)」と「[方法 : ダイアログ ボックスを閉じて、ユーザー入力を保持する](http://msdn.microsoft.com/ja-jp/9e118fad-3bf4-4f70-a3de-a0cda2b0229d)」も参照してください。
+ <span data-ttu-id="fce73-124">参照してください[ダイアログ ボックスにユーザー入力](http://msdn.microsoft.com/en-us/63ad8645-6842-45e8-b215-73f778e29a55)と[する方法: ダイアログ ボックスを閉じて、ユーザー入力を保持する](http://msdn.microsoft.com/en-us/9e118fad-3bf4-4f70-a3de-a0cda2b0229d)です。</span><span class="sxs-lookup"><span data-stu-id="fce73-124">Also see [User Input to Dialog Boxes](http://msdn.microsoft.com/en-us/63ad8645-6842-45e8-b215-73f778e29a55) and [How to: Close Dialog Boxes and Retain User Input](http://msdn.microsoft.com/en-us/9e118fad-3bf4-4f70-a3de-a0cda2b0229d).</span></span>

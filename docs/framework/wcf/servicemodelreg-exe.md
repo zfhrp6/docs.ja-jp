@@ -1,85 +1,84 @@
 ---
-title: "ServiceModel 登録ツール (ServiceModelReg.exe) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: "ServiceModel 登録ツール (ServiceModelReg.exe)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 396ec5ae-e34f-4c64-a164-fcf50e86b6ac
-caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7032fd6005d5eccf27e0ca34cd89c050260d6e4b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ServiceModel 登録ツール (ServiceModelReg.exe)
-このコマンド ライン ツールは、単一コンピューター上で WCF および WF コンポーネントの登録を管理するための機能を提供します。WCF および WF コンポーネントはインストール時に構成されるため、通常の状況ではこのツールを使用する必要はありません。しかし、サービスのアクティブ化に関する問題が発生する場合は、このツールを使用してコンポーネントを登録できます。  
+# <a name="servicemodel-registration-tool-servicemodelregexe"></a><span data-ttu-id="e8279-102">ServiceModel 登録ツール (ServiceModelReg.exe)</span><span class="sxs-lookup"><span data-stu-id="e8279-102">ServiceModel Registration Tool (ServiceModelReg.exe)</span></span>
+<span data-ttu-id="e8279-103">このコマンド ライン ツールは、単一コンピューター上で WCF および WF コンポーネントの登録を管理するための機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="e8279-103">This command-line tool provides the ability to manage the registration of WCF and WF components on a single machine.</span></span> <span data-ttu-id="e8279-104">WCF および WF コンポーネントはインストール時に構成されるため、通常の状況ではこのツールを使用する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="e8279-104">Under normal circumstances you should not need to use this tool as WCF and WF components are configured when installed.</span></span> <span data-ttu-id="e8279-105">しかし、サービスのアクティブ化に関する問題が発生する場合は、このツールを使用してコンポーネントを登録できます。</span><span class="sxs-lookup"><span data-stu-id="e8279-105">But if you are experiencing problems with service activation, you can try to register the components using this tool.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="e8279-106">構文</span><span class="sxs-lookup"><span data-stu-id="e8279-106">Syntax</span></span>  
   
 ```  
-  
 ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]  
 ```  
   
-## 解説  
- ツールは次の場所にあります。  
+## <a name="remarks"></a><span data-ttu-id="e8279-107">コメント</span><span class="sxs-lookup"><span data-stu-id="e8279-107">Remarks</span></span>  
+ <span data-ttu-id="e8279-108">ツールは次の場所にあります。</span><span class="sxs-lookup"><span data-stu-id="e8279-108">The tool can be found in the following location:</span></span>  
   
- %SystemRoot%\\Microsoft.Net\\Framework\\v3.0\\Windows Communication Foundation\\  
+ <span data-ttu-id="e8279-109">%SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\\</span><span class="sxs-lookup"><span data-stu-id="e8279-109">%SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\\</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[wv](../../../includes/wv-md.md)] で ServiceModel 登録ツールを実行している場合は、**\[Windows の機能\]** ダイアログ ボックスに、**\[Microsoft .NET Framework 3.0\]** の下にある **\[Windows Communication Foundation HTTP Activation\]** オプションが有効であることが反映されない場合があります。**\[Windows の機能\]** ダイアログ ボックスには、**\[スタート\]** ボタンをクリックし、**\[ファイル名を指定して実行\]** をクリックして、「**OptionalFeatures**」と入力することでアクセスできます。  
+>  <span data-ttu-id="e8279-110">ServiceModel 登録ツールを実行するときに[!INCLUDE[wv](../../../includes/wv-md.md)]、 **Windows の機能の**ダイアログことが反映されない、 **Windows Communication Foundation HTTP Activation** 下のオプション**Microsoft .NET Framework 3.0**がオンになっています。</span><span class="sxs-lookup"><span data-stu-id="e8279-110">When the ServiceModel Registration Tool is run on [!INCLUDE[wv](../../../includes/wv-md.md)], the **Windows Features** dialog may not reflect that the **Windows Communication Foundation HTTP Activation** option under **Microsoft .NET Framework 3.0** is turned on.</span></span> <span data-ttu-id="e8279-111">**Windows の機能の**ダイアログをクリックしてアクセスできる**開始**、順にクリックして**実行**」と入力し、 **OptionalFeatures**です。</span><span class="sxs-lookup"><span data-stu-id="e8279-111">The **Windows Features** dialog can be accessed by clicking **Start**, then click **Run** and then typing **OptionalFeatures**.</span></span>  
   
- 次の表は、ServiceModelReg.exe で使用できるオプションを示します。  
+ <span data-ttu-id="e8279-112">次の表は、ServiceModelReg.exe で使用できるオプションを示します。</span><span class="sxs-lookup"><span data-stu-id="e8279-112">The following tables describe the options that can be used with ServiceModelReg.exe.</span></span>  
   
-|オプション|説明|  
-|-----------|--------|  
-|`-ia`|WCF および WF のすべてのコンポーネントをインストールします。|  
-|`-ua`|WCF および WF のすべてのコンポーネントをアンインストールします。|  
-|`-r`|WCF および WF のすべてのコンポーネントを修復します。|  
-|`-i`|\-c で指定された WCF および WF のコンポーネントをインストールします。|  
-|`-u`|\-c で指定された WCF および WF のコンポーネントをアンインストールします。|  
-|`-c`|コンポーネントをインストールまたはアンインストールします。<br /><br /> -   httpnamespace \- HTTP 名前空間の予約<br />-   tcpportsharing –TCP ポート共有サービス<br />-   tcpactivation \- TCP アクティベーション サービス \(.NET 4 クライアント プロファイルでは非サポート\)<br />-   namedpipeactivation \- 名前付きパイプ アクティベーション サービス \(.NET 4 クライアント プロファイルでは非サポート\)<br />-   msmqactivation \- MSMQ アクティベーション サービス \(.NET 4 クライアント プロファイルでは非サポート\)<br />-   etw \- ETW イベント トレース マニフェスト \(Windows Vista またはそれ以降\)|  
-|`-q`|Quiet モード \(エラー ログのみ表示\)|  
-|`-v`|Verbose モード|  
-|`-nologo`|著作権やバナー メッセージを表示しません。|  
-|`-?`|ヘルプ テキストを表示します。|  
+|<span data-ttu-id="e8279-113">オプション</span><span class="sxs-lookup"><span data-stu-id="e8279-113">Option</span></span>|<span data-ttu-id="e8279-114">説明</span><span class="sxs-lookup"><span data-stu-id="e8279-114">Description</span></span>|  
+|------------|-----------------|  
+|`-ia`|<span data-ttu-id="e8279-115">WCF および WF のすべてのコンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="e8279-115">Installs all WCF and WF components.</span></span>|  
+|`-ua`|<span data-ttu-id="e8279-116">WCF および WF のすべてのコンポーネントをアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="e8279-116">Uninstalls all WCF and WF components.</span></span>|  
+|`-r`|<span data-ttu-id="e8279-117">WCF および WF のすべてのコンポーネントを修復します。</span><span class="sxs-lookup"><span data-stu-id="e8279-117">Repairs all WCF and WF components.</span></span>|  
+|`-i`|<span data-ttu-id="e8279-118">-c で指定された WCF および WF のコンポーネントをインストールします。</span><span class="sxs-lookup"><span data-stu-id="e8279-118">Installs WCF and WF components specified with –c.</span></span>|  
+|`-u`|<span data-ttu-id="e8279-119">-c で指定された WCF および WF のコンポーネントをアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="e8279-119">Uninstalls WCF and WF components specified with –c.</span></span>|  
+|`-c`|<span data-ttu-id="e8279-120">コンポーネントをインストールまたはアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="e8279-120">Installs or uninstalls a component:</span></span><br /><br /> <span data-ttu-id="e8279-121">-httpnamespace – HTTP Namespace 予約</span><span class="sxs-lookup"><span data-stu-id="e8279-121">-   httpnamespace – HTTP Namespace Reservation</span></span><br /><span data-ttu-id="e8279-122">-tcpportsharing – TCP ポート共有サービス</span><span class="sxs-lookup"><span data-stu-id="e8279-122">-   tcpportsharing – TCP port sharing service</span></span><br /><span data-ttu-id="e8279-123">-tcpactivation – TCP のアクティブ化サービス (.NET 4 クライアント プロファイルでサポートされていません)</span><span class="sxs-lookup"><span data-stu-id="e8279-123">-   tcpactivation – TCP activation service (unsupported on .NET 4 Client Profile)</span></span><br /><span data-ttu-id="e8279-124">-namedpipeactivation-名前付きパイプのアクティブ化サービス (.NET 4 クライアント プロファイルでサポートされていません</span><span class="sxs-lookup"><span data-stu-id="e8279-124">-   namedpipeactivation – Named pipe activation service (unsupported on .NET 4 Client Profile</span></span><br /><span data-ttu-id="e8279-125">(.NET 4 クライアント プロファイルでサポートされていません - msmqactivation – MSMQ アクティブ化サービス</span><span class="sxs-lookup"><span data-stu-id="e8279-125">-   msmqactivation – MSMQ activation service (unsupported on .NET 4 Client Profile</span></span><br /><span data-ttu-id="e8279-126">-etw – ETW イベントの追跡マニフェスト (Windows Vista またはそれ以降)</span><span class="sxs-lookup"><span data-stu-id="e8279-126">-   etw – ETW event tracing manifests (Windows Vista or later)</span></span>|  
+|`-q`|<span data-ttu-id="e8279-127">Quiet モード (エラー ログのみ表示)</span><span class="sxs-lookup"><span data-stu-id="e8279-127">Quiet mode (only display error logging)</span></span>|  
+|`-v`|<span data-ttu-id="e8279-128">Verbose モード</span><span class="sxs-lookup"><span data-stu-id="e8279-128">Verbose mode.</span></span>|  
+|`-nologo`|<span data-ttu-id="e8279-129">著作権やバナー メッセージを表示しません。</span><span class="sxs-lookup"><span data-stu-id="e8279-129">Suppresses the copyright and banner message.</span></span>|  
+|`-?`|<span data-ttu-id="e8279-130">ヘルプ テキストを表示します。</span><span class="sxs-lookup"><span data-stu-id="e8279-130">Displays help text</span></span>|  
   
-## FileLoadException エラーの修正  
- コンピューターに以前のバージョンの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] をインストールしている場合は、ServiceModelReg ツールを実行して新しいインストールを登録するときに、`FileLoadFoundException` エラーが発生することがあります。旧バージョンのインストールから手動でファイルを削除しても、machine.config 設定が元のままである限り、このエラーが発生する可能性があります。  
+## <a name="fixing-the-fileloadexception-error"></a><span data-ttu-id="e8279-131">FileLoadException エラーの修正</span><span class="sxs-lookup"><span data-stu-id="e8279-131">Fixing the FileLoadException Error</span></span>  
+ <span data-ttu-id="e8279-132">コンピューターに以前のバージョンの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] をインストールしている場合は、ServiceModelReg ツールを実行して新しいインストールを登録するときに、`FileLoadFoundException` エラーが発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="e8279-132">If you installed previous versions of [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] on your machine, you may get a `FileLoadFoundException` error when you run the ServiceModelReg tool to register a new installation.</span></span> <span data-ttu-id="e8279-133">旧バージョンのインストールから手動でファイルを削除しても、machine.config 設定が元のままである限り、このエラーが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="e8279-133">This can happen even if you have manually removed files from the previous install, but left the machine.config settings intact.</span></span>  
   
- エラー メッセージは、次のようになります。  
+ <span data-ttu-id="e8279-134">エラー メッセージは、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="e8279-134">The error message is similar to the following.</span></span>  
   
 ```  
 Error: System.IO.FileLoadException: Could not load file or assembly 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)  
 File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'  
 ```  
   
- System.ServiceModel Version 2.0.0.0 アセンブリが旧 CTP \(Customer Technology Preview\) リリースによってインストールされていたというエラー メッセージに注目する必要があります。最新バージョンの System.ServiceModel アセンブリは、2.0.0.0 ではなく 3.0.0.0 です。したがって、旧 CTP リリースの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] がインストールされたままで、完全にはアンインストールされていないコンピューターに正式の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] リリースをインストールすると、この問題が発生します。  
+ <span data-ttu-id="e8279-135">System.ServiceModel Version 2.0.0.0 アセンブリが旧 CTP (Customer Technology Preview) リリースによってインストールされていたというエラー メッセージに注目する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e8279-135">You should note from the error message that the System.ServiceModel Version 2.0.0.0 assembly was installed by an early Customer Technology Preview (CTP) release.</span></span> <span data-ttu-id="e8279-136">最新バージョンの System.ServiceModel アセンブリは、2.0.0.0 ではなく 3.0.0.0 です。</span><span class="sxs-lookup"><span data-stu-id="e8279-136">The current version of the System.ServiceModel assembly released is 3.0.0.0 instead.</span></span> <span data-ttu-id="e8279-137">したがって、旧 CTP リリースの [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] がインストールされたままで、完全にはアンインストールされていないコンピューターに正式の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] リリースをインストールすると、この問題が発生します。</span><span class="sxs-lookup"><span data-stu-id="e8279-137">Therefore, this issue is encountered when you want to install the official [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] release on a machine where an early CTP release of [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] was installed, but not completely uninstalled.</span></span>  
   
- ServiceModelReg.exe は、旧バージョンのエントリをクリーンアップすることも、新しいバージョンのエントリを登録することもできません。唯一の回避策は、machine.config を手動で編集することです。このファイルは次の場所にあります。  
+ <span data-ttu-id="e8279-138">ServiceModelReg.exe は、旧バージョンのエントリをクリーンアップすることも、新しいバージョンのエントリを登録することもできません。</span><span class="sxs-lookup"><span data-stu-id="e8279-138">ServiceModelReg.exe cannot clean up prior version entries, nor can it register the new version's entries.</span></span> <span data-ttu-id="e8279-139">唯一の回避策は、machine.config を手動で編集することです。このファイルは次の場所にあります。</span><span class="sxs-lookup"><span data-stu-id="e8279-139">The only workaround is to manually edit machine.config. You can locate this file at the following location.</span></span>  
   
 ```  
 %windir%\Microsoft.NET\Framework\v2.0.50727\config\machine.config   
 ```  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を 64 ビット コンピューターで実行している場合は、次の場所にある同じファイルも編集する必要があります。  
+ <span data-ttu-id="e8279-140">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を 64 ビット コンピューターで実行している場合は、次の場所にある同じファイルも編集する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e8279-140">If you are running [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] on a 64-bit machine, you should also edit the same file at this location.</span></span>  
   
 ```  
 %windir%\Microsoft.NET\Framework64\v2.0.50727\config\machine.config   
 ```  
   
- "System.ServiceModel, Version\=2.0.0.0" を参照しているこのファイル内の XML ノードを見つけ、それらのノードと子ノードを削除します。ファイルを保存し ServiceModelReg.exe を再実行すると、この問題は解決します。  
+ <span data-ttu-id="e8279-141">このファイルを参照する XML ノードを見つけ"'system.servicemodel, Version 2.0.0.0 を ="、および子ノードを削除します。</span><span class="sxs-lookup"><span data-stu-id="e8279-141">Locate any XML nodes in this file that refer to "System.ServiceModel, Version=2.0.0.0", delete them and any child nodes.</span></span> <span data-ttu-id="e8279-142">ファイルを保存し ServiceModelReg.exe を再実行すると、この問題は解決します。</span><span class="sxs-lookup"><span data-stu-id="e8279-142">Save the file and re-run ServiceModelReg.exe resolves this problem.</span></span>  
   
-## 例  
- 次の例に、ServiceModelReg.exe ツールの最も一般的なオプションの使用方法を示します。  
+## <a name="examples"></a><span data-ttu-id="e8279-143">例</span><span class="sxs-lookup"><span data-stu-id="e8279-143">Examples</span></span>  
+ <span data-ttu-id="e8279-144">次の例に、ServiceModelReg.exe ツールの最も一般的なオプションの使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e8279-144">The following examples show how to use the most common options of the ServiceModelReg.exe tool.</span></span>  
   
 ```  
 ServiceModelReg.exe -ia  

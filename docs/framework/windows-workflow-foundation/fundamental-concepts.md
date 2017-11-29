@@ -1,71 +1,75 @@
 ---
-title: "Windows Workflow の基本概念 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Windows Workflow の基本概念"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0e930e80-5060-45d2-8a7a-95c0690105d4
-caps.latest.revision: 27
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 27
+caps.latest.revision: "27"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9f13979c7d44b06a820e3524081457e1afef2b28
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Windows Workflow の基本概念
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] のワークフロー開発で使用される概念は、一部の開発者にとっては不慣れなものかもしれません。ここでは、そのいくつかの概念について、内容と実装方法を説明します。  
+# <a name="fundamental-windows-workflow-concepts"></a><span data-ttu-id="3822b-102">Windows Workflow の基本概念</span><span class="sxs-lookup"><span data-stu-id="3822b-102">Fundamental Windows Workflow Concepts</span></span>
+<span data-ttu-id="3822b-103">[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] のワークフロー開発で使用される概念は、一部の開発者には不慣れなことも考えられます。</span><span class="sxs-lookup"><span data-stu-id="3822b-103">Workflow development in the [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] uses concepts that may be new to some developers.</span></span> <span data-ttu-id="3822b-104">ここでは、そのいくつかの概念について、内容と実装方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="3822b-104">This topic describes some of the concepts and how they are implemented.</span></span>  
   
-## ワークフローとアクティビティ  
- ワークフローは、プロセスをモデル化するアクションの構造化されたコレクションです。ワークフローの各アクションは、アクティビティとしてモデル化されます。ホストがワークフローとのやり取りを行う場合、メソッドと同じようにワークフローを呼び出すときは <xref:System.Activities.WorkflowInvoker> が使用され、1 つのワークフロー インスタンスの実行を明示的に制御するときは <xref:System.Activities.WorkflowApplication> が使用されるほか、インスタンスが複数のシナリオでメッセージ ベースのやり取りを行うときは <xref:System.ServiceModel.WorkflowServiceHost> が使用されます。ワークフローの手順はアクティビティの階層として定義されるため、階層の最上位のアクティビティはワークフローそのものを定義すると言えます。この階層モデルは、前のバージョンの明示的な `SequentialWorkflow` クラスおよび `StateMachineWorkflow` クラスの代わりになります。アクティビティ自体は、他のアクティビティの集まりとして開発されたり \(ベースとして <xref:System.Activities.Activity> クラスを使用。通常は XAML を使用して定義されます\)、データ アクセスにランタイムを使用できる <xref:System.Activities.CodeActivity> クラスや、ワークフロー ランタイムの範囲をアクティビティの作成者に提示する <xref:System.Activities.NativeActivity> クラスを使用して作成されるカスタムとして開発されたりします。<xref:System.Activities.CodeActivity> および <xref:System.Activities.NativeActivity> を使用して開発されるアクティビティは、C\# などの CLR 準拠の言語を使用して作成されます。  
+## <a name="workflows-and-activities"></a><span data-ttu-id="3822b-105">ワークフローとアクティビティ</span><span class="sxs-lookup"><span data-stu-id="3822b-105">Workflows and Activities</span></span>  
+ <span data-ttu-id="3822b-106">ワークフローは、プロセスをモデル化するアクションの構造化されたコレクションです。</span><span class="sxs-lookup"><span data-stu-id="3822b-106">A workflow is a structured collection of actions that models a process.</span></span> <span data-ttu-id="3822b-107">ワークフローの各アクションは、アクティビティとしてモデル化されます。</span><span class="sxs-lookup"><span data-stu-id="3822b-107">Each action in the workflow is modeled as an activity.</span></span> <span data-ttu-id="3822b-108">ホストがワークフローとのやり取りを行う場合、メソッドと同じようにワークフローを呼び出すときは <xref:System.Activities.WorkflowInvoker> が、1 つのワークフロー インスタンスの実行を明示的に制御するときは <xref:System.Activities.WorkflowApplication> が、インスタンスが複数のシナリオでメッセージ ベースのやり取りを行うときは <xref:System.ServiceModel.WorkflowServiceHost> が使用されます。</span><span class="sxs-lookup"><span data-stu-id="3822b-108">A host interacts with a workflow by using <xref:System.Activities.WorkflowInvoker> for invoking a workflow as if it were a method,  <xref:System.Activities.WorkflowApplication> for explicit control over the execution of a single workflow instance, and <xref:System.ServiceModel.WorkflowServiceHost> for message-based interactions in multi-instance scenarios.</span></span> <span data-ttu-id="3822b-109">ワークフローの手順はアクティビティの階層として定義されるため、階層の最上位のアクティビティはワークフローそのものを定義すると言えます。</span><span class="sxs-lookup"><span data-stu-id="3822b-109">Because steps of the workflow are defined as a hierarchy of activities, the topmost activity in the hierarchy can be said to define the workflow itself.</span></span> <span data-ttu-id="3822b-110">この階層モデルは、前のバージョンの明示的な `SequentialWorkflow` クラスおよび `StateMachineWorkflow` クラスの代わりになります。</span><span class="sxs-lookup"><span data-stu-id="3822b-110">This hierarchy model takes the place of the explicit `SequentialWorkflow` and `StateMachineWorkflow` classes from previous versions.</span></span> <span data-ttu-id="3822b-111">アクティビティ自体は、他のアクティビティの集まりとして (ベースとして <xref:System.Activities.Activity> クラスを使用。通常は XAML を使用して定義されます)、データ アクセスにランタイムを使用できる <xref:System.Activities.CodeActivity> クラスを使用して作成されるカスタムとして、またはワークフロー ランタイムの範囲をアクティビティの作成者に提示する <xref:System.Activities.NativeActivity> クラスを使用して開発されます。</span><span class="sxs-lookup"><span data-stu-id="3822b-111">Activities themselves are developed as collections of other activities (using the <xref:System.Activities.Activity> class as a base, usually defined by using XAML) or are custom created by using the <xref:System.Activities.CodeActivity> class, which can use the runtime for data access, or by using the <xref:System.Activities.NativeActivity> class, which exposes the breadth of the workflow runtime to the activity author.</span></span> <span data-ttu-id="3822b-112"><xref:System.Activities.CodeActivity> クラスおよび <xref:System.Activities.NativeActivity> クラスを使用して開発されるアクティビティは、C# などの CLR 準拠の言語を使用して作成されます。</span><span class="sxs-lookup"><span data-stu-id="3822b-112">Activities developed by using <xref:System.Activities.CodeActivity> and <xref:System.Activities.NativeActivity> are created by using CLR-compliant languages such as C#.</span></span>  
   
-## アクティビティ データ モデル  
- アクティビティは、次の表に示すタイプを使用してデータを格納および共有します。  
+## <a name="activity-data-model"></a><span data-ttu-id="3822b-113">アクティビティ データ モデル</span><span class="sxs-lookup"><span data-stu-id="3822b-113">Activity Data Model</span></span>  
+ <span data-ttu-id="3822b-114">アクティビティは、次の表に示すタイプを使用してデータを格納および共有します。</span><span class="sxs-lookup"><span data-stu-id="3822b-114">Activities store and share data by using the types shown in the following table.</span></span>  
   
 |||  
 |-|-|  
-|変数|データをアクティビティに格納します。|  
-|引数|データをアクティビティに移動したり、アクティビティから移動したりします。|  
-|式|引数のバインディングで使用される、昇格された戻り値を持つアクティビティです。|  
+|<span data-ttu-id="3822b-115">変数</span><span class="sxs-lookup"><span data-stu-id="3822b-115">Variable</span></span>|<span data-ttu-id="3822b-116">データをアクティビティに格納します。</span><span class="sxs-lookup"><span data-stu-id="3822b-116">Stores data in an activity.</span></span>|  
+|<span data-ttu-id="3822b-117">引数</span><span class="sxs-lookup"><span data-stu-id="3822b-117">Argument</span></span>|<span data-ttu-id="3822b-118">データをアクティビティに移動したり、アクティビティから移動したりします。</span><span class="sxs-lookup"><span data-stu-id="3822b-118">Moves data into and out of an activity.</span></span>|  
+|<span data-ttu-id="3822b-119">式</span><span class="sxs-lookup"><span data-stu-id="3822b-119">Expression</span></span>|<span data-ttu-id="3822b-120">引数のバインディングで使用される、昇格された戻り値を持つアクティビティです。</span><span class="sxs-lookup"><span data-stu-id="3822b-120">An activity with an elevated return value used in argument bindings.</span></span>|  
   
-## ワークフロー ランタイム  
- ワーク フロー ランタイムはワーク フローが実行される環境です。<xref:System.Activities.WorkflowInvoker> はワークフローを実行する最も単純な方法です。ホストは、次の処理に <xref:System.Activities.WorkflowInvoker> を使用します。  
+## <a name="workflow-runtime"></a><span data-ttu-id="3822b-121">ワークフロー ランタイム</span><span class="sxs-lookup"><span data-stu-id="3822b-121">Workflow Runtime</span></span>  
+ <span data-ttu-id="3822b-122">ワークフロー ランタイムはワークフローが実行される環境です。</span><span class="sxs-lookup"><span data-stu-id="3822b-122">The workflow runtime is the environment in which workflows execute.</span></span> <span data-ttu-id="3822b-123"><xref:System.Activities.WorkflowInvoker> はワークフローを実行する最も単純な方法です。</span><span class="sxs-lookup"><span data-stu-id="3822b-123"><xref:System.Activities.WorkflowInvoker> is the simplest way to execute a workflow.</span></span> <span data-ttu-id="3822b-124">ホストは、次の処理に <xref:System.Activities.WorkflowInvoker> を使用します。</span><span class="sxs-lookup"><span data-stu-id="3822b-124">The host uses <xref:System.Activities.WorkflowInvoker> for the following:</span></span>  
   
--   ワークフローの同期呼び出しを実行する。  
+-   <span data-ttu-id="3822b-125">ワークフローの同期呼び出しを実行する。</span><span class="sxs-lookup"><span data-stu-id="3822b-125">To synchronously invoke a workflow.</span></span>  
   
--   ワークフローに入力を行ったり、ワークフローから出力を取り出したりする。  
+-   <span data-ttu-id="3822b-126">ワークフローに入力を行ったり、ワークフローから出力を取り出したりする。</span><span class="sxs-lookup"><span data-stu-id="3822b-126">To provide input to, or retrieve output from a workflow.</span></span>  
   
--   アクティビティによって使用される拡張機能を追加する。  
+-   <span data-ttu-id="3822b-127">アクティビティによって使用される拡張機能を追加する。</span><span class="sxs-lookup"><span data-stu-id="3822b-127">To add extensions to be used by activities.</span></span>  
   
- <xref:System.Activities.ActivityInstance> は、ホストがランタイムとのやり取りに使用できるスレッドセーフなプロキシです。ホストは、次の処理に <xref:System.Activities.ActivityInstance> を使用します。  
+ <span data-ttu-id="3822b-128"><xref:System.Activities.ActivityInstance> は、ホストがランタイムとのやり取りに使用できるスレッドセーフなプロキシです。</span><span class="sxs-lookup"><span data-stu-id="3822b-128"><xref:System.Activities.ActivityInstance> is the thread-safe proxy that hosts can use to interact with the runtime.</span></span> <span data-ttu-id="3822b-129">ホストは、次の処理に <xref:System.Activities.ActivityInstance> を使用します。</span><span class="sxs-lookup"><span data-stu-id="3822b-129">The host uses <xref:System.Activities.ActivityInstance> for the following:</span></span>  
   
--   インスタンスを作成するか、インスタンス ストアから読み込んで、インスタンスを取得する。  
+-   <span data-ttu-id="3822b-130">インスタンスを作成するか、インスタンス ストアから読み込んで、インスタンスを取得する。</span><span class="sxs-lookup"><span data-stu-id="3822b-130">To acquire an instance by creating it or loading it from an instance store.</span></span>  
   
--   インスタンスのライフサイクル イベントが通知されるようにする。  
+-   <span data-ttu-id="3822b-131">インスタンスのライフサイクル イベントが通知されるようにする。</span><span class="sxs-lookup"><span data-stu-id="3822b-131">To be notified of instance life-cycle events.</span></span>  
   
--   ワークフローの実行を制御する。  
+-   <span data-ttu-id="3822b-132">ワークフローの実行を制御する。</span><span class="sxs-lookup"><span data-stu-id="3822b-132">To control workflow execution.</span></span>  
   
--   ワークフローに入力を行ったり、ワークフローから出力を取り出したりする。  
+-   <span data-ttu-id="3822b-133">ワークフローに入力を行ったり、ワークフローから出力を取り出したりする。</span><span class="sxs-lookup"><span data-stu-id="3822b-133">To provide input to, or retrieve output from a workflow.</span></span>  
   
--   ワークフローの継続を通知し、値をワークフローに渡す。  
+-   <span data-ttu-id="3822b-134">ワークフローの継続を通知し、値をワークフローに渡す。</span><span class="sxs-lookup"><span data-stu-id="3822b-134">To signal a workflow continuation and pass values into the workflow.</span></span>  
   
--   ワークフローのデータを永続化する。  
+-   <span data-ttu-id="3822b-135">ワークフローのデータを永続化する。</span><span class="sxs-lookup"><span data-stu-id="3822b-135">To persist workflow data.</span></span>  
   
--   アクティビティによって使用される拡張機能を追加する。  
+-   <span data-ttu-id="3822b-136">アクティビティによって使用される拡張機能を追加する。</span><span class="sxs-lookup"><span data-stu-id="3822b-136">To add extensions to be used by activities.</span></span>  
   
- アクティビティは、<xref:System.Activities.NativeActivityContext> または <xref:System.Activities.CodeActivityContext> などの、適切な <xref:System.Activities.ActivityContext> 派生クラスを使用してワーク フローのランタイム環境にアクセスできます。これらの要素がこのクラスを使用する目的は、引数や変数の解決や子アクティビティのスケジュール設定など、多岐にわたります。  
+ <span data-ttu-id="3822b-137">アクティビティは、<xref:System.Activities.ActivityContext> または <xref:System.Activities.NativeActivityContext> などの、適切な <xref:System.Activities.CodeActivityContext> 派生クラスを使用してワーク フローのランタイム環境にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="3822b-137">Activities gain access to the workflow runtime environment by using the appropriate <xref:System.Activities.ActivityContext> derived class, such as <xref:System.Activities.NativeActivityContext> or <xref:System.Activities.CodeActivityContext>.</span></span> <span data-ttu-id="3822b-138">これらの要素がこのクラスを使用する目的は、引数や変数の解決や子アクティビティのスケジュール設定など、多岐にわたります。</span><span class="sxs-lookup"><span data-stu-id="3822b-138">They use this for resolving arguments and variables, for scheduling child activities, and for many other purposes.</span></span>  
   
-## サービス  
- ワークフローは、メッセージング アクティビティを使用して疎結合サービスの実装およびアクセスを行う、無理のない方法です。メッセージング アクティビティは [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 上にビルドされる、ワーク フローとのデータの受け渡しに使用される主要な方法です。任意の種類のメッセージ交換パターンをモデル化するため、複数のメッセージング アクティビティを共に作成できます。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)] は [メッセージング アクティビティ](../../../docs/framework/wcf/feature-details/messaging-activities.md) を参照します。ワークフロー サービスは <xref:System.ServiceModel.Activities.WorkflowServiceHost> クラスを使用してホストされます。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)][ワークフロー サービスのホストの概要](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md).[!INCLUDE[crabout](../../../includes/crabout-md.md)] ワークフロー サービスは以下を参照します。[ワークフロー サービス](../../../docs/framework/wcf/feature-details/workflow-services.md)  
+## <a name="services"></a><span data-ttu-id="3822b-139">サービス</span><span class="sxs-lookup"><span data-stu-id="3822b-139">Services</span></span>  
+ <span data-ttu-id="3822b-140">ワークフローは、メッセージング アクティビティを使用して疎結合サービスの実装およびアクセスを行う、無理のない方法です。</span><span class="sxs-lookup"><span data-stu-id="3822b-140">Workflows provide a natural way to implement and access loosely-coupled services, using messaging activities.</span></span> <span data-ttu-id="3822b-141">メッセージング アクティビティは [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 上にビルドされる、ワーク フローとのデータの受け渡しに使用される主要な方法です。</span><span class="sxs-lookup"><span data-stu-id="3822b-141">Messaging activities are built on [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] and are the primary mechanism used to get data into and out of a workflow.</span></span> <span data-ttu-id="3822b-142">任意の種類のメッセージ交換パターンをモデル化するため、複数のメッセージング アクティビティを共に作成できます。</span><span class="sxs-lookup"><span data-stu-id="3822b-142">You can compose messaging activities together to model any kind of message exchange pattern you wish.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="3822b-143">参照してください[メッセージング アクティビティ](../../../docs/framework/wcf/feature-details/messaging-activities.md)です。</span><span class="sxs-lookup"><span data-stu-id="3822b-143"> see [Messaging Activities](../../../docs/framework/wcf/feature-details/messaging-activities.md).</span></span> <span data-ttu-id="3822b-144">ワークフロー サービスは <xref:System.ServiceModel.Activities.WorkflowServiceHost> クラスを使用してホストされます。</span><span class="sxs-lookup"><span data-stu-id="3822b-144">Workflow services are hosted using the <xref:System.ServiceModel.Activities.WorkflowServiceHost> class.</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="3822b-145">[ワークフローをホストしているサービスの概要](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="3822b-145"> [Hosting Workflow Services Overview](../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md).</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="3822b-146">ワークフロー サービスを参照してください[ワークフロー サービス](../../../docs/framework/wcf/feature-details/workflow-services.md)</span><span class="sxs-lookup"><span data-stu-id="3822b-146"> workflow services see [Workflow Services](../../../docs/framework/wcf/feature-details/workflow-services.md)</span></span>  
   
-## 永続性、アンロード、実行時間の長いワークフロー  
- Windows Workflow は次の機能により、実行時間の長いリアクティブなプログラムの作成を簡素化しています。  
+## <a name="persistence-unloading-and-long-running-workflows"></a><span data-ttu-id="3822b-147">永続性、アンロード、実行時間の長いワークフロー</span><span class="sxs-lookup"><span data-stu-id="3822b-147">Persistence, Unloading, and Long-Running Workflows</span></span>  
+ <span data-ttu-id="3822b-148">Windows Workflow は次の機能により、実行時間の長いリアクティブなプログラムの作成を簡素化しています。</span><span class="sxs-lookup"><span data-stu-id="3822b-148">Windows Workflow simplifies the authoring of long-running reactive programs by providing:</span></span>  
   
--   外部入力にアクセスするアクティビティ  
+-   <span data-ttu-id="3822b-149">外部入力にアクセスするアクティビティ</span><span class="sxs-lookup"><span data-stu-id="3822b-149">Activities that access external input.</span></span>  
   
--   ホストのリスナーが再開できる <xref:System.Activities.Bookmark> オブジェクトを作成する機能  
+-   <span data-ttu-id="3822b-150">ホストのリスナーが再開できる <xref:System.Activities.Bookmark> オブジェクトを作成する機能</span><span class="sxs-lookup"><span data-stu-id="3822b-150">The ability to create <xref:System.Activities.Bookmark> objects that can be resumed by a host listener.</span></span>  
   
--   ワークフローのデータを永続化してワークフローをアンロードした後、特定のワークフローでの <xref:System.Activities.Bookmark> オブジェクトの再開に反応してワークフローを再読み込みおよび再アクティブ化する機能。  
+-   <span data-ttu-id="3822b-151">ワークフローのデータを永続化してワークフローをアンロードした後、特定のワークフローでの <xref:System.Activities.Bookmark> オブジェクトの再開に反応してワークフローを再読み込みおよび再アクティブ化する機能</span><span class="sxs-lookup"><span data-stu-id="3822b-151">The ability to persist a workflow’s data and unload the workflow, and then reload and reactivate the workflow in response to the resumption of <xref:System.Activities.Bookmark> objects in a particular workflow.</span></span>  
   
- ワークフローは、実行するアクティビティがなくなるか、現在の実行中のすべてのアクティビティが入力を待機するまで、アクティビティを継続して実行します。後者の場合、ワークフローはアイドル状態になります。ホストでは、アイドル状態になったワークフローをアンロードし、メッセージが到着したときに実行を継続するためのワークフローを再読み込みすることは一般的です。<xref:System.ServiceModel.Activities.WorkflowServiceHost> によって、この機能が実現されるほか、拡張可能なアンロード ポリシーを使用できます。揮発性状態のデータまたは永続化できない他のデータを使用する実行ブロックの場合、アクティビティは <xref:System.Activities.NoPersistHandle> を使用して永続化すべきではないホストを指定できます。また、ワークフローは <xref:System.Activities.Statements.Persist> アクティビティを使用して、そのデータを永続ストレージ メディアに明示的に永続化することもできます。
+ <span data-ttu-id="3822b-152">ワークフローは、実行するアクティビティがなくなるか、現在の実行中のすべてのアクティビティが入力を待機するまで、アクティビティを継続して実行します。</span><span class="sxs-lookup"><span data-stu-id="3822b-152">A workflow continuously executes activities until there are no more activities to execute or until all currently executing activities are waiting for input.</span></span> <span data-ttu-id="3822b-153">後者の場合、ワークフローはアイドル状態になります。</span><span class="sxs-lookup"><span data-stu-id="3822b-153">In this latter state, the workflow is idle.</span></span> <span data-ttu-id="3822b-154">ホストでは、アイドル状態になったワークフローをアンロードし、メッセージが到着したときに実行を継続するためのワークフローを再読み込みすることは一般的です。</span><span class="sxs-lookup"><span data-stu-id="3822b-154">It is common for a host to unload workflows that have gone idle and to reload them to continue execution when a message arrives.</span></span> <span data-ttu-id="3822b-155"><xref:System.ServiceModel.Activities.WorkflowServiceHost> によって、この機能が実現されるほか、拡張可能なアンロード ポリシーを使用できます。</span><span class="sxs-lookup"><span data-stu-id="3822b-155"><xref:System.ServiceModel.Activities.WorkflowServiceHost> provides functionality for this feature and provides an extensible unload policy.</span></span> <span data-ttu-id="3822b-156">揮発性状態のデータまたは永続化できない他のデータを使用する実行ブロックの場合、アクティビティは <xref:System.Activities.NoPersistHandle> を使用して永続化すべきではないホストを指定できます。</span><span class="sxs-lookup"><span data-stu-id="3822b-156">For blocks of execution that use volatile state data or other data that cannot be persisted, an activity can indicate to a host that it should not be persisted by using the <xref:System.Activities.NoPersistHandle>.</span></span> <span data-ttu-id="3822b-157">また、ワークフローは <xref:System.Activities.Statements.Persist> アクティビティを使用して、そのデータを永続ストレージ メディアに永続化することもできます。</span><span class="sxs-lookup"><span data-stu-id="3822b-157">A workflow can also explicitly persist its data to a durable storage medium by using the <xref:System.Activities.Statements.Persist> activity.</span></span>

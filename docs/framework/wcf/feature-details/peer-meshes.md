@@ -1,41 +1,44 @@
 ---
-title: "ピア メッシュ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ピア メッシュ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d93e312e-ac04-40f8-baea-5da1cacb546e
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1ca3d934564447018f44a423c36f26454588db4e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ピア メッシュ
-*メッシュ*は、互いに通信可能で、一意のメッシュ ID により識別されるピア ノードの名前付きコレクション \(相関グラフ\) です。  各ノードは複数の別のノードに接続されています。  接続状況が良好なメッシュでは、2 つのノード間にパスが存在します。メッシュの一番端のノード間には比較的少数のホップがあります。メッシュは、一部のノードまたは接続が落ちた場合でも、接続されたままになります。  メッシュ内のアクティブ ノードは、エンドポイント情報と対応するメッシュ ID を公開して他のピアが検索できるようにします。  
+# <a name="peer-meshes"></a><span data-ttu-id="b3190-102">ピア メッシュ</span><span class="sxs-lookup"><span data-stu-id="b3190-102">Peer Meshes</span></span>
+<span data-ttu-id="b3190-103">A*メッシュ*は互いに通信する、一意のメッシュ ID により識別されるピア ノードの名前付きコレクション (相関グラフ)</span><span class="sxs-lookup"><span data-stu-id="b3190-103">A *mesh* is a named collection (an interconnected graph) of peer nodes that can communicate among themselves and that are identified by a unique mesh ID.</span></span> <span data-ttu-id="b3190-104">各ノードは複数の別のノードに接続されています。</span><span class="sxs-lookup"><span data-stu-id="b3190-104">Each node is connected to multiple other nodes.</span></span> <span data-ttu-id="b3190-105">接続状況が良好なメッシュでは、2 つのノード間にパスが存在します。メッシュの一番端のノード間には比較的少数のホップがあります。メッシュは、一部のノードまたは接続が落ちた場合でも、接続されたままになります。メッシュ内のアクティブ ノードは、エンドポイント情報と対応するメッシュ ID を公開して他のピアが検索できるようにします。</span><span class="sxs-lookup"><span data-stu-id="b3190-105">In a well-connected mesh, there is a path between any two nodes, with relatively few hops between the nodes on the furthest edges of the mesh, and the mesh will remain connected even if some nodes or connections drop out. Active nodes in the mesh publish their endpoint information with a corresponding mesh ID so that other peers can find them.</span></span>  
   
-## ピア メッシュを使用して作成されたメッシュの特徴  
+## <a name="characteristics-of-a-mesh-created-using-peer-channel"></a><span data-ttu-id="b3190-106">ピア メッシュを使用して作成されたメッシュの特徴</span><span class="sxs-lookup"><span data-stu-id="b3190-106">Characteristics of a Mesh Created Using Peer Channel</span></span>  
   
-#### 一意の識別  
+#### <a name="uniquely-identified"></a><span data-ttu-id="b3190-107">一意の識別</span><span class="sxs-lookup"><span data-stu-id="b3190-107">Uniquely Identified</span></span>  
   
--   一意の ID によって各メッシュが識別されます。  メッシュ名 \(メッシュ ID\) はドメイン ネーム システム \(DNS\) ホスト名と同じ形式です。  したがって、このメッシュ ID は、アプリケーションの対象クライアントに対して、リゾルバーの使用範囲内で一意にする必要があります。  "MyFamilysPeers" や "KevinsPokerTable" のような一般的な名前にすると、他のユーザー名と容易に衝突する可能性があり、意図しないピア エンドポイントの情報が返る場合があります。その結果、プライバシーの問題が発生したり、接続の待ち時間が増加したりする可能性があります。  このような問題を回避する 1 つの方法は、一意の ID をメッシュのニックネームの接尾辞として追加することです \(たとえば、"KevinsPokerTable90210" のようにします\)。  
+-   <span data-ttu-id="b3190-108">一意の ID によって各メッシュが識別されます。</span><span class="sxs-lookup"><span data-stu-id="b3190-108">A unique ID identifies each mesh.</span></span> <span data-ttu-id="b3190-109">メッシュ名 (メッシュ ID) はドメイン ネーム システム (DNS) ホスト名と同じ形式です。</span><span class="sxs-lookup"><span data-stu-id="b3190-109">The name of the mesh (or mesh ID) is in the same format as a Domain Name System (DNS) host name.</span></span> <span data-ttu-id="b3190-110">したがって、このメッシュ ID は、アプリケーションの対象クライアントに対して、リゾルバーの使用範囲内で一意にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3190-110">As such, this mesh ID must be unique for the intended client of the application within the scope of the resolver being used.</span></span> <span data-ttu-id="b3190-111">"MyFamilysPeers" や "KevinsPokerTable" のような一般的な名前にすると、他のユーザー名と容易に衝突する可能性があり、意図しないピア エンドポイントの情報が返る場合があります。その結果、プライバシーの問題が発生したり、接続の待ち時間が増加したりする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b3190-111">A common name such as "MyFamilysPeers" or "KevinsPokerTable," may easily collide with other user names and may return unintended peer endpoint information, which could result in privacy issues or increase connection latency.</span></span> <span data-ttu-id="b3190-112">このような問題を回避する 1 つの方法は、一意の ID をメッシュのニックネームの接尾辞として追加することです (たとえば、"KevinsPokerTable90210" のようにします)。</span><span class="sxs-lookup"><span data-stu-id="b3190-112">One way to avoid these issues may be to add a unique ID as a postfix to the nickname for the mesh (for example, "KevinsPokerTable90210").</span></span>  
   
-#### 大量のメッセージ  
+#### <a name="message-flooding"></a><span data-ttu-id="b3190-113">大量のメッセージ</span><span class="sxs-lookup"><span data-stu-id="b3190-113">Message Flooding</span></span>  
   
--   メッシュでは、1 人以上の送信者から同じメッシュ内の他のすべてのピア ノードにメッセージを伝達できます。  ピア ノードから大量に送られたメッセージは、`http://schemas.microsoft.com/net/2006/05/peer` の名前空間で指定されたヘッダーを使用します。  
+-   <span data-ttu-id="b3190-114">メッシュでは、1 人以上の送信者から同じメッシュ内の他のすべてのピア ノードにメッセージを伝達できます。</span><span class="sxs-lookup"><span data-stu-id="b3190-114">The mesh allows messages to be propagated from one or more senders to all other peer nodes in the same mesh.</span></span> <span data-ttu-id="b3190-115">ピア ノードから大量に送られたメッセージは、`http://schemas.microsoft.com/net/2006/05/peer` の名前空間で指定されたヘッダーを使用します。</span><span class="sxs-lookup"><span data-stu-id="b3190-115">Messages flooded by peer nodes use headers specified in the namespace at `http://schemas.microsoft.com/net/2006/05/peer`.</span></span>  
   
-#### 最適化された接続  
+#### <a name="optimized-connections"></a><span data-ttu-id="b3190-116">最適化された接続</span><span class="sxs-lookup"><span data-stu-id="b3190-116">Optimized Connections</span></span>  
   
--   ノードが参加したり離脱したりすると、ピア チャネル メッシュが自動的に調整されます。これにより、良好な接続が維持され、パーティション \(互いに分離するノード グループ\) が作成される可能性はほとんどなくなります。  メッシュ内の接続は現在のトラフィック パターンに基づいて動的に最適化され、送信者から受信者へのメッセージの待ち時間は可能な限り短縮されます。  
+-   <span data-ttu-id="b3190-117">ノードが参加したり離脱したりすると、ピア チャネル メッシュが自動的に調整されます。これにより、良好な接続が維持され、パーティション (互いに分離するノード グループ) が作成される可能性はほとんどなくなります。</span><span class="sxs-lookup"><span data-stu-id="b3190-117">A Peer Channel mesh automatically adjusts when nodes join and leave, ensuring that all nodes have good connectivity with little chance of creating partitions (groups of nodes isolated from each other).</span></span> <span data-ttu-id="b3190-118">メッシュ内の接続は現在のトラフィック パターンに基づいて動的に最適化され、送信者から受信者へのメッセージの待ち時間は可能な限り短縮されます。</span><span class="sxs-lookup"><span data-stu-id="b3190-118">Connections in the mesh are also dynamically optimized based on current traffic patterns so that message latency from sender to receiver is as small as possible.</span></span>  
   
-#### ピア チャネルで提供されない一般的なネットワーク機能  
- ピア チャネルで提供されない一般的なネットワーク機能を認識しておくことは重要です。  その機能 \(ピア チャネルの上にすべて構築される場合もあります\) を次に示します。  
+#### <a name="popular-network-features-that-peer-channel-does-not-provide"></a><span data-ttu-id="b3190-119">ピア チャネルで提供されない一般的なネットワーク機能</span><span class="sxs-lookup"><span data-stu-id="b3190-119">Popular Network Features That Peer Channel Does Not Provide</span></span>  
+ <span data-ttu-id="b3190-120">ピア チャネルで提供されない一般的なネットワーク機能を認識しておくことは重要です。</span><span class="sxs-lookup"><span data-stu-id="b3190-120">It is important to be aware of popular network features that Peer Channel does not provide.</span></span> <span data-ttu-id="b3190-121">その機能 (ピア チャネルの上にすべて構築される場合もあります) を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b3190-121">These features, which may all be built on top of Peer Channel, include the following:</span></span>  
   
--   メッセージの順序付け : 単独のソースから送信されたメッセージは、他のすべてのパーティに同じ順序またはソースが送信した順序で到着しない場合があります。  メッセージを特定の順序で配信する必要のあるアプリケーションでは、その順序をアプリケーションに組み込む必要があります \(決まった値で増加する ID をすべてのメッセージに含めるなど\)。  
+-   <span data-ttu-id="b3190-122">**メッセージの順序付け:** 1 つのソースから送信されたメッセージでに同じ順序またはソースが送信した順序では、他のすべてのパーティが到着しない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b3190-122">**Message ordering:** Messages originating from a single source may not arrive at all other parties in the same order or in the order that the source sent.</span></span> <span data-ttu-id="b3190-123">メッセージを特定の順序で配信する必要のあるアプリケーションでは、その順序をアプリケーションに組み込む必要があります (決まった値で増加する ID をすべてのメッセージに含めるなど)。</span><span class="sxs-lookup"><span data-stu-id="b3190-123">Applications that require messages be delivered in a certain order must build it into their applications (for example, by including a monotonically increasing ID with all messages).</span></span>  
   
--   信頼できるメッセージング : ピア チャネルには、すべてのピアによりメッセージの受信を確認するメカニズムはありません。  メッセージの配信を保証するには、信頼性の層をピア チャネルの上に記述する必要があります。
+-   <span data-ttu-id="b3190-124">**信頼できるメッセージング:**ピア チャネルでのすべてのピアによりメッセージの受信を確認するためのメカニズムが含まれません。</span><span class="sxs-lookup"><span data-stu-id="b3190-124">**Reliable messaging:** Peer Channel does not include a mechanism to ensure message reception by all peers.</span></span> <span data-ttu-id="b3190-125">メッセージの配信を保証するには、信頼性の層をピア チャネルの上に記述する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3190-125">To guarantee message delivery, you must write a reliability layer on top of Peer Channel.</span></span>

@@ -1,88 +1,90 @@
 ---
-title: "&lt;NetFx40_LegacySecurityPolicy&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<NetFx40_LegacySecurityPolicy> 要素"
-  - "NetFx40_LegacySecurityPolicy 要素"
+title: "&lt;NetFx40_LegacySecurityPolicy&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- <NetFx40_LegacySecurityPolicy> element
+- NetFx40_LegacySecurityPolicy element
 ms.assetid: 07132b9c-4a72-4710-99d7-e702405e02d4
-caps.latest.revision: 21
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: cb59eb6e2a5e831f603747b3e0f9435bd076fbf8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;NetFx40_LegacySecurityPolicy&gt; 要素
-ランタイムがレガシ コード アクセス セキュリティ \(CAS: Code Access Security\) ポリシーを使用するかどうかを指定します。  
+# <a name="ltnetfx40legacysecuritypolicygt-element"></a><span data-ttu-id="2443a-102">&lt;NetFx40_LegacySecurityPolicy&gt;要素</span><span class="sxs-lookup"><span data-stu-id="2443a-102">&lt;NetFx40_LegacySecurityPolicy&gt; Element</span></span>
+<span data-ttu-id="2443a-103">ランタイムがレガシ コード アクセス セキュリティ (CAS) ポリシーを使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="2443a-103">Specifies whether the runtime uses legacy code access security (CAS) policy.</span></span>  
   
-## 構文  
+ <span data-ttu-id="2443a-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="2443a-104">\<configuration></span></span>  
+<span data-ttu-id="2443a-105">\<ランタイム ></span><span class="sxs-lookup"><span data-stu-id="2443a-105">\<runtime></span></span>  
+<span data-ttu-id="2443a-106">< NetFx40_LegacySecurityPolicy ></span><span class="sxs-lookup"><span data-stu-id="2443a-106"><NetFx40_LegacySecurityPolicy></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="2443a-107">構文</span><span class="sxs-lookup"><span data-stu-id="2443a-107">Syntax</span></span>  
+  
+```xml  
 <NetFx40_LegacySecurityPolicy  
    enabled="true|false"/>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="2443a-108">属性および要素</span><span class="sxs-lookup"><span data-stu-id="2443a-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="2443a-109">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="2443a-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="2443a-110">属性</span><span class="sxs-lookup"><span data-stu-id="2443a-110">Attributes</span></span>  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`enabled`|必須の属性です。<br /><br /> ランタイムがレガシ CAS ポリシーを使用するかどうかを指定します。|  
+|<span data-ttu-id="2443a-111">属性</span><span class="sxs-lookup"><span data-stu-id="2443a-111">Attribute</span></span>|<span data-ttu-id="2443a-112">説明</span><span class="sxs-lookup"><span data-stu-id="2443a-112">Description</span></span>|  
+|---------------|-----------------|  
+|`enabled`|<span data-ttu-id="2443a-113">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="2443a-113">Required attribute.</span></span><br /><br /> <span data-ttu-id="2443a-114">ランタイムがレガシ CAS ポリシーを使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="2443a-114">Specifies whether the runtime uses legacy CAS policy.</span></span>|  
   
-## enabled 属性  
+## <a name="enabled-attribute"></a><span data-ttu-id="2443a-115">enabled 属性</span><span class="sxs-lookup"><span data-stu-id="2443a-115">enabled Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|`false`|ランタイムはレガシ CAS ポリシーを使用しません。  これは、既定の設定です。|  
-|`true`|ランタイムはレガシ CAS ポリシーを使用します。|  
+|<span data-ttu-id="2443a-116">値</span><span class="sxs-lookup"><span data-stu-id="2443a-116">Value</span></span>|<span data-ttu-id="2443a-117">説明</span><span class="sxs-lookup"><span data-stu-id="2443a-117">Description</span></span>|  
+|-----------|-----------------|  
+|`false`|<span data-ttu-id="2443a-118">ランタイムは、従来の CAS ポリシーを使用しません。</span><span class="sxs-lookup"><span data-stu-id="2443a-118">The runtime does not use legacy CAS policy.</span></span> <span data-ttu-id="2443a-119">既定値です。</span><span class="sxs-lookup"><span data-stu-id="2443a-119">This is the default.</span></span>|  
+|`true`|<span data-ttu-id="2443a-120">ランタイムは、従来の CAS ポリシーを使用します。</span><span class="sxs-lookup"><span data-stu-id="2443a-120">The runtime uses legacy CAS policy.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="2443a-121">子要素</span><span class="sxs-lookup"><span data-stu-id="2443a-121">Child Elements</span></span>  
+ <span data-ttu-id="2443a-122">なし。</span><span class="sxs-lookup"><span data-stu-id="2443a-122">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="2443a-123">親要素</span><span class="sxs-lookup"><span data-stu-id="2443a-123">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
-|`runtime`|ランタイム初期化オプションに関する情報を含んでいます。|  
+|<span data-ttu-id="2443a-124">要素</span><span class="sxs-lookup"><span data-stu-id="2443a-124">Element</span></span>|<span data-ttu-id="2443a-125">説明</span><span class="sxs-lookup"><span data-stu-id="2443a-125">Description</span></span>|  
+|-------------|-----------------|  
+|`configuration`|<span data-ttu-id="2443a-126">共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。</span><span class="sxs-lookup"><span data-stu-id="2443a-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="2443a-127">ランタイム初期化オプションに関する情報を含んでいます。</span><span class="sxs-lookup"><span data-stu-id="2443a-127">Contains information about runtime initialization options.</span></span>|  
   
-## 解説  
- .NET Framework Version 3.5 以前のバージョンでは、CAS ポリシーが常に有効になります。  [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] では、CAS ポリシーを明示的に有効にする必要があります。  
+## <a name="remarks"></a><span data-ttu-id="2443a-128">コメント</span><span class="sxs-lookup"><span data-stu-id="2443a-128">Remarks</span></span>  
+ <span data-ttu-id="2443a-129">.NET Framework バージョン 3.5 と以前のバージョンでは、CAS ポリシーは常に有効にします。</span><span class="sxs-lookup"><span data-stu-id="2443a-129">In the .NET Framework version 3.5 and earlier versions, CAS policy is always in effect.</span></span> <span data-ttu-id="2443a-130">[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]、CAS ポリシーを有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="2443a-130">In the [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], CAS policy must be enabled.</span></span>  
   
- CAS ポリシーはバージョンに固有です。  旧バージョンの .NET Framework に存在するカスタム CAS ポリシーは、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] では再度指定する必要があります。  
+ <span data-ttu-id="2443a-131">CAS ポリシーは、バージョン固有です。</span><span class="sxs-lookup"><span data-stu-id="2443a-131">CAS policy is version-specific.</span></span> <span data-ttu-id="2443a-132">.NET Framework の以前のバージョンに存在するカスタムの CAS ポリシーを再度指定する必要があります、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="2443a-132">Custom CAS policies that exist in earlier versions of the .NET Framework must be respecified in the [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].</span></span>  
   
- `<NetFx40_LegacySecurityPolicy>` 要素を [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] アセンブリに適用しても、[透過的セキュリティ コード](../../../../../docs/framework/misc/security-transparent-code.md)には影響しません。透過性規則は引き続き適用されます。  
+ <span data-ttu-id="2443a-133">適用する、`<NetFx40_LegacySecurityPolicy>`要素を[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]アセンブリには影響しません[セキュリティ透過的なコード](../../../../../docs/framework/misc/security-transparent-code.md); 透過性規則を引き続き適用されます。</span><span class="sxs-lookup"><span data-stu-id="2443a-133">Applying the `<NetFx40_LegacySecurityPolicy>` element to a [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] assembly does not affect [security-transparent code](../../../../../docs/framework/misc/security-transparent-code.md); the transparency rules still apply.</span></span>  
   
 > [!IMPORTANT]
->  `<NetFx40_LegacySecurityPolicy>` 要素を適用すると、[グローバル アセンブリ キャッシュ](../../../../../docs/framework/app-domains/gac.md)にインストールされていない、[ネイティブ イメージ ジェネレーター \(Ngen.exe\)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md) で作成されたネイティブ イメージのアセンブリでパフォーマンスが大幅に低下する可能性があります。  このパフォーマンスの低下が発生するのは、属性が適用されたときに、ランタイムがアセンブリをネイティブ イメージとして読み込むことができず、結果的に Just\-In\-Time アセンブリとして読み込まれるためです。  
+>  <span data-ttu-id="2443a-134">適用する、`<NetFx40_LegacySecurityPolicy>`要素につながる重大なパフォーマンスの低下によって作成されたネイティブ イメージ アセンブリを[ネイティブ イメージ ジェネレーター (Ngen.exe)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md)でインストールされていない、[グローバル アセンブリ キャッシュ](../../../../../docs/framework/app-domains/gac.md).</span><span class="sxs-lookup"><span data-stu-id="2443a-134">Applying the `<NetFx40_LegacySecurityPolicy>` element can result in significant performance penalties for native image assemblies created by the [Native Image Generator (Ngen.exe)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md) that are not installed in the [global assembly cache](../../../../../docs/framework/app-domains/gac.md).</span></span> <span data-ttu-id="2443a-135">ランタイムの機能を利用し、できないに属性が適用されるときに、ネイティブ イメージとして、アセンブリを読み込むことが原因でパフォーマンスの低下が発生、結果的に読み込まれたと - just-in-time アセンブリ。</span><span class="sxs-lookup"><span data-stu-id="2443a-135">The performance degradation is caused by the inability of the runtime to load the assemblies as native images when the attribute is applied, resulting in their being loaded as just-in-time assemblies.</span></span>  
   
 > [!NOTE]
->  Visual Studio プロジェクトのプロジェクト設定で、対象となる .NET Framework のバージョンとして、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] より前のバージョンを指定する場合は、そのバージョン用に指定したすべてのカスタム CAS ポリシーを含む CAS ポリシーが有効になります。  ただし、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] の新しい型およびメンバーは使用できません。  また [アプリケーション構成ファイル](../../../../../docs/framework/configure-apps/index.md)でスタートアップ設定スキーマの [\<supportedRuntime\> 要素](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) を使用して .NET Framework の旧バージョンを指定できます。  
+>  <span data-ttu-id="2443a-136">ターゲット .NET Framework のバージョンよりも前に指定するかどうか、[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]プロジェクトには、Visual Studio プロジェクト用の設定が、CAS ポリシーが有効になります、そのバージョンの指定したカスタムの CAS ポリシーを含むです。</span><span class="sxs-lookup"><span data-stu-id="2443a-136">If you specify a target .NET Framework version that is earlier than the [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] in the project settings for your Visual Studio project, CAS policy will be enabled, including any custom CAS policies you specified for that version.</span></span> <span data-ttu-id="2443a-137">ただし、することはできません new を使用する[!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]型およびメンバー。</span><span class="sxs-lookup"><span data-stu-id="2443a-137">However, you will not be able to use new [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] types and members.</span></span> <span data-ttu-id="2443a-138">使用して、.NET Framework の以前のバージョンを指定することも、 [ \<supportedRuntime > 要素](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)でスタートアップ設定スキーマで、[アプリケーション構成ファイル](../../../../../docs/framework/configure-apps/index.md)です。</span><span class="sxs-lookup"><span data-stu-id="2443a-138">You can also specify an earlier version of the .NET Framework by using the [\<supportedRuntime> element](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) in the startup settings schema in your [application configuration file](../../../../../docs/framework/configure-apps/index.md).</span></span>  
   
 > [!NOTE]
->  構成ファイルの構文では、大文字と小文字が区別されます。  構文と例の各セクションで提供されている構文を使用する必要があります。  
+>  <span data-ttu-id="2443a-139">構成ファイルの構文は、大文字小文字を区別します。</span><span class="sxs-lookup"><span data-stu-id="2443a-139">Configuration file syntax is case-sensitive.</span></span> <span data-ttu-id="2443a-140">構文と例のセクションに示されている構文を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2443a-140">You should use the syntax as provided in the Syntax and Example sections.</span></span>  
   
-## 構成ファイル  
- この要素は、アプリケーション構成ファイルでのみ使用できます。  
+## <a name="configuration-file"></a><span data-ttu-id="2443a-141">構成ファイル</span><span class="sxs-lookup"><span data-stu-id="2443a-141">Configuration File</span></span>  
+ <span data-ttu-id="2443a-142">この要素は、アプリケーション構成ファイルでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="2443a-142">This element can be used only in the application configuration file.</span></span>  
   
-## 使用例  
- アプリケーションのレガシ CAS ポリシーを有効にする方法を次の例に示します。  
+## <a name="example"></a><span data-ttu-id="2443a-143">例</span><span class="sxs-lookup"><span data-stu-id="2443a-143">Example</span></span>  
+ <span data-ttu-id="2443a-144">次の例では、アプリケーションのレガシーの CAS ポリシーを有効にする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="2443a-144">The following example shows how to enable legacy CAS policy for an application.</span></span>  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <NetFx40_LegacySecurityPolicy enabled="true"/>  
@@ -90,6 +92,6 @@ caps.handback.revision: 21
 </configuration>  
 ```  
   
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)
+## <a name="see-also"></a><span data-ttu-id="2443a-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="2443a-145">See Also</span></span>  
+ [<span data-ttu-id="2443a-146">ランタイム設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="2443a-146">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="2443a-147">構成ファイル スキーマ</span><span class="sxs-lookup"><span data-stu-id="2443a-147">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)

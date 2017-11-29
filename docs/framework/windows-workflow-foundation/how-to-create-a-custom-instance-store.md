@@ -1,32 +1,36 @@
 ---
-title: "カスタム インスタンス ストアを作成する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム インスタンス ストアを作成する方法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 593c4e9d-8a49-4e12-8257-cee5e6b4c075
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c383d3af92ba2f76f8ba09bc194220c170beaa0b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# カスタム インスタンス ストアを作成する方法
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> という、SQL Server を使用してワークフロー データの永続化を行うインスタンス ストアが含まれています。  ワークフロー データの永続化を別のメディアで行う、つまり、別のデータベースやファイル システムなどを使用して行う必要があるアプリケーションの場合は、カスタム インスタンス ストアを実装できます。  カスタム インスタンス ストアを作成するには、抽象 <xref:System.Runtime.DurableInstancing.InstanceStore> クラスを拡張し、その実装に必要なメソッドを実装します。  カスタム インスタンス ストア実装の完成例については、「[企業の購買プロセス](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)」のサンプルを参照してください。  
+# <a name="how-to-create-a-custom-instance-store"></a><span data-ttu-id="821f3-102">カスタム インスタンス ストアを作成する方法</span><span class="sxs-lookup"><span data-stu-id="821f3-102">How to: Create a Custom Instance Store</span></span>
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]<span data-ttu-id="821f3-103"> には、<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> という、SQL Server を使用してワークフロー データの永続化を行うインスタンス ストアが含まれています。</span><span class="sxs-lookup"><span data-stu-id="821f3-103"> contains <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, an instance store that uses SQL Server to persist workflow data.</span></span> <span data-ttu-id="821f3-104">ワークフロー データの永続化を別のメディアで行う、つまり、別のデータベースやファイル システムなどを使用して行う必要があるアプリケーションの場合は、カスタム インスタンス ストアを実装できます。</span><span class="sxs-lookup"><span data-stu-id="821f3-104">If your application is required to persist workflow data to another medium, such as a different database or a file system, you can implement a custom instance store.</span></span> <span data-ttu-id="821f3-105">カスタム インスタンス ストアを作成するには、抽象 <xref:System.Runtime.DurableInstancing.InstanceStore> クラスを拡張し、その実装に必要なメソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="821f3-105">A custom instance store is created by extending the abstract <xref:System.Runtime.DurableInstancing.InstanceStore> class and implementing the methods that are required for the implementation.</span></span> <span data-ttu-id="821f3-106">カスタム インスタンス ストアの完全な実装は、次を参照してください。、[企業の購買プロセス](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="821f3-106">For a complete implementation of a custom instance store, see the [Corporate Purchase Process](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md) sample.</span></span>  
   
-## BeginTryCommand メソッドの実装  
- <xref:System.Runtime.DurableInstancing.InstanceStore.BeginTryCommand%2A> は永続化エンジンによってインスタンス ストアに送信されます。  `command` パラメーターの型は、どのコマンドを実行するかを示します。このパラメーターは次のいずれかになります:  
+## <a name="implementing-the-begintrycommand-method"></a><span data-ttu-id="821f3-107">BeginTryCommand メソッドの実装</span><span class="sxs-lookup"><span data-stu-id="821f3-107">Implementing the BeginTryCommand method</span></span>  
+ <span data-ttu-id="821f3-108"><xref:System.Runtime.DurableInstancing.InstanceStore.BeginTryCommand%2A> は永続化エンジンによってインスタンス ストアに送信されます。</span><span class="sxs-lookup"><span data-stu-id="821f3-108">The <xref:System.Runtime.DurableInstancing.InstanceStore.BeginTryCommand%2A> is sent to the instance store by the persistence engine.</span></span> <span data-ttu-id="821f3-109">`command` パラメーターの型は、どのコマンドを実行するかを示します。このパラメーターは次のいずれかになります:</span><span class="sxs-lookup"><span data-stu-id="821f3-109">The type of the `command` parameter indicates which command is being executed; this parameter can be of the following types:</span></span>  
   
--   <xref:System.Activities.DurableInstancing.SaveWorkflowCommand>: ワークフローをストレージ メディアに永続化する場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。  ワーク フローの永続性データは、<xref:System.Activities.DurableInstancing.SaveWorkflowCommand.InstanceData%2A> パラメーターの `command` メンバー内のメソッドに提供されます。  
+-   <span data-ttu-id="821f3-110"><xref:System.Activities.DurableInstancing.SaveWorkflowCommand>: ワークフローをストレージ メディアに永続化する場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。</span><span class="sxs-lookup"><span data-stu-id="821f3-110"><xref:System.Activities.DurableInstancing.SaveWorkflowCommand>: The persistence engine sends this command to the instance store when a workflow is to be persisted to the storage medium.</span></span> <span data-ttu-id="821f3-111">ワーク フローの永続性データは、<xref:System.Activities.DurableInstancing.SaveWorkflowCommand.InstanceData%2A> パラメーターの `command` メンバー内のメソッドに提供されます。</span><span class="sxs-lookup"><span data-stu-id="821f3-111">The workflow persistence data is provided to the method in the <xref:System.Activities.DurableInstancing.SaveWorkflowCommand.InstanceData%2A> member of the `command` parameter.</span></span>  
   
--   <xref:System.Activities.DurableInstancing.LoadWorkflowCommand>: ワークフローをストレージ メディアから読み込む場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。  読み込むワークフローのインスタンス ID は、`instanceId` パラメーターの <xref:System.Runtime.DurableInstancing.InstancePersistenceContext.InstanceView%2A> プロパティの `context` パラメーター内のメソッドに提供されます。  
+-   <span data-ttu-id="821f3-112"><xref:System.Activities.DurableInstancing.LoadWorkflowCommand>: ワークフローをストレージ メディアから読み込む場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。</span><span class="sxs-lookup"><span data-stu-id="821f3-112"><xref:System.Activities.DurableInstancing.LoadWorkflowCommand>: The persistence engine sends this command to the instance store when a workflow is to be loaded from the storage medium.</span></span> <span data-ttu-id="821f3-113">読み込むワークフローのインスタンス ID は、`instanceId` パラメーターの <xref:System.Runtime.DurableInstancing.InstancePersistenceContext.InstanceView%2A> プロパティの `context` パラメーター内のメソッドに提供されます。</span><span class="sxs-lookup"><span data-stu-id="821f3-113">The instance ID of the workflow to be loaded is provided to the method in the `instanceId` parameter of the <xref:System.Runtime.DurableInstancing.InstancePersistenceContext.InstanceView%2A> property of the `context` parameter.</span></span>  
   
--   <xref:System.Activities.DurableInstancing.CreateWorkflowOwnerCommand>: <xref:System.ServiceModel.Activities.WorkflowServiceHost> をロック所有者として登録する必要がある場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。  現在のワーク フローのインスタンス ID を、<xref:System.Runtime.DurableInstancing.InstancePersistenceContext.BindInstanceOwner%2A> パラメーターの `context` メソッドを使用してインスタンス ストアに提供する必要があります。  
+-   <span data-ttu-id="821f3-114"><xref:System.Activities.DurableInstancing.CreateWorkflowOwnerCommand>: <xref:System.ServiceModel.Activities.WorkflowServiceHost> をロック所有者として登録する必要がある場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。</span><span class="sxs-lookup"><span data-stu-id="821f3-114"><xref:System.Activities.DurableInstancing.CreateWorkflowOwnerCommand>: The persistence engine sends this command to the instance store when a <xref:System.ServiceModel.Activities.WorkflowServiceHost> must be registered as a lock owner.</span></span> <span data-ttu-id="821f3-115">現在のワーク フローのインスタンス ID を、<xref:System.Runtime.DurableInstancing.InstancePersistenceContext.BindInstanceOwner%2A> パラメーターの `context` メソッドを使用してインスタンス ストアに提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="821f3-115">The instance ID of the current workflow should be provided to the instance store using <xref:System.Runtime.DurableInstancing.InstancePersistenceContext.BindInstanceOwner%2A> method of the `context` parameter.</span></span>  
   
-     次のコード スニペットは、CreateWorkflowOwner コマンドを実装して明示的なロック所有者を割り当てる方法を示しています。  
+     <span data-ttu-id="821f3-116">次のコード スニペットは、CreateWorkflowOwner コマンドを実装して明示的なロック所有者を割り当てる方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="821f3-116">The following code snippet demonstrates how to implement the CreateWorkflowOwner command to assign an explicit lock owner.</span></span>  
   
     ```  
     XName WFInstanceScopeName = XName.Get(scopeName, "<namespace>");  
@@ -44,12 +48,11 @@ caps.handback.revision: 11
                                    createCommand,  
                                    TimeSpan.FromSeconds(30)).InstanceOwner;  
     childInstance.AddInitialInstanceValues(new Dictionary<XName, object>() { { WorkflowHostTypeName, WFInstanceScopeName } });  
-  
     ```  
   
--   <xref:System.Activities.DurableInstancing.DeleteWorkflowOwnerCommand>: ロック所有者のインスタンス ID をインスタンス ストアから削除してよい場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。  <xref:System.Activities.DurableInstancing.CreateWorkflowOwnerCommand> と同様に、アプリケーションがロック所有者の ID を提供する必要があります。  
+-   <span data-ttu-id="821f3-117"><xref:System.Activities.DurableInstancing.DeleteWorkflowOwnerCommand>: ロック所有者のインスタンス ID をインスタンス ストアから削除してよい場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。</span><span class="sxs-lookup"><span data-stu-id="821f3-117"><xref:System.Activities.DurableInstancing.DeleteWorkflowOwnerCommand>: The persistence engine sends this command to the instance store when the instance ID of a lock owner can be removed from the instance store.</span></span> <span data-ttu-id="821f3-118"><xref:System.Activities.DurableInstancing.CreateWorkflowOwnerCommand> と同様に、アプリケーションがロック所有者の ID を提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="821f3-118">As with <xref:System.Activities.DurableInstancing.CreateWorkflowOwnerCommand>, the ID of the lock owner should be provided by the application.</span></span>  
   
-     次のコード スニペットは、<xref:System.Activities.DurableInstancing.DeleteWorkflowOwnerCommand> を使用してロックを解除する方法を示しています。  
+     <span data-ttu-id="821f3-119">次のコード スニペットは、<xref:System.Activities.DurableInstancing.DeleteWorkflowOwnerCommand> を使用してロックを解除する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="821f3-119">The following code snippet demonstrates how to release a lock using <xref:System.Activities.DurableInstancing.DeleteWorkflowOwnerCommand>.</span></span>  
   
     ```  
     static void FreeHandleAndDeleteOwner(InstanceStore store, InstanceHandle handle)  
@@ -72,10 +75,9 @@ caps.handback.revision: 11
             store.DefaultInstanceOwner = null;  
         }  
     }  
-  
     ```  
   
-     上のメソッドは、子インスタンスが実行されているときに Try ～ Catch ブロック内から呼び出す必要があります。  
+     <span data-ttu-id="821f3-120">上のメソッドは、子インスタンスが実行されているときに Try ～ Catch ブロック内から呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="821f3-120">The above method should be called in a Try/Catch block when a child instance is run.</span></span>  
   
     ```  
     try  
@@ -90,14 +92,13 @@ caps.handback.revision: 11
     {  
         FreeHandleAndDeleteOwner(store, ownerHandle);  
     }  
-  
     ```  
   
--   <xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand>: ワークフローのインスタンス キーを使用してワークフローのインスタンスを読み込む場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。  インスタンス キーの ID は、このコマンドの <xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand.LookupInstanceKey%2A> パラメーターを使用して確認できます。  
+-   <span data-ttu-id="821f3-121"><xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand>: ワークフローのインスタンス キーを使用してワークフローのインスタンスを読み込む場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。</span><span class="sxs-lookup"><span data-stu-id="821f3-121"><xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand>: The persistence engine sends this command to the instance store when a workflow instance is to be loaded using the workflow’s instance key.</span></span> <span data-ttu-id="821f3-122">インスタンス キーの ID は、このコマンドの <xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand.LookupInstanceKey%2A> パラメーターを使用して確認できます。</span><span class="sxs-lookup"><span data-stu-id="821f3-122">The ID of the instance key can be determined by using the <xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand.LookupInstanceKey%2A> parameter of the command.</span></span>  
   
--   <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand>: ワークフローを読み込むワークフロー ホストを作成するために永続化ワークフローのアクティベーション パラメーターを取得する場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。  このコマンドは、インスタンス ストアがアクティブ化できるインスタンスを見つけて、ホストに <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> を発生させたとき、それに対する応答としてエンジンにより送信されます。  アクティブ化できるワーク フローがあるかどうかを判別するには、インスタンス ストアをポーリングする必要があります。  
+-   <span data-ttu-id="821f3-123"><xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand>: ワークフローを読み込むワークフロー ホストを作成するために永続化ワークフローのアクティベーション パラメーターを取得する場合は、永続化エンジンがこのコマンドをインスタンス ストアに送信します。</span><span class="sxs-lookup"><span data-stu-id="821f3-123"><xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand>: The persistence engine sends this command to the instance store to retrieve activation parameters for persisted workflows in order to create a workflow host that can then load workflows.</span></span> <span data-ttu-id="821f3-124">このコマンドは、インスタンス ストアがアクティブ化できるインスタンスを見つけて、ホストに <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> を発生させたとき、それに対する応答としてエンジンにより送信されます。</span><span class="sxs-lookup"><span data-stu-id="821f3-124">This command is sent by the engine in response to the instance store raising the <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> to the host when it locates an instance that can be activated.</span></span> <span data-ttu-id="821f3-125">アクティブ化できるワーク フローがあるかどうかを判別するには、インスタンス ストアをポーリングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="821f3-125">The instance store should be polled to determine if there are workflows that can be activated.</span></span>  
   
--   <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand>: 実行可能なワークフロー インスタンスを読み込む場合、永続化エンジンがインスタンス ストアにこのコマンドを送信します。  このコマンドは、インスタンス ストアが実行できるインスタンスを見つけて、ホストに <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> を発生させたとき、それに対する応答としてエンジンにより送信されます。  実行できるワークフローを見つけるには、インスタンス ストアをポーリングする必要があります。  次のコード スニペットは、実行またはアクティブ化できるワークフローのために、インスタンス ストアのポーリングを行う方法を示しています。  
+-   <span data-ttu-id="821f3-126"><xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand>: 実行可能なワークフロー インスタンスを読み込む場合、永続化エンジンがインスタンス ストアにこのコマンドを送信します。</span><span class="sxs-lookup"><span data-stu-id="821f3-126"><xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand>: The persistence engine sends this command to the instance store to load runnable workflow instances.</span></span> <span data-ttu-id="821f3-127">このコマンドは、インスタンス ストアが実行できるインスタンスを見つけて、ホストに <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> を発生させたとき、それに対する応答としてエンジンにより送信されます。</span><span class="sxs-lookup"><span data-stu-id="821f3-127">This command is sent by the engine in response to the instance store raising the <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> to the host when it locates an instance that can be run.</span></span> <span data-ttu-id="821f3-128">実行できるワークフローを見つけるには、インスタンス ストアをポーリングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="821f3-128">The instance store should poll for workflows that can be run.</span></span> <span data-ttu-id="821f3-129">次のコード スニペットは、実行またはアクティブ化できるワークフローのために、インスタンス ストアのポーリングを行う方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="821f3-129">The following code snippet demonstrates polling an instance store for workflows that can be run or activated.</span></span>  
   
     ```  
     public void PollForEvents()  
@@ -135,10 +136,9 @@ caps.handback.revision: 11
             }  
         }  
     }  
-  
     ```  
   
-     上のコード スニペットでは、インスタンス ストアが、使用できるイベントを探し、各イベントが <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> イベントであるかどうかを判断しています。  使用できるイベントが見つかると、<xref:System.Runtime.DurableInstancing.InstanceStore.SignalEvent%2A> が呼び出され、インスタンス ストアにコマンドを送信することを指示する通知がホストに送信されます。  次のコード スニペットはこのコマンドのハンドラーの実装を示します。  
+     <span data-ttu-id="821f3-130">上のコード スニペットでは、インスタンス ストアが、使用できるイベントを探し、各イベントが <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> イベントであるかどうかを判断しています。</span><span class="sxs-lookup"><span data-stu-id="821f3-130">In the above code snippet, the instance store queries the events available and examines each one to determine if it is a <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> event.</span></span> <span data-ttu-id="821f3-131">使用できるイベントが見つかると、<xref:System.Runtime.DurableInstancing.InstanceStore.SignalEvent%2A> が呼び出され、インスタンス ストアにコマンドを送信することを指示する通知がホストに送信されます。</span><span class="sxs-lookup"><span data-stu-id="821f3-131">If one is found, <xref:System.Runtime.DurableInstancing.InstanceStore.SignalEvent%2A> is called to signal the host to send a command to the instance store.</span></span>  <span data-ttu-id="821f3-132">次のコード スニペットはこのコマンドのハンドラーの実装を示します。</span><span class="sxs-lookup"><span data-stu-id="821f3-132">The following code snippet demonstrates an implementation of a handler for this command.</span></span>  
   
     ```  
     If (command is TryLoadRunnableWorkflowCommand)  
@@ -227,19 +227,17 @@ caps.handback.revision: 11
             break;  
         }  
     }  
-  
     ```  
   
-     上のコード スニペットでは、インスタンス ストアは実行可能なインスタンスを検索します。  インスタンスが見つかると、そのインスタンスが実行コンテキストにバインドされ、読み込まれます。  
+     <span data-ttu-id="821f3-133">上のコード スニペットでは、インスタンス ストアは実行可能なインスタンスを検索します。</span><span class="sxs-lookup"><span data-stu-id="821f3-133">In the above code snippet, the instance store searches for runnable instances.</span></span> <span data-ttu-id="821f3-134">インスタンスが見つかると、そのインスタンスが実行コンテキストにバインドされ、読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="821f3-134">If an instance is found, it is bound to the execution context and loaded.</span></span>  
   
-## カスタム インスタンス ストアの使用  
- カスタム インスタンス ストアを実装するには、インスタンス ストアのインスタンスを <xref:System.Activities.WorkflowApplication.InstanceStore%2A> に割り当て、<xref:System.Activities.WorkflowApplication.PersistableIdle%2A> メソッドを実装します。  詳細については、「[長時間にわたって実行されるワークフローを作成して実行する方法](../../../docs/framework/windows-workflow-foundation//how-to-create-and-run-a-long-running-workflow.md)」のチュートリアルを参照してください。  
+## <a name="using-a-custom-instance-store"></a><span data-ttu-id="821f3-135">カスタム インスタンス ストアの使用</span><span class="sxs-lookup"><span data-stu-id="821f3-135">Using a custom instance store</span></span>  
+ <span data-ttu-id="821f3-136">カスタム インスタンス ストアを実装するには、インスタンス ストアのインスタンスを <xref:System.Activities.WorkflowApplication.InstanceStore%2A> に割り当て、<xref:System.Activities.WorkflowApplication.PersistableIdle%2A> メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="821f3-136">To implement a custom instance store, assign an instance of the instance store to the <xref:System.Activities.WorkflowApplication.InstanceStore%2A>, and implement the <xref:System.Activities.WorkflowApplication.PersistableIdle%2A> method.</span></span>  <span data-ttu-id="821f3-137">参照してください、[する方法: を作成しを実行している長いワークフローを実行する](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md)固有のチュートリアルです。</span><span class="sxs-lookup"><span data-stu-id="821f3-137">See the [How to: Create and Run a Long Running Workflow](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md) tutorial for specifics.</span></span>  
   
-## サンプル インスタンス ストア  
- 次のコード サンプルは、「[企業の購買プロセス](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)」のサンプルに含まれている完成したインスタンス ストア実装の例です。  このインスタンス ストアは、XML を使用してファイルにワークフロー データを永続化します。  
+## <a name="a-sample-instance-store"></a><span data-ttu-id="821f3-138">サンプル インスタンス ストア</span><span class="sxs-lookup"><span data-stu-id="821f3-138">A sample instance store</span></span>  
+ <span data-ttu-id="821f3-139">次のコード サンプルは、完全なインスタンス ストア実装から取得、[企業の購買プロセス](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)サンプルです。</span><span class="sxs-lookup"><span data-stu-id="821f3-139">The following code sample is a complete instance store implementation, taken from the [Corporate Purchase Process](../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md) sample.</span></span> <span data-ttu-id="821f3-140">このインスタンス ストアは、XML を使用してファイルにワークフロー データを永続化します。</span><span class="sxs-lookup"><span data-stu-id="821f3-140">This instance store persists workflow data to a file using XML.</span></span>  
   
 ```  
-  
 using System;  
 using System.Activities.DurableInstancing;  
 using System.Collections.Generic;  
@@ -400,5 +398,4 @@ namespace Microsoft.Samples.WF.PurchaseProcess
         }  
     }  
 }  
-  
 ```

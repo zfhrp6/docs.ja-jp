@@ -1,50 +1,53 @@
 ---
-title: "方法 : サポート資格情報を作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : サポート資格情報を作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2c140b96fab0227a1563c8c1a511053d8d1ab944
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : サポート資格情報を作成する
-カスタムのセキュリティ スキームでは、複数の資格情報が必要になることがあります。  たとえば、サービスが、ユーザー名とパスワードだけでなく、クライアントが 18 歳以上であることを証明する資格情報もクライアントに要求することがあります。  この 2 番目の資格情報を*サポート資格情報*と呼びます。  ここでは、このような資格情報を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントで実装する方法について説明します。  
+# <a name="how-to-create-a-supporting-credential"></a><span data-ttu-id="35477-102">方法 : サポート資格情報を作成する</span><span class="sxs-lookup"><span data-stu-id="35477-102">How to: Create a Supporting Credential</span></span>
+<span data-ttu-id="35477-103">カスタムのセキュリティ スキームでは、複数の資格情報が必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="35477-103">It is possible to have a custom security scheme that requires more than one credential.</span></span> <span data-ttu-id="35477-104">たとえば、サービスが、ユーザー名とパスワードだけでなく、クライアントが 18 歳以上であることを証明する資格情報もクライアントに要求することがあります。</span><span class="sxs-lookup"><span data-stu-id="35477-104">For example, a service may demand from the client not just a user name and password, but also a credential that proves the client is over the age of 18.</span></span> <span data-ttu-id="35477-105">2 番目の資格情報は、*資格情報をサポートする*です。</span><span class="sxs-lookup"><span data-stu-id="35477-105">The second credential is a *supporting credential*.</span></span> <span data-ttu-id="35477-106">ここでは、このような資格情報を [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] クライアントで実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="35477-106">This topic explains how to implement such credentials in an [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client.</span></span>  
   
 > [!NOTE]
->  サポート資格情報の仕様は、WS\-SecurityPolicy 仕様の一部です。  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] 「[Web サービスのセキュリティ仕様](http://go.microsoft.com/fwlink/?LinkId=88537)」を参照してください。  
+>  <span data-ttu-id="35477-107">サポート資格情報の仕様は、WS-SecurityPolicy 仕様の一部です。</span><span class="sxs-lookup"><span data-stu-id="35477-107">The specification for supporting credentials is part of the WS-SecurityPolicy specification.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="35477-108">[Web サービスのセキュリティ仕様](http://go.microsoft.com/fwlink/?LinkId=88537)です。</span><span class="sxs-lookup"><span data-stu-id="35477-108"> [Web Services Security Specifications](http://go.microsoft.com/fwlink/?LinkId=88537).</span></span>  
   
-## トークンのサポート  
- 簡単に説明すると、メッセージ セキュリティを使用した場合は、常に*プライマリ資格情報* \(たとえば、X.509 証明書、Kerberos チケット\) によってメッセージがセキュリティで保護されます。  
+## <a name="supporting-tokens"></a><span data-ttu-id="35477-109">トークンのサポート</span><span class="sxs-lookup"><span data-stu-id="35477-109">Supporting Tokens</span></span>  
+ <span data-ttu-id="35477-110">メッセージ セキュリティを使用すると、簡単に言えば、*プライマリ資格情報*は常に (たとえば、X.509 証明書または Kerberos チケット) メッセージをセキュリティで保護するために使用します。</span><span class="sxs-lookup"><span data-stu-id="35477-110">In brief, when you use message security, a *primary credential* is always used to secure the message (for example, an X.509 certificate or a Kerberos ticket).</span></span>  
   
- 仕様で定義されているとおり、セキュリティ バインディングは、*トークン*を使用してメッセージ交換をセキュリティで保護します。  *トークン*は、セキュリティ資格情報を表したものです。  
+ <span data-ttu-id="35477-111">セキュリティ バインディングを使用して、仕様で定義された、*トークン*メッセージ交換をセキュリティで保護します。</span><span class="sxs-lookup"><span data-stu-id="35477-111">As defined by the specification, a security binding uses *tokens* to secure the message exchange.</span></span> <span data-ttu-id="35477-112">A*トークン*セキュリティ資格情報の表現です。</span><span class="sxs-lookup"><span data-stu-id="35477-112">A *token* is a representation of a security credential.</span></span>  
   
- セキュリティ バインディングは、セキュリティ バインディング ポリシーで特定されたプライマリ トークンを使用して、署名を作成します。  この署名を*メッセージ署名*と呼びます。  
+ <span data-ttu-id="35477-113">セキュリティ バインディングは、セキュリティ バインディング ポリシーで特定されたプライマリ トークンを使用して、署名を作成します。</span><span class="sxs-lookup"><span data-stu-id="35477-113">The security binding uses a primary token identified in the security binding policy to create a signature.</span></span> <span data-ttu-id="35477-114">この署名と呼ばれます、*メッセージの署名*です。</span><span class="sxs-lookup"><span data-stu-id="35477-114">This signature is referred to as the *message signature*.</span></span>  
   
- メッセージ署名に関連付けられたトークンによって提供されるクレームを増やすために、追加のトークンを指定できます。  
+ <span data-ttu-id="35477-115">メッセージ署名に関連付けられたトークンによって提供されるクレームを増やすために、追加のトークンを指定できます。</span><span class="sxs-lookup"><span data-stu-id="35477-115">Additional tokens can be specified to augment the claims provided by the token associated with the message signature.</span></span>  
   
-## 保証、署名、および暗号化  
- サポート資格情報は、メッセージ内部で送信された*サポート トークン*になります。  WS\-SecurityPolicy 仕様では、次の表に示すように、サポート トークンをメッセージに追加する方法が 4 つ定義されています。  
+## <a name="endorsing-signing-and-encrypting"></a><span data-ttu-id="35477-116">保証、署名、および暗号化</span><span class="sxs-lookup"><span data-stu-id="35477-116">Endorsing, Signing, and Encrypting</span></span>  
+ <span data-ttu-id="35477-117">サポート資格情報の結果、*サポート トークン*メッセージ内で送信されます。</span><span class="sxs-lookup"><span data-stu-id="35477-117">A supporting credential results in a *supporting token* transmitted inside the message.</span></span> <span data-ttu-id="35477-118">WS-SecurityPolicy 仕様では、次の表に示すように、サポート トークンをメッセージに追加する方法が 4 つ定義されています。</span><span class="sxs-lookup"><span data-stu-id="35477-118">The WS-SecurityPolicy specification defines four ways to attach a supporting token to the message, as described in the following table.</span></span>  
   
-|目的|説明|  
-|--------|--------|  
-|符号付き|サポート トークンはセキュリティ ヘッダーに追加され、メッセージ署名によって署名されます。|  
-|保証|*保証トークン*は、メッセージ署名を行います。|  
-|署名および保証|署名付き保証トークンは、メッセージ署名から生成された `ds:Signature` 要素全体を署名し、それ自体がこのメッセージ署名によって署名されます。つまり、両方のトークン \(メッセージ署名に使用されるトークンと署名付き保証トークン\) がお互いに署名します。|  
-|署名および暗号化|暗号化された署名付きサポート トークンは、`wsse:SecurityHeader` に表示されたときに暗号化されている署名付きサポート トークンです。|  
+|<span data-ttu-id="35477-119">目的</span><span class="sxs-lookup"><span data-stu-id="35477-119">Purpose</span></span>|<span data-ttu-id="35477-120">説明</span><span class="sxs-lookup"><span data-stu-id="35477-120">Description</span></span>|  
+|-------------|-----------------|  
+|<span data-ttu-id="35477-121">符号付き</span><span class="sxs-lookup"><span data-stu-id="35477-121">Signed</span></span>|<span data-ttu-id="35477-122">サポート トークンはセキュリティ ヘッダーに追加され、メッセージ署名によって署名されます。</span><span class="sxs-lookup"><span data-stu-id="35477-122">The supporting token is included in the security header and is signed by the message signature.</span></span>|  
+|<span data-ttu-id="35477-123">保証</span><span class="sxs-lookup"><span data-stu-id="35477-123">Endorsing</span></span>|<span data-ttu-id="35477-124">*保証トークン*メッセージ署名します。</span><span class="sxs-lookup"><span data-stu-id="35477-124">An *endorsing token* signs the message signature.</span></span>|  
+|<span data-ttu-id="35477-125">署名および保証</span><span class="sxs-lookup"><span data-stu-id="35477-125">Signed and Endorsing</span></span>|<span data-ttu-id="35477-126">署名付き保証トークンは、メッセージ署名から生成された `ds:Signature` 要素全体を署名し、それ自体がこのメッセージ署名によって署名されます。つまり、両方のトークン (メッセージ署名に使用されるトークンと署名付き保証トークン) がお互いに署名します。</span><span class="sxs-lookup"><span data-stu-id="35477-126">Signed, endorsing tokens sign the entire `ds:Signature` element produced from the message signature and are themselves signed by that message signature; that is, both tokens (the token used for the message signature and the signed endorsing token) sign each other.</span></span>|  
+|<span data-ttu-id="35477-127">署名および暗号化</span><span class="sxs-lookup"><span data-stu-id="35477-127">Signed and Encrypting</span></span>|<span data-ttu-id="35477-128">暗号化された署名付きサポート トークンは、`wsse:SecurityHeader` に表示されたときに暗号化されている署名付きサポート トークンです。</span><span class="sxs-lookup"><span data-stu-id="35477-128">Signed, encrypted supporting tokens are signed supporting tokens that are also encrypted when they appear in the `wsse:SecurityHeader`.</span></span>|  
   
-## サポート資格情報のプログラミング  
- サポート トークンを使用するサービスを作成するには、[\<customBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)を作成する必要があります   \([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).\)  
+## <a name="programming-supporting-credentials"></a><span data-ttu-id="35477-129">サポート資格情報のプログラミング</span><span class="sxs-lookup"><span data-stu-id="35477-129">Programming Supporting Credentials</span></span>  
+ <span data-ttu-id="35477-130">サポート トークンを作成する必要がありますを使用するサービスを作成する、 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="35477-130">To create a service that uses supporting tokens you must create a [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).</span></span> <span data-ttu-id="35477-131">([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [する方法: SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md))。</span><span class="sxs-lookup"><span data-stu-id="35477-131">([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [How to: Create a Custom Binding Using the SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).)</span></span>  
   
- カスタム バインディングを作成する最初の手順は、次の 3 種類のいずれかのセキュリティ バインディング要素を作成することです。  
+ <span data-ttu-id="35477-132">カスタム バインドを作成する最初の手順は、次の 3 種類のいずれかのセキュリティ バインド要素を作成することです。</span><span class="sxs-lookup"><span data-stu-id="35477-132">The first step when creating a custom binding is to create a security binding element, which can be one of three types:</span></span>  
   
 -   <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>  
   
@@ -52,7 +55,7 @@ caps.handback.revision: 9
   
 -   <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
   
- すべてのクラスは、次の 4 つの関連プロパティを備えた <xref:System.ServiceModel.Channels.SecurityBindingElement> から継承します。  
+ <span data-ttu-id="35477-133">すべてのクラスは、次の 4 つの関連プロパティを備えた <xref:System.ServiceModel.Channels.SecurityBindingElement> から継承します。</span><span class="sxs-lookup"><span data-stu-id="35477-133">All classes inherit from the <xref:System.ServiceModel.Channels.SecurityBindingElement>, which includes four relevant properties:</span></span>  
   
 -   <xref:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters%2A>  
   
@@ -62,30 +65,30 @@ caps.handback.revision: 9
   
 -   <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters%2A>  
   
-#### スコープ  
- サポート資格情報には、次の 2 つのスコープがあります。  
+#### <a name="scopes"></a><span data-ttu-id="35477-134">スコープ</span><span class="sxs-lookup"><span data-stu-id="35477-134">Scopes</span></span>  
+ <span data-ttu-id="35477-135">サポート資格情報には、次の 2 つのスコープがあります。</span><span class="sxs-lookup"><span data-stu-id="35477-135">Two scopes exist for supporting credentials:</span></span>  
   
--   *エンドポイント サポート トークン*は、エンドポイントのすべての操作をサポートします。  つまり、サポート トークンによって表される資格情報は、エンドポイントの任意の操作が呼び出されたときにいつでも使用できます。  
+-   <span data-ttu-id="35477-136">*エンドポイント サポート トークン*エンドポイントのすべての操作をサポートします。</span><span class="sxs-lookup"><span data-stu-id="35477-136">*Endpoint supporting tokens* support all operations of an endpoint.</span></span> <span data-ttu-id="35477-137">つまり、サポート トークンによって表される資格情報は、エンドポイントの任意の操作が呼び出されたときにいつでも使用できます。</span><span class="sxs-lookup"><span data-stu-id="35477-137">That is, the credential that the supporting token represents can be used whenever any endpoint operations are invoked.</span></span>  
   
--   *操作サポート トークン*は、エンドポイントの特定の操作だけをサポートします。  
+-   <span data-ttu-id="35477-138">*操作サポート トークン*特定のエンドポイントの操作のみをサポートします。</span><span class="sxs-lookup"><span data-stu-id="35477-138">*Operation supporting tokens* support only a specific endpoint operation.</span></span>  
   
- プロパティ名に示されているように、サポート資格情報は必須またはオプションのどちらかになることができます。  つまり、サポート資格情報は必須ではありませんが、存在する場合は使用され、存在しない場合も認証は失敗しません。  
+ <span data-ttu-id="35477-139">プロパティ名に示されているように、サポート資格情報は必須またはオプションのどちらかになることができます。</span><span class="sxs-lookup"><span data-stu-id="35477-139">As indicated by the property names, supporting credentials can be either required or optional.</span></span> <span data-ttu-id="35477-140">つまり、サポート資格情報は必須ではありませんが、存在する場合は使用され、存在しない場合も認証は失敗しません。</span><span class="sxs-lookup"><span data-stu-id="35477-140">That is, if the supporting credential is used if it is present, although it is not necessary, but the authentication will not fail if it is not present.</span></span>  
   
-## 手順  
+## <a name="procedures"></a><span data-ttu-id="35477-141">手順</span><span class="sxs-lookup"><span data-stu-id="35477-141">Procedures</span></span>  
   
-#### サポート資格情報を備えたカスタム バインディングを作成するには  
+#### <a name="to-create-a-custom-binding-that-includes-supporting-credentials"></a><span data-ttu-id="35477-142">サポート資格情報を備えたカスタム バインディングを作成するには</span><span class="sxs-lookup"><span data-stu-id="35477-142">To create a custom binding that includes supporting credentials</span></span>  
   
-1.  セキュリティ バインド要素を作成します。  次の例では、`UserNameForCertificate` 認証モードで <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> を作成します。  <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A> メソッドを使用します。  
+1.  <span data-ttu-id="35477-143">セキュリティ バインド要素を作成します。</span><span class="sxs-lookup"><span data-stu-id="35477-143">Create a security binding element.</span></span> <span data-ttu-id="35477-144">次の例では、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> 認証モードで `UserNameForCertificate` を作成します。</span><span class="sxs-lookup"><span data-stu-id="35477-144">The example below creates a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> with the `UserNameForCertificate` authentication mode.</span></span> <span data-ttu-id="35477-145"><xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A> メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="35477-145">Use the <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A> method.</span></span>  
   
-2.  サポート パラメーターを対応するプロパティ \(`Endorsing`、`Signed`、`SignedEncrypted`、または `SignedEndorsed`\) によって返される型のコレクションに追加します。  <xref:System.ServiceModel.Security.Tokens> 名前空間に存在する型には、<xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters> など、一般的に使用される型があります。  
+2.  <span data-ttu-id="35477-146">サポート パラメーターを対応するプロパティ (`Endorsing`、`Signed`、`SignedEncrypted`、または `SignedEndorsed`) によって返される型のコレクションに追加します。</span><span class="sxs-lookup"><span data-stu-id="35477-146">Add the supporting parameter to the collection of types returned by the appropriate property (`Endorsing`, `Signed`, `SignedEncrypted`, or `SignedEndorsed`).</span></span> <span data-ttu-id="35477-147"><xref:System.ServiceModel.Security.Tokens> 名前空間に存在する型には、<xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters> など、一般的に使用される型があります。</span><span class="sxs-lookup"><span data-stu-id="35477-147">The types in the <xref:System.ServiceModel.Security.Tokens> namespace include commonly used types, such as the <xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters>.</span></span>  
   
-## 例  
+## <a name="example"></a><span data-ttu-id="35477-148">例</span><span class="sxs-lookup"><span data-stu-id="35477-148">Example</span></span>  
   
-### 説明  
- <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> のインスタンスを作成し、<xref:System.ServiceModel.Security.Tokens.KerberosSecurityTokenParameters> クラスのインスタンスを、Endorsing プロパティによって返されるコレクションに追加する例を次に示します。  
+### <a name="description"></a><span data-ttu-id="35477-149">説明</span><span class="sxs-lookup"><span data-stu-id="35477-149">Description</span></span>  
+ <span data-ttu-id="35477-150"><xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> のインスタンスを作成し、<xref:System.ServiceModel.Security.Tokens.KerberosSecurityTokenParameters> クラスのインスタンスを、Endorsing プロパティによって返されるコレクションに追加する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="35477-150">The following example creates an instance of the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> and adds an instance of the <xref:System.ServiceModel.Security.Tokens.KerberosSecurityTokenParameters> class to the collection the Endorsing property returned.</span></span>  
   
-### コード  
+### <a name="code"></a><span data-ttu-id="35477-151">コード</span><span class="sxs-lookup"><span data-stu-id="35477-151">Code</span></span>  
  [!code-csharp[c_SupportingCredential#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_supportingcredential/cs/source.cs#1)]  
   
-## 参照  
- [方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+## <a name="see-also"></a><span data-ttu-id="35477-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="35477-152">See Also</span></span>  
+ [<span data-ttu-id="35477-153">方法: SecurityBindingElement を使用してカスタム バインディングを作成します。</span><span class="sxs-lookup"><span data-stu-id="35477-153">How to: Create a Custom Binding Using the SecurityBindingElement</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)

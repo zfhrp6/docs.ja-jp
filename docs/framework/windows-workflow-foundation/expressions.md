@@ -1,31 +1,35 @@
 ---
-title: "式 [.NET Framework 4] | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Expressions1
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c42341a9-43a1-462c-bffb-c5de004aa428
-caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: faf9e70cbe2c2a035874e5514ac04cf0f291661b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 式 [.NET Framework 4]
-[!INCLUDE[wf](../../../includes/wf-md.md)] 式は結果を返す任意のアクティビティです。すべての式アクティビティは、アクティビティの戻り値として <xref:System.Activities.Activity%601.Result%2A> という名前の <xref:System.Activities.OutArgument> プロパティを含む <xref:System.Activities.Activity%601> から間接的に派生します。[!INCLUDE[wf1](../../../includes/wf1-md.md)] には、幅広い式アクティビティが用意されています。式アクティビティは、演算子アクティビティを介して 1 つのワークフロー変数へアクセスできる <xref:System.Activities.Expressions.VariableValue%601> や <xref:System.Activities.Expressions.VariableReference%601> などの単純なアクティビティから、結果を生成するために Visual Basic 言語一式へアクセスできる <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> や <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> などの複雑なアクティビティまでさまざまです。追加の式アクティビティは、<xref:System.Activities.CodeActivity%601> または <xref:System.Activities.NativeActivity%601> から派生して作成できます。  
+# <a name="expressions"></a><span data-ttu-id="4a871-102">式</span><span class="sxs-lookup"><span data-stu-id="4a871-102">Expressions</span></span>
+<span data-ttu-id="4a871-103">[!INCLUDE[wf](../../../includes/wf-md.md)] 式は結果を返す任意のアクティビティです。</span><span class="sxs-lookup"><span data-stu-id="4a871-103">A [!INCLUDE[wf](../../../includes/wf-md.md)] expression is any activity that returns a result.</span></span> <span data-ttu-id="4a871-104">すべての式アクティビティは、アクティビティの戻り値として <xref:System.Activities.Activity%601> という名前の <xref:System.Activities.OutArgument> プロパティを含む <xref:System.Activities.Activity%601.Result%2A> から間接的に派生します。</span><span class="sxs-lookup"><span data-stu-id="4a871-104">All expression activities derive indirectly from <xref:System.Activities.Activity%601>, which contains an <xref:System.Activities.OutArgument> property named <xref:System.Activities.Activity%601.Result%2A> as the activity’s return value.</span></span> [!INCLUDE[wf1](../../../includes/wf1-md.md)]<span data-ttu-id="4a871-105"> には、幅広い式アクティビティが用意されています。式アクティビティは、演算子アクティビティを介して 1 つのワークフロー変数へアクセスできる <xref:System.Activities.Expressions.VariableValue%601> や <xref:System.Activities.Expressions.VariableReference%601> などの単純なアクティビティから、結果を生成するために Visual Basic 言語一式へアクセスできる <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> や <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> などの複雑なアクティビティまでさまざまです。</span><span class="sxs-lookup"><span data-stu-id="4a871-105"> ships with a wide range of expression activities from simple ones like <xref:System.Activities.Expressions.VariableValue%601> and <xref:System.Activities.Expressions.VariableReference%601>, which provide access to single workflow variable through operator activities, to complex activities such as <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> and <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> that offer access to the full breadth of Visual Basic language to produce the result.</span></span> <span data-ttu-id="4a871-106">追加の式アクティビティは、<xref:System.Activities.CodeActivity%601> または <xref:System.Activities.NativeActivity%601> から派生して作成できます。</span><span class="sxs-lookup"><span data-stu-id="4a871-106">Additional expression activities can be created by deriving from <xref:System.Activities.CodeActivity%601> or <xref:System.Activities.NativeActivity%601>.</span></span>  
   
-## 式の使用  
- ワークフロー デザイナーでは、Visual Basic プロジェクトのすべての式に <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> および <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601>、C\# ワークフロー プロジェクトの式に <xref:Microsoft.CSharp.Activities.CSharpValue%601> および <xref:Microsoft.CSharp.Activities.CSharpReference%601> を使用します。  
+## <a name="using-expressions"></a><span data-ttu-id="4a871-107">式の使用</span><span class="sxs-lookup"><span data-stu-id="4a871-107">Using Expressions</span></span>  
+ <span data-ttu-id="4a871-108">ワークフロー デザイナーでは、Visual Basic プロジェクトのすべての式に <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> および <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601>、C# ワークフロー プロジェクトの式に <xref:Microsoft.CSharp.Activities.CSharpValue%601> および <xref:Microsoft.CSharp.Activities.CSharpReference%601> を使用します。</span><span class="sxs-lookup"><span data-stu-id="4a871-108">Workflow designer uses <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> and <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> for all expressions in Visual Basic projects, and <xref:Microsoft.CSharp.Activities.CSharpValue%601> and <xref:Microsoft.CSharp.Activities.CSharpReference%601> for expressions in C# workflow projects.</span></span>  
   
 > [!NOTE]
->  ワークフロー プロジェクトでの C\# 式のサポートは、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で導入されました。[!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [C\# の式](../../../docs/framework/windows-workflow-foundation//csharp-expressions.md).  
+>  <span data-ttu-id="4a871-109">ワークフロー プロジェクトでの C# 式のサポートは、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で導入されました。</span><span class="sxs-lookup"><span data-stu-id="4a871-109">Support for C# expressions in workflow projects was introduced in [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].</span></span> [!INCLUDE[crdefault](../../../includes/crdefault-md.md)]<span data-ttu-id="4a871-110">[C# 式](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md)です。</span><span class="sxs-lookup"><span data-stu-id="4a871-110"> [C# Expressions](../../../docs/framework/windows-workflow-foundation/csharp-expressions.md).</span></span>  
   
- デザイナーによって生成されたワークフローは XAML に保存されます。XAML には、次の例のように、式が角かっこに囲まれて表示されます。  
+ <span data-ttu-id="4a871-111">デザイナーによって生成されたワークフローは XAML に保存されます。XAML には、次の例のように、式が角かっこに囲まれて表示されます。</span><span class="sxs-lookup"><span data-stu-id="4a871-111">Workflows produced by designer are saved in XAML, where expressions appear enclosed in square brackets, as in the following example.</span></span>  
   
-```  
+```xml  
 <Sequence xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">  
   <Sequence.Variables>  
     <Variable x:TypeArguments="x:Int32" Default="1" Name="a" />  
@@ -42,10 +46,9 @@ caps.handback.revision: 17
     </Assign.Value>  
   </Assign>  
 </Sequence>  
-  
 ```  
   
- コードでワークフローを定義すると、任意の式アクティビティを使用できます。次のコードは、3 つの数を追加する演算子アクティビティの使用例です。  
+ <span data-ttu-id="4a871-112">コードでワークフローを定義すると、任意の式アクティビティを使用できます。</span><span class="sxs-lookup"><span data-stu-id="4a871-112">When defining a workflow in code, any expression activities can be used.</span></span> <span data-ttu-id="4a871-113">次のコードは、3 つの数を追加する演算子アクティビティの使用例です。</span><span class="sxs-lookup"><span data-stu-id="4a871-113">The following example shows the usage of a composition of operator activities to add three numbers.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -72,10 +75,9 @@ Sequence w = new Sequence
         }  
     }  
 };  
-  
 ```  
   
- C\# のラムダ式を使用すると、次の例のように、同じワークフローをよりコンパクトに表現できます。  
+ <span data-ttu-id="4a871-114">C# のラムダ式を使用すると、次の例のように、同じワークフローをよりコンパクトに表現できます。</span><span class="sxs-lookup"><span data-stu-id="4a871-114">The same workflow can be expressed more compactly by using C# lambda expressions, as shown in the following example.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -94,10 +96,9 @@ Sequence w = new Sequence
         }  
     }  
 };  
-  
 ```  
   
- 次の例のように、Visual Basic の式アクティビティを使用してワークフローを表現することもできます。  
+ <span data-ttu-id="4a871-115">次の例のように、Visual Basic の式アクティビティを使用してワークフローを表現することもできます。</span><span class="sxs-lookup"><span data-stu-id="4a871-115">The workflow can also be expressed by using Visual Basic expression activities, as shown in the following example.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -116,11 +117,10 @@ Sequence w = new Sequence
         }  
     }  
 };  
-  
 ```  
   
-## カスタム式アクティビティによる使用可能な式の拡張  
- [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] の式には、追加の式アクティビティを作成できる拡張性があります。次のコードは、3 つの整数値の合計を返すアクティビティの例です。  
+## <a name="extending-available-expressions-with-custom-expression-activities"></a><span data-ttu-id="4a871-116">カスタム式アクティビティによる使用可能な式の拡張</span><span class="sxs-lookup"><span data-stu-id="4a871-116">Extending Available Expressions with Custom Expression Activities</span></span>  
+ <span data-ttu-id="4a871-117">[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] の式には、追加の式アクティビティを作成できる拡張性があります。</span><span class="sxs-lookup"><span data-stu-id="4a871-117">Expressions in [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] are extensible allowing for additional expression activities to be created.</span></span> <span data-ttu-id="4a871-118">次のコードは、3 つの整数値の合計を返すアクティビティの例です。</span><span class="sxs-lookup"><span data-stu-id="4a871-118">The following example shows an activity that returns a sum of three integer values.</span></span>  
   
 ```  
 using System;  
@@ -147,7 +147,7 @@ namespace ExpressionsDemo
 }  
 ```  
   
- 次の例のように、この新しいアクティビティを使用して、3 つの値を追加した前のワークフローを書き直すことができます。  
+ <span data-ttu-id="4a871-119">次の例のように、この新しいアクティビティを使用して、3 つの値を追加した前のワークフローを書き直すことができます。</span><span class="sxs-lookup"><span data-stu-id="4a871-119">With this new activity you can rewrite the previous workflow that added three values as shown in the following example.</span></span>  
   
 ```  
 Variable<int> a = new Variable<int>("a", 1);  
@@ -172,7 +172,6 @@ Sequence w = new Sequence
         }  
     }  
 };  
-  
 ```  
   
- コードで式を使用する方法[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法](../../../docs/framework/windows-workflow-foundation//authoring-workflows-activities-and-expressions-using-imperative-code.md)」を参照してください。
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="4a871-120">式を使用して、コードを参照してください[オーサリング ワークフロー、アクティビティ、および命令型コードを使用して式](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)です。</span><span class="sxs-lookup"><span data-stu-id="4a871-120"> using expressions in code, see [Authoring Workflows, Activities, and Expressions Using Imperative Code](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md).</span></span>

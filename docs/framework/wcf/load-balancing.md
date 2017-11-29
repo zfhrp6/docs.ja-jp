@@ -1,34 +1,36 @@
 ---
-title: "負荷分散 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "負荷分散 [WCF]"
+title: "負荷分散"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d068332d5dc51e6e0e5a713b29c4eb45c4e51598
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 負荷分散
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの処理能力を増加する方法の 1 つは、アプリケーションを負荷分散されたサーバー ファームに配置することでスケール アウトすることです。[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションは、ハードウェア ベースの負荷分散アプリケーションの他に Windows Network Load Balancing のようなソフトウェアによる負荷分散も含む、標準的な負荷分散手法を使用して負荷分散することが可能です。  
+# <a name="load-balancing"></a><span data-ttu-id="ab7d7-102">負荷分散</span><span class="sxs-lookup"><span data-stu-id="ab7d7-102">Load Balancing</span></span>
+<span data-ttu-id="ab7d7-103">[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの処理能力を増加する方法の 1 つは、アプリケーションを負荷分散されたサーバー ファームに配置することでスケール アウトすることです。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-103">One way to increase the capacity of [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] applications is to scale them out by deploying them into a load-balanced server farm.</span></span> [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]<span data-ttu-id="ab7d7-104"> アプリケーションは、ハードウェア ベースの負荷分散アプリケーションのほか、Windows Network Load Balancing のようなソフトウェアによる負荷分散も含む、標準的な負荷分散手法を使用して負荷分散できます。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-104"> applications can be load balanced using standard load balancing techniques, including software load balancers such as Windows Network Load Balancing as well as hardware-based load balancing appliances.</span></span>  
   
- 以下のセクションでは、システム提供の各種のバインディングを使用して構築された [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションを負荷分散するときの考慮事項について説明します。  
+ <span data-ttu-id="ab7d7-105">以下のセクションでは、システム提供の各種のバインディングを使用して構築された [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションを負荷分散するときの考慮事項について説明します。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-105">The following sections discuss considerations for load balancing [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] applications built using various system-provided bindings.</span></span>  
   
-## 基本 HTTP バインディングによる負荷分散  
- 負荷分散の面から見た場合、<xref:System.ServiceModel.BasicHttpBinding> を使用して通信を行う [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションと、他の一般的なタイプの HTTP ネットワーク トラフィック \(静的な HTML コンテンツ、ASP.NET ページ、ASMX Web サービス\) との相違はありません。このバインディングを使用する [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] チャネルは本質的に状態がなく、チャネルが閉じると接続を終了します。したがって、<xref:System.ServiceModel.BasicHttpBinding> には既存の HTTP 負荷分散の手法で十分に対応できます。  
+## <a name="load-balancing-with-the-basic-http-binding"></a><span data-ttu-id="ab7d7-106">基本 HTTP バインディングによる負荷分散</span><span class="sxs-lookup"><span data-stu-id="ab7d7-106">Load Balancing with the Basic HTTP Binding</span></span>  
+ <span data-ttu-id="ab7d7-107">負荷分散の面から見た場合、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用して通信を行う <xref:System.ServiceModel.BasicHttpBinding> アプリケーションと、他の一般的なタイプの HTTP ネットワーク トラフィック (静的な HTML コンテンツ、ASP.NET ページ、ASMX Web サービス) との相違はありません。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-107">From the perspective of load balancing, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] applications that communicate using the <xref:System.ServiceModel.BasicHttpBinding> are no different than other common types of HTTP network traffic (static HTML content, ASP.NET pages, or ASMX Web Services).</span></span> <span data-ttu-id="ab7d7-108">このバインディングを使用する [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] チャネルは本質的にステートレスで、チャネルが閉じると接続を終了します。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-108">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] channels that use this binding are inherently stateless, and terminate their connections when the channel closes.</span></span> <span data-ttu-id="ab7d7-109">したがって、<xref:System.ServiceModel.BasicHttpBinding> には既存の HTTP 負荷分散の手法で十分に対応できます。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-109">As such, the <xref:System.ServiceModel.BasicHttpBinding> works well with existing HTTP load balancing techniques.</span></span>  
   
- 既定では、<xref:System.ServiceModel.BasicHttpBinding> は、メッセージの接続 HTTP ヘッダーで `Keep-Alive` 値を送信することで、サポートするサービスにクライアントが永続的な接続を確立できるようにします。この構成では、以前に確立した接続を再使用して同じサーバーへの後続するメッセージを送信できるため、スループットが向上します。ただし、接続を再使用すると、クライアントが負荷分散ファーム内の特定サーバーと強く関連付けられてしまうため、ラウンドロビン方式の負荷分散の効果を損ねることがあります。これを回避するには、<xref:System.ServiceModel.Channels.CustomBinding> またはユーザー定義の <xref:System.ServiceModel.Channels.Binding> で <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> プロパティを使用して、サーバーの HTTP `Keep-Alive` を無効にできます。構成を使用してこれを行う例を次に示します。  
+ <span data-ttu-id="ab7d7-110">既定では、<xref:System.ServiceModel.BasicHttpBinding> は、メッセージの接続 HTTP ヘッダーで `Keep-Alive` 値を送信することで、サポートするサービスにクライアントが永続的な接続を確立できるようにします。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-110">By default, the <xref:System.ServiceModel.BasicHttpBinding> sends a connection HTTP header in messages with a `Keep-Alive` value, which enables clients to establish persistent connections to the services that support them.</span></span> <span data-ttu-id="ab7d7-111">この構成では、以前に確立した接続を再使用して同じサーバーへの後続するメッセージを送信できるため、スループットが向上します。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-111">This configuration offers enhanced throughput because previously established connections can be reused to send subsequent messages to the same server.</span></span> <span data-ttu-id="ab7d7-112">ただし、接続を再使用すると、クライアントが負荷分散ファーム内の特定サーバーと強く関連付けられてしまうため、ラウンドロビン方式の負荷分散の効果を損ねることがあります。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-112">However, connection reuse may cause clients to become strongly associated to a specific server within the load-balanced farm, which reduces the effectiveness of round-robin load balancing.</span></span> <span data-ttu-id="ab7d7-113">これを回避するには、`Keep-Alive` またはユーザー定義の <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> で <xref:System.ServiceModel.Channels.CustomBinding> プロパティを使用して、サーバーの HTTP <xref:System.ServiceModel.Channels.Binding> を無効にできます。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-113">If this behavior is undesirable, HTTP `Keep-Alive` can be disabled on the server using the <xref:System.ServiceModel.Channels.HttpTransportBindingElement.KeepAliveEnabled%2A> property with a <xref:System.ServiceModel.Channels.CustomBinding> or user-defined <xref:System.ServiceModel.Channels.Binding>.</span></span> <span data-ttu-id="ab7d7-114">構成を使用してこれを行う例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-114">The following example shows how to do this using configuration.</span></span>  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   
@@ -63,14 +65,14 @@ caps.handback.revision: 7
 </configuration>  
 ```  
   
- [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] で導入された簡略化された構成を使用すると、次の簡略化された構成で同じ動作を実現できます。  
+ <span data-ttu-id="ab7d7-115">[!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] で導入された簡略化された構成を使用すると、次の簡略化された構成で同じ動作を実現できます。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-115">Using the simplified configuration introduced in [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], the same behavior can be accomplished using the following simplified configuration.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
  <system.serviceModel>  
     <protocolMapping>  
-      <add scheme=”http” binding=”customBinding” />  
+      <add scheme="http" binding="customBinding" />  
     </protocolMapping>  
     <bindings>  
       <customBinding>  
@@ -82,22 +84,21 @@ caps.handback.revision: 7
     </bindings>  
  </system.serviceModel>  
 </configuration>  
-  
 ```  
   
- 既定のエンドポイント、バインディング、および動作[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)」および「[WCF サービスの簡略化された構成](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)」を参照してください。  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="ab7d7-116"> については、「 [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) 」および「 [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-116"> default endpoints, bindings, and behaviors, see [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>  
   
-## WSHttp バインディングおよび WSDualHttp バインディングによる負荷分散  
- <xref:System.ServiceModel.WSHttpBinding> と <xref:System.ServiceModel.WSDualHttpBinding> はどちらも、既定のバインディング構成をいくつか変更すれば、HTTP の負荷分散手法を使用して負荷分散できます。  
+## <a name="load-balancing-with-the-wshttp-binding-and-the-wsdualhttp-binding"></a><span data-ttu-id="ab7d7-117">WSHttp バインディングおよび WSDualHttp バインディングによる負荷分散</span><span class="sxs-lookup"><span data-stu-id="ab7d7-117">Load Balancing with the WSHttp Binding and the WSDualHttp Binding</span></span>  
+ <span data-ttu-id="ab7d7-118"><xref:System.ServiceModel.WSHttpBinding> と <xref:System.ServiceModel.WSDualHttpBinding> はどちらも、既定のバインディング構成をいくつか変更すれば、HTTP の負荷分散手法を使用して負荷分散できます。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-118">Both the <xref:System.ServiceModel.WSHttpBinding> and the <xref:System.ServiceModel.WSDualHttpBinding> can be load balanced using HTTP load balancing techniques provided several modifications are made to the default binding configuration.</span></span>  
   
--   セキュリティ コンテキストの確立を無効にします。これは、<xref:System.ServiceModel.WSHttpBinding> の <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> プロパティを `false` に設定することで実現されます。あるいは、セキュリティ セッションが必要な場合は、「[セキュリティで保護されたセッション](../../../docs/framework/wcf/feature-details/secure-sessions.md)」のトピックで説明しているステートフルなセキュリティ セッションを使用することも可能です。ステートフルなセキュリティ セッションは、セキュリティ セッションのすべての状態 \(ステート\) を保護セキュリティ トークンの一部として要求ごとに転送するため、サービスをステートレスな状態に保つことができます。ステートフルなセキュリティ セッションを有効にする場合、システムによって提供される <xref:System.ServiceModel.WSHttpBinding> と <xref:System.ServiceModel.WSDualHttpBinding> では、必要な構成設定が公開されないため、<xref:System.ServiceModel.Channels.CustomBinding> またはユーザー定義の <xref:System.ServiceModel.Channels.Binding> を使用する必要があります。  
+-   <span data-ttu-id="ab7d7-119">セキュリティ コンテキストの確立を無効にします。これは、<xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> の <xref:System.ServiceModel.WSHttpBinding> プロパティを `false` に設定することで実現されます。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-119">Turn off Security Context Establishment: this can be accomplished by the setting the <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> property on the <xref:System.ServiceModel.WSHttpBinding> to `false`.</span></span> <span data-ttu-id="ab7d7-120">また、セキュリティ セッションが必要な場合は、可能であれば」の説明に従って、ステートフルなセキュリティ セッションを使用する、[セキュリティで保護されたセッション](../../../docs/framework/wcf/feature-details/secure-sessions.md)トピックです。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-120">Alternatively, if security sessions are required, it is possible to use stateful security sessions as described in the [Secure Sessions](../../../docs/framework/wcf/feature-details/secure-sessions.md) topic.</span></span> <span data-ttu-id="ab7d7-121">ステートフルなセキュリティ セッションは、セキュリティ セッションのすべての状態 (ステート) を保護セキュリティ トークンの一部として要求ごとに転送するため、サービスをステートレスな状態に保つことができます。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-121">Stateful security sessions enable the service to remain stateless as all of the state for the security session is transmitted with each request as a part of the protection security token.</span></span> <span data-ttu-id="ab7d7-122">ステートフルなセキュリティ セッションを有効にする場合、システムによって提供される <xref:System.ServiceModel.Channels.CustomBinding> と <xref:System.ServiceModel.Channels.Binding> では、必要な構成設定が公開されないため、<xref:System.ServiceModel.WSHttpBinding> またはユーザー定義の <xref:System.ServiceModel.WSDualHttpBinding> を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-122">Note that to enable a stateful security session, it is necessary to use a <xref:System.ServiceModel.Channels.CustomBinding> or user-defined <xref:System.ServiceModel.Channels.Binding> as the necessary configuration settings are not exposed on <xref:System.ServiceModel.WSHttpBinding> and <xref:System.ServiceModel.WSDualHttpBinding> that are provided by the system.</span></span>  
   
--   信頼できるセッションを使用しないでください。この機能は既定で無効になっています。  
+-   <span data-ttu-id="ab7d7-123">信頼できるセッションを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-123">Do not use reliable sessions.</span></span> <span data-ttu-id="ab7d7-124">この機能は既定で無効になっています。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-124">This feature is off by default.</span></span>  
   
-## Net.TCP バインディングの負荷分散  
- <xref:System.ServiceModel.NetTcpBinding> は、IP レイヤー負荷分散の手法を使用して負荷分散できます。ただし、<xref:System.ServiceModel.NetTcpBinding> は接続の待ち時間を減らすために、既定で TCP 接続のプールを作成します。この最適化は、負荷分散の基本的なメカニズムに干渉します。<xref:System.ServiceModel.NetTcpBinding> を最適化するための主な構成値はリース タイムアウトで、これは接続プール設定の一部です。接続プールによって、クライアントの接続がファーム内の特定サーバーと関連付けられます。このような接続の有効期間 \(これはリース タイムアウトの設定で制御される要素です\) が長くなるにつれて、ファーム内の各サーバーの負荷分散がうまくいかなくなります。その結果、平均呼び出し時間が増加します。したがって、<xref:System.ServiceModel.NetTcpBinding> を負荷分散シナリオで使用する場合は、バインディングによって使用される既定のリース タイムアウトを少なくすることを検討してください。負荷分散のシナリオでは、30 秒のリース タイムアウトから始めるのが合理的ですが、最適値はアプリケーションによって異なります。チャネルのリース タイムアウトおよびその他のトランスポート クォータの詳細については、「[トランスポート クォータ](../../../docs/framework/wcf/feature-details/transport-quotas.md)」を参照してください。  
+## <a name="load-balancing-the-nettcp-binding"></a><span data-ttu-id="ab7d7-125">Net.TCP バインディングの負荷分散</span><span class="sxs-lookup"><span data-stu-id="ab7d7-125">Load Balancing the Net.TCP Binding</span></span>  
+ <span data-ttu-id="ab7d7-126"><xref:System.ServiceModel.NetTcpBinding> は、IP レイヤー負荷分散の手法を使用して負荷分散できます。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-126">The <xref:System.ServiceModel.NetTcpBinding> can be load balanced using IP-layer load balancing techniques.</span></span> <span data-ttu-id="ab7d7-127">ただし、<xref:System.ServiceModel.NetTcpBinding> は接続の待ち時間を減らすために、既定で TCP 接続のプールを作成します。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-127">However, the <xref:System.ServiceModel.NetTcpBinding> pools TCP connections by default to reduce connection latency.</span></span> <span data-ttu-id="ab7d7-128">この最適化は、負荷分散の基本的なメカニズムに干渉します。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-128">This is an optimization that interferes with the basic mechanism of load balancing.</span></span> <span data-ttu-id="ab7d7-129"><xref:System.ServiceModel.NetTcpBinding> を最適化するための主な構成値はリース タイムアウトで、これは接続プール設定の一部です。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-129">The primary configuration value for optimizing the <xref:System.ServiceModel.NetTcpBinding> is the lease timeout, which is part of the Connection Pool Settings.</span></span> <span data-ttu-id="ab7d7-130">接続プールによって、クライアントの接続がファーム内の特定サーバーと関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-130">Connection pooling causes client connections to become associated to specific servers within the farm.</span></span> <span data-ttu-id="ab7d7-131">このような接続の有効期間 (これはリース タイムアウトの設定で制御される要素です) が長くなるにつれて、ファーム内の各サーバーの負荷分散がうまくいかなくなります。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-131">As the lifetime of those connections increase (a factor controlled by the lease timeout setting), the load distribution across various servers in the farm becomes unbalanced.</span></span> <span data-ttu-id="ab7d7-132">その結果、平均呼び出し時間が増加します。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-132">As a result the average call time increases.</span></span> <span data-ttu-id="ab7d7-133">したがって、<xref:System.ServiceModel.NetTcpBinding> を負荷分散シナリオで使用する場合は、バインディングによって使用される既定のリース タイムアウトを少なくすることを検討してください。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-133">So when using the <xref:System.ServiceModel.NetTcpBinding> in load-balanced scenarios, consider reducing the default lease timeout used by the binding.</span></span> <span data-ttu-id="ab7d7-134">負荷分散のシナリオでは、30 秒のリース タイムアウトから始めるのが合理的ですが、最適値はアプリケーションによって異なります。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-134">A 30-second lease timeout is a reasonable starting point for load-balanced scenarios, although the optimal value is application-dependent.</span></span> <span data-ttu-id="ab7d7-135">チャネル リース タイムアウトおよびその他のトランスポート クォータの詳細については、次を参照してください。[トランスポート クォータ](../../../docs/framework/wcf/feature-details/transport-quotas.md)です。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-135">For more information about the channel lease timeout and other transport quotas, see [Transport Quotas](../../../docs/framework/wcf/feature-details/transport-quotas.md).</span></span>  
   
- 負荷分散のシナリオで最適なパフォーマンスを実現するには、<xref:System.ServiceModel.NetTcpSecurity> \(<xref:System.ServiceModel.SecurityMode> または <xref:System.ServiceModel.SecurityMode>\) を使用することを検討してください。  
+ <span data-ttu-id="ab7d7-136">負荷分散のシナリオで最適なパフォーマンスを実現するには、<xref:System.ServiceModel.NetTcpSecurity> (<xref:System.ServiceModel.SecurityMode.Transport> または <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>) を使用することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="ab7d7-136">For best performance in load-balanced scenarios, consider using <xref:System.ServiceModel.NetTcpSecurity> (either <xref:System.ServiceModel.SecurityMode.Transport> or <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>).</span></span>  
   
-## 参照  
- [インターネット インフォメーション サービス ホスティングのベスト プラクティス](../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)
+## <a name="see-also"></a><span data-ttu-id="ab7d7-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="ab7d7-137">See Also</span></span>  
+ [<span data-ttu-id="ab7d7-138">インターネット インフォメーション サービス ホスティングのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="ab7d7-138">Internet Information Services Hosting Best Practices</span></span>](../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)

@@ -1,45 +1,49 @@
 ---
-title: "トランザクション キュー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トランザクション キュー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b1b011dd-5e0b-482c-9bb0-9d8727038f14
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2373d4d7bec73b6f517c7bd3dfeeb4c26edf7d5d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# トランザクション キュー
-このサンプルでは、キューとトランザクションを [!INCLUDE[wf](../../../../includes/wf-md.md)] に統合し、信頼性があり、拡張性の高いサービスを作成する方法を示します。<xref:System.Activities.TransactionScope> は、<xref:System.ServiceModel.NetMsmqBinding> を使用してトランザクション内でキューにメッセージを送信するためにクライアント ワークフローで使用されます。<xref:System.ServiceModel.Activities.TransactedReceiveScope> は、キューからメッセージを受信して同じトランザクション内でワークフローの状態を更新するためにサーバーで使用されます。  
+# <a name="transacted-queues"></a><span data-ttu-id="7390c-102">トランザクション キュー</span><span class="sxs-lookup"><span data-stu-id="7390c-102">Transacted Queues</span></span>
+<span data-ttu-id="7390c-103">このサンプルでは、キューとトランザクションを [!INCLUDE[wf](../../../../includes/wf-md.md)] に統合し、信頼性があり、拡張性の高いサービスを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7390c-103">This sample shows how to integrate queues and transactions in [!INCLUDE[wf](../../../../includes/wf-md.md)] to create reliable and scalable services.</span></span> <span data-ttu-id="7390c-104">A <!--zz <xref:System.Activities.TransactionScope>--> `System.Activities.TransactionScope`を使用してトランザクション内でキューにメッセージを送信するクライアント ワークフローで使用される、<xref:System.ServiceModel.NetMsmqBinding>です。</span><span class="sxs-lookup"><span data-stu-id="7390c-104">A <!--zz <xref:System.Activities.TransactionScope>--> `System.Activities.TransactionScope` is used in the client workflow to send message to a queue under a transaction using the <xref:System.ServiceModel.NetMsmqBinding>.</span></span> <span data-ttu-id="7390c-105"><xref:System.ServiceModel.Activities.TransactedReceiveScope> は、キューからメッセージを受信して同じトランザクション内でワークフローの状態を更新するためにサーバーで使用されます。</span><span class="sxs-lookup"><span data-stu-id="7390c-105">A <xref:System.ServiceModel.Activities.TransactedReceiveScope> is used on the server to receive messages from the queue and update the state of the workflow under the same transaction.</span></span>  
   
-## 使用例  
- <xref:System.Activities.Statements.TransactionScope>、<xref:System.ServiceModel.Activities.TransactedReceiveScope>、<xref:System.ServiceModel.NetMsmqBinding>、<xref:System.ServiceModel.Activities.Receive>、およびコンテンツ ベースの相関関係。  
+## <a name="demonstrates"></a><span data-ttu-id="7390c-106">使用例</span><span class="sxs-lookup"><span data-stu-id="7390c-106">Demonstrates</span></span>  
+ <span data-ttu-id="7390c-107"><xref:System.Activities.Statements.TransactionScope>、<xref:System.ServiceModel.Activities.TransactedReceiveScope>、<xref:System.ServiceModel.NetMsmqBinding>、<xref:System.ServiceModel.Activities.Receive>、およびコンテンツ ベースの相関関係。</span><span class="sxs-lookup"><span data-stu-id="7390c-107"><xref:System.Activities.Statements.TransactionScope>, <xref:System.ServiceModel.Activities.TransactedReceiveScope>, <xref:System.ServiceModel.NetMsmqBinding>, <xref:System.ServiceModel.Activities.Receive>, and content-based correlation.</span></span>  
   
-## 説明  
- このサンプルで取り上げる機能について説明するために、特定のアカウント用に取得されて使用されるポイントを追跡する `RewardsPoints` ワークフロー サービスが作成されます。クライアントは、<xref:System.Activities.WorkflowInvoker> を使用してキューへのさまざまな要求の送信をシミュレートします。トランザクション内でキューにメッセージを送信するために、<xref:System.ServiceModel.Activities.Send> アクティビティを <xref:System.Activities.Statements.TransactionScope> の <xref:System.Activities.Statements.TransactionScope.Body%2A> 内に配置できます。このサンプルでは、キューに置かれたメッセージがクライアント アプリケーションとサーバー アプリケーションを切り離す方法について説明するために、最初にクライアントが実行され、次にサーバーが実行されます。  
+## <a name="discussion"></a><span data-ttu-id="7390c-108">説明</span><span class="sxs-lookup"><span data-stu-id="7390c-108">Discussion</span></span>  
+ <span data-ttu-id="7390c-109">このサンプルで取り上げる機能について説明するために、特定のアカウント用に取得されて使用されるポイントを追跡する `RewardsPoints` ワークフロー サービスが作成されます。</span><span class="sxs-lookup"><span data-stu-id="7390c-109">To demonstrate the features covered in this sample, a `RewardsPoints` workflow service is created, which keeps track of the points earned and used for a given account.</span></span> <span data-ttu-id="7390c-110">クライアントは、<xref:System.Activities.WorkflowInvoker> を使用してキューへのさまざまな要求の送信をシミュレートします。</span><span class="sxs-lookup"><span data-stu-id="7390c-110">The client uses <xref:System.Activities.WorkflowInvoker> to simulate posting various requests to the queue.</span></span> <span data-ttu-id="7390c-111">トランザクション内でキューにメッセージを送信するために、<xref:System.ServiceModel.Activities.Send> アクティビティを <xref:System.Activities.Statements.TransactionScope.Body%2A> の <xref:System.Activities.Statements.TransactionScope> 内に配置できます。</span><span class="sxs-lookup"><span data-stu-id="7390c-111">To post a message to the queue under a transaction, the <xref:System.ServiceModel.Activities.Send> activity can be placed inside the <xref:System.Activities.Statements.TransactionScope.Body%2A> of a <xref:System.Activities.Statements.TransactionScope>.</span></span> <span data-ttu-id="7390c-112">このサンプルでは、キューに置かれたメッセージがクライアント アプリケーションとサーバー アプリケーションを切り離す方法について説明するために、最初にクライアントが実行され、次にサーバーが実行されます。</span><span class="sxs-lookup"><span data-stu-id="7390c-112">In this sample, the client runs first, followed by the server, to demonstrate how queued messages can decouple the client and server applications.</span></span>  
   
- クライアントが完了したら、サービスが構成されてホストされます。サービスが開くとすぐに、既にキューに置かれているメッセージの処理が開始されます。各メッセージが同じサーバー トランザクション内で受信および処理されます。このサンプルでは、最初に受信するメッセージは、要求メッセージの一部として渡されるアカウント名に基づいてインスタンスを作成してコンテンツ ベースの相関関係を初期化する `CreateAccount` 要求です。実際に必要となる可能性のある種類のサービスをモデル化するために、`AddPoints` メッセージと `UsePoints` メッセージを処理する次の 2 つの <xref:System.ServiceModel.Activities.TransactedReceiveScope> アクティビティが `while` ループ内の並行分岐に配置されており、これらのメッセージを任意の順序で繰り返し処理できるようになっています。  
+ <span data-ttu-id="7390c-113">クライアントが完了したら、サービスが構成されてホストされます。</span><span class="sxs-lookup"><span data-stu-id="7390c-113">Once the client completes, the service is configured and hosted.</span></span> <span data-ttu-id="7390c-114">サービスが開くとすぐに、既にキューに置かれているメッセージの処理が開始されます。</span><span class="sxs-lookup"><span data-stu-id="7390c-114">As soon as it opens, it starts processing the messages that have already been placed in the queue.</span></span> <span data-ttu-id="7390c-115">各メッセージが同じサーバー トランザクション内で受信および処理されます。</span><span class="sxs-lookup"><span data-stu-id="7390c-115">Each message is received and processed under the same server transaction.</span></span> <span data-ttu-id="7390c-116">このサンプルでは、最初に受信するメッセージは、要求メッセージの一部として渡されるアカウント名に基づいてインスタンスを作成してコンテンツ ベースの相関関係を初期化する `CreateAccount` 要求です。</span><span class="sxs-lookup"><span data-stu-id="7390c-116">In this sample, the first message received is a `CreateAccount` request that creates the instance and initializes the content correlation based on the account name passed as part of the request message.</span></span> <span data-ttu-id="7390c-117">実際に必要となる可能性のある種類のサービスをモデル化するために、<xref:System.ServiceModel.Activities.TransactedReceiveScope> メッセージと `AddPoints` メッセージを処理する次の 2 つの `UsePoints` アクティビティが `while` ループ内の並行分岐に配置されており、これらのメッセージを任意の順序で繰り返し処理できるようになっています。</span><span class="sxs-lookup"><span data-stu-id="7390c-117">To model the kind of service you might expect in the real world, the following two <xref:System.ServiceModel.Activities.TransactedReceiveScope> activities that process the `AddPoints` and `UsePoints` messages are placed in parallel branches within a `while` loop so that they can process these messages repeatedly in any order.</span></span>  
   
- <xref:System.Activities.Statements.TransactionScope> および <xref:System.ServiceModel.Activities.TransactedReceiveScope> は、それぞれスコープの末尾に暗黙的な永続化ポイントを持つので、これらのアクティビティをキューと組み合わせて [!INCLUDE[wf1](../../../../includes/wf1-md.md)] で使用すると、メッセージが失われないようにしながら、ワークフローを一貫性のある状態から次の一貫性のある状態に確実に移行できます。  
+ <span data-ttu-id="7390c-118"><xref:System.Activities.Statements.TransactionScope> および <xref:System.ServiceModel.Activities.TransactedReceiveScope> は、それぞれスコープの末尾に暗黙的な永続化ポイントを持つので、これらのアクティビティをキューと組み合わせて [!INCLUDE[wf1](../../../../includes/wf1-md.md)] で使用すると、メッセージが失われないようにしながら、ワークフローを一貫性のある状態から次の一貫性のある状態に確実に移行できます。</span><span class="sxs-lookup"><span data-stu-id="7390c-118"><xref:System.Activities.Statements.TransactionScope> and <xref:System.ServiceModel.Activities.TransactedReceiveScope> each have an implicit persistence point at the end of their scopes, so using these activities in [!INCLUDE[wf1](../../../../includes/wf1-md.md)] combined with queues is a reliable way to move your workflow from one consistent state to the next, while ensuring that messages are never lost.</span></span>  
   
-#### サンプルを設定、ビルド、および実行するには  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="7390c-119">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="7390c-119">To set up, build, and run the sample</span></span>  
   
-1.  MSMQ をインストールして構成します。詳細については、「[メッセージ キュー \(MSMQ\) のインストール](http://go.microsoft.com/fwlink/?LinkId=178526)」を参照してください。  
+1.  <span data-ttu-id="7390c-120">MSMQ をインストールして構成します。</span><span class="sxs-lookup"><span data-stu-id="7390c-120">Install and configure MSMQ.</span></span> <span data-ttu-id="7390c-121">参照してください[メッセージ キューをインストールする](http://go.microsoft.com/fwlink/?LinkId=178526)詳細についてはします。</span><span class="sxs-lookup"><span data-stu-id="7390c-121">See [Installing Message Queuing](http://go.microsoft.com/fwlink/?LinkId=178526) for details.</span></span>  
   
-2.  コマンド ラインで次のコマンドを実行して、MSDTC を確実に実行します。`net start msdtc`  
+2.  <span data-ttu-id="7390c-122">コマンド ラインで次のコマンドを実行して、MSDTC が実行されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="7390c-122">Ensure that MSDTC is running by executing the following command on a command line.</span></span> `net start msdtc`  
   
-3.  プロジェクトをコンパイルして実行可能ファイルを開くか、[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] でプロジェクトを開いてデバッグ メニューから開始オプションを選択します。最初にキューが作成され、次にクライアントが実行されてキューにメッセージが送信され、最後にサービスが開始されてメッセージが処理されます。プログラムを終了するには、Enter キーを押します。  
+3.  <span data-ttu-id="7390c-123">プロジェクトをコンパイルして実行可能ファイルを開くか、[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] でプロジェクトを開いてデバッグ メニューから開始オプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="7390c-123">Compile the project and open the executable, or open the project in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] and select a start option from the debug menu.</span></span> <span data-ttu-id="7390c-124">最初にキューが作成され、次にクライアントが実行されてキューにメッセージが送信され、最後にサービスが開始されてメッセージが処理されます。</span><span class="sxs-lookup"><span data-stu-id="7390c-124">First, the queue is created, then the client runs and posts messages to the queue, and finally the service starts and the messages are processed.</span></span> <span data-ttu-id="7390c-125">プログラムを終了するには、Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="7390c-125">To exit the program, press ENTER.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="7390c-126">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="7390c-126">The samples may already be installed on your machine.</span></span> <span data-ttu-id="7390c-127">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="7390c-127">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="7390c-128">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="7390c-128">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="7390c-129">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="7390c-129">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\TransactedQueues`

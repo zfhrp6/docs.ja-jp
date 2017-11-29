@@ -1,28 +1,37 @@
 ---
-title: "&lt;netMsmqBinding&gt; の &lt;transport&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;netMsmqBinding&gt; の &lt;transport&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 72e1b338-39f0-4af1-a5d9-7a2fb79f6a0b
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 2df5bf18605fcf20b253212cb0f9a62b4719b0ad
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;netMsmqBinding&gt; の &lt;transport&gt;
-トランスポートのセキュリティ設定を定義します。  
+# <a name="lttransportgt-of-ltnetmsmqbindinggt"></a><span data-ttu-id="a6826-102">&lt;netMsmqBinding&gt; の &lt;transport&gt;</span><span class="sxs-lookup"><span data-stu-id="a6826-102">&lt;transport&gt; of &lt;netMsmqBinding&gt;</span></span>
+<span data-ttu-id="a6826-103">トランスポートのセキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="a6826-103">Defines the transport security settings.</span></span>  
   
-## 構文  
+ <span data-ttu-id="a6826-104">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="a6826-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="a6826-105">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="a6826-105">\<bindings></span></span>  
+<span data-ttu-id="a6826-106">\<netMsmqBinding ></span><span class="sxs-lookup"><span data-stu-id="a6826-106">\<netMsmqBinding></span></span>  
+<span data-ttu-id="a6826-107">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="a6826-107">\<binding></span></span>  
+<span data-ttu-id="a6826-108">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="a6826-108">\<security></span></span>  
+<span data-ttu-id="a6826-109">\<トランスポート ></span><span class="sxs-lookup"><span data-stu-id="a6826-109">\<transport></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="a6826-110">構文</span><span class="sxs-lookup"><span data-stu-id="a6826-110">Syntax</span></span>  
   
+```xml  
 <netMsmqBinding>  
     <binding>  
     <security>  
@@ -35,35 +44,35 @@ caps.handback.revision: 10
 </netMsmqBinding>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="a6826-111">属性および要素</span><span class="sxs-lookup"><span data-stu-id="a6826-111">Attributes and Elements</span></span>  
+ <span data-ttu-id="a6826-112">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="a6826-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="a6826-113">属性</span><span class="sxs-lookup"><span data-stu-id="a6826-113">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|msmqAuthenticationMode|MSMQ トランスポートによるメッセージの認証方法を指定します。  以下の値が有効です。<br /><br /> -   None: 認証は行われません。<br />-   WindowsDomain: 認証機構により Active Directory が使用され、メッセージに関連付けられたセキュリティ識別子の X.509 証明書が取得されます。  次に、これを使用してキューの ACL がチェックされ、ユーザーがキューへの書き込み権限を持っていることが確認されます。<br />-   Certificate: チャネルは、証明書ストアから証明書を取得します。<br /><br /> 既定値は、`WindowsDomain` です。<br /><br /> この属性が `None` に設定されている場合、`msmqProtectionLevel` 属性も `None` に設定する必要があります。  この属性は <xref:System.ServiceModel.MsmqAuthenticationMode> 型です。|  
-|msmqEncryptionAlgorithm|メッセージ キュー マネージャー間でメッセージを転送するときに、ネットワーク上でメッセージの暗号化に使用されるアルゴリズムを指定します。  以下の値が有効です。<br /><br /> -   RC4Stream<br />-   AES<br />-   既定値は `RC4Stream` です。  この属性は <xref:System.ServiceModel.MsmqEncryptionAlgorithm> 型です。|  
-|msmqProtectionLevel|MSMQ トランスポートのレベルでメッセージをセキュリティで保護する方法を指定します。  暗号化を行うとメッセージの整合性が確保されますが、署名および暗号化を使用するとメッセージの整合性と否認防止の両方が確保されます。  つまり、メッセージは本当にその送信者から送信されていることになり、記載されている送信者が実際の送信者になります。  以下の値が有効です。<br /><br /> -   None: 保護されません。<br />-   Sign: メッセージは署名されます。<br />-   EncryptAndSign: メッセージは暗号化および署名されます。<br />-   既定値は、`Sign` です。|  
-|msmqSecureHashAlgorithm|メッセージ ダイジェストの計算に使用されるハッシュ アルゴリズムを指定します。  以下の値が有効です。<br /><br /> -   MD5<br />-   SHA1<br />-   SHA256<br />-   SHA512<br /><br /> 既定値は、`SHA1` です。  この属性は <xref:System.ServiceModel.MsmqSecureHashAlgorithm> 型です。|  
+|<span data-ttu-id="a6826-114">属性</span><span class="sxs-lookup"><span data-stu-id="a6826-114">Attribute</span></span>|<span data-ttu-id="a6826-115">説明</span><span class="sxs-lookup"><span data-stu-id="a6826-115">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="a6826-116">msmqAuthenticationMode</span><span class="sxs-lookup"><span data-stu-id="a6826-116">msmqAuthenticationMode</span></span>|<span data-ttu-id="a6826-117">MSMQ トランスポートによるメッセージの認証方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6826-117">Specifies how the message must be authenticated by the MSMQ transport.</span></span> <span data-ttu-id="a6826-118">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="a6826-118">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="a6826-119">-None: 認証は行われません。</span><span class="sxs-lookup"><span data-stu-id="a6826-119">-   None: No authentication.</span></span><br /><span data-ttu-id="a6826-120">-WindowsDomain: 認証機構は、メッセージに関連付けられたセキュリティ識別子の X.509 証明書を取得するのに Active Directory を使用します。</span><span class="sxs-lookup"><span data-stu-id="a6826-120">-   WindowsDomain: The authentication mechanism uses Active Directory to retrieve the X.509 certificate for the security identifier associated with the message.</span></span> <span data-ttu-id="a6826-121">次に、これを使用してキューの ACL がチェックされ、ユーザーがキューへの書き込み権限を持っていることが確認されます。</span><span class="sxs-lookup"><span data-stu-id="a6826-121">This is then used to check the ACL of the queue to ensure the user has write permission for the queue.</span></span><br /><span data-ttu-id="a6826-122">-Certificate: チャネルは、証明書ストアから証明書を取得します。</span><span class="sxs-lookup"><span data-stu-id="a6826-122">-   Certificate: The channel retrieves the certificate from the certificate store.</span></span><br /><br /> <span data-ttu-id="a6826-123">既定値は、`WindowsDomain` です。</span><span class="sxs-lookup"><span data-stu-id="a6826-123">The default is `WindowsDomain`.</span></span><br /><br /> <span data-ttu-id="a6826-124">この属性が `None` に設定されている場合、`msmqProtectionLevel` 属性も `None` に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6826-124">If this attribute is set to `None`, the `msmqProtectionLevel` attribute must also be set to `None`.</span></span> <span data-ttu-id="a6826-125">この属性は <xref:System.ServiceModel.MsmqAuthenticationMode> 型です。</span><span class="sxs-lookup"><span data-stu-id="a6826-125">This attribute is of type <xref:System.ServiceModel.MsmqAuthenticationMode></span></span>|  
+|<span data-ttu-id="a6826-126">msmqEncryptionAlgorithm</span><span class="sxs-lookup"><span data-stu-id="a6826-126">msmqEncryptionAlgorithm</span></span>|<span data-ttu-id="a6826-127">メッセージ キュー マネージャー間でメッセージを転送するときに、ネットワーク上でメッセージの暗号化に使用されるアルゴリズムを指定します。</span><span class="sxs-lookup"><span data-stu-id="a6826-127">Specifies the algorithm to be used for message encryption on the wire when transferring messages between message queue managers.</span></span> <span data-ttu-id="a6826-128">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="a6826-128">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="a6826-129">-RC4Stream</span><span class="sxs-lookup"><span data-stu-id="a6826-129">-   RC4Stream</span></span><br /><span data-ttu-id="a6826-130">-AES</span><span class="sxs-lookup"><span data-stu-id="a6826-130">-   AES</span></span><br /><span data-ttu-id="a6826-131">-既定値は`RC4Stream`します。</span><span class="sxs-lookup"><span data-stu-id="a6826-131">-   The default value is `RC4Stream`.</span></span> <span data-ttu-id="a6826-132">この属性は <xref:System.ServiceModel.MsmqEncryptionAlgorithm> 型です。</span><span class="sxs-lookup"><span data-stu-id="a6826-132">This attribute is of type <xref:System.ServiceModel.MsmqEncryptionAlgorithm>.</span></span>|  
+|<span data-ttu-id="a6826-133">msmqProtectionLevel</span><span class="sxs-lookup"><span data-stu-id="a6826-133">msmqProtectionLevel</span></span>|<span data-ttu-id="a6826-134">MSMQ トランスポートのレベルでメッセージをセキュリティで保護する方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6826-134">Specifies the way messages are secured at the level of the MSMQ transport.</span></span> <span data-ttu-id="a6826-135">暗号化を行うとメッセージの整合性が確保されますが、署名および暗号化を使用するとメッセージの整合性と否認防止の両方が確保されます。</span><span class="sxs-lookup"><span data-stu-id="a6826-135">Encryption ensures message integrity, while sign and encrypt ensures both message integrity and non-repudiation.</span></span> <span data-ttu-id="a6826-136">つまり、メッセージは本当にその送信者から送信されていることになり、記載されている送信者が実際の送信者になります。</span><span class="sxs-lookup"><span data-stu-id="a6826-136">That is, the message indeed came from the sender and the sender is who he says he is.</span></span> <span data-ttu-id="a6826-137">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="a6826-137">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="a6826-138">-None: 保護されません。</span><span class="sxs-lookup"><span data-stu-id="a6826-138">-   None: No protection.</span></span><br /><span data-ttu-id="a6826-139">-Sign: メッセージは署名されます。</span><span class="sxs-lookup"><span data-stu-id="a6826-139">-   Sign: Messages are signed.</span></span><br /><span data-ttu-id="a6826-140">-EncryptAndSign: メッセージが暗号化および署名されます。</span><span class="sxs-lookup"><span data-stu-id="a6826-140">-   EncryptAndSign: Messages are encrypted and signed.</span></span><br /><span data-ttu-id="a6826-141">-既定値は`Sign`します。</span><span class="sxs-lookup"><span data-stu-id="a6826-141">-   The default is `Sign`.</span></span>|  
+|<span data-ttu-id="a6826-142">msmqSecureHashAlgorithm</span><span class="sxs-lookup"><span data-stu-id="a6826-142">msmqSecureHashAlgorithm</span></span>|<span data-ttu-id="a6826-143">メッセージ ダイジェストの計算に使用されるハッシュ アルゴリズムを指定します。</span><span class="sxs-lookup"><span data-stu-id="a6826-143">Specifies the hash algorithm to be used for computing the message digest.</span></span> <span data-ttu-id="a6826-144">以下の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="a6826-144">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="a6826-145">MD5</span><span class="sxs-lookup"><span data-stu-id="a6826-145">-   MD5</span></span><br /><span data-ttu-id="a6826-146">-SHA1</span><span class="sxs-lookup"><span data-stu-id="a6826-146">-   SHA1</span></span><br /><span data-ttu-id="a6826-147">-SHA256</span><span class="sxs-lookup"><span data-stu-id="a6826-147">-   SHA256</span></span><br /><span data-ttu-id="a6826-148">-SHA512</span><span class="sxs-lookup"><span data-stu-id="a6826-148">-   SHA512</span></span><br /><br /> <span data-ttu-id="a6826-149">既定値は、`SHA1` です。</span><span class="sxs-lookup"><span data-stu-id="a6826-149">The default is `SHA1`.</span></span> <span data-ttu-id="a6826-150">この属性は <xref:System.ServiceModel.MsmqSecureHashAlgorithm> 型です。</span><span class="sxs-lookup"><span data-stu-id="a6826-150">This attribute is of type <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.</span></span>|  
   
-### 子要素  
- なし  
+### <a name="child-elements"></a><span data-ttu-id="a6826-151">子要素</span><span class="sxs-lookup"><span data-stu-id="a6826-151">Child Elements</span></span>  
+ <span data-ttu-id="a6826-152">なし</span><span class="sxs-lookup"><span data-stu-id="a6826-152">None</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="a6826-153">親要素</span><span class="sxs-lookup"><span data-stu-id="a6826-153">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<security\>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netmsmqbinding.md)|キューに置かれているトランスポートのセキュリティ設定を定義します。|  
+|<span data-ttu-id="a6826-154">要素</span><span class="sxs-lookup"><span data-stu-id="a6826-154">Element</span></span>|<span data-ttu-id="a6826-155">説明</span><span class="sxs-lookup"><span data-stu-id="a6826-155">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="a6826-156">\<セキュリティ ></span><span class="sxs-lookup"><span data-stu-id="a6826-156">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netmsmqbinding.md)|<span data-ttu-id="a6826-157">キューに置かれているトランスポートのセキュリティ設定を定義します。</span><span class="sxs-lookup"><span data-stu-id="a6826-157">Defines the transport security settings for queued transports.</span></span>|  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>   
- <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement.Transport%2A>   
- <xref:System.ServiceModel.NetMsmqSecurity.Transport%2A>   
- <xref:System.ServiceModel.MsmqTransportSecurity>   
- [WCF のキュー](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)   
- [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/ja-jp/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<binding\>](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a><span data-ttu-id="a6826-158">関連項目</span><span class="sxs-lookup"><span data-stu-id="a6826-158">See Also</span></span>  
+ <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>  
+ <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement.Transport%2A>  
+ <xref:System.ServiceModel.NetMsmqSecurity.Transport%2A>  
+ <xref:System.ServiceModel.MsmqTransportSecurity>  
+ [<span data-ttu-id="a6826-159">WCF のキュー</span><span class="sxs-lookup"><span data-stu-id="a6826-159">Queues in WCF</span></span>](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
+ [<span data-ttu-id="a6826-160">サービスとクライアントのセキュリティ保護</span><span class="sxs-lookup"><span data-stu-id="a6826-160">Securing Services and Clients</span></span>](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [<span data-ttu-id="a6826-161">バインディング</span><span class="sxs-lookup"><span data-stu-id="a6826-161">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="a6826-162">システム指定のバインディングを構成します。</span><span class="sxs-lookup"><span data-stu-id="a6826-162">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="a6826-163">バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには</span><span class="sxs-lookup"><span data-stu-id="a6826-163">Using Bindings to Configure Windows Communication Foundation Services and Clients</span></span>](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [<span data-ttu-id="a6826-164">\<バインド ></span><span class="sxs-lookup"><span data-stu-id="a6826-164">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)

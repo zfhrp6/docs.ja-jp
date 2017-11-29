@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - MDAs (managed debugging assistants), invalid cookies
 - cookies, invalid
@@ -21,36 +15,35 @@ helpviewer_keywords:
 - InvalidGCHandleCookie MDA
 - invalid cookies
 ms.assetid: 613ad742-3c11-401d-a6b3-893ceb8de4f8
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fca1d010fd206de931cc057bc735179808686b51
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 4757298a382085c1ffebc9a04e41eea81c31941b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="invalidgchandlecookie-mda"></a>invalidGCHandleCookie MDA
-`invalidGCHandleCookie` マネージ デバッグ アシスタント (MDA) は、無効な <xref:System.IntPtr> Cookie から <xref:System.Runtime.InteropServices.GCHandle> への変換が試行されたときにアクティブ化されます。  
+# <a name="invalidgchandlecookie-mda"></a><span data-ttu-id="0d054-102">invalidGCHandleCookie MDA</span><span class="sxs-lookup"><span data-stu-id="0d054-102">invalidGCHandleCookie MDA</span></span>
+<span data-ttu-id="0d054-103">`invalidGCHandleCookie` マネージ デバッグ アシスタント (MDA) は、無効な <xref:System.IntPtr> Cookie から <xref:System.Runtime.InteropServices.GCHandle> への変換が試行されたときにアクティブ化されます。</span><span class="sxs-lookup"><span data-stu-id="0d054-103">The `invalidGCHandleCookie` managed debugging assistant (MDA) is activated when a conversion from an invalid <xref:System.IntPtr> cookie to a <xref:System.Runtime.InteropServices.GCHandle> is attempted.</span></span>  
   
-## <a name="symptoms"></a>症状  
- <xref:System.Runtime.InteropServices.GCHandle> の使用または <xref:System.IntPtr> からの取得を試みているときのアクセス違反やメモリ破損などの定義されていない動作。  
+## <a name="symptoms"></a><span data-ttu-id="0d054-104">症状</span><span class="sxs-lookup"><span data-stu-id="0d054-104">Symptoms</span></span>  
+ <span data-ttu-id="0d054-105"><xref:System.Runtime.InteropServices.GCHandle> の使用または <xref:System.IntPtr> からの取得を試みているときのアクセス違反やメモリ破損などの定義されていない動作。</span><span class="sxs-lookup"><span data-stu-id="0d054-105">Undefined behavior such as access violations and memory corruption while attempting to use or retrieve a <xref:System.Runtime.InteropServices.GCHandle> from an <xref:System.IntPtr>.</span></span>  
   
-## <a name="cause"></a>原因  
- Cookie が <xref:System.Runtime.InteropServices.GCHandle> から最初に作成されていないために無効になっている可能性があります。既に解放されている <xref:System.Runtime.InteropServices.GCHandle> が異なるアプリケーション ドメイン内で <xref:System.Runtime.InteropServices.GCHandle> の Cookie になっているか、<xref:System.Runtime.InteropServices.GCHandle> としてネイティブ コードにマーシャリングされても、<xref:System.IntPtr> として CLR に再び渡され、キャストが試行されたことを表します。  
+## <a name="cause"></a><span data-ttu-id="0d054-106">原因</span><span class="sxs-lookup"><span data-stu-id="0d054-106">Cause</span></span>  
+ <span data-ttu-id="0d054-107">Cookie が <xref:System.Runtime.InteropServices.GCHandle> から最初に作成されていないために無効になっている可能性があります。既に解放されている <xref:System.Runtime.InteropServices.GCHandle> が異なるアプリケーション ドメイン内で <xref:System.Runtime.InteropServices.GCHandle> の Cookie になっているか、<xref:System.Runtime.InteropServices.GCHandle> としてネイティブ コードにマーシャリングされても、<xref:System.IntPtr> として CLR に再び渡され、キャストが試行されたことを表します。</span><span class="sxs-lookup"><span data-stu-id="0d054-107">The cookie is probably invalid because it was not originally created from a <xref:System.Runtime.InteropServices.GCHandle>, represents a <xref:System.Runtime.InteropServices.GCHandle> that has already been freed, is a cookie to a <xref:System.Runtime.InteropServices.GCHandle> in a different application domain, or was marshaled to native code as a <xref:System.Runtime.InteropServices.GCHandle> but passed back into the CLR as an <xref:System.IntPtr>, where a cast was attempted.</span></span>  
   
-## <a name="resolution"></a>解決策  
- <xref:System.Runtime.InteropServices.GCHandle> の有効な <xref:System.IntPtr> Cookie を指定します。  
+## <a name="resolution"></a><span data-ttu-id="0d054-108">解像度</span><span class="sxs-lookup"><span data-stu-id="0d054-108">Resolution</span></span>  
+ <span data-ttu-id="0d054-109"><xref:System.Runtime.InteropServices.GCHandle> の有効な <xref:System.IntPtr> Cookie を指定します。</span><span class="sxs-lookup"><span data-stu-id="0d054-109">Specify a valid <xref:System.IntPtr> cookie for the <xref:System.Runtime.InteropServices.GCHandle>.</span></span>  
   
-## <a name="effect-on-the-runtime"></a>ランタイムへの影響  
- この MDA が有効になっているときには、返される Cookie の値が MDA が有効になっていないときに返される値と異なるので、デバッガはルートをオブジェクトまでトレースできなくなります。  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="0d054-110">ランタイムへの影響</span><span class="sxs-lookup"><span data-stu-id="0d054-110">Effect on the Runtime</span></span>  
+ <span data-ttu-id="0d054-111">この MDA が有効になっているときには、返される Cookie の値が MDA が有効になっていないときに返される値と異なるので、デバッガはルートをオブジェクトまでトレースできなくなります。</span><span class="sxs-lookup"><span data-stu-id="0d054-111">When this MDA is enabled, the debugger is no longer able to trace the roots back to their objects because the cookie values passed back are different from the ones returned when the MDA is not enabled.</span></span>  
   
-## <a name="output"></a>出力  
- 無効な <xref:System.IntPtr> Cookie 値が報告されます。  
+## <a name="output"></a><span data-ttu-id="0d054-112">出力</span><span class="sxs-lookup"><span data-stu-id="0d054-112">Output</span></span>  
+ <span data-ttu-id="0d054-113">無効な <xref:System.IntPtr> Cookie 値が報告されます。</span><span class="sxs-lookup"><span data-stu-id="0d054-113">The invalid <xref:System.IntPtr> cookie value is reported.</span></span>  
   
-## <a name="configuration"></a>構成  
+## <a name="configuration"></a><span data-ttu-id="0d054-114">構成</span><span class="sxs-lookup"><span data-stu-id="0d054-114">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -60,8 +53,7 @@ ms.lasthandoff: 08/21/2017
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.InteropServices.GCHandle.FromIntPtr%2A>   
- <xref:System.Runtime.InteropServices.GCHandle>   
- [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-
+## <a name="see-also"></a><span data-ttu-id="0d054-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="0d054-115">See Also</span></span>  
+ <xref:System.Runtime.InteropServices.GCHandle.FromIntPtr%2A>  
+ <xref:System.Runtime.InteropServices.GCHandle>  
+ [<span data-ttu-id="0d054-116">マネージ デバッグ アシスタントによるエラーの診断</span><span class="sxs-lookup"><span data-stu-id="0d054-116">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

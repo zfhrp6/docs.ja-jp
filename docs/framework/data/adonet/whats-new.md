@@ -1,65 +1,68 @@
 ---
-title: "ADO.NET の新機能 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "どのような &#39; ADO.NET の"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3bb65d38-cce2-46f5-b979-e5c505e95e10
-caps.latest.revision: 25
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 9c0c9eb02cb95522d04765f454cd870f01a633f9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ADO.NET の新機能
-[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] の [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] では、次の機能が追加されています。  
+# <a name="what39s-new-in-adonet"></a><span data-ttu-id="c4043-102">どのような &#39; ADO.NET の</span><span class="sxs-lookup"><span data-stu-id="c4043-102">What&#39;s New in ADO.NET</span></span>
+<span data-ttu-id="c4043-103">[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] の [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] では、次の機能が追加されています。</span><span class="sxs-lookup"><span data-stu-id="c4043-103">The following features are new in [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] in the [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
   
-## SqlClient Data Provider  
- [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] の [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] では、次の機能が追加されています。  
+## <a name="sqlclient-data-provider"></a><span data-ttu-id="c4043-104">SqlClient Data Provider</span><span class="sxs-lookup"><span data-stu-id="c4043-104">SqlClient Data Provider</span></span>  
+ <span data-ttu-id="c4043-105">[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] Data Provider for [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] では、次の機能が追加されています。</span><span class="sxs-lookup"><span data-stu-id="c4043-105">The following features are new in the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]:</span></span>  
   
--   ConnectRetryCount と ConnectRetryInterval の接続文字列キーワード \(<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>\) を使用すると、アイドル状態の接続の復元機能を制御できます。  
+-   <span data-ttu-id="c4043-106">ConnectRetryCount と ConnectRetryInterval の接続文字列キーワード (<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>) を使用すると、アイドル状態の接続の復元機能を制御できます。</span><span class="sxs-lookup"><span data-stu-id="c4043-106">The ConnectRetryCount and ConnectRetryInterval connection string keywords (<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>) let you control the idle connection resiliency feature.</span></span>  
   
--   [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からアプリケーションへのストリーミング サポートで、サーバー上のデータが構造化されていないシナリオをサポートします。  詳細については、「[SqlClient ストリーミング サポート](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md)」を参照してください。  
+-   <span data-ttu-id="c4043-107">[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] からアプリケーションへのストリーミング サポートで、サーバー上のデータが構造化されていないシナリオをサポートします。</span><span class="sxs-lookup"><span data-stu-id="c4043-107">Streaming support from [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] to an application supports scenarios where data on the server is unstructured.</span></span>  <span data-ttu-id="c4043-108">参照してください[SqlClient ストリーミング サポート](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md)詳細についてはします。</span><span class="sxs-lookup"><span data-stu-id="c4043-108">See [SqlClient Streaming Support](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md) for more information.</span></span>  
   
--   非同期のプログラミングにサポートが追加されています。  詳細については、「[非同期プログラミング](../../../../docs/framework/data/adonet/asynchronous-programming.md)」を参照してください。  
+-   <span data-ttu-id="c4043-109">非同期のプログラミングにサポートが追加されています。</span><span class="sxs-lookup"><span data-stu-id="c4043-109">Support has been added for asynchronous programming.</span></span>  <span data-ttu-id="c4043-110">参照してください[非同期プログラミング](../../../../docs/framework/data/adonet/asynchronous-programming.md)詳細についてはします。</span><span class="sxs-lookup"><span data-stu-id="c4043-110">See [Asynchronous Programming](../../../../docs/framework/data/adonet/asynchronous-programming.md) for more information.</span></span>  
   
--   接続エラーは、拡張イベント ログに記録されるようになりました。  詳細については、「[ADO.NET でのデータ トレース](../../../../docs/framework/data/adonet/data-tracing.md)」を参照してください。  
+-   <span data-ttu-id="c4043-111">接続エラーは、拡張イベント ログに記録されるようになりました。</span><span class="sxs-lookup"><span data-stu-id="c4043-111">Connection failures will now be logged in the extended events log.</span></span> <span data-ttu-id="c4043-112">詳細については、「[ADO.NET のデータ追跡](../../../../docs/framework/data/adonet/data-tracing.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c4043-112">For more information, see [Data Tracing in ADO.NET](../../../../docs/framework/data/adonet/data-tracing.md).</span></span>  
   
--   SqlClient は、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] の高可用性、障害復旧機能である AlwaysOn をサポートするようになりました。  詳細については、「[高可用性障害復旧のための SqlClient サポート](../../../../docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md)」を参照してください。  
+-   <span data-ttu-id="c4043-113">SqlClient は、[!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] の高可用性、ディザスター リカバリー機能である AlwaysOn をサポートするようになりました。</span><span class="sxs-lookup"><span data-stu-id="c4043-113">SqlClient now has support for [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]'s high availability, disaster recovery feature, AlwaysOn.</span></span> <span data-ttu-id="c4043-114">詳細については、次を参照してください。 [High Availability, Disaster Recovery の SqlClient サポート](../../../../docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md)です。</span><span class="sxs-lookup"><span data-stu-id="c4043-114">For more information, see [SqlClient Support for High Availability, Disaster Recovery](../../../../docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).</span></span>  
   
--   [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] 認証を使用している場合、パスワードは <xref:System.Security.SecureString> として渡すことができます。  詳細については、「<xref:System.Data.SqlClient.SqlCredential>」を参照してください。  
+-   <span data-ttu-id="c4043-115"><xref:System.Security.SecureString> 認証を使用している場合、パスワードは [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] として渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="c4043-115">A password can be passed as a <xref:System.Security.SecureString> when using [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] Authentication.</span></span> <span data-ttu-id="c4043-116">詳細については、「<xref:System.Data.SqlClient.SqlCredential>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c4043-116">See <xref:System.Data.SqlClient.SqlCredential> for more information.</span></span>  
   
--   `TrustServerCertificate` が false であり、`Encrypt` が true の場合は、接続文字列に指定されているサーバー名 \(または IP アドレス\) に [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] SSL 証明書が正確に一致する必要があります。  それ以外の場合、接続試行は失敗します。  詳細については、「<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>」の `Encrypt` 接続オプションの説明を参照してください。  
+-   <span data-ttu-id="c4043-117">`TrustServerCertificate` が false であり、`Encrypt` が true の場合は、接続文字列に指定されているサーバー名 (または IP アドレス) に [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] SSL 証明書が正確に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c4043-117">When `TrustServerCertificate` is false and `Encrypt` is true, the server name (or IP address) in a [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)] SSL certificate must exactly match the server name (or IP address) specified in the connection string.</span></span> <span data-ttu-id="c4043-118">それ以外の場合、接続試行は失敗します。</span><span class="sxs-lookup"><span data-stu-id="c4043-118">Otherwise, the connection attempt will fail.</span></span> <span data-ttu-id="c4043-119">詳細については、「`Encrypt`」の <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> 接続オプションの説明を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c4043-119">For more information, see the description of the `Encrypt` connection option in <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.</span></span>  
   
-     この変更によって既存のアプリケーションが接続しなくなる場合、次のいずれかを使用してアプリケーションを修正できます。  
+     <span data-ttu-id="c4043-120">この変更によって既存のアプリケーションが接続しなくなる場合、次のいずれかを使用してアプリケーションを修正できます。</span><span class="sxs-lookup"><span data-stu-id="c4043-120">If this change causes an existing application to no longer connect, you can fix the application using one of the following:</span></span>  
   
-    -   共通名 \(CN\) またはサブジェクト代替名 \(SAN\) フィールドに短い名前を指定する証明書を発行します。  このソリューションは、データベース ミラーリングをする場合に有効です。  
+    -   <span data-ttu-id="c4043-121">共通名 (CN) またはサブジェクト代替名 (SAN) フィールドに短い名前を指定する証明書を発行します。</span><span class="sxs-lookup"><span data-stu-id="c4043-121">Issue a certificate that specifies the short name in the Common Name (CN) or Subject Alternative Name (SAN) field.</span></span> <span data-ttu-id="c4043-122">このソリューションは、データベース ミラーリングをする場合に有効です。</span><span class="sxs-lookup"><span data-stu-id="c4043-122">This solution will work for database mirroring.</span></span>  
   
-    -   短い名前を完全修飾ドメイン名にマップする別名を追加します。  
+    -   <span data-ttu-id="c4043-123">短い名前を完全修飾ドメイン名にマップする別名を追加します。</span><span class="sxs-lookup"><span data-stu-id="c4043-123">Add an alias that maps the short name to the fully-qualified domain name.</span></span>  
   
-    -   接続文字列では完全修飾ドメイン名を使用します。  
+    -   <span data-ttu-id="c4043-124">接続文字列では完全修飾ドメイン名を使用します。</span><span class="sxs-lookup"><span data-stu-id="c4043-124">Use the fully-qualified domain name in the connection string.</span></span>  
   
--   SqlClient は拡張保護をサポートしています。  拡張保護の詳細については、「[拡張保護を使用したデータベース エンジンへの接続](http://go.microsoft.com/fwlink/?LinkId=219978)」を参照してください。  
+-   <span data-ttu-id="c4043-125">SqlClient は拡張保護をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="c4043-125">SqlClient supports Extended Protection.</span></span> <span data-ttu-id="c4043-126">拡張保護の詳細については、次を参照してください。 [、データベース エンジンを使用して拡張保護に接続する](http://go.microsoft.com/fwlink/?LinkId=219978)です。</span><span class="sxs-lookup"><span data-stu-id="c4043-126">For more information about Extended Protection, see [Connecting to the Database Engine Using Extended Protection](http://go.microsoft.com/fwlink/?LinkId=219978).</span></span>  
   
--   SqlClient は LocalDB データベースへの接続をサポートします。  詳細については、「[SqlClient による LocalDB のサポート](../../../../docs/framework/data/adonet/sql/sqlclient-support-for-localdb.md)」を参照してください。  
+-   <span data-ttu-id="c4043-127">SqlClient は LocalDB データベースへの接続をサポートします。</span><span class="sxs-lookup"><span data-stu-id="c4043-127">SqlClient supports connections to LocalDB databases.</span></span> <span data-ttu-id="c4043-128">詳細については、次を参照してください。 [LocalDB の SqlClient サポート](../../../../docs/framework/data/adonet/sql/sqlclient-support-for-localdb.md)です。</span><span class="sxs-lookup"><span data-stu-id="c4043-128">For more information, see [SqlClient Support for LocalDB](../../../../docs/framework/data/adonet/sql/sqlclient-support-for-localdb.md).</span></span>  
   
--   `Type System Version=SQL Server 2012;` は、`Type System Version` 接続プロパティに渡す新しい値です。  `Type System Version=Latest;` 値は廃止されており、`Type System Version=SQL Server 2008;` と同等になっています。  詳細については、「<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>」を参照してください。  
+-   <span data-ttu-id="c4043-129">`Type System Version=SQL Server 2012;` は、`Type System Version` 接続プロパティに渡す新しい値です。</span><span class="sxs-lookup"><span data-stu-id="c4043-129">`Type System Version=SQL Server 2012;` is new value to pass to the `Type System Version` connection property.</span></span> <span data-ttu-id="c4043-130">`Type System Version=Latest;` 値は廃止されており、`Type System Version=SQL Server 2008;` と同等になっています。</span><span class="sxs-lookup"><span data-stu-id="c4043-130">The `Type System Version=Latest;` value is now obsolete and has been made equivalent to `Type System Version=SQL Server 2008;`.</span></span> <span data-ttu-id="c4043-131">詳細については、「<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c4043-131">For more information, see <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.</span></span>  
   
--   SqlClient は、スパース列に追加のサポートを提供します。このサポートは SQL Server 2008 で追加された機能です。  アプリケーションがスパース列を使用するテーブルのデータに既にアクセスしていると、パフォーマンスが向上します。  <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> の IsColumnSet 列は、列が列セットのメンバーであるスパース列であるかどうかを示します。  <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> は、列がスパース列であるかどうかを示します \(詳細については、[SQL Server スキーマ コレクション](../../../../docs/framework/data/adonet/sql-server-schema-collections.md) を参照してください\)。  スパース列の詳細については、「[スパース列の使用](http://go.microsoft.com/fwlink/?LinkId=224244)」を参照してください。  
+-   <span data-ttu-id="c4043-132">SqlClient は、スパース列に追加のサポートを提供します。このサポートは SQL Server 2008 で追加された機能です。</span><span class="sxs-lookup"><span data-stu-id="c4043-132">SqlClient provides additional support for sparse columns, a feature that was added in SQL Server 2008.</span></span> <span data-ttu-id="c4043-133">アプリケーションがスパース列を使用するテーブルのデータに既にアクセスしていると、パフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="c4043-133">If your application already accesses data in a table that uses sparse columns, you should see an increase in performance.</span></span> <span data-ttu-id="c4043-134"><xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> の IsColumnSet 列は、列が列セットのメンバーであるスパース列であるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="c4043-134">The IsColumnSet column of <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> indicates if a column is a sparse column that is a member of a column set.</span></span> <span data-ttu-id="c4043-135"><xref:System.Data.SqlClient.SqlConnection.GetSchema%2A>列がスパース列であることを示します (を参照してください[SQL Server スキーマ コレクション](../../../../docs/framework/data/adonet/sql-server-schema-collections.md)詳細については)。</span><span class="sxs-lookup"><span data-stu-id="c4043-135"><xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> indicates if a column is a sparse column (see [SQL Server Schema Collections](../../../../docs/framework/data/adonet/sql-server-schema-collections.md) for more information).</span></span> <span data-ttu-id="c4043-136">スパース列の詳細については、次を参照してください。[スパース列の使用](http://go.microsoft.com/fwlink/?LinkId=224244)です。</span><span class="sxs-lookup"><span data-stu-id="c4043-136">For more information about sparse columns, see [Using Sparse Columns](http://go.microsoft.com/fwlink/?LinkId=224244).</span></span>  
   
--   空間データ型を含むアセンブリ Microsoft.SqlServer.Types.dll は、Version 10.0 から Version 11.0 にアップグレードされました。  このアセンブリを参照するホスト アプリケーションでは、エラーが発生する可能性があります。  詳細については、「[データベース エンジン機能の重大な変更](http://go.microsoft.com/fwlink/?LinkId=224367)」を参照してください。  
+-   <span data-ttu-id="c4043-137">空間データ型を含むアセンブリ Microsoft.SqlServer.Types.dll は、Version 10.0 から Version 11.0 にアップグレードされました。</span><span class="sxs-lookup"><span data-stu-id="c4043-137">The assembly Microsoft.SqlServer.Types.dll, which contains the spatial data types, has been upgraded from version 10.0 to version 11.0.</span></span> <span data-ttu-id="c4043-138">このアセンブリを参照するホスト アプリケーションでは、エラーが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c4043-138">Applications that reference this assembly may fail.</span></span> <span data-ttu-id="c4043-139">詳細については、次を参照してください。[データベース エンジン機能の重大な変更](http://go.microsoft.com/fwlink/?LinkId=224367)です。</span><span class="sxs-lookup"><span data-stu-id="c4043-139">For more information, see [Breaking Changes to Database Engine Features](http://go.microsoft.com/fwlink/?LinkId=224367).</span></span>  
   
-## ADO.NET Entity Framework  
- [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] は、Entity Framework 5.0 を操作するときに、新しいシナリオを有効にする API を追加します。  Entity Framework 5.0 に追加された機能および機能強化に関する詳細については、「[新機能](http://go.microsoft.com/fwlink/?LinkID=251106)」と「[Entity Framework リリースおよびバージョン管理](http://go.microsoft.com/fwlink/?LinkId=234899)」を参照してください。  
+## <a name="adonet-entity-framework"></a><span data-ttu-id="c4043-140">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="c4043-140">ADO.NET Entity Framework</span></span>  
+ <span data-ttu-id="c4043-141">[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] は、Entity Framework 5.0 を操作するときに、新しいシナリオを有効にする API を追加します。</span><span class="sxs-lookup"><span data-stu-id="c4043-141">The [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] adds APIs that enable new scenarios when working with the Entity Framework 5.0.</span></span> <span data-ttu-id="c4043-142">および Entity Framework 5.0 に追加された機能強化の詳細については、次のトピックを参照してください:[新](http://go.microsoft.com/fwlink/?LinkID=251106)と[Entity Framework リリースおよびバージョン管理](http://go.microsoft.com/fwlink/?LinkId=234899)です。</span><span class="sxs-lookup"><span data-stu-id="c4043-142">For more information about improvements and features that were added to the Entity Framework 5.0, see the following topics: [What’s New](http://go.microsoft.com/fwlink/?LinkID=251106) and [Entity Framework Releases and Versioning](http://go.microsoft.com/fwlink/?LinkId=234899).</span></span>  
   
-## 参照  
- [ADO.NET](../../../../docs/framework/data/adonet/index.md)   
- [ADO.NET の概要](../../../../docs/framework/data/adonet/ado-net-overview.md)   
- [SQL Server と ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)   
- [What's New in WCF Data Services](http://msdn.microsoft.com/ja-jp/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="c4043-143">関連項目</span><span class="sxs-lookup"><span data-stu-id="c4043-143">See Also</span></span>  
+ [<span data-ttu-id="c4043-144">ADO.NET</span><span class="sxs-lookup"><span data-stu-id="c4043-144">ADO.NET</span></span>](../../../../docs/framework/data/adonet/index.md)  
+ [<span data-ttu-id="c4043-145">ADO.NET の概要</span><span class="sxs-lookup"><span data-stu-id="c4043-145">ADO.NET Overview</span></span>](../../../../docs/framework/data/adonet/ado-net-overview.md)  
+ [<span data-ttu-id="c4043-146">SQL Server と ADO.NET</span><span class="sxs-lookup"><span data-stu-id="c4043-146">SQL Server and ADO.NET</span></span>](../../../../docs/framework/data/adonet/sql/index.md)  
+ [<span data-ttu-id="c4043-147">WCF Data Services の新機能</span><span class="sxs-lookup"><span data-stu-id="c4043-147">What's New in WCF Data Services</span></span>](http://msdn.microsoft.com/en-us/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)  
+ [<span data-ttu-id="c4043-148">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="c4043-148">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

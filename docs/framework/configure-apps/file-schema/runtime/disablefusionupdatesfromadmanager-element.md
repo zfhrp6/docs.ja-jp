@@ -1,79 +1,81 @@
 ---
-title: "&lt;disableFusionUpdatesFromADManager&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<disableFusionUpdatesFromADManager> 要素"
-  - "disableFusionUpdatesFromADManager 要素"
+title: "&lt;disableFusionUpdatesFromADManager&gt;要素"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- disableFusionUpdatesFromADManager element
+- <disableFusionUpdatesFromADManager> element
 ms.assetid: 58d2866c-37bd-4ffa-abaf-ff35926a2939
-caps.latest.revision: 7
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: d4aa3343e7f3f60bbf6a57340d858c1ef12197bb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;disableFusionUpdatesFromADManager&gt; 要素
-アプリケーション ドメインの構成設定をランタイム ホストがオーバーライドできるという既定の動作を、無効にするかどうかを指定します。  
+# <a name="ltdisablefusionupdatesfromadmanagergt-element"></a><span data-ttu-id="db8ab-102">&lt;disableFusionUpdatesFromADManager&gt;要素</span><span class="sxs-lookup"><span data-stu-id="db8ab-102">&lt;disableFusionUpdatesFromADManager&gt; Element</span></span>
+<span data-ttu-id="db8ab-103">アプリケーション ドメインの構成設定をランタイム ホストが上書きする既定の動作を無効化するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="db8ab-103">Specifies whether the default behavior, which is to allow the runtime host to override configuration settings for an application domain, is disabled.</span></span>  
   
-## 構文  
+ <span data-ttu-id="db8ab-104">\<configuration > 要素</span><span class="sxs-lookup"><span data-stu-id="db8ab-104">\<configuration> Element</span></span>  
+<span data-ttu-id="db8ab-105">\<ランタイム > 要素</span><span class="sxs-lookup"><span data-stu-id="db8ab-105">\<runtime> Element</span></span>  
+<span data-ttu-id="db8ab-106">\<disableFusionUpdatesFromADManager ></span><span class="sxs-lookup"><span data-stu-id="db8ab-106">\<disableFusionUpdatesFromADManager></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="db8ab-107">構文</span><span class="sxs-lookup"><span data-stu-id="db8ab-107">Syntax</span></span>  
+  
+```xml  
 <disableFusionUpdatesFromADManager enabled="0|1"/>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="db8ab-108">属性および要素</span><span class="sxs-lookup"><span data-stu-id="db8ab-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="db8ab-109">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="db8ab-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="db8ab-110">属性</span><span class="sxs-lookup"><span data-stu-id="db8ab-110">Attributes</span></span>  
   
-|Attribute|説明|  
-|---------------|--------|  
-|enabled|必須の属性です。<br /><br /> Fusion の設定をオーバーライドする既定の機能を無効にするかどうかを指定します。|  
+|<span data-ttu-id="db8ab-111">属性</span><span class="sxs-lookup"><span data-stu-id="db8ab-111">Attribute</span></span>|<span data-ttu-id="db8ab-112">説明</span><span class="sxs-lookup"><span data-stu-id="db8ab-112">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="db8ab-113">enabled</span><span class="sxs-lookup"><span data-stu-id="db8ab-113">enabled</span></span>|<span data-ttu-id="db8ab-114">必須の属性です。</span><span class="sxs-lookup"><span data-stu-id="db8ab-114">Required attribute.</span></span><br /><br /> <span data-ttu-id="db8ab-115">Fusion の設定を上書きする既定の機能が無効になっているかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="db8ab-115">Specifies whether the default ability to override Fusion settings is disabled.</span></span>|  
   
-## enabled 属性  
+## <a name="enabled-attribute"></a><span data-ttu-id="db8ab-116">enabled 属性</span><span class="sxs-lookup"><span data-stu-id="db8ab-116">enabled Attribute</span></span>  
   
-|値|説明|  
-|-------|--------|  
-|0|Fusion の設定をオーバーライドする機能を無効にしません。  [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] 以降では、これが既定の動作です。|  
-|1|Fusion の設定をオーバーライドする機能を無効にします。  これにより、.NET Framework の以前のバージョンの動作に戻ります。|  
+|<span data-ttu-id="db8ab-117">値</span><span class="sxs-lookup"><span data-stu-id="db8ab-117">Value</span></span>|<span data-ttu-id="db8ab-118">説明</span><span class="sxs-lookup"><span data-stu-id="db8ab-118">Description</span></span>|  
+|-----------|-----------------|  
+|<span data-ttu-id="db8ab-119">0</span><span class="sxs-lookup"><span data-stu-id="db8ab-119">0</span></span>|<span data-ttu-id="db8ab-120">Fusion の設定を上書きする機能を無効にしないでください。</span><span class="sxs-lookup"><span data-stu-id="db8ab-120">Do not disable the ability to override Fusion settings.</span></span> <span data-ttu-id="db8ab-121">これは、以降で、既定の動作、[!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="db8ab-121">This is the default behavior, starting with the [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].</span></span>|  
+|<span data-ttu-id="db8ab-122">1</span><span class="sxs-lookup"><span data-stu-id="db8ab-122">1</span></span>|<span data-ttu-id="db8ab-123">Fusion の設定を上書きする機能を無効にします。</span><span class="sxs-lookup"><span data-stu-id="db8ab-123">Disable the ability to override Fusion settings.</span></span> <span data-ttu-id="db8ab-124">これは、.NET Framework の以前のバージョンの動作に戻ります。</span><span class="sxs-lookup"><span data-stu-id="db8ab-124">This reverts to the behavior of earlier versions of the .NET Framework.</span></span>|  
   
-### 子要素  
- なし。  
+### <a name="child-elements"></a><span data-ttu-id="db8ab-125">子要素</span><span class="sxs-lookup"><span data-stu-id="db8ab-125">Child Elements</span></span>  
+ <span data-ttu-id="db8ab-126">なし。</span><span class="sxs-lookup"><span data-stu-id="db8ab-126">None.</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="db8ab-127">親要素</span><span class="sxs-lookup"><span data-stu-id="db8ab-127">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
-|`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
+|<span data-ttu-id="db8ab-128">要素</span><span class="sxs-lookup"><span data-stu-id="db8ab-128">Element</span></span>|<span data-ttu-id="db8ab-129">説明</span><span class="sxs-lookup"><span data-stu-id="db8ab-129">Description</span></span>|  
+|-------------|-----------------|  
+|`configuration`|<span data-ttu-id="db8ab-130">共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。</span><span class="sxs-lookup"><span data-stu-id="db8ab-130">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="db8ab-131">アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="db8ab-131">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## 解説  
- [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] 以降の既定の動作では、<xref:System.AppDomainManager> オブジェクトが構成設定をオーバーライドできます。そのためには、<xref:System.AppDomainManager> の独自のサブクラスで、<xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=fullName> メソッドの実装に渡された <xref:System.AppDomainSetup> オブジェクトの <xref:System.AppDomainSetup.ConfigurationFile%2A> プロパティまたは <xref:System.AppDomainSetup.SetConfigurationBytes%2A> メソッドを使用します。  既定のアプリケーション ドメインでは、変更された設定によって、アプリケーション構成ファイルで指定された設定がオーバーライドされます。  その他のアプリケーション ドメインでは、<xref:System.AppDomainManager.CreateDomain%2A?displayProperty=fullName> メソッドまたは <xref:System.AppDomain.CreateDomain%2A?displayProperty=fullName> メソッドに渡された構成設定がオーバーライドされます。  
+## <a name="remarks"></a><span data-ttu-id="db8ab-132">コメント</span><span class="sxs-lookup"><span data-stu-id="db8ab-132">Remarks</span></span>  
+ <span data-ttu-id="db8ab-133">以降で、 [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]、既定の動作を許可するのには、<xref:System.AppDomainManager>を使用して構成設定を上書きするオブジェクト、<xref:System.AppDomainSetup.ConfigurationFile%2A>プロパティまたは<xref:System.AppDomainSetup.SetConfigurationBytes%2A>のメソッド、<xref:System.AppDomainSetup>実装に渡されるオブジェクト<xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType>のサブクラス内のメソッド<xref:System.AppDomainManager>です。</span><span class="sxs-lookup"><span data-stu-id="db8ab-133">Starting with the [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], the default behavior is to allow the <xref:System.AppDomainManager> object to override configuration settings by using the <xref:System.AppDomainSetup.ConfigurationFile%2A> property or the <xref:System.AppDomainSetup.SetConfigurationBytes%2A> method of the <xref:System.AppDomainSetup> object that is passed to your implementation of the <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> method, in your subclass of <xref:System.AppDomainManager>.</span></span> <span data-ttu-id="db8ab-134">既定のアプリケーション ドメインは、変更する設定は、アプリケーション構成ファイルで指定した設定を上書きします。</span><span class="sxs-lookup"><span data-stu-id="db8ab-134">For the default application domain, the settings you change override the settings that were specified by the application configuration file.</span></span> <span data-ttu-id="db8ab-135">渡された構成設定が上書きの他のアプリケーション ドメイン、<xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType>または<xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="db8ab-135">For other application domains, they override the configuration settings that were passed to the <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> or <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> method.</span></span>  
   
- 渡された構成情報を削除するには、新しい構成情報を渡すか、または null \(Visual Basic では `Nothing`\) を渡すことができます。  
+ <span data-ttu-id="db8ab-136">新しい構成情報を渡すか、null を渡します (`Nothing` Visual Basic で) で渡された構成情報を削除します。</span><span class="sxs-lookup"><span data-stu-id="db8ab-136">You can either pass new configuration information, or pass null (`Nothing` in Visual Basic) to eliminate configuration information that was passed in.</span></span>  
   
- 構成情報は、<xref:System.AppDomainSetup.ConfigurationFile%2A> プロパティと <xref:System.AppDomainSetup.SetConfigurationBytes%2A> メソッドのどちらか一方に渡すようにしてください。  両方に構成情報を渡した場合、<xref:System.AppDomainSetup.SetConfigurationBytes%2A> メソッドはアプリケーション構成ファイルの構成情報をオーバーライドするため、<xref:System.AppDomainSetup.ConfigurationFile%2A> プロパティに渡した情報は無視されます。  <xref:System.AppDomainSetup.ConfigurationFile%2A> プロパティを使用する場合は、<xref:System.AppDomainSetup.SetConfigurationBytes%2A> メソッドに null \(Visual Basic では `Nothing`\) を渡すことで、<xref:System.AppDomainManager.CreateDomain%2A?displayProperty=fullName> メソッドまたは <xref:System.AppDomain.CreateDomain%2A?displayProperty=fullName> メソッドの呼び出しで指定されたすべての構成バイトを削除できます。  
+ <span data-ttu-id="db8ab-137">両方に構成情報を渡さないでください、<xref:System.AppDomainSetup.ConfigurationFile%2A>プロパティおよび<xref:System.AppDomainSetup.SetConfigurationBytes%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="db8ab-137">Do not pass configuration information to both the <xref:System.AppDomainSetup.ConfigurationFile%2A> property and the <xref:System.AppDomainSetup.SetConfigurationBytes%2A> method.</span></span> <span data-ttu-id="db8ab-138">両方に構成情報を渡す場合、情報を渡す、<xref:System.AppDomainSetup.ConfigurationFile%2A>プロパティが無視されるため、<xref:System.AppDomainSetup.SetConfigurationBytes%2A>メソッドは、アプリケーション構成ファイルから構成情報をオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="db8ab-138">If you pass configuration information to both, the information you pass to the <xref:System.AppDomainSetup.ConfigurationFile%2A> property is ignored, because the <xref:System.AppDomainSetup.SetConfigurationBytes%2A> method overrides configuration information from the application configuration file.</span></span> <span data-ttu-id="db8ab-139">使用する場合、<xref:System.AppDomainSetup.ConfigurationFile%2A>プロパティが null を渡す (`Nothing` Visual Basic で) に、<xref:System.AppDomainSetup.SetConfigurationBytes%2A>への呼び出しで指定された構成バイトを取り除く方法、<xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType>または<xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="db8ab-139">If you use the <xref:System.AppDomainSetup.ConfigurationFile%2A> property, you can pass null (`Nothing` in Visual Basic) to the <xref:System.AppDomainSetup.SetConfigurationBytes%2A> method to eliminate any configuration bytes that were specified in the call to the <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> or <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> method.</span></span>  
   
- 構成情報に加えて、<xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=fullName> メソッドの実装に渡される <xref:System.AppDomainSetup> オブジェクトの設定も変更できます。変更できる設定には、<xref:System.AppDomainSetup.ApplicationBase%2A>、<xref:System.AppDomainSetup.ApplicationName%2A>、<xref:System.AppDomainSetup.CachePath%2A>、<xref:System.AppDomainSetup.DisallowApplicationBaseProbing%2A>、<xref:System.AppDomainSetup.DisallowBindingRedirects%2A>、<xref:System.AppDomainSetup.DisallowCodeDownload%2A>、<xref:System.AppDomainSetup.DisallowPublisherPolicy%2A>、<xref:System.AppDomainSetup.DynamicBase%2A>、<xref:System.AppDomainSetup.LoaderOptimization%2A>、<xref:System.AppDomainSetup.PrivateBinPath%2A>、<xref:System.AppDomainSetup.PrivateBinPathProbe%2A>、<xref:System.AppDomainSetup.ShadowCopyDirectories%2A>、および <xref:System.AppDomainSetup.ShadowCopyFiles%2A> があります。  
+ <span data-ttu-id="db8ab-140">次の設定を変更する構成情報に加えて、<xref:System.AppDomainSetup>の実装に渡されるオブジェクト、<xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType>メソッド: <xref:System.AppDomainSetup.ApplicationBase%2A>、 <xref:System.AppDomainSetup.ApplicationName%2A>、 <xref:System.AppDomainSetup.CachePath%2A>、 <xref:System.AppDomainSetup.DisallowApplicationBaseProbing%2A>、 <xref:System.AppDomainSetup.DisallowBindingRedirects%2A>、 <xref:System.AppDomainSetup.DisallowCodeDownload%2A>、 <xref:System.AppDomainSetup.DisallowPublisherPolicy%2A>、 <xref:System.AppDomainSetup.DynamicBase%2A>、 <xref:System.AppDomainSetup.LoaderOptimization%2A>、 <xref:System.AppDomainSetup.PrivateBinPath%2A>、 <xref:System.AppDomainSetup.PrivateBinPathProbe%2A>、 <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>、および<xref:System.AppDomainSetup.ShadowCopyFiles%2A>です。</span><span class="sxs-lookup"><span data-stu-id="db8ab-140">In addition to configuration information, you can change the following settings on the <xref:System.AppDomainSetup> object that is passed to your implementation of the <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> method: <xref:System.AppDomainSetup.ApplicationBase%2A>, <xref:System.AppDomainSetup.ApplicationName%2A>, <xref:System.AppDomainSetup.CachePath%2A>, <xref:System.AppDomainSetup.DisallowApplicationBaseProbing%2A>, <xref:System.AppDomainSetup.DisallowBindingRedirects%2A>, <xref:System.AppDomainSetup.DisallowCodeDownload%2A>, <xref:System.AppDomainSetup.DisallowPublisherPolicy%2A>, <xref:System.AppDomainSetup.DynamicBase%2A>, <xref:System.AppDomainSetup.LoaderOptimization%2A>, <xref:System.AppDomainSetup.PrivateBinPath%2A>, <xref:System.AppDomainSetup.PrivateBinPathProbe%2A>, <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>, and <xref:System.AppDomainSetup.ShadowCopyFiles%2A>.</span></span>  
   
- `<disableFusionUpdatesFromADManager>` 要素を使用する代わりに、レジストリ設定を作成するか環境変数を設定して、既定の動作を無効にすることもできます。  レジストリの場合、`HKCU\Software\Microsoft\.NETFramework` または `HKLM\Software\Microsoft\.NETFramework` の下に `COMPLUS_disableFusionUpdatesFromADManager` という名前の DWORD 値を作成し、その値を 1 に設定します。  コマンド ラインの場合、`COMPLUS_disableFusionUpdatesFromADManager` 環境変数を 1 に設定します。  
+ <span data-ttu-id="db8ab-141">使用する代わりに、`<disableFusionUpdatesFromADManager>`要素、ことができますを無効にする既定の動作または環境変数を設定して、レジストリ設定を作成します。</span><span class="sxs-lookup"><span data-stu-id="db8ab-141">As an alternative to using the `<disableFusionUpdatesFromADManager>` element, you can disable the default behavior by creating a registry setting or by setting an environment variable.</span></span> <span data-ttu-id="db8ab-142">レジストリで、という名前の DWORD 値を作成する`COMPLUS_disableFusionUpdatesFromADManager``HKCU\Software\Microsoft\.NETFramework`または`HKLM\Software\Microsoft\.NETFramework`、し、値を 1 に設定します。</span><span class="sxs-lookup"><span data-stu-id="db8ab-142">In the registry, create a DWORD value named `COMPLUS_disableFusionUpdatesFromADManager` under `HKCU\Software\Microsoft\.NETFramework` or `HKLM\Software\Microsoft\.NETFramework`, and set the value to 1.</span></span> <span data-ttu-id="db8ab-143">環境変数を設定、コマンドラインで`COMPLUS_disableFusionUpdatesFromADManager`を 1 にします。</span><span class="sxs-lookup"><span data-stu-id="db8ab-143">At the command line, set the environment variable `COMPLUS_disableFusionUpdatesFromADManager` to 1.</span></span>  
   
-## 使用例  
- 次のコード例は、`<disableFusionUpdatesFromADManager>` 要素を使用して、Fusion の設定をオーバーライドする機能を無効にする方法を示しています。  
+## <a name="example"></a><span data-ttu-id="db8ab-144">例</span><span class="sxs-lookup"><span data-stu-id="db8ab-144">Example</span></span>  
+ <span data-ttu-id="db8ab-145">次の例を使用して Fusion の設定を上書きする機能を無効にする方法を示しています、`<disableFusionUpdatesFromADManager>`要素。</span><span class="sxs-lookup"><span data-stu-id="db8ab-145">The following example shows how to disable the ability to override Fusion settings by using the `<disableFusionUpdatesFromADManager>` element.</span></span>  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <disableFusionUpdatesFromADManager enabled="1" />  
@@ -81,7 +83,7 @@ caps.handback.revision: 7
 </configuration>  
 ```  
   
-## 参照  
- [ランタイム設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [構成ファイル スキーマ](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [ランタイムがアセンブリを検索する方法](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+## <a name="see-also"></a><span data-ttu-id="db8ab-146">関連項目</span><span class="sxs-lookup"><span data-stu-id="db8ab-146">See Also</span></span>  
+ [<span data-ttu-id="db8ab-147">ランタイム設定スキーマ</span><span class="sxs-lookup"><span data-stu-id="db8ab-147">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="db8ab-148">構成ファイル スキーマ</span><span class="sxs-lookup"><span data-stu-id="db8ab-148">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="db8ab-149">ランタイムがアセンブリを検索する方法</span><span class="sxs-lookup"><span data-stu-id="db8ab-149">How the Runtime Locates Assemblies</span></span>](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

@@ -7,53 +7,46 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: b5d8c1c1-6844-4947-9759-c7f1b564bded
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f446e20f37a83e9effd2a378ce576640bca99763
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 696b1d3dd7312b52c28f11f64f007c29fb8a94b5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="about-the-systemnetpeertopeercollaboration-namespace"></a>System.Net.PeerToPeer.Collaboration 名前空間について
-<xref:System.Net.PeerToPeer.Collaboration> 名前空間は、ピア ツー ピア共同作業インフラストラクチャを使用してピア共同作業アクティビティを実装するために使用されるクラスと API を提供します。  
+# <a name="about-the-systemnetpeertopeercollaboration-namespace"></a><span data-ttu-id="9faff-102">System.Net.PeerToPeer.Collaboration 名前空間について</span><span class="sxs-lookup"><span data-stu-id="9faff-102">About the System.Net.PeerToPeer.Collaboration Namespace</span></span>
+<span data-ttu-id="9faff-103"><xref:System.Net.PeerToPeer.Collaboration> 名前空間は、ピア ツー ピア共同作業インフラストラクチャを使用してピア共同作業アクティビティを実装するために使用されるクラスと API を提供します。</span><span class="sxs-lookup"><span data-stu-id="9faff-103">The <xref:System.Net.PeerToPeer.Collaboration> namespace provides classes and APIs that are used to implement peer collaboration activities using the Peer-to-Peer Collaboration Infrastructure.</span></span>  
   
-## <a name="classes"></a>クラス  
- ピア ツー ピア共同作業アクティビティの実装に使用される主なクラスは次のとおりです。  
+## <a name="classes"></a><span data-ttu-id="9faff-104">クラス</span><span class="sxs-lookup"><span data-stu-id="9faff-104">Classes</span></span>  
+ <span data-ttu-id="9faff-105">ピア ツー ピア共同作業アクティビティの実装に使用される主なクラスは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="9faff-105">The main classes used in the implementation of a Peer-to-Peer Collaboration activity are:</span></span>  
   
--   ピアの連絡先を格納するために使用できる <xref:System.Net.PeerToPeer.Collaboration.ContactManager>。  
+-   <span data-ttu-id="9faff-106">ピアの連絡先を格納するために使用できる <xref:System.Net.PeerToPeer.Collaboration.ContactManager>。</span><span class="sxs-lookup"><span data-stu-id="9faff-106">The <xref:System.Net.PeerToPeer.Collaboration.ContactManager>, which can be used to store peer contacts.</span></span>  
   
--   ゲーム、チャット クライアント、または会議ソリューションなど、共同作業を行う <xref:System.Net.PeerToPeer.Collaboration.PeerApplication>。  
+-   <span data-ttu-id="9faff-107">ゲーム、チャット クライアント、または会議ソリューションなど、共同作業を行う <xref:System.Net.PeerToPeer.Collaboration.PeerApplication>。</span><span class="sxs-lookup"><span data-stu-id="9faff-107">The <xref:System.Net.PeerToPeer.Collaboration.PeerApplication> in which to collaborate, such as a game, chat client, or conferencing solution.</span></span>  
   
--   アクティビティで共同作業を行うピア。  これらのピアは <xref:System.Net.PeerToPeer.Collaboration.PeerContact>、<xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>、または <xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint> オブジェクトとして表すことができます。  
+-   <span data-ttu-id="9faff-108">アクティビティで共同作業を行うピア。</span><span class="sxs-lookup"><span data-stu-id="9faff-108">The peers that will be collaborating in an activity.</span></span>  <span data-ttu-id="9faff-109">これらのピアは <xref:System.Net.PeerToPeer.Collaboration.PeerContact>、<xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>、または <xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint> オブジェクトとして表すことができます。</span><span class="sxs-lookup"><span data-stu-id="9faff-109">These peers can be represented as <xref:System.Net.PeerToPeer.Collaboration.PeerContact>, <xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>, or <xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint> objects.</span></span>  
   
--   使用可能なアプリケーションと、そのアプリケーションに参加するピアを指定する、静的な <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> クラス自体。  
+-   <span data-ttu-id="9faff-110">使用可能なアプリケーションと、そのアプリケーションに参加するピアを指定する、静的な <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> クラス自体。</span><span class="sxs-lookup"><span data-stu-id="9faff-110">The static <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> class itself, which specifies which applications are available and which peers are participating in them.</span></span>  
   
- <xref:System.Net.PeerToPeer.Collaboration.PeerContact.Invite%2A> メソッドは、共同作業セッションにピアを招待するために使用されます。  呼び出し元のピアは、共同作業セッションに関連付けられているアプリケーション、オブジェクト、またはプレゼンス情報の更新を通知するイベントの別のピアにサブスクライブできます。 プレゼンス クラスは <xref:System.Net.PeerToPeer.Collaboration.Peer> が共同作業で使用可能かどうかを指定し、<xref:System.Net.PeerToPeer.Collaboration.PeerScope> クラスはピアに許可される参加レベルとして <xref:System.Net.PeerToPeer.Collaboration.PeerScope.Internet> (グローバル)、<xref:System.Net.PeerToPeer.Collaboration.PeerScope.NearMe> (サブネット) または <xref:System.Net.PeerToPeer.Collaboration.PeerScope.None> を指定するために使用されます。  
+ <span data-ttu-id="9faff-111"><xref:System.Net.PeerToPeer.Collaboration.PeerContact.Invite%2A> メソッドは、共同作業セッションにピアを招待するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="9faff-111">The <xref:System.Net.PeerToPeer.Collaboration.PeerContact.Invite%2A> methods are used to invite peers to a collaboration session.</span></span>  <span data-ttu-id="9faff-112">呼び出し元のピアは、共同作業セッションに関連付けられているアプリケーション、オブジェクト、またはプレゼンス情報の更新を通知するイベントの別のピアにサブスクライブできます。</span><span class="sxs-lookup"><span data-stu-id="9faff-112">A calling peer can subscribe to another peer for events that signal updates to application, object, or presence information affiliated with the collaboration session.</span></span> <span data-ttu-id="9faff-113">プレゼンス クラスは <xref:System.Net.PeerToPeer.Collaboration.Peer> が共同作業で使用可能かどうかを指定し、<xref:System.Net.PeerToPeer.Collaboration.PeerScope> クラスはピアに許可される参加レベルとして <xref:System.Net.PeerToPeer.Collaboration.PeerScope.Internet> (グローバル)、<xref:System.Net.PeerToPeer.Collaboration.PeerScope.NearMe> (サブネット) または <xref:System.Net.PeerToPeer.Collaboration.PeerScope.None> を指定するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="9faff-113">Presence classes specify whether a <xref:System.Net.PeerToPeer.Collaboration.Peer> is available for collaboration, and the <xref:System.Net.PeerToPeer.Collaboration.PeerScope> class is used to specify how much participation is allowed for a peer:  <xref:System.Net.PeerToPeer.Collaboration.PeerScope.Internet> (global), <xref:System.Net.PeerToPeer.Collaboration.PeerScope.NearMe>, (subnet) or <xref:System.Net.PeerToPeer.Collaboration.PeerScope.None>.</span></span>  
   
- 共同作業セッションは、次の 4 つの手順で構成されます。  
+ <span data-ttu-id="9faff-114">共同作業セッションは、次の 4 つの手順で構成されます。</span><span class="sxs-lookup"><span data-stu-id="9faff-114">A collaboration session is comprised of four steps:</span></span>  
   
--   検出。 アプリケーション、ピア、およびプレゼンス情報を検出または公開します。  たとえば、同じゲームをインストールしている、ローカル サブネット上の他のユーザーを見つけます。  
+-   <span data-ttu-id="9faff-115">検出。</span><span class="sxs-lookup"><span data-stu-id="9faff-115">Discovery.</span></span> <span data-ttu-id="9faff-116">アプリケーション、ピア、およびプレゼンス情報を検出または公開します。</span><span class="sxs-lookup"><span data-stu-id="9faff-116">Discover or publish applications, peers, and presence information.</span></span>  <span data-ttu-id="9faff-117">たとえば、同じゲームをインストールしている、ローカル サブネット上の他のユーザーを見つけます。</span><span class="sxs-lookup"><span data-stu-id="9faff-117">For instance, find other people on the local subnet that have the same games installed.</span></span>  
   
--   招待。 <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> セッションを開始する、またはそのセッションに参加するリモート ピア (複数可) のセキュリティで保護された招待状を送信および承諾します。  
+-   <span data-ttu-id="9faff-118">招待。</span><span class="sxs-lookup"><span data-stu-id="9faff-118">Invitation.</span></span> <span data-ttu-id="9faff-119"><xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> セッションを開始する、またはそのセッションに参加するリモート ピア (複数可) のセキュリティで保護された招待状を送信および承諾します。</span><span class="sxs-lookup"><span data-stu-id="9faff-119">Send and accept secure invitations for remote peer(s) to start or join <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> sessions.</span></span>  
   
--   連絡先の管理。 <xref:System.Net.PeerToPeer.Collaboration.ContactManager> に連絡先として検出されたピアを追加します。  
+-   <span data-ttu-id="9faff-120">連絡先の管理。</span><span class="sxs-lookup"><span data-stu-id="9faff-120">Contact Management.</span></span> <span data-ttu-id="9faff-121"><xref:System.Net.PeerToPeer.Collaboration.ContactManager> に連絡先として検出されたピアを追加します。</span><span class="sxs-lookup"><span data-stu-id="9faff-121">Add discovered peers as a contact to a <xref:System.Net.PeerToPeer.Collaboration.ContactManager>.</span></span>  
   
--   通信。 通信が確立されたら、<xref:System.Net> API、<xref:System.Net.PeerToPeer> API、または Windows Communication Foundation のピア チャネル クラス (マルチパーティ通信用) を使用します。  
+-   <span data-ttu-id="9faff-122">通信。</span><span class="sxs-lookup"><span data-stu-id="9faff-122">Communication.</span></span> <span data-ttu-id="9faff-123">通信が確立されたら、<xref:System.Net> API、<xref:System.Net.PeerToPeer> API、または Windows Communication Foundation のピア チャネル クラス (マルチパーティ通信用) を使用します。</span><span class="sxs-lookup"><span data-stu-id="9faff-123">When communication is established, use the <xref:System.Net> APIs, the <xref:System.Net.PeerToPeer> API, or the Windows Communication Foundation Peer Channel classes for multiparty communications.</span></span>  
   
- たとえば、ホスト ピアは共同作業セッションを開始し、<xref:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContact%2A> メソッドを利用して、リモート ピアとそのローカル ピアのいずれかをホスト ピアの Contact Manager に追加します。  その後、3 人のユーザーは独自のプライベート共同作業セッションに参加します。  
+ <span data-ttu-id="9faff-124">たとえば、ホスト ピアは共同作業セッションを開始し、<xref:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContact%2A> メソッドを利用して、リモート ピアとそのローカル ピアのいずれかをホスト ピアの Contact Manager に追加します。</span><span class="sxs-lookup"><span data-stu-id="9faff-124">For example, the host peer starts a collaboration session, and utilizes the <xref:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContact%2A> method to add a remote peer and one of its local peers to the Contact Manager of the host peer.</span></span>  <span data-ttu-id="9faff-125">その後、3 人のユーザーは独自のプライベート共同作業セッションに参加します。</span><span class="sxs-lookup"><span data-stu-id="9faff-125">The three users will then participate in their own private collaboration session.</span></span>  
   
- 一般的な P2P アプリケーションには、共有ノート作成機能またはホワイトボードを利用する電話会議、サーバーレスのチャット アプリケーション、双方向広告、およびオンライン ゲーム セッションなどがあります。  
+ <span data-ttu-id="9faff-126">一般的な P2P アプリケーションには、共有ノート作成機能またはホワイトボードを利用する電話会議、サーバーレスのチャット アプリケーション、双方向広告、およびオンライン ゲーム セッションなどがあります。</span><span class="sxs-lookup"><span data-stu-id="9faff-126">Typical P2P applications are: conference calls for collaborative note-taking or whiteboarding, serverless chat applications, interactive advertisements, and online gaming sessions.</span></span>  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a><span data-ttu-id="9faff-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="9faff-127">See Also</span></span>  
  <xref:System.Net.PeerToPeer.Collaboration>
-

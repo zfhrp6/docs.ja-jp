@@ -1,27 +1,30 @@
 ---
-title: "方法: WCF URL 予約を制限付きの予約に置き換える | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法: WCF URL 予約を制限付きの予約に置き換える"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9dd631f08f9367576adf97f9139348bfce69a92f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法: WCF URL 予約を制限付きの予約に置き換える
-URL 予約を使用すると、特定の URL または URL セットからメッセージを受信するユーザーを制限できます。予約は、URL テンプレート、アクセス制御リスト \(ACL\)、およびフラグのセットで構成されます。URL テンプレートは、予約の対象となる URL を定義します。URL テンプレートが処理される方法[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[受信要求のルーティング](http://go.microsoft.com/fwlink/?LinkId=136764)」を参照してください。ACL は、指定された URL からメッセージを受信できるユーザーまたはユーザー グループを制御します。フラグは、その予約で、ユーザーまたはグループに URL を直接リッスンする権限を与えるか、リッスンを他のプロセスに委任する権限を与えるかを指定します。  
+# <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a><span data-ttu-id="d27b9-102">方法: WCF URL 予約を制限付きの予約に置き換える</span><span class="sxs-lookup"><span data-stu-id="d27b9-102">How to: Replace the WCF URL Reservation with a Restricted Reservation</span></span>
+<span data-ttu-id="d27b9-103">URL 予約を使用すると、特定の URL または URL セットからメッセージを受信するユーザーを制限できます。</span><span class="sxs-lookup"><span data-stu-id="d27b9-103">A URL reservation allows you to restrict who can receive messages from a URL or a set of URLs.</span></span> <span data-ttu-id="d27b9-104">予約は、URL テンプレート、アクセス制御リスト (ACL)、およびフラグのセットで構成されます。</span><span class="sxs-lookup"><span data-stu-id="d27b9-104">A reservation consists of a URL template, an access control list (ACL), and a set of flags.</span></span> <span data-ttu-id="d27b9-105">URL テンプレートは、予約の対象となる URL を定義します。</span><span class="sxs-lookup"><span data-stu-id="d27b9-105">The URL template defines which URLs the reservation affects.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="d27b9-106">URL テンプレートが処理される方法を参照してください。[着信要求のルーティング](http://go.microsoft.com/fwlink/?LinkId=136764)です。</span><span class="sxs-lookup"><span data-stu-id="d27b9-106"> how URL templates are processed, see [Routing Incoming Requests](http://go.microsoft.com/fwlink/?LinkId=136764).</span></span> <span data-ttu-id="d27b9-107">ACL は、指定された URL からメッセージを受信できるユーザーまたはユーザー グループを制御します。</span><span class="sxs-lookup"><span data-stu-id="d27b9-107">The ACL controls what user or group of users is permitted to receive messages from the specified URLs.</span></span> <span data-ttu-id="d27b9-108">フラグは、その予約で、ユーザーまたはグループに URL を直接リッスンする権限を与えるか、リッスンを他のプロセスに委任する権限を与えるかを指定します。</span><span class="sxs-lookup"><span data-stu-id="d27b9-108">The flags indicate whether the reservation is to give a user or group permission to listen on the URL directly or to delegate the permission to listen to some other process.</span></span>  
   
- 既定のオペレーティング システム構成の一部として、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] はポート 80 に対してグローバルにアクセス可能な予約を作成します。これにより、すべてのユーザーは、双方向通信にデュアル HTTP バインディングを使用するアプリケーションを実行できます。この予約の ACL はすべてのユーザー向けなので、管理者は URL または URL セットをリッスンする権限を明示的に許可または拒否することはできません。このトピックでは、この予約を削除し、制限された ACL を使用する予約を再作成する方法について説明します。  
+ <span data-ttu-id="d27b9-109">既定のオペレーティング システム構成の一部として、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] はポート 80 に対してグローバルにアクセス可能な予約を作成します。これにより、すべてのユーザーは、双方向通信にデュアル HTTP バインディングを使用するアプリケーションを実行できます。</span><span class="sxs-lookup"><span data-stu-id="d27b9-109">As part of the default operating system configuration, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] creates a globally accessible reservation for port 80 to enable all users to run applications that use a dual HTTP binding for duplex communication.</span></span> <span data-ttu-id="d27b9-110">この予約の ACL はすべてのユーザー向けなので、管理者は URL または URL セットをリッスンする権限を明示的に許可または拒否することはできません。</span><span class="sxs-lookup"><span data-stu-id="d27b9-110">Because the ACL on this reservation is for everyone, administrators cannot explicitly allow or disallow permission to listen on a URL or set of URLs.</span></span> <span data-ttu-id="d27b9-111">このトピックでは、この予約を削除し、制限された ACL を使用する予約を再作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d27b9-111">This topic explains how to delete this reservation and how to re-create the reservation with a restricted ACL.</span></span>  
   
- [!INCLUDE[wv](../../../../includes/wv-md.md)] または [!INCLUDE[lserver](../../../../includes/lserver-md.md)] では、管理特権でのコマンド プロンプトから「`netsh http show urlacl`」と入力することで、すべての HTTP URL 予約を表示できます。次に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] URL 予約の例を示します。  
+ <span data-ttu-id="d27b9-112">[!INCLUDE[wv](../../../../includes/wv-md.md)] または [!INCLUDE[lserver](../../../../includes/lserver-md.md)] では、管理特権でのコマンド プロンプトから「`netsh http show urlacl`」と入力することで、すべての HTTP URL 予約を表示できます。</span><span class="sxs-lookup"><span data-stu-id="d27b9-112">On [!INCLUDE[wv](../../../../includes/wv-md.md)] or [!INCLUDE[lserver](../../../../includes/lserver-md.md)] you can view all of the HTTP URL reservations from an elevated command prompt by typing `netsh http show urlacl`.</span></span>  <span data-ttu-id="d27b9-113">次に [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] URL 予約の例を示します。</span><span class="sxs-lookup"><span data-stu-id="d27b9-113">The following example shows what a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] URL reservation should resemble.</span></span>  
   
 ```  
 Reserved URL : http://+:80/Temporary_Listen_Addresses/  
@@ -31,37 +34,37 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
             SDDL: D:(A;;GX;;;WD)  
 ```  
   
- この予約には、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションが双方向通信にデュアル HTTP バインディングを使用する際の URL テンプレートが含まれています。この形式の URL は、デュアル HTTP バインディングを介して通信する際に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントにメッセージを返信するために使用されます。すべてのユーザーに対して、URL をリッスンする権限が与えられていますが、リッスンを他のプロセスに委任する権限は与えられていません。また、ACL は SSDL \(Security Descriptor Definition Language\) で記述されています。SSDL [!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[SSDL](http://go.microsoft.com/fwlink/?LinkId=136789)」を参照してください。  
+ <span data-ttu-id="d27b9-114">この予約には、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションが双方向通信にデュアル HTTP バインディングを使用する際の URL テンプレートが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d27b9-114">The reservation consists of a URL template used when a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application is using an HTTP dual binding for duplex communication.</span></span> <span data-ttu-id="d27b9-115">この形式の URL は、デュアル HTTP バインディングを介して通信する際に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントにメッセージを返信するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="d27b9-115">URLs of this form are used for a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service to send messages back to the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client when communicating over a HTTP dual binding.</span></span> <span data-ttu-id="d27b9-116">すべてのユーザーに対して、URL をリッスンする権限が与えられていますが、リッスンを他のプロセスに委任する権限は与えられていません。</span><span class="sxs-lookup"><span data-stu-id="d27b9-116">Everyone is given permission to listen on the URL but not to delegate listening to another process.</span></span> <span data-ttu-id="d27b9-117">また、ACL は SSDL (Security Descriptor Definition Language) で記述されています。</span><span class="sxs-lookup"><span data-stu-id="d27b9-117">Finally, the ACL is described in Security Descriptor Definition Language (SSDL).</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="d27b9-118">SSDL を参照してください[SSDL](http://go.microsoft.com/fwlink/?LinkId=136789)</span><span class="sxs-lookup"><span data-stu-id="d27b9-118"> SSDL, see [SSDL](http://go.microsoft.com/fwlink/?LinkId=136789)</span></span>  
   
-### WCF URL 予約を削除するには  
+### <a name="to-delete-the-wcf-url-reservation"></a><span data-ttu-id="d27b9-119">WCF URL 予約を削除するには</span><span class="sxs-lookup"><span data-stu-id="d27b9-119">To delete the WCF URL reservation</span></span>  
   
-1.  **\[スタート\]** ボタンをクリックし、**\[すべてのプログラム\]**、**\[アクセサリ\]** の順にポイントします。次に、**\[コマンド プロンプト\]** を右クリックし、表示されるコンテキスト メニューで **\[管理者として実行\]** をクリックします。ユーザー アカウント制御 \(UAC\) のウィンドウで、続行するためのアクセス許可を要求された場合は、**\[続行\]** をクリックします。  
+1.  <span data-ttu-id="d27b9-120">をクリックして**開始**、 をポイント**すべてのプログラム**、 をクリックして**アクセサリ**を右クリックして**コマンド プロンプト** をクリック**として実行管理者**されるコンテキスト メニューの します。</span><span class="sxs-lookup"><span data-stu-id="d27b9-120">Click **Start**, point to **All Programs**, click **Accessories**, right-click **Command Prompt** and click **Run as Administrator** on the context menu that comes up.</span></span> <span data-ttu-id="d27b9-121">をクリックして**続行**ウィンドウで、ユーザー アカウント制御 (UAC) された続行するアクセス許可を要求する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d27b9-121">Click **Continue** on the User Account Control (UAC) window that might ask permissions to continue.</span></span>  
   
-2.  \[コマンド プロンプト\] ウィンドウに「**netsh http delete urlacl url\=http:\/\/\+:80\/Temporary\_Listen\_Addresses\/**」と入力します。  
+2.  <span data-ttu-id="d27b9-122">入力**netsh http 削除 urlacl url = http://+:80/Temporary_Listen_Addresses/**コマンド プロンプト ウィンドウで。</span><span class="sxs-lookup"><span data-stu-id="d27b9-122">Type in **netsh http delete urlacl url=http://+:80/Temporary_Listen_Addresses/** in the command prompt window.</span></span>  
   
-3.  予約が正常に削除されると、次のメッセージが表示されます。**URL reservation successfully deleted**  
+3.  <span data-ttu-id="d27b9-123">予約が正常に削除されると、次のメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="d27b9-123">If the reservation is deleted successfully, the following message is displayed.</span></span> <span data-ttu-id="d27b9-124">**URL 予約が正常に削除されました**</span><span class="sxs-lookup"><span data-stu-id="d27b9-124">**URL reservation successfully deleted**</span></span>  
   
-## 新しいセキュリティ グループおよび新しい制限付き URL 予約の作成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] URL 予約を制限付きの予約に置き換えるには、まず新しいセキュリティ グループを作成する必要があります。この操作は、コマンド プロンプトを使用する方法か、コンピューターの管理コンソールを使用する方法で行うことができます。行う必要があるのはいずれか一方のみです。  
+## <a name="creating-a-new-security-group-and-new-restricted-url-reservation"></a><span data-ttu-id="d27b9-125">新しいセキュリティ グループおよび新しい制限付き URL 予約の作成</span><span class="sxs-lookup"><span data-stu-id="d27b9-125">Creating a New Security Group and New Restricted URL Reservation</span></span>  
+ <span data-ttu-id="d27b9-126">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] URL 予約を制限付きの予約に置き換えるには、まず新しいセキュリティ グループを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d27b9-126">To replace the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] URL reservation with a restricted reservation you must first create a new security group.</span></span> <span data-ttu-id="d27b9-127">この操作は、コマンド プロンプトを使用する方法か、コンピューターの管理コンソールを使用する方法で行うことができます。</span><span class="sxs-lookup"><span data-stu-id="d27b9-127">You can do this in one of two ways: from a command prompt or from the computer management console.</span></span> <span data-ttu-id="d27b9-128">行う必要があるのはいずれか一方のみです。</span><span class="sxs-lookup"><span data-stu-id="d27b9-128">You only have to do one.</span></span>  
   
-#### コマンド プロンプトで新しいセキュリティ グループを作成するには  
+#### <a name="to-create-a-new-security-group-from-a-command-prompt"></a><span data-ttu-id="d27b9-129">コマンド プロンプトで新しいセキュリティ グループを作成するには</span><span class="sxs-lookup"><span data-stu-id="d27b9-129">To create a new security group from a command prompt</span></span>  
   
-1.  **\[スタート\]** ボタンをクリックし、**\[すべてのプログラム\]**、**\[アクセサリ\]** の順にポイントします。次に、**\[コマンド プロンプト\]** を右クリックし、表示されるコンテキスト メニューで **\[管理者として実行\]** をクリックします。ユーザー アカウント制御 \(UAC\) のウィンドウで、続行するためのアクセス許可を要求された場合は、**\[続行\]** をクリックします。  
+1.  <span data-ttu-id="d27b9-130">をクリックして**開始**、 をポイント**すべてのプログラム**、 をクリックして**アクセサリ**を右クリックして**コマンド プロンプト** をクリック**として実行管理者**されるコンテキスト メニューの します。</span><span class="sxs-lookup"><span data-stu-id="d27b9-130">Click **Start**, point to **All Programs**, click **Accessories**, right-click **Command Prompt** and click **Run as Administrator** on the context menu that comes up.</span></span> <span data-ttu-id="d27b9-131">をクリックして**続行**ウィンドウで、ユーザー アカウント制御 (UAC) された続行するアクセス許可を要求する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d27b9-131">Click **Continue** on the User Account Control (UAC) window that might ask permissions to continue.</span></span>  
   
-2.  コマンド プロンプトで、「**net localgroup "\<security group name\>" \/comment:"\<security group description\>" \/add**」と入力します。**\<security group name\>** は作成するセキュリティ グループの名前に、**\<security group description\>** はそのセキュリティ グループに適した説明に置き換えて入力してください。  
+2.  <span data-ttu-id="d27b9-132">入力**net localgroup"\<セキュリティ グループ名 >"/コメント:"\<セキュリティ グループの説明 >"を追加/**コマンド プロンプトでします。</span><span class="sxs-lookup"><span data-stu-id="d27b9-132">Type in **net localgroup "\<security group name>" /comment:"\<security group description>" /add** at the command prompt.</span></span> <span data-ttu-id="d27b9-133">置き換える**\<セキュリティ グループ名 >**を作成するセキュリティ グループの名前と**\<セキュリティ グループの説明 >**の適切な説明と、セキュリティ グループ。</span><span class="sxs-lookup"><span data-stu-id="d27b9-133">Replacing **\<security group name>** with the name of the security group you want to create and **\<security group description>** with a suitable description for the security group.</span></span>  
   
-3.  セキュリティ グループが正常に作成されると、次のメッセージが表示されます。**The command completed successfully.**  
+3.  <span data-ttu-id="d27b9-134">セキュリティ グループが正常に作成されると、次のメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="d27b9-134">If the security group is created successfully, the following message is displayed.</span></span> <span data-ttu-id="d27b9-135">**コマンドが正常に完了しました。**</span><span class="sxs-lookup"><span data-stu-id="d27b9-135">**The command completed successfully.**</span></span>  
   
-#### コンピューターの管理コンソールで新しいセキュリティ グループを作成するには  
+#### <a name="to-create-a-new-security-group-from-the-computer-management-console"></a><span data-ttu-id="d27b9-136">コンピューターの管理コンソールで新しいセキュリティ グループを作成するには</span><span class="sxs-lookup"><span data-stu-id="d27b9-136">To create a new security group from the computer management console</span></span>  
   
-1.  **\[スタート\]** ボタンをクリックして **\[コントロール パネル\]**、**\[管理ツール\]** の順にポイントし、**\[コンピューターの管理\]** をクリックしてコンピューターの管理コンソールを開きます。ユーザー アカウント制御 \(UAC\) のウィンドウで、続行するためのアクセス許可を要求された場合は、**\[続行\]** をクリックします。  
+1.  <span data-ttu-id="d27b9-137">をクリックして**開始**、 をクリックして**コントロール パネルの **、 をクリックして**管理ツール**、 をクリック**コンピューターの管理**を開くには、コンピューターを管理コンソールです。</span><span class="sxs-lookup"><span data-stu-id="d27b9-137">Click **Start**, click **Control Panel**, click **Administrative Tools**, and click **Computer Management** to open up the Computer Management Console.</span></span> <span data-ttu-id="d27b9-138">をクリックして**続行**ウィンドウで、ユーザー アカウント制御 (UAC) された続行するアクセス許可を要求する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d27b9-138">Click **Continue** on the User Account Control (UAC) window that might ask permissions to continue.</span></span>  
   
-2.  **\[システム ツール\]** をクリックして、**\[ローカル ユーザーとグループ\]** をクリックします。次に、**\[グループ\]** フォルダーを右クリックし、表示されるコンテキスト メニューで **\[新しいグループ\]** をクリックします。作成する新しいセキュリティ グループについて、**\[グループ名\]** や **\[説明\]** などの情報を入力し、**\[作成\]** をクリックしてセキュリティ グループを作成します。  
+2.  <span data-ttu-id="d27b9-139">をクリックして**システム ツール**、 をクリックして**ローカル ユーザーとグループ**を右クリックして**グループ**フォルダーをクリック**新規グループ**コンテキスト メニューを取得します。</span><span class="sxs-lookup"><span data-stu-id="d27b9-139">Click **System Tools**, click **Local Users and Groups**, right-click **Groups** folder and click **New Group** on the context menu that comes up.</span></span> <span data-ttu-id="d27b9-140">入力**グループ名**、**説明**およびその他の詳細をクリックしてこの新しいセキュリティ グループの**作成**セキュリティ グループを作成するボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="d27b9-140">Type in the desired **Group Name**, **Description** and other details of this new security group and click the **Create** button to create the security group.</span></span>  
   
-#### 制限付き URL 予約を作成するには  
+#### <a name="to-create-the-restricted-url-reservation"></a><span data-ttu-id="d27b9-141">制限付き URL 予約を作成するには</span><span class="sxs-lookup"><span data-stu-id="d27b9-141">To create the restricted URL reservation</span></span>  
   
-1.  **\[スタート\]** ボタンをクリックし、**\[すべてのプログラム\]**、**\[アクセサリ\]** の順にポイントします。次に、**\[コマンド プロンプト\]** を右クリックし、表示されるコンテキスト メニューで **\[管理者として実行\]** をクリックします。ユーザー アカウント制御 \(UAC\) のウィンドウで、続行するためのアクセス許可を要求された場合は、**\[続行\]** をクリックします。  
+1.  <span data-ttu-id="d27b9-142">をクリックして**開始**、 をポイント**すべてのプログラム**、 をクリックして**アクセサリ**を右クリックして**コマンド プロンプト** をクリック**として実行管理者**されるコンテキスト メニューの します。</span><span class="sxs-lookup"><span data-stu-id="d27b9-142">Click **Start**, point to **All Programs**, click **Accessories**, right-click **Command Prompt** and click **Run as Administrator** on the context menu that comes up.</span></span> <span data-ttu-id="d27b9-143">をクリックして**続行**ウィンドウで、ユーザー アカウント制御 (UAC) された続行するアクセス許可を要求する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d27b9-143">Click **Continue** on the User Account Control (UAC) window that might ask permissions to continue.</span></span>  
   
-2.  コマンド プロンプトで、「**netsh http add urlacl url\=http:\/\/\+:80\/Temporary\_Listen\_Addresses\/ user\="\<machine name\>\\\<security group name\>**」と入力します。**\<machine name\>** はグループを作成するコンピューター名に、**\<security group name\>** は上の手順で作成したセキュリティ グループ名に置き換えて入力してください。  
+2.  <span data-ttu-id="d27b9-144">入力**netsh http 追加 urlacl url = http://+: 80/Temporary_Listen_Addresses/ユーザー ="\<マシン名 >\\< セキュリティ グループ名\>**コマンド プロンプトで。</span><span class="sxs-lookup"><span data-stu-id="d27b9-144">Type in **netsh http add urlacl url=http://+:80/Temporary_Listen_Addresses/ user="\<machine name>\\<security group name\>** at the command prompt.</span></span> <span data-ttu-id="d27b9-145">置き換える**\<マシン名 >**をコンピューター名、グループを作成する必要がありますと**\<セキュリティ グループ名 >**を作成したセキュリティ グループの名前先に。</span><span class="sxs-lookup"><span data-stu-id="d27b9-145">Replacing **\<machine name>** with the computer name on which the group must be created and **\<security group name>** with the name of the security group you created previously.</span></span>  
   
-3.  予約が正常に作成されると、**URL reservation successfully added**.
+3.  <span data-ttu-id="d27b9-146">予約が正常に作成されると、</span><span class="sxs-lookup"><span data-stu-id="d27b9-146">If the reservation is created successfully, the following message is displayed.</span></span> <span data-ttu-id="d27b9-147">**URL 予約が正常に追加された**です。</span><span class="sxs-lookup"><span data-stu-id="d27b9-147">**URL reservation successfully added**.</span></span>

@@ -1,43 +1,46 @@
 ---
-title: "セッションとキュー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "セッションとキュー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 47d7c5c2-1e6f-4619-8003-a0ff67dcfbd6
-caps.latest.revision: 27
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 27
+caps.latest.revision: "27"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dffee557bea81c769038729a60b9d270f0f28c6b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# セッションとキュー
-このサンプルでは、メッセージ キュー \(MSMQ\) トランスポートを介して、キュー通信で一連の関連メッセージを送受信する方法を示します。このサンプルでは、`netMsmqBinding` バインディングを使用します。サービスは、自己ホスト型コンソール アプリケーションで、サービスがキュー内のメッセージを受信したかどうかを監視できます。  
+# <a name="sessions-and-queues"></a><span data-ttu-id="b282a-102">セッションとキュー</span><span class="sxs-lookup"><span data-stu-id="b282a-102">Sessions and Queues</span></span>
+<span data-ttu-id="b282a-103">このサンプルでは、メッセージ キュー (MSMQ) トランスポートを介して、キュー通信で一連の関連メッセージを送受信する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b282a-103">This sample demonstrates how to send and receive a set of related messages in queued communication over the Message Queuing (MSMQ) transport.</span></span> <span data-ttu-id="b282a-104">このサンプルでは、`netMsmqBinding` バインディングを使用します。</span><span class="sxs-lookup"><span data-stu-id="b282a-104">This sample uses the `netMsmqBinding` binding.</span></span> <span data-ttu-id="b282a-105">サービスは自己ホスト型コンソール アプリケーションであるので、キューに置かれたメッセージをサービスが受信するようすを観察できます。</span><span class="sxs-lookup"><span data-stu-id="b282a-105">The service is a self-hosted console application to enable you to observe the service receiving queued messages.</span></span>  
   
 > [!NOTE]
->  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
+>  <span data-ttu-id="b282a-106">このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b282a-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="b282a-107">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="b282a-107">The samples may already be installed on your machine.</span></span> <span data-ttu-id="b282a-108">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="b282a-108">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="b282a-109">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="b282a-109">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="b282a-110">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="b282a-110">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Session`  
   
- キュー通信では、クライアントはサービスとの通信にキューを使用します。厳密には、クライアントはメッセージをキューに送信します。サービスは、メッセージをキューから受信します。このため、キューを使用する通信では、サービスとクライアントは同時に実行されていなくてもかまいません。  
+ <span data-ttu-id="b282a-111">キュー通信では、クライアントはサービスとの通信にキューを使用します。</span><span class="sxs-lookup"><span data-stu-id="b282a-111">In queued communication, the client communicates to the service using a queue.</span></span> <span data-ttu-id="b282a-112">厳密には、クライアントはメッセージをキューに送信します。</span><span class="sxs-lookup"><span data-stu-id="b282a-112">More precisely, the client sends messages to a queue.</span></span> <span data-ttu-id="b282a-113">サービスは、メッセージをキューから受信します。</span><span class="sxs-lookup"><span data-stu-id="b282a-113">The service receives messages from the queue.</span></span> <span data-ttu-id="b282a-114">したがって、キューを使用する通信では、サービスとクライアントが同時に実行されていなくてもかまいません。</span><span class="sxs-lookup"><span data-stu-id="b282a-114">The service and client therefore, do not have to be running at the same time to communicate using a queue.</span></span>  
   
- クライアントは、グループ内で相互に関連する一連のメッセージを送信する場合があります。メッセージを一緒に処理するか、または特定の順序で処理する必要がある場合は、キューを使用すると、単一の受信側アプリケーションでの処理に対応するためにメッセージをグループ化できます。このことは、サーバーのグループに複数の受信側アプリケーションが存在する場合、メッセージのグループを同一の受信側アプリケーションで確実に処理する必要があるときに特に重要です。キューに置かれたセッションは、同時処理を行う必要がある一連の関連メッセージを送受信する目的で使用される機構です。キューに置かれたセッションには、このパターンを表すトランザクションが必要です。  
+ <span data-ttu-id="b282a-115">クライアントは、グループ内で相互に関連する一連のメッセージを送信する場合があります。</span><span class="sxs-lookup"><span data-stu-id="b282a-115">Sometimes, a client sends a set of messages that are related to each other in a group.</span></span> <span data-ttu-id="b282a-116">メッセージを一緒に処理するか、または特定の順序で処理する必要がある場合は、キューを使用すると、単一の受信側アプリケーションでの処理に対応するためにメッセージをグループ化できます。</span><span class="sxs-lookup"><span data-stu-id="b282a-116">When messages must be processed together or in a specified order, a queue can be used to group them together, for processing by a single receiving application.</span></span> <span data-ttu-id="b282a-117">このことは、サーバーのグループに複数の受信側アプリケーションが存在する場合、メッセージのグループを同一の受信側アプリケーションで確実に処理する必要があるときに特に重要です。</span><span class="sxs-lookup"><span data-stu-id="b282a-117">This is particularly important when there are several receiving applications on a group of servers and it is necessary to ensure that a group of messages is processed by the same receiving application.</span></span> <span data-ttu-id="b282a-118">キューに置かれたセッションは、同時処理を行う必要がある一連の関連メッセージを送受信する目的で使用される機構です。</span><span class="sxs-lookup"><span data-stu-id="b282a-118">Queued sessions are a mechanism used to send and receive a related set of messages that must get processed all at once.</span></span> <span data-ttu-id="b282a-119">キューに置かれたセッションには、このパターンを表すトランザクションが必要です。</span><span class="sxs-lookup"><span data-stu-id="b282a-119">Queued sessions require a transaction to exhibit this pattern.</span></span>  
   
- このサンプルでは、クライアントは、複数のメッセージを単一トランザクションのスコープ内にあるセッションの一部として、サービスに送信します。  
+ <span data-ttu-id="b282a-120">このサンプルでは、クライアントは、複数のメッセージを単一トランザクションのスコープ内にあるセッションの一部として、サービスに送信します。</span><span class="sxs-lookup"><span data-stu-id="b282a-120">In the sample, the client sends a number of messages to the service as part of a session within the scope of a single transaction.</span></span>  
   
- サービス コントラクトは `IOrderTaker` です。これは、キューでの使用に適した一方向サービスを定義します。このコントラクトに使用される <xref:System.ServiceModel.SessionMode> は、次のサンプル コードで示すように、メッセージがセッションの一部であることを示します。  
+ <span data-ttu-id="b282a-121">サービス コントラクトは `IOrderTaker` です。これは、キューでの使用に適した一方向サービスを定義します。</span><span class="sxs-lookup"><span data-stu-id="b282a-121">The service contract is `IOrderTaker`, which defines a one-way service that is suitable for use with queues.</span></span> <span data-ttu-id="b282a-122">このコントラクトに使用される <xref:System.ServiceModel.SessionMode> は、次のサンプル コードで示すように、メッセージがセッションの一部であることを示します。</span><span class="sxs-lookup"><span data-stu-id="b282a-122">The <xref:System.ServiceModel.SessionMode> used in the contract shown in the following sample code indicates that the messages are part of the session.</span></span>  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples", SessionMode=SessionMode.Required)]  
@@ -52,10 +55,9 @@ public interface IOrderTaker
     [OperationContract(IsOneWay = true)]  
     void EndPurchaseOrder();  
 }  
-  
 ```  
   
- このサービスは、最初の操作をトランザクションに参加させ、トランザクションを自動的に完了しないように、サービス操作を定義します。後続の操作も同じトランザクションに参加しますが、同様に自動的に完了しません。セッションの最後の操作は、トランザクションを自動的に完了します。つまりサービス コントラクトでは、複数の操作呼び出しで同じトランザクションが使用されます。任意の操作で例外がスローされた場合は、トランザクションはロールバックされてセッションはキューに戻ります。最後の操作が正常に完了すると、トランザクションはコミットされます。このサービスでは <xref:System.ServiceModel.InstanceContextMode> として `PerSession` を使用します。セッション内のすべてのメッセージをサービスの同じインスタンスで受信するためです。  
+ <span data-ttu-id="b282a-123">このサービスは、最初の操作をトランザクションに参加させ、トランザクションを自動的に完了しないように、サービス操作を定義します。</span><span class="sxs-lookup"><span data-stu-id="b282a-123">The service defines service operations in such a way that the first operation enlists in a transaction but does not automatically complete the transaction.</span></span> <span data-ttu-id="b282a-124">後続の操作も同じトランザクションに参加しますが、同様に自動的に完了しません。</span><span class="sxs-lookup"><span data-stu-id="b282a-124">Subsequent operations also enlist in the same transaction but do not automatically complete.</span></span> <span data-ttu-id="b282a-125">セッションの最後の操作は、トランザクションを自動的に完了します。</span><span class="sxs-lookup"><span data-stu-id="b282a-125">The last operation in the session automatically completes the transaction.</span></span> <span data-ttu-id="b282a-126">つまりサービス コントラクトでは、複数の操作呼び出しで同じトランザクションが使用されます。</span><span class="sxs-lookup"><span data-stu-id="b282a-126">Thus, the same transaction is used for several operation invocations in the service contract.</span></span> <span data-ttu-id="b282a-127">任意の操作で例外がスローされた場合は、トランザクションはロールバックされてセッションはキューに戻ります。</span><span class="sxs-lookup"><span data-stu-id="b282a-127">If any of the operations throw an exception, then the transaction rolls back and the session is put back into the queue.</span></span> <span data-ttu-id="b282a-128">最後の操作が正常に完了すると、トランザクションはコミットされます。</span><span class="sxs-lookup"><span data-stu-id="b282a-128">Upon successful completion of the last operation, the transaction is committed.</span></span> <span data-ttu-id="b282a-129">このサービスでは `PerSession` として <xref:System.ServiceModel.InstanceContextMode> を使用します。セッション内のすべてのメッセージをサービスの同じインスタンスで受信するためです。</span><span class="sxs-lookup"><span data-stu-id="b282a-129">The service uses `PerSession` as the <xref:System.ServiceModel.InstanceContextMode> to receive all messages in a session on the same instance of the service.</span></span>  
   
 ```  
 [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]  
@@ -91,7 +93,7 @@ public class OrderTakerService : IOrderTaker
 }  
 ```  
   
- サービスは自己ホスト型です。MSMQ トランスポートを使用する場合、使用するキューをあらかじめ作成しておく必要があります。手動で作成することもコードで作成することもできます。このサンプルでは、キューの存在を確認して、必要な場合は作成するための <xref:System.Messaging> コードがサービスに含まれています。キュー名は、<xref:System.Configuration.ConfigurationManager.AppSettings%2A> クラスを使用して構成ファイルから読み込まれます。  
+ <span data-ttu-id="b282a-130">サービスは自己ホスト型です。</span><span class="sxs-lookup"><span data-stu-id="b282a-130">The service is self hosted.</span></span> <span data-ttu-id="b282a-131">MSMQ トランスポートを使用する場合、使用するキューをあらかじめ作成しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="b282a-131">When using the MSMQ transport, the queue used must be created in advance.</span></span> <span data-ttu-id="b282a-132">手動で作成することもコードで作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="b282a-132">This can be done manually or through code.</span></span> <span data-ttu-id="b282a-133">このサンプルでは、キューの存在を確認して、必要な場合は作成するための <xref:System.Messaging> コードがサービスに含まれています。</span><span class="sxs-lookup"><span data-stu-id="b282a-133">In this sample, the service contains <xref:System.Messaging> code to check for the existence of the queue and creates it, if necessary.</span></span> <span data-ttu-id="b282a-134">キュー名は、<xref:System.Configuration.ConfigurationManager.AppSettings%2A> クラスを使用して構成ファイルから読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="b282a-134">The queue name is read from the configuration file using the <xref:System.Configuration.ConfigurationManager.AppSettings%2A> class.</span></span>  
   
 ```  
 // Host the service within this EXE console application.  
@@ -122,9 +124,9 @@ public static void Main()
 }  
 ```  
   
- MSMQ キュー名は、構成ファイルの appSettings セクションで指定されます。サービスのエンドポイントは、構成ファイルの system.serviceModel セクションで定義されます。このエンドポイントは `netMsmqBinding` バインディングを指定します。  
+ <span data-ttu-id="b282a-135">MSMQ キュー名は、構成ファイルの appSettings セクションで指定されます。</span><span class="sxs-lookup"><span data-stu-id="b282a-135">The MSMQ queue name is specified in an appSettings section of the configuration file.</span></span> <span data-ttu-id="b282a-136">サービスのエンドポイントは、構成ファイルの system.serviceModel セクションで定義されます。このエンドポイントは `netMsmqBinding` バインディングを指定します。</span><span class="sxs-lookup"><span data-stu-id="b282a-136">The endpoint for the service is defined in the system.serviceModel section of the configuration file and specifies the `netMsmqBinding` binding.</span></span>  
   
-```  
+```xml  
 <appSettings>  
   <!-- Use appSetting to configure MSMQ queue name. -->  
   <add key="queueName" value=".\private$\ServiceModelSamplesSession" />  
@@ -144,10 +146,9 @@ public static void Main()
   </services>  
   ...  
 <system.serviceModel>  
-  
 ```  
   
- クライアントはトランザクション スコープを作成します。セッション内のすべてのメッセージは、トランザクション スコープ内のキューに送信され、すべてのメッセージが成功か失敗かを示すアトミックな単位として扱われます。トランザクションは <xref:System.Transactions.TransactionScope.Complete%2A> を呼び出してコミットされます。  
+ <span data-ttu-id="b282a-137">クライアントはトランザクション スコープを作成します。</span><span class="sxs-lookup"><span data-stu-id="b282a-137">The client creates a transaction scope.</span></span> <span data-ttu-id="b282a-138">セッション内のすべてのメッセージは、トランザクション スコープ内のキューに送信され、すべてのメッセージが成功か失敗かを示すアトミックな単位として扱われます。</span><span class="sxs-lookup"><span data-stu-id="b282a-138">All messages in the session are sent to the queue within the transaction scope, causing it to be treated as an atomic unit where all messages succeed or fail.</span></span> <span data-ttu-id="b282a-139">トランザクションは <xref:System.Transactions.TransactionScope.Complete%2A> を呼び出してコミットされます。</span><span class="sxs-lookup"><span data-stu-id="b282a-139">The transaction is committed by calling <xref:System.Transactions.TransactionScope.Complete%2A>.</span></span>  
   
 ```  
 //Create a transaction scope.  
@@ -176,15 +177,14 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Requ
     // Complete the transaction.  
     scope.Complete();  
 }  
-  
 ```  
   
 > [!NOTE]
->  セッション内のすべてのメッセージに対して使用できるトランザクションは 1 つだけです。さらに、トランザクションをコミットする前にセッション内のすべてのメッセージを送信する必要があります。クライアントを閉じると、セッションも閉じられます。したがって、トランザクションが完了する前にクライアントを閉じ、セッション内のすべてのメッセージをキューに送信する必要があります。  
+>  <span data-ttu-id="b282a-140">セッション内のすべてのメッセージに対して使用できるトランザクションは 1 つだけです。さらに、トランザクションをコミットする前にセッション内のすべてのメッセージを送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b282a-140">You can use only a single transaction for all messages in the session and all messages in the session must be sent before committing the transaction.</span></span> <span data-ttu-id="b282a-141">クライアントを閉じると、セッションも閉じられます。</span><span class="sxs-lookup"><span data-stu-id="b282a-141">Closing the client closes the session.</span></span> <span data-ttu-id="b282a-142">したがって、トランザクションが完了する前にクライアントを閉じ、セッション内のすべてのメッセージをキューに送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b282a-142">Therefore, the client has to be closed before the transaction is completed to send all messages in the session to the queue.</span></span>  
   
- サンプルを実行すると、クライアントとサービスのアクティビティがサービスとクライアントの両方のコンソール ウィンドウに表示されます。サービスがクライアントからメッセージを受信するようすがわかります。どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。キューが使用されているので、クライアントとサービスが同時に実行されている必要はありません。クライアントを実行してシャットダウンした後にサービスを起動しても、サービスはメッセージを受信します。  
+ <span data-ttu-id="b282a-143">サンプルを実行すると、クライアントとサービスのアクティビティがサービスとクライアントの両方のコンソール ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="b282a-143">When you run the sample, the client and service activities are displayed in both the service and client console windows.</span></span> <span data-ttu-id="b282a-144">サービスがクライアントから受信したメッセージを表示できます。</span><span class="sxs-lookup"><span data-stu-id="b282a-144">You can see the service receive messages from the client.</span></span> <span data-ttu-id="b282a-145">どちらかのコンソールで Enter キーを押すと、サービスとクライアントがどちらもシャットダウンされます。</span><span class="sxs-lookup"><span data-stu-id="b282a-145">Press ENTER in each console window to shut down the service and client.</span></span> <span data-ttu-id="b282a-146">キューが使用されているので、クライアントとサービスが同時に実行されている必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b282a-146">Note that because queuing is in use, the client and service do not have to be up and running at the same time.</span></span> <span data-ttu-id="b282a-147">クライアントを実行してシャットダウンした後にサービスを起動しても、サービスはメッセージを受信します。</span><span class="sxs-lookup"><span data-stu-id="b282a-147">You can run the client, shut it down, and then start up the service and it still receives its messages.</span></span>  
   
- クライアント側  
+ <span data-ttu-id="b282a-148">クライアント側</span><span class="sxs-lookup"><span data-stu-id="b282a-148">On the client.</span></span>  
   
 ```  
 Purchase Order created  
@@ -195,7 +195,7 @@ Closing the purchase order
 Press <ENTER> to terminate client.  
 ```  
   
- サービス側  
+ <span data-ttu-id="b282a-149">サービス側</span><span class="sxs-lookup"><span data-stu-id="b282a-149">On the service.</span></span>  
   
 ```  
 The service is ready.  
@@ -215,21 +215,21 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
         Order status: Pending  
 ```  
   
-### サンプルを設定、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="b282a-150">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="b282a-150">To set up, build, and run the sample</span></span>  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  <span data-ttu-id="b282a-151">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="b282a-151">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  ソリューションの C\# 版、C\+\+ 版、または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  <span data-ttu-id="b282a-152">C#、C++、または Visual Basic .NET のバージョンのソリューションをビルドするの指示に従って、 [Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="b282a-152">To build the C#, C++, or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  単一コンピュータ構成か複数コンピュータ構成かに応じて、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+3.  <span data-ttu-id="b282a-153">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="b282a-153">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
- <xref:System.ServiceModel.NetMsmqBinding> を使用する場合の既定では、トランスポート セキュリティが有効です。MSMQ トランスポート セキュリティには、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> および <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> という名前の 2 つの関連プロパティがあります。既定では、認証モードは `Windows` に設定され、保護レベルは `Sign` に設定されます。MSMQ の認証機能と署名機能を利用するには、ドメインに MSMQ があることと、MSMQ に関する Active Directory の統合オプションがインストールされていることが必要です。この条件を満たしていないコンピュータでこのサンプルを実行すると、エラーが発生します。  
+ <span data-ttu-id="b282a-154"><xref:System.ServiceModel.NetMsmqBinding> を使用する場合の既定では、トランスポート セキュリティが有効です。</span><span class="sxs-lookup"><span data-stu-id="b282a-154">By default with the <xref:System.ServiceModel.NetMsmqBinding>, transport security is enabled.</span></span> <span data-ttu-id="b282a-155">つまり、MSMQ トランスポート セキュリティに関連する 2 つのプロパティがある<xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>と<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.`既定では、認証モードに設定`Windows`保護レベルに設定されていると`Sign`です。</span><span class="sxs-lookup"><span data-stu-id="b282a-155">There are two relevant properties for MSMQ transport security namely, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> and <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` By default, the authentication mode is set to `Windows` and the protection level is set to `Sign`.</span></span> <span data-ttu-id="b282a-156">MSMQ の認証機能と署名機能を利用するには、ドメインに MSMQ があることと、MSMQ に関する Active Directory の統合オプションがインストールされていることが必要です。</span><span class="sxs-lookup"><span data-stu-id="b282a-156">For MSMQ to provide the authentication and signing feature, it must be part of a domain and the active directory integration option for MSMQ must be installed.</span></span> <span data-ttu-id="b282a-157">この条件を満たしていないコンピューターでこのサンプルを実行すると、エラーになります。</span><span class="sxs-lookup"><span data-stu-id="b282a-157">If you run this sample on a computer that does not satisfy these criteria you receive an error.</span></span>  
   
-### ワークグループに属しているコンピュータまたは Active Directory 統合のないコンピュータでこのサンプルを実行するには  
+### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a><span data-ttu-id="b282a-158">ワークグループに属しているコンピューターまたは Active Directory 統合のないコンピューターでこのサンプルを実行するには</span><span class="sxs-lookup"><span data-stu-id="b282a-158">To run the sample on a computer joined to a workgroup or without active directory integration</span></span>  
   
-1.  ドメインに属していないコンピューター、または Active Directory 統合がインストールされていないコンピューターを使用する場合は、トランスポート セキュリティをオフにします。オフにするには、認証モードと保護レベルを `None` にします。この構成の例を次に示します。  
+1.  <span data-ttu-id="b282a-159">ドメインに属していないコンピューター、または Active Directory 統合がインストールされていないコンピューターを使用する場合は、トランスポート セキュリティをオフにします。オフにするには、認証モードと保護レベルを `None` にします。この構成の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b282a-159">If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration.</span></span>  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
       <services>  
         <service name="Microsoft.ServiceModel.Samples.OrderTakerService"  
@@ -274,9 +274,9 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
       </system.serviceModel>  
     ```  
   
-2.  サンプルを実行する前に、サーバーとクライアントの両方の構成を変更してください。  
+2.  <span data-ttu-id="b282a-160">サーバーとクライアントの両方の構成を変更したことを確認してから、サンプルを実行します。</span><span class="sxs-lookup"><span data-stu-id="b282a-160">Ensure that you change the configuration on both the server and the client before you run the sample.</span></span>  
   
     > [!NOTE]
-    >  セキュリティ モードを `None` に設定することは、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>、および `Message` のセキュリティを `None` に設定することと同じです。  
+    >  <span data-ttu-id="b282a-161">セキュリティ モードを `None` に設定することは、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>、および `Message` のセキュリティを `None` に設定することと同じです。</span><span class="sxs-lookup"><span data-stu-id="b282a-161">Setting security mode to `None` is equivalent to setting <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, and `Message` security to `None`.</span></span>  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="b282a-162">関連項目</span><span class="sxs-lookup"><span data-stu-id="b282a-162">See Also</span></span>

@@ -1,32 +1,38 @@
 ---
-title: "DataSet への既存の制約の追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataSet への既存の制約の追加"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 307d2809-208b-4cf8-b6a9-5d16f15fc16c
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 0e457113eff471c620ccdbf78337d2013d7a62bb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataSet への既存の制約の追加
-**DataAdapter** の **Fill** メソッドは、<xref:System.Data.DataSet> にデータ ソースからのテーブルの列および行だけを格納します。制約は一般にデータ ソースで設定されますが、既定では **Fill** メソッドは **DataSet** にスキーマ情報を追加しません。  データ ソースからの既存の主キー制約情報を **DataSet** に設定するには、**DataAdapter** の **FillSchema** メソッドを呼び出すか、または **Fill** を呼び出す前に **DataAdapter** の **MissingSchemaAction** プロパティを **AddWithKey** に設定します。  これにより、データ ソースの主キー制約が **DataSet** の主キー制約に反映されます。  外部キー制約情報はインクルードされないため、「[DataTable の制約](../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)」で示すように明示的に作成する必要があります。  
+# <a name="adding-existing-constraints-to-a-dataset"></a><span data-ttu-id="d9a7a-102">DataSet への既存の制約の追加</span><span class="sxs-lookup"><span data-stu-id="d9a7a-102">Adding Existing Constraints to a DataSet</span></span>
+<span data-ttu-id="d9a7a-103">**塗りつぶし**のメソッド、 **DataAdapter**塗りつぶします、<xref:System.Data.DataSet>のみテーブルの列およびデータ ソースからの行も制約は一般設定、データ ソースによって、 **を塗りつぶす**メソッドでは、このスキーマ情報には追加されません、**データセット**既定です。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-103">The **Fill** method of the **DataAdapter** fills a <xref:System.Data.DataSet> only with table columns and rows from a data source; though constraints are commonly set by the data source, the **Fill** method does not add this schema information to the **DataSet** by default.</span></span> <span data-ttu-id="d9a7a-104">設定する、**データセット**呼び出すかを使用してデータ ソースから既存の主キー制約情報できます、 **FillSchema**のメソッド、 **DataAdapter**、設定や、**MissingSchemaAction**のプロパティ、 **DataAdapter**に**AddWithKey**呼び出す前に**塗りつぶし**です。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-104">To populate a **DataSet** with existing primary key constraint information from a data source, you can either call the **FillSchema** method of the **DataAdapter**, or set the **MissingSchemaAction** property of the **DataAdapter** to **AddWithKey** before calling **Fill**.</span></span> <span data-ttu-id="d9a7a-105">これが主キーをにより、内の制約、**データセット**データ ソースに反映します。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-105">This will ensure that primary key constraints in the **DataSet** reflect those at the data source.</span></span> <span data-ttu-id="d9a7a-106">外部キー制約情報が含まれていないのように、明示的に作成する必要があります[DataTable の制約](../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)です。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-106">Foreign key constraint information is not included and must be created explicitly, as shown in [DataTable Constraints](../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md).</span></span>  
   
- **DataSet** 内にデータを格納する前にスキーマ情報を追加すると、主キー制約が **DataSet** 内の <xref:System.Data.DataTable> オブジェクトにインクルードされます。  その結果、**DataSet** に対して格納を行う追加の呼び出しを行ったとき、その主キー列情報を使用してデータ ソースから得られた新しい行と各 **DataTable** の現在の行を一致させ、各テーブルの現在のデータをデータ ソースのデータで上書きします。  スキーマ情報がないと、**DataSet** にデータ ソースからの新しい行が付け加えられ、重複行が発生します。  
+ <span data-ttu-id="d9a7a-107">スキーマ情報を追加する、**データセット**主キー制約に含まれているようにデータを設定する前に、<xref:System.Data.DataTable>内のオブジェクト、**データセット**です。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-107">Adding schema information to a **DataSet** before filling it with data ensures that primary key constraints are included with the <xref:System.Data.DataTable> objects in the **DataSet**.</span></span> <span data-ttu-id="d9a7a-108">その結果、追加時に入力への呼び出し、**データセット**が行われますが、プライマリ キー列情報を使用して、現在の行の各データ ソースから新しい行と一致**DataTable**との現在のデータテーブルは、データ ソースのデータで上書きされます。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-108">As a result, when additional calls to fill the **DataSet** are made, the primary key column information is used to match new rows from the data source with current rows in each **DataTable**, and current data in the tables is overwritten with data from the data source.</span></span> <span data-ttu-id="d9a7a-109">スキーマ情報がない場合、新しいデータ ソースから行が、**データセット**、その結果が重複する行にします。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-109">Without the schema information, the new rows from the data source are appended to the **DataSet**, resulting in duplicate rows.</span></span>  
   
 > [!NOTE]
->  データ ソースの列を自動インクリメント列として指定した場合は、**FillSchema** メソッド \(**MissingSchemaAction** を **AddWithKey** に設定した **Fill** メソッド\) が、**AutoIncrement** プロパティを `true` に設定した **DataColumn** を作成します。  ただし、**AutoIncrementStep** 値と **AutoIncrementSeed** 値は明示的に設定する必要があります。  自動インクリメント列の詳細については、「[AutoIncrement 列の作成](../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md)」を参照してください。  
+>  <span data-ttu-id="d9a7a-110">データ ソース内の列が自動インクリメントとして識別された場合、 **FillSchema**メソッド、または**塗りつぶし**メソッドを**MissingSchemaAction**の**AddWithKey**、作成、 **DataColumn**で、 **AutoIncrement**プロパティに設定`true`です。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-110">If a column in a data source is identified as auto-incrementing, the **FillSchema** method, or the **Fill** method with a **MissingSchemaAction** of **AddWithKey**, creates a **DataColumn** with an **AutoIncrement** property set to `true`.</span></span> <span data-ttu-id="d9a7a-111">ただしを設定する必要がありますには、 **AutoIncrementStep**と**AutoIncrementSeed**値を自分でします。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-111">However, you will need to set the **AutoIncrementStep** and **AutoIncrementSeed** values yourself.</span></span> <span data-ttu-id="d9a7a-112">自動インクリメント列の詳細については、次を参照してください。 [AutoIncrement 列の作成](../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md)です。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-112">For more information about auto-incrementing columns, see [Creating AutoIncrement Columns](../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md).</span></span>  
   
- **FillSchema** の使用や **MissingSchemaAction** の設定を **AddWithKey** にする場合、データ ソースで主キー列情報を確認するための追加の処理が必要になります。  この追加の処理によりパフォーマンスが低下する場合があります。  デザイン時に主キー情報がわかっている場合は、最適のパフォーマンスを得るために主キー列 \(複数の場合もある\) を明示的に指定することをお勧めします。  テーブルに関する主キー情報を明示的に設定する方法については、「[主キーの定義](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md)」を参照してください。  
+ <span data-ttu-id="d9a7a-113">使用して**FillSchema**またはの設定、 **MissingSchemaAction**に**AddWithKey**主キー列情報を確認するのにはデータ ソースで余分な処理が必要です。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-113">Using **FillSchema** or setting the **MissingSchemaAction** to **AddWithKey** requires extra processing at the data source to determine primary key column information.</span></span> <span data-ttu-id="d9a7a-114">この追加の処理によりパフォーマンスが低下する場合があります。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-114">This additional processing can hinder performance.</span></span> <span data-ttu-id="d9a7a-115">デザイン時に主キー情報がわかっている場合は、最適のパフォーマンスを得るために主キー列 (複数の場合もある) を明示的に指定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-115">If you know the primary key information at design time, we recommend that you explicitly specify the primary key column or columns in order to achieve optimal performance.</span></span> <span data-ttu-id="d9a7a-116">テーブルの主キーの情報を明示的に設定については、次を参照してください。[主キーを定義する](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md)です。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-116">For information about explicitly setting primary key information for a table, see [Defining Primary Keys](../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).</span></span>  
   
- **FillSchema** を使用して **DataSet** にスキーマ情報を追加する方法を次のコード サンプルに示します。  
+ <span data-ttu-id="d9a7a-117">次のコード例は、スキーマ情報を追加する方法を示しています、**データセット**を使用して**FillSchema**です。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-117">The following code example shows how to add schema information to a **DataSet** using **FillSchema**.</span></span>  
   
 ```vb  
 Dim custDataSet As DataSet = New DataSet()  
@@ -42,7 +48,7 @@ custAdapter.FillSchema(custDataSet, SchemaType.Source, "Customers");
 custAdapter.Fill(custDataSet, "Customers");  
 ```  
   
- **Fill** メソッドの **MissingSchemaAction.AddWithKey** プロパティを使用してスキーマ情報を **DataSet** に追加する方法を次のコード サンプルに示します。  
+ <span data-ttu-id="d9a7a-118">次のコード例は、スキーマ情報を追加する方法を示しています、**データセット**を使用して、 **MissingSchemaAction.AddWithKey**のプロパティ、**塗りつぶし**メソッドです。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-118">The following code example shows how to add schema information to a **DataSet** using the **MissingSchemaAction.AddWithKey** property of the **Fill** method.</span></span>  
   
 ```vb  
 Dim custDataSet As DataSet = New DataSet()  
@@ -58,14 +64,14 @@ custAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
 custAdapter.Fill(custDataSet, "Customers");  
 ```  
   
-## 複数の結果セットの処理  
- **DataAdapter** は、**SelectCommand** から返された複数の結果セットを検出すると **DataSet** に複数のテーブルを作成します。  これらのテーブルには、0 から始まるインクリメンタル既定名 **Table** *N* が割り当てられます。したがって "Table0" ではなく、**Table** から始まります。  テーブル名が **FillSchema** メソッドに引数として渡されると、0 からから始まるインクリメンタル名 **TableName** *N* が割り当てられます。ここでは、"TableName0" ではなく **TableName** から始まります。  
+## <a name="handling-multiple-result-sets"></a><span data-ttu-id="d9a7a-119">複数の結果セットの処理</span><span class="sxs-lookup"><span data-stu-id="d9a7a-119">Handling Multiple Result Sets</span></span>  
+ <span data-ttu-id="d9a7a-120">場合、 **DataAdapter**から返された複数の結果セットが発生した、 **SelectCommand**、複数のテーブルが作成されます、**データセット**です。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-120">If the **DataAdapter** encounters multiple result sets returned from the **SelectCommand**, it will create multiple tables in the **DataSet**.</span></span> <span data-ttu-id="d9a7a-121">テーブルが、0 から始まるインクリメンタル既定名を指定する**テーブル** *N*以降で、**テーブル**したがって"Table0"の代わりにします。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-121">The tables will be given a zero-based incremental default name of **Table** *N*, starting with **Table** instead of "Table0".</span></span> <span data-ttu-id="d9a7a-122">テーブル名がへの引数として渡されたかどうか、 **FillSchema**メソッド、テーブルがある、0 から始まるインクリメンタル名**TableName** *N*始まる**TableName** "TableName0"ではなくです。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-122">If a table name is passed as an argument to the **FillSchema** method, the tables will be given a zero-based incremental name of **TableName** *N*, starting with **TableName** instead of "TableName0".</span></span>  
   
 > [!NOTE]
->  **OleDbDataAdapter** オブジェクトの **FillSchema** メソッドが複数の結果セットを返すコマンドとして呼び出された場合は、最初の結果セットのスキーマ情報が返されます。  **OleDbDataAdapter** を使用して複数の結果セットのスキーマ情報を返すときは、**Fill** メソッドを呼び出すときに **AddWithKey** に設定した **MissingSchemaAction** を指定してスキーマ情報を取得することをお勧めします。  
+>  <span data-ttu-id="d9a7a-123">場合、 **FillSchema**のメソッド、 **OleDbDataAdapter**を複数の結果セットを返すコマンドのオブジェクトが呼び出されると、最初の結果セットからスキーマ情報のみが返されます。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-123">If the **FillSchema** method of the **OleDbDataAdapter** object is called for a command that returns multiple result sets, only the schema information from the first result set is returned.</span></span> <span data-ttu-id="d9a7a-124">ときに複数の結果のスキーマ情報セットを返すを使用して、 **OleDbDataAdapter**を指定することをお勧め、 **MissingSchemaAction**の**AddWithKey**呼び出すときに、スキーマ情報を取得し、**塗りつぶし**メソッドです。</span><span class="sxs-lookup"><span data-stu-id="d9a7a-124">When returning schema information for multiple result sets using the **OleDbDataAdapter**, it is recommended that you specify a **MissingSchemaAction** of **AddWithKey** and obtain the schema information when calling the **Fill** method.</span></span>  
   
-## 参照  
- [DataAdapter と DataReader](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)   
- [DataSets、DataTables、および DataViews](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [ADO.NET でのデータの取得および変更](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="d9a7a-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="d9a7a-125">See Also</span></span>  
+ [<span data-ttu-id="d9a7a-126">Dataadapter と Datareader</span><span class="sxs-lookup"><span data-stu-id="d9a7a-126">DataAdapters and DataReaders</span></span>](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
+ [<span data-ttu-id="d9a7a-127">DataSet、DataTable、および DataView</span><span class="sxs-lookup"><span data-stu-id="d9a7a-127">DataSets, DataTables, and DataViews</span></span>](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [<span data-ttu-id="d9a7a-128">ADO.NET でのデータの取得および変更</span><span class="sxs-lookup"><span data-stu-id="d9a7a-128">Retrieving and Modifying Data in ADO.NET</span></span>](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [<span data-ttu-id="d9a7a-129">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="d9a7a-129">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

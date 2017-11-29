@@ -1,32 +1,35 @@
 ---
-title: "厳密に型指定された拡張のサンプル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "厳密に型指定された拡張のサンプル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 02220f11-1a83-441c-9e5a-85f9a9367572
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e6fb08ab30a66d25d7150723e4329aabea9b6bb1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 厳密に型指定された拡張のサンプル
-このサンプルでは、例を示す目的で <xref:System.ServiceModel.Syndication.SyndicationFeed> クラスを使用します。ただし、このサンプルで示すパターンは、拡張データをサポートするすべての配信クラスで使用できます。  
+# <a name="strongly-typed-extensions-sample"></a><span data-ttu-id="ff958-102">厳密に型指定された拡張のサンプル</span><span class="sxs-lookup"><span data-stu-id="ff958-102">Strongly-Typed Extensions Sample</span></span>
+<span data-ttu-id="ff958-103">このサンプルでは、例を示す目的で <xref:System.ServiceModel.Syndication.SyndicationFeed> クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="ff958-103">The sample uses the <xref:System.ServiceModel.Syndication.SyndicationFeed> class for the purposes of the example.</span></span> <span data-ttu-id="ff958-104">ただし、このサンプルで示すパターンは、拡張データをサポートするすべての配信クラスで使用できます。</span><span class="sxs-lookup"><span data-stu-id="ff958-104">However, the patterns demonstrated in this sample can be used with all of the Syndication classes that support extension data.</span></span>  
   
- 配信オブジェクト モデル \(<xref:System.ServiceModel.Syndication.SyndicationFeed>、<xref:System.ServiceModel.Syndication.SyndicationItem>、および関連クラス\) は、<xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> プロパティおよび <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> プロパティを使用することにより、拡張データへの弱い型定義によるアクセスをサポートします。このサンプルでは、特定のアプリケーション固有の拡張を厳密に型指定されたプロパティとして使用できるようにする <xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> のカスタム派生クラスを実装することにより、拡張データへの厳密に型指定されたアクセスを提供する方法を示します。  
+ <span data-ttu-id="ff958-105">配信オブジェクト モデル (<xref:System.ServiceModel.Syndication.SyndicationFeed>、<xref:System.ServiceModel.Syndication.SyndicationItem>、および関連クラス) は、<xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> プロパティおよび <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> プロパティを使用することにより、拡張データへの弱い型定義によるアクセスをサポートします。</span><span class="sxs-lookup"><span data-stu-id="ff958-105">The Syndication object model (<xref:System.ServiceModel.Syndication.SyndicationFeed>, <xref:System.ServiceModel.Syndication.SyndicationItem>, and related classes) supports loosely-typed access to extension data by using the <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> and <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> properties.</span></span> <span data-ttu-id="ff958-106">このサンプルでは、特定のアプリケーション固有の拡張を厳密に型指定されたプロパティとして使用できるようにする <xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> のカスタム派生クラスを実装することにより、拡張データへの厳密に型指定されたアクセスを提供する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ff958-106">This sample shows how to provide strongly-typed access to extension data by implementing custom derived classes of <xref:System.ServiceModel.Syndication.SyndicationFeed> and <xref:System.ServiceModel.Syndication.SyndicationItem> that make available certain application-specific extensions as strongly-typed properties.</span></span>  
   
- 例として、このサンプルでは Atom Threading Extensions の RFC 案で定義された拡張要素を実装する方法を示しています。このサンプルは、使い方を示すために用意されたものであり、仕様案を完全に実装するためのものではありません。  
+ <span data-ttu-id="ff958-107">例として、このサンプルでは Atom Threading Extensions の RFC 案で定義された拡張要素を実装する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="ff958-107">As an example, this sample shows how to implement an extension element defined in the proposed Atom Threading Extensions RFC.</span></span> <span data-ttu-id="ff958-108">このサンプルは、使い方を示すために用意されたものであり、仕様案を完全に実装するためのものではありません。</span><span class="sxs-lookup"><span data-stu-id="ff958-108">This is for demonstration purposes only and this sample is not intended to be a full implementation of the proposed specification.</span></span>  
   
-## サンプル XML  
- 次の XML の例は、`<in-reply-to>` 拡張要素が追加された Atom 1.0 エントリを示しています。  
+## <a name="sample-xml"></a><span data-ttu-id="ff958-109">サンプル XML</span><span class="sxs-lookup"><span data-stu-id="ff958-109">Sample XML</span></span>  
+ <span data-ttu-id="ff958-110">次の XML の例は、`<in-reply-to>` 拡張要素が追加された Atom 1.0 エントリを示しています。</span><span class="sxs-lookup"><span data-stu-id="ff958-110">The following XML example shows an Atom 1.0 entry with an additional `<in-reply-to>` extension element.</span></span>  
   
-```  
+```xml  
 <entry>  
     <id>tag:example.org,2005:1,2</id>  
     <title type="text">Another response to the original</title>  
@@ -45,13 +48,12 @@ caps.handback.revision: 15
                      Even more data</aDifferentElement>  
     </in-reply-to>  
 </entry>  
-  
 ```  
   
- `<in-reply-to>` 要素は、3 つの必須の属性 \(`ref`、`type`、および `href`\) を指定しますが、拡張属性および拡張要素も追加できます。  
+ <span data-ttu-id="ff958-111">`<in-reply-to>`要素が 3 つの必須属性を指定します (`ref`、`type`と`href`) 中に、拡張機能の追加の属性と拡張機能の要素が存在することもできます。</span><span class="sxs-lookup"><span data-stu-id="ff958-111">The `<in-reply-to>` element specifies three required attributes (`ref`, `type` and `href`) while also allowing for the presence of additional extension attributes and extension elements.</span></span>  
   
-## In\-Reply\-To 要素のモデル化  
- このサンプルでは、`<in-reply-to>` 要素は <xref:System.Xml.Serialization.IXmlSerializable> を実装する CLR としてモデル化されており、<xref:System.Runtime.Serialization.DataContractSerializer> と共に使用できます。さらに、次のサンプル コードに示すように、要素のデータにアクセスするメソッドおよびプロパティも実装しています。  
+## <a name="modeling-the-in-reply-to-element"></a><span data-ttu-id="ff958-112">In-Reply-To 要素のモデル化</span><span class="sxs-lookup"><span data-stu-id="ff958-112">Modeling the In-Reply-To element</span></span>  
+ <span data-ttu-id="ff958-113">このサンプルでは、`<in-reply-to>` 要素は <xref:System.Xml.Serialization.IXmlSerializable> を実装する CLR としてモデル化されており、<xref:System.Runtime.Serialization.DataContractSerializer> と共に使用できます。</span><span class="sxs-lookup"><span data-stu-id="ff958-113">In this sample, the `<in-reply-to>` element is modeled as CLR that implements <xref:System.Xml.Serialization.IXmlSerializable>, which enables its use with the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span> <span data-ttu-id="ff958-114">さらに、次のサンプル コードに示すように、要素のデータにアクセスするメソッドおよびプロパティも実装しています。</span><span class="sxs-lookup"><span data-stu-id="ff958-114">It also implements some methods and properties for accessing the element’s data, as shown in the following sample code.</span></span>  
   
 ```  
 [XmlRoot(ElementName = "in-reply-to", Namespace = "http://contoso.org/syndication/thread/1.0")]  
@@ -92,12 +94,11 @@ public class InReplyToElement : IXmlSerializable
     public Uri Source  
     { get; set; }  
 }  
-  
 ```  
   
- `InReplyToElement` クラスは、必須の属性 \(`HRef`、`MediaType`、および `Source`\) のプロパティと共に、<xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> および <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> を保持するコレクションを実装します。  
+ <span data-ttu-id="ff958-115">`InReplyToElement` クラスは、必須の属性 (`HRef`、`MediaType`、および `Source`) のプロパティと共に、<xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> および <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> を保持するコレクションを実装します。</span><span class="sxs-lookup"><span data-stu-id="ff958-115">The `InReplyToElement` class implements properties for the required attribute (`HRef`, `MediaType`, and `Source`) as well as collections to hold <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> and <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A>.</span></span>  
   
- `InReplyToElement` クラスは、<xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装します。このインターフェイスは、オブジェクト インスタンスを XML から読み取る、または書き込む方法の直接制御を可能にします。`ReadXml` メソッドは、渡された <xref:System.Xml.XmlReader> から `Ref`、`HRef`、`Source`、および `MediaType` の各プロパティを最初に読み取ります。不明な属性は<xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> コレクションに格納されます。すべての属性が読み取られると、<xref:System.Xml.XmlReader.ReadStartElement> が呼び出されて、リーダーが次の要素に進みます。次のコードに示すように、このクラスによりモデル化された要素には必須の子がないので、子要素は `XElement` インスタンスにバッファされ、<xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> コレクションに格納されます。  
+ <span data-ttu-id="ff958-116">`InReplyToElement` クラスは、<xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装します。このインターフェイスは、オブジェクト インスタンスを XML から読み取る、または書き込む方法の直接制御を可能にします。</span><span class="sxs-lookup"><span data-stu-id="ff958-116">The `InReplyToElement` class implements the <xref:System.Xml.Serialization.IXmlSerializable> interface, which allows direct control over how object instances are read from and written to XML.</span></span> <span data-ttu-id="ff958-117">`ReadXml` メソッドは、渡された `Ref` から `HRef`、`Source`、`MediaType`、および <xref:System.Xml.XmlReader> の各プロパティを最初に読み取ります。</span><span class="sxs-lookup"><span data-stu-id="ff958-117">The `ReadXml` method first reads the values for the `Ref`, `HRef`, `Source`, and `MediaType` properties from the <xref:System.Xml.XmlReader> passed to it.</span></span> <span data-ttu-id="ff958-118">不明な属性は<xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> コレクションに格納されます。</span><span class="sxs-lookup"><span data-stu-id="ff958-118">Any unknown attributes are stored in the <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> collection.</span></span> <span data-ttu-id="ff958-119">すべての属性が読み取られると、<xref:System.Xml.XmlReader.ReadStartElement> が呼び出されて、リーダーが次の要素に進みます。</span><span class="sxs-lookup"><span data-stu-id="ff958-119">When all the attributes have been read, <xref:System.Xml.XmlReader.ReadStartElement> is called to advance the reader to the next element.</span></span> <span data-ttu-id="ff958-120">次のコードに示すように、このクラスによりモデル化された要素には必須の子がないので、子要素は `XElement` インスタンスにバッファされ、<xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> コレクションに格納されます。</span><span class="sxs-lookup"><span data-stu-id="ff958-120">Because the element modeled by this class has no required children, the child elements get buffered into `XElement` instances and stored in the <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> collection, as shown in the following code.</span></span>  
   
 ```  
 public void ReadXml(System.Xml.XmlReader reader)  
@@ -151,10 +152,9 @@ public void ReadXml(System.Xml.XmlReader reader)
         reader.ReadEndElement();  
     }  
 }  
-  
 ```  
   
- `WriteXml` では、`InReplyToElement` メソッドは最初に `Ref`、`HRef`、`Source`、および `MediaType` の各プロパティの値を XML 属性として書き込みます \(`WriteXml` は、実際の外側の要素自体は書き込みません。`WriteXml` により行われるためです\)。また、次のコードに示すように、<xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> および <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> の内容をライタに書き込みます。  
+ <span data-ttu-id="ff958-121">`WriteXml` では、`InReplyToElement` メソッドは最初に `Ref`、`HRef`、`Source`、および `MediaType` の各プロパティの値を XML 属性として書き込みます (`WriteXml` は、実際の外側の要素自体は書き込みません。`WriteXml` により行われるためです)。</span><span class="sxs-lookup"><span data-stu-id="ff958-121">In `WriteXml`, the `InReplyToElement` method first writes out the values of the `Ref`, `HRef`, `Source`, and `MediaType` properties as XML attributes (`WriteXml` is not responsible for writing the actual outer element itself, as that done by the caller of `WriteXml`).</span></span> <span data-ttu-id="ff958-122">また、次のコードに示すように、<xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> および <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> の内容をライタに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="ff958-122">It also writes the contents of the <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> and <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> to the writer, as shown in the following code.</span></span>  
   
 ```  
 public void WriteXml(System.Xml.XmlWriter writer)  
@@ -192,13 +192,12 @@ public void WriteXml(System.Xml.XmlWriter writer)
         element.WriteTo(writer);  
     }  
 }  
-  
 ```  
   
-## ThreadedFeed および ThreadedItem  
- このサンプルでは、`InReplyTo` 拡張が存在する `SyndicationItems` が `ThreadedItem` クラスによりモデル化されます。同様に、`ThreadedFeed` クラスは、項目が `ThreadedItem` のすべてのインスタンスである `SyndicationFeed` です。  
+## <a name="threadedfeed-and-threadeditem"></a><span data-ttu-id="ff958-123">ThreadedFeed および ThreadedItem</span><span class="sxs-lookup"><span data-stu-id="ff958-123">ThreadedFeed and ThreadedItem</span></span>  
+ <span data-ttu-id="ff958-124">このサンプルでは、`SyndicationItems` 拡張が存在する `InReplyTo` が `ThreadedItem` クラスによりモデル化されます。</span><span class="sxs-lookup"><span data-stu-id="ff958-124">In the sample, `SyndicationItems` with `InReplyTo` extensions are modeled by the `ThreadedItem` class.</span></span> <span data-ttu-id="ff958-125">同様に、`ThreadedFeed` クラスは、項目が `SyndicationFeed` のすべてのインスタンスである `ThreadedItem` です。</span><span class="sxs-lookup"><span data-stu-id="ff958-125">Similarly, the `ThreadedFeed` class is a `SyndicationFeed` whose items are all instances of `ThreadedItem`.</span></span>  
   
- `ThreadedFeed` クラスは、`SyndicationFeed` から継承され、`OnCreateItem` をオーバーライドして `ThreadedItem` を返します。また、次のコードに示すように、`Items` コレクションにアクセスするメソッドを `ThreadedItems` として実装します。  
+ <span data-ttu-id="ff958-126">`ThreadedFeed` クラスは、`SyndicationFeed` から継承され、`OnCreateItem` をオーバーライドして `ThreadedItem` を返します。</span><span class="sxs-lookup"><span data-stu-id="ff958-126">The `ThreadedFeed` class inherits from `SyndicationFeed` and overrides `OnCreateItem` to return a `ThreadedItem`.</span></span> <span data-ttu-id="ff958-127">また、次のコードに示すように、`Items` コレクションにアクセスするメソッドを `ThreadedItems` として実装します。</span><span class="sxs-lookup"><span data-stu-id="ff958-127">It also implements a method for accessing the `Items` collection as `ThreadedItems`, as shown in the following code.</span></span>  
   
 ```  
 public class ThreadedFeed : SyndicationFeed  
@@ -220,10 +219,9 @@ public class ThreadedFeed : SyndicationFeed
         return new ThreadedItem();  
     }  
 }  
-  
 ```  
   
- `ThreadedItem` クラスは `SyndicationItem` から継承され、`InReplyToElement` を厳密に型指定されたプロパティとします。これにより、`InReplyTo` 拡張データにプログラムによって簡単にアクセスできます。また、次のコードに示すように、その拡張データの読み取り\/書き込みを行う `TryParseElement` および `WriteElementExtensions` も実装します。  
+ <span data-ttu-id="ff958-128">`ThreadedItem` クラスは `SyndicationItem` から継承され、`InReplyToElement` を厳密に型指定されたプロパティとします。</span><span class="sxs-lookup"><span data-stu-id="ff958-128">The class `ThreadedItem` inherits from `SyndicationItem` and makes `InReplyToElement` as a strongly-typed property.</span></span> <span data-ttu-id="ff958-129">これにより、`InReplyTo` 拡張データにプログラムによって簡単にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="ff958-129">This provides for convenient programmatic access to the `InReplyTo` extension data.</span></span> <span data-ttu-id="ff958-130">また、次のコードに示すように、その拡張データの読み取り/書き込みを行う `TryParseElement` および `WriteElementExtensions` も実装します。</span><span class="sxs-lookup"><span data-stu-id="ff958-130">It also implements `TryParseElement` and `WriteElementExtensions` for reading and writing its extension data, as shown in the following code.</span></span>  
   
 ```  
 public class ThreadedItem : SyndicationItem  
@@ -280,24 +278,23 @@ public class ThreadedItem : SyndicationItem
         base.WriteElementExtensions(writer, version);  
     }  
 }  
-  
 ```  
   
-#### サンプルを設定、ビルド、および実行するには  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="ff958-131">サンプルをセットアップ、ビルド、および実行するには</span><span class="sxs-lookup"><span data-stu-id="ff958-131">To set up, build, and run the sample</span></span>  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  <span data-ttu-id="ff958-132">実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="ff958-132">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  <span data-ttu-id="ff958-133">ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="ff958-133">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  単一コンピューター構成か複数コンピューター構成かに応じて、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+3.  <span data-ttu-id="ff958-134">1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。</span><span class="sxs-lookup"><span data-stu-id="ff958-134">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="ff958-135">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="ff958-135">The samples may already be installed on your computer.</span></span> <span data-ttu-id="ff958-136">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="ff958-136">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="ff958-137">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="ff958-137">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="ff958-138">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="ff958-138">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StronglyTypedExtensions`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="ff958-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="ff958-139">See Also</span></span>

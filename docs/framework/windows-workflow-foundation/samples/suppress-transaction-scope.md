@@ -1,60 +1,64 @@
 ---
-title: "トランザクション スコープの抑制 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トランザクション スコープの抑制"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 49fb6dd4-30d4-4067-925c-c5de44c8c740
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e95262fc1aee6efb6fe63f06530b70c7c16f64b3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# トランザクション スコープの抑制
-このサンプルでは、アンビエント ランタイム トランザクションが存在する場合はそのトランザクションを抑制するカスタム `SuppressTransactionScope` アクティビティを作成する方法を示します。  
+# <a name="suppress-transaction-scope"></a><span data-ttu-id="b6867-102">トランザクション スコープの抑制</span><span class="sxs-lookup"><span data-stu-id="b6867-102">Suppress Transaction Scope</span></span>
+<span data-ttu-id="b6867-103">このサンプルでは、アンビエント ランタイム トランザクションが存在する場合はそのトランザクションを抑制するカスタム `SuppressTransactionScope` アクティビティを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b6867-103">The sample demonstrates how to author a custom `SuppressTransactionScope` activity to suppress the ambient run-time transaction, if present.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="b6867-104">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="b6867-104">The samples may already be installed on your machine.</span></span> <span data-ttu-id="b6867-105">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="b6867-105">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="b6867-106">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="b6867-106">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="b6867-107">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="b6867-107">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\SuppressTransactionScope`  
   
-## サンプルの詳細  
- このカスタム アクティビティを使用すると、トランザクション フローが特定のシナリオに適さない場合に、別のサービスにトランザクションがフローされないようにすることができます。ワークフロー ランタイムには <xref:System.Activities.NativeActivity> クラスのアンビエント トランザクションを抑制するためのサポートが組み込まれていますが、そのサポートを使用するには、このサンプルで示すようなカスタム <xref:System.Activities.NativeActivity> アクティビティを作成する必要があります。  
+## <a name="sample-details"></a><span data-ttu-id="b6867-108">サンプルの詳細</span><span class="sxs-lookup"><span data-stu-id="b6867-108">Sample Details</span></span>  
+ <span data-ttu-id="b6867-109">このカスタム アクティビティを使用すると、トランザクション フローが特定のシナリオに適さない場合に、別のサービスにトランザクションがフローされないようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="b6867-109">The custom activity is useful to prevent a transaction from being flowed out to another service if transaction flow is undesirable for the particular scenario.</span></span> <span data-ttu-id="b6867-110">ワークフロー ランタイムには <xref:System.Activities.NativeActivity> クラスのアンビエント トランザクションを抑制するためのサポートが組み込まれていますが、そのサポートを使用するには、このサンプルで示すようなカスタム <xref:System.Activities.NativeActivity> アクティビティを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b6867-110">The workflow runtime has built-in support for suppressing the ambient transaction in the <xref:System.Activities.NativeActivity> class, but to use this support it is necessary to author a custom <xref:System.Activities.NativeActivity> such as the one in this sample.</span></span>  
   
- このシナリオは、3 つの部分で構成されています。まず、<xref:System.Activities.Statements.TransactionScope> によって、アンビエントになるランタイム トランザクションが作成されます。これは、トランザクションのローカル識別子と分散識別子を出力するカスタム アクティビティによって検証されます。その後、トランザクションがリモート サービスにフローされてから、2 番目の部分が始まります。2 番目の部分では、ワークフローが `SuppressTransactionScope` に移り、トランザクション識別子を出力してトランザクションをフローさせるプロセスがもう一度繰り返されます。ただし、カスタム アクティビティでアンビエント トランザクションを探さないため、サービスにフローされるメッセージにはトランザクションが含まれません。その結果、サービスによってトランザクションが作成され、クライアントとサービスで出力される分散 ID が一致しなくなります。最後の部分は、`SuppressTransactionScope` が終了した後の部分です。分散識別子が最初のメッセージの識別子と一致する別のメッセージがサービスにフローされ、そのメッセージによる検証でランタイム トランザクションがもう一度アンビエントになります。  
+ <span data-ttu-id="b6867-111">このシナリオは、3 つの部分で構成されています。</span><span class="sxs-lookup"><span data-stu-id="b6867-111">The scenario consists of three parts.</span></span> <span data-ttu-id="b6867-112">まず、<xref:System.Activities.Statements.TransactionScope> によって、アンビエントになるランタイム トランザクションが作成されます。</span><span class="sxs-lookup"><span data-stu-id="b6867-112">First, a <xref:System.Activities.Statements.TransactionScope> creates a run-time transaction that becomes ambient.</span></span> <span data-ttu-id="b6867-113">これは、トランザクションのローカル識別子と分散識別子を出力するカスタム アクティビティによって検証されます。</span><span class="sxs-lookup"><span data-stu-id="b6867-113">This is verified by a custom activity that prints the local and distributed identifiers of the transaction.</span></span> <span data-ttu-id="b6867-114">その後、トランザクションがリモート サービスにフローされてから、2 番目の部分が始まります。</span><span class="sxs-lookup"><span data-stu-id="b6867-114">The transaction is then flowed to a remote service before beginning the second part.</span></span> <span data-ttu-id="b6867-115">2 番目の部分では、ワークフローが `SuppressTransactionScope` に移り、トランザクション識別子を出力してトランザクションをフローさせるプロセスがもう一度繰り返されます。</span><span class="sxs-lookup"><span data-stu-id="b6867-115">During the second part, the workflow enters a `SuppressTransactionScope` and again repeats the process of printing the transaction identifiers and flowing the transaction.</span></span> <span data-ttu-id="b6867-116">ただし、カスタム アクティビティでアンビエント トランザクションを探さないため、サービスにフローされるメッセージにはトランザクションが含まれません。</span><span class="sxs-lookup"><span data-stu-id="b6867-116">However, the custom activity does not find an ambient transaction and the message flowed to the service does not contain the transaction.</span></span> <span data-ttu-id="b6867-117">その結果、サービスによってトランザクションが作成され、クライアントとサービスで出力される分散 ID が一致しなくなります。</span><span class="sxs-lookup"><span data-stu-id="b6867-117">As a result, the service creates a transaction, which means the distributed ID printed on the client and service do not match.</span></span> <span data-ttu-id="b6867-118">最後の部分は、`SuppressTransactionScope` が終了した後の部分です。分散識別子が最初のメッセージの識別子と一致する別のメッセージがサービスにフローされ、そのメッセージによる検証でランタイム トランザクションがもう一度アンビエントになります。</span><span class="sxs-lookup"><span data-stu-id="b6867-118">The final part occurs after the `SuppressTransactionScope` exits and the run-time transaction again becomes ambient as verified by another message to the service with a distributed identifier that matches the identifier of the first message.</span></span>  
   
- アクティビティ自体は、子アクティビティをスケジュールして実行プロパティを追加する必要があるため、<xref:System.Activities.NativeActivity> から派生します。`SuppressTransactionScope` には、<xref:System.Activities.RuntimeTransactionHandle> 型の <xref:System.Activities.Variable> が含まれます。ハンドルを初期化する必要があるため、<xref:System.Activities.RuntimeTransactionHandle> 型のインスタンス フィールドではなく、この変数を使用する必要があります。`Variable<RuntimeTransactionHandle>` は内部でのみ使用されるため、実装変数としてアクティビティのメタデータに追加されます。  
+ <span data-ttu-id="b6867-119">アクティビティ自体は、子アクティビティをスケジュールして実行プロパティを追加する必要があるため、<xref:System.Activities.NativeActivity> から派生します。</span><span class="sxs-lookup"><span data-stu-id="b6867-119">The activity itself derives from <xref:System.Activities.NativeActivity> because it must schedule a child activity and add an execution property.</span></span> <span data-ttu-id="b6867-120">`SuppressTransactionScope` には、<xref:System.Activities.Variable> 型の <xref:System.Activities.RuntimeTransactionHandle> が含まれます。ハンドルを初期化する必要があるため、<xref:System.Activities.RuntimeTransactionHandle> 型のインスタンス フィールドではなく、この変数を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b6867-120">The `SuppressTransactionScope` has a <xref:System.Activities.Variable> of type <xref:System.Activities.RuntimeTransactionHandle>, which must be used rather than an instance field of type <xref:System.Activities.RuntimeTransactionHandle> because the handle must be initialized.</span></span> <span data-ttu-id="b6867-121">`Variable<RuntimeTransactionHandle>` は内部でのみ使用されるため、実装変数としてアクティビティのメタデータに追加されます。</span><span class="sxs-lookup"><span data-stu-id="b6867-121">The `Variable<RuntimeTransactionHandle>` is added to the activity’s metadata as an implementation variable because it is only used internally.</span></span>  
   
- アクティビティを実行すると、まず本体が指定されているかどうかがチェックされ、指定されていれば <xref:System.Activities.RuntimeTransactionHandle> に `SuppressTransaction` プロパティが設定されます。このプロパティは、設定されると実行プロパティに追加され、アンビエントになります。つまり、`SuppressTransactionScope` のすべての子アクティビティがこのプロパティを参照できるようになります。これにより、ランタイム トランザクションの抑制が適用され、入れ子になった <xref:System.Activities.Statements.TransactionScope> で例外がスローされます。実行プロパティにハンドルが追加されると、本体の実行がスケジュールされます。  
+ <span data-ttu-id="b6867-122">アクティビティを実行すると、まず本体が指定されているかどうかがチェックされ、指定されていれば `SuppressTransaction` に <xref:System.Activities.RuntimeTransactionHandle> プロパティが設定されます。</span><span class="sxs-lookup"><span data-stu-id="b6867-122">When the activity is executed it first checks to see whether a body was specified and if so, sets the `SuppressTransaction` property on the <xref:System.Activities.RuntimeTransactionHandle>.</span></span> <span data-ttu-id="b6867-123">このプロパティは、設定されると実行プロパティに追加され、アンビエントになります。</span><span class="sxs-lookup"><span data-stu-id="b6867-123">Once the property is set, it is added to the execution properties and becomes ambient.</span></span> <span data-ttu-id="b6867-124">つまり、`SuppressTransactionScope` のすべての子アクティビティがこのプロパティを参照できるようになります。これにより、ランタイム トランザクションの抑制が適用され、入れ子になった <xref:System.Activities.Statements.TransactionScope> で例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="b6867-124">This means that any activity that is a child of the `SuppressTransactionScope` is able to see the property and therefore enforces the suppression of the run-time transaction and causes a nested <xref:System.Activities.Statements.TransactionScope> to throw an exception.</span></span> <span data-ttu-id="b6867-125">実行プロパティにハンドルが追加されると、本体の実行がスケジュールされます。</span><span class="sxs-lookup"><span data-stu-id="b6867-125">Once the handle is added to the execution properties the body is scheduled to run.</span></span>  
   
-#### このサンプルを使用するには  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="b6867-126">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="b6867-126">To use this sample</span></span>  
   
-1.  [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] で SuppressTransactionScope.sln ソリューションを開きます。  
+1.  <span data-ttu-id="b6867-127">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] で SuppressTransactionScope.sln ソリューションを開きます。</span><span class="sxs-lookup"><span data-stu-id="b6867-127">Open the SuppressTransactionScope.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
   
-2.  ソリューションをビルドするには、CTRL キーと SHIFT キーを押したまま B キーを押すか、**\[ビルド\]** メニューの **\[ソリューションのビルド\]** を選択します。  
+2.  <span data-ttu-id="b6867-128">ソリューションをビルドするには、ctrl キーと shift キーを押しながら B キーを押してまたは選択**ソリューションのビルド**から、**ビルド**メニュー。</span><span class="sxs-lookup"><span data-stu-id="b6867-128">To build the solution, press CTRL+SHIFT+B or select **Build Solution** from the **Build** menu.</span></span>  
   
-3.  ビルドが完了したら、ソリューションを右クリックし、**\[スタートアップ プロジェクトの設定\]** をクリックします。ダイアログで、**\[マルチ スタートアップ プロジェクト\]** を選択し、両方のプロジェクトのアクションが **\[開始\]** になっていることを確認します。  
+3.  <span data-ttu-id="b6867-129">ビルドが成功した後、ソリューションを右クリックし  **スタートアップ プロジェクトの**します。</span><span class="sxs-lookup"><span data-stu-id="b6867-129">Once the build has succeeded, right-click the solution and select **Set Startup Projects**.</span></span> <span data-ttu-id="b6867-130">ダイアログ ボックスで、次のように選択します。**マルチ スタートアップ プロジェクト**両方のプロジェクトのアクションを確認してください**開始**です。</span><span class="sxs-lookup"><span data-stu-id="b6867-130">From the dialog, select **Multiple Startup Projects** and ensure the action for both projects is **Start**.</span></span>  
   
-4.  F5 キーを押すか、**\[デバッグ\]** メニューの **\[デバッグ開始\]** をクリックします。または、Ctrl キーを押しながら F5 キーを押すか、**\[デバッグ\]** メニューの **\[デバッグなしで開始\]** をクリックして、デバッグ機能なしで実行します。  
+4.  <span data-ttu-id="b6867-131">F5 キーを押すか、選択**デバッグの開始**から、**デバッグ**メニュー。</span><span class="sxs-lookup"><span data-stu-id="b6867-131">Press F5 or select **Start Debugging** from the **Debug** menu.</span></span> <span data-ttu-id="b6867-132">または、ctrl キーを押しながら f5 キーを押してまたは選択**デバッグなしで開始**から、**デバッグ**] メニューの [デバッグなしで実行します。</span><span class="sxs-lookup"><span data-stu-id="b6867-132">Alternatively, you can press CTRL+F5 or select **Start Without Debugging** from the **Debug** menu to run without debugging.</span></span>  
   
     > [!NOTE]
-    >  クライアントを起動する前に、サーバーを起動しておく必要があります。サービスをホストするコンソール ウィンドウの出力で、起動された時間が示されます。  
+    >  <span data-ttu-id="b6867-133">クライアントを起動する前に、サーバーを起動しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="b6867-133">The server must be running prior to starting the client.</span></span> <span data-ttu-id="b6867-134">サービスをホストするコンソール ウィンドウの出力で、起動された時間が示されます。</span><span class="sxs-lookup"><span data-stu-id="b6867-134">The output from the console window that hosts the service indicates when it has started.</span></span>  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  <span data-ttu-id="b6867-135">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="b6867-135">The samples may already be installed on your machine.</span></span> <span data-ttu-id="b6867-136">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="b6867-136">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  <span data-ttu-id="b6867-137">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="b6867-137">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="b6867-138">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="b6867-138">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\SuppressTransactionScope`  
   
-## 参照
+## <a name="see-also"></a><span data-ttu-id="b6867-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="b6867-139">See Also</span></span>

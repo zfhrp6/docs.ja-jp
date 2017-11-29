@@ -5,73 +5,66 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+dev_langs: cpp
 helpviewer_keywords:
 - platform invoke, marshaling data
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: dc5c76cf-7b12-406f-b79c-d1a023ec245d
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 70383e7623852935c0192e700b798a5f0ec554aa
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 71a4962029c0056287e97ea56dc02ae6cef8b603
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="marshaling-data-with-platform-invoke"></a>プラットフォーム呼び出しによるデータのマーシャリング
-アンマネージ ライブラリからエクスポートされた関数を呼び出すには、.NET Framework アプリケーションで、マネージ コード内にアンマネージ関数を表す関数プロトタイプが必要です。 プラットフォーム呼び出しがデータを正しくマーシャリングできるようにするプロトタイプを作成するには、次のことを実行する必要があります。  
+# <a name="marshaling-data-with-platform-invoke"></a><span data-ttu-id="4b9ad-102">プラットフォーム呼び出しによるデータのマーシャリング</span><span class="sxs-lookup"><span data-stu-id="4b9ad-102">Marshaling Data with Platform Invoke</span></span>
+<span data-ttu-id="4b9ad-103">アンマネージ ライブラリからエクスポートされた関数を呼び出すには、.NET Framework アプリケーションで、マネージ コード内にアンマネージ関数を表す関数プロトタイプが必要です。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-103">To call functions exported from an unmanaged library, a .NET Framework application requires a function prototype in managed code that represents the unmanaged function.</span></span> <span data-ttu-id="4b9ad-104">プラットフォーム呼び出しがデータを正しくマーシャリングできるようにするプロトタイプを作成するには、次のことを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-104">To create a prototype that enables platform invoke to marshal data correctly, you must do the following:</span></span>  
   
--   <xref:System.Runtime.InteropServices.DllImportAttribute> 属性をマネージ コード内の静的関数またはメソッドに適用します。  
+-   <span data-ttu-id="4b9ad-105"><xref:System.Runtime.InteropServices.DllImportAttribute> 属性をマネージ コード内の静的関数またはメソッドに適用します。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-105">Apply the <xref:System.Runtime.InteropServices.DllImportAttribute> attribute to the static function or method in managed code.</span></span>  
   
--   アンマネージ データ型をマネージ データ型に置き換えます。  
+-   <span data-ttu-id="4b9ad-106">アンマネージ データ型をマネージ データ型に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-106">Substitute managed data types for unmanaged data types.</span></span>  
   
- アンマネージ関数に付属のドキュメントを使用して、属性とその省略可能なフィールドを適用し、アンマネージ型をマネージ データ型に置き換えることによって、同等のマネージ プロトタイプを作成できます。 **DllImportAttribute** を適用する方法の詳細については、「[アンマネージ DLL 関数の処理](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)」を参照してください。  
+ <span data-ttu-id="4b9ad-107">アンマネージ関数に付属のドキュメントを使用して、属性とその省略可能なフィールドを適用し、アンマネージ型をマネージ データ型に置き換えることによって、同等のマネージ プロトタイプを作成できます。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-107">You can use the documentation supplied with an unmanaged function to construct an equivalent managed prototype by applying the attribute with its optional fields and substituting managed data types for unmanaged types.</span></span> <span data-ttu-id="4b9ad-108">**DllImportAttribute** を適用する方法の詳細については、「[アンマネージ DLL 関数の処理](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-108">For instructions about how to apply the **DllImportAttribute**, see [Consuming Unmanaged DLL Functions](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md).</span></span>  
   
- このセクションでは、アンマネージ ライブラリによってエクスポートされた関数に引数を渡し、その関数からの戻り値を受け取るための、マネージ関数のプロトタイプを作成する方法を示すサンプルを示します。 サンプルではまた、いつ <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性と <xref:System.Runtime.InteropServices.Marshal> クラスを使用して明示的にデータをマーシャリングするかをも示しています。  
+ <span data-ttu-id="4b9ad-109">このセクションでは、アンマネージ ライブラリによってエクスポートされた関数に引数を渡し、その関数からの戻り値を受け取るための、マネージ関数のプロトタイプを作成する方法を示すサンプルを示します。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-109">This section provides samples that demonstrate how to create managed function prototypes for passing arguments to and receiving return values from functions exported by unmanaged libraries.</span></span> <span data-ttu-id="4b9ad-110">サンプルではまた、いつ <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性と <xref:System.Runtime.InteropServices.Marshal> クラスを使用して明示的にデータをマーシャリングするかをも示しています。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-110">The samples also demonstrate when to use the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute and the <xref:System.Runtime.InteropServices.Marshal> class to explicitly marshal data.</span></span>  
   
-## <a name="platform-invoke-data-types"></a>プラットフォーム呼び出しのデータ型  
- 次の表は、Win32 API (Wtypes.h にリストされている) と C スタイルの関数で使用されるデータ型を一覧で示しています。 多くのアンマネージ ライブラリには、これらのデータ型をパラメーターや戻り値として渡す関数が含まれています。 3 番目の列には、マネージ コードで使用する、対応する .NET Framework の組み込みの値型またはクラスを一覧で示します。 場合によっては、表にリストされた型を、同じサイズの型に置き換えることができます。  
+## <a name="platform-invoke-data-types"></a><span data-ttu-id="4b9ad-111">プラットフォーム呼び出しのデータ型</span><span class="sxs-lookup"><span data-stu-id="4b9ad-111">Platform invoke data types</span></span>  
+ <span data-ttu-id="4b9ad-112">次の表は、Win32 API (Wtypes.h にリストされている) と C スタイルの関数で使用されるデータ型を一覧で示しています。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-112">The following table lists data types used in the Win32 API (listed in Wtypes.h) and C-style functions.</span></span> <span data-ttu-id="4b9ad-113">多くのアンマネージ ライブラリには、これらのデータ型をパラメーターや戻り値として渡す関数が含まれています。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-113">Many unmanaged libraries contain functions that pass these data types as parameters and return values.</span></span> <span data-ttu-id="4b9ad-114">3 番目の列には、マネージ コードで使用する、対応する .NET Framework の組み込みの値型またはクラスを一覧で示します。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-114">The third column lists the corresponding .NET Framework built-in value type or class that you use in managed code.</span></span> <span data-ttu-id="4b9ad-115">場合によっては、表にリストされた型を、同じサイズの型に置き換えることができます。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-115">In some cases, you can substitute a type of the same size for the type listed in the table.</span></span>  
   
-|Wtypes.h でのアンマネージ型|アンマネージ C 言語型|マネージ クラス名|説明|  
+|<span data-ttu-id="4b9ad-116">Wtypes.h でのアンマネージ型</span><span class="sxs-lookup"><span data-stu-id="4b9ad-116">Unmanaged type in Wtypes.h</span></span>|<span data-ttu-id="4b9ad-117">アンマネージ C 言語型</span><span class="sxs-lookup"><span data-stu-id="4b9ad-117">Unmanaged C language type</span></span>|<span data-ttu-id="4b9ad-118">マネージ クラス名</span><span class="sxs-lookup"><span data-stu-id="4b9ad-118">Managed class name</span></span>|<span data-ttu-id="4b9ad-119">説明</span><span class="sxs-lookup"><span data-stu-id="4b9ad-119">Description</span></span>|  
 |--------------------------------|-------------------------------|------------------------|-----------------|  
-|**HANDLE**|**void\***|<xref:System.IntPtr?displayProperty=fullName>|32 ビット Windows オペレーティング システム、64 ビット Windows オペレーティング システムで 64 ビットに 32 ビットです。|  
-|**BYTE**|**unsigned char**|<xref:System.Byte?displayProperty=fullName>|8 ビット|  
-|**SHORT**|**short**|<xref:System.Int16?displayProperty=fullName>|16 ビット|  
-|**WORD**|**unsigned short**|<xref:System.UInt16?displayProperty=fullName>|16 ビット|  
-|**INT**|**int**|<xref:System.Int32?displayProperty=fullName>|32 ビット|  
-|**UINT**|**unsigned int**|<xref:System.UInt32?displayProperty=fullName>|32 ビット|  
-|**LONG**|**long**|<xref:System.Int32?displayProperty=fullName>|32 ビット|  
-|**BOOL**|**long**|<xref:System.Byte>|32 ビット|  
-|**DWORD**|**unsigned long**|<xref:System.UInt32?displayProperty=fullName>|32 ビット|  
-|**ULONG**|**unsigned long**|<xref:System.UInt32?displayProperty=fullName>|32 ビット|  
-|**CHAR**|**char**|<xref:System.Char?displayProperty=fullName>|ANSI で装飾します。|  
-|**WCHAR**|**wchar_t**|<xref:System.Char?displayProperty=fullName>|Unicode で装飾します。|  
-|**LPSTR**|**char\***|<xref:System.String?displayProperty=fullName> または <xref:System.Text.StringBuilder?displayProperty=fullName>|ANSI で装飾します。|  
-|**LPCSTR**|**Const char\***|<xref:System.String?displayProperty=fullName> または <xref:System.Text.StringBuilder?displayProperty=fullName>|ANSI で装飾します。|  
-|**LPWSTR**|**wchar_t\***|<xref:System.String?displayProperty=fullName> または <xref:System.Text.StringBuilder?displayProperty=fullName>|Unicode で装飾します。|  
-|**LPCWSTR**|**Const wchar_t\***|<xref:System.String?displayProperty=fullName> または <xref:System.Text.StringBuilder?displayProperty=fullName>|Unicode で装飾します。|  
-|**FLOAT**|**Float**|<xref:System.Single?displayProperty=fullName>|32 ビット|  
-|**DOUBLE**|**Double**|<xref:System.Double?displayProperty=fullName>|64 ビット|  
+|<span data-ttu-id="4b9ad-120">**HANDLE**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-120">**HANDLE**</span></span>|<span data-ttu-id="4b9ad-121">**void\***</span><span class="sxs-lookup"><span data-stu-id="4b9ad-121">**void\***</span></span>|<xref:System.IntPtr?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-122">32 ビット Windows オペレーティング システム、64 ビット Windows オペレーティング システムで 64 ビットに 32 ビットです。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-122">32 bits on 32-bit Windows operating systems, 64 bits on 64-bit Windows operating systems.</span></span>|  
+|<span data-ttu-id="4b9ad-123">**BYTE**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-123">**BYTE**</span></span>|<span data-ttu-id="4b9ad-124">**unsigned char**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-124">**unsigned char**</span></span>|<xref:System.Byte?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-125">8 ビット</span><span class="sxs-lookup"><span data-stu-id="4b9ad-125">8 bits</span></span>|  
+|<span data-ttu-id="4b9ad-126">**SHORT**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-126">**SHORT**</span></span>|<span data-ttu-id="4b9ad-127">**short**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-127">**short**</span></span>|<xref:System.Int16?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-128">16 ビット</span><span class="sxs-lookup"><span data-stu-id="4b9ad-128">16 bits</span></span>|  
+|<span data-ttu-id="4b9ad-129">**WORD**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-129">**WORD**</span></span>|<span data-ttu-id="4b9ad-130">**unsigned short**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-130">**unsigned short**</span></span>|<xref:System.UInt16?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-131">16 ビット</span><span class="sxs-lookup"><span data-stu-id="4b9ad-131">16 bits</span></span>|  
+|<span data-ttu-id="4b9ad-132">**INT**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-132">**INT**</span></span>|<span data-ttu-id="4b9ad-133">**int**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-133">**int**</span></span>|<xref:System.Int32?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-134">32 ビット</span><span class="sxs-lookup"><span data-stu-id="4b9ad-134">32 bits</span></span>|  
+|<span data-ttu-id="4b9ad-135">**UINT**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-135">**UINT**</span></span>|<span data-ttu-id="4b9ad-136">**unsigned int**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-136">**unsigned int**</span></span>|<xref:System.UInt32?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-137">32 ビット</span><span class="sxs-lookup"><span data-stu-id="4b9ad-137">32 bits</span></span>|  
+|<span data-ttu-id="4b9ad-138">**LONG**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-138">**LONG**</span></span>|<span data-ttu-id="4b9ad-139">**long**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-139">**long**</span></span>|<xref:System.Int32?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-140">32 ビット</span><span class="sxs-lookup"><span data-stu-id="4b9ad-140">32 bits</span></span>|  
+|<span data-ttu-id="4b9ad-141">**BOOL**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-141">**BOOL**</span></span>|<span data-ttu-id="4b9ad-142">**long**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-142">**long**</span></span>|<xref:System.Byte>|<span data-ttu-id="4b9ad-143">32 ビット</span><span class="sxs-lookup"><span data-stu-id="4b9ad-143">32 bits</span></span>|  
+|<span data-ttu-id="4b9ad-144">**DWORD**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-144">**DWORD**</span></span>|<span data-ttu-id="4b9ad-145">**unsigned long**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-145">**unsigned long**</span></span>|<xref:System.UInt32?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-146">32 ビット</span><span class="sxs-lookup"><span data-stu-id="4b9ad-146">32 bits</span></span>|  
+|<span data-ttu-id="4b9ad-147">**ULONG**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-147">**ULONG**</span></span>|<span data-ttu-id="4b9ad-148">**unsigned long**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-148">**unsigned long**</span></span>|<xref:System.UInt32?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-149">32 ビット</span><span class="sxs-lookup"><span data-stu-id="4b9ad-149">32 bits</span></span>|  
+|<span data-ttu-id="4b9ad-150">**CHAR**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-150">**CHAR**</span></span>|<span data-ttu-id="4b9ad-151">**char**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-151">**char**</span></span>|<xref:System.Char?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-152">ANSI で装飾します。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-152">Decorate with ANSI.</span></span>|  
+|<span data-ttu-id="4b9ad-153">**WCHAR**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-153">**WCHAR**</span></span>|<span data-ttu-id="4b9ad-154">**wchar_t**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-154">**wchar_t**</span></span>|<xref:System.Char?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-155">Unicode で装飾します。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-155">Decorate with Unicode.</span></span>|  
+|<span data-ttu-id="4b9ad-156">**LPSTR**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-156">**LPSTR**</span></span>|<span data-ttu-id="4b9ad-157">**char\***</span><span class="sxs-lookup"><span data-stu-id="4b9ad-157">**char\***</span></span>|<span data-ttu-id="4b9ad-158"><xref:System.String?displayProperty=nameWithType> または <xref:System.Text.StringBuilder?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="4b9ad-158"><xref:System.String?displayProperty=nameWithType> or <xref:System.Text.StringBuilder?displayProperty=nameWithType></span></span>|<span data-ttu-id="4b9ad-159">ANSI で装飾します。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-159">Decorate with ANSI.</span></span>|  
+|<span data-ttu-id="4b9ad-160">**LPCSTR**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-160">**LPCSTR**</span></span>|<span data-ttu-id="4b9ad-161">**Const char\***</span><span class="sxs-lookup"><span data-stu-id="4b9ad-161">**Const char\***</span></span>|<span data-ttu-id="4b9ad-162"><xref:System.String?displayProperty=nameWithType> または <xref:System.Text.StringBuilder?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="4b9ad-162"><xref:System.String?displayProperty=nameWithType> or <xref:System.Text.StringBuilder?displayProperty=nameWithType></span></span>|<span data-ttu-id="4b9ad-163">ANSI で装飾します。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-163">Decorate with ANSI.</span></span>|  
+|<span data-ttu-id="4b9ad-164">**LPWSTR**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-164">**LPWSTR**</span></span>|<span data-ttu-id="4b9ad-165">**wchar_t\***</span><span class="sxs-lookup"><span data-stu-id="4b9ad-165">**wchar_t\***</span></span>|<span data-ttu-id="4b9ad-166"><xref:System.String?displayProperty=nameWithType> または <xref:System.Text.StringBuilder?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="4b9ad-166"><xref:System.String?displayProperty=nameWithType> or <xref:System.Text.StringBuilder?displayProperty=nameWithType></span></span>|<span data-ttu-id="4b9ad-167">Unicode で装飾します。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-167">Decorate with Unicode.</span></span>|  
+|<span data-ttu-id="4b9ad-168">**LPCWSTR**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-168">**LPCWSTR**</span></span>|<span data-ttu-id="4b9ad-169">**Const wchar_t\***</span><span class="sxs-lookup"><span data-stu-id="4b9ad-169">**Const wchar_t\***</span></span>|<span data-ttu-id="4b9ad-170"><xref:System.String?displayProperty=nameWithType> または <xref:System.Text.StringBuilder?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="4b9ad-170"><xref:System.String?displayProperty=nameWithType> or <xref:System.Text.StringBuilder?displayProperty=nameWithType></span></span>|<span data-ttu-id="4b9ad-171">Unicode で装飾します。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-171">Decorate with Unicode.</span></span>|  
+|<span data-ttu-id="4b9ad-172">**FLOAT**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-172">**FLOAT**</span></span>|<span data-ttu-id="4b9ad-173">**Float**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-173">**Float**</span></span>|<xref:System.Single?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-174">32 ビット</span><span class="sxs-lookup"><span data-stu-id="4b9ad-174">32 bits</span></span>|  
+|<span data-ttu-id="4b9ad-175">**DOUBLE**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-175">**DOUBLE**</span></span>|<span data-ttu-id="4b9ad-176">**Double**</span><span class="sxs-lookup"><span data-stu-id="4b9ad-176">**Double**</span></span>|<xref:System.Double?displayProperty=nameWithType>|<span data-ttu-id="4b9ad-177">64 ビット</span><span class="sxs-lookup"><span data-stu-id="4b9ad-177">64 bits</span></span>|  
   
- [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)]、C#、および C++ での対応する型については、「[.NET Framework クラス ライブラリの概要](../../../docs/standard/class-library-overview.md)」を参照してください。  
+ <span data-ttu-id="4b9ad-178">[!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)]、C#、および C++ での対応する型については、「[.NET Framework クラス ライブラリの概要](../../../docs/standard/class-library-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-178">For corresponding types in [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], C#, and C++, see the [Introduction to the .NET Framework Class Library](../../../docs/standard/class-library-overview.md).</span></span>  
   
-## <a name="pinvokelibdll"></a>PinvokeLib.dll  
- 次のコードでは、Pinvoke.dll によって提供されるライブラリ関数を定義します。 このセクションで説明される多くのサンプルでは、このライブラリを呼び出します。  
+## <a name="pinvokelibdll"></a><span data-ttu-id="4b9ad-179">PinvokeLib.dll</span><span class="sxs-lookup"><span data-stu-id="4b9ad-179">PinvokeLib.dll</span></span>  
+ <span data-ttu-id="4b9ad-180">次のコードでは、Pinvoke.dll によって提供されるライブラリ関数を定義します。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-180">The following code defines the library functions provided by Pinvoke.dll.</span></span> <span data-ttu-id="4b9ad-181">このセクションで説明される多くのサンプルでは、このライブラリを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="4b9ad-181">Many samples described in this section call this library.</span></span>  
   
-### <a name="example"></a>例  
+### <a name="example"></a><span data-ttu-id="4b9ad-182">例</span><span class="sxs-lookup"><span data-stu-id="4b9ad-182">Example</span></span>  
  [!code-cpp[PInvokeLib#1](../../../samples/snippets/cpp/VS_Snippets_CLR/pinvokelib/cpp/pinvokelib.cpp#1)]  
   
  [!code-cpp[PInvokeLib#2](../../../samples/snippets/cpp/VS_Snippets_CLR/pinvokelib/cpp/pinvokelib.h#2)]
-
