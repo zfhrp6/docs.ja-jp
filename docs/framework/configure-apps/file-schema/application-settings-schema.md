@@ -1,99 +1,104 @@
 ---
-title: "アプリケーション設定のスキーマ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "アプリケーション設定, スキーマ [Windows フォーム]"
-  - "構成スキーマ [.NET Framework], アプリケーション設定"
-  - "スキーマ (アプリケーション設定)"
-  - "Windows フォーム, アプリケーション設定スキーマ"
+title: "アプリケーション設定スキーマ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- schema application settings
+- application settings, schema [Windows Forms]
+- Windows Forms, application settings schema
+- configuration schema [.NET Framework], application settings
 ms.assetid: 5797fcff-6081-4e8c-bebf-63d9c70cf14b
-caps.latest.revision: 3
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: d93a18b17e0d6b8e413903fb84dc6b427d94f6af
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# アプリケーション設定のスキーマ
-アプリケーション設定によって、Windows フォームまたは ASP.NET アプリケーションはアプリケーション スコープおよびユーザー スコープの設定を格納および取得できます。  ここにおける「設定」は、データベース接続文字列からユーザーの既定のウィンドウ サイズにいたるまでのアプリケーションまたは現在のユーザー固有の情報を意味します。  
-  
- 既定では、Windows フォーム アプリケーションのアプリケーション設定は、.NET 構成システムを使用して設定を XML 構成ファイルに格納する <xref:System.Configuration.LocalFileSettingsProvider> を使用します。  アプリケーション設定が使用するファイルの詳細については、「[アプリケーション設定アーキテクチャ](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)」を参照してください。  
-  
- アプリケーション設定は、使用する構成ファイルで次の要素を定義します。  
-  
-|要素|説明|  
-|--------|--------|  
-|`<applicationSettings>` 要素|アプリケーション固有のすべての `<setting>` タグが含まれます。|  
-|`<userSettings>` 要素|現在のユーザー固有のすべての `<setting>` タグが含まれます。|  
-|`<setting>` 要素|設定を定義します。  `<applicationSettings>` または `<userSettings>` の子要素です。|  
-|`<value>` 要素|設定の値を定義します。  `<setting>` の子要素です。|  
-  
-## \<applicationSettings\> 要素  
- この要素には \<、クライアント コンピューターのアプリケーションのインスタンス固有のすべての構成\> タグが含まれます。  属性は定義されません。  
-  
-## \<userSettings\> 要素  
- この要素は \<\>、アプリケーションを使用しているユーザー固有のすべての構成 タグが含まれます。  属性は定義されません。  
-  
-## \<構成\> 要素  
- この要素は、設定を定義します。  次の属性を持ちます。  
-  
-|要素|説明|  
-|--------|--------|  
-|`name`|必須。  設定の一意の ID です。  Visual Studio を使用して作成された設定は `ProjectName``.Properties.Settings` という名前で保存されます。|  
-|`serializedAs`|必須。  テキストに値をシリアル化するために使用する形式です。  次の値を指定できます。<br /><br /> -   `string`:   値は、<xref:System.ComponentModel.TypeConverter> を使用して文字列としてシリアル化されます。<br />-   `xml`.  値は、XML シリアル化を使用してシリアル化されます。<br />-   `binary`:   値は、バイナリ シリアル化を使用してテキストでエンコードされたバイナリとしてシリアル化されます。<br />-   `custom`:   設定プロバイダーは、この設定に固有の情報を保有してシリアル化および逆シリアル化を実行します。<br />-   バイナリまたはカスタムのシリアル化を使用する場合は、独自に設定クラスを定義し、<xref:System.Configuration.SettingsSerializeAsAttribute> を使用してバイナリまたはカスタムのシリアル化を指定する必要があります。|  
-  
-## \<値要素\>  
- この要素には、設定の値が含まれます。  
-  
-## 使用例  
- 2 つのアプリケーション スコープの設定および 2 つのユーザー スコープの設定を定義するアプリケーション設定ファイルのコード例を次に示します。  
-  
-```  
-<?xml version="1.0" encoding="utf-8" ?>  
-<configuration>  
-    <configSections>  
-        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >  
-            <section name="WindowsApplication1.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
-        </sectionGroup>  
-        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >  
-            <section name="WindowsApplication1.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" />  
-        </sectionGroup>  
-    </configSections>  
-    <applicationSettings>  
-        <WindowsApplication1.Properties.Settings>  
-            <setting name="Cursor" serializeAs="String">  
-                <value>Default</value>  
-            </setting>  
-            <setting name="DoubleBuffering" serializeAs="String">  
-                <value>False</value>  
-            </setting>  
-        </WindowsApplication1.Properties.Settings>  
-    </applicationSettings>  
-    <userSettings>  
-        <WindowsApplication1.Properties.Settings>  
-            <setting name="FormTitle" serializeAs="String">  
-                <value>Form1</value>  
-            </setting>  
-            <setting name="FormSize" serializeAs="String">  
-                <value>595, 536</value>  
-            </setting>  
-        </WindowsApplication1.Properties.Settings>  
-    </userSettings>  
-</configuration>  
-```  
-  
-## 参照  
- [アプリケーション設定の概要](../../../../docs/framework/winforms/advanced/application-settings-overview.md)   
- [アプリケーション設定アーキテクチャ](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)
+# <a name="application-settings-schema"></a>アプリケーション設定スキーマ
+
+アプリケーションの設定を保存し、アプリケーション スコープ設定し、ユーザー スコープ設定を取得する Windows フォームまたは ASP.NET アプリケーションを許可します。 このコンテキストで、*設定*のアプリケーション固有または現在のユーザーに特定できる情報は、-ユーザーにデータベース接続文字列から何かの既定のウィンドウ サイズを優先します。
+
+既定では、Windows フォーム アプリケーションにおけるアプリケーションの設定を使用して、<xref:System.Configuration.LocalFileSettingsProvider>クラスは、.NET 構成システムを使用して、XML 構成ファイルに設定を格納します。 アプリケーションの設定で使用されるファイルの詳細については、次を参照してください。[アプリケーション設定アーキテクチャ](~/docs/framework/winforms/advanced/application-settings-architecture.md)です。
+
+アプリケーションの設定は、使用して、構成ファイルの一部として、次の要素を定義します。
+
+| 要素                    | 説明                                                                           |
+| -------------------------- | ------------------------------------------------------------------------------------- |
+| **\<applicationSettings >** | すべてを含む**\<設定 >**タグはアプリケーションに固有です。                         |
+| **\<ユーザー >**        | すべてが含まれます**\<設定 >**タグは、現在のユーザーを特定します。                        |
+| **\<設定 >**             | 設定を定義します。 いずれかの子 **\<applicationSettings >**または**\<ユーザー >**です。 |
+| **\<value>**               | 設定の値を定義します。 子**\<設定 >**です。                                   |
+
+## <a name="applicationsettings-element"></a>\<applicationSettings > 要素
+
+この要素には、すべてが含まれています**\<設定 >**タグは、クライアント コンピューターにアプリケーションのインスタンスに固有です。 属性は定義されません。
+
+## <a name="usersettings-element"></a>\<ユーザー > 要素
+
+この要素には、すべてが含まれています**\<設定 >**アプリケーションが現在使用しているユーザーに固有のタグ。 属性は定義されません。
+
+## <a name="setting-element"></a>\<設定 > 要素
+
+この要素は、設定を定義します。 次の属性があります。
+
+| 属性        | 説明 |
+| ---------------- | ----------- |
+| **name**         | 必須です。 設定の一意の ID。 Visual Studio で作成した設定は、名前で保存`ProjectName.Properties.Settings`です。 |
+| **serializedAs** | 必須です。 テキスト値をシリアル化するために使用する形式。 次の値を指定できます。<br><br>- `string`. 使用して文字列として値がシリアル化、<xref:System.ComponentModel.TypeConverter>です。<br>- `xml`. XML シリアル化を使用して、値がシリアル化されます。<br>- `binary`. 値は、バイナリのシリアル化を使用して、テキスト エンコードされたバイナリとしてシリアル化します。<br />- `custom`. 設定プロバイダーは、この設定の固有の情報しシリアル化し、逆シリアル化されます。 |
+
+## <a name="value-element"></a>\<値 > 要素
+
+この要素には、設定の値が含まれています。
+
+## <a name="example"></a>例
+
+次の例では、2 つのアプリケーション スコープ設定と 2 つのユーザー スコープ設定を定義するアプリケーションの設定ファイルを示します。
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="WindowsApplication1.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    </sectionGroup>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="WindowsApplication1.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" />
+    </sectionGroup>
+  </configSections>
+  <applicationSettings>
+    <WindowsApplication1.Properties.Settings>
+      <setting name="Cursor" serializeAs="String">
+        <value>Default</value>
+      </setting>
+      <setting name="DoubleBuffering" serializeAs="String">
+        <value>False</value>
+      </setting>
+    </WindowsApplication1.Properties.Settings>
+  </applicationSettings>
+  <userSettings>
+    <WindowsApplication1.Properties.Settings>
+      <setting name="FormTitle" serializeAs="String">
+        <value>Form1</value>
+      </setting>
+      <setting name="FormSize" serializeAs="String">
+        <value>595, 536</value>
+      </setting>
+    </WindowsApplication1.Properties.Settings>
+  </userSettings>
+</configuration>
+```
+
+## <a name="see-also"></a>関連項目
+
+[アプリケーション設定の概要](~/docs/framework/winforms/advanced/application-settings-overview.md)   
+[アプリケーション設定アーキテクチャ](~/docs/framework/winforms/advanced/application-settings-architecture.md)

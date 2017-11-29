@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: e24000a3-8fd8-4c0e-bdf0-39882cc0f6d8
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: f1086958a56aadbddf54f20295b91e885adf71c4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="claims-based-authorization-using-wif"></a>WIF を使用したクレーム ベースの承認
 証明書利用者アプリケーションでは、承認によって、認証済み ID がアクセスできるリソースと、そのリソースで実行できる操作が決まります。 承認が不適切だったり弱かったりすると、それは情報漏えいとデータの改ざんにつながります。 ここでは、Windows Identity Foundation (WIF) とセキュリティ トークン サービス (STS)、たとえば Microsoft Azure のアクセス制御サービス (ACS) を使用して、クレーム対応 ASP.NET の Web アプリケーションとサービスの承認を実装する方法の概要を説明します。  
@@ -72,4 +70,3 @@ ms.lasthandoff: 08/21/2017
 5.  結果が true の場合はアクセスが許可され、false の場合は拒否されます。 たとえば、ワシントン州に住む 21 歳以上のユーザーという規則を使用できます。  
   
  <xref:System.Security.Claims.ClaimsAuthorizationManager> は、アプリケーションでクレーム ベースの承認の決定ロジックを外部化するときに役に立ちます。 ClaimsAuthorizationManager は、.NET 4.5 に含まれている WIF コンポーネントです。 ClaimsAuthorizationManager を使用すると、着信要求を受け取り、任意のロジックを実装して、受信クレームに基づいて承認決定を行うことができます。 これは、承認ロジックを変更する必要があるときに重要になります。 この状況で ClaimsAuthorizationManager を使用してもアプリケーションの整合性には影響しないため、変更によってアプリケーション エラーが発生する可能性は少なくなります。 ClaimsAuthorizationManager を使用してクレーム ベースのアクセス制御を実装する方法の詳細については、「[方法: WIF および ACS を使用して要求対応の ASP.NET アプリケーションで要求承認を実装する](http://go.microsoft.com/fwlink/?LinkID=247446)」を参照してください。
-

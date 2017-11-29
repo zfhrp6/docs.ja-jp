@@ -1,22 +1,25 @@
 ---
-title: "System.Convert Methods | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "System.Convert メソッド"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3ca6c5b6-ea5d-4ab0-b675-f082135b342c
-caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 7f4ed9cc6ae4668fe978b0e7f685e360f1044e6b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# System.Convert Methods
+# <a name="systemconvert-methods"></a>System.Convert メソッド
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、次の <xref:System.Convert> メソッドをサポートしていません。  
   
 -   <xref:System.IFormatProvider> パラメーターを持つ形式。  
@@ -33,17 +36,17 @@ caps.handback.revision: 2
   
 -   次のメソッド。  
   
-    -   `public static <Type2> To<Type2>(<Type1> value);` \(  
+    -   `public static <Type2> To<Type2>(<Type1> value);` (  
   
-         `Type1` および `Type2` は `sbyte`、`uint`、`ulong`、`ushort` のいずれか\)  
+         `Type1` および `Type2` は `sbyte`、`uint`、`ulong`、`ushort` のいずれか)  
   
-    -   C\#:  
+    -   C#:   
   
          `int To<int type>(string value, int fromBase),`  
   
-         `ToString(...  value, int toBase)`  
+         `ToString(... value, int toBase)`  
   
-    -   Visual Basic:  
+    -   Visual Basic:   
   
          `Function To(Of [Numeric])(value as String, fromBase As Integer)`  
   
@@ -55,5 +58,5 @@ caps.handback.revision: 2
   
     -   <xref:System.Convert.ChangeType%2A>  
   
-## 参照  
- [Data Types and Functions](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+## <a name="see-also"></a>関連項目  
+ [データ型および関数](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

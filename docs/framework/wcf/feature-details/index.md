@@ -1,33 +1,36 @@
 ---
-title: "WCF 機能の詳細 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "機能 [WCF]"
-  - "WCF, 機能"
-  - "Windows Communication Foundation, 機能"
+title: "WCF 機能の詳細"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- features [WCF]
+- WCF, features
+- Windows Communication Foundation, features
 ms.assetid: 9b4368ca-0bd3-40dc-a539-bcd5779cee5f
-caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c58d09c11618e19f29311d54cc413a74e40a3725
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WCF 機能の詳細
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、アプリケーションのメッセージング機能を広範囲に制御できます。このセクションの各トピックでは、使用できる機能について詳しく説明します。基本的なプログラミング[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)」を参照してください。  
+# <a name="wcf-feature-details"></a>WCF 機能の詳細
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、アプリケーションのメッセージング機能を広範囲に制御できます。 このセクションの各トピックでは、使用できる機能について詳しく説明します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]基本的なプログラミングを参照してください[基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)です。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
  ワークフロー サービスを作成および構成する方法について説明します。  
   
- [エンドポイント : アドレス、バインディング、およびコントラクト](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
+ [エンドポイント: アドレス、バインディング、およびコントラクト](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
  サービスのさまざまな側面を制御する方法について説明します。  
   
  [データ転送とシリアル化](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)  
@@ -46,9 +49,9 @@ caps.handback.revision: 22
  必要に応じてロールバックできるトランザクション操作を作成する方法について説明します。  
   
  [セキュリティ](../../../../docs/framework/wcf/feature-details/security.md)  
- 機密性と整合性を備えたアプリケーションを作成するうえで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティがどのように役立つかについて説明します。監査機能として、認証と承認を使用することもできます。  
+ 機密性と整合性を備えたアプリケーションを作成するうえで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティがどのように役立つかについて説明します。 監査機能として、認証と承認を使用することもできます。  
   
- [ピアツーピア ネットワーク](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
+ [ピア ツー ピア ネットワーク](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
  ビア サービスとクライアントを作成する方法について詳しく説明します。  
   
  [メタデータ](../../../../docs/framework/wcf/feature-details/metadata.md)  
@@ -57,11 +60,11 @@ caps.handback.revision: 22
  [クライアント](../../../../docs/framework/wcf/feature-details/clients.md)  
  サービスにアクセスするさまざまなクライアントを作成する方法について説明します。  
   
- [ホスト](../../../../docs/framework/wcf/feature-details/hosting.md)  
- ホストについて説明します。サービスは、別のアプリケーションまたは自己ホストを使用してホストできます。  
+ [ホスティング](../../../../docs/framework/wcf/feature-details/hosting.md)  
+ ホストについて説明します。 サービスは、別のアプリケーションまたは自己ホストを使用してホストできます。  
   
- [相互運用性と統合](../../../../docs/framework/wcf/feature-details/interoperability-and-integration.md)  
- COM\+ でホストされるコンポーネント ベースのアプリケーション ロジックに多くの投資を行っている場合に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して既存のロジックを修正することなく拡張する方法について説明します。  
+ [相互運用性との統合](../../../../docs/framework/wcf/feature-details/interoperability-and-integration.md)  
+ COM+ でホストされるコンポーネント ベースのアプリケーション ロジックに多くの投資を行っている場合に、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して既存のロジックを修正することなく拡張する方法について説明します。  
   
  [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web プログラミング モデルについて説明します。このモデルを使用すると、開発者は [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービス操作を SOAP 以外のエンドポイントに公開できるようになります。  
@@ -70,15 +73,15 @@ caps.handback.revision: 22
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスから配信フィードを容易に公開できるようにするためのサポートについて説明します。  
   
  [AJAX の統合と JSON のサポート](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
- ASP.NET AJAX \(Asynchronous JavaScript and XML\) と、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが AJAX クライアントに操作を公開できるようにする JSON \(JavaScript Object Notation\) データ形式のサポートについて説明します。  
+ ASP.NET AJAX (Asynchronous JavaScript and XML) と、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスが AJAX クライアントに操作を公開できるようにする JSON (JavaScript Object Notation) データ形式のサポートについて説明します。  
   
  [WCF Discovery](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)  
- WS\-Discovery プロトコルを使用して、相互運用可能な方法で実行時にサービスを探索可能にするためのサポートについて説明します。  
+ WS-Discovery プロトコルを使用して、相互運用可能な方法で実行時にサービスを探索可能にするためのサポートについて説明します。  
   
  [ルーティング](../../../../docs/framework/wcf/feature-details/routing.md)  
  ルーティング サービスについて説明します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Channels>  
@@ -87,5 +90,5 @@ caps.handback.revision: 22
   
  <xref:System.ServiceModel.Routing>  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)

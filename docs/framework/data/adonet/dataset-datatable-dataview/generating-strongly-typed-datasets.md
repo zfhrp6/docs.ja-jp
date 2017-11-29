@@ -1,54 +1,59 @@
 ---
-title: "厳密に型指定された DataSet の生成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "厳密に型指定された DataSet の生成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 54333cbf-bb43-4314-a7d4-6dc1dd1c44b3
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 61836196d9e11d3c87c43d4faaaeff54125bf706
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 厳密に型指定された DataSet の生成
-XML スキーマ定義言語 \(XSD\) 標準に準拠する XML スキーマがあれば、[!INCLUDE[winsdklong](../../../../../includes/winsdklong-md.md)] に付属の XSD.exe ツールを使用して、厳密に型指定された <xref:System.Data.DataSet> を生成できます。  
+# <a name="generating-strongly-typed-datasets"></a>厳密に型指定された DataSet の生成
+XML スキーマ定義言語 (XSD) 標準に準拠する XML スキーマがあれば、<xref:System.Data.DataSet> に付属の XSD.exe ツールを使用して、厳密に型指定された [!INCLUDE[winsdklong](../../../../../includes/winsdklong-md.md)] を生成できます。  
   
- \(データベース テーブルから xsd を作成するには、「<xref:System.Data.DataSet.WriteXmlSchema%2A>」または「[Visual Studio でのデータセットの操作](http://msdn.microsoft.com/library/8bw9ksd6.aspx)」 を参照してください。\)  
+ (データベース テーブルから xsd を作成するを参照してください。<xref:System.Data.DataSet.WriteXmlSchema%2A>または[Visual Studio でのデータセットの操作](http://msdn.microsoft.com/library/8bw9ksd6.aspx))。  
   
- XSD.exe ツールを使用して **DataSet** を生成する構文を次のコードで示します。  
+ 次のコードを生成するための構文を示しています、**データセット**このツールを使用します。  
   
 ```  
 xsd.exe /d /l:CS XSDSchemaFileName.xsd /eld /n:XSDSchema.Namespace  
 ```  
   
- この構文では、`/d` ディレクティブが **DataSet** を生成することを知らせます。また、`/l:` は使用する言語 \(C\#、Visual Basic .NET など\) をツールに知らせます。  オプションの `/eld` ディレクティブを指定すると、生成された **DataSet** に対し、[!INCLUDE[linq_dataset](../../../../../includes/linq-dataset-md.md)] を使用してクエリを実行できます。このオプションは、`/d` オプションと組み合わせて指定します。  詳細については、「[Querying Typed DataSets](../../../../../docs/framework/data/adonet/querying-typed-datasets.md)」を参照してください。  オプションの `/n:` ディレクティブは、**XSDSchema.Namespace** と呼ばれる **DataSet** の名前空間も生成することをツールに知らせます。  コマンドの出力は XSDSchemaFileName.cs で、ADO.NET アプリケーションでコンパイルおよび使用できます。  生成されたコードをライブラリまたはモジュールとしてコンパイルできます。  
+ この構文では、`/d`ディレクティブを生成するツールに指示、**データセット**、および`/l:`(たとえば、c# または Visual Basic .NET など) を使用する言語をどのようなツールに指示します。 省略可能な`/eld`ディレクティブは、使用できることを指定します[!INCLUDE[linq_dataset](../../../../../includes/linq-dataset-md.md)]生成をクエリする**データセット。** このオプションは、`/d` オプションと組み合わせて指定します。 詳細については、次を参照してください。[型指定されたデータセットのクエリを実行する](../../../../../docs/framework/data/adonet/querying-typed-datasets.md)です。 省略可能な`/n:`ディレクティブは名前空間を生成するツール、**データセット**と呼ばれる**XSDSchema.Namespace**です。 コマンドの出力は XSDSchemaFileName.cs で、ADO.NET アプリケーションでコンパイルおよび使用できます。 生成されたコードをライブラリまたはモジュールとしてコンパイルできます。  
   
- C\# コンパイラ \(csc.exe\) を使用して、生成されたコードをライブラリとしてコンパイルする構文を次のコードで示します。  
+ C# コンパイラ (csc.exe) を使用して、生成されたコードをライブラリとしてコンパイルする構文を次のコードで示します。  
   
 ```  
 csc.exe /t:library XSDSchemaFileName.cs /r:System.dll /r:System.Data.dll  
 ```  
   
- `/t:` ディレクティブはライブラリとしてコンパイルすることをツールに知らせ、`/r:` ディレクティブはコンパイルに必要な依存ライブラリを指定します。  コマンドの出力は XSDSchemaFileName.dll で、`/r:` ディレクティブによる ADO.NET アプリケーションのコンパイル時にコンパイラに渡すことができます。  
+ `/t:` ディレクティブはライブラリとしてコンパイルすることをツールに知らせ、`/r:` ディレクティブはコンパイルに必要な依存ライブラリを指定します。 コマンドの出力は XSDSchemaFileName.dll で、`/r:` ディレクティブによる ADO.NET アプリケーションのコンパイル時にコンパイラに渡すことができます。  
   
  ADO.NET アプリケーションの XSD.exe に渡された名前空間にアクセスする構文を次のコードで示します。  
   
 ```vb  
 Imports XSDSchema.Namespace  
-  
 ```  
   
 ```csharp  
 using XSDSchema.Namespace;  
 ```  
   
- **CustomerDataSet** という名前の型指定された **DataSet** を使用して、**Northwind** データベースから顧客リストを読み込むコード サンプルを次に示します。  **Fill** メソッドを使用してデータが読み込まれると、例では、型指定された **CustomersRow** \(**DataRow**\) オブジェクトを使用して、**Customers** テーブルの各顧客をループします。  これにより、**DataColumnCollection** を経由せずに **CustomerID** 列に直接アクセスできます。  
+ 次のコード例は、型指定された**データセット**という**CustomerDataSet**在住の顧客の一覧を読み込む、 **Northwind**データベース。 使用して、データが読み込まれた後、**塗りつぶし**メソッドの例は、各顧客をループ処理、**顧客**表に、型指定されたを使用して**CustomersRow** (**DataRow**) オブジェクト。 これによりに直接アクセスする、 **CustomerID**列を経由せず、 **DataColumnCollection**です。  
   
 ```vb  
 Dim customers As CustomerDataSet= New CustomerDataSet()  
@@ -63,7 +68,6 @@ Dim customerRow As CustomerDataSet.CustomersRow
 For Each customerRow In customers.Customers  
   Console.WriteLine(customerRow.CustomerID)  
 Next  
-  
 ```  
   
 ```csharp  
@@ -81,7 +85,7 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
   
  例に使用された XML スキーマを次に示します。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <xs:schema id="CustomerDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
   <xs:element name="CustomerDataSet" msdata:IsDataSet="true">  
@@ -100,9 +104,9 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
 </xs:schema>  
 ```  
   
-## 参照  
- <xref:System.Data.DataColumnCollection>   
- <xref:System.Data.DataSet>   
- [型指定された DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)   
- [DataSets、DataTables、および DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Data.DataColumnCollection>  
+ <xref:System.Data.DataSet>  
+ [型指定されたデータセット](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)  
+ [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

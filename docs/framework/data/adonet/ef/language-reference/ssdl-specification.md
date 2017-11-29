@@ -1,26 +1,25 @@
 ---
-title: "SSDL 仕様 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: "SSDL 仕様"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9d6b29da-b363-4930-ba57-989f9d6dbf3f
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 32eef196d341d0a47a619b06e4c64894fbd85492
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# SSDL 仕様
-現在、[msdn.microsoft.com\/data\/ef](http://msdn.microsoft.com/data/ef) サイトでは、主に Entity Framework に関するコンテンツを提供しています。  
+# <a name="ssdl-specification"></a>SSDL 仕様
+[Msdn.microsoft.com/data/ef](http://msdn.microsoft.com/data/ef)サイトでは、主に Entity Framework に関するコンテンツ。  
   
- このトピックの内容は、「[SSDL 仕様](http://msdn.microsoft.com/data/jj652016)」ページでご利用いただけます。
+ このトピックの内容は次のページで使用できるようになりました: [SSDL 仕様](http://msdn.microsoft.com/data/jj652016)です。

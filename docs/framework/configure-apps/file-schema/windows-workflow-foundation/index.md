@@ -8,16 +8,15 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: reference
 ms.assetid: 7ae70357-b150-4342-8f2a-d5eb6f9c6a0d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: e83b85d970f36745bb1a0bcf04253c678764805e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="windows-workflow-foundation-configuration-schema"></a>Windows Workflow Foundation の構成スキーマ
 [!INCLUDE[wf](../../../../../includes/wf-md.md)] の構成要素を使用して、ワークフロー アプリケーションを構成できます。 ワークフロー アプリケーションでは、追跡とトレースを構成できます。 追跡とトレースの詳細については、「[ワークフロー追跡とトレース](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)」を参照してください。 ワークフロー サービスでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] の構成要素も使用できます。 [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] の詳細については、「[WCF 構成スキーマ](../../../../../docs/framework/configure-apps/file-schema/wcf/index.md)」を参照してください。  
@@ -27,4 +26,3 @@ ms.lasthandoff: 09/05/2017
 ## <a name="in-this-section"></a>このセクションの内容  
  [\<system.serviceModel>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/system-servicemodel-of-workflow.md)  
  **ServiceModel** 要素について説明します。
-

@@ -5,28 +5,23 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
-helpviewer_keywords:
-- Code contracts
+- csharp
+- vb
+helpviewer_keywords: Code contracts
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 78553d77ea9a669f7cebdd9187e2436d3b095a75
-ms.openlocfilehash: c0eca978f32c4f96ad976718584c0bf92bf638ec
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: ce74cfb9c4e0eb759fb8160ab06fa6fbde60081b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="code-contracts"></a>コード コントラクト
 コード コントラクトを使用すると、事前条件、事後条件、およびオブジェクト不変条件をコードで指定できます。 事前条件とは、メソッドやプロパティに入るときに満たされている必要がある要件です。 事後条件は、メソッドやプロパティのコードが終了するときの予測を表します。 オブジェクト不変条件は、正しい状態のクラスに対して予期される状態を表します。  
@@ -50,7 +45,7 @@ ms.lasthandoff: 08/21/2017
  コード コントラクトを使用するためのツールおよび詳細な手順については、MSDN DevLabs Web サイトの「[Code Contracts](http://go.microsoft.com/fwlink/?LinkId=152461)」(コード コントラクト) を参照してください。  
   
 ## <a name="preconditions"></a>実行前の状態  
- 事前条件を指定するには、<xref:System.Diagnostics.Contracts.Contract.Requires%2A?displayProperty=fullName> メソッドを使用します。 事前条件では、メソッドが呼び出される状態を指定します。 通常は、有効なパラメーター値を指定するために使用されます。 事前条件で参照されるすべてのメンバーは、アクセス レベルが少なくともメソッド自体と同じである必要があります。そうでない場合、メソッドのすべての呼び出し元がその事前条件を理解できない場合があります。 また、条件に副作用がないようにする必要もあります。 事前条件が満たされなかった場合の実行時の動作は、ランタイム アナライザーによって決定されます。  
+ 事前条件を指定するには、<xref:System.Diagnostics.Contracts.Contract.Requires%2A?displayProperty=nameWithType> メソッドを使用します。 事前条件では、メソッドが呼び出される状態を指定します。 通常は、有効なパラメーター値を指定するために使用されます。 事前条件で参照されるすべてのメンバーは、アクセス レベルが少なくともメソッド自体と同じである必要があります。そうでない場合、メソッドのすべての呼び出し元がその事前条件を理解できない場合があります。 また、条件に副作用がないようにする必要もあります。 事前条件が満たされなかった場合の実行時の動作は、ランタイム アナライザーによって決定されます。  
   
  たとえば、次の事前条件は、パラメーター `x` が null 以外である必要があることを表しています。  
   
@@ -67,7 +62,7 @@ ms.lasthandoff: 08/21/2017
   
 -   それらのステートメント全体の後に <xref:System.Diagnostics.Contracts.Contract> メソッドの明示的な呼び出し (<xref:System.Diagnostics.Contracts.Contract.Requires%2A>、<xref:System.Diagnostics.Contracts.Contract.Ensures%2A>、<xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow%2A>、または <xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A> のいずれかのメソッドの呼び出しなど) がある場合。  
   
- `if`-`then`-`throw` ステートメントがこのような形式になっている場合、それらのステートメントはレガシ `requires` ステートメントとして認識されます。 `if`-`then`-`throw` というシーケンスの後に他のコントラクトがない場合は、<xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A?displayProperty=fullName> メソッドでコードを終了します。  
+ `if`-`then`-`throw` ステートメントがこのような形式になっている場合、それらのステートメントはレガシ `requires` ステートメントとして認識されます。 `if`-`then`-`throw` というシーケンスの後に他のコントラクトがない場合は、<xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A?displayProperty=nameWithType> メソッドでコードを終了します。  
   
 ```  
 if ( x == null ) throw new ...  
@@ -87,7 +82,7 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
  `Contract.Ensures( this.F > 0 );`  
   
 ### <a name="exceptional-postconditions"></a>例外の事後条件  
- 例外の事後条件とは、メソッドによって特定の例外がスローされた場合に `true` になる必要がある事後条件です。 これらの事後条件を指定するには、次の例で示されているように、<xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow%2A?displayProperty=fullName> メソッドを使用します。  
+ 例外の事後条件とは、メソッドによって特定の例外がスローされた場合に `true` になる必要がある事後条件です。 これらの事後条件を指定するには、次の例で示されているように、<xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow%2A?displayProperty=nameWithType> メソッドを使用します。  
   
  `Contract.EnsuresOnThrow<T>( this.F > 0 );`  
   
@@ -193,7 +188,7 @@ Contract.Invariant(this.x > this.y);
   
 -   完全修飾名が "System.Diagnostics.Contracts.Contract"、"System.String"、"System.IO.Path"、または "System.Type" で始まるメソッド。  
   
--   呼び出されたデリゲート (デリゲート型自体に <xref:System.Diagnostics.Contracts.PureAttribute> 属性が設定されている場合)。 デリゲート型の <xref:System.Predicate%601?displayProperty=fullName> と <xref:System.Comparison%601?displayProperty=fullName> は純粋と見なされます。  
+-   呼び出されたデリゲート (デリゲート型自体に <xref:System.Diagnostics.Contracts.PureAttribute> 属性が設定されている場合)。 デリゲート型の <xref:System.Predicate%601?displayProperty=nameWithType> と <xref:System.Comparison%601?displayProperty=nameWithType> は純粋と見なされます。  
   
 <a name="visibility"></a>   
 ### <a name="visibility"></a>可視性  
@@ -202,5 +197,5 @@ Contract.Invariant(this.x > this.y);
 ## <a name="example"></a>例  
  次に、コード コントラクトの使用例を示します。  
   
- [!code-csharp[ContractExample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/contractexample/cs/program.cs#1)] [!code-vb[ContractExample#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/contractexample/vb/program.vb#1)]
-
+ [!code-csharp[ContractExample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/contractexample/cs/program.cs#1)]
+ [!code-vb[ContractExample#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/contractexample/vb/program.vb#1)]

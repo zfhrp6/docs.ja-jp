@@ -7,22 +7,16 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 8bf0b428-5a21-4299-8d6e-bf8251fd978a
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 24abe4d2cc9a540f134ea32dbd6a44a630ff5524
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: e23ec35b94196d1f8a597d3a74850b5292a4ef09
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="changes-to-ntlm-authentication-for-httpwebrequest-in-version-35-sp1"></a>バージョン 3.5 SP1 における HttpWebRequest の NTLM 認証への変更
 セキュリティの変更は、System.Net 名前空間の <xref:System.Net.HttpWebRequest>、<xref:System.Net.HttpListener>、<xref:System.Net.Security.NegotiateStream>、および関連クラスによる統合 Windows 認証の処理方法に影響を与える、.NET Framework Version 3.5 SP1 以降で行われました。 これらの変更は、これらのクラスを使用して Web 要求を作成し、NTLM に基づく統合 Windows 認証が使用されている応答を受信するアプリケーションに影響を及ぼす場合があります。 この変更は、統合 Windows 認証を使用するように構成されている Web サーバーおよびクライアント アプリケーションに影響を与える可能性があります。  
@@ -39,9 +33,9 @@ ms.lasthandoff: 08/21/2017
   
  大規模な展開用に構成されている場合、クライアント アプリケーションとエンド ユーザーが使用しない基礎のコンピューター名に単一の仮想サーバー名を展開に指定することも一般的です。 たとえば、サーバー www.contoso.com を呼び出しても、内部ネットワークは単に "contoso" を使用することがあります。 この名前は、クライアント Web 要求で Host ヘッダーと呼ばれます。 HTTP プロトコルの指定に従い、Host 要求ヘッダー フィールドは、要求されているリソースのインターネット ホストとポート番号を指定します。 この情報は、ユーザーまたは参照リソース (HTTP URL で生成されるもの) に指定された元の URI から取得されます。 .NET Framework Version 4 では、この情報は、新しい <xref:System.Net.HttpWebRequest.Host%2A> プロパティを使用して設定することもできます。  
   
- <xref:System.Net.AuthenticationManager> クラスは、<xref:System.Net.WebRequest> 派生クラスと <xref:System.Net.WebClient> クラスが使用するマネージ認証コンポーネント ("モジュール") を制御します。 <xref:System.Net.AuthenticationManager> クラスは、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=fullName> オブジェクトを公開するプロパティを提供します。このオブジェクトは、URI 文字列でインデックスが作成され、認証中に使用されるカスタム SPN 文字列をアプリケーションが提供するために使用されます。  
+ <xref:System.Net.AuthenticationManager> クラスは、<xref:System.Net.WebRequest> 派生クラスと <xref:System.Net.WebClient> クラスが使用するマネージ認証コンポーネント ("モジュール") を制御します。 <xref:System.Net.AuthenticationManager> クラスは、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=nameWithType> オブジェクトを公開するプロパティを提供します。このオブジェクトは、URI 文字列でインデックスが作成され、認証中に使用されるカスタム SPN 文字列をアプリケーションが提供するために使用されます。  
   
- Version 3.5 SP1 の既定では、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> プロパティが設定されていない場合、NTLM (NT LAN マネージャー) 認証交換の SPN の要求 URL で使用されたホスト名を指定します。 要求 URL で使用されたホスト名は、クライアント要求の <xref:System.Net.HttpRequestHeader?displayProperty=fullName> に指定された Host ヘッダーとは異なる可能性があります。 要求 URL に使用されているホスト名は、サーバーの実際のホスト名、サーバーのコンピューター名、コンピューターの IP アドレス、またはループバック アドレスとは異なる可能性があります。 このような場合、Windows は認証要求に失敗します。 この問題を解決するには、クライアント要求の要求 URL に使用されているホスト名 (たとえば "contoso") が、実際はローカル コンピューターの代替名であると Windows に通知する必要があります。  
+ Version 3.5 SP1 の既定では、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> プロパティが設定されていない場合、NTLM (NT LAN マネージャー) 認証交換の SPN の要求 URL で使用されたホスト名を指定します。 要求 URL で使用されたホスト名は、クライアント要求の <xref:System.Net.HttpRequestHeader?displayProperty=nameWithType> に指定された Host ヘッダーとは異なる可能性があります。 要求 URL に使用されているホスト名は、サーバーの実際のホスト名、サーバーのコンピューター名、コンピューターの IP アドレス、またはループバック アドレスとは異なる可能性があります。 このような場合、Windows は認証要求に失敗します。 この問題を解決するには、クライアント要求の要求 URL に使用されているホスト名 (たとえば "contoso") が、実際はローカル コンピューターの代替名であると Windows に通知する必要があります。  
   
  サーバー アプリケーションがこの変更を回避するには、いくつかの方法があります。 推奨されるアプローチは、要求 URL に使用されているホスト名を、サーバーのレジストリ内の `BackConnectionHostNames` キーにマップすることです。 通常、`BackConnectionHostNames` レジストリ キーは、ホスト名をループバック アドレスにマップするために使用されます。 手順は次のとおりです。  
   
@@ -66,7 +60,6 @@ ms.lasthandoff: 08/21/2017
  [http://support.microsoft.com/kb/896861](http://go.microsoft.com/fwlink/?LinkID=179657) で説明されているように、あまり安全ではない回避策はループ バック チェックを無効にすることです。 これによって、リフレクション攻撃に対する保護が無効になります。 そのため、実際に使用するコンピューターと想定するコンピューターにのみ、代替名のセットを制限することをお勧めします。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=fullName>   
- <xref:System.Net.HttpRequestHeader?displayProperty=fullName>   
- <xref:System.Net.HttpWebRequest.Host%2A?displayProperty=fullName>
-
+ <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A?displayProperty=nameWithType>  
+ <xref:System.Net.HttpRequestHeader?displayProperty=nameWithType>  
+ <xref:System.Net.HttpWebRequest.Host%2A?displayProperty=nameWithType>

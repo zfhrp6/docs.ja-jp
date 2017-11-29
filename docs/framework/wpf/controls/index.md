@@ -1,42 +1,42 @@
 ---
-title: "コントロール |Microsoft ドキュメント"
+title: "コントロール"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-wpf
+ms.technology: dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- controls [WPF], about WPF controls
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: controls [WPF], about WPF controls
 ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9f5b8ebb69c9206ff90b05e748c64d29d82f7a16
-ms.openlocfilehash: 7652a2e64cdc107546ac3ea51178a3542606bd43
-ms.contentlocale: ja-jp
-ms.lasthandoff: 05/22/2017
-
+ms.openlocfilehash: 492fd5e95e316d053fc36b9bb5cf521b879d7d2e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="controls"></a>コントロール
-<a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、<xref:System.Windows.Controls.Button>、<xref:System.Windows.Controls.Label>、<xref:System.Windows.Controls.TextBox>、<xref:System.Windows.Controls.Menu>、<xref:System.Windows.Controls.ListBox> など、ほとんどの Windows アプリケーションで使用される共通の UI コンポーネントが多数用意されています。 これまで、これらのオブジェクトはコントロールと呼ばれてきました。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] SDK では、アプリケーションで表示可能なオブジェクトを表すクラスを広義に意味する用語として「コントロール」を引き続き使用しますが、クラスは、表示可能な部分を持つために <xref:System.Windows.Controls.Control> クラスを継承する必要がないことに注意してください。 <xref:System.Windows.Controls.Control> クラスを継承するクラスには、<xref:System.Windows.Controls.ControlTemplate> があります。これを使用すると、コントロールのコンシューマーは、新しいサブクラスを作成しなくても、コントロールの外観を大幅に変更できます。  このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でのコントロール (<xref:System.Windows.Controls.Control> クラスを継承するものとそうでないものの両方) の一般的な使用方法について説明します。  
-  
- 
-  
+<a name="introduction"></a>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]など、ほぼすべての Windows アプリケーションで使用される共通の UI コンポーネントの多くに付属して<xref:System.Windows.Controls.Button>、 <xref:System.Windows.Controls.Label>、 <xref:System.Windows.Controls.TextBox>、 <xref:System.Windows.Controls.Menu>、および<xref:System.Windows.Controls.ListBox>です。 これまで、これらのオブジェクトはコントロールと呼ばれてきました。 中に、 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] SDK で引き続き疎アプリケーションでは、表示されているオブジェクトを表す任意のクラスを意味する「コントロール」という用語を使用するクラスが継承する必要がないことを確認することが重要、<xref:System.Windows.Controls.Control>表示に存在するクラス。 継承するクラス、<xref:System.Windows.Controls.Control>クラスが含まれて、 <xref:System.Windows.Controls.ControlTemplate>、これにより、根本的に、新しいサブクラスを作成することがなく、コントロールの外観を変更するコントロールのコンシューマーです。  このトピックについて説明方法コントロール (両方ものからは継承、<xref:System.Windows.Controls.Control>クラスとそうでないもの) でよく使用される[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。  
+
 <a name="creating_an_instance_of_a_control"></a>   
 ## <a name="creating-an-instance-of-a-control"></a>コントロールのインスタンスの作成  
- アプリケーションにコントロールを追加するには、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] またはコードのいずれかを使用します。  次の例では、ユーザーに姓と名の入力を求める単純なアプリケーションの作成方法を示します。  この例では、ラベル 2 個、テキスト ボックス 2 個、ボタン 2 個の合計 6 個のコントロールを [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] で作成します。 どのコントロールも同じ方法で作成できます。  
+ コントロールをアプリケーションに追加するにはいずれかを使用して[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]またはコード。  次の例では、ユーザーに姓と名の入力を求める単純なアプリケーションの作成方法を示します。  この例は、6 つのコントロールを作成します。 2 つのラベル、2 つのテキスト ボックスとボタンが 2 つの[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]します。 どのコントロールも同じ方法で作成できます。  
   
- [!code-xml[ControlsOverview#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#1)]  
+ [!code-xaml[ControlsOverview#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#1)]  
   
- 次の例では、同じアプリケーションをコードで作成します。 簡略化するために、<xref:System.Windows.Controls.Grid> である `grid1` の作成はサンプルから除外しています。                   `grid1` には、上記の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の例で示したのと同じ列と行の定義があります。  
+ 次の例では、同じアプリケーションをコードで作成します。 簡略化のための作成、 <xref:System.Windows.Controls.Grid>、 `grid1`、サンプルから除外されています。 `grid1`上記のように同じ列と行の定義を持つ[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]例です。  
   
- [!code-csharp[ControlsOverview#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#2)] [!code-vb[ControlsOverview#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#2)]  
+ [!code-csharp[ControlsOverview#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#2)]
+ [!code-vb[ControlsOverview#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#2)]  
   
 <a name="changing_the_appearance_of_a_control"></a>   
 ## <a name="changing-the-appearance-of-a-control"></a>コントロールの外観の変更  
@@ -44,74 +44,77 @@ ms.lasthandoff: 05/22/2017
   
 -   コントロールのプロパティ値を変更します。  
   
--   コントロールに <xref:System.Windows.Style> を作成します。  
+-   作成、<xref:System.Windows.Style>コントロール。  
   
--   コントロールに新しい <xref:System.Windows.Controls.ControlTemplate> を作成します。  
+-   新しい<xref:System.Windows.Controls.ControlTemplate>コントロール。  
   
 ### <a name="changing-a-controls-property-value"></a>コントロールのプロパティ値の変更  
- 多くのコントロールには、<xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.Control.Background%2A> のような、コントロールの外観を変更するためのプロパティが用意されています。 値プロパティは、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] でもコードでも設定できます。 次の例では、<xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.Control.Background%2A>、<xref:System.Windows.Controls.Control.FontSize%2A>、<xref:System.Windows.Controls.Control.FontWeight%2A> の各プロパティを [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] で設定しています。  
+ 多くのコントロールは、プロパティ、コントロールの表示方法などを変更することを持つ、<xref:System.Windows.Controls.Control.Background%2A>の<xref:System.Windows.Controls.Button>です。 両方の値のプロパティを設定することができます[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]とコード。 次の例のセット、 <xref:System.Windows.Controls.Control.Background%2A>、 <xref:System.Windows.Controls.Control.FontSize%2A>、および<xref:System.Windows.Controls.Control.FontWeight%2A>プロパティを<xref:System.Windows.Controls.Button>で[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。  
   
- [!code-xml[ControlsOverview#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#3)]  
+ [!code-xaml[ControlsOverview#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#3)]  
   
  次の例では、同じプロパティをコードで設定しています。  
   
- [!code-csharp[ControlsOverview#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#4)] [!code-vb[ControlsOverview#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#4)]  
+ [!code-csharp[ControlsOverview#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#4)]
+ [!code-vb[ControlsOverview#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#4)]  
   
 ### <a name="creating-a-style-for-a-control"></a>コントロールのスタイル作成  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、アプリケーションの各インスタンスのプロパティを設定するのではなく、<xref:System.Windows.Style> を作成することによって、すべてのコントロールの外観を指定する機能が用意されています。                           次の例では、アプリケーションの各 <xref:System.Windows.Controls.Button> に適用される <xref:System.Windows.Style> を作成しています。                          <xref:System.Windows.Style> 定義は、通常、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] では <xref:System.Windows.ResourceDictionary> に定義されます。たとえば、<xref:System.Windows.FrameworkElement> の <xref:System.Windows.FrameworkElement.Resources%2A> プロパティがそれに該当します。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]作成することで、アプリケーション内の各インスタンスのプロパティを設定する代わりに、コントロールの外観を指定することができます、<xref:System.Windows.Style>です。 次の例を作成、<xref:System.Windows.Style>それぞれに適用されている<xref:System.Windows.Controls.Button>アプリケーションにします。 <xref:System.Windows.Style>定義されている定義が通常[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]で、 <xref:System.Windows.ResourceDictionary>、ように、<xref:System.Windows.FrameworkElement.Resources%2A>のプロパティ、<xref:System.Windows.FrameworkElement>です。  
   
- [!code-xml[ControlsOverview#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#5)]  
+ [!code-xaml[ControlsOverview#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#5)]  
   
- スタイルにキーを割り当て、そのキーをコントロールの `Style` プロパティで指定することによって、特定の種類のコントロールのみにスタイルを適用することもできます。  スタイルの詳細については、「[スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)」を参照してください。  
+ スタイルにキーを割り当てる場合や内でそのキーを指定することによって、特定の種類の特定のコントロールのみにスタイルを適用することも、`Style`コントロールのプロパティです。  スタイルの詳細については、次を参照してください。[スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)です。  
   
 ### <a name="creating-a-controltemplate"></a>ControlTemplate の作成  
- <xref:System.Windows.Style> を使用すると、複数のコントロールのプロパティを一度に設定できますが、<xref:System.Windows.Style> の作成だけでは <xref:System.Windows.Controls.Control> の外観を十分カスタマイズできない場合もあります。 <xref:System.Windows.Controls.Control> クラスを継承するクラスには <xref:System.Windows.Controls.ControlTemplate> があり、これで <xref:System.Windows.Controls.Control> の構造と外観が定義されます。 <xref:System.Windows.Controls.Control> の <xref:System.Windows.Controls.Control.Template%2A> プロパティはパブリックであるため、<xref:System.Windows.Controls.Control> に既定とは異なる <xref:System.Windows.Controls.ControlTemplate> を付与できます。 一般的に、<xref:System.Windows.Controls.Control> の外観をカスタマイズするには、コントロールを継承するのではなく、<xref:System.Windows.Controls.Control> に新しい <xref:System.Windows.Controls.ControlTemplate> を指定します。  
+ A <xref:System.Windows.Style> 、一度に複数のコントロールのプロパティを設定することができますの外観をカスタマイズすることがあります、<xref:System.Windows.Controls.Control>作成することで行うことができますを超える、<xref:System.Windows.Style>です。 継承するクラス、<xref:System.Windows.Controls.Control>クラスが、 <xref:System.Windows.Controls.ControlTemplate>、構造との外観を定義する、<xref:System.Windows.Controls.Control>です。 <xref:System.Windows.Controls.Control.Template%2A>のプロパティ、<xref:System.Windows.Controls.Control>ができるようにするためにパブリックで、 <xref:System.Windows.Controls.Control> 、<xref:System.Windows.Controls.ControlTemplate>既定とは異なる。 多くの場合を指定できます、新しい<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.Control>の外観をカスタマイズするコントロールから継承する代わりに、<xref:System.Windows.Controls.Control>です。  
   
- よく使用される <xref:System.Windows.Controls.Button> というコントロールについて考えてみます。  <xref:System.Windows.Controls.Button> の主な動作は、ユーザーがクリックしたときに、アプリケーションが一定のアクションを実行できるようにすることです。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、<xref:System.Windows.Controls.Button> は既定で浮き出し表示の四角形で表されます。  アプリケーションの開発中に <xref:System.Windows.Controls.Button> の動作 (ボタンのクリック イベントを処理する) を利用しながら、ボタンのプロパティを変更するだけでは実現できない外観の変更を試みることにしたとします。  このような場合は、新しい <xref:System.Windows.Controls.ControlTemplate> を作成できます。  
+ 非常に共通のコントロールを検討してください<xref:System.Windows.Controls.Button>です。  主な動作、<xref:System.Windows.Controls.Button>は、ユーザーがクリックしたときに何らかのアクションを実行するアプリケーションを有効にします。  既定では、<xref:System.Windows.Controls.Button>で[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]発生四角形として表示されます。  アプリケーションの開発中にすることができますの動作を利用、 <xref:System.Windows.Controls.Button>--。 つまり、処理することにより、ボタンのクリック イベント--がボタンのプロパティを変更することによって行うことができますを超えるボタンの外観を変更する可能性があります。  この場合、作成、新しい<xref:System.Windows.Controls.ControlTemplate>です。  
   
- 次の例では、<xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.ControlTemplate> を作成します。  この <xref:System.Windows.Controls.ControlTemplate> は、角が丸くて背景がグラデーションになっている <xref:System.Windows.Controls.Button> を作成します。  この <xref:System.Windows.Controls.ControlTemplate> には、<xref:System.Windows.Controls.Border.Background%2A> が 2 つの <xref:System.Windows.Media.GradientStop> オブジェクトを持つ <xref:System.Windows.Media.LinearGradientBrush> である <xref:System.Windows.Controls.Border> が含まれています。  最初の <xref:System.Windows.Media.GradientStop> ではデータ バインディングを使用して、<xref:System.Windows.Media.GradientStop> の <xref:System.Windows.Media.GradientStop.Color%2A> プロパティをボタンの背景の色にバインドしています。  <xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.Control.Background%2A> プロパティを設定すると、その値の色が最初の <xref:System.Windows.Media.GradientStop> として使用されます。 データ バインディングの詳細については、「[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。 この例ではまた、<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A> が `true` のときに <xref:System.Windows.Controls.Button> の外観を変更する <xref:System.Windows.Trigger> も作成しています。  
+ 次の例を作成、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.Button>です。  <xref:System.Windows.Controls.ControlTemplate>を作成、<xref:System.Windows.Controls.Button>角の丸いとグラデーションの背景を使用します。  <xref:System.Windows.Controls.ControlTemplate>が含まれています、<xref:System.Windows.Controls.Border>が<xref:System.Windows.Controls.Border.Background%2A>は、 <xref:System.Windows.Media.LinearGradientBrush> 、2 つ<xref:System.Windows.Media.GradientStop>オブジェクト。  最初の<xref:System.Windows.Media.GradientStop>データ バインディングを使用して、バインド、<xref:System.Windows.Media.GradientStop.Color%2A>のプロパティ、<xref:System.Windows.Media.GradientStop>ボタンの背景の色にします。  設定すると、<xref:System.Windows.Controls.Control.Background%2A>のプロパティ、 <xref:System.Windows.Controls.Button>、その値の色が 1 つ目として使用される<xref:System.Windows.Media.GradientStop>です。 データ バインディングの詳細については、「[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。 例でも作成、<xref:System.Windows.Trigger>の外観を変更する、<xref:System.Windows.Controls.Button>とき<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>は`true`します。  
   
- [!code-xml[ControlsOverview#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#6)]  
-[!code-xml[ControlsOverview#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#7)]  
+ [!code-xaml[ControlsOverview#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#6)]  
+[!code-xaml[ControlsOverview#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#7)]  
   
 > [!NOTE]
->  この例が正常に動作するには、<xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.Control.Background%2A> プロパティが <xref:System.Windows.Media.SolidColorBrush> に設定されている必要があります。  
+>  <xref:System.Windows.Controls.Control.Background%2A>のプロパティ、<xref:System.Windows.Controls.Button>に設定する必要があります、<xref:System.Windows.Media.SolidColorBrush>の例が適切に機能します。  
   
 <a name="subscribing_to_events"></a>   
 ## <a name="subscribing-to-events"></a>イベントのサブスクライブ  
- コントロールのイベントをサブスクライブするには、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] またはコードを使用できますが、コードではイベントの処理しかできません。  次の例では、<xref:System.Windows.Controls.Button> の `Click` イベントをサブスクライブする方法を示します。  
+ いずれかを使用して、コントロールのイベントにサブスクライブできます[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]コードが処理できるコード内のイベントまたはします。  次の例をサブスクライブする方法を示しています、`Click`のイベント、<xref:System.Windows.Controls.Button>です。  
   
- [!code-xml[ControlsOverview#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#10)]  
+ [!code-xaml[ControlsOverview#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#10)]  
   
- [!code-csharp[ControlsOverview#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#8) ] [!code-vb [ControlsOverview#8](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#8)]  
+ [!code-csharp[ControlsOverview#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#8)]
+ [!code-vb[ControlsOverview#8](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#8)]  
   
- 次の例は、<xref:System.Windows.Controls.Button> の `Click` イベントを処理しています。  
+ 次の例のハンドル、`Click`のイベント、<xref:System.Windows.Controls.Button>です。  
   
- [!code-csharp[ControlsOverview#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#9) ] [!code-vb [ControlsOverview#9](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#9)]  
+ [!code-csharp[ControlsOverview#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#9)]
+ [!code-vb[ControlsOverview#9](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#9)]  
   
 <a name="rich_content_in_controls"></a>   
 ## <a name="rich-content-in-controls"></a>コントロールでのリッチ コンテンツ  
- <xref:System.Windows.Controls.Control> クラスを継承するほとんどのクラスに、リッチ コンテンツを格納する機能があります。 たとえば、<xref:System.Windows.Controls.Label> には、文字列、<xref:System.Windows.Controls.Image>、<xref:System.Windows.Controls.Panel> など、任意のオブジェクトを格納できます。  以下のクラスは、リッチ コンテンツをサポートし、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のほとんどのコントロールの基本クラスとして機能します。  
+ ほとんどのクラスから継承する、<xref:System.Windows.Controls.Control>クラス豊富なコンテンツを格納する容量があります。 たとえば、<xref:System.Windows.Controls.Label>文字列など、任意のオブジェクトを含めることができます、 <xref:System.Windows.Controls.Image>、または<xref:System.Windows.Controls.Panel>です。  次のクラスは、豊富なコンテンツのサポートを提供し、ほとんどのコントロールの基本クラスとして機能[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]します。  
   
--   <xref:System.Windows.Controls.ContentControl>-- このクラスを継承するクラスには、<xref:System.Windows.Controls.Label>、<xref:System.Windows.Controls.Button>、<xref:System.Windows.Controls.ToolTip> などがあります。  
+-   <xref:System.Windows.Controls.ContentControl>-このクラスから継承したクラスの例としては<xref:System.Windows.Controls.Label>、 <xref:System.Windows.Controls.Button>、および<xref:System.Windows.Controls.ToolTip>です。  
   
--   <xref:System.Windows.Controls.ItemsControl>-- このクラスを継承するクラスには、<xref:System.Windows.Controls.ListBox>、<xref:System.Windows.Controls.Menu>、<xref:System.Windows.Controls.Primitives.StatusBar> などがあります。  
+-   <xref:System.Windows.Controls.ItemsControl>-このクラスから継承したクラスの例としては<xref:System.Windows.Controls.ListBox>、 <xref:System.Windows.Controls.Menu>、および<xref:System.Windows.Controls.Primitives.StatusBar>です。  
   
--   <xref:System.Windows.Controls.HeaderedContentControl>-- このクラスを継承するクラスには、<xref:System.Windows.Controls.TabItem>、<xref:System.Windows.Controls.GroupBox>、<xref:System.Windows.Controls.Expander> などがあります。  
+-   <xref:System.Windows.Controls.HeaderedContentControl>-このクラスから継承したクラスの例としては<xref:System.Windows.Controls.TabItem>、 <xref:System.Windows.Controls.GroupBox>、および<xref:System.Windows.Controls.Expander>です。  
   
--   <xref:System.Windows.Controls.HeaderedItemsControl>-- このクラスを継承するクラスには、<xref:System.Windows.Controls.MenuItem>、<xref:System.Windows.Controls.TreeViewItem>、<xref:System.Windows.Controls.ToolBar> などがあります。  
+-   <xref:System.Windows.Controls.HeaderedItemsControl>-このクラスから継承したクラスの例としては<xref:System.Windows.Controls.MenuItem>、 <xref:System.Windows.Controls.TreeViewItem>、および<xref:System.Windows.Controls.ToolBar>です。  
   
 -  
   
- これらの基本クラスの詳細については、「[WPF のコンテンツ モデル](../../../../docs/framework/wpf/controls/wpf-content-model.md)」を参照してください。  
+ これらの基本クラスの詳細については、次を参照してください。 [WPF コンテンツ モデル](../../../../docs/framework/wpf/controls/wpf-content-model.md)です。  
   
 ## <a name="see-also"></a>関連項目  
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [カテゴリ別のコントロール](../../../../docs/framework/wpf/controls/controls-by-category.md)   
- [コントロール ライブラリ](../../../../docs/framework/wpf/controls/control-library.md)   
- [データ テンプレートの概要](../../../../docs/framework/wpf/data/data-templating-overview.md)   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [入力](../../../../docs/framework/wpf/advanced/input-wpf.md)   
- [コマンドを有効にする](../../../../docs/framework/wpf/advanced/how-to-enable-a-command.md)   
- [チュートリアル : カスタム アニメーション ボタンの作成](../../../../docs/framework/wpf/controls/walkthroughs-create-a-custom-animated-button.md)   
+ [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [カテゴリ別のコントロール](../../../../docs/framework/wpf/controls/controls-by-category.md)  
+ [コントロール ライブラリ](../../../../docs/framework/wpf/controls/control-library.md)  
+ [データ テンプレートの概要](../../../../docs/framework/wpf/data/data-templating-overview.md)  
+ [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [入力](../../../../docs/framework/wpf/advanced/input-wpf.md)  
+ [コマンドを有効にする](../../../../docs/framework/wpf/advanced/how-to-enable-a-command.md)  
+ [チュートリアル: カスタム アニメーション ボタンの作成](../../../../docs/framework/wpf/controls/walkthroughs-create-a-custom-animated-button.md)  
  [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)

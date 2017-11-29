@@ -5,31 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - pinning, interop marshaling
 - copying, interop marshaling
 - interop marshaling, copying
 - interop marshaling, pinning
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b6f5c54ba65f44e01cc95094f7fa4027c587e8a1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 8e25d9a7bffdf0a3e8f68639dc0442ccf62a4412
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="copying-and-pinning"></a>コピーと固定
 データをマーシャリングするときに、相互運用マーシャラーはマーシャリングされるデータをコピーまたは固定できます。 データをコピーすると、あるメモリ位置のデータのコピーが別のメモリ位置に配置されます。 マネージ メモリからアンマネージ メモリへの値型のコピーと、参照渡しされる型のコピーの違いを次の図に示します。  
@@ -88,13 +81,12 @@ ms.lasthandoff: 08/21/2017
 > [!CAUTION]
 >  文字列を値渡しする場合には、マーシャラーから渡された参照を呼び出し先で変更しないようにしてください。 変更した場合はマネージ ヒープが破損することがあります。  
   
- <xref:System.String?displayProperty=fullName> を参照渡しする場合、マーシャラーは呼び出しを行う前にその文字列の内容を 2 次バッファーにコピーします。 その後、呼び出しから制御が返されるときにバッファーの内容を新しい文字列にコピーします。 この手法により、変更不可のマネージ文字列が変更されないことが保証されます。  
+ <xref:System.String?displayProperty=nameWithType> を参照渡しする場合、マーシャラーは呼び出しを行う前にその文字列の内容を 2 次バッファーにコピーします。 その後、呼び出しから制御が返されるときにバッファーの内容を新しい文字列にコピーします。 この手法により、変更不可のマネージ文字列が変更されないことが保証されます。  
   
- <xref:System.Text.StringBuilder?displayProperty=fullName> を値渡しする場合、マーシャラーは **StringBuilder** の内部バッファーへの参照を直接呼び出し元に渡します。 呼び出し元と呼び出し先は、バッファーのサイズに同意する必要があります。 呼び出し元は、適切な長さの **StringBuilder** を作成します。 呼び出し先は、バッファーのオーバーランが発生しないように必要な予防措置をとる必要があります。 **StringBuilder** は、値渡しされる参照型は既定で In パラメーターとして渡される、という規則の例外です。 StringBuilder は常に In/Out として渡されます。  
+ <xref:System.Text.StringBuilder?displayProperty=nameWithType> を値渡しする場合、マーシャラーは **StringBuilder** の内部バッファーへの参照を直接呼び出し元に渡します。 呼び出し元と呼び出し先は、バッファーのサイズに同意する必要があります。 呼び出し元は、適切な長さの **StringBuilder** を作成します。 呼び出し先は、バッファーのオーバーランが発生しないように必要な予防措置をとる必要があります。 **StringBuilder** は、値渡しされる参照型は既定で In パラメーターとして渡される、という規則の例外です。 StringBuilder は常に In/Out として渡されます。  
   
 ## <a name="see-also"></a>関連項目  
- [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)   
- [相互運用マーシャラーによるメモリ管理](http://msdn.microsoft.com/en-us/417206ce-ee3e-4619-9529-0c0b686c7bee)   
- [方向属性](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)   
+ [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)  
+ [相互運用マーシャラーによるメモリ管理](http://msdn.microsoft.com/en-us/417206ce-ee3e-4619-9529-0c0b686c7bee)  
+ [方向属性](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
  [相互運用マーシャリング](../../../docs/framework/interop/interop-marshaling.md)
-

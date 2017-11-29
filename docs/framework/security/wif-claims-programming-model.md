@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 149cb875-9b1c-4695-b88a-fbf1725a02f9
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 9cfc3491b18d312b80ba69991edb9930f59d47cc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="wif-claims-programming-model"></a>WIF 要求プログラミング モデル
 ASP.NET と Windows Communication Foundation (WCF) の開発者は、通常、IIdentity インターフェイスや IPrincipal インターフェイスを利用し、ユーザーの ID 情報を処理します。 .NET 4.5 では、Windows Identity Foundation (WIF) が統合され、あらゆるプリンシパルに対して常に要求が表示されるようになりました。次の図をご覧ください。  
@@ -68,7 +66,7 @@ ClaimsPrincipal claimsPrincipal = Thread.CurrentPrincipal as ClaimsPrincipal;
 |-|-|-|  
 |SAML 1.1|1.System.IdentityModel.SecurityTokenService.GetOutputClaimsIdentity(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Scope) からのすべての要求。<br />2.トークンに証明トークンが含まれる場合、XML でシリアル化した確認キーが含まれる `http://schemas.microsoft.com/ws/2008/06/identity/claims/confirmationkey` 要求。<br />3.Issuer 要素からの `http://schemas.microsoft.com/ws/2008/06/identity/claims/samlissuername` 要求。<br />4.トークンに認証ステートメントが含まれる場合、AuthenticationMethod 要求と AuthenticationInstant 要求。|"SAML 1.1" の一覧に含まれる要求に加え、`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name` タイプの要求を除き、Windows 認証関連の要求が加わり、ID は WindowsClaimsIdentity で表されます。|  
 |SAML 2.0|"SAML 1.1" と同じ。|"Windows アカウントにマップされた SAML 1.1" と同じ。|  
-|X509|1.X500 の識別名、emailName、dnsName、SimpleName、UpnName、UrlName、拇印、RsaKey (これは X509Certificate2.PublicKey.Keyy プロパティから RSACryptoServiceProvider.ExportParameters メソッドを利用して抽出できます)、DsaKey (これは X509Certificate2.PublicKey.Key プロパティから DSACryptoServiceProvider.ExportParameters メソッドを利用して抽出できます)、X509 証明書の SerialNumber プロパティを持つ要求。<br />2.値 `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509` を持つ AuthenticationMethod 要求。 証明書が XmlSchema DateTime 形式で検証されたときの値を持つ AuthenticationInstant 要求。|1.Windows アカウントの完全修飾ドメイン名が `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name` 要求値として使用されます。 」を参照してください。<br />2.Windows にマッピングされていない X509 証明書からの要求と、Windows に証明書をマッピングして取得した Windows アカウントからの要求。|  
+|X509|1.X500 の識別名、emailName、dnsName、SimpleName、UpnName、UrlName、拇印、RsaKey (これは X509Certificate2.PublicKey.Keyy プロパティから RSACryptoServiceProvider.ExportParameters メソッドを利用して抽出できます)、DsaKey (これは X509Certificate2.PublicKey.Key プロパティから DSACryptoServiceProvider.ExportParameters メソッドを利用して抽出できます)、X509 証明書の SerialNumber プロパティを持つ要求。<br />2.値 `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509` を持つ AuthenticationMethod 要求。 証明書が XmlSchema DateTime 形式で検証されたときの値を持つ AuthenticationInstant 要求。|1.Windows アカウントの完全修飾ドメイン名が `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name` 要求値として使用されます。 。<br />2.Windows にマッピングされていない X509 証明書からの要求と、Windows に証明書をマッピングして取得した Windows アカウントからの要求。|  
 |UPN|1.要求は、Windows 認証セクションの要求と似ています。<br />2.値 `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` を持つ AuthenticationMethod 要求。 パスワードが XmlSchema DateTime 形式で検証されたときの値を持つ AuthenticationInstant 要求。||  
 |Windows (Kerberos または NTLM)|1.PrimarySID、DenyOnlyPrimarySID、PrimaryGroupSID、DenyOnlyPrimaryGroupSID、GroupSID、DenyOnlySID、Name など、アクセス トークンから生成された要求。<br />2.値 `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows` を持つ AuthenticationMethod。 Windows アクセス トークンが XMLSchema DateTime 形式で作成されたときの値を持つ AuthenticationInstant。||  
 |RSA キー ペア|1.値 RSAKeyValue を持つ `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/rsa` 要求。<br />2.値 `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/signature` を持つ AuthenticationMethod 要求。 RSA キーが XMLSchema DateTime 形式で認証された (つまり、署名が検証された) ときの値を持つ AuthenticationInstant 要求。||  
@@ -84,4 +82,3 @@ ClaimsPrincipal claimsPrincipal = Thread.CurrentPrincipal as ClaimsPrincipal;
 |Spki|`urn:oasis:names:tc:SAML:1.0:am:SPKI`|  
 |XmlDSig|`urn:ietf:rfc:3075`|  
 |指定されていません。|`urn:oasis:names:tc:SAML:1.0:am:unspecified`|
-

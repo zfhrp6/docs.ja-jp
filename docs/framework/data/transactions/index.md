@@ -8,16 +8,15 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: effdc8e6-accf-41eb-98a5-431603ba218b
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 5248dd3a4da450e411dd5d9a7843df6c9263026e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="transaction-processing"></a>トランザクション処理
 オンライン書店で書籍を購入する場合、書籍と代金 (クレジット形式) を交換します。 クレジットに問題がなければ、一連の処理によって顧客は書籍を入手し、書店には代金が入金されます。 ただし、一連の取引処理の 1 つでも失敗すると取引全体が失敗し、 顧客は書籍を入手できず、書店は代金を受け取れません。  
@@ -38,4 +37,3 @@ ms.lasthandoff: 09/05/2017
 ## <a name="reference"></a>参照  
  <xref:System.Transactions>  
  コードのトランザクションへの参加を許可するクラスを提供します。 このクラスは、複数の分散参加要素、複数のフェーズ通知、および永続参加リストを使用するトランザクションをサポートします。
-

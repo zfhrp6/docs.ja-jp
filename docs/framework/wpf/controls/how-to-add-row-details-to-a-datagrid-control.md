@@ -1,73 +1,79 @@
 ---
-title: "方法: DataGrid コントロールに行の詳細を追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "DataGrid [WPF], 行の詳細"
-  - "DataTemplate [WPF], DataGrid"
-  - "行の詳細 [WPF], DataGrid"
+title: "方法: DataGrid コントロールに行の詳細を追加する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataTemplate [WPF], DataGrid
+- row details [WPF], DataGrid
+- DataGrid [WPF], row details
 ms.assetid: 0bdc6f50-9b4c-483f-9df6-a47a1fde998b
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 036e06d110df8900ab46f0d501f30b4a163c8eb9
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法: DataGrid コントロールに行の詳細を追加する
-<xref:System.Windows.Controls.DataGrid> コントロールを使用するときに、行の詳細セクションを追加して、データ表示をカスタマイズできます。  行の詳細セクションを追加すると、テンプレート内のデータをグループ化して、必要に応じて表示と非表示を切り替えることができます。  たとえば、<xref:System.Windows.Controls.DataGrid> 内の各行の概要のみを表示する <xref:System.Windows.Controls.DataGrid> に行の詳細を追加して、ユーザーが行を選択したときに詳細なデータ フィールドが表示されるようにします。  <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> プロパティの行の詳細セクションに対して、テンプレートを定義します。  次の図に、行の詳細セクションの例を示します。  
+# <a name="how-to-add-row-details-to-a-datagrid-control"></a>方法: DataGrid コントロールに行の詳細を追加する
+使用する場合、<xref:System.Windows.Controls.DataGrid>コントロール、行の詳細セクションを追加することによってデータの表示をカスタマイズすることができます。 行の詳細セクションを追加するには、必要に応じて表示されるか、折りたたまれる、テンプレート内のデータをグループ化することができます。 行の詳細を追加するなど、<xref:System.Windows.Controls.DataGrid>内の各行のデータの概要のみを表示する、<xref:System.Windows.Controls.DataGrid>が、ユーザーが行を選択したときに、他のデータ フィールドを表示します。 行の詳細セクション内のテンプレートを定義する、<xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A>プロパティです。 次の図は、行の詳細セクションの例を示します。  
   
- ![行の詳細を表示する DataGrid](../../../../docs/framework/wpf/controls/media/ndp-rowdetails.png "NDP\_RowDetails")  
+ ![行の詳細を表示する DataGrid](../../../../docs/framework/wpf/controls/media/ndp-rowdetails.png "NDP_RowDetails")  
   
- 行の詳細テンプレートは、インライン XAML またはリソースとして定義します。  両方の手順について次に示します。  リソースとして追加されたテンプレートは、テンプレートを再作成しなくてもプロジェクト全体で使用できます。  インライン XAML として追加されたデータ テンプレートは、それが定義されているコントロールからのみアクセスできます。  
+ リソースとして、または、インライン XAML としては、行の詳細テンプレートを定義します。 次の手順では、両方の方法が表示されます。 リソースとして追加されるデータ テンプレートは、テンプレートを再作成しなくても、プロジェクト全体で使用できます。 インライン XAML からのみアクセス コントロールが定義されているように追加されるデータ テンプレートです。  
   
-### インライン XAML を使用して行の詳細を表示するには  
+### <a name="to-display-row-details-by-using-inline-xaml"></a>インライン XAML を使用して行の詳細を表示するには  
   
-1.  データ ソースのデータを表示する <xref:System.Windows.Controls.DataGrid> を作成します。  
+1.  作成、<xref:System.Windows.Controls.DataGrid>データ ソースからデータを表示します。  
   
 2.  <xref:System.Windows.Controls.DataGrid> 要素に、<xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> 要素を追加します。  
   
-3.  行の詳細セクションの外観を定義する <xref:System.Windows.DataTemplate> を作成します。  
+3.  作成、<xref:System.Windows.DataTemplate>行の詳細セクションの外観を定義します。  
   
-     次の XAML は、<xref:System.Windows.Controls.DataGrid>、および <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> をインラインで定義する方法を示しています。  <xref:System.Windows.Controls.DataGrid> は、各行内の 3 つの値、および行が選択されたときにさらに表示される 3 つの値を表示します。  
+     次の XAML 示します、<xref:System.Windows.Controls.DataGrid>および定義する方法、<xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A>インラインです。 <xref:System.Windows.Controls.DataGrid>表示 3 つの値の各の行の 3 つ以上の値、行が選択されているときにします。  
   
-     [!code-xml[DataGrid_RowDetails#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/mainwindow.xaml#1)]  
+     [!code-xaml[DataGrid_RowDetails#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/mainwindow.xaml#1)]  
   
-     次のコードは、<xref:System.Windows.Controls.DataGrid> に表示されるデータを選択する際に使用されるクエリを示しています。  この例では、クエリによって、顧客情報を含むエンティティのデータが選択されます。  
+     次のコードに表示されるデータを選択するために使用するクエリを示しています、<xref:System.Windows.Controls.DataGrid>です。 この例では、クエリは、顧客情報を含むエンティティからデータを選択します。  
   
      [!code-csharp[DataGrid_RowDetails#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/mainwindow.xaml.cs#2)]
      [!code-vb[DataGrid_RowDetails#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_rowdetails/vb/mainwindow.xaml.vb#2)]  
   
-### リソースを使用して行の詳細を表示するには  
+### <a name="to-display-row-details-by-using-a-resource"></a>リソースを使用して行の詳細を表示するには  
   
-1.  データ ソースのデータを表示する <xref:System.Windows.Controls.DataGrid> を作成します。  
+1.  作成、<xref:System.Windows.Controls.DataGrid>データ ソースからデータを表示します。  
   
-2.  <xref:System.Windows.FrameworkElement.Resources%2A> 要素を <xref:System.Windows.Window> コントロールや <xref:System.Windows.Controls.Page> コントロールなどのルート要素に追加するか、または <xref:System.Windows.Application.Resources%2A> 要素を App.xaml \(または Application.xaml\) ファイル内の <xref:System.Windows.Application> クラスに追加します。  
+2.  追加、<xref:System.Windows.FrameworkElement.Resources%2A>ルート要素の要素など、<xref:System.Windows.Window>コントロールまたは<xref:System.Windows.Controls.Page>制御、または追加、<xref:System.Windows.Application.Resources%2A>要素を<xref:System.Windows.Application>App.xaml (または Application.xaml) ファイル内のクラスです。  
   
-3.  リソース要素に、行の詳細セクションの外観を定義する <xref:System.Windows.DataTemplate> を作成します。  
+3.  リソース要素で作成、<xref:System.Windows.DataTemplate>行の詳細セクションの外観を定義します。  
   
-     次の XAML は、<xref:System.Windows.Application> クラスに定義された <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> を示しています。  
+     次の XAML 示します、<xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A>で定義されている、<xref:System.Windows.Application>クラスです。  
   
-     [!code-xml[DataGrid_RowDetails#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/app.xaml#3)]  
+     [!code-xaml[DataGrid_RowDetails#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/app.xaml#3)]  
   
-4.  <xref:System.Windows.DataTemplate> で、[x:Key ディレクティブ](../../../../docs/framework/xaml-services/x-key-directive.md) に、データ テンプレートを一意に識別する値を設定します。  
+4.  <xref:System.Windows.DataTemplate>、設定、 [X:key ディレクティブ](../../../../docs/framework/xaml-services/x-key-directive.md)データ テンプレートを一意に識別する値にします。  
   
-5.  <xref:System.Windows.Controls.DataGrid> 要素で、<xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> プロパティを、前の手順で定義したリソースに設定します。  リソースを静的リソースとして割り当てます。  
+5.  <xref:System.Windows.Controls.DataGrid>要素、設定、<xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A>前の手順で定義されたリソースへのプロパティです。 静的リソースとしてリソースを割り当てます。  
   
-     次の XAML は、<xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> プロパティが前の例のリソースに設定された状態を示しています。  
+     次の XAML 示します、<xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A>プロパティを前の例からリソースに設定します。  
   
-     [!code-xml[DataGrid_RowDetails#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/window2.xaml#4)]  
+     [!code-xaml[DataGrid_RowDetails#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/window2.xaml#4)]  
   
-### 行の詳細の表示を設定し、水平方向にスクロールできないようにするには  
+### <a name="to-set-visibility-and-prevent-horizontal-scrolling-for-row-details"></a>表示を設定し、行の詳細を水平方向にスクロールを回避するには  
   
-1.  必要に応じて、<xref:System.Windows.Controls.DataGrid.RowDetailsVisibilityMode%2A> プロパティを <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode> の値に設定します。  
+1.  必要に応じて、設定、<xref:System.Windows.Controls.DataGrid.RowDetailsVisibilityMode%2A>プロパティを<xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode>値。  
   
-     既定では、値は <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode> に設定されます。  すべての行の詳細を表示するには、この値を <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode> に設定し、すべての行の詳細を非表示にするには、この値を <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode> に設定します。  
+     既定では、値に設定<xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected>です。 設定することができます<xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode.Visible>のすべての行の詳細を表示または<xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode.Collapsed>すべての行の詳細を非表示にします。  
   
-2.  必要に応じて、<xref:System.Windows.Controls.DataGrid.AreRowDetailsFrozen%2A> プロパティを `true` に設定して、行の詳細セクションを水平方向にスクロールできないようにします。
+2.  必要に応じて、設定、<xref:System.Windows.Controls.DataGrid.AreRowDetailsFrozen%2A>プロパティを`true`を防ぐため、行の詳細セクションの水平方向にスクロールします。

@@ -1,32 +1,35 @@
 ---
-title: "XML スキーマ制約およびリレーションシップ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "XML スキーマ制約およびリレーションシップ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 165bc2bc-60a1-40e0-9b89-7c68ef979079
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: a324c3b7f24d3395382067ea5581313af58e13f0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XML スキーマ制約およびリレーションシップ
-XML スキーマ定義言語 \(XSD\) スキーマでは、制約 \(UNIQUE、キー、キー参照\) およびリレーションシップ \(**msdata:Relationship** 注釈を使用した\) を指定できます。  このトピックでは、XML スキーマで指定した制約およびリレーションシップを解釈して <xref:System.Data.DataSet> を生成する方法について説明します。  
+# <a name="xml-schema-constraints-and-relationships"></a>XML スキーマ制約およびリレーションシップ
+XML スキーマ定義言語 (XSD) スキーマでは、制約を指定することができます (一意キー、およびキー参照制約) とのリレーションシップ (を使用して、 **msdata:Relationship**注釈)。 このトピックでは、XML スキーマで指定した制約およびリレーションシップを解釈して <xref:System.Data.DataSet> を生成する方法について説明します。  
   
- 一般的に、XML スキーマでは **DataSet** にリレーションシップだけを生成する場合に、**msdata:Relationship** 注釈を指定します。  詳細については、「[XML スキーマ \(XSD\) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)」を参照してください。  **DataSet** に制約を生成する場合は、制約 \(UNIQUE、キー、およびキー参照\) を指定します。  このトピックの後に説明されているように、リレーションシップを生成するにはキー制約とキー参照制約も使用するので注意してください。  
+ 一般に、XML スキーマを指定する、 **msdata:Relationship**注釈でのリレーションシップのみを生成する場合、**データセット**です。 詳細については、次を参照してください。 [XML スキーマ (XSD) からの DataSet リレーションの生成](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)です。 制約を指定する (一意キー、およびキー参照) で制約を生成する場合、**データセット**です。 このトピックの後に説明されているように、リレーションシップを生成するにはキー制約とキー参照制約も使用するので注意してください。  
   
-## キー制約およびキー参照制約によるリレーションシップの生成  
- **msdata:Relationship** 注釈を指定する代わりに、XML スキーマの割り当て処理時に使用するキー制約とキー参照制約を指定し、制約だけでなく、**DataSet** のリレーションシップも生成することができます。  ただし、**keyref** 要素で `msdata:ConstraintOnly="true"` を指定した場合、**DataSet** には制約だけが作成され、リレーションシップは生成されません。  
+## <a name="generating-a-relationship-from-key-and-keyref-constraints"></a>キー制約およびキー参照制約によるリレーションシップの生成  
+ 指定する代わりに、 **msdata:Relationship**注釈、で制約だけでなく、リレーションシップを生成するXMLスキーマの割り当て処理時に使用されるキーとキー参照制約を指定することができます**データセット**です。 ただし、指定した場合`msdata:ConstraintOnly="true"`で、 **keyref**要素、**データセット**制約だけを含めるし、リレーションシップは含まれません。  
   
- 入れ子になっていない **Order** 要素と **OrderDetail** 要素を含む XML スキーマの例を次に示します。  スキーマでは、キー制約とキー参照制約も指定します。  
+ 次の例では、XML スキーマを含む**順序**と**OrderDetail**要素で、入れ子になっていません。 スキーマでは、キー制約とキー参照制約も指定します。  
   
-```  
+```xml  
 <xs:schema id="MyDataSet" xmlns=""   
             xmlns:xs="http://www.w3.org/2001/XMLSchema"   
             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
@@ -66,7 +69,7 @@ XML スキーマ定義言語 \(XSD\) スキーマでは、制約 \(UNIQUE、キ�
 </xs:schema>  
 ```  
   
- XML スキーマの割り当て処理時に生成される **DataSet** には、**Order** テーブルと **OrderDetail** テーブルが含まれます。  さらに、**DataSet** にはリレーションシップと制約も含まれます。  そのリレーションシップと制約の例を次に示します。  スキーマでは、**msdata:Relationship** 注釈が指定されないことに注意してください。代わりに、キー制約とキー参照制約を使用してリレーションを生成します。  
+ **データセット**マッピング プロセスでは、XML スキーマの中に生成される、**順序**と**OrderDetail**テーブル。 さらに、**データセット**リレーションシップと制約が含まれています。 そのリレーションシップと制約の例を次に示します。 スキーマで指定されていないことに注意してください、 **msdata:Relationship**注釈。 リレーションシップを生成したキーとキー参照制約を使用する代わりに、します。  
   
 ```  
 ....ConstraintName: OrderNumberKey  
@@ -92,9 +95,9 @@ XML スキーマ定義言語 \(XSD\) スキーマでは、制約 \(UNIQUE、キ�
 ..Nested: False  
 ```  
   
- 上記のスキーマの例では、**Order** 要素と **OrderDetail** 要素は入れ子になっていません。  入れ子になっている **Order** 要素と **OrderDetail** 要素を含むスキーマの例を次に示します。  ただし、**msdata:Relationship** 注釈が指定されていないため、暗黙のリレーションが適用されます。  詳細については、「[入れ子になっているスキーマ要素間の暗黙的なリレーションの割り当て](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-implicit-relations-between-nested-schema-elements.md)」を参照してください。  スキーマでは、キー制約とキー参照制約も指定します。  
+ スキーマの前の例で、**順序**と**OrderDetail**要素が入れ子になっていません。 入れ子になっている Order 要素と OrderDetail 要素を含むスキーマの例を次に示します。 ただし、ありません**msdata:Relationship**注釈が指定されている。 そのため、暗黙のリレーションがと見なされます。 詳細については、次を参照してください。[マップ暗黙的なリレーションの間で入れ子になったスキーマ要素](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-implicit-relations-between-nested-schema-elements.md)です。 スキーマでは、キー制約とキー参照制約も指定します。  
   
-```  
+```xml  
 <xs:schema id="MyDataSet" xmlns=""   
             xmlns:xs="http://www.w3.org/2001/XMLSchema"   
             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
@@ -136,14 +139,14 @@ XML スキーマ定義言語 \(XSD\) スキーマでは、制約 \(UNIQUE、キ�
 </xs:schema>  
 ```  
   
- XML スキーマの割り当て処理によって生成された **DataSet** には、次の 2 つのテーブルが含まれます。  
+ **データセット**XML スキーマの割り当て処理に起因すると、2 つのテーブルが含まれています。  
   
 ```  
 Order(OrderNumber, EmpNumber, Order_Id)  
 OrderDetail(OrderNumber, ItemNumber, Order_Id)  
 ```  
   
- さらに、**DataSet** には 2 つのリレーションシップ \(1 つは **msdata:relationship** 注釈に基づいた、もう 1 つはキー制約とキー参照制約に基づいた\) およびさまざまな制約も含まれます。  リレーションおよび制約の例を次に示します。  
+ **データセット**も 2 つのリレーションシップが含まれます (に基づいて 1 つ、 **msdata:relationship**注釈と、その他のキーとキー参照制約に基づく) およびさまざまな制約です。 リレーションおよび制約の例を次に示します。  
   
 ```  
 ..RelationName: Order_OrderDetail  
@@ -191,8 +194,8 @@ OrderDetail(OrderNumber, ItemNumber, Order_Id)
 ..RelatedColumns: OrderNumber  
 ```  
   
- 入れ子になっているテーブルを参照するキー参照制約に **msdata:IsNested\="true"** 注釈が含まれている場合は、そのキー参照制約と関連する UNIQUE\/ キー制約に基づいて、1 つの入れ子になったリレーションシップが作成されます。  
+ 入れ子になったテーブルを参照するキー参照制約が含まれるかどうか、 **msdata:IsNested ="true"**注釈、**データセット**キー参照制約に基づいている 1 つの入れ子になったリレーションシップを作成し、関連するキー/一意制約。  
   
-## 参照  
- [XML スキーマ \(XSD\) からの DataSet リレーショナル構造の派生](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [XML スキーマ (XSD) からの DataSet リレーショナル構造の派生](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

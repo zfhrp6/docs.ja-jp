@@ -1,58 +1,56 @@
 ---
-title: "IsTrue Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.istrue"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "IsTrue operator"
-  - "OrElse operator [Visual Basic]"
+title: "IsTrue 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.istrue
+helpviewer_keywords:
+- IsTrue operator [Visual Basic]
+- OrElse operator [Visual Basic]
 ms.assetid: b6cec0f2-61b1-4331-a7f0-4d07ee3179d6
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: c0d261186ce68f06cec95251e815248a189f6da5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# IsTrue Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-式が `True` かどうかを調べます。  
+# <a name="istrue-operator-visual-basic"></a>IsTrue 演算子 (Visual Basic)
+式は、かどうかを判断`True`です。  
   
- `IsTrue` をコードの中で明示的に呼び出すことはできませんが、Visual Basic コンパイラはこれを使用して `OrElse` 句からコードを生成します。  クラスまたは構造体を定義し、`OrElse` 句でその型の変数を使用する場合、そのクラスまたは構造体で `IsTrue` を定義する必要があります。  
+ 呼び出すことはできません`IsTrue`明示的に、コードが、Visual Basic のコンパイラが使用できるからコードを生成する`OrElse`句。 クラスまたは構造体を定義しでその型の変数を使用する場合、`OrElse`を定義する必要があります句、`IsTrue`そのクラスまたは構造にします。  
   
- コンパイラは `IsTrue` および `IsFalse` 演算子を *一致したペア*と見なします。  つまり、一方を定義したら、もう一方も定義する必要があります。  
+ コンパイラは、`IsTrue`と`IsFalse`演算子として、*ペア*です。 つまり、それらのいずれかを定義する場合をする必要がありますも定義、もう 1 つです。  
   
-## IsTrue のコンパイラによる使用  
- クラスまたは構造体を定義した場合、その型の変数を `For`、`If`、`Else` `If`、または `While` ステートメントまたは `When` 句で使用できます。  この場合、コンパイラは条件をテストするために、この型を `Boolean` 値に変換する演算子が必要です。  適切な演算子は次の順序で検索されます。  
+## <a name="compiler-use-of-istrue"></a>IsTrue のコンパイラの使用  
+ クラスまたは構造体を定義したらでその型の変数を使用することができます、 `For`、 `If`、 `Else``If`、または`While`ステートメント、または、`When`句。 これを行う場合、コンパイラは、演算子に、型に変換する`Boolean`条件をテストするための値します。 これは、適切な演算子は次の順序で検索します。  
   
-1.  クラスまたは構造体から `Boolean` への拡大変換演算子  
+1.  クラスまたは構造から拡大変換演算子`Boolean`です。  
   
-2.  クラスまたは構造体から `Boolean?` への拡大変換演算子  
+2.  クラスまたは構造から拡大変換演算子`Boolean?`です。  
   
-3.  クラスまたは構造体上の `IsTrue` 演算子  
+3.  `IsTrue`クラスまたは構造体で演算子。  
   
-4.  `Boolean` から `Boolean?` への変換が含まれない `Boolean?` への縮小変換  
+4.  縮小変換`Boolean?`からの変換を含まない`Boolean`に`Boolean?`です。  
   
-5.  クラスまたは構造体から `Boolean` への縮小変換演算子  
+5.  クラスまたは構造から縮小変換演算子`Boolean`です。  
   
- `Boolean` への変換、または `IsTrue` 演算子を定義していない場合、コンパイラはエラーを返します。  
+ 変換を定義していない場合`Boolean`または`IsTrue`演算子、コンパイラがエラーを通知します。  
   
 > [!NOTE]
->  `IsTrue` は *オーバーロード* できます。つまり、オペランドがクラスまたは構造体の型であれば、クラスまたは構造体がこの動作を再定義できます。  このようなクラスまたは構造体でこの演算子を使用している場合、再定義された動作を確認してください。  詳細については、「[Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+>  `IsTrue`演算子を指定できます*オーバー ロードされた*、いるクラスまたは構造体を再定義できますその動作のオペランドは、そのクラスまたは構造体の型を持つときにすることを意味します。 コードは、このようなクラスまたは構造体で、この演算子を使用する場合は、再定義された動作を理解することを確認します。 詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。  
   
-## 使用例  
- 次のコード例では、`IsFalse` および `IsTrue` 演算子の定義を含む構造体の骨組みを定義します。  
+## <a name="example"></a>例  
+ 次のコード例の定義を含む構造体の輪郭の定義、`IsFalse`と`IsTrue`演算子。  
   
  [!code-vb[VbVbalrOperators#28](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/istrue-operator_1.vb)]  
   
-## 参照  
- [IsFalse Operator](../../../visual-basic/language-reference/operators/isfalse-operator.md)   
- [How to: Define an Operator](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)   
- [OrElse Operator](../../../visual-basic/language-reference/operators/orelse-operator.md)
+## <a name="see-also"></a>関連項目  
+ [IsFalse 演算子](../../../visual-basic/language-reference/operators/isfalse-operator.md)  
+ [方法 : 演算子を定義する](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)  
+ [OrElse 演算子](../../../visual-basic/language-reference/operators/orelse-operator.md)
