@@ -1,72 +1,69 @@
 ---
-title: "GetType Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.GetType"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "GetType operator"
-  - "GetType keyword"
+title: "GetType 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.GetType
+helpviewer_keywords:
+- GetType operator [Visual Basic]
+- GetType keyword [Visual Basic]
 ms.assetid: 4f733297-2503-4607-850c-15eba65fff90
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 38a984dce44133936f7f163e6afb20f0f336377c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# GetType Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-指定された型の <xref:System.Type> オブジェクトを返します。  <xref:System.Type> オブジェクトにはプロパティ、メソッド、イベントなど、その型に関する情報が含まれています。  
+# <a name="gettype-operator-visual-basic"></a>GetType 演算子 (Visual Basic)
+返します、<xref:System.Type>指定した型のオブジェクト。 <xref:System.Type>オブジェクトなど、そのプロパティ、メソッド、およびイベントの種類に関する情報を提供します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 GetType(typename)  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
-|||  
-|-|-|  
-|パラメーター|Description|  
-|`typename`|情報を取得する型の名前を指定します。|  
+|パラメーター|説明|  
+|---|---|  
+|`typename`|情報を取得する型の名前。|  
   
-## 解説  
- `GetType` 演算子は、指定された `typename` の <xref:System.Type> オブジェクトを返します。  `typename` には、定義済みの任意の型の名前を渡すことができます。  次に例を示します。  
+## <a name="remarks"></a>コメント  
+ `GetType`演算子を返します、 <xref:System.Type> 、指定されたオブジェクト`typename`です。 定義済みのすべての種類の名前を渡すことができます`typename`です。 次に例を示します。  
   
--   `Boolean` や `Date` などの Visual Basic のデータ型  
+-   Visual Basic データ型など`Boolean`または`Date`です。  
   
--   <xref:System.ArgumentException?displayProperty=fullName> や <xref:System.Double?displayProperty=fullName> などの .NET Framework のクラス、構造体、モジュール、インターフェイス。  
+-   .NET Framework クラス、構造体、モジュール、または、インターフェイスなど<xref:System.ArgumentException?displayProperty=nameWithType>または<xref:System.Double?displayProperty=nameWithType>です。  
   
--   アプリケーションで定義したクラス、構造体、モジュール、またはインターフェイス。  
+-   クラス、構造体、モジュール、またはアプリケーションで定義されているインターフェイス。  
   
--   アプリケーションで定義した配列。  
+-   アプリケーションで定義されている任意の配列。  
   
--   アプリケーションで定義したデリゲート。  
+-   アプリケーションで定義されている任意のデリゲート。  
   
--   Visual Basic、.NET Framework、またはアプリケーションで定義した列挙体。  
+-   Visual Basic、.NET Framework、またはアプリケーションによって定義された任意の列挙体です。  
   
- オブジェクト変数の型オブジェクトを取得する場合は、<xref:System.Type.GetType%2A?displayProperty=fullName> メソッドを使用します。  
+ オブジェクト変数の型のオブジェクトを取得する場合は、使用、<xref:System.Type.GetType%2A?displayProperty=nameWithType>メソッドです。  
   
- `GetType` 演算子は次のような場合に使用できます。  
+ `GetType`演算子は、次の状況で役に立ちます。  
   
--   実行時に、型のメタデータにアクセスする必要がある場合。  <xref:System.Type> オブジェクトには、型のメンバーや配置情報などのメタデータが含まれています。  たとえば、アセンブリに対してリフレクションする場合などにこれが必要になります。  詳細については、「<xref:System.Reflection?displayProperty=fullName>」を参照してください。  
+-   型のメタデータは、実行時にアクセスする必要があります。 <xref:System.Type>オブジェクトは型のメンバーと配置の情報などのメタデータを提供します。 必要に、たとえば、アセンブリを反映するようになります。 詳細については、「<xref:System.Reflection?displayProperty=nameWithType>」を参照してください。  
   
--   2 つのオブジェクト参照を比較して、それらが同じ型のインスタンスを参照しているかを確認することがあります。  同じ型のインスタンスを参照している場合、`GetType` は同じ <xref:System.Type> オブジェクトへの参照を返します。  
+-   同じ型のインスタンスを参照しているかどうかを次の 2 つのオブジェクト参照を比較するには。 場合は、`GetType`同じへの参照を返します<xref:System.Type>オブジェクト。  
   
-## 使用例  
- `GetType` 演算子の使用例を次に示します。  
+## <a name="example"></a>例  
+ 次の例、`GetType`演算子を使用します。  
   
  [!code-vb[VbVbalrOperators#26](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/gettype-operator_1.vb)]  
   
-## 参照  
- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
- [Operators and Expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+## <a name="see-also"></a>関連項目  
+ [Visual Basic における演算子の優先順位](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [機能別の演算子一覧](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [演算子および式](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

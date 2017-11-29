@@ -1,57 +1,57 @@
 ---
-title: "方法 : TableLayoutPanel コントロールの列と行を編集する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "net.ComponentModel.StyleCollectionEditor"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "列 [Windows フォーム], 編集"
-  - "行 [Windows フォーム], 編集"
-  - "TableLayoutPanel コントロール [Windows フォーム], 編集"
+title: "方法 : TableLayoutPanel コントロールの列と行を編集する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: net.ComponentModel.StyleCollectionEditor
+helpviewer_keywords:
+- columns [Windows Forms], editing
+- TableLayoutPanel control [Windows Forms], editing
+- rows [Windows Forms], editing
 ms.assetid: c367ed43-40dc-49eb-9e0f-ba70e83dfec0
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 84dbcfcbad30f9ef08548874c5e68ed658aa0914
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : TableLayoutPanel コントロールの列と行を編集する
-<xref:System.Windows.Forms.TableLayoutPanel> コントロールのコレクション エディター \(**\[列と行のスタイル\]** ダイアログ ボックス\) を使用して、コントロールの行と列を編集できます。  
+# <a name="how-to-edit-columns-and-rows-in-a-tablelayoutpanel-control"></a>方法 : TableLayoutPanel コントロールの列と行を編集する
+コレクション エディターを使用することができます、<xref:System.Windows.Forms.TableLayoutPanel>と呼ばれるコントロール、**列と行のスタイル**ダイアログ ボックスで、行と、コントロールの列を編集します。  
   
 > [!NOTE]
->  コントロールが複数の行または列にわたるようにする場合は、コントロールの `RowSpan` プロパティおよび `ColumnSpan` プロパティを設定します。  詳細については、「[チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)」を参照してください。  
+>  を複数の行または列の span を制御する場合は、設定、`RowSpan`と`ColumnSpan`コントロールのプロパティです。 詳細については、「 [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)」を参照してください。  
 >   
->  コントロールをセル内に配置したり、コントロールをセル内で拡大したりする場合は、コントロールの <xref:System.Windows.Forms.Control.Anchor%2A> プロパティを使用します。  詳細については、「[チュートリアル : TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)」を参照してください。  
+>  セル内のコントロールを配置する場合、またはセル内で stretch を制御する場合は、使用、コントロールの<xref:System.Windows.Forms.Control.Anchor%2A>プロパティです。 詳細については、「 [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)」を参照してください。  
 >   
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### 行と列を編集するには  
+### <a name="to-edit-rows-and-columns"></a>行と列を編集するには  
   
-1.  **ツールボックス**からフォームに、<xref:System.Windows.Forms.TableLayoutPanel> コントロールをドラッグします。  
+1.  ドラッグ、<xref:System.Windows.Forms.TableLayoutPanel>から制御、**ツールボックス**フォーム上にします。  
   
-2.  <xref:System.Windows.Forms.TableLayoutPanel> コントロールのスマート タグ グリフ \(![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.png "VS\_WinFormSmtTagGlyph")\) をクリックし、**\[行および列の編集\]** をクリックして、**\[列と行のスタイル\]** ダイアログ ボックスを開きます。  <xref:System.Windows.Forms.TableLayoutPanel> コントロールを右クリックして、ショートカット メニューの **\[行および列の編集\]** をクリックすることもできます。  
+2.  クリックして、<xref:System.Windows.Forms.TableLayoutPanel>コントロールのスマート タグ グリフ (![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) を選択して**編集行と列**を開くには、 **列と行のスタイル** ダイアログ ボックス。 右クリックで、<xref:System.Windows.Forms.TableLayoutPanel>してコントロールを選択**編集行と列**ショートカット メニューからです。  
   
-3.  列を追加または削除するには、**\[型\]** ボックスの **\[列\]** をクリックします。  
+3.  列を追加または削除、選択**列**から、**メンバー型**ドロップダウン リスト ボックス。  
   
-4.  行を追加または削除するには、**\[型\]** ボックスの **\[行\]** をクリックします。  
+4.  追加したり、行を削除する選択**行**から、**メンバー型**ドロップダウン リスト ボックス。  
   
-5.  **\[追加\]** をクリックすると、行または列が **\[メンバー\]** 一覧の末尾に追加されます。  
+5.  クリックして、**追加**の末尾に行または列を追加するボタン、**メンバー**  ボックスの一覧です。  
   
-6.  **\[挿入\]** をクリックすると、一覧で現在選択されている項目の前に行または列が追加されます。  
+6.  をクリックして、**挿入**一覧で行または現在選択されている項目の前に列を追加するボタンをクリックします。  
   
-7.  行または列を追加する場合は、新しい行または列の **\[サイズの型\]** を選択します。  詳細については、「<xref:System.Windows.Forms.SizeType>」を参照してください。  
+7.  行または列を追加する場合は、選択、**サイズの種類**新しい行または列に対応します。 詳細については、「<xref:System.Windows.Forms.SizeType>」を参照してください。  
   
-8.  行または列を削除するには、**\[削除\]** をクリックします。**\[メンバー\]** 一覧で現在選択されている項目が削除されます。  
+8.  行または列を削除する をクリックして、**削除**で現在選択されている項目を削除するボタン、**メンバー**  ボックスの一覧です。  
   
-## 参照  
- <xref:System.Windows.Forms.SizeType>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.SizeType>  
  [TableLayoutPanel コントロール](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-windows-forms.md)

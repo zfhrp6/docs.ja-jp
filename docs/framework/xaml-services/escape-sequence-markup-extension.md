@@ -1,69 +1,72 @@
 ---
-title: "{} Escape Sequence / Markup Extension | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "{}"
-helpviewer_keywords: 
-  - "XAML [XAML Services], quotation mark (")"
-  - "{} escape sequence [XAML Services]"
-  - "XAML [XAML Services], {} escape sequence"
-  - "XAML [XAML Services], escape sequence"
-  - "quotation mark (") [XAML Services]"
-  - "escape sequence [XAML Services]"
+title: "{} エスケープ シーケンスのマークアップ拡張機能"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: '{}'
+helpviewer_keywords:
+- XAML [XAML Services], quotation mark (")
+- '{} escape sequence [XAML Services]'
+- XAML [XAML Services], {} escape sequence
+- XAML [XAML Services], escape sequence
+- quotation mark (") [XAML Services]
+- escape sequence [XAML Services]
 ms.assetid: 3ce3e2ad-a868-43f9-9c98-b29561cb146e
-caps.latest.revision: 21
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
+caps.latest.revision: "21"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: befbf9960afffcd30bc96863dcc00b4acad2c21a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# {} Escape Sequence / Markup Extension
-属性値に XAML エスケープ シーケンスを提供します。  属性にエスケープ シーケンスを使用すると、その後続の値がリテラルとして解釈されます。  
+# <a name="-escape-sequence--markup-extension"></a>{} エスケープ シーケンス/マークアップ拡張機能
+属性値を XAML エスケープ シーケンスを提供します。 エスケープ シーケンスは、リテラルとして解釈する属性内の後続の値を許可します。  
   
-## XAML 属性の使用方法  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
   
+```xml  
+<object property="{} literalValue" .../>  
 ```  
-<object property="{} literalValue" .../>  
-```  
   
-## XAML プロパティ要素の使用方法  
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
   
 ```  
 <object>  
-  <object.property>  
-    {} literalValue  
-  </object.property>  
+  <object.property>  
+    {} literalValue  
+  </object.property>  
 </object>  
 ```  
   
-## XAML 値  
+## <a name="xaml-values"></a>XAML 値  
   
 |||  
 |-|-|  
-|*literalValue*|エスケープ シーケンスの後に続くリテラル文字列。  通常、この文字列には、始め中かっこまたは終わり中かっこ \({ または }\) が含まれています。|  
+|*literalValue*|エスケープ シーケンスに続くリテラル文字列。 通常この文字列が、開くまたは閉じる中かっこ ({または})。|  
   
-## 解説  
- エスケープ シーケンス \({}\) を使用すると、XAML で始め中かっこ \({\) 文字をリテラル文字として使用できるようになります。  
+## <a name="remarks"></a>コメント  
+ 始め中かっこ ({}) は、XAML でのリテラル文字として使用できるようにする、エスケープ シーケンス ({}) が使用されます。  
   
- XAML リーダーは通常、始め中かっこ \({\) を使用してマークアップ拡張機能のエントリ ポイントを示しますが、最初に次の文字をチェックして右中かっこ \(}\) に該当するかどうかを確認します。  2 つの中かっこ \({}\) が隣接しているときに初めて、エスケープ シーケンスと見なされます。  
+ 右中かっこ (}) があるかどうかを判断するには、次の文字をチェックするただし、XAML リーダーは通常、マークアップ拡張機能のエントリ ポイントを表すために始め中かっこ ({}) を使用します。 2 つの中かっこ ({}) は、隣接するが、場合にのみと見なされます、エスケープ シーケンス。  
   
- エスケープ シーケンスが検出された場合、文字列の残りの部分はすべて XAML リーダーによって文字列として処理される必要があります。  ただし、型コンバーターを持つメンバーにエスケープ シーケンスが適用された場合、XAML ライターが文字列を解釈するときに、その文字列に型変換が適用されます。  
+ エスケープ シーケンスが発生した場合、XAML リーダーは文字列として残りの文字列を処理する必要があります。 ただし、エスケープ シーケンスを実行する型コンバーターを持つメンバーに適用されている場合、文字列を行うことも型変換と XAML ライターによって解釈されます。  
   
- エスケープ シーケンスはマークアップ拡張機能ではなく、クラスによってサポートされません。  ただし、これはエスケープ変換に該当し、XAML リーダー \(カスタム XAML リーダーを含む\) で必ず考慮されます。  
+ エスケープ シーケンスは、マークアップ拡張機能ではなく、クラスではサポートされません。 ただし、これは、XAML リーダー (カスタム XAML リーダーを含む) が遵守する必要があります規則です。  
   
- この方法では、引用符 \("\) をエスケープ シーケンスとして使用することはできません。  引用符を非コンテンツ プロパティのプロパティ値として設定する必要がある場合は、プロパティ要素構文を使用して引用符をプロパティ要素の内部の文字列として配置するか、または XML の文字エンティティを使用します。  コンテンツ プロパティでは、引用符のみのコンテンツを指定できます。  
+ 引用符 (") は、この方法でエスケープ シーケンスとして使用できません。 非プロパティのプロパティの値として、引用符を設定する必要がある場合は、プロパティ要素構文を使用またはプロパティ要素内の文字列として引用符を配置し XML 文字エンティティを使用します。 コンテンツのプロパティの引用符は、コンテンツ全体を指定できます。  
   
- エスケープ シーケンス \({}\) は、XAML マークアップ拡張機能が使用される可能性のある場所に名前空間修飾子を含める必要がある XML 型を指定するときによく必要になります。  たとえば、XAML 属性値の先頭やマークアップ拡張内での等号記号 \(\=\) の直後などです。  次の例は、XAML 属性値の先頭にある XML 名前空間のエスケープ シーケンスを示しています。  
+ エスケープ シーケンス ({}) は、XAML マークアップ拡張機能が表示される場所に名前空間の修飾子を含める必要のある XML 型を指定するときに頻繁に必要です。 これには、等号 (=) の直後に、マークアップ拡張機能と、XAML 属性の値の開始が含まれます。 次の例では、XAML 属性の値の先頭に表示される XML 名前空間のエスケープ シーケンスを示します。  
   
- [!code-xml[XLINQExample#StackPanelResources](../../../samples/snippets/csharp/VS_Snippets_Wpf/XLinqExample/CSharp/Window1.xaml#stackpanelresources)]  
+ [!code-xaml[XLINQExample#StackPanelResources](../../../samples/snippets/csharp/VS_Snippets_Wpf/XLinqExample/CSharp/Window1.xaml#stackpanelresources)]  
   
-## 参照  
- [Type Converters and Markup Extensions for XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)   
- [XML Character Entities and XAML](../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md)
+## <a name="see-also"></a>関連項目  
+ [XAML の型コンバーターおよびマークアップ拡張機能](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)  
+ [XML 文字エンティティと XAML](../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md)

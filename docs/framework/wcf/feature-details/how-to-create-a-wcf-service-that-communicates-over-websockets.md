@@ -1,25 +1,28 @@
 ---
-title: "WebSockets 上で通信する WCF サービスを作成する用法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WebSockets 上で通信する WCF サービスを作成する用法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 49a0eeaedd9b41a7c4149aacc0193454f4691b1d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WebSockets 上で通信する WCF サービスを作成する用法
-WCF サービスと WCF クライアントは、<xref:System.ServiceModel.NetHttpBinding> バインディングを使用することにより、WebSocket 経由で通信できます。  WebSocket が使用されるのは、サービス コントラクトによってコールバック コントラクトが定義されていると <xref:System.ServiceModel.NetHttpBinding> によって判断された場合です。  ここでは、<xref:System.ServiceModel.NetHttpBinding> を使用して WebSocket 経由で通信する WCF サービスと WCF クライアントの実装方法について説明します。  
+# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>WebSockets 上で通信する WCF サービスを作成する用法
+WCF サービスと WCF クライアントは、<xref:System.ServiceModel.NetHttpBinding> バインディングを使用することにより、WebSocket 経由で通信できます。  WebSocket が使用されるのは、サービス コントラクトによってコールバック コントラクトが定義されていると <xref:System.ServiceModel.NetHttpBinding> によって判断された場合です。 ここでは、<xref:System.ServiceModel.NetHttpBinding> を使用して WebSocket 経由で通信する WCF サービスと WCF クライアントの実装方法について説明します。  
   
-### サービスの定義  
+### <a name="define-the-service"></a>サービスの定義  
   
 1.  コールバック コントラクトを定義します。  
   
@@ -66,7 +69,7 @@ WCF サービスと WCF クライアントは、<xref:System.ServiceModel.NetHtt
         }  
     ```  
   
-     サービス操作 `StartSendingQuotes` は、非同期呼び出しとして実装されます。  `OperationContext` を使ってコールバック チャネルを取得します。チャネルが開いている場合は、コールバック チャネルで非同期呼び出しを行います。  
+     サービス操作 `StartSendingQuotes` は、非同期呼び出しとして実装されます。 `OperationContext` を使ってコールバック チャネルを取得します。チャネルが開いている場合は、コールバック チャネルで非同期呼び出しを行います。  
   
 4.  サービスの構成  
   
@@ -97,9 +100,9 @@ WCF サービスと WCF クライアントは、<xref:System.ServiceModel.NetHtt
     </configuration>  
     ```  
   
-     サービスの構成ファイルは WCF の既定のエンドポイントに依存しています。  作成された既定のエンドポイントに `NetHttpBinding` を使用するように、`<protocolMapping>` セクションを使用して指定しています。  
+     サービスの構成ファイルは WCF の既定のエンドポイントに依存しています。 作成された既定のエンドポイントに `<protocolMapping>` を使用するように、`NetHttpBinding` セクションを使用して指定しています。  
   
-### クライアントの定義  
+### <a name="define-the-client"></a>クライアントの定義  
   
 1.  コールバック コントラクトを実装します。  
   
@@ -138,7 +141,7 @@ WCF サービスと WCF クライアントは、<xref:System.ServiceModel.NetHtt
         }  
         ```  
   
-         ここでは、わかりやすいように CallbackHandler を繰り返しています。  クライアント アプリケーションは、新しい InstanceContext を作成し、コールバック インターフェイスの実装を指定します。  次に、新しく作成された InstanceContext への参照を送信するプロキシ クラスのインスタンスを作成します。  クライアントがサービスを呼び出すと、サービスは、指定されたコールバック コントラクトを使用してクライアントを呼び出します。  
+         ここでは、わかりやすいように CallbackHandler を繰り返しています。 クライアント アプリケーションは、新しい InstanceContext を作成し、コールバック インターフェイスの実装を指定します。 次に、新しく作成された InstanceContext への参照を送信するプロキシ クラスのインスタンスを作成します。 クライアントがサービスを呼び出すと、サービスは、指定されたコールバック コントラクトを使用してクライアントを呼び出します。  
   
     2.  クライアントの構成  
   
@@ -167,7 +170,7 @@ WCF サービスと WCF クライアントは、<xref:System.ServiceModel.NetHtt
   
          クライアント構成では特別な操作を実行する必要はありません。`NetHttpBinding` を使用して、クライアント側のエンドポイントを指定するだけです。  
   
-## 使用例  
+## <a name="example"></a>例  
  このトピックで使用されているコード全体を次に示します。  
   
 ```csharp  
@@ -196,7 +199,6 @@ namespace Server
         Task SendQuote(string code, double value);  
     }  
 }  
-  
 ```  
   
 ```  
@@ -326,6 +328,6 @@ namespace Client
 </configuration>  
 ```  
   
-## 参照  
- [同期操作と非同期操作](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)   
+## <a name="see-also"></a>関連項目  
+ [同期操作と非同期操作](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)  
  [NetHttpBinding の使用](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)

@@ -1,0 +1,62 @@
+---
+title: "FUSION_INSTALL_REFERENCE 構造体"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: reference
+api_name: FUSION_INSTALL_REFERENCE
+api_location: fusion.dll
+api_type: COM
+f1_keywords: FUSION_INSTALL_REFERENCE
+helpviewer_keywords: FUSION_INSTALL_REFERENCE structure [.NET Framework fusion]
+ms.assetid: ae181ec8-36bf-4ed1-9a02-ca27d417c80b
+topic_type: apiref
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 244ea215b6668685920a454c1bd9da065076f38b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
+---
+# <a name="fusioninstallreference-structure"></a>FUSION_INSTALL_REFERENCE 構造体
+アプリケーションがグローバル アセンブリ キャッシュにアプリケーションがインストールされているアセンブリに参照を表します。  
+  
+## <a name="syntax"></a>構文  
+  
+```  
+typedef struct _FUSION_INSTALL_REFERENCE_ {  
+    DWORD    cbSize,  
+    DWORD    dwFlags,  
+    GUID     guidScheme,  
+    LPCWSTR  szIdentifier,  
+    LPCWSTR  szNonCanonicalData  
+} FUSION_INSTALL_REFERENCE, *LPFUSION_INSTALL_REFERENCE;  
+```  
+  
+## <a name="members"></a>メンバー  
+  
+|メンバー|説明|  
+|------------|-----------------|  
+|`cbSize`|構造体のサイズ (バイト単位)。|  
+|`dwFlags`|将来の機能拡張予約されています。 この値は、0 (ゼロ) にする必要があります。|  
+|`guidScheme`|参照を追加するエンティティ。 このフィールドは、次の値のいずれかを持つことができます。<br /><br /> -FUSION_REFCOUNT_MSI_GUID: アセンブリは、Microsoft Windows インストーラーを使用してインストールされたアプリケーションによって参照されます。 `szIdentifier`にフィールドが設定されている`MSI`、および`szNonCanonicalData`にフィールドが設定されている`Windows Installer`です。 このスキームでは、Windows サイド バイ サイド アセンブリが使用されます。<br />-FUSION_REFCOUNT_UNINSTALL_SUBKEY_GUID: アセンブリが含まれているアプリケーションによって参照される、**プログラムの追加/削除**インターフェイスです。 `szIdentifier`フィールド トークンを使用してアプリケーションを登録するには、**プログラムの追加/削除**インターフェイスです。<br />-FUSION_REFCOUNT_FILEPATH_GUID: アセンブリは、ファイル システム内のファイルで表されるアプリケーションによって参照されます。 `szIdentifier`フィールドは、このファイルへのパスを提供します。<br />-FUSION_REFCOUNT_OPAQUE_STRING_GUID: アセンブリは、非透過の文字列によってのみ表されるアプリケーションによって参照されます。 `szIdentifier`フィールドは、この不透明な文字列を提供します。 この値を削除すると、グローバル アセンブリ キャッシュがあいまいな参照の存在をチェックされません。<br />-FUSION_REFCOUNT_OSINSTALL_GUID: この値は予約されています。|  
+|`szIdentifier`|アセンブリをグローバル アセンブリ キャッシュにインストールされているアプリケーションを識別する一意の文字列。 その値は、の値によって異なります、`guidScheme`フィールドです。|  
+|`szNonCanonicalData`|参照を追加するエンティティだけが認識する文字列。 グローバル アセンブリ キャッシュは、この文字列を格納しますでは使用されません。|  
+  
+## <a name="requirements"></a>要件  
+ **プラットフォーム:**を参照してください[システム要件](../../../../docs/framework/get-started/system-requirements.md)です。  
+  
+ **ヘッダー:** Fusion.h  
+  
+ **.NET framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+  
+## <a name="see-also"></a>関連項目  
+ [Fusion 構造体](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)  
+ [グローバル アセンブリ キャッシュ](../../../../docs/framework/app-domains/gac.md)

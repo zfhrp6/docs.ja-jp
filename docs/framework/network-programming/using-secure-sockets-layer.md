@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - Networking
 - SSL
@@ -23,16 +21,15 @@ helpviewer_keywords:
 - receiving data, Secure Sockets Layer
 - Internet, Secure Sockets Layer
 ms.assetid: 6e4289e6-d1b7-4e82-ab0d-e83e3b6063ed
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cb625971f0c0b52bcdcfc9b41d4c0f88814aef08
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: b4cdc21b9ecfdb1bb37f26f82200b211967043c5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-secure-sockets-layer"></a>Secure Sockets Layerの使用
 <xref:System.Net> クラスは、Secure Sockets Layer (SSL) を使用して、複数のネットワーク プロトコルの接続を暗号化します。  
@@ -75,7 +72,6 @@ FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 -   **System.Net** 名前空間の参照。  
   
 ## <a name="see-also"></a>関連項目  
- [ネットワーク プログラミングにおけるセキュリティ](../../../docs/framework/network-programming/security-in-network-programming.md)   
- [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)   
+ [ネットワーク プログラミングにおけるセキュリティ](../../../docs/framework/network-programming/security-in-network-programming.md)  
+ [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)  
  [証明書の選択と検証](../../../docs/framework/network-programming/certificate-selection-and-validation.md)
-

@@ -1,42 +1,24 @@
 ---
 title: "Visual Basic 言語の機能"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - Visual Basic code, elements of
 - Visual Basic code
 ms.assetid: b0b21730-298c-47e6-9a2f-cc81f628067b
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3594e6622e8bc76839a15739a31ad27d17de8455
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: f7074206baa51259592cca3fdc224d99438791f9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="visual-basic-language-features"></a>Visual Basic 言語の機能
 次のトピックでは、オブジェクト指向プログラミング言語である [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] の必須コンポーネントを紹介して説明します。 フォームとコントロールを使用してアプリケーションのユーザー インターフェイスを作成した後、アプリケーションの動作を定義するコードを作成する必要があります。 他の最新のプログラミング言語と同じように、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] は、多数の一般的なプログラミング構成要素と言語要素をサポートしています。  
@@ -109,4 +91,3 @@ ms.lasthandoff: 07/28/2017
   
  [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)  
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] でのプログラミングのさまざまな側面に関するリファレンス情報を提供します。
-

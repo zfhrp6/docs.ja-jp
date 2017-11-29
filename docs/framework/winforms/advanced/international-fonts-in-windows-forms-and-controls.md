@@ -1,38 +1,39 @@
 ---
-title: "Windows フォームおよびコントロールの国際対応フォント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "フォント フォールバック (Windows フォームでの)"
-  - "フォント, グローバリゼーションの考慮事項"
-  - "フォント, 国際対応"
-  - "グローバリゼーション [Windows フォーム], 文字セット"
-  - "国際対応のアプリケーション [Windows フォーム], 文字表示"
-  - "ローカリゼーション [Windows フォーム], フォント"
-  - "Windows フォーム コントロール, ラベル"
+title: "Windows フォームおよびコントロールの国際対応フォント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- fonts [Windows Forms], international
+- international applications [Windows Forms], character display
+- fonts [Windows Forms], globalization considerations
+- localization [Windows Forms], fonts
+- Windows Forms controls, labels
+- font fallback in Windows Forms
+- globalization [Windows Forms], character sets
 ms.assetid: 2c3066df-9bac-479a-82b2-79e484b346a3
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5901113021deffd601b5325ff9a1b8912e74329d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォームおよびコントロールの国際対応フォント
-国際対応のアプリケーションでフォントを選択する方法としては、できるだけフォント フォールバックを使用することをお勧めします。  フォント フォールバックとは、文字が属する言語をシステムが判断することを指します。  
+# <a name="international-fonts-in-windows-forms-and-controls"></a>Windows フォームおよびコントロールの国際対応フォント
+国際対応のアプリケーションでは、可能な限り、フォント フォールバックを使用するフォントを選択する勧めします。 システムがどのようなスクリプトの文字を決定するフォント代替手段に属しています。  
   
-## フォント フォールバックの使用  
- この機能を利用するには、フォームまたはその他の要素の <xref:System.Drawing.Font> プロパティは設定しないようにしてください。  アプリケーションが、オペレーティング システムのローカライズ言語ごとに異なる既定のシステム フォントを自動的に使用します。  アプリケーションの実行時、システムにより、オペレーティング システムで選択された地域に適したフォントが自動的に設定されます。  
+## <a name="using-font-fallback"></a>フォント フォールバックの使用  
+ この機能を利用するを設定しないでください、<xref:System.Drawing.Font>フォームまたはその他の要素のプロパティです。 アプリケーションでは、オペレーティング システムの 1 つのローカライズされた言語によって異なるため既定のシステム フォントが自動的に使用します。 アプリケーションを実行すると、システムは自動的に提供されているオペレーティング システムで選択したカルチャに適切なフォントを使用します。  
   
- フォント設定をしないという規則には、フォント スタイルの変更を考慮した例外があります。  このことは、ユーザーがテキスト ボックスのテキストを太字で表示させるためにボタンをクリックするアプリケーションで重要になります。  これを行うには、フォームのフォントに関係なく、テキスト ボックスのスタイルを太字に変更する関数を作成します。  この関数は <xref:System.Windows.Forms.Control.Click> イベント ハンドラーおよび <xref:System.Windows.Forms.Control.FontChanged> イベント ハンドラーの 2 か所で呼び出す必要があります。  <xref:System.Windows.Forms.Control.Click> イベント ハンドラーでだけこの関数を呼び出した場合、コードの他の部分によってフォーム全体のフォント ファミリが変更されると、テキスト ボックスは、このフォームの残りの要素と同じフォント ファミリに変更されません。  
+ 例外が発生しました、規則に、フォント、フォント スタイルを変更するために設定されていないのです。 これは、ユーザーが太字で表示されるテキスト ボックス内のテキストを作成する場合、ボタンをクリックしたアプリケーションの重要なことがあります。 実行するには関数を作成する、太字で表示するテキスト ボックスのフォント スタイルを変更する、フォームのフォントにします。 2 つの場所でこの関数の呼び出しすることが重要: ボタンの<xref:System.Windows.Forms.Control.Click>イベント ハンドラーと、<xref:System.Windows.Forms.Control.FontChanged>イベント ハンドラー。 のみ、関数が呼び出される場合、<xref:System.Windows.Forms.Control.Click>イベント ハンドラーとコードの他のいくつかの部分は、フォーム全体のフォント ファミリを変更、フォームの残りの部分では、テキスト ボックスは変更されません。  
   
 ```  
 ' Visual Basic  
@@ -78,7 +79,7 @@ private void Form1_FontChanged(object sender, System.EventArgs e)
 }  
 ```  
   
- ただし、言語によっては、アプリケーションのローカライズにより、太字フォントの表示が乱れることがあります。  このことが問題になる場合は、ローカライズで、フォント切り替えオプションを太字ではなく通常のテキストに指定します。  一般に、ローカリゼーション担当者は、開発者とは異なりソース コードに手を加えることはせず、リソース ファイルだけを処理します。したがって、このオプションの設定はリソース ファイルで行う必要があります。  これを行うには、<xref:System.Drawing.Font.Bold%2A> プロパティを `true` に設定します。  これにより、フォント設定がリソース ファイルに書き出され、ローカリゼーション担当者が編集できるようになります。  `InitializeComponent`  メソッドの後に、フォームのフォントに関係なくフォントをリセットし、リソース ファイルで指定されたフォント スタイルを使用するためのコードを記述します。  
+ ただし、アプリケーションをローカライズするときに太字のフォント可能性があります表示が不十分な特定の言語。 これに問題がある場合ローカライズで通常のテキストに太字のフォントを切り替えるオプションをします。 ローカリゼーションいない開発者は、通常とソース コードへのアクセスはありません、リソース ファイルにのみこのオプション処理リソース ファイルで設定します。 これを行うには、設定すると、<xref:System.Drawing.Font.Bold%2A>プロパティを`true`です。 これは、結果、ローカライザーが編集できる、リソース ファイルに書き出され、フォントを設定します。 後にコードを作成し、`InitializeComponent`フォントを再設定する方法、フォームのフォントに基づいていますが、リソース ファイルで指定されたフォント スタイルを使用します。  
   
 ```  
 ' Visual Basic  
@@ -88,6 +89,6 @@ TextBox1.Font = New System.Drawing.Font(Me.Font, TextBox1.Font.Style)
 textBox1.Font = new System.Drawing.Font(this.Font, textBox1.Font.Style);  
 ```  
   
-## 参照  
- [Windows フォームのグローバル化](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ [Windows フォームのグローバル化](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)  
  [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)

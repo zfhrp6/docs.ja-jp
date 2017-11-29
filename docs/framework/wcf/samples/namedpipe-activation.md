@@ -1,40 +1,43 @@
 ---
-title: "NamedPipe アクティベーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "NamedPipe アクティベーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f3c0437d-006c-442e-bfb0-6b29216e4e29
-caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 55594e1505e60ede8d7c6abcbd8a9cf9a1f739bb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# NamedPipe アクティベーション
-このサンプルでは、名前付きパイプを介して通信するサービスをアクティブ化するために、Windows プロセス アクティブ化サービス \(WAS: Windows Process Activation Service\) を使用してサービスをホストする方法を示します。  このサンプルは「[概要](../../../../docs/framework/wcf/samples/getting-started-sample.md)」に基づいており、[!INCLUDE[wv](../../../../includes/wv-md.md)] を実行する必要があります。  
+# <a name="namedpipe-activation"></a>NamedPipe アクティベーション
+このサンプルでは、名前付きパイプを介して通信するサービスをアクティブ化するために、Windows プロセス アクティブ化サービス (WAS: Windows Process Activation Service) を使用してサービスをホストする方法を示します。 このサンプルがに基づいて、[作業の開始](../../../../docs/framework/wcf/samples/getting-started-sample.md)する必要があります[!INCLUDE[wv](../../../../includes/wv-md.md)]を実行します。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WASHost\NamedPipeActivation`  
   
-## サンプルの詳細  
- このサンプルは、クライアント コンソール プログラム \(.exe\) と、Windows プロセス アクティブ化サービス \(WAS\) によってアクティブ化されるワーカー プロセス内でホストされるサービス ライブラリ \(.dll\) で構成されています。  クライアント アクティビティは、コンソール ウィンドウに表示されます。  
+## <a name="sample-details"></a>サンプルの詳細  
+ このサンプルは、クライアント コンソール プログラム (.exe) と、Windows プロセス アクティブ化サービス (WAS) によってアクティブ化されるワーカー プロセス内でホストされるサービス ライブラリ (.dll) で構成されています。 クライアント アクティビティは、コンソール ウィンドウに表示されます。  
   
- サービスは、要求\/応答通信パターンを定義するコントラクトを実装します。  コントラクトは `ICalculator` インターフェイスによって定義されており、算術演算 \(Add、Subtract、Multiply、および Divide\) を公開しています。次のサンプル コードを参照してください。  
+ サービスは、要求/応答通信パターンを定義するコントラクトを実装します。 コントラクトは `ICalculator` インターフェイスによって定義されており、算術演算 (Add、Subtract、Multiply、および Divide) を公開しています。次のサンプル コードを参照してください。  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -74,14 +77,13 @@ public class CalculatorService : ICalculator
         return n1 / n2;  
     }  
 }  
-  
 ```  
   
- このサンプルでは、セキュリティ保護を行わないように変更された `netNamedPipeBinding` バインディングを使用します。  バインディングは、クライアントとサービスの構成ファイルに指定されます。  サービスのバインディングの種類は、エンドポイント要素の `binding` 属性に指定されます。次のサンプル構成を参照してください。  
+ このサンプルでは、セキュリティ保護を行わないように変更された `netNamedPipeBinding` バインディングを使用します。 バインディングは、クライアントとサービスの構成ファイルに指定されます。 サービスのバインディングの種類は、エンドポイント要素の `binding` 属性に指定されます。次のサンプル構成を参照してください。  
   
  セキュリティ保護された名前付きパイプ バインディングを使用する場合は、サーバーのセキュリティ モードを必要なセキュリティ設定に変更し、クライアントで svcutil.exe を再実行して更新されたクライアントの構成ファイルを取得します。  
   
-```  
+```xml  
 <system.serviceModel>  
         <services>  
             <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -122,7 +124,7 @@ public class CalculatorService : ICalculator
   
  クライアントのエンドポイント情報が構成されます。次のサンプル コードを参照してください。  
   
-```  
+```xml  
 <system.serviceModel>  
   
     <client>  
@@ -152,7 +154,7 @@ public class CalculatorService : ICalculator
   </system.serviceModel>  
 ```  
   
- このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。  クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+ このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。 クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -163,27 +165,27 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-#### サンプルをセットアップ、ビルド、および実行するには  
+#### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  [!INCLUDE[iisver](../../../../includes/iisver-md.md)] がインストールされていることを確認します。  [!INCLUDE[iisver](../../../../includes/iisver-md.md)] は WAS のアクティブ化に必要です。  
+1.  [!INCLUDE[iisver](../../../../includes/iisver-md.md)] がインストールされていることを確認します。 [!INCLUDE[iisver](../../../../includes/iisver-md.md)] は WAS のアクティブ化に必要です。  
   
-2.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+2.  確実に実行する、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
      さらに、HTTP 以外の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アクティベーション コンポーネントをインストールする必要があります。  
   
-    1.  **\[スタート\]** メニューの **\[コントロール パネル\]** をクリックします。  
+    1.  **開始** メニューの 選択**コントロール パネルの **です。  
   
-    2.  **\[プログラムと機能\]** をクリックします。  
+    2.  選択**プログラムと機能**します。  
   
-    3.  **\[Turn Windows Components on or Off\]** をクリックします。  
+    3.  をクリックして**Windows コンポーネントをオンまたはオフ**です。  
   
-    4.  **\[Microsoft .NET Framework 3.0\]** ノードを展開し、**\[Windows Communication Foundation Non\-HTTP Activation\]** 機能をオンにします。  
+    4.  展開して、 **Microsoft .NET Framework 3.0**ノードとチェック、 **Windows Communication Foundation NON-HTTP Activation**機能します。  
   
-3.  名前付きパイプのアクティブ化をサポートするように Windows プロセス アクティブ化サービス \(WAS\) を構成します。  
+3.  名前付きパイプのアクティブ化をサポートするように Windows プロセス アクティブ化サービス (WAS) を構成します。  
   
      便宜上、次の 2 つの手順が、サンプル ディレクトリにある AddNetPipeSiteBinding.cmd というバッチ ファイルに実装されています。  
   
-    1.  net.pipe のアクティブ化をサポートするには、既定の Web サイトをあらかじめ net.pipe プロトコルにバインドしておく必要があります。  これは、IIS7.0 管理ツール セットと共にインストールされる appcmd.exe を使用して行います。  権限のレベルが高い \(管理者の\) コマンド プロンプトで、次のコマンドを実行します。  
+    1.  net.pipe のアクティブ化をサポートするには、既定の Web サイトをあらかじめ net.pipe プロトコルにバインドしておく必要があります。 これは、IIS7.0 管理ツール セットと共にインストールされる appcmd.exe を使用して行います。 権限のレベルが高い (管理者の) コマンド プロンプトで、次のコマンドを実行します。  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"   
@@ -195,7 +197,7 @@ Press <ENTER> to terminate client.
   
          このコマンドによって、既定の Web サイトに net.pipe サイト バインディングを追加します。  
   
-    2.  サイト内のすべてのアプリケーションが同じ net.pipe バインディングを共有しますが、net.pipe サポートの有効化はアプリケーションごとに指定できます。  \/servicemodelsamples アプリケーションで net.pipe を有効にするには、権限のレベルが高いコマンド プロンプトから、次のコマンドを実行します。  
+    2.  サイト内のすべてのアプリケーションが同じ net.pipe バインディングを共有しますが、net.pipe サポートの有効化はアプリケーションごとに指定できます。 /servicemodelsamples アプリケーションで net.pipe を有効にするには、権限のレベルが高いコマンド プロンプトから、次のコマンドを実行します。  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http,net.pipe  
@@ -204,9 +206,9 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         >  このコマンドはテキスト 1 行です。  
   
-         このコマンドにより、\/servicemodelsamples アプリケーションに http:\/\/localhost\/servicemodelsamples と net.tcp:\/\/localhost\/servicemodelsamples のどちらを使用してもアクセスできるようになります。  
+         このコマンドにより、/servicemodelsamples アプリケーションに http://localhost/servicemodelsamples と net.tcp://localhost/servicemodelsamples のどちらを使用してもアクセスできるようになります。  
   
-4.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+4.  ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
   
 5.  このサンプル用に追加した net.pipe サイト バインディングを削除します。  
   
@@ -230,5 +232,5 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         >  このコマンドは、全体で 1 行のテキストになるように入力する必要があります。  
   
-## 参照  
- [AppFabric ホスティングと永続化のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)
+## <a name="see-also"></a>関連項目  
+ [AppFabric ホスティングと永続性のサンプル](http://go.microsoft.com/fwlink/?LinkId=193961)

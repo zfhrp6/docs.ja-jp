@@ -1,21 +1,25 @@
 ---
-title: "方法: インスタンス データ プロパティを逆シリアル化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法: インスタンス データ プロパティを逆シリアル化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b13a3508-1b97-4359-b336-03d85fa23bc4
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 4c29c9c0151c253ec1e981413aea2d6d2a0672ac
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法: インスタンス データ プロパティを逆シリアル化する
-ユーザーまたはワークフロー管理者は、永続化されたワークフロー インスタンスの状態を手動で調べることが必要になる場合があります。<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> は、次の 4 列を公開するインスタンス テーブルに関するビューを提供します。  
+# <a name="how-to-deserialize-instance-data-properties"></a>方法: インスタンス データ プロパティを逆シリアル化する
+ユーザーまたはワークフロー管理者は、永続化されたワークフロー インスタンスの状態を手動で調べることが必要になる場合があります。 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> は、次の 4 列を公開するインスタンス テーブルに関するビューを提供します。  
   
 -   ReadWritePrimitiveDataProperties  
   
@@ -25,16 +29,15 @@ caps.handback.revision: 9
   
 -   WriteOnlyComplexDataProperties  
   
- プリミティブ データ プロパティは、.NET Framework 型が "一般的" であると見なされているプロパティ \(Int32 や String など\) を表し、複合データ プロパティは他のすべての型を表します。プリミティブ型の正確な列挙については、後で示すコード例を参照してください。  
+ プリミティブ データ プロパティは、.NET Framework 型を持つと見なされます (たとえば、Int32 や String など)、"common"複合データ プロパティは、他のすべての型を参照中にプロパティを参照してください。 プリミティブ型の正確な列挙については、後で示すコード例を参照してください。  
   
- 読み取り\/書き込みプロパティは、インスタンスが読み込まれるときに、ワークフロー ランタイムに戻されるプロパティを表します。WriteOnly プロパティは、データベースに書き込まれた後に再度読み取られることはありません。  
+ Read/write プロパティは、インスタンスが読み込まれるときにワークフロー ランタイムに戻されるプロパティを表します。 WriteOnly プロパティは、データベースに書き込まれた後に再度読み取られることはありません。  
   
- この例では、プリミティブ データ プロパティを逆シリアル化できるコードを示します。ReadWritePrimitiveDataProperties 列または WriteOnlyPrimitiveDataProperties 列からバイト配列が読み取られることを前提として、このコードはバイナリ ラージ オブジェクト \(BLOB\) を、キー\/値の各ペアがプロパティ名と対応する値を表す \<XName, object\> 型の <xref:System.Collections.Generic.Dictionary%601> に変換します。  
+ この例では、プリミティブ データ プロパティを逆シリアル化できるコードを示します。 ReadWritePrimitiveDataProperties または WriteOnlyPrimitiveDataProperties 列からの読み取りバイト配列を指定して、このコードはバイナリ ラージ オブジェクト (BLOB) に変換する<xref:System.Collections.Generic.Dictionary%602>型の\<XName、オブジェクト > を各キー値プロパティ名と対応する値のペアを表します。  
   
  複合データ プロパティを逆シリアル化する操作は現在サポートされていないので、この例ではその方法は示しません。  
   
 ```  
-  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -252,5 +255,4 @@ namespace PropertyReader
         }  
     }  
 }  
-  
 ```

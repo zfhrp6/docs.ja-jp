@@ -1,31 +1,31 @@
 ---
-title: "クライアントを構築する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "クライアント [WCF]"
-  - "クライアント [WCF], 構築"
+title: "クライアントを構築する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- clients [WCF], building
+- clients [WCF]
 ms.assetid: 28dfff47-d95b-4cc2-9d5c-b3b9ba71fd50
-caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 098af2ba342b780f7af7479c640e1acc5d44e4cc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# クライアントを構築する
+# <a name="building-clients"></a>クライアントを構築する
 このセクションのトピックでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] クライアントの作成方法と使用方法について説明します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [WCF クライアントの概要](../../../docs/framework/wcf/wcf-client-overview.md)  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントとその動作の概要について説明します。  
   
@@ -35,7 +35,7 @@ caps.handback.revision: 19
  [クライアントのセキュリティ保護](../../../docs/framework/wcf/securing-clients.md)  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] クライアントのセキュリティを構成する方法について説明します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.ServiceModel.ClientBase%601>  
   
  <xref:System.ServiceModel.DuplexClientBase%601>  
@@ -50,7 +50,7 @@ caps.handback.revision: 19
   
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)  
   
  [サービスの設計と実装](../../../docs/framework/wcf/designing-and-implementing-services.md)

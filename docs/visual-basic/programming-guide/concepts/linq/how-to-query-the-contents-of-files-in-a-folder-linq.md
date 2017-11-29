@@ -1,33 +1,25 @@
 ---
-title: "方法: クエリ (LINQ) (Visual Basic) のフォルダー内のファイルの内容 |Microsoft ドキュメント"
+title: "方法: クエリ (LINQ) (Visual Basic) のフォルダー内のファイルの内容"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: edacbcd3-f3e4-4429-a8be-28a58dc0dd70
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d77806190b55d418ec8672913a73fb475ebb5f22
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 053a0b206b5e5fc71fb83967a70da205a8988978
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a>方法: クエリ (LINQ) (Visual Basic) のフォルダー内のファイルの内容
-この例では、指定したディレクトリ ツリー内のすべてのファイルに対するクエリを実行を各ファイルを開き、内容を確認する方法を示します。 このような手法は、インデックスを作成、ディレクトリ ツリーの内容のインデックスを元に戻したりするために使用可能性があります。 この例では、単純な文字列検索が実行されます。 ただし、パターン マッチングのより複雑な型は、正規表現で実行できます。 詳細については、次を参照してください。[方法: LINQ クエリを正規表現 (Visual Basic) と組み合わせて](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)します。  
+この例では、指定したディレクトリ ツリーに含まれるすべてのファイルを照会し、個々のファイルを開いて、その内容を調べています。 同様の手法を使えば、ディレクトリ ツリーの内容に対するインデックスや逆インデックスを作成することもできます。 この例で行っているのは単純な文字列検索です。 しかし正規表現を使うと、もっと複雑なパターン マッチングを行うことができます。 詳細については、次を参照してください。[する方法: 正規表現 (Visual Basic) での LINQ クエリの結合](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)です。  
   
 ## <a name="example"></a>例  
   
@@ -88,8 +80,8 @@ End Module
 ```  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+ .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll および System.Linq 名前空間の `Imports` ステートメントを参照設定します。  
   
 ## <a name="see-also"></a>関連項目  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
+ [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
  [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

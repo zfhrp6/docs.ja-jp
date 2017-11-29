@@ -1,76 +1,73 @@
 ---
-title: "If Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.IfOperator"
-  - "IfOperator"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "ternary operators"
-  - "conditional execution"
-  - "If expressions [Visual Basic]"
-  - "conditional operator [Visual Basic]"
-  - "If Operator [Visual Basic]"
+title: "If 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.IfOperator
+- IfOperator
+helpviewer_keywords:
+- ternary operators [Visual Basic]
+- conditional execution
+- If expressions [Visual Basic]
+- conditional operator [Visual Basic]
+- If Operator [Visual Basic]
 ms.assetid: dd56c9df-7cd4-442c-9ba6-20c70ee44c8f
-caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 2c553da5abf5453ba881671806b976125355c1e6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# If Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-ショートサーキット評価を使用し、2 つの値の 1 つを選択して返します。  `If` 演算子は、3 つまたは 2 つの引数を指定して呼び出すことができます。  
+# <a name="if-operator-visual-basic"></a>If 演算子 (Visual Basic)
+ショート サーキット評価を条件に応じて 2 つの値を返しますを使用します。 `If`演算子は、3 つの引数、または 2 つの引数を指定して呼び出すことができます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 If( [argument1,] argument2, argument3 )  
 ```  
   
-## 3 引数での If 演算子の呼び出し  
- 3 つの引数を使用して `If` を呼び出す場合、1 番目の引数は、`Boolean` としてキャストできる値に評価される必要があります。  この `Boolean` 値は、他の 2 つの引数のどちらを評価して返すかを決定します。  次の一覧は、`If` 演算子を 3 つの引数で呼び出す場合のみに適用されます。  
+## <a name="if-operator-called-with-three-arguments"></a>演算子は、3 つの引数で呼び出された場合  
+ ときに`If`が呼び出された 3 つの引数を使用すると、最初の引数としてキャスト可能な値に評価する必要があります、`Boolean`です。 ある`Boolean`が評価され、返されるその他の 2 つの引数の値が決定されます。 次のリストの適用される場合にのみ、`If`演算子が 3 つの引数を使用して呼び出されました。  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`argument1`|必ず指定します。  `Boolean`.  他の引数のどちらを評価して返すかを決定します。|  
-|`argument2`|必ず指定します。  `Object`.  `argument1` が `True` と評価される場合、この引数を評価して返します。|  
-|`argument3`|必ず指定します。  `Object`.  `argument1` が `False` に評価または `argument1` が [なし](../../../visual-basic/language-reference/nothing.md)に評価する [Null 許容](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)`Boolean` 変数の場合、と評価され、終了しました。|  
+|用語|定義|  
+|---|---|  
+|`argument1`|必須です。 `Boolean`。 その他の引数を評価し、返すを決定します。|  
+|`argument2`|必須です。 `Object`。 評価されると返される場合`argument1`に評価される`True`です。|  
+|`argument3`|必須です。 `Object`。 評価されると返される場合`argument1`に評価`False`場合`argument1`は、 [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean`に評価される変数[Nothing](../../../visual-basic/language-reference/nothing.md)です。|  
   
- 3 つの引数で呼び出される `If` 演算子は `IIf` 関数と同じように機能しますが、ショートサーキット評価を使用する点が異なります。  `IIf` 関数は常に 3 つの引数すべてを評価しますが、3 つの引数の `If` 演算子が評価する引数は 2 つのみです。  1 番目の `If` 引数が評価され、結果が `Boolean` 値つまり `True` または `False` としてキャストされます。  値が `True` の場合、`argument2` は評価されて値が返されますが、`argument3` は評価されません。  `Boolean` 式の値が `False` の場合は、`argument3` が評価されて値が返され、`argument2` は評価されません。  3 つの引数で `If` を使用した場合の例を次に示します。  
+ `If`が 3 つの引数で呼び出される演算子の動作と同様に、`IIf`関数を使用する点を除いてショート サーキット評価します。 `IIf`関数評価は常に 3 つすべての引数の一方、`If`を 3 つの引数を持つ演算子が評価される 2 つのみです。 最初の`If`引数が評価され、結果としてキャスト、`Boolean`値、`True`または`False`です。 値が場合`True`、`argument2`が評価され、その値が返されますが、`argument3`は評価されません。 場合の値、`Boolean`式が`False`、`argument3`が評価され、その値が返されますが、`argument2`は評価されません。 次の例では、使用する`If`3 つの引数を使用する場合。  
   
  [!code-vb[VbVbalrOperators#100](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/if-operator_1.vb)]  
   
- 次の例では、ショートサーキット評価の値を示します。  この例では、`divisor` がゼロでない場合は、変数 `number` を変数 `divisor` で 2 回割ります。  ゼロの場合は、ランタイム エラーになるので、0 を返し、除算は行いません。  `If` 式はショートサーキット評価を使用するので、1 番目の引数の値に基づいて、2 番目または 3 番目の引数を評価します。  1 番目の引数が true の場合は、序数はゼロではなく、2 番目の引数を評価して除算を実行しても安全です。  1 番目の引数が false の場合は、3 番目の引数のみが評価され、0 が返されます。  したがって、序数が 0 の場合は、除算は実行されず、エラーは発生しません。  一方、`IIf` はショートサーキット評価を使用しないので、1 番目の引数が false であっても、2 番目の引数が評価されます。  このため、ゼロによる除算のランタイム エラーが発生します。  
+ 次の例は、の値を示しています。 ショート サーキット評価します。 例では、変数に分割する 2 つの試行を示しています。`number`変数によって`divisor`場合を除きます`divisor`は 0 です。 その場合は、0 を返す必要があるし、は行われません、実行時エラーになるため、除算を実行します。 `If`ショート サーキット評価の式の使用、2 番目または最初の引数の値に応じて、3 番目の引数のいずれかを評価します。 最初の引数が true の場合は、除数 0 ではないと 2 番目の引数を評価し、除算を実行しても安全です。 最初の引数が false の場合は、3 番目の引数のみが評価され、0 が返されます。 そのため、除数が 0 の場合は行われません、除算とエラーは発生しませんを実行します。 ただし、ため`IIf`使用しないショート サーキット評価、最初の引数が false の場合も、2 番目の引数が評価されます。 これにより、実行時に 0 除算エラーです。  
   
  [!code-vb[VbVbalrOperators#101](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/if-operator_2.vb)]  
   
-## 2 引数での If 演算子の呼び出し  
- `If` の 1 番目の引数は省略できます。  したがって、2 つの引数のみで演算子を呼び出すことができます。  次の一覧は、`If` 演算子を 2 つの引数で呼び出す場合のみに適用されます。  
+## <a name="if-operator-called-with-two-arguments"></a>演算子が 2 つの引数で呼び出された場合  
+ 1 番目の引数`If`を省略できます。 これにより、2 つの引数を使用して呼び出される演算子です。 次のリストの適用される場合にのみ、`If`演算子が 2 つの引数と呼ばれます。  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`argument2`|必ず指定します。  `Object`.  参照型または null 許容型を指定する必要があります。  `Nothing` 以外として評価される場合、この引数を評価して返します。|  
-|`argument3`|必ず指定します。  `Object`.  `argument2` が `Nothing` と評価される場合、この引数を評価して返します。|  
+|用語|定義|  
+|---|---|  
+|`argument2`|必須です。 `Object`。 参照または null 許容型にする必要があります。 評価され、以外の値に評価された場合に返される`Nothing`です。|  
+|`argument3`|必須です。 `Object`。 評価されると返される場合`argument2`に評価される`Nothing`です。|  
   
- `Boolean` 引数を省略するときは、1 番目の引数に参照型または null 許容型を指定する必要があります。  1 番目の引数が `Nothing` と評価されると、2 番目の引数の値が返されます。  それ以外のすべての場合は、1 番目の引数の値が返されます。  次の例は、この評価がどのように動作するのかを示します。  
+ ときに、`Boolean`引数を省略すると、最初の引数が参照または null 許容型にする必要があります。 最初の引数が評価された場合`Nothing`、2 番目の引数の値が返されます。 それ以外の場合は、最初の引数の値が返されます。 次の例では、この評価のしくみを示しています。  
   
  [!code-vb[VbVbalrOperators#102](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/if-operator_3.vb)]  
   
-## 参照  
- <xref:Microsoft.VisualBasic.Interaction.IIf%2A>   
- [Nullable Value Types](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.Interaction.IIf%2A>  
+ [null 許容値型](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)  
  [Nothing](../../../visual-basic/language-reference/nothing.md)

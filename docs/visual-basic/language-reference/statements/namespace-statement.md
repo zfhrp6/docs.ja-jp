@@ -1,36 +1,34 @@
 ---
-title: "Namespace Statement | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Namespace"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "namespaces, root"
-  - "Namespace statement"
-  - "namespaces, nested"
-  - "declaring namespaces, syntax"
-  - "namespaces, declaring"
-  - "root namespaces"
-  - "declarations, namespaces"
+title: "Namespace ステートメント"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Namespace
+helpviewer_keywords:
+- namespaces [Visual Basic], root
+- Namespace statement [Visual Basic]
+- namespaces [Visual Basic], nested
+- declaring namespaces [Visual Basic], syntax
+- namespaces [Visual Basic], declaring
+- root namespaces
+- declarations [Visual Basic], namespaces
 ms.assetid: a31fbd95-9ace-4c3d-bbb1-51222a2272b2
-caps.latest.revision: 39
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 39
+caps.latest.revision: "39"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9863286a8eda2559ab678c77a81cc7d6063c3e3d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Namespace Statement
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-名前空間の名前を宣言し、後続のソース コードがその名前空間内にコンパイルされるようにします。  
+# <a name="namespace-statement"></a>Namespace ステートメント
+名前空間の名前を宣言し、ソース コードがその名前空間内でコンパイルするように宣言します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Namespace [Global.] { name | name.name }  
@@ -38,68 +36,68 @@ Namespace [Global.] { name | name.name }
 End Namespace  
 ```  
   
-## 指定項目  
- グローバル  
- 省略可能です。  プロジェクトのルート名前空間の名前空間を定義する。  「[Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)」を参照してください。  
+## <a name="parts"></a>指定項目  
+ Global  
+ 省略可能です。 プロジェクトのルート名前空間から名前空間を定義できます。 参照してください[Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)です。  
   
  `name`  
- 必ず指定します。  名前空間を識別する一意の前を指定します。  有効な Visual Basic 識別子を指定する必要があります。  詳細については、「[Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。  
+ 必須です。 名前空間を識別する一意の名前。 有効な Visual Basic 識別子である必要があります。 詳細については、次を参照してください。[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。  
   
  `componenttypes`  
- 省略可能です。  名前空間を構成する要素を指定します。  これらはに含まれていますが列挙型構造体モジュールインターフェイスクラスデリゲート他の名前空間はありません。  
+ 省略可能です。 名前空間を構成する要素。 これらしますが、列挙型、構造体、インターフェイス、クラス、モジュール、デリゲート、および他の名前空間に限定されていません。  
   
  `End Namespace`  
- `Namespace` ブロックを終了します。  
+ 終了、`Namespace`ブロックします。  
   
-## 解説  
- 名前空間は、コードを組織化する枠組みとして使用されます。  他のプログラムやアプリケーションに公開されるプログラミング要素を分類および表現する手段となります。  名前空間のデータ型を持つように名前空間を  *型*  という意味でクラスではプログラミング要素を宣言できない構成しないことに注意してください。  
+## <a name="remarks"></a>コメント  
+ 名前空間は、組織のシステムとして使用されます。 分類およびその他のプログラムやアプリケーションに公開されているプログラミング要素を表現する機能を提供します。 名前空間がないことに注意してください、*型*クラスまたは構造体は、という意味で、名前空間のデータ型を持つプログラミング要素を宣言することはできません。  
   
- `Namespace` ステートメントの後に宣言したすべてのプログラミング要素は、その名前空間に属します。  最後に宣言された名前空間の中に要素をコンパイルする処理は、`End Namespace` ステートメントまたは別の `Namespace` ステートメントが現れるまで続けられます。  
+ 後で宣言されたすべてのプログラミング要素、`Namespace`ステートメントは、その名前空間に属しています。 Visual Basic は、最後の宣言された名前空間に要素をコンパイルするかを検出するまで引き続き、`End Namespace`ステートメントまたは別`Namespace`ステートメントです。  
   
- 名前空間が既に定義されている場合、プロジェクトの外部にある名前空間でも、プログラミング要素をそこに追加できます。  これを行うにはその名前空間に要素をコンパイルするように Visual Basic に指示するために `Namespace` のステートメントを使用します。  
+ 名前空間は既に定義されている場合、プロジェクト、外でもをプログラミング要素を追加できます。 これを行うには、使用する、`Namespace`その名前空間に要素をコンパイルする Visual Basic を指示するステートメント。  
   
- `Namespace` ステートメントは、ファイル レベルまたは名前空間レベルでのみ使用できます。  つまり、名前空間の*宣言コンテキスト*は、ソース ファイルまたは別の名前空間のどちらかである必要があり、クラス、構造体、モジュール、インターフェイス、またはプロシージャでは宣言できません。  詳細については、「[Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
+ 使用することができます、`Namespace`ファイルまたは名前空間レベルでのみステートメントです。 つまり、*宣言コンテキスト*名前空間は、ソース ファイルまたは別の名前空間にある必要があります、クラス、構造体、モジュール、インターフェイス、またはプロシージャにすることはできません。 詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
   
- 名前空間は、別の名前空間の内部に宣言できます。  宣言できる入れ子のレベルに厳密な制限はありませんが、最深部の名前空間に宣言した要素に他のコードからアクセスする場合、入れ子の階層にあるすべての名前空間を含む修飾文字列を使用する必要があることに注意してください。  
+ 他の中で 1 つの名前空間を宣言することができます。 宣言することができますが、他のコードは、最も内側の名前空間で宣言された要素にアクセスするときに、入れ子の階層内のすべての名前空間名を含む修飾文字列を使用する必要があることに注意してください、入れ子のレベルに厳密な制限はありません。  
   
-## アクセス レベル  
- 名前空間は `Public` のアクセス レベルを持つようにします。  名前空間には、同じプロジェクト内のコード、プロジェクトを参照する他のプロジェクト、およびプロジェクトからビルドされたアセンブリからアクセスできます。  
+## <a name="access-level"></a>アクセス レベル  
+ 名前空間として扱われますがある、`Public`アクセス レベル。 名前空間は、同じプロジェクト内のコード、プロジェクトを参照する他のプロジェクトおよびプロジェクトからビルドされたアセンブリにアクセスできます。  
   
- 名前空間レベルで宣言したプログラミング要素、つまり他の要素の内部ではなく名前空間の内部で宣言したプログラミング要素は、アクセス レベルが `Public` または `Friend` になります。  このような要素のアクセス レベルは、特に指定しなければ、既定の `Friend` になります。  名前空間レベルで宣言できる要素は、クラス、構造体、モジュール、インターフェイス、列挙、およびデリゲートです。  詳細については、「[Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
+ つまり、名前空間内の他の要素では、内部ではなく、名前空間レベルで宣言されたプログラミング要素を持つことができます`Public`または`Friend`アクセスします。 このようなアクセス レベルの要素を使用して指定しない場合、`Friend`既定です。 要素名前空間レベルで宣言するにはには、クラス、構造体、モジュール、インターフェイス、列挙型、およびデリゲートが含まれます。 詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
   
-## ルート名前空間  
- プロジェクト内のすべての名前空間の名前は、*ルート名前空間*に基づきます。  Visual Studio では、プロジェクト名がプロジェクト内のすべてのコードの既定のルート名前空間として割り当てられます。  たとえば、プロジェクト名が `Payroll` である場合、そのプログラミング要素は `Payroll` 名前空間に属します。  `Namespace funding` と宣言した場合、この名前空間の完全名は `Payroll.funding` になります。  
+## <a name="root-namespace"></a>ルート Namespace  
+ プロジェクト内のすべての名前空間名がに基づいて、*ルート名前空間*です。 Visual Studio では、プロジェクト内のすべてのコードで、既定のルート名前空間としてプロジェクト名が割り当てられます。 たとえば、プロジェクト名が `Payroll` である場合、そのプログラミング要素は `Payroll` 名前空間に属します。 宣言する場合`Namespace funding`、その名前空間の完全な名前が`Payroll.funding`です。  
   
- 前のジェネリックなリスト クラスの例のように、既存の名前空間を `Namespace` ステートメントで指定する場合は、ルート名前空間を null 値に設定できます。  この設定を行うには、**\[プロジェクト\]** メニューの **\[プロジェクトのプロパティ\]** をクリックし、**\[ルート名前空間\]** ボックスをクリアして空にします。  この設定を前記のジェネリックなリスト クラスの例で行わなかった場合、Visual Basic コンパイラは `System.Collections.Generic` を `Payroll` プロジェクト内の `Payroll.System.Collections.Generic` という完全名を持つ新しい名前空間と見なします。  
+ 既存の名前空間を指定する場合、`Namespace`ステートメントなど、ジェネリック リスト クラスの例では、null 値に、ルート名前空間を設定できます。 これを行うには、をクリックして**プロジェクト プロパティ**から、**プロジェクト**メニューとし、消去、**ルート名前空間**エントリ、ボックスは空にします。 ジェネリック リスト クラスの例ではこれを実行している場合、Visual Basic コンパイラは夥しい`System.Collections.Generic`プロジェクト内の新しい名前空間として`Payroll`の完全な名前で`Payroll.System.Collections.Generic`です。  
   
- `Global` キーワードを使って、プロジェクトの外部で定義された名前空間の要素を参照することもできます。  この方法を使うと、プロジェクト名をルート名前空間として使い続けることができます。  それにより、意に反してプログラミング要素が既存の名前空間の要素と共にマージされる可能性は少なくなります。  詳細については「 [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md) の完全修飾名に Global キーワード」を参照してください。  
+ また、使用することができます、`Global`キーワードをプロジェクト外部で定義された名前空間の要素を参照します。 これには、ルート名前空間とプロジェクトの名前を保持することができます。 これにより、意図せずと共に既存の名前空間のプログラミング要素がマージされる可能性が減少します。 詳細については、「グローバル キーワードで完全修飾名」のセクションを参照してください。 [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)です。  
   
- `Global` のキーワードは名前空間をステートメントで使用できます。  これはプロジェクトのルート名前空間の名前空間を定義することができます。  詳細については「 [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md) の名前空間のステートメント Global キーワード」を参照してください。  
+ `Global` Namespace ステートメントでキーワードを使用することもできます。 これにより、プロジェクトのルート名前空間から名前空間を定義できます。 詳細については、「グローバル キーワードで Namespace ステートメント」セクションを参照してください。 [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)です。  
   
- **修復。**ルート名前空間が、予期しない名前空間の連結を招く場合があります。  プロジェクトの外部で定義された名前空間への参照を作成すると、Visual Basic コンパイラは、その名前空間をルート名前空間内の入れ子の名前空間として解釈します。  その場合、コンパイラでは、外部の名前空間で定義されたデータ型を認識しません。  これを回避するには「ルート名前空間 " に説明されているようにnull 値はルート名前空間」に設定するか外部名前空間の要素にアクセスするに `Global` のキーワードを使用します。  
+ **トラブルシューティングします。** ルート名前空間は、名前空間の予期しない連結する可能性があります。 プロジェクト外で定義された名前空間への参照を作成する場合、Visual Basic コンパイラとして解釈ルート名前空間に入れ子になった名前空間。 このような場合は、コンパイラは、外部名前空間で既に定義されている任意の種類を認識しません。 これを回避するには、設定、ルート名前空間「ルート Namespace」に記載されていると null 値にするかを使用して、`Global`外部名前空間の要素にアクセスするキーワードです。  
   
-## 属性と修飾子  
- 名前空間には属性を適用できません。  属性は、アセンブリのメタデータに情報を提供します。この情報は、名前空間のようなソース分類子にとって意味を持ちません。  
+## <a name="attributes-and-modifiers"></a>属性と修飾子  
+ 名前空間には、属性を適用することはできません。 属性は、名前空間などのソース分類子の意味ではないアセンブリのメタデータに情報を提供します。  
   
- 名前空間には、アクセス修飾子またはプロシージャ修飾子、またはその他の修飾子を適用できません。  型ではないので、このような修飾子は意味を持ちません。  
+ 名前空間には、すべてのアクセスまたはプロシージャ修飾子、またはその他の修飾子を適用できません。 型ではないために、これらの修飾子を意味することがありません。  
   
-## 使用例  
- 次のコード例は、入れ子の関係になるように 2 つの名前空間を宣言します。  
+## <a name="example"></a>例  
+ 次の例では、もう一方の入れ子になった 2 つの名前空間を宣言します。  
   
  [!code-vb[VbVbalrStatements#43](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_1.vb)]  
   
-## 使用例  
- 入れ子になった複数の名前空間を 1 行で宣言するコード例を次に示します。これは前のコード例と同じ意味を持ちます。  
+## <a name="example"></a>例  
+ 次の例は、1 つの行に複数の入れ子になった名前空間を宣言し、これは、前の例に相当します。  
   
  [!code-vb[VbVbalrStatements#41](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_2.vb)]  
   
-## 使用例  
- 次のコード例は、前の例で定義したクラスにアクセスします。  
+## <a name="example"></a>例  
+ 次の例では、前の例で定義されたクラスにアクセスします。  
   
  [!code-vb[VbVbalrStatements#42](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_3.vb)]  
   
-## 使用例  
- 次のコード例は、新しいジェネリックなリスト クラスのスケルトンを定義し、それを <xref:System.Collections.Generic?displayProperty=fullName> 名前空間に追加します。  
+## <a name="example"></a>例  
+ 次の例は、新しいジェネリック リスト クラスのスケルトンを定義しに追加、<xref:System.Collections.Generic?displayProperty=nameWithType>名前空間。  
   
 ```vb  
 Namespace System.Collections.Generic  
@@ -110,7 +108,7 @@ Namespace System.Collections.Generic
 End Namespace  
 ```  
   
-## 参照  
- [Imports Statement \(.NET Namespace and Type\)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)   
- [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
+## <a name="see-also"></a>関連項目  
+ [Imports ステートメント (.NET 名前空間および型)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+ [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
  [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)

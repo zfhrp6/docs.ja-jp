@@ -1,41 +1,42 @@
 ---
-title: "領域の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "例 [Windows フォーム], 領域"
-  - "領域, 使用"
+title: "領域の使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- examples [Windows Forms], regions
+- regions [Windows Forms], using
 ms.assetid: 7809295b-870f-4107-a8b5-8386c298acd5
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b53501e2f1e10cb3f8936434b63557d221c91bbc
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 領域の使用
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] の <xref:System.Drawing.Region> クラスでは、カスタム図形を定義できます。  この図形は、直線、多角形、および曲線から構成できます。  
+# <a name="using-regions"></a>領域の使用
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Region>クラスでは、カスタムの形状を定義することができます。 図形は、線、多角形、および曲線の構成できます。  
   
- 領域の一般的な使用方法としては、ヒット テストおよびクリッピングがあります。  ヒット テストは、画面上の特定の領域でマウスがクリックされたかどうかを確認します。  クリッピングは、描画範囲を特定の領域だけに限定します。  
+ 地域の 2 つの一般的な使用には、ヒット テストおよびクリッピングを使用します。 ヒット テストでは、画面の特定の領域で、マウスがクリックされたかどうか決定することです。 クリッピングは特定の領域への描画を制限することです。  
   
-## このセクションの内容  
- [方法 : 領域でヒット テストを使用する](../../../../docs/framework/winforms/advanced/how-to-use-hit-testing-with-a-region.md)  
- <xref:System.Drawing.Region> を使用してヒット テストを実行する方法を示します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [方法: 領域でヒット テストを使用する](../../../../docs/framework/winforms/advanced/how-to-use-hit-testing-with-a-region.md)  
+ 使用する方法を示します、<xref:System.Drawing.Region>ヒット テストを実行します。  
   
- [方法 : 領域でクリッピングを使用する](../../../../docs/framework/winforms/advanced/how-to-use-clipping-with-a-region.md)  
- <xref:System.Drawing.Graphics> オブジェクトに対してクリッピング領域を設定する方法を説明します。  
+ [方法: 領域でクリッピングを使用する](../../../../docs/framework/winforms/advanced/how-to-use-clipping-with-a-region.md)  
+ クリッピング領域を設定する方法について説明します、<xref:System.Drawing.Graphics>オブジェクト。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Drawing.Region>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています。  
   
  <xref:System.Drawing.Graphics>  
- このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。
+ このクラスについて説明し、そのすべてのメンバーへのリンクが含まれています。

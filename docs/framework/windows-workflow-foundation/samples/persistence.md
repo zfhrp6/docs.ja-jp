@@ -1,23 +1,27 @@
 ---
-title: "永続性 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "永続性"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 79c14759-9f87-458a-b339-beec8300e339
-caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b8ed4a3c92aecc63aceb14c0bc3b0b08ade8c25c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 永続性
+# <a name="persistence"></a>永続性
 このセクションでは、[!INCLUDE[wf](../../../../includes/wf-md.md)] での永続メディアへのワークフローの永続化に関するサンプルを示します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [ワークフロー アプリケーションの永続化](../../../../docs/framework/windows-workflow-foundation/samples/persisting-a-workflow-application.md)  
  <xref:System.Activities.WorkflowApplication> を実行し、アイドル状態になったときにアンロードしてから、再読み込みしてその実行を継続する方法を示します。  
   

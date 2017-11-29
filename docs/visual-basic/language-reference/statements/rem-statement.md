@@ -1,60 +1,59 @@
 ---
-title: "REM Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.'"
-  - "vb.Rem"
-  - "Rem"
-  - "'"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "REM statement"
-  - "comments, Visual Basic code"
-  - "code comments, Visual Basic"
-  - "Visual Basic code, comments"
-  - "' comment marker character [Visual Basic]"
+title: "REM ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.'
+- vb.Rem
+- Rem
+- "'"
+helpviewer_keywords:
+- REM statement [Visual Basic]
+- comments, Visual Basic code
+- code comments, Visual Basic
+- Visual Basic code, comments
+- "' comment marker character [Visual Basic]"
 ms.assetid: 34126d7f-e0f9-476d-91e6-b31b398615dc
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d64ce970e3e74437f5e8c63c8a4d578900902192
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# REM Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プログラムのソース コード内にコメントを記述するときに指定します。  
+# <a name="rem-statement-visual-basic"></a>REM ステートメント (Visual Basic)
+プログラムのソース コードにコメントを記述するために使用します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 REM comment  
 ' comment  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `comment`  
- 省略可能です。  記述するコメント本文を指定します。  スペースが必要です、 `REM`キーワードと`comment`。  
+ 省略可能です。 含めるコメントのテキストです。 スペースは間で必要な`REM`キーワードと`comment`です。  
   
-## 解説  
- `REM` ステートメントを 1 行に単独で記述する方法と、別のステートメントの後に記述する方法があります。  `REM` ステートメントを記述した行では、`REM` ステートメントの後に別のステートメントを記述しないでください。  別のステートメントの後に `REM` ステートメントを記述する場合は、前のステートメントとの間にスペースを挿入する必要があります。  
+## <a name="remarks"></a>コメント  
+ 配置することができます、`REM`するか、行に単独でステートメントを使用すると別のステートメントを次の行に記述できます。 `REM`ステートメントは行の最後のステートメントである必要があります。 別のステートメントが続く場合、`REM`からそのステートメントをスペースで区切る必要があります。  
   
- `REM` の代わりに一重引用符 \(`'`\) を使用できます。  これは、コメントを別のステートメントの後に記述する場合にも、1 行に単独で記述する場合にも当てはまります。  
+ 単一引用符を使用することができます (`'`) の代わりに`REM`です。 これはコメントが同じ行の別のステートメントに依存してまたはを行に単独で上に存在するかどうかに当てはまります。  
   
 > [!NOTE]
->  行連結シーケンス \(`_`\) を使用して `REM` ステートメントを続けて記述しないでください。  コンパイラは、コメントの開始点以降、文字に特別な意味があるかどうかをチェックしません。  複数行にコメントを記述する場合は、各行に `REM` ステートメントまたはコメント記号 \(`'`\) を記述してください。  
+>  続行することはできません、`REM`行連結シーケンスを使用してステートメント (`_`)。 コメントが開始されると、コンパイラは特別な意味の文字を検査しません。 複数行にコメントを記述する場合は、別の操作を使用して`REM`ステートメントまたはコメント記号 (`'`) 行ごとにします。  
   
-## 使用例  
- `REM` ステートメントを使ってプログラムにコメントを記述するコード例は、次のとおりです。  次の例では、`REM` の代わりに一重引用符 \(`'`\) を使用する方法も示します。  
+## <a name="example"></a>例  
+ 次の例を示しています、`REM`ステートメントでは、プログラムにコメントを記述するために使用します。 単一引用符文字を使用する方法も示しています (`'`) の代わりに`REM`です。  
   
  [!code-vb[VbVbalrStatements#6](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/rem-statement_1.vb)]  
   
-## 参照  
- [Comments in Code](../../../visual-basic/programming-guide/program-structure/comments-in-code.md)   
+## <a name="see-also"></a>関連項目  
+ [コード内のコメント](../../../visual-basic/programming-guide/program-structure/comments-in-code.md)  
  [方法 : コード内でステートメントを分割および連結する](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)

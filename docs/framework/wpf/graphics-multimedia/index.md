@@ -1,34 +1,37 @@
 ---
-title: "グラフィックスとマルチメディア | Microsoft Docs"
+title: "グラフィックスとマルチメディア"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-wpf
+ms.technology: dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
-- media, features
-- video effects
-- sound effects
-- animation, features
-- graphics features
-- transition effects
+- media [WPF], features
+- video effects [WPF]
+- sound effects [WPF]
+- animation [WPF], features
+- graphics features [WPF]
+- transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-caps.latest.revision: 30
+caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-translationtype: Human Translation
-ms.sourcegitcommit: c50b3e328998b65ec47efe6d7457b36116813c77
-ms.openlocfilehash: ea78944133412f43075d8d094cd5fa93685299f9
-ms.lasthandoff: 04/08/2017
-
+ms.openlocfilehash: e212de5f1f92a2a797da7f2534d28ff8b6dbdd12
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="graphics-and-multimedia"></a>グラフィックスとマルチメディア
-<a name="introduction"></a>[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] では、マルチ メディア、ベクター グラフィックス、アニメーション、コンテンツ構成のサポートが提供されるので、開発者はユーザーの関心を引くユーザー インターフェイスやコンテンツを簡単に開発できます。 [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] を使用して、ベクター グラフィックスや複雑なアニメーションを作成し、メディアをアプリケーションに統合できます。  
+<a name="introduction"></a>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]マルチ メディア、ベクター グラフィックス、アニメーション、およびコンテンツの構成、簡単に興味深いユーザー インターフェイスとコンテンツを構築する開発者向けのサポートを提供します。 [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] を使用して、ベクター グラフィックスや複雑なアニメーションを作成し、メディアをアプリケーションに統合できます。  
   
  このトピックでは、アプリケーションにグラフィックス、画面切り替え効果、サウンド、ビデオを追加できるようにする [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のグラフィックス、アニメーション、メディア機能を紹介します。  
   
@@ -41,33 +44,33 @@ ms.lasthandoff: 04/08/2017
   
 -   レイアウトの丸め  
   
-     オブジェクトの端が 1 ピクセル デバイスの中間に位置する場合、DPI に依存しないグラフィックス システムでは、端がぼやけたり半透明になったりするなどのレンダリング アーティファクトが発生することがあります。 以前のバージョンの WPF には、このような場合の処理に役立つピクセル スナップが含まれていました。 Silverlight 2 では、端がピクセル境界全体に位置するように要素を移動する別の方法としてレイアウトの丸めが導入されました。 WPF では、<xref:System.Windows.FrameworkElement> の <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> 添付プロパティでレイアウトの丸めがサポートされるようになりました。  
+     オブジェクトの端が 1 ピクセル デバイスの中間に位置する場合、DPI に依存しないグラフィックス システムでは、端がぼやけたり半透明になったりするなどのレンダリング アーティファクトが発生することがあります。 以前のバージョンの WPF には、このような場合の処理に役立つピクセル スナップが含まれていました。 Silverlight 2 では、端がピクセル境界全体に位置するように要素を移動する別の方法としてレイアウトの丸めが導入されました。 WPF では、レイアウトの丸め処理を行う、<xref:System.Windows.FrameworkElement.UseLayoutRounding%2A>添付プロパティを<xref:System.Windows.FrameworkElement>です。  
   
 -   キャッシュ済みコンポジション  
   
-     新しい <xref:System.Windows.Media.BitmapCache> クラスと <xref:System.Windows.Media.BitmapCacheBrush> クラスを使用すると、ビジュアル ツリーの複雑な部分をビットマップとしてキャッシュし、レンダリング時間を大幅に短縮できます。 ビットマップは、マウス クリックなどのユーザー入力に引き続き応答し、その他の要素上にブラシのように描画できます。  
+     新しいを使用して<xref:System.Windows.Media.BitmapCache>と<xref:System.Windows.Media.BitmapCacheBrush>クラス、複雑なビットマップとしてビジュアル ツリーの一部をキャッシュし、レンダリング時間を大幅に向上します。 ビットマップは、マウス クリックなどのユーザー入力に引き続き応答し、その他の要素上にブラシのように描画できます。  
   
 -   Pixel Shader 3 のサポート  
   
-     WPF 4 は、WPF 3.5 SP1 で導入された <xref:System.Windows.Media.Effects.ShaderEffect> サポートを基に、アプリケーションで Pixel Shader (PS) Version 3.0 を使用したエフェクトを記述できるようにします。 PS 3.0 のシェーダー モデルは PS 2.0 より洗練されており、サポートされているハードウェア上でより多くのエフェクトを使用できます。  
+     WPF 4 がの上に構築、<xref:System.Windows.Media.Effects.ShaderEffect>サポートできるため、ピクセル シェーダー (PS) バージョン 3.0 を使用して、効果を作成するアプリケーションで WPF 3.5 SP1 で導入されました。 PS 3.0 のシェーダー モデルは PS 2.0 より洗練されており、サポートされているハードウェア上でより多くのエフェクトを使用できます。  
   
 -   イージング関数  
   
-     イージング関数を使用してアニメーションを強化し、アニメーションの動作をより細かく制御できます。 たとえば、<xref:System.Windows.Media.Animation.ElasticEase> をアニメーションに適用すると、アニメーションに弾むような動作を加えることができます。 詳しくは、<xref:System.Windows.Media.Animation> 名前空間のイージングの種類をご覧ください。  
+     イージング関数を使用してアニメーションを強化し、アニメーションの動作をより細かく制御できます。 たとえば、適用することができます、<xref:System.Windows.Media.Animation.ElasticEase>アニメーションのアニメーションばね式の動作を提供します。 詳細については、イージングの型を参照してください、<xref:System.Windows.Media.Animation>名前空間。  
   
 <a name="graphics_and_rendering"></a>   
 ## <a name="graphics-and-rendering"></a>グラフィックスとレンダリング  
- WPF では、高品質な 2-D グラフィックがサポートされます。 ブラシ、ジオメトリ、イメージ、図形、変換などの機能が用意されています。 詳しくは、「[グラフィックス](../../../../docs/framework/wpf/graphics-multimedia/graphics.md)」をご覧ください。 グラフィック要素のレンダリングは、<xref:System.Windows.Media.Visual> クラスに基づいています。 画面のビジュアル オブジェクトの構造は、ビジュアル ツリーで表されます。 詳しくは、「[WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)」をご覧ください。  
+ WPF では、高品質な 2-D グラフィックがサポートされます。 ブラシ、ジオメトリ、イメージ、図形、変換などの機能が用意されています。 詳しくは、「[グラフィックス](../../../../docs/framework/wpf/graphics-multimedia/graphics.md)」をご覧ください。 グラフィック要素のレンダリングがに基づいて、<xref:System.Windows.Media.Visual>クラスです。 画面のビジュアル オブジェクトの構造は、ビジュアル ツリーで表されます。 詳しくは、「[WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)」をご覧ください。  
   
 ### <a name="2-d-shapes"></a>2-D 図形  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] には、次の図に示す四角形や楕円のような、一般的に使用されるベクター描画の [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] 図形のライブラリが用意されています。  
   
  ![楕円と四角形](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure4.PNG "WPFIntroFigure4")  
   
- これらの固有の [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] 図形は単なる図形ではなく、一般的なコントロールに期待されるキーボード入力やマウス入力などの機能の多くを実装するプログラミング可能な要素です。 次の例は、<xref:System.Windows.Shapes.Ellipse> 要素をクリックすることで発生した <xref:System.Windows.UIElement.MouseUp> イベントの処理方法を示しています。  
+ これらの固有の [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] 図形は単なる図形ではなく、一般的なコントロールに期待されるキーボード入力やマウス入力などの機能の多くを実装するプログラミング可能な要素です。 次の例は、処理する方法を示しています、<xref:System.Windows.UIElement.MouseUp>をクリックすると発生するイベント、<xref:System.Windows.Shapes.Ellipse>要素。  
   
 ```xaml  
-\<Window  
+<Window  
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
   x:Class="Window1" >  
@@ -92,7 +95,6 @@ Partial Public Class Window1
         MessageBox.Show("You clicked the ellipse!")  
     End Sub  
 End Class  
-  
 ```  
   
  上記の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] マークアップとコードビハインドの出力を次の図に示します。  
@@ -149,18 +151,18 @@ End Class
 <MediaElement Source="media\numbers.wmv" Width="450" Height="250" />  
 ```  
   
- <xref:System.Windows.Controls.MediaElement> は、ビデオとオーディオの両方を再生でき、カスタム [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] を簡単に作成できる拡張性を備えています。  
+ <xref:System.Windows.Controls.MediaElement>オーディオとビデオを再生できるは、カスタムの簡単な作成を許可するのに十分な拡張[!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)]です。  
   
  詳しくは、「[マルチメディアの概要](../../../../docs/framework/wpf/graphics-multimedia/multimedia-overview.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Windows.Media>   
- <xref:System.Windows.Media.Animation>   
- <xref:System.Windows.Media.Media3D>   
- [パフォーマンスの最適化 : 2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)   
- [WPF での図形と基本描画の概要](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)   
- [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)   
- [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)   
- [アニメーションとタイミング](http://msdn.microsoft.com/en-us/7d83765b-d5ae-41b1-b423-80206e1124aa)   
- [3-D グラフィックス](http://msdn.microsoft.com/en-us/565c1f3c-235b-47de-b05b-3b53ed63f1b8)   
+ <xref:System.Windows.Media>  
+ <xref:System.Windows.Media.Animation>  
+ <xref:System.Windows.Media.Media3D>  
+ [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
+ [WPF での図形と基本描画の概要](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
+ [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
+ [イメージ、描画、およびビジュアルによる塗りつぶし](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
+ [アニメーションおよびタイミング](http://msdn.microsoft.com/en-us/7d83765b-d5ae-41b1-b423-80206e1124aa)  
+ [3-D グラフィックス](http://msdn.microsoft.com/en-us/565c1f3c-235b-47de-b05b-3b53ed63f1b8)  
  [マルチメディア](http://msdn.microsoft.com/en-us/44a8dcd0-80cb-4db0-a222-87cde68c2fac)

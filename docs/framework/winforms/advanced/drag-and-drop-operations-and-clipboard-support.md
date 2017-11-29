@@ -1,46 +1,47 @@
 ---
-title: "ドラッグ アンド ドロップ操作とクリップボードのサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "クリップボードのトピック, Windows フォーム"
-  - "ドラッグ アンド ドロップ"
-  - "ドラッグ アンド ドロップ, Windows フォーム"
+title: "ドラッグ アンド ドロップ操作とクリップボードのサポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- drag and drop [Windows Forms]
+- drag and drop [Windows Forms], Windows Forms
+- Clipboard [Windows Forms], Windows Forms
 ms.assetid: 7cce79b6-5835-46fd-b690-73f12ad368b2
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 722c37645d95009ce03bbbf813bc9f9fb2418e60
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# ドラッグ アンド ドロップ操作とクリップボードのサポート
+# <a name="drag-and-drop-operations-and-clipboard-support"></a>ドラッグ アンド ドロップ操作とクリップボードのサポート
 一連のイベントを処理することで、Windows ベースのアプリケーション内でユーザーによるドラッグ アンド ドロップ操作を有効にすることができます。最も顕著なのは <xref:System.Windows.Forms.Control.DragEnter>、<xref:System.Windows.Forms.Control.DragLeave>、および <xref:System.Windows.Forms.Control.DragDrop> のイベントです。  
   
- 単純なメソッドの呼び出しを使用して、Windows ベースのアプリケーション内で、ユーザーの切り取り\/コピー\/貼り付けのサポートや、ユーザー データの転送を実装することもできます。  
+ 単純なメソッドの呼び出しを使用して、Windows ベースのアプリケーション内で、ユーザーの切り取り/コピー/貼り付けのサポートや、ユーザー データの転送を実装することもできます。  
   
-## このセクションの内容  
- [チュートリアル : Windows フォームにおけるドラッグ アンド ドロップ操作の実行](../../../../docs/framework/winforms/advanced/walkthrough-performing-a-drag-and-drop-operation-in-windows-forms.md)  
+## <a name="in-this-section"></a>このセクションの内容  
+ [チュートリアル: Windows フォームにおけるドラッグ アンド ドロップ操作の実行](../../../../docs/framework/winforms/advanced/walkthrough-performing-a-drag-and-drop-operation-in-windows-forms.md)  
  ドラッグ アンド ドロップ操作を開始する方法について説明します。  
   
- [方法 : アプリケーション間でドラッグ アンド ドロップ操作を実行する](../../../../docs/framework/winforms/advanced/how-to-perform-drag-and-drop-operations-between-applications.md)  
+ [方法: アプリケーション間でドラッグ アンド ドロップ操作を実行する](../../../../docs/framework/winforms/advanced/how-to-perform-drag-and-drop-operations-between-applications.md)  
  アプリケーション間でドラッグ アンド ドロップ操作を実行する方法を示しています。  
   
- [方法 : クリップボードにデータを追加する](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md)  
+ [方法: クリップボードにデータを追加する](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md)  
  プログラムを使用して、クリップボードの情報を挿入する方法について説明します。  
   
- [方法 : クリップボードからデータを取得する](../../../../docs/framework/winforms/advanced/how-to-retrieve-data-from-the-clipboard.md)  
+ [方法: クリップボードからデータを取得する](../../../../docs/framework/winforms/advanced/how-to-retrieve-data-from-the-clipboard.md)  
  クリップボードに保存されているデータにアクセスする方法について説明します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [Windows フォームにおけるドラッグ アンド ドロップ機能](../../../../docs/framework/winforms/drag-and-drop-functionality-in-windows-forms.md)  
  ドラッグ アンド ドロップの動作を実装するために使用されるメソッド、イベント、およびクラスについて説明します。  
   
@@ -51,4 +52,4 @@ caps.handback.revision: 14
  ドラッグ操作を開始するときに中心となる複雑なメソッドについて説明します。  
   
  <xref:System.Windows.Forms.Clipboard>  
- 「[方法 : アクティブな MDI 子フォームにデータを送信する](http://msdn.microsoft.com/library/y0hkh2c8\(v=vs.110\))」も参照してください。
+ 参照してください[する方法: アクティブな MDI 子フォームにデータを送信](http://msdn.microsoft.com/library/y0hkh2c8\(v=vs.110\))です。

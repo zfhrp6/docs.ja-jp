@@ -1,56 +1,59 @@
 ---
-title: "方法 : PriorityBinding を実装する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, PriorityBinding"
-  - "データ バインディング, PriorityBinding クラス"
-  - "PriorityBinding クラス"
+title: "方法 : PriorityBinding を実装する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: data binding [WPF], PriorityBinding class
 ms.assetid: d63b65ab-b3e9-4322-9aa8-1450f8d89532
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9753462908928eaf177e100a16186826bf4828ee
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : PriorityBinding を実装する
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] における <xref:System.Windows.Data.PriorityBinding> は、バインディング リストの指定により機能します。  バインディング リストは、優先順位の高いものから低いものに順番に並べられています。  優先順位の最も高いバインディングが処理された際に値を正常に返した場合は、リスト内の他のバインディングを処理する必要はありません。  優先順位の最も高いバインディングの評価に時間がかかる場合は、そのバインディングが値を正常に返すまで、正常に値を返した 2 番目に優先順位の高いバインディングが使用されることがあります。  
+# <a name="how-to-implement-prioritybinding"></a>方法 : PriorityBinding を実装する
+<xref:System.Windows.Data.PriorityBinding>[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]のバインドの一覧を指定することによって動作します。 バインディングのリストの順序は、最高の優先度から最も低い優先順位。 最高の優先度のバインドが値を返す場合が正常に処理される際はありませんリスト内の他のバインディングを処理する必要。 最高の優先度のバインドに評価される時間がかかる場合がある可能性があります、優先順位の高いバインドが正常に値を返すまで、正常に値を返す次の最も優先度が使用されます。  
   
-## 使用例  
- <xref:System.Windows.Data.PriorityBinding> の動作を示すため、`FastDP`、`SlowerDP`、および `SlowestDP` という 3 つのプロパティを持つ `AsyncDataSource` オブジェクトを作成しています。  
+## <a name="example"></a>例  
+ 示すためにどのように<xref:System.Windows.Data.PriorityBinding>の動作、`AsyncDataSource`次の 3 つのプロパティでオブジェクトが作成されました: `FastDP`、`SlowerDP`と`SlowestDP`です。  
   
- `FastDP` の get アクセサーは、`_fastDP` データ メンバーの値を返します。  
+ Get アクセサー`FastDP`の値を返します、`_fastDP`データ メンバーです。  
   
- `SlowerDP` の get アクセサーは、3 秒待機してから `_slowerDP` データ メンバーの値を返します。  
+ Get アクセサー `SlowerDP` 3 秒間の値を返す前に待機する、`_slowerDP`データ メンバーです。  
   
- `SlowestDP` の get アクセサーは、5 秒待機してから `_slowestDP` データ メンバーの値を返します。  
+ Get アクセサー`SlowestDP`を 5 秒間の値を返す前に待機する、`_slowestDP`データ メンバーです。  
   
 > [!NOTE]
->  この例は、デモンストレーションのためだけに作成されています。  フィールド セットよりもはるかに時間がかかるため、[!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] ガイドラインではプロパティを定義しないように推奨しています。  詳細については、「[NIB: Choosing Between Properties and Methods](http://msdn.microsoft.com/ja-jp/55825e8f-7e2e-448a-9505-7217cc91b1af)」を参照してください。  
+>  この例はデモ目的でのみです。 [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)]ガイドライン推奨桁違いフィールド セットよりも低速であるプロパティを定義します。 詳細については、次を参照してください。 [NIB: プロパティとの間の選択とメソッド](http://msdn.microsoft.com/en-us/55825e8f-7e2e-448a-9505-7217cc91b1af)です。  
   
  [!code-csharp[PriorityBinding#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml.cs#1)]
  [!code-vb[PriorityBinding#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PriorityBinding/VisualBasic/AsyncDataSource.vb#1)]  
   
- <xref:System.Windows.Controls.TextBlock.Text%2A> プロパティは、<xref:System.Windows.Data.PriorityBinding> を次のように使用して、上の `AsyncDS` にバインドされます。  
+ <xref:System.Windows.Controls.TextBlock.Text%2A>プロパティ上にバインドされて`AsyncDS`を使用して<xref:System.Windows.Data.PriorityBinding>:  
   
- [!code-xml[PriorityBinding#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml#2)]  
+ [!code-xaml[PriorityBinding#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml#2)]  
   
- バインディング エンジンが <xref:System.Windows.Data.Binding> オブジェクトを処理する場合は、最初の <xref:System.Windows.Data.Binding> から処理を開始しますが、これは `SlowestDP` プロパティにバインドされています。  この <xref:System.Windows.Data.Binding> は 5 秒間スリープするため、処理された時点では正常に値を返しません。そのため、次の <xref:System.Windows.Data.Binding> 要素が処理されます。  次の <xref:System.Windows.Data.Binding> も 3 秒間スリープするため、正常に値を返しません。  そのため、バインディング エンジンは次の <xref:System.Windows.Data.Binding> 要素に移動します。この要素は `FastDP` プロパティにバインドされています。  この <xref:System.Windows.Data.Binding> は、値 "Fast Value" を返します。  <xref:System.Windows.Controls.TextBlock> には、値 "Fast Value" が表示されます。  
+ バインディング エンジンが処理するときに、<xref:System.Windows.Data.Binding>オブジェクト、1 つ目で始まっている<xref:System.Windows.Data.Binding>にバインドされている、`SlowestDP`プロパティです。 ときにこの<xref:System.Windows.Data.Binding>は、処理は返されません、値が正常にため、これがスリープ状態 5 (秒単位) のため、次へ<xref:System.Windows.Data.Binding>要素を処理します。 次<xref:System.Windows.Data.Binding>は正常に完了しなかった値が 3 秒間スリープ状態にあるためです。 バインディング エンジンは、次のステップに移動<xref:System.Windows.Data.Binding>にバインドされている要素、`FastDP`プロパティです。 これは、 <xref:System.Windows.Data.Binding> "高速 Value"の値を返します。 <xref:System.Windows.Controls.TextBlock>値"Fast"が表示されます。  
   
- 3 秒経過すると、`SlowerDP` プロパティから値 "Slower Value" が返されます。  <xref:System.Windows.Controls.TextBlock> には、値 "Slower Value" が表示されます。  
+ 3 秒が経過した後、 `SlowerDP` "低速 Value"の値を返します。 <xref:System.Windows.Controls.TextBlock> "低速 Value"の値が表示されます。  
   
- 5 秒経過すると、`SlowestDP` プロパティから値 "Slowest Value" が返されます。  このバインディングは、リストの先頭に表示されているため、優先順位が最も高くなります。  <xref:System.Windows.Controls.TextBlock> には、値 "Slowest Value" が表示されます。  
+ 5 秒が経過した後、 `SlowestDP` "最も低速な Value"の値を返します。 そのバインディングは、最初に表示されているために、最高の優先順位をでいます。 <xref:System.Windows.Controls.TextBlock> "最も低速な Value"の値が表示されます。  
   
- どのような値がバインディングからの正常な戻り値と見なされるかについては、<xref:System.Windows.Data.PriorityBinding> を参照してください。  
+ 参照してください<xref:System.Windows.Data.PriorityBinding>については、バインドからの成功の戻り値と見なされます。  
   
-## 参照  
- <xref:System.Windows.Data.Binding.IsAsync%2A?displayProperty=fullName>   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Data.Binding.IsAsync%2A?displayProperty=nameWithType>  
+ [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [方法トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

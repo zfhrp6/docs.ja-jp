@@ -1,26 +1,22 @@
 ---
-title: "方法: グループ化 (Visual Basic) を使用して階層を作成する |Microsoft ドキュメント"
+title: "方法: グループ化 (Visual Basic) を使用して階層を作成します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 4eb3ca6b-1aed-43de-b8b9-41c769c993f8
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 09f75d439eeba1a4b991587053e77021d1928d4c
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 67019e2ab3d9057567969b34e276abba15174321
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-create-hierarchy-using-grouping-visual-basic"></a>方法: グループ化 (Visual Basic) を使用して階層を作成します。
 この例では、データをグループ化し、そのグループ化に基づいて XML を生成する方法を示します。  
@@ -28,7 +24,7 @@ ms.lasthandoff: 03/13/2017
 ## <a name="example"></a>例  
  この例では、まずデータをカテゴリごとにグループ化し、次にグループ化を反映した XML 階層を含む新しい XML ファイルを生成します。  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 数値データ (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)します。  
+ この例では、「[サンプル XML ファイル: 数値データ (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)」の XML ドキュメントを使用します。  
   
 ```vb  
 Dim doc As XElement = XElement.Load("Data.xml")  

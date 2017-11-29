@@ -1,40 +1,43 @@
 ---
-title: "方法 : コントロールの背景にテキストを描画する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "背景, 描画 (テキストを)"
-  - "コントロール, 描画 (背景にテキストを)"
-  - "描画, コントロールの背景に対するテキスト"
-  - "テキスト, 描画 (コントロールの背景に)"
-  - "タイポグラフィ, 描画 (コントロールの背景にテキストを)"
+title: "方法: コントロールの背景にテキストを描画する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [WPF], drawing text to backgrounds
+- text [WPF], drawing to control backgrounds
+- drawing [WPF], text to control backgrounds
+- backgrounds [WPF], drawing text to
+- typography [WPF], drawing text to control backgrounds
 ms.assetid: 686d8fba-f61c-4974-a871-c635d67a7f69
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f0c98422e337678e68a8e4b72979635e8c867b4f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : コントロールの背景にテキストを描画する
-テキスト文字列を <xref:System.Windows.Media.FormattedText> オブジェクトに変換し、そのオブジェクトをコントロールの <xref:System.Windows.Media.DrawingContext> に描画することにより、コントロールの背景にテキストを直接描画できます。  この手法は、<xref:System.Windows.Controls.Canvas> や <xref:System.Windows.Controls.StackPanel> などの <xref:System.Windows.Controls.Panel> から派生したオブジェクトの背景への描画にも使用できます。  
+# <a name="how-to-draw-text-to-a-control39s-background"></a>方法: コントロールの背景にテキストを描画する
+コントロールの背景に直接テキストを描画するにはテキスト文字列を変換することで、<xref:System.Windows.Media.FormattedText>オブジェクト、およびコントロールのオブジェクトを描画<xref:System.Windows.Media.DrawingContext>です。 派生したオブジェクトの背景に描画用に、この手法を使用することもできます<xref:System.Windows.Controls.Panel>など<xref:System.Windows.Controls.Canvas>と<xref:System.Windows.Controls.StackPanel>です。  
   
- ![テキストを背景として表示するコントロール](../../../../docs/framework/wpf/advanced/media/drawtext2background01.png "DrawText2Background01")  
+ ![背景としてテキストを表示するコントロール](../../../../docs/framework/wpf/advanced/media/drawtext2background01.png "DrawText2Background01")  
 カスタム テキスト背景のコントロールの例  
   
-## 使用例  
- コントロールの背景に描画するには、新しい <xref:System.Windows.Media.DrawingBrush> オブジェクトを作成して、変換したテキストをオブジェクトの <xref:System.Windows.Media.DrawingContext> に描画します。  次に、新しい <xref:System.Windows.Media.DrawingBrush> をコントロールの Background プロパティに割り当てます。  
+## <a name="example"></a>例  
+ コントロールの背景を描画するには、新規作成<xref:System.Windows.Media.DrawingBrush>オブジェクトおよびオブジェクトの変換後のテキストを描画<xref:System.Windows.Media.DrawingContext>です。 その後、新しい割り当てる<xref:System.Windows.Media.DrawingBrush>コントロールの背景のプロパティにします。  
   
- <xref:System.Windows.Media.FormattedText> オブジェクトを作成し、<xref:System.Windows.Controls.Label> オブジェクトと <xref:System.Windows.Controls.Button> オブジェクトの背景に描画する方法を次のコード例に示します。  
+ 次のコード例を作成する方法を示しています、<xref:System.Windows.Media.FormattedText>オブジェクトし、の背景を描画する<xref:System.Windows.Controls.Label>と<xref:System.Windows.Controls.Button>オブジェクト。  
   
  [!code-csharp[DrawTextToControlBackground#DrawTextToControlBackground1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawTextToControlBackground/CSHARP/Window1.xaml.cs#drawtexttocontrolbackground1)]  
   
-## 参照  
- <xref:System.Windows.Media.FormattedText>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Media.FormattedText>  
  [書式設定されたテキストの描画](../../../../docs/framework/wpf/advanced/drawing-formatted-text.md)

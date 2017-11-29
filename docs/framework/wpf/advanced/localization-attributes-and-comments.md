@@ -1,52 +1,55 @@
 ---
-title: "ローカリゼーション属性とコメント | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ローカリゼーション, 属性"
-  - "ローカリゼーション, コメント"
+title: "ローカリゼーション属性とコメント"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- localization [WPF], attributes
+- localization [WPF], comments
 ms.assetid: ead2d9ac-b709-4ec1-a924-39927a29d02f
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5a603c854d389076d0054a43ebeb26f19145fa8e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ローカリゼーション属性とコメント
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ローカリゼーション コメントは、ローカライズの規則やヒントを示すために、開発者が [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] ソース コード内に記述するプロパティです。  [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ローカリゼーション コメントには、ローカライズ属性と自由な書式のローカリゼーション コメントの 2 組の情報が含まれます。  localizability 属性は、どのリソースがローカライズ対象かを示すために、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ローカリゼーション API により使用されます。  自由な書式のコメントには、アプリケーション作成者が必要に応じて任意の情報を記述できます。  
+# <a name="localization-attributes-and-comments"></a>ローカリゼーション属性とコメント
+[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] ソース コード内部の [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ローカリゼーション コメントはプロパティで、ローカライズのルールとヒントを提供するために開発者によって提供されます。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ローカリゼーション コメントには、ローカライズ可否属性と自由形式のローカリゼーション コメントの 2 つの情報が含まれます。 ローカライズ可否属性は、ローカライズするリソースを示すために [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ローカリゼーション API によって使用されます。 自由形式のコメントは、アプリケーションの作成者が含めたい任意の情報です。  
   
-   
+
   
 <a name="Localizer_Comments_"></a>   
-## ローカリゼーション コメント  
- [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] 内の特定の要素について、テキストの長さ、フォント ファミリ、フォント サイズなどの制約がある場合、マークアップ アプリケーション作成者は [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] コード内のコメントを使用して、この情報をローカライザーに伝えることができます。  ソース コードにコメントを追加するためのプロセスは、次のとおりです。  
+## <a name="localization-comments"></a>ローカリゼーション コメント  
+ マークアップ アプリケーションの作成者が、テキストの長さ、フォント ファミリ、またはフォント サイズの制約など、[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] に特定の要素の要件がある場合は、この情報を [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] コードのコメントによりローカライザーに伝達できます。 ソース コードにコメントを追加する手順は次のとおりです。  
   
-1.  アプリケーション開発者が、[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] ソース コードにローカリゼーション コメントを追加します。  
+1.  アプリケーション開発者がローカリゼーション コメントを [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] ソース コードに追加します。  
   
-2.  ビルド プロセスの間に、アセンブリ内に自由な書式のローカリゼーション コメントを残すか、コメントの一部を取り除くか、またはすべてのコメントを取り除くかどうかを、.proj ファイル内に指定できます。  取り除かれたコメントは、別のファイル内に保存されます。  `LocalizationDirectivesToLocFile` タグを使用してオプションを指定します。以下にその例を示します。  
+2.  ビルド プロセス中に、.proj ファイル内でアセンブリ内に自由形式のローカリゼーション コメントを残すかどうか、コメントの一部を取り除くか、またはすべてのコメントを取り除くかのいずれかを指定できます。 取り除かれたコメントは、別のファイルに配置されます。 次のような `LocalizationDirectivesToLocFile` タグを使用して、オプションを指定します。  
   
      `<LocalizationDirectivesToLocFile>` *value* `</LocalizationDirectivesToLocFile>`  
   
-3.  指定できる値は次のとおりです。  
+3.  割り当てることのできる値は次のとおりです。  
   
-    -   **None** \- コメントと属性の両方がアセンブリ内に残され、別ファイルは生成されません。  
+    -   **None** - コメントと属性の両方がアセンブリ内に残り、別のファイルは生成されません。  
   
-    -   **CommentsOnly** \- アセンブリからコメントだけが削除され、別の LocFile 内に保存されます。  
+    -   **CommentsOnly** - アセンブリからコメントだけを取り除き、別の LocFile に配置します。  
   
-    -   **All** \- コメントと属性の両方がアセンブリから削除され、別の LocFile 内に保存されます。  
+    -   **All** - コメントと属性の両方をアセンブリから取り除き、両方とも別の 1 つの LocFile に配置します。  
   
-4.  [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)] からローカライズ可能リソースが抽出されるときに、[!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)] ローカリゼーション API により、localizability 属性に応じた処理が実行されます。  
+4.  ローカライズ可能なリソースが [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)] から抽出されると、ローカライズ可否属性が [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)] ローカリゼーション API によって使用されます。  
   
-5.  自由な書式のコメントだけを格納したローカリゼーション コメント ファイルは、ローカリゼーション プロセスに後から組み込まれます。  
+5.  自由形式のコメントのみを含むローカリゼーション コメント ファイルは、後でローカライズ プロセスに組み込まれます。  
   
- [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] ファイルにローカリゼーション コメントを追加する方法を次の例に\_示します。  
+ 次の例では、ローカリゼーション コメントを [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] ファイルに追加する方法を示しています。  
   
  `<TextBlock x:Id = "text01"`  
   
@@ -66,48 +69,48 @@ caps.handback.revision: 14
   
  `</TextBlock>`  
   
- この例では、Localization.Attributes セクションにローカリゼーション属性が、Localization.Comments セクションに自由な書式のコメントが記述されています。  次の表は、各属性とコメント、およびその意味を示したものです。  
+ 前のサンプル、Localization.Attributes セクションには、ローカリゼーション属性と Localization.Comments セクションの自由形式のコメントが含まれています。 次の表に、属性とコメントおよびローカライザーにとってのそれらの意味を示します。  
   
 |ローカリゼーション属性|説明|  
-|-----------------|--------|  
-|$Content \(Unmodifiable Readable Text\)|TextBlock 要素の内容は変更不能 \(Unmodifiable\) です。  ローカライザーは、「Microsoft」という単語を変更することはできません。  内容はローカライザーによる読み取りが可能 \(Readable\) です。  内容のカテゴリはテキストです。|  
-|FontFamily \(Unmodifiable Readable\)|TextBlock 要素のフォント ファミリ プロパティは変更不能ですが、ローカライザーによる読み取りは可能です。|  
+|-----------------------------|-------------|  
+|$Content (Unmodifiable Readable Text)|TextBlock 要素のコンテンツは変更できません。 ローカライザーは、"Microsoft" という単語を変更できません。 コンテンツは、ローカライザーに表示可能 (読み取り可能) です。 コンテンツのカテゴリはテキストです。|  
+|FontFamily (Unmodifiable Readable)|TextBlock 要素のフォント ファミリ プロパティを変更することはできませんが、ローカライザーに表示することはできます。|  
   
-|自由な書式のローカリゼーション コメント|説明|  
-|--------------------------|--------|  
-|$Content \(Trademark\)|TextBlock 要素の内容が商標であることを示します。|  
-|FontSize \(Trademark font size\)|フォント サイズ プロパティが標準の商標サイズに従う必要があることを示します。|  
+|自由形式コメントのローカライズ|説明|  
+|--------------------------------------|-------------|  
+|$Content (Trademark)|アプリケーションの作成者が、TextBlock 要素内のコンテンツが商標であることをローカライザーに伝えます。|  
+|FontSize (Trademark font size)|アプリケーションの作成者が、フォント サイズ プロパティが標準の商標のサイズに適切に従う必要があることを示します。|  
   
-### ローカライズ属性  
- Localization.Attributes セクション内の情報は、ターゲットの値名および関連付けられた localizability 値のペアのリストで構成されます。  ターゲット名には、プロパティ名または $Content 名のいずれかを指定します。  プロパティ名を指定した場合は、ターゲット値はプロパティの値になります。  $Content を指定した場合は、ターゲット値は要素の内容になります。  
+### <a name="localizability-attributes"></a>ローカライズ可否属性  
+ Localization.Attributes 内の情報には、ターゲット値の名前と関連付けられているローカライズ可否の値のペアのリストが含まれています。 ターゲット名には、プロパティ名または特殊な $Content 名を指定できます。 プロパティ名を指定した場合は、ターゲット値はプロパティの値となります。 $Content を指定した場合は、ターゲット値は要素のコンテンツとなります。  
   
- 属性には次の 3 種類があります。  
+ 次の 3 種類の属性があります。  
   
--   **Category**。  値をローカライザー ツールで変更できる必要があるかどうかを指定します。  <xref:System.Windows.LocalizabilityAttribute.Category%2A> を参照してください。  
+-   **カテゴリ**。 これは、ローカライザー ツールで値を変更可能にするかどうかを指定します。 「<xref:System.Windows.LocalizabilityAttribute.Category%2A>」を参照してください。  
   
--   **Readability**。  ローカライザー ツールが値を読み取る \(および表示する\) 必要があるかどうかを指定します。  <xref:System.Windows.LocalizabilityAttribute.Readability%2A> を参照してください。  
+-   **読みやすさ**。 これは、ローカライザー ツールで値を読み取る (および表示する) かどうかを指定します。 「<xref:System.Windows.LocalizabilityAttribute.Readability%2A>」を参照してください。  
   
--   **Modifiability**。  ローカライザー ツールが値の変更を許可するかどうかを指定します。  <xref:System.Windows.LocalizabilityAttribute.Modifiability%2A> を参照してください。  
+-   **変更可能性**。 これは、ローカライザー ツールで値の変更を許可するかどうかを指定します。 「<xref:System.Windows.LocalizabilityAttribute.Modifiability%2A>」を参照してください。  
   
- これらの属性は、スペースで区切って任意の順番で指定できます。  同じ属性を重複して指定した場合は、最後に記述した属性が優先されます。  たとえば、Localization.Attributes \= "Unmodifiable Modifiable" と指定すると、最後の値である Modifiable が設定されます。  
+ これらの属性は、スペースで区切られた任意の順序で指定できます。 重複する属性が指定された場合、最後の属性が優先されます。 たとえば、Localization.Attributes = "Unmodifiable Modifiable" は、これが最後の値であるため、変更可能性を Modifiable に設定します。  
   
- 変更可能性と読み取り可能性については、説明は不要でしょう。  カテゴリ属性は、ローカライザーがテキストを翻訳する際の参考となるように、定義済みのカテゴリを示します。  Text、Label、Title などのカテゴリは、ローカライザーがテキストの翻訳方法を判断するうえで役立ちます。  さらに、None、Inherit、Ignore、NeverLocalize などの特別なカテゴリもあります。  
+ 変更可能性と読みやすさはその名のとおりです。 カテゴリ属性は、テキストを変換するときに、ローカライザーを支援する定義済みのカテゴリを提供します。 Text、Label、Title などのカテゴリは、テキストの変換方法についてローカライザーに情報を提供します。 None、Inherit、Ignore、NeverLocalize の特殊なカテゴリもあります。  
   
- 特別なカテゴリの意味を次の表に示します。  
+ 次の表に、特殊なカテゴリの意味を示します。  
   
-|\[カテゴリ\]|説明|  
-|--------------|--------|  
-|なし|ターゲット値には、定義されたカテゴリがありません。|  
-|Inherit|ターゲット値は、親からカテゴリを継承します。|  
-|\[無視\]|ターゲット値は、ローカリゼーション プロセスで無視されます。  Ignore は現在の値だけに影響します。  子ノードへの影響はありません。|  
-|NeverLocalize|現在の値は、ローカライズ不能です。  このカテゴリは要素の子にも継承されます。|  
+|カテゴリ|説明|  
+|--------------|-------------|  
+|なし|ターゲット値に定義済みのカテゴリがありません。|  
+|継承|ターゲット値は、その親からそのカテゴリを継承します。|  
+|Ignore|ローカライズ プロセスでは、ターゲット値は無視されます。 Ignore は現在の値にのみ影響します。 子ノードには影響しません。|  
+|NeverLocalize|現在の値をローカライズすることはできません。 このカテゴリは、要素の子に継承されます。|  
   
 <a name="Localization_Comments"></a>   
-## ローカリゼーション コメント  
- Localization.Comments セクションには、ターゲット値に関する自由な書式の文字列が含まれます。  アプリケーション開発者は、アプリケーション テキストの翻訳に関するヒントをローカライザーに伝える追加情報をここに記述します。  コメントには "\(\)" で囲んだ任意の文字列を記述できます。  文字のエスケープには '\\' を使用します。  
+## <a name="localization-comments"></a>ローカリゼーション コメント  
+ Localization.Comments には、ターゲットの値に関する自由形式の文字列が含まれます。 アプリケーション開発者は、アプリケーションのテキストを変換する方法についてのヒントをローカライザーに提供するための情報を追加できます。 コメントの形式は、"()" で囲まれた任意の文字列で指定できます。 文字をエスケープするには、'\\' を使用します。  
   
-## 参照  
- [WPF のグローバリゼーション](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)   
- [自動レイアウトを使用してボタンを作成する](../../../../docs/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button.md)   
- [自動レイアウト用のグリッドを使用する](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)   
+## <a name="see-also"></a>関連項目  
+ [WPF のグローバリゼーション](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)  
+ [自動レイアウトを使用してボタンを作成する](../../../../docs/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button.md)  
+ [自動レイアウト用のグリッドを使用する](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)  
  [アプリケーションをローカライズする](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)

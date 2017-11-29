@@ -1,93 +1,96 @@
 ---
-title: "&lt;defaultFtpCachePolicy&gt; 要素 (ネットワーク設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#defaultFtpCachePolicy"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/requestCaching/defaultFtpCachePolicy"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<defaultFtpCachePolicy> 要素"
-  - "defaultFtpCachePolicy 要素"
+title: "&lt;defaultFtpCachePolicy&gt;要素 (ネットワーク設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#defaultFtpCachePolicy
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/requestCaching/defaultFtpCachePolicy
+helpviewer_keywords:
+- <defaultFtpCachePolicy> element
+- defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
-caps.latest.revision: 13
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 6b9a5fb2f62c27d278570ad789deab30917bc432
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;defaultFtpCachePolicy&gt; 要素 (ネットワーク設定)
-FTP キャッシュがアクティブであるかどうかを指定し、既定のキャッシュ ポリシーを記述します。  
+# <a name="ltdefaultftpcachepolicygt-element-network-settings"></a>&lt;defaultFtpCachePolicy&gt;要素 (ネットワーク設定)
+かどうか FTP キャッシュがアクティブであり、既定のキャッシュ ポリシーの説明について説明します。  
   
-## 構文  
+ \<configuration>  
+\<system.net >  
+\<requestCaching >  
+\<defaultFtpCachePolicy >  
   
-```  
-< defaultFtpCachePolicy  
+## <a name="syntax"></a>構文  
+  
+```xml  
+<defaultFtpCachePolicy  
   policyLevel="BypassCache|Default|CacheOnly|CacheIfAvailable|Revalidate|Reload|NoCacheNoStore|Revalidate"  
 />  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`policyLevel`|FTP キャッシュ ポリシーを指定します。  既定値は `Default` です。|  
+|属性|説明|  
+|---------------|-----------------|  
+|`policyLevel`|FTP のキャッシュ ポリシーを指定します。 既定値は `Default` です。|  
   
-## policyLevel 属性  
+## <a name="policylevel-attribute"></a>policyLevel 属性  
   
 |値|説明|  
-|-------|--------|  
-|`Default`|キャッシュされているリソースが最新であり、content length が正しく、expiration 属性、modification 属性、および content length 属性が指定されている場合、キャッシュされているリソースを返します。|  
+|-----------|-----------------|  
+|`Default`|リソースが新しい場合は、コンテンツの長さが、精度は有効期限、変更、およびコンテンツの長さの属性が存在は、キャッシュされたリソースを返します。|  
 |`BypassCache`|サーバーからリソースを返します。|  
-|`CacheOnly`|content length が指定されており、エントリのサイズに一致する場合、キャッシュされているリソースを返します。|  
-|`CacheIfAvailable`|content length が指定されており、エントリのサイズに一致する場合には、キャッシュされているリソースを返します。その他の場合には、対象のリソースをサーバーからダウンロードした上で、呼び出し元に返します。|  
-|`Revalidate`|キャッシュされているリソースのタイムスタンプが、サーバー上のリソースのタイムスタンプと等しい場合には、キャッシュされているリソースを返します。その他の場合には、対象のリソースをサーバーからダウンロードし、キャッシュに格納し、呼び出し元に返します。|  
-|`Reload`|対象のリソースをサーバーからダウンロードし、キャッシュに格納した上で、呼び出し元に返します。|  
-|`NoCacheNoStore`|キャッシュされたリソースが存在する場合は削除されます。  サーバーからリソースをダウンロードし、呼び出し元に返します。|  
-|`Revalidate`|タイムスタンプがサーバーのリソースのタイムスタンプと同じ場合は、キャッシュされたリソースのコピーを使用して要求に応じます。それ以外の場合は、リソースがサーバーからダウンロードされ、呼び出し元に提示され、キャッシュに格納されます。|  
+|`CacheOnly`|コンテンツの長さが存在し、エントリのサイズと一致する場合は、キャッシュされたリソースを返します。|  
+|`CacheIfAvailable`|コンテンツの長さが指定されたエントリのサイズと一致する場合は、キャッシュされたリソースを返しますそれ以外の場合、リソースは、サーバーからダウンロードされ、呼び出し元に返されます。|  
+|`Revalidate`|キャッシュされたリソースのタイムスタンプは、サーバー上のリソースのタイムスタンプと同じ場合は、キャッシュされたリソースを返しますそれ以外の場合、リソース サーバーからダウンロード、キャッシュに格納されているを呼び出し元に返されます。|  
+|`Reload`|サーバーからリソースをダウンロード、キャッシュに格納し、呼び出し元にリソースを返します。|  
+|`NoCacheNoStore`|キャッシュされたリソースが存在する場合は削除されます。 リソースは、サーバーからダウンロードされ、呼び出し元に返されます。|  
+|`Revalidate`|タイムスタンプは、サーバー上のリソースのタイムスタンプと同じ場合は、キャッシュされたリソースのコピーを使用して、要求に応じます。それ以外の場合、リソースはサーバーからダウンロード、呼び出し元に表示される、キャッシュに格納されています。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし。  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
-|[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|ネットワーク要求のキャッシュ機構を制御します。|  
+|-------------|-----------------|  
+|[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|ネットワーク要求のキャッシュ メカニズムを制御します。|  
   
-## 解説  
+## <a name="remarks"></a>コメント  
   
-## 使用例  
- 次のコード例は、`NoCacheNoStore` の FTP キャッシュ ポリシーを指定する方法を示しています。  
+## <a name="example"></a>例  
+ 次の例は、FTP キャッシュのポリシーを指定する方法を示しています。`NoCacheNoStore`です。  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <requestCaching>  
       <defaultFtpCachePolicy  
-        Level="NoCacheNoStore">  
+        policyLevel="NoCacheNoStore">  
       </defaultFtpCachePolicy>  
     </requestCaching>  
   </system.net>  
 </configuration>  
 ```  
   
-## 参照  
- <xref:System.Net.Cache>   
- <xref:System.Net.WebRequest>   
- <xref:System.Net.Cache.RequestCacheLevel>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Net.Cache>  
+ <xref:System.Net.WebRequest>  
+ <xref:System.Net.Cache.RequestCacheLevel>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

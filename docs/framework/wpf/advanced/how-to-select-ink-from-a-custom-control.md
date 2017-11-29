@@ -1,97 +1,103 @@
 ---
-title: "方法 : カスタム コントロールからインクを選択する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール, インクの選択"
-  - "カスタム コントロール, インクの選択"
-  - "インク, 選択 (カスタム コントロールから)"
+title: "方法 : カスタム コントロールからインクを選択する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- controls [WPF], ink selection
+- ink [WPF], selecting from custom control
+- custom controls [WPF], ink selection
 ms.assetid: 5f3a45c6-6d40-4017-9b47-933f134ceba3
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: dd9693209cc35ecd3c0473133b7c21639a239ff5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : カスタム コントロールからインクを選択する
-<xref:System.Windows.Ink.IncrementalLassoHitTester> をカスタム コントロールに追加することで、<xref:System.Windows.Controls.InkCanvas> がなげなわを使用してインクを選択するのと同様に、ユーザーがなげなわツールを使用してインクを選択できるようにコントロールを有効にすることができます。  
+# <a name="how-to-select-ink-from-a-custom-control"></a>方法 : カスタム コントロールからインクを選択する
+追加することによって、 <xref:System.Windows.Ink.IncrementalLassoHitTester> 、カスタム コントロールを有効にできますコントロールと同じように、選択ツールを使用してインクをユーザーが選択できるように、<xref:System.Windows.Controls.InkCanvas>なげなわを使用してインクを選択します。  
   
- この例は、インク対応カスタム コントロールの作成に精通していることを前提としています。  インク入力対応のカスタム コントロールを作成するには、「[インク入力コントロールの作成](../../../../docs/framework/wpf/advanced/creating-an-ink-input-control.md)」を参照してください。  
+ この例では、インクが有効なカスタム コントロールの作成に慣れて前提としています。  インク入力を受け付けるカスタム コントロールを作成するを参照してください。[インク入力コントロールを作成する](../../../../docs/framework/wpf/advanced/creating-an-ink-input-control.md)です。  
   
-## 使用例  
- ユーザーがなげなわを描画すると、<xref:System.Windows.Ink.IncrementalLassoHitTester> は、ユーザーがなげなわを完了したときに、どのストロークがなげなわのパスの境界内に入っているかを予測します。  なげなわのパスの境界内に入っていることが特定されたストロークは、選択されているものと考えることができます。  また、選択されたストロークは、選択解除される場合もあります。  たとえば、ユーザーがなげなわを描画しながら方向を反転させた場合、<xref:System.Windows.Ink.IncrementalLassoHitTester> は、一部のストロークを選択解除します。  
+## <a name="example"></a>例  
+ ユーザーが、なげなわを描画するとき、<xref:System.Windows.Ink.IncrementalLassoHitTester>するストロークは、ユーザーがなげなわが完了したら、なげなわのパスの境界内を予測します。  なげなわのパスの境界内にあると判断したストロークは、選択されていると考えることができます。  選択されたストロークをオフになっていることができますもなります。  たとえば、ユーザー、描画中には方向が反転、<xref:System.Windows.Ink.IncrementalLassoHitTester>のストロークを選択解除できます。  
   
- <xref:System.Windows.Ink.IncrementalLassoHitTester> は <xref:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged> イベントを発生させ、ユーザーがなげなわを描画している間でも、カスタム コントロールが応答できるようにします。  たとえば、ユーザーの選択および選択解除に合わせて、ストロークの外観を変更することができます。  
+ <xref:System.Windows.Ink.IncrementalLassoHitTester>を生成、<xref:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged>イベントで、ユーザーは、描画中に応答する、カスタムの制御を有効にします。  たとえば、ユーザーを選択し、それらの選択を解除すると、ストロークの外観を変更できます。  
   
-## インク モードの管理  
- コントロール上でなげなわとインクが異なって表示されると、ユーザーにとって便利です。  これを実現するには、ユーザーがインクを書き込んでいるのか選択しているのかを、カスタム コントロールが追跡する必要があります。  このような動作を実行する最も簡単な方法は、2 つの値を持つ列挙体を宣言することです。1 つはユーザーがインクを書き込んでいることを示し、もう 1 つはユーザーがインクを選択していることを示します。  
+## <a name="managing-the-ink-mode"></a>インク モードの管理  
+ なげなわがコントロール上のインクが異なって表示される場合、ユーザーに便利です。 これを実現するには、カスタム コントロールする必要がありますの追跡、ユーザーが記述またはインクを選択するかどうか。 これを行う最も簡単な方法は 2 つの値を持つ列挙体を宣言する: インクと、ユーザーがインクを選択することを示すために 1 つに、ユーザーを作成することを示すために 1 つです。  
   
  [!code-csharp[HowToSelectInk#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#2)]
  [!code-vb[HowToSelectInk#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#2)]  
   
- 次に、2 つの <xref:System.Windows.Ink.DrawingAttributes> をクラスに追加します。1 つはユーザーがインクを書き込んでいる場合に使用し、もう 1 つはユーザーがインクを選択している場合に使用します。  コンストラクターで <xref:System.Windows.Ink.DrawingAttributes> を初期化し、両方の <xref:System.Windows.Ink.DrawingAttributes.AttributeChanged> イベントを同じイベント ハンドラーに結合します。  次に、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> の <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.DrawingAttributes%2A> プロパティを、インクの <xref:System.Windows.Ink.DrawingAttributes> に設定します。  
+ 次に、2 つ追加<xref:System.Windows.Ink.DrawingAttributes>クラス: ユーザーがユーザーには、インクが選択したときに使用する 1 つのインクを書き込むときに使用する 1 つです。  コンス トラクターで初期化、<xref:System.Windows.Ink.DrawingAttributes>とアタッチ両方<xref:System.Windows.Ink.DrawingAttributes.AttributeChanged>同じイベント ハンドラーにイベント。 設定して、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.DrawingAttributes%2A>のプロパティ、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>インク<xref:System.Windows.Ink.DrawingAttributes>です。  
   
  [!code-csharp[HowToSelectInk#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#3)]
  [!code-vb[HowToSelectInk#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#3)]  
 [!code-csharp[HowToSelectInk#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#4)]
 [!code-vb[HowToSelectInk#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#4)]  
   
- 選択モードを公開するプロパティを追加します。  ユーザーが選択モードを変更したら、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> の <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.DrawingAttributes%2A> プロパティを適切な <xref:System.Windows.Ink.DrawingAttributes> オブジェクトに設定し、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A> プロパティを <xref:System.Windows.Controls.InkPresenter> に再度結び付けます。  
+ 選択モードを公開するプロパティを追加します。 選択モードを変更するときの設定、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.DrawingAttributes%2A>のプロパティ、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>を適切な<xref:System.Windows.Ink.DrawingAttributes>オブジェクトを再アタッチし、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A>プロパティを<xref:System.Windows.Controls.InkPresenter>です。  
   
  [!code-csharp[HowToSelectInk#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#5)]
  [!code-vb[HowToSelectInk#5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#5)]  
   
- <xref:System.Windows.Ink.DrawingAttributes> をプロパティとして公開し、アプリケーションがインク ストロークおよび選択ストロークの外観を決定できるようにします。  
+ 公開、<xref:System.Windows.Ink.DrawingAttributes>としてプロパティのアプリケーションは、インク ストロークと選択線の外観を特定できるようにします。  
   
  [!code-csharp[HowToSelectInk#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#6)]
  [!code-vb[HowToSelectInk#6](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#6)]  
   
- <xref:System.Windows.Ink.DrawingAttributes> オブジェクトのプロパティが変更された場合は、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A> を <xref:System.Windows.Controls.InkPresenter> に再度結び付ける必要があります。  <xref:System.Windows.Ink.DrawingAttributes.AttributeChanged> イベントのイベント ハンドラーで、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A> を <xref:System.Windows.Controls.InkPresenter> に再度結び付けます。  
+ 場合のプロパティ、<xref:System.Windows.Ink.DrawingAttributes>オブジェクトに対する変更を<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A>にアタッチする必要があります、<xref:System.Windows.Controls.InkPresenter>です。  イベント ハンドラーで、<xref:System.Windows.Ink.DrawingAttributes.AttributeChanged>イベント、再接続、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A>を<xref:System.Windows.Controls.InkPresenter>です。  
   
  [!code-csharp[HowToSelectInk#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#7)]
  [!code-vb[HowToSelectInk#7](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#7)]  
   
-## IncrementalLassoHitTester の使用  
- 選択されたストロークを含む <xref:System.Windows.Ink.StrokeCollection> を作成および初期化します。  
+## <a name="using-the-incrementallassohittester"></a>使用して、IncrementalLassoHitTester  
+ 作成し、初期化、<xref:System.Windows.Ink.StrokeCollection>選択されたストロークを格納しています。  
   
  [!code-csharp[HowToSelectInk#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#8)]
  [!code-vb[HowToSelectInk#8](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#8)]  
   
- ユーザーが、インクまたはなげなわのいずれかのストロークの描画を開始したら、選択されている任意のストロークを選択解除します。  次に、ユーザーがなげなわを描画している場合は、<xref:System.Windows.Ink.StrokeCollection.GetIncrementalLassoHitTester%2A> を呼び出して <xref:System.Windows.Ink.IncrementalLassoHitTester> を作成し、<xref:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged> イベントにサブスクライブして、<xref:System.Windows.Ink.IncrementalHitTester.AddPoints%2A> を呼び出します。  このコードは独立したメソッドとして、<xref:System.Windows.UIElement.OnStylusDown%2A> および <xref:System.Windows.UIElement.OnMouseDown%2A> メソッドから呼び出すことができます。  
+ ユーザーがストロークを描画を開始、ときにインクまたはなげなわのいずれかの選択を解除、選択されたストロークです。 次に、ユーザーはなげなわを描画して場合に作成、<xref:System.Windows.Ink.IncrementalLassoHitTester>を呼び出して<xref:System.Windows.Ink.StrokeCollection.GetIncrementalLassoHitTester%2A>にサブスクライブ、<xref:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged>イベント、および呼び出し<xref:System.Windows.Ink.IncrementalHitTester.AddPoints%2A>です。 このコードを別のメソッドを指定できから呼び出される、<xref:System.Windows.UIElement.OnStylusDown%2A>と<xref:System.Windows.UIElement.OnMouseDown%2A>メソッドです。  
   
  [!code-csharp[HowToSelectInk#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#9)]
  [!code-vb[HowToSelectInk#9](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#9)]  
   
- ユーザーがなげなわを描画している間に、スタイラス ポイントを <xref:System.Windows.Ink.IncrementalLassoHitTester> に追加します。  次のメソッドを、<xref:System.Windows.UIElement.OnStylusMove%2A>、<xref:System.Windows.UIElement.OnStylusUp%2A>、<xref:System.Windows.UIElement.OnMouseMove%2A>、<xref:System.Windows.UIElement.OnMouseLeftButtonUp%2A> の各メソッドから呼び出します。  
+ スタイラスのポイントを追加、<xref:System.Windows.Ink.IncrementalLassoHitTester>ユーザーが、なげなわを描画中にします。  次のメソッドを呼び出して、 <xref:System.Windows.UIElement.OnStylusMove%2A>、 <xref:System.Windows.UIElement.OnStylusUp%2A>、 <xref:System.Windows.UIElement.OnMouseMove%2A>、および<xref:System.Windows.UIElement.OnMouseLeftButtonUp%2A>メソッドです。  
   
  [!code-csharp[HowToSelectInk#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#10)]
  [!code-vb[HowToSelectInk#10](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#10)]  
   
- ユーザーがストロークを選択および選択解除したときに、<xref:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged?displayProperty=fullName> イベントを処理して応答します。  <xref:System.Windows.Ink.LassoSelectionChangedEventArgs> クラスには <xref:System.Windows.Ink.LassoSelectionChangedEventArgs.SelectedStrokes%2A> および <xref:System.Windows.Ink.LassoSelectionChangedEventArgs.DeselectedStrokes%2A> プロパティが用意されており、それぞれ選択および選択解除されたストロークを取得します。  
+ 処理、<xref:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged?displayProperty=nameWithType>イベント、ユーザーを選択し、ストロークの選択を解除するときに応答します。  <xref:System.Windows.Ink.LassoSelectionChangedEventArgs>クラスには、<xref:System.Windows.Ink.LassoSelectionChangedEventArgs.SelectedStrokes%2A>と<xref:System.Windows.Ink.LassoSelectionChangedEventArgs.DeselectedStrokes%2A>ストロークを取得するプロパティがオンし、オフの場合、それぞれします。  
   
  [!code-csharp[HowToSelectInk#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#11)]
  [!code-vb[HowToSelectInk#11](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#11)]  
   
- ユーザーがなげなわの描画を完了したら、<xref:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged> イベントからサブスクライブを解除し、<xref:System.Windows.Ink.IncrementalHitTester.EndHitTesting%2A> を呼び出します。  
+ ユーザーは、描画が完了すると、サブスクリプションの解除、<xref:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged>イベントと呼び出し<xref:System.Windows.Ink.IncrementalHitTester.EndHitTesting%2A>です。  
   
  [!code-csharp[HowToSelectInk#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#12)]
  [!code-vb[HowToSelectInk#12](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#12)]  
   
-## すべての要素を取り入れる  
- 次の例は、ユーザーがなげなわを使用してインクを選択できるようにするカスタム コントロールを示しています。  
+## <a name="putting-it-all-together"></a>すべてまとめて配置することです。  
+ 次の例は、カスタム コントロールをなげなわを使用してインクを選択するユーザーを有効にします。  
   
  [!code-csharp[HowToSelectInk#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToSelectInk/CSharp/InkSelector.cs#1)]
  [!code-vb[HowToSelectInk#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToSelectInk/VisualBasic/InkSelector.vb#1)]  
   
-## 参照  
- <xref:System.Windows.Ink.IncrementalLassoHitTester>   
- <xref:System.Windows.Ink.StrokeCollection>   
- <xref:System.Windows.Input.StylusPointCollection>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Ink.IncrementalLassoHitTester>  
+ <xref:System.Windows.Ink.StrokeCollection>  
+ <xref:System.Windows.Input.StylusPointCollection>  
  [インク入力コントロールの作成](../../../../docs/framework/wpf/advanced/creating-an-ink-input-control.md)

@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 98a3e029-1a9b-4e0c-b5d0-29d3f23f5b15
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: 987157bc3663330d9c610c1016787890e9dc6137
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-build-claims-aware-aspnet-application-using-forms-based-authentication"></a>方法: フォームベースの認証を使用するクレーム対応 ASP.NET アプリケーションをビルドする
 ## <a name="applies-to"></a>対象  
@@ -43,7 +41,7 @@ ms.lasthandoff: 08/21/2017
   
 -   手順 2 – フォーム認証を使用してクレーム用の ASP.NET Web フォーム アプリケーションを構成する  
   
--   手順 3 – ソリューションをテストする  
+-   手順 3 – ソリューションのテスト  
   
 ## <a name="objectives"></a>目的  
   
@@ -138,4 +136,3 @@ ms.lasthandoff: 08/21/2017
 2.  **[登録]** ページで、ユーザーアカウントを作成し、**[登録]** をクリックします。 フォーム認証を使用してアカウントが作成され、自動的にサインインされます。  
   
 3.  ホーム ページにリダイレクトされたら、**Your Claims** 見出しの下の表に、アカウントに関する **Issuer**、**OriginalIssuer**、**Type**、**Value**、および **ValueType** 要求情報が表示されます。
-

@@ -1,70 +1,76 @@
 ---
-title: "方法 : ToolTip を配置する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "配置 (ToolTip コントロールを)"
-  - "ToolTip コントロール, 配置"
+title: "方法 : ToolTip を配置する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ToolTip control [WPF], positioning
+- positioning ToolTip controls [WPF]
 ms.assetid: cddf3757-9e5f-4ce3-a6eb-44489cf3804a
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0e8345b74cf9269bca21e1e5698de974109c2aee
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ToolTip を配置する
-画面上でのツールヒントの位置を指定する方法を次の例に示します。  
+# <a name="how-to-position-a-tooltip"></a>方法 : ToolTip を配置する
+この例では、画面のツールヒントの位置を指定する方法を示します。  
   
-## 使用例  
- ツールヒントを配置するには、<xref:System.Windows.Controls.ToolTip> クラスと <xref:System.Windows.Controls.ToolTipService> クラスの両方で定義されている 5 つのプロパティのセットを使用します。  これら 5 つのプロパティの 2 つのセットと、そのクラス別の参考資料へのリンクを次の表に示します。  
+## <a name="example"></a>例  
+ ツールヒントを配置するには、両方で定義されている 5 つのプロパティのセットを使用して、<xref:System.Windows.Controls.ToolTip>と<xref:System.Windows.Controls.ToolTipService>クラスです。 次の表は、5 つのプロパティのこれら 2 つのセットを表示し、クラスに基づいて、リファレンス ドキュメントへのリンクを提供します。  
   
-### クラス別の対応するツールヒント プロパティ  
+### <a name="corresponding-tooltip-properties-according-to-class"></a>対応するツールヒント プロパティ クラス  
   
-|<xref:System.Windows.Controls.ToolTip?displayProperty=fullName> クラスのプロパティ|<xref:System.Windows.Controls.ToolTipService?displayProperty=fullName> クラスのプロパティ|  
-|-------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-|<xref:System.Windows.Controls.ToolTip.Placement%2A?displayProperty=fullName>|<xref:System.Windows.Controls.ToolTipService.Placement%2A?displayProperty=fullName>|  
-|<xref:System.Windows.Controls.ToolTip.PlacementTarget%2A?displayProperty=fullName>|<xref:System.Windows.Controls.ToolTipService.PlacementTarget%2A?displayProperty=fullName>|  
-|<xref:System.Windows.Controls.ToolTip.PlacementRectangle%2A?displayProperty=fullName>|<xref:System.Windows.Controls.ToolTipService.PlacementRectangle%2A?displayProperty=fullName>|  
-|<xref:System.Windows.Controls.ToolTip.HorizontalOffset%2A?displayProperty=fullName>|<xref:System.Windows.Controls.ToolTipService.HorizontalOffset%2A?displayProperty=fullName>|  
-|<xref:System.Windows.Controls.ToolTip.VerticalOffset%2A?displayProperty=fullName>|<xref:System.Windows.Controls.ToolTipService.VerticalOffset%2A?displayProperty=fullName>|  
+|<xref:System.Windows.Controls.ToolTip?displayProperty=nameWithType>クラスのプロパティ|<xref:System.Windows.Controls.ToolTipService?displayProperty=nameWithType>クラスのプロパティ|  
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Windows.Controls.ToolTip.Placement%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.ToolTipService.Placement%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.ToolTip.PlacementTarget%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.ToolTipService.PlacementTarget%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.ToolTip.PlacementRectangle%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.ToolTipService.PlacementRectangle%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.ToolTip.HorizontalOffset%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.ToolTipService.HorizontalOffset%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.ToolTip.VerticalOffset%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.ToolTipService.VerticalOffset%2A?displayProperty=nameWithType>|  
   
- ツールヒントのコンテンツを <xref:System.Windows.Controls.ToolTip> オブジェクトを使用して定義する場合は、どちらのクラスのプロパティも使用できます。ただし、<xref:System.Windows.Controls.ToolTipService> のプロパティが優先されます。  <xref:System.Windows.Controls.ToolTip> オブジェクトとして定義されていないツールヒントには、<xref:System.Windows.Controls.ToolTipService> のプロパティを使用してください。  
+ 使用して、ツールヒントの内容を定義するかどうか、<xref:System.Windows.Controls.ToolTip>オブジェクトのいずれかのクラス プロパティを使用することができます。 ただし、、<xref:System.Windows.Controls.ToolTipService>プロパティも優先されます。 使用して、<xref:System.Windows.Controls.ToolTipService>プロパティとして定義されていないツールヒントを<xref:System.Windows.Controls.ToolTip>オブジェクト。  
   
- これらのプロパティを使用してツールヒントを配置する方法を以下の図に示します。  これらの図の [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] の例では、<xref:System.Windows.Controls.ToolTip> クラスで定義されるプロパティの設定方法を示していますが、<xref:System.Windows.Controls.ToolTipService> クラスの対応する各プロパティも、同じレイアウト ルールに従います。  Placement プロパティに使用できる値の詳細については、「[ポップアップの配置動作](../../../../docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+ 次の図は、これらのプロパティを使用して、ツールヒントを配置する方法を示します。 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]これらの図の例で定義されているプロパティを設定する方法を示して、<xref:System.Windows.Controls.ToolTip>クラスの対応するプロパティ、<xref:System.Windows.Controls.ToolTipService>クラスが同じレイアウト規則に従います。 配置のプロパティの値の詳細については、次を参照してください。[ポップアップ配置動作](../../../../docs/framework/wpf/controls/popup-placement-behavior.md)です。  
   
  ![ツールヒント配置](../../../../docs/framework/wpf/controls/media/tooltipplacement.png "ToolTipPlacement")  
-Placement プロパティを使用して ToolTip を配置する  
+配置のプロパティを使用して、ツールヒントの配置  
   
- ![配置四角形を使用したツールヒントの配置](../../../../docs/framework/wpf/controls/media/tooltipplacementrectangle.png "ToolTipPlacementRectangle")  
-Placement および PlacementRectangle プロパティを使用して ToolTip を配置する  
+ ![配置四角形を使用して、ツールヒントの配置](../../../../docs/framework/wpf/controls/media/tooltipplacementrectangle.png "ToolTipPlacementRectangle")  
+配置および PlacementRectangle の各プロパティを使用して、ツールヒントの配置  
   
  ![ツールヒント配置のダイアグラム](../../../../docs/framework/wpf/controls/media/tooltipplacementprhv.png "ToolTipPlacementPRHV")  
-Placement、PlacementRectangle、および Offset プロパティを使用して ToolTip を配置する  
+オフセットの配置、および PlacementRectangle、プロパティを使用して、ツールヒントの配置  
   
- <xref:System.Windows.Controls.ToolTip> のプロパティを使用して <xref:System.Windows.Controls.ToolTip> オブジェクトをコンテンツとするツールヒントの位置を指定する方法を次の例に示します。  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.ToolTip>プロパティが表示されるツールヒントの位置を指定する、<xref:System.Windows.Controls.ToolTip>オブジェクト。  
   
- [!code-xml[ToolTipService#ToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipService#ToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
   
  [!code-csharp[ToolTipService#ToolTipCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#tooltipcode)]
  [!code-vb[ToolTipService#ToolTipCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#tooltipcode)]  
   
- <xref:System.Windows.Controls.ToolTipService> のプロパティを使用して、コンテンツが <xref:System.Windows.Controls.ToolTip> オブジェクトでないツールヒントの位置を指定する方法を次の例に示します。  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.ToolTipService>プロパティの内容がツールヒントの位置を指定する、<xref:System.Windows.Controls.ToolTip>オブジェクト。  
   
- [!code-xml[ToolTipService#NoToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#notooltip)]  
+ [!code-xaml[ToolTipService#NoToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#notooltip)]  
   
  [!code-csharp[ToolTipService#NoToolTipCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#notooltipcode)]
  [!code-vb[ToolTipService#NoToolTipCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#notooltipcode)]  
   
-## 参照  
- <xref:System.Windows.Controls.ToolTip>   
- <xref:System.Windows.Controls.ToolTipService>   
- [方法のトピック](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)   
- [ToolTip の概要](../../../../docs/framework/wpf/controls/tooltip-overview.md)   
- [Use the ContextMenuService and ToolTipService](http://msdn.microsoft.com/ja-jp/809b0e9c-d612-4cda-b8af-1a698c68f4d1)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.ToolTip>  
+ <xref:System.Windows.Controls.ToolTipService>  
+ [方法トピック](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)  
+ [ToolTip の概要](../../../../docs/framework/wpf/controls/tooltip-overview.md)  
+ [ContextMenuService と全体を使用します。](http://msdn.microsoft.com/en-us/809b0e9c-d612-4cda-b8af-1a698c68f4d1)

@@ -1,47 +1,29 @@
 ---
 title: "Visual Basic の演算子および式"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - operators [Visual Basic], operands
 - operators [Visual Basic]
-- operands, definition
+- operands [Visual Basic], definition
 - Visual Basic code, operators
 - Visual Basic code, expressions
 - operands
 - expressions [Visual Basic]
 ms.assetid: b86f3131-94ee-448f-96cd-79611e028b26
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 3675af3ac8a0a80b5fb5f208c1679dc28ab77acf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: dae47988e27ed4b1a714943ce1fbffe3b815066b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="operators-and-expressions-in-visual-basic"></a>Visual Basic の演算子および式
 *演算子*は、値が格納されている 1 つ以上のコード要素に対して演算を実行するコード要素です。 値要素は、変数、定数、リテラル、プロパティ、`Function` プロシージャおよび `Operator` プロシージャからの戻り値、式などです。  
@@ -91,7 +73,6 @@ ms.lasthandoff: 07/28/2017
  使用例を含む詳細については、「[Visual Basic 2005 での演算子のオーバーロード](http://go.microsoft.com/fwlink/?LinkId=101703)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [演算子](../../../../visual-basic/language-reference/operators/index.md)   
- [演算子の効率のよい組み合わせ](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)   
+ [演算子](../../../../visual-basic/language-reference/operators/index.md)  
+ [演算子の効率のよい組み合わせ](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)  
  [ステートメント](../../../../visual-basic/language-reference/statements/index.md)
-

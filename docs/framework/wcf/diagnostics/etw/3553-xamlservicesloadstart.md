@@ -1,35 +1,38 @@
 ---
-title: "3553 - XamlServicesLoadStart | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 3553 - XamlServicesLoadStart
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 23b6e14a-019f-48fc-b2d5-aaa3dc88d79a
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7491b8a8a0245d624c56cf01d7d724f58da9f655
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 3553 - XamlServicesLoadStart
-## プロパティ  
+# <a name="3553---xamlservicesloadstart"></a>3553 - XamlServicesLoadStart
+## <a name="properties"></a>プロパティ  
   
 |||  
 |-|-|  
 |ID|3553|  
 |キーワード|WebHost|  
 |レベル|情報|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Debug|  
+|チャネル|Microsoft-Windows-Application Server-Applications/Debug|  
   
-## 説明  
+## <a name="description"></a>説明  
  このイベントは XamlServicesLoad が開始されると生成されます。  
   
-## メッセージ  
+## <a name="message"></a>メッセージ  
  XamlServicesLoad が開始します  
   
-## 詳細
+## <a name="details"></a>詳細

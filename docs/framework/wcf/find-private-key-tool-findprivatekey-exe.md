@@ -1,53 +1,53 @@
 ---
-title: "秘密キー検索ツール (FindPrivateKey.exe) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: "秘密キー検索ツール (FindPrivateKey.exe)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b8846a95-3fcc-4e8c-b9c0-128d975a6307
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5e2110e129b293ffb04c8e3eb69a5c3bfe83c17b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 秘密キー検索ツール (FindPrivateKey.exe)
-このコマンド ライン ツールを使用して、証明書ストアから秘密キーを取得できます。  たとえば、FindPrivateKey.exe を使用して、証明書ストア内の特定の X.509 証明書に関連付けられている秘密キー ファイルの場所と名前を見つけることができます。  
+# <a name="find-private-key-tool-findprivatekeyexe"></a>秘密キー検索ツール (FindPrivateKey.exe)
+このコマンド ライン ツールを使用して、証明書ストアから秘密キーを取得できます。 たとえば、FindPrivateKey.exe を使用して、証明書ストア内の特定の X.509 証明書に関連付けられている秘密キー ファイルの場所と名前を見つけることができます。  
   
 > [!IMPORTANT]
->  FindPrivateKey ツールは、WCF のサンプルとして付属しています。  このサンプルの検索場所とビルド方法の詳細については、  
+>  FindPrivateKey ツールは、WCF のサンプルとして付属しています。 このサンプルの検索場所とビルド方法の詳細については、  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-FindPrivateKey <storeName> <storeLocation> [{ {-n <subjectName>} | {-t <thumbprint>} } [-f | -d | -a]]  
+FindPrivateKey<storeName> <storeLocation> [{ {-n <subjectName>} | {-t <thumbprint>} } [-f | -d | -a]]  
 ```  
   
-## 解説  
- 次の表では、秘密キー検索ツール \(FindPrivateKey.exe\) で使用できる引数とオプションについて説明します。  
+## <a name="remarks"></a>コメント  
+ 次の表では、秘密キー検索ツール (FindPrivateKey.exe) で使用できる引数とオプションについて説明します。  
   
 |引数|説明|  
-|--------|--------|  
+|--------------|-----------------|  
 |`storeName`|証明書ストアの名前。|  
 |`storeLocation`|証明書ストアの場所。|  
   
 |オプション|説明|  
-|-----------|--------|  
-|`/n <` *subjectName* `>`|証明書のサブジェクト名を指定します。|  
-|`/t <` *thumbprint* `>`|証明書のサムプリントを指定します。  Certmgr.exe を使用して証明書のサムプリントを取得します。|  
+|------------|-----------------|  
+|`/n <`*subjectName*`>`|証明書のサブジェクト名を指定します。|  
+|`/t <`*拇印*`>`|証明書のサムプリントを指定します。 Certmgr.exe を使用して証明書のサムプリントを取得します。|  
 |`/f`|ファイル名だけを出力します。|  
 |`/d`|ディレクトリだけを出力します。|  
 |`/a`|絶対ファイル名を出力します。|  
   
-## 例  
+## <a name="examples"></a>例  
  次のコマンドは、John Doe の秘密キーを取得します。  
   
 ```  

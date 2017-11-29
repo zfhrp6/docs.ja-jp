@@ -1,43 +1,42 @@
 ---
-title: "How to: Access Characters in Strings in Visual Basic | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "strings [Visual Basic], accessing characters"
-  - "characters [Visual Basic], accessing in strings"
+title: "方法 : Visual Basic で文字列の文字にアクセスする"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- strings [Visual Basic], accessing characters
+- characters [Visual Basic], accessing in strings
 ms.assetid: 02c5206c-ffab-494d-b648-3b2ea358dc34
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 54d604fc08dd97e0e31f9bcec148431374e8ef8f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Access Characters in Strings in Visual Basic
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-<xref:System.String.Chars%2A> プロパティを使用して、文字列の指定された位置にある文字にアクセスする方法は次のようになります。  
+# <a name="how-to-access-characters-in-strings-in-visual-basic"></a>方法 : Visual Basic で文字列の文字にアクセスする
+この例で使用する方法、<xref:System.String.Chars%2A>文字列で指定した場所にある文字にアクセスするプロパティです。  
   
-## 使用例  
- 文字列内の文字に関するデータを取得したり、文字列内の文字の位置を調べたりできます。  文字列は、文字 \(`Char` 型のインスタンス\) の配列と見なすことができるため、<xref:System.String.Chars%2A> プロパティを使って文字のインデックスを参照すると、特定の文字を取得できます。  
+## <a name="example"></a>例  
+ 文字、文字列と、文字列内の文字の位置に関するデータが存在すると便利ですがあります。 文字の配列として文字列の考えることができます (`Char`インスタンス); 特定の文字を取得するには、その文字のインデックスを参照する、<xref:System.String.Chars%2A>プロパティです。  
   
  [!code-vb[VbVbalrStrings#49](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-access-characters-in-strings_1.vb)]  
   
- <xref:System.String.Chars%2A> プロパティの `index` パラメーターは、0 から始まります。  
+ `index`のパラメーター、<xref:System.String.Chars%2A>プロパティは 0 から始まる。  
   
-## 信頼性の高いプログラミング  
- <xref:System.String.Chars%2A> プロパティは、指定された位置にある文字を返します。  ただし、Unicode 文字は複数の文字で表現される場合もあります。  Unicode 文字の詳細については、「[How to: Convert a String to an Array of Characters](../../../../visual-basic/programming-guide/language-features/strings/how-to-convert-a-string-to-an-array-of-characters.md)」を参照してください。  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
+ <xref:System.String.Chars%2A>プロパティが指定した位置にある文字を返します。 ただし、Unicode 文字の一部は、1 つ以上の文字によって表されることができます。 Unicode 文字を使用する方法の詳細については、次を参照してください。[する方法: 文字列、配列の文字を変換](../../../../visual-basic/programming-guide/language-features/strings/how-to-convert-a-string-to-an-array-of-characters.md)です。  
   
- <xref:System.String.Chars%2A> プロパティは、`index` パラメーターが文字列の長さ以上である場合、またはゼロよりも小さい場合に <xref:System.IndexOutOfRangeException> 例外をスローします。  
+ <xref:System.String.Chars%2A>プロパティがスローされます、<xref:System.IndexOutOfRangeException>例外場合、`index`パラメーターは、文字列の長さ以上には 0 より小さい場合、または  
   
-## 参照  
- <xref:System.String.Chars%2A>   
- [How to: Convert a String to an Array of Characters](../../../../visual-basic/programming-guide/language-features/strings/how-to-convert-a-string-to-an-array-of-characters.md)   
- [Converting Between Strings and Other Data Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)   
- [Strings](../../../../visual-basic/programming-guide/language-features/strings/index.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.String.Chars%2A>  
+ [方法 : 文字列を文字の配列に変換する](../../../../visual-basic/programming-guide/language-features/strings/how-to-convert-a-string-to-an-array-of-characters.md)  
+ [Visual Basic で、文字列型とその他のデータ型との変換を行う](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)  
+ [文字列](../../../../visual-basic/programming-guide/language-features/strings/index.md)

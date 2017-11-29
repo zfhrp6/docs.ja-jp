@@ -1,33 +1,32 @@
 ---
-title: "How to: Make an Object Variable Not Refer to Any Instance (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Nothing keyword, variable assignment"
-  - "object variables, null reference"
+title: "方法: オブジェクト変数がインスタンスを参照しないようにする (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Nothing keyword [Visual Basic], variable assignment
+- object variables [Visual Basic], null reference
 ms.assetid: e6d30578-bdae-4142-a3ac-a10697bf696a
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 3b33aef06300bf35b7138ec5b40747532a77140a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Make an Object Variable Not Refer to Any Instance (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-[Nothing](../../../../visual-basic/language-reference/nothing.md) に設定して、オブジェクト インスタンスから、オブジェクト変数の関連付けを解除できます。  
+# <a name="how-to-make-an-object-variable-not-refer-to-any-instance-visual-basic"></a>方法: オブジェクト変数がインスタンスを参照しないようにする (Visual Basic)
+設定するすべてのオブジェクトのインスタンスからオブジェクト変数の関連付けを解除することができます[Nothing](../../../../visual-basic/language-reference/nothing.md)です。  
   
-### オブジェクト インスタンスからオブジェクト変数の関連付けを解除するには  
+### <a name="to-disassociate-an-object-variable-from-any-object-instance"></a>すべてのオブジェクトのインスタンスからオブジェクト変数の関連付けを解除するには  
   
--   代入ステートメントで、変数を `Nothing` に設定します。  
+-   変数を設定`Nothing`代入ステートメントでします。  
   
     ```  
     ' Assume account is a defined class  
@@ -35,16 +34,16 @@ caps.handback.revision: 9
     currentAccount = Nothing  
     ```  
   
-## 信頼性の高いプログラミング  
- `Nothing` に設定されたオブジェクト変数のメンバーに、コードがアクセスしようとしている場合、<xref:System.NullReferenceException> が発生します。  オブジェクト変数を頻繁に `Nothing` に設定する場合、または変数を初期化しないことが可能である場合、`Try...Catch...Finally` ブロックにメンバー アクセスを入れることをお勧めします。  
+## <a name="robust-programming"></a>信頼性の高いプログラミング  
+ 設定されているオブジェクト変数のメンバーにアクセスしようとすると、コード`Nothing`、<xref:System.NullReferenceException>に発生します。 オブジェクト変数を設定する場合`Nothing`多くの場合、またはのメンバー アクセスで囲むことをお勧め、変数が初期化されていませんが可能ですが場合、は、`Try...Catch...Finally`ブロックします。  
   
-## .NET Framework セキュリティ  
- 重要情報が含まれているオブジェクトのオブジェクト変数を使用する場合、これらのオブジェクトをアクティブに処理していないときに、変数を `Nothing` に設定できます。  これにより、悪意のあるコードがデータにアクセスできる機会を減らすことができます。  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 機密情報や機密データを格納するオブジェクトをオブジェクト変数を使用する場合、変数に設定することができます`Nothing`ときアクティブに処理するいないとそれらのオブジェクトのいずれか。 これにより、データにアクセスする悪意のあるコードが発生する可能性が減少します。  
   
-## 参照  
- <xref:System.NullReferenceException>   
- [Object Variables](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)   
- [Object Variable Assignment](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)   
- [Nothing](../../../../visual-basic/language-reference/nothing.md)   
- [Try...Catch...Finally Statement](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)   
- [例外のトラブルシューティング : System.NullReferenceException](../Topic/Troubleshooting%20Exceptions:%20System.NullReferenceException.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.NullReferenceException>  
+ [オブジェクト変数](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)  
+ [オブジェクト変数の代入](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)  
+ [Nothing](../../../../visual-basic/language-reference/nothing.md)  
+ [Try...Catch...Finally ステートメント](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
+ [例外のトラブルシューティング : System.NullReferenceException](http://msdn.microsoft.com/library/4822b0b4-8105-43fb-887a-3cc51ff02899)

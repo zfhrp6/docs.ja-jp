@@ -1,33 +1,32 @@
 ---
-title: "例外処理の保護 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "コード セキュリティ, 例外処理"
-  - "例外処理, セキュリティ"
-  - "安全なコーディング, 例外処理"
-  - "セキュリティ [.NET Framework], 例外処理"
+title: "例外処理の保護"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: cpp
+helpviewer_keywords:
+- code security, exception handling
+- security [.NET Framework], exception handling
+- secure coding, exception handling
+- exception handling, security
 ms.assetid: 1f3da743-9742-47ff-96e6-d0dd1e9e1c19
-caps.latest.revision: 10
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: a028fcdfb6c85e456c8722decdb1bca8fd907a9f
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 例外処理の保護
-Visual C\+\+ と Visual Basic では、**finally** ステートメントの前に、スタックの最上位にあるフィルター式が実行されます。  このフィルターに対応した **catch** ブロックは、**finally** ステートメントの後に実行されます。  詳細については、「[ユーザー フィルター例外の使用](../../../docs/standard/exceptions/using-user-filtered-exception-handlers.md)」を参照してください。  このセクションでは、この順番に関するセキュリティについて調べます。  フィルター ステートメントと **finally** ステートメントの実行順序を示す次の架空のサンプル コードについて考慮します。  
+# <a name="securing-exception-handling"></a>例外処理の保護
+Visual C および Visual Basic では、スタックをさらにフィルター式を実行前に、 **finally**ステートメントです。 **キャッチ**に関連付けられているブロックの後にそのフィルターが実行される、**最後に**ステートメントです。 詳細については、次を参照してください。[ユーザー フィルター例外](../../../docs/standard/exceptions/using-user-filtered-exception-handlers.md)です。 このセクションでは、この注文のセキュリティへの影響を調べます。 どのフィルター ステートメント内での順序を示す次の擬似コード例について考えますと**最後に**ステートメントを実行します。  
   
 ```cpp  
 void Main()   
@@ -59,7 +58,7 @@ void Sub()
 }                        
 ```  
   
- このコードの出力を次に示します。  
+ このコードは、次を出力します。  
   
 ```  
 Throw  
@@ -68,7 +67,7 @@ Finally
 Catch  
 ```  
   
- フィルターは **finally** ステートメントの前に実行されるため、セキュリティの問題は状態を変更する任意のコードによってもたらされ、他のコードの実行を利用される可能性があります。  たとえば、次のようになります。  
+ フィルターを実行する前に、 **finally**ステートメントでは、セキュリティの問題は状態を他のコードの実行が利点かかる場合がありますを変更することによってもたらされるようにします。 例:  
   
 ```cpp  
 try   
@@ -87,7 +86,7 @@ finally
 }  
 ```  
   
- この架空のコードでは、スタックの上位にあるフィルターが任意のコードを実行できます。  同じような効果を持つ処理の別の例として、他の ID の一時的な偽装があります。この偽装では、いくつかのセキュリティ チェックを迂回する内部フラグが設定されるか、スレッドに対応するカルチャが変更されます。  解決方法として、例外ハンドラーを導入し、コードの変更を呼び出し元のフィルター ブロックからスレッド状態に分離することをお勧めします。  しかし、例外ハンドラーを正しく導入することが重要で、これができないと問題は解決されません。  次の例では、UI カルチャを切り替えますが、どのような種類のスレッド状態の変更も同様に公開されます。  
+ 次の擬似コードは、任意のコードを実行するスタックの上位フィルターを使用できます。 同様の効果を持つ処理の他の例は、いくつかのセキュリティ チェックをバイパスする内部フラグの設定、他の id の一時的な権限の借用またはスレッドに関連付けられているカルチャを変更します。 スレッドの状態を呼び出し元のフィルター ブロックから、コードの変更を分離する例外ハンドラーを導入することをお勧めします。 ただし、例外ハンドラーを正しく導入することが重要ですか、この問題は修正されません。 次の例は、UI カルチャを切り替えるが任意の種類のスレッド状態の変更を同様に公開される可能性があります。  
   
 ```cpp  
 YourObject.YourMethod()  
@@ -101,7 +100,6 @@ YourObject.YourMethod()
       Thread.CurrentThread.CurrentUICulture = saveCulture;  
    }  
 }  
-  
 ```  
   
 ```vb  
@@ -125,7 +123,7 @@ Thread.CurrentThread.CurrentUICulture)
 End Class  
 ```  
   
- このケースの正しい解決方法は、既存の **try**\/**finally** ブロックを **try**\/**catch** ブロック内にラップすることです。  **catch\-throw** 句を既存の **try**\/**finally** ブロックに単に導入するだけでは、問題は解決されません。この例を次に示します。  
+ 修正プログラムがここでは、既存をラップする**を再試行してください**/**finally**のブロック、**を再試行してください**/**キャッチ**ブロックです。 簡単に把握、 **catch throw**既存に句**再試行**/**最後に**の次の例に示すように、ブロックで、問題が解決しません。  
   
 ```cpp  
 YourObject.YourMethod()  
@@ -145,9 +143,9 @@ YourObject.YourMethod()
 }  
 ```  
   
- **finally** ステートメントは `FilterFunc` が制御を取得する前に実行されないため、この例では問題を解決できません。  
+ 問題が解決しない、 **finally**する前にステートメントが実行、`FilterFunc`コントロールを取得します。  
   
- 呼び出し元の例外フィルター ブロックで例外を発生させる前に、**finally** 句を実行することによって問題を解決する例を次に示します。  
+ 次の例では、問題を修正するようにすることで、 **finally**句が呼び出し元の例外フィルター ブロックの例外を提供する前に実行します。  
   
 ```cpp  
 YourObject.YourMethod()  
@@ -169,5 +167,5 @@ YourObject.YourMethod()
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [安全なコーディングのガイドライン](../../../docs/standard/security/secure-coding-guidelines.md)

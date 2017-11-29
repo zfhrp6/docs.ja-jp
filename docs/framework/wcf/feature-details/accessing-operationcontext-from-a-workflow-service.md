@@ -1,25 +1,28 @@
 ---
-title: "ワークフロー サービスから OperationContext へのアクセス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ワークフロー サービスから OperationContext へのアクセス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b1dafe55-a20e-4db0-9ac8-90c315883cdd
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 11a6a1efad59ba5b9f3a143277909b63a5fe5e05
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ワークフロー サービスから OperationContext へのアクセス
-ワークフロー サービス内の <xref:System.ServiceModel.OperationContext> にアクセスするには、カスタム実行プロパティに <xref:System.ServiceModel.Activities.IReceiveMessageCallback> インターフェイスを実装する必要があります。これには、<xref:System.ServiceModel.OperationContext> への参照が渡される <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False&autoUpgrade=True メソッドをオーバーライドします。このトピックでは、カスタム ヘッダーを取得するためにこの実行プロパティを実装する方法に加え、実行時にこのプロパティを <xref:System.ServiceModel.Activities.Receive> に提示するカスタム アクティビティの実装方法を順に説明します。このカスタム アクティビティが行う動作は、<xref:System.ServiceModel.Activities.Sequence> アクティビティと同じですが、<xref:System.ServiceModel.Activities.Receive> がその内部に配置されるのに対し、<xref:System.ServiceModel.Activities.IReceiveMessageCallback> は呼び出されて <xref:System.ServiceModel.OperationContext> 情報を取得します。このトピックでは、クライアント側 <xref:System.ServiceModel.OperationContext> にアクセスして、<xref:System.ServiceModel.Activities.ISendMessageCallback> インターフェイス経由で送信ヘッダーを追加する方法も説明します。  
+# <a name="accessing-operationcontext-from-a-workflow-service"></a>ワークフロー サービスから OperationContext へのアクセス
+ワークフロー サービス内の <xref:System.ServiceModel.OperationContext> にアクセスするには、カスタム実行プロパティに <xref:System.ServiceModel.Activities.IReceiveMessageCallback> インターフェイスを実装する必要があります。 上書き、 <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False & autoUpgrade = True メソッドへの参照が渡される、<xref:System.ServiceModel.OperationContext>です。 このトピックでは、カスタム ヘッダーを取得するためにこの実行プロパティを実装する方法に加え、実行時にこのプロパティを <xref:System.ServiceModel.Activities.Receive> に提示するカスタム アクティビティの実装方法を順に説明します。  カスタム アクティビティと同じ動作を実装、 <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence`アクティビティとその、 <xref:System.ServiceModel.Activities.Receive> 、内部に配置されますが、<xref:System.ServiceModel.Activities.IReceiveMessageCallback>が呼び出されますと<xref:System.ServiceModel.OperationContext>情報を取得します。  このトピックでは、クライアント側 <xref:System.ServiceModel.OperationContext> にアクセスして、<xref:System.ServiceModel.Activities.ISendMessageCallback> インターフェイス経由で送信ヘッダーを追加する方法も説明します。  
   
-### サービス側の IReceiveMessageCallback の実装  
+### <a name="implement-the-service-side-ireceivemessagecallback"></a>サービス側の IReceiveMessageCallback の実装  
   
 1.  空の [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] ソリューションを作成します。  
   
@@ -54,12 +57,11 @@ caps.handback.revision: 9
                 }  
             }  
     }  
-  
     ```  
   
      このコードでは、メソッドに渡される <xref:System.ServiceModel.OperationContext> を使用して、着信メッセージのヘッダーにアクセスします。  
   
-### IReceiveMessageCallback 実装を NativeActivityContext に追加するためのサービス側のネイティブ アクティビティの実装  
+### <a name="implement-a-service-side-native-activity-to-add-the-ireceivemessagecallback-implementation-to-the-nativeactivitycontext"></a>IReceiveMessageCallback 実装を NativeActivityContext に追加するためのサービス側のネイティブ アクティビティの実装  
   
 1.  <xref:System.Activities.NativeActivity> から派生した `ReceiveInstanceIdScope` という新しいクラスを追加します。  
   
@@ -73,7 +75,6 @@ caps.handback.revision: 9
             Variable<int> currentIndex;  
             CompletionCallback onChildComplete;  
     }  
-  
     ```  
   
 3.  コンストラクターを実装します。  
@@ -87,7 +88,6 @@ caps.handback.revision: 9
                 this.currentIndex = new Variable<int>();  
             }  
     }  
-  
     ```  
   
 4.  `Activities` プロパティと `Variables` プロパティを実装します。  
@@ -102,7 +102,6 @@ caps.handback.revision: 9
     {  
         get { return this.variables; }  
     }  
-  
     ```  
   
 5.  <xref:System.Activities.NativeActivity.CacheMetadata%2A> をオーバーライドします。  
@@ -115,7 +114,6 @@ caps.handback.revision: 9
         //add the private implementation variable: currentIndex   
         metadata.AddImplementationVariable(this.currentIndex);  
     }  
-  
     ```  
   
 6.  <xref:System.Activities.NativeActivity.Execute%2A> をオーバーライドします。  
@@ -152,12 +150,11 @@ caps.handback.revision: 9
                 //increment the currentIndex  
                 this.currentIndex.Set(context, ++currentActivityIndex);  
             }  
-  
     ```  
   
-### ワークフロー サービスの実装  
+### <a name="implement-the-workflow-service"></a>ワークフロー サービスの実装  
   
-1.  既存の `Program` クラスを開きます。  
+1.  既存を開く`Program`クラスです。  
   
 2.  次の定数を定義します。  
   
@@ -167,7 +164,6 @@ caps.handback.revision: 9
        const string addr = "http://localhost:8080/Service";  
        static XName contract = XName.Get("IService", "http://tempuri.org");  
     }  
-  
     ```  
   
 3.  ワークフロー サービスを作成する `GetWorkflowService` という静的メソッドを追加します。  
@@ -206,7 +202,6 @@ caps.handback.revision: 9
                     }  
                 };  
             }  
-  
     ```  
   
 4.  既存の `Main` メソッドで、ワークフロー サービスをホストします。  
@@ -227,10 +222,9 @@ caps.handback.revision: 9
                     host.Close();  
                 }  
             }  
-  
     ```  
   
-### クライアント側の ISendMessageCallback の実装  
+### <a name="implement-the-client-side-isendmessagecallback"></a>クライアント側の ISendMessageCallback の実装  
   
 1.  `Service` という新しいコンソール アプリケーションをソリューションに追加します。  
   
@@ -257,12 +251,11 @@ caps.handback.revision: 9
                 operationContext.OutgoingMessageHeaders.Add(MessageHeader.CreateHeader(HeaderName, HeaderNS, this.InstanceId));  
             }  
         }  
-  
     ```  
   
      このコードでは、メソッドに渡される <xref:System.ServiceModel.OperationContext> を使用して、着信メッセージにカスタム ヘッダーを追加します。  
   
-### クライアント側の ISendMessageCallback 実装を NativeActivityContext に追加するためのクライアント側のネイティブ アクティビティの実装  
+### <a name="implement-a-client-side-native-activity-to-add-the-client-side-isendmessagecallback-implementation-to-the-nativeactivitycontext"></a>クライアント側の ISendMessageCallback 実装を NativeActivityContext に追加するためのクライアント側のネイティブ アクティビティの実装  
   
 1.  <xref:System.Activities.NativeActivity> から派生した `SendInstanceIdScope` という新しいクラスを追加します。  
   
@@ -276,7 +269,6 @@ caps.handback.revision: 9
             Variable<int> currentIndex;  
             CompletionCallback onChildComplete;  
     }  
-  
     ```  
   
 3.  コンストラクターを実装します。  
@@ -289,7 +281,6 @@ caps.handback.revision: 9
                 this.variables = new Collection<Variable>();  
                 this.currentIndex = new Variable<int>();  
             }  
-  
     ```  
   
 4.  `Activities` プロパティと `Variables` プロパティを実装します。  
@@ -304,7 +295,6 @@ caps.handback.revision: 9
     {  
         get { return this.variables; }  
     }  
-  
     ```  
   
 5.  <xref:System.Activities.NativeActivity.CacheMetadata%2A> をオーバーライドします。  
@@ -317,7 +307,6 @@ caps.handback.revision: 9
         //add the private implementation variable: currentIndex   
         metadata.AddImplementationVariable(this.currentIndex);  
     }  
-  
     ```  
   
 6.  <xref:System.Activities.NativeActivity.Execute%2A> をオーバーライドします。  
@@ -385,10 +374,9 @@ caps.handback.revision: 9
                 //increment the currentIndex  
                 this.currentIndex.Set(context, ++currentActivityIndex);  
             }  
-  
     ```  
   
-### ワークフロー クライアントの実装  
+### <a name="implement-a-workflow-client"></a>ワークフロー クライアントの実装  
   
 1.  `Client` という新しいコンソール アプリケーション プロジェクトを作成します。  
   
@@ -458,7 +446,6 @@ caps.handback.revision: 9
                     }  
                 };  
             }  
-  
     ```  
   
 4.  次のホスティング コードを `Main()` メソッドに追加します。  
@@ -472,10 +459,9 @@ caps.handback.revision: 9
        Console.WriteLine("Press [ENTER] to exit");  
        Console.ReadLine();  
     }  
-  
     ```  
   
-## 使用例  
+## <a name="example"></a>例  
  このトピックで使用されているソース コードの完全な一覧を次に示します。  
   
 ```  
@@ -561,7 +547,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -595,7 +580,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -671,7 +655,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
     }  
   
 }  
-  
 ```  
   
 ```  
@@ -699,7 +682,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -785,7 +767,6 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -864,12 +845,11 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
         }  
     }  
 }  
-  
 ```  
   
- コメント。省略できます。  
+ オプション コメント。  
   
-## 参照  
- [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)   
- [OperationContext へのアクセス](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)   
- [命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法](../../../../docs/framework/windows-workflow-foundation//authoring-workflows-activities-and-expressions-using-imperative-code.md)
+## <a name="see-also"></a>関連項目  
+ [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [OperationContext へのアクセス](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)  
+ [命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)

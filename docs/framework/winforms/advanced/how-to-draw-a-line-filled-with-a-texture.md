@@ -1,43 +1,47 @@
 ---
-title: "方法 :テクスチャを使用して塗りつぶした直線を描画する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "描画 (線を), テクスチャ"
-  - "描画, 線"
-  - "線, テクスチャ"
+title: "方法 :テクスチャを使用して塗りつぶした直線を描画する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- drawing [Windows Forms], lines
+- lines [Windows Forms], texture
+- drawing lines [Windows Forms], texture
 ms.assetid: dc9118cc-f3c2-42e5-8173-f46d41d18fd5
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 33374a16e6fee80dd45227acd4c5860d5bfc4545
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 :テクスチャを使用して塗りつぶした直線を描画する
-線を純色で描画する代わりに、テクスチャを使用して描画できます。  テクスチャを使用して直線や曲線を描画するには、<xref:System.Drawing.TextureBrush> オブジェクトを作成し、その <xref:System.Drawing.TextureBrush> オブジェクトを <xref:System.Drawing.Pen.%23ctor%2A> コンストラクターに渡します。  テクスチャ ブラシに関連付けられたビットマップが使用され、そのビットマップ平面が見えないように並べられます。ペンが直線または曲線を描画するときに、並べられているテクスチャの特定のピクセルがペンのストロークに沿って表示されるようになります。  
+# <a name="how-to-draw-a-line-filled-with-a-texture"></a>方法 :テクスチャを使用して塗りつぶした直線を描画する
+純色で直線を描画するには、代わりに、テクスチャを使用して行を描画できます。 直線と曲線テクスチャを使用して描画するには、作成、<xref:System.Drawing.TextureBrush>オブジェクト、およびを渡す<xref:System.Drawing.TextureBrush>オブジェクトを<xref:System.Drawing.Pen.%23ctor%2A>コンス トラクターです。 テクスチャ ブラシに関連付けられたビットマップは平面 (表示)、並べて表示に使用され、ペンのストロークのテクスチャを並べて表示される特定のピクセルが明らかになったペンでは、直線または曲線が描画されるときにします。  
   
-## 使用例  
- ファイル  `Texture1.jpg` から <xref:System.Drawing.Bitmap> オブジェクトを作成する例を次に示します。  そのビットマップを使用して <xref:System.Drawing.TextureBrush> オブジェクトを作成し、その <xref:System.Drawing.TextureBrush> オブジェクトを使用して <xref:System.Drawing.Pen> オブジェクトを作成しています。  <xref:System.Drawing.Graphics.DrawImage%2A> を呼び出すと、左上隅が \(0, 0\) の位置にあるビットマップが描画されます。  <xref:System.Drawing.Graphics.DrawEllipse%2A> の呼び出しでは、<xref:System.Drawing.Pen> オブジェクトを使用して、テクスチャを適用した楕円を描画しています。  
+## <a name="example"></a>例  
+ 次の例を作成、<xref:System.Drawing.Bitmap>ファイルからオブジェクト`Texture1.jpg`です。 そのビットマップが構築するために使用される、<xref:System.Drawing.TextureBrush>オブジェクト、および<xref:System.Drawing.TextureBrush>オブジェクトを構築するために使用、<xref:System.Drawing.Pen>オブジェクト。 呼び出し<xref:System.Drawing.Graphics.DrawImage%2A>で左上隅をビットマップを描画 (0, 0) です。 呼び出し<xref:System.Drawing.Graphics.DrawEllipse%2A>を使用して、<xref:System.Drawing.Pen>テクスチャ楕円を描画するオブジェクト。  
   
- ビットマップと、テクスチャが適用された楕円を次の図に示します。  
+ 次の図は、ビットマップ、テクスチャの楕円を示します。  
   
  ![ペン](../../../../docs/framework/winforms/advanced/media/pens7.png "pens7")  
   
  [!code-csharp[System.Drawing.UsingAPen#61](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#61)]
  [!code-vb[System.Drawing.UsingAPen#61](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#61)]  
   
-## コードのコンパイル  
- Windows フォームを作成し、フォームの <xref:System.Windows.Forms.Control.Paint> イベントを処理します。  前述のコードを <xref:System.Windows.Forms.Control.Paint> イベント ハンドラーに貼り付けます。   `Texture.jpg` を、システムで有効なイメージで置き換えます。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ Windows フォームを作成し、処理、フォームの<xref:System.Windows.Forms.Control.Paint>イベント。 上記のコードを貼り付け、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 置き換える`Texture.jpg`イメージ システム上で有効にします。  
   
-## 参照  
- [ペンを使用した直線と図形の描画](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)   
+## <a name="see-also"></a>関連項目  
+ [ペンを使用した直線と図形の描画](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)  
  [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)

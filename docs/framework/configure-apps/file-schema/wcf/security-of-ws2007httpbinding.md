@@ -1,28 +1,36 @@
 ---
-title: "&lt;ws2007HttpBinding&gt; の &lt;security&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;ws2007HttpBinding&gt; の &lt;security&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: fdda0ff7-b462-4e26-af52-e87ddab71945
-caps.latest.revision: 10
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 78a87add1ed71786dd0e4181c7eeb70e3b63cec1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;ws2007HttpBinding&gt; の &lt;security&gt;
-[\<ws2007HttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) 要素と共に使用されるセキュリティ設定を表します。  
+# <a name="ltsecuritygt-of-ltws2007httpbindinggt"></a>&lt;ws2007HttpBinding&gt; の &lt;security&gt;
+使用されるセキュリティ設定を表す、 [ \<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md)要素。  
   
-## 構文  
+ \<system.serviceModel >  
+\<バインド >  
+\<ws2007HttpBinding >  
+\<バインド >  
+\<セキュリティ >  
   
-```  
+## <a name="syntax"></a>構文  
   
+```xml  
 <system.serviceModel>  
     <bindings>  
         <ws2007HttpBinding>  
@@ -38,48 +46,48 @@ caps.handback.revision: 10
 </system.ServiceModel>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
 |属性|説明|  
-|--------|--------|  
-|`mode`|-   省略可能です。  適用するセキュリティの種類を指定します。  既定値は、`Message` です。<br /><br /> この属性は <xref:System.ServiceModel.SecurityMode> 型です。|  
+|---------------|-----------------|  
+|`mode`|-省略可能です。 適用するセキュリティの種類を指定します。 既定値は、`Message` です。<br /><br /> この属性は <xref:System.ServiceModel.SecurityMode> 型です。|  
   
-## Mode 属性  
+## <a name="mode-attribute"></a>Mode 属性  
   
 |値|説明|  
-|-------|--------|  
+|-----------|-----------------|  
 |`None`|セキュリティを無効にします。|  
-|`Transport`|セキュリティは、HTTPS を使用して確保されます。  サービスは、Secure Sockets Layer \(SSL\) 証明書を使用して構成する必要があります。  メッセージは、HTTPS およびサービスを使用して完全にセキュリティで保護され、サービスの SSL 証明書を使用するクライアントによって認証されます。  クライアント認証は、[\<transport\>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-ws2007httpbinding.md) 要素の `ClientCredentials` 属性によって制御されます。|  
-|`Message`|セキュリティは、SOAP メッセージ セキュリティを使用して確保されます。  既定では、SOAP 本文は暗号化および署名されます。  このモードは、サービス資格情報をクライアントの帯域外で使用可能にするかどうか、使用するアルゴリズム スイート、<xref:System.ServiceModel.Security.SecurityMessageProperty> によってメッセージ本文に適用する保護レベルなど、さまざまな機能を提供します。  クライアント認証はセッションごとに 1 回実行され、認証の結果はセッションの存続中にキャッシュされます。|  
-|`TransportWithMessageCredential`|このモードでは、HTTPS は、整合性、機密性、およびサーバー認証を提供し、SOAP メッセージ セキュリティはクライアント認証を提供します。  既定では、クライアント認証はセッションごとに 1 回実行され、認証の結果はセッションの存続中にキャッシュされます。|  
+|`Transport`|セキュリティは、HTTPS を使用して確保されます。 サービスは、Secure Sockets Layer (SSL) 証明書を使用して構成する必要があります。 メッセージは、HTTPS およびサービスを使用して完全にセキュリティで保護され、サービスの SSL 証明書を使用するクライアントによって認証されます。 クライアントの認証はによって制御されます、`ClientCredentials`の属性、 [\<トランスポート >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-ws2007httpbinding.md)要素。|  
+|`Message`|セキュリティは、SOAP メッセージ セキュリティを使用して確保されます。 既定では、SOAP 本文は暗号化および署名されます。 このモードは、サービス資格情報をクライアントの帯域外で使用可能にするかどうか、使用するアルゴリズム スイート、<xref:System.ServiceModel.Security.SecurityMessageProperty> によってメッセージ本文に適用する保護レベルなど、さまざまな機能を提供します。 クライアント認証はセッションごとに 1 回実行され、認証の結果はセッションの存続中にキャッシュされます。|  
+|`TransportWithMessageCredential`|このモードでは、HTTPS は、整合性、機密性、およびサーバー認証を提供し、SOAP メッセージ セキュリティはクライアント認証を提供します。 既定では、クライアント認証はセッションごとに 1 回実行され、認証の結果はセッションの存続中にキャッシュされます。|  
   
-### 子要素  
-  
-|要素|説明|  
-|--------|--------|  
-|[\<transport\>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-ws2007httpbinding.md)|トランスポートのセキュリティ設定を定義します。  この要素は、<xref:System.ServiceModel.Configuration.HttpTransportSecurityElement> 型に対応しています。  これらの設定は、モードが Transport に設定されている場合のみ適用されます。|  
-|[\<message\>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-ws2007httpbinding.md)|メッセージのセキュリティ設定を定義します。  この要素は、<xref:System.ServiceModel.Configuration.MessageSecurityOverHttpElement> 型に対応しています。  これらの設定は、モードが Transport に設定されている場合は適用されません。|  
-  
-### 親要素  
+### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<ws2007HttpBinding\>](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md)|HTTP トランスポート アプリケーションのセキュリティで保護されたバインド。|  
+|-------------|-----------------|  
+|[\<トランスポート >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-ws2007httpbinding.md)|トランスポートのセキュリティ設定を定義します。 この要素は、<xref:System.ServiceModel.Configuration.HttpTransportSecurityElement> 型に対応しています。 これらの設定は、モードが Transport に設定されている場合のみ適用されます。|  
+|[\<メッセージ >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-ws2007httpbinding.md)|メッセージのセキュリティ設定を定義します。 この要素は、<xref:System.ServiceModel.Configuration.MessageSecurityOverHttpElement> 型に対応しています。 これらの設定は、モードが Transport に設定されている場合は適用されません。|  
   
-## 解説  
- この要素は、WS\-\* 仕様を実装するサービスと相互運用するようにデザインされています。  このバインディングのトランスポート セキュリティは、SSL \(Secure Sockets Layer\) over HTTP または HTTPS です。  
+### <a name="parent-elements"></a>親要素  
   
-## 参照  
- <xref:System.ServiceModel.WSHttpSecurity>   
- <xref:System.ServiceModel.WSHttpBinding.Security%2A>   
- <xref:System.ServiceModel.Configuration.WSHttpBindingElement.Security%2A>   
- <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>   
- <xref:System.ServiceModel.BasicHttpSecurity>   
- [サービスおよびクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [バインディング](../../../../../docs/framework/wcf/bindings.md)   
- [システムが提供するバインディングの構成](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/ja-jp/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
- [\<binding\>](../../../../../docs/framework/misc/binding.md)
+|要素|説明|  
+|-------------|-----------------|  
+|[\<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md)|HTTP トランスポート アプリケーションのセキュリティで保護されたバインド。|  
+  
+## <a name="remarks"></a>コメント  
+ この要素は、WS-* 仕様を実装するサービスと相互運用するようにデザインされています。 このバインディングのトランスポート セキュリティは、SSL (Secure Sockets Layer) over HTTP または HTTPS です。  
+  
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.WSHttpSecurity>  
+ <xref:System.ServiceModel.WSHttpBinding.Security%2A>  
+ <xref:System.ServiceModel.Configuration.WSHttpBindingElement.Security%2A>  
+ <xref:System.ServiceModel.Configuration.WSHttpSecurityElement>  
+ <xref:System.ServiceModel.BasicHttpSecurity>  
+ [サービスとクライアントのセキュリティ保護](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [バインディング](../../../../../docs/framework/wcf/bindings.md)  
+ [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<バインド >](../../../../../docs/framework/misc/binding.md)

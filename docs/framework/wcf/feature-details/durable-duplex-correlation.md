@@ -1,31 +1,34 @@
 ---
-title: "永続的な二重の相関関係 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "永続的な二重の相関関係"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 8eb0e49a-6d3b-4f7e-a054-0d4febee2ffb
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: fc7a6655467fccf924783fea9110bdaf1b788675
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 永続的な二重の相関関係
-永続的な二重の相関関係 \(コールバック相関関係\) は、ワークフロー サービスがコールバックを最初の呼び出し元に送信する必要がある場合に便利です。WCF の二重とは異なり、コールバックは、将来のどの時点でも発生する可能性があり、同じチャネルにも同じチャネルの有効期間にも関連付けられていません。唯一の要件は、呼び出し元にコールバック メッセージをリッスンするアクティブなエンドポイントを用意することです。このため、2 つのワークフロー サービスが長時間のメッセージ交換を使用して通信できます。このトピックでは、永続的な二重の相関関係について概説します。  
+# <a name="durable-duplex-correlation"></a>永続的な二重の相関関係
+永続的な二重の相関関係 (コールバック相関関係) は、ワークフロー サービスがコールバックを最初の呼び出し元に送信する必要がある場合に便利です。 WCF の二重とは異なり、コールバックは、将来のどの時点でも発生する可能性があり、同じチャネルにも同じチャネルの有効期間にも関連付けられていません。唯一の要件は、呼び出し元にコールバック メッセージをリッスンするアクティブなエンドポイントを用意することです。 このため、2 つのワークフロー サービスが長時間のメッセージ交換を使用して通信できます。 このトピックでは、永続的な二重の相関関係について概説します。  
   
-## 永続的な二重の相関関係の使用  
- 永続的な二重の相関関係を使用するには、2 つのサービスが、<xref:System.ServiceModel.NetTcpContextBinding> や <xref:System.ServiceModel.WSHttpContextBinding> など、双方向の操作をサポートするコンテキスト対応バインドを使用する必要があります。呼び出し側サービスは、クライアントの <xref:System.ServiceModel.Endpoint> で使用するバインドを指定して <xref:System.ServiceModel.WSHttpContextBinding.ClientCallbackAddress%2A> を登録します。受信側サービスは、このデータを最初の呼び出しで受信し、呼び出し側サービスへのコールバックを行う <xref:System.ServiceModel.Activities.Send> アクティビティにおいて、受信側サービス自体の <xref:System.ServiceModel.Endpoint> でこのデータを使用します。次の例では、2 つのサービスが互いに通信しています。1 つ目のサービスは、2 つ目のサービスに対してメソッドを呼び出し、応答を待機します。2 つ目のサービスでは、コールバック メソッドの名前が認識されていますが、このメソッドを実装するサービスのエンドポイントは、設計時には認識されていません。  
+## <a name="using-durable-duplex-correlation"></a>永続的な二重の相関関係の使用  
+ 永続的な二重の相関関係を使用するには、2 つのサービスが、<xref:System.ServiceModel.NetTcpContextBinding> や <xref:System.ServiceModel.WSHttpContextBinding> など、双方向の操作をサポートするコンテキスト対応バインドを使用する必要があります。 呼び出し側サービスは、クライアントの <xref:System.ServiceModel.WSHttpContextBinding.ClientCallbackAddress%2A> で使用するバインドを指定して <xref:System.ServiceModel.Endpoint> を登録します。 受信側サービスは、このデータを最初の呼び出しで受信し、呼び出し側サービスへのコールバックを行う <xref:System.ServiceModel.Endpoint> アクティビティにおいて、受信側サービス自体の <xref:System.ServiceModel.Activities.Send> でこのデータを使用します。 次の例では、2 つのサービスが互いに通信しています。 1 つ目のサービスは、2 つ目のサービスに対してメソッドを呼び出し、応答を待機します。 2 つ目のサービスでは、コールバック メソッドの名前が認識されていますが、このメソッドを実装するサービスのエンドポイントは、設計時には認識されていません。  
   
 > [!NOTE]
->  エンドポイントの <xref:System.ServiceModel.Channels.AddressingVersion> が <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A> で構成される場合は、永続的な二重のみが使用できます。そうでない場合は、<xref:System.InvalidOperation> 例外が次のメッセージと共にスローされます。"メッセージに、AddressingVersion 'Addressing200408 \(http:\/\/schemas.xmlsoap.org\/ws\/2004\/08\/addressing\)' のエンドポイント参照を含むコールバック コンテキスト ヘッダーが含まれています。コールバック コンテキストを送信できるのは、AddressingVersion で 'WSAddressing10' が構成されている場合のみです。"  
+>  エンドポイントの <xref:System.ServiceModel.Channels.AddressingVersion> が <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A> で構成される場合は、永続的な二重のみが使用できます。 ない場合は、<xref:System.InvalidOperationException>次のメッセージで例外がスローされます"メッセージには、AddressingVersion のエンドポイント参照を持つコールバック コンテキスト ヘッダーが含まれる ' Addressing200408 (ハイパーリンク"http://schemas.xmlsoap.org/ws/2004/08/。アドレス指定"http://schemas.xmlsoap.org/ws/2004/08/addressing)')' です。 コールバック コンテキストを送信できるのは、AddressingVersion で 'WSAddressing10' が構成されている場合のみです。"  
   
- 次の例では、<xref:System.ServiceModel.WSHttpContextBinding> を使用してコールバック <xref:System.ServiceModel.Endpoint> を作成するワークフロー サービスがホストされます。  
+ 次の例では、<xref:System.ServiceModel.Endpoint> を使用してコールバック <xref:System.ServiceModel.WSHttpContextBinding> を作成するワークフロー サービスがホストされます。  
   
 ```csharp  
 // Host WF Service 1.  
@@ -44,7 +47,7 @@ host1.Open();
 Console.WriteLine("Service1 waiting at: {0}", baseAddress1);  
 ```  
   
- このワークフロー サービスを実装するワークフローは、ワークフロー自体の <xref:System.ServiceModel.Activities.Send> アクティビティを使用してコールバック相関関係を初期化し、<xref:System.ServiceModel.Activities.Send> と相関関係にある <xref:System.ServiceModel.Activities.Receive> アクティビティからこのコールバック エンドポイントを参照します。次の例は、`GetWF1` メソッドから返されるワークフローです。  
+ このワークフロー サービスを実装するワークフローは、ワークフロー自体の <xref:System.ServiceModel.Activities.Send> アクティビティを使用してコールバック相関関係を初期化し、<xref:System.ServiceModel.Activities.Receive> と相関関係にある <xref:System.ServiceModel.Activities.Send> アクティビティからこのコールバック エンドポイントを参照します。 次の例は、`GetWF1` メソッドから返されるワークフローです。  
   
 ```csharp  
 Variable<CorrelationHandle> CallbackHandle = new Variable<CorrelationHandle>();  
@@ -127,7 +130,7 @@ host2.Open();
 Console.WriteLine("Service2 waiting at: {0}", baseAddress2);  
 ```  
   
- このワークフロー サービスを実装するワークフローは、<xref:System.ServiceModel.Activities.Receive> アクティビティから開始されます。この受信アクティビティは、このサービスのコールバック相関関係を初期化し、一定の遅延時間を設けて長時間の作業をシミュレーションして、サービスへの最初の呼び出しで渡されたコールバック コンテキストを使用して、最初のサービスにコールバックします。次の例は、`GetWF2` への呼び出しから返されるワークフローです。<xref:System.ServiceModel.Activities.Send> アクティビティには、`http://www.contoso.com` のプレースホルダー アドレスが設定されていることに注意してください。実行時に使用される実際のアドレスは、指定されたコールバック アドレスです。  
+ このワークフロー サービスを実装するワークフローは、<xref:System.ServiceModel.Activities.Receive> アクティビティから開始されます。 この受信アクティビティは、このサービスのコールバック相関関係を初期化し、一定の遅延時間を設けて長時間の作業をシミュレーションして、サービスへの最初の呼び出しで渡されたコールバック コンテキストを使用して、最初のサービスにコールバックします。 次の例は、`GetWF2` への呼び出しから返されるワークフローです。 <xref:System.ServiceModel.Activities.Send> アクティビティには、`http://www.contoso.com` のプレースホルダー アドレスが設定されていることに注意してください。実行時に使用される実際のアドレスは、指定されたコールバック アドレスです。  
   
 ```csharp  
 Variable<CorrelationHandle> ItemsCallbackHandle = new Variable<CorrelationHandle>();  
@@ -196,17 +199,16 @@ Activity wf = new Sequence
 ```Output  
 Service1 waiting at: http://localhost:8080/Service1  
 Service2 waiting at: http://localhost:8081/Service2  
-Enter キーを押して閉じます。  
+Press enter to exit.   
 WF1 - Started  
 WF2 - Request Received  
 WF1 - Request Submitted  
 WF2 - Sending items  
 WF2 - Items sent  
 WF1 - Items Received  
-  
 ```  
   
- この例では、どちらのワークフローも <xref:System.ServiceModel.Activities.CallbackCorrelationInitializer> を使用して相関関係を明示的に管理しています。サンプル ワークフローには相関関係が 1 つしかないため、既定の <xref:System.ServiceModel.Activities.CorrelationHandle> で十分に管理できます。  
+ この例では、どちらのワークフローも <xref:System.ServiceModel.Activities.CallbackCorrelationInitializer> を使用して相関関係を明示的に管理しています。 サンプル ワークフローには相関関係が 1 つしかないため、既定の <xref:System.ServiceModel.Activities.CorrelationHandle> で十分に管理できます。  
   
-## 参照  
- [永続的な二重 &#91;WF サンプル&#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)
+## <a name="see-also"></a>関連項目  
+ [永続的な二重 &#91;WF のサンプル &#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)

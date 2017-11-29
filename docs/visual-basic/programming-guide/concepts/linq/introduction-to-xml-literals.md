@@ -1,40 +1,32 @@
 ---
-title: "Visual Basic2 内の XML リテラルの概要 |Microsoft ドキュメント"
+title: "Visual Basic2 内の XML リテラルの概要"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 391dd14f971f91d4d128841a7ebd24981266846a
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 7ac96691b5b9274f67039f36bbdbfaf8abd03705
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="introduction-to-xml-literals-in-visual-basic"></a>Visual Basic の XML リテラルの概要
-ここでは、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] での XML ツリーの作成について説明します。  
+ここでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] での XML ツリーの作成について説明します。  
   
- LINQ クエリの結果をコンテンツとして XML ツリーの使用方法の詳細については、次を参照してください。[関数型構築 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md)します。  
+ LINQ クエリの結果をコンテンツとして XML ツリーの使用方法の詳細については、次を参照してください。[関数型構築 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md)です。  
   
- 詳細については、XML リテラルの[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]を参照してください[概要の LINQ to Visual Basic で XML](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)します。  
+ XML リテラルについて詳しく[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を参照してください[概要の LINQ to Visual Basic で XML](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)です。  
   
 ## <a name="creating-xml-trees"></a>XML ツリーの作成  
- 次の例では、作成する方法、 <xref:System.Xml.Linq.XElement>、ここで`contacts`:</xref:System.Xml.Linq.XElement>  
+ <xref:System.Xml.Linq.XElement> (この場合は `contacts`) を作成する方法を次の例に示します。  
   
 ```vb  
 Dim contacts As XElement = _  
@@ -53,7 +45,7 @@ Dim contacts As XElement = _
 ```  
   
 ### <a name="creating-an-xelement-with-simple-content"></a>単純コンテンツを持つ XElement の作成  
- 作成することができます、<xref:System.Xml.Linq.XElement>次のように、単純コンテンツを含む:</xref:System.Xml.Linq.XElement>  
+ 次のように、単純コンテンツを含む <xref:System.Xml.Linq.XElement> を作成できます。  
   
 ```vb  
 Dim n as XElement = <Customer>Adventure Works</Customer>  
@@ -67,7 +59,7 @@ Console.WriteLine(n)
 ```  
   
 ### <a name="creating-an-empty-element"></a>空要素の作成  
- 空を作成する<xref:System.Xml.Linq.XElement>、次のように:</xref:System.Xml.Linq.XElement>  
+ 次のように、空の <xref:System.Xml.Linq.XElement> を作成できます。  
   
 ```vb  
 Dim n As XElement = <Customer/>  
@@ -81,9 +73,9 @@ Console.WriteLine(n)
 ```  
   
 ### <a name="using-embedded-expressions"></a>組み込み式の使用  
- XML リテラルの重要な機能は、組み込み式を利用できることです。 組み込み式を使用すると、式を評価してその式の結果を XML ツリーに挿入できます。 型に式が評価された場合に<xref:System.Xml.Linq.XElement>、要素がツリーに挿入します</xref:System.Xml.Linq.XElement>。 型に式が評価された場合に<xref:System.Xml.Linq.XAttribute>、属性がツリーに挿入します</xref:System.Xml.Linq.XAttribute>。 要素および属性は、それらが有効となるツリーにのみ挿入できます。  
+ XML リテラルの重要な機能は、組み込み式を利用できることです。 組み込み式を使用すると、式を評価してその式の結果を XML ツリーに挿入できます。 式が <xref:System.Xml.Linq.XElement> の型に評価される場合、要素がツリーに挿入されます。 式が <xref:System.Xml.Linq.XAttribute> の型に評価される場合は、属性がツリーに挿入されます。 要素および属性は、それらが有効となるツリーにのみ挿入できます。  
   
- 組み込み式に含めることができるのは&1; つの式だけであることに注意してください。 複数のステートメントを組み込むことはできません。 式が複数の行にまたがる場合は、行連結文字を使用する必要があります。  
+ 組み込み式に含めることができるのは 1 つの式だけであることに注意してください。 複数のステートメントを組み込むことはできません。 式が複数の行にまたがる場合は、行連結文字を使用する必要があります。  
   
  組み込み式を使用して既存のノード (要素を含む) や属性を新しい XML ツリーに追加する場合に、その既存のノードに既に親があるときは、ノードが複製されます。 新しく複製されたノードは、新しい XML ツリーにアタッチされます。 既存のノードに親がない場合は、単にノードが新しい XML ツリーにアタッチされます。 このトピックの最後の例では、この動作について説明します。  
   
@@ -213,4 +205,4 @@ Child2 was attached
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [XML ツリー (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+ [XML ツリー (Visual Basic) を作成します。](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

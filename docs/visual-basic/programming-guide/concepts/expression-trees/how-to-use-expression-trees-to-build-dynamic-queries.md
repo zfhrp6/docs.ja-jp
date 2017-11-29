@@ -1,58 +1,123 @@
 ---
-title: "方法: 式ツリーを使用して動的クエリ (Visual Basic) を作成する |Microsoft ドキュメント"
+title: "方法: 式ツリーを使用して動的クエリ (Visual Basic) を作成するには"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 16278787-7532-4b65-98b2-7a412406c4ee
-caps.latest.revision: 3
-author: stevehoag
-ms.author: shoag
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 8d69be78a9f3568535dffe54e21af80c6eb12f70
-ms.lasthandoff: 03/13/2017
-
+caps.latest.revision: "3"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d09f89b0b49118d575690f577c77c5c3d2a76e92
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-visual-basic"></a>方法: 式ツリーを使用して動的クエリ (Visual Basic) を作成するには
-LINQ では、式ツリーを使用して、そのターゲット データ ソースの<xref:System.Linq.IQueryable%601>。</xref:System.Linq.IQueryable%601>を実装する構造化されたクエリを表す たとえば、LINQ プロバイダーを実装する、<xref:System.Linq.IQueryable%601>リレーショナル データ ストアを照会するためのインターフェイス</xref:System.Linq.IQueryable%601>。 Visual Basic コンパイラでは、実行時の式ツリーをビルドするコードにこのようなデータ ソースをターゲットとするクエリをコンパイルします。 クエリ プロバイダーは、式ツリー データ構造をスキャンし、それをデータ ソースの適切なクエリ言語に変換します。  
+LINQ では、<xref:System.Linq.IQueryable%601> を実装するデータ ソースをターゲットとする構造化されたクエリを表すために、式ツリーが使われます。 たとえば、LINQ プロバイダーは、リレーショナル データ ストアのクエリを行うために、<xref:System.Linq.IQueryable%601> インターフェイスを実装します。 Visual Basic コンパイラでは、実行時に、式ツリーを構築するコードにこのようなデータ ソースをターゲットとするクエリをコンパイルします。 クエリ プロバイダーは式ツリー データ構造を走査して、データ ソースに適したクエリ言語に変換できます。  
   
- 式ツリーが LINQ で<xref:System.Linq.Expressions.Expression%601>。</xref:System.Linq.Expressions.Expression%601>型の変数に割り当てられているラムダ式を表すも使用します。  
+ LINQ では、<xref:System.Linq.Expressions.Expression%601> 型の変数に代入されるラムダ式を表すためにも、式ツリーが使われます。  
   
- このトピックでは、式ツリーを使用して、動的な LINQ クエリを作成する方法について説明します。 動的クエリは、クエリの詳細については、コンパイル時に不明な場合に便利です。 たとえば、アプリケーションは、エンド ユーザー データをフィルター処理する&1; つまたは複数の述語を指定することができるユーザー インターフェイスを提供する可能性があります。 クエリに LINQ を使用するためにこのようなアプリケーションは、実行時に、LINQ クエリを作成するのに式ツリーを使用する必要があります。  
+ このトピックでは、式ツリーを使って動的な LINQ クエリを作成する方法について説明します。 動的クエリは、コンパイル時にクエリの詳細がわからない場合に便利です。 たとえば、データをフィルター処理するための述語をエンド ユーザーが指定できるユーザー インターフェイスをアプリケーションで提供することがあります。 クエリに LINQ を使うには、このようなアプリケーションでは式ツリーを使って実行時に LINQ クエリを作成する必要があります。  
   
 ## <a name="example"></a>例  
- 次の例は、式ツリーを使用してに対するクエリを作成する方法を表示、`IQueryable`データ ソースおよびそれを実行します。 コードでは、次のクエリを表す式ツリーを作成します。  
+ 次の例では、式ツリーを使って `IQueryable` データ ソースに対するクエリを作成して実行する方法を示します。 このコードは、次のクエリを表す式ツリーを作成します。  
   
  `companies.Where(Function(company) company.ToLower() = "coho winery" OrElse company.Length > 16).OrderBy(Function(company) company)`  
   
- 工場出荷時のメソッド、<xref:System.Linq.Expressions>名前空間は、クエリ全体を構成する式を表す式ツリーの作成に使用されます</xref:System.Linq.Expressions>。 標準クエリ演算子メソッドの呼び出しを表す式を参照してください、<xref:System.Linq.Queryable>これらのメソッドの実装</xref:System.Linq.Queryable>。 最後の式ツリーが渡される、<xref:System.Linq.IQueryProvider.CreateQuery%60%601%28System.Linq.Expressions.Expression%29>のプロバイダーの実装、`IQueryable`型の実行可能ファイルのクエリを作成するデータ ソース`IQueryable`</xref:System.Linq.IQueryProvider.CreateQuery%60%601%28System.Linq.Expressions.Expression%29>。 結果を取得するには、そのクエリ変数を列挙します。  
+ クエリ全体を構成する式を表す式ツリーの作成には、<xref:System.Linq.Expressions> 名前空間のファクトリ メソッドが使われます。 標準クエリ演算子メソッドの呼び出しを表す式は、これらのメソッドの <xref:System.Linq.Queryable> の実装を参照します。 最終的な式ツリーが、`IQueryable` データ ソースのプロバイダーの <xref:System.Linq.IQueryProvider.CreateQuery%60%601%28System.Linq.Expressions.Expression%29> 実装に渡されて、`IQueryable` 型の実行可能なクエリが作成されます。 結果は、そのクエリ変数を列挙することにより取得されます。  
   
-<CodeContentPlaceHolder>0</CodeContentPlaceHolder>  
- このコードに渡される述語の式の数を使用して、`Queryable.Where`メソッドです。 ただし、ユーザー入力に依存する可変個の述語式を結合するアプリケーションを記述することができます。 ユーザーからの入力に応じて、クエリで呼び出される標準クエリ演算子を変更することもできます。  
+```vb  
+' Add an Imports statement for System.Linq.Expressions.  
+  
+Dim companies =   
+    {"Consolidated Messenger", "Alpine Ski House", "Southridge Video", "City Power & Light",   
+     "Coho Winery", "Wide World Importers", "Graphic Design Institute", "Adventure Works",   
+     "Humongous Insurance", "Woodgrove Bank", "Margie's Travel", "Northwind Traders",   
+     "Blue Yonder Airlines", "Trey Research", "The Phone Company",   
+     "Wingtip Toys", "Lucerne Publishing", "Fourth Coffee"}  
+  
+' The IQueryable data to query.  
+Dim queryableData As IQueryable(Of String) = companies.AsQueryable()  
+  
+' Compose the expression tree that represents the parameter to the predicate.  
+Dim pe As ParameterExpression = Expression.Parameter(GetType(String), "company")  
+  
+' ***** Where(Function(company) company.ToLower() = "coho winery" OrElse company.Length > 16) *****  
+' Create an expression tree that represents the expression: company.ToLower() = "coho winery".  
+Dim left As Expression = Expression.Call(pe, GetType(String).GetMethod("ToLower", System.Type.EmptyTypes))  
+Dim right As Expression = Expression.Constant("coho winery")  
+Dim e1 As Expression = Expression.Equal(left, right)  
+  
+' Create an expression tree that represents the expression: company.Length > 16.  
+left = Expression.Property(pe, GetType(String).GetProperty("Length"))  
+right = Expression.Constant(16, GetType(Integer))  
+Dim e2 As Expression = Expression.GreaterThan(left, right)  
+  
+' Combine the expressions to create an expression tree that represents the  
+' expression: company.ToLower() = "coho winery" OrElse company.Length > 16).  
+Dim predicateBody As Expression = Expression.OrElse(e1, e2)  
+  
+' Create an expression tree that represents the expression:  
+' queryableData.Where(Function(company) company.ToLower() = "coho winery" OrElse company.Length > 16)  
+Dim whereCallExpression As MethodCallExpression = Expression.Call(   
+        GetType(Queryable),   
+        "Where",   
+        New Type() {queryableData.ElementType},   
+        queryableData.Expression,   
+        Expression.Lambda(Of Func(Of String, Boolean))(predicateBody, New ParameterExpression() {pe}))  
+' ***** End Where *****  
+  
+' ***** OrderBy(Function(company) company) *****  
+' Create an expression tree that represents the expression:  
+' whereCallExpression.OrderBy(Function(company) company)  
+Dim orderByCallExpression As MethodCallExpression = Expression.Call(   
+        GetType(Queryable),   
+        "OrderBy",   
+        New Type() {queryableData.ElementType, queryableData.ElementType},   
+        whereCallExpression,   
+        Expression.Lambda(Of Func(Of String, String))(pe, New ParameterExpression() {pe}))  
+' ***** End OrderBy *****  
+  
+' Create an executable query from the expression tree.  
+Dim results As IQueryable(Of String) = queryableData.Provider.CreateQuery(Of String)(orderByCallExpression)  
+  
+' Enumerate the results.  
+For Each company As String In results  
+    Console.WriteLine(company)  
+Next  
+  
+' This code produces the following output:  
+'  
+' Blue Yonder Airlines  
+' City Power & Light  
+' Coho Winery  
+' Consolidated Messenger  
+' Graphic Design Institute  
+' Humongous Insurance  
+' Lucerne Publishing  
+' Northwind Traders  
+' The Phone Company  
+' Wide World Importers  
+```  
+  
+ このコードでは、`Queryable.Where` メソッドに渡される述語で固定数の式を使います。 ただし、ユーザー入力に依存する可変個の述語式を結合するアプリケーションを作成することもできます。 また、ユーザーからの入力に応じて、クエリで呼び出される標準クエリ演算子を変えることもできます。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
   
--   新しい**コンソール アプリケーション**プロジェクトです。  
+-   新しい**コンソール アプリケーション** プロジェクトを作成します。  
   
--   参照されていない場合は、System.Core.dll への参照を追加します。  
+-   System.Core.dll がまだ参照されていない場合は、参照を追加します。  
   
--   System.Linq.Expressions 名前空間が含まれます。  
+-   System.Linq.Expressions 名前空間をインクルードします。  
   
 -   例のコードをコピーして貼り付けます、 `Main` `Sub`プロシージャです。  
   
 ## <a name="see-also"></a>関連項目  
- [式ツリー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)   
+ [式ツリー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)  
  [方法: 式ツリー (Visual Basic) を実行](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)

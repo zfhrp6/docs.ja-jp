@@ -1,50 +1,51 @@
 ---
-title: "Windows フォーム データ バインドの変更通知 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Windows フォーム, 追加 (データ バインディングの変更通知を)"
-  - "Windows フォーム, データ バインド"
+title: "Windows フォーム データ バインディングの変更通知"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms, data binding
+- Windows Forms, adding change notification for data binding
 ms.assetid: b5b10f90-0585-41d9-a377-409835262a92
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ffafaff2355e89e2127742f2fba5c005492b4580
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォーム データ バインドの変更通知
-Windows フォーム データ バインディングの重要な概念の 1 つに、"変更通知" があります。  データ ソースとデータ バインド コントロールに常に最新のデータを持たせるためには、データ バインディングの変更通知を追加する必要があります。  具体的には、データ ソースに加えられた変更がバインド コントロールに通知され、コントロールのバインド プロパティに加えられた変更がデータ ソースに通知されるようにします。  
+# <a name="change-notification-in-windows-forms-data-binding"></a>Windows フォーム データ バインディングの変更通知
+Windows フォーム データ バインディングの最も重要な概念の 1 つは*変更通知*です。 データ ソースとバインドされたコントロール常に最新のデータを入手するには、データ バインディングの変更通知を追加する必要があります。 具体的には、バインドされたコントロールが、データ ソースに加えられた変更の通知を受け取ることを保証して、データ ソースは、コントロールのバインド プロパティに対して行われた変更の通知です。  
   
- 次のように、データ バインディングの種類に応じて異なる種類の変更通知があります。  
+ データ バインディングの種類に応じて、変更通知のさまざまな種類があります。  
   
--   単純バインディング。1 つのコントロール プロパティがオブジェクトの 1 つのインスタンスにバインドされます。  
+-   1 つのコントロール プロパティがオブジェクトの 1 つのインスタンスにバインドされている単純なバインディング。  
   
--   リストベース バインディング。リスト内のアイテムのプロパティにバインドされる 1 つのコントロール プロパティ、またはオブジェクトのリストにバインドされるコントロール プロパティを含むことができます。  
+-   一覧内の項目のプロパティまたはコントロールのプロパティにバインドされている 1 つのコントロール プロパティを含めることができますが、リストベース バインディングは、オブジェクトの一覧にバインドされます。  
   
- さらに、データ バインディングで使用する Windows フォーム コントロールを作成する場合、コントロールのバインド プロパティに対する変更がデータ ソースに反映されるように、コントロールに *PropertyName*Changed パターンを適用する必要があります。  
+ また場合に、データ バインディングに使用する Windows フォーム コントロールを作成するには、適用、 *PropertyName*にコントロールのバインドのプロパティに対する変更を反映するように、コントロールにパターンを変更しますデータ ソースです。  
   
-## 単純バインディングの変更通知  
- 単純バインディングでは、バインド プロパティの値が変更されたときにビジネス オブジェクトが変更通知を出す必要があります。  これは、ビジネス オブジェクトの各プロパティに対して *PropertyName*Changed イベントを公開し、<xref:System.Windows.Forms.BindingSource> またはビジネス オブジェクトが <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装してプロパティの値が変更されたときに <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> イベントを起動するメソッドを使用して、ビジネス オブジェクトをコントロールにバインドすることによって実現できます。  詳細については、「[方法 : INotifyPropertyChanged インターフェイスを実装する](../../../docs/framework/winforms/how-to-implement-the-inotifypropertychanged-interface.md)」を参照してください。  <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装するオブジェクトを使用する場合、オブジェクトをコントロールにバインドするために <xref:System.Windows.Forms.BindingSource> を使用する必要はありませんが、<xref:System.Windows.Forms.BindingSource> の使用を推奨します。  
+## <a name="change-notification-for-simple-binding"></a>単純なバインディングの変更通知  
+ 単純バインディングは、バインドされたプロパティの値が変更されたときに、ビジネス オブジェクトは変更通知を提供する必要があります。 公開することでこれを行う、 *PropertyName*Changed イベントを持つコントロールへのビジネス オブジェクトのバインド、ビジネス オブジェクトの各プロパティについて、<xref:System.Windows.Forms.BindingSource>またはビジネス オブジェクトを実装する推奨される方法<xref:System.ComponentModel.INotifyPropertyChanged>インターフェイスとが発生し、<xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged>イベント プロパティの値が変更されたときにします。 詳細については、次を参照してください。[する方法: INotifyPropertyChanged インターフェイスを実装して](../../../docs/framework/winforms/how-to-implement-the-inotifypropertychanged-interface.md)です。 実装するオブジェクトを使用すると、<xref:System.ComponentModel.INotifyPropertyChanged>インターフェイスがありませんを使用する、 <xref:System.Windows.Forms.BindingSource> 、オブジェクトをコントロールにバインドするを使用して、<xref:System.Windows.Forms.BindingSource>をお勧めします。  
   
-## リストベース バインディングの変更通知  
- Windows フォームは、バインド リストに依存して、プロパティ変更 \(リスト アイテム プロパティ値の変更\) および変更されたリスト \(リストに対するアイテムの削除や追加\) の情報をバインド コントロールに提供します。  このため、データ バインディングに使用するリストには、両方の種類の変更通知を提供する <xref:System.ComponentModel.IBindingList> を実装する必要があります。  <xref:System.ComponentModel.BindingList%601> は、<xref:System.ComponentModel.IBindingList> の汎用実装で、Windows フォーム データ バインディングで使用するためにデザインされています。  <xref:System.ComponentModel.INotifyPropertyChanged> を実装するビジネス オブジェクト タイプを含む <xref:System.ComponentModel.BindingList%601> を作成できます。リストは <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> イベントを <xref:System.ComponentModel.IBindingList.ListChanged> イベントに自動的に変換します。  バインド リストが <xref:System.ComponentModel.IBindingList> でない場合、オブジェクトのリストを <xref:System.Windows.Forms.BindingSource> コンポーネントを使用して Windows フォーム コントロールにバインドする必要があります。  <xref:System.Windows.Forms.BindingSource> コンポーネントは、<xref:System.ComponentModel.BindingList%601> の場合と同様にプロパティからリストへの変換を行います。  詳細については、「[方法 : BindingSource と INotifyPropertyChanged の各インターフェイスを使用して変更通知を発生させる](../../../docs/framework/winforms/controls/raise-change-notifications--bindingsource.md)」を参照してください。  
+## <a name="change-notification-for-list-based-binding"></a>リストに基づくバインディングの変更通知  
+ Windows フォームは、プロパティの変更 (リスト項目プロパティの値を変更) を提供するバインドされたリストとリストの変更によって異なります。 (アイテムが削除または一覧に追加) 情報をコントロールをバインドします。 したがって、データ バインディングを使用するリストを実装する必要があります、 <xref:System.ComponentModel.IBindingList>、両方の種類の変更通知を提供します。 <xref:System.ComponentModel.BindingList%601> 、ジェネリック型の実装は、<xref:System.ComponentModel.IBindingList>し、Windows フォーム データ バインディングを使用するために設計されています。 作成することができます、<xref:System.ComponentModel.BindingList%601>を実装するビジネス オブジェクトの種類を格納している<xref:System.ComponentModel.INotifyPropertyChanged>一覧は自動的に変換し、<xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged>イベント<xref:System.ComponentModel.IBindingList.ListChanged>イベント。 バインドされたリストがない場合、<xref:System.ComponentModel.IBindingList>を使用して、オブジェクトの一覧を Windows フォーム コントロールにバインドする必要があります、<xref:System.Windows.Forms.BindingSource>コンポーネントです。 <xref:System.Windows.Forms.BindingSource>コンポーネントと類似のプロパティのリストへの変換を提供、<xref:System.ComponentModel.BindingList%601>です。 詳細については、次を参照してください。[する方法: BindingSource と INotifyPropertyChanged インターフェイスを使用して変更通知を発生させる](../../../docs/framework/winforms/controls/raise-change-notifications--bindingsource.md)です。  
   
-## カスタム コントロールの変更通知  
- 最後に、コントロール側から、データにバインドされるようにデザインされた各プロパティに *PropertyName*Changed イベントを公開する必要があります。  これで、コントロール プロパティに対する変更は、バインド データ ソースに反映されます。  詳細については、「[方法 : PropertyNameChanged パターンを適用する](../../../docs/framework/winforms/how-to-apply-the-propertynamechanged-pattern.md)」を参照してください。  
+## <a name="change-notification-for-custom-controls"></a>カスタム コントロールの変更通知  
+ 最後に、制御側の必要がありますを公開する、 *PropertyName*データにバインドするように設計の各プロパティの変更イベント。 コントロール プロパティへの変更は、バインド データ ソースに反映し、されます。 詳細については、次を参照してください[する方法: PropertyNameChanged パターンを適用。](../../../docs/framework/winforms/how-to-apply-the-propertynamechanged-pattern.md)  
   
-## 参照  
- <xref:System.Windows.Forms.BindingSource>   
- <xref:System.ComponentModel.INotifyPropertyChanged>   
- <xref:System.ComponentModel.BindingList%601>   
- [Windows フォームでのデータ バインド](../../../docs/framework/winforms/windows-forms-data-binding.md)   
- [Windows フォームがサポートするデータ ソース](../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.BindingSource>  
+ <xref:System.ComponentModel.INotifyPropertyChanged>  
+ <xref:System.ComponentModel.BindingList%601>  
+ [Windows フォームでのデータ バインディング](../../../docs/framework/winforms/windows-forms-data-binding.md)  
+ [Windows フォームがサポートするデータ ソース](../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md)  
  [データ連結と Windows フォーム](../../../docs/framework/winforms/data-binding-and-windows-forms.md)

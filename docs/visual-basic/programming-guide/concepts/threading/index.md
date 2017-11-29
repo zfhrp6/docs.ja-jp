@@ -1,31 +1,22 @@
 ---
 title: "スレッド処理 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 704bb04b-ff23-471d-ab12-3cec1c2bca59
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 840cc7df20250acb67bd09a8d39b353c772e82da
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: eb942047278fec7c6446190a98666532c2769c17
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="threading-visual-basic"></a>スレッド処理 (Visual Basic)
 スレッド処理により、Visual Basic プログラムが同時処理を実行できるようになり、一度に複数の操作を行うことが可能になります。 たとえば、スレッド処理を使用してユーザーの入力を監視したり、バックグラウンド タスクを実行したり、入力の同時ストリームを処理したりできます。  
@@ -49,7 +40,7 @@ ms.lasthandoff: 07/28/2017
  これらのクラスの一部またはすべてを使用して、複数のスレッドのアクティビティを同期できますが、スレッド処理一部のサポートは Visual Basic 言語によりサポートされています。 たとえば、[SyncLock ステートメント](../../../../visual-basic/language-reference/statements/synclock-statement.md)は、<xref:System.Threading.Monitor> を暗黙的に使用することで同期機能を提供します。  
   
 > [!NOTE]
->  [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] 以降では、<xref:System.Threading.Tasks.Parallel?displayProperty=fullName> クラスおよび <xref:System.Threading.Tasks.Task?displayProperty=fullName> クラス、[Parallel LINQ (PLINQ)](https://msdn.microsoft.com/library/dd460688)、<xref:System.Collections.Concurrent?displayProperty=fullName> 名前空間の新しい同時実行コレクション クラス、スレッドではなくタスクの概念をベースにした新しいプログラミング モデルにより、マルチスレッド プログラミングが大幅に簡略化されています。 詳細については、[並列プログラミング](https://msdn.microsoft.com/library/dd460693)に関するページをご覧ください。  
+>  [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] 以降では、<xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> クラスおよび <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> クラス、[Parallel LINQ (PLINQ)](https://msdn.microsoft.com/library/dd460688)、<xref:System.Collections.Concurrent?displayProperty=nameWithType> 名前空間の新しい同時実行コレクション クラス、スレッドではなくタスクの概念をベースにした新しいプログラミング モデルにより、マルチスレッド プログラミングが大幅に簡略化されています。 詳細については、[並列プログラミング](https://msdn.microsoft.com/library/dd460693)に関するページをご覧ください。  
   
 ## <a name="related-topics"></a>関連トピック  
   
@@ -63,4 +54,3 @@ ms.lasthandoff: 07/28/2017
 |[スレッド プール (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-pooling.md)|システムで管理されるワーカー スレッドのプールを使用する方法について説明します。|  
 |[方法: スレッド プールを使用する (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/how-to-use-a-thread-pool.md)|スレッド プール内の複数スレッドの同期された使用方法を示します。|  
 |[スレッド化](https://msdn.microsoft.com/library/3e8s7xdd)|.NET Framework でのスレッドの実装方法について説明します。|
-

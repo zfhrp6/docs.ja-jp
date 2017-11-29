@@ -1,76 +1,73 @@
 ---
-title: "&lt;source&gt; 要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source"
-  - "http://schemas.microsoft.com/.NetConfiguration/v2.0#source"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "<source> 要素"
-  - "source 要素"
-ms.assetid: ecf86505-735d-4844-aaba-266fdd134218
-caps.latest.revision: 11
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 11
+title: "&lt;ソース&gt;要素"
+ms.date: 09/29/2017
+ms.prod: .net-framework
+ms.technology: dotnet-clr
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source
+- http://schemas.microsoft.com/.NetConfiguration/v2.0#source
+helpviewer_keywords:
+- <source> element
+- source element
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 129888986a933fe875aade153f6becd8439d4704
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;source&gt; 要素
+# <a name="ltsourcegt-element"></a>&lt;ソース&gt;要素
 トレース メッセージを開始するトレース ソースを指定します。  
   
-## 構文  
+ \<configuration>  
+\<system.diagnostics >  
+\<ソース >  
+\<ソース >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <source>   
   <listeners>...</listeners>  
 </source>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
-|Attribute|説明|  
-|---------------|--------|  
-|`name`|省略可能な属性。<br /><br /> トレース ソースの名前を指定します。|  
-|`switchName`|省略可能な属性。<br /><br /> アプリケーション内のトレース スイッチ インスタンスの名前を指定します。  スイッチが `<switches>` 要素で識別されていない場合、値はスイッチのレベルを指定します。|  
-|`switchType`|省略可能な属性。<br /><br /> トレース スイッチの型を指定します。  型が存在する場合、その型は有効なクラス名である必要があり、空の文字列にはできません。|  
-|`extraAttribute`|省略可能な属性。<br /><br /> トレース ソースの <xref:System.Diagnostics.TraceSource.GetSupportedAttributes%2A> メソッドによって識別されるそのトレース ソース固有の属性の値を指定します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|`name`|省略可能な属性です。<br /><br /> トレース ソースの名前を指定します。|  
+|`switchName`|省略可能な属性です。<br /><br /> アプリケーションでトレース スイッチのインスタンスの名前を指定します。 スイッチがで指定されていない場合、`<switches>`要素値が、スイッチのレベルを指定します。|  
+|`switchType`|省略可能な属性です。<br /><br /> トレース スイッチの種類を指定します。 存在する場合、型は有効なクラス名である必要がありますされ、空の文字列にすることはできません。|  
+|`extraAttribute`|省略可能な属性です。<br /><br /> によって識別されるトレース ソースに固有の属性の値を指定、<xref:System.Diagnostics.TraceSource.GetSupportedAttributes%2A>そのトレース ソースのメソッドです。|  
   
-### 子要素  
-  
-|要素|説明|  
-|--------|--------|  
-|[\<listeners\>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|メッセージを収集、格納、およびルーティングするリスナーを保持します。|  
-  
-### 親要素  
+### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
-|--------|--------|  
+|-------------|-----------------|  
+|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-source.md)|収集、保管、およびメッセージをルーティングするリスナーが含まれています。|  
+  
+### <a name="parent-elements"></a>親要素  
+  
+|要素|説明|  
+|-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`system.diagnostics`|メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。|  
 |`sources`|トレース メッセージを開始するトレース ソースを保持します。|  
   
-## 解説  
- この要素は、マシン構成ファイル \(Machine.config\) およびアプリケーション構成ファイルで使用できます。  
+## <a name="remarks"></a>コメント  
+ この要素は、マシン構成ファイル (Machine.config) と、アプリケーション構成ファイルで使用できます。  
   
-## 使用例  
- `<source>`  要素を使用してトレース ソース `mySource` を追加し、`sourceSwitch` という名前のソース スイッチのレベルを設定する方法を次の例に示します。  トレース情報をコンソールに書き込むコンソール トレース リスナーが追加されます。  
+## <a name="example"></a>例  
+ 次の例を使用する方法を示しています、`<source>`トレース ソースを追加する要素`mySource`という名前のソース スイッチのレベルを設定して`sourceSwitch`です。 トレース情報をコンソールに出力をコンソール トレース リスナーが追加されます。  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
@@ -90,6 +87,6 @@ caps.handback.revision: 11
 </configuration>  
 ```  
   
-## 参照  
- [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)   
- [Trace Switches](../../../../../docs/framework/debug-trace-profile/trace-switches.md)
+## <a name="see-also"></a>関連項目  
+ [トレースおよびデバッグ設定のスキーマ](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
+ [トレース スイッチ](../../../../../docs/framework/debug-trace-profile/trace-switches.md)

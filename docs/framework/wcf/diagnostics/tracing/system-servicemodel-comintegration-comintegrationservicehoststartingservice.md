@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d748b1bc-5f8f-457c-918f-aadbc1c580f6
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3a70eadf6ae308458749beaacb62b7b61fd642aa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService
+# <a name="systemservicemodelcomintegrationcomintegrationservicehoststartingservice"></a>System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService
 System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartingService  
   
-## 説明  
+## <a name="description"></a>説明  
  ComPlus : サービスを開始します。  
   
-## 参照  
- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
+## <a name="see-also"></a>関連項目  
+ [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [トレースを使用して、アプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)

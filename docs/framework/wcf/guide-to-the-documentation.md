@@ -1,78 +1,78 @@
 ---
-title: "ドキュメントのガイド | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "WCF [WCF], ドキュメント"
-  - "Windows Communication Foundation [WCF], ドキュメント"
+title: "ドキュメントのガイド"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF [WCF], documentation
+- Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-caps.latest.revision: 36
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 36
+caps.latest.revision: "36"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c2117434fcfe258179348618a8f9d4acbcda3c41
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ドキュメントのガイド
-ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] ドキュメントについて説明します。リンク先のドキュメントは、特定の目的と専門知識のレベルに応じて分類された、推奨される出発点となります。  
+# <a name="guide-to-the-documentation"></a>ドキュメントのガイド
+ここでは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] ドキュメントについて説明します。 リンク先のドキュメントは、特定の目的と専門知識のレベルに応じて分類された、推奨される出発点となります。  
   
- スタンドアロン バージョンのドキュメントとヘルプ ビューアーをインストールするには、[Microsoft Windows SDK v 7.1](http://go.microsoft.com/fwlink/?LinkID=194146&clcid=0x409) をダウンロードしてください。  
+ マニュアルとヘルプ ビューアーのスタンドアロン バージョンをインストールするには、ダウンロード、 [Microsoft Windows SDK v 7.1](http://go.microsoft.com/fwlink/?LinkID=194146&clcid=0x409)です。  
   
-## Windows Communication Foundation プログラミングの初心者向けドキュメント  
+## <a name="new-to-windows-communication-foundation-programming"></a>Windows Communication Foundation プログラミングの初心者向けドキュメント  
   
--   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用したプログラミングの初心者であり、動作するアプリケーションのサンプルをまず確認する必要がある場合は、「[Windows Communication Foundation サンプル](../../../docs/framework/wcf/samples/index.md)」の一覧に示された各トピックを参照してください。  
+-   使用したプログラミングに慣れていない場合[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]作業の各トピックを参照してください、サンプル アプリケーションを表示したいと[Windows Communication Foundation サンプル](../../../docs/framework/wcf/samples/index.md)です。  
   
--   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスおよびクライアントの基本的な作成方法を順を追って解説したチュートリアルが必要な場合は、「[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)」を参照してください。  
+-   作成する基本的な手順について説明するチュートリアルについては、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスとクライアントを参照してください[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)です。  
   
--   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の背景にある概念に関心がある場合は、「[概念](../../../docs/framework/wcf/conceptual-overview.md)」の各トピックを参照してください。  
+-   概念に関心がある場合[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]、トピックを参照して、[概念的概要については](../../../docs/framework/wcf/conceptual-overview.md)セクションです。  
   
--   クライアントおよびサーバーのセキュリティ構成例の図については、「[一般的なセキュリティ シナリオ](../../../docs/framework/wcf/feature-details/common-security-scenarios.md)」を参照してください。  
+-   クライアント/サーバーのセキュリティ構成の図の例を参照してください[一般的なセキュリティ シナリオ](../../../docs/framework/wcf/feature-details/common-security-scenarios.md)です。  
   
-## プログラミングの詳細  
+## <a name="programming-in-depth"></a>プログラミングの詳細  
   
--   アプリケーション開発を開始する準備が整っている場合は、「[基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)」を参照してください。  
+-   参照してください、アプリケーションの開発を開始する準備ができたら場合[基本的な WCF プログラミング](../../../docs/framework/wcf/basic-wcf-programming.md)です。  
   
--   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の特定の機能に関するガイダンスが必要な場合は、「[WCF 機能の詳細](../../../docs/framework/wcf/feature-details/index.md)」の各トピックを参照してください。  
+-   特定の機能またはの機能に関するガイダンスを探しているかどうかは[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]、下にあるトピックを参照して[WCF 機能の詳細](../../../docs/framework/wcf/feature-details/index.md)です。  
   
--   要件に合わせて [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を拡張したり、カスタマイズしたりする場合は、「[WCF の拡張](../../../docs/framework/wcf/extending/extending-wcf.md)」を参照してください。  
+-   拡張またはカスタマイズしたい場合[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]要件に合わせて、次を参照してください。 [WCF の拡張](../../../docs/framework/wcf/extending/extending-wcf.md)です。  
   
--   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションの作成やデバッグを支援するツールについては、「[Windows Communication Foundation ツール](../../../docs/framework/wcf/tools.md)」を参照してください。  
+-   作成およびデバッグに役立つツールについて[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]アプリケーションを参照してください[Windows Communication Foundation ツール](../../../docs/framework/wcf/tools.md)です。  
   
--   XML ファイルを使用した構成は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスおよびクライアントをプログラミングする主な方法の 1 つです。構成ファイルで使用する XML 要素のリファレンス ドキュメントが必要な場合は、「[WCF 構成スキーマ](../../../docs/framework/configure-apps/file-schema/wcf/index.md)」を参照してください。  
+-   XML ファイルを使用した構成は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスおよびクライアントをプログラミングする主な方法の 1 つです。 構成ファイルで使用される XML 要素のリファレンス ドキュメントは、次を参照してください。 [WCF 構成スキーマ](../../../docs/framework/configure-apps/file-schema/wcf/index.md)です。  
   
-## トラブルシューティング  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] の一般的な問題のトラブルシューティングについては、「[WCF トラブルシューティング クイックスタート](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)」を参照してください。  
+## <a name="troubleshooting"></a>トラブルシューティング  
+ 一般的なトラブルシューティングについては[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]問題を参照してください[WCF トラブルシューティング クイック スタート](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)です。  
   
-## Windows Communication Foundation の他のテクノロジの統合  
+## <a name="using-windows-communication-foundation-with-other-technologies"></a>Windows Communication Foundation の他のテクノロジの統合  
   
--   ASP.NET クライアントと通信するサービスを作成する場合は、「[方法 : WCF サービスおよび ASP.NET Web サービス クライアントを相互運用するために構成する](../../../docs/framework/wcf/feature-details/config-wcf-service-with-aspnet-web-service.md)」を参照してください。  
+-   ASP.NET クライアントと通信するサービスを作成するを参照してください。[する方法: ASP.NET Web サービス クライアントと相互運用する WCF サービスを構成する](../../../docs/framework/wcf/feature-details/config-wcf-service-with-aspnet-web-service.md)です。  
   
--   [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] リモート処理との統合については、「[.NET リモート処理アプリケーションの WCF への移行](../../../docs/framework/wcf/feature-details/migrating-net-remoting-applications-to-wcf.md)」を参照してください。  
+-   統合[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]でリモート処理を説明[を WCF に .NET リモート処理アプリケーションを移行する](../../../docs/framework/wcf/feature-details/migrating-net-remoting-applications-to-wcf.md)です。  
   
--   既存の COM\+ アプリケーションを [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスまたはクライアントと統合する場合は、「[COM\+ アプリケーションとの統合の概要](../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)」を参照してください。  
+-   既存の COM + アプリケーションを統合する、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスまたはクライアントを参照してください[COM + アプリケーションの概要との統合](../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)です。  
   
--   既存の COM アプリケーションを [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスまたはクライアントと統合する場合は、「[COM アプリケーションとの統合](../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md)」を参照してください。  
+-   既存の COM アプリケーションに統合する、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスまたはクライアントを参照してください[COM アプリケーションとの統合](../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md)です。  
   
--   既存の MSMQ アプリケーションを [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスまたはクライアントと統合する場合は、「[方法 : WCF エンドポイントを使用してキューに置かれたメッセージを交換する](../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)」および「[方法 : WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する](../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)」を参照してください。  
+-   既存の MSMQ アプリケーションに統合する、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]サービスまたはクライアントを参照してください[する方法: WCF エンドポイントとのキューに置かれたメッセージを交換](../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)と[する方法: WCF エンドポイントとメッセージ キューでメッセージを交換アプリケーション](../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)です。  
   
--   インターネット インフォメーション サービス \(IIS\) を使用してサービスをホストする場合は、「[ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)」を参照してください。  
+-   をサービスをホストするインターネット インフォメーション サービス (IIS) を使用するのには、を参照してください。[ホスティング サービス](../../../docs/framework/wcf/hosting-services.md)です。  
   
--   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] で Web サービス拡張 \(WSE: Web Services Extensions\) 3.0 サービスを使用する場合は、「[方法 : WSE 3.0 サービスにアクセスする](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)」を参照してください。  
+-   使用する[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]Web サービス拡張 (WSE) 3.0 サービスを使用するには、次を参照してください。[する方法: WSE 3.0 サービスにアクセス](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)です。  
   
-## Windows Communication Foundation でサポートされる WS\-\* プロトコル  
- システム指定のバインディングでサポートされるプロトコルの一覧については、「[システム標準の相互運用性バインディングがサポートしている Web サービス プロトコル](../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)」を参照してください。システム指定のバインディングの一覧については、「[システム標準のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)」を参照してください。  
+## <a name="ws--protocols-supported-in-windows-communication-foundation"></a>Windows Communication Foundation でサポートされる WS-* プロトコル  
+ システム指定のバインディングでサポートされるプロトコルの一覧を表示するには、次を参照してください。[システム指定の相互運用性バインディングでサポートされる Web サービス プロトコル](../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)です。 システム指定のバインディングの一覧を表示するには、次を参照してください。[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。  
   
-## 参照  
- [Windows Communication Foundation サンプル](../../../docs/framework/wcf/samples/index.md)   
- [概念](../../../docs/framework/wcf/conceptual-overview.md)   
- [ガイドラインとベスト プラクティス](../../../docs/framework/wcf/guidelines-and-best-practices.md)   
+## <a name="see-also"></a>関連項目  
+ [Windows Communication Foundation サンプル](../../../docs/framework/wcf/samples/index.md)  
+ [概念](../../../docs/framework/wcf/conceptual-overview.md)  
+ [ガイドラインとベスト プラクティス](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
  [クライアントを構築する](../../../docs/framework/wcf/building-clients.md)

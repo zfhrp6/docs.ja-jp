@@ -1,26 +1,29 @@
 ---
-title: "方法 : フロー コンテンツ要素を使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ドキュメント, フロー コンテンツ要素"
-  - "フロー コンテンツ要素"
+title: "方法: フロー コンテンツ要素を使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- flow content elements [WPF]
+- documents [WPF], flow content elements
 ms.assetid: 70fa11cd-5fa7-4872-a1cc-04d80f1132be
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c1350a380e97631ac290e57de64fec696535fecc
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : フロー コンテンツ要素を使用する
-各種のフロー コンテンツ要素および関連付けられた属性の宣言的な使用方法を次の例に示します。  例で使用される要素および属性には、次のものが含まれます。  
+# <a name="how-to-use-flow-content-elements"></a>方法: フロー コンテンツ要素を使用する
+次の例では、さまざまなフロー コンテンツ要素および関連付けられた属性の宣言型の使用方法を示します。  例で使用される要素および属性には、次のものが含まれます。  
   
 -   <xref:System.Windows.Documents.Bold> 要素  
   
@@ -44,9 +47,9 @@ caps.handback.revision: 5
   
 -   <xref:System.Windows.Documents.Span> 要素  
   
--   <xref:System.Windows.Documents.Typography.Variants%2A> 属性 \(上付き文字と下付き文字\)  
+-   <xref:System.Windows.Documents.Typography.Variants%2A>属性 (上付き文字と下付き文字)  
   
 -   <xref:System.Windows.Documents.Underline> 要素  
   
-## 使用例  
- [!code-xml[FlowDocInlineSnippets#_InlineElementsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocInlineSnippets/CS/document.xaml#_inlineelementsxaml)]
+## <a name="example"></a>例  
+ [!code-xaml[FlowDocInlineSnippets#_InlineElementsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocInlineSnippets/CS/document.xaml#_inlineelementsxaml)]

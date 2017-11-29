@@ -1,43 +1,23 @@
 ---
 title: "コレクション初期化子 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vb.CollectionInitializer
-dev_langs:
-- VB
-helpviewer_keywords:
-- collection initializers [Visual Basic]
+f1_keywords: vb.CollectionInitializer
+helpviewer_keywords: collection initializers [Visual Basic]
 ms.assetid: a9290329-77b0-4fdf-ae75-8fc17287f469
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 72ca6506d0bd867efa60ba73ecda72c32def129e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 5ec0179df50df453d6058a4b910d17561394140d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="collection-initializers-visual-basic"></a>コレクション初期化子 (Visual Basic)
 *コレクション初期化子*とは、コレクションを作成して一連の初期値を設定できる、短い構文です。 コレクション初期化子は、コレクションを既知の値のセットから作成する場合に便利です。値のセットの例として、メニュー オプションやカテゴリのリスト、数値の初期セット、曜日や月の名前の静的文字列のリスト、検証に使用する州のリストなどの地理的な場所が挙げられます。  
@@ -103,14 +83,13 @@ ms.lasthandoff: 07/28/2017
 |[方法: コレクション初期化子を使用してコレクションを作成する](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|`IEnumerable` を実装するコレクション クラスに `Add` メソッドを含めてコレクション初期化子を使用できるようにする方法を説明します。|  
   
 ## <a name="see-also"></a>関連項目  
- [コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)   
- [配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)   
- [オブジェクト初期化子 : 名前付きの型と匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)   
- [New 演算子](../../../../visual-basic/language-reference/operators/new-operator.md)   
- [自動実装プロパティ](../../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)   
- [方法: Visual Basic で配列変数を初期化する](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)   
- [ローカル型の推論](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
- [匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)   
- [Visual Basic における LINQ の概要](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
+ [コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)  
+ [配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
+ [オブジェクト初期化子 : 名前付きの型と匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
+ [New 演算子](../../../../visual-basic/language-reference/operators/new-operator.md)  
+ [自動実装プロパティ](../../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)  
+ [方法: Visual Basic で配列変数を初期化する](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)  
+ [ローカル型の推論](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
+ [匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
+ [Visual Basic における LINQ の概要](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
  [方法: 項目のリストを作成する](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
-

@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: ad4ba56d-3bcb-4c10-ba90-1cc66e2175a1
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1df3d7368597abdb991facc399bcedf7412d4fdb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: d41e05c39f8483cc668962c53534bb531a8007ed
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltpropertygt-element-net-native"></a>&lt;Property&gt; 要素 (.NET ネイティブ)
 プロパティにランタイム リフレクション ポリシーを適用します。  
@@ -55,7 +53,7 @@ ms.lasthandoff: 08/21/2017
   
 |値|説明|  
 |-----------|-----------------|  
-|*policy_setting*|プロパティのこのポリシーの種類に適用する設定です。 指定できる値は、`Auto`、`Excluded`、`Included`、および `Required` です。 詳しくは、「[ランタイム ディレクティブのポリシー設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)」をご覧ください。|  
+|*policy_setting*|プロパティのこのポリシーの種類に適用する設定です。 指定できる値は、`Auto`、`Excluded`、`Included`、および `Required` です。 詳細については、「[ランタイム ディレクティブのポリシー設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)」を参照してください。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -110,7 +108,6 @@ ms.lasthandoff: 08/21/2017
     ```  
   
 ## <a name="see-also"></a>関連項目  
- [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)   
+ [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)  
  [ランタイム ディレクティブ ポリシーの設定](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
-

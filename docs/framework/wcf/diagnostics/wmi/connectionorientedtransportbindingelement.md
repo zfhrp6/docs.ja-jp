@@ -1,25 +1,28 @@
 ---
-title: "ConnectionOrientedTransportBindingElement | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ConnectionOrientedTransportBindingElement
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c1308313-f0e2-49e6-977d-6b4ce9ad35d1
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d28bedb67850b9bb77c25c8d29c6e39b056770a5
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ConnectionOrientedTransportBindingElement
+# <a name="connectionorientedtransportbindingelement"></a>ConnectionOrientedTransportBindingElement
 ConnectionOrientedTransportBindingElement  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class ConnectionOrientedTransportBindingElement : TransportBindingElement  
@@ -35,73 +38,73 @@ class ConnectionOrientedTransportBindingElement : TransportBindingElement
 };  
 ```  
   
-## メソッド  
+## <a name="methods"></a>メソッド  
  ConnectionOrientedTransportBindingElement クラスで定義されているメソッドはありません。  
   
-## プロパティ  
+## <a name="properties"></a>プロパティ  
  ConnectionOrientedTransportBindingElement クラスには、次のプロパティがあります。  
   
-### ChannelInitializationTimeout  
+### <a name="channelinitializationtimeout"></a>ChannelInitializationTimeout  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  チャネルの初期化が開始されてからタイムアウトになるまでの時間の長さを示す期間。  
   
-### ConnectionBufferSize  
+### <a name="connectionbuffersize"></a>ConnectionBufferSize  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  クライアントまたサービスからネットワークでシリアル化されたメッセージのチャンクを転送するために使用されるバッファーのサイズ。  
   
-### HostNameComparisonMode  
+### <a name="hostnamecomparisonmode"></a>HostNameComparisonMode  
  データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  URI の照合時にサービスに到達するため、ホスト名が使用されたかどうかを示す値。  
   
-### MaxBufferSize  
+### <a name="maxbuffersize"></a>MaxBufferSize  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  使用するバッファーの最大サイズ。  
   
-### MaxOutputDelay  
+### <a name="maxoutputdelay"></a>MaxOutputDelay  
  データ型 : datetime  
   
  アクセスの種類 : 読み取り専用  
   
  メッセージのチャンクまたは完全なメッセージを、送信前にメモリ内のバッファーに残したままにできる最長期間。  
   
-### MaxPendingAccepts  
+### <a name="maxpendingaccepts"></a>MaxPendingAccepts  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  サービスでの着信接続処理に使用できる保留中の非同期受け入れスレッドの最大数。  
   
-### MaxPendingConnections  
+### <a name="maxpendingconnections"></a>MaxPendingConnections  
  データ型 : sint32  
   
  アクセスの種類 : 読み取り専用  
   
  保留状態の接続の最大数。  
   
-### TransferMode  
+### <a name="transfermode"></a>TransferMode  
  データ型: string  
   
  アクセスの種類 : 読み取り専用  
   
  接続指向トランスポートを使用して、メッセージをバッファーするかまたはストリームするかを指定する値。  
   
-## 要件  
+## <a name="requirements"></a>要件  
   
 |MOF|Servicemodel.mof にて宣言済み。|  
-|---------|------------------------------|  
-|Namespace|root\\ServiceModel で定義|  
+|---------|-----------------------------------|  
+|Namespace|root\ServiceModel で定義|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>

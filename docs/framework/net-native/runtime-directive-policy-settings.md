@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: cb52b1ef-47fd-4609-b69d-0586c818ac9e
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 11c93b296bf34b24037b51a216b536087fe6cc2e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 969b2468b9b627d9b69f02209f30362edbbcce3c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="runtime-directive-policy-settings"></a>ランタイム ディレクティブ ポリシーの設定
 > [!NOTE]
@@ -138,6 +136,5 @@ ms.lasthandoff: 08/21/2017
 |`Required All`|使用されているかどうかに関係なく、すべての型とメンバーを保持し、そのポリシーを有効にするために、ツール チェーンを要求します。|✓||  
   
 ## <a name="see-also"></a>関連項目  
- [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
+ [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [ランタイム ディレクティブ要素](../../../docs/framework/net-native/runtime-directive-elements.md)
-

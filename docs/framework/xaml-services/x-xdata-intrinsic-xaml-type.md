@@ -1,62 +1,65 @@
 ---
-title: "x:XData Intrinsic XAML Type | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "x:XData"
-  - "XData"
-  - "xXData"
-helpviewer_keywords: 
-  - "XAML [XAML Services], x:XData directive element"
-  - "XData in XAML [XAML Services]"
-  - "x:XData XAML directive element [XAML Services]"
+title: "x:XData 組み込み XAML 型"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- x:XData
+- XData
+- xXData
+helpviewer_keywords:
+- XAML [XAML Services], x:XData directive element
+- XData in XAML [XAML Services]
+- x:XData XAML directive element [XAML Services]
 ms.assetid: 7ce209c2-621b-4977-b643-565f7e663534
-caps.latest.revision: 17
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 3e448c28be6515748254e267b70f3c898b9226a1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# x:XData Intrinsic XAML Type
-XML データ アイランドを XAML 稼動環境内に配置できるようにします。  `x:XData` 内の XML 要素は、動作している既定の XAML 名前空間またはその他の XAML 名前空間の一部として扱うことはできません。  `x:XData` は、任意の整形式 XML を含むことができます。  
+# <a name="xxdata-intrinsic-xaml-type"></a>x:XData 組み込み XAML 型
+XAML の運用環境での XML データ アイランドの配置を有効にします。 内の XML 要素`x:XData`機能を実行する既定の XAML 名前空間の一部、またはその他の XAML 名前空間かのように XAML プロセッサで扱うことはできません。 `x:XData`整形式の任意の XML を含めることができます。  
   
-## XAML オブジェクト要素の使用方法  
+## <a name="xaml-object-element-usage"></a>XAML オブジェクト要素の使用方法  
   
 ```  
 <x:XData>  
-  <elementDataRoot>  
-    [elementData]  
-  </elementDataRoot>  
+  <elementDataRoot>  
+    [elementData]  
+  </elementDataRoot>  
 </x:XData>  
 ```  
   
-## XAML 値  
+## <a name="xaml-values"></a>XAML 値  
   
 |||  
 |-|-|  
-|`elementDataRoot`|囲まれたデータ アイランドの単一ルート要素。  ほとんどのコンシューマーでは、最終的に、単一のルートを持たない XML は無効と見なされます。  特に、`x:XData` が、WPF \(または XML ソースをデータ バインディングに使用するその他各種テクノロジ\) の XML データ ソースとして使用される場合、単一のルートが必要になります。|  
-|`[elementData]`|省略可能です。  XML データを表す XML。  要素データとして任意の数の要素を含めることができる、入れ子にした要素を他の要素に含めることができるなど、XML の一般規則が適用されます。|  
+|`elementDataRoot`|囲まれたデータ アイランドの単一のルート要素です。 ほとんどの最終的なコンシューマーの単一のルートがない XML が無効と見なされます。 具体的には、単一のルートは、必要な場合、`x:XData`では、XML データ ソースの WPF または他の多くのテクノロジにも、XML ソース データ バインディングを使用します。|  
+|`[elementData]`|省略可能です。 XML データを表す XML です。 要素のデータとして格納できる要素の任意の数と、入れ子になった要素は、他の要素に含まれていることができます。ただし、XML の一般的な規則が適用されます。|  
   
-## 解説  
- `x:XData` オブジェクト内の XML 要素は、このデータ内で、格納している側の XMLDOM のすべての考えられる名前空間およびプレフィックスを再宣言できます。  
+## <a name="remarks"></a>コメント  
+ 内の XML 要素、`x:XData`オブジェクトには、すべての可能な名前空間およびプレフィックス内でデータを含む XMLDOM の再を宣言できます。  
   
- XML データおよび `x:XData` 組み込み XAML 型へのプログラムによるアクセスは、.NET Framework XAML サービスでは、<xref:System.Windows.Markup.XData> クラスを介して実行できます。  
+ XML データにプログラムでアクセスし、`x:XData`組み込み XAML 型を .NET Framework XAML サービスでは、<xref:System.Windows.Markup.XData>クラスです。  
   
-## WPF の使用上の注意  
- The `x:XData` オブジェクトは主に、<xref:System.Windows.Data.XmlDataProvider> の子オブジェクトとして使用されるか、<xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=fullName> プロパティ \(XAML では、通常、プロパティ要素構文で表される\) の子オブジェクトとして使用されます。  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ `x:XData`オブジェクトは、主の子オブジェクトとして使用、 <xref:System.Windows.Data.XmlDataProvider>、または別の方法としての子オブジェクトとして、<xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType>プロパティ (XAML では、これは通常構文で表されるプロパティ要素)。  
   
- 一般に、データ アイランド内では、基本 XML 名前空間を新しい既定の XML 名前空間として再定義する必要があります \(空の文字列に設定\)。  この方法は、単純なデータ アイランドの場合には最も簡単です。データを参照やバインドに <xref:System.Windows.Data.Binding.XPath%2A> 式を使用することでプレフィックスが不要になるからです。  より複雑なデータ アイランドでは、データのプレフィックスを複数定義し、ルートにある XML 名前空間に特定のプレフィックスを使用するという方法を選択できます。  この場合は、すべての <xref:System.Windows.Data.Binding.XPath%2A> 式参照において、名前空間にマップされた適切なプレフィックスを付ける必要があります。  詳細については、「[データ バインドの概要](../../../ocs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
+ データは、新しい既定の XML 名前空間 (空の文字列に設定) にデータ アイランド内のベースの XML 名前空間を再定義しなければなりません通常します。 これは、単純なデータ諸島ための最も簡単な<xref:System.Windows.Data.Binding.XPath%2A>参照およびデータにバインドするために使用する式は、プレフィックスを含めることを避けることができます。 複雑なデータ アイランドは、データの複数のプレフィックスを定義して、ルートにある XML 名前空間の特定のプレフィックスを使用して可能性があります。 この場合、すべて<xref:System.Windows.Data.Binding.XPath%2A>式の参照は、適切な名前空間マッピング プレフィックスを含める必要があります。 詳しくは、「 [データ バインディングの概要](../../../docs/framework/wpf/data/data-binding-overview.md)」をご覧ください。  
   
- 技術的には、`x:XData` は <xref:System.Xml.Serialization.IXmlSerializable> 型の任意のプロパティのコンテンツとして使用できます。  ただし、よく使用されているのは <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=fullName> の実装のみです。  
+ 技術的には、`x:XData`型のプロパティの内容として使用できる<xref:System.Xml.Serialization.IXmlSerializable>です。 ただし、<xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType>のみ著名な実装です。  
   
-## 参照  
- <xref:System.Windows.Data.XmlDataProvider>   
- [データ バインドの概要](../../../ocs/framework/wpf/data/data-binding-overview.md)   
- [バインドのマークアップ拡張機能](../../../ocs/framework/wpf/advanced/binding-markup-extension.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Data.XmlDataProvider>  
+ [データ バインディングの概要](../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [バインドのマークアップ拡張機能](../../../docs/framework/wpf/advanced/binding-markup-extension.md)

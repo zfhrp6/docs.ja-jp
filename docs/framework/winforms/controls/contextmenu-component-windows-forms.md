@@ -1,52 +1,53 @@
 ---
-title: "ContextMenu コンポーネント (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コンテキスト メニュー, Windows フォーム"
-  - "ContextMenu コンポーネント [Windows フォーム]"
-  - "メニュー, コンテキスト メニュー"
-  - "メニュー, ショートカット メニュー"
-  - "ポップアップ メニュー"
-  - "ショートカット メニュー, ContextMenu コンポーネント"
-  - "Windows フォーム, メニュー"
+title: "ContextMenu コンポーネント (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- menus [Windows Forms], shortcut menus
+- Windows Forms, menus
+- pop-up menus
+- ContextMenu component [Windows Forms]
+- menus [Windows Forms], context menus
+- context menus [Windows Forms], for Windows Forms
+- shortcut menus [Windows Forms], ContextMenu component
 ms.assetid: 9b93ccbc-c0fe-44a2-968e-faac25971831
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6c3c0122eceab8b59bed15391e076863c5a2f144
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ContextMenu コンポーネント (Windows フォーム)
+# <a name="contextmenu-component-windows-forms"></a>ContextMenu コンポーネント (Windows フォーム)
 > [!NOTE]
->  `MenuStrip` と `ContextMenuStrip` は、以前のバージョンの <xref:System.Windows.Forms.MainMenu> コントロールおよび <xref:System.Windows.Forms.ContextMenu> コントロールに代わると共に追加の機能を提供しますが、<xref:System.Windows.Forms.MainMenu> および <xref:System.Windows.Forms.ContextMenu> は、下位互換性を保つ目的および将来使用する目的で、必要に応じて保持できます。  
+>  `MenuStrip`と`ContextMenuStrip`交換し、する機能を追加、<xref:System.Windows.Forms.MainMenu>と<xref:System.Windows.Forms.ContextMenu>以前のバージョンでのコントロール<xref:System.Windows.Forms.MainMenu>と<xref:System.Windows.Forms.ContextMenu>を選択した場合、旧バージョンとの互換性と将来の使用の両方に保持されます。  
   
- Windows フォームの `ContextMenu` コンポーネントは、選択したオブジェクトに関連付けられたコマンドのうち、頻繁に使用されるコマンドを簡単に実行するためのショートカット メニューを提供します。  ショートカット メニューの項目は、多くの場合、アプリケーションの他の場所に表示されるメイン メニューの項目のサブセットです。  通常、ショートカット メニューはマウスの右クリックで表示されます。  Windows フォームでは、ショートカット メニューが他のコントロールに関連付けられています。  
+ Windows フォーム`ContextMenu`コンポーネントを使用して、選択したオブジェクトに関連付けられている頻繁に使用されるコマンドを簡単にアクセスできるショートカット メニューをユーザーに提供します。 ショートカット メニューの項目は、多くの場合、アプリケーションでの場所に表示されるメイン メニューの項目のサブセットです。 ショートカット メニューは通常、マウスの右クリックします。 Windows フォームで、その他のコントロールに関連付けられています。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [ContextMenu コンポーネントの概要](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md)  
- 選択したオブジェクトに関連付けられた頻繁に使用されるコマンドのメニューを提供する、`ContextMenu` コンポーネントの全般的な概念を説明します。  
+ 一般的な概念が導入されています、`ContextMenu`コンポーネントで、選択したオブジェクトに関連付けられている頻繁に使用されるコマンドのメニューを作成することができます。  
   
- [方法 : Windows フォーム ContextMenu コンポーネントのメニュー項目を追加および削除する](../../../../docs/framework/winforms/controls/add-and-remove-menu-items-with-wf-contextmenu-component.md)  
- Windows フォームのショートカット メニューの項目を追加する方法および削除する方法を説明します。  
+ [方法: Windows フォーム ContextMenu コンポーネントのメニュー項目を追加および削除する](../../../../docs/framework/winforms/controls/add-and-remove-menu-items-with-wf-contextmenu-component.md)  
+ 追加し、Windows フォームのショートカット メニュー項目を削除する方法について説明します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.Windows.Forms.ContextMenu>  
- <xref:System.Windows.Forms.ContextMenu> クラスとそのメンバーに関する参照情報を提供します。  
+ <xref:System.Windows.Forms.ContextMenu> クラスとそのメンバーに関するリファレンス情報を提供します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- 使用方法に関する情報へのリンクを含む、Windows フォーム コントロールの完全なリストを提供します。  
+ Windows フォーム コントロールの完全な一覧を、使用に関する情報リンクと共に提供します。  
   
-## 参照  
- <xref:System.Windows.Forms.MenuStrip>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.MenuStrip>  
  <xref:System.Windows.Forms.ContextMenuStrip>

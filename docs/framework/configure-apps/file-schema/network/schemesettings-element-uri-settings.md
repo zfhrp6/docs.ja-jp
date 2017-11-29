@@ -1,79 +1,80 @@
 ---
-title: "&lt;schemeSettings&gt; 要素 (Uri 設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "&lt;schemeSettings&gt;要素 (Uri 設定)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
-caps.latest.revision: 6
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: mcleblanc
+ms.author: markl
+manager: markl
+ms.openlocfilehash: 4cf1d2013a51985f9d7772ac0ef86e5dbb120be9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;schemeSettings&gt; 要素 (Uri 設定)
-<xref:System.Uri> が特定のスキーマに対して解析される方法を指定します。  
+# <a name="ltschemesettingsgt-element-uri-settings"></a>&lt;schemeSettings&gt;要素 (Uri 設定)
+<xref:System.Uri> が特定のスキームに解析される方法を指定します。  
   
-## 構文  
+ \<configuration>  
+\<uri >  
+\<schemeSettings >  
   
-```  
+## <a name="syntax"></a>構文  
   
-      <schemeSettings>   
+```xml  
+<schemeSettings>   
 </schemeSettings>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
- なし。  
+### <a name="attributes"></a>属性  
+ なし  
   
-### 子要素  
-  
-|**要素**|**説明**|  
-|------------|------------|  
-|[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-schemesettings-uri-settings.md)|スキーム名に対するスキーム設定を追加します。|  
-|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-schemesettings-uri-settings.md)|既存のスキーム設定をすべて消去します。|  
-|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-schemesettings-uri-settings.md)|スキーム名に対するスキーム設定を削除します。|  
-  
-### 親要素  
+### <a name="child-elements"></a>子要素  
   
 |**要素**|**説明**|  
-|------------|------------|  
-|[uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|URI \(Uniform Resource Identifier\) で表現された Web アドレスが .NET Framework によってどのように処理されるかの設定を格納します。|  
+|-----------------|---------------------|  
+|[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-schemesettings-uri-settings.md)|スキーム名にスキームの設定を追加します。|  
+|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-schemesettings-uri-settings.md)|既存のすべての構成設定を消去します。|  
+|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-schemesettings-uri-settings.md)|スキーム名にスキームの設定を削除します。|  
   
-## 解説  
- 既定では、<xref:System.Uri?displayProperty=fullName> クラスは、パスの圧縮を実行する前に、パーセント記号をエンコードしたパス区切り記号のエスケープを解除します。  これは、次のような攻撃に対するセキュリティ機構として実装されました。  
+### <a name="parent-elements"></a>親要素  
+  
+|**要素**|**説明**|  
+|-----------------|---------------------|  
+|[uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|.NET Framework での web アドレスの uniform resource identifier (Uri) を使用して表現の処理方法を指定する設定が含まれています。|  
+  
+## <a name="remarks"></a>コメント  
+ 既定では、<xref:System.Uri?displayProperty=nameWithType>クラス エスケープを解除 % は、パスの圧縮を実行する前にパスの区切り記号をエンコードします。 これは、次のような攻撃に対するセキュリティ機構として実装されていました。  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- パーセント記号をエンコードした文字を正しく処理できないモジュールにこの URI が渡されると、次のコマンドがサーバーによって実行されます。  
+ この URI が渡される場合は、モジュール % は処理されません。 エンコードした文字を正しく、サーバーにより実行されている次のコマンドを可能性があります。  
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- このため、<xref:System.Uri?displayProperty=fullName> クラスでは、パス区切り記号のエスケープを解除してから、パスの圧縮を適用します。  上のような悪意のある URL を <xref:System.Uri?displayProperty=fullName> クラス コンストラクターに渡した場合、次の URI になります。  
+ このため、<xref:System.Uri?displayProperty=nameWithType>クラスの最初のエスケープを解除パス区切り記号とパスの圧縮を適用します。 上への悪意のある URL を渡した結果<xref:System.Uri?displayProperty=nameWithType>クラスのコンス トラクターの結果で、次の URI:  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- この既定の動作は、特定のスキームの schemeSettings 構成オプションを使用して、パーセント記号をエンコードしたパス区切り記号のエスケープを解除しないように変更できます。  
+ いないエスケープ解除パーセント エンコードされたパスの区切り記号 schemeSettings 構成オプションを使用して、特定のスキームには、この既定の動作を変更できます。  
   
-## 構成ファイル  
- この要素は、アプリケーション構成ファイルまたはマシン構成ファイル \(Machine.config\) で使用できます。  
+## <a name="configuration-files"></a>構成ファイル  
+ この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
-## 使用例  
- http スキームのパーセント記号をエンコードしたパス区切り記号をエスケープしないようにするために、<xref:System.Uri> クラスで使用する構成を次のコード例に示します。  
+## <a name="example"></a>例  
+ 次の例で使用する構成を示しています、 <xref:System.Uri> http スキームのパーセントでエンコードされたパスの区切り記号をエスケープしないをサポートするクラス。  
   
-```  
+```xml  
 <configuration>  
   <uri>  
     <schemeSettings>  
@@ -83,20 +84,20 @@ caps.handback.revision: 6
 </configuration>  
 ```  
   
-## 要素情報  
+## <a name="element-information"></a>要素情報  
   
-|||  
+|||
 |-|-|  
 |名前空間|システム|  
 |スキーマ名||  
 |検証ファイル||  
-|空も使用できる||  
+|空にすることができます。||  
   
-## 参照  
- <xref:System.Configuration.SchemeSettingElement?displayProperty=fullName>   
- <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=fullName>   
- <xref:System.Configuration.UriSection?displayProperty=fullName>   
- <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=fullName>   
- <xref:System.GenericUriParserOptions?displayProperty=fullName>   
- <xref:System.Uri?displayProperty=fullName>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>  
+ <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>  
+ <xref:System.Configuration.UriSection?displayProperty=nameWithType>  
+ <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=nameWithType>  
+ <xref:System.GenericUriParserOptions?displayProperty=nameWithType>  
+ <xref:System.Uri?displayProperty=nameWithType>  
  [ネットワーク設定スキーマ](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

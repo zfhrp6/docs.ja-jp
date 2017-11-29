@@ -1,29 +1,27 @@
 ---
-title: "Default property access is ambiguous between the inherited interface members &#39;&lt;defaultpropertyname&gt;&#39; of interface &#39;&lt;interfacename1&gt;&#39; and &#39;&lt;defaultpropertyname&gt;&#39; of interface &#39;&lt;interfacename2&gt;&#39; | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30686"
-  - "bc30686"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30686"
+title: "Default プロパティ アクセスは、継承されたインターフェイスのメンバー &#39; の間であいまいです。&lt;defaultpropertyname&gt;&#39;インターフェイス &#39; の;&lt;interfacename1&gt;&#39; と &#39;&lt;defaultpropertyname&gt;&#39;インターフェイス &#39; の;&lt;interfacename2&gt;&#39;です。"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30686
+- bc30686
+helpviewer_keywords: BC30686
 ms.assetid: 784fefec-ef57-48cf-b960-957df419b439
-caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 23d613668ee2d92484117759dd614ed2cad4bcb2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Default property access is ambiguous between the inherited interface members &#39;&lt;defaultpropertyname&gt;&#39; of interface &#39;&lt;interfacename1&gt;&#39; and &#39;&lt;defaultpropertyname&gt;&#39; of interface &#39;&lt;interfacename2&gt;&#39;
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-インターフェイスが、2 つのインターフェイスを継承しており、継承元の各インターフェイスで既定のプロパティが同じ名前で宣言されています。  修飾子を付けないと、この既定のプロパティに対するアクセスをコンパイラが解決できません。  次に例を示します。  
+# <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename1gt39-and-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename2gt39"></a>Default プロパティ アクセスは、継承されたインターフェイスのメンバー &#39; の間であいまいです。&lt;defaultpropertyname&gt;&#39;インターフェイス &#39; の;&lt;interfacename1&gt;&#39; と &#39;&lt;defaultpropertyname&gt;&#39;インターフェイス &#39; の;&lt;interfacename2&gt;&#39;です。
+インターフェイスは、同じ名前の既定のプロパティを宣言の 2 つのインターフェイスから継承します。 コンパイラは、この既定のプロパティを修飾せずに、アクセスを解決できません。 次に例を示します。  
   
 ```  
 Public Interface Iface1  
@@ -43,13 +41,13 @@ Public Class testClass
 End Class  
 ```  
   
- `testObj(1)` と指定した場合、コンパイラは既定のプロパティに解決しようとします。  しかし、継承しているインターフェイスが原因で、既定のプロパティとして 2 つの可能性が生じます。その結果、コンパイラからこのエラーが示されます。  
+ 指定すると`testObj(1)`コンパイラは、既定のプロパティに解決しようとしています。 ただし、プロパティがある 2 つ可能な既定、継承されたインターフェイスのため、コンパイラは、このエラーを通知するようにします。  
   
- **Error ID:** BC30686  
+ **エラー ID:** BC30686  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   同じ名前のメンバーを継承しないようにします。  上の例で `testObj` が、たとえば `Iface2` のメンバーである必要がない場合、次のように宣言します。  
+-   同じ名前のメンバーを継承しないようにします。 前の例で場合`testObj`のメンバーのいずれかの必要はありません、たとえば、 `Iface2`、し、次のように宣言します。  
   
     ```  
     Dim testObj As Iface1  
@@ -57,7 +55,7 @@ End Class
   
      または  
   
--   継承しているインターフェイスをクラス内で実装します。  こうすると、継承したプロパティを別々の名前で実装できます。  ただし、実装したクラスで既定のプロパティにすることができるのは、そのうちの 1 つだけです。  次に例を示します。  
+-   クラスに継承するインターフェイスを実装します。 それぞれ異なる名前を持つ継承されたプロパティを実装できます。 ただし、それらの 1 つだけでは、実装するクラスの既定のプロパティがあります。 次に例を示します。  
   
     ```  
     Public Class useIface3  
@@ -71,5 +69,5 @@ End Class
     End Class  
     ```  
   
-## 参照  
- [Interfaces](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+## <a name="see-also"></a>関連項目  
+ [インターフェイス](../../../visual-basic/programming-guide/language-features/interfaces/index.md)

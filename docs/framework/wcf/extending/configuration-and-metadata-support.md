@@ -1,26 +1,29 @@
 ---
-title: "構成とメタデータのサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "構成とメタデータのサポート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 27c240cb-8cab-472c-87f8-c864f4978758
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1d2e0153a9ab8839aed1af948183397f7728e3d2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 構成とメタデータのサポート
+# <a name="configuration-and-metadata-support"></a>構成とメタデータのサポート
 ここでは、バインディングおよびバインド要素用に構成とメタデータのサポートを有効にする方法を説明します。  
   
-## 構成とメタデータの概要  
- ここでは、次の作業について説明します。これは、[チャネルの開発](../../../../docs/framework/wcf/extending/developing-channels.md)タスク リストのオプション項目 1.、2. および 4. に当たります。  
+## <a name="overview-of-configuration-and-metadata"></a>構成とメタデータの概要  
+ 省略可能な項目 1、2、および 4 は、次のタスクについて説明で、[開発チャネル](../../../../docs/framework/wcf/extending/developing-channels.md)タスクの一覧です。  
   
 -   バインド要素の構成ファイル サポートを有効にします。  
   
@@ -30,17 +33,17 @@ caps.handback.revision: 12
   
 -   バインディングまたはバインド要素に挿入して構成する WSDL とポリシー アサーションを特定します。  
   
- ユーザー定義バインディングおよびバインド要素の作成の詳細については、それぞれ「[ユーザー定義バインディングの作成](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)」および「[BindingElement の作成](../../../../docs/framework/wcf/extending/creating-a-bindingelement.md)」を参照してください。  
+ ユーザー定義のバインディングとバインド要素を作成する方法の詳細については、次を参照してください。[ユーザー定義バインディング](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)と[BindingElement の作成](../../../../docs/framework/wcf/extending/creating-a-bindingelement.md)、それぞれします。  
   
-## 構成サポートの追加  
- チャネルに対する構成ファイルのサポートを有効にするには、2 つの構成セクションを実装する必要があります。1 つはバインド要素に対する構成のサポートを有効にする <xref:System.ServiceModel.Configuration.BindingElementExtensionElement?displayProperty=fullName> で、もう 1 つはバインディングに対する構成のサポートを有効にする <xref:System.ServiceModel.Configuration.StandardBindingElement?displayProperty=fullName> と <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602?displayProperty=fullName> です。  
+## <a name="adding-configuration-support"></a>構成サポートの追加  
+ チャネルに対する構成ファイルのサポートを有効にするには、2 つの構成セクションを実装する必要があります。1 つはバインド要素に対する構成のサポートを有効にする <xref:System.ServiceModel.Configuration.BindingElementExtensionElement?displayProperty=nameWithType> で、もう 1 つはバインディングに対する構成のサポートを有効にする <xref:System.ServiceModel.Configuration.StandardBindingElement?displayProperty=nameWithType> と <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602?displayProperty=nameWithType> です。  
   
- これを行う簡単な方法は、[ConfigurationCodeGenerator](../../../../docs/framework/wcf/samples/configurationcodegenerator.md) サンプル ツールを使用して、バインディングおよびバインド要素の構成コードを生成することです。  
+ これを行う簡単な方法が使用するには、 [ConfigurationCodeGenerator](../../../../docs/framework/wcf/samples/configurationcodegenerator.md)サンプル ツールは、バインディングとバインド要素の構成コードを生成します。  
   
-### BindingElementExtensionElement の拡張  
- 次のコード例は、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) のサンプルから取られています。`UdpTransportElement` は `UdpTransportBindingElement` を構成システムに公開する <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> です。いくつかの基本的なオーバーライドを行うことで、サンプルでは構成セクション名、バインド要素の種類とバインド要素の作成方法が定義されます。その後、次のようにして拡張セクションを構成ファイルに登録できます。  
+### <a name="extending-bindingelementextensionelement"></a>BindingElementExtensionElement の拡張  
+ 次のコード例から取得、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルです。 `UdpTransportElement` は <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> を構成システムに公開する `UdpTransportBindingElement` です。 いくつかの基本的なオーバーライドを行うことで、サンプルでは構成セクション名、バインド要素の種類とバインド要素の作成方法が定義されます。 その後、次のようにして拡張セクションを構成ファイルに登録できます。  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <extensions>  
@@ -50,12 +53,11 @@ caps.handback.revision: 12
     </extensions>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  この拡張は、UDP をトランスポートとして使用するためにカスタム バインディングから参照されます。  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <bindings>  
@@ -67,11 +69,10 @@ caps.handback.revision: 12
     </bindings>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-### バインディングの構成の追加  
- セクション `SampleProfileUdpBindingCollectionElement` は <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602> で、`SampleProfileUdpBinding` を構成システムに公開します。実装の大部分は `SampleProfileUdpBindingConfigurationElement` で代行されます。これは <xref:System.ServiceModel.Configuration.StandardBindingElement> の派生です。`SampleProfileUdpBindingConfigurationElement` には `SampleProfileUdpBinding` にあるプロパティに対応するプロパティがあり、`ConfigurationElement` バインディングからマップする関数があります。次のサンプル コードで示すように、最後に、`OnApplyConfiguration` メソッドが `SampleProfileUdpBinding` 内でオーバーライドされます。  
+### <a name="adding-configuration-for-a-binding"></a>バインディングの構成の追加  
+ セクション `SampleProfileUdpBindingCollectionElement` は <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602> で、`SampleProfileUdpBinding` を構成システムに公開します。 実装の大部分は `SampleProfileUdpBindingConfigurationElement` で代行されます。これは <xref:System.ServiceModel.Configuration.StandardBindingElement> の派生です。 `SampleProfileUdpBindingConfigurationElement`でプロパティに対応するプロパティを持つ`SampleProfileUdpBinding`、およびからマップする関数、`ConfigurationElement`バインドします。 次のサンプル コードで示すように、最後に、`OnApplyConfiguration` メソッドが `SampleProfileUdpBinding` 内でオーバーライドされます。  
   
 ```  
 protected override void OnApplyConfiguration(string configurationName)  
@@ -94,12 +95,11 @@ protected override void OnApplyConfiguration(string configurationName)
             if (this.ClientBaseAddress != null)  
                    udpBinding.ClientBaseAddress = ClientBaseAddress;  
 }  
-  
 ```  
   
  このハンドラーを構成システムに登録するには、次のセクションを関連する構成ファイルに追加します。  
   
-```  
+```xml  
 <configuration>  
   <configSections>  
      <sectionGroup name="system.serviceModel">  
@@ -111,9 +111,9 @@ protected override void OnApplyConfiguration(string configurationName)
 </configuration>  
 ```  
   
- これは [\<system.serviceModel\>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) 構成セクションから参照できます。  
+ 参照できる、 [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)構成セクション。  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <client>  
@@ -126,17 +126,16 @@ protected override void OnApplyConfiguration(string configurationName)
     </client>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-## バインド要素のメタデータ サポートの追加  
- チャネルをメタデータ システムに統合するには、ポリシーのインポートとエクスポートの両方がサポートされている必要があります。これにより、[ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) などのツールでバインド要素のクライアントを生成できます。  
+## <a name="adding-metadata-support-for-a-binding-element"></a>バインド要素のメタデータ サポートの追加  
+ チャネルをメタデータ システムに統合するには、ポリシーのインポートとエクスポートの両方がサポートされている必要があります。 これによって、ツールなど[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)バインド要素のクライアントを生成します。  
   
-### WSDL サポートの追加  
- バインディングのトランスポート バインド要素は、メタデータのアドレス指定情報のインポートとエクスポートを行います。SOAP バインディングを使用する場合は、トランスポート バインド要素によっても、メタデータの正しいトランスポート URI がエクスポートされます。次のコード例は、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) のサンプルから取られています。  
+### <a name="adding-wsdl-support"></a>WSDL サポートの追加  
+ バインディングのトランスポート バインド要素は、メタデータのアドレス指定情報のインポートとエクスポートを行います。 SOAP バインディングを使用する場合は、トランスポート バインド要素によっても、メタデータの正しいトランスポート URI がエクスポートされます。 次のコード例から取得、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルです。  
   
-#### WSDL エクスポート  
- アドレス指定情報をエクスポートするために、`UdpTransportBindingElement` は <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=fullName> インターフェイスを実装しています。<xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A?displayProperty=fullName> メソッドにより、正しいアドレス指定情報が WSDL ポートに追加されます。  
+#### <a name="wsdl-export"></a>WSDL エクスポート  
+ アドレス指定情報をエクスポートする、`UdpTransportBindingElement`を実装する、<xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType>インターフェイスです。 <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A?displayProperty=nameWithType> メソッドにより、正しいアドレス指定情報が WSDL ポートに追加されます。  
   
 ```  
 if (context.WsdlPort != null)  
@@ -145,7 +144,7 @@ if (context.WsdlPort != null)
 }  
 ```  
   
- エンドポイントが SOAP バインディングを使用する場合、<xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A> メソッドの `UdpTransportBindingElement` の実装でも、次のようにトランスポート URI がエクスポートされます。  
+ エンドポイントが SOAP バインディングを使用する場合、`UdpTransportBindingElement` メソッドの <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A> の実装でも、次のようにトランスポート URI がエクスポートされます。  
   
 ```  
 WsdlNS.SoapBinding soapBinding = GetSoapBinding(context, exporter);  
@@ -155,10 +154,10 @@ if (soapBinding != null)
 }  
 ```  
   
-#### WSDL インポート  
+#### <a name="wsdl-import"></a>WSDL インポート  
  WSDL インポート システムを拡張してアドレスのインポートを処理するには、次の構成を Svcutil.exe の構成ファイルに追加する必要があります。Svcutil.exe.config ファイルの次の例を参照してください。  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <client>  
@@ -174,11 +173,11 @@ if (soapBinding != null)
   
  Svcutil.exe を実行する場合、Svcutil.exe に WSDL インポートの拡張を読み込ませるために次の 2 つのオプションがあります。  
   
-1.  \/SvcutilConfig:\<ファイル名\> を使用して、Svcutil.exe に構成ファイルを指定します。  
+1.  /SvcutilConfig を使用して構成ファイルに Svcutil.exe:\<ファイル >。  
   
 2.  Svcutil.exe と同じディレクトリにある Svcutil.exe.config に構成セクションを追加します。  
   
- `UdpBindingElementImporter` 型は <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=fullName> インターフェイスを実装します。`ImportEndpoint` メソッドは、次のようにして WSDL ポートからアドレスをインポートします。  
+ `UdpBindingElementImporter` 型は、<xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> インターフェイスを実装します。 `ImportEndpoint` メソッドは、次のようにして WSDL ポートからアドレスをインポートします。  
   
 ```  
 BindingElementCollection bindingElements = context.Endpoint.Binding.CreateBindingElements();  
@@ -189,13 +188,13 @@ if (transportBindingElement is UdpTransportBindingElement)
 }  
 ```  
   
-### ポリシー サポートの追加  
- カスタム バインド要素では、WSDL バインディング内のポリシー アサーションをエクスポートして、サービス エンドポイントでそのバインド要素の機能を表現します。次のコード例は、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) のサンプルから取られています。  
+### <a name="adding-policy-support"></a>ポリシー サポートの追加  
+ カスタム バインド要素では、WSDL バインディング内のポリシー アサーションをエクスポートして、サービス エンドポイントでそのバインド要素の機能を表現します。 次のコード例から取得、[トランスポート: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルです。  
   
-#### ポリシーのエクスポート  
- `UdpTransportBindingElement` 型はポリシーのエクスポートをサポートするために ``<xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=fullName> を実装します。その結果、<xref:System.ServiceModel.Description.MetadataExporter?displayProperty=fullName> には、これを含む任意のバインディングでのポリシーの生成時に `UdpTransportBindingElement` が含まれます。  
+#### <a name="policy-export"></a>ポリシーのエクスポート  
+ `UdpTransportBindingElement`実装を型 '<xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType>ポリシーをエクスポートするためのサポートを追加します。 その結果、<xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> には、これを含む任意のバインディングでのポリシーの生成時に `UdpTransportBindingElement` が含まれます。  
   
- <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A?displayProperty=fullName> では、UDP のアサーションを追加します。チャネルがマルチキャスト モードである場合は、別のアサーションを追加します。これは、マルチキャスト モードは通信スタックの構築方法に影響を与えるため、両方の側において調整される必要があるためです。  
+ <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A?displayProperty=nameWithType> では、UDP のアサーションを追加します。チャネルがマルチキャスト モードである場合は、別のアサーションを追加します。 これは、マルチキャスト モードは通信スタックの構築方法に影響を与えるため、両方の側において調整される必要があるためです。  
   
 ```  
 ICollection<XmlElement> bindingAssertions = context.GetBindingAssertions();  
@@ -209,16 +208,16 @@ UdpPolicyStrings.Prefix, UdpPolicyStrings.MulticastAssertion,     UdpPolicyStrin
 }  
 ```  
   
- カスタム トランスポート バインド要素はアドレス指定の処理を実行するため、`UdpTransportBindingElement` への <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=fullName> の実装でも、WS\-Addressing ポリシー アサーションのエクスポートが処理されて、使用されている WS\-Addressing のバージョンが示されます。  
+ カスタム トランスポート バインド要素はアドレス指定の処理を実行するため、<xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> への `UdpTransportBindingElement` の実装でも、WS-Addressing ポリシー アサーションのエクスポートが処理されて、使用されている WS-Addressing のバージョンが示されます。  
   
 ```  
 AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressing);  
 ```  
   
-#### ポリシーのインポート  
+#### <a name="policy-import"></a>ポリシーのインポート  
  ポリシー インポート システムを拡張するには、次の構成を Svcutil.exe の構成ファイルに追加する必要があります。Svcutil.exe.config ファイルの次の例を参照してください。  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <client>  
@@ -232,16 +231,16 @@ AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressi
 </configuration>  
 ```  
   
- 次に、登録されたクラス \(`UdpBindingElementImporter`\) から <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=fullName> を実装します。<xref:System.ServiceModel.Description.IPolicyImportExtension.ImportPolicy%2A?displayProperty=fullName> で、適切な名前空間にあるアサーションを調べ、トランスポートを生成するためにそのアサーションを処理して、マルチキャストであるかどうかをチェックします。さらに、インポーターが処理するアサーションをバインディング アサーションの一覧から削除します。Svcutil.exe を実行する場合、ここでも、統合用に次の 2 つのオプションがあります。  
+ 次に、登録されたクラス (<xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType>) から `UdpBindingElementImporter` を実装します。 <xref:System.ServiceModel.Description.IPolicyImportExtension.ImportPolicy%2A?displayProperty=nameWithType> で、適切な名前空間にあるアサーションを調べ、トランスポートを生成するためにそのアサーションを処理して、マルチキャストであるかどうかをチェックします。 さらに、インポーターが処理するアサーションをバインディング アサーションの一覧から削除します。 Svcutil.exe を実行する場合、ここでも、統合用に次の 2 つのオプションがあります。  
   
-1.  \/SvcutilConfig:\<ファイル名\> を使用して、Svcutil.exe に構成ファイルを指定します。  
+1.  /SvcutilConfig を使用して、構成ファイルに Svcutil.exe:\<ファイル >。  
   
 2.  Svcutil.exe と同じディレクトリにある Svcutil.exe.config に構成セクションを追加します。  
   
-### カスタムの標準バインディング インポーターの追加  
- Svcutil.exe と <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=fullName> 型は、既定でシステム指定のバインディングを識別してインポートします。これ以外の場合、バインディングは、<xref:System.ServiceModel.Channels.CustomBinding?displayProperty=fullName> インスタンスとしてインポートされます。Svcutil.exe と <xref:System.ServiceModel.Description.WsdlImporter> を有効にして `SampleProfileUdpBinding` をインポートする場合、`UdpBindingElementImporter` もカスタムの標準バインディング インポーターとして機能します。  
+### <a name="adding-a-custom-standard-binding-importer"></a>カスタムの標準バインディング インポーターの追加  
+ Svcutil.exe と <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> 型は、既定でシステム指定のバインディングを識別してインポートします。 これ以外の場合、バインディングは、<xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> インスタンスとしてインポートされます。 Svcutil.exe と <xref:System.ServiceModel.Description.WsdlImporter> を有効にして `SampleProfileUdpBinding` をインポートする場合、`UdpBindingElementImporter` もカスタムの標準バインディング インポーターとして機能します。  
   
- カスタムの標準バインディング インポーターは、<xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=fullName> インターフェイスに `ImportEndpoint` メソッドを実装しており、メタデータからインポートされた <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=fullName> インスタンスを調べて、これが特定の標準バインディングによって生成されたものであるかどうかを判別できます。  
+ カスタムの標準バインディング インポーターを実装し、`ImportEndpoint`メソッドを<xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType>を調べるインターフェイス、<xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>インスタンスのかどうかに生成するには特定の標準バインディングによって参照にメタデータからインポートされました。  
   
 ```  
 if (context.Endpoint.Binding is CustomBinding)  
@@ -261,4 +260,4 @@ if (context.Endpoint.Binding is CustomBinding)
 }  
 ```  
   
- 一般に、カスタムの標準バインディング インポーターを実装すると、インポートしたバインド要素のプロパティを調べて、標準バインディングによって設定されたプロパティのみが変更され、その他のすべてのプロパティは既定のままであることが検証されます。標準バインディング インポーターを実装する場合の基本的な方法は、標準バインディングのインスタンスを作成し、標準バインディングがサポートするバインド要素のプロパティを標準バインディング インスタンスに反映し、標準バインディングのバインド要素とインポートしたバインド要素とを比較します。
+ 一般に、カスタムの標準バインディング インポーターを実装すると、インポートしたバインド要素のプロパティを調べて、標準バインディングによって設定されたプロパティのみが変更され、その他のすべてのプロパティは既定のままであることが検証されます。 標準バインディング インポーターを実装する場合の基本的な方法は、標準バインディングのインスタンスを作成し、標準バインディングがサポートするバインド要素のプロパティを標準バインディング インスタンスに反映し、標準バインディングのバインド要素とインポートしたバインド要素とを比較します。

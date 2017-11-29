@@ -1,44 +1,45 @@
 ---
-title: "方法 : デザイナーを使用して Windows フォーム Panel コントロールでコントロールをグループ化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コントロール [Windows フォーム], グループ化"
-  - "Panel コントロール [Windows フォーム], グループ化 (コントロールを)"
-  - "Windows フォーム コントロール, グループ化"
+title: "方法 : デザイナーを使用して Windows フォーム Panel コントロールでコントロールをグループ化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Panel control [Windows Forms], grouping controls
+- controls [Windows Forms], grouping
+- Windows Forms controls, grouping
 ms.assetid: 7e1cd708-fdb1-49d8-9ca2-5640b276bf2e
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b1d4a49f36ac294199871075a04b7e682bd5613b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : デザイナーを使用して Windows フォーム Panel コントロールでコントロールをグループ化する
-Windows フォームの <xref:System.Windows.Forms.Panel> コントロールを使用すると、他のコントロールをグループ化できます。  コントロールのグループ化には、次の 3 つの利点があります。  まず、関連しているフォーム要素を視覚的にグループ化し、わかりやすいユーザー インターフェイスを提供できます。また、オプション ボタンなどをグループ化してプログラミングできます。さらに、デザイン時に複数のコントロールをまとめて移動できます。  
+# <a name="how-to-group-controls-with-the-windows-forms-panel-control-using-the-designer"></a>方法 : デザイナーを使用して Windows フォーム Panel コントロールでコントロールをグループ化する
+Windows フォーム<xref:System.Windows.Forms.Panel>コントロールを使用すると、その他のコントロールをグループ化します。 コントロールをグループ化の 3 つの理由があります。 視覚的にわかりやすいユーザー インターフェイスです。 関連するフォーム要素のグループ化もう 1 つは、プログラムによるグループ化、ラジオ ボタンの例を示します。最後は、デザイン時に単位として、コントロールを移動です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### コントロールのグループを作成するには  
+### <a name="to-create-a-group-of-controls"></a>コントロールのグループを作成するには  
   
-1.  ツールボックスの **\[Windows フォーム\]** タブから、<xref:System.Windows.Forms.Panel> コントロールをフォームにドラッグします。  
+1.  ドラッグ、<xref:System.Windows.Forms.Panel>から制御、 **Windows フォーム**からフォームにツールボックス タブをクリックします。  
   
-2.  パネルにほかのコントロールを追加し、パネル内に各コントロールを配置します。  
+2.  パネル内の各描画、パネルには、その他のコントロールを追加します。  
   
-     既存のコントロールをパネルに追加する場合は、追加するすべてのコントロールを選択し、クリップボードに切り取ります。次に、<xref:System.Windows.Forms.Panel> コントロールを選択し、そのコントロールをパネルに貼り付けます。  コントロールをパネルにドラッグすることもできます。  
+     パネルにする既存のコントロールがあれば、すべてのコントロールを選択して、それらを選択、クリップボードに切り取れません、<xref:System.Windows.Forms.Panel>を制御して、パネルに貼り付けます。 パネルにドラッグすることもできます。  
   
-3.  \(省略可能\) パネルに境界線を追加する場合は、<xref:System.Windows.Forms.BorderStyle> プロパティで設定します。  <xref:System.Windows.Forms.BorderStyle>、<xref:System.Windows.Forms.BorderStyle>、および <xref:System.Windows.Forms.BorderStyle> という 3 つの選択項目があります。  
+3.  (省略可能)パネルに罫線を追加する場合は、設定、<xref:System.Windows.Forms.BorderStyle>プロパティです。 次の 3 つの選択肢があります: <xref:System.Windows.Forms.BorderStyle.Fixed3D>、 <xref:System.Windows.Forms.BorderStyle.FixedSingle>、および<xref:System.Windows.Forms.BorderStyle.None>です。  
   
-## 参照  
- [Panel コントロール](../../../../docs/framework/winforms/controls/panel-control-windows-forms.md)   
- [Panel コントロールの概要](../../../../docs/framework/winforms/controls/panel-control-overview-windows-forms.md)   
- [方法 : パネルの背景を設定する](../../../../docs/framework/winforms/controls/how-to-set-the-background-of-a-windows-forms-panel.md)
+## <a name="see-also"></a>関連項目  
+ [Panel コントロール](../../../../docs/framework/winforms/controls/panel-control-windows-forms.md)  
+ [Panel コントロールの概要](../../../../docs/framework/winforms/controls/panel-control-overview-windows-forms.md)  
+ [方法: パネルの背景を設定する](../../../../docs/framework/winforms/controls/how-to-set-the-background-of-a-windows-forms-panel.md)

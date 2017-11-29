@@ -1,55 +1,57 @@
 ---
-title: "入門サンプル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "基本的なサンプル [WCF], 概要"
+title: "入門サンプル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-caps.latest.revision: 60
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 60
+caps.latest.revision: "60"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dda172904f55330700d1cf3e6e5e2c3462118c91
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 入門サンプル
-この入門サンプルでは、一般的なサービスと一般的なクライアントを、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用して実装する方法を示します。このサンプルは、他のすべての基本的な技術サンプルの基礎になります。  
+# <a name="getting-started-sample"></a>入門サンプル
+この入門サンプルでは、一般的なサービスと一般的なクライアントを、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] を使用して実装する方法を示します。 このサンプルは、他のすべての基本的な技術サンプルの基礎になります。  
   
 > [!NOTE]
 >  このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\GettingStarted\GettingStarted`  
   
- サービスが実行する操作は、メタデータとしてパブリックに公開するサービス コントラクト内に表されています。また、サービスにはその操作を実装するためのコードが含まれています。  
+ サービスが実行する操作は、メタデータとしてパブリックに公開するサービス コントラクト内に表されています。 また、サービスにはその操作を実装するためのコードが含まれています。  
   
- クライアントには、サービス コントラクトの定義と、サービスにアクセスするためのプロキシ クラスが含まれています。プロキシ コードは、[ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を使用してサービス メタデータから生成されます。  
+ クライアントには、サービス コントラクトの定義と、サービスにアクセスするためのプロキシ クラスが含まれています。 使用してサービス メタデータからプロキシ コードを生成、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。  
   
- [!INCLUDE[wv](../../../../includes/wv-md.md)] では、サービスは Windows アクティベーション サービス \(WAS\) 内でホストされます。[!INCLUDE[wxp](../../../../includes/wxp-md.md)] と [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] では、インターネット インフォメーション サービス \(IIS\) と ASP.NET によってホストされます。サービスを IIS または WAS でホストすることにより、サービスに初めてアクセスしたときにそのサービスを自動的にアクティブ化できます。  
+ [!INCLUDE[wv](../../../../includes/wv-md.md)] では、サービスは Windows アクティベーション サービス (WAS) 内でホストされます。 [!INCLUDE[wxp](../../../../includes/wxp-md.md)] と [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] では、インターネット インフォメーション サービス (IIS) と ASP.NET によってホストされます。 サービスを IIS または WAS でホストすることにより、サービスに初めてアクセスしたときにそのサービスを自動的にアクティブ化できます。  
   
 > [!NOTE]
->  IIS ではなくコンソール アプリケーションでサービスをホストするサンプルから始める場合は、「[自己ホスト](../../../../docs/framework/wcf/samples/self-host.md)」サンプルを参照してください。  
+>  IIS ではなく、コンソール アプリケーションでサービスをホストする場合は、サンプルを使用して作業を開始する場合を参照してください、[自己ホスト](../../../../docs/framework/wcf/samples/self-host.md)サンプルです。  
   
- サービスとクライアントは、アクセスの詳細を構成ファイルの設定により指定します。この方法によって展開時の柔軟性が得られます。この設定には、アドレス、バインディング、およびコントラクトを指定するエンドポイント定義が含まれます。バインディングは、サービスへのアクセス方法を示すためのトランスポートとセキュリティの詳細を指定します。  
+ サービスとクライアントは、アクセスの詳細を構成ファイルの設定により指定します。この方法によって展開時の柔軟性が得られます。 この設定には、アドレス、バインディング、およびコントラクトを指定するエンドポイント定義が含まれます。 バインディングは、サービスへのアクセス方法を示すためのトランスポートとセキュリティの詳細を指定します。  
   
  サービスは、メタデータを公開するようにランタイムの動作を構成します。  
   
- サービスは、要求\/応答通信パターンを定義するコントラクトを実装します。このコントラクトは `ICalculator` インターフェイスによって定義されており、算術演算 \(加算、減算、乗算、および 除算\) を公開しています。クライアントは指定された算術演算を要求し、サービスは結果と共に応答します。サービスは、次に示すコードで定義される `ICalculator` コントラクトを実装します。  
+ サービスは、要求/応答通信パターンを定義するコントラクトを実装します。 このコントラクトは `ICalculator` インターフェイスによって定義されており、算術演算 (加算、減算、乗算、および 除算) を公開しています。 クライアントは指定された算術演算を要求し、サービスは結果と共に応答します。 サービスは、次に示すコードで定義される `ICalculator` コントラクトを実装します。  
   
 ```vb  
 ' Define a service contract.  
@@ -64,7 +66,6 @@ caps.handback.revision: 60
         <OperationContract()>  
         Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double  
     End Interface  
-  
 ```  
   
 ```csharp  
@@ -81,7 +82,6 @@ public interface ICalculator
     [OperationContract]  
     double Divide(double n1, double n2);  
 }  
-  
 ```  
   
  サービス実装は計算を行い、結果を返します。次のコード例を参照してください。  
@@ -106,7 +106,6 @@ Public Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double Impleme
 Return n1 / n2  
 End Function  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -130,10 +129,9 @@ public class CalculatorService : ICalculator
         return n1 / n2;  
     }  
 }  
-  
 ```  
   
- サービスは、そのサービスとの通信に使用する単一エンドポイントを公開します。エンドポイントは構成ファイル \(Web.config\) を使用して定義します。次のサンプル構成を参照してください。  
+ サービスは、そのサービスとの通信に使用する単一エンドポイントを公開します。エンドポイントは構成ファイル (Web.config) を使用して定義します。次のサンプル構成を参照してください。  
   
 ```xaml  
 <services>  
@@ -148,14 +146,13 @@ public class CalculatorService : ICalculator
        ...  
     </service>  
 </services>  
-  
 ```  
   
- サービスは、IIS ホストまたは WAS ホストから提供されるベース アドレスで、エンドポイントを公開します。バインディングの構成には、標準の <xref:System.ServiceModel.WSHttpBinding> を使用します。これは HTTP 通信と Web サービスの標準プロトコルを提供し、アドレス指定とセキュリティをサポートします。コントラクトは、サービスによって実装される `ICalculator` です。  
+ サービスは、IIS ホストまたは WAS ホストから提供されるベース アドレスで、エンドポイントを公開します。 バインディングの構成には、標準の <xref:System.ServiceModel.WSHttpBinding> を使用します。これは HTTP 通信と Web サービスの標準プロトコルを提供し、アドレス指定とセキュリティをサポートします。 コントラクトは、サービスによって実装される `ICalculator` です。  
   
- 上記の構成では、サービスと同じコンピューター上にあるクライアントは、http:\/\/localhost\/servicemodelsamples\/service.svc でサービスにアクセスできます。リモート コンピューター上のクライアントがサービスにアクセスするには、localhost の代わりに完全修飾ドメイン名を指定する必要があります。  
+ 前の構成では、サービスと同じコンピューター上にあるクライアントは、http://localhost/servicemodelsamples/service.svc でサービスにアクセスできます。 リモート コンピューター上のクライアントがサービスにアクセスするには、localhost の代わりに完全修飾ドメイン名を指定する必要があります。  
   
- 既定では、フレームワークはメタデータを公開しません。そのため、サービスは <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を有効にし、Metadata Exchange \(MEX\) エンドポイントを http:\/\/localhost\/servicemodelsamples\/service.svc\/mex で公開します。これを設定する構成を次に示します。  
+ 既定では、フレームワークはメタデータを公開しません。 そのため、サービスは <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を有効にし、Metadata Exchange (MEX) エンドポイントを http://localhost/servicemodelsamples/service.svc/mex で公開します。 これを設定する構成を次に示します。  
   
 ```xaml  
 <system.serviceModel>  
@@ -185,7 +182,7 @@ public class CalculatorService : ICalculator
 </system.serviceModel>  
 ```  
   
- クライアントは、[ServiceModel メタデータ ユーティリティ ツール \(Svcutil.exe\)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) によって生成されたクライアント クラスを使用することによって、特定のコントラクト型を使用して通信を行います。このように生成されたクライアントは、ファイル generatedClient.cs または generatedClient.vb に含まれています。このユーティリティは、特定のサービス用のメタデータを取得し、特定のコントラクト型を使用して通信するクライアント アプリケーションによって使用されるクライアントを生成します。クライアント コードを生成するには、ホストされるサービスを利用できる必要があります。このサービスは、更新されたメタデータの取得に使用されるためです。  
+ によって生成されたクライアント クラスを使用して特定のコントラクト型を使用して、クライアントは通信、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 このように生成されたクライアントは、ファイル generatedClient.cs または generatedClient.vb に含まれています。 このユーティリティは、特定のサービス用のメタデータを取得し、特定のコントラクト型を使用して通信するクライアント アプリケーションによって使用されるクライアントを生成します。 クライアント コードを生成するには、ホストされるサービスを利用できる必要があります。このサービスは、更新されたメタデータの取得に使用されるためです。  
   
  次のコマンドをクライアント ディレクトリで SDK コマンド プロンプトから実行して、型指定のあるプロキシを生成します。  
   
@@ -197,7 +194,7 @@ svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Sam
   
  `Svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost/servicemodelsamples/service.svc/mex /l:vb /out:generatedClient.vb`  
   
- 生成されたクライアントを使用することにより、クライアントは適切なアドレスとバインディングを構成して、指定のサービス エンドポイントにアクセスできます。サービスと同様、クライアントは構成ファイル \(App.config\) を使用して、通信するエンドポイントを指定します。クライアント エンドポイント構成は、サービス エンドポイントの絶対アドレス、バインディング、およびコントラクトで構成されます。次の例を参照してください。  
+ 生成されたクライアントを使用することにより、クライアントは適切なアドレスとバインディングを構成して、指定のサービス エンドポイントにアクセスできます。 サービスと同様、クライアントは構成ファイル (App.config) を使用して、通信するエンドポイントを指定します。 クライアント エンドポイント構成は、サービス エンドポイントの絶対アドレス、バインディング、およびコントラクトで構成されます。次の例を参照してください。  
   
 ```xaml  
 <client>  
@@ -206,7 +203,6 @@ svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Sam
          binding="wsHttpBinding"   
          contract=" Microsoft.ServiceModel.Samples.ICalculator" />  
 </client>  
-  
 ```  
   
  クライアント実装はクライアントをインスタンス化し、型指定のあるインターフェイスを使用してサービスとの通信を開始します。次のコード例を参照してください。  
@@ -240,7 +236,6 @@ result = client.Divide(value1, value2)
 Console.WriteLine("Divide({0},{1}) = {2}", value1, value2, result)  
   
 'Closing the client gracefully closes the connection and cleans up resources  
-  
 ```  
   
 ```csharp  
@@ -273,10 +268,9 @@ Console.WriteLine("Divide({0},{1}) = {2}", value1, value2, result);
   
 //Closing the client releases all communication resources.  
 client.Close();  
-  
 ```  
   
- このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
+ このサンプルを実行すると、操作要求および応答がクライアントのコンソール ウィンドウに表示されます。 クライアントをシャットダウンするには、クライアント ウィンドウで Enter キーを押します。  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -285,19 +279,18 @@ Multiply(9,81.25) = 731.25
 Divide(22,7) = 3.14285714285714  
   
 Press <ENTER> to terminate client.  
-  
 ```  
   
- この入門サンプルでは、サービスとクライアントの標準的な作成方法を示します。その他の[Basic](../../../../docs/framework/wcf/samples/basic-sample.md)では、このサンプルに基づいて、具体的な製品機能の例を示します。  
+ この入門サンプルでは、サービスとクライアントの標準的な作成方法を示します。 他の[基本](../../../../docs/framework/wcf/samples/basic-sample.md)で特定の製品の機能を示すには、このサンプルをビルドします。  
   
-### サンプルを設定、ビルド、および実行するには  
+### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
-2.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2.  ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
   
-3.  サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+3.  1 つまたは複数コンピューター構成でサンプルを実行する手順についてで[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
-## 参照  
- [方法 : マネージ アプリケーションで WCF サービスをホストする](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)   
+## <a name="see-also"></a>関連項目  
+ [方法: マネージ アプリケーションで WCF サービスをホストする](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)  
  [方法 : IIS で WCF サービスをホストする](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)

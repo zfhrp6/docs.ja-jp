@@ -1,77 +1,77 @@
 ---
-title: "&lt;serviceHostingEnvironment&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
+title: '&lt;serviceHostingEnvironment&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4f8a7c4f-e735-4987-979a-b74fcdae2652
-caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 24
+caps.latest.revision: "24"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5770cb8fd68eb68145f3f7fbcf197302883efe9f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;serviceHostingEnvironment&gt;
-この要素は、環境をホストするサービスがインスタンス化する特定のトランスポートの型を定義します。  この要素が空の場合は、既定の型が使用されます。  この要素は、アプリケーション レベルまたはコンピューター レベルの構成ファイルでのみ使用できます。  
+# <a name="ltservicehostingenvironmentgt"></a>&lt;serviceHostingEnvironment&gt;
+この要素は、環境をホストするサービスがインスタンス化する特定のトランスポートの型を定義します。 この要素が空の場合は、既定の型が使用されます。 この要素は、アプリケーション レベルまたはコンピューター レベルの構成ファイルでのみ使用できます。  
   
-## 構文  
+ \<システムです。ServiceModel >  
+\<ServiceHostingEnvironment >  
   
-```  
+## <a name="syntax"></a>構文  
   
-<serviceHostingEnvironment  
-     aspNetCompatibilityEnabled="Boolean"  
-     minFreeMemoryPercentageToActivateService="Integer"  
-     multipleSiteBindingsEnabled="Boolean">  
-     <baseAddressPrefixFilters>  
-        <add prefix="string"/>  
-     </baseAddressPrefixFilters>  
-      <serviceActivations>  
-        <add factory="String" service="String"/>  
-      </serviceActivations>  
-     <transportConfigurationTypes>  
-        <add name="String"   
-             transportConfigurationType="String" />  
-     </transportConfigurationTypes>  
+```xml  
+<serviceHostingEnvironment aspNetCompatibilityEnabled="Boolean" 
+                           minFreeMemoryPercentageToActivateService="Integer" 
+                           multipleSiteBindingsEnabled="Boolean">
+  <baseAddressPrefixFilters>
+    <add prefix="string" />
+  </baseAddressPrefixFilters>
+  <serviceActivations>
+    <add factory="String" service="String" />
+  </serviceActivations>
+  <transportConfigurationTypes>
+    <add name="String" transportConfigurationType="String" />
+  </transportConfigurationTypes>
 </serviceHostingEnvironment>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
 |属性|説明|  
-|--------|--------|  
-|aspNetCompatibilityEnabled|ASP.NET の互換モードが現在のアプリケーションに対して有効になっているかどうかを示すブール値。  既定値は、`false` です。<br /><br /> この属性が `true` に設定されている場合、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスに対する要求は ASP.NET HTTP パイプラインを通過し、HTTP プロトコル以外を介した通信は禁止されます。  詳細については、「[WCF サービスと ASP.NET](../../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)」を参照してください。|  
-|minFreeMemoryPercentageToActivateService|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスをアクティブにする前に、システムに必要な最小限の空きメモリの容量を指定する整数。 **Caution:**  [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスの web.config ファイルで、部分信頼と共にこの属性を指定すると、サービスを実行したときに <xref:System.Security.SecurityException> が発生します。|  
-|multipleSiteBindingsEnabled|1 つのサイトで複数の IIS バインディングが有効になっているかどうかを指定するブール値。<br /><br /> IIS は、仮想ディレクトリを含む仮想アプリケーションのコンテナーとしての Web サイトで構成されています。  サイト内のアプリケーションに、1 つ以上の IIS バインディングからアクセスできます。  IIS バインディングは、バインディング プロトコルとバインディング情報という 2 つの情報を提供します。  バインディング プロトコルは通信を行うスキームを定義するもので、バインディング情報はサイトにアクセスするために使用する情報です。  バインディング プロトコルの例には HTTP があり、一方、バインディング情報には IP アドレス、ポート、ホスト ヘッダーなどを含めることができます。<br /><br /> IIS ではサイトごとに複数の IIS バインディングを指定でき、これによりスキームごとに複数のベース アドレスをサポートできます。  ただし、サイトでホストされている [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスでは、1 つのスキームあたり 1 つのみの baseAddress へのバインディングが許可されています。<br /><br /> [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスに対し、1 つのサイトで複数の IIS バインディングを有効にするには、この属性を `true` に設定します。  複数のサイト バインディングは HTTP プロトコルに対してのみサポートされています。  構成ファイル内のエンドポイントのアドレスには完全な URI を指定する必要があります。|  
+|---------------|-----------------|  
+|aspNetCompatibilityEnabled|ASP.NET の互換モードが現在のアプリケーションに対して有効になっているかどうかを示すブール値。 既定値は、`false` です。<br /><br /> この属性が `true` に設定されている場合、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスに対する要求は ASP.NET HTTP パイプラインを通過し、HTTP プロトコル以外を介した通信は禁止されます。 詳細については、次を参照してください。 [WCF サービスと ASP.NET](../../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)です。|  
+|minFreeMemoryPercentageToActivateService|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] サービスをアクティブにする前に、システムに必要な最小限の空きメモリの容量を指定する整数。 **注意:**の web.config ファイルで、部分信頼と共にこの属性を指定する、[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]サービスになります、<xref:System.Security.SecurityException>サービスを実行するとします。|  
+|multipleSiteBindingsEnabled|1 つのサイトで複数の IIS バインディングが有効になっているかどうかを指定するブール値。<br /><br /> IIS は、仮想ディレクトリを含む仮想アプリケーションのコンテナーとしての Web サイトで構成されています。 サイト内のアプリケーションに、1 つ以上の IIS バインディングからアクセスできます。 IIS バインディングは、バインディング プロトコルとバインディング情報という 2 つの情報を提供します。 バインディング プロトコルは通信を行うスキームを定義するもので、バインディング情報はサイトにアクセスするために使用する情報です。 バインディング プロトコルの例には HTTP があり、一方、バインディング情報には IP アドレス、ポート、ホスト ヘッダーなどを含めることができます。<br /><br /> IIS ではサイトごとに複数の IIS バインディングを指定でき、これによりスキームごとに複数のベース アドレスをサポートできます。 ただし、サイトでホストされている [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスでは、1 つのスキームあたり 1 つのみの baseAddress へのバインディングが許可されています。<br /><br /> [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] サービスに対し、1 つのサイトで複数の IIS バインディングを有効にするには、この属性を `true` に設定します。 複数のサイト バインディングは HTTP プロトコルに対してのみサポートされています。 構成ファイル内のエンドポイントのアドレスには完全な URI を指定する必要があります。|  
   
-### 子要素  
-  
-|要素|説明|  
-|--------|--------|  
-|[\<baseAddressPrefixFilters\>](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|サービス ホストによって使用されるベース アドレスのプレフィックス フィルターを指定する構成要素のコレクション。|  
-|[\<serviceActivations\>](../../../../../docs/framework/configure-apps/file-schema/wcf/serviceactivations.md)|アクティベーション設定を記述する構成セクション。|  
-|[\<transportConfigurationTypes\>](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|特定のトランスポートの型を識別する構成要素のコレクション。|  
-  
-### 親要素  
+### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
-|--------|--------|  
-|serviceModel|すべての Windows Communication Foundation \(WCF\) 構成要素のルート要素です。|  
+|-------------|-----------------|  
+|[\<baseAddressPrefixFilters >](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|サービス ホストによって使用されるベース アドレスのプレフィックス フィルターを指定する構成要素のコレクション。|  
+|[\<serviceActivations >](../../../../../docs/framework/configure-apps/file-schema/wcf/serviceactivations.md)|アクティベーション設定を記述する構成セクション。|  
+|[\<transportConfigurationTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|特定のトランスポートの型を識別する構成要素のコレクション。|  
   
-## 解説  
- 既定では、WCF サービスは、ホストされるアプリケーション ドメイン \(AppDomain\) で ASP.NET と並行で実行します。  WCF と ASP.NET が同じ AppDomain で共存できても、既定では WCF 要求は ASP.NET HTTP パイプラインでは処理されません。  結果として、ASP.NET アプリケーション プラットフォームのいくつかの要素は、WCF サービスでは使用できません。  これらの要素は次のとおりです。  
+### <a name="parent-elements"></a>親要素  
   
--   ASP.NET ファイル\/URL 承認  
+|要素|説明|  
+|-------------|-----------------|  
+|serviceModel|すべての Windows Communication Foundation (WCF) 構成要素のルート要素です。|  
+  
+## <a name="remarks"></a>コメント  
+ 既定では、WCF サービスは、ホストされるアプリケーション ドメイン (AppDomain) で ASP.NET と並行で実行します。 WCF と ASP.NET が同じ AppDomain で共存できても、既定では WCF 要求は ASP.NET HTTP パイプラインでは処理されません。 結果として、ASP.NET アプリケーション プラットフォームのいくつかの要素は、WCF サービスでは使用できません。 これらの要素は次のとおりです。  
+  
+-   ASP.NET ファイル/URL 承認  
   
 -   ASP.NET の偽装  
   
@@ -81,27 +81,27 @@ caps.handback.revision: 24
   
 -   カスタム HttpModule を経由するパイプライン拡張  
   
- WCF サービスが ASP.NET のコンテキストで機能し、HTTP 経由でのみ通信する必要がある場合は、WCF の ASP.NET 互換モードを使用できます。  このモードは、`aspNetCompatibilityEnabled` 属性がアプリケーション レベルで `true` に設定されている場合に有効です。  サービス実装では、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> クラスを使用して互換モードで実行できる機能を宣言する必要があります。  互換モードが有効な場合、  
+ WCF サービスが ASP.NET のコンテキストで機能し、HTTP 経由でのみ通信する必要がある場合は、WCF の ASP.NET 互換モードを使用できます。 このモードは、`aspNetCompatibilityEnabled` 属性がアプリケーション レベルで `true` に設定されている場合に有効です。 サービス実装では、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> クラスを使用して互換モードで実行できる機能を宣言する必要があります。 互換モードが有効な場合、  
   
--   ASP.NET ファイル\/URL 承認が、WCF 承認の前に強制的に実行されます。  承認決定は、要求のトランスポート レベルの ID に基づいています。  メッセージ レベルでの ID は、無視されます。  
+-   ASP.NET ファイル/URL 承認が、WCF 承認の前に強制的に実行されます。 承認決定は、要求のトランスポート レベルの ID に基づいています。 メッセージ レベルでの ID は、無視されます。  
   
--   WCF サービス操作は、ASP.NET の偽装コンテキストで実行を開始します。  ASP.NET の偽装と WCF の偽装の両方が特定のサービスで有効な場合は、WCF の偽装コンテキストが適用されます。  
+-   WCF サービス操作は、ASP.NET の偽装コンテキストで実行を開始します。 ASP.NET の偽装と WCF の偽装の両方が特定のサービスで有効な場合は、WCF の偽装コンテキストが適用されます。  
   
 -   HttpContext.Current を WCF サービス コードから使用できるため、サービスは非 HTTP エンドポイントを公開しません。  
   
--   WCF 要求は、ASP.NET パイプラインによって処理されます。  受信要求を処理するように構成された HttpModules は、WCF 要求も処理できます。  これらには、ASP.NET プラットフォーム コンポーネント \(<xref:System.Web.SessionState.SessionStateModule> など\) とカスタム サードパーティ モジュールが含まれます。  
+-   WCF 要求は、ASP.NET パイプラインによって処理されます。 受信要求を処理するように構成された HttpModules は、WCF 要求も処理できます。 これらには、ASP.NET プラットフォーム コンポーネント (<xref:System.Web.SessionState.SessionStateModule> など) とカスタム サードパーティ モジュールが含まれます。  
   
-## 例  
+## <a name="example"></a>例  
  次のコード サンプルは、ASP 互換モードを有効にする方法を示します。  
   
-## コード  
+## <a name="code"></a>コード  
   
-```  
+```xml  
 <serviceHostingEnvironment aspNetCompatibilityEnabled="true"/>  
 ```  
   
-## 参照  
- <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>   
- <xref:System.ServiceModel.ServiceHostingEnvironment>   
- [ホスト](../../../../../docs/framework/wcf/feature-details/hosting.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>  
+ <xref:System.ServiceModel.ServiceHostingEnvironment>  
+ [ホスティング](../../../../../docs/framework/wcf/feature-details/hosting.md)  
  [WCF サービスと ASP.NET](../../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)

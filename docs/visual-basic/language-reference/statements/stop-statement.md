@@ -1,53 +1,51 @@
 ---
-title: "Stop Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Stop"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "breakpoints, Stop statements"
-  - "Stop statements, syntax"
-  - "Stop statements"
-  - "execution, suspending"
-  - "processing, interrupting"
-  - "processes, interrupting"
-  - "execution, stopping"
+title: "Stop ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Stop
+helpviewer_keywords:
+- breakpoints, Stop statements
+- Stop statements [Visual Basic], syntax
+- Stop statements [Visual Basic]
+- execution [Visual Basic], suspending
+- processing, interrupting
+- processes, interrupting
+- execution [Visual Basic], stopping
 ms.assetid: c9a9fde0-d649-4662-9bef-bd0146ebc2a7
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d4b7f04214234837a86bf0c77c0d7b6934e2babd
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# Stop Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-実行を中断するステートメントです。  
+# <a name="stop-statement-visual-basic"></a>Stop ステートメント (Visual Basic)
+実行を中断します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Stop  
 ```  
   
-## 解説  
- `Stop` ステートメントは、プロシージャ内の任意の場所に置いて、実行を中断できます。  `Stop` ステートメントは、プログラム コードのブレークポイントと同じ働きをします。  
+## <a name="remarks"></a>コメント  
+ 配置できる`Stop`ステートメントの実行を中断するプロシージャに任意の場所。 使用して、`Stop`ステートメントは、コードでブレークポイントの設定に似ています。  
   
- `Stop` ステートメントはプログラムの実行を中断しますが、`End` ステートメントと異なり、コンパイル済みの実行可能ファイル \(.EXE\) の内部でない限り、ファイルを閉じたり、変数をクリアすることはありません。  
+ `Stop`ステートメントのとは異なりの実行が中断`End`、任意のファイルを閉じておよびコンパイル済み実行可能 (.exe) ファイルで検出された場合を除き、任意の変数をクリアされません。  
   
 > [!NOTE]
->  統合開発環境 \(IDE: Integrated Development Environment\) 外で実行されるコード内に `Stop` ステートメントが含まれている場合は、そこまで進むとデバッガーが呼び出されます。  そのコードがデバッグ モードとリテール モードのどちらでコンパイルされたかは関係ありません。  
+>  場合、`Stop`ステートメントが、統合開発環境 (IDE) の外部で実行されているコードで発生した場合、デバッガーが呼び出されます。 これは、コードをデバッグまたはリテールのモードでコンパイルされたかどうかに関係なく当てはまります。  
   
-## 使用例  
- `Stop` ステートメントを使って、`For...Next` ループを繰り返すごとに中断するコード例は、次のとおりです。  
+## <a name="example"></a>例  
+ この例では、`Stop`ステートメントの各繰り返しの実行を中断、`For...Next`ループします。  
   
  [!code-vb[VbVbalrStatements#56](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/stop-statement_1.vb)]  
   
-## 参照  
- [End Statement](../../../visual-basic/language-reference/statements/end-statement.md)
+## <a name="see-also"></a>関連項目  
+ [End ステートメント](../../../visual-basic/language-reference/statements/end-statement.md)

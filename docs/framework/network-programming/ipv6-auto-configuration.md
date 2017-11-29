@@ -7,22 +7,16 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 581c1d21-1013-43a3-bf3e-2d9ead62b79c
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c46d4b8f6b9e3620c313e9737b556a6050da0126
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 0332bca146041aa955ea000cfeee78d3f5287036
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ipv6-auto-configuration"></a>IPv6 の自動構成
 IPv6 用の 1 つの重要な目標は、ノードのプラグ アンド プレイをサポートすることです。 つまり、IPv6 ネットワークにノードを接続して、それを人間の操作なしに自動的に構成できる必要があります。  
@@ -40,6 +34,5 @@ IPv6 用の 1 つの重要な目標は、ノードのプラグ アンド プレ�
  モバイル デバイスの急増によって、新しい要件が導入されました。デバイスが IPv6 インターネット上の場所を任意に変更しても既存の接続を維持できるようにする必要があります。 この機能を提供するために、モバイル ノードに常に到達できるホーム アドレスが割り当てられます。 モバイル ノードが自宅にあるときは、ホーム リンクに接続し、ホーム アドレスを使用します。 モバイル ノードが自宅から離れた場所にあるときは、ホーム エージェント (通常はルーター) が、モバイル ノードと通信相手のノードの間でメッセージを中継します。  
   
 ## <a name="see-also"></a>関連項目  
- [インターネット プロトコル バージョン 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)   
+ [インターネット プロトコル バージョン 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)  
  [ソケット](../../../docs/framework/network-programming/sockets.md)
-

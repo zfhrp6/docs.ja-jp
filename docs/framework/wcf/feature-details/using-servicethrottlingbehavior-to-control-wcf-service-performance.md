@@ -1,39 +1,41 @@
 ---
-title: "WCF サービス パフォーマンスを制御するための ServiceThrottlingBehavior の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "サービスのパフォーマンスの動作 [WCF]"
+title: "WCF サービス パフォーマンスを制御するための ServiceThrottlingBehavior の使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: behavior [WCF], service performance
 ms.assetid: f9dc120c-dc24-49d5-930e-b22f5bc73423
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 01f3815c095012d10fdfd56893125135c35f8009
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WCF サービス パフォーマンスを制御するための ServiceThrottlingBehavior の使用
-<xref:System.ServiceModel.Description.ServiceThrottlingBehavior>クラス インスタンスの数を制限するために使用できるか、セッションは、アプリケーション レベルで作成するプロパティを公開します。 この動作を使用して、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションのパフォーマンスを最適に調整できます。  
+# <a name="using-servicethrottlingbehavior-to-control-wcf-service-performance"></a>WCF サービス パフォーマンスを制御するための ServiceThrottlingBehavior の使用
+<xref:System.ServiceModel.Description.ServiceThrottlingBehavior> クラスでは、アプリケーション レベルで作成されるインスタンス数またはセッション数の制限に使用できるプロパティが公開されています。 この動作を使用して、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションのパフォーマンスを最適に調整できます。  
   
 ## <a name="controlling-service-instances-and-concurrent-calls"></a>サービス インスタンスと同時呼び出しの制御  
- 使用して、 <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A>でアクティブに処理されるメッセージの最大数を指定するプロパティ、 <xref:System.ServiceModel.ServiceHost>クラス、および<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A>の最大数を指定するプロパティ<xref:System.ServiceModel.InstanceContext>サービス内のオブジェクト。  
+ <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A> プロパティを使用して、<xref:System.ServiceModel.ServiceHost> クラスでアクティブに処理されるメッセージの最大数を指定します。また、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> プロパティを使用して、サービス内の <xref:System.ServiceModel.InstanceContext> オブジェクトの最大数を指定します。  
   
- 通常、これらのプロパティ設定の決定はに対してアプリケーションを実行している実際の動作後に行われるのための設定を読み込みます、 <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>プロパティは、通常、アプリケーション構成ファイルを使用して指定、 [ <> \> ](../../../../docs/framework/configure-apps/file-schema/wcf/servicethrottling.md)要素。  
+ これらのプロパティの設定を確認して通常は実際の動作に対するアプリケーションの実行後に行われるのための設定を読み込みます、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior>プロパティは、通常、アプリケーション構成ファイルを使用して指定します[ \<serviceThrottling >](../../../../docs/framework/configure-apps/file-schema/wcf/servicethrottling.md)要素。  
   
- 次のコード例の使用を示しています、 <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>を設定するアプリケーション構成ファイルからクラスを<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A>、 <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A>、および<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A>プロパティを 1 に簡単な例として。 特定のアプリケーションでの最適な設定については、実際の動作から判断します。  
+ 簡単な例として、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior>、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A>、および <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A> の各プロパティを 1 に設定するアプリケーション構成ファイルから <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> クラスを使用する方法を次のコード例に示します。 特定のアプリケーションでの最適な設定については、実際の動作から判断します。  
   
- <!-- TODO: review snippet reference [!code-csharp[ServiceThrottlingBehavior#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]  -->  
+ [!code-xml[ServiceThrottlingBehavior#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]  
   
- 値によって、実際の実行時動作、 <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>と<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A>プロパティは、メッセージの数が、操作内実行できる同時やサービスの有効期間<xref:System.ServiceModel.InstanceContext>受信チャネル セッションに関連、それぞれします。  
+ 実行時における正確な動作は <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> プロパティと <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティの値により異なります。この値により、操作内で一度に実行できるメッセージ数や、受信チャネル セッションに関連するサービス <xref:System.ServiceModel.InstanceContext> の有効期間をそれぞれ制限します。  
   
- 詳細については、「 <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A>、および<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A>します。  
+ 詳細については、「<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A>」および「<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A>」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>   
+ <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>  
  <xref:System.ServiceModel.NetTcpBinding.MaxConnections%2A>

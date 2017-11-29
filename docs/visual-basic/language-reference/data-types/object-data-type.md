@@ -1,39 +1,38 @@
 ---
-title: "Object Data Type | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Object"
-  - "vb.Variant"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "object variables, Object type"
-  - "data types [Visual Basic], assigning"
-  - "Object data type"
-  - "Object data type, reference"
+title: Object Data Type
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.Object
+- vb.Variant
+helpviewer_keywords:
+- object variables [Visual Basic], Object type
+- data types [Visual Basic], assigning
+- Object data type
+- Object data type [Visual Basic], reference
 ms.assetid: 61ea4a7c-3b3d-48d4-adc4-eacfa91779b2
-caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 847f2b50296ad1a1ba6f0009d1d6afced27f9abe
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Object Data Type
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-オブジェクトを参照するアドレスを格納します。  オブジェクト \(`Object`\) 変数には、任意の参照型 \(文字列、配列、クラス、またはインターフェイス\) を割り当てることができます。  また、オブジェクト型 \(`Object`\) の変数は、任意の値型 \(数値、ブール型 \(`Boolean`\)、char 型 \(`Char`\)、日付型 \(`Date`\)、構造体、または列挙型\) のデータを参照できます。  
+# <a name="object-data-type"></a>Object Data Type
+オブジェクトを参照するアドレスを保持します。 任意の参照型 (文字列、配列、クラス、またはインターフェイス) を割り当てることができます、`Object`変数。 `Object`変数は、任意の値型のデータを指すことも (numeric、 `Boolean`、 `Char`、 `Date`、構造体、または列挙型)。  
   
-## 解説  
- オブジェクト型 \(`Object`\) は、任意のデータ型のデータをポイントできます。これにはアプリケーションが認識する任意のオブジェクト インスタンスも含まれます。  オブジェクト型 \(`Object`\) は、コンパイル時に変数がどのデータ型をポイントするかわからない場合に使用します。  
+## <a name="remarks"></a>コメント  
+ `Object`データ型は、アプリケーションで認識済みのオブジェクト インスタンスを含む、任意のデータ型のデータを指すことができます。 使用して`Object`コンパイル時に不明な場合をポイントする変数がどのようなデータ型します。  
   
- `Object` の既定値は `Nothing` \(null 参照\) です。  
+ 既定値の`Object`は`Nothing`(null 参照)。  
   
-## データ型  
- すべてのデータ型の変数、定数、または式を、オブジェクト型 \(`Object`\) の変数に代入できます。  `Object` 変数が現在参照しているデータ型を調べるには、<xref:System.Type?displayProperty=fullName> クラスの <xref:System.Type.GetTypeCode%2A> メソッドを使用します。  次に例を示します。  
+## <a name="data-types"></a>データ型  
+ 変数、定数、または任意のデータ型に式を割り当てることができます、`Object`変数。 データ型を決定する、`Object`変数を現在参照して、使用することができます、<xref:System.Type.GetTypeCode%2A>のメソッド、<xref:System.Type?displayProperty=nameWithType>クラスです。 次に例を示します。  
   
 ```  
 Dim myObject As Object  
@@ -42,29 +41,29 @@ Dim datTyp As Integer
 datTyp = Type.GetTypeCode(myObject.GetType())  
 ```  
   
- オブジェクト型 \(`Object`\) は参照型です。  ただし、`Object` 変数が値型のデータを参照する場合は、値型として扱われます。  
+ `Object`データ型が参照型です。 ただし、Visual Basic の処理、`Object`値型のデータを参照するときに、値型として変数です。  
   
-## Storage  
- `Object` 変数はどのデータ型を参照する場合でも、データの値そのものを格納するのではなく、値へのポインターを格納します。  このポインターはコンピューターのメモリ内で常に 4 バイトを占めますが、変数の値を表すデータの記憶領域は別に割り当てられます。  コードはポインターを使用してデータを探すため、値型を保持するオブジェクト型 \(`Object`\) の変数は、明示的に型指定された変数よりも多少アクセスに時間がかかります。  
+## <a name="storage"></a>ストレージ  
+ 参照するすべてのデータ型、`Object`自体が、値へのポインターではなく、変数がデータ値を含んでいません。 コンピューター メモリ内で常に 4 バイトを使用しますが、これは、変数の値を表すデータの記憶域には含まれません。 ポインターを使用して、データを検索するコードのため`Object`値の型を保持する変数より明示的に型指定された変数にアクセスするのには、多少速度が低下します。  
   
-## プログラミングのヒント  
+## <a name="programming-tips"></a>プログラミングのヒント  
   
--   **相互運用の考慮事項。**たとえば Automation オブジェクトや COM オブジェクトなど、.NET Framework 用に作成されていないコンポーネントを使用する場合は、他の環境のポインター型に Visual Basic のオブジェクト型 \(`Object`\) との互換性がないことを頭に入れておく必要があります。  
+-   **相互運用の考慮事項。** オートメーション オブジェクトや COM オブジェクトなど、.NET Framework 用に作成されていないコンポーネントとやり取りする場合は、他の環境でのポインター型が、Visual Basic と互換性がないことに留意してください`Object`型です。  
   
--   **パフォーマンス**オブジェクト型 \(`Object`\) を使って定義した変数は非常に柔軟であり、あらゆるオブジェクトへの参照を格納できます。  しかし、このような変数からメソッドまたはプロパティを呼び出すと、必ず*遅延バインディング* \(実行時の連結\) が発生してしまいます。  *事前バインディング* \(コンパイル時の連結\) を強制し、パフォーマンスを向上させるには、特定のクラス名を使って変数を宣言するか、または変数を特定のデータ型にキャストする必要があります。  
+-   **パフォーマンス。** 宣言した変数、`Object`型は任意のオブジェクトへの参照を格納するのに十分な柔軟性です。 ただし、メソッドまたはそのような変数のプロパティを呼び出すときに必ず*遅延バインディング*(実行時)。 強制的に*事前バインディング*(コンパイル時) とパフォーマンスの向上、特定のクラスの名前を持つ変数を宣言または特定のデータ型にキャストします。  
   
-     オブジェクト変数を宣言する場合は、汎用のオブジェクト型 \(`Object`\) 使用するのではなく、たとえば <xref:System.OperatingSystem> など、できるだけ具体的なクラス型を使うようにしてください。  また、<xref:System.Windows.Forms.Control> ではなく <xref:System.Windows.Forms.TextBox> など、最も具体的なクラスを使用してください。そうすることで、クラスのプロパティやメソッドにアクセスできます。  通常、**\[オブジェクト ブラウザー\]** の **\[クラス\]** ボックスから、使用できるクラス名を探すことができます。  
+     オブジェクト変数を宣言するときに使用しようと特定のクラス型では、たとえば<xref:System.OperatingSystem>ではなく、汎用`Object`型です。 などに使用できる最も固有のクラスを使用することも必要があります。<xref:System.Windows.Forms.TextBox>の代わりに<xref:System.Windows.Forms.Control>、そのプロパティおよびメソッドにアクセスできるようにします。 通常使用することができます、**クラス**一覧に、**オブジェクト ブラウザー**利用可能なクラス名を検索します。  
   
--   **拡大変換。**すべてのデータ型とすべての参照型が、オブジェクト型 \(`Object`\) に拡大変換されます。  これは、<xref:System.OverflowException?displayProperty=fullName> エラーを発生させることなく、任意の型をオブジェクト型 \(`Object`\) に変換できることを意味します。  
+-   **拡大します。** すべてのデータ型とすべての参照型に変換、`Object`データ型。 つまり、任意の種類を変換する`Object`遭遇することがなく、<xref:System.OverflowException?displayProperty=nameWithType>エラーです。  
   
-     ただし、値型とオブジェクト型 \(`Object`\) の間で変換を行うと、Visual Basic は*ボックス化*および*ボックス化解除*と呼ばれる処理を実行するため、実行時間が長くなります。  
+     ただし、値型の間で変換する場合と`Object`、という操作を実行する Visual Basic*ボックス化*と*アンボックス*、により実行速度が低下します。  
   
--   **型文字。** SByte 型 \(`Object`\) にはリテラルの型文字も、識別子の型文字もありません。  
+-   **型宣言文字。** `Object`リテラルの型文字または識別子の型文字がありません。  
   
--   **Framework のデータ型。**.NET Framework において対応する型は、<xref:System.Object?displayProperty=fullName> クラスです。  
+-   **Framework の型。** .NET Framework において対応する型は、<xref:System.Object?displayProperty=nameWithType>クラスです。  
   
-## 使用例  
- オブジェクト インスタンスをポイントする `Object` 変数の例は、次のようになります。  
+## <a name="example"></a>例  
+ 次の例を示しています、`Object`変数オブジェクトのインスタンスをポイントします。  
   
 ```  
 Dim objDb As Object  
@@ -73,11 +72,11 @@ Dim myCollection As New Collection()
 objDb = myCollection.Item(1)  
 ```  
   
-## 参照  
- <xref:System.Object>   
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)   
- [How to: Determine Whether Two Objects Are Related](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)   
- [How to: Determine Whether Two Objects Are Identical](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Object>  
+ [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [データ型の有効な使用方法](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)  
+ [方法: 2 つのオブジェクトが関連しているかどうかを決める](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)  
+ [方法: 2 つのオブジェクトが同一であるかどうか判別する](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)

@@ -8,16 +8,15 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: a6e6e65c-347f-4494-9457-653bf29baac2
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 83da65d17d927e6afa8c669d5a3123d458246b31
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 79d7aef2cf374acc4380fac6009615f75eaf1e81
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>XML Schema Definition Tool (Xsd.exe)
 XML スキーマ定義ツール (Xsd.exe) は、XDR、XML、および XSD ファイル、またはランタイム アセンブリ内のクラスから XML スキーマ クラスまたは共通言語ランタイム クラスを生成します。  
@@ -44,8 +43,8 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
   
 |オプション|説明|  
 |------------|-----------------|  
-|**/h**[**elp**]|このツールのコマンド構文とオプションを表示します。|  
-|**/o**[**utputdir**]**:***directory*|出力ファイル用のディレクトリを指定します。 この引数は 1 回だけ指定できます。 既定値は、現在のディレクトリです。|  
+|**/h****[elp]**|このツールのコマンド構文とオプションを表示します。|  
+|**/o****[utputdir]****:***directory*|出力ファイル用のディレクトリを指定します。 この引数は 1 回だけ指定できます。 既定値は、現在のディレクトリです。|  
 |**/?**|このツールのコマンド構文とオプションを表示します。|  
 |**/P[arameters]:** *file.xml*|指定された .xml ファイルから各種のオペレーション モードのためのオプションを読み込みます。 省略形は '/p:' です。 詳細については、「解説」を参照してください。|  
   
@@ -54,29 +53,29 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
   
 |オプション|説明|  
 |------------|-----------------|  
-|**/c**[**lasses**]|指定したスキーマと対応するクラスを生成します。 オブジェクトに XML データを読み込むには、`System.Xml.Serialization.XmlSerializer.Deserializer` メソッドを使用します。|  
-|**/d**[**ataset**]|指定したスキーマに対応する <xref:System.Data.DataSet> から派生したクラスを生成します。 派生したクラスに XML データを読み込むには、`System.Data.DataSet.ReadXml` メソッドを使用します。|  
+|**/c****[lasses]**|指定したスキーマと対応するクラスを生成します。 オブジェクトに XML データを読み込むには、`System.Xml.Serialization.XmlSerializer.Deserializer` メソッドを使用します。|  
+|**/d****[ataset]**|指定したスキーマに対応する <xref:System.Data.DataSet> から派生したクラスを生成します。 派生したクラスに XML データを読み込むには、`System.Data.DataSet.ReadXml` メソッドを使用します。|  
   
  .xsd ファイルについては、次のオプションのうち任意のオプションを指定できます。  
   
 |オプション|説明|  
 |------------|-----------------|  
-|**/e**[**lement**]**:***element*|コードを生成する対象とする、スキーマ内の要素を指定します。 既定では、すべての要素が指定されます。 この引数は、複数回指定できます。|  
+|**/e****[lement]****:***element*|コードを生成する対象とする、スキーマ内の要素を指定します。 既定では、すべての要素が指定されます。 この引数は、複数回指定できます。|  
 |**/enableDataBinding**|データ バインディングを有効にするために、生成されたすべての型に <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装します。 短縮形は `/edb` です。|  
 |**/enableLinqDataSet**|(短縮形 : `/eld`)。LINQ to DataSet を使用して、生成された DataSet を照会できるように指定します。 このオプションは /dataset オプションも指定した場合に使用されます。 詳細については、「[LINQ to DataSet Overview](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)」(LINQ to DataSet Overview) と「[Querying Typed DataSets](../../../docs/framework/data/adonet/querying-typed-datasets.md)」(型指定された DataSet のクエリ) を参照してください。 LINQ の詳細については、「[統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)」を参照してください。|  
-|**/f**[**ields**]|プロパティの代わりにフィールドを生成します。 既定では、プロパティが生成されます。|  
-|**/l**[**anguage**]**:***language*|使用するプログラミング言語を指定します。 `CS` (C#、既定値)、`VB` (Visual Basic)、`JS` (JScript)、または `VJS` (Visual J#) から選択します。 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=fullName> を実装するクラスの完全修飾名を指定することもできます。|  
-|**/n**[**amespace**]**:***namespace*|生成する型のランタイム名前空間を指定します。 既定の名前空間は `Schemas` です。|  
+|**/f****[ields]**|プロパティの代わりにフィールドを生成します。 既定では、プロパティが生成されます。|  
+|**/l****[anguage]****:***language*|使用するプログラミング言語を指定します。 `CS` (C#、既定値)、`VB` (Visual Basic)、`JS` (JScript)、または `VJS` (Visual J#) から選択します。 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> を実装するクラスの完全修飾名を指定することもできます。|  
+|**/n****[amespace]****:***namespace*|生成する型のランタイム名前空間を指定します。 既定の名前空間は `Schemas` です。|  
 |**/nologo**|バナーを表示しません。|  
 |**/order**|すべてのパーティクル メンバーに明示的な順序 ID を生成します。|  
 |**/o[ut]:** *directoryName*|ファイルを格納する出力ディレクトリを指定します。 既定値は、現在のディレクトリです。|  
-|**/u**[**ri**]**:***uri*|コードを生成する対象とする、スキーマ内の要素の URI を指定します。 指定した場合、この URI は `/element` オプションで指定したすべての要素に適用されます。|  
+|**/u****[ri]****:***uri*|コードを生成する対象とする、スキーマ内の要素の URI を指定します。 指定した場合、この URI は `/element` オプションで指定したすべての要素に適用されます。|  
   
 ## <a name="dll-and-exe-file-options"></a>DLL ファイルと EXE ファイルのオプション  
   
 |オプション|説明|  
 |------------|-----------------|  
-|**/t**[**ype**]**:***typename*|スキーマの作成対象とする型の名前を指定します。 複数の型の引数を指定できます。 *typename* によって名前空間が特定されない場合、指定された型を持つアセンブリに含まれるすべての型が対象となります。 *typename* によって名前空間が特定される場合は、その型だけが対象になります。 *typename* の末尾がアスタリスク (\*) の場合は、\* の前にある文字列で始まる型のすべてが対象となります。 `/type` オプションを省略すると、アセンブリに含まれるすべての型についてスキーマが生成されます。|  
+|**/t****[ype]****:***typename*|スキーマの作成対象とする型の名前を指定します。 複数の型の引数を指定できます。 *typename* によって名前空間が特定されない場合、指定された型を持つアセンブリに含まれるすべての型が対象となります。 *typename* によって名前空間が特定される場合は、その型だけが対象になります。 *typename* の末尾がアスタリスク (\*) の場合は、\* の前にある文字列で始まる型のすべてが対象となります。 `/type` オプションを省略すると、アセンブリに含まれるすべての型についてスキーマが生成されます。|  
   
 ## <a name="remarks"></a>コメント  
  Xsd.exe が実行する操作を次の表に示します。  
@@ -91,7 +90,7 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
  XSD スキーマ ファイルから共通言語ランタイムの <xref:System.Data.DataSet> クラスを生成します。 生成されるクラスには、標準の XML データ用のリッチ オブジェクト モデルが用意されています。  
   
  XSD からクラスへ  
- XSD スキーマ ファイルからランタイム クラスを生成します。 生成されたクラスを <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName> と組み合わせて使用すると、このスキーマに従う XML コードの読み書きを実行できます。  
+ XSD スキーマ ファイルからランタイム クラスを生成します。 生成されたクラスを <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> と組み合わせて使用すると、このスキーマに従う XML コードの読み書きを実行できます。  
   
  クラスから XSD へ  
  ランタイム アセンブリ ファイルに含まれる 1 つ以上の型から XML スキーマを生成します。 生成されたスキーマは、`System.Xml.Serialization.XmlSerializer` で使用される XML 形式を定義します。  
@@ -233,10 +232,9 @@ xsd myAssembly.dll
   
 ## <a name="see-also"></a>関連項目  
  <xref:System.Data.DataSet>  
- <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName>   
+ <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>  
  [ツール](../../../docs/framework/tools/index.md)      
- [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)   
- [LINQ to DataSet の概要](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)   
- [型指定された DataSet のクエリ](../../../docs/framework/data/adonet/querying-typed-datasets.md)   
+ [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)  
+ [LINQ to DataSet の概要](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)  
+ [型指定されたデータセットのクエリを実行します。](../../../docs/framework/data/adonet/querying-typed-datasets.md)  
  [統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)
-

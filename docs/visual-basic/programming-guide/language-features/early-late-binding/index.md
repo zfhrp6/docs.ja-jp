@@ -1,50 +1,32 @@
 ---
 title: "事前バインディングと遅延バインディング (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- early binding
+- early binding [Visual Basic]
 - objects [Visual Basic], late-bound
 - objects [Visual Basic], early-bound
 - objects [Visual Basic], late bound
-- early binding, Visual Basic compiler
-- binding, late and early
+- early binding [Visual Basic], Visual Basic compiler
+- binding [Visual Basic], late and early
 - objects [Visual Basic], early bound
 - Visual Basic compiler, early and late binding
-- late binding
-- late binding, Visual Basic compiler
+- late binding [Visual Basic]
+- late binding [Visual Basic], Visual Basic compiler
 ms.assetid: d6ff7f1e-b94f-4205-ab8d-5cfa91758724
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 66a34580417fb8b4a814b237ec36ffe700b1b30a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: aceffe59fb6043b3089621b9a3f95b0425f9a522
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="early-and-late-binding-visual-basic"></a>事前バインディングと遅延バインディング (Visual Basic)
 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] コンパイラは、オブジェクトがオブジェクト変数に代入されるときに `binding` と呼ばれる処理を実行します。 オブジェクトが特定のオブジェクト型として宣言された変数に代入される場合、オブジェクトは*事前バインディング*されます。 事前バインディングされたオブジェクトを使用すると、コンパイラは、アプリケーションを実行する前に、メモリの割り当てとその他の最適化を実行することができます。 たとえば、次のコードは、<xref:System.IO.FileStream> 型の変数を宣言します。  
@@ -64,7 +46,6 @@ ms.lasthandoff: 07/28/2017
 >  遅延バインディングは、`Public` として宣言されている型メンバーにアクセスするためにのみ使用できます。 `Friend` または `Protected Friend` として宣言されているメンバーにアクセスすると、ランタイム エラーが発生します。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>   
- [オブジェクトの有効期間: オブジェクトの作成と破棄](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)   
+ <xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>  
+ [オブジェクトの有効期間 : オブジェクトの作成と破棄](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)  
  [Object 型](../../../../visual-basic/language-reference/data-types/object-data-type.md)
-

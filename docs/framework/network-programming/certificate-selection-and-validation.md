@@ -7,22 +7,16 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: c933aca2-4cd0-4ff1-9df9-267143f25a6f
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6c926968b9cc5e5b0bf8db0c6bac88e676f45375
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: db75c3288b8247f0717c4792c57bfb30bb2e4416
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="certificate-selection-and-validation"></a>証明書の選択と検証
 <xref:System.Net> クラスは、Secure Socket Layer (SSL) 接続の <xref:System.Security.Cryptography.X509Certificates> を選択および検証する方法を複数サポートしています。 クライアントは、サーバーに対する認証に 1 つまたは複数の証明書を選択できます。 サーバーは、クライアント証明書の認証に固有の属性が 1 つまたは複数あることを必須にすることができます。  
@@ -68,6 +62,5 @@ ms.lasthandoff: 08/21/2017
  これらのツールに加え、<xref:System.Security.Cryptography.X509Certificates.X509Certificate> クラスと <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> クラスには、ファイル システムから証明書を読み込むメソッドがあります。  
   
 ## <a name="see-also"></a>関連項目  
- [ネットワーク プログラミングにおけるセキュリティ](../../../docs/framework/network-programming/security-in-network-programming.md)   
+ [ネットワーク プログラミングにおけるセキュリティ](../../../docs/framework/network-programming/security-in-network-programming.md)  
  [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)
-

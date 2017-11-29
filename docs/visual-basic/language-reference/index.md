@@ -1,12 +1,9 @@
 ---
 title: "Visual Basic の言語リファレンス"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - Visual Basic language reference
 - run-time libraries, Visual Basic
@@ -16,29 +13,14 @@ helpviewer_keywords:
 - language reference, Visual Basic
 - Visual Basic, language reference
 ms.assetid: 5c6bd31a-9542-4f3e-bfd5-e951af58f0f2
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1ac47bde27397e80993a6bb5d2512715f44acfc1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 2524df987bfea25b294c6e24abe5a6d8ff548df1
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="visual-basic-language-reference"></a>Visual Basic の言語リファレンス
 このセクションでは、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のさまざまな側面の参照情報を示します。  
@@ -48,7 +30,7 @@ ms.lasthandoff: 07/28/2017
  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ドキュメントで、キーワード、プレースホルダー、および言語の他の要素の書式設定の方法に関する概要を示します。  
   
  [Visual Basic ランタイム ライブラリのメンバー](../../visual-basic/language-reference/runtime-library-members.md)  
- <xref:Microsoft.VisualBasic?displayProperty=fullName> 名前空間のクラスとモジュールを、その他のメンバー関数、メソッド、プロパティ、定数、および列挙型へのリンクと共に紹介します。  
+ <xref:Microsoft.VisualBasic?displayProperty=nameWithType> 名前空間のクラスとモジュールを、その他のメンバー関数、メソッド、プロパティ、定数、および列挙型へのリンクと共に紹介します。  
   
  [キーワード](../../visual-basic/language-reference/keywords/index.md)  
  Visual Basic のすべてのキーワードと詳細情報へのリンクがあります。  
@@ -110,4 +92,3 @@ ms.lasthandoff: 07/28/2017
   
  [Visual Basic のコマンド ライン コンパイラ](../../visual-basic/reference/command-line-compiler/index.md)  
  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境 (IDE) でプログラムをコンパイルする方法の代替手段としてコマンド ライン コンパイルを使用する方法を説明しています。
-

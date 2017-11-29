@@ -1,33 +1,39 @@
 ---
-title: "方法 : 基本的な ATOM フィードを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : 基本的な ATOM フィードを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 6e0cacc1-9b11-4665-adb7-577a62626fd6
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d395e286bb42cb8533f7a8d62a8fdd68fd2b9204
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 基本的な ATOM フィードを作成する
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、配信フィードを公開するサービスを作成できます。ここでは、ATOM 配信フィードを公開する配信サービスを作成する方法について説明します。  
+# <a name="how-to-create-a-basic-atom-feed"></a>方法 : 基本的な ATOM フィードを作成する
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、配信フィードを公開するサービスを作成できます。 ここでは、ATOM 配信フィードを公開する配信サービスを作成する方法について説明します。  
   
-### 基本的な配信サービスを作成するには  
+### <a name="to-create-a-basic-syndication-service"></a>基本的な配信サービスを作成するには  
   
-1.  <xref:System.ServiceModel.Web.WebGetAttribute> 属性でマークされたインターフェイスを使用して、サービス コントラクトを定義します。配信フィードとして公開される各操作は、<xref:System.ServiceModel.Syndication.Atom10FeedFormatter> オブジェクトを返す必要があります。  
+1.  <xref:System.ServiceModel.Web.WebGetAttribute> 属性でマークされたインターフェイスを使用して、サービス コントラクトを定義します。 配信フィードとして公開される各操作は、<xref:System.ServiceModel.Syndication.Atom10FeedFormatter> オブジェクトを返す必要があります。  
   
      [!code-csharp[htAtomBasic#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#0)]
      [!code-vb[htAtomBasic#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#0)]  
   
     > [!NOTE]
-    >  <xref:System.ServiceModel.Web.WebGetAttribute> を適用するすべてのサービス操作は、HTTP GET 要求にマッピングされます。他の HTTP メソッドに操作をマッピングするには、代わりに <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用します。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][方法 : 基本的な WCF Web HTTP サービスを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md).  
+    >  <xref:System.ServiceModel.Web.WebGetAttribute> を適用するすべてのサービス操作は、HTTP GET 要求にマッピングされます。 他の HTTP メソッドに操作をマッピングするには、代わりに <xref:System.ServiceModel.Web.WebInvokeAttribute> を使用します。 [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][する方法: 基本的な WCF Web HTTP サービスを作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)です。  
   
 2.  サービス コントラクトを実装します。  
   
@@ -54,7 +60,7 @@ caps.handback.revision: 14
      [!code-csharp[htAtomBasic#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#5)]
      [!code-vb[htAtomBasic#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#5)]  
   
-### サービスをホストするには  
+### <a name="to-host-the-service"></a>サービスをホストするには  
   
 1.  <xref:System.ServiceModel.Web.WebServiceHost> オブジェクトを作成します。  
   
@@ -66,13 +72,13 @@ caps.handback.revision: 14
      [!code-csharp[htAtomBasic#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#8)]
      [!code-vb[htAtomBasic#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#8)]  
   
-### HTTP GET で GetBlog\(\) を呼び出すには  
+### <a name="to-call-getblog-with-an-http-get"></a>HTTP GET で GetBlog() を呼び出すには  
   
-1.  Internet Explorer を開いて「http:\/\/localhost:8000\/BlogService\/GetBlog」という URL を入力し、Enter キーを押します。  
+1.  Internet Explorer を開いて「http://localhost:8000/BlogService/GetBlog」という URL を入力し、Enter キーを押します。  
   
-     この URL には、サービスのベース アドレス \(http:\/\/localhost:8000\/BlogService\)、エンドポイントの相対アドレス、および呼び出すサービス操作が含まれます。  
+     この URL には、サービスのベース アドレス (http://localhost:8000/BlogService)、エンドポイントの相対アドレス、および呼び出すサービス操作が含まれます。  
   
-### コードから GetBlog\(\) を呼び出すには  
+### <a name="to-call-getblog-from-code"></a>コードから GetBlog() を呼び出すには  
   
 1.  ベース アドレスと呼び出すメソッドを使用して <xref:System.Xml.XmlReader> を作成します。  
   
@@ -91,15 +97,15 @@ caps.handback.revision: 14
      [!code-csharp[htAtomBasic#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/snippets.cs#11)]
      [!code-vb[htAtomBasic#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/snippets.vb#11)]  
   
-## 使用例  
+## <a name="example"></a>例  
  この例の完全なコードの一覧を以下に示します。  
   
  [!code-csharp[htAtomBasic#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#12)]
  [!code-vb[htAtomBasic#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#12)]  
   
-## コードのコンパイル  
+## <a name="compiling-the-code"></a>コードのコンパイル  
  上記のコードのコンパイル時には、System.ServiceModel.dll と System.ServiceModel.Web.dll が参照されます。  
   
-## 参照  
- <xref:System.ServiceModel.WebHttpBinding>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.ServiceModel.WebHttpBinding>  
  <xref:System.ServiceModel.Web.WebGetAttribute>

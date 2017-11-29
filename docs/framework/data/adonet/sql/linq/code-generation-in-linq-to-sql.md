@@ -1,48 +1,51 @@
 ---
-title: "Code Generation in LINQ to SQL | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "LINQ to SQL でのコード生成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 5720ca8adbfb4a25e6c1360ac156e950a2f1ce52
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Code Generation in LINQ to SQL
-[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]または SQLMetal コマンド ライン ツールを使用することにより、データベースを表すコードを生成できます。  どちらの場合も、エンド ツー エンドのコード生成が次の 3 段階で行われます。  
+# <a name="code-generation-in-linq-to-sql"></a>LINQ to SQL でのコード生成
+[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]または SQLMetal コマンド ライン ツールを使用することにより、データベースを表すコードを生成できます。 どちらの場合も、エンド ツー エンドのコード生成が次の 3 段階で行われます。  
   
-1.  *DBML Extractor* がスキーマ情報をデータベースから抽出して、XML 形式の DBML ファイルの中に情報を再アセンブルします。  
+1.  *DBML Extractor*データベースからスキーマ情報を抽出し、情報を XML 形式の DBML ファイルに再アセンブルします。  
   
-2.  *DBML Validator* が DBML ファイルをスキャンし、エラーがないかどうか確認します。  
+2.  によって、DBML ファイルをスキャン、 *DBML Validator*のエラーです。  
   
 3.  検証エラーが見つからない場合、ファイルはコード ジェネレーターに渡されます。  
   
- 詳細については、「[SqlMetal.exe \(コード生成ツール\)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」を参照してください。  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] を使用している開発者は、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]を使用してコードを生成することもできます。  「[LINQ to Visual Studio での SQL ツール](../Topic/LINQ%20to%20SQL%20Tools%20in%20Visual%20Studio2.md)」を参照してください。  
+ 詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。 使用する開発者[!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)]使用することができます、[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]コードを生成します。 参照してください[LINQ to Visual Studio での SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)です。  
   
-## DBML Extractor  
- DBML Extractor は [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のコンポーネントの 1 つで、データベース メタデータを入力として受け入れ、DBML ファイルを出力として生成します。  
+## <a name="dbml-extractor"></a>DBML Extractor  
+ DBML Extractor は、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]コンポーネントの入力としてのデータベースのメタデータを受け取り、出力として、DBML ファイルを生成します。  
   
-## コード ジェネレーター  
- コード ジェネレーターは [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のコンポーネントの 1 つで、DBML ファイルを [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]、C\#、または XML のマッピング ファイルに変換します。  
+## <a name="code-generator"></a>コード ジェネレーター  
+ コード ジェネレーターは [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のコンポーネントの 1 つで、DBML ファイルを [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)]、C#、または XML のマッピング ファイルに変換します。  
   
-## XML スキーマ定義ファイル  
+## <a name="xml-schema-definition-file"></a>XML スキーマ定義ファイル  
  DBML ファイルは、以下のような XSD ファイルのスキーマ定義に対して有効である必要があります。  
   
- このスキーマ定義ファイルを、外部マッピング ファイルの検証に使われるスキーマ定義ファイルと区別してください。  詳細については、「[External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)」を参照してください。  
+ このスキーマ定義ファイルを、外部マッピング ファイルの検証に使われるスキーマ定義ファイルと区別してください。 詳細については、次を参照してください。[外部マッピング](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md))。  
   
 > [!NOTE]
->  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] ユーザーには、この XSD ファイルが \[XML スキーマ\] ダイアログ ボックスで「DbmlSchema.xsd」としても表示されます。  DBML ファイルの検証で XSD ファイルを正しく使用するには、「[How to: Validate DBML and External Mapping Files](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)」を参照してください。  
+>  [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] ユーザーには、この XSD ファイルが [XML スキーマ] ダイアログ ボックスで「DbmlSchema.xsd」としても表示されます。 使用するには、XSD ファイル正しく DBML ファイルを検証するため、次を参照してください。[する方法: 検証の DBML ファイルおよび外部マッピング ファイル](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)です。  
   
 ```  
-﻿?<?xml version="1.0" encoding="utf-16"?>  
+?<?xml version="1.0" encoding="utf-16"?>  
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/linqtosql/dbml/2007" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007"  
 elementFormDefault="qualified" >  
   <xs:element name="Database" type="Database" />  
@@ -249,10 +252,10 @@ elementFormDefault="qualified" >
 </xs:schema>  
 ```  
   
-## サンプル DBML ファイル  
- 次のコードは、Northwind サンプル データベースから作成された DBML ファイルの抜粋です。  SQLMetal で **\/xml** オプションを使用することにより、ファイル全体を生成できます。  詳細については、「[SqlMetal.exe \(コード生成ツール\)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」を参照してください。  
+## <a name="sample-dbml-file"></a>サンプル DBML ファイル  
+ 次のコードは、Northwind サンプル データベースから作成された DBML ファイルの抜粋です。 SQLMetal でを使用して、ファイル全体を生成することができます、 **/xml**オプション。 詳しくは、「[SqlMetal.exe (コード生成ツール)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)」をご覧ください。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-16"?>  
 <Database Name="northwnd" Class="Northwnd" xmlns="http://schemas.microsoft.com/dsltools/DLinqML">  
   
@@ -276,9 +279,9 @@ elementFormDefault="qualified" >
 </Database>  
 ```  
   
-## 参照  
- [Background Information](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)   
- [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)   
- [How to: Generate the Object Model as an External File](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)   
- [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)   
- [Reference](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+## <a name="see-also"></a>関連項目  
+ [背景情報](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
+ [外部マップ](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
+ [方法: 外部ファイルとしてオブジェクト モデルを生成します。](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)  
+ [サンプル データベースのダウンロード](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
+ [参照](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

@@ -1,55 +1,60 @@
 ---
-title: "方法 : Windows フォームの Timer コンポーネントを使用して一定間隔でプロシージャを実行する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "例 [Windows フォーム], タイマー"
-  - "初期化, Timer コンポーネント"
-  - "プロシージャ, 特定の時間間隔"
-  - "Timer コンポーネント [Windows フォーム], 初期化"
-  - "タイマー, イベントの間隔"
-  - "タイマー, Windows ベースの"
+title: "方法 : Windows フォームの Timer コンポーネントを使用して一定間隔でプロシージャを実行する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- examples [Windows Forms], timers
+- timers [Windows Forms], event intervals
+- initialization [Windows Forms], Timer components
+- timers [Windows Forms], Windows-based
+- Timer component [Windows Forms], initializing
+- procedures [Windows Forms], specific time intervals
 ms.assetid: 8025247a-2de4-4d86-b8ab-a8cb8aeab2ea
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: af16d1e2c3ef683a6e3da4197a30af58d7758a0e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームの Timer コンポーネントを使用して一定間隔でプロシージャを実行する
-ループが完了するまで特定の間隔で実行するプロシージャや、設定した間隔が経過した時点で実行するプロシージャを作成することがあるかもしれません。  <xref:System.Windows.Forms.Timer> コンポーネントにより、このようなプロシージャが可能になります。  
+# <a name="how-to-run-procedures-at-set-intervals-with-the-windows-forms-timer-component"></a>方法 : Windows フォームの Timer コンポーネントを使用して一定間隔でプロシージャを実行する
+ループが完了するまで特定の間隔で実行するプロシージャや、設定した間隔が経過した時点で実行するプロシージャを作成することがあるかもしれません。 <xref:System.Windows.Forms.Timer> コンポーネントにより、このようなプロシージャが可能になります。  
   
- このコンポーネントは、Windows フォームの環境用に設計されています。  サーバー環境に適したタイマーが必要な場合は、「[Introduction to Server\-Based Timers](http://msdn.microsoft.com/ja-jp/adc0bc0a-a519-4812-bafc-fb9d1a5801fc)」を参照してください。  
+ このコンポーネントは、Windows フォームの環境用に設計されています。 サーバー環境に適したタイマーが必要な場合は、「[サーバー ベースのタイマーの概要](http://msdn.microsoft.com/en-us/adc0bc0a-a519-4812-bafc-fb9d1a5801fc)」を参照してください。  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.Timer> コンポーネントを使用する場合に、いくつかの制限があります。  詳細については、「[Windows フォームの Timer コンポーネントの Interval プロパティの制限](../../../../docs/framework/winforms/controls/limitations-of-the-timer-component-interval-property.md)」を参照してください。  
+>  <xref:System.Windows.Forms.Timer> コンポーネントを使用する場合に、いくつかの制限があります。 詳細については、次を参照してください。 [、Windows フォームの Timer コンポーネントの Interval プロパティの制限事項](../../../../docs/framework/winforms/controls/limitations-of-the-timer-component-interval-property.md)です。  
   
-### Timer コンポーネントで設定された間隔でプロシージャを実行するには  
+### <a name="to-run-a-procedure-at-set-intervals-with-the-timer-component"></a>Timer コンポーネントで設定された間隔でプロシージャを実行するには  
   
-1.  <xref:System.Windows.Forms.Timer> をフォームに追加します。  プログラムでこれを実行する方法については、次の例のセクションを参照してください。  [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] も、コンポーネントをフォームに追加する方法をサポートします。  「[方法 : ユーザー インターフェイスを持たないコントロールを Windows フォームに追加する](http://msdn.microsoft.com/library/becyw7bz\(v=vs.110\))」も参照してください。  
+1.  <xref:System.Windows.Forms.Timer> をフォームに追加します。 プログラムでこれを実行する方法については、次の例のセクションを参照してください。 [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] も、コンポーネントをフォームに追加する方法をサポートします。 参照してください[する方法: Windows フォームへのユーザー インターフェイスを持たないコントロールの追加](http://msdn.microsoft.com/library/becyw7bz\(v=vs.110\))です。  
   
-2.  タイマーの <xref:System.Windows.Forms.Timer.Interval%2A> プロパティ \(ミリ秒\) を設定します。  このプロパティは、プロシージャを再度実行する前に、経過する時間の長さを決定します。  
+2.  タイマーの <xref:System.Windows.Forms.Timer.Interval%2A> プロパティ (ミリ秒) を設定します。 このプロパティは、プロシージャを再度実行する前に、経過する時間の長さを決定します。  
   
     > [!NOTE]
-    >  タイマー イベントの発生頻度が高いと、イベントに対応するときに使用されるプロセッサ時間も長くなります。  これにより、全体的なパフォーマンスが低下します。  必要な間隔よりも小さな値を設定しないでください。  
+    >  タイマー イベントの発生頻度が高いと、イベントに対応するときに使用されるプロセッサ時間も長くなります。 これにより、全体的なパフォーマンスが低下します。 必要な間隔よりも小さな値を設定しないでください。  
   
-3.  <xref:System.Windows.Forms.Timer.Tick> イベント ハンドラーで適切なコードを作成します。  このイベントで記述したコードは、<xref:System.Windows.Forms.Timer.Interval%2A> プロパティで指定した間隔で実行されます。  
+3.  <xref:System.Windows.Forms.Timer.Tick> イベント ハンドラーで適切なコードを作成します。 このイベントで記述したコードは、<xref:System.Windows.Forms.Timer.Interval%2A> プロパティで指定した間隔で実行されます。  
   
-4.  <xref:System.Windows.Forms.Timer.Enabled%2A> プロパティを `true` に設定して、タイマーを開始します。  <xref:System.Windows.Forms.Timer.Tick> イベントの発生が開始され、プロシージャが指定された間隔で実行されます。  
+4.  <xref:System.Windows.Forms.Timer.Enabled%2A> プロパティを `true` に設定して、タイマーを開始します。 <xref:System.Windows.Forms.Timer.Tick> イベントの発生が開始され、プロシージャが指定された間隔で実行されます。  
   
-5.  適切なタイミングで <xref:System.Windows.Forms.Timer.Enabled%2A> プロパティを `false` に設定し、プロシージャがもう一度実行されることがないようにします。  間隔を `0` に設定すると、タイマーの停止が発生しません。  
+5.  適切なタイミングで <xref:System.Windows.Forms.Timer.Enabled%2A> プロパティを `false` に設定し、プロシージャがもう一度実行されることがないようにします。 間隔を設定`0`タイマーを停止するには発生しません。  
   
-## 使用例  
- この最初のコード例は、1 秒単位で 1 日の時間を追跡します。  フォーム上で <xref:System.Windows.Forms.Button>、<xref:System.Windows.Forms.Label>、および <xref:System.Windows.Forms.Timer> コンポーネントを使用します。  <xref:System.Windows.Forms.Timer.Interval%2A> プロパティが 1000 \(1 秒に等しい\) に設定されます。  <xref:System.Windows.Forms.Timer.Tick> イベントで、ラベルのキャプションが現在の時刻に設定されます。  ボタンをクリックしたときに、<xref:System.Windows.Forms.Timer.Enabled%2A> プロパティが `false` に設定されると、タイマーがラベルのキャプションを更新しなくなります。  次のコード例は、`Button1` という名前の <xref:System.Windows.Forms.Button> コントロール、`Timer1` という名前の <xref:System.Windows.Forms.Timer> コントロール、および `Label1` という名前の <xref:System.Windows.Forms.Label> コントロールがあるフォームを持っている必要があります。  
+## <a name="example"></a>例  
+ この最初のコード例は、1 秒単位で 1 日の時間を追跡します。 フォーム上で <xref:System.Windows.Forms.Button>、<xref:System.Windows.Forms.Label>、および <xref:System.Windows.Forms.Timer> コンポーネントを使用します。 <xref:System.Windows.Forms.Timer.Interval%2A> プロパティが 1000 (1 秒に等しい) に設定されます。 <xref:System.Windows.Forms.Timer.Tick> イベントで、ラベルのキャプションが現在の時刻に設定されます。 ボタンをクリックしたときに、<xref:System.Windows.Forms.Timer.Enabled%2A> プロパティが `false` に設定されると、タイマーがラベルのキャプションを更新しなくなります。 次のコード例では、フォームがあることが必要です、<xref:System.Windows.Forms.Button>という名前のコントロール`Button1`、<xref:System.Windows.Forms.Timer>という名前のコントロール`Timer1`、および<xref:System.Windows.Forms.Label>という名前のコントロール`Label1`です。  
   
 ```vb  
 Private Sub InitializeTimer()  
@@ -75,7 +80,6 @@ Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.Event
          Timer1.Enabled = True  
       End If  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -112,7 +116,6 @@ private void Button1_Click(object sender, EventArgs e)
     Timer1.Enabled = true;  
   }  
 }  
-  
 ```  
   
 ```cpp  
@@ -153,11 +156,10 @@ private:
          timer1->Enabled = true;  
       }  
    }  
-  
 ```  
   
-## 使用例  
- この 2 つ目のコード例は、ループが終了するまでにプロシージャを 600 ミリ秒ごとに実行します。  次のコード例は、`Button1` という名前の <xref:System.Windows.Forms.Button> コントロール、`Timer1` という名前の <xref:System.Windows.Forms.Timer> コントロール、および `Label1` という名前の <xref:System.Windows.Forms.Label> コントロールがあるフォームを持っている必要があります。  
+## <a name="example"></a>例  
+ この 2 つ目のコード例は、ループが終了するまでにプロシージャを 600 ミリ秒ごとに実行します。 次のコード例では、フォームがあることが必要です、<xref:System.Windows.Forms.Button>という名前のコントロール`Button1`、<xref:System.Windows.Forms.Timer>という名前のコントロール`Timer1`、および<xref:System.Windows.Forms.Label>という名前のコントロール`Label1`です。  
   
 ```vb  
 ' This variable will be the loop counter.  
@@ -182,7 +184,6 @@ Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Han
       Label1.Text = "Procedures Run: " & counter.ToString  
    End If  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -215,7 +216,6 @@ private void timer1_Tick(object sender, System.EventArgs e)
       label1.Text = "Procedures Run: " + counter.ToString();  
       }  
 }  
-  
 ```  
   
 ```cpp  
@@ -252,7 +252,7 @@ private:
    }  
 ```  
   
-## 参照  
- <xref:System.Windows.Forms.Timer>   
- [Timer コンポーネント](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.Timer>  
+ [Timer コンポーネント](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)  
  [Timer コンポーネントの概要](../../../../docs/framework/winforms/controls/timer-component-overview-windows-forms.md)

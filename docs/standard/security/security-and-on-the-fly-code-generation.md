@@ -1,43 +1,37 @@
 ---
-title: "セキュリティと実行時のコード生成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "コード セキュリティ, 実行時のコード生成"
-  - "実行時のコード生成"
-  - "安全なコーディング, 実行時のコード生成"
-  - "セキュリティ [.NET Framework], 実行時のコード生成"
+title: "セキュリティと実行時のコード生成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- code security, on-the-fly code generation
+- on-the-fly code generation
+- security [.NET Framework], on-the-fly code generation
+- secure coding, on-the-fly code generation
 ms.assetid: 6d221724-bb21-4d76-90c3-0ee2a2e69be2
-caps.latest.revision: 10
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: c00c66be812f2a1cdfdf761f681d2a0561a284bf
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# セキュリティと実行時のコード生成
-ライブラリによっては、コードを生成し、それを実行することによって、呼び出し元のためになんらかの処理を行います。  基本的に問題となるのは、より低い信頼度のコードの代わりに生成し、そのコードをより高い信頼度で実行することです。  呼び出し側がコードの生成に影響を及ぼすと問題はさらに悪化するため、安全と考えられるコードだけが生成されることを確認してください。  
+# <a name="security-and-on-the-fly-code-generation"></a>セキュリティと実行時のコード生成
+ライブラリによっては、コードを生成し、それを実行することによって、呼び出し元のためになんらかの処理を行います。 基本的に問題となるのは、より低い信頼度のコードの代わりに生成し、そのコードをより高い信頼度で実行することです。 呼び出し側がコードの生成に影響を及ぼすと問題はさらに悪化するため、安全と考えられるコードだけが生成されることを確認してください。  
   
- 常に、どのようなコードが生成されているのかを知る必要があります。  これは、ユーザーから取得する値を厳しく制御することが必要であることを意味します。これらの値は、引用符で囲まれた文字列、ID、またはそれ以外です。引用符で囲まれた文字列は予期しないコード要素を含まないようにエスケープ処理が必要で、ID は有効な ID かどうかをチェックする必要があります。  コンパイルされたアセンブリは変更できるため、変更によってその ID に異常な文字が含まれると、セキュリティが脅かされます。このため、ID にも危険性があります。ただし、これがセキュリティ脆弱性になることは稀です。  
+ 常に、どのようなコードが生成されているのかを知る必要があります。 これは、ユーザーから取得する値を厳しく制御することが必要であることを意味します。これらの値は、引用符で囲まれた文字列、ID、またはそれ以外です。引用符で囲まれた文字列は予期しないコード要素を含まないようにエスケープ処理が必要で、ID は有効な ID かどうかをチェックする必要があります。 コンパイルされたアセンブリは変更できるため、変更によってその ID に異常な文字が含まれると、セキュリティが脅かされます。このため、ID にも危険性があります。ただし、これがセキュリティ脆弱性になることは稀です。  
   
  リフレクション出力を指定してコードを生成することをお勧めします。これは、上記の多くの問題を防ぐのに役立ちます。  
   
- コードをコンパイルするときに、悪意のあるプログラムがなんらかの方法でコードを変更できるかどうかを考慮します。  コンパイラがソース コードを読み取る前、またはコードが .dll を読み込む前に、悪意のあるコードがソース コードを変更できる時間的なすきまがないかどうかを確認します。  ある場合は、コード アクセス セキュリティまたはファイル システムのアクセス制御リストを適切に使用して、これらのファイルが格納されているディレクトリを保護する必要があります。  
+ コードをコンパイルするときに、悪意のあるプログラムがなんらかの方法でコードを変更できるかどうかを考慮します。 コンパイラがソース コードを読み取る前、またはコードが .dll を読み込む前に、悪意のあるコードがソース コードを変更できる時間的なすきまがないかどうかを確認します。 ある場合は、ファイル システムのアクセス制御リストを適切に使用して、これらのファイルが格納されているディレクトリを保護する必要があります。  
   
- 生成されたコードに呼び出し元が影響を及ぼし、コンパイラ エラーが発生するような場合は、この部分がセキュリティ脆弱性になる可能性があります。  
-  
- <xref:System.Security.Permissions.SecurityAction> または [Deny](http://msdn.microsoft.com/ja-jp/6b4d2e01-c504-4ac3-b50e-d6f5e7f5df25) を使用して、生成されたコードをできる限り低いアクセス許可の設定で実行してください。  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [安全なコーディングのガイドライン](../../../docs/standard/security/secure-coding-guidelines.md)

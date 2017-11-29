@@ -1,45 +1,48 @@
 ---
-title: "要素のテキストの推論 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "要素のテキストの推論"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 789799e5-716f-459f-a168-76c5cf22178b
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 66dcc6a98d365f20da6c7f4c075c2fdd8ab936e2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 要素のテキストの推論
-要素にテキストは含まれているが、テーブルとして推論される \(属性を持つ要素または繰り返し出現する要素などの\) 子の要素がない場合は、**TableName\_Text** という名前の新しい列が、要素に対して推論されるテーブルに追加されます。  要素に含まれているテキストはテーブルの行に追加され、新しい列に格納されます。  新しい列の **ColumnMapping** プロパティは、**MappingType.SimpleContent** に設定されます。  
+# <a name="inferring-element-text"></a>要素のテキストの推論
+要素のテキストが含まれています (要素の属性を持つ) や、繰り返される要素など、名前の新しい列をテーブルとして推論される子要素が存在しない場合**TableName_Text**要素に対して推論されるテーブルに追加されます。 要素に含まれているテキストはテーブルの行に追加され、新しい列に格納されます。 **ColumnMapping**新しい列のプロパティが設定されます**MappingType.SimpleContent**です。  
   
  たとえば、次のような XML があるとします。  
   
-```  
+```xml  
 <DocumentElement>  
   <Element1 attr1="value1">Text1</Element1>  
 </DocumentElement>  
 ```  
   
- 推論プロセスにより、**attr1** および **Element1\_Text** という 2 つの列を持つ **Element1** という名前のテーブルが生成されます。  **attr1** 列の **ColumnMapping** プロパティは、**MappingType.Attribute** に設定されます。  **Element1\_Text** 列の **ColumnMapping** プロパティは、**MappingType.SimpleContent** に設定されます。  
+ 推論プロセスという名前のテーブルが生成されます**Element1** 2 つの列を含む: **attr1**と**Element1_Text**です。 **ColumnMapping**のプロパティ、 **attr1**列に設定されます**MappingType.Attribute**です。 **ColumnMapping**のプロパティ、 **Element1_Text**列に設定されます**MappingType.SimpleContent**です。  
   
- **DataSet:** DocumentElement  
+ **データセット:** DocumentElement  
   
  **Table:** Element1  
   
-|attr1|Element1\_Text|  
+|attr1|Element1_Text|  
 |-----------|--------------------|  
 |value1|Text1|  
   
- 要素にテキストだけでなく、テキストを含む子の要素も含まれている場合は、その要素に含まれているテキストを格納するための列はテーブルに追加されません。  要素に含まれるテキストは無視されますが、子の要素のテキストはテーブルの行に追加されます。  たとえば、次のような XML があるとします。  
+ 要素にテキストだけでなく、テキストを含む子の要素も含まれている場合は、その要素に含まれているテキストを格納するための列はテーブルに追加されません。 要素に含まれるテキストは無視されますが、子の要素のテキストはテーブルの行に追加されます。 たとえば、次のような XML があるとします。  
   
-```  
+```xml  
 <Element1>  
   Text1  
   <ChildElement1>Text2</ChildElement1>  
@@ -47,9 +50,9 @@ caps.handback.revision: 4
 </Element1>  
 ```  
   
- 推論プロセスにより、**ChildElement1** という 1 つの列を持つ **Element1** という名前のテーブルが生成されます。  **ChildElement1** 要素のテキストは、テーブルの行に追加されます。  その他のテキストは無視されます。  **ChildElement1** 列の **ColumnMapping** プロパティは、**MappingType.Element** に設定されます。  
+ 推論プロセスという名前のテーブルが生成されます**Element1**という 1 つの列を持つ**ChildElement1**です。 テキスト、 **ChildElement1**要素は、テーブルの行に含まれます。 その他のテキストは無視されます。 **ColumnMapping**のプロパティ、 **ChildElement1**列に設定されます**MappingType.Element**です。  
   
- **DataSet:** DocumentElement  
+ **データセット:** DocumentElement  
   
  **Table:** Element1  
   
@@ -57,10 +60,10 @@ caps.handback.revision: 4
 |-------------------|  
 |Text2|  
   
-## 参照  
- [XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)   
- [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)   
- [XML の DataSet スキーマ情報の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)   
- [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)   
- [DataSets、DataTables、および DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
+ [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
+ [XML からの DataSet スキーマ情報の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
+ [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

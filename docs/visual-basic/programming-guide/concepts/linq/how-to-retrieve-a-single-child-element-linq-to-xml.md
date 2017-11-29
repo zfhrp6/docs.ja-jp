@@ -1,41 +1,36 @@
 ---
-title: "方法: 単一の子要素 (LINQ to XML) を取得 (Visual Basic) |Microsoft ドキュメント"
+title: "方法: 1 つの子要素 (LINQ to XML) を取得 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 0033e258-d9c4-4569-86f6-79b7c06d1204
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 9e96e2e2270f16364b0a26a0b4f17c0d96d7c38b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 580315fda6ef6f1919f7f2aabc0cf3604a5c4337
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-retrieve-a-single-child-element-linq-to-xml-visual-basic"></a>方法: 単一の子要素 (LINQ to XML) を取得 (Visual Basic)
-このトピックでは、子要素名を指定して単一の子要素を取得する方法について説明します。 子要素の名前が既知であり、この名前を持つ要素が&1; つしか存在しない場合は、コレクションの代わりに&1; つの要素だけを取得する方が便利な場合があります。  
+# <a name="how-to-retrieve-a-single-child-element-linq-to-xml-visual-basic"></a>方法: 1 つの子要素 (LINQ to XML) を取得 (Visual Basic)
+このトピックでは、子要素名を指定して単一の子要素を取得する方法について説明します。 子要素の名前が既知であり、この名前を持つ要素が 1 つしか存在しない場合は、コレクションの代わりに 1 つの要素だけを取得する方が便利な場合があります。  
   
- <xref:System.Xml.Linq.XContainer.Element%2A>の最初子<xref:System.Xml.Linq.XElement>に指定された<xref:System.Xml.Linq.XName></xref:System.Xml.Linq.XName></xref:System.Xml.Linq.XElement>メソッドが返されます。</xref:System.Xml.Linq.XContainer.Element%2A>  
+ <xref:System.Xml.Linq.XContainer.Element%2A> メソッドは、指定された <xref:System.Xml.Linq.XElement> を持つ最初の子 <xref:System.Xml.Linq.XName> を返します。  
   
  Visual Basic で単一の子要素を取得する場合の一般的な方法は、XML プロパティを使用し、配列インデクサー表記を使用して最初の要素を取得する方法です。  
   
 ## <a name="example"></a>例  
- 次の例では、使用、<xref:System.Xml.Linq.XContainer.Element%2A>メソッド</xref:System.Xml.Linq.XContainer.Element%2A>。 この例では、`po` という名前の XML ツリーを受け取り、`Comment` という名前の最初の要素を検索します。  
+ <xref:System.Xml.Linq.XContainer.Element%2A> メソッドの使用例を次に示します。 この例では、`po` という名前の XML ツリーを受け取り、`Comment` という名前の最初の要素を検索します。  
   
  Visual Basic の例では、配列インデクサー表記を使用して単一の要素を取得しています。  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md)します。  
+ この例では、「[サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md)」の XML ドキュメントを使用します。  
   
 ```vb  
 Dim po As XElement = XElement.Load("PurchaseOrder.xml")  
@@ -50,9 +45,9 @@ Console.WriteLine(e)
 ```  
   
 ## <a name="example"></a>例  
- 上記と同じコードを使用して、名前空間内の XML から要素を取得する例を次に示します。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の使用](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)します。  
+ 上記と同じコードを使用して、名前空間内の XML から要素を取得する例を次に示します。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の操作](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)です。  
   
- この例は、次の XML ドキュメントを使用して:[サンプル XML ファイル: 一般的な購買発注書、Namespace で](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md)します。  
+ この例では、XML ドキュメントの「[サンプル XML ファイル : 名前空間内の一般的な購買発注書](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md)」を使用します。  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -74,4 +69,3 @@ End Module
   
 ## <a name="see-also"></a>関連項目  
  [LINQ to XML 軸 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
-

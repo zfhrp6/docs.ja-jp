@@ -1,61 +1,65 @@
 ---
-title: "方法 : サムネイル イメージを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "イメージ [Windows フォーム], 作成 (サムネイル)"
-  - "サムネイル イメージ, 作成"
+title: "方法 : サムネイル イメージを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- thumbnail images [Windows Forms], creating
+- images [Windows Forms], creating thumbnails
 ms.assetid: e956242a-1e5b-4217-a3cf-5f3fb45d00ba
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2a3866274340932819a419c622c10072dd67c439
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : サムネイル イメージを作成する
-サムネイル イメージとは、イメージの縮小版のことです。  サムネイル イメージを作成するには、<xref:System.Drawing.Image> オブジェクトの <xref:System.Drawing.Image.GetThumbnailImage%2A> メソッドを呼び出します。  
+# <a name="how-to-create-thumbnail-images"></a>方法 : サムネイル イメージを作成する
+サムネイル イメージとは、画像の縮小版です。 サムネイル イメージを作成するには呼び出すことによって、<xref:System.Drawing.Image.GetThumbnailImage%2A>のメソッド、<xref:System.Drawing.Image>オブジェクト。  
   
-## 使用例  
- JPG ファイルから <xref:System.Drawing.Image> オブジェクトを作成する例を次に示します。  元のイメージの幅は 640 ピクセルで、高さは 479 ピクセルです。  このコードは、幅および高さが共に 100 ピクセルのサムネイル イメージを作成します。  
+## <a name="example"></a>例  
+ 次の例の構築、 <xref:System.Drawing.Image> JPG ファイルからオブジェクト。 元のイメージは、640 ピクセル幅および 479 ピクセルの高さを持ちます。 コードでは、100 ピクセルの幅と高さ 100 ピクセルを持つサムネイル イメージを作成します。  
   
- 作成されたサムネイル イメージを次の図に示します。  
+ 次の図は、サムネイル画像を示します。  
   
- ![サムネイル イメージ](../../../../docs/framework/winforms/advanced/media/thumbnail1.png "Thumbnail1")  
+ ![サムネイル画像](../../../../docs/framework/winforms/advanced/media/thumbnail1.png "Thumbnail1")  
   
 > [!NOTE]
->  この例では、コールバック メソッドが宣言されていますが、使用しません。  このメソッドは GDI\+ のすべてのバージョンをサポートします。  
+>  この例では、コールバック メソッドは宣言されている、使用されていません。 これには、GDI + のすべてのバージョンがサポートしています。  
   
  [!code-csharp[System.Drawing.WorkingWithImages#71](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#71)]
  [!code-vb[System.Drawing.WorkingWithImages#71](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#71)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  この例を実行するには、次の手順に従います。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。 例を実行するには、次の手順に従います。  
   
-1.  新しい Windows フォームアプリケーションを作成します。  
+1.  新しい Windows フォーム アプリケーションを作成します。  
   
-2.  プログラム例をフォームに追加します。  
+2.  例のコードをフォームに追加します。  
   
-3.  フォームの <xref:System.Windows.Forms.Control.Paint> イベントのハンドラーを作成します。  
+3.  フォームのハンドラーを作成<xref:System.Windows.Forms.Control.Paint>イベント  
   
-4.  <xref:System.Windows.Forms.Control.Paint> ハンドラーで、`GetThumbnail` メソッドを呼び出し、<xref:System.Windows.Forms.PaintEventArgs> の `e` を渡します。  
+4.  <xref:System.Windows.Forms.Control.Paint>ハンドラーを呼び出し、`GetThumbnail`メソッドを渡します`e`の<xref:System.Windows.Forms.PaintEventArgs>します。  
   
-5.  サムネイルを作成するイメージ ファイルを見つけます。  
+5.  サムネイルを作成するイメージ ファイルを検索します。  
   
-6.  `GetThumbnail` メソッドで、イメージのパスとファイル名を指定します。  
+6.  `GetThumbnail`メソッドは、パスを指定し、ファイルをイメージ名。  
   
-7.  F5 キーを押して例を実行します。  
+7.  F5 キーを押して、例を実行します。  
   
-     100 × 100 のサムネイル イメージがフォーム上に表示されます。  
+     100 × 100 のサムネイル画像は、フォームに表示されます。  
   
-## 参照  
- [イメージ、ビットマップ、およびメタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)   
+## <a name="see-also"></a>関連項目  
+ [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

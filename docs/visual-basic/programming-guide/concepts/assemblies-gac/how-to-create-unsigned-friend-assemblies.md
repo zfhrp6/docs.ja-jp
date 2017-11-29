@@ -1,39 +1,31 @@
 ---
-title: "方法: 署名のないフレンド アセンブリ (Visual Basic) を作成する |Microsoft ドキュメント"
+title: "方法: 署名のないフレンド アセンブリ (Visual Basic) を作成します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 5735eb79-9729-4c46-ac1f-537ada3acaa7
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ceddb35c306f72c8927deda326d9fcca6c75d786
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: a2b2667c60a07a2897a0934d210901042e2e43c1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-visual-basic"></a>方法: 署名のないフレンド アセンブリ (Visual Basic) を作成します。
-この例では、フレンド アセンブリを署名されていないアセンブリを使用する方法を示します。  
+この例では、署名のないアセンブリと共にフレンド アセンブリを使用する方法を示します。  
   
-### <a name="to-create-an-assembly-and-a-friend-assembly"></a>アセンブリおよびフレンド アセンブリを作成するには  
+### <a name="to-create-an-assembly-and-a-friend-assembly"></a>署名のないアセンブリとフレンド アセンブリを作成するには  
   
 1.  コマンド プロンプトを開きます。  
   
-2.  という名前の Visual Basic ファイルの作成`friend_signed_A.`次のコードを格納しています。 コードを使用して、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>フレンド アセンブリとして friend_signed_B を宣言する属性</xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>。  
+2.  という名前の Visual Basic ファイルを作成する`friend_signed_A.`次のコードを格納しています。 コードでは <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を使用して、フレンド アセンブリとして friend_signed_B を宣言します。  
   
     ```vb  
     ' friend_unsigned_A.vb  
@@ -59,13 +51,13 @@ ms.lasthandoff: 03/13/2017
     End Class  
     ```  
   
-3.  コンパイルし、次のコマンドを使用して friend_signed_A に署名します。  
+3.  次のコマンドを使用して friend_signed_A をコンパイルして署名します。  
   
     ```vb  
     Vbc /target:library friend_unsigned_A.vb  
     ```  
   
-4.  という名前の Visual Basic ファイルの作成`friend_unsigned_B`次のコードを格納しています。 Friend_unsigned_B のコードにアクセスできる friend_unsigned_A 指定フレンド アセンブリとして friend_unsigned_B しているので`Friend`型およびメンバー friend_unsigned_A からです。  
+4.  という名前の Visual Basic ファイルを作成する`friend_unsigned_B`次のコードを格納しています。 friend_unsigned_A が friend_unsigned_B をフレンド アセンブリとして指定しているため、friend_unsigned_B 内のコードは、friend_unsigned_A の `Friend` 型とメンバーにアクセスできます。  
   
     ```vb  
     ' friend_unsigned_B.vb  
@@ -92,18 +84,18 @@ ms.lasthandoff: 03/13/2017
     Vbc /r:friend_unsigned_A.dll friend_unsigned_B.vb  
     ```  
   
-     コンパイラによって生成されるアセンブリの名前に渡されるフレンド アセンブリ名に一致する必要があります、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性</xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>。 使用してアセンブリを明示的に設定することができます、`/out`コンパイラ オプション。  
+     コンパイラによって生成されるアセンブリの名前は、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性に渡されるフレンド アセンブリ名と一致している必要があります。 使用してアセンブリを明示的に設定することができます、`/out`コンパイラ オプション。  
   
-6.  Friend_signed_B.exe ファイルを実行します。  
+6.  friend_signed_B.exe ファイルを実行します。  
   
-     2 つの文字列を出力します。"Class1.Test"と"Class2.Test"です。  
+     プログラムによって 2 つの文字列 "Class1.Test" と "Class2.Test" が出力されます。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性と<xref:System.Security.Permissions.StrongNameIdentityPermission>クラス</xref:System.Security.Permissions.StrongNameIdentityPermission></xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>の類似点があります。 その主な違いは<xref:System.Security.Permissions.StrongNameIdentityPermission>一方、コードの特定のセクションを実行するセキュリティのアクセス許可を要求できます、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性の表示を制御する`Friend`型およびメンバー</xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> </xref:System.Security.Permissions.StrongNameIdentityPermission> 。  
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性と <xref:System.Security.Permissions.StrongNameIdentityPermission> クラスには類似点があります。 主な違いは、<xref:System.Security.Permissions.StrongNameIdentityPermission> はセキュリティ アクセス許可を要求することで特定のコード セクションを実行できますが、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性では `Friend` 型とメンバーの参照可能範囲を制御することです。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute></xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>   
- [アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)   
- [フレンド アセンブリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/friend-assemblies.md)   
- [方法: 署名されたフレンド アセンブリ (Visual Basic) を作成します。](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)   
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
+ [アセンブリとグローバル アセンブリ キャッシュ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+ [フレンド アセンブリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+ [方法: 署名されたフレンド アセンブリ (Visual Basic) を作成します。](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
  [ガイドのプログラミング概念](../../../../visual-basic/programming-guide/concepts/index.md)

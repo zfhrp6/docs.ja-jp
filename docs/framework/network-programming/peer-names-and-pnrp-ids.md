@@ -7,22 +7,16 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: afa538e8-948f-4a98-aa9f-305134004115
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 11d20e346bba9ae6300f88c5d5bf48f99ec27904
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: c5b4bcf0a7a7d23dd54fad36b341e3ed241975b3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="peer-names-and-pnrp-ids"></a>ピア名と PNRP ID
 ピア名は通信のエンドポイントを表します。ピア名には、コンピューター、ユーザー、グループ、サービスのほか、ピアに関連付けられていて IPv6 アドレスに変換できるすべてのものを指定できます。 ピア名解決プロトコル (PNRP) は、クラウド メンバーの識別に使用される PNRP ID を作成するために、統計的に一意なピア名を取得します。  
@@ -46,6 +40,5 @@ ms.lasthandoff: 08/21/2017
  P2P ID とサービスの場所の組み合わせを使用すると、1 台のコンピューターから複数の PNRP ID を登録できます。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Net.PeerToPeer.PeerName>   
+ <xref:System.Net.PeerToPeer.PeerName>  
  <xref:System.Net.PeerToPeer>
-

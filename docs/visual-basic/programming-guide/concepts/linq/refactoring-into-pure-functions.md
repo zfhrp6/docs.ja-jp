@@ -1,42 +1,38 @@
 ---
-title: "純粋関数 (Visual Basic) へのリファクタリング |Microsoft ドキュメント"
+title: "純粋関数 (Visual Basic) へのリファクタリング"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 99e7d27b-a3ff-4577-bdb2-5a8278d6d7af
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: e622436905893872521994f6dc1a5bc1c8b3d06a
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: d0a1b8d314cf1403ef5065e5432f7acd15ebb440
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="refactoring-into-pure-functions-visual-basic"></a>純粋関数 (Visual Basic) へのリファクタリング
 純粋関数型変換で重要なのは、純粋関数を使用してコードをリファクターする方法を理解することです。  
   
- このセクションで既に説明したように、純粋関数には&2; つの実用的な特性があります。  
+ このセクションで既に説明したように、純粋関数には 2 つの実用的な特性があります。  
   
 -   副作用がありません。 この関数は、関数の外部にある変数やあらゆる型のデータを一切変更しません。  
   
 -   一貫性があります。 同じ入力データを与えられると、常に同じ出力値を返します。  
   
- 関数型プログラミングに移行するには、既存のコードをリファクターして不要な副作用や外部依存関係を排除するのが&1; つの方法です。 この方法で、既存のコードの純粋関数バージョンを作成できます。  
+ 関数型プログラミングに移行するには、既存のコードをリファクターして不要な副作用や外部依存関係を排除するのが 1 つの方法です。 この方法で、既存のコードの純粋関数バージョンを作成できます。  
   
- このトピックでは、純粋関数の特徴とそれ以外の関数の特徴について説明します。 [チュートリアル: WordprocessingML ドキュメント (Visual Basic の場合) 内のコンテンツを操作する](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)チュートリアル、WordprocessingML ドキュメントを操作する方法について説明し、純粋関数を使用してリファクターする方法の&2; つの例が含まれています。  
+ このトピックでは、純粋関数の特徴とそれ以外の関数の特徴について説明します。 [チュートリアル: WordprocessingML ドキュメント (Visual Basic の場合) 内のコンテンツの操作](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)チュートリアル、WordprocessingML ドキュメントを操作する方法を示していて、純粋関数を使用してリファクターする方法の 2 つの例が含まれています。  
   
 ## <a name="eliminating-side-effects-and-external-dependencies"></a>副作用と外部依存関係の排除  
- 次の例に示す&2; つの非純粋関数と&1; つの純粋関数を参照して、その違いを確認してください。  
+ 次の例に示す 2 つの非純粋関数と 1 つの純粋関数を参照して、その違いを確認してください。  
   
 ### <a name="non-pure-function-that-changes-a-class-member"></a>クラス メンバーを変更する非純粋関数  
  次のコードの `HypenatedConcat` 関数は、クラス内の `aMember` データ メンバーを変更するため、純粋関数ではありません。  
@@ -62,7 +58,7 @@ End Module
 StringOne-StringTwo  
 ```  
   
- ない関係は、データの変更の有無`public`または`private`にアクセスするか、`shared`メンバーまたはインスタンス メンバーです。 純粋関数は、関数の外部にあるデータを一切変更しません。  
+ 無関係に変更されるデータがあるかどうか注意`public`または`private`にアクセスするか、`shared`メンバーまたはインスタンス メンバーです。 純粋関数は、関数の外部にあるデータを一切変更しません。  
   
 ### <a name="non-pure-function-that-changes-an-argument"></a>引数を変更する非純粋関数  
  同じ関数の次のバージョンは、そのパラメーターである `sb` の内容を変更するため、純粋関数ではありません。  
@@ -81,7 +77,7 @@ Module Module1
 End Module  
 ```  
   
- このバージョンのプログラムでは、最初のバージョンと同じ出力が生成されるため、`HypenatedConcat`関数を呼び出して最初のパラメーターの値 (状態) を変更した、<xref:System.Text.StringBuilder.Append%2A>メンバー関数</xref:System.Text.StringBuilder.Append%2A>。 `HypenatedConcat` はパラメーターを値で渡しますが、それでもこの変更は行われるので注意してください。  
+ このバージョンのプログラムは、最初のバージョンと同じ出力を生成します。これは、`HypenatedConcat` 関数が <xref:System.Text.StringBuilder.Append%2A> メンバー関数を呼び出して最初のパラメーターの値 (状態) を変更したためです。 `HypenatedConcat` はパラメーターを値で渡しますが、それでもこの変更は行われるので注意してください。  
   
 > [!IMPORTANT]
 >  参照型の場合、パラメーターを値で渡すと、渡されるオブジェクトへの参照がコピーされて渡されます。 このコピーは、参照変数が新しいオブジェクトに割り当てられるまで、元の参照と同じインスタンス データに関連付けられたままとなります。 パラメーターを変更する場合に、必ずしも関数に参照を渡す必要はありません。  
@@ -110,8 +106,8 @@ End Module
 ## <a name="standard-query-operators"></a>標準クエリ演算子  
  標準クエリ演算子の重要な特性は、純粋関数として実装される点です。  
   
- 詳細については、次を参照してください。[標準クエリ演算子の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)します。  
+ 詳細については、次を参照してください。[標準クエリ演算子の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)です。  
   
 ## <a name="see-also"></a>関連項目  
- [純粋関数型変換 (Visual Basic) の概要](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)   
+ [純粋関数型変換 (Visual Basic) の概要](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)  
  [関数型プログラミングと命令型プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)

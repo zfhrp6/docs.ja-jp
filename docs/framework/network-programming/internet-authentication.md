@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - authentication [.NET Framework], classes
 - IAuthenticationModule interface
@@ -26,16 +21,15 @@ helpviewer_keywords:
 - NetworkCredential class, about NetworkCredential class
 - client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a26811b5dd62e30b371af88bc79d06843ef58d05
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: f44bef7804e9101b2d1bc50ba53f3fc7a5fa90ee
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="internet-authentication"></a>インターネット認証
 <xref:System.Net> クラスは、さまざまなクライアント認証メカニズムをサポートしています。これには、基本、ダイジェスト、ネゴシエート、NTLM、および Kerberos の標準のインターネット認証方法の他に、ユーザーが作成できるカスタム メソッドも含まれます。  
@@ -46,7 +40,7 @@ ms.lasthandoff: 08/21/2017
   
  **CredentialCache** クラスは、さまざまな Web リソースの資格情報のコレクションを格納します。 <xref:System.Net.CredentialCache.GetCredential%2A> メソッドが呼び出されると、**CredentialCache** は、適切な資格情報のセットを返します。これは Web リソースの URI と要求された認証スキームによって決まります。 異なる認証スキームでさまざまなインターネット リソースを使用するアプリケーションは、**CredentialCache** クラスを使用することでメリットが得られます。それは、このクラスがすべての資格情報を格納し、要求に応じてそれらを提供するからです。  
   
- インターネット リソースが認証を要求すると、<xref:System.Net.WebRequest.GetResponse%2A?displayProperty=fullName> メソッドは資格情報の要求と共に <xref:System.Net.WebRequest> を **AuthenticationManager** に送信します。 そして要求は、次のプロセスに従って認証されます。  
+ インターネット リソースが認証を要求すると、<xref:System.Net.WebRequest.GetResponse%2A?displayProperty=nameWithType> メソッドは資格情報の要求と共に <xref:System.Net.WebRequest> を **AuthenticationManager** に送信します。 そして要求は、次のプロセスに従って認証されます。  
   
 1.  **AuthenticationManager** が登録済みの各認証モジュールで、登録された順番で <xref:System.Net.IAuthenticationModule.Authenticate%2A> メソッドを呼び出します。 **AuthenticationManager** は **null** を返さない 1 つ目のモジュールを使用して認証プロセスを実行します。 プロセスの詳細は、使用する認証モジュールの種類によって異なります。  
   
@@ -55,7 +49,6 @@ ms.lasthandoff: 08/21/2017
  一部の認証スキームでは、最初にリソースの要求を作成しなくても、ユーザーを認証することができます。 リソースでユーザーを事前認証することで、サーバーへのラウンド トリップを少なくとも 1 回減らせるため、アプリケーションが時間を節約できます。 または、後でユーザーへの応答性を高めるため、プログラムの起動中に認証を実行できます。 事前認証を使用できる認証スキームで <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> プロパティを **true** に設定します。  
   
 ## <a name="see-also"></a>関連項目  
- [基本認証とダイジェスト認証](../../../docs/framework/network-programming/basic-and-digest-authentication.md)   
- [NTLM 認証および Kerberos 認証](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)   
+ [基本認証とダイジェスト認証](../../../docs/framework/network-programming/basic-and-digest-authentication.md)  
+ [NTLM と Kerberos 認証](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
  [ネットワーク プログラミングにおけるセキュリティ](../../../docs/framework/network-programming/security-in-network-programming.md)
-

@@ -1,52 +1,44 @@
 ---
-title: "LINQ to XML イベント (Visual Basic) |Microsoft ドキュメント"
+title: "LINQ to XML イベント (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 34923928-b99c-4004-956e-38f6db25e910
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2b7756845f155c4683015d54b41f2ecc09b29333
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b19d8f19f9feb1d385f9900d76d2a7af8e89bbeb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="linq-to-xml-events-visual-basic"></a>LINQ to XML イベント (Visual Basic)
-[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]イベントを使用すると、XML ツリーが変更されるときに通知することができます。  
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] イベントを使うと、XML ツリーが変更されるときに通知を受けることができます。  
   
- イベントをすべて<xref:System.Xml.Linq.XObject>。</xref:System.Xml.Linq.XObject>のインスタンスに追加します。 イベント ハンドラーがイベントをへの変更を受信して<xref:System.Xml.Linq.XObject>とその子孫のいずれか</xref:System.Xml.Linq.XObject>。 たとえば、イベント ハンドラーをツリーのルートに追加して、そのツリーに対するすべての変更をイベント ハンドラーから処理できます。  
+ イベントは、任意の <xref:System.Xml.Linq.XObject> のインスタンスに追加できます。 イベント ハンドラーは、その <xref:System.Xml.Linq.XObject> およびその任意の子孫に対する変更のイベントを受け取ります。 たとえば、イベント ハンドラーをツリーのルートに追加して、そのツリーに対するすべての変更をイベント ハンドラーから処理できます。  
   
- 例については[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] <xref:System.Xml.Linq.XObject.Changing> <xref:System.Xml.Linq.XObject.Changed>.</xref:System.Xml.Linq.XObject.Changed></xref:System.Xml.Linq.XObject.Changing>イベントを参照してください  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] イベントの例については、<xref:System.Xml.Linq.XObject.Changing> および <xref:System.Xml.Linq.XObject.Changed> を参照してください。  
   
 ## <a name="types-and-events"></a>型とイベント  
  イベントを使用する場合は、次の型を使用できます。  
   
 |種類|説明|  
 |----------|-----------------|  
-|<xref:System.Xml.Linq.XObjectChange></xref:System.Xml.Linq.XObjectChange>|<xref:System.Xml.Linq.XObject>。</xref:System.Xml.Linq.XObject>イベントが発生したときに、イベントの種類を指定します。|  
-|<xref:System.Xml.Linq.XObjectChangeEventArgs></xref:System.Xml.Linq.XObjectChangeEventArgs>|データを提供、<xref:System.Xml.Linq.XObject.Changing>と<xref:System.Xml.Linq.XObject.Changed>イベント</xref:System.Xml.Linq.XObject.Changed></xref:System.Xml.Linq.XObject.Changing>。|  
+|<xref:System.Xml.Linq.XObjectChange>|<xref:System.Xml.Linq.XObject> に対してイベントが生成されるときのイベントの種類を指定します。|  
+|<xref:System.Xml.Linq.XObjectChangeEventArgs>|<xref:System.Xml.Linq.XObject.Changing> イベントおよび <xref:System.Xml.Linq.XObject.Changed> イベントのデータを提供します。|  
   
  XML ツリーを変更するときに次のイベントが発生します。  
   
 |Event|説明|  
 |-----------|-----------------|  
-|<xref:System.Xml.Linq.XObject.Changing></xref:System.Xml.Linq.XObject.Changing>|この直前に発生<xref:System.Xml.Linq.XObject>を変更またはその子孫のいずれかができます</xref:System.Xml.Linq.XObject>。|  
-|<xref:System.Xml.Linq.XObject.Changed></xref:System.Xml.Linq.XObject.Changed>|発生したときに、<xref:System.Xml.Linq.XObject>が変更またはその子孫のいずれかの変更されています</xref:System.Xml.Linq.XObject>。|  
+|<xref:System.Xml.Linq.XObject.Changing>|<xref:System.Xml.Linq.XObject> またはその子孫のいずれかが変更される直前に発生します。|  
+|<xref:System.Xml.Linq.XObject.Changed>|<xref:System.Xml.Linq.XObject> またはその子孫のいずれかが変更されたときに発生します。|  
   
 ## <a name="example"></a>例  
   
@@ -132,4 +124,4 @@ Total:308
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+ [高度な LINQ to XML プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

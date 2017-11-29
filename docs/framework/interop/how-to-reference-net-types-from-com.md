@@ -5,15 +5,10 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+dev_langs: cpp
 helpviewer_keywords:
 - importing type library
 - COM interop, referencing .NET types
@@ -23,16 +18,15 @@ helpviewer_keywords:
 - type libraries
 - COM interop, importing type library
 ms.assetid: 54917f6f-cb18-4103-b622-856b55da93f3
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 345a698a4d45093dfb873a8303712a7bff5046cd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: f58225e41d7e09471685395dd6e2194ee5de123c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-reference-net-types-from-com"></a>方法: COM から .NET 型を参照する
 クライアント アンド サーバー コードの観点からすると、COM と .NET Framework の違いはほとんどわかりません。 Microsoft Visual Basic クライアントでは、オブジェクト ブラウザーを使って .NET オブジェクトを表示できます。オブジェクト ブラウザーには、オブジェクトのメソッドと構文、プロパティ、およびフィールドが、他の COM オブジェクトの場合と同様に公開されます。  
@@ -57,8 +51,7 @@ ms.lasthandoff: 08/21/2017
     ```  
   
 ## <a name="see-also"></a>関連項目  
- [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)   
- [COM へのアセンブリの登録](../../../docs/framework/interop/registering-assemblies-with-com.md)   
- [.NET オブジェクトの呼び出し](http://msdn.microsoft.com/en-us/40c9626c-aea6-4bad-b8f0-c1de462efd33)   
+ [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
+ [COM へのアセンブリの登録](../../../docs/framework/interop/registering-assemblies-with-com.md)  
+ [.NET オブジェクトの呼び出し](http://msdn.microsoft.com/en-us/40c9626c-aea6-4bad-b8f0-c1de462efd33)  
  [COM アクセスに対するアプリケーションの配置](http://msdn.microsoft.com/en-us/fb63564c-c1b9-4655-a094-a235625882ce)
-

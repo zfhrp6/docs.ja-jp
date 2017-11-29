@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - importing type library
 - type metadata
@@ -28,25 +22,24 @@ helpviewer_keywords:
 - COM interop, importing type library
 - COM interop, exposing COM components
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a907e75785bb0eb9ced43466ef5e51e598d4f629
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: a7657540991099cca29dc911c8e42e5ddcd22802
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>タイプ ライブラリのアセンブリとしてのインポート
 通常、COM 型の定義は、タイプ ライブラリに存在します。 これに対し、CLS 準拠のコンパイラはアセンブリ内に型のメタデータを生成します。 型情報の 2 つのソースは大きく異なります。 このトピックでは、タイプ ライブラリからメタデータを生成する方法について説明します。 結果のアセンブリは相互運用機能アセンブリと呼ばれ、含まれる型情報により、.NET Framework アプリケーションで COM 型を使用できます。  
   
  この型情報をアプリケーションに使用できるようにする 2 つの方法があります。  
   
--   デザイン時専用の相互運用アセンブリの使用: [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、相互運用機能アセンブリから実行可能ファイルに型情報を埋め込むようにコンパイラに指示できます。 コンパイラは、アプリケーションで使用する型情報だけを埋め込みます。 アプリケーションを使用して相互運用機能アセンブリを展開する必要はありません。 この手法を使用することをお勧めします。  
+-   デザイン時専用の相互運用アセンブリの使用: [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、相互運用機能アセンブリから実行可能ファイルに型情報を埋め込むようにコンパイラに指示できます。 コンパイラは、アプリケーションで使用する型情報だけを埋め込みます。 アプリケーションで相互運用機能アセンブリを配置する必要はありません。 この手法を使用することをお勧めします。  
   
--   相互運用機能アセンブリの展開: 相互運用機能アセンブリへの標準の参照を作成できます。 この場合、アプリケーションで相互運用機能アセンブリを展開する必要があります。 この手法を採用し、プライベートの COM コンポーネントを使用していない場合は、常に、マネージ コードで組み込む予定の COM コンポーネントの作成者によってパブリッシュされたプライマリ相互運用機能アセンブリ (PIA) を参照します。 プライマリ相互運用機能アセンブリの生成と使用の詳細については、「[プライマリ相互運用機能](http://msdn.microsoft.com/en-us/b977a8be-59a0-40a0-a806-b11ffba5c080)」を参照してください。  
+-   相互運用機能アセンブリの展開: 相互運用機能アセンブリへの標準の参照を作成できます。 この場合、アプリケーションで相互運用機能アセンブリを展開する必要があります。 この手法を採用し、プライベートの COM コンポーネントを使用しない場合は、常に、マネージ コードに組み込む予定の COM コンポーネントの作成者によって発行されたプライマリ相互運用機能アセンブリ (PIA) を参照します。 プライマリ相互運用機能アセンブリの生成と使用の詳細については、「[プライマリ相互運用機能](http://msdn.microsoft.com/en-us/b977a8be-59a0-40a0-a806-b11ffba5c080)」を参照してください。  
   
  設計時専用の相互運用機能アセンブリを使用する場合は、COM コンポーネントの作成者によってパブリッシュされたプライマリ相互運用機能アセンブリから型情報を埋め込むことができます。 ただし、アプリケーションを使用してプライマリ相互運用機能アセンブリを展開する必要はありません。  
   
@@ -65,7 +58,7 @@ ms.lasthandoff: 08/21/2017
   
      タイプ ライブラリ インポーターは、結果の相互運用機能のファイルのメタデータを調整するコマンド ライン オプションを提供し、既存のタイプ ライブラリから型をインポートし、相互運用機能アセンブリと名前空間を生成します。 手順については、「[方法: 相互運用機能アセンブリをタイプ ライブラリから生成する](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md)」を参照してください。  
   
--   <xref:System.Runtime.InteropServices.TypeLibConverter?displayProperty=fullName> クラス  
+-   <xref:System.Runtime.InteropServices.TypeLibConverter?displayProperty=nameWithType> クラス  
   
      このクラスは、コクラスとタイプ ライブラリ内のインターフェイスをアセンブリ内のメタデータに変換するメソッドを提供します。 これは Tlbimp.exe と同じメタデータ出力を生成します。 ただし、Tlbimp.exe とは異なり、<xref:System.Runtime.InteropServices.TypeLibConverter> クラスは、メモリ内のタイプ ライブラリをメタデータに変換できます。  
   
@@ -86,15 +79,14 @@ ms.lasthandoff: 08/21/2017
  COM 相互運用機能のインポート処理の詳細については、「[Type Library to Assembly Conversion Summary](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)」(タイプ ライブラリからアセンブリへの変換の要約) を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.InteropServices.TypeLibConverter>   
- [.NET Framework への COM コンポーネントの公開](../../../docs/framework/interop/exposing-com-components.md)   
- [タイプ ライブラリからアセンブリへの変換の要約](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)   
- [Tlbimp.exe (タイプ ライブラリ インポーター)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)   
- [標準ラッパーのカスタマイズ](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)   
- [マネージ コードでの COM 型の使用](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)   
- [相互運用プロジェクトのコンパイル](../../../docs/framework/interop/compiling-an-interop-project.md)   
- [相互運用アプリケーションの配置](../../../docs/framework/interop/deploying-an-interop-application.md)   
- [方法: タイプ ライブラリへの参照を追加する](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)   
- [方法: 相互運用機能アセンブリをタイプ ライブラリから生成する](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md)   
+ <xref:System.Runtime.InteropServices.TypeLibConverter>  
+ [.NET Framework への COM コンポーネントの公開](../../../docs/framework/interop/exposing-com-components.md)  
+ [タイプ ライブラリからアセンブリへの変換の要約](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)  
+ [Tlbimp.exe (タイプ ライブラリ インポーター)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
+ [標準ラッパーのカスタマイズ](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)  
+ [マネージ コードの COM 型の使用](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)  
+ [相互運用プロジェクトのコンパイル](../../../docs/framework/interop/compiling-an-interop-project.md)  
+ [相互運用アプリケーションの配置](../../../docs/framework/interop/deploying-an-interop-application.md)  
+ [方法: タイプ ライブラリへの参照を追加する](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)  
+ [方法: 相互運用機能アセンブリをタイプ ライブラリから生成する](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md)  
  [チュートリアル: Microsoft Office アセンブリからの型情報の埋め込み](http://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3)
-

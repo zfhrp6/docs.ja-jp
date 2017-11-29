@@ -1,90 +1,87 @@
 ---
-title: "&lt;&lt; Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.<<"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "bit shift operators"
-  - "<< operator [Visual Basic]"
-  - "operator <<, Visual Basic left shift operator"
+title: "&lt;&lt;演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.<<
+helpviewer_keywords:
+- bit shift operators [Visual Basic]
+- << operator [Visual Basic]
+- operator <<, Visual Basic left shift operator
 ms.assetid: fdb93d25-81ba-417f-b808-41207bfb8440
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 56cfb227f7e5c68de802c1f2cfb842a770f65ae0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;&lt; Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
+# <a name="ltlt-operator-visual-basic"></a>&lt;&lt;演算子 (Visual Basic)
 ビット パターンに対して算術左シフトを実行します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
 result = pattern << amount  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `result`  
- 必ず指定します。  整数値を指定します。  ビット パターンをシフトした結果が格納されます。  データ型は、`pattern` の型と同じになります。  
+ 必須です。 整数値。 ビット パターンのシフトの結果。 データ型はのと同じ`pattern`です。  
   
  `pattern`  
- 必ず指定します。  整数の式を指定します。  シフトされるビット パターンです。  データ型は整数型 \(`SByte`、`Byte`、`Short`、`UShort`、`Integer`、`UInteger`、`Long`、`ULong`\) である必要があります。  
+ 必須です。 整数の数値式です。 シフトするビット パターンです。 データ型は整数型である必要があります (`SByte`、 `Byte`、 `Short`、 `UShort`、 `Integer`、 `UInteger`、 `Long`、または`ULong`)。  
   
  `amount`  
- 必ず指定します。  数式を指定します。  ビット パターンは、このビット数だけシフトされます。  データ型は、整数型 \(`Integer`\) であるか、整数型 \(`Integer`\) に拡大変換する必要があります。  
+ 必須です。 数値式です。 ビット パターンをシフトするビット数。 データ型にする必要があります`Integer`に拡大変換または`Integer`です。  
   
-## 解説  
- 数値のシフトは、循環的には行われません。つまり、一方の端からはみ出したビットが、もう一方の端に補われることはありません。  左シフトの算術演算では、結果のデータ型の範囲を超えてシフトされるビットは破棄され、右側に空いたビット位置はゼロに設定されます。  
+## <a name="remarks"></a>コメント  
+ 算術シフトは循環、つまり、もう一方の端に結果の 1 つの端シフトは行われません。 算術左シフト、結果のデータ型の範囲を超えてシフトは破棄され、右側の空いたビット位置は 0 に設定されます。  
   
- 結果に保持できるビット数を超えるシフトを回避するために、Visual Basic は `pattern` のデータ型に対応するサイズ マスクを使用して、`amount` の値をマスクします。  シフト量には、これらの値のバイナリの AND が使用されます。  サイズ マスクは次のとおりです。  
+ Visual Basic は、シフトの結果を保持できる以上のビット数を防ぐためには、値をマスク`amount`のデータ型に対応するサイズ マスクを持つ`pattern`します。 これらの値のバイナリとシフト数が使用されます。 サイズのマスクは次のとおりです。  
   
-|`pattern` のデータ型|サイズ マスク \(10 進数\)|サイズ マスク \(16 進数\)|  
-|---------------------|-----------------------|-----------------------|  
-|`SByte`, `Byte`|7|&H00000007|  
-|`Short`, `UShort`|15|&H0000000F|  
-|`Integer`, `UInteger`|31|&H0000001F|  
-|`Long`, `ULong`|63|&H0000003F|  
+|データ型`pattern`|サイズのマスク (10 進数)|サイズのマスク (16 進数)|  
+|----------------------------|---------------------------|-------------------------------|  
+|`SByte`, `Byte`|7|(& A) H00000007|  
+|`Short`, `UShort`|15|(& A) H0000000F|  
+|`Integer`, `UInteger`|31|(& A) H0000001F|  
+|`Long`, `ULong`|63|(& A) H0000003F|  
   
- `amount` が 0 の場合、`result` の値は `pattern` の値と同じです。  `amount` が負の値である場合は、符号なしの値と解釈され、適切なサイズ マスクでマスクされます。  
+ 場合`amount`の値は 0 が`result`の値と同一では、`pattern`です。 場合`amount`は負の値は符号なしの値として解釈され、適切なサイズ マスクとマスクします。  
   
- 数値のシフトではオーバーフロー例外は発生しません。  
+ 算術シフトでは、オーバーフロー例外が生成されません。  
   
 > [!NOTE]
->  `<<` 演算子は *オーバーロード* できます。つまり、オペランドがそのクラスまたは構造体の型であれば、クラスまたは構造体がこの動作を再定義できます。  このようなクラスまたは構造体でこの演算子を使用している場合、再定義された動作を確認してください。  詳細については、「[Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+>  `<<`演算子を指定できます*オーバー ロードされた*、つまり、あるクラスまたは構造体を再定義できますその動作オペランドは、そのクラスまたは構造体の型を持つときにします。 コードは、このようなクラスまたは構造体で、この演算子を使用する場合、再定義された動作を理解していることを確認します。 詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。  
   
-## 使用例  
- `<<` 演算子を使用して整数値の算術左シフトを実行する例を次に示します。  結果のデータ型は、シフトされる前の式と常に同じ型になります。  
+## <a name="example"></a>例  
+ 次の例では、`<<`整数値の算術左シフトを実行する演算子です。 結果は、常に同じデータ移動されている式の型を持ちます。  
   
  [!code-vb[VbVbalrOperators#12](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/left-shift-operator_1.vb)]  
   
- この例の結果は、次のようになります。  
+ 前の例の結果は次のとおりです。  
   
--   `result1` は 192 \(0000 0000 1100 0000\) です。  
+-   `result1`192 (0000 0000 1100 0000)。  
   
--   `result2` は 3072 \(0000 1100 0000 0000\) です。  
+-   `result2`3072 (0000 1100 0000 0000)。  
   
--   `result3` は \-32768 \(1000 0000 0000 0000\) です。  
+-   `result3`-32768 (1000 0000 0000 0000)。  
   
--   `result4` は 384 \(0000 0001 1000 0000\) です。  
+-   `result4`384 (0000 0001 1000 0000) は、します。  
   
--   `result5` は 0 \(15 桁左にシフト\) です。  
+-   `result5`0 (シフト 15 桁) です。  
   
- `result4` のシフト量は 17 AND 15 として計算され、1 になります。  
+ Shift キーを押し、金額`result4`17 として計算されますが 1 に等しいと 15 です。  
   
-## 参照  
- [Bit Shift Operators](../../../visual-basic/language-reference/operators/bit-shift-operators.md)   
- [Assignment Operators](../../../visual-basic/language-reference/operators/assignment-operators.md)   
- [\<\<\= Operator](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)   
- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+## <a name="see-also"></a>関連項目  
+ [ビット シフト演算子](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
+ [代入演算子](../../../visual-basic/language-reference/operators/assignment-operators.md)  
+ [<<= 演算子](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)  
+ [Visual Basic における演算子の優先順位](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [機能別の演算子一覧](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [Visual Basic における算術演算子](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

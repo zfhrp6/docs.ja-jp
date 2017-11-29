@@ -1,156 +1,159 @@
 ---
-title: "トランザクション プロトコル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "トランザクション プロトコル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2820b0ec-2f32-430c-b299-1f0e95e1f2dc
-caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d8791b871679495e3f399649899535cc25f9c150
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# トランザクション プロトコル
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、WS\-Atomic Transaction プロトコルと WS\-Coordination プロトコルを実装しています。  
+# <a name="transaction-protocols"></a>トランザクション プロトコル
+[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] は、WS-Atomic Transaction プロトコルと WS-Coordination プロトコルを実装しています。  
   
-|仕様\/ドキュメント|バージョン|リンク|  
-|----------------|-----------|---------|  
-|WS\-Coordination|1.0<br /><br /> 1.1|[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96104](http://go.microsoft.com/fwlink/?LinkId=96104)<br /><br /> [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96079](http://go.microsoft.com/fwlink/?LinkId=96079)|  
-|WS\-AtomicTransaction|1.0<br /><br /> 1.1|[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96080](http://go.microsoft.com/fwlink/?LinkId=96080)<br /><br /> http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96081|  
+|仕様/ドキュメント|Version|Link|  
+|-----------------------------|-------------|----------|  
+|WS-Coordination|1.0<br /><br /> 1.1|[http://go.microsoft.com/fwlink/?LinkId=96104](http://go.microsoft.com/fwlink/?LinkId=96104)<br /><br /> [http://go.microsoft.com/fwlink/?LinkId=96079](http://go.microsoft.com/fwlink/?LinkId=96079)|  
+|WS-AtomicTransaction|1.0<br /><br /> 1.1|[http://go.microsoft.com/fwlink/?LinkId=96080](http://go.microsoft.com/fwlink/?LinkId=96080)<br /><br /> http://go.microsoft.com/fwlink/?LinkId=96081|  
   
- これらのプロトコル仕様の相互運用性は、アプリケーション間とトランザクション マネージャー間の 2 つのレベルで必要です \(次の図を参照\)。仕様では、相互運用性の両方のレベルについて、メッセージ形式とメッセージ交換が詳細に説明されます。アプリケーション間での交換に必要な一定のセキュリティ、信頼性、およびエンコーディングは、通常のアプリケーションによる交換にも当てはまります。ただし、トランザクション マネージャー間で適切な相互運用性を実現するには、特定のバインディングを使用するという合意が必要となります。通常、バインディングはユーザーによって構成されないためです。  
+ これらのプロトコル仕様の相互運用性は、アプリケーション間とトランザクション マネージャー間の 2 つのレベルで必要です (次の図を参照)。 仕様では、相互運用性の両方のレベルについて、メッセージ形式とメッセージ交換が詳細に説明されます。 アプリケーション間での交換に必要な一定のセキュリティ、信頼性、およびエンコーディングは、通常のアプリケーションによる交換にも当てはまります。 ただし、トランザクション マネージャー間で適切な相互運用性を実現するには、特定のバインディングを使用するという合意が必要となります。通常、バインディングはユーザーによって構成されないためです。  
   
- ここでは、WS\-AtomicTransaction \(WS\-AT\) 仕様のセキュリティに関する構成と、トランザクション マネージャー間の通信に使用されるセキュリティで保護されたバインディングについて説明します。このドキュメントで説明されているアプローチは、IBM、IONA、Sun Microsystems などを含む WS\-AT および WS\-Coordination の各種の実装でテスト済みのものです。  
+ ここでは、WS-AtomicTransaction (WS-AT) 仕様のセキュリティに関する構成と、トランザクション マネージャー間の通信に使用されるセキュリティで保護されたバインディングについて説明します。 このドキュメントで説明されているアプローチは、IBM、IONA、Sun Microsystems などを含む WS-AT および WS-Coordination の各種の実装でテスト済みのものです。  
   
- 次の図は、2 つのトランザクション マネージャー \(Transaction Manager 1 と Transaction Manager 2\)、および 2 つのアプリケーション \(Application 1 と Application 2\) 間の相互運用性を示しています。  
+ 次の図は、2 つのトランザクション マネージャー (Transaction Manager 1 と Transaction Manager 2)、および 2 つのアプリケーション (Application 1 と Application 2) 間の相互運用性を示しています。  
   
- ![トランザクション プロトコル](../../../../docs/framework/wcf/feature-details/media/transactionmanagers.gif "TransactionManagers")  
+ ![トランザクション プロトコル](../../../../docs/framework/wcf/feature-details/media/transactionmanagers.gif "トランザクション")  
   
- 1 つのイニシエーター \(I\) と 1 つの参加要素 \(P\) を持つ、一般的な WS\-Coordination\/WS\-AtomicTransaction のシナリオを考えます。イニシエーターと参加要素の両方にトランザクション マネージャー \(それぞれ ITM および PTM と呼びます\) があります。2 フェーズ コミットは、このトピックでは 2PC と呼びます。  
+ 1 つのイニシエーター (I) と 1 つの参加要素 (P) を持つ、一般的な WS-Coordination/WS-AtomicTransaction のシナリオを考えます。 イニシエーターと参加要素の両方にトランザクション マネージャー (それぞれ ITM および PTM と呼びます) があります。 2 フェーズ コミットは、このトピックでは 2PC と呼びます。  
   
 |||  
 |-|-|  
 |1.CreateCoordinationContext|12.アプリケーション メッセージ応答|  
-|2.CreateCoordinationContextResponse|13.Commit \(完了\)|  
-|3.Register \(完了\)|14.Prepare \(2PC\)|  
-|4.RegisterResponse|15.Prepare \(2PC\)|  
-|5.アプリケーション メッセージ|16.Prepared \(2PC\)|  
-|6.CreateCoordinationContext with Context|17.Prepared \(2PC\)|  
-|7.Register \(永続的\)|18.Committed \(完了\)|  
-|8.RegisterResponse|19.Commit \(2PC\)|  
-|9.CreateCoordinationContextResponse|20.Commit \(2PC\)|  
-|10.Register \(永続的\)|21.Committed \(2PC\)|  
-|11.RegisterResponse|22.Committed \(2PC\)|  
+|2.CreateCoordinationContextResponse|13.Commit (完了)|  
+|3.Register (完了)|14.Prepare (2PC)|  
+|4.RegisterResponse|15.Prepare (2PC)|  
+|5.アプリケーション メッセージ|16.Prepared (2PC)|  
+|6.CreateCoordinationContext with Context|17.Prepared (2PC)|  
+|7.Register (永続的)|18.Committed (完了)|  
+|8.RegisterResponse|19.Commit (2PC)|  
+|9.CreateCoordinationContextResponse|20.Commit (2PC)|  
+|10.Register (永続的)|21.Committed (2PC)|  
+|11.RegisterResponse|22.Committed (2PC)|  
   
- このドキュメントでは、WS\-AtomicTransaction 仕様のセキュリティに関する構成と、トランザクション マネージャー間の通信に使用されるセキュリティで保護されたバインディングについて説明します。このドキュメントで説明されているアプローチは、WS\-AT および WS\-Coordination の各種の実装でテスト済みのものです。  
+ このドキュメントでは、WS-AtomicTransaction 仕様のセキュリティに関する構成と、トランザクション マネージャー間の通信に使用されるセキュリティで保護されたバインディングについて説明します。 このドキュメントで説明されているアプローチは、WS-AT および WS-Coordination の各種の実装でテスト済みのものです。  
   
  この図および表では、セキュリティの観点から見た次の 4 つのクラスのメッセージを示しています。  
   
--   アクティベーション メッセージ \(CreateCoordinationContext と CreateCoordinationContextResponse\)  
+-   アクティベーション メッセージ (CreateCoordinationContext と CreateCoordinationContextResponse)  
   
--   登録メッセージ \(Register と RegisterResponse\)  
+-   登録メッセージ (Register と RegisterResponse)  
   
--   プロトコル メッセージ \(Prepare、Rollback、Commit、Aborted など\)  
+-   プロトコル メッセージ (Prepare、Rollback、Commit、Aborted など)  
   
 -   アプリケーション メッセージ  
   
- 最初の 3 つのメッセージ クラスはトランザクション マネージャーのメッセージと考えられます。これらのクラスのバインディング構成については、後の「アプリケーション メッセージ交換」で説明します。4 番目のメッセージ クラスは、アプリケーション間のメッセージであり、後の「メッセージの例」で説明します。ここでは、これらの各クラスで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって使用されるプロトコル バインディングについて説明します。  
+ 最初の 3 つのメッセージ クラスはトランザクション マネージャーのメッセージと考えられます。これらのクラスのバインディング構成については、後の「アプリケーション メッセージ交換」で説明します。 4 番目のメッセージ クラスは、アプリケーション間のメッセージであり、後の「メッセージの例」で説明します。 ここでは、これらの各クラスで [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によって使用されるプロトコル バインディングについて説明します。  
   
  このドキュメントでは、次の XML 名前空間と関連付けられたプレフィックスが使用されます。  
   
 |プレフィックス|Version|名前空間の URI|  
-|-------------|-------------|---------------|  
-|s11||[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96014](http://go.microsoft.com/fwlink/?LinkId=96014)|  
-|wsa|1.0 より前<br /><br /> 1.0|http:\/\/www.w3.org\/2004\/08\/addressing<br /><br /> [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96022](http://go.microsoft.com/fwlink/?LinkId=96022)|  
-|wscoor|1.0<br /><br /> 1.1|[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96078](http://go.microsoft.com/fwlink/?LinkId=96078)<br /><br /> [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96079](http://go.microsoft.com/fwlink/?LinkId=96079)|  
-|wsat|1.0<br /><br /> 1.1|[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96080](http://go.microsoft.com/fwlink/?LinkId=96080)<br /><br /> [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96081](http://go.microsoft.com/fwlink/?LinkId=96081)|  
-|t|1.3 より前<br /><br /> 1.3|[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96082](http://go.microsoft.com/fwlink/?LinkId=96082)<br /><br /> [http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96100](http://go.microsoft.com/fwlink/?LinkId=96100)|  
-|o||[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96101](http://go.microsoft.com/fwlink/?LinkId=96101)|  
-|xsd||[http:\/\/go.microsoft.com\/fwlink\/?LinkId\=96102](http://go.microsoft.com/fwlink/?LinkId=96102)|  
+|------------|-------------|-------------------|  
+|s11||[http://go.microsoft.com/fwlink/?LinkId=96014](http://go.microsoft.com/fwlink/?LinkId=96014)|  
+|wsa|1.0 より前<br /><br /> 1.0|http://www.w3.org/2004/08/addressing<br /><br /> [http://go.microsoft.com/fwlink/?LinkId=96022](http://go.microsoft.com/fwlink/?LinkId=96022)|  
+|wscoor|1.0<br /><br /> 1.1|[http://go.microsoft.com/fwlink/?LinkId=96078](http://go.microsoft.com/fwlink/?LinkId=96078)<br /><br /> [http://go.microsoft.com/fwlink/?LinkId=96079](http://go.microsoft.com/fwlink/?LinkId=96079)|  
+|wsat|1.0<br /><br /> 1.1|[http://go.microsoft.com/fwlink/?LinkId=96080](http://go.microsoft.com/fwlink/?LinkId=96080)<br /><br /> [http://go.microsoft.com/fwlink/?LinkId=96081](http://go.microsoft.com/fwlink/?LinkId=96081)|  
+|t|1.3 より前<br /><br /> 1.3|[http://go.microsoft.com/fwlink/?LinkId=96082](http://go.microsoft.com/fwlink/?LinkId=96082)<br /><br /> [http://go.microsoft.com/fwlink/?LinkId=96100](http://go.microsoft.com/fwlink/?LinkId=96100)|  
+|o||[http://go.microsoft.com/fwlink/?LinkId=96101](http://go.microsoft.com/fwlink/?LinkId=96101)|  
+|xsd||[http://go.microsoft.com/fwlink/?LinkId=96102](http://go.microsoft.com/fwlink/?LinkId=96102)|  
   
-## トランザクション マネージャー バインディング  
- R1001 : WS\-AT 1.0 トランザクションに参加するトランザクション マネージャーは、SOAP 1.1、WS\-Addressing 2004\/08 for WS\-Atomic Transaction、および WS\-Coordination メッセージ交換を使用する必要があります。  
+## <a name="transaction-manager-bindings"></a>トランザクション マネージャー バインディング  
+ R1001: トランザクション マネージャー、WS-AT 1.0 のトランザクションに参加している必要があります使用 SOAP 1.1、Ws-addressing 2004/08 for Ws-atomic Transaction、および Ws-coordination メッセージ交換。  
   
- R1002 : WS\-AT 1.1 トランザクションに参加するトランザクション マネージャーは、SOAP 1.1、WS\-Addressing 2005\/08 for WS\-Atomic Transaction、および WS\-Coordination メッセージ交換を使用する必要があります。  
+ R1002 : WS-AT 1.1 トランザクションに参加するトランザクション マネージャーは、SOAP 1.1、WS-Addressing 2005/08 for WS-Atomic Transaction、および WS-Coordination メッセージ交換を使用する必要があります。  
   
  アプリケーション メッセージは、後で説明するように、これらのバインディングに制限されません。  
   
-### トランザクション マネージャー HTTPS バインディング  
+### <a name="transaction-manager-https-binding"></a>トランザクション マネージャー HTTPS バインディング  
  トランザクション マネージャー HTTPS バインディングは、セキュリティを実現してトランザクション ツリー内の送信者と受信者の各ペア間で信頼を確立するトランスポート セキュリティにのみ依存します。  
   
-#### HTTPS トランスポート構成  
- トランザクション マネージャー ID を確立するために X.509 証明書が使用されます。クライアントおよびサーバーの承認が必要です。クライアントおよびサーバーの承認は、以下のような実装詳細の状態にしておきます。  
+#### <a name="https-transport-configuration"></a>HTTPS トランスポート構成  
+ トランザクション マネージャー ID を確立するために X.509 証明書が使用されます。 クライアントおよびサーバーの承認が必要です。クライアントおよびサーバーの承認は、以下のような実装詳細の状態にしておきます。  
   
--   R1111 : ネットワーク経由で示された X.509 証明書は、発信元コンピューターの完全修飾ドメイン名 \(FQDN\) と一致するサブジェクト名を持っている必要があります。  
+-   R1111 : ネットワーク経由で示された X.509 証明書は、発信元コンピューターの完全修飾ドメイン名 (FQDN) と一致するサブジェクト名を持っている必要があります。  
   
 -   B1112 : X.509 のサブジェクト名のチェックが成功するには、システム内の送信者と受信者の各ペア間で、DNS が機能している必要があります。  
   
-#### アクティベーションと登録のバインディング構成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、HTTPS 上での関連付けにおいて要求\/応答の二重バインディングが必要です \(関連付けと要求\/応答メッセージ交換パターンの詳細については、WS\-AtomicTransaction 仕様のセクション 8 を参照してください\)。  
+#### <a name="activation-and-registration-binding-configuration"></a>アクティベーションと登録のバインディング構成  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、HTTPS 上での関連付けにおいて要求/応答の二重バインディングが必要です  (関連付けと要求/応答メッセージ交換パターンの詳細については、WS-AtomicTransaction 仕様のセクション 8 を参照してください)。  
   
-#### 2PC プロトコルのバインディング構成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTPS 上の一方向 \(データグラム\) メッセージをサポートしています。メッセージ間の関連付けは、実装詳細の状態にしておきます。  
+#### <a name="2pc-protocol-binding-configuration"></a>2PC プロトコルのバインディング構成  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTPS 上の一方向 (データグラム) メッセージをサポートしています。 メッセージ間の関連付けは、実装詳細の状態にしておきます。  
   
- B1131 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の 2PC メッセージの関連付けを行うには、WS\-Addressing に記載されているように、実装で `wsa:ReferenceParameters` をサポートする必要があります。  
+ B1131: 実装をサポートする必要があります`wsa:ReferenceParameters`Ws-addressing の相関関係を実現するために」の説明に従って[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]の 2 pc メッセージ。  
   
-### トランザクション マネージャーによる混合セキュリティ バインディング  
- これは、ID を確立するために、トランスポート セキュリティを WS\-Coordination 発行済みトークン モデルと組み合わせて使用する代替の \(混合モードの\) バインディングです。2 つのバインディングを区別する要素は、アクティベーションと登録のみです。  
+### <a name="transaction-manager-mixed-security-binding"></a>トランザクション マネージャーによる混合セキュリティ バインディング  
+ これは、ID を確立するために、トランスポート セキュリティを WS-Coordination 発行済みトークン モデルと組み合わせて使用する代替の (混合モードの) バインディングです。 2 つのバインディングを区別する要素は、アクティベーションと登録のみです。  
   
-#### HTTPS トランスポート構成  
- トランザクション マネージャー ID を確立するために X.509 証明書が使用されます。クライアントおよびサーバーの承認が必要です。クライアントおよびサーバーの承認は、以下のような実装詳細の状態にしておきます。  
+#### <a name="https-transport-configuration"></a>HTTPS トランスポート構成  
+ トランザクション マネージャー ID を確立するために X.509 証明書が使用されます。 クライアントおよびサーバーの承認が必要です。クライアントおよびサーバーの承認は、以下のような実装詳細の状態にしておきます。  
   
-#### アクティベーション メッセージのバインディング構成  
+#### <a name="activation-message-binding-configuration"></a>アクティベーション メッセージのバインディング構成  
  アクティベーション メッセージは通常、アプリケーションとローカルのトランザクション マネージャー間で発生するため、相互運用には参加しません。  
   
- B1221 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、アクティベーション メッセージに \(「[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)」で説明する\) HTTPS の二重バインディングを使用します。要求\/応答メッセージは、WS\-AT 1.0 の WS\-Addressing 2004\/08 と WS\-AT 1.1 の WS\-Addressing 2005\/08 を使用して関連付けられます。  
+ B1221:[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]双方向の HTTPS バインドを使用して (「[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) アクティベーション メッセージのです。 要求/応答メッセージは、WS-AT 1.0 の WS-Addressing 2004/08 と WS-AT 1.1 の WS-Addressing 2005/08 を使用して関連付けられます。  
   
- WS\-AtomicTransaction 仕様のセクション 8 では、関連付けとメッセージ交換のパターンについて詳細に説明されています。  
+ WS-AtomicTransaction 仕様のセクション 8 では、関連付けとメッセージ交換のパターンについて詳細に説明されています。  
   
--   R1222 : `CreateCoordinationContext` を受信すると、コーディネーターは、関連付けられている秘密の `STx` を使用して `SecurityContextToken` を発行します。このトークンは、WS\-Trust の仕様に従って、`t:IssuedTokens` ヘッダー内に返されます。  
+-   R1222 : `CreateCoordinationContext` を受信すると、コーディネーターは、関連付けられている秘密の `SecurityContextToken` を使用して `STx` を発行します。 このトークンは、WS-Trust の仕様に従って、`t:IssuedTokens` ヘッダー内に返されます。  
   
--   R1223 : アクティベーションが既存のコーディネーション コンテキスト内で発生した場合、既存のコンテキストに関連付けられた `SecurityContextToken` がある `t:IssuedTokens` ヘッダーは、`CreateCoordinationContext` メッセージでフローする必要があります。  
+-   R1223 : アクティベーションが既存のコーディネーション コンテキスト内で発生した場合、既存のコンテキストに関連付けられた `t:IssuedTokens` がある `SecurityContextToken` ヘッダーは、`CreateCoordinationContext` メッセージでフローする必要があります。  
   
- `wscoor:CreateCoordinationContextResponse`  送信メッセージに添付する新しい `t:IssuedTokens` ヘッダーが生成されます。  
+ 新しい`t:IssuedTokens`送信にアタッチするためのヘッダーを生成する必要があります`wscoor:CreateCoordinationContextResponse`メッセージ。  
   
-#### 登録メッセージのバインディング構成  
- B1231 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、\(「[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)」で説明する\) HTTPS の二重バインディングを使用します。要求\/応答メッセージは、WS\-AT 1.0 の WS\-Addressing 2004\/08 と WS\-AT 1.1 の WS\-Addressing 2005\/08 を使用して関連付けられます。  
+#### <a name="registration-message-binding-configuration"></a>登録メッセージのバインド構成  
+ B1231:[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]双方向の HTTPS バインドを使用して (「[メッセージング プロトコル](../../../../docs/framework/wcf/feature-details/messaging-protocols.md))。 要求/応答メッセージは、WS-AT 1.0 の WS-Addressing 2004/08 と WS-AT 1.1 の WS-Addressing 2005/08 を使用して関連付けられます。  
   
- WS\-AtomicTransaction 仕様のセクション 8 では、関連付けとメッセージ交換のパターンについて詳細に説明されています。  
+ WS-AtomicTransaction 仕様のセクション 8 では、関連付けとメッセージ交換のパターンについて詳細に説明されています。  
   
- R1232 : `wscoor:Register` 送信メッセージでは、「[セキュリティ プロトコル](../../../../docs/framework/wcf/feature-details/security-protocols.md)」で説明する `IssuedTokenOverTransport` 認証モードを使用する必要があります。  
+ R1232: 発信`wscoor:Register`メッセージで使用する必要があります、`IssuedTokenOverTransport`で説明されている認証モード[セキュリティ プロトコル](../../../../docs/framework/wcf/feature-details/security-protocols.md)です。  
   
- `wsse:Timestamp` 要素は、`STx` によって発行された `SecurityContextToken` を使用して署名される必要があります。この署名は特定のトランザクションに関連付けられたトークンを所有していることの証明であり、トランザクションに登録されている参加要素の認証で使用されます。RegistrationResponse メッセージは、HTTPS を使用して返信されます。  
+ `wsse:Timestamp`要素を使用して署名する必要があります、`SecurityContextToken``STx`発行します。 この署名は特定のトランザクションに関連付けられたトークンを所有していることの証明であり、トランザクションに登録されている参加要素の認証で使用されます。 RegistrationResponse メッセージは、HTTPS を使用して返信されます。  
   
-#### 2PC プロトコルのバインディング構成  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTPS 上の一方向 \(データグラム\) メッセージをサポートしています。メッセージ間の関連付けは、実装詳細の状態にしておきます。  
+#### <a name="2pc-protocol-binding-configuration"></a>2PC プロトコルのバインディング構成  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、HTTPS 上の一方向 (データグラム) メッセージをサポートしています。 メッセージ間の関連付けは、実装詳細の状態にしておきます。  
   
- B1241 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] の 2PC メッセージの関連付けを行うには、WS\-Addressing に記載されているように、実装で `wsa:ReferenceParameters` がサポートされている必要があります。  
+ B1241 : `wsa:ReferenceParameters` の 2PC メッセージの関連付けを行うには、WS-Addressing に記載されているように、実装で [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] がサポートされている必要があります。  
   
-## アプリケーション メッセージ交換  
+## <a name="application-message-exchange"></a>アプリケーション メッセージ交換  
  アプリケーションでは、バインディングが次のセキュリティ要件を満たしている限り、アプリケーション間メッセージに任意のバインディングを使用できます。  
   
--   R2001 : アプリケーション間メッセージでは、メッセージのヘッダーの `CoordinationContext` に加えて `t:IssuedTokens` ヘッダーをフローする必要があります。  
+-   R2001 : アプリケーション間メッセージでは、メッセージのヘッダーの `t:IssuedTokens` に加えて `CoordinationContext` ヘッダーをフローする必要があります。  
   
 -   R2002 : `t:IssuedToken` の整合性と機密性が提供される必要があります。  
   
- `CoordinationContext` ヘッダーには `wscoor:Identifier` が含まれます。`xsd:AnyURI` の定義では、絶対 URI と相対 URI の両方の使用が許可されていますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では絶対 URI である `wscoor:Identifiers` のみがサポートされています。  
+ `CoordinationContext` ヘッダーには `wscoor:Identifier` が含まれます。 `xsd:AnyURI` の定義では、絶対 URI と相対 URI の両方の使用が許可されていますが、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では絶対 URI である `wscoor:Identifiers` のみがサポートされています。  
   
- B2003 : `wscoor:CoordinationContext` の `wscoor:Identifier` が相対 URI の場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] トランザクション サービスからエラーが返されます。  
+ B2003 : `wscoor:Identifier` の `wscoor:CoordinationContext` が相対 URI の場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] トランザクション サービスからエラーが返されます。  
   
-## メッセージの例  
+## <a name="message-examples"></a>メッセージの例  
   
-### CreateCoordinationContext 要求\/応答メッセージ  
- 次のメッセージは、要求\/応答のパターンに従います。  
+### <a name="createcoordinationcontext-requestresponse-messages"></a>CreateCoordinationContext 要求/応答メッセージ  
+ 次のメッセージは、要求/応答のパターンに従います。  
   
-#### WSCoor 1.0 での CreateCoordinationContext  
+#### <a name="createcoordinationcontext-with-wscoor-10"></a>WSCoor 1.0 での CreateCoordinationContext  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
     <a:Action>http://.../ws/2004/10/wscoor/CreateCoordinationContext</Action>  
@@ -172,12 +175,11 @@ caps.handback.revision: 14
     </wscoor:CreateCoordinationContext>  
   </s:Body>  
 </s11:Envelope>  
-  
 ```  
   
-#### WSCoor 1.1 での CreateCoordinationContext  
+#### <a name="createcoordinationcontext-with-wscoor-11"></a>WSCoor 1.1 での CreateCoordinationContext  
   
-```  
+```xml  
 <s:Envelope>   
 <s:Header>  
 <a:Action>http://docs.oasis-open.org/ws-tx/wscoor/2006/06/CreateCoordinationContext</Action>  
@@ -187,7 +189,7 @@ caps.handback.revision: 14
 </a:ReplyTo>   
 <a:To>https://...</a:To>   
 <wsse:Security>  
- <u:Timestamp>   
+ <u:Timestamp>  
 <wsu:Created>2005-12-15T23:36:09.921Z</u:Created>  
 <wsu:Expires>2005-12-15T23:41:09.921Z</u:Expires>  
 </u:Timestamp>   
@@ -197,14 +199,13 @@ caps.handback.revision: 14
 <wscoor:CreateCoordinationContext>  
 <wscoor:CoordinationType>...</wscoor:CoordinationType>  
 </wscoor:CreateCoordinationContext>  
- </s:Body>   
+ </s:Body>  
 </s11:Envelope>  
-  
 ```  
   
-#### Trust Pre\-1.3 および WSCoor 1.0 での CreateCoordinationContextResponse  
+#### <a name="createcoordinationcontextresponse-with-trust-pre-13-and-wscoor-10"></a>Trust Pre-1.3 および WSCoor 1.0 での CreateCoordinationContextResponse  
   
-```  
+```xml  
 <s:Envelope>  
   <!-- Data below is shown in the clear for  
        illustration purposes only. -->  
@@ -282,12 +283,11 @@ caps.handback.revision: 14
     </wscoor:CreateCoordinationContextResponse>  
   </s:Body>  
 </s:Envelope>  
-  
 ```  
   
-#### Trust 1.3 および WSCoor 1.1 での CreateCoordinationContextResponse  
+#### <a name="createcoordinationcontextresponse-with-trust-13-and-wscoor-11"></a>Trust 1.3 および WSCoor 1.1 での CreateCoordinationContextResponse  
   
-```  
+```xml  
 <s:Envelope>  
 <!-- Data below is shown in the clear for illustration purposes only. -->   
 <s:Header>   
@@ -359,15 +359,14 @@ xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
 </wscoor:CreateCoordinationContextResponse>   
 </s:Body>   
 </s:Envelope>  
-  
 ```  
   
-### 登録メッセージ  
+### <a name="registration-messages"></a>登録メッセージ  
  次のメッセージは、登録メッセージです。  
   
-#### WSCoor 1.0 での Register  
+#### <a name="register-with-wscoor-10"></a>WSCoor 1.0 での register します。  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
     <a:Action>http://schemas.xmlsoap.org/ws/2004/10/wscoor/Register</a:Action>  
@@ -424,12 +423,11 @@ xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
     </wscoor:Register>  
   </s:Body>  
 </s:Envelope>  
-  
 ```  
   
-#### WSCoor 1.1 での Register  
+#### <a name="register-with-wscoor-11"></a>WSCoor 1.1 での Register  
   
-```  
+```xml  
 <s:Envelope>  
 <s:Header>   
 <a:Action>http://docs.oasis-open.org/ws-tx/wscoor/2006/06/Register</a:Action>   
@@ -484,12 +482,11 @@ Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
 </wscoor:Register>   
 </s:Body>   
 </s:Envelope>  
-  
 ```  
   
-#### WSCoor 1.0 での Register Response  
+#### <a name="register-response-with-wscoor-10"></a>WSCoor 1.0 での register Response  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
     <a:Action>  
@@ -521,12 +518,11 @@ Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
     </wscoor:RegisterResponse>  
   </s:Body>  
 </s:Envelope>  
-  
 ```  
   
-#### WSCoor 1.1 での Register Response  
+#### <a name="register-response-with-wscoor-11"></a>WSCoor 1.1 での Register Response  
   
-```  
+```xml  
 <s:Envelope>  
 <s:Header>   
 <a:Action> http://docs.oasis-open.org/ws-tx/wscoor/2006/06/RegisterResponse  
@@ -553,15 +549,14 @@ xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-u
 </wscoor:RegisterResponse>   
 </s:Body>   
 </s:Envelope>  
-  
 ```  
   
-### 2 フェーズ コミット プロトコル メッセージ  
- 次のメッセージは、2 フェーズ コミット \(2PC\) プロトコルに関連しています。  
+### <a name="two-phase-commit-protocol-messages"></a>2 フェーズ コミット プロトコル メッセージ  
+ 次のメッセージは、2 フェーズ コミット (2PC) プロトコルに関連しています。  
   
-#### WSAT 1.0 での Commit  
+#### <a name="commit-with-wsat-10"></a>WSAT 1.0 での commit します。  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
     <a:Action>http://.../ws/2004/10/wsat/Commit</a:Action>  
@@ -580,12 +575,11 @@ xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-u
     <wsat:Commit />  
   </s:Body>  
 </s:Envelope>  
-  
 ```  
   
-#### WSAT 1.1 での Commit  
+#### <a name="commit-with-wsat-11"></a>WSAT 1.1 での Commit  
   
-```  
+```xml  
 <s:Envelope>  
 <s:Header>   
 <a:Action>http://docs.oasis-open.org/ws-tx/wsat/2006/06</a:Action>  
@@ -604,15 +598,14 @@ xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-u
 <wsat:Commit />   
 </s:Body>   
 </s:Envelope>  
-  
 ```  
   
-### アプリケーション メッセージ  
+### <a name="application-messages"></a>アプリケーション メッセージ  
  次のメッセージは、アプリケーション メッセージです。  
   
-#### アプリケーション メッセージ \(要求\)  
+#### <a name="application-message-request"></a>アプリケーション メッセージ (要求)  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
 <!-- Addressing headers, all signed-->  

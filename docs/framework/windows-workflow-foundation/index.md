@@ -11,16 +11,15 @@ helpviewer_keywords:
 - WF [WF]
 - Windows Workflow Foundation [WF]
 ms.assetid: 9a23ea6b-d600-483e-89cd-8889cfec5f66
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
 ms.openlocfilehash: d01680c038f075db4bdb9151a86d51820615a068
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/05/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="windows-workflow-foundation"></a>Windows Workflow Foundation
 ここでは、[!INCLUDE[wf](../../../includes/wf-md.md)] のプログラミング モデル、サンプル、およびツールについて説明します。  
@@ -55,4 +54,3 @@ ms.lasthandoff: 09/05/2017
   
  [Windows Workflow のサンプル](../../../docs/framework/windows-workflow-foundation/samples/index.md)  
  WF 機能およびシナリオを示すサンプル アプリケーションが含まれています。
-

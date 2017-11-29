@@ -1,38 +1,21 @@
 ---
-title: "ロケール ID &quot;&lt;名前&gt;&quot; は、このシステムではサポートされていません。Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "ロケール ID &#39;&lt;名前&gt;&#39; は、このシステムではサポートされていません"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-f1_keywords:
-- vbrArgument_LCIDNotSupported1
+f1_keywords: vbrArgument_LCIDNotSupported1
 ms.assetid: 62701434-0ac2-45b8-8b40-a9adc09ae6df
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 926bf98bf30817608a8f09f2812c2b7dbe213c27
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 0a9a91a297b62278a09c2fe6ee6e74bf0e827a58
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="locale-id-39ltnamegt39-is-not-supported-on-this-system"></a>ロケール ID '&lt;名前&gt;' は、このシステムではサポートされていません
+# <a name="locale-id-39ltnamegt39-is-not-supported-on-this-system"></a>ロケール ID &#39;&lt;名前&gt;&#39; は、このシステムではサポートされていません
 `VbStrConv`を使用しようとしましたが、システムは指定したロケールをサポートしていません。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
@@ -40,5 +23,5 @@ ms.lasthandoff: 03/13/2017
 1.  ロケールをサポートするためにコンピューターをアップグレードするか、または指定したロケールをサポートするコンピューターでアプリケーションを実行します。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Globalization>   
- [.NET Framework ベースの国際対応アプリケーションの概要](https://docs.microsoft.com/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)
+ <xref:System.Globalization>  
+ [.NET Framework ベースの国際対応アプリケーションの概要](/visualstudio/ide/introduction-to-international-applications-based-on-the-dotnet-framework)

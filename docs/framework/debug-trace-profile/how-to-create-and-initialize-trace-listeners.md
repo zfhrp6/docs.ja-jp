@@ -5,15 +5,12 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - initializing trace listeners
 - trace listeners, creating
@@ -21,19 +18,18 @@ helpviewer_keywords:
 - tracing [.NET Framework], trace listeners
 - logs, trace listeners
 ms.assetid: 21726de1-61ee-4fdc-9dd0-3be49324d066
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 38b2240f3f245e01f3aefaec14f5b7510a67ceae
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: d48c8f64a4dbdc7f1254a2cc2f0857f2714d6b2d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-create-and-initialize-trace-listeners"></a>方法 : トレース リスナーを作成し初期化する
-<xref:System.Diagnostics.Debug?displayProperty=fullName> クラスと <xref:System.Diagnostics.Trace?displayProperty=fullName> クラスは、メッセージの受け取りと処理を実行する、リスナーと呼ばれるオブジェクトにメッセージを送ります。 トレースまたはデバッグを有効にすると、こうしたリスナーの 1 つである <xref:System.Diagnostics.DefaultTraceListener?displayProperty=fullName> が自動的に作成および初期化されます。 <xref:System.Diagnostics.Trace> または <xref:System.Diagnostics.Debug> の出力を別のソースに送るには、別のトレース リスナーを作成して初期化する必要があります。  
+<xref:System.Diagnostics.Debug?displayProperty=nameWithType> クラスと <xref:System.Diagnostics.Trace?displayProperty=nameWithType> クラスは、メッセージの受け取りと処理を実行する、リスナーと呼ばれるオブジェクトにメッセージを送ります。 トレースまたはデバッグを有効にすると、こうしたリスナーの 1 つである <xref:System.Diagnostics.DefaultTraceListener?displayProperty=nameWithType> が自動的に作成および初期化されます。 <xref:System.Diagnostics.Trace> または <xref:System.Diagnostics.Debug> の出力を別のソースに送るには、別のトレース リスナーを作成して初期化する必要があります。  
   
  作成するリスナーには、アプリケーションのニーズが反映されている必要があります。 たとえば、すべてのトレース出力のテキスト レコードが必要である場合は、有効になったときにすべての出力を新しいテキスト ファイルに書き込む <xref:System.Diagnostics.TextWriterTraceListener> リスナーを作成します。 一方、アプリケーションの実行時にのみ出力を表示する場合は、すべての出力をコンソール ウィンドウに送る <xref:System.Diagnostics.ConsoleTraceListener> リスナーを作成します。 <xref:System.Diagnostics.EventLogTraceListener> は、トレース出力をイベント ログに転送することができます。 詳細については、「[トレース リスナー](../../../docs/framework/debug-trace-profile/trace-listeners.md)」を参照してください。  
   
@@ -107,8 +103,7 @@ ms.lasthandoff: 08/21/2017
     ```  
   
 ## <a name="see-also"></a>関連項目  
- [トレース リスナー](../../../docs/framework/debug-trace-profile/trace-listeners.md)   
- [トレース スイッチ](../../../docs/framework/debug-trace-profile/trace-switches.md)   
- [方法 : アプリケーション コードにトレース ステートメントを追加する](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)   
+ [トレース リスナー](../../../docs/framework/debug-trace-profile/trace-listeners.md)  
+ [トレース スイッチ](../../../docs/framework/debug-trace-profile/trace-switches.md)  
+ [方法: アプリケーション コードにトレース ステートメントを追加](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
  [アプリケーションのトレースとインストルメント](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
-

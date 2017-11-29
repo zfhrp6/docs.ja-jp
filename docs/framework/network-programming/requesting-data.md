@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - sending data
 - WebRequest class, sending and receiving data
@@ -25,16 +23,15 @@ helpviewer_keywords:
 - receiving data, about receiving data
 - Internet, requesting data
 ms.assetid: df6f1e1d-6f2a-45dd-8141-4a85c3dafe1d
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c492390eb4cb27973652cc6d62f8c1da2bd1121e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: bb5c79980246a9afa5a7e5024049c26815cab49d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="requesting-data"></a>データの要求
 今日のインターネットの分散操作環境で動作するアプリケーションを開発するには、あらゆる種類のリソースからデータを取得するための効率的で使いやすい方法が必要です。 プラグ可能なプロトコルを使うと、単一のインターフェイスを使って複数のインターネット プロトコルからデータを取得するアプリケーションを開発できます。  
@@ -44,15 +41,15 @@ ms.lasthandoff: 08/21/2017
   
  より複雑なトランザクションを行う必要があるクライアント アプリケーションは、**WebRequest** クラスとその子孫を使って、サーバーにデータを要求します。 **WebRequest** は、サーバーへの接続、要求の送信、応答の受信の詳細をカプセル化します。 **WebRequest** は、プラグ可能なプロトコルを使うすべてのアプリケーションで使うことができるプロパティとメソッドのセットを定義している抽象クラスです。 **WebRequest** の子孫 (<xref:System.Net.HttpWebRequest> など) は、**WebRequest** によって定義されているプロパティとメソッドを、基になるプロトコルと整合性があるように実装します。  
   
- **WebRequest** クラスは、<xref:System.Net.WebRequest.Create%2A> メソッドに渡された URI の値を使って、作成する特定の派生クラス インスタンスを決定することで、**WebRequest** の子孫のプロトコル固有のインスタンスを作成します。 アプリケーションは、子孫のコンストラクターを <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=fullName> メソッドに登録することで、要求の処理に使う必要のある **WebRequest** の子孫を示します。  
+ **WebRequest** クラスは、<xref:System.Net.WebRequest.Create%2A> メソッドに渡された URI の値を使って、作成する特定の派生クラス インスタンスを決定することで、**WebRequest** の子孫のプロトコル固有のインスタンスを作成します。 アプリケーションは、子孫のコンストラクターを <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=nameWithType> メソッドに登録することで、要求の処理に使う必要のある **WebRequest** の子孫を示します。  
   
- インターネット リソースに対する要求は、**WebRequest** の <xref:System.Net.WebRequest.GetResponse%2A> メソッドを呼び出すことによって行われます。 **GetResponse** メソッドは、**WebRequest** のプロパティからプロトコル固有の要求を作成し、サーバーに TCP または UDP ソケット接続を行って、要求を送信します。 HTTP の **Post** 要求や FTP の **Put** 要求など、サーバーにデータを送信する要求の場合は、<xref:System.Net.WebRequest.GetRequestStream%2A?displayProperty=fullName> メソッドがデータを送信するネットワーク ストリームを提供します。  
+ インターネット リソースに対する要求は、**WebRequest** の <xref:System.Net.WebRequest.GetResponse%2A> メソッドを呼び出すことによって行われます。 **GetResponse** メソッドは、**WebRequest** のプロパティからプロトコル固有の要求を作成し、サーバーに TCP または UDP ソケット接続を行って、要求を送信します。 HTTP の **Post** 要求や FTP の **Put** 要求など、サーバーにデータを送信する要求の場合は、<xref:System.Net.WebRequest.GetRequestStream%2A?displayProperty=nameWithType> メソッドがデータを送信するネットワーク ストリームを提供します。  
   
  **GetResponse** メソッドは、**WebRequest** と一致するプロトコル固有の **WebResponse** を返します。  
   
  **WebResponse** クラスも、プラグ可能なプロトコルを使うすべてのアプリケーションで使うことができるプロパティとメソッドを定義している抽象クラスです。 **WebResponse** の子孫は、基になるプロトコルのこれらのプロパティとメソッドを実装します。 たとえば、<xref:System.Net.HttpWebResponse> クラスは、HTTP 用の **WebResponse** クラスを実装します。  
   
- サーバーから返されたデータは、<xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=fullName> メソッドによって返されるストリームでアプリケーションに提供されます。 次の例で示すように、他のストリームと同じようにこのストリームを使うことができます。  
+ サーバーから返されたデータは、<xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=nameWithType> メソッドによって返されるストリームでアプリケーションに提供されます。 次の例で示すように、他のストリームと同じようにこのストリームを使うことができます。  
   
 ```csharp  
 StreamReader sr =  
@@ -65,7 +62,6 @@ sr = New StreamReader(resp.GetResponseStream(), Encoding.ASCII)
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)   
- [方法: Web ページを要求し、ストリームとして結果を取得する](../../../docs/framework/network-programming/how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)   
+ [.NET Framework のネットワーク プログラミング](../../../docs/framework/network-programming/index.md)  
+ [方法: Web ページを要求し、ストリームとして結果を取得する](../../../docs/framework/network-programming/how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)  
  [方法: WebRequest に一致するプロトコル固有の WebResponse を取得する](../../../docs/framework/network-programming/how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md)
-

@@ -1,74 +1,84 @@
 ---
-title: "方法 : 調整規則のないタイム ゾーンを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/10/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "調整規則 [.NET Framework]"
-  - "タイム ゾーン [.NET Framework], 調整規則"
-  - "タイム ゾーン [.NET Framework], 作成"
+title: "方法: 調整規則のないタイム ゾーンを作成"
+ms.custom: 
+ms.date: 04/10/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- time zones [.NET Framework], adjustment rule
+- time zones [.NET Framework], creating
+- adjustment rule [.NET Framework]
 ms.assetid: a6af8647-7893-4f29-95a9-d94c65a6e8dd
-caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 181d61de62ec9560b46732ad304b4934d4f55fa2
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : 調整規則のないタイム ゾーンを作成する
-アプリケーションで必要な正確なタイム ゾーン情報が、次のような理由で特定のシステムに存在しない場合があります。  
-  
--   ローカル システムのレジストリでタイム ゾーンが定義されていない。  
-  
--   タイム ゾーンに関するデータがレジストリで変更または削除されている。  
-  
--   タイム ゾーンは存在するが、過去の特定の期間のタイム ゾーン調整に関する正確な情報がない。  
-  
- このような場合は、<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> メソッドを呼び出して、アプリケーションで必要なタイム ゾーンを定義できます。  このメソッドのオーバーロードを使用すると、調整規則のあるタイム ゾーンまたは調整規則のないタイム ゾーンを作成できます。  タイム ゾーンが夏時間をサポートする場合は、固定調整規則または浮動調整規則の調整を定義できます。これらの用語の定義については、「[タイム ゾーンの概要](../../../docs/standard/datetime/time-zone-overview.md)」の「タイム ゾーンの用語」の節を参照してください。  
-  
+# <a name="how-to-create-time-zones-without-adjustment-rules"></a>方法: 調整規則のないタイム ゾーンを作成
+
+アプリケーションで必要とされる正確なタイム ゾーン情報は、いくつかの原因の特定のシステムに存在していない可能性があります。
+
+* タイム ゾーンはローカル システムのレジストリで定義されていません。
+
+* タイム ゾーンに関するデータが変更されたか、レジストリから削除されました。
+
+* タイム ゾーンが存在しますが、過去の特定の期間のタイム ゾーンの調整に関する正確な情報はありません。
+
+このような場合を呼び出すことができます、<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>メソッドをアプリケーションに必要なタイム ゾーンを定義します。 このメソッドのオーバー ロードを使用して、調整規則の有無は、タイム ゾーンを作成することができます。 タイム ゾーンが夏時間をサポートする場合は、いずれかの固定または浮動小数点の調整ルールの調整を定義できます。 (これらの用語の定義、「タイム ゾーンの用語」のセクションを参照してください。[タイム ゾーンの概要](../../../docs/standard/datetime/time-zone-overview.md))。
+
 > [!IMPORTANT]
->  <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> メソッドを呼び出すことで作成されるカスタム タイム ゾーンは、レジストリには追加されません。  カスタム タイム ゾーンには、<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> メソッドの呼び出しによって返されるオブジェクト参照を通してのみアクセスできます。  
-  
- このトピックでは、調整規則のないタイム ゾーンを作成する方法について説明します。  夏時間調整規則をサポートするタイム ゾーンを作成する方法については、「[方法 : 調整規則のあるタイム ゾーンを作成する](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)」を参照してください。  
-  
-### 調整規則のないタイム ゾーンを作成するには  
-  
-1.  タイム ゾーンの表示名を指定します。  
-  
-     表示名は、世界協定時刻 \(UTC: Coordinated Universal Time\) からのタイム ゾーンのオフセットをかっこで囲み、その後にタイム ゾーン、タイム ゾーン内の 1 つ以上の都市、またはタイム ゾーン内の 1 つ以上の国や地域を表す文字列が続く標準形式に従います。  
-  
-2.  タイム ゾーンの標準時間の名前を指定します。  通常は、この文字列がタイム ゾーンの ID としても使用されます。  
-  
-3.  タイム ゾーンの標準名とは異なる ID を使用する場合は、タイム ゾーン ID を指定します。  
-  
-4.  UTC からのタイム ゾーンのオフセットを定義する <xref:System.TimeSpan> オブジェクトをインスタンス化します。  UTC より後の時刻のタイム ゾーンでは正のオフセットになります。  UTC より前の時刻のタイム ゾーンでは負のオフセットになります。  
-  
-5.  <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=fullName> メソッドを呼び出して、新しいタイム ゾーンをインスタンス化します。  
-  
-## 使用例  
- 次の例では、南極のモーソンの、調整規則のないカスタム タイム ゾーンを定義します。  
-  
- [!code-csharp[System.TimeZone2.CreateTimeZone#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#1)]
- [!code-vb[System.TimeZone2.CreateTimeZone#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#1)]  
-  
- <xref:System.TimeZoneInfo.DisplayName%2A> プロパティに割り当てる文字列は、UTC からのタイム ゾーンのオフセットの後に、タイム ゾーンのわかりやすい説明を続ける標準形式に従います。  
-  
-## コードのコンパイル  
- この例には、次の項目が必要です。  
-  
--   System.Core.dll への参照をプロジェクトに追加する。  
-  
--   次の名前空間をインポートする。  
-  
-     [!code-csharp[System.TimeZone2.CreateTimeZone#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#6)]
-     [!code-vb[System.TimeZone2.CreateTimeZone#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#6)]  
-  
-## 参照  
- [日付、時刻、およびタイム ゾーン](../../../docs/standard/datetime/index.md)   
- [タイム ゾーンの概要](../../../docs/standard/datetime/time-zone-overview.md)   
- [方法 : 調整規則のあるタイム ゾーンを作成する](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)
+> 呼び出して作成されたカスタムのタイム ゾーン、<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>メソッドは、レジストリに追加されません。 代わりに、によって返されるオブジェクトの参照を介してのみアクセスすることができます、<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>メソッドの呼び出しです。
+
+このトピックでは、調整規則のないタイム ゾーンを作成する方法を示します。 夏時間の調整規則をサポートするタイム ゾーンを作成するを参照してください。[する方法: 調整規則のあるタイム ゾーンを作成する](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)です。
+
+### <a name="to-create-a-time-zone-without-adjustment-rules"></a>調整規則のないタイム ゾーンを作成するには
+
+1. タイム ゾーンの表示名を定義します。
+
+   表示名に依存して標準形式にタイム ゾーンのオフセット世界協定時刻 (UTC) からかっこで囲まれて、その後に、1 つまたは複数のタイム ゾーン、または 1 つの都市以上、cou のタイム ゾーンを識別する文字列ntries またはタイム ゾーン内の領域。
+
+2. タイム ゾーンの標準時の名前を定義します。 通常、この文字列は、タイム ゾーンの識別子としても使用します。
+
+3. タイム ゾーンの標準の名前とは異なる id を使用する場合は、タイム ゾーン id を定義します。
+
+4. インスタンスを作成、 <xref:System.TimeSpan> UTC からのタイム ゾーンのオフセットを定義するオブジェクト。 タイム ゾーンの時刻 (utc) より後に、正の値のオフセットを持っています。 タイム ゾーンの時刻は UTC よりも前に、負のオフセットを持っています。
+
+5. 呼び出す、<xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType>新しいタイム ゾーンをインスタンス化するメソッド。
+
+## <a name="example"></a>例
+
+次の例では、調整規則がない、南極のモーソンをカスタム タイム ゾーンを定義します。
+
+[!code-csharp[System.TimeZone2.CreateTimeZone#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#1)]
+[!code-vb[System.TimeZone2.CreateTimeZone#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#1)]
+
+割り当てられた文字列、<xref:System.TimeZoneInfo.DisplayName%2A>プロパティ (utc) からのタイム ゾーンのオフセットがタイム ゾーンのわかりやすい説明によってその後に、標準形式に依存します。
+
+## <a name="compiling-the-code"></a>コードのコンパイル
+
+この例で必要な要素は次のとおりです。
+
+* される System.Core.dll への参照をプロジェクトに追加します。
+
+* 次の名前空間は、インポートします。
+
+  [!code-csharp[System.TimeZone2.CreateTimeZone#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#6)]
+  [!code-vb[System.TimeZone2.CreateTimeZone#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#6)]
+
+## <a name="see-also"></a>関連項目
+
+[日付、時刻、およびタイム ゾーン](../../../docs/standard/datetime/index.md)
+[タイム ゾーンの概要](../../../docs/standard/datetime/time-zone-overview.md)
+[する方法: 調整規則のあるタイム ゾーンを作成します。](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)

@@ -1,74 +1,77 @@
 ---
-title: "x:Class Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "x:Class"
-  - "xClass"
-  - "Class"
-helpviewer_keywords: 
-  - "Class attribute in XAML [XAML Services]"
-  - "XAML [XAML Services], x:Class attribute"
-  - "x:Class attribute [XAML Services]"
+title: "x:Class ディレクティブ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- x:Class
+- xClass
+- Class
+helpviewer_keywords:
+- Class attribute in XAML [XAML Services]
+- XAML [XAML Services], x:Class attribute
+- x:Class attribute [XAML Services]
 ms.assetid: bc4a3d8e-76e2-423e-a5d1-159a023e82ec
-caps.latest.revision: 27
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 26
+caps.latest.revision: "27"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 1828ef3614cc1f3a81d8aeff62c15ed5accfe380
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# x:Class Directive
-マークアップと分離コード間を部分クラスで結合するように、XAML のマークアップ コンパイルを構成します。  コードの部分クラスは、[!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] 言語で個別のコード ファイル内に定義され、マークアップの部分クラスは、通常 XAML のコンパイル時にコード生成によって作成されます。  
+# <a name="xclass-directive"></a>x:Class ディレクティブ
+部分クラスのマークアップと分離コードの間で結合する XAML マークアップのコンパイルを構成します。 コードの部分クラスが個別のコード ファイル内で定義されている、[!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]言語、マークアップの部分クラスは、通常、XAML のコンパイル時にコード生成によって作成されします。  
   
-## XAML 属性の使用方法  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
   
 ```  
-<object x:Class="namespace.classname"...>  
+<object x:Class="namespace.classname"...>  
   ...  
 </object>  
 ```  
   
-## XAML 値  
+## <a name="xaml-values"></a>XAML 値  
   
 |||  
 |-|-|  
-|`namespace`|省略可能です。  `classname` で識別される部分クラスを含む [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] 名前空間を指定します。  `namespace` を指定する場合は、`namespace` と `classname` をドット \(.\) で区切ります。  「解説」を参照してください。|  
-|`classname`|必ず指定します。  読み込まれた XAML、およびその XAML の分離コードを接続する部分クラスの [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] 名を指定します。|  
+|`namespace`|省略可能です。 指定します、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]で識別される部分クラスを含む名前空間`classname`です。 場合`namespace`を指定すると、ドット (.) で区切られます`namespace`と`classname`です。 「解説」を参照してください。|  
+|`classname`|必須です。 指定します、[!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)]読み込まれた XAML およびその XAML の分離コードで接続する部分クラスの名前。|  
   
-## 依存関係  
- `x:Class` は、XAML 稼動環境のルート要素でのみ指定できます。  `x:Class` は、XAML 稼動環境内に親を持つ任意のオブジェクトで無効です。  詳細については、「[\[MS\-XAML\] 第 4.3.1.6 節](http://go.microsoft.com/fwlink/?LinkId=114525)」を参照してください。  
+## <a name="dependencies"></a>依存関係  
+ `x:Class`XAML の運用環境のルート要素でのみ指定できます。 `x:Class`XAML の運用環境である親を持つ任意のオブジェクトで有効です。 詳細については、次を参照してください。 [ \[MS-XAML\]セクション 4.3.1.6](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
   
-## 解説  
- `namespace` の値には、関連する名前空間を名前の階層に編成するために追加のドットを含めることができます。これは、.NET Framework プログラミングの一般的な手法です。  `x:Class` の値の文字列に含まれる最後のドットのみが、`namespace` と `classname` の区切りとして解釈されます。`x:Class` として使用するクラスは、入れ子にできません。  入れ子になったクラスが許可されると `x:Class` 文字列のドットの意味の判断があいまいになるので、入れ子になったクラスは許可されません。  
+## <a name="remarks"></a>コメント  
+ `namespace`値は、.NET Framework プログラミングで一般的な手法は、名前の階層に関連する名前空間を整理する追加のドットを含めることがあります。 文字列の最後のドットのみ`x:Class`を区切るための値を解釈`namespace`と`classname.`として使用されるクラス`x:Class`入れ子になったクラスにすることはできません。 ドットの意味を決定するため、入れ子になったクラスは許可されません`x:Class`文字列が入れ子になったクラスが許可されている場合は、あいまいです。  
   
- `x:Class` を使用する既存のプログラミング モデルの `x:Class` は、分離コードを一切持たない XAML ページが存在することはまったく問題ないという意味で省略可能です。  ただし、XAML を使用するフレームワークによって実装されたビルド アクションにはこの機能が作用します。  また、さまざまな種類の XAML 固有コンテンツがアプリケーション モデル内や対応するビルド アクションにおいて担う役割も、`x:Class` の機能に影響します。  イベント処理属性の値を XAML で宣言する場合や、\(定義しているクラスが分離コード クラスに存在するような\) カスタム要素を XAML でインスタンス化する場合には、分離コードの該当クラスに対する `x:Class` ディレクティブ参照 \(または [x:Subclass](../../../docs/framework/xaml-services/x-subclass-directive.md)\) を指定する必要があります。  
+ 既存のプログラミングを使用するモデル`x:Class`、`x:Class`を分離コードを持たない XAML ページが存在する有効な完全であるという意味では省略可能です。 ただし、その機能は、XAML を使用するフレームワークによって実装されているビルド アクションと対話します。 `x:Class`機能は、XAML で指定されたコンテンツのさまざまな分類が、アプリケーション モデルがあり、ビルド アクションで、対応するロールの影響も受けます。 指定する必要が、XAML では、イベント ハンドラー属性の値またはクラスを定義するには、分離コード クラスにあるカスタムの要素をインスタンス化を宣言する場合、`x:Class`ディレクティブ リファレンス (または[X:subclass](../../../docs/framework/xaml-services/x-subclass-directive.md)) に、分離コードの適切なクラスです。  
   
- `x:Class` ディレクティブの値は、クラスの完全修飾名を指定する文字列です。ただし、アセンブリの情報は含まれません \(<xref:System.Type.FullName%2A?displayProperty=fullName> に相当します\)。  単純なアプリケーションの場合、CLR 名前空間情報を省略することもできますが、分離コードもそのように構成されている \(コード定義がクラス レベルで開始する\) ことが条件となります。  
+ 値、`x:Class`ディレクティブは、アセンブリ情報がない場合は、クラスの完全修飾名を指定する文字列である必要があります (と同等、 <xref:System.Type.FullName%2A?displayProperty=nameWithType>)。 単純なアプリケーションは、分離コードがそのように (クラス レベルでコードの定義の開始) も構造化された場合、CLR 名前空間情報を省略できます。  
   
- ページまたはアプリケーション定義の分離コード ファイルは、コンパイル済みアプリケーションを作成しマークアップ コンパイルに関与するプロジェクトの一部として含まれているコード ファイル内にある必要があります。  CLR クラスの名前規則に従う必要があります。  詳細については、「[Framework デザイン ガイドライン](../../../ml/index.xml)」を参照してください。  既定では、分離コード クラスは `public` である必要がありますが、[x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)を使用して、異なるアクセス レベルとして定義できます。  
+ ページまたはアプリケーション定義の分離コード ファイルは、コンパイルされたアプリケーションを作成し、マークアップのコンパイルでは、プロジェクトの一部として含まれているコード ファイル内になければなりません。 CLR クラスの名前規則に従う必要があります。 詳細については、次を参照してください。 [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)です。 既定では、分離コード クラスがある必要があります`public`。 ただし、を使用して、異なるアクセス レベルで定義できる、 [X:classmodifier ディレクティブ](../../../docs/framework/xaml-services/x-classmodifier-directive.md)です。  
   
- この `x:Class` 属性の解釈が当てはまるのは、CLR ベースの XAML 実装、特に、.NET Framework XAML サービスのみです。  CLR に基づかず、.NET Framework XAML サービスを使用しない他の XAML 実装では、XAML マークアップと対応するランタイム コードを関連付けるために異なる解決式を使用する場合があります。  `x:Class` の一般的な解釈の詳細については、「[\[MS\-XAML\]](http://go.microsoft.com/fwlink/?LinkId=114525)」を参照してください。  
+ この解釈、`x:Class`属性にのみ適用されます、CLR ベースの XAML 実装では、特に .NET Framework XAML サービスにします。 CLR には基づいていません、.NET Framework XAML サービスを使用しないその他の XAML 実装には、XAML マークアップを接続し、実行時のコードをバックアップするための解像度が異なる数式を使用できます。 一般的な意味の詳細については`x:Class`を参照してください[ \[MS-XAML\]](http://go.microsoft.com/fwlink/?LinkId=114525)です。  
   
- 特定レベルのアーキテクチャでは、`x:Class` の意味は、.NET Framework XAML サービスで定義されていません。  これは、.NET Framework XAML サービスで、XAML マークアップと対応するコードが関連付けられるプログラミング モデルが指定されていないためです。  `x:Class` ディレクティブの用途は他にも考えられます。XAML マークアップと CLR ベースの分離コードを関連付ける方法を定義する目的で、そうした用途が、プログラミング モデルまたはアプリケーション モデルを使用する特定のフレームワークによって実装される場合があります。  それぞれのフレームワークは、一部の動作を実現する独自のビルド アクションや、ビルド環境に含める必要のある特定のコンポーネントを備えています。  フレームワーク内では、分離コードで使用される特定の CLR 言語に応じてビルド アクションは変化することもあります。  
+ アーキテクチャの意味のあるレベルで`x:Class`.NET Framework XAML サービスでは未定義です。 これは、.NET Framework XAML サービスでどの XAML マークアップおよびコードのバックアップを接続するプログラミング モデルが指定されていないためです。 別の使用、`x:Class`ディレクティブが XAML のマークアップと CLR ベースの分離コードを接続する方法を定義するプログラミング モデルまたはアプリケーションのモデルを使用する特定のフレームワークによって実装される可能性があります。 各フレームワークには、ビルド アクションをいくつかの動作またはビルド環境に含める必要がある特定のコンポーネントを有効にすることができます。 フレームワーク内でのビルド アクションは、分離コードに使用される特定の CLR 言語によっても異なります。  
   
-## WPF プログラミング モデルの x:Class  
- WPF アプリケーションおよび WPF アプリケーション モデルでは、`x:Class` を、XAML ファイルのルートで、コンパイルされている任意の要素の属性 \(XAML が `Page` ビルド アクションによって WPF アプリケーション プロジェクトに組み込まれている場合\)、またはコンパイル済み WPF アプリケーションのアプリケーション定義の <xref:System.Windows.Application> ルートの属性として宣言できます。  [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)] および [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] の WPF XAML コンパイラでは、ページ ルートまたはアプリケーション ルート以外の要素、あるいはコンパイルされていない WPF XAML ファイルで `x:Class` を宣言すると、コンパイル時エラーが発生します。  WPF の `x:Class` 処理に関連したその他の情報については、「[WPF における分離コードと XAML](../../../ocs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)」を参照してください。  
+## <a name="xclass-in-the-wpf-programming-model"></a>WPF のプログラミング モデルでは、X:class  
+ WPF アプリケーションと WPF アプリケーション モデルで`x:Class`を XAML ファイルのルートは、コンパイルしている任意の要素の属性として宣言することができます (と WPF アプリケーション プロジェクトでは、XAML が含まれている`Page`ビルド アクション)、または、「c4 > <xref:System.Windows.Application> コンパイル済みの WPF アプリケーションのアプリケーション定義のルートです。 宣言`x:Class`ページのルートまたはアプリケーションのルート以外の要素またはコンパイルされていない WPF XAML ファイルでは、コンパイル時エラーが発生、[!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)]と[!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)]WPF XAML コンパイラです。 他の側面について`x:Class`WPF での処理を参照してください[分離コードと wpf XAML](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)です。  
   
-## Windows Workflow Foundation の x:Class  
- Windows Workflow Foundation の場合、`x:Class` によって名前指定されるのは、完全に XAML で構成されたカスタム アクティビティのクラスか、または分離コードを持つアクティビティ デザイナー用の XAML ページの部分クラスです。  
+## <a name="xclass-for-windows-workflow-foundation"></a>Windows Workflow Foundation の x: クラス  
+ Windows Workflow foundation `x:Class` XAML で構成されるカスタム アクティビティのクラスの名前または分離コードを含むアクティビティ デザイナーに、XAML ページの部分クラスの名前を指定します。  
   
-## Silverlight の使用上の注意  
- Silverlight 用の `x:Class` に関しては、別途ドキュメントが用意されています。  詳細については、「[XAML 名前空間 \(x:\) 言語機能 \(Silverlight\)](http://go.microsoft.com/fwlink/?LinkId=199081)」を参照してください。  
+## <a name="silverlight-usage-notes"></a>Silverlight の使用上の注意  
+ Silverlight 用の `x:Class` に関しては、別途ドキュメントが用意されています。 詳細については、次を参照してください[XAML Namespace (x:)。言語機能 (Silverlight)](http://go.microsoft.com/fwlink/?LinkId=199081)です。  
   
-## 参照  
- [x:Subclass Directive](../../../docs/framework/xaml-services/x-subclass-directive.md)   
- [WPF における XAML とカスタム クラス](../../../ocs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)   
- [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)   
- [Types Migrated from WPF to System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)
+## <a name="see-also"></a>関連項目  
+ [x:Subclass ディレクティブ](../../../docs/framework/xaml-services/x-subclass-directive.md)  
+ [WPF における XAML とカスタム クラス](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
+ [x:ClassModifier ディレクティブ](../../../docs/framework/xaml-services/x-classmodifier-directive.md)  
+ [WPF から System.Xaml に移行した型](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

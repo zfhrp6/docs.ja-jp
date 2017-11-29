@@ -1,26 +1,30 @@
 ---
-title: "WF 内のコレクション アクティビティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WF 内のコレクション アクティビティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7f1feb09c67051c1e99ac199adc20fe6ca4d6e4e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WF 内のコレクション アクティビティ
-コレクション アクティビティはワークフローのコレクション オブジェクトの作業に使用します。  [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、コレクション内の項目の追加および削除、コレクション内の項目の存在を確認するテスト、およびコレクションの消去を行うシステム標準アクティビティがあります。  `ExistsInCollection` および `RemoveFromCollectio`n に、結果を示す <xref:System.Activities.OutArgument%601> 型の <xref:System.Boolean> があります。  
+# <a name="collection-activities-in-wf"></a>WF 内のコレクション アクティビティ
+コレクション アクティビティはワークフローのコレクション オブジェクトの作業に使用します。 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、コレクション内の項目の追加および削除、コレクション内の項目の存在を確認するテスト、およびコレクションの消去を行うシステム標準アクティビティがあります。 `ExistsInCollection`および`RemoveFromCollection`が、<xref:System.Activities.OutArgument%601>型の<xref:System.Boolean>結果を示します。  
   
 > [!IMPORTANT]
 >  コレクション アクティビティが、基礎となるコレクション オブジェクトの設定前に実行された場合、<xref:System.InvalidOperationException> がスローされ、アクティビティは失敗します。  
   
-## コレクション アクティビティ  
+## <a name="collection-activities"></a>コレクション アクティビティ  
   
 |||  
 |-|-|  
@@ -29,8 +33,8 @@ caps.handback.revision: 10
 |<xref:System.Activities.Statements.ExistsInCollection%601>|項目がコレクション内に存在する場合、`true` を返します。|  
 |<xref:System.Activities.Statements.RemoveFromCollection%601>|指定したコレクションから項目を削除し、項目が正常に削除された場合は `true` を返します。|  
   
-## コレクション アクティビティの使用  
- 次のコードは、ワークフロー変数として宣言されたコレクションとやり取りする方法の例です。  使用するコレクションは、<xref:System.Collections.Generic.List%E2%80%991> という <xref:System.String> オブジェクトの `fruitList` です。  
+## <a name="using-collection-activities"></a>コレクション アクティビティの使用  
+ 次のコードは、ワークフロー変数として宣言されたコレクションとやり取りする方法の例です。 使用するコレクションは、 <!--zz <xref:System.Collections.Generic.List%E2%80%991>--> `System.Collections.Generic.List`の<xref:System.String>という名前のオブジェクト`fruitList`です。  
   
 ```csharp  
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  
@@ -85,7 +89,6 @@ Activity wf = new Sequence
         }  
     }  
 };  
-  
 ```  
   
 ```xaml  
@@ -229,7 +232,6 @@ Activity wf = new Sequence
     </If.Then>  
   </If>  
 </Sequence>  
-  
 ```  
   
  上のコード サンプルは、<xref:Microsoft.CSharp.Activities.CSharpValue%601> の代わりに <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> を使用しても作成できます。  
@@ -287,10 +289,9 @@ Activity wf = new Sequence
         }  
     }  
 };  
-  
 ```  
   
-```  
+```xml  
 <Sequence  
    xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"  
    xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"  
@@ -431,8 +432,7 @@ Activity wf = new Sequence
     </If.Then>  
   </If>  
 </Sequence>  
-  
 ```  
   
-## 参照  
- [命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法](../../../docs/framework/windows-workflow-foundation//authoring-workflows-activities-and-expressions-using-imperative-code.md)
+## <a name="see-also"></a>関連項目  
+ [命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)

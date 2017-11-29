@@ -1,30 +1,34 @@
 ---
-title: "補正 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "補正"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 722e9766-48d7-456c-9496-d7c5c8f0fa76
-caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 338eb9f39034bbc9daf184d691cc1bb535326a45
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 補正
-[!INCLUDE[wf](../../../includes/wf-md.md)] の補正は、エラーが発生した場合に、前に完了した作業を \(アプリケーションで定義されるロジックに応じて\) 取り消したり補正したりできる機構です。ここでは、ワークフローで補正を使用する方法について説明します。  
+# <a name="compensation"></a>補正
+[!INCLUDE[wf](../../../includes/wf-md.md)] の補正は、エラーが発生した場合に、前に完了した作業を (アプリケーションで定義されるロジックに応じて) 取り消したり補正したりできる機構です。 ここでは、ワークフローで補正を使用する方法について説明します。  
   
-## 補正とトランザクション  
- トランザクションを使用することで、複数の操作を 1 つの作業単位にまとめることができます。アプリケーションでトランザクションを使用すると、トランザクションのプロセスでエラーが発生した場合、トランザクション内で実行されたすべての変更を中止 \(ロールバック\) できます。ただし、作業が長時間実行されている場合は、トランザクションの使用が適切でないことがあります。たとえば、旅行計画用アプリケーションはワークフローとして実装されます。このワークフローの手順は、フライトの予約、マネージャーによる承認の待機、およびチケットの支払いで構成されていることがあります。このプロセスには数日かかる場合があり、フライトの予約と支払いの手順を同じトランザクションに参加させるのは実用的ではありません。このようなシナリオでは、処理の後半でエラーが発生した場合、補正を使用してワークフローの予約の手順を取り消すことができます。  
+## <a name="compensation-vs-transactions"></a>補正とトランザクション  
+ トランザクションを使用することで、複数の操作を 1 つの作業単位にまとめることができます。 アプリケーションでトランザクションを使用すると、トランザクションのプロセスでエラーが発生した場合、トランザクション内で実行されたすべての変更を中止 (ロールバック) できます。 ただし、作業が長時間実行されている場合は、トランザクションの使用が適切でないことがあります。 たとえば、旅行計画用アプリケーションはワークフローとして実装されます。 このワークフローの手順は、フライトの予約、マネージャーによる承認の待機、およびチケットの支払いで構成されていることがあります。 このプロセスには数日かかる場合があり、フライトの予約と支払いの手順を同じトランザクションに参加させるのは実用的ではありません。 このようなシナリオでは、処理の後半でエラーが発生した場合、補正を使用してワークフローの予約の手順を取り消すことができます。  
   
 > [!NOTE]
->  このトピックでは、ワーク フローの補正について説明します。[!INCLUDE[crabout](../../../includes/crabout-md.md)] ワークフロー内でのトランザクションについては、[トランザクション](../../../docs/framework/windows-workflow-foundation//workflow-transactions.md) と <xref:System.Activities.Statements.TransactionScope> を参照してください。[!INCLUDE[crabout](../../../includes/crabout-md.md)] トランザクションについては、<xref:System.Transactions?displayProperty=fullName> と <xref:System.Transactions.Transaction?displayProperty=fullName> を参照してください。  
+>  このトピックでは、ワーク フローの補正について説明します。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]ワークフローでトランザクションを参照してください[トランザクション](../../../docs/framework/windows-workflow-foundation/workflow-transactions.md)と<xref:System.Activities.Statements.TransactionScope>です。 トランザクションの[!INCLUDE[crabout](../../../includes/crabout-md.md)]については、「<xref:System.Transactions?displayProperty=nameWithType>」と「<xref:System.Transactions.Transaction?displayProperty=nameWithType>」を参照してください。  
   
-## CompensableActivity の使用  
- <xref:System.Activities.Statements.CompensableActivity> は、[!INCLUDE[wf1](../../../includes/wf1-md.md)] の中心的な補正アクティビティです。補正が必要な可能性がある作業を実行するアクティビティは、すべて <xref:System.Activities.Statements.CompensableActivity> の <xref:System.Activities.Statements.CompensableActivity.Body%2A> に配置されます。この例では、航空券を購入する予約手順を <xref:System.Activities.Statements.CompensableActivity> の <xref:System.Activities.Statements.CompensableActivity.Body%2A> に配置し、予約の取り消しを <xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A> に配置します。ワークフロー内の <xref:System.Activities.Statements.CompensableActivity> の直後には、マネージャーの承認を待ち、航空券の購入手順を完了するという 2 つのアクティビティがあります。<xref:System.Activities.Statements.CompensableActivity> が正常に完了した後に、エラー条件によってワークフローが取り消された場合、<xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A> ハンドラー内のアクティビティがスケジュールされ、航空券は取り消されます。  
+## <a name="using-compensableactivity"></a>CompensableActivity の使用  
+ <xref:System.Activities.Statements.CompensableActivity> は、[!INCLUDE[wf1](../../../includes/wf1-md.md)] の中心的な補正アクティビティです。 補正が必要な可能性がある作業を実行するアクティビティは、すべて <xref:System.Activities.Statements.CompensableActivity.Body%2A> の <xref:System.Activities.Statements.CompensableActivity> に配置されます。 この例では、航空券を購入する予約手順を <xref:System.Activities.Statements.CompensableActivity.Body%2A> の <xref:System.Activities.Statements.CompensableActivity> に配置し、予約の取り消しを <xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A> に配置します。 ワークフロー内の <xref:System.Activities.Statements.CompensableActivity> の直後には、マネージャーの承認を待ち、航空券の購入手順を完了するという 2 つのアクティビティがあります。 <xref:System.Activities.Statements.CompensableActivity> が正常に完了した後に、エラー条件によってワークフローが取り消された場合、<xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A> ハンドラー内のアクティビティがスケジュールされ、航空券は取り消されます。  
   
  [!code-csharp[CFX_CompensationExample#1](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#1)]  
   
@@ -52,18 +56,18 @@ caps.handback.revision: 26
   
  このワークフローが呼び出されると、次の出力がコンソールに表示されます。  
   
- **ReserveFlight: チケットが予約されました。**   
-**ManagerApproval: マネージャーの承認を受けました。**   
+ **ReserveFlight: チケットが予約されています。**  
+**ManagerApproval: マネージャーの承認を受信します。**   
 **PurchaseFlight: チケットが購入されました。**   
-**ワークフローは Closed の状態で正常に完了しました。**    
+**ワークフローの状態で正常に完了しました。 終了します。**    
 > [!NOTE]
 >  `ReserveFlight` などのこのトピックのサンプル アクティビティでは、コンソールにアクティビティの名前や目的が表示されるため、補正が行われるときのアクティビティの順序がわかりやすくなっています。  
   
-### 既定のワークフローの補正  
+### <a name="default-workflow-compensation"></a>既定のワークフローの補正  
  既定では、ワークフローを取り消すと、正常に完了済みであるがまだ確認または補正されていない補正可能なアクティビティに対して、補正ロジックが実行されます。  
   
 > [!NOTE]
->  <xref:System.Activities.Statements.CompensableActivity> を*確認*すると、そのアクティビティの補正は呼び出すことができなくなります。確認プロセスについては、このセクションの後半で説明します。  
+>  ときに、<xref:System.Activities.Statements.CompensableActivity>は*確認*、そのアクティビティの補正を呼び出すことが不要になったことができます。 確認プロセスについては、このセクションの後半で説明します。  
   
  この例では、航空券の予約後かつマネージャーの承認手順前に例外がスローされます。  
   
@@ -96,19 +100,19 @@ caps.handback.revision: 26
   
  ワークフローが呼び出されると、シミュレートされたエラー状態の例外が <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> のホスト アプリケーションで処理されて、ワークフローが取り消され、補正ロジックが呼び出されます。  
   
- **ReserveFlight: チケットが予約されました。**   
-**SimulatedErrorCondition: ApplicationException をスローします。**   
-**ワークフロー未処理の例外:**   
-**System.ApplicationException: ワーク フローのシミュレートされたエラー状態。**   
+ **ReserveFlight: チケットが予約されています。**  
+**Simulatederrorcondition: ApplicationException をスローします。**   
+**ワークフロー未処理の例外。**   
+**System.applicationexception: ワークフローの条件をシミュレートされたエラーです。**   
 **CancelFlight: チケットは取り消されました。**   
-**ワークフローは Canceled の状態で正常に完了しました。**    
-### 取り消しと CompensableActivity  
- <xref:System.Activities.Statements.CompensableActivity> の <xref:System.Activities.Statements.CompensableActivity.Body%2A> 内のアクティビティが完了せず、アクティビティが取り消されると、<xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> が実行されます。  
+**ワークフローの状態で正常に完了しました: 取り消されました。**    
+### <a name="cancellation-and-compensableactivity"></a>取り消しと CompensableActivity  
+ <xref:System.Activities.Statements.CompensableActivity.Body%2A> の <xref:System.Activities.Statements.CompensableActivity> 内のアクティビティが完了せず、アクティビティが取り消されると、<xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> が実行されます。  
   
 > [!NOTE]
->  <xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> が呼び出されるのは、<xref:System.Activities.Statements.CompensableActivity> の <xref:System.Activities.Statements.CompensableActivity.Body%2A> 内のアクティビティが完了せず、アクティビティが取り消された場合だけです。<xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A> は、<xref:System.Activities.Statements.CompensableActivity> の <xref:System.Activities.Statements.CompensableActivity.Body%2A> 内のアクティビティが正常に完了し、その後にアクティビティで補正が呼び出された場合にのみ実行されます。  
+>  <xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> が呼び出されるのは、<xref:System.Activities.Statements.CompensableActivity.Body%2A> の <xref:System.Activities.Statements.CompensableActivity> 内のアクティビティが完了せず、アクティビティが取り消された場合だけです。 <xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A> は、<xref:System.Activities.Statements.CompensableActivity.Body%2A> の <xref:System.Activities.Statements.CompensableActivity> 内のアクティビティが正常に完了し、その後にアクティビティで補正が呼び出された場合にのみ実行されます。  
   
- <xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> を使用すると、ワークフローの作成者は、適切な取り消しロジックを指定できます。次の例では、<xref:System.Activities.Statements.CompensableActivity.Body%2A> の実行中に例外がスローされてから、<xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> が呼び出されます。  
+ <xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> を使用すると、ワークフローの作成者は、適切な取り消しロジックを指定できます。 次の例では、<xref:System.Activities.Statements.CompensableActivity.Body%2A> の実行中に例外がスローされてから、<xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> が呼び出されます。  
   
 ```csharp  
 Activity wf = new Sequence()  
@@ -133,7 +137,6 @@ Activity wf = new Sequence()
         new PurchaseFlight()  
     }  
 };  
-  
 ```  
   
  この例は XAML のワークフローです。  
@@ -165,17 +168,17 @@ Activity wf = new Sequence()
 </Sequence>  
 ```  
   
- ワークフローが呼び出されると、シミュレートされたエラー状態の例外が、<xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> のホスト アプリケーションで処理されて、ワークフローが取り消され、<xref:System.Activities.Statements.CompensableActivity> の取り消しロジックが呼び出されます。この例では、補正ロジックと取り消しロジックの目的は異なります<xref:System.Activities.Statements.CompensableActivity.Body%2A> が正常に完了した場合、これはクレジット カードに課金されてフライトが予約されたことを意味するので、補正で両方の手順を取り消す必要があります\(この例では、航空券を取り消すとクレジット カードへの課金が自動的に取り消されます\)。ただし、<xref:System.Activities.Statements.CompensableActivity> が取り消される場合、これは <xref:System.Activities.Statements.CompensableActivity.Body%2A> が完了しなかったことを意味するので、<xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> のロジックが取り消しを一番うまく処理する方法を決定できる必要があります。この例では、 <xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> はクレジット カードへの課金を取り消しますが、`ReserveFlight` は <xref:System.Activities.Statements.CompensableActivity.Body%2A> の最後のアクティビティなので、航空券の取り消しを試みません。`ReserveFlight` は <xref:System.Activities.Statements.CompensableActivity.Body%2A> の最後のアクティビティなので、そのアクティビティが正常に完了して <xref:System.Activities.Statements.CompensableActivity.Body%2A> が完了すると、取り消しは不可能となります。  
+ ワークフローが呼び出されると、シミュレートされたエラー状態の例外が、<xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> のホスト アプリケーションで処理されて、ワークフローが取り消され、<xref:System.Activities.Statements.CompensableActivity> の取り消しロジックが呼び出されます。 この例では、補正ロジックと取り消しロジックの目的は異なります <xref:System.Activities.Statements.CompensableActivity.Body%2A> が正常に完了した場合、これはクレジット カードに課金されてフライトが予約されたことを意味するので、補正で両方の手順を取り消す必要があります (この例では、航空券を取り消すとクレジット カードへの課金が自動的に取り消されます)。ただし、<xref:System.Activities.Statements.CompensableActivity> が取り消される場合、これは <xref:System.Activities.Statements.CompensableActivity.Body%2A> が完了しなかったことを意味するので、<xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> のロジックが取り消しを一番うまく処理する方法を決定できる必要があります。 この例では、<xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> はクレジット カードへの課金を取り消しますが、`ReserveFlight` は <xref:System.Activities.Statements.CompensableActivity.Body%2A> の最後のアクティビティであるので、航空券の取り消しを試みません。 `ReserveFlight` は <xref:System.Activities.Statements.CompensableActivity.Body%2A> の最後のアクティビティであるので、そのアクティビティが正常に完了して <xref:System.Activities.Statements.CompensableActivity.Body%2A> が完了すると、取り消しは不可能となります。  
   
- **ChargeCreditCard: 航空券の料金をクレジット カードに請求します。**   
-**SimulatedErrorCondition: ApplicationException をスローします。**   
-**ワークフロー未処理の例外:**   
-**System.ApplicationException: ワーク フローのシミュレートされたエラー状態。**   
-**CancelCreditCard: クレジット カードへの課金を取り消します。**   
-**ワークフローは Canceled の状態で正常に完了しました。**  取り消し[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[取り消し](../../../docs/framework/windows-workflow-foundation//modeling-cancellation-behavior-in-workflows.md)」を参照してください。  
+ **ChargeCreditCard: 料金をクレジット_カード フライトのです。**  
+**Simulatederrorcondition: ApplicationException をスローします。**   
+**ワークフロー未処理の例外。**   
+**System.applicationexception: ワークフローの条件をシミュレートされたエラーです。**   
+**CancelCreditCard: クレジット_カードへの課金を取り消します。**   
+**ワークフローの状態で正常に完了しました: 取り消されました。**  [!INCLUDE[crabout](../../../includes/crabout-md.md)]キャンセルを参照してください[キャンセル](../../../docs/framework/windows-workflow-foundation/modeling-cancellation-behavior-in-workflows.md)です。  
   
-### Compensate アクティビティを使用した明示的な補正  
- 前のセクションでは、暗黙的な補正について説明しました。暗黙的な補正は単純なシナリオには適していますが、補正処理のスケジュールに関して、より明示的な制御が必要な場合は、<xref:System.Activities.Statements.Compensate> アクティビティを使用できます。<xref:System.Activities.Statements.Compensate> アクティビティを使用して補正プロセスを開始するには、補正が望ましい <xref:System.Activities.Statements.CompensableActivity> の <xref:System.Activities.Statements.CompensationToken> を使用します。<xref:System.Activities.Statements.Compensate> アクティビティは、完了した <xref:System.Activities.Statements.CompensableActivity> で、まだ確認または補正されていない場合に補正を開始するときに使用できます。たとえば、<xref:System.Activities.Statements.Compensate> アクティビティは、<xref:System.Activities.Statements.TryCatch.Catches%2A> アクティビティの  <xref:System.Activities.Statements.TryCatch> セクションで使用できるし、または <xref:System.Activities.Statements.CompensableActivity> の完了後にいつでも使用できます。この例では、<xref:System.Activities.Statements.Compensate> アクティビティを <xref:System.Activities.Statements.TryCatch.Catches%2A> アクティビティの <xref:System.Activities.Statements.TryCatch> セクションで使用して、<xref:System.Activities.Statements.CompensableActivity> のアクションを反転します。  
+### <a name="explicit-compensation-using-the-compensate-activity"></a>Compensate アクティビティを使用する明示的な補正  
+ 前のセクションでは、暗黙的な補正について説明しました。 暗黙的な補正は単純なシナリオには適していますが、補正処理のスケジュールに関して、より明示的な制御が必要な場合は、<xref:System.Activities.Statements.Compensate> アクティビティを使用できます。 <xref:System.Activities.Statements.Compensate> アクティビティを使用して補正プロセスを開始するには、補正が望ましい <xref:System.Activities.Statements.CompensationToken> の <xref:System.Activities.Statements.CompensableActivity> を使用します。 <xref:System.Activities.Statements.Compensate> アクティビティは、完了した <xref:System.Activities.Statements.CompensableActivity> で、まだ確認または補正されていない場合に補正を開始するときに使用できます。 たとえば、<xref:System.Activities.Statements.Compensate> アクティビティは <xref:System.Activities.Statements.TryCatch.Catches%2A> アクティビティの <xref:System.Activities.Statements.TryCatch> セクションで使用できます。また、<xref:System.Activities.Statements.CompensableActivity> が完了した後の任意のタイミングで使用できます。 この例では、<xref:System.Activities.Statements.Compensate> アクティビティを <xref:System.Activities.Statements.TryCatch.Catches%2A> アクティビティの <xref:System.Activities.Statements.TryCatch> プロパティに使用し、<xref:System.Activities.Statements.CompensableActivity> のアクションを反転します。  
   
  [!code-csharp[CFX_CompensationExample#3](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#3)]  
   
@@ -250,12 +253,12 @@ Activity wf = new Sequence()
   
  このワークフローが呼び出されると、次の出力がコンソールに表示されます。  
   
- **ReserveFlight: チケットが予約されました。**   
-**SimulatedErrorCondition: ApplicationException をスローします。**   
+ **ReserveFlight: チケットが予約されています。**  
+**Simulatederrorcondition: ApplicationException をスローします。**   
 **CancelFlight: チケットは取り消されました。**   
-**ワークフローは Closed の状態で正常に完了しました。**    
-### 補正の確認  
- 既定で、補正可能なアクティビティは、完了後の任意のタイミングで補正できます。ただし、シナリオによっては適切でない場合があります。前の例では、航空券予約の補正は、予約の取り消しでした。ただし、フライトが完了すると、その後は、この補正手順は有効でなくなります。補正可能なアクティビティを確認すると、<xref:System.Activities.Statements.CompensableActivity.ConfirmationHandler%2A> で指定したアクティビティが呼び出されます。この使用例としては、補正を実行する必要があるリソースを解放できるようになることが挙げられます。補正可能なアクティビティは、確認されると補正できなくなります。この処理が試行されると、<xref:System.InvalidOperationException> 例外がスローされます。ワークフローが正常に完了すると、正常に完了したがまだ確認も補正も実行されていない補正可能なすべてのアクティビティは、補正とは逆の順序で確認されます。この例では、航空券の予約、購入、および完了後に、補正可能なアクティビティが確認されます。<xref:System.Activities.Statements.CompensableActivity> を確認するには、<xref:System.Activities.Statements.Confirm> アクティビティを使用し、<xref:System.Activities.Statements.CompensableActivity> の <xref:System.Activities.Statements.CompensationToken> を指定します。  
+**ワークフローの状態で正常に完了しました。 終了します。**    
+### <a name="confirming-compensation"></a>補正の確認  
+ 既定で、補正可能なアクティビティは、完了後の任意のタイミングで補正できます。 ただし、シナリオによっては適切でない場合があります。 前の例では、航空券予約の補正は、予約の取り消しでした。 ただし、この航空券に関する処理が完了すると、この補正手順は有効ではなくなります。 補正可能なアクティビティを確認すると、<xref:System.Activities.Statements.CompensableActivity.ConfirmationHandler%2A> で指定したアクティビティが呼び出されます。 この使用例としては、補正を実行する必要があるリソースを解放できるようになることが挙げられます。 補正可能なアクティビティは、確認されると補正できなくなります。また、この処理が試行されると、<xref:System.InvalidOperationException> 例外がスローされます。 ワークフローが正常に完了すると、正常に完了したがまだ確認も補正も実行されていない補正可能なすべてのアクティビティは、補正とは逆の順序で確認されます。 この例では、航空券の予約、購入、および完了後に、補正可能なアクティビティが確認されます。 <xref:System.Activities.Statements.CompensableActivity> を確認するには、<xref:System.Activities.Statements.Confirm> アクティビティを使用し、<xref:System.Activities.Statements.CompensationToken> の <xref:System.Activities.Statements.CompensableActivity> を指定します。  
   
  [!code-csharp[CFX_CompensationExample#4](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_CompensationExample/cs/Program.cs#4)]  
   
@@ -319,18 +322,18 @@ Activity wf = new Sequence()
   
  このワークフローが呼び出されると、次の出力がコンソールに表示されます。  
   
- **ReserveFlight: チケットが予約されました。**   
-**ManagerApproval: マネージャーの承認を受けました。**   
+ **ReserveFlight: チケットが予約されています。**  
+**ManagerApproval: マネージャーの承認を受信します。**   
 **PurchaseFlight: チケットが購入されました。**   
-**TakeFlight: 航空券の購入処理が完了しました。**   
-**ConfirmFlight: 航空券の購入処理が完了し、補正が行われる可能性はありません。**   
-**ワークフローは Closed の状態で正常に完了しました。**   
-## 補正アクティビティの入れ子化  
- <xref:System.Activities.Statements.CompensableActivity> は、別の <xref:System.Activities.Statements.CompensableActivity> の <xref:System.Activities.Statements.CompensableActivity.Body%2A> セクションに配置できます。<xref:System.Activities.Statements.CompensableActivity> は、別の <xref:System.Activities.Statements.CompensableActivity> のハンドラーで処理されない場合があります。親の <xref:System.Activities.Statements.CompensableActivity> が取り消されたとき、確認されたとき、または補正されたとき、正常に完了していてまだ確認または補正されていないすべての子の補正可能なアクティビティを、親が取り消し、確認、または補正を完了する前に、確認または補正されるようにすることは親のそのアクティビティの役割ですです。補正が明示的にモデル化されていない場合、親の <xref:System.Activities.Statements.CompensableActivity> は、親が取り消しまたは補正のシグナルを受け取ったとき、子の補正可能なアクティビティを暗黙的に補正します。親は、確認通知を受け取ると、暗黙的に子の補正可能なアクティビティを確認します。取り消し、確認、または補正を処理するロジックが親の <xref:System.Activities.Statements.CompensableActivity> のハンドラーで明示的にモデル化されている場合、明示的に処理されなかった子は暗黙的に確認されます。  
+**TakeFlight: 航空券は完了です。**   
+**ConfirmFlight: 航空券を取得したいない補正可能です。**   
+**ワークフローの状態で正常に完了しました。 終了します。**   
+## <a name="nesting-compensation-activities"></a>補正アクティビティの入れ子化  
+ <xref:System.Activities.Statements.CompensableActivity> は、別の <xref:System.Activities.Statements.CompensableActivity.Body%2A> の <xref:System.Activities.Statements.CompensableActivity> セクションに配置できます。 <xref:System.Activities.Statements.CompensableActivity> は、別の <xref:System.Activities.Statements.CompensableActivity> のハンドラーで処理されない場合があります。 親の <xref:System.Activities.Statements.CompensableActivity> が取り消されたとき、確認されたとき、または補正されたとき、正常に完了していてまだ確認または補正されていないすべての子の補正可能なアクティビティを、親が取り消し、確認、または補正を完了する前に、確認または補正されるようにするのが親のそのアクティビティの役割ですです。 補正が明示的にモデル化されていない場合、親の <xref:System.Activities.Statements.CompensableActivity> は、親が取り消しまたは補正のシグナルを受け取ったとき、子の補正可能なアクティビティを暗黙的に補正します。 親は、確認通知を受け取ると、暗黙的に子の補正可能なアクティビティを確認します。 取り消し、確認、または補正を処理するロジックが親の <xref:System.Activities.Statements.CompensableActivity> のハンドラーで明示的にモデル化されている場合、明示的に処理されなかった子は暗黙的に確認されます。  
   
-## 参照  
- <xref:System.Activities.Statements.CompensableActivity>   
- <xref:System.Activities.Statements.Compensate>   
- <xref:System.Activities.Statements.Confirm>   
- <xref:System.Activities.Statements.CompensationToken>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Activities.Statements.CompensableActivity>  
+ <xref:System.Activities.Statements.Compensate>  
+ <xref:System.Activities.Statements.Confirm>  
+ <xref:System.Activities.Statements.CompensationToken>  
  [補正可能なアクティビティ](../../../docs/framework/windows-workflow-foundation/samples/compensable-activity-sample.md)

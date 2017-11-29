@@ -1,68 +1,72 @@
 ---
-title: "方法 : イメージ メタデータを読み取る | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "メタデータ, プロパティ項目"
-  - "メタデータ, 読み取り (イメージの)"
+title: "方法 : イメージ メタデータを読み取る"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- metadata [Windows Forms], property item
+- metadata [Windows Forms], reading image
 ms.assetid: 72ec0b31-0be7-444a-9575-1dbcb864e0be
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9df2866251e08b8989f8550d045b587c9de8d2cb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : イメージ メタデータを読み取る
-一部のイメージ ファイルにはメタデータが含まれており、このデータを読み取って、そのイメージの特徴を確認できます。  デジタル写真にはこのようなメタデータが含まれていることがあり、そのメタデータを読み取って、たとえばイメージを取り込むために使用したカメラのメーカーやモデルを確認できます。  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] では、既存のメタデータを読み取ることができるほか、新しいメタデータをイメージ ファイルに書き込むこともできます。  
+# <a name="how-to-read-image-metadata"></a>方法 : イメージ メタデータを読み取る
+一部のイメージ ファイルには、イメージの機能を決定するために読み取ることができますメタデータが含まれます。 たとえば、デジタル写真には、make とイメージをキャプチャするために使用する、カメラのモデルを決定するために読み取ることができますメタデータが含まれます可能性があります。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]既存のメタデータを読み取ることができます、およびイメージ ファイルに新しいメタデータを記述することもできます。  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] は、個々のメタデータを <xref:System.Drawing.Imaging.PropertyItem> オブジェクトに格納します。  <xref:System.Drawing.Image> オブジェクトの <xref:System.Drawing.Image.PropertyItems%2A> プロパティを読み取ることによって、ファイルからすべてのメタデータを取得できます。  <xref:System.Drawing.Image.PropertyItems%2A> プロパティは、<xref:System.Drawing.Imaging.PropertyItem> オブジェクトの配列を返します。  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]内のメタデータの個々 の部分を格納、<xref:System.Drawing.Imaging.PropertyItem>オブジェクト。 読み取ることができます、<xref:System.Drawing.Image.PropertyItems%2A>のプロパティ、<xref:System.Drawing.Image>ファイルからすべてのメタデータを取得するオブジェクト。 <xref:System.Drawing.Image.PropertyItems%2A>プロパティの配列を返します<xref:System.Drawing.Imaging.PropertyItem>オブジェクト。  
   
- <xref:System.Drawing.Imaging.PropertyItem> オブジェクトには、`Id`、`Value`、`Len`、および `Type` という 4 つのプロパティがあります。  
+ A<xref:System.Drawing.Imaging.PropertyItem>オブジェクトには次の 4 つのプロパティ: `Id`、 `Value`、 `Len`、および`Type`です。  
   
-## Id  
- メタデータ項目を識別するタグ。  <xref:System.Drawing.Imaging.PropertyItem.Id%2A> に割り当てることのできる値の一部を次の表に示します。  
+## <a name="id"></a>ID  
+ メタデータ アイテムを識別するタグです。 いくつかの値を割り当てることのできる<xref:System.Drawing.Imaging.PropertyItem.Id%2A>次の表に表示されます。  
   
-|16 進値|Description|  
-|-----------|-----------------|  
-|0x0320<br /><br /> 0x010F<br /><br /> 0x0110<br /><br /> 0x9003<br /><br /> 0x829A<br /><br /> 0x5090<br /><br /> 0x5091|イメージのタイトル<br /><br /> 機器のメーカー<br /><br /> 機器のモデル<br /><br /> ExifDTOriginal<br /><br /> Exif 露光時間<br /><br /> 輝度テーブル<br /><br /> クロミナンス テーブル|  
+|16 進値|説明|  
+|-----------------------|-----------------|  
+|0x0320<br /><br /> 0x010F<br /><br /> 0x0110<br /><br /> 0x9003<br /><br /> 0x829A<br /><br /> 0x5090<br /><br /> 0x5091|イメージのタイトル<br /><br /> 相手先ブランド供給<br /><br /> 機器のモデル<br /><br /> ExifDTOriginal<br /><br /> Exif 露出時間<br /><br /> 輝度テーブル<br /><br /> 色光度テーブル|  
   
-## 値  
- 値の配列。  値の形式は、<xref:System.Drawing.Imaging.PropertyItem.Type%2A> プロパティによって決定されます。  
+## <a name="value"></a>値  
+ 値の配列。 値の形式はによって決まります、<xref:System.Drawing.Imaging.PropertyItem.Type%2A>プロパティです。  
   
-## Len  
- <xref:System.Drawing.Imaging.PropertyItem.Value%2A> プロパティが指す値配列の長さ \(バイト単位\)。  
+## <a name="len"></a>Len  
+ 値の配列の長さ (バイト) を指す、<xref:System.Drawing.Imaging.PropertyItem.Value%2A>プロパティです。  
   
-## 種類  
- `Value` プロパティが指す配列内の値のデータ型。  `Type` プロパティの値で示される形式を次の表に示します。  
+## <a name="type"></a>型  
+ 配列内の値のデータ型を指す、`Value`プロパティです。 によって示される形式、`Type`プロパティの値は次の表に表示されます  
   
-|数値|Description|  
-|--------|-----------------|  
-|1|`Byte`|  
-|2|ASCII 形式でエンコードされた `Byte` オブジェクトの配列|  
+|数値の値|説明|  
+|-------------------|-----------------|  
+|1|`Byte`。|  
+|2|配列`Byte`ascii 形式でエンコードされたオブジェクト|  
 |3|16 ビット整数|  
 |4|32 ビット整数|  
-|5|有理数を表す 2 つの `Byte` オブジェクトの配列|  
+|5|2 つの配列`Byte`有理数を表すオブジェクト|  
 |6|未使用|  
 |7|未定義|  
-|8|未使用|  
+|9|未使用|  
 |9|`SLong`|  
 |10|`SRational`|  
   
-## 例  
+## <a name="example"></a>例  
   
-### Description  
- ファイル `FakePhoto.jpg` からメタデータの 7 つの部分を読み取って表示するコード例を次に示します。  リスト内の 2 番目の \(インデックス 1\) プロパティ項目には、<xref:System.Drawing.Imaging.PropertyItem.Id%2A> 0x010F \(機器のメーカー\) と <xref:System.Drawing.Imaging.PropertyItem.Type%2A> 2 \(ASCII 形式でエンコードされたバイト配列\) が指定されています。  このコード例は、このプロパティ項目の値を表示します。  
+### <a name="description"></a>説明  
+ 次のコード例を読み取ったり、ファイルのメタデータの 7 つの部分を表示`FakePhoto.jpg`です。 リストの 2 つ目 (インデックス 1) プロパティ項目が<xref:System.Drawing.Imaging.PropertyItem.Id%2A>0x010F (供給) および<xref:System.Drawing.Imaging.PropertyItem.Type%2A>2 (ASCII エンコードのバイト配列)。 コード例では、そのプロパティ項目の値を表示します。  
   
- このコードは、次のような出力を生成します。  
+ コードには、次のような出力が生成されます。  
   
  `Property Item 0`  
   
@@ -122,13 +126,13 @@ caps.handback.revision: 15
   
  `The equipment make is Northwind Camera.`  
   
-### コード  
+### <a name="code"></a>コード  
  [!code-csharp[System.Drawing.WorkingWithImages#51](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#51)]
  [!code-vb[System.Drawing.WorkingWithImages#51](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#51)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  フォームの <xref:System.Windows.Forms.Control.Paint> イベントを処理し、このコードを Paint のイベント ハンドラーに貼り付けます。  `FakePhoto.jpg` をイメージ名とシステム上の有効なパスに置き換え、`System.Drawing.Imaging` 名前空間をインポートする必要があります。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。 フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントとペイントのイベント ハンドラーに次のコードを貼り付けます。 置き換える必要があります`FakePhoto.jpg`イメージの名前と、システムとインポートの有効なパスと、`System.Drawing.Imaging`名前空間。  
   
-## 参照  
- [イメージ、ビットマップ、およびメタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)   
+## <a name="see-also"></a>関連項目  
+ [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

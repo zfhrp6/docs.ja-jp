@@ -1,147 +1,150 @@
 ---
-title: "Freezable オブジェクトの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "クラス, Freezable"
-  - "Freezable オブジェクト, description"
-  - "固定解除 (Freezable オブジェクトを)"
+title: "Freezable オブジェクトの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Freezable objects [WPF], description
+- unfreezing Freezable objects [WPF]
+- classes [WPF], Freezable
 ms.assetid: 89c71692-4f43-4057-b611-67c6a8a863a2
-caps.latest.revision: 30
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 49778dc9551652ee4a4d36426b4b396652b9dcd2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Freezable オブジェクトの概要
-ここでは、アプリケーションのパフォーマンス向上のための特別な機能を備えた <xref:System.Windows.Freezable> オブジェクトの、効率的な使用方法および作成方法について説明します。  フリーズ可能オブジェクトには、ブラシ、ペン、変換、ジオメトリ、アニメーションなどがあります。  
+# <a name="freezable-objects-overview"></a>Freezable オブジェクトの概要
+このトピックを効果的に使用して作成する方法について説明<xref:System.Windows.Freezable>オブジェクトで、アプリケーションのパフォーマンスを改善する特別な機能を提供します。 Freezable オブジェクトの例には、ブラシ、ペン、変換、ジオメトリ、およびアニメーションが含まれます。  
   
- このトピックは、次のセクションで構成されています。  
-  
-<a name="autoTopLevelSectionsOUTLINE0"></a>   
 <a name="whatisafreezable"></a>   
-## Freezable \(フリーズ可能\) とは  
- <xref:System.Windows.Freezable> は、非フリーズとフリーズの 2 つの状態を持つ特殊な型のオブジェクトです。  フリーズしていない <xref:System.Windows.Freezable> は、他のオブジェクトと同様に動作しているように見えます。  <xref:System.Windows.Freezable> をフリーズすると、変更できなくなります。  
+## <a name="what-is-a-freezable"></a>Freezable は何ですか。  
+ A<xref:System.Windows.Freezable>を 2 つの状態を持つオブジェクトの特別な種類: 固定おらず、固定されています。 マスクされていない、ときに、<xref:System.Windows.Freezable>するその他のオブジェクトと同様に動作が表示されます。 固定されると、<xref:System.Windows.Freezable>変更不要になったことができます。  
   
- <xref:System.Windows.Freezable> には、オブジェクトの変更を監視者に通知するための <xref:System.Windows.Freezable.Changed> イベントがあります。  <xref:System.Windows.Freezable> をフリーズすると、変更通知のためのリソースが不要になるので、パフォーマンスが向上します。  また、フリーズされた <xref:System.Windows.Freezable> はスレッド間で共有できますが、フリーズされていない <xref:System.Windows.Freezable> は共有できません。  
+ A<xref:System.Windows.Freezable>提供、<xref:System.Windows.Freezable.Changed>オブジェクトに変更を加えるのオブザーバーに通知するイベントです。 固定すること、<xref:System.Windows.Freezable>変更通知にリソースを費やす必要がなくなったため、パフォーマンスを向上することができます。 固定された<xref:System.Windows.Freezable>、固定されていないときに、スレッド間で共有することも<xref:System.Windows.Freezable>ことはできません。  
   
- <xref:System.Windows.Freezable> クラスはさまざまな目的に使用できますが、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] の <xref:System.Windows.Freezable> オブジェクトのほとんどは、グラフィックス サブシステムに関連するものです。  
+ <xref:System.Windows.Freezable>クラスには多くのアプリケーションで最も<xref:System.Windows.Freezable>オブジェクト[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]グラフィックス サブシステムに関連します。  
   
- <xref:System.Windows.Freezable> クラスを使用すると、特定のグラフィックス システムのオブジェクトが使いやすくなり、アプリケーション パフォーマンスを向上させることができます。  <xref:System.Windows.Freezable> から継承するクラスには、<xref:System.Windows.Media.Brush>、<xref:System.Windows.Media.Transform>、<xref:System.Windows.Media.Geometry> などがあります。  このようなクラスにはアンマネージ リソースが格納されているので、システムはオブジェクトが変更されたかどうかを監視する必要があります。元のオブジェクトに変更があった場合は、対応するアンマネージ リソースを更新します。  実際にはグラフィックス システムのオブジェクトが変更されることがなくても、万一の変更に備えて、システムはオブジェクトの監視用にリソースの一部を消費しなければなりません。  
+ <xref:System.Windows.Freezable>クラスは、特定のグラフィックス システム オブジェクトを使用するが容易し、アプリケーションのパフォーマンスを向上させることができます。 継承する型の例については<xref:System.Windows.Freezable>含める、 <xref:System.Windows.Media.Brush>、 <xref:System.Windows.Media.Transform>、および<xref:System.Windows.Media.Geometry>クラスです。 アンマネージ リソースを含んでいるため、システムがこれらのオブジェクトの変更を監視を更新した後、元のオブジェクトへの変更がある場合に、対応するアンマネージ リソースを更新する必要があります。 場合でも、実際には、グラフィックス システム オブジェクトを変更しない、システム使う必要がありますが、オブジェクトの監視にリソースの一部これを変更する場合にします。  
   
- たとえば、<xref:System.Windows.Media.SolidColorBrush> ブラシを作成して、ボタンの背景の塗りつぶしに使用するとします。  
+ たとえば、作成する、<xref:System.Windows.Media.SolidColorBrush>ブラシし、ボタンの背景の描画に使用します。  
   
  [!code-csharp[freezablesample_procedural#FrozenExamplePart1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#frozenexamplepart1)]
  [!code-vb[freezablesample_procedural#FrozenExamplePart1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#frozenexamplepart1)]  
   
- ボタンがレンダリングされるとき、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のグラフィックス サブシステムは指定された情報を使用してピクセルのグループを塗りつぶし、ボタンの外観を作成します。  ボタンの描画方法を示すために単色のブラシを指定したとしても、この単色のブラシが実際に塗りつぶしを行うわけではありません。  グラフィックス システムによって、ボタンおよびブラシの高速かつ低レベルのオブジェクトが生成され、実際に画面に表示されます。  
+ ボタンが表示されると、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]グラフィックス サブ システム ボタンの外観を作成するピクセルのグループを描画する提供情報を使用します。 純色のブラシを使用して、ボタンを描画する方法について説明した、純色のブラシしない描画を行う実際には。 グラフィックス システムが、ボタンとブラシに高速で低レベルのオブジェクトを生成し、実際に画面に表示されるこれらのオブジェクトはします。  
   
- ブラシに変更を加える場合は、このような低レベルのオブジェクトの再生成が必要です。  Freezable クラスとは、ブラシに、自身に対応する生成済みの低レベル オブジェクトを検出して自身が変更されたときにそのオブジェクトを更新するという能力を与えるものです。  この機能が有効化されているときは、ブラシは "フリーズされていない" といいます。  
+ ブラシを変更する場合は、それらの低レベルのオブジェクトが再生成する必要があります。 Freezable クラスは、どのようなことができます、ブラシが変更されたときに更新して、対応する生成され、低レベルのオブジェクトを検索します。 この機能を有効にすると、ブラシが「固定」すると言います。  
   
- フリーズ可能オブジェクトの <xref:System.Windows.Freezable.Freeze%2A> は、この自己更新機能を無効化するためのメソッドです。  このメソッドを使用すると、ブラシを "フリーズ" 状態、つまり変更不可能にすることができます。  
+ フリーズの<xref:System.Windows.Freezable.Freeze%2A>メソッドでは、この自動更新機能を無効にすることができます。 このメソッドを使用すると、「固定」、または不可能な状態になるブラシを作成します。  
   
 > [!NOTE]
->  すべての Freezable オブジェクトをフリーズできるわけではありません。  <xref:System.InvalidOperationException> がスローされることを避けるには、Freezable オブジェクトをフリーズする前に <xref:System.Windows.Freezable.CanFreeze%2A> プロパティの値を調べて、フリーズ可能かどうかを判断します。  
+>  Freezable オブジェクトすべてを固定することができます。 スローされないようにする、 <xref:System.InvalidOperationException>、Freezable オブジェクトの値をチェックして<xref:System.Windows.Freezable.CanFreeze%2A>固定にする前に固定できるかどうかを決定するプロパティです。  
   
  [!code-csharp[freezablesample_procedural#FrozenExamplePart2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#frozenexamplepart2)]
  [!code-vb[freezablesample_procedural#FrozenExamplePart2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#frozenexamplepart2)]  
   
- フリーズ可能オブジェクトを変更する必要がなくなった場合は、フリーズすることによってパフォーマンスが向上します。  この例では、ブラシをフリーズすると、グラフィックス システムがブラシの変更を監視する必要はなくなります。  グラフィックス システムはこのブラシが変更されないことを認識しているので、その他の最適化も実行できるようになります。  
+ 不要になった、フリーズを修正する必要がある場合は、パフォーマンス上の利点を提供固定します。 この例では、ブラシを固定する場合は、グラフィックス システムは変更を監視する必要がなくなります。 グラフィックス システムは、その他の最適化をブラシが変更されないに認識していることもできます。  
   
 > [!NOTE]
->  便宜を図るために、フリーズ可能オブジェクトは、明示的にフリーズされない限り非フリーズ状態を維持します。  
+>  便宜上、freezable オブジェクトは、明示的に固定する場合を除き、固定されていない残ります。  
   
 <a name="frozenfreezables"></a>   
-## Freezable の使用  
- フリーズされていないフリーズ可能オブジェクトの使用は、その他の種類のオブジェクトの使用に似ています。  次のコード例では、<xref:System.Windows.Media.SolidColorBrush> の色をボタンの背景塗りつぶしに使用した後で、黄色から赤に変更します。  グラフィックス システムが内部的処理を行い、画面が次回更新されたときにボタンを黄色から赤に自動的に変更します。  
+## <a name="using-freezables"></a>Freezable の使用  
+ 使用、固定されていない freezable は、その他の種類のオブジェクトを使用するなどです。 次の例では、色、<xref:System.Windows.Media.SolidColorBrush>が黄色から赤に後に変更ボタンの背景の描画に使用されます。 グラフィックス システムでは、バック グラウンドで自動的に変更するボタン黄色から赤に画面の [次へ] の更新では動作します。  
   
  [!code-csharp[freezablesample_procedural#UnFrozenExampleShort](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#unfrozenexampleshort)]
  [!code-vb[freezablesample_procedural#UnFrozenExampleShort](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#unfrozenexampleshort)]  
   
-### Freezable のフリーズ  
- <xref:System.Windows.Freezable> を変更不可にするには、その<xref:System.Windows.Freezable.Freeze%2A> メソッドを呼び出します。  フリーズ可能オブジェクトを格納するオブジェクトをフリーズすると、格納されているオブジェクトもフリーズされます。  たとえば、<xref:System.Windows.Media.PathGeometry> をフリーズすると、格納されている数字およびセグメントもフリーズされます。  
+### <a name="freezing-a-freezable"></a>Freezable はフリーズ  
+ させる、<xref:System.Windows.Freezable>呼び出して、変更不可能になってその<xref:System.Windows.Freezable.Freeze%2A>メソッドです。 Freezable オブジェクトを格納しているオブジェクトを固定すると、それらのオブジェクトが固定されているとします。 保持する場合など、<xref:System.Windows.Media.PathGeometry>図形やが含まれているセグメントは固定すぎます。  
   
- 次のいずれかに当てはまる場合は、Freezable をフリーズすることはできません。  
+ Freezable**できません**次のいずれかに当てはまる場合に固定します。  
   
--   アニメーション化されたプロパティ、またはデータ バインドされたプロパティがある。  
+-   アニメーション化されたか、データ バインドされたプロパティ。  
   
--   プロパティが動的リソースによって設定されている   \(動的リソースの詳細については、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください\)。  
+-   動的リソースによって設定されるプロパティがあります。 (を参照してください、 [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)動的なリソースの詳細についてはします)。  
   
--   <xref:System.Windows.Freezable> に格納されているサブオブジェクトがフリーズ不可能である。  
+-   含まれている<xref:System.Windows.Freezable>サブオブジェクトを固定することはできません。  
   
- これらの条件に該当しない場合に、それ以降 <xref:System.Windows.Freezable> を変更しないことが明らかならば、既に説明したように、パフォーマンスを向上させるためにオブジェクトをフリーズしてください。  
+ これらの条件が false の場合、および変更にしないかどうか、 <xref:System.Windows.Freezable>、その前に説明したパフォーマンス メリットを得られることを固定する必要があります。  
   
- フリーズ可能オブジェクトの <xref:System.Windows.Freezable.Freeze%2A> メソッドをいったん呼び出すと、そのオブジェクトは変更できなくなります。  フリーズされたオブジェクトを変更しようとすると、<xref:System.InvalidOperationException> がスローされます。  次のコードでは、ブラシをフリーズした後に変更しようとしているので、例外がスローされます。  
+ 呼び出す、freezable の<xref:System.Windows.Freezable.Freeze%2A>メソッドを変更できません。 固定された変更しようとしています。 オブジェクトの原因として、<xref:System.InvalidOperationException>がスローされます。 次のコードでは、フリーズした後にブラシを変更するために、例外がスローされます。  
   
  [!code-csharp[freezablesample_procedural#ExceptionExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#exceptionexample)]
  [!code-vb[freezablesample_procedural#ExceptionExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#exceptionexample)]  
   
- この例外がスローされるのを避けるには、<xref:System.Windows.Freezable.IsFrozen%2A> メソッドを使用して、<xref:System.Windows.Freezable> がフリーズされているかどうかを判断します。  
+ この例外がスローされることを避けるためには、使用することができます、<xref:System.Windows.Freezable.IsFrozen%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Windows.Freezable>が固定されています。  
   
  [!code-csharp[freezablesample_procedural#CheckIsFrozenExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#checkisfrozenexample)]
  [!code-vb[freezablesample_procedural#CheckIsFrozenExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#checkisfrozenexample)]  
   
- 前のコード例では、フリーズされたオブジェクトの変更可能なコピーを、<xref:System.Windows.Freezable.Clone%2A> メソッドを使用して作成しました。  複製の詳細については、次のセクションで説明します。  
+ 前のコード例では、変更可能なコピーが行われたの固定されたオブジェクトを使用して、<xref:System.Windows.Freezable.Clone%2A>メソッドです。 次のセクションでは、さらに詳しくクローン作成について説明します。  
   
- **メモ** フリーズされたフリーズ可能オブジェクトはアニメーション化できないので、<xref:System.Windows.Media.Animation.Storyboard> を使用してアニメーション化しようとすると、フリーズされた <xref:System.Windows.Freezable> オブジェクトの変更可能な複製がアニメーション システムによって自動的に作成されます。  複製によって生じるパフォーマンス オーバーヘッドを回避するために、オブジェクトをアニメーション化する場合は非フリーズ状態のままにしてください。  ストーリーボードを使用したアニメーションの詳細については、「[ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)」を参照してください。  
+ **注**ため固定された freezable できませんアニメーション化、アニメーションは自動的に作成の変更可能な複製固定された<xref:System.Windows.Freezable>オブジェクトをアニメーション化をしようとすると、<xref:System.Windows.Media.Animation.Storyboard>です。 によるパフォーマンスのオーバーヘッドが複製をなくすためには、アニメーション化する場合にマスクされていないオブジェクトのままにします。 ストーリー ボードでのアニメーション化の詳細については、次を参照してください。、[ストーリー ボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)です。  
   
-### マークアップからのフリーズ  
- マークアップで宣言された <xref:System.Windows.Freezable> オブジェクトをフリーズするには、`PresentationOptions:Freeze` 属性を使用します。  次の例では、<xref:System.Windows.Media.SolidColorBrush> を、フリーズされたページ リソースとして宣言します。  次に、このブラシを使用してボタンの背景を設定します。  
+### <a name="freezing-from-markup"></a>マークアップからのフリーズ  
+ 固定するのには、<xref:System.Windows.Freezable>オブジェクトを使用するマークアップで宣言された、`PresentationOptions:Freeze`属性。 次の例で、<xref:System.Windows.Media.SolidColorBrush>はページ リソースとして宣言されており、固定されています。 ボタンの背景を設定するのには使用されます。  
   
- [!code-xml[FreezableSample#FreezeFromMarkupWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FreezableSample/CS/FreezeFromMarkupExample.xaml#freezefrommarkupwholepage)]  
+ [!code-xaml[FreezableSample#FreezeFromMarkupWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FreezableSample/CS/FreezeFromMarkupExample.xaml#freezefrommarkupwholepage)]  
   
- `Freeze` 属性を使用するには、表示オプション名前空間 `http://schemas.microsoft.com/winfx/2006/xaml/presentation/options` に割り当てる必要があります。  この名前空間を割り当てるときの推奨プレフィックスは `PresentationOptions` です。  
+ 使用する、`Freeze`属性、プレゼンテーションのオプションの名前空間にマップする必要があります:`http://schemas.microsoft.com/winfx/2006/xaml/presentation/options`です。 `PresentationOptions`この名前空間のマッピングの推奨されるプレフィックスを示します。  
   
 ```  
 xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"   
 ```  
   
- すべての XAML リーダーがこの属性を認識するとは限らないので、[mc:Ignorable 属性](../../../../docs/framework/wpf/advanced/mc-ignorable-attribute.md)を使用して、`Presentation:Freeze` 属性が無視可能であると指定することをお勧めします。  
+ すべての XAML リーダーは、この属性を認識、ためにを使用することをお勧めしますが、 [mc: Ignorable 属性](../../../../docs/framework/wpf/advanced/mc-ignorable-attribute.md)をマークする、`Presentation:Freeze`属性を無視できます。  
   
 ```  
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
 mc:Ignorable="PresentationOptions"  
 ```  
   
- 詳細については、[mc:Ignorable 属性](../../../../docs/framework/wpf/advanced/mc-ignorable-attribute.md)のページを参照してください。  
+ 詳細については、次を参照してください。、 [mc: Ignorable 属性](../../../../docs/framework/wpf/advanced/mc-ignorable-attribute.md)ページ。  
   
-### Freezable の "フリーズ解除"  
- <xref:System.Windows.Freezable> をフリーズすると、変更やフリーズ解除はできなくなりますが、<xref:System.Windows.Freezable.Clone%2A> メソッドまたは <xref:System.Windows.Freezable.CloneCurrentValue%2A> メソッドを使用すると、フリーズされていない複製を作成できます。  
+### <a name="unfreezing-a-freezable"></a>「固定解除」フリーズ  
+ 1 回凍結されている場合、<xref:System.Windows.Freezable>決してを変更または固定です。 ただし、を使用して、固定されていない複製を作成することができます、<xref:System.Windows.Freezable.Clone%2A>または<xref:System.Windows.Freezable.CloneCurrentValue%2A>メソッドです。  
   
- 次の例では、ブラシを使用してボタンの背景を設定してから、そのブラシをフリーズします。  <xref:System.Windows.Freezable.Clone%2A> メソッドを使用して、ブラシのフリーズされていない複製を作成します。  この複製を変更し、使用して、ボタンの背景を黄色から赤に変更します。  
+ 次の例では、ブラシを使用してボタンの背景が設定され、そのブラシは、固定されています。 ブラシを使用して、固定されていないコピーされる、<xref:System.Windows.Freezable.Clone%2A>メソッドです。 クローンが変更し、赤、黄色からボタンの背景を変更するために使用します。  
   
  [!code-csharp[freezablesample_procedural#CloneExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#cloneexample)]
  [!code-vb[freezablesample_procedural#CloneExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#cloneexample)]  
   
 > [!NOTE]
->  使用する Clone メソッドにかかわらず、アニメーションが新しい <xref:System.Windows.Freezable> にコピーされることはありません。  
+>  アニメーションを決してを新しいコピーを使用するどの複製方法に関係なく<xref:System.Windows.Freezable>です。  
   
- <xref:System.Windows.Freezable.Clone%2A> メソッドと <xref:System.Windows.Freezable.CloneCurrentValue%2A> メソッドは、フリーズ可能オブジェクトの深いコピーを生成します。  フリーズ可能オブジェクトに、他のフリーズされたフリーズ可能オブジェクトが格納されている場合は、格納されるオブジェクトも複製されて、変更可能になります。  たとえば、フリーズされた <xref:System.Windows.Media.PathGeometry> を複製して変更可能にする場合は、格納されている数字およびセグメントもコピーされ、変更可能な状態になります。  
+ <xref:System.Windows.Freezable.Clone%2A>と<xref:System.Windows.Freezable.CloneCurrentValue%2A>メソッドが、freezable のディープ コピーを作成します。 場合は、格納されているその他の固定 freezable オブジェクトも複製され変更可能です。 たとえば、固定された複製する<xref:System.Windows.Media.PathGeometry>を変更可能なため、図とが含まれているセグメントもコピーされ変更可能です。  
   
 <a name="createyourownfreezableclass"></a>   
-## 独自の Freezable クラスの作成  
- <xref:System.Windows.Freezable> から派生するクラスには、次の機能が与えられます。  
+## <a name="creating-your-own-freezable-class"></a>Freezable クラスの作成  
+ 派生したクラス<xref:System.Windows.Freezable>次の機能を取得します。  
   
--   特殊な状態 : 読み取り専用 \(フリーズ\) 状態と書き込み可能状態。  
+-   特殊な状態: 読み取り専用 (固定)、書き込み可能な状態です。  
   
--   スレッド セーフ : フリーズされた <xref:System.Windows.Freezable> は、スレッド間で共有できます。  
+-   スレッド セーフ: 固定された<xref:System.Windows.Freezable>スレッド間で共有できます。  
   
--   詳細な変更通知 : 他の <xref:System.Windows.DependencyObject> とは異なり、Freezable オブジェクトは、サブプロパティの値が変更されたときに変更通知を提供します。  
+-   変更通知の詳細: その他のとは異なり<xref:System.Windows.DependencyObject>s、Freezable オブジェクトでは、変更通知サブ プロパティの値を変更します。  
   
--   容易な複製 : Freezable クラスは、深い複製を作成するためのメソッドを既に実装しています。  
+-   簡単な複製: Freezable のクラスが既にディープ クローンを生成するいくつかのメソッドを実装します。  
   
- <xref:System.Windows.Freezable> は、<xref:System.Windows.DependencyObject> の一種であるので、依存関係プロパティ システムを使用します。  作成するクラスのプロパティが依存関係プロパティである必要はありませんが、<xref:System.Windows.Freezable> クラスは依存関係プロパティを想定して設計されているので、依存関係プロパティを使用すれば、プログラミングに必要なコードの量が少なくて済みます。  依存関係プロパティ システムの詳細については、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
+ A<xref:System.Windows.Freezable>の種類は、 <xref:System.Windows.DependencyObject>、ため、依存関係プロパティ システムを使用します。 クラスのプロパティの依存関係プロパティを指定する必要はありませんが、依存関係プロパティを使用する必要のあるコードを記述するための量を削減は、<xref:System.Windows.Freezable>注意の依存関係プロパティをクラスが設計されています。 依存関係プロパティ システムの詳細については、次を参照してください。、[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)です。  
   
- <xref:System.Windows.Freezable> のすべてのサブクラスで <xref:System.Windows.Freezable.CreateInstanceCore%2A> メソッドをオーバーライドする必要があります。  作成するクラスで、すべてのデータについて依存関係プロパティを使用する場合は、これで完了です。  
+ 各<xref:System.Windows.Freezable>サブクラスをオーバーライドする必要があります、<xref:System.Windows.Freezable.CreateInstanceCore%2A>メソッドです。 クラスは、そのすべてのデータの依存関係プロパティを使用している場合は、作業が終了します。  
   
- クラスに依存関係プロパティ以外のデータ メンバーが含まれている場合は、次のメソッドもオーバーライドする必要があります。  
+ クラスに依存関係のないプロパティのデータ メンバーが含まれている場合も、次のメソッドをオーバーライドする必要があります。  
   
 -   <xref:System.Windows.Freezable.CloneCore%2A>  
   
@@ -153,23 +156,23 @@ mc:Ignorable="PresentationOptions"
   
 -   <xref:System.Windows.Freezable.FreezeCore%2A>  
   
- また、依存関係プロパティではないデータ メンバーへのアクセスおよび書き込みについては、次のルールに従う必要があります。  
+ 次のルールにアクセスして、依存関係プロパティではないデータ メンバーへの書き込みを確認する必要がも。  
   
--   依存関係プロパティ以外のデータ メンバーを読み取る [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] の開始時に、<xref:System.Windows.Freezable.ReadPreamble%2A> メソッドを呼び出します。  
+-   いずれかの先頭に[!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)]依存関係のないプロパティのデータ メンバーを読み取る、呼び出し、<xref:System.Windows.Freezable.ReadPreamble%2A>メソッドです。  
   
--   依存関係プロパティ以外のデータ メンバーを書き込む API の開始時に、<xref:System.Windows.Freezable.WritePreamble%2A> メソッドを呼び出します   \([!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] の中で <xref:System.Windows.Freezable.WritePreamble%2A> を呼び出した後は、依存関係プロパティ以外のデータ メンバーを読み取る場合も、<xref:System.Windows.Freezable.ReadPreamble%2A> を改めて呼び出す必要はありません\)。  
+-   依存関係のないプロパティのデータ メンバーの書き込みをすべての API の先頭には、呼び出し、<xref:System.Windows.Freezable.WritePreamble%2A>メソッドです。 (呼び出した後<xref:System.Windows.Freezable.WritePreamble%2A>で、 [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)]、追加の呼び出しを行う必要はありません<xref:System.Windows.Freezable.ReadPreamble%2A>も依存関係のないプロパティのデータ メンバーを読み取るかどうかです)。  
   
--   依存関係プロパティ以外のデータ メンバーに書き込みを行うメソッドを終了する前に、<xref:System.Windows.Freezable.WritePostscript%2A> メソッドを呼び出します。  
+-   呼び出す、<xref:System.Windows.Freezable.WritePostscript%2A>依存関係のないプロパティのデータ メンバーへの書き込みメソッドを終了する前にメソッドです。  
   
- 作成するクラスに含まれる、依存関係プロパティ以外のデータ メンバーの中に <xref:System.Windows.DependencyObject> オブジェクトがある場合は、そのメンバーの値を変更するたびに <xref:System.Windows.Freezable.OnFreezablePropertyChanged%2A> メソッドも呼び出す必要があります \(そのメンバーを `null` に設定する場合も\)。  
+ クラスにある非依存関係プロパティのデータ メンバーが含まれて かどうか<xref:System.Windows.DependencyObject>オブジェクトも呼び出す必要があります、<xref:System.Windows.Freezable.OnFreezablePropertyChanged%2A>メソッド メンバーを設定している場合でもでは、これらの値、変更のするたびに`null`です。  
   
 > [!NOTE]
->  オーバーライドする <xref:System.Windows.Freezable> の各メソッドの先頭で基本実装を呼び出すことが非常に重要です。  
+>  各を開始することが非常に重要<xref:System.Windows.Freezable>呼び出し基本実装をオーバーライドするメソッド。  
   
- カスタム <xref:System.Windows.Freezable> クラスの例については、[カスタム アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=159981)を参照してください。  
+ カスタムの例については<xref:System.Windows.Freezable>クラスを参照してください、[カスタム アニメーション サンプル](http://go.microsoft.com/fwlink/?LinkID=159981)です。  
   
-## 参照  
- <xref:System.Windows.Freezable>   
- [カスタム アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=159981)   
- [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Freezable>  
+ [カスタム アニメーションのサンプル](http://go.microsoft.com/fwlink/?LinkID=159981)  
+ [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
  [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)

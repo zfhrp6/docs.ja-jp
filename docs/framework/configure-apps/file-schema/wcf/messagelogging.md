@@ -1,32 +1,34 @@
 ---
-title: "&lt;messageLogging&gt;&lt;/messageLogging&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "&lt;メッセージ ログ&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
-caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e5b232e3faf1e0e8976b0c08264c8ba03988902a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &lt;messageLogging&gt;&lt;/messageLogging&gt;
+# <a name="ltmessagelogginggt"></a>&lt;メッセージ ログ&gt;
 この要素は Windows Communication Foundation (WCF) のメッセージ ログ機能の設定を定義します。  
   
- \<system.ServiceModel>  
-<>\>  
-<>\>  
+ \<システムです。ServiceModel >  
+\<診断 >  
+\<メッセージ ログ >  
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```xml  
 <system.serviceModel>  
    <diagnostics>  
        <messageLogging logEntireMessage="Boolean"  
@@ -70,13 +72,13 @@ caps.handback.revision: 16
 |診断|管理者が行うランタイムの検査と管理の WCF 設定を定義します。|  
   
 ## <a name="remarks"></a>コメント  
- メッセージは、サービス、トランスポート、および不正の&3; 種類のレベルで記録されます。 各レベルは、個別にアクティブにできます。  
+ メッセージは、サービス、トランスポート、および不正の 3 種類のレベルで記録されます。 各レベルは、個別にアクティブにできます。  
   
  XPath フィルターは、トランスポート レベルとサービス レベルで特定のメッセージを記録するために追加できます。 フィルターが定義されていない場合、すべてのメッセージが記録されます。 フィルターは、メッセージのヘッダーにのみ適用されます。 本文は無視されます。 WCF は、パフォーマンスを強化するためにメッセージ本文を無視します。 本文の内容に基づいてフィルターを適用する場合は、そのためのフィルターを備えたカスタム リスナーを作成できます。  
   
- メッセージ トレースをアクティブ化するために、トレース リスナーを作成する必要があります。 リスナー自体にで動作するリスナーを指定できます、 <xref:System.Diagnostics>トレース アーキテクチャです。 次の例は、そのようなリスナーの作成方法を示します。  
+ メッセージ トレースをアクティブ化するために、トレース リスナーを作成する必要があります。 リスナー自体には、<xref:System.Diagnostics> トレース アーキテクチャで動作するリスナーを指定できます。 次の例は、そのようなリスナーの作成方法を示します。  
   
-```  
+```xml  
 <system.diagnostics>  
     <sources>  
           <source name="System.ServiceModel" switchValue="Verbose">  
@@ -111,7 +113,7 @@ caps.handback.revision: 16
   
 ## <a name="example"></a>例  
   
-```  
+```xml  
 <messageLogging logEntireMessage="true"  
     logMalformedMessages="true"  
     logMessagesAtServiceLevel="true"  
@@ -125,8 +127,8 @@ caps.handback.revision: 16
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.Configuration.DiagnosticSection>   
- <xref:System.ServiceModel.Diagnostics>   
- <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>   
- <xref:System.ServiceModel.Configuration.MessageLoggingElement>   
+ <xref:System.ServiceModel.Configuration.DiagnosticSection>  
+ <xref:System.ServiceModel.Diagnostics>  
+ <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>  
+ <xref:System.ServiceModel.Configuration.MessageLoggingElement>  
  [メッセージ ログの構成](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)

@@ -1,61 +1,60 @@
 ---
-title: "WriteOnly (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "WriteOnly"
-  - "vb.WriteOnly"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "write-only properties"
-  - "WriteOnly keyword"
-  - "sensitive data, protecting"
-  - "properties [Visual Basic], write-only"
-  - "sensitive data"
+title: WriteOnly (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- WriteOnly
+- vb.WriteOnly
+helpviewer_keywords:
+- write-only properties
+- WriteOnly keyword [Visual Basic]
+- sensitive data, protecting
+- properties [Visual Basic], write-only
+- sensitive data
 ms.assetid: 488d2899-b09f-4cee-92f0-6f9f9fc4f944
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9dab9115c31e538bd28583b9f0591ae0c9611e2e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WriteOnly (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プロパティに書き込みはできるが、読み込みはできないことを指定します。  
+# <a name="writeonly-visual-basic"></a>WriteOnly (Visual Basic)
+プロパティの記述が読み取らないことを指定します。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
   
-## 規則  
- **宣言コンテキスト。** `WriteOnly` は、モジュール レベルでのみ使用できます。  つまり、`WriteOnly` プロパティの宣言コンテキストは、クラス、構造体、またはモジュールであることが必要で、ソース ファイル、名前空間、プロシージャでは宣言できません。  
+## <a name="rules"></a>ルール  
+ **宣言コンテキスト。** `WriteOnly` は、モジュール レベルでのみ使用できます。 つまりの宣言コンテキスト、`WriteOnly`プロパティは、クラス、構造体、またはモジュールにある必要があるあり、ソース ファイル、名前空間、またはプロシージャにすることはできません。  
   
- プロパティは `WriteOnly` で宣言できますが、変数ではできません。  
+ としてプロパティを宣言する`WriteOnly`が変数ではありません。  
   
-## WriteOnly を使用する状況  
- 値の設定はできるが、その値が何かを知ることができないようなコードが必要になる場合があります。  たとえば、何らかの登録番号やパスワードなど、それを設定した以外のコンポーネントからアクセスされないよう保護する必要のある重要情報です。  このような場合に、`WriteOnly` プロパティを使用して値を設定します。  
+## <a name="when-to-use-writeonly"></a>WriteOnly を使用する場合  
+ コンシューマー コード値を設定するができないことができる場合があります。 たとえば、ソーシャル登録番号やパスワードなどの機密データを設定していないすべてのコンポーネントによるアクセスから保護する必要があります。 このような場合は、使用することができます、`WriteOnly`プロパティ値を設定します。  
   
 > [!IMPORTANT]
->  `WriteOnly` プロパティを定義して使用する際には、次のような方法で保護を強化するようにしてください。  
+>  定義して使用するときに、`WriteOnly`プロパティ、次の追加の保護手段を検討してください。  
   
--   **オーバーライド。**プロパティがクラスのメンバーである場合は、既定で [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md) に設定されるようにし、`Overridable` や `MustOverride` に宣言しないでください。  これにより、派生クラスでのオーバーライドによってアクセスが許可されてしまうのを防ぐことができます。  
+-   **上書きします。** 場合は、プロパティ、クラスのメンバーである、許可が既定に[NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)、宣言しないと`Overridable`または`MustOverride`です。 これは派生クラスがオーバーライドによって不要なアクセスを作成することを防ぎます。  
   
--   **アクセス レベル。**プロパティの重要情報を 1 つ以上の変数に格納する場合は、変数を [Private](../../../visual-basic/language-reference/modifiers/private.md) で宣言して、他のコードからアクセスできないようにしてください。  
+-   **アクセス レベル。** 1 つまたは複数の変数で、プロパティの機密データを保持する場合は、宣言[プライベート](../../../visual-basic/language-reference/modifiers/private.md)できるように、その他のコードはアクセスできません。  
   
--   **暗号化。**重要情報はすべて、平文ではなく暗号化された形式で格納してください。  悪意のあるコードが、何らかの方法でメモリ内のその領域にアクセスできた場合でも、データを使用するのが非常に困難になります。  また、暗号化は重要情報をシリアル化する必要がある場合にも使用されます。  
+-   **暗号化します。** プレーン テキストではなく、暗号化された形式では、すべての機密データを格納します。 何らかの理由で、悪意のあるコードそのメモリ領域にアクセスできる場合より少なく、データを使用します。 暗号化も機密データをシリアル化する必要がある場合に役立ちます。  
   
--   **リセット。**プロパティが定義されたクラス、構造体、またはモジュールが終了するとき、重要情報を既定値またはその他の意味のない値にリセットしてください。  こうすることで、メモリのその領域へのアクセスが一般に解放されたときの保護を強化できます。  
+-   **リセットしています。** クラス、構造体、またはプロパティを定義するモジュールが終了するときに既定値またはその他の意味のない値に機微なデータをリセットします。 これにより、一般的なアクセスにそのメモリ領域が解放されるとき、保護を強化できます。  
   
--   **永続性。**重要情報は、できればディスクなどに保存しないようにしてください。  また、重要情報をクリップボードに書き込むのは避けてください。  
+-   **永続化します。** これを回避する場合、たとえば、ディスク上の任意の機密データは保持されません。 クリップボードには、機密データは書き込みませんも、します。  
   
- `WriteOnly` 修飾子は次の構文で使用します。  
+ `WriteOnly`修飾子は、このコンテキストで使用できます。  
   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
   
-## 参照  
- [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)   
- [Private](../../../visual-basic/language-reference/modifiers/private.md)   
+## <a name="see-also"></a>関連項目  
+ [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)  
+ [Private](../../../visual-basic/language-reference/modifiers/private.md)  
  [キーワード](../../../visual-basic/language-reference/keywords/index.md)

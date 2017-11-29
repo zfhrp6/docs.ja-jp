@@ -5,23 +5,20 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- wsFederationBinding element
+helpviewer_keywords: wsFederationBinding element
 ms.assetid: 9c3312b4-2137-4e71-bf3f-de1cf8e9be79
-caps.latest.revision: 28
+caps.latest.revision: "28"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 67c9055b78a80fe14368484f9a42af1c9c2514e6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 96308e77752105ad0f3eb874b435f3bf47d332e3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltwsfederationhttpbindinggt"></a>&lt;wsFederationHttpBinding&gt;
 WS-Federation をサポートするバインディングを定義します。  
@@ -201,11 +198,10 @@ wsFederationBinding 要素
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.WSFederationHttpBinding>   
- <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement>   
- [方法: WSFederationHttpBinding を作成します。](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)   
- [バインド](../../../../../docs/framework/wcf/bindings.md)   
- [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ <xref:System.ServiceModel.WSFederationHttpBinding>  
+ <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement>  
+ [方法: WSFederationHttpBinding を作成します。](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
+ [バインディング](../../../../../docs/framework/wcf/bindings.md)  
+ [システム指定のバインディングを構成します。](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [バインディングを使用して、Windows Communication Foundation サービスとクライアントを構成するには](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<バインド >](../../../../../docs/framework/misc/binding.md)
-

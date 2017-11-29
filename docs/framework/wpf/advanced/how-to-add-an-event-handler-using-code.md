@@ -1,46 +1,52 @@
 ---
-title: "方法 : コードを使用してイベント ハンドラーを追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "イベント ハンドラー, 追加"
-  - "XAML, 追加 (イベント ハンドラーを)"
+title: "方法 : コードを使用してイベント ハンドラーを追加する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- event handlers [WPF], adding
+- XAML [WPF], adding event handlers
 ms.assetid: 269c61e0-6bd9-4291-9bed-1c5ee66da486
-caps.latest.revision: 16
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 348136a1feaf6e0a0824cf183a2eeec4e10b77fd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : コードを使用してイベント ハンドラーを追加する
-コードを使用して要素にイベント ハンドラーを追加する方法を次の例に示します。  
+# <a name="how-to-add-an-event-handler-using-code"></a>方法 : コードを使用してイベント ハンドラーを追加する
+この例では、コードを使用して要素をイベント ハンドラーを追加する方法を示します。  
   
- イベント ハンドラーを [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 要素に追加する際に、その要素を含むマークアップ ページが既に読み込まれている場合は、コードを使用してハンドラーを追加する必要があります。  また、コードのみを使用してアプリケーションの要素ツリーを構築し、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] を使用して要素の宣言をしない場合は、特定のメソッドを呼び出して、構築された要素ツリーにイベント ハンドラーを追加することができます。  
+ イベント ハンドラーを追加する場合、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]要素、および要素を含むマークアップ ページがまだ読み込まれて、コードを使用してハンドラーを追加する必要があります。 また、コードをまったく使用してを使用して任意の要素が宣言されていないアプリケーションの要素ツリーを構築するかどうか[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]、構築される要素ツリーにイベント ハンドラーを追加する特定のメソッドを呼び出すことができます。  
   
-## 使用例  
- 最初に定義した既存のページに、新しい <xref:System.Windows.Controls.Button> を追加する [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] での例を次に示します。  分離コード ファイルはイベント ハンドラー メソッドを実装し、そのメソッドを新しいイベント ハンドラーとして <xref:System.Windows.Controls.Button> に追加します。  
+## <a name="example"></a>例  
+ 次の例は、新しく追加<xref:System.Windows.Controls.Button>で最初に定義されている既存のページに[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]です。 分離コード ファイルが、イベント ハンドラー メソッドを実装しで新しいイベント ハンドラーとしてメソッドを追加、<xref:System.Windows.Controls.Button>です。  
   
- [!INCLUDE[TLA2#tla_cshrp](../../../../includes/tla2sharptla-cshrp-md.md)] の例では、`+=` 演算子を使用してイベントにハンドラーを割り当てます。  これは、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] のイベント処理モデルでハンドラーを割り当てる際に使用する演算子と同じです。  [!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)] では、イベント ハンドラーを追加する手段としてこの演算子はサポートされていません。  代わりに、次の 2 つの手法のいずれかを使用する必要があります。  
+ [!INCLUDE[TLA2#tla_cshrp](../../../../includes/tla2sharptla-cshrp-md.md)]の例では、`+=`演算子をイベントにハンドラーを割り当てます。 これは、ハンドラーを割り当てるために使用する演算子と同じ、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]イベント モデルを処理します。 [!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)]イベント ハンドラーを追加するための手段としてこの演算子はサポートされません。 代わりに、2 つの手法の 1 つ必要です。  
   
--   <xref:System.Windows.UIElement.AddHandler%2A> メソッドを `AddressOf` 演算子と共に使用して、イベント ハンドラー実装を参照します。  
+-   使用して、<xref:System.Windows.UIElement.AddHandler%2A>と連携して、メソッド、`AddressOf`演算子、イベント ハンドラーの実装を参照します。  
   
--   イベント ハンドラー定義の一部として `Handles` キーワードを使用します。  この方法はここでは説明しません。「[Visual Basic と WPF のイベント処理](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md)」を参照してください。  
+-   使用して、`Handles`イベント ハンドラーの定義の一部としてキーワード。 この手法はここでは表示されません。参照してください[Visual Basic およびイベント処理の WPF](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md)です。  
   
- [!code-xml[RoutedEventAddRemoveHandler#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml#xaml)]  
+ [!code-xaml[RoutedEventAddRemoveHandler#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml#xaml)]  
   
  [!code-csharp[RoutedEventAddRemoveHandler#Handler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml.cs#handler)]
  [!code-vb[RoutedEventAddRemoveHandler#Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/VisualBasic/default.xaml.vb#handler)]  
   
 > [!NOTE]
->  最初に解析した [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページでイベント ハンドラーを追加すると、非常に簡単です。  イベント ハンドラーを追加するオブジェクト要素内で、処理するイベント名と一致する属性を追加します。  次に、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページの分離コード ファイルで定義したイベント ハンドラー メソッドの名前として、その属性の値を指定します。  詳細については、「[XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)」または「[ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)」を参照してください。  
+>  最初に解析済みのイベント ハンドラーを追加する[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ページがはるかに簡単です。 イベント ハンドラーを追加するオブジェクトの要素内で処理するイベントの名前に一致する属性を追加します。 分離コード ファイルで定義されているイベント ハンドラー メソッドの名前とその属性の値を指定、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ページ。 詳細については、次を参照してください。 [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)または[ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)です。  
   
-## 参照  
- [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)
+## <a name="see-also"></a>関連項目  
+ [ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
+ [方法トピック](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)

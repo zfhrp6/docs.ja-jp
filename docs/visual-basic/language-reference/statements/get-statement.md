@@ -1,84 +1,81 @@
 ---
-title: "Get Statement | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Get"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Get statement, syntax"
-  - "Get statement"
-  - "properties [Visual Basic], read-only"
-  - "read-only properties"
-  - "Get keyword"
-  - "property procedures, Get statements"
+title: "Get ステートメント"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Get
+helpviewer_keywords:
+- Get statement [Visual Basic], syntax
+- Get statement [Visual Basic]
+- properties [Visual Basic], read-only
+- read-only properties
+- Get keyword [Visual Basic]
+- property procedures [Visual Basic], Get statements
 ms.assetid: 56b05cdc-bd64-4dfd-bb12-824eacec6f94
-caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: c1ff062a5e3bf41794bd5b4c90f1e188d6d97480
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Get Statement
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プロパティの値を取得するための `Get` プロパティ プロシージャを宣言します。  
+# <a name="get-statement"></a>Get ステートメント
+宣言、`Get`プロパティ プロシージャのプロパティの値を取得するために使用します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-[ <attributelist> ] [ accessmodifier ] Get()  
-    [ statements ]  
+[ <attributelist> ] [ accessmodifier ] Get()  
+    [ statements ]  
 End Get  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`attributelist`|省略可能です。  「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。|  
-|`accessmodifier`|省略可能です。このプロパティの `Get` ステートメントか `Set` ステートメントの一方に指定できます。  次のいずれかになります。<br /><br /> -   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|  
-|`statements`|省略可能です。  `Get` プロパティ プロシージャが呼び出されたときに実行する、1 つ以上のステートメントを指定します。|  
-|`End Get`|必ず指定します。  この `Get` プロパティ プロシージャの定義を終了します。|  
+|用語|定義|  
+|---|---|  
+|`attributelist`|省略可能です。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。|  
+|`accessmodifier`|1 つの省略可能な`Get`と`Set`このプロパティ内のステートメント。 次のいずれかの値を指定します。<br /><br /> -   [保護されています。](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 参照してください[Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。|  
+|`statements`|省略可能です。 場合に実行する 1 つまたは複数のステートメント、`Get`プロパティ プロシージャが呼び出されます。|  
+|`End Get`|必須です。 定義を終了、`Get`プロパティ プロシージャです。|  
   
-## 解説  
- `WriteOnly` でマーク付けされていないすべてのプロパティに、`Get` プロパティ プロシージャが必要です。  `Get` プロシージャは、プロパティの現在の値を取得するために使用します。  
+## <a name="remarks"></a>コメント  
+ すべてのプロパティがあります、`Get`プロパティ プロシージャ、プロパティが設定されていない限り`WriteOnly`です。 `Get`プロパティの現在の値を返すプロシージャを使用します。  
   
- 式でプロパティの値が必要になると、Visual Basic が自動的にプロパティの `Get` プロシージャを呼び出します。  
+ Visual Basic は、このプロパティの自動的に呼び出します`Get`式は、プロパティの値を要求するときの手順です。  
   
- プロパティ宣言の本体には、プロパティの `Get` プロシージャと `Set` プロシージャのみを [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md) ステートメントと `End Property` ステートメントの間に記述できます。  それ以外のプロシージャを含めることはできません。  特に、プロパティの現在の値を含めることはできません。  現在の値をどちらかのプロパティ プロシージャの内部に含めると他のプロパティ プロシージャから値にアクセスできなくなるため、この値はプロパティの外部に格納する必要があります。  通常は、プロパティと同じレベルで [Private](../../../visual-basic/language-reference/modifiers/private.md) 変数を宣言し、この中に現在の値を格納します。  `Get` プロシージャは、それが適用されるプロパティの内側に定義する必要があります。  
+ プロパティの宣言の本体でのみ、プロパティを含めることができます`Get`と`Set`間でのプロシージャ、 [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)と`End Property`ステートメントです。 これらのプロシージャ以外のものを格納できません。 具体的には、プロパティの現在の値を格納できません。 プロパティ プロシージャのいずれかの内側で保存する場合、その他のプロパティ プロシージャ アクセスできないために、プロパティの外部には、この値を格納する必要があります。 通常の方法は、の値を格納する、[プライベート](../../../visual-basic/language-reference/modifiers/private.md)プロパティと同じレベルで宣言された変数です。 定義する必要があります、`Get`に適用すると、プロパティの内部プロシージャです。  
   
- `Get` プロシージャの既定のアクセス レベルは、`accessmodifier` を `Get` ステートメントで使用しない限り、その包含プロパティのアクセス レベルになります。  
+ `Get`プロシージャの既定値は、包含するプロパティのアクセス レベルを使用する場合を除き、`accessmodifier`で、`Get`ステートメントです。  
   
-## 規則  
+## <a name="rules"></a>ルール  
   
--   **アクセス レベルの混在。**読み書き可能なプロパティを定義する場合、必要であれば `Get` プロシージャと `Set` プロシージャのどちらか一方にだけ、プロパティとは異なるアクセス レベルを指定できます。  これを指定する場合は、プロシージャにプロパティよりも制限の高いアクセス レベルを指定する必要があります。  たとえば、プロパティを `Friend` で宣言する場合、`Get` プロシージャを `Private` で宣言できますが、`Public` では宣言できません。  
+-   **混合アクセス レベル。** 必要に応じていずれかの異なるアクセス レベルを指定することができます、読み取り/書き込みプロパティを定義する場合、`Get`または`Set`プロシージャが、両方は使用できません。 これを行うと、プロシージャのアクセス レベルがプロパティのアクセス レベルよりも制限する必要があります。 プロパティが宣言されている場合など、 `Friend`、宣言することができます、`Get`プロシージャ`Private`、ではなく`Public`です。  
   
-     `ReadOnly` プロパティを定義する場合、プロパティは `Get` プロシージャだけで機能します。  `Get` に違うアクセス レベルを宣言すると、プロパティに 2 つのアクセス レベルを設定することになるため宣言できません。  
+     定義する場合、 `ReadOnly` 、プロパティ、`Get`プロシージャが全体のプロパティを表します。 レベルを別のアクセスを宣言することはできません`Get`プロパティの 2 つのアクセス レベルを設定することがあるため、します。  
   
--   **戻り値の型。** [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)には、プロシージャが返す値のデータ型を宣言できます。  `Get` プロシージャは自動的にそのデータ型を返します。  任意のデータ型か、列挙体、構造体、クラス、またはインターフェイスの名前を指定できます。  
+-   **型を返します。** [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)が返す値のデータ型を宣言できます。 `Get`プロシージャが自動的にそのデータ型を返します。 任意のデータ型または列挙型、構造体、クラス、またはインターフェイスの名前を指定することができます。  
   
-     `Property` ステートメントに `returntype` が指定されなければ、プロシージャは `Object` を返します。  
+     場合、`Property`ステートメントで指定されていない`returntype`、プロシージャを返します`Object`です。  
   
-## \[動作\]  
+## <a name="behavior"></a>動作  
   
--   **プロシージャから戻るときの動作** `Get` プロシージャから呼び出し元のコードに制御が戻るとき、プロパティ値を要求したステートメントの内部から実行が続行されます。  
+-   **プロシージャから取得します。** ときに、`Get`プロパティ値を要求するステートメント内で、プロシージャ呼び出し元のコードに戻ると、実行が継続します。  
   
-     `Get` プロパティ プロシージャは [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md)を使って値を返すか、またはプロパティ名に戻り値を代入して値を返すことができます。  詳細については、「[Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)」の "戻り値" を参照してください。  
+     `Get`プロパティ プロシージャは、いずれかを使用して値を返すことができます、 [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)か、プロパティ名を戻り値を割り当てます。 詳細についてを参照してください「戻り値」[関数ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)です。  
   
-     `Exit Property` ステートメントおよび `Return` ステートメントは、プロパティ プロシージャを直ちに終了します。  プロシージャの任意の場所に、`Exit Property` ステートメントと `Return` ステートメントを何度でも定義できます。また、`Exit Property` ステートメントと `Return` ステートメントを混在して使用できます。  
+     `Exit Property`と`Return`ステートメントでは、プロパティ プロシージャからすぐに終了します。 任意の数の`Exit Property`と`Return`ステートメントがどこにでも表示、プロシージャとを混在させること`Exit Property`と`Return`ステートメントです。  
   
--   **戻り値。** `Get` プロシージャから値を返すには、プロパティ名に値を割り当てるか、または [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md) に値を指定します。  `Return` ステートメントは `Get` プロシージャの戻り値を代入すると同時に、プロシージャを終了します。  
+-   **値を返します。** 値を返す、`Get`プロシージャ、プロパティ名に値を割り当てるか、含めることで、 [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)です。 `Return`ステートメントを同時に割り当てます、`Get`プロシージャを返す値し、手順を終了します。  
   
-     プロパティ名に値を代入せずに `Exit Property` を使用すると、`Get` プロシージャは、そのプロパティのデータ型の既定値を返します。  詳細については、「[Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)」の "戻り値" を参照してください。  
+     使用する場合`Exit Property`プロパティ名に値を代入せず、`Get`プロシージャは、プロパティのデータ型の既定値を返します。 詳細についてを参照してください「戻り値」[関数ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)です。  
   
-     次の例は、読み取り専用の `quoteForTheDay` プロパティからプライベート変数 `quoteValue` に格納された値を返すための、2 つの方法を示しています。  
+     次の例は、読み取り専用プロパティの 2 つの方法を示しています。`quoteForTheDay`プライベート変数に保持されている値を返すことができます`quoteValue`です。  
   
      [!code-vb[VbVbalrStatements#27](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/get-statement_1.vb)]  
   
@@ -86,14 +83,14 @@ End Get
   
      [!code-vb[VbVbalrStatements#29](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/get-statement_3.vb)]  
   
-## 使用例  
- 次の例は、`Get` ステートメントを使って、プロパティの値を返します。  
+## <a name="example"></a>例  
+ 次の例では、`Get`プロパティの値を返すステートメントです。  
   
  [!code-vb[VbVbalrStatements#30](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/get-statement_4.vb)]  
   
-## 参照  
- [Set Statement](../../../visual-basic/language-reference/statements/set-statement.md)   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)   
- [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md)   
- [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)   
- [Walkthrough: Defining Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)
+## <a name="see-also"></a>関連項目  
+ [Set ステートメント](../../../visual-basic/language-reference/statements/set-statement.md)  
+ [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
+ [チュートリアル : クラスの定義](../../../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)

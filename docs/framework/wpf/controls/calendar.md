@@ -1,63 +1,66 @@
 ---
-title: "Calendar | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Calendar コントロール [WPF]"
-  - "コントロール [WPF], Calendar"
+title: "予定表"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [WPF], Calendar
+- Calendar control [WPF]
 ms.assetid: ee844e4a-eefe-48e2-bd0d-1d82cc5e960b
-caps.latest.revision: 4
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 857f6b3be1467ec54fd27c76679279c0d0960690
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Calendar
-カレンダーは、ユーザーがビジュアルな予定表を使用して日付を選択できるコントロールです。  
+# <a name="calendar"></a>予定表
+カレンダーでは、ビジュアルな予定表を使用して日付を選択するユーザーを使用できます。  
   
- <xref:System.Windows.Controls.Calendar> コントロールは、単独で使用することも、<xref:System.Windows.Controls.DatePicker> コントロールのドロップダウン部分として使用することもできます。  詳細については、「<xref:System.Windows.Controls.DatePicker>」を参照してください。  
+ A<xref:System.Windows.Controls.Calendar>コントロールをそれ自体にまたはのドロップダウン部分として使用できます、<xref:System.Windows.Controls.DatePicker>コントロール。 詳細については、「<xref:System.Windows.Controls.DatePicker>」を参照してください。  
   
- 次の図は、2 つの <xref:System.Windows.Controls.Calendar> コントロールを示します。選択したものと暗転表示された日付が、一方には含まれていますが、他方には含まれていません。  
+ 次の図は 2 つ<xref:System.Windows.Controls.Calendar>と含まない選択とブラック アウト日のいずれかを制御します。  
   
- ![予定表コントロール](../../../../docs/framework/wpf/controls/media/ndp-calendarcontrols.png "NDP\_CalendarControls")  
-Calendar コントロール  
+ ![カレンダー コントロール](../../../../docs/framework/wpf/controls/media/ndp-calendarcontrols.png "NDP_CalendarControls")  
+予定表コントロール  
   
- 次の表は、一般的に <xref:System.Windows.Controls.Calendar> に関連付けられているタスクに関する情報を示しています。  
+ 次の表は、一般に関連付けられているタスクに関する情報を提供、<xref:System.Windows.Controls.Calendar>です。  
   
 |タスク|実装|  
-|---------|--------|  
-|選択できない日付を指定します。|<xref:System.Windows.Controls.Calendar.BlackoutDates%2A> プロパティを使用します。|  
-|<xref:System.Windows.Controls.Calendar> に 1 か月分、1 年分、または 10 年分を表示します。|<xref:System.Windows.Controls.Calendar.DisplayMode%2A> プロパティを月、年、または 10 年に設定します。|  
-|ユーザーが日付、日付の範囲、または日付の複数の範囲を選択できるかどうかを指定します。|<xref:System.Windows.Controls.Calendar.SelectionMode%2A> を使用します。|  
-|<xref:System.Windows.Controls.Calendar> に表示される日付の範囲を指定します。|<xref:System.Windows.Controls.Calendar.DisplayDateStart%2A> プロパティおよび <xref:System.Windows.Controls.Calendar.DisplayDateEnd%2A> プロパティを使用します。|  
-|現在の日付が強調表示されるかどうかを指定します。|<xref:System.Windows.Controls.Calendar.IsTodayHighlighted%2A> プロパティを使用します。  既定では、<xref:System.Windows.Controls.Calendar.IsTodayHighlighted%2A> は `true` に設定されています。|  
-|<xref:System.Windows.Controls.Calendar> のサイズを変更します。|<xref:System.Windows.Controls.Viewbox> を使用するか、<xref:System.Windows.FrameworkElement.LayoutTransform%2A> プロパティを <xref:System.Windows.Media.ScaleTransform> に設定します。  <xref:System.Windows.Controls.Calendar> の <xref:System.Windows.FrameworkElement.Width%2A> プロパティと <xref:System.Windows.FrameworkElement.Height%2A> プロパティを設定した場合、実際の予定表のサイズは変更されない点に注意してください。|  
+|----------|--------------------|  
+|日付を指定するを選択することはできません。|<xref:System.Windows.Controls.Calendar.BlackoutDates%2A> プロパティを使用します。|  
+|<xref:System.Windows.Controls.Calendar> 1 か月、年全体、または 10 年を表示します。|設定、<xref:System.Windows.Controls.Calendar.DisplayMode%2A>プロパティを月、年、または 10 年間です。|  
+|ユーザーが日付を選択するかどうか、日付の範囲、または日付の複数の範囲を指定します。|使用して、<xref:System.Windows.Controls.Calendar.SelectionMode%2A>です。|  
+|日付の範囲を指定する、<xref:System.Windows.Controls.Calendar>が表示されます。|<xref:System.Windows.Controls.Calendar.DisplayDateStart%2A> プロパティおよび <xref:System.Windows.Controls.Calendar.DisplayDateEnd%2A> プロパティを使用します。|  
+|現在の日付が強調表示されているかどうかを指定します。|<xref:System.Windows.Controls.Calendar.IsTodayHighlighted%2A> プロパティを使用します。 既定では、<xref:System.Windows.Controls.Calendar.IsTodayHighlighted%2A>は`true`します。|  
+|サイズを変更、<xref:System.Windows.Controls.Calendar>です。|使用して、<xref:System.Windows.Controls.Viewbox>設定や、<xref:System.Windows.FrameworkElement.LayoutTransform%2A>プロパティを<xref:System.Windows.Media.ScaleTransform>です。 設定する場合、<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>のプロパティ、 <xref:System.Windows.Controls.Calendar>、実際のカレンダーでは、そのサイズは変更されません。|  
   
- <xref:System.Windows.Controls.Calendar> コントロールでは、マウスまたはキーボードによる基本的なナビゲーションを使用できます。  キーボード ナビゲーションを次の表にまとめます。  
+ <xref:System.Windows.Controls.Calendar>コントロールは、マウスまたはキーボードを使用して基本的なナビゲーションを提供します。 次の表は、キーボード ナビゲーションをまとめたものです。  
   
-|ショートカット キー|<xref:System.Windows.Controls.Calendar.DisplayMode%2A>|動作|  
-|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|--------|  
-|方向キー|<xref:System.Windows.Controls.CalendarMode>|<xref:System.Windows.Controls.Calendar.SelectionMode%2A> プロパティが <xref:System.Windows.Controls.CalendarSelectionMode> に設定されていない場合、<xref:System.Windows.Controls.Calendar.SelectedDate%2A> プロパティを変更します。|  
-|方向キー|<xref:System.Windows.Controls.CalendarMode>|<xref:System.Windows.Controls.Calendar.DisplayDate%2A> プロパティの月を変更します。  <xref:System.Windows.Controls.Calendar.SelectedDate%2A> は変更されません。|  
-|方向キー|<xref:System.Windows.Controls.CalendarMode>|<xref:System.Windows.Controls.Calendar.DisplayDate%2A> の年を変更します。  <xref:System.Windows.Controls.Calendar.SelectedDate%2A> は変更されません。|  
-|Shift \+ 方向キー|<xref:System.Windows.Controls.CalendarMode>|<xref:System.Windows.Controls.Calendar.SelectionMode%2A> が <xref:System.Windows.Controls.CalendarSelectionMode> または <xref:System.Windows.Controls.CalendarSelectionMode> に設定されていない場合に、日付の選択範囲を拡張します。|  
-|Home|<xref:System.Windows.Controls.CalendarMode>|<xref:System.Windows.Controls.Calendar.SelectedDate%2A> を現在の月の最初の日に変更します。|  
-|Home|<xref:System.Windows.Controls.CalendarMode>|<xref:System.Windows.Controls.Calendar.DisplayDate%2A> の月を年の最初の月に変更します。  <xref:System.Windows.Controls.Calendar.SelectedDate%2A> は変更されません。|  
-|Home|<xref:System.Windows.Controls.CalendarMode>|<xref:System.Windows.Controls.Calendar.DisplayDate%2A> の年を 10 年間の最初の年に変更します。  <xref:System.Windows.Controls.Calendar.SelectedDate%2A> は変更されません。|  
-|End|<xref:System.Windows.Controls.CalendarMode>|<xref:System.Windows.Controls.Calendar.SelectedDate%2A> を現在の月の最後の日に変更します。|  
-|End|<xref:System.Windows.Controls.CalendarMode>|<xref:System.Windows.Controls.Calendar.DisplayDate%2A> の月を年の最後の月に変更します。  <xref:System.Windows.Controls.Calendar.SelectedDate%2A> は変更されません。|  
-|End|<xref:System.Windows.Controls.CalendarMode>|<xref:System.Windows.Controls.Calendar.DisplayDate%2A> の年を 10 年間の最後の年に変更します。  <xref:System.Windows.Controls.Calendar.SelectedDate%2A> は変更されません。|  
-|Ctrl \+ ↑|どれでも可|次に大きい <xref:System.Windows.Controls.Calendar.DisplayMode%2A> に切り替えます。  <xref:System.Windows.Controls.Calendar.DisplayMode%2A> が既に <xref:System.Windows.Controls.CalendarMode> の場合には、処理は行われません。|  
-|Ctrl \+ ↓|どれでも可|次に小さい <xref:System.Windows.Controls.Calendar.DisplayMode%2A> に切り替えます。  <xref:System.Windows.Controls.Calendar.DisplayMode%2A> が既に <xref:System.Windows.Controls.CalendarMode> の場合には、処理は行われません。|  
-|Space キーまたは Enter キー|<xref:System.Windows.Controls.CalendarMode> または <xref:System.Windows.Controls.CalendarMode>|<xref:System.Windows.Controls.Calendar.DisplayMode%2A> を、フォーカスが設定されている項目によって表された <xref:System.Windows.Controls.CalendarMode> または <xref:System.Windows.Controls.CalendarMode> に切り替えます。|  
+|キーの組み合わせ|<xref:System.Windows.Controls.Calendar.DisplayMode%2A>|操作|  
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|------------|  
+|矢印|<xref:System.Windows.Controls.CalendarMode.Month>|変更、<xref:System.Windows.Controls.Calendar.SelectedDate%2A>プロパティ場合、<xref:System.Windows.Controls.Calendar.SelectionMode%2A>プロパティに設定されていない<xref:System.Windows.Controls.CalendarSelectionMode.None>です。|  
+|矢印|<xref:System.Windows.Controls.CalendarMode.Year>|変更の月、<xref:System.Windows.Controls.Calendar.DisplayDate%2A>プロパティです。 なお、<xref:System.Windows.Controls.Calendar.SelectedDate%2A>は変わりません。|  
+|矢印|<xref:System.Windows.Controls.CalendarMode.Decade>|変更の年、<xref:System.Windows.Controls.Calendar.DisplayDate%2A>です。 なお、<xref:System.Windows.Controls.Calendar.SelectedDate%2A>は変わりません。|  
+|SHIFT キーを押しながら方向|<xref:System.Windows.Controls.CalendarMode.Month>|場合<xref:System.Windows.Controls.Calendar.SelectionMode%2A>に設定されていない<xref:System.Windows.Controls.CalendarSelectionMode.SingleDate>または<xref:System.Windows.Controls.CalendarSelectionMode.None>、選択した日付の範囲が広がります。|  
+|ホーム|<xref:System.Windows.Controls.CalendarMode.Month>|変更、<xref:System.Windows.Controls.Calendar.SelectedDate%2A>は現在の月の最初の日にします。|  
+|ホーム|<xref:System.Windows.Controls.CalendarMode.Year>|変更の月、<xref:System.Windows.Controls.Calendar.DisplayDate%2A>年の最初の月にします。 <xref:System.Windows.Controls.Calendar.SelectedDate%2A>は変わりません。|  
+|ホーム|<xref:System.Windows.Controls.CalendarMode.Decade>|変更の年、 <xref:System.Windows.Controls.Calendar.DisplayDate%2A> 10 年間の最初の年にします。 <xref:System.Windows.Controls.Calendar.SelectedDate%2A>は変わりません。|  
+|End|<xref:System.Windows.Controls.CalendarMode.Month>|変更、<xref:System.Windows.Controls.Calendar.SelectedDate%2A>は現在の月の最終日にします。|  
+|End|<xref:System.Windows.Controls.CalendarMode.Year>|変更の月、<xref:System.Windows.Controls.Calendar.DisplayDate%2A>年の最後の月にします。 <xref:System.Windows.Controls.Calendar.SelectedDate%2A>は変わりません。|  
+|End|<xref:System.Windows.Controls.CalendarMode.Decade>|年を変更、 <xref:System.Windows.Controls.Calendar.DisplayDate%2A> 10 年間の最後の年にします。 <xref:System.Windows.Controls.Calendar.SelectedDate%2A>は変わりません。|  
+|Ctrl + ↑|どれでも可|次に切り替わります大きい<xref:System.Windows.Controls.Calendar.DisplayMode%2A>です。 場合<xref:System.Windows.Controls.Calendar.DisplayMode%2A>は既に<xref:System.Windows.Controls.CalendarMode.Decade>何もしません。|  
+|Ctrl +↓|どれでも可|次に切り替わります小さい<xref:System.Windows.Controls.Calendar.DisplayMode%2A>です。 場合<xref:System.Windows.Controls.Calendar.DisplayMode%2A>は既に<xref:System.Windows.Controls.CalendarMode.Month>何もしません。|  
+|Space キーまたは ENTER|<xref:System.Windows.Controls.CalendarMode.Year> または <xref:System.Windows.Controls.CalendarMode.Decade>|スイッチ<xref:System.Windows.Controls.Calendar.DisplayMode%2A>を<xref:System.Windows.Controls.CalendarMode.Month>または<xref:System.Windows.Controls.CalendarMode.Year>フォーカスのあるアイテムによって表されます。|  
   
-## 参照  
- [コントロール](../../../../docs/framework/wpf/controls/index.md)   
+## <a name="see-also"></a>関連項目  
+ [コントロール](../../../../docs/framework/wpf/controls/index.md)  
  [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)

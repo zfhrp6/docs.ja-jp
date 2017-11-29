@@ -1,36 +1,42 @@
 ---
-title: "方法 : ListBox のスクロール速度を向上させる | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ListBox コントロール [WPF], 向上 (スクロールのパフォーマンスを)"
-  - "ListBox コントロール [WPF], 再利用 (項目コンテナーを)"
+title: "方法 : ListBox のスクロール速度を向上させる"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ListBox control [WPF], reusing item containers
+- ListBox control [WPF], improving scrolling performance
 ms.assetid: 1e2bf8f3-c8ce-47f7-a400-a7fe11d1a848
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 46a54c9ed1dff9796506df78d07d7506dfd29cbf
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : ListBox のスクロール速度を向上させる
-<xref:System.Windows.Controls.ListBox> に多くの項目が含まれていると、マウス ホイールの操作、またはスクロール バーのつまみのドラッグによる <xref:System.Windows.Controls.ListBox> のスクロール時に、ユーザー インターフェイスの反応が遅くなる可能性があります。  <xref:System.Windows.Controls.VirtualizingStackPanel.VirtualizationMode%2A?displayProperty=fullName> 添付プロパティを <xref:System.Windows.Controls.VirtualizationMode> に設定することで、ユーザーがスクロールを実行したときの <xref:System.Windows.Controls.ListBox> のパフォーマンスを向上させることができます。  
+# <a name="how-to-improve-the-scrolling-performance-of-a-listbox"></a>方法 : ListBox のスクロール速度を向上させる
+場合、 <xref:System.Windows.Controls.ListBox> 、多くのアイテムが含まれています、ユーザーがスクロールすると、ユーザー インターフェイスの応答が遅くなる、<xref:System.Windows.Controls.ListBox>をマウスのホイールを使用するか、スクロール バーのつまみをドラッグします。 パフォーマンスを向上させることができます、<xref:System.Windows.Controls.ListBox>を設定してユーザーをスクロールするときに、`VirtualizingStackPanel.VirtualizationMode`添付プロパティ<xref:System.Windows.Controls.VirtualizationMode.Recycling?displayProperty=nameWithType>です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-## Description  
- 次の例では、<xref:System.Windows.Controls.ListBox> を作成し、<xref:System.Windows.Controls.VirtualizingStackPanel.VirtualizationMode%2A?displayProperty=fullName> を <xref:System.Windows.Controls.VirtualizationMode> に設定することで、スクロール時のパフォーマンスを向上させます。  
+## <a name="description"></a>説明  
+次の例を作成、<xref:System.Windows.Controls.ListBox>設定と、`VirtualizingStackPanel.VirtualizationMode`添付プロパティ<xref:System.Windows.Controls.VirtualizationMode.Recycling?displayProperty=nameWithType>スクロール中にパフォーマンスを向上させます。  
   
-## コード  
- [!code-xml[RecycleItemContainerShippets#VirtualizationMode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RecycleItemContainerShippets/CSharp/Window1.xaml#virtualizationmode)]  
+## <a name="code"></a>コード  
+ [!code-xaml[RecycleItemContainerShippets#VirtualizationMode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RecycleItemContainerShippets/CSharp/Window1.xaml#virtualizationmode)]  
   
- 次の例は、前の例で使用するデータを示しています。  
+ 次の例では、前の例で使用するデータを示します。  
   
  [!code-csharp[RecycleItemContainerShippets#ListBoxData](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RecycleItemContainerShippets/CSharp/Window1.xaml.cs#listboxdata)]
  [!code-vb[RecycleItemContainerShippets#ListBoxData](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RecycleItemContainerShippets/visualbasic/window1.xaml.vb#listboxdata)]

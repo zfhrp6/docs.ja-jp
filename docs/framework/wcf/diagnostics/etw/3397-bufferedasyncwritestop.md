@@ -1,35 +1,38 @@
 ---
-title: "3397 - BufferedAsyncWriteStop | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 3397 - BufferedAsyncWriteStop
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1bbf56fc-04fe-443b-ae97-769814c7be57
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d72f5ea40af32635223f2b3b7a693d9edc5571b7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 3397 - BufferedAsyncWriteStop
-## プロパティ  
+# <a name="3397---bufferedasyncwritestop"></a>3397 - BufferedAsyncWriteStop
+## <a name="properties"></a>プロパティ  
   
 |||  
 |-|-|  
 |ID|3397|  
 |キーワード|チャネル|  
 |レベル|情報|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Debug|  
+|チャネル|Microsoft-Windows-Application Server-Applications/Debug|  
   
-## 説明  
+## <a name="description"></a>説明  
  このイベントは、エンコーダーによってメッセージが非同期に書き込まれたときに生成されます。  
   
-## メッセージ  
+## <a name="message"></a>メッセージ  
  エンコーダーによってメッセージが非同期で書き込まれました。  
   
-## 詳細
+## <a name="details"></a>詳細

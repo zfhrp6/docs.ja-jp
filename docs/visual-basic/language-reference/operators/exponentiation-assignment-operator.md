@@ -1,67 +1,64 @@
 ---
-title: "^= Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.^="
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "assignment statements, compound"
-  - "statements [Visual Basic], compound assignment"
-  - "^= operator [Visual Basic]"
-  - "compound assignment statements"
+title: "^= 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.^=
+helpviewer_keywords:
+- assignment statements [Visual Basic], compound
+- statements [Visual Basic], compound assignment
+- ^= operator [Visual Basic]
+- compound assignment statements [Visual Basic]
 ms.assetid: 397da132-2d96-4a85-a7bc-f7c730a608c9
-caps.latest.revision: 17
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: fa9d87d2f090a8c18aaab742e73878c7b80f55c0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ^= Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-変数またはプロパティに対する式のべき乗を求め、その結果を変数またはプロパティに戻します。  
+# <a name="-operator-visual-basic"></a>^= 演算子 (Visual Basic)
+変数または式のプロパティの値を生成し、結果を変数またはプロパティに代入します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
 variableorproperty ^= expression  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `variableorproperty`  
- 必ず指定します。  任意の数値変数またはプロパティです。  
+ 必須です。 任意の数値型の変数またはプロパティ。  
   
  `expression`  
- 必ず指定します。  任意の数式を指定します。  
+ 必須です。 任意の数式。  
   
-## 解説  
- `^=` 演算子の左側には、スカラー変数、プロパティ、配列の要素なども指定できます。  変数またはプロパティは [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md) にすることはできません。  
+## <a name="remarks"></a>コメント  
+ 左側にある要素、`^=`演算子は、単純なスカラー変数、プロパティ、または配列の要素を指定できます。 変数またはプロパティにできません。 [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)です。  
   
- `^=` 演算子の 1 番目の式の値の電源に変数またはプロパティの値 （演算子の左側で）発生します （演算子の右辺に）。  演算子は、変数またはプロパティに再度その操作の結果を代入します。  
+ `^=` (演算子の右側にある) の式の値の累乗演算子が変数または (演算子の左側にある) のプロパティの値にまずを発生させます。 演算子は、変数またはプロパティにし、その操作の結果を割り当てます。  
   
- Visual Basic は、すべての指数演算を [Double Data Type](../../../visual-basic/language-reference/data-types/double-data-type.md) で行います。  これ以外の型のオペランドはすべて `Double` に変換され、結果は必ず `Double` 型になります。  
+ Visual Basic での累乗を常に実行する、 [Double データ型](../../../visual-basic/language-reference/data-types/double-data-type.md)です。 任意の異なる型のオペランドに変換`Double`、され、結果は常に`Double`です。  
   
- `expression` の値には、小数や負の数 \(またはその両方\) を指定できます。  
+ 値`expression`、小数部は、負の値、またはその両方です。  
   
-## オーバーロード  
- [^ Operator](../../../visual-basic/language-reference/operators/exponentiation-operator.md) は*オーバーロード*できます。つまり、オペランドがクラスや構造体を型として持つ場合に、演算子の動作をそのクラスや構造体で再定義できるという意味です。  `^` 演算子のオーバーロードは、`^=` 演算子の動作に影響を与えます。  コード内で、`^` をオーバーロードするクラスや構造体で `^=` が使用されている場合は、再定義された後の動作を必ず理解するようにしてください。  詳細については、「[Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+## <a name="overloading"></a>オーバーロード  
+ [^ 演算子](../../../visual-basic/language-reference/operators/exponentiation-operator.md)できます*オーバー ロードされた*、つまり、あるクラスまたは構造体を再定義できますその動作オペランドは、そのクラスまたは構造体の型を持つときにします。 オーバー ロード、`^`演算子の動作に影響、`^=`演算子。 コードで使用する場合`^=`クラスまたはオーバー ロードする構造体で`^`、再定義された動作を確認してください。 詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。  
   
-## 使用例  
- 次の例では、`^=` 演算子を使って、最初の整数型 \(`Integer`\) の変数の n 乗 \(n \= 2 番目の変数の値\) を求め、結果を最初の変数に代入します。  
+## <a name="example"></a>例  
+ 次の例では、`^=`いずれかの値を上げる演算子`Integer`変数の 2 つ目の変数と割り当て、その結果、最初の変数を電源にします。  
   
  [!code-vb[VbVbalrOperators#21](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/exponentiation-assignment-operator_1.vb)]  
   
-## 参照  
- [^ Operator](../../../visual-basic/language-reference/operators/exponentiation-operator.md)   
- [Assignment Operators](../../../visual-basic/language-reference/operators/assignment-operators.md)   
- [Arithmetic Operators](../../../visual-basic/language-reference/operators/arithmetic-operators.md)   
- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
- [Statements](../../../visual-basic/programming-guide/language-features/statements.md)
+## <a name="see-also"></a>関連項目  
+ [^ 演算子](../../../visual-basic/language-reference/operators/exponentiation-operator.md)  
+ [代入演算子](../../../visual-basic/language-reference/operators/assignment-operators.md)  
+ [算術演算子](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
+ [Visual Basic における演算子の優先順位](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [機能別の演算子一覧](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [ステートメント](../../../visual-basic/programming-guide/language-features/statements.md)

@@ -1,68 +1,70 @@
 ---
-title: "方法 : MMC スナップインを使用して証明書を参照する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "証明書 [WCF], MMC スナップインを使用した参照"
+title: "方法 : MMC スナップインを使用して証明書を参照する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: certificates [WCF], viewing with the MMC snap-in
 ms.assetid: 2b8782aa-ebb4-4ee7-974b-90299e356dc5
-caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 43925a301d4f0d2ca1a852912255be49dd330ae5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : MMC スナップインを使用して証明書を参照する
-X.509 証明書は、広く使用されている資格情報です。セキュリティで保護されたサービスやクライアントを作成する場合、<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> メソッドなどのメソッドを使用して、クライアントやサービスの資格情報として使用する証明書を指定できます。このメソッドでは、証明書を格納するストアや証明書を検索するときに使用する値など、さまざまなパラメーターが必要になります。次の手順では、コンピューター上のストアを調べて適切な証明書を検索する方法を示します。証明書の拇印の検索の例については、「[方法 : 証明書のサムプリントを取得する](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)」を参照してください。  
+# <a name="how-to-view-certificates-with-the-mmc-snap-in"></a>方法 : MMC スナップインを使用して証明書を参照する
+X.509 証明書は、広く使用されている資格情報です。 セキュリティで保護されたサービスやクライアントを作成する場合、<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> メソッドなどのメソッドを使用して、クライアントやサービスの資格情報として使用する証明書を指定できます。 このメソッドでは、証明書を格納するストアや証明書を検索するときに使用する値など、さまざまなパラメーターが必要になります。 次の手順では、コンピューター上のストアを調べて適切な証明書を検索する方法を示します。 証明書の拇印を検索の例は、次を参照してください。[する方法: 証明書のサムプリントを取得](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)です。  
   
-### MMC スナップインで証明書を参照するには  
+### <a name="to-view-certificates-in-the-mmc-snap-in"></a>MMC スナップインで証明書を参照するには  
   
 1.  コマンド プロンプト ウィンドウを開きます。  
   
-2.  「`mmc`」と入力し、Enter キーを押します。ローカル コンピューターのストアにある証明書を表示するには、管理者のロールが必要です。  
+2.  型`mmc`ENTER キーを押します。 ローカル コンピューターのストアにある証明書を表示するには、管理者のロールが必要です。  
   
-3.  **\[ファイル\]** メニューの **\[スナップインの追加と削除\]** をクリックします。  
+3.  **ファイル** メニューのをクリックして**スナップインの追加/削除**です。  
   
-4.  **\[追加\]** をクリックします。  
+4.  **[追加]**をクリックします。  
   
-5.  **\[スタンドアロン スナップインの追加\]** ダイアログ ボックスで、**\[証明書\]** を選択します。  
+5.  **スタンドアロン スナップインの追加**ダイアログ ボックスで、**証明書**です。  
   
-6.  **\[追加\]** をクリックします。  
+6.  **[追加]**をクリックします。  
   
-7.  **\[証明書スナップイン\]** ダイアログ ボックスで、**\[コンピューター アカウント\]** を選択し、**\[次へ\]** をクリックします。必要に応じて、**\[ユーザー アカウント\]** や **\[サービス アカウント\]** も選択できます。そのコンピューターの管理者でない場合は、自分のユーザー アカウントの証明書のみを管理できます。  
+7.  **証明書スナップイン**ダイアログ ボックスで、**コンピューター アカウント** をクリック**次**です。 必要に応じて、選択**ユーザー アカウント**または**サービス アカウント**です。 そのコンピューターの管理者でない場合は、自分のユーザー アカウントの証明書のみを管理できます。  
   
-8.  **\[コンピューターの選択\]** ダイアログ ボックスで、**\[完了\]** をクリックします。  
+8.  **コンピューターの選択**ダイアログ ボックスで、をクリックして**完了**です。  
   
-9. **\[スタンドアロン スナップインの追加\]** ダイアログ ボックスで、**\[閉じる\]** をクリックします。  
+9. **スタンドアロン スナップインの追加**ダイアログ ボックスで、をクリックして**閉じる**です。  
   
-10. **\[スナップインの追加と削除\]** ダイアログ ボックスで、**\[OK\]** をクリックします。  
+10. **スナップインの追加と削除**ダイアログ ボックスで、をクリックして**OK**です。  
   
-11. **\[コンソール ルート\]** ウィンドウで、**\[証明書 \(ローカル コンピューター\)\]** をクリックしてコンピューターの証明書ストアを表示します。  
+11. **コンソール ルート**ウィンドウで、をクリックして**証明書 (ローカル コンピューター)**コンピューターのストアに証明書を表示します。  
   
-12. 省略可能。自分のアカウントの証明書を表示するには、手順 3. ～ 6. を繰り返し、手順 7. で **\[コンピューター アカウント\]** を選択する代わりに **\[ユーザー アカウント\]** をクリックして、手順 8. ～ 10. を繰り返します。  
+12. 省略可能です。 自分のアカウントの証明書を表示するには、手順 3. ～ 6. を繰り返し、 手順 7. で選択する代わりに**コンピューター アカウント**をクリックして**ユーザー アカウント**手順 8. ~ 10. を繰り返します。  
   
-13. 省略可能。**\[ファイル\]** メニューの **\[保存\]** または **\[名前を付けて保存\]** をクリックします。再利用できるようにコンソール ファイルを保存します。  
+13. 省略可能です。 **ファイル** メニューのをクリックして**保存**または**名前を付けて保存**です。 再利用できるようにコンソール ファイルを保存します。  
   
-## Internet Explorer を使用した証明書の表示  
+## <a name="viewing-certificates-with-internet-explorer"></a>Internet Explorer を使用した証明書の表示  
  Internet Explorer を使用して、証明書を表示、エクスポート、インポート、または削除することもできます。  
   
-#### Internet Explorer で証明書を表示するには  
+#### <a name="to-view-certificates-with-internet-explorer"></a>Internet Explorer で証明書を表示するには  
   
-1.  Internet Explorer で **\[ツール\]** をクリックし、**\[インターネット オプション\]** をクリックして **\[インターネット オプション\]** ダイアログ ボックスを表示します。  
+1.  Internet Explorer で、をクリックして**ツール**をクリックし、**インターネット オプション**を表示する、**インターネット オプション** ダイアログ ボックス。  
   
-2.  **\[コンテンツ\]** タブをクリックします。  
+2.  クリックして、**コンテンツ**タブです。  
   
-3.  **\[証明書\]** で、**\[証明書\]** をクリックします。  
+3.  **証明書**をクリックして**証明書**です。  
   
-4.  証明書の詳細を表示するには、その証明書を選択し、**\[表示\]** をクリックします。  
+4.  任意の証明書の詳細を表示し、証明書を選択し、クリックして**ビュー**です。  
   
-## 参照  
- [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
- [方法 : 開発中に使用する一時的な証明書を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)   
- [方法 : 証明書のサムプリントを取得する](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)
+## <a name="see-also"></a>関連項目  
+ [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
+ [方法: 開発中に使用するための一時的な証明書を作成](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)  
+ [方法: 証明書のサムプリントの取得](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)

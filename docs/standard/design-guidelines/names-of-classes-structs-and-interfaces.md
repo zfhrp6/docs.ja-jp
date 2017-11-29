@@ -1,65 +1,63 @@
 ---
-title: "クラス、構造体、およびインターフェイスの名前 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "型名、ガイドライン"
-  - "名前のクラス [.NET Framework]"
-  - "列挙体 [.NET Framework] の名前"
-  - "名前 [.NET Framework] インターフェイス"
-  - "一般的な型名"
-  - "型名の名前 [.NET Framework]"
-  - "クラスの名前 [.NET Framework]"
-  - "名前のインターフェイス [.NET Framework]"
-  - "ジェネリック型パラメーター"
+title: "クラス、構造体、およびインターフェイスの名前"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- type names, guidelines
+- classes [.NET Framework], names
+- enumerations [.NET Framework], names
+- names [.NET Framework], interfaces
+- common type names
+- names [.NET Framework], type names
+- names [.NET Framework], classes
+- interfaces [.NET Framework], names
+- generic type parameters
 ms.assetid: 87a4b0da-ed64-43b1-ac43-968576c444ce
-caps.latest.revision: 16
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: a4f4b9e48587138f3e65c0c6825af0b3e4e8c592
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# クラス、構造体、およびインターフェイスの名前
+# <a name="names-of-classes-structs-and-interfaces"></a>クラス、構造体、およびインターフェイスの名前
 次の名前付けのガイドラインは、一般的な種類の名前付けに適用されます。  
   
- **✓ は** クラスと構造体には名詞または名詞句、pascal 表記を使用を使用して名前を付けます。  
+ **✓ しないで**名前をクラスと構造体には名詞または名詞句を使用して pascal 表記を使用します。  
   
  これは、動詞句とという名前のメソッドと型名を区別します。  
   
- **✓ は** 形容詞句、または場合によって名詞または名詞句のインターフェイスの名前します。  
+ **✓ しないで**形容詞句、または場合によっては名詞または名詞句とインターフェイスの名前します。  
   
- 名詞と名詞句をめったに使用する必要があり、抽象クラスとインターフェイスではなく、型があることを示す可能性があります。  
+ 名詞や名詞句を付けることはほとんどなく、種類必要がある、抽象クラスとインターフェイスではなくを示している可能性があります。  
   
- **X のしないで** クラス名のプレフィックス \("C"など\) を指定します。  
+ **X しないで**クラス名のプレフィックス ("C"など) を指定します。  
   
- **✓ を検討してください** 、基本クラスの名前のクラスを派生の名前を終了します。  
+ **✓ を検討してください**基底クラスの名前のクラスを派生の名前を終了します。  
   
- これはとても読みにくいはであり、関係を明確に説明します。 コード内のいくつかの例に示します: `ArgumentOutOfRangeException`, が付いての `Exception`, 、および `SerializableAttribute`, が付いての `Attribute`です。 ただし、これは次のガイドラインを適用することで、適切な判断を使用するにはなど、 `Button` クラスは、一種の `Control` イベントが `Control` 名前に表示されません。  
+ これは非常に読み取り可能であり、リレーションシップを明確に説明します。 コードでは次の例を示します:`ArgumentOutOfRangeException`は一種の`Exception`、および`SerializableAttribute`は一種の`Attribute`します。 ただし、することが重要です。 このガイドラインを適用することで、適切な判断たとえば、`Button`クラスは、一種の`Control`イベントが`Control`その名前が表示されません。  
   
- **✓ は** インターフェイス名のプレフィックス文字では、型がインターフェイスであることを示します。  
+ **✓ しないで**インターフェイス名のプレフィックス文字では、型がインターフェイスであることを示します。  
   
- たとえば、 `IComponent` \(わかりやすい名詞\) `ICustomAttributeProvider` \(名詞句\)、および `IPersistable` \(形容詞\) は適切なインターフェイス名。 同様に他の種類名の省略形を回避します。  
+ たとえば、 `IComponent` (わかりやすい名詞) `ICustomAttributeProvider` (名詞句)、および`IPersistable`(形容詞) 適切なインターフェイス名は、します。 同様に他の種類名の省略形を回避します。  
   
- **✓ は** だけで、"I"プレフィックスのインターフェイス名、クラスがインターフェイスの標準的な実装であるクラス – インターフェイスのペアを定義するときに名前が異なることを確認します。  
+ **✓ しないで**だけで、"I"プレフィックスのインターフェイスの名前、クラスがインターフェイスの標準的な実装であるクラス – インターフェイスのペアを定義するときに名前が異なることを確認してください。  
   
-## ジェネリック型パラメーターの名前  
- ジェネリックは .NET Framework 2.0 に追加されました。 機能の導入と呼ばれる識別子の新しい種類 *パラメーター入力*します。  
+## <a name="names-of-generic-type-parameters"></a>ジェネリック型パラメーターの名前  
+ ジェネリックは、.NET Framework 2.0 に追加されました。 機能には、新しいと呼ばれる識別子の種類が導入されました。*パラメーター入力*です。  
   
- **✓ は** 1 文字の名前が完全に説明し、わかりやすい名前と値を追加していない限り、わかりやすい名前を持つジェネリック型パラメーターの名前します。  
+ **✓ しないで**1 文字の名前が完全にわかり、わかりやすい名前と値を追加していない場合を除き、わかりやすい名前を持つジェネリック型パラメーターの名前します。  
   
- **✓ を検討してください** を使用して `T` 単一文字の型パラメーターが 1 つの型の型のパラメーター名として。  
+ **✓ を検討してください**を使用して`T`の 1 文字の型パラメーターを 1 つの種類の型パラメーター名として。  
   
 ```  
 public int IComparer<T> { ... }  
@@ -67,7 +65,7 @@ public delegate bool Predicate<T>(T item);
 public struct Nullable<T> where T:struct { ... }  
 ```  
   
- **✓ は** 説明的な型のパラメーター名のプレフィックス `T`します。  
+ **✓ しないで**説明的な型パラメーター名をプレフィックス`T`です。  
   
 ```  
 public interface ISessionChannel<TSession> where TSession : ISession{  
@@ -75,42 +73,42 @@ public interface ISessionChannel<TSession> where TSession : ISession{
 }  
 ```  
   
- **✓ を検討してください** 制約を示す名前、パラメーターの型パラメーターに配置されます。  
+ **✓ を検討してください**制約を示す名前、パラメーターの型パラメーター上に配置します。  
   
- パラメーターに制約があるなど `ISession` という `TSession`します。  
+ など、パラメーターに対する制約として`ISession`という`TSession`です。  
   
-## 一般的な種類の名前  
- **✓ は** から派生した、または特定の .NET Framework 型を実装する型の名前を付けるときは、次の表に記載されているガイドラインに従ってください。  
+## <a name="names-of-common-types"></a>一般的な種類の名前  
+ **✓ しないで**から派生または特定の .NET Framework 型を実装する型の名前を付けるときは、次の表に説明されているガイドラインに従ってください。  
   
-|基本データ型|型の派生と実装ガイドライン|  
-|------------|-------------------|  
-|`System.Attribute`|**✓ は** カスタム属性クラスの名前にサフィックス"Attribute"を追加します。 カスタム属性クラスの名前にサフィックス"Attribute"を追加します。|  
-|`System.Delegate`|**✓ は** イベントで使用されているデリゲートの名前にサフィックス"EventHandler"を追加します。<br /><br /> **✓ は** 以外のイベント ハンドラーとして使用されているデリゲートの名前に"Callback"サフィックスを追加します。<br /><br /> **X のしないで** デリゲートに「Delegate」サフィックスを追加します。|  
-|`System.EventArgs`|**✓ は** "EventArgs"サフィックスを追加|  
-|`System.Enum`|**X のしないで** このクラスから派生、代わりに使用する言語でサポートされているキーワードを使用して、たとえば、C\# の場合、enum キーワードを使用します。<br /><br /> **X のしないで** 「列挙」または"Flag"サフィックスを追加|  
-|`System.Exception`|**✓ は** 「例外」サフィックスを追加|  
-|`IDictionary` <br /> `IDictionary<TKey,TValue>`|**✓ は** 「辞書」サフィックスを追加 なお `IDictionary` は、コレクションの特定の型ですが、このガイドラインに依存している一般的なコレクション ガイドラインよりも優先されます。|  
-|`IEnumerable` <br /> `ICollection` <br /> `IList` <br /> `IEnumerable<T>` <br /> `ICollection<T>` <br /> `IList<T>`|**✓ は** 「コレクション」サフィックスを追加|  
-|`System.IO.Stream`|**✓ は** 「ストリーム」サフィックスを追加|  
-|`CodeAccessPermission IPermission`|**✓ は** 「アクセス」サフィックスを追加|  
+|基本型|派生実装する型のガイドライン|  
+|---------------|------------------------------------------|  
+|`System.Attribute`|**✓ しないで**カスタム属性クラスの名前にサフィックス"Attribute"を追加します。|  
+|`System.Delegate`|**✓ しないで**イベントで使用されるデリゲートの名前にサフィックス"EventHandler"を追加します。<br /><br /> **✓ しないで**以外のイベント ハンドラーとして使用されているデリゲートの名前に"Callback"サフィックスを追加します。<br /><br /> **X しないで**「代理」サフィックスをデリゲートに追加します。|  
+|`System.EventArgs`|**✓ しないで**"EventArgs です"というサフィックスを追加。|  
+|`System.Enum`|**X しないで**代わりに使用する言語でサポートされているキーワードを使用して; たとえば、C# の場合、次のように使用します。 このクラスから派生、`enum`キーワード。<br /><br /> **X しないで**「列挙」または"Flag"サフィックスを追加|  
+|`System.Exception`|**✓ しないで**"Exception"サフィックスを追加|  
+|`IDictionary` <br /> `IDictionary<TKey,TValue>`|**✓ しないで**「ディクショナリ」というサフィックスを追加。 なお`IDictionary`コレクションの特定の種類が、このガイドラインに続くコレクションのより一般的なガイドラインよりも優先されます。|  
+|`IEnumerable` <br /> `ICollection` <br /> `IList` <br /> `IEnumerable<T>` <br /> `ICollection<T>` <br /> `IList<T>`|**✓ しないで**「コレクション」サフィックスを追加|  
+|`System.IO.Stream`|**✓ しないで**「ストリームです」というサフィックスを追加。|  
+|`CodeAccessPermission IPermission`|**✓ しないで**「権限」というサフィックスを追加。|  
   
-## 列挙体の名前を付ける  
- 一般に列挙型 \(列挙型とも呼ばれます\) の名前にすることは \(pascal 表記を使用など\) 標準的な型の名前付け規則に従う必要があります。 ただし、この列挙型に適用する追加のガイドラインがあります。  
+## <a name="naming-enumerations"></a>列挙体の名前を付ける  
+ 一般に列挙型 (列挙型とも呼ばれます) の名前は、標準的な型の名前付け規則 (pascal 表記を使用など) を従う必要があります。 ただし、これには具体的には列挙型に適用される追加のガイドラインがあります。  
   
- **✓ は** の値がビット フィールドでない場合は、列挙体の単数形の型名を使用します。  
+ **✓ しないで**ビット フィールドがその値がない限り、列挙体の単数形の型名を使用します。  
   
- **✓ は** フラグ列挙体とも呼ばれます。 の値として、ビット フィールドを持つ列挙体の複数形の型名を使用します。  
+ **✓ しないで**ビット フィールドを持つ列挙体の複数形の型名を使用して値として、フラグ列挙型とも呼ばれます。  
   
- **X のしないで** 列挙型の型名で、「列挙」サフィックスを使用します。  
+ **X しないで**列挙型の型名で、「列挙」サフィックスを使用します。  
   
- **X のしないで** 「フラグの設定」を使用するか列挙型に"Flags"サフィックスが名前を入力します。  
+ **X しないで**「フラグを設定」を使用して、または"Flags"サフィックス列挙型では、名前を入力します。  
   
- **X のしないで** リッチ テキストを持つ列挙型などの列挙値の名前 \(たとえば、"ad"ADO 列挙型にします。\)、"rtf"にプレフィックスを使用します。  
+ **X しないで**リッチ テキストの列挙型などの列挙値の名前 (例:"ad"ADO 列挙型の場合。)、"rtf"に対して、プレフィックスを使用します。  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## 参照  
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)   
+## <a name="see-also"></a>関連項目  
+ [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
  [名前付けのガイドライン](../../../docs/standard/design-guidelines/naming-guidelines.md)

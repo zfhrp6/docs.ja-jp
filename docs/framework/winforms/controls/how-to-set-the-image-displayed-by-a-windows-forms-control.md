@@ -1,37 +1,42 @@
 ---
-title: "方法 : Windows フォーム コントロールによって表示されるイメージを設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Button コントロール [Windows フォーム], イメージ"
-  - "コントロール [Windows フォーム], イメージ"
-  - "例 [Windows フォーム], コントロール"
-  - "イメージ [Windows フォーム], Windows フォーム コントロール"
-  - "Windows フォーム コントロール, イメージ"
+title: "方法 : Windows フォーム コントロールによって表示されるイメージを設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- Button control [Windows Forms], images
+- Windows Forms controls, images
+- controls [Windows Forms], images
+- images [Windows Forms], Windows Forms controls
+- examples [Windows Forms], controls
 ms.assetid: 9445af8f-4f62-48b0-a3f6-068058964b9f
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6d9f4d806b39e6e1272ddbb60befdaf8c76e46b3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム コントロールによって表示されるイメージを設定する
-いくつかの Windows フォーム コントロールは、イメージを表示できます。  イメージの例としては、ボタン上のフロッピー ディスクのアイコンが**\[上書き保存\]** コマンドを示すように、コントロールの目的を明確にするアイコンがあります。  また、コントロールに特定の外観と動作を与えるための背景イメージとしてのアイコンもあります。  
+# <a name="how-to-set-the-image-displayed-by-a-windows-forms-control"></a>方法 : Windows フォーム コントロールによって表示されるイメージを設定する
+いくつかの Windows フォーム コントロールは、イメージを表示できます。 これらのイメージはボタン上のフロッピー ディスク アイコンなど、コントロールの目的を明確にするアイコンを指定できます、**保存**コマンド。 目的の動作と外観の制御できるように背景画像の代わりに、アイコンもあります。  
   
-### コントロールによって表示されるイメージを設定するには  
+### <a name="to-set-the-image-displayed-by-a-control"></a>コントロールによって表示されるイメージを設定するには  
   
-1.  コントロールの `Image` または `BackgroundImage` プロパティを <xref:System.Drawing.Image> 型のオブジェクトに設定します。  一般的に、ファイルからイメージを読み込む場合は、<xref:System.Drawing.Image.FromFile%2A> メソッドを使用します。  
+1.  コントロールの設定`Image`または`BackgroundImage`プロパティ型のオブジェクトを<xref:System.Drawing.Image>です。 一般に、するはから読み込まれるイメージ ファイルを使用して、<xref:System.Drawing.Image.FromFile%2A>メソッドです。  
   
-     次のコード例では、イメージの場所に対するパスとして **\[マイ ピクチャ\]** フォルダーが設定されています。  Windows オペレーティング システムを実行するほとんどのコンピューターには、このディレクトリがあります。  また、ユーザーは最小限のシステム アクセス レベルでアプリケーションを安全に実行できます。  次のコード例では、既に <xref:System.Windows.Forms.PictureBox> コントロールが追加されたフォームが必要です。  
+     イメージの場所は次のコード例では、パスが設定、**マイ ピクチャ**フォルダーです。 Windows オペレーティング システムを実行しているほとんどのコンピューターは、このディレクトリが含まれます。 最小限のシステムのアクセス レベルを持つユーザー、アプリケーションを安全に実行することもできます。 次のコード例では、既にフォームにある必要があります、<xref:System.Windows.Forms.PictureBox>コントロールを追加します。  
   
     ```vb  
     ' Replace the image named below  
@@ -40,7 +45,6 @@ caps.handback.revision: 11
        (System.Environment.GetFolderPath _  
        (System.Environment.SpecialFolder.MyPictures) _  
        & "\Image.gif")  
-  
     ```  
   
     ```csharp  
@@ -51,7 +55,6 @@ caps.handback.revision: 11
        (System.Environment.GetFolderPath  
        (System.Environment.SpecialFolder.MyPictures)  
        + @"\Image.gif");  
-  
     ```  
   
     ```cpp  
@@ -63,7 +66,7 @@ caps.handback.revision: 11
        "\\Image.gif"));  
     ```  
   
-## 参照  
- <xref:System.Drawing.Image.FromFile%2A>   
- <xref:System.Drawing.Image>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Drawing.Image.FromFile%2A>  
+ <xref:System.Drawing.Image>  
  <xref:System.Windows.Forms.Control.BackgroundImage%2A>

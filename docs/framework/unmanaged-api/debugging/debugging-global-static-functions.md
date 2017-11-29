@@ -1,0 +1,55 @@
+---
+title: "デバッグ グローバル静的関数"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: reference
+helpviewer_keywords:
+- global static functions [.NET Framework debugging]
+- debugging global static functions [.NET Framework]
+- unmanaged global static functions [.NET Framework], debugging
+ms.assetid: efc64414-77c3-48d0-881a-8594ed416aad
+caps.latest.revision: "11"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: ad5d3ef689a251ea4b154afc5d1bfb387388ddb3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
+---
+# <a name="debugging-global-static-functions"></a>デバッグ グローバル静的関数
+このセクションでは、デバッグ API が使用するアンマネージ グローバル静的関数について説明します。  
+  
+## <a name="in-this-section"></a>このセクションの内容  
+ [_EFN_GetManagedExcepStack 関数](../../../../docs/framework/unmanaged-api/debugging/efn-getmanagedexcepstack-function.md)  
+ 指定したマネージ例外オブジェクトのアドレスに応じて、中に含まれているスタック トレースの文字列バージョンを返します。  
+  
+ [_EFN_GetManagedObjectFieldInfo 関数](../../../../docs/framework/unmanaged-api/debugging/efn-getmanagedobjectfieldinfo-function.md)  
+ 指定したオブジェクト ポインターとフィールド名を使用して、オブジェクトの先頭からフィールドまでのオフセットとフィールドの値を取得します。  
+  
+ [_EFN_GetManagedObjectName 関数](../../../../docs/framework/unmanaged-api/debugging/efn-getmanagedobjectname-function.md)  
+ 指定したマネージ オブジェクトのポインターを使用して、型の名前を取得します。  
+  
+ [_EFN_StackTrace 関数](../../../../docs/framework/unmanaged-api/debugging/efn-stacktrace-function.md)  
+ マネージ スタック トレースのテキスト表現および `CONTEXT` レコードの配列 (アンマネージ コードとマネージ コードの間の各移行につき 1 つ) を提供します。  
+  
+ [CLRDataCreateInstance 関数](../../../../docs/framework/unmanaged-api/debugging/clrdatacreateinstance-function.md)  
+ 指定した対象プロセスの指定したインターフェイス オブジェクトを作成するために、共通言語ランタイム (CLR) データ アクセス サービスによって呼び出されます。  
+  
+ [PFN_CLRDataCreateInstance 関数ポインター](../../../../docs/framework/unmanaged-api/debugging/pfn-clrdatacreateinstance-function-pointer.md)  
+ 指定した対象プロセスの指定したインターフェイス オブジェクトを作成するために、CLR データ アクセス サービスによって呼び出される関数を指します。  
+  
+## <a name="related-sections"></a>関連項目  
+ [デバッグ コクラス](../../../../docs/framework/unmanaged-api/debugging/debugging-coclasses.md)  
+  
+ [デバッグのインターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+  
+ [列挙体のデバッグ](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
+  
+ [デバッグ構造体](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)

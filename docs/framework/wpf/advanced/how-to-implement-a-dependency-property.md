@@ -1,41 +1,47 @@
 ---
-title: "方法 : 依存関係プロパティを実装する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "依存関係プロパティ, 補足 (プロパティ)"
-  - "プロパティ, 補足 (依存関係プロパティで)"
+title: "方法 : 依存関係プロパティを実装する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- dependency properties [WPF], backing properties with
+- properties [WPF], backing with dependency properties
 ms.assetid: 855fd6d7-19ac-493c-bf5e-2f40b57cdc92
-caps.latest.revision: 19
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9bc4dee8f0b2eef76e5769ae7da3a13edf7c3300
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 依存関係プロパティを実装する
-この例では、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] のプロパティを <xref:System.Windows.DependencyProperty> フィールドで補足する方法、つまり[依存関係プロパティ](GTMT)を定義する方法を示します。  独自に定義したプロパティが [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のさまざまな機能、たとえばスタイル、データ バインディング、継承、アニメーション、既定値をサポートできるようにするには、そのプロパティを[依存関係プロパティ](GTMT)として実装します。  
+# <a name="how-to-implement-a-dependency-property"></a>方法 : 依存関係プロパティを実装する
+この例は、バックアップする方法を示しています、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]を持つプロパティ、<xref:System.Windows.DependencyProperty>フィールド、ため、依存関係プロパティを定義します。 独自に定義したプロパティが [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のさまざまな機能、たとえばスタイル、データ バインディング、継承、アニメーション、既定値をサポートできるようにするには、そのプロパティを依存関係プロパティとして実装します。  
   
-## 使用例  
- 次に示す例では、最初に <xref:System.Windows.DependencyProperty.Register%2A> メソッドを呼び出して[依存関係プロパティ](GTMT)を登録します。  [依存関係プロパティ](GTMT)の名前と特性を格納するときに使用する識別子フィールドの名前は、<xref:System.Windows.DependencyProperty.Register%2A> の呼び出し時に依存関係プロパティに対して選択した <xref:System.Windows.DependencyProperty.Name%2A> でなければなりません。これに、リテラル文字列 `Property` が付加されます。  たとえば、登録する依存関係プロパティの <xref:System.Windows.DependencyProperty.Name%2A> が `Location` ならば、この依存関係プロパティに対して定義する識別子フィールドの名前は `LocationProperty` とする必要があります。  
+## <a name="example"></a>例  
+ 次の例は最初に呼び出すことによって、依存関係プロパティを登録、<xref:System.Windows.DependencyProperty.Register%2A>メソッドです。 名前の格納に使用して、依存関係プロパティの特性がある必要がある識別子のフィールドの名前、<xref:System.Windows.DependencyProperty.Name%2A>の依存関係プロパティの一部として選択した、<xref:System.Windows.DependencyProperty.Register%2A>呼び出し、リテラル文字列により追加された`Property`です。 インスタンスとの依存関係プロパティを登録する場合、<xref:System.Windows.DependencyProperty.Name%2A>の`Location`、依存関係プロパティを定義する識別子のフィールドにという名前を付ける`LocationProperty`です。  
   
- この例では、[依存関係プロパティ](GTMT)とその [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] アクセサーの名前は `State`、識別子フィールドは `StateProperty`、プロパティの型は <xref:System.Boolean>、[依存関係プロパティ](GTMT)を登録する型は `MyStateControl` です。  
+ この例では、依存関係プロパティの名前とその[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]アクセサーが`State`; 識別子フィールドは`StateProperty`; プロパティの型は<xref:System.Boolean>; 依存関係プロパティを登録する型、および`MyStateControl`です。  
   
  このパターンに従って名前が付けられていない場合は、定義したプロパティがデザイナーから正しく報告されず、プロパティ システムのスタイル適用の一部が予期したとおりに動作しなくなる可能性があります。  
   
- [依存関係プロパティ](GTMT)の既定のメタデータを指定することもできます。  `State` [依存関係プロパティ](GTMT)の既定値を `false` として登録する例を次に示します。  
+ 依存関係プロパティの既定のメタデータを指定することもできます。 `State` 依存関係プロパティの既定値を `false` として登録する例を次に示します。  
   
  [!code-csharp[PropertySystemEsoterics#MyStateControl](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/SDKSampleLibrary/class1.cs#mystatecontrol)]
  [!code-vb[PropertySystemEsoterics#MyStateControl](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/sdksamplelibrary/class1.vb#mystatecontrol)]  
   
- 単にプライベート フィールドを使用して [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] プロパティを補足するのではなく[依存関係プロパティ](GTMT)を実装する理由とその方法の詳細については、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
+ 単にプライベート フィールドを使用して [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] プロパティを補足するのではなく依存関係プロパティを実装する理由とその方法の詳細については、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
   
-## 参照  
- [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)
+## <a name="see-also"></a>関連項目  
+ [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [方法トピック](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)

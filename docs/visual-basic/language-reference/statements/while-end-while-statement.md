@@ -1,100 +1,98 @@
 ---
-title: "While...End While Statement (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.While"
-  - "vb.While...EndWhile"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "While statement, While...End While"
-  - "While statement"
-  - "While...End While statements"
+title: "While...End While ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.While
+- vb.While...EndWhile
+helpviewer_keywords:
+- While statement [Visual Basic], While...End While
+- While statement [Visual Basic]
+- While...End While statements [Visual Basic]
 ms.assetid: b931d1ce-e8ed-44d8-a13d-92a4f5458a1e
-caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 5f831f233eaa4f1c38d56f3a89bda9b0cf1bccaa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# While...End While Statement (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-指定された条件が真 \(`True`\) である間、一連のステートメントを繰り返し実行します。  
+# <a name="whileend-while-statement-visual-basic"></a>While...End While ステートメント (Visual Basic)
+指定された条件が限りは、一連のステートメントを実行`True`です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 While condition  
-    [ statements ]  
+    [ statements ]  
     [ Continue While ]  
     [ statements ]  
-    [ Exit While ]  
-    [ statements ]  
+    [ Exit While ]  
+    [ statements ]  
 End While  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`condition`|必須。  `Boolean` 式を指定します。  `condition` が `Nothing` の場合、Visual Basic はこれを `False` として扱います。|  
-|`statements`|省略可能。   1 つ以上のステートメントを `While` の後に指定します。この部分は、`condition` が `True` であるたびに実行されます。|  
-|`Continue While`|省略可能。  `While` ブロックの次の反復処理に制御を移します。|  
-|`Exit While`|省略可能。  制御を `While` ブロックの外へ移動します。|  
-|`End While`|必須。  `While` ブロックの定義を終了します。|  
+|用語|定義|  
+|---|---|  
+|`condition`|必須です。 `Boolean`式。 場合`condition`は`Nothing`、Visual Basic として扱います`False`です。|  
+|`statements`|省略可能です。 1 つまたは複数のステートメント次`While`、たびに実行される`condition`は`True`します。|  
+|`Continue While`|省略可能です。 次のイテレーションに制御を転送、`While`ブロックします。|  
+|`Exit While`|省略可能です。 うちの制御を転送、`While`ブロックします。|  
+|`End While`|必須です。 `While` ブロックの定義を終了します。|  
   
-## 解説  
- 条件が `True` の間、一連のステートメントを不特定の回数繰り返すには、`While...End While` 構造を使用します。  条件をテストする場所またはテスト結果の判定を柔軟に指定する必要がある場合は、[Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md) の方が適しています。  ステートメントを特定の回数繰り返す場合は、[For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md) を使用することをお勧めします。  
+## <a name="remarks"></a>コメント  
+ 使用して、`While...End While`条件が限り回数、不特定数のステートメントのセットを繰り返したいときに`True`です。 方がよい場合に、その条件をテストするか、結果の判定をより柔軟にテストする場合、[操作を行います.ステートメントをループ](../../../visual-basic/language-reference/statements/do-loop-statement.md)です。 セット回数だけ、ステートメントを繰り返し使用する場合、[をしています.次のステートメントの](../../../visual-basic/language-reference/statements/for-next-statement.md)は通常、ことをお勧めします。  
   
 > [!NOTE]
->  `While` キーワードは、[Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md)、[Skip While Clause](../../../visual-basic/language-reference/queries/skip-while-clause.md)、および [Take While Clause](../../../visual-basic/language-reference/queries/take-while-clause.md) でも使用されます。  
+>  `While`キーワードでも使用、[操作を行います.ステートメントをループ](../../../visual-basic/language-reference/statements/do-loop-statement.md)、 [Skip While 句](../../../visual-basic/language-reference/queries/skip-while-clause.md)と[Take While 句](../../../visual-basic/language-reference/queries/take-while-clause.md)です。  
   
- `condition` が `True` である場合、`End While` が現れるまですべての `statements` が実行されます。  コントロールは `While` のステートメントに戻されて、`condition` は再チェックされます。  `condition` が真 \(`True`\) の間、この処理が繰り返されます。  これは `False`場合、コントロールは `End While` のステートメントの次のステートメントに渡されます。  
+ 場合`condition`は`True`、すべての`statements`まで実行、`End While`ステートメントが見つかりました。 制御を返します、`While`ステートメント、および`condition`が再度チェックします。 場合`condition`まだ`True`プロセスが繰り返されます。 `False`、これに続くステートメントにパスを制御、`End While`ステートメントです。  
   
- `While` のステートメントは、ループを開始する前に必ず条件を確認します。  条件が `True` である限りループが継続されます。  ループに最初に入ったとき `condition` が `False` 場合、一度も実行されません。  
+ `While`ステートメントは常には、ループを開始する前に、条件をチェックします。 条件がループが継続`True`です。 場合`condition`は`False`一度も実行しない、ループを最初に入力したときにします。  
   
- `condition` は、通常 2 の値の比較に生成されますが、[Boolean Data Type](../../../visual-basic/language-reference/data-types/boolean-data-type.md) には、の値を評価する式です \(`True` か `False`\)。  この式は異なるデータ型の値が、`Boolean`に変換された数値型なども指定できます。  
+ `condition`が 2 つの値の比較からの結果に評価される任意の式は、通常、[ブールのデータ型](../../../visual-basic/language-reference/data-types/boolean-data-type.md)値 (`True`または`False`)。 この式は、数値型に変換されているなどの別のデータ型の値を含めることができます`Boolean`です。  
   
- `While` ループは入れ子構造にできます。つまり、ループの中に別のループを入れることができます。  また、種類の異なる制御構造を入れ子にすることもできます。  詳細については、「[Nested Control Structures](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)」を参照してください。  
+ 入れ子にすることができます`While`別内で 1 つのループを配置することでループします。 さまざまな種類の制御構造を入れ子にすることもできます。 詳細については、次を参照してください。[制御構造の入れ子になった](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)です。  
   
-## が、終了します  
- [が、終了します](../../../visual-basic/language-reference/statements/exit-statement.md) のステートメントは `While` のループを終了する別の方法を用意できます。  `End While` のステートメントの次のステートメントにすぐに`Exit While` の制御を移します。  
+## <a name="exit-while"></a>中に終了  
+ [終了中に](../../../visual-basic/language-reference/statements/exit-statement.md)ステートメントが終了する別の方法を提供できます、`While`ループします。 `Exit While`すぐに続くステートメントに制御を転送、`End While`ステートメントです。  
   
- 条件を評価した後、通常 `Exit While` を使用します \(たとえば、`If...Then...Else` の構造体\)   ループの継続が不要になったり不可能になったりする条件 \(エラー値や終了要求など\) を検出した場合にループを終了できます。  大きい場合、または無限実行回数が多いループになります。*無限ループを*引き起こす可能性がある条件をテストする場合 `Exit While` を使用できます。  次に、ループを終了するに `Exit While` を使用できます。  
+ 通常使用`Exit While`いくつかの条件が評価された後 (たとえば、`If...Then...Else`構造) です。 不要な値が間違っているか、終了要求など、繰り返し処理を続行不可能になったりする条件を検出した場合、ループを終了する可能性があります。 使用することができます`Exit While`原因となる条件をテストするとき、*無限ループ*、これは、非常に大規模なまたは無限も可能回数だけ実行できるループします。 使用してできます`Exit While`ループをエスケープするためにします。  
   
- `Exit While` ステートメントは、`While` ループの任意の場所に何度でも使用できます。  
+ 任意の数を配置する`Exit While`内の任意の場所のステートメント、`While`ループします。  
   
- 最も内側のループから入れ子構造の一つ外側のレベルに `While` の `Exit While`、入れ子になったループの制御を移します内で使用された場合。  
+ 使用すると内で入れ子になった`While`ループ、`Exit While`最も内側のループ外と入れ子の上位のレベルに制御を転送します。  
   
- ループの次の反復処理に直ちに `Continue While` のステートメントの制御を移します。  詳細については、「[Continue Statement](../../../visual-basic/language-reference/statements/continue-statement.md)」を参照してください。  
+ `Continue While`ステートメントはすぐに、ループの次のイテレーションに制御を移します。 詳細については、次を参照してください。 [Continue ステートメント](../../../visual-basic/language-reference/statements/continue-statement.md)です。  
   
-## 使用例  
- 次の例では、`index` 変数が 10 を上回るまで、ループ内のステートメントが実行され続けます。  
+## <a name="example"></a>例  
+ 次の例では、ループ内のステートメントするまで引き続き実行、`index`変数が 10 より大きくします。  
   
  [!code-vb[VbVbalrStatements#171](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/while-end-while-statement_1.vb)]  
   
-## 使用例  
- 次の例は、`Continue While` ステートメントと `Exit While` ステートメントの使用方法を示しています。  
+## <a name="example"></a>例  
+ 次の例では、使用、`Continue While`と`Exit While`ステートメントです。  
   
  [!code-vb[VbVbalrStatements#172](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/while-end-while-statement_2.vb)]  
   
-## 使用例  
- 次の例では、テキスト ファイルのすべての行が読み取られます。  <xref:System.IO.File.OpenText%2A> メソッドによりファイルが開かれ、文字を読み取る <xref:System.IO.StreamReader> が返されます。  `While` では、`StreamReader` の <xref:System.IO.StreamReader.Peek%2A> のメソッドは、ファイルが追加の文字が含まれているかどうかを判定します。  
+## <a name="example"></a>例  
+ 次の例では、テキスト ファイルのすべての行を読み取ります。 <xref:System.IO.File.OpenText%2A>メソッドは、ファイルを開きを返します、<xref:System.IO.StreamReader>文字を読み取る。 `While`条件、<xref:System.IO.StreamReader.Peek%2A>のメソッド、`StreamReader`ファイルに追加の文字が含まれるかどうかを判断します。  
   
  [!code-vb[VbVbalrStatements#173](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/while-end-while-statement_3.vb)]  
   
-## 参照  
- [Loop Structures](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)   
- [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md)   
- [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)   
- [Boolean Data Type](../../../visual-basic/language-reference/data-types/boolean-data-type.md)   
- [Nested Control Structures](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)   
- [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md)   
- [Continue Statement](../../../visual-basic/language-reference/statements/continue-statement.md)
+## <a name="see-also"></a>関連項目  
+ [ループ構造](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
+ [Do...Loop ステートメント](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
+ [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [Boolean データ型](../../../visual-basic/language-reference/data-types/boolean-data-type.md)  
+ [入れ子になった制御構造](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
+ [Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [Continue ステートメント](../../../visual-basic/language-reference/statements/continue-statement.md)

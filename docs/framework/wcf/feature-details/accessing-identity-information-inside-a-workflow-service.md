@@ -1,25 +1,28 @@
 ---
-title: "ワークフロー サービス内部の ID 情報へのアクセス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ワークフロー サービス内部の ID 情報へのアクセス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0b832127-b35b-468e-a45f-321381170cbc
-caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 3b1a54f1c1529879074d2d0e7172fd52c5386c8f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ワークフロー サービス内部の ID 情報へのアクセス
-ワークフロー サービス内の ID 情報にアクセスするには、カスタム実行プロパティに <xref:System.ServiceModel.Activities.IReceiveMessageCallback> インターフェイスを実装する必要があります。<xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False&autoUpgrade=True メソッドで、<xref:System.ServiceModel.OperationContext.ServiceSecurityContext> にアクセスして ID 情報にアクセスできます。このトピックでは、この実行プロパティを実装する方法に加え、実行時にこのプロパティを <xref:System.ServiceModel.Activities.Receive> アクティビティに提示するカスタム アクティビティの実装方法を順に説明します。このカスタム アクティビティが行う動作は、<xref:System.ServiceModel.Activities.Sequence> アクティビティと同じですが、<xref:System.ServiceModel.Activities.Receive> がその内部に配置される場合は、<xref:System.ServiceModel.Activities.IReceiveMessageCallback> が呼び出されて ID 情報を取得します。  
+# <a name="accessing-identity-information-inside-a-workflow-service"></a>ワークフロー サービス内部の ID 情報へのアクセス
+ワークフロー サービス内の ID 情報にアクセスするには、カスタム実行プロパティに <xref:System.ServiceModel.Activities.IReceiveMessageCallback> インターフェイスを実装する必要があります。 <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage%2A> System.Activities.ExecutionProperties)?qualifyHint=False & autoUpgrade = True メソッドがアクセスできる、 <xref:System.ServiceModel.OperationContext.ServiceSecurityContext> id 情報にアクセスします。 このトピックでは、この実行プロパティを実装する方法に加え、実行時にこのプロパティを <xref:System.ServiceModel.Activities.Receive> アクティビティに提示するカスタム アクティビティの実装方法を順に説明します。  カスタム アクティビティと同じ動作を実装、 <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence`アクティビティとその、 <xref:System.ServiceModel.Activities.Receive> 、内部に配置されますが、<xref:System.ServiceModel.Activities.IReceiveMessageCallback>が呼び出され、id 情報が取得されます。  
   
-### IReceiveMessageCallback の実装  
+### <a name="implement-ireceivemessagecallback"></a>IReceiveMessageCallback の実装  
   
 1.  空の [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] ソリューションを作成します。  
   
@@ -53,12 +56,11 @@ caps.handback.revision: 9
           }  
         }  
     }  
-  
     ```  
   
      このコードでは、メソッドに渡される <xref:System.ServiceModel.OperationContext> を使用して ID 情報にアクセスします。  
   
-### IReceiveMessageCallback 実装を NativeActivityContext に追加するためのネイティブ アクティビティの実装  
+### <a name="implement-a-native-activity-to-add-the-ireceivemessagecallback-implementation-to-the-nativeactivitycontext"></a>IReceiveMessageCallback 実装を NativeActivityContext に追加するためのネイティブ アクティビティの実装  
   
 1.  <xref:System.Activities.NativeActivity> から派生した `AccessIdentityScope` という新しいクラスを追加します。  
   
@@ -72,7 +74,6 @@ caps.handback.revision: 9
         Variable<int> currentIndex;  
         CompletionCallback onChildComplete;  
     }  
-  
     ```  
   
 3.  コンストラクターを実装します。  
@@ -84,7 +85,6 @@ caps.handback.revision: 9
         this.variables = new Collection<Variable>();  
         this.currentIndex = new Variable<int>();  
     }  
-  
     ```  
   
 4.  `Activities` プロパティと `Variables` プロパティを実装します。  
@@ -99,7 +99,6 @@ caps.handback.revision: 9
     {  
         get { return this.variables; }  
     }  
-  
     ```  
   
 5.  <xref:System.Activities.NativeActivity.CacheMetadata%2A> をオーバーライドします。  
@@ -112,7 +111,6 @@ caps.handback.revision: 9
         //add the private implementation variable: currentIndex   
         metadata.AddImplementationVariable(this.currentIndex);  
     }  
-  
     ```  
   
 6.  <xref:System.Activities.NativeActivity.Execute%2A> をオーバーライドします。  
@@ -149,12 +147,11 @@ caps.handback.revision: 9
        //increment the currentIndex  
        this.currentIndex.Set(context, ++currentActivityIndex);  
     }  
-  
     ```  
   
-### ワークフロー サービスの実装  
+### <a name="implement-the-workflow-service"></a>ワークフロー サービスの実装  
   
-1.  既存の `Program` クラスを開きます。  
+1.  既存を開く`Program`クラスです。  
   
 2.  次の定数を定義します。  
   
@@ -164,7 +161,6 @@ caps.handback.revision: 9
        const string addr = "http://localhost:8080/Service";  
        static XName contract = XName.Get("IService", "http://tempuri.org");  
     }  
-  
     ```  
   
 3.  ワークフロー サービスを作成する `GetWorkflowService` という静的メソッドを追加します。  
@@ -204,7 +200,6 @@ caps.handback.revision: 9
           }  
        };  
      }  
-  
     ```  
   
 4.  既存の `Main` メソッドで、ワークフロー サービスをホストします。  
@@ -226,10 +221,9 @@ caps.handback.revision: 9
           host.Close();  
        }  
     }  
-  
     ```  
   
-### ワークフロー クライアントの実装  
+### <a name="implement-a-workflow-client"></a>ワークフロー クライアントの実装  
   
 1.  `Client` という新しいコンソール アプリケーション プロジェクトを作成します。  
   
@@ -293,7 +287,6 @@ caps.handback.revision: 9
           };  
        }  
     }  
-  
     ```  
   
 4.  次のホスティング コードを `Main()` メソッドに追加します。  
@@ -307,14 +300,12 @@ caps.handback.revision: 9
        Console.WriteLine("Press [ENTER] to exit");  
        Console.ReadLine();  
     }  
-  
     ```  
   
-## 使用例  
+## <a name="example"></a>例  
  このトピックで使用されているソース コードの完全な一覧を次に示します。  
   
 ```  
-  
 // AccessIdentityCallback.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -352,11 +343,9 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-  
 ```  
   
 ```  
-  
 // AccessIdentityScope.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -439,11 +428,9 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-  
 ```  
   
 ```  
-  
 // Service.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -516,11 +503,9 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-  
 ```  
   
 ```  
-  
 // client.cs   
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -596,10 +581,9 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
         }  
     }  
 }  
-  
 ```  
   
-## 参照  
- [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)   
- [OperationContext へのアクセス](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)   
- [命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法](../../../../docs/framework/windows-workflow-foundation//authoring-workflows-activities-and-expressions-using-imperative-code.md)
+## <a name="see-also"></a>関連項目  
+ [ワークフロー サービス](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [OperationContext へのアクセス](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)  
+ [命令型コードを使用してワークフロー、アクティビティ、および式を作成する方法](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)

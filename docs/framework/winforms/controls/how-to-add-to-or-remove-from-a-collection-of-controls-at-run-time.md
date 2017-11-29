@@ -1,45 +1,49 @@
 ---
-title: "方法 : コントロールのコレクションに対して実行時にコントロールを追加または削除する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コレクション, 追加 (アイテムを)"
-  - "コントロール [Windows フォーム], 追加 (コレクションを使用して)"
-  - "コントロール [Windows フォーム], 削除 (コレクションを使用して)"
-  - "コントロールのコレクション"
-  - "実行時に, 追加 (コントロールを)"
-  - "実行時に, 削除 (コントロールを)"
+title: "方法: コントロールのコレクションに対して実行時にコントロールを追加または削除する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- run time [Windows Forms], removing controls
+- controls [Windows Forms], adding using collections
+- controls collections
+- collections [Windows Forms], adding items
+- run time [Windows Forms], adding controls
+- controls [Windows Forms], removing using collections
 ms.assetid: 771bf895-3d5f-469b-a324-3528f343657e
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3b359679df68bf3caa9bab1bdbadedadcde45ac5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : コントロールのコレクションに対して実行時にコントロールを追加または削除する
-アプリケーション開発における一般的なタスクの 1 つに、フォーム上のコンテナー コントロール \(<xref:System.Windows.Forms.Panel> や <xref:System.Windows.Forms.GroupBox> などのコントロール、またはフォーム自体\) へのコントロールの追加および削除があります。  デザイン時には、パネルまたはグループ ボックスにコントロールを直接ドラッグできます。  実行時には、これらのコンテナー コントロールは `Controls` コレクションを保持します。それにより、現在どのコントロールが含まれているかを追跡します。  
+# <a name="how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time"></a>方法: コントロールのコレクションに対して実行時にコントロールを追加または削除する
+アプリケーション開発における一般的なタスクがするコントロールを追加し、フォーム上のコンテナー コントロールからコントロールを削除する (など、<xref:System.Windows.Forms.Panel>または<xref:System.Windows.Forms.GroupBox>コントロール、またはフォーム自体)。 デザイン時に、コントロールをパネルやグループ ボックスに直接ドラッグすることができます。 実行時には、これらのコントロールは `Controls` コレクションを保持し、それらにどのコントロールが置かれているかを追跡します。  
   
 > [!NOTE]
->  次のコード例は、内部にコントロールのコレクションを保持するすべてのコントロールに適用されます。  
+>  次のコード例は、コントロールのコレクションを保持する任意のコントロールに適用されます。  
   
-### プログラムによって、コレクションにコントロールを追加するには  
+### <a name="to-add-a-control-to-a-collection-programmatically"></a>プログラムを使用して、コレクションにコントロールを追加するには  
   
 1.  追加するコントロールのインスタンスを作成します。  
   
-2.  新規コントロールのプロパティを設定します。  
+2.  新しいコントロールのプロパティを設定します。  
   
-3.  このコントロールを親コントロールの `Controls` コレクションに追加します。  
+3.  親コントロールの `Controls` コレクションにコントロールを追加します。  
   
-     次に示すのは、<xref:System.Windows.Forms.Button> コントロールのインスタンスを作成する方法のコード例です。  このコード例では、フォームに <xref:System.Windows.Forms.Panel> コントロールがあり、作成するボタンのイベント処理メソッド `NewPanelButton_Click` が既に存在することが必要です。  
+     次のコード例のインスタンスを作成する方法を示しています、<xref:System.Windows.Forms.Button>コントロール。 フォームに必要な<xref:System.Windows.Forms.Panel>コントロールとするは、ボタンのイベント処理メソッドが作成される、 `NewPanelButton_Click`、既に存在します。  
   
     ```vb  
     Public NewPanelButton As New Button()  
@@ -53,7 +57,6 @@ caps.handback.revision: 10
        ' handler for your application.  
        AddHandler NewPanelButton.Click, AddressOf NewPanelButton_Click  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -65,19 +68,19 @@ caps.handback.revision: 10
        // from the Control class. In this case, it is a Button control.  
        panel1.Controls.Add(newPanelButton);  
        // The event handler indicated for the Click event in the code   
-       // below is used as an example. Substite the appropriate event  
+       // below is used as an example. Substitute the appropriate event  
        // handler for your application.  
        this.newPanelButton.Click += new System.EventHandler(this. NewPanelButton_Click);  
     }  
     ```  
   
-### プログラムによって、コレクションからコントロールを削除するには  
+### <a name="to-remove-controls-from-a-collection-programmatically"></a>プログラムを使用してコレクションからコントロールを削除するには  
   
-1.  イベントからイベント ハンドラーを削除します。  [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] では、[RemoveHandler Statement](../../../../ocs/visual-basic/language-reference/statements/removehandler-statement.md) キーワードを使用し、[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] では、[\-\= 演算子](../Topic/-=%20Operator%20\(C%23%20Reference\)2.md) を使用します。  
+1.  イベントからイベント ハンドラーを削除します。 [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] では [RemoveHandler Statement](~/docs/visual-basic/language-reference/statements/removehandler-statement.md) キーワードを使用し、[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] では [-= Operator (C# Reference)](~/docs/csharp/language-reference/operators/subtraction-assignment-operator.md) を使用します。  
   
 2.  `Remove` メソッドを使用して、パネルの `Controls` コレクションから目的のコントロールを削除します。  
   
-3.  <xref:System.Windows.Forms.Control.Dispose%2A> メソッドを呼び出して、そのコントロールによって使用されていたすべてのリソースを解放します。  
+3.  呼び出す、<xref:System.Windows.Forms.Control.Dispose%2A>コントロールによって使用されているすべてのリソースを解放します。  
   
     ```vb  
     Public Sub RemoveControl()  
@@ -90,7 +93,6 @@ caps.handback.revision: 10
           NewPanelButton.Dispose()  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -108,6 +110,6 @@ caps.handback.revision: 10
     }  
     ```  
   
-## 参照  
- <xref:System.Windows.Forms.Panel>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.Panel>  
  [Panel コントロール](../../../../docs/framework/winforms/controls/panel-control-windows-forms.md)
