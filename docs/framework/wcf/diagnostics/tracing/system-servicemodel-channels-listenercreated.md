@@ -1,28 +1,31 @@
 ---
-title: "System.ServiceModel.Channels.ListenerCreated | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: System.ServiceModel.Channels.ListenerCreated
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d4a3401c-f7f8-4761-95c2-ca92b70a503d
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 25ca91869c6a07bfb1d491ec9118b1f0b0432bd8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# System.ServiceModel.Channels.ListenerCreated
+# <a name="systemservicemodelchannelslistenercreated"></a>System.ServiceModel.Channels.ListenerCreated
 System.ServiceModel.Channels.ListenerCreated  
   
-## 説明  
+## <a name="description"></a>説明  
  リスナーが作成されました。  
   
-## 参照  
- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
+## <a name="see-also"></a>関連項目  
+ [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [トレースを使用して、アプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)

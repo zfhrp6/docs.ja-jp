@@ -1,71 +1,73 @@
 ---
-title: "ToggleButton のスタイルとテンプレート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ControlTemplate [WPF], ToggleButton"
-  - "パーツ [WPF], ToggleButton"
-  - "状態 [WPF], ToggleButton"
-  - "スタイル [WPF], ToggleButton"
-  - "テンプレート [WPF], ToggleButton"
-  - "ToggleButton [WPF], スタイルおよびテンプレート"
+title: "ToggleButton のスタイルとテンプレート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- states [WPF], ToggleButton
+- ToggleButton [WPF], styles and templates
+- ControlTemplate [WPF], ToggleButton
+- styles [WPF], ToggleButton
+- templates [WPF], ToggleButton
+- parts [WPF], ToggleButton
 ms.assetid: 54f23f30-4bcb-4f09-8ce4-376a13a255a1
-caps.latest.revision: 9
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ecd6696ff9d62b4aa3397ac8567edc3fb387ba96
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ToggleButton のスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.Primitives.ToggleButton> コントロールのスタイルおよびテンプレートについて説明します。  既定の <xref:System.Windows.Controls.ControlTemplate> に変更を加えることで、コントロールに独自の外観を設定できます。  詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+# <a name="togglebutton-syles-and-templates"></a>ToggleButton のスタイルとテンプレート
+このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.Primitives.ToggleButton>コントロール。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
   
-## ToggleButton のパーツ  
- <xref:System.Windows.Controls.Primitives.ToggleButton> コントロールには、名前付きのパーツは存在しません。  
+## <a name="togglebutton-parts"></a>トグル ボタンのパーツ  
+ <xref:System.Windows.Controls.Primitives.ToggleButton>コントロールには、その名前付きの部分はありません。  
   
-## ToggleButton の状態  
- 次の表は、<xref:System.Windows.Controls.Primitives.ToggleButton> コントロールの表示状態の一覧です。  
+## <a name="togglebutton-states"></a>トグル ボタンの状態  
+ 次の表に、用ビジュアル状態、<xref:System.Windows.Controls.Primitives.ToggleButton>コントロール。  
   
-||||  
+|VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
+|標準|CommonStates|既定の状態です。|  
 |MouseOver|CommonStates|マウス ポインターがコントロール上に配置されています。|  
-|Pressed|CommonStates|コントロールが押されています。|  
-|Disabled|CommonStates|コントロールが無効になっています。|  
-|Focused|FocusStates|コントロールにフォーカスがあります。|  
-|Unfocused|FocusStates|コントロールにフォーカスがありません。|  
-|オン|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> は `true` なので、|  
-|Unchecked|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> は `false` なので、|  
-|Indeterminate|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A> が `true` で、<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> が `null` です。|  
-|Valid|ValidationStates|このコントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `false` です。|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがありません。|  
+|押されている|CommonStates|コントロールが押されています。|  
+|無効|CommonStates|コントロールが無効になっています。|  
+|フォーカスされている|FocusStates|コントロールにフォーカスがあります。|  
+|フォーカスされていない|FocusStates|コントロールにフォーカスがありません。|  
+|チェック済み|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> は `true` です。|  
+|オンになっていません。|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> は `false` です。|  
+|不確定です|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A>is `true`, and <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> is `null`.|  
+|有効|ValidationStates|コントロールを使用して、<xref:System.Windows.Controls.Validation>クラスおよび<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`false`します。|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスします。|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスがないです。|  
   
 > [!NOTE]
->  コントロール テンプレートに Indeterminate 表示状態が含まれていない場合は、既定の表示状態として Unchecked 表示状態が使用されます。  
+>  コントロール テンプレートで不確定な表示状態が存在しない場合、未チェックの表示状態は、既定の状態として使用されます。  
   
-## ToggleButton ControlTemplate の例  
- 次の例は、<xref:System.Windows.Controls.Primitives.ToggleButton> コントロールの <xref:System.Windows.Controls.ControlTemplate> を定義する方法を示しています。  
+## <a name="togglebutton-controltemplate-example"></a>トグル ボタン ControlTemplate の例  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.Primitives.ToggleButton>コントロール。  
   
- [!code-xml[ControlTemplateExamples#ToggleButton](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#togglebutton)]  
+ [!code-xaml[ControlTemplateExamples#ToggleButton](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#togglebutton)]  
   
- 前の例では、次の 1 つ以上のリソースを使用しています。  
+ 前の例では、次のリソースの 1 つ以上を使用します。  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- サンプル全体については、「[ControlTemplate を使用したスタイル設定のサンプル](http://go.microsoft.com/fwlink/?LinkID=160041)」を参照してください。.  
+ 完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。  
   
-## 参照  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
  [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

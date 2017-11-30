@@ -1,79 +1,77 @@
 ---
-title: "Error Statement | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.error"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Error statement, syntax"
-  - "Error statement"
-  - "Error keyword"
-  - "run-time errors, codes"
-  - "errors [Visual Basic], simulating"
+title: "Error ステートメント"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.error
+helpviewer_keywords:
+- Error statement [Visual Basic], syntax
+- Error statement [Visual Basic]
+- Error keyword [Visual Basic]
+- run-time errors [Visual Basic], codes
+- errors [Visual Basic], simulating
 ms.assetid: 85cd5c59-5224-4f02-aaf5-fcfefab17a29
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 3cd3245fd3e9e62b1b6443e9787c97808a0d179d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Error Statement
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
+# <a name="error-statement"></a>Error ステートメント
 エラーの発生をシミュレートします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Error errornumber  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `errornumber`  
- 必ず指定します。  任意の有効なエラー番号を指定できます。  
+ 必須です。 任意の有効なエラー番号を指定できます。  
   
-## 解説  
- `Error` ステートメントは下位互換性用にサポートされています。  新しいコードでは、`Err` オブジェクトの `Raise` メソッドを使用してランタイム エラーを生成します。特に、オブジェクトを作成する場合はこのメソッドを使用します。  
+## <a name="remarks"></a>コメント  
+ `Error`ステートメントは、旧バージョンとの互換性のためサポートされます。 オブジェクトを作成するときに特に新しいコードを使用して、`Err`オブジェクトの`Raise`実行時エラーを生成する方法です。  
   
- `errornumber` を定義すると、`Error` ステートメントは、`Err` オブジェクトのプロパティに次の表の既定値を割り当ててからエラー ハンドラーを呼び出します。  
+ 場合`errornumber`が定義されている、`Error`ステートメントでは、エラー ハンドラーを呼び出し、プロパティの後に、`Err`オブジェクトには、次の既定値が割り当てられます。  
   
 |プロパティ|値|  
-|-----------|-------|  
-|`Number`|`Error` ステートメントの引数として指定される値。  任意の有効なエラー番号を指定できます。|  
-|`Source`|現在の Visual Basic プロジェクトの名前。|  
-|`Description`|この文字列が存在する場合は、指定の `Number` に対する `Error` 関数の戻り値に対応する文字列式。  文字列が存在しない場合、`Description` には長さ 0 の文字列 \(""\) が含まれます。|  
-|`HelpFile`|適切な Visual Basic ヘルプ ファイルへの絶対的なドライブ、パス、およびファイル名。|  
-|`HelpContext`|適切な Visual Basic ヘルプ ファイルの、`Number` プロパティに対応するエラーのコンテキスト ID。|  
-|`LastDLLError`|ゼロ。|  
+|--------------|-----------|  
+|`Number`|引数として指定された値`Error`ステートメントです。 任意の有効なエラー番号を指定できます。|  
+|`Source`|現在の Visual Basic プロジェクトの名前です。|  
+|`Description`|文字列式の戻り値に対応する、 `Error` 、指定された関数`Number`、この文字列が存在する場合。 文字列が存在しない場合`Description`長さ 0 の文字列が含まれています ("") です。|  
+|`HelpFile`|完全修飾のドライブ、パス、および適切な Visual Basic のヘルプ ファイルの名前。|  
+|`HelpContext`|コンテキスト ID に対応するエラーを適切な Visual Basic のヘルプ ファイル、`Number`プロパティです。|  
+|`LastDLLError`|0 を返します。|  
   
- エラー ハンドラーがないか、または有効でない場合は、`Err` オブジェクトのプロパティによってエラー メッセージが作成および表示されます。  
+ エラー ハンドラーが存在しないか、エラー メッセージが作成されから表示される場合は、有効でない場合、`Err`オブジェクト プロパティです。  
   
 > [!NOTE]
->  一部の Visual Basic ホスト アプリケーションではオブジェクトを作成できません。  クラスやオブジェクトを作成できるかどうかを確認するには、ホスト アプリケーションのドキュメントを参照してください。  
+>  Visual Basic ホスト アプリケーションの一部では、オブジェクトを作成できません。 クラスとオブジェクトのどちらを作成できるかどうかを決定は、ホスト アプリケーションのドキュメントを参照してください。  
   
-## 使用例  
- `Error` ステートメントを使ってエラー番号 11 を生成する例を次に示します。  
+## <a name="example"></a>例  
+ この例では、 `Error` 11 のエラー番号を生成するステートメント。  
   
 ```  
 On Error Resume Next   ' Defer error handling.  
 Error 11   ' Simulate the "Division by zero" error.  
 ```  
   
-## 必要条件  
- **名前空間**: [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+## <a name="requirements"></a>要件  
+ **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
   
- **アセンブリ**: Visual Basic ランタイム ライブラリ \(Microsoft.VisualBasic.dll 内\)  
+ **アセンブリ:** Visual Basic Runtime Library (Microsoft.VisualBasic.dll)  
   
-## 参照  
- <xref:Microsoft.VisualBasic.ErrObject.Clear%2A>   
- <xref:Microsoft.VisualBasic.Information.Err%2A>   
- <xref:Microsoft.VisualBasic.ErrObject.Raise%2A>   
- [On Error Statement](../../../visual-basic/language-reference/statements/on-error-statement.md)   
- [Resume Statement](../../../visual-basic/language-reference/statements/resume-statement.md)   
- [Error Messages](../../../visual-basic/language-reference/error-messages/index.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.ErrObject.Clear%2A>  
+ <xref:Microsoft.VisualBasic.Information.Err%2A>  
+ <xref:Microsoft.VisualBasic.ErrObject.Raise%2A>  
+ [On Error ステートメント](../../../visual-basic/language-reference/statements/on-error-statement.md)  
+ [Resume ステートメント](../../../visual-basic/language-reference/statements/resume-statement.md)  
+ [エラー メッセージ](../../../visual-basic/language-reference/error-messages/index.md)

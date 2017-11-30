@@ -1,48 +1,48 @@
 ---
-title: "ContextMenuStrip コントロールの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ContextMenuStrip"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コンテキスト メニュー, ContextMenuStrip コントロール [Windows フォーム]"
-  - "ContextMenuStrip コントロール [Windows フォーム], ContextMenuStrip コントロールの概要"
-  - "ショートカット メニュー, ContextMenuStrip コントロール [Windows フォーム]"
+title: "ContextMenuStrip コントロールの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: ContextMenuStrip
+helpviewer_keywords:
+- context menus [Windows Forms], ContextMenuStrip control [Windows Forms]
+- shortcut menus [Windows Forms], ContextMenuStrip control [Windows Forms]
+- ContextMenuStrip control [Windows Forms], about ContextMenuStrip control
 ms.assetid: 9787cdb3-88f1-4198-972f-eefd9524ce39
-caps.latest.revision: 5
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c04e8095d84468ee7574b31f0a30fb6f2d2b03a0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ContextMenuStrip コントロールの概要
+# <a name="contextmenustrip-control-overview"></a>ContextMenuStrip コントロールの概要
 > [!NOTE]
->  <xref:System.Windows.Forms.ContextMenuStrip> コントロールは、<xref:System.Windows.Forms.ContextMenu> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.ContextMenu> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  
+>  <xref:System.Windows.Forms.ContextMenuStrip>コントロールの置換し、する機能を追加、<xref:System.Windows.Forms.ContextMenu>コントロール。 ただし、、<xref:System.Windows.Forms.ContextMenu>を選択した場合、旧バージョンとの互換性および将来使用するコントロールは保持されます。  
   
- ユーザーがマウスの右ボタンをクリックすると、コンテキスト メニューとも呼ばれるショートカット メニューがマウスの位置に表示されます。  ショートカット *メニュー*は、マウス ポインター位置にクライアント領域やコントロールのオプションを提供します。  
+ ユーザーがマウスの右ボタンをクリックしたときに、マウスの位置にショートカット メニューのコンテキスト メニューとも呼ばれますが表示されます。 ショートカット*メニュー*クライアント領域またはマウスのポインターの位置にコントロールのオプションを提供します。  
   
- <xref:System.Windows.Forms.ContextMenuStrip> コントロールは、新しい <xref:System.Windows.Forms.ToolStrip> や関連するコントロールとシームレスに動作するようにデザインされていますが、<xref:System.Windows.Forms.ContextMenuStrip> コントロールは他のコントロールに簡単に関連付けることができます。  
+ <xref:System.Windows.Forms.ContextMenuStrip>コントロールが新しいしてシームレスに動作するように設計<xref:System.Windows.Forms.ToolStrip>関連付けることができますが、関連するコントロールと、<xref:System.Windows.Forms.ContextMenuStrip>と同様に簡単に他のコントロールとします。  
   
- 重要な <xref:System.Windows.Forms.ContextMenuStrip> コンパニオン クラスを次の表に示します。  
+ 次の表は、重要な<xref:System.Windows.Forms.ContextMenuStrip>コンパニオン クラスです。  
   
-|Class|Description|  
+|クラス|説明|  
 |-----------|-----------------|  
-|<xref:System.Windows.Forms.ToolStripMenuItem>|<xref:System.Windows.Forms.MenuStrip> または <xref:System.Windows.Forms.ContextMenuStrip> に表示される選択可能なオプションを表します。|  
-|<xref:System.Windows.Forms.ToolStripDropDown>|<xref:System.Windows.Forms.ToolStripDropDownButton> またはより高レベルのメニュー項目をクリックすると表示されるリストから、1 つの項目を選択できるようにするコントロールを表します。|  
-|<xref:System.Windows.Forms.ToolStripDropDownItem>|クリック時にドロップダウン項目を表示する、<xref:System.Windows.Forms.ToolStripItem> から派生するコントロールの基本機能を提供します。|  
+|<xref:System.Windows.Forms.ToolStripMenuItem>|表示される選択可能なオプションを表す、<xref:System.Windows.Forms.MenuStrip>または<xref:System.Windows.Forms.ContextMenuStrip>です。|  
+|<xref:System.Windows.Forms.ToolStripDropDown>|ユーザーが、ユーザーがクリックしたときに表示される一覧から 1 つの項目を選択できるようにするコントロールを表します、<xref:System.Windows.Forms.ToolStripDropDownButton>または高レベルのメニュー項目。|  
+|<xref:System.Windows.Forms.ToolStripDropDownItem>|派生したコントロールの基本的な機能を提供<xref:System.Windows.Forms.ToolStripItem>クリックされたときにドロップダウン項目を表示します。|  
   
-## 参照  
- <xref:System.Windows.Forms.ToolStrip>   
- <xref:System.Windows.Forms.MenuStrip>   
- <xref:System.Windows.Forms.ContextMenuStrip>   
- <xref:System.Windows.Forms.ToolStripMenuItem>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.ToolStrip>  
+ <xref:System.Windows.Forms.MenuStrip>  
+ <xref:System.Windows.Forms.ContextMenuStrip>  
+ <xref:System.Windows.Forms.ToolStripMenuItem>  
  <xref:System.Windows.Forms.ToolStripDropDown>

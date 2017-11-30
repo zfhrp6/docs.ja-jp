@@ -1,28 +1,31 @@
 ---
-title: "ストア拡張 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ストア拡張"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 7c3f4a46-4bac-4138-ae6a-a7c7ee0d28f5
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f6700fe67d151e78c8b216d93a4cd7098ed6401d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ストア拡張
-<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> を使用して、永続性データベースのインスタンスをクエリする場合に使用できるカスタムのアプリケーション固有のプロパティを昇格できます。プロパティを昇格することで、データベース内の特殊なビュー内で値が使用できるようになります。これらの昇格したプロパティ \(ユーザー クエリで使用できるプロパティ\) は、単純型 \(Int64、Guid、String、DateTime など\) またはシリアル化されたバイナリ型 \(byte\[\]\) になる場合があります。  
+# <a name="store-extensibility"></a>ストア拡張
+<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> を使用して、永続性データベースのインスタンスをクエリする場合に使用できるカスタムのアプリケーション固有のプロパティを昇格できます。 プロパティを昇格することで、データベース内の特殊なビュー内で値が使用できるようになります。 これらの昇格したプロパティ (ユーザー クエリで使用できるプロパティ) は、単純型 (Int64、Guid、String、DateTime など) またはシリアル化されたバイナリ型 (byte[]) になる場合があります。  
   
- <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> クラスには <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.Promote%2A> メソッドがあり、クエリで使用できるプロパティとしてプロパティを昇格するために使用できます。次の例は、ストア拡張のエンド ツー エンドの例です。  
+ <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> クラスには <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.Promote%2A> メソッドがあり、クエリで使用できるプロパティとしてプロパティを昇格するために使用できます。 次の例は、ストア拡張のエンド ツー エンドの例です。  
   
-1.  この例のシナリオでは、ドキュメント処理 \(DP\) アプリケーションにワークフローがあり、それぞれがドキュメント処理にカスタム アクティビティを使用しています。これらのワークフローは、エンド ユーザーから見える必要がある一連の状態変数を備えています。これを実現するために、DP アプリケーションには <xref:System.Activities.Persistence.PersistenceParticipant> 型を持つインスタンス拡張機能があり、状態変数を提供するアクティビティによって使用されます。  
+1.  この例のシナリオでは、ドキュメント処理 (DP) アプリケーションにワークフローがあり、それぞれがドキュメント処理にカスタム アクティビティを使用しています。 これらのワークフローは、エンド ユーザーから見える必要がある一連の状態変数を備えています。 これを実現するために、DP アプリケーションには <xref:System.Activities.Persistence.PersistenceParticipant> 型を持つインスタンス拡張機能があり、状態変数を提供するアクティビティによって使用されます。  
   
     ```  
-  
     class DocumentStatusExtension : PersistenceParticipant  
     {  
         public string DocumentId;  
@@ -30,7 +33,6 @@ caps.handback.revision: 15
         public string UserName;  
         public DateTime LastUpdateTime;  
     }  
-  
     ```  
   
 2.  次に、新しい機能拡張がホストに追加されます。  
@@ -40,31 +42,27 @@ caps.handback.revision: 15
     WorkflowApplication application = new WorkflowApplication(workflow);  
     DocumentStatusExtension documentStatusExtension = new DocumentStatusExtension ();  
     application.Extensions.Add(documentStatusExtension);  
-  
     ```  
   
-     カスタムの永続参加要素の追加の詳細については、「[永続参加要素](../../../docs/framework/windows-workflow-foundation//persistence-participants.md)」のサンプルを参照してください。  
+     カスタムの永続参加要素を追加する方法の詳細については、次を参照してください。、[永続参加要素](../../../docs/framework/windows-workflow-foundation/persistence-participants.md)サンプルです。  
   
-3.  DP アプリケーションのカスタム アクティビティでは、**Execute** メソッドでさまざまな状態フィールドを設定します。  
+3.  DP アプリケーションでカスタム アクティビティのさまざまな状態フィールドの設定、 **Execute**メソッドです。  
   
     ```  
-  
     public override void Execute(CodeActivityContext context)  
     {  
         // ...  
         context.GetExtension<DocumentStatusExtension>().DocumentId = Guid.NewGuid();  
         context.GetExtension<DocumentStatusExtension>().UserName = "John Smith";  
-        context.GetExtension<DocumentStatusExtension>().ApprovalStatus = “Approved”;  
+        context.GetExtension<DocumentStatusExtension>().ApprovalStatus = "Approved";  
         context.GetExtension<DocumentStatusExtension>().LastUpdateTime = DateTime.Now();  
         // ...  
     }  
-  
     ```  
   
-4.  ワークフロー インスタンスが永続性ポイントに達すると、**DocumentStatusExtension** 永続参加要素の **CollectValues** メソッドによって、これらのプロパティが永続性データ コレクションに保存されます。  
+4.  ワークフロー インスタンスが永続性ポイントに達すると、 **CollectValues**のメソッド、 **DocumentStatusExtension**永続参加要素は、これらのプロパティを永続性データに保存されますコレクションです。  
   
     ```  
-  
     class DocumentStatusExtension : PersistenceParticipant  
     {  
         const XNamespace xNS = XNamespace.Get("http://contoso.com/DocumentStatus");  
@@ -81,13 +79,12 @@ caps.handback.revision: 15
         }  
         // ...  
     }  
-  
     ```  
   
     > [!NOTE]
-    >  これらすべてのプロパティは、**SaveWorkflowCommand.InstanceData** コレクションを介して、永続化フレームワークによって **SqlWorkflowInstanceStore** に渡されます。  
+    >  これらすべてのプロパティに渡される**SqlWorkflowInstanceStore**を介して、永続化フレームワークによって、 **SaveWorkflowCommand.InstanceData**コレクション。  
   
-5.  DP アプリケーションは SQL Workflow Instance Store を初期化し、**Promote** メソッドを呼び出してこのデータを昇格します。  
+5.  DP アプリケーションは、SQL Workflow Instance Store を初期化し、呼び出します、**昇格**このデータを昇格する方法です。  
   
     ```  
     SqlWorkflowInstanceStore store = new SqlWorkflowInstanceStore(connectionString);  
@@ -103,30 +100,28 @@ caps.handback.revision: 15
     store.Promote("DocumentStatus", variantProperties, null);  
     ```  
   
-     この昇格情報に基づいて、**SqlWorkflowInstanceStore** は、[[System.Activities.DurableInstancing.InstancePromotedProperties] ビュー](../Topic/Store%20Extensibility.md#InstancePromotedProperties) の列にデータ プロパティを設定します。  
+     この昇格情報に基づいて**SqlWorkflowInstanceStore**の列のデータのプロパティを配置、 [InstancePromotedProperties](#InstancePromotedProperties)ビュー。
   
 6.  昇格テーブルのデータのサブセットを照会するために、DP アプリケーションによって昇格ビューの上にカスタマイズされたビューが追加されます。  
   
     ```  
-  
     create view [dbo].[DocumentStatus] with schemabinding  
     as  
-        select  P.[InstanceId] as [InstanceId],  
-            P.Value1 as [UserName],  
-            P.Value2 as [ApprovalStatus],  
-            P.Value3 as [DocumentId],  
-            P.Value4 as [LastUpdatedTime]  
+        select  P.[InstanceId] as [InstanceId],  
+            P.Value1 as [UserName],  
+            P.Value2 as [ApprovalStatus],  
+            P.Value3 as [DocumentId],  
+            P.Value4 as [LastUpdatedTime]  
     from [System.Activities.DurableInstancing].[InstancePromotedProperties] as P  
     where P.PromotionName = N'DocumentStatus'  
     go  
-  
     ```  
   
-##  <a name="InstancePromotedProperties"></a> \[System.Activities.DurableInstancing.InstancePromotedProperties\] ビュー  
+##  <a name="InstancePromotedProperties"></a>[System.Activities.DurableInstancing.InstancePromotedProperties] ビュー  
   
 |列名|列の型|説明|  
-|--------|---------|--------|  
+|-----------------|-----------------|-----------------|  
 |InstanceId|GUID|この昇格が属するワークフロー インスタンス。|  
-|PromotionName|nvarchar\(400\)|昇格自体の名前。|  
-|Value1、Value2、Value3、…Value32|sql\_variant|昇格したプロパティ自体の値。ほとんどの SQL プリミティブ データ型はバイナリ ブロブを除外し、長さが 8,000 バイトを超える文字列は sql\_variant に合わせて短縮されます。|  
-|Value33、Value34、Value35、…、Value64|varbinary\(max\)|varbinary\(max\) として明示的に宣言される昇格したプロパティの値。|
+|PromotionName|nvarchar(400)|昇格自体の名前。|  
+|Value1、Value2、Value3、…Value32|sql_variant|昇格したプロパティ自体の値。 ほとんどの SQL プリミティブ データ型はバイナリ ブロブを除外し、長さが 8,000 バイトを超える文字列は sql_variant に合わせて短縮されます。|  
+|Value33、Value34、Value35、…、Value64|varbinary(max)|varbinary(max) として明示的に宣言される昇格したプロパティの値。|

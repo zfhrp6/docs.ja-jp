@@ -1,34 +1,30 @@
 ---
-title: "XDocument のクエリと (Visual Basic) XElement のクエリ |Microsoft ドキュメント"
+title: "XDocument のクエリと XElement (Visual Basic) のクエリ"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 2d111f84-0ded-4cde-8d93-5440557a726d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 29044cd118bfd8ecc12bddca722ee3656d455e0f
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 3ee3c0c1cda12a74f50b4937263d80f526b5d7ba
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="querying-an-xdocument-vs-querying-an-xelement-visual-basic"></a>XDocument のクエリと (Visual Basic) XElement のクエリ
-<xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName> <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>。</xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>を使用して読み込む場合よりも少し異なる方法でクエリを記述する必要があることを確認は、</xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName>使用してドキュメントを読み込む場合  
+# <a name="querying-an-xdocument-vs-querying-an-xelement-visual-basic"></a>XDocument のクエリと XElement (Visual Basic) のクエリ
+<xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> によってドキュメントを読み込む場合、<xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> によって読み込む場合とは少し異なるクエリを記述する必要があることがわかります。  
   
 ## <a name="comparison-of-xdocumentload-and-xelementload"></a>XDocument.Load と XElement.Load の比較  
- XML ドキュメントを読み込む場合、<xref:System.Xml.Linq.XElement>経由で<xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName>、<xref:System.Xml.Linq.XElement>ツリーには XML のルートには、読み込んだドキュメントのルート要素が含まれています</xref:System.Xml.Linq.XElement></xref:System.Xml.Linq.XElement.Load%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement>。 ただし、読み込む場合、同じ XML ドキュメントに、<xref:System.Xml.Linq.XDocument><xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName>ツリーのルートの<xref:System.Xml.Linq.XDocument>ノードで、読み込んだドキュメントのルート要素は&1; つの許可されている子<xref:System.Xml.Linq.XElement><xref:System.Xml.Linq.XDocument>。</xref:System.Xml.Linq.XDocument>ノード</xref:System.Xml.Linq.XElement></xref:System.Xml.Linq.XDocument>、</xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=fullName>使用して</xref:System.Xml.Linq.XDocument> [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] 軸は、ルート ノードを基準に動作します。  
+ <xref:System.Xml.Linq.XElement> によって XML ドキュメントを <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> に読み込む場合、XML ツリーのルートの <xref:System.Xml.Linq.XElement> には読み込んだドキュメントのルート要素が含まれます。 一方、<xref:System.Xml.Linq.XDocument> によって同じ XML ドキュメントを <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> に読み込む場合は、ツリーのルートは <xref:System.Xml.Linq.XDocument> ノードで、読み込んだドキュメントのルート要素は <xref:System.Xml.Linq.XElement> の許可されている 1 つの子 <xref:System.Xml.Linq.XDocument> ノードになります。 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 軸は、ルート ノードを基準に動作します。  
   
- この最初の例は、 <xref:System.Xml.Linq.XElement.Load%2A>。</xref:System.Xml.Linq.XElement.Load%2A>を使用して XML ツリーを読み込みます 次に、ツリーのルートの子要素をクエリします。  
+ この最初の例では、<xref:System.Xml.Linq.XElement.Load%2A> を使用して XML ツリー読み込みます。 次に、ツリーのルートの子要素をクエリします。  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -59,7 +55,7 @@ Querying tree loaded with XElement.Load
 <Child3>3</Child3>  
 ```  
   
- 次の例は、1 つとして前、に、 <xref:System.Xml.Linq.XDocument> <xref:System.Xml.Linq.XElement>。</xref:System.Xml.Linq.XElement>ではなく</xref:System.Xml.Linq.XDocument>XML ツリーが読み込まれている例外で同じ  
+ 次の例は上の例と同じですが、<xref:System.Xml.Linq.XDocument> ではなく <xref:System.Xml.Linq.XElement> に XML ツリーが読み込まれる点が異なります。  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -92,9 +88,9 @@ Querying tree loaded with XDocument.Load
 </Root>  
 ```  
   
- この同じクエリでは、3 つの子ノードではなく&1; つの `Root` ノードが返されたことがわかります。  
+ この同じクエリでは、3 つの子ノードではなく 1 つの `Root` ノードが返されたことがわかります。  
   
- これに対処する方法の&1; つは、使用する、<xref:System.Xml.Linq.XDocument.Root%2A>軸メソッドを次のようにアクセスする前にプロパティ:</xref:System.Xml.Linq.XDocument.Root%2A>  
+ これに対処する 1 つの方法は、次のように、軸メソッドにアクセスする前に <xref:System.Xml.Linq.XDocument.Root%2A> プロパティを使用することです。  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -115,7 +111,7 @@ For Each e As XElement In childList
 Next  
 ```  
   
- このクエリは、同じようになりました実行<xref:System.Xml.Linq.XElement></xref:System.Xml.Linq.XElement>ルートとすると、ツリーのクエリ方法。 この例では次の出力が生成されます。  
+ このクエリは、<xref:System.Xml.Linq.XElement> をルートとするツリーのクエリと同じように動作します。 この例では次の出力が生成されます。  
   
 ```  
 Querying tree loaded with XDocument.Load  

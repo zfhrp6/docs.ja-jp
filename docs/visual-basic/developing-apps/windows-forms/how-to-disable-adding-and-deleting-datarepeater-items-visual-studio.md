@@ -1,82 +1,84 @@
 ---
-title: "How to: Disable Adding and Deleting DataRepeater Items (Visual Studio) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "DataRepeater, disabling delete"
-  - "DataRepeater, disabling add"
+title: "方法 : DataRepeater の項目の追加と削除を無効にする (Visual Studio)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataRepeater, disabling delete
+- DataRepeater, disabling add
 ms.assetid: 298d8f60-ddfe-4361-ab66-cf76d0df5220
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 1b15fe6fb5190855126ffa60ac488aaa74ad9b5a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Disable Adding and Deleting DataRepeater Items (Visual Studio)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-既定では、ユーザーは <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロール内の項目を追加および削除できます。  ユーザーは、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemEventArgs.DataRepeaterItem%2A> にフォーカスがあるときに Ctrl キーを押しながら N キーを押すか、<xref:System.Windows.Forms.BindingNavigator> コントロールの **AddNewItem** ボタンをクリックして新しい項目を追加できます。  ユーザーは、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemEventArgs.DataRepeaterItem%2A> にフォーカスがあるときに Del キーを押すか、<xref:System.Windows.Forms.BindingNavigator> コントロールの **DeleteItem** ボタンをクリックして項目を削除できます。  
+# <a name="how-to-disable-adding-and-deleting-datarepeater-items-visual-studio"></a>方法 : DataRepeater の項目の追加と削除を無効にする (Visual Studio)
+既定では、ユーザーは追加し、項目の削除、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。 ユーザーは、CTRL キーを押しながら N キーを押して、新しい項目を追加できるときに、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemEventArgs.DataRepeaterItem%2A>にフォーカスがあるかをクリックして、 **AddNewItem**のボタンでは、<xref:System.Windows.Forms.BindingNavigator>コントロール。 ユーザーがキーを押して、項目を削除できるときに削除、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItemEventArgs.DataRepeaterItem%2A>にフォーカスがあるかをクリックして、 **DeleteItem**のボタンでは、<xref:System.Windows.Forms.BindingNavigator>コントロール。  
   
- 追加と削除の機能は、デザイン時または実行時に無効にできます。  
+ 追加と削除のデザイン時または実行時に無効にすることができます。  
   
-### デザイン時に追加と削除を無効にするには  
+### <a name="to-disable-adding-and-deleting-at-design-time"></a>デザイン時に追加と削除を無効にするには  
   
-1.  Windows フォーム デザイナーで、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> コントロールを選択します。  
+1.  Windows フォーム デザイナーで、選択、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>コントロール。  
   
     > [!NOTE]
-    >  コントロールの下部セクションを選択する必要があります。  項目テンプレート セクションを選択している場合は、異なるプロパティ一式が表示されます。  
+    >  コントロールの下のセクションを選択する必要があります。 項目テンプレートのセクションを選択すると、異なる一連のプロパティが表示されます。  
   
-2.  \[プロパティ\] ウィンドウで、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.AllowUserToAddItems%2A> プロパティを **False** に設定します。  
+2.  [プロパティ] ウィンドウで、設定、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.AllowUserToAddItems%2A>プロパティを**False**です。  
   
-3.  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.AllowUserToDeleteItems%2A> プロパティを **False** に設定します。  
+3.  設定、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.AllowUserToDeleteItems%2A>プロパティを**False**です。  
   
-4.  Windows フォーム デザイナーで、<xref:System.Windows.Forms.BindingNavigator> コントロールを選択し、**AddNewItem** ボタン \(正符号が表示されているボタン\) をクリックします。  
+4.  Windows フォーム デザイナーで、選択、<xref:System.Windows.Forms.BindingNavigator>コントロールをクリックして、 **AddNewItem**ボタン (に正符号のボタン)。  
   
-5.  \[プロパティ\] ウィンドウで、<xref:System.Windows.Forms.ToolBarButton.Enabled%2A> プロパティを **False** に設定します。  
+5.  [プロパティ] ウィンドウで、設定、<xref:System.Windows.Forms.ToolBarButton.Enabled%2A>プロパティを**False**です。  
   
-6.  Windows フォーム デザイナーで、<xref:System.Windows.Forms.BindingNavigator> コントロールを選択し、**DeleteItem** ボタン \(赤い X が表示されているボタン\) をクリックします。  
+6.  Windows フォーム デザイナーで、選択、<xref:System.Windows.Forms.BindingNavigator>コントロールをクリックして、 **DeleteItem** (に赤い x 印が付いたボタン) のボタンをクリックします。  
   
-7.  \[プロパティ\] ウィンドウで、<xref:System.Windows.Forms.ToolBarButton.Enabled%2A> プロパティを **False** に設定します。  
+7.  [プロパティ] ウィンドウで、設定、<xref:System.Windows.Forms.ToolBarButton.Enabled%2A>プロパティを**False**です。  
   
-8.  コンポーネント トレイで、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> がバインドされている <xref:System.Windows.Forms.BindingSource> を選択します。  
+8.  コンポーネント トレイに次のように選択します。、<xref:System.Windows.Forms.BindingSource>先、<xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>がバインドされています。  
   
-9. \[プロパティ\] ウィンドウで、<xref:System.Windows.Forms.BindingSource.AllowNew%2A> プロパティを **False** に設定します。  
+9. [プロパティ] ウィンドウで、設定、<xref:System.Windows.Forms.BindingSource.AllowNew%2A>プロパティを**False**です。  
   
-10. Windows フォーム デザイナーで、**DeleteItem** ボタンをダブルクリックしてコード エディターを開きます。  
+10. Windows フォーム デザイナーで、ダブルクリック、 **DeleteItem**ボタン コード エディターを開きます。  
   
-11. \[イベント\] ボックスの `BindingNavigatorDeleteItem_EnabledChanged` イベントをクリックします。  
+11. イベント ドロップダウン リストで、選択、`BindingNavigatorDeleteItem_EnabledChanged`イベント。  
   
 12. `BindingNavigatorDeleteItem_EnabledChanged` イベント ハンドラーに次のコードを追加します。  
   
-     [!code-cs[VbPowerPacksDataRepeaterDisableAddDelete#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio_1.cs)]
+     [!code-csharp[VbPowerPacksDataRepeaterDisableAddDelete#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio_1.cs)]
      [!code-vb[VbPowerPacksDataRepeaterDisableAddDelete#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio_1.vb)]  
   
     > [!NOTE]
-    >  現在のレコードが変更されるたびに <xref:System.Windows.Forms.BindingSource> によって **DeleteItem** ボタンが有効になるため、この手順が必要となります。  
+    >  この手順が必要なのは、現在のレコードが変更されるたびに <xref:System.Windows.Forms.BindingSource> によって **DeleteItem** ボタンが有効になるためです。  
   
-### 実行時に追加と削除を無効にするには  
+### <a name="to-disable-adding-and-deleting-at-run-time"></a>実行時に追加と削除を無効にするには  
   
 1.  Windows フォーム デザイナーで、フォームをダブルクリックしてコード エディターを開きます。  
   
 2.  `Form_Load` イベントに次のコードを追加します。  
   
-     [!code-cs[VbPowerPacksDataRepeaterDisableAddDelete#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio_2.cs)]
+     [!code-csharp[VbPowerPacksDataRepeaterDisableAddDelete#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio_2.cs)]
      [!code-vb[VbPowerPacksDataRepeaterDisableAddDelete#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio_2.vb)]  
   
 3.  `BindingNavigatorDeleteItem_EnabledChanged` イベント ハンドラーに次のコードを追加します。  
   
-     [!code-cs[VbPowerPacksDataRepeaterDisableAddDelete#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio_1.cs)]
+     [!code-csharp[VbPowerPacksDataRepeaterDisableAddDelete#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio_1.cs)]
      [!code-vb[VbPowerPacksDataRepeaterDisableAddDelete#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio_1.vb)]  
   
     > [!NOTE]
-    >  現在のレコードが変更されるたびに <xref:System.Windows.Forms.BindingSource> によって **DeleteItem** ボタンが有効になるため、この手順が必要となります。  
+    >  この手順が必要なのは、現在のレコードが変更されるたびに <xref:System.Windows.Forms.BindingSource> によって **DeleteItem** ボタンが有効になるためです。  
   
-## 参照  
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>   
- [Introduction to the DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)   
- [Troubleshooting the DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>  
+ [DataRepeater コントロールの概要](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)  
+ [DataRepeater コントロールのトラブルシューティング](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)

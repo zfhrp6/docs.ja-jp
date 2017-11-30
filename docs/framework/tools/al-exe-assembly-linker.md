@@ -5,31 +5,24 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Al.exe
 - Assembly Linker
 - modules, Assembly Linker
 - assembly manifest, Assembly Linker
 ms.assetid: b5382965-0053-47cf-b92f-862860275a01
-caps.latest.revision: 37
+caps.latest.revision: "37"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 71600e0771c31392f568e11a7f51fc258ac5b362
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: f02c8d9f292daf473dea1af3929b0001a0aadbb7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (アセンブリ リンカー)
 
@@ -88,7 +81,7 @@ al sources options
 |**/template:** `filename`|カルチャ フィールドを除く、すべてのアセンブリ メタデータの継承元であるアセンブリ (`filename`) を指定します。<br /><br /> **/template** を指定して作成したアセンブリは、サテライト アセンブリになります。|
 |**/title:** `text`|アセンブリの **Title** フィールドに文字列を指定します。 `text` に空白が含まれている場合は、文字列を二重引用符 (" ") で囲みます。 この文字列はアセンブリのカスタム属性であり、リフレクションを使用して表示するために使用できます。<br /><br /> **/win32res** を指定しないと、**/title** が Win32 **Description** リソースとしてエクスプローラーに表示され、アプリケーションのフレンドリ名としてシェルによって使用されます。 この文字列は、複数のアプリケーションでサポートされる種類のファイルに対するショートカット メニューの **[ファイルを開くアプリケーションの選択]** サブメニューにも表示されます。<br /><br /> テキストが空の文字列の場合、Win32 **Description** リソースは単一の空白として表示されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/title** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyTitleAttribute>) として指定することもできます。|
 |**/trade[mark]:** `text`|アセンブリの **Trademark** フィールドに文字列を指定します。 `text` に空白が含まれている場合は、文字列を二重引用符 (" ") で囲みます。 この文字列はアセンブリのカスタム属性であり、リフレクションを使用して表示するために使用できます。<br /><br /> **/win32res** を指定しないと、**/trademark** が Win32 **Trademark** リソースとしてエクスプローラーに表示されます。<br /><br /> テキストが空の文字列の場合、Win32 **Trademark** リソースは単一の空白として表示されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/trademark** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyTrademarkAttribute>) として指定することもできます。|
-|**/v[ersion]:** `version`|アセンブリのバージョン情報を指定します。 バージョン文字列の形式は `major`.`minor`.`build`.`revision` です。 既定値は 0 です。<br /><br /> **/version** を指定する場合、`major` も指定する必要があります。 `major` と `minor` を指定する場合、`build` に対してアスタリスク (\*) を指定できます。 その場合、`build` は現地時間の 2000 年 1 月 1 日以降の経過日数と等しい値になり、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> `major`、`minor`、および `build` を指定する場合、`revision` に対してアスタリスクを指定できます。 その場合、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> まとめると、有効なバージョン文字列は次のようになります。<br /><br /> X<br /><br /> X.X<br /><br /> X.X.\*<br /><br /> X.X.X<br /><br /> X.X.X.\*<br /><br /> X.X.X.X<br /><br /> X は 65535 を除く unsigned short 定数 (0 ～ 65534) です。<br /><br /> **/win32res** を指定しないと、**/version** が Win32 **Assembly Version** リソースとして使用されます。<br /><br /> **/win32res**、**/productversion**、および **/fileversion** を指定しない場合、**/version** が **Assembly Version**、File Version、および **Product Version** Win32 リソースに対して使用されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/version** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyVersionAttribute>) として指定することもできます。|
+|**/v[ersion]:** `version`|アセンブリのバージョン情報を指定します。 バージョン文字列の形式は `major`.`minor`.`build`.`revision` です。既定値は 0 です。<br /><br /> **/version** を指定する場合、`major` も指定する必要があります。 `major` と `minor` を指定する場合、`build` に対してアスタリスク (\*) を指定できます。 その場合、`build` は現地時間の 2000 年 1 月 1 日以降の経過日数と等しい値になり、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> `major`、`minor`、および `build` を指定する場合、`revision` に対してアスタリスクを指定できます。 その場合、`revision` は現地時間の当日の午前 0 時以降の経過秒数を 2 で割った値と等しくなります。<br /><br /> まとめると、有効なバージョン文字列は次のようになります。<br /><br /> X<br /><br /> X.X<br /><br /> X.X.\*<br /><br /> X.X.X<br /><br /> X.X.X.\*<br /><br /> X.X.X.X<br /><br /> X は 65535 を除く unsigned short 定数 (0 ～ 65534) です。<br /><br /> **/win32res** を指定しないと、**/version** が Win32 **Assembly Version** リソースとして使用されます。<br /><br /> **/win32res**、**/productversion**、および **/fileversion** を指定しない場合、**/version** が **Assembly Version**、File Version、および **Product Version** Win32 リソースに対して使用されます。<br /><br /> **/win32res** を指定した場合は、Win32 リソース情報に対して **/version** は無効になります。<br /><br /> このオプションは、任意の MSIL モジュールのソース コードでカスタム属性 (<xref:System.Reflection.AssemblyVersionAttribute>) として指定することもできます。|
 |**/win32icon:** `filename`|.ico ファイルをアセンブリに挿入します。 この .ico ファイルは、エクスプローラーにおける出力ファイルの視覚的な表現を提供します。|
 |**/win32res:** `filename`|Win32 リソース (.res ファイル) を出力ファイルに挿入します。 Win32 リソース ファイルは、リソース コンパイラを使用して作成できます。 リソース コンパイラは、Visual C++ プログラムをコンパイルするときに呼び出されます。.res ファイルは .rc ファイルから作成されます。|
 |`@filename`|*Al.exe* コマンドが格納されている応答ファイルを指定します。<br /><br /> 応答ファイルでは、コマンドは各行に 1 つずつ指定されるか、複数のコマンドが 1 行に空白で区切られて指定されます。|
@@ -195,4 +188,3 @@ al t2.netmodule /target:exe /out:t2a.exe /main:MyClass.Main
 [*Gacutil.exe* (グローバル アセンブリ キャッシュ ツール)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)  
 [アセンブリを使用したプログラミング](../../../docs/framework/app-domains/programming-with-assemblies.md)  
 [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

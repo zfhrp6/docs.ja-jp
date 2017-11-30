@@ -1,50 +1,48 @@
 ---
-title: "Protected (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Protected"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Protected Friend keyword combination"
-  - "Protected keyword, and Friend"
-  - "Protected keyword, syntax"
-  - "Protected access modifier"
-  - "Protected keyword"
+title: Protected (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Protected
+helpviewer_keywords:
+- Protected Friend keyword combination
+- Protected keyword [Visual Basic], and Friend
+- Protected keyword [Visual Basic], syntax
+- Protected access modifier
+- Protected keyword [Visual Basic]
 ms.assetid: 74ad3d56-309f-49d2-b60c-1d0157d010e8
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 2d0cc7a0cb626a9ec8e2a0e47abc02e5268aed56
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Protected (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-宣言された 1 つ以上のプログラミング要素が、要素と同じクラスまたは派生クラスからのみアクセス可能であることを指定します。  
+# <a name="protected-visual-basic"></a>Protected (Visual Basic)
+1 つまたは複数の宣言されたプログラミング要素が、独自のクラス内または派生クラスからのみからアクセスできることを指定します。  
   
-## 解説  
- クラスに宣言されたプログラミング要素に重要情報や制限付きのコードが含まれるために、その要素へのアクセスを制限する場合があります。  しかし、それが継承可能なクラスで、派生クラスが階層的に構成されると予想される場合、これらの派生クラスから機密データや制限付きコードにアクセスすることも必要になります。  このような場合は、要素を基本クラスとすべての派生クラスからアクセス可能にしてください。  このような方法で要素へのアクセスを制限するには、要素を `Protected` で宣言します。  
+## <a name="remarks"></a>コメント  
+ クラスで宣言されたプログラミング要素が機密データまたは制限付きのコードを格納することもありますし、要素へのアクセスを制限します。 ただし、クラスが継承可能、派生クラスの階層が予想される場合は、これらの派生クラスのデータまたはコードにアクセスする必要があります。 このような場合は、要素は、基本クラスとすべての派生クラスの両方にアクセスできるようにします。 このような要素へのアクセスを制限するために宣言できます`Protected`です。  
   
-## 規則  
+## <a name="rules"></a>ルール  
   
--   **宣言コンテキスト。** `Protected` は、クラス レベルでのみ使用できます。  つまり、`Protected` 要素の宣言コンテキストはクラスであることが必要で、ソース ファイル、名前空間、インターフェイス、モジュール、構造体、またはプロシージャでは宣言できません。  
+-   **宣言コンテキスト。** 使用することができます`Protected`クラス レベルでのみです。 つまりの宣言コンテキスト、`Protected`要素がクラスである必要があり、ソース ファイル、名前空間、インターフェイス、モジュール、構造体、またはプロシージャにすることはできません。  
   
--   **結合された修飾子。** `Protected` 修飾子は、同じ宣言内で [Friend](../../../visual-basic/language-reference/modifiers/friend.md) 修飾子と組み合わせて使用できます。  この組み合わせで宣言すると、要素は同じアセンブリ内の任意の場所、要素と同じクラス、そして派生クラスからアクセス可能になります。  `Protected Friend` は、クラスのメンバーでのみ指定できます。  
+-   **結合された修飾子。** 使用することができます、`Protected`修飾子と共に、[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)同じ宣言内での修飾子です。 この組み合わせでは、宣言された要素を独自のクラスおよび派生クラスからは、同じアセンブリに任意の場所からアクセス可能にします。 指定できます`Protected Friend`クラスのメンバーでのみです。  
   
-## \[動作\]  
+## <a name="behavior"></a>動作  
   
--   **アクセス レベル。**クラス内のすべてのコードがその要素にアクセスできます。  基本クラスから派生した任意のクラスのコードが、基本クラスのすべての `Protected` 要素にアクセスできます。  これは、派生のすべての世代で同じです、  つまり、クラスは、基本クラスのそのまた基本クラスなど、何世代も上の `Protected` 要素にアクセスできます。  
+-   **アクセス レベル。** クラスのすべてのコードは、その要素にアクセスできます。 基本クラスから派生したクラス内のコードはすべてにアクセスできる、`Protected`基底クラスの要素。 これは、派生のすべてのジェネレーションの場合は true です。 つまり、クラスにアクセスできるように`Protected`と基本クラスの基底クラスの要素。  
   
-     プロテクト アクセスはフレンド アクセスのスーパーセットでもサブセットでもありません。  
+     保護されたアクセスは、スーパー セットであるかのフレンド アクセスのサブセットではありません。  
   
--   **アクセス修飾子。**アクセス レベルを指定するキーワードは、*アクセス修飾子*と呼ばれます。  アクセス修飾子の比較については、「[Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+-   **アクセス修飾子。** アクセス レベルを指定するキーワードと呼ばれる*アクセス修飾子*です。 アクセス修飾子の比較を参照してください。 [Visual Basic でのレベルのアクセス](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。  
   
- 修飾子 `Protected` は、次の構文で使用します。  
+ `Protected` 修飾子は、次のコンテキストで使用できます。  
   
  [Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)  
   
@@ -70,11 +68,11 @@ caps.handback.revision: 16
   
  [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## 参照  
- [Public](../../../visual-basic/language-reference/modifiers/public.md)   
- [Friend](../../../visual-basic/language-reference/modifiers/friend.md)   
- [Private](../../../visual-basic/language-reference/modifiers/private.md)   
- [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)   
- [Procedures](../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Structures](../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
- [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+## <a name="see-also"></a>関連項目  
+ [Public](../../../visual-basic/language-reference/modifiers/public.md)  
+ [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
+ [Private](../../../visual-basic/language-reference/modifiers/private.md)  
+ [Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
+ [手順](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
+ [構造体](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
+ [クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

@@ -1,69 +1,68 @@
 ---
-title: "数値演算関数 (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "数値演算関数、Visual Basic"
-  - "算術演算、数値演算関数"
-  - "数値演算ルーチン"
-  - "Atn 関数"
+title: "数値演算関数 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- math functions, Visual Basic
+- arithmetic operations, math functions
+- math routines
+- Atn function
 ms.assetid: 4d2d82e7-6924-42fe-a4a7-b4dd5bebbd0c
-caps.latest.revision: 23
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 4d67df44e5f4ea89475ea34e87fd5041ee6cb44f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 数値演算関数 (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-<xref:System.Math?displayProperty=fullName> クラスのメソッドは、三角、対数の、およびそのほかの数値演算関数が用意されています。  
+# <a name="math-functions-visual-basic"></a>数値演算関数 (Visual Basic)
+メソッド、<xref:System.Math?displayProperty=nameWithType>クラスは、三角関数演算、対数演算、およびその他の一般的な数学関数を提供します。  
   
-## 解説  
- 次の表は <xref:System.Math?displayProperty=fullName> クラスのメソッドを示します。  Visual Basic プログラムでこれらを使用できます。  
+## <a name="remarks"></a>コメント  
+ 次の表に、メソッド、<xref:System.Math?displayProperty=nameWithType>クラスです。 Visual Basic プログラムでこれらを使用することができます。  
   
 |.NET Framework メソッド|説明|  
-|-------------------------|--------|  
-|<xref:System.Math.Abs%2A>|指定された数値の絶対値を返します。|  
+|---------------------------|-----------------|  
+|<xref:System.Math.Abs%2A>|絶対値を返します。|  
 |<xref:System.Math.Acos%2A>|コサインが指定数となる角度を返します。|  
 |<xref:System.Math.Asin%2A>|サインが指定数となる角度を返します。|  
 |<xref:System.Math.Atan%2A>|タンジェントが指定数となる角度を返します。|  
 |<xref:System.Math.Atan2%2A>|タンジェントが 2 つの指定された数の商である角度を返します。|  
-|<xref:System.Math.BigMul%2A>|2 個の 32 ビットの数値の完全な製品を返します。|  
-|<xref:System.Math.Ceiling%2A>|指定 `Decimal` か `Double`以上である最も小さい整数値を返します。|  
+|<xref:System.Math.BigMul%2A>|2 つの 32 ビット数値の完全な製品を返します。|  
+|<xref:System.Math.Ceiling%2A>|大きいか等しいを指定された最小の整数値を返します`Decimal`または`Double`です。|  
 |<xref:System.Math.Cos%2A>|指定された角度のコサインを返します。|  
 |<xref:System.Math.Cosh%2A>|指定された角度のハイパーボリック コサインを返します。|  
-|<xref:System.Math.DivRem%2A>|32 ビット 2 または 64 ビット符号付き整数の商を返し、出力パラメーターの剰余を返します。|  
-|<xref:System.Math.Exp%2A>|指定したに発生する e \(自然対数の底\) を返します。|  
-|<xref:System.Math.Floor%2A>|`Double` 指定 `Decimal` 数以下である大きな整数を返します。|  
-|<xref:System.Math.IEEERemainder%2A>|指定した別の数によってその結果、指定した数の部分から剰余を返します。|  
-|<xref:System.Math.Log%2A>|指定された数値の e \(ベース\) の自然対数、または指定された底の指定された数値の対数を返します。|  
+|<xref:System.Math.DivRem%2A>|2 つ 32 ビットまたは 64 ビット符号付き整数の商を返し、出力パラメーターの剰余を返します。|  
+|<xref:System.Math.Exp%2A>|E (自然対数の底) 指定指数で累乗した値を返します。|  
+|<xref:System.Math.Floor%2A>|以下を指定された最大の整数を返します`Decimal`または`Double`数。|  
+|<xref:System.Math.IEEERemainder%2A>|指定した番号を別に指定した数の除算の結果生じた剰余を返します。|  
+|<xref:System.Math.Log%2A>|指定した基数での自然対数 (底 e) 指定した数のまたは指定した数の対数を返します。|  
 |<xref:System.Math.Log10%2A>|指定した数の底 10 の対数を返します。|  
-|<xref:System.Math.Max%2A>|二つの数値に 2 を超える返します。|  
+|<xref:System.Math.Max%2A>|2 つの数値のうち、大きい方を返します。|  
 |<xref:System.Math.Min%2A>|2 つの数のうち、小さい方を返します。|  
 |<xref:System.Math.Pow%2A>|指定の数値を指定した値で累乗した値を返します。|  
-|<xref:System.Math.Round%2A>|丸めるために使用される最も近い整数値または小数部の指定した数に `Decimal` または `Double` の値を返します。|  
-|<xref:System.Math.Sign%2A>|引数に指定された数式の符号を表す `Integer` の値を返します。|  
+|<xref:System.Math.Round%2A>|返します、`Decimal`または`Double`値には、最も近い整数値または指定された数の桁の小数部が丸められます。|  
+|<xref:System.Math.Sign%2A>|返します、`Integer`数値の符号を示す値。|  
 |<xref:System.Math.Sin%2A>|指定された角度のサインを返します。|  
 |<xref:System.Math.Sinh%2A>|指定された角度のハイパーボリック サインを返します。|  
 |<xref:System.Math.Sqrt%2A>|指定された数値の平方根を返します。|  
 |<xref:System.Math.Tan%2A>|指定された角度のタンジェントを返します。|  
 |<xref:System.Math.Tanh%2A>|指定された角度のハイパーボリック タンジェントを返します。|  
-|<xref:System.Math.Truncate%2A>|`Double` 指定 `Decimal` または数の重要な部分を計算します。|  
+|<xref:System.Math.Truncate%2A>|指定した整数部を計算`Decimal`または`Double`数。|  
   
- これらの関数を修飾子なしで使用するには、ソース ファイルの先頭に次のコードを追加して、プロジェクトに <xref:System.Math?displayProperty=fullName> の名前空間をインポートする:  
+ 修飾なしのこれらの関数を使用するのには、インポート、<xref:System.Math?displayProperty=nameWithType>ソース ファイルの先頭に次のコードを追加することで、プロジェクトに名前空間。  
   
 ```  
 Imports System.Math  
 ```  
   
-## 使用例  
- この例では、<xref:System.Math> クラスの <xref:System.Math.Abs%2A> メソッドを使って、数値の絶対値を計算します。  
+## <a name="example"></a>例  
+ この例では、<xref:System.Math.Abs%2A>のメソッド、<xref:System.Math>クラスの数値の絶対値を計算します。  
   
 ```  
 ' Returns 50.3.  
@@ -72,8 +71,8 @@ Dim MyNumber1 As Double = Math.Abs(50.3)
 Dim MyNumber2 As Double = Math.Abs(-50.3)  
 ```  
   
-## 使用例  
- この例では、<xref:System.Math> クラスの <xref:System.Math.Atan%2A> メソッドを使って、πの値を計算します。  
+## <a name="example"></a>例  
+ この例では、<xref:System.Math.Atan%2A>のメソッド、 <xref:System.Math> pi の値を計算するクラス。  
   
 ```  
 Public Function GetPi() As Double  
@@ -82,8 +81,8 @@ Public Function GetPi() As Double
 End Function  
 ```  
   
-## 使用例  
- この例では、<xref:System.Math> クラスの <xref:System.Math.Cos%2A> メソッドを使って、角度のコサインを返します。  
+## <a name="example"></a>例  
+ この例では、<xref:System.Math.Cos%2A>のメソッド、<xref:System.Math>クラスを指定した角度のコサインを返します。  
   
 ```  
 Public Function Sec(ByVal angle As Double) As Double  
@@ -92,8 +91,8 @@ Public Function Sec(ByVal angle As Double) As Double
 End Function  
 ```  
   
-## 使用例  
- この例では、<xref:System.Math> クラスの <xref:System.Math.Exp%2A> メソッドを使って、指定した数値を指数とする e の累乗を返します。  
+## <a name="example"></a>例  
+ この例では、<xref:System.Math.Exp%2A>のメソッド、 <xref:System.Math> e を累乗を返すためにします。  
   
 ```  
 Public Function Sinh(ByVal angle As Double) As Double  
@@ -102,8 +101,8 @@ Public Function Sinh(ByVal angle As Double) As Double
 End Function  
 ```  
   
-## 使用例  
- この例では、<xref:System.Math> クラスの <xref:System.Math.Log%2A> メソッドを使って、数値の自然対数を返します。  
+## <a name="example"></a>例  
+ この例では、<xref:System.Math.Log%2A>のメソッド、<xref:System.Math>クラス数値の自然対数を返します。  
   
 ```  
 Public Function Asinh(ByVal value As Double) As Double  
@@ -112,16 +111,16 @@ Public Function Asinh(ByVal value As Double) As Double
 End Function  
 ```  
   
-## 使用例  
- この例では、<xref:System.Math> クラスの <xref:System.Math.Round%2A> メソッドを使って、数値を最も近い整数に丸めます。  
+## <a name="example"></a>例  
+ この例では、<xref:System.Math.Round%2A>のメソッド、<xref:System.Math>クラスを最も近い整数に数値を丸めます。  
   
 ```  
 ' Returns 3.  
 Dim MyVar2 As Double = Math.Round(2.8)  
 ```  
   
-## 使用例  
- この例では、<xref:System.Math> クラスの <xref:System.Math.Sign%2A> メソッドを使って、数の符号を判定します。  
+## <a name="example"></a>例  
+ この例では、<xref:System.Math.Sign%2A>のメソッド、<xref:System.Math>数値の符号を決めるクラスをします。  
   
 ```  
 ' Returns 1.  
@@ -132,8 +131,8 @@ Dim MySign2 As Integer = Math.Sign(-2.4)
 Dim MySign3 As Integer = Math.Sign(0)  
 ```  
   
-## 使用例  
- この例では、<xref:System.Math> クラスの <xref:System.Math.Sin%2A> メソッドを使って、角度のサイン値を返します。  
+## <a name="example"></a>例  
+ この例では、<xref:System.Math.Sin%2A>のメソッド、<xref:System.Math>クラス角度のサインを返します。  
   
 ```  
 Public Function Csc(ByVal angle As Double) As Double  
@@ -142,8 +141,8 @@ Public Function Csc(ByVal angle As Double) As Double
 End Function  
 ```  
   
-## 使用例  
- この例では、<xref:System.Math> クラスの <xref:System.Math.Sqrt%2A> メソッドを使って、数値の平方根を計算します。  
+## <a name="example"></a>例  
+ この例では、<xref:System.Math.Sqrt%2A>のメソッド、<xref:System.Math>クラスの数値の平方根を計算します。  
   
 ```  
 ' Returns 2.  
@@ -156,8 +155,8 @@ Dim MySqr3 As Double = Math.Sqrt(0)
 Dim MySqr4 As Double = Math.Sqrt(-4)  
 ```  
   
-## 使用例  
- この例では、<xref:System.Math> クラスの <xref:System.Math.Tan%2A> メソッドを使って、角度のタンジェントを返します。  
+## <a name="example"></a>例  
+ この例では、<xref:System.Math.Tan%2A>のメソッド、<xref:System.Math>クラスを指定した角度のタンジェントを返します。  
   
 ```  
 Public Function Ctan(ByVal angle As Double) As Double  
@@ -166,16 +165,16 @@ Public Function Ctan(ByVal angle As Double) As Double
 End Function  
 ```  
   
-## 要件  
- **クラス**: <xref:System.Math>  
+## <a name="requirements"></a>要件  
+ **クラス:**<xref:System.Math>  
   
- **名前空間**: <xref:System>  
+ **Namespace:**<xref:System>  
   
- **アセンブリ:** mscorlib \(mscorlib.dll 内\)  
+ **アセンブリ:** (mscorlib.dll) の mscorlib  
   
-## 参照  
- <xref:Microsoft.VisualBasic.VBMath.Rnd%2A>   
- <xref:Microsoft.VisualBasic.VBMath.Randomize%2A>   
- <xref:System.Double.NaN>   
- [Derived Math Functions](../../../visual-basic/language-reference/keywords/derived-math-functions.md)   
- [Arithmetic Operators](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.VisualBasic.VBMath.Rnd%2A>  
+ <xref:Microsoft.VisualBasic.VBMath.Randomize%2A>  
+ <xref:System.Double.NaN>  
+ [数値演算関数の導出](../../../visual-basic/language-reference/keywords/derived-math-functions.md)  
+ [算術演算子](../../../visual-basic/language-reference/operators/arithmetic-operators.md)

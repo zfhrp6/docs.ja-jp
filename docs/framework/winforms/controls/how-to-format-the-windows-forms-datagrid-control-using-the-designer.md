@@ -1,114 +1,115 @@
 ---
-title: "方法 : デザイナーを使って Windows フォーム DataGrid コントロールの書式を設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "色, 適用 (DataGrid コントロールに)"
-  - "列 [Windows フォーム], DataGrid コントロール"
-  - "DataGrid コントロール [Windows フォーム], 既定のスタイル"
-  - "DataGrid コントロール [Windows フォーム], 書式指定"
-  - "書式設定 [Windows フォーム]"
-  - "テーブル [Windows フォーム], 書式指定 (DataGrid コントロールでの)"
+title: "方法 : デザイナーを使って Windows フォーム DataGrid コントロールの書式を設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- columns [Windows Forms], DataGrid controls
+- colors [Windows Forms], applying to DataGrid controls
+- DataGrid control [Windows Forms], formatting
+- DataGrid control [Windows Forms], default styles
+- tables [Windows Forms], formatting in DataGrid control
+- formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: da36f4f79d0016249dead686f305e1b93defceda
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : デザイナーを使って Windows フォーム DataGrid コントロールの書式を設定する
+# <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>方法 : デザイナーを使って Windows フォーム DataGrid コントロールの書式を設定する
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
+>  <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。 詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
   
- <xref:System.Windows.Forms.DataGrid> コントロールの各部分に異なる色を付けると、コントロールの情報が読みやすく、解釈しやすくなります。  行および列の色を指定できます。  また、行および列の表示\/非表示を切り替えることもできます。  
+ さまざまな部分をさまざまな色を適用する、<xref:System.Windows.Forms.DataGrid>コントロールのヘルプ情報に簡単にするための読み取りおよび解釈することができます。 色は、行と列に適用できます。 行と列も非表示にしたり各自の判断で示すようにします。  
   
- <xref:System.Windows.Forms.DataGrid> コントロールの書式設定には、3 つの基本的な段階があります。  
+ 書式設定の 3 つの基本的な要素があります、<xref:System.Windows.Forms.DataGrid>コントロール。  
   
--   プロパティを設定して、データを表示する既定のスタイルを設定できます。  
+-   データを表示する既定のスタイルを確立するためにプロパティを設定することができます。  
   
--   設定したスタイルに基づいて、実行時に特定のテーブルを表示する方法をカスタマイズできます。  
+-   そのベースから、実行時に特定のテーブルの表示方法をカスタマイズできます。  
   
--   最後に、データ グリッドに表示する列、および表示する色やその他の書式を変更できます。  
+-   最後に、色と同様に、データ グリッドに表示される列を変更することができ、その他の書式を示します。  
   
- データ グリッドの書式設定の最初の手順として、<xref:System.Windows.Forms.DataGrid> 自体のプロパティを設定できます。  ここで選択した色および書式を基本として、表示するデータ テーブルおよび列に応じた変更を加えることができます。  
+ 最初の手順として、データ グリッドを書式設定のプロパティを設定することができます、<xref:System.Windows.Forms.DataGrid>自体です。 これらの色と書式の選択元となることができますし、変更を加えたデータ テーブルと表示される列に応じて、ベースを形成します。  
   
- 次の手順では、<xref:System.Windows.Forms.DataGrid> コントロールが含まれているフォームを持つ **Windows アプリケーション** プロジェクトが必要です。  このプロジェクトの設定の詳細については、「[How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)」および「[方法 : Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)」を参照してください。  [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)] では、既定で <xref:System.Windows.Forms.DataGrid> コントロールは**ツールボックス**に含まれていません。  詳細については、「[How to: Add Items to the Toolbox](http://msdn.microsoft.com/ja-jp/458e119e-17fe-450b-b889-e31c128bd7e0)」を参照してください。  
+ 次の手順が必要です、 **Windows アプリケーション**が含まれているフォーム プロジェクト、<xref:System.Windows.Forms.DataGrid>コントロール。 このようなプロジェクトの設定の詳細については、次を参照してください。[する方法: Windows アプリケーション プロジェクトを作成](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)と[する方法: Windows フォームにコントロールを追加](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)です。 [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)]、<xref:System.Windows.Forms.DataGrid>コントロールに含まれていない、**ツールボックス**既定です。 詳細については、次を参照してください。[する方法: ツールボックス アイテムの追加](http://msdn.microsoft.com/en-us/458e119e-17fe-450b-b889-e31c128bd7e0)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### DataGrid コントロールの既定のスタイルを設定するには  
+### <a name="to-establish-a-default-style-for-the-datagrid-control"></a>DataGrid コントロールの既定のスタイルを確立するために  
   
 1.  <xref:System.Windows.Forms.DataGrid> コントロールを選択します。  
   
-2.  **\[プロパティ\]** ウィンドウで、次のプロパティを適切に設定します。  
+2.  **プロパティ**ウィンドウで、必要に応じて、次のプロパティを設定します。  
   
-    |プロパティ|Description|  
-    |-----------|-----------------|  
-    |<xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A>|`BackColor` プロパティは、グリッドの偶数番号の行の色を定義します。  <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> プロパティを異なる色に設定すると、1 行おきにこの新しい色が設定されます \(行 1、3、5 など\)。|  
-    |<xref:System.Windows.Forms.DataGrid.BackColor%2A>|グリッドの偶数番号の行 \(行 0、2、4、6 など\) の背景色。|  
-    |<xref:System.Windows.Forms.DataGrid.BackgroundColor%2A>|<xref:System.Windows.Forms.DataGrid.BackColor%2A> プロパティと <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> プロパティはグリッドの行の色を決定しますが、<xref:System.Windows.Forms.DataGrid.BackgroundColor%2A> プロパティは行領域の外の領域の色を決定します。この領域は、グリッドが一番下までスクロールされたときや、グリッドに数行しか含まれていない場合にだけ表示されます。|  
-    |<xref:System.Windows.Forms.DataGrid.BorderStyle%2A>|グリッドの境界線スタイル。<xref:System.Windows.Forms.BorderStyle> 列挙値の 1 つです。|  
-    |<xref:System.Windows.Forms.DataGrid.CaptionBackColor%2A>|グリッドのウィンドウ キャプションの背景色。ウィンドウ キャプションは、グリッドのすぐ上に表示されます。|  
-    |<xref:System.Windows.Forms.DataGrid.CaptionFont%2A>|グリッドの上部のキャプションのフォント。|  
+    |プロパティ|説明|  
+    |--------------|-----------------|  
+    |<xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A>|`BackColor`プロパティ グリッドの偶数行の色を定義します。 設定すると、<xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A>は異なる色に、その他のすべての行に設定されてこの新しい色 (1、3、5、およびなどの行数)。|  
+    |<xref:System.Windows.Forms.DataGrid.BackColor%2A>|グリッドの偶数行の背景色 (0、2、4、6、およびなどの行数)。|  
+    |<xref:System.Windows.Forms.DataGrid.BackgroundColor%2A>|一方、<xref:System.Windows.Forms.DataGrid.BackColor%2A>と<xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A>プロパティ グリッドで、行の色を決定する、<xref:System.Windows.Forms.DataGrid.BackgroundColor%2A>プロパティは、下のグリッドをスクロールするときに、または、いくつかの行だけの場合にのみ表示行エリアの外、領域の色を決定します。グリッドに含まれています。|  
+    |<xref:System.Windows.Forms.DataGrid.BorderStyle%2A>|いずれかのグリッドの罫線のスタイル、<xref:System.Windows.Forms.BorderStyle>列挙値。|  
+    |<xref:System.Windows.Forms.DataGrid.CaptionBackColor%2A>|グリッドの上にすぐに表示されるグリッドのウィンドウ キャプションの背景色。|  
+    |<xref:System.Windows.Forms.DataGrid.CaptionFont%2A>|グリッドの上部のキャプションのフォントです。|  
     |<xref:System.Windows.Forms.DataGrid.CaptionForeColor%2A>|グリッドのウィンドウ キャプションの背景色。|  
-    |<xref:System.Windows.Forms.Control.Font%2A>|グリッドのテキストの表示に使用されるフォント。|  
-    |<xref:System.Windows.Forms.DataGrid.ForeColor%2A>|データ グリッドの行に表示されるデータのフォントの色。|  
+    |<xref:System.Windows.Forms.Control.Font%2A>|グリッドでテキストを表示するために使用するフォントです。|  
+    |<xref:System.Windows.Forms.DataGrid.ForeColor%2A>|データ グリッドの行のデータが表示されるフォントの色。|  
     |<xref:System.Windows.Forms.DataGrid.GridLineColor%2A>|データ グリッドのグリッド線の色。|  
-    |<xref:System.Windows.Forms.DataGrid.GridLineStyle%2A>|グリッドのセル間の線のスタイル。<xref:System.Windows.Forms.DataGridLineStyle> 列挙値の 1 つです。|  
-    |<xref:System.Windows.Forms.DataGrid.HeaderBackColor%2A>|行ヘッダーと列ヘッダーの背景色。|  
-    |<xref:System.Windows.Forms.DataGrid.HeaderFont%2A>|列ヘッダーに使用されるフォント。|  
-    |<xref:System.Windows.Forms.DataGrid.HeaderForeColor%2A>|グリッドの列ヘッダーの前景色。列ヘッダーのテキストおよびプラス\/マイナス グリフも含まれます。プラス記号 \(\+\)\/マイナス記号 \(\-\) グリフは、複数の関連するテーブルが表示されているときに行を展開するために使用します。|  
-    |<xref:System.Windows.Forms.DataGrid.LinkColor%2A>|データ グリッド内のすべてのリンク テキストの色。子テーブル、リレーションシップ名などへのリンクが含まれます。|  
-    |<xref:System.Windows.Forms.DataGrid.ParentRowsBackColor%2A>|子テーブルに表示される親テーブルの行の背景色。|  
-    |<xref:System.Windows.Forms.DataGrid.ParentRowsForeColor%2A>|子テーブルに表示される親テーブルの行の前景色。|  
-    |<xref:System.Windows.Forms.DataGrid.ParentRowsLabelStyle%2A>|親テーブルの行にテーブル名と列名が表示されるかどうかを決定します。<xref:System.Windows.Forms.DataGridParentRowsLabelStyle> 列挙型を使用します。|  
-    |<xref:System.Windows.Forms.DataGrid.PreferredColumnWidth%2A>|グリッドの列の既定の幅 \(ピクセル単位\)。  このプロパティは、<xref:System.Windows.Forms.DataGrid.DataSource%2A> プロパティと <xref:System.Windows.Forms.DataGrid.DataMember%2A> プロパティをリセットする前に設定してください。リセットした後で設定しても無効です。これらのプロパティは、別個にリセットするか、<xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> メソッドを使用してリセットします。<br /><br /> このプロパティは、0 未満の値には設定できません。|  
-    |<xref:System.Windows.Forms.DataGrid.PreferredRowHeight%2A>|グリッドの行の高さ \(ピクセル単位\)。  このプロパティは、<xref:System.Windows.Forms.DataGrid.DataSource%2A> プロパティと <xref:System.Windows.Forms.DataGrid.DataMember%2A> プロパティをリセットする前に設定してください。リセットした後で設定しても無効です。これらのプロパティは、別個にリセットするか、<xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> メソッドを使用してリセットします。<br /><br /> このプロパティは、0 未満の値には設定できません。|  
+    |<xref:System.Windows.Forms.DataGrid.GridLineStyle%2A>|いずれかと、グリッドのセルを区切る線のスタイル、<xref:System.Windows.Forms.DataGridLineStyle>列挙値。|  
+    |<xref:System.Windows.Forms.DataGrid.HeaderBackColor%2A>|行および列ヘッダーの背景色です。|  
+    |<xref:System.Windows.Forms.DataGrid.HeaderFont%2A>|列ヘッダーに使用するフォントです。|  
+    |<xref:System.Windows.Forms.DataGrid.HeaderForeColor%2A>|列ヘッダーのテキストと正符号 (+) マイナス記号 (-) を展開し、複数の関連するテーブルと行を折りたたむグリフなど、グリッドの列ヘッダーの背景色が表示されます。|  
+    |<xref:System.Windows.Forms.DataGrid.LinkColor%2A>|子テーブル、リレーションシップ名となどへのリンクなど、データ グリッド内のすべてのリンクのテキストの色。|  
+    |<xref:System.Windows.Forms.DataGrid.ParentRowsBackColor%2A>|子テーブルでは、これは親の行の背景色です。|  
+    |<xref:System.Windows.Forms.DataGrid.ParentRowsForeColor%2A>|子テーブルでは、これは親の行の前景色です。|  
+    |<xref:System.Windows.Forms.DataGrid.ParentRowsLabelStyle%2A>|親行のテーブルと列の名前が表示されるかどうかを決定、<xref:System.Windows.Forms.DataGridParentRowsLabelStyle>列挙します。|  
+    |<xref:System.Windows.Forms.DataGrid.PreferredColumnWidth%2A>|グリッドの列の既定の幅 (ピクセル単位)。 リセットする前に、このプロパティを設定、<xref:System.Windows.Forms.DataGrid.DataSource%2A>と<xref:System.Windows.Forms.DataGrid.DataMember%2A>プロパティ (いずれかとは別に、または、<xref:System.Windows.Forms.DataGrid.SetDataBinding%2A>メソッド)、またはプロパティには影響はありません。<br /><br /> プロパティは、0 より小さい値に設定できません。|  
+    |<xref:System.Windows.Forms.DataGrid.PreferredRowHeight%2A>|グリッド内の行のピクセル単位で行の高さ。 リセットする前に、このプロパティを設定、<xref:System.Windows.Forms.DataGrid.DataSource%2A>と<xref:System.Windows.Forms.DataGrid.DataMember%2A>プロパティ (いずれかとは別に、または、<xref:System.Windows.Forms.DataGrid.SetDataBinding%2A>メソッド)、またはプロパティには影響はありません。<br /><br /> プロパティは、0 より小さい値に設定できません。|  
     |<xref:System.Windows.Forms.DataGrid.RowHeaderWidth%2A>|グリッドの行ヘッダーの幅。|  
-    |<xref:System.Windows.Forms.DataGrid.SelectionBackColor%2A>|行またはセルが選択されたときの背景色。|  
-    |<xref:System.Windows.Forms.DataGrid.SelectionForeColor%2A>|行またはセルが選択されたときの前景色。|  
+    |<xref:System.Windows.Forms.DataGrid.SelectionBackColor%2A>|行またはセルを選択すると、これは、背景色。|  
+    |<xref:System.Windows.Forms.DataGrid.SelectionForeColor%2A>|行またはセルを選択すると、これは、前景色です。|  
   
     > [!NOTE]
-    >  コントロールの色をカスタマイズするときには、不適切な色の選択 \(赤と緑など\) によってコントロールがアクセスできなくなる可能性があることに注意してください。  この問題を避けるには、**\[システム カラー\]** パレットに含まれる色を使用します。  
+    >  コントロールの色をカスタマイズするとき、コントロールを不適切な色の選択 (たとえば、赤と緑) のためにアクセスすることができます。 使用できる色を使用して、**システム カラー**パレットをこの問題を回避します。  
   
-     次のプロシージャには、データ テーブルにバインドされた <xref:System.Windows.Forms.DataGrid> コントロールが必要です。  詳細については、「[方法 : データ ソースに Windows フォーム DataGrid コントロールをバインドする](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)」を参照してください。  
+     次の手順が必要です、<xref:System.Windows.Forms.DataGrid>コントロールをデータ テーブルにバインドします。 詳細については、次を参照してください。[する方法: Windows フォーム DataGrid コントロールをデータ ソースにバインド](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)です。  
   
-### デザイン時にデータ テーブルのテーブル スタイルと列スタイルを設定するには  
+### <a name="to-set-the-table-and-column-style-of-a-data-table-at-design-time"></a>デザイン時に、データ テーブルのテーブルと列のスタイルを設定するには  
   
-1.  フォームで <xref:System.Windows.Forms.DataGrid> コントロールを選択します。  
+1.  選択、<xref:System.Windows.Forms.DataGrid>フォーム上のコントロールです。  
   
-2.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.DataGrid.TableStyles%2A> プロパティを選択し、**省略記号** \(![VisualStudioEllipsesButton スクリーンショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")\) ボタンをクリックします。  
+2.  **プロパティ**ウィンドウで、<xref:System.Windows.Forms.DataGrid.TableStyles%2A>プロパティをクリックして、**省略記号**(![VisualStudioEllipsesButton スクリーン ショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) ボタンをクリックします。  
   
-3.  **\[DataGridTableStyle コレクション エディター\]** ダイアログ ボックスの **\[追加\]** をクリックしてテーブル スタイルをコレクションに追加します。  
+3.  **DataGridTableStyle コレクション エディター**ダイアログ ボックスで、をクリックして**追加**コレクションに、テーブルのスタイルを追加します。  
   
-     **DataGridTableStyle コレクション エディター**では、テーブル スタイルの追加または削除、表示やレイアウトのプロパティの設定、テーブル スタイルのマッピング名の設定をすることができます。  
+     **DataGridTableStyle コレクション エディター**マッピング テーブル スタイルの削除、表示の設定とレイアウト プロパティ、およびセット テーブル スタイルの名前を追加することができます。  
   
-4.  <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> プロパティを各テーブル スタイルのマッピング名に設定します。  
+4.  設定、<xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A>プロパティを各テーブルのスタイルのマッピングの名前にします。  
   
-     マッピング名を使用して、どのテーブルでどのテーブル スタイルを使用するかを指定します。  
+     マッピング名は、どのテーブルで使用するどのテーブル スタイルを指定に使用されます。  
   
-5.  **DataGridTableStyle コレクション エディター**で、<xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> プロパティを選択し、省略記号ボタン \(![VisualStudioEllipsesButton スクリーンショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")\) をクリックします。  
+5.  **DataGridTableStyle コレクション エディター**、select、<xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A>プロパティの省略記号ボタンをクリックし、(![VisualStudioEllipsesButton スクリーン ショット](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")).  
   
-6.  **\[DataGridColumnStyle コレクション エディター\]** ダイアログ ボックスで、作成したテーブル スタイルに列スタイルを追加します。  
+6.  **DataGridColumnStyle コレクション エディター**  ダイアログ ボックスで、作成したテーブルのスタイルを列のスタイルを追加します。  
   
-     **DataGridColumnStyle コレクション エディター**では、列スタイルの追加または削除、表示やレイアウトのプロパティの設定、データ列のマッピング名および書式指定文字列の設定をすることができます。  
+     **DataGridColumnStyle コレクション エディター**書式指定文字列のデータ列、および追加し、列のスタイルを削除、表示およびレイアウトのプロパティを設定およびマッピングの名前を設定します。  
   
     > [!NOTE]
-    >  書式指定文字列の詳細については、「[型の書式設定](../../../../docs/standard/base-types/formatting-types.md)」を参照してください。  
+    >  書式指定文字列の詳細については、次を参照してください。[型の書式設定](../../../../docs/standard/base-types/formatting-types.md)です。  
   
-## 参照  
- <xref:System.Windows.Forms.GridTableStylesCollection>   
- <xref:System.Windows.Forms.GridColumnStylesCollection>   
- <xref:System.Windows.Forms.DataGrid>   
- [方法 : Windows フォーム DataGrid コントロールの列を削除するまたは非表示にする](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.GridTableStylesCollection>  
+ <xref:System.Windows.Forms.GridColumnStylesCollection>  
+ <xref:System.Windows.Forms.DataGrid>  
+ [方法: Windows フォーム DataGrid コントロールの列を削除するまたは非表示にする](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)  
  [DataGrid コントロール](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)

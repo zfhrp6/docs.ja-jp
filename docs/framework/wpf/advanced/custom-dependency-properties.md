@@ -1,171 +1,177 @@
 ---
-title: "カスタム依存関係プロパティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "カスタム依存関係プロパティ"
-  - "依存関係プロパティ, カスタム"
-  - "実装, ラッパー"
-  - "メタデータ, プロパティ"
-  - "プロパティ, メタデータ"
-  - "プロパティ, 登録"
-  - "登録 (プロパティを)"
-  - "ラッパー, 実装"
+title: "カスタム依存関係プロパティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- implementing [WPF], wrappers
+- registering properties [WPF]
+- properties [WPF], metadata
+- metadata [WPF], for properties
+- custom dependency properties [WPF]
+- properties [WPF], registering
+- wrappers [WPF], implementing
+- dependency properties [WPF], custom
 ms.assetid: e6bfcfac-b10d-4f58-9f77-a864c2a2938f
-caps.latest.revision: 25
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 24
+caps.latest.revision: "25"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f1ee7c7b4e21d147bad1cd8e4b854c0ff4fe13aa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# カスタム依存関係プロパティ
-ここでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションの開発者とコンポーネント作成者に対して、カスタム[依存関係](GTMT)の作成を推奨する理由を説明し、その実装手順と共に、プロパティのパフォーマンス、操作性、または汎用性の向上につながるいくつかの実装オプションを示します。  
+# <a name="custom-dependency-properties"></a>カスタム依存関係プロパティ
+このトピックは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーション開発者およびコンポーネントの作成者が、カスタム依存関係プロパティを作成したくなる理由を説明し、実装手順にくわえ、プロパティのパフォーマンス、使いやすさ、または多用性を向上させることができるいくつかの実装オプションについて説明します。  
   
-   
+
   
 <a name="prerequisites"></a>   
-## 必要条件  
- このトピックでは、ユーザーが [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] クラスの既存の依存関係プロパティの使用という観点から依存関係プロパティを理解し、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」トピックを通読していることを前提としています。  このトピックの例を理解するには、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] についての理解があり、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションの記述方法を理解していることも必要です。  
+## <a name="prerequisites"></a>必須コンポーネント  
+ このトピックは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] クラスの既存の依存関係プロパティのコンシューマーの観点から依存関係プロパティを理解しており、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」というトピックを読んでいることを前提としています。 このトピックの例を理解するには、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] について理解し、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションの作成方法に精通している必要があります。  
   
 <a name="whatis"></a>   
-## 依存関係プロパティとは  
- 通常なら[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] プロパティになるプロパティを[依存関係プロパティ](GTMT)として実装すると、そのプロパティでスタイル設定、データ バインディング、継承、アニメーション、および既定値をサポートできるようになります。  依存関係プロパティは、<xref:System.Windows.DependencyProperty.Register%2A> メソッド \(または <xref:System.Windows.DependencyProperty.RegisterReadOnly%2A>\) を呼び出すことによって [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムに登録され、<xref:System.Windows.DependencyProperty> 識別子フィールドによって補足されるプロパティです。  依存関係プロパティを使用できるのは <xref:System.Windows.DependencyObject> 型のみですが、<xref:System.Windows.DependencyObject> は [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] クラス階層の中で非常に高い位置にあるため、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] で使用できるクラスの大多数は依存関係プロパティをサポートすることができます。  依存関係プロパティと、この [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)] で依存関係プロパティの説明に使用している一部の用語と規則の詳細については、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
+## <a name="what-is-a-dependency-property"></a>依存関係プロパティとは  
+ [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] プロパティを依存関係プロパティとして実装することで、プロパティでスタイル設定、データ バインド、継承、アニメーション、および既定値のサポートを有効にすることができます。 依存関係プロパティに登録されているプロパティ、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]プロパティ システムを呼び出して、<xref:System.Windows.DependencyProperty.Register%2A>メソッド (または<xref:System.Windows.DependencyProperty.RegisterReadOnly%2A>) でバックアップされていると、<xref:System.Windows.DependencyProperty>識別子フィールドです。 依存関係プロパティをのみで使用できる<xref:System.Windows.DependencyObject>型が<xref:System.Windows.DependencyObject>で非常に高く、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]クラス階層構造のほとんどのクラスで使用できるように[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]依存関係プロパティをサポートできます。 依存関係プロパティと、これらをこの [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)] で説明するために使用されている用語と規則の詳細については、「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
   
 <a name="example_dp"></a>   
-## 依存関係プロパティの例  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のクラスに実装されている依存関係プロパティは多数あり、その例として <xref:System.Windows.Controls.Control.Background%2A> プロパティ、<xref:System.Windows.FrameworkElement.Width%2A> プロパティ、<xref:System.Windows.Controls.TextBox.Text%2A> プロパティなどが挙げられます。  クラスによって公開される依存関係プロパティにはそれぞれ <xref:System.Windows.DependencyProperty> 型の public static フィールドが対応付けられ、その同じクラスで公開されます。これは、依存関係プロパティの識別子です。  この識別子には、名前付け規則に従って、[依存関係プロパティ](GTMT)の名前に文字列 `Property` を加えた名前が付けられます。  たとえば、<xref:System.Windows.Controls.Control.Background%2A> プロパティに対応する <xref:System.Windows.DependencyProperty> 識別子フィールドの名前は <xref:System.Windows.Controls.Control.BackgroundProperty> になります。  識別子には[依存関係プロパティ](GTMT)に関する登録情報が格納され、後に[依存関係プロパティ](GTMT)関連のその他の操作 \(<xref:System.Windows.DependencyObject.SetValue%2A> の呼び出しなど\) に使用されます。  
+## <a name="examples-of-dependency-properties"></a>依存関係プロパティの例  
+ 実装される依存関係プロパティの例[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]クラスに含まれる、<xref:System.Windows.Controls.Control.Background%2A>プロパティ、<xref:System.Windows.FrameworkElement.Width%2A>プロパティ、および<xref:System.Windows.Controls.TextBox.Text%2A>他の多くのプロパティです。 クラスによって公開される各依存関係プロパティが型の対応するパブリックな静的フィールド<xref:System.Windows.DependencyProperty>その同じクラスで公開します。 これが依存関係プロパティの識別子です。 この識別子は規則を使用して命名されます。依存関係プロパティの名前と文字列 `Property` がこれに付加されます。 たとえば、対応する<xref:System.Windows.DependencyProperty>の識別子フィールド、<xref:System.Windows.Controls.Control.Background%2A>プロパティは<xref:System.Windows.Controls.Control.BackgroundProperty>します。 登録されているし、呼び出しなど、依存関係プロパティに関連するその他の操作の識別子は後で使用し、識別子に依存関係プロパティの情報が格納される<xref:System.Windows.DependencyObject.SetValue%2A>です。  
   
- 「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」で説明しているとおり、"ラッパー" の実装のため、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の依存関係プロパティ \(大部分の[添付プロパティ](GTMT)は除く\) はいずれも [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] プロパティを兼ねます。  したがって、他の [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] プロパティを使用するときと同様にラッパーを定義する [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] アクセサーをコードから呼び出すことによって、依存関係プロパティを取得または設定することができます。  通常、確立された依存関係プロパティのコンシューマーは、基になるプロパティ システムへのコネクション ポイントである <xref:System.Windows.DependencyObject> の <xref:System.Windows.DependencyObject.GetValue%2A> メソッドや <xref:System.Windows.DependencyObject.SetValue%2A> メソッドは使用しません。  [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] プロパティの既存の実装により、識別子フィールドが適切に使用され、プロパティの `get` ラッパーと `set` ラッパーの実装内で <xref:System.Windows.DependencyObject.GetValue%2A> と <xref:System.Windows.DependencyObject.SetValue%2A> があらかじめ呼び出されるようになっています。  カスタム依存関係プロパティを自分で実装する場合は、同様の方法でラッパーを定義することになります。  
+ 「[依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)」で説明したように、"ラッパー" の実装により、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 内のすべての依存関係プロパティ (ほとんどの添付プロパティを除く) も [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] プロパティです。 そのため、他の [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] プロパティで使用するのと同じ方法でラッパーを定義する [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] アクセサーを呼び出すことで、コードから依存関係プロパティを取得または設定できます。 確立された依存関係プロパティのコンシューマーであれば、通常は使用しない、<xref:System.Windows.DependencyObject>メソッド<xref:System.Windows.DependencyObject.GetValue%2A>と<xref:System.Windows.DependencyObject.SetValue%2A>、基になるプロパティ システムへの接続ポイントがあります。 既存の実装ではなく、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]プロパティが既に呼び出さが<xref:System.Windows.DependencyObject.GetValue%2A>と<xref:System.Windows.DependencyObject.SetValue%2A>内で、`get`と`set`識別子のフィールドを適切に使用する、プロパティのラッパーの実装. カスタム依存関係プロパティを自分で実装する場合、同様の方法でラッパーを定義します。  
   
 <a name="backing_with_dp"></a>   
-## 依存関係プロパティの実装が必要になるケース  
- プロパティをクラスに実装する場合、対象となるクラスが <xref:System.Windows.DependencyObject> から派生したものであれば、そのプロパティを <xref:System.Windows.DependencyProperty> 識別子で補足することによって依存関係プロパティにするという選択肢があります。  プロパティを依存関係プロパティにする必要性や妥当性の有無は、それぞれのシナリオのニーズによって異なります。  プロパティをプライベート フィールドで補足する通常の手法で十分な場合もあります。  ただし、プロパティで次のいずれか 1 つ以上の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 機能がサポートされるようにするには、必ず[依存関係プロパティ](GTMT)として実装する必要があります。  
+## <a name="when-should-you-implement-a-dependency-property"></a>依存関係プロパティを実装すべき状況  
+ クラスのプロパティを実装する場合から派生していれば<xref:System.Windows.DependencyObject>を使用してプロパティをバックアップするオプションがある、<xref:System.Windows.DependencyProperty>識別子であるため、依存関係プロパティを作成します。 シナリオのニーズによっては、プロパティを依存関係プロパティにすることが必要ない場合や適切でない場合もあります。 場合によっては、プロパティをプライベート フィールドでバッキングする一般的な手法で十分な場合もあります。 ただし、プロパティで次の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 機能の 1 つ以上をサポートする場合には、常に依存関係プロパティとしてプロパティを実装する必要があります。  
   
--   プロパティをスタイル内で設定する機能。  詳細については、「[スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)」を参照してください。  
+-   プロパティをスタイルで設定可能にする。 詳しくは、「 [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)」をご覧ください。  
   
--   プロパティでデータ バインディングをサポートする機能。  依存関係プロパティのデータ バインディングの詳細については、「[2 つのコントロールのプロパティをバインドする](../../../../docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md)」を参照してください。  
+-   プロパティでデータ バインディングをサポートする。 データ バインディングの依存関係プロパティの詳細については、「[2 つのコントロールのプロパティをバインドする](../../../../docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md)」を参照してください。  
   
--   プロパティを動的リソース参照で設定する機能。  詳細については、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
+-   プロパティを動的リソース参照で設定可能にする。 詳しくは、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
   
--   プロパティ値を要素ツリー内の親要素から自動的に継承する機能。  この場合、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] アクセス用のプロパティ ラッパーを作成する場合でも、<xref:System.Windows.DependencyProperty.RegisterAttached%2A> メソッドで登録します。  詳細については、「[プロパティ値の継承](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
+-   要素ツリーの親要素からプロパティ値を自動的に継承する。 この場合、登録、<xref:System.Windows.DependencyProperty.RegisterAttached%2A>メソッド、プロパティのラッパーも作成する場合でも[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)]アクセスします。 詳細については、「[プロパティ値の継承](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
   
--   プロパティをアニメーション化する機能。  詳細については、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」を参照してください。  
+-   プロパティをアニメーション化できるようにする。 詳しくは、「 [アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」をご覧ください。  
   
--   プロパティの以前の値がプロパティ システムのアクション、環境、ユーザー、またはスタイルの読み込みや使用によって変更された場合に、プロパティ システムから報告を受ける機能。  プロパティのメタデータを使用することによって、プロパティでコールバック メソッドを指定し、プロパティ システムがプロパティ値の決定的な変更を確認するたびに、そのメソッドが呼び出されるようにすることができます。  関連する概念として、プロパティ値の強制型変換があります。  詳細については、「[依存関係プロパティのコールバックと検証](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)」を参照してください。  
+-   プロパティの前の値が、プロパティ システム、環境、または、ユーザーによって行われたアクションによって変更された場合、または読み取りおよびスタイルの使用によって変更された場合に、プロパティ システムに報告させる。 プロパティのメタデータを使用すると、プロパティ システムがプロパティ値が明らかに変更されたと判断するたびに呼び出されるコールバック メソッドをプロパティで指定できます。 関連する概念は、プロパティ値の強制型変換です。 詳しくは、「[依存関係プロパティのコールバックと検証](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)」を参照してください。  
   
--   プロパティ値の変更に伴ってレイアウト システムで要素のビジュアルの再構成が必要になるかどうかの報告を受けるなど、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロセスでも使用される、確立されたメタデータ規則を使用する機能。  または、メタデータのオーバーライドを使用して、メタデータに基づいた既定値などの特性を派生クラスで変更する機能。  
+-   プロパティ値の変更に、要素のビジュアルを再構成するためのレイアウト システムが必要かどうかを報告するなど、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロセスでも使用されている確立されたメタデータ規則を使用する。 または、派生クラスが既定値などのメタデータに基づく特性を変更できるように、メタデータのオーバーライドを使用できるようする。  
   
--   カスタム コントロールのプロパティが、**\[プロパティ\]** ウィンドウの編集など、[!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)] [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]のサポートを受ける機能。  詳細については、「[コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)」を参照してください。  
+-   カスタム コントロールのプロパティで、**[プロパティ]** ウィンドウの編集などの [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)] [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] のサポートを受ける。 詳しくは、「[コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)」を参照してください。  
   
- これらのシナリオを検討するときは、まったく新しいプロパティを実装するのではなく、既存の[依存関係プロパティ](GTMT)のメタデータをオーバーライドすることによって、自分のシナリオを実現できるかどうかも考慮する必要があります。  メタデータのオーバーライドが実際的かどうかはシナリオに依存し、そのシナリオが [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の既存の依存関係プロパティおよびクラスとどの程度似ているかにもよります。  既存のプロパティのメタデータをオーバーライドする方法の詳細については、「[依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)」を参照してください。  
+ これらのシナリオを検討するときに、完全に新しいプロパティを実装するよりも、既存の依存関係プロパティのメタデータをオーバーライドすることで、シナリオを実現できるかどうかも考慮する必要があります。 メタデータのオーバーライドが実用的かどうかは、シナリオとそのシナリオが既存の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 依存関係プロパティとクラスでの実装にどのくらい似ているかによって異なります。 既存のプロパティでメタデータをオーバーライドする方法の詳細については、「[依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)」を参照してください。  
   
 <a name="checklist"></a>   
-## 依存関係プロパティを定義する場合のチェックリスト  
- 依存関係プロパティの定義は、4 つの概念で構成されています。  これらの概念は、実装内では 1 行のコードで表されるものもあるため、必ずしも厳密な手順というわけではありません。  
+## <a name="checklist-for-defining-a-dependency-property"></a>依存関係プロパティを定義するためのチェックリスト  
+ 依存関係プロパティの定義は、次の 4 つの異なる概念で構成されます。 これらの概念は、一部は実装で最終的に 1 行のコードとして結合されるため、必ずしも厳密な手順である必要はありません。  
   
--   \(オプション\) 依存関係プロパティのプロパティ メタデータを作成します。  
+-   (省略可能) 依存関係プロパティのプロパティ メタデータを作成します。  
   
--   プロパティ システムにプロパティ名を登録します。その際、所有者型およびプロパティ値の型を指定します。  また、プロパティ メタデータを使用する場合は、併せて指定します。  
+-   所有者型とプロパティ値の型を指定して、プロパティ システムにプロパティ名を登録します。 プロパティのメタデータも指定します (使用している場合)。  
   
--   所有者型に <xref:System.Windows.DependencyProperty> 識別子を `public` `static` `readonly` フィールドとして定義します。  
+-   定義、<xref:System.Windows.DependencyProperty>と識別子、 `public` `static` `readonly`フィールドで、所有者型。  
   
--   依存関係プロパティと同じ名前で、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] の "ラッパー" プロパティを定義します。  [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] の "ラッパー" プロパティの `get` および `set` アクセサーを、基になる依存関係プロパティと連係するように実装します。  
+-   名前が依存関係プロパティの名前と一致する [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] "ラッパー" プロパティを定義します。 [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] "ラッパー" プロパティの `get` と `set` のアクセサーを実装して、バッキングする依存関係プロパティと接続します。  
   
 <a name="registering"></a>   
-### プロパティ システムへのプロパティの登録  
- プロパティを[依存関係プロパティ](GTMT)にするには、そのプロパティをプロパティ システムによって保持されるテーブルに登録し、以降のプロパティ システム操作で修飾子として使用される一意の識別子を付与する必要があります。  これらの操作は内部操作の場合もあれば、独自のコードによるプロパティ システム [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] の呼び出しの場合もあります。  プロパティを登録するには、クラスの本文 \(クラス内のメンバー定義以外の部分\) で <xref:System.Windows.DependencyProperty.Register%2A> メソッドを呼び出します。  <xref:System.Windows.DependencyProperty.Register%2A> メソッドを呼び出すと、その戻り値として識別子フィールドも提供されます。  <xref:System.Windows.DependencyProperty.Register%2A> の呼び出しを他のメンバー定義の外で行うのは、この戻り値を使用して、<xref:System.Windows.DependencyProperty> 型の `public` `static` `readonly` フィールドをクラスの一部として割り当てて作成するためです。  このフィールドは、依存関係プロパティの識別子になります。  
+### <a name="registering-the-property-with-the-property-system"></a>プロパティ システムにプロパティを登録する  
+ プロパティを依存関係プロパティにするためには、そのプロパティをプロパティ システムが保持するテーブルに登録し、その後のプロパティ システム操作で修飾子として使用する一意の識別子をプロパティに設定します。 これらの操作は、内部操作にすることも、プロパティ システム [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] を呼び出す独自のコードにすることもできます。 プロパティを登録するを呼び出す、<xref:System.Windows.DependencyProperty.Register%2A>クラス (クラス内部では、メンバーの定義の外部で) の本文内のメソッドです。 識別子のフィールドがによって提供されるも、<xref:System.Windows.DependencyProperty.Register%2A>メソッドの呼び出し、戻り値として。 理由を<xref:System.Windows.DependencyProperty.Register%2A>呼び出しが完了の定義がこの戻り値を使用して作成するためには他のメンバーの外部で、 `public` `static` `readonly`型のフィールド<xref:System.Windows.DependencyProperty>クラスの一部として。 このフィールドは、依存関係プロパティの識別子になります。  
   
  [!code-csharp[WPFAquariumSln#RegisterAG](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#registerag)]
  [!code-vb[WPFAquariumSln#RegisterAG](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#registerag)]  
   
 <a name="nameconventions"></a>   
-### 依存関係プロパティの名前付け規則  
- 依存関係プロパティに関しては確立された名前付け規則があり、例外的な状況を除いて必ずその規則に従う必要があります。  
+### <a name="dependency-property-name-conventions"></a>依存関係プロパティの命名規則  
+ 依存関係プロパティについては、確立されている命名規則があり、例外的な状況を除き、必ず従う必要があります。  
   
- 依存関係プロパティ自体の基本的な名前 \(この例では "AquariumGraphic"\) を、<xref:System.Windows.DependencyProperty.Register%2A> の最初のパラメーターとして指定します。  その名前は、それぞれの登録型の中で一意である必要があります。  基本型を通じて継承される依存関係プロパティは、既に登録型の一部であると見なされ、継承されたプロパティの名前を再び登録することはできません。  ただし、その依存関係プロパティが継承されていない場合でも、依存関係プロパティの所有者として、クラスを追加する方法はあります。詳細については、「[依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)」を参照してください。  
+ 依存関係プロパティ自体になります"AquariumGraphic"の最初のパラメーターとして指定された、この例のように、基本名前<xref:System.Windows.DependencyProperty.Register%2A>です。 この名前は、それぞれの登録型内で一意である必要があります。 基本型から継承された依存関係プロパティは、登録型の一部に既になっていると見なされ、継承されたプロパティの名前は、再度登録することはできません。 しかし、その依存関係プロパティが継承されていない場合でも、依存関係プロパティの所有者としてクラスを追加する方法があります。詳細については、「[依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)」を参照してください。  
   
- 識別子フィールドを作成するときは、プロパティの登録名にサフィックス `Property` を加えた名前を付けます。  このフィールドは依存関係プロパティの識別子であり、ラッパー内で行う <xref:System.Windows.DependencyObject.SetValue%2A> と <xref:System.Windows.DependencyObject.GetValue%2A> の呼び出しの入力として、また、独自のコード、許可した外部コード、プロパティ システム、および場合によっては [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサによるプロパティへのその他のコード アクセスの入力として、後で使用されます。  
+ 識別子フィールドを作成するときに、登録したプロパティの名前にサフィックス `Property` を付けて、このフィールドに名前を付けます。 このフィールドは、プロパティの識別子、依存関係、および用の入力として後で使用する、<xref:System.Windows.DependencyObject.SetValue%2A>と<xref:System.Windows.DependencyObject.GetValue%2A>ようにする、他のコードへのアクセスによって独自のコードでプロパティを外部コードのアクセスによって、ラッパーでする呼び出しを許可します。をプロパティ システムおよび場合によって[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]プロセッサ。  
   
 > [!NOTE]
->  通常の実装ではクラスの本文で依存関係プロパティを定義しますが、クラスの静的コンストラクターで依存関係プロパティを定義することも可能です。  依存関係プロパティを初期化するために複数のコード行が必要な場合は、この方法が理にかなっています。  
+>  クラス本体で依存関係プロパティを定義することは一般的な実装ですが、クラスの静的コンストラクターで依存関係プロパティを定義することもできます。 依存関係プロパティを初期化するために複数行のコードが必要な場合には、このアプローチが適している場合があります。  
   
 <a name="wrapper1"></a>   
-### "ラッパー" の実装  
- ラッパー実装では、`get` の実装で <xref:System.Windows.DependencyObject.GetValue%2A> を呼び出し、`set` の実装で <xref:System.Windows.DependencyObject.SetValue%2A> を呼び出します \(ここでは、わかりやすくするために元の登録呼び出しとフィールドを示しています\)。  
+### <a name="implementing-the-wrapper"></a>"ラッパー" を実装する  
+ ラッパー実装を呼び出す必要があります<xref:System.Windows.DependencyObject.GetValue%2A>で、`get`実装と<xref:System.Windows.DependencyObject.SetValue%2A>で、 `set` (元の登録呼び出しとフィールドは、次に示すすぎるわかりやすくするため) の実装です。  
   
- 例外的な状況を除いて、ラッパー実装は、<xref:System.Windows.DependencyObject.GetValue%2A> と <xref:System.Windows.DependencyObject.SetValue%2A> の処理をそれぞれ実行します。  その理由については、「[XAML 読み込みと依存関係プロパティ](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)」を参照してください。  
+ 以外のすべての例外のような状況で、ラッパーの実装をのみ実行する必要があります、<xref:System.Windows.DependencyObject.GetValue%2A>と<xref:System.Windows.DependencyObject.SetValue%2A>アクション、それぞれします。 この理由については、「[XAML 読み込みと依存関係プロパティ](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)」のトピックで説明しています。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のクラスに用意されている既存のパブリック依存関係プロパティは、この単純なラッパー実装モデルを使用します。依存関係プロパティのしくみの複雑さは、プロパティ システムの動作に内在するものか、プロパティ メタデータによる強制やプロパティ変更コールバックなどの他の概念に由来するものがほとんどです。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] クラスで提供されているすべての既存のパブリックな依存関係プロパティは、この単純なラッパー実装モデルを使用します。依存関係プロパティのしくみの複雑さの大部分は、本質的にプロパティ システムの動作であるか、強制変換やプロパティ メタデータを通じたプロパティ変更のコールバックなど、その他の概念を通じて実装されます。  
   
  [!code-csharp[WPFAquariumSln#AGWithWrapper](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#agwithwrapper)]
  [!code-vb[WPFAquariumSln#AGWithWrapper](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#agwithwrapper)]  
   
- 繰り返しますが、ラッパー プロパティの名前は通常、プロパティを登録する際に <xref:System.Windows.DependencyProperty.Register%2A> の呼び出しの最初のパラメーターとして選択し、指定した名前と同じである必要があります。  この規則に従わないとプロパティが完全に使用できなくなるわけではありませんが、注意を要するいくつかの問題が発生します。  
+ もう一度、規則では、ラッパーのプロパティの名前があります選ばれの最初のパラメーターとして指定されている名前と同じ、<xref:System.Windows.DependencyProperty.Register%2A>プロパティを登録します。 プロパティが規則に従っていない場合、すべての可能な使用を無効にする必要はありませんが、次のような注目すべき問題がいくつか発生します。  
   
--   スタイルとテンプレートの一部が機能しません。  
+-   スタイルとテンプレートの一部が機能しない。  
   
--   ほとんどのツールとデザイナーでは、名前付け規則への準拠が [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の適切なシリアル化やプロパティ単位のデザイナー環境支援の条件となっています。  
+-   ほとんどのツールとデザイナーは、適切に [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] をシリアル化するため、またはプロパティごとのレベルでのデザイナー環境のサポートを提供するために命名規則に依存する必要があります。  
   
--   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ローダーの現在の実装は、属性を処理するときにラッパーを完全にバイパスし、名前付け規則に依存します。  詳細については、「[XAML 読み込みと依存関係プロパティ](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)」を参照してください。  
+-   [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ローダーの現在の実装は、属性値を処理するときに、ラッパーを完全にバイパスして、命名規則に依存しています。 詳しくは、「[XAML 読み込みと依存関係プロパティ](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)」を参照してください。  
   
 <a name="metadata"></a>   
-### 新しい依存関係プロパティのプロパティ メタデータ  
- 依存関係プロパティを登録すると、プロパティ システムを通じた登録によって、プロパティ特性を格納するメタデータ オブジェクトが作成されます。  これらの特性の多くは、プロパティが <xref:System.Windows.DependencyProperty.Register%2A> の簡易署名で登録された場合に設定される既定値を持っています。  <xref:System.Windows.DependencyProperty.Register%2A> のその他の署名を使用すると、必要なメタデータをプロパティの登録時に指定することができます。  依存関係プロパティに対して指定する最も一般的なメタデータは、そのプロパティを使用する新しいインスタンスに適用する既定値を指定します。  
+### <a name="property-metadata-for-a-new-dependency-property"></a>新しい依存関係プロパティのプロパティ メタデータ  
+ 依存関係プロパティを登録するときに、プロパティ システムを通じて登録すると、プロパティの特性を格納するメタデータ オブジェクトが作成されます。 これらの特性の多くの設定の単純なシグネチャを持つプロパティが登録されている場合に設定されているデフォルト<xref:System.Windows.DependencyProperty.Register%2A>です。 その他のシグネチャ<xref:System.Windows.DependencyProperty.Register%2A>を使用するプロパティを登録すると、メタデータを指定できます。 依存関係プロパティに指定される最も一般的なメタデータは、プロパティを使用する新しいインスタンスに適用される既定値を与えるためのものです。  
   
- <xref:System.Windows.FrameworkElement> の派生クラスに存在する依存関係プロパティを作成する場合は、基本クラス <xref:System.Windows.PropertyMetadata> ではなく、より特化したメタデータ クラス <xref:System.Windows.FrameworkPropertyMetadata> を使用できます。  <xref:System.Windows.FrameworkPropertyMetadata> クラスのコンストラクターには、さまざまなメタデータ特性を組み合わせて指定できる署名がいくつか存在します。  既定値のみを指定する場合は、<xref:System.Object> 型の単一のパラメーターを受け取る署名を使用します。  そのオブジェクト パラメーターをプロパティの型固有の既定値として渡します \(指定する既定値の型は、<xref:System.Windows.DependencyProperty.Register%2A> の呼び出しで `propertyType` パラメーターとして指定した型である必要があります\)。  
+ 派生クラスに存在する依存関係プロパティを作成するかどうかは<xref:System.Windows.FrameworkElement>、特殊化のメタデータ クラスを使用して<xref:System.Windows.FrameworkPropertyMetadata>ベースではなく<xref:System.Windows.PropertyMetadata>クラスです。 コンス トラクター、<xref:System.Windows.FrameworkPropertyMetadata>クラスには複数の署名の組み合わせでメタデータのさまざまな特性を指定できます。 既定値のみを指定する場合は、型の 1 つのパラメーターを受け取る署名を使用して<xref:System.Object>です。 プロパティの種類に固有の既定値としてそのオブジェクトのパラメーターを渡す (指定された既定値として提供された型である必要があります、`propertyType`内のパラメーター、<xref:System.Windows.DependencyProperty.Register%2A>呼び出し)。  
   
- <xref:System.Windows.FrameworkPropertyMetadata> の場合は、プロパティのメタデータ オプション フラグを指定することもできます。  これらのフラグは、登録後にプロパティ メタデータの個々のプロパティに変換され、特定の条件を、レイアウト エンジンなど、他のプロセスに伝えるのに使用されます。  
+ <xref:System.Windows.FrameworkPropertyMetadata>プロパティのメタデータ オプション フラグを指定することもできます。 これらのフラグは、登録後にプロパティ メタデータで個々のプロパティに変換され、特定の条件をレイアウト エンジンなどの他のプロセスに伝えるために使用されます。  
   
-#### 適切なメタデータ フラグの設定  
+#### <a name="setting-appropriate-metadata-flags"></a>適切なメタデータ フラグの設定  
   
--   プロパティ \(またはその値の変更\) が[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] に影響を及ぼす場合、特に、レイアウト システムが要素をページ内にレイアウトする際のサイズ設定と描画に影響する場合は、<xref:System.Windows.FrameworkPropertyMetadataOptions>、<xref:System.Windows.FrameworkPropertyMetadataOptions>、<xref:System.Windows.FrameworkPropertyMetadataOptions> のいずれか 1 つ以上のフラグを設定します。  
+-   プロパティ (またはその値の変更) の影響、 [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]、具体的には影響を与えますレイアウト システムのサイズまたはページで、要素のレンダリング方法を設定、次のフラグの 1 つ以上と: <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure>、 <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsArrange>、<xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsRender>です。  
   
-    -   <xref:System.Windows.FrameworkPropertyMetadataOptions> は、このプロパティの変更に伴って [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] レンダリングの変更が必要になり、格納オブジェクトが親の内部に必要とする領域が増減する可能性があることを示します。  たとえば、"Width" プロパティにはこのフラグを設定する必要があります。  
+    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure>このプロパティを変更する変更が必要であることを示します[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]を格納しているオブジェクト可能性があります多いまたは少ない親内の領域を表示します。 たとえば、"Width" プロパティには、このフラグが設定されている必要があります。  
   
-    -   <xref:System.Windows.FrameworkPropertyMetadataOptions> は、このプロパティの変更に伴って [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] レンダリングの変更が必要になり、その変更が、通常は専用領域の変更は必要としないものの、領域内の配置変更を示唆することを示します。  たとえば、"Alignment" プロパティにはこのフラグを設定する必要があります。  
+    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsArrange>このプロパティを変更する変更が必要であることを示します[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]専用領域で、変更は必要ありませんが、領域内の位置が変更されたこと示すものでは通常表示されます。 たとえば、"Alignment" プロパティには、このフラグが設定されている必要があります。  
   
-    -   <xref:System.Windows.FrameworkPropertyMetadataOptions> は、その他の何らかの変更が発生しており、レイアウトと測定値には影響しないものの、新たに描画する必要があることを示します。  例としては、既存の要素の色を変更する "Background" などのプロパティが挙げられます。  
+    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsRender>示す他のいくつかの変更が発生したことは影響しませんレイアウトと、メジャーが別のレンダリングでは必要です。 "Background" など、既存の要素の色を変更するプロパティはその一例です。  
   
-    -   多くの場合、これらのフラグは、独自に行うプロパティ システムのオーバーライド実装やレイアウト コールバックのメタデータでプロトコルとして使用されます。  <xref:System.Windows.DependencyObject.OnPropertyChanged%2A> コールバックを例にとると、インスタンスのいずれかのプロパティで値の変更が報告され、そのメタデータで <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> が `true` になっていることを条件として、<xref:System.Windows.UIElement.InvalidateArrange%2A> を呼び出すことができます。  
+    -   これらのフラグは、プロパティ システムやレイアウトのコールバックの独自のオーバーライド実装のためのメタデータのプロトコルとしてよく使用されます。 たとえば、する必要があります、<xref:System.Windows.DependencyObject.OnPropertyChanged%2A>が呼び出すコールバック<xref:System.Windows.UIElement.InvalidateArrange%2A>インスタンスの任意のプロパティが値の変更が報告されがあるかどうか<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>として`true`のメタデータ。  
   
--   一部のプロパティは、それが含まれている親要素のレンダリング特性に対し、前述した必要サイズの変更以上の影響を及ぼす可能性があります。  その例としては、フロー ドキュメント モデルで使用される <xref:System.Windows.Documents.Paragraph.MinOrphanLines%2A> プロパティが挙げられます。このプロパティが変更されると、該当する段落を含むフロー ドキュメントの全体的なレンダリングに変更が生じる可能性があります。  独自のプロパティで同様のケースを識別するには、<xref:System.Windows.FrameworkPropertyMetadataOptions> または <xref:System.Windows.FrameworkPropertyMetadataOptions> を使用します。  
+-   上記で説明した必要なサイズを変更する方法に加え、一部のプロパティは含まれる親要素のレンダリング特性に影響する場合があります。 例としては、<xref:System.Windows.Documents.Paragraph.MinOrphanLines%2A>プロパティが、フロー ドキュメント モデルで使用される、そのプロパティへの変更が、フロー ドキュメントの段落を含むの全体的な表示を変更できます。 使用して<xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsParentArrange>または<xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsParentMeasure>独自のプロパティのようなケースを特定します。  
   
--   既定では、依存関係プロパティはデータ バインディングをサポートします。  データ バインディングの現実的なシナリオがない場合や、大きなオブジェクトに対するデータ バインディングのパフォーマンスが問題として認識されている場合には、データ バインディングを意図的に無効にすることができます。  
+-   既定では、依存関係プロパティはデータ バインディングをサポートします。 データ バインディングにとって現実的なシナリオがない場合や、大きなオブジェクトのデータ バインディングのパフォーマンスが問題として認識される場合には、意図的にデータ バインディングを無効にすることができます。  
   
--   既定では、依存関係プロパティのデータ バインディング <xref:System.Windows.Data.Binding.Mode%2A> の既定値は <xref:System.Windows.Data.BindingMode> になっています。  バインディングは、バインディング インスタンスごとにいつでも <xref:System.Windows.Data.BindingMode> に変更できます。詳細については、「[バインディングの方向を指定する](../../../../docs/framework/wpf/data/how-to-specify-the-direction-of-the-binding.md)」を参照してください。  ただし、依存関係プロパティの作成者の判断で、プロパティの既定のバインディング モードを <xref:System.Windows.Data.BindingMode> にすることもできます。  既存の依存関係プロパティの例として、<xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A?displayProperty=fullName> が挙げられます。このプロパティについては、<xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A> 設定ロジックと <xref:System.Windows.Controls.MenuItem> の複合が既定のテーマ スタイルと対話するシナリオが想定されています。  <xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A> プロパティ ロジックは、データ バインディングをネイティブに使用し、他の状態プロパティおよびメソッド呼び出しに応じてプロパティの状態を保持します。  既定で <xref:System.Windows.Data.BindingMode> のバインディングを行うプロパティのもう 1 つの例は <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=fullName> です。  
+-   既定では、データ バインディング<xref:System.Windows.Data.Binding.Mode%2A>に依存関係プロパティの既定の<xref:System.Windows.Data.BindingMode.OneWay>します。 バインドを変更することができます<xref:System.Windows.Data.BindingMode.TwoWay>バインディングのインスタンスごとです。 詳細については、を参照してください。[バインドの方向を指定する](../../../../docs/framework/wpf/data/how-to-specify-the-direction-of-the-binding.md)です。 作成者として、依存関係プロパティをプロパティを使用してを選択できますが、<xref:System.Windows.Data.BindingMode.TwoWay>既定では、バインディング モード。 既存の依存関係プロパティの例は<xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A?displayProperty=nameWithType>; をこのプロパティのシナリオは、<xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A>ロジックおよびの複合設定<xref:System.Windows.Controls.MenuItem>既定のテーマ スタイルと対話します。 <xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A>プロパティ ロジックを使用してデータ バインディング ネイティブに従って他の状態のプロパティおよびメソッドの呼び出しに、プロパティの状態を維持するためにします。 バインドの別の例プロパティ<xref:System.Windows.Data.BindingMode.TwoWay>既定では<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>します。  
   
--   <xref:System.Windows.FrameworkPropertyMetadataOptions> フラグを設定することによって、カスタム依存関係プロパティでプロパティの継承を有効にすることもできます。  プロパティの継承は、親要素と子要素に共通のプロパティがあるシナリオで役立ちます。子要素がその特定のプロパティ値を親と同じ値に設定することは理にかなっています。  継承可能なプロパティの例としては、<xref:System.Windows.FrameworkElement.DataContext%2A> が挙げられます。このプロパティは、データの表示に関する重要なマスター詳細シナリオを実現するためのバインディング操作に使用されます。  <xref:System.Windows.FrameworkElement.DataContext%2A> を継承可能にすると、そのデータ コンテキストもすべての子要素に継承されます。  プロパティ値の継承により、ページまたはアプリケーションのルートでデータ コンテキストを指定すると、あらゆる子要素内のバインディングについて改めて指定しなくても済むようになります。  <xref:System.Windows.FrameworkElement.DataContext%2A> は、継承によって既定値がオーバーライドされるものの、特定の子要素で常にローカルに設定できることを示す例としても適しています。詳細については、「[階層データでマスター詳細パターンを使用する](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md)」を参照してください。  プロパティ値の継承はパフォーマンスの低下につながる可能性があるため、多用は避けてください。詳細については、「[プロパティ値の継承](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
+-   設定して、カスタムの依存関係プロパティのプロパティの継承を有効にすることもできます、<xref:System.Windows.FrameworkPropertyMetadataOptions.Inherits>フラグ。 プロパティの継承は、親要素と子要素に共通のプロパティがあるシナリオに便利で、子要素に、親に設定されたのと同じ値に設定した特定のプロパティ値を持たせることは理にかなっています。 例の継承可能なプロパティは<xref:System.Windows.FrameworkElement.DataContext%2A>、バインディング、データの表示重要なマスター/詳細シナリオを実現する操作に使用されます。 させて<xref:System.Windows.FrameworkElement.DataContext%2A>継承可能なすべての子要素を継承がデータ コンテキストもします。 プロパティ値の継承により、ページまたはアプリケーションのルートでデータ コンテキストを指定できます。すべての使用可能な子要素内のバインディングに再度指定する必要はありません。 <xref:System.Windows.FrameworkElement.DataContext%2A>継承が既定値をオーバーライドしますが常に設定することがローカルで; 任意の特定の子要素でを示す良い例ではも詳細については、「[階層データをマスター/詳細形式のパターンを使用して](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md)です。 プロパティ値の継承にはパフォーマンスが低下する可能性があるため、控え目に使用する必要があります。詳細については、「[プロパティ値の継承](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
   
--   依存関係プロパティがナビゲーション履歴サービスで検出または使用されるようにするかどうかを示すには、<xref:System.Windows.FrameworkPropertyMetadataOptions> フラグを設定します。  例としては、<xref:System.Windows.Controls.Primitives.Selector.SelectedIndex%2A> プロパティが挙げられます。選択コントロールで選択された項目は、ジャーナル履歴のナビゲーション時に保持する必要があります。  
+-   設定、<xref:System.Windows.FrameworkPropertyMetadataOptions.Journal>依存関係プロパティを検出するか、ナビゲーション履歴サービスによって使用されるかどうかを示すフラグ。 例としては、<xref:System.Windows.Controls.Primitives.Selector.SelectedIndex%2A>プロパティです。 選択範囲で選択された項目コントロールは、ジャーナル履歴の移動が永続化する必要があります。  
   
 <a name="RODP"></a>   
-## 読み取り専用の依存関係プロパティ  
- 読み取り専用の依存関係プロパティを定義することができます。  ただし、プロパティを読み取り専用として定義する理由に関するシナリオは、これらをプロパティ システムに登録し、識別子を公開する手順同様に、少し異なります。  詳細については、「[読み取り専用の依存関係プロパティ](../../../../docs/framework/wpf/advanced/read-only-dependency-properties.md)」を参照してください。  
+## <a name="read-only-dependency-properties"></a>読み取り専用の依存関係プロパティ  
+ 読み取り専用の依存関係プロパティを定義することができます。 ただし、読み取り専用としてプロパティを定義する理由のシナリオには、プロパティ システムに登録して、識別子を公開するための手順が異なるため、若干の違いがあります。 詳細については、「[読み取り専用の依存関係プロパティ](../../../../docs/framework/wpf/advanced/read-only-dependency-properties.md)」を参照してください。  
   
 <a name="CTDP"></a>   
-## コレクション型依存関係プロパティ  
- コレクション型依存関係プロパティには、別途考慮する必要のある実装上の問題がいくつかあります。  詳細については、「[コレクション型依存関係プロパティ](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)」を参照してください。  
+## <a name="collection-type-dependency-properties"></a>コレクション型依存関係プロパティ  
+ コレクション型依存関係プロパティには、考慮すべき実装問題が他にもいくつかあります。 詳細については、「[コレクション型依存関係プロパティ](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)」を参照してください。  
   
 <a name="SecurityC"></a>   
-## 依存関係プロパティに関するセキュリティ上の考慮事項  
- 依存関係プロパティは、パブリック プロパティとして宣言する必要があります。  依存関係プロパティの識別子フィールドは、public static フィールドとして宣言する必要があります。  他のアクセス レベル \(保護など\) を宣言しようとしても、依存関係プロパティには、識別子とプロパティ システム [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] の組み合わせを使用して常にアクセスできます。  <xref:System.Windows.LocalValueEnumerator> など、プロパティ システムに組み込まれているメタデータ報告や値決定の [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] により、保護された識別子フィールドにもアクセスできる可能性があります。  詳細については、「[依存関係プロパティのセキュリティ](../../../../docs/framework/wpf/advanced/dependency-property-security.md)」を参照してください。  
+## <a name="dependency-property-security-considerations"></a>依存関係プロパティのセキュリティに関する考慮事項  
+ 依存関係プロパティは、パブリック プロパティとして宣言する必要があります。 依存関係プロパティ識別子フィールドは、パブリック静的フィールドとして宣言する必要があります。 他のアクセス レベル (プロテクトなど) を宣言しようとした場合でも、依存関係プロパティには、プロパティ システム [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] と組み合わせた識別子を通じて、常にアクセスできます。 保護された識別子のフィールドでもはメタデータのレポートまたは値の決定のため可能性のあるアクセス可能な[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]などプロパティ システムの一部である<xref:System.Windows.LocalValueEnumerator>です。 詳細については、「[依存関係プロパティのセキュリティ](../../../../docs/framework/wpf/advanced/dependency-property-security.md)」を参照してください。  
   
 <a name="DPCtor"></a>   
-## 依存関係プロパティとクラス コンストラクター  
- マネージ コード プログラミングでは、\(通例 FxCop などのコード分析ツールによって適用される\) 一般的な方針として、クラス コンストラクターで仮想メソッドを呼び出すことは避ける必要があります。  これは、コンストラクターは派生クラスのコンストラクターの基本の初期化として呼び出すことができ、コンストラクターを通じた仮想メソッドの入力は、構築中のオブジェクト インスタンスの初期化が不完全な状態で実行される可能性があるためです。  <xref:System.Windows.DependencyObject> の派生クラスからさらに派生させる場合は、仮想メソッドの呼び出しと公開をプロパティ システム自体が内部的に行う点に注意が必要です。  これらの仮想メソッドは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムのサービスの一部です。  メソッドをオーバーライドすると、派生クラスが値の決定に参加できるようになります。  ランタイムの初期化で問題が発生するのを避けるため、特定のコンストラクター パターンに従わない限り、依存関係プロパティの値はクラスのコンストラクター内で定義しないでください。  詳細については、「[DependencyObject の安全なコンストラクター パターン](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)」を参照してください。  
+## <a name="dependency-properties-and-class-constructors"></a>依存関係プロパティとクラス コンストラクター  
+ マネージ コード プログラミングでは、クラス コンストラクターが仮想メソッドを呼び出さないという一般的な方針があります (多くの場合は FxCop などのコード分析ツールによって適用されます)。 これは、派生クラスのコンストラクターの基本の初期化としてコンストラクターを呼び出すことができ、コンストラクターから仮想メソッドを入力することで、構築されるオブジェクトのインスタンスの初期化が不完全な状態で行われる可能性があるためです。 既にから派生したクラスから派生したときに<xref:System.Windows.DependencyObject>、ことに注意プロパティ システム自体を呼び出す内部仮想メソッドを公開する必要があります。 これらの仮想メソッドは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システム サービスの一部です。 メソッドをオーバーライドすることで、派生クラスが値の決定に参加できるようになります。 ランタイムの初期化の潜在的な問題を回避するには、非常に特殊なコンストラクター パターンに従っている場合を除き、依存関係プロパティの値をクラスのコンストラクター内で設定しないでください。 詳細については、「[DependencyObject の安全なコンストラクター パターン](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)」を参照してください。  
   
-## 参照  
- [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)   
- [依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)   
- [コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)   
- [コレクション型依存関係プロパティ](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)   
- [依存関係プロパティのセキュリティ](../../../../docs/framework/wpf/advanced/dependency-property-security.md)   
- [XAML 読み込みと依存関係プロパティ](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)   
+## <a name="see-also"></a>関連項目  
+ [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
+ [コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
+ [コレクション型依存関係プロパティ](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)  
+ [依存関係プロパティのセキュリティ](../../../../docs/framework/wpf/advanced/dependency-property-security.md)  
+ [XAML 読み込みと依存関係プロパティ](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)  
  [DependencyObject の安全なコンストラクター パターン](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)

@@ -1,32 +1,30 @@
 ---
-title: "How to: Create an Add Extension Method Used by a Collection Initializer (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "collection initializers [Visual Basic]"
+title: "方法: コレクション初期化子で使用される拡張メソッドを作成または追加する (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords: collection initializers [Visual Basic]
 ms.assetid: f64b52c7-8b11-4410-93a6-cb3aeebcc772
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d19ac8b03b992eb9b09b5cb45fdcceadad3a822a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Create an Add Extension Method Used by a Collection Initializer (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-コレクションの作成のためにコレクション初期化子を使用する場合、Visual Basic コンパイラでは、`Add` メソッドのパラメーターがコレクション初期化子内の値の型と一致するコレクション型の `Add` メソッドを検索します。  この `Add` メソッドは、コレクション初期化子からの値を使用してコレクションを作成するために使用されます。  
+# <a name="how-to-create-an-add-extension-method-used-by-a-collection-initializer-visual-basic"></a>方法: コレクション初期化子で使用される拡張メソッドを作成または追加する (Visual Basic)
+コレクション初期化子を使用してコレクションを作成するときに、Visual Basic コンパイラはの検索、`Add`対象のコレクション型のメソッドのパラメーター、`Add`メソッド、コレクション初期化子内の値の型に一致します。 これは、`Add`メソッドを使用して、コレクション初期化子から値を持つコレクションを設定します。  
   
- 一致する `Add` メソッドがなく、コレクションのコードを変更できない場合、コレクション初期化子に必要なパラメーターを取得する `Add` という拡張メソッドを追加できます。  通常この処理は、ジェネリック コレクションに対してコレクション初期化子を使用する場合に必要になります。  
+ 一致する場合`Add`メソッドが存在して、コレクションのコードを変更することはできません、という拡張メソッドを追加する`Add`コレクション初期化子で必要とされるパラメーターを取得します。 これは、通常ジェネリック コレクションに対するコレクション初期化子を使用する場合に実行する必要があります。  
   
-## 使用例  
- 拡張メソッドを <xref:System.Collections.Generic.List%601> ジェネリック型に追加することで、`Employee` 型のオブジェクトの追加にコレクション初期化子を使用できるようにする方法を次の例に示します。  拡張メソッドを使用することで、簡略化されたコレクション初期化子構文を使用できます。  
+## <a name="example"></a>例  
+ 次の例は、ジェネリック拡張メソッドを追加する方法を示します<xref:System.Collections.Generic.List%601>入力型のオブジェクトを追加する、コレクション初期化子を使用できるようにする`Employee`です。 拡張メソッドでは、簡略化されたコレクションの初期化子構文を使用することができます。  
   
  [!code-vb[VbVbalrCollectionInitializersHowTo1#1](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/VisualBasic/how-to-create-an-add-extension-method-used-by-a-collection-initializer_1.vb)]  
   
@@ -34,6 +32,6 @@ caps.handback.revision: 8
   
  [!code-vb[VbVbalrCollectionInitializersHowTo1#3](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/VisualBasic/how-to-create-an-add-extension-method-used-by-a-collection-initializer_3.vb)]  
   
-## 参照  
- [Collection Initializers](../../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)   
- [How to: Create a Collection Used by a Collection Initializer](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)
+## <a name="see-also"></a>関連項目  
+ [コレクション初期化子](../../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)  
+ [方法: コレクション初期化子を使用してコレクションを作成する](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)

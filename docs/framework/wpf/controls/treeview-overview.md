@@ -1,88 +1,90 @@
 ---
-title: "TreeView の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Control クラス, TreeView"
-  - "展開 (ノードを)"
-  - "TreeView コントロール, TreeView コントロールの概要"
+title: "TreeView の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- expanding node [WPF]
+- TreeView control [WPF], about TreeView control
+- Control class [WPF], TreeView
 ms.assetid: 62212512-5a5c-4864-949e-b6a6a3a52c02
-caps.latest.revision: 33
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 32
+caps.latest.revision: "33"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bf50346cc179a5aae860a7651d28e104bac3c2ce
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# TreeView の概要
-<xref:System.Windows.Controls.TreeView> コントロールは、折りたたみ可能なノードを使用して、階層構造で情報を表示する手段を提供します。  ここでは、<xref:System.Windows.Controls.TreeView> および <xref:System.Windows.Controls.TreeViewItem> コントロールについて説明し、簡単な使用例を示します。  
+# <a name="treeview-overview"></a>TreeView の概要
+<xref:System.Windows.Controls.TreeView>コントロールは、折りたたみ可能なノードを使用して、階層構造で情報を表示する方法を提供します。 このトピックでは、<xref:System.Windows.Controls.TreeView>と<xref:System.Windows.Controls.TreeViewItem>コントロール、およびそれらの使用を単純な例を示します。  
   
-   
   
 <a name="Simple_TreeView_Control"></a>   
-## TreeView とは  
- <xref:System.Windows.Controls.TreeView> は、<xref:System.Windows.Controls.TreeViewItem> コントロールを使用して項目を入れ子にする <xref:System.Windows.Controls.ItemsControl> です。  <xref:System.Windows.Controls.TreeView> を作成する例を次に示します。  
+## <a name="what-is-a-treeview"></a>TreeViewとは  
+ <xref:System.Windows.Controls.TreeView><xref:System.Windows.Controls.ItemsControl>を使用して、項目をネストする<xref:System.Windows.Controls.TreeViewItem>コントロール。 次の例を作成、<xref:System.Windows.Controls.TreeView>です。  
   
- [!code-xml[TreeViewSnips#EmbeddedTVIs](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSnips/CSharp/Window1.xaml#embeddedtvis)]  
+ [!code-xaml[TreeViewSnips#EmbeddedTVIs](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSnips/CSharp/Window1.xaml#embeddedtvis)]  
   
 <a name="Creating_a_TreeView"></a>   
-## TreeView の作成  
- <xref:System.Windows.Controls.TreeView> コントロールには、<xref:System.Windows.Controls.TreeViewItem> コントロールの階層が格納されます。  <xref:System.Windows.Controls.TreeViewItem> コントロールは、<xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> と <xref:System.Windows.Controls.ItemsControl.Items%2A> コレクションを持つ <xref:System.Windows.Controls.HeaderedItemsControl> です。  
+## <a name="creating-a-treeview"></a>TreeView の作成  
+ <xref:System.Windows.Controls.TreeView>コントロールの階層に含まれる<xref:System.Windows.Controls.TreeViewItem>コントロール。 A<xref:System.Windows.Controls.TreeViewItem>コントロールは、<xref:System.Windows.Controls.HeaderedItemsControl>を持つ、<xref:System.Windows.Controls.HeaderedItemsControl.Header%2A>と<xref:System.Windows.Controls.ItemsControl.Items%2A>コレクション。  
   
- [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] を使用して <xref:System.Windows.Controls.TreeView> を定義する場合は、<xref:System.Windows.Controls.TreeViewItem> コントロールの <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> コンテンツとそのコレクションを構成する項目を明示的に定義できます。  前の図は、このメソッドを示しています。  
+ 定義する場合、<xref:System.Windows.Controls.TreeView>を使用して[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]、明示的に定義することができます、<xref:System.Windows.Controls.HeaderedItemsControl.Header%2A>のコンテンツ、<xref:System.Windows.Controls.TreeViewItem>コントロールとそのコレクションを構成する項目。 前の図では、この方法を示しています。  
   
- <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> をデータ ソースとして指定し、<xref:System.Windows.Controls.HeaderedItemsControl.HeaderTemplate%2A> と <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> を指定して <xref:System.Windows.Controls.TreeViewItem> のコンテンツを定義することもできます。  
+ 指定することも、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>データとしてソースを指定し、<xref:System.Windows.Controls.HeaderedItemsControl.HeaderTemplate%2A>と<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>を定義する、<xref:System.Windows.Controls.TreeViewItem>コンテンツ。  
   
- また、<xref:System.Windows.HierarchicalDataTemplate> オブジェクトを使用して、<xref:System.Windows.Controls.TreeViewItem> コントロールのレイアウトを定義できます。  詳細および使用例については、「[SelectedValue、SelectedValuePath、および SelectedItem を使用する](../../../../docs/framework/wpf/controls/how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md)」を参照してください。  
+ レイアウトを定義する、<xref:System.Windows.Controls.TreeViewItem>コントロールを使用することも<xref:System.Windows.HierarchicalDataTemplate>オブジェクト。 詳細と例については、「[Use SelectedValue, SelectedValuePath, and SelectedItem](../../../../docs/framework/wpf/controls/how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md)」を参照してください。  
   
- <xref:System.Windows.Controls.TreeViewItem> コントロールでない項目は、<xref:System.Windows.Controls.TreeView> コントロールが表示されるときに、<xref:System.Windows.Controls.TreeViewItem> コントロールで自動的に囲まれます。  
+ 項目がない場合、<xref:System.Windows.Controls.TreeViewItem>コントロール、それが自動的にで囲まれた、<xref:System.Windows.Controls.TreeViewItem>タイミングを制御、<xref:System.Windows.Controls.TreeView>コントロールが表示されます。  
   
 <a name="Expanding_and_Collapsing_a_TreeViewItem"></a>   
-## TreeViewItem の展開と折りたたみ  
- ユーザーが <xref:System.Windows.Controls.TreeViewItem> を展開すると、<xref:System.Windows.Controls.TreeViewItem.IsExpanded%2A> プロパティが `true` に設定されます。  また、<xref:System.Windows.Controls.TreeViewItem.IsExpanded%2A> プロパティを `true` \(展開\) または `false` \(折りたたみ\) に設定すると、直接のユーザー アクションなしに <xref:System.Windows.Controls.TreeViewItem> を展開したり折りたたんだりすることができます。  このプロパティが変更されると、<xref:System.Windows.Controls.TreeViewItem.Expanded> イベントまたは <xref:System.Windows.Controls.TreeViewItem.Collapsed> イベントが発生します。  
+## <a name="expanding-and-collapsing-a-treeviewitem"></a>TreeViewItem の展開と折りたたみ  
+ 場合は、ユーザーが展開され、 <xref:System.Windows.Controls.TreeViewItem>、<xref:System.Windows.Controls.TreeViewItem.IsExpanded%2A>プロパティに設定されている`true`です。 展開または折りたたむことができますも、<xref:System.Windows.Controls.TreeViewItem>を設定して、ユーザーが直接操作しなくても、<xref:System.Windows.Controls.TreeViewItem.IsExpanded%2A>プロパティを`true`(展開) または`false`(折りたたみ)。 このプロパティが変更されたときに、<xref:System.Windows.Controls.TreeViewItem.Expanded>または<xref:System.Windows.Controls.TreeViewItem.Collapsed>イベントが発生します。  
   
- <xref:System.Windows.FrameworkElement.BringIntoView%2A> メソッドが <xref:System.Windows.Controls.TreeViewItem> コントロールで呼び出されると、<xref:System.Windows.Controls.TreeViewItem> とその親 <xref:System.Windows.Controls.TreeViewItem> コントロールが展開します。  <xref:System.Windows.Controls.TreeViewItem> が表示されない、またはその一部が表示されない場合、<xref:System.Windows.Controls.TreeView> がスクロールして、表示されるようになります。  
+ ときに、<xref:System.Windows.FrameworkElement.BringIntoView%2A>でメソッドが呼び出さ、<xref:System.Windows.Controls.TreeViewItem>コントロール、<xref:System.Windows.Controls.TreeViewItem>とその親<xref:System.Windows.Controls.TreeViewItem>コントロールを展開します。 場合、<xref:System.Windows.Controls.TreeViewItem>は非表示または部分的に表示される、<xref:System.Windows.Controls.TreeView>表示するのにスクロールします。  
   
 <a name="TreeViewItem_Selection"></a>   
-## TreeViewItem の選択  
- ユーザーが <xref:System.Windows.Controls.TreeViewItem> コントロールをクリックして選択すると、<xref:System.Windows.Controls.TreeViewItem.Selected> イベントが発生し、その <xref:System.Windows.Controls.TreeViewItem.IsSelected%2A> プロパティが `true` に設定されます。  この <xref:System.Windows.Controls.TreeViewItem> は、<xref:System.Windows.Controls.TreeView> コントロールの <xref:System.Windows.Controls.TreeView.SelectedItem%2A> にもなります。  一方、選択項目が <xref:System.Windows.Controls.TreeViewItem> コントロールから変更されると、<xref:System.Windows.Controls.TreeViewItem.Unselected> イベントが発生し、その <xref:System.Windows.Controls.TreeViewItem.IsSelected%2A> プロパティが `false` に設定されます。  
+## <a name="treeviewitem-selection"></a>TreeViewItem の選択  
+ ユーザーがクリックしたとき、<xref:System.Windows.Controls.TreeViewItem>して選択し、コントロール、<xref:System.Windows.Controls.TreeViewItem.Selected>イベントが発生して、その<xref:System.Windows.Controls.TreeViewItem.IsSelected%2A>プロパティに設定されている`true`です。 <xref:System.Windows.Controls.TreeViewItem>にもなります、<xref:System.Windows.Controls.TreeView.SelectedItem%2A>の<xref:System.Windows.Controls.TreeView>コントロール。 逆に、選択範囲が変更された時点から、<xref:System.Windows.Controls.TreeViewItem>コントロール、その<xref:System.Windows.Controls.TreeViewItem.Unselected>イベントが発生したとその<xref:System.Windows.Controls.TreeViewItem.IsSelected%2A>プロパティに設定されている`false`です。  
   
- この <xref:System.Windows.Controls.TreeView> コントロールの <xref:System.Windows.Controls.TreeView.SelectedItem%2A> プロパティは読み取り専用プロパティであるめ、明示的に設定することはできません。  <xref:System.Windows.Controls.TreeView.SelectedItem%2A> プロパティが設定されるのは、ユーザーが <xref:System.Windows.Controls.TreeViewItem> コントロールをクリックするときか、または <xref:System.Windows.Controls.TreeViewItem.IsSelected%2A> プロパティが <xref:System.Windows.Controls.TreeViewItem> コントロールで `true` に設定されるときです。  
+ <xref:System.Windows.Controls.TreeView.SelectedItem%2A>プロパティを<xref:System.Windows.Controls.TreeView>コントロールは読み取り専用プロパティをそのため、設定することはできません明示的にします。 <xref:System.Windows.Controls.TreeView.SelectedItem%2A>プロパティが設定されて、ユーザーがクリックした場合、<xref:System.Windows.Controls.TreeViewItem>コントロール場合や、<xref:System.Windows.Controls.TreeViewItem.IsSelected%2A>プロパティに設定されている`true`上、<xref:System.Windows.Controls.TreeViewItem>コントロール。  
   
- <xref:System.Windows.Controls.TreeView.SelectedItem%2A> の <xref:System.Windows.Controls.TreeView.SelectedValue%2A> を指定するには、<xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> プロパティを使用します。  詳細については、「[SelectedValue、SelectedValuePath、および SelectedItem を使用する](../../../../docs/framework/wpf/controls/how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md)」を参照してください。  
+ 使用して、<xref:System.Windows.Controls.TreeView.SelectedValuePath%2A>プロパティを指定する、<xref:System.Windows.Controls.TreeView.SelectedValue%2A>の<xref:System.Windows.Controls.TreeView.SelectedItem%2A>です。 詳細については、「[SelectedValue、SelectedValuePath、および SelectedItem を使用する](../../../../docs/framework/wpf/controls/how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md)」を参照してください。  
   
- <xref:System.Windows.Controls.TreeView.SelectedItemChanged> イベントで、イベント ハンドラーを登録して、選択した <xref:System.Windows.Controls.TreeViewItem> を変更するタイミングを指定できます。  イベント ハンドラーに提供される <xref:System.Windows.RoutedPropertyChangedEventArgs%601> は、前の選択内容の <xref:System.Windows.RoutedPropertyChangedEventArgs%601.OldValue%2A> を指定し、現在の選択内容の <xref:System.Windows.RoutedPropertyChangedEventArgs%601.NewValue%2A> を指定します。  アプリケーションまたはユーザーが、前または現在の選択を行っていない場合、その値は `null` になります。  
+ イベント ハンドラーに登録することができます、 <xref:System.Windows.Controls.TreeView.SelectedItemChanged> 、選択した時期を決定するためにイベント<xref:System.Windows.Controls.TreeViewItem>変更します。 <xref:System.Windows.RoutedPropertyChangedEventArgs%601>ハンドラーが指定のイベントに提供される、 <xref:System.Windows.RoutedPropertyChangedEventArgs%601.OldValue%2A>、直前の選択は、 <xref:System.Windows.RoutedPropertyChangedEventArgs%601.NewValue%2A>、これは、現在の選択します。 アプリケーションまたはユーザーが以前または現在の選択を行っていない場合、どちらの値も `null` にできます。  
   
 <a name="TreeView_Style"></a>   
-## TreeView のスタイル  
- <xref:System.Windows.Controls.TreeView> コントロールの既定のスタイルでは、<xref:System.Windows.Controls.ScrollViewer> コントロールを含む <xref:System.Windows.Controls.StackPanel> オブジェクト内に、コントロールが配置されます。  <xref:System.Windows.Controls.TreeView> の <xref:System.Windows.FrameworkElement.Width%2A> プロパティと <xref:System.Windows.FrameworkElement.Height%2A> プロパティを設定した場合は、これらの値を使用して <xref:System.Windows.Controls.TreeView> を表示する <xref:System.Windows.Controls.StackPanel> オブジェクトのサイズが変更されます。  表示するコンテンツが表示領域より大きい場合は、<xref:System.Windows.Controls.ScrollViewer> が自動的に表示されるので、ユーザーは <xref:System.Windows.Controls.TreeView> コンテンツ全体をスクロールできます。  
+## <a name="treeview-style"></a>TreeView のスタイル  
+ 既定のスタイル、<xref:System.Windows.Controls.TreeView>コントロールの配置内で、<xref:System.Windows.Controls.StackPanel>オブジェクトを含む、<xref:System.Windows.Controls.ScrollViewer>コントロール。 設定すると、<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>のプロパティ、 <xref:System.Windows.Controls.TreeView>、これらの値のサイズを使用して、<xref:System.Windows.Controls.StackPanel>を表示するオブジェクト、<xref:System.Windows.Controls.TreeView>です。 表示領域よりも大きい場合は、コンテンツを表示する、<xref:System.Windows.Controls.ScrollViewer>自動的に表示をユーザーがスクロールできるように、<xref:System.Windows.Controls.TreeView>コンテンツ。  
   
- <xref:System.Windows.Controls.TreeViewItem> コントロールの外観をカスタマイズするには、<xref:System.Windows.FrameworkElement.Style%2A> プロパティをカスタムの <xref:System.Windows.Style> に設定します。  
+ 外観をカスタマイズする、<xref:System.Windows.Controls.TreeViewItem>コントロールを設定、<xref:System.Windows.FrameworkElement.Style%2A>プロパティをカスタム<xref:System.Windows.Style>です。  
   
- <xref:System.Windows.FrameworkElement.Style%2A> を使用して、<xref:System.Windows.Controls.TreeViewItem> コントロールの <xref:System.Windows.Controls.Control.Foreground%2A> および <xref:System.Windows.Controls.Control.FontSize%2A> プロパティ値を設定する方法を次の例に示します。  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.Control.Foreground%2A>と<xref:System.Windows.Controls.Control.FontSize%2A>プロパティの値を<xref:System.Windows.Controls.TreeViewItem>コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>です。  
   
- [!code-xml[TreeViewSimple#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#8)]  
+ [!code-xaml[TreeViewSimple#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#8)]  
   
 <a name="Adding_Images_and_oOther_Content_to_TreeView_Items"></a>   
-## TreeView 項目へのイメージおよび他のコンテンツの追加  
- 複数のオブジェクトを <xref:System.Windows.Controls.TreeViewItem> の <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> コンテンツに含めることができます。  複数のオブジェクトを <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> コンテンツに含めるには、<xref:System.Windows.Controls.Panel> または <xref:System.Windows.Controls.StackPanel> などのレイアウト コントロールで囲まれるように配置します。  
+## <a name="adding-images-and-other-content-to-treeview-items"></a>TreeView 項目へのイメージとその他のコンテンツの追加  
+ 1 つ以上のオブジェクトを含めることができます、<xref:System.Windows.Controls.HeaderedItemsControl.Header%2A>のコンテンツ、<xref:System.Windows.Controls.TreeViewItem>です。 複数のオブジェクトを含める<xref:System.Windows.Controls.HeaderedItemsControl.Header%2A>など、レイアウト コントロール内のオブジェクトを囲む、コンテンツ、<xref:System.Windows.Controls.Panel>または<xref:System.Windows.Controls.StackPanel>です。  
   
- <xref:System.Windows.Controls.TreeViewItem> の <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> を、<xref:System.Windows.Controls.DockPanel> コントロールに囲まれた <xref:System.Windows.Controls.CheckBox> および <xref:System.Windows.Controls.TextBlock> として定義する方法を次の例に示します。  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.HeaderedItemsControl.Header%2A>の<xref:System.Windows.Controls.TreeViewItem>として、<xref:System.Windows.Controls.CheckBox>と<xref:System.Windows.Controls.TextBlock>両方で囲むこと、<xref:System.Windows.Controls.DockPanel>コントロール。  
   
- [!code-xml[TreeViewSnips#TVIHeader](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSnips/CSharp/Window1.xaml#tviheader)]  
+ [!code-xaml[TreeViewSnips#TVIHeader](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSnips/CSharp/Window1.xaml#tviheader)]  
   
- <xref:System.Windows.Controls.DockPanel> コントロールに囲まれた <xref:System.Windows.Controls.Image> と <xref:System.Windows.Controls.TextBlock> を含む <xref:System.Windows.DataTemplate> を定義する方法を次の例に示します。  <xref:System.Windows.DataTemplate> を使用して、<xref:System.Windows.Controls.TreeViewItem> の <xref:System.Windows.Controls.HeaderedItemsControl.HeaderTemplate%2A> または <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> を設定できます。  
+ 次の例は、定義する方法を示します、<xref:System.Windows.DataTemplate>を格納している、<xref:System.Windows.Controls.Image>と<xref:System.Windows.Controls.TextBlock>で囲まれている、<xref:System.Windows.Controls.DockPanel>コントロール。 使用することができます、<xref:System.Windows.DataTemplate>を設定する、<xref:System.Windows.Controls.HeaderedItemsControl.HeaderTemplate%2A>または<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>の<xref:System.Windows.Controls.TreeViewItem>です。  
   
- [!code-xml[TreeViewDataBinding#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewDataBinding/CSharp/Window1.xaml#6)]  
+ [!code-xaml[TreeViewDataBinding#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewDataBinding/CSharp/Window1.xaml#6)]  
   
-## 参照  
- <xref:System.Windows.Controls.TreeView>   
- <xref:System.Windows.Controls.TreeViewItem>   
- [方法のトピック](../../../../docs/framework/wpf/controls/treeview-how-to-topics.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.TreeView>  
+ <xref:System.Windows.Controls.TreeViewItem>  
+ [方法トピック](../../../../docs/framework/wpf/controls/treeview-how-to-topics.md)  
  [WPF のコンテンツ モデル](../../../../docs/framework/wpf/controls/wpf-content-model.md)

@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - managed debugging assistants (MDAs), hashcode modulus
 - Modulo object hash code
@@ -23,16 +17,15 @@ helpviewer_keywords:
 - GetHashCode method
 - modulus of hashcodes
 ms.assetid: b45366ff-2a7a-4b8e-ab01-537b72e9de68
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b9732af6c84a2f7af70512ea9ce73a8afc74bbbc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 1a3062365f41247c579f5420497946128b183a88
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="moduloobjecthashcode-mda"></a>moduloObjectHashcode MDA
 `moduloObjectHashcode` マネージ デバッグ アシスタント (MDA) は、<xref:System.Object.GetHashCode%2A> メソッドによって返されるハッシュ コードに対してモジュロ演算を実行するように、<xref:System.Object> クラスの動作を変更します。 この MDA の既定の係数は 1 であり、これにより <xref:System.Object.GetHashCode%2A> はすべてのオブジェクトに対して 0 を返すようになります。  
@@ -53,8 +46,8 @@ ms.lasthandoff: 08/21/2017
   
  キー変更のハッシュ コードの計算に使われるアルゴリズムがランタイムのあるバージョンから別のバージョンに変更された場合、<xref:System.Collections.Hashtable> からの列挙の順序が変わる可能性があります。 ハッシュ テーブルからのキーまたは値の列挙順序にプログラムが依存しているかどうかは、この MDA を有効にすることでテストできます。  
   
-## <a name="resolution"></a>解決策  
- オブジェクト ID の代わりに、ハッシュ コードを使わないでください。 ハッシュ コードを比較しないように、<xref:System.Object.Equals%2A?displayProperty=fullName> メソッドのオーバーライドを実装します。  
+## <a name="resolution"></a>解像度  
+ オブジェクト ID の代わりに、ハッシュ コードを使わないでください。 ハッシュ コードを比較しないように、<xref:System.Object.Equals%2A?displayProperty=nameWithType> メソッドのオーバーライドを実装します。  
   
  ハッシュ テーブル内のキーまたは値の列挙の順序への依存関係を作成しないでください。  
   
@@ -76,7 +69,6 @@ ms.lasthandoff: 08/21/2017
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Object.GetHashCode%2A?displayProperty=fullName>   
- <xref:System.Object.Equals%2A?displayProperty=fullName>   
+ <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>  
+ <xref:System.Object.Equals%2A?displayProperty=nameWithType>  
  [マネージ デバッグ アシスタントによるエラーの診断](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-

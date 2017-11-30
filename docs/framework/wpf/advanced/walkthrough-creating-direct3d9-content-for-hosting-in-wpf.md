@@ -1,130 +1,133 @@
 ---
-title: "チュートリアル : WPF でホストするための Direct3D9 コンテンツの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Direct3D9 [WPF 相互運用性], 作成 (Direct3D9 コンテンツを)"
-  - "WPF, 作成 (Direct3D9 コンテンツを)"
+title: "チュートリアル : WPF でホストするための Direct3D9 コンテンツの作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: cpp
+helpviewer_keywords:
+- WPF [WPF], creating Direct3D9 content
+- Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 286e98bc-1eaa-4b5e-923d-3490a9cca5fc
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 750e5c42158a87c04a7fb0f2a83f126a698bb93f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル : WPF でホストするための Direct3D9 コンテンツの作成
-このチュートリアルでは、Windows Presentation Foundation \(WPF\) アプリケーションでのホストに適した Direct3D9 コンテンツを作成する方法を示します。  WPF アプリケーションで Direct3D9 コンテンツをホストする方法の詳細については、「[WPF と Direct3D9 の相互運用性](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)」を参照してください。  
+# <a name="walkthrough-creating-direct3d9-content-for-hosting-in-wpf"></a>チュートリアル : WPF でホストするための Direct3D9 コンテンツの作成
+このチュートリアルでは、Windows Presentation Foundation (WPF) アプリケーションでホストするために適切な Direct3D9 コンテンツを作成する方法を示します。 WPF アプリケーションで Direct3D9 コンテンツをホストの詳細については、次を参照してください。 [WPF と Direct3D9 相互運用](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)です。  
   
- このチュートリアルでは次のタスクを行います。  
+ このチュートリアルでは次のタスクを実行します。  
   
--   Direct3D9 プロジェクトを作成する。  
+-   Direct3D9 プロジェクトを作成します。  
   
--   WPF アプリケーションでホストするための Direct3D9 プロジェクトを構成する。  
+-   Direct3D9 プロジェクトを WPF アプリケーションのホスト用に構成します。  
   
- タスクが終了すると、WPF アプリケーションで使用される Direct3D9 コンテンツを含む DLL が生成されます。  
+ 完了したら、WPF アプリケーションで使用するための Direct3D9 コンテンツを含んでいる DLL があります。  
   
-## 必須コンポーネント  
+## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを実行するには、次のコンポーネントが必要です。  
   
--   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  
+-   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)]。  
   
--   DirectX SDK 9 以降  
+-   DirectX SDK 9or 以降。  
   
-## Direct3D9 プロジェクトの作成  
- 最初に Direct3D9 プロジェクトを作成して構成します。  
+## <a name="creating-the-direct3d9-project"></a>Direct3D9 プロジェクトを作成します。  
+ 最初の手順を作成し、Direct3D9 プロジェクトを構成します。  
   
-#### Direct3D9 プロジェクトを作成するには  
+#### <a name="to-create-the-direct3d9-project"></a>Direct3D9 プロジェクトを作成するには  
   
-1.  C\+\+ で、`D3DContent` という名前の新しい Win32 プロジェクトを作成します。  
+1.  C という名前で新しい Win32 プロジェクトを作成`D3DContent`です。  
   
-     Win32 アプリケーション ウィザードが開き、\[ようこそ\] 画面が表示されます。  
+     Win32 アプリケーション ウィザードが開き、ようこそ画面を表示します。  
   
-2.  **\[次へ\]** をクリックします。  
+2.  **[次へ]**をクリックします。  
   
-     \[アプリケーションの設定\] 画面が表示されます。  
+     アプリケーション設定 画面が表示されます。  
   
-3.  **\[アプリケーションの種類\]** セクションで、**\[DLL\]** オプションをクリックします。  
+3.  **アプリケーションの種類:**  セクションで、select、 **DLL**オプション。  
   
-4.  **\[完了\]** をクリックします。  
+4.  **[完了]**をクリックします。  
   
      D3DContent プロジェクトが生成されます。  
   
-5.  ソリューション エクスプローラーで、D3DContent プロジェクトを右クリックし、**\[プロパティ\]** をクリックします。  
+5.  ソリューション エクスプ ローラーで、D3DContent プロジェクトを右クリックして**プロパティ**です。  
   
-     **\[D3DContent プロパティ ページ\]** ダイアログ ボックスが表示されます。  
+     **D3DContent プロパティ ページ** ダイアログ ボックスが表示されます。  
   
-6.  **\[C\/C\+\+\]** ノードをクリックします。  
+6.  選択、 **C/C++**ノード。  
   
-7.  **\[追加のインクルード ディレクトリ\]** フィールドに、DirectX インクルード フォルダーの場所を指定します。  このフォルダーの既定の場所は、%ProgramFiles%\\Microsoft DirectX SDK \(*バージョン*\)\\Include です。  
+7.  **追加のインクルード ディレクトリ**フィールドで、DirectX の場所を含めるフォルダーを指定します。 このフォルダーの既定の場所は %ProgramFiles%\Microsoft DirectX SDK (*バージョン*) \Include です。  
   
-8.  **\[リンカー\]** ノードをダブルクリックして展開します。  
+8.  ダブルクリックして、**リンカー**ノードを展開します。  
   
-9. **\[追加のライブラリ ディレクトリ\]** フィールドに、DirectX ライブラリ フォルダーの場所を指定します。  このフォルダーの既定の場所は、%ProgramFiles%\\Microsoft DirectX SDK \(*バージョン*\)\\Lib\\x86 です。  
+9. **追加のライブラリ ディレクトリ**フィールドで、DirectX のライブラリ フォルダーの場所を指定します。 このフォルダーの既定の場所は %ProgramFiles%\Microsoft DirectX SDK (*バージョン*) \Lib\x86 です。  
   
-10. **\[入力\]** ノードをクリックします。  
+10. 選択、**入力**ノード。  
   
-11. **\[追加の依存ファイル\]** フィールドに、`d3d9.lib` ファイルと `d3dx9.lib` ファイルを追加します。  
+11. **追加の依存関係**フィールドに、追加、`d3d9.lib`と`d3dx9.lib`ファイル。  
   
-12. ソリューション エクスプローラーで、`D3DContent.def` という名前の新しいモジュール定義ファイル \(.def\) をプロジェクトに追加します。  
+12. ソリューション エクスプ ローラーで、新しいモジュール定義 (.def) という名前のファイルを追加`D3DContent.def`をプロジェクトにします。  
   
-## Direct3D9 コンテンツの作成  
- 最大限のパフォーマンスを得るには、Direct3D9 コンテンツで特定の設定を使用する必要があります。  次のコードは、最大限のパフォーマンス特性を持つ Direct3D9 サーフェイスを作成する方法を示しています。  詳細については、「[Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)」を参照してください。  
+## <a name="creating-the-direct3d9-content"></a>Direct3D9 コンテンツを作成します。  
+ 最適なパフォーマンスを得るに Direct3D9 コンテンツは、特定の設定を使用する必要があります。 次のコードでは、最適なパフォーマンス特性を備えた Direct3D9 画面を作成する方法を示します。 詳細については、次を参照してください。 [Direct3D9 と WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)です。  
   
-#### Direct3D9 コンテンツを作成するには  
+#### <a name="to-create-the-direct3d9-content"></a>コンテンツを作成、Direct3D9  
   
-1.  ソリューション エクスプローラーを使用して、3 つの C\+\+ クラスを次に示す名前のプロジェクトに追加します。  
+1.  ソリューション エクスプ ローラーを使用して、次の名前のプロジェクトに 3 つの C++ クラスを追加します。  
   
-     `CRenderer` \(仮想デストラクターを使用\)  
+     `CRenderer`(で仮想デストラクター)  
   
      `CRendererManager`  
   
      `CTriangleRenderer`  
   
-2.  コード エディターで Renderer.h を開き、自動的に生成されたコードを次のコードに置き換えます。  
+2.  Renderer.h コード エディターで開き、自動的に生成されたコードを次のコードに置き換えます。  
   
      [!code-cpp[System.Windows.Interop.D3DImage#RendererH](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.h#rendererh)]  
   
-3.  コード エディターで Renderer.cpp を開き、自動的に生成されたコードを次のコードに置き換えます。  
+3.  Renderer.cpp コード エディターで開き、自動的に生成されたコードを次のコードに置き換えます。  
   
      [!code-cpp[System.Windows.Interop.D3DImage#RendererCPP](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderercpp)]  
   
-4.  コード エディターで RendererManager.h を開き、自動的に生成されたコードを次のコードに置き換えます。  
+4.  RendererManager.h コード エディターで開き、自動的に生成されたコードを次のコードに置き換えます。  
   
      [!code-cpp[System.Windows.Interop.D3DImage#RendererManagerH](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.h#renderermanagerh)]  
   
-5.  コード エディターで RendererManager.cpp を開き、自動的に生成されたコードを次のコードに置き換えます。  
+5.  RendererManager.cpp コード エディターで開き、自動的に生成されたコードを次のコードに置き換えます。  
   
      [!code-cpp[System.Windows.Interop.D3DImage#RendererManagerCPP](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanagercpp)]  
   
-6.  コード エディターで TriangleRenderer.h を開き、自動的に生成されたコードを次のコードに置き換えます。  
+6.  TriangleRenderer.h コード エディターで開き、自動的に生成されたコードを次のコードに置き換えます。  
   
      [!code-cpp[System.Windows.Interop.D3DImage#TriangleRendererH](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/trianglerenderer.h#trianglerendererh)]  
   
-7.  コード エディターで TriangleRenderer.cpp を開き、自動的に生成されたコードを次のコードに置き換えます。  
+7.  TriangleRenderer.cpp コード エディターで開き、自動的に生成されたコードを次のコードに置き換えます。  
   
      [!code-cpp[System.Windows.Interop.D3DImage#TriangleRendererCPP](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/trianglerenderer.cpp#trianglerenderercpp)]  
   
-8.  コード エディターで stdafx.h を開き、自動的に生成されたコードを次のコードに置き換えます。  
+8.  Stdafx.h コード エディターで開き、自動的に生成されたコードを次のコードに置き換えます。  
   
      [!code-cpp[System.Windows.Interop.D3DImage#StdafxH](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/stdafx.h#stdafxh)]  
   
-9. コード エディターで dllmain.cpp を開き、自動的に生成されたコードを次のコードに置き換えます。  
+9. Dllmain.cpp コード エディターで開き、自動的に生成されたコードを次のコードに置き換えます。  
   
      [!code-cpp[System.Windows.Interop.D3DImage#DllMain](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/dllmain.cpp#dllmain)]  
   
 10. コード エディターで D3DContent.def を開きます。  
   
-11. 自動的に生成されたコードを次のコードで置き換えます。  
+11. 自動的に生成されたコードを次のコードに置き換えます。  
   
     ```  
-  
     LIBRARY "D3DContent"  
   
     EXPORTS  
@@ -137,16 +140,15 @@ caps.handback.revision: 17
     GetBackBufferNoRef  
     Render  
     Destroy  
-  
     ```  
   
 12. プロジェクトをビルドします。  
   
-## 次の手順  
+## <a name="next-steps"></a>次の手順  
   
--   WPF アプリケーションで Direct3D9 コンテンツをホストします。  詳細については、「[チュートリアル : WPF での Direct3D9 コンテンツのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)」を参照してください。  
+-   WPF アプリケーションで Direct3D9 コンテンツをホストします。 詳細については、次を参照してください。[チュートリアル: wpf Direct3D9 のコンテンツをホストしている](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)です。  
   
-## 参照  
- <xref:System.Windows.Interop.D3DImage>   
- [Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)   
- [チュートリアル : WPF での Direct3D9 コンテンツのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Interop.D3DImage>  
+ [Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)  
+ [チュートリアル: WPF での Direct3D9 コンテンツのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)

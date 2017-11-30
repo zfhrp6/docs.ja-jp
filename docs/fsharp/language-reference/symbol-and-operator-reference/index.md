@@ -1,6 +1,6 @@
 ---
 title: "シンボルと演算子のリファレンス (F#)"
-description: "シンボルと演算子のリファレンス (F#)"
+description: "シンボルと f# のプログラミング言語で使用する演算子について説明します。"
 keywords: "visual f#, f#, 関数型プログラミング"
 author: cartermp
 ms.author: phcart
@@ -10,13 +10,12 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ab453800-d4d0-4a11-9d55-2b358d56af27
-translationtype: Human Translation
-ms.sourcegitcommit: 0a01ec92a90d99fafaacbd3f71f5177e5cf94a68
-ms.openlocfilehash: 514dc37dce3df3f40ae99ce55772b0c4e8deb95f
-ms.lasthandoff: 04/05/2017
-
+ms.openlocfilehash: d1000e991a6c07693f2e639ee8f0a386d53a2aae
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="symbol-and-operator-reference"></a>シンボルと演算子のリファレンス
 
 > [!NOTE]
@@ -128,7 +127,7 @@ ms.lasthandoff: 04/05/2017
 |--------|-------------|
 |`as`|Right|
 |`when`|権限|
-|<code>&#124;</code> (パイプ)|左|
+|<code>&#124;</code>(パイプ)|左|
 |`;`|Right|
 |`let`|非結合|
 |`function`, `fun`, `match`, `try`|非結合|
@@ -139,7 +138,7 @@ ms.lasthandoff: 04/05/2017
 |`or`, <code>&#124;&#124;</code>|左|
 |`&`, `&&`|左|
 |`:>`, `:?>`|権限|
-|`!=`*op*、`<`*op*、`>`*op*、`=`、<code>&#124;</code>*op*、`&`*op*、`&`<br /><br />(`<<<`、`>>>`、<code>&#124;&#124;&#124;</code>、`&&&` を含む)|左|
+|`!=`*op*、 `<` *op*、 `>` *op*、 `=`、 <code>&#124;</code> *op*、 `&` *op*、`&`<br /><br />(`<<<`、`>>>`、<code>&#124;&#124;&#124;</code>、`&&&` を含む)|左|
 |`^`*op*<br /><br />(`^^^` を含む)|権限|
 |`::`|権限|
 |`:?`|非結合|
@@ -147,7 +146,7 @@ ms.lasthandoff: 04/05/2017
 |`*`*op*、`/`*op*、`%`*op*|左|
 |`**`*op*|権限|
 |`f x` (関数適用)|左|
-|<code>&#124;</code> (パターン マッチ)|権限|
+|<code>&#124;</code>(パターン マッチ)|権限|
 |前置演算子 (`+`*op*、`-`*op*、`%`、`%%`、`&`、`&&`、`!`*op*、`~`*op*)|左|
 |`.`|Left|
 |`f(x)`|左|
@@ -158,4 +157,3 @@ F# はカスタム演算子のオーバー ロードをサポートしていま�
 [F# 言語リファレンス](../index.md)
 
 [演算子のオーバーロード](../operator-overloading.md)
-

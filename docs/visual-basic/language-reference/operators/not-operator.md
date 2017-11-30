@@ -1,91 +1,88 @@
 ---
-title: "Not Operator (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Not"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Boolean expressions, negating"
-  - "operators [Visual Basic], bitwise"
-  - "negation operator"
-  - "inverse bit values in variables"
-  - "bitwise operators, NOT operator"
-  - "bitwise comparison"
-  - "Not operator [Visual Basic]"
-  - "logical negation"
-  - "operators [Visual Basic], negation"
+title: "Not 演算子 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Not
+helpviewer_keywords:
+- Boolean expressions, negating
+- operators [Visual Basic], bitwise
+- negation operator [Visual Basic]
+- inverse bit values in variables [Visual Basic]
+- bitwise operators [Visual Basic], NOT operator
+- bitwise comparison [Visual Basic]
+- Not operator [Visual Basic]
+- logical negation
+- operators [Visual Basic], negation
 ms.assetid: 8f2ea83c-d2ed-480a-a474-3042a1cad9b5
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: ac160aef7b7dc8acb8bf0211b403599692f2373c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Not Operator (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-2 つのブール式の論理否定を求めます。また、2 つの数式のビットごとの否定を求めます。  
+# <a name="not-operator-visual-basic"></a>Not 演算子 (Visual Basic)
+論理否定を実行、`Boolean`式、または数値式のビットごとの否定。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
 result = Not expression  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `result`  
- 必ず指定します。  任意のブール型 \(`Boolean`\) または数式を指定します。  
+ 必須です。 どの`Boolean`または数値式です。  
   
  `expression`  
- 必ず指定します。  任意のブール型 \(`Boolean`\) または数式を指定します。  
+ 必須です。 どの`Boolean`または数値式です。  
   
-## 解説  
- `Boolean` 式の場合、次の表は、2 つの式の値と演算結果 `result` の値の対応を示しています。  
+## <a name="remarks"></a>コメント  
+ `Boolean`式では、次の表に示す方法`result`決定されます。  
   
-|`expression` の値|`result` の値|  
-|---------------------|-----------------|  
+|場合`expression`は|値`result`は|  
+|------------------------|------------------------------|  
 |`True`|`False`|  
 |`False`|`True`|  
   
- 数値の場合、`Not` 演算子は、数式に対してビット単位の反転も行います。次に示す真理値表に従って、演算結果 `result` の対応するビットがセットされます。  
+ 数値式の場合、`Not`演算子が任意の数値式のビット値を反転し、対応するにビットを設定`result`次の表のとおりです。  
   
-|`expression` のビット|`result` 内のビット|  
-|-----------------------|--------------------|  
+|場合内のビット`expression`は|内のビット`result`は|  
+|-------------------------------|----------------------------|  
 |1|0|  
 |0|1|  
   
 > [!NOTE]
->  論理\/ビット処理演算子は他の算術演算子や関係演算子より優先順位が低いため、ビットごとの演算は、正確に実行されるようにかっこで囲む必要があります。  
+>  論理/ビット処理演算子の他の算術演算子や関係演算子よりも優先順位が低いため、ビットごとの演算が正確に実行されるようにかっこで囲む必要があります。  
   
-## データ型  
- ブール値の否定では、結果のデータ型は `Boolean` です。  ビットごとの否定では、結果のデータ型は `expression` と同じです。  ただし、式が `Decimal` の場合、結果は `Long` になります。  
+## <a name="data-types"></a>データ型  
+ 結果のデータ型は、ブール型の否定の`Boolean`します。 ビットごとの否定の結果のデータ型は、のと同じ`expression`です。 ただし、式が場合`Decimal`、結果は`Long`します。  
   
-## オーバーロード  
- `Not` は *オーバーロード* できます。つまり、オペランドがクラスまたは構造体の型であれば、クラスまたは構造体がこの動作を再定義できます。  このようなクラスまたは構造体でこの演算子を使用している場合、再定義された動作を確認してください。  詳細については、「[Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+## <a name="overloading"></a>オーバーロード  
+ `Not`演算子を指定できます*オーバー ロードされた*、いるクラスまたは構造体を再定義できますその動作のオペランドは、そのクラスまたは構造体の型を持つときにすることを意味します。 コードは、このようなクラスまたは構造体で、この演算子を使用する場合は、再定義された動作を理解することを確認します。 詳細については、次を参照してください。[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)です。  
   
-## 使用例  
- 次の例では、`Not` 演算子を使って 2 つの `Boolean` 式の論理否定を求めます。  結果は、式の値を反転させた `Boolean` 値です。  
+## <a name="example"></a>例  
+ 次の例では、`Not`に対して論理否定演算を実行する演算子、`Boolean`式。 結果は、`Boolean`式の値の逆を表す値です。  
   
  [!code-vb[VbVbalrOperators#33](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/not-operator_1.vb)]  
   
- 前の例では、`False` と `True` の結果を順に生成します。  
+ 前の例の結果を生成する`False`と`True`、それぞれします。  
   
-## 使用例  
- `Not` 演算子を使って、数式のビットごとの論理否定を求める例を次に示します。  結果パターンのビットは、符号ビットを含めて、オペランド パターンで対応するビットを反転した値にセットされます。  
+## <a name="example"></a>例  
+ 次の例では、`Not`数値式のビットごとの論理否定演算を実行する演算子です。 結果のパターン内のビットは符号ビットを含めて、オペランドのパターンに対応するビットの逆に設定されます。  
   
  [!code-vb[VbVbalrOperators#34](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/not-operator_2.vb)]  
   
- 前の例では、–11、–9、–7 の結果を順に生成します。  
+ 前の例では、それぞれ – 11、– 9、および – 7 の結果を生成します。  
   
-## 参照  
- [Logical\/Bitwise Operators](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)   
- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)   
- [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)   
- [Logical and Bitwise Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+## <a name="see-also"></a>関連項目  
+ [論理/ビット演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)  
+ [Visual Basic における演算子の優先順位](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+ [機能別の演算子一覧](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [Visual Basic における論理/ビット処理演算子](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

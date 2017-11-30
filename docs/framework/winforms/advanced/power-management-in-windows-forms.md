@@ -1,45 +1,49 @@
 ---
-title: "Windows フォームでの電源管理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "バッテリ状態"
-  - "電源状態"
+title: "Windows フォームでの電源管理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- battery states
+- power states
 ms.assetid: ad04a801-5682-4d88-92c5-26eb9cdb209a
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e12f39a63a4f81e6deec4512a4e18ad2bda7e5e0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows フォームでの電源管理
-Windows フォーム アプリケーションでは、Windows オペレーティング システムの電源管理機能を利用できます。  コンピューターの電源状態を監視し、状態が変化したときにアクションを実行できます。  たとえば、ポータブル コンピューターでアプリケーションを実行している場合、コンピューターの充電が一定レベルを下回ったときにアプリケーションの特定の機能を無効にできます。  
+# <a name="power-management-in-windows-forms"></a>Windows フォームでの電源管理
+Windows フォーム アプリケーションを利用、電源管理機能の Windows オペレーティング システムにできます。 アプリケーションでは、コンピューターの電源の状態を監視でき、状態の変更が発生したときにアクションを実行することができます。 たとえば、アプリがポータブル コンピューターで実行されている場合可能性がある、コンピューターのバッテリ充電量が一定のレベルを下回ったときに、アプリケーションで特定の機能を無効にします。  
   
- [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] では、オペレーティング システムを中断または再開したり、AC 電源やバッテリの状態が変化したりした場合など、電源状態が変化したときに発生する <xref:Microsoft.Win32.SystemEvents.PowerModeChanged> イベントを利用できます。  <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> クラスの <xref:System.Windows.Forms.SystemInformation> プロパティを使用すると、次のコード例に示すように現在の状態を照会できます。  
+ [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]提供、<xref:Microsoft.Win32.SystemEvents.PowerModeChanged>電源の状態、または AC 電源の状態またはバッテリの状態が変更されたときにユーザーを中断またはオペレーティング システムを再開する場合などに変更があるときに発生するイベントです。 <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A>のプロパティ、<xref:System.Windows.Forms.SystemInformation>できるクラスは次のコード例に示すように現在の状態では、クエリを使用します。  
   
  [!code-csharp[PowerMode#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/powermode/cs/form1.cs#1)]
  [!code-vb[PowerMode#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/powermode/vb/form1.vb#1)]  
   
- <xref:System.Windows.Forms.BatteryChargeStatus> 列挙値の他に、<xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> プロパティにも、バッテリ容量 \(<xref:System.Windows.Forms.PowerStatus.BatteryFullLifetime%2A>\)、バッテリの充電率 \(<xref:System.Windows.Forms.PowerStatus.BatteryLifePercent%2A>、<xref:System.Windows.Forms.PowerStatus.BatteryLifeRemaining%2A>\) を確認する列挙値が含まれています。  
+ 以外にも、<xref:System.Windows.Forms.BatteryChargeStatus>列挙型、<xref:System.Windows.Forms.SystemInformation.PowerStatus%2A>プロパティには、バッテリ容量を決定するための列挙型も含まれています (<xref:System.Windows.Forms.PowerStatus.BatteryFullLifetime%2A>) およびバッテリの充電の割合 (<xref:System.Windows.Forms.PowerStatus.BatteryLifePercent%2A>、 <xref:System.Windows.Forms.PowerStatus.BatteryLifeRemaining%2A>)。  
   
- <xref:System.Windows.Forms.Application> の <xref:System.Windows.Forms.Application.SetSuspendState%2A> メソッドを使用すると、コンピューターを休止モードまたは中断モードに設定できます。  `force` 引数を `false` に設定すると、中断のためのアクセス許可を要求するすべてのアプリケーションにイベントがブロードキャストされます。  また、`disableWakeEvent` 引数を `true` に設定すると、すべての wake イベントが無効になります。  
+ 使用することができます、<xref:System.Windows.Forms.Application.SetSuspendState%2A>のメソッド、<xref:System.Windows.Forms.Application>コンピューターを休止状態または中断モードにします。 場合、`force`に設定されている引数`false`、オペレーティング システムが中断するアクセス許可を要求するすべてのアプリケーションにイベントをブロードキャストします。 場合、`disableWakeEvent`に設定されている引数`true`、オペレーティング システムのスリープ解除のすべてのイベントを無効にします。  
   
- 次のコード例は、コンピューターを休止モードに設定する方法を示しています。  
+ 次のコード例では、コンピューターを休止状態にする方法を示します。  
   
  [!code-csharp[PowerMode#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/powermode/cs/form1.cs#2)]
  [!code-vb[PowerMode#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/powermode/vb/form1.vb#2)]  
   
-## 参照  
- <xref:Microsoft.Win32.SystemEvents.PowerModeChanged>   
- <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A>   
- <xref:System.Windows.Forms.Application.SetSuspendState%2A>   
+## <a name="see-also"></a>関連項目  
+ <xref:Microsoft.Win32.SystemEvents.PowerModeChanged>  
+ <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A>  
+ <xref:System.Windows.Forms.Application.SetSuspendState%2A>  
  <xref:Microsoft.Win32.SystemEvents.SessionSwitch>

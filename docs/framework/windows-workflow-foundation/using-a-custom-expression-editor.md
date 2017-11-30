@@ -1,39 +1,42 @@
 ---
-title: "カスタム式エディターの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "カスタム式エディターの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
-caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dcf9970b2b4986c3948704d848c67d8a3c6f7d9c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# カスタム式エディターの使用
-カスタム式エディターを実装して、式の編集を多機能化したり単純化したりすることができます。たとえば、次のような場合にカスタム式エディターを使用できます。  
+# <a name="using-a-custom-expression-editor"></a>カスタム式エディターの使用
+カスタム式エディターを実装して、式の編集を多機能化したり単純化したりすることができます。 たとえば、次のような場合にカスタム式エディターを使用できます。  
   
--   再ホストされたワークフロー デザイナーで IntelliSense などの高度な編集機能をサポートする場合。再ホストされたアプリケーションでは [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] の既定の式エディターは使用できないため、この機能が必要な場合は提供する必要があります。  
+-   再ホストされたワークフロー デザイナーで IntelliSense などの高度な編集機能をサポートする場合。 再ホストされたアプリケーションでは [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] の既定の式エディターは使用できないため、この機能が必要な場合は提供する必要があります。  
   
 -   ビジネス アナリスト ユーザーのために式の編集を単純化する場合。これにより、たとえば、[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] を学習したり、[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] の式を扱ったりする必要がなくなります。  
   
  カスタム式エディターを実装するには、次の 3 つの基本的な手順を実行する必要があります。  
   
-1.  <xref:System.Activities.Presentation.View.IExpressionEditorService> インターフェイスを実装します。このインターフェイスは、式エディターの作成と破棄を管理します。  
+1.  <xref:System.Activities.Presentation.View.IExpressionEditorService> インターフェイスを実装します。 このインターフェイスは、式エディターの作成と破棄を管理します。  
   
-2.  <xref:System.Activities.Presentation.View.IExpressionEditorInstance> インターフェイスを実装します。このインターフェイスは、式エディター UI に UI を実装します。  
+2.  <xref:System.Activities.Presentation.View.IExpressionEditorInstance> インターフェイスを実装します。 このインターフェイスは、式エディター UI に UI を実装します。  
   
 3.  再ホストされたワークフロー アプリケーションで <xref:System.Activities.Presentation.View.IExpressionEditorService> を公開します。  
   
-## クラス ライブラリ内のカスタム式エディターを実装する  
- 次のコードは、MyExpressionEditorService ライブラリ プロジェクトに含まれている <xref:System.Activities.Presentation.View.IExpressionEditorService> インターフェイスを実装する \(概念実証\) `MyEditorService` クラスのサンプル コードです。  
+## <a name="implementing-a-custom-expression-editor-in-a-class-library"></a>クラス ライブラリ内のカスタム式エディターを実装する  
+ 次のコードは、MyExpressionEditorService ライブラリ プロジェクトに含まれている `MyEditorService` インターフェイスを実装する (概念実証) <xref:System.Activities.Presentation.View.IExpressionEditorService> クラスのサンプル コードです。  
   
 ```  
-  
 using System;  
 using System.Collections.Generic;  
 using System.Activities.Presentation.View;  
@@ -75,13 +78,11 @@ namespace MyExpressionEditorService
   
     }  
 }  
-  
 ```  
   
- これは MyExpressionEditorService ライブラリ プロジェクトに含まれている <xref:System.Activities.Presentation.View.IExpressionEditorInstance> インターフェイスを実装する `MyExpressionEditorInstance` クラスのコードです。  
+ MyExpressionEditorService ライブラリ プロジェクトの `MyExpressionEditorInstance` インターフェイスを実装する <xref:System.Activities.Presentation.View.IExpressionEditorInstance> クラスのコードを次に示します。  
   
 ```  
-  
 using System;  
 using System.Activities.Presentation.View;  
 using System.Windows;  
@@ -227,14 +228,12 @@ namespace MyExpressionEditorService
         }  
     }  
 }  
-  
 ```  
   
-### WPF プロジェクトでカスタム式エディターを公開する  
- 次のコードは、[!INCLUDE[avalon2](../../../includes/avalon2-md.md)] アプリケーションでデザイナーを再ホストする方法と、`MyEditorService` サービスを作成して公開する方法を示しています。このコードを使用する前に、avalon2 アプリケーションを含むプロジェクトから、MyExpressionEditorService ライブラリ プロジェクトへの参照を追加します。  
+### <a name="publishing-a-custom-expression-editor-in-a-wpf-project"></a>WPF プロジェクトでカスタム式エディターを公開する  
+ 次のコードは、[!INCLUDE[avalon2](../../../includes/avalon2-md.md)] アプリケーションでデザイナーを再ホストする方法と、`MyEditorService` サービスを作成して公開する方法を示しています。 このコードを使用する前に、avalon2 アプリケーションを含むプロジェクトから、MyExpressionEditorService ライブラリ プロジェクトへの参照を追加します。  
   
 ```  
-  
 using System.Windows;  
 using System.Windows.Controls;  
 using System.Activities.Presentation;  
@@ -283,13 +282,12 @@ namespace WpfApplication1
         }  
     }  
 }  
-  
 ```  
   
-### メモ  
- カスタム アクティビティ デザイナーで **ExpressionTextBox** コントロールを使用している場合は <xref:System.Activities.Presentation.View.IExpressionEditorService> インターフェイスの <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> および <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> メソッドを使用して式エディターを作成および破棄する必要はありません。<xref:System.Activities.Presentation.View.ExpressionTextBox> クラスによってこの処理が行われます。  
+### <a name="notes"></a>メモ  
+ 使用している場合、 **ExpressionTextBox**コントロール、カスタム アクティビティ デザイナーで必要はありません作成し、破棄を使用して式エディターに、<xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A>と<xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A>のメソッド、<xref:System.Activities.Presentation.View.IExpressionEditorService>インターフェイスです。 <xref:System.Activities.Presentation.View.ExpressionTextBox> クラスによってこの処理が行われます。  
   
-## 参照  
- <xref:System.Activities.Presentation.View.IExpressionEditorService>   
- <xref:System.Activities.Presentation.View.IExpressionEditorInstance>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Activities.Presentation.View.IExpressionEditorService>  
+ <xref:System.Activities.Presentation.View.IExpressionEditorInstance>  
  [カスタム アクティビティ デザイナーでの ExpressionTextBox の使用](../../../docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)

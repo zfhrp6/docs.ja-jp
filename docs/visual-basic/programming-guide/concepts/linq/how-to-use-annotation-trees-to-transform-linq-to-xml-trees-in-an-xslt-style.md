@@ -1,30 +1,22 @@
 ---
-title: "方法: 注釈を使用して、LINQ to XML ツリーを XSLT スタイル (Visual Basic) を変換する |Microsoft ドキュメント"
+title: "方法: 注釈を使用して、LINQ to XML ツリーを XSLT スタイル (Visual Basic) を変換するには"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 08e91fa2-dac2-4463-9ef1-87b1ac3fa890
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 17324fb6dca653aa3c15e3bad2fcc5ac35828bef
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: e2e5fce154d5d59657302deb2ce0be80a3bc3ac6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a>方法: 注釈を使用して、LINQ to XML ツリーを XSLT スタイル (Visual Basic) を変換するには
 注釈を使用することで、XML ツリーの変換が容易になります。  
@@ -35,7 +27,7 @@ ms.lasthandoff: 03/13/2017
 <text>A phrase with <b>bold</b> and <i>italic</i> text.</text>  
 ```  
   
- どのテキスト ノードにも、任意の数の `<b>` と `<i>` が子要素として存在する可能性があります。 その他の状況の数まで、この方法: さまざまな通常の段落、箇条書きの段落、ビットマップなどの子要素を含めることができるページなどです。 テーブルのセルには、テキスト、ドロップダウン リスト、またはビットマップが含まれている場合があります。 ドキュメント中心の XML の主要な特性の&1; つは、特定の要素がどの子要素を持つかがわからない点です。  
+ どのテキスト ノードにも、任意の数の `<b>` と `<i>` が子要素として存在する可能性があります。 その他の状況の数まで、この方法: さまざまな通常の段落、箇条書きの段落、ビットマップなどの子要素を含めることができるページなどです。 テーブルのセルには、テキスト、ドロップダウン リスト、またはビットマップが含まれている場合があります。 ドキュメント中心の XML の主要な特性の 1 つは、特定の要素がどの子要素を持つかがわからない点です。  
   
  ツリー内の要素を変換するとき、その要素の子について詳しく理解している必要がない場合は、注釈を使用するこの方法が効果的です。  
   
@@ -47,15 +39,15 @@ ms.lasthandoff: 03/13/2017
   
  この方法の詳細な構成は次のとおりです。  
   
--   構造を変換する一連の要素を返す&1; つ以上の LINQ to XML クエリを実行します。 クエリ内の各要素の追加、新しい<xref:System.Xml.Linq.XElement>オブジェクトの要素に注釈として</xref:System.Xml.Linq.XElement>。 変換後の新しいツリーでは、注釈付きの要素がこの新しい要素で置き換えられます。 例で示すように、このコードは簡単に記述できます。  
+-   構造を変換する一連の要素を返す 1 つ以上の LINQ to XML クエリを実行します。 クエリ内の要素ごとに、新しい <xref:System.Xml.Linq.XElement> オブジェクトをその要素に対する注釈として追加します。 変換後の新しいツリーでは、注釈付きの要素がこの新しい要素で置き換えられます。 例で示すように、このコードは簡単に記述できます。  
   
 -   注釈として追加される新しい要素に新しい子ノードを含めることで、目的の構造を持つサブツリーを形成できます。  
   
 -   特別な規則として、この目的で作成された別の名前空間 (この例では `http://www.microsoft.com/LinqToXmlTransform/2007` という名前空間) に新しい要素の子ノードが含まれている場合、その子ノードは新しいツリーにコピーされません。 代わりに、名前空間が上記の特別な名前空間で、かつ要素のローカル名が `ApplyTransforms` である場合は、ソース ツリー内の要素の子ノードが反復処理され、新しいツリーにコピーされます (例外として、注釈付きの子要素自体はここで示す規則に従って変換されます)。  
   
--   これは、XSL での変換の仕様にある程度似ています。 一連のノードを選択するクエリは、テンプレートの XPath 式に似ています。 新しいを作成するコード<xref:System.Xml.Linq.XElement>注釈は XSL のシーケンス コンス トラクターに似ていますが、保存されたと`ApplyTransforms`要素に機能的に似ていますが、 `xsl:apply-templates` XSL 内の要素</xref:System.Xml.Linq.XElement>。  
+-   これは、XSL での変換の仕様にある程度似ています。 一連のノードを選択するクエリは、テンプレートの XPath 式に似ています。 注釈として保存される新しい <xref:System.Xml.Linq.XElement> を作成するコードは、XSL のシーケンス コンストラクターに似ています。また、`ApplyTransforms` 要素は、XSL の `xsl:apply-templates` 要素と機能的に似ています。  
   
--   この方法の利点の&1; つは、クエリを作成するときに、常に未変更のソース ツリーに対してクエリを記述する点です。 ツリーに対する変更が記述中のクエリに与える影響を考慮する必要はありません。  
+-   この方法の利点の 1 つは、クエリを作成するときに、常に未変更のソース ツリーに対してクエリを記述する点です。 ツリーに対する変更が記述中のクエリに与える影響を考慮する必要はありません。  
   
 ## <a name="transforming-a-tree"></a>ツリーの変換  
  最初の例では、`Paragraph` ノードの名前をすべて `para` に変更します。  
@@ -396,4 +388,4 @@ After Transform
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+ [高度な LINQ to XML プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -1,191 +1,189 @@
 ---
-title: "Operator Statement | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.operator"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "operators [Visual Basic]"
-  - "procedures, operator"
-  - "Narrowing keyword, conversion operators"
-  - "Visual Basic code, operators"
-  - "Widening keyword, conversion operators"
-  - "syntax, Operator procedures"
-  - "operators [Visual Basic], overloading"
-  - "overloaded operators"
-  - "operator overloading"
-  - "operator procedures"
-  - "Operator statement"
-  - "CType function, Operator statement"
+title: Operator Statement
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.operator
+helpviewer_keywords:
+- operators [Visual Basic]
+- procedures [Visual Basic], operator
+- Narrowing keyword [Visual Basic], conversion operators
+- Visual Basic code, operators
+- Widening keyword [Visual Basic], conversion operators
+- syntax [Visual Basic], Operator procedures
+- operators [Visual Basic], overloading
+- overloaded operators [Visual Basic]
+- operator overloading
+- operator procedures
+- Operator statement [Visual Basic]
+- CType function [Visual Basic], Operator statement
 ms.assetid: b12ec4af-1ad7-4a17-865b-c5ee96320ae5
-caps.latest.revision: 28
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 28
+caps.latest.revision: "28"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 1b6be45fd0a606f43c14d57f3f8ae0955f256ba6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Operator Statement
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-クラスまたは構造体に演算子プロシージャを定義する演算子記号、オペランド、およびコードを宣言します。  
+# <a name="operator-statement"></a>Operator Statement
+演算子記号、オペランド、およびクラスまたは構造体に演算子プロシージャを定義するコードを宣言します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-[ <attrlist> ] Public [ Overloads ] Shared [ Shadows ] [ Widening | Narrowing ]   
-Operator operatorsymbol ( operand1 [, operand2 ]) [ As [ <attrlist> ] type ]  
+[ <attrlist> ] Public [ Overloads ] Shared [ Shadows ] [ Widening | Narrowing ]   
+Operator operatorsymbol ( operand1 [, operand2 ]) [ As [ <attrlist> ] type ]  
     [ statements ]  
     [ statements ]  
-    Return returnvalue  
+    Return returnvalue  
     [ statements ]  
 End Operator  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
  `attrlist`  
- 省略可能です。  「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。  
+ 省略可能です。 参照してください[属性一覧](../../../visual-basic/language-reference/statements/attribute-list.md)です。  
   
  `Public`  
- 必ず指定します。  この演算子プロシージャのアクセス レベルが [Public](../../../visual-basic/language-reference/modifiers/public.md) であることを示します。  
+ 必須です。 この演算子プロシージャがあることを示します[パブリック](../../../visual-basic/language-reference/modifiers/public.md)アクセスします。  
   
  `Overloads`  
- 省略可能です。  [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md) を参照してください。  
+ 省略可能です。 参照してください[Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)です。  
   
  `Shared`  
- 必ず指定します。  この演算子プロシージャが [Shared](../../../visual-basic/language-reference/modifiers/shared.md) プロシージャであることを示します。  
+ 必須です。 この演算子プロシージャがあることを示します、 [Shared](../../../visual-basic/language-reference/modifiers/shared.md)プロシージャです。  
   
  `Shadows`  
- 省略可能です。  [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md) を参照してください。  
+ 省略可能です。 参照してください[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)です。  
   
  `Widening`  
- `Narrowing` を指定した場合を除き、変換演算子には必ず指定します。  この演算子プロシージャが [Widening](../../../visual-basic/language-reference/modifiers/widening.md) 変換を定義することを示します。  このヘルプ ページの「拡大変換と縮小変換」を参照してください。  
+ 指定しない限り、変換演算子に必要な`Narrowing`します。 この演算子プロシージャを定義することを示す、 [Widening](../../../visual-basic/language-reference/modifiers/widening.md)変換します。 このヘルプ ページの「拡大と縮小変換」を参照してください。  
   
  `Narrowing`  
- `Widening` を指定した場合を除き、変換演算子には必ず指定します。  この演算子プロシージャが [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md) 変換を定義することを示します。  このヘルプ ページの「拡大変換と縮小変換」を参照してください。  
+ 指定しない限り、変換演算子に必要な`Widening`します。 この演算子プロシージャを定義することを示す、 [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)変換します。 このヘルプ ページの「拡大と縮小変換」を参照してください。  
   
  `operatorsymbol`  
- 必ず指定します。  この演算子プロシージャが定義する演算子の記号または識別子を指定します。  
+ 必須です。 シンボルまたは、この演算子プロシージャを定義する演算子の識別子。  
   
  `operand1`  
- 必ず指定します。  単項演算子 \(変換演算子を含む\) の単一オペランドまたは二項演算子の左オペランドの名前および型を指定します。  
+ 必須です。 名前と (変換演算子を含む) 単項演算子のオペランドは、1 つまたは 2 項演算子の左オペランドの型。  
   
  `operand2`  
- 二項演算子では必ず指定します。  二項演算子の右オペランドの名前と型を指定します。  
+ 二項演算子に必要です。 名前と、バイナリ演算子の右側のオペランドの型。  
   
- `operand1` および `operand2` の構文と指定項目は、以下のとおりです。  
+ `operand1`および`operand2`次の構文と部分があります。  
   
- `[ ByVal ] operandname [ As operandtype ]`  
+ `[ ByVal ] operandname [ As operandtype ]`  
   
-|指定項目|Description|  
+|パーツ|説明|  
 |----------|-----------------|  
-|`ByVal`|省略可能ですが、指定項目は常に [ByVal](../../../visual-basic/language-reference/modifiers/byval.md) で渡します。|  
-|`operandname`|必ず指定します。  このオペランドを表す変数の名前を指定します。  「[Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|  
-|`operandtype`|`Option Strict` が `On` である場合を除き、省略可能です。  このオペランドのデータ型を指定します。|  
+|`ByVal`|省略可能、ただし引き渡し方法があります[ByVal](../../../visual-basic/language-reference/modifiers/byval.md)です。|  
+|`operandname`|必須です。 このオペランドを表す変数の名前。 参照してください[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)です。|  
+|`operandtype`|省略可能な場合を除き、`Option Strict`は`On`します。 このオペランドのデータ型。|  
   
  `type`  
- `Option Strict` が `On` である場合を除き、省略可能です。  この演算子プロシージャによって返される値のデータ型を指定します。  
+ 省略可能な場合を除き、`Option Strict`は`On`します。 演算子プロシージャは、値のデータ型を返します。  
   
  `statements`  
- 省略可能です。  演算子プロシージャが実行するステートメントのブロックを指定します。  
+ 省略可能です。 演算子プロシージャが実行されるステートメントのブロックです。  
   
  `returnvalue`  
- 必ず指定します。  演算子プロシージャから呼び出し元のコードに返す値を指定します。  
+ 必須です。 演算子プロシージャが呼び出し元のコードに返す値。  
   
- `End` `Operator`  
- 必ず指定します。  この演算子プロシージャの定義を終了します。  
+ `End``Operator`  
+ 必ず指定します。 この演算子プロシージャの定義を終了します。  
   
-## 解説  
- `Operator` は、クラスまたは構造体の中でのみ使用できます。  つまり、演算子の*宣言コンテキスト*をソース ファイル、名前空間、モジュール、インターフェイス、プロシージャ、またはブロックにすることはできません。  詳細については、「[Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ 使用することができます`Operator`クラスまたは構造体でのみです。 つまり、*宣言コンテキスト*演算子にソース ファイル、名前空間、モジュール、インターフェイス、プロシージャ、またはブロックすることはできません。 詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
   
- すべての演算子は `Public Shared` にする必要があります。  どちらのオペランドにも `ByRef`、`Optional`、または `ParamArray` を指定することはできません。  
+ すべての演算子がある必要があります`Public Shared`です。 指定することはできません`ByRef`、 `Optional`、または`ParamArray`のいずれかのオペランド。  
   
- 演算子の記号または識別子を使って戻り値を返すことはできません。  `Return` ステートメントを使用し、値を指定する必要があります。  `Return` ステートメントは、プロシージャ内の任意の位置で何回でも指定できます。  
+ 戻り値を保持するのに演算子記号または識別子を使用することはできません。 使用する必要があります、`Return`ステートメント、およびその値を指定する必要があります。 任意の数の`Return`ステートメントは、プロシージャのどこに表示できます。  
   
- `Overloads` キーワードを使うかどうかに関係なく、この方法で演算子を定義することは*演算子オーバーロード*と呼ばれます。  次の表は、定義できる演算子の一覧です。  
+ この方法で演算子を定義するが呼び出された*演算子のオーバー ロード*を使用するかどうかにかかわらず、`Overloads`キーワード。 定義可能な演算子を次の表に示します。  
   
-|種類|演算子|  
-|--------|---------|  
-|単項式|`+`, `-`, `IsFalse`, `IsTrue`, `Not`|  
-|Binary|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|  
-|変換 \(単項\)|`CType`|  
+|型|演算子|  
+|----------|---------------|  
+|単項|`+`, `-`, `IsFalse`, `IsTrue`, `Not`|  
+|2 項|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|  
+|変換 (単項)|`CType`|  
   
- 二項演算の一覧に示した `=` 演算子は、代入演算子ではなく比較演算子です。  
+ なお、 `=` 2 項の一覧で演算子は、比較演算子、代入演算子ではありません。  
   
- `CType` を定義するときは、`Widening` または `Narrowing` を指定する必要があります。  
+ 定義するときに`CType`、どちらかを指定する必要があります`Widening`または`Narrowing`です。  
   
-## 一致したペア  
- 特定の演算子を一致したペアとして定義する必要があります。  ペアの一方の演算子を定義する場合には、もう一方の演算子も定義する必要があります。  一致するペアを以下に示します。  
+## <a name="matched-pairs"></a>一致するペア  
+ 特定の演算子は、一致するペアとして定義する必要があります。 このようなペアのいずれかの演算子を定義する場合は、他の同様を定義する必要があります。 一致するペア次に示します。  
   
--   `=` と `<>`  
+-   `=` および `<>`  
   
--   `>` と `<`  
+-   `>` および `<`  
   
--   `>=` と `<=`  
+-   `>=` および `<=`  
   
--   `IsTrue` と `IsFalse`  
+-   `IsTrue` および `IsFalse`  
   
-## データ型の制限  
- 定義する演算子には、定義先のクラスまたは構造体が伴っている必要があります。  つまり、そのクラスまたは構造体が以下の要素のデータ型として指定される必要があります。  
+## <a name="data-type-restrictions"></a>データ型の制限  
+ すべての演算子を定義するを定義するクラスまたは構造体を含む必要があります。 つまり、クラスまたは構造体は、次のデータ型として表示する必要があります。  
   
 -   単項演算子のオペランド。  
   
--   二項演算子の少なくとも 1 つのオペランド。  
+-   少なくとも 1 つの二項演算子のオペランド。  
   
--   変換演算子のオペランドまたは戻り値の型。  
+-   オペランドまたは変換演算子の戻り値の型。  
   
- 一部の演算子には、次のようなデータ型の制限もあります。  
+ 特定の演算子がある追加のデータ型の制限を次のようにします。  
   
--   `IsTrue` 演算子および `IsFalse` 演算子を定義する場合は、両方が `Boolean` 型を返す必要があります。  
+-   定義した場合、`IsTrue`と`IsFalse`演算子を返す必要がある両方の`Boolean`型です。  
   
--   `<<` 演算子および `>>` 演算子を定義する場合は、両方が `operand2` の `operandtype` に`Integer` 型を指定する必要があります。  
+-   定義した場合、`<<`と`>>`演算子、それら両方を指定してください、`Integer`の入力、`operandtype`の`operand2`します。  
   
- 戻り値の型は、どちらかのオペランドの型と同じである必要はありません。  たとえば、`=` または `<>` などの比較演算子は、オペランドが両方とも `Boolean` ではない場合でも、`Boolean` を返すことができます。  
+ 戻り値の型は、いずれかのオペランドの型に対応する必要はありません。 たとえば、比較演算子など`=`または`<>`返すことができます`Boolean`場合でも、どちらのオペランドは`Boolean`します。  
   
-## 論理演算子およびビット処理演算子  
- `And`、`Or`、`Not`、および `Xor` の各演算子は、Visual Basic では論理演算またはビット単位の演算を実行できます。  ただし、このような演算子の 1 つをクラスまたは構造体に定義する場合は、ビット単位の演算だけを定義できます。  
+## <a name="logical-and-bitwise-operators"></a>論理/ビット処理演算子  
+ `And`、 `Or`、 `Not`、および`Xor`演算子は、Visual Basic で論理またはビットごとのいずれかの操作を実行することができます。 ただし、クラスまたは構造体でこれらの演算子のいずれかを定義する場合は、そのビットごとの演算のみを定義できます。  
   
- `AndAlso` 演算子は、`Operator` ステートメントには直接定義できません。  ただし、以下の条件が満たされる場合は、`AndAlso` を使用できます。  
+ 定義することはできません、`AndAlso`と直接演算子、`Operator`ステートメントです。 ただし、使用することができます`AndAlso`場合は、次の条件を満たしていること。  
   
--   `AndAlso` に使用するオペランド型と同じ型で `And` を定義した。  
+-   定義した`And`に使用する同じオペランドの型に`AndAlso`です。  
   
--   `And` からの戻り値として、定義先のクラスまたは構造体と同じ型を指定した。  
+-   定義`And`を定義したクラスまたは構造体と同じ型を返します。  
   
--   `And` を定義したクラスまたは構造体に `IsFalse` 演算子を定義した。  
+-   定義した、`IsFalse`演算子を定義したクラスまたは構造体に`And`です。  
   
- 同様に、`Or` を同じオペランドで定義し、クラスまたは構造体の戻り値の型を使用し、クラスまたは構造体に `IsTrue` を定義した場合に、`OrElse` を使用できます。  
+ 同様に、使用することができます`OrElse`定義している場合`Or`と同じオペランド クラスや構造体の戻り値の型が定義されている`IsTrue`クラスまたは構造体にします。  
   
-## 拡大変換と縮小変換  
- *拡大変換*は実行時に常に成功しますが、*縮小変換*は実行時に失敗することがあります。  詳細については、「[Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。  
+## <a name="widening-and-narrowing-conversions"></a>Widening and Narrowing Conversions  
+ A*拡大変換*、実行時に常に成功したときに、*縮小変換*実行時に失敗することができます。 詳細については、「 [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)」を参照してください。  
   
- 変換プロシージャを `Widening` で宣言する場合、プロシージャ コードではエラーを生成しないでください。  これは、次のことを意味します。  
+ 変換するプロシージャを宣言する場合`Widening`プロシージャのコードは、エラーを生成しないで必要があります。 これは、次のことを意味します。  
   
--   `type` 型の有効な値を常に返す必要がある。  
+-   型の有効な値を返す必要が常に`type`です。  
   
--   生成される可能性のあるすべての例外およびその他のエラー条件を処理する必要がある。  
+-   これには、すべての例外とその他のエラー条件を処理する必要があります。  
   
--   呼び出したプロシージャから返されたエラーはコードで処理する必要がある。  
+-   これは、呼び出しプロシージャから返されたエラーを処理する必要があります。  
   
- 変換プロシージャでエラーが起こる可能性がある場合、つまり変換プロシージャで未処理の例外が起こる可能性がある場合は、そのプロシージャを `Narrowing` で宣言する必要があります。  
+ 変換プロシージャが成功しない可能性があります、ある可能性があるか、ハンドルされない例外が発生する可能性がありますが場合がありますを宣言する必要があります`Narrowing`です。  
   
-## 使用例  
- 次のコード例は、`Operator` ステートメントを使用して、`And`、`Or`、`IsFalse`、および `IsTrue` の各演算子の演算子プロシージャを持つ構造体の外枠を定義します。  `And` および `Or` は、`abc` 型の 2 つのオペランドと `abc` 型の戻り値を持ちます。  `IsFalse` および `IsTrue` は、`abc` 型の単一オペランドを持ち、`Boolean` 型を返します。  このように定義すると、呼び出し元のコードは、`And`、`AndAlso`、`Or`、および `OrElse` を `abc` 型のオペランドと一緒に使用できます。  
+## <a name="example"></a>例  
+ 次のコード例では、`Operator`ステートメントに演算子プロシージャを含む構造体の輪郭の定義を`And`、 `Or`、 `IsFalse`、および`IsTrue`演算子。 `And`および`Or`それぞれ型の 2 つのオペランドを受け取る`abc`型を返すと`abc`です。 `IsFalse`および`IsTrue`それぞれ型の 1 つのオペランドを受け取る`abc`返す`Boolean`です。 これらの定義を使用する呼び出し元のコードを許可する`And`、 `AndAlso`、 `Or`、および`OrElse`型のオペランドを持つ`abc`します。  
   
  [!code-vb[VbVbalrStatements#44](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/operator-statement_1.vb)]  
   
-## 参照  
- [IsFalse Operator](../../../visual-basic/language-reference/operators/isfalse-operator.md)   
- [IsTrue Operator](../../../visual-basic/language-reference/operators/istrue-operator.md)   
- [Widening](../../../visual-basic/language-reference/modifiers/widening.md)   
- [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)   
- [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)   
- [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [How to: Define an Operator](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)   
- [How to: Define a Conversion Operator](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)   
- [How to: Call an Operator Procedure](../../../visual-basic/programming-guide/language-features/procedures/how-to-call-an-operator-procedure.md)   
- [How to: Use a Class that Defines Operators](../../../visual-basic/programming-guide/language-features/procedures/how-to-use-a-class-that-defines-operators.md)
+## <a name="see-also"></a>関連項目  
+ [IsFalse 演算子](../../../visual-basic/language-reference/operators/isfalse-operator.md)  
+ [IsTrue 演算子](../../../visual-basic/language-reference/operators/istrue-operator.md)  
+ [Widening](../../../visual-basic/language-reference/modifiers/widening.md)  
+ [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)  
+ [拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
+ [演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)  
+ [方法 : 演算子を定義する](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)  
+ [方法 : 変換演算子を定義する](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)  
+ [方法 : 演算子プロシージャを呼び出す](../../../visual-basic/programming-guide/language-features/procedures/how-to-call-an-operator-procedure.md)  
+ [方法: 演算子を定義するクラスを使用する](../../../visual-basic/programming-guide/language-features/procedures/how-to-use-a-class-that-defines-operators.md)

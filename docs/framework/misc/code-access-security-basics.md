@@ -1,115 +1,169 @@
 ---
-title: "コード アクセス セキュリティの基礎 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "セキュリティ [.NET Framework], コード アクセス セキュリティ"
+title: "コード アクセス セキュリティの基礎"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: security [.NET Framework], code access security
 ms.assetid: 4eaa6535-d9fe-41a1-91d8-b437cfc16921
-caps.latest.revision: 21
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "21"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 08ce62f54e70fe1650914060ade0f52357f8a736
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# コード アクセス セキュリティの基礎
-共通言語ランタイムに対応するすべてのアプリケーション \(つまりすべてのマネージ アプリケーション\) は、そのランタイムのセキュリティ システムと対話する必要があります。 マネージ アプリケーションのホストは、そのアプリケーションの起動時に、アプリケーションに対して一連のアクセス許可を付与します。 これらのアクセス許可は、ホストのローカル セキュリティ設定、またはアプリケーションが所属するサンドボックスによって決まります。 これらのアクセス許可に応じて、そのアプリケーションが正常に実行されるか、またはセキュリティ例外が生成されます。  
+# <a name="code-access-security-basics"></a>コード アクセス セキュリティの基礎
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
+  
+ 共通言語ランタイムに対応するすべてのアプリケーション (つまりすべてのマネージ アプリケーション) は、そのランタイムのセキュリティ システムと対話する必要があります。 マネージ アプリケーションのホストは、そのアプリケーションの起動時に、アプリケーションに対して一連のアクセス許可を付与します。 これらのアクセス許可は、ホストのローカル セキュリティ設定、またはアプリケーションが所属するサンドボックスによって決まります。 これらのアクセス許可に応じて、そのアプリケーションが正常に実行されるか、またはセキュリティ例外が生成されます。  
   
  デスクトップ アプリケーションの既定のホストでは、コードが完全な信頼を付与されて実行されます。 このため、アプリケーションの実行対象がデスクトップである場合は、アプリケーションに無制限のアクセス許可セットが付与されます。 その他のホストまたはサンドボックスでは、アプリケーションに対して制限付きのアクセス許可セットが付与されます。 アクセス許可セットはホストごとに異なる場合があるため、アプリケーションの設計時には、対象ホストで許可されているアクセス許可だけを使用するように注意する必要があります。  
   
  共通言語ランタイムに対応した有効なアプリケーションを作成するためには、次に示すコード アクセス セキュリティの概念を把握しておく必要があります。  
   
--   **タイプ セーフ コード**: タイプ セーフ コードとは、適切に定義された、許可されている方法でのみ、型にアクセスするコードのことです。 たとえば、有効なオブジェクト参照を例として考えると、タイプ セーフ コードは、実際のフィールド メンバーに対応する固定オフセットが指すメモリ位置にアクセスできます。 オブジェクトがパブリックに公開するフィールドに属しているメモリの範囲外の、任意のオフセットが指すメモリ位置にアクセスするコードは、タイプ セーフとは言えません。 コードがコード アクセス セキュリティを活用できるようにするには、検証可能なタイプ セーフ コードを生成するコンパイラを使用する必要があります。 詳細については、このトピックで後述する「[検証可能なタイプ セーフ コードの作成](#typesafe_code)」を参照してください。  
+-   **タイプ セーフ コード**: タイプ セーフなコードは、適切に定義された、許可されている場合にのみ型にアクセスするコードです。 たとえば、有効なオブジェクト参照を例として考えると、タイプ セーフ コードは、実際のフィールド メンバーに対応する固定オフセットが指すメモリ位置にアクセスできます。 オブジェクトがパブリックに公開するフィールドに属しているメモリの範囲外の、任意のオフセットが指すメモリ位置にアクセスするコードは、タイプ セーフとは言えません。 コードがコード アクセス セキュリティを活用できるようにするには、検証可能なタイプ セーフ コードを生成するコンパイラを使用する必要があります。 詳細については、次を参照してください。、[検証可能なタイプ セーフ コードの記述](#typesafe_code)このトピックで後述します。  
   
--   **強制構文と宣言構文**: 共通言語ランタイムに対応したコードは、アクセス許可を要求したり、呼び出し元が指定のアクセス許可を持つことを確認要求したり、特定のセキュリティ設定をオーバーライドしたりする \(十分な権限がある場合\) ことにより、セキュリティ システムと対話できます。 .NET Framework セキュリティ システムとプログラムによって対話するには、宣言構文および強制構文という 2 つの形式の構文を使用します。 宣言的な呼び出しは属性を使用して実行され、強制的な呼び出しはコード内のクラスの新しいインスタンスを使用して実行されます。 呼び出しには、強制的にだけ実行できるもの、宣言的にだけ実行できるもの、およびどちらの方法でも実行できるものがあります。  
+-   **強制構文と宣言構文**: 共通言語ランタイムを対象とするコードは、アクセス許可の要求によって呼び出し元が指定のアクセス許可をまた要求が高いと、特定のセキュリティ設定 (をオーバーライドで、セキュリティ システムと対話できます十分な権限を与える)。 .NET Framework セキュリティ システムとプログラムによって対話するには、宣言構文および強制構文という 2 つの形式の構文を使用します。 宣言的な呼び出しは属性を使用して実行され、強制的な呼び出しはコード内のクラスの新しいインスタンスを使用して実行されます。 呼び出しには、強制的にだけ実行できるもの、宣言的にだけ実行できるもの、およびどちらの方法でも実行できるものがあります。  
   
--   **安全なクラス ライブラリ**: 安全なライブラリとは、セキュリティ確認要求を使用して、そのライブラリの呼び出し元がライブラリにより公開されるリソースへのアクセス許可を持つことを確認するクラス ライブラリのことです。 たとえば、安全なクラス ライブラリにファイルを作成するメソッドがある場合、このメソッドにアクセスする呼び出し元には、ファイルを作成するためのアクセス許可が必要です。 .NET Framework は、安全なクラス ライブラリで構成されています。 作成するコードで使用するすべてのライブラリについて、アクセスするために必要なアクセス許可を確認する必要があります。 詳しくは、このトピックで後述する「[安全なクラス ライブラリの使用](#secure_library)」というセクションをご覧ください。  
+-   **クラス ライブラリをセキュリティで保護された**: 安全なクラス ライブラリでは、セキュリティ確認要求を使用して、ライブラリの呼び出し元がライブラリにより公開されるリソースにアクセスする権限を持っていることを確認してください。 たとえば、安全なクラス ライブラリにファイルを作成するメソッドがある場合、このメソッドにアクセスする呼び出し元には、ファイルを作成するためのアクセス許可が必要です。 .NET Framework は、安全なクラス ライブラリで構成されています。 作成するコードで使用するすべてのライブラリについて、アクセスするために必要なアクセス許可を確認する必要があります。 詳細については、次を参照してください。、[安全なクラス ライブラリを使用して](#secure_library)このトピックで後述します。  
   
--   **透過的なコード**: [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、必要なアクセス許可を確認するだけでなく、コードをセキュリティ透過 コードとして実行する必要があるかどうかも確認する必要があります。 セキュリティ透過コードは、セキュリティが重要な型またはメンバーを呼び出すことができません。 この規則は、完全に信頼されているアプリケーションと、部分的に信頼されたアプリケーションの両方に対して適用されます。 詳細については、「[透過的セキュリティ コード](../../../docs/framework/misc/security-transparent-code.md)」を参照してください。  
-  
-> [!CAUTION]
->  コード アクセス セキュリティと部分的に信頼できるコード  
->   
->  .NET Framework には、コード アクセス セキュリティ \(CAS\) と呼ばれる、同一アプリケーションで実行される各種コードにさまざまな信頼レベルを強制的に適用するメカニズムが備わっています。  .NET Framework におけるコード アクセス セキュリティを、部分的に信頼できるコード、特に発生元の不明なコードのセキュリティ境界として使用しないでください。 発生元の不明なコードの読み込みと実行に関しては、他のセキュリティ対策を適切に導入することなく行わないようにしてください。  
->   
->  このポリシーは .NET Framework のすべてのバージョンに適用されますが、Silverlight に含まれる .NET Framework には適用されません。  
+-   **透過的なコード**: から始まる、 [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]、に加えて、特定のアクセス許可を識別する必要がありますも決定するかどうか、セキュリティ透過的なコードを実行する必要があります。 セキュリティ透過コードは、セキュリティが重要な型またはメンバーを呼び出すことができません。 この規則は、完全に信頼されているアプリケーションと、部分的に信頼されたアプリケーションの両方に対して適用されます。 詳細については、次を参照してください。[セキュリティ透過的なコード](../../../docs/framework/misc/security-transparent-code.md)です。  
   
 <a name="typesafe_code"></a>   
-## 検証可能なタイプ セーフ コードの作成  
- JIT \(Just\-in\-time\) コンパイルでは、検証プロセスが実行され、コードが調べられてタイプ セーフかどうかが判断されます。 検証の結果タイプ セーフであることが証明されたコードは、*検証可能なタイプ セーフ コード*と呼ばれます。 検証プロセスやコンパイラに制約があるために検証可能なタイプ セーフ コードではなくても、コードがタイプ セーフである場合があります。 タイプ セーフではない言語もあり、Microsoft Visual C\+\+ などの一部の言語コンパイラは、検証可能なタイプ セーフ マネージ コードを生成できません。 使用している言語コンパイラが検証可能なタイプ セーフ コードを生成するかどうかを確認するには、そのコンパイラのドキュメントを参照してください。 特定の言語構成要素を使用しない場合にだけ検証可能なタイプ セーフ コードを生成する言語コンパイラを使用する場合は、[PEVerify ツール](../../../docs/framework/tools/peverify-exe-peverify-tool.md)を使用して、作成したコードが検証可能なタイプ セーフ コードかどうかを確認できます。  
+## <a name="writing-verifiably-type-safe-code"></a>検証可能なタイプ セーフ コードの作成  
+ JIT (Just-in-time) コンパイルでは、検証プロセスが実行され、コードが調べられてタイプ セーフかどうかが判断されます。 タイプ セーフであることを確認中には、実証済みのコードが呼び出された*タイプ セーフ コード*です。 検証プロセスやコンパイラに制約があるために検証可能なタイプ セーフ コードではなくても、コードがタイプ セーフである場合があります。 タイプ セーフではない言語もあり、Microsoft Visual C++ などの一部の言語コンパイラは、検証可能なタイプ セーフ マネージ コードを生成できません。 使用している言語コンパイラが検証可能なタイプ セーフ コードを生成するかどうかを確認するには、そのコンパイラのドキュメントを参照してください。 特定の言語構造体を使用しない場合にのみ、タイプ セーフ コードを生成する言語コンパイラを使用する場合は、使用する可能性がある、 [PEVerify ツール](../../../docs/framework/tools/peverify-exe-peverify-tool.md)コードがタイプ セーフであるかどうかを判別します。  
   
  検証可能なタイプ セーフ コード以外のコードは、セキュリティ ポリシーによって検証を省略することを許可されている場合にだけ、実行を試行できます。 ただし、タイプ セーフは、アセンブリを分離するためのランタイムの機構において重要な要素であるため、コードがタイプ セーフの規則に違反している場合には、信頼度の高いセキュリティを確保することはできません。 既定では、タイプ セーフでないコードは、その発生元がローカル コンピューターである場合にだけ実行できます。 したがって、モバイル コードはタイプ セーフであることが必要です。  
   
 <a name="secure_library"></a>   
-## 安全なクラス ライブラリの使用  
+## <a name="using-secure-class-libraries"></a>安全なクラス ライブラリの使用  
  作成したコードが、クラス ライブラリにより要求されるアクセス許可を要求し、そのアクセス許可を与えられた場合には、そのコードからライブラリにアクセスでき、ライブラリが公開するリソースは承認されていないアクセスから保護されます。 コードが適切なアクセス許可を持っていない場合には、そのコードはクラス ライブラリにアクセスできないため、悪意のあるコードがそのコードを利用して保護されたリソースに間接的にアクセスすることもできません。 作成したコードを呼び出す他のコードも、ライブラリへのアクセス許可が必要になります。 アクセス許可がない場合は、作成したコードの実行も制限されます。  
   
  コード アクセス セキュリティを使用しても開発者によるコードの記述エラーがなくなるわけではありません。 ただし、保護されているリソースにアクセスするときにアプリケーションが安全なクラス ライブラリを使用していれば、クラス ライブラリでセキュリティの問題が発生する可能性がないかどうかが詳しく調べられるため、アプリケーション コードに対するセキュリティ リスクも軽減されます。  
   
-## 宣言セキュリティ  
- 宣言セキュリティ構文は、[属性](../../../docs/standard/attributes/index.md)を使用して、コードの[メタデータ](../../../docs/standard/metadata-and-self-describing-components.md)にセキュリティ情報を配置します。 属性は、アセンブリ、クラス、またはメンバーの各レベルに適用でき、使用する要求、確認要求、オーバーライドの種類を示します。 要求は、共通言語ランタイムに対応するアプリケーションが、そのアプリケーションに必要なアクセス許可または必要ではないアクセス許可をランタイムのセキュリティ システムに通知するために使用します。 確認要求およびオーバーライドは、呼び出し元からリソースを保護できるようにしたり、既定のセキュリティ動作をオーバーライドしたりするために、ライブラリで使用されます。  
+## <a name="declarative-security"></a>宣言セキュリティ  
+ 宣言セキュリティ構文を使用して[属性](../../../docs/standard/attributes/index.md)にセキュリティ情報を配置する、[メタデータ](../../../docs/standard/metadata-and-self-describing-components.md)コードのです。 属性は、アセンブリ、クラス、またはメンバーの各レベルに適用でき、使用する要求、確認要求、オーバーライドの種類を示します。 要求は、共通言語ランタイムに対応するアプリケーションが、そのアプリケーションに必要なアクセス許可または必要ではないアクセス許可をランタイムのセキュリティ システムに通知するために使用します。 確認要求およびオーバーライドは、呼び出し元からリソースを保護できるようにしたり、既定のセキュリティ動作をオーバーライドしたりするために、ライブラリで使用されます。  
   
 > [!NOTE]
->  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] では、.NET Framework のセキュリティ モデルと用語に重要な変更が加えられています。 これらの変更について詳しくは、「[セキュリティの変更点](../../../docs/framework/security/security-changes.md)」をご覧ください。  
+>  [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]では、.NET Framework のセキュリティ モデルと用語に重要な変更が加えられています。 これらの変更の詳細については、次を参照してください。[セキュリティの変更点](../../../docs/framework/security/security-changes.md)です。  
   
  宣言セキュリティ呼び出しを行う前に、アクセス許可オブジェクトの状態データを、必要な特定形式のアクセス許可を表すように初期化する必要があります。 組み込みの各アクセス許可は、開発者が実行するセキュリティ操作の種類を示す <xref:System.Security.Permissions.SecurityAction> 列挙として渡される属性を持っています。 しかし、アクセス許可は、それぞれに固有のパラメーターも受け入れます。  
   
- コードの呼び出し元がカスタム アクセス許可 `MyPermission` を持つことを要求する宣言構文の例を次のコード片に示します。 このアクセス許可は架空のカスタム許可であり、.NET Framework には実在しません。 この例では、宣言呼び出しはクラス定義の直前に配置されており、このカスタム アクセス許可がクラス レベルで適用されることを示しています。 属性には **SecurityAction.Demand** 構造体が渡され、このコードを実行するには、呼び出し元にこのアクセス許可が与えられている必要があることを指定しています。  
+ コードの呼び出し元がカスタム アクセス許可 `MyPermission` を持つことを要求する宣言構文の例を次のコード片に示します。 このアクセス許可は架空のカスタム許可であり、.NET Framework には実在しません。 この例では、宣言呼び出しはクラス定義の直前に配置されており、このカスタム アクセス許可がクラス レベルで適用されることを示しています。 属性が渡される、 **SecurityAction.Demand**呼び出し元を実行するためにこのアクセス許可を持つ必要がありますを指定する構造体。  
   
 ```vb  
-<MyPermission(SecurityAction.Demand, Unrestricted = True)> Public Class MyClass1 Public Sub New() 'The constructor is protected by the security call. End Sub Public Sub MyMethod() 'This method is protected by the security call. End Sub Public Sub YourMethod() 'This method is protected by the security call. End Sub End Class  
+<MyPermission(SecurityAction.Demand, Unrestricted = True)> Public Class MyClass1  
   
+   Public Sub New()  
+      'The constructor is protected by the security call.  
+   End Sub  
+  
+   Public Sub MyMethod()  
+      'This method is protected by the security call.  
+   End Sub  
+  
+   Public Sub YourMethod()  
+      'This method is protected by the security call.  
+   End Sub  
+End Class  
 ```  
   
 ```csharp  
-[MyPermission(SecurityAction.Demand, Unrestricted = true)] public class MyClass { public MyClass() { //The constructor is protected by the security call. } public void MyMethod() { //This method is protected by the security call. } public void YourMethod() { //This method is protected by the security call. } }  
+[MyPermission(SecurityAction.Demand, Unrestricted = true)]  
+public class MyClass  
+{  
+   public MyClass()  
+   {  
+      //The constructor is protected by the security call.  
+   }  
+  
+   public void MyMethod()  
+   {  
+      //This method is protected by the security call.  
+   }  
+  
+   public void YourMethod()  
+   {  
+      //This method is protected by the security call.  
+   }  
+}  
 ```  
   
-## 強制セキュリティ  
+## <a name="imperative-security"></a>強制セキュリティ  
  強制セキュリティ構文は、呼び出す対象のアクセス許可オブジェクトの新しいインスタンスを作成することによって、セキュリティ呼び出しを実行します。 強制構文を使用して確認要求とオーバーライドは実行できますが、要求は実行できません。  
   
- セキュリティ呼び出しを行う前に、アクセス許可オブジェクトの状態データを、必要な特定形式のアクセス許可を表すように初期化する必要があります。 たとえば <xref:System.Security.Permissions.FileIOPermission> オブジェクトを作成するときに、コンストラクターを使用して、すべてのファイルに対する無制限のアクセス権、またはファイルへのアクセス禁止を表すように **FileIOPermission** オブジェクトを初期化できます。 または、別の **FileIOPermission**  オブジェクトを使用して、このオブジェクトで表すアクセス権の種類 \(読み込み、追記、または書き込み\) と、このオブジェクトで保護するファイルを示すパラメーターを渡すこともできます。  
+ セキュリティ呼び出しを行う前に、アクセス許可オブジェクトの状態データを、必要な特定形式のアクセス許可を表すように初期化する必要があります。 たとえば、作成するときに、<xref:System.Security.Permissions.FileIOPermission>オブジェクトを初期化するために、コンス トラクターを使用することができます、 **FileIOPermission**オブジェクトを表すように無制限のアクセス権をすべてのファイルまたはファイルにアクセスできません。 または、異なるを使用する**FileIOPermission**表します (つまり、読み取り、追加、または書き込み) と、オブジェクトを保護するファイルに必要なアクセスの種類を指定するパラメーター オブジェクトを渡して、オブジェクトです。  
   
- 強制セキュリティ構文は、単一のセキュリティ オブジェクトを呼び出す他に、アクセス許可セット内のアクセス許可のグループを初期化するためにも使用できます。 たとえば、1 つのメソッドで複数のアクセス許可に対して[アサート](../../../docs/framework/misc/using-the-assert-method.md)呼び出しを確実に実行するためには、このテクニックが唯一の方法となります。 それには、<xref:System.Security.PermissionSet> クラスと <xref:System.Security.NamedPermissionSet> クラスを使用して、アクセス許可のグループを作成し、適切なメソッドを呼び出して必要なセキュリティ呼び出しを実行します。  
+ 強制セキュリティ構文は、単一のセキュリティ オブジェクトを呼び出す他に、アクセス許可セット内のアクセス許可のグループを初期化するためにも使用できます。 この手法を確実に実行する唯一の方法は、たとえば、[アサート](../../../docs/framework/misc/using-the-assert-method.md)で 1 つのメソッドで複数のアクセス許可を呼び出します。 それには、<xref:System.Security.PermissionSet> クラスと <xref:System.Security.NamedPermissionSet> クラスを使用して、アクセス許可のグループを作成し、適切なメソッドを呼び出して必要なセキュリティ呼び出しを実行します。  
   
  強制構文を使用して確認要求とオーバーライドは実行できますが、要求は実行できません。 アクセス許可の状態を初期化するために必要な情報を実行時にしか取得できない場合には、確認要求やオーバーライドを実行するときに、宣言構文の代わりに強制構文を使用します。 たとえば、呼び出し元に特定のファイルを読み取るためのアクセス許可が必要である場合に、読み取り対象のファイルの名前が実行時までわからないときには、強制確認要求を使用します。 また、条件を適用するかどうか、およびテストの結果に基づいてセキュリティ確認要求を実行するかどうかを実行時に決定する必要がある場合にも、宣言チェックの代わりに強制チェックを使用できます。  
   
- コードの呼び出し元がカスタム アクセス許可 `MyPermission` を持つことを要求する強制構文の例を次のコード片に示します。 このアクセス許可は架空のカスタム許可であり、.NET Framework には実在しません。`MyPermision` の新しいインスタンスが `MyMethod` で生成され、このメソッドだけをセキュリティ呼び出しで保護します。  
+ コードの呼び出し元がカスタム アクセス許可 `MyPermission` を持つことを要求する強制構文の例を次のコード片に示します。 このアクセス許可は架空のカスタム許可であり、.NET Framework には実在しません。 `MyPermision` の新しいインスタンスが `MyMethod` で生成され、このメソッドだけをセキュリティ呼び出しで保護します。  
   
 ```vb  
-Public Class MyClass1 Public Sub New() End Sub Public Sub MyMethod() 'MyPermission is demanded using imperative syntax. Dim Perm As New MyPermission() Perm.Demand() 'This method is protected by the security call. End Sub Public Sub YourMethod() 'YourMethod 'This method is not protected by the security call. End Sub End Class  
+Public Class MyClass1  
   
+   Public Sub New()  
+  
+   End Sub  
+  
+   Public Sub MyMethod()  
+      'MyPermission is demanded using imperative syntax.  
+      Dim Perm As New MyPermission()  
+      Perm.Demand()  
+      'This method is protected by the security call.  
+   End Sub  
+  
+   Public Sub YourMethod()  
+      'YourMethod 'This method is not protected by the security call.  
+   End Sub  
+End Class  
 ```  
   
 ```csharp  
-public class MyClass { public MyClass(){ } public void MyMethod() { //MyPermission is demanded using imperative syntax. MyPermission Perm = new MyPermission(); Perm.Demand(); //This method is protected by the security call. } public void YourMethod() { //This method is not protected by the security call. } }  
+public class MyClass {  
+   public MyClass(){  
+  
+   }  
+  
+   public void MyMethod() {  
+       //MyPermission is demanded using imperative syntax.  
+       MyPermission Perm = new MyPermission();  
+       Perm.Demand();  
+       //This method is protected by the security call.  
+   }  
+  
+   public void YourMethod() {  
+       //This method is not protected by the security call.  
+   }  
+}  
 ```  
   
-## マネージ ラッパー クラスの使用  
- ほとんどのアプリケーションおよびコンポーネント \(安全なライブラリ以外\) では、アンマネージ コードを直接呼び出さないでください。 直接呼び出すべきではないいくつかの理由があります。 コードによってアンマネージ コードが直接呼び出されると、多くの状況では実行が許可されません。コードでは、ネイティブ コードを呼び出すための高い信頼レベルが付与されていなければならないためです。 ポリシーに変更が加えられ、こうしたアプリケーションの実行が許可される場合、アプリケーションではほとんどすべての操作を自由に実行できるようになり、システムのセキュリティがかなり脆弱になる恐れがあります。  
+## <a name="using-managed-wrapper-classes"></a>マネージ ラッパー クラスの使用  
+ ほとんどのアプリケーションおよびコンポーネント (安全なライブラリ以外) では、アンマネージ コードを直接呼び出さないでください。 直接呼び出すべきではないいくつかの理由があります。 コードによってアンマネージ コードが直接呼び出されると、多くの状況では実行が許可されません。コードでは、ネイティブ コードを呼び出すための高い信頼レベルが付与されていなければならないためです。 ポリシーに変更が加えられ、こうしたアプリケーションの実行が許可される場合、アプリケーションではほとんどすべての操作を自由に実行できるようになり、システムのセキュリティがかなり脆弱になる恐れがあります。  
   
- さらに、アンマネージ コードにアクセスできるアクセス許可があるコードは、アンマネージ API を呼び出すことによってほとんどすべての操作を実行できるようになる可能性もあります。 たとえば、アンマネージ コードを呼び出すアクセス許可があるコードがファイルにアクセスするには、<xref:System.Security.Permissions.FileIOPermission> は不要です。アンマネージ \(Win32\) ファイル API を直接呼び出すだけで、**FileIOPermission** を要求するマネージ ファイル API を迂回できます。 マネージ コードにアンマネージ コードを呼び出すアクセス許可があり、アンマネージ コードを実際に直接呼び出す場合、セキュリティ システムでは、ランタイムがアンマネージ コードに確実な制限を課すことができないため、セキュリティ制限の適用に信頼性が欠けることになります。  
+ さらに、アンマネージ コードにアクセスできるアクセス許可があるコードは、アンマネージ API を呼び出すことによってほとんどすべての操作を実行できるようになる可能性もあります。 たとえば、アンマネージ コードを呼び出すアクセス許可のあるコードは必要ありません<xref:System.Security.Permissions.FileIOPermission>; ファイルにアクセスするだけ呼び出すことができますアンマネージ (Win32) ファイル API を直接管理されているファイルを必要とする API をバイパスする**FileIOPermission**です。 マネージ コードにアンマネージ コードを呼び出すアクセス許可があり、アンマネージ コードを実際に直接呼び出す場合、セキュリティ システムでは、ランタイムがアンマネージ コードに確実な制限を課すことができないため、セキュリティ制限の適用に信頼性が欠けることになります。  
   
- アンマネージ コードにアクセスすることが必要な操作をアプリケーションで実行する場合、必要な機能 をラップする信頼できるマネージ クラス \(存在する場合\) を使用してそうした操作をアプリケーションで実行しなければなりません。 安全なクラス ライブラリ内のラッパー クラスが既に存在する場合には、独自にラッパー クラスを作成しないでください。 ラッパー クラスでは、アンマネージ コードへの呼び出しが許可されるように高度な信頼が付与される必要があります。呼び出し元に適切なアクセス許可があることを確認要求する責任はラッパー クラスにあります。 ラッパー クラスを使用する場合、作成したコードで必要となるのは、ラッパー クラスが確認要求するアクセス許可を要求して付与することのみです。  
+ アンマネージ コードにアクセスすることが必要な操作をアプリケーションで実行する場合、必要な機能 をラップする信頼できるマネージ クラス (存在する場合) を使用してそうした操作をアプリケーションで実行しなければなりません。 安全なクラス ライブラリ内のラッパー クラスが既に存在する場合には、独自にラッパー クラスを作成しないでください。 ラッパー クラスでは、アンマネージ コードへの呼び出しが許可されるように高度な信頼が付与される必要があります。呼び出し元に適切なアクセス許可があることを確認要求する責任はラッパー クラスにあります。 ラッパー クラスを使用する場合、作成したコードで必要となるのは、ラッパー クラスが確認要求するアクセス許可を要求して付与することのみです。  
   
-## 参照  
- <xref:System.Security.PermissionSet>   
- <xref:System.Security.Permissions.FileIOPermission>   
- <xref:System.Security.NamedPermissionSet>   
- <xref:System.Security.Permissions.SecurityAction>   
- [Audio Property \(My.Computer Object\)](../../../docs/framework/misc/using-the-assert-method.md)   
- [コード アクセス セキュリティ](../../../docs/framework/misc/code-access-security.md)   
- [Code Access Security Basics](../../../docs/framework/misc/code-access-security-basics.md)   
- [属性](../../../docs/standard/attributes/index.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Security.PermissionSet>  
+ <xref:System.Security.Permissions.FileIOPermission>  
+ <xref:System.Security.NamedPermissionSet>  
+ <xref:System.Security.Permissions.SecurityAction>  
+ [Assert](../../../docs/framework/misc/using-the-assert-method.md)  
+ [コード アクセス セキュリティ](../../../docs/framework/misc/code-access-security.md)  
+ [コード アクセス セキュリティの基礎](../../../docs/framework/misc/code-access-security-basics.md)  
+ [属性](../../../docs/standard/attributes/index.md)  
  [メタデータと自己言及的なコンポーネント](../../../docs/standard/metadata-and-self-describing-components.md)

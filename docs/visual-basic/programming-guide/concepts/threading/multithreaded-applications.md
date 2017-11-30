@@ -1,96 +1,88 @@
 ---
-title: "マルチ スレッド アプリケーション (Visual Basic) |Microsoft ドキュメント"
+title: "マルチ スレッド アプリケーション (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 02b0444b-2e68-4f2c-bc28-28c046004017
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5bde7f49a2f2bc8a2e6c1eeab3722428b8a37a95
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 19a4fe40e27a9edf8515e2734914aaf02d5e48b2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="multithreaded-applications-visual-basic"></a>マルチ スレッド アプリケーション (Visual Basic)
-Visual basic では、同時に複数のタスクを実行するアプリケーションを作成できます。 その他のタスクを停止させる可能性のあるタスク別のスレッドでと呼ばれるプロセスとの実行のできます*マルチ スレッド*または*フリー スレッド*します。  
+Visual Basic では、同時に複数のタスクを実行するアプリケーションを作成できます。 他のタスクを止める可能性があるタスクは個別のスレッドで実行できます。これは*マルチスレッド*や*フリー スレッド*と呼ばれているプロセスです。  
   
- マルチ スレッドを使用、プロセッサ集中型のタスクを個別のスレッドで実行すると、ユーザー インターフェイスがアクティブに保たれるためのユーザーに応答性を向上するアプリケーション。 マルチ スレッドも役立ちます、スケーラブルなアプリケーションを作成するときにワークロードが増加すると、スレッドを追加できるためです。  
+ マルチスレッドを利用するアプリケーションはユーザーの入力に対する応答性が良くなります。プロセッサを集中的に利用するタスクが個別のスレッドで実行されるため、ユーザー インターフェイスの動作が妨げられません。 マルチスレッドはまた、スケーラブルなアプリケーションの開発にも便利です。ワークロードが増えたとき、スレッドを追加できるからです。  
   
-## <a name="creating-and-using-threads"></a>作成して、スレッドを使用します。  
- アプリケーションのスレッドの動作をより詳細に制御する場合は、できるスレッドは、自分で管理します。 ただし、正しいマルチ スレッド アプリケーションを作成することは困難を実現します。 アプリケーションの応答を停止または競合状態によって発生する一時的なエラーが発生する可能性があります。 詳細については、次を参照してください。[スレッド セーフなコンポーネント](http://msdn.microsoft.com/library/4f7c7377-a782-4bd0-aaa3-9db8c12945ee)します。  
+## <a name="creating-and-using-threads"></a>スレッドを作成し、使用する  
+ アプリケーションのスレッドの動作をさらに細かく制御するには、スレッドを自分で管理します。 しかしながら、正しく機能するマルチスレッド アプリケーションは記述が難しいことを知ってください。競合状態になり、応答が停止したり、一時的なエラーが発生したりすることがあります。 詳しくは、「[スレッドセーフ コンポーネント](http://msdn.microsoft.com/library/4f7c7377-a782-4bd0-aaa3-9db8c12945ee)」を参照してください。  
   
- 型の変数を宣言することで、新しいスレッドを作成する<xref:System.Threading.Thread>プロシージャまたは新しいスレッド上で実行するメソッドの名前を指定するコンス トラクターを呼び出すとします</xref:System.Threading.Thread>。 次にコード例を示します。  
+ 新しいスレッドを作成します。<xref:System.Threading.Thread> 型の変数を宣言し、コンストラクターを呼び出し、新しいスレッドで実行するプロシージャまたはメソッドの名前を指定します。 次にコード例を示します。  
   
 ```vb  
 Dim newThread As New System.Threading.Thread(AddressOf AMethod)  
 ```  
   
-### <a name="starting-and-stopping-threads"></a>開始と停止のスレッド  
- 新しいスレッドの実行を開始するを使用して、<xref:System.Threading.Thread.Start%2A>メソッドを次のコードに示すようにします</xref:System.Threading.Thread.Start%2A>。  
+### <a name="starting-and-stopping-threads"></a>スレッドの開始と停止  
+ 新しいスレッドの実行を開始するには、次のコードにあるように、<xref:System.Threading.Thread.Start%2A> メソッドを使用します。  
   
 ```vb  
 newThread.Start()  
 ```  
   
- スレッドの実行を停止するを使用して、<xref:System.Threading.Thread.Abort%2A>メソッドを次のコードに示すようにします</xref:System.Threading.Thread.Abort%2A>。  
+ スレッドの実行を停止するには、次のコードにあるように、<xref:System.Threading.Thread.Abort%2A> メソッドを使用します。  
   
 ```vb  
 newThread.Abort()  
 ```  
   
- 開始ほかのスレッドが停止するも一時停止することのスレッドを呼び出して、<xref:System.Threading.Thread.Sleep%2A>または<xref:System.Threading.Thread.Suspend%2A>メソッドを使用して中断されたスレッドを再開、<xref:System.Threading.Thread.Resume%2A>メソッド、および<xref:System.Threading.Thread.Abort%2A>メソッド</xref:System.Threading.Thread.Abort%2A>を使用してスレッドを破棄</xref:System.Threading.Thread.Resume%2A></xref:System.Threading.Thread.Suspend%2A></xref:System.Threading.Thread.Sleep%2A>  
+ スレッドの開始と停止に加え、スレッドを中断することもできます。<xref:System.Threading.Thread.Sleep%2A> または <xref:System.Threading.Thread.Suspend%2A> を呼び出します。中断しているスレッドを再開するには、<xref:System.Threading.Thread.Resume%2A> メソッドを使用します。スレッドを破棄するには <xref:System.Threading.Thread.Abort%2A> メソッドを使用します。  
   
-### <a name="thread-methods"></a>スレッドのメソッド  
- 次の表は、個別のスレッドを制御に使用できるメソッドの一部を示します。  
+### <a name="thread-methods"></a>スレッド メソッド  
+ 次の表は、個々のスレッドを制御できるメソッドをまとめたものです。  
   
 |メソッド|操作|  
 |------------|------------|  
-|<xref:System.Threading.Thread.Start%2A></xref:System.Threading.Thread.Start%2A>|スレッド実行を開始します。|  
-|<xref:System.Threading.Thread.Sleep%2A></xref:System.Threading.Thread.Sleep%2A>|スレッドを指定した時間一時停止します。|  
-|<xref:System.Threading.Thread.Suspend%2A></xref:System.Threading.Thread.Suspend%2A>|セーフ ポイントに達すると、スレッドを一時停止します。|  
-|<xref:System.Threading.Thread.Abort%2A></xref:System.Threading.Thread.Abort%2A>|セーフ ポイントに達すると、スレッドを停止します。|  
-|<xref:System.Threading.Thread.Resume%2A></xref:System.Threading.Thread.Resume%2A>|中断されたスレッドを再開します。|  
-|<xref:System.Threading.Thread.Join%2A></xref:System.Threading.Thread.Join%2A>|によって現在のスレッドが別のスレッドが完了するまで待機します。 タイムアウト値を持つ場合、このメソッドが戻る`True`割り当てられた時間内に、スレッドが終了した場合。|  
+|<xref:System.Threading.Thread.Start%2A>|スレッドの実行を開始します。|  
+|<xref:System.Threading.Thread.Sleep%2A>|指定した時間だけスレッドを一時停止します。|  
+|<xref:System.Threading.Thread.Suspend%2A>|セーフ ポイントに到達するとスレッドを一時停止します。|  
+|<xref:System.Threading.Thread.Abort%2A>|セーフ ポイントに到達するとスレッドを停止します。|  
+|<xref:System.Threading.Thread.Resume%2A>|一時停止になっているスレッドを再開します。|  
+|<xref:System.Threading.Thread.Join%2A>|別のスレッドが完了するまで現在のスレッドに待機させます。 タイムアウト値と併用すると、このメソッドは、割り当てられた時間でスレッドが完了した場合、`True` を返します。|  
   
 ### <a name="safe-points"></a>セーフ ポイント  
- これらのメソッドのほとんどは見ればわかるので、その概念の*セーフ ポイント*に新しい可能性があります。 セーフ ポイントとは、安全では、共通言語ランタイムを自動実行するコード内の場所*ガベージ コレクション*、使用されていない変数を解放して、メモリを再利用のプロセスです。 呼び出すと、<xref:System.Threading.Thread.Abort%2A>または<xref:System.Threading.Thread.Suspend%2A>、共通言語ランタイムのスレッドのメソッドは、コードを分析し、スレッドの実行を停止するための適切な場所の場所を決定します</xref:System.Threading.Thread.Suspend%2A></xref:System.Threading.Thread.Abort%2A>。  
+ 以上のメソッドのほとんどは名前を見ればその機能が明らかですが、*セーフ ポイント*は初めて耳にする概念かもしれません。 セーフ ポイントとは、共通言語ランタイムが自動*ガベージ コレクション*を安全に実行できる (コード内の) 場所です。ガベージ コレクションは、未使用の変数とメモリを解放するプロセスです。 スレッドの <xref:System.Threading.Thread.Abort%2A> または <xref:System.Threading.Thread.Suspend%2A> メソッドを呼び出すと、共通言語ランタイムはコードを分析し、スレッドが実行を停止する場所を決定します。  
   
 ### <a name="thread-properties"></a>スレッド プロパティ  
- スレッドには、次の表に示すようにいくつかの便利なプロパティが用意されています。  
+ スレッドには、便利なプロパティもあります。次の表をご覧ください。  
   
 |プロパティ|値|  
 |--------------|-----------|  
-|<xref:System.Threading.Thread.IsAlive%2A></xref:System.Threading.Thread.IsAlive%2A>|値を含む`True`スレッドがアクティブな場合です。|  
-|<xref:System.Threading.Thread.IsBackground%2A></xref:System.Threading.Thread.IsBackground%2A>|取得またはスレッドをバック グラウンド スレッドをする必要がありますかを示すブール値を設定します。 バック グラウンド スレッド フォア グラウンド スレッドと似ていますが、バック グラウンド スレッドが停止するプロセスを妨げられません。 共通言語ランタイムが呼び出すことによって、プロセスを終了するプロセスに属するすべてのフォア グラウンド スレッドが停止されると、<xref:System.Threading.Thread.Abort%2A>生きているバック グラウンド スレッド上のメソッドです</xref:System.Threading.Thread.Abort%2A>。|  
-|<xref:System.Threading.Thread.Name%2A></xref:System.Threading.Thread.Name%2A>|取得またはスレッドの名前を設定します。 最も頻繁をデバッグするときに、個別のスレッドを検出するために使用します。|  
-|<xref:System.Threading.Thread.Priority%2A></xref:System.Threading.Thread.Priority%2A>|取得またはスレッドのスケジューリング優先順位を付けるオペレーティング システムによって使用される値を設定します。|  
-|<xref:System.Threading.Thread.ThreadState%2A></xref:System.Threading.Thread.ThreadState%2A>|スレッドの状態または状態を記述する値が含まれています。|  
+|<xref:System.Threading.Thread.IsAlive%2A>|スレッドがアクティブな場合、値 `True` が含まれます。|  
+|<xref:System.Threading.Thread.IsBackground%2A>|スレッドがバックグラウンド スレッドかどうか、あるいはバックグラウンド スレッドにする必要があるかどうかを示すブール値を取得または設定します。 バックグラウンド スレッドはフォアグラウンド スレッドに似ていますが、プロセスの停止を阻止しません。 あるプロセスに属するフォアグラウンド スレッドがすべて停止すると、共通言語ランタイムは、アライブ状態のバックグラウンド スレッドで <xref:System.Threading.Thread.Abort%2A> メソッドを呼び出し、プロセスを終了します。|  
+|<xref:System.Threading.Thread.Name%2A>|スレッドの名前を取得または設定します。 デバッグ時、個々のスレッドを検出するために頻繁に使用されます。|  
+|<xref:System.Threading.Thread.Priority%2A>|オペレーティング システムがスレッド スケジュールに優先順位を設定するために使用する値を取得または設定します。|  
+|<xref:System.Threading.Thread.ThreadState%2A>|スレッドの状態を説明する値が含まれます。|  
   
 ## <a name="thread-priorities"></a>スレッドの優先順位  
- すべてのスレッドでは、実行する必要があるプロセッサ時間のスライスのサイズを決定する優先度プロパティがあります。 オペレーティング システムでは、優先度の高いスレッドに長いタイム スライスと優先度の低いスレッドに短いタイム スライスを割り当てます。 新しいスレッドが作成され、値の`Normal`、変更することが、<xref:System.Threading.Thread.Priority%2A>プロパティの任意の値を<xref:System.Threading.ThreadPriority>列挙体</xref:System.Threading.ThreadPriority></xref:System.Threading.Thread.Priority%2A>。  
+ すべてのスレッドに優先順位が与えられます。その優先順位により、スレッドが実行するプロセッサのタイム スライスの大小が決定されます。 オペレーティング システムは、優先順位の高いスレッドに長いタイム スライスを割り当て、優先順位の低いスレッドに短いタイム スライスを割り当てます。 新しいスレッドは値 `Normal` で作成されますが、<xref:System.Threading.Thread.Priority%2A> プロパティを <xref:System.Threading.ThreadPriority> 列挙の任意の値に変更できます。  
   
- 参照してください<xref:System.Threading.ThreadPriority>さまざまなスレッドの優先順位の詳細について</xref:System.Threading.ThreadPriority>。  
+ さまざまなスレッド優先順位の詳細については、「<xref:System.Threading.ThreadPriority>」を参照してください。  
   
 ## <a name="foreground-and-background-threads"></a>フォアグラウンド スレッドとバックグラウンド スレッド  
- A*フォア グラウンド スレッド*一方、無期限に実行される、*スレッドが、*最後のフォア グラウンド スレッドが停止するとすぐに停止します。 使用することができます、<xref:System.Threading.Thread.IsBackground%2A>確認またはスレッドのバック グラウンドの状態を変更するプロパティ</xref:System.Threading.Thread.IsBackground%2A>。  
+ *フォアグラウンド スレッド*は無期限で実行されます。*バックグラウンド スレッド*は、最後のフォアグラウンド スレッドが停止した直後に停止します。 <xref:System.Threading.Thread.IsBackground%2A> プロパティを利用し、スレッドのバックグラウンド状態を確認したり、変更したりできます。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Threading.Thread></xref:System.Threading.Thread>   
- [スレッドの同期 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-synchronization.md)   
- [パラメーターと戻り値のマルチ スレッド プロシージャ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md)   
+ <xref:System.Threading.Thread>  
+ [スレッドの同期 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-synchronization.md)  
+ [マルチスレッド プロシージャのパラメーターと戻り値 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/parameters-and-return-values-for-multithreaded-procedures.md)  
  [スレッド処理 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/index.md)

@@ -1,43 +1,24 @@
 ---
 title: "-target (C# コンパイラ オプション)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /target
-dev_langs:
-- CSharp
+f1_keywords: /target
 helpviewer_keywords:
 - target compiler options [C#]
 - /target compiler options [C#]
 - assemblies [C#], compiling
 - -target compiler options [C#]
 ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 4666f0305fc2de35c1fa594ccef3dd3a64c0f67c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 22dc86ce0c0a24681d05e54e5f1ba4f36295659a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="target-c-compiler-options"></a>/target (C# コンパイラ オプション)
 **/target** コンパイラ オプションは、次の 6 つの形式のいずれかで指定できます。  
@@ -60,7 +41,7 @@ ms.lasthandoff: 07/28/2017
  [/target:winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md)  
  .winmdobj 中間ファイルを作成する場合。  
   
- **/target:module** を指定しない限り、**/target** を使用すると、.NET Framework のアセンブリ マニフェストが出力ファイルに配置されます。 詳細については、「[共通言語ランタイムのアセンブリ](https://msdn.microsoft.com/library/k3677y81)」と「[共通の属性](http://msdn.microsoft.com/library/2f48a7ec-9683-4899-a1d2-a08be8fc558b)」を参照してください。  
+ **/target:module** を指定しない限り、**/target** を使用すると、.NET Framework のアセンブリ マニフェストが出力ファイルに配置されます。 詳細については、「[共通言語ランタイムのアセンブリ](../../../framework/app-domains/assemblies-in-the-common-language-runtime.md)」と「[共通の属性](../../programming-guide/concepts/attributes/common-attributes.md)」を参照してください。  
   
  アセンブリ マニフェストは、コンパイル中の最初の .exe 出力ファイルに配置されます。.exe 出力ファイルがない場合には、最初の DLL ファイルに配置されます。 たとえば、次のコマンド ラインでは、マニフェストは `1.exe` に配置されます。  
   
@@ -86,7 +67,6 @@ public class TestClass
  このコンパイラ オプションのプログラムによる設定の詳細については、「<xref:VSLangProj80.ProjectProperties3.OutputType%2A>」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)   
+ [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
+ [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)  
  [/subsystemversion (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/subsystemversion-compiler-option.md)
-

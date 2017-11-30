@@ -1,46 +1,44 @@
 ---
-title: "Unicode (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Unicode"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Unicode, external references"
-  - "Declare statement, marshaling strings"
-  - "Unicode keyword"
-  - "Unicode, marshaling strings"
+title: Unicode (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.Unicode
+helpviewer_keywords:
+- Unicode, external references
+- Declare statement [Visual Basic], marshaling strings
+- Unicode keyword [Visual Basic]
+- Unicode, marshaling strings
 ms.assetid: 0021d5ff-3209-444e-8497-420f3e6ee075
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 042908b8427de2de0de96bbb32df7be018bb915c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Unicode (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-宣言される外部プロシージャの名前に関係なく、すべての文字列を Unicode 値にマーシャリングするように指定します。  
+# <a name="unicode-visual-basic"></a>Unicode (Visual Basic)
+Visual Basic には、宣言されている外部プロシージャの名前に関係なく、Unicode の値にすべての文字列がマーシャ リングを指定します。  
   
- プロジェクト外部で定義されたプロシージャを呼び出す場合、Visual Basic コンパイラは、そのプロシージャを正しく呼び出すために必要な情報にアクセスできません。  この情報には、プロシージャの場所、識別方法、呼び出しシーケンスと戻り値のデータ型、使用する文字列の文字セットが含まれます。  [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md) は、外部プロシージャへの参照を作成し、この必須情報を提供します。  
+ プロジェクト外で定義されたプロシージャを呼び出すときに、Visual Basic コンパイラには、プロシージャを正しく呼び出すために必要があります情報へのアクセスはありません。 この情報には、プロシージャが配置されている、それを識別する方法、その呼び出しシーケンスおよび戻り値の型が含まれます。 および使用する文字列の文字セットします。 [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)外部プロシージャへの参照を作成し、この必要な情報を提供します。  
   
- `Declare` ステートメントの `charsetmodifier` 部は、外部プロシージャの呼び出し時に文字列をマーシャリングするための文字セットの情報を提供します。  また、Visual Basic が外部ファイルで外部プロシージャ名を検索する方法にも影響します。  `Unicode` 修飾子を指定すると、Visual Basic はすべての文字列を Unicode 値にマーシャリングし、プロシージャの検索中にプロシージャ名を変更しなくなります。  
+ `charsetmodifier`の一部、`Declare`ステートメントは、外部プロシージャの呼び出し中に文字列をマーシャ リングには、文字セットの情報を提供します。 Visual Basic が外部プロシージャ名を外部ファイルを検索する方法にも影響します。 `Unicode`修飾子は、Visual Basic がすべての文字列を Unicode 値のマーシャ リングする必要があり、検索中にその名前を変更することがなく、プロシージャを検索する必要がありますを指定します。  
   
- 文字セットの修飾子を指定しない場合は `Ansi` が既定値です。  
+ 文字セットに修飾子が指定されていない場合`Ansi`既定値です。  
   
-## 解説  
- `Unicode` 修飾子は次の構文で使用します。  
+## <a name="remarks"></a>コメント  
+ `Unicode`修飾子は、このコンテキストで使用できます。  
   
  [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
-## スマート デバイス開発者のためのメモ  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
  このキーワードはサポートされていません。  
   
-## 参照  
- [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md)   
- [Auto](../../../visual-basic/language-reference/modifiers/auto.md)   
+## <a name="see-also"></a>関連項目  
+ [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md)  
+ [Auto](../../../visual-basic/language-reference/modifiers/auto.md)  
  [キーワード](../../../visual-basic/language-reference/keywords/index.md)

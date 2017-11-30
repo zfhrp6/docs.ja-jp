@@ -1,31 +1,32 @@
 ---
-title: "チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの割り当て | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ElementHost コントロール, 割り当て (WPF コンテンツをデザイン時に)"
-  - "相互運用性 [WPF]"
-  - "Windows フォーム, コンテンツ割り当て"
-  - "WPF コンテンツ [Windows フォーム], 割り当て (デザイン時に)"
-  - "WPF ユーザー コントロール, ホスト (Windows フォームで)"
+title: "チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの割り当て"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WPF content [Windows Forms], assigning at design time
+- ElementHost control [Windows Forms], assigning WPF content at design time
+- interoperability [WPF]
+- Windows Forms, content assignments
+- WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: b3e9ef93-7e0f-4a2f-8f1e-3437609a1eb7
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0fa9e40a0a32d0bc9484a86da0f94d62f5c25aa7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの割り当て
-このチュートリアルでは、フォームに表示する Windows Presentation Foundation \(WPF\) コントロール型を選択する方法について説明します。  プロジェクトに含まれている WPF コントロール型であれば、どれでも選択できます。  
+# <a name="walkthrough-assigning-wpf-content-on-windows-forms-at-design-time"></a>チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの割り当て
+このチュートリアルでは、フォームに表示する Windows Presentation Foundation (WPF) コントロール型を選択する方法について説明します。 プロジェクトに含まれている WPF コントロール型であれば、どれでも選択できます。  
   
  このチュートリアルでは次のタスクを実行します。  
   
@@ -36,78 +37,78 @@ caps.handback.revision: 18
 -   WPF コントロールを選択する。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-## 必須コンポーネント  
+## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを実行するには、次のコンポーネントが必要です。  
   
--   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)].  
+-   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)]。  
   
-## プロジェクトの作成  
+## <a name="creating-the-project"></a>プロジェクトの作成  
  まず、Windows フォーム プロジェクトを作成します。  
   
 > [!NOTE]
->  WPF コンテンツをホストする場合は、C\# プロジェクトと Visual Basic プロジェクトのみがサポートされます。  
+>  WPF コンテンツをホストする場合は、C# プロジェクトと Visual Basic プロジェクトのみがサポートされます。  
   
-#### プロジェクトを作成するには  
+#### <a name="to-create-the-project"></a>プロジェクトを作成するには  
   
--   `SelectingWpfContent` という名前の新しい Windows フォーム アプリケーション プロジェクトを Visual Basic または Visual C\# で作成します。  
+-   Visual Basic または Visual c# のという名前で新しい Windows フォーム アプリケーション プロジェクトを作成`SelectingWpfContent`です。  
   
-## WPF コントロール型の作成  
+## <a name="creating-the-wpf-control-types"></a>WPF コントロール型の作成  
  プロジェクトに追加した WPF コントロール型は、さまざまな <xref:System.Windows.Forms.Integration.ElementHost> コントロール内でホストできます。  
   
-#### WPF コントロール型を作成するには  
+#### <a name="to-create-wpf-control-types"></a>WPF コントロール型を作成するには  
   
-1.  新しい WPF <xref:System.Windows.Controls.UserControl> プロジェクトをソリューションに追加します。  コントロール型の既定の名前である `UserControl1.xaml` を使用します。  詳細については、「[チュートリアル: デザイン時の Windows フォームでの新しい WPF コンテンツの作成](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)」を参照してください。  
+1.  新しい WPF <xref:System.Windows.Controls.UserControl> プロジェクトをソリューションに追加します。 コントロール型の既定の名前である `UserControl1.xaml` を使用します。 詳細については、次を参照してください。[チュートリアル: 新しい WPF コンテンツの作成デザイン時に Windows フォームで](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)です。  
   
-2.  デザイン ビューで `UserControl1` が選択されていることを確認します。  詳細については、「[方法 : デザイン画面上で要素を選択して移動する](http://msdn.microsoft.com/ja-jp/54cb70b6-b35b-46e4-a0cc-65189399c474)」を参照してください。  
+2.  デザイン ビューで `UserControl1` が選択されていることを確認します。 詳細については、次を参照してください。[する方法: Select およびデザイン サーフェイス上の要素の移動](http://msdn.microsoft.com/en-us/54cb70b6-b35b-46e4-a0cc-65189399c474)です。  
   
-3.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.FrameworkElement.Width%2A> プロパティおよび <xref:System.Windows.FrameworkElement.Height%2A> プロパティの値を `200` に設定します。  
+3.  **プロパティ**ウィンドウで、設定の値、<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>プロパティ`200`です。  
   
-4.  <xref:System.Windows.Controls.TextBox?displayProperty=fullName> コントロールを <xref:System.Windows.Controls.UserControl> に追加し、<xref:System.Windows.Controls.TextBox.Text%2A> プロパティの値を「Hosted Content」に設定します。  
+4.  追加、<xref:System.Windows.Controls.TextBox?displayProperty=nameWithType>コントロールを<xref:System.Windows.Controls.UserControl>の値を設定し、<xref:System.Windows.Controls.TextBox.Text%2A>プロパティを**ホストするコンテンツの**します。  
   
-5.  WPF <xref:System.Windows.Controls.UserControl> をプロジェクトにもう 1 つ追加します。  コントロール型の既定の名前である `UserControl2.xaml` を使用します。  
+5.  WPF <xref:System.Windows.Controls.UserControl> をプロジェクトにもう 1 つ追加します。 コントロール型の既定の名前である `UserControl2.xaml` を使用します。  
   
-6.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.FrameworkElement.Width%2A> プロパティおよび <xref:System.Windows.FrameworkElement.Height%2A> プロパティの値を `200` に設定します。  
+6.  **プロパティ**ウィンドウで、設定の値、<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>プロパティ`200`です。  
   
-7.  <xref:System.Windows.Controls.TextBox?displayProperty=fullName> コントロールを <xref:System.Windows.Controls.UserControl> に追加し、<xref:System.Windows.Controls.TextBox.Text%2A> プロパティの値を「Hosted Content 2」に設定します。  
+7.  追加、<xref:System.Windows.Controls.TextBox?displayProperty=nameWithType>コントロールを<xref:System.Windows.Controls.UserControl>の値を設定し、<xref:System.Windows.Controls.TextBox.Text%2A>プロパティを**Hosted Content 2**です。  
   
- **メモ** 一般的には、もう少し高度な WPF コンテンツをホストします。  ここでは、説明する目的でのみ <xref:System.Windows.Controls.TextBox?displayProperty=fullName> コントロールを使用しています。  
+ **注**一般より高度な WPF コンテンツをホストする必要があります。 ここでは、説明する目的でのみ <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> コントロールを使用しています。  
   
 1.  プロジェクトをビルドします。  
   
-## WPF コントロールの選択  
+## <a name="selecting-wpf-controls"></a>WPF コントロールの選択  
  既にコンテンツをホストしている <xref:System.Windows.Forms.Integration.ElementHost> コントロールに異なる WPF コンテンツを割り当てることができます。  
   
-#### WPF コントロールを選択するには  
+#### <a name="to-select-wpf-controls"></a>WPF コントロールを選択するには  
   
 1.  Windows フォーム デザイナーで `Form1` を開きます。  
   
-2.  **\[ツールボックス\]** で `UserControl1` をダブルクリックして、フォーム上に `UserControl1` のインスタンスを作成します。  
+2.  **ツールボックス**をダブルクリックして`UserControl1`のインスタンスを作成する`UserControl1`フォームにします。  
   
      `UserControl1` のインスタンスは、`elementHost1` という名前の新しい <xref:System.Windows.Forms.Integration.ElementHost> コントロールでホストされます。  
   
-3.  `elementHost1` のスマート タグ パネルで、**\[ホストするコンテンツの選択\]** ドロップダウン リストを開きます。  
+3.  スマート タグ パネルで`elementHost1`を開き、 **ホストするコンテンツ**ドロップダウン リスト。  
   
-4.  ドロップダウン リスト ボックスの **\[UserControl2\]** を選択します。  
+4.  選択**[usercontrol2]**ドロップダウン リスト ボックスからです。  
   
      これで、`elementHost1` コントロールが `UserControl2` 型のインスタンスをホストするようになりました。  
   
-5.  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.Integration.ElementHost.Child%2A> プロパティが **\[UserControl2\]** に設定されていることを確認します。  
+5.  **プロパティ**ウィンドウ、いることを確認、<xref:System.Windows.Forms.Integration.ElementHost.Child%2A>プロパティに設定されている**[usercontrol2]**です。  
   
-6.  **\[ツールボックス\]** の **\[WPF 相互運用性\]** グループから、<xref:System.Windows.Forms.Integration.ElementHost> コントロールをフォームにドラッグしします。  
+6.  **ツールボックス**で、 **WPF 相互運用性**グループで、ドラッグ、<xref:System.Windows.Forms.Integration.ElementHost>コントロールをフォームにします。  
   
      新しい名前として、このコントロールの既定である `elementHost2` を使用します。  
   
-7.  `elementHost2` のスマート タグ パネルで、**\[ホストするコンテンツの選択\]** ドロップダウン リストを開きます。  
+7.  スマート タグ パネルで`elementHost2`を開き、 **ホストするコンテンツ**ドロップダウン リスト。  
   
-8.  ドロップダウン リストの **\[UserControl1\]** を選択します。  
+8.  選択**UserControl1**ドロップダウン リストからです。  
   
 9. これで、`elementHost2` コントロールが `UserControl1` 型のインスタンスをホストするようになりました。  
   
-## 参照  
- <xref:System.Windows.Forms.Integration.ElementHost>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [移行と相互運用性](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)   
- [WPF コントロールの使用](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)   
- [WPF デザイナー](http://msdn.microsoft.com/ja-jp/c6c65214-8411-4e16-b254-163ed4099c26)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.Integration.ElementHost>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [移行と相互運用性](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)  
+ [WPF コントロールの使用](../../../../docs/framework/winforms/advanced/using-wpf-controls.md)  
+ [WPF デザイナー](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)

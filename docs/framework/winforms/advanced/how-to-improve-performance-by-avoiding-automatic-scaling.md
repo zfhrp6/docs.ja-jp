@@ -1,51 +1,55 @@
 ---
-title: "方法 : 自動スケーリングを解除してパフォーマンスを向上させる | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "自動スケーリング"
-  - "イメージ [Windows フォーム], 向上 (パフォーマンスを)"
-  - "イメージ [Windows フォーム], 使用 (自動スケーリングなしで)"
-  - "パフォーマンス, 向上 (イメージ)"
+title: "方法 : 自動スケーリングを解除してパフォーマンスを向上させる"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- automatic scaling
+- images [Windows Forms], improving performance
+- images [Windows Forms], using without automatic scaling
+- performance [Windows Forms], improving image
 ms.assetid: 5fe2c95d-8653-4d55-bf0d-e5afa28f223b
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 0130e0745dfca20da5dc723bb7cc84748bb0b148
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 自動スケーリングを解除してパフォーマンスを向上させる
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] では、イメージを描画すると自動的にそのイメージがスケーリングされ、これによりパフォーマンスが低下する場合があります。  別の方法として、描画先の四角形の寸法を <xref:System.Drawing.Graphics.DrawImage%2A> メソッドに渡すと、イメージのスケーリングを制御できます。  
+# <a name="how-to-improve-performance-by-avoiding-automatic-scaling"></a>方法 : 自動スケーリングを解除してパフォーマンスを向上させる
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]描画すると、パフォーマンスが低下していましたが、イメージをスケーリング自動的に場合があります。 描画先の四角形の寸法を渡すことによって、イメージのスケーリングを制御する代わりに、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドです。  
   
- たとえば、次の <xref:System.Drawing.Graphics.DrawImage%2A> メソッドの呼び出しでは、左上隅の値 \(50, 30\) を指定していますが、描画先の四角形は指定していません。  
+ たとえば、次の呼び出し、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドの左上隅を指定します (50, 30) 先の四角形が指定されていません。  
   
  [!code-csharp[System.Drawing.WorkingWithImages#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#31)]
  [!code-vb[System.Drawing.WorkingWithImages#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#31)]  
   
- これは、指定する引数の数が少なくて済むという点では一番簡単な形式の <xref:System.Drawing.Graphics.DrawImage%2A> メソッドですが、必ずしも効率的な形式ではありません。  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] によって使用される解像度 \(通常は 96 dpi\) が <xref:System.Drawing.Image> オブジェクトに格納されている解像度と異なる場合、イメージは <xref:System.Drawing.Graphics.DrawImage%2A> メソッドによってスケーリングされます。  たとえば、<xref:System.Drawing.Image> オブジェクトの幅が 216 ピクセルで、格納されている水平方向の解像度の値が 72 dpi であるとします。  216\/72 は 3 なので、<xref:System.Drawing.Graphics.DrawImage%2A> は、96 dpi の解像度で幅が 3 インチになるようにイメージをスケーリングします。  つまり、<xref:System.Drawing.Graphics.DrawImage%2A> は、96 × 3 \= 288 ピクセルの幅でイメージを表示します。  
+ これは最も簡単なバージョンが、<xref:System.Drawing.Graphics.DrawImage%2A>メソッド必須の引数の数、に関しては最も効率的とは限りません。 解決が使用する場合[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)](通常 96 ドット/インチ) に格納されている解像度とは異なる、<xref:System.Drawing.Image>オブジェクト、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドは、イメージを拡大縮小します。 たとえば、<xref:System.Drawing.Image>オブジェクト 216 ピクセル幅と 72 インチあたりのドットのストアドの水平方向の解像度の値があります。 216/72 が 3、ため<xref:System.Drawing.Graphics.DrawImage%2A>を 96 ドット/インチの解像度で 3 インチ、幅を持つようにイメージをスケーリングします。 つまり、 <xref:System.Drawing.Graphics.DrawImage%2A> 96 x 3 = 288 の幅があるイメージが表示されます (ピクセル)。  
   
- 画面解像度が 96 dpi ではない場合でも、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] は解像度が 96 dpi であるものとしてイメージをスケーリングします。  これは、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Graphics> オブジェクトがデバイス コンテキストに関連付けられているためです。一般的に、[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] がデバイス コンテキストに画面解像度を照会すると、実際の画面解像度がどうなっているかにかかわらず、結果は 96 になります。  <xref:System.Drawing.Graphics.DrawImage%2A> メソッドで描画先の四角形を指定すると、自動スケーリングを解除できます。  
+ 画面の解像度が 96 ドット/インチと異なる場合でも[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]はおそらくスケール イメージ画面の解像度が 96 ドット/インチ場合と同様です。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Graphics>オブジェクトは、デバイス コンテキストに関連付けられて、いつ[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]結果画面の解像度のデバイス コンテキストは 96、実際の画面の解像度に関係なく、通常のクエリ。 移行先の四角形を指定することで自動スケーリングを避けることができます、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドです。  
   
-## 使用例  
- 同じイメージを 2 回描画する例を次に示します。  1 回目は、描画先の四角形の幅と高さを指定していないため、イメージが自動的にスケーリングされます。  2 回目には、描画先の四角形の幅と高さ \(ピクセル単位\) が、元のイメージの幅と高さと同じになるように指定されています。  2 回描画された結果のイメージを次の図に示します。  
+## <a name="example"></a>例  
+ 次の例では、2 回、同じイメージを描画します。 最初のケースでは、先の四角形の高さと幅が指定されていないと、イメージが自動的にスケーリングします。 2 番目のケースの幅と高さ (ピクセル単位で測定) 先の四角形は、元の画像の高さと幅と同じにするのに指定します。 次の図は、2 回表示されるイメージを示します。  
   
- ![スケール テクスチャ](../../../../docs/framework/winforms/advanced/media/csscaledtexture1.png "csscaledtexture1")  
+ ![テクスチャのスケール](../../../../docs/framework/winforms/advanced/media/csscaledtexture1.png "csscaledtexture1")  
   
  [!code-csharp[System.Drawing.WorkingWithImages#32](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#32)]
  [!code-vb[System.Drawing.WorkingWithImages#32](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#32)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  Texture.jpg は、システム上で有効なイメージの名前とパスに置き換えてください。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。 Texture.jpg をイメージ名と、システムで有効なパスに置き換えます。  
   
-## 参照  
- [イメージ、ビットマップ、およびメタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)   
+## <a name="see-also"></a>関連項目  
+ [イメージ、ビットマップ、メタファイル](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
  [イメージ、ビットマップ、アイコン、およびメタファイルの操作](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

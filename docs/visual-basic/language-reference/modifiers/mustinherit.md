@@ -1,61 +1,60 @@
 ---
-title: "MustInherit (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "MustInherit"
-  - "vb.MustInherit"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "classes [Visual Basic], abstract"
-  - "MustInherit classes, MustInherit keyword"
-  - "abstract classes, MustInherit class"
-  - "MustInherit keyword"
+title: MustInherit (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- MustInherit
+- vb.MustInherit
+helpviewer_keywords:
+- classes [Visual Basic], abstract
+- MustInherit classes [Visual Basic], MustInherit keyword
+- abstract classes [Visual Basic], MustInherit class
+- MustInherit keyword [Visual Basic]
 ms.assetid: b8f05185-90e3-4dd7-adc2-90d852fab5b4
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 9d384986e42ee69a0f425c1590599aa2c82bc856
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# MustInherit (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-クラスが基本クラスとしてのみ使用でき、オブジェクトを直接作成できないことを示します。  
+# <a name="mustinherit-visual-basic"></a>MustInherit (Visual Basic)
+クラスを基底クラスとしてのみ使用できます、また、オブジェクトを直接作成できないことを指定します。  
   
-## 解説  
- *基本クラス* \(*抽象クラス* とも呼ばれます\) の目的は、ここから派生したすべてのクラスに共通した機能を定義することです。  これにより、派生クラスが共通の要素を再定義する必要がなくなります。  有用なオブジェクトを作成するために、この共通の機能では十分でない場合は、派生クラスがそれぞれ足りない機能を定義します。  この場合、使用する側のコードでは、派生クラスからのみオブジェクトを作成できるようにすると便利です。  これを実現するには、基本クラスで `MustInherit` を使用します。  
+## <a name="remarks"></a>コメント  
+ 目的は、*基底クラス*(とも呼ばれる、*抽象クラス*) は、それから派生したすべてのクラスに共通する機能を定義します。 これにより、派生クラスが共通の要素を再定義する必要がなくなります。 場合によっては、この共通の機能が、使用可能なオブジェクトを作成するのに十分な不完全し、各派生クラスが不足している機能を定義します。 このような場合は、オブジェクトを作成する派生クラスからのみ利用側のコードが必要です。 使用する`MustInherit`を強制する、基本クラスです。  
   
- また、`MustInherit` クラスを使用して、変数を関連するクラスのみに制限できます。  基本クラスを定義し、これらの関連するクラスをすべてここから派生させます。  基本クラスでは、すべての派生クラスに共通の機能を定義する必要はなく、変数に値を割り当てる際のフィルターとして機能させることができます。  使用する側のコードで、変数を基本クラスとして宣言すると、その変数には、いずれかの派生クラスのオブジェクトだけを割り当てることができるようになります。  
+ 別の使用、`MustInherit`クラスは、関連するクラスのセットに変数を制限します。 基本クラスを定義し、そこからこれらのすべての関連するクラスを派生できます。 基本クラスは、すべての派生クラスに共通の機能を提供する必要はありませんが、その変数に値を割り当てるためのフィルターとして使用できます。 コンシューマー コードは、基底クラスとしての変数を宣言する場合 Visual Basic では、その変数に、派生クラスのいずれかのオブジェクトのみを割り当てることができます。  
   
- .NET Framework では、いくつかの `MustInherit` クラスが定義されています。たとえば、<xref:System.Array>、<xref:System.Enum>、<xref:System.ValueType> などです。  <xref:System.ValueType> は、変数を制限する基本クラスの 1 つです。  すべての値型は <xref:System.ValueType> から派生します。  変数を <xref:System.ValueType> として宣言すると、その変数には値型のみを割り当てられます。  
+ .NET Framework では、いくつかを定義します`MustInherit`クラスは、それらの間<xref:System.Array>、 <xref:System.Enum>、および<xref:System.ValueType>です。 <xref:System.ValueType>変数を制限する基本クラスの例を示します。 すべての値型から派生<xref:System.ValueType>です。 として変数を宣言する場合<xref:System.ValueType>、その変数に値型のみを割り当てることができます。  
   
-## 規則  
+## <a name="rules"></a>ルール  
   
--   **宣言コンテキスト。** `MustInherit` は、`Class` ステートメントでのみ使用できます。  
+-   **宣言コンテキスト。** 使用することができます`MustInherit`でのみ、`Class`ステートメントです。  
   
--   **結合された修飾子。**同じ変数宣言で `MustInherit` と `NotInheritable` を同時に指定することはできません。  
+-   **結合された修飾子。** 指定することはできません`MustInherit`と共に`NotInheritable`同じ宣言内で。  
   
-## 使用例  
- 次の例では、強制的な継承と強制的なオーバーライドを示します。  基本クラス `shape` は、変数 `acrossLine` を定義します。  `circle` クラスと `square` クラスは、`shape` から継承されます。  これらのクラスは、`acrossLine` の定義を継承しますが、図形の種類によって計算が異なるため、`area` 関数を定義する必要があります。  
+## <a name="example"></a>例  
+ 次の例は、強制的な継承と強制的なオーバーライドを示しています。 基本クラス`shape`変数を定義`acrossLine`です。 クラスは、`circle`と`square`から派生`shape`です。 定義を継承`acrossLine`、関数を定義する必要がありますが、`area`その計算方法は図形の種類ごとに異なるためです。  
   
  [!code-vb[VbVbalrKeywords#2](../../../visual-basic/language-reference/codesnippet/VisualBasic/mustinherit_1.vb)]  
   
- `shape1` と `shape2` は、`shape` 型として定義できます。  ただし、`shape` からオブジェクトを作成することはできません。`area` 関数の機能がないことと、`MustInherit` とマークされているためです。  
+ 宣言することができます`shape1`と`shape2`型である`shape`です。 オブジェクトを作成することはできませんただし、`shape`関数の機能がないため`area`がマークされていると`MustInherit`です。  
   
- クラスが `shape` として宣言されているので、変数 `shape1` と `shape2` は派生クラス `circle` および `square` のオブジェクトに限定されます。  Visual Basic では、高いレベルのタイプ セーフを実現するために、その他のオブジェクトをこれらの変数に割り当てることはできません。  
+ として宣言されているため`shape`、変数`shape1`と`shape2`派生クラスからオブジェクトに制限される`circle`と`square`です。 Visual Basic はできません、他のオブジェクトをこれらの変数に割り当てることにより、高レベルのタイプ セーフです。  
   
-## 使用方法  
- `MustInherit` 修飾子は、次の場合に使用できます。  
+## <a name="usage"></a>使用方法  
+ `MustInherit`修飾子は、このコンテキストで使用できます。  
   
  [Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)  
   
-## 参照  
- [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md)   
- [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)   
- [キーワード](../../../visual-basic/language-reference/keywords/index.md)   
- [Inheritance Basics](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+## <a name="see-also"></a>関連項目  
+ [Inherits ステートメント](../../../visual-basic/language-reference/statements/inherits-statement.md)  
+ [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)  
+ [キーワード](../../../visual-basic/language-reference/keywords/index.md)  
+ [継承の基本](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)

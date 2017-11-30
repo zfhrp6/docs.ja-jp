@@ -1,36 +1,28 @@
 ---
-title: "XmlReader (XSLT の呼び出し) にシリアル化する (Visual Basic) |Microsoft ドキュメント"
+title: "XmlReader (呼び出し元の XSLT) にシリアル化する (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 8b64f95a-e8f6-40f7-99f9-a8002c63af96
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bca1e63bbe5b3ccd13f183c3cc6081917624ad94
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: ea4a8a17e938b22d6e307ebe307c69481e44e6d9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="serializing-to-an-xmlreader-invoking-xslt-visual-basic"></a>XmlReader (XSLT の呼び出し) にシリアル化する (Visual Basic)
-使用すると、<xref:System.Xml?displayProperty=fullName>の相互運用機能[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]、 <xref:System.Xml.Linq.XNode.CreateReader%2A> <xref:System.Xml.XmlReader>.</xref:System.Xml.XmlReader>を作成に</xref:System.Xml.Linq.XNode.CreateReader%2A>使用できる</xref:System.Xml?displayProperty=fullName> これから読み取りを行うモジュール<xref:System.Xml.XmlReader>XML ツリーからノードを読み取って適宜処理します</xref:System.Xml.XmlReader>。  
+# <a name="serializing-to-an-xmlreader-invoking-xslt-visual-basic"></a>XmlReader (呼び出し元の XSLT) にシリアル化する (Visual Basic)
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の <xref:System.Xml?displayProperty=nameWithType> 相互運用機能を使用する場合、<xref:System.Xml.Linq.XNode.CreateReader%2A> を使用して <xref:System.Xml.XmlReader> を作成できます。 この <xref:System.Xml.XmlReader> から読み取りを行うモジュールは、XML ツリーからノードを読み取って適宜処理します。  
   
 ## <a name="invoking-an-xslt-transformation"></a>XSLT 変換の呼び出し  
- このメソッドは、XSLT 変換を呼び出すときに使用できます。 XML ツリーを作成したり、作成できます、 <xref:System.Xml.XmlReader>XML ツリーから 新しいドキュメントを作成し、作成、<xref:System.Xml.XmlWriter>に新しいドキュメントに書き込む</xref:System.Xml.XmlWriter></xref:System.Xml.XmlReader>。 次に、 <xref:System.Xml.XmlReader> <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter></xref:System.Xml.XmlReader>を渡して、XSLT 変換を呼び出すことができます。 変換が正常に完了すると、新しい XML ツリーに変換結果が挿入されます。  
+ このメソッドは、XSLT 変換を呼び出すときに使用できます。 この例では、XML ツリーを作成し、この XML ツリーから <xref:System.Xml.XmlReader> を作成して、新しいドキュメントを作成します。次に、この新しいドキュメントに書き込むために <xref:System.Xml.XmlWriter> を作成します。 次に、XSLT 変換を呼び出して、<xref:System.Xml.XmlReader> と <xref:System.Xml.XmlWriter> を渡します。 変換が正常に完了すると、新しい XML ツリーに変換結果が挿入されます。  
   
 ```vb  
 Dim xslMarkup As XDocument = _  
@@ -78,4 +70,4 @@ Console.WriteLine(newTree)
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [XML ツリーをシリアル化する (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)
+ [(Visual Basic) の XML ツリーをシリアル化します。](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)

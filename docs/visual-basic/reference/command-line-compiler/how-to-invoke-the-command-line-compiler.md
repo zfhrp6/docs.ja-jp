@@ -1,86 +1,69 @@
 ---
-title: "方法: コマンド ライン コンパイラ (Visual Basic) を起動 |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "方法: コマンド ライン コンパイラを起動する (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - command-line arguments
 - vbc.exe
 - Visual Basic compiler, starting
-- command line, arguments
+- command line [Visual Basic], arguments
 ms.assetid: 0fd9a8f6-f34e-4c35-a49d-9b9bbd8da4a9
-caps.latest.revision: 28
+caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 69c95289f91f712bd3fda03a7f582d879141591a
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 5c69860ede5620272e67bde435e6e6fa08cc81bc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-invoke-the-command-line-compiler-visual-basic"></a>方法: コマンド ライン コンパイラを起動する (Visual Basic)
-コマンド ラインで、MS-DOS プロンプトとも呼ばれますにその実行可能ファイルの名前を入力して、コマンド ライン コンパイラを呼び出すことができます。 既定の Windows コマンド プロンプトからコンパイルする場合は、実行可能ファイルへの完全修飾パスを入力する必要があります。 この既定の動作をオーバーライドする使用するか、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]コマンド プロンプト、または PATH 環境変数を変更します。 コンパイラの名前を入力するだけで任意のディレクトリからコンパイルをどちらもができます。  
+コマンド ラインで、MS-DOS のプロンプトとも呼ばれるにその実行可能ファイルの名前を入力して、コマンド ライン コンパイラを呼び出すことができます。 既定の Windows コマンド プロンプトからコンパイルする場合は、実行可能ファイルへの完全修飾パスを入力する必要があります。 この既定の動作をオーバーライドするを使用するか、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]コマンド プロンプト、または、PATH 環境変数を変更します。 コンパイラの名前を入力するだけで任意のディレクトリからコンパイルを両方ができます。  
   
-[!INCLUDE[note_settings_general](../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-invoke-the-compiler-using-the-visual-studio-command-prompt"></a>Visual Studio コマンド プロンプトを使用するコンパイラを起動するには  
+### <a name="to-invoke-the-compiler-using-the-visual-studio-command-prompt"></a>Visual Studio コマンド プロンプトを使用してコンパイラを起動するには  
   
-1.  Microsoft Visual Studio のプログラム グループ内の Visual Studio Tools プログラム フォルダーを開きます。  
+1.  Microsoft Visual Studio プログラム グループ内の Visual Studio Tools プログラム フォルダーを開きます。  
   
-2.  使用することができます、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]コマンド プロンプトは、Visual Studio がインストールされている場合、コンピューター上の任意のディレクトリから、コンパイラにアクセスします。  
+2.  使用することができます、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]コマンド プロンプトを Visual Studio がインストールされている場合、コンピューター上の任意のディレクトリから、コンパイラにアクセスします。  
   
-3.  呼び出す、[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]コマンド プロンプト。  
+3.  呼び出す、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]コマンド プロンプトです。  
   
-4.  コマンドラインで「 `vbc.exe` *sourceFileName* ENTER キーを押します。  
+4.  コマンドラインで「 `vbc.exe` *sourceFileName*し、ENTER キーを押します。  
   
-     という名前のディレクトリにソース コードを格納する場合など`SourceFiles`、コマンド プロンプトと型が開きます`cd SourceFiles`そのディレクトリに変更します。 ディレクトリには、という名前のソース ファイルが含まれている場合`Source.vb`、」と入力してコンパイルすることが`vbc.exe Source.vb`です。  
+     というディレクトリに、ソース コードを格納する場合など、 `SourceFiles`、するはプロンプトを開き、コマンド`cd SourceFiles`そのディレクトリに変更します。 ディレクトリには、という名前のソース ファイルが含まれている場合`Source.vb`、」と入力してコンパイルする`vbc.exe Source.vb`です。  
   
 ### <a name="to-set-the-path-environment-variable-to-the-compiler-for-the-windows-command-prompt"></a>Windows コマンド プロンプトをコンパイラに PATH 環境変数を設定するには  
   
-1.  Windows Search の機能を使用して、ローカル ハード_ディスク上の Vbc.exe を検索します。  
+1.  ローカル ディスクに Vbc.exe を検索するのにには、Windows 検索機能を使用します。  
   
-     コンパイラがあるディレクトリの正確な名前の Windows ディレクトリの場所とのバージョンによって異なる、[!INCLUDE[Compact](../../../visual-basic/reference/command-line-compiler/includes/compact_md.md)]をインストールします。 複数のバージョンがインストールされている場合、[!INCLUDE[Compact](../../../visual-basic/reference/command-line-compiler/includes/compact_md.md)]インストールされている、(通常は最新のバージョン) を使用するバージョンを決定する必要があります。  
+     コンパイラが配置されているディレクトリの正確な名前は、Windows ディレクトリの場所と、".NET Framework の"インストールされているバージョンに依存します。 1 つ以上の".NET Framework のバージョン"をインストールした場合 (通常は最新のバージョン) を使用するバージョンが判断する必要があります。  
   
-2.  **開始** メニューの を右クリックして**マイ コンピューター**、 をクリックし、**プロパティ**のショートカット メニュー。  
+2.  **開始**メニューを右クリックして**マイ コンピューター**、順にクリック**プロパティ**ショートカット メニューからです。  
   
-3.  クリックして、**詳細**タブをクリックし、をクリックして**環境変数**します。  
+3.  クリックして、**詳細** タブをクリックして**環境変数**です。  
   
-4.  **システム**変数ウィンドウで、**パス**、リストをクリックしてから**編集**します。  
+4.  **システム**変数ウィンドウで、**パス**クリックしてリストから**編集**です。  
   
-5.  **編集システム**変数 ダイアログ ボックス内の文字列の末尾にカーソルを移動、**変数値**フィールドで、セミコロン (;) を入力し、続けて手順 1. で検出された完全なディレクトリ名です。  
+5.  **編集システム**変数 ダイアログ ボックス、内の文字列の末尾にカーソルを移動、**変数値**フィールドで、セミコロン (;) を入力し、続けて手順 1. で検出された完全なディレクトリ名。  
   
-6.  クリックして**OK**を編集内容を確認し、ダイアログ ボックスを閉じます。  
+6.  をクリックして**OK**を編集内容を確認し、ダイアログ ボックスを閉じます。  
   
-     実行することができます、PATH 環境変数を変更した後、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コンパイラ、Windows コマンド プロンプトで、コンピューター上の任意のディレクトリからです。  
+     実行することができます、PATH 環境変数を変更した後、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラ、Windows コマンド プロンプトで、コンピューター上の任意のディレクトリからです。  
   
-### <a name="to-invoke-the-compiler-using-the-windows-command-prompt"></a>Windows コマンド プロンプトを使用してコンパイラを起動するには  
+### <a name="to-invoke-the-compiler-using-the-windows-command-prompt"></a>Windows コマンド プロンプトを使用するコンパイラを起動するには  
   
-1.  **開始**メニューをクリックして、**アクセサリ**フォルダー、およびを開きます、 **Windows コマンド プロンプト**します。  
+1.  **開始** メニューをクリックして、**アクセサリ**フォルダーを開き、 **Windows コマンド プロンプト**です。  
   
-2.  コマンドラインで「 `vbc.exe` *sourceFileName* ENTER キーを押します。  
+2.  コマンドラインで「 `vbc.exe` *sourceFileName*し、ENTER キーを押します。  
   
-     という名前のディレクトリにソース コードを格納する場合など`SourceFiles`、コマンド プロンプトと型が開きます`cd SourceFiles`そのディレクトリに変更します。 ディレクトリには、という名前のソース ファイルが含まれている場合`Source.vb`、」と入力してコンパイルすることが`vbc.exe Source.vb`です。  
+     というディレクトリに、ソース コードを格納する場合など、 `SourceFiles`、するはプロンプトを開き、コマンド`cd SourceFiles`そのディレクトリに変更します。 ディレクトリには、という名前のソース ファイルが含まれている場合`Source.vb`、」と入力してコンパイルする`vbc.exe Source.vb`です。  
   
 ## <a name="see-also"></a>関連項目  
- [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
+ [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)  
  [条件付きコンパイル](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)

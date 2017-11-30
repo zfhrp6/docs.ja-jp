@@ -1,52 +1,58 @@
 ---
-title: "方法 : アプリケーション スコープのリソース ディクショナリを使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "アプリケーション スコープのリソース ディクショナリ"
-  - "ディクショナリ, リソース"
-  - "リソース ディクショナリ, アプリケーション スコープ"
+title: "方法 : アプリケーション スコープのリソース ディクショナリを使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- dictionaries [WPF], resource
+- resource dictionaries [WPF], application-scope
+- application-scope resource dictionaries
 ms.assetid: 53857682-bd2c-4f2c-8f25-1307d0b451a2
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 417fea4dcbb5a8d0a27f9605be19de5921aaf0ed
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : アプリケーション スコープのリソース ディクショナリを使用する
-この例では、アプリケーション スコープのカスタム リソース ディクショナリを定義および使用する方法を示します。  
+# <a name="how-to-use-an-application-scope-resource-dictionary"></a>方法 : アプリケーション スコープのリソース ディクショナリを使用する
+この例では、アプリケーション スコープのカスタム リソース ディクショナリを定義して、使用する方法を示します。  
   
-## 使用例  
- <xref:System.Windows.Application> は、共有リソースのアプリケーション スコープのストアである <xref:System.Windows.Application.Resources%2A> を公開します。  既定では、<xref:System.Windows.Application.Resources%2A> プロパティは、<xref:System.Windows.ResourceDictionary> 型のインスタンスで初期化されます。  このインスタンスは、<xref:System.Windows.Application.Resources%2A> を使用してアプリケーション スコープのプロパティを取得および設定する場合に使用します。  \(詳細については、「[How to: Get and Set an Application\-Scope Resource](http://msdn.microsoft.com/ja-jp/39e0420c-c9fc-47dc-8956-fdd95b214095)」を参照してください\)。  
+## <a name="example"></a>例  
+ <xref:System.Windows.Application>共有リソースのアプリケーション スコープのストアを公開:<xref:System.Windows.Application.Resources%2A>です。 既定では、<xref:System.Windows.Application.Resources%2A>プロパティは、のインスタンスを初期化、<xref:System.Windows.ResourceDictionary>型です。 Get を使用してアプリケーション スコープのプロパティを設定すると、このインスタンスを使用する<xref:System.Windows.Application.Resources%2A>です。 詳細については、次を参照してください。[する方法: を取得し、アプリケーション スコープ リソース設定](http://msdn.microsoft.com/en-us/39e0420c-c9fc-47dc-8956-fdd95b214095)です。
   
- <xref:System.Windows.Application.Resources%2A> を使用して設定したリソースが複数ある場合は、カスタム リソース ディクショナリを使用してこれらのリソースを格納し、<xref:System.Windows.Application.Resources%2A> を設定することができます。  次に示すのは、XAML を使用してカスタム リソース ディクショナリを宣言する方法です。  
+ 複数のリソースを使用して設定する必要がある場合<xref:System.Windows.Application.Resources%2A>、それらのリソースを格納および設定する代わりに、カスタム リソース ディクショナリを使用できます<xref:System.Windows.Application.Resources%2A>して代わりにします。 XAML を使用して、カスタム リソース ディクショナリを宣言する方法を次に示します。
   
- [!code-xml[HOWTOResourceDictionaries#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToResourceDictionaries/CSharp/MyResourceDictionary.xaml#1)]  
+ [!code-xaml[HOWTOResourceDictionaries#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToResourceDictionaries/CSharp/MyResourceDictionary.xaml#1)]  
   
- <xref:System.Windows.Application.Resources%2A> を使用してリソース ディクショナリ全体を交換することで、各テーマが単一のリソース ディクショナリでカプセル化されているアプリケーション スコープのテーマをサポートすることができます。  <xref:System.Windows.ResourceDictionary> を設定する方法を次の例に示します。  
+ 使用して全体のリソース ディクショナリのスワップ<xref:System.Windows.Application.Resources%2A>各テーマが 1 つのリソース ディクショナリでカプセル化された場所を使用すると、アプリケーション スコープのテーマをサポートします。 <xref:System.Windows.ResourceDictionary> を設定する方法を次の例に示します。  
   
- [!code-xml[HOWTOResourceDictionaries#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToResourceDictionaries/CSharp/App.xaml#2)]  
+ [!code-xaml[HOWTOResourceDictionaries#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToResourceDictionaries/CSharp/App.xaml#2)]  
   
- 次に示すのは、XAML の <xref:System.Windows.Application.Resources%2A> で公開されたリソース ディクショナリから、アプリケーション スコープのリソースを取得する方法です。  
+ によって公開されるリソース ディクショナリからアプリケーション スコープのリソースを取得する方法を次に示します<xref:System.Windows.Application.Resources%2A>XAML でします。  
   
- [!code-xml[HOWTOResourceDictionaries#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToResourceDictionaries/CSharp/MainWindow.xaml#4)]  
+ [!code-xaml[HOWTOResourceDictionaries#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToResourceDictionaries/CSharp/MainWindow.xaml#4)]  
   
- 次に示すのは、コードでリソースを取得する方法です。  
+ コードでリソースも取得する方法を次に示します。  
   
  [!code-csharp[HOWTOResourceDictionaries#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToResourceDictionaries/CSharp/MainWindow.xaml.cs#3)]
  [!code-vb[HOWTOResourceDictionaries#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToResourceDictionaries/VB/MainWindow.xaml.vb#3)]  
   
- <xref:System.Windows.Application.Resources%2A> を使用するときに注意すべき点が 2 つあります。  1 つ目は、ディクショナリ キーはオブジェクトであるため、プロパティ値を設定および取得するときに、まったく同じオブジェクト インスタンスを使用する必要があります  \(キーに文字列を使用する場合、大文字と小文字が区別されることに注意してください\)。2 つ目は、ディクショナリの値はオブジェクトであるため、プロパティ値を取得するときにその値を目的の型に変換する必要があります。  
+ 2 つの考慮事項を使用する場合がある<xref:System.Windows.Application.Resources%2A>です。 まず、ディクショナリ*キー*オブジェクトは両方の設定とプロパティ値を取得するときに正確に同じオブジェクト インスタンスを使用する必要があります。 (キーに文字列を使用する場合、大文字と小文字が区別されることに注意してください)。2 番目、ディクショナリ*値*がオブジェクト、プロパティ値を取得するときに、値を目的の型に変換しなければならないためです。  
   
-## 参照  
- <xref:System.Windows.ResourceDictionary>   
- <xref:System.Windows.Application.Resources%2A>   
- [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.ResourceDictionary>  
+ <xref:System.Windows.Application.Resources%2A>  
+ [XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
  [マージされたリソース ディクショナリ](../../../../docs/framework/wpf/advanced/merged-resource-dictionaries.md)

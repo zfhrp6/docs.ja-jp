@@ -1,61 +1,58 @@
 ---
-title: "Skip While Clause (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.QuerySkipWhile"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Skip While statement"
-  - "Skip While clause"
-  - "queries [Visual Basic], Skip While"
+title: "Skip While 句 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.QuerySkipWhile
+helpviewer_keywords:
+- Skip While statement [Visual Basic]
+- Skip While clause [Visual Basic]
+- queries [Visual Basic], Skip While
 ms.assetid: 5dee8350-7520-4f1a-b00d-590cacd572d6
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: f447a6d9b2eb58fa546ced6c96b987caf68fb3e5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Skip While Clause (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
+# <a name="skip-while-clause-visual-basic"></a>Skip While 句 (Visual Basic)
 指定された条件が `true` である限り、コレクションの要素をバイパスし、残りの要素を返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Skip While expression  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`expression`|必ず指定します。  要素をテストするための条件を表す式。  この式は、`Boolean` 値、または `Boolean` として評価される `Integer` などの機能的に同等な値を返す必要があります。|  
+|用語|定義|  
+|---|---|  
+|`expression`|必須です。 要素をテストするための条件を表す式。 式を返す必要があります、`Boolean`値またはそれと同等の機能など、`Integer`として評価される、`Boolean`です。|  
   
-## 解説  
- `Skip While` 句は、指定された `expression` が `false` を返すまで、クエリ結果の先頭から要素をバイパスします。  `expression` が `false` を返した後、残っているすべての要素が結果として返されます。  残りの結果では、`expression` は無視されます。  
+## <a name="remarks"></a>コメント  
+ `Skip While`句が指定されたまで、クエリ結果の先頭から要素をバイパス`expression`返します`false`です。 後に`expression`返します`false`クエリが、残りのすべての要素を返します。 `expression`残りの結果は無視されます。  
   
- `Where` 句の場合、特定の条件と一致しないすべての要素をクエリから除外できるという点で、`Skip While` 句は `Where` 句とは異なります。  `Skip While` 句は、条件を満たさない最初の要素が出現するまで、要素を除外します。  `Skip While` 句は、順序があるクエリ結果を操作する場合に最も役に立ちます。  
+ `Skip While`句とは異なります、`Where`を内の句、`Where`を特定の条件を満たさないクエリからすべての要素を除外する句を使用できます。 `Skip While`句は、条件が満たされていない最初の時刻までの要素を除外します。 `Skip While`句は、順序付けられたクエリ結果を使用しているときに最も役立ちます。  
   
- `Skip` 句を使用することで、クエリ結果の先頭から特定の数の結果をバイパスできます。  
+ 使用して特定のクエリ結果の先頭からの結果数を省略することができます、`Skip`句。  
   
-## 使用例  
- 次のコード例では、`Skip While` 句を使用して、米国 \(United States\) 在住の最初の顧客が見つかるまで結果をバイパスします。  
+## <a name="example"></a>例  
+ 次のコード例では、`Skip While`米国から最初の顧客が見つかるまで、結果をバイパスする句。  
   
  [!code-vb[VbSimpleQuerySamples#3](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/skip-while-clause_1.vb)]  
   
-## 参照  
- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
- [Queries](../../../visual-basic/language-reference/queries/queries.md)   
- [Select Clause](../../../visual-basic/language-reference/queries/select-clause.md)   
- [From Clause](../../../visual-basic/language-reference/queries/from-clause.md)   
- [Skip Clause](../../../visual-basic/language-reference/queries/skip-clause.md)   
- [Take While Clause](../../../visual-basic/language-reference/queries/take-while-clause.md)   
- [Where Clause](../../../visual-basic/language-reference/queries/where-clause.md)
+## <a name="see-also"></a>関連項目  
+ [Visual Basic における LINQ の概要](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [クエリ](../../../visual-basic/language-reference/queries/queries.md)  
+ [Select 句](../../../visual-basic/language-reference/queries/select-clause.md)  
+ [From 句](../../../visual-basic/language-reference/queries/from-clause.md)  
+ [Skip 句](../../../visual-basic/language-reference/queries/skip-clause.md)  
+ [Take While 句](../../../visual-basic/language-reference/queries/take-while-clause.md)  
+ [WHERE 句](../../../visual-basic/language-reference/queries/where-clause.md)

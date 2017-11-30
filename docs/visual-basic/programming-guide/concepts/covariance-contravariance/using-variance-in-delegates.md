@@ -1,38 +1,30 @@
 ---
-title: "デリゲート (Visual Basic) の分散の使用 |Microsoft ドキュメント"
+title: "デリゲート (Visual Basic) での分散の使用"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 7b5c20f1-6416-46a3-94b6-f109c31c842c
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5bd3e60031eac713cee3dee1399af8c6b83e6656
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 435591d69e67c4fc4be8e781c5f63e025c71a8cf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="using-variance-in-delegates-visual-basic"></a>デリゲート (Visual Basic) の分散の使用
-デリゲートにメソッドを割り当てるときに*共変性*と*反変性*メソッド シグネチャを持つデリゲート型に一致する柔軟性を提供します。 ジェネリックの共変性は、メソッドのデリゲートで定義されているよりも強い派生は、戻り値の型を許可します。 反変性により、デリゲート型の場合よりも弱い派生パラメーター型を持つメソッドです。  
+# <a name="using-variance-in-delegates-visual-basic"></a>デリゲート (Visual Basic) での分散の使用
+メソッドをデリゲートに割り当てると、"*共変性*" と "*反変性*" により、デリゲート型をメソッドのシグネチャに柔軟に一致させることができます。 共変性により、メソッドの戻り値の型の派生を、デリゲートに定義されている型よりも強くできます。 また、反変性により、メソッドのパラメーター型の派生をデリゲート型よりも弱くできます。  
   
 ## <a name="example-1-covariance"></a>例 1: 共変性  
   
 ### <a name="description"></a>説明  
- この例では、デリゲート シグネチャの戻り値の型から派生した戻り値の型の方法でデリゲートを使用する方法を示します。 によって返されるデータ型`DogsHandler`型`Dogs`から派生した、`Mammals`デリゲートで定義されている型。  
+ この例は、デリゲート シグネチャ内の戻り値の型から派生した戻り値の型を持つメソッドで、デリゲートをどのように使用できるかを示しています。 `DogsHandler` が返すデータ型は `Dogs` です。これは、デリゲートに定義された `Mammals` 型の派生型です。  
   
 ### <a name="code"></a>コード  
   
@@ -62,7 +54,7 @@ End Class
 ## <a name="example-2-contravariance"></a>例 2: 反変性  
   
 ### <a name="description"></a>説明  
- この例では、デリゲート シグネチャのパラメーターの型の基本型である型のパラメーターを持つメソッドでデリゲートを使用する方法を示します。 反変性により、複数のハンドラーではなく&1; つのイベント ハンドラーを使用することができます。 受け取るイベント ハンドラーを作成するなど、`EventArgs`パラメーターを入力し、それを使用、`Button.MouseClick`イベントを送信する、`MouseEventArgs`型をパラメーターとして、さらに、`TextBox.KeyDown`イベントを送信する、`KeyEventArgs`パラメーター。  
+ この例は、パラメーターの型がデリゲート シグネチャ パラメーター型の基本データ型であるメソッドで、デリゲートをどのように使用できるかを示しています。 反変性により、複数のハンドラーの代わりに単一のイベント ハンドラーを使用できます。 たとえば、`EventArgs` 入力パラメーターを受け取るイベント ハンドラーを作成し、そのイベント ハンドラーを、`MouseEventArgs` 型をパラメーターとして送信する `Button.MouseClick` イベントや `KeyEventArgs` パラメーターを送信する `TextBox.KeyDown` イベントで使用できます。  
   
 ### <a name="code"></a>コード  
   
@@ -87,5 +79,5 @@ End Sub
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [デリゲート (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)   
- [Func および Action 汎用デリゲート (Visual Basic) に対する分散の使用](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+ [デリゲートの分散 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)  
+ [Func および Action 汎用デリゲートでの分散の使用 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)

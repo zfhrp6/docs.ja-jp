@@ -1,46 +1,38 @@
 ---
-title: "方法: ファイルまたはディレクトリ ツリー (LINQ) (Visual Basic) 内のファイル サイズの大きい照会 |Microsoft ドキュメント"
+title: "方法: ディレクトリ ツリー内で最もサイズの大きいファイルを照会する (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 8c1c9f0c-95dd-4222-9be2-9ec026a13e81
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 055cbdd5a5903417ab382d390e1215f0319c0b5a
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: bcdb73006958188ef14949e37b04c2913c3fa0a7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-visual-basic"></a>方法: ディレクトリ ツリー内で最もサイズの大きいファイルを照会する (LINQ) (Visual Basic)
-この例では、ファイルのサイズ (バイト単位) に関連する&5; つのクエリを示します。  
+この例では、ファイル サイズ (バイト単位) に関連した 5 つのクエリを紹介しています。  
   
--   最大ファイルのバイト単位のサイズを取得する方法。  
+-   最もサイズ (バイト単位) の大きいファイルを取得する方法。  
   
--   最も小さいファイルのバイト単位のサイズを取得する方法。  
+-   最もサイズ (バイト単位) の小さいファイルを取得する方法。  
   
--   取得する方法、 <xref:System.IO.FileInfo>、指定したルート フォルダーの下の&1; つまたは複数のフォルダーから、オブジェクトの最大値または最小ファイル</xref:System.IO.FileInfo>。  
+-   指定したルート フォルダー配下のフォルダーから <xref:System.IO.FileInfo> オブジェクトの最大ファイルまたは最小ファイルを取得する方法。  
   
--   10 個のファイルなどのシーケンスを取得する方法。  
+-   サイズが上位 10 番目までのファイルなど、一定の条件に該当するファイルを取得する方法。  
   
--   指定したサイズよりも小さいファイルを無視して、ファイル サイズ (バイト単位) に基づくグループにファイルを注文する方法。  
+-   指定サイズ未満のファイルを無視しながらバイト単位のサイズに基づいてファイルをグループ化する方法。  
   
 ## <a name="example"></a>例  
- 次の例には、クエリを実行する方法と、ファイル サイズ (バイト単位) に応じて、グループのファイルを表示する&5; つの独立したクエリが含まれています。 これらの例をいくつかの他のプロパティの基にクエリを簡単に変更することができます、<xref:System.IO.FileInfo>オブジェクト</xref:System.IO.FileInfo>。  
+ 以下のコードでは 5 つのクエリを使用して、バイト単位のサイズに基づいてファイルを照会し、グループ化しています。 サンプル コードを参考にして、<xref:System.IO.FileInfo> オブジェクトが備えている他のさまざまなプロパティを簡単に照会することができます。  
   
 ```vb  
 Module QueryBySize  
@@ -130,13 +122,13 @@ Module QueryBySize
 End Module  
 ```  
   
- 1 つまたは複数の完了を返す<xref:System.IO.FileInfo>オブジェクトの場合、クエリは最初に&1; つずつでデータを調べる必要がありますソースで実行され、Length プロパティの値で並べ替えます</xref:System.IO.FileInfo>。 1 つまたはシーケンスの最大の長さを返すことできます。 使用<xref:System.Linq.Enumerable.First%2A>をリスト内の最初の要素を返します</xref:System.Linq.Enumerable.First%2A>。 使用する<xref:System.Linq.Enumerable.Take%2A>要素の最初の n の数を返します</xref:System.Linq.Enumerable.Take%2A>。 リストの先頭にある最も小さい要素を配置する降順の並べ替え順序を指定します。  
+ このクエリは、完全な <xref:System.IO.FileInfo> オブジェクトを返すために、まずデータ ソース内の各ファイルを調べ、それらのファイルを Length プロパティの値で並べ替えています。 そうすることで、長さが最大である単一のファイルまたは一連のファイルを取得することができます。 リスト内の最初の要素は、<xref:System.Linq.Enumerable.First%2A> を使用して取得します。 先頭から n 件の要素を取得するには、<xref:System.Linq.Enumerable.Take%2A> を使用します。 並べ替え順序に Descending を指定することによって、最小の要素がリストの先頭に来るようにしています。  
   
- クエリの場合は、ファイルが以降の時間内に別のスレッドで削除された場所に表示されるだけは例外を使用するために、ファイル サイズ (バイト単位) を取得する個別のメソッドを呼び出す、<xref:System.IO.FileInfo>への呼び出しでオブジェクトが作成された`GetFiles`</xref:System.IO.FileInfo>。 <xref:System.IO.FileInfo>オブジェクトが既に作成されて、例外が発生する可能性があるため、<xref:System.IO.FileInfo>オブジェクトは、更新しようとしますその<xref:System.IO.FileInfo.Length%2A>初めてプロパティにアクセス (バイト単位) の最新のサイズを使用してプロパティ。</xref:System.IO.FileInfo.Length%2A> </xref:System.IO.FileInfo> </xref:System.IO.FileInfo> 。 クエリの外部の try-catch ブロックでこの操作を配置することで、副作用を引き起こす可能性のあるクエリでの操作を防ぐための規則に従っています。 一般に、十分な注意する必要があります、例外を使用するときにために実行するアプリケーションが不明な状態で残っていないことを確認します。  
+ このクエリでは、`GetFiles` の呼び出しで <xref:System.IO.FileInfo> オブジェクトが作成された後に別のスレッドでファイルが削除された場合に発生する例外の可能性に対処するために、別途設けられたメソッドを呼び出してファイル サイズ (バイト単位) を取得しています。 <xref:System.IO.FileInfo> オブジェクトの作成後であっても、例外は発生する可能性があります。<xref:System.IO.FileInfo> オブジェクトは、<xref:System.IO.FileInfo.Length%2A> プロパティが最初にアクセスされたときに最新のサイズ (バイト単位) に基づいてそのプロパティを更新しようと試みるためです。 この操作をクエリの外側の try-catch ブロックに置くことで、"副作用の原因となりうるような操作はクエリ内では行わない" という原則に従っているのです。 一般に、アプリケーションが不明な状態に陥ることのないよう、例外を処理する際には十分な注意が必要です。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+ .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll および System.Linq 名前空間の `Imports` ステートメントを参照設定します。  
   
 ## <a name="see-also"></a>関連項目  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
+ [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
  [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -1,64 +1,69 @@
 ---
-title: "方法 : Windows フォームにコントロールを追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コントロール [Windows フォーム], 追加"
-  - "Windows フォーム コントロール, 追加 (フォームに)"
+title: "方法 : Windows フォームにコントロールを追加する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- Windows Forms controls, adding to form
+- controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: d1f5f739afa914a69017dbba2a9a4afb990f6e43
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームにコントロールを追加する
-ほとんどのフォームは、フォームにコントロールを追加してユーザー インターフェイス \(UI\) を定義することによってデザインします。  *コントロール*は、情報の表示やユーザー入力の受け入れに使用する、フォーム上のコンポーネントです。  コントロールの詳細については、「[Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)」を参照してください。  
+# <a name="how-to-add-controls-to-windows-forms"></a>方法 : Windows フォームにコントロールを追加する
+ほとんどのフォームは、フォームのサーフェイスにコントロールを追加してユーザー インターフェイス (UI) を定義するよう設計されています。 A*コントロール*情報の表示や、ユーザー入力をそのまま使用するために使用するフォームのコンポーネントは、します。 コントロールの詳細については、次を参照してください。 [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)です。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### フォームにコントロールを描画するには  
+### <a name="to-draw-a-control-on-a-form"></a>フォーム上のコントロールを描画するには  
   
-1.  フォームを開きます。  詳細については、「[How to: Display Windows Forms in the Designer](http://msdn.microsoft.com/ja-jp/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5)」を参照してください。  
+1.  フォームを開きます。 詳細については、次を参照してください。[する方法: デザイナーでの Windows フォームの表示](http://msdn.microsoft.com/en-us/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5)です。  
   
-2.  **ツールボックス**で、フォームに追加するコントロールをクリックします。  
+2.  **ツールボックス**フォームに追加するコントロールをクリックします。  
   
-3.  フォーム内で、コントロールの左上隅となる位置をクリックし、コントロールの右下隅となる位置までドラッグします。  
+3.  フォームに存在するコントロールの左上隅をクリックしを配置するコントロールの右下隅の任意の場所にドラッグします。  
   
-     指定したフォームの位置に、指定したサイズのコントロールが追加されます。  
-  
-    > [!NOTE]
-    >  各コントロールには、既定のサイズが定義されています。  **ツールボックス**からフォームにコントロールをドラッグすると、既定のサイズのフォームを追加できます。  
-  
-### フォームにコントロールをドラッグするには  
-  
-1.  フォームを開きます。  詳細については、「[How to: Display Windows Forms in the Designer](http://msdn.microsoft.com/ja-jp/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5)」を参照してください。  
-  
-2.  **ツールボックス**で、必要なコントロールをクリックし、フォームにドラッグします。  
-  
-     指定したフォームの位置に、既定のサイズのコントロールが追加されます。  
+     コントロールは、指定した位置とサイズでフォームに追加されます。  
   
     > [!NOTE]
-    >  **ツールボックス**でコントロールをダブルクリックすると、フォームの左上隅に既定のサイズのコントロールを追加できます。  
+    >  各コントロールには、定義されている既定のサイズがあります。 ドラッグして、コントロールの既定のサイズで、フォームにコントロールを追加することができます、**ツールボックス**をフォームにします。  
   
-     実行時に、フォームにコントロールを動的に追加することもできます。  次のコード例では、<xref:System.Windows.Forms.Button> コントロールをクリックしたときに、フォームに <xref:System.Windows.Forms.TextBox> コントロールが追加されるように設定します。  
+### <a name="to-drag-a-control-to-a-form"></a>コントロールをフォームにドラッグするには  
+  
+1.  フォームを開きます。 詳細については、次を参照してください。[する方法: デザイナーでの Windows フォームの表示](http://msdn.microsoft.com/en-us/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5)です。  
+  
+2.  **ツールボックス**フォームにドラッグしてコントロールをクリックします。  
+  
+     コントロールは、既定のサイズで指定した場所にあるフォームに追加されます。  
   
     > [!NOTE]
-    >  次のプロシージャでは、**\[Button\]** コントロールである `Button1` が既に配置されているフォームが必要です。  
+    >  内のコントロールをダブルクリックすることができます、**ツールボックス**を既定のサイズで、フォームの左上隅に追加します。  
   
-### プログラムによって、フォームにコントロールを追加するには  
+     実行時に、フォームにコントロールを動的に追加することができますも。 次のコード例で、<xref:System.Windows.Forms.TextBox>コントロールは、フォームに追加するときに、<xref:System.Windows.Forms.Button>コントロールがクリックされました。  
   
-1.  フォームのクラスでボタンの `Click` イベントを処理するメソッドに、次のようなコードを挿入して、制御変数への参照を追加します。コントロールの `Location` を設定し、コントロールを追加します。  
+    > [!NOTE]
+    >  次の手順が必要ですがあるフォーム、**ボタン**コントロール、`Button1`に既に配置されている、します。  
+  
+### <a name="to-add-a-control-to-a-form-programmatically"></a>プログラムによってコントロールをフォームに追加するには  
+  
+1.  ボタンの処理をメソッドで`Click`フォームのクラスを制御変数への参照を追加するには、次のような挿入コード内のイベント設定コントロールの`Location`、し、コントロールを追加します。  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -66,7 +71,6 @@ caps.handback.revision: 15
        MyText.Location = New Point(25, 25)  
        Me.Controls.Add(MyText)  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -76,7 +80,6 @@ caps.handback.revision: 15
        myText.Location = new Point(25,25);  
        this.Controls.Add (myText);  
     }  
-  
     ```  
   
     ```cpp  
@@ -94,11 +97,11 @@ caps.handback.revision: 15
     >  コントロールの他のプロパティを初期化するコードを追加することもできます。  
   
     > [!IMPORTANT]
-    >  悪意のある `UserControl` を参照することにより、ローカル コンピューターがネットワークを通じてセキュリティ上のリスクを負う可能性があります。  このことが問題になるのは、悪意のあるユーザーが有害なカスタム コントロールを作成していて、開発者が自分のプロジェクトに誤ってそれを追加してしまった場合です。  
+    >  悪意のあるを参照して、ローカル コンピューターがネットワーク経由のセキュリティ リスクを公開する可能性があります`UserControl`です。 誤ってそれをプロジェクトに追加した後に、有害なカスタム コントロールを作成する悪意のあるユーザーの場合は問題にならなければのみとなります。  
   
-## 参照  
- [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)   
- [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)   
- [方法 : Windows フォーム上のコントロールのサイズを変更する](../../../../docs/framework/winforms/controls/how-to-resize-controls-on-windows-forms.md)   
- [方法 : Windows フォーム コントロールによって表示されるテキストを設定する](../../../../docs/framework/winforms/controls/how-to-set-the-text-displayed-by-a-windows-forms-control.md)   
+## <a name="see-also"></a>関連項目  
+ [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)  
+ [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ [方法: Windows フォーム上のコントロールのサイズを変更する](../../../../docs/framework/winforms/controls/how-to-resize-controls-on-windows-forms.md)  
+ [方法: Windows フォーム コントロールによって表示されるテキストを設定する](../../../../docs/framework/winforms/controls/how-to-set-the-text-displayed-by-a-windows-forms-control.md)  
  [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

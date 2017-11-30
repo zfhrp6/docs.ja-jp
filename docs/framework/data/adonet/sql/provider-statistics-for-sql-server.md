@@ -1,58 +1,64 @@
 ---
-title: "SQL Server のプロバイダー統計情報 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "SQL Server のプロバイダー統計情報"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 429c9d09-92ac-46ec-829a-fbff0a9575a2
-caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 54e9a3b6f72eee2246d2c76b10e01fe011435b3b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# SQL Server のプロバイダー統計情報
-.NET Framework version 2.0 以降では、.NET Framework Data Provider for SQL Server によって実行時の統計がサポートされています。  統計情報を有効にするには、有効な接続オブジェクトを作成した後で、<xref:System.Data.SqlClient.SqlConnection> オブジェクトの <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> プロパティを `True` に設定する必要があります。  統計情報が有効にされると、<xref:System.Data.SqlClient.SqlConnection> オブジェクトの <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> メソッドを通じて <xref:System.Collections.IDictionary> 参照を取得することにより、"時間単位のスナップショット" として統計情報を確認できます。  名前と値がペアになったディクショナリ エントリのセットとして、一覧を列挙します。  これらの名前と値のペアは順序付けられていません。  いつでも <xref:System.Data.SqlClient.SqlConnection> オブジェクトの <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> メソッドを呼び出して、カウンターをリセットすることができます。  統計情報収集が有効になっていない場合、例外は生成されません。  また、<xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> が最初に呼び出されるずに <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> が呼び出されると、取得される値は各エントリの初期値になります。  統計情報を有効にしてからアプリケーションをしばらく実行した後で統計情報を無効にした場合、取得される値には、統計情報が無効にされた時点までに収集された値が含まれます。  すべての統計情報の値は、接続ごとに収集されます。  
+# <a name="provider-statistics-for-sql-server"></a>SQL Server のプロバイダー統計情報
+.NET Framework version 2.0 以降では、.NET Framework Data Provider for SQL Server によって実行時の統計がサポートされています。 統計情報を有効にするには、有効な接続オブジェクトを作成した後で、<xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> オブジェクトの <xref:System.Data.SqlClient.SqlConnection> プロパティを `True` に設定する必要があります。 統計情報が有効にされると、<xref:System.Collections.IDictionary> オブジェクトの <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> メソッドを通じて <xref:System.Data.SqlClient.SqlConnection> 参照を取得することにより、"時間単位のスナップショット" として統計情報を確認できます。 名前と値がペアになったディクショナリ エントリのセットとして、一覧を列挙します。 これらの名前と値のペアは順序付けられていません。 いつでも <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> オブジェクトの <xref:System.Data.SqlClient.SqlConnection> メソッドを呼び出して、カウンターをリセットすることができます。 統計情報収集が有効になっていない場合、例外は生成されません。 また、<xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> が最初に呼び出されるずに <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> が呼び出されると、取得される値は各エントリの初期値になります。 統計情報を有効にしてからアプリケーションをしばらく実行した後で統計情報を無効にした場合、取得される値には、統計情報が無効にされた時点までに収集された値が含まれます。 すべての統計情報の値は、接続ごとに収集されます。  
   
-## 使用できる統計情報の値  
- 現在、Microsoft SQL Server プロバイダーから使用できる項目は 18 種類あります。  使用できる項目の数を確認するには、<xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> により返される <xref:System.Collections.IDictionary> インターフェイス参照の **Count** プロパティを使用します。  プロバイダーの統計情報のカウンターはすべて、64 ビット幅である共通言語ランタイムの <xref:System.Int64> 型 \(C\# と Visual Basic の場合は **long**\) を使用します。  **int64** データ型の最大値は、**int64.MaxValue** フィールドによって定義されているように、\(\(2^63\)\-1\)\) です。  カウンターの値がこの最大値に達すると、これ以降カウンターは正確ではないと見なされます。  つまり、**int64.MaxValue**\-1 \(\(2^63\)\-2\) は、事実上、すべての統計情報について有効な値の最大値になります。  
+## <a name="statistical-values-available"></a>使用できる統計情報の値  
+ 現在、Microsoft SQL Server プロバイダーから使用できる項目は 18 種類あります。 利用可能なアイテムの数は、経由でアクセスできる、**カウント**のプロパティ、<xref:System.Collections.IDictionary>インターフェイスによって返されるリファレンス<xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A>です。 共通言語ランタイムを使用してすべてのプロバイダー統計カウンター<xref:System.Int64>型 (**長い**c# および Visual Basic で)、64 ビット幅であります。 最大値、 **int64**データ型で定義されている、 **int64 です。MaxValue**フィールド、((2^63)-1))。 カウンターの値がこの最大値に達すると、これ以降カウンターは正確ではないと見なされます。 つまり、 **int64 です。MaxValue**-1((2^63)-2) はすべての統計の最大有効値は実質的にします。  
   
 > [!NOTE]
->  プロバイダーの統計情報を返すためにディクショナリが使用されているのは、返される統計情報の数値、名前、および順序が今後変更される可能性があるためです。  アプリケーションでは、ディクショナリ内で見つかった特定の値に依存する必要はありませんが、値が存在するかどうかや、この値に応じて分岐させるかどうかを確認する必要があります。  
+>  プロバイダーの統計情報を返すためにディクショナリが使用されているのは、返される統計情報の数値、名前、および順序が今後変更される可能性があるためです。 アプリケーションでは、ディクショナリ内で見つかった特定の値に依存する必要はありませんが、値が存在するかどうかや、この値に応じて分岐させるかどうかを確認する必要があります。  
   
- 次の表では、使用可能な現在の統計情報の値が説明されています。  個々の値のキー名は、Microsoft .NET Framework の地域別バージョン全体でローカライズされているわけではないことに注意してください。  
+ 次の表では、使用可能な現在の統計情報の値が説明されています。 個々の値のキー名は、Microsoft .NET Framework の地域別バージョン全体でローカライズされているわけではないことに注意してください。  
   
 |キー名|説明|  
-|---------|--------|  
-|`BuffersReceived`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後にプロバイダーが SQL Server から受け取る、表形式のデータ ストリーム \(TDS\) パケットの数を返します。|  
-|`BuffersSent`|統計情報が有効になった後に、プロバイダーにより SQL Server に送信された TDS パケットの数を返します。  大量の処理を伴うコマンドでは、複数のバッファーが必要になります。  たとえば、大きなコマンドがサーバーに送信され、6 つのパケットが必要になる場合は、`ServerRoundtrips` は 1 だけインクリメントされ、`BuffersSent` は 6 だけインクリメントされます。|  
+|--------------|-----------------|  
+|`BuffersReceived`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後にプロバイダーが SQL Server から受け取る、表形式のデータ ストリーム (TDS) パケットの数を返します。|  
+|`BuffersSent`|統計情報が有効になった後に、プロバイダーにより SQL Server に送信された TDS パケットの数を返します。 大量の処理を伴うコマンドでは、複数のバッファーが必要になります。 たとえば、大きなコマンドがサーバーに送信され、6 つのパケットが必要になる場合は、`ServerRoundtrips` は 1 だけインクリメントされ、`BuffersSent` は 6 だけインクリメントされます。|  
 |`BytesReceived`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後にプロバイダーが SQL Server から受け取る、TDS パケット内のデータのバイト数を返します。|  
 |`BytesSent`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に TDS パケット内の SQL Server に送信される、データのバイト数を返します。|  
-|`ConnectionTime`|統計情報が有効になった後に接続が開かれている時間 \(ミリ秒\) を示します \(接続が開かれる前に統計情報が有効になっていた場合は、合計接続時間を示します\)。|  
-|`CursorOpens`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に接続を通じて行われた、カーソルが開かれた回数を返します。<br /><br /> SELECT ステートメントにより返される読み取り専用\/前方参照専用の結果は、カーソルが考慮されないため、このカウンターには影響しません。|  
-|`ExecutionTime`|統計情報が有効になってから、プロバイダーが処理に費やした累計時間 \(ミリ秒\) を返します。この時間には、サーバーからの応答を待つために費やされた時間と、プロバイダー自体がコードを実行するために費やした時間が含まれます。<br /><br /> タイミング コードが含まれるクラスは次のとおりです。<br /><br /> SqlConnection<br /><br /> SqlCommand<br /><br /> SqlDataReader<br /><br /> SqlDataAdapter<br /><br /> SqlTransaction<br /><br /> SqlCommandBuilder<br /><br /> パフォーマンスが重視されるメンバーをできるだけ小規模に保つため、次のメンバーは時刻指定されません。<br /><br /> SqlDataReader<br /><br /> this\[\] operator \(all overloads\)<br /><br /> GetBoolean<br /><br /> GetChar<br /><br /> GetDateTime<br /><br /> GetDecimal<br /><br /> GetDouble<br /><br /> GetFloat<br /><br /> GetGuid<br /><br /> GetInt16<br /><br /> GetInt32<br /><br /> GetInt64<br /><br /> GetName<br /><br /> GetOrdinal<br /><br /> GetSqlBinary<br /><br /> GetSqlBoolean<br /><br /> GetSqlByte<br /><br /> GetSqlDateTime<br /><br /> GetSqlDecimal<br /><br /> GetSqlDouble<br /><br /> GetSqlGuid<br /><br /> GetSqlInt16<br /><br /> GetSqlInt32<br /><br /> GetSqlInt64<br /><br /> GetSqlMoney<br /><br /> GetSqlSingle<br /><br /> GetSqlString<br /><br /> GetString<br /><br /> IsDBNull|  
+|`ConnectionTime`|統計情報が有効になった後に接続が開かれている時間 (ミリ秒) を示します (接続が開かれる前に統計情報が有効になっていた場合は、合計接続時間を示します)。|  
+|`CursorOpens`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に接続を通じて行われた、カーソルが開かれた回数を返します。<br /><br /> SELECT ステートメントにより返される読み取り専用/前方参照専用の結果は、カーソルが考慮されないため、このカウンターには影響しません。|  
+|`ExecutionTime`|統計情報が有効になってから、プロバイダーが処理に費やした累計時間 (ミリ秒) を返します。この時間には、サーバーからの応答を待つために費やされた時間と、プロバイダー自体がコードを実行するために費やした時間が含まれます。<br /><br /> タイミング コードが含まれるクラスは次のとおりです。<br /><br /> SqlConnection<br /><br /> SqlCommand<br /><br /> SqlDataReader<br /><br /> SqlDataAdapter<br /><br /> SqlTransaction<br /><br /> SqlCommandBuilder<br /><br /> パフォーマンスが重視されるメンバーをできるだけ小規模に保つため、次のメンバーは時刻指定されません。<br /><br /> SqlDataReader<br /><br /> this[] operator (all overloads)<br /><br /> GetBoolean<br /><br /> GetChar<br /><br /> GetDateTime<br /><br /> GetDecimal<br /><br /> GetDouble<br /><br /> GetFloat<br /><br /> GetGuid<br /><br /> GetInt16<br /><br /> GetInt32<br /><br /> GetInt64<br /><br /> GetName<br /><br /> GetOrdinal<br /><br /> GetSqlBinary<br /><br /> GetSqlBoolean <br /><br /> GetSqlByte <br /><br /> GetSqlDateTime <br /><br /> GetSqlDecimal <br /><br /> GetSqlDouble <br /><br /> GetSqlGuid <br /><br /> GetSqlInt16 <br /><br /> GetSqlInt32 <br /><br /> GetSqlInt64 <br /><br /> GetSqlMoney <br /><br /> GetSqlSingle <br /><br /> GetSqlString <br /><br /> GetString<br /><br /> IsDBNull|  
 |`IduCount`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に接続を通じて実行された、INSERT、DELETE、および UPDATE ステートメントの合計数を返します。|  
 |`IduRows`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に接続を通じて実行された INSERT、DELETE、および UPDATE ステートメントにより影響を受けた、行の合計数を返します。|  
-|`NetworkServerTime`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後にプロバイダーがサーバーからの応答を待つために費やした累計時間 \(ミリ秒\) を返します。|  
+|`NetworkServerTime`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後にプロバイダーがサーバーからの応答を待つために費やした累計時間 (ミリ秒) を返します。|  
 |`PreparedExecs`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に接続を通じて実行された、準備コマンドの数を返します。|  
 |`Prepares`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に接続を通じて準備された、ステートメントの数を返します。|  
-|`SelectCount`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に接続を通じて実行された、SELECT ステートメントの数を返します。  これには、カーソルから行を取得するための FETCH ステートメントが含まれます。SELECT ステートメントのカウントは、<xref:System.Data.SqlClient.SqlDataReader> の末尾に達すると更新されます。|  
-|`SelectRows`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に選択された、行の数を返します。  このカウンターは、実際には呼び出し元により使用されなかった行を含め、SQL ステートメントにより生成されたすべての行を反映します。  たとえば、結果セット全体を読み取る前にデータ リーダーを閉じても、カウントには影響しません。  これには、FETCH ステートメントを通じてカーソルから取得された行が含まれます。|  
+|`SelectCount`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に接続を通じて実行された、SELECT ステートメントの数を返します。 これには、カーソルから行を取得するための FETCH ステートメントが含まれます。SELECT ステートメントのカウントは、<xref:System.Data.SqlClient.SqlDataReader> の末尾に達すると更新されます。|  
+|`SelectRows`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に選択された、行の数を返します。 このカウンターは、実際には呼び出し元により使用されなかった行を含め、SQL ステートメントにより生成されたすべての行を反映します。 たとえば、結果セット全体を読み取る前にデータ リーダーを閉じても、カウントには影響しません。 これには、FETCH ステートメントを通じてカーソルから取得された行が含まれます。|  
 |`ServerRoundtrips`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に発生した、接続がサーバーにコマンドを送信して応答を受け取った回数を返します。|  
-|`SumResultSets`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に使用された、結果セットの数を返します。  たとえば、これにはクライアントに返されるすべての結果セットが含まれます。  カーソルについては、それぞれのフェッチ操作やブロック フェッチ操作は、単独の結果セットと見なされます。|  
-|`Transactions`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に開始された、ユーザー トランザクションの数を返します。これにはロールバックが含まれます。  自動コミットがオンの状態で接続が実行されている場合、各コマンドはトランザクションと見なされます。<br /><br /> このカウンターは、トランザクションがコミットされるかどうか、または後にロール バックされるかどうかに関係なく、BEGIN TRAN ステートメントが実行された直後に、トランザクション カウントをインクリメントします。|  
+|`SumResultSets`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に使用された、結果セットの数を返します。 たとえば、これにはクライアントに返されるすべての結果セットが含まれます。 カーソルについては、それぞれのフェッチ操作やブロック フェッチ操作は、単独の結果セットと見なされます。|  
+|`Transactions`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に開始された、ユーザー トランザクションの数を返します。これにはロールバックが含まれます。 自動コミットがオンの状態で接続が実行されている場合、各コマンドはトランザクションと見なされます。<br /><br /> このカウンターは、トランザクションがコミットされるかどうか、または後にロール バックされるかどうかに関係なく、BEGIN TRAN ステートメントが実行された直後に、トランザクション カウントをインクリメントします。|  
 |`UnpreparedExecs`|アプリケーションがプロバイダーを使って開始され、統計情報が有効になった後に接続を通じて準備解除された、ステートメントの数を返します。|  
   
-### 値の取得  
+### <a name="retrieving-a-value"></a>値の取得  
  次のコンソール アプリケーションは、接続で統計情報を有効にして、4 つの各統計情報の値を取得し、コンソール ウィンドウに出力する方法を示します。  
   
 > [!NOTE]
->  次の例では、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] に含まれるサンプルの **AdventureWorks** データベースを使用します。  サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。  必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
+>  次の例は、サンプル**AdventureWorks**データベースに含まれている[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]です。 サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。 必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
   
 ```vb  
 Option Strict On  
@@ -125,9 +131,7 @@ Module Module1
 End Module  
 ```  
   
- \[C\#\]  
-  
-```  
+```csharp  
 using System;  
 using System.Collections;  
 using System.Collections.Generic;  
@@ -206,11 +210,11 @@ namespace CS_Stats_Console_GetValue
 }  
 ```  
   
-### すべての値の取得  
+### <a name="retrieving-all-values"></a>すべての値の取得  
  次のコンソール アプリケーションは、接続で統計情報を有効にし、使用可能なすべての統計情報の値を列挙子を使って取得して、コンソール ウィンドウに出力する方法を示します。  
   
 > [!NOTE]
->  次の例では、[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] に含まれるサンプルの **AdventureWorks** データベースを使用します。  サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。  必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
+>  次の例は、サンプル**AdventureWorks**データベースに含まれている[!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)]です。 サンプル コードの接続文字列は、データベースがローカルのコンピューターにインストールされて利用可能な状態になっていることを前提としています。 必要に応じて、お使いの環境に合わせて接続文字列を変更してください。  
   
 ```vb  
 Option Strict On  
@@ -344,6 +348,6 @@ namespace CS_Stats_Console_GetAll
 }  
 ```  
   
-## 参照  
- [SQL Server と ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [SQL Server と ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

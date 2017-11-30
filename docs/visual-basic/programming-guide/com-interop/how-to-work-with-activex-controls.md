@@ -1,63 +1,46 @@
 ---
-title: "方法: ActiveX コントロール (Visual Basic) の使用 |Microsoft ドキュメント"
+title: "方法: ActiveX コントロールを操作する (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - Toolbox, adding controls
 - ActiveX controls, adding to Toolbox
 ms.assetid: ec675027-866f-4c05-aaf2-92fca5200f9a
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 12780fc2e95e219befdfd7283a2f958f21e447f7
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: d7856149d22f8949d8acbbd405649a12ad2f8113
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-work-with-activex-controls-visual-basic"></a>方法: ActiveX コントロールを操作する (Visual Basic)
-ActiveX コントロールは、COM コンポーネントまたは Web ページやプログラムには、他のユーザー パッケージの機能を再利用するには、他のアプリケーションに挿入できるオブジェクトです。 Visual Basic 6.0 とそれ以前のバージョン用に開発された ActiveX コントロールを使用するには機能を追加する、**ツールボックス**の[!INCLUDE[vsprvs](../../../csharp/includes/vsprvs_md.md)]です。  
+ActiveX コントロールは、COM コンポーネントまたは Web ページや他のユーザーをプログラムは、パッケージの機能を再利用する他のアプリケーションに挿入できるオブジェクトです。 機能を追加する Visual Basic 6.0 とそれ以前のバージョン用に開発された ActiveX コントロールを使用することができます、**ツールボックス**の[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]します。  
   
 ### <a name="to-add-activex-controls-to-the-toolbox"></a>ActiveX コントロールをツールボックスに追加するには  
   
-1.  **ツール**] メニューのをクリックして**[ツールボックス アイテムの**です。  
+1.  **ツール** メニューのをクリックして**ツールボックス アイテムの選択**です。  
   
      **ツールボックス アイテムの選択** ダイアログ ボックスが表示されます。  
   
-2.  クリックして、 **COM コンポーネント** タブをクリックします。  
+2.  クリックして、 **COM コンポーネント**タブです。  
   
-3.  クリックして、使用する ActiveX コントロールの横にあるチェック ボックスをオンに**OK**します。  
+3.  を使用して、をクリックする ActiveX コントロールの横にあるチェック ボックスをオンに**OK**です。  
   
-     その他のツールを使用してこの新しいコントロールが表示されます、**ツールボックス**します。  
+     その他のツールで新しいコントロールが表示されます、**ツールボックス**です。  
   
     > [!NOTE]
-    >  Aximp ユーティリティを使用して、ActiveX コントロールの相互運用機能アセンブリを手動で作成することができます。 詳細については、次を参照してください。 [Aximp.exe (Windows フォーム ActiveX コントロール インポーター)](http://msdn.microsoft.com/library/482c0d83-7144-4497-b626-87d2351b78d0)します。  
+    >  Aximp ユーティリティを使用して、ActiveX コントロールの相互運用機能アセンブリを手動で作成することができます。 詳細については、次を参照してください。 [Aximp.exe (Windows フォーム ActiveX コントロール インポーター)](http://msdn.microsoft.com/library/482c0d83-7144-4497-b626-87d2351b78d0)です。  
   
 ## <a name="see-also"></a>関連項目  
- [COM 相互運用機能](../../../visual-basic/programming-guide/com-interop/index.md)   
- [方法: Windows フォームに ActiveX コントロールを追加します。](http://msdn.microsoft.com/library/54a61e5b-555e-4887-b41e-6244fed271eb)   
- [Aximp.exe (Windows フォーム ActiveX コントロール インポーター)](http://msdn.microsoft.com/library/482c0d83-7144-4497-b626-87d2351b78d0)   
- [Windows フォームで ActiveX コントロールをホストする際の考慮事項](http://msdn.microsoft.com/library/2509302d-a74e-484f-9890-2acdbfa67a68)   
+ [COM 相互運用](../../../visual-basic/programming-guide/com-interop/index.md)  
+ [方法: Windows フォームに ActiveX コントロールを追加する](../../../framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)  
+ [Aximp.exe (Windows フォーム ActiveX コントロール インポーター)](http://msdn.microsoft.com/library/482c0d83-7144-4497-b626-87d2351b78d0)  
+ [Windows フォームで ActiveX コントロールをホストする場合の考慮事項](../../../framework/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form.md)  
  [相互運用性のトラブルシューティング](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)

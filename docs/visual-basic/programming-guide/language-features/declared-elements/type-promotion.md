@@ -1,92 +1,75 @@
 ---
-title: "上位変換 (Visual Basic) を入力 |Microsoft ドキュメント"
+title: "型の上位変換 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- declared elements, scope
-- visibility, declared elements
-- Partial keyword, unexpected results with type promotion
-- scope, declared elements
-- scope, Visual Basic
+- declared elements [Visual Basic], scope
+- visibility [Visual Basic], declared elements
+- Partial keyword [Visual Basic], unexpected results with type promotion
+- scope [Visual Basic], declared elements
+- scope [Visual Basic], Visual Basic
 - type promotion
-- declared elements, visibility
+- declared elements [Visual Basic], visibility
 ms.assetid: 035eeb15-e4c5-4288-ab3c-6bd5d22f7051
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d732e765fc28eaedc0deab477dbf9955a40e97c9
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: f3a55c023afe7afe96f862f0b3cbbdb03a15b902
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="type-promotion-visual-basic"></a>型の上位変換 (Visual Basic)
-モジュールでのプログラミング要素を宣言するときに[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]モジュールを含む名前空間には、そのスコープを昇格させます。 これと呼ばれます。*の上位変換の入力*します。  
+モジュールの場合でのプログラミング要素を宣言するときに[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]モジュールを含む名前空間には、そのスコープを昇格させます。 これは呼ば*プロモーションを入力*です。  
   
- 次の例では、モジュールのスケルトンの定義とモジュールの&2; つのメンバーを示します。  
+ 次の例では、モジュールのスケルトン定義し、そのモジュールの 2 つのメンバーを示します。  
   
- [!code-vb[VbVbalrDeclaredElements&#1;](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_1.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#1](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_1.vb)]  
   
- 内で`projModule`プログラミング、モジュール レベルで宣言されている要素に昇格`projNamespace`します。 前の例で`basicEnum`と`innerClass`昇格されますが、`numberSub`モジュール レベルで宣言されていないためにではありません。  
+ 内で`projModule`プログラミング、モジュール レベルで宣言された要素に昇格`projNamespace`です。 前の例で`basicEnum`と`innerClass`昇格されますが、`numberSub`モジュール レベルで宣言されていないためにではありません。  
   
-## <a name="effect-of-type-promotion"></a>型の上位変換の効果  
- 型の上位変換の効果は、修飾文字列がモジュール名を含める必要がないことです。 次の例では、前の例では、手順&2; つの呼び出しをでいます。  
+## <a name="effect-of-type-promotion"></a>型の昇格の効果  
+ 型の昇格の効果は、修飾文字列は、モジュール名を含めるには必要ありません。 次の例では、前の例で、プロシージャに 2 つの呼び出しをさせます。  
   
- [!code-vb[VbVbalrDeclaredElements&#2;](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_2.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#2](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_2.vb)]  
   
- 前の例では、最初の呼び出しは、完全な修飾文字列を使用します。 ただし、これはないために必要な型の上位変換のためです。 もう&1; つを呼び出すもアクセス モジュールのメンバーを含めずに`projModule`修飾文字列。  
+ 前の例では、最初の呼び出しは、完全修飾文字列を使用します。 ただし、これはいないために必要な型の昇格のためです。 2 番目せずに呼び出すもアクセス モジュールのメンバーを含む`projModule`修飾文字列にします。  
   
 ## <a name="defeat-of-type-promotion"></a>型の上位変換の無効化  
- 名前空間には、モジュール メンバーと同じ名前のメンバーが既に、型の上位変換は、モジュール メンバーの無効化です。 次の例では、列挙型と同じ名前空間内のモジュールのスケルトンの定義を示します。  
+ 名前空間は、モジュール メンバーと同じ名前のメンバーを既に持っている場合の型の昇格がそのモジュール メンバーの無効化します。 次の例は、列挙体と同じ名前空間内のモジュールのスケルトン定義を示しています。  
   
- [!code-vb[VbVbalrDeclaredElements&#3;](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_3.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#3](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_3.vb)]  
   
- 前の例で[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]クラスに昇格できません`abc`に`thisNameSpace`名前空間レベルで同じ名前の列挙型が既に存在します。 アクセスする`abcSub`、完全修飾文字列を使用する必要があります`thisNamespace.thisModule.abc.abcSub`します。 ただし、クラス`xyz`はまだ昇格し、アクセスできる`xyzSub`短い修飾文字列`thisNamespace.xyz.xyzSub`します。  
+ 前の例で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]昇格できません。 クラス`abc`に`thisNameSpace`名前空間レベルで同じ名前を持つ列挙型が既に存在します。 アクセスする`abcSub`、完全修飾文字列を使用する必要があります`thisNamespace.thisModule.abc.abcSub`です。 ただし、クラス`xyz`がまだ昇格し、アクセスできる`xyzSub`短い修飾文字列`thisNamespace.xyz.xyzSub`です。  
   
 ### <a name="defeat-of-type-promotion-for-partial-types"></a>部分型の型の上位変換の無効化  
- クラスまたは構造体、モジュールの中で使用する場合、[部分](../../../../visual-basic/language-reference/modifiers/partial.md)キーワード、型の上位変換が自動的に無効化にそのクラスまたは構造体、名前空間には同じ名前のメンバーであるかどうか。 モジュールの他の要素は現在の型の上位変換します。  
+ クラスまたはモジュール内の構造体で使用する場合、[部分](../../../../visual-basic/language-reference/modifiers/partial.md)キーワード、型の上位変換が自動的に無効化のクラスまたは構造体、名前空間を持つ同じ名前のメンバーであるかどうか。 モジュールの他の要素は、型の昇格も対象です。  
   
- **結果。** 部分的な定義の型の上位変換の無効化には、予期しない結果とさらにコンパイル エラーがあります。 次の例では、うちの&1; つは、モジュール内のクラスのスケルトンの部分的な定義を示します。  
+ **影響します。** 部分定義の型の上位変換の無効化には、予期しない結果とコンパイラ エラーも可能性があります。 次の例では、モジュール内の 1 つは、クラスのスケルトンの部分定義を示します。  
   
- [!code-vb[VbVbalrDeclaredElements&4;](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_4.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#4](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_4.vb)]  
   
- 前の例では、開発者は、コンパイラの&2; つの部分定義をマージする`sampleClass`です。 ただし、コンパイラが部分定義内のプロモーションを考慮されません`sampleModule`します。 その結果、2 つの個別のクラスをコンパイルしようという名前を`sampleClass`ですが、パスのさまざまな修飾します。  
+ 前の例では、開発者は、コンパイラの 2 つの部分定義をマージする`sampleClass`です。 ただし、コンパイラが部分定義内の昇格を考慮されません`sampleModule`です。 2 つの独立したクラスをコンパイルしようとしてという名前をその結果、`sampleClass`ですが、パスのさまざまな修飾します。  
   
  コンパイラは、完全修飾されたパスがまったく同じ場合にのみ、部分定義をマージします。  
   
 ## <a name="recommendations"></a>推奨事項  
- 次の推奨事項は、プログラミング習慣を表します。  
+ 次の推奨事項は、適切なプログラミング手法を表します。  
   
--   **一意の名前。** プログラミングの要素の名前付けを完全に制御がある場合は常には一意の名前をすべての場所で使用します。 同じ名前では、余分に修飾が必要し、するコードが読みにくくします。 微妙なエラーと予期しない結果になることもします。  
+-   **一意の名前。** プログラミング要素の名前付けを完全に制御がある場合は、は常に一意の名前をあらゆる場所で使用することをお勧めします。 同じ名前では、余分な修飾子が必要し、読みにくく、コードを行うことができます。 微妙なエラーと予期しない結果になることができますも。  
   
--   **完全に修飾されます。** モジュールと同じ名前空間の他の要素を使用している、最も安全な方法が、常にすべてのプログラミング要素を完全に修飾を使用します。 型の上位変換がモジュール メンバーの無効化すると、そのメンバーを完全修飾せず、別のプログラミング要素をアクセスしてしまう可能性があります。  
+-   **完全に修飾します。** モジュールと同じ名前空間の他の要素を使用している、最も安全な手法はすべてのプログラミング要素の完全修飾を常に使用することです。 型の昇格がモジュール メンバーの無効化、そのメンバーを完全に指定していない場合は、誤って別のプログラミング要素にアクセスするでした。  
   
 ## <a name="see-also"></a>関連項目  
- [Module ステートメント](../../../../visual-basic/language-reference/statements/module-statement.md)   
- [Namespace ステートメント](../../../../visual-basic/language-reference/statements/namespace-statement.md)   
- [部分的です](../../../../visual-basic/language-reference/modifiers/partial.md)   
- [Visual Basic におけるスコープ](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)   
- [方法: 変数のスコープを制御します。](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)   
+ [Module ステートメント](../../../../visual-basic/language-reference/statements/module-statement.md)  
+ [Namespace ステートメント](../../../../visual-basic/language-reference/statements/namespace-statement.md)  
+ [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)  
+ [Visual Basic におけるスコープ](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
+ [方法: 変数のスコープを制御する](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)  
  [宣言された要素の参照](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)

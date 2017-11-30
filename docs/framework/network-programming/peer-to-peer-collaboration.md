@@ -7,22 +7,16 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: b6216d88-bccb-4a59-9f1c-9f751708e811
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b17fc74b2143f7307316a167330d06c87b9d4c3d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 3928c6b3690bd03a4365d21d5fbf2f4bd2a4f457
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="peer-to-peer-collaboration"></a>ピアツーピア コラボレーション
 ピアツーピア ネットワーキングは、インターネットのエッジに存在する比較的処理能力の高いコンピューター (パーソナル コンピューター) を、単なるクライアントベースのコンピューティング以上のタスクに利用する方法です。 最新のパーソナル コンピューター (PC) は、非常に高速なプロセッサに大容量のメモリとハード ディスクを備えています。しかし、電子メールや Web 閲覧などの一般的なコンピューティング タスクを実行するとき、それらはいずれも最大活用されていません。 最新の PC は、さまざまな種類のアプリケーションでクライアントとサーバーの両方 (ピア) として簡単に機能できます。  
@@ -56,6 +50,5 @@ ms.lasthandoff: 08/21/2017
  Active Directory ドメインでは、ドメイン コントローラーが Kerberos を使用した認証サービスを提供します。 サーバーなしのピア環境では、ピアは独自の認証を提供する必要があります。 ピアツーピア ネットワーキングでは、どのノードも CA として活動できるため、各ピアの信頼されたルート ストアにルート証明書は不要です。 認証は、X.509 証明書として書式設定された自己署名証明書を使用して提供されます。 これらの証明書は各ピアによって作成されます。各ピアは、公開キーおよび秘密キーのペアと、秘密キーを使用して署名された証明書を生成します。 自己署名証明書は、認証のために、また、ピア エンティティについての情報を提供するために使用されます。 X.509 認証と同様に、ピア ネットワーキング認証は、信頼された公開キーまでさかのぼることができる証明書チェーンに基づいています。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Net.PeerToPeer.Collaboration>   
+ <xref:System.Net.PeerToPeer.Collaboration>  
  [System.Net.PeerToPeer.Collaboration 名前空間について](../../../docs/framework/network-programming/about-the-system-net-peertopeer-collaboration-namespace.md)
-

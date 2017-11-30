@@ -1,47 +1,53 @@
 ---
-title: "方法 : バインドされたデータを変換する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "バインド (データを), 変換 (バインドされたデータを)"
-  - "変換, バインドされたデータ"
-  - "データ バインディング, 変換 (バインドされたデータを)"
+title: "方法 : バインドされたデータを変換する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- converting [WPF], bound data
+- data binding [WPF], converting bound data
+- binding data [WPF], converting bound data
 ms.assetid: b00aaa19-c6df-4c3b-a9fd-88a0b488df2b
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 88e248c7c8e60fbe8e55567cb642200820b25214
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : バインドされたデータを変換する
-この例では、バインディングで使用するデータに変換を適用する方法を示します。  
+# <a name="how-to-convert-bound-data"></a>方法 : バインドされたデータを変換する
+この例では、バインディングで使用されているデータへの変換を適用する方法を示します。  
   
- バインディング中にデータを変換するには、<xref:System.Windows.Data.IValueConverter> インターフェイスを実装するクラスを作成する必要があります。このインターフェイスには、<xref:System.Windows.Data.IValueConverter.Convert%2A> メソッドや <xref:System.Windows.Data.IValueConverter.ConvertBack%2A> メソッドなどが用意されています。  
+ バインド中にデータを変換するを実装するクラスを作成する必要があります、<xref:System.Windows.Data.IValueConverter>インターフェイスが含まれています、<xref:System.Windows.Data.IValueConverter.Convert%2A>と<xref:System.Windows.Data.IValueConverter.ConvertBack%2A>メソッドです。  
   
-## 使用例  
- 渡された日付の値を変換し、年、月、日だけを表示する日付コンバーターの実装を次の例に示します。  <xref:System.Windows.Data.IValueConverter> インターフェイスを実装する際、次の例のように、実装を <xref:System.Windows.Data.ValueConversionAttribute> 属性で修飾し、変換に関連するデータ型を開発ツールに示すことをお勧めします。  
+## <a name="example"></a>例  
+ 次の例では、年、月、および日のみが表示されるように渡された日付値に変換する日付コンバーターの実装を示します。 実装する場合、<xref:System.Windows.Data.IValueConverter>装飾を使用して実装することをお勧めは、インターフェイス、<xref:System.Windows.Data.ValueConversionAttribute>開発に示すために属性が次の例のように、変換に含まれるデータ型をツールします。  
   
  [!code-csharp[DataBindingLab#18](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DateConverter.cs#18)]
  [!code-vb[DataBindingLab#18](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/DateConverter.vb#18)]  
   
- コンバーターを作成したら、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] ファイル内でリソースとしてそのコンバーターを追加できます。  次の例では、*DateConverter* が定義される名前空間に *src* を割り当てます。  
+ コンバーターを作成した後でリソースとして追加できる、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]ファイル。 次の例では、 *src*先の名前空間にマップ*DateConverter*が定義されています。  
   
- [!code-xml[DataBindingLab#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#15)]  
+ [!code-xaml[DataBindingLab#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#15)]  
   
- 最後に、次の構文を使用して、このコンバーターをバインディングで使用できます。  次の例では、<xref:System.Windows.Controls.TextBlock> のテキスト コンテンツは、外部データ ソースのプロパティである *StartDate* にバインドされています。  
+ 最後に、次の構文を使用して、バインディングでコンバーターを使用できます。 次の例では、テキストのコンテンツ、<xref:System.Windows.Controls.TextBlock>にバインドされた*StartDate*、外部データ ソースのプロパティです。  
   
- [!code-xml[DataBindingLab#17](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#17)]  
+ [!code-xaml[DataBindingLab#17](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#17)]  
   
- 上の例で参照したスタイル リソースは、ここでは示していないリソース セクションで定義されます。  
+ 上記の例で参照されているスタイル リソースは、このトピックで示していないリソース セクションで定義されます。  
   
-## 参照  
- [バインディングの検証の実装](../../../../docs/framework/wpf/data/how-to-implement-binding-validation.md)   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [方法のトピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a>関連項目  
+ [バインディングの検証の実装](../../../../docs/framework/wpf/data/how-to-implement-binding-validation.md)  
+ [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [方法トピック](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

@@ -1,69 +1,70 @@
 ---
-title: "TableLayoutPanel コントロールの推奨される手順 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "サイズの自動調整"
-  - "AutoSize プロパティ, TableLayoutPanel コントロール"
-  - "推奨される手順, TableLayoutPanel コントロール"
-  - "コントロール [Windows フォーム], サイズ変更"
-  - "フォーム, 推奨される手順"
-  - "レイアウト [Windows フォーム]"
-  - "レイアウト [Windows フォーム], 推奨される手順"
-  - "レイアウト [Windows フォーム], AutoSize"
-  - "サイズ変更, 自動"
-  - "TableLayoutPanel コントロール [Windows フォーム], 推奨される手順"
-  - "TableLayoutPanel コントロール [Windows フォーム], AutoSize の動作"
+title: "TableLayoutPanel コントロールの推奨される手順"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- layout [Windows Forms]
+- TableLayoutPanel control [Windows Forms], best practices
+- forms [Windows Forms], best practices
+- AutoSize property [Windows Forms], tableLayoutPanel control
+- controls [Windows Forms], sizing
+- TableLayoutPanel control [Windows Forms], AutoSize behavior
+- layout [Windows Forms], AutoSize
+- layout [Windows Forms], best practices
+- best practices [Windows Forms], tableLayoutPanel control
+- sizing [Windows Forms], automatic
+- automatic sizing
 ms.assetid: b6706efb-d7a4-45ec-8cf4-08fa993e3afb
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 802cc501b695f6c5cfe990bf72a4d9d2af68ba2b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# TableLayoutPanel コントロールの推奨される手順
-<xref:System.Windows.Forms.TableLayoutPanel> コントロールが提供する強力なレイアウト機能については、Windows フォームで使用する前に慎重に検討する必要があります。  
+# <a name="best-practices-for-the-tablelayoutpanel-control"></a>TableLayoutPanel コントロールの推奨される手順
+<xref:System.Windows.Forms.TableLayoutPanel>コントロールは、Windows フォームで使用する前に慎重に考慮すべき強力なレイアウト機能を提供します。  
   
-## 推奨  
- 以下の推奨事項は、<xref:System.Windows.Forms.TableLayoutPanel> コントロールを有効に利用する上で役立ちます。  
+## <a name="recommendations"></a>推奨事項  
+ 次の推奨事項は、使用するのに役立つ、<xref:System.Windows.Forms.TableLayoutPanel>最大限に活用するコントロール。  
   
-### 対象となるレイアウト  
- <xref:System.Windows.Forms.TableLayoutPanel> コントロールを使用する場合は注意が必要です。  サイズ変更が可能なレイアウトが必要であってもすべての状況で使用できるわけではありません。  次のようなレイアウトでは、<xref:System.Windows.Forms.TableLayoutPanel> コントロールの使用が最も適しています。  
+### <a name="targeted-use"></a>対象の使用  
+ 使用して、<xref:System.Windows.Forms.TableLayoutPanel>慎重を制御します。 サイズ変更可能なレイアウトを必要とするすべての状況で使用する必要がありますされません。 次のリストの使用を最大限に活用するレイアウトの説明、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。  
   
--   フォームが複数の部分から成り、それぞれを比例的にサイズ変更する必要があるレイアウト。  
+-   保存されているフォームの相互に比例してサイズが変更される複数の部分のレイアウトです。  
   
--   実行時に動的に変更または生成されるレイアウト \(たとえば、ユーザーによるカスタマイズが可能なフィールドが、設定に基づいて追加または削除されるデータ入力フォームなど\)。  
+-   変更または追加、または削除、ユーザーがカスタマイズできるフィールドを持つデータ エントリ フォームなどの実行時に動的に生成されるレイアウトは、基本設定に基づいています。  
   
--   全体のサイズを固定しておく必要があるレイアウト。  たとえば、ダイアログ ボックスのサイズを 800 × 600 以下に維持しながら、ローカライズされた文字列をサポートする必要がある場合などです。  
+-   レイアウトを全体の固定サイズのままにします。 たとえば、800 x 600 よりも小さい必要のあるダイアログ ボックスがありますが、ローカライズされた文字列をサポートする必要があります。  
   
- 次のようなレイアウトでは、<xref:System.Windows.Forms.TableLayoutPanel> コントロールを使用してもあまり有効ではありません。  
+ 次のように、有効ではありませんが大幅に使用するレイアウト、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。  
   
--   ラベルとテキスト入力領域の列をそれぞれ 1 つずつ持つ単純なデータ入力フォーム。  
+-   単純なデータ エントリ フォームを 1 つの列のラベルとテキスト入力領域の 1 つの列です。  
   
--   サイズ変更の際に、使用できる領域全体を満たす必要がある 1 つの大きな表示領域を持つフォーム。  この例としては、単一の <xref:System.Windows.Forms.PropertyGrid> コントロールを表示するフォームがあります。  この場合、フォームのサイズを変更したときに他の要素を拡張する必要がないため、固定を適用します。  
+-   1 つの大きなフォームは、サイズ変更が発生したときに使用可能なすべての領域の塗りつぶし領域を表示します。 この例は、1 つを表示するフォーム<xref:System.Windows.Forms.PropertyGrid>コントロール。 この例を使用して固定、フォームのサイズが変更されるときにそれ以外のものを展開するためです。  
   
- <xref:System.Windows.Forms.TableLayoutPanel> コントロールに必要なコントロールを慎重に選択します。  アンカーを使用してテキストを 30% まで拡張する余裕がある場合、<xref:System.Windows.Forms.Control.Anchor%2A> プロパティのみを使用することを検討してください。  レイアウトに必要な領域を推定できる場合、<xref:System.Windows.Forms.Control.Dock%2A> と <xref:System.Windows.Forms.Control.Anchor%2A> を使用する方法は、残りの領域と <xref:System.Windows.Forms.Control.AutoSize%2A> 動作の詳細を推定するよりも簡単です。  
+ 内にある必要があるコントロールを慎重に選択して、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。 アンカーを使用して、30% ずつ増加して、文字列を使っている場合は、使用を検討して、<xref:System.Windows.Forms.Control.Anchor%2A>プロパティのみです。 場合は、レイアウトに必要な領域を見積もるを使用して<xref:System.Windows.Forms.Control.Dock%2A>と<xref:System.Windows.Forms.Control.Anchor%2A>残りの領域の詳細の見積もりよりも簡単です、<xref:System.Windows.Forms.Control.AutoSize%2A>動作します。  
   
- 一般に、<xref:System.Windows.Forms.TableLayoutPanel> を使用してレイアウトをデザインする場合、デザインはできるだけ単純にします。  
+ 一般を使用してレイアウトを設計するとき、<xref:System.Windows.Forms.TableLayoutPanel>制御、できるだけ単純な設計を保持します。  
   
-### \[ドキュメント アウトライン\] ウィンドウの使用  
- \[ドキュメント アウトライン\] ウィンドウには、レイアウトがツリー ビューに表示されます。コントロールの Z オーダーと親子関係を操作するときに使用できます。  **\[表示\]** メニューの **\[その他のウィンドウ\]** をポイントし、**\[ドキュメント アウトライン\]** をクリックします。  
+### <a name="use-the-document-outline-window"></a>ドキュメント アウトライン ウィンドウを使用します。  
+ ドキュメント アウトライン ウィンドウでは、コントロールの z オーダーと、親子のリレーションシップを操作に使用できるのレイアウトのツリー ビューを示します。 **表示 メニュー****その他のウィンドウ**選択してから、 **ドキュメント アウトライン**です。  
   
-### 入れ子を避ける  
- <xref:System.Windows.Forms.TableLayoutPanel> コントロールに他の <xref:System.Windows.Forms.TableLayoutPanel> コントロールを入れ子にするのは避けてください。  入れ子になったレイアウトのデバッグは困難な場合があります。  
+### <a name="avoid-nesting"></a>入れ子を回避します。  
+ その他の入れ子を避ける<xref:System.Windows.Forms.TableLayoutPanel>内で制御、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。 入れ子になったレイアウトのデバッグは難しくなります。  
   
-### ビジュアル継承を避ける  
- <xref:System.Windows.Forms.TableLayoutPanel> コントロールは、Windows フォーム デザイナーのビジュアル継承をサポートしていません。  派生クラスの <xref:System.Windows.Forms.TableLayoutPanel> コントロールは、デザイン時には "ロックされた" 状態で表示されます。  
+### <a name="avoid-visual-inheritance"></a>ビジュアル継承を避ける  
+ <xref:System.Windows.Forms.TableLayoutPanel>コントロールは、Windows フォーム デザイナーでのビジュアル継承をサポートしません。 A <xref:System.Windows.Forms.TableLayoutPanel> 「ロックされている」デザイン時に、派生クラスでのコントロールが表示されます。  
   
-## 参照  
- <xref:System.Windows.Forms.TableLayoutPanel>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.TableLayoutPanel>  
  <xref:System.Windows.Forms.FlowLayoutPanel>

@@ -1,74 +1,78 @@
 ---
-title: "方法 : カラー行列を使用して単一色を変換する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "カラー行列, 使用"
-  - "イメージ カラー, 変換"
+title: "方法 : カラー行列を使用して単一色を変換する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- image colors [Windows Forms], transforming
+- color matrices [Windows Forms], using
 ms.assetid: 44df4556-a433-49c0-ac0f-9a12063a5860
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 60da29b60d2b9b5b98c76a0a9c3ae73ac9142bbd
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : カラー行列を使用して単一色を変換する
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] は、イメージの格納および操作のために、<xref:System.Drawing.Image> クラスおよび <xref:System.Drawing.Bitmap> クラスを提供しています。  <xref:System.Drawing.Image> オブジェクトおよび <xref:System.Drawing.Bitmap> オブジェクトは、各ピクセルの色として、赤、緑、青、およびアルファそれぞれに 8 ビットずつ割り当てた 32 ビットの数値を格納します。  4 つの各要素は、0 から 255 までの数値で表され、0 は輝度がないことを表し、255 は最大の輝度を表します。  アルファ要素は、色の透明度を指定します。0 は完全な透明を表し、255 は完全な不透明を表します。  
+# <a name="how-to-use-a-color-matrix-to-transform-a-single-color"></a>方法 : カラー行列を使用して単一色を変換する
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]提供、<xref:System.Drawing.Image>と<xref:System.Drawing.Bitmap>を格納して、画像を操作するためのクラスです。 <xref:System.Drawing.Image>および<xref:System.Drawing.Bitmap>オブジェクトに格納する 32 ビット数値として各ピクセルの色: 赤、緑、青、および alpha にそれぞれ 8 ビットです。 4 つのコンポーネントのそれぞれは、0 ~ 255 の輝度がないと 255 は最大の輝度を表す、0 から番号です。 アルファ コンポーネントは、色の透明度を指定します。 0 は完全に透過的であり、255 は完全に不透明です。  
   
- カラー ベクターは、4 つの要素 \(赤、緑、青、アルファ\) から成る集合です。  たとえば、カラー ベクター \(0, 255, 0, 255\) は、赤と青に輝度がなく、緑の輝度が最大である不透明な色を表します。  
+ カラー ベクターは、(赤、緑、青、alpha) 形式の 4 タプルです。 たとえば、色ベクトル (0、255, 0, 255) が存在せず、赤または青、緑を輝度が完全では不透明な色を表します。  
   
- 色を表すための別の規則では、数値 1 を使用して最大の輝度を表します。  その規則を使用すると、上の段落で説明した色はベクター \(0, 1, 0, 1\) で表されます。  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] では、色の変換を行うときに、最大の輝度を 1 で表す規則を使用します。  
+ 色を表すための別の規則は、最大の輝度番号 1 を使用します。 その規則を使用して、前の段落で説明されている色で表されます (0、1, 0, 1) のベクトル。 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]色の変換を実行するときは、最大の輝度を 1 の規則を使用します。  
   
- カラー ベクターに 4 × 4 の行列を掛け合わせることによって、そのカラー ベクターに線形変換 \(回転、スケーリングなど\) を適用できます。  しかし、線形変換ではない平行移動を行うために、4 × 4 の行列は使用できません。  ダミーとして 5 番目の座標 \(たとえば、数字 1\) を各カラー ベクターに追加すると、5 × 5 の行列を使用して、線形変換と平行移動を任意に組み合わせて適用できます。  線形変換に続いて平行移動を実行する変換をアフィン変換と呼びます。  
+ 4 × 4 行列によって色ベクトルを乗算することによって、カラー ベクターに (回転、スケーリング、および、like) の線形変換を適用できます。 ただし、線形変換を実行するのに 4 × 4 行列を使用することはできません。 各色ベクター ダミー 5 番目の座標 (たとえば、番号 1) を追加する場合は、線形変換および変換の任意の組み合わせを適用する 5 × 5 マトリックスを使用できます。 続いて平行線形変換の変換は、アフィン変換と呼ばれます。  
   
- たとえば、色 \(0.2, 0.0, 0.4, 1.0\) から開始して、次の変換を適用するとします。  
+ たとえば、色 (0.2、0.0、0.4, 1.0) で起動して次の変換を適用するとします。  
   
-1.  赤の要素を 2 倍にします。  
+1.  赤の成分倍精度浮動小数点  
   
-2.  赤、緑、青の各要素に 0.2 を追加します。  
+2.  赤、緑、および青のコンポーネントを 0.2 を追加します。  
   
- 次の行列の掛け合わせによって、ペアになっている変換が、リストに示されている順序で実行されます。  
+ 次行列乗算では、変換のペアを順に実行します。  
   
- ![色変更](../../../../docs/framework/winforms/advanced/media/recoloring01.png "recoloring01")  
+ ![色の変更](../../../../docs/framework/winforms/advanced/media/recoloring01.gif "recoloring01")  
   
- カラー行列の要素には、行そして列ごとに 0 から始まるインデックスが付けられます。  たとえば、行列 M の 5 行目および 3 列目のエントリは、M \[4\]\[2\] と表記されます。  
+ カラー行列の要素は、行と列 (0 から始まる) インデックス付けられます。 たとえば、5 番目の行およびマトリックス M の 3 列目のエントリは、M [4] [2] で表されます。  
   
- 次の図に示す 5 × 5 の単位行列には、対角線上に 1、それ以外のすべての位置に 0 が格納されています。  カラー ベクターとこの単位行列を掛け合わせても、そのカラー ベクターは変化しません。  カラー変換の行列を形成する簡単な方法として、単位行列から着手し、必要な変換を生成できるように微調整していく方法があります。  
+ 5 × 5 単位行列で、次の図に示す) は、対角線上の 1 と 0 それ以外の場所がします。 単位行列でカラー ベクトルを乗算する場合、色のベクターは変更されません。 カラー変換の行列を形成する便利な方法では、単位行列で開始し、少しの変更を必要な変換を生成します。  
   
- ![色変更](../../../../docs/framework/winforms/advanced/media/recoloring02.gif "recoloring02")  
+ ![色の変更](../../../../docs/framework/winforms/advanced/media/recoloring02.gif "recoloring02")  
   
- 行列と変換の詳細については、「[座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)」を参照してください。  
+ マトリックスと変換の詳細については、次を参照してください。[座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)です。  
   
-## 使用例  
- 全体が 1 つの色 \(0.2, 0.0, 0.4, 1.0\) であるイメージに、上の段落で説明した変換を適用する例を次に示します。  
+## <a name="example"></a>例  
+ 次の例は、1 つのすべての色 (0.2、0.0、0.4, 1.0) は、前の段落で説明した変換を適用するイメージ。  
   
- 次の図は、左側に元のイメージ、右側に変換後のイメージを示しています。  
+ 次の図は、右側の左側に元のイメージと変換後のイメージを示します。  
   
  ![色](../../../../docs/framework/winforms/advanced/media/colortrans1.png "colortrans1")  
   
- 次のコード例では、以下の手順で色の変更が行われます。  
+ 次の例のコードでは、次の手順を使用して、色の変更を実行します。  
   
-1.  <xref:System.Drawing.Imaging.ColorMatrix> オブジェクトを初期化します。  
+1.  初期化、<xref:System.Drawing.Imaging.ColorMatrix>オブジェクト。  
   
-2.  <xref:System.Drawing.Imaging.ImageAttributes> オブジェクトを作成し、<xref:System.Drawing.Imaging.ImageAttributes> オブジェクトの <xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A> メソッドに <xref:System.Drawing.Imaging.ColorMatrix> オブジェクトを渡します。  
+2.  作成、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを渡す、<xref:System.Drawing.Imaging.ColorMatrix>オブジェクトを<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A>のメソッド、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
   
-3.  <xref:System.Drawing.Graphics> オブジェクトの <xref:System.Drawing.Graphics.DrawImage%2A> メソッドに <xref:System.Drawing.Imaging.ImageAttributes> オブジェクトを渡します。  
+3.  渡す、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを<xref:System.Drawing.Graphics.DrawImage%2A>のメソッド、<xref:System.Drawing.Graphics>オブジェクト。  
   
  [!code-csharp[System.Drawing.RecoloringImages#21](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#21)]
  [!code-vb[System.Drawing.RecoloringImages#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#21)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。  
   
-## 参照  
- [イメージの色の変更](../../../../docs/framework/winforms/advanced/recoloring-images.md)   
+## <a name="see-also"></a>関連項目  
+ [イメージの色の変更](../../../../docs/framework/winforms/advanced/recoloring-images.md)  
  [座標系と変換](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)

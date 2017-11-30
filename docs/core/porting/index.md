@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 00d00d38-99af-44f4-a75f-defcd9729dc5
-ms.translationtype: HT
-ms.sourcegitcommit: 3155295489e1188640dae5aa5bf9fdceb7480ed6
 ms.openlocfilehash: 4fc68a3dbdec634d8e92a066a46939ba19c65db7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/05/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="porting-to-net-core-from-net-framework"></a>.NET Framework から .NET Core への移植
 
 .NET Framework で実行されているコードがある場合は、.NET Core 1.0 でコードを実行することに関心があるかもしれません。  この記事では、移植プロセスの概要と、.NET Core に移植するときに役立つツールの一覧を示します。
@@ -55,4 +53,3 @@ ms.lasthandoff: 08/05/2017
 
 [サードパーティの依存関係の分析](third-party-deps.md)
    
-

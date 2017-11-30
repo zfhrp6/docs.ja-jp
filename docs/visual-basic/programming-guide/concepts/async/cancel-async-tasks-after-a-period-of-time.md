@@ -1,41 +1,33 @@
 ---
-title: "経過時間 (Visual Basic) の非同期タスクのキャンセル |Microsoft ドキュメント"
+title: "非同期タスクのキャンセル後一定の時間 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: a48045a3-6a99-42af-b824-af340f0b9a5d
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 6708bd92d8dc2455b9dcb8e02dcc0a4455e00cda
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b8f479a0b8897ba86c4bd750c87afe15600e1df3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="cancel-async-tasks-after-a-period-of-time-visual-basic"></a>経過時間 (Visual Basic) の非同期タスクをキャンセルします。
-使用して、一定時間後に非同期操作を取り消すことができます、<xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=fullName>メソッド操作が終了するまで待機したくない場合</xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=fullName>。 このメソッドは、`CancelAfter` 式によって指定された時間内に完了しない、関連付けられたタスクの取り消しをスケジュールします。  
+# <a name="cancel-async-tasks-after-a-period-of-time-visual-basic"></a>非同期タスクのキャンセル後一定の時間 (Visual Basic)
+<xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType> メソッドを使用すると、一定の時間が過ぎた後に非同期操作が完了するまで待たない場合に、その操作を取り消しできます。 このメソッドは、`CancelAfter` 式によって指定された時間内に完了しない、関連付けられたタスクの取り消しをスケジュールします。  
   
- この例で開発されたコードを追加[非同期タスクまたは一覧のタスク (Visual Basic) をキャンセル](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)web サイトの一覧をダウンロードし、それぞれのコンテンツの長さを表示します。  
+ この例で開発されたコードに追加[非同期タスクまたは一覧のタスク (Visual Basic) をキャンセル](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)web サイトの一覧をダウンロードし、1 つずつのコンテンツの長さを表示します。  
   
 > [!NOTE]
 >  例を実行するには、Visual Studio 2012 以降と .NET Framework 4.5 が必要または後で、コンピューターにインストールします。  
   
 ## <a name="downloading-the-example"></a>例をダウンロードする  
- 完全な Windows Presentation Foundation (WPF) プロジェクトをダウンロードすることができます[Async サンプル: 細かいアプリケーションの調整](http://go.microsoft.com/fwlink/?LinkId=255046)し次の手順に従います。  
+ 完全な Windows Presentation Foundation (WPF) プロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。ダウンロード後、次の手順に従います。  
   
 1.  ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。  
   
@@ -43,7 +35,7 @@ ms.lasthandoff: 03/13/2017
   
 3.  **プロジェクトを開く** ダイアログ ボックスでは、圧縮解除したサンプル コードが含まれるフォルダーを開き、AsyncFineTuningVB のソリューション (.sln) ファイルを開きます。  
   
-4.  **ソリューション エクスプ ローラー**、ショートカット メニューを開き、 **CancelAfterTime**プロジェクトを開いて、**スタートアップ プロジェクトとして設定**します。  
+4.  **ソリューション エクスプローラー**で、**CancelAfterTime** プロジェクトのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。  
   
 5.  F5 キーを押してプロジェクトを実行します。  
   
@@ -51,12 +43,12 @@ ms.lasthandoff: 03/13/2017
   
 6.  プログラムを複数回実行して、出力がすべての Web サイトの出力を示したり、どの Web サイトの出力も示さなかったり、一部の Web サイトの出力を示したりすることを確認します。  
   
- プロジェクトをダウンロードできない場合は、このトピックの最後の MainWindow.xaml.vb ファイルを確認できます。  
+ プロジェクトをダウンロードしない場合は、このトピックの最後の MainWindow.xaml.vb ファイルを確認できます。  
   
 ## <a name="building-the-example"></a>例のビルド  
- このトピックの例で開発されたプロジェクトに追加[非同期タスクまたは一覧のタスク (Visual Basic) をキャンセル](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)タスクのリストを取り消します。 この例には、同じ UI が使用されますが、**キャンセル**ボタンは明示的に使用します。  
+ このトピックの例で開発したプロジェクトに追加[非同期タスクまたは一覧のタスク (Visual Basic) をキャンセル](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)タスクの一覧をキャンセルします。 この例では、**[キャンセル]** ボタンは明示的に使用していませんが、同じ UI を使用します。  
   
- 例をビルドする、自分のステップ バイ ステップ「例をダウンロードする」セクション指示従いますが、選択**CancelAListOfTasks**として、**スタートアップ プロジェクト**します。 そのプロジェクトに、このトピックでの変更を追加します。  
+ この例を自分で 1 つずつビルドするには、"例をダウンロードする" セクションの手順に従います。ただし、**[スタートアップ プロジェクト]** として **CancelAListOfTasks** を選択します。 そのプロジェクトに、このトピックでの変更を追加します。  
   
  次の例に示すように、タスクが取り消し済みとマークされるまでの最大時間を指定するには、`CancelAfter` に `startButton_Click` への呼び出しを追加します。 追加部分にはアスタリスクが付いています。  
   
@@ -101,11 +93,11 @@ Downloads canceled.
 ```  
   
 ## <a name="complete-example"></a>コード例全体  
- 次のコードは、たとえば、MainWindow.xaml.vb ファイルの完全なテキストです。 アスタリスクはこの例のために追加された要素を示しています。  
+ 次のコードは、例では、MainWindow.xaml.vb ファイルの完全なテキストです。 アスタリスクはこの例のために追加された要素を示しています。  
   
- <xref:System.Net.Http>。</xref:System.Net.Http>への参照を追加する必要があることに注意してください。  
+ <xref:System.Net.Http> の参照を追加する必要があることに注意してください。  
   
- プロジェクトをダウンロードする[Async サンプル: 細かいアプリケーションの調整](http://go.microsoft.com/fwlink/?LinkId=255046)します。  
+ このプロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](http://go.microsoft.com/fwlink/?LinkId=255046)」からダウンロードできます。  
   
 ```vb  
 ' Add an Imports directive and a reference for System.Net.Http.  
@@ -207,8 +199,8 @@ End Class
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [非同期プログラミングを Async と Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)   
- [チュートリアル: Async を使用して Web へのアクセスと Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
- [非同期タスクまたはタスク (Visual Basic) の一覧をキャンセルします。](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)   
- [非同期アプリケーション (Visual Basic) の微調整](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
- [アプリケーションの微調整の非同期のサンプル:](http://go.microsoft.com/fwlink/?LinkId=255046)
+ [Async および Await を使用した非同期プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  
+ [チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
+ [非同期タスクまたはタスク (Visual Basic) の一覧をキャンセルします。](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)  
+ [非同期アプリケーションの微調整 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
+ [非同期のサンプル: アプリケーションの微調整](http://go.microsoft.com/fwlink/?LinkId=255046)

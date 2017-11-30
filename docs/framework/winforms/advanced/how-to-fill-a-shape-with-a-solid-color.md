@@ -1,39 +1,43 @@
 ---
-title: "方法 : 純色で図形を塗りつぶす | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "色, 追加 (図形に)"
-  - "形状, 塗りつぶし"
+title: "方法 : 純色で図形を塗りつぶす"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- colors [Windows Forms], adding to shapes
+- shapes [Windows Forms], filling
 ms.assetid: 06088b31-bac9-4ef3-9ebe-06c2c764d6df
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: eb3e160392a903083386d9942f8e2cfe31ee89a4
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# 方法 : 純色で図形を塗りつぶす
-図形を純色で塗りつぶすには、<xref:System.Drawing.SolidBrush> オブジェクトを作成し、その <xref:System.Drawing.SolidBrush> オブジェクトを、<xref:System.Drawing.Graphics> クラスの塗りつぶしメソッドの 1 つに引数として渡します。  楕円を赤色で塗りつぶす方法を次の例に示します。  
+# <a name="how-to-fill-a-shape-with-a-solid-color"></a>方法 : 純色で図形を塗りつぶす
+純色で図形を塗りつぶす、作成、<xref:System.Drawing.SolidBrush>オブジェクト、およびをパススルーする<xref:System.Drawing.SolidBrush>オブジェクトへの fill メソッドのいずれかの引数として、<xref:System.Drawing.Graphics>クラスです。 次の例では、色が赤に楕円を設定する方法を示します。  
   
-## 使用例  
- 次のコードでは、<xref:System.Drawing.SolidBrush.%23ctor%2A> コンストラクターの唯一の引数として <xref:System.Drawing.Color> オブジェクトが渡されています。  <xref:System.Drawing.Color.FromArgb%2A> メソッドで使用されている値は、それぞれ、アルファ、赤、緑、および青の色要素を表します。  これらの各値は、0 から 255 までの範囲内にする必要があります。  最初の 255 は、色の不透明度が最大であることを示し、2 番目の 255 は赤の要素の輝度が最大であることを示します。  残りの 2 つの 0 は、緑と青の要素の輝度が共に 0 であることを示します。  
+## <a name="example"></a>例  
+ 次のコードで、<xref:System.Drawing.SolidBrush.%23ctor%2A>コンス トラクター、<xref:System.Drawing.Color>唯一の引数としてオブジェクト。 によって使用される値、<xref:System.Drawing.Color.FromArgb%2A>メソッドは、色のアルファ、赤、緑、および青の要素を表します。 これらの各値は、0 ~ 255 の範囲でなければなりません。 最初の 255 は、色は完全に不透明で、ある 2 つ目の 255 赤の要素が、最大の輝度を示します。 2 つの 0 は、緑、青のコンポーネントは、両方が 0 の輝度を持つことを示すです。  
   
- <xref:System.Drawing.Graphics.FillEllipse%2A> メソッドに渡される 4 つの数値 \(0, 0, 100, 60\) は、楕円に外接する四角形の位置とサイズを指定しています。  この四角形は、左上隅が \(0, 0\) の位置にあり、幅が 100、高さが 60 です。  
+ 渡される 4 つの数字 (0, 0、100, 60)、<xref:System.Drawing.Graphics.FillEllipse%2A>メソッドは、楕円の外接する四角形のサイズと場所を指定します。 四角形は、左上隅の (0, 0)、100 の幅と高さが 60 です。  
   
  [!code-csharp[System.Drawing.UsingABrush#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.UsingABrush#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#11)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.Control.Paint> イベント ハンドラーのパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ブラシを使用した図形の塗りつぶし](../../../../docs/framework/winforms/advanced/using-a-brush-to-fill-shapes.md)

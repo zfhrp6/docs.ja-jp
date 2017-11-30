@@ -1,38 +1,30 @@
 ---
-title: "方法: XmlWriter (LINQ to XML) を使用して XML ツリーを作成 (Visual Basic) |Microsoft ドキュメント"
+title: "方法: XmlWriter (LINQ to XML) を XML ツリーを設定します (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 5792a0eb-94ee-440d-b601-58cca8c0ee0b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: dfd10ec04e7293d90929d6f629201868028819ad
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 548e931a120a319bbd45885e6d1b60685d983c01
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml-visual-basic"></a>方法: XmlWriter (LINQ to XML) を使用して XML ツリーを作成 (Visual Basic)
-XML ツリーを設定する方法の&1; つを使用して<xref:System.Xml.Linq.XContainer.CreateWriter%2A>を作成する、 <xref:System.Xml.XmlWriter>、 <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter>に書き込む</xref:System.Xml.XmlWriter></xref:System.Xml.Linq.XContainer.CreateWriter%2A> XML ツリーには、 <xref:System.Xml.XmlWriter>。</xref:System.Xml.XmlWriter>に書き込まれるすべてのノードが挿入されます。  
+# <a name="how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml-visual-basic"></a>方法: XmlWriter (LINQ to XML) を XML ツリーを設定します (Visual Basic)
+XML ツリーを設定する方法の 1 つは、<xref:System.Xml.Linq.XContainer.CreateWriter%2A> を使用して <xref:System.Xml.XmlWriter> を作成し、この <xref:System.Xml.XmlWriter> に書き込みを行うことです。 XML ツリーには、<xref:System.Xml.XmlWriter> に書き込まれたすべてのノードが挿入されます。  
   
- 使用するときに通常、このメソッドを使用する[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]への書き込みに必要とする別のクラスで、 <xref:System.Xml.XmlWriter>、 <xref:System.Xml.Xsl.XslCompiledTransform>.</xref:System.Xml.Xsl.XslCompiledTransform>など</xref:System.Xml.XmlWriter>  
+ 通常この方法は、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] と、<xref:System.Xml.XmlWriter> への書き込みを必要とする別のクラス (<xref:System.Xml.Xsl.XslCompiledTransform> など) を併用する場合に使用します。  
   
 ## <a name="example"></a>例  
- 用途の&1; つ<xref:System.Xml.Linq.XContainer.CreateWriter%2A>は XSLT 変換を呼び出すときに</xref:System.Xml.Linq.XContainer.CreateWriter%2A>。 この例では、XML ツリーを作成して、作成、 <xref:System.Xml.XmlReader>XML ツリーから、新しいドキュメントを作成し、作成、<xref:System.Xml.XmlWriter>に新しいドキュメントに書き込む</xref:System.Xml.XmlWriter></xref:System.Xml.XmlReader>。 次に<xref:System.Xml.XmlReader><xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter></xref:System.Xml.XmlReader>を渡して、XSLT 変換を呼び出してください。 変換が正常に完了すると、新しい XML ツリーに変換結果が挿入されます。  
+ <xref:System.Xml.Linq.XContainer.CreateWriter%2A> は、XSLT 変換を呼び出すときに使用できます。 この例では、XML ツリーを作成し、この XML ツリーから <xref:System.Xml.XmlReader> を作成して、新しいドキュメントを作成します。次に、この新しいドキュメントに書き込むために <xref:System.Xml.XmlWriter> を作成します。 次に、XSLT 変換を呼び出して、<xref:System.Xml.XmlReader> と <xref:System.Xml.XmlWriter> を渡します。 変換が正常に完了すると、新しい XML ツリーに変換結果が挿入されます。  
   
 ```vb  
 Dim xslMarkup As XDocument = _  
@@ -80,7 +72,7 @@ Console.WriteLine(newTree)
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Linq.XContainer.CreateWriter%2A></xref:System.Xml.Linq.XContainer.CreateWriter%2A>   
- <xref:System.Xml.XmlWriter></xref:System.Xml.XmlWriter>   
- <xref:System.Xml.Xsl.XslCompiledTransform></xref:System.Xml.Xsl.XslCompiledTransform>   
- [XML ツリー (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+ <xref:System.Xml.Linq.XContainer.CreateWriter%2A>  
+ <xref:System.Xml.XmlWriter>  
+ <xref:System.Xml.Xsl.XslCompiledTransform>  
+ [XML ツリー (Visual Basic) を作成します。](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

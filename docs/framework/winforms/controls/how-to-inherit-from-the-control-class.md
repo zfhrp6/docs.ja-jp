@@ -1,61 +1,62 @@
 ---
-title: "方法 : コントロール クラスを継承する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Control クラス, 継承"
-  - "カスタム コントロール [Windows フォーム], 作成"
-  - "カスタム コントロール [Windows フォーム], 継承"
-  - "継承, Windows フォーム カスタム コントロール"
-  - "OnPaint メソッド [Windows フォーム]"
+title: "方法 : コントロール クラスを継承する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- inheritance [Windows Forms], Windows Forms custom controls
+- Control class [Windows Forms], inheriting from
+- custom controls [Windows Forms], inheritance
+- OnPaint method [Windows Forms]
+- custom controls [Windows Forms], creating
 ms.assetid: 46ba0df3-5cf7-443c-a3b4-a72660172476
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 75b9c56d2d9df80745cec2b811c39f5e438d07c2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : コントロール クラスを継承する
-Windows フォームで使用する、完全なカスタム コントロールを作成する場合は、<xref:System.Windows.Forms.Control> クラスから継承する必要があります。  <xref:System.Windows.Forms.Control> クラスから継承する場合、多くの計画と実装が必要となりますが、非常に多様なオプションも用意されています。  <xref:System.Windows.Forms.Control> から継承すると、コントロールを動作させるためのごく基本的な機能だけが継承されます。  <xref:System.Windows.Forms.Control> クラス本来の機能は、キーボードやマウスによるユーザー入力の処理、コントロールの境界線およびサイズの定義、ウィンドウ ハンドルの提供、およびメッセージ処理とセキュリティの提供です。  描画機能、つまりこの場合はコントロールのグラフィカル インターフェイスを実際に表示する機能や、ユーザーとやり取りするための具体的な機能は含まれていません。  このような機能は、カスタム コードを記述して提供する必要があります。  
+# <a name="how-to-inherit-from-the-control-class"></a>方法 : コントロール クラスを継承する
+Windows フォームで使用する完全なカスタム コントロールを作成する場合から継承する必要があります、<xref:System.Windows.Forms.Control>クラスです。 継承するときに、<xref:System.Windows.Forms.Control>を計画および実装の詳細を実行するオプションを提供するオプションの最大範囲とクラスが必要です。 継承する場合<xref:System.Windows.Forms.Control>コントロールの動作を実現する非常に基本的な機能を継承します。 本来の機能、<xref:System.Windows.Forms.Control>クラス、キーボードとマウスを介してユーザー入力の処理、境界とコントロールのサイズを定義、windows ハンドルを提供およびメッセージの処理とセキュリティを提供します。 描画機能 (ここではコントロールのグラフィカル インターフェイスを実際に表示する機能) や、ユーザーとやり取りするための特定の機能は含まれていません。 このような機能はすべて、カスタム コードによって提供する必要があります。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### カスタム コントロールを作成するには  
+### <a name="to-create-a-custom-control"></a>カスタム コントロールを作成するには  
   
 1.  新しい **Windows アプリケーション** プロジェクトまたは **Windows コントロール ライブラリ** プロジェクトを作成します。  
   
-2.  **\[プロジェクト\]** メニューの **\[クラスの追加\]** をクリックします。  
+2.  **[プロジェクト]** メニューの **[クラスの追加]** を選択します。  
   
-3.  **\[新しい項目の追加\]** ダイアログ ボックスにある **\[カスタム コントロール\]** をクリックします。  
+3.  **[新しい項目の追加]** ダイアログ ボックスの **[カスタム コントロール]** をクリックします。  
   
      新しいカスタム コントロールがプロジェクトに追加されます。  
   
-4.  F7 キーを押してカスタム コントロールの**コード エディター**を開きます。  
+4.  F7 キーを押して、カスタム コントロールの**コード エディター**を開きます。  
   
-5.  <xref:System.Windows.Forms.Control.OnPaint%2A> メソッドを見つけます。このメソッドは、基本クラスの <xref:System.Windows.Forms.Control.OnPaint%2A> メソッドの呼び出しを除いて、空白になっています。  
+5.  検索、<xref:System.Windows.Forms.Control.OnPaint%2A>メソッドの呼び出しを除く空になります、<xref:System.Windows.Forms.Control.OnPaint%2A>基底クラスのメソッドです。  
   
-6.  コントロールで使用するカスタム描画を含むように、コードを修正します。  
+6.  コントロールで使用するカスタム描画が組み込まれるように、コードを修正します。  
   
-     コントロールのグラフィックスを描画するコードの作成については、「[コントロールのカスタム描画およびレンダリング](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md)」を参照してください。  
+     コントロールのグラフィックスをレンダリングするコードの記述については、「[コントロールのカスタム描画およびレンダリング](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md)」を参照してください。  
   
-7.  コントロールに含めるカスタム メソッド、カスタム プロパティ、カスタム イベントを実装します。  
+7.  コントロールに組み込むカスタム メソッド、カスタム プロパティ、カスタム イベントを実装します。  
   
-8.  保存してコントロールの動作確認を行います。  
+8.  コントロールを保存して、動作確認を行います。  
   
-## 参照  
- [さまざまなカスタム コントロール](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)   
- [方法 : UserControl クラスを継承する](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)   
- [方法 : 既存の Windows フォーム コントロールから継承する](../../../../docs/framework/winforms/controls/how-to-inherit-from-existing-windows-forms-controls.md)   
- [方法 : Windows フォームのコントロールを作成する](../../../../docs/framework/winforms/controls/how-to-author-controls-for-windows-forms.md)   
- [Troubleshooting Inherited Event Handlers in Visual Basic](../Topic/Troubleshooting%20Inherited%20Event%20Handlers%20in%20Visual%20Basic.md)   
+## <a name="see-also"></a>関連項目  
+ [さまざまなカスタム コントロール](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)  
+ [方法: UserControl クラスを継承する](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)  
+ [方法: 既存の Windows フォーム コントロールから継承する](../../../../docs/framework/winforms/controls/how-to-inherit-from-existing-windows-forms-controls.md)  
+ [方法: Windows フォームのコントロールを作成する](../../../../docs/framework/winforms/controls/how-to-author-controls-for-windows-forms.md)  
+ [Visual Basic での継承されたイベント ハンドラーのトラブルシューティング](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)  
  [デザイン時の Windows フォーム コントロールの開発](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)

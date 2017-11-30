@@ -1,37 +1,36 @@
 ---
-title: "PrintPreviewDialog コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PrintPreviewDialog"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "PrintPreviewDialog コントロール (デザイナーを使用), PrintPreviewDialog の概要"
+title: "PrintPreviewDialog コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: PrintPreviewDialog
+helpviewer_keywords: PrintPreviewDialog control (using designer), about PrintPreviewDialog
 ms.assetid: efd4ee8d-6edd-47ec-88e4-4a4759bd2384
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 3c898dc24c9a4418e3af45fce507e6befcf905a1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# PrintPreviewDialog コントロールの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.PrintPreviewDialog> コントロールは、[PrintDocument](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md) を印刷時の状態で表示する、定義済みダイアログ ボックスです。  このコントロールは、独自のダイアログ ボックスを使用しない簡易ソリューションとして、Windows ベースのアプリケーションで使用します。  このコントロールには、印刷を開始するボタン、ズーム イン用のボタン、1 ページまたは複数ページを表示するボタン、およびダイアログ ボックスを閉じるためのボタンがあります。  
+# <a name="printpreviewdialog-control-overview-windows-forms"></a>PrintPreviewDialog コントロールの概要 (Windows フォーム)
+Windows フォーム<xref:System.Windows.Forms.PrintPreviewDialog>コントロールは、構成済みのダイアログ ボックスを表示するために使用する方法、 [PrintDocument](../../../../docs/framework/winforms/controls/printdocument-component-windows-forms.md)印刷したときに表示されます。 独自のダイアログ ボックスではなく簡易ソリューションとして、Windows ベースのアプリケーションの中で使用します。 このコントロールには、印刷を開始するボタン、ズーム イン用のボタン、1 ページまたは複数ページを表示するボタン、およびダイアログ ボックスを閉じるためのボタンが含まれています。  
   
-## 主要なプロパティおよびメソッド  
- このコントロールの主要なプロパティは、プレビューするドキュメントを設定する <xref:System.Windows.Forms.PrintPreviewDialog.Document%2A> プロパティです。  ドキュメントは、<xref:System.Drawing.Printing.PrintDocument> オブジェクトである必要があります。  ダイアログ ボックスを表示するには、コントロールの <xref:System.Windows.Forms.Form.ShowDialog%2A> メソッドを呼び出す必要があります。  アンチエイリアシングを使用すると、文字の外観は滑らかになりますが、表示は遅くなります。使用する場合は、<xref:System.Windows.Forms.PrintPreviewDialog.UseAntiAlias%2A> プロパティを `true` に設定します。  
+## <a name="key-properties-and-methods"></a>キー プロパティとメソッド  
+ コントロールのキー プロパティは<xref:System.Windows.Forms.PrintPreviewDialog.Document%2A>、プレビューするドキュメントを設定します。 ドキュメントがある必要があります、<xref:System.Drawing.Printing.PrintDocument>オブジェクト。 ダイアログ ボックスを表示するために呼び出す必要があります、<xref:System.Windows.Forms.Form.ShowDialog%2A>メソッドです。 アンチ エイリアスが滑らかにテキストを行うことができます。 が、低速です。 表示することもできます。これを使用する設定、<xref:System.Windows.Forms.PrintPreviewDialog.UseAntiAlias%2A>プロパティを`true`です。  
   
- いくつかのプロパティは、<xref:System.Windows.Forms.PrintPreviewDialog> に含まれる <xref:System.Windows.Forms.PrintPreviewControl> を介して使用できます。  <xref:System.Windows.Forms.PrintPreviewControl> をフォームに追加する必要はありません。コントロールは、ダイアログをフォームに追加したときに自動的に <xref:System.Windows.Forms.PrintPreviewDialog> に含められます。<xref:System.Windows.Forms.PrintPreviewControl> を介して使用できるプロパティの例として、<xref:System.Windows.Forms.PrintPreviewControl.Columns%2A> プロパティおよび <xref:System.Windows.Forms.PrintPreviewControl.Rows%2A> プロパティがあります。これらのプロパティは、コントロール上で横方向および縦方向に表示されるページの数を決定します。  <xref:System.Windows.Forms.PrintPreviewControl.Columns%2A> プロパティには、[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] では `PrintPreviewDialog1.PrintPreviewControl.Columns`、[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] では `printPreviewDialog1.PrintPreviewControl.Columns`、または [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)] では `printPreviewDialog1->PrintPreviewControl->Columns` としてアクセスできます。  
+ 特定のプロパティは、<xref:System.Windows.Forms.PrintPreviewControl>を<xref:System.Windows.Forms.PrintPreviewDialog>が含まれています。 (これを追加する必要はありません<xref:System.Windows.Forms.PrintPreviewControl>フォームに含まれている自動的に、<xref:System.Windows.Forms.PrintPreviewDialog>をフォームにダイアログ ボックスを追加するとします)。を通じて使用可能なプロパティの例については、<xref:System.Windows.Forms.PrintPreviewControl>は、<xref:System.Windows.Forms.PrintPreviewControl.Columns%2A>と<xref:System.Windows.Forms.PrintPreviewControl.Rows%2A>プロパティで、コントロールの水平方向および垂直方向に表示されているページの数を決定します。 アクセスすることができます、<xref:System.Windows.Forms.PrintPreviewControl.Columns%2A>プロパティとして`PrintPreviewDialog1.PrintPreviewControl.Columns`で[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]、`printPreviewDialog1.PrintPreviewControl.Columns`で[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、または`printPreviewDialog1->PrintPreviewControl->Columns`で[!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]です。  
   
-## 参照  
- <xref:System.Windows.Forms.PrintPreviewDialog>   
- [PrintPreviewControl コントロールの概要](../../../../docs/framework/winforms/controls/printpreviewcontrol-control-overview-windows-forms.md)   
- [PrintPreviewDialog コントロール](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.PrintPreviewDialog>  
+ [PrintPreviewControl コントロールの概要](../../../../docs/framework/winforms/controls/printpreviewcontrol-control-overview-windows-forms.md)  
+ [PrintPreviewDialog コントロール](../../../../docs/framework/winforms/controls/printpreviewdialog-control-windows-forms.md)  
  [ダイアログ ボックス コントロールおよびコンポーネント](../../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)

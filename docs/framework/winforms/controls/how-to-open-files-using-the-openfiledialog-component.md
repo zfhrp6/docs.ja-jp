@@ -1,47 +1,51 @@
 ---
-title: "方法 : OpenFileDialog コンポーネントを使用してファイルを開く | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ファイル, 開く (OpenFileDialog コンポーネントを使用して)"
-  - "OpenFile メソッド"
-  - "OpenFile メソッド, OpenFileDialog コンポーネント"
-  - "OpenFileDialog コンポーネント, 開く (ファイルを)"
+title: "方法 : OpenFileDialog コンポーネントを使用してファイルを開く"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- OpenFileDialog component [Windows Forms], opening files
+- OpenFile method [Windows Forms], OpenFileDialog component
+- files [Windows Forms], opening with OpenFileDialog component
 ms.assetid: 9d88367a-cc21-4ffd-be74-89fd63767d35
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 52726a770e33bec4b5ec9b24f33deb44ed6379b5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : OpenFileDialog コンポーネントを使用してファイルを開く
-<xref:System.Windows.Forms.OpenFileDialog> コンポーネントを使用すると、ユーザーは、自分のコンピューターやネットワーク上の任意のコンピューターのフォルダーを参照し、1 つ以上のファイルを選択して開くことができます。  このダイアログ ボックスは、ユーザーがダイアログ ボックス内で選択したファイルのパスと名前を返します。  
+# <a name="how-to-open-files-using-the-openfiledialog-component"></a>方法 : OpenFileDialog コンポーネントを使用してファイルを開く
+<xref:System.Windows.Forms.OpenFileDialog>コンポーネントにより、ユーザーが自分のコンピューターまたはネットワーク上のコンピューターのフォルダーを参照し、1 つまたは複数のファイルを選択します。 このダイアログ ボックスは、ユーザーがダイアログ ボックス内で選択したファイルのパスと名前を返します。  
   
- ユーザーが開くファイルを選択したら、そのファイルを開く方法として 2 とおりのアプローチがあります。  ファイル ストリームを使用する場合は、<xref:System.IO.StreamReader> クラスのインスタンスを作成します。  もう 1 つの方法は、<xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> メソッドを使用して、選択されたファイルを開く方法です。  
+ ユーザーが開くファイルを選択したら、そのファイルを開く方法として 2 とおりのアプローチがあります。 ファイル ストリームを使用する場合は、インスタンスを作成することができます、<xref:System.IO.StreamReader>クラスです。 また、使用することができます、<xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A>を選択したファイルを開くメソッドです。  
   
- 次に示す最初の例には、<xref:System.Security.Permissions.FileIOPermission> のアクセス許可チェック \(以降の「セキュリティに関するメモ」を参照\) が含まれますが、許可されるのはファイル名へのアクセスです。  この手法は、ローカル コンピューター、イントラネット、およびインターネットの各ゾーンから利用できます。  2 番目の方法でも <xref:System.Security.Permissions.FileIOPermission> のアクセス許可チェックが行われますが、この方法はイントラネット ゾーンまたはインターネット ゾーンのアプリケーションに適しています。  
+ 次の最初の例では、<xref:System.Security.Permissions.FileIOPermission>が、アクセス許可のチェック (下の「セキュリティに関する注意」で説明) と、ファイル名にアクセスすることです。 この手法は、ローカル コンピューター、イントラネット、およびインターネットの各ゾーンから利用できます。 また、2 番目のメソッドも実行、<xref:System.Security.Permissions.FileIOPermission>権限チェックがより、イントラネットまたはインターネット ゾーンでのアプリケーションに適しています。  
   
-### OpenFileDialog コンポーネントを使用してファイルをストリームとして開くには  
+### <a name="to-open-a-file-as-a-stream-using-the-openfiledialog-component"></a>OpenFileDialog コンポーネントを使用してファイルをストリームとして開くには  
   
-1.  **\[ファイルを開く\]** ダイアログ ボックスを表示し、ユーザーによって選択されたファイルを開くメソッドを呼び出します。  
+1.  **[ファイルを開く]** ダイアログ ボックスを表示し、ユーザーによって選択されたファイルを開くメソッドを呼び出します。  
   
-     1 つのアプローチとしては、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> メソッドを使用して \[ファイルを開く\] ダイアログ ボックスを表示し、<xref:System.IO.StreamReader> クラスのインスタンスを使用してファイルを開きます。  
+     1 つの方法は、使用する、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>メソッドのインスタンスを使用してファイルを開く ダイアログ ボックスを表示、<xref:System.IO.StreamReader>クラス ファイルを開きます。  
   
-     次のコード例では、<xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Click> イベント ハンドラーを使用して <xref:System.Windows.Forms.OpenFileDialog> コンポーネントのインスタンスを開いています。  ファイルが選択され、ユーザーが **\[OK\]** をクリックすると、ダイアログ ボックスで選択されたファイルが開きます。  この場合、ファイルの内容はメッセージ ボックスに表示され、ファイル ストリームが読み取られたことが単に示されます。  
+     使用して次の例、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Click>イベント ハンドラーのインスタンスを開く、<xref:System.Windows.Forms.OpenFileDialog>コンポーネントです。 ファイルが選択され、ユーザーが **[OK]** をクリックすると、ダイアログ ボックスで選択されたファイルが開きます。 この場合、ファイルの内容はメッセージ ボックスに表示され、ファイル ストリームが読み取られたことが単に示されます。  
   
     > [!IMPORTANT]
-    >  <xref:System.Windows.Forms.FileDialog.FileName%2A> プロパティを取得または設定するには、アセンブリに対して、<xref:System.Security.Permissions.FileIOPermission?displayProperty=fullName> クラスから特権レベルが与えられている必要があります。  完全には信頼できないコンテキストでプロセスを実行している場合は、権限不足のため例外がスローされることがあります。  詳細については、「[コード アクセス セキュリティの基礎](../../../../docs/framework/misc/code-access-security-basics.md)」を参照してください。  
+    >  取得または設定する、<xref:System.Windows.Forms.FileDialog.FileName%2A>プロパティをアセンブリが必要です、特権レベル許可によって、<xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType>クラスです。 部分的に信頼されたコンテキストで実行している場合、プロセスは、特権がないために例外をスローする可能性があります。 詳しくは、「[コード アクセス セキュリティの基礎](../../../../docs/framework/misc/code-access-security-basics.md)」をご覧ください。  
   
-     この例のコードは、フォームに <xref:System.Windows.Forms.Button> コントロールと <xref:System.Windows.Forms.OpenFileDialog> コンポーネントがあることを想定して書かれています。  
+     この例では、フォームには、<xref:System.Windows.Forms.Button>コントロールと<xref:System.Windows.Forms.OpenFileDialog>コンポーネントです。  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -52,7 +56,6 @@ caps.handback.revision: 18
          sr.Close()  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -66,7 +69,6 @@ caps.handback.revision: 18
           sr.Close();  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -84,11 +86,10 @@ caps.handback.revision: 18
        }  
     ```  
   
-     \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] および [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]\) フォームのコンストラクターに次のコードを挿入してイベント ハンドラーを登録します。  
+     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] および [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) フォームのコンストラクターに次のコードを追加して、イベント ハンドラーを登録します。  
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  
-  
     ```  
   
     ```cpp  
@@ -97,18 +98,18 @@ caps.handback.revision: 18
     ```  
   
     > [!NOTE]
-    >  ファイル ストリームからの読み取りの詳細については、「[FileStream.BeginRead メソッド](frlrfSystemIOFileStreamClassBeginReadTopic)」および「[FileStream.Read メソッド](https://msdn.microsoft.com/en-us/library/system.io.filestream.read.aspx)」を参照してください。  
+    >  ファイル ストリームからの読み取りの詳細については、次を参照してください。<xref:System.IO.FileStream.BeginRead%2A>と<xref:System.IO.FileStream.Read%2A>です。  
   
-### OpenFileDialog コンポーネントを使用してファイルをファイルとして開くには  
+### <a name="to-open-a-file-as-a-file-using-the-openfiledialog-component"></a>OpenFileDialog コンポーネントを使用してファイルをファイルとして開くには  
   
-1.  <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> メソッドを使用してダイアログ ボックスを表示し、<xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> メソッドを使用してファイルを開きます。  
+1.  使用して、 <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>  ダイアログ ボックスを表示する方法、および<xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A>ファイルを開くメソッドです。  
   
-     <xref:System.Windows.Forms.OpenFileDialog> コンポーネントの <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> メソッドは、ファイルを構成するバイトを返します。  これらのバイトにより、読み取り元のストリームが提供されます。  次のコード例では、<xref:System.Windows.Forms.OpenFileDialog> コンポーネントが "カーソル" フィルターと共にインスタンス化され、ユーザーが拡張子 `.cur` のファイルだけを選択できるようになっています。  `.cur`  ファイルが選択されると、フォームのカーソルが選択されたカーソルに設定されます。  
+     <xref:System.Windows.Forms.OpenFileDialog>コンポーネントの<xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A>メソッドは、ファイルを構成するバイトを返します。 これらのバイトにより、読み取り元のストリームが提供されます。 次の例で、<xref:System.Windows.Forms.OpenFileDialog>コンポーネントが"cursor"にフィルターを適用し、ユーザーがファイル名拡張子を持つファイルだけを選択できるようにインスタンス化される`.cur`です。 `.cur` ファイルが選択されると、フォームのカーソルが選択されたカーソルに設定されます。  
   
     > [!IMPORTANT]
-    >  <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> メソッドを呼び出すには、アセンブリに対して <xref:System.Security.Permissions.FileIOPermission?displayProperty=fullName> クラスで特権レベルが許可されている必要があります。  完全には信頼できないコンテキストでプロセスを実行している場合は、権限不足のため例外がスローされることがあります。  詳細については、「[コード アクセス セキュリティの基礎](../../../../docs/framework/misc/code-access-security-basics.md)」を参照してください。  
+    >  呼び出す、<xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A>メソッド、アセンブリが必要です、特権レベル許可によって、<xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType>クラスです。 部分的に信頼されたコンテキストで実行している場合、プロセスは、特権がないために例外をスローする可能性があります。 詳しくは、「[コード アクセス セキュリティの基礎](../../../../docs/framework/misc/code-access-security-basics.md)」をご覧ください。  
   
-     この例のコードは、フォームに <xref:System.Windows.Forms.Button> コントロールがあることを想定して書かれています。  
+     この例では、フォームには、<xref:System.Windows.Forms.Button>コントロール。  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -126,7 +127,6 @@ caps.handback.revision: 18
          Me.Cursor = New Cursor(openFileDialog1.OpenFile())  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -146,7 +146,6 @@ caps.handback.revision: 18
           this.Cursor = new Cursor(openFileDialog1.OpenFile());  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -171,14 +170,12 @@ caps.handback.revision: 18
                 openFileDialog1->OpenFile());  
           }  
        }  
-  
     ```  
   
-     \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] および [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]\) フォームのコンストラクターに次のコードを挿入してイベント ハンドラーを登録します。  
+     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] および [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) フォームのコンストラクターに次のコードを追加して、イベント ハンドラーを登録します。  
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  
-  
     ```  
   
     ```cpp  
@@ -186,6 +183,6 @@ caps.handback.revision: 18
        System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-## 参照  
- <xref:System.Windows.Forms.OpenFileDialog>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.OpenFileDialog>  
  [OpenFileDialog コンポーネント](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md)

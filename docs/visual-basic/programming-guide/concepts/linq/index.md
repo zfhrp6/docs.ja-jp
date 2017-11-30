@@ -1,31 +1,22 @@
 ---
 title: "統合言語クエリ (LINQ) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: a99371f7-097c-49a0-b62b-0e31c34aad0e
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: eca96e5d9be109bf5b8a9eff1bdf289b5b16ac06
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.openlocfilehash: 4c465d18ec8b728b9b06d3de70e55b1275d1a565
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="language-integrated-query-linq-visual-basic"></a>統合言語クエリ (LINQ) (Visual Basic)
 LINQ は、強力なクエリ機能を Visual Basic の言語構文に拡張する機能のセットです。 LINQ には、データを照会したり、更新したりするための、容易に覚えることのできる標準的なパターンが採用されており、あらゆる種類のデータ ストアをサポートするようにテクノロジを拡張できます。  .NET Framework には LINQ プロバイダー アセンブリが含まれているため、.NET Framework コレクション、SQL Server データベース、ADO.NET データセット、および XML ドキュメントで LINQ を使用できます。  
@@ -54,4 +45,3 @@ LINQ は、強力なクエリ機能を Visual Basic の言語構文に拡張す�
   
  [データ ソースの LINQ クエリの有効化](../../../../visual-basic/programming-guide/concepts/linq/enabling-a-data-source-for-linq-querying.md)  
  カスタム LINQ プロバイダー、LINQ 式ツリー、および LINQ を拡張するためのその他の方法について概説します。
-

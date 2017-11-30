@@ -1,36 +1,28 @@
 ---
-title: "方法: 拡張機能 (LINQ) (Visual Basic) でファイルをグループ化 |Microsoft ドキュメント"
+title: "方法: 拡張機能 (LINQ) (Visual Basic) でファイルをグループ化"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 904dc6d7-7162-4655-a7f4-5785d669bc5a
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f78785b4da3ae3b362603eea34d81207ed48a657
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 1e2d81f88371e63f64567422e87ed5b185e7a633
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-group-files-by-extension-linq-visual-basic"></a>方法: 拡張機能 (LINQ) (Visual Basic) でファイルをグループ化
-この例では、LINQ を使用して、高度なグループ化と並べ替えファイルまたはフォルダーのリストに対する操作を実行する方法を示します。 使用して、コンソール ウィンドウに出力をページングする方法についても示しています、<xref:System.Linq.Enumerable.Skip%2A>と<xref:System.Linq.Enumerable.Take%2A>メソッド</xref:System.Linq.Enumerable.Take%2A></xref:System.Linq.Enumerable.Skip%2A>。  
+この例では、LINQ を使用して、ファイルまたはフォルダーの一覧に対して、高度なグループ化および並べ替えを実行する方法を示します。 また、<xref:System.Linq.Enumerable.Skip%2A> メソッドと <xref:System.Linq.Enumerable.Take%2A> メソッドを使用して、出力をページごとにコンソール ウィンドウに表示する方法も示します。  
   
 ## <a name="example"></a>例  
- 次のクエリでは、指定したディレクトリ ツリーの内容をファイル名拡張子別にグループ化する方法を示します。  
+ 次のクエリは、指定されたディレクトリ ツリーの内容を、ファイル名の拡張子別にグループ化する方法を示しています。  
   
 ```vb  
 Module GroupByExtension  
@@ -108,11 +100,11 @@ Module GroupByExtension
 End Module  
 ```  
   
- このプログラムの出力がローカル ファイル システムの詳細によって時間がかかることができますあります、`startFolder`に設定されています。 すべての結果の表示を有効にするのには、この例は、結果をページに移動する方法を示します。 Windows および Web アプリケーションには、同じ手法を適用できます。 コードは、入れ子になったグループ内の項目をページため`For Each`ループが必要です。 一覧で、現在の位置を計算し、ユーザーはページングを停止し、プログラムを終了できるようにするロジックも追加もできます。 この場合、ページング クエリが、元のクエリからキャッシュされた結果に対して実行します。 LINQ to SQL など、他のコンテキストでこのようなキャッシュする必要はありません。  
+ このプログラムの出力は、ローカル ファイル システムの詳細と `startFolder` の設定内容に応じて長くなる可能性があります。 すべての結果を確認できるように、次の例では、結果をページごとに出力する方法を示します。 同じ手法を Windows アプリケーションや Web アプリケーションに適用できます。 このコードでは、グループ内の項目をページごとに処理するため、`For Each` ループを入れ子にする必要があります。 また、一覧内での現在位置を計算し、ユーザーがページングを停止してプログラムを終了できるようにするロジックも追加されています。 この場合、ページング クエリは、元のクエリからキャッシュされた結果に対して実行されます。 LINQ to SQL などの他のコンテキストでは、このようなキャッシュは必要ありません。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+ .NET Framework version 3.5 以降では、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメント。  
   
 ## <a name="see-also"></a>関連項目  
- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)   
+ [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
  [LINQ とファイル ディレクトリ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -1,43 +1,35 @@
 ---
-title: "方法: 複数のソース (LINQ) (Visual Basic の場合) からオブジェクト コレクションの作成 |Microsoft ドキュメント"
+title: "方法: 複数のソース (LINQ) (Visual Basic) からオブジェクトのコレクションへの追加"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 63062a22-e6a9-42c0-b357-c7c965f58f33
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 25f504d862ef2176dc90a31fbccf18777b9d3d0a
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 3b52042078667ccfbefadcdf1cef5ab0873cc97b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>方法: 複数のソース (LINQ) (Visual Basic の場合) からオブジェクトのコレクション設定
-この例では、さまざまなソースからデータを新しい型のシーケンスに結合する方法を示します。  
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>方法: 複数のソース (LINQ) (Visual Basic) からオブジェクトのコレクションへの追加
+この例では、さまざまなソースから一連の新しい型にデータをマージする方法を示します。  
   
 > [!NOTE]
->  データベースに残っているデータをファイル システムでメモリ内データまたはデータへの参加しないでください。 このようなクロス ドメインへの参加は、結合操作が定義されているデータベース クエリおよびその他の種類のソースの方法が異なるため未定義の結果を生成することができます。 さらに、これらの操作も、データベース内のデータの量が十分な大きさである場合に、メモリ不足の例外を発生でしたリスクがあります。 メモリ内のデータをデータベースからデータを結合するを呼び出す最初`ToList`または`ToArray`データベースに対してクエリを実行し、返されるコレクションに結合を実行します。  
+>  メモリ内データやファイル システム内のデータを、データベース内にあるデータに結合しようとしないでください。 このようなドメイン間結合を行うと、データベース クエリと他の種類のソースとで結合操作の定義方法に違いがあることが原因で、結果が未定義になる可能性があります。 また、データベース内に大量のデータが存在すると、こうした操作によってメモリ不足例外が発生するおそれがあります。 データベースのデータをメモリ内データに結合するには、まずデータベース クエリで `ToList` または `ToArray` を呼び出してから、返されたコレクションで結合を実行します。  
   
 ### <a name="to-create-the-data-file"></a>データ ファイルを作成するには  
   
--   説明に従って、プロジェクトのフォルダーに、names.csv と scores.csv ファイルをコピー[方法: コンテンツを結合から複数の異なるファイル (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)します。  
+-   説明に従って、プロジェクトのフォルダーに、names.csv および scores.csv ファイルをコピー[する方法: Join コンテンツから複数の異なるファイル (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)です。  
   
 ## <a name="example"></a>例  
- 次の例は、名前付きの型を使用する方法を示しています。 `Student` .csv 形式のスプレッドシートのデータをシミュレートする文字列の&2; つのメモリ内コレクションから結合されたデータを格納します。 文字列の最初のコレクションは、学生の名前と Id を表し、2 つ目のコレクションは、最初の列) の「学生 ID と&4; つの試験の点数を表します。 ID は、外部キーとして使用されます。  
+ 次の例は、2 つのメモリ内文字列コレクションからマージされたデータを、名前付きの型 `Student` を使用して格納する方法を示しています。各コレクションは、.csv 形式のスプレッドシート データをシミュレートしています。 1 つ目の文字列コレクションは学生の名前と ID を表し、2 つ目のコレクションは学生 ID (最初の列) と 4 つの試験の点数を表しています。 外部キーとして ID が使用されます。  
   
 ```vb  
 Class Student  
@@ -112,9 +104,9 @@ End Class
 ' The average score of Tucker Michael is 92  
 ```  
   
- [Select 句](../../../../visual-basic/language-reference/queries/select-clause.md)句、オブジェクト初期化子を使ってそれぞれの新しいインスタンスを作成する`Student`2 つのソースからデータを使用してオブジェクトです。  
+ [Select 句](../../../../visual-basic/language-reference/queries/select-clause.md)句、オブジェクト初期化子を使ってそれぞれの新しいインスタンスを作成する`Student`2 つのソースからデータを使用してオブジェクト。  
   
- クエリの結果を格納できませんがある、匿名型は名前付きの型よりも簡単にできます。 名前付きの型は、クエリを実行するメソッドの外側のクエリの結果を渡す場合に必要です。 次の例では、前の例と同じタスクを実行しますが、名前付きの型ではなく匿名型を使用します。  
+ クエリの結果を格納する必要がない場合は、名前付きの型よりも匿名型の方が便利です。 クエリが実行されたメソッドの外部にクエリ結果を渡す場合は、名前付きの型が必要になります。 次の例では、前の例と同じタスクを実行しますが、名前付きの型ではなく匿名型が使用します。  
   
 ```vb  
 ' Merge the data by using an anonymous type.   
@@ -141,7 +133,7 @@ Next
 ```  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- .NET Framework version 3.5 またはそれ以上、System.Core.dll への参照を対象とするプロジェクトを作成し、 `Imports` System.Linq 名前空間のステートメントです。  
+ .NET Framework Version 3.5 以降を対象とするプロジェクトを作成します。System.Core.dll および System.Linq 名前空間の `Imports` ステートメントを参照設定します。  
   
 ## <a name="see-also"></a>関連項目  
  [LINQ と文字列 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

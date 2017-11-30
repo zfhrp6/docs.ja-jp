@@ -1,48 +1,51 @@
 ---
-title: "MSMQ 4.0 での有害メッセージ処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "MSMQ 4.0 での有害メッセージ処理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
-caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 910ebf0952d4a2399447de7442046eb0fe90060e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# MSMQ 4.0 での有害メッセージ処理
-このサンプルでは、サービスで有害メッセージの処理を実行する方法を示します。  このサンプルは、「[トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)」のサンプルに基づいています。  このサンプルでは、`netMsmqBinding` を使用しています。  サービスは自己ホスト型コンソール アプリケーションであるので、キューに置かれたメッセージをサービスが受信するようすを観察できます。  
+# <a name="poison-message-handling-in-msmq-40"></a>MSMQ 4.0 での有害メッセージ処理
+このサンプルでは、サービスで有害メッセージの処理を実行する方法を示します。 このサンプルがに基づいて、[トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)サンプルです。 このサンプルでは、`netMsmqBinding` を使用しています。 サービスは自己ホスト型コンソール アプリケーションであるので、キューに置かれたメッセージをサービスが受信するようすを観察できます。  
   
- キュー通信では、クライアントはサービスとの通信にキューを使用します。  厳密には、クライアントはメッセージをキューに送信します。  サービスは、メッセージをキューから受信します。  したがって、キューを使用する通信では、サービスとクライアントが同時に実行されていなくてもかまいません。  
+ キュー通信では、クライアントはサービスとの通信にキューを使用します。 厳密には、クライアントはメッセージをキューに送信します。 サービスは、メッセージをキューから受信します。 したがって、キューを使用する通信では、サービスとクライアントが同時に実行されていなくてもかまいません。  
   
- 有害メッセージとは、メッセージを読み取るサービスがメッセージを処理できないためメッセージの読み取りが行われるトランザクションを終了する場合に、キューから繰り返し読み取られるメッセージのことです。  そのような場合、メッセージは再試行されます。  メッセージに問題がある場合、この再試行は理論上、永久に継続します。  これは、キューから読み取って、サービス操作を起動するトランザクションを使用する場合にのみ発生することがある点に注意してください。  
+ 有害メッセージとは、メッセージを読み取るサービスがメッセージを処理できないためメッセージの読み取りが行われるトランザクションを終了する場合に、キューから繰り返し読み取られるメッセージのことです。 そのような場合、メッセージは再試行されます。 メッセージに問題がある場合、この再試行は理論上、永久に継続します。 これは、キューから読み取って、サービス操作を起動するトランザクションを使用する場合にのみ発生することがある点に注意してください。  
   
- MSMQ のバージョンによって、NetMsmqBinding がサポートする有害メッセージの検出が制限されている場合と、制限されていない場合があります。  メッセージが有害として検出されたら、いくつかの方法で処理できます。  また、MSMQ のバージョンによって、NetMsmqBinding がサポートする有害メッセージの処理が制限されている場合と、制限されていない場合があります。  
+ MSMQ のバージョンによって、NetMsmqBinding がサポートする有害メッセージの検出が制限されている場合と、制限されていない場合があります。 メッセージが有害として検出されたら、いくつかの方法で処理できます。 また、MSMQ のバージョンによって、NetMsmqBinding がサポートする有害メッセージの処理が制限されている場合と、制限されていない場合があります。  
   
- このサンプルでは、[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] プラットフォームと [!INCLUDE[wxp](../../../../includes/wxp-md.md)] プラットフォームに用意されている制限された有害メッセージ機能と、[!INCLUDE[wv](../../../../includes/wv-md.md)] に用意されている制限されていない有害メッセージ機能を示します。  どちらのサンプルでも、目的はキューの外にある有害メッセージを、有害メッセージ サービスによりサービスを提供可能な別のキューに移動することです。  
+ このサンプルでは、[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] プラットフォームと [!INCLUDE[wxp](../../../../includes/wxp-md.md)] プラットフォームに用意されている制限された有害メッセージ機能と、[!INCLUDE[wv](../../../../includes/wv-md.md)] に用意されている制限されていない有害メッセージ機能を示します。 どちらのサンプルでも、目的はキューの外にある有害メッセージを、有害メッセージ サービスによりサービスを提供可能な別のキューに移動することです。  
   
-## MSMQ v4.0 の有害メッセージ処理サンプル  
- [!INCLUDE[wv](../../../../includes/wv-md.md)] では、有害メッセージの格納に使用可能な有害メッセージ サブキュー機能が MSMQ に用意されています。  このサンプルは、[!INCLUDE[wv](../../../../includes/wv-md.md)] を使用して有害メッセージを処理するベスト プラクティスを示しています。  
+## <a name="msmq-v40-poison-handling-sample"></a>MSMQ v4.0 の有害メッセージ処理サンプル  
+ [!INCLUDE[wv](../../../../includes/wv-md.md)] では、有害メッセージの格納に使用可能な有害メッセージ サブキュー機能が MSMQ に用意されています。 このサンプルは、[!INCLUDE[wv](../../../../includes/wv-md.md)] を使用して有害メッセージを処理するベスト プラクティスを示しています。  
   
- [!INCLUDE[wv](../../../../includes/wv-md.md)] の有害メッセージの検出は、かなり高度な機能です。  検出に役立つ 3 つのプロパティがあります。  <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> は、指定したメッセージをキューから再度読み取り、処理するためにアプリケーションにディスパッチする回数です。  メッセージをアプリケーションにディスパッチできないか、またはアプリケーションがサービス操作内のトランザクションをロールバックしたため、メッセージはキューに戻ったときにキューから再度読み取られます。  <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A> は、メッセージが再試行キューに移動する回数です。  <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> に達すると、メッセージは再試行キューに移動されます。  メッセージが再試行キューからメイン キューに移動されると、<xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A> プロパティは時間遅延となります。  <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> が 0 にリセットされます。  メッセージは再試行されます。  メッセージを読み取るすべての試行に失敗すると、メッセージが有害としてマークされます。  
+ [!INCLUDE[wv](../../../../includes/wv-md.md)] の有害メッセージの検出は、かなり高度な機能です。 検出に役立つ 3 つのプロパティがあります。 <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> は、指定したメッセージをキューから再度読み取り、処理するためにアプリケーションにディスパッチする回数です。 メッセージをアプリケーションにディスパッチできないか、またはアプリケーションがサービス操作内のトランザクションをロールバックしたため、メッセージはキューに戻ったときにキューから再度読み取られます。 <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A> は、メッセージが再試行キューに移動する回数です。 <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> に達すると、メッセージは再試行キューに移動されます。 メッセージが再試行キューからメイン キューに移動されると、<xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A> プロパティは時間遅延となります。 <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> が 0 にリセットされます。 メッセージは再試行されます。 メッセージを読み取るすべての試行に失敗すると、メッセージが有害としてマークされます。  
   
- メッセージが有害としてマークされると、メッセージは <xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A> 列挙体の設定に従って処理されます。  次にもう一度、使用可能な値を示します。  
+ メッセージが有害としてマークされると、メッセージは <xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A> 列挙体の設定に従って処理されます。 次にもう一度、使用可能な値を示します。  
   
--   Fault \(既定値\): リスナーとサービス ホストをエラーにします。  
+-   Fault (既定値): リスナーとサービス ホストをエラーにします。  
   
 -   Drop: メッセージを破棄します。  
   
--   Move: メッセージを有害メッセージ サブキューに移動します。  この値は、[!INCLUDE[wv](../../../../includes/wv-md.md)] でのみ使用できます。  
+-   Move: メッセージを有害メッセージ サブキューに移動します。 この値は、[!INCLUDE[wv](../../../../includes/wv-md.md)] でのみ使用できます。  
   
--   Reject: メッセージを送信者の配信不能キューに戻すことにより、メッセージを拒否します。  この値は、[!INCLUDE[wv](../../../../includes/wv-md.md)] でのみ使用できます。  
+-   Reject: メッセージを送信者の配信不能キューに戻すことにより、メッセージを拒否します。 この値は、[!INCLUDE[wv](../../../../includes/wv-md.md)] でのみ使用できます。  
   
- このサンプルは有害なメッセージに対する `Move` 処置の使用法を示します。  `Move` を指定すると、メッセージが有害メッセージ サブキューに移動されます。  
+ このサンプルは有害なメッセージに対する `Move` 処置の使用法を示します。 `Move` を指定すると、メッセージが有害メッセージ サブキューに移動されます。  
   
  サービス コントラクトは `IOrderProcessor` です。これは、キューでの使用に適した一方向サービスを定義します。  
   
@@ -53,13 +56,11 @@ public interface IOrderProcessor
     [OperationContract(IsOneWay = true)]  
     void SubmitPurchaseOrder(PurchaseOrder po);  
 }  
-  
 ```  
   
- サービス操作により、注文を処理していることを示すメッセージが表示されます。  有害メッセージ機能を示すため、`SubmitPurchaseOrder` サービス操作は例外をスローして、サービスのランダム起動に基づきトランザクションをロールバックします。  これにより、メッセージがキューに戻ります。  最終的に、メッセージは有害とマークされます。  構成は、有害メッセージ サブキューへのメッセージの移動に設定されています。  
+ サービス操作により、注文を処理していることを示すメッセージが表示されます。 有害メッセージ機能を示すため、`SubmitPurchaseOrder` サービス操作は例外をスローして、サービスのランダム起動に基づきトランザクションをロールバックします。 これにより、メッセージがキューに戻ります。 最終的に、メッセージは有害とマークされます。 構成は、有害メッセージ サブキューへのメッセージの移動に設定されています。  
   
 ```  
-  
 // Service class that implements the service contract.  
 // Added code to write output to the console window.  
 public class OrderProcessorService : IOrderProcessor  
@@ -129,7 +130,7 @@ public class OrderProcessorService : IOrderProcessor
   
  サービス構成には、`receiveRetryCount`、`maxRetryCycles`、`retryCycleDelay`、および `receiveErrorHandling` という有害メッセージ プロパティが含まれています。次の構成ファイルを参照してください。  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   <appSettings>  
@@ -163,12 +164,12 @@ public class OrderProcessorService : IOrderProcessor
 </configuration>  
 ```  
   
-## 有害メッセージ キューのメッセージの処理  
+## <a name="processing-messages-from-the-poison-message-queue"></a>有害メッセージ キューのメッセージの処理  
  有害メッセージ サービスは、最終的な有害メッセージ キューからメッセージを読み取って、それを処理します。  
   
- 有害メッセージ キューのメッセージは、メッセージを処理するサービスに対応付けられたメッセージで、有害メッセージ サービスのエンドポイントとは異なる場合があります。  そのため、有害メッセージ サービスがキューからメッセージを読み取ると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のチャネル レイヤはエンドポイントで不一致を検出し、メッセージをディスパッチしません。  この場合、メッセージは注文処理サービス宛てになりますが、有害メッセージ サービスが受信します。  別のエンドポイント宛のメッセージも含めてメッセージの受信を続けるには、`ServiceBehavior` を追加して、メッセージの任意の宛先サービス エンドポイントを一致条件としてアドレスをフィルタする必要があります。  これは、有害メッセージ キューから読み込んだメッセージを正常に処理するために必要です。  
+ 有害メッセージ キューのメッセージは、メッセージを処理するサービスに対応付けられたメッセージで、有害メッセージ サービスのエンドポイントとは異なる場合があります。 そのため、有害メッセージ サービスがキューからメッセージを読み取ると、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のチャネル レイヤはエンドポイントで不一致を検出し、メッセージをディスパッチしません。 この場合、メッセージは注文処理サービス宛てになりますが、有害メッセージ サービスが受信します。 別のエンドポイント宛のメッセージも含めてメッセージの受信を続けるには、`ServiceBehavior` を追加して、メッセージの任意の宛先サービス エンドポイントを一致条件としてアドレスをフィルタする必要があります。 これは、有害メッセージ キューから読み込んだメッセージを正常に処理するために必要です。  
   
- 有害メッセージ サービス実装そのものは、サービス実装と非常によく似ています。  コントラクトを実装し、注文を処理します。  コード例を次に示します。  
+ 有害メッセージ サービス実装そのものは、サービス実装と非常によく似ています。 コントラクトを実装し、注文を処理します。 コード例を次に示します。  
   
 ```  
 // Service class that implements the service contract.  
@@ -213,16 +214,14 @@ public class OrderProcessorService : IOrderProcessor
             serviceHost.Close();  
         }  
     }  
-  
 ```  
   
- 注文処理サービスはメッセージを注文キューから読み込みますが、有害メッセージ サービスはメッセージを有害サブキューから読み込みます。  有害キューはメイン キューのサブキューであり、名前は "poison" で、MSMQ により自動生成されます。  アクセスするには、メイン キュー名の後ろに ";" を追加し、その後ろにサブキュー名 \(この場合は "poison"\) を指定します。次のサンプル構成を参照してください。  
+ 注文処理サービスはメッセージを注文キューから読み込みますが、有害メッセージ サービスはメッセージを有害サブキューから読み込みます。 有害キューはメイン キューのサブキューであり、名前は "poison" で、MSMQ により自動生成されます。 アクセスするには、メイン キュー名の後ろに ";" を追加し、その後ろにサブキュー名 (この場合は "poison") を指定します。次のサンプル構成を参照してください。  
   
 > [!NOTE]
 >  MSMQ v3.0 用のサンプルでは、有害キュー名はサブキューではなく、メッセージの移動先キューになります。  
   
-```  
-  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   <system.serviceModel>  
@@ -238,15 +237,13 @@ public class OrderProcessorService : IOrderProcessor
   
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
- サンプルを実行すると、クライアント、サービス、および有害メッセージ サービスのアクティビティがコンソール ウィンドウに表示されます。  サービスがクライアントから受信したメッセージを表示できます。  いずれかのコンソール ウィンドウで Enter キーを押すと、サービスがシャットダウンされます。  
+ サンプルを実行すると、クライアント、サービス、および有害メッセージ サービスのアクティビティがコンソール ウィンドウに表示されます。 サービスがクライアントから受信したメッセージを表示できます。 いずれかのコンソール ウィンドウで Enter キーを押すと、サービスがシャットダウンされます。  
   
- サービスが実行を開始し、注文を処理し、処理の終了をランダムに開始します。  メッセージに注文処理の完了が示されていた場合、クライアントをもう一度実行して、サービスが実際にメッセージを終了したことを確認するまで別のメッセージを送信できます。  構成されている有害設定に基づき、メッセージは 1 度処理を試行されてから、最後の有害キューに移されます。  
+ サービスが実行を開始し、注文を処理し、処理の終了をランダムに開始します。 メッセージに注文処理の完了が示されていた場合、クライアントをもう一度実行して、サービスが実際にメッセージを終了したことを確認するまで別のメッセージを送信できます。 構成されている有害設定に基づき、メッセージは 1 度処理を試行されてから、最後の有害キューに移されます。  
   
 ```  
-  
 The service is ready.  
 Press <ENTER> to terminate service.  
   
@@ -269,7 +266,7 @@ Processing Purchase Order: 5ef9a4fa-5a30-4175-b455-2fb1396095fa
 Aborting transaction, cannot process purchase order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89  
 ```  
   
- 有害メッセージ サービスを起動して、有害メッセージを有害キューから読み込みます。  この例では、有害メッセージ サービスはメッセージを読み込んで処理します。  終了され有害指定された発注書が有害メッセージ サービスによって読み込まれるのを確認できます。  
+ 有害メッセージ サービスを起動して、有害メッセージを有害キューから読み込みます。 この例では、有害メッセージ サービスはメッセージを読み込んで処理します。 終了され有害指定された発注書が有害メッセージ サービスによって読み込まれるのを確認できます。  
   
 ```  
 The service is ready.  
@@ -282,36 +279,35 @@ Processing Purchase Order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89
                 Order LineItem: 890 of Red Widget @unit price: $45.89  
         Total cost of this order: $42461.56  
         Order status: Pending  
-  
 ```  
   
-#### サンプルをセットアップ、ビルド、および実行するには  
+#### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1.  「[Windows Communication Foundation サンプルの 1 回限りのセットアップの手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)」が実行済みであることを確認します。  
+1.  実行したことを確認してください、 [Windows Communication Foundation サンプルの 1 回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)です。  
   
-2.  サービスを最初に実行すると、サービスはキューが存在するかどうかを確認します。  キューが存在しない場合、サービスによってキューが作成されます。  最初にサービスを実行してキューを作成することも、MSMQ キュー マネージャーでキューを作成することもできます。  Windows 2008 でキューを作成するには、次の手順に従います。  
+2.  サービスを最初に実行すると、サービスはキューが存在するかどうかを確認します。 キューが存在しない場合、サービスによってキューが作成されます。 最初にサービスを実行してキューを作成することも、MSMQ キュー マネージャーでキューを作成することもできます。 Windows 2008 でキューを作成するには、次の手順に従います。  
   
     1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] でサーバー マネージャーを開きます。  
   
-    2.  **\[機能\]** タブを展開します。  
+    2.  展開して、**機能**タブです。  
   
-    3.  **\[プライベート メッセージ キュー\]** を右クリックし、**\[新規作成\]**、**\[専用キュー\]** の順にクリックします。  
+    3.  右クリック**プライベート メッセージ キュー**を選択して**新規**、**プライベート キュー**です。  
   
-    4.  **\[トランザクション\]** ボックスをオンにします。  
+    4.  チェック、**トランザクション**ボックス。  
   
-    5.  新しいキューの名前として、`「ServiceModelSamplesTransacted」`と入力します。  
+    5.  入力`ServiceModelSamplesTransacted`として、新しいキューの名前。  
   
-3.  ソリューションの C\# 版または Visual Basic .NET 版をビルドするには、「[Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+3.  ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
   
-4.  サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、キュー名を localhost から実際のホスト名に変更し、「[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+4.  サンプルを実行する、1 つまたは複数コンピューター構成では、localhost の代わりに実際のホスト名を反映するの指示に従って、キュー名を変更する[Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)です。  
   
- `netMsmqBinding` バインディング トランスポートを使用する場合の既定では、セキュリティが有効です。  トランスポート セキュリティの種類は、`MsmqAuthenticationMode` と `MsmqProtectionLevel` の 2 つのプロパティで決まります。  既定では、認証モードは `Windows` に、保護レベルは `Sign` に、それぞれ設定されます。  MSMQ の認証および署名の機能を利用するには、ドメインに属している必要があります。  ドメインに属していないコンピューターでこのサンプルを実行すると、"User's internal message queuing certificate does not exist" というエラーが表示されます。  
+ `netMsmqBinding` バインディング トランスポートを使用する場合の既定では、セキュリティが有効です。 トランスポート セキュリティの種類は、`MsmqAuthenticationMode` と `MsmqProtectionLevel` の 2 つのプロパティで決まります。 既定では、認証モードは `Windows` に、保護レベルは `Sign` に、それぞれ設定されます。 MSMQ の認証および署名の機能を利用するには、ドメインに属している必要があります。 ドメインに属していないコンピューターでこのサンプルを実行すると、"User's internal message queuing certificate does not exist" というエラーが表示されます。  
   
-#### ワークグループに参加しているコンピューターでこのサンプルを実行するには  
+#### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>ワークグループに参加しているコンピューターでこのサンプルを実行するには  
   
 1.  ドメインに属していないコンピューターを使用する場合は、トランスポート セキュリティをオフにします。オフにするには、認証モードとセキュリティ レベルを `None` に設定します。サンプル構成を次に示します。  
   
-    ```  
+    ```xml  
     <bindings>  
         <netMsmqBinding>  
             <binding name="TransactedBinding">  
@@ -328,15 +324,15 @@ Processing Purchase Order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89
     > [!NOTE]
     >  `security mode` を `None` に設定することは、`MsmqAuthenticationMode`、`MsmqProtectionLevel`、および `Message` のセキュリティを `None` に設定することに相当します。  
   
-3.  Metadata Exchange を機能させるため、URL を HTTP バインディングに登録します。  これを行うには、サービスが権限の高いコマンド ウィンドウで実行されている必要があります。  それ以外の場合、"未処理の例外 : System.ServiceModel.AddressAccessDeniedException: HTTP は URL http:\/\/\+:8000\/ServiceModelSamples\/service\/ を登録できません。  プロセスにこの名前空間へのアクセス権がありません \(詳細については、http:\/\/go.microsoft.com\/fwlink\/?LinkId\=70353 を参照してください\)。  \-\-\-\> "System.Net.HttpListenerException: アクセスが拒否されました。" のような例外が発生します。  
+3.  Metadata Exchange を機能させるため、URL を HTTP バインディングに登録します。 これを行うには、サービスが権限の高いコマンド ウィンドウで実行されている必要があります。 それ以外の場合、"未処理の例外 : System.ServiceModel.AddressAccessDeniedException: HTTP は URL http://+:8000/ServiceModelSamples/service/ を登録できません。 プロセスにこの名前空間へのアクセス権がありません (詳細については、http://go.microsoft.com/fwlink/?LinkId=70353 を参照してください)。 ---> "System.Net.HttpListenerException: アクセスが拒否されました。" のような例外が発生します。  
   
 > [!IMPORTANT]
->  サンプルは、既にコンピューターにインストールされている場合があります。  続行する前に、次の \(既定の\) ディレクトリを確認してください。  
+>  サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  このディレクトリが存在しない場合は、「[.NET Framework 4 向けの Windows Communication Foundation \(WCF\) および Windows Workflow Foundation \(WF\) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780)」にアクセスして、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。  このサンプルは、次のディレクトリに格納されます。  
+>  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Poison\MSMQ4`  
   
-## 参照
+## <a name="see-also"></a>関連項目

@@ -1,43 +1,45 @@
 ---
-title: "方法 : GridSplitter を表示されるようにする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "GridSplitter コントロール, 確保 (可視性を)"
+title: "方法 : GridSplitter を表示されるようにする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: GridSplitter control [WPF], ensuring visibility of
 ms.assetid: 0a62a964-89c8-48f0-9023-5df721a8cf47
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: e8692d356b1b20c7405b4478cef1d16c173389ce
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : GridSplitter を表示されるようにする
-この例では、<xref:System.Windows.Controls.GridSplitter> コントロールが <xref:System.Windows.Controls.Grid> 内で他のコントロールによって隠されないようにする方法を示します。  
+# <a name="how-to-make-sure-that-a-gridsplitter-is-visible"></a>方法 : GridSplitter を表示されるようにする
+この例を確認する方法を示しています、<xref:System.Windows.Controls.GridSplitter>コントロールは非表示でその他のコントロールによって、<xref:System.Windows.Controls.Grid>です。  
   
-## 使用例  
- <xref:System.Windows.Controls.Grid> コントロールの <xref:System.Windows.Controls.Panel.Children%2A> は、マークアップやコードに定義されている順序で描画されます。  <xref:System.Windows.Controls.GridSplitter> コントロールは、<xref:System.Windows.Controls.Panel.Children%2A> コレクションで最後の要素として定義されていない場合、または <xref:System.Windows.Controls.Panel.ZIndexProperty> の値が他のコントロールより低い場合に、他のコントロールによって隠される可能性があります。  
+## <a name="example"></a>例  
+ <xref:System.Windows.Controls.Panel.Children%2A>の<xref:System.Windows.Controls.Grid>コントロールは、マークアップやコード内に定義された順序で表示されます。 <xref:System.Windows.Controls.GridSplitter>コントロールを非表示にする他のコントロールでの最後の要素として定義する実行されていない場合、<xref:System.Windows.Controls.Panel.Children%2A>コレクションまたはかどうかを指定するその他の制御が大きいほど<xref:System.Windows.Controls.Panel.ZIndexProperty>です。  
   
- <xref:System.Windows.Controls.GridSplitter> コントロールが隠されないようにするには、次のいずれかの操作を行います。  
+ 防ぐために非表示<xref:System.Windows.Controls.GridSplitter>コントロールは、次のいずれかを実行します。  
   
--   <xref:System.Windows.Controls.GridSplitter> コントロールを、<xref:System.Windows.Controls.Grid> に最後の <xref:System.Windows.Controls.Panel.Children%2A> として追加します。  次の例では、<xref:System.Windows.Controls.GridSplitter> が <xref:System.Windows.Controls.Grid> の <xref:System.Windows.Controls.Panel.Children%2A> コレクションの最後の要素として示されています。  
+-   確認して<xref:System.Windows.Controls.GridSplitter>コントロールは、最後の<xref:System.Windows.Controls.Panel.Children%2A>に追加された、<xref:System.Windows.Controls.Grid>です。 次の例は、<xref:System.Windows.Controls.GridSplitter>の最後の要素として、<xref:System.Windows.Controls.Panel.Children%2A>のコレクション、<xref:System.Windows.Controls.Grid>です。  
   
- [!code-xml[GridSplitterSnips#GridSplitterLastChild](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#gridsplitterlastchild)]  
+ [!code-xaml[GridSplitterSnips#GridSplitterLastChild](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#gridsplitterlastchild)]  
   
--   <xref:System.Windows.Controls.GridSplitter> の <xref:System.Windows.Controls.Panel.ZIndexProperty> に、このコントロールを隠す可能性のある他のコントロールより高い値を設定します。  次の例では、<xref:System.Windows.Controls.GridSplitter> コントロールの <xref:System.Windows.Controls.Panel.ZIndexProperty> に <xref:System.Windows.Controls.Button> コントロールより高い値を設定しています。  
+-   設定、<xref:System.Windows.Controls.Panel.ZIndexProperty>上、<xref:System.Windows.Controls.GridSplitter>はそれを非表示にするコントロールよりも高くします。 次の例では、<xref:System.Windows.Controls.GridSplitter>制御が大きいほど<xref:System.Windows.Controls.Panel.ZIndexProperty>よりも、<xref:System.Windows.Controls.Button>コントロール。  
   
- [!code-xml[GridSplitterSnips#GridSplitterZIndex](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#gridsplitterzindex)]  
+ [!code-xaml[GridSplitterSnips#GridSplitterZIndex](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#gridsplitterzindex)]  
   
--   <xref:System.Windows.Controls.GridSplitter> を隠す可能性のあるコントロールにマージンを設定し、<xref:System.Windows.Controls.GridSplitter> が確実に表示されるようにします。  次の例では、<xref:System.Windows.Controls.GridSplitter> に重なって隠す可能性のあるコントロールにマージンを設定しています。  
+-   非表示にはそれ以外の場合、コントロールの余白を設定、<xref:System.Windows.Controls.GridSplitter>できるように、<xref:System.Windows.Controls.GridSplitter>公開されます。 次の例は、オーバーレイのそれ以外の場合は、コントロールと非表示に余白を設定、<xref:System.Windows.Controls.GridSplitter>です。  
   
- [!code-xml[GridSplitterSnips#GridSplitterMargin](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#gridsplittermargin)]  
+ [!code-xaml[GridSplitterSnips#GridSplitterMargin](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#gridsplittermargin)]  
   
-## 参照  
- <xref:System.Windows.Controls.GridSplitter>   
- [方法のトピック](../../../../docs/framework/wpf/controls/gridsplitter-how-to-topics.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.GridSplitter>  
+ [データ バインドに関する「方法」トピック](../../../../docs/framework/wpf/controls/gridsplitter-how-to-topics.md)

@@ -1,22 +1,25 @@
 ---
-title: "WMI クラスの参照 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WMI クラスの参照"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b95a51f5-8251-4619-ae05-7de88cb90f9a
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ee03f0c567f2b154eaf2e7fdf608b093cfbe2d1e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# WMI クラスの参照
+# <a name="wmi-class-reference"></a>WMI クラスの参照
 このセクションでは、[!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] WMI プロバイダーが公開しているすべての WMI クラスを示します。  
   
 ## <a name="accessing-wmi-instances"></a>WMI インスタンスへのアクセス  
@@ -31,7 +34,7 @@ caps.handback.revision: 6
   
  [AsymmetricSecurityBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/asymmetricsecuritybindingelement.md)  
   
- 「動作クラス」  
+ 「Behavior クラス」  
   
  [BinaryMessageEncodingBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/binarymessageencodingbindingelement.md)  
   
@@ -57,7 +60,7 @@ caps.handback.revision: 6
   
  [CustomBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/custombindingelement.md)  
   
- [DeliveryRequirementsAttribute](../../../../../docs/framework/wcf/diagnostics/wmi/deliveryrequirementsattribute.md)  
+ [Deliveryrequirementsattribute は](../../../../../docs/framework/wcf/diagnostics/wmi/deliveryrequirementsattribute.md)  
   
  [エンドポイント](../../../../../docs/framework/wcf/diagnostics/wmi/endpoint.md)  
   

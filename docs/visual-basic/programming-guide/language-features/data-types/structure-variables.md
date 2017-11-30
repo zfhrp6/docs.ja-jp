@@ -1,30 +1,29 @@
 ---
-title: "Structure Variables (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "structures, variables"
-  - "structures, structure variables"
-  - "variables [Visual Basic], structure variables"
-  - "structure variables"
+title: "構造体の変数 (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- structures [Visual Basic], variables
+- structures [Visual Basic], structure variables
+- variables [Visual Basic], structure variables
+- structure variables [Visual Basic]
 ms.assetid: 156872f8-aabc-4454-8e2d-f2253c3c13c9
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: ef42c44de84caffde909eb2b3e9361016a6abb97
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Structure Variables (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-構造体を作成したら、その型でプロシージャ レベルの変数およびモジュール レベルの変数を宣言できます。  たとえば、コンピューター システムに関する情報を記録する構造体を作成するとします。  次に例を示します。  
+# <a name="structure-variables-visual-basic"></a>構造体の変数 (Visual Basic)
+構造体を作成した後は、その型としてプロシージャ レベルとモジュール レベル変数を宣言できます。 たとえば、コンピューター システムに関する情報を記録する構造体を作成できます。 次に例を示します。  
   
 ```  
 Public Structure systemInfo  
@@ -34,17 +33,17 @@ Public Structure systemInfo
 End Structure  
 ```  
   
- これで、この型の変数を宣言できるようになります。  次に例を示します。  
+ その型の変数を宣言できます。 次の例を示します。  
   
 ```  
 Dim mySystem, yourSystem As systemInfo  
 ```  
   
 > [!NOTE]
->  クラス内およびモジュール内では、[Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) を使用して宣言した構造体は既定でパブリック アクセスになります。  構造体をプライベートにする場合は、[Private](../../../../visual-basic/language-reference/modifiers/private.md) キーワードを使用して宣言します。  
+>  クラスやモジュールで宣言された構造体を使用して、 [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)既定でパブリック アクセスです。 構造体をプライベートにする場合を使用して宣言を確認してください、[プライベート](../../../../visual-basic/language-reference/modifiers/private.md)キーワード。  
   
-## 構造体の値へのアクセス  
- 構造体変数の要素で値を代入したり取得したりするには、オブジェクトのプロパティの設定や取得に使用する構文を指定します。  メンバー アクセス演算子 \(`.`\) は、構造体変数名と要素名の間に配置します。  `systemInfo` 型として既に宣言されている変数の要素にアクセスする例を次に示します。  
+## <a name="access-to-structure-values"></a>構造体の値へのアクセス  
+ 割り当てるし、構造体変数の要素から値を取得、設定し、オブジェクトのプロパティの取得に使用すると同じ構文を使用します。 メンバー アクセス演算子を配置する (`.`) 構造体の変数名と要素名の間です。 次の例では、要素型として以前に宣言された変数の`systemInfo`します。  
   
 ```  
 mySystem.cPU = "486"  
@@ -52,23 +51,23 @@ Dim tooOld As Boolean
 If yourSystem.purchaseDate < #1/1/1992# Then tooOld = True  
 ```  
   
-## 構造体変数の代入  
- 両方の変数の構造体が同じ型の場合は、ある変数を別の変数に代入できます。  これによって、一方の構造体のすべての要素が、もう一方の構造体の対応する要素にコピーされます。  次に例を示します。  
+## <a name="assigning-structure-variables"></a>構造体の変数を割り当てる  
+ どちらも、同じ構造体型の場合、別に 1 つの変数を割り当てることができます。 これにより、1 つの構造体のすべての要素が、他の対応する要素にコピーします。 次の例を示します。  
   
 ```  
 yourSystem = mySystem  
 ```  
   
- 構造体の要素が文字列型 \(`String`\) やオブジェクト型 \(`Object`\) などの参照型である場合は、データへのポインターがコピーされます。  上の例で、`systemInfo` にオブジェクト変数が含まれていたとすると、`mySystem` から `yourSystem` にはポインターがコピーされることになります。そのため、一方の構造体をとおしてオブジェクトのデータに変更を加えると、もう一方の構造体をとおしてアクセスする内容にも変更が反映されます。  
+ 構造体の要素が、参照型など、 `String`、 `Object`、またはデータへのポインターの配列をコピーします。 前の例では場合、`systemInfo`のポインターが前の例をコピーしたが、オブジェクト変数が含まれていた`mySystem`に`yourSystem`、アクセスするときに、1 つの構造を使用して、オブジェクトのデータへの変更が有効にすると、を介して、他の構造体。  
   
-## 参照  
- [データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [Elementary Data Types](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)   
- [Composite Data Types](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)   
- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)   
- [Structures](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
- [Troubleshooting Data Types](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
- [How to: Declare a Structure](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)   
- [Structures and Other Programming Elements](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)   
- [Structures and Classes](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)   
- [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md)
+## <a name="see-also"></a>関連項目  
+ [データの種類](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [基本データ型](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  
+ [複合データ型](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)  
+ [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
+ [構造体](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
+ [トラブルシューティング (データ型)](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [方法 : 構造体を宣言する](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
+ [構造体とその他のプログラミング要素](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)  
+ [構造体とクラス](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)  
+ [Structure ステートメント](../../../../visual-basic/language-reference/statements/structure-statement.md)

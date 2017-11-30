@@ -1,57 +1,56 @@
 ---
-title: "Visual Basic Naming Conventions | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "names, Visual Basic rules"
-  - "naming conventions"
-  - "naming conventions, Visual Basic"
-  - "Visual Basic code, naming conventions"
-  - "conventions, Visual Basic coding"
-  - "names, naming conventions"
-  - "naming conventions, classes"
+title: "Visual Basic の名前付け規則"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- names [Visual Basic], Visual Basic rules
+- naming conventions
+- naming conventions [Visual Basic], Visual Basic
+- Visual Basic code, naming conventions
+- conventions [Visual Basic], Visual Basic coding
+- names [Visual Basic], naming conventions
+- naming conventions [Visual Basic], classes
 ms.assetid: 164949a4-2a7c-4736-9d82-9c3078e2e56c
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: a59139b57568810de80de764388eeffa5f8d7ac9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Visual Basic Naming Conventions
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-Visual Basic アプリケーションの要素に名前を付ける場合は、最初の文字を英字、漢字、ひらがな、カタカナ、アンダースコア \(\_\) のいずれかにする必要があります。  ただし、アンダースコアで始まる名前は [言語への非依存性、および言語非依存コンポーネント](../Topic/Language%20Independence%20and%20Language-Independent%20Components.md) \(CLS\) に準拠しないので注意してください。  
+# <a name="visual-basic-naming-conventions"></a>Visual Basic の名前付け規則
+要素は、Visual Basic アプリケーションの名前、ときに、その名前の最初の文字は、文字は英字またはアンダー スコアにする必要があります。 ただし、アンダー スコアで始まる名前に準拠していないこと、[言語非依存および言語非依存コンポーネント](https://msdn.microsoft.com/library/12a7a7h3)(CLS)。  
   
- 名前付けには以下の推奨事項が適用されます。  
+ 次の提案は、名前付けに適用されます。  
   
--   `FindLastRecord` や `RedrawMyForm` のように、名前の各単語は大文字で開始します。  
+-   としてでは大文字で名前の独立した各単語を開始`FindLastRecord`と`RedrawMyForm`です。  
   
--   `InitNameArray` や `CloseDialog` のように、関数名とメソッド名は動詞で開始します。  
+-   開始、動詞を使用して、関数、およびメソッドの名前として`InitNameArray`または`CloseDialog`です。  
   
--   `EmployeeName` や `CarAccessory` のように、クラス、構造体、モジュール、およびプロパティの名前は名詞で開始します。  
+-   開始クラス、構造体、モジュール、および、名詞とプロパティ名として`EmployeeName`または`CarAccessory`です。  
   
--   インターフェイス名は "I" で開始し、その後には `IComponent` のように名詞または名詞句を続けるか、または `IPersistable` のようにインターフェイスの動作を説明する形容詞を続けます。  アンダースコアは使用しないでください。また、省略形を使用すると混乱を招く可能性があるため、使用しないようにしてください。  
+-   プレフィックスが付いているインターフェイスを開始"I"、続けて名詞または名詞句の場合と同様に`IComponent`、またはインターフェイスの動作を説明するような形容詞`IPersistable`です。 および使用しないで、アンダー スコア、略語で混乱可能性があるために、慎重に、省略形を使用します。  
   
--   イベント ハンドラー名はイベントの種類を説明する名詞で開始し、その後にサフィックス "`EventHandler`" を付け、"`MouseEventHandler`" のように記述します。  
+-   で始め、名詞が続くイベントの種類を説明するイベント ハンドラー名、"`EventHandler`「サフィックスで」`MouseEventHandler`"です。  
   
--   イベント引数クラスの名前には、サフィックス "`EventArgs`" を含めます。  
+-   イベント引数クラスの名前が含まれる、"`EventArgs`"サフィックス。  
   
--   イベントに前後の概念がある場合は、"`ControlAdd`" や "`ControlAdded`" のように現在形または過去形を使用します。  
+-   ある場合、イベントの概念"before"または"after"サフィックスで使用、現在時制または過去時制として"`ControlAdd`「または」`ControlAdded`"です。  
   
--   長い用語や頻繁に使用する用語は、省略形を使って名前を適切な長さにします。たとえば、"Hypertext Markup Language" の代わりに "HTML" を使用します。  通常、32 文字より長い変数名は、解像度の低いディスプレイでは読みにくくなります。  省略形は、必ずアプリケーション全体で統一してください。  プロジェクト内で "HTML" と "Hypertext Markup Language" の両方を不規則に使用すると混乱が生じます。  
+-   長であるか、または頻繁に使用される用語では、たとえば、"HTML"、「ハイパー テキスト マークアップ言語」ではなく、適切な名前の長さを保持する略語を使用します。 一般に、32 文字を超える変数の名前は画面解像度の低い設定読みにくくします。 また、省略形は、アプリケーション全体で一貫性のあることを確認してください。 "HTML"と「ハイパー テキスト マークアップ言語」の間でのプロジェクト内にランダムに切り替え、混乱を招く可能性があります。  
   
--   外部スコープにある名前と同じ名前を内部スコープで使用することは避けてください。  不正な変数にアクセスされるとエラーが発生します。  同じ名前の変数とキーワードの間で競合が発生した場合は、適切なタイプ ライブラリを先頭に付けてキーワードを識別する必要があります。  たとえば `Date` という変数がある場合は、<xref:System.DateTime.Date%2A?displayProperty=fullName> の呼び出しによってのみ、組み込み関数 `Date` を使用できます。  
+-   外側のスコープでの名前と同じである内部スコープでの名前を使用しないでください。 エラーは、不正な変数にアクセスした場合に発生します。 変数と同じ名前のキーワードの間の競合が発生した場合は、適切なタイプ ライブラリで前にキーワードを識別する必要があります。 たとえば、という名前の変数がある場合`Date`、組み込みを使用することができます`Date`関数を呼び出すことによってのみ<xref:System.DateTime.Date%2A?displayProperty=nameWithType>です。  
   
-## 参照  
- [Keywords as Element Names in Code](../../../visual-basic/programming-guide/program-structure/keywords-as-element-names-in-code.md)   
- [Me, My, MyBase, and MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)   
- [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
- [プログラム構造とコード規則](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)   
- [Visual Basic Language Reference](../../../visual-basic/language-reference/index.md)
+## <a name="see-also"></a>関連項目  
+ [コード内の要素名としてのキーワード](../../../visual-basic/programming-guide/program-structure/keywords-as-element-names-in-code.md)  
+ [Me、My、MyBase、および MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)  
+ [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
+ [プログラム構造とコード規則](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
+ [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)

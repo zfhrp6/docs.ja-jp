@@ -5,29 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - interop marshaling, arrays
 - arrays, interop marshaling
 ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 72b9cf51936df7b3b2055823ff33f7561640608f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: ab9a72607f5201164f31d9e4cfdf058e9af804ae
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="default-marshaling-for-arrays"></a>配列に対する既定のマーシャリング
 全体がマネージ コードで構成されるアプリケーションでは、共通言語ランタイムは、配列型を In/Out パラメーターとして渡します。 これに対し、相互運用マーシャラーは、既定で In パラメーターとして配列を渡します。  
@@ -46,7 +42,7 @@ ms.lasthandoff: 08/21/2017
   
 <a name="cpcondefaultmarshalingforarraysanchor1"></a>   
 ## <a name="managed-arrays"></a>マネージ配列  
- マネージ配列型は異なっても、<xref:System.Array?displayProperty=fullName> クラスはすべての配列型の基底クラスです。 **System.Array** クラスには、ランク、長さ、および配列の下限と上限を決定するためのプロパティに加え、配列のアクセス、並べ替え、検索、コピー、および作成するためのメソッドがあります。  
+ マネージ配列型は異なっても、<xref:System.Array?displayProperty=nameWithType> クラスはすべての配列型の基底クラスです。 **System.Array** クラスには、ランク、長さ、および配列の下限と上限を決定するためのプロパティに加え、配列のアクセス、並べ替え、検索、コピー、および作成するためのメソッドがあります。  
   
  これらの配列型は動的で、基底クラス ライブラリで定義されている対応する静的型はありません。 要素型とランクのそれぞれの組み合わせを配列の別個の型として考えると便利です。 このため、整数の 1 次元配列の型は double 型の 1 次元配列の型とは異なります。 同様に、整数の 2 次元配列は整数の 1 次元配列とは異なります。 型を比較するときに、配列の境界は考慮されません。  
   
@@ -103,7 +99,7 @@ void New3([MarshalAs(UnmanagedType.SafeArray, SafeArraySubType=VT_BSTR)]
    ref String[] ar);  
 ```  
   
- 多次元配列 (0 以外の値にバインドされたセーフ配列) は、Tlbimp.exe によって生成されたメソッド シグネチャが、**ELEMENT_TYPE_SZARRAY** ではなく **ELEMENT_TYPE_ARRAY** の要素型を示すように変更された場合に、マネージ コードにマーシャリングできます。 または、Tlbimp.exe で **/sysarray** スイッチを使用してすべての配列を <xref:System.Array?displayProperty=fullName> オブジェクトとしてインポートできます。 渡される配列が多次元配列だとわかっている場合は、Tlbimp.exe で生成された Microsoft Intermediate Language (MSIL) コードを編集してから再コンパイルすることができます。 MSIL コードの変更方法の詳細については、「[Customizing Runtime Callable Wrappers](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be)」(ランタイム呼び出し可能ラッパーのカスタマイズ) を参照してください。  
+ 多次元配列 (0 以外の値にバインドされたセーフ配列) は、Tlbimp.exe によって生成されたメソッド シグネチャが、**ELEMENT_TYPE_SZARRAY** ではなく **ELEMENT_TYPE_ARRAY** の要素型を示すように変更された場合に、マネージ コードにマーシャリングできます。 または、Tlbimp.exe で **/sysarray** スイッチを使用してすべての配列を <xref:System.Array?displayProperty=nameWithType> オブジェクトとしてインポートできます。 渡される配列が多次元配列だとわかっている場合は、Tlbimp.exe で生成された Microsoft Intermediate Language (MSIL) コードを編集してから再コンパイルすることができます。 MSIL コードの変更方法の詳細については、「[Customizing Runtime Callable Wrappers](http://msdn.microsoft.com/en-us/4652beaf-77d0-4f37-9687-ca193288c0be)」(ランタイム呼び出し可能ラッパーのカスタマイズ) を参照してください。  
   
 ### <a name="c-style-arrays"></a>C スタイル配列  
  C スタイル配列がタイプ ライブラリから .NET アセンブリにインポートされると、その配列は **ELEMENT_TYPE_SZARRAY** に変換されます。  
@@ -210,7 +206,7 @@ void New3(ref String ar);
 |------------------------|-----------------|  
 |**ELEMENT_TYPE_SZARRAY** **\<** *type* **>**|<xref:System.Runtime.InteropServices.UnmanagedType> **.SafeArray(** *type* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> 型はシグネチャで提供されます。 ランクは常に 1 で、下限は常に 0 です。 サイズは実行時に常に把握されています。|  
 |**ELEMENT_TYPE_ARRAY** **\<** *type* **>** **\<** *rank* **>**[**\<** *bounds* **>**]|**UnmanagedType.SafeArray(** *type* **)**<br /><br /> **UnmanagedType.LPArray**<br /><br /> 型、ランク、境界はシグネチャで提供されます。 サイズは実行時に常に把握されています。|  
-|**ELEMENT_TYPE_CLASS** **\<**<xref:System.Array?displayProperty=fullName>**>**|**UT_Interface**<br /><br /> **UnmanagedType.SafeArray(** *type* **)**<br /><br /> 型、ランク、境界、およびサイズは実行時に常に把握されています。|  
+|**ELEMENT_TYPE_CLASS** **\<**<xref:System.Array?displayProperty=nameWithType>**>**|**UT_Interface**<br /><br /> **UnmanagedType.SafeArray(** *type* **)**<br /><br /> 型、ランク、境界、およびサイズは実行時に常に把握されています。|  
   
  LPSTR または LPWSTR を含む構造体の配列に関連する OLE オートメーションの制限があります。  そのため、**String** フィールドは **UnmanagedType.BSTR** としてマーシャリングする必要があります。 この操作を行わない場合、例外がスローされます。  
   
@@ -336,7 +332,7 @@ void New(long [][][] ar );
 ```  
   
 ### <a name="elementtypeclass-systemarray"></a>ELEMENT_TYPE_CLASS \<System.Array>  
- <xref:System.Array?displayProperty=fullName> パラメーターを含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **_Array** インターフェイスに変換されます。 マネージ配列の内容には、**_Array** インターフェイスのメソッドとプロパティを介してのみアクセスできます。 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用することで、**System.Array** を **SAFEARRAY** としてマーシャリングすることもできます。 セーフ配列としてマーシャリングすると、配列要素はバリアントとしてマーシャリングされます。 例:  
+ <xref:System.Array?displayProperty=nameWithType> パラメーターを含むメソッドが .NET アセンブリからタイプ ライブラリにエクスポートされるときに、配列パラメーターが特定の型の **_Array** インターフェイスに変換されます。 マネージ配列の内容には、**_Array** インターフェイスのメソッドとプロパティを介してのみアクセスできます。 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性を使用することで、**System.Array** を **SAFEARRAY** としてマーシャリングすることもできます。 セーフ配列としてマーシャリングすると、配列要素はバリアントとしてマーシャリングされます。 例:  
   
 #### <a name="managed-signature"></a>マネージ シグネチャ  
   
@@ -385,8 +381,7 @@ public struct MyStruct {
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)   
- [Blittable 型と非 Blittable 型](../../../docs/framework/interop/blittable-and-non-blittable-types.md)   
- [方向属性](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)   
+ [既定のマーシャリング動作](../../../docs/framework/interop/default-marshaling-behavior.md)  
+ [Blittable 型と非 Blittable 型](../../../docs/framework/interop/blittable-and-non-blittable-types.md)  
+ [方向属性](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)  
  [コピーと固定](../../../docs/framework/interop/copying-and-pinning.md)
-

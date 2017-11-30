@@ -7,11 +7,6 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - trace destinations
 - sending traces to log file
@@ -22,16 +17,15 @@ helpviewer_keywords:
 - logs, trace
 - destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 15cee0244dc06f6eea03b333e01380953a616947
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: da6c9723849694a764a3cb1c050abdb447776113
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="enabling-network-tracing"></a>ネットワークのトレースの有効化
 ネットワークのトレースでは、メソッド呼び出しについての情報、およびマネージ アプリケーションによって生成されるネットワーク トラフィックについての情報にアクセスできます。 アプリケーションでネットワーク トレースを有効にするには、次のタスクを実行する必要があります。  
@@ -61,7 +55,6 @@ ms.lasthandoff: 08/21/2017
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [ネットワークのトレースの解釈](../../../docs/framework/network-programming/interpreting-network-tracing.md)   
- [.NET Framework のネットワークのトレース](../../../docs/framework/network-programming/network-tracing.md)   
+ [ネットワークのトレースの解釈](../../../docs/framework/network-programming/interpreting-network-tracing.md)  
+ [.NET Framework のネットワークのトレース](../../../docs/framework/network-programming/network-tracing.md)  
  [実装とトレースの概要](http://msdn.microsoft.com/en-us/e924e57c-33cf-4b0e-9e7f-a45d13e38f2c)
-

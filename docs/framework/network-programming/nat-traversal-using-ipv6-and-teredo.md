@@ -7,22 +7,16 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 ms.assetid: 568cd245-3300-49ef-a995-d81bf845d961
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: d1730e5af0ee3f837f46071992c80e81b118af1e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 466e3faed9b2877671ca265afdb613607b12f0de
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="nat-traversal-using-ipv6-and-teredo"></a>IPv6 および Teredo を使用した NAT トラバーサル
 ネットワーク アドレス変換 (NAT) トラバーサルをサポートする機能強化が行われました。 これらの変更は、IPv6 および Teredo での使用を想定して設計されていますが、他の IP トンネリング テクノロジにも適用されます。 これらの拡張機能は、<xref:System.Net> および関連する名前空間のクラスに影響します。  
@@ -47,25 +41,24 @@ ms.lasthandoff: 08/21/2017
 ## <a name="enhancements-to-support-nat-traversal-and-teredo"></a>NAT トラバーサルと Teredo をサポートするための機能強化  
  IPv6 および Teredo を使用した NAT トラバーサルをサポートするために、<xref:System.Net>、<xref:System.Net.NetworkInformation>、および <xref:System.Net.Sockets> 名前空間に強化機能が追加されました。  
   
- <xref:System.Net.NetworkInformation.IPGlobalProperties?displayProperty=fullName> クラスに、ホスト上のユニキャスト IP アドレスの一覧を取得するための複数のメソッドが追加されています。 <xref:System.Net.NetworkInformation.IPGlobalProperties.BeginGetUnicastAddresses%2A> メソッドは、ローカル コンピューター上の安定したユニキャスト IP アドレス テーブルを取得するための非同期要求を開始します。 <xref:System.Net.NetworkInformation.IPGlobalProperties.EndGetUnicastAddresses%2A> メソッドは、ローカル コンピューター上の安定したユニキャスト IP アドレス テーブルを取得するための保留中の非同期要求を終了します。 <xref:System.Net.NetworkInformation.IPGlobalProperties.GetUnicastAddresses%2A> メソッドは、ローカル コンピューター上の安定したユニキャスト IP アドレス テーブルを取得するための同期要求であり、アドレス テーブルが安定化されるまで必要に応じて待機します。  
+ <xref:System.Net.NetworkInformation.IPGlobalProperties?displayProperty=nameWithType> クラスに、ホスト上のユニキャスト IP アドレスの一覧を取得するための複数のメソッドが追加されています。 <xref:System.Net.NetworkInformation.IPGlobalProperties.BeginGetUnicastAddresses%2A> メソッドは、ローカル コンピューター上の安定したユニキャスト IP アドレス テーブルを取得するための非同期要求を開始します。 <xref:System.Net.NetworkInformation.IPGlobalProperties.EndGetUnicastAddresses%2A> メソッドは、ローカル コンピューター上の安定したユニキャスト IP アドレス テーブルを取得するための保留中の非同期要求を終了します。 <xref:System.Net.NetworkInformation.IPGlobalProperties.GetUnicastAddresses%2A> メソッドは、ローカル コンピューター上の安定したユニキャスト IP アドレス テーブルを取得するための同期要求であり、アドレス テーブルが安定化されるまで必要に応じて待機します。  
   
- <xref:System.Net.IPAddress.IsIPv6Teredo%2A?displayProperty=fullName> プロパティは、<xref:System.Net.IPAddress> が IPv6 Teredo アドレスであるかどうかを確認するために使用できます。  
+ <xref:System.Net.IPAddress.IsIPv6Teredo%2A?displayProperty=nameWithType> プロパティは、<xref:System.Net.IPAddress> が IPv6 Teredo アドレスであるかどうかを確認するために使用できます。  
   
  これらの新しい <xref:System.Net.NetworkInformation.IPGlobalProperties> クラス メソッドを <xref:System.Net.IPAddress.IsIPv6Teredo%2A> プロパティと組み合わせて使用することで、アプリケーションは Teredo アドレスを簡単に見つけることができます。 通常、アプリケーションが知る必要があるのは、ローカルの Teredo アドレスだけです (アプリケーションがこの情報をリモート アプリケーションに送信する場合)。 たとえば、ピアツーピア アプリケーションがすべての IPv6 アドレスをマッチメイキング サーバーに送信し、サーバーが受け取ったアドレスを他のピアに転送して直接通信ができるようにする場合です。  
   
- アプリケーションは通常、ローカルの Teredo アドレスではなく <xref:System.Net.IPAddress.IPv6Any?displayProperty=fullName> でリッスンするようにリッスン サービスを設定する必要があります。 そのため、リモート クライアントまたはピアが、リッスンしているサービスのホストへの直接的な IPv6 ルートを持っている場合、クライアントまたはピアは、IPv6 を使用して直接接続することができ、Teredo を使用してパケットをトンネリングする必要はありません。  
+ アプリケーションは通常、ローカルの Teredo アドレスではなく <xref:System.Net.IPAddress.IPv6Any?displayProperty=nameWithType> でリッスンするようにリッスン サービスを設定する必要があります。 そのため、リモート クライアントまたはピアが、リッスンしているサービスのホストへの直接的な IPv6 ルートを持っている場合、クライアントまたはピアは、IPv6 を使用して直接接続することができ、Teredo を使用してパケットをトンネリングする必要はありません。  
   
- TCP アプリケーションの場合、<xref:System.Net.Sockets.TcpListener?displayProperty=fullName> クラスに、NAT トラバーサルを有効にする <xref:System.Net.Sockets.TcpListener.AllowNatTraversal%2A> メソッドがあります。 UDP アプリケーションの場合、<xref:System.Net.Sockets.UdpClient?displayProperty=fullName> クラスに、NAT トラバーサルを有効にする <xref:System.Net.Sockets.UdpClient.AllowNatTraversal%2A> メソッドがあります。  
+ TCP アプリケーションの場合、<xref:System.Net.Sockets.TcpListener?displayProperty=nameWithType> クラスに、NAT トラバーサルを有効にする <xref:System.Net.Sockets.TcpListener.AllowNatTraversal%2A> メソッドがあります。 UDP アプリケーションの場合、<xref:System.Net.Sockets.UdpClient?displayProperty=nameWithType> クラスに、NAT トラバーサルを有効にする <xref:System.Net.Sockets.UdpClient.AllowNatTraversal%2A> メソッドがあります。  
   
- <xref:System.Net.Sockets.Socket?displayProperty=fullName> および関連したクラスを使用するアプリケーションでは、<xref:System.Net.Sockets.Socket.GetSocketOption%2A> メソッドと <xref:System.Net.Sockets.Socket.SetSocketOption%2A> メソッドを <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel?displayProperty=fullName> ソケット オプションと共に使用して、NAT トラバーサルのクエリ、有効化、または無効化を行うことができます。  
+ <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> および関連したクラスを使用するアプリケーションでは、<xref:System.Net.Sockets.Socket.GetSocketOption%2A> メソッドと <xref:System.Net.Sockets.Socket.SetSocketOption%2A> メソッドを <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel?displayProperty=nameWithType> ソケット オプションと共に使用して、NAT トラバーサルのクエリ、有効化、または無効化を行うことができます。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Net.IPAddress.IsIPv6Teredo%2A?displayProperty=fullName>   
- <xref:System.Net.NetworkInformation.IPGlobalProperties.BeginGetUnicastAddresses%2A?displayProperty=fullName>   
- <xref:System.Net.NetworkInformation.IPGlobalProperties.EndGetUnicastAddresses%2A?displayProperty=fullName>   
- <xref:System.Net.NetworkInformation.IPGlobalProperties.GetUnicastAddresses%2A?displayProperty=fullName>   
- <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=fullName>   
- <xref:System.Net.Sockets.Socket.SetIPProtectionLevel%2A?displayProperty=fullName>   
- <xref:System.Net.Sockets.TcpListener.AllowNatTraversal%2A?displayProperty=fullName>   
- <xref:System.Net.Sockets.UdpClient.AllowNatTraversal%2A?displayProperty=fullName>
-
+ <xref:System.Net.IPAddress.IsIPv6Teredo%2A?displayProperty=nameWithType>  
+ <xref:System.Net.NetworkInformation.IPGlobalProperties.BeginGetUnicastAddresses%2A?displayProperty=nameWithType>  
+ <xref:System.Net.NetworkInformation.IPGlobalProperties.EndGetUnicastAddresses%2A?displayProperty=nameWithType>  
+ <xref:System.Net.NetworkInformation.IPGlobalProperties.GetUnicastAddresses%2A?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.Socket.SetIPProtectionLevel%2A?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.TcpListener.AllowNatTraversal%2A?displayProperty=nameWithType>  
+ <xref:System.Net.Sockets.UdpClient.AllowNatTraversal%2A?displayProperty=nameWithType>

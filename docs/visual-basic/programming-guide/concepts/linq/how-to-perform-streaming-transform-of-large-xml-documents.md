@@ -1,44 +1,36 @@
 ---
-title: "方法: 大きな XML ドキュメント (Visual Basic) のストリーミング変換を実行 |Microsoft ドキュメント"
+title: "方法: 大きな XML ドキュメント (Visual Basic) のストリーミング変換を実行します。"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 3d954cc9-4b3c-4b47-8132-ff7541cff53b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: f35e42e29e316fe1610a011263aa68e622fb95a5
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: d211cbd1c94d485e0c41d23eb12dcae28ae7ad6e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-perform-streaming-transform-of-large-xml-documents-visual-basic"></a>方法: 大きな XML ドキュメント (Visual Basic) のストリーミング変換を実行
+# <a name="how-to-perform-streaming-transform-of-large-xml-documents-visual-basic"></a>方法: 大きな XML ドキュメント (Visual Basic) のストリーミング変換を実行します。
 大きな XML ファイルを変換して、アプリケーションのメモリ使用量を予想できるようにアプリケーションを作成しなければならない場合があります。 非常に大きな XML ファイルを XML ツリーに設定しようとすると、ファイルのサイズに比例してメモリが過剰に使用されます。 したがって、代わりにストリーミングの手法を使用する必要があります。  
   
- ストリーミングの手法は、ソース ドキュメントを&1; 回だけ処理する必要がある場合に適しており、ドキュメントの順序で要素を処理できます。 一部の標準クエリ演算子でなど<xref:System.Linq.Enumerable.OrderBy%2A>、そのソースを反復処理する、すべてのデータを収集、並べ替えられて、および最終的に、シーケンスの最初の項目が生成されます</xref:System.Linq.Enumerable.OrderBy%2A>。 最初の項目を生成する前にソースを具体化するクエリ演算子を使用すると、アプリケーションのメモリ使用量を低く維持することができないので注意してください。  
+ ストリーミングの手法は、ソース ドキュメントを 1 回だけ処理する必要がある場合に適しており、ドキュメントの順序で要素を処理できます。 <xref:System.Linq.Enumerable.OrderBy%2A> などの一部の標準クエリ演算子では、ソースが反復処理され、すべてのデータが収集され並べ替えられて、最終的にはシーケンス内の最初の項目が生成されます。 最初の項目を生成する前にソースを具体化するクエリ演算子を使用すると、アプリケーションのメモリ使用量を低く維持することができないので注意してください。  
   
- 説明したテクニックを使用する場合でも[方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)、変換されたドキュメントのメモリ使用量が非常に高いを含む XML ツリーをアセンブルしようとする場合。  
+ 説明した手法を使用する場合でも[する方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)、変換後のドキュメントでは、メモリ使用率が高すぎるされますを含む XML ツリーをアセンブルしようとする場合。  
   
- 主な方法は&2; つあります。 1 つの方法は、 <xref:System.Xml.Linq.XStreamingElement>。</xref:System.Xml.Linq.XStreamingElement>の遅延処理の特性を使用するには 別の方法は、作成する、<xref:System.Xml.XmlWriter>の機能を使用して[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter>に要素を書き込む</xref:System.Xml.XmlWriter> このトピックでは、両方の方法について説明します。  
+ 主な方法は 2 つあります。 1 つは、<xref:System.Xml.Linq.XStreamingElement> の遅延処理の特性を使用する方法です。 もう 1 つは、<xref:System.Xml.XmlWriter> を作成し、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の機能を使用して <xref:System.Xml.XmlWriter> に要素を書き込む方法です。 このトピックでは、両方の方法について説明します。  
   
 ## <a name="example"></a>例  
- 次の例では、例では、ビルド[方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)します。  
+ 次の例の例でビルド[する方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)です。  
   
- この例の遅延実行機能を使用して<xref:System.Xml.Linq.XStreamingElement>してストリーム出力します</xref:System.Xml.Linq.XStreamingElement>。 この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。  
+ この例では、<xref:System.Xml.Linq.XStreamingElement> の遅延実行機能を使用してストリーム出力しています。 この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。  
   
  カスタム軸 (`StreamCustomerItem`) は、`Customer`、`Name`、`Item` の各要素を含んだドキュメントを前提として記述されています。また、それらの要素は、次に示す Source.xml ドキュメントと同じように配置されます。 ただし、より堅牢に実装する場合は、無効なドキュメントの解析にも対応するようにします。  
   
@@ -263,15 +255,15 @@ End Class
 ```  
   
 ## <a name="example"></a>例  
- 次の例は、の例でもビルド[方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)します。  
+ 次の例は、上の例でも構築[する方法: ヘッダー情報 (Visual Basic) にアクセスして XML フラグメントをストリーム](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)です。  
   
- この例の機能を使用して[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] <xref:System.Xml.XmlWriter>.</xref:System.Xml.XmlWriter>に要素を書き込む この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。  
+ この例では、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の機能を使用して <xref:System.Xml.XmlWriter> に要素を書き込みます。 この例を使用すると、メモリ使用量を低く抑えながら、非常に大きなドキュメントを変換することができます。  
   
  カスタム軸 (`StreamCustomerItem`) は、`Customer`、`Name`、`Item` の各要素を含んだドキュメントを前提として記述されています。また、それらの要素は、次に示す Source.xml ドキュメントと同じように配置されます。 ただし、より堅牢に実装する場合は、ソース ドキュメントを XSD で検証するか、無効なドキュメントの解析にも対応するようにします。  
   
  この例でも、このトピックの前の例と同じソース ドキュメント Source.xml を使用します。 生成される出力も同じになります。  
   
- <xref:System.Xml.Linq.XStreamingElement>XML は<xref:System.Xml.XmlWriter>。</xref:System.Xml.XmlWriter>を記述するより優先される出力のストリーミングに</xref:System.Xml.Linq.XStreamingElement>使用します。  
+ <xref:System.Xml.Linq.XStreamingElement> に書き込むよりも、<xref:System.Xml.XmlWriter> を使用して出力 XML をストリーミングすることをお勧めします。  
   
 ```vb  
 Module Module1  
@@ -457,4 +449,4 @@ End Class
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+ [高度な LINQ to XML プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

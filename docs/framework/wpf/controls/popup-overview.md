@@ -1,107 +1,110 @@
 ---
-title: "ポップアップの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "コントロール, ポップアップ"
-  - "ポップアップ コントロール [WPF], ポップアップ コントロールの概要"
+title: "ポップアップの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- controls [WPF], Popup
+- Popup control [WPF], about Popup control
 ms.assetid: 774f53ca-bff8-470e-9ce9-3928b4cf3d4c
-caps.latest.revision: 34
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 33
+caps.latest.revision: "34"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 96ee7b227d4e2ea5dfcb0b8870d77d03abf08db8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ポップアップの概要
-<xref:System.Windows.Controls.Primitives.Popup> コントロールは、現在のアプリケーション ウィンドウの上の別のウィンドウにコンテンツを表示するための手段です。ウィンドウの表示位置は、特定の要素を基準として、または画面座標として指定されます。  ここでは、<xref:System.Windows.Controls.Primitives.Popup> コントロールの概要と、使用方法に関する情報を示します。  
+# <a name="popup-overview"></a>ポップアップの概要
+<xref:System.Windows.Controls.Primitives.Popup>コントロールは、指定された要素または画面座標の基準とした、現在のアプリケーション ウィンドウで別のウィンドウの内容を表示する方法を提供します。 このトピックでは、<xref:System.Windows.Controls.Primitives.Popup>制御し、その使用に関する情報を提供します。  
   
-   
+ 
   
 <a name="What_Is_a_Popup_"></a>   
-## ポップアップとは  
- <xref:System.Windows.Controls.Primitives.Popup> コントロールは、画面上の要素または点を基準として別のウィンドウにコンテンツを表示します。  <xref:System.Windows.Controls.Primitives.Popup> が表示されているときは、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A> プロパティが `true` に設定されています。  
+## <a name="what-is-a-popup"></a>ポップアップとは  
+ A<xref:System.Windows.Controls.Primitives.Popup>要素または画面上のポイントを基準とした別のウィンドウでコントロールがコンテンツを表示します。 ときに、<xref:System.Windows.Controls.Primitives.Popup>が表示されて、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>プロパティに設定されている`true`です。  
   
 > [!NOTE]
->  <xref:System.Windows.Controls.Primitives.Popup> は、マウス ポインターが親オブジェクト上に移動したときに自動的に開くわけではありません。  <xref:System.Windows.Controls.Primitives.Popup> が自動的に開くようにする場合は、<xref:System.Windows.Controls.ToolTip> クラスまたは <xref:System.Windows.Controls.ToolTipService> クラスを使用します。  詳細については、「[ToolTip の概要](../../../../docs/framework/wpf/controls/tooltip-overview.md)」を参照してください。  
+>  A<xref:System.Windows.Controls.Primitives.Popup>が自動的に開かないその親オブジェクト上にマウス ポインターが移動したとき。 場合は、<xref:System.Windows.Controls.Primitives.Popup>を自動的に開くを使用して、<xref:System.Windows.Controls.ToolTip>または<xref:System.Windows.Controls.ToolTipService>クラスです。 詳細については、[ToolTip の概要](../../../../docs/framework/wpf/controls/tooltip-overview.md)を参照してください。  
   
 <a name="APopupExample"></a>   
-## ポップアップの作成  
- <xref:System.Windows.Controls.Button> コントロールの子要素である <xref:System.Windows.Controls.Primitives.Popup> コントロールを定義する方法を次の例に示します。  <xref:System.Windows.Controls.Button> が持つことのできる子要素は 1 つだけであるので、この例では、<xref:System.Windows.Controls.Button> コントロールおよび <xref:System.Windows.Controls.Primitives.Popup> コントロールのテキストを <xref:System.Windows.Controls.StackPanel> の中に配置します。  <xref:System.Windows.Controls.Primitives.Popup> のコンテンツは <xref:System.Windows.Controls.TextBlock> コントロールに表示されます。このコントロールのテキストは、アプリケーション ウィンドウ上の、関連付けられた <xref:System.Windows.Controls.Button> コントロールの近くにフロート表示される別のウィンドウに表示されます。  
+## <a name="creating-a-popup"></a>ポップアップの作成  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.Primitives.Popup>であるコントロールの子要素、<xref:System.Windows.Controls.Button>コントロール。 <xref:System.Windows.Controls.Button> 1 つだけの子要素を持つことができます、この例のテキストの配置、<xref:System.Windows.Controls.Button>と<xref:System.Windows.Controls.Primitives.Popup>コントロールで、<xref:System.Windows.Controls.StackPanel>です。 内容、<xref:System.Windows.Controls.Primitives.Popup>に表示されます、<xref:System.Windows.Controls.TextBlock>近く、関連アプリケーションのウィンドウで別のウィンドウでテキストを表示するコントロールを<xref:System.Windows.Controls.Button>コントロール。  
   
- [!code-xml[PopupSimple#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#1)]  
+ [!code-xaml[PopupSimple#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#1)]  
   
- [!code-xml[PopupSimple#CreatePopupCodeXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#createpopupcodexaml)]  
+ [!code-xaml[PopupSimple#CreatePopupCodeXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#createpopupcodexaml)]  
   
 <a name="PopupUses"></a>   
-## ポップアップを実装するコントロール  
- <xref:System.Windows.Controls.Primitives.Popup> コントロールは、他のコントロールの中に組み込むことができます。  次のコントロールは、特定の使用目的の <xref:System.Windows.Controls.Primitives.Popup> コントロールを実装します。  
+## <a name="controls-that-implement-a-popup"></a>ポップアップを実装するコントロール  
+ 構築できます<xref:System.Windows.Controls.Primitives.Popup>を他のコントロールにコントロールできます。 次のコントロールは、実装、<xref:System.Windows.Controls.Primitives.Popup>特定の使用目的。  
   
--   <xref:System.Windows.Controls.ToolTip>.  要素のツールヒントを作成する場合は、<xref:System.Windows.Controls.ToolTip> クラスと <xref:System.Windows.Controls.ToolTipService> クラスを使用します。  詳細については、「[ToolTip の概要](../../../../docs/framework/wpf/controls/tooltip-overview.md)」を参照してください。  
+-   <xref:System.Windows.Controls.ToolTip>。 要素にツールヒントを作成する場合は、使用、<xref:System.Windows.Controls.ToolTip>と<xref:System.Windows.Controls.ToolTipService>クラスです。 詳細については、[ToolTip の概要](../../../../docs/framework/wpf/controls/tooltip-overview.md)を参照してください。  
   
--   <xref:System.Windows.Controls.ContextMenu>.  要素のコンテキスト メニューを作成する場合は、<xref:System.Windows.Controls.ContextMenu> コントロールを使用します。  詳細については、「[ContextMenu の概要](../../../../docs/framework/wpf/controls/contextmenu-overview.md)」を参照してください。  
+-   <xref:System.Windows.Controls.ContextMenu>。 要素のコンテキスト メニューを作成する場合は、使用、<xref:System.Windows.Controls.ContextMenu>コントロール。 詳細については、[ContextMenu の概要](../../../../docs/framework/wpf/controls/contextmenu-overview.md)を参照してください。  
   
--   <xref:System.Windows.Controls.ComboBox>.  表示と非表示の切り替えが可能なドロップダウン リスト ボックスを持つ選択コントロールを作成する場合は、<xref:System.Windows.Controls.ComboBox> コントロールを使用します。  
+-   <xref:System.Windows.Controls.ComboBox>。 表示または非表示に使用することができるドロップダウン リスト ボックスのある選択コントロールを作成する場合、<xref:System.Windows.Controls.ComboBox>コントロール。  
   
--   <xref:System.Windows.Controls.Expander>.  コンテンツを表示するための折りたたみ可能な領域を持つヘッダーを表示するコントロールを作成する場合は、<xref:System.Windows.Controls.Expander> コントロールを使用します。  詳細については、「[エキスパンダーの概要](../../../../docs/framework/wpf/controls/expander-overview.md)」を参照してください。  
+-   <xref:System.Windows.Controls.Expander>。 コンテンツを表示する折りたたみ可能な領域を持つヘッダーを表示するコントロールを作成する場合、使用して、<xref:System.Windows.Controls.Expander>コントロール。 詳細については、 [Expander の概要](../../../../docs/framework/wpf/controls/expander-overview.md)を参照してください。  
   
 <a name="PopupBehaviorandAppearance"></a>   
-## ポップアップの動作および外観  
- <xref:System.Windows.Controls.Primitives.Popup> コントロールには、その動作および外観をカスタマイズするための機能があります。  たとえば、開く動作と閉じる動作、アニメーション、透過度効果とビットマップ効果、および <xref:System.Windows.Controls.Primitives.Popup> のサイズと位置を設定できます。  
+## <a name="popup-behavior-and-appearance"></a>ポップアップの動作と外観  
+ <xref:System.Windows.Controls.Primitives.Popup>コントロールには、その動作と外観をカスタマイズできるようにする機能が用意されています。 オープンとクローズの動作、アニメーション、不透明度およびビットマップ効果を設定するなどして<xref:System.Windows.Controls.Primitives.Popup>サイズと位置。  
   
 <a name="OpenandCloseBehavior"></a>   
-### 開く\/閉じるの動作  
- <xref:System.Windows.Controls.Primitives.Popup> コントロールのコンテンツが表示されるのは、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A> プロパティが `true` に設定されているときです。  既定の設定では、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A> プロパティが `false` に設定されるまでは <xref:System.Windows.Controls.Primitives.Popup> が開いたままになります。  この既定の動作を変更するには、<xref:System.Windows.Controls.Primitives.Popup.StaysOpen%2A> プロパティを `false` に設定します。  このプロパティが `false` に設定されると、<xref:System.Windows.Controls.Primitives.Popup> コンテンツ ウィンドウがマウス キャプチャを持ちます。  <xref:System.Windows.Controls.Primitives.Popup> ウィンドウの外部でマウス イベントが発生すると、<xref:System.Windows.Controls.Primitives.Popup> はマウス キャプチャを失い、ウィンドウが閉じます。  
+### <a name="open-and-close-behavior"></a>オープンとクローズの動作  
+ A<xref:System.Windows.Controls.Primitives.Popup>コントロールには、そのコンテンツが表示されます。 ときに、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>プロパティがに設定されている`true`です。 既定では、<xref:System.Windows.Controls.Primitives.Popup>まで開いたまま、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>プロパティに設定されている`false`です。 ただしを設定して既定の動作を変更することができます、<xref:System.Windows.Controls.Primitives.Popup.StaysOpen%2A>プロパティを`false`です。 このプロパティを設定すると`false`、<xref:System.Windows.Controls.Primitives.Popup>コンテンツ ウィンドウがマウス キャプチャを保持します。 <xref:System.Windows.Controls.Primitives.Popup>外、マウス イベントが発生したときにキャプチャし、ウィンドウを閉じますマウスを失った、<xref:System.Windows.Controls.Primitives.Popup>ウィンドウです。  
   
- <xref:System.Windows.Controls.Primitives.Popup> コンテンツ ウィンドウが開いたときと閉じたときに、<xref:System.Windows.Controls.Primitives.Popup.Opened> イベントおよび <xref:System.Windows.Controls.Primitives.Popup.Closed> イベントが発生します。  
+ <xref:System.Windows.Controls.Primitives.Popup.Opened>と<xref:System.Windows.Controls.Primitives.Popup.Closed>イベントが発生するときに、<xref:System.Windows.Controls.Primitives.Popup>コンテンツ ウィンドウが開いているか閉じています。  
   
 <a name="Animation"></a>   
-### アニメーション  
- <xref:System.Windows.Controls.Primitives.Popup> コントロールには、フェード インやスライド インのような動作に関連付けられているアニメーションのサポートが組み込まれています。  このようなアニメーションを有効にするには、<xref:System.Windows.Controls.Primitives.Popup.PopupAnimation%2A> プロパティを <xref:System.Windows.Controls.Primitives.PopupAnimation> 列挙値に設定します。  <xref:System.Windows.Controls.Primitives.Popup> アニメーションを正常に動作させるためには、<xref:System.Windows.Controls.Primitives.Popup.AllowsTransparency%2A> プロパティを `true` に設定する必要があります。  
+### <a name="animation"></a>アニメーション  
+ <xref:System.Windows.Controls.Primitives.Popup>コントロールがフェードインやスライド ショーのような動作に通常関連付けられているアニメーション用の組み込みサポートを備えています。 これらのアニメーションをオンに設定して、<xref:System.Windows.Controls.Primitives.Popup.PopupAnimation%2A>プロパティを<xref:System.Windows.Controls.Primitives.PopupAnimation>列挙値。 <xref:System.Windows.Controls.Primitives.Popup>アニメーションが正常に動作を設定する必要があります、<xref:System.Windows.Controls.Primitives.Popup.AllowsTransparency%2A>プロパティを`true`です。  
   
- <xref:System.Windows.Media.Animation.Storyboard> のようなアニメーションを <xref:System.Windows.Controls.Primitives.Popup> コントロールに適用することもできます。  
+ ようなアニメーションを適用することもできます。<xref:System.Windows.Media.Animation.Storyboard>を、<xref:System.Windows.Controls.Primitives.Popup>コントロール。  
   
 <a name="OpacityandBitmapEffects"></a>   
-### 透過度効果とビットマップ効果  
- <xref:System.Windows.Controls.Primitives.Popup> コントロールの <xref:System.Windows.UIElement.Opacity%2A> プロパティは、コンテンツには影響しません。  既定の設定では、<xref:System.Windows.Controls.Primitives.Popup> コンテンツ ウィンドウは不透明です。  透明の <xref:System.Windows.Controls.Primitives.Popup> を作成するには、<xref:System.Windows.Controls.Primitives.Popup.AllowsTransparency%2A> プロパティを `true` に設定します。  
+### <a name="opacity-and-bitmap-effects"></a>不透明度とビットマップ効果  
+ <xref:System.Windows.UIElement.Opacity%2A>プロパティを<xref:System.Windows.Controls.Primitives.Popup>コントロールがそのコンテンツに対する影響を与えません。 既定では、<xref:System.Windows.Controls.Primitives.Popup>コンテンツ ウィンドウは非透過的です。 透過的なを作成する<xref:System.Windows.Controls.Primitives.Popup>、設定、<xref:System.Windows.Controls.Primitives.Popup.AllowsTransparency%2A>プロパティを`true`です。  
   
- <xref:System.Windows.Controls.Primitives.Popup> のコンテンツは、<xref:System.Windows.Media.Effects.DropShadowBitmapEffect> などのビットマップ効果を継承しません。ビットマップ効果は、<xref:System.Windows.Controls.Primitives.Popup> コントロールに対して直接設定されることも、親ウィンドウのその他の要素に対して設定されることもあります。  ビットマップ効果を <xref:System.Windows.Controls.Primitives.Popup> のコンテンツに反映させるには、ビットマップ効果を直接コンテンツに対して設定する必要があります。  たとえば、<xref:System.Windows.Controls.Primitives.Popup> の子が <xref:System.Windows.Controls.StackPanel> の場合は、<xref:System.Windows.Controls.StackPanel> に対してビットマップ効果を設定します。  
+ 内容、<xref:System.Windows.Controls.Primitives.Popup>などビットマップ効果を引き継がない<xref:System.Windows.Media.Effects.DropShadowBitmapEffect>、直接に対して設定すること、<xref:System.Windows.Controls.Primitives.Popup>コントロールまたはその他の要素の親ウィンドウにします。 ビットマップ効果の内容を<xref:System.Windows.Controls.Primitives.Popup>、その内容に直接ビットマップ効果を設定する必要があります。 たとえば場合の子、<xref:System.Windows.Controls.Primitives.Popup>は、<xref:System.Windows.Controls.StackPanel>のビットマップ効果を設定、<xref:System.Windows.Controls.StackPanel>です。  
   
 <a name="PopupSize"></a>   
-### ポップアップのサイズ  
- 既定の設定では、<xref:System.Windows.Controls.Primitives.Popup> のサイズはコンテンツに合わせて自動的に調整されます。  自動サイズ変更が行われたときに、ビットマップ効果の一部が反映されなくなることがあります。<xref:System.Windows.Controls.Primitives.Popup> のコンテンツに対して定義された画面領域の既定のサイズが、ビットマップ効果を表示するのに十分ではない場合です。  
+### <a name="popup-size"></a>ポップアップのサイズ  
+ 既定では、<xref:System.Windows.Controls.Primitives.Popup>そのコンテンツのサイズが自動的にします。 自動サイズ変更が発生すると一部のビットマップ効果が非表示にするために定義されている画面の領域の既定のサイズ、<xref:System.Windows.Controls.Primitives.Popup>コンテンツがビットマップ効果を表示するのに十分な容量を提供していません。  
   
- また、コンテンツに対して <xref:System.Windows.UIElement.RenderTransform%2A> を設定した場合も、<xref:System.Windows.Controls.Primitives.Popup> のコンテンツが隠されることがあります。  このシナリオでは、変換後の <xref:System.Windows.Controls.Primitives.Popup> の領域が元の <xref:System.Windows.Controls.Primitives.Popup> の領域よりも広い場合に、一部のコンテンツが非表示になります。  ビットマップ効果または変換のために広い領域が必要な場合は、<xref:System.Windows.Controls.Primitives.Popup> コンテンツの周囲のマージンを定義して、コントロールの領域を広げます。  
+ <xref:System.Windows.Controls.Primitives.Popup>設定すると、コンテンツを隠されることも、<xref:System.Windows.UIElement.RenderTransform%2A>内容にします。 このシナリオでいくつかのコンテンツが非表示にする場合、変換後のコンテンツ<xref:System.Windows.Controls.Primitives.Popup>、元の領域からはみ出した<xref:System.Windows.Controls.Primitives.Popup>です。 ビットマップ効果または変換より多くの領域が必要とする場合は、周囲に余白を定義することができます、<xref:System.Windows.Controls.Primitives.Popup>コンテンツ コントロールの複数の領域を提供するためにします。  
   
 <a name="DefiningPopupPosition"></a>   
-## ポップアップの位置の定義  
- ポップアップの配置は、<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>、<xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>、<xref:System.Windows.Controls.Primitives.Popup.Placement%2A>、<xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>、<xref:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty> の各プロパティを設定して指定できます。  詳細については、「[ポップアップの配置動作](../../../../docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  <xref:System.Windows.Controls.Primitives.Popup> が画面に表示されると、その親の位置が変更された場合でも、それ自体の位置は変更されません。  
+## <a name="defining-the-popup-position"></a>ポップアップ位置の定義  
+ ポップアップを配置するには、設定、 <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>、 <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>、 <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>、 <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>、および<xref:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty>プロパティです。 詳細については、「[Popup Placement Behavior](../../../../docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。 ときに<xref:System.Windows.Controls.Primitives.Popup>表示される画面にが再配置されない場合は、親の位置を変更します。  
   
 <a name="CustomizingPopupPlacement"></a>   
-### ポップアップの配置のカスタマイズ  
- <xref:System.Windows.Controls.Primitives.Popup> コントロールを表示する位置を、<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> を基準とする相対座標として指定することで、<xref:System.Windows.Controls.Primitives.Popup> の配置をカスタマイズできます。  
+### <a name="customizing-popup-placement"></a>ポップアップの配置のカスタマイズ  
+ 配置をカスタマイズすることができます、<xref:System.Windows.Controls.Primitives.Popup>コントロールを基準には、座標のセットを指定することによって、<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>する場所、<xref:System.Windows.Controls.Primitives.Popup>を表示します。  
   
- 配置をカスタマイズするには、<xref:System.Windows.Controls.Primitives.Popup.Placement%2A> プロパティを <xref:System.Windows.Controls.Primitives.PlacementMode> に設定します。  次に、<xref:System.Windows.Controls.Primitives.Popup> で使用可能な配置ポイントおよび主軸のセット \(優先度順\) を返す <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> デリゲートを定義します。  <xref:System.Windows.Controls.Primitives.Popup> の最大部分を示すポイントは、自動的に選択されます。  例については、「[ポップアップのカスタム位置を指定する](../../../../docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md)」を参照してください。  
+ 配置をカスタマイズする設定、<xref:System.Windows.Controls.Primitives.Popup.Placement%2A>プロパティを<xref:System.Windows.Controls.Primitives.PlacementMode.Custom>です。 定義し、<xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback>のような配置ポイントとの優先順位) の「プライマリ軸のセット返すデリゲート、<xref:System.Windows.Controls.Primitives.Popup>です。 最大の一部を示しています、ポイント、<xref:System.Windows.Controls.Primitives.Popup>が自動的に選択します。 例については、「[方法 : ポップアップのカスタム位置を指定する](../../../../docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md)」をご覧ください。  
   
 <a name="PopupandtheVisualTree"></a>   
-## ポップアップとビジュアル ツリー  
- <xref:System.Windows.Controls.Primitives.Popup> コントロールは独自の[ビジュアル ツリー](GTMT)を持たないので、<xref:System.Windows.Controls.Primitives.Popup> の <xref:System.Windows.Controls.Primitives.Popup.MeasureOverride%2A> メソッドが呼び出されると、代わりにサイズ 0 を返します。  ただし、<xref:System.Windows.Controls.Primitives.Popup> の <xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A> プロパティを `true` に設定すると、独自のビジュアル ツリーを持つ新しいウィンドウが作成されます。  新しいウィンドウには、<xref:System.Windows.Controls.Primitives.Popup> の <xref:System.Windows.Controls.Primitives.Popup.Child%2A> コンテンツが表示されます。  新しいウィンドウの幅と高さは、最大で画面の幅または高さの 75% までです。  
+## <a name="popup-and-the-visual-tree"></a>ポップアップとビジュアル ツリー  
+ A<xref:System.Windows.Controls.Primitives.Popup>コントロールには、独自のビジュアル ツリーがありません。 代わりに、サイズは 0 を返します (ゼロ) の場合に、<xref:System.Windows.Controls.Primitives.Popup.MeasureOverride%2A>メソッド<xref:System.Windows.Controls.Primitives.Popup>と呼びます。 ただし、設定、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>プロパティ<xref:System.Windows.Controls.Primitives.Popup>に`true`、独自のビジュアル ツリーを新しいウィンドウを作成します。 新しいウィンドウには、<xref:System.Windows.Controls.Primitives.Popup.Child%2A>のコンテンツ<xref:System.Windows.Controls.Primitives.Popup>です。 新しいウィンドウの幅および高さは、画面の幅または高さの 75% より大きくすることはできません。  
   
- <xref:System.Windows.Controls.Primitives.Popup> コントロールは、論理上の子として <xref:System.Windows.Controls.Primitives.Popup.Child%2A> コンテンツへの参照を保持します。  新しいウィンドウが作成されたときに、<xref:System.Windows.Controls.Primitives.Popup> のコンテンツはビジュアル ツリー上でウィンドウの子になりますが、<xref:System.Windows.Controls.Primitives.Popup> の論理上の子のままです。  逆に、<xref:System.Windows.Controls.Primitives.Popup> は、<xref:System.Windows.Controls.Primitives.Popup.Child%2A> コンテンツの論理上の親のままです。  
+ <xref:System.Windows.Controls.Primitives.Popup>コントロールへの参照を保持する、<xref:System.Windows.Controls.Primitives.Popup.Child%2A>論理子としてコンテンツ。 作成時に、新しいウィンドウが、コンテンツの<xref:System.Windows.Controls.Primitives.Popup>visual の子ウィンドウの論理子のままになり<xref:System.Windows.Controls.Primitives.Popup>です。 これに対し、<xref:System.Windows.Controls.Primitives.Popup>の論理上の親のまま、<xref:System.Windows.Controls.Primitives.Popup.Child%2A>コンテンツ。  
   
-## 参照  
- <xref:System.Windows.Controls.Primitives.Popup>   
- <xref:System.Windows.Controls.Primitives.PopupPrimaryAxis>   
- <xref:System.Windows.Controls.Primitives.PlacementMode>   
- <xref:System.Windows.Controls.Primitives.CustomPopupPlacement>   
- <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback>   
- <xref:System.Windows.Controls.ToolTip>   
- <xref:System.Windows.Controls.ToolTipService>   
- [方法のトピック](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)   
- [方法のトピック](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.Primitives.Popup>  
+ <xref:System.Windows.Controls.Primitives.PopupPrimaryAxis>  
+ <xref:System.Windows.Controls.Primitives.PlacementMode>  
+ <xref:System.Windows.Controls.Primitives.CustomPopupPlacement>  
+ <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback>  
+ <xref:System.Windows.Controls.ToolTip>  
+ <xref:System.Windows.Controls.ToolTipService>  
+ [方法トピック](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)  
+ [方法トピック](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)

@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - platform invoke, identifying functions
 - COM interop, DLL functions
@@ -24,16 +18,15 @@ helpviewer_keywords:
 - identifying DLL functions
 - DLL functions
 ms.assetid: 3e3f6780-6d90-4413-bad7-ba641220364d
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b96ef668a8a11794b87d3cbe7c2ba864f8a75e2f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 1b5aa725d30e280d672724c7b7f4fd11a848a3ae
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="identifying-functions-in-dlls"></a>DLL 内の関数の識別
 DLL 関数の ID は、次の要素で構成されます。  
@@ -58,12 +51,11 @@ DLL 関数の ID は、次の要素で構成されます。
 |Kernel32.dll|メモリ管理とリソースの処理のための低レベルのオペレーティング システム関数。|  
 |User32.dll|メッセージの処理、タイマー、メニュー、通信用の Windows 管理関数。|  
   
- Win32 API の詳細については、プラットフォーム SDK を参照してください。 プラットフォームの起動で使用する NET ベースの宣言を作成する方法を示す例については、「[プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)」を参照してください。  
+ Win32 API の詳細については、プラットフォーム SDK を参照してください。 プラットフォーム呼び出しで使用する .NET ベースの宣言を作成する方法を示す例については、「[プラットフォーム呼び出しによるデータのマーシャリング](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [アンマネージ DLL 関数の処理](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)   
- [エントリ ポイントの指定](../../../docs/framework/interop/specifying-an-entry-point.md)   
- [DLL 関数を保持するクラスの作成](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md)   
- [マネージ コードでのプロトタイプの作成](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)   
+ [アンマネージ DLL 関数の処理](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)  
+ [エントリ ポイントの指定](../../../docs/framework/interop/specifying-an-entry-point.md)  
+ [DLL 関数を保持するクラスの作成](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md)  
+ [マネージ コードでのプロトタイプの作成](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)  
  [DLL 関数の呼び出し](../../../docs/framework/interop/calling-a-dll-function.md)
-

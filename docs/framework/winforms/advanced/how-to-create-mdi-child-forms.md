@@ -1,67 +1,72 @@
 ---
-title: "方法 : MDI 子フォームを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "子フォーム"
-  - "MDI, 作成 (フォームを)"
+title: "方法 : MDI 子フォームを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- MDI [Windows Forms], creating forms
+- child forms
 ms.assetid: 164b69bb-2eca-4339-ada3-0679eb2c6dda
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7a779229a61d18ec835197bafac66579c026e2ec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : MDI 子フォームを作成する
-MDI 子フォームは、ユーザー操作の中心であるため、[マルチ ドキュメント インターフェイス \(MDI\) アプリケーション](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)の重要な要素です。  
+# <a name="how-to-create-mdi-child-forms"></a>方法 : MDI 子フォームを作成する
+MDI 子フォームの不可欠な要素は、[マルチ ドキュメント インターフェイス (MDI) アプリケーション](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)ユーザー操作の中心となるため、します。  
   
- 次の手順では、ほとんどのワード プロセッシング アプリケーションに似ている <xref:System.Windows.Forms.RichTextBox> コントロールを表示する MDI 子フォームを作成します。  <xref:System.Windows.Forms> コントロールを、<xref:System.Windows.Forms.DataGridView> コントロールやコントロールを組み合わせたその他のコントロールで置き換えることで、さまざまな可能性のある MDI 子ウィンドウ \(およびその拡張としての MDI アプリケーション\) を作成できます。  
+ 次の手順では、ほとんどのワード プロセッシング アプリケーションに似ている <xref:System.Windows.Forms.RichTextBox> コントロールを表示する MDI 子フォームを作成します。 <xref:System.Windows.Forms> コントロールを、<xref:System.Windows.Forms.DataGridView> コントロールやコントロールを組み合わせたその他のコントロールで置き換えることで、さまざまな可能性のある MDI 子ウィンドウ (およびその拡張としての MDI アプリケーション) を作成できます。  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
   
-### MDI 子フォームを作成するには  
+### <a name="to-create-mdi-child-forms"></a>MDI 子フォームを作成するには  
   
-1.  新しい Windows フォーム プロジェクトを作成します。  フォームの **\[プロパティ\] ウィンドウ**で、<xref:System.Windows.Forms.Form.IsMdiContainer%2A> プロパティを `true` に設定し、`WindowsState` プロパティを `Maximized` に設定します。  
+1.  新しい Windows フォーム プロジェクトを作成します。 **プロパティ ウィンドウ**、フォームの次のように設定します。 その<xref:System.Windows.Forms.Form.IsMdiContainer%2A>プロパティを`true`、およびその`WindowsState`プロパティを`Maximized`です。  
   
      これによって、フォームが子ウィンドウの MDI コンテナーとして指定されます。  
   
-2.  `Toolbox` から、<xref:System.Windows.Forms.MenuStrip> コントロールをフォームにドラッグします。  `Text` プロパティを **\[ファイル\]** に設定します。  
+2.  `Toolbox` から、<xref:System.Windows.Forms.MenuStrip> コントロールをフォームにドラッグします。 設定の`Text`プロパティを**ファイル**です。  
   
-3.  **\[項目\]** プロパティの隣にある省略記号 \(...\) をクリックして、**\[追加\]** をクリックし、2 つの子ツール ストリップのメニュー項目を追加します。  これらの項目の `Text` プロパティを **\[新規\]** と **\[ウィンドウ\]** に設定します。  
+3.  横にある省略記号 (...) をクリックして、**項目**プロパティ、およびクリック**追加**を 2 つの子ツール ストリップのメニュー項目を追加します。 設定、`Text`プロパティにこれらの項目を**新規**と**ウィンドウ**します。  
   
-4.  **\[ソリューション エクスプローラー\]** で、プロジェクトを右クリックして、**\[追加\]** をポイントし、**\[新しい項目の追加\]** を選択します。  
+4.  **ソリューション エクスプ ローラー**プロジェクトを右クリックしをポイントし、**追加**、し、**新しい項目の追加**です。  
   
-5.  **\[新しい項目の追加\]** ダイアログ ボックスで、**\[テンプレート\]** ペインから **\[Windows フォーム\]** \([!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] または [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] 内\) または **\[Windows フォーム アプリケーション \(.NET\)\]** \([!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)] 内\) を選択します。  **\[名前\]** ボックスで、フォーム Form2 の名前を付けます。  **\[開く\]** ボタンをクリックして、フォームをプロジェクトに追加します。  
+5.  **新しい項目の追加**ダイアログ ボックスで、 **Windows フォーム**(で[!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]または[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]) または**Windows フォーム アプリケーション (.NET)** (で[!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)])**テンプレート**ウィンドウです。 **名前**ボックスに、フォームを名前**Form2**です。 クリックして、**開く**フォームをプロジェクトに追加するボタンです。  
   
     > [!NOTE]
-    >  この手順で作成した、MDI 子フォームは、標準の Windows フォームです。  そのため、フォームの透明度を制御できる <xref:System.Windows.Forms.Form.Opacity%2A> プロパティを持っています。  ただし、<xref:System.Windows.Forms.Form.Opacity%2A> プロパティは最上位レベルのウィンドウ用に設計されています。  描画に関する問題が発生する可能性があるため、MDI 子フォームと共に使用しないでください。  
+    >  この手順で作成した、MDI 子フォームは、標準の Windows フォームです。 そのため、フォームの透明度を制御できる <xref:System.Windows.Forms.Form.Opacity%2A> プロパティを持っています。 ただし、<xref:System.Windows.Forms.Form.Opacity%2A> プロパティは最上位レベルのウィンドウ用に設計されています。 描画に関する問題が発生する可能性があるため、MDI 子フォームと共に使用しないでください。  
   
      このフォームは、MDI 子フォーム用のテンプレートになります。  
   
-     **Windows フォーム デザイナー**が開き、Form2 を表示します。  
+     **Windows フォーム デザイナー**が開き、表示する**Form2**です。  
   
-6.  **\[ツールボックス\]** から、**\[RichTextBox\]** コントロールをフォームにドラッグします。  
+6.  **ツールボックス**、ドラッグ、 **RichTextBox**をフォームにコントロールできます。  
   
-7.  **\[プロパティ\]** ウィンドウで、`Anchor` プロパティを **\[上、左\]** に設定し、`Dock` プロパティを **\[塗りつぶし\]** に設定します。  
+7.  **プロパティ**ウィンドウで、設定、`Anchor`プロパティを**Top、Left**と`Dock`プロパティを**塗りつぶし**です。  
   
      これにより、フォームがサイズ変更された場合でも、<xref:System.Windows.Forms.RichTextBox> コントロールが MDI 子フォームの領域を完全に塗りつぶします。  
   
-8.  **\[新規\]** メニュー項目をダブルクリックして、<xref:System.Windows.Forms.Control.Click> イベント ハンドラーを作成します。  
+8.  ダブルクリックして、**新規**メニュー項目を作成する、<xref:System.Windows.Forms.Control.Click>イベント ハンドラー。  
   
-9. ユーザーが **\[新規\]** メニュー項目をクリックしたときに新しい MDI 子フォームを作成するには、次のようなコードを挿入します。  
+9. ユーザーがクリックしたときに、新しい MDI 子フォームを作成するには、次のようなコードを挿入、**新規**メニュー項目。  
   
     > [!NOTE]
-    >  次の例では、イベント ハンドラーが `MenuItem2` の <xref:System.Windows.Forms.Control.Click> イベントを処理します。  アプリケーションのアーキテクチャの仕様によっては、**\[新規\]** メニュー項目が `MenuItem2` でない可能性があります。  
+    >  次の例では、イベント ハンドラーが `MenuItem2` の <xref:System.Windows.Forms.Control.Click> イベントを処理します。 注意して、アプリケーション アーキテクチャの仕様によっては、**新規**メニュー項目ができない可能性があります`MenuItem2`です。  
   
     ```vb  
     Protected Sub MDIChildNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem2.Click  
@@ -71,7 +76,6 @@ MDI 子フォームは、ユーザー操作の中心であるため、[マルチ
        'Display the new form.  
        NewMDIChild.Show()  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -82,7 +86,6 @@ MDI 子フォームは、ユーザー操作の中心であるため、[マルチ
        // Display the new form.  
        newMDIChild.Show();  
     }  
-  
     ```  
   
     ```cpp  
@@ -104,18 +107,18 @@ MDI 子フォームは、ユーザー操作の中心であるため、[マルチ
     #include "Form2.h"  
     ```  
   
-10. **\[プロパティ\]** ウィンドウの上部にあるドロップダウンリストで、**\[ファイル\]** メニュー ストリップに該当するメニュー ストリップを選択し、<xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> プロパティを Window <xref:System.Windows.Forms.ToolStripMenuItem> に設定します。  
+10. 上部にあるドロップダウン リストで、**プロパティ**ウィンドウに対応するメニュー ストリップを選択して、**ファイル** メニュー ストリップと、<xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A>プロパティを Window<xref:System.Windows.Forms.ToolStripMenuItem>です。  
   
-     これにより、**\[ウィンドウ\]** メニューで開いている MDI 子ウィンドウと、アクティブな子ウィンドウの横にチェック マークが付いている一覧が維持されます。  
+     これにより、**ウィンドウ** メニューのアクティブな子ウィンドウの横にチェック マークが付いた開いている MDI 子ウィンドウのリストを保持します。  
   
-11. F5 キーを押してアプリケーションを実行します。  **\[ファイル\]** メニューから **\[新規\]** を選択して、**\[ウィンドウ\]** メニュー項目で追跡される新しい MDI 子フォームを作成できます。  
+11. F5 キーを押してアプリケーションを実行します。 選択して**新規**から、**ファイル**] メニューの [新しい MDI 子フォームでの保持を作成することができます、**ウィンドウ**メニュー項目。  
   
     > [!NOTE]
-    >  MDI 子フォームが \(通常はメニュー項目のメニュー構造を持つ\) <xref:System.Windows.Forms.MainMenu> コンポーネントを持っていて、\(通常はメニュー項目のメニュー構造を持つ\) <xref:System.Windows.Forms.MainMenu> コンポーネントを持つ MDI 親フォーム内で開いている場合、<xref:System.Windows.Forms.MenuItem.MergeType%2A> プロパティ \(およびオプションで <xref:System.Windows.Forms.MenuItem.MergeOrder%2A> プロパティ\) を設定した場合に、メニュー項目が自動的にマージされます。  両方の <xref:System.Windows.Forms.MainMenu> コンポーネント、および子フォームのすべてのメニュー項目の <xref:System.Windows.Forms.MenuItem.MergeType%2A> プロパティを <xref:System.Windows.Forms.MenuMerge> に設定します。  また、<xref:System.Windows.Forms.MenuItem.MergeOrder%2A> プロパティを設定し、両方のメニューのメニュー項目が指定した順序で表示されるようにします。  さらに、MDI 親フォームを閉じた時に、MDI 親の <xref:System.Windows.Forms.Form.Closing> イベントが発生する前に、各 MDI 子フォームが <xref:System.Windows.Forms.Form.Closing> イベントを発生させます。  MDI 子の <xref:System.Windows.Forms.Form.Closing> イベントをキャンセルしても、MDI 親の <xref:System.Windows.Forms.Form.Closing> イベントの発生を防ぐことはできません。ただし、MDI 親の <xref:System.Windows.Forms.Form.Closing> イベントの <xref:System.ComponentModel.CancelEventArgs> 引数は `true` に設定されます。  <xref:System.ComponentModel.CancelEventArgs> 引数を `false` に設定することで、MDI 親レポートとすべての MDI 子フォームを強制的に閉じることができます。  
+    >  MDI 子フォームが (通常はメニュー項目のメニュー構造を持つ) <xref:System.Windows.Forms.MainMenu> コンポーネントを持っていて、(通常はメニュー項目のメニュー構造を持つ) <xref:System.Windows.Forms.MainMenu> コンポーネントを持つ MDI 親フォーム内で開いている場合、<xref:System.Windows.Forms.MenuItem.MergeType%2A> プロパティ (およびオプションで <xref:System.Windows.Forms.MenuItem.MergeOrder%2A> プロパティ) を設定した場合に、メニュー項目が自動的にマージされます。 両方の <xref:System.Windows.Forms.MainMenu> コンポーネント、および子フォームのすべてのメニュー項目の <xref:System.Windows.Forms.MenuItem.MergeType%2A> プロパティを <xref:System.Windows.Forms.MenuMerge.MergeItems> に設定します。 また、<xref:System.Windows.Forms.MenuItem.MergeOrder%2A> プロパティを設定し、両方のメニューのメニュー項目が指定した順序で表示されるようにします。 さらに、MDI 親フォームを閉じた時に、MDI 親の <xref:System.Windows.Forms.Form.Closing> イベントが発生する前に、各 MDI 子フォームが <xref:System.Windows.Forms.Form.Closing> イベントを発生させます。 MDI 子の <xref:System.Windows.Forms.Form.Closing> イベントをキャンセルしても、MDI 親の <xref:System.Windows.Forms.Form.Closing> イベントの発生を防ぐことはできません。ただし、MDI 親の <xref:System.Windows.Forms.Form.Closing> イベントの <xref:System.ComponentModel.CancelEventArgs> 引数は `true` に設定されます。 <xref:System.ComponentModel.CancelEventArgs> 引数を `false` に設定することで、MDI 親レポートとすべての MDI 子フォームを強制的に閉じることができます。  
   
-## 参照  
- [マルチ ドキュメント インターフェイス \(MDI\) アプリケーション](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)   
- [方法 : MDI 親フォームを作成する](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)   
- [方法 : アクティブな MDI 子フォームを特定する](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)   
- [方法 : アクティブな MDI 子フォームにデータを送信する](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)   
- [方法 : MDI 子フォームを配置する](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)
+## <a name="see-also"></a>関連項目  
+ [マルチ ドキュメント インターフェイス (MDI) アプリケーション](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)  
+ [方法: MDI 親フォームを作成する](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
+ [方法: アクティブな MDI 子フォームを特定する](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)  
+ [方法: アクティブな MDI 子フォームにデータを送信する](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)  
+ [方法: MDI 子フォームを配置する](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)

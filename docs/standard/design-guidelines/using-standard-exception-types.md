@@ -1,78 +1,76 @@
 ---
-title: "標準の例外の型を使用します。 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "標準の種類の例外をスロー"
-  - "キャッチ (例外の)"
-  - "例外のキャッチ"
-  - "例外のスロー"
+title: "標準例外型の使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- throwing exceptions, standard types
+- catching exceptions
+- exceptions, catching
+- exceptions, throwing
 ms.assetid: ab22ce03-78f9-4dca-8824-c7ed3bdccc27
-caps.latest.revision: 17
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 91cd9a03ad1acf61681ecfad0edb061802c4362c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 標準の例外の型を使用します。
-このセクションでは、フレームワークとその使用方法の詳細な情報によって提供される標準の例外について説明します。 一覧は完全ではではありません。 その他のフレームワークの例外の種類の使用状況の .NET Framework リファレンス ドキュメントを参照してください。  
+# <a name="using-standard-exception-types"></a>標準例外型の使用
+このセクションでは、フレームワークとその使用方法の詳細によって提供される標準の例外について説明します。 一覧は完全ではではありません。 その他のフレームワークの例外の種類の使用率の .NET Framework リファレンス ドキュメントを参照してください。  
   
-## 例外と SystemException  
- **X のしないで** スロー <xref:System.Exception?displayProperty=fullName> または <xref:System.SystemException?displayProperty=fullName>です。  
+## <a name="exception-and-systemexception"></a>例外と SystemException  
+ **X しないで**スロー<xref:System.Exception?displayProperty=nameWithType>または<xref:System.SystemException?displayProperty=nameWithType>です。  
   
- **X のしないで** キャッチ `System.Exception` または `System.SystemException` framework コードで再スローする場合を除き、します。  
+ **X しないで**キャッチ`System.Exception`または`System.SystemException`framework コードで再スローする場合を除き、します。  
   
- **X 回避** キャッチ `System.Exception` または `System.SystemException`, では、トップレベルの例外ハンドラーです。  
+ **避け x**キャッチ`System.Exception`または`System.SystemException`、トップレベルの例外ハンドラーでは可します。  
   
-## ApplicationException  
- **X のしないで** スローまたはそれから派生 <xref:System.ApplicationException>します。  
+## <a name="applicationexception"></a>ApplicationException  
+ **X しないで**スロー サービスまたはそれから派生<xref:System.ApplicationException>です。  
   
-## InvalidOperationException  
- **✓ は** スロー、 <xref:System.InvalidOperationException> オブジェクトが状態が適切である場合。  
+## <a name="invalidoperationexception"></a>InvalidOperationException  
+ **✓ しないで**スロー、<xref:System.InvalidOperationException>オブジェクトが不適切な状態である場合。  
   
-## ArgumentException、ArgumentNullException、および ArgumentOutOfRangeException  
- **✓ は** スロー <xref:System.ArgumentException> または不正な引数がメンバーに渡された場合は、そのサブタイプのいずれかです。 該当する場合は、最派生例外の種類を選びます。  
+## <a name="argumentexception-argumentnullexception-and-argumentoutofrangeexception"></a>ArgumentException、ArgumentNullException、および ArgumentOutOfRangeException  
+ **✓ しないで**スロー<xref:System.ArgumentException>またはメンバーに無効な引数が渡された場合は、そのサブタイプのいずれか。 該当する場合は、最派生例外の種類を選びます。  
   
- **✓ は** 設定、 `ParamName` プロパティのサブクラスのいずれかをスローするときに `ArgumentException`します。  
+ **✓ しないで**設定、`ParamName`プロパティのサブクラスのいずれかをスローするときに`ArgumentException`です。  
   
  このプロパティは、例外がスローされる原因となったパラメーターの名前を表します。 コンス トラクター オーバー ロードのいずれかを使用して、プロパティを設定できることに注意してください。  
   
- **✓ は** を使用して `value` プロパティ set アクセス操作子の暗黙の value パラメーターの名前。  
+ **✓ は**使用`value`プロパティ set アクセス操作子の暗黙的な値パラメーターの名前。  
   
-## NullReferenceException、IndexOutOfRangeException、およびです \(accessviolationexception\)  
- **X のしないで** 明示的または暗黙的にスローする、api で公開されている呼び出し可能 <xref:System.NullReferenceException>, 、<xref:System.AccessViolationException>, 、または <xref:System.IndexOutOfRangeException>です。 これらの例外は予約されているとおよびほとんどの場合は、バグを示す場合に、実行エンジンによってスローされます。  
+## <a name="nullreferenceexception-indexoutofrangeexception-and-accessviolationexception"></a>NullReferenceException、IndexOutOfRangeException、および AccessViolationException  
+ **X しないで**明示的または暗黙的にスローする、api で公開されている呼び出し可能<xref:System.NullReferenceException>、 <xref:System.AccessViolationException>、または<xref:System.IndexOutOfRangeException>です。 これらの例外は予約されておりとほとんどの場合は、バグを示す場合に、実行エンジンによってスローされます。  
   
- 引数に、これらの例外がスローされないようにチェックを行います。 これらの例外をスローすることは、時間の経過と共に変わる可能性があるメソッドの実装の詳細を公開します。  
+ 引数に、これらの例外がスローされないようにチェックを実行します。 時間の経過と共に変わる可能性があるメソッドの実装の詳細を公開するこれらの例外をスローします。  
   
-## StackOverflowException  
- **X のしないで** を明示的にスロー <xref:System.StackOverflowException>します。 CLR によってのみ、例外が明示的にスローする必要があります。  
+## <a name="stackoverflowexception"></a>StackOverflowException  
+ **X しないで**を明示的にスロー<xref:System.StackOverflowException>です。 CLR によってのみ、例外が明示的にスローする必要があります。  
   
- **X のしないで** キャッチ `StackOverflowException`します。  
+ **X しないで**キャッチ`StackOverflowException`です。  
   
- ほとんどでは、任意のスタック オーバーフローが存在する場合に整合性があるマネージ コードを記述することはできません。 CLR のアンマネージ部分一貫して任意のスタック オーバーフローから取り除くではなく移動を適切に定義された場所スタックがオーバーフローしたプローブを使用しています。  
+ ほとんどでは、一貫性のある任意のスタック オーバーフローが存在する場合に残っているマネージ コードを記述することはできません。 CLR のアンマネージ部分一貫して任意のスタック オーバーフローからバックアップではなくプローブを使用してスタックのオーバーフローを適切に定義された場所に移動するでします。  
   
-## OutOfMemoryException  
- **X のしないで** を明示的にスロー <xref:System.OutOfMemoryException>します。 この例外では、CLR インフラストラクチャによってのみがスローされます。  
+## <a name="outofmemoryexception"></a>OutOfMemoryException  
+ **X しないで**を明示的にスロー<xref:System.OutOfMemoryException>です。 この例外では、CLR インフラストラクチャによってのみスローされます。  
   
-## ComException、SEHException、および ExecutionEngineException  
- **X のしないで** を明示的にスロー <xref:System.Runtime.InteropServices.COMException>,  、<xref:System.ExecutionEngineException>, 、および <xref:System.Runtime.InteropServices.SEHException>です。 これらの例外では、CLR インフラストラクチャによってのみがスローされます。  
+## <a name="comexception-sehexception-and-executionengineexception"></a>ComException、SEHException、および ExecutionEngineException  
+ **X しないで**を明示的にスロー <xref:System.Runtime.InteropServices.COMException>、 <xref:System.ExecutionEngineException>、および<xref:System.Runtime.InteropServices.SEHException>です。 これらの例外では、CLR インフラストラクチャによってのみスローされます。  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ *部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ *ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*  
   
-## 参照  
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)   
+## <a name="see-also"></a>関連項目  
+ [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)  
  [例外のデザイン ガイドライン](../../../docs/standard/design-guidelines/exceptions.md)

@@ -1,42 +1,34 @@
 ---
-title: "方法: エンコードされたドキュメント (Visual Basic) を読み書き |Microsoft ドキュメント"
+title: "方法: 読み取りし、書き込みのエンコードされたドキュメント (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 159d868f-5ac8-40f2-95ca-07dd925f35c6
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3247af177066e9b50d5028766f99e7bf6589050f
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 7dd871b4ab58103897bd5884581bf2e1353a3c60
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-read-and-write-an-encoded-document-visual-basic"></a>方法: 読み取りし、書き込みのエンコードされたドキュメント (Visual Basic)
-追加するエンコードされた XML ドキュメントを作成する、 <xref:System.Xml.Linq.XDeclaration>XML ツリーに必要なコード ページ名にエンコーディングを設定します</xref:System.Xml.Linq.XDeclaration>。  
+エンコードされた XML ドキュメントを作成するには、<xref:System.Xml.Linq.XDeclaration> を XML ツリーに追加し、エンコーディングを目的のコード ページ名に設定します。  
   
- 任意の値によって返される<xref:System.Text.Encoding.WebName%2A>有効な値です</xref:System.Text.Encoding.WebName%2A>。  
+ <xref:System.Text.Encoding.WebName%2A> から返される値はすべて有効な値です。  
   
- エンコードされたドキュメントを読み取る場合、<xref:System.Xml.Linq.XDeclaration.Encoding%2A>プロパティは、コード ページ名に設定されます</xref:System.Xml.Linq.XDeclaration.Encoding%2A>。  
+ エンコードされたドキュメントを読み込むと、<xref:System.Xml.Linq.XDeclaration.Encoding%2A> プロパティがコード ページ名に設定されます。  
   
- 設定した場合<xref:System.Xml.Linq.XDeclaration.Encoding%2A>に有効なコード ページ名では、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]が、指定したエンコーディングでシリアル化します</xref:System.Xml.Linq.XDeclaration.Encoding%2A>。  
+ <xref:System.Xml.Linq.XDeclaration.Encoding%2A> を有効なコード ページ名に設定すると、指定したエンコーディングで [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] がシリアル化されます。  
   
 ## <a name="example"></a>例  
- 次の例では、UTF-8 エンコーディングのドキュメントと UTF-16 エンコーディングのドキュメントを&1; つずつ作成します。 次に、ドキュメントを読み込み、エンコーディングをコンソールに出力します。  
+ 次の例では、UTF-8 エンコーディングのドキュメントと UTF-16 エンコーディングのドキュメントを 1 つずつ作成します。 次に、ドキュメントを読み込み、エンコーディングをコンソールに出力します。  
   
 ```vb  
 Console.WriteLine("Creating a document with utf-8 encoding")  
@@ -94,5 +86,5 @@ Encoding of loaded document is:utf-16
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Linq.XDeclaration.Encoding%2A?displayProperty=fullName></xref:System.Xml.Linq.XDeclaration.Encoding%2A?displayProperty=fullName>   
- [高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+ <xref:System.Xml.Linq.XDeclaration.Encoding%2A?displayProperty=nameWithType>  
+ [高度な LINQ to XML プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -1,42 +1,46 @@
 ---
-title: "方法 : Windows フォームでマルチペイン ユーザー インターフェイスを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ListView コントロール [Windows フォーム], 例"
-  - "Panel コントロール [Windows フォーム], 例"
-  - "RichTextBox コントロール [Windows フォーム], 例"
-  - "SplitContainer コントロール [Windows フォーム], 例"
-  - "Splitter コントロール [Windows フォーム], 例"
-  - "TreeView コントロール [Windows フォーム], 例"
+title: "方法 : Windows フォームでマルチペイン ユーザー インターフェイスを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- SplitContainer control [Windows Forms], examples
+- ListView control [Windows Forms], examples
+- RichTextBox control [Windows Forms], examples
+- Panel control [Windows Forms], examples
+- TreeView control [Windows Forms], examples
+- Splitter control [Windows Forms], examples
 ms.assetid: e79f6bcc-3740-4d1e-b46a-c5594d9b7327
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 6db621912e76d24b05c8dcdca7f1d3f4e62c2838
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームでマルチペイン ユーザー インターフェイスを作成する
-次の手順では、Microsoft Outlook で使用されているユーザー インターフェイスに似た**フォルダー**一覧、**メッセージ** ペイン、および**プレビュー** ペインを備えたマルチペイン ユーザー インターフェイスを作成します。  これは、主にコントロールをフォームにドッキングして作成します。  
+# <a name="how-to-create-a-multipane-user-interface-with-windows-forms"></a>方法 : Windows フォームでマルチペイン ユーザー インターフェイスを作成する
+Microsoft Outlook で使用される次のようなマルチペイン ユーザー インターフェイスを作成する次の手順で、**フォルダー**  ボックスの一覧、**メッセージ** ウィンドウで、および**プレビュー**ウィンドウです。 この方法は、主にコントロールをフォームにドッキングすることにより実現されます。  
   
- コントロールをドッキングするときは、どちらの親コンテナーの端にコントロールを固定するかを決定します。  <xref:System.Windows.Forms.SplitContainer.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle> に設定した場合、コントロールの右端が親コントロールの右端にドッキングされます。  さらに、コントロールがドッキングされた端は、そのコンテナー コントロールに合うようにサイズ変更されます。  <xref:System.Windows.Forms.SplitContainer.Dock%2A> プロパティの機能の詳細については、「[方法 : Windows フォーム上のコントロールをドッキングする](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)」を参照してください。  
+ コントロールをドッキングするときは、親コンテナーの端にコントロールを固定するを決定します。 このため、設定した場合、<xref:System.Windows.Forms.SplitContainer.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Right>コントロールの右エッジは、親コントロールの右端にドッキングされます。 さらに、ドッキングされたコントロールの端は、コンテナー コントロールの一致するようにサイズ変更されます。 方法の詳細については<xref:System.Windows.Forms.SplitContainer.Dock%2A>プロパティを参照してください[する方法: Windows フォームでのドッキング コントロール](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)です。  
   
- この手順は、機能を追加してアプリケーションを Microsoft Outlook のようにするのではなく、フォーム上に <xref:System.Windows.Forms.SplitContainer> などのコントロールを配置します。  
+ この手順では、配置で、<xref:System.Windows.Forms.SplitContainer>および他のコントロール、フォームではなく、アプリケーションの Microsoft Outlook を模倣する機能を追加します。  
   
- このユーザー インターフェイスを作成するには、左側のパネルに <xref:System.Windows.Forms.TreeView> コントロールを含む <xref:System.Windows.Forms.SplitContainer> コントロール内に、すべてのコントロールを配置します。  <xref:System.Windows.Forms.SplitContainer> コントロールの右側のパネルには、第 2 の <xref:System.Windows.Forms.SplitContainer> コントロールが含まれます。第 2 のコントロールでは、上部に <xref:System.Windows.Forms.ListView> コントロール、その下部に <xref:System.Windows.Forms.RichTextBox> コントロールが配置されます。  これらの <xref:System.Windows.Forms.SplitContainer> コントロールを使用すると、フォーム上の他のコントロールを個別にサイズ変更できます。  この手順に示される手法を応用して、独自のカスタム ユーザー インターフェイスを作成できます。  
+ 内のすべてのコントロールを配置するこのユーザー インターフェイスを作成する、<xref:System.Windows.Forms.SplitContainer>を含むコントロール、<xref:System.Windows.Forms.TreeView>左側のパネルのコントロールです。 右側のパネル、<xref:System.Windows.Forms.SplitContainer>コントロールには、2 つ目が含まれている<xref:System.Windows.Forms.SplitContainer>コントロールを<xref:System.Windows.Forms.ListView>上のコントロール、<xref:System.Windows.Forms.RichTextBox>コントロール。 これら<xref:System.Windows.Forms.SplitContainer>コントロールがフォーム上の他のコントロールの独立したサイズ変更を有効にします。 独自のカスタム ユーザー インターフェイスを作成するには、この手順の手法を適用することができます。  
   
-### プログラムで Outlook スタイルのユーザー インターフェイスを作成するには  
+### <a name="to-create-an-outlook-style-user-interface-programmatically"></a>Outlook スタイルのユーザー インターフェイスをプログラムで作成するには  
   
-1.  フォーム内で、ユーザー インターフェイスを構成する各コントロールを宣言します。  この例では、<xref:System.Windows.Forms.TreeView>、<xref:System.Windows.Forms.ListView>、<xref:System.Windows.Forms.SplitContainer>、および <xref:System.Windows.Forms.RichTextBox> の各コントロールを使用して、Microsoft Outlook のユーザー インターフェイスを模倣します。  
+1.  フォーム内で、ユーザー インターフェイスを構成する各コントロールを宣言します。 この例では、使用、 <xref:System.Windows.Forms.TreeView>、 <xref:System.Windows.Forms.ListView>、 <xref:System.Windows.Forms.SplitContainer>、および<xref:System.Windows.Forms.RichTextBox>Microsoft Outlook のユーザー インターフェイスを模倣するためにコントロールできます。  
   
     ```vb  
     Private WithEvents treeView1 As System.Windows.Forms.TreeView  
@@ -46,7 +50,6 @@ caps.handback.revision: 20
         System.Windows.Forms.SplitContainer  
     Private WithEvents splitContainer2 As _  
         System.Windows.Forms.SplitContainer  
-  
     ```  
   
     ```csharp  
@@ -55,10 +58,9 @@ caps.handback.revision: 20
     private System.Windows.Forms.RichTextBox richTextBox1;  
     private System.Windows.Forms. SplitContainer splitContainer2;  
     private System.Windows.Forms. SplitContainer splitContainer1;  
-  
     ```  
   
-2.  ユーザー インターフェイスを定義するプロシージャを作成します。  次のコードは、フォームが Microsoft Outlook のユーザー インターフェイスに似た外観になるように、プロパティを設定しています。  ただし、他のコントロールを使用したり、異なる方法でコントロールをドッキングしたりすることによって、同じように柔軟性を持つ他のユーザー インターフェイスも簡単に作成できます。  
+2.  ユーザー インターフェイスを定義するプロシージャを作成します。 次のコードは、Microsoft Outlook のユーザー インターフェイスは、フォームのようにするように、プロパティを設定します。 ただし、それらを異なる方法でドッキングやその他のコントロールを使用して、同じように柔軟性を他のユーザー インターフェイスを作成するだけくらい簡単です。  
   
     ```vb  
     Public Sub CreateOutlookUI()  
@@ -120,7 +122,6 @@ caps.handback.revision: 20
         Me.Controls.Add(Me.splitContainer2)  
         Me.Text = "Intricate UI Example"  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -171,24 +172,21 @@ caps.handback.revision: 20
         this.Controls.Add(this.splitContainer2);  
         this.Text = "Intricate UI Example";  
     }  
-  
     ```  
   
-3.  [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] では、`New()` プロシージャで作成したプロシージャの呼び出しを追加します。  [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] では、フォーム クラスのコンストラクターに次のコード行を追加します。  
+3.  [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]で作成したプロシージャの呼び出しを追加、`New()`プロシージャです。 [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、フォーム クラスのコンス トラクターに次のコード行を追加します。  
   
     ```vb  
     ' Add this to the New procedure.  
     CreateOutlookUI()  
-  
     ```  
   
     ```csharp  
     // Add this to the form class's constructor.  
     createOutlookUI();  
-  
     ```  
   
-## 参照  
- <xref:System.Windows.Forms.SplitContainer>   
- [SplitContainer コントロール](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)   
- [方法 : デザイナーを使用して Windows フォームでマルチペイン ユーザー インターフェイスを作成する](../../../../docs/framework/winforms/controls/create-a-multipane-user-interface-with-wf-using-the-designer.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.SplitContainer>  
+ [SplitContainer コントロール](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)  
+ [方法: デザイナーを使用して Windows フォームでマルチペイン ユーザー インターフェイスを作成する](../../../../docs/framework/winforms/controls/create-a-multipane-user-interface-with-wf-using-the-designer.md)

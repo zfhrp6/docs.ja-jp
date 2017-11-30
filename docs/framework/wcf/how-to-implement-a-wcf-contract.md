@@ -1,32 +1,34 @@
 ---
-title: "方法 : Windows Communication Foundation サービス コントラクトを実装する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "サービス コントラクト [WCF], 実装"
+title: "方法 : Windows Communication Foundation サービス コントラクトを実装する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: service contracts [WCF], implementing
 ms.assetid: d5ab51ba-61ae-403e-b3c8-e2669e326806
-caps.latest.revision: 38
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 38
+caps.latest.revision: "38"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 6c8ef9d97d9ed76175c0ca4c4d5ba40ca401f8f6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows Communication Foundation サービス コントラクトを実装する
-これは、基本的な [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスとそのサービスを呼び出すことができるクライアントの作成に必要な 6 つのタスクのうち、2 番目のタスクです。  6 つのすべてのタスクの概要については、「[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)」を参照してください。  
+# <a name="how-to-implement-a-windows-communication-foundation-service-contract"></a>方法 : Windows Communication Foundation サービス コントラクトを実装する
+これは、基本的な [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスとそのサービスを呼び出すことができるクライアントの作成に必要な 6 つのタスクのうち、2 番目のタスクです。 6 つのすべてのタスクの概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
   
- WCF アプリケーションの作成における次の手順では、サービス インターフェイスを実装します。  これには、ユーザー定義の `ICalculator` インターフェイスを実装する `CalculatorService` というクラスの作成も含まれます。  
+ WCF アプリケーションの作成における次の手順では、サービス インターフェイスを実装します。 これには、ユーザー定義の `CalculatorService` インターフェイスを実装する `ICalculator` というクラスの作成も含まれます。  
   
-### WCF サービス コントラクトを実装するには  
+### <a name="to-implement-a-wcf-service-contract"></a>WCF サービス コントラクトを実装するには  
   
 1.  Service1.cs ファイルまたは Service1.vb ファイルを開き、次のコードを追加します。  
   
@@ -77,10 +79,9 @@ caps.handback.revision: 38
             }  
         }  
     }  
-  
     ```  
   
-    ```  
+    ```vb
     ‘Service1.vb  
     Imports System  
     Imports System.ServiceModel  
@@ -127,10 +128,10 @@ caps.handback.revision: 38
   
      各メソッドは、電卓操作を実装し、テストしやすいように、いくつかのテキストをコンソールに出力します。  
   
-## 使用例  
+## <a name="example"></a>例  
  コントラクトを定義するインターフェイスのコードとそのインターフェイスを実装するコードを次に示します。  
   
-```  
+```csharp
 // IService1.cs  
 using System;  
 using System.Collections.Generic;  
@@ -154,10 +155,9 @@ namespace GettingStartedLib
             double Divide(double n1, double n2);  
         }  
 }  
-  
 ```  
   
-```  
+```csharp
 // Service1.cs  
 using System;  
 using System.Collections.Generic;  
@@ -204,10 +204,9 @@ namespace GettingStartedLib
         }  
     }  
 }  
-  
 ```  
   
-```  
+```vb
 ‘IService.vb  
 Imports System  
 Imports System.ServiceModel  
@@ -229,7 +228,7 @@ Namespace GettingStartedLib
 End Namespace  
 ```  
   
-```  
+```vb
 Imports System  
 Imports System.ServiceModel  
   
@@ -273,11 +272,11 @@ Namespace GettingStartedLib
 End Namespace  
 ```  
   
- サービス コントラクトが作成されて実装されます。  ソリューションをビルドして、コンパイル エラーが発生しないことを確認します。次は、「[方法 : 基本的なサービスをホストおよび実行する](../../../docs/framework/wcf/how-to-host-and-run-a-basic-wcf-service.md)」に進んでサービスを実行します。  トラブルシューティングの詳細については、「[チュートリアル入門のトラブルシューティング](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md)」を参照してください。  
+ サービス コントラクトが作成されて実装されます。 コンパイル エラーがないことを確認するようにソリューションをビルドおよびに進みます[する方法: ホストおよび基本的なサービスを実行](../../../docs/framework/wcf/how-to-host-and-run-a-basic-wcf-service.md)サービスを実行します。 情報をトラブルシューティングするには、次を参照してください。[チュートリアル入門のトラブルシューティング](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md)です。  
   
-## コードのコンパイル  
- Visual Studio を使用している場合、\[ビルド\] メニューの \[ソリューションのビルド\] をクリックします \(または Ctrl キーと Shift キーを押しながら B キーを押します\)。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ Visual Studio を使用している場合、ビルド メニュー ソリューションのビルド をクリックして (または CTRL + SHIFT + B キーを押します)。  
   
-## 参照  
- [概要](../../../docs/framework/wcf/samples/getting-started-sample.md)   
- [自己ホスト](../../../docs/framework/wcf/samples/self-host.md)
+## <a name="see-also"></a>関連項目  
+ [はじめに](../../../docs/framework/wcf/samples/getting-started-sample.md)  
+ [自己ホストします。](../../../docs/framework/wcf/samples/self-host.md)

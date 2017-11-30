@@ -1,35 +1,31 @@
 ---
-title: "方法: 空のクエリの結果セットを (Visual Basic) デバッグ |Microsoft ドキュメント"
+title: "方法: 空のクエリの結果セット (Visual Basic) のデバッグ"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: b242c90a-d2b8-4309-8a1e-e4e70736c727
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c5564e88d1a861f2ce3760e9450d68aee5b57a64
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 1c483153f8ff41c08cfaa0141fed056de7f5f680
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="how-to-debug-empty-query-results-sets-visual-basic"></a>方法: 空のクエリの結果セット (Visual Basic) のデバッグ
-XML ツリーのクエリにおける最も一般的な問題の&1; つは、XML ツリーに既定の名前空間がある場合に、XML が名前空間に含まれていないものとして開発者がクエリを記述してしまうことです。  
+XML ツリーのクエリにおける最も一般的な問題の 1 つは、XML ツリーに既定の名前空間がある場合に、XML が名前空間に含まれていないものとして開発者がクエリを記述してしまうことです。  
   
  このトピックの最初に示す一連の例では、既定の名前空間内の XML が読み込まれ、クエリが不適切に実行される典型的な例を示しています。  
   
  2 番目に示す一連の例では、名前空間内の XML に対してクエリを実行できるようにするために必要な修正を示しています。  
   
- 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の使用](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)します。  
+ 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の操作](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)です。  
   
 ## <a name="example"></a>例  
  この例では、名前空間内にある XML の作成、および空の結果セットを返すクエリを示します。  
@@ -64,7 +60,7 @@ End of result set
 ## <a name="example"></a>例  
  この例では、名前空間内にある XML の作成と、適切に記述されたクエリを示します。  
   
- ソリューションを宣言し、グローバルな既定の名前空間を初期化します。 これにより、すべての XML プロパティが既定の名前空間に配置されます。 この例を正しく動作させるために必要な変更はこれだけです。  
+ ソリューションを宣言して既定のグローバル名前空間を初期化します。 これにより、すべての XML プロパティが既定の名前空間に配置されます。 この例を正しく動作させるために必要な変更はこれだけです。  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  

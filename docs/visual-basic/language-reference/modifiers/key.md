@@ -1,66 +1,64 @@
 ---
-title: "Key (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.AnonymousKey"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "anonymous types [Visual Basic], key"
-  - "Key [Visual Basic]"
-  - "Key keyword [Visual Basic]"
+title: Key (Visual Basic)
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.AnonymousKey
+helpviewer_keywords:
+- anonymous types [Visual Basic], key
+- Key [Visual Basic]
+- Key keyword [Visual Basic]
 ms.assetid: 7697a928-7d14-4430-a72a-c9e96e8d6c11
-caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 20dbe4e67fb3e415ba0202555ace7fd5afed68d2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Key (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`Key` キーワードを使用すると、匿名型のプロパティの動作を指定できます。  キー プロパティとして指定したプロパティのみが、匿名型のインスタンス間での等価テストやハッシュ コード値の計算に使用されます。  キー プロパティの値は変更できません。  
+# <a name="key-visual-basic"></a>Key (Visual Basic)
+`Key`キーワードでは、匿名型のプロパティの動作を指定することができます。 匿名型のインスタンス、またはハッシュ コード値の計算の間の等値に関するテストでキー プロパティとしてを指定したプロパティのみです。 キー プロパティの値を変更することはできません。  
   
- 匿名型のプロパティをキー プロパティとして指定するには、初期化リストでの宣言時に `Key` キーワードをプロパティの前に置きます。  次の例では、`Airline` と `FlightNo` はキー プロパティですが、`Gate` はキー プロパティではありません。  
+ キー プロパティとして、キーワードを配置することで、匿名型のプロパティを指定する`Key`初期化リストでその宣言の前にします。 次の例では、`Airline`と`FlightNo`キーのプロパティが`Gate`はありません。  
   
  [!code-vb[VbVbalrAnonymousTypes#26](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_1.vb)]  
   
- 作成される新しい匿名型は、<xref:System.Object> から直接継承します。  コンパイラは、次の 3 つの継承されたメンバーをオーバーライドします。<xref:System.Object.Equals%2A>、<xref:System.Object.GetHashCode%2A>、および <xref:System.Object.ToString%2A>。  <xref:System.Object.Equals%2A> および <xref:System.Object.GetHashCode%2A> のために生成されるオーバーライド コードは、キー プロパティに基づいています。  型の中にキー プロパティがない場合、<xref:System.Object.GetHashCode%2A> と <xref:System.Object.Equals%2A> はオーバーライドされません。  
+ 新しい匿名型を作成すると、する場合から直接継承<xref:System.Object>です。 コンパイラは、次の 3 つの継承されたメンバーをオーバーライドします。 <xref:System.Object.Equals%2A>、 <xref:System.Object.GetHashCode%2A>、および<xref:System.Object.ToString%2A>です。 オーバーライド コードの生成される<xref:System.Object.Equals%2A>と<xref:System.Object.GetHashCode%2A>キー プロパティに基づきます。 型のキー プロパティがない場合<xref:System.Object.GetHashCode%2A>と<xref:System.Object.Equals%2A>はオーバーライドされません。  
   
-## 等価比較  
- 2 つの匿名型のインスタンスは、型が同じであり、キープロパティの値が等しければ、等価のインスタンスです。  次の例では、`flight2` および前の例の `flight1` は、同じ匿名型のインスタンスであり、キー プロパティの値が一致するので等価です。  ただし、`flight3` と `flight1` は等価ではありません。キー プロパティの `FlightNo` の値が異なるためです。  `flight4` インスタンスの型は `flight1` と同じではありません。これらは、異なるプロパティをキー プロパティとして指定しています。  
+## <a name="equality"></a>等価比較  
+ 同じ型のインスタンスと、主要なプロパティの値が等しい場合、匿名型の 2 つのインスタンスが等しい。 次の例についてで`flight2`と等しい`flight1`前の例から、同じ匿名のインスタンスがいるため、型と、一致している、キー プロパティの値。 ただし、`flight3`は等しくありません`flight1`キーのプロパティの値が異なるため`FlightNo`です。 インスタンス`flight4`と同じ型ではない`flight1`キー プロパティとしてさまざまなプロパティを指定するためです。  
   
  [!code-vb[VbVbalrAnonymousTypes#27](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_2.vb)]  
   
- 2 つのインスタンスが、キー プロパティ以外のプロパティで宣言されている場合は、名前、型、順序、および値が同一であっても、2 つのインスタンスは等価ではありません。  キー プロパティを持たないインスタンスは、自身に対してのみ等価です。  
+ プロパティを持つのみ非キー、名前、種類、順序、および値で、同じ 2 つのインスタンスが宣言されている場合は 2 つのインスタンスが等しくありません。 キー プロパティを指定せず、インスタンス自体にのみ等価です。  
   
- 2 つの匿名型インスタンスが同じ匿名型のインスタンスである場合の条件については、「[Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)」を参照してください。  
+ 匿名型の 2 つのインスタンスを同じ匿名型のインスタンスである条件の詳細については、次を参照してください。[匿名型](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)です。  
   
-## ハッシュ コードの計算  
- <xref:System.Object.Equals%2A> のように、匿名型に対して <xref:System.Object.GetHashCode%2A> で定義されたハッシュ関数は、型のキー プロパティに基づきます。  キー プロパティとハッシュ コード値の間のやり取りを次の例に示します。  
+## <a name="hash-code-calculation"></a>ハッシュ コードの計算  
+ 同様に<xref:System.Object.Equals%2A>、ハッシュ関数で定義されている<xref:System.Object.GetHashCode%2A>匿名型は、型のキー プロパティに基づく。 次の例は、コードの値にハッシュ キーのプロパティ間の相互作用を示します。  
   
- すべてのキー プロパティに対して同じ値を持つ匿名型のインスタンスは、キー プロパティ以外のプロパティの値が一致していなくても、同じハッシュ コードを保持します。  次のステートメントは `True` を返します。  
+ すべてのキー プロパティに対して同じ値を持つ匿名型のインスタンスでは、非キー プロパティに一致する値があるない場合でも、同じハッシュ コード値があります。 次のステートメントから`True`です。  
   
  [!code-vb[VbVbalrAnonymousTypes#37](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_3.vb)]  
   
- 1 つ以上のキー プロパティの値が異なる匿名型のインスタンスは、異なるハッシュ コード値を保持します。  次のステートメントは `False` を返します。  
+ 1 つまたは複数のキー プロパティに別の値を持つ匿名型のインスタンスでは、別のハッシュ コード値があります。 次のステートメントから`False`です。  
   
  [!code-vb[VbVbalrAnonymousTypes#38](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_4.vb)]  
   
- 異なるプロパティをキー プロパティとして指定する匿名型のインスタンスは、同じ型のインスタンスではありません。  これらは、すべてのプロパティの名前と値が同じであっても、ハッシュ コード値が異なります。  次のステートメントは `False` を返します。  
+ キー プロパティとしてさまざまなプロパティを指定する匿名型のインスタンスは、同じ型のインスタンスではありません。 名前とすべてのプロパティの値が同じ場合でも、別のハッシュ コード値があります。 次のステートメントから`False`です。  
   
  [!code-vb[VbVbalrAnonymousTypes#39](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_5.vb)]  
   
-## 読み取り専用値  
- キー プロパティの値は変更できません。  たとえば、前の例の `flight1` では、`Airline` フィールドと `FlightNo` フィールドは読み取り専用ですが、`Gate` は変更可能です。  
+## <a name="read-only-values"></a>読み取り専用の値  
+ キー プロパティの値を変更することはできません。 たとえば、`flight1`前の例で、`Airline`と`FlightNo`フィールドは読み取り専用が`Gate`変更できます。  
   
  [!code-vb[VbVbalrAnonymousTypes#28](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_6.vb)]  
   
-## 参照  
- [Anonymous Type Definition](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md)   
- [方法 : 匿名型の宣言におけるプロパティ名と型を推論する](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)   
- [Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
+## <a name="see-also"></a>関連項目  
+ [匿名型の定義](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md)  
+ [方法 : 匿名型の宣言におけるプロパティ名と型を推論する](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)  
+ [匿名型](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)

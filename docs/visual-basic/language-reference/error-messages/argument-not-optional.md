@@ -1,31 +1,29 @@
 ---
-title: "Argument not optional (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID449"
-dev_langs: 
-  - "VB"
+title: "引数は省略できません。(Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID449
 ms.assetid: 76e7bcf3-24ed-4cd5-945b-b98f1c76944b
-caps.latest.revision: 7
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 91cc5bc90e226a36f4afe6ccc250dfe28ead5b5b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Argument not optional (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-引数の数と型が合っていません。  引数の数が間違っているか、または省略できない引数が省略されています。  ユーザー定義のプロシージャの呼び出しで省略できるのは、プロシージャ定義で `Optional` として宣言されている引数だけです。  
+# <a name="argument-not-optional-visual-basic"></a>引数は省略できません。(Visual Basic)
+引数の型と数は、予測されると一致する必要があります。 引数の数が正しくないか、省略された引数は省略できません。 宣言されている場合、引数をユーザー定義プロシージャの呼び出しから省略のみできます`Optional`プロシージャの定義でします。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  必要な引数をすべて指定します。  
+1.  すべての必要な引数を指定します。  
   
-2.  省略した引数が省略可能であることを確認します。  省略可能でない場合は、その引数を指定するか、またはプロシージャ定義で `Optional` として宣言します。  
+2.  省略された引数は省略可能なことを確認してください。 間違っている場合、呼び出しで引数を指定するか、パラメーターを宣言`Optional`定義します。  
   
-## 参照  
- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a>関連項目  
+ [エラーの種類](../../../visual-basic/programming-guide/language-features/error-types.md)

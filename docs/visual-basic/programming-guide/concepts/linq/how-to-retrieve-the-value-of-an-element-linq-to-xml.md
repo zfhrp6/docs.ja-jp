@@ -1,34 +1,30 @@
 ---
-title: "方法: 要素 (LINQ to XML) の値を取得 (Visual Basic) |Microsoft ドキュメント"
+title: "方法: 要素 (LINQ to XML) の値の取得 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 76b9b2a5-b3ba-49da-ba74-82100e1bd21c
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: d38928df51006a8db9417d34ccbe6cd03091db66
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: e688872ea514e822a81b4b3e285ad0d0aa8a0f17
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-visual-basic"></a>方法: 要素 (LINQ to XML) の値を取得 (Visual Basic)
-このトピックでは、要素の値を取得する方法について説明します。 これには主に&2; つの方法があります。 キャストする方法の&1; つは、<xref:System.Xml.Linq.XElement>または<xref:System.Xml.Linq.XAttribute>を目的の型</xref:System.Xml.Linq.XAttribute></xref:System.Xml.Linq.XElement>。 その後、明示的な変換演算子によって、要素または属性のコンテンツが指定した型に変換され、変数に代入されます。 また、使用することができます、<xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>プロパティまたは<xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=fullName>プロパティ</xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=fullName></xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>。  
+# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-visual-basic"></a>方法: 要素 (LINQ to XML) の値の取得 (Visual Basic)
+このトピックでは、要素の値を取得する方法について説明します。 これには主に 2 つの方法があります。 1 つは <xref:System.Xml.Linq.XElement> または <xref:System.Xml.Linq.XAttribute> を目的の型にキャストする方法です。 その後、明示的な変換演算子によって、要素または属性のコンテンツが指定した型に変換され、変数に代入されます。 もう 1 つは、<xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> プロパティまたは <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> プロパティを使用する方法です。  
   
- Visual Basic、最良のアプローチを使用するが、<xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>プロパティ</xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>。  
+ Visual Basic では、<xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> プロパティを使用する方法が最適です。  
   
 ## <a name="example"></a>例  
- 要素の値を取得するには、キャスト、<xref:System.Xml.Linq.XElement>目的の型のオブジェクト</xref:System.Xml.Linq.XElement>。 次に示すように、要素はいつでも文字列にキャストできます。  
+ 要素の値を取得するには、<xref:System.Xml.Linq.XElement> オブジェクトを目的の型にキャストします。 次に示すように、要素はいつでも文字列にキャストできます。  
   
 ```vb  
 Dim e As XElement = <StringElement>abcde</StringElement>  
@@ -38,7 +34,7 @@ Console.WriteLine("Value of e:" & e.Value)
   
  この例を実行すると、次の出力が生成されます。  
   
-```  
+```xml  
 <StringElement>abcde</StringElement>  
 Value of e:abcde  
 ```  
@@ -54,17 +50,17 @@ Console.WriteLine("Value of e:" & CInt(e))
   
  この例を実行すると、次の出力が生成されます。  
   
-```  
+```xml  
 <Age>44</Age>  
 Value of e:44  
 ```  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]provides explicit cast operators for the following data types: `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`, and `GUID?`.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] では、`string`、`bool`、`bool?`、`int`、`int?`、`uint`、`uint?`、`long`、`long?`、`ulong`、`ulong?`、`float`、`float?`、`double`、`double?`、`decimal`、`decimal?`、`DateTime`、`DateTime?`、`TimeSpan`、`TimeSpan?`、`GUID`、および `GUID?` というデータ型について明示的なキャスト演算子を用意しています。  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]同様のキャスト演算子は、<xref:System.Xml.Linq.XAttribute>オブジェクト</xref:System.Xml.Linq.XAttribute>。  
+ また、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] は、<xref:System.Xml.Linq.XAttribute> オブジェクトについても同様のキャスト演算子を用意しています。  
   
 ## <a name="example"></a>例  
- 使用することができます、<xref:System.Xml.Linq.XElement.Value%2A>要素の内容を取得するプロパティ</xref:System.Xml.Linq.XElement.Value%2A>。  
+ <xref:System.Xml.Linq.XElement.Value%2A> プロパティを使用すると、要素のコンテンツを取得できます。  
   
 ```vb  
 Dim e As XElement = <StringElement>abcde</StringElement>  
@@ -74,13 +70,13 @@ Console.WriteLine("Value of e:" & e.Value)
   
  この例を実行すると、次の出力が生成されます。  
   
-```  
+```xml  
 <StringElement>abcde</StringElement>  
 Value of e:abcde  
 ```  
   
 ## <a name="example"></a>例  
- 存在しているかどうかが明確でない要素の値の取得を試行する場合があります。 この場合は、キャストの要素を null 許容型に代入すると (どちらか`string`またはいずれかの null 許容型の[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]) 要素に割り当てられているが存在しない場合、変数が同じに設定されている`Nothing`します。 次のコードは、要素は、可能性がありますかが存在しないかが簡単であるよりもキャストを使用する、<xref:System.Xml.Linq.XElement.Value%2A>プロパティ</xref:System.Xml.Linq.XElement.Value%2A>。  
+ 存在しているかどうかが明確でない要素の値の取得を試行する場合があります。 この場合、NULL 値が許容される型 (`string` または [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] での NULL 値が許容される型のいずれか) に、キャストされた要素を代入すると、要素が存在しない場合に、代入された変数が `Nothing` に設定されます。 要素が存在するかどうかわからないときは、<xref:System.Xml.Linq.XElement.Value%2A> プロパティよりもキャストを使用した方が簡単であることを、次のコードは示しています。  
   
 ```vb  
 Dim root As XElement = <Root>  

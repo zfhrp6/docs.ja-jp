@@ -1,108 +1,111 @@
 ---
-title: "DataGrid コントロールの既定のキーボード動作とマウス動作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "DataGrid [WPF], キーボード動作"
-  - "DataGrid [WPF], マウスの動作"
-  - "キーボード動作 [WPF], DataGrid"
-  - "マウスの動作 [WPF], DataGrid"
+title: "DataGrid コントロールの既定のキーボード動作とマウス動作"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DataGrid [WPF], keyboard behavior
+- DataGrid [WPF], mouse behavior
+- keyboard behavior [WPF], DataGrid
+- mouse behavior [WPF], DataGrid
 ms.assetid: 563b8854-ca39-4d97-8235-17eaa0f93c8d
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: ddbbab88a22a4350626a36f79236aab67da24a7f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataGrid コントロールの既定のキーボード動作とマウス動作
-このトピックでは、ユーザーがキーボードとマウスを使用して <xref:System.Windows.Controls.DataGrid> コントロールと対話する方法について説明します。  
+# <a name="default-keyboard-and-mouse-behavior-in-the-datagrid-control"></a>DataGrid コントロールの既定のキーボード動作とマウス動作
+このトピックとユーザーの対話方法について説明します、<xref:System.Windows.Controls.DataGrid>キーボードとマウスを使用して制御します。  
   
- <xref:System.Windows.Controls.DataGrid> に対する標準的な対話操作には、ナビゲーション、選択、編集などがあります。  選択動作は、<xref:System.Windows.Controls.DataGrid.SelectionMode%2A> プロパティおよび <xref:System.Windows.Controls.DataGrid.SelectionUnit%2A> プロパティの影響を受けます。  このトピックで説明した動作の前提となる既定値は、<xref:System.Windows.Controls.DataGridSelectionMode?displayProperty=fullName> および <xref:System.Windows.Controls.DataGridSelectionUnit?displayProperty=fullName> です。  これらの値を変更すると、ここでの説明内容とは動作が異なる場合があります。  セルが編集モードになっている場合、<xref:System.Windows.Controls.DataGrid> の標準キーボードの動作は、編集コントロールによってオーバーライドされます。  
+ 一般的な対話、<xref:System.Windows.Controls.DataGrid>ナビゲーション、選択、および編集が含まれます。 選択の動作の影響を受ける、<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>と<xref:System.Windows.Controls.DataGrid.SelectionUnit%2A>プロパティです。 このトピックで説明されている動作を起こす既定値は<xref:System.Windows.Controls.DataGridSelectionMode.Extended?displayProperty=nameWithType>と<xref:System.Windows.Controls.DataGridSelectionUnit.FullRow?displayProperty=nameWithType>です。 これらの値を変更すると、説明されているとは異なる動作が発生する可能性があります。 セルが編集モードのときは、編集コントロールがの標準キーボード動作をオーバーライド可能性があります、<xref:System.Windows.Controls.DataGrid>です。  
   
-## キーボードの既定の動作  
- <xref:System.Windows.Controls.DataGrid> におけるキーボードの既定の動作を次の表に示します。  
+## <a name="default-keyboard-behavior"></a>既定のキーボードの動作  
+ 次の表に、既定のキーボード動作、<xref:System.Windows.Controls.DataGrid>です。  
   
-|キーまたはキーの組み合わせ|Description|  
-|-------------------|-----------------|  
-|↓|現在のセルの 1 つ下のセルにフォーカスを移動します。  フォーカスが最後の行にある場合は、何も行いません。|  
-|↑|現在のセルの 1 つ上のセルにフォーカスを移動します。  フォーカスが最初の行にある場合は、何も行いません。|  
-|←|同じ行の 1 つ前のセルにフォーカスを移動します。  フォーカスが行の最初のセルにある場合は、何も行いません。|  
-|→|同じ行の次のセルにフォーカスを移動します。  フォーカスが行の最後のセルにある場合は、何も行いません。|  
-|Home|現在の行の最初のセルにフォーカスを移動します。|  
+|キーまたはキーの組み合わせ|説明|  
+|----------------------------|-----------------|  
+|↓|現在のセルの直下のセルにフォーカスを移動します。 最後の行にフォーカスがある場合は、下矢印キーを押して何も行われません。|  
+|↑|現在のセルの上に直接セルにフォーカスを移動します。 最初の行にフォーカスがある場合は、上方向キーを押して何も行われません。|  
+|←|行の前のセルにフォーカスを移動します。 行の最初のセルにフォーカスがある場合は、左矢印キーを押すと何も行われません。|  
+|→|次の行のセルにフォーカスを移動します。 行の最後のセルにフォーカスがある場合は、右矢印キーを押して何も行われません。|  
+|ホーム|現在の行の最初のセルにフォーカスを移動します。|  
 |End|現在の行の最後のセルにフォーカスを移動します。|  
-|PageDown|行がグループ化されていない場合、完全に表示されている行数分、コントロールを下にスクロールします。  完全に表示されている最後の行にフォーカスを移動します。列は変更しません。<br /><br /> 行がグループ化されている場合、<xref:System.Windows.Controls.DataGrid> 内の最後の行にフォーカスを移動します。列は変更されません。|  
-|PageUp|行がグループ化されていない場合、完全に表示されている行数分、コントロールを上にスクロールします。  現在表示されている最初の行にフォーカスを移動します。列は変更しません。<br /><br /> 行がグループ化されている場合、<xref:System.Windows.Controls.DataGrid> 内の先頭の行にフォーカスを移動します。列は変更されません。|  
-|Tab|現在の行の次のセルにフォーカスを移動します。  行の最後のセルにフォーカスがあるときは、次の行の最初のセルにフォーカスを移動します。  コントロールの最後のセルにフォーカスがあるときは、親コンテナーのタブ オーダーで次のコントロールにフォーカスを移動します。<br /><br /> 現在のセルが編集モードになっている場合、Tab キーを押すと、フォーカスが現在の行から移動します。その行に対して行われた変更は、フォーカスが変わる前にコミットされます。|  
-|Shift \+ Tab|現在の行の前のセルにフォーカスを移動します。  行の最初のセルにフォーカスがあるときは、1 つ前の行の最後のセルにフォーカスを移動します。  コントロールの最初のセルにフォーカスがある場合は、親コンテナーのタブ オーダーで 1 つ前のコントロールにフォーカスを移動します。<br /><br /> 現在のセルが編集モードになっている場合、Tab キーを押すと、フォーカスが現在の行から移動します。その行に対して行われた変更は、フォーカスが変わる前にコミットされます。|  
-|Ctrl \+ ↓|現在の列の最後のセルにフォーカスを移動します。|  
-|Ctrl \+ ↑|現在の列の最初のセルにフォーカスを移動します。|  
-|Ctrl \+ →|現在の行の最後のセルにフォーカスを移動します。|  
-|Ctrl \+ ←|現在の行の最初のセルにフォーカスを移動します。|  
-|Ctrl \+ Home|コントロール内の最初のセルにフォーカスを移動します。|  
-|Ctrl \+ End|コントロール内の最後のセルにフォーカスを移動します。|  
-|Ctrl \+ PageDown|PageDown と同じです。|  
-|Ctrl \+ PageUp|PageUp と同じです。|  
-|F2|<xref:System.Windows.Controls.DataGrid.IsReadOnly%2A?displayProperty=fullName> プロパティが `false` で、現在の列の <xref:System.Windows.Controls.DataGridColumn.IsReadOnly%2A?displayProperty=fullName> プロパティが `false` の場合、現在のセルを編集モードに設定します。|  
-|Enter|現在のセルおよび行への変更をコミットし、現在のセルの 1 つ下のセルにフォーカスを移動します。  フォーカスが最後の行にある場合は、変更をコミットし、フォーカスは移動しません。|  
-|Esc|コントロールが編集モードの場合は、編集を取り消し、コントロール内で行われた変更をすべて元に戻します。  基になるデータ ソースに <xref:System.ComponentModel.IEditableObject> が実装されている場合、Esc キーを 2 回押すと、行全体の編集モードが取り消されます。|  
-|BackSpace|セルを編集するときに、カーソル位置の前にある文字を削除します。|  
-|Del|セルを編集するときに、カーソル位置の後にある文字を削除します。|  
-|Ctrl \+ Enter|現在のセルに対して行われた変更をコミットします。フォーカスは移動しません。|  
-|Ctrl \+ A|<xref:System.Windows.Controls.DataGrid.SelectionMode%2A> が <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合、<xref:System.Windows.Controls.DataGrid> 内のすべての行を選択します。|  
+|PAGE DOWN|行がグループ化されていない場合は、完全に表示されている行の数でコントロールを下をスクロールします。 列を変更することがなく、最後に完全に表示されている行に、フォーカスを移動します。<br /><br /> 行がグループ化されている場合は、最後の行にフォーカスを移動、<xref:System.Windows.Controls.DataGrid>列を変更することがなくです。|  
+|PAGE UP|行がグループ化されていない場合、完全に表示されている行の数でコントロールを上方向へスクロールします。 最初の表示されている行の列を変更せずにフォーカスを移動します。<br /><br /> 行がグループ化されている場合は、最初の行にフォーカスを移動、<xref:System.Windows.Controls.DataGrid>列を変更することがなくです。|  
+|Tab|現在の行の次のセルにフォーカスを移動します。 行の最後のセルにフォーカスがある場合は、次の行の最初のセルにフォーカスを移動します。 コントロール内の最後のセルにフォーカスがある場合は、親コンテナーのタブ オーダーの次のコントロールにフォーカスを移動します。<br /><br /> 現在のセルが編集モードとし、現在の行からを移動する タブの原因がフォーカスを押すと、行に対して行われた変更がコミット フォーカスを変更する前にいます。 場合、|  
+|Shift + Tab|現在の行の前のセルにフォーカスを移動します。 行の最初のセルにフォーカスがある場合は、前の行の最後のセルにフォーカスを移動します。 コントロール内の最初のセルにフォーカスがある場合は、親コンテナーのタブ オーダーの前のコントロールにフォーカスを移動します。<br /><br /> 現在のセルが編集モードとし、現在の行からを移動する タブの原因がフォーカスを押すと、行に対して行われた変更がコミット フォーカスを変更する前にいます。 場合、|  
+|Ctrl +↓|現在の列の最後のセルにフォーカスを移動します。|  
+|Ctrl + ↑|現在の列の最初のセルにフォーカスを移動します。|  
+|Ctrl + →|現在の行の最後のセルにフォーカスを移動します。|  
+|Ctrl + ←|現在の行の最初のセルにフォーカスを移動します。|  
+|CTRL + HOME|コントロール内の最初のセルにフォーカスを移動します。|  
+|CTRL キーを押しながら END キー|コントロール内の最後のセルにフォーカスを移動します。|  
+|Ctrl + PageDown|PAGEDOWN と同じです。|  
+|Ctrl + PageUp|ページの上と同じです。|  
+|F2|場合、<xref:System.Windows.Controls.DataGrid.IsReadOnly%2A?displayProperty=nameWithType>プロパティは`false`と<xref:System.Windows.Controls.DataGridColumn.IsReadOnly%2A?displayProperty=nameWithType>プロパティは`false`現在の列のセルの編集モードに現在のセルを挿入します。|  
+|Enter|現在のセルと行に変更をコミットし、現在のセルの直下のセルにフォーカスを移動します。 最後の行にフォーカスがある場合は、フォーカスを移動させることがなく変更をコミットします。|  
+|ESC|コントロールが編集モードである場合は、編集をキャンセルし、コントロールに加えられた変更を元に戻します。 場合は、基になるデータ ソースを実装して<xref:System.ComponentModel.IEditableObject>、行全体の編集モードをキャンセル、2 回目の esc キーを押します。|  
+|BACKSPACE キー|セルを編集するときは、カーソルより前に、の文字を削除します。|  
+|Del|セルの編集時に、カーソルより後の文字を削除します。|  
+|Ctrl + Enter|現在のセルにフォーカスを移動せず変更をコミットします。|  
+|Ctrl + A|場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>のすべての行を選択、<xref:System.Windows.Controls.DataGrid>です。|  
   
-## 選択キー  
- <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> プロパティが <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合は、移動動作は変更されません。ただし、Shift \(Ctrl \+ Shift を含む\) キーを押しながらキーボードを使用する移動では、複数行の選択範囲が変更されます。  移動を開始する前に、コントロールは現在の行をアンカー行としてマークします。  Shift キーを押しながら移動すると、アンカー行と現在の行の間のすべての行が選択範囲に含められます。  
+## <a name="selection-keys"></a>選択キー  
+ 場合、<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>プロパティに設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>ナビゲーションの動作は変わりませんが (CTRL + SHIFT を含む) shift キーを押しながらキーボードで移動すると、複数行の選択が変更されます。 ナビゲーションが開始する前に、コントロールは、アンカー行として、現在の行をマークします。 Shift キーを押しながら移動するときに、選択範囲には、アンカー行と、現在の行の間のすべての行が含まれています。  
   
- 次の選択キーでは、複数行の選択範囲が変更されます。  
+ 次の選択キーは、複数行の選択を変更します。  
   
--   Shift \+ ↓  
+-   Shift + ↓  
   
--   Shift \+ ↑  
+-   Shift + ↑  
   
--   Shift \+ PageDown  
+-   Shift + PageDown  
   
--   Shift \+ PageUp  
+-   Shift + PageUp  
   
--   Ctrl \+ Shift \+ ↓  
+-   Ctrl + Shift + ↓  
   
--   Ctrl \+ Shift \+ ↑  
+-   Ctrl + Shift + ↑  
   
--   Ctrl \+ Shift \+ Home  
+-   CTRL + SHIFT + ホーム  
   
--   Ctrl \+ Shift \+ End  
+-   CTRL キーを押しながら SHIFT キーを押しながら END  
   
-## マウスの既定の動作  
- <xref:System.Windows.Controls.DataGrid> におけるマウスの既定の動作を次の表に示します。  
+## <a name="default-mouse-behavior"></a>マウスの既定の動作  
+ 次の表に、マウス デフォルトでは、<xref:System.Windows.Controls.DataGrid>です。  
   
-|マウス操作|Description|  
-|-----------|-----------------|  
-|未選択の行をクリック|クリックした行が現在の行になり、クリックしたセルが現在のセルになります。|  
-|現在のセルをクリック|現在のセルを編集モードにします。|  
-|列ヘッダー セルをドラッグ|<xref:System.Windows.Controls.DataGrid.CanUserReorderColumns%2A?displayProperty=fullName> プロパティが `true` で、現在の列の <xref:System.Windows.Controls.DataGridColumn.CanUserReorder%2A?displayProperty=fullName> プロパティが `true` の場合、列を移動して別の位置にドロップできます。|  
-|列ヘッダーの区切りをドラッグ|<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=fullName> プロパティが `true` で、現在の列の <xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=fullName> プロパティが `true` の場合、列のサイズが変更されます。|  
-|列ヘッダーの区切りをダブルクリック|現在の列の <xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=fullName> プロパティが `true` で、<xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=fullName> プロパティが `true` である場合、<xref:System.Windows.Controls.DataGridLength.Auto%2A> サイズ変更モードを使用して列のサイズを自動調整します。|  
-|列ヘッダー セルをクリック|<xref:System.Windows.Controls.DataGrid.CanUserSortColumns%2A?displayProperty=fullName> プロパティが `true` で、現在の列の <xref:System.Windows.Controls.DataGridColumn.CanUserSort%2A?displayProperty=fullName> プロパティが `true` の場合、列の並べ替えが実行されます。<br /><br /> 既に並べ替えられた列のヘッダーをクリックすると、逆順で並べ替えが行われます。<br /><br /> Shift キーを押しながら複数の列ヘッダーをクリックすると、クリックした順番で、複数の列に基づいて並べ替えが適用されます。|  
-|Ctrl キーを押しながら行をクリック|<xref:System.Windows.Controls.DataGrid.SelectionMode%2A> が <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合、不連続の複数の行を選択できます。<br /><br /> 既に行が選択されている場合、行の選択を解除します。|  
-|Shift キーを押しながら行をクリック|<xref:System.Windows.Controls.DataGrid.SelectionMode%2A> が <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合、連続する複数の行を選択できます。|  
-|行グループ ヘッダーをクリック|グループの展開または折りたたみを行います。|  
-|<xref:System.Windows.Controls.DataGrid> の左上隅の \[すべて選択\] ボタンをクリック|<xref:System.Windows.Controls.DataGrid.SelectionMode%2A> が <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合、<xref:System.Windows.Controls.DataGrid> 内のすべての行を選択します。|  
+|マウス操作|説明|  
+|------------------|-----------------|  
+|選択されていない行をクリックします。|クリックされた行は、現在の行、およびクリックされたセルの現在のセルになります。|  
+|現在のセルをクリックします。|現在のセルを実行すると、編集モードにします。|  
+|列のヘッダー セルにドラッグします。|場合、<xref:System.Windows.Controls.DataGrid.CanUserReorderColumns%2A?displayProperty=nameWithType>プロパティは`true`と<xref:System.Windows.Controls.DataGridColumn.CanUserReorder%2A?displayProperty=nameWithType>プロパティは`true`現在の列の列に移動できるように、新しい場所に削除できます。|  
+|列ヘッダーの区切り線をドラッグします。|場合、<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType>プロパティは`true`と<xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=nameWithType>プロパティは`true`現在の列の列のサイズを変更します。|  
+|列ヘッダーの区切り線をダブルクリックします。|場合、<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType>プロパティは`true`と<xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=nameWithType>プロパティは`true`サイズが自動的に、現在の列の列を使用して、<xref:System.Windows.Controls.DataGridLength.Auto%2A>サイズ変更モード。|  
+|列ヘッダー セルをクリックします。|場合、<xref:System.Windows.Controls.DataGrid.CanUserSortColumns%2A?displayProperty=nameWithType>プロパティは`true`と<xref:System.Windows.Controls.DataGridColumn.CanUserSort%2A?displayProperty=nameWithType>プロパティは`true`現在の列の列を並べ替えます。<br /><br /> まだ並べ替えられている列のヘッダーをクリックすると、その列の並べ替えの方向は逆です。<br /><br /> SHIFT キーを押しながら複数の列見出しをクリックした順番で複数の列で並べ替えられます。|  
+|Ctrl キーを押しながら、行をクリックして|場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>、連続しない複数行の選択状態を変更します。<br /><br /> 行は既に選択されている場合は、行を選択解除します。|  
+|SHIFT + 行をクリックしてください|場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>、連続する複数の行の選択を変更します。|  
+|行グループ ヘッダーをクリックします。|展開またはグループを折りたたみます。|  
+|左上隅にある [すべて選択] ボタンをクリックして、<xref:System.Windows.Controls.DataGrid>|場合<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>に設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>のすべての行を選択、<xref:System.Windows.Controls.DataGrid>です。|  
   
-## マウスによる選択  
- <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> プロパティが <xref:System.Windows.Controls.DataGridSelectionMode> に設定されている場合、Ctrl キーまたは Shift キーを押しながら行をクリックすると複数行の選択範囲が変更されます。  
+## <a name="mouse-selection"></a>マウスの選択  
+ 場合、<xref:System.Windows.Controls.DataGrid.SelectionMode%2A>プロパティに設定されている<xref:System.Windows.Controls.DataGridSelectionMode.Extended>、ctrl キーまたは shift キーを押しながら、行をクリックすると、複数の行の選択が変更されます。  
   
- Ctrl キーを押しながら行をクリックすると、その行の選択状態は変化しますが、その他のすべての行は現在の選択状態を保持します。  隣接しない行を選択するにはこの方法を使用します。  
+ CTRL キーを押しながら、行をクリックすると、行は、その他のすべての行が現在の選択状態を保持の選択状態を変更します。 連続していない行を選択します。  
   
- Shift キーを押しながら特定の行をクリックした場合、現在の行とアンカー行 \(クリックの前に選択されていた行\) の間のすべての行が選択されます。  それ以降、Shift キーを押しながらクリックすると、現在の行は変更されますが、アンカー行は変更されません。  隣接する行の範囲を選択するにはこの方法を使用します。  
+ Shift キーを押しながら、行をクリックすると、選択範囲には、現在の行と、クリックする前に、現在の行の位置にあるアンカー行の間のすべての行が含まれています。 Shift キーを押しながらそれ以降のクリックでは、現在の行がアンカー行ではなくを変更します。 隣接する行の範囲 を選択しないでください。  
   
- Ctrl キーを押しながら Shift キーを押すと、離れて存在する隣接行範囲を選択できます。  そのためには、前の説明に従い、Shift キーを押しながらのクリック操作で、1 つ目の範囲を選択します。  1 つ目の行範囲を選択したら、Ctrl キーを押しながらのクリック操作で、次の範囲内の先頭行をまず選択し、Ctrl キーと Shift キーを押した状態で、その範囲の最後の行をクリックします。  
+ 隣接する行の連続していない範囲を選択するには、CTRL + SHIFT を組み合わせて指定できます。 これを行うには、shift キーを使用して、最初の範囲を選択 + 前述のようにクリックします。 行の最初の範囲を選択した後、ctrl キーを押し + をクリックして [次へ] の範囲内で最初の行を選択、CTRL + SHIFT を押しながら次の範囲の最後の行をクリックできます。  
   
-## 参照  
- <xref:System.Windows.Controls.DataGrid>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.DataGrid>  
  <xref:System.Windows.Controls.DataGrid.SelectionMode%2A>

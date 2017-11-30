@@ -1,64 +1,47 @@
 ---
-title: "その他のデータ型 (Visual Basic) |Microsoft ドキュメント"
+title: "その他のデータ型 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- Object data type, data types
+- Object data type [Visual Basic], data types
 - data types [Visual Basic], choosing
 ms.assetid: 64c71a12-9057-4dbf-baca-7379c4aada69
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 2de377fa9dfd7ec13cdbb9b700f8485b0c0e2106
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b6bb86bb6d203aa4e6bdded27a4cb78a8155ddec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="miscellaneous-data-types-visual-basic"></a>その他のデータ型 (Visual Basic)
-[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]数値や文字を対象としていない複数のデータ型を提供します。 代わりになどを扱う特殊なデータはい/いいえ値、日付/時刻値、およびオブジェクトのアドレス。  
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]数字や文字を対象とされているいくつかのデータ型を提供します。 代わりが扱う特化されたデータなど、はい/いいえ値、日付/時刻値、およびオブジェクトのアドレス。  
   
- サイド バイ サイドの比較を示す表に、[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]データ型を参照してください[データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md)します。  
+ サイド バイ サイドの比較を示す表に、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]データ型を参照してください[データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md)です。  
   
 ## <a name="boolean-type"></a>ブール型  
- [ブール データ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)いずれかとして解釈される符号なしの値は、`True`または`False`です。 データのサイズは実装されているプラットフォームに依存します。 変数は、はい/いいえ、またはオン/オフ、true または false などの&2; つの状態値のみを含めることができます、宣言として`Boolean`します。  
+ [ブールのデータ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)いずれかとして解釈される符号なしの値は、`True`または`False`です。 データのサイズは実装されているプラットフォームに依存します。 場合は、変数は、はい/いいえ、またはオン/オフ、true または false などの 2 つの状態値のみを含めることができます、宣言として`Boolean`です。  
   
-## <a name="date-type"></a>Date 型  
- [Date データ型](../../../../visual-basic/language-reference/data-types/date-data-type.md)日付と時刻の両方の情報を保持する 64 ビット値です。 増分では、グレゴリオ暦の年 1 月 1 (12時 00分 AM) 開始時からの経過時間の 100 ナノ秒を表します。 変数には、日付値、時間の値、またはその両方を含めることができます、宣言として`Date`します。  
+## <a name="date-type"></a>日付型  
+ [Date データ型](../../../../visual-basic/language-reference/data-types/date-data-type.md)日付と時刻の両方の情報を保持する 64 ビット値です。 各インクリメントは、グレゴリオ暦カレンダーにおける年 1 月 1 (12時 00分 AM) の開始以降の経過時間を 100 ナノ秒を表します。 場合は、変数には、日付の値、時間の値、またはその両方を含めることができます、宣言として`Date`です。  
   
 ## <a name="object-type"></a>オブジェクトの種類  
- [Object データ型](../../../../visual-basic/language-reference/data-types/object-data-type.md)またはその他のアプリケーションで、アプリケーション内でオブジェクトのインスタンスを指す 32 ビット アドレスです。 `Object`変数は、アプリケーションが認識されると、任意のオブジェクトまたは任意のデータ型のデータを参照できます。 両方が含まれます*値の型*など`Integer`、 `Boolean`、および構造体のインスタンスと*型を参照*であるなどのクラスから作成されたオブジェクトのインスタンスである`String`と<xref:System.Windows.Forms.Form>、インスタンスの配列</xref:System.Windows.Forms.Form>。  
+ [オブジェクト データ型](../../../../visual-basic/language-reference/data-types/object-data-type.md)アプリケーション内で、またはその他のアプリケーションでのオブジェクト インスタンスを指す 32 ビット アドレスです。 `Object`変数は、アプリケーションが認識されると、任意のオブジェクトや任意のデータ型のデータに参照できます。 両方が含まれます*値の型*など`Integer`、 `Boolean`、および構造体のインスタンスと*型参照*、オブジェクトなどのクラスから作成されたのインスタンスは`String`と<xref:System.Windows.Forms.Form>のインスタンスの配列。  
   
- 変数は、コンパイル時に不明なクラスのインスタンスへのポインターを格納するさまざまなデータ型のデータをポイントできる場合や、宣言として`Object`します。  
+ 変数が分かっていなければ、コンパイル時に、クラスのインスタンスへのポインターを格納するさまざまなデータ型のデータを指すことができる場合や、として宣言`Object`です。  
   
- 利点、`Object`データ型は、任意のデータ型のデータの格納に使用ことができます。 デメリットは、実行に時間がかかると、アプリケーションの実行が遅くなる余分な処理を発生することです。 使用する場合、`Object`発生する値型の変数、*ボックス化*と*ボックス化解除*します。 参照型を使用する場合に発生する*遅延バインディング*します。  
+ 利点、`Object`データ型が使用できる、任意のデータ型のデータを格納します。 欠点は、実行時間がかかるし、アプリケーションの実行速度が遅くする余分な処理が発生することです。 使用する場合、`Object`発生する値の型の変数、*ボックス化*と*アンボックス*です。 で参照型を使用する場合に発生する*遅延バインディング*です。  
   
 ## <a name="see-also"></a>関連項目  
- [型文字](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)   
- [基本データ型](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)   
- [数値データ型](../../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)   
- [文字データ型](../../../../visual-basic/programming-guide/language-features/data-types/character-data-types.md)   
- [データ型のトラブルシューティング](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
+ [型文字](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
+ [基本データ型](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  
+ [数値のデータ型](../../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)  
+ [文字データ型](../../../../visual-basic/programming-guide/language-features/data-types/character-data-types.md)  
+ [トラブルシューティング (データ型)](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
  [事前バインディングと遅延バインディング](../../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
