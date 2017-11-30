@@ -1,40 +1,45 @@
 ---
-title: "チュートリアル: WPF での Windows フォーム コントロールのホスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ホスト (Windows フォーム コントロールを WPF で)"
+title: "チュートリアル: WPF での Windows フォーム コントロールのホスト"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: hosting Windows Forms control in WPF [WPF]
 ms.assetid: 9cb88415-39b0-4c46-80c4-ff325b674286
-caps.latest.revision: 36
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 33
+caps.latest.revision: "36"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 71c48b85af6767d59eaa68621faf566321af613c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# チュートリアル: WPF での Windows フォーム コントロールのホスト
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、さまざまな機能を持つコントロールが多数あります。  しかし、独自の [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ページの [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールを使用する方が望ましい場合があります。  たとえば、既存の [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールに多くの手間と時間がかかっている場合や、固有の機能を備えた [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールがある場合などです。  
+# <a name="walkthrough-hosting-a-windows-forms-control-in-wpf"></a>チュートリアル: WPF での Windows フォーム コントロールのホスト
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]豊富な機能セットには、多くのコントロールを提供します。 ただし、場合がありますも使用する[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロールに対して、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ページ。 たとえば、既存のかなりの投資がある[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]コントロール、またはする必要があります、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]ユニークな機能を提供するコントロール。  
   
- このチュートリアルでは、コードを使用して [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]の <xref:System.Windows.Forms.MaskedTextBox?displayProperty=fullName> コントロールを [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ページでホストする方法を示します。  
+ このチュートリアルでは、ホストする方法、 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType>の control 権限、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]コードを使用してページ。  
   
- このチュートリアルで示すタスクの完全なコード一覧については、[WPF での Windows フォーム コントロールのホストのサンプル](http://go.microsoft.com/fwlink/?LinkID=160057)を参照してください。  
+ このチュートリアルで説明するタスクの完全なコードについては、次を参照してください。 [WPF サンプル Windows フォーム コントロールをホストしている](http://go.microsoft.com/fwlink/?LinkID=160057)です。  
   
-## 必須コンポーネント  
+## <a name="prerequisites"></a>必須コンポーネント  
  このチュートリアルを実行するには、次のコンポーネントが必要です。  
   
--   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  
+-   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)]。  
   
-## Windows Forms Control のホスト  
+## <a name="hosting-the-windows-forms-control"></a>Windows フォーム コントロールをホストしています。  
   
-#### MaskedTextBox コントロールをホストするには  
+#### <a name="to-host-the-maskedtextbox-control"></a>MaskedTextBox コントロールをホストするには  
   
-1.  `HostingWfInWpf` という名前の WPF アプリケーション プロジェクトを作成します。  
+1.  という名前の WPF アプリケーション プロジェクトを作成する`HostingWfInWpf`です。  
   
 2.  次のアセンブリへの参照を追加します。  
   
@@ -42,36 +47,36 @@ caps.handback.revision: 33
   
     -   System.Windows.Forms  
   
-3.  [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]で MainWindow.xaml を開きます。  
+3.  MainWindow.xaml を開き、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]です。  
   
-4.  <xref:System.Windows.Controls.Grid> 要素に `grid1` という名前を付けます。  
+4.  名前、<xref:System.Windows.Controls.Grid>要素`grid1`です。  
   
-     [!code-xml[HostingWfInWPF#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingWfInWPF/CSharp/HostingWfInWPF/Window1.xaml#1)]  
+     [!code-xaml[HostingWfInWPF#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingWfInWPF/CSharp/HostingWfInWPF/Window1.xaml#1)]  
   
-5.  デザイン ビューまたは XAML ビューで、<xref:System.Windows.Window> 要素を選択します。  
+5.  [デザイン] ビューまたは XAML ビューで、選択、<xref:System.Windows.Window>要素。  
   
-6.  プロパティ ウィンドウの **\[イベント\]** タブをクリックします。  
+6.  [プロパティ] ウィンドウ、**イベント**タブです。  
   
-7.  <xref:System.Windows.FrameworkElement.Loaded> イベントをダブルクリックします。  
+7.  ダブルクリックして、<xref:System.Windows.FrameworkElement.Loaded>イベント。  
   
-8.  <xref:System.Windows.FrameworkElement.Loaded> イベントを処理するには、次のコードを挿入します。  
+8.  処理する次のコードを挿入、<xref:System.Windows.FrameworkElement.Loaded>イベント。  
   
      [!code-csharp[HostingWfInWPF#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingWfInWPF/CSharp/HostingWfInWPF/Window1.xaml.cs#10)]
      [!code-vb[HostingWfInWPF#10](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HostingWfInWPF/VisualBasic/HostingWfInWpf/Window1.xaml.vb#10)]  
   
-9. ファイルの冒頭に、次の `Imports` ステートメントまたは `using` ステートメントを追加します。  
+9. ファイルの上部には、次のコードを追加`Imports`または`using`ステートメントです。  
   
      [!code-csharp[HostingWfInWPF#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingWfInWPF/CSharp/HostingWfInWPF/Window1.xaml.cs#11)]
      [!code-vb[HostingWfInWPF#11](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HostingWfInWPF/VisualBasic/HostingWfInWpf/Window1.xaml.vb#11)]  
   
 10. F5 キーを押してアプリケーションをビルドし、実行します。  
   
-## 参照  
- <xref:System.Windows.Forms.Integration.ElementHost>   
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>   
- [WPF デザイナー](http://msdn.microsoft.com/ja-jp/c6c65214-8411-4e16-b254-163ed4099c26)   
- [チュートリアル: WPF での、XAML を使用した Windows フォーム コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf-by-using-xaml.md)   
- [チュートリアル: WPF での Windows フォーム複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)   
- [チュートリアル: Windows フォームでの WPF 複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)   
- [Windows フォーム コントロールおよび同等の WPF コントロール](../../../../docs/framework/wpf/advanced/windows-forms-controls-and-equivalent-wpf-controls.md)   
- [WPF での Windows フォーム コントロールのホストのサンプル](http://go.microsoft.com/fwlink/?LinkID=160057)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.Integration.ElementHost>  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
+ [WPF デザイナー](http://msdn.microsoft.com/en-us/c6c65214-8411-4e16-b254-163ed4099c26)  
+ [チュートリアル: WPF での XAML を使用した Windows フォーム コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf-by-using-xaml.md)  
+ [チュートリアル: WPF での Windows フォーム複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)  
+ [チュートリアル: Windows フォームでの WPF 複合コントロールのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)  
+ [Windows フォーム コントロールおよび同等の WPF コントロール](../../../../docs/framework/wpf/advanced/windows-forms-controls-and-equivalent-wpf-controls.md)  
+ [WPF サンプル Windows フォーム コントロールのホスト](http://go.microsoft.com/fwlink/?LinkID=160057)

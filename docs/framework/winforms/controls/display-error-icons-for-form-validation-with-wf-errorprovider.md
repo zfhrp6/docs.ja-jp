@@ -1,40 +1,45 @@
 ---
-title: "方法 : Windows フォーム ErrorProvider コンポーネントを使用してフォーム妥当性検査でエラー アイコンを表示する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "エラー アイコン"
-  - "エラー メッセージ, 表示 (アイコンを)"
-  - "ErrorProvider コンポーネント [Windows フォーム], 表示 (エラー アイコンを)"
-  - "エラー [Windows フォーム], 表示 (ユーザーに)"
+title: "方法 : Windows フォーム ErrorProvider コンポーネントを使用してフォーム検証でエラー アイコンを表示する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- errors [Windows Forms], displaying to users
+- error icons
+- ErrorProvider component [Windows Forms], displaying error icons
+- error messages [Windows Forms], displaying icons
 ms.assetid: 3b681a32-9db4-497b-a34b-34980eabee46
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 02638ab59c0ba1c0eb0f8090be118b3d5a9111f8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム ErrorProvider コンポーネントを使用してフォーム妥当性検査でエラー アイコンを表示する
-Windows フォームの <xref:System.Windows.Forms.ErrorProvider> コンポーネントを使用すると、ユーザーが無効なデータを入力したときに、エラー アイコンを表示できます。  タブでフォーカスを移動して妥当性検査のコードを呼び出すには、フォーム上に少なくとも 2 つのコントロールが必要です。  
+# <a name="how-to-display-error-icons-for-form-validation-with-the-windows-forms-errorprovider-component"></a>方法 : Windows フォーム ErrorProvider コンポーネントを使用してフォーム検証でエラー アイコンを表示する
+Windows フォームを使用することができます<xref:System.Windows.Forms.ErrorProvider>コンポーネントを無効なデータが入力されたときにエラー アイコンが表示されます。 それらの間 タブし、検証コードを呼び出すために、フォーム上には、少なくとも 2 つのコントロールが必要です。  
   
-### コントロールの値が無効の場合にエラー アイコンを表示するには  
+### <a name="to-display-an-error-icon-when-a-controls-value-is-invalid"></a>コントロールの値が無効である場合は、エラー アイコンを表示するには  
   
-1.  Windows フォームにテキスト ボックスなどのコントロールを 2 つ追加します。  
+1.  2 つのコントロールを追加 — たとえば、テキスト ボックス: Windows フォームにします。  
   
-2.  フォームに <xref:System.Windows.Forms.ErrorProvider> コンポーネントを追加します。  
+2.  追加、<xref:System.Windows.Forms.ErrorProvider>コンポーネントをフォームにします。  
   
-3.  1 番目のコントロールを選択し、そのコントロールの <xref:System.Windows.Forms.Control.Validating> イベント ハンドラーにコードを追加します。  このコードを正しく実行するには、イベントにプロシージャを関連付ける必要があります。  詳細については、「[方法 : Windows フォームで実行時にイベント ハンドラーを作成する](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md)」を参照してください。  
+3.  最初のコントロールを選択し、コードを追加してその<xref:System.Windows.Forms.Control.Validating>イベント ハンドラー。 このコードを正しく実行するためには、プロシージャは、イベントに接続する必要があります。 詳細については、次を参照してください。[する方法: Windows フォームの時間の実行時のイベント ハンドラーの作成](../../../../docs/framework/winforms/how-to-create-event-handlers-at-run-time-for-windows-forms.md)です。  
   
-     ユーザーが入力したデータの妥当性を検査するコードの例を次に示します。データが無効の場合は、<xref:System.Windows.Forms.ErrorProvider.SetError%2A> メソッドが呼び出されます。  <xref:System.Windows.Forms.ErrorProvider.SetError%2A> メソッドの 1 番目の引数は、隣にアイコンを表示するコントロールを指定します。  2 番目の引数は、表示するエラー テキストです。  
+     次のコードは、ユーザーが入力したデータの妥当性をテストします。データが有効でない場合、<xref:System.Windows.Forms.ErrorProvider.SetError%2A>メソッドが呼び出されます。 最初の引数、<xref:System.Windows.Forms.ErrorProvider.SetError%2A>メソッドでは、横にアイコンを表示するコントロールを指定します。 2 番目の引数は、表示するエラー テキストです。  
   
     ```vb  
     Private Sub TextBox1_Validating(ByVal Sender As Object, _  
@@ -47,7 +52,6 @@ Windows フォームの <xref:System.Windows.Forms.ErrorProvider> コンポー�
              ErrorProvider1.SetError(TextBox1, "")  
           End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -64,7 +68,6 @@ Windows フォームの <xref:System.Windows.Forms.ErrorProvider> コンポー�
           errorProvider1.SetError(textBox1, "Not an integer value.");  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -84,12 +87,11 @@ Windows フォームの <xref:System.Windows.Forms.ErrorProvider> コンポー�
        }  
     ```  
   
-     \([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、[!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]\) フォームのコンストラクターに次のコードを挿入してイベント ハンドラーを登録します。  
+     ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、 [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) フォームのコンストラクターに次のコードを挿入してイベント ハンドラーを登録します。  
   
     ```csharp  
     this.textBox1.Validating += new  
     System.ComponentModel.CancelEventHandler(this.textBox1_Validating);  
-  
     ```  
   
     ```cpp  
@@ -98,9 +100,9 @@ Windows フォームの <xref:System.Windows.Forms.ErrorProvider> コンポー�
        (this, &Form1::textBox1_Validating);  
     ```  
   
-4.  プロジェクトを実行します。  無効なデータ \(上の例では、数値以外のデータ\) を 1 番目のコントロールに入力し、タブで 2 番目のコントロールに移動します。  エラー アイコンが表示されたら、マウス ポインターでアイコンをポイントし、エラー テキストを表示します。  
+4.  プロジェクトを実行します。 (この例では、数値以外) では無効なデータを最初のコントロールとし、2 番目のタブに入力します。 エラー アイコンが表示されたら、ポイントにマウス ポインターがエラーのテキストを参照してください。  
   
-## 参照  
- <xref:System.Windows.Forms.ErrorProvider.SetError%2A>   
- [ErrorProvider コンポーネントの概要](../../../../docs/framework/winforms/controls/errorprovider-component-overview-windows-forms.md)   
- [方法 : Windows フォーム ErrorProvider コンポーネントで DataSet 内にエラーを表示する](../../../../docs/framework/winforms/controls/view-errors-within-a-dataset-with-wf-errorprovider-component.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.ErrorProvider.SetError%2A>  
+ [ErrorProvider コンポーネントの概要](../../../../docs/framework/winforms/controls/errorprovider-component-overview-windows-forms.md)  
+ [方法: Windows フォーム ErrorProvider コンポーネントで DataSet 内にエラーを表示する](../../../../docs/framework/winforms/controls/view-errors-within-a-dataset-with-wf-errorprovider-component.md)

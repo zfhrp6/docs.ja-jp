@@ -1,34 +1,39 @@
 ---
-title: "方法 : Windows フォームの MonthCalendar コントロールで日付の範囲を選択する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "予定表, 選択 (日付の範囲を)"
-  - "日付, 選択 (予定表コントロールから範囲を)"
-  - "例 [Windows フォーム], 予定表コントロール"
-  - "MonthCalendar コントロール [Windows フォーム], 選択 (日付の範囲を)"
+title: "方法 : Windows フォームの MonthCalendar コントロールで日付の範囲を選択する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- dates [Windows Forms], selecting range in calendar controls
+- examples [Windows Forms], calendar controls
+- calendars [Windows Forms], selecting date range
+- MonthCalendar control [Windows Forms], selecting date range
 ms.assetid: 95d9ab95-b0f8-4c19-9f63-b5cd4593a5d0
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7d6a8d156e6e9a8c5331bd3db1c8e584be5ac154
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームの MonthCalendar コントロールで日付の範囲を選択する
-ユーザーが日付の範囲を選択できる機能は、Windows フォームの <xref:System.Windows.Forms.MonthCalendar> コントロールが備える重要な機能です。  この機能は、単一の日付\/時間の値しか選択できない <xref:System.Windows.Forms.DateTimePicker> コントロールの日付選択機能を改善したものです。  <xref:System.Windows.Forms.MonthCalendar> コントロールのプロパティを使用すると、日付の範囲を設定したり、ユーザーが設定した選択範囲を取得できます。  選択範囲を設定する方法を次のコード例に示します。  
+# <a name="how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control"></a>方法 : Windows フォームの MonthCalendar コントロールで日付の範囲を選択する
+Windows フォームの重要な特徴<xref:System.Windows.Forms.MonthCalendar>コントロールは、ユーザーが日付の範囲を選択できます。 この機能が、日付選択機能の改良、<xref:System.Windows.Forms.DateTimePicker>コントロールで、ユーザーが 1 つの日付/時刻値を選択できるようにするだけです。 日付の範囲を設定またはのプロパティを使用して、ユーザー設定の選択範囲を取得することができます、<xref:System.Windows.Forms.MonthCalendar>コントロール。 次のコード例では、選択範囲を設定する方法を示します。  
   
-### 日付の範囲を選択するには  
+### <a name="to-select-a-range-of-dates"></a>日付の範囲を選択するには  
   
-1.  範囲内の最初の日付と最後の日付を表す <xref:System.DateTime> オブジェクトをそれぞれ作成します。  
+1.  作成<xref:System.DateTime>範囲内の最初と最後の日付を表すオブジェクト。  
   
     ```vb  
     Dim projectStart As Date = New DateTime(2001, 2, 13)  
@@ -62,7 +67,7 @@ caps.handback.revision: 17
   
      または  
   
-     <xref:System.Windows.Forms.MonthCalendar.SelectionStart%2A> プロパティおよび <xref:System.Windows.Forms.MonthCalendar.SelectionEnd%2A> プロパティを設定します。  
+     <xref:System.Windows.Forms.MonthCalendar.SelectionStart%2A> プロパティと <xref:System.Windows.Forms.MonthCalendar.SelectionEnd%2A> プロパティを設定します。  
   
     ```vb  
     MonthCalendar1.SelectionStart = projectStart  
@@ -79,8 +84,8 @@ caps.handback.revision: 17
     monthCalendar1->SelectionEnd = projectEnd;  
     ```  
   
-## 参照  
- [MonthCalendar コントロール](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)   
- [方法 : Windows フォームの MonthCalendar コントロールの外観を変更する](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)   
- [方法 : Windows フォームの MonthCalendar コントロールを使用して特定の日付を太字で表示する](../../../../docs/framework/winforms/controls/display-specific-days-in-bold-with-wf-monthcalendar-control.md)   
- [方法 : Windows フォームの MonthCalendar コントロールにおいて複数の月を表示する](../../../../docs/framework/winforms/controls/display-more-than-one-month-wf-monthcalendar-control.md)
+## <a name="see-also"></a>関連項目  
+ [MonthCalendar コントロール](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)  
+ [方法: Windows フォームの MonthCalendar コントロールの外観を変更する](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)  
+ [方法: Windows フォームの MonthCalendar コントロールを使用して特定の日付を太字で表示する](../../../../docs/framework/winforms/controls/display-specific-days-in-bold-with-wf-monthcalendar-control.md)  
+ [方法: Windows フォームの MonthCalendar コントロールにおいて複数の月を表示する](../../../../docs/framework/winforms/controls/display-more-than-one-month-wf-monthcalendar-control.md)

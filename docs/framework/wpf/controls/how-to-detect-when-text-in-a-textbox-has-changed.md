@@ -1,52 +1,58 @@
 ---
-title: "方法 : TextBox のテキストがいつ変更されたかを検出する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "検出 (テキストの変更を)"
-  - "テキストの変更, 検出"
-  - "TextBox コントロール, 検出 (テキストの変更を)"
+title: "方法 : TextBox のテキストがいつ変更されたかを検出する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- TextBox control [WPF], detecting text change
+- text change [WPF], detecting
+- detecting text change [WPF]
 ms.assetid: 1c39ee14-e37f-49fb-a0d1-a9824ca13584
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 92fc8995ab75cc25bac3bb21b1646052822c3721
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : TextBox のテキストがいつ変更されたかを検出する
-この例では、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> イベントを使用して、<xref:System.Windows.Controls.TextBox> コントロール内のテキストが変わるたびにメソッドを実行する 1 つの方法を示します。  
+# <a name="how-to-detect-when-text-in-a-textbox-has-changed"></a>方法 : TextBox のテキストがいつ変更されたかを検出する
+この例を使用する方法を示しています、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>イベント メソッドを実行するたびに内のテキスト、<xref:System.Windows.Controls.TextBox>コントロールが変更されました。  
   
- 変更用にモニターする <xref:System.Windows.Controls.TextBox> コントロールを含む [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の分離コード クラスでは、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> イベントの実行時に呼び出し用メソッドを挿入します。  このメソッドには、<xref:System.Windows.Controls.TextChangedEventHandler> デリゲートで想定された署名に一致する署名を含める必要があります。  
+ 分離コード クラスで、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を格納している、<xref:System.Windows.Controls.TextBox>変更については、監視するコントロールを挿入するたびに呼び出すメソッドを<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>イベントが発生します。  このメソッドのシグネチャが一致で期待される必要があります、<xref:System.Windows.Controls.TextChangedEventHandler>を委任します。  
   
- イベント ハンドラーは、<xref:System.Windows.Controls.TextBox> コントロールの内容が変更されるたびにユーザーまたはプログラムによって呼び出されます。  
+ イベント ハンドラーが呼び出されるとされるたびの内容、<xref:System.Windows.Controls.TextBox>ユーザー、またはプログラムによってコントロールを変更します。  
   
- **メモ :** このイベントは、<xref:System.Windows.Controls.TextBox> コントロールが作成され、テキストが初めて読み込まれるときに実行されます。  
+ **注:**このイベントが発生したときに、<xref:System.Windows.Controls.TextBox>コントロールが作成し、最初にテキストを格納します。  
   
-## 使用例  
- <xref:System.Windows.Controls.TextBox> コントロールを定義する [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] で、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> 属性に、イベント ハンドラーのメソッド名と一致する値を指定します。  
+## <a name="example"></a>例  
+ [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]を定義する、<xref:System.Windows.Controls.TextBox>コントロールを指定、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>の属性をイベント ハンドラー メソッドの名前に一致する値。  
   
- [!code-xml[TextBox_MiscCode#_TextChangedXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textchangedxaml)]  
+ [!code-xaml[TextBox_MiscCode#_TextChangedXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textchangedxaml)]  
   
-## 使用例  
- 変更用にモニターする <xref:System.Windows.Controls.TextBox> コントロールを含む [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の分離コード クラスでは、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> イベントの実行時に呼び出し用メソッドを挿入します。  このメソッドには、<xref:System.Windows.Controls.TextChangedEventHandler> デリゲートで想定された署名に一致する署名を含める必要があります。  
+## <a name="example"></a>例  
+ 分離コード クラスで、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を格納している、<xref:System.Windows.Controls.TextBox>変更については、監視するコントロールを挿入するたびに呼び出すメソッドを<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>イベントが発生します。  このメソッドのシグネチャが一致で期待される必要があります、<xref:System.Windows.Controls.TextChangedEventHandler>を委任します。  
   
  [!code-csharp[TextBox_MiscCode#_TextChangedEventHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml.cs#_textchangedeventhandler)]
  [!code-vb[TextBox_MiscCode#_TextChangedEventHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_textchangedeventhandler)]  
   
- イベント ハンドラーは、<xref:System.Windows.Controls.TextBox> コントロールの内容が変更されるたびにユーザーまたはプログラムによって呼び出されます。  
+ イベント ハンドラーが呼び出されるとされるたびの内容、<xref:System.Windows.Controls.TextBox>ユーザー、またはプログラムによってコントロールを変更します。  
   
- **メモ :** このイベントは、<xref:System.Windows.Controls.TextBox> コントロールが作成され、テキストが初めて読み込まれるときに実行されます。  
+ **注:**このイベントが発生したときに、<xref:System.Windows.Controls.TextBox>コントロールが作成し、最初にテキストを格納します。  
   
  コメント  
   
-## 参照  
- <xref:System.Windows.Controls.TextChangedEventArgs>   
- [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Controls.TextChangedEventArgs>  
+ [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)  
  [RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

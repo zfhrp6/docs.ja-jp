@@ -1,45 +1,49 @@
 ---
-title: "方法 : Windows フォーム ListView コントロールで項目を追加および削除する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "リスト ビュー, 追加 (リスト項目を)"
-  - "ListView コントロール [Windows フォーム], 追加 (リスト項目を)"
-  - "ListView コントロール [Windows フォーム], データの読み込み"
+title: "方法 : Windows フォーム ListView コントロールで項目を追加および削除する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- ListView control [Windows Forms], populating
+- list views [Windows Forms], adding list items
+- ListView control [Windows Forms], adding list items
 ms.assetid: 1b35a80a-edd8-495f-a807-a28c4aae52c6
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 4b7c9d92e4ba58ae5c5f2cbff1c79fd7a3ae673a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム ListView コントロールで項目を追加および削除する
-Windows フォームの <xref:System.Windows.Forms.ListView> コントロールに項目を追加するには、項目を指定し、その項目にプロパティを割り当てます。  リスト項目の追加または削除は、いつでも実行できます。  
+# <a name="how-to-add-and-remove-items-with-the-windows-forms-listview-control"></a>方法 : Windows フォーム ListView コントロールで項目を追加および削除する
+Windows フォームに項目を追加するプロセス<xref:System.Windows.Forms.ListView>コントロールは、主にアイテムを指定して、プロパティを割り当てます。 追加またはリスト項目の削除は、いつでも実行できます。  
   
-### プログラムによって項目を追加するには  
+### <a name="to-add-items-programmatically"></a>プログラムからアイテムを追加するには  
   
-1.  <xref:System.Windows.Forms.ListView.Items%2A> プロパティの <xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A> メソッドを使用します。  
+1.  使用して、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.ListView.Items%2A>プロパティです。  
   
      [!code-csharp[System.Windows.Forms.ListViewLegacyTopics#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/CS/Class1.cs#11)]
      [!code-vb[System.Windows.Forms.ListViewLegacyTopics#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/VB/Class1.vb#11)]  
   
-### プログラムによって項目を削除するには  
+### <a name="to-remove-items-programmatically"></a>項目をプログラムで削除するには  
   
-1.  <xref:System.Windows.Forms.ListView.Items%2A> プロパティの <xref:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt%2A> メソッドまたは <xref:System.Windows.Forms.ListView.ListViewItemCollection.Clear%2A> メソッドを使用します。  <xref:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt%2A> メソッドは 1 つの項目を削除します。<xref:System.Windows.Forms.ListView.ListViewItemCollection.Clear%2A> メソッドはリストのすべての項目を削除します。  
+1.  使用して、<xref:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt%2A>または<xref:System.Windows.Forms.ListView.ListViewItemCollection.Clear%2A>のメソッド、<xref:System.Windows.Forms.ListView.Items%2A>プロパティです。 <xref:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt%2A>メソッドは、1 つの項目を削除;<xref:System.Windows.Forms.ListView.ListViewItemCollection.Clear%2A>メソッドは、一覧からすべての項目を削除します。  
   
      [!code-csharp[System.Windows.Forms.ListViewLegacyTopics#12](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/CS/Class1.cs#12)]
      [!code-vb[System.Windows.Forms.ListViewLegacyTopics#12](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewLegacyTopics/VB/Class1.vb#12)]  
   
-## 参照  
- <xref:System.Windows.Forms.ListView>   
- [ListView コントロール](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.ListView>  
+ [ListView コントロール](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)  
  [ListView コントロールの概要](../../../../docs/framework/winforms/controls/listview-control-overview-windows-forms.md)

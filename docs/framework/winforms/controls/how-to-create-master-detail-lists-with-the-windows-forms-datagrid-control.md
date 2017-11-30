@@ -1,48 +1,53 @@
 ---
-title: "方法 : Windows フォーム DataGrid コントロールを使用してマスター/詳細リストを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "DataGrid コントロール [Windows フォーム], マスター/詳細リスト"
-  - "マスター/詳細リスト"
-  - "関連テーブル, 表示 (DataGrid コントロールで)"
+title: "方法: Windows フォーム DataGrid コントロールにマスター/詳細形式の一覧を作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- master-details lists
+- DataGrid control [Windows Forms], master-details lists
+- related tables [Windows Forms], displaying in DataGrid control
 ms.assetid: 20388c6a-94f9-4d96-be18-8c200491247f
-caps.latest.revision: 15
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 63cb647e2ed6dcbc97fab15db3166b55c52f635a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム DataGrid コントロールを使用してマスター/詳細リストを作成する
+# <a name="how-to-create-masterdetail-lists-with-the-windows-forms-datagrid-control"></a>方法 : Windows フォーム DataGrid コントロールを使用してマスター/詳細リストを作成する
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
+>  <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。 詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
   
- <xref:System.Data.DataSet> に一連の互いに関連するテーブルが含まれている場合は、2 つの <xref:System.Windows.Forms.DataGrid> コントロールを使用してデータをマスター\/詳細形式で表示できます。  一方の <xref:System.Windows.Forms.DataGrid> をマスター グリッドに指定し、もう一方を詳細グリッドに指定します。  マスター リストのエントリを選択すると、関連するすべての子エントリが詳細リストに表示されます。  たとえば、<xref:System.Data.DataSet> に Customers テーブルおよび関連する Orders テーブルが含まれている場合は、Customers テーブルをマスター グリッドに指定し、Orders テーブルを詳細グリッドに指定します。  マスター グリッドから顧客が選択されると、Orders テーブル内でその顧客に関連するすべての注文が、詳細グリッドに表示されます。  
+ 場合、<xref:System.Data.DataSet>は一連の関連テーブルの 2 つ使用できます<xref:System.Windows.Forms.DataGrid>マスター/詳細形式でデータを表示するコントロール。 1 つ<xref:System.Windows.Forms.DataGrid>マスター グリッドに指定し、詳細グリッドに、もう一方を指定します。 マスターの一覧にエントリを選択すると、詳細の一覧ですべての関連する子エントリのとおりです。 たとえば場合、 <xref:System.Data.DataSet> Customers テーブルと関連の Orders テーブルを含むマスター グリッドに Customers テーブルと Orders テーブルに、詳細グリッドを指定するとします。 マスター グリッドから、顧客がオンの場合、すべての注文を Orders テーブル内でその顧客に関連付けられているの詳細グリッドに表示されます。  
   
-### プログラムでマスター\/詳細リレーションシップを設定するには  
+### <a name="to-set-a-masterdetail-relationship-programmatically"></a>マスター/詳細関係をコードから設定するには  
   
-1.  2 つの <xref:System.Windows.Forms.DataGrid> コントロールを新規作成し、そのプロパティを設定します。  
+1.  新しい 2 つ作成<xref:System.Windows.Forms.DataGrid>を制御し、それらのプロパティを設定します。  
   
 2.  データセットにテーブルを追加します。  
   
-3.  作成するリレーションシップを表す <xref:System.Data.DataRelation> 型の変数を宣言します。  
+3.  型の変数を宣言<xref:System.Data.DataRelation>を作成するリレーションシップを表します。  
   
-4.  リレーションシップの名前と、2 つのテーブルを結び付けるテーブル、列、および項目を指定して、リレーションシップをインスタンス化します。  
+4.  リレーションシップの名前を指定して、テーブル、列、および 2 つのテーブルを関連付ける項目を指定することによって、リレーションシップのインスタンスを作成します。  
   
-5.  <xref:System.Data.DataSet> オブジェクトの <xref:System.Data.DataSet.Relations%2A> コレクションにリレーションシップを追加します。  
+5.  リレーションシップを追加、<xref:System.Data.DataSet>オブジェクトの<xref:System.Data.DataSet.Relations%2A>コレクション。  
   
-6.  <xref:System.Windows.Forms.DataGrid> の <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> メソッドを使用して、各グリッドを <xref:System.Data.DataSet> にバインドします。  
+6.  使用して、<xref:System.Windows.Forms.DataGrid.SetDataBinding%2A>のメソッド、<xref:System.Windows.Forms.DataGrid>のグリッドの各バインドに、<xref:System.Data.DataSet>です。  
   
-     次の例は、前に生成した <xref:System.Data.DataSet> \(`ds`\) 内の Customers テーブルと Orders テーブルの間にマスター\/詳細リレーションシップを設定する方法を示しています。  
+     次の例は、Customers と Orders テーブル間で以前に生成されたマスター/詳細関係を設定する方法を示します<xref:System.Data.DataSet>(`ds`)。  
   
     ```vb  
     Dim myDataRelation As DataRelation  
@@ -53,7 +58,6 @@ caps.handback.revision: 15
     ds.Relations.Add(myDataRelation)  
     GridOrders.SetDataBinding(ds, "Customers")  
     GridDetails.SetDataBinding(ds, "Customers.CustOrd")  
-  
     ```  
   
     ```csharp  
@@ -63,7 +67,6 @@ caps.handback.revision: 15
     ds.Relations.Add(myDataRelation);  
     GridOrders.SetDataBinding(ds,"Customers");  
     GridDetails.SetDataBinding(ds,"Customers.CustOrd");  
-  
     ```  
   
     ```cpp  
@@ -77,7 +80,7 @@ caps.handback.revision: 15
     GridDetails->SetDataBinding(ds, "Customers.CustOrd");  
     ```  
   
-## 参照  
- [DataGrid コントロール](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)   
- [DataGrid コントロールの概要](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)   
- [方法 : データ ソースに Windows フォーム DataGrid コントロールをバインドする](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
+## <a name="see-also"></a>関連項目  
+ [DataGrid コントロール](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  
+ [DataGrid コントロールの概要](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)  
+ [方法: データ ソースに Windows フォーム DataGrid コントロールをバインドする](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)

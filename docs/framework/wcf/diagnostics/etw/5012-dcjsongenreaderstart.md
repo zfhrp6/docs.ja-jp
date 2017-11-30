@@ -1,35 +1,38 @@
 ---
-title: "5012 - DCJsonGenReaderStart | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 5012 - DCJsonGenReaderStart
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6d2ad3c9-47ee-4e77-b1c6-259ab15b0cfb
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: dc7c4e9a3d3e1b5cb844c039d66abf7e33c9cedd
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 5012 - DCJsonGenReaderStart
-## プロパティ  
+# <a name="5012---dcjsongenreaderstart"></a>5012 - DCJsonGenReaderStart
+## <a name="properties"></a>プロパティ  
   
 |||  
 |-|-|  
 |ID|5012|  
 |キーワード|シリアル化|  
 |レベル|詳細|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Debug|  
+|チャネル|Microsoft-Windows-Application Server-Applications/Debug|  
   
-## 説明  
+## <a name="description"></a>説明  
  このイベントは、Json の生成リーダーを開始すると生成されます。  
   
-## メッセージ  
+## <a name="message"></a>メッセージ  
  Json の %2 の %1 リーダーの生成を開始します。  
   
-## 詳細
+## <a name="details"></a>詳細

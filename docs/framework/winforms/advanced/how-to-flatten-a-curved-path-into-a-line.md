@@ -1,40 +1,40 @@
 ---
-title: "方法 : 曲線のパスを直線に平坦化する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "曲線, 平坦化"
-  - "描画, 平坦化 (曲線を)"
-  - "Flatten メソッド"
-  - "グラフィックス, 平坦化 (曲線を直線に)"
-  - "GraphicsPath オブジェクト"
-  - "パス, 平坦化"
+title: "方法 : 曲線のパスを直線に平坦化する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- graphics [Windows Forms], flattening curves into lines
+- curves [Windows Forms], flattening
+- GraphicsPath object
+- paths [Windows Forms], flattening
+- drawing [Windows Forms], flattening curves
 ms.assetid: e654b8de-25f4-4735-9208-42e4514a589c
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 62dedc987c2b622dc3f3aa81dac3cdea6dd75740
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 曲線のパスを直線に平坦化する
-<xref:System.Drawing.Drawing2D.GraphicsPath> オブジェクトは、複数の直線とベジエ スプラインから成るシーケンスを格納します。  いくつかの種類の曲線 \(楕円、円弧、カーディナル スプライン\) をパスに追加できますが、各曲線は、パス内に格納される前にベジエ スプラインに変換されます。  パスの平坦化は、パス内の各ベジエ スプラインを複数の直線から成るシーケンスに変換する処理です。  1 つのパスが平坦化の前後でどのように変化するかを次の図に示します。  
+# <a name="how-to-flatten-a-curved-path-into-a-line"></a>方法 : 曲線のパスを直線に平坦化する
+A<xref:System.Drawing.Drawing2D.GraphicsPath>オブジェクトは、一連の行とベジエ スプラインを格納します。 パスをいくつかの種類の曲線 (省略記号ボタン、円弧をカーディナル スプライン) を追加できますが、パスに保存する前に、各曲線がベジエ スプラインに変換されます。 パスのフラット化は、パス内の各ベジエ スプラインを一連の直線に変換するので構成されます。 次の図は前に、と後のフラット化されたパスを示します。  
   
- ![直線と曲線](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art32a.png "AboutGdip02\_Art32A")  
+ ![直線と曲線](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art32a.gif "AboutGdip02_Art32A")  
   
-### パスを平坦化するには  
+### <a name="to-flatten-a-path"></a>パスを平坦化します。  
   
--   <xref:System.Drawing.Drawing2D.GraphicsPath> オブジェクトの <xref:System.Drawing.Drawing2D.GraphicsPath.Flatten%2A> メソッドを呼び出します。  <xref:System.Drawing.Drawing2D.GraphicsPath.Flatten%2A> メソッドは、平坦化されたパスと元のパスの間の最大距離を指定する平坦さの引数を受け取ります。  
+-   呼び出す、<xref:System.Drawing.Drawing2D.GraphicsPath.Flatten%2A>のメソッド、<xref:System.Drawing.Drawing2D.GraphicsPath>オブジェクト。 <xref:System.Drawing.Drawing2D.GraphicsPath.Flatten%2A>メソッドは、フラット化されたパスと、元のパスの間で最大距離を指定する、平坦度引数を受け取ります。  
   
-## 参照  
- <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=fullName>   
- [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=nameWithType>  
+ [直線、曲線、および図形](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
  [パスの作成および描画](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)

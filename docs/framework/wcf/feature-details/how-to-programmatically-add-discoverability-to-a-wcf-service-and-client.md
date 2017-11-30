@@ -1,39 +1,42 @@
 ---
-title: "プログラムを使用して探索可能性に WCF サービスとクライアントを追加する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "プログラムを使用して探索可能性に WCF サービスとクライアントを追加する方法"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f94d99542a07711f618bc02316e6f61f6df647d8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# プログラムを使用して探索可能性に WCF サービスとクライアントを追加する方法
+# <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>プログラムを使用して探索可能性に WCF サービスとクライアントを追加する方法
 このトピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスを探索可能にする方法について説明します。 基にして、[自己ホスト](http://go.microsoft.com/fwlink/?LinkId=145523)サンプルです。  
   
 ### <a name="to-configure-the-existing-self-host-service-sample-for-discovery"></a>既存の自己ホスト サービス サンプルを探索用に構成するには  
   
 1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] で自己ホスト ソリューションを開きます。 このサンプルは、TechnologySamples\Basic\Service\Hosting\SelfHost ディレクトリにあります。  
   
-2.  `System.ServiceModel.Discovery.dll` への参照をサービス プロジェクトに追加します。 "System. ServiceModel.Discovery.dll またはその依存関係の&1; つの以降のバージョンが必要です、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]プロジェクト... に指定されているよりも" ソリューション エクスプ ローラーでプロジェクトを右クリックして、このメッセージを表示する場合は**プロパティ**します。 **プロジェクトのプロパティ**ウィンドウことを確認して、**ターゲット フレームワーク**は[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]です。  
+2.  `System.ServiceModel.Discovery.dll` への参照をサービス プロジェクトに追加します。 "System エラー メッセージが表示することがあります. ServiceModel.Discovery.dll またはその依存関係の 1 つの以降のバージョンが必要です、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] ... プロジェクトで指定された値" このメッセージを表示する場合は、ソリューション エクスプ ローラーでプロジェクトを右クリックして選択**プロパティ**です。 **プロジェクト プロパティ**ウィンドウ、ことを確認して、**ターゲット フレームワーク**は[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]します。  
   
 3.  Service.cs ファイルを開き、次の `using` ステートメントを追加します。  
   
-    ```  
+    ```csharp  
     using System.ServiceModel.Discovery;  
     ```  
   
-4.  `Main()`メソッド内で、`using`ステートメントを追加、 <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>をサービス ホストのインスタンス。  
+4.  `Main()` メソッドの `using` ステート内で、<xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> インスタンスをサービス ホストに追加します。  
   
-    ```  
+    ```csharp  
     public static void Main()  
     {  
         // Create a ServiceHost for the CalculatorService type.  
@@ -47,11 +50,11 @@ caps.handback.revision: 13
     }  
     ```  
   
-     <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>に適用されたサービスが探索可能なことを指定します。  
+     <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> は、それが適用されているサービスが探索可能であることを指定します。  
   
-5.  追加、 <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> 、サービス ホストを追加するコードの直後後に、 <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>します。  
+5.  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> を、<xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> を追加するコードの直後でサービス ホストに追加します。  
   
-    ```  
+    ```csharp  
     // Add ServiceDiscoveryBehavior  
     serviceHost.Description.Behaviors.Add(new ServiceDiscoveryBehavior());  
   
@@ -67,22 +70,21 @@ caps.handback.revision: 13
   
 2.  `System.ServiceModel.dll` および `System.ServiceModel.Discovery.dll` への参照を追加します。  
   
-3.  GeneratedClient.cs ファイルおよび App.config ファイルを、既存のクライアント プロジェクトから新しい DiscoveryClientApp プロジェクトに追加します。 これを行うには、内のファイルを右クリックし、**ソリューション エクスプ ローラー**を選択**コピー**、クリックして、 **DiscoveryClientApp**プロジェクトを右クリックして選択**貼り付け**します。  
+3.  GeneratedClient.cs ファイルおよび App.config ファイルを、既存のクライアント プロジェクトから新しい DiscoveryClientApp プロジェクトに追加します。 これを行うには、内のファイルを右クリックし、**ソリューション エクスプ ローラー****コピー**、し、選択、 **DiscoveryClientApp**プロジェクトを右クリックして選択**貼り付け**です。  
   
 4.  Program.cs を開きます。  
   
 5.  次の `using` ステートメントを追加します。  
   
-    ```  
+    ```csharp  
     using System.ServiceModel;  
     using System.ServiceModel.Discovery;  
     using Microsoft.ServiceModel.Samples;  
-  
     ```  
   
 6.  `FindCalculatorServiceAddress()` という静的メソッドを `Program` クラスに追加します。  
   
-    ```  
+    ```csharp  
     static EndpointAddress FindCalculatorServiceAddress()  
     {  
     }  
@@ -90,9 +92,9 @@ caps.handback.revision: 13
   
      このメソッドは、探索を使用して `CalculatorService` サービスを検索します。  
   
-7.  内部、`FindCalculatorServiceAddress`メソッドを新規作成<xref:System.ServiceModel.Discovery.DiscoveryClient>を渡して、インスタンス、 <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>コンス トラクターにします。  
+7.  `FindCalculatorServiceAddress` メソッド内で、新しい <xref:System.ServiceModel.Discovery.DiscoveryClient> インスタンスを作成し、<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> をコンストラクターに渡します。  
   
-    ```  
+    ```csharp  
     static EndpointAddress FindCalculatorServiceAddress()  
     {  
         // Create DiscoveryClient  
@@ -100,18 +102,18 @@ caps.handback.revision: 13
     }  
     ```  
   
-     これにより[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]を<xref:System.ServiceModel.Discovery.DiscoveryClient>クラスは、標準の UDP 探索エンドポイントを使用して探索メッセージを送受信する必要があります。  
+     これにより、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は、<xref:System.ServiceModel.Discovery.DiscoveryClient> クラスが標準の UDP 探索エンドポイントを使用して探索メッセージを送受信する必要があることを認識します。  
   
-8.  次の行で、<xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A>メソッドを指定し、 <xref:System.ServiceModel.Discovery.FindCriteria>を検索する対象のサービス コントラクトを格納しているインスタンス。 ここでは、`ICalculator` を指定します。  
+8.  次の行では、<xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> メソッドを呼び出し、検索対象のサービス コントラクトを含む <xref:System.ServiceModel.Discovery.FindCriteria> インスタンスを指定します。 ここでは、`ICalculator` を指定します。  
   
-    ```  
+    ```csharp  
     // Find ICalculatorService endpoints              
     FindResponse findResponse = discoveryClient.Find(new FindCriteria(typeof(ICalculator)));  
     ```  
   
-9. 呼び出しの後に<xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A>、少なくとも&1; つの一致するサービスがないかどうかを確認し、返す、 <xref:System.ServiceModel.EndpointAddress>最初に一致するサービスのです。 一致するサービスがない場合は `null` を返します。  
+9. <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> への呼び出しの後で、一致するサービスが少なくとも 1 つあるかどうかを確認し、最初に一致したサービスの <xref:System.ServiceModel.EndpointAddress> を返します。 一致するサービスがない場合は `null` を返します。  
   
-    ```  
+    ```csharp  
     if (findResponse.Endpoints.Count > 0)  
     {  
         return findResponse.Endpoints[0].Address;  
@@ -124,7 +126,7 @@ caps.handback.revision: 13
   
 10. `InvokeCalculatorService` という名前の静的メソッドを `Program` クラスに追加します。  
   
-    ```  
+    ```csharp  
     static void InvokeCalculatorService(EndpointAddress endpointAddress)  
     {  
     }  
@@ -134,21 +136,21 @@ caps.handback.revision: 13
   
 11. `InvokeCalculatorService` メソッド内で、`CalculatorServiceClient` クラスのインスタンスを作成します。 このクラスは、[自己ホスト](http://go.microsoft.com/fwlink/?LinkId=145523)サンプルです。 これは、Svcutil.exe を使用して生成されました。  
   
-    ```  
+    ```csharp  
     // Create a client  
     CalculatorClient client = new CalculatorClient();  
     ```  
   
 12. 次の行では、クライアントのエンドポイント アドレスを、`FindCalculatorServiceAddress()` から返されたエンドポイント アドレスに設定します。  
   
-    ```  
+    ```csharp  
     // Connect to the discovered service endpoint  
     client.Endpoint.Address = endpointAddress;  
     ```  
   
 13. 前の手順のコードの直後に、電卓サービスで公開されたメソッドを呼び出します。  
   
-    ```  
+    ```csharp  
     Console.WriteLine("Invoking CalculatorService at {0}", endpointAddress);  
   
     double value1 = 100.00D;  
@@ -177,7 +179,7 @@ caps.handback.revision: 13
   
 14. `Main()` クラスの `Program` メソッドにコードを追加して、`FindCalculatorServiceAddress` を呼び出します。  
   
-    ```  
+    ```csharp  
     public static void Main()  
     {  
         EndpointAddress endpointAddress = FindCalculatorServiceAddress();  
@@ -186,7 +188,7 @@ caps.handback.revision: 13
   
 15. 次の行では、`InvokeCalculatorService()` を呼び出し、`FindCalculatorServiceAddress()` から返されたエンドポイント アドレスを渡します。  
   
-    ```  
+    ```csharp  
     if (endpointAddress != null)  
     {  
         InvokeCalculatorService(endpointAddress);  
@@ -228,10 +230,9 @@ caps.handback.revision: 13
     ```  
   
 ## <a name="example"></a>例  
- このサンプルで使用されているコード全体の一覧を次に示します。 このコードに基づいているため、[自己ホスト](http://go.microsoft.com/fwlink/?LinkId=145523)サンプルを変更されているファイルのみが一覧表示します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]自己ホスト サンプルを参照してください[のセットアップ手順](http://go.microsoft.com/fwlink/?LinkId=145522)します。  
+ このサンプルで使用されているコード全体の一覧を次に示します。 このコードに基づいているため、[自己ホスト](http://go.microsoft.com/fwlink/?LinkId=145523)サンプルでは、変更されたファイルのみが表示されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]自己ホスト サンプルを参照してください[のセットアップ手順](http://go.microsoft.com/fwlink/?LinkId=145522)です。  
   
-```  
-  
+```csharp  
 // Service.cs  
 using System;  
 using System.Configuration;  
@@ -267,7 +268,7 @@ namespace Microsoft.ServiceModel.Samples
 }  
 ```  
   
-```  
+```csharp  
 // Program.cs  
 using System;  
 using System.Collections.Generic;  
@@ -348,9 +349,7 @@ namespace DiscoveryClientApp
     }  
 }  
 ```  
-  
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->  
-  
+
 ## <a name="see-also"></a>関連項目  
- [WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)   
+ [WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
  [WCF Discovery オブジェクト モデル](../../../../docs/framework/wcf/feature-details/wcf-discovery-object-model.md)

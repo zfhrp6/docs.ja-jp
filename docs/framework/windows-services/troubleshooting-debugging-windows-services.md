@@ -1,35 +1,38 @@
 ---
-title: "Windows サービスをデバッグする場合 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "デバッグ [Visual Studio], Windows サービス"
-  - "デバッグ (Windows サービス アプリケーションの)"
-  - "サービス, デバッグ"
-  - "サービス, トラブルシューティング"
-  - "トラブルシューティング (デバッグ), Windows サービス"
-  - "トラブルシューティング (サービス アプリケーション)"
-  - "Windows サービス アプリケーション, デバッグ"
-  - "Windows サービス アプリケーション, トラブルシューティング"
+title: "Windows サービスをデバッグする場合"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- debugging Windows Service applications
+- debugging [Visual Studio], Windows services
+- troubleshooting service applications
+- services, troubleshooting
+- troubleshooting debugging, Windows Services
+- Windows Service applications, debugging
+- services, debugging
+- Windows Service applications, troubleshooting
 ms.assetid: cf859d4c-f04c-4cb7-81e3-bc7de8bea190
-caps.latest.revision: 8
-author: "ghogen"
-ms.author: "ghogen"
-manager: "douge"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: ghogen
+ms.author: ghogen
+manager: douge
+ms.openlocfilehash: 51c28f6e9b6fa2974fb9861716b2c9fc2a38fe1a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Windows サービスをデバッグする場合
-Windows サービス アプリケーションをデバッグするときには、サービスと **Windows サービス マネージャー**が対話します。  **サービス マネージャー**は、<xref:System.ServiceProcess.ServiceBase.OnStart%2A> メソッドを呼び出してサービスを起動し、<xref:System.ServiceProcess.ServiceBase.OnStart%2A> メソッドがリターンするのを 30 秒間待ちます。  この時間内にメソッドがリターンしない場合、マネージャーはサービス起動エラーを表示します。  
+# <a name="troubleshooting-debugging-windows-services"></a>Windows サービスをデバッグする場合
+Windows サービス アプリケーション、サービスをデバッグする場合に、 **Windows サービス マネージャー**対話します。 **Service Manager**を呼び出して、サービスを開始、<xref:System.ServiceProcess.ServiceBase.OnStart%2A>メソッド、および、30 秒間の待機時間、<xref:System.ServiceProcess.ServiceBase.OnStart%2A>を返すメソッド。 この時点で、メソッドが返されない場合、マネージャーは、サービスを開始することはできません、エラーを表示します。  
   
- 「[方法 : Windows サービス アプリケーションをデバッグする](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)」で説明しているように、<xref:System.ServiceProcess.ServiceBase.OnStart%2A> メソッドをデバッグするときには、この 30 秒のタイム リミットに注意してください。  <xref:System.ServiceProcess.ServiceBase.OnStart%2A> メソッドにブレークポイントを設定し、30 秒以内にそこを通過しなかった場合、マネージャーはサービスを起動しません。  
+ デバッグする場合に、<xref:System.ServiceProcess.ServiceBase.OnStart%2A>メソッド」の説明に従って[する方法: Windows サービス アプリケーションのデバッグ](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)30 秒間のこのを認識する必要があります。 ブレークポイントを配置する場合、<xref:System.ServiceProcess.ServiceBase.OnStart%2A>メソッドと 30 秒以内にしていないステップは、管理者は、サービスを開始していません。  
   
-## 参照  
- [方法 : Windows サービス アプリケーションをデバッグする](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)   
+## <a name="see-also"></a>関連項目  
+ [方法: Windows サービス アプリケーションのデバッグ](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)  
  [Windows サービス アプリケーションの概要](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)

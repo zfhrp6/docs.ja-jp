@@ -1,66 +1,70 @@
 ---
-title: "方法 : フォント メトリックを取得する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "フォント メトリック, 取得"
-  - "フォント, 取得 (メトリックを)"
+title: "方法 : フォント メトリックを取得する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- fonts [Windows Forms], obtaining metrics
+- font metrics [Windows Forms], obtaining
 ms.assetid: ff7c0616-67f7-4fa2-84ee-b8d642f2b09b
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 5b45f3f903c02d056fc457b652b01fb7b59413a8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : フォント メトリックを取得する
-<xref:System.Drawing.FontFamily> クラスには、特定のファミリとスタイルの組み合わせに対して各種のメトリックを取得する次のメソッドが用意されています。  
+# <a name="how-to-obtain-font-metrics"></a>方法 : フォント メトリックを取得する
+<xref:System.Drawing.FontFamily>クラスがファミリ/スタイルの特定の組み合わせに対するさまざまなメトリックを取得する次のメソッドを提供します。  
   
--   <xref:System.Drawing.FontFamily.GetEmHeight%2A>\(FontStyle\)  
+-   <xref:System.Drawing.FontFamily.GetEmHeight%2A>(FontStyle)  
   
--   <xref:System.Drawing.FontFamily.GetCellAscent%2A>\(FontStyle\)  
+-   <xref:System.Drawing.FontFamily.GetCellAscent%2A>(FontStyle)  
   
--   <xref:System.Drawing.FontFamily.GetCellDescent%2A>\(FontStyle\)  
+-   <xref:System.Drawing.FontFamily.GetCellDescent%2A>(FontStyle)  
   
--   <xref:System.Drawing.FontFamily.GetLineSpacing%2A>\(FontStyle\)  
+-   <xref:System.Drawing.FontFamily.GetLineSpacing%2A>(FontStyle)  
   
- これらのメソッドによって返される数値は、フォントのデザイン単位で測定され、特定の <xref:System.Drawing.Font> オブジェクトのサイズや単位には依存しません。  
+ これらのメソッドによって返される数値をフォント デザイン単位でのサイズと、特定のユニットの独立したに<xref:System.Drawing.Font>オブジェクト。  
   
- 各種のメトリックを次の図に示します。  
+ 次の図は、さまざまな指標を示します。  
   
  ![フォント テキスト](../../../../docs/framework/winforms/advanced/media/fontstext7a.png "fontstext7A")  
   
-## 使用例  
- Arial フォント ファミリの標準スタイルのメトリックの例を次に示します。  このコードでは、Arial ファミリに基づいてサイズが 16 ピクセルの <xref:System.Drawing.Font> オブジェクトも作成し、この特定の <xref:System.Drawing.Font> オブジェクトのメトリック \(ピクセル単位\) を表示します。  
+## <a name="example"></a>例  
+ 次の例では、Arial フォント ファミリの標準のスタイルのメトリックを表示します。 コードでも作成、 <xref:System.Drawing.Font> 16 ピクセルのサイズと、その特定のピクセル単位のメトリックが表示されます (Arial ファミリに基づく) オブジェクト<xref:System.Drawing.Font>オブジェクト。  
   
- プログラム例による出力を次の図に示します。  
+ 次の図は、コード例の出力を示します。  
   
  ![フォント テキスト](../../../../docs/framework/winforms/advanced/media/csfontstext8.png "csFontsText8")  
   
- 上の図に示されている出力の最初の 2 行に注目してください。  <xref:System.Drawing.Font> オブジェクトはサイズとして 16 を返し、<xref:System.Drawing.FontFamily> オブジェクトは高さとして 2,048 em を返します。  これら 2 つの数値 \(16 および 2,048\) は、フォントのデザイン単位と <xref:System.Drawing.Font> オブジェクトの単位 \(この場合はピクセル\) の変換のキーとなります。  
+ 前の図では出力の最初の 2 つの行に注意してください。 <xref:System.Drawing.Font>オブジェクトは、16 のサイズを返しますと<xref:System.Drawing.FontFamily>オブジェクトは、em 高の 2,048 を返します。 これら 2 つの数値 (16 と 2,048) は、キーをフォント デザイン単位と、単位 (この場合はピクセル) の間の変換、<xref:System.Drawing.Font>オブジェクト。  
   
- たとえば、次のように、アセントをデザイン単位からピクセル単位に変換できます。  
+ たとえば、次のようにアセントをデザイン単位からピクセルに変換できます。  
   
  ![フォント テキスト](../../../../docs/framework/winforms/advanced/media/fontstext9.png "FontsText9")  
   
- 次のコードは、<xref:System.Drawing.PointF> オブジェクトの <xref:System.Drawing.PointF.Y%2A> データ メンバーを設定することによって、テキストを垂直方向に配置しています。  y 座標は、テキストを改行するたびに `font.Height` ずつ増加します。  <xref:System.Drawing.Font> オブジェクトの <xref:System.Drawing.Font.Height%2A> プロパティは、その特定の <xref:System.Drawing.Font> オブジェクトの行間隔 \(ピクセル単位\) を返します。  この例では、<xref:System.Drawing.Font.Height%2A> によって返される数字は 19 です。  これは、行間隔をピクセル単位に変換して得られる数値 \(小数値は四捨五入\) と同じです。  
+ 次のコードを配置テキスト垂直方向に設定して、<xref:System.Drawing.PointF.Y%2A>のデータ メンバー、<xref:System.Drawing.PointF>オブジェクト。 Y 座標が増加して`font.Height`テキストの改行します。 <xref:System.Drawing.Font.Height%2A>のプロパティ、<xref:System.Drawing.Font>オブジェクトは、その特定の行間 (ピクセル単位) でを返します<xref:System.Drawing.Font>オブジェクト。 この例では、によって返される数<xref:System.Drawing.Font.Height%2A>は 19 です。 これが行間隔をピクセル単位に変換することによって得られる数値 (整数に切り上げられます) と同じであることに注意してください。  
   
- em 高 \(サイズまたは em サイズともいいます\) は、アセントとディセントの合計ではないことに注意してください。  アセントとディセントの合計は、セル高と呼ばれます。  セル高から内部レディングを引いたものが、em 高です。  セルの高さに外部レディングを加えた値が、行間隔になります。  
+ Em 高 (サイズまたは em サイズとも呼ばれます) がアセントと降下の合計ではないことに注意してください。 アセントと降下の合計には、セルの高さが呼び出されます。 内部の先頭から引いたセルの高さは、em の高さと同じです。 セルの高さと外部の先頭には、線の間隔と同じです。  
   
  [!code-csharp[System.Drawing.FontsAndText#71](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.FontsAndText/CS/Class1.cs#71)]
  [!code-vb[System.Drawing.FontsAndText#71](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.FontsAndText/VB/Class1.vb#71)]  
   
-## コードのコンパイル  
- 前述の例は Windows フォームと一緒に使用することが想定されていて、<xref:System.Windows.Forms.PaintEventHandler> のパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventHandler> のパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` を必要とします。  
   
-## 参照  
- [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)   
+## <a name="see-also"></a>関連項目  
+ [Windows フォームにおけるグラフィックスと描画](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
  [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)

@@ -1,63 +1,67 @@
 ---
-title: "方法 : Windows フォームでデータ間を移動する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "CurrencyManager クラス, 移動 (Windows フォームのデータを)"
-  - "カーソル, データ ソース"
-  - "データ [Windows フォーム], 移動"
-  - "データ ソース, Windows フォーム"
-  - "Windows フォーム, 移動"
+title: "方法 : Windows フォームでデータ間を移動する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- cursors [Windows Forms], data sources
+- data sources [Windows Forms], Windows Forms
+- Windows Forms, navigating
+- CurrencyManager class [Windows Forms], navigating Windows Forms data
+- data [Windows Forms], navigating
 ms.assetid: 97360f7b-b181-4084-966a-4c62518f735b
-caps.latest.revision: 12
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7c754bba18e93f63306701381f66af04b593c473
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームでデータ間を移動する
-Windows アプリケーションで、データ ソースのレコード間を最も簡単な方法で移動するには、<xref:System.Windows.Forms.BindingSource> コンポーネントをデータ ソースにバインドし、その <xref:System.Windows.Forms.BindingSource> にコントロールをバインドします。  その後で、<xref:System.Windows.Forms.BindingSource> の組み込みの移動メソッド \(たとえば、<xref:System.Windows.Forms.BindingSource.MoveNext%2A>、<xref:System.Windows.Forms.BindingSource.MoveLast%2A>、<xref:System.Windows.Forms.BindingSource.MovePrevious%2A>、および <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>\) を使用します。  これらのメソッドを使用すると、<xref:System.Windows.Forms.BindingSource> の <xref:System.Windows.Forms.BindingSource.Position%2A> プロパティおよび <xref:System.Windows.Forms.BindingSource.Current%2A> プロパティが適切に調整されます。  また、<xref:System.Windows.Forms.BindingSource.Position%2A> プロパティを設定すると、検索した項目を現在の項目として設定できます。  
+# <a name="how-to-navigate-data-in-windows-forms"></a>方法 : Windows フォームでデータ間を移動する
+データ ソースのレコード間を移動する最も簡単な方法は、Windows アプリケーションにバインドする、<xref:System.Windows.Forms.BindingSource>コンポーネント、データ ソースとしへのコントロールのバインドを<xref:System.Windows.Forms.BindingSource>です。 組み込みのナビゲーション メソッドを使用することができますし、<xref:System.Windows.Forms.BindingSource>このような<xref:System.Windows.Forms.BindingSource.MoveNext%2A>、 <xref:System.Windows.Forms.BindingSource.MoveLast%2A>、<xref:System.Windows.Forms.BindingSource.MovePrevious%2A>と<xref:System.Windows.Forms.BindingSource.MoveFirst%2A>です。 これらのメソッドを使用して、調整は、<xref:System.Windows.Forms.BindingSource.Position%2A>と<xref:System.Windows.Forms.BindingSource.Current%2A>のプロパティ、<xref:System.Windows.Forms.BindingSource>適切にします。 項目を検索してそれを設定して、現在のアイテムとして設定することができますも、<xref:System.Windows.Forms.BindingSource.Position%2A>プロパティです。  
   
-### データ ソース内での位置をインクリメントするには  
+### <a name="to-increment-the-position-in-a-data-source"></a>データ ソース内の位置をインクリメントするには  
   
-1.  バインドされているデータの <xref:System.Windows.Forms.BindingSource> の <xref:System.Windows.Forms.BindingSource.Position%2A> プロパティを、移動先のレコード位置に設定します。  次に示す例では、`nextButton` がクリックされたときに、<xref:System.Windows.Forms.BindingSource> の <xref:System.Windows.Forms.BindingSource.MoveNext%2A> メソッドを使用して <xref:System.Windows.Forms.BindingSource.Position%2A> プロパティをインクリメントします。  <xref:System.Windows.Forms.BindingSource> は、データセット `Northwind` の `Customers` テーブルに関連付けられています。  
+1.  設定、<xref:System.Windows.Forms.BindingSource.Position%2A>のプロパティ、<xref:System.Windows.Forms.BindingSource>に移動するレコードの位置にバインドされたデータにします。 使用して次の例を示しています、<xref:System.Windows.Forms.BindingSource.MoveNext%2A>のメソッド、<xref:System.Windows.Forms.BindingSource>増分値を<xref:System.Windows.Forms.BindingSource.Position%2A>プロパティときに、`nextButton`をクリックします。 <xref:System.Windows.Forms.BindingSource>に関連付けられている、`Customers`データセットのテーブル`Northwind`です。  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.BindingSource.Position%2A> プロパティを最初または最後のレコードを超える値に設定してもエラーにはなりません。これは、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] では位置をリストの範囲外の値に設定できないためです。  アプリケーションで最初または最後のレコードを超えたかどうかを知る必要がある場合は、データ要素数を超えるかどうかをテストするロジックを追加します。  
+    >  設定、<xref:System.Windows.Forms.BindingSource.Position%2A>最初と最後のレコードを超える値をプロパティにならない、エラーとして、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]位置を一覧の境界外の値に設定することはできません。 最初と最後のレコードを超えたがあるかどうかを把握するアプリケーションで重要である場合に、データ要素の数を超えるかどうかをテストするためのロジックが含まれます。  
   
      [!code-csharp[System.Windows.Forms.NavigatingData#4](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#4)]
      [!code-vb[System.Windows.Forms.NavigatingData#4](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#4)]  
   
-### 最初または最後を超えたかどうかを確認するには  
+### <a name="to-check-whether-you-have-passed-the-end-or-beginning"></a>末尾または先頭が渡されるかどうかを確認するには  
   
-1.  <xref:System.Windows.Forms.BindingSource.PositionChanged> イベントのイベント ハンドラーを作成します。  このハンドラーで、指定された位置の値が実際のデータ要素数を超えているかどうかをテストできます。  
+1.  <xref:System.Windows.Forms.BindingSource.PositionChanged> イベントのイベント ハンドラーを作成します。 ハンドラーで提案された位置の値が実際のデータ要素の数を超えているかどうかをテストすることができます。  
   
-     最後のデータ要素に達したかどうかをテストする方法の例を次に示します。  この例では、最後の要素に達している場合は、フォームの **\[Next\]** ボタンが無効になります。  
+     次の例では、データの最後の要素に到達するかどうかをテストする方法を示します。 例では、最後の要素でない場合、**次**フォーム上のボタンが無効になっています。  
   
     > [!NOTE]
-    >  コード内を移動するリストを変更する場合は、ユーザーが新しいリスト全体を移動できるように、**\[次へ\]** ボタンをもう一度有効にする必要があるので注意してください。  また、扱う対象となる特定の <xref:System.Windows.Forms.BindingSource> の上記の <xref:System.Windows.Forms.BindingSource.PositionChanged> イベントを、イベント処理メソッドと関連付ける必要がある点にも注意してください。  <xref:System.Windows.Forms.BindingSource.PositionChanged> イベントを処理するメソッドの例を次に示します。  
+    >  、コード内を移動する一覧を変更する必要があります再度有効にすることに注意してください、**次** ボタン、ユーザーは、新しいリストの全体の長さを表示ができます。 またを上記<xref:System.Windows.Forms.BindingSource.PositionChanged>、特定のイベント<xref:System.Windows.Forms.BindingSource>イベント処理メソッドに関連するを必要としています。 処理するためのメソッドの例を次に示します、<xref:System.Windows.Forms.BindingSource.PositionChanged>イベント。  
   
      [!code-csharp[System.Windows.Forms.NavigatingData#3](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.NavigatingData#3](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#3)]  
   
-### 項目を検索し、現在の項目として設定するには  
+### <a name="to-find-an-item-and-set-it-as-the-current-item"></a>項目を検索して、現在のアイテムとして設定するには  
   
-1.  現在の項目として設定するレコードを検索します。  <xref:System.ComponentModel.IBindingList> を実装しているデータ ソースの場合には、<xref:System.Windows.Forms.BindingSource> の <xref:System.Windows.Forms.BindingSource.Find%2A> メソッドを使用して検索を実行できます。  <xref:System.ComponentModel.IBindingList> を実装しているデータ ソースの例としては、<xref:System.ComponentModel.BindingList%601> および <xref:System.Data.DataView> があります。  
+1.  現在のアイテムとして設定するレコードを検索します。 こうことを使用して、<xref:System.Windows.Forms.BindingSource.Find%2A>のメソッド、<xref:System.Windows.Forms.BindingSource>してデータ ソースを実装する場合は、<xref:System.ComponentModel.IBindingList>です。 データの例をいくつかは実装するソース<xref:System.ComponentModel.IBindingList>は<xref:System.ComponentModel.BindingList%601>と<xref:System.Data.DataView>です。  
   
      [!code-csharp[System.Windows.Forms.NavigatingData#2](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.NavigatingData#2](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#2)]  
   
-## 参照  
- [Windows フォームがサポートするデータ ソース](../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md)   
- [Windows フォーム データ バインドの変更通知](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)   
- [データ連結と Windows フォーム](../../../docs/framework/winforms/data-binding-and-windows-forms.md)   
- [Windows フォームでのデータ バインド](../../../docs/framework/winforms/windows-forms-data-binding.md)
+## <a name="see-also"></a>関連項目  
+ [Windows フォームがサポートするデータ ソース](../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md)  
+ [Windows フォーム データ バインドの変更通知](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)  
+ [データ連結と Windows フォーム](../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
+ [Windows フォームでのデータ バインディング](../../../docs/framework/winforms/windows-forms-data-binding.md)

@@ -1,141 +1,145 @@
 ---
-title: "WPF と Direct3D9 の相互運用性 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Direct3D9 [WPF 相互運用性], 作成 (Direct3D9 コンテンツを)"
-  - "WPF, 作成 (Direct3D9 コンテンツを)"
+title: "WPF と Direct3D9 の相互運用性"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: cpp
+helpviewer_keywords:
+- WPF [WPF], creating Direct3D9 content
+- Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 1b14b823-69c4-4e8d-99e4-f6dade58f89a
-caps.latest.revision: 25
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: b1bd4d7486f546a340a4c722d140c6c7f5cee707
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WPF と Direct3D9 の相互運用性
-Windows Presentation Foundation \(WPF\) アプリケーションの中に Direct3D9 コンテンツを含めることができます。  このトピックでは、WPF と効率よく相互運用するための Direct3D9 コンテンツを作成する方法について説明します。  
+# <a name="wpf-and-direct3d9-interoperation"></a>WPF と Direct3D9 の相互運用性
+Windows Presentation Foundation (WPF) アプリケーションでは、Direct3D9 コンテンツを含めることができます。 このトピックでは、WPF と効率的に相互運用できるように、Direct3D9 コンテンツを作成する方法について説明します。  
   
 > [!NOTE]
->  Direct3D9 コンテンツを WPF で使用するときは、パフォーマンスについても考慮する必要があります。  パフォーマンスを最適化する方法の詳細については、「[Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)」を参照してください。  
+>  WPF では Direct3D9 コンテンツを使用している場合は、パフォーマンスを考慮する必要があります。 パフォーマンスを最適化する方法の詳細については、次を参照してください。 [Direct3D9 と WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)です。  
   
-## 表示バッファー  
- <xref:System.Windows.Interop.D3DImage> クラスは、*バック バッファー*および*フロント バッファー*と呼ばれる 2 種類の表示バッファーを管理します。  バック バッファーはユーザーの Direct3D9 サーフェイスです。  バック バッファーへの変更点は、<xref:System.Windows.Interop.D3DImage.Unlock%2A> メソッドを呼び出すときに、フロント バッファーにコピーされます。  
+## <a name="display-buffers"></a>バッファーを表示します。  
+ <xref:System.Windows.Interop.D3DImage>クラスと呼ばれる 2 つのディスプレイ バッファーを管理、*バック バッファー*と*フロント バッファー*です。 バック バッファーは、Direct3D9 サーフェイスです。 バック バッファーへの変更はフォワード バッファーにコピー フロントを呼び出すとき、<xref:System.Windows.Interop.D3DImage.Unlock%2A>メソッドです。  
   
- 次の図は、バック バッファーとフロント バッファーの関係を示しています。  
+ 次の図は、バック バッファーとフロント バッファー間のリレーションシップを示します。  
   
- ![D3DImage 表示バッファー](../../../../docs/framework/wpf/advanced/media/d3dimage-buffers.png "D3DImage\_buffers")  
+ ![D3DImage 表示バッファー](../../../../docs/framework/wpf/advanced/media/d3dimage-buffers.png "D3DImage_buffers")  
   
-## Direct3D9 デバイスの作成  
- Direct3D9 コンテンツを表示するには、Direct3D9 デバイスを作成する必要があります。  デバイスを作成するために使用できる Direct3D9 オブジェクトには、`IDirect3D9` と `IDirect3D9Ex` の 2 種類があります。  これらのオブジェクトを使用して、`IDirect3DDevice9` デバイスと `IDirect3DDevice9Ex` デバイスを作成します。  
+## <a name="direct3d9-device-creation"></a>Direct3D9 デバイスの作成  
+ Direct3D9 のコンテンツをレンダリングするには、Direct3D9 デバイスを作成する必要があります。 デバイスの作成に使用できる 2 つの Direct3D9 オブジェクトがある`IDirect3D9`と`IDirect3D9Ex`です。 これらのオブジェクトを使って作成`IDirect3DDevice9`と`IDirect3DDevice9Ex`デバイス、それぞれします。  
   
- 次のいずれかのメソッドを呼び出すことで、デバイスを作成します。  
+ デバイスを作成するには、次の方法のいずれかを呼び出します。  
   
 -   `IDirect3D9 * Direct3DCreate9(UINT SDKVersion);`  
   
 -   `HRESULT Direct3DCreate9Ex(UINT SDKVersion, IDirect3D9Ex **ppD3D);`  
   
- Windows Vista または後で、Windows オペレーティング システム Driver Display Model \(WDDM\) を使用するようにコンフィギュレーションされていると `Direct3DCreate9Ex` の表示方法を使用します。  それ以外のすべてのプラットフォームでは、`Direct3DCreate9` メソッドを使用します。  
+ Windows Vista または以降のオペレーティング システムを使用して、 `Direct3DCreate9Ex` Windows 表示 Driver Model (WDDM) を使用するように構成するディスプレイを持つメソッドです。 使用して、`Direct3DCreate9`他の任意のプラットフォームでのメソッドです。  
   
-### Direct3DCreate9Ex メソッドの可用性  
- d3d9.dll に Windows Vista またはそれ以降のオペレーティング システムでのみ `Direct3DCreate9Ex` の方法があります。  この関数を Windows XP で直接リンクすると、アプリケーションの読み込みが失敗します。  `Direct3DCreate9Ex` メソッドがサポートされているかどうかを確認するには、この DLL を読み込み、プロシージャ アドレスを探します。  次のコードは、`Direct3DCreate9Ex` メソッドをテストする方法を示しています。  完全なコード例については、「[チュートリアル : WPF でホストするための Direct3D9 コンテンツの作成](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)」を参照してください。  
+### <a name="availability-of-the-direct3dcreate9ex-method"></a>Direct3DCreate9Ex メソッドの可用性  
+ D3d9.dll が、`Direct3DCreate9Ex`メソッドでは、Windows Vista またはそれ以降のオペレーティング システムのみです。 Windows XP で関数を直接リンクすると、アプリケーションは読み込みに失敗しました。 確認するかどうか、`Direct3DCreate9Ex`メソッドはサポートされて、DLL をロードおよび proc アドレスを探します。 次のコードをテストする方法を示しています、`Direct3DCreate9Ex`メソッドです。 完全なコード例では、次を参照してください。[チュートリアル: WPF でのホストの Direct3D9 のコンテンツを作成する](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)です。  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_EnsureD3DObjects](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_ensured3dobjects)]  
   
-### HWND の作成  
- デバイスを作成するには、HWND が必要です。  通常は、使用する Direct3D9 用のダミー HWND を作成します。  次のコード例は、ダミー HWND を作成する方法を示しています。  
+### <a name="hwnd-creation"></a>HWND の作成  
+ デバイスを作成するには、HWND が必要です。 一般に、使用する Direct3D9 のダミー HWND を作成します。 次のコード例では、ダミーの HWND を作成する方法を示します。  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_EnsureHWND](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_ensurehwnd)]  
   
-### 表示パラメーター  
- デバイスを作成するには `D3DPRESENT_PARAMETERS` 構造体も必要ですが、重要なのは一部のパラメーターだけです。  これらのパラメーターは、メモリの使用量を最小限に抑えるために選択されています。  
+### <a name="present-parameters"></a>表示パラメーター  
+ デバイスを作成する必要も、`D3DPRESENT_PARAMETERS`構造体がいくつかのパラメーターのみが重要です。 これらのパラメーターを選択して、メモリ使用量を最小限に抑えます。  
   
- `BackBufferHeight` フィールドおよび `BackBufferWidth` フィールドを 1 に設定します。  これらを 0 に設定すると、HWND のサイズが設定されます。  
+ 設定、`BackBufferHeight`と`BackBufferWidth`フィールドを 1 にします。 0 に設定すると、HWND のサイズに設定するとします。  
   
- Direct3D9 によって使用されるメモリの破棄と Direct3D9 による FPU 設定の変更を回避するために、`D3DCREATE_MULTITHREADED` フラグと `D3DCREATE_FPU_PRESERVE` フラグを常に設定します。  
+ 常に設定、`D3DCREATE_MULTITHREADED`と`D3DCREATE_FPU_PRESERVE`を防ぐためのフラグと Direct3D9 によってを Direct3D9 が FPU 設定を変更することを防ぐために使用されるメモリを破壊します。  
   
- 次のコードは、`D3DPRESENT_PARAMETERS` 構造体を初期化する方法を示しています。  
+ 次のコードを初期化する方法を示しています、`D3DPRESENT_PARAMETERS`構造体。  
   
  [!code-cpp[System.Windows.Interop.D3DImage#Renderer_Init](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderer_init)]  
   
-## バック バッファーのレンダリング先の作成  
- <xref:System.Windows.Interop.D3DImage> 内の Direct3D9 コンテンツを表示するには、Direct3D9 サーフェイスを作成し、<xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> メソッドを呼び出してそれを割り当てます。  
+## <a name="creating-the-back-buffer-render-target"></a>バック バッファーのレンダー ターゲットの作成  
+ Direct3D9 コンテンツを表示する、 <xref:System.Windows.Interop.D3DImage>、Direct3D9 画面を作成して呼び出すことで割り当てる、<xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>メソッドです。  
   
-### アダプターによるサポートの確認  
- サーフェイスを作成する前に、必要なサーフェイス プロパティがすべてのアダプターでサポートされていることを確認します。  レンダリング先として 1 つのアダプターだけを指定した場合でも、WPF ウィンドウはシステム内のどのアダプターでも表示できます。  WPF では使用可能なアダプター間でサーフェイスを移動することがあるので、マルチアダプター構成を処理する Direct3D9 コードを常に記述し、すべてのアダプターのサポート状況を確認してください。  
+### <a name="verifying-adapter-support"></a>アダプターのサポートを確認しています  
+ サーフェイスを作成する前にすべてのアダプターが必要な画面のプロパティをサポートすることを確認します。 アダプターが 1 つのみを表示する場合でも、WPF ウィンドウは、システムで任意のアダプターに表示されます可能性があります。 Direct3D9 処理するコードを複数のアダプターの構成は常に記述し、使用可能なアダプター間で画面を移動する可能性があります WPF サポートについては、すべてのアダプターをチェックする必要があります。  
   
- 次のコード例は、システムのすべてのアダプターで Direct3D9 がサポートされているかどうかを調べる方法を示しています。  
+ 次のコード例では、Direct3D9 のシステム上のすべてのアダプターのサポートを確認する方法を示します。  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_TestSurfaceSettings](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_testsurfacesettings)]  
   
-### サーフェイスの作成  
- サーフェイスを作成する前に、デバイスが対象のオペレーティング システム上で適切なパフォーマンスで動作できることを確認します。  詳細については、「[Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)」を参照してください。  
+### <a name="creating-the-surface"></a>画面を作成します。  
+ サーフェイスを作成する前に、対象のオペレーティング システムでデバイスの機能が良好なパフォーマンスをサポートすることを確認します。 詳細については、次を参照してください。 [Direct3D9 と WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)です。  
   
- デバイスの能力を確認した後、サーフェイスを作成できます。  次のコード例は、レンダリング先を作成する方法を示しています。  
+ デバイスの機能を確認したら、画面を作成できます。 次のコード例では、レンダー ターゲットを作成する方法を示します。  
   
  [!code-cpp[System.Windows.Interop.D3DImage#Renderer_CreateSurface](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderer_createsurface)]  
   
-### WDDM  
- WDDM を使用するようにコンフィギュレーションされた後のオペレーティング システムと Windows Vista でレンダー ターゲットのテクスチャを作成し、<xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> 方法にレベルを 0 の標的を渡すことができます。  Windows XP では、ロック可能なレンダリング先のテクスチャを作成できず、パフォーマンスが低下するので、この方法はお勧めしません。  
+### <a name="wddm"></a>WDDM  
+ Windows Vista および WDDM を使用するように構成は、以降のオペレーティング システムで、レンダー ターゲットのテクスチャを作成して、レベル 0 画面を渡す、<xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>メソッドです。 Windows xp では、ロックのレンダー ターゲットのテクスチャを作成することはできませんし、パフォーマンスが低下するため、この方法はお勧めしません。  
   
-## デバイス状態の処理  
- <xref:System.Windows.Interop.D3DImage> クラスは、*バック バッファー*および*フロント バッファー*と呼ばれる 2 種類の表示バッファーを管理します。  バック バッファーは、ユーザーの Direct3D サーフェイスです。   は、バッファの変更がフロント バッファへのハードウェアに表示される <xref:System.Windows.Interop.D3DImage.Unlock%2A> 方法を追加すると、コピーようになります。  場合によっては、バッファ フロントは使用できなくなります。  デバイスが使用できなくなる原因としては、画面のロック、全画面表示の専用 Direct3D アプリケーション、ユーザーの切り替え、その他のシステムの動作が考えられます。  このような場合は、の WPF のアプリケーションは <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> イベントの処理によって通知されます。  自分のアプリケーションで使用できなくなるフロント バッファに対応する方法を WPF がソフトウェアの表示にはあることを可能にするかによって異なります。  <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> 方法に WPF は、ソフトウェアの表示にはあるかどうかを指定するパラメータを受け取る過負荷があります。  
+## <a name="handling-device-state"></a>デバイス状態の処理  
+ <xref:System.Windows.Interop.D3DImage>クラスと呼ばれる 2 つのディスプレイ バッファーを管理、*バック バッファー*と*フロント バッファー*です。 バック バッファーは、Direct3D サーフェイスです。  バック バッファーへの変更はフォワード バッファーにコピー フロントを呼び出すとき、<xref:System.Windows.Interop.D3DImage.Unlock%2A>メソッド、ハードウェアで表示されます。 場合によっては、フロントのバッファーが使用できなくなります。 この可用性の欠如は、画面のロック、排他 Direct3D アプリケーションの全画面表示、ユーザーの切り替え、または他のシステム アクティビティによって可能性があります。 処理することにより、WPF アプリケーションが通知これが発生した場合、<xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged>イベント。  アプリケーションが利用できなくなるフロントのバッファーに応答する方法は、ソフトウェア レンダリングにフォールバックする WPF が有効になっているかどうかによって異なります。 <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>メソッドは、WPF ソフトウェア レンダリングにフォールバックするかどうかを指定するパラメーターを受け取るオーバー ロードを持ちます。  
   
- <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%29> の過負荷に電話または `false`に設定 `enableSoftwareFallback` パラメータの <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29> 過負荷の名前を表示するとシステムはフロント バッファが使用できないになり、何も表示されない場合は、バッファへの参照をリリースします。  フロント バッファが再び使用可能な場合、表示のシステムは、WPF のアプリケーションを通知するために <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> のイベントを上げます。  有効な Direct3D が直面すると、再び表示を再開するに <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> のイベントのイベント ハンドラーを作成できます。  表示を再開するには、<xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>を追加する必要があります。  
+ 呼び出すと、<xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%29>オーバー ロードを呼び出したり、<xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29>を持つオーバー ロード、`enableSoftwareFallback`パラメーターに設定`false`、レンダリング システムは、フロントのバッファーが使用できなくなり、何も表示したときにバック バッファーへの参照を解放します。 レンダリング システムを発生させますフロントのバッファーを再度使用できる場合、 <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> WPF アプリケーションに通知するイベントです。  イベント ハンドラーを作成することができます、<xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged>イベントを有効な Direct3D 画面を使用してレンダリングを再起動します。 再起動するレンダリングを呼び出す必要があります<xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>です。  
   
- `true`に設定 `enableSoftwareFallback` パラメータの <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29> 過負荷の名前を表示するとシステムはフロント バッファが再び使用可能な場合フロント バッファが使用できなくなっている場合は、バッファへの参照は存在するが <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> を追加する必要残しません。  
+ 呼び出すと、<xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29>を持つオーバー ロード、`enableSoftwareFallback`パラメーターに設定`true`、レンダリング時に維持バック バッファーへの参照を呼び出す必要はありませんので、フロントのバッファーが使用できなくなった、<xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>ときフロントのバッファーが再びで使用可能です。  
   
- ソフトウェアの表示が有効の場合、ユーザーのデバイスが使用できなくなる、システムが表示 Direct3D が直面への参照を終了ステータスがあります。  Direct3D9 デバイスが利用不可かどうかを確認するには、`TestCooperativeLevel` 方法を追加します。  `TestCooperativeLevel` 方法が常に非難され、成功を返すこと、Direct3D9Ex デバイスを確認するには `CheckDeviceState` 方法を追加します。  ユーザーのデバイスが使用できなくなっている場合は、バッファに WPF の参照をリリースするに <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> を追加します。  自分のデバイスをリセットする必要がある場合は `null`に設定 `backBuffer` パラメータの <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> と呼ばれる次に `backBuffer` の <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> を設定します Direct3D に再度有効な標的を追加します。  
+ ソフトウェア レンダリングが有効にすると、ユーザーのデバイスが使用できなくなった、レンダリング システム Direct3D サーフェイスへの参照を保持する場合があります。 Direct3D9 デバイスが利用可能でないかどうかを確認するを呼び出して、`TestCooperativeLevel`メソッドです。 Direct3D9Ex デバイス呼び出しを確認する、`CheckDeviceState`メソッド、ため、`TestCooperativeLevel`メソッドは推奨されておらず、常に成功を返します。 ユーザー デバイスが利用できなくなると、呼び出す<xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>バック バッファーへの WPF の参照を解放します。  デバイスをリセットする必要がある場合は、呼び出す<xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>で、`backBuffer`パラメーターに設定`null`、およびを呼び出す<xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>でもう一度`backBuffer`Direct3D 画面を有効に設定します。  
   
- 無効なデバイスから回復するための `Reset` メソッドの呼び出しは、マルチアダプターのサポートを実装する場合のみ実行します。  それ以外の場合は、すべての Direct3D9 インターフェイスを解放し、全体を再作成します。  アダプターのレイアウトが変更されている場合、変更前に作成された Direct3D9 オブジェクトは更新されません。  
+ 呼び出す、`Reset`マルチ アダプターのサポートを実装する場合にのみ、無効なデバイスから回復する方法です。 それ以外の場合、すべて Direct3D9 インターフェイスを解放し、完全に再作成します。 アダプターのレイアウトを変更した場合、変更の前に作成された Direct3D9 オブジェクトは更新されません。  
   
-## サイズ変更の処理  
- <xref:System.Windows.Interop.D3DImage> が、のサイズ以外の決済に表示されている場合、期限内に <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A>に従って縮小増幅されますが、例外と、<xref:System.Windows.Media.Effects.SamplingMode> は <xref:System.Windows.Media.BitmapScalingMode>の代わりになります。  
+## <a name="handling-resizing"></a>サイズ変更の処理  
+ 場合、<xref:System.Windows.Interop.D3DImage>が表示されます現在に従って以外のネイティブのサイズ、解像度にスケールは<xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A>する点を除いて、<xref:System.Windows.Media.Effects.SamplingMode.Bilinear>が代入される<xref:System.Windows.Media.BitmapScalingMode.Fant>です。  
   
- 高い忠実性が必要な場合は、<xref:System.Windows.Interop.D3DImage> のコンテナーのサイズが変更されたときに新しいサーフェイスを作成する必要があります。  
+ 新規に作成する必要があります、高い再現性を必要とする場合ときに画面のコンテナー、<xref:System.Windows.Interop.D3DImage>サイズを変更します。  
   
- サイズ変更を処理する方法には、以下の 3 つがあります。  
+ サイズ変更を処理する 3 つの可能な方法はあります。  
   
--   レイアウト システムを処理し、サイズが変更されたときに新しいサーフェイスを作成します。  ビデオ メモリの不足や断片化が発生する可能性があるので、作成するサーフェイスが多くなりすぎないようにしてください。  
+-   レイアウト システムに参加し、サイズが変更されたときに、新しい画面を作成します。 排気またはビデオ メモリが断片化する可能性がありますので、多くのサーフェスは作成されません。  
   
--   一定期間待機してサイズ変更イベントが発生しないことを確認した後、新しいサーフェイスを作成します。  
+-   新しい画面の作成に時間の一定の期間のサイズ変更イベントが発生していないまで待機します。  
   
--   コンテナーのサイズを 1 秒間に数回チェックする <xref:System.Windows.Threading.DispatcherTimer> を作成します。  
+-   作成、 <xref:System.Windows.Threading.DispatcherTimer> 1 秒あたりに何度もコンテナー サイズをチェックします。  
   
-## マルチモニターの最適化  
- レンダリング システムが <xref:System.Windows.Interop.D3DImage> を別のモニターに移動したときに、パフォーマンスが大幅に低下する場合があります。  
+## <a name="multi-monitor-optimization"></a>マルチ モニターの最適化  
+ レンダリング システムに移動すると、パフォーマンスが大幅に低下が生じる、<xref:System.Windows.Interop.D3DImage>別のモニターにします。  
   
- WDDM の場合、移動前後のモニターが同じビデオ カード上にあり、`Direct3DCreate9Ex` を使用している限り、パフォーマンスが低下することはありません。  モニターが別々のビデオ カードを使用している場合は、パフォーマンスが低下します。  Windows XP の場合、パフォーマンスは常に低下します。  
+ WDDM に限り、モニターは、同じビデオ カードを使用して`Direct3DCreate9Ex`パフォーマンスの低下はありません。 モニターは、別のビデオ カードでは、パフォーマンスは低下します。 Windows XP では、パフォーマンスが低下は常にします。  
   
- <xref:System.Windows.Interop.D3DImage> が別のモニターに移動するときは、対応するアダプター上に新しいサーフェイスを作成することで、パフォーマンスを維持できます。  
+ ときに、<xref:System.Windows.Interop.D3DImage>良好なパフォーマンスを復元する対応するアダプターで新しい画面を作成することができますが、別のモニターに移動します。  
   
- パフォーマンスの低下を回避するには、マルチモニター用に特別なコードを記述します。  次のリストは、マルチモニター コードを記述するための 1 つの方法を示しています。  
+ パフォーマンスの低下を回避するのには、具体的にはマルチ モニターのコードを記述します。 マルチ モニターのコードを記述する 1 つの方法を次に示します。  
   
-1.  <xref:System.Windows.Interop.D3DImage> の画面空間でのポイントを、`Visual.ProjectToScreen` メソッドを使用して検出します。  
+1.  ポイントを見つけられない、<xref:System.Windows.Interop.D3DImage>画面領域で、`Visual.ProjectToScreen`メソッドです。  
   
-2.  `MonitorFromPoint` GDI メソッドを使用して、そのポイントを表示しているモニターを検出します。  
+2.  使用して、`MonitorFromPoint`ポイントが表示されているモニタを検索する GDI メソッドです。  
   
-3.  `IDirect3D9::GetAdapterMonitor` メソッドを使用して、モニターがオンになっている Direct3D9 アダプターを検出します。  
+3.  使用して、 `IDirect3D9::GetAdapterMonitor` Direct3D9 アダプターの種類のモニターを検索するメソッドが上です。  
   
-4.  検出されたアダプターがバック バッファーを持つアダプターと一致しない場合は、新しいモニターに新しいバック バッファーを作成し、それを <xref:System.Windows.Interop.D3DImage> バック バッファーに割り当てます。  
+4.  アダプターがバック バッファーのアダプターと同じでない場合、新しいモニターの新しいバック バッファーを作成し、それを割り当てる、<xref:System.Windows.Interop.D3DImage>バック バッファー。  
   
 > [!NOTE]
->  <xref:System.Windows.Interop.D3DImage> がモニター間にまたがる場合、WDDM と `IDirect3D9Ex` が同一のアダプター上にあるときを除いてパフォーマンスは低下します。  このような状況では、パフォーマンスを向上させる方法はありません。  
+>  場合、<xref:System.Windows.Interop.D3DImage>またがっているモニター、パフォーマンスが遅くなるを除く WDDM の場合と`IDirect3D9Ex`同じアダプターにします。 このような状況でパフォーマンスを向上させる方法はありません。  
   
- 次のコード例は、現在のモニターを検出する方法を示しています。  
+ 次のコード例では、現在のモニタを検索する方法を示します。  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_SetAdapter](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_setadapter)]  
   
- <xref:System.Windows.Interop.D3DImage> コンテナーのサイズまたは位置が変更されたとき、モニターを更新します。または、1 秒間に数回更新を行う `DispatcherTimer` を使用してモニターを更新します。  
+ モニターを更新するときに、<xref:System.Windows.Interop.D3DImage>コンテナーのサイズまたは位置の変更、または更新プログラムを使用して、モニター、 `DispatcherTimer` 1 秒あたりに何回か更新します。  
   
-## WPF ソフトウェアのレンダリング  
- WPF は、次のような場合、ソフトウェアの UI スレッドで同期的にレンダリングします。  
+## <a name="wpf-software-rendering"></a>WPF ソフトウェア レンダリング  
+ WPF は、次の状況でのソフトウェアの UI スレッドで同期的にレンダリングします。  
   
 -   印刷  
   
@@ -143,17 +147,17 @@ Windows Presentation Foundation \(WPF\) アプリケーションの中に Direct
   
 -   <xref:System.Windows.Media.Imaging.RenderTargetBitmap>  
   
- これらの状況のいずれかが発生すると、レンダリング システムは <xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A> メソッドを呼び出して、ハードウェア バッファーをソフトウェアにコピーします。  既定の実装では、`GetRenderTargetData` メソッドをサーフェイスを使用して呼び出します。  この呼び出しはロック\/ロック解除パターンの外部で発生するので、失敗する場合があります。  この場合、`CopyBackBuffer` メソッドは `null` を返し、イメージは表示されません。  
+ このような状況のいずれかが発生したとき、レンダリング システムは、<xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A>にソフトウェア、ハードウェアのバッファーをコピーする方法です。 既定の実装、`GetRenderTargetData`画面を持つメソッドです。 この呼び出しは、ロック/ロック解除のパターンの外部で発生するためが失敗する可能性があります。 ここで、`CopyBackBuffer`メソッドを返します。 `null` 、イメージは表示されません。  
   
- <xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A> メソッドをオーバーライドして基本実装を呼び出すことができ、`null` が返された場合はプレースホルダー <xref:System.Windows.Media.Imaging.BitmapSource> を返すことができます。  
+ オーバーライドすることができます、<xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A>メソッド、基本の実装を呼び出すを返す場合と`null`、プレース ホルダーを返すことができます<xref:System.Windows.Media.Imaging.BitmapSource>です。  
   
- 基本実装を呼び出す代わりに、独自のソフトウェア レンダリングを実装することもできます。  
+ 基底の実装を呼び出す代わりに、独自のソフトウェア レンダリングを実装することもできます。  
   
 > [!NOTE]
->  WPF がソフトウェア内で完全にレンダリングを実行する場合、WPF にフロント バッファーがないために <xref:System.Windows.Interop.D3DImage> は表示されません。  
+>  ソフトウェアでは、WPF が完全にレンダリングする場合<xref:System.Windows.Interop.D3DImage>WPF には、フロントのバッファーができないためには表示されません。  
   
-## 参照  
- <xref:System.Windows.Interop.D3DImage>   
- [Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)   
- [チュートリアル : WPF でホストするための Direct3D9 コンテンツの作成](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)   
- [チュートリアル : WPF での Direct3D9 コンテンツのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Interop.D3DImage>  
+ [Direct3D9 および WPF の相互運用性のパフォーマンスに関する考慮事項](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)  
+ [チュートリアル: WPF でホストするための Direct3D9 コンテンツの作成](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)  
+ [チュートリアル: WPF での Direct3D9 コンテンツのホスト](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)

@@ -1,79 +1,86 @@
 ---
-title: "方法: ステート マシン ワークフローを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法: ステート マシン ワークフローを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 3ec60e8f-fad4-493e-a426-e7962d7aee8c
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 797cdc425c0f3088aa2b75c0285ca6bea2dd425b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: ステート マシン ワークフローを作成する
-ワークフローは、ビルトイン アクティビティおよびカスタム アクティビティから構築できます。このトピックでは、<xref:System.Activities.Statements.StateMachine> アクティビティなどのビルトイン アクティビティ、および前の「[アクティビティを作成する方法](../../../docs/framework/windows-workflow-foundation//how-to-create-an-activity.md)」トピックのカスタム アクティビティの両方を使用するワークフローを作成します。このワークフローは、数値推測ゲームをモデル化しています。  
+# <a name="how-to-create-a-state-machine-workflow"></a>方法: ステート マシン ワークフローを作成する
+ワークフローは、ビルトイン アクティビティおよびカスタム アクティビティから構築できます。 など、両方の組み込みのアクティビティを使用するワークフローを作成する手順をこのトピックの内容、<xref:System.Activities.Statements.StateMachine>アクティビティ、およびカスタム アクティビティを以前から[する方法: アクティビティを作成](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)トピックです。 このワークフローは、数値推測ゲームをモデル化しています。  
   
 > [!NOTE]
->  チュートリアル入門の各トピックは、前のトピックに応じて異なります。このトピックを完了する前に、「[アクティビティを作成する方法](../../../docs/framework/windows-workflow-foundation//how-to-create-an-activity.md)」を完了する必要があります。  
+>  チュートリアル入門の各トピックは、前のトピックに応じて異なります。 このトピックの内容を完了する必要があります最初に完了する[する方法: アクティビティを作成する](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)です。  
   
 > [!NOTE]
->  チュートリアルの完成版をダウンロードするには、「[Windows Workflow Foundation \(WF45\) \- チュートリアル入門](http://go.microsoft.com/fwlink/?LinkID=248976)」を参照してください。  
+>  チュートリアルの完成版をダウンロードするには、「 [Windows Workflow Foundation (WF45) - Getting Started Tutorial (Windows Workflow Foundation (WF45) - チュートリアル入門)](http://go.microsoft.com/fwlink/?LinkID=248976)」を参照してください。  
   
-### ワークフローを作成するには  
+### <a name="to-create-the-workflow"></a>ワークフローを作成するには  
   
-1.  **ソリューション エクスプローラー**で **NumberGuessWorkflowActivities** を右クリックし、**\[追加\]** をポイントして、**\[新しい項目\]** をクリックします。  
+1.  右クリック**NumberGuessWorkflowActivities**で**ソリューション エクスプ ローラー**選択**追加**、**新しい項目の**します。  
   
-2.  **\[インストール済み\]** の **\[共通項目\]** ノードで、**\[ワークフロー\]** を選択します。**\[ワークフロー\]** リストで **\[アクティビティ\]** を選択します。  
+2.  **インストール**、**共通項目**ノードで、選択**ワークフロー**です。 選択**アクティビティ**から、**ワークフロー**  ボックスの一覧です。  
   
-3.  **\[名前\]** ボックスに「`StateMachineNumberGuessWorkflow`」と入力し、**\[追加\]** をクリックします。  
+3.  型`StateMachineNumberGuessWorkflow`に、**名前**ボックスし、をクリックして**追加**です。  
   
-4.  **ツールボックス**の **\[ステート マシン\]** セクションから **StateMachine** アクティビティをドラッグし、ワークフロー デザイン サーフェイスの **\[ここにアクティビティをドロップ\]** ラベル上にドロップします。  
+4.  ドラッグ、 **StateMachine**からアクティビティ、**ステート マシン**のセクションで、**ツールボックス**上にドロップし、**ここにアクティビティをドロップ**ラベルワークフロー デザイン サーフェイスです。  
   
-### ワークフロー変数および引数を作成するには  
+### <a name="to-create-the-workflow-variables-and-arguments"></a>ワークフロー変数および引数を作成するには  
   
-1.  **ソリューション エクスプローラー**で **StateMachineNumberGuessWorkflow.xaml** をダブルクリックし、デザイナーでワークフローを表示します \(まだ表示されていない場合\)。  
+1.  ダブルクリックして**StateMachineNumberGuessWorkflow.xaml**で**ソリューション エクスプ ローラー**をまだ表示されていない場合、デザイナーでワークフローを表示します。  
   
-2.  ワークフロー デザイナーの左下にある **\[引数\]** をクリックし、**\[引数\]** ペインを表示します。  
+2.  をクリックして**引数**を表示するワークフロー デザイナーの左下横で、**引数**ウィンドウです。  
   
-3.  **\[引数の作成\]** をクリックします。  
+3.  をクリックして**引数の作成**です。  
   
-4.  **\[名前\]** ボックスに「`MaxNumber`」と入力し、**\[方向\]** ボックスで **\[IN\]** を選択して、**\[引数の型\]** ボックスで **\[Int32\]** を選択し、Enter キーを押して引数を保存します。  
+4.  型`MaxNumber`に、**名前**ボックスで、**で**から、**方向**ドロップダウン リストで、 **Int32** から**引数の型**ドロップダウン リストと、引数を保存するには ENTER キーを押します。  
   
-5.  **\[引数の作成\]** をクリックします。  
+5.  をクリックして**引数の作成**です。  
   
-6.  新しく追加した `MaxNumber` 引数の下にある **\[名前\]** ボックスに「`Turns`」と入力し、**\[方向\]** ボックスで **\[OUT\]** を選択して、**\[引数の型\]** ドロップダウン リストで **\[Int32\]** を選択し、Enter キーを押します。  
+6.  型`Turns`に、**名前**、新しく追加した下にあるボックス`MaxNumber`引数で、**アウト**から、**方向**selectドロップダウンリスト**Int32**から、**引数の型**ドロップダウン リストとし、ENTER キーを押します。  
   
-7.  アクティビティ デザイナーの左下にある **\[引数\]** をクリックし、**\[引数\]** ペインを閉じます。  
+7.  をクリックして**引数**を閉じる、アクティビティ デザイナーの左下横で、**引数**ウィンドウです。  
   
-8.  ワークフロー デザイナーの左下にある **\[変数\]** をクリックし、**\[変数\]** ペインを表示します。  
+8.  をクリックして**変数**を表示するワークフロー デザイナーの左下横で、**変数**ウィンドウです。  
   
-9. **\[変数の作成\]** をクリックします。  
-  
-    > [!TIP]
-    >  **\[変数の作成\]** ボックスが表示されていない場合は、ワークフロー デザイナー画面の <xref:System.Activities.Statements.StateMachine> アクティビティをクリックして選択します。  
-  
-10. **\[名前\]** ボックスに「`Guess`」と入力し、**\[変数の型\]** ボックスで **\[Int32\]** を選択し、Enter キーを押して変数を保存します。  
-  
-11. **\[変数の作成\]** をクリックします。  
-  
-12. **\[名前\]** ボックスに「`Target`」と入力し、**\[変数の型\]** ボックスで **\[Int32\]** を選択し、Enter キーを押して変数を保存します。  
-  
-13. アクティビティ デザイナーの左下にある **\[変数\]** をクリックし、**\[変数\]** ペインを閉じます。  
-  
-### ワークフロー アクティビティを追加するには  
-  
-1.  **\[State1\]** をクリックして選択します。**\[プロパティ\] ウィンドウ**で、**DisplayName** を「`Initialize Target`」に変更します。  
+9. をクリックして**変数を作成**です。  
   
     > [!TIP]
-    >  **\[プロパティ\]** ウィンドウが表示されていない場合は、**\[表示\]** メニューの **\[プロパティ ウィンドウ\]** を選択します。  
+    >  ない場合は**変数の作成**ボックスが表示されたら、をクリックして、<xref:System.Activities.Statements.StateMachine>それを選択するには、ワークフロー デザイナー画面上のアクティビティ。  
   
-2.  ワークフロー デザイナーで、名前を **\[Initialize Target\]** に変更した状態をダブルクリックして展開します。  
+10. 型`Guess`に、**名前**ボックスで、 **Int32**から、**変数型**ドロップダウン リスト、および、変数を保存するには ENTER キーを押します。  
   
-3.  **ツールボックス**の **\[プリミティブ\]** セクションから **Assign** アクティビティをドラッグし、状態の **Entry** セクションにドロップします。**\[終端側\]** ボックスに「`Target`」と入力し、**\[C\# の式を入力してください\]** ボックスまたは **\[VB の式を入力してください\]** ボックスに次の式を入力します。  
+11. をクリックして**変数を作成**です。  
+  
+12. 型`Target`に、**名前**ボックスで、 **Int32**から、**変数型**ドロップダウン リスト、および、変数を保存するには ENTER キーを押します。  
+  
+13. をクリックして**変数**を閉じる、アクティビティ デザイナーの左下横で、**変数**ウィンドウです。  
+  
+### <a name="to-add-the-workflow-activities"></a>ワークフロー アクティビティを追加するには  
+  
+1.  をクリックして**State1**をオンにします。 **プロパティ ウィンドウ**、変更、 **DisplayName**に`Initialize Target`です。  
+  
+    > [!TIP]
+    >  場合、**プロパティ ウィンドウ**が表示されていない select**プロパティ ウィンドウ**から、**ビュー**メニュー。  
+  
+2.  新しく名前を変更 をダブルクリック**Initialize Target**展開ワークフロー デザイナーでの状態。  
+  
+3.  ドラッグ、**割り当てる**からアクティビティ、**プリミティブ**のセクション、**ツールボックス**上にドロップし、**エントリ**状態のセクションでします。 型`Target`に、**に**ボックスおよびに次の式、 **c# 式を入力**または**VB の式を入力**ボックス。  
   
     ```vb  
     New System.Random().Next(1, MaxNumber + 1)  
@@ -84,17 +91,17 @@ caps.handback.revision: 15
     ```  
   
     > [!TIP]
-    >  **\[ツールボックス\]** ウィンドウが表示されていない場合は、**\[表示\]** メニューの **\[ツールボックス\]** をクリックします。  
+    >  場合、**ツールボックス**ウィンドウが表示されない場合、選択**ツールボックス**から、**ビュー**メニュー。  
   
-4.  ワークフロー デザイナーの上部にある階層リンク表示の **\[StateMachine\]** をクリックして、ワークフロー デザイナーの全体的なステート マシン ビューに戻ります。  
+4.  全体的なに戻る をクリックしてステート マシン ビュー、ワークフロー デザイナー **StateMachine**階層リンクで、ワークフロー デザイナーの上部に表示します。  
   
-5.  **ツールボックス**の **\[ステート マシン\]** セクションから **State** アクティビティをワークフロー デザイナー上にドラッグし、**Initialize Target** 状態の上に置きます。新しい状態が上に置かれると、**Initialize Target** 状態の周囲に 4 つの三角形が表示されることに注意してください。**Initialize Target** 状態のすぐ下にある三角形の上に、新しい状態をドロップします。これにより、新しい状態がワークフロー上に配置され、**Initialize Target** 状態から新しい状態への遷移が作成されます。  
+5.  ドラッグ、**状態**からアクティビティを**ステート マシン**のセクションで、**ツールボックス**、ワークフロー デザイナーに上に置きます、 **Initialize Target**状態です。 周囲に 4 つの三角形が表示されることに注意してください、 **Initialize Target**新しい状態が上にあるときの状態。 新しい状態のすぐ下にある三角形をドロップ、 **Initialize Target**状態です。 これは、新しい状態がワークフロー上に配置しから遷移が作成、 **Initialize Target**新しい状態にします。  
   
-6.  **\[State1\]** をクリックして選択し、**DisplayName** を「`Enter Guess`」に変更して、ワークフロー デザイナーでその状態をダブルクリックして展開します。  
+6.  をクリックして**State1**選択、変更、 **DisplayName**に`Enter Guess`、し、展開ワークフロー デザイナーでその状態をダブルクリックします。  
   
-7.  **ツールボックス**の **\[プリミティブ\]** セクションから **WriteLine** アクティビティをドラッグし、状態の **Entry** セクションの上にドロップします。  
+7.  ドラッグ、 **WriteLine**からアクティビティ、**プリミティブ**のセクションで、**ツールボックス**上にドロップし、**エントリ**状態のセクションでします。  
   
-8.  **WriteLine** の **\[Text\]** プロパティ ボックスに次の式を入力します。  
+8.  次の式を入力、**テキスト**プロパティ ボックスの**WriteLine**です。  
   
     ```vb  
     "Please enter a number between 1 and " & MaxNumber  
@@ -104,23 +111,23 @@ caps.handback.revision: 15
     "Please enter a number between 1 and " + MaxNumber  
     ```  
   
-9. **ツールボックス**の **\[プリミティブ\]** セクションから **Assign** アクティビティをドラッグし、状態の **Exit** セクションにドロップします。  
+9. ドラッグ、**割り当てる**からアクティビティ、**プリミティブ**のセクションで、**ツールボックス**にドロップし、**終了**状態のセクションでします。  
   
-10. **\[終端側\]** ボックスに「`Turns`」と入力し、**\[C\# の式を入力してください\]** ボックスまたは **\[VB の式を入力してください\]** ボックスに「`Turns + 1`」と入力します。  
+10. 型`Turns`に、**に**ボックスおよび`Turns + 1`に、 **c# 式を入力**または**VB の式を入力**ボックス。  
   
-11. ワークフロー デザイナーの上部にある階層リンク表示の **\[StateMachine\]** をクリックして、ワークフロー デザイナーの全体的なステート マシン ビューに戻ります。  
+11. 全体的なに戻る をクリックしてステート マシン ビュー、ワークフロー デザイナー **StateMachine**階層リンクで、ワークフロー デザイナーの上部に表示します。  
   
-12. **ツールボックス**の **\[ステート マシン\]** セクションから **FinalState** アクティビティをドラッグして **Enter Guess** 状態の上にマウス ポインターを置き、**Enter Guess** 状態の右側に表示される三角形の上にドロップすると、**Enter Guess** と **FinalState** の間に遷移が作成されます。  
+12. ドラッグ、 **FinalState**からアクティビティを**ステート マシン**のセクションで、**ツールボックス**、上にマウス ポインター、 **Enter Guess**状態、および削除右側に表示される三角形の上に、 **Enter Guess**状態の間の遷移が作成されるように**Enter Guess**と**FinalState**です。  
   
-13. 遷移の既定名は **T2** です。ワークフロー デザイナーでその遷移をクリックして選択し、その **DisplayName** に「**Guess Correct**」を設定します。その後、**FinalState** をクリックして選択し、それを右方向へドラッグして、遷移名全体が 2 つの状態のどちらにも重ならずに表示されるようにします。これにより、チュートリアルの残りの手順をより簡単に実行できます。  
+13. 遷移の既定の名前は**T2**です。 選択し、設定するには、ワークフロー デザイナーで遷移をクリックしてその**DisplayName**に**Guess Correct**です。 クリックし、選択、 **FinalState**遷移名全体を 2 つの状態のどちらにも重ならずに表示するための領域があるように、右側にドラッグします。 これにより、チュートリアルの残りの手順をより簡単に実行できます。  
   
-14. ワークフロー デザイナーで、新しい名前に変更された **Guess Correct** 遷移をダブルクリックして展開します。  
+14. 新しく名前を変更 をダブルクリック**Guess Correct**展開ワークフロー デザイナーで遷移します。  
   
-15. **ツールボックス**の **\[NumberGuessWorkflowActivities\]** セクションから **ReadInt** アクティビティをドラッグして遷移の **Trigger** セクションにドロップします。  
+15. ドラッグ、 **ReadInt**からアクティビティを**NumberGuessWorkflowActivities**のセクションで、**ツールボックス**内にドロップし、**トリガー**セクション移行。  
   
-16. **ReadInt** アクティビティの **\[プロパティ\] ウィンドウ**で、**\[BookmarkName\]** プロパティ値ボックスに「`"EnterGuess"`」\(引用符を含む\) と入力し、**\[Result\]** プロパティ値ボックスに「`Guess`」と入力します。  
+16. **プロパティ ウィンドウ**の**ReadInt**アクティビティで、「`"EnterGuess"`に引用符を含む、 **BookmarkName**プロパティ値ボックス、および種類`Guess`に、**結果**プロパティ値ボックス  
   
-17. **Guess Correct** 遷移の **\[Condition\]** プロパティ値ボックスに次の式を入力します。  
+17. 次の式を入力、 **Guess Correct**遷移の**条件**プロパティ値ボックスです。  
   
     ```vb  
     Guess = Target  
@@ -130,22 +137,22 @@ caps.handback.revision: 15
     Guess == Target  
     ```  
   
-18. ワークフロー デザイナーの上部にある階層リンク表示の **\[StateMachine\]** をクリックして、ワークフロー デザイナーの全体的なステート マシン ビューに戻ります。  
+18. 全体的なに戻る をクリックしてステート マシン ビュー、ワークフロー デザイナー **StateMachine**階層リンクで、ワークフロー デザイナーの上部に表示します。  
   
     > [!NOTE]
-    >  トリガー イベントが受け取られ、<xref:System.Activities.Statements.Transition.Condition%2A> \(存在する場合\) が `True` と評価される場合に遷移が発生します。この遷移では、ユーザーの `Guess` がランダムに生成された `Target` と一致する場合、制御が **FinalState** に渡され、ワークフローが完了します。  
+    >  トリガー イベントが受け取られ、<xref:System.Activities.Statements.Transition.Condition%2A> (存在する場合) が `True` と評価される場合に遷移が発生します。 この遷移の場合、ユーザーの`Guess`ランダムに生成されると一致する`Target`、制御が渡されますし、 **FinalState**ワークフローが完了するとします。  
   
-19. 推定値が正しいかどうかに応じて、ワークフローは **FinalState** に遷移するか、もう一度実行するために **Enter Guess** 状態に戻る必要があります。両方の遷移では、**ReadInt** アクティビティを介して受け取るユーザーの推定値を待機するのに同じトリガーを共有します。これは、共有遷移と呼ばれます。共有遷移を作成するには、**Guess Correct** 遷移の始点を示す円をクリックし、目的の状態にドラッグします。この場合、これは自己遷移であるため、**Guess Correct** 遷移の始点をドラッグし、**Enter Guess** 状態の下にドロップします。遷移の作成後、ワークフロー デザイナーでその遷移を選択し、**DisplayName** プロパティに **Guess Incorrect** を設定します。  
-  
-    > [!NOTE]
-    >  共有遷移は、遷移デザイナー内から作成することもできます。これには、遷移デザイナーの下部にある **\[トリガーを共有する遷移の追加\]** をクリックし、**\[接続の使用可能な状態\]** ボックスの一覧で、目的となる対象の状態を選択します。  
+19. によっては、推定値が正しいかどうか、ワークフローが遷移するか、 **FinalState**またはに戻し、 **Enter Guess**もう一度実行状態。 両方の遷移がユーザーの推定値経由で受信を待機しているに同じトリガーを共有、 **ReadInt**アクティビティ。 これは、共有遷移と呼ばれます。 共有遷移を作成するには、開始を示す円をクリックして、 **Guess Correct**に移行し、目的の状態にドラッグします。 この場合は自己遷移には、そのための開始点をドラッグ、 **Guess Correct**の下にドロップになり、 **Enter Guess**状態です。 遷移を作成すると、ワークフロー デザイナーで選択し、設定、 **DisplayName**プロパティを**Guess Incorrect**です。  
   
     > [!NOTE]
-    >  遷移の <xref:System.Activities.Statements.Transition.Condition%2A> が `false` と評価された場合 \(またはトリガーを共有する遷移すべての状態が `false` と評価された場合\)、遷移は行われず、その状態からのすべての遷移のすべてのトリガーが再スケジュールされます。このチュートリアルでは、条件の構成方法 \(推定値が正しいか間違っているかを判断する特定のアクションが用意されています\) により、この状況は発生しません。  
+    >  共有遷移できますも作成することから、遷移デザイナー内をクリックして**共有トリガー遷移の追加**から目的のターゲットの状態をクリックして、遷移デザイナーの下部にある、 **接続に使用可能な状態**ドロップダウンします。  
   
-20. ワークフロー デザイナーで **Guess Incorrect** 遷移をダブルクリックして展開します。**Trigger** は、**Guess Correct** 遷移で使用されたのと同じ **ReadInt** アクティビティに既に設定されていることに注意してください。  
+    > [!NOTE]
+    >  遷移の <xref:System.Activities.Statements.Transition.Condition%2A> が `false` と評価された場合 (またはトリガーを共有する遷移すべての状態が `false` と評価された場合)、遷移は行われず、その状態からのすべての遷移のすべてのトリガーが再スケジュールされます。 このチュートリアルでは、条件の構成方法 (推定値が正しいか間違っているかを判断する特定のアクションが用意されています) により、この状況は発生しません。  
   
-21. **\[Condition\]** プロパティ値ボックスに次の式を入力します。  
+20. ダブルクリックして、 **Guess Incorrect**展開ワークフロー デザイナーで遷移します。 注意してください、**トリガー**は既に同じに設定**ReadInt**アクティビティで使用されていた、 **Guess Correct**遷移します。  
+  
+21. 次の式を入力、**条件**プロパティ値ボックスです。  
   
     ```vb  
     Guess <> Target  
@@ -155,45 +162,45 @@ caps.handback.revision: 15
     Guess != Target  
     ```  
   
-22. **ツールボックス**の **\[制御フロー\]** セクションから **If** アクティビティをドラッグして遷移の **Action** セクションにドロップします。  
+22. ドラッグ、**場合**からアクティビティ、**制御フロー**のセクションで、**ツールボックス**内にドロップし、**アクション**遷移のセクションでします。  
   
-23. **If** アクティビティの **\[Condition\]** プロパティ値ボックスに次の式を入力します。  
+23. 次の式を入力、**場合**アクティビティの**条件**プロパティ値ボックスです。  
   
-    ```vb-c#  
+    ```
     Guess < Target  
     ```  
   
-24. **ツールボックス**の **\[プリミティブ\]** セクションから 2 つの **WriteLine** アクティビティをドラッグし、1 つは **If** アクティビティの **Then** セクション内に、もう 1 つは **Else** セクション内に配置されるようにドロップします。  
+24. 2 つをドラッグして**WriteLine**からアクティビティを**プリミティブ**のセクション、**ツールボックス**が 1 つになるようにドロップして、**し**のセクション**場合**、もう 1 つでは、 **Else**セクションです。  
   
-25. **Then** セクションの **WriteLine** アクティビティをクリックして選択し、**\[Text\]** プロパティ値ボックスに次の式を入力します。  
+25. クリックして、 **WriteLine**内のアクティビティ、**し**して選択し、セクションし、次の式を入力、**テキスト**プロパティ値ボックスです。  
   
-    ```vb-c#  
+    ```
     "Your guess is too low."  
     ```  
   
-26. **Else** セクションの **WriteLine** アクティビティをクリックして選択し、**\[Text\]** プロパティ値ボックスに次の式を入力します。  
+26. クリックして、 **WriteLine**内のアクティビティ、 **Else**して選択し、セクションし、次の式を入力、**テキスト**プロパティ値ボックスです。  
   
-    ```vb-c#  
+    ```
     "Your guess is too high."  
     ```  
   
-27. ワークフロー デザイナーの上部にある階層リンク表示の **\[StateMachine\]** をクリックして、ワークフロー デザイナーの全体的なステート マシン ビューに戻ります。  
+27. 全体的なに戻る をクリックしてステート マシン ビュー、ワークフロー デザイナー **StateMachine**階層リンクで、ワークフロー デザイナーの上部に表示します。  
   
      次の例は完成したワークフローを示しています。  
   
-     ![完成したステート マシン ワークフロー](../../../docs/framework/windows-workflow-foundation//media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")  
+     ![完成したステート マシン ワークフロー](../../../docs/framework/windows-workflow-foundation/media/wfstatemachinegettingstartedtutorialcomplete.JPG "WFStateMachineGettingStartedTutorialComplete")  
   
-### ワークフローをビルドするには  
+### <a name="to-build-the-workflow"></a>ワークフローをビルドするには  
   
 1.  Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。  
   
-     ワークフローを実行する手順については、次のトピック「[ワークフローを実行する方法](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md)」を参照してください。「[ワークフローを実行する方法](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md)」の手順を別のスタイルのワークフローを使用して既に完了している場合に、この手順のステート マシンのワークフローを使用して実行するには、「[ワークフローを実行する方法](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md)」の「[アプリケーションをビルドして実行するには](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md#BKMK_ToRunTheApplication)」に進んでください。  
+     ワークフローを実行する方法については、次のトピックをご覧ください。[する方法: ワークフローを実行する](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)です。 既に完了している場合、[する方法: ワークフローを実行する](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)ステップのワークフローとは異なるスタイルと共に、この手順で、ステート マシン ワークフローを使用して実行してに進んで、[アプリケーションをビルドして実行](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md#BKMK_ToRunTheApplication)のセクション[する方法: ワークフローを実行する](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)です。  
   
-## 参照  
- <xref:System.Activities.Statements.Flowchart>   
- <xref:System.Activities.Statements.FlowDecision>   
- [Windows Workflow Foundation プログラミングの新機能](../../../docs/framework/windows-workflow-foundation//programming.md)   
- [ワークフローの設計](../../../docs/framework/windows-workflow-foundation//designing-workflows.md)   
- [チュートリアル入門](../../../docs/framework/windows-workflow-foundation//getting-started-tutorial.md)   
- [アクティビティを作成する方法](../../../docs/framework/windows-workflow-foundation//how-to-create-an-activity.md)   
- [ワークフローを実行する方法](../../../docs/framework/windows-workflow-foundation//how-to-run-a-workflow.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Activities.Statements.Flowchart>  
+ <xref:System.Activities.Statements.FlowDecision>  
+ [Windows Workflow Foundation プログラミング](../../../docs/framework/windows-workflow-foundation/programming.md)  
+ [ワークフローの設計](../../../docs/framework/windows-workflow-foundation/designing-workflows.md)  
+ [チュートリアル入門](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)  
+ [アクティビティを作成する方法](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)  
+ [ワークフローを実行する方法](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)

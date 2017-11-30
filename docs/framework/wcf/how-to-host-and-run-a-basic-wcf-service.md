@@ -1,31 +1,29 @@
 ---
-title: "方法 : 基本的な Windows Communication Foundation サービスをホストおよび実行する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "WCF サービス [WCF]"
-  - "WCF サービス [WCF], 実行"
+title: "方法 : 基本的な Windows Communication Foundation サービスをホストおよび実行する"
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.technology: dotnet-clr
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- WCF services [WCF]
+- WCF services [WCF], running
 ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
-caps.latest.revision: 58
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 58
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: f0368e2e605f3f5c5b5a7b0d8c05f7276d8df22d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 基本的な Windows Communication Foundation サービスをホストおよび実行する
-これは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、3 番目のタスクです。6 つのすべてのタスクの概要については、「[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)」を参照してください。  
+# <a name="how-to-host-and-run-a-basic-windows-communication-foundation-service"></a>方法 : 基本的な Windows Communication Foundation サービスをホストおよび実行する
+これは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] アプリケーションの作成に必要な 6 つのタスクのうち、3 番目のタスクです。 タスクの 6 つのすべての概要については、次を参照してください。、[チュートリアル入門](../../../docs/framework/wcf/getting-started-tutorial.md)トピックです。  
   
- このトピックでは、コンソール アプリケーションで [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスをホストする方法について説明します。この操作は、次の手順から構成されます。  
+ このトピックでは、コンソール アプリケーションで [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスをホストする方法について説明します。 この操作は、次の手順から構成されます。  
   
 -   コンソール アプリケーション プロジェクトを作成し、サービスをホストします。  
   
@@ -37,23 +35,23 @@ caps.handback.revision: 58
   
  このタスクで書かれるコードの全容は手順に続いて提供されている例で見ることができます。  
   
-### 新しいコンソール アプリケーションを作成し、サービスをホストするには  
+## <a name="to-create-a-new-console-application-to-host-the-service"></a>新しいコンソール アプリケーションを作成し、サービスをホストするには  
   
-1.  新しいコンソール アプリケーション プロジェクトを作成します。入門ソリューションを右クリックし、**\[追加\]**、**\[新しいプロジェクト\]** の順にクリックします。**\[新しいプロジェクトの追加\]** ダイアログ ボックスの左側で、**\[C\#\]** または **\[VB\]** の **\[Windows\]** をクリックします。ダイアログ ボックスの中央のセクションで、**\[コンソール アプリケーション\]** を選択します。プロジェクトに GettingStartedHost という名前を付けます。  
+1.  はじめにソリューションを選択するを右クリックして新しいコンソール アプリケーション プロジェクトを作成する**追加**、**新しいプロジェクト**です。 **新しいプロジェクトの追加**ダイアログの の左側でダイアログ**Windows**  **c#**または**VB**です。 ダイアログの中央のセクションで選択**コンソール アプリケーション**です。 プロジェクトに GettingStartedHost という名前を付けます。  
   
-2.  GettingStartedHost プロジェクトのターゲット フレームワークを .NET Framework 4.5 に設定します。ソリューション エクスプローラーで **\[GettingStartedHost\]** を右クリックし、**\[プロパティ\]** を選択します。**\[ターゲット フレームワーク\]** ボックスの一覧の **\[.NET Framework 4.5\]** をクリックします。VB プロジェクトのターゲット フレームワークを設定する方法は多少異なり、GettingStartedHost プロジェクトの \[プロパティ\] ダイアログ ボックスで、画面左側の **\[コンパイル\]** タブをクリックし、ダイアログ ボックスの左下隅にある **\[詳細コンパイル オプション\]** をクリックします。次に、**\[ターゲット フレームワーク\]** ボックスの一覧の **\[.NET Framework 4.5\]** をクリックします。  
+2.  右クリックで GettingStartedHost プロジェクトのターゲット フレームワークを .NET Framework 4.5 に設定**GettingStartedHost**ソリューション エクスプ ローラーを選択して**プロパティ**です。 ラベルの付いたボックスの一覧で**ターゲット フレームワーク**選択**.NET Framework 4.5**です。 VB プロジェクトは少し異なり、GettingStartedHost プロジェクトのプロパティ ダイアログ ボックスのターゲット フレームワークを設定をクリックして、**コンパイル**、画面の左側にあるタブをクリックして、**高度なコンパイルオプション**ダイアログ ボックスの左下隅にあるボタンをクリックします。 選択し、 **.NET Framework 4.5**というドロップダウン ボックスで**ターゲット フレームワーク**です。  
   
-     ターゲット フレームワークを設定すると、[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] はソリューションを再読み込みします。ダイアログが表示されたら、**\[OK\]** をクリックします。  
+     ターゲット フレームワークと、設定[!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)]キーを押して、ソリューションを再読み込みする**OK**が表示されたらです。  
   
-3.  GettingStartedLib プロジェクトへの参照を GettingStartedHost プロジェクトに追加します。ソリューション エクスプローラーで GettingStartedHost プロジェクトの **\[参照\]** フォルダーを右クリックし、**\[参照の追加\]** をクリックします。**\[参照の追加\]** ダイアログで、ダイアログの左側の **\[ソリューション\]** を選択します。ダイアログの中央セクションで \[GettingStartedLib\] を選択し、**\[追加\]** をクリックします。これにより、GettingStartedLib に定義されている型を GettingStartedHost プロジェクトで利用できるようになります。  
+3.  右クリック GettingStartedLib プロジェクトへの参照を GettingStartedHost プロジェクトに追加、**参照**フォルダーをクリックし、ソリューション エクスプ ローラーで GettingStartedHost プロジェクトの **参照の追加**. **参照の追加**ダイアログで、**ソリューション**をクリックして、ダイアログの中央のセクションで GettingStartedLib、ダイアログの左側にある**追加**です。 これにより、GettingStartedLib に定義されている型を GettingStartedHost プロジェクトで利用できるようになります。  
   
-4.  System.ServiceModel への参照を GettingStartedHost プロジェクトに追加します。ソリューション エクスプローラーで GettingStartedHost プロジェクトの **\[参照\]** フォルダーを右クリックし、**\[参照の追加\]** をクリックします。**\[参照の追加\]** ダイアログ ボックスの左側で、**\[フレームワーク\]** を選択します。\[アセンブリの検索\] ボックスに「`System.ServiceModel`」と入力します。ダイアログ ボックスの中央のセクションで、**\[System.ServiceModel\]** を選択し、**\[追加\]**、**\[閉じる\]** の順にクリックします。メイン メニューの \[すべて保存\] をクリックして、ソリューションを保存します。  
+4.  右クリックして System.ServiceModel への参照を GettingStartedHost プロジェクトに追加、**参照**フォルダーをクリックし、ソリューション エクスプ ローラーで GettingStartedHost プロジェクトの **追加**参照。 **参照の追加**ダイアログの  **Framework**ダイアログ ボックスの左側にあります。 [アセンブリの検索] ボックスに「`System.ServiceModel`」と入力します。 ダイアログの中央のセクションで選択**System.ServiceModel**をクリックして、**追加**ボタンをクリックし、をクリックして、**閉じる**ボタンをクリックします。 メイン メニューの [すべて保存] をクリックして、ソリューションを保存します。  
   
-### サービスをホストするには  
+### <a name="to-host-the-service"></a>サービスをホストするには  
   
 -   Program.cs ファイルまたは Module.vb ファイルを開き、次のコードを追加します。  
   
-    ```  
+    ```csharp
     // program.cs  
     using System;  
     using System.Collections.Generic;  
@@ -103,11 +101,10 @@ caps.handback.revision: 58
             }  
         }  
     }  
-  
     ```  
   
-    ```  
-    ‘Module1.vb  
+    ```vb
+    'Module1.vb  
     Imports System  
     Imports System.ServiceModel  
     Imports System.ServiceModel.Description  
@@ -153,34 +150,33 @@ caps.handback.revision: 58
         End Class  
   
     End Module  
-  
     ```  
   
-    1.  手順 1 \- サービスのベース アドレスを保持する Uri クラスのインスタンスを作成します。サービスは、ベース アドレスとオプションの URI を含む URL によって識別されます。ベース アドレスの書式は、\[トランスポート\]:\/\/\[コンピューター名またはドメイン\]\[:省略可能なポート \#\]\/\[省略可能な URI セグメント\] です。電卓サービスのベース アドレスは、電卓サービスのベース アドレスを使用して HTTP トランスポート、localhost、ポート 8000、および URI セグメント "GettingStarted" を使用します。  
+    1.  手順 1 - サービスのベース アドレスを保持する Uri クラスのインスタンスを作成します。 サービスは、ベース アドレスとオプションの URI を含む URL によって識別されます。 ベース アドレスは次の形式:://[トランスポート] [コンピューター名またはドメイン] [: 省略可能なポート番号]/[省略可能な URI セグメント]、電卓サービスのベース アドレスは、HTTP トランスポートを使用して、localhost、ポート 8000、および URI セグメント"GettingStarted"  
   
-    2.  手順 2 \- サービスをホストする <xref:System.ServiceModel.ServicHost> クラスのインスタンスを作成します。コンストラクターは、サービス コントラクトを実装するクラスの型と、サービスのベース アドレスの、2 つのパラメーターを受け取ります。  
+    2.  手順 2 - サービスをホストする <xref:System.ServiceModel.ServiceHost> クラスのインスタンスを作成します。 コンストラクターは、サービス コントラクトを実装するクラスの型と、サービスのベース アドレスの、2 つのパラメーターを受け取ります。  
   
-    3.  手順 3 \- <xref:System.ServiceModel.ServiceEndpoint> インスタンスを作成します。サービス エンドポイントは、アドレス、バインディング、およびサービス コントラクトから構成されます。<xref:System.ServiceModel.ServiceEndpoint> コンストラクターは、サービス コントラクト インターフェイスの型、バインディング、およびアドレスを受け取ります。サービス コントラクトは、サービス型に定義および実装した `ICalculator` です。このサンプルで使用するバインディングは、WS\-\* 仕様に準拠するエンドポイントへの接続に使用される組み込みのバインディングである <xref:System.ServiceModel.WSHttpBinding> です。WCF バインディングの詳細については、「[WCF のバインディングの概要](../../../docs/framework/wcf/bindings-overview.md)」を参照してください。エンドポイントを識別するために、ベース アドレスにアドレスが追加されます。このコードで指定されるアドレスは、"Calculator" です。したがって、エンドポイントの完全修飾アドレスは `“http://localhost:8000/GettingStartedService/Calculator”` です。  
+    3.  手順 3: 作成、 <!--zz <xref:System.ServiceModel.ServiceEndpoint>--> ` System.ServiceModel.ServiceEndpoint`インスタンス。 サービス エンドポイントは、アドレス、バインディング、およびサービス コントラクトから構成されます。 <!--zz <xref:System.ServiceModel.ServiceEndpoint>--> ` System.ServiceModel.ServiceEndpoint`コンス トラクターは、サービス コントラクト インターフェイスの型、バインディング、およびアドレスにためかかります。 サービス コントラクトは、サービス型に定義および実装した `ICalculator` です。 このサンプルで使用するバインディングは、WS-* 仕様に準拠するエンドポイントへの接続に使用される組み込みのバインディングである <xref:System.ServiceModel.WSHttpBinding> です。 WCF バインディングの詳細については、次を参照してください。 [WCF のバインディングの概要](../../../docs/framework/wcf/bindings-overview.md)です。 エンドポイントを識別するために、ベース アドレスにアドレスが追加されます。 このコードで指定されたアドレスは"CalculatorService"エンドポイントの完全修飾アドレスは`"http://localhost:8000/GettingStarted/CalculatorService"`.NET Framework 4.0 を使用する場合は省略可能なまたはそれ以降は、サービス エンドポイントを追加します。 これらのバージョンでは、エンドポイントがコードまたは構成で指定されていない場合、WCF は、サービスで実装されたベース アドレスとコントラクトの組み合わせごとに、1 つの既定のエンドポイントを追加します。 詳細については、既定のエンドポイントを参照してください[エンドポイント アドレスを指定する](../../../docs/framework/wcf/specifying-an-endpoint-address.md)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) 」および「 [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)。  
   
         > [!IMPORTANT]
-        >  サービス エンドポイントの追加は、.NET Framework 4 以降を使用する場合は省略可能です。これらのバージョンでは、エンドポイントがコードまたは構成で指定されていない場合、WCF は、サービスで実装されたベース アドレスとコントラクトの組み合わせごとに、1 つの既定のエンドポイントを追加します。既定のエンドポイントの詳細については、「[エンドポイント アドレスの指定](../../../docs/framework/wcf/specifying-an-endpoint-address.md)」を参照してください。既定のエンドポイント、バインディング、および動作[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[簡略化された構成](../../../docs/framework/wcf/simplified-configuration.md)」および「[WCF サービスの簡略化された構成](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)」を参照してください。  
+        >  サービス エンドポイントの追加は、.NET Framework 4 以降を使用する場合は省略可能です。 これらのバージョンでは、エンドポイントがコードまたは構成で指定されていない場合、WCF は、サービスで実装されたベース アドレスとコントラクトの組み合わせごとに、1 つの既定のエンドポイントを追加します。 詳細については、既定のエンドポイントを参照してください[エンドポイント アドレスを指定する](../../../docs/framework/wcf/specifying-an-endpoint-address.md)です。 [!INCLUDE[crabout](../../../includes/crabout-md.md)] については、「 [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) 」および「 [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)。  
   
-    4.  手順 4 \- メタデータ交換を有効にします。クライアントは、サービス操作を呼び出すために使用されるプロキシの生成にメタデータ交換を使用します。メタデータ交換を有効化するには、<xref:System.ServiceModel.Description.ServiceMetadataBehavior> インスタンスを作成し、その <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> プロパティを `true` に設定します。さらに、動作を <xref:System.ServiceModel.ServiceHost> インスタンスの <xref:System.ServiceModel.ServiceHost.Behaviors%2A> コレクションに追加します。  
+    4.  手順 4 - メタデータ交換を有効にします。 クライアントは、サービス操作を呼び出すために使用されるプロキシの生成にメタデータ交換を使用します。 メタデータ交換の作成を有効にする、<xref:System.ServiceModel.Description.ServiceMetadataBehavior>インスタンス、設定の<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A>プロパティを`true`の動作を追加し、 <!--zz <xref:System.ServiceModel.ServiceHost.Behaviors%2A>  --> `System.ServiceModel.ServiceHost.Behaviors%2A`のコレクション、<xref:System.ServiceModel.ServiceHost>インスタンス。  
   
-    5.  手順 5 \- 受信メッセージをリッスンするために <xref:System.ServiceModel.ServiceHost> を開きます。コードでは、ユーザーによる Enter キーの押下を待機しています。この動作を行わない場合、アプリは直ちに終了し、サービスはシャットダウンします。また、try\/catch ブロックが使用されている点にも注意してください。<xref:System.ServiceModel.ServiceHost> がインスタンス化された後、他のコードはすべて try\/catch ブロックに配置されます。<xref:System.ServiceModel.ServiceHost> によってスローされた例外を安全にキャッチする方法の詳細については、「[Using ステートメントに関する問題の回避](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)」を参照してください。  
+    5.  手順 5 - 受信メッセージをリッスンするために <xref:System.ServiceModel.ServiceHost> を開きます。 コードでは、ユーザーによる Enter キーの押下を待機しています。 この動作を行わない場合、アプリは直ちに終了し、サービスはシャットダウンします。また、try/catch ブロックが使用されている点にも注意してください。 <xref:System.ServiceModel.ServiceHost> がインスタンス化された後、他のコードはすべて try/catch ブロックに配置されます。 詳細については、安全にによってスローされる例外をキャッチ<xref:System.ServiceModel.ServiceHost>を参照してください[Using ステートメントに関する問題の回避](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)  
   
-### サービスが正常に機能していることを確認するには  
+### <a name="to-verify-the-service-is-working"></a>サービスが正常に機能していることを確認するには  
   
-1.  [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] 内から GettingStartedHost コンソール アプリケーションを実行します。[!INCLUDE[wv](../../../includes/wv-md.md)] 以降のオペレーティング システムでは、サービスを管理者権限で実行する必要があります。[!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] は管理者権限で実行されているため、GettingStartedHost も管理者権限で実行される必要があります。新しいコマンド プロンプトを管理者権限で開いて、service.exe をその中で実行することもできます。  
+1.  [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] 内から GettingStartedHost コンソール アプリケーションを実行します。 [!INCLUDE[wv](../../../includes/wv-md.md)] 以降のオペレーティング システムでは、サービスを管理者権限で実行する必要があります。 [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] は管理者権限で実行されているため、GettingStartedHost も管理者権限で実行される必要があります。 新しいコマンド プロンプトを管理者権限で開いて、service.exe をその中で実行することもできます。  
   
-2.  Internet Explorer を開き、サービスのデバッグ ページ \(`http://localhost:8000/GettingStarted/CalculatorService`\) に移動します。  
+2.  Internet Explorer を開き、サービスのデバッグ ページ (`http://localhost:8000/GettingStarted/CalculatorService`) に移動します。  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では、チュートリアルの前の手順で作成したサービス コントラクトと実装を含め、コンソール アプリケーションでサービスをホストします。  
   
- コマンド ライン コンパイラでこれをコンパイルするには、`System.ServiceModel.dll` を参照するクラス ライブラリに IService1.cs と Service2.cs をコンパイルします。さらに、Program.cs をコンソール アプリケーションにコンパイルします。  
+ コマンド ライン コンパイラでコンパイルを参照するクラス ライブラリに IService1.cs と Service1.cs をコンパイル`System.ServiceModel.dll`です。 さらに、Program.cs をコンソール アプリケーションにコンパイルします。  
   
-```  
+```csharp
 // IService1.cs  
 using System;  
 using System.Collections.Generic;  
@@ -204,10 +200,9 @@ namespace GettingStartedLib
             double Divide(double n1, double n2);  
         }  
 }  
-  
 ```  
   
-```  
+```csharp
 // Service1.cs  
 using System;  
 using System.Collections.Generic;  
@@ -254,10 +249,9 @@ namespace GettingStartedLib
         }  
     }  
 }  
-  
 ```  
   
-```  
+```csharp
 //Program.cs  
 using System;  
 using System.Collections.Generic;  
@@ -307,11 +301,10 @@ namespace GettingStartedHost
         }  
     }  
 }  
-  
 ```  
   
-```  
-‘IService1.vb  
+```vb
+'IService1.vb  
 Imports System  
 Imports System.ServiceModel  
   
@@ -330,11 +323,10 @@ Namespace GettingStartedLib
         Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double  
     End Interface  
 End Namespace  
-  
 ```  
   
-```  
-‘Service1.vb  
+```vb
+'Service1.vb  
 Imports System  
 Imports System.ServiceModel  
   
@@ -376,11 +368,10 @@ Namespace GettingStartedLib
         End Function  
     End Class  
 End Namespace  
-  
 ```  
   
-```  
-‘Module1.vb  
+```vb
+'Module1.vb  
 Imports System  
 Imports System.ServiceModel  
 Imports System.ServiceModel.Description  
@@ -427,14 +418,13 @@ Module Service
     End Class  
   
 End Module  
-  
 ```  
   
 > [!NOTE]
->  このようなサービスには、リッスンを行うコンピューター上で HTTP アドレスを登録するためのアクセス許可が必要です。管理者アカウントにはこのアクセス許可がありますが、管理者以外のアカウントの場合は、HTTP 名前空間へのアクセス許可を付与する必要があります。名前空間予約の構成方法[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[HTTP および HTTPS の構成](../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)」を参照してください。[!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] での service.exe の実行には、管理者権限が必要です。  
+>  このようなサービスには、リッスンを行うコンピューター上で HTTP アドレスを登録するためのアクセス許可が必要です。 管理者アカウントにはこのアクセス許可がありますが、管理者以外のアカウントの場合は、HTTP 名前空間へのアクセス許可を付与する必要があります。 [!INCLUDE[crabout](../../../includes/crabout-md.md)]参照してください、名前空間の予約を構成する方法[を構成する HTTP および HTTPS](../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)です。 [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] での service.exe の実行には、管理者権限が必要です。  
   
- これでサービスが実行されていることが確認できました。「[方法 : クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)」に進んでください。トラブルシューティングの詳細については、「[チュートリアル入門のトラブルシューティング](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md)」を参照してください。  
+ これでサービスが実行されていることが確認できました。 進みます[する方法: クライアントを作成する](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)です。 情報をトラブルシューティングするには、次を参照してください。[チュートリアル入門のトラブルシューティング](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md)です。  
   
-## 参照  
- [概要](../../../docs/framework/wcf/samples/getting-started-sample.md)   
- [自己ホスト](../../../docs/framework/wcf/samples/self-host.md)
+## <a name="see-also"></a>関連項目  
+ [はじめに](../../../docs/framework/wcf/samples/getting-started-sample.md)  
+ [自己ホストします。](../../../docs/framework/wcf/samples/self-host.md)

@@ -1,35 +1,36 @@
 ---
-title: "方法 : Windows フォームの LinkLabel コントロールから Web ページを表示する (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "LinkLabel1_LinkClicked"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "例 [Windows フォーム], LinkLabel コントロール"
-  - "リンク, Web ページへのフォームからの"
-  - "LinkLabel コントロール [Windows フォーム], 例"
-  - "Web ページ, 表示"
-  - "Windows フォーム, リンク (Web ページに)"
+title: "方法 : Windows フォームの LinkLabel コントロールから Web ページを表示する (Visual Basic)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: vb
+f1_keywords: LinkLabel1_LinkClicked
+helpviewer_keywords:
+- examples [Windows Forms], LinkLabel control
+- Web pages [Windows Forms], displaying
+- linking [Windows Forms], to Web pages from forms
+- Windows Forms, linking to Web pages
+- LinkLabel control [Windows Forms], examples
 ms.assetid: 477a7398-5971-4de3-b24c-f49f32bdb28a
-caps.latest.revision: 7
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 38ef165dc655fedbf682a21220d6a76532b18f6a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォームの LinkLabel コントロールから Web ページを表示する (Visual Basic)
-次の例では、ユーザーが Windows フォームの <xref:System.Windows.Forms.LinkLabel> コントロールをクリックしたときに、既定のブラウザーに Web ページが表示されます。  
+# <a name="how-to-display-a-web-page-from-a-windows-forms-linklabel-control-visual-basic"></a>方法 : Windows フォームの LinkLabel コントロールから Web ページを表示する (Visual Basic)
+この例では、ユーザーが Windows フォームをクリックしたときに既定のブラウザーで Web ページを表示<xref:System.Windows.Forms.LinkLabel>コントロール。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```vb  
 Private Sub Form1_Load(ByVal sender As System.Object, ByVal e _  
@@ -44,18 +45,18 @@ LinkLabel1.LinkClicked
 End Sub  
 ```  
   
-## コードのコンパイル  
- この例には、次の項目が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ この例で必要な要素は次のとおりです。  
   
--   `Form1` という Windows フォーム  
+-   という名前の Windows フォーム`Form1`です。  
   
 -   `LinkLabel1` という名前の <xref:System.Windows.Forms.LinkLabel> コントロール。  
   
--   アクティブなインターネット接続  
+-   アクティブなインターネット接続です。  
   
-## .NET Framework セキュリティ  
- <xref:System.Diagnostics.Process.Start%2A> メソッドを呼び出すには、完全な信頼が必要です。  詳細については、「<xref:System.Security.SecurityException>」を参照してください。  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 呼び出し、<xref:System.Diagnostics.Process.Start%2A>メソッドには、完全な信頼が必要です。 詳細については、「<xref:System.Security.SecurityException>」を参照してください。  
   
-## 参照  
- <xref:System.Windows.Forms.LinkLabel>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.LinkLabel>  
  [LinkLabel コントロール](../../../../docs/framework/winforms/controls/linklabel-control-windows-forms.md)

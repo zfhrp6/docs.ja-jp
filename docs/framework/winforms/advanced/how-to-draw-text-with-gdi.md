@@ -1,50 +1,54 @@
 ---
-title: "方法 : GDI を使用してテキストを描画する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "描画, テキスト"
-  - "GDI, 描画 (テキストを) [Windows フォーム]"
-  - "テキスト, 描画 (TextRenderer を使用して)"
-  - "Windows フォーム, 描画 (GDI でテキストを)"
+title: "方法 : GDI を使用してテキストを描画する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- GDI [Windows Forms], drawing text [Windows Forms]
+- text [Windows Forms], drawing with TextRenderer
+- drawing [Windows Forms], text
+- Windows Forms, drawing text with GDI
 ms.assetid: 2a19fe5d-2ace-451c-94db-01cb1118ef7b
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 48644ce8449c8d8eea7306eff1e43539659370c5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : GDI を使用してテキストを描画する
-<xref:System.Windows.Forms.TextRenderer> クラスの <xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドを使用すると、[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] 機能を利用してフォームまたはコントロールにテキストを描画できます。  [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] のテキスト描画機能は、一般に [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] よりもパフォーマンスが高く、テキストの寸法の計測も正確です。  
+# <a name="how-to-draw-text-with-gdi"></a>方法 : GDI を使用してテキストを描画する
+<xref:System.Windows.Forms.TextRenderer.DrawText%2A>メソッドで、<xref:System.Windows.Forms.TextRenderer>アクセスできるクラス、[!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]フォームまたはコントロールのテキストを描画するための機能です。 [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]テキスト レンダリングとパフォーマンスが向上しより正確なテキストが測定よりも通常は[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]します。  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.TextRenderer> クラスの <xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドでは、印刷はサポートされていません。  印刷時には常に <xref:System.Drawing.Graphics> クラスの <xref:System.Drawing.Graphics.DrawString%2A> メソッドを使用してください。  
+>  <xref:System.Windows.Forms.TextRenderer.DrawText%2A>のメソッド、<xref:System.Windows.Forms.TextRenderer>クラスは、印刷のサポートされていません。 印刷する場合、常に使用、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
   
-## 使用例  
- 次のコード例は、<xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドを使用して、四角形内の複数の行にテキストを描画する方法を示しています。  
+## <a name="example"></a>例  
+ 次のコード例を使用して、四角形内の複数の行のテキストを描画する方法を示します、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>メソッドです。  
   
  [!code-csharp[System.Windows.Forms.TextRendererExamples#7](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#7)]
  [!code-vb[System.Windows.Forms.TextRendererExamples#7](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#7)]  
   
- <xref:System.Windows.Forms.TextRenderer> クラス内でテキストを描画するには、<xref:System.Drawing.Graphics> や <xref:System.Drawing.Font> などの <xref:System.Drawing.IDeviceContext>、テキストを描画する位置、および描画する色が必要です。  オプションで、<xref:System.Windows.Forms.TextFormatFlags> 列挙値を使ってテキストの書式を指定することも可能です。  
+ テキストを表示するために、<xref:System.Windows.Forms.TextRenderer>クラス、する必要があります、 <xref:System.Drawing.IDeviceContext>、ように、<xref:System.Drawing.Graphics>と<xref:System.Drawing.Font>テキストをおよび描画ように色を描画する場所です。 必要に応じて、テキストを使用して書式設定を指定することができます、<xref:System.Windows.Forms.TextFormatFlags>列挙します。  
   
- <xref:System.Drawing.Graphics> の取得の詳細については、「[方法 : 描画する Graphics オブジェクトを作成する](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)」を参照してください。  <xref:System.Drawing.Font> の構築の詳細については、「[方法 : フォント ファミリとフォントを作成する](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)」を参照してください。  
+ 取得の詳細については、<xref:System.Drawing.Graphics>を参照してください[する方法: 描画グラフィック オブジェクトを作成する](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)です。 構築の詳細については、<xref:System.Drawing.Font>を参照してください[する方法: フォント ファミリの構築とフォント](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)です。  
   
-## コードのコンパイル  
- 前述のコード例は Windows フォームでの使用を前提としたものであり、<xref:System.Windows.Forms.PaintEventHandler> のパラメーターである <xref:System.Windows.Forms.PaintEventArgs> `e` が必要です。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ 前のコード例が、Windows フォームで使用するために設計されていて、必要があります、 <xref:System.Windows.Forms.PaintEventArgs> `e`、パラメーターのある<xref:System.Windows.Forms.PaintEventHandler>です。  
   
-## 参照  
- <xref:System.Windows.Forms.TextRenderer>   
- <xref:System.Drawing.Font>   
- <xref:System.Drawing.Color>   
- <xref:System.Drawing.Color>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.TextRenderer>  
+ <xref:System.Drawing.Font>  
+ <xref:System.Drawing.Color>  
+ <xref:System.Drawing.Color>  
  [フォントとテキストの使用](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)

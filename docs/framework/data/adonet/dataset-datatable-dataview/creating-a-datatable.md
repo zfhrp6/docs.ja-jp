@@ -1,53 +1,57 @@
 ---
-title: "DataTable の作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DataTable の作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: eecf9d78-60e3-4fdc-8de0-e56c13a89414
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 923d19e9539c6d93f3714efcdaa6fe7a5da843ec
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataTable の作成
+# <a name="creating-a-datatable"></a>DataTable の作成
 <xref:System.Data.DataTable> は 1 つのインメモリ リレーショナル データのテーブルを表します。DataTable は単独で作成および使用することも、他の .NET Framework オブジェクトから <xref:System.Data.DataSet> のメンバーとして使用することもできます。  
   
- **DataTable** オブジェクトは、適切な **DataTable** コンストラクターを使用することにより作成できます。  このオブジェクトを **DataSet** に追加するには、**Add** メソッドを使用して、**DataTable** オブジェクトの **Tables** コレクションにオブジェクトを追加します。  
+ 作成することができます、 **DataTable** 、適切なを使用してオブジェクト**DataTable**コンス トラクターです。 追加することができます、**データセット**を使用して、**追加**に追加する方法、 **DataTable**オブジェクトの**テーブル**コレクション。  
   
- **DataSet** の内部で **DataTable** オブジェクトを作成する場合は、**DataAdapter** オブジェクトの **Fill** メソッドまたは **FillSchema** メソッドを使用できます。また、定義済みまたは推論による XML スキーマで、**DataSet** の **ReadXml**、**ReadXmlSchema**、または **InferXmlSchema** の各メソッドを使用して作成することもできます。  **DataTable** を 1 つの **DataSet** の **Tables** コレクションのメンバーとして追加した後で、その **DataTable** を他の **DataSet** のテーブルのコレクションに追加することはできません。  
+ 作成することも**DataTable**内のオブジェクトは、**データセット**を使用して、**塗りつぶし**または**FillSchema**のメソッド、 **DataAdapter**オブジェクト、または、定義済みまたは推論されたスキーマを使用して XML から、 **ReadXml**、 **ReadXmlSchema**、または**InferXmlSchema**メソッド、**データセット**です。 追加した後に注意してください、 **DataTable**のメンバーとして、**テーブル**いずれかのコレクション**データセット**、他の任意ののテーブルのコレクションに追加することはできません**データセット**です。  
   
- 最初に作成した時点では、**DataTable** にはスキーマ \(構造\) がありません。  テーブルのスキーマを定義するには、<xref:System.Data.DataColumn> オブジェクトを作成し、テーブルの **Columns** コレクションに追加する必要があります。  テーブルの主キー列を定義したり、**Constraint** オブジェクトを作成してテーブルの **Constraints** コレクションに追加したりすることもできます。  **DataTable** のスキーマを定義した後で、**DataRow** オブジェクトをテーブルの **Rows** コレクションに追加することにより、データ行をテーブルに追加できます。  
+ 作成する場合、 **DataTable**スキーマ (つまり、構造体) はありません。 テーブルのスキーマを定義するのには必要がありますを作成し、追加<xref:System.Data.DataColumn>オブジェクトを**列**テーブルのコレクション。 テーブルの主キー列を定義し、作成して追加**制約**オブジェクトを**制約**テーブルのコレクション。 スキーマを定義した後、 **DataTable**、行のデータをテーブルに追加するには追加することによって**DataRow**オブジェクトを**行**テーブルのコレクション。  
   
- **DataTable** を作成するときに <xref:System.Data.DataTable.TableName%2A> プロパティの値を指定する必要はありません。このプロパティは、後から指定することも、空のままにしておくこともできます。  ただし、**TableName** 値のないテーブルを **DataSet** に追加した場合、そのテーブルの名前は既定のテーブル名 Table*N* になります。この既定名は Table0 に相当する "Table" から始まり、連続する番号が割り当てられていきます。  
+ 値を指定する必要はありません、<xref:System.Data.DataTable.TableName%2A>プロパティを作成するとき、 **DataTable**; プロパティを指定するには、いつでもまたはすることが空白のままにします。 ただし、せず、テーブルを追加する、 **TableName**値を**データセット**、テーブルがテーブルの増分の既定の名前を指定する*N*、table0"Table"で開始します。  
   
 > [!NOTE]
->  **TableName** 値を指定するときには、"Table*N*" の命名規則を使用しないことをお勧めします。これは、指定した名前が **DataSet** に既に存在する既定のテーブル名と競合しないようにするためです。  指定した名前が既に存在する場合は、例外がスローされます。  
+>  避けることをお勧め、"テーブル*N*"名前付け規則を指定するときに、 **TableName**値、指定した名前の既存の既定のテーブル名と競合する場合もあるため、**データセット**. 指定した名前が既に存在する場合は、例外がスローされます。  
   
- **DataTable** オブジェクトのインスタンスを作成し、"Customers" という名前を割り当てる例を次に示します。  
+ 次の例のインスタンスを作成する、 **DataTable**オブジェクトし、"Customers"という名前を割り当てる  
   
 ```vb  
 Dim workTable as DataTable = New DataTable("Customers")  
-  
 ```  
   
 ```csharp  
 DataTable workTable = new DataTable("Customers");  
 ```  
   
- **DataTable** のインスタンスを作成し、**DataSet** の **Tables** コレクションに追加する例を次に示します。  
+ 次の例のインスタンスを作成する、 **DataTable**に追加することによって、**テーブル**のコレクション、**データセット**です。  
   
 ```vb  
 Dim customers As DataSet = New DataSet  
 Dim customersTable As DataTable = _  
    customers.Tables.Add("CustomersTable")  
-  
 ```  
   
 ```csharp  
@@ -55,11 +59,11 @@ DataSet customers = new DataSet();
 DataTable customersTable = customers.Tables.Add("CustomersTable");  
 ```  
   
-## 参照  
- <xref:System.Data.DataTable>   
- <xref:System.Data.DataTableCollection>   
- [DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)   
- [DataAdapter からの DataSet の読み込み](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)   
- [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)   
- [XML の DataSet スキーマ情報の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Data.DataTable>  
+ <xref:System.Data.DataTableCollection>  
+ [DataTables](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
+ [DataAdapter からの DataSet の読み込み](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)  
+ [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
+ [XML からの DataSet スキーマ情報の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

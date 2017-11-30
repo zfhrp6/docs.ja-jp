@@ -1,47 +1,47 @@
 ---
-title: "ToolBar コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ToolBar"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ToolBar コントロール [Windows フォーム], ToolBar コントロールの概要"
-  - "ツール バー [Windows フォーム], ツール バーの概要"
+title: "ToolBar コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: ToolBar
+helpviewer_keywords:
+- toolbars [Windows Forms], about toolbars
+- ToolBar control [Windows Forms], about ToolBar controls
 ms.assetid: d426b203-0216-4dbe-b834-1641e50a9c29
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 857cc04af6c619035fa2bf0a548053f57292f7bc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ToolBar コントロールの概要 (Windows フォーム)
+# <a name="toolbar-control-overview-windows-forms"></a>ToolBar コントロールの概要 (Windows フォーム)
 > [!NOTE]
 >  <xref:System.Windows.Forms.ToolStrip> コントロールは、<xref:System.Windows.Forms.ToolBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.ToolBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  
   
- Windows フォームの <xref:System.Windows.Forms.ToolBar> コントロールは、一連のドロップダウン メニューやコマンド実行用のビットマップ ボタンを表示する、フォーム上のコントロール バーとして使用します。  ツール バーのボタンをクリックして、メニュー コマンドを選択するのと同じ操作ができます。  ボタンは、プッシュ ボタン、ドロップダウン メニュー、または区切り記号として機能するように設定できます。  通常、ツール バーのボタンとメニューは、アプリケーションのメニュー構造の項目に対応し、使用頻度の高い関数やコマンドをすばやく実行します。  
+ Windows フォーム <xref:System.Windows.Forms.ToolBar> コントロールは、コマンドをアクティブ化するドロップダウン メニューとビットマップのボタンの行を表示するコントロール バーとしてフォームを使用します。 そのため、ツールバー ボタンをクリックすることは、メニュー コマンドを選択することと同じです。 ボタンは、プッシュ ボタン、ドロップダウン メニュー、または区切りとして表示して機能するように構成できます。 通常、ツールバーには、アプリケーションのメニュー構造の項目に対応するボタンとメニューが含まれ、アプリケーションで最も頻繁に使用される関数やコマンドにすばやくアクセスできます。  
   
-## ToolBar コントロールの操作  
- <xref:System.Windows.Forms.ToolBar> コントロールは、通常は親ウィンドウの上部に沿って "ドッキング" されますが、ウィンドウの上下左右のどこにでもドッキングできます。  ツール バーには、ユーザーがツール バー ボタンをマウス ポインターでポイントしたときに表示されるツール ヒントを実装できます。  ツール ヒントは、ボタンまたはメニューの用途を簡潔に説明するための、小さなポップアップ ウィンドウです。  ツールヒントを表示するには、<xref:System.Windows.Forms.ToolBar.ShowToolTips%2A> プロパティに `true` を設定します。  
+## <a name="working-with-the-toolbar-control"></a>ToolBar コントロールの操作  
+ A<xref:System.Windows.Forms.ToolBar>コントロールは、通常「ドッキング」、その親ウィンドウの上部にあるが、ウィンドウの任意の辺にもドッキングできます。 ツール バー ボタンをマウス ポインターでポイントすると、ツールヒントが表示されます。 ツールヒントは、ボタンやメニューの目的を簡単に説明する小さなポップアップ ウィンドウです。 ツールヒントを表示する、<xref:System.Windows.Forms.ToolBar.ShowToolTips%2A>プロパティに設定する必要があります`true`です。  
   
 > [!NOTE]
->  一部のアプリケーションには、アプリケーション ウィンドウの上部に "浮遊" していて位置を変更できる、ツール バーによく似たコントロールがあります。  Windows フォームの ToolBar コントロールは、位置を変更できません。  
+>  特定のアプリケーション機能のコントロールは、アプリケーション ウィンドウの上に "フローティング" して位置変更できるツールバーとよく似ています。 Windows フォームのツール バー コントロールでは、このような操作を実行できません。  
   
- <xref:System.Windows.Forms.ToolBar.Appearance%2A> プロパティに [Normal](frlrfSystemWindowsFormsToolBarAppearanceClassTopic) を設定すると、ツール バー ボタンが立体的に表示されます。  ツール バーの <xref:System.Windows.Forms.ToolBar.Appearance%2A> プロパティに <xref:System.Windows.Forms.ToolBarAppearance> を設定すると、ツール バーとボタンが平面的に表示されます。  平面表示されたボタンの上にマウス ポインターが置かれると、ボタンが立体的に表示されます。  ツール バー ボタンは、区切り記号で論理的なグループに分類できます。  区切り記号は、<xref:System.Windows.Forms.ToolBarButton.Style%2A> プロパティに [Separator](frlrfSystemWindowsFormsToolBarButtonStyleClassTopic) を設定したツール バー ボタンです。  ツール バー上では空の領域として表示されます。  ツール バーが平面表示されているときは、ボタン区切り記号は空の領域ではなく線で表示されます。  
+ ときに、<xref:System.Windows.Forms.ToolBar.Appearance%2A>プロパティに設定されている<xref:System.Windows.Forms.ToolBarAppearance>、発生し、3 次元、ツールバーのボタンが表示されます。 設定することができます、<xref:System.Windows.Forms.ToolBar.Appearance%2A>ツールバーのプロパティ<xref:System.Windows.Forms.ToolBarAppearance>ツールバーとそのボタンの外観フラットです。 フラットなボタンにマウス ポインターを置くと、ボタンは 3 次元表示に変わります。 ツール バー ボタンは、区切りを使用すると論理グループに分けることができます。 区切り記号がツール バー ボタンで、<xref:System.Windows.Forms.ToolBarButton.Style%2A>プロパティに設定<xref:System.Windows.Forms.ToolBarButtonStyle>です。 区切りは、ツール バー上の空スペースとして表示されます。 ツール バーはフラットに表示され、ボタンの区切りは、ボタンの間にスペースを入れて表示されるのではなく線として表示されます。  
   
- <xref:System.Windows.Forms.ToolBar> コントロールでは、<xref:System.Windows.Forms.Button> オブジェクトを <xref:System.Windows.Forms.ToolBar.Buttons%2A> コレクションに追加することにより、ツール バーを作成できます。  ボタンを <xref:System.Windows.Forms.ToolBar> コントロールに追加するときには、コレクション エディターを使用できます。各 <xref:System.Windows.Forms.Button> オブジェクトには、テキストまたはイメージを割り当てます \(両方を割り当てることもできます\)。  イメージは、関連付けられた [ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) コンポーネントによって提供されます。  実行時に <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Add%2A> メソッドや <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Remove%2A> メソッドを使用して、<xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection> にボタンを登録したり、登録済みのボタンを削除したりできます。  <xref:System.Windows.Forms.ToolBar> のボタンをプログラミングするには、<xref:System.Windows.Forms.ToolBar> の <xref:System.Windows.Forms.ToolBar.ButtonClick> イベントにコードを追加します。クリックされたボタンの判別には、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs> クラスの <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A> プロパティを使用します。  
+ <xref:System.Windows.Forms.ToolBar>コントロールでは、ツールバーを追加することで作成できます。<xref:System.Windows.Forms.Button>オブジェクトを、<xref:System.Windows.Forms.ToolBar.Buttons%2A>コレクション。 ボタンを追加するコレクション エディターを使用することができます、<xref:System.Windows.Forms.ToolBar>コントロール; 各<xref:System.Windows.Forms.Button>オブジェクトがテキストまたはイメージが割り当てられて、両方を割り当てることはできます。 イメージは、関連付けられた [ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) コンポーネントから取得されます。 実行時に、追加または削除できますからボタン、<xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection>を使用して、<xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Add%2A>と<xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Remove%2A>メソッドです。 プログラムのボタンを<xref:System.Windows.Forms.ToolBar>、コードを追加、<xref:System.Windows.Forms.ToolBar.ButtonClick>のイベント、<xref:System.Windows.Forms.ToolBar>を使用して、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A>のプロパティ、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs>クリックしてされたボタンを決めるクラスをします。  
   
-## 参照  
- <xref:System.Windows.Forms.ToolBar>   
- [ToolBar コントロール](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)   
- [方法 : ツール バー コントロールにボタンを追加する](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)   
- [方法 : ツール バー ボタンのアイコンを定義する](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)   
- [方法 : ツール バー ボタンのメニュー イベントをトリガーする](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Forms.ToolBar>  
+ [ToolBar コントロール](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)  
+ [方法: ツール バー コントロールにボタンを追加する](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)  
+ [方法: ツール バー ボタンのアイコンを定義する](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)  
+ [方法: ツール バー ボタンのメニュー イベントをトリガーする](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)

@@ -1,31 +1,37 @@
 ---
-title: "方法 : ヘッダーがクリックされたときに GridView 列を並べ替える | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "GridView コントロール"
-  - "ListView コントロール"
-  - "ListView コントロール、GridView の列の並べ替え"
-  - "GridView コントロールを ListView コントロール"
+title: "方法 : ヘッダーがクリックされたときに GridView 列を並べ替える"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- controls [WPF], GridView
+- controls [WPF], ListView
+- ListView controls [WPF], sorting GridView columns
+- GridView controls [WPF], ListView control
 ms.assetid: 4865d720-d147-40ed-83a7-af7587f8aad8
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: a6f05f9f1fef335bc0bae578220d458ade9bfe06
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ヘッダーがクリックされたときに GridView 列を並べ替える
-この例を作成する方法を示しています、 <xref:System.Windows.Controls.ListView>を実装するコントロール、 <xref:System.Windows.Controls.GridView>モードと並べ替えの列ヘッダーをクリックすると、データがコンテンツを表示します。  
+# <a name="how-to-sort-a-gridview-column-when-a-header-is-clicked"></a>方法 : ヘッダーがクリックされたときに GridView 列を並べ替える
+この例を作成する方法を示しています、<xref:System.Windows.Controls.ListView>を実装するコントロール、<xref:System.Windows.Controls.GridView>モードと並べ替え、ユーザーが列見出しをクリックしたときにデータがコンテンツを表示します。  
   
 ## <a name="example"></a>例  
- 次の例、 <xref:System.Windows.Controls.GridView>バインド先である&3; つの列を含む、<xref:System.DateTime.Year%2A>、<xref:System.DateTime.Month%2A>、および<xref:System.DateTime.Day%2A>のプロパティ、 <xref:System.DateTime>構造体。  
+ 次の例では定義、 <xref:System.Windows.Controls.GridView> 3 つの列にバインドを持つ、 <xref:System.DateTime.Year%2A>、 <xref:System.DateTime.Month%2A>、および<xref:System.DateTime.Day%2A>のプロパティ、<xref:System.DateTime>構造体。  
   
 ```xaml  
 <GridView>  
@@ -41,7 +47,7 @@ caps.handback.revision: 18
 </GridView>  
 ```  
   
- 次の例では、データ項目として定義されている、 <xref:System.Collections.ArrayList>の<xref:System.DateTime>オブジェクトです。 <xref:System.Collections.ArrayList>として定義された、 <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>の<xref:System.Windows.Controls.ListView>コントロールです。  
+ 次の例は、データ項目として定義されている、<xref:System.Collections.ArrayList>の<xref:System.DateTime>オブジェクト。 <xref:System.Collections.ArrayList>として定義されて、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>の<xref:System.Windows.Controls.ListView>コントロール。  
   
 ```xaml  
 <ListView.ItemsSource>  
@@ -62,7 +68,7 @@ caps.handback.revision: 18
 </ListView.ItemsSource>  
 ```  
   
- `s`と`p`の識別子、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]タグがのメタデータで定義されている名前空間マッピングを参照してください、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ページです。 次の例では、メタデータの定義を示します。  
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] タグの `s` と `p` の識別子とは、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ページのメタデータで定義されている名前空間マッピングを意味しています。 次の例にメタデータの定義を示します。  
   
 ```xaml  
 <Window        
@@ -73,7 +79,7 @@ caps.handback.revision: 18
     xmlns:p="clr-namespace:System;assembly=mscorlib">  
 ```  
   
- 処理するイベント ハンドラーを定義している例では、列の内容に従ってデータを並べ替える、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>列ヘッダーのボタンを押したときに発生するイベントです。 次の例では、イベント ハンドラーを指定する方法、 <xref:System.Windows.Controls.GridViewColumnHeader>コントロールです。  
+ 処理するイベント ハンドラーを定義している例では、列の内容に合わせてデータを並べ替えるを<xref:System.Windows.Controls.Primitives.ButtonBase.Click>列ヘッダーのボタンを押したときに発生するイベントです。 次の例のイベント ハンドラーを指定する方法を示しています、<xref:System.Windows.Controls.GridViewColumnHeader>コントロール。  
   
 ```xaml  
 <ListView x:Name='lv' Height="150" HorizontalAlignment="Center"   
@@ -82,7 +88,7 @@ caps.handback.revision: 18
  >  
 ```  
   
- 例は、並べ替えの方向は昇順と降順の列ヘッダーのボタンをクリックするたびに間変更されるように、イベント ハンドラーを定義します。 次の例では、イベント ハンドラーを示します。  
+ この例では、列ヘッダーのボタンをクリックするたびに並べ替えの方向の昇順と降順が切り替わるようにイベント ハンドラーを定義します。 次の例ではイベント ハンドラーを示します。  
   
 ```csharp  
 public partial class Window1 : Window  
@@ -196,7 +202,7 @@ Partial Public Class Window1
         End Sub  
 ```  
   
- 次の例では、データの並べ替えにイベント ハンドラーが呼び出される並べ替えアルゴリズムを示します。 並べ替えを実行して、新しいを作成して<xref:System.ComponentModel.SortDescription>構造体。  
+ 次の例では、データを並べ替えるためにイベント ハンドラーにより呼び出される並べ替えアルゴリズムを示します。  新しいを作成して、並べ替えが実行される<xref:System.ComponentModel.SortDescription>構造体。  
   
 ```csharp  
 private void Sort(string sortBy, ListSortDirection direction)  
@@ -209,7 +215,6 @@ private void Sort(string sortBy, ListSortDirection direction)
     dataView.SortDescriptions.Add(sd);  
     dataView.Refresh();  
 }  
-  
 ```  
   
 ```vb  
@@ -224,8 +229,8 @@ Private Sub Sort(ByVal sortBy As String, ByVal direction As ListSortDirection)
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Windows.Controls.ListView>   
- <xref:System.Windows.Controls.GridView>   
- [ListView の概要](../../../../docs/framework/wpf/controls/listview-overview.md)   
- [GridView の概要](../../../../docs/framework/wpf/controls/gridview-overview.md)   
- [操作方法に関するトピック](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+ <xref:System.Windows.Controls.ListView>  
+ <xref:System.Windows.Controls.GridView>  
+ [ListView の概要](../../../../docs/framework/wpf/controls/listview-overview.md)  
+ [GridView の概要](../../../../docs/framework/wpf/controls/gridview-overview.md)  
+ [方法トピック](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)

@@ -1,29 +1,35 @@
 ---
-title: "方法 : WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 62210fd8-a372-4d55-ab9b-c99827d1885e
-caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d09b8e662b2876fa5d5c5246ea7e7a4998cde9ea
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する
+# <a name="how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications"></a>方法 : WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する
 既存の MSMQ アプリケーションを [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] アプリケーションと統合できます。それには、メッセージ キュー (MSMQ) 統合バインディングを使用して MSMQ メッセージを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] メッセージとの間で相互に変換できます。 これにより、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントから MSMQ の受信側アプリケーションを呼び出したり、MSMQ の送信元アプリケーションから [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを呼び出したりできます。  
   
- このセクションで使用する方法について説明<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>間キューに置かれた通信の (1) [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] System.Messaging および (2) MSMQ アプリケーション クライアントを使用して作成された MSMQ アプリケーション サービスとクライアントと[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービスです。  
+ ここでは、<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> を使用して、(1) System.Messaging を使用して記述された MSMQ アプリケーション サービスと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアントの間および (2) MSMQ アプリケーション クライアントと [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの間で、キュー通信を行う方法について説明します。  
   
- MSMQ 受信側のアプリケーションを呼び出す方法を説明する完全なサンプルについては、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントを参照してください、 [Windows Communication Foundation メッセージ キューが](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)サンプルです。  
+ MSMQ 受信側のアプリケーションを呼び出す方法を説明する完全なサンプルについては、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]クライアントを参照してください、[メッセージ キューへの Windows Communication Foundation](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)サンプルです。  
   
- 呼び出す方法を説明する完全なサンプルについては、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] MSMQ クライアントからサービスを参照してください、[メッセージ キューが Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)サンプルです。  
+ 呼び出す方法を示す完全なサンプルについては、 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] MSMQ クライアントからサービスを参照してください、[メッセージ キューが Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)サンプルです。  
   
 ### <a name="to-create-a-wcf-service-that-receives-messages-from-a-msmq-client"></a>MSMQ クライアントからのメッセージを受信する WCF サービスを作成するには  
   
@@ -32,16 +38,16 @@ caps.handback.revision: 18
      [!code-csharp[S_MsmqToWcf#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmqtowcf/cs/service.cs#1)]
      [!code-vb[S_MsmqToWcf#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmqtowcf/vb/service.vb#1)]  
   
-2.  インターフェイスを実装し、適用、 <xref:System.ServiceModel.ServiceBehaviorAttribute>クラスに属性の次のコード例に示すようにします。  
+2.  次のコード例に示すように、定義したインターフェイスを実装し、<xref:System.ServiceModel.ServiceBehaviorAttribute> 属性をクラスに適用します。  
   
      [!code-csharp[S_MsmqToWcf#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmqtowcf/cs/service.cs#2)]
      [!code-vb[S_MsmqToWcf#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmqtowcf/vb/service.vb#2)]  
   
-3.  指定する構成ファイルを作成、 <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>します。  
+3.  <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> を指定する構成ファイルを作成します。  
   
   
   
-4.  インスタンスを作成、 <xref:System.ServiceModel.ServiceHost>構成のバインディングを使用するオブジェクト。  
+4.  構成されたバインディングを使用する <xref:System.ServiceModel.ServiceHost> オブジェクトをインスタンス化します。  
   
   
   
@@ -67,9 +73,9 @@ caps.handback.revision: 18
      [!code-csharp[S_WcfToMsmq#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_wcftomsmq/cs/client.cs#4)]  
   
 ## <a name="see-also"></a>関連項目  
- [キューの概要](../../../../docs/framework/wcf/feature-details/queues-overview.md)   
- [方法: キューの WCF エンドポイントとメッセージを交換](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)   
- [Windows Communication Foundation メッセージ キュー](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)   
- [メッセージ キュー (MSMQ) をインストールします。](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)   
- [Windows Communication Foundation へのメッセージ キュー](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)   
+ [キューの概要](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
+ [方法: Exchange の WCF エンドポイントとメッセージのキュー](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+ [メッセージ キューへの Windows Communication Foundation](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)  
+ [メッセージ キュー (MSMQ) をインストールします。](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)  
+ [Windows Communication foundation キュー メッセージ](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  
  [メッセージ キューを介したメッセージ セキュリティ](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
