@@ -1,147 +1,130 @@
 ---
-title: "データ型 (Visual Basic) のトラブルシューティング |Microsoft ドキュメント"
+title: "データ型のトラブルシューティング (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- Char data type, converting
-- Decimal data type, conversions
+- Char data type [Visual Basic], converting
+- Decimal data type [Visual Basic], conversions
 - data types [Visual Basic], troubleshooting
-- literals, default types
-- type characters, literal
+- literals [Visual Basic], default types
+- type characters [Visual Basic], literal
 - Mod operator [Visual Basic], in floating-point operations
 - troubleshooting Visual Basic, data types
-- troubleshooting data types
-- floating-point numbers, precision
-- Boolean data type, converting
-- literal types
-- literal type characters
-- floating-point numbers, imprecision
-- String data type, converting
-- floating-point numbers, comparison
+- troubleshooting data types [Visual Basic]
+- floating-point numbers [Visual Basic], precision
+- Boolean data type [Visual Basic], converting
+- literal types [Visual Basic]
+- literal type characters [Visual Basic]
+- floating-point numbers [Visual Basic], imprecision
+- String data type [Visual Basic], converting
+- floating-point numbers [Visual Basic], comparison
 - floating-point numbers
 ms.assetid: 90040d67-b630-4125-a6ae-37195b079042
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: cfb8fc77d3e0d85ef795a94fc95ab61a8f68ff39
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 4d2fb1cd1be9c88ad0dd413eedb8a226fe59f41e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="troubleshooting-data-types-visual-basic"></a>データ型のトラブルシューティング (Visual Basic)
-ここでは、組み込みデータ型の操作を実行するときに発生する一般的な問題について説明します。  
+# <a name="troubleshooting-data-types-visual-basic"></a><span data-ttu-id="6749b-102">データ型のトラブルシューティング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6749b-102">Troubleshooting Data Types (Visual Basic)</span></span>
+<span data-ttu-id="6749b-103">このページには、組み込みのデータ型に対する操作を実行するときに発生する可能性がある一般的な問題が一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="6749b-103">This page lists some common problems that can occur when you perform operations on intrinsic data types.</span></span>  
   
-## <a name="floating-point-expressions-do-not-compare-as-equal"></a>浮動小数点式が等しいと評価比較されません。  
- 浮動小数点数を扱うとき ([Single データ型](../../../../visual-basic/language-reference/data-types/single-data-type.md)と[Double データ型](../../../../visual-basic/language-reference/data-types/double-data-type.md))、バイナリの分数として格納されることに注意してください。 つまりがない場合、2 進数の正確な表現を保持することはできません (k 形式の/(2 ^ n)、k と n は整数)。 たとえば、0.5 (= 1/2) や 0.3125 (= 5/16) 保持できる正確な値を (= 1/5) 0.2 と 0.3 (3/10 =) 近似値のみであることができます。  
+## <a name="floating-point-expressions-do-not-compare-as-equal"></a><span data-ttu-id="6749b-104">浮動小数点式が等しいかどうかと比較されません。</span><span class="sxs-lookup"><span data-stu-id="6749b-104">Floating-Point Expressions Do Not Compare as Equal</span></span>  
+ <span data-ttu-id="6749b-105">浮動小数点数を操作する際に ([Single データ型](../../../../visual-basic/language-reference/data-types/single-data-type.md)と[Double データ型](../../../../visual-basic/language-reference/data-types/double-data-type.md))、バイナリの分数として格納されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="6749b-105">When you work with floating-point numbers ([Single Data Type](../../../../visual-basic/language-reference/data-types/single-data-type.md) and [Double Data Type](../../../../visual-basic/language-reference/data-types/double-data-type.md)), remember that they are stored as binary fractions.</span></span> <span data-ttu-id="6749b-106">つまり、バイナリの分数ではない任意の数量の正確な表現を保持することはできません (k 形式の/(2 ^ n)、k と n は整数)。</span><span class="sxs-lookup"><span data-stu-id="6749b-106">This means they cannot hold an exact representation of any quantity that is not a binary fraction (of the form k / (2 ^ n) where k and n are integers).</span></span> <span data-ttu-id="6749b-107">たとえば、0.5 (= 1/2) と 0.3125 (= 5/16) 保持できる正確な値は、近似値のみであることができます (= 1/5) 0.2、0.3 (= 3/10)。</span><span class="sxs-lookup"><span data-stu-id="6749b-107">For example, 0.5 (= 1/2) and 0.3125 (= 5/16) can be held as precise values, whereas 0.2 (= 1/5) and 0.3 (= 3/10) can be only approximations.</span></span>  
   
- このため、誤差に依存できない正確な結果浮動小数点値を操作するときにします。 具体的には、理論上は同じである&2; つの値には、若干異なる表現があります。  
+ <span data-ttu-id="6749b-108">このため、不正確さに依存できない正確な結果浮動小数点値を操作するときにします。</span><span class="sxs-lookup"><span data-stu-id="6749b-108">Because of this imprecision, you cannot rely on exact results when you operate on floating-point values.</span></span> <span data-ttu-id="6749b-109">具体的には、理論的に等しい 2 つの値には、若干異なる表現があります。</span><span class="sxs-lookup"><span data-stu-id="6749b-109">In particular, two values that are theoretically equal might have slightly different representations.</span></span>  
   
-| 浮動小数点の値を比較するには | 
+| <span data-ttu-id="6749b-110">浮動小数点の値を比較するには</span><span class="sxs-lookup"><span data-stu-id="6749b-110">To compare floating-point quantities</span></span> | 
 |---| 
-|1.使用して差の絶対値を計算、<xref:System.Math.Abs%2A>のメソッド、<xref:System.Math>クラス、<xref:System>名前空間</xref:System></xref:System.Math></xref:System.Math.Abs%2A>。<br />2.許容される最大の誤差を決めますが等しい場合の実用的な目的の場合はその違いは、サイズは、2 つの数を検討することができます。<br />3.許容可能な差までの差の絶対値を比較します。|  
+|<span data-ttu-id="6749b-111">1.使用して、差の絶対値を計算、<xref:System.Math.Abs%2A>のメソッド、<xref:System.Math>クラス内で、<xref:System>名前空間。</span><span class="sxs-lookup"><span data-stu-id="6749b-111">1.  Calculate the absolute value of their difference by using the <xref:System.Math.Abs%2A> method of the <xref:System.Math> class in the <xref:System> namespace.</span></span><br /><span data-ttu-id="6749b-112">2.2 つの数量と等しくなります扱いの違いが大きい場合は不要にすることもできます、許容される最大の違いを決めます。</span><span class="sxs-lookup"><span data-stu-id="6749b-112">2.  Determine an acceptable maximum difference, such that you can consider the two quantities to be equal for practical purposes if their difference is no larger.</span></span><br /><span data-ttu-id="6749b-113">3.許容される相違点に差の絶対値を比較します。</span><span class="sxs-lookup"><span data-stu-id="6749b-113">3.  Compare the absolute value of the difference to the acceptable difference.</span></span>|  
   
- 次の例では、2 つの正しくないと、正しい比較`Double`値。  
+ <span data-ttu-id="6749b-114">次の例では、2 つの正しくないと、正しい比較`Double`値。</span><span class="sxs-lookup"><span data-stu-id="6749b-114">The following example demonstrates both incorrect and correct comparison of two `Double` values.</span></span>  
   
- [!code-vb[VbVbalrDataTypes&#10;](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_1.vb)]  
+ [!code-vb[VbVbalrDataTypes#10](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_1.vb)]  
   
- 前の例を使用して、<xref:System.Double.ToString%2A>のメソッド、<xref:System.Double>より精度の高いことを指定できるように構造化、`CStr`キーワードを使用しています</xref:System.Double></xref:System.Double.ToString%2A>。 既定値は 15 桁が、"G17"書式が 17 桁に拡張します。  
+ <span data-ttu-id="6749b-115">前の例では、<xref:System.Double.ToString%2A>のメソッド、<xref:System.Double>より精度の高いを指定できるように構造体、`CStr`キーワードを使用します。</span><span class="sxs-lookup"><span data-stu-id="6749b-115">The previous example uses the <xref:System.Double.ToString%2A> method of the <xref:System.Double> structure so that it can specify better  precision than the `CStr` keyword uses.</span></span> <span data-ttu-id="6749b-116">既定値は、15 桁の数字が、"G17"書式が 17 桁に拡張します。</span><span class="sxs-lookup"><span data-stu-id="6749b-116">The default is 15 digits, but the "G17" format extends it to 17 digits.</span></span>  
   
-## <a name="mod-operator-does-not-return-accurate-result"></a>Mod 演算子は正確な結果を返しません。  
- 浮動小数点数のストレージでの誤差のため、 [Mod 演算子](../../../../visual-basic/language-reference/operators/mod-operator.md)が浮動小数点型のオペランドの少なくとも&1; つと、予期しない結果を返すことができます。  
+## <a name="mod-operator-does-not-return-accurate-result"></a><span data-ttu-id="6749b-117">Mod 演算子には、正確な結果は返しません。</span><span class="sxs-lookup"><span data-stu-id="6749b-117">Mod Operator Does Not Return Accurate Result</span></span>  
+ <span data-ttu-id="6749b-118">浮動小数点の記憶域の不正確さのため、 [Mod 演算子](../../../../visual-basic/language-reference/operators/mod-operator.md)が浮動小数点型には、少なくとも 1 つのオペランドのときに、予期しない結果を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="6749b-118">Because of the imprecision of floating-point storage, the [Mod Operator](../../../../visual-basic/language-reference/operators/mod-operator.md) can return an unexpected result when at least one of the operands is floating-point.</span></span>  
   
- [Decimal データ型](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)浮動小数点表現を使用しません。 正確で数`Single`と`Double`で正確では`Decimal`(0.2 と 0.3 など)。 演算で低速`Decimal`よりもに、浮動小数点とよいでしょう、パフォーマンスを低下させるための正確性が向上します。  
+ <span data-ttu-id="6749b-119">[Decimal データ型](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)浮動小数点表現を使用しません。</span><span class="sxs-lookup"><span data-stu-id="6749b-119">The [Decimal Data Type](../../../../visual-basic/language-reference/data-types/decimal-data-type.md) does not use floating-point representation.</span></span> <span data-ttu-id="6749b-120">正確である数値`Single`と`Double`で正確では`Decimal`(0.2、0.3 など)。</span><span class="sxs-lookup"><span data-stu-id="6749b-120">Many numbers that are inexact in `Single` and `Double` are exact in `Decimal` (for example 0.2 and 0.3).</span></span> <span data-ttu-id="6749b-121">演算で低速`Decimal`よりで浮動小数点、価値があるかもしれません正確性が向上を実現するために、パフォーマンスが低下します。</span><span class="sxs-lookup"><span data-stu-id="6749b-121">Although arithmetic is slower in `Decimal` than in floating-point, it might be worth the performance decrease to achieve better precision.</span></span>  
   
-|浮動小数点数の整数の剰余を検索するには|  
+|<span data-ttu-id="6749b-122">浮動小数点数の整数の剰余を検索するには</span><span class="sxs-lookup"><span data-stu-id="6749b-122">To find the integer remainder of floating-point quantities</span></span>|  
 |---|  
-|1.として変数を宣言`Decimal`します。<br />2.リテラルの型文字を使用して`D`にリテラルを強制的に`Decimal`、その値が大きすぎる場合に、`Long`データ型。|  
+|<span data-ttu-id="6749b-123">1.として変数を宣言`Decimal`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-123">1.  Declare variables as `Decimal`.</span></span><br /><span data-ttu-id="6749b-124">2.リテラルの型文字を使用して`D`にリテラルを強制的に`Decimal`場合に、その値が大きすぎて、`Long`データ型。</span><span class="sxs-lookup"><span data-stu-id="6749b-124">2.  Use the literal type character `D` to force literals to `Decimal`, in case their values are too large for the `Long` data type.</span></span>|  
   
- 次の例では、浮動小数点のオペランドの誤差の可能性を示します。  
+ <span data-ttu-id="6749b-125">次の例では、浮動小数点のオペランドの不正確さの可能性を示します。</span><span class="sxs-lookup"><span data-stu-id="6749b-125">The following example demonstrates the potential imprecision of floating-point operands.</span></span>  
   
- [!code-vb[VbVbalrDataTypes&#11;](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_2.vb)]  
+ [!code-vb[VbVbalrDataTypes#11](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_2.vb)]  
   
- 前の例を使用して、<xref:System.Double.ToString%2A>のメソッド、<xref:System.Double>より精度の高いことを指定できるように構造化、`CStr`キーワードを使用しています</xref:System.Double></xref:System.Double.ToString%2A>。 既定値は 15 桁が、"G17"書式が 17 桁に拡張します。  
+ <span data-ttu-id="6749b-126">前の例では、<xref:System.Double.ToString%2A>のメソッド、<xref:System.Double>より精度の高いを指定できるように構造体、`CStr`キーワードを使用します。</span><span class="sxs-lookup"><span data-stu-id="6749b-126">The previous example uses the <xref:System.Double.ToString%2A> method of the <xref:System.Double> structure so that it can specify better precision than the `CStr` keyword uses.</span></span> <span data-ttu-id="6749b-127">既定値は、15 桁の数字が、"G17"書式が 17 桁に拡張します。</span><span class="sxs-lookup"><span data-stu-id="6749b-127">The default is 15 digits, but the "G17" format extends it to 17 digits.</span></span>  
   
- `zeroPointTwo`は`Double`0.2 用の値は 0.20000000000000001 として格納されている値を持つ場合は、無限に繰り返されるバイナリ分数。 この数量 2.0 で除算には、0.19999999999999991 となりますの残りの部分と 9.9999999999999995 が生成されます。  
+ <span data-ttu-id="6749b-128">`zeroPointTwo`は`Double`0.2 用の値は、無限に繰り返されるバイナリ分数 0.20000000000000001 として格納されている値でします。</span><span class="sxs-lookup"><span data-stu-id="6749b-128">Because `zeroPointTwo` is `Double`, its value for 0.2 is an infinitely repeating binary fraction with a stored value of 0.20000000000000001.</span></span> <span data-ttu-id="6749b-129">この数量除算 2.0 には、0.19999999999999991 となりますの残りの部分と 9.9999999999999995 が生成されます。</span><span class="sxs-lookup"><span data-stu-id="6749b-129">Dividing 2.0 by this quantity yields 9.9999999999999995 with a remainder of 0.19999999999999991.</span></span>  
   
- 式で`decimalRemainder`、リテラルの型文字`D`強制的にオペランドは両方とも`Decimal`は正確に表現します。 したがって、`Mod`演算子が 0.0 の予想される残りの部分を生成します。  
+ <span data-ttu-id="6749b-130">式で`decimalRemainder`、リテラルの型文字`D`強制的にオペランドは両方とも`Decimal`は正確に表現します。</span><span class="sxs-lookup"><span data-stu-id="6749b-130">In the expression for `decimalRemainder`, the literal type character `D` forces both operands to `Decimal`, and 0.2 has a precise representation.</span></span> <span data-ttu-id="6749b-131">したがって、`Mod`演算子は 0.0 の予想される残りの部分を生成します。</span><span class="sxs-lookup"><span data-stu-id="6749b-131">Therefore the `Mod` operator yields the expected remainder of 0.0.</span></span>  
   
- 宣言するだけで十分ではないことに注意してください`decimalRemainder`として`Decimal`します。 リテラルを強制することも必要があります。 `Decimal`、または使用している`Double`既定では、`decimalRemainder`と同じ不正確な値を受け取る`doubleRemainder`します。  
+ <span data-ttu-id="6749b-132">なっていないことを宣言するだけで十分に注意してください`decimalRemainder`として`Decimal`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-132">Note that it is not sufficient to declare `decimalRemainder` as `Decimal`.</span></span> <span data-ttu-id="6749b-133">リテラルを強制することも必要があります。 `Decimal`、または使用している`Double`既定と`decimalRemainder`として同じ不正確な値を受け取る`doubleRemainder`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-133">You must also force the literals to `Decimal`, or they use `Double` by default and `decimalRemainder` receives the same inaccurate value as `doubleRemainder`.</span></span>  
   
-## <a name="boolean-type-does-not-convert-to-numeric-type-accurately"></a>ブール型で正確な数値型に変換されません。  
- [ブール型のデータ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)値は、数値として格納されず、格納される値は番号に相当するものでありません。 以前のバージョンとの互換性のため[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]変換キーワードは、([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)、 `CBool`、`CInt`など) 間で変換を`Boolean`と数値型。 ただし、他の言語も変換を実行これらのように、異なる、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]メソッドです。  
+## <a name="boolean-type-does-not-convert-to-numeric-type-accurately"></a><span data-ttu-id="6749b-134">ブール型で正確な数値型に変換されません。</span><span class="sxs-lookup"><span data-stu-id="6749b-134">Boolean Type Does Not Convert to Numeric Type Accurately</span></span>  
+ <span data-ttu-id="6749b-135">[Boolean データ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)値は、数値として格納されず、格納された値が数値に相当するものではありません。</span><span class="sxs-lookup"><span data-stu-id="6749b-135">[Boolean Data Type](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) values are not stored as numbers, and the stored values are not intended to be equivalent to numbers.</span></span> <span data-ttu-id="6749b-136">以前のバージョンとの互換性のため[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]変換キーワードを提供 ([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)、 `CBool`、`CInt`など) の間で変換する`Boolean`と数値型。</span><span class="sxs-lookup"><span data-stu-id="6749b-136">For compatibility with earlier versions, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] provides conversion keywords ([CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md), `CBool`, `CInt`, and so on) to convert between `Boolean` and numeric types.</span></span> <span data-ttu-id="6749b-137">ただし、他の言語も実行これらの変換と同様に、異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]メソッドです。</span><span class="sxs-lookup"><span data-stu-id="6749b-137">However, other languages sometimes perform these conversions differently, as do the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] methods.</span></span>  
   
- 数値と等価の値に依存するコードを記述する必要がありますしない`True`と`False`です。 使用を制限する必要があります可能であれば、`Boolean`変数を論理値に設計されています。 組み合わせる必要がある場合`Boolean`し、数値を選択する変換メソッドを理解しておくことを確認します。  
+ <span data-ttu-id="6749b-138">数値と等価の値に依存するコードを記述する必要がありますしない`True`と`False`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-138">You should never write code that relies on equivalent numeric values for `True` and `False`.</span></span> <span data-ttu-id="6749b-139">使用を制限する必要があります、可能な限り`Boolean`仕様で定められている論理値変数。</span><span class="sxs-lookup"><span data-stu-id="6749b-139">Whenever possible, you should restrict usage of `Boolean` variables to the logical values for which they are designed.</span></span> <span data-ttu-id="6749b-140">組み合わせる必要がある場合`Boolean`し、数値を選択した変換方法を理解することを確認します。</span><span class="sxs-lookup"><span data-stu-id="6749b-140">If you must mix `Boolean` and numeric values, make sure that you understand the conversion method that you select.</span></span>  
   
-### <a name="conversion-in-visual-basic"></a>Visual Basic での変換  
- 使用すると、`CType`または`CBool`数値データ型に変換する変換キーワード`Boolean`、0 になります`False`され、その他のすべての値になる`True`します。 変換する際に`Boolean`値を変換キーワードを使用して、数値型に`False`が 0 になると`True`-1 になります。  
+### <a name="conversion-in-visual-basic"></a><span data-ttu-id="6749b-141">Visual Basic での変換</span><span class="sxs-lookup"><span data-stu-id="6749b-141">Conversion in Visual Basic</span></span>  
+ <span data-ttu-id="6749b-142">使用すると、`CType`または`CBool`数値データ型に変換する変換キーワード`Boolean`、0 になります`False`になり、その他のすべての値`True`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-142">When you use the `CType` or `CBool` conversion keywords to convert numeric data types to `Boolean`, 0 becomes `False` and all other values become `True`.</span></span> <span data-ttu-id="6749b-143">変換する際に`Boolean`値を変換のキーワードを使用して、数値型に`False`が 0 になると`True`-1 になります。</span><span class="sxs-lookup"><span data-stu-id="6749b-143">When you convert `Boolean` values to numeric types by using the conversion keywords, `False` becomes 0 and `True` becomes -1.</span></span>  
   
-### <a name="conversion-in-the-framework"></a>フレームワークでの変換  
- <xref:System.Convert.ToInt32%2A>のメソッド、<xref:System.Convert>クラス、<xref:System>名前空間に変換`True`+1 にします</xref:System></xref:System.Convert></xref:System.Convert.ToInt32%2A>。  
+### <a name="conversion-in-the-framework"></a><span data-ttu-id="6749b-144">フレームワークでの変換</span><span class="sxs-lookup"><span data-stu-id="6749b-144">Conversion in the Framework</span></span>  
+ <span data-ttu-id="6749b-145"><xref:System.Convert.ToInt32%2A>のメソッド、<xref:System.Convert>クラス内で、<xref:System>名前空間に変換します`True`+1 にします。</span><span class="sxs-lookup"><span data-stu-id="6749b-145">The <xref:System.Convert.ToInt32%2A> method of the <xref:System.Convert> class in the <xref:System> namespace converts `True` to +1.</span></span>  
   
- 変換が必要である場合、`Boolean`値、数値データ型をご注意くださいを使用する変換メソッド。  
+ <span data-ttu-id="6749b-146">変換する必要があります場合、`Boolean`値、数値データ型を注意を使用する変換メソッド。</span><span class="sxs-lookup"><span data-stu-id="6749b-146">If you must convert a `Boolean` value to a numeric data type, be careful about which conversion method you use.</span></span>  
   
-## <a name="character-literal-generates-compiler-error"></a>文字リテラルには、コンパイラ エラーが生成されます。  
- 任意の種類の文字がない場合[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]リテラルのデータ型の既定値を想定しています。 文字リテラルに既定の種類-引用符で囲む (`" "`) — は`String`です。  
+## <a name="character-literal-generates-compiler-error"></a><span data-ttu-id="6749b-147">文字リテラルには、コンパイラ エラーが生成されます。</span><span class="sxs-lookup"><span data-stu-id="6749b-147">Character Literal Generates Compiler Error</span></span>  
+ <span data-ttu-id="6749b-148">任意の型文字がない場合は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]リテラルのデータ型の既定値を想定しています。</span><span class="sxs-lookup"><span data-stu-id="6749b-148">In the absence of any type characters, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] assumes default data types for literals.</span></span> <span data-ttu-id="6749b-149">文字リテラルの既定の型: 引用符で囲む (`" "`) — は`String`します。</span><span class="sxs-lookup"><span data-stu-id="6749b-149">The default type for a character literal — enclosed in quotation marks (`" "`) — is `String`.</span></span>  
   
- `String`にデータ型が変換されない、 [Char データ型](../../../../visual-basic/language-reference/data-types/char-data-type.md)します。 つまり、リテラルを代入する場合、`Char`変数、する必要がありますか、縮小変換を行うか、リテラルを`Char`型です。  
+ <span data-ttu-id="6749b-150">`String`データ型に拡大変換されない、 [Char データ型](../../../../visual-basic/language-reference/data-types/char-data-type.md)です。</span><span class="sxs-lookup"><span data-stu-id="6749b-150">The `String` data type does not widen to the [Char Data Type](../../../../visual-basic/language-reference/data-types/char-data-type.md).</span></span> <span data-ttu-id="6749b-151">つまり、リテラルを代入する場合、`Char`変数、する必要がありますか、縮小変換または強制的にリテラル、`Char`型です。</span><span class="sxs-lookup"><span data-stu-id="6749b-151">This means that if you want to assign a literal to a `Char` variable, you must either make a narrowing conversion or force the literal to the `Char` type.</span></span>  
 
-|Char 型の変数または定数に割り当てるリテラルを作成するには|
+|<span data-ttu-id="6749b-152">Char 型の変数または定数に割り当てるリテラルを作成するには</span><span class="sxs-lookup"><span data-stu-id="6749b-152">To create a Char literal to assign to a variable or constant</span></span>|
 |---|  
-|1.変数または定数として宣言`Char`します。<br />2.文字の値を引用符で囲みます (`" "`)。<br />3.次のリテラルの型文字と終わりの二重引用符`C`にリテラルを強制的に`Char`します。 これは型チェック スイッチの場合必要 ([Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) は`On`とはどのような場合に適切です。|  
+|<span data-ttu-id="6749b-153">1.変数または定数として宣言`Char`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-153">1.  Declare the variable or constant as `Char`.</span></span><br /><span data-ttu-id="6749b-154">2.文字の値を引用符で囲みます (`" "`)。</span><span class="sxs-lookup"><span data-stu-id="6749b-154">2.  Enclose the character value in quotation marks (`" "`).</span></span><br /><span data-ttu-id="6749b-155">3.次のリテラルの型文字と終わりの二重引用符`C`にリテラルを強制的に`Char`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-155">3.  Follow the closing double quotation mark with the literal type character `C` to force the literal to `Char`.</span></span> <span data-ttu-id="6749b-156">これは型チェック スイッチの場合必要 ([Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) は`On`、いずれの場合も必要があるとします。</span><span class="sxs-lookup"><span data-stu-id="6749b-156">This is necessary if the type checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) is `On`, and it is desirable in any case.</span></span>|  
   
- 次の例は、リテラルを成功、失敗の割り当て、`Char`変数です。  
+ <span data-ttu-id="6749b-157">次の例は、リテラルを成功、失敗の割り当て、`Char`変数。</span><span class="sxs-lookup"><span data-stu-id="6749b-157">The following example demonstrates both unsuccessful and successful assignments of a literal to a `Char` variable.</span></span>  
   
- [!code-vb[VbVbalrDataTypes&#12;](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_3.vb)]  
+ [!code-vb[VbVbalrDataTypes#12](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_3.vb)]  
   
- リスクがある常に縮小変換を使用しているため、実行時に失敗したことができます。 変換など`String`に`Char`失敗する場合、`String`値には、1 つ以上の文字が含まれています。 そのため、それを使用するプログラミングがより、`C`文字を入力します。  
+ <span data-ttu-id="6749b-158">常にリスクが縮小変換を使用して実行時にそれらが失敗する可能性です。</span><span class="sxs-lookup"><span data-stu-id="6749b-158">There is always a risk in using narrowing conversions, because they can fail at run time.</span></span> <span data-ttu-id="6749b-159">変換など、`String`に`Char`失敗する場合、`String`値には、1 つ以上の文字が含まれています。</span><span class="sxs-lookup"><span data-stu-id="6749b-159">For example, a conversion from `String` to `Char` can fail if the `String` value contains more than one character.</span></span> <span data-ttu-id="6749b-160">そのため、これはよりプログラミングを使用する、`C`文字を入力します。</span><span class="sxs-lookup"><span data-stu-id="6749b-160">Therefore, it is better programming to use the `C` type character.</span></span>  
   
-## <a name="string-conversion-fails-at-run-time"></a>文字列の変換は実行時に失敗します。  
- [文字列データ型](../../../../visual-basic/language-reference/data-types/string-data-type.md)がごくわずかの拡大変換に参加します。 `String`自体にのみ拡大変換と`Object`とのみ`Char`と`Char()`(、`Char`配列) に拡大変換`String`します。 これは、ため`String`変数および定数が他のデータ型を含むことができない値を含めることができます。  
+## <a name="string-conversion-fails-at-run-time"></a><span data-ttu-id="6749b-161">実行時に文字列変換に失敗します。</span><span class="sxs-lookup"><span data-stu-id="6749b-161">String Conversion Fails at Run Time</span></span>  
+ <span data-ttu-id="6749b-162">[文字列データ型](../../../../visual-basic/language-reference/data-types/string-data-type.md)拡大変換がごくわずかに関与します。</span><span class="sxs-lookup"><span data-stu-id="6749b-162">The [String Data Type](../../../../visual-basic/language-reference/data-types/string-data-type.md) participates in very few widening conversions.</span></span> <span data-ttu-id="6749b-163">`String`自体にのみ拡大変換と`Object`、のみと`Char`と`Char()`(、`Char`配列) に拡大変換`String`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-163">`String` widens only to itself and `Object`, and only `Char` and `Char()` (a `Char` array) widen to `String`.</span></span> <span data-ttu-id="6749b-164">これは、ため`String`変数および定数が他のデータ型を含めることはできませんの値を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="6749b-164">This is because `String` variables and constants can contain values that other data types cannot contain.</span></span>  
   
- 型チェックを切り替える場合 ([Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) は`On`コンパイラは、すべての暗黙的な縮小変換を許可しません。 関連するものが含まれます`String`します。 コードもなどを使用変換キーワード`CStr`と[CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)、どのダイレクト、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]変換を試みます。  
+ <span data-ttu-id="6749b-165">ときに、型チェック スイッチの ([Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) は`On`コンパイラには、すべての暗黙的な縮小変換が許可されていません。</span><span class="sxs-lookup"><span data-stu-id="6749b-165">When the type checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) is `On`, the compiler disallows all implicit narrowing conversions.</span></span> <span data-ttu-id="6749b-166">関連するものが含まれます`String`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-166">This includes those involving `String`.</span></span> <span data-ttu-id="6749b-167">コードも使える変換キーワードなど`CStr`と[CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)、どのダイレクト、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]変換を試みます。</span><span class="sxs-lookup"><span data-stu-id="6749b-167">Your code can still use conversion keywords such as `CStr` and [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md), which direct the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] to attempt the conversion.</span></span>  
   
 > [!NOTE]
->  内の要素からの変換の縮小変換エラーは出力されず、`For Each…Next`ループ制御変数のコレクション。 詳細と例については、「縮小変換」セクションを参照して[ごとにしています.次のステートメントの](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)です。  
+>  <span data-ttu-id="6749b-168">内の要素からの変換の縮小変換エラーは出力されず、`For Each…Next`ループ コントロール変数のコレクション。</span><span class="sxs-lookup"><span data-stu-id="6749b-168">The narrowing-conversion error is suppressed for conversions from the elements in a `For Each…Next` collection to the loop control variable.</span></span> <span data-ttu-id="6749b-169">詳細と例については、「縮小変換」セクションを参照して[ごとにしています.次のステートメントの](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)します。</span><span class="sxs-lookup"><span data-stu-id="6749b-169">For more information and examples, see the "Narrowing Conversions" section in [For Each...Next Statement](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).</span></span>  
   
-### <a name="narrowing-conversion-protection"></a>縮小変換の保護  
- 縮小変換の欠点では、それらが実行時に失敗することができます。 たとえば場合、`String`変数が含まれるもの以外の"True"または"False"に変換できない`Boolean`します。 区切り文字を含んでいる場合は、任意の数値型への変換が失敗します。 わかっていない限り、`String`変数変換先の型が受け入れられる値を常に保持する、実行、変換しないでください。  
+### <a name="narrowing-conversion-protection"></a><span data-ttu-id="6749b-170">縮小変換の保護</span><span class="sxs-lookup"><span data-stu-id="6749b-170">Narrowing Conversion Protection</span></span>  
+ <span data-ttu-id="6749b-171">縮小変換の欠点は、実行時に失敗することです。</span><span class="sxs-lookup"><span data-stu-id="6749b-171">The disadvantage of narrowing conversions is that they can fail at run time.</span></span> <span data-ttu-id="6749b-172">たとえば場合、`String`変数が含まれるもの"True"または"False"に変換できない場合を除いて`Boolean`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-172">For example, if a `String` variable contains anything other than "True" or "False," it cannot be converted to `Boolean`.</span></span> <span data-ttu-id="6749b-173">区切り文字が含まれている場合は、任意の数値型への変換が失敗します。</span><span class="sxs-lookup"><span data-stu-id="6749b-173">If it contains punctuation characters, conversion to any numeric type fails.</span></span> <span data-ttu-id="6749b-174">わかっている場合を除き、`String`変数は、常に、変換先の型で許容される値を保持、実行、変換しないでください。</span><span class="sxs-lookup"><span data-stu-id="6749b-174">Unless you know that your `String` variable always holds values that the destination type can accept, you should not try a conversion.</span></span>  
   
- 変換する必要がある場合`String`最も安全なプロシージャが実行しようとした変換を囲むを別のデータ型、[しようとしています.キャッチしてください.Finally ステートメント](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)します。 これにより、実行時エラーに対処することができます。  
+ <span data-ttu-id="6749b-175">変換する必要がある場合`String`最も安全なプロシージャが実行しようとした変換を囲むを別のデータ型、[を再試行してください.キャッチしてください.Finally ステートメント](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="6749b-175">If you must convert from `String` to another data type, the safest procedure is to enclose the attempted conversion in the [Try...Catch...Finally Statement](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).</span></span> <span data-ttu-id="6749b-176">これにより、実行時エラーに対処できます。</span><span class="sxs-lookup"><span data-stu-id="6749b-176">This lets you deal with a run-time failure.</span></span>  
   
-### <a name="character-arrays"></a>文字配列  
- 単一の`Char`と配列の`Char`要素の両方に拡大変換する`String`です。 ただし、`String`に拡大変換されない`Char()`します。 変換する、`String`値を`Char`配列、<xref:System.String.ToCharArray%2A><xref:System.String?displayProperty=fullName>クラス</xref:System.String?displayProperty=fullName>のメソッド</xref:System.String.ToCharArray%2A>を使用することができます  
+### <a name="character-arrays"></a><span data-ttu-id="6749b-177">文字配列</span><span class="sxs-lookup"><span data-stu-id="6749b-177">Character Arrays</span></span>  
+ <span data-ttu-id="6749b-178">1 つ`Char`と配列の`Char`に拡大変換する両方の要素`String`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-178">A single `Char` and an array of `Char` elements both widen to `String`.</span></span> <span data-ttu-id="6749b-179">ただし、`String`に拡大変換されない`Char()`です。</span><span class="sxs-lookup"><span data-stu-id="6749b-179">However, `String` does not widen to `Char()`.</span></span> <span data-ttu-id="6749b-180">変換する、`String`値を`Char`使用することができます、配列、<xref:System.String.ToCharArray%2A>のメソッド、<xref:System.String?displayProperty=nameWithType>クラスです。</span><span class="sxs-lookup"><span data-stu-id="6749b-180">To convert a `String` value to a `Char` array, you can use the <xref:System.String.ToCharArray%2A> method of the <xref:System.String?displayProperty=nameWithType> class.</span></span>  
   
-### <a name="meaningless-values"></a>意味のない値  
- 一般に、`String`値は、他のデータ型で意味がわかりませんし、変換が危険なです。 使用を制限する必要があります可能であれば、`String`変数を文字のシーケンスに設計されています。 その他の種類に対応する値に依存するコードを書かないようにしてください。  
+### <a name="meaningless-values"></a><span data-ttu-id="6749b-181">意味のない値</span><span class="sxs-lookup"><span data-stu-id="6749b-181">Meaningless Values</span></span>  
+ <span data-ttu-id="6749b-182">一般に、`String`値は他のデータ型で意味がないので、変換は危険なです。</span><span class="sxs-lookup"><span data-stu-id="6749b-182">In general, `String` values are not meaningful in other data types, and conversion is highly artificial and dangerous.</span></span> <span data-ttu-id="6749b-183">使用を制限する必要があります、可能な限り`String`仕様で定められている文字のシーケンスの変数です。</span><span class="sxs-lookup"><span data-stu-id="6749b-183">Whenever possible, you should restrict usage of `String` variables to the character sequences for which they are designed.</span></span> <span data-ttu-id="6749b-184">その他の型と同じ値に依存するコードを記述する必要があることはありません。</span><span class="sxs-lookup"><span data-stu-id="6749b-184">You should never write code that relies on equivalent values in other types.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [型文字](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)   
- [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)   
- [Visual Basic における型変換](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
- [データ型](../../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [型変換関数](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [データ型の有効な使用方法](../../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+## <a name="see-also"></a><span data-ttu-id="6749b-185">関連項目</span><span class="sxs-lookup"><span data-stu-id="6749b-185">See Also</span></span>  
+ [<span data-ttu-id="6749b-186">データの種類</span><span class="sxs-lookup"><span data-stu-id="6749b-186">Data Types</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [<span data-ttu-id="6749b-187">型文字</span><span class="sxs-lookup"><span data-stu-id="6749b-187">Type Characters</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
+ [<span data-ttu-id="6749b-188">値型と参照型</span><span class="sxs-lookup"><span data-stu-id="6749b-188">Value Types and Reference Types</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
+ [<span data-ttu-id="6749b-189">Visual Basic での型変換</span><span class="sxs-lookup"><span data-stu-id="6749b-189">Type Conversions in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
+ [<span data-ttu-id="6749b-190">データの種類</span><span class="sxs-lookup"><span data-stu-id="6749b-190">Data Types</span></span>](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [<span data-ttu-id="6749b-191">データ型変換関数</span><span class="sxs-lookup"><span data-stu-id="6749b-191">Type Conversion Functions</span></span>](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [<span data-ttu-id="6749b-192">データ型の有効な使用方法</span><span class="sxs-lookup"><span data-stu-id="6749b-192">Efficient Use of Data Types</span></span>](../../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

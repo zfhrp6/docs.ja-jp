@@ -1,57 +1,49 @@
 ---
-title: "プログラミング ガイド (LINQ to XML) (Visual Basic) |Microsoft ドキュメント"
+title: "プログラミング ガイド (LINQ to XML) (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: f1f942bf-3404-4354-b4c5-4fe35e37a02b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7e7ef63d587778d54bb4dd4d3d6cf3dc24442882
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: a68c72dd30059063c86dc79be0dfd5a470b9d72c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="programming-guide-linq-to-xml-visual-basic"></a>プログラミング ガイド (LINQ to XML) (Visual Basic)
-ここでは、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] を使用したプログラミングに関する概念と方法の情報について説明します。  
+# <a name="programming-guide-linq-to-xml-visual-basic"></a><span data-ttu-id="44bda-102">プログラミング ガイド (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="44bda-102">Programming Guide (LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="44bda-103">ここでは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] を使用したプログラミングに関する概念と方法の情報について説明します。</span><span class="sxs-lookup"><span data-stu-id="44bda-103">This section provides conceptual and how-to information about programming with [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span></span>  
   
-## <a name="who-should-read-this-documentation"></a>このドキュメントの対象読者  
- このドキュメントは、Visual Basic との基本的な側面について既に理解している開発者を対象、[!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]です。  
+## <a name="who-should-read-this-documentation"></a><span data-ttu-id="44bda-104">このドキュメントの対象読者</span><span class="sxs-lookup"><span data-stu-id="44bda-104">Who Should Read This Documentation</span></span>  
+ <span data-ttu-id="44bda-105">このドキュメントは、Visual Basic との基本的な側面について既に理解している開発者を対象、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="44bda-105">This documentation targets developers who already understand Visual Basic and some basic aspects of the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].</span></span>  
   
- このドキュメントの目的はさせる[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]あらゆるタイプの開発者にとって使いやすいです。 [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]XML プログラミングを簡単にするには。 
-           を使用するために上級開発者になる必要はありません。  
+ <span data-ttu-id="44bda-106">このドキュメントの目的は、多数の開発者が [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] を簡単に使用できるようにすることです。</span><span class="sxs-lookup"><span data-stu-id="44bda-106">The goal of this documentation is to make [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] easy to use for all kinds of developers.</span></span> [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="44bda-107"> によって、XML プログラミングが容易になります。</span><span class="sxs-lookup"><span data-stu-id="44bda-107"> makes XML programming easier.</span></span> <span data-ttu-id="44bda-108">
+           を使用するために上級開発者になる必要はありません。</span><span class="sxs-lookup"><span data-stu-id="44bda-108">You do not have to be an expert developer to use it.</span></span>  
   
- [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]ジェネリック クラスに大きく依存します。 そのためがジェネリック型とクラスの使用を理解することが非常に重要です。 詳細については、次を参照してください。 [Visual Basic におけるジェネリック型](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)します。  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="44bda-109"> は、ジェネリック クラスに大きく依存しています。</span><span class="sxs-lookup"><span data-stu-id="44bda-109"> relies heavily on generic classes.</span></span> <span data-ttu-id="44bda-110">そのためがジェネリック型とクラスの使用を理解することが非常に重要です。</span><span class="sxs-lookup"><span data-stu-id="44bda-110">Therefore, is very important that you understand the use of generic types and classes.</span></span> <span data-ttu-id="44bda-111">詳細については、次を参照してください。 [Visual Basic におけるジェネリック型](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)です。</span><span class="sxs-lookup"><span data-stu-id="44bda-111">For more information, see [Generic Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
+## <a name="in-this-section"></a><span data-ttu-id="44bda-112">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="44bda-112">In This Section</span></span>  
   
-|トピック|説明|  
+|<span data-ttu-id="44bda-113">トピック</span><span class="sxs-lookup"><span data-stu-id="44bda-113">Topic</span></span>|<span data-ttu-id="44bda-114">説明</span><span class="sxs-lookup"><span data-stu-id="44bda-114">Description</span></span>|  
 |-----------|-----------------|  
-|[LINQ to XML プログラミングの概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)|概要、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]クラス、および&3; つの最も重要なクラスに関する詳細情報: <xref:System.Xml.Linq.XElement>、 <xref:System.Xml.Linq.XAttribute>、 <xref:System.Xml.Linq.XDocument>.</xref:System.Xml.Linq.XDocument> </xref:System.Xml.Linq.XAttribute> </xref:System.Xml.Linq.XElement>|  
-|[XML ツリー (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)|XML ツリーの作成に関する概念とタスク ベースの情報について説明します。 XML ツリーを作成するには、関数型構築を使用するか、文字列またはファイルから XML テキストを解析します。 使用することも、 <xref:System.Xml.XmlReader>XML ツリーを設定する</xref:System.Xml.XmlReader>。|  
-|[XML 名前空間 (Visual Basic) の使用](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)|名前空間を使用する XML ツリーの作成に関する詳細情報について説明します。|  
-|[XML ツリーをシリアル化する (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)|XML ツリーをシリアル化する複数の方法について説明し、どの方法を使用するかについてのガイダンスを紹介します。|  
-|[LINQ to XML 軸 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)|列挙し、説明、[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]軸メソッドは、理解する必要があります記述する前に[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]クエリ。|  
-|[XML ツリー (Visual Basic) のクエリ](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md)|XML ツリーのクエリの一般的な例について説明します。|  
-|[XML ツリー (LINQ to XML) の変更 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)|ドキュメント オブジェクト モデル (DOM) と同様[!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)]場所に XML ツリーを変更することができます。|  
-|[高度な LINQ to XML のプログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)|注釈、イベント、ストリーミング、およびその他の高度なシナリオに関する情報について説明します。|  
-|[LINQ to XML のセキュリティ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-security.md)|LINQ to XML に関連するセキュリティの問題について説明し、セキュリティ上の脆弱性を改善するためのガイダンスを紹介します。|  
-|[サンプル XML ドキュメント (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)|このドキュメントの多数の例で使用されているサンプル XML ドキュメントが含まれています。|  
+|[<span data-ttu-id="44bda-115">LINQ to XML プログラミングの概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="44bda-115">LINQ to XML Programming Overview (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)|<span data-ttu-id="44bda-116">[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クラスの概要と、最も重要な 3 つのクラス (<xref:System.Xml.Linq.XElement>、<xref:System.Xml.Linq.XAttribute>、<xref:System.Xml.Linq.XDocument>) に関する詳細情報について説明します。</span><span class="sxs-lookup"><span data-stu-id="44bda-116">Provides an overview of the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] classes, and detailed information about three of the most important classes: <xref:System.Xml.Linq.XElement>, <xref:System.Xml.Linq.XAttribute>, and <xref:System.Xml.Linq.XDocument>.</span></span>|  
+|[<span data-ttu-id="44bda-117">XML ツリー (Visual Basic) を作成します。</span><span class="sxs-lookup"><span data-stu-id="44bda-117">Creating XML Trees (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)|<span data-ttu-id="44bda-118">XML ツリーの作成に関する概念とタスク ベースの情報について説明します。</span><span class="sxs-lookup"><span data-stu-id="44bda-118">Provides conceptual and task-based information about creating XML trees.</span></span> <span data-ttu-id="44bda-119">XML ツリーを作成するには、関数型構築を使用するか、文字列またはファイルから XML テキストを解析します。</span><span class="sxs-lookup"><span data-stu-id="44bda-119">You can create XML trees by using functional construction, or by parsing XML text from a string or a file.</span></span> <span data-ttu-id="44bda-120"><xref:System.Xml.XmlReader> を使用してツリーを設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="44bda-120">You can also use an <xref:System.Xml.XmlReader> to populate an XML tree.</span></span>|  
+|[<span data-ttu-id="44bda-121">XML 名前空間 (Visual Basic) の使用</span><span class="sxs-lookup"><span data-stu-id="44bda-121">Working with XML Namespaces (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)|<span data-ttu-id="44bda-122">名前空間を使用する XML ツリーの作成に関する詳細情報について説明します。</span><span class="sxs-lookup"><span data-stu-id="44bda-122">Provides detailed information about creating XML trees that use namespaces.</span></span>|  
+|[<span data-ttu-id="44bda-123">(Visual Basic) の XML ツリーをシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="44bda-123">Serializing XML Trees (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)|<span data-ttu-id="44bda-124">XML ツリーをシリアル化する複数の方法について説明し、どの方法を使用するかについてのガイダンスを紹介します。</span><span class="sxs-lookup"><span data-stu-id="44bda-124">Describes multiple approaches to serializing an XML tree, and gives guidance on which approach to use.</span></span>|  
+|[<span data-ttu-id="44bda-125">LINQ to XML 軸 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="44bda-125">LINQ to XML Axes (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)|<span data-ttu-id="44bda-126">[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 軸メソッドを列挙して説明します。[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] クエリを記述する場合は、あらかじめこれらの軸メソッドについて理解しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="44bda-126">Enumerates and describes the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] axis methods, which you must understand before you can write [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries.</span></span>|  
+|[<span data-ttu-id="44bda-127">XML ツリー (Visual Basic) のクエリ</span><span class="sxs-lookup"><span data-stu-id="44bda-127">Querying XML Trees (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md)|<span data-ttu-id="44bda-128">XML ツリーのクエリの一般的な例について説明します。</span><span class="sxs-lookup"><span data-stu-id="44bda-128">Provides common examples of querying XML trees.</span></span>|  
+|[<span data-ttu-id="44bda-129">XML ツリー (LINQ to XML) の変更 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="44bda-129">Modifying XML Trees (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)|<span data-ttu-id="44bda-130">ドキュメント オブジェクト モデル (DOM) と同様、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] では XML ツリーを直接変更できます。</span><span class="sxs-lookup"><span data-stu-id="44bda-130">Like the Document Object Model (DOM), [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] enables you to modify an XML tree in place.</span></span>|  
+|[<span data-ttu-id="44bda-131">高度な LINQ to XML プログラミング (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="44bda-131">Advanced LINQ to XML Programming (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)|<span data-ttu-id="44bda-132">注釈、イベント、ストリーミング、およびその他の高度なシナリオに関する情報について説明します。</span><span class="sxs-lookup"><span data-stu-id="44bda-132">Provides information about annotations, events, streaming, and other advanced scenarios.</span></span>|  
+|[<span data-ttu-id="44bda-133">LINQ to XML のセキュリティ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="44bda-133">LINQ to XML Security (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-security.md)|<span data-ttu-id="44bda-134">LINQ to XML に関連するセキュリティの問題について説明し、セキュリティ上の脆弱性を改善するためのガイダンスを紹介します。</span><span class="sxs-lookup"><span data-stu-id="44bda-134">Describes security issues associated with LINQ to XML and provides some guidance for mitigating security exposure.</span></span>|  
+|[<span data-ttu-id="44bda-135">サンプル XML ドキュメント (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="44bda-135">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)|<span data-ttu-id="44bda-136">このドキュメントの多数の例で使用されているサンプル XML ドキュメントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="44bda-136">Contains the sample XML documents that are used by many examples in this documentation.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [はじめに (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)   
- [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="44bda-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="44bda-137">See Also</span></span>  
+ [<span data-ttu-id="44bda-138">はじめに (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="44bda-138">Getting Started (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)  
+ [<span data-ttu-id="44bda-139">LINQ to XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="44bda-139">LINQ to XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)
