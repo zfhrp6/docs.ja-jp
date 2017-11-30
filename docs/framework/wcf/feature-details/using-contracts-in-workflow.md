@@ -13,11 +13,11 @@ caps.latest.revision: "8"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 1c84483b2ca18d63f20e64a62bb757e244db9b24
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 1493728809721c125b371e0d2ade2050b4909e5d
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="using-contracts-in-workflow"></a>ワークフロー内でのコントラクトの使用
 サービスを実装するときは、サービスおよびサービスが送受信するデータを説明する一連のコントラクトを定義します。 データは、データ コントラクトとメッセージ コントラクトで表されます。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスもワークフロー サービスも、サービスの説明の一環として、データ コントラクトとメッセージ コントラクトの定義を使用します。 サービス自体は、(WSDL の形で) メタデータを公開して、サービスの操作を説明します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、サービス コントラクトと操作コントラクトによって、サービスとサービスがサポートする操作を定義します。 ただし、ワークフロー サービスでは、これらのコントラクトはビジネス プロセス自体の一部になり、コントラクト推論と呼ばれるプロセスによってメタデータとして公開されます。  
@@ -29,17 +29,13 @@ ms.lasthandoff: 11/21/2017
   
 -   <xref:System.ServiceModel.Activities.Receive.ServiceContractName%2A>  
   
--   <!--zz <xref:System.ServiceModel.Activities.Receive.OperationContractName%2A>  --> `System.ServiceModel.Activities.Receive.OperationContractName`
+-   <xref:System.ServiceModel.Activities.Receive.OperationName%2A>
   
--   <xref:System.ServiceModel.Activities.Receive.Action%2A>  
-  
--   <!--zz <xref:System.ServiceModel.Activities.Receive.ValueType%2A> --> `System.ServiceModel.Activities.Receive.ValueType`
-  
+-   <xref:System.ServiceModel.Activities.Receive.Action%2A>   
+ 
  <xref:System.ServiceModel.Activities.SendReply> アクティビティ  
   
 -   <xref:System.ServiceModel.Activities.SendReply.Action%2A>  
-  
--   <!--zz <xref:System.ServiceModel.Activities.SendReply.ValueType%2A>-->  `System.ServiceModel.Activities.SendReply.ValueType`
   
  <xref:System.ServiceModel.Activities.TransactedReceiveScope> アクティビティ  
   

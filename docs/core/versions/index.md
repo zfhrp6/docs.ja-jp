@@ -8,12 +8,11 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: f6f684b1-1d2c-4105-8376-7c1959e23803
-ms.translationtype: HT
-ms.sourcegitcommit: 02cfb7708959057de593506db55e4f31f5ab4fd0
 ms.openlocfilehash: 48343ad8d42ad576b1975e81cd764b4ec6f5bc76
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/28/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="net-core-versioning"></a>.NET Core バージョン管理
 
@@ -21,7 +20,7 @@ ms.lasthandoff: 08/28/2017
 
 この記事では、.NET Core SDK とランタイムのバージョン管理方法を明確にすることを目的としています。
 
-.NET Core には個別にバージョン管理される多くの移動するパーツがあります。 ただし、.NET Core 2.0 以降では、すべてのユーザーが ".NET Core" 全体のバージョンとして理解する簡単に理解できる最上位**レベルのバージョンがあります。 このドキュメントの残りの部分は、これらすべてのパーツのバージョン管理の詳細について説明します。 たとえばパッケージ マネージャーの場合は、これらの詳細が重要になる可能性があります。
+.NET Core には個別にバージョン管理される多くの移動するパーツがあります。 ただし、.NET Core 2.0 以降では、すべてのユーザーが ".NET Core" 全体のバージョンとして理解する簡単に理解できる最上位*レベ*ルのバージョンがあります。 このドキュメントの残りの部分は、これらすべてのパーツのバージョン管理の詳細について説明します。 たとえばパッケージ マネージャーの場合は、これらの詳細が重要になる可能性があります。
 
 ## <a name="versioning-details"></a>バージョン管理の詳細
 
@@ -255,4 +254,3 @@ GitHub の .NET Core リポジトリでは、コミットおよびプル要求�
 [.NET Core の配布パッケージ](../build/distribution-packaging.md)   
 [.NET Core サポート ライフサイクルのファクト シート](https://www.microsoft.com/net/core/support)   
 [.NET core 2 + バージョン バインディング](https://github.com/dotnet/designs/issues/3)   
-

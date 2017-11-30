@@ -12,11 +12,11 @@ caps.latest.revision: "12"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: b05608ca0704483f4318342a733ce363c0a66fc9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 75f4a75a38b79e7b7ab18ac2ce3eff2a13aab15f
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="hello-world-custom-activity"></a>Hello World カスタム アクティビティ
 このサンプルでは、単純なカスタム アクティビティを作成する方法を含む、[!INCLUDE[wf](../../../../includes/wf-md.md)] の主要な機能をいくつか示します。 このサンプルで示す機能では、C# でカスタム アクティビティを作成し、`in` 引数と `out` 引数 (<xref:System.Activities.InArgument> と <xref:System.Activities.OutArgument>) を使用します。  
@@ -59,6 +59,4 @@ ms.lasthandoff: 10/18/2017
   
 2.  ソリューションをビルドするには、Ctrl キーと Shift キーを押しながら B キーを押します。  
   
-3.  ソリューションを実行するには、F5 キーを押します。  
-  
-## <a name="see-also"></a>関連項目
+3.  ソリューションを実行するには、F5 キーを押します。

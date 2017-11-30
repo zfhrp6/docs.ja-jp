@@ -19,11 +19,11 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 5061ce28c4a09f445267c99420bf1942d99076bf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.openlocfilehash: 00b0b5ee330a606ae7417185a804f3d37ab6664a
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="isymunmanagedbinder-interface"></a>ISymUnmanagedBinder インターフェイス
 アンマネージ コードのシンボル バインダーを表します。  
@@ -35,8 +35,8 @@ ms.lasthandoff: 11/21/2017
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[GetReaderForFile メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md)|メタデータ インターフェイスおよびファイル名を指定して、正しい返します <<!--zz xref:ISymUnmanagedReader --> `ISymUnmanagedReader`> 構造体、モジュールに関連付けられているデバッグ シンボルを読み取ることです。|  
-|[GetReaderFromStream メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderfromstream-method.md)|メタデータ インターフェイスおよびをシンボル ストアを格納するストリームを指定して、正しい返します <<!--zz xref:ISymUnmanagedReader --> `ISymUnmanagedReader`> デバッグを読み取る構造は、特定のシンボル ストアからシンボルします。|  
+|[GetReaderForFile メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md)|メタデータ インターフェイスおよびファイル名を指定して、正しい返します[ISymUnmanagedReader](isymunmanagedreader-interface.md)構造体、モジュールに関連付けられているデバッグ シンボルを読み取ることです。|  
+|[GetReaderFromStream メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderfromstream-method.md)|メタデータ インターフェイスおよびをシンボル ストアを格納するストリームを指定して、正しい返します[ISymUnmanagedReader](isymunmanagedreader-interface.md)デバッグは読み取りを構造体は、特定のシンボル ストアからシンボルします。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym.idl、CorSym.h  

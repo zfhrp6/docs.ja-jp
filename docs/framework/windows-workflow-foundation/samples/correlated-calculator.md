@@ -12,11 +12,11 @@ caps.latest.revision: "7"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 9d0d3c03b946a1f3805ea6e229e4019540b58286
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 53d96e090edabc65b7356497c3726d29e46c4ea7
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="correlated-calculator"></a>相関電卓
 このサンプルでは、メッセージ内のパラメーターに基づくコンテンツ ベースの相関関係と共に、デザイナーでメッセージング アクティビティ (<xref:System.ServiceModel.Activities.Receive> および <xref:System.ServiceModel.Activities.SendReply>) を使用する方法を示します。 このシナリオでは、電卓の操作はパラレルなコンボイで行われます。 インスタンスおよび (`CalculatorId` に基づく) 相関関係は、最初のメッセージがワークフローに送信されたときに作成され、それ以降の同じ `CalculatorId` を持つメッセージは、リセット操作が呼び出されるまでそのインスタンスにディスパッチされます。 クライアントは、コード ベースのクライアント プロキシを使用してサービスと通信する WPF アプリケーションとして実装されます。  
@@ -44,6 +44,4 @@ ms.lasthandoff: 10/18/2017
 >   
 >  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\CorellatedCalculator`  
-  
-## <a name="see-also"></a>関連項目
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\CorellatedCalculator`

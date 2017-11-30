@@ -5,27 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
 helpviewer_keywords:
 - application domains, loading assemblies
 - loading assemblies
 ms.assetid: 1432aa2d-bd83-4346-bf3b-a1b7920e2aa9
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 90e1d16b47e1f603ac7faaa582388ec682591850
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 934373d61407c8cc19b7d6424898a582880f9c21
-ms.openlocfilehash: c319da0f8e6f3cdfb83e659a778136d668699834
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-load-assemblies-into-an-application-domain"></a>方法 : アプリケーション ドメインにアセンブリを読み込む
-アプリケーション ドメインにアセンブリを読み込むには、いくつかの方法があります。 推奨されているのは、<xref:System.Reflection.Assembly?displayProperty=fullName> クラスの `static` (Visual Basic では `Shared`) <xref:System.Reflection.Assembly.Load%2A> メソッドを使用する方法です。 それ以外には、以下の方法でアセンブリを読み込むことができます。  
+アプリケーション ドメインにアセンブリを読み込むには、いくつかの方法があります。 推奨されているのは、<xref:System.Reflection.Assembly?displayProperty=nameWithType> クラスの `static` (Visual Basic では `Shared`) <xref:System.Reflection.Assembly.Load%2A> メソッドを使用する方法です。 それ以外には、以下の方法でアセンブリを読み込むことができます。  
   
 -   <xref:System.Reflection.Assembly> クラスの <xref:System.Reflection.Assembly.LoadFrom%2A> メソッドは、ファイルの場所が指定されたアセンブリを読み込みます。 このメソッドでアセンブリを読み込む場合は、別の読み込みコンテキストが使用されます。  
   
@@ -38,7 +40,7 @@ ms.lasthandoff: 08/10/2017
   
 -   <xref:System.Type> クラスの <xref:System.Type.GetType%2A> メソッドは、アセンブリを読み込むことができます。  
   
--   <xref:System.AppDomain?displayProperty=fullName> クラスの <xref:System.AppDomain.Load%2A> メソッドは、アセンブリを読み込むことができますが、主に COM の相互運用性のために使用されます。 このメソッドの呼び出し元であるアプリケーション ドメイン以外のアプリケーション ドメインにアセンブリを読み込む場合は、このメソッドを使用しないでください。  
+-   <xref:System.AppDomain?displayProperty=nameWithType> クラスの <xref:System.AppDomain.Load%2A> メソッドは、アセンブリを読み込むことができますが、主に COM の相互運用性のために使用されます。 このメソッドの呼び出し元であるアプリケーション ドメイン以外のアプリケーション ドメインにアセンブリを読み込む場合は、このメソッドを使用しないでください。  
   
 > [!NOTE]
 >  .NET Framework Version 2.0 以降では、現在読み込まれているランタイムよりもバージョン番号が新しい .NET Framework のバージョンでコンパイルされたアセンブリは、ランタイムに読み込まれないようになりました。 これはメジャー コンポーネントとマイナー コンポーネントの組み合わせたバージョン番号に適用されます。  
@@ -48,13 +50,14 @@ ms.lasthandoff: 08/10/2017
 ## <a name="example"></a>例  
  次に示すコードは、"example.exe" または "example.dll" という名前のアセンブリを現在のアプリケーション ドメインに読み込み、アセンブリから `Example` という型を取得します。さらに、その型に使用する `MethodA` というパラメーターを持たないメソッドを取得して、そのメソッドを実行します。 読み込まれたアセンブリから情報を取得する方法の詳細については、「[型の動的な読み込みおよび使用](../../../docs/framework/reflection-and-codedom/dynamically-loading-and-using-types.md)」を参照してください。  
   
- [!code-cpp[System.AppDomain.Load#2](../../../samples/snippets/cpp/VS_Snippets_CLR_System/system.appdomain.load/cpp/source2.cpp#2)] [!code-csharp[System.AppDomain.Load#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.load/cs/source2.cs#2)] [!code-vb[System.AppDomain.Load#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.load/vb/source2.vb#2)]  
+ [!code-cpp[System.AppDomain.Load#2](../../../samples/snippets/cpp/VS_Snippets_CLR_System/system.appdomain.load/cpp/source2.cpp#2)]
+ [!code-csharp[System.AppDomain.Load#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.load/cs/source2.cs#2)]
+ [!code-vb[System.AppDomain.Load#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.load/vb/source2.vb#2)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>   
- [アプリケーション ドメインを使用したプログラミング](http://msdn.microsoft.com/en-us/bd36055b-56bd-43eb-b4d8-820c37172131)   
- [リフレクション](../../../docs/framework/reflection-and-codedom/reflection.md)   
- [アプリケーション ドメインの使用](../../../docs/framework/app-domains/use.md)   
- [方法: リフレクションのみのコンテキストにアセンブリを読み込む](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)   
+ <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>  
+ [アプリケーション ドメインを使用したプログラミング](http://msdn.microsoft.com/en-us/bd36055b-56bd-43eb-b4d8-820c37172131)  
+ [リフレクション](../../../docs/framework/reflection-and-codedom/reflection.md)  
+ [アプリケーション ドメインの使用](../../../docs/framework/app-domains/use.md)  
+ [方法: リフレクションのみのコンテキストにアセンブリを読み込む](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)  
  [アプリケーション ドメインとアセンブリ](http://msdn.microsoft.com/en-us/433b04ae-4ba8-4849-9dbd-79194f240346)
-

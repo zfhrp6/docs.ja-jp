@@ -13,11 +13,11 @@ caps.latest.revision: "2"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 630457e4d1b30fe2a9439c3a41af5da92606c55a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.openlocfilehash: 3b6057076f750d6ad5f8e5de00bc907ac9bf08c2
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="specifying-a-custom-crypto-algorithm"></a>カスタム暗号アルゴリズムの指定
 WCF では、データの暗号化やデジタル署名の計算を行う際に使用するカスタム暗号アルゴリズムを指定できます。 そのためには、次の手順に従います。  
@@ -117,7 +117,7 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
   
  下のセクションで、<`cryptoClasses`> 要素が、SHA256CryptoServiceProvider とエイリアス"SHA256CSP"の間のマッピングを作成します。 <`nameEntry`> 要素は、"SHA256CSP"エイリアスと指定された URL (http://constoso.com/CustomAlgorithms/CustomHashAlgorithm) の間のマッピングを作成します。  
   
- コードの使用中でカスタム アルゴリズムを登録する、 <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm%2A> System.String[])?qualifyHint=False & autoUpgrade = True メソッドです。 このメソッドによって、両方のマッピングを作成します。 次の例は、このメソッドを呼び出す方法を示しています。  
+ コードでカスタム アルゴリズムを登録するには、<xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm(System.Type,System.String[])> メソッドを使用します。 このメソッドによって、両方のマッピングを作成します。 次の例は、このメソッドを呼び出す方法を示しています。  
   
 ```  
 // Register the custom URI string defined for the hashAlgorithm in MyCustomAlgorithmSuite class to create the   

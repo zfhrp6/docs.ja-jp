@@ -12,11 +12,11 @@ caps.latest.revision: "8"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 03ac8e41f8126c6b05eac82d143291a0de491969
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 8d527b728d0b4ac86a8dd98afb45a09585bd0c96
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="activity-relationships-validation"></a>アクティビティの関係の検証
 このサンプルには 3 つのアクティビティ `CreateCity`、`CreateState`、および `CreateCountry` が含まれます。 `CreateCity` は `CreateState` アクティビティ内にあり、`CreateState` は `CreateCountry` アクティビティ内にある必要があります。 このサンプルの目的から、検証ロジックは、`CreateState` アクティビティについてはコードで記述され、`CreateCity` アクティビティについては XAML で記述されます。 制約の動作は両方とも同じです。  
@@ -49,6 +49,4 @@ ms.lasthandoff: 10/18/2017
 >   
 >  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Validation\ActivityRelationships`  
-  
-## <a name="see-also"></a>関連項目
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Validation\ActivityRelationships`

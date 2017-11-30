@@ -5,10 +5,12 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - deploying applications [.NET Framework], resources
 - resource files, deploying
@@ -28,22 +30,21 @@ helpviewer_keywords:
 - compiling satellite assemblies
 - re-signing assemblies
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 11d455f16c5ee3ce78c26c7642831900e527b960
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: febb9d50bd61eef53f39bb0f36cd4e3a6049e9f5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>デスクトップ アプリケーションに対するサテライト アセンブリの作成
 リソース ファイルはローカライズされたアプリケーションの中心的な役割を果たします。 これを使用することで、アプリケーションでは、ユーザー固有の言語とカルチャで文字列、イメージ、およびその他のデータを表示し、ユーザー固有の言語またはカルチャ用のリソースが使用できない場合には代替データを提供できるようになります。 .NET Framework ではハブ アンド スポーク モデルを使用して、ローカライズされたリソースを見つけて取得します。 ハブはニュートラルまたは既定のカルチャと呼ばれる、単一カルチャ用のリソースとローカライズできない実行可能コードを含むメイン アセンブリです。 既定のカルチャはアプリケーションで使用されるフォールバック カルチャです。これは、ローカライズされたリソースが使用できない場合に使用されます。 アプリケーションの既定のカルチャにカルチャを指定するために <xref:System.Resources.NeutralResourcesLanguageAttribute> 属性を使用します。 各スポークは、単一のローカライズされたカルチャ用のリソースを含むがコードは含まないサテライト アセンブリに接続します。 サテライト アセンブリはメイン アセンブリには含まれないため、アプリケーションのメイン アセンブリを置換しなくても、特定のカルチャに対応するリソースを簡単に更新または置換できます。  
   
 > [!NOTE]
->  アプリケーションの既定のカルチャのリソースは、サテライト アセンブリにも格納できます。 これを行うには、<xref:System.Resources.NeutralResourcesLanguageAttribute> 属性に <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=fullName> の値を割り当てます。  
+>  アプリケーションの既定のカルチャのリソースは、サテライト アセンブリにも格納できます。 これを行うには、<xref:System.Resources.NeutralResourcesLanguageAttribute> 属性に <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=nameWithType> の値を割り当てます。  
   
 ## <a name="satellite-assembly-name-and-location"></a>サテライト アセンブリの名前と場所  
  ハブ アンド スポーク モデルでは、簡単に見つけて使用できるように、リソースを特定の場所に配置する必要があります。 リソースのコンパイルと名前の指定を適切に行わなかった場合や、リソースを適切な場所に配置しなかった場合、共通言語ランタイムはリソースを見つけることができず、代わりに既定のカルチャのリソースを使用します。 <xref:System.Resources.ResourceManager> オブジェクトによって表される .NET Framework リソース マネージャーは、ローカライズされたリソースに自動的にアクセスするために使用されます。 リソース マネージャーでは以下が必要になります。  
@@ -96,9 +97,10 @@ al /target:lib /embed:strings.de.resources /culture:de /out:Example.resources.dl
   
 1.  既定のカルチャのリソースを含める Greeting.resx または Greeting.txt という名前のリソース ファイルを作成します。 値が "Hello world!" の `HelloString` という名前の 1 つの文字列を このファイルに格納します。  
   
-2.  英語 (en) がアプリケーションの既定のカルチャであることを示すには、次の <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=fullName> 属性をアプリケーションの AssemblyInfo ファイル、またはアプリケーションのメイン アセンブリにコンパイルされるメイン ソース コード ファイルに追加します。  
+2.  英語 (en) がアプリケーションの既定のカルチャであることを示すには、次の <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> 属性をアプリケーションの AssemblyInfo ファイル、またはアプリケーションのメイン アセンブリにコンパイルされるメイン ソース コード ファイルに追加します。  
   
-     [!code-csharp[Conceptual.Resources.Locating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]  [!code-vb[Conceptual.Resources.Locating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
+     [!code-csharp[Conceptual.Resources.Locating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]
+     [!code-vb[Conceptual.Resources.Locating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
   
 3.  次のように、アプリケーションに他のカルチャ (en-US、fr-FR および ru-RU) のサポートを追加します。  
   
@@ -122,9 +124,10 @@ al /target:lib /embed:strings.de.resources /culture:de /out:Example.resources.dl
 5.  アプリケーションのメイン アセンブリに、既定のカルチャのリソースと一緒に次のソース コードをコンパイルします。  
   
     > [!IMPORTANT]
-    >  Visual Studio ではなく、コマンド ラインを使用して例を作成する場合は、<xref:System.Resources.ResourceManager> クラス コンストラクターの呼び出しを `ResourceManager rm = new ResourceManager("Greetings",``typeof(Example).Assembly);` に変更する必要があります。  
+    >  Visual Studio ではなく、コマンド ラインを使用して例を作成する場合は、<xref:System.Resources.ResourceManager> クラス コンストラクターの呼び出しを `ResourceManager rm = new ResourceManager("Greetings", typeof(Example).Assembly);` に変更する必要があります。  
   
-     [!code-csharp[Conceptual.Resources.Locating#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/program.cs#1)]  [!code-vb[Conceptual.Resources.Locating#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/module1.vb#1)]  
+     [!code-csharp[Conceptual.Resources.Locating#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/program.cs#1)]
+     [!code-vb[Conceptual.Resources.Locating#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/module1.vb#1)]  
   
      アプリケーションが Example という名前で、コマンド ラインからコンパイルする場合、C# コンパイラのコマンドは次のようになります。  
   
@@ -223,9 +226,10 @@ gacutil /i:StringLibrary.resources.dll
   
 3.  既定のカルチャのリソースを含める Strings.resx という名前のリソース ファイルを作成します。 値が "How do you do?" の `Greeting` という名前の 1 つの文字列を そのファイルに格納します。  
   
-4.  "en" がアプリケーションの既定のカルチャであることを示すには、次の <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=fullName> 属性をアプリケーションの AssemblyInfo ファイル、またはアプリケーションのメイン アセンブリにコンパイルされるメイン ソース ファイルに追加します。  
+4.  "en" がアプリケーションの既定のカルチャであることを示すには、次の <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> 属性をアプリケーションの AssemblyInfo ファイル、またはアプリケーションのメイン アセンブリにコンパイルされるメイン ソース ファイルに追加します。  
   
-     [!code-csharp[Conceptual.Resources.Satellites#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#2)]  [!code-vb[Conceptual.Resources.Satellites#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#2)]  
+     [!code-csharp[Conceptual.Resources.Satellites#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#2)]
+     [!code-vb[Conceptual.Resources.Satellites#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#2)]  
   
 5.  次のように、アプリケーションに他のカルチャ (en-US、fr-FR および ru-RU カルチャ) のサポートを追加します。  
   
@@ -246,9 +250,10 @@ gacutil /i:StringLibrary.resources.dll
 7.  StringLibrary.dll という名前の遅延署名されたライブラリ アセンブリに、既定のカルチャのリソースと一緒に StringLibrary.vb または StringLibrary.cs の次のソース コードをコンパイルします。  
   
     > [!IMPORTANT]
-    >  Visual Studio ではなく、コマンド ラインを使用して例を作成する場合は、<xref:System.Resources.ResourceManager> クラス コンストラクターの呼び出しを `ResourceManager rm = new ResourceManager("Strings",` `typeof(Example).Assembly);` に変更する必要があります。  
+    >  Visual Studio ではなく、コマンドラインの例を作成するを使用している場合への呼び出しを変更する必要があります、<xref:System.Resources.ResourceManager>クラス コンス トラクターを`ResourceManager rm = new ResourceManager("Strings",``typeof(Example).Assembly);`です。  
   
-     [!code-csharp[Conceptual.Resources.Satellites#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#1)]  [!code-vb[Conceptual.Resources.Satellites#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#1)]  
+     [!code-csharp[Conceptual.Resources.Satellites#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#1)]
+     [!code-vb[Conceptual.Resources.Satellites#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#1)]  
   
      C# コンパイラのコマンドは次のようになります。  
   
@@ -294,7 +299,8 @@ gacutil /i:StringLibrary.resources.dll
   
 13. Visual Studio を使用している場合は、`Example` という名前の新しい**コンソール アプリケーション** プロジェクトを作成し、StringLibrary.dll への参照と次のソース コードを追加してコンパイルします。  
   
-     [!code-csharp[Conceptual.Resources.Satellites#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/example.cs#3)]  [!code-vb[Conceptual.Resources.Satellites#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/example.vb#3)]  
+     [!code-csharp[Conceptual.Resources.Satellites#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/example.cs#3)]
+     [!code-vb[Conceptual.Resources.Satellites#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/example.vb#3)]  
   
      コマンド ラインからコンパイルするには、C# コンパイラの次のコマンドを使用します。  
   
@@ -311,10 +317,9 @@ gacutil /i:StringLibrary.resources.dll
 14. Example.exe を実行します。  
   
 ## <a name="see-also"></a>関連項目  
- [リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)   
- [アセンブリへの遅延署名](../../../docs/framework/app-domains/delay-sign-assembly.md)   
- [Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)   
- [Sn.exe (厳密名ツール)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)   
- [Gacutil.exe (グローバル アセンブリ キャッシュ ツール)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)   
+ [リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)  
+ [アセンブリへの遅延署名](../../../docs/framework/app-domains/delay-sign-assembly.md)  
+ [Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
+ [Sn.exe (厳密名ツール)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)  
+ [Gacutil.exe (グローバル アセンブリ キャッシュ ツール)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)  
  [デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)
-

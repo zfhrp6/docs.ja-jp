@@ -1,42 +1,43 @@
 ---
-title: "XmlSchemaCollection を使用した XML スキーマ (XSD) 検証 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "XmlSchemaCollection を使用した XML スキーマ (XSD) 検証"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: ad0b5717-3d32-41ad-a4d7-072c3e492b82
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: ebe8a55cd5dd80be10553948c7765f81429c0957
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XmlSchemaCollection を使用した XML スキーマ (XSD) 検証
-<xref:System.Xml.Schema.XmlSchemaCollection> を使用して、XML スキーマ定義言語 \(XSD\) スキーマを基準として XML ドキュメントを検証できます。  <xref:System.Xml.Schema.XmlSchemaCollection> は、検証を行うたびにスキーマをメモリに読み込まなくてもいいように、スキーマをコレクションに格納することによってパフォーマンスの向上を図ります。  スキーマがスキーマ コレクション内にある場合、コレクション内のスキーマの位置を特定するには `schemaLocation` 属性を使用します。  
+# <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>XmlSchemaCollection を使用した XML スキーマ (XSD) 検証
+<xref:System.Xml.Schema.XmlSchemaCollection> を使用して、XML スキーマ定義言語 (XSD) スキーマを基準として XML ドキュメントを検証できます。 <xref:System.Xml.Schema.XmlSchemaCollection> は、検証を行うたびにスキーマをメモリに読み込まなくてもいいように、スキーマをコレクションに格納することによってパフォーマンスの向上を図ります。 スキーマがスキーマ コレクション内にある場合、コレクション内のスキーマの位置を特定するには `schemaLocation` 属性を使用します。  
   
 > [!IMPORTANT]
->  <xref:System.Xml.Schema.XmlSchemaCollection> クラスは廃止されており、<xref:System.Xml.Schema.XmlSchemaSet> クラスに置き換えられています。  <xref:System.Xml.Schema.XmlSchemaSet> の詳細については、「[スキーマをコンパイルするための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)」を参照してください。  
+>  <xref:System.Xml.Schema.XmlSchemaCollection> クラスは廃止されており、<xref:System.Xml.Schema.XmlSchemaSet> クラスに置き換えられています。 詳細については、<xref:System.Xml.Schema.XmlSchemaSet>クラス」を参照して[スキーマのコンパイルのための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)です。  
   
  データ ファイルのルート要素の例を次に示します。  
   
-```  
+```xml  
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  
     xmlns="urn:bookstore-schema"  
     elementFormDefault="qualified"  
     targetNamespace="urn:bookstore-schema">  
 ```  
   
- この例では、`targetNamespace` 属性の値として、スキーマを <xref:System.Xml.Schema.XmlSchemaCollection> に追加するときに使用される名前空間と同じ `urn:bookstore-schema` が指定されています。  
+ この例では、`targetNamespace` 属性の値として、スキーマを `urn:bookstore-schema` に追加するときに使用される名前空間と同じ <xref:System.Xml.Schema.XmlSchemaCollection> が指定されています。  
   
  XML スキーマを <xref:System.Xml.Schema.XmlSchemaCollection> に追加するコード サンプルを次に示します。  
   
@@ -58,7 +59,7 @@ vreader = new XmlValidatingReader (reader);
 vreader.Schemas.Add(xsc);  
 ```  
   
- <xref:System.Xml.Schema.XmlSchemaCollection> の <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> メソッドで `namespaceURI` プロパティを追加する場合、一般的に、`targetNamespace` 属性が使用されます。  スキーマを <xref:System.Xml.Schema.XmlSchemaCollection> に追加する前に、null 参照を指定することもできます。  名前空間が関連付けられていないスキーマに対しては、空の文字列 \(""\) を使用する必要があります。  <xref:System.Xml.Schema.XmlSchemaCollection> には、名前空間が関連付けられていないスキーマを 1 つだけ含めることができます。  
+ `targetNamespace` の `namespaceURI` メソッドで <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> プロパティを追加する場合、一般的に、<xref:System.Xml.Schema.XmlSchemaCollection> 属性が使用されます。 スキーマを <xref:System.Xml.Schema.XmlSchemaCollection> に追加する前に、null 参照を指定することもできます。 名前空間が関連付けられていないスキーマに対しては、空の文字列 ("") を使用する必要があります。 <xref:System.Xml.Schema.XmlSchemaCollection> には、名前空間が関連付けられていないスキーマを 1 つだけ含めることができます。  
   
  XML スキーマ HeadCount.xsd を <xref:System.Xml.Schema.XmlSchemaCollection> に追加し、HeadCount.xml を検証するコード サンプルを次に示します。  
   
@@ -133,7 +134,7 @@ namespace ValidationSample
   
  検証対象の入力ファイル HeadCount.xml の内容について、次に概略を示します。  
   
-```  
+```xml  
 <!--Load HeadCount.xsd in SchemaCollection for Validation-->  
 <hc:HeadCount xmlns:hc='xsdHeadCount'>  
    <Name>Waldo Pepper</Name>  
@@ -143,7 +144,7 @@ namespace ValidationSample
   
  検証の基準とする XML スキーマ ファイル HeadCount.xsd の内容について、次に概略を示します。  
   
-```  
+```xml  
 <xs:schema xmlns="xsdHeadCount" targetNamespace="xsdHeadCount" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
    <xs:element name='HeadCount' type="HEADCOUNT"/>  
    <xs:complexType name="HEADCOUNT">  
@@ -155,7 +156,7 @@ namespace ValidationSample
 </xs:schema>  
 ```  
   
- <xref:System.Xml.XmlTextReader> を受け取る <xref:System.Xml.XmlValidatingReader> を作成するコード サンプルを次に示します。  XML スキーマ sample4.xsd を基準として、入力ファイル sample4.xml を検証します。  
+ <xref:System.Xml.XmlValidatingReader> を受け取る <xref:System.Xml.XmlTextReader> を作成するコード サンプルを次に示します。 XML スキーマ sample4.xsd を基準として、入力ファイル sample4.xml を検証します。  
   
 ```vb  
 Dim tr As New XmlTextReader("sample4.xml")  
@@ -181,7 +182,7 @@ while(vr.Read()) {
   
  検証対象とする入力ファイル sample4.xml の内容について、次に概略を示します。  
   
-```  
+```xml  
 <datatypes xmlns="datatypesTest">  
     <number>  
         <number_1>123</number_1>  
@@ -191,7 +192,7 @@ while(vr.Read()) {
   
  検証の基準とする XML スキーマ ファイル sample4.xsd の内容について、次に概略を示します。  
   
-```  
+```xml  
 <xs:schema   
     xmlns:xs="http://www.w3.org/2001/XMLSchema"   
     xmlns:tns="datatypesTest"   
@@ -214,8 +215,8 @@ while(vr.Read()) {
 </xs:schema>  
 ```  
   
-## 参照  
- <xref:System.Xml.XmlParserContext>   
- <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=fullName>   
- <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=fullName>   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Xml.XmlParserContext>  
+ <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=nameWithType>  
+ <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType>  
  [XmlSchemaCollection スキーマのコンパイル](../../../../docs/standard/data/xml/xmlschemacollection-schema-compilation.md)

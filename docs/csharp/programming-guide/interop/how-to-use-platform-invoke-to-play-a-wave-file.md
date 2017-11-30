@@ -1,41 +1,23 @@
 ---
 title: "方法: プラットフォーム呼び出しを使用して Wave ファイルを再生する (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - platform invoke, sound files
 - interoperability [C#], playing WAV files using pinvoke
 - wav files
 - .wav files
 ms.assetid: f7f62f53-e026-4c40-b221-3a26adb0c2c5
-caps.latest.revision: 30
+caps.latest.revision: "30"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: d037e17ef48ebfdd5cfd860efbacf195e7b6a76d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 001236392d2b3d3c70dbd0faf2a899929dfe8625
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-use-platform-invoke-to-play-a-wave-file-c-programming-guide"></a>方法: プラットフォーム呼び出しを使用して Wave ファイルを再生する (C# プログラミング ガイド)
 以下の C# コードの例では、プラットフォーム呼び出しサービスを使用して、Windows オペレーティング システム上の .wav サウンド ファイルを再生する方法を示します。  
@@ -45,9 +27,9 @@ ms.lasthandoff: 07/28/2017
   
  **[ファイルを開く]** ダイアログ ボックスは、次のフィルター設定によって拡張子 .wav を持つファイルのみを表示するようにフィルター処理されます。  
   
- [!code-cs[csProgGuideInterop#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_1.cs)]  
+ [!code-csharp[csProgGuideInterop#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_1.cs)]  
   
- [!code-cs[csProgGuideInterop#3](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_2.cs)]  
+ [!code-csharp[csProgGuideInterop#3](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_2.cs)]  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
   
@@ -59,7 +41,7 @@ ms.lasthandoff: 07/28/2017
   
 3.  次のコードをコピーし、`Form1.Designer.cs` ファイルのすべての既存コードの後の `InitializeComponent()` メソッドに貼り付けます。  
   
-     [!code-cs[csProgGuideInterop#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_3.cs)]  
+     [!code-csharp[csProgGuideInterop#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-use-platform-invoke-to-play-a-wave-file_3.cs)]  
   
 4.  コードをコンパイルして実行します。  
   
@@ -67,9 +49,8 @@ ms.lasthandoff: 07/28/2017
  詳細については、[.NET Framework セキュリティ](http://go.microsoft.com/fwlink/?LinkId=37122)に関する記事を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [相互運用性の概要](../../../csharp/programming-guide/interop/interoperability-overview.md)   
- [相互運用性の概要](../../../csharp/programming-guide/interop/interoperability-overview.md)   
- [プラットフォーム呼び出しの詳細](http://msdn.microsoft.com/en-us/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [相互運用性の概要](../../../csharp/programming-guide/interop/interoperability-overview.md)  
+ [相互運用性の概要](../../../csharp/programming-guide/interop/interoperability-overview.md)  
+ [詳しく見てプラットフォーム呼び出し](http://msdn.microsoft.com/en-us/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)  
  [プラットフォーム呼び出しによるデータのマーシャリング](../../../framework/interop/marshaling-data-with-platform-invoke.md)
-

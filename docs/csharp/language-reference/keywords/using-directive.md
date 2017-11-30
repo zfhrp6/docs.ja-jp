@@ -1,38 +1,19 @@
 ---
 title: "using ディレクティブ (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- using directive [C#]
+helpviewer_keywords: using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
-caps.latest.revision: 31
+caps.latest.revision: "31"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 02c50b1e7a54d776985b60570c898e7d0739c44c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1129efd8a1c4058a9648eab61f98cdcef7e9f2f7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-directive-c-reference"></a>using ディレクティブ (C# リファレンス)
 `using` ディレクティブは、次の 3 つの用途で使用します。  
@@ -81,15 +62,15 @@ class Program
   
  `using` ディレクティブを作成すると、名前空間内の型を、名前空間を指定することなく使用できます。 `using` ディレクティブでは、指定した名前空間に入れ子になった別の名前空間へのアクセスは許可されません。  
   
- 名前空間は、ユーザー定義とシステム定義の 2 つのカテゴリに分類されます。 ユーザー定義の名前空間は、コードで定義された名前空間です。 システム定義の名前空間の一覧については、「[.NET Framework クラス ライブラリ](http://go.microsoft.com/fwlink/?LinkID=227195)」を参照してください。  
+ 名前空間は、ユーザー定義とシステム定義の 2 つのカテゴリに分類されます。 ユーザー定義の名前空間は、コードで定義された名前空間です。 システム定義の名前空間の一覧は、次を参照してください。 [.NET Framework クラス ライブラリの概要](../../../standard/class-library-overview.md)です。  
   
- 他のアセンブリのメソッドを参照する方法の例については、[C# DLL の作成と使用](http://msdn.microsoft.com/library/70f65026-3687-4e9c-ab79-c18b97dd8be4)に関するページをご覧ください。  
+ 他のアセンブリ内のメソッドを参照している例については、次を参照してください。[作成および使用するアセンブリは、コマンドラインを使用して](../../programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md)です。  
   
 ## <a name="example-1"></a>例 1  
   
  次の例は、名前空間の `using` エイリアスを定義して使用する方法を示しています。  
   
- [!code-cs[csrefKeywordsNamespace#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-directive_1.cs)]  
+ [!code-csharp[csrefKeywordsNamespace#8](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-directive_1.cs)]  
   
  using エイリアス ディレクティブの右側には、オープン ジェネリック型を配置できません。 たとえば、List\<T> の using エイリアスを作成することはできませんが、List\<int> の using エイリアスは作成できます。  
   
@@ -97,17 +78,16 @@ class Program
   
  次の例は、クラスの `using` ディレクティブと `using` エイリアスを定義する方法を示しています。  
   
- [!code-cs[csrefKeywordsNamespace#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-directive_2.cs)]  
+ [!code-csharp[csrefKeywordsNamespace#9](../../../csharp/language-reference/keywords/codesnippet/CSharp/using-directive_2.cs)]  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [名前空間の使用](../../../csharp/programming-guide/namespaces/using-namespaces.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [名前空間キーワード](../../../csharp/language-reference/keywords/namespace-keywords.md)   
- [名前空間](../../../csharp/programming-guide/namespaces/index.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [名前空間の使用](../../../csharp/programming-guide/namespaces/using-namespaces.md)  
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+ [名前空間キーワード](../../../csharp/language-reference/keywords/namespace-keywords.md)  
+ [名前空間](../../../csharp/programming-guide/namespaces/index.md)  
  [using ステートメント](../../../csharp/language-reference/keywords/using-statement.md)
-

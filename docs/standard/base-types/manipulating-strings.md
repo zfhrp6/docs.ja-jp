@@ -1,43 +1,46 @@
 ---
-title: ".NET Framework における文字列の操作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "操作 (文字列を)"
-  - "文字列 [.NET Framework], 操作"
+title: ".NET Framework における文字列の操作"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- strings [.NET Framework], manipulating
+- manipulating strings
 ms.assetid: d4568ff3-9f83-4549-acd8-47aec2194ac0
-caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: f56dbd878012019f5cab68f2836286d9a6c2f548
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# .NET Framework における文字列の操作
-.NET Framework は広範囲にわたるルーチン セットを提供しており、それらを使用することで効率的に文字列を作成、比較、修正したり、大量のテキストおよびデータをすばやく解析して検索、削除したり、テキスト パターンと置換したりできます。  
+# <a name="manipulating-strings-in-net"></a>.NET における文字列の操作
+.NET では、文字列を効率的に作成、比較、変更できるだけでなく、検索、削除、およびテキスト パターンを置換するために、大量のテキストとデータをすばやく解析できる広範囲のルーチンのセットを提供しています。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [文字列を使用するためのベスト プラクティス](../../../docs/standard/base-types/best-practices-strings.md)  
- .NET Framework の文字列の並べ替え、比較、および大文字と小文字の区別のメソッドについて検討し、文字列処理メソッドを選択するための推奨事項を示します。  
+ 文字列の並べ替え、比較、および .NET では、大文字小文字の区別方法を調査し、文字列処理メソッドを選択するための推奨事項を提供します。  
   
- [.NET Framework の正規表現](../../../docs/standard/base-types/regular-expressions.md)  
- 言語要素、正規表現の動作、例など、.NET Framework 正規表現について詳しく説明します。  
+ [.NET の正規表現](../../../docs/standard/base-types/regular-expressions.md)  
+ 言語要素を正規表現の動作例など、.NET の正規表現の詳細について説明します。  
   
  [基本的な文字列操作](../../../docs/standard/base-types/basic-string-operations.md)  
- バイト配列から新しい文字列を作成する、文字列の値を比較する、既存の文字列を変更するなど、<xref:System.String?displayProperty=fullName> クラスと <xref:System.Text.StringBuilder?displayProperty=fullName> クラスに用意されている文字列操作について説明します。  
+ によって提供される文字列操作の説明、<xref:System.String?displayProperty=nameWithType>と<xref:System.Text.StringBuilder?displayProperty=nameWithType>バイトの配列から新しい文字列を作成する、文字列値を比較する、既存の文字列の変更などのクラスです。  
   
-## 関連項目  
- [.NET Framework における型変換](../../../docs/standard/base-types/type-conversion.md)  
- .NET Framework を使用した型の変換で使用される手法と規則について説明します。  
+## <a name="related-sections"></a>関連項目  
+ [.NET での型変換](../../../docs/standard/base-types/type-conversion.md)  
+ 方法と .NET を使用して型を変換するための規則について説明します。  
   
  [型の書式設定](../../../docs/standard/base-types/formatting-types.md)  
- 基本クラス ライブラリによる書式指定機能の実装方法、数値型の書式指定方法、文字列型の書式指定方法、特定のカルチャでの書式指定方法について説明します。  
+ 基底クラス ライブラリを使用して書式設定を実装する方法、数値型の書式を設定する方法、文字列型の書式を設定する方法、および特定のカルチャの書式設定する方法を提供します。  
   
  [文字列の解析](../../../docs/standard/base-types/parsing-strings.md)  
- オブジェクトの文字列表現によって指定された値にオブジェクトを初期化する方法について説明します。  解析は書式設定の逆の操作です。
+ オブジェクトの文字列表現によって指定された値にオブジェクトを初期化する方法について説明します。 解析は書式設定の逆の操作です。

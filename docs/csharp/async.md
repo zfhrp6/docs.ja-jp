@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
+ms.openlocfilehash: dc9b45e21f15ad92304685a1aff6760f3406cee2
+ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
 ms.translationtype: HT
-ms.sourcegitcommit: 019461964ba63d874ce86511474aa37b4342bbc4
-ms.openlocfilehash: b4a95438fe8b7490337de10299b824c5796bb4d1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/29/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/22/2017
 ---
-
 # <a name="asynchronous-programming"></a>非同期プログラミング
 
 I/O バインドのニーズ (ネットワークからのデータの要求、データベースへのアクセスなど) がある場合、非同期プログラミングを利用することになります。  CPU バインドのコードにも、コストのかかる計算の実行など、非同期コードに適したシナリオがあります。
@@ -141,7 +139,7 @@ public async Task<int> GetDotNetCountAsync()
     // to accept another request, rather than blocking on this one.
     var html = await _httpClient.DownloadStringAsync("http://dotnetfoundation.org");
 
-    return Regex.Matches(html, ".NET").Count;
+    return Regex.Matches(html, @"\.NET").Count;
 }
 ```
 
@@ -164,7 +162,7 @@ private async void SeeTheDotNets_Click(object sender, RoutedEventArgs e)
     // The await operator suspends SeeTheDotNets_Click, returning control to its caller.
     // This is what allows the app to be responsive and not hang on the UI thread.
     var html = await getDotNetFoundationHtmlTask;
-    int count = Regex.Matches(html, ".NET").Count;
+    int count = Regex.Matches(html, @"\.NET").Count;
 
     DotNetCountLabel.Text = $"Number of .NETs on dotnetfoundation.org: {count}";
 
@@ -175,12 +173,12 @@ private async void SeeTheDotNets_Click(object sender, RoutedEventArgs e)
 
 ### <a name="waiting-for-multiple-tasks-to-complete"></a>複数タスクの完了の待機
 
-複数のデータを同時に取得することが必要になる場合があります。  `Task` API には 2 つのメソッド `Task.WhenAll` と `Task.WhenAny` が含まれており、これらを使うと、複数のバックグラウンド ジョブで非ブロッキング待機を実行する非同期コードを記述できます。
+複数のデータを同時に取得することが必要になる場合があります。  `Task` API には、2 つのメソッドが含まれています。`Task.WhenAll`と`Task.WhenAny`非ブロッキングの待機を複数のバック グラウンド ジョブを実行する非同期コードを記述できます。
 
 次の例では、一連の `userId` に対する `User` データを取得する方法を示します。
 
 ```csharp
-public async Task<User> GetUser(int userId)
+public async Task<User> GetUserAsync(int userId)
 {
     // Code omitted:
     //
@@ -188,13 +186,13 @@ public async Task<User> GetUser(int userId)
     // to the entry in the database with {userId} as its Id.
 }
 
-public static Task<IEnumerable<User>> GetUsers(IEnumerable<int> userIds)
+public static async Task<IEnumerable<User>> GetUsersAsync(IEnumerable<int> userIds)
 {
     var getUserTasks = new List<Task<User>>();
     
     foreach (int userId in userIds)
     {
-        getUserTasks.Add(GetUser(id));
+        getUserTasks.Add(GetUserAsync(userId));
     }
     
     return await Task.WhenAll(getUserTasks);
@@ -204,7 +202,7 @@ public static Task<IEnumerable<User>> GetUsers(IEnumerable<int> userIds)
 LINQ を使ってもう少し簡潔に記述する別の方法を次に示します。
 
 ```csharp
-public async Task<User> GetUser(int userId)
+public async Task<User> GetUserAsync(int userId)
 {
     // Code omitted:
     //
@@ -212,9 +210,9 @@ public async Task<User> GetUser(int userId)
     // to the entry in the database with {userId} as its Id.
 }
 
-public static async Task<User[]> GetUsers(IEnumerable<int> userIds)
+public static async Task<User[]> GetUsersAsync(IEnumerable<int> userIds)
 {
-    var getUserTasks = userIds.Select(id => GetUser(id));
+    var getUserTasks = userIds.Select(id => GetUserAsync(id));
     return await Task.WhenAll(getUserTasks);
 }
 ```
@@ -272,4 +270,3 @@ LINQ 内のラムダ式は遅延実行を使います。つまり、予期して
 
 * 「[非同期の詳細](../standard/async-in-depth.md)」では、タスクの動作方法について詳しく説明します。
 * Lucian Wischik の「[Six Essential Tips for Async](https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async)」(非同期に関する 6 つの重要なヒント) は、非同期プログラミングのためのすばらしいリソースです。
-

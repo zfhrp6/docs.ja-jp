@@ -5,21 +5,19 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 721f10fa-3189-4124-a00d-56ddabd889b3
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: 1785c222238a58893edf71352839b40ea8db29f7
+ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 208ea77318d67900eb059606b8ecd8e0e3b203a0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/21/2017
 ---
 # <a name="the-net-framework-and-out-of-band-releases"></a>.NET Framework および特別なリリース
 .NET Framework は、従来のデスクトップ アプリや Web アプリに加えて、Windows Phone や Windows ストア アプリなど、さまざまなプラットフォームに対応し、コードを最大限に再利用できるように発展しています。 通常の .NET Framework のリリースに加えて、クロスプラットフォームでの開発の強化や新機能の導入を目的として、新しい機能をアウトオブバンド (OOB) リリースによって提供しています。 ここでは、.NET Framework および OOB リリースの将来の方向性について説明します。  
@@ -30,7 +28,7 @@ ms.lasthandoff: 07/28/2017
  独自のアプリで OOB 機能を使用する場合、OOB アセンブリはアプリのパッケージで配置されるため、ユーザーはアプリを実行するために最新バージョンの .NET Framework をインストールする必要はありません。  
   
 ## <a name="how-oob-packages-are-distributed"></a>OOB パッケージの配布方法  
- 共通言語ランタイム (CLR) のコア コンポーネントの OOB リリースは、オープン ソースの Visual Studio 拡張機能である [NuGet Package Manager](http://nuget.codeplex.com/) を通じて配布されます。 NuGet によって、Visual Studio のソリューション エクスプローラーから簡単に、.NET Framework プロジェクトを参照したり、ライブラリを追加したりすることができます。 NuGet は、Visual Studio 2012 以降のすべてのエディションに付属しています。 NuGet がインストールされているかどうかを確認するには、Visual Studio の **[ツール]** メニューの **[ライブラリ パッケージ マネージャー]** を検索します。 インストールされていない場合:  
+コア共通言語ランタイム (CLR) コンポーネントの OOB リリース経由で配信される、 [NuGet](https://www.nuget.org/)、これは、.NET 用のパッケージ マネージャーです。 NuGet によって、Visual Studio のソリューション エクスプローラーから簡単に、.NET Framework プロジェクトを参照したり、ライブラリを追加したりすることができます。 NuGet は、Visual Studio 2012 以降のすべてのエディションに付属しています。 NuGet がインストールされているかどうかを確認するには、Visual Studio の **[ツール]** メニューの **[ライブラリ パッケージ マネージャー]** を検索します。 インストールされていない場合:  
   
 1.  Visual Studio のメニュー バーで、**[ツール]**、**[拡張機能と更新プログラム]** を選択します (Visual Studio 2010 では、**[拡張機能マネージャー]** を選択します)。  
   
@@ -66,4 +64,3 @@ ms.lasthandoff: 07/28/2017
   
 ## <a name="see-also"></a>関連項目  
  [はじめに](../../../docs/framework/get-started/index.md)
-

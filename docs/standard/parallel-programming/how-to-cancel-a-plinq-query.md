@@ -1,57 +1,63 @@
 ---
-title: "How to: Cancel a PLINQ Query | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "PLINQ queries, how to cancel"
-  - "cancellation, PLINQ"
+title: "方法: PLINQ クエリを取り消す"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- PLINQ queries, how to cancel
+- cancellation, PLINQ
 ms.assetid: 80b14640-edfa-4153-be1b-3e003d3e9c1a
-caps.latest.revision: 16
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: d8031758462df45c030b8b75a3507f1bfb44bfd0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Cancel a PLINQ Query
-次の例では、PLINQ クエリを取り消す 2 とおりの方法を示します。  最初の例では、そのほとんどがデータ走査で構成されるクエリを取り消す方法を示します。  2 番目の例では、負荷の大きいユーザー関数を含むクエリを取り消す方法を示します。  
+# <a name="how-to-cancel-a-plinq-query"></a>方法: PLINQ クエリを取り消す
+次の例では、PLINQ クエリを取り消すための 2 つの方法を示します。 最初の例では、データ移動のほとんどの場合で構成されているクエリをキャンセルする方法を示します。 2 番目の例では、ユーザー関数は計算コストが高いを含むクエリをキャンセルする方法を示します。  
   
 > [!NOTE]
->  \[マイ コードのみ\] が有効になっている場合、Visual Studio では、例外をスローする行で処理が中断され、"ユーザー コードで処理されない例外" に関するエラー メッセージが表示されます。このエラーは問題にはなりません。  F5 キーを押して、処理が中断された箇所から続行し、以下の例に示す例外処理動作を確認できます。  Visual Studio による処理が最初のエラーで中断しないようにするには、**\[ツール\]** メニューの \[オプション\]、\[デバッグ\] の順にクリックし、\[全般\] で \[マイ コードのみ\] チェック ボックスをオフにします。  
+>  「マイ コードのみ」を有効にすると、Visual Studio は例外をスローする行で中断し、「で処理されない例外ユーザー コードです」というエラー メッセージを表示 このエラーは問題にはなりません。 F5 キーを押して、処理が中断された箇所から続行し、以下の例に示す例外処理動作を確認できます。 Visual Studio の最初のエラーの処理は中断を防ぐために下にある [マイ コードのみ] チェック ボックスをオフにだけ**ツール、オプション、デバッグ、一般的な**します。  
 >   
->  この例は使用法を示すことを目的としており、同等の LINQ to Objects 順次クエリよりも実行速度が遅い場合があります。  高速化の詳細については、「[Understanding Speedup in PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)」を参照してください。  
+>  この例は、使用方法を示すことを意図したものであるため、同等の順次的な LINQ to Objects クエリほど高速ではない可能性があります。 高速化の詳細については、次を参照してください。 [PLINQ で高速化について](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
  [!code-csharp[PLINQ#16](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#16)]
  [!code-vb[PLINQ#16](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#16)]  
   
- PLINQ のフレームワークでは、単一の <xref:System.OperationCanceledException> は <xref:System.AggregateException?displayProperty=fullName> に組み込まれないため、<xref:System.OperationCanceledException> を独立した catch ブロックとして扱う必要があります。  一つ以上のユーザー デリゲートが OperationCanceledException PLINQ が <xref:System.AggregateException?displayProperty=fullName>ではなく単一の <xref:System.OperationCanceledException> \(externalCT\) を出力 \(externalCT\) \(外部 <xref:System.Threading.CancellationToken?displayProperty=fullName>を使用\)、他の例外スローしないし、クエリが `AsParallel().WithCancellation(externalCT)`と定義されている。  ただし、1 つのユーザー デリゲートが <xref:System.OperationCanceledException> をスローし、別のデリゲートがその他の例外の種類をスローした場合は、両方の例外が <xref:System.AggregateException> に組み込まれます。  
+ PLINQ フレームワークは、1 つをロールバックできません<xref:System.OperationCanceledException>に、 <xref:System.AggregateException?displayProperty=nameWithType>;<xref:System.OperationCanceledException>個別の catch ブロックで処理する必要があります。 1 つまたは複数のユーザー デリゲート、OperationCanceledException(externalCT) をスローした場合 (外部を使用して、 <xref:System.Threading.CancellationToken?displayProperty=nameWithType>) として定義されていないその他の例外、およびクエリ`AsParallel().WithCancellation(externalCT)`、PLINQ は、1 つを発行し、 <xref:System.OperationCanceledException> (externalCT) ではなく、<xref:System.AggregateException?displayProperty=nameWithType>. ただし、1 人のユーザーの委任をスロー、 <xref:System.OperationCanceledException>、別のデリゲートを別の種類の例外をスローし、両方の例外にロールバックされます、<xref:System.AggregateException>です。  
   
- キャンセルの一般的なガイダンスを次に示します。  
+ 取り消しの一般的なガイダンスは次のとおりです。  
   
-1.  ユーザー デリゲートのキャンセルを実行する場合は、PLINQ に外部の <xref:System.Threading.CancellationToken> を示して、<xref:System.OperationCanceledException>\(externalCT\) をスローする必要があります。  
+1.  ユーザー デリゲートの取り消し処理を実行する場合は、外部について PLINQ を通知する必要があります<xref:System.Threading.CancellationToken>をスローし、 <xref:System.OperationCanceledException>(externalCT)。  
   
-2.  キャンセルが発生したときに別の例外がスローされていない場合は、<xref:System.AggregateException> ではなく、<xref:System.OperationCanceledException> を処理する必要があります。  
+2.  取り消しが発生したその他の例外がスローされなかった場合は、し、処理、<xref:System.OperationCanceledException>ではなく、<xref:System.AggregateException>です。  
   
-## 使用例  
- 次の例は、ユーザー コードに負荷の大きい関数が含まれる場合に、キャンセルを処理する方法を示しています。  
+## <a name="example"></a>例  
+ 次の例では、ユーザー コードで計算コストが高い関数があるときに取り消しを処理する方法を示します。  
   
  [!code-csharp[PLINQ#17](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#17)]
  [!code-vb[PLINQ#17](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#17)]  
   
- キャンセルをユーザー コードで処理する場合、クエリの定義で <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> を使用する必要はありません。  ただし、<xref:System.Linq.ParallelEnumerable.WithCancellation%2A> はクエリのパフォーマンスに影響を与えず、クエリ演算子とユーザー コードによってキャンセルを処理できるようになるため、これを使用することをお勧めします。  
+ ユーザー コードでキャンセルを処理する場合を使用する必要はありません<xref:System.Linq.ParallelEnumerable.WithCancellation%2A>クエリ定義にします。 ただし、お勧めするこれを行うため<xref:System.Linq.ParallelEnumerable.WithCancellation%2A>クエリのパフォーマンスに影響を与えませんし、クエリ演算子と、ユーザー コードで処理するキャンセル可能になります。  
   
- システムの応答性を確認するため、ミリ秒ごとに一度程度の頻度でキャンセルをチェックすることをお勧めします。ただし、適切な期間と見なされるのは最大で 10 ミリ秒です。  この頻度によってコードのパフォーマンスが低下することはありません。  
+ システムの応答性を確保できるように、ことをお勧めミリ秒ごとに 1 回の周囲のキャンセルをチェックします。ただし、10 ミリ秒までの任意の期間の許容と見なされます。 この頻度では、コードのパフォーマンスに悪影響を与えるを必要はありません。  
   
- たとえば、コードで、クエリ結果を反復処理している foreach \(Visual Basic では For Each\) ループを中断したときなど、列挙子が破棄された場合、クエリは取り消されますが、例外がスローされることはありません。  
+ 列挙子が破棄されると、コードがクエリ結果を反復処理する foreach (Visual Basic では各) For ループ外分割される場合など、クエリがキャンセルされるが例外はスローされません。  
   
-## 参照  
- <xref:System.Linq.ParallelEnumerable>   
- [Parallel LINQ \(PLINQ\)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)   
- [Cancellation in Managed Threads](../../../docs/standard/threading/cancellation-in-managed-threads.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Linq.ParallelEnumerable>  
+ [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
+ [マネージ スレッドのキャンセル](../../../docs/standard/threading/cancellation-in-managed-threads.md)

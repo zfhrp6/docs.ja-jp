@@ -12,11 +12,11 @@ caps.latest.revision: "12"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: ea3814fe187fb721771b6ce09a5fa0ff95558852
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: cd5b8749ef2637dd1e9616257b5321ae7504dedd
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="corporate-purchase-process"></a>企業の購買プロセス
 このサンプルは、Request for Proposals (RFP: 提案依頼書) に基づくごく基本的な購買プロセスを作成する方法を示しています。この購買プロセスでは最良の提案が自動的に選択されます。 このサンプルでは、<xref:System.Activities.Statements.Parallel>、<xref:System.Activities.Statements.ParallelForEach%601>、および <xref:System.Activities.Statements.ForEach%601> と、プロセスを表すワークフローを作成するカスタム アクティビティが組み合わされています。  
@@ -180,6 +180,4 @@ ms.lasthandoff: 10/18/2017
   
 -   **View RFP**: 既存の RFP の内容を表示します。 ベンダーは自身の提案を送信できます (依頼されている場合。依頼されていない場合は RFP が完了していません)。  
   
--   **Connect As**: ユーザーが目的の参加者を選択して別の id を使用して RFP にアクセスできる、**として表示**アクティブな Rfp のグリッドのコンボ ボックス。  
-  
-## <a name="see-also"></a>関連項目
+-   **Connect As**: ユーザーが目的の参加者を選択して別の id を使用して RFP にアクセスできる、**として表示**アクティブな Rfp のグリッドのコンボ ボックス。

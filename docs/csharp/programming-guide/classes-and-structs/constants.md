@@ -1,42 +1,24 @@
 ---
 title: "定数 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 81a085ff016fb9ee8f8a13167728c37ca799920a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 85273420e9e0dbf4b8f24568d97be127c85d5f42
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="constants-c-programming-guide"></a>定数 (C# プログラミング ガイド)
-定数とは、コンパイル時に既知であり、プログラムの実行期間を通じて変更されない値です。 定数を宣言するには、[const](../../../csharp/language-reference/keywords/const.md) 修飾子を使用します。 `const` として宣言できるのは、C# 組み込み型 (<xref:System.Object?displayProperty=fullName> を除く) のみです。 組み込み型の一覧については、「[組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)」を参照してください。 クラス、構造体、配列などのユーザー定義型を `const` にすることはできません。 実行時に (コンストラクターなどで) 一度だけ初期化され、その後は変更できないクラス、構造体、または配列を作成するには、[readonly](../../../csharp/language-reference/keywords/readonly.md) 修飾子を使用します。  
+定数とは、コンパイル時に既知であり、プログラムの実行期間を通じて変更されない値です。 定数を宣言するには、[const](../../../csharp/language-reference/keywords/const.md) 修飾子を使用します。 `const` として宣言できるのは、C# 組み込み型 (<xref:System.Object?displayProperty=nameWithType> を除く) のみです。 組み込み型の一覧については、「[組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)」を参照してください。 クラス、構造体、配列などのユーザー定義型を `const` にすることはできません。 実行時に (コンストラクターなどで) 一度だけ初期化され、その後は変更できないクラス、構造体、または配列を作成するには、[readonly](../../../csharp/language-reference/keywords/readonly.md) 修飾子を使用します。  
   
  C# では、`const` のメソッド、プロパティ、またはイベントはサポートされません。  
   
@@ -44,7 +26,7 @@ ms.lasthandoff: 07/28/2017
   
  定数は、宣言するときに初期化する必要があります。 例:  
   
- [!code-cs[csProgGuideObjects#64](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_1.cs)]  
+ [!code-csharp[csProgGuideObjects#64](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_1.cs)]  
   
  この例では、定数 `months` は常に 12 になり、クラス自体によっても変更できません。 実際、コンパイラが C# ソース コードで定数の識別子 (この場合は `months`) を検出すると、コンパイラが生成する中間言語 (IL) コードには、識別子の代わりにリテラル値が直接出力されます。 実行時に定数に関連付けられる変数アドレスが存在しないため、`const` フィールドは、参照渡しすることも、式の左辺値として指定することもできません。  
   
@@ -53,26 +35,25 @@ ms.lasthandoff: 07/28/2017
   
  同じ型の複数の定数を、次のように同時に宣言できます。  
   
- [!code-cs[csProgGuideObjects#65](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_2.cs)]  
+ [!code-csharp[csProgGuideObjects#65](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_2.cs)]  
   
  定数の初期化に使用する式は、循環参照を形成しない限り別の定数を参照できます。 例:  
   
- [!code-cs[csProgGuideObjects#66](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_3.cs)]  
+ [!code-csharp[csProgGuideObjects#66](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_3.cs)]  
   
- 定数は、[public](../../../csharp/language-reference/keywords/public.md)、[private](../../../csharp/language-reference/keywords/private.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、または `protected internal` としてマークできます。 これらのアクセス修飾子により、クラスのユーザーが定数にアクセスする方法が定義されます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+ 定数として設定できる[パブリック](../../../csharp/language-reference/keywords/public.md)、[プライベート](../../../csharp/language-reference/keywords/private.md)、[保護](../../../csharp/language-reference/keywords/protected.md)、[内部](../../../csharp/language-reference/keywords/internal.md)、[内部保護されている](../../../csharp/language-reference/keywords/protected-internal.md)または[保護されたプライベート](../../../csharp/language-reference/keywords/private-protected.md)です。 これらのアクセス修飾子により、クラスのユーザーが定数にアクセスする方法が定義されます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
  定数の値は型のすべてのインスタンスで同じであるため、定数は[静的](../../../csharp/language-reference/keywords/static.md)フィールドのようにアクセスされます。 定数の宣言に `static` キーワードは使用しません。 定数を定義しているクラスに含まれていない式で定数を使用する場合は、クラス名、ピリオド、定数の名前を使用する必要があります。 例:  
   
- [!code-cs[csProgGuideObjects#67](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_4.cs)]  
+ [!code-csharp[csProgGuideObjects#67](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/constants_4.cs)]  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)   
- [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)   
- [型](../../../csharp/programming-guide/types/index.md)   
- [readonly](../../../csharp/language-reference/keywords/readonly.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+ [型](../../../csharp/programming-guide/types/index.md)  
+ [readonly](../../../csharp/language-reference/keywords/readonly.md)  
  [C# の不変性パート 1: 不変性の種類](http://go.microsoft.com/fwlink/?LinkId=112379)
-

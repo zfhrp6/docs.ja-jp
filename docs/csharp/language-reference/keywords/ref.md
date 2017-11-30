@@ -1,42 +1,24 @@
 ---
 title: "ref (C# リファレンス)"
-ms.date: 2017-05-30
+ms.date: 05/30/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - ref_CSharpKeyword
 - ref
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
 ms.assetid: b8a5e59c-907d-4065-b41d-95bf4273c0bd
-caps.latest.revision: 32
+caps.latest.revision: "32"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 0be0eee67b507e2a209c9caaa3eb14cc60e8a763
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 003125ca6218d42a919d8bb592b5454a7cb387c7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ref-c-reference"></a>ref (C# リファレンス)
 
@@ -57,17 +39,17 @@ ms.lasthandoff: 07/28/2017
 
 `ref` パラメーターを使用するには、メソッド定義と呼び出し元のメソッドの両方が、次の例に示すように `ref` キーワードを明示的に使用する必要があります。  
 
-[!code-cs[csrefKeywordsMethodParams#6](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-1.cs)]
+[!code-csharp[csrefKeywordsMethodParams#6](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-1.cs)]
 
 `ref` パラメーターに渡す引数は、渡す前に初期化する必要があります。 これは、引数を渡す前に明示的に初期化する必要がない [out](out.md) パラメーターとは異なります。
 
 クラスのメンバーは、`ref` と `out` だけが異なるシグネチャを持つことはできません。 1 つの型の 2 つのメンバー間の違いが、1 つには `ref` パラメーターがあり、もう 1 つには `out` パラメーターがあることのみの場合は、コンパイラ エラーが発生します。 たとえば、次のコードはコンパイルされません。  
   
- [!code-cs[csrefKeywordsMethodParams#2](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-2.cs)]
+ [!code-csharp[csrefKeywordsMethodParams#2](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-2.cs)]
   
  ただし、次の例に示すように、1 つのメソッドに `ref` または `out` パラメーターがあり、もう 1 つのメソッドに値パラメーターがある場合、メソッドをオーバーロードすることができます。
   
- [!code-cs[ref-and-overloads](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-3.cs)]
+ [!code-csharp[ref-and-overloads](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-3.cs)]
   
  非表示やオーバーライドなど、シグネチャの一致が必要な他の状況では、`ref` と `out` はシグネチャの一部であり互いに一致しません。  
   
@@ -85,7 +67,7 @@ ms.lasthandoff: 07/28/2017
 
 前の例は、参照によって値型を渡す例でした。 `ref` キーワードを使用して、参照渡しで参照型を渡すこともできます。 参照型を参照渡しで渡すと、呼び出されたメソッドは、参照パラメーターが呼び出し元で参照するオブジェクトに置換できます。 オブジェクトの格納場所は、参照パラメーターの値としてメソッドに渡されます。 パラメーターの格納場所の値を変更する場合は (新しいオブジェクトをポイント)、呼び出し元が参照する格納場所を変更することもできます。 次の例では、参照型のインスタンスを `ref` パラメーターとして渡します。   
   
- [!code-cs[ReferencesByRef](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-4.cs)]  
+ [!code-csharp[ReferencesByRef](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-4.cs)]  
 
 参照型を値渡しまたは参照渡しで渡す方法の詳細については、「[参照型パラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md)」を参照してください。
   
@@ -106,7 +88,7 @@ ms.lasthandoff: 07/28/2017
    ref return Decimal.Zero;
    ``` 
 
-呼び出し元がオブジェクトの状態を変更するには、[ref ローカル変数](#ref-locals)として明示的に定義した変数に参照戻り値を格納する必要があります。 
+として明示的に定義されている変数に値を格納する必要がありますが、参照、呼び出し元オブジェクトの状態を変更するためには、返す、 [ref ローカル変数](#ref-locals)です。 
 
 例については、「[ref 戻り値と ref ローカル変数](#a-ref-returns-and-ref-locals-example)」を参照してください。
 
@@ -128,18 +110,18 @@ ref decimal estValue = ref Building.GetEstimatedValue();
 
 次の例は、`Title` と `Author` という 2 つの <xref:System.String> フィールドを持つ `Book` クラスを定義しています。 また、`Book` オブジェクトのプライベート配列を含む `BookCollection` クラスも定義しています。 個々のブック オブジェクトは、`GetBookByTitle` メソッドを呼び出すことによって参照渡しで返されます。
 
-[!code-cs[csrefreturns](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-5.cs#1)]  
+[!code-csharp[csrefreturns](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-5.cs#1)]  
 
 呼び出し元が `GetBookByTitle` によって返される値を ref ローカル変数として格納する場合、呼び出し元が戻り値に加えた変更が `BookCollection` オブジェクトに反映されます。次の例を参照してください。
 
-[!code-cs[csrefreturns](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-5.cs#2)]  
+[!code-csharp[csrefreturns](../../../../samples/snippets/csharp/language-reference/keywords/ref/ref-5.cs#2)]  
 
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [パラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)   
- [メソッド パラメーター](../../../csharp/language-reference/keywords/method-parameters.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [パラメーターの引き渡し](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)  
+ [メソッド パラメーター](../../../csharp/language-reference/keywords/method-parameters.md)  
  [C# のキーワード](../../../csharp/language-reference/keywords/index.md)

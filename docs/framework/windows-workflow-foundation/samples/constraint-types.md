@@ -12,11 +12,11 @@ caps.latest.revision: "9"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: f78337ebc643b584b89f26ca39e400fb8e6e9c26
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: d42be018b6a92237b5914c180d329138fb95e7dc
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="constraint-types"></a>制約の種類
 このサンプルでは、ワークフローに制約を適用する 2 種類の方法を示します。1 つはアクティビティの内部 (ビルド) から適用する方法で、もう 1 つはアクティビティの外部 (ポリシー) から適用する方法です。 このシナリオでは、(サードパーティのソフトウェア会社の) アクティビティ作成者が 2 つの引数間のリレーションシップを検証します。 ここでは、コストが価格以下になるようにする必要があります。 これは、一般的な検証ビルド制約です。  
@@ -56,6 +56,4 @@ ms.lasthandoff: 10/18/2017
 >   
 >  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Validation\ConstraintLibrary`  
-  
-## <a name="see-also"></a>関連項目
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Validation\ConstraintLibrary`

@@ -12,11 +12,11 @@ caps.latest.revision: "6"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 6c8336060be48f55b974960e67ca1ebc57e76c63
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 7155c4f33cb29c5778e59124dd924005e4ef52f6
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="throttled-parallel-foreach"></a>制限された並列 ForEach
 `ThrottleParallelForEach`アクティビティがに似ていますが、 <!--zz <xref:System.Activities.Statements.ParallelForEach>--> `System.Activities.Statements.ParallelForEach`例外の 1 つのアクティビティが設定できるは同時実行要因を実行する同時分岐の数を制限します。 `ThrottleParallelForEach` アクティビティは、<xref:System.Activities.NativeActivity> クラスを介してのみアクセスできる他のアクティビティ (子アクティビティ) をスケジュールする必要があるため、<xref:System.Activities.NativeActivityContext> クラスから派生します。  
@@ -43,6 +43,4 @@ ms.lasthandoff: 10/18/2017
 >   
 >  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\ThrottledParallelForEach`  
-  
-## <a name="see-also"></a>関連項目
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\ThrottledParallelForEach`

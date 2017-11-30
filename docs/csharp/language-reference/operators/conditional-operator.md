@@ -1,44 +1,25 @@
 ---
 title: "?: 演算子 (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - ?:_CSharpKeyword
 - ?_CSharpKeyword
 - :_CSharpKeyword
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 9abfe4ca6be29b54edd591b503069c15e02c3532
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 794ff53fe471ef23163503f59599b528df127e2e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="-operator-c-reference"></a>?: 演算子 (C# リファレンス)
 条件演算子 (`?:`) では、ブール式の値に応じて 2 つの値のいずれかが返されます。 条件演算子の構文は次のとおりです。  
@@ -54,7 +35,7 @@ condition ? first_expression : second_expression;
   
  `if-else` の構築が必要となる場面で条件演算子を使用すると、計算をより簡潔に表現できます。 たとえば、次のコードは、まず `if` ステートメントを使用し、次に条件演算子を使用して、整数を正または負に分類します。  
   
-```  
+```csharp
 int input = Convert.ToInt32(Console.ReadLine());  
 string classify;  
   
@@ -73,13 +54,12 @@ classify = (input > 0) ? "positive" : "negative";
  条件演算子は、オーバーロードできません。  
   
 ## <a name="example"></a>例  
- [!code-cs[csRefOperators#41](../../../csharp/language-reference/operators/codesnippet/CSharp/conditional-operator_1.cs)]  
+ [!code-csharp[csRefOperators#41](../../../csharp/language-reference/operators/codesnippet/CSharp/conditional-operator_1.cs)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# 演算子](../../../csharp/language-reference/operators/index.md)   
- [if-else](../../../csharp/language-reference/keywords/if-else.md)   
- [?. 演算子と ? 演算子](../../../csharp/language-reference/operators/null-conditional-operators.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# 演算子](../../../csharp/language-reference/operators/index.md)  
+ [if-else](../../../csharp/language-reference/keywords/if-else.md)  
+ [?.そして。演算子](../../../csharp/language-reference/operators/null-conditional-operators.md)  
  [??演算子](../../../csharp/language-reference/operators/null-conditional-operator.md)
-

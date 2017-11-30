@@ -1,35 +1,36 @@
 ---
-title: "DOM の属性へのアクセス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "DOM の属性へのアクセス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: a433ec5f83a50aa4fe4b2017a0dac3d2a5e5710c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# DOM の属性へのアクセス
-属性は要素のプロパティであり、要素の子ではありません。  この区別は、XML ドキュメント オブジェクト モデル \(DOM\) の兄弟ノード、親ノード、および子ノードの間の移動に使用するメソッドで重要な意味を持ちます。  たとえば、**PreviousSibling** メソッドと **NextSibling** メソッドは、要素から属性への移動や属性間の移動には使われません。  属性は要素のプロパティであり、要素によって所有されているため、**OwnerElement** プロパティを持ちますが、**parentNode** プロパティはありません。また、移動には専用のメソッドを使います。  
+# <a name="accessing-attributes-in-the-dom"></a>DOM の属性へのアクセス
+属性は要素のプロパティであり、要素の子ではありません。 この区別は、XML ドキュメント オブジェクト モデル (DOM) の兄弟ノード、親ノード、および子ノードの間の移動に使用するメソッドで重要な意味を持ちます。 たとえば、 **PreviousSibling**と**NextSibling**属性または属性の間の要素から移動する方法は使用されません。 代わりに、属性、要素のプロパティと要素が所有するが、 **OwnerElement**プロパティおよび not、 **parentNode**プロパティ、およびナビゲーションの個別の方法があります。  
   
- 現在のノードが要素のとき、その要素に関連付けられている属性があるかどうかを調べるには、**HasAttribute** メソッドを使用します。  要素に属性がある場合は、各種のメソッドで属性にアクセスできます。  **XmlElement** の **GetAttribute** メソッドと **GetAttributeNode** メソッドを使用して要素から 1 つの属性を取得するか、すべての属性をコレクションとして取得することができます。  コレクションに対して反復処理を行う必要がある場合は、コレクションを取得すると便利です。  要素のすべての属性が必要な場合は、要素の **Attributes** プロパティを使用して、すべての属性をコレクションに取得できます。  
+ 現在のノードが要素を使用して、 **HasAttribute**メソッドを要素に関連付けられた任意の属性があるかどうかを参照してください。 要素に属性がある場合は、各種のメソッドで属性にアクセスできます。 要素の 1 つの属性を取得する際、 **GetAttribute**と**GetAttributeNode**のメソッド、 **XmlElement**またはすべての属性を取得します。コレクション。 コレクションに対して反復処理を行う必要がある場合は、コレクションを取得すると便利です。 要素からすべての属性にする場合は、使用、**属性**コレクション内のすべての属性を取得する要素のプロパティです。  
   
-## コレクションへのすべての属性の取得  
- 要素ノードのすべての属性をコレクションに取得するには、**XmlElement.Attributes** プロパティを呼び出します。  **XmlElement.Attributes** プロパティにより、要素のすべての属性を含む **XmlAttributeCollection** を取得できます。  **XmlAttributeCollection** クラスは **XmlNamedNode** マップから継承されます。  このため、コレクションで使用できるメソッドとプロパティには、**ItemOf** プロパティや **Append** メソッドのような **XmlAttributeCollection** クラスに固有のメソッドやプロパティだけでなく、名前付きノード マップで使用できるメソッドとプロパティも含まれます。  属性コレクション内の各項目は、**XmlAttribute** ノードを表します。  要素の属性の数を調べるには、**XmlAttributeCollection** を取得し、**Count** プロパティを使用して、そのコレクションに含まれる **XmlAttribute** ノードの数を調べます。  
+## <a name="retrieving-all-attributes-into-a-collection"></a>コレクションへのすべての属性の取得  
+ コレクションにすべての属性、要素ノードの場合、 **XmlElement.Attributes**プロパティです。 これを取得、 **XmlAttributeCollection**要素のすべての属性を格納しています。 **XmlAttributeCollection**クラスから継承、 **XmlNamedNode**マップします。 したがって、メソッドとプロパティ コレクションで使用できるでも含まれます、名前付きノード マップで使用できるメソッドとプロパティを特定する、 **XmlAttributeCollection**クラスなど、 **ItemOf**プロパティまたは**Append**メソッドです。 属性のコレクション内の各項目を表す、 **XmlAttribute**ノード。 要素に属性の数を検索、取得、 **XmlAttributeCollection**、使用して、**カウント**プロパティを確認して数**XmlAttribute**コレクション内のノードには。  
   
- 属性コレクションを取得し、**Count** メソッドをループ インデックスとして使用して、コレクションに対して反復処理を行うコード サンプルを次に示します。  このコードは、その後、コレクションから属性を 1 つ取得して、その値を表示します。  
+ 次のコード例は、属性を取得する方法を示しています。 コレクションと、を使用して、**カウント**上に反復処理するメソッドをループのインデックス。 このコードは、その後、コレクションから属性を 1 つ取得して、その値を表示します。  
   
 ```vb  
 Imports System  
@@ -134,13 +135,13 @@ Display the attribute information.
 sale item  
 ```  
   
- 属性コレクションの情報は、名前またはインデックス番号によって取得できます。  上の例では、名前を指定してデータを取得しています。  次の例では、インデックス番号を指定してデータを取得します。  
+ 属性コレクションの情報は、名前またはインデックス番号によって取得できます。 上の例では、名前を指定してデータを取得しています。 次の例では、インデックス番号を指定してデータを取得します。  
   
- **XmlAttributeCollection** はコレクションであり、名前またはインデックスを使って反復処理ができるため、次の例では、ゼロベースのインデックスを使用してコレクションの最初の属性を選択しています。入力には、**baseuri.xml** というファイルを使用しています。  
+ **XmlAttributeCollection**反復処理できるし、は、コレクションの名前またはインデックスを使ってこの例では 0 から始まるインデックスを使用して、次のファイルを使用してコレクションの最初の属性を選択して**baseuri.xml**の入力として、します。  
   
-### 入力  
+### <a name="input"></a>入力  
   
-```  
+```xml  
 <!-- XML fragment -->  
 <book genre="novel">  
   <title>Pride And Prejudice</title>  
@@ -196,8 +197,8 @@ public class Sample
 }  
 ```  
   
-## 個別の属性ノードの取得  
- 要素から属性ノードを 1 つ取得するには、<xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=fullName> メソッドを使用します。  このメソッドは、**XmlAttribute** 型のオブジェクトを返します。  **XmlAttribute** の取得後は、[XmlAttribute](frlrfsystemxmlxmlattributeclasstopic) クラスのすべてのメソッドとプロパティを使用できます。たとえば、**OwnerElement** で、どの要素に所属しているかを調べることができます。  
+## <a name="retrieving-an-individual-attribute-node"></a>個別の属性ノードの取得  
+ 要素から属性ノードを 1 つ取得するには、<xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType> メソッドを使用します。 型のオブジェクトを返します**XmlAttribute**です。 作成したら、 **XmlAttribute**、すべてのメソッドとプロパティで使用できる、<xref:System.Xml.XmlAttribute?displayProperty=nameWithType>クラスを検索するなど、そのオブジェクトで使用可能な**OwnerElement**です。  
   
 ```vb  
 Imports System  
@@ -260,11 +261,11 @@ using System.Xml;
 }  
 ```  
   
- 前の例で示したように、属性コレクションから 1 つの属性ノードを取得することもできます。  インデックス番号を指定して、XML ドキュメント ツリーのルートから 1 つの属性を取得する処理を 1 行で記述したコード サンプルを次に示します。**DocumentElement** プロパティを使用します。  
+ 前の例で示したように、属性コレクションから 1 つの属性ノードを取得することもできます。 次のコード例を示します 1 行のコードを書き込む 1 つの属性を取得するインデックス番号によって、XML ドキュメントのルートからツリーとも呼ばれる、 **DocumentElement**プロパティです。  
   
 ```  
 XmlAttribute attr = doc.DocumentElement.Attributes[0];  
 ```  
   
-## 参照  
- [XML ドキュメント オブジェクト モデル \(DOM\)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>関連項目  
+ [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

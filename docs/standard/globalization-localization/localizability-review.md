@@ -1,81 +1,87 @@
 ---
-title: "ローカライズ化の確認 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "国際対応アプリケーション、ローカライズ可能性"
-  - "アプリケーション開発 [.NET Framework]、ローカライズ"
-  - "ローカライズ可能性 [.NET Framework]"
-  - "国際対応のアプリケーション [.NET Framework]、ローカライズ可能性"
-  - "グローバリゼーション [.NET Framework]、ローカライズ可能性"
-  - "カルチャ、ローカライズ可能性"
-  - "ローカリゼーション [.NET Framework]、ローカライズ可能性"
-  - "グローバル アプリケーション、ローカライズ可能性"
-  - "ローカライズ (リソースを)"
+title: "ローカライズ化の確認"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- world-ready applications, localizability
+- application development [.NET Framework], localization
+- localizability [.NET Framework]
+- international applications [.NET Framework], localizability
+- globalization [.NET Framework], localizability
+- culture, localizability
+- localization [.NET Framework], localizability
+- global applications, localizability
+- localizing resources
 ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
-caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 7633c7fe9e99bde96ee108460e983eff48f1c7f0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ローカライズ化の確認
-ローカライズ対象の確認は、国際対応アプリケーションの開発中間ステップです。  グローバライズ済みアプリケーションがローカライズ可能であるかをチェックし、ユーザー インターフェイスのコードや特別な処理を必要とする要素を特定することができます。  この手順では、ローカリゼーション プロセス機能がアプリケーションに問題がないことを確認できます。  ローカライズ対象の確認によって発生させるすべての問題が扱われたら、アプリケーションはローカライズ可能です。  ローカライズ対象の確認が終わったら、ローカリゼーション プロセス中にソース・コードを変更する必要がありません。  
+# <a name="localizability-review"></a>ローカライズ化の確認
+ローカライズ化の確認は、国際対応アプリケーションの開発での中間のステップです。 グローバライズされたアプリケーションがローカライズ可能なコードや特別な処理を必要とするようなユーザー インターフェイスの要素を識別することを確認します。 この手順では、こと、ローカリゼーション処理はされていない、機能上の欠陥をアプリケーションにすることを確認できます。 ローカライズ化の確認で発生したすべての問題が処理された、ときに、アプリケーションはローカライズ可能です。 ローカライズ化の確認が完全な場合は、ローカリゼーション処理中にすべてのソース コードを変更することはできません。  
   
- ローカライズ対象の確認は、3 種類のチェックで構成されます。T:  
+ ローカライズ化の確認は、次の 3 つのチェックで構成されます。  
   
--   [グローバリゼーションの手法が実装されます。](#global)  
+-   [グローバリゼーションの推奨事項が実装されているか。](#global)  
   
--   [カルチャに依存したな機能が正しく処理されます。](#culture)  
+-   [カルチャに依存した機能が正しく処理されますか。](#culture)  
   
--   [International Data でアプリケーションをテストしているか。](#test)  
+-   [各種言語データを使用してアプリケーションをテストするか。](#test)  
   
 <a name="global"></a>   
-## グローバリゼーションの推奨事項を実装する  
- 対象のローカリゼーションを使用してアプリケーションを実行すると、[グローバリゼーション](../../../docs/standard/globalization-localization/globalization.md) のトピックで説明されている推奨事項に設計および開発するローカライズ対象の確認は主に、品質保証のパスです。  それ以外の場合、この段階で [グローバリゼーション](../../../docs/standard/globalization-localization/globalization.md)"を確認し、実装するようにローカリゼーションを防ぐソース・コード内のエラーを修正します。  
+## <a name="implementing-globalization-recommendations"></a>グローバリゼーションの推奨事項を実装する  
+ 推奨事項が説明に従っている場合とデザインおよび注意でのローカライズを使用してアプリケーションを開発するが、[グローバリゼーション](../../../docs/standard/globalization-localization/globalization.md)資料、ローカリゼーション レビューは、品質保証パスに大きく左右されます. それ以外の場合、この段階を確認し、に関する推奨事項を実装する[グローバリゼーション](../../../docs/standard/globalization-localization/globalization.md)、およびソース コードのローカライズを妨げるエラーを修正します。  
   
 <a name="culture"></a>   
-## カルチャに依存した機能を処理する  
- .NET Framework は、カルチャによって大きく異なる複数の領域をプログラムではサポートされません。  ほとんどの場合、次のようなハンドル機能領域にカスタム コードを記述する必要があります:  
+## <a name="handling-culture-sensitive-features"></a>カルチャに依存した機能を処理する  
+ .NET Framework では、多くのカルチャによって大きく異なる点でプログラムによるサポートは提供されません。 ほとんどの場合は、次のような機能領域を処理するカスタム コードを記述する必要。  
   
--   アドレス。  
+-   対応します。  
   
 -   電話番号。  
   
--   用紙サイズ。  
+-   用紙のサイズ。  
   
--   長さ、Weight、区分、ボリューム、温度に使用する測定単位。  .NET Framework が測定単位の変換のための組み込みサポートを提供しませんが、次の例に示すように、特定の国または地域のメトリック表記を使用するかどうかを判断するために <xref:System.Globalization.RegionInfo.IsMetric%2A?displayProperty=fullName> のプロパティを使用できます。  
+-   長さ、重量、領域、ボリューム、および温度を使用する測定単位です。 .NET Framework では、測定単位の間の変換用の組み込みのサポートは提供しません、使用すると、<xref:System.Globalization.RegionInfo.IsMetric%2A?displayProperty=nameWithType>プロパティを次の例に示すように、特定の国または地域がメートル法を使用するかどうかを決定します。  
   
      [!code-csharp[Conceptual.Localizability#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.localizability/cs/ismetric1.cs#1)]
      [!code-vb[Conceptual.Localizability#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.localizability/vb/ismetric1.vb#1)]  
   
 <a name="test"></a>   
-## アプリケーションをテストする  
- アプリケーションをローカライズする前に、オペレーティング システムの各国語バージョンの各種言語のデータを使用して、アプリケーションをテストする必要があります。  ユーザー インターフェイスのほとんどはこの時点でローカライズされないが、次のような問題を検出する:  
+## <a name="testing-your-application"></a>アプリケーションをテストする  
+ アプリケーションをローカライズする前に、オペレーティング システムの各国語バージョンの国際対応データを使用してテストする必要があります。 この時点で、ユーザー インターフェイスの大部分はローカライズされません、ですが、次などの問題を検出することができます。  
   
--   オペレーティング システムのバージョンで正しく逆シリアル化せず、シリアル化されたデータ。  
+-   シリアル化解除できません正しくオペレーティング システムのバージョン間でシリアル化されたデータ。  
   
--   現在のカルチャの規則を反映する数値データ。  たとえば、数が正しい桁区切り記号、小数点記号、または通貨記号と表示される場合があります。  
+-   現在のカルチャの規則を反映しない数値のデータです。 たとえば、数値は、不正確な桁区切り記号、桁区切り記号、または通貨記号と表示があります。  
   
--   現在のカルチャの規則を反映する日付と時刻のデータ。  たとえば、月を表し、日が誤った順序で使用できる数値日付の区切り記号は正しくない場合があります。また、タイム ゾーン情報が正しくない場合があります。  
+-   現在のカルチャの規則を反映しない日付と時刻のデータ。 たとえば、月と日を表す数字ですが間違った順序で表示される可能性があります、日付の区切り記号が正しくない可能性があります。 またはタイム ゾーン情報が正しくない可能性があります。  
   
--   アプリケーションの既定のカルチャを指定しなかったため検出できないリソース。  
+-   アプリケーションの既定のカルチャが識別されていないため、見つからないリソース。  
   
--   特定のカルチャの異なる順序で表示される文字列。  
+-   特定のカルチャの異常な順序で表示される文字列。  
   
--   同等の文字列比較または比較はに予想外の結果が生じます。  
+-   文字列の比較または予期しない結果を返すの等価比較。  
   
- アプリケーション、処理されたカルチャに依存したな機能を適切に開発する場合、テストの実行中に発生したローカリゼーション問題で識別され、対処してグローバリゼーションの推奨事項に従っている場合、次の手順 [ローカリゼーション](../../../docs/standard/globalization-localization/localization.md)、に進むことができます。  
+ 次の手順に進むことができる場合は、アプリケーションを開発するときに、グローバリゼーションの推奨事項を後に、カルチャに依存した機能が正しく、処理しを識別して発生し、テスト中にあるローカライズに関する問題を解決、 [ローカリゼーション](../../../docs/standard/globalization-localization/localization.md)です。  
   
-## 参照  
- [グローバライズとローカライズ](../../../docs/standard/globalization-localization/index.md)   
- [ローカリゼーション](../../../docs/standard/globalization-localization/localization.md)   
- [グローバリゼーション](../../../docs/standard/globalization-localization/globalization.md)   
+## <a name="see-also"></a>関連項目  
+ [グローバライズとローカライズ](../../../docs/standard/globalization-localization/index.md)  
+ [ローカリゼーション](../../../docs/standard/globalization-localization/localization.md)  
+ [グローバリゼーション](../../../docs/standard/globalization-localization/globalization.md)  
  [デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)

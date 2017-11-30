@@ -1,12 +1,11 @@
 ---
-title: "動的言語ランタイムの概要"
+title: "動的言語ランタイムの概要 | Microsoft Docs"
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -15,16 +14,15 @@ helpviewer_keywords:
 - DLR
 - IronRuby
 ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
-caps.latest.revision: 26
+caps.latest.revision: "26"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: b62a737a5106c64d08a342365867c460075011b5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 0f6bfc54a3a597325da153852710a0b22871b54e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="dynamic-language-runtime-overview"></a>動的言語ランタイムの概要
 *動的言語ランタイム* (DLR) とは、動的言語の一連のサービスを共通言語ランタイム (CLR) に追加するランタイム環境です。 DLR により、.NET Framework 上で実行される動的言語の開発や、静的に型指定された言語への動的機能の追加が簡単になります。  
@@ -102,9 +100,8 @@ DLR のアーキテクチャ
  言語に動的な動作を追加するためにオープン ソース バージョンの DLR を使用する方法、および .NET Framework で動的言語の使用を有効にする方法については、[CodePlex](http://go.microsoft.com/fwlink/?LinkId=141028) の Web サイトを参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Dynamic.ExpandoObject>   
- <xref:System.Dynamic.DynamicObject>   
- [共通言語ランタイム (CLR)](../../../docs/standard/clr.md)   
- [Expression Trees](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)   
+ <xref:System.Dynamic.ExpandoObject>  
+ <xref:System.Dynamic.DynamicObject>  
+ [共通言語ランタイム](../../../docs/standard/clr.md)  
+ [式ツリー](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)  
  [チュートリアル: 動的オブジェクトの作成と使用](~/docs/csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
-

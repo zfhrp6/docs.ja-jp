@@ -12,11 +12,11 @@ caps.latest.revision: "12"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: f2fc2399dc1c98ad8890034ca3a9915d4ce86162
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 11ffdca834ba267fdd10ecb968699615089c6170
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="wpf-and-wf-integration-in-xaml"></a>XAML での WPF と WF の統合
 このサンプルでは、[!INCLUDE[avalon1](../../../../includes/avalon1-md.md)] および [!INCLUDE[wf](../../../../includes/wf-md.md)] 機能を使用するアプリケーションを 1 つの XAML ドキュメントで作成する方法を示します。 これを実現するために、サンプルでは [!INCLUDE[wf](../../../../includes/wf-md.md)] および XAML 機能拡張を使用します。  
@@ -52,6 +52,4 @@ ms.lasthandoff: 10/18/2017
 >   
 >  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\WPFWFIntegration`  
-  
-## <a name="see-also"></a>関連項目
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\WPFWFIntegration`

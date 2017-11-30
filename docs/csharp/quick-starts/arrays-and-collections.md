@@ -9,25 +9,26 @@ ms.topic: article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
-ms.openlocfilehash: 51b190fba32186cb4c52ccd773274d9ae22c8efb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.custom: mvc
+ms.openlocfilehash: 228a9dd88d0a511492ccb8b70e0231278969acbe
+ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="c-quick-start-collections"></a>C# クイック スタート: コレクション #
 
-このチュートリアルでは、C# 言語の概要と <xref:System.Collections.Generic.List%601> クラスの基本を説明します。
+このクイック スタートは、c# 言語との基礎を概説、<xref:System.Collections.Generic.List%601>クラスです。
 
-## <a name="a-simple-list-example"></a>単純なリストの例
+このクイック スタートを使用する開発に使用することができます、マシンが必要です。 .NET トピック[10 分後に開始](https://www.microsoft.com/net/core)Mac や PC、Linux 上のローカル開発環境を設定する方法についてはします。
 
-> [!NOTE]
-> [dot.net](https://dot.net/) で記述したコードから開始する場合、既にこのセクションにコードが記述されています。 「[リスト コンテンツを変更する](#modify-list-contents)」へ進んでください。
-
-このレッスンでは、オンラインのクイック スタートを終了していることと、[.NET Core SDK](http://dot.net/core) と [Visual Studio Code](https://code.visualstudio.com/) がインストール済みであることを前提としています。 
+## <a name="a-basic-list-example"></a>一覧の基本的な例です。
 
 「**list-quickstart**」という名前のディレクトリを作成します。 それを現在のディレクトリとし、`dotnet new console` を実行します。
 
+> [!NOTE]
+> 完了した場合[10 分後に .NET の概要](https://www.microsoft.com/net)、先ほど作成した myApp アプリケーションを使用して保持できます。
+ 
 好みのエディターで **Program.cs** を開き、既存のコードを次のコードで置き換えます。
 
 ```csharp
@@ -213,10 +214,10 @@ foreach(var item in fibonacciNumbers)
 
 ## <a name="complete-challenge"></a>課題完了
 
-[GitHub にある完成したサンプル コード](https://github.com/dotnet/docs/tree/master/samples/csharp/list-quickstart/Program.cs)で、ソリューションの例を確認できます。
+[GitHub にある完成したサンプル コード](https://github.com/dotnet/docs/tree/master/samples/csharp/list-quickstart/Program.cs#L13-L23)で、ソリューションの例を確認できます。
 
 ループの繰り返しごとに、リストの最後の 2 つの整数を取得して合計し、その値をリストに追加しています。 このループは、20 個の項目がリストに追加されるまで繰り返されます。
 
-おつかれさまでした。リストについてのチュートリアルはこれで終了です。
+これで、一覧のクイック スタートが完了します。 続行できますが、[クラスの概要](introduction-to-classes.md)独自開発環境でのクイック スタート。
 
 `List` 型の使用方法の詳細については、[.NET ガイド](../../standard/index.md)の[コレクション](../../standard/collections/index.md)に関するトピックで学習できます。 その他の多くのコレクション型についても学習できます。

@@ -1,29 +1,23 @@
 ---
 title: ".NET Framework クラス ライブラリの互換性のために残されている機能"
-ms.custom: 
-ms.date: 03/30/2017
+ms.custom: updateeachrelease
+ms.date: 10/17/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology: dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - obsolete [.NET Framework]
 - what's obsolete [.NET Framework]
 - deprecated [.NET Framework]
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
-caps.latest.revision: 19
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 4560988445b91939deef84211a1c8c13ed938560
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 7afe9496ca116ed0c330c4ff9e7c3a855249cf14
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="what39s-obsolete-in-the-net-framework-class-library"></a>.NET Framework クラス ライブラリの互換性のために残されている機能
 .NET Framework は進化しています。 バージョンが新しくなるたびに、新しい機能を提供する新しい型と新しいメンバーが追加されています。 既存の型とそのメンバーも変更されています。 たとえば、一部の型は、その型がサポートするテクノロジが新しいテクノロジに置き換えられることで重要度が下がり、一部のメソッドは、より便利な新しいメソッドまたはより多くの機能を備えた新しいメソッドに置き換えられています。  
@@ -67,7 +61,7 @@ ms.lasthandoff: 07/28/2017
   
 |.NET Framework のバージョン|`version` 文字列|
 |-|-|  
-|4.7|v4.0|  
+|4.7 (4.7.1 を含む)|v4.0|  
 |4.6 (4.6.1 と 4.6.2 を含む)|v4.0|  
 |4.5 (4.5.1 および 4.5.2 を含む)|v4.0|  
 |4|v4.0|  
@@ -92,4 +86,3 @@ ms.lasthandoff: 07/28/2017
   
 ## <a name="see-also"></a>関連項目  
  [\<<supportedRuntime> 要素](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
-

@@ -1,23 +1,19 @@
 ---
 title: "ターゲット フレームワーク"
 description: ".NET Core アプリとライブラリのターゲット フレームワークについて説明します。"
-keywords: ".NET, .NET Core, フレームワーク, TFM"
 author: richlander
 ms.author: mairaw
-ms.date: 08/25/2017
+ms.date: 09/22/2017
 ms.topic: article
+ms.custom: updateeachrelease
 ms.prod: .net
 ms.technology: dotnet-standard
-ms.devlang: dotnet
-ms.assetid: 6ef56a2e-593d-497b-925a-1e25bb6df2e6
+ms.openlocfilehash: 20152a951f11b1b923209b56b31663a9a8a81587
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 18b2f7a1c0857abb5f7e09a39ca120b521ba4ddc
-ms.openlocfilehash: 7f25cdd52cf5249d3b201978eacb98aaa4a74fa9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="target-frameworks"></a>ターゲット フレームワーク
 
 アプリまたはライブラリでフレームワークをターゲットに設定するときは、アプリまたはライブラリで使用できるようにする API のセットを指定します。 プロジェクト ファイルでターゲット フレームワークを指定するには、ターゲット フレームワーク モニカー (TFM) を使います。
@@ -34,11 +30,11 @@ ms.lasthandoff: 08/25/2017
 
 次の表では、最も一般的なターゲット フレームワーク、それらの参照方法、およびそれらが実装する [.NET Standard](~/docs/standard/net-standard.md) のバージョンを定義します。 これらのターゲット フレームワークのバージョンは、最新の安定したバージョンです。 プレリリース バージョンは記載されていません。 ターゲット フレームワーク モニカー (TFM) は、.NET アプリまたはライブラリのターゲット フレームワークを指定するための標準化されたトークン形式です。 
 
-| [対象とする Framework]      | [最新バージョン] | ターゲット フレームワーク モニカー (TFM) | .NET Standard バージョン | メタパッケージ |
-| :-------------------: | :------------: | :----------------------------: | :-------------------: | :---------: |
-| .NET Standard         | 2.0.0          | netstandard2.0                 | N/A                   | [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) |
-| .NET Core アプリケーション | 2.0.0          | netcoreapp2.0                  | 2.0                   | [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) |
-| .NET Framework        | 4.7            | net47                          | 1.5                   | N/A |
+| [対象とする Framework]      | [最新バージョン] | ターゲット フレームワーク モニカー (TFM) | 実装されています。 <br/> .NET Standard バージョン |
+| :-------------------: | :------------: | :----------------------------: | :-------------------------------------: |
+| .NET Standard         | 2.0            | netstandard2.0                 | N/A                                     |
+| .NET Core アプリケーション | 2.0            | netcoreapp2.0                  | 2.0                                     |
+| .NET Framework        | 4.7.1          | net471                         | 2.0                                     |
 
 ## <a name="supported-target-framework-versions"></a>サポートされるターゲット フレームワークのバージョン
 
@@ -48,7 +44,7 @@ ms.lasthandoff: 08/25/2017
 | -------------------------- | --- |
 | .NET Standard              | netstandard1.0<br>netstandard1.1<br>netstandard1.2<br>netstandard1.3<br>netstandard1.4<br>netstandard1.5<br>netstandard1.6<br>netstandard2.0 |
 | .NET Core                  | netcoreapp1.0<br>netcoreapp1.1<br>netcoreapp2.0 |
-| .NET Framework             | net11<br>net20<br>net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47 |
+| .NET Framework             | net11<br>net20<br>net35<br>net40<br>net403<br>net45<br>net451<br>net452<br>net46<br>net461<br>net462<br>net47<br>net471 |
 | Windows ストア              | netcore [netcore45]<br>netcore45 [win] [win8]<br>netcore451 [win81] |
 | .NET Micro Framework       | netmf |
 | Silverlight                | sl4<br>sl5 |
@@ -143,4 +139,3 @@ public class MyClass
 [dotnet/standard GitHub リポジトリ](https://github.com/dotnet/standard)  
 [NuGet Tools GitHub リポジトリ](https://github.com/joelverhagen/NuGetTools)  
 [.NET のフレームワーク プロファイル](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)
-

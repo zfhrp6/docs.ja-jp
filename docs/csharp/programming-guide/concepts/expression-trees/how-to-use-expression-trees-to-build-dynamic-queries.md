@@ -1,30 +1,21 @@
 ---
 title: "方法 : 式ツリーを使用して動的クエリをビルドする (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 52cd44dd-a3ec-441e-b93a-4eca388119c7
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 78de99ed9b2a2d80c17cb013715a15f45f8fa2ac
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: b09674690093ea89fcf59b79d90d34e9605b44a2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-c"></a>方法 : 式ツリーを使用して動的クエリをビルドする (C#)
 LINQ では、<xref:System.Linq.IQueryable%601> を実装するデータ ソースをターゲットとする構造化されたクエリを表すために、式ツリーが使われます。 たとえば、LINQ プロバイダーは、リレーショナル データ ストアのクエリを行うために、<xref:System.Linq.IQueryable%601> インターフェイスを実装します。 C# コンパイラは、このようなデータ ソースをターゲットとするクエリをコンパイルして、実行時に式ツリーを作成するコードを生成します。 クエリ プロバイダーは式ツリー データ構造を走査して、データ ソースに適したクエリ言語に変換できます。  
@@ -126,7 +117,6 @@ foreach (string company in results)
 -   例のコードをコピーして、`Main` メソッドに貼り付けます。  
   
 ## <a name="see-also"></a>関連項目  
- [式ツリー (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)   
- [方法 : 式ツリーを実行する (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)   
+ [式ツリー (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)  
+ [方法: 式ツリー (c#) を実行](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)  
  [方法: 実行時に述語フィルターを動的に指定する](../../../../csharp/programming-guide/linq-query-expressions/how-to-dynamically-specify-predicate-filters-at-runtime.md)
-

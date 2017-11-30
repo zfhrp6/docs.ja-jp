@@ -7,26 +7,20 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - dateTimeSerialization element
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 9ced207c17355cc9c1bd85bdada4208dea2ceb2f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: f925e9e05ab0e9452d81d7a26d33f11506870034
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ltdatetimeserializationgt-element"></a>&lt;dateTimeSerialization&gt; 要素
 <xref:System.DateTime> オブジェクトのシリアル化モードを決定します。  
@@ -66,11 +60,10 @@ ms.lasthandoff: 08/21/2017
  このプロパティが **Roundtrip** に設定されているバージョン 2.0 以降の .NET Framework では、<xref:System.DateTime> オブジェクトが調べられ、タイム ゾーンがローカル、UTC、または未指定のいずれであるかが特定されます。 その後、この特定された情報を保持する形で、<xref:System.DateTime> オブジェクトがシリアル化されます。 これは既定の動作であり、.NET Framework の以前のバージョンと通信を行わない、すべての新しいアプリケーションで推奨されます。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.DateTime>   
- <xref:System.Xml.Serialization.XmlSchemaImporter>   
- <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>   
- [構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)   
- [\<schemaImporterExtensions> 要素](../../../docs/standard/serialization/schemaimporterextensions-element.md)   
- [\<xmlSchemaImporterExtensions> の \<add> 要素](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)   
+ <xref:System.DateTime>  
+ <xref:System.Xml.Serialization.XmlSchemaImporter>  
+ <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>  
+ [構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)  
+ [\<schemaImporterExtensions> 要素](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
+ [\<追加 > 要素を\<xmlSchemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)  
  [\<system.xml.serialization> 要素](../../../docs/standard/serialization/system-xml-serialization-element.md)
-

@@ -1,41 +1,22 @@
 ---
 title: "yield (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - yield
 - yield_CSharpKeyword
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- yield keyword [C#]
+helpviewer_keywords: yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-caps.latest.revision: 46
+caps.latest.revision: "46"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 4735ab33faea71b792cbc6b567884b64bd6ca029
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: eb55fd5b1ade48316516cda83633935abbf8dcf9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="yield-c-reference"></a>yield (C# リファレンス)
 ステートメントで `yield` キーワードを使用した場合、メソッド、演算子、または `get` アクセサーが反復子であることを示します。 `yield` を使用して反復子を定義すると、カスタム コレクション型の <xref:System.Collections.Generic.IEnumerator%601> および <xref:System.Collections.IEnumerable> パターンを実装するときに明示的な余分なクラス (列挙の状態を保持するクラス。たとえば <xref:System.Collections.IEnumerator> を参照) が不要になります。  
@@ -54,7 +35,7 @@ yield break;
   
  `yield break` ステートメントを使用すると、反復を終了できます。  
   
- 反復子について詳しくは、「[Iterators](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」をご覧ください。  
+ 反復子について詳しくは、「[Iterators](../../iterators.md)」をご覧ください。  
   
 ## <a name="iterator-methods-and-get-accessors"></a>Iterator メソッドと get アクセサー  
  反復子の宣言は、次の要件を満たす必要があります。  
@@ -91,7 +72,7 @@ foreach (string element in elements)
   
  `MyIteratorMethod` への呼び出しでは、メソッドの本体は実行されません。 この呼び出しでは、`IEnumerable<string>` が `elements` 変数に返されます。  
   
- `foreach` ループの反復処理では、<xref:System.Collections.IEnumerator.MoveNext%2A> について `elements` メソッドが呼び出されます。 この呼び出しでは、次の `MyIteratorMethod` ステートメントに到達するまで、`yield return` の本体が実行されます。 `yield return` ステートメントによって返される式は、ループ本体による処理に対する `element` 変数の値だけでなく、<xref:System.Collections.Generic.IEnumerator%601.Current%2A> である要素の `IEnumerable<string>` プロパティも決定します。  
+ `foreach` ループの反復処理では、<xref:System.Collections.IEnumerator.MoveNext%2A> について `elements` メソッドが呼び出されます。 この呼び出しでは、次の `MyIteratorMethod` ステートメントに到達するまで、`yield return` の本体が実行されます。 によって返される式、`yield return`ステートメントの指定の値だけでなく、`element`ループの本体によって消費の変数も、<xref:System.Collections.Generic.IEnumerator%601.Current%2A>プロパティの`elements`、これは、`IEnumerable<string>`です。  
   
  `foreach` ループの以降の各反復処理では、反復子本体の実行が中断した場所から続行し、`yield return` ステートメントに到達したときに再度停止します。 iterator メソッドまたは `foreach` ステートメントの最後に到達すると、`yield break` ループは完了します。  
   
@@ -100,19 +81,18 @@ foreach (string element in elements)
   
  Iterator メソッドの戻り値の型は <xref:System.Collections.IEnumerable> であり、これは反復子インターフェイス型です。 Iterator メソッドが呼び出されると、数値の累乗を含む列挙可能なオブジェクトが返されます。  
   
- [!code-cs[csrefKeywordsContextual#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/yield_1.cs)]  
+ [!code-csharp[csrefKeywordsContextual#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/yield_1.cs)]  
   
 ## <a name="example"></a>例  
  次の例は、反復子である `get` アクセサーを示しています。 この例では、各 `yield return` ステートメントがユーザー定義クラスのインスタンスを返します。  
   
- [!code-cs[csrefKeywordsContextual#21](../../../csharp/language-reference/keywords/codesnippet/CSharp/yield_2.cs)]  
+ [!code-csharp[csrefKeywordsContextual#21](../../../csharp/language-reference/keywords/codesnippet/CSharp/yield_2.cs)]  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [foreach、in](../../../csharp/language-reference/keywords/foreach-in.md)   
- [反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)
-
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [foreach、in](../../../csharp/language-reference/keywords/foreach-in.md)  
+ [反復子](../../iterators.md)

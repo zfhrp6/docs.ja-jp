@@ -1,45 +1,27 @@
 ---
 title: "#<a name=\"define-c-reference\"></a>define (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- '#define'
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- '#define directive [C#]'
+f1_keywords: '#define'
+helpviewer_keywords: '#define directive [C#]'
 ms.assetid: 23638b8f-779c-450e-b600-d55682de7d01
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: ae72a1b6c19421c51348a0d93691ba3fe29a191c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8ace15f79480c9aeb0fcb4c7d46c207d4904cef0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="define-c-reference"></a>#define (C# リファレンス)
 `#define` は、シンボルを定義するために使用します。 次の例に示すように、定義したシンボルを式として [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) ディレクティブに渡すと、式は `true` と評価されます。  
-  
- `#`  `define`   `DEBUG`  
+ 
+ ```csharp
+ #define DEBUG
+ ```
   
 ## <a name="remarks"></a>コメント  
   
@@ -85,11 +67,10 @@ public class TestDefine
  シンボルの定義を解除する方法の例については、「[#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)   
- [const](../../../csharp/language-reference/keywords/const.md)   
- [方法 : トレースとデバッグを指定して条件付きコンパイルを実行する](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)   
- [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# プリプロセッサ ディレクティブ](../../../csharp/language-reference/preprocessor-directives/index.md)  
+ [const](../../../csharp/language-reference/keywords/const.md)  
+ [方法: トレースとデバッグによる条件付きコンパイル](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
+ [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)  
  [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)
-

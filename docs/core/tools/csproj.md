@@ -4,19 +4,17 @@ description: "既存の csproj ファイルと .NET Core の csproj ファイル
 keywords: "リファレンス, csproj, .NET Core"
 author: blackdwarf
 ms.author: mairaw
-ms.date: 05/24/2017
+ms.date: 09/22/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: bdc29497-64f2-4d11-a21b-4097e0bdf5c9
+ms.openlocfilehash: 288012e5f1f48ed60a388790ca42371496df92c3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 63c7a6f0aa3a926c7ae01ad6c434ecf296c81811
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="additions-to-the-csproj-format-for-net-core"></a>.NET Core の csproj 形式に追加されたもの
 
 ここでは、*project.json* から *csproj* および [MSBuild](https://github.com/Microsoft/MSBuild) への移行に伴ってプロジェクト ファイルに追加された変更について説明します。 一般的なプロジェクト ファイルの構文とリファレンスの詳細については、[MSBuild プロジェクト ファイル](/visualstudio/msbuild/msbuild-project-file-schema-reference)のドキュメントを参照してください。  
@@ -39,10 +37,11 @@ ms.lasthandoff: 07/28/2017
 ### <a name="recommendations"></a>推奨事項
 `Microsoft.NETCore.App` または `NetStandard.Library` メタパッケージは暗黙的に参照されるので、ベスト プラクティスとして以下が推奨されます。
 
-* プロジェクト ファイルの `<PackageReference>` アイテム経由で `Microsoft.NETCore.App` または `NetStandard.Library` メタパッケージを明示的に参照しないようにします。
-* 特定バージョンのランタイムが必要な場合、メタパッケージを参照するのではなく、プロジェクト内で `<RuntimeFrameworkVersion>` プロパティを使用します (`1.0.4` など)。
+* .NET Core または .NET 標準を対象にする場合は、明示的な参照ことはありませんがある、`Microsoft.NETCore.App`または`NetStandard.Library`を介して metapackages、`<PackageReference>`プロジェクト ファイル内の項目。
+* 場合 .NET Core をターゲットにする場合は、特定のバージョンのランタイムを作成する必要があります、する必要がありますを使用する、 `<RuntimeFrameworkVersion>` 、プロジェクトのプロパティ (たとえば、 `1.0.4`)、metapackage を参照する代わりにします。
     * [自己完結型の展開](../deploying/index.md#self-contained-deployments-scd)を使用し、特定のパッチ バージョンの 1.0.0 LTS ランタイムが必要な場合などにこの問題が発生する可能性があります。
-* 特定バージョンの `NetStandard.Library` メタパッケージが必要な場合、`<NetStandardImplicitPackageVersion>` プロパティを使用し、必要なバージョンを設定できます。 
+* 特定のバージョンの必要がある場合、 `NetStandard.Library` metapackage .NET 標準を対象とする場合、使用できます、`<NetStandardImplicitPackageVersion>`プロパティと、バージョンを設定する必要があります。
+* 明示的に追加またはいずれかへの参照を更新しない、`Microsoft.NETCore.App`または`NetStandard.Library`metapackage の .NET Framework プロジェクト。 場合は任意のバージョンの`NetStandard.Library`そのバージョンをインストールする .NET 標準ベースの NuGet パッケージ、NuGet を自動的に使用する際に必要です。
 
 ## <a name="default-compilation-includes-in-net-core-projects"></a>.NET Core プロジェクトの既定のコンパイルの include
 最新バージョンの SDK の *csproj* 形式に移行すると共に、コンパイル項目と、SDK プロパティ ファイルに埋め込みリソースの既定の include と exclude を SDK プロパティ ファイルに移行しました。 つまり、これらの項目をプロジェクト ファイルに指定する必要はなくなりました。 
@@ -71,6 +70,15 @@ ms.lasthandoff: 07/28/2017
 このプロパティを `false` に設定すると、暗黙的な包含がオーバーライドされ、動作は前の SDK に戻り、プロジェクトに既定の glob を指定する必要が生じます。 
 
 この変更で、他の include の主なしくみは変わりません。 ただし、たとえばアプリで発行する一部のファイルを指定する場合は、*csproj* で既知のしくみ (たとえば `<Content>` 要素) を使用することができます。
+
+`<EnableDefaultCompileItems>`のみを無効に`Compile`glob と同様に、暗黙的なその他の glob には影響しませんが、`None`にも適用される glob \*.cs 項目。 そのため、**ソリューション エクスプ ローラー**表示は引き続き\*.cs 項目として含まれているプロジェクトの一部として`None`項目。 同様の方法で行うこともできます`<EnableDefaultNoneItems>`暗黙を無効にする`None`glob です。
+
+無効にする**すべての暗黙的な glob**、設定することができます、`<EnableDefaultItems>`プロパティを`false`次の例のように。
+```xml
+<PropertyGroup>
+    <EnableDefaultItems>false</EnableDefaultItems>
+</PropertyGroup>
+```
 
 ### <a name="recommendation"></a>推奨事項
 csproj では、プロジェクトから既定の glob を削除し、多様なシナリオ (ランタイムや NuGet パッケージなど) でアプリまたはライブラリが必要とする成果物の glob のファイル パスのみを追加することをお勧めします。
@@ -188,7 +196,7 @@ MSbuild への移行に伴い、*project.json* ファイルから *csproj* フ�
 人が読みやすいパッケージのタイトル。通常、nuget.org と、Visual Studio のパッケージ マネージャーの UI 画面で使用されます。 指定しない場合、パッケージ ID が代わりに使用されます。
 
 ### <a name="authors"></a>作成者
-nuget.org のプロファイル名と一致するパッケージ作成者をセミコロンで区切った一覧。 これらは nuget.org の NuGet ギャラリーに表示され、同じ作成者によるパッケージの相互参照に使用されます。
+nuget.org のプロファイル名と一致するパッケージ作成者をセミコロンで区切った一覧。これらは nuget.org の NuGet ギャラリーに表示され、同じ作成者によるパッケージの相互参照に使用されます。
 
 ### <a name="description"></a>説明
 UI 画面用のパッケージの長い説明。
@@ -261,4 +269,3 @@ nuget.exe および Visual Studio パッケージ マネージャーで強制す
 
 ### <a name="nuspecproperties"></a>NuspecProperties
 キー=値ペアのセミコロン区切りの一覧。
-

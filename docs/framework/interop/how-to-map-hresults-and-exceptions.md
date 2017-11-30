@@ -5,15 +5,10 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+dev_langs: cpp
 helpviewer_keywords:
 - interoperation with unmanaged code, HRESULTs
 - exceptions, HRESULTs
@@ -22,16 +17,15 @@ helpviewer_keywords:
 - COM interop, HRESULTs
 - COM interop, exceptions
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 842c223d63aafe38e2506d1430ac17ea2051884d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 41220f37837c1bd2e983a82ecb3406fe1cb918e2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>方法: HRESULT に例外を割り当てる
 COM メソッドでは、HRESULT を返してエラーを報告します。.NET メソッドでは、例外をスローしてエラーを報告します。 ランタイムは、この 2 つの間の遷移を処理します。 .NET Framework の例外クラスはそれぞれ HRESULT に割り当てられます。  
@@ -156,6 +150,5 @@ CMyClass::MethodThatThrows
  **Message**、**Source**、および **StackTrace** などの例外フィールドは、**StackOverflowException** では使用できません。  
   
 ## <a name="see-also"></a>関連項目  
- [高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)   
+ [高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)  
  [例外](../../../docs/standard/exceptions/index.md)
-

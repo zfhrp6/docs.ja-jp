@@ -5,24 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
 helpviewer_keywords:
 - application services host [client application services]
 - client application services, walkthroughs
 ms.assetid: bb7c8950-4517-4dae-b705-b74a14059b26
-caps.latest.revision: 47
+caps.latest.revision: "47"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
+ms.openlocfilehash: fba53a19810a91a2e679616e73ea8c5fc8d38da1
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 64a27269ee6f3711f0c51f2c97cd8876c3ea6103
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="walkthrough-using-client-application-services"></a>チュートリアル : クライアント アプリケーション サービスの使用
 このトピックでは、ユーザーを認証し、ユーザーのロールと設定を取得するクライアント アプリケーション サービスを使用する Windows アプリケーションを作成する方法について説明します。  
@@ -250,11 +251,12 @@ ms.lasthandoff: 07/28/2017
   
 3.  コード エディターで、Form1 ファイルの先頭に次のステートメントを追加します。  
   
-     [!code-csharp[ClientApplicationServices#001](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#001)]  [!code-vb[ClientApplicationServices#001](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#001)]  
+     [!code-csharp[ClientApplicationServices#001](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#001)]
+     [!code-vb[ClientApplicationServices#001](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#001)]  
   
 4.  **[ソリューション エクスプローラー]**で、Form1 をダブルクリックしてデザイナーを表示します。  
   
-5.  デザイナーで、フォーム領域をダブルクリックして、 <xref:System.Windows.Forms.Form.Load?displayProperty=fullName> という名前の `Form1_Load`イベント ハンドラーを生成します。  
+5.  デザイナーで、フォーム領域をダブルクリックして、 <xref:System.Windows.Forms.Form.Load?displayProperty=nameWithType> という名前の `Form1_Load`イベント ハンドラーを生成します。  
   
      `Form1_Load` メソッドにカーソルがある状態でコード エディターが表示されます。  
   
@@ -262,9 +264,10 @@ ms.lasthandoff: 07/28/2017
   
      このコードは認証されていないユーザー アクセスを拒否してアプリケーションを終了します。 あるいは、認証されていないユーザーによるフォームへのアクセスを許可するものの、特定の機能へのアクセスを拒否することもできます。 通常、このようにユーザー名とパスワードをハードコーディングすることはありませんが、テスト目的には役立ちます。 次のセクションではこのコードをより堅牢なコードに置き換えて、ログイン ダイアログ ボックスを表示する、例外処理を含んだものにします。  
   
-     `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=fullName> メソッドが [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)]にあることに注意してください。 このメソッドは、構成済みの認証プロバイダーに作業を委任し、認証が成功した場合は `true` を返します。 アプリケーションに、クライアントの認証プロバイダーへの直接の参照は必要ありません。  
+     `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> メソッドが [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)]にあることに注意してください。 このメソッドは、構成済みの認証プロバイダーに作業を委任し、認証が成功した場合は `true` を返します。 アプリケーションに、クライアントの認証プロバイダーへの直接の参照は必要ありません。  
   
-     [!code-csharp[ClientApplicationServices#300](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#300)]  [!code-vb[ClientApplicationServices#300](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#300)]  
+     [!code-csharp[ClientApplicationServices#300](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#300)]
+     [!code-vb[ClientApplicationServices#300](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#300)]  
   
  ここで、F5 キーを押してアプリケーションを実行します。正しいユーザー名とパスワードを指定しているため、フォームが表示されます。  
   
@@ -294,15 +297,17 @@ ms.lasthandoff: 07/28/2017
   
      このコードは、ようこそメッセージを表示してから、次の手順で追加する `ValidateUsingCredentialsProvider` メソッドを呼び出します。 ユーザーが認証されない場合、 `ValidateUsingCredentialsProvider` メソッドは `false` を返し、 `Form1_Load` メソッドが戻ります。 これにより、アプリケーションが終了するまでそれ以上コードを実行できなくなります。 ようこそメッセージは、アプリケーションが再起動するときが明確になるため便利です。 このチュートリアルの後半でログアウトを実装するときに、アプリケーションを再起動するコードを追加します。  
   
-     [!code-csharp[ClientApplicationServices#011](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#011)]  [!code-vb[ClientApplicationServices#011](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#011)]  
+     [!code-csharp[ClientApplicationServices#011](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#011)]
+     [!code-vb[ClientApplicationServices#011](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#011)]  
   
 4.  `Form1_Load` メソッドの後に次のメソッドを追加します。  
   
-     このメソッドは、 `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=fullName> メソッドに空の文字列を渡すことによって、[ログイン] ダイアログ ボックスを表示させます。 認証サービスが使用できない場合、 <xref:System.Web.Security.Membership.ValidateUser%2A> メソッドは <xref:System.Net.WebException>をスローします。 この場合、 `ValidateUsingCredentialsProvider` メソッドは警告メッセージを表示し、オフライン モードで再試行するかどうかをユーザーに尋ねます。 この機能には、「 **How to: Configure Client Application Services** 」で説明する [[オフラインでログインできるようにパスワードのハッシュをローカルに保存する]](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)機能が必要です。 この機能は、新しいプロジェクトでは既定で有効になっています。  
+     このメソッドは、 `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> メソッドに空の文字列を渡すことによって、[ログイン] ダイアログ ボックスを表示させます。 認証サービスが使用できない場合、 <xref:System.Web.Security.Membership.ValidateUser%2A> メソッドは <xref:System.Net.WebException>をスローします。 この場合、 `ValidateUsingCredentialsProvider` メソッドは警告メッセージを表示し、オフライン モードで再試行するかどうかをユーザーに尋ねます。 この機能には、「 **How to: Configure Client Application Services** 」で説明する [[オフラインでログインできるようにパスワードのハッシュをローカルに保存する]](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)機能が必要です。 この機能は、新しいプロジェクトでは既定で有効になっています。  
   
      ユーザーが検証されない場合、 `ValidateUsingCredentialsProvider` メソッドはエラー メッセージを表示し、アプリケーションを終了します。 最後に、このメソッドは、認証の結果を返します。  
   
-     [!code-csharp[ClientApplicationServices#020](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#020)]  [!code-vb[ClientApplicationServices#020](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#020)]  
+     [!code-csharp[ClientApplicationServices#020](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#020)]
+     [!code-vb[ClientApplicationServices#020](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#020)]  
   
 ### <a name="creating-a-login-form"></a>ログイン フォームを作成する  
  資格情報プロバイダーとは、 <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider> インターフェイスを実装するクラスです。 このインターフェイスには、 <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> オブジェクトを返す <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationCredentials> という名前の 1 つのメソッドがあります。 次の手順ではログイン ダイアログ ボックスの作成方法を示します。これは <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> を実装してダイアログ ボックスを表示し、ユーザー指定の資格情報を返します。  
@@ -379,20 +384,22 @@ ms.lasthandoff: 07/28/2017
   
      このコードは、次の手順で追加する `DisplayButtonForManagerRole` メソッドを呼び出します。  
   
-     [!code-csharp[ClientApplicationServices#012](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#012)]  [!code-vb[ClientApplicationServices#012](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#012)]  
+     [!code-csharp[ClientApplicationServices#012](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#012)]
+     [!code-vb[ClientApplicationServices#012](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#012)]  
   
 5.  次のメソッドを Form1 クラスの末尾に追加します。  
   
-     このメソッドは、`static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=fullName> プロパティによって返される <xref:System.Security.Principal.IPrincipal> の <xref:System.Security.Principal.IPrincipal.IsInRole%2A> メソッドを呼び出します。 クライアント アプリケーション サービスを使用するように構成されたアプリケーションで、このプロパティは <xref:System.Web.ClientServices.ClientRolePrincipal> を返します。 このクラスは <xref:System.Security.Principal.IPrincipal> インターフェイスを実装しているため、明示的に参照する必要はありません。  
+     このメソッドは、`static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> プロパティによって返される <xref:System.Security.Principal.IPrincipal> の <xref:System.Security.Principal.IPrincipal.IsInRole%2A> メソッドを呼び出します。 クライアント アプリケーション サービスを使用するように構成されたアプリケーションで、このプロパティは <xref:System.Web.ClientServices.ClientRolePrincipal> を返します。 このクラスは <xref:System.Security.Principal.IPrincipal> インターフェイスを実装しているため、明示的に参照する必要はありません。  
   
      ユーザーが "manager" ロールの場合、 `DisplayButtonForManagerRole` メソッドは <xref:System.Windows.Forms.Control.Visible%2A> の `managerOnlyButton` プロパティを `true`に設定します。 また、このメソッドは、 <xref:System.Net.WebException> がスローされるとエラー メッセージを表示します。これは、ロール サービスが使用できないことを示します。  
   
     > [!NOTE]
-    >  ユーザー ログインの有効期限が切れている場合、 <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A> メソッドは常に `false` を返します。 このチュートリアルのコードの使用例に示すように、アプリケーションが認証のすぐ後に <xref:System.Security.Principal.IPrincipal.IsInRole%2A> メソッドを 1 回呼び出した場合、これは発生しません。 アプリケーションが他のタイミングでユーザーのロールを取得する必要がある場合は、ログインの有効期限が切れたユーザーを再検証するコードを追加することができます。 有効なユーザーすべてにロールが割り当てられている場合は、 <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A?displayProperty=fullName> メソッドを呼び出してログインの有効期限が切れていないか判断できます。 ロールが返されない場合は、ログインの有効期限が切れています。 この機能の例については、 <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A> メソッドを参照してください。 この機能が必要なのは、アプリケーションの構成で **[サーバー クッキーの期限が切れた場合は常に再度ログオンすることをユーザーに要求する]** を選択した場合だけです。 詳細については、「 [How to: Configure Client Application Services](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。  
+    >  ユーザー ログインの有効期限が切れている場合、 <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A> メソッドは常に `false` を返します。 このチュートリアルのコードの使用例に示すように、アプリケーションが認証のすぐ後に <xref:System.Security.Principal.IPrincipal.IsInRole%2A> メソッドを 1 回呼び出した場合、これは発生しません。 アプリケーションが他のタイミングでユーザーのロールを取得する必要がある場合は、ログインの有効期限が切れたユーザーを再検証するコードを追加することができます。 有効なユーザーすべてにロールが割り当てられている場合は、 <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A?displayProperty=nameWithType> メソッドを呼び出してログインの有効期限が切れていないか判断できます。 ロールが返されない場合は、ログインの有効期限が切れています。 この機能の例については、 <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A> メソッドを参照してください。 この機能が必要なのは、アプリケーションの構成で **[サーバー クッキーの期限が切れた場合は常に再度ログオンすることをユーザーに要求する]** を選択した場合だけです。 詳細については、「 [How to: Configure Client Application Services](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。  
   
-     [!code-csharp[ClientApplicationServices#030](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#030)]  [!code-vb[ClientApplicationServices#030](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#030)]  
+     [!code-csharp[ClientApplicationServices#030](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#030)]
+     [!code-vb[ClientApplicationServices#030](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#030)]  
   
- 認証が成功した場合に、クライアント認証プロバイダーは <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=fullName> プロパティを <xref:System.Web.ClientServices.ClientRolePrincipal> クラスのインスタンスに設定します。 このクラスは、構成済みのロール プロバイダーに作業を委任するよう、 <xref:System.Security.Principal.IPrincipal.IsInRole%2A> メソッドを実装します。 上記と同様、アプリケーションのコードにサービス プロバイダーへの直接の参照は必要ありません。  
+ 認証が成功した場合に、クライアント認証プロバイダーは <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> プロパティを <xref:System.Web.ClientServices.ClientRolePrincipal> クラスのインスタンスに設定します。 このクラスは、構成済みのロール プロバイダーに作業を委任するよう、 <xref:System.Security.Principal.IPrincipal.IsInRole%2A> メソッドを実装します。 上記と同様、アプリケーションのコードにサービス プロバイダーへの直接の参照は必要ありません。  
   
  ここでアプリケーションを実行し、従業員としてログインして、ボタンが表示されないことを確認できます。次いで、管理者としてログインして、ボタンが表示されることを確認します。  
   
@@ -425,18 +432,21 @@ ms.lasthandoff: 07/28/2017
   
      このコードは、次の手順で追加する `BindWebSettingsTestTextBox` メソッドを呼び出します。  
   
-     [!code-csharp[ClientApplicationServices#013](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#013)]  [!code-vb[ClientApplicationServices#013](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#013)]  
+     [!code-csharp[ClientApplicationServices#013](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#013)]
+     [!code-vb[ClientApplicationServices#013](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#013)]  
   
 9. 次のメソッドを Form1 クラスの末尾に追加します。  
   
-     このメソッドは、 <xref:System.Windows.Forms.TextBox.Text%2A> の `webSettingsTestTextBox` プロパティを、この手順の前半で生成した `WebSettingsTestText` クラスの `Settings` プロパティにバインドします。 また、このメソッドは、<xref:System.Net.WebException> がスローされるとエラー メッセージを表示します。これは、Web 設定サービスが使用できないことを示します。  
+     このメソッドは、 <xref:System.Windows.Forms.TextBox.Text%2A> の `webSettingsTestTextBox` プロパティを、この手順の前半で生成した `WebSettingsTestText` クラスの `Settings` プロパティにバインドします。 また、このメソッドは、 <xref:System.Net.WebException> がスローされるとエラー メッセージを表示します。これは、Web 設定サービスが使用できないことを示します。  
   
-     [!code-csharp[ClientApplicationServices#040](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#040)]   [!code-vb[ClientApplicationServices#040](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#040)]  
+     [!code-csharp[ClientApplicationServices#040](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#040)]
+     [!code-vb[ClientApplicationServices#040](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#040)]  
   
     > [!NOTE]
     >  通常は、データ バインドを使用して、コントロールと Web 設定間の自動双方向通信を有効にします。 しかし、次の例に示すとおり、直接 Web 設定にアクセスすることもできます。  
   
-     [!code-csharp[ClientApplicationServices#322](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#322)]   [!code-vb[ClientApplicationServices#322](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#322)]  
+     [!code-csharp[ClientApplicationServices#322](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#322)]
+     [!code-vb[ClientApplicationServices#322](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#322)]  
   
 10. デザイナーで、フォームを選択してから、 **[プロパティ]** ウィンドウの **[イベント]** ボタンをクリックします。  
   
@@ -444,19 +454,21 @@ ms.lasthandoff: 07/28/2017
   
 12. 生成されたメソッドを次のコードで置き換えます。  
   
-     <xref:System.Windows.Forms.Form.FormClosing> イベント ハンドラーが `SaveSettings` メソッドを呼び出します。このメソッドは、次のセクションで追加するログアウト機能でも使用されます。 まず、 `SaveSettings` メソッドは、ユーザーがログアウトしていないことを確認します。 これは、現在のプリンシパルによって返される <xref:System.Security.Principal.IIdentity.AuthenticationType%2A> の <xref:System.Security.Principal.IIdentity> プロパティをチェックして行います。 現在のプリンシパルは `static` <xref:System.Threading.Thread.CurrentPrincipal%2A> プロパティを介して取得します。 ユーザーがクライアント アプリケーション サービスで認証済みであれば、認証の種類は "ClientForms" になります。 `SaveSettings` メソッドは、単に <xref:System.Security.Principal.IIdentity.IsAuthenticated%2A?displayProperty=fullName> プロパティをチェックすることはできません。これは、ユーザーがログアウト後に有効な Windows ID を持っていることがあるためです。  
+     <xref:System.Windows.Forms.Form.FormClosing> イベント ハンドラーが `SaveSettings` メソッドを呼び出します。このメソッドは、次のセクションで追加するログアウト機能でも使用されます。 まず、 `SaveSettings` メソッドは、ユーザーがログアウトしていないことを確認します。これは、現在のプリンシパルによって返される <xref:System.Security.Principal.IIdentity.AuthenticationType%2A> の <xref:System.Security.Principal.IIdentity> プロパティをチェックして行います。 現在のプリンシパルは `static` <xref:System.Threading.Thread.CurrentPrincipal%2A> プロパティを介して取得します。 ユーザーがクライアント アプリケーション サービスで認証済みであれば、認証の種類は "ClientForms" になります。 `SaveSettings` メソッドは、単に <xref:System.Security.Principal.IIdentity.IsAuthenticated%2A?displayProperty=nameWithType> プロパティをチェックすることはできません。これは、ユーザーがログアウト後に有効な Windows ID を持っていることがあるためです。  
   
      ユーザーがログアウトしていない場合、 `SaveSettings` メソッドは、この手順の前半で生成された <xref:System.Configuration.ApplicationSettingsBase.Save%2A> クラスの `Settings` メソッドを呼び出します。 認証クッキーの有効期限が切れている場合、このメソッドは <xref:System.Net.WebException> をスローすることがあります。 これが発生するのは、アプリケーションの構成で **[サーバー クッキーの期限が切れた場合は常に再度ログオンすることをユーザーに要求する]** を選択した場合だけです。 詳細については、「 [How to: Configure Client Application Services](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。 `SaveSettings` メソッドは、 <xref:System.Web.Security.Membership.ValidateUser%2A> を呼び出してログイン ダイアログ ボックスを表示することで、クッキーの有効期限を処理します。 ユーザーが正常にログインすると、 `SaveSettings` メソッドは自身を呼び出して設定を再度保存しようとします。  
   
      前のコードと同様、リモート サービスが使用できない場合、 `SaveSettings` メソッドはエラー メッセージを表示します。 設定プロバイダーがリモート サービスにアクセスできない場合、設定はローカル キャッシュに保存されたままとなり、アプリケーションの再起動時に再度読み込まれます。  
   
-     [!code-csharp[ClientApplicationServices#050](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#050)]  [!code-vb[ClientApplicationServices#050](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#050)]  
+     [!code-csharp[ClientApplicationServices#050](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#050)]
+     [!code-vb[ClientApplicationServices#050](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#050)]  
   
 13. 次のメソッドを Form1 クラスの末尾に追加します。  
   
-     このコードは <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved?displayProperty=fullName> イベントを処理し、設定のいずれかが保存できなかった場合は警告を表示します。 設定サービスが使用できない場合、または認証クッキーの有効期限が切れている場合、 <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> イベントは発生しません。 <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> イベントが発生する 1 つの例は、ユーザーが既にログアウトしている場合です。 このイベント ハンドラーは、 `SaveSettings` メソッドの呼び出しの直前にある <xref:System.Configuration.ApplicationSettingsBase.Save%2A> メソッドにログアウトのコードを追加することでテストできます。 使用できるログアウトのコードは、次のセクションで説明します。  
+     このコードは <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved?displayProperty=nameWithType> イベントを処理し、設定のいずれかが保存できなかった場合は警告を表示します。 設定サービスが使用できない場合、または認証クッキーの有効期限が切れている場合、 <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> イベントは発生しません。 <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> イベントが発生する 1 つの例は、ユーザーが既にログアウトしている場合です。このイベント ハンドラーは、 `SaveSettings` メソッドの呼び出しの直前にある <xref:System.Configuration.ApplicationSettingsBase.Save%2A> メソッドにログアウトのコードを追加することでテストできます。 使用できるログアウトのコードは、次のセクションで説明します。  
   
-     [!code-csharp[ClientApplicationServices#090](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#090)]  [!code-vb[ClientApplicationServices#090](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#090)]  
+     [!code-csharp[ClientApplicationServices#090](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#090)]
+     [!code-vb[ClientApplicationServices#090](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#090)]  
   
 14. C# では、 `Form1_Load` メソッドの末尾に次のコードを追加します。 このコードは、最後の手順で追加したメソッドと <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> イベントを関連付けます。  
   
@@ -479,16 +491,17 @@ ms.lasthandoff: 07/28/2017
   
 4.  生成された `logoutButton_Click` メソッドを次のコードで置き換えます。  
   
-     まず、このイベント ハンドラーは、前のセクションで追加した `SaveSettings` メソッドを呼び出します。 次に、イベント ハンドラーは <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A?displayProperty=fullName> メソッドを呼び出します。 認証サービスが使用できない場合、 <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A> メソッドは <xref:System.Net.WebException>をスローします。 この場合、 `logoutButton_Click` メソッドは警告メッセージを表示し、一時的にオフライン モードに切り替えてユーザーをログアウトします。 オフライン モードについては、次のセクションで説明します。  
+     まず、このイベント ハンドラーは、前のセクションで追加した `SaveSettings` メソッドを呼び出します。 次に、イベント ハンドラーは <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A?displayProperty=nameWithType> メソッドを呼び出します。 認証サービスが使用できない場合、 <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A> メソッドは <xref:System.Net.WebException>をスローします。 この場合、 `logoutButton_Click` メソッドは警告メッセージを表示し、一時的にオフライン モードに切り替えてユーザーをログアウトします。オフライン モードについては、次のセクションで説明します。  
   
      ログアウトすると、アプリケーションの再起動時にログインが必要になるように、ローカルの認証クッキーが削除されます。 ログアウト後、イベント ハンドラーは、アプリケーションを再起動します。 アプリケーションは、再起動すると、ようこそメッセージに続いてログイン ダイアログ ボックスを表示します。 ようこそメッセージにより、アプリケーションが再起動したことが明確になります。 こうすることで、ユーザーが設定の保存のためのログインに続いて、アプリケーションの再起動に伴うログインを再度行わなければならない場合に、起こりうる混乱を避けられます。  
   
-     [!code-csharp[ClientApplicationServices#070](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#070)]  [!code-vb[ClientApplicationServices#070](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#070)]  
+     [!code-csharp[ClientApplicationServices#070](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#070)]
+     [!code-vb[ClientApplicationServices#070](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#070)]  
   
  ログアウト機能をテストするには、アプリケーションを実行し、[ログイン] ダイアログ ボックスで **[アカウントを記憶]** をクリックします。 次に、ログインする必要がなくなることを確認するため、アプリケーションを閉じて再起動します。 最後に、[Log out] をクリックして、アプリケーションを再起動します。  
   
 ## <a name="enabling-offline-mode"></a>オフライン モードを有効にする  
- 次の手順では、ユーザーがオフライン モードに入れるようにするチェック ボックスをフォームに追加します。 `static` <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A?displayProperty=fullName> プロパティを `true`に設定すると、アプリケーションはオフライン モードを示します。 オフラインの状態は、ローカルのハード ディスク上の、 <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=fullName> プロパティが示す場所に格納されます。 つまり、オフラインの状態は、ユーザーごと、アプリケーションごとに格納されます。  
+ 次の手順では、ユーザーがオフライン モードに入れるようにするチェック ボックスをフォームに追加します。 `static` <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A?displayProperty=nameWithType> プロパティを `true`に設定すると、アプリケーションはオフライン モードを示します。 オフラインの状態は、ローカルのハード ディスク上の、 <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> プロパティが示す場所に格納されます。 つまり、オフラインの状態は、ユーザーごと、アプリケーションごとに格納されます。  
   
  オフライン モードの場合、クライアント アプリケーション サービス要求はどれも、サービスへのアクセスを試みることなく、ローカル キャッシュからデータを取得します。 既定の構成では、ローカル データには暗号化された形式のユーザーのパスワードが含まれています。 これにより、ユーザーは、アプリケーションがオフライン モードのときにログインできます。 詳細については、「 [How to: Configure Client Application Services](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。  
   
@@ -506,18 +519,20 @@ ms.lasthandoff: 07/28/2017
   
 6.  生成されたメソッドを次のコードで置き換えます。  
   
-     このコードは、 <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A> の値を更新し、オンライン モードに戻るときに、ダイアログを表示せずにユーザーを再検証します。 <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A?displayProperty=fullName> メソッドでは、ユーザーが明示的にログインする必要がないように、キャッシュされた資格情報を使用します。 認証サービスが使用できない場合、警告メッセージが表示され、アプリケーションはオフラインのままになります。  
+     このコードは、 <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A> の値を更新し、オンライン モードに戻るときに、ダイアログを表示せずにユーザーを再検証します。 <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A?displayProperty=nameWithType> メソッドでは、ユーザーが明示的にログインする必要がないように、キャッシュされた資格情報を使用します。 認証サービスが使用できない場合、警告メッセージが表示され、アプリケーションはオフラインのままになります。  
   
     > [!NOTE]
     >  <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A> メソッドは便宜的なものに過ぎません。 このメソッドには戻り値がないため、再検証が失敗したかどうかを示すことはできません。 再検証は失敗することがあります。たとえば、サーバーでユーザーの資格情報が変更された場合などです。 この場合、サービスの呼び出しが失敗した後に、明示的にユーザーを検証するコードを含めることができます。 詳細については、このチュートリアルの上述の「Web 設定にアクセスする」を参照してください。  
   
-     再検証後、前に追加した `SaveSettings` メソッドを呼び出すことで、このコードはローカルの Web 設定への変更をすべて保存します。 続いて、プロジェクトの `Settings` クラスの <xref:System.Configuration.ApplicationSettingsBase.Reload%2A> メソッドを呼び出して、新しい値をすべて取得します (C# では `Properties.Settings.Default` として、[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] では `My.Settings` としてアクセスします)。  
+     再検証後、前に追加した `SaveSettings` メソッドを呼び出すことで、このコードはローカルの Web 設定への変更をすべて保存します。 続いて、プロジェクトの <xref:System.Configuration.ApplicationSettingsBase.Reload%2A> クラスの `Settings` メソッドを呼び出して、新しい値をすべて取得します (C# では `Properties.Settings.Default` として、 `My.Settings` では [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]としてアクセスします)。  
   
-     [!code-csharp[ClientApplicationServices#080](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#080)]  [!code-vb[ClientApplicationServices#080](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#080)]  
+     [!code-csharp[ClientApplicationServices#080](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#080)]
+     [!code-vb[ClientApplicationServices#080](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#080)]  
   
 7.  `Form1_Load` メソッドの末尾に次のコードを追加して、チェック ボックスが現在の接続状態を示すようにします。  
   
-     [!code-csharp[ClientApplicationServices#014](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#014)]  [!code-vb[ClientApplicationServices#014](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#014)]  
+     [!code-csharp[ClientApplicationServices#014](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#014)]
+     [!code-vb[ClientApplicationServices#014](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#014)]  
   
  これで、サンプル アプリケーションが完成しました。 オフライン機能をテストするには、アプリケーションを実行し、従業員またはマネージャーとしてログインしてから、 **[Work offline]**をクリックします。 テキスト ボックスの値を変更してから、アプリケーションを終了します。 アプリケーションを再起動します ログインする前に、タスク バーの通知領域にある ASP.NET 開発サーバーのアイコンを右クリックしてから、 **[停止]**をクリックします。 次に、通常どおりにログインします。 サーバーが実行されていない場合でもログインできます。 テキスト ボックスの値を変更してから、終了および再起動を行って、変更された値を確認します。  
   
@@ -530,10 +545,9 @@ ms.lasthandoff: 07/28/2017
  アプリケーションのセキュリティを向上させるため、配置する前に必ずアプリケーションとサーバーを十分にテストしてください。  
   
 ## <a name="see-also"></a>関連項目  
- [クライアント アプリケーション サービス](../../../docs/framework/common-client-technologies/client-application-services.md)   
- [クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)   
- [方法 : クライアント アプリケーション サービスを構成する](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)   
- [ASP.NET Web サイト管理ツール](http://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec)   
- [SQL Server 向けアプリケーション サービス データベースの作成と構成](http://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2)   
+ [クライアント アプリケーション サービス](../../../docs/framework/common-client-technologies/client-application-services.md)  
+ [クライアント アプリケーション サービスの概要](../../../docs/framework/common-client-technologies/client-application-services-overview.md)  
+ [方法 : クライアント アプリケーション サービスを構成する](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)  
+ [ASP.NET Web サイト管理ツール](http://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec)  
+ [SQL Server 向けアプリケーション サービス データベースの作成と構成](http://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2)  
  [チュートリアル: ASP.NET アプリケーション サービスの使用](http://msdn.microsoft.com/library/f3f394f0-20d6-4361-aa8f-4b21bf4933eb)
-

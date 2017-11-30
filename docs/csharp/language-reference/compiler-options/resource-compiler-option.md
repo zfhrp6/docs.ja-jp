@@ -1,14 +1,10 @@
 ---
 title: "-resource (C# コンパイラ オプション)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /resource
-dev_langs:
-- CSharp
+f1_keywords: /resource
 helpviewer_keywords:
 - -resource compiler option [C#]
 - /resource compiler option [C#]
@@ -17,29 +13,14 @@ helpviewer_keywords:
 - res compiler option [C#]
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 726956275436e22723bc32b98b2b8b7c7df5fb12
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fdb7be630300e11c2e63d88bd6add7d229714bfa
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="resource-c-compiler-options"></a>/resource (C# コンパイラ オプション)
 指定されたリソースを出力ファイルに埋め込みます。  
@@ -65,7 +46,7 @@ ms.lasthandoff: 07/28/2017
   
  既定では、リソースは、C# コンパイラを使用して作成されるときにアセンブリ内でパブリックになります。 リソースをプライベートにするには、アクセシビリティ修飾子として `private` を指定します。 `public` と `private` 以外のアクセシビリティは使用できません。  
   
- `filename` が [Resgen.exe](http://msdn.microsoft.com/library/8ef159de-b660-4bec-9213-c3fbc4d1c6f4) や開発環境などで作成された .NET Framework リソース ファイルである場合は、<xref:System.Resources> 名前空間のメンバーを使ってそのファイルにアクセスできます。 詳細については、「<xref:System.Resources.ResourceManager?displayProperty=fullName>」を参照してください。 それ以外のすべてのリソースについては、<xref:System.Reflection.Assembly> クラスの `GetManifestResource`* メソッドを使って、実行時にリソースにアクセスします。  
+ `filename` が [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) や開発環境などで作成された .NET Framework リソース ファイルである場合は、<xref:System.Resources> 名前空間のメンバーを使ってそのファイルにアクセスできます。 詳細については、「<xref:System.Resources.ResourceManager?displayProperty=nameWithType>」を参照してください。 他のすべてのリソースを使用して、`GetManifestResource`内のメソッド、<xref:System.Reflection.Assembly>実行時にリソースにアクセスするクラス。  
   
  **/res** は **/resource** の省略形です。  
   
@@ -91,6 +72,5 @@ csc /resource:rf.resource in.cs
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
+ [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
-

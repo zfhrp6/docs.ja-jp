@@ -1,38 +1,19 @@
 ---
 title: "フィールド (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- fields [C#]
+helpviewer_keywords: fields [C#]
 ms.assetid: 3cbb2f61-75f8-4cce-b4ef-f5d1b3de0db7
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: acf4ade68235a196fd6d2f3c6c71279748f3dd71
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 8eef9bb644a28c69a1db59dcba3c12c9e3fa86b0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="fields-c-programming-guide"></a>フィールド (C# プログラミング ガイド)
 *フィールド*とは、[クラス](../../../csharp/language-reference/keywords/class.md)または[構造体](../../../csharp/language-reference/keywords/struct.md)で直接宣言される任意の型の変数です。 フィールドは、それを含んでいる型の*メンバー*です。  
@@ -45,22 +26,22 @@ ms.lasthandoff: 07/28/2017
   
  フィールドは、フィールドのアクセス レベル、フィールドの型、フィールドの名前の順に指定して、クラス ブロック内で宣言します。 例:  
   
- [!code-cs[csProgGuideObjects#61](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_1.cs)]  
+ [!code-csharp[csProgGuideObjects#61](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_1.cs)]  
   
  オブジェクト内のフィールドにアクセスするには、`objectname.fieldname` のように、オブジェクト名の後にピリオドを追加し、その後にフィールド名を続けます。 例:  
   
- [!code-cs[csProgGuideObjects#62](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_2.cs)]  
+ [!code-csharp[csProgGuideObjects#62](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_2.cs)]  
   
  フィールドには、フィールドの宣言時に代入演算子を使用して初期値を指定できます。 たとえば、`day` フィールドに `"Monday"` を自動的に代入するには、次の例のように `day` を宣言します。  
   
- [!code-cs[csProgGuideObjects#63](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_3.cs)]  
+ [!code-csharp[csProgGuideObjects#63](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_3.cs)]  
   
  フィールドは、オブジェクト インスタンスのコンストラクターが呼び出される直前に初期化されます。 コンストラクターがフィールドの値を代入すると、フィールドの宣言時に指定された値はすべて上書きされます。 詳細については、「[コンストラクターの使用](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)」を参照してください。  
   
 > [!NOTE]
 >  フィールドの初期化子は、他のインスタンス フィールドを参照できません。  
   
- フィールドは、[public](../../../csharp/language-reference/keywords/public.md)、[private](../../../csharp/language-reference/keywords/private.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、または `protected internal` とマークできます。 これらのアクセス修飾子により、クラスのユーザーがフィールドにアクセスする方法が定義されます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+ フィールドとしてマークできる[パブリック](../../../csharp/language-reference/keywords/public.md)、[プライベート](../../../csharp/language-reference/keywords/private.md)、[保護](../../../csharp/language-reference/keywords/protected.md)、[内部](../../../csharp/language-reference/keywords/internal.md)、[内部保護](../../../csharp/language-reference/keywords/protected-internal.md)または[保護されたプライベート](../../../csharp/language-reference/keywords/private-protected.md)です。 これらのアクセス修飾子により、クラスのユーザーがフィールドにアクセスする方法が定義されます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
  必要に応じて、フィールドを[静的](../../../csharp/language-reference/keywords/static.md)に宣言することもできます。 その場合、クラスのインスタンスが存在しなくても、呼び出し元がいつでもフィールドを使用できるようになります。 詳細については、「[静的クラスと静的クラス メンバー](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)」を参照してください。  
   
@@ -70,10 +51,9 @@ ms.lasthandoff: 07/28/2017
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)   
- [コンストラクターの使用](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)   
- [継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)   
- [アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [コンストラクターの使用](../../../csharp/programming-guide/classes-and-structs/using-constructors.md)  
+ [継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
+ [アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  
  [抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)
-

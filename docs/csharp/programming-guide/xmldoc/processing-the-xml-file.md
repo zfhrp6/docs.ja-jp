@@ -1,39 +1,21 @@
 ---
 title: "XML ファイルの処理 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: e8b4c078ffcf7ba7690b7f3dd61bfab4162dd2cb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 610f3ac5c88fb41a4b55f2990fecdc4c13074e19
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>XML ファイルの処理 (C# プログラミング ガイド)
 コンパイラは、ドキュメントを生成するためにタグ付けされたコードのコンストラクトごとに、ID 文字列を生成します。 (コードをタグ付けする方法については、[ドキュメント コメント用の推奨タグ](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)に関するページを参照してください。)ID 文字列によって、コンストラクトは一意に識別されます。 XML ファイルを処理するプログラムは、ID 文字列を使用して、対応する .NET Framework のメタデータまたはドキュメントを適用するリフレクション項目を識別できます。  
@@ -101,10 +83,9 @@ ms.lasthandoff: 07/28/2017
 ## <a name="examples"></a>例  
  次の例は、クラスおよびそのメンバーの ID 文字列を生成する方法を示します。  
   
- [!code-cs[csProgGuidePointers#21](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/processing-the-xml-file_1.cs)]  
+ [!code-csharp[csProgGuidePointers#21](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/processing-the-xml-file_1.cs)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [/doc (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [/doc (c# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)  
  [XML ドキュメント コメント](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)
-

@@ -1,28 +1,29 @@
 ---
-title: "名前またはインデックスによる順序付けられていないノードの取得 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "名前またはインデックスによる順序付けられていないノードの取得"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 2038a90b-92af-4a0a-baaa-08e688d95194
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: a8bea8f373dced08fd7a2a828255a593533df9d7
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 名前またはインデックスによる順序付けられていないノードの取得
-W3C \(World Wide Web Consortium\) 仕様で NamedNodeMap として定義されている **XmlNamedNodeMap** は、名前またはインデックスでノードを参照する機能を持っており、順序付けられていないノード セットを処理する必要があります。  **XmlNamedNodeMap** にアクセスできるのは、メソッドまたはプロパティから **XmlNamedNodeMap** が返されたときだけです。  **XmlNamedNodeMap** を返すメソッドやプロパティには、次の 3 つがあります。  
+# <a name="unordered-node-retrieval-by-name-or-index"></a>名前またはインデックスによる順序付けられていないノードの取得
+**XmlNamedNodeMap** NamedNodeMap として、World Wide Web Consortium (W3C) 仕様に記載されて、ノードを参照することで、名前またはインデックスでノードの順序なしのセットを処理するために必要です。 アクセスがある唯一の方法、 **XmlNamedNodeMap**場合は、 **XmlNamedNodeMap**メソッドまたはプロパティを介して返されます。 次の 3 つのメソッドまたはプロパティを返すがある、 **XmlNamedNodeMap**:  
   
 -   XmlElement.Attributes  
   
@@ -30,9 +31,9 @@ W3C \(World Wide Web Consortium\) 仕様で NamedNodeMap として定義され�
   
 -   XmlDocumentType.Notations  
   
- たとえば、**XmlDocumentType.Entities** プロパティは、ドキュメント型宣言で宣言された **XmlEntity** ノードのコレクションを取得します。  このコレクションは **XmlNamedNodeMap** として返され、**Count** プロパティを使用してコレクションを反復処理し、エンティティ情報を表示できます。  **XmlNamedNodeMap** の反復処理の例については、「[XmlDocumentType.Entities プロパティ](frlrfSystemXmlXmlDocumentTypeClassEntitiesTopic)」を参照してください。  
+ たとえば、 **XmlDocumentType.Entities**プロパティのコレクションを取得する**XmlEntity**ノードがドキュメント型宣言で宣言します。 としてこのコレクションが返されます、 **XmlNamedNodeMap**を使用してコレクションを反復処理できると、**カウント**プロパティと表示のエンティティの情報です。 反復処理する例については、 **XmlNamedNodeMap**を参照してください<xref:System.Xml.XmlDocumentType.Entities%2A>です。  
   
- **XmlAttributeCollection** は **XmlNamedNodeMap** から派生しており、属性だけは変更できますが、記法とエンティティは読み取り専用です。  属性に対して **XmlNamedNodeMap** を使用すると、XML 名に基づいて属性のノードを取得できます。  これは、要素ノードの属性コレクションを操作する簡単な方法です。  **XmlNodeList** にも **IEnumerable** インターフェイスが実装されていますが、文字列ではなくインデックス アクセサーを使用するという点で **XmlNamedNodeMap** とは異なります。  **RemoveNamedItem** メソッドと **SetNamedItem** メソッドは **XmlAttributeCollection** に対してだけ使用します。  属性コレクションに追加したり、属性コレクションから削除すると、**AttributeCollection** または **XmlNamedNodeMap** のどちらの実装を使用した場合でも、要素の属性コレクションが変更されます。  属性を移動する方法と新しい属性を作成する方法を次のコード サンプルに示します。  
+ **XmlAttributeCollection**から派生した**XmlNamedNodeMap**属性だけは変更できますが、記法とエンティティは読み取り専用とします。 使用して、 **XmlNamedNodeMap**属性については、XML 名に基づいてこれらの属性のノードを取得できます。 これは、要素ノードの属性コレクションを操作する簡単な方法です。 これは、直接のと対照的できます**XmlNodeList**もを実装する、 **IEnumerable**インターフェイスが文字列ではなくインデックス アクセサー。 **RemoveNamedItem**と**SetNamedItem**に対してメソッドを使用するだけ、 **XmlAttributeCollection**です。 追加またはを使用しているかどうか、属性コレクションから削除する、 **AttributeCollection**または**XmlNamedNodeMap**実装では、要素の属性コレクションを変更します。 属性を移動する方法と新しい属性を作成する方法を次のコード サンプルに示します。  
   
 ```vb  
 Imports System  
@@ -123,7 +124,7 @@ class test {
 }  
 ```  
   
- **AttributeCollection** から属性を削除するコード サンプルについては、「[XmlNamedNodeMap.RemoveNamedItem メソッド](frlrfSystemXmlXmlNamedNodeMapClassRemoveNamedItemTopic)」を参照してください。  メソッドとプロパティの詳細については、「[XmlNamedNodeMap メンバー](frlrfSystemXmlXmlNamedNodeMapMembersTopic)」を参照してください。  
+ 削除されている属性を表示する追加のコード例を参照する、 **AttributeCollection**を参照してください[XmlNamedNodeMap.RemoveNamedItem メソッド](Overload:System.Xml.XmlNamedNodeMap.RemoveNamedItem)です。 メソッドとプロパティの詳細については、次を参照してください。 [XmlNamedNodeMap メンバー](AllMembers.T:System.Xml.XmlNamedNodeMap)です。  
   
-## 参照  
- [XML ドキュメント オブジェクト モデル \(DOM\)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>関連項目  
+ [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

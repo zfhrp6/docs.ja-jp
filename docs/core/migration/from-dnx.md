@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c0d70120-78c8-4d26-bb3c-801f42fc2366
+ms.openlocfilehash: 1e2ab018fc690b31b59a04bf8c0c0990225c293b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e94ab83bb6638438e0a98020a5b42755322af5da
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>DNX から .NET Core CLI への移行 (project.json)
 
 ## <a name="overview"></a>概要
@@ -62,7 +60,7 @@ DNX の場合、一部のコマンドについては 3 つのパート (DNX、DN
 | dnu pack                          | dotnet pack       | コードの NuGet パッケージをパッケージ化します。                                                                          |
 | dnx \[command] ("dnx web" など)   | 適用なし\*             | DNX の環境では、project.json 内の定義に従ってコマンドを実行します。                                                       |
 | dnu install                       | 適用なし\*             | DNX の環境では、パッケージを依存関係としてインストールします。                                                              |
-| dnu restore                       | dotnet restore    | project.json に指定された依存関係を復元します。                                                              |
+| dnu restore                       | dotnet restore    | project.json に指定された依存関係を復元します。 ([注を参照してください](#dotnet-restore-note))                                                               |
 | dnu publish                       | dotnet publish    | 展開対象のアプリケーションを 3 つの形式 (ポータブル、ネイティブ アプリ、スタンドアロン) のいずれかで発行します。    |
 | dnu wrap                          | 適用なし\*             | DNX の環境では、csproj で project.json をラップします。                                                                      |
 | dnu commands                      | 適用なし\*             | DNX の環境では、インストールされたコマンドをグローバルに管理します。                                                             |
@@ -78,7 +76,7 @@ DNU には、"グローバル コマンド" と呼ばれる概念が採用され
 CLI では、この概念をサポートしていません。 しかし、使い慣れた `dotnet <command>` 構文を使用して呼び出し可能なプロジェクトごとのコマンドを追加する、という概念はサポートされています。
 
 ### <a name="installing-dependencies"></a>依存関係のインストール
-V1 の時点で、.NET Core CLI ツールは、依存関係をインストールするための `install` コマンドを備えていません。 NuGet からパッケージをインストールするには、該当するパッケージを依存関係として `project.json` ファイルに追加し、`dotnet restore` を実行する必要があります。 
+V1 の時点で、.NET Core CLI ツールは、依存関係をインストールするための `install` コマンドを備えていません。 依存関係として追加する必要 NuGet からパッケージをインストールするために、`project.json`ファイルし実行して`dotnet restore`([注を参照してください](#dotnet-restore-note))。 
 
 ### <a name="running-your-code"></a>コードの実行
 コードを実行する方法は、主に 2 つあります。 1 つは、`dotnet run` を使用してソースから実行する方法です。 この方法では、`dnx run` の場合とは異なり、メモリ内のコンパイルを行いません。 `dotnet build` を実際に呼び出すことで、コードをビルドし、ビルドされたバイナリを実行します。 
@@ -131,7 +129,7 @@ CLI と DNX は両方とも、`project.json` ファイルに基づいた同じ�
 
 これで、`project.json` は、ほぼ準備ができました。 特に ASP.NET Core の依存関係を使用している場合は、依存関係の一覧を確認し、依存関係を新しいバージョンに更新する必要があります。 BCL API 用に個別のパッケージを使用していた場合は、[アプリケーションの移植性の種類](../deploying/index.md)に関するページの説明に従って、ランタイム パッケージを使用することができます。 
 
-準備ができたら、`dotnet restore` を使用して復元を試みることができます。 依存関係のバージョンによっては、上記の対象となるフレームワークのいずれかの依存関係を NuGet が解決できない場合にエラーが発生する可能性があります。 これは "ポイント イン タイム" 問題です。時間の経過と共に、これらのフレームワークのサポートを含むパッケージが増える現象です。 今のところ、このエラーが発生した場合は、`framework` ノード内に `imports` ステートメントを使用して、"imports" ステートメント内のフレームワークを対象とするパッケージを復元できるという条件を NuGet に示すことができます。 この場合に返される復元エラーに含まれる情報を見れば、どのフレームワークをインポートすればよいかを特定できるはずです。 情報が不足している場合、または、まだ慣れていない場合は、通常、`dnxcore50` と `portable-net45+win8` を `imports` ステートメントに指定することで、うまくいくはずです。 次の JSON スニペットに、例を示します。
+準備ができたら、試みることができますを伴う復元`dotnet restore`([注を参照してください](#dotnet-restore-note))。 依存関係のバージョンによっては、上記の対象となるフレームワークのいずれかの依存関係を NuGet が解決できない場合にエラーが発生する可能性があります。 これは "ポイント イン タイム" 問題です。時間の経過と共に、これらのフレームワークのサポートを含むパッケージが増える現象です。 今のところ、このエラーが発生した場合は、`framework` ノード内に `imports` ステートメントを使用して、"imports" ステートメント内のフレームワークを対象とするパッケージを復元できるという条件を NuGet に示すことができます。 この場合に返される復元エラーに含まれる情報を見れば、どのフレームワークをインポートすればよいかを特定できるはずです。 情報が不足している場合、または、まだ慣れていない場合は、通常、`dnxcore50` と `portable-net45+win8` を `imports` ステートメントに指定することで、うまくいくはずです。 次の JSON スニペットに、例を示します。
 
 ```json
     "frameworks": {
@@ -143,3 +141,5 @@ CLI と DNX は両方とも、`project.json` ファイルに基づいた同じ�
 
 `dotnet build` を実行した場合、数がそんなに多くなくても、最終的にビルド エラーが表示されます。 コードが構築され正常に動作したら、ランナーを使用して試してみることができます。 `dotnet <path-to-your-assembly>` を実行し、それが実行されているのを確認してください。
 
+<a name="dotnet-restore-note"></a>
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 916251e3-87f9-4eee-81ec-94076215e6fa
+ms.openlocfilehash: e09b6f9124ec7614ab2e847d686435d74b00b336
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 23d83f0402e35bc4bed31ef59a6fff0e28e01d35
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="reducing-package-dependencies-with-projectjson"></a>project.json によるパッケージ依存関係の縮小
 
 この記事では、`project.json` ライブラリの作成時にパッケージ依存関係を減らすために知っておくべきことについて紹介します。 この記事を最後までお読みいただくと、必要な依存関係だけが使用されるようにライブラリを構築する方法を理解できます。 
@@ -32,11 +30,12 @@ ms.lasthandoff: 07/28/2017
 現在のところ、パッケージ参照を減らす正式な `dotnet` コマンドはありません。  代わりに、手動で行う必要があります。  一般的なプロセスは次のようになります。
 
 1. お使いの `project.json` の `dependencies` セクションにある `NETStandard.Library` バージョン `1.6.0` を参照します。
-2. コマンド ラインから `dotnet restore` でパッケージを復元します。
+2. パッケージを復元`dotnet restore`([注を参照してください](#dotnet-restore-note)) コマンドラインからです。
 3. `project.lock.json` ファイルを調べ、`NETSTandard.Library` というセクションを探します。  ファイルの始まりの近くにあります。
 4. `dependencies` の下にあるパッケージをすべてコピーします。
 5. `.NETStandard.Library` 参照を削除し、コピーしたパッケージで置き換えます。
 6. 不要なパッケージ参照を削除します。
+
 
 不要なパッケージは次の方法で確認できます。
 
@@ -61,7 +60,7 @@ ms.lasthandoff: 07/28/2017
 }
 ```
 
-次に、`dotnet restore` でパッケージを復元し、`project.lock.json` ファイルを調べ、`NETSTandard.Library` に対して復元されたすべてのパッケージを探します。
+次に、使用してパッケージを復元する`dotnet restore`([注を参照してください](#dotnet-restore-note))、検査、`project.lock.json`ファイル、および復元のすべてのパッケージを見つける`NETSTandard.Library`です。
 
 `netstandard1.0` をターゲットにするとき、`project.lock.json` ファイルの関連セクションは次のようになります。
 
@@ -158,3 +157,5 @@ ms.lasthandoff: 07/28/2017
 
 これで、`NETStandard.Library` メタパッケージに依存する場合より、フットプリントが少なくなります。
 
+<a name="dotnet-restore-note"></a>
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

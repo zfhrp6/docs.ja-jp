@@ -1,33 +1,31 @@
 ---
-title: "XML ドキュメント オブジェクト モデル (DOM) の階層構造 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "XML ドキュメント オブジェクト モデル (DOM) の階層構造"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 9d187d4f-c76e-4223-a670-cc290783ce47
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 6dec61860fba5815b1dae802d280e8df6628ab91
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# XML ドキュメント オブジェクト モデル (DOM) の階層構造
-XML ドキュメント オブジェクト モデル \(DOM\) のクラスの階層構造を次の図に示します。クラス名に続くかっこ内の名前は、W3C \(World Wide Web Consortium\) 名です。  
+# <a name="xml-document-object-model-dom-hierarchy"></a>XML ドキュメント オブジェクト モデル (DOM) の階層構造
+XML ドキュメント オブジェクト モデル (DOM) のクラスの階層構造を次の図に示します。クラス名に続くかっこ内の名前は、W3C (World Wide Web Consortium) 名です。  
   
- ![XML ドキュメント オブジェクト モデル &#40;DOM&#41; の階層構造](../../../../docs/standard/data/xml/media/dom-class-hierarchy.gif "Dom\_class\_hierarchy")  
-XML ドキュメント オブジェクト モデル \(DOM\) の階層構造  
+ ![XML ドキュメント オブジェクト モデル &#40;DOM&#41;階層](../../../../docs/standard/data/xml/media/dom-class-hierarchy.gif "Dom_class_hierarchy")  
+XML ドキュメント オブジェクト モデル (DOM) の階層構造  
   
- 次のクラスは **XmlNode** から継承したものではありません。  
+ 次のクラスを継承しない、 **XmlNode**:  
   
 -   **XmlImplementation**  
   
@@ -37,15 +35,15 @@ XML ドキュメント オブジェクト モデル \(DOM\) の階層構造
   
 -   **XmlNodeChangedEventArgs**  
   
- **XmlImplementation** クラスは、XML ドキュメントを作成するために使われます。  詳細については、「[XML ドキュメントの作成](../../../../docs/standard/data/xml/xml-document-creation.md)」を参照してください。  
+ **XmlImplementation**クラスは XML ドキュメントの作成に使用します。 詳細については、次を参照してください。 [XML ドキュメントの作成](../../../../docs/standard/data/xml/xml-document-creation.md)です。  
   
- **XmlNamedNodeMap** クラスは、順序付けられていないノード セットを処理します。  詳細については、「[名前またはインデックスによる順序付けられていないノードの取得](../../../../docs/standard/data/xml/unordered-node-retrieval-by-name-or-index.md)」を参照してください。  
+ **XmlNamedNodeMap**クラスは、順序付けられていないノードのセットを処理します。 詳細については、次を参照してください。[名前またはインデックスによる順序付けられていないノードの取得](../../../../docs/standard/data/xml/unordered-node-retrieval-by-name-or-index.md)です。  
   
- **XmlNodeList** クラスは、順序付けられたノード リストを処理します。  詳細については、「[インデックスによる順序付けられたノードの取得](../../../../docs/standard/data/xml/ordered-node-retrieval-by-index.md)」を参照してください。  
+ **XmlNodeList**クラスは、ノードの順序付きリストを処理します。 詳細については、次を参照してください。[インデックスによる順序付けられたノードの取得](../../../../docs/standard/data/xml/ordered-node-retrieval-by-index.md)です。  
   
- **XmlNodeChangedEventArgs** クラスは、**XmlDocument** に登録されたイベント ハンドラーを処理します。  詳細については、「[XmlNodeChangedEventArgs による XML ドキュメントのイベント処理](../../../../docs/standard/data/xml/event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs.md)」を参照してください。  
+ **XmlNodeChangedEventArgs**クラスに登録されたイベント ハンドラーの処理、 **XmlDocument**です。 詳細については、次を参照してください。 [XmlNodeChangedEventArgs による XML ドキュメントでのイベント処理](../../../../docs/standard/data/xml/event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs.md)です。  
   
- **XmlLinkedNode** クラスは **XmlNode** から継承しています。  その目的は、**XmlNode** の **PreviousSibling** と **NextSibling** という 2 つのメソッドをオーバーライドすることです。  これらのオーバーライドされたメソッドは、前後に兄弟を持つ **XmlCharacterData**、**XmlDeclaration**、**XmlDocumentType**、**XmlElement**、**XmlEntityReference**、および **XmlProcessingInstruction** クラスによって継承され、使用されます。  
+ **XmlLinkedNode**クラスから継承**XmlNode**です。 その目的は、2 つのメソッドをオーバーライドする**XmlNode**: **PreviousSibling**と**NextSibling**メソッドです。 これらのオーバーライドされたメソッドは、によって継承および使用**XmlCharacterData**、 **XmlDeclaration**、 **XmlDocumentType**、 **XmlElement**、 **XmlEntityReference**、および**XmlProcessingInstruction**、これらは前または次の兄弟を持つクラス。  
   
-## 参照  
- [XML ドキュメント オブジェクト モデル \(DOM\)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>関連項目  
+ [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

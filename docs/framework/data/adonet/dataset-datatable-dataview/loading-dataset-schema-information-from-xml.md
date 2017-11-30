@@ -1,37 +1,43 @@
 ---
-title: "XML の DataSet スキーマ情報の読み込み | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "XML の DataSet スキーマ情報の読み込み"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 43dfb23b-5cef-46f2-8d87-78f0fba1eb8c
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 09fc69ba6d82fdab5aa03dd3987ec1acdf0be17e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XML の DataSet スキーマ情報の読み込み
-<xref:System.Data.DataSet> のスキーマ \(テーブル、列、リレーション、および制約\) は、プログラムを使用して定義され、<xref:System.Data.Common.DataAdapter> の **Fill** メソッドまたは **FillSchema** メソッドによって作成されるか、あるいは XML ドキュメントから読み込まれます。  XML ドキュメントから **DataSet** スキーマ情報を読み込むには、**DataSet** の **ReadXmlSchema** メソッドまたは **InferXmlSchema** メソッドを使用します。  **ReadXmlSchema** を使用すると、XML スキーマ定義言語 \(XSD\) スキーマが含まれているドキュメントまたはインライン XML スキーマが含まれている XML ドキュメントから、**DataSet** スキーマ情報を読み込むかまたは推論できます。  **InferXmlSchema** を使用すると、XML ドキュメントからスキーマを推論できます。このとき、指定した特定の XML 名前空間は無視されます。  
+# <a name="loading-dataset-schema-information-from-xml"></a>XML の DataSet スキーマ情報の読み込み
+スキーマ、 <xref:System.Data.DataSet> (そのテーブル、列、リレーション、および制約) はプログラムでは、によって作成された、**塗りつぶし**または**FillSchema**のメソッド、<xref:System.Data.Common.DataAdapter>から読み込まれたか、XML ドキュメントです。 読み込む**データセット**スキーマ情報、XML ドキュメントから、いずれかを使用して、 **ReadXmlSchema**または**InferXmlSchema**のメソッド、**データセット**. **ReadXmlSchema**の読み込みまたは推論することができます**データセット**XML スキーマ定義言語 (XSD) スキーマ、またはインライン XML スキーマを持つ XML ドキュメントを含むドキュメントからスキーマ情報。 **InferXmlSchema**指定した特定の XML 名前空間を無視しているときに、XML ドキュメントからスキーマを推論することができます。  
   
 > [!NOTE]
->  XSD の構造 \(入れ子になったリレーションなど\) を使用してメモリ内で作成された **DataSet** を、Web サービスまたは XML シリアル化を使って転送した場合、**DataSet** 内のテーブルの順序が維持されない場合があります。  この場合、**DataSet** の受け取り側はテーブルの順序に依存していないことが必要です。  ただし、メモリ内で作成するのではなく、転送する **DataSet** のスキーマを XSD ファイルから読み取った場合は、テーブルの順序が常に維持されます。  
+>  テーブルの順序で、**データセット**を転送する Web サービスまたは XML シリアル化を使用する場合は保持されませんが、**データセット**インメモリ (入れ子になったリレーション) などの XSD コンス トラクターを使用して作成されました。 そのための受信者、**データセット**テーブルの例ではこの順序に依存しないようにします。 ただし、テーブルの順序は常に保持される場合のスキーマ、**データセット**メモリ内で作成されているのではなく、XSD ファイルから読み取られた転送されています。  
   
-## ReadXmlSchema  
- XML ドキュメントから **DataSet** のスキーマだけを読み込み、データを読み込まないようにするには、**DataSet** の **ReadXmlSchema** メソッドを使用します。  **ReadXmlSchema** は、XML スキーマ定義言語 \(XSD\) スキーマを使用して定義されている **DataSet** を作成します。  
+## <a name="readxmlschema"></a>ReadXmlSchema  
+ スキーマを読み込む、**データセット**すべてのデータを読み込むことがなく、XML ドキュメントからを使用して、 **ReadXmlSchema**のメソッド、**データセット**です。 **ReadXmlSchema**作成**データセット**スキーマの XML スキーマ定義言語 (XSD) スキーマを使用して定義します。  
   
- **ReadXmlSchema** メソッドは、ファイル名、ストリーム、または読み込む XML ドキュメントが格納されている **XmlReader** のいずれか 1 つを引数として受け取ります。  この XML ドキュメントには、スキーマだけが含まれているか、またはデータのある XML 要素と共にスキーマがインラインで含まれています。  XML スキーマとしてのインライン スキーマを書き込む方法の詳細については、「[XML スキーマ \(XSD\) からの DataSet リレーショナル構造の派生](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)」を参照してください。  
+ **ReadXmlSchema**メソッドを 1 つの引数でのファイル名、ストリーム、または**XmlReader**に読み込む XML ドキュメントを含むです。 この XML ドキュメントには、スキーマだけが含まれているか、またはデータのある XML 要素と共にスキーマがインラインで含まれています。 XML スキーマとインライン スキーマの作成方法の詳細については、「[派生した DataSet リレーショナル構造の XML スキーマ (XSD) から](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)です。  
   
- **ReadXmlSchema** に渡された XML ドキュメントに、インライン スキーマ情報が含まれていない場合、**ReadXmlSchema** は XML ドキュメントの要素からスキーマを推論します。  **DataSet** に既にスキーマが含まれている場合、テーブルが存在しなければ新しいテーブルを追加することによって現在のスキーマが拡張されます。  既存のテーブルには新しい列は追加されません。  **DataSet** に既に追加される列が存在していますが、XML で検出された列の型と矛盾する場合には、例外がスローされます。  **ReadXmlSchema** による XML ドキュメントからのスキーマの推論方法の詳細については、「[XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)」を参照してください。  
+ XML ドキュメントを渡す場合**ReadXmlSchema**インライン スキーマ情報を含まない**ReadXmlSchema** XML ドキュメント内の要素からスキーマを推論します。 場合、**データセット**スキーマを既に含む現在のスキーマが既に存在しない場合は、新しいテーブルを追加することによって拡張されます。 既存のテーブルには新しい列は追加されません。 既に追加されている列が存在する場合、**データセット**が列と互換性のない型が見つかりません、xml で、例外がスローされます。 方法の詳細について**ReadXmlSchema**スキーマを生成、XML ドキュメントから、次を参照してください。[推論 DataSet リレーショナル構造の XML から](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)です。  
   
- **ReadXmlSchema** は **DataSet** スキーマの読み込みまたは推論のいずれかを実行しますが、**DataSet** の **ReadXml** メソッドは、スキーマと XML ドキュメントのデータの両方の読み込みまたは推論を実行します。  詳細については、「[XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)」を参照してください。  
+ **ReadXmlSchema**で読み込みまたは推論のスキーマのみ、**データセット**、 **ReadXml**のメソッド、**データセット**読み込まれるかまたは両方を推論スキーマと XML ドキュメントに含まれるデータ。 詳細については、次を参照してください。 [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)です。  
   
- XML ドキュメントまたは XML ストリームから **DataSet** スキーマを読み込む方法を次のコード サンプルに示します。  1 番目の例では、XML スキーマ ファイル名が **ReadXmlSchema** メソッドへ渡されます。  2 番目の例では、**System.IO.StreamReader** が示されています。  
+ 次のコード例を読み込む方法を表示する、**データセット**を XML ドキュメントまたはストリームからのスキーマです。 最初の例に渡される XML スキーマ ファイル名、 **ReadXmlSchema**メソッドです。 2 番目の例、 **System.IO.StreamReader**です。  
   
 ```vb  
 Dim dataSet As DataSet = New DataSet  
@@ -57,12 +63,12 @@ dataSet.ReadXmlSchema(xmlStream);
 xmlStream.Close();  
 ```  
   
-## InferXmlSchema  
- **DataSet** に対し、**DataSet** の **InferXmlSchema** メソッドを使用して XML ドキュメントのスキーマを推論するように指示できます。  **InferXmlSchema** は、**XmlReadMode** を **InferSchema** に設定した **ReadXml** \(データの読み込みとスキーマの推論\) と、読み取られるドキュメントにインライン スキーマが含まれていない場合の **ReadXmlSchema** の両方と同様の機能を備えています。  ただし **InferXmlSchema** には、スキーマを推論するときに無視する特定の XML 名前空間を指定できる追加機能を用意しています。  **InferXmlSchema** に必要な 2 つの引数は、XML ドキュメントの位置と、この操作によって無視される XML 名前空間の文字列配列です。XML ドキュメントの位置は、ファイル名、ストリーム、または **XmlReader** によって指定されます。  
+## <a name="inferxmlschema"></a>InferXmlSchema  
+ 指示することも、**データセット**を使用して XML ドキュメントからスキーマを推論、 **InferXmlSchema**のメソッド、**データセット**です。 **InferXmlSchema**両方と同じ機能**ReadXml**で、 **XmlReadMode**の**InferSchema** (データを読み込むし、スキーマを推論)、および**ReadXmlSchema**読み取られているドキュメントにインライン スキーマが含まれていない場合。 ただし、 **InferXmlSchema**を無視するように、スキーマを推論する際に特定の XML 名前空間を指定できる追加機能を提供します。 **InferXmlSchema**では 2 つの必要な引数: ファイル名、ストリームで指定された、XML ドキュメントの場所または**XmlReader**; と、操作によって無視される XML 名前空間の文字列配列。  
   
  たとえば、次のような XML があるとします。  
   
-```  
+```xml  
 <NewDataSet xmlns:od="urn:schemas-microsoft-com:officedata">  
 <Categories>  
   <CategoryID od:adotype="3">1</CategoryID>   
@@ -77,7 +83,7 @@ xmlStream.Close();
 </NewDataSet>  
 ```  
   
- 前述の XML ドキュメントの要素に対して指定されている属性により、**ReadXmlSchema** メソッドと、**XmlReadMode** が **InferSchema** に設定されている **ReadXml** メソッドは、いずれもドキュメントのすべての要素 \(**Categories**、**CategoryID**、**CategoryName**、**Description**、**Products**、**ProductID**、**ReorderLevel**、および **Discontinued**\) に対してテーブルを作成します。  \(詳細については、「[XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)」を参照してください\)。ただし、この作成方法よりも適切な方法としては、最初に **Categories** テーブルと **Products** テーブルだけを作成し、次に **Categories** テーブルの **CategoryID**、**CategoryName**、および **Description** 列を作成し、**Products** テーブルの **ProductID**、**ReorderLevel** および **Discontinued** 列を作成する方法があります。  推論されたスキーマが、XML 要素に指定されている属性を無視するようにするには、**InferXmlSchema** メソッドを使用して **officedata** の XML 名前空間を無視するように指定します。この例を次に示します。  
+ 上記の XML ドキュメント内の要素に指定された属性のため両方、 **ReadXmlSchema**メソッドおよび**ReadXml**メソッドを**XmlReadMode**の**InferSchema** 、ドキュメント内のすべての要素のテーブルの作成は:**カテゴリ**、 **CategoryID**、 **CategoryName**、**説明**、**製品**、 **ProductID**、 **ReorderLevel**、および**提供が中止されました**. (詳細については、次を参照してください[推論 DataSet リレーショナル構造の XML から](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)。)。適切な構造体のみを作成すること、ただし、**カテゴリ**と**製品**テーブルを作成し、 **CategoryID**、 **CategoryName**、および**説明**内の列、**カテゴリ**テーブル、および**ProductID**、 **ReorderLevel**、および**生産中止**内の列、**製品**テーブル。 を確保するため、推論されるスキーマが XML 要素で指定された属性を無視することを使用して、 **InferXmlSchema**メソッドの XML 名前空間を指定して**officedata**無視するように、のように、次の例です。  
   
 ```vb  
 Dim dataSet As DataSet = New DataSet  
@@ -89,10 +95,10 @@ DataSet dataSet = new DataSet();
 dataSet.InferXmlSchema("input_od.xml", new string[] "urn:schemas-microsoft-com:officedata");  
 ```  
   
-## 参照  
- [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)   
- [XML スキーマ \(XSD\) からの DataSet リレーショナル構造の派生](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)   
- [XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)   
- [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)   
- [DataSets、DataTables、および DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>関連項目  
+ [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [XML スキーマ (XSD) からの DataSet リレーショナル構造の派生](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ [XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
+ [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
+ [DataSet、DataTable、および DataView](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター](http://go.microsoft.com/fwlink/?LinkId=217917)

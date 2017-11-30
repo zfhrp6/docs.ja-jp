@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: ba7e082c-a7c8-431e-a342-f67734b660f6
+ms.openlocfilehash: 694201c1a2a2c373f62b0e0d8e3c1d8aa7e6e881
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6b164198f5fbbae5ebc6164fc281dd7de8172b70
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Visual Studio 2017 を使用した Windows での完全な .NET Core ソリューションの構築
 
 Visual Studio 2017 は、.NET Core アプリケーション開発用の機能をすべて備えた開発環境を提供します。 このドキュメントでは、再利用可能なライブラリ、サードパーティ製ライブラリのテストと使用を含む、一般的な .NET Core ソリューションをビルドするために必要な手順について説明します。 
@@ -29,13 +27,13 @@ Visual Studio 2017 は、.NET Core アプリケーション開発用の機能を
 
 ### <a name="writing-the-library"></a>ライブラリの作成
 
-1. Visual Studio で、**[ファイル]**、**[新規作成]**、**[プロジェクト]** の順に選択します。 **[新しいプロジェクト]** ダイアログで **[Visual C#]** ノードを展開し、**[.NET Core]** ノードを選択して **[クラス ライブラリ (.NET Standard)]** を選択します。 
+1. Visual Studio で、**[ファイル]**、**[新規作成]**、**[プロジェクト]** の順に選択します。 **新しいプロジェクト**ダイアログ ボックスで、展開、 **Visual c#**ノードを選択し、 **.NET 標準** ノードを選択し**クラス ライブラリ (.NET 標準)**. 
 
 2. プロジェクトの名前を "Library" に、ソリューションの名前を "Golden" に設定します。 **[ソリューションのディレクトリを作成]** はオンのままにします。 **[OK]** をクリックします。
 
 3. ソリューション エクスプローラーで **[依存関係]** ノードのコンテキスト メニューを開き、**[NuGet パッケージの管理]** を選択します。
 
-4. **[パッケージ ソース]** として "nuget.org" を選択し、**[参照]** タブを選択します。 **Newtonsoft.Json** を参照します。 **[インストール]** をクリックして、使用許諾契約に同意します。 これで、**[依存関係] の [NuGet]** にパッケージが表示され、自動的に復元されるようになります。
+4. **[パッケージ ソース]** として "nuget.org" を選択し、**[参照]** タブを選択します。**Newtonsoft.Json** を参照します。 **[インストール]** をクリックして、使用許諾契約に同意します。 これで、**[依存関係] の [NuGet]** にパッケージが表示され、自動的に復元されるようになります。
 
 5. ファイルの名前を `Class1.cs` から `Thing.cs` に変更します。 クラス名の変更をそのまま使用します。 メソッドの追加: `public int Get(int number) => Newtonsoft.Json.JsonConvert.DeserializeObject<int>($"{number}");`
 
@@ -81,4 +79,3 @@ Visual Studio 2017 は、.NET Core アプリケーション開発用の機能を
 9. F5 キーを押してアプリケーションを実行します。
 
    アプリケーションがエラーのない状態でビルドされ、ブレークポイントがヒットします。 また、アプリケーションが "The answer is 42." と出力することを確認します。
-

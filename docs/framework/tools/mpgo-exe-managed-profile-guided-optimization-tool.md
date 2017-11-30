@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - Mpgo.exe
 - training scenarios, generating profiles with
@@ -21,16 +15,15 @@ helpviewer_keywords:
 - Ngen.exe
 - Ngen.exe, profilers and native images
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
-caps.latest.revision: 31
+caps.latest.revision: "31"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: b6c95613cdc7ac656e8beafcf9a685e51eddf5a6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 81c68f718b0395b70f604ed9157daeaa84e9eefc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (マネージ プロファイル ガイド付き最適化ツール)
 マネージ プロファイル ガイド付き最適化ツール (Mpgo.exe) は、[ネイティブ イメージ ジェネレーター (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) によって作成されたネイティブ イメージ アセンブリを最適化するために一般的なエンド ユーザー シナリオを使用するコマンド ライン ツールです。 このツールによって、プロファイル データを生成するトレーニング シナリオを実行できます。 [ネイティブ イメージ ジェネレーター (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) は、このデータを使用して、生成されたネイティブ イメージ アプリケーション アセンブリを最適化します。 トレーニングのシナリオでは、アプリケーションで予期される使用について試行します。 Mpgo.exe は、Visual Studio Ultimate 2012 以降のバージョンで使用できます。 また、[!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)] から、[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリを最適化するために、Mpgo.exe を使用できます。  
@@ -141,8 +134,7 @@ mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyT
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)   
- [Visual Studio 用開発者コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)   
- [デスクトップ アプリケーションの起動時のパフォーマンスの向上](http://go.microsoft.com/fwlink/p/?LinkId=248943)   
+ [Ngen.exe (ネイティブ イメージ ジェネレーター)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)  
+ [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)  
+ [デスクトップ アプリケーションの起動パフォーマンスの向上](http://go.microsoft.com/fwlink/p/?LinkId=248943)  
  [.NET 4.5 のパフォーマンスの向上の概要](http://go.microsoft.com/fwlink/p/?LinkId=249131)
-

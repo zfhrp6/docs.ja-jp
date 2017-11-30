@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: a0fd860d-d6b6-4659-b325-8a6e6f5fa4a1
+ms.openlocfilehash: 390d08332113a50b363bdbb71921bafd7e33e87d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 2762cdc983465979a530192716c33de7044dd1ed
-ms.openlocfilehash: 7b51317b570fcabfe1847685a97c6deab32dcc5c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/04/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="porting-to-net-core---libraries"></a>.NET Core への移植 - ライブラリ
 
 この記事では、ライブラリ コードを .NET Core に移植し、クロスプラットフォームで実行されるようにする方法について説明します。
@@ -25,7 +23,8 @@ ms.lasthandoff: 08/04/2017
 
 この記事では、以下を前提とします。
 
-- Visual Studio 2017 以降を使用している。 それ以前のバージョンの Visual Studio では、.NET Core がサポートされていません。
+- Visual Studio 2017 以降を使用している。
+  - .NET core は Visual Studio の以前のバージョンでサポートされていません
 - [推奨の移植プロセス](index.md)を理解している。
 - [サード パーティの依存関係](third-party-deps.md)の問題が解決されている。
 
@@ -56,7 +55,7 @@ API またはテクノロジが現在実装されていないからといって�
 
 AppDomain はアプリを互いに分離します。 AppDomain ではランタイム サポートが必要で、通常は非常に高額です。 .NET Core には実装されていません。 将来この機能が追加される予定はありません。 コードの分離には、代わりの方法として、プロセスの分離やコンテナーの利用をお勧めします。 アセンブリの動的読み込みには、新しい <xref:System.Runtime.Loader.AssemblyLoadContext> クラスをお勧めします。
 
-.NET Framework からのコードの移行を簡単にするために、.NET Core の <xref:System.AppDomain> API サーフェスの一部を公開しています。 API のなかには、正常に機能するもの (<xref:System.AppDomain.UnhandledException?displayProperty=fullName> など)、処理を行わないメンバー (<xref:System.AppDomain.SetCachePath%2A> など)、<xref:System.PlatformNotSupportedException> をスローするもの (<xref:System.AppDomain.CreateDomain%2A> など) があります。 [dotnet/corefx GitHub リポジトリ](https://github.com/dotnet/corefx)の[ `System.AppDomain` 参照ソース](https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Extensions/src/System/AppDomain.cs)に照らして使用する種類を確認し、実装バージョンに合ったブランチを選択してください。
+.NET Framework からのコードの移行を簡単にするために、.NET Core の <xref:System.AppDomain> API サーフェスの一部を公開しています。 API のなかには、正常に機能するもの (<xref:System.AppDomain.UnhandledException?displayProperty=nameWithType> など)、処理を行わないメンバー (<xref:System.AppDomain.SetCachePath%2A> など)、<xref:System.PlatformNotSupportedException> をスローするもの (<xref:System.AppDomain.CreateDomain%2A> など) があります。 [dotnet/corefx GitHub リポジトリ](https://github.com/dotnet/corefx)の[ `System.AppDomain` 参照ソース](https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Extensions/src/System/AppDomain.cs)に照らして使用する種類を確認し、実装バージョンに合ったブランチを選択してください。
 
 ### <a name="remoting"></a>リモート処理
 
@@ -197,4 +196,3 @@ Visual Studio 2017 でライブラリを読み込み、次の手順を行うこ�
 1. 次のコード レイヤーを選択して移植し、前の手順を繰り返します。
 
 ライブラリのベースから開始してベースから外側に向かい、必要に応じて各レイヤーをテストする場合、移植は、問題が一度でコードの 1 レイヤーに分離される体系的なプロセスになります。
-

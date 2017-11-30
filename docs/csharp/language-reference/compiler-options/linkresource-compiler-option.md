@@ -1,14 +1,10 @@
 ---
 title: "-linkresource (C# コンパイラ オプション)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /linkresource
-dev_langs:
-- CSharp
+f1_keywords: /linkresource
 helpviewer_keywords:
 - /linkresource compiler option [C#]
 - linkres compiler option [C#]
@@ -17,29 +13,14 @@ helpviewer_keywords:
 - -linkresource compiler option [C#]
 - linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: d478c42141288cc3a1478ecf43f50c961a9d2246
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 022d6c1a53eab98fc033c902f903e7bc66e6da3f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="linkresource-c-compiler-options"></a>/linkresource (C# コンパイラ オプション)
 .NET Framework のリソースへのリンクを出力ファイルに作成します。 リソース ファイルが出力ファイルに追加されることはありません。 これに対し、[/resource](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) オプションはリソース ファイルを出力ファイルに埋め込みます。  
@@ -65,9 +46,9 @@ ms.lasthandoff: 07/28/2017
   
  **/linkresource** には、**/target:module** 以外のいずれかの [/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) オプションが必要です。  
   
- `filename` が [Resgen.exe](http://msdn.microsoft.com/library/8ef159de-b660-4bec-9213-c3fbc4d1c6f4) や開発環境などで作成された .NET Framework リソース ファイルである場合は、<xref:System.Resources> 名前空間のメンバーを使ってそのファイルにアクセスできます。 詳細については、「<xref:System.Resources.ResourceManager?displayProperty=fullName>」を参照してください。 それ以外のすべてのリソースについては、<xref:System.Reflection.Assembly> クラスの `GetManifestResource`* メソッドを使って、実行時にリソースにアクセスします。  
+ `filename` が [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) や開発環境などで作成された .NET Framework リソース ファイルである場合は、<xref:System.Resources> 名前空間のメンバーを使ってそのファイルにアクセスできます。 詳細については、「<xref:System.Resources.ResourceManager?displayProperty=nameWithType>」を参照してください。 他のすべてのリソースを使用して、`GetManifestResource`内のメソッド、<xref:System.Reflection.Assembly>実行時にリソースにアクセスするクラス。  
   
- `filename` で指定するファイルはどのような形式でもかまいません。 たとえば、ネイティブ DLL をアセンブリの一部にすることで、グローバル アセンブリ キャッシュにインストールして、アセンブリ内のマネージ コードからアクセスできるようにすることができます。 以下の例の 2 番目で、その方法を示します。 同じことをアセンブリ リンカーで行うことができます。 以下の例の 3 番目で、その方法を示します。 詳しくは、「[Al.exe (アセンブリ リンカー)](https://msdn.microsoft.com/library/c405shex)」および「[アセンブリとグローバル アセンブリ キャッシュの使用](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)」をご覧ください。  
+ `filename` で指定するファイルはどのような形式でもかまいません。 たとえば、ネイティブ DLL をアセンブリの一部にすることで、グローバル アセンブリ キャッシュにインストールして、アセンブリ内のマネージ コードからアクセスできるようにすることができます。 以下の例の 2 番目で、その方法を示します。 同じことをアセンブリ リンカーで行うことができます。 以下の例の 3 番目で、その方法を示します。 詳しくは、「[Al.exe (アセンブリ リンカー)](../../../framework/tools/al-exe-assembly-linker.md)」および「[アセンブリとグローバル アセンブリ キャッシュの使用](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)」をご覧ください。  
   
  **/linkres** は **/linkresource** の省略形式です。  
   
@@ -98,8 +79,7 @@ gacutil -i A.dll
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [Al.exe (アセンブリ リンカー)](https://msdn.microsoft.com/library/c405shex)   
- [アセンブリとグローバル アセンブリ キャッシュの使用](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)   
+ [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
+ [Al.exe (アセンブリ リンカー)](../../../framework/tools/al-exe-assembly-linker.md)  
+ [アセンブリとグローバル アセンブリ キャッシュの使用](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
-

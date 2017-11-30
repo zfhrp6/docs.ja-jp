@@ -12,16 +12,16 @@ caps.latest.revision: "7"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 5dd488a01e00af0661ee7ee110c79d2c56a0b777
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: aacc20bf483877ac501fd8b35c04f6e3f9311afb
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="using-the-invokemethod-activity"></a>InvokeMethod アクティビティの使用
 このサンプルを使用する方法を示します、 <!--zz <xref:System.Activities.Statements.InvokeMethod%601> --> [ <code>System.Activities.Statements.InvokeMethod\`1</code> ](https://msdn.microsoft.com/library/dd647677.aspx)パブリック クラス内のパブリック メソッドを呼び出すアクティビティ。 <!--zz <xref:System.Activities.Statements.InvokeMethod%601> --> [ <code>System.Activities.Statements.InvokeMethod\`1</code> ](https://msdn.microsoft.com/library/dd647677.aspx)アクティビティにより、ワークフローをオブジェクトに対してメソッドを呼び出して、パラメーターを渡す、戻り値を取得、ジェネリック メソッドの型を指定し、メソッドは同期型かどうかを指定または非同期です。 
   
- 非ジェネリック バージョンがある、<xref:System.Activities.Statements.InvokeMethod>アクティビティに戻り値が設定されている、<xref:System.Activities.Statements.InvokeMethod.Result%2A>プロパティと、ジェネリック バージョンの<!--zz <xref:System.Activities.Statements.InvokeMethod%601> --> [ <code>System.Activities.Statements.InvokeMethod\`1</code> ](https://msdn.microsoft.com/library/dd647677.aspx)アクティビティの戻り値が返されますを介して、 <!--zz <xref:System.Activities.Statements.InvokeMethod.Result%601.Result%2A> --> [ <code>System.Activities.Statements.InvokeMethod\`1.Result</code> ](https://msdn.microsoft.com/library/dd987724.aspx)型のプロパティ`TResult`です。  
+非ジェネリック バージョンがある、<xref:System.Activities.Statements.InvokeMethod>アクティビティに戻り値が設定されている、<xref:System.Activities.Statements.InvokeMethod.Result%2A>プロパティと、ジェネリック バージョンの<!--zz <xref:System.Activities.Statements.InvokeMethod%601> --> [ <code>System.Activities.Statements.InvokeMethod\`1</code> ](https://msdn.microsoft.com/library/dd647677.aspx)アクティビティの戻り値が返されますを介して、 <!--zz <xref:System.Activities.Statements.InvokeMethod.Result%601.Result%2A> --> [ <code>System.Activities.Statements.InvokeMethod\`1.Result</code> ](https://msdn.microsoft.com/library/dd987724.aspx)型のプロパティ`TResult`です。 
   
  このサンプルでは、さまざまな型のメソッドの呼び出し方法を示します。 次に、このサンプルに示されているメソッドの型の詳細を示します。  
   
@@ -62,6 +62,4 @@ ms.lasthandoff: 10/18/2017
 >   
 >  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\InvokeMethod`  
-  
-## <a name="see-also"></a>関連項目
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\InvokeMethod`

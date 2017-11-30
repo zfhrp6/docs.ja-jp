@@ -1,40 +1,45 @@
 ---
-title: "PLINQ Data Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "PLINQ queries, sample data"
+title: "PLINQ データのサンプル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: PLINQ queries, sample data
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: f0e94fec1d1390c68808c06a8ff23f52556c6f74
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# PLINQ Data Sample
-このサンプルには、.csv 形式のデータ例、および Customers、Products、Orders および Order Details のメモリ内コレクションに変換するメソッドが含まれています。  PLINQ をさらに試す場合は、その他のトピックのコード例をこのトピックのコードに貼り付けて、`Main` メソッドからこれを呼び出すことができます。  また、独自の PLINQ クエリでこのデータを使用することもできます。  
+# <a name="plinq-data-sample"></a>PLINQ データのサンプル
+このサンプルには、顧客、製品、Orders、Order Details のメモリ内コレクションに変換する方法と共に、.csv 形式でデータ例にはが含まれています。 PLINQ でさらに試すには、その他のトピックのコード例をこのトピックのコードに貼り付けるし、呼び出すことからすることができます、`Main`メソッドです。 PLINQ クエリでこのデータを使用することもできます。  
   
- このデータは、Northwind データベースのサブセットを表します。  50 の顧客レコードが含まれていますが、すべてのフィールドを網羅しているわけではありません。  Orders の行のサブセットおよび Customer ごとに対応する Order\_Detail データが含まれています。  すべての製品が含まれます。  
+ データは、Northwind データベースのサブセットを表します。 50 台の顧客レコードは、含まれる、すべてではなくフィールドです。 注文とすべての顧客に対応する Order_Detail データから行のサブセットが含まれます。 すべての製品が含まれます。  
   
 > [!NOTE]
->  データセットの大きさは、基本の `where` 句および `select` 句だけを含むクエリに対して PLINQ が LINQ to Objects より速いことを示すには十分ではありません。  このような小さいデータセットで速度が向上するのを確認するには、データセット内の各要素で負荷の大きい操作を含むクエリを使用します。  
+>  データ セットが、PLINQ はより高速 LINQ to Objects を含むクエリの基本を示すために十分な大きさ`where`と`select`句。 このような小さいデータセットで速度が向上を確認するには、データ セット内のすべての要素に対する計算コストが高い操作を含むクエリを使用します。  
   
-### このサンプルをセットアップするには  
+### <a name="to-set-up-this-sample"></a>このサンプルをセットアップするには  
   
-1.  Visual Basic または Visual C\# のコンソール アプリケーション プロジェクトを作成します。  
+1.  Visual Basic または Visual c# コンソール アプリケーション プロジェクトを作成します。  
   
-2.  Module1.vb または Program.cs のコンテンツを、次の手順に従ったコードを使用して置き換えます。  
+2.  Module1.vb または Program.cs の内容を交換して、これらの手順を次のコードを使用してください。  
   
-3.  **\[プロジェクト\]** メニューの **\[新しい項目の追加\]** をクリックします。  **\[テキスト ファイル\]** をクリックし、**\[OK\]** をクリックします。  このトピック内のデータをコピーし、新しいテキスト ファイルに貼り付けます。  **\[ファイル\]** メニューの **\[上書き保存\]** をクリックして、ファイル名に「Plinqdata.csv」と入力し、ソース コード ファイルが格納されているフォルダーに保存します。  
+3.  **[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。 選択**テキスト ファイル** をクリックし、 **OK**です。 このトピックのデータをコピーし、新しいテキスト ファイルに貼り付けます。 **ファイル** メニューのをクリックして**保存**ファイル「Plinqdata.csv、名前、および、それをソース コード ファイルを含むフォルダーに保存します。  
   
-4.  F5 キーを押して、プロジェクトが正常にビルドされ、実行されることを検証します。  次の出力がコンソール ウィンドウに表示されます。  
+4.  F5 キーを押して、プロジェクトがビルドされ、正常に実行されることを確認してください。 次の出力がコンソール ウィンドウに表示されます。  
   
     ```  
     Customer count: 50  
@@ -47,7 +52,7 @@ caps.handback.revision: 9
  [!code-csharp[PLINQ#50](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#50)]
  [!code-vb[PLINQ#50](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#50)]  
   
-## Data  
+## <a name="data"></a>データ  
   
 ```  
 CUSTOMERS  
@@ -861,8 +866,7 @@ PRODUCTS
 76,Lakkalikööri,18.0000  
 77,Original Frankfurter grüne Soße,13.0000  
 END PRODUCTS  
-  
 ```  
   
-## 参照  
- [Parallel LINQ \(PLINQ\)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+## <a name="see-also"></a>関連項目  
+ [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

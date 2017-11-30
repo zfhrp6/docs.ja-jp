@@ -1,60 +1,62 @@
 ---
-title: "Parallel LINQ (PLINQ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "PLINQ, overview"
+title: Parallel LINQ (PLINQ)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: PLINQ, overview
 ms.assetid: 3d4d0cd3-bde4-490b-99e7-f4e41be96455
-caps.latest.revision: 17
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "17"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: c0028d3d8c30bbc7f0592a4462ca1eeb80c8b1f9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Parallel LINQ (PLINQ)
-Parallel LINQ \(PLINQ\) は、LINQ to Objects の並列実装です。  PLINQ では LINQ 標準クエリ演算子の完全なセットを T:System.Linq 名前空間の拡張メソッドとして実装します。また、並列操作用の追加の演算子も備えています。  PLINQ では並列プログラミングの機能が強化され、LINQ 構文が簡略化され読みやすくなっています。  タスク並列ライブラリを対象としたコードと同様に、PLINQ クエリでは、ホスト コンピューターの性能に基づいて同時実行の程度が調整されます。  
+# <a name="parallel-linq-plinq"></a>Parallel LINQ (PLINQ)
+Parallel LINQ (PLINQ) は、LINQ to Objects の並列実装です。 PLINQ LINQ 標準クエリ演算子の完全なセットを実装するための拡張メソッドとして、<xref:System.Linq>名前空間での並列操作の追加の演算子を持つとします。 PLINQ は、LINQ 構文の単純さと読みやすさに加え、並列プログラミングのパワーを兼ね備えています。 タスク並列ライブラリを対象とするコードと同じように、PLINQ クエリの同時実行の程度は、ホスト コンピューターの能力に基づいて調整されます。  
   
- 多くの場合、PLINQ により、ホスト コンピューター上で使用できるコアをより効率的に使用することで、LINQ to Objects クエリの処理速度が大幅に向上します。  このようにパフォーマンスが向上することで、デスクトップ上の演算性能が高まります。  
+ 多くのシナリオで、PLINQ は、ホスト コンピューターで使用可能なすべてのコアをより効率的に使用することで、LINQ to Objects クエリの速度を大幅に上昇させることができます。 このパフォーマンスの向上によって、デスクトップに高パフォーマンスの演算能力がもたらされます。  
   
-## このセクションの内容  
- [Introduction to PLINQ](../../../docs/standard/parallel-programming/introduction-to-plinq.md)  
+## <a name="in-this-section"></a>このセクションの内容  
+ [PLINQ の概要](../../../docs/standard/parallel-programming/introduction-to-plinq.md)  
   
- [Understanding Speedup in PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)  
+ [PLINQ での高速化について](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)  
   
- [Order Preservation in PLINQ](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md)  
+ [PLINQ における順序維持](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md)  
   
- [Merge Options in PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md)  
+ [PLINQ のマージ オプション](../../../docs/standard/parallel-programming/merge-options-in-plinq.md)  
   
- [How to: Create and Execute a Simple PLINQ Query](../../../docs/standard/parallel-programming/how-to-create-and-execute-a-simple-plinq-query.md)  
+ [方法: 単純な PLINQ クエリを作成して実行する](../../../docs/standard/parallel-programming/how-to-create-and-execute-a-simple-plinq-query.md)  
   
- [How to: Control Ordering in a PLINQ Query](../../../docs/standard/parallel-programming/how-to-control-ordering-in-a-plinq-query.md)  
+ [方法: PLINQ クエリの順序を制御する](../../../docs/standard/parallel-programming/how-to-control-ordering-in-a-plinq-query.md)  
   
- [How to: Combine Parallel and Sequential LINQ Queries](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md)  
+ [方法: 並列および順次の LINQ クエリを連結する](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md)  
   
- [How to: Handle Exceptions in a PLINQ Query](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md)  
+ [方法: PLINQ クエリの例外を処理する](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md)  
   
- [How to: Cancel a PLINQ Query](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md)  
+ [方法: PLINQ クエリを取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md)  
   
- [How to: Write a Custom PLINQ Aggregate Function](../../../docs/standard/parallel-programming/how-to-write-a-custom-plinq-aggregate-function.md)  
+ [方法: カスタムの PLINQ 集約関数を記述する](../../../docs/standard/parallel-programming/how-to-write-a-custom-plinq-aggregate-function.md)  
   
- [How to: Specify the Execution Mode in PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md)  
+ [方法: PLINQ の実行モードを指定する](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md)  
   
- [How to: Specify Merge Options in PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)  
+ [方法: PLINQ のマージ オプションを指定する](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)  
   
- [How to: Iterate File Directories with PLINQ](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-plinq.md)  
+ [方法: PLINQ を使用してファイル ディレクトリを反復処理する](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-plinq.md)  
   
- [How to: Measure PLINQ Query Performance](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md)  
+ [方法: PLINQ クエリのパフォーマンスを測定する](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md)  
   
- [PLINQ Data Sample](../../../docs/standard/parallel-programming/plinq-data-sample.md)  
+ [PLINQ データのサンプル](../../../docs/standard/parallel-programming/plinq-data-sample.md)  
   
-## 参照  
- <xref:System.Linq.ParallelEnumerable>   
- [Parallel Programming](../../../docs/standard/parallel-programming/index.md)   
- [LINQ \(Language\-Integrated Query\)](../Topic/LINQ%20\(Language-Integrated%20Query\).md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Linq.ParallelEnumerable>  
+ [並列プログラミング](../../../docs/standard/parallel-programming/index.md)  
+ [統合言語クエリ (LINQ)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)

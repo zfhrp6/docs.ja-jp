@@ -10,14 +10,12 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 6950d25a-bba1-4744-b7c7-a3cc90438c55
+ms.openlocfilehash: 1ffacd52df89a955ebfa72dc58836211c7a58640
+ms.sourcegitcommit: 5fb6646b5ee3769ffb214e672041833ea4ceeb26
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: e5d2d5d7074678383243e687d4b469606007e585
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/08/2017
 ---
-
 # <a name="properties"></a>プロパティ
 
 C# のプロパティは、非常に優れた機能です。 開発者は C# で定義されている構文を使用して、設計の意図を正確に表すコードを記述できます。
@@ -151,7 +149,7 @@ public class Person
 
 これで、`FirstName` プロパティにはどのコードからもアクセスできる一方で、値の割り当ては `Person` クラス内の他のコードからしかできなくなります。
 
-制限を設定するアクセス修飾子を set アクセサーと get アクセサーのどちらか 1 つに追加することもできます。 個々のアクセサーには、プロパティ定義のアクセス修飾子よりも制限が強いアクセス修飾子を設定する必要があります。 上記は、`FirstName` プロパティが `public` ですが set アクセサーが `private` であるため、有効です。 `public` なアクセサーを持つ `private` なプロパティを宣言することはできません。 プロパティの宣言では、`protected`、`internal`、`protected internal`、`private` を宣言することもできます。   
+制限を設定するアクセス修飾子を set アクセサーと get アクセサーのどちらか 1 つに追加することもできます。 個々のアクセサーには、プロパティ定義のアクセス修飾子よりも制限が強いアクセス修飾子を設定する必要があります。 上記は、`FirstName` プロパティが `public` ですが set アクセサーが `private` であるため、有効です。 `public` なアクセサーを持つ `private` なプロパティを宣言することはできません。 プロパティの宣言を宣言することも`protected`、 `internal`、 `protected internal`、`private protected`またはでも`private`です。   
 
 `get` アクセサーに制限の高い修飾子を設定することも有効です。 たとえば、`public` なプロパティで、`get` アクセサーを `private` に制限できます。 ただし、このようなシナリオは実際にはほとんどありません。
 
@@ -277,7 +275,7 @@ public class Person
 ```
 
 上の最終版では、必要になった場合にのみ `FullName` プロパティが評価されます。
-以前に計算されたものが有効であれば、それが使用されます。 状態が変化したことで、以前に計算されたバージョンが無効になると、再計算が行われます。 このクラスを使用するにあたって、開発者は実装の詳細を知っている必要はありません。 内部で変化があっても Person オブジェクトの使用には影響しません。 これが、プロパティを使用してオブジェクトのデータ メンバーを公開する重要な利点です。
+以前に計算されたものが有効であれば、それが使用されます。 状態が変化したことで、以前に計算されたバージョンが無効になると、再計算が行われます。 このクラスを使用するにあたって、開発者は実装の詳細を知っている必要はありません。 内部で変化があっても Person オブジェクトの使用には影響しません。 これが、プロパティを使用してオブジェクトのデータ メンバーを公開するする重要な利点です。
  
 ### <a name="inotifypropertychanged"></a>INotifyPropertyChanged
 
@@ -317,4 +315,3 @@ public class Person : INotifyPropertyChanged
 
 プロパティは、クラスまたはオブジェクトに含まれた一種のスマート フィールドです。 オブジェクトの外部からは、オブジェクト内にあるフィールドのように見えます。 一方、プロパティは、C# の機能をどれでも自由に使用して実装できます。
 検証、各種アクセシビリティ、遅延評価など、目的のシナリオで必要となる要素はすべて提供できます。
-

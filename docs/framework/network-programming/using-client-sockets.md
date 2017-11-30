@@ -8,10 +8,8 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 helpviewer_keywords:
 - application protocols, sockets
 - sending data, sockets
@@ -24,16 +22,15 @@ helpviewer_keywords:
 - sockets, client sockets
 - client sockets
 ms.assetid: 81de9f59-8177-4d98-b25d-43fc32a98383
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6d18e1f2575481522e54c6c50256418ac026dfb7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: 3df78be14da96d0bb7b8875a5c7532c003d1dbc8
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-client-sockets"></a>クライアント ソケットの使用
 <xref:System.Net.Sockets.Socket> を使用して会話を開始するには、まずアプリケーションとリモート デバイス間にデータ パイプを作成する必要があります。 他のネットワーク アドレス ファミリとプロトコルもありますが、この例では、リモート サービスとの TCP/IP 接続を作成する方法を説明します。  
@@ -90,8 +87,7 @@ try {
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)   
- [非同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)   
- [方法: ソケットを作成する](../../../docs/framework/network-programming/how-to-create-a-socket.md)   
+ [同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)  
+ [非同期クライアント ソケットの使用](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)  
+ [方法: ソケットを作成する](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
  [ソケット](../../../docs/framework/network-programming/sockets.md)
-

@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: 2bb94b3f1f4966ed44b2a5d4f14dfeee29707059
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e626eeb1f3de2716e1ffe4fcbec1c16558e5bf0e
+ms.sourcegitcommit: a3ba258f7a8cab5c6d19a3743dd95e904ecebc44
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/27/2017
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>タプルとその他の型の分解 #
 
@@ -34,7 +34,7 @@ C# には、タプルの分解を組み込みでサポートしているとい�
 var (name, address, city, zip) = contact.GetAddressInfo();
 ```
 
-タプルの分解には 2 つの方法があります。
+これには組を分解する 3 つの方法があります。
 
 - かっこ内の各フィールドの型を明示的に宣言することができます。 次の例では、この方法を使用して、`QueryCityData` メソッドから返される 3 タプルを分解します。
 
@@ -50,9 +50,15 @@ var (name, address, city, zip) = contact.GetAddressInfo();
 
     ただし、この処理は煩雑なため推奨されません。
 
+- 最後に、既に宣言されている変数に組を分解する可能性があります。
+
+    [!code-csharp[Deconstruction-Declared](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-tuple5.cs#1)]
+
 タプル内のフィールドすべての型が同じでも、かっこ外では指定できない型があることに注意してください。 この場合、コンパイル エラー CS8136 "分解 `変数 (...)` フォームは特定の種類の '変数' を許可しません" が生成されます。
 
 また、タプルの各要素も変数に割り当てる必要があります。 いずれかの要素を省略すると、コンパイラでエラー CS8132 " 'x' 要素のタプルを 'y' 変数に分解することはできません" が生成されます。
+
+宣言や、解体の左側にある既存の変数に代入を混在させることはできないことに注意してください。 コンパイラ エラー「、解体は宣言と左側-hand 側で式を混在できません」CS8184 を生成します。 ときに、メンバーは、新しく宣言されていると、既存の変数を含めます。
 
 ## <a name="deconstructing-tuple-elements-with-discards"></a>破棄によるタプル要素の分解
 

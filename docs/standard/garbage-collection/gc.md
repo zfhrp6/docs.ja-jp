@@ -1,25 +1,24 @@
 ---
 title: "自動メモリ管理とガベージ コレクション"
-description: "自動メモリ管理とガベージ コレクション"
+description: "自動メモリ管理、共通言語ランタイムがマネージ実行時に提供するサービスのいずれかを説明します。"
 keywords: .NET, .NET Core
-author: stevehoag
-ms.author: shoag
+author: dotnet-bot
+ms.author: dotnetcontent
 ms.date: 07/22/2016
 ms.topic: article
 ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: d095b0b6-2454-4e23-80b4-c9e8a447116c
-translationtype: Human Translation
-ms.sourcegitcommit: 90fe68f7f3c4b46502b5d3770b1a2d57c6af748a
-ms.openlocfilehash: 36423ac3248b14a9bb95611d5997d06b927fa88e
-ms.lasthandoff: 03/02/2017
-
+ms.openlocfilehash: 30bcf08ebb4e05706d5b25e2f805474dd1ee428e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="automatic-memory-management-and-garbage-collection"></a>自動メモリ管理とガベージ コレクション
 
-自動メモリ管理は、マネージ実行中に共通言語ランタイムが提供するサービスの&1; つです。 共通言語ランタイムのガベージ コレクターは、アプリケーションが使用するメモリの割り当ておよび解放を管理します。 したがって、開発者がマネージ アプリケーションを開発するときに、メモリ管理タスクを実行するためのコードを記述する必要はありません。 自動メモリ管理により、オブジェクトを解放し忘れたためにメモリ リークが発生する、既に解放されているオブジェクトのメモリにアクセスしようとするなどの一般的な問題を回避できます。 ここでは、ガベージ コレクターによるメモリの割り当て方法および解放方法について説明します。
+自動メモリ管理は、マネージ実行中に共通言語ランタイムが提供するサービスの 1 つです。 共通言語ランタイムのガベージ コレクターは、アプリケーションが使用するメモリの割り当ておよび解放を管理します。 したがって、開発者がマネージ アプリケーションを開発するときに、メモリ管理タスクを実行するためのコードを記述する必要はありません。 自動メモリ管理により、オブジェクトを解放し忘れたためにメモリ リークが発生する、既に解放されているオブジェクトのメモリにアクセスしようとするなどの一般的な問題を回避できます。 ここでは、ガベージ コレクターによるメモリの割り当て方法および解放方法について説明します。
 
 ## <a name="allocating-memory"></a>メモリの割り当て
 
@@ -56,5 +55,4 @@ ms.lasthandoff: 03/02/2017
 [System.GC](xref:System.GC)
 
 [.NET のガベージ コレクション](index.md)
-
 

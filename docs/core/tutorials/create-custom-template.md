@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 519b910a-6efe-4394-9b81-0546aa3e7462
+ms.openlocfilehash: c3955951c0367e1933342172c1bc1888fb58f60c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: a7af88d8d7b19e201c0f7829915e817daa61c838
-ms.openlocfilehash: 243c924826a54907840b337a91cf1e5d19cff985
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/08/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="create-a-custom-template-for-dotnet-new"></a>dotnet new のカスタム テンプレートを作成する
 
 このチュートリアルでは、次の方法を紹介します。
@@ -41,7 +39,7 @@ ms.lasthandoff: 09/08/2017
 
 ## <a name="create-a-template-from-a-project"></a>プロジェクトからテンプレートを作成する
 
-コンパイルして実行できることが確認されている既存のプロジェクトを利用するか、ハード ドライブのフォルダーで新しいコンソール アプリ プロジェクトを作成します。 このチュートリアルでは、ユーザーのプロファイルの *Documents/Templates* に保存されている *GarciaSoftware.ConsoleTemplate.CSharp* をプロジェクト フォルダーとして想定しています。 チュートリアルのプロジェクト テンプレート名は、*\<会社名>.\<テンプレートの種類>.\<プログラミング言語>* という形式になりますが、プロジェクトとテンプレートには自由に名前を付けることができます。
+使用することを確認する既存のプロジェクトは、コンパイルし実行、またはハード ドライブ上のフォルダーに新しいコンソール アプリケーション プロジェクトを作成します。 このチュートリアルでは、ユーザーのプロファイルの *Documents/Templates* に保存されている *GarciaSoftware.ConsoleTemplate.CSharp* をプロジェクト フォルダーとして想定しています。 チュートリアルのプロジェクト テンプレート名は、*\<会社名>.\<テンプレートの種類>.\<プログラミング言語>* という形式になりますが、プロジェクトとテンプレートには自由に名前を付けることができます。
 
 1. *.template.config* という名前のプロジェクトのルートにフォルダーを追加します。
 1. *.template.config* フォルダー内で、テンプレートを構成する *template.json* ファイルを作成します。 *template.json* ファイルの詳細情報とメンバー定義については、「[dotnet new のカスタム テンプレート](../tools/custom-templates.md#templatejson)」トピックと JSON Schema Store の [*template.json*](http://json.schemastore.org/template) スキーマを参照してください。
@@ -219,4 +217,3 @@ dotnet new -u C:/Users/<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate
 [dotnet/dotnet-template-samples GitHub リポジトリ](https://github.com/dotnet/dotnet-template-samples)  
 [dotnet new の独自のテンプレートを作成する方法](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/)  
 [JSON Schema Store の *template.json* スキーマ](http://json.schemastore.org/template)  
-

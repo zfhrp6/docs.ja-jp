@@ -1,136 +1,138 @@
 ---
-title: "バインドのマークアップ拡張機能 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Binding"
-helpviewer_keywords: 
-  - "バインディングのマークアップ拡張機能"
-  - "XAML, バインディングのマークアップ拡張機能"
+title: "バインドのマークアップ拡張機能"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: Binding
+helpviewer_keywords:
+- Binding markup extensions [WPF]
+- XAML [WPF], Binding markup extension
 ms.assetid: 83d6e2a4-1b0c-4fc8-bd96-b5e98800ab63
-caps.latest.revision: 23
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7d2bbca799e1eda1abae3d199dd71e004b17c4c9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# バインドのマークアップ拡張機能
-プロパティ値を、データ バインドされた値として指定できるようにします。中間の式オブジェクトを作成し、実行時に要素とそのバインディングに適用されるデータ コンテキストを解釈します。  
+# <a name="binding-markup-extension"></a>バインドのマークアップ拡張機能
+データ バインドされた値、中間式オブジェクトを作成して、要素と実行時にバインディングに適用されるデータ コンテキストを解釈するプロパティの値を延期します。  
   
-## Binding 式の使用方法  
+## <a name="binding-expression-usage"></a>バインディング式の使用方法  
   
 ```  
-<object property="{Binding}" .../>  
+<object property="{Binding}" .../>  
 -or-  
-<object property="{Binding  bindProp1=value1[, bindPropN=valueN]*}" ...  
+<object property="{Binding  bindProp1=value1[, bindPropN=valueN]*}" ...  
 />  
 -or-  
-<object property="{Binding path}" .../>  
+<object property="{Binding path}" .../>  
 -or  
-<object property="{Binding path[, bindPropN=valueN]*}" .../>  
+<object property="{Binding path[, bindPropN=valueN]*}" .../>  
 ```  
   
-## 構文についてのメモ  
- これらの構文の `[]` と `*` は、リテラルではありません。  0 個以上の *bindProp*`=`*value* ペアを使用できることを示す表記法の一部です。先行する *bindProp*`=`*value* ペアとの区切り記号には `,` が使用されます。  
+## <a name="syntax-notes"></a>構文のメモ  
+ これらの構文、`[]`と`*`リテラルではありません。 示す表記の一部である 0 個以上*含む*`=`*値*のペアを使用すると、`,`それらと前の間の区切り記号*含む* `=`*値*ペア。  
   
- 「バインディング拡張で設定できるバインディング プロパティ」に示すプロパティはいずれも、<xref:System.Windows.Data.Binding> オブジェクト要素の属性を使用して設定することもできます。  ただしそれは、実際には <xref:System.Windows.Data.Binding> のマークアップ拡張機能の使用方法ではなく、CLR <xref:System.Windows.Data.Binding> クラスのプロパティを設定する属性の一般的な XAML 処理にすぎません。  つまり、`<Binding` *bindProp1*`="`*value1*`"[` *bindPropN*`="`*valueN*`"]*/>` は、`Binding` 式の使用方法ではなく、<xref:System.Windows.Data.Binding> オブジェクト要素の属性を使用した同等の構文です。  <xref:System.Windows.Data.Binding> の特定のプロパティの XAML 属性の使用方法の詳細については、.NET Framework クラス ライブラリで、<xref:System.Windows.Data.Binding> の該当するプロパティの「XAML 属性の使用方法」を参照してください。  
+ 「バインド プロパティことができますされる設定と、バインド拡張機能」セクションに示すプロパティのいずれかの代わりに設定できるの属性を使用して、<xref:System.Windows.Data.Binding>オブジェクト要素。 ただし、外にある実際にマークアップ拡張機能の使用の<xref:System.Windows.Data.Binding>、一般的な CLR のプロパティを設定する属性の XAML 処理だけである<xref:System.Windows.Data.Binding>クラスです。 つまり、 `<Binding` *bindProp1*`="`*value1* `"[` *bindPropN*`="`*の値*`"]*/>`の属性と等価の構文は、<xref:System.Windows.Data.Binding>オブジェクトの要素の使用方法の代わりに、`Binding`式の使用。 特定のプロパティの XAML 属性の使用方法について学習する<xref:System.Windows.Data.Binding>の関連するプロパティの「XAML 属性の使用」を参照してください<xref:System.Windows.Data.Binding>.NET Framework クラス ライブラリです。  
   
-## XAML 値  
+## <a name="xaml-values"></a>XAML 値  
   
 |||  
 |-|-|  
-|`bindProp1, bindPropN`|設定対象の <xref:System.Windows.Data.Binding> プロパティまたは <xref:System.Windows.Data.BindingBase> プロパティの名前。  <xref:System.Windows.Data.Binding> のすべてのプロパティを `Binding` 拡張を使用して設定できるとは限りません。また、プロパティによっては、マークアップ拡張機能をさらに入れ子にしなければ `Binding` 式の中では設定できません。  「バインディング拡張で設定できるバインディング プロパティ」を参照してください。|  
-|`value1, valueN`|プロパティに設定する値。  属性値の処理は、最終的には、設定される特定の <xref:System.Windows.Data.Binding> プロパティの型とロジックによって決まります。|  
-|`path`|暗黙的な <xref:System.Windows.Data.Binding.Path%2A?displayProperty=fullName> プロパティを設定するパス文字列。  [PropertyPath の XAML 構文](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md) も参照してください。|  
+|`bindProp1, bindPropN`|名前、<xref:System.Windows.Data.Binding>または<xref:System.Windows.Data.BindingBase>プロパティを設定します。 すべて<xref:System.Windows.Data.Binding>プロパティに設定することができます、`Binding`拡張機能、およびいくつかのプロパティは内で設定可能な`Binding`さらを使用してのみ式には、マークアップ拡張機能が入れ子になった。 参照してください「バインド プロパティことでく設定で、バインド拡張機能」セクションです。|  
+|`value1, valueN`|プロパティを設定する値。 属性の値の処理は最終的には、型と、特定のロジックに固有<xref:System.Windows.Data.Binding>プロパティが設定されています。|  
+|`path`|パスを設定する文字列、暗黙的な<xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>プロパティです。 関連項目[PropertyPath XAML 構文](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)です。|  
   
-## 非修飾の {Binding}  
- 「Binding 式の使用方法」に示した `{Binding}` という使用方法では、既定値 \(`null` の初期値 <xref:System.Windows.Data.Binding.Path%2A?displayProperty=fullName> など\) を使用して <xref:System.Windows.Data.Binding> オブジェクトが作成されます。  それでも、さまざまなシナリオで役に立ちます。作成される <xref:System.Windows.Data.Binding> は、実行時のデータ コンテキストで設定される主要なデータ バインディング プロパティ \(<xref:System.Windows.Data.Binding.Path%2A?displayProperty=fullName> や <xref:System.Windows.Data.Binding.Source%2A?displayProperty=fullName> など\) に依存する可能性があるためです。  データ コンテキストの概念の詳細については、「[データ バインディング](../../../../docs/framework/wpf/data/data-binding-wpf.md)」を参照してください。  
+## <a name="unqualified-binding"></a>非修飾 {バインディング}  
+ `{Binding}` 「バインド式の使用」で表示される使用量を作成、<xref:System.Windows.Data.Binding>初期が含まれている既定値を持つオブジェクト<xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>の`null`します。 これは、多くのシナリオにも便利ですので、作成した<xref:System.Windows.Data.Binding>など主要なデータ バインディングのプロパティに依存する可能性があります<xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>と<xref:System.Windows.Data.Binding.Source%2A?displayProperty=nameWithType>実行時のデータ コンテキストに設定されています。 データ コンテキストの概念の詳細については、次を参照してください。[データ バインド](../../../../docs/framework/wpf/data/data-binding-wpf.md)です。  
   
-## 暗黙のパス  
- `Binding` マークアップ拡張機能では、<xref:System.Windows.Data.Binding.Path%2A?displayProperty=fullName> を概念的な "既定のプロパティ" として使用します。そのため、`Path=` を式で指定する必要はありません。  暗黙的なパスを含む `Binding` 式を指定する場合は、その暗黙的なパスを式で最初に \(<xref:System.Windows.Data.Binding> プロパティを名前で指定する他の `bindProp`\=`value` ペアより先に\) 指定する必要があります   \(例: `{Binding PathString}` \(`PathString` は、マークアップ拡張機能の使用方法によって作成される <xref:System.Windows.Data.Binding> の <xref:System.Windows.Data.Binding.Path%2A?displayProperty=fullName> の値に評価される文字列\)\)。  暗黙のパスの後に、他の名前付きプロパティをコンマで区切って追加することもできます。たとえば、`{Binding LastName, Mode=TwoWay}` のように指定します。  
+## <a name="implicit-path"></a>暗黙のパス  
+ `Binding`マークアップ拡張機能の使用<xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>、概念として「既定のプロパティ」ここで、`Path=`式に出現する必要はありません。 指定した場合、`Binding`暗黙的なパスを持つ式は、暗黙的なパスは、式では、前に、他の最初で表示する必要があります`bindProp` = `value`場所のペアを<xref:System.Windows.Data.Binding>プロパティは名前によって指定します。 例:`{Binding PathString}`ここで、`PathString`の値に評価される文字列は、<xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>で、<xref:System.Windows.Data.Binding>マークアップ拡張機能を使用して作成します。 たとえば、コンマ区切り記号の後の他の名前付きプロパティの暗黙のパスを追加できます`{Binding LastName, Mode=TwoWay}`です。  
   
-## バインディング拡張で設定できるバインディング プロパティ  
- ここに示す構文では、`bindProp`\=`value` という一般的な形式を使用します。`Binding` マークアップ拡張機能\/式の構文を使用して設定可能な、<xref:System.Windows.Data.BindingBase> や <xref:System.Windows.Data.Binding> の読み書き可能なプロパティは多数あるためです。  暗黙的な <xref:System.Windows.Data.Binding.Path%2A?displayProperty=fullName> 以外は、設定する順序は自由です   \(`Path=` を明示的に指定することもできます。その場合は、このプロパティを自由な順序で設定できます\)。  基本的に、下の一覧に示したプロパティのうち 0 個以上を、`bindProp`\=`value` ペアの形式で、コンマで区切って設定します。  
+## <a name="binding-properties-that-can-be-set-with-the-binding-extension"></a>バインドのバインド拡張機能で設定できるプロパティ  
+ このトピックで示す構文は、ジェネリックを使用して`bindProp` = `value`近似値の多数の読み取り/書き込みプロパティがあるため<xref:System.Windows.Data.BindingBase>または<xref:System.Windows.Data.Binding>を通じてに設定できる、`Binding`マークアップ拡張機能/式の構文。 暗黙的なを除き、任意の順序で設定できます<xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>です。 (明示的に指定するオプションが`Path=`、任意の順序で設定する場合)。 基本的で設定できます 0 個以上のプロパティの下の一覧を使用して`bindProp` = `value`ペアはコンマで区切っています。  
   
- これらのプロパティ値のいくつかは、要求しているオブジェクト型が XAML のテキスト構文からのネイティブ型変換をサポートしていないので、さらに属性値として設定するためにマークアップ拡張機能が必要です。  詳細については、.NET Framework クラス ライブラリで各プロパティの「XAML 属性の使用方法」を参照してください。さらなるマークアップ拡張機能の使用を含む場合も含まない場合も、XAML 属性構文で使用する文字列は、`Binding` 式で指定する値と基本的に同じです。違いは、`Binding` 式では各 `bindProp`\=`value` を引用符で囲まないことだけです。  
+ これらのプロパティ値のいくつかが、XAML では、テキスト構文からのネイティブな型変換をサポートしていないため、属性値として設定するためにマークアップ拡張機能を必要なオブジェクト タイプが必要です。 XAML 属性の使用方法についてのセクションです。 詳細については、各プロパティの .NET Framework クラス ライブラリのは、XAML 属性の構文を使用する文字列またはマークアップ拡張機能をさらにせず使用状況は、基本的にで指定した値と同じ、`Binding`式をそれぞれを囲む引用符を置かない例外`bindProp` =`value`で、`Binding`式。  
   
--   <xref:System.Windows.Data.BindingBase.BindingGroupName%2A>: バインディング グループの候補を示す文字列。  これは比較的高度なバインディング概念です。詳細については、<xref:System.Windows.Data.BindingBase.BindingGroupName%2A> のリファレンス ページを参照してください。  
+-   <xref:System.Windows.Data.BindingBase.BindingGroupName%2A>: バインド可能なグループを識別する文字列。 これは、バインディングの比較的高度な概念です。リファレンス ページを参照してください<xref:System.Windows.Data.BindingBase.BindingGroupName%2A>です。  
   
--   <xref:System.Windows.Data.Binding.BindsDirectlyToSource%2A>: ブール値。`true` と `false` のいずれかです。  既定値は、`false` です。  
+-   <xref:System.Windows.Data.Binding.BindsDirectlyToSource%2A>: ブール値、いずれかになります`true`または`false`です。 既定値は、`false` です。  
   
--   <xref:System.Windows.Data.Binding.Converter%2A>: `bindProp`\=`value` の文字列として式で設定できますが、そのためには値のオブジェクト参照 \([StaticResource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)など\) が必要です。  この場合の値は、カスタム コンバーター クラスのインスタンスです。  
+-   <xref:System.Windows.Data.Binding.Converter%2A>: として設定できる、 `bindProp` = `value`文字列式では、これを行うには参照が必要です、オブジェクトの値として、など、 [StaticResource マークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)します。 ここでは、値は、カスタムのコンバーター クラスのインスタンスです。  
   
--   <xref:System.Windows.Data.Binding.ConverterCulture%2A>: 標準ベースの識別子として式で設定できます。<xref:System.Windows.Data.Binding.ConverterCulture%2A> のリファレンス トピックを参照してください。  
+-   <xref:System.Windows.Data.Binding.ConverterCulture%2A>: は標準に準拠した識別子として式で設定可能参照トピックを参照して<xref:System.Windows.Data.Binding.ConverterCulture%2A>です。  
   
--   <xref:System.Windows.Data.Binding.ConverterParameter%2A>: `bindProp`\=`value` の文字列として式で設定できますが、渡されるパラメーターの型に依存します。  値に参照型を渡す場合、この使用方法では入れ子になった [StaticResource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)などのオブジェクト参照が必要です。  
+-   <xref:System.Windows.Data.Binding.ConverterParameter%2A>: として設定できる、 `bindProp` = `value` 、式が、この文字列が渡されるパラメーターの型に依存します。 この使用法が、入れ子になったなどのオブジェクト参照を必要と値の参照型を渡す場合[StaticResource マークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)します。  
   
--   <xref:System.Windows.Data.Binding.ElementName%2A>: このプロパティと <xref:System.Windows.Data.Binding.RelativeSource%2A> および <xref:System.Windows.Data.Binding.Source%2A> は同時に使用できません。これらの各バインディング プロパティは特定のバインディング方法を表します。  「[データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
+-   <xref:System.Windows.Data.Binding.ElementName%2A>: と相互に排他的な<xref:System.Windows.Data.Binding.RelativeSource%2A>と<xref:System.Windows.Data.Binding.Source%2A>; 各これらのバインドのプロパティを表す特定のバインディング方法です。 参照してください[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)です。  
   
--   <xref:System.Windows.Data.BindingBase.FallbackValue%2A>: `bindProp`\=`value` の文字列として式で設定できますが、渡される値の型に依存します。  参照型を渡す場合は、入れ子になった [StaticResource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)などのオブジェクト参照が必要です。  
+-   <xref:System.Windows.Data.BindingBase.FallbackValue%2A>: として設定できる、 `bindProp` = `value` 、式が、この文字列が渡される値の型に依存します。 入れ子になったなどのオブジェクト参照の参照型を渡すことが必要な場合[StaticResource マークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)します。  
   
--   <xref:System.Windows.Data.Binding.IsAsync%2A>: ブール値。`true` と `false` のいずれかです。  既定値は、`false` です。  
+-   <xref:System.Windows.Data.Binding.IsAsync%2A>: ブール値、いずれかになります`true`または`false`です。 既定値は、`false` です。  
   
--   <xref:System.Windows.Data.Binding.Mode%2A>: *value* は <xref:System.Windows.Data.BindingMode> 列挙体の定数名です。  たとえば、`{Binding Mode=OneWay}` のようにします。  
+-   <xref:System.Windows.Data.Binding.Mode%2A>:*値*の定数名には、<xref:System.Windows.Data.BindingMode>列挙します。 たとえば、`{Binding Mode=OneWay}` のようにします。  
   
--   <xref:System.Windows.Data.Binding.NotifyOnSourceUpdated%2A>: ブール値。`true` または `false` のいずれかです。  既定値は、`false` です。  
+-   <xref:System.Windows.Data.Binding.NotifyOnSourceUpdated%2A>: ブール値、いずれかになります`true`または`false`です。 既定値は、`false` です。  
   
--   <xref:System.Windows.Data.Binding.NotifyOnTargetUpdated%2A>: ブール値。`true` と `false` のいずれかです。  既定値は、`false` です。  
+-   <xref:System.Windows.Data.Binding.NotifyOnTargetUpdated%2A>: ブール値、いずれかになります`true`または`false`です。 既定値は、`false` です。  
   
--   <xref:System.Windows.Data.Binding.NotifyOnValidationError%2A>: ブール値。`true` または `false` のいずれかです。  既定値は、`false` です。  
+-   <xref:System.Windows.Data.Binding.NotifyOnValidationError%2A>: ブール値、いずれかになります`true`または`false`です。 既定値は、`false` です。  
   
--   <xref:System.Windows.Data.Binding.Path%2A>: データ オブジェクトまたは汎用オブジェクト モデルへのパスを表す文字列。  ここで詳しく説明することはできませんが、この形式は、オブジェクト モデルを走査するための複数の異なる規約に対応しています。  「[PropertyPath の XAML 構文](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)」を参照してください。  
+-   <xref:System.Windows.Data.Binding.Path%2A>: データ オブジェクト、または一般的なオブジェクト モデルへのパスを表す文字列。 形式は、このトピックでは適切に記述できないオブジェクト モデルを走査することをいくつかの異なる規則を提供します。 参照してください[PropertyPath XAML 構文](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)です。  
   
--   <xref:System.Windows.Data.Binding.RelativeSource%2A>: このプロパティと <xref:System.Windows.Data.Binding.ElementName%2A> および <xref:System.Windows.Data.Binding.Source%2A> は同時に使用できません。これらの各バインディング プロパティは特定のバインディング方法を表します。  「[データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  値を指定するには、入れ子になった [RelativeSource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)の使用が必要です。  
+-   <xref:System.Windows.Data.Binding.RelativeSource%2A>: ではなく相互に排他的<xref:System.Windows.Data.Binding.ElementName%2A>と<xref:System.Windows.Data.Binding.Source%2A>; 各これらのバインドのプロパティを表す特定のバインディング方法です。 参照してください[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)です。 必要、入れ子になった[RelativeSource MarkupExtension](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)使用状況の値を指定します。  
   
--   <xref:System.Windows.Data.Binding.Source%2A>: このプロパティと <xref:System.Windows.Data.Binding.RelativeSource%2A> および <xref:System.Windows.Data.Binding.ElementName%2A> は同時に使用できません。これらの各バインディング プロパティは特定のバインディング方法を表します。  「[データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  入れ子になった拡張機能の使用 \(通常は、キーを持つリソース ディクショナリのオブジェクト データ ソースを参照する [StaticResource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)\) が必要です。  
+-   <xref:System.Windows.Data.Binding.Source%2A>: と相互に排他的な<xref:System.Windows.Data.Binding.RelativeSource%2A>と<xref:System.Windows.Data.Binding.ElementName%2A>; 各これらのバインドのプロパティを表す特定のバインディング方法です。 参照してください[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)です。 通常、入れ子になった拡張機能の使用が必要です、 [StaticResource マークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)キーを持つリソース ディクショナリからオブジェクト データ ソースを参照します。  
   
--   <xref:System.Windows.Data.BindingBase.StringFormat%2A>: バインドされたデータの文字列書式指定規則を表す文字列。  これは比較的高度なバインディング概念です。詳細については、<xref:System.Windows.Data.BindingBase.StringFormat%2A> のリファレンス ページを参照してください。  
+-   <xref:System.Windows.Data.BindingBase.StringFormat%2A>: バインドされたデータの文字列形式の規則を説明する文字列。 これは、バインディングの比較的高度な概念です。リファレンス ページを参照してください<xref:System.Windows.Data.BindingBase.StringFormat%2A>です。  
   
--   <xref:System.Windows.Data.BindingBase.TargetNullValue%2A>: `bindProp`\=`value` の文字列として式で設定できますが、渡されるパラメーターの型に依存します。  値に参照型を渡す場合は、入れ子になった [StaticResource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)などのオブジェクト参照が必要です。  
+-   <xref:System.Windows.Data.BindingBase.TargetNullValue%2A>: として設定できる、 `bindProp` = `value` 、式が、この文字列が渡されるパラメーターの型に依存します。 入れ子になったなどのオブジェクト参照の値として、参照型を渡すことが必要な場合[StaticResource マークアップ拡張機能](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)します。  
   
--   <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>: *value* は <xref:System.Windows.Data.UpdateSourceTrigger> 列挙体の定数名です。  たとえば、`{Binding UpdateSourceTrigger=LostFocus}` のようにします。  特定のコントロールには、このバインディング プロパティに対して別の既定値がある可能性があります。  「<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>」を参照してください。  
+-   <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>:*値*の定数名には、<xref:System.Windows.Data.UpdateSourceTrigger>列挙します。 たとえば、`{Binding UpdateSourceTrigger=LostFocus}` のようにします。 特定のコントロールには、このバインドのプロパティの既定値がある可能性があります。 「<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>」を参照してください。  
   
--   <xref:System.Windows.Data.Binding.ValidatesOnDataErrors%2A>: ブール値。`true` と `false` のいずれかです。  既定値は、`false` です。  「解説」を参照してください。  
+-   <xref:System.Windows.Data.Binding.ValidatesOnDataErrors%2A>: ブール値、いずれかになります`true`または`false`です。 既定値は、`false` です。 「解説」を参照してください。  
   
--   <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A>: ブール値。`true` と `false` のいずれかです。  既定値は、`false` です。  「解説」を参照してください。  
+-   <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A>: ブール値、いずれかになります`true`または`false`です。 既定値は、`false` です。 「解説」を参照してください。  
   
--   <xref:System.Windows.Data.Binding.XPath%2A>: XML データ ソースの XMLDOM へのパスを表す文字列。  「[XMLDataProvider と XPath クエリを使用して XML データにバインドする](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)」を参照してください。  
+-   <xref:System.Windows.Data.Binding.XPath%2A>: XML データ ソースの XMLDOM にパスを説明する文字列。 参照してください[、XMLDataProvider および XPath クエリを使用して XML データにバインド](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)です。  
   
- 次に示す <xref:System.Windows.Data.Binding> のプロパティは、`Binding` マークアップ拡張機能\/`{Binding}` 式の形式を使用して設定することはできません。  
+ プロパティは、次のとおり<xref:System.Windows.Data.Binding>を使用してを設定することはできません、`Binding`マークアップ拡張機能/`{Binding}`式のフォームです。  
   
--   <xref:System.Windows.Data.Binding.UpdateSourceExceptionFilter%2A>: このプロパティには、コールバック実装への参照が必要です。  コールバック\/イベント ハンドラー以外のメソッドは、XAML 構文で参照できません。  
+-   <xref:System.Windows.Data.Binding.UpdateSourceExceptionFilter%2A>: このプロパティはコールバックの実装に対する参照が必要です。 以外のイベント ハンドラーのコールバック/メソッドは、XAML 構文で参照できません。  
   
--   <xref:System.Windows.Data.Binding.ValidationRules%2A>: このプロパティは、<xref:System.Windows.Controls.ValidationRule> オブジェクトのジェネリック コレクションを受け取ります。  <xref:System.Windows.Data.Binding> オブジェクト要素のプロパティ要素として表現することもできますが、`Binding` 式ですぐに使用できる属性解析方法がありません。  <xref:System.Windows.Data.Binding.ValidationRules%2A> のリファレンス トピックを参照してください。  
+-   <xref:System.Windows.Data.Binding.ValidationRules%2A>: プロパティは、のジェネリック コレクションを受け取って<xref:System.Windows.Controls.ValidationRule>オブジェクト。 これは、プロパティ要素として表現でした、<xref:System.Windows.Data.Binding>オブジェクトの要素で使用するためすぐに使用できる属性の解析方法がありません、`Binding`式。 参照トピックを参照して<xref:System.Windows.Data.Binding.ValidationRules%2A>です。  
   
 -   <xref:System.Windows.Data.Binding.XmlNamespaceManager%2A>  
   
-## 解説  
+## <a name="remarks"></a>コメント  
   
 > [!IMPORTANT]
->  依存関係プロパティの優先順位という点では、`Binding` 式はローカルで設定される値と同等です。  `Binding` 式を持っているプロパティに対してローカル値を設定すると、`Binding` は完全に削除されます。  詳細については、「[依存関係プロパティ値の優先順位](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)」を参照してください。  
+>  依存関係プロパティの優先順位の観点から、`Binding`式がローカルで設定すると同じ値です。 プロパティを持っていたのローカル値を設定したかどうか、`Binding`式、`Binding`が完全に削除します。 詳細については、「[依存関係プロパティ値の優先順位](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)」を参照してください。  
   
- ここでは、基本レベルでのデータ バインディングについては説明しません。  「[データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
+ 基本的なレベルでのデータ バインディングについては、このトピックでは説明しません。 参照してください[データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)です。  
   
 > [!NOTE]
->  <xref:System.Windows.Data.MultiBinding> および <xref:System.Windows.Data.PriorityBinding> は、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 拡張構文をサポートしません。代わりに、プロパティ要素を使用します。  <xref:System.Windows.Data.MultiBinding> および <xref:System.Windows.Data.PriorityBinding> のリファレンス トピックを参照してください。  
+>  <xref:System.Windows.Data.MultiBinding>および<xref:System.Windows.Data.PriorityBinding>サポートしていない、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]拡張構文です。 代わりに、プロパティ要素を使用します。 参照トピックをご覧ください<xref:System.Windows.Data.MultiBinding>と<xref:System.Windows.Data.PriorityBinding>です。  
   
- XAML のブール値は、大文字と小文字を区別しません。  たとえば、`{Binding NotifyOnValidationError=true}` または `{Binding NotifyOnValidationError=True}` のように指定できます。  
+ XAML のブール値は、大文字小文字を区別します。 たとえばするを指定するか`{Binding NotifyOnValidationError=true}`または`{Binding NotifyOnValidationError=True}`です。  
   
- 通常、データ検証を伴うバインディングは、`{Binding ...}` 式としてではなく、明示的な `Binding` 要素で指定され、<xref:System.Windows.Data.Binding.ValidatesOnDataErrors%2A> または <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A> を式で設定することは一般的ではありません。  これは、コンパニオン プロパティである <xref:System.Windows.Data.Binding.ValidationRules%2A> を式の形式で容易に設定できないためです。  詳細については、「[バインディングの検証の実装](../../../../docs/framework/wpf/data/how-to-implement-binding-validation.md)」を参照してください。  
+ データの検証が関係するバインディングは、通常明示的な指定`Binding`要素ではなく同様、`{Binding ...}`式、および設定<xref:System.Windows.Data.Binding.ValidatesOnDataErrors%2A>または<xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A>式では通常ありません。 これは、コンパニオン プロパティ<xref:System.Windows.Data.Binding.ValidationRules%2A>形式の式で簡単に設定することはできません。 詳細については、次を参照してください。[実装バインド検証](../../../../docs/framework/wpf/data/how-to-implement-binding-validation.md)です。  
   
- `Binding` はマークアップ拡張機能です。  一般にマークアップ拡張機能を実装するのは、属性値をリテラル値やハンドラー名以外にエスケープする要件が存在し、その要件の適用範囲がグローバルで、特定の型やプロパティに属性が追加される型コンバーターにとどまらない場合です。  XAML のすべてのマークアップ拡張機能では、それぞれの属性構文で `{` と `}` の 2 つの記号を使用します。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張機能で文字列の内容を処理する必要があることを認識します。  詳細については、「[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)」を参照してください。  
+ `Binding` はマークアップ拡張機能です。 一般にマークアップ拡張機能を実装するは、属性の値名、リテラル値やハンドラー以外にエスケープする必要があるし、要件が特定の型やプロパティに起因する型コンバーターよりも多くのグローバル場合。 XAML の使用中のすべてのマークアップ拡張機能、`{`と`}`マークアップ拡張機能が文字列の内容を処理する必要がありますを XAML プロセッサが認識する規則は、それぞれの属性構文内の文字です。 詳細については、次を参照してください。[マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
   
- `Binding` が他のマークアップ拡張機能と異なる点は、WPF の XAML 実装のこの拡張機能を実装する <xref:System.Windows.Data.Binding> クラスが、XAML に関連しないその他のいくつかのメソッドやプロパティも実装することです。  他のメンバーの目的は、<xref:System.Windows.Data.Binding> を汎用性の高い、自己完結型のクラスにすることです。これによって、XAML マークアップ拡張機能としての機能に加え、さまざまなデータ バインディング シナリオに対応できるようになります。  
+ `Binding`非定型のマークアップ拡張機能を<xref:System.Windows.Data.Binding>WPF の XAML 実装の拡張機能を実装するクラスは、他のいくつかのメソッドと XAML に関連していないプロパティにも実装します。 他のメンバーがさせるものでは<xref:System.Windows.Data.Binding>汎用性と自己完結型のクラスで、XAML マークアップ拡張機能として機能しているだけでなく多くのデータ バインディングのシナリオに対処できます。  
   
-## 参照  
- <xref:System.Windows.Data.Binding>   
- [データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Windows.Data.Binding>  
+ [データ バインディングの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
  [マークアップ拡張機能と WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)

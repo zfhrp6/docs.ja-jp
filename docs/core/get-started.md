@@ -4,17 +4,16 @@ description: "Windows、Linux、macOS で .NET Core アプリケーションを�
 keywords: .NET, .NET Core
 author: johalex
 ms.author: johalex
-ms.date: 08/14/2017
+ms.date: 09/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: d1453a0d-317c-4da6-b68e-422a2c0bfe49
+ms.openlocfilehash: 45b361a40148c287511fafe25de4000c1dd54102
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 1f016b73a375c5ab63bba28accf57c5572d581c8
-ms.openlocfilehash: 694800954134888a511a90f069f55004bb2a2dce
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/29/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="get-started-with-net-core"></a>.NET Core の概要
 
@@ -38,21 +37,14 @@ ms.lasthandoff: 08/29/2017
 
 ## <a name="linux"></a>Linux
 
-使用している配布/バージョンに .NET Core をインストールします。
-
-* [Red Hat Enterprise Linux 7](https://www.microsoft.com/net/core#linuxredhat)
-* [Ubuntu 14.04、16.04、16.10、17.04、および Linux Mint 17、18](https://www.microsoft.com/net/core#linuxubuntu)
-* [Debian 8.2+、8.7+、9](https://www.microsoft.com/net/core#linuxdebian)
-* [Fedora 24、25、26](https://www.microsoft.com/net/core#linuxfedora)
-* [CentOS 7.1 および Oracle Linux 7.1](https://www.microsoft.com/net/core#linuxcentos)
-* [SUSE Enterprise Linux (SLES) 12 SP2、openSUSE 42.1、42.2](https://www.microsoft.com/net/core#linuxopensuse)
+.NET Core にインストール[Linux](https://www.microsoft.com/net/core#linuxredhat)です。
 
 次のステップ バイ ステップのチュートリアルに従って、.NET Core アプリの開発を開始できます。
 
 * [コマンドラインを使用した .NET Core の概要](tutorials/using-with-xplat-cli.md) - [.NET Core クロスプラットフォーム コマンドライン インターフェイス (CLI)](tools/index.md) で任意のコード エディターを使用します。
 * [Ubuntu で C# および .NET Core を使用した Visual Studio Code の概要](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu) - この [Channel9](https://channel9.msdn.com) ビデオでは、Ubuntu 14.04 上の .NET Core で最初のコンソール アプリケーションを作成するために、Microsoft の簡易クロスプラットフォーム コード エディターである [Visual Studio Code](https://code.visualstudio.com/) をインストールして使用する方法を示します。
 
-.NET Core は、インストールのリンクで上述されている Linux 配布とバージョンでサポートされています。
+参照してください、 [Linux 開発のための前提条件](linux-prerequisites.md)サポートされているバージョンの Linux ディストリビューションとバージョンの一覧についてはトピックです。
 
 ## <a name="os-x--macos"></a>OS X / macOS
 
@@ -67,4 +59,3 @@ ms.lasthandoff: 08/29/2017
 * [Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築](tutorials/using-on-mac-vs-full-solution.md) - このチュートリアルでは、再利用可能なライブラリと単体テストを含む完全な .NET Core ソリューションを構築する方法を示します。
 
 サポートされている OS X または macOS のバージョンの一覧については、「[Mac における .NET Core の前提条件](macos-prerequisites.md)」を参照してください。
-

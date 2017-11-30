@@ -10,12 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
+ms.openlocfilehash: 38e9d8955c99c7fb3ee6347af70037d3da08ff39
+ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
 ms.translationtype: HT
-ms.sourcegitcommit: b041fbec3ff22157d00af2447e76a7ce242007fc
-ms.openlocfilehash: df8733c5c4532dc188ceb95d7bf236bcd2182b9f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="methods"></a>メソッド #
 
@@ -88,11 +87,11 @@ ms.lasthandoff: 09/14/2017
  <a name="inherited"></a>
  ##<a name="inherited-and-overridden-methods"></a>継承されたメソッドとオーバーライドされたメソッド ##
 
-型に明示的に定義されるメンバーに加え、型は、その基底クラスに定義されているメンバーを継承します。 マネージ型という系統のすべての型は @System.Object クラスから直接的または間接的に継承するため、すべての型が、@System.Object.Equals(System.Object)、@System.Object.GetType、@System.Object.ToString など、そのメンバーを継承します。 次の例では、`Person` クラスを定義し、2 つの `Person` オブジェクトをインスタンス化し、`Person.Equals` メソッドを呼び出して 2 つのオブジェクトが等しいかどうかを判断します。 ただし、`Equals` メソッドは `Person` クラスに定義されていません。@System.Object から継承されたものです。
+型に明示的に定義されるメンバーに加え、型は、その基底クラスに定義されているメンバーを継承します。 マネージ型システムのすべての型から直接または間接的を継承するので、<xref:System.Object>など、クラス、すべての型の継承、メンバー <xref:System.Object.Equals(System.Object)>、 <xref:System.Object.GetType>、および<xref:System.Object.ToString>です。 次の例では、`Person` クラスを定義し、2 つの `Person` オブジェクトをインスタンス化し、`Person.Equals` メソッドを呼び出して 2 つのオブジェクトが等しいかどうかを判断します。 ただし、`Equals` メソッドは `Person` クラスに定義されていません。<xref:System.Object> から継承されたものです。
 
 [!code-csharp[csSnippets.Methods#104](../../samples/snippets/csharp/concepts/methods/inherited1.cs#104)]
 
-型は継承されたメンバーをオーバーライドできます。`override` キーワードを使用し、オーバーライドされたメソッドを実装します。 メソッド シグネチャは、オーバーライドされたメソッドのそれと同じにする必要があります。 次の例は前の例と似ていますが、@Object.Equals(System.Object) メソッドをオーバーライドしている点が異なります。 (この 2 つのメソッドは一貫性のある結果を提供するため、@Object.GetHashCode メソッドもオーバーライドされます。)
+型は継承されたメンバーをオーバーライドできます。`override` キーワードを使用し、オーバーライドされたメソッドを実装します。 メソッドのシグネチャは、オーバーライドされたメソッドと同じである必要があります。 次の例は、1 つ前のようにオーバーライドする点を除いて、<xref:System.Object.Equals(System.Object)>メソッドです。 (この 2 つのメソッドは一貫性のある結果を提供するため、<xref:System.Object.GetHashCode> メソッドもオーバーライドされます。)
 
 [!code-csharp[csSnippets.Methods#105](../../samples/snippets/csharp/concepts/methods/overridden1.cs#105)]
 
@@ -196,7 +195,7 @@ C# の型は、*値型*と*参照型*のどちらかに区別されます。 組
 
 この場合、ローカル変数 `result`を使用して値を格納する手順はオプションです。 このローカル変数によってコードの読みやすさが向上することがあります。また、引数の元の値をメソッドのスコープ全体で保持する場合に必要になることがあります。
 
-メソッドで複数の値を返すと便利な場合があります。 C# 7.0 以降では、*タプル型*と*タプル リテラル*を使用してこれを簡単に実行できます。 タプル型は、タプルの要素のデータ型を決定します。 タプル リテラルは、返されたタプルの実際の値を提供します。 次の例では、`(string, string, string, int)` は、`GetPersonalInfo` メソッドにより返されるタプル型を定義します。 式 `(per.FirstName, per.MiddleName, per.LastName, per.Age)` はタプル リテラルです。このメソッドは、`PersonInfo` オブジェクトの名、ミドルネーム、姓、年齢を返します。
+メソッドで複数の値を返すと便利な場合があります。 C# 7.0 以降では、*タプル型*と*タプル リテラル*を使用してこれを簡単に実行できます。 タプル型は、タプルの要素のデータ型を決定します。 タプル リテラルは、返されたタプルの実際の値を提供します。 次の例では、`(string, string, string, int)`によって返される組の型を定義、`GetPersonalInfo`メソッドです。 式 `(per.FirstName, per.MiddleName, per.LastName, per.Age)` はタプル リテラルです。このメソッドは、`PersonInfo` オブジェクトの名、ミドルネーム、姓、年齢を返します。
 
 ```csharp
 public (string, string, string, int) GetPersonalInfo(string id)
@@ -264,7 +263,7 @@ if (person != null)
 > [!NOTE]
 > 非同期メソッドは、まだ完了していない待機中の最初のオブジェクトに達するか、または非同期メソッドの最後に達すると、呼び出し元に戻ります。
 
-非同期メソッドの戻り値の型としては、@System.Threading.Tasks.Task、<TResult>、@System.Threading.Tasks.Task、`void` を指定できます。 戻り値の型 `void` は主として、戻り値の型 `void` が必要なイベント ハンドラーの定義に使用されます。 `void` を返す非同期メソッドは待機できません。void を返すメソッドの呼び出し元は、このメソッドがスローする例外をキャッチできません。 C# 7 がリリースされるとこの制約が緩和され、非同期メソッドで[タスクと同種のあらゆる型を返す](https://github.com/ljw1004/roslyn/blob/features/async-return/docs/specs/feature%20-%20arbitrary%20async%20returns.md)ことができるようになります。
+非同期のメソッドの戻り値の型を持つことができます<xref:System.Threading.Tasks.Task%601>、 <xref:System.Threading.Tasks.Task>、または`void`です。 戻り値の型 `void` は主として、戻り値の型 `void` が必要なイベント ハンドラーの定義に使用されます。 `void` を返す非同期メソッドは待機できません。void を返すメソッドの呼び出し元は、このメソッドがスローする例外をキャッチできません。 C# 7 がリリースされるとこの制約が緩和され、非同期メソッドで[タスクと同種のあらゆる型を返す](https://github.com/ljw1004/roslyn/blob/features/async-return/docs/specs/feature%20-%20arbitrary%20async%20returns.md)ことができるようになります。
 
 次の例では、`DelayAsync` は、整数を返す return ステートメントのある非同期メソッドです。 非同期メソッドであるため、そのメソッド宣言で戻り値の型 `Task<int>` を指定する必要があります。 戻り値の型が `Task<int>`であるため、次のステートメント `int result = await delayTask` に示すように、`DoSomethingAsync` 内の `await` 式を評価すると整数が生成されます。
 
@@ -295,7 +294,7 @@ public Customer this[long id] => store.LookupCustomer(id);
 
 反復子は、リストや配列など、コレクションに対するカスタム イテレーションを実行します。 反復子は、[yield return](language-reference/keywords/yield.md) ステートメントを使用して、各要素を 1 回に 1 つ返します。 `yield return` ステートメントに到達すると、現在の場所が記録されます。呼び出し元は、シーケンス内の次の要素を要求できます。
 
-反復子の戻り値の型には、@System.Collections.IEnumerable、@System.Collections.Generic.IEnumerable%601、@System.Collections.IEnumerator、@System.Collections.Generic.IEnumerator%601 を指定できます。
+反復子の戻り値の型には、 <xref:System.Collections.IEnumerable>、 <xref:System.Collections.Generic.IEnumerable%601>、 <xref:System.Collections.IEnumerator>、または <xref:System.Collections.Generic.IEnumerator%601>を指定できます。
 
 詳細については、「[反復子](programming-guide/concepts/iterators.md)」をご覧ください。
 
@@ -309,4 +308,3 @@ public Customer this[long id] => store.LookupCustomer(id);
 [out](language-reference/keywords/out.md)   
 [ref](language-reference/keywords/ref.md)   
 [パラメーターの引き渡し](programming-guide/classes-and-structs/passing-parameters.md)
-

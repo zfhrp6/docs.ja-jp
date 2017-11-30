@@ -20,11 +20,11 @@ caps.latest.revision: "19"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: ca3bbb4b88bf4355d3c487196672636e6b77d419
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8591f1c7c3aa123acd17a9e3ab22cf950275f588
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="collection-types-in-data-contracts"></a>データ コントラクトのコレクション型
 *"コレクション"* は、特定の型の項目のリストです。 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]では、このようなリストは、配列や他のさまざまな型を使用して表すことができます (ジェネリック List、ジェネリック <xref:System.ComponentModel.BindingList%601>、 <xref:System.Collections.Specialized.StringCollection>、または <xref:System.Collections.ArrayList>)。 たとえば、コレクションでは指定された顧客のアドレスのリストを保持できます。 これらのコレクションは、実際の型に関係なく、 *リスト コレクション*と呼びます。  
@@ -165,7 +165,7 @@ ms.lasthandoff: 10/18/2017
   
 ```xml  
 <CustomerList4>  
-    <customer>...</ customer>  
+    <customer>...</customer>  
     <customer>...</customer>  
     <customer>...</customer>  
     ...  
@@ -297,10 +297,10 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
 |参照される型|参照される型で実装されるインターフェイス|例|型の処理|  
 |---------------------|----------------------------------------------|-------------|---------------------|  
 |非ジェネリックまたはクローズ ジェネリック (任意の数のパラメーター)|<xref:System.Collections.IDictionary>|`MyType : IDictionary`<br /><br /> または<br /><br /> `MyType<T> : IDictionary` ここでは、T=`int`|クローズ ジェネリック `IDictionary<object,object>`|  
-|クローズ ジェネリック (任意の数のパラメーター)|<xref:System.Collections.Generic.IDictionary%602>、クローズ|`MyType<T> : IDictionary\<string, bool>` ここでは、T=`int`|クローズ ジェネリック (例 : `IDIctionary\<string,bool>`)|  
-|クローズ ジェネリック (任意の数のパラメーター)|ジェネリック <xref:System.Collections.Generic.IDictionary%602>、キーまたは値の一方がクローズ。もう一方はオープンで、型のパラメーターのいずれかを使用|`MyType\<T,U,V> : IDictionary\<string,V>` ここでは、T=`int`、U=`float`、V=`bool`<br /><br /> または<br /><br /> `MyType<Z> : IDictionary\<Z,bool>` ここでは、Z=`string`|クローズ ジェネリック (例 : `IDictionary\<string,bool>`)|  
-|クローズ ジェネリック (任意の数のパラメーター)|ジェネリック <xref:System.Collections.Generic.IDictionary%602>、キーと値の両方がオープンであり、それぞれ型のパラメーターのいずれかを使用|`MyType\<T,U,V> : IDictionary\<V,U>` ここでは、T=`int`、U=`bool`、V=`string`|クローズ ジェネリック (例 : `IDictionary\<string,bool>`)|  
-|オープン ジェネリック (2 つのパラメーター)|ジェネリック <xref:System.Collections.Generic.IDictionary%602>、オープン、型のジェネリック パラメーターの両方をその出現順に使用|`MyType\<K,V> : IDictionary\<K,V>`、K と V は共にオープン|オープン ジェネリック (例 : `IDictionary\<K,V>`)|  
+|クローズ ジェネリック (任意の数のパラメーター)|<xref:System.Collections.Generic.IDictionary%602>、クローズ|`MyType<T> : IDictionary<string, bool>`ここで T =`int`|クローズ ジェネリック (例 : `IDIctionary<string,bool>`)|  
+|クローズ ジェネリック (任意の数のパラメーター)|ジェネリック <xref:System.Collections.Generic.IDictionary%602>、キーまたは値の一方がクローズ。もう一方はオープンで、型のパラメーターのいずれかを使用|`MyType<T,U,V> : IDictionary<string,V>`ここで T =`int`、U =`float`V =`bool`<br /><br /> または<br /><br /> `MyType<Z> : IDictionary<Z,bool>`ここで Z =`string`|クローズ ジェネリック (例 : `IDictionary<string,bool>`)|  
+|クローズ ジェネリック (任意の数のパラメーター)|ジェネリック <xref:System.Collections.Generic.IDictionary%602>、キーと値の両方がオープンであり、それぞれ型のパラメーターのいずれかを使用|`MyType<T,U,V> : IDictionary<V,U>` ここでは、T=`int`、U=`bool`、V=`string`|クローズ ジェネリック (例 : `IDictionary<string,bool>`)|  
+|オープン ジェネリック (2 つのパラメーター)|ジェネリック <xref:System.Collections.Generic.IDictionary%602>、オープン、型のジェネリック パラメーターの両方をその出現順に使用|`MyType<K,V> : IDictionary<K,V>`、K と V は共にオープン|オープン ジェネリック (例 : `IDictionary<K,V>`)|  
   
  型が <xref:System.Collections.IDictionary> とジェネリック <xref:System.Collections.Generic.IDictionary%602>の両方を実装している場合、ジェネリック <xref:System.Collections.Generic.IDictionary%602> だけが考慮されます。  
   

@@ -12,11 +12,11 @@ caps.latest.revision: "15"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 1374bc086923b9ffef288a7fa90427710bdd91b4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: d12a3d5a74fa8b0d266fb2ba9494e1a5775f0411
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="policy-activity-in-net-framework-45"></a>.NET Framework 4.5 のポリシー アクティビティ
 Policy4 アクティビティは、[!INCLUDE[wf2](../../../../includes/wf2-md.md)] (WF 3.5) [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] オブジェクト内の <xref:System.Workflow.Activities.Rules.RuleSet> を、WF 3.5 に付属しているルール エンジンを使用して [!INCLUDE[wf2](../../../../includes/wf2-md.md)] (WF 4.5) の [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] で直接使用できるようにします。 このアクティビティを使用すると、WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet> を作成して実行できます。 Windows Workflow Foundation の一部として用意されている WF 3.5 ルール エンジンの[!INCLUDE[crabout](../../../../includes/crabout-md.md)]については、「Windows Workflow Foundation ルール エンジンの紹介」を参照してください。 移行の詳細についての WF ルール[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]をお読みください[移行のガイダンス](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md)です。  
@@ -87,6 +87,4 @@ public class Policy4Activity<TResult>: NativeActivity<TResult>
   
 3.  プロジェクトをコンパイルするには、Ctrl キーと Shift キーを押しながら B キーを押します。  
   
-4.  プロジェクトを実行するには、Ctrl キーを押しながら F5 キーを押します。  
-  
-## <a name="see-also"></a>関連項目
+4.  プロジェクトを実行するには、Ctrl キーを押しながら F5 キーを押します。

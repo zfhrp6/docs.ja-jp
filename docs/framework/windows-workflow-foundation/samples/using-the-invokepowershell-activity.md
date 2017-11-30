@@ -12,11 +12,11 @@ caps.latest.revision: "10"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 23351ad32e608dc27b973691ec9a00fc2f94b3fe
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 5ea3106f87dae64204ea0c02a1388ed8893c858b
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="using-the-invokepowershell-activity"></a>InvokePowerShell アクティビティの使用
 InvokePowerShell サンプルでは、`InvokePowerShell` アクティビティを使用して Windows PowerShell コマンドを呼び出す方法を示します。  
@@ -215,6 +215,4 @@ new ForEach<PSObject>
 >   
 >  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\PowerShell`  
-  
-## <a name="see-also"></a>関連項目
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\PowerShell`

@@ -1,12 +1,9 @@
 ---
 title: "共通言語ランタイム (CLR)"
-ms.custom: 
-ms.date: 03/30/2017
+ms.custom: updateeachrelease
+ms.date: 10/17/2017
 ms.prod: .net
-ms.reviewer: 
-ms.suite: 
 ms.technology: dotnet-standard
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - compiling source code, runtime functionality
@@ -21,16 +18,14 @@ helpviewer_keywords:
 - source code execution
 - code, runtime functionality
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
-caps.latest.revision: 24
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: dc103d1fc853cd98f899e75d08dbfaf4dd9230d0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 98c9e59342c1a336fc6889464fce529feebc2414
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="common-language-runtime-clr"></a>共通言語ランタイム (CLR)
 .NET Framework には、共通言語ランタイムと呼ばれるランタイム環境が用意されています。共通言語ランタイムは、コードを実行し、開発プロセスを支援するサービスを提供します。  
@@ -81,7 +76,7 @@ ms.lasthandoff: 08/21/2017
 |4|4|  
 |4.5 (4.5.1 および 4.5.2 を含む)|4|  
 |4.6 (4.6.1 と 4.6.2 を含む)|4|
-|4.7|4|  
+|4.7 (4.7.1 を含む)|4|  
   
 ## <a name="related-topics"></a>関連トピック  
   
@@ -94,4 +89,3 @@ ms.lasthandoff: 08/21/2017
   
 ## <a name="see-also"></a>関連項目  
  [バージョンおよび依存関係](../../docs/framework/migration-guide/versions-and-dependencies.md)
-

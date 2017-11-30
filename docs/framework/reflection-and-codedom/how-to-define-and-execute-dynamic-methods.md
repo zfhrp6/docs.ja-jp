@@ -5,24 +5,26 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
 helpviewer_keywords:
 - reflection emit, dynamic methods
 - dynamic methods
 ms.assetid: 07d08a99-62c5-4254-bce2-2a75e55a18ab
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 52f6b425ae4df138a843c6a790f10f78dc5a2b40
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 67e909a7b64500bba533290061652e82ffde07a5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-define-and-execute-dynamic-methods"></a>方法: 動的メソッドを定義および実行する
 ここでは、単純な動的メソッドと、クラスのインスタンスにバインドされた動的メソッドを定義し、実行する手順について説明します。 動的メソッドの詳細については、<xref:System.Reflection.Emit.DynamicMethod> クラスに関するトピックと「[Reflection Emit Dynamic Method Scenarios](http://msdn.microsoft.com/en-us/7c27ea3d-0f24-4bf3-8ceb-f49d33faca5e)」(リフレクション出力による動的メソッドのシナリオ) を参照してください。  
@@ -31,11 +33,15 @@ ms.lasthandoff: 07/28/2017
   
 1.  メソッドを実行するために、デリゲート型を宣言します。 汎用デリゲートを使用して、宣言する必要のあるデリゲート型の数を最小限に抑えるよう考慮してください。 次のコードでは、`SquareIt` メソッドで使用できる 2 つのデリゲート型 (1 つはジェネリック) を宣言します。  
   
-     [!code-cpp[DynamicMethodHowTo#2](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#2)]  [!code-csharp[DynamicMethodHowTo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#2)]  [!code-vb[DynamicMethodHowTo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#2)]  
+     [!code-cpp[DynamicMethodHowTo#2](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#2)]
+     [!code-csharp[DynamicMethodHowTo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#2)]
+     [!code-vb[DynamicMethodHowTo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#2)]  
   
 2.  動的メソッドのパラメーターの型を指定する配列を作成します。 この例では、唯一のパラメーターが `int` (Visual Basic では `Integer`) であるため、配列には要素は 1 つしかありません。  
   
-     [!code-cpp[DynamicMethodHowTo#3](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#3)]  [!code-csharp[DynamicMethodHowTo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#3)]  [!code-vb[DynamicMethodHowTo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#3)]  
+     [!code-cpp[DynamicMethodHowTo#3](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#3)]
+     [!code-csharp[DynamicMethodHowTo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#3)]
+     [!code-vb[DynamicMethodHowTo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#3)]  
   
 3.  <xref:System.Reflection.Emit.DynamicMethod> を作成します。 この例では、メソッドの名前は `SquareIt` です。  
   
@@ -44,37 +50,51 @@ ms.lasthandoff: 07/28/2017
   
      戻り値の型は、`long` として指定します。 プログラム例を格納する `Example` クラスを含むモジュールにメソッドを関連付けます。 読み込むモジュールを指定できます。 動的メソッドは、モジュール レベルの `static` メソッド (Visual Basic では `Shared`) と同様に機能します。  
   
-     [!code-cpp[DynamicMethodHowTo#4](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#4)]  [!code-csharp[DynamicMethodHowTo#4](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#4)]  [!code-vb[DynamicMethodHowTo#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#4)]  
+     [!code-cpp[DynamicMethodHowTo#4](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#4)]
+     [!code-csharp[DynamicMethodHowTo#4](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#4)]
+     [!code-vb[DynamicMethodHowTo#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#4)]  
   
 4.  メソッド本体を出力します。 この例では、<xref:System.Reflection.Emit.ILGenerator> オブジェクトを使用して、MSIL (Microsoft Intermediate Language) を出力します。 また、<xref:System.Reflection.Emit.DynamicILInfo> オブジェクトをアンマネージ コード ジェネレーターと組み合わせて使用して、<xref:System.Reflection.Emit.DynamicMethod> のメソッド本体を出力することもできます。  
   
      この例の MSIL は、`int` である引数をスタックに読み込み、これを `long` に変換します。次に、`long` を複製し、2 つの数値を乗算します。 これにより、スタックには 2 乗された結果が残され、メソッドで実行する必要のあるすべてが返されます。  
   
-     [!code-cpp[DynamicMethodHowTo#5](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#5)]  [!code-csharp[DynamicMethodHowTo#5](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#5)]  [!code-vb[DynamicMethodHowTo#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#5)]  
+     [!code-cpp[DynamicMethodHowTo#5](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#5)]
+     [!code-csharp[DynamicMethodHowTo#5](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#5)]
+     [!code-vb[DynamicMethodHowTo#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#5)]  
   
 5.  <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A> メソッドを呼び出して、動的メソッドを表す (手順 1 で宣言した) デリゲートのインスタンスを作成します。 デリゲートを作成すると、メソッドは完了します。メソッドにそれ以上変更を加えようとしても (MSIL の追加など) 無視されます。 次のコードでは、汎用デリゲートを使用して、デリゲートを作成し呼び出します。  
   
-     [!code-cpp[DynamicMethodHowTo#6](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#6)]  [!code-csharp[DynamicMethodHowTo#6](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#6)]  [!code-vb[DynamicMethodHowTo#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#6)]  
+     [!code-cpp[DynamicMethodHowTo#6](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#6)]
+     [!code-csharp[DynamicMethodHowTo#6](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#6)]
+     [!code-vb[DynamicMethodHowTo#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#6)]  
   
 ### <a name="to-define-and-execute-a-dynamic-method-that-is-bound-to-an-object"></a>オブジェクトにバインドされた動的メソッドを定義および実行するには  
   
 1.  メソッドを実行するために、デリゲート型を宣言します。 汎用デリゲートを使用して、宣言する必要のあるデリゲート型の数を最小限に抑えるよう考慮してください。 次のコードでは、1 つのパラメーターと戻り値を持つ任意のメソッド、またはデリゲートがオブジェクトにバインドされている場合は 2 つのパラメーターと戻り値を持つメソッドの実行に使用できる汎用デリゲート型を宣言します。  
   
-     [!code-cpp[DynamicMethodHowTo#12](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#12)]  [!code-csharp[DynamicMethodHowTo#12](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#12)]  [!code-vb[DynamicMethodHowTo#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#12)]  
+     [!code-cpp[DynamicMethodHowTo#12](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#12)]
+     [!code-csharp[DynamicMethodHowTo#12](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#12)]
+     [!code-vb[DynamicMethodHowTo#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#12)]  
   
 2.  動的メソッドのパラメーターの型を指定する配列を作成します。 メソッドを表すデリゲートをオブジェクトにバインドする場合、1 つ目のパラメーターは、デリゲートのバインド先となる型と一致する必要があります。 この例では、`Example` 型と `int` 型 (Visual Basic では `Integer`) の 2 つのパラメーターがあります。  
   
-     [!code-cpp[DynamicMethodHowTo#13](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#13)]  [!code-csharp[DynamicMethodHowTo#13](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#13)]  [!code-vb[DynamicMethodHowTo#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#13)]  
+     [!code-cpp[DynamicMethodHowTo#13](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#13)]
+     [!code-csharp[DynamicMethodHowTo#13](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#13)]
+     [!code-vb[DynamicMethodHowTo#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#13)]  
   
 3.  <xref:System.Reflection.Emit.DynamicMethod> を作成します。 この例では、メソッドに名前はありません。 戻り値の型は、`int` (Visual Basic では `Integer`) として指定します。 このメソッドは、`Example` クラスのプライベート メンバーとプロテクト メンバーにアクセスできます。  
   
-     [!code-cpp[DynamicMethodHowTo#14](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#14)]  [!code-csharp[DynamicMethodHowTo#14](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#14)]  [!code-vb[DynamicMethodHowTo#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#14)]  
+     [!code-cpp[DynamicMethodHowTo#14](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#14)]
+     [!code-csharp[DynamicMethodHowTo#14](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#14)]
+     [!code-vb[DynamicMethodHowTo#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#14)]  
   
 4.  メソッド本体を出力します。 この例では、<xref:System.Reflection.Emit.ILGenerator> オブジェクトを使用して、MSIL (Microsoft Intermediate Language) を出力します。 また、<xref:System.Reflection.Emit.DynamicILInfo> オブジェクトをアンマネージ コード ジェネレーターと組み合わせて使用して、<xref:System.Reflection.Emit.DynamicMethod> のメソッド本体を出力することもできます。  
   
      この例の MSIL は、`Example` クラスのインスタンスである 1 つ目の引数を読み込み、この引数を使用して、`int` 型のプライベート インスタンス フィールドの値を読み込みます。 2 つ目の引数が読み込まれ、この 2 つの数値が乗算されます。 この結果が `int` よりも大きい場合、値は切り捨てられ、最上位ビットは破棄されます。 戻り値がスタックに配置されて、メソッドが返されます。  
   
-     [!code-cpp[DynamicMethodHowTo#15](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#15)]  [!code-csharp[DynamicMethodHowTo#15](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#15)]  [!code-vb[DynamicMethodHowTo#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#15)]  
+     [!code-cpp[DynamicMethodHowTo#15](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#15)]
+     [!code-csharp[DynamicMethodHowTo#15](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#15)]
+     [!code-vb[DynamicMethodHowTo#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#15)]  
   
 5.  <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%28System.Type%2CSystem.Object%29> メソッド オーバーロードを呼び出して、動的メソッドを表す (手順 1 で宣言した) デリゲートのインスタンスを作成します。 デリゲートを作成すると、メソッドは完了します。メソッドにそれ以上変更を加えようとしても (MSIL の追加など) 無視されます。  
   
@@ -85,7 +105,9 @@ ms.lasthandoff: 07/28/2017
   
      メソッドの 1 つ目のパラメーターは、常に `Example` のインスタンスを受け取るため、`OneParameter` デリゲートが使用されます。 デリゲートの呼び出し時には、2 つ目のパラメーターだけが必要となります。  
   
-     [!code-cpp[DynamicMethodHowTo#16](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#16)]  [!code-csharp[DynamicMethodHowTo#16](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#16)]  [!code-vb[DynamicMethodHowTo#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#16)]  
+     [!code-cpp[DynamicMethodHowTo#16](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#16)]
+     [!code-csharp[DynamicMethodHowTo#16](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#16)]
+     [!code-vb[DynamicMethodHowTo#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#16)]  
   
 ## <a name="example"></a>例  
  単純な動的メソッドおよびクラスのインスタンスにバインドされた動的メソッドを次のコード例に示します。  
@@ -96,7 +118,9 @@ ms.lasthandoff: 07/28/2017
   
  メソッドの実行に使用できるデリゲートを定義するコード例を次に示します。  
   
- [!code-cpp[DynamicMethodHowTo#1](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#1)] [!code-csharp[DynamicMethodHowTo#1](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#1)] [!code-vb[DynamicMethodHowTo#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#1)]  
+ [!code-cpp[DynamicMethodHowTo#1](../../../samples/snippets/cpp/VS_Snippets_CLR/DynamicMethodHowTo/cpp/source.cpp#1)]
+ [!code-csharp[DynamicMethodHowTo#1](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#1)]
+ [!code-vb[DynamicMethodHowTo#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#1)]  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
   
@@ -107,7 +131,6 @@ ms.lasthandoff: 07/28/2017
 -   コマンド ラインで csc.exe、vbc.exe、または cl.exe を使用して、コードをコンパイルします。 Visual Studio でコードをコンパイルするには、コンソール アプリケーション プロジェクト テンプレートの中にコードを配置します。  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Reflection.Emit.DynamicMethod>   
- [リフレクション出力の使用](http://msdn.microsoft.com/en-us/ccc6540d-0e2c-4d89-b456-eb7353f9e9ac)   
+ <xref:System.Reflection.Emit.DynamicMethod>  
+ [リフレクション出力の使用](http://msdn.microsoft.com/en-us/ccc6540d-0e2c-4d89-b456-eb7353f9e9ac)  
  [リフレクション出力による動的メソッドのシナリオ](http://msdn.microsoft.com/en-us/7c27ea3d-0f24-4bf3-8ceb-f49d33faca5e)
-

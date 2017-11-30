@@ -1,45 +1,26 @@
 ---
 title: "コンストラクターの使用 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- constructors [C#], about constructors
+helpviewer_keywords: constructors [C#], about constructors
 ms.assetid: 464253b2-fd5d-469a-836d-df0fdf2a43f7
-caps.latest.revision: 26
+caps.latest.revision: "26"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: eb9fcd1e4090da300de17c7fd808669ba51767c6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 75b55fde2fbd1697aed7eb0665a571c63b9b0b42
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-constructors-c-programming-guide"></a>コンストラクターの使用 (C# プログラミング ガイド)
 [クラス](../../../csharp/language-reference/keywords/class.md)または[構造体](../../../csharp/language-reference/keywords/struct.md)を作成する際には、コンストラクターが呼び出されます。 コンストラクターの名前はクラスまたは構造体と同じで、通常は、このコンストラクターによって、新しいオブジェクトのデータ メンバーが初期化されます。  
   
  次の例では、`Taxi` というクラスが、簡単なコンストラクターを使用して定義された後、 [new](../../../csharp/language-reference/keywords/new.md) 演算子によってインスタンス化されます。 `Taxi` コンストラクターは、新しいオブジェクトに対してメモリが割り当てられるとすぐに、`new` 演算子によって呼び出されます。  
   
- [!code-cs[csProgGuideObjects#53](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_1.cs)]  
+ [!code-csharp[csProgGuideObjects#53](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_1.cs)]  
   
  パラメーターを取らないコンストラクターを "*既定のコンストラクター*" と呼びます。 `new` 演算子を使用してオブジェクトがインスタンス化される際に `new` に引数が渡されないと、この既定のコンストラクターが呼び出されます。 詳細については、「[インスタンス コンストラクター](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md)」を参照してください。  
   
@@ -47,7 +28,7 @@ ms.lasthandoff: 07/28/2017
   
  次のようにコンストラクターをプライベートにすれば、クラスがインスタンス化されないようにできます。  
   
- [!code-cs[csProgGuideObjects#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_2.cs)]  
+ [!code-csharp[csProgGuideObjects#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_2.cs)]  
   
  詳細については、「[プライベート コンストラクター](../../../csharp/programming-guide/classes-and-structs/private-constructors.md)」を参照してください。  
   
@@ -78,35 +59,35 @@ Console.WriteLine("{0}, {1}", a, b);
   
  クラスと `structs` のどちらも、パラメーターを受け取るコンストラクターを定義できます。 パラメーターを受け取るコンストラクターは、`new` ステートメントまたは [base](../../../csharp/language-reference/keywords/base.md) ステートメントを使用して呼び出す必要があります。 クラスと `structs` は複数のコンストラクターを定義することもできます。また、どちらも、既定のコンストラクターの定義には必要ありません。 例:  
   
- [!code-cs[csProgGuideObjects#54](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_3.cs)]  
+ [!code-csharp[csProgGuideObjects#54](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_3.cs)]  
   
  このクラスは、次のいずれかのステートメントを使用して作成できます。  
   
- [!code-cs[csProgGuideObjects#55](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_4.cs)]  
+ [!code-csharp[csProgGuideObjects#55](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_4.cs)]  
   
  コンストラクターでは、`base` キーワードを使用して、基底クラスのコンストラクターを呼び出すことができます。 例:  
   
- [!code-cs[csProgGuideObjects#56](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_5.cs)]  
+ [!code-csharp[csProgGuideObjects#56](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_5.cs)]  
   
  この例では、コンストラクターのブロックを実行する前に、基底クラスのコンストラクターを呼び出しています。 `base` キーワードは、パラメーターの有無に関係なく使用できます。 コンストラクターのパラメーターは、`base` のパラメーターまたは式の一部として使用できます。 詳細については、「[base](../../../csharp/language-reference/keywords/base.md)」を参照してください。  
   
  派生クラスで基底クラスのコンストラクターが `base` キーワードを使用して明示的に呼び出されていない場合、既定のコンストラクター (存在する場合) は暗黙的に呼び出されます。 つまり、次に示すコンストラクターの宣言は実質的に同じです。  
   
- [!code-cs[csProgGuideObjects#58](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_6.cs)]  
+ [!code-csharp[csProgGuideObjects#58](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_6.cs)]  
   
- [!code-cs[csProgGuideObjects#57](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_7.cs)]  
+ [!code-csharp[csProgGuideObjects#57](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_7.cs)]  
   
  基底クラスが既定のコンストラクターを提供しない場合、派生クラスでは、`base` を使って基本コンストラクターを明示的に呼び出す必要があります。  
   
  コンストラクターで [this](../../../csharp/language-reference/keywords/this.md) キーワードを使用すると、同じオブジェクトで別のコンストラクターを呼び出すことができます。 `base` と同様、`this` もパラメーターの有無に関係なく使用でき、コンストラクターのパラメーターはいずれも `this` のパラメーターとしても、式の一部としても使用できます。 たとえば、上の例の 2 番目のコンストラクターは `this` を使用して次のように書き直すことができます。  
   
- [!code-cs[csProgGuideObjects#59](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_8.cs)]  
+ [!code-csharp[csProgGuideObjects#59](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_8.cs)]  
   
  上の例で `this` キーワードを使用すると、このコンストラクターが呼び出されます。  
   
- [!code-cs[csProgGuideObjects#60](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_9.cs)]  
+ [!code-csharp[csProgGuideObjects#60](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-constructors_9.cs)]  
   
- コンストラクターは、[public](../../../csharp/language-reference/keywords/public.md)、[private](../../../csharp/language-reference/keywords/private.md)、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、または `protected internal` としてマークできます。 こうしたアクセス修飾子により、クラスのユーザーによるクラスの作成方法が定義されます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+ コンス トラクターとしてマークできる[パブリック](../../../csharp/language-reference/keywords/public.md)、[プライベート](../../../csharp/language-reference/keywords/private.md)、[保護](../../../csharp/language-reference/keywords/protected.md)、[内部](../../../csharp/language-reference/keywords/internal.md)、[内部保護されている](../../../csharp/language-reference/keywords/protected-internal.md)または[保護されたプライベート](../../../csharp/language-reference/keywords/private-protected.md)です。 こうしたアクセス修飾子により、クラスのユーザーによるクラスの作成方法が定義されます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
   
  コンストラクターは、[static](../../../csharp/language-reference/keywords/static.md) キーワードを使用して静的として宣言できます。 静的コンストラクターは、静的フィールドがアクセスされる直前に自動的に呼び出され、通常は静的なクラス メンバーを初期化するために使用されます。 詳細については、「[静的コンストラクター](../../../csharp/programming-guide/classes-and-structs/static-constructors.md)」を参照してください。  
   
@@ -114,8 +95,7 @@ Console.WriteLine("{0}, {1}", a, b);
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)   
- [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)   
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [クラスと構造体](../../../csharp/programming-guide/classes-and-structs/index.md)  
+ [コンストラクター](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
  [ファイナライザー](../../../csharp/programming-guide/classes-and-structs/destructors.md)
-

@@ -1,64 +1,71 @@
 ---
-title: "方法 : 分離ストレージでストアを取得する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ストア、取得"
-  - "格納 (分離ストレージを使用したデータの)、取得 (ストアを)"
-  - "分離ストレージ、取得 (ストアを)"
-  - "データ ストア、取得"
-  - "データ ストレージ (分離ストレージを使用した)、取得 (ストアを)"
+title: "方法 : 分離ストレージでストアを取得する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- stores, obtaining
+- storing data using isolated storage, obtaining stores
+- isolated storage, obtaining stores
+- data stores, obtaining
+- data storage using isolated storage, obtaining stores
 ms.assetid: fcb6b178-d526-47c4-b029-e946f880f9db
-caps.latest.revision: 19
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: bb0b877aa0f4cee36bd1f8c1cea624cf9368fbaa
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 分離ストレージでストアを取得する
-分離ストアは、データ コンパートメント内の仮想ファイル システムを公開します。  <xref:System.IO.IsolatedStorage.IsolatedStorageFile> クラスは分離ストアと対話するためのメソッドを提供します。  ストアの作成および取得するために、<xref:System.IO.IsolatedStorage.IsolatedStorageFile> は 3 個の静的メソッドを提供し、T:  
+# <a name="how-to-obtain-stores-for-isolated-storage"></a>方法 : 分離ストレージでストアを取得する
+分離ストアは、データ コンパートメント内の仮想ファイル システムを公開します。 <xref:System.IO.IsolatedStorage.IsolatedStorageFile>クラスがいくつかの分離ストアと対話するためのメソッドを提供します。 作成し、ストアを取得する<xref:System.IO.IsolatedStorage.IsolatedStorageFile>3 つの静的メソッドを提供します。  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> は、ユーザーおよびアセンブリ別に分離されたストレージが返されます。  
+-   <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>ユーザーおよびアセンブリによる分離ストレージを返します。  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>、ドメイン、およびアセンブリ別に分離されたストレージが返されます。  
+-   <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>ドメインとアセンブリが分離される記憶域を返します。  
   
-     メソッドは両方とも、呼び出しコードに属するストアを取得します。  
+     両方のメソッドが呼び出されるコードに属しているストアを取得します。  
   
--   静的メソッド <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> は、スコープ パラメーターの組み合わせを渡すことによって指定される分離ストアを返します。  
+-   静的メソッド<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>スコープ パラメーターの組み合わせに渡すことで指定されている分離ストアを返します。  
   
- 次のコードは、ユーザー、ドメイン、およびアセンブリ別に分離されたストアを返します。  
+ 次のコードでは、ユーザー、アセンブリ、およびドメイン別に分離されたストアを返します。  
   
  [!code-cpp[Conceptual.IsolatedStorage#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source6.cpp#6)]
  [!code-csharp[Conceptual.IsolatedStorage#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source6.cs#6)]
  [!code-vb[Conceptual.IsolatedStorage#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source6.vb#6)]  
   
- ローミング ストアは、ローミング ユーザー プロファイルを行う必要があることを指定するために <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> のメソッドを使用できます。  このプロパティを設定する方法の詳細については [分離のタイプ](../../../docs/standard/io/types-of-isolation.md)を参照してください。  
+ 使用することができます、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>ローミング ユーザー プロファイルを使用して、ストアを移動することを指定します。 これを設定する方法の詳細については、次を参照してください。[分離のタイプ](../../../docs/standard/io/types-of-isolation.md)です。  
   
- 既定では、異なるアセンブリから取得される分離ストアは、異なるストアです。  <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> のメソッドのパラメーターのアセンブリまたはドメインの証拠を渡すことにより、異なるアセンブリまたはドメインのストアにアクセスできます。  別のアセンブリまたはドメインのストアにアクセスするには、アプリケーション ドメイン ID 別の分離ストレージにアクセスするためのアクセス許可が必要です。  詳細については、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> メソッド オーバーロードを参照します。  
+ 別のアセンブリ内から取得される分離ストアは、既定では、異なるストアです。 パラメーターのアセンブリまたはドメインの証拠を渡すことで、別のアセンブリまたはドメインのストアにアクセスすることができます、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>メソッドです。 これには、アプリケーション ドメインの id を使用して分離ストレージにアクセスする権限が必要です。 詳細については、次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>メソッドのオーバー ロードします。  
   
- <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>と <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> のメソッドは <xref:System.IO.IsolatedStorage.IsolatedStorageFile> オブジェクトを返します。  場面に応じてどの分離タイプを使用するのが適切かを判断するには、「[分離のタイプ](../../../docs/standard/io/types-of-isolation.md)」を参照してください。  分離ストレージ ファイル オブジェクトがある場合は、分離ストレージのメソッドを使用して、ファイルやディレクトリの読み取り、書き込み、作成、および削除を行うことができます。  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>、 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>、および<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>を返し、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクト。 状況に最適などの分離タイプを決定するために、次を参照してください。[分離のタイプ](../../../docs/standard/io/types-of-isolation.md)です。 分離ストレージ ファイル オブジェクトがある場合を読み取り、書き込み、作成、分離ストレージのメソッドを使用して、ファイルおよびディレクトリを削除します。  
   
- コードはコードにストアを取得するための十分なアクセス権がない <xref:System.IO.IsolatedStorage.IsolatedStorageFile> オブジェクトを渡すことを防ぐ機構はありません。  ドメインおよびアセンブリの ID や分離ストレージのアクセス許可の確認は、<xref:System.IO.IsolatedStorage.IsolatedStorage> オブジェクトへの参照が取得されたとき、つまり、通常は <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> メソッド、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A> メソッド、または <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> メソッドでしか実行されません。  したがって、<xref:System.IO.IsolatedStorage.IsolatedStorageFile> オブジェクトへの参照の保護は、その参照を使用するコードで行う必要があります。  
+ コードに渡すことを防止するためのメカニズムがない、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>されるコードをオブジェクトには、ストア自体を取得するための十分なアクセスにないです。 参照時にのみドメインとアセンブリの id と分離ストレージのアクセス許可がチェックされて、<xref:System.IO.IsolatedStorage.IsolatedStorage>オブジェクトは、取得したでは通常、 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>、 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>、または<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>メソッドです。 参照を保護する<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクトは、そのため、これらの参照を使用するコードの責任です。  
   
-## 例  
- 次のコードは、ユーザーおよびアセンブリ別に分離されたストアを取得するクラスの簡単な例を示します。  コードは <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> のメソッドに渡す引数に <xref:System.IO.IsolatedStorage.IsolatedStorageScope?displayProperty=fullName> に追加することによって、ユーザー、ドメイン、およびアセンブリ別に分離されたストアを取得するように変更できます。  
+## <a name="example"></a>例  
+ 次のコードでは、ユーザーおよびアセンブリ別に分離されたストアを取得するクラスの単純な例を提供します。 追加することでユーザー、ドメイン、およびアセンブリ別に分離されたストアを取得するコードを変更することができます<xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain?displayProperty=nameWithType>引数にする、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>メソッドのパス。  
   
- コードを実行すると、ストアは、コマンド ラインに" **StoreAdm \/LIST** の入力によって作成されたことを確認できます。  これは [分離ストレージ ツール \(Storeadm.exe\)](../../../docs/framework/tools/storeadm-exe-isolated-storage-tool.md) を実行し、ユーザーの現在の分離ストアが一覧表示されます。  
+ コードを実行した後、」と入力して、ストアが作成されたことを確認できます**StoreAdm/LIST**コマンドライン。 これにより、実行、[分離ストレージ ツール (Storeadm.exe)](../../../docs/framework/tools/storeadm-exe-isolated-storage-tool.md)し、ユーザーの現在の分離を格納すべて一覧表示します。  
   
  [!code-cpp[Conceptual.IsolatedStorage#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source6.cpp#7)]
  [!code-csharp[Conceptual.IsolatedStorage#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source6.cs#7)]
  [!code-vb[Conceptual.IsolatedStorage#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source6.vb#7)]  
   
-## 参照  
- <xref:System.IO.IsolatedStorage.IsolatedStorageFile>   
- <xref:System.IO.IsolatedStorage.IsolatedStorageScope>   
- [分離ストレージ](../../../docs/standard/io/isolated-storage.md)   
- [分離のタイプ](../../../docs/standard/io/types-of-isolation.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageScope>  
+ [分離ストレージ](../../../docs/standard/io/isolated-storage.md)  
+ [分離のタイプ](../../../docs/standard/io/types-of-isolation.md)  
  [共通言語ランタイムのアセンブリ](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)

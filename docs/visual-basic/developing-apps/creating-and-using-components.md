@@ -1,41 +1,22 @@
 ---
 title: "Visual Basic でのコンポーネントの作成および使用"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
-helpviewer_keywords:
-- components [Visual Basic]
+helpviewer_keywords: components [Visual Basic]
 ms.assetid: ee6a4156-73f7-4e9b-8e01-c74c4798b65c
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 453d341961207dd851136aa47a52759b0841424d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 03929dd0dbb81a9efee5b69ede78ff0b4ab4d380
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="creating-and-using-components-in-visual-basic"></a>Visual Basic でのコンポーネントの作成および使用
-*コンポーネント*は、<xref:System.ComponentModel.IComponent?displayProperty=fullName> インターフェイスを実装するか、<xref:System.ComponentModel.IComponent> を実装するクラスから直接的または間接的に派生するクラスです。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のコンポーネントは、再利用可能なオブジェクトで、他のオブジェクトとやり取りでき、外部リソースの制御やデザイン時サポートが備わっています。  
+*コンポーネント*は、<xref:System.ComponentModel.IComponent?displayProperty=nameWithType> インターフェイスを実装するか、<xref:System.ComponentModel.IComponent> を実装するクラスから直接的または間接的に派生するクラスです。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のコンポーネントは、再利用可能なオブジェクトで、他のオブジェクトとやり取りでき、外部リソースの制御やデザイン時サポートが備わっています。  
   
  コンポーネントの重要な特徴の 1 つは、コンポーネントがデザイン可能であるということです。つまり、コンポーネントであるクラスは [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 統合開発環境で使用できます。 コンポーネントは、ツールボックスへの追加、フォームへのドラッグ アンド ドロップ、デザイン サーフェイスでの操作が可能です。 コンポーネントの基本のデザイン時サポートは [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] に組み込まれているため、コンポーネント開発者は追加の作業を行わずに基本のデザイン時機能を利用できます。  
   
@@ -100,7 +81,6 @@ ms.lasthandoff: 07/28/2017
  一般的な問題に対処する方法について説明します。  
   
 ## <a name="see-also"></a>関連項目  
- [方法: Windows フォームでデザイン時サポートにアクセスする](http://msdn.microsoft.com/library/a84f8579-1f47-41b9-ba37-69030b0aff09)   
- [方法: デザイン モードでコントロールの外観と動作を拡張する](http://msdn.microsoft.com/library/68f85054-2253-47f5-a4f2-3f1ac8c9f27b)   
+ [方法: Windows フォームでのデザイン時サポートのアクセス](http://msdn.microsoft.com/library/a84f8579-1f47-41b9-ba37-69030b0aff09)  
+ [方法: コントロールのデザイン モードでの動作と外観を拡張](http://msdn.microsoft.com/library/68f85054-2253-47f5-a4f2-3f1ac8c9f27b)  
  [方法: デザイン モードでコントロールのカスタム初期化を行う](http://msdn.microsoft.com/library/914eaa03-092f-4556-9160-b8a2a40641d9)
-

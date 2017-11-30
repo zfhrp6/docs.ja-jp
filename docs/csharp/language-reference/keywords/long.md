@@ -1,41 +1,22 @@
 ---
 title: "long (C# リファレンス)"
-ms.date: 2017-03-14
+ms.date: 03/14/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - long_CSharpKeyword
 - long
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- long keyword [C#]
+helpviewer_keywords: long keyword [C#]
 ms.assetid: f9b24319-1f39-48be-a42b-d528ee28a7fd
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 7f18bed80550b293195961fd9d42491dd571cbaf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 5f7d2d6a3d5781b4e120b8399c7206d4429dd98e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="long-c-reference"></a>long (C# リファレンス)
 
@@ -43,7 +24,7 @@ ms.lasthandoff: 07/28/2017
   
 |型|範囲|サイズ|.NET Framework 型|  
 |----------|-----------|----------|-------------------------|  
-|`long`|-9,223,372,036,854,775,808 から 9,223,372,036,854,775,807|符号付き 64 ビット整数|<xref:System.Int64?displayProperty=fullName>|  
+|`long`|-9,223,372,036,854,775,808 から 9,223,372,036,854,775,807|符号付き 64 ビット整数|<xref:System.Int64?displayProperty=nameWithType>|  
   
 ## <a name="literals"></a>リテラル 
 
@@ -51,14 +32,18 @@ ms.lasthandoff: 07/28/2017
 
 次の例では、整数 4,294,967,296 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`long` 値に割り当てられています。  
   
-[!code-cs[long](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#Long)]  
+[!code-csharp[long](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#Long)]  
 
 > [!NOTE] 
 > 16 進リテラルを表すにはプレフィックス `0x` または `0X` を使い、バイナリ リテラルを表すにはプレフィックス `0b` または `0B` を使います。 10 進リテラルには、プレフィックスはありません。 
 
-C# 7 以降では、次の例に示すように、アンダースコア文字 `_` を桁区切り記号として使って読みやすくすることもできます。
+以降で c# 7、いくつかの機能が追加されて読みやすさを強化するためにします。 
+ - C# 7.0 により、アンダー スコア文字の使用法`_`、桁区切り記号として。
+ - により、c# 7.2`_`プレフィックスの後に、バイナリまたは 16 進数リテラルの桁区切り記号として使用します。 10 進数のリテラルはない、先頭にアンダー スコアを持つことができます。
 
-[!code-cs[long](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#LongS)]  
+いくつかの例は、以下に示します。
+
+[!code-csharp[long](../../../../samples/snippets/csharp/language-reference/keywords/numeric-literals.cs#LongS)]  
  
  整数リテラルには、型を表すサフィックスを含めることもできます。 サフィックス `L` は `long` を表します。 次の例では、`L` サフィックスを使って long 整数を示しています。
  
@@ -122,12 +107,11 @@ long y = (long)3.0;   // OK: explicit conversion
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Int64>   
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)   
- [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)   
- [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)   
+ <xref:System.Int64>  
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+ [整数型の一覧表](../../../csharp/language-reference/keywords/integral-types-table.md)  
+ [組み込み型の一覧表](../../../csharp/language-reference/keywords/built-in-types-table.md)  
+ [暗黙的な数値変換の一覧表](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
  [明示的な数値変換の一覧表](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
-

@@ -12,11 +12,11 @@ caps.latest.revision: "9"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 2a5ab416dc484dddc0b6aa0ec25757921815c723
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 1c866d337b6e02fa18241b6fafd9d4e5a397ef69
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="overloadgroups"></a>OverloadGroups
 このサンプルは、次の 2 つの興味深い特性を持つアクティビティ (`CreateLocation`) で構成されます。  
@@ -31,7 +31,7 @@ ms.lasthandoff: 10/18/2017
   
 -   `[OverloadGroup]` : 一連の引数をまとめて、アクティビティのユーザーが 2 つのセットのうちのどちらを使用するかを選択できるようにします。 ユーザーは、同じインスタンス内の異なるオーバーロード グループの引数を使用できません。  
   
- さまざまなワークフローの設定後、呼び出す<xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>を返す、<xref:System.Activities.Validation.ValidationResults>のコレクション<!--zz <xref:System.Activities.Validation.ConstraintViolation>-->`System.Activities.Validation.ConstraintViolation`です。 印刷、 <!--zz <xref:System.Activities.Validation.ConstraintViolation>--> `System.Activities.Validation.ConstraintViolation`オブジェクトをコンソールです。  
+ さまざまなワークフローを設定したら、<xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> の <xref:System.Activities.Validation.ValidationResults> コレクションを返す <xref:System.Activities.Validation.Constraint> を呼び出します。 <xref:System.Activities.Validation.Constraint> オブジェクトをコンソールに出力します。  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
@@ -46,6 +46,4 @@ ms.lasthandoff: 10/18/2017
 >   
 >  このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Validation\OverloadGroups`  
-  
-## <a name="see-also"></a>関連項目
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Validation\OverloadGroups`

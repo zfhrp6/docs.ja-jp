@@ -1,42 +1,22 @@
 ---
 title: "class (C# リファレンス)"
-ms.date: 2017-07-18
+ms.date: 07/18/2017
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - class_CSharpKeyword
 - class
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- class keyword [C#]
+helpviewer_keywords: class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-caps.latest.revision: 30
+caps.latest.revision: "30"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: ae4b019ee88b6f331a76c750ab94fc76a3343adb
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: cd4fbca0ce7148c571075d31a0e1e4a986d75149
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="class-c-reference"></a>class (C# リファレンス)
 
@@ -62,7 +42,7 @@ C# では、単一継承のみを使用できます。 つまり、クラスは 
 
 名前空間内で直接宣言され、他のクラスに入れ子にされていないクラスは、[public](../../../csharp/language-reference/keywords/public.md) または [internal](../../../csharp/language-reference/keywords/internal.md) のいずれかです。 クラスは既定で `internal` です。
 
-クラスのメンバー (入れ子にされているクラスも含む) は、[public](../../../csharp/language-reference/keywords/public.md)、`protected internal`、[protected](../../../csharp/language-reference/keywords/protected.md)、[internal](../../../csharp/language-reference/keywords/internal.md)、[private](../../../csharp/language-reference/keywords/private.md) のいずれかとして宣言することができます。 メンバーは既定で [private](../../../csharp/language-reference/keywords/private.md) です。
+入れ子になったクラスを含め、クラス メンバーは、[パブリック](../../../csharp/language-reference/keywords/public.md)、 `protected internal`、[保護](../../../csharp/language-reference/keywords/protected.md)、[内部](../../../csharp/language-reference/keywords/internal.md)、[プライベート](../../../csharp/language-reference/keywords/private.md)、または`private protected`. メンバーは既定で [private](../../../csharp/language-reference/keywords/private.md) です。
 
 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。
 
@@ -99,7 +79,7 @@ C# では、単一継承のみを使用できます。 つまり、クラスは 
 ## <a name="example"></a>例
 ここでは、クラスのフィールド、コンストラクター、メソッドの宣言例を示します。 また、オブジェクト インスタンスの作成とインスタンス データの出力の例も示します。 次の例では、2 つのクラスが宣言されています。 最初の `Child` クラスには、2 つのプライベート フィールド (`name` と `age`)、2 つのパブリック コンストラクター、および 1 つのパブリック メソッドがあります。 2 番目のクラスである `StringTest` は、`Main`の格納に使用されます。
 
-[!code-cs[csrefKeywordsTypes#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/class_1.cs)]
+[!code-csharp[csrefKeywordsTypes#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/class_1.cs)]
 
 ## <a name="comments"></a>コメント
 前の例で、プライベート フィールド (`name` および `age`) にアクセスできるのは、`Child` クラスのパブリック メソッドだけであることに注意してください。 たとえば、次のステートメントを使用して `Main` メソッドから子の名前を印刷することはできません。
@@ -118,8 +98,7 @@ Console.Write(child1.name);   // Error
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
 ## <a name="see-also"></a>関連項目
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
  [参照型](../../../csharp/language-reference/keywords/reference-types.md)
-

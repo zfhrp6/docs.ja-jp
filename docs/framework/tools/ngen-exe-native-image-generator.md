@@ -5,15 +5,13 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
+- cpp
 helpviewer_keywords:
 - Native Image Generator
 - images [.NET Framework], native
@@ -27,16 +25,15 @@ helpviewer_keywords:
 - BypassNGenAttribute
 - System.Runtime.BypassNGenAttribute
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
-caps.latest.revision: 57
+caps.latest.revision: "57"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: af79c4309dfd048562b2ee14a71c6da791040397
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 75c329c2d57e1731c1f3cd0d34f680c3706763ce
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (ネイティブ イメージ ジェネレーター)
 ネイティブ イメージ ジェネレーター (Ngen.exe) は、マネージ アプリケーションのパフォーマンスを向上するツールです。 Ngen.exe は、コンパイルされたプロセッサ固有のマシン コードを含むファイルであるネイティブ イメージを作成してローカル コンピューターのネイティブ イメージ キャッシュにインストールします。 ランタイムは、Just-In-Time (JIT) コンパイラを使用してオリジナルのアセンブリをコンパイルする代わりに、キャッシュにあるネイティブ イメージを使用できます。  
@@ -89,7 +86,7 @@ ngen /? | /help
 |`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|アセンブリのネイティブ イメージとその依存関係をネイティブ イメージ キャッシュから削除します。<br /><br /> 単一のイメージとその依存関係をアンインストールするには、そのイメージをインストールしたときと同じコマンド ライン引数を使用します。 **メモ:** [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、アクション `uninstall` * はサポートされなくなりました。|  
 |`update` [`/queue`]|無効になったネイティブ イメージを更新します。<br /><br /> `/queue` を指定すると、更新はネイティブ イメージ サービスのキューに置かれます。 更新は常に優先順位 3 でスケジュールされるため、コンピューターがアイドル状態のときに実行されます。|  
 |`display` [`assemblyName` &#124; `assemblyPath`]|アセンブリのネイティブ イメージとその依存関係の状態を表示します。<br /><br /> 引数を指定しなければ、ネイティブ イメージ キャッシュのすべての内容が表示されます。|  
-|`executeQueuedItems` [`1``&#124;``2``&#124;``3`]<br /><br /> または<br /><br /> `eqi` [1&#124;2&#124;3]|キューに置かれているコンパイル ジョブを実行します。<br /><br /> 優先順位を指定すると、優先順位が高いかまたは同じコンパイル ジョブが実行されます。 優先順位を指定しなければ、キューに置かれているすべてのコンパイル ジョブが実行されます。|  
+|`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> または<br /><br /> `eqi` [1&#124;2&#124;3]|キューに置かれているコンパイル ジョブを実行します。<br /><br /> 優先順位を指定すると、優先順位が高いかまたは同じコンパイル ジョブが実行されます。 優先順位を指定しなければ、キューに置かれているすべてのコンパイル ジョブが実行されます。|  
 |`queue` {`pause` &#124; `continue` &#124; `status`}|ネイティブ イメージ サービスを一時停止するか、停止しているサービスを再開するか、またはサービスの状態を照会します。|  
   
 <a name="ArgumentTable"></a>   
@@ -144,20 +141,20 @@ ngen /? | /help
   
  [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降では、Ngen.exe で生成されたネイティブ イメージを、部分信頼で実行されているアプリケーションに読み込むことができなくなりました。 代わりに、Just-In-Time (JIT) コンパイラが呼び出されます。  
   
- Ngen.exe は、`install` アクションへの `assemblyname` 引数で指定されたアセンブリおよびそのすべての依存項目のネイティブ イメージを生成します。 依存関係は、アセンブリ マニフェストを参照して決定されます。 依存関係を別個にインストールする必要があるのは、アプリケーションがリフレクションを使用して依存関係を読み込む場合だけです。たとえば <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドを呼び出して依存関係を読み込む場合などです。  
+ Ngen.exe は、`install` アクションへの `assemblyname` 引数で指定されたアセンブリおよびそのすべての依存項目のネイティブ イメージを生成します。 依存関係は、アセンブリ マニフェストを参照して決定されます。 依存関係を別個にインストールする必要があるのは、アプリケーションがリフレクションを使用して依存関係を読み込む場合だけです。たとえば <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> メソッドを呼び出して依存関係を読み込む場合などです。  
   
 > [!IMPORTANT]
->  ネイティブ イメージに <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName> メソッドは使用しないでください。 実行コンテキストの他のアセンブリは、このメソッドを使用して読み込まれるイメージを使用できません。  
+>  ネイティブ イメージに <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> メソッドは使用しないでください。 実行コンテキストの他のアセンブリは、このメソッドを使用して読み込まれるイメージを使用できません。  
   
  Ngen.exe は依存関係のカウントを保持します。 たとえば、`MyAssembly.exe` と `YourAssembly.exe` がネイティブ イメージ キャッシュにインストールされており、この両方とも `OurDependency.dll` を参照するとします。 `MyAssembly.exe` がアンインストールされても、`OurDependency.dll` はアンインストールされません。 これが削除されるのは、`YourAssembly.exe` もアンインストールされた場合だけです。  
   
- アセンブリのネイティブ イメージをグローバル アセンブリ キャッシュに生成している場合は表示名を指定します。 「<xref:System.Reflection.Assembly.FullName%2A?displayProperty=fullName>」を参照してください。  
+ アセンブリのネイティブ イメージをグローバル アセンブリ キャッシュに生成している場合は表示名を指定します。 「<xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType>」を参照してください。  
   
  Ngen.exe が生成するネイティブ イメージは、アプリケーション ドメイン間で共有できます。 つまり、アプリケーション ドメイン間でアセンブリを共有する必要のあるアプリケーション シナリオでは Ngen.exe を使用できます。 ドメイン中立性は、次の手順で指定します。  
   
 -   アプリケーションに <xref:System.LoaderOptimizationAttribute> 属性を適用します。  
   
--   新しいアプリケーション ドメインのセットアップ情報を作成するときは、<xref:System.AppDomainSetup.LoaderOptimization%2A?displayProperty=fullName> プロパティを設定します。  
+-   新しいアプリケーション ドメインのセットアップ情報を作成するときは、<xref:System.AppDomainSetup.LoaderOptimization%2A?displayProperty=nameWithType> プロパティを設定します。  
   
  複数のアプリケーション ドメインに同じアセンブリを読み込むときは、必ずドメイン中立のコードを使用します。 共有ドメインに読み込んだ後に非共有アプリケーション ドメインに読み込んだネイティブ イメージは使用できません。  
   
@@ -289,7 +286,7 @@ ngen /? | /help
   
 <a name="DependencyHint"></a>   
 ### <a name="specifying-a-binding-hint-for-a-dependency"></a>依存関係のバインディング ヒントの指定  
- アセンブリに <xref:System.Runtime.CompilerServices.DependencyAttribute> を適用して、指定された依存関係が読み込まれるかどうかを示します <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> は、ハード バインディングが適切であることを示します。<xref:System.Runtime.CompilerServices.LoadHint.Default> は、依存関係の既定値を使用する必要があることを示します。<xref:System.Runtime.CompilerServices.LoadHint.Sometimes> は、ハード バインディングが適切ではないことを示します。  
+ アセンブリに <xref:System.Runtime.CompilerServices.DependencyAttribute> を適用して、指定された依存関係が読み込まれるかどうかを示します <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=nameWithType> は、ハード バインディングが適切であることを示します。<xref:System.Runtime.CompilerServices.LoadHint.Default> は、依存関係の既定値を使用する必要があることを示します。<xref:System.Runtime.CompilerServices.LoadHint.Sometimes> は、ハード バインディングが適切ではないことを示します。  
   
  2 つの依存関係があるアセンブリのための属性のコードを次に示します。 最初の依存関係 (Assembly1) はハード バインディングに適しており、2 番目 (Assembly2) は適していません。  
   
@@ -315,10 +312,10 @@ using namespace System::Runtime::CompilerServices;
   
 <a name="AssemblyHint"></a>   
 ### <a name="specifying-a-default-binding-hint-for-an-assembly"></a>アセンブリの既定のバインディング ヒントの指定  
- 既定のバインディング ヒントは、依存するアプリケーションが即座に頻繁に使用するアセンブリだけに必要です。 そのようなアセンブリには、<xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> と共に <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> を適用して、ハード バインディングを使用することを指定します。  
+ 既定のバインディング ヒントは、依存するアプリケーションが即座に頻繁に使用するアセンブリだけに必要です。 そのようなアセンブリには、<xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> と共に <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=nameWithType> を適用して、ハード バインディングを使用することを指定します。  
   
 > [!NOTE]
->  <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> 以外の値を使用してこの属性を適用しても、この属性をまったく適用しない場合と結果は同じため、このカテゴリに属さない .dll アセンブリに <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=fullName> を適用する理由はありません。  
+>  <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> 以外の値を使用してこの属性を適用しても、この属性をまったく適用しない場合と結果は同じため、このカテゴリに属さない .dll アセンブリに <xref:System.Runtime.CompilerServices.LoadHint.Always?displayProperty=nameWithType> を適用する理由はありません。  
   
  Microsoft では、<xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> を使用して、mscorlib.dll などのごく一部の .NET Framework のアセンブリの既定値としてハード バインディングを指定します。  
   
@@ -388,13 +385,15 @@ using namespace System::Runtime::CompilerServices;
   
  ただし、`BypassNGenAttribute` は .NET Framework クラス ライブラリ内の型としては定義されていません。 コード内で属性を使用するには、最初に次のように定義する必要があります。  
   
- [!code-csharp[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#1)] [!code-vb[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#1)]  
+ [!code-csharp[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#1)]
+ [!code-vb[System.Runtime.BypassNGenAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#1)]  
   
  この後、メソッドごとに属性を適用できるようになります。 次の例は、`ExampleClass.ToJITCompile` メソッドのネイティブ イメージを生成しないようにネイティブ イメージ ジェネレーターに指示しています。  
   
- [!code-csharp[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#2)] [!code-vb[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#2)]  
+ [!code-csharp[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/cs/Optout1.cs#2)]
+ [!code-vb[System.Runtime.BypassNGenAttribute#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Runtime.BypassNGenAttribute/vb/Optout1.vb#2)]  
   
-## <a name="examples"></a>使用例  
+## <a name="examples"></a>例  
  次のコマンドは、現在のディレクトリにある `ClientApp.exe` のネイティブ イメージを生成し、ネイティブ イメージ キャッシュにインストールします。 アセンブリの構成ファイルが存在する場合、Ngen.exe はその構成ファイルを使用します。 さらに、ネイティブ イメージは、`ClientApp.exe` が参照するあらゆる .dll ファイルに対して生成されます。  
   
 ```  
@@ -414,7 +413,7 @@ ngen install c:\myfiles\MyAssembly.exe
 > [!NOTE]
 >  この動作は、アプリケーション ベースが現在のディレクトリに設定される .NET Framework Version 1.0 と 1.1 における Ngen.exe から変更されています。  
   
- アセンブリは、参照を伴わない依存関係を持つことができます。たとえば、<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドを使用して .dll ファイルを読み込む場合などです。 アプリケーション アセンブリの構成情報と `/ExeConfig` オプションを使用して、このような .dll ファイルのネイティブ イメージを作成できます。 `MyLib.dll,` の構成情報を使用して `MyApp.exe` のネイティブ イメージを生成するコマンドを次に示します。  
+ アセンブリは、参照を伴わない依存関係を持つことができます。たとえば、<xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> メソッドを使用して .dll ファイルを読み込む場合などです。 アプリケーション アセンブリの構成情報と `/ExeConfig` オプションを使用して、このような .dll ファイルのネイティブ イメージを作成できます。 `MyLib.dll,` の構成情報を使用して `MyApp.exe` のネイティブ イメージを生成するコマンドを次に示します。  
   
 ```  
 ngen install c:\myfiles\MyLib.dll /ExeConfig:c:\myapps\MyApp.exe  
@@ -594,10 +593,9 @@ ngen executeQueuedItems
  .NET Framework Version 2.0 では、必ず Ngen.exe というコマンド ライン ツールを使用してネイティブ イメージ サービスとやり取りします。 インストール スクリプトでコマンド ライン ツールを使用してネイティブ イメージ サービスのアクションをキューに置いたり、サービスとやり取りしたりします。  
   
 ## <a name="see-also"></a>関連項目  
- [ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)   
- [ネイティブ イメージ タスク](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb)   
- [ツール](../../../docs/framework/tools/index.md)   
- [マネージ実行プロセス](../../../docs/standard/managed-execution-process.md)   
- [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
+ [ネイティブ イメージ サービス](http://msdn.microsoft.com/en-us/b15e0e32-59cb-4ae4-967c-6c9527781309)  
+ [ネイティブ イメージ タスク](http://msdn.microsoft.com/en-us/9b1f7590-4e0d-4737-90ef-eaf696932afb)  
+ [ツール](../../../docs/framework/tools/index.md)  
+ [マネージ実行プロセス](../../../docs/standard/managed-execution-process.md)  
+ [ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

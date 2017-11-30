@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - portable executable files, PEVerify
 - verifying MSIL and metadata
@@ -23,16 +17,15 @@ helpviewer_keywords:
 - PEverify.exe
 - PE files, PEVerify
 ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: 855a1122eb4507912adca80878f78258b37d202d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 01606ede139ef370817926df1dd82bcbfcbabafd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (PEVerify ツール)
 PEVerify ツールは、Microsoft Intermediate Language (MSIL) を生成する開発者 (コンパイラの作成者、スクリプト エンジンの開発者など) が、生成する MSIL コードと関連メタデータがタイプ セーフ要件を満たしているかどうかを確認する場合に役立ちます。 一部のコンパイラでは、特定の言語構成を使用しなかった場合にだけ、検査可能でタイプ セーフなコードが生成されます。 このようなコンパイラを使用している場合、生成したコードがタイプ セーフかどうかを確認する必要があると思う開発者もいるはずです。 そのような場合は、ファイルに対して PEVerify ツールを実行し、MSIL とメタデータを検査できます。  
@@ -136,8 +129,7 @@ peverify myAssembly.exe /break=100 /ignore@ignoreErrors.rsp
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [ツール](../../../docs/framework/tools/index.md)   
- [NIB: 検証可能なタイプ セーフ コードの作成](http://msdn.microsoft.com/en-us/d18f10ef-3b48-4f47-8726-96714021547b)   
- [タイプ セーフとセキュリティ](http://msdn.microsoft.com/en-us/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc)   
+ [ツール](../../../docs/framework/tools/index.md)  
+ [NIB: タイプ セーフ コードの記述](http://msdn.microsoft.com/en-us/d18f10ef-3b48-4f47-8726-96714021547b)  
+ [タイプ セーフとセキュリティ](http://msdn.microsoft.com/en-us/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc)  
  [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-

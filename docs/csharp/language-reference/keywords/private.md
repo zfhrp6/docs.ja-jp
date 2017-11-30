@@ -1,44 +1,29 @@
 ---
 title: "private (C# リファレンス)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
 f1_keywords:
 - private_CSharpKeyword
 - private
-dev_langs:
-- CSharp
-helpviewer_keywords:
-- private keyword [C#]
+helpviewer_keywords: private keyword [C#]
 ms.assetid: 654c0bb8-e6ac-4086-bf96-7474fa6aa1c8
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: d9cc8f86166888b47a758e200182d319c68ca6d4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: c18fd87b12bf3f7f1a1d1ef0dfded8643308169c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="private-c-reference"></a>private (C# リファレンス)
-`private` キーワードはメンバー アクセス修飾子です。 プライベート アクセスは、最も制限の多いアクセス レベルです。 次の例に示すように、プライベート メンバーは、宣言されているクラスまたは構造体の本体内でのみアクセスできます。  
+`private` キーワードはメンバー アクセス修飾子です。 
+   
+ > このページで対象`private`アクセスします。 `private`キーワードはまたの一部、 [ `private protected` ](./private-protected.md)アクセス修飾子。
+  
+プライベート アクセスは、最も制限の多いアクセス レベルです。 次の例に示すように、プライベート メンバーは、宣言されているクラスまたは構造体の本体内でのみアクセスできます。  
   
 ```  
 class Employee  
@@ -47,7 +32,7 @@ class Employee
     double d;   // private access by default  
 }  
 ```  
-  
+
  同じ本体にある入れ子にされた型も、プライベート メンバーにアクセスできます。  
   
  プライベート メンバーへの参照を、クラスの外側やメンバーが宣言されているクラスの外側から行った場合は、コンパイル時のエラーが発生します。  
@@ -57,19 +42,18 @@ class Employee
 ## <a name="example"></a>例  
  この例では、`Employee` クラスに `name` と `salary` という 2 つのプライベート データ メンバーが含まれています。 これらのメンバーは、プライベート メンバーであり、メンバー メソッド以外からはアクセスできません。 `GetName` と `Salary` というパブリック メソッドが追加されており、プライベート メンバーへの制御されたアクセスが許可されています。 `name` メンバーはパブリック メソッドを通してアクセスされ、`salary` メンバーはパブリックな読み取り専用プロパティを通してアクセスされます (詳細については、「[プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)」を参照してください)。  
   
- [!code-cs[csrefKeywordsModifiers#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/private_1.cs)]  
+ [!code-csharp[csrefKeywordsModifiers#10](../../../csharp/language-reference/keywords/codesnippet/CSharp/private_1.cs)]  
   
 ## <a name="c-language-specification"></a>C# 言語仕様  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>関連項目  
- [C# リファレンス](../../../csharp/language-reference/index.md)   
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [C# のキーワード](../../../csharp/language-reference/keywords/index.md)   
- [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)   
- [アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)   
- [修飾子](../../../csharp/language-reference/keywords/modifiers.md)   
- [public](../../../csharp/language-reference/keywords/public.md)   
- [protected](../../../csharp/language-reference/keywords/protected.md)   
+ [C# リファレンス](../../../csharp/language-reference/index.md)  
+ [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)  
+ [C# のキーワード](../../../csharp/language-reference/keywords/index.md)  
+ [アクセス修飾子](../../../csharp/language-reference/keywords/access-modifiers.md)  
+ [アクセシビリティ レベル](../../../csharp/language-reference/keywords/accessibility-levels.md)  
+ [修飾子](../../../csharp/language-reference/keywords/modifiers.md)  
+ [public](../../../csharp/language-reference/keywords/public.md)  
+ [protected](../../../csharp/language-reference/keywords/protected.md)  
  [internal](../../../csharp/language-reference/keywords/internal.md)
-

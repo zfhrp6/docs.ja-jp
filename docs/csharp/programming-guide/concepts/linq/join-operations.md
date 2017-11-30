@@ -1,30 +1,21 @@
 ---
 title: "結合操作 (C#)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 ms.assetid: 5105e0da-1267-4c00-837a-f0e9602279b8
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 158d035985dae0d1c1daf0f276a9df7b913f2263
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: df2f88f2988a4c91730bcfc4e39f10e3471e4ddf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="join-operations-c"></a>結合操作 (C#)
 2 つのデータ ソースの "*結合*" とは、あるデータ ソースのオブジェクトを、共通の属性を共有する別のデータ ソースのオブジェクトと関連付けることです。  
@@ -45,17 +36,16 @@ ms.lasthandoff: 07/28/2017
 |GroupJoin|キー セレクター関数に基づいて 2 つのシーケンスを結合し、各要素について結果として得られる一致をグループ化します。|`join … in … on … equals … into …`|<xref:System.Linq.Enumerable.GroupJoin%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupJoin%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Linq>   
- [標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)   
- [匿名型](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)   
- [結合およびクロス積クエリの作成](http://msdn.microsoft.com/library/d8072ede-0521-4670-9bec-1778ceeb875b)   
- [join 句](../../../../csharp/language-reference/keywords/join-clause.md)   
- [方法: 複合キーを使用して結合する](../../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)   
- [方法: 異種ファイルのコンテンツを結合する (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)   
- [方法: join 句の結果の順序を指定する](../../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)   
- [方法: カスタム結合操作を実行する](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-custom-join-operations.md)   
- [方法: グループ化結合を実行する](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)   
- [方法: 内部結合を実行する](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)   
- [方法: 左外部結合を実行する](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)   
+ <xref:System.Linq>  
+ [標準クエリ演算子の概要 (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [匿名型](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)  
+ [結合およびクロス積クエリを作成します。](http://msdn.microsoft.com/library/d8072ede-0521-4670-9bec-1778ceeb875b)  
+ [join 句](../../../../csharp/language-reference/keywords/join-clause.md)  
+ [方法: 複合キーを使用して結合する](../../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)  
+ [方法: 異種ファイルのコンテンツを結合する (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)  
+ [方法: join 句の結果の順序を指定する](../../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)  
+ [方法: カスタム結合操作を実行する](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-custom-join-operations.md)  
+ [方法: グループ化結合を実行する](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)  
+ [方法: 内部結合を実行する](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)  
+ [方法: 左外部結合を実行する](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)  
  [方法: 複数のソースからオブジェクト コレクションにデータを設定する (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)
-

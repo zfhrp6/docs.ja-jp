@@ -1,42 +1,23 @@
 ---
 title: "-target:exe (C# コンパイラ オプション)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /exe
-dev_langs:
-- CSharp
+f1_keywords: /exe
 helpviewer_keywords:
 - target compiler options [C#], /target:exe
 - /target compiler options [C#], /target:exe
 - -target compiler options [C#], /target:exe
 ms.assetid: bda5717d-1b91-4848-956b-fcf85c30e432
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: b66ab51b30e17ab2f34f88158c3f6095e185468d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: bd035bffb697e895da8765f9e5d230fa84e98f04
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="targetexe-c-compiler-options"></a>/target:exe (C# コンパイラ オプション)
 **/target:exe** オプションを指定した場合、コンパイラは実行可能な (EXE) コンソール アプリケーションを作成します。  
@@ -77,6 +58,5 @@ csc in.cs
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [/target (C# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)   
+ [/target (c# コンパイラ オプション)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)  
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)
-
