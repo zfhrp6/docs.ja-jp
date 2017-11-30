@@ -1,55 +1,60 @@
 ---
-title: "How to: Write a Parallel.ForEach Loop with Thread-Local Variables | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "parallel foreach loop, how to use local state"
+title: "方法: スレッド ローカル変数を使用する Parallel.ForEach ループを記述する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: parallel foreach loop, how to use local state
 ms.assetid: 24b10041-b30b-45cb-aa65-66cf568ca76d
-caps.latest.revision: 18
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 6102274f75d2fe66b89f917cf9095d3a6dfaa3e2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Write a Parallel.ForEach Loop with Thread-Local Variables
-スレッド ローカル変数を持つ <xref:System.Threading.Tasks.Parallel.ForEach%2A> メソッドを記述する方法を次の例に示します。  <xref:System.Threading.Tasks.Parallel.ForEach%2A> ループが実行されると、そのソース コレクションが複数のパーティションに分割されます。  各パーティションには、"スレッド ローカル" 変数が個別にコピーされます   \("スレッド ローカル" という用語は少し不正確です。1 つのスレッド上で 2 つのパーティションが実行されることがあるからです\)。  
+# <a name="how-to-write-a-parallelforeach-loop-with-thread-local-variables"></a><span data-ttu-id="0968f-102">方法: スレッド ローカル変数を使用する Parallel.ForEach ループを記述する</span><span class="sxs-lookup"><span data-stu-id="0968f-102">How to: Write a Parallel.ForEach Loop with Thread-Local Variables</span></span>
+<span data-ttu-id="0968f-103">スレッド ローカル変数を持つ <xref:System.Threading.Tasks.Parallel.ForEach%2A> メソッドを記述する方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="0968f-103">The following example shows how to write a <xref:System.Threading.Tasks.Parallel.ForEach%2A> method that uses thread-local variables.</span></span> <span data-ttu-id="0968f-104"><xref:System.Threading.Tasks.Parallel.ForEach%2A> ループが実行されると、そのソース コレクションが複数のパーティションに分割されます。</span><span class="sxs-lookup"><span data-stu-id="0968f-104">When a <xref:System.Threading.Tasks.Parallel.ForEach%2A> loop executes, it divides its source collection into multiple partitions.</span></span> <span data-ttu-id="0968f-105">各パーティションには、"スレッド ローカル" 変数が個別にコピーされます </span><span class="sxs-lookup"><span data-stu-id="0968f-105">Each partition will get its own copy of the "thread-local" variable.</span></span> <span data-ttu-id="0968f-106">("スレッド ローカル" という用語は少し不正確です。1 つのスレッド上で 2 つのパーティションが実行されることがあるからです)。</span><span class="sxs-lookup"><span data-stu-id="0968f-106">(The term "thread-local" is slightly inaccurate here, because in some cases two partitions may run on the same thread.)</span></span>  
   
- この例のコードおよびパラメーターは、対応する <xref:System.Threading.Tasks.Parallel.For%2A> メソッドによく似ています。  詳細については、「[How to: Write a Parallel.For Loop with Thread\-Local Variables](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)」を参照してください。  
+ <span data-ttu-id="0968f-107">この例のコードおよびパラメーターは、対応する <xref:System.Threading.Tasks.Parallel.For%2A> メソッドによく似ています。</span><span class="sxs-lookup"><span data-stu-id="0968f-107">The code and parameters in this example closely resemble the corresponding <xref:System.Threading.Tasks.Parallel.For%2A> method.</span></span> <span data-ttu-id="0968f-108">詳細については、次を参照してください。[する方法: スレッド ローカル変数を使用する Parallel.For ループを記述](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)です。</span><span class="sxs-lookup"><span data-stu-id="0968f-108">For more information, see [How to: Write a Parallel.For Loop with Thread-Local Variables](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md).</span></span>  
   
- <xref:System.Threading.Tasks.Parallel.ForEach%2A> ループでスレッド ローカル変数を使用するには、2 つのタイプのパラメーターを取るメソッド オーバーロードのうち、いずれか 1 つを呼び出す必要があります。  最初の型パラメーター `TSource` でソース要素の型を指定し、2 番目の型パラメーター `TLocal` でスレッド ローカル変数の型を指定します。  
+ <span data-ttu-id="0968f-109"><xref:System.Threading.Tasks.Parallel.ForEach%2A> ループでスレッド ローカル変数を使用するには、2 つのタイプのパラメーターを取るメソッド オーバーロードのうち、いずれか 1 つを呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="0968f-109">To use a thread-local variable in a <xref:System.Threading.Tasks.Parallel.ForEach%2A> loop, you must call one of the method overloads that takes two type parameters.</span></span> <span data-ttu-id="0968f-110">最初の型パラメーター `TSource` でソース要素の型を指定し、2 番目の型パラメーター `TLocal` でスレッド ローカル変数の型を指定します。</span><span class="sxs-lookup"><span data-stu-id="0968f-110">The first type parameter, `TSource`, specifies the type of the source element, and the second type parameter, `TLocal`, specifies the type of the thread-local variable.</span></span>  
   
-## 使用例  
- 以下の例では、<xref:System.Threading.Tasks.Parallel.ForEach%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%601%7D%2CSystem.Func%7B%60%600%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%601%2C%60%601%7D%2CSystem.Action%7B%60%601%7D%29?displayProperty=fullName> のオーバーロードを呼び出して、100 万個の要素からなる配列の合計を計算します。  このオーバーロードには、4 つのパラメータがあります。  
+## <a name="example"></a><span data-ttu-id="0968f-111">例</span><span class="sxs-lookup"><span data-stu-id="0968f-111">Example</span></span>  
+ <span data-ttu-id="0968f-112">以下の例では、<xref:System.Threading.Tasks.Parallel.ForEach%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%601%7D%2CSystem.Func%7B%60%600%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%601%2C%60%601%7D%2CSystem.Action%7B%60%601%7D%29?displayProperty=nameWithType> のオーバーロードを呼び出して、100 万個の要素からなる配列の合計を計算します。</span><span class="sxs-lookup"><span data-stu-id="0968f-112">The following example calls <xref:System.Threading.Tasks.Parallel.ForEach%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%601%7D%2CSystem.Func%7B%60%600%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%601%2C%60%601%7D%2CSystem.Action%7B%60%601%7D%29?displayProperty=nameWithType> overload to compute the sum of an array of one million elements.</span></span> <span data-ttu-id="0968f-113">このオーバーロードには、4 つのパラメータがあります。</span><span class="sxs-lookup"><span data-stu-id="0968f-113">This overload has four parameters:</span></span>  
   
--   `source`。データ ソースです。  これは、<xref:System.Collections.Generic.IEnumerable%601> を実装する必要があります。  この例のデータ ソースは、<xref:System.Linq.Enumerable.Range%2A?displayProperty=fullName> によって返される、100 万個のメンバーからなる `IEnumerable<Int32>` オブジェクトです。  
+-   <span data-ttu-id="0968f-114">`source`。データ ソースです。</span><span class="sxs-lookup"><span data-stu-id="0968f-114">`source`, which is the data source.</span></span> <span data-ttu-id="0968f-115">これは、<xref:System.Collections.Generic.IEnumerable%601> を実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0968f-115">It must implement <xref:System.Collections.Generic.IEnumerable%601>.</span></span> <span data-ttu-id="0968f-116">この例のデータ ソースは、`IEnumerable<Int32>` によって返される、100 万個のメンバーからなる <xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType> オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="0968f-116">The data source in our example is the one million member `IEnumerable<Int32>` object returned by the <xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType> method.</span></span>  
   
--   `localInit`。またはスレッド ローカル変数を初期化する関数です。  この関数は、<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> 操作が実行される各パーティションで 1 回呼び出されます。  この例では、スレッド ローカル変数がゼロに初期化されます。  
+-   <span data-ttu-id="0968f-117">`localInit`。またはスレッド ローカル変数を初期化する関数です。</span><span class="sxs-lookup"><span data-stu-id="0968f-117">`localInit`, or the function that initializes the thread-local variable.</span></span> <span data-ttu-id="0968f-118">この関数は、<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> 操作が実行される各パーティションで 1 回呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="0968f-118">This function is called once for each partition in which the <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> operation executes.</span></span> <span data-ttu-id="0968f-119">この例では、スレッド ローカル変数がゼロに初期化されます。</span><span class="sxs-lookup"><span data-stu-id="0968f-119">Our example initializes the thread-local variable to zero.</span></span>  
   
--   `body`。ループの各反復処理に対して並列ループで呼び出される <xref:System.Func%604> です。  シグニチャは `Func\<TSource, ParallelLoopState, TLocal, TLocal>` です。  プログラマはデリゲートのコードを作成します。入力パラメーターはループから渡されます。これらの入力パラメーターは以下のとおりです。  
+-   <span data-ttu-id="0968f-120">`body`。ループの各反復処理に対して並列ループで呼び出される <xref:System.Func%604> です。</span><span class="sxs-lookup"><span data-stu-id="0968f-120">`body`, a <xref:System.Func%604> that is invoked by the parallel loop on each iteration of the loop.</span></span> <span data-ttu-id="0968f-121">シグニチャは `Func\<TSource, ParallelLoopState, TLocal, TLocal>` です。</span><span class="sxs-lookup"><span data-stu-id="0968f-121">Its signature is `Func\<TSource, ParallelLoopState, TLocal, TLocal>`.</span></span> <span data-ttu-id="0968f-122">プログラマはデリゲートのコードを作成します。入力パラメーターはループから渡されます。これらの入力パラメーターは以下のとおりです。</span><span class="sxs-lookup"><span data-stu-id="0968f-122">You supply the code for the delegate, and the loop passes in the input parameters, which are:</span></span>  
   
-    -   <xref:System.Collections.Generic.IEnumerable%601> の現在の要素。  
+    -   <span data-ttu-id="0968f-123"><xref:System.Collections.Generic.IEnumerable%601> の現在の要素。</span><span class="sxs-lookup"><span data-stu-id="0968f-123">The current element of the <xref:System.Collections.Generic.IEnumerable%601>.</span></span>  
   
-    -   <xref:System.Threading.Tasks.ParallelLoopState> 変数。デリゲートのコードで、ループの状態を確認するために使用できます。  
+    -   <span data-ttu-id="0968f-124"><xref:System.Threading.Tasks.ParallelLoopState> 変数。デリゲートのコードで、ループの状態を確認するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="0968f-124">A <xref:System.Threading.Tasks.ParallelLoopState> variable that you can use in your delegate's code to examine the state of the loop.</span></span>  
   
-    -   スレッド ローカル変数。  
+    -   <span data-ttu-id="0968f-125">スレッド ローカル変数。</span><span class="sxs-lookup"><span data-stu-id="0968f-125">The thread-local variable.</span></span>  
   
-     デリゲートからスレッド ローカル変数が返されると、その変数は、その特定のパーティションで実行されるループの次の反復処理に渡されます。  ループ パーティションごとに、この変数の個別のインスタンスが保持されます。  
+     <span data-ttu-id="0968f-126">デリゲートからスレッド ローカル変数が返されると、その変数は、その特定のパーティションで実行されるループの次の反復処理に渡されます。</span><span class="sxs-lookup"><span data-stu-id="0968f-126">Your delegate returns the thread-local variable, which is then passed to the next iteration of the loop that executes in that particular partition.</span></span> <span data-ttu-id="0968f-127">ループ パーティションごとに、この変数の個別のインスタンスが保持されます。</span><span class="sxs-lookup"><span data-stu-id="0968f-127">Each loop partition maintains a separate instance of this variable.</span></span>  
   
-     この例では、デリゲートによって個々の整数の値がスレッド ローカル変数に追加されます。スレッド ローカル変数には、そのパーティションで順次追加される整数要素の値の現在の合計が保持されます。  
+     <span data-ttu-id="0968f-128">この例では、デリゲートによって個々の整数の値がスレッド ローカル変数に追加されます。スレッド ローカル変数には、そのパーティションで順次追加される整数要素の値の現在の合計が保持されます。</span><span class="sxs-lookup"><span data-stu-id="0968f-128">In the example, the delegate adds the value of each integer to the thread-local variable, which maintains a running total of the values of the integer elements in that partition.</span></span>  
   
--   `localFinally`。各パーティションでのループ操作が完了した時点で、<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> によって呼び出される `Action<TLocal>` デリゲート。  <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> メソッドは、`Action<TLocal>` デリゲートに、このスレッド \(ループ パーティション\) のスレッド ローカル変数の最終値を返します。プログラマは、このパーティションの結果と他のパーティションの結果を結合するために必要な操作を実行するコードを作成します。  このデリゲートは、複数のタスクで同時に呼び出すことができます。  このため、この例では `total` 変数へのアクセスを同期するために <xref:System.Threading.Interlocked.Add%28System.Int32%40%2CSystem.Int32%29?displayProperty=fullName> メソッドが使用されます。  デリゲート型は <xref:System.Action%601> であるため、戻り値はありません。  
+-   <span data-ttu-id="0968f-129">`localFinally`。各パーティションでのループ操作が完了した時点で、`Action<TLocal>` によって呼び出される <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> デリゲート。</span><span class="sxs-lookup"><span data-stu-id="0968f-129">`localFinally`, an `Action<TLocal>` delegate that the <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> invokes when the looping operations in each partition have completed.</span></span> <span data-ttu-id="0968f-130"><xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> メソッドは、`Action<TLocal>` デリゲートに、このスレッド (ループ パーティション) のスレッド ローカル変数の最終値を返します。プログラマは、このパーティションの結果と他のパーティションの結果を結合するために必要な操作を実行するコードを作成します。</span><span class="sxs-lookup"><span data-stu-id="0968f-130">The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method passes your `Action<TLocal>` delegate the final value of the thread-local variable for this thread (or loop partition), and you provide the code that performs the required action for combining the result from this partition with the results from the other partitions.</span></span> <span data-ttu-id="0968f-131">このデリゲートは、複数のタスクで同時に呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="0968f-131">This delegate can be invoked concurrently by multiple tasks.</span></span> <span data-ttu-id="0968f-132">このため、この例では <xref:System.Threading.Interlocked.Add%28System.Int32%40%2CSystem.Int32%29?displayProperty=nameWithType> 変数へのアクセスを同期するために `total` メソッドが使用されます。</span><span class="sxs-lookup"><span data-stu-id="0968f-132">Because of this, the example uses the <xref:System.Threading.Interlocked.Add%28System.Int32%40%2CSystem.Int32%29?displayProperty=nameWithType> method to synchronize access to the `total` variable.</span></span> <span data-ttu-id="0968f-133">デリゲート型は <xref:System.Action%601> であるため、戻り値はありません。</span><span class="sxs-lookup"><span data-stu-id="0968f-133">Because the delegate type is an <xref:System.Action%601>, there is no return value.</span></span>  
   
  [!code-csharp[TPL_Parallel#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/foreachthreadlocal.cs#04)]
  [!code-vb[TPL_Parallel#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/foreachthreadlocal.vb#04)]  
   
-## 参照  
- [Data Parallelism](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)   
- [How to: Write a Parallel.For Loop with Thread\-Local Variables](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)   
- [Lambda Expressions in PLINQ and TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)
+## <a name="see-also"></a><span data-ttu-id="0968f-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="0968f-134">See Also</span></span>  
+ [<span data-ttu-id="0968f-135">データの並列化</span><span class="sxs-lookup"><span data-stu-id="0968f-135">Data Parallelism</span></span>](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)  
+ [<span data-ttu-id="0968f-136">方法: スレッド ローカル変数を使用する Parallel.For ループを記述する</span><span class="sxs-lookup"><span data-stu-id="0968f-136">How to: Write a Parallel.For Loop with Thread-Local Variables</span></span>](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)  
+ [<span data-ttu-id="0968f-137">PLINQ および TPL のラムダ式</span><span class="sxs-lookup"><span data-stu-id="0968f-137">Lambda Expressions in PLINQ and TPL</span></span>](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)

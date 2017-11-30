@@ -1,236 +1,243 @@
 ---
-title: "カスタム数値書式指定文字列 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "カスタム数値書式指定文字列"
-  - "書式指定子, カスタム数値書式指定文字列"
-  - "書式指定子, 数値"
-  - "書式指定文字列"
-  - "書式指定 [.NET Framework], 数"
-  - "書式指定 (数値の) [.NET Framework]"
-  - "数値 [.NET Framework], 書式指定"
-  - "数値書式指定文字列 [.NET Framework]"
+title: "カスタム数値書式指定文字列"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- numeric format strings [.NET Framework]
+- formatting [.NET Framework], numbers
+- format strings
+- custom numeric format strings
+- numbers [.NET Framework], formatting
+- format specifiers, numeric
+- formatting numbers [.NET Framework]
+- format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-caps.latest.revision: 54
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 54
+caps.latest.revision: "54"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: a391ee54aaeaf007afcb6aacdb9376820950e89e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# カスタム数値書式指定文字列
-1 つ以上のカスタム数値指定子で構成されるカスタム数値書式指定文字列を作成して、数値データの書式設定方法を定義できます。 カスタム数値書式指定文字列は、[標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)ではない任意の書式指定文字列です。  
+# <a name="custom-numeric-format-strings"></a><span data-ttu-id="563a0-102">カスタム数値書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="563a0-102">Custom Numeric Format Strings</span></span>
+<span data-ttu-id="563a0-103">1 つ以上のカスタム数値指定子で構成されるカスタム数値書式指定文字列を作成して、数値データの書式設定方法を定義できます。</span><span class="sxs-lookup"><span data-stu-id="563a0-103">You can create a custom numeric format string, which consists of one or more custom numeric specifiers, to define how to format numeric data.</span></span> <span data-ttu-id="563a0-104">カスタム数値書式指定文字列は、 [標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)ではない任意の書式指定文字列です。</span><span class="sxs-lookup"><span data-stu-id="563a0-104">A custom numeric format string is any format string that is not a [standard numeric format string](../../../docs/standard/base-types/standard-numeric-format-strings.md).</span></span>  
   
- カスタム数値書式指定文字列は、すべての数値型の `ToString` メソッドの一部のオーバーロードでサポートされています。 たとえば、<xref:System.Int32.ToString%28System.String%29> 型の <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> メソッドおよび <xref:System.Int32> メソッドに数値書式指定文字列を指定できます。 カスタム数値書式指定文字列は、.NET Framework の[複合書式指定機能](../../../docs/standard/base-types/composite-formatting.md)でもサポートされています。この機能を使用するメソッドには、`Write` クラスおよび `WriteLine` クラスの一部の <xref:System.Console> メソッドと <xref:System.IO.StreamWriter> メソッド、<xref:System.String.Format%2A?displayProperty=fullName> メソッド、および <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=fullName> メソッドがあります。  
+ <span data-ttu-id="563a0-105">カスタム数値書式指定文字列は、すべての数値型の `ToString` メソッドの一部のオーバーロードでサポートされています。</span><span class="sxs-lookup"><span data-stu-id="563a0-105">Custom numeric format strings are supported by some overloads of the `ToString` method of all numeric types.</span></span> <span data-ttu-id="563a0-106">たとえば、 <xref:System.Int32.ToString%28System.String%29> 型の <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> メソッドおよび <xref:System.Int32> メソッドに数値書式指定文字列を指定できます。</span><span class="sxs-lookup"><span data-stu-id="563a0-106">For example, you can supply a numeric format string to the <xref:System.Int32.ToString%28System.String%29> and <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> methods of the <xref:System.Int32> type.</span></span> <span data-ttu-id="563a0-107">カスタム数値書式指定文字列もサポートしています、.NET[複合書式指定機能](../../../docs/standard/base-types/composite-formatting.md)、いくつかによって使用される`Write`と`WriteLine`のメソッド、<xref:System.Console>と<xref:System.IO.StreamWriter>クラス、 <xref:System.String.Format%2A?displayProperty=nameWithType>メソッド、および<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="563a0-107">Custom numeric format strings are also supported by the .NET [composite formatting feature](../../../docs/standard/base-types/composite-formatting.md), which is used by some `Write` and `WriteLine` methods of the <xref:System.Console> and <xref:System.IO.StreamWriter> classes, the <xref:System.String.Format%2A?displayProperty=nameWithType> method, and the <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> method.</span></span>  
   
 > [!TIP]
->  [書式指定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)をダウンロードできます。このアプリケーションを使用すると、書式指定文字列を数値または日付と時刻の値に適用して、結果の文字列を表示できます。  
+>  <span data-ttu-id="563a0-108">[書式指定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)をダウンロードできます。このアプリケーションを使用すると、書式指定文字列を数値または日付と時刻の値に適用して、結果の文字列を表示できます。</span><span class="sxs-lookup"><span data-stu-id="563a0-108">You can download the [Formatting Utility](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d), an application that enables you to apply format strings to either numeric or date and time values and displays the result string.</span></span>  
   
-<a name="table"></a> 次の表に、カスタム数値書式指定子の説明および書式指定子ごとのサンプル出力を示します。 カスタム数値書式指定文字列の使用方法については、「[メモ](#NotesCustomFormatting)」を参照してください。それらを使用する包括的な例については、「[例](#example)」を参照してください。  
+<span data-ttu-id="563a0-109"><a name="table"></a> 次の表に、カスタム数値書式指定子の説明および書式指定子ごとのサンプル出力を示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-109"><a name="table"></a> The following table describes the custom numeric format specifiers and displays sample output produced by each format specifier.</span></span> <span data-ttu-id="563a0-110">カスタム数値書式指定文字列の使用方法については、「 [メモ](#NotesCustomFormatting) 」を参照してください。それらを使用する包括的な例については、「 [例](#example) 」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="563a0-110">See the [Notes](#NotesCustomFormatting) section for additional information about using custom numeric format strings, and the [Example](#example) section for a comprehensive illustration of their use.</span></span>  
   
-|書式指定子|名前|説明|例|  
-|-----------|--------|--------|-------|  
-|"0"|ゼロ プレースホルダー|対応する数字でゼロを置き換えます。置き換えが行われるのは、対応する数字が存在する場合です。それ以外の場合は、結果の文字列にはゼロが表示されます。<br /><br /> 詳細については、「["0" カスタム指定子](#Specifier0)」を参照してください。|1234.5678 \("00000"\) \-\> 01235<br /><br /> 0.45678 \("0.00", en\-US\) \-\> 0.46<br /><br /> 0.45678 \("0.00", fr\-FR\) \-\> 0,46|  
-|"\#"|桁プレースホルダー|対応する数字で "\#" 記号を置き換えます。置き換えが行われるのは、対応する数字が存在する場合です。それ以外の場合は、結果の文字列に数字は表示されません。<br /><br /> 入力文字列の対応する数字が意味を持たない 0 の場合、結果の文字列に数字は表示されません。 たとえば、0003 \("\#\#\#\#"\) \-\> 3 です。<br /><br /> 詳細については、「["\#" カスタム指定子](#SpecifierD)」を参照してください。|1234.5678 \("\#\#\#\#\#"\) \-\> 1235<br /><br /> 0.45678 \("\#.\#\#", en\-US\) \-\> .46<br /><br /> 0.45678 \("\#.\#\#", fr\-FR\) \-\> ,46|  
-|"."|小数点|結果の文字列の小数点位置を決定します。<br /><br /> 詳細については、「["."カスタム指定子](#SpecifierPt)」を参照してください。|0.45678 \("0.00", en\-US\) \-\> 0.46<br /><br /> 0.45678 \("0.00", fr\-FR\) \-\> 0,46|  
-|","|桁区切り記号および数値の位取り|桁区切り記号および数値位取り指定子の両方として機能します。 桁区切り記号としては、各グループの間に、ローカライズされた桁区切り記号文字を挿入します。 数値位取り指定子としては、指定されたコンマごとに、数値を 1000 で除算します。<br /><br /> 詳細については、「["," カスタム指定子](#SpecifierTh)」を参照してください。|桁区切り記号:<br /><br /> 2147483647 \("\#\#,\#", en\-US\) \-\> 2,147,483,647<br /><br /> 2147483647 \("\#\#,\#", es\-ES\) \-\> 2.147.483.647<br /><br /> 位取り指定子:<br /><br /> 2147483647 \("\#,\#,,", en\-US\) \-\> 2,147<br /><br /> 2147483647 \("\#,\#,,", es\-ES\) \-\> 2.147|  
-|"%"|パーセント プレースホルダー|数値に 100 を乗算し、結果の文字列に、ローカライズされたパーセント記号を挿入します。<br /><br /> 詳細については、「["%" カスタム指定子](#SpecifierPct)」を参照してください。|0.3697 \("%\#0.00", en\-US\) \-\> %36.97<br /><br /> 0.3697 \("%\#0.00", el\-GR\) \-\> %36,97<br /><br /> 0.3697 \("\#\#.0 %", en\-US\) \-\> 37.0 %<br /><br /> 0.3697 \("\#\#.0 %", el\-GR\) \-\> 37,0 %|  
-|"‰"|パーミル プレースホルダー|数値に 1000 を乗算し、結果の文字列にローカライズされたパーミル記号を挿入します。<br /><br /> 詳細については、「["‰" カスタム指定子](#SpecifierPerMille)」を参照してください。|0.03697 \("\#0.00‰", en\-US\) \-\> 36.97‰<br /><br /> 0.03697 \("\#0.00‰", ru\-RU\) \-\> 36,97‰|  
-|"E0"<br /><br /> "E\+0"<br /><br /> "E\-0"<br /><br /> "e0"<br /><br /> "e\+0"<br /><br /> "e\-0"|指数表記|後に 0 \(ゼロ\) が 1 つ以上続く場合に、指数表記を使用して結果の書式を設定します。 大文字 "E" と小文字 "e" は、結果の文字列の指数記号を大文字にするか小文字にするかを示します。 "E" 文字または "e" 文字の後に続くゼロの数によって、指数部の最小桁数が決まります。 正符号 \(\+\) は、符号文字が指数部の前に常に挿入されることを示します。 負符号 \(\-\) は、指数部が負の値の場合にだけその前に符号文字が挿入されることを示します。<br /><br /> 詳細については、「["E" カスタム指定子と "e" カスタム指定子](#SpecifierExponent)」を参照してください。|987654 \("\#0.0e0"\) \-\> 98.8e4<br /><br /> 1503.92311 \("0.0\#\#e\+00"\) \-\> 1.504e\+03<br /><br /> 1.8901385E\-16 \("0.0e\+00"\) \-\> 1.9e\-16|  
-|\\|エスケープ文字|この文字の次の文字はカスタム書式指定子ではなくリテラルとして解釈されます。<br /><br /> 詳細については、「["\\" エスケープ文字](#SpecifierEscape)」を参照してください。|987654 \("\\\#\#\#00\\\#"\) \-\> \#987654\#|  
-|'*文字列*'<br /><br /> "*文字列*"|リテラル文字列区切り記号|囲まれた文字列が結果の文字列にそのままコピーされることを示します。|68 \("\#' degrees'"\) \-\> 68 degrees<br /><br /> 68 \("\#' degrees'"\) \-\> 68 degrees|  
-|;|セクション区切り記号|正の数値、負の数値、およびゼロの数値に対して、別々の書式指定文字列を使用してセクションを定義します。<br /><br /> 詳細については、「[";" セクション区切り記号](#SectionSeparator)」を参照してください。|12.345 \("\#0.0\#;\(\#0.0\#\);\-\\0\-"\) \-\> 12.35<br /><br /> 0 \("\#0.0\#;\(\#0.0\#\);\-\\0\-"\) \-\> \-0\-<br /><br /> \-12.345 \("\#0.0\#;\(\#0.0\#\);\-\\0\-"\) \-\> \(12.35\)<br /><br /> 12.345 \("\#0.0\#;\(\#0.0\#\)"\) \-\> 12.35<br /><br /> 0 \("\#0.0\#;\(\#0.0\#\)"\) \-\> 0.0<br /><br /> \-12.345 \("\#0.0\#;\(\#0.0\#\)"\) \-\> \(12.35\)|  
-|その他|上記以外のすべての文字|文字が結果の文字列にそのままコピーされます。|68 \("\# °"\) \-\> 68 °|  
+|<span data-ttu-id="563a0-111">書式指定子</span><span class="sxs-lookup"><span data-stu-id="563a0-111">Format specifier</span></span>|<span data-ttu-id="563a0-112">名前</span><span class="sxs-lookup"><span data-stu-id="563a0-112">Name</span></span>|<span data-ttu-id="563a0-113">説明</span><span class="sxs-lookup"><span data-stu-id="563a0-113">Description</span></span>|<span data-ttu-id="563a0-114">例</span><span class="sxs-lookup"><span data-stu-id="563a0-114">Examples</span></span>|  
+|----------------------|----------|-----------------|--------------|  
+|<span data-ttu-id="563a0-115">"0"</span><span class="sxs-lookup"><span data-stu-id="563a0-115">"0"</span></span>|<span data-ttu-id="563a0-116">ゼロ プレースホルダー</span><span class="sxs-lookup"><span data-stu-id="563a0-116">Zero placeholder</span></span>|<span data-ttu-id="563a0-117">対応する数字でゼロを置き換えます。置き換えが行われるのは、対応する数字が存在する場合です。それ以外の場合は、結果の文字列にはゼロが表示されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-117">Replaces the zero with the corresponding digit if one is present; otherwise, zero appears in the result string.</span></span><br /><br /> <span data-ttu-id="563a0-118">詳細については、「 ["0" カスタム指定子](#Specifier0)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="563a0-118">More information: [The "0" Custom Specifier](#Specifier0).</span></span>|<span data-ttu-id="563a0-119">1234.5678 ("00000") -> 01235</span><span class="sxs-lookup"><span data-stu-id="563a0-119">1234.5678 ("00000") -> 01235</span></span><br /><br /> <span data-ttu-id="563a0-120">0.45678 ("0.00", en-US) -> 0.46</span><span class="sxs-lookup"><span data-stu-id="563a0-120">0.45678 ("0.00", en-US) -> 0.46</span></span><br /><br /> <span data-ttu-id="563a0-121">0.45678 ("0.00", fr-FR) -> 0,46</span><span class="sxs-lookup"><span data-stu-id="563a0-121">0.45678 ("0.00", fr-FR) -> 0,46</span></span>|  
+|<span data-ttu-id="563a0-122">"#"</span><span class="sxs-lookup"><span data-stu-id="563a0-122">"#"</span></span>|<span data-ttu-id="563a0-123">桁プレースホルダー</span><span class="sxs-lookup"><span data-stu-id="563a0-123">Digit placeholder</span></span>|<span data-ttu-id="563a0-124">対応する数字で "#" 記号を置き換えます。置き換えが行われるのは、対応する数字が存在する場合です。それ以外の場合は、結果の文字列に数字は表示されません。</span><span class="sxs-lookup"><span data-stu-id="563a0-124">Replaces the "#" symbol with the corresponding digit if one is present; otherwise, no digit appears in the result string.</span></span><br /><br /> <span data-ttu-id="563a0-125">入力文字列の対応する数字が意味を持たない 0 の場合、結果の文字列に数字は表示されません。</span><span class="sxs-lookup"><span data-stu-id="563a0-125">Note that no digit appears in the result string if the corresponding digit in the input string is a non-significant 0.</span></span> <span data-ttu-id="563a0-126">たとえば、0003 ("####") -> 3 です。</span><span class="sxs-lookup"><span data-stu-id="563a0-126">For example, 0003 ("####") -> 3.</span></span><br /><br /> <span data-ttu-id="563a0-127">詳細については、「 ["#" カスタム指定子](#SpecifierD)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="563a0-127">More information: [The "#" Custom Specifier](#SpecifierD).</span></span>|<span data-ttu-id="563a0-128">1234.5678 ("#####") -> 1235</span><span class="sxs-lookup"><span data-stu-id="563a0-128">1234.5678 ("#####") -> 1235</span></span><br /><br /> <span data-ttu-id="563a0-129">0.45678 ("#.##", en-US) -> .46</span><span class="sxs-lookup"><span data-stu-id="563a0-129">0.45678 ("#.##", en-US) -> .46</span></span><br /><br /> <span data-ttu-id="563a0-130">0.45678 ("#.##", fr-FR) -> ,46</span><span class="sxs-lookup"><span data-stu-id="563a0-130">0.45678 ("#.##", fr-FR) -> ,46</span></span>|  
+|<span data-ttu-id="563a0-131">"."</span><span class="sxs-lookup"><span data-stu-id="563a0-131">"."</span></span>|<span data-ttu-id="563a0-132">小数点</span><span class="sxs-lookup"><span data-stu-id="563a0-132">Decimal point</span></span>|<span data-ttu-id="563a0-133">結果の文字列の小数点位置を決定します。</span><span class="sxs-lookup"><span data-stu-id="563a0-133">Determines the location of the decimal separator in the result string.</span></span><br /><br /> <span data-ttu-id="563a0-134">詳細については、「["." カスタム指定子](#SpecifierPt)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="563a0-134">More information: [The "." Custom Specifier](#SpecifierPt).</span></span>|<span data-ttu-id="563a0-135">0.45678 ("0.00", en-US) -> 0.46</span><span class="sxs-lookup"><span data-stu-id="563a0-135">0.45678 ("0.00", en-US) -> 0.46</span></span><br /><br /> <span data-ttu-id="563a0-136">0.45678 ("0.00", fr-FR) -> 0,46</span><span class="sxs-lookup"><span data-stu-id="563a0-136">0.45678 ("0.00", fr-FR) -> 0,46</span></span>|  
+|<span data-ttu-id="563a0-137">","</span><span class="sxs-lookup"><span data-stu-id="563a0-137">","</span></span>|<span data-ttu-id="563a0-138">桁区切り記号および数値の位取り</span><span class="sxs-lookup"><span data-stu-id="563a0-138">Group separator and number scaling</span></span>|<span data-ttu-id="563a0-139">桁区切り記号および数値位取り指定子の両方として機能します。</span><span class="sxs-lookup"><span data-stu-id="563a0-139">Serves as both a group separator and a number scaling specifier.</span></span> <span data-ttu-id="563a0-140">桁区切り記号としては、各グループの間に、ローカライズされた桁区切り記号文字を挿入します。</span><span class="sxs-lookup"><span data-stu-id="563a0-140">As a group separator, it inserts a localized group separator character between each group.</span></span> <span data-ttu-id="563a0-141">数値位取り指定子としては、指定されたコンマごとに、数値を 1000 で除算します。</span><span class="sxs-lookup"><span data-stu-id="563a0-141">As a number scaling specifier, it divides a number by 1000 for each comma specified.</span></span><br /><br /> <span data-ttu-id="563a0-142">詳細については、「 ["," カスタム指定子](#SpecifierTh)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="563a0-142">More information: [The "," Custom Specifier](#SpecifierTh).</span></span>|<span data-ttu-id="563a0-143">桁区切り記号:</span><span class="sxs-lookup"><span data-stu-id="563a0-143">Group separator specifier:</span></span><br /><br /> <span data-ttu-id="563a0-144">2147483647 ("##,#", en-US) -> 2,147,483,647</span><span class="sxs-lookup"><span data-stu-id="563a0-144">2147483647 ("##,#", en-US) -> 2,147,483,647</span></span><br /><br /> <span data-ttu-id="563a0-145">2147483647 ("##,#", es-ES) -> 2.147.483.647</span><span class="sxs-lookup"><span data-stu-id="563a0-145">2147483647 ("##,#", es-ES) -> 2.147.483.647</span></span><br /><br /> <span data-ttu-id="563a0-146">位取り指定子:</span><span class="sxs-lookup"><span data-stu-id="563a0-146">Scaling specifier:</span></span><br /><br /> <span data-ttu-id="563a0-147">2147483647 ("#,#,,", en-US) -> 2,147</span><span class="sxs-lookup"><span data-stu-id="563a0-147">2147483647 ("#,#,,", en-US) -> 2,147</span></span><br /><br /> <span data-ttu-id="563a0-148">2147483647 ("#,#,,", es-ES) -> 2.147</span><span class="sxs-lookup"><span data-stu-id="563a0-148">2147483647 ("#,#,,", es-ES) -> 2.147</span></span>|  
+|<span data-ttu-id="563a0-149">"%"</span><span class="sxs-lookup"><span data-stu-id="563a0-149">"%"</span></span>|<span data-ttu-id="563a0-150">パーセント プレースホルダー</span><span class="sxs-lookup"><span data-stu-id="563a0-150">Percentage placeholder</span></span>|<span data-ttu-id="563a0-151">数値に 100 を乗算し、結果の文字列に、ローカライズされたパーセント記号を挿入します。</span><span class="sxs-lookup"><span data-stu-id="563a0-151">Multiplies a number by 100 and inserts a localized percentage symbol in the result string.</span></span><br /><br /> <span data-ttu-id="563a0-152">詳細については、「 ["%" カスタム指定子](#SpecifierPct)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="563a0-152">More information: [The "%" Custom Specifier](#SpecifierPct).</span></span>|<span data-ttu-id="563a0-153">0.3697 ("%#0.00", en-US) -> %36.97</span><span class="sxs-lookup"><span data-stu-id="563a0-153">0.3697 ("%#0.00", en-US) -> %36.97</span></span><br /><br /> <span data-ttu-id="563a0-154">0.3697 ("%#0.00", el-GR) -> %36,97</span><span class="sxs-lookup"><span data-stu-id="563a0-154">0.3697 ("%#0.00", el-GR) -> %36,97</span></span><br /><br /> <span data-ttu-id="563a0-155">0.3697 ("##.0 %", en-US) -> 37.0 %</span><span class="sxs-lookup"><span data-stu-id="563a0-155">0.3697 ("##.0 %", en-US) -> 37.0 %</span></span><br /><br /> <span data-ttu-id="563a0-156">0.3697 ("##.0 %", el-GR) -> 37,0 %</span><span class="sxs-lookup"><span data-stu-id="563a0-156">0.3697 ("##.0 %", el-GR) -> 37,0 %</span></span>|  
+|<span data-ttu-id="563a0-157">"‰"</span><span class="sxs-lookup"><span data-stu-id="563a0-157">"‰"</span></span>|<span data-ttu-id="563a0-158">パーミル プレースホルダー</span><span class="sxs-lookup"><span data-stu-id="563a0-158">Per mille placeholder</span></span>|<span data-ttu-id="563a0-159">数値に 1000 を乗算し、結果の文字列にローカライズされたパーミル記号を挿入します。</span><span class="sxs-lookup"><span data-stu-id="563a0-159">Multiplies a number by 1000 and inserts a localized per mille symbol in the result string.</span></span><br /><br /> <span data-ttu-id="563a0-160">詳細については、「 ["‰" カスタム指定子](#SpecifierPerMille)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="563a0-160">More information: [The "‰" Custom Specifier](#SpecifierPerMille).</span></span>|<span data-ttu-id="563a0-161">0.03697 ("#0.00‰", en-US) -> 36.97‰</span><span class="sxs-lookup"><span data-stu-id="563a0-161">0.03697 ("#0.00‰", en-US) -> 36.97‰</span></span><br /><br /> <span data-ttu-id="563a0-162">0.03697 ("#0.00‰", ru-RU) -> 36,97‰</span><span class="sxs-lookup"><span data-stu-id="563a0-162">0.03697 ("#0.00‰", ru-RU) -> 36,97‰</span></span>|  
+|<span data-ttu-id="563a0-163">"E0"</span><span class="sxs-lookup"><span data-stu-id="563a0-163">"E0"</span></span><br /><br /> <span data-ttu-id="563a0-164">"E+0"</span><span class="sxs-lookup"><span data-stu-id="563a0-164">"E+0"</span></span><br /><br /> <span data-ttu-id="563a0-165">"E-0"</span><span class="sxs-lookup"><span data-stu-id="563a0-165">"E-0"</span></span><br /><br /> <span data-ttu-id="563a0-166">"E0"</span><span class="sxs-lookup"><span data-stu-id="563a0-166">"e0"</span></span><br /><br /> <span data-ttu-id="563a0-167">"E+0"</span><span class="sxs-lookup"><span data-stu-id="563a0-167">"e+0"</span></span><br /><br /> <span data-ttu-id="563a0-168">"E-0"</span><span class="sxs-lookup"><span data-stu-id="563a0-168">"e-0"</span></span>|<span data-ttu-id="563a0-169">指数表記</span><span class="sxs-lookup"><span data-stu-id="563a0-169">Exponential notation</span></span>|<span data-ttu-id="563a0-170">後に 0 (ゼロ) が 1 つ以上続く場合に、指数表記を使用して結果の書式を設定します。</span><span class="sxs-lookup"><span data-stu-id="563a0-170">If followed by at least one 0 (zero), formats the result using exponential notation.</span></span> <span data-ttu-id="563a0-171">大文字 "E" と小文字 "e" は、結果の文字列の指数記号を大文字にするか小文字にするかを示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-171">The case of "E" or "e" indicates the case of the exponent symbol in the result string.</span></span> <span data-ttu-id="563a0-172">"E" 文字または "e" 文字の後に続くゼロの数によって、指数部の最小桁数が決まります。</span><span class="sxs-lookup"><span data-stu-id="563a0-172">The number of zeros following the "E" or "e" character determines the minimum number of digits in the exponent.</span></span> <span data-ttu-id="563a0-173">正符号 (+) は、符号文字が指数部の前に常に挿入されることを示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-173">A plus sign (+) indicates that a sign character always precedes the exponent.</span></span> <span data-ttu-id="563a0-174">負符号 (-) は、指数部が負の値の場合にだけその前に符号文字が挿入されることを示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-174">A minus sign (-) indicates that a sign character precedes only negative exponents.</span></span><br /><br /> <span data-ttu-id="563a0-175">詳細については、「 ["E" カスタム指定子と "e" カスタム指定子](#SpecifierExponent)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="563a0-175">More information: [The "E" and "e" Custom Specifiers](#SpecifierExponent).</span></span>|<span data-ttu-id="563a0-176">987654 ("#0.0e0") -> 98.8e4</span><span class="sxs-lookup"><span data-stu-id="563a0-176">987654 ("#0.0e0") -> 98.8e4</span></span><br /><br /> <span data-ttu-id="563a0-177">1503.92311 ("0.0##e+00") -> 1.504e+03</span><span class="sxs-lookup"><span data-stu-id="563a0-177">1503.92311 ("0.0##e+00") -> 1.504e+03</span></span><br /><br /> <span data-ttu-id="563a0-178">1.8901385E-16 ("0.0e+00") -> 1.9e-16</span><span class="sxs-lookup"><span data-stu-id="563a0-178">1.8901385E-16 ("0.0e+00") -> 1.9e-16</span></span>|  
+|<span data-ttu-id="563a0-179">"\\"</span><span class="sxs-lookup"><span data-stu-id="563a0-179">"\\"</span></span>|<span data-ttu-id="563a0-180">エスケープ文字</span><span class="sxs-lookup"><span data-stu-id="563a0-180">Escape character</span></span>|<span data-ttu-id="563a0-181">この文字の次の文字はカスタム書式指定子ではなくリテラルとして解釈されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-181">Causes the next character to be interpreted as a literal rather than as a custom format specifier.</span></span><br /><br /> <span data-ttu-id="563a0-182">詳細については: [、"\\"エスケープ文字](#SpecifierEscape)です。</span><span class="sxs-lookup"><span data-stu-id="563a0-182">More information: [The "\\" Escape Character](#SpecifierEscape).</span></span>|<span data-ttu-id="563a0-183">987654 ("\\###00\\#") -> #987654#</span><span class="sxs-lookup"><span data-stu-id="563a0-183">987654 ("\\###00\\#") -> #987654#</span></span>|  
+|<span data-ttu-id="563a0-184">'*文字列*'</span><span class="sxs-lookup"><span data-stu-id="563a0-184">'*string*'</span></span><br /><br /> <span data-ttu-id="563a0-185">"*文字列*"</span><span class="sxs-lookup"><span data-stu-id="563a0-185">"*string*"</span></span>|<span data-ttu-id="563a0-186">リテラル文字列区切り記号</span><span class="sxs-lookup"><span data-stu-id="563a0-186">Literal string delimiter</span></span>|<span data-ttu-id="563a0-187">囲まれた文字列が結果の文字列にそのままコピーされることを示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-187">Indicates that the enclosed characters should be copied to the result string unchanged.</span></span>|<span data-ttu-id="563a0-188">68 ("#' degrees'") -> 68 degrees</span><span class="sxs-lookup"><span data-stu-id="563a0-188">68 ("# ' degrees'") -> 68  degrees</span></span><br /><br /> <span data-ttu-id="563a0-189">68 ("#' degrees'") -> 68 degrees</span><span class="sxs-lookup"><span data-stu-id="563a0-189">68 ("#' degrees'") -> 68 degrees</span></span>|  
+|<span data-ttu-id="563a0-190">;</span><span class="sxs-lookup"><span data-stu-id="563a0-190">;</span></span>|<span data-ttu-id="563a0-191">セクション区切り記号</span><span class="sxs-lookup"><span data-stu-id="563a0-191">Section separator</span></span>|<span data-ttu-id="563a0-192">正の数値、負の数値、およびゼロの数値に対して、別々の書式指定文字列を使用してセクションを定義します。</span><span class="sxs-lookup"><span data-stu-id="563a0-192">Defines sections with separate format strings for positive, negative, and zero numbers.</span></span><br /><br /> <span data-ttu-id="563a0-193">詳細については、「 [";" セクション区切り記号](#SectionSeparator)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="563a0-193">More information: [The ";" Section Separator](#SectionSeparator).</span></span>|<span data-ttu-id="563a0-194">12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35</span><span class="sxs-lookup"><span data-stu-id="563a0-194">12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35</span></span><br /><br /> <span data-ttu-id="563a0-195">0 ("#0.0#;(#0.0#);-\0-") -> -0-</span><span class="sxs-lookup"><span data-stu-id="563a0-195">0 ("#0.0#;(#0.0#);-\0-") -> -0-</span></span><br /><br /> <span data-ttu-id="563a0-196">-12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)</span><span class="sxs-lookup"><span data-stu-id="563a0-196">-12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)</span></span><br /><br /> <span data-ttu-id="563a0-197">12.345 ("#0.0#;(#0.0#)") -> 12.35</span><span class="sxs-lookup"><span data-stu-id="563a0-197">12.345 ("#0.0#;(#0.0#)") -> 12.35</span></span><br /><br /> <span data-ttu-id="563a0-198">0 ("#0.0#;(#0.0#)") -> 0.0</span><span class="sxs-lookup"><span data-stu-id="563a0-198">0 ("#0.0#;(#0.0#)") -> 0.0</span></span><br /><br /> <span data-ttu-id="563a0-199">-12.345 ("#0.0#;(#0.0#)") -> (12.35)</span><span class="sxs-lookup"><span data-stu-id="563a0-199">-12.345 ("#0.0#;(#0.0#)") -> (12.35)</span></span>|  
+|<span data-ttu-id="563a0-200">その他</span><span class="sxs-lookup"><span data-stu-id="563a0-200">Other</span></span>|<span data-ttu-id="563a0-201">上記以外のすべての文字</span><span class="sxs-lookup"><span data-stu-id="563a0-201">All other characters</span></span>|<span data-ttu-id="563a0-202">文字が結果の文字列にそのままコピーされます。</span><span class="sxs-lookup"><span data-stu-id="563a0-202">The character is copied to the result string unchanged.</span></span>|<span data-ttu-id="563a0-203">68 ("# °") -> 68 °</span><span class="sxs-lookup"><span data-stu-id="563a0-203">68 ("# °") -> 68 °</span></span>|  
   
- 以降では、それぞれのカスタム数値書式指定子について詳しく説明します。  
+ <span data-ttu-id="563a0-204">以降では、それぞれのカスタム数値書式指定子について詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="563a0-204">The following sections provide detailed information about each of the custom numeric format specifiers.</span></span>  
   
 <a name="Specifier0"></a>   
-## "0" カスタム指定子  
- "0" カスタム書式指定子は、ゼロ プレースホルダー記号として機能します。 書式が設定される値で、書式指定文字列のゼロに対応する位置に数字がある場合には、この数字が結果の文字列にコピーされます。それ以外の場合は、結果の文字列にゼロが表示されます。 整数部の左端のゼロの位置と、小数部の右端のゼロの位置によって、常に結果の文字列に示される桁数が決まります。  
+## <a name="the-0-custom-specifier"></a><span data-ttu-id="563a0-205">"0" カスタム指定子</span><span class="sxs-lookup"><span data-stu-id="563a0-205">The "0" Custom Specifier</span></span>  
+ <span data-ttu-id="563a0-206">"0" カスタム書式指定子は、ゼロ プレースホルダー記号として機能します。</span><span class="sxs-lookup"><span data-stu-id="563a0-206">The "0" custom format specifier serves as a zero-placeholder symbol.</span></span> <span data-ttu-id="563a0-207">書式が設定される値で、書式指定文字列のゼロに対応する位置に数字がある場合には、この数字が結果の文字列にコピーされます。それ以外の場合は、結果の文字列にゼロが表示されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-207">If the value that is being formatted has a digit in the position where the zero appears in the format string, that digit is copied to the result string; otherwise, a zero appears in the result string.</span></span> <span data-ttu-id="563a0-208">整数部の左端のゼロの位置と、小数部の右端のゼロの位置によって、常に結果の文字列に示される桁数が決まります。</span><span class="sxs-lookup"><span data-stu-id="563a0-208">The position of the leftmost zero before the decimal point and the rightmost zero after the decimal point determines the range of digits that are always present in the result string.</span></span>  
   
- 指定子が "00" の場合、値は一の位で丸められ、小数点以下のゼロは常に切り捨てられます。 たとえば、"00" を指定して 34.5 を書式設定すると、結果の値は 35 になります。  
+ <span data-ttu-id="563a0-209">指定子が "00" の場合、値は一の位で丸められ、小数点以下のゼロは常に切り捨てられます。</span><span class="sxs-lookup"><span data-stu-id="563a0-209">The "00" specifier causes the value to be rounded to the nearest digit preceding the decimal, where rounding away from zero is always used.</span></span> <span data-ttu-id="563a0-210">たとえば、"00" を指定して 34.5 を書式設定すると、結果の値は 35 になります。</span><span class="sxs-lookup"><span data-stu-id="563a0-210">For example, formatting 34.5 with "00" would result in the value 35.</span></span>  
   
- 次の例では、ゼロ プレースホルダーを含むカスタム書式指定文字列を使って書式設定された複数の値を表示します。  
+ <span data-ttu-id="563a0-211">次の例では、ゼロ プレースホルダーを含むカスタム書式指定文字列を使って書式設定された複数の値を表示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-211">The following example displays several values that are formatted by using custom format strings that include zero placeholders.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#1](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#1)]
  [!code-csharp[Formatting.Numeric.Custom#1](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#1)]
  [!code-vb[Formatting.Numeric.Custom#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#1)]  
   
- [表のトップへ](#table)  
+ [<span data-ttu-id="563a0-212">表のトップへ</span><span class="sxs-lookup"><span data-stu-id="563a0-212">Back to table</span></span>](#table)  
   
 <a name="SpecifierD"></a>   
-## "\#" カスタム指定子  
- "\#" カスタム書式指定子は、桁プレースホルダー記号として機能します。 書式が指定される値で、書式指定文字列の "\#" 記号に対応する位置に数字がある場合には、この数字が結果の文字列にコピーされます。 それ以外の場合は、結果の文字列のこの位置には何も格納されません。  
+## <a name="the--custom-specifier"></a><span data-ttu-id="563a0-213">"#" カスタム指定子</span><span class="sxs-lookup"><span data-stu-id="563a0-213">The "#" Custom Specifier</span></span>  
+ <span data-ttu-id="563a0-214">"#" カスタム書式指定子は、桁プレースホルダー記号として機能します。</span><span class="sxs-lookup"><span data-stu-id="563a0-214">The "#" custom format specifier serves as a digit-placeholder symbol.</span></span> <span data-ttu-id="563a0-215">書式が指定される値で、書式指定文字列の "#" 記号に対応する位置に数字がある場合には、この数字が結果の文字列にコピーされます。</span><span class="sxs-lookup"><span data-stu-id="563a0-215">If the value that is being formatted has a digit in the position where the "#" symbol appears in the format string, that digit is copied to the result string.</span></span> <span data-ttu-id="563a0-216">それ以外の場合は、結果の文字列のこの位置には何も格納されません。</span><span class="sxs-lookup"><span data-stu-id="563a0-216">Otherwise, nothing is stored in that position in the result string.</span></span>  
   
- この指定子では、文字列の唯一の桁の値がゼロであっても、この桁が有効桁でない場合には、ゼロは表示されません。 表示される数値の有効桁である場合にのみゼロが表示されます。  
+ <span data-ttu-id="563a0-217">この指定子では、文字列の唯一の桁の値がゼロであっても、この桁が有効桁でない場合には、ゼロは表示されません。</span><span class="sxs-lookup"><span data-stu-id="563a0-217">Note that this specifier never displays a zero that is not a significant digit, even if zero is the only digit in the string.</span></span> <span data-ttu-id="563a0-218">表示される数値の有効桁である場合にのみゼロが表示されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-218">It will display zero only if it is a significant digit in the number that is being displayed.</span></span>  
   
- 書式指定文字列が "\#\#" の場合は、値は一の位で丸められ、小数点以下のゼロは常に切り捨てられます。 たとえば、"\#\#" を指定して 34.5 を書式設定すると、結果の値は 35 になります。  
+ <span data-ttu-id="563a0-219">書式指定文字列が "##" の場合は、値は一の位で丸められ、小数点以下のゼロは常に切り捨てられます。</span><span class="sxs-lookup"><span data-stu-id="563a0-219">The "##" format string causes the value to be rounded to the nearest digit preceding the decimal, where rounding away from zero is always used.</span></span> <span data-ttu-id="563a0-220">たとえば、"##" を指定して 34.5 を書式設定すると、結果の値は 35 になります。</span><span class="sxs-lookup"><span data-stu-id="563a0-220">For example, formatting 34.5 with "##" would result in the value 35.</span></span>  
   
- 次の例では、桁プレースホルダーを含むカスタム書式指定文字列を使って書式設定された複数の値を表示します。  
+ <span data-ttu-id="563a0-221">次の例では、桁プレースホルダーを含むカスタム書式指定文字列を使って書式設定された複数の値を表示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-221">The following example displays several values that are formatted by using custom format strings that include digit placeholders.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#2](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#2)]
  [!code-csharp[Formatting.Numeric.Custom#2](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#2)]
  [!code-vb[Formatting.Numeric.Custom#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#2)]  
   
- 欠落している数字や先頭のゼロをスペースに置き換える結果の文字列を戻すには、次の例に示すように、[複合書式指定機能](../../../docs/standard/base-types/composite-formatting.md)を使用して、フィールド幅を指定します。  
+ <span data-ttu-id="563a0-222">欠落している数字や先頭のゼロをスペースに置き換える結果の文字列を戻すには、次の例に示すように、 [複合書式指定機能](../../../docs/standard/base-types/composite-formatting.md) を使用して、フィールド幅を指定します。</span><span class="sxs-lookup"><span data-stu-id="563a0-222">To return a result string in which absent digits or leading zeroes are replaced by spaces, use the [composite formatting feature](../../../docs/standard/base-types/composite-formatting.md) and specify a field width, as the following example illustrates.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#12](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/SpaceOrDigit1.cpp#12)]
  [!code-csharp[Formatting.Numeric.Custom#12](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/SpaceOrDigit1.cs#12)]
  [!code-vb[Formatting.Numeric.Custom#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/SpaceOrDigit1.vb#12)]  
   
- [表のトップへ](#table)  
+ [<span data-ttu-id="563a0-223">表のトップへ</span><span class="sxs-lookup"><span data-stu-id="563a0-223">Back to table</span></span>](#table)  
   
 <a name="SpecifierPt"></a>   
-## "." カスタム指定子  
- "." カスタム書式指定子は、ローカライズされた小数点を結果の文字列に挿入します。 書式指定文字列の 1 番目のピリオドによって、書式設定後の値での小数点の位置が決定します。指定されている他のピリオドは無視されます。  
+## <a name="the--custom-specifier"></a><span data-ttu-id="563a0-224">"." カスタム指定子</span><span class="sxs-lookup"><span data-stu-id="563a0-224">The "." Custom Specifier</span></span>  
+ <span data-ttu-id="563a0-225">"." カスタム書式指定子は、ローカライズされた小数点を結果の文字列に挿入します。</span><span class="sxs-lookup"><span data-stu-id="563a0-225">The "." custom format specifier inserts a localized decimal separator into the result string.</span></span> <span data-ttu-id="563a0-226">書式指定文字列の 1 番目のピリオドによって、書式設定後の値での小数点の位置が決定します。指定されている他のピリオドは無視されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-226">The first period in the format string determines the location of the decimal separator in the formatted value; any additional periods are ignored.</span></span>  
   
- 結果の文字列の中で小数点として使用される文字は、ピリオドであるとは限りません。書式設定を制御する <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> オブジェクトの <xref:System.Globalization.NumberFormatInfo> プロパティによって決定されます。  
+ <span data-ttu-id="563a0-227">結果の文字列の中で小数点として使用される文字は、ピリオドであるとは限りません。書式設定を制御する <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> オブジェクトの <xref:System.Globalization.NumberFormatInfo> プロパティによって決定されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-227">The character that is used as the decimal separator in the result string is not always a period; it is determined by the <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> property of the <xref:System.Globalization.NumberFormatInfo> object that controls formatting.</span></span>  
   
- 次の例では、結果として得られるさまざまな文字列の小数点位置を、"." 書式指定子を使って定義しています。  
+ <span data-ttu-id="563a0-228">次の例では、結果として得られるさまざまな文字列の小数点位置を、"." 書式指定子を使って定義しています。</span><span class="sxs-lookup"><span data-stu-id="563a0-228">The following example uses the "." format specifier to define the location of the decimal point in several result strings.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#3](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#3)]
  [!code-csharp[Formatting.Numeric.Custom#3](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#3)]
  [!code-vb[Formatting.Numeric.Custom#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#3)]  
   
- [表のトップへ](#table)  
+ [<span data-ttu-id="563a0-229">表のトップへ</span><span class="sxs-lookup"><span data-stu-id="563a0-229">Back to table</span></span>](#table)  
   
 <a name="SpecifierTh"></a>   
-## "," カスタム指定子  
- "," 文字は、桁区切り記号および数値位取り指定子の両方として機能します。  
+## <a name="the--custom-specifier"></a><span data-ttu-id="563a0-230">"," カスタム指定子</span><span class="sxs-lookup"><span data-stu-id="563a0-230">The "," Custom Specifier</span></span>  
+ <span data-ttu-id="563a0-231">"," 文字は、桁区切り記号および数値位取り指定子の両方として機能します。</span><span class="sxs-lookup"><span data-stu-id="563a0-231">The "," character serves as both a group separator and a number scaling specifier.</span></span>  
   
--   桁区切り記号: 数値の整数部の桁を書式設定する 2 つの桁プレースホルダー \(0 または \#\) の間に 1 つ以上のコンマが指定されている場合は、出力の整数部分で各数値グループの間に桁区切り記号文字が挿入されます。  
+-   <span data-ttu-id="563a0-232">桁区切り記号: 数値の整数部の桁を書式設定する 2 つの桁プレースホルダー (0 または #) の間に 1 つ以上のコンマが指定されている場合は、出力の整数部分で各数値グループの間に桁区切り記号文字が挿入されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-232">Group separator: If one or more commas are specified between two digit placeholders (0 or #) that format the integral digits of a number, a group separator character is inserted between each number group in the integral part of the output.</span></span>  
   
-     現在の <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A> オブジェクトの <xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A> プロパティと <xref:System.Globalization.NumberFormatInfo> プロパティによって、桁区切り記号として使用される文字および各数値グループのサイズが決まります。 たとえば、文字列 "\#,\#" およびインバリアント カルチャを使用して数値 1000 が書式設定される場合は、出力が "1,000" となります。  
+     <span data-ttu-id="563a0-233">現在の <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A> オブジェクトの <xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A> プロパティと <xref:System.Globalization.NumberFormatInfo> プロパティによって、桁区切り記号として使用される文字および各数値グループのサイズが決まります。</span><span class="sxs-lookup"><span data-stu-id="563a0-233">The <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A> and <xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A> properties of the current <xref:System.Globalization.NumberFormatInfo> object determine the character used as the number group separator and the size of each number group.</span></span> <span data-ttu-id="563a0-234">たとえば、文字列 "#,#" およびインバリアント カルチャを使用して数値 1000 が書式設定される場合は、出力が "1,000" となります。</span><span class="sxs-lookup"><span data-stu-id="563a0-234">For example, if the string "#,#" and the invariant culture are used to format the number 1000, the output is "1,000".</span></span>  
   
--   数値位取り指定子: 明示的または暗黙的な小数点のすぐ左側に 1 つ以上のコンマが指定されている場合は、コンマごとに書式設定対象の数値が 1000 で除算されます。 たとえば、"0,," 文字列を使用して数値 1 億が書式設定された場合、出力は "100" となります。  
+-   <span data-ttu-id="563a0-235">数値位取り指定子: 明示的または暗黙的な小数点のすぐ左側に 1 つ以上のコンマが指定されている場合は、コンマごとに書式設定対象の数値が 1000 で除算されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-235">Number scaling specifier: If one or more commas are specified immediately to the left of the explicit or implicit decimal point, the number to be formatted is divided by 1000 for each comma.</span></span> <span data-ttu-id="563a0-236">たとえば、"0,," 文字列を使用して数値 1 億が書式設定された場合、出力は "100" となります。</span><span class="sxs-lookup"><span data-stu-id="563a0-236">For example, if the string "0,," is used to format the number 100 million, the output is "100".</span></span>  
   
- 桁区切り記号および数値位取り指定子は、同じ書式指定文字列で使用できます。 たとえば、"\#,0,," 文字列およびインバリアント カルチャを使用して 10 億の数値を書式設定した場合、出力は "1,000" となります。  
+ <span data-ttu-id="563a0-237">桁区切り記号および数値位取り指定子は、同じ書式指定文字列で使用できます。</span><span class="sxs-lookup"><span data-stu-id="563a0-237">You can use group separator and number scaling specifiers in the same format string.</span></span> <span data-ttu-id="563a0-238">たとえば、"#,0,," 文字列およびインバリアント カルチャを使用して 10 億の数値を書式設定した場合、出力は "1,000" となります。</span><span class="sxs-lookup"><span data-stu-id="563a0-238">For example, if the string "#,0,," and the invariant culture are used to format the number one billion, the output is "1,000".</span></span>  
   
- 桁区切り記号としてコンマを使用する例を次に示します。  
+ <span data-ttu-id="563a0-239">桁区切り記号としてコンマを使用する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-239">The following example illustrates the use of the comma as a group separator.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#4](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#4)]
  [!code-csharp[Formatting.Numeric.Custom#4](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#4)]
  [!code-vb[Formatting.Numeric.Custom#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#4)]  
   
- 数値の位取り指定子としてコンマを使用する例を次に示します。  
+ <span data-ttu-id="563a0-240">数値の位取り指定子としてコンマを使用する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-240">The following example illustrates the use of the comma as a specifier for number scaling.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#5](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#5)]
  [!code-csharp[Formatting.Numeric.Custom#5](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#5)]
  [!code-vb[Formatting.Numeric.Custom#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#5)]  
   
- [表のトップへ](#table)  
+ [<span data-ttu-id="563a0-241">表のトップへ</span><span class="sxs-lookup"><span data-stu-id="563a0-241">Back to table</span></span>](#table)  
   
 <a name="SpecifierPct"></a>   
-## "%" カスタム指定子  
- 書式指定文字列にパーセント記号 \(%\) があると、書式設定前に数値に 100 が乗算されます。 数値では、書式指定文字列の % に対応する位置にローカライズされたパーセント記号が挿入されます。 使用されるパーセント記号は、現在の <xref:System.Globalization.NumberFormatInfo.PercentSymbol%2A> オブジェクトの <xref:System.Globalization.NumberFormatInfo> プロパティによって定義されます。  
+## <a name="the--custom-specifier"></a><span data-ttu-id="563a0-242">"%" カスタム指定子</span><span class="sxs-lookup"><span data-stu-id="563a0-242">The "%" Custom Specifier</span></span>  
+ <span data-ttu-id="563a0-243">書式指定文字列にパーセント記号 (%) があると、書式設定前に数値に 100 が乗算されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-243">A percent sign (%) in a format string causes a number to be multiplied by 100 before it is formatted.</span></span> <span data-ttu-id="563a0-244">数値では、書式指定文字列の % に対応する位置にローカライズされたパーセント記号が挿入されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-244">The localized percent symbol is inserted in the number at the location where the % appears in the format string.</span></span> <span data-ttu-id="563a0-245">使用されるパーセント記号は、現在の <xref:System.Globalization.NumberFormatInfo.PercentSymbol%2A> オブジェクトの <xref:System.Globalization.NumberFormatInfo> プロパティによって定義されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-245">The percent character used is defined by the <xref:System.Globalization.NumberFormatInfo.PercentSymbol%2A> property of the current <xref:System.Globalization.NumberFormatInfo> object.</span></span>  
   
- 次の例では、"%" カスタム指定子を含むさまざまなカスタム書式指定文字列を定義します。  
+ <span data-ttu-id="563a0-246">次の例では、"%" カスタム指定子を含むさまざまなカスタム書式指定文字列を定義します。</span><span class="sxs-lookup"><span data-stu-id="563a0-246">The following example defines several custom format strings that include the "%" custom specifier.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#6](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#6)]
  [!code-csharp[Formatting.Numeric.Custom#6](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#6)]
  [!code-vb[Formatting.Numeric.Custom#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#6)]  
   
- [表のトップへ](#table)  
+ [<span data-ttu-id="563a0-247">表のトップへ</span><span class="sxs-lookup"><span data-stu-id="563a0-247">Back to table</span></span>](#table)  
   
 <a name="SpecifierPerMille"></a>   
-## "‰" カスタム指定子  
- 書式指定文字列にパーミル文字 \(‰ または \\u2030\) があると、書式設定前に数値に 1000 が乗算されます。 返される文字列では、書式指定文字列の ‰ に対応する位置に適切なパーミル記号が挿入されます。 使用されるパーミル文字は、カルチャ固有の書式設定情報を指定するオブジェクトの <xref:System.Globalization.NumberFormatInfo.PerMilleSymbol%2A?displayProperty=fullName> プロパティによって定義されます。  
+## <a name="the--custom-specifier"></a><span data-ttu-id="563a0-248">"‰" カスタム指定子</span><span class="sxs-lookup"><span data-stu-id="563a0-248">The "‰" Custom Specifier</span></span>  
+ <span data-ttu-id="563a0-249">書式指定文字列にパーミル文字 (‰ または \u2030) があると、書式設定前に数値に 1000 が乗算されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-249">A per mille character (‰ or \u2030) in a format string causes a number to be multiplied by 1000 before it is formatted.</span></span> <span data-ttu-id="563a0-250">返される文字列では、書式指定文字列の ‰ に対応する位置に適切なパーミル記号が挿入されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-250">The appropriate per mille symbol is inserted in the returned string at the location where the ‰ symbol appears in the format string.</span></span> <span data-ttu-id="563a0-251">使用されるパーミル文字は、カルチャ固有の書式設定情報を指定するオブジェクトの <xref:System.Globalization.NumberFormatInfo.PerMilleSymbol%2A?displayProperty=nameWithType> プロパティによって定義されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-251">The per mille character used is defined by the <xref:System.Globalization.NumberFormatInfo.PerMilleSymbol%2A?displayProperty=nameWithType> property of the object that provides culture-specific formatting information.</span></span>  
   
- 次の例では、"‰" カスタム指定子を含むカスタム書式指定文字列を定義します。  
+ <span data-ttu-id="563a0-252">次の例では、"‰" カスタム指定子を含むカスタム書式指定文字列を定義します。</span><span class="sxs-lookup"><span data-stu-id="563a0-252">The following example defines a custom format string that includes the "‰" custom specifier.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#9](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#9)]
  [!code-csharp[Formatting.Numeric.Custom#9](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#9)]
  [!code-vb[Formatting.Numeric.Custom#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#9)]  
   
- [表のトップへ](#table)  
+ [<span data-ttu-id="563a0-253">表のトップへ</span><span class="sxs-lookup"><span data-stu-id="563a0-253">Back to table</span></span>](#table)  
   
 <a name="SpecifierExponent"></a>   
-## "E" カスタム指定子と "e" カスタム指定子  
- 書式指定文字列に "E"、"E\+"、"E\-"、"e"、"e\+"、または "e\-" が含まれており、これらの文字の直後にゼロが 1 つ以上続く場合には、指数表記を使用して数値の書式が設定されます。また、数値と指数の間に "E" または "e" が挿入されます。 指数表記インジケーターの後に続くゼロの数によって、出力の指数部の最小桁数が決まります。 書式 "E\+" または "e\+" は、正符号または負符号が指数部の前に常に挿入されることを示します。 書式 "E"、"E\-"、"e"、または "e\-" は、指数部が負の値の場合にだけその前に符号文字が挿入されることを示します。  
+## <a name="the-e-and-e-custom-specifiers"></a><span data-ttu-id="563a0-254">"E" カスタム指定子と "e" カスタム指定子</span><span class="sxs-lookup"><span data-stu-id="563a0-254">The "E" and "e" Custom Specifiers</span></span>  
+ <span data-ttu-id="563a0-255">書式指定文字列に "E"、"E+"、"E-"、"e"、"e+"、または "e-" が含まれており、これらの文字の直後にゼロが 1 つ以上続く場合には、指数表記を使用して数値の書式が設定されます。また、数値と指数の間に "E" または "e" が挿入されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-255">If any of the strings "E", "E+", "E-", "e", "e+", or "e-" are present in the format string and are followed immediately by at least one zero, the number is formatted by using scientific notation with an "E" or "e" inserted between the number and the exponent.</span></span> <span data-ttu-id="563a0-256">指数表記インジケーターの後に続くゼロの数によって、出力の指数部の最小桁数が決まります。</span><span class="sxs-lookup"><span data-stu-id="563a0-256">The number of zeros following the scientific notation indicator determines the minimum number of digits to output for the exponent.</span></span> <span data-ttu-id="563a0-257">書式 "E+" または "e+" は、正符号または負符号が指数部の前に常に挿入されることを示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-257">The "E+" and "e+" formats indicate that a plus sign or minus sign should always precede the exponent.</span></span> <span data-ttu-id="563a0-258">書式 "E"、"E-"、"e"、または "e-" は、指数部が負の値の場合にだけその前に符号文字が挿入されることを示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-258">The "E", "E-", "e", or "e-" formats indicate that a sign character should precede only negative exponents.</span></span>  
   
- 次の例では、指数表記の指定子を使用して、さまざまな数値の書式を設定します。  
+ <span data-ttu-id="563a0-259">次の例では、指数表記の指定子を使用して、さまざまな数値の書式を設定します。</span><span class="sxs-lookup"><span data-stu-id="563a0-259">The following example formats several numeric values using the specifiers for scientific notation.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#7](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#7)]
  [!code-csharp[Formatting.Numeric.Custom#7](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#7)]
  [!code-vb[Formatting.Numeric.Custom#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#7)]  
   
- [表のトップへ](#table)  
+ [<span data-ttu-id="563a0-260">表のトップへ</span><span class="sxs-lookup"><span data-stu-id="563a0-260">Back to table</span></span>](#table)  
   
 <a name="SpecifierEscape"></a>   
-## "\\" エスケープ文字  
- 書式指定文字列内の "\#"、"0"、"."、","、"%"、"‰" の各記号は、リテラル文字ではなく書式指定子として解釈されます。 カスタム書式指定文字列内での位置によっては、大文字および小文字の "E"、および \+ 記号と \- 記号も書式指定子として解釈されます。  
+## <a name="the--escape-character"></a><span data-ttu-id="563a0-261">"\\"エスケープ文字</span><span class="sxs-lookup"><span data-stu-id="563a0-261">The "\\" Escape Character</span></span>  
+ <span data-ttu-id="563a0-262">書式指定文字列内の "#"、"0"、"."、","、"%"、"‰" の各記号は、リテラル文字ではなく書式指定子として解釈されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-262">The "#", "0", ".", ",", "%", and "‰" symbols in a format string are interpreted as format specifiers rather than as literal characters.</span></span> <span data-ttu-id="563a0-263">カスタム書式指定文字列内での位置によっては、大文字および小文字の "E"、および + 記号と - 記号も書式指定子として解釈されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-263">Depending on their position in a custom format string, the uppercase and lowercase "E" as well as the + and - symbols may also be interpreted as format specifiers.</span></span>  
   
- 文字が書式指定子として解釈されないようにするには、その文字の前に、エスケープ文字の円記号を付けます。 エスケープ文字は、その後に続く文字が、そのまま結果の文字列に含める必要がある文字リテラルであることを示します。  
+ <span data-ttu-id="563a0-264">文字が書式指定子として解釈されないようにするには、その文字の前に、エスケープ文字の円記号を付けます。</span><span class="sxs-lookup"><span data-stu-id="563a0-264">To prevent a character from being interpreted as a format specifier, you can precede it with a backslash, which is the escape character.</span></span> <span data-ttu-id="563a0-265">エスケープ文字は、その後に続く文字が、そのまま結果の文字列に含める必要がある文字リテラルであることを示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-265">The escape character signifies that the following character is a character literal that should be included in the result string unchanged.</span></span>  
   
- 結果の文字列に円記号を含める場合は、円記号をもう 1 つ付加して、円記号自体をエスケープする必要があります \(`\\`\)。  
+ <span data-ttu-id="563a0-266">結果の文字列に円記号を含める場合は、円記号をもう 1 つ付加して、円記号自体をエスケープする必要があります (`\\`)。</span><span class="sxs-lookup"><span data-stu-id="563a0-266">To include a backslash in a result string, you must escape it with another backslash (`\\`).</span></span>  
   
 > [!NOTE]
->  C\+\+ コンパイラや C\# コンパイラなど、一部のコンパイラでは、同様に、1 つの円記号がエスケープ文字として解釈されることがあります。 書式設定時に文字列が正しく解釈されるようにするには、C\# では、逐語的文字列リテラル文字 \(@ 文字\) を文字列の前に使用します。また、C\# および C\+\+ では、円記号の前にもう 1 つ円記号を付ける方法もあります。 両方の方法を次の C\# の例に示します。  
+>  <span data-ttu-id="563a0-267">C++ コンパイラや C# コンパイラなど、一部のコンパイラでは、同様に、1 つの円記号がエスケープ文字として解釈されることがあります。</span><span class="sxs-lookup"><span data-stu-id="563a0-267">Some compilers, such as the C++ and C# compilers, may also interpret a single backslash character as an escape character.</span></span> <span data-ttu-id="563a0-268">書式設定時に文字列が正しく解釈されるようにするには、C# では、逐語的文字列リテラル文字 (@ 文字) を文字列の前に使用します。また、C# および C++ では、円記号の前にもう 1 つ円記号を付ける方法もあります。</span><span class="sxs-lookup"><span data-stu-id="563a0-268">To ensure that a string is interpreted correctly when formatting, you can use the verbatim string literal character (the @ character) before the string in C#, or add another backslash character before each backslash in C# and C++.</span></span> <span data-ttu-id="563a0-269">両方の方法を次の C# の例に示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-269">The following C# example illustrates both approaches.</span></span>  
   
- 次の例では、エスケープ文字を使用して、書式設定操作で "\#"、"0"、"\\" の各文字がエスケープ文字としても書式指定子としても解釈されないようにします。 この C\# の例では、円記号をもう 1 つ付けて、円記号がリテラル文字として解釈されるようにしています。  
+ <span data-ttu-id="563a0-270">次の例は、書式設定操作「#」、「0」を解釈するを防ぐためにエスケープ文字を使用し、"\\"文字をエスケープ文字または書式指定子のいずれか。</span><span class="sxs-lookup"><span data-stu-id="563a0-270">The following example uses the escape character to prevent the formatting operation from interpreting the "#", "0", and "\\" characters as either escape characters or format specifiers.</span></span> <span data-ttu-id="563a0-271">この C# の例では、円記号をもう 1 つ付けて、円記号がリテラル文字として解釈されるようにしています。</span><span class="sxs-lookup"><span data-stu-id="563a0-271">The C# examples uses an additional backslash to ensure that a backslash is interpreted as a literal character.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#11](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/escape1.cpp#11)]
  [!code-csharp[Formatting.Numeric.Custom#11](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/escape1.cs#11)]
  [!code-vb[Formatting.Numeric.Custom#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/escape1.vb#11)]  
   
- [表のトップへ](#table)  
+ [<span data-ttu-id="563a0-272">表のトップへ</span><span class="sxs-lookup"><span data-stu-id="563a0-272">Back to table</span></span>](#table)  
   
 <a name="SectionSeparator"></a>   
-## ";" セクション区切り記号  
- セミコロン \(;\) は、値が正、負、ゼロのいずれであるかに応じて異なる書式設定を数値に適用する条件付き書式指定子です。 このように数値の内容によって適用する書式を変更するには、カスタム書式指定文字列に、セミコロンで区切ったセクションを最大 3 つまで作成します。 これらのセクションの説明を次に示します。  
+## <a name="the--section-separator"></a><span data-ttu-id="563a0-273">";" セクション区切り記号</span><span class="sxs-lookup"><span data-stu-id="563a0-273">The ";" Section Separator</span></span>  
+ <span data-ttu-id="563a0-274">セミコロン (;) は、値が正、負、ゼロのいずれであるかに応じて異なる書式設定を数値に適用する条件付き書式指定子です。</span><span class="sxs-lookup"><span data-stu-id="563a0-274">The semicolon (;) is a conditional format specifier that applies different formatting to a number depending on whether its value is positive, negative, or zero.</span></span> <span data-ttu-id="563a0-275">このように数値の内容によって適用する書式を変更するには、カスタム書式指定文字列に、セミコロンで区切ったセクションを最大 3 つまで作成します。</span><span class="sxs-lookup"><span data-stu-id="563a0-275">To produce this behavior, a custom format string can contain up to three sections separated by semicolons.</span></span> <span data-ttu-id="563a0-276">これらのセクションの説明を次に示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-276">These sections are described in the following table.</span></span>  
   
-|セクションの数|説明|  
-|-------------|--------|  
-|1 つ|書式指定文字列はすべての値に適用されます。|  
-|2 つ|最初のセクションが正の値とゼロに適用され、2 番目のセクションが負の値に適用されます。<br /><br /> 書式設定対象の数値が負の数値であるが、2 番目のセクションの書式指定に従って丸めた結果ゼロになる場合には、1 番目のセクションの書式に従ってこのゼロが書式設定されます。|  
-|3 つ|最初のセクションが正の値、2 番目のセクションが負の値、3 番目のセクションがゼロに適用されます。<br /><br /> ゼロ以外の値すべてに 1 番目のセクションが適用される場合には、2 番目のセクションが空になる \(セミコロンの間に何も表示されない\) ことがあります。<br /><br /> 書式設定対象の数値がゼロ以外の負の数値であるが、1 番目または 2 番目のセクションの書式に従って丸めた結果ゼロになる場合には、3 番目のセクションの書式に従ってこのゼロが書式設定されます。|  
+|<span data-ttu-id="563a0-277">セクションの数</span><span class="sxs-lookup"><span data-stu-id="563a0-277">Number of sections</span></span>|<span data-ttu-id="563a0-278">説明</span><span class="sxs-lookup"><span data-stu-id="563a0-278">Description</span></span>|  
+|------------------------|-----------------|  
+|<span data-ttu-id="563a0-279">1 つ</span><span class="sxs-lookup"><span data-stu-id="563a0-279">One section</span></span>|<span data-ttu-id="563a0-280">書式指定文字列はすべての値に適用されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-280">The format string applies to all values.</span></span>|  
+|<span data-ttu-id="563a0-281">2 つ</span><span class="sxs-lookup"><span data-stu-id="563a0-281">Two sections</span></span>|<span data-ttu-id="563a0-282">最初のセクションが正の値とゼロに適用され、2 番目のセクションが負の値に適用されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-282">The first section applies to positive values and zeros, and the second section applies to negative values.</span></span><br /><br /> <span data-ttu-id="563a0-283">書式設定対象の数値が負の数値であるが、2 番目のセクションの書式指定に従って丸めた結果ゼロになる場合には、1 番目のセクションの書式に従ってこのゼロが書式設定されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-283">If the number to be formatted is negative, but becomes zero after rounding according to the format in the second section, the resulting zero is formatted according to the first section.</span></span>|  
+|<span data-ttu-id="563a0-284">3 つ</span><span class="sxs-lookup"><span data-stu-id="563a0-284">Three sections</span></span>|<span data-ttu-id="563a0-285">最初のセクションが正の値、2 番目のセクションが負の値、3 番目のセクションがゼロに適用されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-285">The first section applies to positive values, the second section applies to negative values, and the third section applies to zeros.</span></span><br /><br /> <span data-ttu-id="563a0-286">ゼロ以外の値すべてに 1 番目のセクションが適用される場合には、2 番目のセクションが空になる (セミコロンの間に何も表示されない) ことがあります。</span><span class="sxs-lookup"><span data-stu-id="563a0-286">The second section can be left empty (by having nothing between the semicolons), in which case the first section applies to all nonzero values.</span></span><br /><br /> <span data-ttu-id="563a0-287">書式設定対象の数値がゼロ以外の負の数値であるが、1 番目または 2 番目のセクションの書式に従って丸めた結果ゼロになる場合には、3 番目のセクションの書式に従ってこのゼロが書式設定されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-287">If the number to be formatted is nonzero, but becomes zero after rounding according to the format in the first or second section, the resulting zero is formatted according to the third section.</span></span>|  
   
- セクション区切り記号は、最後の値が書式設定されるときに、数値に関連付けられた既存の書式設定をすべて無視します。 たとえば、セクション区切り記号を使用する場合、負の値はマイナス記号を付けずに表示されます。 最終的に書式設定された値にマイナス記号を付ける場合は、カスタム書式指定子の中に明示的にマイナス記号を含める必要があります。  
+ <span data-ttu-id="563a0-288">セクション区切り記号は、最後の値が書式設定されるときに、数値に関連付けられた既存の書式設定をすべて無視します。</span><span class="sxs-lookup"><span data-stu-id="563a0-288">Section separators ignore any preexisting formatting associated with a number when the final value is formatted.</span></span> <span data-ttu-id="563a0-289">たとえば、セクション区切り記号を使用する場合、負の値はマイナス記号を付けずに表示されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-289">For example, negative values are always displayed without a minus sign when section separators are used.</span></span> <span data-ttu-id="563a0-290">最終的に書式設定された値にマイナス記号を付ける場合は、カスタム書式指定子の中に明示的にマイナス記号を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="563a0-290">If you want the final formatted value to have a minus sign, you should explicitly include the minus sign as part of the custom format specifier.</span></span>  
   
- 次の例では、";" 書式指定子を使用して、正数、負数、ゼロの各部分に対し、それぞれ異なる書式を設定します。  
+ <span data-ttu-id="563a0-291">次の例では、";" 書式指定子を使用して、正数、負数、ゼロの各部分に対し、それぞれ異なる書式を設定します。</span><span class="sxs-lookup"><span data-stu-id="563a0-291">The following example uses the ";" format specifier to format positive, negative, and zero numbers differently.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#8](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/custom.cpp#8)]
  [!code-csharp[Formatting.Numeric.Custom#8](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#8)]
  [!code-vb[Formatting.Numeric.Custom#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#8)]  
   
- [表のトップへ](#table)  
+ [<span data-ttu-id="563a0-292">表のトップへ</span><span class="sxs-lookup"><span data-stu-id="563a0-292">Back to table</span></span>](#table)  
   
 <a name="NotesCustomFormatting"></a>   
-## ノート  
+## <a name="notes"></a><span data-ttu-id="563a0-293">メモ</span><span class="sxs-lookup"><span data-stu-id="563a0-293">Notes</span></span>  
   
-### 浮動小数点の無限大値と NaN \(非数\) 値  
- <xref:System.Single> の浮動小数点型または <xref:System.Double> の浮動小数点型が正の無限大、負の無限大、または NaN \(非数\) である場合は、書式指定文字列とは関係なく、現在適用可能な <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A> オブジェクトによって指定される <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>、<xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A>、または <xref:System.Globalization.NumberFormatInfo> の各プロパティの値は、書式設定された文字列となります。  
+### <a name="floating-point-infinities-and-nan"></a><span data-ttu-id="563a0-294">浮動小数点の無限大値と NaN (非数) 値</span><span class="sxs-lookup"><span data-stu-id="563a0-294">Floating-Point Infinities and NaN</span></span>  
+ <span data-ttu-id="563a0-295"><xref:System.Single> の浮動小数点型または <xref:System.Double> の浮動小数点型が正の無限大、負の無限大、または NaN (非数) である場合は、書式指定文字列とは関係なく、現在適用可能な <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>オブジェクトによって指定される <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>、 <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A> 、または <xref:System.Globalization.NumberFormatInfo> の各プロパティの値は、書式設定された文字列となります。</span><span class="sxs-lookup"><span data-stu-id="563a0-295">Regardless of the format string, if the value of a <xref:System.Single> or <xref:System.Double> floating-point type is positive infinity, negative infinity, or not a number (NaN), the formatted string is the value of the respective <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>, <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>, or <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A> property specified by the currently applicable <xref:System.Globalization.NumberFormatInfo> object.</span></span>  
   
-### コントロール パネルの設定  
- コントロール パネルの **\[地域と言語のオプション\]** での設定は、書式設定操作によって生成される結果の文字列に影響します。 これらの設定は、現在のスレッド カルチャに関連付けられた <xref:System.Globalization.NumberFormatInfo> オブジェクトを初期化するために使用され、現在のスレッド カルチャから書式設定の制御に使用される値が提供されます。 コンピューターで使用する設定が異なる場合は、生成される文字列も異なります。  
+### <a name="control-panel-settings"></a><span data-ttu-id="563a0-296">コントロール パネルの設定</span><span class="sxs-lookup"><span data-stu-id="563a0-296">Control Panel Settings</span></span>  
+ <span data-ttu-id="563a0-297">コントロール パネルの **[地域と言語のオプション]** での設定は、書式設定操作によって生成される結果の文字列に影響します。</span><span class="sxs-lookup"><span data-stu-id="563a0-297">The settings in the **Regional and Language Options** item in Control Panel influence the result string produced by a formatting operation.</span></span> <span data-ttu-id="563a0-298">これらの設定は、現在のスレッド カルチャに関連付けられた <xref:System.Globalization.NumberFormatInfo> オブジェクトを初期化するために使用され、現在のスレッド カルチャから書式設定の制御に使用される値が提供されます。</span><span class="sxs-lookup"><span data-stu-id="563a0-298">Those settings are used to initialize the <xref:System.Globalization.NumberFormatInfo> object associated with the current thread culture, and the current thread culture provides values used to govern formatting.</span></span> <span data-ttu-id="563a0-299">コンピューターで使用する設定が異なる場合は、生成される文字列も異なります。</span><span class="sxs-lookup"><span data-stu-id="563a0-299">Computers that use different settings generate different result strings.</span></span>  
   
- また、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=fullName> コンストラクターを使用して、現在のシステム カルチャと同じカルチャを表す新しい <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化した場合、コントロール パネルの **\[地域と言語のオプション\]** 項目で設定されたカスタマイズが新しい <xref:System.Globalization.CultureInfo> オブジェクトに適用されます。<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=fullName> コンストラクターを使用すると、システムに対するカスタマイズが反映されない <xref:System.Globalization.CultureInfo> オブジェクトを作成できます。  
+ <span data-ttu-id="563a0-300">また、使用する場合、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType>新しいのインスタンスを作成するコンス トラクター<xref:System.Globalization.CultureInfo>を現在のシステム カルチャによって確立された任意のカスタマイズと同じカルチャを表すオブジェクト、**地域と言語のオプション**コントロール パネル では、新しいに適用される<xref:System.Globalization.CultureInfo>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="563a0-300">In addition, if you use the <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> constructor to instantiate a new <xref:System.Globalization.CultureInfo> object that represents the same culture as the current system culture, any customizations established by the **Regional and Language Options** item in Control Panel will be applied to the new <xref:System.Globalization.CultureInfo> object.</span></span> <span data-ttu-id="563a0-301"><xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを使用すると、システムに対するカスタマイズが反映されない <xref:System.Globalization.CultureInfo> オブジェクトを作成できます。</span><span class="sxs-lookup"><span data-stu-id="563a0-301">You can use the <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> constructor to create a <xref:System.Globalization.CultureInfo> object that does not reflect a system's customizations.</span></span>  
   
-### 丸めと固定小数点の書式指定文字列  
- 固定小数点の書式指定文字列 \(つまり指数表記の書式指定文字を含まない書式指定文字列\) の場合は、小数点以下の桁数が小数点の右側にある桁プレースホルダーの数と同じである数値に丸められます。 書式指定文字列に小数点が含まれていない場合には、最も近い整数に丸められます。 数値の桁数が、整数部の桁プレースホルダーの数よりも大きい場合には、桁プレースホルダーに収まらない桁が、結果の文字列の 1 番目の桁プレースホルダーの直前にコピーされます。  
+### <a name="rounding-and-fixed-point-format-strings"></a><span data-ttu-id="563a0-302">丸めと固定小数点の書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="563a0-302">Rounding and Fixed-Point Format Strings</span></span>  
+ <span data-ttu-id="563a0-303">固定小数点の書式指定文字列 (つまり指数表記の書式指定文字を含まない書式指定文字列) の場合は、小数点以下の桁数が小数点の右側にある桁プレースホルダーの数と同じである数値に丸められます。</span><span class="sxs-lookup"><span data-stu-id="563a0-303">For fixed-point format strings (that is, format strings that do not contain scientific notation format characters), numbers are rounded to as many decimal places as there are digit placeholders to the right of the decimal point.</span></span> <span data-ttu-id="563a0-304">書式指定文字列に小数点が含まれていない場合には、最も近い整数に丸められます。</span><span class="sxs-lookup"><span data-stu-id="563a0-304">If the format string does not contain a decimal point, the number is rounded to the nearest integer.</span></span> <span data-ttu-id="563a0-305">数値の桁数が、整数部の桁プレースホルダーの数よりも大きい場合には、桁プレースホルダーに収まらない桁が、結果の文字列の 1 番目の桁プレースホルダーの直前にコピーされます。</span><span class="sxs-lookup"><span data-stu-id="563a0-305">If the number has more digits than there are digit placeholders to the left of the decimal point, the extra digits are copied to the result string immediately before the first digit placeholder.</span></span>  
   
- [表のトップへ](#table)  
+ [<span data-ttu-id="563a0-306">表のトップへ</span><span class="sxs-lookup"><span data-stu-id="563a0-306">Back to table</span></span>](#table)  
   
 <a name="example"></a>   
-## 例  
- 2 つのカスタム数値書式指定文字列の例を次に示します。 どちらの場合も、桁プレースホルダー \(`#`\) によって数値データが表示され、それ以外の文字はすべて結果の文字列にコピーされます。  
+## <a name="example"></a><span data-ttu-id="563a0-307">例</span><span class="sxs-lookup"><span data-stu-id="563a0-307">Example</span></span>  
+ <span data-ttu-id="563a0-308">2 つのカスタム数値書式指定文字列の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="563a0-308">The following example demonstrates two custom numeric format strings.</span></span> <span data-ttu-id="563a0-309">どちらの場合も、桁プレースホルダー (`#`) によって数値データが表示され、それ以外の文字はすべて結果の文字列にコピーされます。</span><span class="sxs-lookup"><span data-stu-id="563a0-309">In both cases, the digit placeholder (`#`) displays the numeric data, and all other characters are copied to the result string.</span></span>  
   
  [!code-cpp[Formatting.Numeric.Custom#10](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/example1.cpp#10)]
  [!code-csharp[Formatting.Numeric.Custom#10](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/example1.cs#10)]
  [!code-vb[Formatting.Numeric.Custom#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/example1.vb#10)]  
   
- [表のトップへ](#table)  
+ [<span data-ttu-id="563a0-310">表のトップへ</span><span class="sxs-lookup"><span data-stu-id="563a0-310">Back to table</span></span>](#table)  
   
-## 参照  
- <xref:System.Globalization.NumberFormatInfo>   
- [型の書式設定](../../../docs/standard/base-types/formatting-types.md)   
- [標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)   
- [方法: 数値に先行するゼロを埋め込む](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)   
- [サンプル: .NET Framework 4 の書式設定ユーティリティ](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
+## <a name="see-also"></a><span data-ttu-id="563a0-311">関連項目</span><span class="sxs-lookup"><span data-stu-id="563a0-311">See Also</span></span>  
+ <xref:System.Globalization.NumberFormatInfo>  
+ [<span data-ttu-id="563a0-312">型の書式設定</span><span class="sxs-lookup"><span data-stu-id="563a0-312">Formatting Types</span></span>](../../../docs/standard/base-types/formatting-types.md)  
+ [<span data-ttu-id="563a0-313">Standard Numeric Format Strings</span><span class="sxs-lookup"><span data-stu-id="563a0-313">Standard Numeric Format Strings</span></span>](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
+ [<span data-ttu-id="563a0-314">方法: 数値に先行するゼロを埋め込む</span><span class="sxs-lookup"><span data-stu-id="563a0-314">How to: Pad a Number with Leading Zeros</span></span>](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
+ [<span data-ttu-id="563a0-315">サンプル: .NET Framework 4 の書式設定ユーティリティ</span><span class="sxs-lookup"><span data-stu-id="563a0-315">Sample: .NET Framework 4 Formatting Utility</span></span>](http://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

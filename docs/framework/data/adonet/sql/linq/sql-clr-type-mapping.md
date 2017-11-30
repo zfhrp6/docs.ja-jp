@@ -1,268 +1,271 @@
 ---
-title: "SQL-CLR Type Mapping | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "SQL と CLR の型マッピング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 885c87439ebf7393380c7ff20165d8587f1b26f0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# SQL-CLR Type Mapping
-LINQ to SQL では、リレーショナル データベースのデータ モデルが、任意のプログラミング言語で表されるオブジェクト モデルに対応付けられています。  アプリケーションが実行されると、LINQ to SQL は、オブジェクト モデルの統合言語クエリを SQL に変換し、それをデータベースに送信して実行します。  データベースから結果が返されると、LINQ to SQL はその結果をプログラミング言語で操作できるオブジェクトに変換し直します。  
+# <a name="sql-clr-type-mapping"></a><span data-ttu-id="1ca4a-102">SQL と CLR の型マッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-102">SQL-CLR Type Mapping</span></span>
+<span data-ttu-id="1ca4a-103">LINQ to SQL では、リレーショナル データベースのデータ モデルが、任意のプログラミング言語で表されるオブジェクト モデルに対応付けられています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-103">In LINQ to SQL, the data model of a relational database maps to an object model that is expressed in the programming language of your choice.</span></span> <span data-ttu-id="1ca4a-104">アプリケーションが実行されると、LINQ to SQL は、オブジェクト モデルの統合言語クエリを SQL に変換し、それをデータベースに送信して実行します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-104">When the application runs, LINQ to SQL translates the language-integrated queries in the object model into SQL and sends them to the database for execution.</span></span> <span data-ttu-id="1ca4a-105">データベースから結果が返されると、LINQ to SQL はその結果をプログラミング言語で操作できるオブジェクトに変換し直します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-105">When the database returns the results, LINQ to SQL translates the results back to objects that you can work with in your own programming language.</span></span>  
   
- オブジェクト モデルとデータベースの間でデータを変換するには、*型マッピング*を定義する必要があります。  LINQ to SQL は型マッピングを使用して、共通言語ランタイム \(CLR\) のそれぞれの型を SQL Server の特定の型に対応付けます。  型マッピングおよびその他のマッピング情報 \(データベース構造やテーブルのリレーションシップなど\) は、オブジェクト モデル内で属性ベースの対応付けを使用して定義できます。  また、オブジェクト モデルの外部で外部マッピング ファイルを使用して指定することもできます。  詳細については、「[Attribute\-Based Mapping](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)」および「[External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)」を参照してください。  
+ <span data-ttu-id="1ca4a-106">オブジェクト モデルとデータベース間でデータを変換するために、*型マッピング*定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-106">In order to translate data between the object model and the database, a *type mapping* must be defined.</span></span> <span data-ttu-id="1ca4a-107">LINQ to SQL は型マッピングを使用して、共通言語ランタイム (CLR) のそれぞれの型を SQL Server の特定の型に対応付けます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-107">LINQ to SQL uses a type mapping to match each common language runtime (CLR) type with a particular SQL Server type.</span></span> <span data-ttu-id="1ca4a-108">型マッピングおよびその他のマッピング情報 (データベース構造やテーブルのリレーションシップなど) は、オブジェクト モデル内で属性ベースの対応付けを使用して定義できます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-108">You can define type mappings and other mapping information, such as database structure and table relationships, inside the object model with attribute-based mapping.</span></span> <span data-ttu-id="1ca4a-109">また、オブジェクト モデルの外部で外部マッピング ファイルを使用して指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-109">Alternatively, you can specify the mapping information outside the object model with an external mapping file.</span></span> <span data-ttu-id="1ca4a-110">詳細については、次を参照してください。[属性ベースの対応付け](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)と[外部マッピング](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-110">For more information, see [Attribute-Based Mapping](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md) and [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).</span></span>  
   
- このトピックでは、以下の点について説明します。  
+ <span data-ttu-id="1ca4a-111">このトピックでは、以下の点について説明します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-111">This topic discusses the following points:</span></span>  
   
--   [既定の型マッピング](#DefaultTypeMapping)  
+-   [<span data-ttu-id="1ca4a-112">既定の型マッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-112">Default Type Mapping</span></span>](#DefaultTypeMapping)  
   
--   [型マッピングと実行時動作の関係](#BehaviorMatrix)  
+-   [<span data-ttu-id="1ca4a-113">型マッピングと実行時の動作の関係</span><span class="sxs-lookup"><span data-stu-id="1ca4a-113">Type Mapping Run-time Behavior Matrix</span></span>](#BehaviorMatrix)  
   
--   [CLR と SQL の実行時の動作の違い](#BehaviorDiffs)  
+-   [<span data-ttu-id="1ca4a-114">CLR と SQL の実行の動作の相違</span><span class="sxs-lookup"><span data-stu-id="1ca4a-114">Behavior Differences Between CLR and SQL Execution</span></span>](#BehaviorDiffs)  
   
--   [Enum 型のマッピング](#EnumMapping)  
+-   [<span data-ttu-id="1ca4a-115">Enum 型のマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-115">Enum Mapping</span></span>](#EnumMapping)  
   
--   [数値のマッピング](#NumericMapping)  
+-   [<span data-ttu-id="1ca4a-116">数値のマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-116">Numeric Mapping</span></span>](#NumericMapping)  
   
--   [テキストおよび XML のマッピング](#TextMapping)  
+-   [<span data-ttu-id="1ca4a-117">テキストおよび XML のマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-117">Text and XML Mapping</span></span>](#TextMapping)  
   
--   [日付および時刻のマッピング](#DateMapping)  
+-   [<span data-ttu-id="1ca4a-118">日付し、時刻のマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-118">Date and Time Mapping</span></span>](#DateMapping)  
   
--   [バイナリのマッピング](#BinaryMapping)  
+-   [<span data-ttu-id="1ca4a-119">バイナリのマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-119">Binary Mapping</span></span>](#BinaryMapping)  
   
--   [その他のマッピング](#MiscMapping)  
+-   [<span data-ttu-id="1ca4a-120">その他のマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-120">Miscellaneous Mapping</span></span>](#MiscMapping)  
   
 <a name="DefaultTypeMapping"></a>   
-## 既定の型マッピング  
- オブジェクト モデルまたは外部マッピング ファイルは、オブジェクト リレーショナル デザイナー \(O\/R デザイナー\) または SQLMetal コマンド ライン ツールを使用して自動的に作成できます。  これらのツールの既定の型マッピングでは、SQL Server データベース内の列にマップするためにどの CLR 型を選択するかが定義されています。  これらのツールの使用方法の詳細については、「[Creating the Object Model](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)」を参照してください。  
+## <a name="default-type-mapping"></a><span data-ttu-id="1ca4a-121">既定の型マッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-121">Default Type Mapping</span></span>  
+ <span data-ttu-id="1ca4a-122">オブジェクト モデルまたは外部マッピング ファイルは、オブジェクト リレーショナル デザイナー (O/R デザイナー) または SQLMetal コマンド ライン ツールを使用して自動的に作成できます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-122">You can create the object model or external mapping file automatically with the Object Relational Designer (O/R Designer) or the SQLMetal command-line tool.</span></span> <span data-ttu-id="1ca4a-123">これらのツールの既定の型マッピングでは、SQL Server データベース内の列にマップするためにどの CLR 型を選択するかが定義されています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-123">The default type mappings for these tools define which CLR types are chosen to map to columns inside the SQL Server database.</span></span> <span data-ttu-id="1ca4a-124">詳細については、これらのツールを使用して、次を参照してください。[オブジェクト モデルの作成](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-124">For more information about using these tools, see [Creating the Object Model](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md).</span></span>  
   
- また、<xref:System.Data.Linq.DataContext.CreateDatabase%2A> メソッドを使用して、オブジェクト モデルまたは外部マッピング ファイルのマッピング情報に基づいて SQL Server データベースを作成することもできます。  <xref:System.Data.Linq.DataContext.CreateDatabase%2A> メソッドの既定の型マッピングでは、オブジェクト モデル内の CLR 型にマップするためにどの型の SQL Server 列を作成するかが定義されています。  詳細については、「[How to: Dynamically Create a Database](../../../../../../docs/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database.md)」を参照してください。  
+ <span data-ttu-id="1ca4a-125">また、<xref:System.Data.Linq.DataContext.CreateDatabase%2A> メソッドを使用して、オブジェクト モデルまたは外部マッピング ファイルのマッピング情報に基づいて SQL Server データベースを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-125">You can also use the <xref:System.Data.Linq.DataContext.CreateDatabase%2A> method to create a SQL Server database based on the mapping information in the object model or external mapping file.</span></span> <span data-ttu-id="1ca4a-126"><xref:System.Data.Linq.DataContext.CreateDatabase%2A> メソッドの既定の型マッピングでは、オブジェクト モデル内の CLR 型にマップするためにどの型の SQL Server 列を作成するかが定義されています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-126">The default type mappings for the <xref:System.Data.Linq.DataContext.CreateDatabase%2A> method define which type of SQL Server columns are created to map to the CLR types in the object model.</span></span> <span data-ttu-id="1ca4a-127">詳細については、次を参照してください。[する方法: データベースを動的に作成](../../../../../../docs/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database.md)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-127">For more information, see [How to: Dynamically Create a Database](../../../../../../docs/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database.md).</span></span>  
   
 <a name="BehaviorMatrix"></a>   
-## 型マッピングと実行時動作の関係  
- 次の図は、データがデータベースから取得されるときやデータベースに保存されるときに、特定の型マッピングで行われる実行時の動作を示しています。  シリアル化を除き、LINQ to SQL では、このマトリックスに指定されていない CLR または SQL Server のデータ型のマッピングはサポートされません。  シリアル化のサポートの詳細については、「[バイナリ シリアル化](#BinarySerialization)」を参照してください。  
+## <a name="type-mapping-run-time-behavior-matrix"></a><span data-ttu-id="1ca4a-128">型マッピングと実行時動作の関係</span><span class="sxs-lookup"><span data-stu-id="1ca4a-128">Type Mapping Run-time Behavior Matrix</span></span>  
+ <span data-ttu-id="1ca4a-129">次の図は、データがデータベースから取得されるときやデータベースに保存されるときに、特定の型マッピングで行われる実行時の動作を示しています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-129">The following diagram shows the expected run-time behavior of specific type mappings when data is retrieved from or saved to the database.</span></span> <span data-ttu-id="1ca4a-130">シリアル化を除き、LINQ to SQL では、このマトリックスに指定されていない CLR または SQL Server のデータ型のマッピングはサポートされません。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-130">With the exception of serialization, LINQ to SQL does not support mapping between any CLR or SQL Server data types that are not specified in this matrix.</span></span> <span data-ttu-id="1ca4a-131">シリアル化のサポートの詳細については、次を参照してください。[バイナリのシリアル化](#BinarySerialization)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-131">For more information on serialization support, see [Binary Serialization](#BinarySerialization).</span></span>  
   
 > [!NOTE]
->  一部の型マッピングでは、データベースに対する変換操作中にオーバーフローやデータ損失の例外が発生することがあります。  
+>  <span data-ttu-id="1ca4a-132">一部の型マッピングでは、データベースに対する変換操作中にオーバーフローやデータ損失の例外が発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-132">Some type mappings may result in overflow or data loss exceptions while translating to or from the database.</span></span>  
   
-### カスタム型マッピング  
- LINQ to SQL では、O\/R デザイナー、SQLMetal、および <xref:System.Data.Linq.DataContext.CreateDatabase%2A> メソッドで使用される既定の型マッピング以外も使用できます。  DBML ファイルで明示的に指定すると、カスタム型マッピングを作成できます。  次に、その DBML ファイルを使用してオブジェクト モデル コードとマッピング ファイルを作成できます。  詳細については、「[SQL\-CLR Custom Type Mappings](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md)」を参照してください。  
+### <a name="custom-type-mapping"></a><span data-ttu-id="1ca4a-133">カスタム型マッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-133">Custom Type Mapping</span></span>  
+ <span data-ttu-id="1ca4a-134">LINQ to SQL では、O/R デザイナー、SQLMetal、および <xref:System.Data.Linq.DataContext.CreateDatabase%2A> メソッドで使用される既定の型マッピング以外も使用できます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-134">With LINQ to SQL, you are not limited to the default type mappings used by the O/R Designer, SQLMetal, and the <xref:System.Data.Linq.DataContext.CreateDatabase%2A> method.</span></span> <span data-ttu-id="1ca4a-135">DBML ファイルで明示的に指定すると、カスタム型マッピングを作成できます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-135">You can create custom type mappings by explicitly specifying them in a DBML file.</span></span> <span data-ttu-id="1ca4a-136">次に、その DBML ファイルを使用してオブジェクト モデル コードとマッピング ファイルを作成できます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-136">Then you can use that DBML file to create the object model code and mapping file.</span></span> <span data-ttu-id="1ca4a-137">詳細については、次を参照してください。 [SQL と CLR のカスタム型マッピング](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-137">For more information, see [SQL-CLR Custom Type Mappings](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md).</span></span>  
   
 <a name="BehaviorDiffs"></a>   
-## CLR と SQL の実行時の動作の違い  
- CLR と SQL Server では有効桁数や実行方法が異なるため、計算を実行する場所によって、得られる結果や動作が異なる場合があります。  LINQ to SQL クエリで実行される計算は、実際は Transact\-SQL に変換されてから SQL Server データベースで実行されます。  LINQ to SQL クエリの外部で実行される計算は、CLR のコンテキスト内で実行されます。  
+## <a name="behavior-differences-between-clr-and-sql-execution"></a><span data-ttu-id="1ca4a-138">CLR と SQL の実行時の動作の違い</span><span class="sxs-lookup"><span data-stu-id="1ca4a-138">Behavior Differences Between CLR and SQL Execution</span></span>  
+ <span data-ttu-id="1ca4a-139">CLR と SQL Server では有効桁数や実行方法が異なるため、計算を実行する場所によって、得られる結果や動作が異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-139">Because of differences in precision and execution between the CLR and SQL Server, you may receive different results or experience different behavior depending on where you perform your calculations.</span></span> <span data-ttu-id="1ca4a-140">LINQ to SQL クエリで実行される計算は、実際は Transact-SQL に変換されてから SQL Server データベースで実行されます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-140">Calculations performed in LINQ to SQL queries are actually translated to Transact-SQL and then executed on the SQL Server database.</span></span> <span data-ttu-id="1ca4a-141">LINQ to SQL クエリの外部で実行される計算は、CLR のコンテキスト内で実行されます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-141">Calculations performed outside LINQ to SQL queries are executed within the context of the CLR.</span></span>  
   
- CLR および SQL Server 間での動作の違いの例を次に示します。  
+ <span data-ttu-id="1ca4a-142">CLR および SQL Server 間での動作の違いの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-142">For example, the following are some differences in behavior between the CLR and SQL Server:</span></span>  
   
--   SQL Server では、一部のデータ型が、CLR の対応する型のデータとは異なる順序で並べ替えられます。  たとえば、SQL Server の `UNIQUEIDENTIFIER` 型のデータは、CLR の <xref:System.Guid?displayProperty=fullName> 型のデータとは異なる順序で並べ替えられます。  
+-   <span data-ttu-id="1ca4a-143">SQL Server では、一部のデータ型が、CLR の対応する型のデータとは異なる順序で並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-143">SQL Server orders some data types differently than data of equivalent type in the CLR.</span></span> <span data-ttu-id="1ca4a-144">たとえば、SQL Server の `UNIQUEIDENTIFIER` 型のデータは、CLR の <xref:System.Guid?displayProperty=nameWithType> 型のデータとは異なる順序で並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-144">For example, SQL Server data of type `UNIQUEIDENTIFIER` is ordered differently than CLR data of type <xref:System.Guid?displayProperty=nameWithType>.</span></span>  
   
--   SQL Server では、一部の文字列比較操作の処理が CLR とは異なります。  SQL Server での文字列比較の動作は、サーバー上の照合順序の設定によって決まります。  詳細については、Microsoft SQL Server オンライン ブックの「[照合順序の使用](http://go.microsoft.com/fwlink/?LinkId=115330)」を参照してください。  
+-   <span data-ttu-id="1ca4a-145">SQL Server では、一部の文字列比較操作の処理が CLR とは異なります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-145">SQL Server handles some string comparison operations differently than the CLR.</span></span> <span data-ttu-id="1ca4a-146">SQL Server での文字列比較の動作は、サーバー上の照合順序の設定によって決まります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-146">In SQL Server, string comparison behavior depends on the collation settings on the server.</span></span> <span data-ttu-id="1ca4a-147">詳細については、次を参照してください。[照合順序の使用](http://go.microsoft.com/fwlink/?LinkId=115330)、Microsoft SQL Server Books Online にします。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-147">For more information, see [Working with Collations](http://go.microsoft.com/fwlink/?LinkId=115330) in the Microsoft SQL Server Books Online.</span></span>  
   
--   SQL Server では、マップされている一部の関数で、CLR とは異なる値が返されることがあります。  たとえば、末尾の空白文字のみが異なる 2 つの文字列を等価関数で比較した場合、SQL Server では等しいと見なされるのに対し、CLR では等しくないと見なされます。  
+-   <span data-ttu-id="1ca4a-148">SQL Server では、マップされている一部の関数で、CLR とは異なる値が返されることがあります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-148">SQL Server may return different values for some mapped functions than the CLR.</span></span> <span data-ttu-id="1ca4a-149">たとえば、末尾の空白文字のみが異なる 2 つの文字列を等価関数で比較した場合、SQL Server では等しいと見なされるのに対し、CLR では等しくないと見なされます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-149">For example, equality functions will differ because SQL Server considers two strings to be equal if they only differ in trailing white space; whereas the CLR considers them to be not equal.</span></span>  
   
 <a name="EnumMapping"></a>   
-## Enum 型のマッピング  
- LINQ to SQL では、CLR の <xref:System.Enum?displayProperty=fullName> 型の SQL Server 型へのマッピングが 2 種類サポートされています。  
+## <a name="enum-mapping"></a><span data-ttu-id="1ca4a-150">Enum 型のマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-150">Enum Mapping</span></span>  
+ <span data-ttu-id="1ca4a-151">LINQ to SQL では、CLR の <xref:System.Enum?displayProperty=nameWithType> 型の SQL Server 型へのマッピングが 2 種類サポートされています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-151">LINQ to SQL supports mapping the CLR <xref:System.Enum?displayProperty=nameWithType> type to SQL Server types in two ways:</span></span>  
   
--   SQL 数値型 \(`TINYINT`、`SMALLINT`、`INT`、`BIGINT`\) へのマッピング  
+-   <span data-ttu-id="1ca4a-152">SQL 数値型 (`TINYINT`、`SMALLINT`、`INT`、`BIGINT`) へのマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-152">Mapping to SQL numeric types (`TINYINT`, `SMALLINT`, `INT`, `BIGINT`)</span></span>  
   
-     CLR <xref:System.Enum?displayProperty=fullName> 型を SQL 数値型にマップすると、基になる CLR <xref:System.Enum?displayProperty=fullName> の整数値は SQL Server データベース列の値にマップされます。  たとえば、<xref:System.Enum?displayProperty=fullName> という名前の `DaysOfWeek` に、基になる整数値が 3 である `Tue` という名前のメンバーが含まれる場合、そのメンバーはデータベース値 3 にマップされます。  
+     <span data-ttu-id="1ca4a-153">CLR <xref:System.Enum?displayProperty=nameWithType> 型を SQL 数値型にマップすると、基になる CLR <xref:System.Enum?displayProperty=nameWithType> の整数値は SQL Server データベース列の値にマップされます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-153">When you map a CLR <xref:System.Enum?displayProperty=nameWithType> type to a SQL numeric type, you map the underlying integer value of the CLR <xref:System.Enum?displayProperty=nameWithType> to the value of the SQL Server database column.</span></span> <span data-ttu-id="1ca4a-154">たとえば、<xref:System.Enum?displayProperty=nameWithType> という名前の `DaysOfWeek` に、基になる整数値が 3 である `Tue` という名前のメンバーが含まれる場合、そのメンバーはデータベース値 3 にマップされます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-154">For example, if a <xref:System.Enum?displayProperty=nameWithType> named `DaysOfWeek` contains a member named `Tue` with an underlying integer value of 3, that member maps to a database value of 3.</span></span>  
   
--   SQL テキスト型 \(`CHAR`、`NCHAR`、`VARCHAR`、`NVARCHAR`\) へのマッピング  
+-   <span data-ttu-id="1ca4a-155">SQL テキスト型 (`CHAR`、`NCHAR`、`VARCHAR`、`NVARCHAR`) へのマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-155">Mapping to SQL text types (`CHAR`, `NCHAR`, `VARCHAR`, `NVARCHAR`)</span></span>  
   
-     CLR <xref:System.Enum?displayProperty=fullName> 型を SQL テキスト型にマップすると、CLR <xref:System.Enum?displayProperty=fullName> のメンバーの名前に SQL データベース値がマップされます。  たとえば、<xref:System.Enum?displayProperty=fullName> という名前の `DaysOfWeek` に、基になる整数値が 3 である `Tue` という名前のメンバーが含まれる場合、このメンバーはデータベース値 `Tue` にマップされます。  
+     <span data-ttu-id="1ca4a-156">CLR <xref:System.Enum?displayProperty=nameWithType> 型を SQL テキスト型にマップすると、CLR <xref:System.Enum?displayProperty=nameWithType> のメンバーの名前に SQL データベース値がマップされます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-156">When you map a CLR <xref:System.Enum?displayProperty=nameWithType> type to a SQL text type, the SQL database value is mapped to the names of the CLR <xref:System.Enum?displayProperty=nameWithType> members.</span></span> <span data-ttu-id="1ca4a-157">たとえば、<xref:System.Enum?displayProperty=nameWithType> という名前の `DaysOfWeek` に、基になる整数値が 3 である `Tue` という名前のメンバーが含まれる場合、このメンバーはデータベース値 `Tue` にマップされます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-157">For example, if a <xref:System.Enum?displayProperty=nameWithType> named `DaysOfWeek` contains a member named `Tue` with an underlying integer value of 3, that member maps to a database value of `Tue`.</span></span>  
   
 > [!NOTE]
->  SQL のテキスト型を CLR の <xref:System.Enum?displayProperty=fullName> にマップする場合は、マップされる SQL 列に <xref:System.Enum> メンバーの名前のみを含めてください。  <xref:System.Enum> 型にマップされる SQL 列では、他の値はサポートされません。  
+>  <span data-ttu-id="1ca4a-158">SQL のテキスト型を CLR の <xref:System.Enum?displayProperty=nameWithType> にマップする場合は、マップされる SQL 列に <xref:System.Enum> メンバーの名前のみを含めてください。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-158">When mapping SQL text types to a CLR <xref:System.Enum?displayProperty=nameWithType>, include only the names of the <xref:System.Enum> members in the mapped SQL column.</span></span> <span data-ttu-id="1ca4a-159"><xref:System.Enum> 型にマップされる SQL 列では、他の値はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-159">Other values are not supported in the <xref:System.Enum>-mapped SQL column.</span></span>  
   
- O\/R デザイナーと SQLMetal コマンド ライン ツールでは、SQL の型から CLR の <xref:System.Enum> クラスへの自動的なマッピングはできません。  DBML ファイルを O\/R デザイナーと SQLMetal で使用できるようにカスタマイズして、このマッピングを明示的に設定する必要があります。  カスタム型マッピングの詳細については、「[SQL\-CLR Custom Type Mappings](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md)」を参照してください。  
+ <span data-ttu-id="1ca4a-160">O/R デザイナーと SQLMetal コマンド ライン ツールでは、SQL の型から CLR の <xref:System.Enum> クラスへの自動的なマッピングはできません。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-160">The O/R Designer and SQLMetal command-line tool cannot automatically map a SQL type to a CLR <xref:System.Enum> class.</span></span> <span data-ttu-id="1ca4a-161">DBML ファイルを O/R デザイナーと SQLMetal で使用できるようにカスタマイズして、このマッピングを明示的に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-161">You must explicitly configure this mapping by customizing a DBML file for use by the O/R Designer and SQLMetal.</span></span> <span data-ttu-id="1ca4a-162">カスタム型マッピングに関する詳細については、次を参照してください。 [SQL と CLR のカスタム型マッピング](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-162">For more information about custom type mapping, see [SQL-CLR Custom Type Mappings](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md).</span></span>  
   
- 列挙を目的とする SQL の列は、他の数値やテキストの列と型が同じであるため、これらのツールはユーザーの意図を認識できず、次の「[数値のマッピング](#NumericMapping)」と「[テキストおよび XML のマッピング](#TextMapping)」のセクションで説明するように既定のマッピングを使用します。  DBML ファイルを使用したコード生成の詳細については、「[Code Generation in LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)」を参照してください。  
+ <span data-ttu-id="1ca4a-163">他の数値やテキストの列と同じ型の列挙は、SQL 列であるためこれらのツールは認識されません目的およびマッピングの既定値は、次の説明に従って[数値のマッピング](#NumericMapping)と[テキストおよび XML のマッピング](#TextMapping)セクションです。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-163">Because a SQL column intended for enumeration will be of the same type as other numeric and text columns; these tools will not recognize your intent and default to mapping as described in the following [Numeric Mapping](#NumericMapping) and [Text and XML Mapping](#TextMapping) sections.</span></span> <span data-ttu-id="1ca4a-164">DBML ファイルとコードの生成の詳細については、次を参照してください。 [LINQ to SQL でのコード生成](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-164">For more information about generating code with the DBML file, see [Code Generation in LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).</span></span>  
   
- <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> メソッドでは、CLR の <xref:System.Enum?displayProperty=fullName> 型をマップするために数値型の SQL 列が作成されます。  
+ <span data-ttu-id="1ca4a-165"><xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> メソッドでは、CLR の <xref:System.Enum?displayProperty=nameWithType> 型をマップするために数値型の SQL 列が作成されます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-165">The <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> method creates a SQL column of numeric type to map a CLR <xref:System.Enum?displayProperty=nameWithType> type.</span></span>  
   
 <a name="NumericMapping"></a>   
-## 数値のマッピング  
- LINQ to SQL では、CLR と SQL Server のさまざまな数値型をマップできます。  次の表に、O\/R デザイナーおよび SQLMetal でデータベースに基づいてオブジェクト モデルまたは外部マッピング ファイルを作成するときに選択される CLR 型を示します。  
+## <a name="numeric-mapping"></a><span data-ttu-id="1ca4a-166">数値のマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-166">Numeric Mapping</span></span>  
+ <span data-ttu-id="1ca4a-167">LINQ to SQL では、CLR と SQL Server のさまざまな数値型をマップできます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-167">LINQ to SQL lets you map many CLR and SQL Server numeric types.</span></span> <span data-ttu-id="1ca4a-168">次の表に、O/R デザイナーおよび SQLMetal でデータベースに基づいてオブジェクト モデルまたは外部マッピング ファイルを作成するときに選択される CLR 型を示します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-168">The following table shows the CLR types that O/R Designer and SQLMetal select when building an object model or external mapping file based on your database.</span></span>  
   
-|SQL Server 型|O\/R デザイナーおよび SQLMetal で使用される既定の CLR 型マッピング|  
-|------------------|-------------------------------------------------|  
-|`BIT`|<xref:System.Boolean?displayProperty=fullName>|  
-|`TINYINT`|<xref:System.Int16?displayProperty=fullName>|  
-|`INT`|<xref:System.Int32?displayProperty=fullName>|  
-|`BIGINT`|<xref:System.Int64?displayProperty=fullName>|  
-|`SMALLMONEY`|<xref:System.Decimal?displayProperty=fullName>|  
-|`MONEY`|<xref:System.Decimal?displayProperty=fullName>|  
-|`DECIMAL`|<xref:System.Decimal?displayProperty=fullName>|  
-|`NUMERIC`|<xref:System.Decimal?displayProperty=fullName>|  
-|`REAL/FLOAT(24)`|<xref:System.Single?displayProperty=fullName>|  
-|`FLOAT/FLOAT(53)`|<xref:System.Double?displayProperty=fullName>|  
+|<span data-ttu-id="1ca4a-169">SQL Server 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-169">SQL Server Type</span></span>|<span data-ttu-id="1ca4a-170">O/R デザイナーおよび SQLMetal で使用される既定の CLR 型マッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-170">Default CLR Type mapping used by O/R Designer and SQLMetal</span></span>|  
+|---------------------|-----------------------------------------------------------------|  
+|`BIT`|<xref:System.Boolean?displayProperty=nameWithType>|  
+|`TINYINT`|<xref:System.Int16?displayProperty=nameWithType>|  
+|`INT`|<xref:System.Int32?displayProperty=nameWithType>|  
+|`BIGINT`|<xref:System.Int64?displayProperty=nameWithType>|  
+|`SMALLMONEY`|<xref:System.Decimal?displayProperty=nameWithType>|  
+|`MONEY`|<xref:System.Decimal?displayProperty=nameWithType>|  
+|`DECIMAL`|<xref:System.Decimal?displayProperty=nameWithType>|  
+|`NUMERIC`|<xref:System.Decimal?displayProperty=nameWithType>|  
+|`REAL/FLOAT(24)`|<xref:System.Single?displayProperty=nameWithType>|  
+|`FLOAT/FLOAT(53)`|<xref:System.Double?displayProperty=nameWithType>|  
   
- 次の表に、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> メソッドで使用される既定の型マッピングを示します。既定の型マッピングでは、オブジェクト モデルまたは外部マッピング ファイルで定義された CLR 型にマップするために作成される SQL 列の型が定義されています。  
+ <span data-ttu-id="1ca4a-171">次の表に、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> メソッドで使用される既定の型マッピングを示します。既定の型マッピングでは、オブジェクト モデルまたは外部マッピング ファイルで定義された CLR 型にマップするために作成される SQL 列の型が定義されています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-171">The next table shows the default type mappings used by the <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> method to define which type of SQL columns are created to map to the CLR types defined in your object model or external mapping file.</span></span>  
   
-|CLR 型|<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> で使用される既定の SQL Server 型|  
-|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-|<xref:System.Boolean?displayProperty=fullName>|`BIT`|  
-|<xref:System.Byte?displayProperty=fullName>|`TINYINT`|  
-|<xref:System.Int16?displayProperty=fullName>|`SMALLINT`|  
-|<xref:System.Int32?displayProperty=fullName>|`INT`|  
-|<xref:System.Int64?displayProperty=fullName>|`BIGINT`|  
-|<xref:System.SByte?displayProperty=fullName>|`SMALLINT`|  
-|<xref:System.UInt16?displayProperty=fullName>|`INT`|  
-|<xref:System.UInt32?displayProperty=fullName>|`BIGINT`|  
-|<xref:System.UInt64?displayProperty=fullName>|`DECIMAL(20)`|  
-|<xref:System.Decimal?displayProperty=fullName>|`DECIMAL(29,4)`|  
-|<xref:System.Single?displayProperty=fullName>|`REAL`|  
-|<xref:System.Double?displayProperty=fullName>|`FLOAT`|  
+|<span data-ttu-id="1ca4a-172">CLR 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-172">CLR Type</span></span>|<span data-ttu-id="1ca4a-173"><xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> で使用される既定の SQL Server 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-173">Default SQL Server Type used by <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType></span></span>|  
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Boolean?displayProperty=nameWithType>|`BIT`|  
+|<xref:System.Byte?displayProperty=nameWithType>|`TINYINT`|  
+|<xref:System.Int16?displayProperty=nameWithType>|`SMALLINT`|  
+|<xref:System.Int32?displayProperty=nameWithType>|`INT`|  
+|<xref:System.Int64?displayProperty=nameWithType>|`BIGINT`|  
+|<xref:System.SByte?displayProperty=nameWithType>|`SMALLINT`|  
+|<xref:System.UInt16?displayProperty=nameWithType>|`INT`|  
+|<xref:System.UInt32?displayProperty=nameWithType>|`BIGINT`|  
+|<xref:System.UInt64?displayProperty=nameWithType>|`DECIMAL(20)`|  
+|<xref:System.Decimal?displayProperty=nameWithType>|`DECIMAL(29,4)`|  
+|<xref:System.Single?displayProperty=nameWithType>|`REAL`|  
+|<xref:System.Double?displayProperty=nameWithType>|`FLOAT`|  
   
- これ以外にもさまざまな数値のマッピングを選択できますが、一部のマッピングでは、データベースに対する変換操作中にオーバーフローやデータ損失の例外が発生することがあります。  詳細については、「[型マッピングと実行時動作の関係](#BehaviorMatrix)」を参照してください。  
+ <span data-ttu-id="1ca4a-174">これ以外にもさまざまな数値のマッピングを選択できますが、一部のマッピングでは、データベースに対する変換操作中にオーバーフローやデータ損失の例外が発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-174">There are many other numeric mappings you can choose, but some may result in overflow or data loss exceptions while translating to or from the database.</span></span> <span data-ttu-id="1ca4a-175">詳細については、次を参照してください。、[型マッピングの実行時動作の関係](#BehaviorMatrix)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-175">For more information, see the [Type Mapping Run Time Behavior Matrix](#BehaviorMatrix).</span></span>  
   
-### Decimal 型と Money 型  
- SQL Server の `DECIMAL` 型の既定の有効桁数 \(小数点の右側と左側で 18 桁\) は、対応する既定の型である CLR の <xref:System.Decima?displayProperty=fullName>l 型の有効桁数よりはるかに少なくなっています。  その結果、データベースにデータを保存するときに有効桁数が少なくなることがあります。  一方、SQL Server の `DECIMAL` 型に 29 桁を超える有効桁数が設定されている場合、その逆が発生する可能性があります。  SQL Server の `DECIMAL` 型に CLR の <xref:System.Decimal?displayProperty=fullName> より大きい有効桁数の値が設定されていると、データベースからデータを取得するときに有効桁数が少なくなることがあります。  
+### <a name="decimal-and-money-types"></a><span data-ttu-id="1ca4a-176">Decimal 型と Money 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-176">Decimal and Money Types</span></span>  
+ <span data-ttu-id="1ca4a-177">SQL Server の既定の有効桁数`DECIMAL`型 (18 小数点以下桁数、小数点の右側および左側に) は、CLR の有効桁数よりはるかに小さい<!--zz <xref:System.Decima?displayProperty=nameWithType>l -->`Decimal`と組み合わされて、既定では型です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-177">The default precision of SQL Server `DECIMAL` type (18 decimal digits to the left and right of the decimal point) is much smaller than the precision of the CLR <!--zz <xref:System.Decima?displayProperty=nameWithType>l --> `Decimal` type that it is paired with by default.</span></span> <span data-ttu-id="1ca4a-178">その結果、データベースにデータを保存するときに有効桁数が少なくなることがあります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-178">This can result in precision loss when you save data to the database.</span></span> <span data-ttu-id="1ca4a-179">一方、SQL Server の `DECIMAL` 型に 29 桁を超える有効桁数が設定されている場合、その逆が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-179">However, just the opposite can happen if the SQL Server `DECIMAL` type is configured with greater than 29 digits of precision.</span></span> <span data-ttu-id="1ca4a-180">SQL Server の `DECIMAL` 型に CLR の <xref:System.Decimal?displayProperty=nameWithType> より大きい有効桁数の値が設定されていると、データベースからデータを取得するときに有効桁数が少なくなることがあります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-180">When a SQL Server `DECIMAL` type has been configured with a greater precision than the CLR <xref:System.Decimal?displayProperty=nameWithType>, precision loss can occur when retrieving data from the database.</span></span>  
   
- SQL Server の `MONEY` 型と `SMALLMONEY` 型も、既定で CLR の <xref:System.Decimal?displayProperty=fullName> 型に対応付けられます。これらの型も有効桁数がはるかに少ないため、データベースにデータを保存するときにオーバーフローやデータ損失の例外が発生する可能性があります。  
+ <span data-ttu-id="1ca4a-181">SQL Server の `MONEY` 型と `SMALLMONEY` 型も、既定で CLR の <xref:System.Decimal?displayProperty=nameWithType> 型に対応付けられます。これらの型も有効桁数がはるかに少ないため、データベースにデータを保存するときにオーバーフローやデータ損失の例外が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-181">The SQL Server `MONEY` and `SMALLMONEY` types, which are also paired with the CLR <xref:System.Decimal?displayProperty=nameWithType> type by default, have a much smaller precision, which can result in overflow or data loss exceptions when saving data to the database.</span></span>  
   
 <a name="TextMapping"></a>   
-## テキストおよび XML のマッピング  
- さまざまなテキスト ベースの型および XML 型も、LINQ to SQL を使用してマップすることができます。  次の表に、O\/R デザイナーおよび SQLMetal でデータベースに基づいてオブジェクト モデルまたは外部マッピング ファイルを作成するときに選択される CLR 型を示します。  
+## <a name="text-and-xml-mapping"></a><span data-ttu-id="1ca4a-182">テキストおよび XML のマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-182">Text and XML Mapping</span></span>  
+ <span data-ttu-id="1ca4a-183">さまざまなテキスト ベースの型および XML 型も、LINQ to SQL を使用してマップすることができます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-183">There are also many text-based and XML types that you can map with LINQ to SQL.</span></span> <span data-ttu-id="1ca4a-184">次の表に、O/R デザイナーおよび SQLMetal でデータベースに基づいてオブジェクト モデルまたは外部マッピング ファイルを作成するときに選択される CLR 型を示します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-184">The following table shows the CLR types that O/R Designer and SQLMetal select when building an object model or external mapping file based on your database.</span></span>  
   
-|SQL Server 型|O\/R デザイナーおよび SQLMetal で使用される既定の CLR 型マッピング|  
-|------------------|-------------------------------------------------|  
-|`CHAR`|<xref:System.String?displayProperty=fullName>|  
-|`NCHAR`|<xref:System.String?displayProperty=fullName>|  
-|`VARCHAR`|<xref:System.String?displayProperty=fullName>|  
-|`NVARCHAR`|<xref:System.String?displayProperty=fullName>|  
-|`TEXT`|<xref:System.String?displayProperty=fullName>|  
-|`NTEXT`|<xref:System.String?displayProperty=fullName>|  
-|`XML`|<xref:System.Xml.Linq.XElement?displayProperty=fullName>|  
+|<span data-ttu-id="1ca4a-185">SQL Server 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-185">SQL Server Type</span></span>|<span data-ttu-id="1ca4a-186">O/R デザイナーおよび SQLMetal で使用される既定の CLR 型マッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-186">Default CLR Type mapping used by O/R Designer and SQLMetal</span></span>|  
+|---------------------|-----------------------------------------------------------------|  
+|`CHAR`|<xref:System.String?displayProperty=nameWithType>|  
+|`NCHAR`|<xref:System.String?displayProperty=nameWithType>|  
+|`VARCHAR`|<xref:System.String?displayProperty=nameWithType>|  
+|`NVARCHAR`|<xref:System.String?displayProperty=nameWithType>|  
+|`TEXT`|<xref:System.String?displayProperty=nameWithType>|  
+|`NTEXT`|<xref:System.String?displayProperty=nameWithType>|  
+|`XML`|<xref:System.Xml.Linq.XElement?displayProperty=nameWithType>|  
   
- 次の表に、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> メソッドで使用される既定の型マッピングを示します。既定の型マッピングでは、オブジェクト モデルまたは外部マッピング ファイルで定義された CLR 型にマップするために作成される SQL 列の型が定義されています。  
+ <span data-ttu-id="1ca4a-187">次の表に、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> メソッドで使用される既定の型マッピングを示します。既定の型マッピングでは、オブジェクト モデルまたは外部マッピング ファイルで定義された CLR 型にマップするために作成される SQL 列の型が定義されています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-187">The next table shows the default type mappings used by the <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> method to define which type of SQL columns are created to map to the CLR types defined in your object model or external mapping file.</span></span>  
   
-|CLR 型|<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> で使用される既定の SQL Server 型|  
-|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-|<xref:System.Char?displayProperty=fullName>|`NCHAR(1)`|  
-|<xref:System.String?displayProperty=fullName>|`NVARCHAR(4000)`|  
-|<xref:System.Char?displayProperty=fullName>\[\]|`NVARCHAR(4000)`|  
-|`Parse()` および `ToString()` を実装するカスタム型|`NVARCHAR(MAX)`|  
+|<span data-ttu-id="1ca4a-188">CLR 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-188">CLR Type</span></span>|<span data-ttu-id="1ca4a-189"><xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> で使用される既定の SQL Server 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-189">Default SQL Server Type used by <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType></span></span>|  
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Char?displayProperty=nameWithType>|`NCHAR(1)`|  
+|<xref:System.String?displayProperty=nameWithType>|`NVARCHAR(4000)`|  
+|<span data-ttu-id="1ca4a-190"><xref:System.Char?displayProperty=nameWithType>[]</span><span class="sxs-lookup"><span data-stu-id="1ca4a-190"><xref:System.Char?displayProperty=nameWithType>[]</span></span>|`NVARCHAR(4000)`|  
+|<span data-ttu-id="1ca4a-191">`Parse()` および `ToString()` を実装するカスタム型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-191">Custom type implementing `Parse()` and `ToString()`</span></span>|`NVARCHAR(MAX)`|  
   
- これ以外にもさまざまなテキスト ベースおよび XML のマッピングを選択できますが、一部のマッピングでは、データベースに対する変換操作中にオーバーフローやデータ損失の例外が発生することがあります。  詳細については、「[型マッピングと実行時動作の関係](#BehaviorMatrix)」を参照してください。  
+ <span data-ttu-id="1ca4a-192">これ以外にもさまざまなテキスト ベースおよび XML のマッピングを選択できますが、一部のマッピングでは、データベースに対する変換操作中にオーバーフローやデータ損失の例外が発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-192">There are many other text-based and XML mappings you can choose, but some may result in overflow or data loss exceptions while translating to or from the database.</span></span> <span data-ttu-id="1ca4a-193">詳細については、次を参照してください。、[型マッピングの実行時動作の関係](#BehaviorMatrix)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-193">For more information, see the [Type Mapping Run Time Behavior Matrix](#BehaviorMatrix).</span></span>  
   
-### XML 型  
- SQL Server の `XML` データ型は、Microsoft SQL Server 2005 以降で使用できます。  SQL Server の `XML` データ型は、<xref:System.Xml.Linq.XElement>、<xref:System.Xml.Linq.XDocument>、または <xref:System.String> にマップできます。  <xref:System.Xml.Linq.XElement> に読み込むことができない XML フラグメントが列に格納されている場合は、列を <xref:System.String> にマップして、実行時エラーを回避する必要があります。  <xref:System.String> にマップする必要がある XML フラグメントを次に示します。  
+### <a name="xml-types"></a><span data-ttu-id="1ca4a-194">XML 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-194">XML Types</span></span>  
+ <span data-ttu-id="1ca4a-195">SQL Server の `XML` データ型は、Microsoft SQL Server 2005 以降で使用できます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-195">The SQL Server `XML` data type is available starting in Microsoft SQL Server 2005.</span></span> <span data-ttu-id="1ca4a-196">SQL Server の `XML` データ型は、<xref:System.Xml.Linq.XElement>、<xref:System.Xml.Linq.XDocument>、または <xref:System.String> にマップできます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-196">You can map the SQL Server `XML` data type to <xref:System.Xml.Linq.XElement>, <xref:System.Xml.Linq.XDocument>, or <xref:System.String>.</span></span> <span data-ttu-id="1ca4a-197"><xref:System.Xml.Linq.XElement> に読み込むことができない XML フラグメントが列に格納されている場合は、列を <xref:System.String> にマップして、実行時エラーを回避する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-197">If the column stores XML fragments that cannot be read into <xref:System.Xml.Linq.XElement>, the column must be mapped to <xref:System.String> to avoid run-time errors.</span></span> <span data-ttu-id="1ca4a-198"><xref:System.String> にマップする必要がある XML フラグメントを次に示します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-198">XML fragments that must be mapped to <xref:System.String> include the following:</span></span>  
   
--   XML 要素のシーケンス  
+-   <span data-ttu-id="1ca4a-199">XML 要素のシーケンス</span><span class="sxs-lookup"><span data-stu-id="1ca4a-199">A sequence of XML elements</span></span>  
   
--   属性  
+-   <span data-ttu-id="1ca4a-200">属性</span><span class="sxs-lookup"><span data-stu-id="1ca4a-200">Attributes</span></span>  
   
--   パブリック識別子 \(PI\)  
+-   <span data-ttu-id="1ca4a-201">パブリック識別子 (PI)</span><span class="sxs-lookup"><span data-stu-id="1ca4a-201">Public Identifiers (PI)</span></span>  
   
--   コメント  
+-   <span data-ttu-id="1ca4a-202">コメント</span><span class="sxs-lookup"><span data-stu-id="1ca4a-202">Comments</span></span>  
   
- <xref:System.Xml.Linq.XElement> および <xref:System.Xml.Linq.XDocument> は、「[型マッピングと実行時動作の関係](#BehaviorMatrix)」で示したように SQL Server にマップすることができますが、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> メソッドには、これらの型に対する既定の SQL Server 型マッピングはありません。  
+ <span data-ttu-id="1ca4a-203">マップできます<xref:System.Xml.Linq.XElement>と<xref:System.Xml.Linq.XDocument>SQL Server のように、[型マッピングを実行時動作の関係](#BehaviorMatrix)、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>メソッドには、これらの型の既定の SQL Server 型マッピングがありません。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-203">Although you can map <xref:System.Xml.Linq.XElement> and <xref:System.Xml.Linq.XDocument> to SQL Server as shown in the [Type Mapping Run Time Behavior Matrix](#BehaviorMatrix), the <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> method has no default SQL Server type mapping for these types.</span></span>  
   
-### カスタム型  
- クラスが `Parse()` および `ToString()` を実装している場合は、そのオブジェクトを SQL のテキスト型 \(`CHAR`、 `NCHAR`、`VARCHAR`、`NVARCHAR`、`TEXT`、`NTEXT`、`XML`\) にマップできます。  オブジェクトをデータベースに格納するには、`ToString()` から返された値をマップ先のデータベース列に送信します。  オブジェクトを再構築するには、データベースから返された文字列に対して `Parse()` を呼び出します。  
+### <a name="custom-types"></a><span data-ttu-id="1ca4a-204">カスタム型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-204">Custom Types</span></span>  
+ <span data-ttu-id="1ca4a-205">クラスを実装する場合`Parse()`と`ToString()`、オブジェクトをすべての SQL テキスト型にマップすることができます (`CHAR`、 `NCHAR`、 `VARCHAR`、 `NVARCHAR`、 `TEXT`、 `NTEXT`、 `XML`)。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-205">If a class implements `Parse()` and `ToString()`, you can map the object to any SQL text type (`CHAR`, `NCHAR`, `VARCHAR`, `NVARCHAR`, `TEXT`, `NTEXT`, `XML`).</span></span> <span data-ttu-id="1ca4a-206">オブジェクトをデータベースに格納するには、`ToString()` から返された値をマップ先のデータベース列に送信します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-206">The object is stored in the database by sending the value returned by `ToString()` to the mapped database column.</span></span> <span data-ttu-id="1ca4a-207">オブジェクトを再構築するには、データベースから返された文字列に対して `Parse()` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-207">The object is reconstructed by invoking `Parse()` on the string returned by the database.</span></span>  
   
 > [!NOTE]
->  LINQ to SQL では、<xref:System.Xml.Serialization.IXmlSerializable?displayProperty=fullName> の使用によるシリアル化はサポートされません。  
+>  <span data-ttu-id="1ca4a-208">LINQ to SQL では、<xref:System.Xml.Serialization.IXmlSerializable?displayProperty=nameWithType> の使用によるシリアル化はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-208">LINQ to SQL does not support serialization by using <xref:System.Xml.Serialization.IXmlSerializable?displayProperty=nameWithType>.</span></span>  
   
 <a name="DateMapping"></a>   
-## 日付および時刻のマッピング  
- LINQ to SQL では、SQL Server のさまざまな日付型および時刻型をマップできます。  次の表に、O\/R デザイナーおよび SQLMetal でデータベースに基づいてオブジェクト モデルまたは外部マッピング ファイルを作成するときに選択される CLR 型を示します。  
+## <a name="date-and-time-mapping"></a><span data-ttu-id="1ca4a-209">日付および時刻のマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-209">Date and Time Mapping</span></span>  
+ <span data-ttu-id="1ca4a-210">LINQ to SQL では、SQL Server のさまざまな日付型および時刻型をマップできます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-210">With LINQ to SQL, you can map many SQL Server date and time types.</span></span> <span data-ttu-id="1ca4a-211">次の表に、O/R デザイナーおよび SQLMetal でデータベースに基づいてオブジェクト モデルまたは外部マッピング ファイルを作成するときに選択される CLR 型を示します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-211">The following table shows the CLR types that O/R Designer and SQLMetal select when building an object model or external mapping file based on your database.</span></span>  
   
-|SQL Server 型|O\/R デザイナーおよび SQLMetal で使用される既定の CLR 型マッピング|  
-|------------------|-------------------------------------------------|  
-|`SMALLDATETIME`|<xref:System.DateTime?displayProperty=fullName>|  
-|`DATETIME`|<xref:System.DateTime?displayProperty=fullName>|  
-|`DATETIME2`|<xref:System.DateTime?displayProperty=fullName>|  
-|`DATETIMEOFFSET`|<xref:System.DateTimeOffset?displayProperty=fullName>|  
-|`DATE`|<xref:System.DateTime?displayProperty=fullName>|  
-|`TIME`|<xref:System.TimeSpan?displayProperty=fullName>|  
+|<span data-ttu-id="1ca4a-212">SQL Server 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-212">SQL Server Type</span></span>|<span data-ttu-id="1ca4a-213">O/R デザイナーおよび SQLMetal で使用される既定の CLR 型マッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-213">Default CLR Type mapping used by O/R Designer and SQLMetal</span></span>|  
+|---------------------|-----------------------------------------------------------------|  
+|`SMALLDATETIME`|<xref:System.DateTime?displayProperty=nameWithType>|  
+|`DATETIME`|<xref:System.DateTime?displayProperty=nameWithType>|  
+|`DATETIME2`|<xref:System.DateTime?displayProperty=nameWithType>|  
+|`DATETIMEOFFSET`|<xref:System.DateTimeOffset?displayProperty=nameWithType>|  
+|`DATE`|<xref:System.DateTime?displayProperty=nameWithType>|  
+|`TIME`|<xref:System.TimeSpan?displayProperty=nameWithType>|  
   
- 次の表に、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> メソッドで使用される既定の型マッピングを示します。既定の型マッピングでは、オブジェクト モデルまたは外部マッピング ファイルで定義された CLR 型にマップするために作成される SQL 列の型が定義されています。  
+ <span data-ttu-id="1ca4a-214">次の表に、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> メソッドで使用される既定の型マッピングを示します。既定の型マッピングでは、オブジェクト モデルまたは外部マッピング ファイルで定義された CLR 型にマップするために作成される SQL 列の型が定義されています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-214">The next table shows the default type mappings used by the <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> method to define which type of SQL columns are created to map to the CLR types defined in your object model or external mapping file.</span></span>  
   
-|CLR 型|<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> で使用される既定の SQL Server 型|  
-|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-|<xref:System.DateTime?displayProperty=fullName>|`DATETIME`|  
-|<xref:System.DateTimeOffset?displayProperty=fullName>|`DATETIMEOFFSET`|  
-|<xref:System.TimeSpan?displayProperty=fullName>|`TIME`|  
+|<span data-ttu-id="1ca4a-215">CLR 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-215">CLR Type</span></span>|<span data-ttu-id="1ca4a-216"><xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> で使用される既定の SQL Server 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-216">Default SQL Server Type used by <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType></span></span>|  
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.DateTime?displayProperty=nameWithType>|`DATETIME`|  
+|<xref:System.DateTimeOffset?displayProperty=nameWithType>|`DATETIMEOFFSET`|  
+|<xref:System.TimeSpan?displayProperty=nameWithType>|`TIME`|  
   
- これ以外にもさまざまな日付および時刻のマッピングを選択できますが、一部のマッピングでは、データベースに対する変換操作中にオーバーフローやデータ損失の例外が発生することがあります。  詳細については、「[型マッピングと実行時動作の関係](#BehaviorMatrix)」を参照してください。  
+ <span data-ttu-id="1ca4a-217">これ以外にもさまざまな日付および時刻のマッピングを選択できますが、一部のマッピングでは、データベースに対する変換操作中にオーバーフローやデータ損失の例外が発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-217">There are many other date and time mappings you can choose, but some may result in overflow or data loss exceptions while translating to or from the database.</span></span> <span data-ttu-id="1ca4a-218">詳細については、次を参照してください。、[型マッピングの実行時動作の関係](#BehaviorMatrix)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-218">For more information, see the [Type Mapping Run Time Behavior Matrix](#BehaviorMatrix).</span></span>  
   
 > [!NOTE]
->  SQL Server の `DATETIME2` 型、`DATETIMEOFFSET` 型、`DATE` 型、および `TIME` 型は、Microsoft SQL Server 2008 以降で使用できます。  Microsoft .NET Framework version 3.5 SP1 以降の LINQ to SQL では、これらの新しい型へのマッピングがサポートされています。  
+>  <span data-ttu-id="1ca4a-219">SQL Server の `DATETIME2` 型、`DATETIMEOFFSET` 型、`DATE` 型、および `TIME` 型は、Microsoft SQL Server 2008 以降で使用できます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-219">The SQL Server types `DATETIME2`, `DATETIMEOFFSET`, `DATE`, and `TIME` are available starting with Microsoft SQL Server 2008.</span></span> <span data-ttu-id="1ca4a-220">Microsoft .NET Framework version 3.5 SP1 以降の LINQ to SQL では、これらの新しい型へのマッピングがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-220">LINQ to SQL supports mapping to these new types starting with the .NET Framework version 3.5 SP1.</span></span>  
   
-### System.Datetime  
- CLR の <xref:System.DateTime?displayProperty=fullName> 型の範囲と有効桁数の値は、`DATETIME` メソッドの既定の型マッピングである SQL Server の <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> 型の範囲と有効桁数より大きな値です。  `DATETIME` の範囲外の日付に関連する例外を回避するには、Microsoft SQL Server 2008 以降で利用できる `DATETIME2` を使用してください。  `DATETIME2` は、CLR の <xref:System.DateTime?displayProperty=fullName> の範囲と精度に対応させることができます。  
+### <a name="systemdatetime"></a><span data-ttu-id="1ca4a-221">System.Datetime</span><span class="sxs-lookup"><span data-stu-id="1ca4a-221">System.Datetime</span></span>  
+ <span data-ttu-id="1ca4a-222">CLR の <xref:System.DateTime?displayProperty=nameWithType> 型の範囲と有効桁数の値は、`DATETIME` メソッドの既定の型マッピングである SQL Server の <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> 型の範囲と有効桁数より大きな値です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-222">The range and precision of the CLR <xref:System.DateTime?displayProperty=nameWithType> type is greater than the range and precision of the SQL Server `DATETIME` type, which is the default type mapping for the <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="1ca4a-223">`DATETIME` の範囲外の日付に関連する例外を回避するには、Microsoft SQL Server 2008 以降で利用できる `DATETIME2` を使用してください。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-223">To help avoid exceptions related to dates outside the range of `DATETIME`, use `DATETIME2`, which is available starting with Microsoft SQL Server 2008.</span></span> <span data-ttu-id="1ca4a-224">`DATETIME2`範囲と CLR の有効桁数に照合できる<xref:System.DateTime?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-224">`DATETIME2` can match the range and precision of the CLR <xref:System.DateTime?displayProperty=nameWithType>.</span></span>  
   
- SQL Server の日付には、CLR で十分にサポートされている機能である <xref:System.TimeZone> の概念がありません。  <xref:System.TimeZone> の値は、元の <xref:System.TimeZone> の情報にかかわらず、<xref:System.DateTimeKind> 変換なしでそのまま保存されます。  <xref:System.DateTime> 値がデータベースから取得される場合、その値は、<xref:System.DateTime> が <xref:System.DateTimeKind> の状態で、そのまま <xref:System.DateTimeKind> に読み込まれます。  サポートされる <xref:System.DateTime?displayProperty=fullName> メソッドの詳細については、「[System.DateTime Methods](../../../../../../docs/framework/data/adonet/sql/linq/system-datetime-methods.md)」を参照してください。  
+ <span data-ttu-id="1ca4a-225">SQL Server の日付には、CLR で十分にサポートされている機能である <xref:System.TimeZone> の概念がありません。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-225">SQL Server dates have no concept of <xref:System.TimeZone>, a feature that is richly supported in the CLR.</span></span> <span data-ttu-id="1ca4a-226"><xref:System.TimeZone> の値は、元の <xref:System.TimeZone> の情報にかかわらず、<xref:System.DateTimeKind> 変換なしでそのまま保存されます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-226"><xref:System.TimeZone> values are saved as is to the database without <xref:System.TimeZone> conversion, regardless of the original <xref:System.DateTimeKind> information.</span></span> <span data-ttu-id="1ca4a-227"><xref:System.DateTime> 値がデータベースから取得される場合、その値は、<xref:System.DateTime> が <xref:System.DateTimeKind> の状態で、そのまま <xref:System.DateTimeKind.Unspecified> に読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-227">When <xref:System.DateTime> values are retrieved from the database, their value is loaded as is into a <xref:System.DateTime> with a <xref:System.DateTimeKind> of <xref:System.DateTimeKind.Unspecified>.</span></span> <span data-ttu-id="1ca4a-228">詳細についてはサポートされている<xref:System.DateTime?displayProperty=nameWithType>メソッドを参照してください[System.DateTime メソッド](../../../../../../docs/framework/data/adonet/sql/linq/system-datetime-methods.md)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-228">For more information about supported <xref:System.DateTime?displayProperty=nameWithType> methods, see [System.DateTime Methods](../../../../../../docs/framework/data/adonet/sql/linq/system-datetime-methods.md).</span></span>  
   
-### System.TimeSpan  
- Microsoft SQL Server 2008 および .NET Framework 3.5 SP1 では、CLR の <xref:System.TimeSpan?displayProperty=fullName> 型を SQL Server の `TIME` 型にマップできます。  ただし、CLR の <xref:System.TimeSpan?displayProperty=fullName> でサポートされる範囲と SQL Server `TIME` 型でサポートされる範囲には大きな差があります。  時間を表す 0 より小さい値または 23:59:59.9999999 より大きい値を SQL の `TIME` にマップすると、オーバーフロー例外が発生します。  詳細については、「[System.TimeSpan Methods](../../../../../../docs/framework/data/adonet/sql/linq/system-timespan-methods.md)」を参照してください。  
+### <a name="systemtimespan"></a><span data-ttu-id="1ca4a-229">System.TimeSpan</span><span class="sxs-lookup"><span data-stu-id="1ca4a-229">System.TimeSpan</span></span>  
+ <span data-ttu-id="1ca4a-230">Microsoft SQL Server 2008 および .NET Framework 3.5 SP1 では、CLR の <xref:System.TimeSpan?displayProperty=nameWithType> 型を SQL Server の `TIME` 型にマップできます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-230">Microsoft SQL Server 2008 and the .NET Framework 3.5 SP1 let you map the CLR <xref:System.TimeSpan?displayProperty=nameWithType> type to the SQL Server `TIME` type.</span></span> <span data-ttu-id="1ca4a-231">ただし、CLR の <xref:System.TimeSpan?displayProperty=nameWithType> でサポートされる範囲と SQL Server `TIME` 型でサポートされる範囲には大きな差があります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-231">However, there is a large difference between the range that the CLR <xref:System.TimeSpan?displayProperty=nameWithType> supports and what the SQL Server `TIME` type supports.</span></span> <span data-ttu-id="1ca4a-232">時間を表す 0 より小さい値または 23:59:59.9999999 より大きい値を SQL の `TIME` にマップすると、オーバーフロー例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-232">Mapping values less than 0 or greater than 23:59:59.9999999 hours to the SQL `TIME` will result in overflow exceptions.</span></span> <span data-ttu-id="1ca4a-233">詳細については、次を参照してください。 [System.TimeSpan メソッド](../../../../../../docs/framework/data/adonet/sql/linq/system-timespan-methods.md)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-233">For more information, see [System.TimeSpan Methods](../../../../../../docs/framework/data/adonet/sql/linq/system-timespan-methods.md).</span></span>  
   
- Microsoft SQL Server 2000 および SQL Server 2005 では、データベース フィールドを <xref:System.TimeSpan> にマップすることはできません。  ただし、<xref:System.TimeSpan> 値を <xref:System.TimeSpan> 減算から返したり、リテラル変数またはバインド変数として式に取り込んだりできるため、<xref:System.DateTime> の操作はサポートされています。  
+ <span data-ttu-id="1ca4a-234">Microsoft SQL Server 2000 および SQL Server 2005 では、データベース フィールドを <xref:System.TimeSpan> にマップすることはできません。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-234">In Microsoft SQL Server 2000 and SQL Server 2005, you cannot map database fields to <xref:System.TimeSpan>.</span></span> <span data-ttu-id="1ca4a-235">ただし、<xref:System.TimeSpan> 値を <xref:System.TimeSpan> 減算から返したり、リテラル変数またはバインド変数として式に取り込んだりできるため、<xref:System.DateTime> の操作はサポートされています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-235">However, operations on <xref:System.TimeSpan> are supported because <xref:System.TimeSpan> values can be returned from <xref:System.DateTime> subtraction or introduced into an expression as a literal or bound variable.</span></span>  
   
 <a name="BinaryMapping"></a>   
-## バイナリのマッピング  
- SQL Server のさまざまな型を CLR の <xref:System.Data.Linq.Binary?displayProperty=fullName> 型にマップすることができます。  次の表に、O\/R デザイナーおよび SQLMetal でデータベースに基づいてオブジェクト モデルまたは外部マッピング ファイルを作成するときに、CLR の <xref:System.Data.Linq.Binary?displayProperty=fullName> 型が選択される SQL Server 型を示します。  
+## <a name="binary-mapping"></a><span data-ttu-id="1ca4a-236">バイナリのマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-236">Binary Mapping</span></span>  
+ <span data-ttu-id="1ca4a-237">SQL Server のさまざまな型を CLR の <xref:System.Data.Linq.Binary?displayProperty=nameWithType> 型にマップすることができます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-237">There are many SQL Server types that can map to the CLR type <xref:System.Data.Linq.Binary?displayProperty=nameWithType>.</span></span> <span data-ttu-id="1ca4a-238">次の表に、O/R デザイナーおよび SQLMetal でデータベースに基づいてオブジェクト モデルまたは外部マッピング ファイルを作成するときに、CLR の <xref:System.Data.Linq.Binary?displayProperty=nameWithType> 型が選択される SQL Server 型を示します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-238">The following table shows the SQL Server types that cause O/R Designer and SQLMetal to define a CLR <xref:System.Data.Linq.Binary?displayProperty=nameWithType> type when building an object model or external mapping file based on your database.</span></span>  
   
-|SQL Server 型|O\/R デザイナーおよび SQLMetal で使用される既定の CLR 型マッピング|  
-|------------------|-------------------------------------------------|  
-|`BINARY(50)`|<xref:System.Data.Linq.Binary?displayProperty=fullName>|  
-|`VARBINARY(50)`|<xref:System.Data.Linq.Binary?displayProperty=fullName>|  
-|`VARBINARY(MAX)`|<xref:System.Data.Linq.Binary?displayProperty=fullName>|  
-|`VARBINARY(MAX)`  属性を持つ `FILESTREAM`|<xref:System.Data.Linq.Binary?displayProperty=fullName>|  
-|`IMAGE`|<xref:System.Data.Linq.Binary?displayProperty=fullName>|  
-|`TIMESTAMP`|<xref:System.Data.Linq.Binary?displayProperty=fullName>|  
+|<span data-ttu-id="1ca4a-239">SQL Server 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-239">SQL Server Type</span></span>|<span data-ttu-id="1ca4a-240">O/R デザイナーおよび SQLMetal で使用される既定の CLR 型マッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-240">Default CLR Type mapping used by O/R Designer and SQLMetal</span></span>|  
+|---------------------|-----------------------------------------------------------------|  
+|`BINARY(50)`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
+|`VARBINARY(50)`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
+|`VARBINARY(MAX)`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
+|<span data-ttu-id="1ca4a-241">`VARBINARY(MAX)``FILESTREAM`属性</span><span class="sxs-lookup"><span data-stu-id="1ca4a-241">`VARBINARY(MAX)` with the `FILESTREAM` attribute</span></span>|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
+|`IMAGE`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
+|`TIMESTAMP`|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|  
   
- 次の表に、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> メソッドで使用される既定の型マッピングを示します。既定の型マッピングでは、オブジェクト モデルまたは外部マッピング ファイルで定義された CLR 型にマップするために作成される SQL 列の型が定義されています。  
+ <span data-ttu-id="1ca4a-242">次の表に、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> メソッドで使用される既定の型マッピングを示します。既定の型マッピングでは、オブジェクト モデルまたは外部マッピング ファイルで定義された CLR 型にマップするために作成される SQL 列の型が定義されています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-242">The next table shows the default type mappings used by the <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> method to define which type of SQL columns are created to map to the CLR types defined in your object model or external mapping file.</span></span>  
   
-|CLR 型|<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> で使用される既定の SQL Server 型|  
-|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-|<xref:System.Data.Linq.Binary?displayProperty=fullName>|`VARBINARY(MAX)`|  
-|<xref:System.Byte?displayProperty=fullName>|`VARBINARY(MAX)`|  
-|<xref:System.Runtime.Serialization.ISerializable?displayProperty=fullName>|`VARBINARY(MAX)`|  
+|<span data-ttu-id="1ca4a-243">CLR 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-243">CLR Type</span></span>|<span data-ttu-id="1ca4a-244"><xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> で使用される既定の SQL Server 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-244">Default SQL Server Type used by <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType></span></span>|  
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Data.Linq.Binary?displayProperty=nameWithType>|`VARBINARY(MAX)`|  
+|<xref:System.Byte?displayProperty=nameWithType>|`VARBINARY(MAX)`|  
+|<xref:System.Runtime.Serialization.ISerializable?displayProperty=nameWithType>|`VARBINARY(MAX)`|  
   
- これ以外にもさまざまなバイナリのマッピングを選択できますが、一部のマッピングでは、データベースに対する変換操作中にオーバーフローやデータ損失の例外が発生することがあります。  詳細については、「[型マッピングと実行時動作の関係](#BehaviorMatrix)」を参照してください。  
+ <span data-ttu-id="1ca4a-245">これ以外にもさまざまなバイナリのマッピングを選択できますが、一部のマッピングでは、データベースに対する変換操作中にオーバーフローやデータ損失の例外が発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-245">There are many other binary mappings you can choose, but some may result in overflow or data loss exceptions while translating to or from the database.</span></span> <span data-ttu-id="1ca4a-246">詳細については、次を参照してください。、[型マッピングの実行時動作の関係](#BehaviorMatrix)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-246">For more information, see the [Type Mapping Run Time Behavior Matrix](#BehaviorMatrix).</span></span>  
   
-### SQL Server の FILESTREAM  
- `FILESTREAM` 列の `VARBINARY(MAX)` 属性は、Microsoft SQL Server 2008 以降で使用できます。.NET Framework version 3.5 SP1 以降の LINQ to SQL では、これらの属性にマップすることができます。  
+### <a name="sql-server-filestream"></a><span data-ttu-id="1ca4a-247">SQL Server の FILESTREAM</span><span class="sxs-lookup"><span data-stu-id="1ca4a-247">SQL Server FILESTREAM</span></span>  
+ <span data-ttu-id="1ca4a-248">`FILESTREAM` 列の `VARBINARY(MAX)` 属性は、Microsoft SQL Server 2008 以降で使用できます。.NET Framework version 3.5 SP1 以降の LINQ to SQL では、これらの属性にマップすることができます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-248">The `FILESTREAM` attribute for `VARBINARY(MAX)` columns is available starting with Microsoft SQL Server 2008; you can map to it with LINQ to SQL starting with the .NET Framework version 3.5 SP1.</span></span>  
   
- `VARBINARY(MAX)` 属性を持つ `FILESTREAM` 列を <xref:System.Data.Linq.Binary> オブジェクトにマップすることはできますが、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> メソッドを使用して `FILESTREAM` 属性を持つ列を自動的に作成することはできません。  `FILESTREAM` の詳細については、Microsoft SQL Server オンライン ブックの「[FILESTREAM の概要](http://go.microsoft.com/fwlink/?LinkId=115291)」を参照してください。  
+ <span data-ttu-id="1ca4a-249">`VARBINARY(MAX)` 属性を持つ `FILESTREAM` 列を <xref:System.Data.Linq.Binary> オブジェクトにマップすることはできますが、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> メソッドを使用して `FILESTREAM` 属性を持つ列を自動的に作成することはできません。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-249">Although you can map `VARBINARY(MAX)` columns with the `FILESTREAM` attribute to <xref:System.Data.Linq.Binary> objects, the <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> method is unable to automatically create columns with the `FILESTREAM` attribute.</span></span> <span data-ttu-id="1ca4a-250">詳細については`FILESTREAM`を参照してください[FILESTREAM の概要](http://go.microsoft.com/fwlink/?LinkId=115291)Microsoft SQL Server Books Online にします。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-250">For more information about `FILESTREAM`, see [FILESTREAM Overview](http://go.microsoft.com/fwlink/?LinkId=115291) on Microsoft SQL Server Books Online.</span></span>  
   
 <a name="BinarySerialization"></a>   
-### バイナリ シリアル化  
- クラスが <xref:System.Runtime.Serialization.ISerializable> インターフェイスを実装している場合は、オブジェクトを SQL バイナリ フィールド \(`BINARY`、`VARBINARY`、`IMAGE`\) にシリアル化できます。  <xref:System.Runtime.Serialization.ISerializable> インターフェイスの実装方法に従って、オブジェクトのシリアル化と逆シリアル化が行われます。  詳細については、「[バイナリ シリアル化](http://go.microsoft.com/fwlink/?LinkId=115581)」を参照してください。  
+### <a name="binary-serialization"></a><span data-ttu-id="1ca4a-251">バイナリ シリアル化</span><span class="sxs-lookup"><span data-stu-id="1ca4a-251">Binary Serialization</span></span>  
+ <span data-ttu-id="1ca4a-252">クラスが <xref:System.Runtime.Serialization.ISerializable> インターフェイスを実装している場合は、オブジェクトを SQL バイナリ フィールド (`BINARY`、`VARBINARY`、`IMAGE`) にシリアル化できます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-252">If a class implements the <xref:System.Runtime.Serialization.ISerializable> interface, you can serialize an object to any SQL binary field (`BINARY`, `VARBINARY`, `IMAGE`).</span></span> <span data-ttu-id="1ca4a-253"><xref:System.Runtime.Serialization.ISerializable> インターフェイスの実装方法に従って、オブジェクトのシリアル化と逆シリアル化が行われます。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-253">The object is serialized and deserialized according to how the <xref:System.Runtime.Serialization.ISerializable> interface is implemented.</span></span> <span data-ttu-id="1ca4a-254">詳細については、次を参照してください。[バイナリのシリアル化](http://go.microsoft.com/fwlink/?LinkId=115581)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-254">For more information, see [Binary Serialization](http://go.microsoft.com/fwlink/?LinkId=115581).</span></span>  
   
 <a name="MiscMapping"></a>   
-## その他のマッピング  
- ここでは、上記以外のさまざまな型について、既定の型マッピングを示します。  次の表に、O\/R デザイナーおよび SQLMetal でデータベースに基づいてオブジェクト モデルまたは外部マッピング ファイルを作成するときに選択される CLR 型を示します。  
+## <a name="miscellaneous-mapping"></a><span data-ttu-id="1ca4a-255">その他のマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-255">Miscellaneous Mapping</span></span>  
+ <span data-ttu-id="1ca4a-256">ここでは、上記以外のさまざまな型について、既定の型マッピングを示します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-256">The following table shows the default type mappings for some miscellaneous types that have not yet been mentioned.</span></span> <span data-ttu-id="1ca4a-257">次の表に、O/R デザイナーおよび SQLMetal でデータベースに基づいてオブジェクト モデルまたは外部マッピング ファイルを作成するときに選択される CLR 型を示します。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-257">The following table shows the CLR types that O/R Designer and SQLMetal select when building an object model or external mapping file based on your database.</span></span>  
   
-|SQL Server 型|O\/R デザイナーおよび SQLMetal で使用される既定の CLR 型マッピング|  
-|------------------|-------------------------------------------------|  
-|`UNIQUEIDENTIFIER`|<xref:System.Guid?displayProperty=fullName>|  
-|`SQL_VARIANT`|<xref:System.Object?displayProperty=fullName>|  
+|<span data-ttu-id="1ca4a-258">SQL Server 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-258">SQL Server Type</span></span>|<span data-ttu-id="1ca4a-259">O/R デザイナーおよび SQLMetal で使用される既定の CLR 型マッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-259">Default CLR Type mapping used by O/R Designer and SQLMetal</span></span>|  
+|---------------------|-----------------------------------------------------------------|  
+|`UNIQUEIDENTIFIER`|<xref:System.Guid?displayProperty=nameWithType>|  
+|`SQL_VARIANT`|<xref:System.Object?displayProperty=nameWithType>|  
   
- 次の表に、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> メソッドで使用される既定の型マッピングを示します。既定の型マッピングでは、オブジェクト モデルまたは外部マッピング ファイルで定義された CLR 型にマップするために作成される SQL 列の型が定義されています。  
+ <span data-ttu-id="1ca4a-260">次の表に、<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> メソッドで使用される既定の型マッピングを示します。既定の型マッピングでは、オブジェクト モデルまたは外部マッピング ファイルで定義された CLR 型にマップするために作成される SQL 列の型が定義されています。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-260">The next table shows the default type mappings used by the <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> method to define which type of SQL columns are created to map to the CLR types defined in your object model or external mapping file.</span></span>  
   
-|CLR 型|<xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=fullName> で使用される既定の SQL Server 型|  
-|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-|<xref:System.Guid?displayProperty=fullName>|`UNIQUEIDENTIFIER`|  
-|<xref:System.Object?displayProperty=fullName>|`SQL_VARIANT`|  
+|<span data-ttu-id="1ca4a-261">CLR 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-261">CLR Type</span></span>|<span data-ttu-id="1ca4a-262"><xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> で使用される既定の SQL Server 型</span><span class="sxs-lookup"><span data-stu-id="1ca4a-262">Default SQL Server Type used by <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType></span></span>|  
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Guid?displayProperty=nameWithType>|`UNIQUEIDENTIFIER`|  
+|<xref:System.Object?displayProperty=nameWithType>|`SQL_VARIANT`|  
   
- LINQ to SQL では、ここに示したその他の型に対する上記以外の型マッピングはサポートされません。  詳細については、「[型マッピングと実行時動作の関係](#BehaviorMatrix)」を参照してください。  
+ <span data-ttu-id="1ca4a-263">LINQ to SQL では、ここに示したその他の型に対する上記以外の型マッピングはサポートされません。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-263">LINQ to SQL does not support any other type mappings for these miscellaneous types.</span></span>  <span data-ttu-id="1ca4a-264">詳細については、次を参照してください。、[型マッピングの実行時動作の関係](#BehaviorMatrix)です。</span><span class="sxs-lookup"><span data-stu-id="1ca4a-264">For more information, see the [Type Mapping Run Time Behavior Matrix](#BehaviorMatrix).</span></span>  
   
-## 参照  
- [Attribute\-Based Mapping](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)   
- [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)   
- [Data Types and Functions](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)   
- [SQL\-CLR Type Mismatches](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)
+## <a name="see-also"></a><span data-ttu-id="1ca4a-265">関連項目</span><span class="sxs-lookup"><span data-stu-id="1ca4a-265">See Also</span></span>  
+ [<span data-ttu-id="1ca4a-266">属性ベースのマッピング</span><span class="sxs-lookup"><span data-stu-id="1ca4a-266">Attribute-Based Mapping</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
+ [<span data-ttu-id="1ca4a-267">外部マップ</span><span class="sxs-lookup"><span data-stu-id="1ca4a-267">External Mapping</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
+ [<span data-ttu-id="1ca4a-268">データ型および関数</span><span class="sxs-lookup"><span data-stu-id="1ca4a-268">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)  
+ [<span data-ttu-id="1ca4a-269">SQL CLR 型の不一致</span><span class="sxs-lookup"><span data-stu-id="1ca4a-269">SQL-CLR Type Mismatches</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)

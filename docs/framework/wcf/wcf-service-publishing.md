@@ -1,89 +1,86 @@
 ---
-title: "WCF サービス発行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "WCF サービス発行"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
-caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 17
+caps.latest.revision: "22"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 1dd63ca472ef5ee9211a8a9a1fd19d983694b43f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# WCF サービス発行
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス発行は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントで構成される初期の開発環境から、テストの目的でアプリケーションを実際に実稼働環境に配置する場合に役立ちます。  最終的な配置計画を確定する前に、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス発行を使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスが正しく動作し、発行の準備ができていることを確認できます。  また、テスト用のさまざまなターゲットの場所に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリを配置することもできます。  
+# <a name="wcf-service-publishing"></a><span data-ttu-id="f4932-102">WCF サービス発行</span><span class="sxs-lookup"><span data-stu-id="f4932-102">WCF Service Publishing</span></span>
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)]<span data-ttu-id="f4932-103"> サービス発行は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ホストと [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] テスト クライアントで構成される初期の開発環境から、テストの目的でアプリケーションを実際に実稼働環境に配置する場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="f4932-103"> Service Publishing assists you in progressing from the early development environment provided by [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Service Host and [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Test Client to actually deploying the application to a production environment for testing purposes.</span></span> <span data-ttu-id="f4932-104">最終的な配置計画を確定する前に、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス発行を使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスが正しく動作し、発行の準備ができていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="f4932-104">Before you commit to a final deployment plan, you can use [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] Service Publishing to verify that your [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service performs correctly and is ready to be published.</span></span> <span data-ttu-id="f4932-105">また、テスト用のさまざまなターゲットの場所に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリを配置することもできます。</span><span class="sxs-lookup"><span data-stu-id="f4932-105">You can also choose to deploy your [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service libraries to various target locations for testing.</span></span>  
   
-## サポートされているサービスとターゲットの場所  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス発行は、一連の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリ テンプレートと、それらに対応する項目テンプレートから作成された、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの発行をサポートしています。これには以下が含まれます。  
+## <a name="supported-services-and-target-locations"></a><span data-ttu-id="f4932-106">サポートされているサービスとターゲットの場所</span><span class="sxs-lookup"><span data-stu-id="f4932-106">Supported Services and Target Locations</span></span>  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]<span data-ttu-id="f4932-107"> サービス発行は、一連の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリ テンプレートと、それらに対応する項目テンプレートから作成された、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの発行をサポートしています。これには以下が含まれます。</span><span class="sxs-lookup"><span data-stu-id="f4932-107"> Service Publishing supports publishing [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] services created from the set of [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service library templates, and their corresponding item templates, which include the following:</span></span>  
   
--   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリ テンプレートと項目テンプレート  
+-   [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]<span data-ttu-id="f4932-108"> サービス ライブラリ テンプレートと項目テンプレート</span><span class="sxs-lookup"><span data-stu-id="f4932-108"> Service Library template with item template.</span></span>  
   
--   シーケンシャル ワークフロー サービス ライブラリ テンプレートと項目テンプレート  
+-   <span data-ttu-id="f4932-109">配信サービス ライブラリ</span><span class="sxs-lookup"><span data-stu-id="f4932-109">Syndication Service Library.</span></span>  
   
--   ステート マシン ワークフロー サービス ライブラリ テンプレートと項目テンプレート  
+ <span data-ttu-id="f4932-110">これらのサービス テンプレートを検索するを選択する**ファイル** -> **新しいプロジェクト** -> **Visual Basic**または**Visual c#**  ->  **WCF**です。</span><span class="sxs-lookup"><span data-stu-id="f4932-110">You can find these service templates by choosing **File** -> **New Project** -> **Visual Basic** or **Visual C#** -> **WCF**.</span></span> <span data-ttu-id="f4932-111">この場所 (WCF ワークフロー サービス アプリケーションと WCF サービス アプリケーションを含む) では、他の WCF テンプレートの使用を発行できます[ワンクリックで web アプリケーションの発行](https://msdn.microsoft.com/en-us/library/dd465337\(v=vs.110\).aspx)です。</span><span class="sxs-lookup"><span data-stu-id="f4932-111">For other WCF templates in this location (including WCF Workflow Service Application and WCF Service Application) you can publish using [One-Click publishing for web applications](https://msdn.microsoft.com/en-us/library/dd465337\(v=vs.110\).aspx).</span></span>  
   
--   配信サービス ライブラリ  
+ <span data-ttu-id="f4932-112">サービスは、次のターゲットの場所に発行できます。</span><span class="sxs-lookup"><span data-stu-id="f4932-112">The service can be published to the following target locations.</span></span>  
   
- これらのサービス テンプレートを見つけるには、**\[ファイル\]** メニューの **\[新しいプロジェクト\]** をクリックし、**\[Visual Basic\]** または **\[Visual C\#\]** を展開して、**\[WCF\]** をクリックします。  
+-   <span data-ttu-id="f4932-113">ローカル IIS</span><span class="sxs-lookup"><span data-stu-id="f4932-113">Local IIS.</span></span>  
   
- サービスは、次のターゲットの場所に発行できます。  
+-   <span data-ttu-id="f4932-114">ファイル システム</span><span class="sxs-lookup"><span data-stu-id="f4932-114">File System.</span></span>  
   
--   ローカル IIS  
+-   <span data-ttu-id="f4932-115">FTP サイト</span><span class="sxs-lookup"><span data-stu-id="f4932-115">FTP Site.</span></span>  
   
--   ファイル システム  
+## <a name="using-wcf-service-publishing"></a><span data-ttu-id="f4932-116">WCF サービス発行の使用</span><span class="sxs-lookup"><span data-stu-id="f4932-116">Using WCF Service Publishing</span></span>  
+ <span data-ttu-id="f4932-117">サービス実装を配置するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="f4932-117">Perform the following steps to deploy a service implementation:</span></span>  
   
--   FTP サイト  
+1.  <span data-ttu-id="f4932-118">管理者特権で Visual Studio を開きます (実行可能ファイルを右クリックし、"管理者として実行 を使用して起動する)。</span><span class="sxs-lookup"><span data-stu-id="f4932-118">Open Visual Studio with elevated privilege ( right-click the executable and use "Run as Administrator" to launch it).</span></span>  <span data-ttu-id="f4932-119">IIS 7.0 を使用しているか、後で、「IIS メタベースおよび IIS6 構成との互換性」を使用してコンポーネントをインストールしたことを確認してください"' にする Windows の機能のオンまたはオフ"コントロール パネルの します。</span><span class="sxs-lookup"><span data-stu-id="f4932-119">If you are using IIS 7.0 or later, ensure that you have installed the "IIS Metabase and IIS6 Configuration Compatibility" component using "'Turn Windows features on or off" in Control Panel.</span></span>  
   
--   リモート サイト  
+2.  <span data-ttu-id="f4932-120">サービス プロジェクトを開き、選択**ビルド**->**発行\<プロジェクト名 >** メイン メニュー でプロジェクトを右クリックしてまたは**ソリューション エクスプ ローラー** をクリック**発行**です。</span><span class="sxs-lookup"><span data-stu-id="f4932-120">Open a service project, select **Build**->**Publish \<Project Name>** from the main menu, or right-click the project in **Solution Explorer** and click **Publish**.</span></span>  
   
-## WCF サービス発行の使用  
- サービス実装を配置するには、次の手順を実行します。  
+3.  <span data-ttu-id="f4932-121">**発行**ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="f4932-121">The **Publish** window appears.</span></span> <span data-ttu-id="f4932-122">クリックして、**しています**.</span><span class="sxs-lookup"><span data-stu-id="f4932-122">Click the **…**.</span></span> <span data-ttu-id="f4932-123">サービスの配置先にするターゲットの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="f4932-123">button to specify the target location that the service should be deployed to.</span></span> <span data-ttu-id="f4932-124">ローカルの IIS、ファイル システム、または FTP サイトにアプリケーションを配置するを選択することができます。</span><span class="sxs-lookup"><span data-stu-id="f4932-124">You can select to deploy the application to local IIS, File System, or FTP Site.</span></span> <span data-ttu-id="f4932-125">ローカル IIS にアプリケーションを配置する場合、web サイトを選択してクリックして、その下にある web アプリケーションを作成、、**新しい Web アプリケーションの作成**右上隅にあるアイコン。</span><span class="sxs-lookup"><span data-stu-id="f4932-125">If deploying the application to local IIS, you can select your website and create your web application under it, by clicking the **Create New Web Application** icon at the top right corner.</span></span>  
   
-1.  昇格された特権で Visual Studio を開きます \(実行可能ファイルを右クリックし、\[管理者として実行\] を使用して起動します\)。  IIS 7.0 以降を使用している場合は、コントロール パネルの \[Windows の機能の有効化または無効化\] を使用して、\[IIS メタベースおよび IIS6 構成との互換性\] コンポーネントがインストールされていることを確認します。  
+4.  <span data-ttu-id="f4932-126">クリックした後**発行**メイン ウィンドウで、Visual Studio が、指定したターゲットの場所にアプリケーションが配置され、Web.config、.svc、およびアセンブリ ファイルをコピー先のディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="f4932-126">After you click **Publish** in the main window, Visual Studio deploys the application to the specified target location and copies the Web.config, .svc, and assembly files to the target directory.</span></span> <span data-ttu-id="f4932-127">。</span><span class="sxs-lookup"><span data-stu-id="f4932-127">.</span></span> <span data-ttu-id="f4932-128">.Svc ファイルの名前は"projectname.servicename.svc"です。</span><span class="sxs-lookup"><span data-stu-id="f4932-128">The name of .svc will be "ProjectName.ServiceName.svc".</span></span> <span data-ttu-id="f4932-129">サービスが正常にパブリッシュされた後、Visual Studio の出力 ウィンドウで、「ハイパーリンク"http://localhost/WebApplicationFolderName"http://localhost/WebApplicationFolderName... に接続する」のようなホットリンクが表示されます。</span><span class="sxs-lookup"><span data-stu-id="f4932-129">After the service is published successfully, you can find a hotlink in the Visual Studio Output window, which looks similar to "Connecting to  HYPERLINK "http://localhost/WebApplicationFolderName" http://localhost/WebApplicationFolderName ...".</span></span> <span data-ttu-id="f4932-130">Ctrl キーを押しながらリンクをクリックすると、Visual Studio の内側にブラウザー ページが開き、サービス ディレクトリ構造が表示されます。</span><span class="sxs-lookup"><span data-stu-id="f4932-130">You can press CTRL and click the link to open a browser page inside Visual Studio to view the service directory structure.</span></span>  
   
-2.  サービス プロジェクトを開き、メイン メニューから **\[ビルド\]**、**\[\<Project Name\> の発行\]** と選択するか、**ソリューション エクスプローラー**でプロジェクトを右クリックし、**\[発行\]** をクリックします。  
+     <span data-ttu-id="f4932-131">サイトを参照できない場合、IIS でディレクトリ ブラウザーが有効になっていない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="f4932-131">If you cannot browse to the site, it may because directory browser is not enabled in IIS.</span></span> <span data-ttu-id="f4932-132">有効にする「ものをしようとする」セクションで説明するヒントに従ってください。</span><span class="sxs-lookup"><span data-stu-id="f4932-132">Please follow the tips in the "Things you can try" section to enable it.</span></span> <span data-ttu-id="f4932-133">代わりに、直接入力できます"ハイパーリンク"http://localhost/WebApplicationFolderName"http://localhost/WebApplicationFolderName/ProjectName.ServiceName.svc"をサービスのページを表示します。</span><span class="sxs-lookup"><span data-stu-id="f4932-133">Alternatively, you can directly type" HYPERLINK "http://localhost/WebApplicationFolderName" http://localhost/WebApplicationFolderName/ProjectName.ServiceName.svc" to view your service page.</span></span>  
   
-3.  **\[発行\]** ウィンドウが表示されます。  **\[...\]** ボタンをクリックして、  サービスの配置先にするターゲットの場所を指定します。  アプリケーションの配置先には、ローカル IIS、ファイル システム、FTP サイト、またはリモート サイトを指定できます。  ローカルの IIS にアプリケーションを配置する場合、使用している Web サイトを選択し、右上の **\[新しい Web アプリケーションの作成\]** アイコンをクリックして、その Web サイトの下に Web アプリケーションを作成できます。  
+ <span data-ttu-id="f4932-134">使用することができます**発行**をアセンブリ、構成、およびターゲットの場所にプロジェクトで定義されているすべてのサービスの .svc ファイルをコピーするかどうかを指定し、転送先に既存のファイルを上書きします。</span><span class="sxs-lookup"><span data-stu-id="f4932-134">You can use **Publish** to specify if you want to copy the assembly, configuration, and .svc file for all services defined in the project to the target location, and overwrite existing files at the destination.</span></span>  
   
-4.  メイン ウィンドウの **\[発行\]** をクリックすると、指定したターゲットの場所にアプリケーションが配置され、Web.config ファイル、.svc ファイル、およびアセンブリ ファイルがターゲット ディレクトリにコピーされます。  .  .svc ファイルの名前は、"ProjectName.ServiceName.svc" になります。  サービスが正常に発行されると、Visual Studio の \[出力\] ウィンドウに、\[http:\/\/localhost\/WebApplicationFolderName に接続しています\] などのホットリンクが表示されます。  Ctrl キーを押しながらリンクをクリックすると、Visual Studio の内側にブラウザー ページが開き、サービス ディレクトリ構造が表示されます。  
+ <span data-ttu-id="f4932-135">ローカルの IIS にアプリケーションを配置すると、IIS セットアップに関連するエラーが発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="f4932-135">If you choose to deploy your application to local IIS, you may encounter errors related to IIS setup.</span></span> <span data-ttu-id="f4932-136">IIS が正しくインストールされていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="f4932-136">Please ensure that IIS is installed properly.</span></span> <span data-ttu-id="f4932-137">お使いのブラウザーに"ハイパーリンク"http://localhost"http://localhost"を入力し、IIS の既定のページに表示されているかどうかをチェックできます。</span><span class="sxs-lookup"><span data-stu-id="f4932-137">You can type " HYPERLINK "http://localhost" http://localhost" in your browser and check whether the IIS default page is showing up.</span></span>  <span data-ttu-id="f4932-138">ASP.NET または [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] が IIS に適切に登録されていないために問題が発生する場合もあります。</span><span class="sxs-lookup"><span data-stu-id="f4932-138">In some cases, the issues may also be caused by ASP.NET or [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] improper registration in IIS.</span></span> <span data-ttu-id="f4932-139">Visual Studio コマンド プロンプトを開くと、コマンド"aspnet_regiis.exe-ir"を実行すると、ASP.NET 登録に関する問題を修正または WCF 登録に関する問題を修正する"ServiceModelReg.exe – ia"コマンドを実行できます。</span><span class="sxs-lookup"><span data-stu-id="f4932-139">You can open the Visual Studio Command Prompt and run the command "aspnet_regiis.exe -ir" to fix ASP.NET registration issues, or run command "ServiceModelReg.exe –ia" to fix WCF registration issues.</span></span>  
   
-     サイトを参照できない場合、IIS でディレクトリ ブラウザーが有効になっていない可能性があります。  \[対処方法\] のセクションのヒントに従って有効にしてください。  代わりに、「http:\/\/localhost\/WebApplicationFolderName\/ProjectName.ServiceName.svc」と直接入力してサービス ページを表示することもできます。  
+## <a name="files-generated-for-publishing"></a><span data-ttu-id="f4932-140">発行用に生成されるファイル</span><span class="sxs-lookup"><span data-stu-id="f4932-140">Files Generated for Publishing</span></span>  
+ <span data-ttu-id="f4932-141">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリを Web でホストできるようになる前に、アセンブリ ファイル、Web.config ファイル、および .svc ファイルがツールによって生成されます。</span><span class="sxs-lookup"><span data-stu-id="f4932-141">Before a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service library can be Web-hosted, the following files are generated by the tool: assembly files, Web.config file, and .svc file.</span></span> <span data-ttu-id="f4932-142">生成されたファイルは、すべてターゲットの場所にコピーされます。</span><span class="sxs-lookup"><span data-stu-id="f4932-142">All the files are copied to the target location.</span></span> <span data-ttu-id="f4932-143">その後でサービスが発行されます。</span><span class="sxs-lookup"><span data-stu-id="f4932-143">The service is then published.</span></span>  
   
- **\[発行\]** を使用すると、プロジェクトで定義されているすべてのサービスのアセンブリ、構成、および .svc ファイルをターゲットの場所にコピーするかどうかを指定したり、コピー先にある既存のファイルを上書きするかどうかを指定したりできます。  
+### <a name="assembly-files"></a><span data-ttu-id="f4932-144">アセンブリ ファイル</span><span class="sxs-lookup"><span data-stu-id="f4932-144">Assembly files</span></span>  
+ <span data-ttu-id="f4932-145">このツールを使用して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを発行すると、まずサービスが自動的にビルドされ、サービス プロジェクトでアセンブリ ファイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="f4932-145">When you publish a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service using this tool, the service is automatically built first and the assembly files are generated in the service project after building.</span></span>  
   
- ローカルの IIS にアプリケーションを配置すると、IIS セットアップに関連するエラーが発生することがあります。  IIS が正しくインストールされていることを確認してください。  ブラウザーに「http:\/\/localhost」と入力し、IIS の既定のページが表示されるかどうかを確認します。  ASP.NET または [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] が IIS に適切に登録されていないために問題が発生する場合もあります。  Visual Studio コマンド プロンプトを開き、"aspnet\_regiis.exe \-ir" コマンドを実行して ASP.NET 登録に関する問題を解決したり、"ServiceModelReg.exe –ia" コマンドを実行して WCF の登録に関する問題を解決することができます。  
+### <a name="svc-file"></a><span data-ttu-id="f4932-146">.SVC ファイル</span><span class="sxs-lookup"><span data-stu-id="f4932-146">.SVC File</span></span>  
+ <span data-ttu-id="f4932-147">発行操作を行うと、*.svc ファイルが存在するかどうかにかかわらず、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスごとに *.svc ファイルが生成され、バージョンの有効性が確認されます。</span><span class="sxs-lookup"><span data-stu-id="f4932-147">The publishing operation generates a *.svc file for each [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service, whether the file exists or not, to ensure version validity.</span></span> <span data-ttu-id="f4932-148">svc ファイルには、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリおよび配信サービス ライブラリ用と、シーケンシャル ワークフロー サービス ライブラリおよびステート マシン ワークフロー サービス ライブラリ用の 2 種類があります。</span><span class="sxs-lookup"><span data-stu-id="f4932-148">There are two different kinds of svc files: one for [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Service Library and Syndication Service Library, and another one for Sequential and State Machine Workflow Service Library.</span></span> <span data-ttu-id="f4932-149">生成された\*.svc ファイルは、ターゲットの場所のルート フォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="f4932-149">The generated \*.svc file is copied to the root folder in the target location.</span></span>  
   
-## 発行用に生成されるファイル  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリを Web でホストできるようになる前に、アセンブリ ファイル、Web.config ファイル、および .svc ファイルがツールによって生成されます。  生成されたファイルは、すべてターゲットの場所にコピーされます。  その後でサービスが発行されます。  
+### <a name="webconfig-file"></a><span data-ttu-id="f4932-150">Web.config ファイル</span><span class="sxs-lookup"><span data-stu-id="f4932-150">Web.config File</span></span>  
+ <span data-ttu-id="f4932-151">サービス プロジェクトが特定のターゲットの場所に発行されるたびに、Web.config ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="f4932-151">Each time a service project is published to a specific target location, a Web.config file is created.</span></span>  
   
-### アセンブリ ファイル  
- このツールを使用して [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを発行すると、まずサービスが自動的にビルドされ、サービス プロジェクトでアセンブリ ファイルが生成されます。  
+ <span data-ttu-id="f4932-152">生成された Web.config ファイルには、Web ホストに役立つ Web セクションと、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリの App.config の内容に次の変更を加えたものが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f4932-152">The generated Web.config file includes Web sections that are useful for Web hosting, and the content of App.config for the [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service library with the following changes:</span></span>  
   
-### .SVC ファイル  
- 発行操作を行うと、\*.svc ファイルが存在するかどうかにかかわらず、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスごとに \*.svc ファイルが生成され、バージョンの有効性が確認されます。  svc ファイルには、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリおよび配信サービス ライブラリ用と、シーケンシャル ワークフロー サービス ライブラリおよびステート マシン ワークフロー サービス ライブラリ用の 2 種類があります。  生成された \*.svc ファイルは、ターゲットの場所のルート フォルダーにコピーされます。  
+-   <span data-ttu-id="f4932-153">ベース アドレスが除外されています。</span><span class="sxs-lookup"><span data-stu-id="f4932-153">The base address is excluded.</span></span>  
   
-### Web.config ファイル  
- サービス プロジェクトが特定のターゲットの場所に発行されるたびに、Web.config ファイルが作成されます。  
+-   <span data-ttu-id="f4932-154">ターゲット プラットフォームのトレース設定を保持するために、`<diagnostics>` 要素の設定が除外されています。</span><span class="sxs-lookup"><span data-stu-id="f4932-154">Settings in the `<diagnostics>` element are excluded to preserve the tracing settings of the target platform.</span></span>  
   
- 生成された Web.config ファイルには、Web ホストに役立つ Web セクションと、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス ライブラリの App.config の内容に次の変更を加えたものが含まれています。  
+## <a name="publishing-wcf-services-with-non-http-bindings-to-iis"></a><span data-ttu-id="f4932-155">IIS への非 HTTP バインドを使用した WCF サービスの公開</span><span class="sxs-lookup"><span data-stu-id="f4932-155">Publishing WCF services with non-HTTP Bindings to IIS</span></span>  
+ <span data-ttu-id="f4932-156">IIS7.0 以降を使用している場合、非 HTTP バインドを使用した [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを IIS に公開することができます。</span><span class="sxs-lookup"><span data-stu-id="f4932-156">If you are using IIS7.0 or later, you can publish [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] services with non-HTTP bindings to IIS.</span></span> <span data-ttu-id="f4932-157">事前の構成を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="f4932-157">You need to do some pre-configurations.</span></span> <span data-ttu-id="f4932-158">詳細についてにあるトピックを参照してください[Windows Process Activation Service でのホスティング](../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)です。</span><span class="sxs-lookup"><span data-stu-id="f4932-158">For more information, please see the topics at  [Hosting in Windows Process Activation Service](../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).</span></span>  
   
--   ベース アドレスが除外されています。  
+## <a name="security"></a><span data-ttu-id="f4932-159">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="f4932-159">Security</span></span>  
+ <span data-ttu-id="f4932-160">IIS は管理者アカウントで実行する必要があるため、ローカル IIS に発行するには、管理特権が必要です。</span><span class="sxs-lookup"><span data-stu-id="f4932-160">Publishing to local IIS requires administrator privilege, because IIS requires running in Administrator account.</span></span> <span data-ttu-id="f4932-161">管理特権のないユーザーが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス発行を開いた場合、IIS はターゲットの場所として使用できません。</span><span class="sxs-lookup"><span data-stu-id="f4932-161">If a user without administrator privilege opens [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Service Publishing, IIS is not available as a target location.</span></span> <span data-ttu-id="f4932-162">ファイル システム、または FTP サイトへの発行は、管理者特権のない動作します。</span><span class="sxs-lookup"><span data-stu-id="f4932-162">Publishing to File System, or FTP Site works without administrator privilege.</span></span>  
   
--   ターゲット プラットフォームのトレース設定を保持するために、`<diagnostics>` 要素の設定が除外されています。  
-  
-## IIS への非 HTTP バインドを使用した WCF サービスの公開  
- IIS7.0 以降を使用している場合、非 HTTP バインドを使用した [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスを IIS に公開することができます。  事前の構成を行う必要があります。  詳細については、「[Windows プロセス アクティブ化サービスでのホスティング](../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)」のトピックを参照してください。  
-  
-## セキュリティ  
- IIS は管理者アカウントで実行する必要があるため、ローカル IIS に発行するには、管理特権が必要です。  管理特権のないユーザーが [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービス発行を開いた場合、IIS はターゲットの場所として使用できません。  ファイル システム、FTP サイト、またはリモート サイトへの発行は、管理特権がなくても行うことができます。  
-  
-## 参照  
- [WCF Visual Studio テンプレート](../../../docs/framework/wcf/wcf-vs-templates.md)   
- [WCF サービス ホスト \(WcfSvcHost.exe\)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)   
- [WCF のテスト用クライアント \(WcfTestClient.exe\)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)
+## <a name="see-also"></a><span data-ttu-id="f4932-163">関連項目</span><span class="sxs-lookup"><span data-stu-id="f4932-163">See Also</span></span>  
+ [<span data-ttu-id="f4932-164">WCF Visual Studio テンプレート</span><span class="sxs-lookup"><span data-stu-id="f4932-164">WCF Visual Studio Templates</span></span>](../../../docs/framework/wcf/wcf-vs-templates.md)  
+ [<span data-ttu-id="f4932-165">WCF サービス ホスト (WcfSvcHost.exe)</span><span class="sxs-lookup"><span data-stu-id="f4932-165">WCF Service Host (WcfSvcHost.exe)</span></span>](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)  
+ [<span data-ttu-id="f4932-166">WCF のテスト用クライアント (WcfTestClient.exe)</span><span class="sxs-lookup"><span data-stu-id="f4932-166">WCF Test Client (WcfTestClient.exe)</span></span>](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)

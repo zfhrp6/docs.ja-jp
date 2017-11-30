@@ -1,95 +1,93 @@
 ---
-title: "XslTransform クラスの随意動作の実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "XslTransform クラスの随意動作の実装"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d2758ea1-03f6-47bd-88d2-0fb7ccdb2fab
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 7b6c81a5737b879b7c1356c4b9c2ab68fbbc4688
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XslTransform クラスの随意動作の実装
+# <a name="implementation-of-discretionary-behaviors-in-the-xsltransform-class"></a><span data-ttu-id="7b60e-102">XslTransform クラスの随意動作の実装</span><span class="sxs-lookup"><span data-stu-id="7b60e-102">Implementation of Discretionary Behaviors in the XslTransform Class</span></span>
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。<xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT \(Extensible Stylesheet Language for Transformations\) 変換を実行できます。 詳細については、「[XslCompiledTransform クラスの使用](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)」および「[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)」を参照してください。  
+>  <span data-ttu-id="7b60e-103"><xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。</span><span class="sxs-lookup"><span data-stu-id="7b60e-103">The <xref:System.Xml.Xsl.XslTransform> class is obsolete in the [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span></span> <span data-ttu-id="7b60e-104"><xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT (Extensible Stylesheet Language for Transformations) 変換を実行できます。</span><span class="sxs-lookup"><span data-stu-id="7b60e-104">You can perform Extensible Stylesheet Language for Transformations (XSLT) transformations using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span> <span data-ttu-id="7b60e-105">参照してください[XslCompiledTransform クラスを使用して](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)と[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)詳細についてはします。</span><span class="sxs-lookup"><span data-stu-id="7b60e-105">See [Using the XslCompiledTransform Class](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) and [Migrating From the XslTransform Class](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) for more information.</span></span>  
   
- 随意動作とは、W3C \(World Wide Web Consortium\) 勧告『XSL Transformations \(XSLT\) Version 1.0』\(www.w3.org\/TR\/xslt\) で列挙されている動作で、ある状況に対処する手段として、実装プロバイダーが複数のオプションから 1 つ選択するものです。 たとえば、W3C Recommendation は、セクション 7.3「Creating Processing Instructions」で、`xsl:processing-instruction` の内容をインスタンス化したときに、テキスト ノード以外のノードが作成されるのはエラーであるとしています。 いくつかの問題に関しては、プロセッサがエラー状態から回復するときにどのような対処をするべきかを、W3C が規定しています。 セクション 7.3 に記述されている問題に関しては、W3C では、作成されたノードとその内容を無視することで、このエラーから回復できるとしています。  
+ <span data-ttu-id="7b60e-106">随意動作とは、W3C (World Wide Web Consortium) 勧告『XSL Transformations (XSLT) Version 1.0』(www.w3.org/TR/xslt) で列挙されている動作で、ある状況に対処する手段として、実装プロバイダーが複数のオプションから 1 つ選択するものです。</span><span class="sxs-lookup"><span data-stu-id="7b60e-106">Discretionary behaviors are described as behaviors listed in the World Wide Web Consortium (W3C) XSL Transformations (XSLT) Version 1.0 Recommendation (www.w3.org/TR/xslt), in which the implementation provider chooses one of several possible options as a way to handle a situation.</span></span> <span data-ttu-id="7b60e-107">たとえば、W3C Recommendation は、セクション 7.3「Creating Processing Instructions」で、`xsl:processing-instruction` の内容をインスタンス化したときに、テキスト ノード以外のノードが作成されるのはエラーであるとしています。</span><span class="sxs-lookup"><span data-stu-id="7b60e-107">For example, in section 7.3 Creating Processing Instructions, the W3C Recommendation says that it is an error if instantiating the content of `xsl:processing-instruction` creates nodes other than text nodes.</span></span> <span data-ttu-id="7b60e-108">いくつかの問題に関しては、プロセッサがエラー状態から回復するときにどのような対処をするべきかを、W3C が規定しています。</span><span class="sxs-lookup"><span data-stu-id="7b60e-108">For some problems, the W3C tells what decision should be made if the processor decides to recover from the error.</span></span> <span data-ttu-id="7b60e-109">セクション 7.3 に記述されている問題に関しては、W3C では、作成されたノードとその内容を無視することで、このエラーから回復できるとしています。</span><span class="sxs-lookup"><span data-stu-id="7b60e-109">For the problem given in section 7.3, the W3C says that the implementation can recover from this error by ignoring the nodes and their content.</span></span>  
   
- W3C で許可されている随意動作について、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の <xref:System.Xml.Xsl.XslTransform> クラスに実装されている随意動作と、その問題について記述している W3C 勧告『XSLT 1.0』のセクションを次の表に示します。  
+ <span data-ttu-id="7b60e-110">W3C で許可されている随意動作について、[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] の <xref:System.Xml.Xsl.XslTransform> クラスに実装されている随意動作と、その問題について記述している W3C 勧告『XSLT 1.0』のセクションを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="7b60e-110">Therefore, for each of the discretionary behaviors allowed by the W3C, the table below lists the discretionary behaviors implemented for the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] implementation of the <xref:System.Xml.Xsl.XslTransform> class, and what section in the W3C XSLT 1.0 Recommendation that this problem is discussed.</span></span>  
   
-|問題|動作|セクション|  
-|--------|--------|-----------|  
-|テキスト ノードが `xsl:strip-space` と `xsl:preserve-space` の両方に適合している。|復元|3.4|  
-|ソース ノードが複数のテンプレート規則に適合している。|復元|5.5|  
-|1 つの名前空間 URI \(Uniform Resource Identifier\) が同じインポート優先順位を持つ複数の名前空間 URI のエイリアスとして宣言されている。|復元|7.1.1|  
-|属性値テンプレートから生成された `xsl:attribute` と `xsl:element` 内の名前属性が有効な QName \(修飾名\) ではない。|例外をスロー|7.1.2 および 7.1.3|  
-|要素ノードに子ノードが既に追加されているにもかかわらず、その要素に属性が追加される。|復元|7.1.3|  
-|要素ノード以外のノードに属性が追加される。|復元|7.1.3|  
-|`xsl:attribute` 要素のコンテンツをインスタンス化してもテキスト ノードが作成されない。|復元|7.1.3|  
-|2 つの属性セットが同じインポート優先順位と展開名を持っている。 両方が同じ属性を持っており、同じ名前を持ち、より重要度の高い共通の属性が含まれた属性セットが他にない。|復元|7.1.4|  
-|`xsl:processing-instruction` 名前属性が NCName \(コロンが含まれていない名前\) も処理命令ターゲットも生成しない。|復元|7.3|  
-|`xsl:processing-instruction` の内容をインスタンス化すると、テキスト ノード以外のノードが作成される。|復元|7.3|  
-|`xsl:processing-instruction` の内容をインスタンス化した結果に文字列 "`?>`" が含まれている。|復元|7.3|  
-|`xsl:comment`  の内容をインスタンス化した結果に文字列 "\-\-" が含まれているか、結果が "\-" で終了している。|復元|7.4|  
-|`xsl:comment` の内容をインスタンス化した結果、テキスト ノード以外のノードが作成される。|復元|7.4|  
-|変数バインディング要素内のテンプレートが属性ノードまたは名前空間ノードを返す。|復元|11.2|  
-|document 関数に渡された URI からのリソースの取得時にエラーが発生する。|例外をスロー|12.1|  
-|document 関数内の URI 参照にフラグメント ID が含まれており、その ID を処理するとエラーが発生する。|例外をスロー|12.1|  
-|同じ名前 \(`cdata-section-elements` の `xls:output` 以外\) を持つ複数の属性があり、これらの属性が同じインポート優先順位を持つ。|復元|16|  
-|プロセッサが `encoding` 要素の `xsl:output` 属性で指定されている文字エンコード値をサポートしない。|復元|16.1|  
-|`disable-output-escaping` がテキスト ノードに使用されており、そのテキスト ノードを使用して、結果ツリーにテキスト ノード以外のものが作成されている。|`disable-output-escaping` 属性を無視|16.4|  
-|出力エスケープが有効に設定されているテキスト ノードが結果ツリー フラグメントに含まれている場合に、そのフラグメントが数値や文字列に変換される。|無視|16.4|  
-|XSLT プロセッサが出力に使用しているエンコーディングで表すことができない文字に対して、出力エスケープが無効に設定される。|無視|16.4|  
-|要素に子または属性が追加された後で、その要素に名前空間ノードが追加される。|復元|正誤表 e25|  
-|`xsl:number` が NaN、無限、または 0.5 未満である。|復元|正誤表 e24|  
-|document 関数への 2 番目の引数ノード セットが空であり、URI 参照が相対 URI 参照である。|復元|正誤表 e14|  
+|<span data-ttu-id="7b60e-111">問題</span><span class="sxs-lookup"><span data-stu-id="7b60e-111">Problem</span></span>|<span data-ttu-id="7b60e-112">動作</span><span class="sxs-lookup"><span data-stu-id="7b60e-112">Behavior</span></span>|<span data-ttu-id="7b60e-113">セクション</span><span class="sxs-lookup"><span data-stu-id="7b60e-113">Section</span></span>|  
+|-------------|--------------|-------------|  
+|<span data-ttu-id="7b60e-114">テキスト ノードが `xsl:strip-space` と `xsl:preserve-space` の両方に適合している。</span><span class="sxs-lookup"><span data-stu-id="7b60e-114">A text node matches both `xsl:strip-space` and `xsl:preserve-space`.</span></span>|<span data-ttu-id="7b60e-115">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-115">Recover</span></span>|<span data-ttu-id="7b60e-116">3.4</span><span class="sxs-lookup"><span data-stu-id="7b60e-116">3.4</span></span>|  
+|<span data-ttu-id="7b60e-117">ソース ノードが複数のテンプレート規則に適合している。</span><span class="sxs-lookup"><span data-stu-id="7b60e-117">A source node matches more than one template rule.</span></span>|<span data-ttu-id="7b60e-118">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-118">Recover</span></span>|<span data-ttu-id="7b60e-119">5.5</span><span class="sxs-lookup"><span data-stu-id="7b60e-119">5.5</span></span>|  
+|<span data-ttu-id="7b60e-120">1 つの名前空間 URI (Uniform Resource Identifier) が同じインポート優先順位を持つ複数の名前空間 URI のエイリアスとして宣言されている。</span><span class="sxs-lookup"><span data-stu-id="7b60e-120">A namespace Uniform Resource Identifier (URI) is declared to be an alias for multiple namespace URIs, all having the same import precedence.</span></span>|<span data-ttu-id="7b60e-121">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-121">Recover</span></span>|<span data-ttu-id="7b60e-122">7.1.1</span><span class="sxs-lookup"><span data-stu-id="7b60e-122">7.1.1</span></span>|  
+|<span data-ttu-id="7b60e-123">属性値テンプレートから生成された `xsl:attribute` と `xsl:element` 内の名前属性が有効な QName (修飾名) ではない。</span><span class="sxs-lookup"><span data-stu-id="7b60e-123">The name attribute in `xsl:attribute` and `xsl:element` generated from an attribute value template is not a valid qualified name (QName).</span></span>|<span data-ttu-id="7b60e-124">例外をスロー</span><span class="sxs-lookup"><span data-stu-id="7b60e-124">Exception thrown</span></span>|<span data-ttu-id="7b60e-125">7.1.2 および 7.1.3</span><span class="sxs-lookup"><span data-stu-id="7b60e-125">7.1.2 and 7.1.3</span></span>|  
+|<span data-ttu-id="7b60e-126">要素ノードに子ノードが既に追加されているにもかかわらず、その要素に属性が追加される。</span><span class="sxs-lookup"><span data-stu-id="7b60e-126">Adding an attribute to an element after child nodes have already been added to the element node.</span></span>|<span data-ttu-id="7b60e-127">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-127">Recover</span></span>|<span data-ttu-id="7b60e-128">7.1.3</span><span class="sxs-lookup"><span data-stu-id="7b60e-128">7.1.3</span></span>|  
+|<span data-ttu-id="7b60e-129">要素ノード以外のノードに属性が追加される。</span><span class="sxs-lookup"><span data-stu-id="7b60e-129">Adding an attribute to anything other than an element node.</span></span>|<span data-ttu-id="7b60e-130">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-130">Recover</span></span>|<span data-ttu-id="7b60e-131">7.1.3</span><span class="sxs-lookup"><span data-stu-id="7b60e-131">7.1.3</span></span>|  
+|<span data-ttu-id="7b60e-132">`xsl:attribute` 要素のコンテンツをインスタンス化してもテキスト ノードが作成されない。</span><span class="sxs-lookup"><span data-stu-id="7b60e-132">Instantiation of the content of the `xsl:attribute` element is not a text node.</span></span>|<span data-ttu-id="7b60e-133">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-133">Recover</span></span>|<span data-ttu-id="7b60e-134">7.1.3</span><span class="sxs-lookup"><span data-stu-id="7b60e-134">7.1.3</span></span>|  
+|<span data-ttu-id="7b60e-135">2 つの属性セットが同じインポート優先順位と展開名を持っている。</span><span class="sxs-lookup"><span data-stu-id="7b60e-135">Two attribute sets have the same import precedence and expanded name.</span></span> <span data-ttu-id="7b60e-136">両方が同じ属性を持っており、同じ名前を持ち、より重要度の高い共通の属性が含まれた属性セットが他にない。</span><span class="sxs-lookup"><span data-stu-id="7b60e-136">Both have the same attribute, and there is no other attribute set containing the common attribute with the same name with higher importance.</span></span>|<span data-ttu-id="7b60e-137">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-137">Recover</span></span>|<span data-ttu-id="7b60e-138">7.1.4</span><span class="sxs-lookup"><span data-stu-id="7b60e-138">7.1.4</span></span>|  
+|<span data-ttu-id="7b60e-139">`xsl:processing-instruction` 名前属性が NCName (コロンが含まれていない名前) も処理命令ターゲットも生成しない。</span><span class="sxs-lookup"><span data-stu-id="7b60e-139">`xsl:processing-instruction` name attribute does not yield both a no-colon name (NCName) and a Processing Instruction target.</span></span>|<span data-ttu-id="7b60e-140">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-140">Recover</span></span>|<span data-ttu-id="7b60e-141">7.3</span><span class="sxs-lookup"><span data-stu-id="7b60e-141">7.3</span></span>|  
+|<span data-ttu-id="7b60e-142">`xsl:processing-instruction` の内容をインスタンス化すると、テキスト ノード以外のノードが作成される。</span><span class="sxs-lookup"><span data-stu-id="7b60e-142">Instantiating the content of `xsl:processing-instruction` creates nodes other than text nodes.</span></span>|<span data-ttu-id="7b60e-143">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-143">Recover</span></span>|<span data-ttu-id="7b60e-144">7.3</span><span class="sxs-lookup"><span data-stu-id="7b60e-144">7.3</span></span>|  
+|<span data-ttu-id="7b60e-145">`xsl:processing-instruction` の内容をインスタンス化した結果に文字列 "`?>`" が含まれている。</span><span class="sxs-lookup"><span data-stu-id="7b60e-145">Results of instantiating the content of the `xsl:processing-instruction` contains the string "`?>`".</span></span>|<span data-ttu-id="7b60e-146">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-146">Recover</span></span>|<span data-ttu-id="7b60e-147">7.3</span><span class="sxs-lookup"><span data-stu-id="7b60e-147">7.3</span></span>|  
+|<span data-ttu-id="7b60e-148">内容をインスタンス化した結果、`xsl:comment`文字列が含まれています"-"、または末尾"-"です。</span><span class="sxs-lookup"><span data-stu-id="7b60e-148">Results of instantiating the content of the `xsl:comment` contains the string "--", or ends with "-".</span></span>|<span data-ttu-id="7b60e-149">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-149">Recover</span></span>|<span data-ttu-id="7b60e-150">7.4</span><span class="sxs-lookup"><span data-stu-id="7b60e-150">7.4</span></span>|  
+|<span data-ttu-id="7b60e-151">`xsl:comment` の内容をインスタンス化した結果、テキスト ノード以外のノードが作成される。</span><span class="sxs-lookup"><span data-stu-id="7b60e-151">Results of instantiating the content of the `xsl:comment` creates nodes other than text nodes.</span></span>|<span data-ttu-id="7b60e-152">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-152">Recover</span></span>|<span data-ttu-id="7b60e-153">7.4</span><span class="sxs-lookup"><span data-stu-id="7b60e-153">7.4</span></span>|  
+|<span data-ttu-id="7b60e-154">変数バインディング要素内のテンプレートが属性ノードまたは名前空間ノードを返す。</span><span class="sxs-lookup"><span data-stu-id="7b60e-154">The template within a variable-binding element returns an attribute node or a namespace node.</span></span>|<span data-ttu-id="7b60e-155">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-155">Recover</span></span>|<span data-ttu-id="7b60e-156">11.2</span><span class="sxs-lookup"><span data-stu-id="7b60e-156">11.2</span></span>|  
+|<span data-ttu-id="7b60e-157">document 関数に渡された URI からのリソースの取得時にエラーが発生する。</span><span class="sxs-lookup"><span data-stu-id="7b60e-157">There is an error retrieving the resource from the URI passed into the document function.</span></span>|<span data-ttu-id="7b60e-158">例外をスロー</span><span class="sxs-lookup"><span data-stu-id="7b60e-158">Exception thrown</span></span>|<span data-ttu-id="7b60e-159">12.1</span><span class="sxs-lookup"><span data-stu-id="7b60e-159">12.1</span></span>|  
+|<span data-ttu-id="7b60e-160">document 関数内の URI 参照にフラグメント ID が含まれており、その ID を処理するとエラーが発生する。</span><span class="sxs-lookup"><span data-stu-id="7b60e-160">The URI reference in the document function contains a fragment identifier, and there is an error processing the fragment identifier.</span></span>|<span data-ttu-id="7b60e-161">例外をスロー</span><span class="sxs-lookup"><span data-stu-id="7b60e-161">Exception thrown</span></span>|<span data-ttu-id="7b60e-162">12.1</span><span class="sxs-lookup"><span data-stu-id="7b60e-162">12.1</span></span>|  
+|<span data-ttu-id="7b60e-163">同じ名前 (`cdata-section-elements` の `xls:output` 以外) を持つ複数の属性があり、これらの属性が同じインポート優先順位を持つ。</span><span class="sxs-lookup"><span data-stu-id="7b60e-163">There are multiple attributes with the same name that are not named `cdata-section-elements` in `xls:output`, and these attributes have the same import precedence.</span></span>|<span data-ttu-id="7b60e-164">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-164">Recover</span></span>|<span data-ttu-id="7b60e-165">16</span><span class="sxs-lookup"><span data-stu-id="7b60e-165">16</span></span>|  
+|<span data-ttu-id="7b60e-166">プロセッサが `encoding` 要素の `xsl:output` 属性で指定されている文字エンコード値をサポートしない。</span><span class="sxs-lookup"><span data-stu-id="7b60e-166">The processor does not support the character encoding value given in the `encoding` attribute of the `xsl:output` element.</span></span>|<span data-ttu-id="7b60e-167">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-167">Recover</span></span>|<span data-ttu-id="7b60e-168">16.1</span><span class="sxs-lookup"><span data-stu-id="7b60e-168">16.1</span></span>|  
+|<span data-ttu-id="7b60e-169">`disable-output-escaping` がテキスト ノードに使用されており、そのテキスト ノードを使用して、結果ツリーにテキスト ノード以外のものが作成されている。</span><span class="sxs-lookup"><span data-stu-id="7b60e-169">`disable-output-escaping` is used for a text node, and that text node is used to create something other than a text node in the result tree.</span></span>|<span data-ttu-id="7b60e-170">`disable-output-escaping` 属性を無視</span><span class="sxs-lookup"><span data-stu-id="7b60e-170">`disable-output-escaping` attribute is ignored</span></span>|<span data-ttu-id="7b60e-171">16.4</span><span class="sxs-lookup"><span data-stu-id="7b60e-171">16.4</span></span>|  
+|<span data-ttu-id="7b60e-172">出力エスケープが有効に設定されているテキスト ノードが結果ツリー フラグメントに含まれている場合に、そのフラグメントが数値や文字列に変換される。</span><span class="sxs-lookup"><span data-stu-id="7b60e-172">Converting a result tree fragment to a number or string if the result tree fragment contains a text node with output escaping enabled.</span></span>|<span data-ttu-id="7b60e-173">無視</span><span class="sxs-lookup"><span data-stu-id="7b60e-173">Ignored</span></span>|<span data-ttu-id="7b60e-174">16.4</span><span class="sxs-lookup"><span data-stu-id="7b60e-174">16.4</span></span>|  
+|<span data-ttu-id="7b60e-175">XSLT プロセッサが出力に使用しているエンコーディングで表すことができない文字に対して、出力エスケープが無効に設定される。</span><span class="sxs-lookup"><span data-stu-id="7b60e-175">Output escaping is disabled for characters that cannot be represented in the encoding that the XSLT processor is using for output.</span></span>|<span data-ttu-id="7b60e-176">無視</span><span class="sxs-lookup"><span data-stu-id="7b60e-176">Ignored</span></span>|<span data-ttu-id="7b60e-177">16.4</span><span class="sxs-lookup"><span data-stu-id="7b60e-177">16.4</span></span>|  
+|<span data-ttu-id="7b60e-178">要素に子または属性が追加された後で、その要素に名前空間ノードが追加される。</span><span class="sxs-lookup"><span data-stu-id="7b60e-178">Adding a namespace node to an element after children have been added to it or after attributes have been added to it</span></span>|<span data-ttu-id="7b60e-179">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-179">Recover</span></span>|<span data-ttu-id="7b60e-180">正誤表 e25</span><span class="sxs-lookup"><span data-stu-id="7b60e-180">Errata e25</span></span>|  
+|<span data-ttu-id="7b60e-181">`xsl:number` が NaN、無限、または 0.5 未満である。</span><span class="sxs-lookup"><span data-stu-id="7b60e-181">`xsl:number` is NaN, infinite, or less than 0.5.</span></span>|<span data-ttu-id="7b60e-182">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-182">Recover</span></span>|<span data-ttu-id="7b60e-183">正誤表 e24</span><span class="sxs-lookup"><span data-stu-id="7b60e-183">Errata e24</span></span>|  
+|<span data-ttu-id="7b60e-184">document 関数への 2 番目の引数ノード セットが空であり、URI 参照が相対 URI 参照である。</span><span class="sxs-lookup"><span data-stu-id="7b60e-184">The second argument node-set to the document function is empty and the URI reference is relative</span></span>|<span data-ttu-id="7b60e-185">復元</span><span class="sxs-lookup"><span data-stu-id="7b60e-185">Recover</span></span>|<span data-ttu-id="7b60e-186">正誤表 e14</span><span class="sxs-lookup"><span data-stu-id="7b60e-186">Errata e14</span></span>|  
   
- 正誤表は、W3C \(World Wide Web Consortium\) の『XSL Transformations \(XSLT\) Version 1.0 Specification Errata』\(www.w3.org\/1999\/11\/REC\-xslt\-19991116\-errata\/\) にあります。  
+ <span data-ttu-id="7b60e-187">正誤表は、W3C (World Wide Web Consortium) の『XSL Transformations (XSLT) Version 1.0 Specification Errata』(www.w3.org/1999/11/REC-xslt-19991116-errata/) にあります。</span><span class="sxs-lookup"><span data-stu-id="7b60e-187">Sections from the errata can be found in the World Wide Web Consortium (W3C) XSL Transformations (XSLT) Version 1.0 Specification Errata, located at www.w3.org/1999/11/REC-xslt-19991116-errata.</span></span>  
   
-## カスタム定義の動作の実装  
- <xref:System.Xml.Xsl.XslTransform> クラスの実装には固有の動作があります。 このセクションでは、`xsl:sort` のプロバイダー固有の実装と、<xref:System.Xml.Xsl.XslTransform> クラスでサポートされているオプション機能について説明します。  
+## <a name="custom-defined-implementation-behaviors"></a><span data-ttu-id="7b60e-188">カスタム定義の動作の実装</span><span class="sxs-lookup"><span data-stu-id="7b60e-188">Custom-Defined Implementation Behaviors</span></span>  
+ <span data-ttu-id="7b60e-189"><xref:System.Xml.Xsl.XslTransform> クラスの実装には固有の動作があります。</span><span class="sxs-lookup"><span data-stu-id="7b60e-189">There are behaviors unique to the <xref:System.Xml.Xsl.XslTransform> class implementation.</span></span> <span data-ttu-id="7b60e-190">このセクションでは、`xsl:sort` のプロバイダー固有の実装と、<xref:System.Xml.Xsl.XslTransform> クラスでサポートされているオプション機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="7b60e-190">This section discusses the provider-specific implementation of the `xsl:sort` and optional features that are supported by the <xref:System.Xml.Xsl.XslTransform> class.</span></span>  
   
-## xsl:sort  
- W3C 勧告『XSLT 1.0』には、変換を使用した並べ替えに関する留意事項の記述があります。 それらは次のとおりです。  
+## <a name="xslsort"></a><span data-ttu-id="7b60e-191">xsl:sort</span><span class="sxs-lookup"><span data-stu-id="7b60e-191">xsl:sort</span></span>  
+ <span data-ttu-id="7b60e-192">W3C 勧告『XSLT 1.0』には、変換を使用した並べ替えに関する留意事項の記述があります。</span><span class="sxs-lookup"><span data-stu-id="7b60e-192">When using a transformation to sort, the W3C XSLT 1.0 Recommendation makes some observations.</span></span> <span data-ttu-id="7b60e-193">それらは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="7b60e-193">They are:</span></span>  
   
--   2 つの XSLT プロセッサの両方が勧告に準拠している場合でも、それらの並べ替え動作は異なることがあります。  
+-   <span data-ttu-id="7b60e-194">2 つの XSLT プロセッサの両方が勧告に準拠している場合でも、それらの並べ替え動作は異なることがあります。</span><span class="sxs-lookup"><span data-stu-id="7b60e-194">Two XSLT processors may be conforming processors, but still may sort differently.</span></span>  
   
--   すべての XSLT プロセッサが同じ言語をサポートするわけではありません。  
+-   <span data-ttu-id="7b60e-195">すべての XSLT プロセッサが同じ言語をサポートするわけではありません。</span><span class="sxs-lookup"><span data-stu-id="7b60e-195">Not all XSLT processors support the same languages.</span></span>  
   
--   言語については、`xsl:sort.` で指定されていない特定の言語での並べ替え動作がプロセッサによって異なる場合があります。  
+-   <span data-ttu-id="7b60e-196">言語については、`xsl:sort.` で指定されていない特定の言語での並べ替え動作がプロセッサによって異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="7b60e-196">With regard to languages, different processors may vary on their sorting on a particular language not specified on the `xsl:sort.`</span></span>  
   
- <xref:System.Xml.Xsl.XslTransform> を使用した変換の .NET Framework の実装で各データ型に対して実装されている並べ替え動作を次の表に示します。  
+ <span data-ttu-id="7b60e-197">次の表を使用して、変換の .NET Framework の実装で各データ型に対して実装されている並べ替え動作<xref:System.Xml.Xsl.XslTransform>です。</span><span class="sxs-lookup"><span data-stu-id="7b60e-197">The following table shows the sorting behavior implemented for each data type in the .NET Framework implementation of a transformation using <xref:System.Xml.Xsl.XslTransform>.</span></span>  
   
-|データ型|並べ替え動作|  
-|----------|------------|  
-|Text|データは、共通言語ランタイム \(CLR: Common Language Runtime\) の String.Compare メソッドとカルチャ ロケールを使用して並べ替えられます。 データ型が "テキスト" である場合、<xref:System.Xml.Xsl.XslTransform> クラスの並べ替え動作は、CLR の文字列比較動作と同じです。|  
-|Number|数値は、XPath \(XML Path Language\) 数値として処理され、W3C 勧告『XML Path Language \(XPath\) Version 1.0』のセクション 3.5 \(www.w3.org\/TR\/xpath.html\#numbers\) に記述されている方法に従って並べ替えられます。|  
+|<span data-ttu-id="7b60e-198">データ型</span><span class="sxs-lookup"><span data-stu-id="7b60e-198">Data type</span></span>|<span data-ttu-id="7b60e-199">並べ替え動作</span><span class="sxs-lookup"><span data-stu-id="7b60e-199">Sorting behavior</span></span>|  
+|---------------|----------------------|  
+|<span data-ttu-id="7b60e-200">Text</span><span class="sxs-lookup"><span data-stu-id="7b60e-200">Text</span></span>|<span data-ttu-id="7b60e-201">データは、共通言語ランタイム (CLR: Common Language Runtime) の String.Compare メソッドとカルチャ ロケールを使用して並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="7b60e-201">Data is sorted using the common language runtime (CLR) String.Compare method, and the cultural locale.</span></span> <span data-ttu-id="7b60e-202">データ型が "テキスト" である場合、<xref:System.Xml.Xsl.XslTransform> クラスの並べ替え動作は、CLR の文字列比較動作と同じです。</span><span class="sxs-lookup"><span data-stu-id="7b60e-202">When the data type equals "text", sorting in the <xref:System.Xml.Xsl.XslTransform> class behaves identically to the string comparison behaviors of the CLR.</span></span>|  
+|<span data-ttu-id="7b60e-203">Number</span><span class="sxs-lookup"><span data-stu-id="7b60e-203">Number</span></span>|<span data-ttu-id="7b60e-204">数値は、XPath (XML Path Language) 数値として処理され、W3C 勧告『XML Path Language (XPath) Version 1.0』のセクション 3.5 (www.w3.org/TR/xpath.html#numbers) に記述されている方法に従って並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="7b60e-204">Numeric values are treated as XML Path Language (XPath) numbers and are sorted according to the details outlined in the W3C XML Path Language (XPath) Version 1.0 Recommendation, Section 3.5 (www.w3.org/TR/xpath.html#numbers).</span></span>|  
   
-## サポートされているオプション機能  
- XSLT プロセッサがオプションで実装する機能を次に示します。これらの機能は、<xref:System.Xml.Xsl.XslTransform> クラスに実装されます。  
+## <a name="optional-features-supported"></a><span data-ttu-id="7b60e-205">サポートされているオプション機能</span><span class="sxs-lookup"><span data-stu-id="7b60e-205">Optional Features Supported</span></span>  
+ <span data-ttu-id="7b60e-206">XSLT プロセッサがオプションで実装する機能を次に示します。これらの機能は、<xref:System.Xml.Xsl.XslTransform> クラスに実装されます。</span><span class="sxs-lookup"><span data-stu-id="7b60e-206">The following table shows the features that are optional for an XSLT processor to implement and are implemented in the <xref:System.Xml.Xsl.XslTransform> class.</span></span>  
   
-|機能|参照先|メモ|  
-|--------|---------|--------|  
-|`disable-output-escaping` タグと `<xsl:text...>` タグの `<xsl:value-of...>` 属性|W3C 勧告『XSLT 1.0』<br /><br /> セクション 16.4|`disable-output-escaping` 要素または `xsl:text` 要素が `xsl:value-of`、`xsl:comment`、または `xsl:processing-instruction` のいずれかの要素で使用される場合、`xsl:attribute` 属性は無視されます。<br /><br /> テキストが含まれた結果ツリー フラグメントおよびエスケープされたテキスト出力はサポートされません。<br /><br /> <xref:System.Xml.XmlReader> オブジェクトまたは <xref:System.Xml.XmlWriter> オブジェクトへの変換時には、disable\-output\-escaping 属性が無視されます。|  
+|<span data-ttu-id="7b60e-207">機能</span><span class="sxs-lookup"><span data-stu-id="7b60e-207">Feature</span></span>|<span data-ttu-id="7b60e-208">参照先</span><span class="sxs-lookup"><span data-stu-id="7b60e-208">Reference location</span></span>|<span data-ttu-id="7b60e-209">メモ</span><span class="sxs-lookup"><span data-stu-id="7b60e-209">Notes</span></span>|  
+|-------------|------------------------|-----------|  
+|<span data-ttu-id="7b60e-210">`disable-output-escaping` タグと `<xsl:text...>` タグの `<xsl:value-of...>` 属性</span><span class="sxs-lookup"><span data-stu-id="7b60e-210">`disable-output-escaping` attribute on `<xsl:text...>` and `<xsl:value-of...>` tags.</span></span>|<span data-ttu-id="7b60e-211">W3C 勧告『XSLT 1.0』</span><span class="sxs-lookup"><span data-stu-id="7b60e-211">W3C XSLT 1.0 Recommendation,</span></span><br /><br /> <span data-ttu-id="7b60e-212">セクション 16.4</span><span class="sxs-lookup"><span data-stu-id="7b60e-212">Section 16.4</span></span>|<span data-ttu-id="7b60e-213">`disable-output-escaping` 要素または `xsl:text` 要素が `xsl:value-of`、`xsl:comment`、または `xsl:processing-instruction` のいずれかの要素で使用される場合、`xsl:attribute` 属性は無視されます。</span><span class="sxs-lookup"><span data-stu-id="7b60e-213">The `disable-output-escaping` attribute is ignored when the `xsl:text` or `xsl:value-of` elements are used in an `xsl:comment`, `xsl:processing-instruction`, or `xsl:attribute` element.</span></span><br /><br /> <span data-ttu-id="7b60e-214">テキストが含まれた結果ツリー フラグメントおよびエスケープされたテキスト出力はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="7b60e-214">Result tree fragments that contain text and the text output that has been escaped are not supported.</span></span><br /><br /> <span data-ttu-id="7b60e-215"><xref:System.Xml.XmlReader> オブジェクトまたは <xref:System.Xml.XmlWriter> オブジェクトへの変換時には、disable-output-escaping 属性が無視されます。</span><span class="sxs-lookup"><span data-stu-id="7b60e-215">The disable-output-escaping attribute is ignored when transforming to an <xref:System.Xml.XmlReader> or <xref:System.Xml.XmlWriter> object.</span></span>|  
   
-## 参照  
- <xref:System.Xml.Xsl.XslTransform>   
- [XslTransform クラスによる XSLT プロセッサの実装](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)   
- [XslTransform クラスを使用した XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)   
- [変換における XPathNavigator](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)   
- [変換における XPathNodeIterator](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)   
- [XslTransform への XPathDocument の入力](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)   
- [XslTransform への XmlDataDocument の入力](../../../../docs/standard/data/xml/xmldatadocument-input-to-xsltransform.md)   
- [XslTransform への XmlDocument の入力](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)
+## <a name="see-also"></a><span data-ttu-id="7b60e-216">関連項目</span><span class="sxs-lookup"><span data-stu-id="7b60e-216">See Also</span></span>  
+ <xref:System.Xml.Xsl.XslTransform>  
+ [<span data-ttu-id="7b60e-217">XslTransform クラスによる XSLT プロセッサ</span><span class="sxs-lookup"><span data-stu-id="7b60e-217">XslTransform Class Implements the XSLT Processor</span></span>](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)  
+ [<span data-ttu-id="7b60e-218">XslTransform クラスによる XSLT 変換</span><span class="sxs-lookup"><span data-stu-id="7b60e-218">XSLT Transformations with the XslTransform Class</span></span>](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
+ [<span data-ttu-id="7b60e-219">変換における XPathNavigator</span><span class="sxs-lookup"><span data-stu-id="7b60e-219">XPathNavigator in Transformations</span></span>](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)  
+ [<span data-ttu-id="7b60e-220">変換における XPathNodeIterator</span><span class="sxs-lookup"><span data-stu-id="7b60e-220">XPathNodeIterator in Transformations</span></span>](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)  
+ [<span data-ttu-id="7b60e-221">XslTransform への XPathDocument の入力</span><span class="sxs-lookup"><span data-stu-id="7b60e-221">XPathDocument Input to XslTransform</span></span>](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)  
+ [<span data-ttu-id="7b60e-222">XslTransform への XmlDataDocument の入力</span><span class="sxs-lookup"><span data-stu-id="7b60e-222">XmlDataDocument Input to XslTransform</span></span>](../../../../docs/standard/data/xml/xmldatadocument-input-to-xsltransform.md)  
+ [<span data-ttu-id="7b60e-223">XslTransform への XmlDocument の入力</span><span class="sxs-lookup"><span data-stu-id="7b60e-223">XmlDocument Input to XslTransform</span></span>](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)

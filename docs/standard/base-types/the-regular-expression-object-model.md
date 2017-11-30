@@ -1,358 +1,367 @@
 ---
-title: "正規表現のオブジェクト モデル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - ".NET Framework 正規表現, 逆参照"
-  - ".NET Framework 正規表現, クラス"
-  - "逆参照"
-  - "Capture クラス"
-  - "CaptureCollection クラス"
-  - "文字 [.NET Framework], 逆参照"
-  - "文字 [.NET Framework], メタ文字"
-  - "文字 [.NET Framework], 正規表現"
-  - "クラス [.NET Framework], 正規表現"
-  - "Group クラス"
-  - "GroupCollection クラス"
-  - "Match クラス"
-  - "MatchCollection クラス"
-  - "メタ文字, 逆参照"
-  - "メタ文字, 正規表現クラス"
-  - "解析 (正規表現を使用したテキストを), 逆参照"
-  - "解析 (正規表現を使用したテキストを), クラス"
-  - "パターン一致 (正規表現を使用した), 逆参照"
-  - "パターン一致 (正規表現を使用した), クラス"
-  - "Regex クラス"
-  - "正規表現 [.NET Framework]"
-  - "正規表現 [.NET Framework], 逆参照"
-  - "正規表現 [.NET Framework], クラス"
-  - "繰り返し出現する文字グループ"
-  - "検索 (正規表現を使用した), 逆参照"
-  - "検索 (正規表現を使用した), クラス"
-  - "文字列 [.NET Framework], 正規表現"
-  - "部分文字列"
+title: "正規表現のオブジェクト モデル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- searching with regular expressions, backreferences
+- Regex class
+- Match class
+- pattern-matching with regular expressions, backreferences
+- .NET Framework regular expressions, classes
+- CaptureCollection class
+- Group class
+- characters [.NET Framework], backreferences
+- substrings
+- .NET Framework regular expressions, backreferences
+- searching with regular expressions, classes
+- backreferences
+- Capture class
+- repeating groups of characters
+- MatchCollection class
+- parsing text with regular expressions, backreferences
+- regular expressions [.NET Framework]
+- characters [.NET Framework], regular expressions
+- classes [.NET Framework], regular expression
+- regular expressions [.NET Framework], classes
+- characters [.NET Framework], metacharacters
+- metacharacters, regular expression classes
+- metacharacters, backreferences
+- parsing text with regular expressions, classes
+- regular expressions [.NET Framework], backreferences
+- strings [.NET Framework], regular expressions
+- pattern-matching with regular expressions, classes
+- GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-caps.latest.revision: 26
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: e8784ed31de4a511f9eee361a4becee3d080298a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 正規表現のオブジェクト モデル
-<a name="introduction"></a> ここでは、.NET Framework の正規表現を扱うときに使用するオブジェクト モデルについて説明します。 このチュートリアルは、次のセクションで構成されています。  
+# <a name="the-regular-expression-object-model"></a><span data-ttu-id="bab47-102">正規表現のオブジェクト モデル</span><span class="sxs-lookup"><span data-stu-id="bab47-102">The Regular Expression Object Model</span></span>
+<span data-ttu-id="bab47-103"><a name="introduction"></a>このトピックでは、.NET の正規表現を操作するために使用されるオブジェクト モデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="bab47-103"><a name="introduction"></a> This topic describes the object model used in working with .NET regular expressions.</span></span> <span data-ttu-id="bab47-104">このチュートリアルは、次のセクションで構成されています。</span><span class="sxs-lookup"><span data-stu-id="bab47-104">It contains the following sections:</span></span>  
   
--   [正規表現エンジン](#Engine)  
+-   [<span data-ttu-id="bab47-105">正規表現エンジン</span><span class="sxs-lookup"><span data-stu-id="bab47-105">The Regular Expression Engine</span></span>](#Engine)  
   
--   [MatchCollection オブジェクトと Match オブジェクト](#Match_and_MCollection)  
+-   [<span data-ttu-id="bab47-106">MatchCollection オブジェクトと Match オブジェクト</span><span class="sxs-lookup"><span data-stu-id="bab47-106">The MatchCollection and Match Objects</span></span>](#Match_and_MCollection)  
   
--   [GroupCollection](#GroupCollection)  
+-   [<span data-ttu-id="bab47-107">Groupcollection</span><span class="sxs-lookup"><span data-stu-id="bab47-107">The Group Collection</span></span>](#GroupCollection)  
   
--   [キャプチャ グループ](#the_captured_group)  
+-   [<span data-ttu-id="bab47-108">キャプチャされたグループ</span><span class="sxs-lookup"><span data-stu-id="bab47-108">The Captured Group</span></span>](#the_captured_group)  
   
--   [CaptureCollection](#CaptureCollection)  
+-   [<span data-ttu-id="bab47-109">Capturecollection</span><span class="sxs-lookup"><span data-stu-id="bab47-109">The Capture Collection</span></span>](#CaptureCollection)  
   
--   [個々のキャプチャ](#the_individual_capture)  
+-   [<span data-ttu-id="bab47-110">個々 のキャプチャ</span><span class="sxs-lookup"><span data-stu-id="bab47-110">The Individual Capture</span></span>](#the_individual_capture)  
   
 <a name="Engine"></a>   
-## 正規表現エンジン  
- .NET Framework の正規表現エンジンは、<xref:System.Text.RegularExpressions.Regex> クラスによって表されます。 正規表現エンジンは、正規表現の解析とコンパイル、および正規表現パターンと入力文字列を照合する操作を実行します。 エンジンは、.NET Framework 正規表現のオブジェクト モデルの中核となるコンポーネントです。  
+## <a name="the-regular-expression-engine"></a><span data-ttu-id="bab47-111">正規表現エンジン</span><span class="sxs-lookup"><span data-stu-id="bab47-111">The Regular Expression Engine</span></span>  
+ <span data-ttu-id="bab47-112">.NET の正規表現エンジンで表される、<xref:System.Text.RegularExpressions.Regex>クラスです。</span><span class="sxs-lookup"><span data-stu-id="bab47-112">The regular expression engine in .NET is represented by the <xref:System.Text.RegularExpressions.Regex> class.</span></span> <span data-ttu-id="bab47-113">正規表現エンジンは、正規表現の解析とコンパイル、および正規表現パターンと入力文字列を照合する操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="bab47-113">The regular expression engine is responsible for parsing and compiling a regular expression, and for performing operations that match the regular expression pattern with an input string.</span></span> <span data-ttu-id="bab47-114">エンジンは、.NET の正規表現オブジェクト モデルの中心的なコンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="bab47-114">The engine is the central component in the .NET regular expression object model.</span></span>  
   
- 正規表現エンジンは、次のいずれかの方法で使用できます。  
+ <span data-ttu-id="bab47-115">正規表現エンジンは、次のいずれかの方法で使用できます。</span><span class="sxs-lookup"><span data-stu-id="bab47-115">You can use the regular expression engine in either of two ways:</span></span>  
   
--   <xref:System.Text.RegularExpressions.Regex> クラスの静的メソッドを呼び出す。 メソッドのパラメーターには、入力文字列と正規表現パターンが含まれます。 静的メソッド呼び出しで使用した正規表現は、正規表現エンジンによってキャッシュされるので、同じ正規表現を使用する静的正規表現メソッドを繰り返し呼び出す場合、パフォーマンスが比較的向上します。  
+-   <span data-ttu-id="bab47-116"><xref:System.Text.RegularExpressions.Regex> クラスの静的メソッドを呼び出す。</span><span class="sxs-lookup"><span data-stu-id="bab47-116">By calling the static methods of the <xref:System.Text.RegularExpressions.Regex> class.</span></span> <span data-ttu-id="bab47-117">メソッドのパラメーターには、入力文字列と正規表現パターンが含まれます。</span><span class="sxs-lookup"><span data-stu-id="bab47-117">The method parameters include the input string and the regular expression pattern.</span></span> <span data-ttu-id="bab47-118">静的メソッド呼び出しで使用した正規表現は、正規表現エンジンによってキャッシュされるので、同じ正規表現を使用する静的正規表現メソッドを繰り返し呼び出す場合、パフォーマンスが比較的向上します。</span><span class="sxs-lookup"><span data-stu-id="bab47-118">The regular expression engine caches regular expressions that are used in static method calls, so repeated calls to static regular expression methods that use the same regular expression offer relatively good performance.</span></span>  
   
--   正規表現をクラス コンストラクターに渡して <xref:System.Text.RegularExpressions.Regex> オブジェクトをインスタンス化する。 この場合、<xref:System.Text.RegularExpressions.Regex> オブジェクトは変更不可 \(読み取り専用\) で、単一の正規表現と密に結合された正規表現エンジンを表します。<xref:System.Text.RegularExpressions.Regex> インスタンスによって使用される正規表現はキャッシュされないので、同じ正規表現で <xref:System.Text.RegularExpressions.Regex> オブジェクトを複数回インスタンス化しないでください。  
+-   <span data-ttu-id="bab47-119">正規表現をクラス コンストラクターに渡して <xref:System.Text.RegularExpressions.Regex> オブジェクトをインスタンス化する。</span><span class="sxs-lookup"><span data-stu-id="bab47-119">By instantiating a <xref:System.Text.RegularExpressions.Regex> object, by passing a regular expression to the class constructor.</span></span> <span data-ttu-id="bab47-120">この場合、<xref:System.Text.RegularExpressions.Regex> オブジェクトは変更不可 (読み取り専用) で、単一の正規表現と密に結合された正規表現エンジンを表します。</span><span class="sxs-lookup"><span data-stu-id="bab47-120">In this case, the <xref:System.Text.RegularExpressions.Regex> object is immutable (read-only) and represents a regular expression engine that is tightly coupled with a single regular expression.</span></span> <span data-ttu-id="bab47-121"><xref:System.Text.RegularExpressions.Regex> インスタンスによって使用される正規表現はキャッシュされないので、同じ正規表現で <xref:System.Text.RegularExpressions.Regex> オブジェクトを複数回インスタンス化しないでください。</span><span class="sxs-lookup"><span data-stu-id="bab47-121">Because regular expressions used by <xref:System.Text.RegularExpressions.Regex> instances are not cached, you should not instantiate a <xref:System.Text.RegularExpressions.Regex> object multiple times with the same regular expression.</span></span>  
   
- <xref:System.Text.RegularExpressions.Regex> クラスのメソッドを呼び出すと、次のような処理を実行できます。  
+ <span data-ttu-id="bab47-122"><xref:System.Text.RegularExpressions.Regex> クラスのメソッドを呼び出すと、次のような処理を実行できます。</span><span class="sxs-lookup"><span data-stu-id="bab47-122">You can call the methods of the <xref:System.Text.RegularExpressions.Regex> class to perform the following operations:</span></span>  
   
--   文字列が正規表現パターンと一致するかどうかを確認する。  
+-   <span data-ttu-id="bab47-123">文字列が正規表現パターンと一致するかどうかを確認する。</span><span class="sxs-lookup"><span data-stu-id="bab47-123">Determine whether a string matches a regular expression pattern.</span></span>  
   
--   単一の一致または最初の一致を抽出する。  
+-   <span data-ttu-id="bab47-124">単一の一致または最初の一致を抽出する。</span><span class="sxs-lookup"><span data-stu-id="bab47-124">Extract a single match or the first match.</span></span>  
   
--   すべての一致を抽出する。  
+-   <span data-ttu-id="bab47-125">すべての一致を抽出する。</span><span class="sxs-lookup"><span data-stu-id="bab47-125">Extract all matches.</span></span>  
   
--   一致した部分文字列を置換する。  
+-   <span data-ttu-id="bab47-126">一致した部分文字列を置換する。</span><span class="sxs-lookup"><span data-stu-id="bab47-126">Replace a matched substring.</span></span>  
   
--   単一の文字列を文字列配列に分割する。  
+-   <span data-ttu-id="bab47-127">単一の文字列を文字列配列に分割する。</span><span class="sxs-lookup"><span data-stu-id="bab47-127">Split a single string into an array of strings.</span></span>  
   
- ここでは、これらの操作について説明します。  
+ <span data-ttu-id="bab47-128">ここでは、これらの操作について説明します。</span><span class="sxs-lookup"><span data-stu-id="bab47-128">These operations are described in the following sections.</span></span>  
   
-### 正規表現パターンの照合  
- <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=fullName> メソッドは、文字列がパターンと一致する場合は `true` を返し、一致しない場合は `false` を返します。<xref:System.Text.RegularExpressions.Regex.IsMatch%2A> メソッドは、文字列入力を検証する場合によく使用されます。 たとえば、次のコードでは、文字列は米国の有効な社会保障番号と一致します。  
+### <a name="matching-a-regular-expression-pattern"></a><span data-ttu-id="bab47-129">正規表現パターンの照合</span><span class="sxs-lookup"><span data-stu-id="bab47-129">Matching a Regular Expression Pattern</span></span>  
+ <span data-ttu-id="bab47-130"><xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> メソッドは、文字列がパターンと一致する場合は `true` を返し、一致しない場合は `false` を返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-130">The <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> method returns `true` if the string matches the pattern, or `false` if it does not.</span></span> <span data-ttu-id="bab47-131"><xref:System.Text.RegularExpressions.Regex.IsMatch%2A> メソッドは、文字列入力を検証する場合によく使用されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-131">The <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> method is often used to validate string input.</span></span> <span data-ttu-id="bab47-132">たとえば、次のコードでは、文字列は米国の有効な社会保障番号と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-132">For example, the following code ensures that a string matches a valid social security number in the United States.</span></span>  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/validate1.cs#1)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/validate1.vb#1)]  
   
- この正規表現パターン `^\d{3}-\d{2}-\d{4}$` の解釈を次の表に示します。  
+ <span data-ttu-id="bab47-133">この正規表現パターン `^\d{3}-\d{2}-\d{4}$` の解釈を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="bab47-133">The regular expression pattern `^\d{3}-\d{2}-\d{4}$` is interpreted as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`^`|入力文字列の先頭と一致します。|  
-|`\d{3}`|3 個の 10 進数と一致します。|  
-|`-`|ハイフンと一致します。|  
-|`\d{2}`|2 桁の 10 進数と一致します。|  
-|`-`|ハイフンと一致します。|  
-|`\d{4}`|4 桁の 10 進数と一致します。|  
-|`$`|入力文字列の末尾と一致します。|  
+|<span data-ttu-id="bab47-134">パターン</span><span class="sxs-lookup"><span data-stu-id="bab47-134">Pattern</span></span>|<span data-ttu-id="bab47-135">説明</span><span class="sxs-lookup"><span data-stu-id="bab47-135">Description</span></span>|  
+|-------------|-----------------|  
+|`^`|<span data-ttu-id="bab47-136">入力文字列の先頭と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-136">Match the beginning of the input string.</span></span>|  
+|`\d{3}`|<span data-ttu-id="bab47-137">3 個の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-137">Match three decimal digits.</span></span>|  
+|`-`|<span data-ttu-id="bab47-138">ハイフンと一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-138">Match a hyphen.</span></span>|  
+|`\d{2}`|<span data-ttu-id="bab47-139">2 桁の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-139">Match two decimal digits.</span></span>|  
+|`-`|<span data-ttu-id="bab47-140">ハイフンと一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-140">Match a hyphen.</span></span>|  
+|`\d{4}`|<span data-ttu-id="bab47-141">4 桁の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-141">Match four decimal digits.</span></span>|  
+|`$`|<span data-ttu-id="bab47-142">入力文字列の末尾と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-142">Match the end of the input string.</span></span>|  
   
-### 単一の一致または最初の一致の抽出  
- <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=fullName> メソッドは、正規表現パターンに一致する最初の部分文字列の情報を含む <xref:System.Text.RegularExpressions.Match> オブジェクトを返します。`Match.Success` プロパティが `true` \(一致する文字列が見つかったことを示す\) を返す場合は、<xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=fullName> メソッドを呼び出すと後続の一致する文字列の情報を取得できます。 これらのメソッド呼び出しは、`Match.Success` プロパティによって `false` が返されるまで続行できます。 たとえば、次のコードでは、<xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=fullName> メソッドを使用して、重複する単語が文字列内で最初に出現する位置を検索します。 次に、<xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=fullName> メソッドを呼び出してその他の出現位置を検索します。 この例では、メソッドを呼び出すごとに `Match.Success` プロパティを調べ、現在の一致が成功したかどうか、および続けて <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=fullName> メソッドを呼び出す必要があるかどうかを確認します。  
+### <a name="extracting-a-single-match-or-the-first-match"></a><span data-ttu-id="bab47-143">単一の一致または最初の一致の抽出</span><span class="sxs-lookup"><span data-stu-id="bab47-143">Extracting a Single Match or the First Match</span></span>  
+ <span data-ttu-id="bab47-144"><xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> メソッドは、正規表現パターンに一致する最初の部分文字列の情報を含む <xref:System.Text.RegularExpressions.Match> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-144">The <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> method returns a <xref:System.Text.RegularExpressions.Match> object that contains information about the first substring that matches a regular expression pattern.</span></span> <span data-ttu-id="bab47-145">`Match.Success` プロパティが `true` (一致する文字列が見つかったことを示す) を返す場合は、<xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> メソッドを呼び出すと後続の一致する文字列の情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="bab47-145">If the `Match.Success` property returns `true`, indicating that a match was found, you can retrieve information about subsequent matches by calling the <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="bab47-146">これらのメソッド呼び出しは、`Match.Success` プロパティによって `false` が返されるまで続行できます。</span><span class="sxs-lookup"><span data-stu-id="bab47-146">These method calls can continue until the `Match.Success` property returns `false`.</span></span> <span data-ttu-id="bab47-147">たとえば、次のコードでは、<xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=nameWithType> メソッドを使用して、重複する単語が文字列内で最初に出現する位置を検索します。</span><span class="sxs-lookup"><span data-stu-id="bab47-147">For example, the following code uses the <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=nameWithType> method to find the first occurrence of a duplicated word in a string.</span></span> <span data-ttu-id="bab47-148">次に、<xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> メソッドを呼び出してその他の出現位置を検索します。</span><span class="sxs-lookup"><span data-stu-id="bab47-148">It then calls the <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> method to find any additional occurrences.</span></span> <span data-ttu-id="bab47-149">この例では、メソッドを呼び出すごとに `Match.Success` プロパティを調べ、現在の一致が成功したかどうか、および続けて <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> メソッドを呼び出す必要があるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="bab47-149">The example examines the `Match.Success` property after each method call to determine whether the current match was successful and whether a call to the <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> method should follow.</span></span>  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/match1.cs#2)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/match1.vb#2)]  
   
- この正規表現パターン `\b(\w+)\W+(\1)\b` の解釈を次の表に示します。  
+ <span data-ttu-id="bab47-150">この正規表現パターン `\b(\w+)\W+(\1)\b` の解釈を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="bab47-150">The regular expression pattern `\b(\w+)\W+(\1)\b` is interpreted as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`(\w+)`|1 つ以上の単語文字に一致します。 これが最初のキャプチャ グループです。|  
-|`\W+`|1 個以上の単語文字に使用されない文字と一致します。|  
-|`(\1)`|最初にキャプチャされた文字列と一致します。 これが 2 番目のキャプチャ グループです。|  
-|`\b`|ワード境界で照合を終了します。|  
+|<span data-ttu-id="bab47-151">パターン</span><span class="sxs-lookup"><span data-stu-id="bab47-151">Pattern</span></span>|<span data-ttu-id="bab47-152">説明</span><span class="sxs-lookup"><span data-stu-id="bab47-152">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="bab47-153">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="bab47-153">Begin the match on a word boundary.</span></span>|  
+|`(\w+)`|<span data-ttu-id="bab47-154">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-154">Match one or more word characters.</span></span> <span data-ttu-id="bab47-155">これが最初のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="bab47-155">This is the first capturing group.</span></span>|  
+|`\W+`|<span data-ttu-id="bab47-156">1 個以上の単語文字に使用されない文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-156">Match one or more non-word characters.</span></span>|  
+|`(\1)`|<span data-ttu-id="bab47-157">最初にキャプチャされた文字列と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-157">Match the first captured string.</span></span> <span data-ttu-id="bab47-158">これが 2 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="bab47-158">This is the second capturing group.</span></span>|  
+|`\b`|<span data-ttu-id="bab47-159">ワード境界で照合を終了します。</span><span class="sxs-lookup"><span data-stu-id="bab47-159">End the match on a word boundary.</span></span>|  
   
-### すべての一致の抽出  
- <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=fullName> メソッドは、入力文字列で正規表現エンジンによって検出されたすべての一致文字列の情報を含む <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトを返します。 たとえば、前の例を書き換えて、<xref:System.Text.RegularExpressions.Regex.Matches%2A> メソッドと <xref:System.Text.RegularExpressions.Regex.Match%2A> メソッドではなく <xref:System.Text.RegularExpressions.Match.NextMatch%2A> メソッドを呼び出すことができます。  
+### <a name="extracting-all-matches"></a><span data-ttu-id="bab47-160">すべての一致の抽出</span><span class="sxs-lookup"><span data-stu-id="bab47-160">Extracting All Matches</span></span>  
+ <span data-ttu-id="bab47-161"><xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> メソッドは、入力文字列で正規表現エンジンによって検出されたすべての一致文字列の情報を含む <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-161">The <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> method returns a <xref:System.Text.RegularExpressions.MatchCollection> object that contains information about all matches that the regular expression engine found in the input string.</span></span> <span data-ttu-id="bab47-162">たとえば、前の例を書き換えて、<xref:System.Text.RegularExpressions.Regex.Matches%2A> メソッドと <xref:System.Text.RegularExpressions.Regex.Match%2A> メソッドではなく <xref:System.Text.RegularExpressions.Match.NextMatch%2A> メソッドを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="bab47-162">For example, the previous example could be rewritten to call the <xref:System.Text.RegularExpressions.Regex.Matches%2A> method instead of the <xref:System.Text.RegularExpressions.Regex.Match%2A> and <xref:System.Text.RegularExpressions.Match.NextMatch%2A> methods.</span></span>  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/matches1.cs#3)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/matches1.vb#3)]  
   
-### 一致した部分文字列の置換  
- <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=fullName> メソッドは、正規表現パターンに一致した各部分文字列を指定された文字列または正規表現パターンに置き換えて、置換が適用された入力文字列全体を返します。 たとえば、次のコードでは、文字列内の 10 進数の前に米国の通貨記号が追加されます。  
+### <a name="replacing-a-matched-substring"></a><span data-ttu-id="bab47-163">一致した部分文字列の置換</span><span class="sxs-lookup"><span data-stu-id="bab47-163">Replacing a Matched Substring</span></span>  
+ <span data-ttu-id="bab47-164"><xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドは、正規表現パターンに一致した各部分文字列を指定された文字列または正規表現パターンに置き換えて、置換が適用された入力文字列全体を返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-164">The <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> method replaces each substring that matches the regular expression pattern with a specified string or regular expression pattern, and returns the entire input string with replacements.</span></span> <span data-ttu-id="bab47-165">たとえば、次のコードでは、文字列内の 10 進数の前に米国の通貨記号が追加されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-165">For example, the following code adds a U.S. currency symbol before a decimal number in a string.</span></span>  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/replace1.cs#4)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/replace1.vb#4)]  
   
- この正規表現パターン `\b\d+\.\d{2}\b` の解釈を次の表に示します。  
+ <span data-ttu-id="bab47-166">この正規表現パターン `\b\d+\.\d{2}\b` の解釈を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="bab47-166">The regular expression pattern `\b\d+\.\d{2}\b` is interpreted as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`\d+`|1 個以上の 10 進数と一致します。|  
-|`\.`|ピリオドと一致します。|  
-|`\d{2}`|2 桁の 10 進数と一致します。|  
-|`\b`|ワード境界で照合を終了します。|  
+|<span data-ttu-id="bab47-167">パターン</span><span class="sxs-lookup"><span data-stu-id="bab47-167">Pattern</span></span>|<span data-ttu-id="bab47-168">説明</span><span class="sxs-lookup"><span data-stu-id="bab47-168">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="bab47-169">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="bab47-169">Begin the match at a word boundary.</span></span>|  
+|`\d+`|<span data-ttu-id="bab47-170">1 個以上の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-170">Match one or more decimal digits.</span></span>|  
+|`\.`|<span data-ttu-id="bab47-171">ピリオドと一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-171">Match a period.</span></span>|  
+|`\d{2}`|<span data-ttu-id="bab47-172">2 桁の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-172">Match two decimal digits.</span></span>|  
+|`\b`|<span data-ttu-id="bab47-173">ワード境界で照合を終了します。</span><span class="sxs-lookup"><span data-stu-id="bab47-173">End the match at a word boundary.</span></span>|  
   
- 置換パターン `$$$&` の解釈を次の表に示します。  
+ <span data-ttu-id="bab47-174">置換パターン `$$$&` の解釈を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="bab47-174">The replacement pattern `$$$&` is interpreted as shown in the following table.</span></span>  
   
-|パターン|置換文字列|  
-|----------|-----------|  
-|`$$`|ドル記号 \($\) 文字。|  
-|`$&`|一致した部分文字列全体。|  
+|<span data-ttu-id="bab47-175">パターン</span><span class="sxs-lookup"><span data-stu-id="bab47-175">Pattern</span></span>|<span data-ttu-id="bab47-176">置換文字列</span><span class="sxs-lookup"><span data-stu-id="bab47-176">Replacement string</span></span>|  
+|-------------|------------------------|  
+|`$$`|<span data-ttu-id="bab47-177">ドル記号 ($) 文字。</span><span class="sxs-lookup"><span data-stu-id="bab47-177">The dollar sign ($) character.</span></span>|  
+|`$&`|<span data-ttu-id="bab47-178">一致した部分文字列全体。</span><span class="sxs-lookup"><span data-stu-id="bab47-178">The entire matched substring.</span></span>|  
   
-### 単一の文字列の文字列配列への分割  
- <xref:System.Text.RegularExpressions.Regex.Split%2A?displayProperty=fullName> メソッドは、正規表現によって定義されている位置で、入力文字列を分割します。 たとえば、次のコードでは、番号付きリストの項目を文字列配列に配置します。  
+### <a name="splitting-a-single-string-into-an-array-of-strings"></a><span data-ttu-id="bab47-179">単一の文字列の文字列配列への分割</span><span class="sxs-lookup"><span data-stu-id="bab47-179">Splitting a Single String into an Array of Strings</span></span>  
+ <span data-ttu-id="bab47-180"><xref:System.Text.RegularExpressions.Regex.Split%2A?displayProperty=nameWithType> メソッドは、正規表現によって定義されている位置で、入力文字列を分割します。</span><span class="sxs-lookup"><span data-stu-id="bab47-180">The <xref:System.Text.RegularExpressions.Regex.Split%2A?displayProperty=nameWithType> method splits the input string at the positions defined by a regular expression match.</span></span> <span data-ttu-id="bab47-181">たとえば、次のコードでは、番号付きリストの項目を文字列配列に配置します。</span><span class="sxs-lookup"><span data-stu-id="bab47-181">For example, the following code places the items in a numbered list into a string array.</span></span>  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/split1.cs#5)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/split1.vb#5)]  
   
- この正規表現パターン `\b\d{1,2}\.\s` の解釈を次の表に示します。  
+ <span data-ttu-id="bab47-182">この正規表現パターン `\b\d{1,2}\.\s` の解釈を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="bab47-182">The regular expression pattern `\b\d{1,2}\.\s` is interpreted as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`\d{1,2}`|1 桁または 2 桁の 10 進数と一致します。|  
-|`\.`|ピリオドと一致します。|  
-|`\s`|空白文字と一致します。|  
+|<span data-ttu-id="bab47-183">パターン</span><span class="sxs-lookup"><span data-stu-id="bab47-183">Pattern</span></span>|<span data-ttu-id="bab47-184">説明</span><span class="sxs-lookup"><span data-stu-id="bab47-184">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="bab47-185">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="bab47-185">Begin the match at a word boundary.</span></span>|  
+|`\d{1,2}`|<span data-ttu-id="bab47-186">1 桁または 2 桁の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-186">Match one or two decimal digits.</span></span>|  
+|`\.`|<span data-ttu-id="bab47-187">ピリオドと一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-187">Match a period.</span></span>|  
+|`\s`|<span data-ttu-id="bab47-188">空白文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-188">Match a white-space character.</span></span>|  
   
 <a name="Match_and_MCollection"></a>   
-## MatchCollection オブジェクトと Match オブジェクト  
- Regex メソッドは、正規表現のオブジェクト モデルに含まれる <xref:System.Text.RegularExpressions.MatchCollection> と <xref:System.Text.RegularExpressions.Match> の 2 つのオブジェクトを返します。  
+## <a name="the-matchcollection-and-match-objects"></a><span data-ttu-id="bab47-189">MatchCollection オブジェクトと Match オブジェクト</span><span class="sxs-lookup"><span data-stu-id="bab47-189">The MatchCollection and Match Objects</span></span>  
+ <span data-ttu-id="bab47-190">Regex メソッドは、正規表現のオブジェクト モデルに含まれる <xref:System.Text.RegularExpressions.MatchCollection> と <xref:System.Text.RegularExpressions.Match> の 2 つのオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-190">Regex methods return two objects that are part of the regular expression object model: the <xref:System.Text.RegularExpressions.MatchCollection> object, and the <xref:System.Text.RegularExpressions.Match> object.</span></span>  
   
 <a name="the_match_collection"></a>   
-### MatchCollection  
- <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=fullName> メソッドは、正規表現エンジンによって検出されたすべての一致文字列を入力文字列に出現する順序で表す <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトを含む <xref:System.Text.RegularExpressions.Match> オブジェクトを返します。 一致文字列がない場合、このメソッドはメンバーを持たない <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトを返します。<xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=fullName> プロパティを使用すると、コレクションの個々のメンバーに、0 から <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=fullName> プロパティの値より 1 小さい値までの範囲のインデックスでアクセスできます。<xref:System.Text.RegularExpressions.MatchCollection.Item%2A> は、コレクションのインデクサー \(C\# の場合\) および既定のプロパティ \(Visual Basic の場合\) です。  
+### <a name="the-match-collection"></a><span data-ttu-id="bab47-191">MatchCollection</span><span class="sxs-lookup"><span data-stu-id="bab47-191">The Match Collection</span></span>  
+ <span data-ttu-id="bab47-192"><xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> メソッドは、正規表現エンジンによって検出されたすべての一致文字列を入力文字列に出現する順序で表す <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトを含む <xref:System.Text.RegularExpressions.Match> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-192">The <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> method returns a <xref:System.Text.RegularExpressions.MatchCollection> object that contains <xref:System.Text.RegularExpressions.Match> objects that represent all the matches that the regular expression engine found, in the order in which they occur in the input string.</span></span> <span data-ttu-id="bab47-193">一致文字列がない場合、このメソッドはメンバーを持たない <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-193">If there are no matches, the method returns a <xref:System.Text.RegularExpressions.MatchCollection> object with no members.</span></span> <span data-ttu-id="bab47-194"><xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> プロパティを使用すると、コレクションの個々のメンバーに、0 から <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> プロパティの値より 1 小さい値までの範囲のインデックスでアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="bab47-194">The <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> property lets you access individual members of the collection by index, from zero to one less than the value of the <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="bab47-195"><xref:System.Text.RegularExpressions.MatchCollection.Item%2A> は、コレクションのインデクサー (C# の場合) および既定のプロパティ (Visual Basic の場合) です。</span><span class="sxs-lookup"><span data-stu-id="bab47-195"><xref:System.Text.RegularExpressions.MatchCollection.Item%2A> is the collection's indexer (in C#) and default property (in Visual Basic).</span></span>  
   
- 既定では、<xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=fullName> メソッドを呼び出すと、遅延評価を使用して <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトに値が設定されます。 値の設定が完了しているコレクションを必要とするプロパティ \(<xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=fullName> プロパティや <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=fullName> プロパティなど\) にアクセスする場合は、パフォーマンスが低下する可能性があります。 そのため、<xref:System.Collections.IEnumerator> メソッドによって返される <xref:System.Text.RegularExpressions.MatchCollection.GetEnumerator%2A?displayProperty=fullName> オブジェクトを使用してコレクションにアクセスすることをお勧めします。 個々の言語には、コレクションの `For` インターフェイスをラップする構成体 \(Visual Basic の `Each``foreach` や C\# の <xref:System.Collections.IEnumerator> など\) が用意されています。  
+ <span data-ttu-id="bab47-196">既定では、<xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> メソッドを呼び出すと、遅延評価を使用して <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトに値が設定されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-196">By default, the call to the <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> method uses lazy evaluation to populate the <xref:System.Text.RegularExpressions.MatchCollection> object.</span></span> <span data-ttu-id="bab47-197">値の設定が完了しているコレクションを必要とするプロパティ (<xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> プロパティや <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> プロパティなど) にアクセスする場合は、パフォーマンスが低下する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bab47-197">Access to properties that require a fully populated collection, such as the <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> and <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> properties, may involve a performance penalty.</span></span> <span data-ttu-id="bab47-198">そのため、<xref:System.Collections.IEnumerator> メソッドによって返される <xref:System.Text.RegularExpressions.MatchCollection.GetEnumerator%2A?displayProperty=nameWithType> オブジェクトを使用してコレクションにアクセスすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="bab47-198">As a result, we recommend that you access the collection by using the <xref:System.Collections.IEnumerator> object that is returned by the <xref:System.Text.RegularExpressions.MatchCollection.GetEnumerator%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="bab47-199">個々 の言語など、コンス トラクターを提供`For``Each`Visual Basic では、 `foreach` C# の場合、ラップするコレクションの<xref:System.Collections.IEnumerator>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="bab47-199">Individual languages provide constructs, such as `For``Each` in Visual Basic and `foreach` in C#, that wrap the collection's <xref:System.Collections.IEnumerator> interface.</span></span>  
   
- 次の例では、<xref:System.Text.RegularExpressions.Regex.Matches%28System.String%29?displayProperty=fullName> メソッドを使用して、入力文字列の中で見つかったすべての一致を <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトに設定します。 この例では、コレクションを列挙して一致文字列を文字列配列にコピーし、文字位置を整数配列に記録します。  
+ <span data-ttu-id="bab47-200">次の例では、<xref:System.Text.RegularExpressions.Regex.Matches%28System.String%29?displayProperty=nameWithType> メソッドを使用して、入力文字列の中で見つかったすべての一致を <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトに設定します。</span><span class="sxs-lookup"><span data-stu-id="bab47-200">The following example uses the <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%29?displayProperty=nameWithType> method to populate a <xref:System.Text.RegularExpressions.MatchCollection> object with all the matches found in an input string.</span></span> <span data-ttu-id="bab47-201">この例では、コレクションを列挙して一致文字列を文字列配列にコピーし、文字位置を整数配列に記録します。</span><span class="sxs-lookup"><span data-stu-id="bab47-201">The example enumerates the collection, copies the matches to a string array, and records the character positions in an integer array.</span></span>  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/matchcollection1.cs#6)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/matchcollection1.vb#6)]  
   
 <a name="the_match"></a>   
-### Match  
- <xref:System.Text.RegularExpressions.Match> クラスは、1 回の正規表現検索に一致した結果を表します。<xref:System.Text.RegularExpressions.Match> オブジェクトには 2 つの方法でアクセスできます。  
+### <a name="the-match"></a><span data-ttu-id="bab47-202">Match</span><span class="sxs-lookup"><span data-stu-id="bab47-202">The Match</span></span>  
+ <span data-ttu-id="bab47-203"><xref:System.Text.RegularExpressions.Match> クラスは、1 回の正規表現検索に一致した結果を表します。</span><span class="sxs-lookup"><span data-stu-id="bab47-203">The <xref:System.Text.RegularExpressions.Match> class represents the result of a single regular expression match.</span></span> <span data-ttu-id="bab47-204"><xref:System.Text.RegularExpressions.Match> オブジェクトには 2 つの方法でアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="bab47-204">You can access <xref:System.Text.RegularExpressions.Match> objects in two ways:</span></span>  
   
--   <xref:System.Text.RegularExpressions.MatchCollection> メソッドから返される <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=fullName> オブジェクトから取得する。 個々の <xref:System.Text.RegularExpressions.Match> オブジェクトを取得するには、`foreach` 構成体 \(C\# の場合\) または `For Each`...`Next` 構成体 \(Visual Basic の場合\) を使用してコレクションを反復処理するか、<xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=fullName> プロパティを使用してインデックスまたは名前で特定の <xref:System.Text.RegularExpressions.Match> オブジェクトを取得します。 また、0 からコレクションのオブジェクト数より 1 小さい値までの範囲のインデックスでコレクションを反復処理して、コレクションから個々の <xref:System.Text.RegularExpressions.Match> オブジェクトを取得することもできます。 ただし、このメソッドは <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=fullName> プロパティにアクセスするので、遅延評価を活用できません。  
+-   <span data-ttu-id="bab47-205"><xref:System.Text.RegularExpressions.MatchCollection> メソッドから返される <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> オブジェクトから取得する。</span><span class="sxs-lookup"><span data-stu-id="bab47-205">By retrieving them from the <xref:System.Text.RegularExpressions.MatchCollection> object that is returned by the <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="bab47-206">個々の <xref:System.Text.RegularExpressions.Match> オブジェクトを取得するには、`foreach` 構成体 (C# の場合) または `For Each`...`Next` 構成体 (Visual Basic の場合) を使用してコレクションを反復処理するか、<xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> プロパティを使用してインデックスまたは名前で特定の <xref:System.Text.RegularExpressions.Match> オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="bab47-206">To retrieve individual <xref:System.Text.RegularExpressions.Match> objects, iterate the collection by using a `foreach` (in C#) or `For Each`...`Next` (in Visual Basic) construct, or use the <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> property to retrieve a specific <xref:System.Text.RegularExpressions.Match> object either by index or by name.</span></span> <span data-ttu-id="bab47-207">また、0 からコレクションのオブジェクト数より 1 小さい値までの範囲のインデックスでコレクションを反復処理して、コレクションから個々の <xref:System.Text.RegularExpressions.Match> オブジェクトを取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="bab47-207">You can also retrieve individual <xref:System.Text.RegularExpressions.Match> objects from the collection by iterating the collection by index, from zero to one less that the number of objects in the collection.</span></span> <span data-ttu-id="bab47-208">ただし、このメソッドは <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> プロパティにアクセスするので、遅延評価を活用できません。</span><span class="sxs-lookup"><span data-stu-id="bab47-208">However, this method does not take advantage of lazy evaluation, because it accesses the <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> property.</span></span>  
   
-     次の例では、<xref:System.Text.RegularExpressions.Match> 構成体または <xref:System.Text.RegularExpressions.MatchCollection>...`foreach` 構成体を使用してコレクションを反復処理することで、個々の `For Each` オブジェクトを `Next` オブジェクトから取得します。 この正規表現は、単純に入力文字列内の文字列 "abc" と一致します。  
+     <span data-ttu-id="bab47-209">次の例では、<xref:System.Text.RegularExpressions.Match> 構成体または <xref:System.Text.RegularExpressions.MatchCollection>...`foreach` 構成体を使用してコレクションを反復処理することで、個々の `For Each` オブジェクトを `Next` オブジェクトから取得します。</span><span class="sxs-lookup"><span data-stu-id="bab47-209">The following example retrieves individual <xref:System.Text.RegularExpressions.Match> objects from a <xref:System.Text.RegularExpressions.MatchCollection> object by iterating the collection using the `foreach` or `For Each`...`Next` construct.</span></span> <span data-ttu-id="bab47-210">この正規表現は、単純に入力文字列内の文字列 "abc" と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-210">The regular expression simply matches the string "abc" in the input string.</span></span>  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/match2.cs#7)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/match2.vb#7)]  
   
--   文字列または文字列の一部で最初に一致する文字列を表す <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=fullName> オブジェクトを返す <xref:System.Text.RegularExpressions.Match> メソッドを呼び出す。`Match.Success` プロパティの値を取得すると、一致文字列が見つかったかどうかを確認できます。 後続の一致する文字列を表す <xref:System.Text.RegularExpressions.Match> オブジェクトを取得するには、返された <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=fullName> オブジェクトの `Success` プロパティが <xref:System.Text.RegularExpressions.Match> になるまで `false` メソッドを繰り返し呼び出します。  
+-   <span data-ttu-id="bab47-211">文字列または文字列の一部で最初に一致する文字列を表す <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> オブジェクトを返す <xref:System.Text.RegularExpressions.Match> メソッドを呼び出す。</span><span class="sxs-lookup"><span data-stu-id="bab47-211">By calling the <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> method, which returns a <xref:System.Text.RegularExpressions.Match> object that represents the first match in a string or a portion of a string.</span></span> <span data-ttu-id="bab47-212">`Match.Success` プロパティの値を取得すると、一致文字列が見つかったかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="bab47-212">You can determine whether the match has been found by retrieving the value of the `Match.Success` property.</span></span> <span data-ttu-id="bab47-213">後続の一致する文字列を表す <xref:System.Text.RegularExpressions.Match> オブジェクトを取得するには、返された <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> オブジェクトの `Success` プロパティが <xref:System.Text.RegularExpressions.Match> になるまで `false` メソッドを繰り返し呼び出します。</span><span class="sxs-lookup"><span data-stu-id="bab47-213">To retrieve <xref:System.Text.RegularExpressions.Match> objects that represent subsequent matches, call the <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> method repeatedly, until the `Success` property of the returned <xref:System.Text.RegularExpressions.Match> object is `false`.</span></span>  
   
-     次の例では、入力文字列内の文字列 "abc" と一致する <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=fullName> メソッドと <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=fullName> メソッドを使用します。  
+     <span data-ttu-id="bab47-214">次の例では、入力文字列内の文字列 "abc" と一致する <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=nameWithType> メソッドと <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="bab47-214">The following example uses the <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=nameWithType> and <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> methods to match the string "abc" in the input string.</span></span>  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/match3.cs#8)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/match3.vb#8)]  
   
- <xref:System.Text.RegularExpressions.Match> クラスの 2 つのプロパティによってコレクション オブジェクトが返されます。  
+ <span data-ttu-id="bab47-215">
+          <xref:System.Text.RegularExpressions.Match> クラスの 2 つのプロパティによってコレクション オブジェクトが返されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-215">Two properties of the <xref:System.Text.RegularExpressions.Match> class return collection objects:</span></span>  
   
--   <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=fullName> プロパティは、正規表現パターンのキャプチャ グループに一致する部分文字列の情報を含む <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトを返します。  
+-   <span data-ttu-id="bab47-216"><xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> プロパティは、正規表現パターンのキャプチャ グループに一致する部分文字列の情報を含む <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-216">The <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> property returns a <xref:System.Text.RegularExpressions.GroupCollection> object that contains information about the substrings that match capturing groups in the regular expression pattern.</span></span>  
   
--   `Match.Captures` プロパティは、用途が限定された <xref:System.Text.RegularExpressions.CaptureCollection> オブジェクトを返します。<xref:System.Text.RegularExpressions.Match> オブジェクトの `Success` プロパティが `false` の場合、コレクションに値は設定されません。 それ以外の場合は、<xref:System.Text.RegularExpressions.Capture> オブジェクトと同じ情報を含む単一の <xref:System.Text.RegularExpressions.Match> オブジェクトが格納されます。  
+-   <span data-ttu-id="bab47-217">`Match.Captures` プロパティは、用途が限定された <xref:System.Text.RegularExpressions.CaptureCollection> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-217">The `Match.Captures` property returns a <xref:System.Text.RegularExpressions.CaptureCollection> object that is of limited use.</span></span> <span data-ttu-id="bab47-218"><xref:System.Text.RegularExpressions.Match> オブジェクトの `Success` プロパティが `false` の場合、コレクションに値は設定されません。</span><span class="sxs-lookup"><span data-stu-id="bab47-218">The collection is not populated for a <xref:System.Text.RegularExpressions.Match> object whose `Success` property is `false`.</span></span> <span data-ttu-id="bab47-219">それ以外の場合は、<xref:System.Text.RegularExpressions.Capture> オブジェクトと同じ情報を含む単一の <xref:System.Text.RegularExpressions.Match> オブジェクトが格納されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-219">Otherwise, it contains a single <xref:System.Text.RegularExpressions.Capture> object that has the same information as the <xref:System.Text.RegularExpressions.Match> object.</span></span>  
   
- これらのオブジェクトの詳細については、このトピックで後述する「[GroupCollection](#GroupCollection)」および「[CaptureCollection](#CaptureCollection)」を参照してください。  
+ <span data-ttu-id="bab47-220">これらのオブジェクトの詳細については、このトピックで後述する「[GroupCollection](#GroupCollection)」および「[CaptureCollection](#CaptureCollection)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="bab47-220">For more information about these objects, see the [The Group Collection](#GroupCollection) and [The Capture Collection](#CaptureCollection) sections later in this topic.</span></span>  
   
- <xref:System.Text.RegularExpressions.Match> クラスの 2 つの追加プロパティに、一致文字列の情報が保持されます。`Match.Value` プロパティは、正規表現パターンに一致する入力文字列内の部分文字列を返します。`Match.Index` プロパティは、入力文字列内の一致する文字列の 0 から始まる開始位置を返します。  
+ <span data-ttu-id="bab47-221"><xref:System.Text.RegularExpressions.Match> クラスの 2 つの追加プロパティに、一致文字列の情報が保持されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-221">Two additional properties of the <xref:System.Text.RegularExpressions.Match> class provide information about the match.</span></span> <span data-ttu-id="bab47-222">`Match.Value` プロパティは、正規表現パターンに一致する入力文字列内の部分文字列を返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-222">The `Match.Value` property returns the substring in the input string that matches the regular expression pattern.</span></span> <span data-ttu-id="bab47-223">`Match.Index` プロパティは、入力文字列内の一致する文字列の 0 から始まる開始位置を返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-223">The `Match.Index` property returns the zero-based starting position of the matched string in the input string.</span></span>  
   
- <xref:System.Text.RegularExpressions.Match> クラスには、2 つのパターン一致メソッドもあります。  
+ <span data-ttu-id="bab47-224"><xref:System.Text.RegularExpressions.Match> クラスには、2 つのパターン一致メソッドもあります。</span><span class="sxs-lookup"><span data-stu-id="bab47-224">The <xref:System.Text.RegularExpressions.Match> class also has two pattern-matching methods:</span></span>  
   
--   <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=fullName> メソッドは、現在の <xref:System.Text.RegularExpressions.Match> オブジェクトで表される一致文字列の後の一致文字列を検索し、その一致文字列を表す <xref:System.Text.RegularExpressions.Match> オブジェクトを返します。  
+-   <span data-ttu-id="bab47-225"><xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> メソッドは、現在の <xref:System.Text.RegularExpressions.Match> オブジェクトで表される一致文字列の後の一致文字列を検索し、その一致文字列を表す <xref:System.Text.RegularExpressions.Match> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-225">The <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> method finds the match after the match represented by the current <xref:System.Text.RegularExpressions.Match> object, and returns a <xref:System.Text.RegularExpressions.Match> object that represents that match.</span></span>  
   
--   <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=fullName> メソッドは、一致した文字列に対して指定された置換操作を実行し、その結果を返します。  
+-   <span data-ttu-id="bab47-226"><xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> メソッドは、一致した文字列に対して指定された置換操作を実行し、その結果を返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-226">The <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method performs a specified replacement operation on the matched string and returns the result.</span></span>  
   
- 次の例では、<xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=fullName> メソッドを使用して、2 桁の小数部を含むすべての数値の前に $ 記号および空白を付加します。  
+ <span data-ttu-id="bab47-227">次の例では、<xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> メソッドを使用して、2 桁の小数部を含むすべての数値の前に $ 記号および空白を付加します。</span><span class="sxs-lookup"><span data-stu-id="bab47-227">The following example uses the <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method to prepend a $ symbol and a space before every number that includes two fractional digits.</span></span>  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/result1.cs#9)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/result1.vb#9)]  
   
- 正規表現パターン `\b\d+(,\d{3})*\.\d{2}\b` は、次の表に示すように定義されています。  
+ <span data-ttu-id="bab47-228">正規表現パターン `\b\d+(,\d{3})*\.\d{2}\b` は、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="bab47-228">The regular expression pattern `\b\d+(,\d{3})*\.\d{2}\b` is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`\d+`|1 個以上の 10 進数と一致します。|  
-|`(,\d{3})*`|コンマの後に 3 桁の 10 進数字が続くパターンの 0 回以上の出現と一致します。|  
-|`\.`|小数点文字と一致します。|  
-|`\d{2}`|2 桁の 10 進数と一致します。|  
-|`\b`|ワード境界で照合を終了します。|  
+|<span data-ttu-id="bab47-229">パターン</span><span class="sxs-lookup"><span data-stu-id="bab47-229">Pattern</span></span>|<span data-ttu-id="bab47-230">説明</span><span class="sxs-lookup"><span data-stu-id="bab47-230">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="bab47-231">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="bab47-231">Begin the match at a word boundary.</span></span>|  
+|`\d+`|<span data-ttu-id="bab47-232">1 個以上の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-232">Match one or more decimal digits.</span></span>|  
+|`(,\d{3})*`|<span data-ttu-id="bab47-233">コンマの後に 3 桁の 10 進数字が続くパターンの 0 回以上の出現と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-233">Match zero or more occurrences of a comma followed by three decimal digits.</span></span>|  
+|`\.`|<span data-ttu-id="bab47-234">小数点文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-234">Match the decimal point character.</span></span>|  
+|`\d{2}`|<span data-ttu-id="bab47-235">2 桁の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-235">Match two decimal digits.</span></span>|  
+|`\b`|<span data-ttu-id="bab47-236">ワード境界で照合を終了します。</span><span class="sxs-lookup"><span data-stu-id="bab47-236">End the match at a word boundary.</span></span>|  
   
- 置換パターン `$$ $&` は、一致した部分文字列がドル記号 \($\) \(`$$` パターン\)、空白、および一致文字列の値 \(`$&` パターン\) に置き換えられることを示します。  
+ <span data-ttu-id="bab47-237">置換パターン `$$ $&` は、一致した部分文字列がドル記号 ($) (`$$` パターン)、空白、および一致文字列の値 (`$&` パターン) に置き換えられることを示します。</span><span class="sxs-lookup"><span data-stu-id="bab47-237">The replacement pattern `$$ $&` indicates that the matched substring should be replaced by a dollar sign ($) symbol (the `$$` pattern), a space, and the value of the match (the `$&` pattern).</span></span>  
   
- [ページのトップへ](#introduction)  
+ [<span data-ttu-id="bab47-238">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="bab47-238">Back to top</span></span>](#introduction)  
   
 <a name="GroupCollection"></a>   
-## GroupCollection  
- <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=fullName> プロパティは、単一の一致でキャプチャされたグループを表す <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトを含む <xref:System.Text.RegularExpressions.Group> オブジェクトを返します。 コレクション内の最初の <xref:System.Text.RegularExpressions.Group> オブジェクト \(インデックス 0 の位置にあるオブジェクト\) は、一致した文字列全体を表します。 後続の各オブジェクトは、1 つのキャプチャ グループによるキャプチャの結果を表します。  
+## <a name="the-group-collection"></a><span data-ttu-id="bab47-239">GroupCollection</span><span class="sxs-lookup"><span data-stu-id="bab47-239">The Group Collection</span></span>  
+ <span data-ttu-id="bab47-240"><xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> プロパティは、単一の一致でキャプチャされたグループを表す <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトを含む <xref:System.Text.RegularExpressions.Group> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="bab47-240">The <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> property returns a <xref:System.Text.RegularExpressions.GroupCollection> object that contains <xref:System.Text.RegularExpressions.Group> objects that represent captured groups in a single match.</span></span> <span data-ttu-id="bab47-241">コレクション内の最初の <xref:System.Text.RegularExpressions.Group> オブジェクト (インデックス 0 の位置にあるオブジェクト) は、一致した文字列全体を表します。</span><span class="sxs-lookup"><span data-stu-id="bab47-241">The first <xref:System.Text.RegularExpressions.Group> object in the collection (at index 0) represents the entire match.</span></span> <span data-ttu-id="bab47-242">後続の各オブジェクトは、1 つのキャプチャ グループによるキャプチャの結果を表します。</span><span class="sxs-lookup"><span data-stu-id="bab47-242">Each object that follows represents the results of a single capturing group.</span></span>  
   
- コレクション内の個々の <xref:System.Text.RegularExpressions.Group> オブジェクトを取得するには、<xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=fullName> プロパティを使用します。 名前のないグループはコレクション内の順序位置で取得でき、名前付きグループは名前または順序位置で取得できます。 名前のないキャプチャはコレクションの最初に位置し、正規表現パターンで定義されている順序で左から右にインデックスが付けられます。 名前付きキャプチャは、名前のないキャプチャの後に、正規表現パターンで定義されている順序で左から右にインデックスが付けられます。 特定の正規表現一致メソッドで返されたコレクションで使用可能な番号付きグループを判別するには、インスタンス <xref:System.Text.RegularExpressions.Regex.GetGroupNumbers%2A?displayProperty=fullName> メソッドを呼び出すことができます。 コレクションで使用可能な名前付きグループを判別するには、インスタンス <xref:System.Text.RegularExpressions.Regex.GetGroupNames%2A?displayProperty=fullName> メソッドを呼び出すことができます。 どちらのメソッドも、正規表現によって検出された一致を分析する汎用ルーチンで特に役立ちます。  
+ <span data-ttu-id="bab47-243">コレクション内の個々の <xref:System.Text.RegularExpressions.Group> オブジェクトを取得するには、<xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType> プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="bab47-243">You can retrieve individual <xref:System.Text.RegularExpressions.Group> objects in the collection by using the <xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="bab47-244">名前のないグループはコレクション内の順序位置で取得でき、名前付きグループは名前または順序位置で取得できます。</span><span class="sxs-lookup"><span data-stu-id="bab47-244">You can retrieve unnamed groups by their ordinal position in the collection, and retrieve named groups either by name or by ordinal position.</span></span> <span data-ttu-id="bab47-245">名前のないキャプチャはコレクションの最初に位置し、正規表現パターンで定義されている順序で左から右にインデックスが付けられます。</span><span class="sxs-lookup"><span data-stu-id="bab47-245">Unnamed captures appear first in the collection, and are indexed from left to right in the order in which they appear in the regular expression pattern.</span></span> <span data-ttu-id="bab47-246">名前付きキャプチャは、名前のないキャプチャの後に、正規表現パターンで定義されている順序で左から右にインデックスが付けられます。</span><span class="sxs-lookup"><span data-stu-id="bab47-246">Named captures are indexed after unnamed captures, from left to right in the order in which they appear in the regular expression pattern.</span></span> <span data-ttu-id="bab47-247">特定の正規表現一致メソッドで返されたコレクションで使用可能な番号付きグループを判別するには、インスタンス <xref:System.Text.RegularExpressions.Regex.GetGroupNumbers%2A?displayProperty=nameWithType> メソッドを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="bab47-247">To determine what numbered groups are available in the collection returned for a particular regular expression matching method, you can call the instance <xref:System.Text.RegularExpressions.Regex.GetGroupNumbers%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="bab47-248">コレクションで使用可能な名前付きグループを判別するには、インスタンス <xref:System.Text.RegularExpressions.Regex.GetGroupNames%2A?displayProperty=nameWithType> メソッドを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="bab47-248">To determine what named groups are available in the collection, you can call the instance <xref:System.Text.RegularExpressions.Regex.GetGroupNames%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="bab47-249">どちらのメソッドも、正規表現によって検出された一致を分析する汎用ルーチンで特に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="bab47-249">Both methods are particularly useful in general-purpose routines that analyze the matches found by any regular expression.</span></span>  
   
- <xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=fullName> プロパティは、コレクションのインデクサー \(C\# の場合\) およびコレクション オブジェクトの既定のプロパティ \(Visual Basic の場合\) です。 つまり、個々の <xref:System.Text.RegularExpressions.Group> オブジェクトには、次のようにインデックスで \(または名前付きグループの場合は名前で\) アクセスできます。  
+ <span data-ttu-id="bab47-250"><xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType> プロパティは、コレクションのインデクサー (C# の場合) およびコレクション オブジェクトの既定のプロパティ (Visual Basic の場合) です。</span><span class="sxs-lookup"><span data-stu-id="bab47-250">The <xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType> property is the indexer of the collection in C# and the collection object's default property in Visual Basic.</span></span> <span data-ttu-id="bab47-251">つまり、個々の <xref:System.Text.RegularExpressions.Group> オブジェクトには、次のようにインデックスで (または名前付きグループの場合は名前で) アクセスできます。</span><span class="sxs-lookup"><span data-stu-id="bab47-251">This means that individual <xref:System.Text.RegularExpressions.Group> objects can be accessed by index (or by name, in the case of named groups) as follows:</span></span>  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/groupsyntax1.cs#13)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/groupsyntax1.vb#13)]  
   
- 次の例では、グループ化構成体を使用して日付の月、日、および年をキャプチャする正規表現を定義します。  
+ <span data-ttu-id="bab47-252">次の例では、グループ化構成体を使用して日付の月、日、および年をキャプチャする正規表現を定義します。</span><span class="sxs-lookup"><span data-stu-id="bab47-252">The following example defines a regular expression that uses grouping constructs to capture the month, day, and year of a date.</span></span>  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/groupcollection1.cs#10)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/groupcollection1.vb#10)]  
   
- 正規表現パターン `\b(\w+)\s(\d{1,2}),\s(\d{4})\b` は、次の表に示すように定義されています。  
+ <span data-ttu-id="bab47-253">正規表現パターン `\b(\w+)\s(\d{1,2}),\s(\d{4})\b` は、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="bab47-253">The regular expression pattern `\b(\w+)\s(\d{1,2}),\s(\d{4})\b` is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`(\w+)`|1 つ以上の単語文字に一致します。 これが最初のキャプチャ グループです。|  
-|`\s`|空白文字と一致します。|  
-|`(\d{1,2})`|1 桁または 2 桁の 10 進数と一致します。 これが 2 番目のキャプチャ グループです。|  
-|`,`|コンマに一致します。|  
-|`\s`|空白文字と一致します。|  
-|`(\d{4})`|4 桁の 10 進数と一致します。 これが 3 番目のキャプチャ グループです。|  
-|`\b`|ワード境界で照合を終了します。|  
+|<span data-ttu-id="bab47-254">パターン</span><span class="sxs-lookup"><span data-stu-id="bab47-254">Pattern</span></span>|<span data-ttu-id="bab47-255">説明</span><span class="sxs-lookup"><span data-stu-id="bab47-255">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="bab47-256">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="bab47-256">Begin the match at a word boundary.</span></span>|  
+|`(\w+)`|<span data-ttu-id="bab47-257">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-257">Match one or more word characters.</span></span> <span data-ttu-id="bab47-258">これが最初のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="bab47-258">This is the first capturing group.</span></span>|  
+|`\s`|<span data-ttu-id="bab47-259">空白文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-259">Match a white-space character.</span></span>|  
+|`(\d{1,2})`|<span data-ttu-id="bab47-260">1 桁または 2 桁の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-260">Match one or two decimal digits.</span></span> <span data-ttu-id="bab47-261">これが 2 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="bab47-261">This is the second capturing group.</span></span>|  
+|`,`|<span data-ttu-id="bab47-262">コンマに一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-262">Match a comma.</span></span>|  
+|`\s`|<span data-ttu-id="bab47-263">空白文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-263">Match a white-space character.</span></span>|  
+|`(\d{4})`|<span data-ttu-id="bab47-264">4 桁の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-264">Match four decimal digits.</span></span> <span data-ttu-id="bab47-265">これが 3 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="bab47-265">This is the third capturing group.</span></span>|  
+|`\b`|<span data-ttu-id="bab47-266">ワード境界で照合を終了します。</span><span class="sxs-lookup"><span data-stu-id="bab47-266">End the match on a word boundary.</span></span>|  
   
- [ページのトップへ](#introduction)  
+ [<span data-ttu-id="bab47-267">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="bab47-267">Back to top</span></span>](#introduction)  
   
 <a name="the_captured_group"></a>   
-## キャプチャ グループ  
- <xref:System.Text.RegularExpressions.Group> クラスは、1 つのキャプチャ グループによるキャプチャの結果を表します。 正規表現で定義されているキャプチャ グループを表すグループ オブジェクトは、<xref:System.Text.RegularExpressions.GroupCollection.Item%2A> プロパティによって返される <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトの <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=fullName> プロパティによって返されます。<xref:System.Text.RegularExpressions.GroupCollection.Item%2A> プロパティは、<xref:System.Text.RegularExpressions.Group> クラスのインデクサー \(C\# の場合\) および既定のプロパティ \(Visual Basic の場合\) です。`foreach` 構成体または `For``Each` 構成体を使用してコレクションを反復処理することで、個々のメンバーを取得することもできます。 例については、前のセクションを参照してください。  
+## <a name="the-captured-group"></a><span data-ttu-id="bab47-268">キャプチャ グループ</span><span class="sxs-lookup"><span data-stu-id="bab47-268">The Captured Group</span></span>  
+ <span data-ttu-id="bab47-269"><xref:System.Text.RegularExpressions.Group> クラスは、1 つのキャプチャ グループによるキャプチャの結果を表します。</span><span class="sxs-lookup"><span data-stu-id="bab47-269">The <xref:System.Text.RegularExpressions.Group> class represents the result from a single capturing group.</span></span> <span data-ttu-id="bab47-270">正規表現で定義されているキャプチャ グループを表すグループ オブジェクトは、<xref:System.Text.RegularExpressions.GroupCollection.Item%2A> プロパティによって返される <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトの <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> プロパティによって返されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-270">Group objects that represent the capturing groups defined in a regular expression are returned by the <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> property of the <xref:System.Text.RegularExpressions.GroupCollection> object returned by the <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="bab47-271"><xref:System.Text.RegularExpressions.GroupCollection.Item%2A> プロパティは、<xref:System.Text.RegularExpressions.Group> クラスのインデクサー (C# の場合) および既定のプロパティ (Visual Basic の場合) です。</span><span class="sxs-lookup"><span data-stu-id="bab47-271">The <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> property is the indexer (in C#) and the default property (in Visual Basic) of the <xref:System.Text.RegularExpressions.Group> class.</span></span> <span data-ttu-id="bab47-272">使用してコレクションを反復処理して、個々 のメンバーを取得することも、`foreach`または`For``Each`を構築します。</span><span class="sxs-lookup"><span data-stu-id="bab47-272">You can also retrieve individual members by iterating the collection using the `foreach` or `For``Each` construct.</span></span> <span data-ttu-id="bab47-273">例については、前のセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="bab47-273">For an example, see the previous section.</span></span>  
   
- 次の例では、入れ子にしたグループ化構成体を使用して部分文字列をキャプチャし、グループ化します。 正規表現パターン `(a(b))c` は、文字列 "abc" と一致します。 部分文字列 "ab" を最初のキャプチャ グループに代入し、部分文字列 "b" を 2 番目のキャプチャ グループに代入します。  
+ <span data-ttu-id="bab47-274">次の例では、入れ子にしたグループ化構成体を使用して部分文字列をキャプチャし、グループ化します。</span><span class="sxs-lookup"><span data-stu-id="bab47-274">The following example uses nested grouping constructs to capture substrings into groups.</span></span> <span data-ttu-id="bab47-275">正規表現パターン `(a(b))c` は、文字列 "abc" と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-275">The regular expression pattern `(a(b))c` matches the string "abc".</span></span> <span data-ttu-id="bab47-276">部分文字列 "ab" を最初のキャプチャ グループに代入し、部分文字列 "b" を 2 番目のキャプチャ グループに代入します。</span><span class="sxs-lookup"><span data-stu-id="bab47-276">It assigns the substring "ab" to the first capturing group, and the substring "b" to the second capturing group.</span></span>  
   
  [!code-csharp[RegularExpressions.Classes#6](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Classes/cs/Example.cs#6)]
  [!code-vb[RegularExpressions.Classes#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Classes/vb/Example.vb#6)]  
   
- 次の例では、名前付きグループ化構成体を使用して、"DATANAME:VALUE" 形式のデータを含む文字列から部分文字列をキャプチャします。この正規表現は、コロン \(:\) でデータを分割します。  
+ <span data-ttu-id="bab47-277">次の例では、名前付きグループ化構成体を使用して、"DATANAME:VALUE" 形式のデータを含む文字列から部分文字列をキャプチャします。この正規表現は、コロン (:) でデータを分割します。</span><span class="sxs-lookup"><span data-stu-id="bab47-277">The following example uses named grouping constructs to capture substrings from a string that contains data in the format "DATANAME:VALUE", which the regular expression splits at the colon (:).</span></span>  
   
  [!code-csharp[RegularExpressions.Classes#8](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Classes/cs/Example.cs#8)]
  [!code-vb[RegularExpressions.Classes#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Classes/vb/Example.vb#8)]  
   
- 正規表現パターン `^(?<name>\w+):(?<value>\w+)` は、次の表に示すように定義されています。  
+ <span data-ttu-id="bab47-278">正規表現パターン `^(?<name>\w+):(?<value>\w+)` は、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="bab47-278">The regular expression pattern `^(?<name>\w+):(?<value>\w+)` is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`^`|入力文字列の先頭から照合を開始します。|  
-|`(?<name>\w+)`|1 つ以上の単語文字に一致します。 このキャプチャ グループの名前は `name` です。|  
-|`:`|コロンと一致します。|  
-|`(?<value>\w+)`|1 つ以上の単語文字に一致します。 このキャプチャ グループの名前は `value` です。|  
+|<span data-ttu-id="bab47-279">パターン</span><span class="sxs-lookup"><span data-stu-id="bab47-279">Pattern</span></span>|<span data-ttu-id="bab47-280">説明</span><span class="sxs-lookup"><span data-stu-id="bab47-280">Description</span></span>|  
+|-------------|-----------------|  
+|`^`|<span data-ttu-id="bab47-281">入力文字列の先頭から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="bab47-281">Begin the match at the beginning of the input string.</span></span>|  
+|`(?<name>\w+)`|<span data-ttu-id="bab47-282">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-282">Match one or more word characters.</span></span> <span data-ttu-id="bab47-283">このキャプチャ グループの名前は `name` です。</span><span class="sxs-lookup"><span data-stu-id="bab47-283">The name of this capturing group is `name`.</span></span>|  
+|`:`|<span data-ttu-id="bab47-284">コロンと一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-284">Match a colon.</span></span>|  
+|`(?<value>\w+)`|<span data-ttu-id="bab47-285">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-285">Match one or more word characters.</span></span> <span data-ttu-id="bab47-286">このキャプチャ グループの名前は `value` です。</span><span class="sxs-lookup"><span data-stu-id="bab47-286">The name of this capturing group is `value`.</span></span>|  
   
- <xref:System.Text.RegularExpressions.Group> クラスのプロパティには、キャプチャ グループの情報が保持されます。キャプチャされた部分文字列が `Group.Value` プロパティに含まれ、キャプチャ グループの入力テキスト内での開始位置が `Group.Index` プロパティによって示され、キャプチャされたテキストの長さが `Group.Length` プロパティに含まれ、部分文字列がキャプチャ グループによって定義されたパターンと一致したかどうかが `Group.Success` プロパティによって示されます。  
+ <span data-ttu-id="bab47-287">
+          <xref:System.Text.RegularExpressions.Group> クラスのプロパティには、キャプチャ グループの情報が保持されます。キャプチャされた部分文字列が `Group.Value` プロパティに含まれ、キャプチャ グループの入力テキスト内での開始位置が `Group.Index` プロパティによって示され、キャプチャされたテキストの長さが `Group.Length` プロパティに含まれ、部分文字列がキャプチャ グループによって定義されたパターンと一致したかどうかが `Group.Success` プロパティによって示されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-287">The properties of the <xref:System.Text.RegularExpressions.Group> class provide information about the captured group: The `Group.Value` property contains the captured substring, the `Group.Index` property indicates the starting position of the captured group in the input text, the `Group.Length` property contains the length of the captured text, and the `Group.Success` property indicates whether a substring matched the pattern defined by the capturing group.</span></span>  
   
- 量指定子をグループに適用する場合 \(詳細については、「[限定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)」を参照\)、キャプチャ グループごとに 1 つのキャプチャという関係が 2 つの方法で変更されます。  
+ <span data-ttu-id="bab47-288">量指定子をグループに適用する (詳細については、次を参照してください。[量指定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)) キャプチャ グループ 2 つの方法にあたり 1 つのキャプチャとの関係を変更。</span><span class="sxs-lookup"><span data-stu-id="bab47-288">Applying quantifiers to a group (for more information, see [Quantifiers](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)) modifies the relationship of one capture per capturing group in two ways:</span></span>  
   
--   `*` 量指定子または `*?` 量指定子 \(0 回以上の一致を指定する\) をグループに適用した場合、キャプチャ グループには入力文字列で一致した文字列が含まれない可能性があります。 キャプチャされたテキストがない場合、<xref:System.Text.RegularExpressions.Group> オブジェクトのプロパティは次の表に示すように設定されます。  
+-   <span data-ttu-id="bab47-289">
+          `*` 量指定子または `*?` 量指定子 (0 回以上の一致を指定する) をグループに適用した場合、キャプチャ グループには入力文字列で一致した文字列が含まれない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bab47-289">If the `*` or `*?` quantifier (which specifies zero or more matches) is applied to a group, a capturing group may not have a match in the input string.</span></span> <span data-ttu-id="bab47-290">キャプチャされたテキストがない場合、<xref:System.Text.RegularExpressions.Group> オブジェクトのプロパティは次の表に示すように設定されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-290">When there is no captured text, the properties of the <xref:System.Text.RegularExpressions.Group> object are set as shown in the following table.</span></span>  
   
-    |Group プロパティ|値|  
-    |-----------------|-------|  
+    |<span data-ttu-id="bab47-291">Group プロパティ</span><span class="sxs-lookup"><span data-stu-id="bab47-291">Group property</span></span>|<span data-ttu-id="bab47-292">値</span><span class="sxs-lookup"><span data-stu-id="bab47-292">Value</span></span>|  
+    |--------------------|-----------|  
     |`Success`|`false`|  
-    |`Value`|<xref:System.String.Empty?displayProperty=fullName>|  
-    |`Length`|0|  
+    |`Value`|<xref:System.String.Empty?displayProperty=nameWithType>|  
+    |`Length`|<span data-ttu-id="bab47-293">0</span><span class="sxs-lookup"><span data-stu-id="bab47-293">0</span></span>|  
   
-     具体的な例を次に示します。 正規表現パターン `aaa(bbb)*ccc` では、最初のキャプチャ グループ \(部分文字列 "bbb"\) は 0 回以上一致できます。 入力文字列 "aaaccc" はパターンに一致するので、キャプチャ グループには一致文字列が含まれません。  
+     <span data-ttu-id="bab47-294">具体的な例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="bab47-294">The following example provides an illustration.</span></span> <span data-ttu-id="bab47-295">正規表現パターン `aaa(bbb)*ccc` では、最初のキャプチャ グループ (部分文字列 "bbb") は 0 回以上一致できます。</span><span class="sxs-lookup"><span data-stu-id="bab47-295">In the regular expression pattern `aaa(bbb)*ccc`, the first capturing group (the substring "bbb") can be matched zero or more times.</span></span> <span data-ttu-id="bab47-296">入力文字列 "aaaccc" はパターンに一致するので、キャプチャ グループには一致文字列が含まれません。</span><span class="sxs-lookup"><span data-stu-id="bab47-296">Because the input string "aaaccc" matches the pattern, the capturing group does not have a match.</span></span>  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/nocapture1.cs#11)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/nocapture1.vb#11)]  
   
--   量指定子は、キャプチャ グループによって定義されたパターンの複数回の出現と一致できます。 この場合、`Value` オブジェクトの `Length` プロパティと <xref:System.Text.RegularExpressions.Group> プロパティには、最後にキャプチャされた部分文字列の情報のみが保持されます。 たとえば、次の正規表現は、ピリオドで終わる 1 文と一致します。 この正規表現では 2 つのグループ化構成体が使用されています。最初のグループ化構成体は個々の単語および空白文字をキャプチャし、2 番目のグループ化構成体は個々の単語をキャプチャします。 この例の出力結果が示すように、正規表現では文全体が正常にキャプチャされますが、2 番目のキャプチャ グループでは最後の単語のみがキャプチャされます。  
+-   <span data-ttu-id="bab47-297">量指定子は、キャプチャ グループによって定義されたパターンの複数回の出現と一致できます。</span><span class="sxs-lookup"><span data-stu-id="bab47-297">Quantifiers can match multiple occurrences of a pattern that is defined by a capturing group.</span></span> <span data-ttu-id="bab47-298">この場合、`Value` オブジェクトの `Length` プロパティと <xref:System.Text.RegularExpressions.Group> プロパティには、最後にキャプチャされた部分文字列の情報のみが保持されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-298">In this case, the `Value` and `Length` properties of a <xref:System.Text.RegularExpressions.Group> object contain information only about the last captured substring.</span></span> <span data-ttu-id="bab47-299">たとえば、次の正規表現は、ピリオドで終わる 1 文と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-299">For example, the following regular expression matches a single sentence that ends in a period.</span></span> <span data-ttu-id="bab47-300">この正規表現では 2 つのグループ化構成体が使用されています。最初のグループ化構成体は個々の単語および空白文字をキャプチャし、2 番目のグループ化構成体は個々の単語をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="bab47-300">It uses two grouping constructs: The first captures individual words along with a white-space character; the second captures individual words.</span></span> <span data-ttu-id="bab47-301">この例の出力結果が示すように、正規表現では文全体が正常にキャプチャされますが、2 番目のキャプチャ グループでは最後の単語のみがキャプチャされます。</span><span class="sxs-lookup"><span data-stu-id="bab47-301">As the output from the example shows, although the regular expression succeeds in capturing an entire sentence, the second capturing group captures only the last word.</span></span>  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/lastcapture1.cs#12)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/lastcapture1.vb#12)]  
   
- [ページのトップへ](#introduction)  
+ [<span data-ttu-id="bab47-302">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="bab47-302">Back to top</span></span>](#introduction)  
   
 <a name="CaptureCollection"></a>   
-## CaptureCollection  
- <xref:System.Text.RegularExpressions.Group> オブジェクトには、最後のキャプチャの情報のみが格納されます。 ただし、キャプチャ グループによって行われたキャプチャのセット全体は、<xref:System.Text.RegularExpressions.CaptureCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=fullName> オブジェクトから取得できます。 コレクションの各メンバーは、キャプチャ グループによって行われたキャプチャを表す <xref:System.Text.RegularExpressions.Capture> オブジェクトです。キャプチャされた順序 \(したがって、キャプチャされた文字列が左から右に入力文字列と照合された順序\) で並びます。 コレクション内の個々の <xref:System.Text.RegularExpressions.Capture> オブジェクトは、次のいずれかの方法で取得できます。  
+## <a name="the-capture-collection"></a><span data-ttu-id="bab47-303">CaptureCollection</span><span class="sxs-lookup"><span data-stu-id="bab47-303">The Capture Collection</span></span>  
+ <span data-ttu-id="bab47-304"><xref:System.Text.RegularExpressions.Group> オブジェクトには、最後のキャプチャの情報のみが格納されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-304">The <xref:System.Text.RegularExpressions.Group> object contains information only about the last capture.</span></span> <span data-ttu-id="bab47-305">ただし、キャプチャ グループによって行われたキャプチャのセット全体は、<xref:System.Text.RegularExpressions.CaptureCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> オブジェクトから取得できます。</span><span class="sxs-lookup"><span data-stu-id="bab47-305">However, the entire set of captures made by a capturing group is still available from the <xref:System.Text.RegularExpressions.CaptureCollection> object that is returned by the <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="bab47-306">コレクションの各メンバーは、キャプチャ グループによって行われたキャプチャを表す <xref:System.Text.RegularExpressions.Capture> オブジェクトです。キャプチャされた順序 (したがって、キャプチャされた文字列が左から右に入力文字列と照合された順序) で並びます。</span><span class="sxs-lookup"><span data-stu-id="bab47-306">Each member of the collection is a <xref:System.Text.RegularExpressions.Capture> object that represents a capture made by that capturing group, in the order in which they were captured (and, therefore, in the order in which the captured strings were matched from left to right in the input string).</span></span> <span data-ttu-id="bab47-307">コレクション内の個々の <xref:System.Text.RegularExpressions.Capture> オブジェクトは、次のいずれかの方法で取得できます。</span><span class="sxs-lookup"><span data-stu-id="bab47-307">You can retrieve individual <xref:System.Text.RegularExpressions.Capture> objects from the collection in either of two ways:</span></span>  
   
--   `foreach` \(C\# の場合\) や `For``Each` \(Visual Basic の場合\) などの構成体を使用してコレクションを反復処理する。  
+-   <span data-ttu-id="bab47-308">`foreach` (C# の場合) や `For``Each` (Visual Basic の場合) などの構成体を使用してコレクションを反復処理する。</span><span class="sxs-lookup"><span data-stu-id="bab47-308">By iterating through the collection using a construct such as `foreach` (in C#) or `For``Each` (in Visual Basic).</span></span>  
   
--   <xref:System.Text.RegularExpressions.CaptureCollection.Item%2A?displayProperty=fullName> プロパティを使用して特定のオブジェクトをインデックスで取得する。<xref:System.Text.RegularExpressions.CaptureCollection.Item%2A> プロパティは、<xref:System.Text.RegularExpressions.CaptureCollection> オブジェクトの既定のプロパティ \(Visual Basic の場合\) またはインデクサー \(C\# の場合\) です。  
+-   <span data-ttu-id="bab47-309"><xref:System.Text.RegularExpressions.CaptureCollection.Item%2A?displayProperty=nameWithType> プロパティを使用して特定のオブジェクトをインデックスで取得する。</span><span class="sxs-lookup"><span data-stu-id="bab47-309">By using the <xref:System.Text.RegularExpressions.CaptureCollection.Item%2A?displayProperty=nameWithType> property to retrieve a specific object by index.</span></span> <span data-ttu-id="bab47-310"><xref:System.Text.RegularExpressions.CaptureCollection.Item%2A> プロパティは、<xref:System.Text.RegularExpressions.CaptureCollection> オブジェクトの既定のプロパティ (Visual Basic の場合) またはインデクサー (C# の場合) です。</span><span class="sxs-lookup"><span data-stu-id="bab47-310">The <xref:System.Text.RegularExpressions.CaptureCollection.Item%2A> property is the <xref:System.Text.RegularExpressions.CaptureCollection> object's default property (in Visual Basic) or indexer (in C#).</span></span>  
   
- 量指定子がキャプチャ グループに適用されない場合、<xref:System.Text.RegularExpressions.CaptureCollection> オブジェクトには <xref:System.Text.RegularExpressions.Capture> オブジェクトと同じ一致文字列の情報が保持されるので、関心の低い単一の <xref:System.Text.RegularExpressions.Group> オブジェクトが含まれます。 量指定子がキャプチャ グループに適用される場合、<xref:System.Text.RegularExpressions.CaptureCollection> オブジェクトにはキャプチャ グループによって行われたすべてのキャプチャが含まれ、コレクションの最後のメンバーは <xref:System.Text.RegularExpressions.Group> オブジェクトと同じキャプチャを表します。  
+ <span data-ttu-id="bab47-311">量指定子がキャプチャ グループに適用されない場合、<xref:System.Text.RegularExpressions.CaptureCollection> オブジェクトには <xref:System.Text.RegularExpressions.Capture> オブジェクトと同じ一致文字列の情報が保持されるので、関心の低い単一の <xref:System.Text.RegularExpressions.Group> オブジェクトが含まれます。</span><span class="sxs-lookup"><span data-stu-id="bab47-311">If a quantifier is not applied to a capturing group, the <xref:System.Text.RegularExpressions.CaptureCollection> object contains a single <xref:System.Text.RegularExpressions.Capture> object that is of little interest, because it provides information about the same match as its <xref:System.Text.RegularExpressions.Group> object.</span></span> <span data-ttu-id="bab47-312">量指定子がキャプチャ グループに適用される場合、<xref:System.Text.RegularExpressions.CaptureCollection> オブジェクトにはキャプチャ グループによって行われたすべてのキャプチャが含まれ、コレクションの最後のメンバーは <xref:System.Text.RegularExpressions.Group> オブジェクトと同じキャプチャを表します。</span><span class="sxs-lookup"><span data-stu-id="bab47-312">If a quantifier is applied to a capturing group, the <xref:System.Text.RegularExpressions.CaptureCollection> object contains all captures made by the capturing group, and the last member of the collection represents the same capture as the <xref:System.Text.RegularExpressions.Group> object.</span></span>  
   
- たとえば、正規表現パターン `((a(b))c)+` \(量指定子 \+ は 1 つ以上の文字列が一致することを指定\) を使用して文字列 "abcabcabc" から一致する文字列をキャプチャする場合、各 <xref:System.Text.RegularExpressions.CaptureCollection> オブジェクトの <xref:System.Text.RegularExpressions.Group> オブジェクトには、3 個のメンバーが含まれることになります。  
+ <span data-ttu-id="bab47-313">たとえば、正規表現パターン `((a(b))c)+` (量指定子 + は 1 つ以上の文字列が一致することを指定) を使用して文字列 "abcabcabc" から一致する文字列をキャプチャする場合、各 <xref:System.Text.RegularExpressions.CaptureCollection> オブジェクトの <xref:System.Text.RegularExpressions.Group> オブジェクトには、3 個のメンバーが含まれることになります。</span><span class="sxs-lookup"><span data-stu-id="bab47-313">For example, if you use the regular expression pattern `((a(b))c)+` (where the + quantifier specifies one or more matches) to capture matches from the string "abcabcabc", the <xref:System.Text.RegularExpressions.CaptureCollection> object for each <xref:System.Text.RegularExpressions.Group> object contains three members.</span></span>  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/capturecollection1.cs#14)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/capturecollection1.vb#14)]  
   
- 次の例では、正規表現 `(Abc)+` を使用して、文字列 "XYZAbcAbcAbcXYZAbcAb" の中から文字列 "Abc" の連続した出現を 1 つ以上検索します。 この例は、<xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=fullName> プロパティを使用して、キャプチャした部分文字列の複数のグループを返す方法を示しています。  
+ <span data-ttu-id="bab47-314">次の例では、正規表現 `(Abc)+` を使用して、文字列 "XYZAbcAbcAbcXYZAbcAb" の中から文字列 "Abc" の連続した出現を 1 つ以上検索します。</span><span class="sxs-lookup"><span data-stu-id="bab47-314">The following example uses the regular expression `(Abc)+` to find one or more consecutive runs of the string "Abc" in the string "XYZAbcAbcAbcXYZAbcAb".</span></span> <span data-ttu-id="bab47-315">この例は、<xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> プロパティを使用して、キャプチャした部分文字列の複数のグループを返す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="bab47-315">The example illustrates the use of the <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> property to return multiple groups of captured substrings.</span></span>  
   
  [!code-csharp[RegularExpressions.Classes#5](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Classes/cs/Example.cs#5)]
  [!code-vb[RegularExpressions.Classes#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Classes/vb/Example.vb#5)]  
   
- [ページのトップへ](#introduction)  
+ [<span data-ttu-id="bab47-316">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="bab47-316">Back to top</span></span>](#introduction)  
   
 <a name="the_individual_capture"></a>   
-## 個々のキャプチャ  
- <xref:System.Text.RegularExpressions.Capture> クラスには、単一の部分式キャプチャの結果が含まれます。 一致したテキストが <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=fullName> プロパティに含まれ、一致した部分文字列の入力文字列内での開始位置 \(起点を 0 とする\) が <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=fullName> プロパティによって示されます。  
+## <a name="the-individual-capture"></a><span data-ttu-id="bab47-317">個々のキャプチャ</span><span class="sxs-lookup"><span data-stu-id="bab47-317">The Individual Capture</span></span>  
+ <span data-ttu-id="bab47-318"><xref:System.Text.RegularExpressions.Capture> クラスには、単一の部分式キャプチャの結果が含まれます。</span><span class="sxs-lookup"><span data-stu-id="bab47-318">The <xref:System.Text.RegularExpressions.Capture> class contains the results from a single subexpression capture.</span></span> <span data-ttu-id="bab47-319">一致したテキストが <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType> プロパティに含まれ、一致した部分文字列の入力文字列内での開始位置 (起点を 0 とする) が <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType> プロパティによって示されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-319">The <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType> property contains the matched text, and the <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType> property indicates the zero-based position in the input string at which the matched substring begins.</span></span>  
   
- 次の例では、選択した都市の気温の入力文字列を解析します。 都市とその気温を区切るためにコンマ \(","\) が使用され、各都市のデータを区切るためにセミコロン \(";"\) が使用されています。 入力文字列全体が単一の一致を表します。 文字列の解析に使用される正規表現パターン `((\w+(\s\w+)*),(\d+);)+` では、都市名が 2 番目のキャプチャ グループに代入され、気温が 4 番目のキャプチャ グループに代入されます。  
+ <span data-ttu-id="bab47-320">次の例では、選択した都市の気温の入力文字列を解析します。</span><span class="sxs-lookup"><span data-stu-id="bab47-320">The following example parses an input string for the temperature of selected cities.</span></span> <span data-ttu-id="bab47-321">都市とその気温を区切るためにコンマ (",") が使用され、各都市のデータを区切るためにセミコロン (";") が使用されています。</span><span class="sxs-lookup"><span data-stu-id="bab47-321">A comma (",") is used to separate a city and its temperature, and a semicolon (";") is used to separate each city's data.</span></span> <span data-ttu-id="bab47-322">入力文字列全体が単一の一致を表します。</span><span class="sxs-lookup"><span data-stu-id="bab47-322">The entire input string represents a single match.</span></span> <span data-ttu-id="bab47-323">文字列の解析に使用される正規表現パターン `((\w+(\s\w+)*),(\d+);)+` では、都市名が 2 番目のキャプチャ グループに代入され、気温が 4 番目のキャプチャ グループに代入されます。</span><span class="sxs-lookup"><span data-stu-id="bab47-323">In the regular expression pattern `((\w+(\s\w+)*),(\d+);)+`, which is used to parse the string, the city name is assigned to the second capturing group, and the temperature is assigned to the fourth capturing group.</span></span>  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/capture1.cs#16)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/capture1.vb#16)]  
   
- 正規表現は、次の表に示すように定義されています。  
+ <span data-ttu-id="bab47-324">正規表現は、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="bab47-324">The regular expression is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\w+`|1 つ以上の単語文字に一致します。|  
-|`(\s\w+)*`|空白文字の後に 1 個以上の単語文字が続くパターンの 0 回以上の出現と一致します。 このパターンは、複数の単語で構成される都市名と一致します。 これが 3 番目のキャプチャ グループです。|  
-|`(\w+(\s\w+)*)`|1 個以上の単語文字の後に空白文字および 1 個以上の単語文字の 0 回以上の出現が続くパターンと一致します。 これが 2 番目のキャプチャ グループです。|  
-|`,`|コンマに一致します。|  
-|`(\d+)`|1 桁以上の数字と一致します。 これが 4 番目のキャプチャ グループです。|  
-|`;`|セミコロンと一致します。|  
-|`((\w+(\s\w+)*),(\d+);)+`|単語、追加の単語、コンマ、1 桁以上の数字、およびセミコロンが 1 回以上続くパターンと一致します。 これが最初のキャプチャ グループです。|  
+|<span data-ttu-id="bab47-325">パターン</span><span class="sxs-lookup"><span data-stu-id="bab47-325">Pattern</span></span>|<span data-ttu-id="bab47-326">説明</span><span class="sxs-lookup"><span data-stu-id="bab47-326">Description</span></span>|  
+|-------------|-----------------|  
+|`\w+`|<span data-ttu-id="bab47-327">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-327">Match one or more word characters.</span></span>|  
+|`(\s\w+)*`|<span data-ttu-id="bab47-328">空白文字の後に 1 個以上の単語文字が続くパターンの 0 回以上の出現と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-328">Match zero or more occurrences of a white-space character followed by one or more word characters.</span></span> <span data-ttu-id="bab47-329">このパターンは、複数の単語で構成される都市名と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-329">This pattern matches multi-word city names.</span></span> <span data-ttu-id="bab47-330">これが 3 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="bab47-330">This is the third capturing group.</span></span>|  
+|`(\w+(\s\w+)*)`|<span data-ttu-id="bab47-331">1 個以上の単語文字の後に空白文字および 1 個以上の単語文字の 0 回以上の出現が続くパターンと一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-331">Match one or more word characters followed by zero or more occurrences of a white-space character and one or more word characters.</span></span> <span data-ttu-id="bab47-332">これが 2 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="bab47-332">This is the second capturing group.</span></span>|  
+|`,`|<span data-ttu-id="bab47-333">コンマに一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-333">Match a comma.</span></span>|  
+|`(\d+)`|<span data-ttu-id="bab47-334">1 桁以上の数字と一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-334">Match one or more digits.</span></span> <span data-ttu-id="bab47-335">これが 4 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="bab47-335">This is the fourth capturing group.</span></span>|  
+|`;`|<span data-ttu-id="bab47-336">セミコロンと一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-336">Match a semicolon.</span></span>|  
+|`((\w+(\s\w+)*),(\d+);)+`|<span data-ttu-id="bab47-337">単語、追加の単語、コンマ、1 桁以上の数字、およびセミコロンが 1 回以上続くパターンと一致します。</span><span class="sxs-lookup"><span data-stu-id="bab47-337">Match the pattern of a word followed by any additional words followed by a comma, one or more digits, and a semicolon, one or more times.</span></span> <span data-ttu-id="bab47-338">これが最初のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="bab47-338">This is the first capturing group.</span></span>|  
   
-## 参照  
- <xref:System.Text.RegularExpressions>   
- [.NET Framework の正規表現](../../../docs/standard/base-types/regular-expressions.md)   
- [正規表現言語 \- クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+## <a name="see-also"></a><span data-ttu-id="bab47-339">関連項目</span><span class="sxs-lookup"><span data-stu-id="bab47-339">See Also</span></span>  
+ <xref:System.Text.RegularExpressions>  
+ [<span data-ttu-id="bab47-340">.NET の正規表現</span><span class="sxs-lookup"><span data-stu-id="bab47-340">.NET Regular Expressions</span></span>](../../../docs/standard/base-types/regular-expressions.md)  
+ [<span data-ttu-id="bab47-341">正規表現言語 - クイック リファレンス</span><span class="sxs-lookup"><span data-stu-id="bab47-341">Regular Expression Language - Quick Reference</span></span>](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

@@ -1,126 +1,132 @@
 ---
-title: ".NET Framework の正規表現 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - ".NET Framework 正規表現"
-  - ".NET Framework 正規表現, 概要"
-  - "文字 [.NET Framework], 正規表現"
-  - "解析 (正規表現を使用したテキストを)"
-  - "解析 (正規表現を使用したテキストを), 概要"
-  - "パターン一致 (正規表現を使用した)"
-  - "パターン一致 (正規表現を使用した), パターン一致の概要"
-  - "正規表現 [.NET Framework]"
-  - "正規表現 [.NET Framework], 正規表現の概要"
-  - "検索 (正規表現を使用した)"
-  - "検索 (正規表現を使用した), 正規表現の概要"
-  - "文字列 [.NET Framework], 正規表現"
-  - "部分文字列"
+title: ".NET Framework の正規表現"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- pattern-matching with regular expressions, about pattern-matching
+- substrings
+- searching with regular expressions, about regular expressions
+- pattern-matching with regular expressions
+- searching with regular expressions
+- parsing text with regular expressions
+- regular expressions [.NET Framework], about regular expressions
+- regular expressions [.NET Framework]
+- .NET Framework regular expressions, about
+- characters [.NET Framework], regular expressions
+- parsing text with regular expressions, overview
+- .NET Framework regular expressions
+- strings [.NET Framework], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
-caps.latest.revision: 24
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 24
+caps.latest.revision: "24"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: cb612d524f32eb4a97ac358d6deb8d2889ee5391
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# .NET Framework の正規表現
-正規表現を使用すると、強力、柔軟、そして効率的な方法でテキストを処理できます。  正規表現の広範なパターン一致表記法を使用することで、大量のテキストをすばやく解析して特定の文字パターンを検索したり、決められたパターン \(電子メール アドレスなど\) と照らしてテキストを検証したりできるほか、テキストの部分文字列を抽出、編集、置換、または削除したり、抽出した文字列をコレクションに追加してレポートを生成したりすることもできます。  文字列処理や大量のテキストを解析する多くのアプリケーションにとって、正規表現は欠くことのできないツールです。  
+# <a name="net-regular-expressions"></a><span data-ttu-id="1d8c4-102">.NET の正規表現</span><span class="sxs-lookup"><span data-stu-id="1d8c4-102">.NET Regular Expressions</span></span>
+<span data-ttu-id="1d8c4-103">正規表現を使用すると、強力、柔軟、そして効率的な方法でテキストを処理できます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-103">Regular expressions provide a powerful, flexible, and efficient method for processing text.</span></span> <span data-ttu-id="1d8c4-104">正規表現の広範なパターン一致表記法を使用することで、大量のテキストをすばやく解析して特定の文字パターンを検索したり、決められたパターン (電子メール アドレスなど) と照らしてテキストを検証したりできるほか、テキストの部分文字列を抽出、編集、置換、または削除したり、抽出した文字列をコレクションに追加してレポートを生成したりすることもできます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-104">The extensive pattern-matching notation of regular expressions enables you to quickly parse large amounts of text to find specific character patterns; to validate text to ensure that it matches a predefined pattern (such as an e-mail address); to extract, edit, replace, or delete text substrings; and to add the extracted strings to a collection in order to generate a report.</span></span> <span data-ttu-id="1d8c4-105">文字列処理や大量のテキストを解析する多くのアプリケーションにとって、正規表現は欠くことのできないツールです。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-105">For many applications that deal with strings or that parse large blocks of text, regular expressions are an indispensable tool.</span></span>  
   
-## 正規表現の動作  
- 正規表現を使ったテキスト処理の最も重要な部分は、.NET Framework の <xref:System.Text.RegularExpressions.Regex?displayProperty=fullName> オブジェクトによって表される正規表現エンジンです。  正規表現を使ったテキスト処理では、正規表現エンジンに対し、最低でも次の 2 つの情報を与える必要があります。  
+## <a name="how-regular-expressions-work"></a><span data-ttu-id="1d8c4-106">正規表現の動作</span><span class="sxs-lookup"><span data-stu-id="1d8c4-106">How Regular Expressions Work</span></span>  
+ <span data-ttu-id="1d8c4-107">正規表現を使ったテキスト処理の中心的な場所は、正規表現エンジンによって表される、 <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> .NET でのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-107">The centerpiece of text processing with regular expressions is the regular expression engine, which is represented by the <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> object in .NET.</span></span> <span data-ttu-id="1d8c4-108">正規表現を使ったテキスト処理では、正規表現エンジンに対し、最低でも次の 2 つの情報を与える必要があります。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-108">At a minimum, processing text using regular expressions requires that the regular expression engine be provided with the following two items of information:</span></span>  
   
--   テキストを識別する正規表現パターン。  
+-   <span data-ttu-id="1d8c4-109">テキストを識別する正規表現パターン。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-109">The regular expression pattern to identify in the text.</span></span>  
   
-     .NET Framework では、正規表現のパターンが特殊な構文または言語で定義されます。この構文または言語には、Perl 5 の正規表現と互換性があるほか、右から左への一致処理など、いくつかの機能が追加されています。  詳細については、「[正規表現言語 \- クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)」を参照してください。  
+     <span data-ttu-id="1d8c4-110">.NET では、正規表現のパターンが特殊な構文または言語で定義されます。この構文または言語には、Perl 5 の正規表現と互換性があるほか、右から左への一致処理など、いくつかの機能が追加されています。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-110">In .NET, regular expression patterns are defined by a special syntax or language, which is compatible with Perl 5 regular expressions and adds some additional features such as right-to-left matching.</span></span> <span data-ttu-id="1d8c4-111">詳細については、「[正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-111">For more information, see [Regular Expression Language - Quick Reference](../../../docs/standard/base-types/regular-expression-language-quick-reference.md).</span></span>  
   
--   正規表現パターンの解析対象となるテキスト。  
+-   <span data-ttu-id="1d8c4-112">正規表現パターンの解析対象となるテキスト。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-112">The text to parse for the regular expression pattern.</span></span>  
   
- <xref:System.Text.RegularExpressions.Regex> クラスのメソッドを使用すると、次のような処理を実行できます。  
+ <span data-ttu-id="1d8c4-113"><xref:System.Text.RegularExpressions.Regex> クラスのメソッドを使用すると、次のような処理を実行できます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-113">The methods of the <xref:System.Text.RegularExpressions.Regex> class let you perform the following operations:</span></span>  
   
--   入力されたテキストに特定の正規表現パターンが出現するかどうかを調べるには、<xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=fullName> メソッドを呼び出します。  テキストを検証するために <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> メソッドを使用する例については、「[方法 : 文字列が有効な電子メール形式であるかどうかを検証する](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md)」を参照してください。  
+-   <span data-ttu-id="1d8c4-114">入力されたテキストに特定の正規表現パターンが出現するかどうかを調べるには、<xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-114">Determine whether the regular expression pattern occurs in the input text by calling the <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="1d8c4-115">使用する例については、 <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> 、テキストを検証するためのメソッドを参照してください[する方法: 文字列が有効な電子メール形式であることを確認](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md)です。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-115">For an example that uses the <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> method for validating text, see [How to: Verify that Strings Are in Valid Email Format](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).</span></span>  
   
--   正規表現パターンと一致したテキストを 1 つまたは全部取得するには、<xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=fullName> メソッドまたは <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=fullName> メソッドを呼び出します。  前者は、一致したテキストの情報を保持する <xref:System.Text.RegularExpressions.Match?displayProperty=fullName> オブジェクトを返します。  後者は、解析対象のテキストに見つかった各一致につき 1 つの <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトを含む <xref:System.Text.RegularExpressions.Match?displayProperty=fullName> オブジェクトを返します。  
+-   <span data-ttu-id="1d8c4-116">正規表現パターンと一致したテキストを 1 つまたは全部取得するには、<xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> メソッドまたは <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-116">Retrieve one or all occurrences of text that matches the regular expression pattern by calling the <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> or <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="1d8c4-117">前者は、一致したテキストの情報を保持する <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-117">The former method returns a <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType> object that provides information about the matching text.</span></span> <span data-ttu-id="1d8c4-118">後者は、解析対象のテキストに見つかった各一致につき 1 つの <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトを含む <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-118">The latter returns a <xref:System.Text.RegularExpressions.MatchCollection> object that contains one <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType> object for each match found in the parsed text.</span></span>  
   
--   正規表現パターンと一致したテキストを置換するには、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=fullName> メソッドを呼び出します。  <xref:System.Text.RegularExpressions.Regex.Replace%2A> メソッドを使用して日付形式を変更したり文字列から無効な文字を削除したりする例については、「[方法 : 文字列から無効な文字を取り除く](../../../docs/standard/base-types/how-to-strip-invalid-characters-from-a-string.md)」および「[例 : 日付形式の変更](../../../docs/standard/base-types/regular-expression-example-changing-date-formats.md)」を参照してください。  
+-   <span data-ttu-id="1d8c4-119">正規表現パターンと一致したテキストを置換するには、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-119">Replace text that matches the regular expression pattern by calling the <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="1d8c4-120">使用する例について、<xref:System.Text.RegularExpressions.Regex.Replace%2A>日付形式を変更し、文字列から無効な文字を削除する方法を確認する[する方法: 文字列から無効な文字をストリップ](../../../docs/standard/base-types/how-to-strip-invalid-characters-from-a-string.md)と[例:日付形式を変更する](../../../docs/standard/base-types/regular-expression-example-changing-date-formats.md).</span><span class="sxs-lookup"><span data-stu-id="1d8c4-120">For examples that use the <xref:System.Text.RegularExpressions.Regex.Replace%2A> method to change date formats and remove invalid characters from a string, see [How to: Strip Invalid Characters from a String](../../../docs/standard/base-types/how-to-strip-invalid-characters-from-a-string.md) and [Example: Changing Date Formats](../../../docs/standard/base-types/regular-expression-example-changing-date-formats.md).</span></span>  
   
- 正規表現のオブジェクト モデルの概要については、「[正規表現のオブジェクト モデル](../../../docs/standard/base-types/the-regular-expression-object-model.md)」を参照してください。  
+ <span data-ttu-id="1d8c4-121">正規表現のオブジェクト モデルの概要については、「[正規表現のオブジェクト モデル](../../../docs/standard/base-types/the-regular-expression-object-model.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-121">For an overview of the regular expression object model, see [The Regular Expression Object Model](../../../docs/standard/base-types/the-regular-expression-object-model.md).</span></span>  
   
- 正規表現の言語の詳細については、「[正規表現言語 \- クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)」を参照するか、次の資料のいずれかをダウンロードして印刷してください。  
+ <span data-ttu-id="1d8c4-122">正規表現言語の詳細については、次を参照してください。[正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)またはダウンロードして、次の資料のいずれかを印刷します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-122">For more information about the regular expression language, see [Regular Expression Language - Quick Reference](../../../docs/standard/base-types/regular-expression-language-quick-reference.md) or download and print one of these brochures:</span></span>  
   
- [Quick Reference: Word \(.docx\) 形式](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)   
- [Quick Reference: PDF \(.pdf\) 形式](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
+ [<span data-ttu-id="1d8c4-123">Word (.docx) 形式でのクイック リファレンス</span><span class="sxs-lookup"><span data-stu-id="1d8c4-123">Quick Reference in Word (.docx) format</span></span>](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
+ [<span data-ttu-id="1d8c4-124">PDF (.pdf) 形式でのクイック リファレンス</span><span class="sxs-lookup"><span data-stu-id="1d8c4-124">Quick Reference in PDF (.pdf) format</span></span>](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
   
-## 正規表現の例  
- <xref:System.String> クラスには、文字列内のリテラル文字列を検索する際に使用できる文字列の検索メソッドと置換メソッドが数多く含まれています。  正規表現は、次の例に示すように、文字列内の部分文字列のいずれかを検索する場合、または文字列内のパターンを識別する場合に最も役立ちます。  
+## <a name="regular-expression-examples"></a><span data-ttu-id="1d8c4-125">正規表現の例</span><span class="sxs-lookup"><span data-stu-id="1d8c4-125">Regular Expression Examples</span></span>  
+ <span data-ttu-id="1d8c4-126"><xref:System.String> クラスには、文字列内のリテラル文字列を検索する際に使用できる文字列の検索メソッドと置換メソッドが数多く含まれています。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-126">The <xref:System.String> class includes a number of string search and replacement methods that you can use when you want to locate literal strings in a larger string.</span></span> <span data-ttu-id="1d8c4-127">正規表現は、次の例に示すように、文字列内の部分文字列のいずれかを検索する場合、または文字列内のパターンを識別する場合に最も役立ちます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-127">Regular expressions are most useful either when you want to locate one of several substrings in a larger string, or when you want to identify patterns in a string, as the following examples illustrate.</span></span>  
   
-### 例 1: 部分文字列の置換  
- 氏名に敬称 \(Mr.、Mrs.、Miss、または Ms.\) が付いている場合がある名前が、宛先リストに含まれるとします。  そのリストから封筒のラベルを生成する場合に敬称が含まれないようにするには、次の例に示すように、正規表現を使用して敬称を削除します。  
+### <a name="example-1-replacing-substrings"></a><span data-ttu-id="1d8c4-128">例 1: 部分文字列の置換</span><span class="sxs-lookup"><span data-stu-id="1d8c4-128">Example 1: Replacing Substrings</span></span>  
+ <span data-ttu-id="1d8c4-129">氏名に敬称 (Mr.、Mrs.、Miss、または Ms.) が付いている場合がある名前が、宛先リストに含まれるとします。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-129">Assume that a mailing list contains names that sometimes include a title (Mr., Mrs., Miss, or Ms.) along with a first and last name.</span></span> <span data-ttu-id="1d8c4-130">そのリストから封筒のラベルを生成する場合に敬称が含まれないようにするには、次の例に示すように、正規表現を使用して敬称を削除します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-130">If you do not want to include the titles when you generate envelope labels from the list, you can use a regular expression to remove the titles, as the following example illustrates.</span></span>  
   
  [!code-csharp[Conceptual.Regex#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex/cs/example1.cs#2)]
  [!code-vb[Conceptual.Regex#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex/vb/example1.vb#2)]  
   
- 正規表現パターン `(Mr\.? |Mrs\.? |Miss |Ms\.? )` は、"Mr "、"Mr."  、"Mrs "、"Mrs.  "、"Miss "、"Ms"、または "Ms." の出現と一致します。  からドラッグします。  <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=fullName> メソッドを呼び出すと、一致する文字列が <xref:System.String.Empty?displayProperty=fullName> に置き換えられます。つまり、元の文字列から削除されます。  
+ <span data-ttu-id="1d8c4-131">正規表現パターン`(Mr\.? |Mrs\.? |Miss |Ms\.? )`"Mr"、「mr.」、"Mrs"、「mrs.」、"Miss"、"Ms または"Ms."の任意の項目を検索します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-131">The regular expression pattern`(Mr\.? |Mrs\.? |Miss |Ms\.? )` matches any occurrence of "Mr ", "Mr. ", "Mrs ", "Mrs. ", "Miss ", "Ms or "Ms. ".</span></span> <span data-ttu-id="1d8c4-132"><xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドを呼び出すと、一致する文字列が <xref:System.String.Empty?displayProperty=nameWithType> に置き換えられます。つまり、元の文字列から削除されます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-132">The call to the <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> method replaces the matched string with <xref:System.String.Empty?displayProperty=nameWithType>; in other words, it removes it from the original string.</span></span>  
   
-### 例 2: 重複する単語の識別  
- 記述者が単語を誤って重複入力するというエラーがよくあります。  次の例に示すように、正規表現を使用して重複する単語を識別できます。  
+### <a name="example-2-identifying-duplicated-words"></a><span data-ttu-id="1d8c4-133">例 2: 重複する単語の識別</span><span class="sxs-lookup"><span data-stu-id="1d8c4-133">Example 2: Identifying Duplicated Words</span></span>  
+ <span data-ttu-id="1d8c4-134">記述者が単語を誤って重複入力するというエラーがよくあります。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-134">Accidentally duplicating words is a common error that writers make.</span></span> <span data-ttu-id="1d8c4-135">次の例に示すように、正規表現を使用して重複する単語を識別できます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-135">A regular expression can be used to identify duplicated words, as the following example shows.</span></span>  
   
  [!code-csharp[Conceptual.Regex#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex/cs/example2.cs#3)]
  [!code-vb[Conceptual.Regex#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex/vb/example2.vb#3)]  
   
- 正規表現パターン `\b(\w+?)\s\1\b` は、次のように解釈できます。  
+ <span data-ttu-id="1d8c4-136">正規表現パターン `\b(\w+?)\s\1\b` は、次のように解釈できます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-136">The regular expression pattern `\b(\w+?)\s\1\b` can be interpreted as follows:</span></span>  
   
 |||  
 |-|-|  
-|`\b`|ワード境界から開始します。|  
-|\(\\w\+?\)|1 つ以上 \(ただし、できるだけ少ない文字数\) の単語文字と一致します。  同時に、`\1` というグループを形成します。|  
-|`\s`|空白文字と一致します。|  
-|`\1`|`\1` という名前のグループと等しい部分文字列と一致します。|  
-|`\b`|ワード境界に一致します。|  
+|`\b`|<span data-ttu-id="1d8c4-137">ワード境界から開始します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-137">Start at a word boundary.</span></span>|  
+|<span data-ttu-id="1d8c4-138">(\w+?)</span><span class="sxs-lookup"><span data-stu-id="1d8c4-138">(\w+?)</span></span>|<span data-ttu-id="1d8c4-139">1 つ以上 (ただし、できるだけ少ない文字数) の単語文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-139">Match one or more word characters, but as few characters as possible.</span></span> <span data-ttu-id="1d8c4-140">同時に、`\1` というグループを形成します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-140">Together, they form a group that can be referred to as `\1`.</span></span>|  
+|`\s`|<span data-ttu-id="1d8c4-141">空白文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-141">Match a white-space character.</span></span>|  
+|`\1`|<span data-ttu-id="1d8c4-142">`\1` という名前のグループと等しい部分文字列と一致します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-142">Match the substring that is equal to the group named `\1`.</span></span>|  
+|`\b`|<span data-ttu-id="1d8c4-143">ワード境界に一致します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-143">Match a word boundary.</span></span>|  
   
- <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=fullName> メソッドは、正規表現オプションを <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> に設定して呼び出されます。  したがって、照合操作では大文字と小文字が区別されず、この例では部分文字列 "This this" が重複として識別されます。  
+ <span data-ttu-id="1d8c4-144"><xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> メソッドは、正規表現オプションを <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> に設定して呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-144">The <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> method is called with regular expression options set to <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>.</span></span> <span data-ttu-id="1d8c4-145">したがって、照合操作では大文字と小文字が区別されず、この例では部分文字列 "This this" が重複として識別されます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-145">Therefore, the match operation is case-insensitive, and the example identifies the substring "This this" as a duplication.</span></span>  
   
- 入力文字列には部分文字列 "this?  This" が含まれています。  ただし、句読点が介在するので、重複として識別されません。  
+ <span data-ttu-id="1d8c4-146">入力文字列には部分文字列 "this?</span><span class="sxs-lookup"><span data-stu-id="1d8c4-146">Note that the input string includes the substring "this?</span></span> <span data-ttu-id="1d8c4-147">This" が含まれています。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-147">This".</span></span> <span data-ttu-id="1d8c4-148">ただし、句読点が介在するので、重複として識別されません。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-148">However, because of the intervening punctuation mark, it is not identified as a duplication.</span></span>  
   
-### 例 3: カルチャに依存した正規表現の動的な構築  
- ここでは、正規表現による強力なテキスト処理と、.NET Framework の柔軟なグローバリゼーション機能とを組み合わせて使用する例を紹介します。  この例では、システムの現在のカルチャで用いられている通貨値の形式を調べるために、<xref:System.Globalization.NumberFormatInfo> オブジェクトが使用されています。  さらに、その情報を基に、テキストから通貨値を抽出する正規表現を動的に構築します。  検出された一致ごとに、数値文字列のみを含んだサブグループを抽出し、<xref:System.Decimal> 値に変換して、通算の合計を計算します。  
+### <a name="example-3-dynamically-building-a-culture-sensitive-regular-expression"></a><span data-ttu-id="1d8c4-149">例 3: カルチャに依存した正規表現の動的な構築</span><span class="sxs-lookup"><span data-stu-id="1d8c4-149">Example 3: Dynamically Building a Culture-Sensitive Regular Expression</span></span>  
+ <span data-ttu-id="1d8c4-150">ここでは、正規表現による強力なテキスト処理と、.NET の柔軟なグローバリゼーション機能を組み合わせて使用する例を紹介します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-150">The following example illustrates the power of regular expressions combined with the flexibility offered by .NET's globalization features.</span></span> <span data-ttu-id="1d8c4-151">この例では、システムの現在のカルチャで用いられている通貨値の形式を調べるために、<xref:System.Globalization.NumberFormatInfo> オブジェクトが使用されています。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-151">It uses the <xref:System.Globalization.NumberFormatInfo> object to determine the format of currency values in the system's current culture.</span></span> <span data-ttu-id="1d8c4-152">さらに、その情報を基に、テキストから通貨値を抽出する正規表現を動的に構築します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-152">It then uses that information to dynamically construct a regular expression that extracts currency values from the text.</span></span> <span data-ttu-id="1d8c4-153">検出された一致ごとに、数値文字列のみを含んだサブグループを抽出し、<xref:System.Decimal> 値に変換して、通算の合計を計算します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-153">For each match, it extracts the subgroup that contains the numeric string only, converts it to a <xref:System.Decimal> value, and calculates a running total.</span></span>  
   
  [!code-csharp[Conceptual.Regex#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex/cs/example.cs#1)]
  [!code-vb[Conceptual.Regex#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex/vb/example.vb#1)]  
   
- 現在 "英語 \- 米国" \(en\-US\) カルチャが使用されているコンピューターでは、`\$\s*[-+]?([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)` という正規表現が動的に作成されます。  この正規表現パターンは、次のように解釈できます。  
+ <span data-ttu-id="1d8c4-154">現在 "英語 - 米国" (en-US) カルチャが使用されているコンピューターでは、`\$\s*[-+]?([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)` という正規表現が動的に作成されます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-154">On a computer whose current culture is English - United States (en-US), the example dynamically builds the regular expression `\$\s*[-+]?([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)`.</span></span> <span data-ttu-id="1d8c4-155">この正規表現パターンは、次のように解釈できます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-155">This regular expression pattern can be interpreted as follows:</span></span>  
   
 |||  
 |-|-|  
-|`\$`|入力文字列に含まれる単一のドル記号 \($\) を検索します。  この正規表現パターン文字列に使用されている円記号は、ドル記号を正規表現のアンカーではなく、文字として扱うことを意味します。  ドル記号 \($\) を単独で指定した場合、正規表現エンジンは、比較の開始位置を文字列の終端に設定します。 現在のカルチャの通貨記号が正規表現記号として解釈されるのを防ぐため、この例では、<xref:System.Text.RegularExpressions.Regex.Escape%2A> メソッドを呼び出して文字をエスケープしています。|  
-|`\s*`|空白文字の 0 回以上の繰り返しを検索します。|  
-|`[-+]?`|正の符号または負の符号の 0 回または 1 回の繰り返しを検索します。|  
-|`([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)`|外側の丸かっこで囲まれている表現は、キャプチャ グループまたは部分式として定義されます。  一致が見つかった場合、その一致した文字列の、この部分に関する情報が、<xref:System.Text.RegularExpressions.Group> プロパティから返された <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトの 2 つ目の <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=fullName> オブジェクトから取得できます   \(コレクションの 1 つ目の要素は、一致した文字列全体を表します\)。|  
-|`[0-9]{0,3}`|10 進数字 \(0 ～ 9\) の 0 回以上、3 回以下の繰り返しを検索します。|  
-|`(,[0-9]{3})*`|桁区切り記号と 3 桁の 10 進数字の 0 回以上の繰り返しを検索します。|  
-|`\.`|単一の小数点を検索します。|  
-|`[0-9]+`|10 進数字の 1 回以上の繰り返しを検索します。|  
-|`(\.[0-9]+)?`|小数点と 1 桁以上の数字の 0 回または 1 回の繰り返しを検索します。|  
+|`\$`|<span data-ttu-id="1d8c4-156">入力文字列に含まれる単一のドル記号 ($) を検索します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-156">Look for a single occurrence of the dollar symbol ($) in the input string.</span></span> <span data-ttu-id="1d8c4-157">この正規表現パターン文字列に使用されている円記号は、ドル記号を正規表現のアンカーではなく、文字として扱うことを意味します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-157">The regular expression pattern string includes a backslash to indicate that the dollar symbol is to be interpreted literally rather than as a regular expression anchor.</span></span> <span data-ttu-id="1d8c4-158">ドル記号 ($) を単独で指定した場合、正規表現エンジンは、比較の開始位置を文字列の終端に設定します。現在のカルチャの通貨記号が正規表現記号として解釈されるのを防ぐため、この例では、<xref:System.Text.RegularExpressions.Regex.Escape%2A> メソッドを呼び出して文字をエスケープしています。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-158">(The $ symbol alone would indicate that the regular expression engine should try to begin its match at the end of a string.) To ensure that the current culture's currency symbol is not misinterpreted as a regular expression symbol, the example calls the <xref:System.Text.RegularExpressions.Regex.Escape%2A> method to escape the character.</span></span>|  
+|`\s*`|<span data-ttu-id="1d8c4-159">空白文字の 0 回以上の繰り返しを検索します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-159">Look for zero or more occurrences of a white-space character.</span></span>|  
+|`[-+]?`|<span data-ttu-id="1d8c4-160">正の符号または負の符号の 0 回または 1 回の繰り返しを検索します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-160">Look for zero or one occurrence of either a positive sign or a negative sign.</span></span>|  
+|`([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)`|<span data-ttu-id="1d8c4-161">外側の丸かっこで囲まれている表現は、キャプチャ グループまたは部分式として定義されます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-161">The outer parentheses around this expression define it as a capturing group or a subexpression.</span></span> <span data-ttu-id="1d8c4-162">一致が見つかった場合、その一致した文字列の、この部分に関する情報が、<xref:System.Text.RegularExpressions.Group> プロパティから返された <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトの 2 つ目の <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> オブジェクトから取得できます </span><span class="sxs-lookup"><span data-stu-id="1d8c4-162">If a match is found, information about this part of the matching string can be retrieved from the second <xref:System.Text.RegularExpressions.Group> object in the <xref:System.Text.RegularExpressions.GroupCollection> object returned by the <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="1d8c4-163">(コレクションの 1 つ目の要素は、一致した文字列全体を表します)。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-163">(The first element in the collection represents the entire match.)</span></span>|  
+|`[0-9]{0,3}`|<span data-ttu-id="1d8c4-164">10 進数字 (0 ～ 9) の 0 回以上、3 回以下の繰り返しを検索します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-164">Look for zero to three occurrences of the decimal digits 0 through 9.</span></span>|  
+|`(,[0-9]{3})*`|<span data-ttu-id="1d8c4-165">桁区切り記号と 3 桁の 10 進数字の 0 回以上の繰り返しを検索します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-165">Look for zero or more occurrences of a group separator followed by three decimal digits.</span></span>|  
+|`\.`|<span data-ttu-id="1d8c4-166">単一の小数点を検索します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-166">Look for a single occurrence of the decimal separator.</span></span>|  
+|`[0-9]+`|<span data-ttu-id="1d8c4-167">10 進数字の 1 回以上の繰り返しを検索します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-167">Look for one or more decimal digits.</span></span>|  
+|`(\.[0-9]+)?`|<span data-ttu-id="1d8c4-168">小数点と 1 桁以上の数字の 0 回または 1 回の繰り返しを検索します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-168">Look for zero or one occurrence of the decimal separator followed by at least one decimal digit.</span></span>|  
   
- 以上の各サブパターンが入力文字列内に見つかると一致と判断され、その一致に関する情報を含んだ <xref:System.Text.RegularExpressions.Match> オブジェクトが <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトに追加されます。  
+ <span data-ttu-id="1d8c4-169">以上の各サブパターンが入力文字列内に見つかると一致と判断され、その一致に関する情報を含んだ <xref:System.Text.RegularExpressions.Match> オブジェクトが <xref:System.Text.RegularExpressions.MatchCollection> オブジェクトに追加されます。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-169">If each of these subpatterns is found in the input string, the match succeeds, and a <xref:System.Text.RegularExpressions.Match> object that contains information about the match is added to the <xref:System.Text.RegularExpressions.MatchCollection> object.</span></span>  
   
-## 関連トピック  
+## <a name="related-topics"></a><span data-ttu-id="1d8c4-170">関連トピック</span><span class="sxs-lookup"><span data-stu-id="1d8c4-170">Related Topics</span></span>  
   
-|タイトル|説明|  
-|----------|--------|  
-|[正規表現言語 \- クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|正規表現を定義するために使う一連の文字、演算子、および構成体について説明します。|  
-|[正規表現のオブジェクト モデル](../../../docs/standard/base-types/the-regular-expression-object-model.md)|正規表現クラスの使用方法について詳しく説明し、コード例を示します。|  
-|[正規表現の動作の詳細](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|.NET Framework 正規表現の機能と動作について説明します。|  
-|[正規表現の例](../../../docs/standard/base-types/regular-expression-examples.md)|正規表現の一般的な使用方法を示すコード例が用意されています。|  
+|<span data-ttu-id="1d8c4-171">タイトル</span><span class="sxs-lookup"><span data-stu-id="1d8c4-171">Title</span></span>|<span data-ttu-id="1d8c4-172">説明</span><span class="sxs-lookup"><span data-stu-id="1d8c4-172">Description</span></span>|  
+|-----------|-----------------|  
+|[<span data-ttu-id="1d8c4-173">正規表現言語 - クイック リファレンス</span><span class="sxs-lookup"><span data-stu-id="1d8c4-173">Regular Expression Language - Quick Reference</span></span>](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|<span data-ttu-id="1d8c4-174">正規表現を定義するために使う一連の文字、演算子、および構成体について説明します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-174">Provides information on the set of characters, operators, and constructs that you can use to define regular expressions.</span></span>|  
+|[<span data-ttu-id="1d8c4-175">正規表現のオブジェクト モデル</span><span class="sxs-lookup"><span data-stu-id="1d8c4-175">The Regular Expression Object Model</span></span>](../../../docs/standard/base-types/the-regular-expression-object-model.md)|<span data-ttu-id="1d8c4-176">正規表現クラスの使用方法について詳しく説明し、コード例を示します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-176">Provides information and code examples that illustrate how to use the regular expression classes.</span></span>|  
+|[<span data-ttu-id="1d8c4-177">正規表現の動作の詳細</span><span class="sxs-lookup"><span data-stu-id="1d8c4-177">Details of Regular Expression Behavior</span></span>](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|<span data-ttu-id="1d8c4-178">.NET の正規表現の動作と機能についてを説明します。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-178">Provides information about the capabilities and behavior of .NET regular expressions.</span></span>|  
+|[<span data-ttu-id="1d8c4-179">正規表現の例</span><span class="sxs-lookup"><span data-stu-id="1d8c4-179">Regular Expression Examples</span></span>](../../../docs/standard/base-types/regular-expression-examples.md)|<span data-ttu-id="1d8c4-180">正規表現の一般的な使用方法を示すコード例が用意されています。</span><span class="sxs-lookup"><span data-stu-id="1d8c4-180">Provides code examples that illustrate typical uses of regular expressions.</span></span>|  
   
-## 参照  
- <xref:System.Text.RegularExpressions?displayProperty=fullName>   
- <xref:System.Text.RegularExpressions.Regex?displayProperty=fullName>  
- [Regular Expressions \- Quick Reference \(Word 形式でダウンロード\)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
- [Regular Expressions \- Quick Reference \(PDF 形式でダウンロード\)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)
+## <a name="reference"></a><span data-ttu-id="1d8c4-181">参照</span><span class="sxs-lookup"><span data-stu-id="1d8c4-181">Reference</span></span>  
+ <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
+ <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>  
+ [<span data-ttu-id="1d8c4-182">正規表現 - クイック リファレンス (Word 形式でダウンロード)</span><span class="sxs-lookup"><span data-stu-id="1d8c4-182">Regular Expressions - Quick Reference (download in Word format)</span></span>](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
+ [<span data-ttu-id="1d8c4-183">正規表現 - クイック リファレンス (PDF 形式でダウンロード)</span><span class="sxs-lookup"><span data-stu-id="1d8c4-183">Regular Expressions - Quick Reference (download in PDF format)</span></span>](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

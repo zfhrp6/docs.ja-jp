@@ -1,37 +1,43 @@
 ---
-title: "XML の DataSet スキーマ情報の読み込み | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "XML の DataSet スキーマ情報の読み込み"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 43dfb23b-5cef-46f2-8d87-78f0fba1eb8c
-caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: 09fc69ba6d82fdab5aa03dd3987ec1acdf0be17e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XML の DataSet スキーマ情報の読み込み
-<xref:System.Data.DataSet> のスキーマ \(テーブル、列、リレーション、および制約\) は、プログラムを使用して定義され、<xref:System.Data.Common.DataAdapter> の **Fill** メソッドまたは **FillSchema** メソッドによって作成されるか、あるいは XML ドキュメントから読み込まれます。  XML ドキュメントから **DataSet** スキーマ情報を読み込むには、**DataSet** の **ReadXmlSchema** メソッドまたは **InferXmlSchema** メソッドを使用します。  **ReadXmlSchema** を使用すると、XML スキーマ定義言語 \(XSD\) スキーマが含まれているドキュメントまたはインライン XML スキーマが含まれている XML ドキュメントから、**DataSet** スキーマ情報を読み込むかまたは推論できます。  **InferXmlSchema** を使用すると、XML ドキュメントからスキーマを推論できます。このとき、指定した特定の XML 名前空間は無視されます。  
+# <a name="loading-dataset-schema-information-from-xml"></a><span data-ttu-id="4f8e3-102">XML の DataSet スキーマ情報の読み込み</span><span class="sxs-lookup"><span data-stu-id="4f8e3-102">Loading DataSet Schema Information from XML</span></span>
+<span data-ttu-id="4f8e3-103">スキーマ、 <xref:System.Data.DataSet> (そのテーブル、列、リレーション、および制約) はプログラムでは、によって作成された、**塗りつぶし**または**FillSchema**のメソッド、<xref:System.Data.Common.DataAdapter>から読み込まれたか、XML ドキュメントです。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-103">The schema of a <xref:System.Data.DataSet> (its tables, columns, relations, and constraints) can be defined programmatically, created by the **Fill** or **FillSchema** methods of a <xref:System.Data.Common.DataAdapter>, or loaded from an XML document.</span></span> <span data-ttu-id="4f8e3-104">読み込む**データセット**スキーマ情報、XML ドキュメントから、いずれかを使用して、 **ReadXmlSchema**または**InferXmlSchema**のメソッド、**データセット**.</span><span class="sxs-lookup"><span data-stu-id="4f8e3-104">To load **DataSet** schema information from an XML document, you can use either the **ReadXmlSchema** or the **InferXmlSchema** method of the **DataSet**.</span></span> <span data-ttu-id="4f8e3-105">**ReadXmlSchema**の読み込みまたは推論することができます**データセット**XML スキーマ定義言語 (XSD) スキーマ、またはインライン XML スキーマを持つ XML ドキュメントを含むドキュメントからスキーマ情報。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-105">**ReadXmlSchema** allows you to load or infer **DataSet** schema information from the document containing XML Schema definition language (XSD) schema, or an XML document with inline XML Schema.</span></span> <span data-ttu-id="4f8e3-106">**InferXmlSchema**指定した特定の XML 名前空間を無視しているときに、XML ドキュメントからスキーマを推論することができます。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-106">**InferXmlSchema** allows you to infer the schema from the XML document while ignoring certain XML namespaces that you specify.</span></span>  
   
 > [!NOTE]
->  XSD の構造 \(入れ子になったリレーションなど\) を使用してメモリ内で作成された **DataSet** を、Web サービスまたは XML シリアル化を使って転送した場合、**DataSet** 内のテーブルの順序が維持されない場合があります。  この場合、**DataSet** の受け取り側はテーブルの順序に依存していないことが必要です。  ただし、メモリ内で作成するのではなく、転送する **DataSet** のスキーマを XSD ファイルから読み取った場合は、テーブルの順序が常に維持されます。  
+>  <span data-ttu-id="4f8e3-107">テーブルの順序で、**データセット**を転送する Web サービスまたは XML シリアル化を使用する場合は保持されませんが、**データセット**インメモリ (入れ子になったリレーション) などの XSD コンス トラクターを使用して作成されました。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-107">Table ordering in a **DataSet** might not be preserved when you use Web services or XML serialization to transfer a **DataSet** that was created in-memory by using XSD constructs (such as nested relations).</span></span> <span data-ttu-id="4f8e3-108">そのための受信者、**データセット**テーブルの例ではこの順序に依存しないようにします。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-108">Therefore, the recipient of the **DataSet** should not depend on table ordering in this case.</span></span> <span data-ttu-id="4f8e3-109">ただし、テーブルの順序は常に保持される場合のスキーマ、**データセット**メモリ内で作成されているのではなく、XSD ファイルから読み取られた転送されています。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-109">However, table ordering is always preserved if the schema of the **DataSet** being transferred was read from XSD files, instead of being created in-memory.</span></span>  
   
-## ReadXmlSchema  
- XML ドキュメントから **DataSet** のスキーマだけを読み込み、データを読み込まないようにするには、**DataSet** の **ReadXmlSchema** メソッドを使用します。  **ReadXmlSchema** は、XML スキーマ定義言語 \(XSD\) スキーマを使用して定義されている **DataSet** を作成します。  
+## <a name="readxmlschema"></a><span data-ttu-id="4f8e3-110">ReadXmlSchema</span><span class="sxs-lookup"><span data-stu-id="4f8e3-110">ReadXmlSchema</span></span>  
+ <span data-ttu-id="4f8e3-111">スキーマを読み込む、**データセット**すべてのデータを読み込むことがなく、XML ドキュメントからを使用して、 **ReadXmlSchema**のメソッド、**データセット**です。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-111">To load the schema of a **DataSet** from an XML document without loading any data, you can use the **ReadXmlSchema** method of the **DataSet**.</span></span> <span data-ttu-id="4f8e3-112">**ReadXmlSchema**作成**データセット**スキーマの XML スキーマ定義言語 (XSD) スキーマを使用して定義します。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-112">**ReadXmlSchema** creates **DataSet** schema defined using XML Schema definition language (XSD) schema.</span></span>  
   
- **ReadXmlSchema** メソッドは、ファイル名、ストリーム、または読み込む XML ドキュメントが格納されている **XmlReader** のいずれか 1 つを引数として受け取ります。  この XML ドキュメントには、スキーマだけが含まれているか、またはデータのある XML 要素と共にスキーマがインラインで含まれています。  XML スキーマとしてのインライン スキーマを書き込む方法の詳細については、「[XML スキーマ \(XSD\) からの DataSet リレーショナル構造の派生](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)」を参照してください。  
+ <span data-ttu-id="4f8e3-113">**ReadXmlSchema**メソッドを 1 つの引数でのファイル名、ストリーム、または**XmlReader**に読み込む XML ドキュメントを含むです。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-113">The **ReadXmlSchema** method takes a single argument of a file name, a stream, or an **XmlReader** containing the XML document to be loaded.</span></span> <span data-ttu-id="4f8e3-114">この XML ドキュメントには、スキーマだけが含まれているか、またはデータのある XML 要素と共にスキーマがインラインで含まれています。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-114">The XML document can contain only schema, or can contain schema inline with XML elements containing data.</span></span> <span data-ttu-id="4f8e3-115">XML スキーマとインライン スキーマの作成方法の詳細については、「[派生した DataSet リレーショナル構造の XML スキーマ (XSD) から](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)です。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-115">For details about writing inline schema as XML Schema, see [Deriving DataSet Relational Structure from XML Schema (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md).</span></span>  
   
- **ReadXmlSchema** に渡された XML ドキュメントに、インライン スキーマ情報が含まれていない場合、**ReadXmlSchema** は XML ドキュメントの要素からスキーマを推論します。  **DataSet** に既にスキーマが含まれている場合、テーブルが存在しなければ新しいテーブルを追加することによって現在のスキーマが拡張されます。  既存のテーブルには新しい列は追加されません。  **DataSet** に既に追加される列が存在していますが、XML で検出された列の型と矛盾する場合には、例外がスローされます。  **ReadXmlSchema** による XML ドキュメントからのスキーマの推論方法の詳細については、「[XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)」を参照してください。  
+ <span data-ttu-id="4f8e3-116">XML ドキュメントを渡す場合**ReadXmlSchema**インライン スキーマ情報を含まない**ReadXmlSchema** XML ドキュメント内の要素からスキーマを推論します。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-116">If the XML document passed to **ReadXmlSchema** contains no inline schema information, **ReadXmlSchema** will infer the schema from the elements in the XML document.</span></span> <span data-ttu-id="4f8e3-117">場合、**データセット**スキーマを既に含む現在のスキーマが既に存在しない場合は、新しいテーブルを追加することによって拡張されます。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-117">If the **DataSet** already contains a schema, the current schema will be extended by adding new tables if they do not already exist.</span></span> <span data-ttu-id="4f8e3-118">既存のテーブルには新しい列は追加されません。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-118">New columns will not be added to added to existing tables.</span></span> <span data-ttu-id="4f8e3-119">既に追加されている列が存在する場合、**データセット**が列と互換性のない型が見つかりません、xml で、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-119">If a column being added already exists in the **DataSet** but has an incompatible type with the column found in the XML, an exception is thrown.</span></span> <span data-ttu-id="4f8e3-120">方法の詳細について**ReadXmlSchema**スキーマを生成、XML ドキュメントから、次を参照してください。[推論 DataSet リレーショナル構造の XML から](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)です。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-120">For details about how **ReadXmlSchema** infers a schema from an XML document, see [Inferring DataSet Relational Structure from XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md).</span></span>  
   
- **ReadXmlSchema** は **DataSet** スキーマの読み込みまたは推論のいずれかを実行しますが、**DataSet** の **ReadXml** メソッドは、スキーマと XML ドキュメントのデータの両方の読み込みまたは推論を実行します。  詳細については、「[XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)」を参照してください。  
+ <span data-ttu-id="4f8e3-121">**ReadXmlSchema**で読み込みまたは推論のスキーマのみ、**データセット**、 **ReadXml**のメソッド、**データセット**読み込まれるかまたは両方を推論スキーマと XML ドキュメントに含まれるデータ。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-121">Although **ReadXmlSchema** loads or infers only the schema of a **DataSet**, the **ReadXml** method of the **DataSet** loads or infers both the schema and the data contained in the XML document.</span></span> <span data-ttu-id="4f8e3-122">詳細については、次を参照してください。 [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)です。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-122">For more information, see [Loading a DataSet from XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md).</span></span>  
   
- XML ドキュメントまたは XML ストリームから **DataSet** スキーマを読み込む方法を次のコード サンプルに示します。  1 番目の例では、XML スキーマ ファイル名が **ReadXmlSchema** メソッドへ渡されます。  2 番目の例では、**System.IO.StreamReader** が示されています。  
+ <span data-ttu-id="4f8e3-123">次のコード例を読み込む方法を表示する、**データセット**を XML ドキュメントまたはストリームからのスキーマです。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-123">The following code examples show how to load a **DataSet** schema from an XML document or stream.</span></span> <span data-ttu-id="4f8e3-124">最初の例に渡される XML スキーマ ファイル名、 **ReadXmlSchema**メソッドです。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-124">The first example shows an XML Schema file name being passed to the **ReadXmlSchema** method.</span></span> <span data-ttu-id="4f8e3-125">2 番目の例、 **System.IO.StreamReader**です。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-125">The second example shows a **System.IO.StreamReader**.</span></span>  
   
 ```vb  
 Dim dataSet As DataSet = New DataSet  
@@ -57,12 +63,12 @@ dataSet.ReadXmlSchema(xmlStream);
 xmlStream.Close();  
 ```  
   
-## InferXmlSchema  
- **DataSet** に対し、**DataSet** の **InferXmlSchema** メソッドを使用して XML ドキュメントのスキーマを推論するように指示できます。  **InferXmlSchema** は、**XmlReadMode** を **InferSchema** に設定した **ReadXml** \(データの読み込みとスキーマの推論\) と、読み取られるドキュメントにインライン スキーマが含まれていない場合の **ReadXmlSchema** の両方と同様の機能を備えています。  ただし **InferXmlSchema** には、スキーマを推論するときに無視する特定の XML 名前空間を指定できる追加機能を用意しています。  **InferXmlSchema** に必要な 2 つの引数は、XML ドキュメントの位置と、この操作によって無視される XML 名前空間の文字列配列です。XML ドキュメントの位置は、ファイル名、ストリーム、または **XmlReader** によって指定されます。  
+## <a name="inferxmlschema"></a><span data-ttu-id="4f8e3-126">InferXmlSchema</span><span class="sxs-lookup"><span data-stu-id="4f8e3-126">InferXmlSchema</span></span>  
+ <span data-ttu-id="4f8e3-127">指示することも、**データセット**を使用して XML ドキュメントからスキーマを推論、 **InferXmlSchema**のメソッド、**データセット**です。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-127">You can also instruct the **DataSet** to infer its schema from an XML document using the **InferXmlSchema** method of the **DataSet**.</span></span> <span data-ttu-id="4f8e3-128">**InferXmlSchema**両方と同じ機能**ReadXml**で、 **XmlReadMode**の**InferSchema** (データを読み込むし、スキーマを推論)、および**ReadXmlSchema**読み取られているドキュメントにインライン スキーマが含まれていない場合。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-128">**InferXmlSchema** functions the same as do both **ReadXml** with an **XmlReadMode** of **InferSchema** (loads data as well as infers schema), and **ReadXmlSchema** if the document being read contains no inline schema.</span></span> <span data-ttu-id="4f8e3-129">ただし、 **InferXmlSchema**を無視するように、スキーマを推論する際に特定の XML 名前空間を指定できる追加機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-129">However, **InferXmlSchema** provides the additional capability of allowing you to specify particular XML namespaces to be ignored when the schema is inferred.</span></span> <span data-ttu-id="4f8e3-130">**InferXmlSchema**では 2 つの必要な引数: ファイル名、ストリームで指定された、XML ドキュメントの場所または**XmlReader**; と、操作によって無視される XML 名前空間の文字列配列。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-130">**InferXmlSchema** takes two required arguments: the location of the XML document, specified by a file name, a stream, or an **XmlReader**; and a string array of XML namespaces to be ignored by the operation.</span></span>  
   
- たとえば、次のような XML があるとします。  
+ <span data-ttu-id="4f8e3-131">たとえば、次のような XML があるとします。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-131">For example, consider the following XML:</span></span>  
   
-```  
+```xml  
 <NewDataSet xmlns:od="urn:schemas-microsoft-com:officedata">  
 <Categories>  
   <CategoryID od:adotype="3">1</CategoryID>   
@@ -77,7 +83,7 @@ xmlStream.Close();
 </NewDataSet>  
 ```  
   
- 前述の XML ドキュメントの要素に対して指定されている属性により、**ReadXmlSchema** メソッドと、**XmlReadMode** が **InferSchema** に設定されている **ReadXml** メソッドは、いずれもドキュメントのすべての要素 \(**Categories**、**CategoryID**、**CategoryName**、**Description**、**Products**、**ProductID**、**ReorderLevel**、および **Discontinued**\) に対してテーブルを作成します。  \(詳細については、「[XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)」を参照してください\)。ただし、この作成方法よりも適切な方法としては、最初に **Categories** テーブルと **Products** テーブルだけを作成し、次に **Categories** テーブルの **CategoryID**、**CategoryName**、および **Description** 列を作成し、**Products** テーブルの **ProductID**、**ReorderLevel** および **Discontinued** 列を作成する方法があります。  推論されたスキーマが、XML 要素に指定されている属性を無視するようにするには、**InferXmlSchema** メソッドを使用して **officedata** の XML 名前空間を無視するように指定します。この例を次に示します。  
+ <span data-ttu-id="4f8e3-132">上記の XML ドキュメント内の要素に指定された属性のため両方、 **ReadXmlSchema**メソッドおよび**ReadXml**メソッドを**XmlReadMode**の**InferSchema** 、ドキュメント内のすべての要素のテーブルの作成は:**カテゴリ**、 **CategoryID**、 **CategoryName**、**説明**、**製品**、 **ProductID**、 **ReorderLevel**、および**提供が中止されました**.</span><span class="sxs-lookup"><span data-stu-id="4f8e3-132">Because of the attributes specified for the elements in the preceding XML document, both the **ReadXmlSchema** method and the **ReadXml** method with an **XmlReadMode** of **InferSchema** would create tables for every element in the document: **Categories**, **CategoryID**, **CategoryName**, **Description**, **Products**, **ProductID**, **ReorderLevel**, and **Discontinued**.</span></span> <span data-ttu-id="4f8e3-133">(詳細については、次を参照してください[推論 DataSet リレーショナル構造の XML から](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)。)。適切な構造体のみを作成すること、ただし、**カテゴリ**と**製品**テーブルを作成し、 **CategoryID**、 **CategoryName**、および**説明**内の列、**カテゴリ**テーブル、および**ProductID**、 **ReorderLevel**、および**生産中止**内の列、**製品**テーブル。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-133">(For more information, see [Inferring DataSet Relational Structure from XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md).) However, a more appropriate structure would be to create only the **Categories** and **Products** tables, and then to create **CategoryID**, **CategoryName**, and **Description** columns in the **Categories** table, and **ProductID**, **ReorderLevel**, and **Discontinued** columns in the **Products** table.</span></span> <span data-ttu-id="4f8e3-134">を確保するため、推論されるスキーマが XML 要素で指定された属性を無視することを使用して、 **InferXmlSchema**メソッドの XML 名前空間を指定して**officedata**無視するように、のように、次の例です。</span><span class="sxs-lookup"><span data-stu-id="4f8e3-134">To ensure that the inferred schema ignores the attributes specified in the XML elements, use the **InferXmlSchema** method and specify the XML namespace for **officedata** to be ignored, as shown in the following example.</span></span>  
   
 ```vb  
 Dim dataSet As DataSet = New DataSet  
@@ -89,10 +95,10 @@ DataSet dataSet = new DataSet();
 dataSet.InferXmlSchema("input_od.xml", new string[] "urn:schemas-microsoft-com:officedata");  
 ```  
   
-## 参照  
- [DataSet での XML の使用](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)   
- [XML スキーマ \(XSD\) からの DataSet リレーショナル構造の派生](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)   
- [XML からの DataSet リレーショナル構造の推論](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)   
- [XML からの DataSet の読み込み](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)   
- [DataSets、DataTables、および DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [ADO.NET Managed Providers and DataSet Developer Center \(ADO.NET マネージ プロバイダーと DataSet デベロッパー センター\)](http://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="4f8e3-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="4f8e3-135">See Also</span></span>  
+ [<span data-ttu-id="4f8e3-136">DataSet での XML の使用</span><span class="sxs-lookup"><span data-stu-id="4f8e3-136">Using XML in a DataSet</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [<span data-ttu-id="4f8e3-137">XML スキーマ (XSD) からの DataSet リレーショナル構造の派生</span><span class="sxs-lookup"><span data-stu-id="4f8e3-137">Deriving DataSet Relational Structure from XML Schema (XSD)</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ [<span data-ttu-id="4f8e3-138">XML からの DataSet リレーショナル構造の推論</span><span class="sxs-lookup"><span data-stu-id="4f8e3-138">Inferring DataSet Relational Structure from XML</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
+ [<span data-ttu-id="4f8e3-139">XML からの DataSet の読み込み</span><span class="sxs-lookup"><span data-stu-id="4f8e3-139">Loading a DataSet from XML</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
+ [<span data-ttu-id="4f8e3-140">DataSet、DataTable、および DataView</span><span class="sxs-lookup"><span data-stu-id="4f8e3-140">DataSets, DataTables, and DataViews</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [<span data-ttu-id="4f8e3-141">ADO.NET のマネージ プロバイダーと DataSet デベロッパー センター</span><span class="sxs-lookup"><span data-stu-id="4f8e3-141">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

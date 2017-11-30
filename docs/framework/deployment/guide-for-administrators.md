@@ -5,273 +5,265 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - administrator's guide, deploying .NET Framework
 - deployment [.NET Framework], administrator's guide
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
-caps.latest.revision: 40
+caps.latest.revision: "40"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
+ms.openlocfilehash: d208867789fc78a82a2e339596a5692280d95ff3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 07b7381ddc94e3bc40a4eb0ed546f9526b57600a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework 配置ガイド (管理者向け)
-この記事では、システム管理者が Microsoft System Center Configuration Manager を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] とそのシステムの依存関係をネットワーク経由で配置する方法を手順に沿って説明します。 ここでは、すべての対象のクライアント コンピューターが .NET Framework の最小要件を満たしていることを前提としています。 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインストールに必要なソフトウェア要件とハードウェア要件の一覧については、「[システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+# <a name="net-framework-deployment-guide-for-administrators"></a><span data-ttu-id="cc2cf-102">.NET Framework 配置ガイド (管理者向け)</span><span class="sxs-lookup"><span data-stu-id="cc2cf-102">.NET Framework Deployment Guide for Administrators</span></span>
+<span data-ttu-id="cc2cf-103">この記事では、システム管理者が Microsoft System Center Configuration Manager を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] とそのシステムの依存関係をネットワーク経由で配置する方法を手順に沿って説明します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-103">This step-by-step article describes how a system administrator can deploy the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] and its system dependencies across a network by using Microsoft System Center Configuration Manager.</span></span> <span data-ttu-id="cc2cf-104">ここでは、すべての対象のクライアント コンピューターが .NET Framework の最小要件を満たしていることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-104">This article assumes that all target client computers meet the minimum requirements for the .NET Framework.</span></span> <span data-ttu-id="cc2cf-105">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のインストールに必要なソフトウェア要件とハードウェア要件の一覧については、「[システム要件](../../../docs/framework/get-started/system-requirements.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-105">For a list of the software and hardware requirements for installing the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], see [System Requirements](../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、System Center Configuration Manager、Active Directory など、このドキュメントで言及されるソフトウェアには、ライセンス条項が適用されます。 このドキュメントの内容は、ライセンス条項がソフトウェアの適切なライセンス取得者によって確認され、同意されていることを前提にしています 記載の内容についても、ライセンス条項は効力があるものとします。  
+>  <span data-ttu-id="cc2cf-106">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)]、System Center Configuration Manager、Active Directory など、このドキュメントで言及されるソフトウェアには、ライセンス条項が適用されます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-106">The software referenced in this document, including, without limitation, the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], System Center Configuration Manager, and Active Directory, are each subject to license terms and conditions.</span></span> <span data-ttu-id="cc2cf-107">このドキュメントの内容は、ライセンス条項がソフトウェアの適切なライセンス取得者によって確認され、同意されていることを前提にしています</span><span class="sxs-lookup"><span data-stu-id="cc2cf-107">These instructions assume that such license terms and conditions have been reviewed and accepted by the appropriate licensees of the software.</span></span> <span data-ttu-id="cc2cf-108">記載の内容についても、ライセンス条項は効力があるものとします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-108">These instructions do not waive any of the terms and conditions of such license agreements.</span></span>  
 >   
->  .NET Framework のサポートの詳細については、Microsoft サポート オンラインの [Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/?LinkId=196607)に関するページを参照してください。  
+>  <span data-ttu-id="cc2cf-109">.NET Framework のサポートの詳細については、Microsoft サポート オンラインの [Microsoft .NET Framework のサポート ライフサイクル ポリシー](http://go.microsoft.com/fwlink/?LinkId=196607)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-109">For information about support for the .NET Framework, see [Microsoft .NET Framework Support Lifecycle Policy](http://go.microsoft.com/fwlink/?LinkId=196607) on the Microsoft Support website.</span></span>  
   
- このトピックは、次のセクションで構成されています。  
+ <span data-ttu-id="cc2cf-110">このトピックは、次のセクションで構成されています。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-110">This topic contains the following sections:</span></span>  
   
- [配置プロセス](#the_deployment_process)   
- [.NET Framework の配置](#deploying_in_a_test_environment)   
- [コレクションの作成](#creating_a_collection)  
- [パッケージとプログラムの作成](#creating_a_package)  
- [配布ポイントの選択](#select_dist_point)  
- [パッケージの配置](#deploying_package)  
-[リソース](#resources)  
-[トラブルシューティング](#troubleshooting)  
+ [<span data-ttu-id="cc2cf-111">展開プロセス</span><span class="sxs-lookup"><span data-stu-id="cc2cf-111">The deployment process</span></span>](#the_deployment_process)  
+ [<span data-ttu-id="cc2cf-112">.NET Framework の配置</span><span class="sxs-lookup"><span data-stu-id="cc2cf-112">Deploying the .NET Framework</span></span>](#deploying_in_a_test_environment)  
+ [<span data-ttu-id="cc2cf-113">コレクションの作成</span><span class="sxs-lookup"><span data-stu-id="cc2cf-113">Create a collection</span></span>](#creating_a_collection)  
+ [<span data-ttu-id="cc2cf-114">パッケージとプログラムの作成</span><span class="sxs-lookup"><span data-stu-id="cc2cf-114">Create a package and program</span></span>](#creating_a_package)  
+ [<span data-ttu-id="cc2cf-115">配布ポイントの選択</span><span class="sxs-lookup"><span data-stu-id="cc2cf-115">Select a distribution point</span></span>](#select_dist_point)  
+ [<span data-ttu-id="cc2cf-116">パッケージの配置</span><span class="sxs-lookup"><span data-stu-id="cc2cf-116">Deploy the package</span></span>](#deploying_package)  
+[<span data-ttu-id="cc2cf-117">リソース</span><span class="sxs-lookup"><span data-stu-id="cc2cf-117">Resources</span></span>](#resources)  
+[<span data-ttu-id="cc2cf-118">トラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="cc2cf-118">Troubleshooting</span></span>](#troubleshooting)  
   
 <a name="the_deployment_process"></a>   
-## <a name="the-deployment-process"></a>配置プロセス  
- サポートするインフラストラクチャが整っている場合は、System Center 2012 Configuration Manager を使用して、.NET Framework 再頒布可能パッケージをネットワーク上のコンピューターに配置します。 インフラストラクチャを構築するには、コレクション、ソフトウェアのパッケージとプログラム、配布ポイント、配置という 5 つの主要な項目を作成し定義する必要があります。  
+## <a name="the-deployment-process"></a><span data-ttu-id="cc2cf-119">配置プロセス</span><span class="sxs-lookup"><span data-stu-id="cc2cf-119">The deployment process</span></span>  
+ <span data-ttu-id="cc2cf-120">サポートするインフラストラクチャが整っている場合は、System Center 2012 Configuration Manager を使用して、.NET Framework 再頒布可能パッケージをネットワーク上のコンピューターに配置します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-120">When you have the supporting infrastructure in place, you use System Center 2012 Configuration Manager to deploy the .NET Framework redistributable package to computers on the network.</span></span> <span data-ttu-id="cc2cf-121">インフラストラクチャを構築するには、コレクション、ソフトウェアのパッケージとプログラム、配布ポイント、配置という 5 つの主要な項目を作成し定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-121">Building the infrastructure involves creating and defining five primary areas: collections, a package and program for the software, distribution points, and deployments.</span></span>  
   
--   **コレクション**は、ユーザー、ユーザー グループ、コンピューターなど、.NET Framework の配置先となる Configuration Manager リソースのグループです。 詳細については、Configuration Manager ドキュメント ライブラリの「[Configuration Manager のコレクション](http://technet.microsoft.com/library/gg682169.aspx)」を参照してください。  
+-   <span data-ttu-id="cc2cf-122">**コレクション**は、ユーザー、ユーザー グループ、コンピューターなど、.NET Framework の配置先となる Configuration Manager リソースのグループです。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-122">**Collections** are groups of Configuration Manager resources, such as users, user groups, or computers, to which the .NET Framework is deployed.</span></span> <span data-ttu-id="cc2cf-123">詳細については、Configuration Manager ドキュメント ライブラリの「[Configuration Manager のコレクション](http://technet.microsoft.com/library/gg682169.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-123">For more information, see [Collections in Configuration Manager](http://technet.microsoft.com/library/gg682169.aspx) in the Configuration Manager documentation library.</span></span>  
   
--   **パッケージとプログラム**は、通常、クライアント コンピューターにインストールされるソフトウェア アプリケーションを表しますが、個々のファイル、更新プログラム、さらには個々のコマンドが含まれることがあります。 詳細については、Configuration Manager ドキュメント ライブラリの「[Configuration Manager のパッケージとプログラム](http://technet.microsoft.com/library/gg699369.aspx)」を参照してください。  
+-   <span data-ttu-id="cc2cf-124">**パッケージとプログラム**は、通常、クライアント コンピューターにインストールされるソフトウェア アプリケーションを表しますが、個々のファイル、更新プログラム、さらには個々のコマンドが含まれることがあります。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-124">**Packages and programs** typically represent software applications to be installed on a client computer, but they might also contain individual files, updates, or even individual commands.</span></span> <span data-ttu-id="cc2cf-125">詳細については、Configuration Manager ドキュメント ライブラリの「[Configuration Manager のパッケージとプログラム](http://technet.microsoft.com/library/gg699369.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-125">For more information, see [Packages and Programs in Configuration Manager](http://technet.microsoft.com/library/gg699369.aspx) in the Configuration Manager documentation library.</span></span>  
   
--   **配布ポイント**は、ソフトウェアをクライアント コンピューター上で実行するために必要なファイルを格納する Configuration Manager のサイト システムの役割です。 Configuration Manager クライアントは、ソフトウェア配置を受け取って処理するときに、配布ポイントに接続してソフトウェアに関連するコンテンツをダウンロードし、インストール処理を開始します。 詳細については、Configuration Manager ドキュメント ライブラリの「[Configuration Manager のコンテンツ管理の概要](http://technet.microsoft.com/library/gg682083.aspx)」を参照してください。  
+-   <span data-ttu-id="cc2cf-126">**配布ポイント**は、ソフトウェアをクライアント コンピューター上で実行するために必要なファイルを格納する Configuration Manager のサイト システムの役割です。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-126">**Distribution points** are Configuration Manager site system roles that store files required for software to run on client computers.</span></span> <span data-ttu-id="cc2cf-127">Configuration Manager クライアントは、ソフトウェア配置を受け取って処理するときに、配布ポイントに接続してソフトウェアに関連するコンテンツをダウンロードし、インストール処理を開始します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-127">When the Configuration Manager client receives and processes a software deployment, it contacts a distribution point to download the content associated with the software and to start the installation process.</span></span> <span data-ttu-id="cc2cf-128">詳細については、Configuration Manager ドキュメント ライブラリの「[Configuration Manager のコンテンツ管理の概要](http://technet.microsoft.com/library/gg682083.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-128">For more information, see [Introduction to content Management in Configuration Manager](http://technet.microsoft.com/library/gg682083.aspx) in the Configuration Manager documentation library.</span></span>  
   
--   **配置**は、指定されたターゲット コレクションの該当するメンバーにソフトウェア パッケージをインストールするよう指示します。 詳細については、Configuration Manager ドキュメント ライブラリの「[Configuration Manager でのアプリケーションの展開方法](http://technet.microsoft.com/library/gg682082.aspx)」を参照してください。  
+-   <span data-ttu-id="cc2cf-129">**配置**は、指定されたターゲット コレクションの該当するメンバーにソフトウェア パッケージをインストールするよう指示します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-129">**Deployments** instruct applicable members of the specified target collection to install the software package.</span></span> <span data-ttu-id="cc2cf-130">詳細については、Configuration Manager ドキュメント ライブラリの「[Configuration Manager でのアプリケーションの展開方法](http://technet.microsoft.com/library/gg682082.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-130">For more information, see [How to Deploy Applications in Configuration Manager](http://technet.microsoft.com/library/gg682082.aspx) in the Configuration Manager documentation library.</span></span>  
   
 > [!IMPORTANT]
->  このトピックの手順では、パッケージとプログラムを作成するための一般的な設定を使用していて、すべての可能な設定について説明していない場合があります。 その他の Configuration Manager の配置オプションについては、[Configuration Manager のドキュメント ライブラリ](http://technet.microsoft.com/library/gg682041.aspx)を参照してください。  
+>  <span data-ttu-id="cc2cf-131">このトピックの手順では、パッケージとプログラムを作成するための一般的な設定を使用していて、すべての可能な設定について説明していない場合があります。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-131">The procedures in this topic contain typical settings for creating and deploying a package and program, and might not cover all possible settings.</span></span> <span data-ttu-id="cc2cf-132">その他の Configuration Manager の配置オプションについては、[Configuration Manager のドキュメント ライブラリ](http://technet.microsoft.com/library/gg682041.aspx)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-132">For other Configuration Manager deployment options, see the [Configuration Manager Documentation Library](http://technet.microsoft.com/library/gg682041.aspx).</span></span>  
   
 <a name="deploying_in_a_test_environment"></a>   
-## <a name="deploying-the-net-framework"></a>.NET Framework の配置  
- System Center 2012 を使用して、インストール処理時にユーザーが操作しない [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のサイレント インストールを配置できます。 この場合は、以下の手順に従ってください。  
+## <a name="deploying-the-net-framework"></a><span data-ttu-id="cc2cf-133">.NET Framework の配置</span><span class="sxs-lookup"><span data-stu-id="cc2cf-133">Deploying the .NET Framework</span></span>  
+ <span data-ttu-id="cc2cf-134">System Center 2012 を使用して、インストール処理時にユーザーが操作しない [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のサイレント インストールを配置できます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-134">You can use System Center 2012 Configuration Manager to deploy a silent installation of the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], where the users do not interact with the installation process.</span></span> <span data-ttu-id="cc2cf-135">この場合は、以下の手順に従ってください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-135">Follow these steps:</span></span>  
   
-1.  [コレクションを作成します](#creating_a_collection)。  
+1.  <span data-ttu-id="cc2cf-136">[コレクションを作成します](#creating_a_collection)。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-136">[Create a collection](#creating_a_collection).</span></span>  
   
-2.  [.NET Framework 再頒布可能パッケージとプログラムを作成します](#creating_a_package)。  
+2.  <span data-ttu-id="cc2cf-137">[.NET Framework 再頒布可能パッケージとプログラムを作成します](#creating_a_package)。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-137">[Create a package and program for the .NET Framework redistributable](#creating_a_package).</span></span>  
   
-3.  [配布ポイントを選択します](#select_dist_point)。  
+3.  <span data-ttu-id="cc2cf-138">[配布ポイントを選択します](#select_dist_point)。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-138">[Select a distribution point](#select_dist_point).</span></span>  
   
-4.  [パッケージを配置します](#deploying_package)。  
+4.  <span data-ttu-id="cc2cf-139">[パッケージを配置します](#deploying_package)。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-139">[Deploy the package](#deploying_package).</span></span>  
   
 <a name="creating_a_collection"></a>   
-### <a name="create-a-collection"></a>コレクションの作成  
- この手順では、パッケージとプログラムを配置するコンピューターを選択し、それをデバイス コレクションにグループ化します。 Configuration Manager でコレクションを作成するときは、ダイレクト メンバーシップ規則 (コレクション メンバーを手動で指定) またはクエリ規則 (指定した条件に基づいて Configuration Manager がコレクション メンバーを決定) を使用できます。 メンバーシップ規則の詳細については、クエリ規則とダイレクト規則も含めて、Configuration Manager ドキュメント ライブラリの「[Configuration Manager のコレクションの概要](http://technet.microsoft.com/library/gg682177.aspx)」を参照してください。  
+### <a name="create-a-collection"></a><span data-ttu-id="cc2cf-140">コレクションの作成</span><span class="sxs-lookup"><span data-stu-id="cc2cf-140">Create a collection</span></span>  
+ <span data-ttu-id="cc2cf-141">この手順では、パッケージとプログラムを配置するコンピューターを選択し、それをデバイス コレクションにグループ化します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-141">In this step, you select the computers to which you will deploy the package and program, and group them into a device collection.</span></span> <span data-ttu-id="cc2cf-142">Configuration Manager でコレクションを作成するときは、ダイレクト メンバーシップ規則 (コレクション メンバーを手動で指定) またはクエリ規則 (指定した条件に基づいて Configuration Manager がコレクション メンバーを決定) を使用できます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-142">To create a collection in Configuration Manager, you can use direct membership rules (where you manually specify the collection members) or query rules (where Configuration Manager determines the collection members based on criteria you specify).</span></span> <span data-ttu-id="cc2cf-143">メンバーシップ規則の詳細については、クエリ規則とダイレクト規則も含めて、Configuration Manager ドキュメント ライブラリの「[Configuration Manager のコレクションの概要](http://technet.microsoft.com/library/gg682177.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-143">For more information about membership rules, including queries and direct rules, see [Introduction to Collections in Configuration Manager](http://technet.microsoft.com/library/gg682177.aspx) in the Configuration Manager Documentation Library.</span></span>  
   
- コレクションを作成するには  
+ <span data-ttu-id="cc2cf-144">コレクションを作成するには</span><span class="sxs-lookup"><span data-stu-id="cc2cf-144">To create a collection:</span></span>  
   
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** をクリックします。  
+1.  <span data-ttu-id="cc2cf-145">Configuration Manager コンソールで、**[資産とコンプライアンス]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-145">In the Configuration Manager console, choose **Assets and Compliance**.</span></span>  
   
-2.  **[資産とコンプライアンス]** ワークスペースで、**[デバイス コレクション]** をクリックします。  
+2.  <span data-ttu-id="cc2cf-146">**[資産とコンプライアンス]** ワークスペースで、**[デバイス コレクション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-146">In the **Assets and Compliance** workspace, choose **Device Collections**.</span></span>  
   
-3.  **[ホーム]** タブの **[作成]** グループで、**[デバイス コレクションの作成]** をクリックします。  
+3.  <span data-ttu-id="cc2cf-147">**[ホーム]** タブの **[作成]** グループで、**[デバイス コレクションの作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-147">On the **Home** tab in the **Create** group, choose **Create Device Collection**.</span></span>  
   
-4.  **デバイス コレクションの作成ウィザード**の **[全般]** ページで、コレクションの名前を入力します。  
+4.  <span data-ttu-id="cc2cf-148">**デバイス コレクションの作成ウィザード**の **[全般]** ページで、コレクションの名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-148">On the **General** page of the **Create Device Collection Wizard**, enter a name for the collection.</span></span>  
   
-5.  **[参照]** をクリックして、限定するコレクションを指定します。  
+5.  <span data-ttu-id="cc2cf-149">**[参照]** をクリックして、限定するコレクションを指定します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-149">Choose **Browse** to specify a limiting collection.</span></span>  
   
-6.  **[メンバーシップの規則]** ページで、**[規則の追加]** をクリックし、**[ダイレクト規則]** をクリックして**ダイレクト メンバーシップの規則の作成ウィザード**を開きます。 **[次へ]** をクリックします。  
+6.  <span data-ttu-id="cc2cf-150">**[メンバーシップの規則]** ページで、**[規則の追加]** をクリックし、**[ダイレクト規則]** をクリックして**ダイレクト メンバーシップの規則の作成ウィザード**を開きます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-150">On the **Membership Rules** page, choose **Add Rule**, and then choose **Direct Rule** to open the **Create Direct Membership Rule Wizard**.</span></span> <span data-ttu-id="cc2cf-151">**[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-151">Choose **Next**.</span></span>  
   
-7.  **[リソースの検索]** ページで、**[リソース クラス]** ボックスの一覧の **[システム リソース]** をクリックします。 **[属性名]** ボックスの一覧の **[名前]** をクリックします。 **[値]** フィールドに「`%`」と入力し、**[次へ]** をクリックします。  
+7.  <span data-ttu-id="cc2cf-152">**[リソースの検索]** ページで、**[リソース クラス]** ボックスの一覧の **[システム リソース]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-152">On the **Search for Resources** page, in the **Resource class** list, choose **System Resource**.</span></span> <span data-ttu-id="cc2cf-153">**[属性名]** ボックスの一覧の **[名前]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-153">In the **Attribute name** list, choose **Name**.</span></span> <span data-ttu-id="cc2cf-154">**[値]** フィールドに「`%`」と入力し、**[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-154">In the **Value** field, enter `%`, and then choose **Next**.</span></span>  
   
-8.  **[リソースの選択]** ページで、.NET Framework を配置する各コンピューターのチェック ボックスをオンにします。 **[次へ]** をクリックして、ウィザードの操作を完了します。  
+8.  <span data-ttu-id="cc2cf-155">**[リソースの選択]** ページで、.NET Framework を配置する各コンピューターのチェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-155">On the **Select Resources** page, select the check box for each computer that you want to deploy the .NET Framework to.</span></span> <span data-ttu-id="cc2cf-156">**[次へ]** をクリックして、ウィザードの操作を完了します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-156">Choose **Next**, and then complete the wizard.</span></span>  
   
-9. **デバイス コレクションの作成ウィザード**の **[メンバーシップの規則]** ページで、**[次へ]** をクリックし、ウィザードの処理を完了します。  
+9. <span data-ttu-id="cc2cf-157">**デバイス コレクションの作成ウィザード**の **[メンバーシップの規則]** ページで、**[次へ]** をクリックし、ウィザードの処理を完了します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-157">On the **Membership Rules** page of the **Create Device Collection Wizard**, choose **Next**, and then complete the wizard.</span></span>  
   
- コレクションの詳細については、Configuration Manager ドキュメント ライブラリの「[Configuration Manager のコレクション](http://technet.microsoft.com/library/bb693730.aspx)」を参照してください。  
+ <span data-ttu-id="cc2cf-158">コレクションの詳細については、Configuration Manager ドキュメント ライブラリの「[Configuration Manager のコレクション](http://technet.microsoft.com/library/bb693730.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-158">For more information about collections, see [Collections in Configuration Manager](http://technet.microsoft.com/library/bb693730.aspx) in the Configuration Manager Documentation Library.</span></span>  
   
 <a name="creating_a_package"></a>   
-### <a name="create-a-package-and-program-for-the-net-framework-redistributable-package"></a>.NET Framework 再頒布可能パッケージとプログラムの作成  
- 次の手順では、.NET Framework 再頒布可能パッケージを手動で作成します。 パッケージには、.NET Framework をインストールするためのパラメーター、およびターゲット コンピューターへのパッケージの配布元となる場所が含まれます。  
+### <a name="create-a-package-and-program-for-the-net-framework-redistributable-package"></a><span data-ttu-id="cc2cf-159">.NET Framework 再頒布可能パッケージとプログラムの作成</span><span class="sxs-lookup"><span data-stu-id="cc2cf-159">Create a package and program for the .NET Framework redistributable package</span></span>  
+ <span data-ttu-id="cc2cf-160">次の手順では、.NET Framework 再頒布可能パッケージを手動で作成します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-160">The following steps create a package for the .NET Framework redistributable manually.</span></span> <span data-ttu-id="cc2cf-161">パッケージには、.NET Framework をインストールするためのパラメーター、およびターゲット コンピューターへのパッケージの配布元となる場所が含まれます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-161">The package contains the specified parameters for installing the .NET Framework and the location from where the package will be distributed to the target computers.</span></span>  
   
- パッケージを作成するには  
+ <span data-ttu-id="cc2cf-162">パッケージを作成するには</span><span class="sxs-lookup"><span data-stu-id="cc2cf-162">To create a package:</span></span>  
   
-1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** をクリックします。  
+1.  <span data-ttu-id="cc2cf-163">Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-163">In the Configuration Manager console, choose **Software Library**..</span></span>  
   
-2.  **[ソフトウェア ライブラリ]** ワークスペースで、**[アプリケーション管理]** を展開し、**[パッケージ]** をクリックします。  
+2.  <span data-ttu-id="cc2cf-164">**[ソフトウェア ライブラリ]** ワークスペースで、**[アプリケーション管理]** を展開し、**[パッケージ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-164">In the **Software Library** workspace, expand **Application Management**, and then choose **Packages**.</span></span>  
   
-3.  **[ホーム]** タブの **[作成]** グループで、**[パッケージの作成]** をクリックします。  
+3.  <span data-ttu-id="cc2cf-165">**[ホーム]** タブの **[作成]** グループで、**[パッケージの作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-165">On the **Home** tab, in the **Create** group, choose **Create Package**.</span></span>  
   
-4.  **パッケージとプログラムの作成ウィザード**の **[パッケージ]** ページで、次の情報を入力します。  
+4.  <span data-ttu-id="cc2cf-166">**パッケージとプログラムの作成ウィザード**の **[パッケージ]** ページで、次の情報を入力します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-166">On the **Package** page of the **Create Package and Program Wizard**, enter the following information:</span></span>  
   
-    -   名前: `.NET Framework 4.5`  
+    -   <span data-ttu-id="cc2cf-167">名前: `.NET Framework 4.5`</span><span class="sxs-lookup"><span data-stu-id="cc2cf-167">Name: `.NET Framework 4.5`</span></span>  
   
-    -   製造元: `Microsoft`  
+    -   <span data-ttu-id="cc2cf-168">製造元: `Microsoft`</span><span class="sxs-lookup"><span data-stu-id="cc2cf-168">Manufacturer: `Microsoft`</span></span>  
   
-    -   言語:  `English (US)`  
+    -   <span data-ttu-id="cc2cf-169">言語: </span><span class="sxs-lookup"><span data-stu-id="cc2cf-169">Language.</span></span> `English (US)`  
   
-5.  **[このパッケージにソース ファイルを含める]** チェック ボックスをオンにし、**[参照]** をクリックして .NET Framework のインストール ファイルを含むローカルまたはネットワーク フォルダーを選択します。 フォルダーを選択したら、**[OK]** をクリックし、**[次へ]** をクリックします。  
+5.  <span data-ttu-id="cc2cf-170">**[このパッケージにソース ファイルを含める]** チェック ボックスをオンにし、**[参照]** をクリックして .NET Framework のインストール ファイルを含むローカルまたはネットワーク フォルダーを選択します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-170">Choose **This package contains source files**, and then choose **Browse** to select the local or network folder that contains the .NET Framework installation files.</span></span> <span data-ttu-id="cc2cf-171">フォルダーを選択したら、**[OK]** をクリックし、**[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-171">When you have selected the folder, choose **OK**, and then choose **Next**.</span></span>  
   
-6.  ウィザードの **[プログラミングの種類]** ページで、**[標準プログラム]** をクリックし、**[次へ]** をクリックします。  
+6.  <span data-ttu-id="cc2cf-172">ウィザードの **[プログラミングの種類]** ページで、**[標準プログラム]** をクリックし、**[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-172">On the **Program Type** page of the wizard, choose **Standard Program**, and then choose **Next**.</span></span>  
   
-7.  **パッケージとプログラムの作成ウィザード**の **[プログラム]** ページで、次の情報を入力します。  
+7.  <span data-ttu-id="cc2cf-173">**パッケージとプログラムの作成ウィザード**の **[プログラム]** ページで、次の情報を入力します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-173">On the **Program** page of the **Create Package and Program Wizard**, enter the following information:</span></span>  
   
-    1.  **名前:** `.NET Framework 4.5`  
+    1.  <span data-ttu-id="cc2cf-174">**名前:** `.NET Framework 4.5`</span><span class="sxs-lookup"><span data-stu-id="cc2cf-174">**Name:** `.NET Framework 4.5`</span></span>  
   
-    2.  **コマンド ライン:** `dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage ADMINDEPLOYMENT` (コマンド ライン オプションの説明はこの手順の後の表にあります)  
+    2.  <span data-ttu-id="cc2cf-175">**コマンド ライン:** `dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage ADMINDEPLOYMENT` (コマンド ライン オプションの説明はこの手順の後の表にあります)</span><span class="sxs-lookup"><span data-stu-id="cc2cf-175">**Command line:** `dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage ADMINDEPLOYMENT` (command-line options are described in the table after these steps)</span></span>  
   
-    3.  **実行:** **[非表示]** をクリックします。  
+    3.  <span data-ttu-id="cc2cf-176">**実行:** **[非表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-176">**Run:** Choose **Hidden**.</span></span>  
   
-    4.  **プログラムの実行条件:** ユーザーがログオンしているかどうかに関係なく、プログラムを実行できることを指定するオプションを選択します。  
+    4.  <span data-ttu-id="cc2cf-177">**プログラムの実行条件:** ユーザーがログオンしているかどうかに関係なく、プログラムを実行できることを指定するオプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-177">**Program can run:** Choose the option that specifies that the program can run regardless of whether a user is logged on.</span></span>  
   
-8.  **[要件]** ページで、**[次へ]** をクリックして既定値を受け入れ、ウィザードの処理を完了します。  
+8.  <span data-ttu-id="cc2cf-178">**[要件]** ページで、**[次へ]** をクリックして既定値を受け入れ、ウィザードの処理を完了します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-178">On the **Requirements** page, choose **Next** to accept the default values, and then complete the wizard.</span></span>  
   
- 次の表は、手順 7. で指定したコマンド ライン オプションについて説明しています。  
+ <span data-ttu-id="cc2cf-179">次の表は、手順 7. で指定したコマンド ライン オプションについて説明しています。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-179">The following table describes the command-line options specified in step 7.</span></span>  
   
-|オプション|説明|  
+|<span data-ttu-id="cc2cf-180">オプション</span><span class="sxs-lookup"><span data-stu-id="cc2cf-180">Option</span></span>|<span data-ttu-id="cc2cf-181">説明</span><span class="sxs-lookup"><span data-stu-id="cc2cf-181">Description</span></span>|  
 |------------|-----------------|  
-|**/q**|クワイエット モードを設定します。 ユーザー入力は必要なく、出力は表示されません。|  
-|**/norestart**|セットアップ プログラムが自動的に再起動しないようにします。 このオプションを使用する場合、Configuration Manager でコンピューターの再起動を処理する必要があります。|  
-|**/chainingpackage** *PackageName*|チェーンを行っているパッケージの名前を指定します。 この情報は、[Microsoft カスタマー エクスペリエンス向上プログラム (CEIP)](http://go.microsoft.com/fwlink/p/?LinkId=248244) に申し込んだ場合のその他のインストール セッション情報と共に報告されます。 パッケージ名にスペースが含まれている場合は、区切り記号として二重引用符を使用します (例: **/chainingpackage "Chaining Product"**)。|  
+|<span data-ttu-id="cc2cf-182">**/q**</span><span class="sxs-lookup"><span data-stu-id="cc2cf-182">**/q**</span></span>|<span data-ttu-id="cc2cf-183">クワイエット モードを設定します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-183">Sets quiet mode.</span></span> <span data-ttu-id="cc2cf-184">ユーザー入力は必要なく、出力は表示されません。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-184">No user input is required, and no output is shown.</span></span>|  
+|<span data-ttu-id="cc2cf-185">**/norestart**</span><span class="sxs-lookup"><span data-stu-id="cc2cf-185">**/norestart**</span></span>|<span data-ttu-id="cc2cf-186">セットアップ プログラムが自動的に再起動しないようにします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-186">Prevents the Setup program from rebooting automatically.</span></span> <span data-ttu-id="cc2cf-187">このオプションを使用する場合、Configuration Manager でコンピューターの再起動を処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-187">If you use this option, Configuration Manager must handle the computer restart.</span></span>|  
+|<span data-ttu-id="cc2cf-188">**/chainingpackage** *PackageName*</span><span class="sxs-lookup"><span data-stu-id="cc2cf-188">**/chainingpackage** *PackageName*</span></span>|<span data-ttu-id="cc2cf-189">チェーンを行っているパッケージの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-189">Specifies the name of the package that is doing the chaining.</span></span> <span data-ttu-id="cc2cf-190">この情報は、[Microsoft カスタマー エクスペリエンス向上プログラム (CEIP)](http://go.microsoft.com/fwlink/p/?LinkId=248244) に申し込んだ場合のその他のインストール セッション情報と共に報告されます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-190">This information is reported with other installation session information for those who have signed up for the [Microsoft Customer Experience Improvement Program (CEIP)](http://go.microsoft.com/fwlink/p/?LinkId=248244).</span></span> <span data-ttu-id="cc2cf-191">パッケージ名にスペースが含まれている場合は、区切り記号として二重引用符を使用します (例: **/chainingpackage "Chaining Product"**)。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-191">If the package name includes spaces, use double quotation marks as delimiters; for example: **/chainingpackage "Chaining Product"**.</span></span>|  
   
- これらの手順によって、.NET Framework 4.5 という名前のパッケージが作成されます。 プログラムは、.NET Framework 4.5 のサイレント インストールを配置します。 サイレント インストールでは、ユーザーはインストール プロセスと対話しないので、チェーン アプリケーションがリターン コードをキャプチャし、再起動を処理する必要があります。MSDN ライブラリの「[Getting Progress Information from an Installation Package](http://go.microsoft.com/fwlink/?LinkId=179606)」 (インストール パッケージからの進行状況に関する情報の取得) を参照してください。  
-  
+ <span data-ttu-id="cc2cf-192">これらの手順によって、.NET Framework 4.5 という名前のパッケージが作成されます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-192">These steps create a package named .NET Framework 4.5.</span></span> <span data-ttu-id="cc2cf-193">プログラムは、.NET Framework 4.5 のサイレント インストールを配置します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-193">The program deploys a silent installation of the .NET Framework 4.5.</span></span> <span data-ttu-id="cc2cf-194">サイレント インストールでは、ユーザーが、インストール プロセスを使って操作しないと、チェーン アプリケーションがリターン コードを取得し、再起動; を処理する必要参照してください[インストール パッケージからの進行状況情報の取得](http://go.microsoft.com/fwlink/?LinkId=179606)です。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-194">In a silent installation, users do not interact with the installation process, and the chaining application has to capture the return code and handle rebooting; see [Getting Progress Information from an Installation Package](http://go.microsoft.com/fwlink/?LinkId=179606).</span></span>  
+ 
 <a name="select_dist_point"></a>   
-### <a name="select-a-distribution-point"></a>配布ポイントの選択  
- サーバーからクライアント コンピューターにパッケージとプログラムを配布するには、まずサイト システムを配布ポイントとして指定し、次にパッケージを配布ポイントに配布する必要があります。  
+### <a name="select-a-distribution-point"></a><span data-ttu-id="cc2cf-195">配布ポイントの選択</span><span class="sxs-lookup"><span data-stu-id="cc2cf-195">Select a distribution point</span></span>  
+ <span data-ttu-id="cc2cf-196">サーバーからクライアント コンピューターにパッケージとプログラムを配布するには、まずサイト システムを配布ポイントとして指定し、次にパッケージを配布ポイントに配布する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-196">To distribute the package and program to client computers from a server, you must first designate a site system as a distribution point and then distribute the package to the distribution point.</span></span>  
   
- 以下の手順を使用して、前のセクションで作成した .NET Framework 4.5 パッケージの配布ポイントを選択します。  
+ <span data-ttu-id="cc2cf-197">以下の手順を使用して、前のセクションで作成した .NET Framework 4.5 パッケージの配布ポイントを選択します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-197">Use the following steps to select a distribution point for the .NET Framework 4.5 package you created in the previous section:</span></span>  
   
-1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** をクリックします。  
+1.  <span data-ttu-id="cc2cf-198">Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-198">In the Configuration Manager console, choose **Software Library**.</span></span>  
   
-2.  **[ソフトウェア ライブラリ]** ワークスペースで、**[アプリケーション管理]** を展開し、**[パッケージ]** をクリックします。  
+2.  <span data-ttu-id="cc2cf-199">**[ソフトウェア ライブラリ]** ワークスペースで、**[アプリケーション管理]** を展開し、**[パッケージ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-199">In the **Software Library** workspace, expand **Application Management**, and then choose **Packages**.</span></span>  
   
-3.  パッケージの一覧で、前のセクションで作成したパッケージ **[.NET Framework 4.5]** を選択します。  
+3.  <span data-ttu-id="cc2cf-200">パッケージの一覧で、前のセクションで作成したパッケージ **[.NET Framework 4.5]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-200">From the list of packages, select the package **.NET Framework 4.5** that you created in the previous section.</span></span>  
   
-4.  **[ホーム]** タブの **[展開]** グループで、**[コンテンツの配布]** をクリックします。  
+4.  <span data-ttu-id="cc2cf-201">**[ホーム]** タブの **[展開]** グループで、**[コンテンツの配布]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-201">On the **Home** tab, in the **Deployment** group, choose **Distribute Content**.</span></span>  
   
-5.  **コンテンツの配布ウィザード**の **[全般]** タブで、**[次へ]** をクリックします。  
+5.  <span data-ttu-id="cc2cf-202">**コンテンツの配布ウィザード**の **[全般]** タブで、**[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-202">On the **General** tab of the **Distribute Content Wizard**, choose **Next**.</span></span>  
   
-6.  ウィザードの **[コンテンツの配布先]** ページで、**[追加]** をクリックし、**[配布ポイント]** をクリックします。  
+6.  <span data-ttu-id="cc2cf-203">ウィザードの **[コンテンツの配布先]** ページで、**[追加]** をクリックし、**[配布ポイント]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-203">On the **Content Destination** page of the wizard, choose **Add**, and then choose **Distribution Point**.</span></span>  
   
-7.  **[配布ポイントの追加]** ダイアログ ボックスで、パッケージとプログラムをホストする配布ポイントを選択し、**[OK]** をクリックします。  
+7.  <span data-ttu-id="cc2cf-204">**[配布ポイントの追加]** ダイアログ ボックスで、パッケージとプログラムをホストする配布ポイントを選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-204">In the **Add Distribution Points** dialog box, select the distribution point(s) that will host the package and program, and then choose **OK**.</span></span>  
   
-8.  ウィザードを完了します。  
+8.  <span data-ttu-id="cc2cf-205">ウィザードを完了します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-205">Complete the wizard.</span></span>  
   
- これでパッケージには、.NET Framework 4.5 をサイレントで配置するために必要なすべての情報が含まれています。 パッケージとプログラムを配置する前に、そのパッケージが配布ポイントにインストールされていることを確認します。Configuration Manager ドキュメント ライブラリの「[Configuration Manager のコンテンツ管理の操作とメンテナンス](http://technet.microsoft.com/library/gg712694.aspx#BKMK_MonitorContent)」の「コンテンツの監視」セクションを参照してください。  
+ <span data-ttu-id="cc2cf-206">これでパッケージには、.NET Framework 4.5 をサイレントで配置するために必要なすべての情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-206">The packagenow contains all the information you need to silently deploy the .NET Framework 4.5.</span></span> <span data-ttu-id="cc2cf-207">パッケージとプログラムを配置する前に、そのパッケージが配布ポイントにインストールされていることを確認します。Configuration Manager ドキュメント ライブラリの「[Configuration Manager のコンテンツ管理の操作とメンテナンス](http://technet.microsoft.com/library/gg712694.aspx#BKMK_MonitorContent)」の「コンテンツの監視」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-207">Before you deploy the package and program, verify that it was installed on the distribution point; see the "Monitor Content" section of [Operations and Maintenance for Content Management in Configuration Manager](http://technet.microsoft.com/library/gg712694.aspx#BKMK_MonitorContent) in the Configuration Manager Documentation Library.</span></span>  
   
 <a name="deploying_package"></a>   
-### <a name="deploy-the-package"></a>パッケージの配置  
- .NET Framework 4.5 パッケージとプログラムを配置するには  
+### <a name="deploy-the-package"></a><span data-ttu-id="cc2cf-208">パッケージの配置</span><span class="sxs-lookup"><span data-stu-id="cc2cf-208">Deploy the package</span></span>  
+ <span data-ttu-id="cc2cf-209">.NET Framework 4.5 パッケージとプログラムを配置するには</span><span class="sxs-lookup"><span data-stu-id="cc2cf-209">To deploy the .NET Framework 4.5 package and program:</span></span>  
   
-1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** をクリックします。  
+1.  <span data-ttu-id="cc2cf-210">Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-210">In the Configuration Manager console, choose **Software Library**.</span></span>  
   
-2.  **[ソフトウェア ライブラリ]** ワークスペースで、**[アプリケーション管理]** を展開し、**[パッケージ]** をクリックします。  
+2.  <span data-ttu-id="cc2cf-211">**[ソフトウェア ライブラリ]** ワークスペースで、**[アプリケーション管理]** を展開し、**[パッケージ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-211">In the **Software Library** workspace, expand **Application Management**, and then choose **Packages**.</span></span>  
   
-3.  パッケージの一覧で、作成したパッケージ **[.NET Framework 4.5]** を選択します。  
+3.  <span data-ttu-id="cc2cf-212">パッケージの一覧で、作成したパッケージ **[.NET Framework 4.5]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-212">From the list of packages, select the package you created named **.NET Framework 4.5**.</span></span>  
   
-4.  **[ホーム]** タブの **[展開]** グループで、**[展開]** をクリックします。  
+4.  <span data-ttu-id="cc2cf-213">**[ホーム]** タブの **[展開]** グループで、**[展開]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-213">On the **Home** tab, in the **Deployment** group, choose **Deploy**.</span></span>  
   
-5.  **ソフトウェアの展開ウィザード**の **[全般]** ページで、**[参照]** をクリックし、前に作成したコレクションを選択します。 **[次へ]** をクリックします。  
+5.  <span data-ttu-id="cc2cf-214">**ソフトウェアの展開ウィザード**の **[全般]** ページで、**[参照]** をクリックし、前に作成したコレクションを選択します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-214">On the **General** page of the **Deploy Software Wizard**, choose **Browse**, and then select the collection that you created earlier.</span></span> <span data-ttu-id="cc2cf-215">**[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-215">Choose **Next**.</span></span>  
   
-6.  ウィザードの **[コンテンツ]** ページで、ソフトウェアを配布するポイントが表示されていることを確認し、**[次へ]** をクリックします。  
+6.  <span data-ttu-id="cc2cf-216">ウィザードの **[コンテンツ]** ページで、ソフトウェアを配布するポイントが表示されていることを確認し、**[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-216">On the **Content** page of the wizard, verify that the point from which you want to distribute the software is displayed, and then choose **Next**.</span></span>  
   
-7.  ウィザードの **[展開設定]** ページで、**[操作]** が **[インストール]** に設定され、**[目的]** が **[必須]** に設定されていることを確認します。 これにより、ソフトウェア パッケージがターゲット コンピューターに対する必須インストールになることが保証されます。 **[次へ]** をクリックします。  
+7.  <span data-ttu-id="cc2cf-217">ウィザードの **[展開設定]** ページで、**[操作]** が **[インストール]** に設定され、**[目的]** が **[必須]** に設定されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-217">On the **Deployment Settings** page of the wizard, confirm that **Action** is set to **Install**, and **Purpose** is set to **Required**.</span></span> <span data-ttu-id="cc2cf-218">これにより、ソフトウェア パッケージがターゲット コンピューターに対する必須インストールになることが保証されます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-218">This ensures that the software package will be a mandatory installation on the targeted computers.</span></span> <span data-ttu-id="cc2cf-219">**[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-219">Choose **Next**.</span></span>  
   
-8.  ウィザードの **[スケジュール]** ページで、.NET Framework をインストールする時期を指定します。 **[新規]** をクリックしてインストール時期を指定することも、ユーザーがログオンまたはログオフしたとき、またはできるだけ早い時期にインストールすることもできます。 **[次へ]** をクリックします。  
+8.  <span data-ttu-id="cc2cf-220">ウィザードの **[スケジュール]** ページで、.NET Framework をインストールする時期を指定します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-220">On the **Scheduling** page of the wizard, specify when you want the .NET Framework to be installed.</span></span> <span data-ttu-id="cc2cf-221">**[新規]** をクリックしてインストール時期を指定することも、ユーザーがログオンまたはログオフしたとき、またはできるだけ早い時期にインストールすることもできます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-221">You can choose **New** to assign an installation time, or instruct the software to install when the user logs on or off, or as soon as possible.</span></span> <span data-ttu-id="cc2cf-222">**[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-222">Choose **Next**.</span></span>  
   
-9. ウィザードの **[ユーザー側の表示と操作]** ページで、既定値を使用し、**[次へ]** をクリックします。  
+9. <span data-ttu-id="cc2cf-223">ウィザードの **[ユーザー側の表示と操作]** ページで、既定値を使用し、**[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-223">On the **User Experience** page of the wizard, use the default values and choose **Next**.</span></span>  
   
     > [!WARNING]
-    >  稼動環境では、配置スケジュールで異なる選択が必要になるポリシーが適用されている場合があります。 これらのオプションについては、TechNet ライブラリの「[[提供情報の名前のプロパティ] の [スケジュール] タブ](http://technet.microsoft.com/library/bb694016.aspx)」を参照してください。  
+    >  <span data-ttu-id="cc2cf-224">稼動環境では、配置スケジュールで異なる選択が必要になるポリシーが適用されている場合があります。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-224">Your production environment might have policies that require different selections for the deployment schedule.</span></span> <span data-ttu-id="cc2cf-225">これらのオプションについては、TechNet ライブラリの「[[提供情報の名前のプロパティ] の [スケジュール] タブ](http://technet.microsoft.com/library/bb694016.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-225">For information about these options, see [Advertisement Name Properties: Schedule Tab](http://technet.microsoft.com/library/bb694016.aspx) in the TechNet Library.</span></span>  
   
-10. ウィザードの **[配布ポイント]** ページで、既定値を使用し、**[次へ]** をクリックします。  
+10. <span data-ttu-id="cc2cf-226">ウィザードの **[配布ポイント]** ページで、既定値を使用し、**[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-226">On the **Distribution Points** page of the wizard, use the default values and choose **Next**.</span></span>  
   
-11. ウィザードを完了します。 **[監視]** ワークスペースの **[展開]** ノードで配置の進行状況を監視できます。  
+11. <span data-ttu-id="cc2cf-227">ウィザードを完了します。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-227">Complete the wizard.</span></span> <span data-ttu-id="cc2cf-228">**[監視]** ワークスペースの **[展開]** ノードで配置の進行状況を監視できます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-228">You can monitor the progress of the deployment in the **Deployments** node of the **Monitoring** workspace.</span></span>  
   
- これで、対象のコレクションにパッケージが配置され、.NET Framework 4.5 のサイレント インストールが開始されます。 .NET Framework 4.5 のインストールのエラー コードについては、このトピックの「[リターン コード](#return_codes)」セクションを参照してください。  
+ <span data-ttu-id="cc2cf-229">これで、対象のコレクションにパッケージが配置され、.NET Framework 4.5 のサイレント インストールが開始されます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-229">The package will now be deployed to the targeted collection and the silent installation of .NET Framework 4.5 will begin.</span></span> <span data-ttu-id="cc2cf-230">.NET Framework 4.5 のインストールのエラー コードについては、このトピックの「[リターン コード](#return_codes)」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-230">For information about .NET Framework 4.5 installation error codes, see the [Return Codes](#return_codes) section later in this topic.</span></span>  
   
 <a name="resources"></a>   
-## <a name="resources"></a>リソース  
- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 再頒布可能パッケージの配置をテストするためのインフラストラクチャの詳細については、次のリソースを参照してください。  
+## <a name="resources"></a><span data-ttu-id="cc2cf-231">リソース</span><span class="sxs-lookup"><span data-stu-id="cc2cf-231">Resources</span></span>  
+ <span data-ttu-id="cc2cf-232">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] 再頒布可能パッケージの配置をテストするためのインフラストラクチャの詳細については、次のリソースを参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-232">For more information about the infrastructure for testing the deployment of the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] redistributable package, see the following resources.</span></span>  
   
- **Active Directory、DNS、DHCP:**  
+ <span data-ttu-id="cc2cf-233">**Active Directory、DNS、DHCP:**</span><span class="sxs-lookup"><span data-stu-id="cc2cf-233">**Active Directory, DNS, DHCP:**</span></span>  
   
--   [Windows Server 2008 向け Active Directory Domain Services](http://technet.microsoft.com/library/dd378891.aspx)  
+-   [<span data-ttu-id="cc2cf-234">Windows Server 2008 向け Active Directory Domain Services</span><span class="sxs-lookup"><span data-stu-id="cc2cf-234">Active Directory Domain Services for Windows Server 2008</span></span>](http://technet.microsoft.com/library/dd378891.aspx)  
   
--   [DNS サーバー](http://technet.microsoft.com/library/cc732997.aspx)  
+-   [<span data-ttu-id="cc2cf-235">DNS サーバー</span><span class="sxs-lookup"><span data-stu-id="cc2cf-235">DNS Server</span></span>](http://technet.microsoft.com/library/cc732997.aspx)  
   
--   [DHCP サーバー](http://technet.microsoft.com/library/cc896553.aspx)  
+-   [<span data-ttu-id="cc2cf-236">DHCP サーバー</span><span class="sxs-lookup"><span data-stu-id="cc2cf-236">DHCP Server</span></span>](http://technet.microsoft.com/library/cc896553.aspx)  
   
- **SQL Server 2008:**  
+ <span data-ttu-id="cc2cf-237">**SQL Server 2008:**</span><span class="sxs-lookup"><span data-stu-id="cc2cf-237">**SQL Server 2008:**</span></span>  
   
--   [SQL Server 2008 のインストール (SQL Server ビデオ)](http://technet.microsoft.com/library/dd299415.aspx)  
+-   [<span data-ttu-id="cc2cf-238">SQL Server 2008 のインストール (SQL Server ビデオ)</span><span class="sxs-lookup"><span data-stu-id="cc2cf-238">Installing SQL Server 2008 (SQL Server Video)</span></span>](http://technet.microsoft.com/library/dd299415.aspx)  
   
--   [SQL Server 2008 のデータベース管理者向けセキュリティ概要](http://download.microsoft.com/download/a/c/d/acd8e043-d69b-4f09-bc9e-4168b65aaa71/SQL2008SecurityOverviewforAdmins.docx)  
+-   [<span data-ttu-id="cc2cf-239">SQL Server 2008 のデータベース管理者向けセキュリティ概要</span><span class="sxs-lookup"><span data-stu-id="cc2cf-239">SQL Server 2008 Security Overview for Database Administrators</span></span>](http://download.microsoft.com/download/a/c/d/acd8e043-d69b-4f09-bc9e-4168b65aaa71/SQL2008SecurityOverviewforAdmins.docx)  
   
- **System Center 2012 Configuration Manager (管理ポイント、配布ポイント):**  
+ <span data-ttu-id="cc2cf-240">**System Center 2012 Configuration Manager (管理ポイント、配布ポイント):**</span><span class="sxs-lookup"><span data-stu-id="cc2cf-240">**System Center 2012 Configuration Manager (Management Point, Distribution Point):**</span></span>  
   
--   [System Center 2012 Configuration Manager のサイト管理](http://technet.microsoft.com/library/gg681983.aspx)  
+-   [<span data-ttu-id="cc2cf-241">System Center 2012 Configuration Manager のサイト管理</span><span class="sxs-lookup"><span data-stu-id="cc2cf-241">Site Administration for System Center 2012 Configuration Manager</span></span>](http://technet.microsoft.com/library/gg681983.aspx)  
   
--   [Configuration Manager の単一サイトの計画と展開](http://technet.microsoft.com/library/bb680961.aspx)  
+-   [<span data-ttu-id="cc2cf-242">Configuration Manager の単一サイトの計画と展開</span><span class="sxs-lookup"><span data-stu-id="cc2cf-242">Configuration Manager Single Site Planning and Deployment</span></span>](http://technet.microsoft.com/library/bb680961.aspx)  
   
- **Windows コンピューター用の System Center 2012 Configuration Manager クライアント:**  
+ <span data-ttu-id="cc2cf-243">**Windows コンピューター用の System Center 2012 Configuration Manager クライアント:**</span><span class="sxs-lookup"><span data-stu-id="cc2cf-243">**System Center 2012 Configuration Manager client for Windows computers:**</span></span>  
   
--   [System Center 2012 Configuration Manager のクライアントの展開](http://technet.microsoft.com/library/gg699391.aspx)  
+-   [<span data-ttu-id="cc2cf-244">System Center 2012 Configuration Manager のクライアントの展開</span><span class="sxs-lookup"><span data-stu-id="cc2cf-244">Deploying Clients for System Center 2012 Configuration Manager</span></span>](http://technet.microsoft.com/library/gg699391.aspx)  
   
 <a name="troubleshooting"></a>   
-## <a name="troubleshooting"></a>トラブルシューティング  
+## <a name="troubleshooting"></a><span data-ttu-id="cc2cf-245">トラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="cc2cf-245">Troubleshooting</span></span>  
   
-### <a name="log-file-locations"></a>ログ ファイルの場所  
- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のセットアップ中に次のログ ファイルが作成されます。  
+### <a name="log-file-locations"></a><span data-ttu-id="cc2cf-246">ログ ファイルの場所</span><span class="sxs-lookup"><span data-stu-id="cc2cf-246">Log file locations</span></span>  
+ <span data-ttu-id="cc2cf-247">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のセットアップ中に次のログ ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-247">The following log files are generated during [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] setup:</span></span>  
   
- %temp%\Microsoft .NET Framework 4.5*.txt   
- %temp%\Microsoft .NET Framework 4.5\*.html  
+ <span data-ttu-id="cc2cf-248">%temp%\Microsoft .NET Framework 4.5*.txt</span><span class="sxs-lookup"><span data-stu-id="cc2cf-248">%temp%\Microsoft .NET Framework 4.5*.txt</span></span>  
+ <span data-ttu-id="cc2cf-249">%temp%\Microsoft .NET Framework 4.5\*.html</span><span class="sxs-lookup"><span data-stu-id="cc2cf-249">%temp%\Microsoft .NET Framework 4.5\*.html</span></span>  
   
- [ログ収集ツール](http://www.microsoft.com/download/details.aspx?id=12493)を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のログ ファイルを収集し、それらのファイルのサイズを縮小した圧縮キャビネット (.cab) ファイルを作成できます。  
+ <span data-ttu-id="cc2cf-250">[ログ収集ツール](http://www.microsoft.com/download/details.aspx?id=12493)を使用して [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] のログ ファイルを収集し、それらのファイルのサイズを縮小した圧縮キャビネット (.cab) ファイルを作成できます。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-250">You can use the [log collection tool](http://www.microsoft.com/download/details.aspx?id=12493) to collect the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] log files and to create a compressed cabinet (.cab) file that reduces the size of the files.</span></span>  
   
 <a name="return_codes"></a>   
-### <a name="return-codes"></a>リターン コード  
- 次の表は、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] の再頒布可能インストール プログラムから返される最も一般的なリターン コードを示しています。 これらのリターン コードは、すべてのバージョンのインストーラーで共通です。  
+### <a name="return-codes"></a><span data-ttu-id="cc2cf-251">リターン コード</span><span class="sxs-lookup"><span data-stu-id="cc2cf-251">Return codes</span></span>  
+ <span data-ttu-id="cc2cf-252">次の表は、[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] の再頒布可能インストール プログラムから返される最も一般的なリターン コードを示しています。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-252">The following table lists the most common return codes from the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] redistributable installation program.</span></span> <span data-ttu-id="cc2cf-253">これらのリターン コードは、すべてのバージョンのインストーラーで共通です。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-253">The return codes are the same for all versions of the installer.</span></span>  
   
- 詳細情報へのリンクについては、次の「[ダウンロードのエラー コード](#additional_error_codes)」セクションを参照してください。  
+ <span data-ttu-id="cc2cf-254">詳細情報へのリンクについては、次の「[ダウンロードのエラー コード](#additional_error_codes)」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-254">For links to detailed information, see the next section, [Download error codes](#additional_error_codes).</span></span>  
   
-|リターン コード|説明|  
+|<span data-ttu-id="cc2cf-255">リターン コード</span><span class="sxs-lookup"><span data-stu-id="cc2cf-255">Return code</span></span>|<span data-ttu-id="cc2cf-256">説明</span><span class="sxs-lookup"><span data-stu-id="cc2cf-256">Description</span></span>|  
 |-----------------|-----------------|  
-|0|インストールは正常に終了しました。|  
-|1602|ユーザーがインストールをキャンセルしました。|  
-|1603|インストール中に致命的なエラーが発生しました。|  
-|1641|インストールを完了するには再起動する必要があります。 このメッセージが表示された場合、操作は成功しました。|  
-|3010|インストールを完了するには再起動する必要があります。 このメッセージが表示された場合、操作は成功しました。|  
-|5100|ユーザーのコンピューターは、システム要件を満たしていません。|  
+|<span data-ttu-id="cc2cf-257">0</span><span class="sxs-lookup"><span data-stu-id="cc2cf-257">0</span></span>|<span data-ttu-id="cc2cf-258">インストールは正常に終了しました。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-258">Installation completed successfully.</span></span>|  
+|<span data-ttu-id="cc2cf-259">1602</span><span class="sxs-lookup"><span data-stu-id="cc2cf-259">1602</span></span>|<span data-ttu-id="cc2cf-260">ユーザーがインストールをキャンセルしました。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-260">The user canceled installation.</span></span>|  
+|<span data-ttu-id="cc2cf-261">1603</span><span class="sxs-lookup"><span data-stu-id="cc2cf-261">1603</span></span>|<span data-ttu-id="cc2cf-262">インストール中に致命的なエラーが発生しました。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-262">A fatal error occurred during installation.</span></span>|  
+|<span data-ttu-id="cc2cf-263">1641</span><span class="sxs-lookup"><span data-stu-id="cc2cf-263">1641</span></span>|<span data-ttu-id="cc2cf-264">インストールを完了するには再起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-264">A restart is required to complete the installation.</span></span> <span data-ttu-id="cc2cf-265">このメッセージが表示された場合、操作は成功しました。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-265">This message indicates success.</span></span>|  
+|<span data-ttu-id="cc2cf-266">3010</span><span class="sxs-lookup"><span data-stu-id="cc2cf-266">3010</span></span>|<span data-ttu-id="cc2cf-267">インストールを完了するには再起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-267">A restart is required to complete the installation.</span></span> <span data-ttu-id="cc2cf-268">このメッセージが表示された場合、操作は成功しました。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-268">This message indicates success.</span></span>|  
+|<span data-ttu-id="cc2cf-269">5100</span><span class="sxs-lookup"><span data-stu-id="cc2cf-269">5100</span></span>|<span data-ttu-id="cc2cf-270">ユーザーのコンピューターは、システム要件を満たしていません。</span><span class="sxs-lookup"><span data-stu-id="cc2cf-270">The user's computer does not meet system requirements.</span></span>|  
   
 <a name="additional_error_codes"></a>   
-### <a name="download-error-codes"></a>ダウンロードのエラー コード  
+### <a name="download-error-codes"></a><span data-ttu-id="cc2cf-271">ダウンロードのエラー コード</span><span class="sxs-lookup"><span data-stu-id="cc2cf-271">Download error codes</span></span>  
   
--   [Background Intelligent Transfer Service (BITS) のエラー コード](http://msdn.microsoft.com/library/aa362823.aspx)  
+-   [<span data-ttu-id="cc2cf-272">Background Intelligent Transfer Service (BITS) のエラー コード</span><span class="sxs-lookup"><span data-stu-id="cc2cf-272">Background Intelligent Transfer Service (BITS) error codes</span></span>](http://msdn.microsoft.com/library/aa362823.aspx)  
   
--   [URL モニカーのエラー コード](http://msdn.microsoft.com/library/ms775145.aspx)  
+-   [<span data-ttu-id="cc2cf-273">URL モニカーのエラー コード</span><span class="sxs-lookup"><span data-stu-id="cc2cf-273">URL moniker error codes</span></span>](http://msdn.microsoft.com/library/ms775145.aspx)  
   
--   [WinHttp エラー コード](http://msdn.microsoft.com/library/aa383770.aspx)  
+-   [<span data-ttu-id="cc2cf-274">WinHttp エラー コード</span><span class="sxs-lookup"><span data-stu-id="cc2cf-274">WinHttp error codes</span></span>](http://msdn.microsoft.com/library/aa383770.aspx)  
   
- その他のエラー コード:   
+ <span data-ttu-id="cc2cf-275">その他のエラー コード: </span><span class="sxs-lookup"><span data-stu-id="cc2cf-275">Other error codes:</span></span>  
   
--   [Windows インストーラーのエラー コード](http://msdn.microsoft.com/library/aa368542.aspx)  
+-   [<span data-ttu-id="cc2cf-276">Windows インストーラーのエラー コード</span><span class="sxs-lookup"><span data-stu-id="cc2cf-276">Windows Installer error codes</span></span>](http://msdn.microsoft.com/library/aa368542.aspx)  
   
--   [Windows Update エージェントの結果コード](http://technet.microsoft.com/library/cc720442.aspx)  
+-   [<span data-ttu-id="cc2cf-277">Windows Update エージェントの結果コード</span><span class="sxs-lookup"><span data-stu-id="cc2cf-277">Windows Update Agent result codes</span></span>](http://technet.microsoft.com/library/cc720442.aspx)  
   
-## <a name="see-also"></a>関連項目  
- [配置ガイド (開発者向け)](../../../docs/framework/deployment/deployment-guide-for-developers.md)   
- [システム要件](../../../docs/framework/get-started/system-requirements.md)
-
+## <a name="see-also"></a><span data-ttu-id="cc2cf-278">関連項目</span><span class="sxs-lookup"><span data-stu-id="cc2cf-278">See Also</span></span>  
+ [<span data-ttu-id="cc2cf-279">配置ガイド (開発者向け)</span><span class="sxs-lookup"><span data-stu-id="cc2cf-279">Deployment Guide for Developers</span></span>](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
+ [<span data-ttu-id="cc2cf-280">システム要件</span><span class="sxs-lookup"><span data-stu-id="cc2cf-280">System Requirements</span></span>](../../../docs/framework/get-started/system-requirements.md)

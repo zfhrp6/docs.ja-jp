@@ -1,406 +1,406 @@
 ---
-title: "構成エディター ツール (SvcConfigEditor.exe) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "構成ファイル"
-  - "構成ファイル スキーマ"
-  - "構成ファイル"
-  - "構成ファイル, 作成"
+title: "構成エディター ツール (SvcConfigEditor.exe)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- configuration files, creating
+- configuration files
+- Configuration file
+- configuration file schema
 ms.assetid: 2db21a57-5f64-426f-89df-fb0dc2d2def5
-caps.latest.revision: 45
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 45
+caps.latest.revision: "45"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 27c1a240817be169decbb0bbbac9fc78b189fc2d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 構成エディター ツール (SvcConfigEditor.exe)
-管理者と開発者は、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス構成エディター \(SvcConfigEditor.exe\) のグラフィカル ユーザー インターフェイスを使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの構成設定を作成および変更できます。このツールを使用すると、XML 構成ファイルを直接編集せずに、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のバインディング、動作、サービス、および診断の設定を管理できます。  
+# <a name="configuration-editor-tool-svcconfigeditorexe"></a><span data-ttu-id="1e2b7-102">構成エディター ツール (SvcConfigEditor.exe)</span><span class="sxs-lookup"><span data-stu-id="1e2b7-102">Configuration Editor Tool (SvcConfigEditor.exe)</span></span>
+<span data-ttu-id="1e2b7-103">管理者と開発者は、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービス構成エディター (SvcConfigEditor.exe) のグラフィカル ユーザー インターフェイスを使用して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの構成設定を作成および変更できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-103">The [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] Service Configuration Editor (SvcConfigEditor.exe) allows administrators and developers to create and modify configuration settings for [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] services using a graphical user interface.</span></span> <span data-ttu-id="1e2b7-104">このツールを使用すると、XML 構成ファイルを直接編集せずに、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のバインディング、動作、サービス、および診断の設定を管理できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-104">With this tool, you can manage settings for [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] bindings, behaviors, services, and diagnostics without having to directly edit XML configuration files.</span></span>  
   
- サービス構成エディターは、C:\\Program Files\\Microsoft SDKs\\Windows\\v6.0\\Bin フォルダーにあります。  
+ <span data-ttu-id="1e2b7-105">サービス構成エディターは、C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin フォルダーにあります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-105">Service Configuration Editor can be found in the C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin folder.</span></span>  
   
-## WCF 構成エディター  
- サービス構成エディターには、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のサービスやクライアントを構成する手順をすべてガイドするウィザードが付属しています。エディターで直接編集する代わりにウィザードを使用することを強くお勧めします。  
+## <a name="the-wcf-configuration-editor"></a><span data-ttu-id="1e2b7-106">WCF 構成エディター</span><span class="sxs-lookup"><span data-stu-id="1e2b7-106">The WCF Configuration Editor</span></span>  
+ <span data-ttu-id="1e2b7-107">サービス構成エディターには、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のサービスやクライアントを構成する手順をすべてガイドするウィザードが付属しています。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-107">Service Configuration Editor comes with a wizard that guides you through all the steps in configuring a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service or client.</span></span> <span data-ttu-id="1e2b7-108">エディターで直接編集する代わりにウィザードを使用することを強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-108">You are strongly advised to use the wizard instead of the editor directly.</span></span>  
   
- 標準の System.Configuration スキーマに準拠する構成ファイルが既にいくつかある場合は、ユーザー インターフェイスを使用してバインディング、動作、サービス、および診断の固有の設定を管理できます。サービス構成エディターを使用すると、既存の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成ファイルの設定だけでなく、実行可能ファイル、COM\+ サービス、および Web ホスト サービスの設定を管理できます。サービス構成エディターで Web ホスト サービスを開くと、上位レベル ノードのサービス固有の構成セクションおよび継承された構成セクションの両方が表示されます。  
+ <span data-ttu-id="1e2b7-109">標準の System.Configuration スキーマに準拠する構成ファイルが既にいくつかある場合は、ユーザー インターフェイスを使用してバインディング、動作、サービス、および診断の固有の設定を管理できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-109">If you already have some configuration files that comply with the standard System.Configuration schema, you can manage specific settings for bindings, behavior, services, and diagnostics with the user interface.</span></span> <span data-ttu-id="1e2b7-110">サービス構成エディターを使用すると、既存の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成ファイルの設定だけでなく、実行可能ファイル、COM+ サービス、および Web ホスト サービスの設定を管理できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-110">The Service Configuration Editor enables you to manage the settings for existing [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] configuration files as well as executable files, COM+ services, and Web-hosted services.</span></span> <span data-ttu-id="1e2b7-111">サービス構成エディターで Web ホスト サービスを開くと、上位レベル ノードのサービス固有の構成セクションおよび継承された構成セクションの両方が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-111">When opening a Web-hosted service with Service Configuration Editor, both the service’s own configuration and inherited configurations sections of upper level nodes are shown.</span></span>  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成設定は、構成ファイルの `<system.serviceModel>` セクションにあるため、エディターはこの要素の内容だけを操作し、同じファイル内の他の要素にはアクセスしません。既存の構成ファイルに直接移動したり、サービス、仮想ディレクトリ、または COM\+ サービスを含むアセンブリを選択することができます。エディターがその特定のサービスの構成ファイルを読み込むと、ユーザーは新しい要素を追加したり、構成ファイルの `<system.serviceModel>` セクションで入れ子になっている既存の要素を編集することができます。  
+ <span data-ttu-id="1e2b7-112">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成設定は、構成ファイルの `<system.serviceModel>` セクションにあるため、エディターはこの要素の内容だけを操作し、同じファイル内の他の要素にはアクセスしません。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-112">Because [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] configuration settings are located in the `<system.serviceModel>` section of the configuration file, the editor operates exclusively on the content of this element and does not access other elements in the same file.</span></span> <span data-ttu-id="1e2b7-113">既存の構成ファイルに直接移動したり、サービス、仮想ディレクトリ、または COM+ サービスを含むアセンブリを選択することができます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-113">You can navigate to existing configuration files directly or you can select an assembly that contains a service, virtual directory, or COM+ service.</span></span> <span data-ttu-id="1e2b7-114">エディターがその特定のサービスの構成ファイルを読み込むと、ユーザーは新しい要素を追加したり、構成ファイルの `<system.serviceModel>` セクションで入れ子になっている既存の要素を編集することができます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-114">The editor loads the configuration file for that particular service and allows the user to either add new elements or edit existing elements nested in the `<system.serviceModel>` section of the configuration file.</span></span>  
   
- エディターは、IntelliSense をサポートし、スキーマ準拠を強制します。結果として得られる出力は、構成ファイルのスキーマに準拠し、構文的に正しいデータ値を持つことが保証されます。ただし、エディターは構成ファイルのセマンティクスが有効であることは保証しません。つまり、エディターは構成ファイルが関連するサービスで有効に機能することは保証しません。  
+ <span data-ttu-id="1e2b7-115">エディターは、IntelliSense をサポートし、スキーマ準拠を強制します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-115">The editor supports IntelliSense and enforces schema compliance.</span></span> <span data-ttu-id="1e2b7-116">結果として得られる出力は、構成ファイルのスキーマに準拠し、構文的に正しいデータ値を持つことが保証されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-116">The resulting output is guaranteed to comply with the schema of the configuration file and to have syntactically correct data values.</span></span> <span data-ttu-id="1e2b7-117">ただし、エディターは構成ファイルのセマンティクスが有効であることは保証しません。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-117">However, the editor does not guarantee that the configuration file is semantically valid.</span></span> <span data-ttu-id="1e2b7-118">つまり、エディターは構成ファイルが関連するサービスで有効に機能することは保証しません。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-118">In other words, the editor does not guarantee that the configuration file can work with the service it configures.</span></span>  
   
 > [!CAUTION]
->  要素を変更すると、エディターは構成ファイルからその構成要素を削除できません。たとえば、エディターを使用してエンドポイント名を空でない文字列に設定して保存すると、構成ファイルは次の内容になります。  
+>  <span data-ttu-id="1e2b7-119">要素を変更すると、エディターは構成ファイルからその構成要素を削除できません。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-119">The editor cannot purge a configuration element from the configuration file once you have modified the element.</span></span> <span data-ttu-id="1e2b7-120">たとえば、エディターを使用してエンドポイント名を空でない文字列に設定して保存すると、構成ファイルは次の内容になります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-120">For example, if you use the editor to set the endpoint name to a non-empty string and save it, the configuration file has the following content, as shown in the following example.</span></span>  
 >   
 >  `<endpoint binding="basicHttpBinding" name="somename" />`  
 >   
->  そのエンドポイント名を削除するために名前を空の文字列に設定して保存しようとしても、構成ファイルには、`name` 属性が残ります。  
+>  <span data-ttu-id="1e2b7-121">そのエンドポイント名を削除するために名前を空の文字列に設定して保存しようとしても、構成ファイルには、`name` 属性が残ります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-121">If you attempt to remove the name by setting it to an empty string and save the file, the configuration file still contains the `name` attribute, as shown in the following example.</span></span>  
 >   
 >  `<endpoint binding="basicHttpBinding" name="" />`  
 >   
->  属性を削除するには、別のテキスト エディターを使用して要素を手動で編集する必要があります。  
+>  <span data-ttu-id="1e2b7-122">属性を削除するには、別のテキスト エディターを使用して要素を手動で編集する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-122">To purge the attribute, you must manually edit the element using another text editor.</span></span>  
 >   
->  特に、`clientCredential` エンドポイント動作の `issueToken` 要素を使用する場合は、この問題に注意する必要があります。具体的には、`localIssuer` サブ要素の `address` 属性を空の文字列にしないようにします。構成エディターを使用して既に `address` 属性を変更している場合にその属性を完全に削除したい場合は、構成エディター以外のツールを使用して削除する必要があります。そうでない場合、属性は空の文字列を含むことになるため、アプリケーションは例外をスローします。  
+>  <span data-ttu-id="1e2b7-123">特に、`issueToken` エンドポイント動作の `clientCredential` 要素を使用する場合は、この問題に注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-123">You should be especially careful with this issue when you use the `issueToken` element of the `clientCredential` Endpoint behavior.</span></span> <span data-ttu-id="1e2b7-124">具体的には、`address` サブ要素の `localIssuer` 属性を空の文字列にしないようにします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-124">Specifically, the `address` attribute of its `localIssuer` sub-element must not be an empty string.</span></span> <span data-ttu-id="1e2b7-125">構成エディターを使用して既に `address` 属性を変更している場合にその属性を完全に削除したい場合は、構成エディター以外のツールを使用して削除する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-125">If you have modified the `address` attribute using the Configuration Editor and want to remove it completely, you should do so using a tool other than the Editor.</span></span> <span data-ttu-id="1e2b7-126">そうでない場合、属性は空の文字列を含むことになるため、アプリケーションは例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-126">Otherwise, the attribute contains an empty string and your application throws an exception.</span></span>  
   
-## 構成エディターの使用  
- サービス構成エディターは、次の Windows SDK のインストール場所にあります。  
+## <a name="using-the-configuration-editor"></a><span data-ttu-id="1e2b7-127">構成エディターの使用</span><span class="sxs-lookup"><span data-stu-id="1e2b7-127">Using the Configuration Editor</span></span>  
+ <span data-ttu-id="1e2b7-128">サービス構成エディターは、次の Windows SDK のインストール場所にあります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-128">The Service Configuration Editor can be found at the following Windows SDK installation location:</span></span>  
   
- C:\\Program Files\\Microsoft SDKs\\Windows\\v6.0\\Bin\\SvcConfigEditor.exe  
+ <span data-ttu-id="1e2b7-129">C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe</span><span class="sxs-lookup"><span data-stu-id="1e2b7-129">C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe</span></span>  
   
- サービス構成エディターを起動したら、**\[ファイル\]** メニューの **\[開く\]** を使用して、管理するサービスまたはアセンブリを参照できます。構成ファイルを直接開き、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] \/COM\+ サービスを参照し、Web ホスト サービスの構成設定を開くことができます。  
+ <span data-ttu-id="1e2b7-130">サービス構成エディターを起動すると、後に行うこともできます、**ファイル/オープン**メニューのサービスまたは管理するアセンブリを参照します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-130">After you launch the Service Configuration Editor, you can use the **File/Open** menu to browse for the service or assembly you want to manage.</span></span> <span data-ttu-id="1e2b7-131">構成ファイルを直接開き、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] /COM+ サービスを参照し、Web ホスト サービスの構成設定を開くことができます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-131">You can open configuration files directly, browse for [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] /COM+ services, and open configuration files for Web-hosted services.</span></span>  
   
- サービス構成エディターのユーザー インターフェイスは、次の領域に分割されています。  
+ <span data-ttu-id="1e2b7-132">サービス構成エディターのユーザー インターフェイスは、次の領域に分割されています。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-132">The Service Configuration Editor's user interface is divided into the following areas:</span></span>  
   
--   ツリー ビュー ペイン: 左側に構成要素をツリー構造で表示します。ノードを右クリックと、ツリーで操作を実行できます。  
+-   <span data-ttu-id="1e2b7-133">ツリー ビュー ペイン: 左側に構成要素をツリー構造で表示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-133">Tree View Pane, which displays configuration elements in a tree structure on the left.</span></span> <span data-ttu-id="1e2b7-134">ノードを右クリックと、ツリーで操作を実行できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-134">You can perform operations in the tree by right-clicking the nodes.</span></span>  
   
--   タスク ペイン: ウィンドウの左下に現在の要素の一般的なタスクを表示します。  
+-   <span data-ttu-id="1e2b7-135">タスク ペイン: ウィンドウの左下に現在の要素の一般的なタスクを表示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-135">Task Pane, which displays common tasks for current elements on the lower-left of the window</span></span>  
   
--   詳細ペイン: ツリー ビューで選択された構成ノードの詳細設定を右側に表示します。  
+-   <span data-ttu-id="1e2b7-136">詳細ペイン: ツリー ビューで選択された構成ノードの詳細設定を右側に表示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-136">Detail Pane, which displays detailed settings of the configuration node selected in the Tree View on the right.</span></span>  
   
-### 構成ファイルを開く  
+### <a name="opening-a-configuration-file"></a><span data-ttu-id="1e2b7-137">構成ファイルを開く</span><span class="sxs-lookup"><span data-stu-id="1e2b7-137">Opening a Configuration File</span></span>  
   
-1.  サービス構成エディターを起動するには、コマンド ウィンドウで [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のインストール場所に移動し、「`SvcConfigEditor.exe`」と入力します。  
+1.  <span data-ttu-id="1e2b7-138">移動する、コマンド ウィンドウを使用してサービス構成エディターを起動、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]インストール場所、および入力`SvcConfigEditor.exe`です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-138">Start Service Configuration Editor by using a command window to navigate to your [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] installation location, and then type `SvcConfigEditor.exe`.</span></span>  
   
-2.  **\[ファイル\]** メニューの **\[開く\]** を選択し、管理するファイルの種類をクリックします。  
+2.  <span data-ttu-id="1e2b7-139">**ファイル**メニューの **開く**を管理するファイルの種類をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-139">From the **File** menu, select **Open** and click the type of file you want to manage.</span></span>  
   
-3.  **\[開く\]** ダイアログ ボックスで、管理する特定のファイルに移動し、ダブルクリックします。  
+3.  <span data-ttu-id="1e2b7-140">**開く** ダイアログ ボックスで、管理し、ダブルクリックする特定のファイルに移動します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-140">In the **Open** dialog box, navigate to the specific file you want to manage and double-click it.</span></span>  
   
- ビューアーは、構成のマージ パスを自動的にたどり、マージされた構成のビューを生成します。たとえば、ホストなしのサービスの実際の構成は、Machine.config と App.config の組み合わせです。変更があれば、SvcConfigEditor のアクティブ ファイルに適用されます。構成マージ パスの特定ファイルを編集する場合は、直接開く必要があります。  
-  
-> [!NOTE]
->  構成ファイルが構成エディター以外で変更されている場合、構成エディターは、現在開いている構成ファイルを再読み込みします。再読み込みが発生すると、エディター内で永続的に保存されていないすべての変更が失われます。再読み込みが連続して発生する場合は、構成ファイルに定期的にアクセスするサービス \(バックグラウンドで実行するウイルス対策ソフトウェアなど\) が原因と考えられます。この問題を解決するには、ファイルが開いているときに、構成エディターがそのファイルにアクセスできる唯一のプロセスであることを保証する必要があります。  
-  
-### サービス  
- **\[サービス\]** ノードは、構成ファイルで現在割り当てられているすべてのサービスを表示します。ツリー内の各サブノードは、構成ファイル内の \<`services`\> 要素のサブ要素に対応します。  
-  
- **\[サービス\]** ノードをクリックして、**詳細**ペインのサービスの概要ページでタスクを表示または実行できます。  
-  
-#### 新しいサービス構成の作成  
- 新しいサービス構成は次の方法で作成できます。  
-  
--   ウィザードの使用: ウィザードを起動するには、タスク ペインまたは概要ページの **\[新しいサービスの作成\]** リンクをクリックします。**\[ファイル\]** メニューの **\[新しい項目の追加\]** を選択することでも起動できます。  
-  
--   手動による作成 : **\[サービス\]** ノードを右クリックし、**\[新しいサービス\]** を選択します。  
-  
-#### 新しいサービス エンドポイント構成の作成  
- 新しいサービス エンドポイント構成は次の方法で作成できます。  
-  
--   ウィザードによる作成: ウィザードを起動するには、タスク ペインまたは概要ページの **\[新しいサービス エンドポイントの作成\]** リンクをクリックします。**\[ファイル\]** メニューの **\[新しい項目の追加\]** を選択することでも起動できます。  
-  
--   手動による作成 : サービスを作成したら、**\[エンドポイント\]** ノードを右クリックし、**\[新しいサービス エンドポイント\]** を選択します。  
-  
-#### サービス構成の編集  
-  
-1.  **\[サービス\]** ノードをクリックします。  
-  
-2.  プロパティ グリッドで設定を編集します。  
-  
-#### サービス エンドポイント構成の編集  
-  
-1.  **\[サービス エンドポイント\]** ノードをクリックします。  
-  
-2.  プロパティ グリッドで設定を編集します。  
-  
-#### ベース アドレスの追加  
-  
-1.  **\[ホスト\]** ノードをクリックします。  
-  
-2.  **\[ベース アドレス\]** セクションの **\[新規作成\]** ボタンをクリックします。  
-  
-3.  ダイアログ ボックスにベース アドレスの URI を入力します。  
-  
-4.  **\[OK\]** をクリックします。  
+ <span data-ttu-id="1e2b7-141">ビューアーは、構成のマージ パスを自動的にたどり、マージされた構成のビューを生成します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-141">The viewer automatically follows the configuration merge path and creates a view of the merged configuration.</span></span> <span data-ttu-id="1e2b7-142">たとえば、ホストなしのサービスの実際の構成は、Machine.config と App.config の組み合わせです。変更があれば、SvcConfigEditor のアクティブ ファイルに適用されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-142">For example, the actual configuration of a non-hosted service is a combination of Machine.config and App.config. Any changes are applied to the active file in the SvcConfigEditor.</span></span> <span data-ttu-id="1e2b7-143">構成マージ パスの特定ファイルを編集する場合は、直接開く必要があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-143">If you want to edit a specific file in the configuration merge path, you should open it directly.</span></span>  
   
 > [!NOTE]
->  このツール内では、[\<baseAddressPrefixFilters\>](../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md) の値を編集できません。この要素を追加または変更するには、テキスト エディターまたは [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用する必要があります。  
+>  <span data-ttu-id="1e2b7-144">構成ファイルが構成エディター以外で変更されている場合、構成エディターは、現在開いている構成ファイルを再読み込みします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-144">Configuration Editor reloads the currently opened configuration file when the latter has been modified outside the Editor.</span></span> <span data-ttu-id="1e2b7-145">再読み込みが発生すると、エディター内で永続的に保存されていないすべての変更が失われます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-145">When this happens, all the changes that are not durably saved inside the Editor are lost.</span></span> <span data-ttu-id="1e2b7-146">再読み込みが連続して発生する場合は、構成ファイルに定期的にアクセスするサービス (バックグラウンドで実行するウイルス対策ソフトウェアなど) が原因と考えられます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-146">If reloading happens consistently, the most likely cause is a service that constantly accesses the configuration file, for example, an antivirus software running in the background.</span></span> <span data-ttu-id="1e2b7-147">この問題を解決するには、ファイルが開いているときに、構成エディターがそのファイルにアクセスできる唯一のプロセスであることを保証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-147">To resolve this, ensure that Configuration Editor is the only process that can access the file when it is opened.</span></span>  
   
-### クライアント  
- **\[クライアント\]** ノードは、構成ファイルのすべてのクライアント エンドポイントを表示します。ツリー内のすべてのサブノードは、構成ファイル内の \<`client`\> 要素のサブ要素に対応します。  
+### <a name="services"></a><span data-ttu-id="1e2b7-148">サービス</span><span class="sxs-lookup"><span data-stu-id="1e2b7-148">Services</span></span>  
+ <span data-ttu-id="1e2b7-149">**Services**ノードでは、すべての構成ファイルに現在割り当てられているサービスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-149">The **Services** node displays all of the services currently assigned in the configuration file.</span></span> <span data-ttu-id="1e2b7-150">サブ要素に、ツリー内の各サブ ノードが対応して、<`services`> 構成ファイル内の要素。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-150">Each sub-node in the tree corresponds to a sub-element of the <`services`> element in the configuration file.</span></span>  
   
- **\[クライアント\]** ノードをクリックして、**\[詳細ペイン\]** のクライアントの**概要ページ**でタスクを表示または実行できます。  
+ <span data-ttu-id="1e2b7-151">クリックすると、 **Services**  ノードを表示または実行できますサービスで実行できるタスクの概要ページで、**詳細**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-151">When you click the **Services** node, you can view or perform tasks on the service Summary Page in the **Detail** Pane.</span></span>  
   
-#### 新しいクライアント エンドポイント構成の作成  
- 新しいクライアント エンドポイント構成は次の方法で作成できます。  
+#### <a name="creating-a-new-service-configuration"></a><span data-ttu-id="1e2b7-152">新しいサービス構成の作成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-152">Creating a new Service Configuration</span></span>  
+ <span data-ttu-id="1e2b7-153">新しいサービス構成は次の方法で作成できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-153">You can create a new service configuration in the following ways:</span></span>  
   
--   ウィザードによる作成: ウィザードを起動するには、ウィンドウの左下のタスク ペインまたは概要ページの **\[新しいクライアントの作成\]** リンクをクリックします。**\[ファイル\]** メニューの **\[新しい項目の追加\]** をクリックして起動することもできます。クライアント構成を生成するサービス構成の場所の指定を求めるプロンプトが表示されます。接続するサービス エンドポイントを選択できるようになります。  
+-   <span data-ttu-id="1e2b7-154">ウィザードを使用して: リンクをクリックして**新しいサービスを作成しています.**</span><span class="sxs-lookup"><span data-stu-id="1e2b7-154">Using a Wizard: Click the link **Create a New Service…**</span></span> <span data-ttu-id="1e2b7-155">作業ウィンドウまたは概要 ページでウィザードを起動します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-155">on the Task Pane or Summary Page to launch the wizard.</span></span> <span data-ttu-id="1e2b7-156">行えるよう、**ファイル**メニュー]-> [**新しい項目の追加**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-156">You can also do so in the **File** menu -> **Add New Item**.</span></span>  
   
--   手動による作成: クライアントの下のエンドポイント ノードを右クリックし、**\[新しいクライアント エンドポイント\]** をクリックします。  
+-   <span data-ttu-id="1e2b7-157">手動で作成する: を右クリックすることができます、 **Services**ノードを選択**新しいサービス**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-157">Create manually: You can right-click the **Services** node and choose **New Service**.</span></span>  
   
-#### クライアント エンドポイント構成の編集  
+#### <a name="creating-a-new-service-endpoint-configuration"></a><span data-ttu-id="1e2b7-158">新しいサービス エンドポイント構成の作成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-158">Creating a new Service Endpoint Configuration</span></span>  
+ <span data-ttu-id="1e2b7-159">新しいサービス エンドポイント構成は次の方法で作成できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-159">You can create a new service endpoint configuration in the following ways:</span></span>  
   
-1.  クライアント エンドポイント ノードをクリックします。  
+-   <span data-ttu-id="1e2b7-160">ウィザードによる作成: リンクをクリックして**新しいサービス エンドポイントを作成しています.**</span><span class="sxs-lookup"><span data-stu-id="1e2b7-160">Create using a Wizard: click the link **Create a New Service Endpoint…**</span></span> <span data-ttu-id="1e2b7-161">作業ウィンドウまたは概要 ページでウィザードを起動します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-161">on the Task Pane or Summary Page to launch the wizard.</span></span> <span data-ttu-id="1e2b7-162">行えるよう、**ファイル**メニュー]-> [**新しい項目の追加**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-162">You can also do so in the **File** menu -> **Add New Item**.</span></span>  
   
-2.  プロパティ グリッドで設定を編集します。  
+-   <span data-ttu-id="1e2b7-163">手動で作成する: を右クリックして、サービスを作成すると、**エンドポイント**ノードを選択"**新しいサービス エンドポイント**"です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-163">Create manually: Once you created a Service, you can right-click the **Endpoints** node and choose "**New Service Endpoint**".</span></span>  
   
-### 標準エンドポイント  
- 標準エンドポイントは、既定値に設定されたアドレス、コントラクト、およびバインディングの 1 つ以上の特性を持つ特殊なエンドポイントです。  
+#### <a name="editing-a-service-configuration"></a><span data-ttu-id="1e2b7-164">サービス構成の編集</span><span class="sxs-lookup"><span data-stu-id="1e2b7-164">Editing a Service Configuration</span></span>  
   
- これらの構成設定は、**\[標準エンドポイント\]** ノードに格納されます。**\[標準エンドポイント\]** ノードは、構成ファイルのすべての標準エンドポイント設定を表示します。ツリー内のすべてのサブノードは、構成ファイル内の `<standardEndpoints>` 要素のサブ要素に対応します。  
+1.  <span data-ttu-id="1e2b7-165">クリックして、**サービス**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-165">Click a **Service** node.</span></span>  
   
- **\[標準エンドポイント\]** ノードをクリックして、**詳細ペイン**の標準エンドポイントの概要ページで、タスクを表示または実行できます。  
+2.  <span data-ttu-id="1e2b7-166">プロパティ グリッドで設定を編集します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-166">Edit the settings in the property grids.</span></span>  
   
-#### 新しい標準エンドポイント構成の作成  
- 新しい標準エンドポイント構成は、次の方法で作成できます。  
+#### <a name="editing-a-service-endpoint-configuration"></a><span data-ttu-id="1e2b7-167">サービス エンドポイント構成の編集</span><span class="sxs-lookup"><span data-stu-id="1e2b7-167">Editing a Service Endpoint Configuration</span></span>  
   
--   **\[標準エンドポイント\]** ノードを右クリックし、**\[新しい標準エンドポイント構成\]** を選択します。ダイアログ ボックスでバインディングの種類を選択し、**\[OK\]** をクリックします。  
+1.  <span data-ttu-id="1e2b7-168">クリックして、**サービス エンドポイント**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-168">Click a **Service Endpoint** node.</span></span>  
   
--   **\[標準エンドポイント\]** ノードを選択し、ウィンドウの左下にあるタスク ペインの **\[新しい標準エンドポイント構成\]** をクリックします。  
+2.  <span data-ttu-id="1e2b7-169">プロパティ グリッドで設定を編集します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-169">Edit the settings in the property grids.</span></span>  
   
- **\[新しい標準エンドポイントの作成\]** ダイアログ ボックスが表示され、登録されているすべての標準エンドポイントの種類が一覧表示されます。  
+#### <a name="adding-a-base-address"></a><span data-ttu-id="1e2b7-170">ベース アドレスの追加</span><span class="sxs-lookup"><span data-stu-id="1e2b7-170">Adding a Base Address</span></span>  
   
-#### 標準エンドポイント構成の表示および編集  
- 表示および編集する標準エンドポイント構成は、次の方法で開くことができます。  
+1.  <span data-ttu-id="1e2b7-171">クリックして、**ホスト**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-171">Click the **Host** node.</span></span>  
   
--   **\[標準エンドポイント\]** ノードをクリックして展開し、それぞれのエンドポイント サブノードをクリックします。  
+2.  <span data-ttu-id="1e2b7-172">クリックして、**新規作成しています.**</span><span class="sxs-lookup"><span data-stu-id="1e2b7-172">Click the **New…**</span></span> <span data-ttu-id="1e2b7-173">ボタンをクリックして、**ベース アドレス**セクションです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-173">button in the **Base Addresses** section.</span></span>  
   
--   **\[標準エンドポイント\]** ノードをクリックし、詳細ペインでそれぞれのエンドポイントをクリックします。  
+3.  <span data-ttu-id="1e2b7-174">ダイアログ ボックスにベース アドレスの URI を入力します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-174">Type in the base address URI in the dialog box.</span></span>  
   
- エンドポイントの属性を右ペインに表示して、編集できます。  
-  
-#### 標準エンドポイント構成の削除  
- 標準エンドポイント構成は次の方法で削除できます。  
-  
--   **\[標準エンドポイント\]** ノードをクリックして展開し、それぞれのエンドポイント サブノードを右クリックします。コンテキスト コマンド **\[標準エンドポイント構成の削除\]** を使用して、エンドポイントを削除します。  
-  
--   **\[標準エンドポイント\]** ノードをクリックします。**タスク** ペインで、**\[標準エンドポイント構成の削除\]** をクリックします。  
-  
- 標準エンドポイントが使用中の場合は、削除しようとしたときに警告メッセージが表示されます。警告は**「標準エンドポイントは使用されています。削除する場合は、構成の他の部分 \(サービス エンドポイントやクライアント エンドポイントなど\) からもすべての参照を必ず削除してください。そうしないと、構成が無効になり、次回から開けなくなります。標準エンドポイントを削除しますか?」**です。  
-  
-### バインディング  
- バインディング構成は、エンドポイントでバインディングを構成するために使用されます。これらの構成設定は、**\[バインド\]** ノードに格納されます。エンドポイントはバインディング構成を名前で参照し、複数のエンドポイントは単一のバインディング構成を参照できます。  
-  
- **\[バインド\]** ノードは、構成ファイルのすべてのバインディング設定を表示します。ツリー内のすべてのサブノードは、構成ファイル内の \<`bindings`\> 要素のサブ要素に対応します。  
-  
- **\[バインド\]** ノードをクリックして、**\[詳細ペイン\]** のバインディングの**概要ページ**でタスクを表示または実行できます。  
-  
-#### 新しいバインディング構成の作成  
- 新しいバインディング構成は次の方法で作成できます。  
-  
--   **\[バインド\]** ノードを右クリックし、**\[新しいバインド構成\]** を選択します。ダイアログ ボックスでバインディングの種類を選択し、**\[OK\]** をクリックします。  
-  
--   **\[バインド\]** ノードを選択し、ウィンドウの左下のタスク ペインで **\[新しいバインド構成\]** をクリックします。  
-  
--   サービスまたはクライアントの概要ページで、**\[バインドの構成\]** フィールドの **\[クリックして作成\]** をクリックすると、対応するエンドポイントのバインディング構成が作成されます。  
-  
-#### カスタム バインディングへのバインディング要素拡張の追加  
-  
-1.  拡張要素を追加するバインディングを選択します。  
-  
-2.  **\[追加\]** をクリックします。  
-  
-3.  使用できる拡張一覧から、追加するバインディング要素拡張を選択します。複数の項目を選択するには、Ctrl キーを同時に押します。  
-  
-4.  **\[追加\]** をクリックします。  
-  
-#### カスタム バインディングの拡張位置の調整  
- カスタム バインディングは、スタックを形成するバインディング要素のコレクションです。スタックの各バインディング要素には、独自の構成設定があります。カスタム バインディング内のバインディング要素拡張の順序は、スタック内のそれらの位置を示します。スタックの最上位の要素が最初に適用されます。順序を変更するには  
-  
-1.  カスタム バインディング ノードを選択します。  
-  
-2.  **\[バインド要素の拡張の位置\]** セクションでバインディング拡張要素の 1 つを選択します。  
-  
-3.  一覧の左側にある **\[Up\]** ボタンまたは **\[Down\]** ボタンを使用して、選択した要素の位置を変更します。  
-  
-#### カスタム バインディングのバインディング要素拡張の構成の編集  
-  
-1.  ツリー内のバインディング ノードを選択します。  
-  
-2.  編集する要素を含むカスタム バインディングを選択します。  
-  
-3.  編集するバインディング要素拡張を選択します。要素の設定が、編集場所である右ペインに表示されます。  
-  
-### 診断  
- **\[診断\]** ノードは、構成ファイルのすべての診断設定を表示します。診断を使用すると、パフォーマンス カウンターのオンまたはオフ、Windows Management Instrumentation \(WMI\) の有効または無効、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレースの構成、および [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] メッセージ ログの構成を行うことができます。**\[診断\]** ノードの設定は、\<`system.diagnostics`\> セクションと構成ファイルの `<diagnostics>``<system.serviceModel>` の セクションに対応します。  
-  
- **\[診断\]** ノードをクリックして、**\[詳細ペイン\]** の診断の**概要ページ**でタスクを表示または実行できます。  
-  
-#### パフォーマンス カウンターと WMI の構成  
-  
-1.  診断ノードをクリックします。  
-  
-2.  **\[パフォーマンス カウンターの切り替え\]** をクリックします。パフォーマンス カウンターには、Off \(既定\)、ServiceOnly、All の 3 つの状態があります。リンクをクリックすると、これらの 3 つの状態の間で設定が切り替わります。  
-  
-#### WMI プロバイダーの構成  
-  
-1.  診断ノードをクリックします。  
-  
-2.  WMI プロバイダーを有効にするには、**\[WMI プロバイダーの有効化\]** リンクをクリックします。  
-  
-#### WCF トレースの有効化  
- 標準プロパティを持つ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレース ファイルを作成したり、カスタム トレース ファイルを設定したりできます。  
-  
-1.  診断ノードをクリックします。  
-  
-2.  **\[トレースの有効化\]** をクリックします。  
-  
-3.  トレース レベルを調整するには、**\[トレース レベル\]** リンクをクリックします。トレース レベルは、Off、Critical、Error、Warning、Information、Verbose の 6 つあります。**\[アクティビティのトレース\]** と **\[アクティビティの伝達\]** オプションを使用すると、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アクティビティ トレース機能を使用できます。  
-  
-4.  トレース ファイルとオプションを指定するには、トレース リスナー名をクリックします。  
-  
-#### WCF ログの有効化  
- 標準プロパティを持つ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレース ファイルの作成またはカスタム トレース ファイルを作成できます。  
-  
-1.  診断ノードをクリックします。  
-  
-2.  **\[メッセージ ログの有効化\]** をクリックします。  
-  
-3.  ログ レベルを調整するには、**\[ログ レベル\]** リンクをクリックします。ログ レベルには、無効な形式、サービス、トランスポートの 3 つがあります。  
-  
-4.  ログ ファイルとオプションを指定するには、リスナー名をクリックします。  
+4.  <span data-ttu-id="1e2b7-175">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-175">Click **OK**.</span></span>  
   
 > [!NOTE]
->  アプリケーションを閉じるときにトレース ログとメッセージ ログを自動的にフラッシュする場合は、**\[ログの自動フラッシュ\]** オプションを有効にします。  
+>  <span data-ttu-id="1e2b7-176">値を編集することはできません[ \<baseAddressPrefixFilters >](../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)このツール内です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-176">You cannot edit the value of [\<baseAddressPrefixFilters>](../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md) inside this tool.</span></span> <span data-ttu-id="1e2b7-177">この要素を追加または変更するには、テキスト エディターまたは [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-177">To add or modify this element, you should use a text editor or [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].</span></span>  
   
- **\[診断\]** の**概要ページ**を使用すると、診断の構成で最も一般的なタスクを実行できます。ただし、リスナーとソースの設定を手動で編集する場合は、診断ノードを展開して、メッセージ ログ、リスナー、およびソースの各ノードの設定を編集する必要があります。  
+### <a name="client"></a><span data-ttu-id="1e2b7-178">クライアント</span><span class="sxs-lookup"><span data-stu-id="1e2b7-178">Client</span></span>  
+ <span data-ttu-id="1e2b7-179">**クライアント**ノードが、構成ファイルのすべてのクライアント エンドポイントを表示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-179">The **Client** node displays all of the client endpoints in the configuration file.</span></span> <span data-ttu-id="1e2b7-180">サブ要素に、ツリー内の各サブ ノードが対応して、<`client`> 構成ファイル内の要素。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-180">Every sub-node in the tree corresponds to a sub-element of the <`client`> element in the configuration file.</span></span>  
   
-#### WCF カスタム トレースまたはメッセージ ログの有効化  
+ <span data-ttu-id="1e2b7-181">クリックすると、**クライアント**ノードを表示したり、クライアントでタスクを実行する**の概要 ページ**で、**詳細ペイン**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-181">When you click the **Client** node, you can view or perform tasks on the client **Summary Page** in the **Detail Pane**.</span></span>  
   
-1.  診断ノードをクリックして展開します。  
+#### <a name="creating-a-new-client-endpoint-configuration"></a><span data-ttu-id="1e2b7-182">新しいクライアント エンドポイント構成の作成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-182">Creating a new Client Endpoint Configuration</span></span>  
+ <span data-ttu-id="1e2b7-183">新しいクライアント エンドポイント構成は次の方法で作成できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-183">You can create a new client endpoint configuration in the following ways:</span></span>  
   
-2.  リスナー ノードを右クリックし、**\[新しいリスナー\]** を選択します。  
+-   <span data-ttu-id="1e2b7-184">ウィザードによる作成: リンクをクリックして**新しいクライアントを作成しています.**</span><span class="sxs-lookup"><span data-stu-id="1e2b7-184">Create by Wizard: Click the link **Create a New Client…**</span></span> <span data-ttu-id="1e2b7-185">**作業ウィンドウ**、ウィンドウの左下にまたは**の概要 ページ**ウィザードを起動します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-185">on the **Task Pane** on the lower-left of the window, or **Summary Page** to launch the wizard.</span></span> <span data-ttu-id="1e2b7-186">行えるよう、**ファイル**メニュー]-> [**新しい項目の追加**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-186">You can also do so in the **File** menu -> **Add New Item**.</span></span> <span data-ttu-id="1e2b7-187">クライアント構成を生成するサービス構成の場所の指定を求めるプロンプトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-187">The wizard prompts you to point to the location of the service configuration, from which the client configuration is generated.</span></span> <span data-ttu-id="1e2b7-188">接続するサービス エンドポイントを選択できるようになります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-188">You can then choose the service endpoint to connect to.</span></span>  
   
-3.  **\[InitData\]** フィールドにトレース ファイル名を入力します。\[...\] ボタンをクリックすると、パスを参照できます。  
+-   <span data-ttu-id="1e2b7-189">手動で作成する: を右クリックし、**エンドポイント**ノードの下**クライアント**を選択し、**新規クライアント エンドポイント**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-189">Create manually: Right-click the **Endpoints** node under **Client**, and choose **New Client Endpoint**.</span></span>  
   
-4.  **\[TypeName\]** ラインをクリックすると、\[…\] ボタンが表示されます。このボタンをクリックすると、**\[トレース リスナー型ブラウザー\]** が開きます。これを使用すると、既にインストールされている事前構成のトレース リスナーを見つけることができます。  
+#### <a name="editing-a-client-endpoint-configuration"></a><span data-ttu-id="1e2b7-190">クライアント エンドポイント構成の編集</span><span class="sxs-lookup"><span data-stu-id="1e2b7-190">Editing a Client Endpoint Configuration</span></span>  
   
-5.  **\[ソース\]** セクションに注意してください。このセクションで **\[追加\]** をクリックすると、ダイアログ ボックスが開き、使用できるトレース ソースの一覧がドロップダウン メニューに表示されます。トレース ソースを選択して、**\[OK\]** をクリックします。  
+1.  <span data-ttu-id="1e2b7-191">クリックして、**クライアント エンドポイント**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-191">Click a **Client Endpoint** node.</span></span>  
   
-6.  メッセージ ログ設定を編集するには、メッセージ ログ ノードをクリックします。プロパティ グリッドで設定を編集できます。  
+2.  <span data-ttu-id="1e2b7-192">プロパティ グリッドで設定を編集します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-192">Edit the settings in the property grids.</span></span>  
   
-### 詳細設定  
+### <a name="standard-endpoint"></a><span data-ttu-id="1e2b7-193">標準エンドポイント</span><span class="sxs-lookup"><span data-stu-id="1e2b7-193">Standard Endpoint</span></span>  
+ <span data-ttu-id="1e2b7-194">標準エンドポイントは、既定値に設定されたアドレス、コントラクト、およびバインディングの 1 つ以上の特性を持つ特殊なエンドポイントです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-194">Standard endpoints are specialized endpoints that have one or more aspects of the address, contract and binding set to default values.</span></span>  
   
-#### 動作  
- **\[動作\]** ノードは、現在構成ファイルに定義されている動作を表示します。  
+ <span data-ttu-id="1e2b7-195">このような構成設定が格納されている、**標準エンドポイント**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-195">Such configuration settings are stored in the **Standard Endpoint** node.</span></span> <span data-ttu-id="1e2b7-196">**標準エンドポイント**ノードが、構成ファイルのすべての標準エンドポイントの設定を表示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-196">The **Standard Endpoint** node displays all of the standard endpoint settings in the configuration file.</span></span> <span data-ttu-id="1e2b7-197">内のサブ要素に対応して、ツリー内の各サブ ノード、`<standardEndpoints>`構成ファイル内の要素。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-197">Every sub-node in the tree corresponds to a sub-element in the `<standardEndpoints>` element in the configuration file.</span></span>  
   
- 動作構成は、エンドポイントとサービスの動作を構成するために使用されます。これらの構成設定は、**\[サービス動作\]** と **\[エンドポイント動作\]** の下にある **\[詳細設定\]** ノードに格納されます。サービス動作はサービスによって使用され、エンドポイント動作はエンドポイントによって使用されます。  
+ <span data-ttu-id="1e2b7-198">クリックすると、**標準エンドポイント**ノードを表示したり、標準エンドポイントでタスクを実行する**の概要 ページ**で、**詳細ペイン**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-198">When you click the **Standard Endpoint** node, you can view or perform tasks on the standard endpoint **Summary Page** in the **Detail Pane**.</span></span>  
   
- 動作は、スタックを形成する拡張要素のコレクションです。スタック最上位の要素が最初に適用されます。各拡張要素は独自の構成を持つことができます。  
+#### <a name="creating-a-new-standard-endpoint-configuration"></a><span data-ttu-id="1e2b7-199">新しい標準エンドポイント構成の作成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-199">Creating a New Standard Endpoint Configuration</span></span>  
+ <span data-ttu-id="1e2b7-200">新しい標準エンドポイント構成は、次の方法で作成できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-200">You can create a new standard endpoint configuration in the following ways:</span></span>  
   
-##### 新しい動作構成の作成  
- 新しい動作構成は次の 2 つの方法で作成できます。  
+-   <span data-ttu-id="1e2b7-201">右クリックし、**標準エンドポイント**ノード**新しい標準エンドポイント構成しています.**</span><span class="sxs-lookup"><span data-stu-id="1e2b7-201">Right-click the **Standard Endpoint** node and select **New Standard Endpoint Configuration…**</span></span> <span data-ttu-id="1e2b7-202">ダイアログ ボックスで、バインドの種類を選択し、をクリックして**OK**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-202">Select the binding type in the dialog box and click **OK**.</span></span>  
   
--   動作ノードの 1 つを右クリックし、**\[新しいエンドポイント動作の構成\]** または **\[新しいサービス動作の構成\]** を選択します。  
+-   <span data-ttu-id="1e2b7-203">選択、**標準エンドポイント**ノードとクリック**新しい標準エンドポイント構成しています.**</span><span class="sxs-lookup"><span data-stu-id="1e2b7-203">Select the **Standard Endpoint** node and click **New Standard Endpoint Configuration…**</span></span> <span data-ttu-id="1e2b7-204">**作業ウィンドウ**ウィンドウの左下にします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-204">in the **Task Pane** on the lower-left of the window.</span></span>  
   
--   動作ノードの 1 つを選択し、ウィンドウの左下のタスク ペインの **\[新しいサービス動作の構成\]** または \[新しいエンドポイント動作の構成\] をクリックします。  
+ <span data-ttu-id="1e2b7-205">**新しい標準エンドポイントを作成する** ダイアログ ボックスが表示され、登録されているすべての標準エンドポイントの種類を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-205">The **Creating a New Standard Endpoint** dialog box displays and lists all registered standard endpoint types.</span></span>  
   
-##### 動作への動作要素拡張の追加  
+#### <a name="viewing-and-editing-a-standard-endpoint-configuration"></a><span data-ttu-id="1e2b7-206">標準エンドポイント構成の表示および編集</span><span class="sxs-lookup"><span data-stu-id="1e2b7-206">Viewing and Editing a Standard Endpoint Configuration</span></span>  
+ <span data-ttu-id="1e2b7-207">表示および編集する標準エンドポイント構成は、次の方法で開くことができます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-207">You can open a standard endpoint configuration for viewing and editing in the following ways:</span></span>  
   
-1.  動作ノードのいずれかを選択します。  
+-   <span data-ttu-id="1e2b7-208">クリックして展開し、**標準エンドポイント**ノードそれぞれのエンドポイント サブノードをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-208">Click to expand the **Standard Endpoint** node and click the respective endpoint sub-node.</span></span>  
   
-2.  編集する動作を選択します。  
+-   <span data-ttu-id="1e2b7-209">クリックして、**標準エンドポイント**ノードの詳細ペインには、それぞれのエンドポイントをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-209">Click the **Standard Endpoint** node and click the respective endpoint on the Detail pane.</span></span>  
   
-3.  **\[追加\]** をクリックします。  
+ <span data-ttu-id="1e2b7-210">エンドポイントの属性を右ペインに表示して、編集できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-210">Attributes for the endpoint are shown in the right pane for editing.</span></span>  
   
-4.  使用できる拡張一覧から、追加する動作要素拡張を選択します。  
+#### <a name="deleting-a-standard-endpoint-configuration"></a><span data-ttu-id="1e2b7-211">標準エンドポイント構成の削除</span><span class="sxs-lookup"><span data-stu-id="1e2b7-211">Deleting a Standard Endpoint Configuration</span></span>  
+ <span data-ttu-id="1e2b7-212">標準エンドポイント構成は次の方法で削除できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-212">You can delete a standard endpoint configuration in the following ways:</span></span>  
   
-5.  **\[追加\]** をクリックします。  
+-   <span data-ttu-id="1e2b7-213">クリックして展開し、**標準エンドポイント**ノードとそれぞれのエンドポイント サブノードを右クリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-213">Click to expand the **Standard Endpoint** node and right-click the respective endpoint sub-node.</span></span> <span data-ttu-id="1e2b7-214">コンテキスト コマンドを使用して**標準エンドポイント構成の削除**エンドポイントを削除します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-214">Use the context command **Delete Standard Endpoint Configuration** to delete the endpoint.</span></span>  
   
-##### 動作の拡張位置の調整  
- 動作は、スタックを形成する要素のコレクションです。スタックの各要素には、独自の構成があります。動作内の動作要素拡張の順序は、スタック内のそれらの位置を示します。スタックの最上位の要素が最初に適用されます。順序を変更するには  
+-   <span data-ttu-id="1e2b7-215">クリックして、**標準エンドポイント**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-215">Click the **Standard Endpoint** node.</span></span> <span data-ttu-id="1e2b7-216">**タスク** ウィンドウで、をクリックして**標準エンドポイント構成の削除**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-216">In the **Task** pane, click **Delete Standard Endpoint Configuration**.</span></span>  
   
-1.  動作ノードのいずれかを選択します。  
+ <span data-ttu-id="1e2b7-217">標準エンドポイントが使用中の場合は、削除しようとしたときに警告メッセージが表示されます。警告は**「標準エンドポイントは使用されています。削除する場合は、構成の他の部分 (サービス エンドポイントやクライアント エンドポイントなど) からもすべての参照を必ず削除してください。そうしないと、構成が無効になり、次回から開けなくなります。よろしい標準エンドポイントを削除しますか?"**</span><span class="sxs-lookup"><span data-stu-id="1e2b7-217">If the standard endpoint is in used, a warning message is displayed when you attempt to delete it: **The standard endpoint is in use. If you delete it now, please be sure to delete all of its references in other parts of the configuration (for example, in the service endpoint or client endpoint). Otherwise, the configuration will be invalid and cannot be opened next time. Are you sure you want to delete the standard endpoint?"**</span></span>  
   
-2.  編集する動作を選択します。  
+### <a name="binding"></a><span data-ttu-id="1e2b7-218">バインド</span><span class="sxs-lookup"><span data-stu-id="1e2b7-218">Binding</span></span>  
+ <span data-ttu-id="1e2b7-219">バインド構成は、エンドポイントでバインディングを構成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-219">Binding configurations are used to configure bindings on endpoints.</span></span> <span data-ttu-id="1e2b7-220">このような構成設定が格納されている、**バインド**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-220">Such configuration settings are stored in the **Binding** node.</span></span> <span data-ttu-id="1e2b7-221">エンドポイントはバインド構成を名前で参照し、複数のエンドポイントは単一のバインド構成を参照できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-221">Endpoints reference binding configurations by name and multiple endpoints can reference a single binding configuration.</span></span>  
   
-3.  **\[動的要素の拡張の位置\]** セクションで動作拡張要素を選択します。  
+ <span data-ttu-id="1e2b7-222">**バインド**ノードが、構成ファイルのすべてのバインディング設定を表示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-222">The **Bindings** node displays all of the binding settings in the configuration file.</span></span> <span data-ttu-id="1e2b7-223">内のサブ要素に、ツリー内の各サブ ノードが対応して、<`bindings`> 構成ファイル内の要素。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-223">Every sub-node in the tree corresponds to a sub-element in the <`bindings`> element in the configuration file.</span></span>  
   
-4.  一覧の左側にある **\[Up\]** ボタンまたは **\[Down\]** ボタンを使用して、選択した要素の位置を変更します。  
+ <span data-ttu-id="1e2b7-224">クリックすると、**バインド**ノードを表示したり、バインドでタスクを実行する**の概要 ページ**で、**詳細ペイン**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-224">When you click the **Bindings** node, you can view or perform tasks on the binding **Summary Page** in the **Detail Pane**.</span></span>  
   
-##### 動作要素拡張の構成の編集  
+#### <a name="creating-a-new-binding-configuration"></a><span data-ttu-id="1e2b7-225">新しいバインド構成の作成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-225">Creating a New Binding Configuration</span></span>  
+ <span data-ttu-id="1e2b7-226">新しいバインド構成は次の方法で作成できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-226">You can create a new binding configuration in the following ways.</span></span>  
   
-1.  ツリー内の動作ノードの 1 つを選択します。  
+-   <span data-ttu-id="1e2b7-227">右クリックし、**バインド**ノード**新しいバインド構成**しています.</span><span class="sxs-lookup"><span data-stu-id="1e2b7-227">Right-click the **Bindings** node and select **New Binding Configuration**…</span></span> <span data-ttu-id="1e2b7-228">ダイアログ ボックスで、バインドの種類を選択し、をクリックして**OK**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-228">Select the binding type in the dialog box and click **OK**.</span></span>  
   
-2.  編集する要素を含む動作を選択します。  
+-   <span data-ttu-id="1e2b7-229">選択、**バインド**ノードとクリック**新しいバインド構成**しています.</span><span class="sxs-lookup"><span data-stu-id="1e2b7-229">Select the **Bindings** node and click **New Binding Configuration**…</span></span> <span data-ttu-id="1e2b7-230">**作業ウィンドウ**ウィンドウの左下にします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-230">in the **Task Pane** on the lower-left of the window.</span></span>  
   
-3.  編集する動作要素拡張を選択します。要素の設定が右ペインに表示されるので、ここで編集できます。  
+-   <span data-ttu-id="1e2b7-231">[サービスまたはクライアントの概要ページ**作成] をクリックして**で、**バインド構成**対応するエンドポイントのバインディング構成を作成するフィールドです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-231">In the service or client summary page, click **Click to Create** in the **Binding Configuration** field to create a binding configuration for the corresponding endpoint.</span></span>  
   
-#### ProtocolMapping  
- このセクションでは、プロトコル アドレス スキームと可能なバインドの間に定義されているマッピングを介して、http、tcp、MSMQ、net.pipe などのさまざまなプロトコルに対する既定のバインドの種類を設定できます。他のプロトコルへの新しいマッピングを追加することもできます。  
+#### <a name="adding-binding-element-extensions-to-a-custom-binding"></a><span data-ttu-id="1e2b7-232">カスタム バインディングへのバインディング要素拡張の追加</span><span class="sxs-lookup"><span data-stu-id="1e2b7-232">Adding Binding Element Extensions to a Custom Binding</span></span>  
   
-#### 拡張  
- 新しいバインディング拡張、バインディング要素拡張、標準エンドポイント拡張、および動作拡張を登録して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成に使用できます。拡張は、名前と種類のペアです。名前は構成の拡張の名前を定義し、種類は拡張を実装します。拡張には次の 4 種類があります。  
+1.  <span data-ttu-id="1e2b7-233">拡張要素を追加するバインディングを選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-233">Select the binding you want to add an extension element to.</span></span>  
   
--   バインディング拡張は、バインディングの種類全体を定義します。例 : `basicHttpBinding`。  
+2.  <span data-ttu-id="1e2b7-234">**[追加]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-234">Click **Add**.</span></span>  
   
--   バインディング要素拡張は、バインディングの要素を定義します。例: `textMessageEncoding`。  
+3.  <span data-ttu-id="1e2b7-235">使用できる拡張一覧から、追加するバインディング要素拡張を選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-235">From the list of available extensions, select the binding element extension you want to add.</span></span> <span data-ttu-id="1e2b7-236">複数の項目を選択するには、Ctrl キーを同時に押します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-236">To select multiple items, press the CTRL key simultaneously.</span></span>  
   
--   標準エンドポイント拡張は、標準エンドポイント全体を定義します。例: `discoveryEndpoint`。  
+4.  <span data-ttu-id="1e2b7-237">**[追加]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-237">Click **Add**.</span></span>  
   
--   動作要素拡張は、動作の要素を定義します。例 : `clientVia`。  
+#### <a name="adjusting-the-extension-position-in-a-custom-binding"></a><span data-ttu-id="1e2b7-238">カスタム バインディングの拡張位置の調整</span><span class="sxs-lookup"><span data-stu-id="1e2b7-238">Adjusting the Extension Position in a Custom Binding</span></span>  
+ <span data-ttu-id="1e2b7-239">カスタム バインディングは、スタックを形成するバインディング要素のコレクションです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-239">A custom binding is a collection of binding elements that form a stack.</span></span> <span data-ttu-id="1e2b7-240">スタックの各バインディング要素には、独自の構成設定があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-240">Each binding element on the stack has its own configuration settings.</span></span> <span data-ttu-id="1e2b7-241">カスタム バインディング内のバインディング要素拡張の順序は、スタック内のそれらの位置を示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-241">The order of the binding element extensions in a custom binding indicates their positions in the stack.</span></span> <span data-ttu-id="1e2b7-242">スタック最上位の要素が最初に適用されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-242">Elements at the top of the stack are applied first.</span></span> <span data-ttu-id="1e2b7-243">順序を変更するには</span><span class="sxs-lookup"><span data-stu-id="1e2b7-243">To change the ordering:</span></span>  
   
- 構成に登録されている拡張は、同じ種類の他のすべての [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] コンポーネントと同じように使用できます。  
+1.  <span data-ttu-id="1e2b7-244">カスタム バインド ノードを選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-244">Select the custom binding node.</span></span>  
   
-##### 新しい機能の追加  
- 詳細設定ノード内の拡張ノードの 1 つを選択します。  
+2.  <span data-ttu-id="1e2b7-245">1 つのバインディング拡張要素を選択して、 **Binding Element Extension Position**セクションです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-245">Select one binding extension element in the **Binding Element Extension Position** section.</span></span>  
   
-1.  **\[新規作成\]** をクリックします。  
+3.  <span data-ttu-id="1e2b7-246">使用して、**を**または**ダウン**選択した要素の位置を変更するリストの左側にあるボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-246">Use the **Up** or **Down** button on the left side of the list to change the position of the selected element.</span></span>  
   
-2.  名前と種類を入力します。  
+#### <a name="editing-the-configuration-of-binding-element-extensions-in-a-custom-binding"></a><span data-ttu-id="1e2b7-247">カスタム バインディングのバインディング要素拡張の構成の編集</span><span class="sxs-lookup"><span data-stu-id="1e2b7-247">Editing the Configuration of Binding Element Extensions in a Custom Binding</span></span>  
   
-3.  **\[OK\]** をクリックします。  
+1.  <span data-ttu-id="1e2b7-248">ツリー内のバインディング ノードを選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-248">Select the binding node in the tree.</span></span>  
   
-4.  拡張は、エディターの適切な場所に表示されるようになります。たとえば、動作要素拡張を追加すると、使用できる拡張一覧に表示されます。  
+2.  <span data-ttu-id="1e2b7-249">編集する要素を含むカスタム バインディングを選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-249">Select the custom binding that contains the element you want to edit.</span></span>  
   
-#### ホスト環境  
- ここでは、環境をホストするサービスのインスタンス化設定を定義できます。  
+3.  <span data-ttu-id="1e2b7-250">編集するバインディング要素拡張を選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-250">Select the binding element extension you want to edit.</span></span> <span data-ttu-id="1e2b7-251">要素の設定が、編集場所の右ペインに表示されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-251">The settings of the element appear in the right pane, where they can be edited.</span></span>  
   
-### ウィザードによる構成ファイルの作成  
- 新しい構成ファイルを作成する 1 つの方法として、新しいサービス要素ウィザードを使用します。ウィザードは、インストールされたサービスの種類および [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] と互換性のある、COM\+、Web ホストの仮想ディレクトリなどの他の要素をコンピューター上で見つけると、それらを読み込んで、構成の作成を効率よく行います。  
+### <a name="diagnostics"></a><span data-ttu-id="1e2b7-252">診断</span><span class="sxs-lookup"><span data-stu-id="1e2b7-252">Diagnostics</span></span>  
+ <span data-ttu-id="1e2b7-253">**診断**ノードが、構成ファイルのすべての診断設定を表示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-253">The **Diagnostics** node displays all of the diagnostic settings in the configuration file.</span></span> <span data-ttu-id="1e2b7-254">診断を使用すると、パフォーマンス カウンターのオンまたはオフ、Windows Management Instrumentation (WMI) の有効または無効、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレースの構成、および [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] メッセージ ログの構成を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-254">It enables you to turn performance counters on or off, enable or disable Windows Management Instrumentation (WMI), configure [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] tracing, and configure [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] message logging.</span></span> <span data-ttu-id="1e2b7-255">設定、**診断**にノードが対応して、<`system.diagnostics`> セクションと`<diagnostics>`」の「`<system.serviceModel>`構成ファイルにします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-255">The settings in the **Diagnostics** node correspond to the <`system.diagnostics`> section, and `<diagnostics>` section in `<system.serviceModel>` in the configuration file.</span></span>  
   
-#### 構成ファイルの作成  
+ <span data-ttu-id="1e2b7-256">クリックすると、**診断**ノードを表示したり、診断でタスクを実行する**の概要 ページ**で、**詳細ペイン**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-256">When you click the **Diagnostics** node, you can view or perform tasks on the diagnostics **Summary Page** in the **Detail Pane**.</span></span>  
   
-1.  サービス構成エディターを起動するには、コマンド ウィンドウで [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] のインストール場所に移動し、「`SvcConfigEditor.exe`」と入力します。  
+#### <a name="configuring-performance-counters-and-wmi"></a><span data-ttu-id="1e2b7-257">パフォーマンス カウンターと WMI の構成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-257">Configuring performance counters and WMI</span></span>  
   
-2.  **\[ファイル\]** メニューの **\[開く\]** を選択し、作成する構成ファイルの種類に応じて **\[実行可能\]**、**\[COM\+ サービス\]**、または **\[Web ホスト サービス\]** をクリックします。  
+1.  <span data-ttu-id="1e2b7-258">クリックして、**診断**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-258">Click the **Diagnostics** node.</span></span>  
   
-3.  **\[開く\]** ダイアログ ボックスで、構成ファイルを作成する特定のファイルに移動し、ダブルクリックします。  
+2.  <span data-ttu-id="1e2b7-259">をクリックして**パフォーマンス カウンターを切り替える**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-259">Click **Toggle Performance Counters**.</span></span> <span data-ttu-id="1e2b7-260">パフォーマンス カウンターには、Off (既定)、ServiceOnly、All の 3 つの状態があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-260">The performance counter has three states: Off (default), ServiceOnly, and All.</span></span> <span data-ttu-id="1e2b7-261">リンクをクリックすると、これらの 3 つの状態の間で設定が切り替わります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-261">Clicking the link toggles the setting among these three states.</span></span>  
   
-4.  **\[ファイル\]** メニューの **\[新しい項目の追加\]** をポイントし、**\[サービス\]** をクリックします。新しいサービス要素ウィザードが開きます。  
+#### <a name="configuring-wmi-provider"></a><span data-ttu-id="1e2b7-262">WMI プロバイダーの構成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-262">Configuring WMI Provider</span></span>  
   
-5.  ウィザードの手順に従って新しいサービスを作成します。  
+1.  <span data-ttu-id="1e2b7-263">クリックして、**診断**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-263">Click the **Diagnostics** node.</span></span>  
+  
+2.  <span data-ttu-id="1e2b7-264">WMI プロバイダーを有効にするをクリックして、 **WMI プロバイダーを有効にする**リンクします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-264">To enable WMI provider, click the **Enable WMI Provider** link.</span></span>  
+  
+#### <a name="enabling-wcf-tracing"></a><span data-ttu-id="1e2b7-265">WCF トレースの有効化</span><span class="sxs-lookup"><span data-stu-id="1e2b7-265">Enabling WCF Tracing</span></span>  
+ <span data-ttu-id="1e2b7-266">標準プロパティを持つ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレース ファイルの作成またはカスタム トレース ファイルを作成できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-266">You can create a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] trace file with standard properties or set up a custom trace file.</span></span>  
+  
+1.  <span data-ttu-id="1e2b7-267">クリックして、**診断**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-267">Click the **Diagnostics** node.</span></span>  
+  
+2.  <span data-ttu-id="1e2b7-268">をクリックして**トレースを有効にする**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-268">Click **Enable Tracing**.</span></span>  
+  
+3.  <span data-ttu-id="1e2b7-269">クリックして、**トレース レベル**トレース レベルを調整するリンクです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-269">Click the **Trace Level** link to adjust the trace level.</span></span> <span data-ttu-id="1e2b7-270">トレース レベルは、Off、Critical、Error、Warning、Information、Verbose の 6 つあります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-270">There are six trace levels: Off, Critical, Error, Warning, Information, and Verbose.</span></span> <span data-ttu-id="1e2b7-271">**アクティビティ トレース**と**アクティビティの伝達**オプションを使用する、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]アクティビティ トレース機能。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-271">The **Activity Tracing** and **Propagate Activity** option enable you to use the [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] activity tracing feature.</span></span>  
+  
+4.  <span data-ttu-id="1e2b7-272">トレース ファイルとオプションを指定するには、トレース リスナー名をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-272">Click the trace listener name to specify the trace file and options.</span></span>  
+  
+#### <a name="enabling-wcf-logging"></a><span data-ttu-id="1e2b7-273">WCF ログの有効化</span><span class="sxs-lookup"><span data-stu-id="1e2b7-273">Enabling WCF Logging</span></span>  
+ <span data-ttu-id="1e2b7-274">標準プロパティを持つ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] トレース ファイルの作成またはカスタム トレース ファイルを作成できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-274">You can create a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] trace file with standard properties or set up a custom trace file.</span></span>  
+  
+1.  <span data-ttu-id="1e2b7-275">クリックして、**診断**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-275">Click the **Diagnostics** node.</span></span>  
+  
+2.  <span data-ttu-id="1e2b7-276">をクリックして**メッセージのログ記録を有効にする**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-276">Click **Enable Message Logging**.</span></span>  
+  
+3.  <span data-ttu-id="1e2b7-277">クリックして、**ログ レベル**ログ レベルを調整するリンクです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-277">Click the **Log Level** link to adjust the log level.</span></span> <span data-ttu-id="1e2b7-278">ログ レベルには、無効な形式、サービス、トランスポートの 3 つがあります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-278">There are three log levels: Malformed, Service, and Transport.</span></span>  
+  
+4.  <span data-ttu-id="1e2b7-279">ログ ファイルとオプションを指定するには、リスナー名をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-279">Click the listener name to specify the log file and options.</span></span>  
   
 > [!NOTE]
->  ウィザードによって生成される構成ファイルから NetPeerTcpBinding を使用する場合は、手動でバインディング構成要素を追加し、その `security` 要素の `mode` 属性を "None" に変更する必要があります。  
+>  <span data-ttu-id="1e2b7-280">トレースおよびメッセージ ログを有効にして、アプリケーションが閉じられたときに自動的にフラッシュする場合、**自動フラッシュ**オプション。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-280">If you want the trace and message logs to be flushed automatically when your application is closed, enable the **Auto Flush** option.</span></span>  
   
-## COM\+ の構成  
- サービス構成エディターによって、既存の COM\+ アプリケーションに新しい構成ファイルを作成したり、既存の COM\+ 構成を編集することができます。構成ファイルに \<`comContract`\> セクションが存在する場合は、**\[COM コントラクト\]** ノードだけが表示されます。  
+ <span data-ttu-id="1e2b7-281">**診断****概要ページ**診断の構成で最も一般的なタスクを実行することができます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-281">The **Diagnostics** **Summary Page** enables you to accomplish the most common tasks in configuring diagnostics.</span></span> <span data-ttu-id="1e2b7-282">ただし、リスナーとソースの設定を手動で編集する場合を展開してください、**診断**ノード設定を編集**メッセージ ログ**、**リスナー**と**ソース**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-282">However, if you want to manually edit the Listeners and Sources settings, you must expand the **Diagnostics** node and edit settings in **Message Logging**, **Listeners** and **Sources** node.</span></span>  
   
-### 新しい COM\+ 構成の作成  
- 新しい COM\+ 構成を作成する前に、COM\+ アプリケーションがコンポーネント サービスにインストールされて、グローバル アセンブリ キャッシュ \(GAC\) に登録されていることを確認します。  
+#### <a name="enabling-wcf-custom-tracing-or-message-logging"></a><span data-ttu-id="1e2b7-283">WCF カスタム トレースまたはメッセージ ログの有効化</span><span class="sxs-lookup"><span data-stu-id="1e2b7-283">Enabling WCF Custom Tracing or Message Logging</span></span>  
   
-1.  **\[ファイル\]** メニューの **\[統合\]** をポイントし、**\[COM\+ アプリケーション\]** を選択します。この操作は、現在開いているファイルを閉じます。現在のファイルに保存されていないデータがあれば、\[保存\] ダイアログ ボックスが表示されます。**COM\+ 統合ウィザード**が起動されます。  
+1.  <span data-ttu-id="1e2b7-284">クリックして、**診断**ノード、それを展開します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-284">Click the **Diagnostics** node, and expand it.</span></span>  
   
-2.  最初のページで、ツリーから COM\+ アプリケーションを選択します。ツリーで COM\+ アプリケーションが見つからない場合は、COM\+ アプリケーションがコンポーネント サービスにインストールされて、グローバル アセンブリ キャッシュ \(GAC\) に登録されていることを確認します。  
+2.  <span data-ttu-id="1e2b7-285">右クリックし、**リスナー**ノード**新しいリスナー**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-285">Right-click the **Listeners** node and select **New Listener**.</span></span>  
   
-3.  次のページで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスとして公開するメソッドを選択します。既定では、COM\+ アプリケーションでサポートされるすべてのメソッドが表示され、選択されます。  
+3.  <span data-ttu-id="1e2b7-286">トレース ファイルの名前を入力、 **InitData**フィールドです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-286">Type in the trace file name in the **InitData** field.</span></span> <span data-ttu-id="1e2b7-287">パスを参照する [...] ボタンをクリックできます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-287">You can click the "…" button to browse to a path.</span></span>  
   
-4.  ホスト メソッドを選択します。  
+4.  <span data-ttu-id="1e2b7-288">クリックすると、 **TypeName**行には、[...] ボタンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-288">Clicking the **TypeName** line displays a "…" button.</span></span> <span data-ttu-id="1e2b7-289">このボタンをクリックして、**トレース リスナー型ブラウザー**を既にインストールされている事前構成済みのトレース リスナーを見つけることができます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-289">Click this button to open the **Trace Listener Type Browser**, which you can use to find pre-configured trace listeners that are already installed.</span></span>  
   
-5.  ウィザードの手順に従って他の設定を構成します。  
+5.  <span data-ttu-id="1e2b7-290">注、**ソース**セクションです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-290">Note the **Source** section.</span></span> <span data-ttu-id="1e2b7-291">をクリックして**追加**をドロップダウン メニューとダイアログ ボックスが開きこのセクションで、使用できるトレース ソースを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-291">Click **Add** in this section to open a dialog box with a drop-down menu, which lists available tracing sources.</span></span> <span data-ttu-id="1e2b7-292">トレース ソースを選択し、クリックして**OK**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-292">Select a tracing source and click **OK**.</span></span>  
   
-6.  サービス構成エディターは、バックグラウンドで ComSvcConfig.exe を利用して、構成ファイルを生成します。これが完了すると、概要を表示してウィザードを終了できます。構成を直接編集できるように、生成された構成ファイルが開きます。  
+6.  <span data-ttu-id="1e2b7-293">メッセージ ログの設定を編集するには、クリックして、**メッセージ ログ**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-293">To edit Message Logging settings, click the **Message Logging** node.</span></span> <span data-ttu-id="1e2b7-294">プロパティ グリッドで設定を編集できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-294">You can edit the settings in the property grid.</span></span>  
   
-### 既存の COM\+ 構成の編集  
+### <a name="advanced"></a><span data-ttu-id="1e2b7-295">詳細設定</span><span class="sxs-lookup"><span data-stu-id="1e2b7-295">Advanced</span></span>  
   
-1.  **\[ファイル\]** メニューの **\[開く\]** をポイントし、**\[COM\+ サービス\]** を選択します。  
+#### <a name="behaviors"></a><span data-ttu-id="1e2b7-296">ビヘイビアー</span><span class="sxs-lookup"><span data-stu-id="1e2b7-296">Behaviors</span></span>  
+ <span data-ttu-id="1e2b7-297">**動作**ノードが、構成ファイルで現在定義されている動作を表示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-297">The **Behaviors** node displays the behaviors that are currently defined in the configuration file.</span></span>  
   
-2.  編集する COM\+ サービスを一覧から選択します。  
+ <span data-ttu-id="1e2b7-298">動作構成は、エンドポイントとサービスの動作を構成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-298">Behavior configurations are used to configure behaviors of endpoints and services.</span></span> <span data-ttu-id="1e2b7-299">このような構成設定が格納されている、**詳細**ノードの下**サービスの動作**と**エンドポイント動作**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-299">Such configuration settings are stored in the **Advanced** node under **Service Behaviors** and **Endpoint Behaviors**.</span></span> <span data-ttu-id="1e2b7-300">サービス動作はサービスによって使用され、エンドポイント動作はエンドポイントによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-300">Service behaviors are used by services; whereas endpoint behaviors by endpoints.</span></span>  
   
-3.  **\[COM コントラクト\]** ノードで構成設定を編集します。  
+ <span data-ttu-id="1e2b7-301">動作は、スタックを形成する拡張要素のコレクションです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-301">Behaviors are a collection of extension elements that for a stack.</span></span> <span data-ttu-id="1e2b7-302">スタック最上位の要素が最初に適用されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-302">The element at the top of the stack is applied first.</span></span> <span data-ttu-id="1e2b7-303">各拡張要素は独自の構成を持つことができます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-303">Each extension element can have its own configuration.</span></span>  
+  
+##### <a name="creating-a-new-behavior-configuration"></a><span data-ttu-id="1e2b7-304">新しい動作構成の作成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-304">Creating a new Behavior Configuration</span></span>  
+ <span data-ttu-id="1e2b7-305">新しい動作構成は次の 2 つの方法で作成できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-305">You can create a new behavior configuration in two ways.</span></span>  
+  
+-   <span data-ttu-id="1e2b7-306">動作ノードの 1 つを右クリックし ["**新しい動作構成]**</span><span class="sxs-lookup"><span data-stu-id="1e2b7-306">Right-click one of the behavior nodes and select "**New Behavior Configuration…**</span></span>  
+  
+-   <span data-ttu-id="1e2b7-307">動作ノードのいずれかを選択し、クリックして、**新しい動作構成**しています.</span><span class="sxs-lookup"><span data-stu-id="1e2b7-307">Select one of the behavior nodes and click the **New Behavior Configuration**…</span></span> <span data-ttu-id="1e2b7-308">**作業ウィンドウ**ウィンドウの左下にします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-308">in the **Task Pane** on the lower-left of the window.</span></span>  
+  
+##### <a name="adding-behavior-element-extensions-to-a-behavior"></a><span data-ttu-id="1e2b7-309">動作への動作要素拡張の追加</span><span class="sxs-lookup"><span data-stu-id="1e2b7-309">Adding Behavior Element Extensions to a Behavior</span></span>  
+  
+1.  <span data-ttu-id="1e2b7-310">動作ノードのいずれかを選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-310">Select one of the behavior nodes.</span></span>  
+  
+2.  <span data-ttu-id="1e2b7-311">編集する動作を選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-311">Select the behavior you want edit.</span></span>  
+  
+3.  <span data-ttu-id="1e2b7-312">**[追加]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-312">Click **Add**.</span></span>  
+  
+4.  <span data-ttu-id="1e2b7-313">使用できる拡張一覧から、追加する動作要素拡張を選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-313">From the list of available extensions, select the behavior element extension you want to add.</span></span>  
+  
+5.  <span data-ttu-id="1e2b7-314">**[追加]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-314">Click **Add**.</span></span>  
+  
+##### <a name="adjusting-the-extension-position-in-a-behavior"></a><span data-ttu-id="1e2b7-315">動作の拡張位置の調整</span><span class="sxs-lookup"><span data-stu-id="1e2b7-315">Adjusting the Extension Position in a Behavior</span></span>  
+ <span data-ttu-id="1e2b7-316">動作は、スタックを形成する要素のコレクションです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-316">Behaviors are collections of elements that form a stack.</span></span> <span data-ttu-id="1e2b7-317">スタックの各要素には、独自の構成があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-317">Each element on the stack has its own configuration.</span></span> <span data-ttu-id="1e2b7-318">動作内の動作要素拡張の順序は、スタック内のそれらの位置を示します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-318">The order of the behavior element extensions in a behavior indicates their positions in the stack.</span></span> <span data-ttu-id="1e2b7-319">スタック最上位の要素が最初に適用されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-319">Elements at the top of the stack are applied first.</span></span> <span data-ttu-id="1e2b7-320">順序を変更するには</span><span class="sxs-lookup"><span data-stu-id="1e2b7-320">To change the ordering:</span></span>  
+  
+1.  <span data-ttu-id="1e2b7-321">動作ノードのいずれかを選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-321">Select one of the behavior nodes.</span></span>  
+  
+2.  <span data-ttu-id="1e2b7-322">編集する動作を選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-322">Select the behavior you want edit.</span></span>  
+  
+3.  <span data-ttu-id="1e2b7-323">動作拡張要素を選択して、**動作要素拡張の位置**セクションです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-323">Select a behavior extension element in the **Behavior Element Extension Position** section.</span></span>  
+  
+4.  <span data-ttu-id="1e2b7-324">使用して、**を**または**ダウン**選択した要素の位置を変更するリストの左側にあるボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-324">Use the **Up** or **Down** button on the left side of the list to change the position of the selected element.</span></span>  
+  
+##### <a name="editing-the-configuration-of-behavior-element-extensions"></a><span data-ttu-id="1e2b7-325">動作要素拡張の構成の編集</span><span class="sxs-lookup"><span data-stu-id="1e2b7-325">Editing the Configuration of Behavior Element Extensions</span></span>  
+  
+1.  <span data-ttu-id="1e2b7-326">ツリー内の動作ノードの 1 つを選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-326">Select one of the behavior nodes in the tree.</span></span>  
+  
+2.  <span data-ttu-id="1e2b7-327">編集する要素を含む動作を選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-327">Select the behavior that contains the element you want to edit.</span></span>  
+  
+3.  <span data-ttu-id="1e2b7-328">編集する動作要素拡張を選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-328">Select the behavior element extension you want to edit.</span></span> <span data-ttu-id="1e2b7-329">要素の設定が、編集場所の右ペインに表示されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-329">The settings of the element appear in the right pane where they can be edited.</span></span>  
+  
+#### <a name="protocolmapping"></a><span data-ttu-id="1e2b7-330">ProtocolMapping</span><span class="sxs-lookup"><span data-stu-id="1e2b7-330">ProtocolMapping</span></span>  
+ <span data-ttu-id="1e2b7-331">このセクションでは、プロトコル アドレス スキームと可能なバインドの間に定義されているマッピングを介して、http、tcp、MSMQ、net.pipe などのさまざまなプロトコルに対する既定のバインドの種類を設定できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-331">This section allows you to set default binding types for different protocols such as http, tcp, MSMQ or net.pipe through defined mapping between protocol address schemes and the possible bindings.</span></span> <span data-ttu-id="1e2b7-332">他のプロトコルへの新しいマッピングを追加することもできます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-332">You can also add new mappings to other protocols.</span></span>  
+  
+#### <a name="extensions"></a><span data-ttu-id="1e2b7-333">拡張機能</span><span class="sxs-lookup"><span data-stu-id="1e2b7-333">Extensions</span></span>  
+ <span data-ttu-id="1e2b7-334">新しいバインディング拡張、バインディング要素拡張、標準エンドポイント拡張、および動作拡張を登録して、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成に使用できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-334">New binding extensions, binding element extensions, standard endpoint extensions and behavior extensions can be registered for use in [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] configuration.</span></span> <span data-ttu-id="1e2b7-335">拡張は、名前と種類のペアです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-335">Extensions are name/type pairs.</span></span> <span data-ttu-id="1e2b7-336">名前は構成の拡張の名前を定義し、種類は拡張を実装します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-336">The name defines the name of the extension in configuration, whereas the type implements the extension.</span></span> <span data-ttu-id="1e2b7-337">拡張には次の 4 種類があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-337">There are four types of extensions:</span></span>  
+  
+-   <span data-ttu-id="1e2b7-338">バインディング拡張は、バインディングの種類全体を定義します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-338">Binding extensions define an entire binding type.</span></span> <span data-ttu-id="1e2b7-339">例 : `basicHttpBinding`。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-339">Example: `basicHttpBinding`.</span></span>  
+  
+-   <span data-ttu-id="1e2b7-340">バインディング要素拡張は、バインディングの要素を定義します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-340">Binding element extensions define an element of a binding.</span></span> <span data-ttu-id="1e2b7-341">例 : `textMessageEncoding`。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-341">Example: `textMessageEncoding`.</span></span>  
+  
+-   <span data-ttu-id="1e2b7-342">標準エンドポイント拡張は、標準エンドポイント全体を定義します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-342">Standard endpoint extensions define an entire standard endpoint.</span></span> <span data-ttu-id="1e2b7-343">例 : `discoveryEndpoint`。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-343">Example: `discoveryEndpoint`.</span></span>  
+  
+-   <span data-ttu-id="1e2b7-344">動作要素拡張は、動作の要素を定義します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-344">Behavior element extensions define an element of a behavior.</span></span> <span data-ttu-id="1e2b7-345">例 : `clientVia`。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-345">Example: `clientVia`.</span></span>  
+  
+ <span data-ttu-id="1e2b7-346">構成に登録されている拡張は、同じ種類の他のすべての [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] コンポーネントと同じように使用できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-346">Extensions that have been registered in configuration can be used like any other [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] component of the same type.</span></span>  
+  
+##### <a name="adding-a-new-extension"></a><span data-ttu-id="1e2b7-347">新しい機能の追加</span><span class="sxs-lookup"><span data-stu-id="1e2b7-347">Adding a new extension</span></span>  
+ <span data-ttu-id="1e2b7-348">詳細設定ノード内の拡張ノードの 1 つを選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-348">Select one of the extension nodes in the advanced nodes:</span></span>  
+  
+1.  <span data-ttu-id="1e2b7-349">**[新規]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-349">Click **New**.</span></span>  
+  
+2.  <span data-ttu-id="1e2b7-350">名前と種類を入力します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-350">Enter a name and type.</span></span>  
+  
+3.  <span data-ttu-id="1e2b7-351">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-351">Click **OK**.</span></span>  
+  
+4.  <span data-ttu-id="1e2b7-352">拡張は、エディターの適切な場所に表示されるようになります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-352">The extension now appears in the appropriate place in the Editor.</span></span> <span data-ttu-id="1e2b7-353">たとえば、動作要素拡張を追加すると、使用できる拡張一覧に表示されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-353">For example, if you add a behavior element extension, it appears in the list of available extensions.</span></span>  
+  
+#### <a name="hosting-environment"></a><span data-ttu-id="1e2b7-354">ホスト環境</span><span class="sxs-lookup"><span data-stu-id="1e2b7-354">Hosting Environment</span></span>  
+ <span data-ttu-id="1e2b7-355">ここでは、環境をホストするサービスのインスタンス化設定を定義できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-355">This section allows you to define instantiation settings for the service hosting environment.</span></span>  
+  
+### <a name="creating-a-configuration-file-using-the-wizard"></a><span data-ttu-id="1e2b7-356">ウィザードによる構成ファイルの作成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-356">Creating a Configuration File Using the Wizard</span></span>  
+ <span data-ttu-id="1e2b7-357">新しい構成ファイルを作成する 1 つの方法として、新しいサービス要素ウィザードを使用します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-357">One way to create a new configuration file is to use the New Service Element Wizard.</span></span> <span data-ttu-id="1e2b7-358">ウィザードは、インストールされたサービスの種類および [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] と互換性のある、COM+、Web ホストの仮想ディレクトリなどの他の要素をコンピューター上で見つけると、それらを読み込んで、構成の作成を効率よく行います。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-358">The wizard finds the installed service types and other elements compatible with [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] on the computer, including COM+ and Web-hosted virtual directories, and loads them to make creating the configuration much more streamlined.</span></span>  
+  
+#### <a name="creating-a-configuration-file"></a><span data-ttu-id="1e2b7-359">構成ファイルの作成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-359">Creating a Configuration File</span></span>  
+  
+1.  <span data-ttu-id="1e2b7-360">移動する、コマンド ウィンドウを使用してサービス構成エディターを起動、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)]インストール場所、および入力`SvcConfigEditor.exe`です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-360">Start Service Configuration Editor by using a command window to navigate to your [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] installation location, and then type `SvcConfigEditor.exe`.</span></span>  
+  
+2.  <span data-ttu-id="1e2b7-361">**ファイル**メニューの **開く** をクリック**実行可能ファイル**、 **COM + サービス**、または**web ホスト サービス**を作成する構成ファイルの種類に応じて、します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-361">From the **File** menu, select **Open** and click **Executable**, **COM+ Service**, or **WebHosted Service**, depending on the type of configuration file you want to create.</span></span>  
+  
+3.  <span data-ttu-id="1e2b7-362">**開く** ダイアログ ボックスで、構成ファイルを作成し、ダブルクリックする特定のファイルに移動します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-362">In the **Open** dialog box, navigate to the specific file you want to create a configuration file for and double-click it.</span></span>  
+  
+4.  <span data-ttu-id="1e2b7-363">**ファイル** メニューのをポイント**新しい項目の追加** をクリック**サービス**です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-363">In the **File** menu, point to **Add New Item** and click **Service**.</span></span> <span data-ttu-id="1e2b7-364">新しいサービス要素ウィザードが開きます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-364">The New Service Element Wizard opens.</span></span>  
+  
+5.  <span data-ttu-id="1e2b7-365">ウィザードの手順に従って新しいサービスを作成します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-365">Follow the steps in the wizard to create the new service.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="1e2b7-366">ウィザードによって生成される構成ファイルから NetPeerTcpBinding を使用する場合は、手動でバインディング構成要素を追加し、その `mode` 要素の `security` 属性を "None" に変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-366">If you want to use the NetPeerTcpBinding from the configuration file generated by the Wizard, you have to manually add a binding configuration element and modify the `mode` attribute of its `security` element to "None".</span></span>  
+  
+## <a name="configuring-com"></a><span data-ttu-id="1e2b7-367">COM+ の構成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-367">Configuring COM+</span></span>  
+ <span data-ttu-id="1e2b7-368">サービス構成エディターによって、既存の COM+ アプリケーションに新しい構成ファイルを作成したり、既存の COM+ 構成を編集することができます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-368">The Service Configuration Editor enables you to create a new configuration file for an existing COM+ application, or edit an existing COM+ configuration.</span></span> <span data-ttu-id="1e2b7-369">**COM コントラクト**ノードは表示されているときに、<`comContract`> セクションは構成ファイルに存在します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-369">The **COM Contract** node is only visible when the <`comContract`> section exists in the configuration file.</span></span>  
+  
+### <a name="creating-a-new-com-configuration"></a><span data-ttu-id="1e2b7-370">新しい COM+ 構成の作成</span><span class="sxs-lookup"><span data-stu-id="1e2b7-370">Creating a New COM+ Configuration</span></span>  
+ <span data-ttu-id="1e2b7-371">新しい COM+ 構成を作成する前に、COM+ アプリケーションがコンポーネント サービスにインストールされて、グローバル アセンブリ キャッシュ (GAC) に登録されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-371">Before creating a new COM+ configuration, make sure that your COM+ application is installed in Component Services, and registered in the Global Assembly Cache (GAC).</span></span>  
+  
+1.  <span data-ttu-id="1e2b7-372">選択**ファイル**メニュー]-> [**統合** -> **COM + アプリケーションです。**</span><span class="sxs-lookup"><span data-stu-id="1e2b7-372">Select **File** menu -> **Integrate** -> **COM+ Application.**</span></span> <span data-ttu-id="1e2b7-373">この操作は、現在開いているファイルを閉じます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-373">This operation closes the current opened file.</span></span> <span data-ttu-id="1e2b7-374">現在のファイルに保存されていないデータがあれば、[保存] ダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-374">If there is unsaved data in the current file, a Save dialog appears.</span></span> <span data-ttu-id="1e2b7-375">**COM + 統合ウィザード**が起動されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-375">The **COM+ Integration Wizard** is then launched.</span></span>  
+  
+2.  <span data-ttu-id="1e2b7-376">最初のページで、ツリーから COM+ アプリケーションを選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-376">In the first page, select the COM+ application from the tree.</span></span> <span data-ttu-id="1e2b7-377">ツリーで COM+ アプリケーションが見つからない場合は、COM+ アプリケーションがコンポーネント サービスにインストールされて、グローバル アセンブリ キャッシュ (GAC) に登録されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-377">If you cannot find your COM+ application in the tree, verify that it is installed in the Component Services and registered in the Global Assembly Cache (GAC).</span></span>  
+  
+3.  <span data-ttu-id="1e2b7-378">次のページで、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスとして公開するメソッドを選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-378">In the next page, select which method(s) you want to expose as [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] services.</span></span> <span data-ttu-id="1e2b7-379">既定では、COM+ アプリケーションでサポートされるすべてのメソッドが表示され、選択されます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-379">All the supported methods in the COM+ application are displayed and selected by default.</span></span>  
+  
+4.  <span data-ttu-id="1e2b7-380">ホスト メソッドを選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-380">Choose a hosting method.</span></span>  
+  
+5.  <span data-ttu-id="1e2b7-381">ウィザードの手順に従って他の設定を構成します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-381">Configure other settings according to the guides in the wizard.</span></span>  
+  
+6.  <span data-ttu-id="1e2b7-382">サービス構成エディターは、バックグラウンドで ComSvcConfig.exe を利用して、構成ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-382">Service Configuration Editor utilizes ComSvcConfig.exe in the background to generate configuration file.</span></span> <span data-ttu-id="1e2b7-383">これが完了すると、概要を表示してウィザードを終了できます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-383">After this is completed, you can view a summary and exit the wizard.</span></span> <span data-ttu-id="1e2b7-384">構成を直接編集できるように、生成された構成ファイルが開きます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-384">The generated configuration file is opened so that you can edit it directly.</span></span>  
+  
+### <a name="editing-an-existing-com-configuration"></a><span data-ttu-id="1e2b7-385">既存の COM+ 構成の編集</span><span class="sxs-lookup"><span data-stu-id="1e2b7-385">Editing an Existing COM+ Configuration</span></span>  
+  
+1.  <span data-ttu-id="1e2b7-386">選択**ファイル**メニュー]-> [**開く** -> **COM + サービス**しています.</span><span class="sxs-lookup"><span data-stu-id="1e2b7-386">Select **File** menu -> **Open** -> **COM+ Service**…</span></span>  
+  
+2.  <span data-ttu-id="1e2b7-387">編集する COM+ サービスを一覧から選択します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-387">Select the COM+ Service you want to edit from the list.</span></span>  
+  
+3.  <span data-ttu-id="1e2b7-388">構成設定を編集し、 **COM コントラクト**ノード。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-388">Edit configuration settings in the **COM Contracts** node.</span></span>  
   
     > [!NOTE]
-    >  COM コントラクトを含む構成ファイルを直接開いて編集することもできます。  
+    >  <span data-ttu-id="1e2b7-389">COM コントラクトを含む構成ファイルを直接開いて編集することもできます。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-389">You can also directly open and edit a configuration file that contains COM contracts.</span></span>  
   
-## セキュリティ  
- 構成エディターによって生成されるサービス構成ファイルは、セキュリティによる保護が保証されていません。[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスをセキュリティで保護する方法については、「[セキュリティ](../../../docs/framework/wcf/feature-details/security.md)」を参照してください。  
+## <a name="security"></a><span data-ttu-id="1e2b7-390">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="1e2b7-390">Security</span></span>  
+ <span data-ttu-id="1e2b7-391">構成エディターによって生成されるサービス構成ファイルは、セキュリティによる保護が保証されていません。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-391">A service configuration file generated by the Configuration Editor is not guaranteed to be secure.</span></span> <span data-ttu-id="1e2b7-392">参照してください、[セキュリティ](../../../docs/framework/wcf/feature-details/security.md)ドキュメントを保護する方法を調べるには、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] services です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-392">Please refer to the [Security](../../../docs/framework/wcf/feature-details/security.md) documentation to find out how to secure your [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] services.</span></span>  
   
- また、構成エディターを使用して読み書きできるのは、有効な [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成要素だけです。ツールは、スキーマに準拠するユーザー定義の要素を無視します。また、これらの要素を構成ファイルから削除したり、既知の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 要素に対する影響を究明することはありません。これらの要素がアプリケーションやシステムに脅威を与えるかどうかを究明するのはユーザーの責任です。
+ <span data-ttu-id="1e2b7-393">また、構成エディターを使用して読み書きできるのは、有効な [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 構成要素だけです。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-393">In addition, the Configuration Editor can only be used to read and write valid [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] configuration elements.</span></span> <span data-ttu-id="1e2b7-394">ツールは、スキーマに準拠するユーザー定義の要素を無視します。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-394">The tool ignores schema-compliant, user-defined elements.</span></span> <span data-ttu-id="1e2b7-395">また、これらの要素を構成ファイルから削除したり、既知の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 要素に対する影響を究明することはありません。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-395">It also does not attempt remove these elements from the configuration file or determine their effects on the known [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] elements.</span></span> <span data-ttu-id="1e2b7-396">これらの要素がアプリケーションやシステムに脅威を与えるかどうかを究明するのはユーザーの責任です。</span><span class="sxs-lookup"><span data-stu-id="1e2b7-396">It is the user’s responsibility to determine whether these elements pose a threat to the application or the system.</span></span>

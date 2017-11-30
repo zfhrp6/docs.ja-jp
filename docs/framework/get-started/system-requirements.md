@@ -1,13 +1,9 @@
 ---
 title: ".NET Framework のシステム要件"
-ms.custom: 
-ms.date: 03/30/2017
+ms.custom: updateeachrelease
+ms.date: 10/17/2017
 ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
+ms.technology: dotnet-clr
 ms.topic: article
 helpviewer_keywords:
 - software requirements
@@ -16,91 +12,91 @@ helpviewer_keywords:
 - operating systems supported
 - hardware requirements
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
-caps.latest.revision: 95
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: b08bd7b78a8606f61c266da51f4079f0b5f4aac6
+ms.sourcegitcommit: d0f7646d67db5809cf43ff1d27b399a4020e8ee2
 ms.translationtype: HT
-ms.sourcegitcommit: 21c6a1485f3d0c38bde065d6ecc7b07d5e424c1d
-ms.openlocfilehash: 18875105836ee4be0a3d3fb61a83ef6cd29b8c58
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/05/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/25/2017
 ---
+# <a name="net-framework-system-requirements"></a><span data-ttu-id="bedb4-102">.NET Framework のシステム要件</span><span class="sxs-lookup"><span data-stu-id="bedb4-102">.NET Framework system requirements</span></span>
 
-# <a name="net-framework-system-requirements"></a>.NET Framework のシステム要件
+<span data-ttu-id="bedb4-103">このトピックの表では、ハードウェア、オペレーティング システム、および .NET Framework 4.5 とそのポイント リリース (4.5.1 と 4.5.2)、ソフトウェアの要件を提供、[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]とそのポイント リリース (4.6.1 および 4.6.2) と .NET Framework 4.7 とそのポイントリリース (4.7.1)。</span><span class="sxs-lookup"><span data-stu-id="bedb4-103">The tables in this topic provide the hardware, operating system, and software requirements for the .NET Framework 4.5 and its point releases (4.5.1 and 4.5.2), the [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] and its point releases (4.6.1 and 4.6.2), and the .NET Framework 4.7 and its point release (4.7.1).</span></span> <span data-ttu-id="bedb4-104">.NET Framework 用のアプリケーションを開発するための開発環境では、要件セットが異なります。</span><span class="sxs-lookup"><span data-stu-id="bedb4-104">Development environments that enable you to develop apps for the .NET Framework have a separate set of requirements.</span></span>
 
-このトピックの表では、.NET Framework 4.5 とそのポイント リリース (4.5.1 と 4.5.2)、[!INCLUDE[net_v46](../../../includes/net-v46-md.md)] とそのポイント リリース (4.6.1 と 4.6.2)、.NET Framework 4.7 のハードウェア、オペレーティング システム、およびソフトウェアの要件を示します。 .NET Framework 用のアプリケーションを開発するための開発環境では、要件セットが異なります。
+<span data-ttu-id="bedb4-105">ダウンロード情報とリンクについては、[「開発者向けの .NET Framework のインストール」](../../../docs/framework/install/guide-for-developers.md) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="bedb4-105">For download information and links, see [Install the .NET Framework for developers](../../../docs/framework/install/guide-for-developers.md).</span></span>
 
-ダウンロード情報とリンクについては、[「開発者向けの .NET Framework のインストール」](../../../docs/framework/install/guide-for-developers.md) を参照してください。
+<span data-ttu-id="bedb4-106">.NET Framework バージョンのサポート ライフサイクルについては、[マイクロソフト サポート ライフサイクル](https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bedb4-106">For information on the support lifecycle of .NET Framework versions, see [Microsoft Support Lifecycle](https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO).</span></span>
 
-.NET Framework バージョンのサポート ライフサイクルについては、[マイクロソフト サポート ライフサイクル](https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO)をご覧ください。
-
-## <a name="hardware-requirements"></a>ハードウェア要件
+## <a name="hardware-requirements"></a><span data-ttu-id="bedb4-107">ハードウェア要件</span><span class="sxs-lookup"><span data-stu-id="bedb4-107">Hardware requirements</span></span>
 
 |                          |        |
 | ------------------------ | ------ |
-| **プロセッサ**            | 1 GHz  |
-| **RAM**                  | 512 MB |
-| **ディスク容量 (最小)** |        |
-| 32 ビット                   | 4.5 GB |
-| 64 ビット                   | 4.5 GB |
+| <span data-ttu-id="bedb4-108">**プロセッサ**</span><span class="sxs-lookup"><span data-stu-id="bedb4-108">**Processor**</span></span>            | <span data-ttu-id="bedb4-109">1 GHz</span><span class="sxs-lookup"><span data-stu-id="bedb4-109">1 GHz</span></span>  |
+| <span data-ttu-id="bedb4-110">**RAM**</span><span class="sxs-lookup"><span data-stu-id="bedb4-110">**RAM**</span></span>                  | <span data-ttu-id="bedb4-111">512 MB</span><span class="sxs-lookup"><span data-stu-id="bedb4-111">512 MB</span></span> |
+| <span data-ttu-id="bedb4-112">**ディスク容量 (最小)**</span><span class="sxs-lookup"><span data-stu-id="bedb4-112">**Disk space (minimum)**</span></span> |        |
+| <span data-ttu-id="bedb4-113">32 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-113">32-bit</span></span>                   | <span data-ttu-id="bedb4-114">4.5 GB</span><span class="sxs-lookup"><span data-stu-id="bedb4-114">4.5 GB</span></span> |
+| <span data-ttu-id="bedb4-115">64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-115">64-bit</span></span>                   | <span data-ttu-id="bedb4-116">4.5 GB</span><span class="sxs-lookup"><span data-stu-id="bedb4-116">4.5 GB</span></span> |
 
-## <a name="installation-requirements"></a>インストール要件
+## <a name="installation-requirements"></a><span data-ttu-id="bedb4-117">インストール要件</span><span class="sxs-lookup"><span data-stu-id="bedb4-117">Installation requirements</span></span>
 
-.NET Framework をインストールするには管理者権限が必要です。 .NET Framework をインストールするコンピューター上での管理者権限がない場合には、ネットワーク管理者にお問い合わせください。
+<span data-ttu-id="bedb4-118">.NET Framework をインストールするには管理者権限が必要です。</span><span class="sxs-lookup"><span data-stu-id="bedb4-118">The .NET Framework requires administrator privileges for installation.</span></span> <span data-ttu-id="bedb4-119">.NET Framework をインストールするコンピューター上での管理者権限がない場合には、ネットワーク管理者にお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="bedb4-119">If you don't have administrator rights to the computer where you'd like to install the .NET Framework, contact your network administrator.</span></span>
 
-## <a name="supported-client-operating-systems"></a>サポートされているクライアント オペレーティング システム
+## <a name="supported-client-operating-systems"></a><span data-ttu-id="bedb4-120">サポートされているクライアント オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="bedb4-120">Supported client operating systems</span></span>
 
-| オペレーティング システム | サポートされているエディション | OS と共にプレインストール済み | 個別にインストール可能 |
+| <span data-ttu-id="bedb4-121">オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="bedb4-121">Operating system</span></span> | <span data-ttu-id="bedb4-122">サポートされているエディション</span><span class="sxs-lookup"><span data-stu-id="bedb4-122">Supported editions</span></span> | <span data-ttu-id="bedb4-123">OS と共にプレインストール済み</span><span class="sxs-lookup"><span data-stu-id="bedb4-123">Preinstalled with the OS</span></span> | <span data-ttu-id="bedb4-124">個別にインストール可能</span><span class="sxs-lookup"><span data-stu-id="bedb4-124">Installable separately</span></span> |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
-| Windows 10 Creators Update | 32 ビットおよび 64 ビット | .NET Framework 4.7 | | 
-| Windows 10 Anniversary Update | 32 ビットおよび 64 ビット | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]|.NET Framework 4.7 |
-| Windows 10 の 11 月更新版 | 32 ビットおよび 64 ビット | [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] | |
-| Windows 10 | 32 ビットおよび 64 ビット | [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] | [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] |
-| [!INCLUDE[win81](../../../includes/win81-md.md)] | 32 ビット、64 ビット、および ARM | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7 |
-| [!INCLUDE[win8](../../../includes/win8-md.md)] | 32 ビット、64 ビット、および ARM | [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] |
-| Windows 7 SP1|32 ビットおよび 64 ビット | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7 |
-| Windows Vista SP2|32 ビットおよび 64 ビット | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] |
-| Windows XP |32 ビットおよび 64 ビット | -- | .NET Framework 4 |
+| <span data-ttu-id="bedb4-125">Windows 10 に収まる作成者を更新します。</span><span class="sxs-lookup"><span data-stu-id="bedb4-125">Windows 10 Fall Creators Update</span></span> | <span data-ttu-id="bedb4-126">32 ビットおよび 64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-126">32-bit and 64-bit</span></span> | <span data-ttu-id="bedb4-127">.NET framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="bedb4-127">.NET Framework 4.7.1</span></span> | |
+| <span data-ttu-id="bedb4-128">Windows 10 Creators Update</span><span class="sxs-lookup"><span data-stu-id="bedb4-128">Windows 10 Creators Update</span></span> | <span data-ttu-id="bedb4-129">32 ビットおよび 64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-129">32-bit and 64-bit</span></span> | <span data-ttu-id="bedb4-130">.NET Framework 4.7</span><span class="sxs-lookup"><span data-stu-id="bedb4-130">.NET Framework 4.7</span></span> | <span data-ttu-id="bedb4-131">.Net framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="bedb4-131">.Net Framework 4.7.1</span></span> | 
+| <span data-ttu-id="bedb4-132">Windows 10 Anniversary Update</span><span class="sxs-lookup"><span data-stu-id="bedb4-132">Windows 10 Anniversary Update</span></span> | <span data-ttu-id="bedb4-133">32 ビットおよび 64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-133">32-bit and 64-bit</span></span> | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]|<span data-ttu-id="bedb4-134">.NET Framework 4.7</span><span class="sxs-lookup"><span data-stu-id="bedb4-134">.NET Framework 4.7</span></span><br/><br/><span data-ttu-id="bedb4-135">.NET framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="bedb4-135">.NET Framework 4.7.1</span></span> |
+| <span data-ttu-id="bedb4-136">Windows 10 の 11 月更新版</span><span class="sxs-lookup"><span data-stu-id="bedb4-136">Windows 10 November Update</span></span> | <span data-ttu-id="bedb4-137">32 ビットおよび 64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-137">32-bit and 64-bit</span></span> | [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] | |
+| <span data-ttu-id="bedb4-138">Windows 10</span><span class="sxs-lookup"><span data-stu-id="bedb4-138">Windows 10</span></span> | <span data-ttu-id="bedb4-139">32 ビットおよび 64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-139">32-bit and 64-bit</span></span> | [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] | [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] |
+| [!INCLUDE[win81](../../../includes/win81-md.md)] | <span data-ttu-id="bedb4-140">32 ビット、64 ビット、および ARM</span><span class="sxs-lookup"><span data-stu-id="bedb4-140">32-bit, 64-bit, and ARM</span></span> | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br /><span data-ttu-id="bedb4-141">.NET Framework 4.7</span><span class="sxs-lookup"><span data-stu-id="bedb4-141">.NET Framework 4.7</span></span><br/><br/><span data-ttu-id="bedb4-142">.NET framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="bedb4-142">.NET Framework 4.7.1</span></span> |
+| [!INCLUDE[win8](../../../includes/win8-md.md)] | <span data-ttu-id="bedb4-143">32 ビット、64 ビット、および ARM</span><span class="sxs-lookup"><span data-stu-id="bedb4-143">32-bit, 64-bit, and ARM</span></span> | [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] |
+| <span data-ttu-id="bedb4-144">Windows 7 SP1</span><span class="sxs-lookup"><span data-stu-id="bedb4-144">Windows 7 SP1</span></span>|<span data-ttu-id="bedb4-145">32 ビットおよび 64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-145">32-bit and 64-bit</span></span> | -- | <span data-ttu-id="bedb4-146">.NET Framework 4</span><span class="sxs-lookup"><span data-stu-id="bedb4-146">.NET Framework 4</span></span><br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br /><span data-ttu-id="bedb4-147">.NET Framework 4.7</span><span class="sxs-lookup"><span data-stu-id="bedb4-147">.NET Framework 4.7</span></span><br/><br/><span data-ttu-id="bedb4-148">.NET framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="bedb4-148">.NET Framework 4.7.1</span></span>|
+| <span data-ttu-id="bedb4-149">Windows Vista SP2</span><span class="sxs-lookup"><span data-stu-id="bedb4-149">Windows Vista SP2</span></span>|<span data-ttu-id="bedb4-150">32 ビットおよび 64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-150">32-bit and 64-bit</span></span> | -- | <span data-ttu-id="bedb4-151">.NET Framework 4</span><span class="sxs-lookup"><span data-stu-id="bedb4-151">.NET Framework 4</span></span><br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] |
+| <span data-ttu-id="bedb4-152">Windows XP</span><span class="sxs-lookup"><span data-stu-id="bedb4-152">Windows XP</span></span> |<span data-ttu-id="bedb4-153">32 ビットおよび 64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-153">32-bit and 64-bit</span></span> | -- | <span data-ttu-id="bedb4-154">.NET Framework 4</span><span class="sxs-lookup"><span data-stu-id="bedb4-154">.NET Framework 4</span></span> |
 
- **注:**
+ <span data-ttu-id="bedb4-155">**注:**</span><span class="sxs-lookup"><span data-stu-id="bedb4-155">**Notes:**</span></span>
 
-- Windows 7 システムでは、.NET Framework には Windows 7 SP1 が必要です。 Windows 7 を使用していて Service Pack 1 をインストールしていない場合、.NET Framework をインストールする前に、Service Pack 1 をインストールする必要があります。
+- <span data-ttu-id="bedb4-156">Windows 7 システムでは、.NET Framework には Windows 7 SP1 が必要です。</span><span class="sxs-lookup"><span data-stu-id="bedb4-156">On Windows 7 systems, the .NET Framework requires Windows 7 SP1.</span></span> <span data-ttu-id="bedb4-157">Windows 7 を使用していて Service Pack 1 をインストールしていない場合、.NET Framework をインストールする前に、Service Pack 1 をインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="bedb4-157">If you're on Windows 7 and haven't yet installed Service Pack 1, you'll need to do so before installing the .NET Framework.</span></span>
 
-- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] は、Windows プレインストール環境 (Windows PE) でサポートされます。 Windows PE では、すべての機能がサポートされているわけではありません。
+- <span data-ttu-id="bedb4-158">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] は、Windows プレインストール環境 (Windows PE) でサポートされます。</span><span class="sxs-lookup"><span data-stu-id="bedb4-158">The [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] is supported on the Windows Preinstallation Environment (Windows PE).</span></span> <span data-ttu-id="bedb4-159">Windows PE では、すべての機能がサポートされているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="bedb4-159">Not all features are supported on Windows PE.</span></span>
 
-- .NET Framework 4 は、IA64 プラットフォームもサポートしています。
+- <span data-ttu-id="bedb4-160">.NET Framework 4 は、IA64 プラットフォームもサポートしています。</span><span class="sxs-lookup"><span data-stu-id="bedb4-160">The .NET Framework 4 also supports the IA64 platform.</span></span>
 
-- すべてのプラットフォームについて最大限の互換性とセキュリティが得られるように、[Windows Update Web サイト](http://go.microsoft.com/fwlink/?LinkId=168461)から入手できる最新の Windows Service Pack にアップグレードし、重要な更新プログラムをインストールすることをお勧めします。
+- <span data-ttu-id="bedb4-161">すべてのプラットフォームについて最大限の互換性とセキュリティが得られるように、[Windows Update Web サイト](http://go.microsoft.com/fwlink/?LinkId=168461)から入手できる最新の Windows Service Pack にアップグレードし、重要な更新プログラムをインストールすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="bedb4-161">For all platforms, we recommend that you upgrade to the latest Windows Service Pack and install critical updates available from the [Windows Update website](http://go.microsoft.com/fwlink/?LinkId=168461) to ensure the best compatibility and security.</span></span>
 
-- 64 ビット オペレーティング システムでは、.NET Framework は WOW64 (64 ビット コンピューター上での 32 ビット処理) とネイティブ 64 ビット処理の両方をサポートしています。
+- <span data-ttu-id="bedb4-162">64 ビット オペレーティング システムでは、.NET Framework は WOW64 (64 ビット コンピューター上での 32 ビット処理) とネイティブ 64 ビット処理の両方をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="bedb4-162">On 64-bit operating systems, the .NET Framework supports both WOW64 (32-bit processing on a 64-bit machine) and native 64-bit processing.</span></span>
 
-## <a name="supported-server-operating-systems"></a>サポートされているサーバー オペレーティング システム
+## <a name="supported-server-operating-systems"></a><span data-ttu-id="bedb4-163">サポートされているサーバー オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="bedb4-163">Supported server operating systems</span></span>
 
-| オペレーティング システム | サポートされているエディション | OS と共にプレインストール済み | 個別にインストール可能 |
+| <span data-ttu-id="bedb4-164">オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="bedb4-164">Operating system</span></span> | <span data-ttu-id="bedb4-165">サポートされているエディション</span><span class="sxs-lookup"><span data-stu-id="bedb4-165">Supported editions</span></span> | <span data-ttu-id="bedb4-166">OS と共にプレインストール済み</span><span class="sxs-lookup"><span data-stu-id="bedb4-166">Preinstalled with the OS</span></span> | <span data-ttu-id="bedb4-167">個別にインストール可能</span><span class="sxs-lookup"><span data-stu-id="bedb4-167">Installable separately</span></span> |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
-| Windows Server 2016 | 64 ビット | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] | .NET Framework 4.7 |
-| [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] | 64 ビット | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7 |
-| [!INCLUDE[winserver8](../../../includes/winserver8-md.md)] (64 ビット エディション) | 64 ビット| [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7 |
-| Windows Server 2008 R2 SP1|64 ビット | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />.NET Framework 4.7 |
-| Windows Server 2008 SP2|32 ビットおよび 64 ビット | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] |
+| <span data-ttu-id="bedb4-168">Windows サーバーのバージョン 1709</span><span class="sxs-lookup"><span data-stu-id="bedb4-168">Windows Server, version 1709</span></span> | <span data-ttu-id="bedb4-169">64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-169">64-bit</span></span> | <span data-ttu-id="bedb4-170">.NET framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="bedb4-170">.NET Framework 4.7.1</span></span> | -- |
+| <span data-ttu-id="bedb4-171">Windows Server 2016</span><span class="sxs-lookup"><span data-stu-id="bedb4-171">Windows Server 2016</span></span> | <span data-ttu-id="bedb4-172">64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-172">64-bit</span></span> | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] | <span data-ttu-id="bedb4-173">.NET Framework 4.7</span><span class="sxs-lookup"><span data-stu-id="bedb4-173">.NET Framework 4.7</span></span><br/><br/> <span data-ttu-id="bedb4-174">.NET framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="bedb4-174">.NET Framework 4.7.1</span></span> |
+| <span data-ttu-id="bedb4-175">Windows Server 2012 R2</span><span class="sxs-lookup"><span data-stu-id="bedb4-175">Windows Server 2012 R2</span></span> | <span data-ttu-id="bedb4-176">64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-176">64-bit</span></span> | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br /><span data-ttu-id="bedb4-177">.NET Framework 4.7</span><span class="sxs-lookup"><span data-stu-id="bedb4-177">.NET Framework 4.7</span></span><br/><br/> <span data-ttu-id="bedb4-178">.NET framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="bedb4-178">.NET Framework 4.7.1</span></span> |
+| <span data-ttu-id="bedb4-179">Windows Server 2012 (64 ビット エディション)</span><span class="sxs-lookup"><span data-stu-id="bedb4-179">Windows Server 2012 (64-bit edition)</span></span> | <span data-ttu-id="bedb4-180">64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-180">64-bit</span></span>| [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br /><span data-ttu-id="bedb4-181">.NET Framework 4.7</span><span class="sxs-lookup"><span data-stu-id="bedb4-181">.NET Framework 4.7</span></span><br/><br/><span data-ttu-id="bedb4-182">.NET framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="bedb4-182">.NET Framework 4.7.1</span></span> |
+| <span data-ttu-id="bedb4-183">Windows Server 2008 R2 SP1</span><span class="sxs-lookup"><span data-stu-id="bedb4-183">Windows Server 2008 R2 SP1</span></span>|<span data-ttu-id="bedb4-184">64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-184">64-bit</span></span> | -- | <span data-ttu-id="bedb4-185">.NET Framework 4</span><span class="sxs-lookup"><span data-stu-id="bedb4-185">.NET Framework 4</span></span><br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br /><span data-ttu-id="bedb4-186">.NET Framework 4.7</span><span class="sxs-lookup"><span data-stu-id="bedb4-186">.NET Framework 4.7</span></span><br/><br/><span data-ttu-id="bedb4-187">.NET framework 4.7.1</span><span class="sxs-lookup"><span data-stu-id="bedb4-187">.NET Framework 4.7.1</span></span> |
+| <span data-ttu-id="bedb4-188">Windows Server 2008 SP2</span><span class="sxs-lookup"><span data-stu-id="bedb4-188">Windows Server 2008 SP2</span></span>|<span data-ttu-id="bedb4-189">32 ビットおよび 64 ビット</span><span class="sxs-lookup"><span data-stu-id="bedb4-189">32-bit and 64-bit</span></span> | -- | <span data-ttu-id="bedb4-190">.NET Framework 4</span><span class="sxs-lookup"><span data-stu-id="bedb4-190">.NET Framework 4</span></span><br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] |
 
- **注:**
+ <span data-ttu-id="bedb4-191">**注:**</span><span class="sxs-lookup"><span data-stu-id="bedb4-191">**Notes:**</span></span>
 
-- [!INCLUDE[winserver8](../../../includes/winserver8-md.md)] には [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] が含まれているため、個別にインストールする必要はありません。 同様に、[!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] には [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] が含まれます。
+- [!INCLUDE[winserver8](../../../includes/winserver8-md.md)]<span data-ttu-id="bedb4-192"> には [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] が含まれているため、個別にインストールする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="bedb4-192"> includes the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], so you don't have to install it separately.</span></span> <span data-ttu-id="bedb4-193">同様に、[!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] には [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] が含まれます。</span><span class="sxs-lookup"><span data-stu-id="bedb4-193">Similarly, [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] includes the [!INCLUDE[net_v451](../../../includes/net-v451-md.md)].</span></span>
 
-- .NET Framework は、Windows Server 2008 R2 SP1 以降の Server Core ロールでサポートされていますが、Itanium ベース システム用の Windows Server 2008 R2 ではサポートされていません。
+- <span data-ttu-id="bedb4-194">.NET Framework には、Windows Server 2008 R2 sp1 以降の Server Core ロールのサポートが制限されています。</span><span class="sxs-lookup"><span data-stu-id="bedb4-194">The .NET Framework has limited support for the Server Core Role with Windows Server 2008 R2 SP1 or later.</span></span> <span data-ttu-id="bedb4-195">参照してください[サーバー コア .NET 機能](https://msdn.microsoft.com/library/ee391632.aspx)サポートされていない Api の一覧についてはします。</span><span class="sxs-lookup"><span data-stu-id="bedb4-195">See [Server Core .NET Functionality](https://msdn.microsoft.com/library/ee391632.aspx) for a list of unsupported APIs.</span></span>
 
-- Windows Server 2008 SP2 では、.NET Framework は、Server Core ロールでサポートされていません。
+- <span data-ttu-id="bedb4-196">.NET Framework は、itanium ベース システム用の Windows Server 2008 R2 でサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="bedb4-196">The .NET Framework isn't supported on Windows Server 2008 R2 for Itanium-Based Systems.</span></span>
 
-- すべてのプラットフォームについて最大限の互換性とセキュリティが得られるように、[Windows Update Web サイト](http://go.microsoft.com/fwlink/?LinkId=168461)から入手できる最新の Windows Service Pack にアップグレードし、重要な更新プログラムを適用することをお勧めします。 一部のオペレーティング システムでは、最新の Windows Service Pack のインストールが必要になる場合があります。
+- <span data-ttu-id="bedb4-197">Windows Server 2008 SP2 では、.NET Framework は、Server Core ロールでサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="bedb4-197">On Windows Server 2008 SP2, the .NET Framework is not supported in the Server Core Role.</span></span>
 
-- 64 ビット オペレーティング システムでは、.NET Framework は WOW64 (64 ビット コンピューター上での 32 ビット処理) とネイティブ 64 ビット処理の両方をサポートしています。
+- <span data-ttu-id="bedb4-198">すべてのプラットフォームについて最大限の互換性とセキュリティが得られるように、[Windows Update Web サイト](http://go.microsoft.com/fwlink/?LinkId=168461)から入手できる最新の Windows Service Pack にアップグレードし、重要な更新プログラムを適用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="bedb4-198">For all platforms, we recommend that you upgrade to the latest Windows Service Pack and critical updates available from the [Windows Update website](http://go.microsoft.com/fwlink/?LinkId=168461) to ensure the best compatibility and security.</span></span> <span data-ttu-id="bedb4-199">一部のオペレーティング システムでは、最新の Windows Service Pack のインストールが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="bedb4-199">Installation of the latest Windows Service Pack may be required on some operating systems.</span></span>
 
-## <a name="see-also"></a>関連項目
+- <span data-ttu-id="bedb4-200">64 ビット オペレーティング システムでは、.NET Framework は WOW64 (64 ビット コンピューター上での 32 ビット処理) とネイティブ 64 ビット処理の両方をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="bedb4-200">On 64-bit operating systems, the .NET Framework supports both WOW64 (32-bit processing on a 64-bit machine) and native 64-bit processing.</span></span>
 
-[インストール ガイド](../../../docs/framework/install/index.md)   
-[はじめに](../../../docs/framework/get-started/index.md)   
-[.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
+## <a name="see-also"></a><span data-ttu-id="bedb4-201">関連項目</span><span class="sxs-lookup"><span data-stu-id="bedb4-201">See also</span></span>
 
+<span data-ttu-id="bedb4-202">[インストール ガイド](../../../docs/framework/install/index.md) </span><span class="sxs-lookup"><span data-stu-id="bedb4-202">[Installation Guide](../../../docs/framework/install/index.md) </span></span>  
+<span data-ttu-id="bedb4-203">[はじめに](../../../docs/framework/get-started/index.md) </span><span class="sxs-lookup"><span data-stu-id="bedb4-203">[Getting Started](../../../docs/framework/get-started/index.md) </span></span>  
+[<span data-ttu-id="bedb4-204">.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="bedb4-204">Troubleshoot blocked .NET Framework installations and uninstallations</span></span>](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)

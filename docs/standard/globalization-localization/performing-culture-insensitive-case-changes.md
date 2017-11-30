@@ -1,47 +1,52 @@
 ---
-title: "カルチャを認識しない大文字と小文字の変更の実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "String.ToLower メソッド"
-  - "カルチャ、大文字と小文字の区別"
-  - "Char.ToLower メソッド"
-  - "大文字と小文字、変更 (カルチャを認識しない文字列での)"
-  - "Char.ToUpper メソッド"
-  - "カルチャを認識しない文字列操作、大文字と小文字の変更"
-  - "String.ToUpper メソッド"
-  - "culture パラメーター"
+title: "カルチャを認識しない大文字と小文字の変更の実行"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- String.ToLower method
+- culture, case sensitivity
+- Char.ToLower method
+- case, changing in culture-insensitive strings
+- Char.ToUpper method
+- culture-insensitive string operations, case changes
+- String.ToUpper method
+- culture parameter
 ms.assetid: 822d551c-c69a-4191-82f4-183d82c9179c
-caps.latest.revision: 18
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: c500b882c335572b8b458ba515b282e9f5362b85
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# カルチャを認識しない大文字と小文字の変更の実行
-<xref:System.String.ToUpper%2A?displayProperty=fullName>、<xref:System.String.ToLower%2A?displayProperty=fullName>、<xref:System.Char.ToUpper%2A?displayProperty=fullName>、<xref:System.Char.ToLower%2A?displayProperty=fullName> の各メソッドには、パラメーターを受け取らないオーバーロードが用意されています。  既定では、パラメーターを使用しないこれらのオーバーロードは、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> の値に基づいて大文字と小文字の変更を実行します。  このため、大文字と小文字を区別する結果がカルチャによって異なる場合があります。  大文字と小文字の変更がカルチャに依存するかどうかを明確にするには、`culture` パラメーターを明示的に指定する必要があるこれらのメソッドのオーバーロードを使用する必要があります。  大文字と小文字の変更がカルチャに依存する場合は、`culture` パラメーターとして `CultureInfo.CurrentCulture` を指定します。  大文字と小文字の変更がカルチャに依存しない場合は、`culture` パラメーターとして `CultureInfo.InvariantCulture` を指定します。  
+# <a name="performing-culture-insensitive-case-changes"></a><span data-ttu-id="0fb8a-102">カルチャを認識しない大文字と小文字の変更の実行</span><span class="sxs-lookup"><span data-stu-id="0fb8a-102">Performing Culture-Insensitive Case Changes</span></span>
+<span data-ttu-id="0fb8a-103"><xref:System.String.ToUpper%2A?displayProperty=nameWithType>、<xref:System.String.ToLower%2A?displayProperty=nameWithType>、<xref:System.Char.ToUpper%2A?displayProperty=nameWithType>、<xref:System.Char.ToLower%2A?displayProperty=nameWithType> の各メソッドには、パラメーターを受け取らないオーバーロードが用意されています。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-103">The <xref:System.String.ToUpper%2A?displayProperty=nameWithType>, <xref:System.String.ToLower%2A?displayProperty=nameWithType>, <xref:System.Char.ToUpper%2A?displayProperty=nameWithType>, and <xref:System.Char.ToLower%2A?displayProperty=nameWithType> methods provide overloads that do not accept any parameters.</span></span> <span data-ttu-id="0fb8a-104">既定では、パラメーターを使用しないこれらのオーバーロードは、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> の値に基づいて大文字と小文字の変更を実行します。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-104">By default, these overloads without parameters perform case changes based on the value of the <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>.</span></span> <span data-ttu-id="0fb8a-105">このため、大文字と小文字を区別する結果がカルチャによって異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-105">This produces case-sensitive results that can vary by culture.</span></span> <span data-ttu-id="0fb8a-106">大文字と小文字の変更がカルチャに依存するかどうかを明確にするには、`culture` パラメーターを明示的に指定する必要があるこれらのメソッドのオーバーロードを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-106">To make it clear whether you want case changes to be culture-sensitive or culture-insensitive, you should use the overloads of these methods that require you to explicitly specify a `culture` parameter.</span></span> <span data-ttu-id="0fb8a-107">大文字と小文字の変更がカルチャに依存する場合は、`CultureInfo.CurrentCulture` パラメーターとして `culture` を指定します。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-107">For culture-sensitive case changes, specify `CultureInfo.CurrentCulture` for the `culture` parameter.</span></span> <span data-ttu-id="0fb8a-108">大文字と小文字の変更がカルチャに依存しない場合は、`CultureInfo.InvariantCulture` パラメーターとして `culture` を指定します。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-108">For culture-insensitive case changes, specify `CultureInfo.InvariantCulture` for the `culture` parameter.</span></span>  
   
- 後で検索しやすいように文字列の大文字と小文字を変換する場合があります。  文字列をこのように使用する場合は、`culture` パラメーターとして `CultureInfo.InvariantCulture` を指定する必要があります。<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=fullName> の値が、大文字と小文字を変更してから検索が実行されるまでの間に変更される可能性があるからです。  
+ <span data-ttu-id="0fb8a-109">後で検索しやすいように文字列の大文字と小文字を変換する場合があります。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-109">Often, strings are converted to a standard case to enable easier lookup later.</span></span> <span data-ttu-id="0fb8a-110">文字列をこのように使用する場合は、`CultureInfo.InvariantCulture` パラメーターとして `culture` を指定する必要があります。<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> の値が、大文字と小文字を変更してから検索が実行されるまでの間に変更される可能性があるからです。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-110">When strings are used in this way, you should specify `CultureInfo.InvariantCulture` for the `culture` parameter, because the value of <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> can potentially change between the time that the case is changed and the time that the lookup occurs.</span></span>  
   
- セキュリティに関する決定が文字列の大文字と小文字の変更操作に基づいて行われる場合は、この操作がカルチャに依存しないようにして、操作の結果が `CultureInfo.CurrentCulture` の値により影響されないようにする必要があります。  カルチャに依存した文字列操作によって矛盾した結果がどのように生成されるかを示す例については、[文字列を使用するためのベスト プラクティス](../../../docs/standard/base-types/best-practices-strings.md) の記事の「現在のカルチャを使用する文字列比較」の記事を参照してください。  
+ <span data-ttu-id="0fb8a-111">セキュリティに関する決定が文字列の大文字と小文字の変更操作に基づいて行われる場合は、この操作がカルチャに依存しないようにして、操作の結果が `CultureInfo.CurrentCulture` の値により影響されないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-111">If a security decision is based on a case change operation, the operation should be culture-insensitive to ensure that the result is not affected by the value of `CultureInfo.CurrentCulture`.</span></span> <span data-ttu-id="0fb8a-112">「文字列比較を使用して、現在のカルチャ」を参照してください、[文字列を使用するためのベスト プラクティス](../../../docs/standard/base-types/best-practices-strings.md)アーティクルに対してどのカルチャに依存した文字列の操作を示す例は、矛盾する結果を生成できます。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-112">See the "String Comparisons that Use the Current Culture" section of the [Best Practices for Using Strings](../../../docs/standard/base-types/best-practices-strings.md) article for an example that demonstrates how culture-sensitive string operations can produce inconsistent results.</span></span>  
   
-## String.ToUpper メソッドと String.ToLower メソッドの使用  
- コードをわかりやすくするために、`culture` パラメーターを明示的に指定できる `String.ToUpper` メソッドと `String.ToLower` メソッドのオーバーロードを常に使用することをお勧めします。  識別子の検索を実行するコード例を次に示します。  `key.ToLower` 操作は既定ではカルチャを認識しますが、この動作はコードを見ても明確ではありません。  
+## <a name="using-the-stringtoupper-and-stringtolower-methods"></a><span data-ttu-id="0fb8a-113">String.ToUpper メソッドと String.ToLower メソッドの使用</span><span class="sxs-lookup"><span data-stu-id="0fb8a-113">Using the String.ToUpper and String.ToLower Methods</span></span>  
+ <span data-ttu-id="0fb8a-114">コードをわかりやすくするために、`String.ToUpper` パラメーターを明示的に指定できる `String.ToLower` メソッドと `culture` メソッドのオーバーロードを常に使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-114">For code clarity, it is recommended that you always use overloads of the `String.ToUpper` and `String.ToLower` methods that allow you to specify a `culture` parameter explicitly.</span></span> <span data-ttu-id="0fb8a-115">識別子の検索を実行するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-115">For example, the following code performs an identifier lookup.</span></span> <span data-ttu-id="0fb8a-116">`key.ToLower` 操作は既定ではカルチャを認識しますが、この動作はコードを見ても明確ではありません。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-116">The `key.ToLower` operation is culture-sensitive by default, but this behavior is not clear from reading the code.</span></span>  
   
-### 例  
+### <a name="example"></a><span data-ttu-id="0fb8a-117">例</span><span class="sxs-lookup"><span data-stu-id="0fb8a-117">Example</span></span>  
   
 ```vb  
 Shared Function LookupKey(key As String) As Object  
    Return internalHashtable(key.ToLower())  
 End Function  
-  
 ```  
   
 ```csharp  
@@ -51,13 +56,12 @@ static object LookupKey(string key)
 }  
 ```  
   
- `key.ToLower` 操作がカルチャに依存しないようにする場合は、前の例を次のように変更して、大文字と小文字を変更するときに明示的に `CultureInfo.InvariantCulture` を使用します。  
+ <span data-ttu-id="0fb8a-118">`key.ToLower` 操作がカルチャに依存しないようにする場合は、前の例を次のように変更して、大文字と小文字を変更するときに明示的に `CultureInfo.InvariantCulture` を使用します。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-118">If you want the `key.ToLower` operation to be culture-insensitive, you should change the preceding example as follows to explicitly use the `CultureInfo.InvariantCulture` when changing the case.</span></span>  
   
 ```vb  
 Shared Function LookupKey(key As String) As Object  
     Return internalHashtable(key.ToLower(CultureInfo.InvariantCulture))  
 End Function  
-  
 ```  
   
 ```csharp  
@@ -67,12 +71,12 @@ static object LookupKey(string key)
 }  
 ```  
   
-## Char.ToUpper メソッドと Char.ToLower メソッドの使用  
- `Char.ToUpper` メソッドおよび `Char.ToLower` メソッドはそれぞれ `String.ToUpper` メソッドおよび `String.ToLower` メソッドと同じ特性を持っていますが、影響を受けるカルチャはトルコ語 \(トルコ\) およびアゼルバイジャン語 \(ラテン、アゼルバイジャン\) だけです。  単一の文字の大文字と小文字の区別が異なるのは、この 2 つのカルチャだけです。  この固有の大文字と小文字の対応の詳細については、<xref:System.String> クラスに関するトピックの「Casing \(大文字と小文字の指定\)」を参照してください。  コードをわかりやすくし、結果の一貫性を確保するために、`culture` パラメーターを明示的に指定できるこれらのメソッドのオーバーロードを常に使用することをお勧めします。  
+## <a name="using-the-chartoupper-and-chartolower-methods"></a><span data-ttu-id="0fb8a-119">Char.ToUpper メソッドと Char.ToLower メソッドの使用</span><span class="sxs-lookup"><span data-stu-id="0fb8a-119">Using the Char.ToUpper and Char.ToLower Methods</span></span>  
+ <span data-ttu-id="0fb8a-120">`Char.ToUpper`と`Char.ToLower`メソッドと同じ特性があります、`String.ToUpper`と`String.ToLower`メソッド、影響を受けるカルチャだけはトルコ語 (トルコ) およびアゼルバイジャン語 (ラテン、アゼルバイジャン)。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-120">Although the `Char.ToUpper` and `Char.ToLower` methods have the same characteristics as the `String.ToUpper` and `String.ToLower` methods, the only cultures that are affected are Turkish (Turkey) and Azerbaijani (Latin, Azerbaijan).</span></span> <span data-ttu-id="0fb8a-121">単一の文字の大文字と小文字の区別が異なるのは、この 2 つのカルチャだけです。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-121">These are the only two cultures with single-character casing differences.</span></span> <span data-ttu-id="0fb8a-122">この固有の大文字と小文字の対応の詳細については、<xref:System.String> クラスに関するトピックの「Casing (大文字と小文字の指定)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-122">For more details about this unique case mapping, see the "Casing" section in the <xref:System.String> class topic.</span></span> <span data-ttu-id="0fb8a-123">コードをわかりやすくし、結果の一貫性を確保するために、`culture` パラメーターを明示的に指定できるこれらのメソッドのオーバーロードを常に使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="0fb8a-123">For code clarity and to ensure consistent results, it is recommended that you always use the overloads of these methods that allow you to explicitly specify a `culture` parameter.</span></span>  
   
-## 参照  
- <xref:System.String.ToUpper%2A?displayProperty=fullName>   
- <xref:System.String.ToLower%2A?displayProperty=fullName>   
- <xref:System.Char.ToUpper%2A?displayProperty=fullName>   
- <xref:System.Char.ToLower%2A?displayProperty=fullName>   
- [カルチャを認識しない文字列操作の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+## <a name="see-also"></a><span data-ttu-id="0fb8a-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="0fb8a-124">See Also</span></span>  
+ <xref:System.String.ToUpper%2A?displayProperty=nameWithType>  
+ <xref:System.String.ToLower%2A?displayProperty=nameWithType>  
+ <xref:System.Char.ToUpper%2A?displayProperty=nameWithType>  
+ <xref:System.Char.ToLower%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="0fb8a-125">カルチャを認識しない文字列操作の実行</span><span class="sxs-lookup"><span data-stu-id="0fb8a-125">Performing Culture-Insensitive String Operations</span></span>](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

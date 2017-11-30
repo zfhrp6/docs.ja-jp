@@ -12,24 +12,24 @@ caps.latest.revision: "10"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: 4417f4225200f01f23d753f6b7aa52ebc69cab4a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: edac8893ab2bb51fd97148e4b80f94d6566b8a54
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
-# <a name="emulating-breaking-in-a-while-activity"></a><span data-ttu-id="8f9ed-102">While アクティビティでの中断のエミュレート</span><span class="sxs-lookup"><span data-stu-id="8f9ed-102">Emulating breaking in a While activity</span></span>
-<span data-ttu-id="8f9ed-103">このサンプルでは、<xref:System.Activities.Statements.DoWhile>、<xref:System.Activities.Statements.ForEach%601>、<xref:System.Activities.Statements.While>、および <xref:System.Activities.Statements.ParallelForEach%601> の各アクティビティのループ機構を中断する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-103">This sample demonstrates how to break the looping mechanism of the following activities: <xref:System.Activities.Statements.DoWhile>, <xref:System.Activities.Statements.ForEach%601>, <xref:System.Activities.Statements.While>, and <xref:System.Activities.Statements.ParallelForEach%601>.</span></span>  
+# <a name="emulating-breaking-in-a-while-activity"></a><span data-ttu-id="19e42-102">While アクティビティでの中断のエミュレート</span><span class="sxs-lookup"><span data-stu-id="19e42-102">Emulating breaking in a While activity</span></span>
+<span data-ttu-id="19e42-103">このサンプルでは、<xref:System.Activities.Statements.DoWhile>、<xref:System.Activities.Statements.ForEach%601>、<xref:System.Activities.Statements.While>、および <xref:System.Activities.Statements.ParallelForEach%601> の各アクティビティのループ機構を中断する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="19e42-103">This sample demonstrates how to break the looping mechanism of the following activities: <xref:System.Activities.Statements.DoWhile>, <xref:System.Activities.Statements.ForEach%601>, <xref:System.Activities.Statements.While>, and <xref:System.Activities.Statements.ParallelForEach%601>.</span></span>  
   
- <span data-ttu-id="8f9ed-104">[!INCLUDE[wf](../../../../includes/wf-md.md)] にはこれらのループの実行を中断するアクティビティは用意されていないので、この方法が役立ちます。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-104">This is useful because [!INCLUDE[wf](../../../../includes/wf-md.md)] does not include any activity to break the execution of these loops.</span></span>  
+ <span data-ttu-id="19e42-104">[!INCLUDE[wf](../../../../includes/wf-md.md)] にはこれらのループの実行を中断するアクティビティは用意されていないので、この方法が役立ちます。</span><span class="sxs-lookup"><span data-stu-id="19e42-104">This is useful because [!INCLUDE[wf](../../../../includes/wf-md.md)] does not include any activity to break the execution of these loops.</span></span>  
   
-## <a name="scenario"></a><span data-ttu-id="8f9ed-105">シナリオ</span><span class="sxs-lookup"><span data-stu-id="8f9ed-105">Scenario</span></span>  
- <span data-ttu-id="8f9ed-106">このサンプルでは、ベンダー (`Vendor` クラスのインスタンス) のリストから信頼できるベンダーを探し、最初に見つかったベンダーを取得します。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-106">The sample finds the first reliable vendor from a list of vendors (instances of the `Vendor` class).</span></span> <span data-ttu-id="8f9ed-107">各ベンダーには、`ID`、`Name`、およびそのベンダーがどの程度信頼できるかを示す信頼度の数値があります。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-107">Each vendor has an `ID`, a `Name` and a numeric reliability value that determines how dependable the vendor is.</span></span> <span data-ttu-id="8f9ed-108">このサンプルでは、`FindReliableVendor` というカスタム アクティビティを作成します。このアクティビティは、2 つの入力パラメーター (ベンダーのリストと信頼度の最小値) を受け取り、リストのベンダーのうち、指定された条件に一致する最初のベンダーを返します。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-108">The sample creates a custom activity called `FindReliableVendor` that receives two input parameters (a list of vendors and a minimum reliability value) and returns the first vendor of the list that matches the supplied criteria.</span></span>  
+## <a name="scenario"></a><span data-ttu-id="19e42-105">シナリオ</span><span class="sxs-lookup"><span data-stu-id="19e42-105">Scenario</span></span>  
+ <span data-ttu-id="19e42-106">このサンプルでは、ベンダー (`Vendor` クラスのインスタンス) のリストから信頼できるベンダーを探し、最初に見つかったベンダーを取得します。</span><span class="sxs-lookup"><span data-stu-id="19e42-106">The sample finds the first reliable vendor from a list of vendors (instances of the `Vendor` class).</span></span> <span data-ttu-id="19e42-107">各ベンダーには、`ID`、`Name`、およびそのベンダーがどの程度信頼できるかを示す信頼度の数値があります。</span><span class="sxs-lookup"><span data-stu-id="19e42-107">Each vendor has an `ID`, a `Name` and a numeric reliability value that determines how dependable the vendor is.</span></span> <span data-ttu-id="19e42-108">このサンプルでは、`FindReliableVendor` というカスタム アクティビティを作成します。このアクティビティは、2 つの入力パラメーター (ベンダーのリストと信頼度の最小値) を受け取り、リストのベンダーのうち、指定された条件に一致する最初のベンダーを返します。</span><span class="sxs-lookup"><span data-stu-id="19e42-108">The sample creates a custom activity called `FindReliableVendor` that receives two input parameters (a list of vendors and a minimum reliability value) and returns the first vendor of the list that matches the supplied criteria.</span></span>  
   
-## <a name="breaking-a-loop"></a><span data-ttu-id="8f9ed-109">ループの中断</span><span class="sxs-lookup"><span data-stu-id="8f9ed-109">Breaking a Loop</span></span>  
- [!INCLUDE[wf](../../../../includes/wf-md.md)]<span data-ttu-id="8f9ed-110"> にはループを中断するアクティビティは用意されていません。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-110"> does not include an activity to break a loop.</span></span> <span data-ttu-id="8f9ed-111">コード サンプルでは、<xref:System.Activities.Statements.If> アクティビティといくつかの変数を使用してループの中断を実現します。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-111">The code sample accomplishes breaking a loop by using an <xref:System.Activities.Statements.If> activity and several variables.</span></span> <span data-ttu-id="8f9ed-112">このサンプルでは、<xref:System.Activities.Statements.While> 変数に `reliableVendor` 以外の値が代入されると、`null` アクティビティが中断されます。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-112">In the sample, the <xref:System.Activities.Statements.While> activity is broken once the `reliableVendor` variable is assigned a value other than `null`.</span></span>  
+## <a name="breaking-a-loop"></a><span data-ttu-id="19e42-109">ループの中断</span><span class="sxs-lookup"><span data-stu-id="19e42-109">Breaking a Loop</span></span>  
+ [!INCLUDE[wf](../../../../includes/wf-md.md)]<span data-ttu-id="19e42-110"> にはループを中断するアクティビティは用意されていません。</span><span class="sxs-lookup"><span data-stu-id="19e42-110"> does not include an activity to break a loop.</span></span> <span data-ttu-id="19e42-111">コード サンプルでは、<xref:System.Activities.Statements.If> アクティビティといくつかの変数を使用してループの中断を実現します。</span><span class="sxs-lookup"><span data-stu-id="19e42-111">The code sample accomplishes breaking a loop by using an <xref:System.Activities.Statements.If> activity and several variables.</span></span> <span data-ttu-id="19e42-112">このサンプルでは、<xref:System.Activities.Statements.While> 変数に `reliableVendor` 以外の値が代入されると、`null` アクティビティが中断されます。</span><span class="sxs-lookup"><span data-stu-id="19e42-112">In the sample, the <xref:System.Activities.Statements.While> activity is broken once the `reliableVendor` variable is assigned a value other than `null`.</span></span>  
   
- <span data-ttu-id="8f9ed-113">while ループを中断する方法を示すコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-113">The following code example demonstrates how the sample breaks a while loop.</span></span>  
+ <span data-ttu-id="19e42-113">while ループを中断する方法を示すコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="19e42-113">The following code example demonstrates how the sample breaks a while loop.</span></span>  
   
 ```csharp  
 // Iterates while the "i" variable is lower than the size of the list   
@@ -73,21 +73,19 @@ new While(env => i.Get(env) < this.Vendors.Get(env).Count && reliableVendor.Get(
 }  
 ```  
   
-#### <a name="to-use-this-sample"></a><span data-ttu-id="8f9ed-114">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="8f9ed-114">To use this sample</span></span>  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="19e42-114">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="19e42-114">To use this sample</span></span>  
   
-1.  <span data-ttu-id="8f9ed-115">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を使用して、EmulatingBreakInWhile.sln ソリューション ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-115">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the EmulatingBreakInWhile.sln solution file.</span></span>  
+1.  <span data-ttu-id="19e42-115">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] を使用して、EmulatingBreakInWhile.sln ソリューション ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="19e42-115">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the EmulatingBreakInWhile.sln solution file.</span></span>  
   
-2.  <span data-ttu-id="8f9ed-116">ソリューションをビルドするには、Ctrl キーと Shift キーを押しながら B キーを押します。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-116">To build the solution, press CTRL+SHIFT+B.</span></span>  
+2.  <span data-ttu-id="19e42-116">ソリューションをビルドするには、Ctrl キーと Shift キーを押しながら B キーを押します。</span><span class="sxs-lookup"><span data-stu-id="19e42-116">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-3.  <span data-ttu-id="8f9ed-117">ソリューションを実行するには、Ctrl キーを押しながら F5 キーを押します。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-117">To run the solution, press CTRL+F5.</span></span>  
+3.  <span data-ttu-id="19e42-117">ソリューションを実行するには、Ctrl キーを押しながら F5 キーを押します。</span><span class="sxs-lookup"><span data-stu-id="19e42-117">To run the solution, press CTRL+F5.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="8f9ed-118">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-118">The samples may already be installed on your machine.</span></span> <span data-ttu-id="8f9ed-119">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-119">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="19e42-118">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="19e42-118">The samples may already be installed on your machine.</span></span> <span data-ttu-id="19e42-119">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="19e42-119">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="8f9ed-120">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-120">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="8f9ed-121">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="8f9ed-121">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="19e42-120">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="19e42-120">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="19e42-121">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="19e42-121">This sample is located in the following directory.</span></span>  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\EmulatingBreakInWhile`  
-  
-## <a name="see-also"></a><span data-ttu-id="8f9ed-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="8f9ed-122">See Also</span></span>
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\EmulatingBreakInWhile`

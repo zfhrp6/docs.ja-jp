@@ -1,35 +1,40 @@
 ---
-title: "How to: Write a Parallel.For Loop with Thread-Local Variables | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "parallel for loops, how to use local state"
+title: "方法: スレッド ローカル変数を使用する Parallel.For ループを記述する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: parallel for loops, how to use local state
 ms.assetid: 68384064-7ee7-41e2-90e3-71f00bde01bb
-caps.latest.revision: 23
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 2e0b3e28c95d9ccfb0ecd1954e16960576d8f115
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Write a Parallel.For Loop with Thread-Local Variables
-次の例に、<xref:System.Threading.Tasks.Parallel.For%2A> ループによって生成される個別のタスクごとの状態を、スレッド ローカル変数を使用して格納および取得する方法を示します。  スレッド ローカル変数を使用することで、共有状態への多数のアクセスを同期するオーバーヘッドを回避できます。  反復処理ごとに共有リソースを作成する代わりに、タスクの反復処理のすべてが完了するまで、値を計算して格納します。  この場合、最終結果を共有リソースに 1 回書き込んだり、別のメソッドに渡したりすることができます。  
+# <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a><span data-ttu-id="e6c04-102">方法: スレッド ローカル変数を使用する Parallel.For ループを記述する</span><span class="sxs-lookup"><span data-stu-id="e6c04-102">How to: Write a Parallel.For Loop with Thread-Local Variables</span></span>
+<span data-ttu-id="e6c04-103">次の例に、<xref:System.Threading.Tasks.Parallel.For%2A> ループによって生成される個別のタスクごとの状態を、スレッド ローカル変数を使用して格納および取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-103">This example shows how to use thread-local variables to store and retrieve state in each separate task that is created by a <xref:System.Threading.Tasks.Parallel.For%2A> loop.</span></span> <span data-ttu-id="e6c04-104">スレッド ローカル変数を使用することで、共有状態への多数のアクセスを同期するオーバーヘッドを回避できます。</span><span class="sxs-lookup"><span data-stu-id="e6c04-104">By using thread-local data, you can avoid the overhead of synchronizing a large number of accesses to shared state.</span></span> <span data-ttu-id="e6c04-105">反復処理ごとに共有リソースを作成する代わりに、タスクの反復処理のすべてが完了するまで、値を計算して格納します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-105">Instead of writing to a shared resource on each iteration, you compute and store the value until all iterations for the task are complete.</span></span> <span data-ttu-id="e6c04-106">この場合、最終結果を共有リソースに 1 回書き込んだり、別のメソッドに渡したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="e6c04-106">You can then write the final result once to the shared resource, or pass it to another method.</span></span>  
   
-## 使用例  
- <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> メソッドを呼び出して、100 万個の要素からなる配列の値の合計を計算する例を次に示します。  各要素の値は、そのインデックスに相当します。  
+## <a name="example"></a><span data-ttu-id="e6c04-107">例</span><span class="sxs-lookup"><span data-stu-id="e6c04-107">Example</span></span>  
+ <span data-ttu-id="e6c04-108"><xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> メソッドを呼び出して、100 万個の要素からなる配列の値の合計を計算する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-108">The following example calls the <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> method to calculate the sum of the values in an array that contains one million elements.</span></span> <span data-ttu-id="e6c04-109">各要素の値は、そのインデックスに相当します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-109">The value of each element is equal to its index.</span></span>  
   
  [!code-csharp[TPL_Parallel#05](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/forandforeach_simple.cs#05)]
  [!code-vb[TPL_Parallel#05](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/forwiththreadlocal.vb#05)]  
   
- すべての <xref:System.Threading.Tasks.Parallel.For%2A> メソッドで、最初の 2 つのパラメーターが最初と最後の反復値を指定します。  メソッドのこのオーバーロードでは、3 番目のパラメーターでローカル状態を初期化します。  このコンテキストでのローカル状態は、現在のスレッドで実行されるループの最初の反復処理の直前から最後の反復処理の直後までの有効期限を持つ変数を意味します。  
+ <span data-ttu-id="e6c04-110">すべての <xref:System.Threading.Tasks.Parallel.For%2A> メソッドで、最初の 2 つのパラメーターが最初と最後の反復値を指定します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-110">The first two parameters of every <xref:System.Threading.Tasks.Parallel.For%2A> method specify the beginning and ending iteration values.</span></span> <span data-ttu-id="e6c04-111">メソッドのこのオーバーロードでは、3 番目のパラメーターでローカル状態を初期化します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-111">In this overload of the method, the third parameter is where you initialize your local state.</span></span> <span data-ttu-id="e6c04-112">このコンテキストでのローカル状態は、現在のスレッドで実行されるループの最初の反復処理の直前から最後の反復処理の直後までの有効期限を持つ変数を意味します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-112">In this context, local state means a variable whose lifetime extends from just before the first iteration of the loop on the current thread, to just after the last iteration.</span></span>  
   
- 3 番目のパラメーターの型は <xref:System.Func%601> です。ここで、`TResult` はスレッド ローカル状態を格納する変数の型です。  この型は、ジェネリックの <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> メソッドの呼び出し時に提供されるジェネリック型引数によって定義されます \(この例では、<xref:System.Int64>\)。  型引数は、コンパイラに対し、スレッド ローカル状態を格納するために使用する一時変数の型を指定します。  この例では、式 `() => 0` \(Visual Basic の場合は `Function() 0`\) でスレッド ローカル変数をゼロに初期化します。  ジェネリック型引数が参照型またはユーザー定義の値型である場合は、以下のような式になります。  
+ <span data-ttu-id="e6c04-113">3 番目のパラメーターの型は <xref:System.Func%601> です。ここで、`TResult` はスレッド ローカル状態を格納する変数の型です。</span><span class="sxs-lookup"><span data-stu-id="e6c04-113">The type of the third parameter is a <xref:System.Func%601> where `TResult` is the type of the variable that will store the thread-local state.</span></span> <span data-ttu-id="e6c04-114">この型は、ジェネリックの <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> メソッドの呼び出し時に提供されるジェネリック型引数によって定義されます (この例では、<xref:System.Int64>)。</span><span class="sxs-lookup"><span data-stu-id="e6c04-114">Its type is defined by the generic type argument supplied when calling the generic <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> method, which in this case is <xref:System.Int64>.</span></span> <span data-ttu-id="e6c04-115">型引数は、コンパイラに対し、スレッド ローカル状態を格納するために使用する一時変数の型を指定します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-115">The type argument tells the compiler the type of the temporary variable that will be used to store the thread-local state.</span></span> <span data-ttu-id="e6c04-116">この例では、式 `() => 0` (Visual Basic の場合は `Function() 0`) でスレッド ローカル変数をゼロに初期化します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-116">In this example, the expression `() => 0` (or `Function() 0` in Visual Basic) initializes the thread-local variable to zero.</span></span> <span data-ttu-id="e6c04-117">ジェネリック型引数が参照型またはユーザー定義の値型である場合は、以下のような式になります。</span><span class="sxs-lookup"><span data-stu-id="e6c04-117">If the generic type argument is a reference type or user-defined value type, the expression would look like this:</span></span>  
   
 ```csharp  
 () => new MyClass()  
@@ -39,14 +44,14 @@ caps.handback.revision: 23
 Function() new MyClass()  
 ```  
   
- 4 番目のパラメーターは、ループのロジックを定義します。  パラメーター値は、シグネチャが `Func<int, ParallelLoopState, long, long>` \(C\# の場合\) または `Func(Of Integer, ParallelLoopState, Long, Long)` \(Visual Basic の場合\) となっているデリゲートまたはラムダ式でなければなりません。  最初のパラメーターは、ループのその特定の反復処理に対するループ カウンターの値です。  2 番目のパラメーターは、ループを抜けるために使用できる <xref:System.Threading.Tasks.ParallelLoopState> オブジェクトです。このオブジェクトは、<xref:System.Threading.Tasks.Parallel> クラスによって各ループの発生時に提供されます。  3 番目のパラメーターは、スレッド ローカル変数です。  最後のパラメーターは、戻り値の型です。  この例の場合、型は <xref:System.Threading.Tasks.Parallel.For%2A> 型引数で指定されているため、<xref:System.Int64> になります。  その変数の名前は `subtotal` です。これは、ラムダ式によって返されます。  この戻り値が、ループの次の反復処理で `subtotal` を初期化するために使用されます。  この最後のパラメーターは、各反復処理に渡されて、最後の反復処理が完了した時点で `localFinally` デリゲートに渡される値であるとも考えられます。  
+ <span data-ttu-id="e6c04-118">4 番目のパラメーターは、ループのロジックを定義します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-118">The fourth parameter defines the loop logic.</span></span> <span data-ttu-id="e6c04-119">パラメーター値は、シグネチャが `Func<int, ParallelLoopState, long, long>` (C# の場合) または `Func(Of Integer, ParallelLoopState, Long, Long)` (Visual Basic の場合) となっているデリゲートまたはラムダ式でなければなりません。</span><span class="sxs-lookup"><span data-stu-id="e6c04-119">It must be a delegate or lambda expression whose signature is `Func<int, ParallelLoopState, long, long>` in C# or `Func(Of Integer, ParallelLoopState, Long, Long)` in Visual Basic.</span></span> <span data-ttu-id="e6c04-120">最初のパラメーターは、ループのその特定の反復処理に対するループ カウンターの値です。</span><span class="sxs-lookup"><span data-stu-id="e6c04-120">The first parameter is the value of the loop counter for that iteration of the loop.</span></span> <span data-ttu-id="e6c04-121">2 番目のパラメーターは、ループを抜けるために使用できる <xref:System.Threading.Tasks.ParallelLoopState> オブジェクトです。このオブジェクトは、<xref:System.Threading.Tasks.Parallel> クラスによって各ループの発生時に提供されます。</span><span class="sxs-lookup"><span data-stu-id="e6c04-121">The second is a <xref:System.Threading.Tasks.ParallelLoopState> object that can be used to break out of the loop; this object is provided by the <xref:System.Threading.Tasks.Parallel> class to each occurrence of the loop.</span></span> <span data-ttu-id="e6c04-122">3 番目のパラメーターは、スレッド ローカル変数です。</span><span class="sxs-lookup"><span data-stu-id="e6c04-122">The third parameter is the thread-local variable.</span></span> <span data-ttu-id="e6c04-123">最後のパラメーターは、戻り値の型です。</span><span class="sxs-lookup"><span data-stu-id="e6c04-123">The last parameter is the return type.</span></span> <span data-ttu-id="e6c04-124">この例の場合、型は <xref:System.Int64> 型引数で指定されているため、<xref:System.Threading.Tasks.Parallel.For%2A> になります。</span><span class="sxs-lookup"><span data-stu-id="e6c04-124">In this case, the type is <xref:System.Int64> because that is the type we specified in the <xref:System.Threading.Tasks.Parallel.For%2A> type argument.</span></span> <span data-ttu-id="e6c04-125">その変数の名前は `subtotal` です。これは、ラムダ式によって返されます。</span><span class="sxs-lookup"><span data-stu-id="e6c04-125">That variable is named `subtotal` and is returned by the lambda expression.</span></span> <span data-ttu-id="e6c04-126">この戻り値が、ループの次の反復処理で `subtotal` を初期化するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="e6c04-126">The return value is used to initialize `subtotal` on each subsequent iteration of the loop.</span></span> <span data-ttu-id="e6c04-127">この最後のパラメーターは、各反復処理に渡されて、最後の反復処理が完了した時点で `localFinally` デリゲートに渡される値であるとも考えられます。</span><span class="sxs-lookup"><span data-stu-id="e6c04-127">You can also think of this last parameter as a value that is passed to each iteration, and then passed to the `localFinally` delegate when the last iteration is complete.</span></span>  
   
- 5 番目のパラメーターが定義するメソッドは、特定のスレッドでのすべての反復処理が完了した時点で 1 回だけ呼び出されます。  この場合も、入力引数の型は <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> メソッドの型引数、および本体のラムダ式によって返される型と一致します。  この例では、スレッド セーフな方法で、この値をクラス スコープで変数に追加するために、<xref:System.Threading.Interlocked.Add%2A?displayProperty=fullName> メソッドを呼び出します。  スレッド ローカル変数を使用することで、このクラス変数をループのすべての反復処理で作成する手間を省きました。  
+ <span data-ttu-id="e6c04-128">5 番目のパラメーターが定義するメソッドは、特定のスレッドでのすべての反復処理が完了した時点で 1 回だけ呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="e6c04-128">The fifth parameter defines the method that is called once, after all the iterations on a particular thread have completed.</span></span> <span data-ttu-id="e6c04-129">この場合も、入力引数の型は <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> メソッドの型引数、および本体のラムダ式によって返される型と一致します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-129">The type of the input argument again corresponds to the type argument of the <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> method and the type returned by the body lambda expression.</span></span> <span data-ttu-id="e6c04-130">この例では、スレッド セーフな方法で、この値をクラス スコープで変数に追加するために、<xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType> メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="e6c04-130">In this example, the value is added to a variable at class scope in a thread safe way by calling the <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="e6c04-131">スレッド ローカル変数を使用することで、このクラス変数をループのすべての反復処理で作成する手間を省きました。</span><span class="sxs-lookup"><span data-stu-id="e6c04-131">By using a thread-local variable, we have avoided writing to this class variable on every iteration of the loop.</span></span>  
   
- ラムダ式の使用方法の詳細については、「[Lambda Expressions in PLINQ and TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)」を参照してください。  
+ <span data-ttu-id="e6c04-132">ラムダ式を使用する方法の詳細については、次を参照してください。 [PLINQ および TPL のラムダ式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)です。</span><span class="sxs-lookup"><span data-stu-id="e6c04-132">For more information about how to use lambda expressions, see [Lambda Expressions in PLINQ and TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).</span></span>  
   
-## 参照  
- [Data Parallelism](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)   
- [Parallel Programming](../../../docs/standard/parallel-programming/index.md)   
- [Task Parallel Library \(TPL\)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)   
- [Lambda Expressions in PLINQ and TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)
+## <a name="see-also"></a><span data-ttu-id="e6c04-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="e6c04-133">See Also</span></span>  
+ [<span data-ttu-id="e6c04-134">データの並列化</span><span class="sxs-lookup"><span data-stu-id="e6c04-134">Data Parallelism</span></span>](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)  
+ [<span data-ttu-id="e6c04-135">並列プログラミング</span><span class="sxs-lookup"><span data-stu-id="e6c04-135">Parallel Programming</span></span>](../../../docs/standard/parallel-programming/index.md)  
+ [<span data-ttu-id="e6c04-136">タスク並列ライブラリ (TPL)</span><span class="sxs-lookup"><span data-stu-id="e6c04-136">Task Parallel Library (TPL)</span></span>](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
+ [<span data-ttu-id="e6c04-137">PLINQ および TPL のラムダ式</span><span class="sxs-lookup"><span data-stu-id="e6c04-137">Lambda Expressions in PLINQ and TPL</span></span>](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)

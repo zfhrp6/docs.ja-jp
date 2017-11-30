@@ -1,48 +1,55 @@
 ---
-title: "属性に格納されている情報の取得 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "属性 [.NET Framework], 取得"
-  - "複数の属性インスタンス"
-  - "取得 (属性を)"
+title: "属性に格納されている情報の取得"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- retrieving attributes
+- multiple attribute instances
+- attributes [.NET Framework], retrieving
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
-caps.latest.revision: 12
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 9d3fd9a5a49d65b37d2cdb5107e9c516a6df5847
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 属性に格納されている情報の取得
-カスタム属性を取得するプロセスは簡単です。  まず、取得する属性のインスタンスを宣言します。  次に、<xref:System.Attribute.GetCustomAttribute%2A?displayProperty=fullName> メソッドを使用して、取得する属性の値に新しい属性を初期化します。  新しい属性が初期化されたら、そのプロパティを使用して値を取得できます。  
+# <a name="retrieving-information-stored-in-attributes"></a><span data-ttu-id="49c03-102">属性に格納されている情報の取得</span><span class="sxs-lookup"><span data-stu-id="49c03-102">Retrieving Information Stored in Attributes</span></span>
+<span data-ttu-id="49c03-103">簡単なプロセスは、カスタム属性を取得します。</span><span class="sxs-lookup"><span data-stu-id="49c03-103">Retrieving a custom attribute is a simple process.</span></span> <span data-ttu-id="49c03-104">最初に、取得する属性のインスタンスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="49c03-104">First, declare an instance of the attribute you want to retrieve.</span></span> <span data-ttu-id="49c03-105">次に、使用、<xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType>新しい属性を取得する属性の値を初期化します。</span><span class="sxs-lookup"><span data-stu-id="49c03-105">Then, use the <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> method to initialize the new attribute to the value of the attribute you want to retrieve.</span></span> <span data-ttu-id="49c03-106">新しい属性が初期化されると、単にそのプロパティを使用する値を取得します。</span><span class="sxs-lookup"><span data-stu-id="49c03-106">Once the new attribute is initialized, you simply use its properties to get the values.</span></span>  
   
 > [!IMPORTANT]
->  このトピックでは、実行コンテキストに読み込まれるコードの属性を取得する方法について説明します。  リフレクション専用のコンテキストに読み込むコードの属性を取得するには、「[方法 : リフレクションのみのコンテキストにアセンブリを読み込む](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)」に示されているように、<xref:System.Reflection.CustomAttributeData> クラスを使用する必要があります。  
+>  <span data-ttu-id="49c03-107">このトピックでは、実行コンテキストに読み込まれるコードの属性を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="49c03-107">This topic describes how to retrieve attributes for code loaded into the execution context.</span></span> <span data-ttu-id="49c03-108">リフレクション専用コンテキストに読み込まれるコードの属性を取得するには、使用する必要があります、<xref:System.Reflection.CustomAttributeData>クラスのように[する方法: リフレクション コンテキストにアセンブリをロード](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)です。</span><span class="sxs-lookup"><span data-stu-id="49c03-108">To retrieve attributes for code loaded into the reflection-only context, you must use the <xref:System.Reflection.CustomAttributeData> class, as shown in [How to: Load Assemblies into the Reflection-Only Context](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).</span></span>  
   
- ここでは、属性を取得する方法について説明します。  
+ <span data-ttu-id="49c03-109">このセクションでは、次の属性を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="49c03-109">This section describes the following ways to retrieve attributes:</span></span>  
   
--   [属性の 1 つのインスタンスの取得。](#cpconretrievingsingleinstanceofattribute)  
+-   [<span data-ttu-id="49c03-110">属性の 1 つのインスタンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="49c03-110">Retrieving a single instance of an attribute</span></span>](#cpconretrievingsingleinstanceofattribute)  
   
--   [同じスコープに適用された属性の複数のインスタンスの取得。](#cpconretrievingmultipleinstancesofattributeappliedtosamescope)  
+-   [<span data-ttu-id="49c03-111">同じスコープに適用される属性の複数のインスタンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="49c03-111">Retrieving multiple instances of an attribute applied to the same scope</span></span>](#cpconretrievingmultipleinstancesofattributeappliedtosamescope)  
   
--   [他のスコープに適用された属性の複数のインスタンスの取得。](#cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes)  
+-   [<span data-ttu-id="49c03-112">他のスコープに適用される属性の複数のインスタンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="49c03-112">Retrieving multiple instances of an attribute applied to different scopes</span></span>](#cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes)  
   
 <a name="cpconretrievingsingleinstanceofattribute"></a>   
-## 属性の 1 つのインスタンスの取得  
- 前のセクションで説明した `DeveloperAttribute` が、クラス レベルで `MainApp` クラスに適用されている例を次に示します。  `GetAttribute` メソッドは、**GetCustomAttribute** を使用して、`DeveloperAttribute` に格納されている値をクラス レベルで取得し、コンソールに表示します。  
+## <a name="retrieving-a-single-instance-of-an-attribute"></a><span data-ttu-id="49c03-113">属性の 1 つのインスタンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="49c03-113">Retrieving a Single Instance of an Attribute</span></span>  
+ <span data-ttu-id="49c03-114">次の例で、 `DeveloperAttribute` (前のセクションで説明) に適用される、`MainApp`クラス レベルのクラスです。</span><span class="sxs-lookup"><span data-stu-id="49c03-114">In the following example, the `DeveloperAttribute` (described in the previous section) is applied to the `MainApp` class on the class level.</span></span> <span data-ttu-id="49c03-115">`GetAttribute`メソッドを使用**されていて**に格納されている値を取得する`DeveloperAttribute`それらをコンソールに表示する前にクラス レベル上。</span><span class="sxs-lookup"><span data-stu-id="49c03-115">The `GetAttribute` method uses **GetCustomAttribute** to retrieve the values stored in `DeveloperAttribute` on the class level before displaying them to the console.</span></span>  
   
  [!code-cpp[Conceptual.Attributes.Usage#18](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source3.cpp#18)]
  [!code-csharp[Conceptual.Attributes.Usage#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source3.cs#18)]
  [!code-vb[Conceptual.Attributes.Usage#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source3.vb#18)]  
   
- このプログラムは、実行されると次のテキストを表示します。  
+ <span data-ttu-id="49c03-116">このプログラムは、実行時に、次のテキストを表示します。</span><span class="sxs-lookup"><span data-stu-id="49c03-116">This program displays the following text when executed.</span></span>  
   
 ```  
 The Name Attribute is: Joan Smith.  
@@ -50,42 +57,42 @@ The Level Attribute is: 42.
 The Reviewed Attribute is: True.  
 ```  
   
- 属性が見つからない場合、**GetCustomAttribute** メソッドは `MyAttribute` を null 値に初期化します。  この例では、`MyAttribute` をチェックして、属性が見つからない場合はユーザーに通知します。  クラス スコープ内に `DeveloperAttribute` が見つからない場合は、コンソールに次のメッセージが表示されます。  
+ <span data-ttu-id="49c03-117">属性が見つからない場合、**されていて**メソッド初期化`MyAttribute`を null 値にします。</span><span class="sxs-lookup"><span data-stu-id="49c03-117">If the attribute is not found, the **GetCustomAttribute** method initializes `MyAttribute` to a null value.</span></span> <span data-ttu-id="49c03-118">この例で確認`MyAttribute`このようなインスタンスの属性が見つからない場合、ユーザーに通知します。</span><span class="sxs-lookup"><span data-stu-id="49c03-118">This example checks `MyAttribute` for such an instance and notifies the user if no attribute is found.</span></span> <span data-ttu-id="49c03-119">場合、`DeveloperAttribute`はクラス スコープで、次のメッセージをコンソールに表示します。</span><span class="sxs-lookup"><span data-stu-id="49c03-119">If the `DeveloperAttribute` is not found in the class scope, the following message displays to the console.</span></span>  
   
 ```  
 The attribute was not found.   
 ```  
   
- この例では、属性の定義が現在の名前空間内にあることを想定しています。  属性の定義が現在の名前空間内にないときは、属性の定義がある名前空間をインポートする必要があります。  
+ <span data-ttu-id="49c03-120">この例では、属性の定義が、現在の名前空間にある前提としています。</span><span class="sxs-lookup"><span data-stu-id="49c03-120">This example assumes that the attribute definition is in the current namespace.</span></span> <span data-ttu-id="49c03-121">現在の名前空間がない場合、属性の定義が存在する名前空間をインポートしてください。</span><span class="sxs-lookup"><span data-stu-id="49c03-121">Remember to import the namespace in which the attribute definition resides if it is not in the current namespace.</span></span>  
   
 <a name="cpconretrievingmultipleinstancesofattributeappliedtosamescope"></a>   
-## 同じスコープに適用された属性の複数のインスタンスの取得  
- 前の例では、調べるクラスと検索する属性が <xref:System.Attribute.GetCustomAttribute%2A> に渡されています。  このコードが正常に機能するのは、属性の 1 つのインスタンスだけがクラス レベルで適用されているときです。  属性の複数のインスタンスが同じクラス レベルで適用されている場合は、**GetCustomAttribute** メソッドによってすべての情報を取得することはできません。  同じ属性の複数のインスタンスが同じスコープに適用されている場合は、<xref:System.Attribute.GetCustomAttributes%2A?displayProperty=fullName> を使用して、属性のすべてのインスタンスを配列に格納できます。  たとえば、`DeveloperAttribute` の 2 つのインスタンスが同じクラスのクラス レベルで適用されている場合は、両方の属性で見つかる情報を表示するように `GetAttribute` メソッドを変更できます。  ただし、同じレベルで複数の属性を適用するには、<xref:System.AttributeUsageAttribute> で **AllowMultiple** プロパティを **true** として属性を定義しておく必要があります。  
+## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-the-same-scope"></a><span data-ttu-id="49c03-122">同じスコープに適用される属性の複数のインスタンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="49c03-122">Retrieving Multiple Instances of an Attribute Applied to the Same Scope</span></span>  
+ <span data-ttu-id="49c03-123">前の例では、検査するクラスとを検索する特定の属性に渡されるの<xref:System.Attribute.GetCustomAttribute%2A>します。</span><span class="sxs-lookup"><span data-stu-id="49c03-123">In the previous example, the class to inspect and the specific attribute to find are passed to <xref:System.Attribute.GetCustomAttribute%2A>.</span></span> <span data-ttu-id="49c03-124">そのコードは、属性の 1 つのインスタンスは、クラス レベルで適用されても専用の場合は動作します。</span><span class="sxs-lookup"><span data-stu-id="49c03-124">That code works well if only one instance of an attribute is applied on the class level.</span></span> <span data-ttu-id="49c03-125">ただし、同じクラス レベルでは、属性の複数のインスタンスが適用されている場合、**されていて**メソッドがすべての情報を取得できません。</span><span class="sxs-lookup"><span data-stu-id="49c03-125">However, if multiple instances of an attribute are applied on the same class level, the **GetCustomAttribute** method does not retrieve all the information.</span></span> <span data-ttu-id="49c03-126">使用できる場合は、同じ属性の複数のインスタンスが同じスコープに適用されます、<xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>配列属性のすべてのインスタンスを配置します。</span><span class="sxs-lookup"><span data-stu-id="49c03-126">In cases where multiple instances of the same attribute are applied to the same scope, you can use <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType> to place all instances of an attribute into an array.</span></span> <span data-ttu-id="49c03-127">たとえば、次の 2 つのインスタンス`DeveloperAttribute`、同じクラスのクラス レベルで適用される、`GetAttribute`メソッドは、両方の属性に含まれる情報を表示するように変更できます。</span><span class="sxs-lookup"><span data-stu-id="49c03-127">For example, if two instances of `DeveloperAttribute` are applied on the class level of the same class, the `GetAttribute` method can be modified to display the information found in both attributes.</span></span> <span data-ttu-id="49c03-128">ただし、同じレベルでは、複数の属性を適用すると属性を定義する必要があります、 **AllowMultiple**プロパティに設定**true**で、<xref:System.AttributeUsageAttribute>です。</span><span class="sxs-lookup"><span data-stu-id="49c03-128">Remember, to apply multiple attributes on the same level, the attribute must be defined with the **AllowMultiple** property set to **true** in the <xref:System.AttributeUsageAttribute>.</span></span>  
   
- **GetCustomAttributes** メソッドを使用して、指定したクラス内の `DeveloperAttribute` のすべてのインスタンスを参照する配列を作成する方法を次のコード例に示します。  すべての属性の値は、コンソールに表示されます。  
+ <span data-ttu-id="49c03-129">次のコード例を使用する方法を示しています、 **GetCustomAttributes**メソッドのすべてのインスタンスを参照している配列を作成する`DeveloperAttribute`いずれかでクラスを指定します。</span><span class="sxs-lookup"><span data-stu-id="49c03-129">The following code example shows how to use the **GetCustomAttributes** method to create an array that references all instances of `DeveloperAttribute` in any given class.</span></span> <span data-ttu-id="49c03-130">すべての属性の値は、コンソールに表示されます。</span><span class="sxs-lookup"><span data-stu-id="49c03-130">The values of all attributes are then displayed to the console.</span></span>  
   
  [!code-cpp[Conceptual.Attributes.Usage#19](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source3.cpp#19)]
  [!code-csharp[Conceptual.Attributes.Usage#19](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source3.cs#19)]
  [!code-vb[Conceptual.Attributes.Usage#19](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source3.vb#19)]  
   
- 属性が見つからない場合、このコードはユーザーに警告を発します。  それ以外の場合は、`DeveloperAttribute` の両方のインスタンスに含まれている情報が表示されます。  
+ <span data-ttu-id="49c03-131">属性が見つからない場合、このコードをユーザーに通知します。</span><span class="sxs-lookup"><span data-stu-id="49c03-131">If no attributes are found, this code alerts the user.</span></span> <span data-ttu-id="49c03-132">両方のインスタンスにそれ以外の場合、情報が含まれている`DeveloperAttribute`が表示されます。</span><span class="sxs-lookup"><span data-stu-id="49c03-132">Otherwise, the information contained in both instances of `DeveloperAttribute` is displayed.</span></span>  
   
 <a name="cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes"></a>   
-## ほかのスコープに適用された属性の複数のインスタンスの取得  
- <xref:System.Attribute.GetCustomAttributes%2A> メソッドと <xref:System.Attribute.GetCustomAttribute%2A> メソッドでは、クラス全体を検索してクラス内の属性のすべてのインスタンスを返すことはできません。  これらのメソッドが一度に検索するのは、指定された 1 つのメソッドまたは 1 つのメンバーだけです。  クラスのメンバーすべてに同じ属性が適用されていて、それらのメンバーに適用されたすべての属性の値を取得するには、すべてのメソッドやメンバーを個別に **GetCustomAttributes** と **GetCustomAttribute** に渡す必要があります。  
+## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-different-scopes"></a><span data-ttu-id="49c03-133">他のスコープに適用される属性の複数のインスタンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="49c03-133">Retrieving Multiple Instances of an Attribute Applied to Different Scopes</span></span>  
+ <span data-ttu-id="49c03-134"><xref:System.Attribute.GetCustomAttributes%2A>と<xref:System.Attribute.GetCustomAttribute%2A>メソッドせずクラス全体を検索してそのクラスの属性のすべてのインスタンスを返します。</span><span class="sxs-lookup"><span data-stu-id="49c03-134">The <xref:System.Attribute.GetCustomAttributes%2A> and <xref:System.Attribute.GetCustomAttribute%2A> methods do not search an entire class and return all instances of an attribute in that class.</span></span> <span data-ttu-id="49c03-135">代わりが指定されたメソッドまたはメンバーを 1 つだけを同時に検索します。</span><span class="sxs-lookup"><span data-stu-id="49c03-135">Rather, they search only one specified method or member at a time.</span></span> <span data-ttu-id="49c03-136">すべてのメソッドまたはメンバーに個別に指定する必要がありますすべてのメンバーに適用される同じ属性を持つクラスがあるし、それらのメンバーに適用されるすべての属性の値を取得する、 **GetCustomAttributes**と**されていて**です。</span><span class="sxs-lookup"><span data-stu-id="49c03-136">If you have a class with the same attribute applied to every member and you want to retrieve the values in all the attributes applied to those members, you must supply every method or member individually to **GetCustomAttributes** and **GetCustomAttribute**.</span></span>  
   
- パラメーターとしてクラスをとり、そのクラス レベルとそのクラスの各メソッドすべてについて `DeveloperAttribute` \(前に定義されています\) を検索するコード例を次に示します。  
+ <span data-ttu-id="49c03-137">次のコード例は、パラメーターとしてクラスを受け取りし、検索、 `DeveloperAttribute` (定義されている以前) とそのクラスの各メソッドはすべて、クラス レベルでします。</span><span class="sxs-lookup"><span data-stu-id="49c03-137">The following code example takes a class as a parameter and searches for the `DeveloperAttribute` (defined previously) on the class level and on every individual method of that class.</span></span>  
   
  [!code-cpp[Conceptual.Attributes.Usage#20](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source3.cpp#20)]
  [!code-csharp[Conceptual.Attributes.Usage#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source3.cs#20)]
  [!code-vb[Conceptual.Attributes.Usage#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source3.vb#20)]  
   
- メソッド レベルまたはクラス レベルで `DeveloperAttribute` のインスタンスが見つからない場合、`GetAttribute` メソッドは属性が見つからなかったことをユーザーに通知し、属性が含まれないメソッド名またはクラス名を表示します。  属性が見つかった場合は、`Name`、`Level`、`Reviewed` の各フィールドがコンソールに表示されます。  
+ <span data-ttu-id="49c03-138">インスタンスがない場合、`DeveloperAttribute`メソッド レベルまたはクラス レベル上にある、`GetAttribute`メソッドは、属性が見つかりましたがないユーザーに通知し、メソッドまたは属性が含まれていないクラスの名前を表示します。</span><span class="sxs-lookup"><span data-stu-id="49c03-138">If no instances of the `DeveloperAttribute` are found on the method level or class level, the `GetAttribute` method notifies the user that no attributes were found and displays the name of the method or class that does not contain the attribute.</span></span> <span data-ttu-id="49c03-139">属性が見つかった場合、 `Name`、 `Level`、および`Reviewed`フィールドがコンソールに表示されます。</span><span class="sxs-lookup"><span data-stu-id="49c03-139">If an attribute is found, the `Name`, `Level`, and `Reviewed` fields are displayed to the console.</span></span>  
   
- 渡されたクラス内の各メソッドとメンバーを取得するには、<xref:System.Type> クラスのメンバーを使用します。  この例では、最初に **Type** オブジェクトを問い合わせて、クラス レベルの属性情報を取得しています。  次に、<xref:System.Type.GetMethods%2A?displayProperty=fullName> を使用して、すべてのメソッドのインスタンスを <xref:System.Reflection.MemberInfo?displayProperty=fullName> オブジェクトの配列に格納し、メソッド レベルの属性情報を取得します。  また、<xref:System.Type.GetProperties%2A?displayProperty=fullName> メソッドを使用してプロパティ レベルの属性を調べることも、<xref:System.Type.GetConstructors%2A?displayProperty=fullName> メソッドを使用してコンストラクター レベルの属性を調べることもできます。  
+ <span data-ttu-id="49c03-140">メンバーを使用することができます、<xref:System.Type>クラスを渡されたクラスで、個々 のメソッドとメンバーを取得します。</span><span class="sxs-lookup"><span data-stu-id="49c03-140">You can use the members of the <xref:System.Type> class to get the individual methods and members in the passed class.</span></span> <span data-ttu-id="49c03-141">この例の最初のクエリ、**型**クラス レベルの属性情報を取得するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="49c03-141">This example first queries the **Type** object to get attribute information for the class level.</span></span> <span data-ttu-id="49c03-142">次に、使用して<xref:System.Type.GetMethods%2A?displayProperty=nameWithType>を配列のすべてのメソッドのインスタンスを配置する<xref:System.Reflection.MemberInfo?displayProperty=nameWithType>メソッド レベルの属性情報を取得するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="49c03-142">Next, it uses <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> to place instances of all methods into an array of <xref:System.Reflection.MemberInfo?displayProperty=nameWithType> objects to retrieve attribute information for the method level.</span></span> <span data-ttu-id="49c03-143">使用することも、<xref:System.Type.GetProperties%2A?displayProperty=nameWithType>プロパティ レベルの属性を確認するメソッドまたは<xref:System.Type.GetConstructors%2A?displayProperty=nameWithType>コンス トラクターのレベルの属性を確認します。</span><span class="sxs-lookup"><span data-stu-id="49c03-143">You can also use the <xref:System.Type.GetProperties%2A?displayProperty=nameWithType> method to check for attributes on the property level or <xref:System.Type.GetConstructors%2A?displayProperty=nameWithType> to check for attributes on the constructor level.</span></span>  
   
-## 参照  
- <xref:System.Type?displayProperty=fullName>   
- <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=fullName>   
- <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=fullName>   
- [属性](../../../docs/standard/attributes/index.md)
+## <a name="see-also"></a><span data-ttu-id="49c03-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="49c03-144">See Also</span></span>  
+ <xref:System.Type?displayProperty=nameWithType>  
+ <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType>  
+ <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="49c03-145">属性</span><span class="sxs-lookup"><span data-stu-id="49c03-145">Attributes</span></span>](../../../docs/standard/attributes/index.md)

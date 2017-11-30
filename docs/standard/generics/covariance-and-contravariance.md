@@ -1,194 +1,201 @@
 ---
-title: "ジェネリックの共変性と反変性 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ジェネリックの共変性と反変性"
-  - "ジェネリック型パラメーター"
-  - "ジェネリック, 共変性と反変性"
-  - "ジェネリック, 分散"
+title: "ジェネリックの共変性と反変性"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- generics, covariance and contravariance
+- generics, variance
+- covariance and contravariance in generics
+- generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-caps.latest.revision: 24
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 24
+caps.latest.revision: "24"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 1ae8b6da5917950664e1ab780b8db76cb6500e70
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ジェネリックの共変性と反変性
-<a name="top"></a> 共変性と反変性は、元の指定よりも弱い派生型 \(具体性が低い\) と強い派生型 \(具体性が高い\) を使用する能力を示す用語です。 ジェネリック型パラメーターは、ジェネリック型の代入と使用の柔軟性を向上させるために、共変性と反変性をサポートしています。 型システムにおいて、共変性、反変性、および不変性は、次のように定義されます。 各例では、基底クラスが `Base` という名前であり、派生クラスが `Derived` という名前であるとします。  
+# <a name="covariance-and-contravariance-in-generics"></a><span data-ttu-id="89c52-102">ジェネリックの共変性と反変性</span><span class="sxs-lookup"><span data-stu-id="89c52-102">Covariance and Contravariance in Generics</span></span>
+<span data-ttu-id="89c52-103"><a name="top"></a> 共変性と反変性は、元の指定よりも弱い派生型 (具体性が低い) と強い派生型 (具体性が高い) を使用する能力を示す用語です。</span><span class="sxs-lookup"><span data-stu-id="89c52-103"><a name="top"></a> Covariance and contravariance are terms that refer to the ability to use a less derived (less specific) or more derived type (more specific) than originally specified.</span></span> <span data-ttu-id="89c52-104">ジェネリック型パラメーターは、ジェネリック型の代入と使用の柔軟性を向上させるために、共変性と反変性をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="89c52-104">Generic type parameters support covariance and contravariance to provide greater flexibility in assigning and using generic types.</span></span> <span data-ttu-id="89c52-105">型システムにおいて、共変性、反変性、および不変性は、次のように定義されます。</span><span class="sxs-lookup"><span data-stu-id="89c52-105">When you are referring to a type system, covariance, contravariance, and invariance have the following definitions.</span></span> <span data-ttu-id="89c52-106">各例では、基底クラスが `Base` という名前であり、派生クラスが `Derived`という名前であるとします。</span><span class="sxs-lookup"><span data-stu-id="89c52-106">The examples assume a base class named `Base` and a derived class named `Derived`.</span></span>  
   
 -   `Covariance`  
   
-     最初に指定された型よりも強い派生型を使用できるようにします。  
+     <span data-ttu-id="89c52-107">最初に指定された型よりも強い派生型を使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="89c52-107">Enables you to use a more derived type than originally specified.</span></span>  
   
-     `IEnumerable<Derived>` \(Visual Basic では `IEnumerable(Of Derived)`\) のインスタンスを `IEnumerable<Base>` 型の変数に割り当てることができます。  
+     <span data-ttu-id="89c52-108">`IEnumerable<Derived>` (Visual Basic では`IEnumerable(Of Derived)` ) のインスタンスを `IEnumerable<Base>`型の変数に割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="89c52-108">You can assign an instance of `IEnumerable<Derived>` (`IEnumerable(Of Derived)` in Visual Basic) to a variable of type `IEnumerable<Base>`.</span></span>  
   
 -   `Contravariance`  
   
-     最初に指定された型よりも一般的な \(弱い派生の\) 型を使用できるようにします。  
+     <span data-ttu-id="89c52-109">最初に指定された型よりも一般的な (弱い派生の) 型を使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="89c52-109">Enables you to use a more generic (less derived) type than originally specified.</span></span>  
   
-     `IEnumerable<Base>` \(Visual Basic では `IEnumerable(Of Base)`\) のインスタンスを `IEnumerable<Derived>` 型の変数に割り当てることができます。  
+     <span data-ttu-id="89c52-110">`IEnumerable<Base>` (Visual Basic では`IEnumerable(Of Base)` ) のインスタンスを `IEnumerable<Derived>`型の変数に割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="89c52-110">You can assign an instance of `IEnumerable<Base>` (`IEnumerable(Of Base)` in Visual Basic) to a variable of type `IEnumerable<Derived>`.</span></span>  
   
 -   `Invariance`  
   
-     最初に指定された型のみを使用できることを意味します。そのため、不変のジェネリック型パラメーターは、共変でも反変でもありません。  
+     <span data-ttu-id="89c52-111">最初に指定された型のみを使用できることを意味します。そのため、不変のジェネリック型パラメーターは、共変でも反変でもありません。</span><span class="sxs-lookup"><span data-stu-id="89c52-111">Means that you can use only the type originally specified; so an invariant generic type parameter is neither covariant nor contravariant.</span></span>  
   
-     `IEnumerable<Base>` \(Visual Basic では `IEnumerable(Of Base)`\) のインスタンスを `IEnumerable<Derived>` 型の変数に割り当てることはできず、その逆もできません。  
+     <span data-ttu-id="89c52-112">`IEnumerable<Base>` (Visual Basic では `IEnumerable(Of Base)`) のインスタンスを `IEnumerable<Derived>` 型の変数に割り当てることはできず、その逆もできません。</span><span class="sxs-lookup"><span data-stu-id="89c52-112">You cannot assign an instance of `IEnumerable<Base>` (`IEnumerable(Of Base)` in Visual Basic) to a variable of type `IEnumerable<Derived>` or vice versa.</span></span>  
   
- 共変の型パラメーターでは、次のコードで示されているように、通常の [ポリモーフィズム](../Topic/Polymorphism%20\(C%23%20Programming%20Guide\).md) と非常によく似た代入を実行できます。  
+ <span data-ttu-id="89c52-113">共変の型パラメーターでは、次のコードで示されているように、通常の[ポリモーフィズム](~/docs/csharp/programming-guide/classes-and-structs/polymorphism.md)と非常によく似た代入を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="89c52-113">Covariant type parameters enable you to make assignments that look much like ordinary [Polymorphism](~/docs/csharp/programming-guide/classes-and-structs/polymorphism.md), as shown in the following code.</span></span>  
   
  [!code-csharp[CoContraSimpleIEnum#1](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontrasimpleienum/cs/example.cs#1)]
  [!code-vb[CoContraSimpleIEnum#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontrasimpleienum/vb/example.vb#1)]  
   
- <xref:System.Collections.Generic.List%601> クラスは <xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装するため、`List<Derived>` \(Visual Basic では `List(Of Derived)`\) は `IEnumerable<Derived>` を実装します。 共変の型パラメーターが後の処理を行います。  
+ <span data-ttu-id="89c52-114"><xref:System.Collections.Generic.List%601> クラスは <xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装するため、 `List<Derived>` (Visual Basic では`List(Of Derived)` ) は `IEnumerable<Derived>`を実装します。</span><span class="sxs-lookup"><span data-stu-id="89c52-114">The <xref:System.Collections.Generic.List%601> class implements the <xref:System.Collections.Generic.IEnumerable%601> interface, so `List<Derived>` (`List(Of Derived)` in Visual Basic) implements `IEnumerable<Derived>`.</span></span> <span data-ttu-id="89c52-115">共変の型パラメーターが後の処理を行います。</span><span class="sxs-lookup"><span data-stu-id="89c52-115">The covariant type parameter does the rest.</span></span>  
   
- 一方、反変性は直感に反するように見えます。 次の例では、`Action<Base>` 型 \(Visual Basic では `Action(Of Base)`\) のデリゲートを作成し、次にそのデリゲートを `Action<Derived>` 型の変数に代入します。  
+ <span data-ttu-id="89c52-116">一方、反変性は直感に反するように見えます。</span><span class="sxs-lookup"><span data-stu-id="89c52-116">Contravariance, on the other hand, seems counterintuitive.</span></span> <span data-ttu-id="89c52-117">次の例では、 `Action<Base>` 型 (Visual Basic では`Action(Of Base)` ) のデリゲートを作成し、次にそのデリゲートを `Action<Derived>`型の変数に代入します。</span><span class="sxs-lookup"><span data-stu-id="89c52-117">The following example creates a delegate of type `Action<Base>` (`Action(Of Base)` in Visual Basic), and then assigns that delegate to a variable of type `Action<Derived>`.</span></span>  
   
  [!code-csharp[CoContraSimpleAction#1](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontrasimpleaction/cs/example.cs#1)]
  [!code-vb[CoContraSimpleAction#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontrasimpleaction/vb/example.vb#1)]  
   
- これは逆方向のように見えますが、コンパイルして実行できるタイプ セーフ コードです。 ラムダ式は代入先のデリゲートに一致するため、`Base` 型のパラメーターを 1 つ受け取って戻り値を返さないメソッドを定義します。`Action<Derived>` デリゲートの型パラメーター `T` は反変であるため、結果として得られたデリゲートは <xref:System.Action%601> 型の変数に代入できます。`T` はパラメーター型を指定するため、コードはタイプ セーフです。`Action<Base>` 型のデリゲートが `Action<Derived>` 型のデリゲートであるかのように呼び出される場合、その引数は `Derived` 型である必要があります。 メソッドのパラメーターは `Base` 型であるため、この引数は、基になるメソッドに常に安全に渡すことができます。  
+ <span data-ttu-id="89c52-118">これは逆方向のように見えますが、コンパイルして実行できるタイプ セーフ コードです。</span><span class="sxs-lookup"><span data-stu-id="89c52-118">This seems backward, but it is type-safe code that compiles and runs.</span></span> <span data-ttu-id="89c52-119">ラムダ式は代入先のデリゲートに一致するため、 `Base` 型のパラメーターを 1 つ受け取って戻り値を返さないメソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="89c52-119">The lambda expression matches the delegate it is assigned to, so it defines a method that takes one parameter of type `Base` and that has no return value.</span></span> <span data-ttu-id="89c52-120">`Action<Derived>` デリゲートの型パラメーター `T` は反変であるため、結果として得られたデリゲートは <xref:System.Action%601> 型の変数に代入できます。</span><span class="sxs-lookup"><span data-stu-id="89c52-120">The resulting delegate can be assigned to a variable of type `Action<Derived>` because the type parameter `T` of the <xref:System.Action%601> delegate is contravariant.</span></span> <span data-ttu-id="89c52-121">`T` はパラメーター型を指定するため、コードはタイプ セーフです。</span><span class="sxs-lookup"><span data-stu-id="89c52-121">The code is type-safe because `T` specifies a parameter type.</span></span> <span data-ttu-id="89c52-122">`Action<Base>` 型のデリゲートが `Action<Derived>`型のデリゲートであるかのように呼び出される場合、その引数は `Derived`型である必要があります。</span><span class="sxs-lookup"><span data-stu-id="89c52-122">When the delegate of type `Action<Base>` is invoked as if it were a delegate of type `Action<Derived>`, its argument must be of type `Derived`.</span></span> <span data-ttu-id="89c52-123">メソッドのパラメーターは `Base`型であるため、この引数は、基になるメソッドに常に安全に渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="89c52-123">This argument can always be passed safely to the underlying method, because the method's parameter is of type `Base`.</span></span>  
   
- 一般に、共変の型パラメーターはデリゲートの戻り値の型として使用でき、反変の型パラメーターはパラメーター型として使用できます。 インターフェイスについては、共変の型パラメーターをインターフェイスのメソッドの戻り値の型として使用でき、反変の型パラメーターをインターフェイスのメソッドのパラメーター型として使用できます。  
+ <span data-ttu-id="89c52-124">一般に、共変の型パラメーターはデリゲートの戻り値の型として使用でき、反変の型パラメーターはパラメーター型として使用できます。</span><span class="sxs-lookup"><span data-stu-id="89c52-124">In general, a covariant type parameter can be used as the return type of a delegate, and contravariant type parameters can be used as parameter types.</span></span> <span data-ttu-id="89c52-125">インターフェイスについては、共変の型パラメーターをインターフェイスのメソッドの戻り値の型として使用でき、反変の型パラメーターをインターフェイスのメソッドのパラメーター型として使用できます。</span><span class="sxs-lookup"><span data-stu-id="89c52-125">For an interface, covariant type parameters can be used as the return types of the interface's methods, and contravariant type parameters can be used as the parameter types of the interface's methods.</span></span>  
   
- 共変性と反変性は、"分散" と総称されます。 共変または反変としてマークされていないジェネリック型パラメーターは、*不変*と呼ばれます。 共通言語ランタイムにおける分散について、簡潔な概要を示します。  
+ <span data-ttu-id="89c52-126">共変性と反変性は、*"分散"* と総称されます。</span><span class="sxs-lookup"><span data-stu-id="89c52-126">Covariance and contravariance are collectively referred to as *variance*.</span></span> <span data-ttu-id="89c52-127">共変または反変としてマークされていないジェネリック型パラメーターは、 *不変*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="89c52-127">A generic type parameter that is not marked covariant or contravariant is referred to as *invariant*.</span></span> <span data-ttu-id="89c52-128">共通言語ランタイムにおける分散について、簡潔な概要を示します。</span><span class="sxs-lookup"><span data-stu-id="89c52-128">A brief summary of facts about variance in the common language runtime:</span></span>  
   
--   [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] のバリアント型パラメーターは、ジェネリック インターフェイス型と汎用デリゲート型に制限されています。  
+-   <span data-ttu-id="89c52-129">[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]のバリアント型パラメーターは、ジェネリック インターフェイス型と汎用デリゲート型に制限されています。</span><span class="sxs-lookup"><span data-stu-id="89c52-129">In the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], variant type parameters are restricted to generic interface and generic delegate types.</span></span>  
   
--   ジェネリック インターフェイス型や汎用デリゲート型では、共変と反変の両方の型パラメーターを使用できます。  
+-   <span data-ttu-id="89c52-130">ジェネリック インターフェイス型や汎用デリゲート型では、共変と反変の両方の型パラメーターを使用できます。</span><span class="sxs-lookup"><span data-stu-id="89c52-130">A generic interface or generic delegate type can have both covariant and contravariant type parameters.</span></span>  
   
--   分散が適用されるのは参照型のみです。バリアント型パラメーターに対して値型を指定すると、その型パラメーターが、結果の構築型で不変になります。  
+-   <span data-ttu-id="89c52-131">分散が適用されるのは参照型のみです。バリアント型パラメーターに対して値型を指定すると、その型パラメーターが、結果の構築型で不変になります。</span><span class="sxs-lookup"><span data-stu-id="89c52-131">Variance applies only to reference types; if you specify a value type for a variant type parameter, that type parameter is invariant for the resulting constructed type.</span></span>  
   
--   分散は、デリゲートの組み合わせには適用されません。 つまり、`Action<Derived>` 型と `Action<Base>` 型 \(Visual Basic では `Action(Of Derived)` と `Action(Of Base)`\) の 2 つのデリゲートがある場合、結果はタイプ セーフになりますが、2 つ目のデリゲートに 1 つ目のデリゲートを組み合わせることはできません。 分散によって 2 つ目のデリゲートを `Action<Derived>` 型の変数に代入できますが、デリゲートを組み合わせることができるのは、それらの型が完全に一致している場合だけです。  
+-   <span data-ttu-id="89c52-132">分散は、デリゲートの組み合わせには適用されません。</span><span class="sxs-lookup"><span data-stu-id="89c52-132">Variance does not apply to delegate combination.</span></span> <span data-ttu-id="89c52-133">つまり、 `Action<Derived>` 型と `Action<Base>` 型 (Visual Basic では`Action(Of Derived)` と `Action(Of Base)` ) の 2 つのデリゲートがある場合、結果はタイプ セーフになりますが、2 つ目のデリゲートに 1 つ目のデリゲートを組み合わせることはできません。</span><span class="sxs-lookup"><span data-stu-id="89c52-133">That is, given two delegates of types `Action<Derived>` and `Action<Base>` (`Action(Of Derived)` and `Action(Of Base)` in Visual Basic), you cannot combine the second delegate with the first although the result would be type safe.</span></span> <span data-ttu-id="89c52-134">分散によって 2 つ目のデリゲートを `Action<Derived>`型の変数に代入できますが、デリゲートを組み合わせることができるのは、それらの型が完全に一致している場合だけです。</span><span class="sxs-lookup"><span data-stu-id="89c52-134">Variance allows the second delegate to be assigned to a variable of type `Action<Derived>`, but delegates can combine only if their types match exactly.</span></span>  
   
- 以降では、共変と反変の型パラメーターについて詳しく説明します。  
+ <span data-ttu-id="89c52-135">以降では、共変と反変の型パラメーターについて詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="89c52-135">The following subsections describe covariant and contravariant type parameters in detail:</span></span>  
   
--   [共変の型パラメーターを持つジェネリック インターフェイス](#InterfaceCovariantTypeParameters)  
+-   [<span data-ttu-id="89c52-136">共変の型パラメーターを持つジェネリック インターフェイス</span><span class="sxs-lookup"><span data-stu-id="89c52-136">Generic Interfaces with Covariant Type Parameters</span></span>](#InterfaceCovariantTypeParameters)  
   
--   [反変のジェネリック型パラメーターを持つジェネリック インターフェイス](#InterfaceCovariantTypeParameters)  
+-   [<span data-ttu-id="89c52-137">反変のジェネリック型パラメーターを持つジェネリック インターフェイス</span><span class="sxs-lookup"><span data-stu-id="89c52-137">Generic Interfaces with Contravariant Generic Type Parameters</span></span>](#InterfaceCovariantTypeParameters)  
   
--   [バリアント型パラメーターを持つ汎用デリゲート](#DelegateVariantTypeParameters)  
+-   [<span data-ttu-id="89c52-138">バリアント型パラメーターを持つ汎用デリゲート</span><span class="sxs-lookup"><span data-stu-id="89c52-138">Generic Delegates with Variant Type Parameters</span></span>](#DelegateVariantTypeParameters)  
   
--   [バリアント ジェネリック インターフェイスとバリアント汎用デリゲートの定義](#DefiningVariantTypeParameters)  
+-   [<span data-ttu-id="89c52-139">バリアント ジェネリック インターフェイスとバリアント汎用デリゲートの定義</span><span class="sxs-lookup"><span data-stu-id="89c52-139">Defining Variant Generic Interfaces and Delegates</span></span>](#DefiningVariantTypeParameters)  
   
--   [バリアント ジェネリック インターフェイス型とバリアント汎用デリゲート型の一覧](#VariantList)  
+-   [<span data-ttu-id="89c52-140">バリアント ジェネリック インターフェイス型とバリアント汎用デリゲート型の一覧</span><span class="sxs-lookup"><span data-stu-id="89c52-140">List of Variant Generic Interface and Delegate Types</span></span>](#VariantList)  
   
 <a name="InterfaceCovariantTypeParameters"></a>   
-## 共変の型パラメーターを持つジェネリック インターフェイス  
- [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降には、共変の型パラメーターを持つジェネリック インターフェイスがいくつかあります \(<xref:System.Collections.Generic.IEnumerable%601>、<xref:System.Collections.Generic.IEnumerator%601>、<xref:System.Linq.IQueryable%601>、<xref:System.Linq.IGrouping%602> など\)。 これらのインターフェイスのすべての型パラメーターは共変のみであるため、型パラメーターはメンバーの戻り値の型だけに使用されます。  
+## <a name="generic-interfaces-with-covariant-type-parameters"></a><span data-ttu-id="89c52-141">共変の型パラメーターを持つジェネリック インターフェイス</span><span class="sxs-lookup"><span data-stu-id="89c52-141">Generic Interfaces with Covariant Type Parameters</span></span>  
+ <span data-ttu-id="89c52-142">[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]以降には、共変の型パラメーターを持つジェネリック インターフェイスがいくつかあります ( <xref:System.Collections.Generic.IEnumerable%601>、 <xref:System.Collections.Generic.IEnumerator%601>、 <xref:System.Linq.IQueryable%601>、 <xref:System.Linq.IGrouping%602>など)。</span><span class="sxs-lookup"><span data-stu-id="89c52-142">Starting with the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], several generic interfaces have covariant type parameters; for example: <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.IEnumerator%601>, <xref:System.Linq.IQueryable%601>, and <xref:System.Linq.IGrouping%602>.</span></span> <span data-ttu-id="89c52-143">これらのインターフェイスのすべての型パラメーターは共変のみであるため、型パラメーターはメンバーの戻り値の型だけに使用されます。</span><span class="sxs-lookup"><span data-stu-id="89c52-143">All the type parameters of these interfaces are covariant, so the type parameters are used only for the return types of the members.</span></span>  
   
- 共変の型パラメーターの例を以下に示します。 ここでは 2 つの型が定義されています。`Base` には、`PrintBases` \(Visual Basic では `IEnumerable<Base>`\) を受け取って要素を出力する `IEnumerable(Of Base)` という静的メソッドがあります。`Derived` は `Base` を継承します。 この例は、空の `List<Derived>` \(Visual Basic では `List(Of Derived)`\) を作成し、その型を `PrintBases` に渡して、キャストすることなく、`IEnumerable<Base>` 型の変数に代入できることを示しています。<xref:System.Collections.Generic.List%601> は、共変の型パラメーターを 1 つ持つ <xref:System.Collections.Generic.IEnumerable%601> を実装します。`IEnumerable<Derived>` のインスタンスを `IEnumerable<Base>` の代わりに使用できるのは、この共変の型パラメーターがあるためです。  
+ <span data-ttu-id="89c52-144">共変の型パラメーターの例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="89c52-144">The following example illustrates covariant type parameters.</span></span> <span data-ttu-id="89c52-145">ここでは 2 つの型が定義されています。 `Base` には、 `PrintBases` (Visual Basic では `IEnumerable<Base>` ) を受け取って要素を出力する`IEnumerable(Of Base)` という静的メソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="89c52-145">The example defines two types: `Base` has a static method named `PrintBases` that takes an `IEnumerable<Base>` (`IEnumerable(Of Base)` in Visual Basic) and prints the elements.</span></span> <span data-ttu-id="89c52-146">`Derived` は `Base`を継承します。</span><span class="sxs-lookup"><span data-stu-id="89c52-146">`Derived` inherits from `Base`.</span></span> <span data-ttu-id="89c52-147">この例は、空の `List<Derived>` (Visual Basic では`List(Of Derived)` ) を作成し、その型を `PrintBases` に渡して、キャストすることなく、 `IEnumerable<Base>` 型の変数に代入できることを示しています。</span><span class="sxs-lookup"><span data-stu-id="89c52-147">The example creates an empty `List<Derived>` (`List(Of Derived)` in Visual Basic) and demonstrates that this type can be passed to `PrintBases` and assigned to a variable of type `IEnumerable<Base>` without casting.</span></span> <span data-ttu-id="89c52-148"><xref:System.Collections.Generic.List%601> は、共変の型パラメーターを 1 つ持つ <xref:System.Collections.Generic.IEnumerable%601>を実装します。</span><span class="sxs-lookup"><span data-stu-id="89c52-148"><xref:System.Collections.Generic.List%601> implements <xref:System.Collections.Generic.IEnumerable%601>, which has a single covariant type parameter.</span></span> <span data-ttu-id="89c52-149">`IEnumerable<Derived>` のインスタンスを `IEnumerable<Base>`の代わりに使用できるのは、この共変の型パラメーターがあるためです。</span><span class="sxs-lookup"><span data-stu-id="89c52-149">The covariant type parameter is the reason why an instance of `IEnumerable<Derived>` can be used instead of `IEnumerable<Base>`.</span></span>  
   
  [!code-csharp[CoContravarianceInClrGenericI#1](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontravarianceinclrgenerici/cs/example.cs#1)]
  [!code-vb[CoContravarianceInClrGenericI#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravarianceinclrgenerici/vb/example.vb#1)]  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="89c52-150">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="89c52-150">Back to top</span></span>](#top)  
   
 <a name="InterfaceContravariantTypeParameters"></a>   
-## 反変のジェネリック型パラメーターを持つジェネリック インターフェイス  
- [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降には、反変の型パラメーターを持つジェネリック インターフェイスがいくつかあります \(<xref:System.Collections.Generic.IComparer%601>、<xref:System.IComparable%601>、<xref:System.Collections.Generic.IEqualityComparer%601> など\)。 これらのインターフェイスの型パラメーターは反変のみであるため、これらの型パラメーターは、インターフェイスのメンバーのパラメーター型としてのみ使用されます。  
+## <a name="generic-interfaces-with-contravariant-generic-type-parameters"></a><span data-ttu-id="89c52-151">反変のジェネリック型パラメーターを持つジェネリック インターフェイス</span><span class="sxs-lookup"><span data-stu-id="89c52-151">Generic Interfaces with Contravariant Generic Type Parameters</span></span>  
+ <span data-ttu-id="89c52-152">[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]以降には、反変の型パラメーターを持つジェネリック インターフェイスがいくつかあります ( <xref:System.Collections.Generic.IComparer%601>、 <xref:System.IComparable%601>、 <xref:System.Collections.Generic.IEqualityComparer%601>など)。</span><span class="sxs-lookup"><span data-stu-id="89c52-152">Starting with the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], several generic interfaces have contravariant type parameters; for example: <xref:System.Collections.Generic.IComparer%601>, <xref:System.IComparable%601>, and <xref:System.Collections.Generic.IEqualityComparer%601>.</span></span> <span data-ttu-id="89c52-153">これらのインターフェイスの型パラメーターは反変のみであるため、これらの型パラメーターは、インターフェイスのメンバーのパラメーター型としてのみ使用されます。</span><span class="sxs-lookup"><span data-stu-id="89c52-153">These interfaces have only contravariant type parameters, so the type parameters are used only as parameter types in the members of the interfaces.</span></span>  
   
- 反変の型パラメーターの例を以下に示します。 この例では、`MustInherit` プロパティを使用して抽象 \(Visual Basic では `Shape`\) `Area` クラスを定義しています。 また、`ShapeAreaComparer` \(Visual Basic では `IComparer<Shape>`\) を実装する `IComparer(Of Shape)` クラスを定義しています。<xref:System.Collections.Generic.IComparer%601.Compare%2A?displayProperty=fullName> メソッドの実装は `Area` プロパティの値に基づくため、`ShapeAreaComparer` を使用して、領域で `Shape` オブジェクトを並べ替えることができます。  
+ <span data-ttu-id="89c52-154">反変の型パラメーターの例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="89c52-154">The following example illustrates contravariant type parameters.</span></span> <span data-ttu-id="89c52-155">この例では、`MustInherit` プロパティを使用して抽象 (Visual Basic では `Shape` ) `Area` クラスを定義しています。</span><span class="sxs-lookup"><span data-stu-id="89c52-155">The example defines an abstract (`MustInherit` in Visual Basic) `Shape` class with an `Area` property.</span></span> <span data-ttu-id="89c52-156">また、 `ShapeAreaComparer` (Visual Basic では `IComparer<Shape>` ) を実装する`IComparer(Of Shape)` クラスを定義しています。</span><span class="sxs-lookup"><span data-stu-id="89c52-156">The example also defines a `ShapeAreaComparer` class that implements `IComparer<Shape>` (`IComparer(Of Shape)` in Visual Basic).</span></span> <span data-ttu-id="89c52-157"><xref:System.Collections.Generic.IComparer%601.Compare%2A?displayProperty=nameWithType> メソッドの実装は `Area` プロパティの値に基づくため、`ShapeAreaComparer` を使用して、領域で `Shape` オブジェクトを並べ替えることができます。</span><span class="sxs-lookup"><span data-stu-id="89c52-157">The implementation of the <xref:System.Collections.Generic.IComparer%601.Compare%2A?displayProperty=nameWithType> method is based on the value of the `Area` property, so `ShapeAreaComparer` can be used to sort `Shape` objects by area.</span></span>  
   
- `Circle` クラスは `Shape` を継承し、`Area` をオーバーライドします。 この例では、<xref:System.Collections.Generic.SortedSet%601> \(Visual Basic では `Circle`\) を受け取るコンストラクターを使用して、`IComparer<Circle>` オブジェクトの `IComparer(Of Circle)` を作成します。 ただし、`IComparer<Circle>` を渡す代わりに、`ShapeAreaComparer` を実装する `IComparer<Shape>` オブジェクトを渡します。 この例では、`Shape` ジェネリック インターフェイスの型パラメーターは反変であるため、コードがより強い派生型 \(`Circle`\) の比較子を要求している場合に、より弱い派生型 \(<xref:System.Collections.Generic.IComparer%601>\) の比較子を渡すことができます。  
+ <span data-ttu-id="89c52-158">`Circle` クラスは `Shape` を継承し、 `Area`をオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="89c52-158">The `Circle` class inherits `Shape` and overrides `Area`.</span></span> <span data-ttu-id="89c52-159">この例では、 <xref:System.Collections.Generic.SortedSet%601> (Visual Basic では `Circle` ) を受け取るコンストラクターを使用して、 `IComparer<Circle>` オブジェクトの`IComparer(Of Circle)` を作成します。</span><span class="sxs-lookup"><span data-stu-id="89c52-159">The example creates a <xref:System.Collections.Generic.SortedSet%601> of `Circle` objects, using a constructor that takes an `IComparer<Circle>` (`IComparer(Of Circle)` in Visual Basic).</span></span> <span data-ttu-id="89c52-160">ただし、 `IComparer<Circle>`を渡す代わりに、 `ShapeAreaComparer` を実装する `IComparer<Shape>`オブジェクトを渡します。</span><span class="sxs-lookup"><span data-stu-id="89c52-160">However, instead of passing an `IComparer<Circle>`, the example passes a `ShapeAreaComparer` object, which implements `IComparer<Shape>`.</span></span> <span data-ttu-id="89c52-161">この例では、`Shape`ジェネリック インターフェイスの型パラメーターは反変であるため、コードがより強い派生型 (`Circle`) の比較子を要求している場合に、より弱い派生型 ( <xref:System.Collections.Generic.IComparer%601> ) の比較子を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="89c52-161">The example can pass a comparer of a less derived type (`Shape`) when the code calls for a comparer of a more derived type (`Circle`), because the type parameter of the <xref:System.Collections.Generic.IComparer%601> generic interface is contravariant.</span></span>  
   
- 新しい `Circle` オブジェクトを `SortedSet<Circle>` に追加すると、新しい要素が既存の要素と比較されるたびに `IComparer<Shape>.Compare` オブジェクトの `IComparer(Of Shape).Compare` メソッド \(Visual Basic では `ShapeAreaComparer` メソッド\) が呼び出されます。 このメソッドのパラメーターの型 \(`Shape`\) は、渡される型 \(`Circle`\) より弱い派生型なので、この呼び出しはタイプ セーフです。 反変性により、`ShapeAreaComparer` で、単一の型のコレクションおよび `Shape` から派生した型の混合コレクションを並べ替えることができるようになります。  
+ <span data-ttu-id="89c52-162">新しい `Circle` オブジェクトを `SortedSet<Circle>`に追加すると、新しい要素が既存の要素と比較されるたびに `IComparer<Shape>.Compare` オブジェクトの`IComparer(Of Shape).Compare` メソッド (Visual Basic では `ShapeAreaComparer` メソッド) が呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="89c52-162">When a new `Circle` object is added to the `SortedSet<Circle>`, the `IComparer<Shape>.Compare` method (`IComparer(Of Shape).Compare` method in Visual Basic) of the `ShapeAreaComparer` object is called each time the new element is compared to an existing element.</span></span> <span data-ttu-id="89c52-163">このメソッドのパラメーターの型 (`Shape`) は、渡される型 (`Circle`) より弱い派生型なので、この呼び出しはタイプ セーフです。</span><span class="sxs-lookup"><span data-stu-id="89c52-163">The parameter type of the method (`Shape`) is less derived than the type that is being passed (`Circle`), so the call is type safe.</span></span> <span data-ttu-id="89c52-164">反変性により、 `ShapeAreaComparer` で、単一の型のコレクションおよび `Shape`から派生した型の混合コレクションを並べ替えることができるようになります。</span><span class="sxs-lookup"><span data-stu-id="89c52-164">Contravariance enables `ShapeAreaComparer` to sort a collection of any single type, as well as a mixed collection of types, that derive from `Shape`.</span></span>  
   
  [!code-csharp[CoContravarianceInClrGenericI2#1](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontravarianceinclrgenerici2/cs/example.cs#1)]
  [!code-vb[CoContravarianceInClrGenericI2#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravarianceinclrgenerici2/vb/example.vb#1)]  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="89c52-165">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="89c52-165">Back to top</span></span>](#top)  
   
 <a name="DelegateVariantTypeParameters"></a>   
-## バリアント型パラメーターを持つ汎用デリゲート  
- [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] では、`Func` などの <xref:System.Func%602> 汎用デリゲートに、共変の戻り値の型と反変のパラメーターの型があります。`Action` などの <xref:System.Action%602> 汎用デリゲートには、反変のパラメーターの型があります。 したがって、より強い派生型のパラメーターと、より弱い派生型の戻り値 \(`Func` 汎用デリゲートの場合\) を持つ変数に、デリゲートを代入できます。  
+## <a name="generic-delegates-with-variant-type-parameters"></a><span data-ttu-id="89c52-166">バリアント型パラメーターを持つ汎用デリゲート</span><span class="sxs-lookup"><span data-stu-id="89c52-166">Generic Delegates with Variant Type Parameters</span></span>  
+ <span data-ttu-id="89c52-167">[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]では、 `Func` などの <xref:System.Func%602>汎用デリゲートに、共変の戻り値の型と反変のパラメーターの型があります。</span><span class="sxs-lookup"><span data-stu-id="89c52-167">In the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], the `Func` generic delegates, such as <xref:System.Func%602>, have covariant return types and contravariant parameter types.</span></span> <span data-ttu-id="89c52-168">`Action` などの <xref:System.Action%602>汎用デリゲートには、反変のパラメーターの型があります。</span><span class="sxs-lookup"><span data-stu-id="89c52-168">The `Action` generic delegates, such as <xref:System.Action%602>, have contravariant parameter types.</span></span> <span data-ttu-id="89c52-169">したがって、より強い派生型のパラメーターと、より弱い派生型の戻り値 ( `Func` 汎用デリゲートの場合) を持つ変数に、デリゲートを代入できます。</span><span class="sxs-lookup"><span data-stu-id="89c52-169">This means that the delegates can be assigned to variables that have more derived parameter types and (in the case of the `Func` generic delegates) less derived return types.</span></span>  
   
 > [!NOTE]
->  `Func` 汎用デリゲートの最後のジェネリック型パラメーターは、デリゲート シグネチャの戻り値の型を指定します。 他のジェネリック型パラメーターは反変 \(`out` キーワード\) ですが、この最後のジェネリック型パラメーターは共変 \(`in` キーワード\) です。  
+>  <span data-ttu-id="89c52-170">`Func` 汎用デリゲートの最後のジェネリック型パラメーターは、デリゲート シグネチャの戻り値の型を指定します。</span><span class="sxs-lookup"><span data-stu-id="89c52-170">The last generic type parameter of the `Func` generic delegates specifies the type of the return value in the delegate signature.</span></span> <span data-ttu-id="89c52-171">他のジェネリック型パラメーターは反変 (`out` キーワード) ですが、この最後のジェネリック型パラメーターは共変 (`in` キーワード) です。</span><span class="sxs-lookup"><span data-stu-id="89c52-171">It is covariant (`out` keyword), whereas the other generic type parameters are contravariant (`in` keyword).</span></span>  
   
- 次に例を示します。 コードの最初の部分では、`Base` という名前のクラスと、`Derived` を継承する `Base` という名前のクラスを定義しています。その他に、`static` という名前の `Shared` \(Visual Basic では `MyMethod`\) メソッドを持つクラスも定義されています。 このメソッドは、`Base` のインスタンスを受け取り、`Derived` のインスタンスを返します  \(引数が `Derived` のインスタンスの場合は、それが `MyMethod` によって返されます。引数が `Base` のインスタンスの場合は、`MyMethod` によって `Derived` の新しいインスタンスが返されます\)。`Main()` では、`Func<Base, Derived>` を表す `Func(Of Base, Derived)` \(Visual Basic では `MyMethod`\) のインスタンスを作成して、変数 `f1` に格納しています。  
+ <span data-ttu-id="89c52-172">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="89c52-172">The following code illustrates this.</span></span> <span data-ttu-id="89c52-173">コードの最初の部分では、 `Base`という名前のクラスと、 `Derived` を継承する `Base`という名前のクラスを定義しています。その他に、 `static` という名前の`Shared` (Visual Basic では `MyMethod`) メソッドを持つクラスも定義されています。</span><span class="sxs-lookup"><span data-stu-id="89c52-173">The first piece of code defines a class named `Base`, a class named `Derived` that inherits `Base`, and another class with a `static` method (`Shared` in Visual Basic) named `MyMethod`.</span></span> <span data-ttu-id="89c52-174">このメソッドは、`Base` のインスタンスを受け取り、`Derived` のインスタンスを返します </span><span class="sxs-lookup"><span data-stu-id="89c52-174">The method takes an instance of `Base` and returns an instance of `Derived`.</span></span> <span data-ttu-id="89c52-175">(引数が `Derived` のインスタンスの場合は、それが `MyMethod` によって返されます。引数が `Base` のインスタンスの場合は、`MyMethod` によって `Derived` の新しいインスタンスが返されます)。`Main()` では、`Func<Base, Derived>` を表す `Func(Of Base, Derived)` (Visual Basic では `MyMethod`) のインスタンスを作成して、変数 `f1` に格納しています。</span><span class="sxs-lookup"><span data-stu-id="89c52-175">(If the argument is an instance of `Derived`, `MyMethod` returns it; if the argument is an instance of `Base`, `MyMethod` returns a new instance of `Derived`.) In `Main()`, the example creates an instance of `Func<Base, Derived>` (`Func(Of Base, Derived)` in Visual Basic) that represents `MyMethod`, and stores it in the variable `f1`.</span></span>  
   
  [!code-csharp[CoContravarianceDelegates#2](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontravariancedelegates/cs/example.cs#2)]
  [!code-vb[CoContravarianceDelegates#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravariancedelegates/vb/example.vb#2)]  
   
- コードの 2 番目の部分は、このデリゲートを `Func<Base, Base>` \(Visual Basic では `Func(Of Base, Base)`\) 型の変数に代入できることを示しています。これは、戻り値の型が共変であるためです。  
+ <span data-ttu-id="89c52-176">コードの 2 番目の部分は、このデリゲートを `Func<Base, Base>` (Visual Basic では`Func(Of Base, Base)` ) 型の変数に代入できることを示しています。これは、戻り値の型が共変であるためです。</span><span class="sxs-lookup"><span data-stu-id="89c52-176">The second piece of code shows that the delegate can be assigned to a variable of type `Func<Base, Base>` (`Func(Of Base, Base)` in Visual Basic), because the return type is covariant.</span></span>  
   
  [!code-csharp[CoContravarianceDelegates#3](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontravariancedelegates/cs/example.cs#3)]
  [!code-vb[CoContravarianceDelegates#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravariancedelegates/vb/example.vb#3)]  
   
- コードの 3 番目の部分は、このデリゲートを `Func<Derived, Derived>` \(Visual Basic では `Func(Of Derived, Derived)`\) 型の変数に代入できることを示しています。これは、パラメーターの型が反変であるためです。  
+ <span data-ttu-id="89c52-177">コードの 3 番目の部分は、このデリゲートを `Func<Derived, Derived>` (Visual Basic では`Func(Of Derived, Derived)` ) 型の変数に代入できることを示しています。これは、パラメーターの型が反変であるためです。</span><span class="sxs-lookup"><span data-stu-id="89c52-177">The third piece of code shows that the delegate can be assigned to a variable of type `Func<Derived, Derived>` (`Func(Of Derived, Derived)` in Visual Basic), because the parameter type is contravariant.</span></span>  
   
  [!code-csharp[CoContravarianceDelegates#4](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontravariancedelegates/cs/example.cs#4)]
  [!code-vb[CoContravarianceDelegates#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravariancedelegates/vb/example.vb#4)]  
   
- コードの最後の部分は、このデリゲートを `Func<Derived, Base>` \(Visual Basic では `Func(Of Derived, Base)`\) 型の変数に代入できることを示しています。これは、反変のパラメーターの型と共変の戻り値の型の両方の効果の組み合わせによるものです。  
+ <span data-ttu-id="89c52-178">コードの最後の部分は、このデリゲートを `Func<Derived, Base>` (Visual Basic では`Func(Of Derived, Base)` ) 型の変数に代入できることを示しています。これは、反変のパラメーターの型と共変の戻り値の型の両方の効果の組み合わせによるものです。</span><span class="sxs-lookup"><span data-stu-id="89c52-178">The final piece of code shows that the delegate can be assigned to a variable of type `Func<Derived, Base>` (`Func(Of Derived, Base)` in Visual Basic), combining the effects of the contravariant parameter type and the covariant return type.</span></span>  
   
  [!code-csharp[CoContravarianceDelegates#5](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontravariancedelegates/cs/example.cs#5)]
  [!code-vb[CoContravarianceDelegates#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravariancedelegates/vb/example.vb#5)]  
   
-### 汎用デリゲートと非汎用デリゲートの分散  
- 上のコードでは、`MyMethod` のシグネチャが、構築された汎用デリゲート `Func<Base, Derived>` \(Visual Basic では `Func(Of Base, Derived)`\) のシグネチャと厳密に一致しています。 この例から、より強い派生型のパラメーターとより弱い派生型の戻り値を持つ変数やメソッド パラメーターにこの汎用デリゲートを格納できることと、そのためには、すべてのデリゲート型が汎用デリゲート型 <xref:System.Func%602> から構築されている必要があることがわかります。  
+### <a name="variance-in-generic-and-non-generic-delegates"></a><span data-ttu-id="89c52-179">汎用デリゲートと非汎用デリゲートの分散</span><span class="sxs-lookup"><span data-stu-id="89c52-179">Variance in Generic and Non-Generic Delegates</span></span>  
+ <span data-ttu-id="89c52-180">上のコードでは、 `MyMethod` のシグネチャが、構築された汎用デリゲート `Func<Base, Derived>` (Visual Basic では`Func(Of Base, Derived)` ) のシグネチャと厳密に一致しています。</span><span class="sxs-lookup"><span data-stu-id="89c52-180">In the preceding code, the signature of `MyMethod` exactly matches the signature of the constructed generic delegate: `Func<Base, Derived>` (`Func(Of Base, Derived)` in Visual Basic).</span></span> <span data-ttu-id="89c52-181">この例から、より強い派生型のパラメーターとより弱い派生型の戻り値を持つ変数やメソッド パラメーターにこの汎用デリゲートを格納できることと、そのためには、すべてのデリゲート型が汎用デリゲート型 <xref:System.Func%602>から構築されている必要があることがわかります。</span><span class="sxs-lookup"><span data-stu-id="89c52-181">The example shows that this generic delegate can be stored in variables or method parameters that have more derived parameter types and less derived return types, as long as all the delegate types are constructed from the generic delegate type <xref:System.Func%602>.</span></span>  
   
- これは重要なポイントです。 汎用デリゲートの型パラメーターの共変性と反変性の効果は、通常のデリゲート バインディングの共変性と反変性の効果 \(「[デリゲートの分散](../Topic/Variance%20in%20Delegates%20\(C%23%20and%20Visual%20Basic\).md)」を参照\) に似ていますが、 デリゲート バインディングの分散は、バリアント型パラメーターを持つ汎用デリゲート型だけでなく、すべてのデリゲート型で使用できます。 さらに、デリゲート バインディングの分散では、より限定的なパラメーターの型とより限定的でない戻り値の型を持つ任意のデリゲートにメソッドをバインドできますが、汎用デリゲートの代入を使用できるのは、両方のデリゲート型が同じジェネリック型定義から構築されている場合のみです。  
+ <span data-ttu-id="89c52-182">これは重要なポイントです。</span><span class="sxs-lookup"><span data-stu-id="89c52-182">This is an important point.</span></span> <span data-ttu-id="89c52-183">汎用デリゲートの型パラメーターの共変性と反変性の効果は、通常のデリゲート バインディングの共変性と反変性の効果 (「[デリゲートの分散](http://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)」を参照) に似ていますが、</span><span class="sxs-lookup"><span data-stu-id="89c52-183">The effects of covariance and contravariance in the type parameters of generic delegates are similar to the effects of covariance and contravariance in ordinary delegate binding (see [Variance in Delegates](http://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)).</span></span> <span data-ttu-id="89c52-184">デリゲート バインディングの分散は、バリアント型パラメーターを持つ汎用デリゲート型だけでなく、すべてのデリゲート型で使用できます。</span><span class="sxs-lookup"><span data-stu-id="89c52-184">However, variance in delegate binding works with all delegate types, not just with generic delegate types that have variant type parameters.</span></span> <span data-ttu-id="89c52-185">さらに、デリゲート バインディングの分散では、より限定的なパラメーターの型とより限定的でない戻り値の型を持つ任意のデリゲートにメソッドをバインドできますが、汎用デリゲートの代入を使用できるのは、両方のデリゲート型が同じジェネリック型定義から構築されている場合のみです。</span><span class="sxs-lookup"><span data-stu-id="89c52-185">Furthermore, variance in delegate binding enables a method to be bound to any delegate that has more restrictive parameter types and a less restrictive return type, whereas the assignment of generic delegates works only if both delegate types are constructed from the same generic type definition.</span></span>  
   
- デリゲート バインディングの分散とジェネリック型パラメーターの分散の両方の効果を組み合わせた例を以下に示します。 ここでは、3 つの型を含む型階層を定義しています。`Type1` が最も弱い派生型で、`Type3` が最も強い派生型です。 通常のデリゲート バインディングの分散を使用して、パラメーターの型が `Type1` で戻り値の型が `Type3` のメソッドを、パラメーターの型が `Type2` で戻り値の型が `Type2` の汎用デリゲートにバインドしています。 その結果、得られた汎用デリゲートを、ジェネリック型パラメーターの共変性と反変性を使用して、`Type3` 型のパラメーターと `Type1` 型の戻り値を持つ汎用デリゲート型の変数に代入しています。 2 回目の代入では、変数型とデリゲート型の両方が同じジェネリック型定義 \(この場合は <xref:System.Func%602>\) から構築されている必要があります。  
+ <span data-ttu-id="89c52-186">デリゲート バインディングの分散とジェネリック型パラメーターの分散の両方の効果を組み合わせた例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="89c52-186">The following example shows the combined effects of variance in delegate binding and variance in generic type parameters.</span></span> <span data-ttu-id="89c52-187">ここでは、3 つの型を含む型階層を定義しています。`Type1`が最も弱い派生型で、`Type3`が最も強い派生型です。</span><span class="sxs-lookup"><span data-stu-id="89c52-187">The example defines a type hierarchy that includes three types, from least derived (`Type1`) to most derived (`Type3`).</span></span> <span data-ttu-id="89c52-188">通常のデリゲート バインディングの分散を使用して、パラメーターの型が `Type1` で戻り値の型が `Type3` のメソッドを、パラメーターの型が `Type2` で戻り値の型が `Type2`の汎用デリゲートにバインドしています。</span><span class="sxs-lookup"><span data-stu-id="89c52-188">Variance in ordinary delegate binding is used to bind a method with a parameter type of `Type1` and a return type of `Type3` to a generic delegate with a parameter type of `Type2` and a return type of `Type2`.</span></span> <span data-ttu-id="89c52-189">その結果、得られた汎用デリゲートを、ジェネリック型パラメーターの共変性と反変性を使用して、 `Type3` 型のパラメーターと `Type1`型の戻り値を持つ汎用デリゲート型の変数に代入しています。</span><span class="sxs-lookup"><span data-stu-id="89c52-189">The resulting generic delegate is then assigned to another variable whose generic delegate type has a parameter of type `Type3` and a return type of `Type1`, using the covariance and contravariance of generic type parameters.</span></span> <span data-ttu-id="89c52-190">2 回目の代入では、変数型とデリゲート型の両方が同じジェネリック型定義 (この場合は <xref:System.Func%602>) から構築されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="89c52-190">The second assignment requires both the variable type and the delegate type to be constructed from the same generic type definition, in this case, <xref:System.Func%602>.</span></span>  
   
  [!code-csharp[CoContravarianceDelegatesGenRelaxed#1](../../../samples/snippets/csharp/VS_Snippets_CLR/cocontravariancedelegatesgenrelaxed/cs/example.cs#1)]
  [!code-vb[CoContravarianceDelegatesGenRelaxed#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/cocontravariancedelegatesgenrelaxed/vb/example.vb#1)]  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="89c52-191">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="89c52-191">Back to top</span></span>](#top)  
   
 <a name="DefiningVariantTypeParameters"></a>   
-## バリアント ジェネリック インターフェイスとバリアント汎用デリゲートの定義  
- [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降では、Visual Basic と C\# の両方で、インターフェイスやデリゲートのジェネリック型パラメーターを共変または反変としてマークするためのキーワードがサポートされています。  
+## <a name="defining-variant-generic-interfaces-and-delegates"></a><span data-ttu-id="89c52-192">バリアント ジェネリック インターフェイスとバリアント汎用デリゲートの定義</span><span class="sxs-lookup"><span data-stu-id="89c52-192">Defining Variant Generic Interfaces and Delegates</span></span>  
+ <span data-ttu-id="89c52-193">[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]以降では、Visual Basic と C# の両方で、インターフェイスやデリゲートのジェネリック型パラメーターを共変または反変としてマークするためのキーワードがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="89c52-193">Starting with the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], Visual Basic and C# have keywords that enable you to mark the generic type parameters of interfaces and delegates as covariant or contravariant.</span></span>  
   
 > [!NOTE]
->  ジェネリック型パラメーターの分散注釈は .NET Framework Version 2.0 以降の共通言語ランタイムでサポートされていますが、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] の前までは、クラスを [Ilasm.exe \(IL アセンブラー\)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) でコンパイルするか、動的アセンブリに出力することにより、Microsoft Intermediate Language \(MSIL\) を使用してこれらの注釈を含むジェネリック クラスを定義する必要がありました。  
+>  <span data-ttu-id="89c52-194">ジェネリック型パラメーターの分散注釈は .NET Framework Version 2.0 以降の共通言語ランタイムでサポートされていますが、</span><span class="sxs-lookup"><span data-stu-id="89c52-194">Starting with the .NET Framework version 2.0, the common language runtime supports variance annotations on generic type parameters.</span></span> <span data-ttu-id="89c52-195">[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] の前までは、クラスを [Ilasm.exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) でコンパイルするか、動的アセンブリに出力することにより、Microsoft Intermediate Language (MSIL) を使用してこれらの注釈を含むジェネリック クラスを定義する必要がありました。</span><span class="sxs-lookup"><span data-stu-id="89c52-195">Prior to the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], the only way to define a generic class that has these annotations is to use Microsoft intermediate language (MSIL), either by compiling the class with [Ilasm.exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) or by emitting it in a dynamic assembly.</span></span>  
   
- 共変の型パラメーターをマークするには、`out` キーワード \(Visual Basic では `Out` キーワード、[MSIL アセンブラー](../../../docs/framework/tools/ilasm-exe-il-assembler.md)では `+`\) を使用します。 共変の型パラメーターは、インターフェイスに属するメソッドの戻り値として使用したり、デリゲートの戻り値の型として使用したりできます。 インターフェイス メソッドのジェネリック型制約として使用することはできません。  
+ <span data-ttu-id="89c52-196">共変の型パラメーターをマークするには、`out` キーワード (Visual Basic では `Out` キーワード、[MSIL アセンブラー](../../../docs/framework/tools/ilasm-exe-il-assembler.md)では `+`) を使用します。</span><span class="sxs-lookup"><span data-stu-id="89c52-196">A covariant type parameter is marked with the `out` keyword (`Out` keyword in Visual Basic, `+` for the [MSIL Assembler](../../../docs/framework/tools/ilasm-exe-il-assembler.md)).</span></span> <span data-ttu-id="89c52-197">共変の型パラメーターは、インターフェイスに属するメソッドの戻り値として使用したり、デリゲートの戻り値の型として使用したりできます。</span><span class="sxs-lookup"><span data-stu-id="89c52-197">You can use a covariant type parameter as the return value of a method that belongs to an interface, or as the return type of a delegate.</span></span> <span data-ttu-id="89c52-198">インターフェイス メソッドのジェネリック型制約として使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="89c52-198">You cannot use a covariant type parameter as a generic type constraint for interface methods.</span></span>  
   
 > [!NOTE]
->  インターフェイスのメソッドに汎用デリゲート型のパラメーターがある場合は、インターフェイス型の共変の型パラメーターを使用してデリゲート型の反変の型パラメーターを指定できます。  
+>  <span data-ttu-id="89c52-199">インターフェイスのメソッドに汎用デリゲート型のパラメーターがある場合は、インターフェイス型の共変の型パラメーターを使用してデリゲート型の反変の型パラメーターを指定できます。</span><span class="sxs-lookup"><span data-stu-id="89c52-199">If a method of an interface has a parameter that is a generic delegate type, a covariant type parameter of the interface type can be used to specify a contravariant type parameter of the delegate type.</span></span>  
   
- 反変の型パラメーターをマークするには、`in` キーワード \(Visual Basic では `In` キーワード、[MSIL アセンブラー](../../../docs/framework/tools/ilasm-exe-il-assembler.md)では `-`\) を使用します。 反変の型パラメーターは、インターフェイスに属するメソッドのパラメーターの型として使用したり、デリゲートのパラメーターの型として使用したりできます。 インターフェイス メソッドのジェネリック型制約として使用することもできます。  
+ <span data-ttu-id="89c52-200">反変の型パラメーターをマークするには、 `in` キーワード (Visual Basic では`In` キーワード、 `-` MSIL アセンブラー [では](../../../docs/framework/tools/ilasm-exe-il-assembler.md)) を使用します。</span><span class="sxs-lookup"><span data-stu-id="89c52-200">A contravariant type parameter is marked with the `in` keyword (`In` keyword in Visual Basic, `-` for the [MSIL Assembler](../../../docs/framework/tools/ilasm-exe-il-assembler.md)).</span></span> <span data-ttu-id="89c52-201">反変の型パラメーターは、インターフェイスに属するメソッドのパラメーターの型として使用したり、デリゲートのパラメーターの型として使用したりできます。</span><span class="sxs-lookup"><span data-stu-id="89c52-201">You can use a contravariant type parameter as the type of a parameter of a method that belongs to an interface, or as the type of a parameter of a delegate.</span></span> <span data-ttu-id="89c52-202">インターフェイス メソッドのジェネリック型制約として使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="89c52-202">You can use a contravariant type parameter as a generic type constraint for an interface method.</span></span>  
   
- バリアント型パラメーターを持つことができるのは、インターフェイス型とデリゲート型だけです。 インターフェイス型やデリゲート型は、共変と反変の両方の型パラメーターを持つことができます。  
+ <span data-ttu-id="89c52-203">バリアント型パラメーターを持つことができるのは、インターフェイス型とデリゲート型だけです。</span><span class="sxs-lookup"><span data-stu-id="89c52-203">Only interface types and delegate types can have variant type parameters.</span></span> <span data-ttu-id="89c52-204">インターフェイス型やデリゲート型は、共変と反変の両方の型パラメーターを持つことができます。</span><span class="sxs-lookup"><span data-stu-id="89c52-204">An interface or delegate type can have both covariant and contravariant type parameters.</span></span>  
   
- Visual Basic と C\# では、共変および反変の型パラメーターの使用規則に違反したり、インターフェイスとデリゲート以外の型の型パラメーターに共変性や反変性の注釈を追加したりすることは許可されません。[MSIL アセンブラー](../../../docs/framework/tools/ilasm-exe-il-assembler.md)ではそのようなチェックは行われませんが、規則に違反する型を読み込もうとすると <xref:System.TypeLoadException> がスローされます。  
+ <span data-ttu-id="89c52-205">Visual Basic と C# では、共変および反変の型パラメーターの使用規則に違反したり、インターフェイスとデリゲート以外の型の型パラメーターに共変性や反変性の注釈を追加したりすることは許可されません。</span><span class="sxs-lookup"><span data-stu-id="89c52-205">Visual Basic and C# do not allow you to violate the rules for using covariant and contravariant type parameters, or to add covariance and contravariance annotations to the type parameters of types other than interfaces and delegates.</span></span> <span data-ttu-id="89c52-206">[MSIL アセンブラー](../../../docs/framework/tools/ilasm-exe-il-assembler.md) ではそのようなチェックは行われませんが、規則に違反する型を読み込もうとすると <xref:System.TypeLoadException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="89c52-206">The [MSIL Assembler](../../../docs/framework/tools/ilasm-exe-il-assembler.md) does not perform such checks, but a <xref:System.TypeLoadException> is thrown if you try to load a type that violates the rules.</span></span>  
   
- 詳細とコード例については、「[ジェネリック インターフェイスの分散](../Topic/Variance%20in%20Generic%20Interfaces%20\(C%23%20and%20Visual%20Basic\).md)」を参照してください。  
+ <span data-ttu-id="89c52-207">詳細とコード例については、「[ジェネリック インターフェイスの分散](http://msdn.microsoft.com/library/e14322da-1db3-42f2-9a67-397daddd6b6a)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="89c52-207">For information and example code, see [Variance in Generic Interfaces](http://msdn.microsoft.com/library/e14322da-1db3-42f2-9a67-397daddd6b6a).</span></span>  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="89c52-208">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="89c52-208">Back to top</span></span>](#top)  
   
 <a name="VariantList"></a>   
-## バリアント ジェネリック インターフェイス型とバリアント汎用デリゲート型の一覧  
- 共変または反変、あるいはその両方の型パラメーターを持つ [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] のインターフェイス型とデリゲート型を以下に示します。  
+## <a name="list-of-variant-generic-interface-and-delegate-types"></a><span data-ttu-id="89c52-209">バリアント ジェネリック インターフェイス型とバリアント汎用デリゲート型の一覧</span><span class="sxs-lookup"><span data-stu-id="89c52-209">List of Variant Generic Interface and Delegate Types</span></span>  
+ <span data-ttu-id="89c52-210">共変または反変、あるいはその両方の型パラメーターを持つ [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]のインターフェイス型とデリゲート型を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="89c52-210">In the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], the following interface and delegate types have covariant and/or contravariant type parameters.</span></span>  
   
-|型|共変の型パラメーター|反変の型パラメーター|  
-|-------|----------------|----------------|  
-|<xref:System.Action%601> ～ <xref:System.Action%6016>||はい|  
-|<xref:System.Comparison%601>||はい|  
-|<xref:System.Converter%602>|はい|はい|  
-|<xref:System.Func%601>|はい||  
-|<xref:System.Func%602> ～ <xref:System.Func%6017>|はい|はい|  
-|<xref:System.IComparable%601>||はい|  
-|<xref:System.Predicate%601>||はい|  
-|<xref:System.Collections.Generic.IComparer%601>||はい|  
-|<xref:System.Collections.Generic.IEnumerable%601>|はい||  
-|<xref:System.Collections.Generic.IEnumerator%601>|はい||  
-|<xref:System.Collections.Generic.IEqualityComparer%601>||はい|  
-|<xref:System.Linq.IGrouping%602>|はい||  
-|<xref:System.Linq.IOrderedEnumerable%601>|はい||  
-|<xref:System.Linq.IOrderedQueryable%601>|はい||  
-|<xref:System.Linq.IQueryable%601>|はい||  
+|<span data-ttu-id="89c52-211">型</span><span class="sxs-lookup"><span data-stu-id="89c52-211">Type</span></span>|<span data-ttu-id="89c52-212">共変の型パラメーター</span><span class="sxs-lookup"><span data-stu-id="89c52-212">Covariant type parameters</span></span>|<span data-ttu-id="89c52-213">反変の型パラメーター</span><span class="sxs-lookup"><span data-stu-id="89c52-213">Contravariant type parameters</span></span>|  
+|----------|-------------------------------|-----------------------------------|  
+|<span data-ttu-id="89c52-214"><xref:System.Action%601> ～ <xref:System.Action%6016></span><span class="sxs-lookup"><span data-stu-id="89c52-214"><xref:System.Action%601> to <xref:System.Action%6016></span></span>||<span data-ttu-id="89c52-215">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-215">Yes</span></span>|  
+|<xref:System.Comparison%601>||<span data-ttu-id="89c52-216">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-216">Yes</span></span>|  
+|<xref:System.Converter%602>|<span data-ttu-id="89c52-217">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-217">Yes</span></span>|<span data-ttu-id="89c52-218">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-218">Yes</span></span>|  
+|<xref:System.Func%601>|<span data-ttu-id="89c52-219">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-219">Yes</span></span>||  
+|<span data-ttu-id="89c52-220"><xref:System.Func%602> ～ <xref:System.Func%6017></span><span class="sxs-lookup"><span data-stu-id="89c52-220"><xref:System.Func%602> to <xref:System.Func%6017></span></span>|<span data-ttu-id="89c52-221">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-221">Yes</span></span>|<span data-ttu-id="89c52-222">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-222">Yes</span></span>|  
+|<xref:System.IComparable%601>||<span data-ttu-id="89c52-223">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-223">Yes</span></span>|  
+|<xref:System.Predicate%601>||<span data-ttu-id="89c52-224">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-224">Yes</span></span>|  
+|<xref:System.Collections.Generic.IComparer%601>||<span data-ttu-id="89c52-225">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-225">Yes</span></span>|  
+|<xref:System.Collections.Generic.IEnumerable%601>|<span data-ttu-id="89c52-226">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-226">Yes</span></span>||  
+|<xref:System.Collections.Generic.IEnumerator%601>|<span data-ttu-id="89c52-227">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-227">Yes</span></span>||  
+|<xref:System.Collections.Generic.IEqualityComparer%601>||<span data-ttu-id="89c52-228">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-228">Yes</span></span>|  
+|<xref:System.Linq.IGrouping%602>|<span data-ttu-id="89c52-229">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-229">Yes</span></span>||  
+|<xref:System.Linq.IOrderedEnumerable%601>|<span data-ttu-id="89c52-230">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-230">Yes</span></span>||  
+|<xref:System.Linq.IOrderedQueryable%601>|<span data-ttu-id="89c52-231">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-231">Yes</span></span>||  
+|<xref:System.Linq.IQueryable%601>|<span data-ttu-id="89c52-232">はい</span><span class="sxs-lookup"><span data-stu-id="89c52-232">Yes</span></span>||  
   
-## 参照  
- [共変性と反変性](../Topic/Covariance%20and%20Contravariance%20\(C%23%20and%20Visual%20Basic\).md)   
- [デリゲートの分散](../Topic/Variance%20in%20Delegates%20\(C%23%20and%20Visual%20Basic\).md)
+## <a name="see-also"></a><span data-ttu-id="89c52-233">関連項目</span><span class="sxs-lookup"><span data-stu-id="89c52-233">See Also</span></span>  
+ [<span data-ttu-id="89c52-234">共変性と反変性 (C#)</span><span class="sxs-lookup"><span data-stu-id="89c52-234">Covariance and Contravariance (C#)</span></span>](../../csharp/programming-guide/concepts/covariance-contravariance/index.md)  
+ <span data-ttu-id="89c52-235">[共変性と反変性 (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)  </span><span class="sxs-lookup"><span data-stu-id="89c52-235">[Covariance and Contravariance (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)  </span></span>  
+ [<span data-ttu-id="89c52-236">デリゲートの分散</span><span class="sxs-lookup"><span data-stu-id="89c52-236">Variance in Delegates</span></span>](http://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)

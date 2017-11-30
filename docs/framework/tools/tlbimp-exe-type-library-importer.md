@@ -5,15 +5,9 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- dotnet-clr
+ms.technology: dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
 helpviewer_keywords:
 - type libraries [.NET Framework], importing
 - importing type library
@@ -23,131 +17,129 @@ helpviewer_keywords:
 - type libraries
 - converting type definitions
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
+ms.openlocfilehash: e87568cc6ac86e7bdc24fd7e31f5b8c3ed260c88
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: a4b0505ccd193b4fa3868953d3f07f8ba8cc5946
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (タイプ ライブラリ インポーター)
-タイプ ライブラリ インポーターは、COM タイプ ライブラリにある型定義を共通言語ランタイム アセンブリで等価な定義に変換します。 Tlbimp.exe の出力は、元のタイプ ライブラリで定義された型のランタイム メタデータを格納するバイナリ ファイル (アセンブリ) です。 このファイルは [ildasm.exe](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) などのツールでチェックできます。  
+# <a name="tlbimpexe-type-library-importer"></a><span data-ttu-id="ed465-102">Tlbimp.exe (タイプ ライブラリ インポーター)</span><span class="sxs-lookup"><span data-stu-id="ed465-102">Tlbimp.exe (Type Library Importer)</span></span>
+<span data-ttu-id="ed465-103">タイプ ライブラリ インポーターは、COM タイプ ライブラリにある型定義を共通言語ランタイム アセンブリで等価な定義に変換します。</span><span class="sxs-lookup"><span data-stu-id="ed465-103">The Type Library Importer converts the type definitions found within a COM type library into equivalent definitions in a common language runtime assembly.</span></span> <span data-ttu-id="ed465-104">Tlbimp.exe の出力は、元のタイプ ライブラリで定義された型のランタイム メタデータを格納するバイナリ ファイル (アセンブリ) です。</span><span class="sxs-lookup"><span data-stu-id="ed465-104">The output of Tlbimp.exe is a binary file (an assembly) that contains runtime metadata for the types defined within the original type library.</span></span> <span data-ttu-id="ed465-105">このファイルは [ildasm.exe](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) などのツールでチェックできます。</span><span class="sxs-lookup"><span data-stu-id="ed465-105">You can examine this file with tools such as [Ildasm.exe](../../../docs/framework/tools/ildasm-exe-il-disassembler.md).</span></span>  
   
- このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。  
+ <span data-ttu-id="ed465-106">このツールは、Visual Studio と共に自動的にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="ed465-106">This tool is automatically installed with Visual Studio.</span></span> <span data-ttu-id="ed465-107">このツールを実行するには、開発者コマンド プロンプト (または、Windows 7 の Visual Studio コマンド プロンプト) を使用します。</span><span class="sxs-lookup"><span data-stu-id="ed465-107">To run the tool, use the Developer Command Prompt (or the Visual Studio Command Prompt in Windows 7).</span></span> <span data-ttu-id="ed465-108">詳細については、「[コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ed465-108">For more information, see [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md).</span></span>  
   
- コマンド プロンプトに次のように入力します。  
+ <span data-ttu-id="ed465-109">コマンド プロンプトに次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="ed465-109">At the command prompt, type the following:</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="ed465-110">構文</span><span class="sxs-lookup"><span data-stu-id="ed465-110">Syntax</span></span>  
   
 ```  
 tlbimp tlbFile [options]  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a><span data-ttu-id="ed465-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ed465-111">Parameters</span></span>  
   
-|引数|説明|  
+|<span data-ttu-id="ed465-112">引数</span><span class="sxs-lookup"><span data-stu-id="ed465-112">Argument</span></span>|<span data-ttu-id="ed465-113">説明</span><span class="sxs-lookup"><span data-stu-id="ed465-113">Description</span></span>|  
 |--------------|-----------------|  
-|*tlbFile*|COM タイプ ライブラリを格納する任意のファイルの名前。|  
+|<span data-ttu-id="ed465-114">*tlbFile*</span><span class="sxs-lookup"><span data-stu-id="ed465-114">*tlbFile*</span></span>|<span data-ttu-id="ed465-115">COM タイプ ライブラリを格納する任意のファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="ed465-115">The name of any file that contains a COM type library.</span></span>|  
   
-|オプション|説明|  
+|<span data-ttu-id="ed465-116">オプション</span><span class="sxs-lookup"><span data-stu-id="ed465-116">Option</span></span>|<span data-ttu-id="ed465-117">説明</span><span class="sxs-lookup"><span data-stu-id="ed465-117">Description</span></span>|  
 |------------|-----------------|  
-|**/asmversion:** *versionnumber*|生成するアセンブリのバージョン番号を指定します。 *versionnumber* は *major.minor.build.revision* の形式で指定します。|  
-|**/company:** `companyinformation`|出力アセンブリに会社情報を追加します。|  
-|**/copyright:** `copyrightinformation`|出力アセンブリに著作権情報を追加します。 この情報は、アセンブリの **[ファイルのプロパティ]** ダイアログ ボックスで確認できます。|  
-|**/delaysign**|Tlbimp.exe が遅延署名を使用して、生成されたアセンブリに厳密な名前で署名するように指定します。 このオプションは、**/keycontainer:**、**/keyfile:**、または **/publickey:** のいずれかのオプションと共に指定する必要があります。 遅延署名プロセスの詳細については、「[アセンブリへの遅延署名](../../../docs/framework/app-domains/delay-sign-assembly.md)」を参照してください。|  
-|**/help**|このツールのコマンド構文とオプションを表示します。|  
-|**/keycontainer:** *containername*|*containername* で指定されたキー コンテナーの公開キーと秘密キーのペアを使用して、生成されたアセンブリに厳密な名前で署名します。|  
-|**/keyfile:** *filename*|*filename* にある発行者の正式な公開キーと秘密キーのペアを使用して、生成されたアセンブリに厳密な名前で署名します。|  
-|**/machine:** `machinetype`|指定したコンピューターの種類 (マイクロプロセッサ) を対象とするアセンブリを作成します。 サポートされているコンピューターの種類は、x86、x64、Itanium、および「不明」です。|  
-|**/namespace:** *namespace*|アセンブリの生成先の名前空間を指定します。|  
-|**/noclassmembers**|Tlbimp.exe がメンバーをクラスに追加できないようにします。 これにより、<xref:System.TypeLoadException> が発生する可能性がなくなります。|  
-|**/nologo**|Microsoft 著作権情報を表示しません。|  
-|**/out:** *filename*|メタデータ定義の書き込み先の出力ファイル、アセンブリ、および名前空間の名前を指定します。 アセンブリの名前空間を明示的に制御するインターフェイス定義言語 (IDL: Interface Definition Language) カスタム属性がタイプ ライブラリで指定されている場合、**/out** オプションはアセンブリの名前空間を制御できません。 このオプションを指定しない場合、Tlbimp.exe は、入力ファイルで定義された実際のタイプ ライブラリと同じ名前のファイルにメタデータを書き込み、そのファイルに .dll 拡張子を割り当てます。 出力ファイルの名前が入力ファイルと同じ場合は、タイプ ライブラリが上書きされるのを防ぐためにエラーが発生します。|  
-|**/primary**|指定したタイプ ライブラリのプライマリ相互運用機能アセンブリを生成します。 アセンブリに追加される情報は、アセンブリを生成したタイプ ライブラリの発行者を示します。 プライマリ相互運用機能アセンブリを指定すると、Tlbimp.exe を使用して、ある発行者のアセンブリとタイプ ライブラリから作成された他のアセンブリを区別します。 Tlbimp.exe を使用してインポートするタイプ ライブラリの発行者である場合は、**/primary** オプションを使用してください。 プライマリ相互運用機能アセンブリには、[厳密な名前](../../../docs/framework/app-domains/strong-named-assemblies.md)で署名する必要があります。 詳細については、「[プライマリ相互運用機能アセンブリ](http://msdn.microsoft.com/en-us/b977a8be-59a0-40a0-a806-b11ffba5c080)」を参照してください。|  
-|**/product:** `productinformation`|出力アセンブリに製品情報を追加します。 この情報は、アセンブリの **[ファイルのプロパティ]** ダイアログ ボックスで確認できます。|  
-|**/productversion:** `productversioninformation`|出力アセンブリにバージョン情報を追加します。 形式の制限はありません。 この情報は、アセンブリの **[ファイルのプロパティ]** ダイアログ ボックスで確認できます。|  
-|**/publickey:** *filename*|生成されたアセンブリに署名するために使用する公開キーを格納するファイルを指定します。 **/publickey:** オプションの代わりに **/keyfile:** オプションまたは **/keycontainer:** オプションを指定した場合、Tlbimp.exe は、**/keyfile:** または **/keycontainer:** で指定された公開キーと秘密キーのペアから公開キーを生成します。 **/publickey:** オプションを指定すると、テスト キーと遅延署名を使用できます。 ファイルは Sn.exe で生成された形式になります。 詳細については、「[厳密名ツール (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)」にある Sn.exe の **-p** オプションの説明を参照してください。|  
-|**/reference:** *filename*|現在のタイプ ライブラリ以外で定義された型への参照を解決するために使用するアセンブリ ファイルを指定します。 **/reference** オプションを指定しない場合、Tlbimp.exe は、インポートされるタイプ ライブラリが参照しているすべての外部タイプ ライブラリを再帰的に自動インポートします。 **/reference** オプションを指定した場合、このツールは、他のタイプ ライブラリをインポートする前に、参照されたアセンブリ内の外部型を解決しようとします。|  
-|**/silence:** `warningnumber`|指定された警告を表示しません。 このオプションは、**/silent** オプションと共に使用することはできません。|  
-|**/silent**|成功メッセージを表示しません。 このオプションは、**/silence** オプションと共に使用することはできません。|  
-|**/strictref**|ツールが現在のアセンブリ内、**/reference** オプションで指定されたアセンブリ内、または登録されているプライマリ相互運用機能アセンブリ (PIA) 内のすべての参照を解決できない場合は、タイプ ライブラリをインポートしません。|  
-|**/strictref:nopia**|**/strictref** と同じですが、PIA を無視します。|  
-|**/sysarray**|ツールが COM スタイル SafeArray をマネージ <xref:System.Array> 型としてインポートするように指定します。|  
-|**/tlbreference:** *filename*|レジストリを参照せずにタイプ ライブラリ参照を解決する場合に使用するタイプ ライブラリ ファイルを指定します。<br /><br /> このオプションでは、古いタイプ ライブラリの形式の一部が読み込まれないことに注意してください。  ただし、古いタイプ ライブラリの形式は、レジストリまたは現在のディレクトリから暗黙的に読み込むことができます。|  
-|**/trademark:** `trademarkinformation`|出力アセンブリに商標情報を追加します。 この情報は、アセンブリの **[ファイルのプロパティ]** ダイアログ ボックスで確認できます。|  
-|**/transform:** *transformname*|*transformname* パラメーターで指定されたようにメタデータを変換します。<br /><br /> ディスパッチ専用インターフェイス (dispinterface) のメソッドの [out, retval] パラメーターを戻り値に変換するには、*transformname* パラメーターに **dispret** を指定します。<br /><br /> このオプションの詳細については、このトピックの下記の例を参照してください。|  
-|**/unsafe**|.NET Framework セキュリティ チェックなしでインターフェイスを生成します。 この方法で公開されているメソッドを呼び出す場合には、セキュリティ上のリスクが伴います。 このオプションは、上記に該当するコードを公開するリスクを理解した上で使用してください。|  
-|**/verbose**|詳細モードを指定します。インポートされたタイプ ライブラリについての詳細情報を表示します。|  
-|**/VariantBoolFieldToBool**|構造体の `VARIANT_BOOL` フィールドを <xref:System.Boolean> に変換します。|  
-|**/?**|このツールのコマンド構文とオプションを表示します。|  
+|<span data-ttu-id="ed465-118">**/asmversion:** *versionnumber*</span><span class="sxs-lookup"><span data-stu-id="ed465-118">**/asmversion:** *versionnumber*</span></span>|<span data-ttu-id="ed465-119">生成するアセンブリのバージョン番号を指定します。</span><span class="sxs-lookup"><span data-stu-id="ed465-119">Specifies the version number of the assembly to produce.</span></span> <span data-ttu-id="ed465-120">*versionnumber* は *major.minor.build.revision* の形式で指定します。</span><span class="sxs-lookup"><span data-stu-id="ed465-120">Specify *versionnumber* in the format *major.minor.build.revision*.</span></span>|  
+|<span data-ttu-id="ed465-121">**/company:** `companyinformation`</span><span class="sxs-lookup"><span data-stu-id="ed465-121">**/company:** `companyinformation`</span></span>|<span data-ttu-id="ed465-122">出力アセンブリに会社情報を追加します。</span><span class="sxs-lookup"><span data-stu-id="ed465-122">Adds company information to the output assembly.</span></span>|  
+|<span data-ttu-id="ed465-123">**/copyright:** `copyrightinformation`</span><span class="sxs-lookup"><span data-stu-id="ed465-123">**/copyright:** `copyrightinformation`</span></span>|<span data-ttu-id="ed465-124">出力アセンブリに著作権情報を追加します。</span><span class="sxs-lookup"><span data-stu-id="ed465-124">Adds copyright information to the output assembly.</span></span> <span data-ttu-id="ed465-125">この情報は、アセンブリの **[ファイルのプロパティ]** ダイアログ ボックスで確認できます。</span><span class="sxs-lookup"><span data-stu-id="ed465-125">This information can be viewed in the **File Properties** dialog box for the assembly.</span></span>|  
+|<span data-ttu-id="ed465-126">**/delaysign**</span><span class="sxs-lookup"><span data-stu-id="ed465-126">**/delaysign**</span></span>|<span data-ttu-id="ed465-127">Tlbimp.exe が遅延署名を使用して、生成されたアセンブリに厳密な名前で署名するように指定します。</span><span class="sxs-lookup"><span data-stu-id="ed465-127">Specifies to Tlbimp.exe to sign the resulting assembly with a strong name using delayed signing.</span></span> <span data-ttu-id="ed465-128">このオプションは、**/keycontainer:**、**/keyfile:**、または **/publickey:** のいずれかのオプションと共に指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed465-128">You must specify this option with either the **/keycontainer:**, **/keyfile:**, or **/publickey:** option.</span></span> <span data-ttu-id="ed465-129">遅延署名プロセスの詳細については、「[アセンブリへの遅延署名](../../../docs/framework/app-domains/delay-sign-assembly.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ed465-129">For more information on the delayed signing process, see [Delay Signing an Assembly](../../../docs/framework/app-domains/delay-sign-assembly.md).</span></span>|  
+|<span data-ttu-id="ed465-130">**/help**</span><span class="sxs-lookup"><span data-stu-id="ed465-130">**/help**</span></span>|<span data-ttu-id="ed465-131">このツールのコマンド構文とオプションを表示します。</span><span class="sxs-lookup"><span data-stu-id="ed465-131">Displays command syntax and options for the tool.</span></span>|  
+|<span data-ttu-id="ed465-132">**/keycontainer:** *containername*</span><span class="sxs-lookup"><span data-stu-id="ed465-132">**/keycontainer:** *containername*</span></span>|<span data-ttu-id="ed465-133">*containername* で指定されたキー コンテナーの公開キーと秘密キーのペアを使用して、生成されたアセンブリに厳密な名前で署名します。</span><span class="sxs-lookup"><span data-stu-id="ed465-133">Signs the resulting assembly with a strong name using the public/private key pair found in the key container specified by *containername*.</span></span>|  
+|<span data-ttu-id="ed465-134">**/keyfile:** *filename*</span><span class="sxs-lookup"><span data-stu-id="ed465-134">**/keyfile:** *filename*</span></span>|<span data-ttu-id="ed465-135">*filename* にある発行者の正式な公開キーと秘密キーのペアを使用して、生成されたアセンブリに厳密な名前で署名します。</span><span class="sxs-lookup"><span data-stu-id="ed465-135">Signs the resulting assembly with a strong name using the publisher's official public/private key pair found in *filename*.</span></span>|  
+|<span data-ttu-id="ed465-136">**/machine:** `machinetype`</span><span class="sxs-lookup"><span data-stu-id="ed465-136">**/machine:** `machinetype`</span></span>|<span data-ttu-id="ed465-137">指定したコンピューターの種類 (マイクロプロセッサ) を対象とするアセンブリを作成します。</span><span class="sxs-lookup"><span data-stu-id="ed465-137">Creates an assembly that targets the specified machine type (microprocessor).</span></span> <span data-ttu-id="ed465-138">サポートされているコンピューターの種類は、x86、x64、Itanium、および「不明」です。</span><span class="sxs-lookup"><span data-stu-id="ed465-138">Supported machine types: x86, x64, Itanium, and Agnostic.</span></span>|  
+|<span data-ttu-id="ed465-139">**/namespace:** *namespace*</span><span class="sxs-lookup"><span data-stu-id="ed465-139">**/namespace:** *namespace*</span></span>|<span data-ttu-id="ed465-140">アセンブリの生成先の名前空間を指定します。</span><span class="sxs-lookup"><span data-stu-id="ed465-140">Specifies the namespace in which to produce the assembly.</span></span>|  
+|<span data-ttu-id="ed465-141">**/noclassmembers**</span><span class="sxs-lookup"><span data-stu-id="ed465-141">**/noclassmembers**</span></span>|<span data-ttu-id="ed465-142">Tlbimp.exe がメンバーをクラスに追加できないようにします。</span><span class="sxs-lookup"><span data-stu-id="ed465-142">Prevents Tlbimp.exe from adding members to classes.</span></span> <span data-ttu-id="ed465-143">これにより、<xref:System.TypeLoadException> が発生する可能性がなくなります。</span><span class="sxs-lookup"><span data-stu-id="ed465-143">This avoids a potential <xref:System.TypeLoadException>.</span></span>|  
+|<span data-ttu-id="ed465-144">**/nologo**</span><span class="sxs-lookup"><span data-stu-id="ed465-144">**/nologo**</span></span>|<span data-ttu-id="ed465-145">Microsoft 著作権情報を表示しません。</span><span class="sxs-lookup"><span data-stu-id="ed465-145">Suppresses the Microsoft startup banner display.</span></span>|  
+|<span data-ttu-id="ed465-146">**/out:** *filename*</span><span class="sxs-lookup"><span data-stu-id="ed465-146">**/out:** *filename*</span></span>|<span data-ttu-id="ed465-147">メタデータ定義の書き込み先の出力ファイル、アセンブリ、および名前空間の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="ed465-147">Specifies the name of the output file, assembly, and namespace in which to write the metadata definitions.</span></span> <span data-ttu-id="ed465-148">アセンブリの名前空間を明示的に制御するインターフェイス定義言語 (IDL: Interface Definition Language) カスタム属性がタイプ ライブラリで指定されている場合、**/out** オプションはアセンブリの名前空間を制御できません。</span><span class="sxs-lookup"><span data-stu-id="ed465-148">The **/out** option has no effect on the assembly's namespace if the type library specifies the Interface Definition Language (IDL) custom attribute that explicitly controls the assembly's namespace.</span></span> <span data-ttu-id="ed465-149">このオプションを指定しない場合、Tlbimp.exe は、入力ファイルで定義された実際のタイプ ライブラリと同じ名前のファイルにメタデータを書き込み、そのファイルに .dll 拡張子を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="ed465-149">If you do not specify this option, Tlbimp.exe writes the metadata to a file with the same name as the actual type library defined within the input file and assigns it a .dll extension.</span></span> <span data-ttu-id="ed465-150">出力ファイルの名前が入力ファイルと同じ場合は、タイプ ライブラリが上書きされるのを防ぐためにエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="ed465-150">If the output file is the same name as the input file, the tool generates an error to prevent overwriting the type library.</span></span>|  
+|<span data-ttu-id="ed465-151">**/primary**</span><span class="sxs-lookup"><span data-stu-id="ed465-151">**/primary**</span></span>|<span data-ttu-id="ed465-152">指定したタイプ ライブラリのプライマリ相互運用機能アセンブリを生成します。</span><span class="sxs-lookup"><span data-stu-id="ed465-152">Produces a primary interop assembly for the specified type library.</span></span> <span data-ttu-id="ed465-153">アセンブリに追加される情報は、アセンブリを生成したタイプ ライブラリの発行者を示します。</span><span class="sxs-lookup"><span data-stu-id="ed465-153">Information is added to the assembly indicating that the publisher of the type library produced the assembly.</span></span> <span data-ttu-id="ed465-154">プライマリ相互運用機能アセンブリを指定すると、Tlbimp.exe を使用して、ある発行者のアセンブリとタイプ ライブラリから作成された他のアセンブリを区別します。</span><span class="sxs-lookup"><span data-stu-id="ed465-154">By specifying a primary interop assembly, you differentiate a publisher's assembly from any other assemblies that are created from the type library using Tlbimp.exe.</span></span> <span data-ttu-id="ed465-155">Tlbimp.exe を使用してインポートするタイプ ライブラリの発行者である場合は、**/primary** オプションを使用してください。</span><span class="sxs-lookup"><span data-stu-id="ed465-155">You should only use the **/primary** option if you are the publisher of the type library that you are importing with Tlbimp.exe.</span></span> <span data-ttu-id="ed465-156">プライマリ相互運用機能アセンブリには、[厳密な名前](../../../docs/framework/app-domains/strong-named-assemblies.md)で署名する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed465-156">Note that you must sign a primary interop assembly with a [strong name](../../../docs/framework/app-domains/strong-named-assemblies.md).</span></span> <span data-ttu-id="ed465-157">詳細については、「[プライマリ相互運用機能アセンブリ](http://msdn.microsoft.com/en-us/b977a8be-59a0-40a0-a806-b11ffba5c080)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ed465-157">For more information, see [Primary Interop Assemblies](http://msdn.microsoft.com/en-us/b977a8be-59a0-40a0-a806-b11ffba5c080).</span></span>|  
+|<span data-ttu-id="ed465-158">**/product:** `productinformation`</span><span class="sxs-lookup"><span data-stu-id="ed465-158">**/product:** `productinformation`</span></span>|<span data-ttu-id="ed465-159">出力アセンブリに製品情報を追加します。</span><span class="sxs-lookup"><span data-stu-id="ed465-159">Adds product information to the output assembly.</span></span> <span data-ttu-id="ed465-160">この情報は、アセンブリの **[ファイルのプロパティ]** ダイアログ ボックスで確認できます。</span><span class="sxs-lookup"><span data-stu-id="ed465-160">This information can be viewed in the **File Properties** dialog box for the assembly.</span></span>|  
+|<span data-ttu-id="ed465-161">**/productversion:** `productversioninformation`</span><span class="sxs-lookup"><span data-stu-id="ed465-161">**/productversion:** `productversioninformation`</span></span>|<span data-ttu-id="ed465-162">出力アセンブリにバージョン情報を追加します。</span><span class="sxs-lookup"><span data-stu-id="ed465-162">Adds product version information to the output assembly.</span></span> <span data-ttu-id="ed465-163">形式の制限はありません。</span><span class="sxs-lookup"><span data-stu-id="ed465-163">There are no format restrictions.</span></span> <span data-ttu-id="ed465-164">この情報は、アセンブリの **[ファイルのプロパティ]** ダイアログ ボックスで確認できます。</span><span class="sxs-lookup"><span data-stu-id="ed465-164">This information can be viewed in the **File Properties** dialog box for the assembly.</span></span>|  
+|<span data-ttu-id="ed465-165">**/publickey:** *filename*</span><span class="sxs-lookup"><span data-stu-id="ed465-165">**/publickey:** *filename*</span></span>|<span data-ttu-id="ed465-166">生成されたアセンブリに署名するために使用する公開キーを格納するファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="ed465-166">Specifies the file containing the public key to use to sign the resulting assembly.</span></span> <span data-ttu-id="ed465-167">**/publickey:** オプションの代わりに **/keyfile:** オプションまたは **/keycontainer:** オプションを指定した場合、Tlbimp.exe は、**/keyfile:** または **/keycontainer:** で指定された公開キーと秘密キーのペアから公開キーを生成します。</span><span class="sxs-lookup"><span data-stu-id="ed465-167">If you specify the **/keyfile:** or **/keycontainer:** option instead of **/publickey:**, Tlbimp.exe generates the public key from the public/private key pair supplied with **/keyfile:** or **/keycontainer:**.</span></span> <span data-ttu-id="ed465-168">**/publickey:** オプションを指定すると、テスト キーと遅延署名を使用できます。</span><span class="sxs-lookup"><span data-stu-id="ed465-168">The **/publickey:** option supports test key and delay signing scenarios.</span></span> <span data-ttu-id="ed465-169">ファイルは Sn.exe で生成された形式になります。</span><span class="sxs-lookup"><span data-stu-id="ed465-169">The file is in the format generated by Sn.exe.</span></span> <span data-ttu-id="ed465-170">詳細については、「[厳密名ツール (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)」にある Sn.exe の **-p** オプションの説明を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ed465-170">For more information, see the **-p** option of Sn.exe in [Strong Name Tool (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md).</span></span>|  
+|<span data-ttu-id="ed465-171">**/reference:** *filename*</span><span class="sxs-lookup"><span data-stu-id="ed465-171">**/reference:** *filename*</span></span>|<span data-ttu-id="ed465-172">現在のタイプ ライブラリ以外で定義された型への参照を解決するために使用するアセンブリ ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="ed465-172">Specifies the assembly file to use to resolve references to types defined outside the current type library.</span></span> <span data-ttu-id="ed465-173">**/reference** オプションを指定しない場合、Tlbimp.exe は、インポートされるタイプ ライブラリが参照しているすべての外部タイプ ライブラリを再帰的に自動インポートします。</span><span class="sxs-lookup"><span data-stu-id="ed465-173">If you do not specify the **/reference** option, Tlbimp.exe automatically recursively imports any external type library that the type library being imported references.</span></span> <span data-ttu-id="ed465-174">**/reference** オプションを指定した場合、このツールは、他のタイプ ライブラリをインポートする前に、参照されたアセンブリ内の外部型を解決しようとします。</span><span class="sxs-lookup"><span data-stu-id="ed465-174">If you specify the **/reference** option, the tool attempts to resolve external types in the referenced assemblies before it imports other type libraries.</span></span>|  
+|<span data-ttu-id="ed465-175">**/silence:** `warningnumber`</span><span class="sxs-lookup"><span data-stu-id="ed465-175">**/silence:** `warningnumber`</span></span>|<span data-ttu-id="ed465-176">指定された警告を表示しません。</span><span class="sxs-lookup"><span data-stu-id="ed465-176">Suppresses the display of the specified warning.</span></span> <span data-ttu-id="ed465-177">このオプションは、**/silent** オプションと共に使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="ed465-177">This option cannot be used with **/silent**.</span></span>|  
+|<span data-ttu-id="ed465-178">**/silent**</span><span class="sxs-lookup"><span data-stu-id="ed465-178">**/silent**</span></span>|<span data-ttu-id="ed465-179">成功メッセージを表示しません。</span><span class="sxs-lookup"><span data-stu-id="ed465-179">Suppresses the display of success messages.</span></span> <span data-ttu-id="ed465-180">このオプションは、**/silence** オプションと共に使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="ed465-180">This option cannot be used with **/silence**.</span></span>|  
+|<span data-ttu-id="ed465-181">**/strictref**</span><span class="sxs-lookup"><span data-stu-id="ed465-181">**/strictref**</span></span>|<span data-ttu-id="ed465-182">ツールが現在のアセンブリ内、**/reference** オプションで指定されたアセンブリ内、または登録されているプライマリ相互運用機能アセンブリ (PIA) 内のすべての参照を解決できない場合は、タイプ ライブラリをインポートしません。</span><span class="sxs-lookup"><span data-stu-id="ed465-182">Does not import a type library if the tool cannot resolve all references within the current assembly, the assemblies specified with the **/reference** option, or registered primary interop assemblies (PIAs).</span></span>|  
+|<span data-ttu-id="ed465-183">**/strictref:nopia**</span><span class="sxs-lookup"><span data-stu-id="ed465-183">**/strictref:nopia**</span></span>|<span data-ttu-id="ed465-184">**/strictref** と同じですが、PIA を無視します。</span><span class="sxs-lookup"><span data-stu-id="ed465-184">Same as **/strictref**, but ignores PIAs.</span></span>|  
+|<span data-ttu-id="ed465-185">**/sysarray**</span><span class="sxs-lookup"><span data-stu-id="ed465-185">**/sysarray**</span></span>|<span data-ttu-id="ed465-186">ツールが COM スタイル SafeArray をマネージ <xref:System.Array> 型としてインポートするように指定します。</span><span class="sxs-lookup"><span data-stu-id="ed465-186">Specifies to the tool to import a COM style SafeArray as a managed <xref:System.Array> type.</span></span>|  
+|<span data-ttu-id="ed465-187">**/tlbreference:** *filename*</span><span class="sxs-lookup"><span data-stu-id="ed465-187">**/tlbreference:** *filename*</span></span>|<span data-ttu-id="ed465-188">レジストリを参照せずにタイプ ライブラリ参照を解決する場合に使用するタイプ ライブラリ ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="ed465-188">Specifies the type library file to use to resolve type library references without consulting the registry.</span></span><br /><br /> <span data-ttu-id="ed465-189">このオプションでは、古いタイプ ライブラリの形式の一部が読み込まれないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="ed465-189">Note that this option will not load some older type library formats.</span></span>  <span data-ttu-id="ed465-190">ただし、古いタイプ ライブラリの形式は、レジストリまたは現在のディレクトリから暗黙的に読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="ed465-190">However, you can still load older type library formats implicitly through the registry or current directory.</span></span>|  
+|<span data-ttu-id="ed465-191">**/trademark:** `trademarkinformation`</span><span class="sxs-lookup"><span data-stu-id="ed465-191">**/trademark:** `trademarkinformation`</span></span>|<span data-ttu-id="ed465-192">出力アセンブリに商標情報を追加します。</span><span class="sxs-lookup"><span data-stu-id="ed465-192">Adds trademark information to the output assembly.</span></span> <span data-ttu-id="ed465-193">この情報は、アセンブリの **[ファイルのプロパティ]** ダイアログ ボックスで確認できます。</span><span class="sxs-lookup"><span data-stu-id="ed465-193">This information can be viewed in the **File Properties** dialog box for the assembly.</span></span>|  
+|<span data-ttu-id="ed465-194">**/transform:** *transformname*</span><span class="sxs-lookup"><span data-stu-id="ed465-194">**/transform:** *transformname*</span></span>|<span data-ttu-id="ed465-195">*transformname* パラメーターで指定されたようにメタデータを変換します。</span><span class="sxs-lookup"><span data-stu-id="ed465-195">Transforms metadata as specified by the *transformname* parameter.</span></span><br /><br /> <span data-ttu-id="ed465-196">ディスパッチ専用インターフェイス (dispinterface) のメソッドの [out, retval] パラメーターを戻り値に変換するには、*transformname* パラメーターに **dispret** を指定します。</span><span class="sxs-lookup"><span data-stu-id="ed465-196">Specify **dispret** for the *transformname* parameter to transform [out, retval] parameters of methods on dispatch-only interfaces (dispinterfaces) into return values.</span></span><br /><br /> <span data-ttu-id="ed465-197">このオプションの詳細については、このトピックの下記の例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ed465-197">For more information about this option, see the examples later in this topic.</span></span>|  
+|<span data-ttu-id="ed465-198">**/unsafe**</span><span class="sxs-lookup"><span data-stu-id="ed465-198">**/unsafe**</span></span>|<span data-ttu-id="ed465-199">.NET Framework セキュリティ チェックなしでインターフェイスを生成します。</span><span class="sxs-lookup"><span data-stu-id="ed465-199">Produces interfaces without .NET Framework security checks.</span></span> <span data-ttu-id="ed465-200">この方法で公開されているメソッドを呼び出す場合には、セキュリティ上のリスクが伴います。</span><span class="sxs-lookup"><span data-stu-id="ed465-200">Calling a method that is exposed in this way might pose a security risk.</span></span> <span data-ttu-id="ed465-201">このオプションは、上記に該当するコードを公開するリスクを理解した上で使用してください。</span><span class="sxs-lookup"><span data-stu-id="ed465-201">You should not use this option unless you are aware of the risks of exposing such code.</span></span>|  
+|<span data-ttu-id="ed465-202">**/verbose**</span><span class="sxs-lookup"><span data-stu-id="ed465-202">**/verbose**</span></span>|<span data-ttu-id="ed465-203">詳細モードを指定します。インポートされたタイプ ライブラリについての詳細情報を表示します。</span><span class="sxs-lookup"><span data-stu-id="ed465-203">Specifies verbose mode; displays additional information about the imported type library.</span></span>|  
+|<span data-ttu-id="ed465-204">**/VariantBoolFieldToBool**</span><span class="sxs-lookup"><span data-stu-id="ed465-204">**/VariantBoolFieldToBool**</span></span>|<span data-ttu-id="ed465-205">構造体の `VARIANT_BOOL` フィールドを <xref:System.Boolean> に変換します。</span><span class="sxs-lookup"><span data-stu-id="ed465-205">Converts `VARIANT_BOOL` fields in structures to <xref:System.Boolean>.</span></span>|  
+|<span data-ttu-id="ed465-206">**/?**</span><span class="sxs-lookup"><span data-stu-id="ed465-206">**/?**</span></span>|<span data-ttu-id="ed465-207">このツールのコマンド構文とオプションを表示します。</span><span class="sxs-lookup"><span data-stu-id="ed465-207">Displays command syntax and options for the tool.</span></span>|  
   
 > [!NOTE]
->  Tlbimp.exe のコマンド ライン オプションでは、大文字と小文字が区別されません。また、これらのオプションは任意の順序で指定できます。 オプションを一意に識別するために十分である場合は、オプションの一部を指定するだけでもかまいません。 したがって、**/n** と指定した場合は **/nologo**、**/ou:** *outfile.dll* と指定した場合は **/out:** *outfile.dll* であると見なされます。  
+>  <span data-ttu-id="ed465-208">Tlbimp.exe のコマンド ライン オプションでは、大文字と小文字が区別されません。また、これらのオプションは任意の順序で指定できます。</span><span class="sxs-lookup"><span data-stu-id="ed465-208">The command-line options for Tlbimp.exe are case-insensitive and can be supplied in any order.</span></span> <span data-ttu-id="ed465-209">オプションを一意に識別するために十分である場合は、オプションの一部を指定するだけでもかまいません。</span><span class="sxs-lookup"><span data-stu-id="ed465-209">You only need to specify enough of the option to uniquely identify it.</span></span> <span data-ttu-id="ed465-210">したがって、**/n** と指定した場合は **/nologo**、**/ou:** *outfile.dll* と指定した場合は **/out:** *outfile.dll* であると見なされます。</span><span class="sxs-lookup"><span data-stu-id="ed465-210">Therefore, **/n** is equivalent to **/nologo** and **/ou:** *outfile.dll* is equivalent to **/out:** *outfile.dll*.</span></span>  
   
-## <a name="remarks"></a>コメント  
- Tlbimp.exe は、タイプ ライブラリ全体の変換を一括して実行します。 このツールを使用しても、単一のタイプ ライブラリで定義されている型のサブセットに関する型情報は生成できません。  
+## <a name="remarks"></a><span data-ttu-id="ed465-211">コメント</span><span class="sxs-lookup"><span data-stu-id="ed465-211">Remarks</span></span>  
+ <span data-ttu-id="ed465-212">Tlbimp.exe は、タイプ ライブラリ全体の変換を一括して実行します。</span><span class="sxs-lookup"><span data-stu-id="ed465-212">Tlbimp.exe performs conversions on an entire type library at one time.</span></span> <span data-ttu-id="ed465-213">このツールを使用しても、単一のタイプ ライブラリで定義されている型のサブセットに関する型情報は生成できません。</span><span class="sxs-lookup"><span data-stu-id="ed465-213">You cannot use the tool to generate type information for a subset of the types defined within a single type library.</span></span>  
   
- アセンブリへの[厳密な名前](../../../docs/framework/app-domains/strong-named-assemblies.md)の割り当てを許可しておくと、さまざまな場合に役立ちます。この割り当てが必須であることもあります。 このため、Tlbimp.exe には、厳密な名前を持つアセンブリを生成するために必要な情報を提供するオプションが用意されています。 **/keyfile:** オプションと **/keycontainer:** オプションは、両方ともアセンブリに厳密な名前で署名します。 したがって、これらのオプションを両方同時に指定しないでください。  
+ <span data-ttu-id="ed465-214">アセンブリへの[厳密な名前](../../../docs/framework/app-domains/strong-named-assemblies.md)の割り当てを許可しておくと、さまざまな場合に役立ちます。この割り当てが必須であることもあります。</span><span class="sxs-lookup"><span data-stu-id="ed465-214">It is often useful or necessary to be able to assign [strong names](../../../docs/framework/app-domains/strong-named-assemblies.md) to assemblies.</span></span> <span data-ttu-id="ed465-215">このため、Tlbimp.exe には、厳密な名前を持つアセンブリを生成するために必要な情報を提供するオプションが用意されています。</span><span class="sxs-lookup"><span data-stu-id="ed465-215">Therefore, Tlbimp.exe includes options for supplying the information necessary to generate strongly named assemblies.</span></span> <span data-ttu-id="ed465-216">**/keyfile:** オプションと **/keycontainer:** オプションは、両方ともアセンブリに厳密な名前で署名します。</span><span class="sxs-lookup"><span data-stu-id="ed465-216">Both the **/keyfile:** and **/keycontainer:** options sign assemblies with strong names.</span></span> <span data-ttu-id="ed465-217">したがって、これらのオプションを両方同時に指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="ed465-217">Therefore, it is logical to supply only one of these options at a time.</span></span>  
   
- **/reference** オプションを複数回使用すると、複数の参照アセンブリを指定できます。  
+ <span data-ttu-id="ed465-218">**/reference** オプションを複数回使用すると、複数の参照アセンブリを指定できます。</span><span class="sxs-lookup"><span data-stu-id="ed465-218">You can specify multiple reference assemblies by using the **/reference** option multiple times.</span></span>  
   
- 複数のタイプ ライブラリを格納するモジュールから 1 つのタイプ ライブラリをインポートするときに、タイプ ライブラリ ファイルにリソース ID を追加することもできます。 Tlbimp.exe は、このファイルが現在のディレクトリにあるか、ユーザーが完全パスを指定した場合にだけこのファイルを認識できます。 このトピックの下記の例を参照してください。  
+ <span data-ttu-id="ed465-219">複数のタイプ ライブラリを格納するモジュールから 1 つのタイプ ライブラリをインポートするときに、タイプ ライブラリ ファイルにリソース ID を追加することもできます。</span><span class="sxs-lookup"><span data-stu-id="ed465-219">A resource ID can optionally be appended to a type library file when importing a type library from a module containing multiple type libraries.</span></span> <span data-ttu-id="ed465-220">Tlbimp.exe は、このファイルが現在のディレクトリにあるか、ユーザーが完全パスを指定した場合にだけこのファイルを認識できます。</span><span class="sxs-lookup"><span data-stu-id="ed465-220">Tlbimp.exe is able to locate this file only if it is in the current directory or if you specify the full path.</span></span> <span data-ttu-id="ed465-221">このトピックの下記の例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ed465-221">See the example later in this topic.</span></span>  
   
-## <a name="examples"></a>例  
- `myTest.tlb` 内で見つかったタイプ ライブラリと同じ名前で、.dll 拡張子を持つアセンブリを生成するコマンドを次に示します。  
+## <a name="examples"></a><span data-ttu-id="ed465-222">例</span><span class="sxs-lookup"><span data-stu-id="ed465-222">Examples</span></span>  
+ <span data-ttu-id="ed465-223">`myTest.tlb` 内で見つかったタイプ ライブラリと同じ名前で、.dll 拡張子を持つアセンブリを生成するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="ed465-223">The following command generates an assembly with the same name as the type library found in `myTest.tlb` and with the .dll extension.</span></span>  
   
 ```  
 tlbimp myTest.tlb   
 ```  
   
- `myTest.dll` という名前を持つアセンブリを生成するコマンドを次に示します。  
+ <span data-ttu-id="ed465-224">`myTest.dll` という名前を持つアセンブリを生成するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="ed465-224">The following command generates an assembly with the name `myTest.dll`.</span></span>  
   
 ```  
 tlbimp  myTest.tlb  /out:myTest.dll  
 ```  
   
- `MyModule.dll\1` で指定されているタイプ ライブラリと同じ名前で、.dll 拡張子を持つアセンブリを生成するコマンドを次に示します。 `MyModule.dll\1` は現在のディレクトリ内に置かれている必要があります。  
+ <span data-ttu-id="ed465-225">`MyModule.dll\1` で指定されているタイプ ライブラリと同じ名前で、.dll 拡張子を持つアセンブリを生成するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="ed465-225">The following command generates an assembly with the same name as the type library specified by `MyModule.dll\1` and with the .dll extension.</span></span> <span data-ttu-id="ed465-226">`MyModule.dll\1` は現在のディレクトリ内に置かれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed465-226">`MyModule.dll\1` must be located in the current directory.</span></span>  
   
 ```  
 tlbimp MyModule.dll\1  
 ```  
   
- タイプ ライブラリ `myTestLib.dll` に対して、`TestLib.dll` という名前のアセンブリを生成するコマンドを次に示します。 **/transform:dispret** オプションは、タイプ ライブラリのディスパッチ インターフェイスに対するメソッドの [out, retval] パラメーターをマネージ ライブラリの戻り値に変換します。  
+ <span data-ttu-id="ed465-227">タイプ ライブラリ `myTestLib.dll` に対して、`TestLib.dll` という名前のアセンブリを生成するコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="ed465-227">The following command generates an assembly with the name `myTestLib.dll` for the type library `TestLib.dll`.</span></span> <span data-ttu-id="ed465-228">**/transform:dispret** オプションは、タイプ ライブラリのディスパッチ インターフェイスに対するメソッドの [out, retval] パラメーターをマネージ ライブラリの戻り値に変換します。</span><span class="sxs-lookup"><span data-stu-id="ed465-228">The **/transform:dispret** option transforms any [out, retval] parameters of methods on dispinterfaces in the type library into return values in the managed library.</span></span>  
   
 ```  
 tlbimp TestLib.dll /transform:dispret /out:myTestLib.dll  
 ```  
   
- 上記の例のタイプ ライブラリ `TestLib.dll` には、void 型を返し、[out, retval] パラメーターを持つ、`SomeMethod` という名前のディスパッチ インターフェイス メソッドが含まれています。 `SomeMethod` の `TestLib.dll` に対する入力タイプ ライブラリ メソッド シグネチャのコードを次に示します。  
+ <span data-ttu-id="ed465-229">上記の例のタイプ ライブラリ `TestLib.dll` には、void 型を返し、[out, retval] パラメーターを持つ、`SomeMethod` という名前のディスパッチ インターフェイス メソッドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="ed465-229">The type library `TestLib.dll`, in the preceding example, includes a dispinterface method named `SomeMethod` that returns void and has an [out, retval] parameter.</span></span> <span data-ttu-id="ed465-230">`SomeMethod` の `TestLib.dll` に対する入力タイプ ライブラリ メソッド シグネチャのコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="ed465-230">The following code is the input type library method signature for `SomeMethod` in `TestLib.dll`.</span></span>  
   
 ```  
 void SomeMethod([out, retval] VARIANT_BOOL*);  
 ```  
   
- **/transform:dispret** オプションを指定すると、Tlbimp.exe は、`SomeMethod` の `[out, retval]` パラメーターを `bool` 型の戻り値に変換します。 **/transform:dispret** オプションを指定した場合に、Tlbimp.exe が、マネージ ライブラリ `myTestLib.dll` で `SomeMethod` に対して生成するメソッド シグネチャを次に示します。  
+ <span data-ttu-id="ed465-231">**/transform:dispret** オプションを指定すると、Tlbimp.exe は、`SomeMethod` の `[out, retval]` パラメーターを `bool` 型の戻り値に変換します。</span><span class="sxs-lookup"><span data-stu-id="ed465-231">Specifying the **/transform:dispret** option causes Tlbimp.exe to transform the `[out, retval]` parameter of `SomeMethod` into a `bool` return value.</span></span> <span data-ttu-id="ed465-232">**/transform:dispret** オプションを指定した場合に、Tlbimp.exe が、マネージ ライブラリ `myTestLib.dll` で `SomeMethod` に対して生成するメソッド シグネチャを次に示します。</span><span class="sxs-lookup"><span data-stu-id="ed465-232">The following is the method signature that Tlbimp.exe produces for `SomeMethod` in the managed library `myTestLib.dll` when the **/transform:dispret** option is specified.</span></span>  
   
 ```csharp  
 bool SomeMethod();  
 ```  
   
- Tlbimp.exe を使用して、**/transform:dispret** を指定せずに `TestLib.dll` のマネージ ライブラリを生成すると、マネージ ライブラリ `myTestLib.dll` には `SomeMethod` の次のメソッド シグネチャが生成されます。  
+ <span data-ttu-id="ed465-233">Tlbimp.exe を使用して、**/transform:dispret** を指定せずに `TestLib.dll` のマネージ ライブラリを生成すると、マネージ ライブラリ `myTestLib.dll` には `SomeMethod` の次のメソッド シグネチャが生成されます。</span><span class="sxs-lookup"><span data-stu-id="ed465-233">If you use Tlbimp.exe to produce a managed library for `TestLib.dll` without specifying the **/transform:dispret**, the tool produces the following method signature for `SomeMethod` in the managed library `myTestLib.dll`.</span></span>  
   
 ```csharp  
 void SomeMethod(out bool x);  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [ツール](../../../docs/framework/tools/index.md)   
- [Tlbexp.exe (タイプ ライブラリ エクスポーター)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)   
- [タイプ ライブラリのアセンブリとしてのインポート](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)   
- [タイプ ライブラリからアセンブリへの変換の要約](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)   
- [Ildasm.exe (IL 逆アセンブラー)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)   
- [Sn.exe (厳密名ツール)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)   
- [厳密な名前付きアセンブリ](../../../docs/framework/app-domains/strong-named-assemblies.md)   
- [タイプ ライブラリを相互運用機能アセンブリにインポートするための属性](http://msdn.microsoft.com/en-us/81e587b8-393f-43e1-9add-c4b05e65cbfd)   
- [コマンド プロンプト](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-
+## <a name="see-also"></a><span data-ttu-id="ed465-234">関連項目</span><span class="sxs-lookup"><span data-stu-id="ed465-234">See Also</span></span>  
+ [<span data-ttu-id="ed465-235">ツール</span><span class="sxs-lookup"><span data-stu-id="ed465-235">Tools</span></span>](../../../docs/framework/tools/index.md)  
+ [<span data-ttu-id="ed465-236">Tlbexp.exe (タイプ ライブラリ エクスポーター)</span><span class="sxs-lookup"><span data-stu-id="ed465-236">Tlbexp.exe (Type Library Exporter)</span></span>](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)  
+ [<span data-ttu-id="ed465-237">タイプ ライブラリのアセンブリとしてのインポート</span><span class="sxs-lookup"><span data-stu-id="ed465-237">Importing a Type Library as an Assembly</span></span>](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)  
+ [<span data-ttu-id="ed465-238">タイプ ライブラリからアセンブリへの変換の要約</span><span class="sxs-lookup"><span data-stu-id="ed465-238">Type Library to Assembly Conversion Summary</span></span>](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)  
+ [<span data-ttu-id="ed465-239">Ildasm.exe (IL 逆アセンブラー)</span><span class="sxs-lookup"><span data-stu-id="ed465-239">Ildasm.exe (IL Disassembler)</span></span>](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)  
+ [<span data-ttu-id="ed465-240">Sn.exe (厳密名ツール)</span><span class="sxs-lookup"><span data-stu-id="ed465-240">Sn.exe (Strong Name Tool)</span></span>](../../../docs/framework/tools/sn-exe-strong-name-tool.md)  
+ [<span data-ttu-id="ed465-241">厳密な名前付きアセンブリ</span><span class="sxs-lookup"><span data-stu-id="ed465-241">Strong-Named Assemblies</span></span>](../../../docs/framework/app-domains/strong-named-assemblies.md)  
+ [<span data-ttu-id="ed465-242">相互運用機能アセンブリにタイプ ライブラリをインポートするための属性</span><span class="sxs-lookup"><span data-stu-id="ed465-242">Attributes for Importing Type Libraries into Interop Assemblies</span></span>](http://msdn.microsoft.com/en-us/81e587b8-393f-43e1-9add-c4b05e65cbfd)  
+ [<span data-ttu-id="ed465-243">コマンド プロンプト</span><span class="sxs-lookup"><span data-stu-id="ed465-243">Command Prompts</span></span>](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

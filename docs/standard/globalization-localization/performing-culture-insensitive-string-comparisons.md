@@ -1,47 +1,53 @@
 ---
-title: "カルチャを認識しない文字列比較の実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "culture パラメーター"
-  - "カルチャを認識しない文字列操作, 比較"
-  - "文字列比較 [.NET Framework], カルチャを認識しない"
-  - "String.Compare メソッド"
-  - "String.CompareTo メソッド"
-  - "文字列 [.NET Framework], 比較"
+title: "カルチャを認識しない文字列比較の実行"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- String.CompareTo method
+- String.Compare method
+- string comparison [.NET Framework], culture-insensitive
+- strings [.NET Framework], comparing
+- culture-insensitive string operations, comparisons
+- culture parameter
 ms.assetid: abae50ef-32f7-4a50-a540-fd256fd1aed0
-caps.latest.revision: 23
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 980b4ac515deaaedb1ab7e240e8f110a5fd0d51c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# カルチャを認識しない文字列比較の実行
-既定では、<xref:System.String.Compare%2A?displayProperty=fullName> メソッドはカルチャを認識し、大文字と小文字を区別する比較を実行します。  また、このメソッドには、使用するカルチャを `culture` パラメーターで指定し、使用する比較規則を `comparisonType` パラメーターで指定できる、複数のオーバーロードが含まれています。  既定のオーバーロードの代わりにこれらのメソッドを呼び出すと、特定のメソッド呼び出しで使用する規則に関するあいまいさが解消され、特定の比較がカルチャに依存するかどうかが明確になります。  
+# <a name="performing-culture-insensitive-string-comparisons"></a><span data-ttu-id="6a98f-102">カルチャを認識しない文字列比較の実行</span><span class="sxs-lookup"><span data-stu-id="6a98f-102">Performing Culture-Insensitive String Comparisons</span></span>
+<span data-ttu-id="6a98f-103">既定では、<xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドはカルチャを認識し、大文字と小文字を区別する比較を実行します。</span><span class="sxs-lookup"><span data-stu-id="6a98f-103">By default, the <xref:System.String.Compare%2A?displayProperty=nameWithType> method performs culture-sensitive and case-sensitive comparisons.</span></span> <span data-ttu-id="6a98f-104">また、このメソッドには、使用するカルチャを `culture` パラメーターで指定し、使用する比較規則を `comparisonType` パラメーターで指定できる、複数のオーバーロードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="6a98f-104">This method also includes several overloads that provide a `culture` parameter that lets you specify the culture to use, and a `comparisonType` parameter that lets you specify the comparison rules to use.</span></span> <span data-ttu-id="6a98f-105">既定のオーバーロードの代わりにこれらのメソッドを呼び出すと、特定のメソッド呼び出しで使用する規則に関するあいまいさが解消され、特定の比較がカルチャに依存するかどうかが明確になります。</span><span class="sxs-lookup"><span data-stu-id="6a98f-105">Calling these methods instead of the default overload removes any ambiguity about the rules used in a particular method call, and makes it clear whether a particular comparison is culture-sensitive or culture-insensitive.</span></span>  
   
 > [!NOTE]
->  <xref:System.String.CompareTo%2A?displayProperty=fullName> メソッドの両方のオーバーロードでは、カルチャに依存した比較と大文字と小文字を区別する比較を実行します。このメソッドを使用してカルチャに依存しない比較を実行することはできません。  コードをわかりやすくするために、<xref:System.String.Compare%2A?displayProperty=fullName> メソッドを代わりに使用することをお勧めします。  
+>  <span data-ttu-id="6a98f-106"><xref:System.String.CompareTo%2A?displayProperty=nameWithType> メソッドの両方のオーバーロードでは、カルチャに依存した比較と大文字と小文字を区別する比較を実行します。このメソッドを使用してカルチャに依存しない比較を実行することはできません。</span><span class="sxs-lookup"><span data-stu-id="6a98f-106">Both overloads of the <xref:System.String.CompareTo%2A?displayProperty=nameWithType> method perform culture-sensitive and case-sensitive comparisons; you cannot use this method to perform culture-insensitive comparisons.</span></span> <span data-ttu-id="6a98f-107">コードをわかりやすくするために、<xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドを代わりに使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="6a98f-107">For code clarity, we recommend that you use the <xref:System.String.Compare%2A?displayProperty=nameWithType> method instead.</span></span>  
   
- カルチャに依存する操作の場合は、`comparisonType` パラメーターとして <xref:System.StringComparison?displayProperty=fullName> 列挙値または <xref:System.StringComparison?displayProperty=fullName> 列挙値を指定します。  現在のカルチャ以外の指定されたカルチャを使用して、カルチャに依存した比較を実行する場合は、 パラメーターとして、そのカルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトを指定します。  
+ <span data-ttu-id="6a98f-108">カルチャに依存する操作の場合は、<xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType> パラメーターとして <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> 列挙値または `comparisonType` 列挙値を指定します。</span><span class="sxs-lookup"><span data-stu-id="6a98f-108">For culture-sensitive operations, specify the <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType> or <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> enumeration value as the `comparisonType` parameter.</span></span> <span data-ttu-id="6a98f-109">現在のカルチャ以外の指定されたカルチャを使用して、カルチャに依存した比較を実行するには、指定する場合、<xref:System.Globalization.CultureInfo>としてカルチャを表すオブジェクト、`culture`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="6a98f-109">If you want to perform a culture-sensitive comparison using a designated culture other than the current culture, specify the <xref:System.Globalization.CultureInfo> object that represents that culture as the `culture` parameter.</span></span>  
   
- <xref:System.String.Compare%2A?displayProperty=fullName> メソッドでサポートされている、カルチャに依存しない文字列比較は、言語的な比較 \(インバリアント カルチャの並べ替え規則に基づきます\) または非言語的な比較 \(文字列内の文字の序数値に基づきます\) です。  カルチャに依存しないほとんどの文字列比較は非言語的な比較です。  このような比較の場合は、`comparisonType` パラメーターとして <xref:System.StringComparison?displayProperty=fullName> 列挙値または <xref:System.StringComparison?displayProperty=fullName> 列挙値を指定します。  たとえば、セキュリティに関する決定 \(ユーザー名やパスワードの比較など\) が文字列比較の結果に基づいて行われる場合は、この操作をカルチャに依存しない非言語的な比較に指定して、操作の結果が特定のカルチャまたは言語の規則に影響されないようにする必要があります  
+ <span data-ttu-id="6a98f-110"><xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドでサポートされている、カルチャに依存しない文字列比較は、言語的な比較 (インバリアント カルチャの並べ替え規則に基づきます) または非言語的な比較 (文字列内の文字の序数値に基づきます) です。</span><span class="sxs-lookup"><span data-stu-id="6a98f-110">The culture-insensitive string comparisons supported by the <xref:System.String.Compare%2A?displayProperty=nameWithType> method are either linguistic (based on the sorting conventions of the invariant culture) or non-linguistic (based on the ordinal value of the characters in the string).</span></span> <span data-ttu-id="6a98f-111">カルチャに依存しないほとんどの文字列比較は非言語的な比較です。</span><span class="sxs-lookup"><span data-stu-id="6a98f-111">Most culture-insensitive string comparisons are non-linguistic.</span></span> <span data-ttu-id="6a98f-112">このような比較の場合は、<xref:System.StringComparison.Ordinal?displayProperty=nameWithType> パラメーターとして <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> 列挙値または `comparisonType` 列挙値を指定します。</span><span class="sxs-lookup"><span data-stu-id="6a98f-112">For these comparisons, specify the <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> or <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> enumeration value as the `comparisonType` parameter.</span></span> <span data-ttu-id="6a98f-113">たとえば、セキュリティに関する決定 (ユーザー名やパスワードの比較など) が文字列比較の結果に基づいて行われる場合は、この操作をカルチャに依存しない非言語的な比較に指定して、操作の結果が特定のカルチャまたは言語の規則に影響されないようにする必要があります </span><span class="sxs-lookup"><span data-stu-id="6a98f-113">For example, if a security decision (such as a user name or password comparison) is based on the result of a string comparison, the operation should be culture-insensitive and non-linguistic to ensure that the result is not affected by the conventions of a particular culture or language.</span></span>  
   
- 複数のカルチャからの対応する文字列を一貫した方法で言語的に処理する場合は、カルチャに依存しない言語的な文字列比較を使用します。  たとえば、アプリケーションのリスト ボックスに表示する単語の一覧で複数の文字セットが使用されている場合などに、現在のカルチャに関係なく同じ順序で単語を表示することが必要になります。  カルチャに依存しない言語的な比較用に、英語の言語規則に基づくインバリアント カルチャが .NET Framework によって定義されています。  カルチャに依存しない言語的な比較を実行するには、`comparisonType` パラメーターとして <xref:System.StringComparison?displayProperty=fullName> または <xref:System.StringComparison?displayProperty=fullName> を指定します。  
+ <span data-ttu-id="6a98f-114">複数のカルチャからの対応する文字列を一貫した方法で言語的に処理する場合は、カルチャに依存しない言語的な文字列比較を使用します。</span><span class="sxs-lookup"><span data-stu-id="6a98f-114">Use culture-insensitive linguistic string comparison if you want to handle linguistically relevant strings from multiple cultures in a consistent way.</span></span> <span data-ttu-id="6a98f-115">たとえば、アプリケーションのリスト ボックスに表示する単語の一覧で複数の文字セットが使用されている場合などに、現在のカルチャに関係なく同じ順序で単語を表示することが必要になります。</span><span class="sxs-lookup"><span data-stu-id="6a98f-115">For example, if your application displays words that use multiple character sets in a list box, you might want to display words in the same order regardless of the current culture.</span></span> <span data-ttu-id="6a98f-116">カルチャに依存しない言語的な比較用に、英語の言語規則に基づくインバリアント カルチャが .NET Framework によって定義されています。</span><span class="sxs-lookup"><span data-stu-id="6a98f-116">For culture-insensitive linguistic comparisons, the .NET Framework defines an invariant culture that is based on the linguistic conventions of English.</span></span> <span data-ttu-id="6a98f-117">カルチャに依存しない言語的な比較を実行するには、<xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> パラメーターとして <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType> または `comparisonType` を指定します。</span><span class="sxs-lookup"><span data-stu-id="6a98f-117">To perform a culture-insensitive linguistic comparison, specify <xref:System.StringComparison.InvariantCulture?displayProperty=nameWithType> or <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType> as the `comparisonType` parameter.</span></span>  
   
- 次の例では、カルチャに依存しない 2 つの非言語的な文字列比較を実行します。  最初の例では大文字小文字が区別されますが、2 番目の例では区別されません。  
+ <span data-ttu-id="6a98f-118">次の例では、カルチャに依存しない 2 つの非言語的な文字列比較を実行します。</span><span class="sxs-lookup"><span data-stu-id="6a98f-118">The following example performs two culture-insensitive, non-linguistic string comparisons.</span></span> <span data-ttu-id="6a98f-119">最初の例では大文字小文字が区別されますが、2 番目の例では区別されません。</span><span class="sxs-lookup"><span data-stu-id="6a98f-119">The first is case-sensitive, but the second is not.</span></span>  
   
  [!code-csharp[Conceptual.Strings.CultureInsensitiveComparison#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.cultureinsensitivecomparison/cs/cultureinsensitive1.cs#1)]
  [!code-vb[Conceptual.Strings.CultureInsensitiveComparison#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.cultureinsensitivecomparison/vb/cultureinsensitive1.vb#1)]  
   
-## 参照  
- <xref:System.String.Compare%2A?displayProperty=fullName>   
- <xref:System.String.CompareTo%2A?displayProperty=fullName>   
- [カルチャを認識しない文字列操作の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)   
- [文字列を使用するためのベスト プラクティス](../../../docs/standard/base-types/best-practices-strings.md)
+## <a name="see-also"></a><span data-ttu-id="6a98f-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="6a98f-120">See Also</span></span>  
+ <xref:System.String.Compare%2A?displayProperty=nameWithType>  
+ <xref:System.String.CompareTo%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="6a98f-121">カルチャを認識しない文字列操作の実行</span><span class="sxs-lookup"><span data-stu-id="6a98f-121">Performing Culture-Insensitive String Operations</span></span>](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)  
+ [<span data-ttu-id="6a98f-122">文字列を使用するためのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="6a98f-122">Best Practices for Using Strings</span></span>](../../../docs/standard/base-types/best-practices-strings.md)

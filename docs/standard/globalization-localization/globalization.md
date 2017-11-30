@@ -1,381 +1,381 @@
 ---
-title: "グローバリゼーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "グローバリゼーション [.NET Framework]、グローバリゼーションについて"
-  - "グローバル アプリケーション、グローバリゼーション"
-  - "国際対応のアプリケーション [.NET Framework]、グローバリゼーション"
-  - "国際対応アプリケーション、グローバリゼーション"
-  - "アプリケーション開発 [.NET Framework]、グローバリゼーション"
-  - "カルチャ、グローバリゼーション"
+title: "グローバリゼーション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- globalization [.NET Framework], about globalization
+- global applications, globalization
+- international applications [.NET Framework], globalization
+- world-ready applications, globalization
+- application development [.NET Framework], globalization
+- culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-caps.latest.revision: 15
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: a60284bf2db8f47dd17c04fad5cbd6db4970a8a7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# グローバリゼーション
-グローバリゼーションとは、さまざまな文化圏 \(カルチャ\) のユーザー向けに、ローカライズされたインターフェイスと、その地域に合ったデータをサポートするような、国際対応アプリの設計と開発をいいます。 設計フェーズに着手する前に、アプリでサポートするカルチャを決定してください。 アプリは既定値として 1 つのカルチャまたは地域を対象としますが、別のカルチャまたは地域のユーザーに簡単に拡張できるようにアプリを設計および作成できます。  
+# <a name="globalization"></a><span data-ttu-id="2607c-102">グローバリゼーション</span><span class="sxs-lookup"><span data-stu-id="2607c-102">Globalization</span></span>
+<span data-ttu-id="2607c-103">グローバリゼーションとは、さまざまな文化圏 (カルチャ) のユーザー向けに、ローカライズされたインターフェイスと、その地域に合ったデータをサポートするような、国際対応アプリの設計と開発をいいます。</span><span class="sxs-lookup"><span data-stu-id="2607c-103">Globalization involves designing and developing a world-ready app that supports localized interfaces and regional data for users in multiple cultures.</span></span> <span data-ttu-id="2607c-104">設計フェーズに着手する前に、アプリでサポートするカルチャを決定してください。</span><span class="sxs-lookup"><span data-stu-id="2607c-104">Before beginning the design phase, you should determine which cultures your app will support.</span></span> <span data-ttu-id="2607c-105">アプリは既定値として 1 つのカルチャまたは地域を対象としますが、別のカルチャまたは地域のユーザーに簡単に拡張できるようにアプリを設計および作成できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-105">Although an app targets a single culture or region as its default, you can design and write it so that it can easily be extended to users in other cultures or regions.</span></span>  
   
- 開発者には、自分のカルチャによって形成されるユーザー インターフェイスとデータに関する前提があります。 たとえば、米国の英語圏の開発者は、日付と時刻のデータを形式 `MM/dd/yyyy hh:mm:ss` の文字列としてシリアル化することは、十分理にかなっていると考えます。 ただし、別のカルチャのシステムでその文字列を逆シリアル化すると、<xref:System.FormatException> 例外がスローされるか、正しくないデータが生成される可能性があります。 グローバリゼーションにより、このようなカルチャ固有の前提を識別し、それがアプリの設計またはコードに影響しないようにすることができます。  
+ <span data-ttu-id="2607c-106">開発者には、自分のカルチャによって形成されるユーザー インターフェイスとデータに関する前提があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-106">As developers, we all have assumptions about user interfaces and data that are formed by our cultures.</span></span> <span data-ttu-id="2607c-107">たとえば、米国の英語圏の開発者は、日付と時刻のデータを形式 `MM/dd/yyyy hh:mm:ss` の文字列としてシリアル化することは、十分理にかなっていると考えます。</span><span class="sxs-lookup"><span data-stu-id="2607c-107">For example, for an English-speaking developer in the United States, serializing date and time data as a string in the format `MM/dd/yyyy hh:mm:ss` seems perfectly reasonable.</span></span> <span data-ttu-id="2607c-108">ただし、別のカルチャのシステムでその文字列を逆シリアル化すると、<xref:System.FormatException> 例外がスローされるか、正しくないデータが生成される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-108">However, deserializing that string on a system in a different culture is likely to throw a <xref:System.FormatException> exception or produce inaccurate data.</span></span> <span data-ttu-id="2607c-109">グローバリゼーションにより、このようなカルチャ固有の前提を識別し、それがアプリの設計またはコードに影響しないようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="2607c-109">Globalization enables us to identify such culture-specific assumptions and ensure that they do not affect our app's design or code.</span></span>  
   
- 次のセクションでは、グローバライズされたアプリで文字列、日付と時刻の値、および数値を処理するときに考慮する必要がある重要な問題および使用できるベスト プラクティスについて説明します。  
+ <span data-ttu-id="2607c-110">次のセクションでは、グローバライズされたアプリで文字列、日付と時刻の値、および数値を処理するときに考慮する必要がある重要な問題および使用できるベスト プラクティスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2607c-110">The following sections discuss some of the major issues you should consider and the best practices you can follow when handling strings, date and time values, and numeric values in a globalized app.</span></span>  
   
--   [文字列を処理する](../../../docs/standard/globalization-localization/globalization.md#HandlingStrings)  
+-   [<span data-ttu-id="2607c-111">文字列を処理します。</span><span class="sxs-lookup"><span data-stu-id="2607c-111">Handling Strings</span></span>](../../../docs/standard/globalization-localization/globalization.md#HandlingStrings)  
   
-    -   [Unicode を内部で使用する](../../../docs/standard/globalization-localization/globalization.md#Strings_Unicode)  
+    -   [<span data-ttu-id="2607c-112">Unicode を内部で使用します。</span><span class="sxs-lookup"><span data-stu-id="2607c-112">Use Unicode Internally</span></span>](../../../docs/standard/globalization-localization/globalization.md#Strings_Unicode)  
   
-    -   [リソース ファイルを使用する](../../../docs/standard/globalization-localization/globalization.md#Strings_Resources)  
+    -   [<span data-ttu-id="2607c-113">リソース ファイルの使用</span><span class="sxs-lookup"><span data-stu-id="2607c-113">Use Resource Files</span></span>](../../../docs/standard/globalization-localization/globalization.md#Strings_Resources)  
   
-    -   [文字列を検索して比較する](../../../docs/standard/globalization-localization/globalization.md#Strings_Searching)  
+    -   [<span data-ttu-id="2607c-114">検索して文字列を比較します。</span><span class="sxs-lookup"><span data-stu-id="2607c-114">Searching and Comparing Strings </span></span>](../../../docs/standard/globalization-localization/globalization.md#Strings_Searching)  
   
-    -   [文字列の等価性をテストする](../../../docs/standard/globalization-localization/globalization.md#Strings_Equality)  
+    -   [<span data-ttu-id="2607c-115">等しいかどうかの文字列をテストします。</span><span class="sxs-lookup"><span data-stu-id="2607c-115">Testing Strings for Equality</span></span>](../../../docs/standard/globalization-localization/globalization.md#Strings_Equality)  
   
-    -   [文字列の順序付けと並べ替えを実行する](../../../docs/standard/globalization-localization/globalization.md#Strings_Ordering)  
+    -   [<span data-ttu-id="2607c-116">順序付けと文字列の並べ替え</span><span class="sxs-lookup"><span data-stu-id="2607c-116">Ordering and Sorting Strings </span></span>](../../../docs/standard/globalization-localization/globalization.md#Strings_Ordering)  
   
-    -   [文字列の連結を回避する](../../../docs/standard/globalization-localization/globalization.md#Strings_Concat)  
+    -   [<span data-ttu-id="2607c-117">文字列連結を回避します。</span><span class="sxs-lookup"><span data-stu-id="2607c-117">Avoid String Concatenation</span></span>](../../../docs/standard/globalization-localization/globalization.md#Strings_Concat)  
   
--   [日付と時刻を処理する](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes)  
+-   [<span data-ttu-id="2607c-118">日付と時刻の処理</span><span class="sxs-lookup"><span data-stu-id="2607c-118">Handling Dates and Times</span></span>](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes)  
   
-    -   [日付と時刻を保持する](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Persist)  
+    -   [<span data-ttu-id="2607c-119">永続化する日付と時刻</span><span class="sxs-lookup"><span data-stu-id="2607c-119">Persisting Dates and Times</span></span>](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Persist)  
   
-    -   [日付と時刻を表示する](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Display)  
+    -   [<span data-ttu-id="2607c-120">日付と時刻を表示します。</span><span class="sxs-lookup"><span data-stu-id="2607c-120">Displaying Dates and Times</span></span>](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Display)  
   
-    -   [シリアル化とタイム ゾーンへの対応](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_TimeZones)  
+    -   [<span data-ttu-id="2607c-121">シリアル化とタイム ゾーンに対応</span><span class="sxs-lookup"><span data-stu-id="2607c-121">Serialization and Time Zone Awareness</span></span>](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_TimeZones)  
   
-    -   [日付と時刻の演算を実行する](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Arithmetic)  
+    -   [<span data-ttu-id="2607c-122">日付と時刻の演算を実行します。</span><span class="sxs-lookup"><span data-stu-id="2607c-122">Performing Date and Time Arithmetic</span></span>](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Arithmetic)  
   
--   [数値を処理する](../../../docs/standard/globalization-localization/globalization.md#Numbers)  
+-   [<span data-ttu-id="2607c-123">数値の値の処理</span><span class="sxs-lookup"><span data-stu-id="2607c-123">Handling Numeric Values</span></span>](../../../docs/standard/globalization-localization/globalization.md#Numbers)  
   
-    -   [数値を表示する](../../../docs/standard/globalization-localization/globalization.md#Numbers_Display)  
+    -   [<span data-ttu-id="2607c-124">数値を表示します。</span><span class="sxs-lookup"><span data-stu-id="2607c-124">Displaying Numeric Values</span></span>](../../../docs/standard/globalization-localization/globalization.md#Numbers_Display)  
   
-    -   [数値を保持する](../../../docs/standard/globalization-localization/globalization.md#Numbers_Persist)  
+    -   [<span data-ttu-id="2607c-125">数値を保持します。</span><span class="sxs-lookup"><span data-stu-id="2607c-125">Persisting Numeric Values</span></span>](../../../docs/standard/globalization-localization/globalization.md#Numbers_Persist)  
   
--   [カルチャ固有の設定を使用する](../../../docs/standard/globalization-localization/globalization.md#Cultures)  
+-   [<span data-ttu-id="2607c-126">カルチャに固有の設定の操作</span><span class="sxs-lookup"><span data-stu-id="2607c-126">Working with Culture-Specific Settings</span></span>](../../../docs/standard/globalization-localization/globalization.md#Cultures)  
   
 <a name="HandlingStrings"></a>   
-## 文字列を処理する  
- カルチャまたは地域ごとに異なる文字と文字セットを使用し、異なる方法で並べ替える可能性があるため、文字と文字列の処理は、グローバリゼーションで主な焦点となります。 このセクションでは、グローバライズされたアプリで文字列を使用するための推奨事項について説明します。  
+## <a name="handling-strings"></a><span data-ttu-id="2607c-127">文字列を処理する</span><span class="sxs-lookup"><span data-stu-id="2607c-127">Handling Strings</span></span>  
+ <span data-ttu-id="2607c-128">カルチャまたは地域ごとに異なる文字と文字セットを使用し、異なる方法で並べ替える可能性があるため、文字と文字列の処理は、グローバリゼーションで主な焦点となります。</span><span class="sxs-lookup"><span data-stu-id="2607c-128">The handling of characters and strings is a central focus of globalization, because each culture or region may use different characters and character sets and sort them differently.</span></span> <span data-ttu-id="2607c-129">このセクションでは、グローバライズされたアプリで文字列を使用するための推奨事項について説明します。</span><span class="sxs-lookup"><span data-stu-id="2607c-129">This section provides recommendations for using strings in globalized apps.</span></span>  
   
 <a name="Strings_Unicode"></a>   
-### Unicode を内部で使用する  
- 既定では、.NET Framework では Unicode 文字列を使用します。 Unicode 文字列は、ゼロ個以上の <xref:System.Char> オブジェクトで構成され、それぞれが UTF\-16 コード単位を表します。 世界中で使用されているすべての文字セットのほとんどすべての文字に対して、Unicode 表現があります。  
+### <a name="use-unicode-internally"></a><span data-ttu-id="2607c-130">Unicode を内部で使用する</span><span class="sxs-lookup"><span data-stu-id="2607c-130">Use Unicode Internally</span></span>  
+ <span data-ttu-id="2607c-131">既定では、.NET Framework では Unicode 文字列を使用します。</span><span class="sxs-lookup"><span data-stu-id="2607c-131">By default, the .NET Framework uses Unicode strings.</span></span> <span data-ttu-id="2607c-132">Unicode 文字列は、ゼロ個以上の <xref:System.Char> オブジェクトで構成され、それぞれが UTF-16 コード単位を表します。</span><span class="sxs-lookup"><span data-stu-id="2607c-132">A Unicode string consists of zero, one, or more <xref:System.Char> objects, each of which represents a UTF-16 code unit.</span></span> <span data-ttu-id="2607c-133">世界中で使用されているすべての文字セットのほとんどすべての文字に対して、Unicode 表現があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-133">There is a Unicode representation for almost every character in every character set in use throughout the world.</span></span>  
   
- Windows オペレーティング システムを含む、多くのアプリケーションとオペレーティング システムでは、文字セットを表すためにコード ページを使用できます。 コード ページには、通常、0x00 から 0x7F までの標準 ASCII 値が含まれ、0x80 から 0xFF までの残りの値に他の文字をマップします。 0x80 から 0xFF までの値の解釈は特定のコード ページによって異なります。 このため、可能な場合は、グローバライズされたアプリでコード ページを使用しないようにします。  
+ <span data-ttu-id="2607c-134">Windows オペレーティング システムを含む、多くのアプリケーションとオペレーティング システムでは、文字セットを表すためにコード ページを使用できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-134">Many applications and operating systems, including the Windows operating system, can use also use code pages to represent character sets.</span></span> <span data-ttu-id="2607c-135">コード ページには、通常、0x00 から 0x7F までの標準 ASCII 値が含まれ、0x80 から 0xFF までの残りの値に他の文字をマップします。</span><span class="sxs-lookup"><span data-stu-id="2607c-135">Code pages typically contain the standard ASCII values from 0x00 through 0x7F and map other characters to the remaining values from 0x80 through 0xFF.</span></span> <span data-ttu-id="2607c-136">0x80 から 0xFF までの値の解釈は特定のコード ページによって異なります。</span><span class="sxs-lookup"><span data-stu-id="2607c-136">The interpretation of values from 0x80 through 0xFF depends on the specific code page.</span></span> <span data-ttu-id="2607c-137">このため、可能な場合は、グローバライズされたアプリでコード ページを使用しないようにします。</span><span class="sxs-lookup"><span data-stu-id="2607c-137">Because of this, you should avoid using code pages in a globalized app if possible.</span></span>  
   
- 次の例では、システムの既定のコード ページとデータが保存されたコード ページとが異なる場合にコード ページのデータを解釈する危険性を示しています  \(このシナリオをシミュレートするため、例では、異なるコード ページを明示的に指定します\)。 最初に、ギリシャ文字の大文字で構成される配列を定義します。 コード ページ 737 \(MS\-DOS ギリシャ語とも呼ばれます\) を使用してそれらをバイト配列にエンコードし、バイト配列をファイルに保存します。 ファイルを取得し、そのバイト配列をコード ページ 737 を使用してデコードした場合、元の文字が復元されます。 ただし、ファイルを取得して、そのバイト配列をコード ページ 1252 \(または Windows\-1252。ラテン語アルファベットの文字を表します\) を使用してデコードした場合、元の文字は失われます。  
+ <span data-ttu-id="2607c-138">次の例では、システムの既定のコード ページとデータが保存されたコード ページとが異なる場合にコード ページのデータを解釈する危険性を示しています </span><span class="sxs-lookup"><span data-stu-id="2607c-138">The following example illustrates the dangers of interpreting code page data when the default code page on a system is different from the code page on which the data was saved.</span></span> <span data-ttu-id="2607c-139">(このシナリオをシミュレートするため、例では、異なるコード ページを明示的に指定します)。最初に、ギリシャ文字の大文字で構成される配列を定義します。</span><span class="sxs-lookup"><span data-stu-id="2607c-139">(To simulate this scenario, the example explicitly specifies different code pages.) First, the example defines an array that consists of the uppercase characters of the Greek alphabet.</span></span> <span data-ttu-id="2607c-140">コード ページ 737 (MS-DOS ギリシャ語とも呼ばれます) を使用してそれらをバイト配列にエンコードし、バイト配列をファイルに保存します。</span><span class="sxs-lookup"><span data-stu-id="2607c-140">It encodes them into a byte array by using code page 737 (also known as MS-DOS Greek) and saves the byte array to a file.</span></span> <span data-ttu-id="2607c-141">ファイルを取得し、そのバイト配列をコード ページ 737 を使用してデコードした場合、元の文字が復元されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-141">If the file is retrieved and its byte array is decoded by using code page 737, the original characters are restored.</span></span> <span data-ttu-id="2607c-142">ただし、ファイルを取得して、そのバイト配列をコード ページ 1252 (または Windows-1252。ラテン語アルファベットの文字を表します) を使用してデコードした場合、元の文字は失われます。</span><span class="sxs-lookup"><span data-stu-id="2607c-142">However, if the file is retrieved and its byte array is decoded by using code page 1252 (or Windows-1252, which represents characters in the Latin alphabet), the original characters are lost.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/codepages1.cs#1)]
  [!code-vb[Conceptual.Globalization#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/codepages1.vb#1)]  
   
- Unicode を使用することで、同じコード単位を必ず同じ文字にマップでき、同じ文字を必ず同じバイト配列にマップできます。  
+ <span data-ttu-id="2607c-143">Unicode を使用することで、同じコード単位を必ず同じ文字にマップでき、同じ文字を必ず同じバイト配列にマップできます。</span><span class="sxs-lookup"><span data-stu-id="2607c-143">The use of Unicode ensures that the same code units always map to the same characters, and that the same characters always map to the same byte arrays.</span></span>  
   
 <a name="Strings_Resources"></a>   
-### リソース ファイルを使用する  
- 単一のカルチャまたは地域を対象とするアプリを開発する場合でも、ユーザー インターフェイスに表示される文字列などのリソースを格納するためにリソース ファイルを使用する必要があります。 リソースを直接コードに追加しないでください。 リソース ファイルの使用には、次の利点があります。  
+### <a name="use-resource-files"></a><span data-ttu-id="2607c-144">リソース ファイルを使用する</span><span class="sxs-lookup"><span data-stu-id="2607c-144">Use Resource Files</span></span>  
+ <span data-ttu-id="2607c-145">単一のカルチャまたは地域を対象とするアプリを開発する場合でも、ユーザー インターフェイスに表示される文字列などのリソースを格納するためにリソース ファイルを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-145">Even if you are developing an app that targets a single culture or region, you should use resource files to store strings and other resources that are displayed in the user interface.</span></span> <span data-ttu-id="2607c-146">リソースを直接コードに追加しないでください。</span><span class="sxs-lookup"><span data-stu-id="2607c-146">You should never add them directly to your code.</span></span> <span data-ttu-id="2607c-147">リソース ファイルの使用には、次の利点があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-147">Using resource files has a number of advantages:</span></span>  
   
--   すべての文字列が単一の場所に存在します。 ソース コード全体を検索して、特定の言語またはカルチャに合わせて変更する文字列を特定する必要はありません。  
+-   <span data-ttu-id="2607c-148">すべての文字列が単一の場所に存在します。</span><span class="sxs-lookup"><span data-stu-id="2607c-148">All the strings are in a single location.</span></span> <span data-ttu-id="2607c-149">ソース コード全体を検索して、特定の言語またはカルチャに合わせて変更する文字列を特定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="2607c-149">You don't have to search throughout your source code to identify strings to modify for a specific language or culture.</span></span>  
   
--   文字列を複製する必要がありません。 リソース ファイルを使用しない開発者は、多くの場合、複数のソース コード ファイルで同じ文字列を定義します。 この重複により、文字列を変更するときに 1 つ以上のインスタンスを見落とす可能性が高くなります。  
+-   <span data-ttu-id="2607c-150">文字列を複製する必要がありません。</span><span class="sxs-lookup"><span data-stu-id="2607c-150">There is no need to duplicate strings.</span></span> <span data-ttu-id="2607c-151">リソース ファイルを使用しない開発者は、多くの場合、複数のソース コード ファイルで同じ文字列を定義します。</span><span class="sxs-lookup"><span data-stu-id="2607c-151">Developers who don't use resource files often define the same string in multiple source code files.</span></span> <span data-ttu-id="2607c-152">この重複により、文字列を変更するときに 1 つ以上のインスタンスを見落とす可能性が高くなります。</span><span class="sxs-lookup"><span data-stu-id="2607c-152">This duplication increases the probability that one or more instances will be overlooked when a string is modified.</span></span>  
   
--   イメージ、バイナリ データなどの文字列以外のリソースを個別のスタンドアロン ファイルに格納するのではなく、リソース ファイルに格納できるので、それらが簡単に取得できます。  
+-   <span data-ttu-id="2607c-153">イメージ、バイナリ データなどの文字列以外のリソースを個別のスタンドアロン ファイルに格納するのではなく、リソース ファイルに格納できるので、それらが簡単に取得できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-153">You can include non-string resources, such as images or binary data, in the resource file instead of storing them in a separate standalone file, so they can be retrieved easily.</span></span>  
   
- ローカライズされたアプリを作成する場合、リソース ファイルを使用することには特に利点があります。 サテライト アセンブリにリソースを配置すると <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName> プロパティで定義されているユーザーの現在の UI カルチャに基づいて、共通言語ランタイムが自動的にカルチャに応じたリソースを選択します。 適切なカルチャ固有のリソースを提供し、<xref:System.Resources.ResourceManager> オブジェクトを正しくインスタンス化するか、厳密に型指定されたリソース クラスを使用すると、ランタイムは適切なリソースの取得の詳細を処理します。  
+ <span data-ttu-id="2607c-154">ローカライズされたアプリを作成する場合、リソース ファイルを使用することには特に利点があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-154">Using resource files has particular advantages if you are creating a localized app.</span></span> <span data-ttu-id="2607c-155">サテライト アセンブリにリソースを配置すると <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> プロパティで定義されているユーザーの現在の UI カルチャに基づいて、共通言語ランタイムが自動的にカルチャに応じたリソースを選択します。</span><span class="sxs-lookup"><span data-stu-id="2607c-155">When you deploy resources in satellite assemblies, the common language runtime automatically selects a culture-appropriate resource based on the user's current UI culture as defined by the <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="2607c-156">適切なカルチャ固有のリソースを提供し、<xref:System.Resources.ResourceManager> オブジェクトを正しくインスタンス化するか、厳密に型指定されたリソース クラスを使用すると、ランタイムは適切なリソースの取得の詳細を処理します。</span><span class="sxs-lookup"><span data-stu-id="2607c-156">As long as you provide an appropriate culture-specific resource and correctly instantiate a <xref:System.Resources.ResourceManager> object or use a strongly typed resource class, the runtime handles the details of retrieving the appropriate resources.</span></span>  
   
- リソース ファイルの作成の詳細については、「[リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)」を参照してください。 サテライト アセンブリの作成と配置の詳細については、「[サテライト アセンブリの作成](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)」および「[リソースのパッケージ化と配置](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)」を参照してください。  
+ <span data-ttu-id="2607c-157">リソース ファイルの作成の詳細については、次を参照してください。[リソース ファイルの作成](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)です。</span><span class="sxs-lookup"><span data-stu-id="2607c-157">For more information about creating resource files, see [Creating Resource Files](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).</span></span> <span data-ttu-id="2607c-158">作成して、サテライト アセンブリの展開については、次を参照してください。[サテライト アセンブリの作成](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)と[パッケージ化と配置リソース](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)です。</span><span class="sxs-lookup"><span data-stu-id="2607c-158">For information about creating and deploying satellite assemblies, see [Creating Satellite Assemblies](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md) and [Packaging and Deploying Resources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md).</span></span>  
   
 <a name="Strings_Searching"></a>   
-### 文字列を検索して比較する  
- 文字列は、できるだけ全体を 1 つのまとまりとして扱い、個々の文字の連続として処理しない必要があります。 これは、部分文字列を並べ替えたり、検索したりするときに、組み合わせ文字の解析に関する問題を防ぐうえで特に重要です。  
+### <a name="searching-and-comparing-strings"></a><span data-ttu-id="2607c-159">文字列を検索して比較する</span><span class="sxs-lookup"><span data-stu-id="2607c-159">Searching and Comparing Strings</span></span>  
+ <span data-ttu-id="2607c-160">文字列は、できるだけ全体を 1 つのまとまりとして扱い、個々の文字の連続として処理しない必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-160">Whenever possible, you should handle strings as entire strings instead of handling them as a series of individual characters.</span></span> <span data-ttu-id="2607c-161">これは、部分文字列を並べ替えたり、検索したりするときに、組み合わせ文字の解析に関する問題を防ぐうえで特に重要です。</span><span class="sxs-lookup"><span data-stu-id="2607c-161">This is especially important when you sort or search for substrings, to prevent problems associated with parsing combined characters.</span></span>  
   
 > [!TIP]
->  <xref:System.Globalization.StringInfo> クラスを使用して、文字列の個別の文字ではなく、テキスト要素を操作できます。  
+>  <span data-ttu-id="2607c-162"><xref:System.Globalization.StringInfo> クラスを使用して、文字列の個別の文字ではなく、テキスト要素を操作できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-162">You can use the <xref:System.Globalization.StringInfo> class to work with the text elements rather than the individual characters in a string.</span></span>  
   
- 文字列の検索と比較でよくある間違いは、それぞれが <xref:System.Char> オブジェクトによって表される文字のコレクションとして文字列を処理することです。 実際に、1 つの文字が 1 つ、2 つ、またはそれ以上の <xref:System.Char> オブジェクトによって形成される場合があります。 このような文字は、アルファベットが、Unicode 基本ラテン文字の範囲 \(U\+0021 ～ U\+007E\) 外にある文字で構成されるカルチャの文字列に最もよくみられます。 次の例では、文字列で LATIN CAPITAL LETTER A WITH GRAVE 文字 \(U\+00C0\) のインデックスを検索します。 ただし、この文字は、1 つのコード単位 \(U\+00C0\) または複合文字 \(2 つのコード単位: U\+0021 と U\+007E\) という 2 つの方法で表現できます。 この場合、この文字は、文字列インスタンスで 2 つの <xref:System.Char> オブジェクト \(U\+0021 と U\+007E\) によって表されます。 このコード例では、<xref:System.String.IndexOf%28System.Char%29?displayProperty=fullName> オーバーロードと <xref:System.String.IndexOf%28System.String%29?displayProperty=fullName> オーバーロードを呼び出して、文字列インスタンスでのこの文字の位置を検索しますが、この 2 つは異なる結果を返します。 最初のメソッド呼び出しでは <xref:System.Char> 引数を指定しているので、序数に基づく比較が実行され、一致を見つけることができません。 2 番目の呼び出しでは <xref:System.String> 引数を指定しているので、カルチャに依存した比較が実行され、一致が見つかります。  
+ <span data-ttu-id="2607c-163">文字列の検索と比較でよくある間違いは、それぞれが <xref:System.Char> オブジェクトによって表される文字のコレクションとして文字列を処理することです。</span><span class="sxs-lookup"><span data-stu-id="2607c-163">In string searches and comparisons, a common mistake is to treat the string as a collection of characters, each of which is represented by a <xref:System.Char> object.</span></span> <span data-ttu-id="2607c-164">実際に、1 つの文字が 1 つ、2 つ、またはそれ以上の <xref:System.Char> オブジェクトによって形成される場合があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-164">In fact, a single character may be formed by one, two, or more <xref:System.Char> objects.</span></span> <span data-ttu-id="2607c-165">このような文字は、アルファベットが、Unicode 基本ラテン文字の範囲 (U+0021 ～ U+007E) 外にある文字で構成されるカルチャの文字列に最もよくみられます。</span><span class="sxs-lookup"><span data-stu-id="2607c-165">Such characters are found most frequently in strings from cultures whose alphabets consist of characters outside the Unicode Basic Latin character range (U+0021 through U+007E).</span></span> <span data-ttu-id="2607c-166">次の例では、文字列で LATIN CAPITAL LETTER A WITH GRAVE 文字 (U+00C0) のインデックスを検索します。</span><span class="sxs-lookup"><span data-stu-id="2607c-166">The following example tries to find the index of the LATIN CAPITAL LETTER A WITH GRAVE character (U+00C0) in a string.</span></span> <span data-ttu-id="2607c-167">ただし、この文字は、1 つのコード単位 (U+00C0) または複合文字 (2 つのコード単位: U+0021 と U+007E) という 2 つの方法で表現できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-167">However, this character can be represented in two different ways: as a single code unit (U+00C0) or as a composite character (two code units: U+0021 and U+007E).</span></span> <span data-ttu-id="2607c-168">この場合、この文字は、文字列インスタンスで 2 つの <xref:System.Char> オブジェクト (U+0021 と U+007E) によって表されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-168">In this case, the character is represented in the string instance by two <xref:System.Char> objects, U+0021 and U+007E.</span></span> <span data-ttu-id="2607c-169">このコード例では、<xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> オーバーロードと <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> オーバーロードを呼び出して、文字列インスタンスでのこの文字の位置を検索しますが、この 2 つは異なる結果を返します。</span><span class="sxs-lookup"><span data-stu-id="2607c-169">The example code calls the <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> and <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> overloads to find the position of this character in the string instance, but these return different results.</span></span> <span data-ttu-id="2607c-170">最初のメソッド呼び出しでは <xref:System.Char> 引数を指定しているので、序数に基づく比較が実行され、一致を見つけることができません。</span><span class="sxs-lookup"><span data-stu-id="2607c-170">The first method call has a <xref:System.Char> argument; it performs an ordinal comparison and therefore cannot find a match.</span></span> <span data-ttu-id="2607c-171">2 番目の呼び出しでは <xref:System.String> 引数を指定しているので、カルチャに依存した比較が実行され、一致が見つかります。</span><span class="sxs-lookup"><span data-stu-id="2607c-171">The second call has a <xref:System.String> argument; it performs a culture-sensitive comparison and therefore finds a match.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/search1.cs#18)]
  [!code-vb[Conceptual.Globalization#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/search1.vb#18)]  
   
- <xref:System.StringComparison> メソッド、<xref:System.String.IndexOf%28System.String%2CSystem.StringComparison%29?displayProperty=fullName> メソッドなど <xref:System.String.LastIndexOf%28System.String%2CSystem.StringComparison%29?displayProperty=fullName> パラメーターを含むオーバーロードを呼び出して、この例のあいまいさ \(異なる結果を返すメソッドの 2 つの類似オーバーロードの呼び出し\) の一部を回避できます。  
+ <span data-ttu-id="2607c-172"><xref:System.StringComparison> メソッド、<xref:System.String.IndexOf%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> メソッドなど <xref:System.String.LastIndexOf%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> パラメーターを含むオーバーロードを呼び出して、この例のあいまいさ (異なる結果を返すメソッドの 2 つの類似オーバーロードの呼び出し) の一部を回避できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-172">You can avoid some of the ambiguity of this example (calls to two similar overloads of a method returning different results) by calling an overload that includes a <xref:System.StringComparison> parameter, such as the <xref:System.String.IndexOf%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> or <xref:System.String.LastIndexOf%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> method.</span></span>  
   
- ただし、検索が常にカルチャに依存しているとは限りません。 検索の目的がセキュリティ上の決定をするか、またはリソースへのアクセスを許可または拒否することである場合、次のセクションで説明するように序数に基づく比較を実行する必要があります。  
+ <span data-ttu-id="2607c-173">ただし、検索が常にカルチャに依存しているとは限りません。</span><span class="sxs-lookup"><span data-stu-id="2607c-173">However, searches are not always culture-sensitive.</span></span> <span data-ttu-id="2607c-174">検索の目的がセキュリティ上の決定をするか、またはリソースへのアクセスを許可または拒否することである場合、次のセクションで説明するように序数に基づく比較を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-174">If the purpose of the search is to make a security decision or to allow or disallow access to some resource, the comparison should be ordinal, as discussed in the next section.</span></span>  
   
 <a name="Strings_Equality"></a>   
-### 文字列の等価性をテストする  
- 2 つの文字列が並べ替え順序で並ぶ方法を確認するのではなく、2 つの文字列の等価性をテストする場合は、<xref:System.String.Equals%2A?displayProperty=fullName>、<xref:System.String.Compare%2A?displayProperty=fullName> などの文字列比較メソッドの代わりに <xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=fullName> メソッドを使用します。  
+### <a name="testing-strings-for-equality"></a><span data-ttu-id="2607c-175">文字列の等価性をテストする</span><span class="sxs-lookup"><span data-stu-id="2607c-175">Testing Strings for Equality</span></span>  
+ <span data-ttu-id="2607c-176">2 つの文字列が並べ替え順序で並ぶ方法を確認するのではなく、2 つの文字列の等価性をテストする場合は、<xref:System.String.Equals%2A?displayProperty=nameWithType>、<xref:System.String.Compare%2A?displayProperty=nameWithType> などの文字列比較メソッドの代わりに <xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType> メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="2607c-176">If you want to test two strings for equality rather than determining how they compare in the sort order, use the <xref:System.String.Equals%2A?displayProperty=nameWithType> method instead of a string comparison method such as <xref:System.String.Compare%2A?displayProperty=nameWithType> or <xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType>.</span></span>  
   
- 等価性の比較は、通常、条件付きでリソースにアクセスするために実行します。 たとえば、パスワードを確認したり、ファイルがあることを確認したりするために等価性の比較を実行する場合があります。 このような非言語的な比較は、カルチャに依存するのではなく、常に序数に基づいて実行する必要があります。 一般に、パスワードなどの文字列の場合は <xref:System.String.Equals%28System.String%2CSystem.StringComparison%29?displayProperty=fullName> の値を使用して、ファイル名、URI などの文字列の場合は <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=fullName> の値を使用して、インスタンス <xref:System.StringComparison?displayProperty=fullName> メソッドまたは静的 <xref:System.StringComparison?displayProperty=fullName> メソッドを呼び出す必要があります。  
+ <span data-ttu-id="2607c-177">等価性の比較は、通常、条件付きでリソースにアクセスするために実行します。</span><span class="sxs-lookup"><span data-stu-id="2607c-177">Comparisons for equality are typically performed to access some resource conditionally.</span></span> <span data-ttu-id="2607c-178">たとえば、パスワードを確認したり、ファイルがあることを確認したりするために等価性の比較を実行する場合があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-178">For example, you might perform a comparison for equality to verify a password or to confirm that a file exists.</span></span> <span data-ttu-id="2607c-179">このような非言語的な比較は、カルチャに依存するのではなく、常に序数に基づいて実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-179">Such non-linguistic comparisons should always be ordinal rather than culture-sensitive.</span></span> <span data-ttu-id="2607c-180">一般に、パスワードなどの文字列の場合は <xref:System.String.Equals%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> の値を使用して、ファイル名、URI などの文字列の場合は <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> の値を使用して、インスタンス <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> メソッドまたは静的 <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> メソッドを呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-180">In general, you should call the instance <xref:System.String.Equals%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> method or the static <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> method with a value of <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> for strings such as passwords, and a value of <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> for strings such as file names or URIs.</span></span>  
   
- 等価性の比較では、<xref:System.String.Equals%2A?displayProperty=fullName> メソッドを呼び出すのではなく、検索したり、部分文字列を比較したりすることがあります。 場合によっては、部分文字列検索を使用して、その部分文字列が別の文字列と等しいかどうかを確認できます。 この比較の目的が非言語的である場合、検索はカルチャに依存するのではなく、序数に基づいて実行する必要があります。  
+ <span data-ttu-id="2607c-181">等価性の比較では、<xref:System.String.Equals%2A?displayProperty=nameWithType> メソッドを呼び出すのではなく、検索したり、部分文字列を比較したりすることがあります。</span><span class="sxs-lookup"><span data-stu-id="2607c-181">Comparisons for equality sometimes involve searches or substring comparisons rather than calls to the <xref:System.String.Equals%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="2607c-182">場合によっては、部分文字列検索を使用して、その部分文字列が別の文字列と等しいかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-182">In some cases, you may use a substring search to determine whether that substring equals another string.</span></span> <span data-ttu-id="2607c-183">この比較の目的が非言語的である場合、検索はカルチャに依存するのではなく、序数に基づいて実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-183">If the purpose of this comparison is non-linguistic, the search should also be ordinal rather than culture-sensitive.</span></span>  
   
- 次の例は、非言語的なデータに対してカルチャに依存した検索を実行することの危険性を示しています。`AccessesFileSystem` メソッドは、部分文字列 "FILE" で始まる URI のファイル システムのアクセスを禁止するように設計されています。 これを実行するため、カルチャに依存し、大文字と小文字を区別しない比較を実行して、URI の先頭と文字列 "FILE" を比較します。 ファイル システムにアクセスする URI は "FILE:" または "file:" で始まる可能性があるため、"i" \(U\+0069\) は常に "I" \(U\+0049\) と等価の小文字表現であるという暗黙の前提があります。 ただし、トルコ語およびアゼルバイジャン語には、"i" の大文字として "İ" \(U\+0130\) があります。 このような相違があるため、カルチャに依存した比較を使用すると、ファイル システムのアクセスを禁止する必要がある場合でもそのアクセスが許可されます。  
+ <span data-ttu-id="2607c-184">次の例は、非言語的なデータに対してカルチャに依存した検索を実行することの危険性を示しています。</span><span class="sxs-lookup"><span data-stu-id="2607c-184">The following example illustrates the danger of a culture-sensitive search on non-linguistic data.</span></span> <span data-ttu-id="2607c-185">`AccessesFileSystem` メソッドは、部分文字列 "FILE" で始まる URI のファイル システムのアクセスを禁止するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="2607c-185">The `AccessesFileSystem` method is designed to prohibit file system access for URIs that begin with the substring "FILE".</span></span> <span data-ttu-id="2607c-186">これを実行するため、カルチャに依存し、大文字と小文字を区別しない比較を実行して、URI の先頭と文字列 "FILE" を比較します。</span><span class="sxs-lookup"><span data-stu-id="2607c-186">To do this, it performs a culture-sensitive, case-insensitive comparison of the beginning of the URI with the string "FILE".</span></span> <span data-ttu-id="2607c-187">ファイル システムにアクセスする URI は "FILE:" または "file:" で始まる可能性があるため、"i" (U+0069) は常に "I" (U+0049) と等価の小文字表現であるという暗黙の前提があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-187">Because a URI that accesses the file system can begin with either "FILE:" or "file:", the implicit assumption is that that "i" (U+0069) is always the lowercase equivalent of "I" (U+0049).</span></span> <span data-ttu-id="2607c-188">ただし、トルコ語およびアゼルバイジャン語には、"i" の大文字として "İ" (U+0130) があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-188">However, in Turkish and Azerbaijani, the uppercase version of "i" is "İ" (U+0130).</span></span> <span data-ttu-id="2607c-189">このような相違があるため、カルチャに依存した比較を使用すると、ファイル システムのアクセスを禁止する必要がある場合でもそのアクセスが許可されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-189">Because of this discrepancy, the culture-sensitive comparison allows file system access when it should be prohibited.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/equals1.cs#12)]
  [!code-vb[Conceptual.Globalization#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/equals1.vb#12)]  
   
- 次の例に示すように、大文字と小文字を無視する序数に基づく比較を実行して、この問題を回避できます。  
+ <span data-ttu-id="2607c-190">次の例に示すように、大文字と小文字を無視する序数に基づく比較を実行して、この問題を回避できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-190">You can avoid this problem by performing an ordinal comparison that ignores case, as the following example shows.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/equals2.cs#13)]
  [!code-vb[Conceptual.Globalization#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/equals2.vb#13)]  
   
 <a name="Strings_Ordering"></a>   
-### 文字列の順序付けと並べ替えを実行する  
- 通常、ユーザー インターフェイスの表示順序が指定された文字列は、カルチャに基づいて並べ替える必要があります。 ほとんどの場合、このような文字列比較は、文字列を並べ替える <xref:System.Array.Sort%2A?displayProperty=fullName>、<xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=fullName> などのメソッドを呼び出すと、.NET Framework によって暗黙的に処理されます。 既定では、文字列は、現在のカルチャの並べ替え規則を使用して並べ替えられます。 次の例では、文字列の配列を英語 \(米国\) カルチャとスウェーデン語 \(スウェーデン\) カルチャの規則を使用して並べ替えたときの違いを示しています。  
+### <a name="ordering-and-sorting-strings"></a><span data-ttu-id="2607c-191">文字列の順序付けと並べ替えを実行する</span><span class="sxs-lookup"><span data-stu-id="2607c-191">Ordering and Sorting Strings</span></span>  
+ <span data-ttu-id="2607c-192">通常、ユーザー インターフェイスの表示順序が指定された文字列は、カルチャに基づいて並べ替える必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-192">Typically, ordered strings that are to be displayed in the user interface should be sorted based on culture.</span></span> <span data-ttu-id="2607c-193">ほとんどの場合、このような文字列比較は、文字列を並べ替える <xref:System.Array.Sort%2A?displayProperty=nameWithType>、<xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> などのメソッドを呼び出すと、.NET Framework によって暗黙的に処理されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-193">For the most part, such string comparisons are handled implicitly by the .NET Framework when you call a method that sorts strings, such as <xref:System.Array.Sort%2A?displayProperty=nameWithType> or <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType>.</span></span> <span data-ttu-id="2607c-194">既定では、文字列は、現在のカルチャの並べ替え規則を使用して並べ替えられます。</span><span class="sxs-lookup"><span data-stu-id="2607c-194">By default, strings are sorted by using the sorting conventions of the current culture.</span></span> <span data-ttu-id="2607c-195">次の例では、文字列の配列を英語 (米国) カルチャとスウェーデン語 (スウェーデン) カルチャの規則を使用して並べ替えたときの違いを示しています。</span><span class="sxs-lookup"><span data-stu-id="2607c-195">The following example illustrates the difference when an array of strings is sorted by using the conventions of the English (United States) culture and the Swedish (Sweden) culture.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/sort1.cs#14)]
  [!code-vb[Conceptual.Globalization#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/sort1.vb#14)]  
   
- カルチャに依存した文字列比較は、各カルチャの <xref:System.Globalization.CompareInfo> プロパティによって返される <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=fullName> オブジェクトによって定義されます。<xref:System.String.Compare%2A?displayProperty=fullName> メソッド オーバーロードを使用するカルチャに依存した文字列比較では、<xref:System.Globalization.CompareInfo> オブジェクトも使用します。  
+ <span data-ttu-id="2607c-196">カルチャに依存した文字列比較は、各カルチャの <xref:System.Globalization.CompareInfo> プロパティによって返される <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> オブジェクトによって定義されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-196">Culture-sensitive string comparison is defined by the <xref:System.Globalization.CompareInfo> object, which is returned by each culture's <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="2607c-197"><xref:System.String.Compare%2A?displayProperty=nameWithType> メソッド オーバーロードを使用するカルチャに依存した文字列比較では、<xref:System.Globalization.CompareInfo> オブジェクトも使用します。</span><span class="sxs-lookup"><span data-stu-id="2607c-197">Culture-sensitive string comparisons that use the <xref:System.String.Compare%2A?displayProperty=nameWithType> method overloads also use the <xref:System.Globalization.CompareInfo> object.</span></span>  
   
- .NET Framework は、文字列データのカルチャに依存した並べ替えを実行するためにテーブルを使用します。 並べ替えのウエイトと文字列の正規化に関するデータが入ったこれらのテーブルの内容は、特定のバージョンの .NET Framework によって実装される Unicode 規格のバージョンによって決まります。 次の表は、特定のバージョンの .NET Framework によって実装される Unicode のバージョンです。 サポートされている Unicode バージョンの一覧は、文字の比較と並べ替えに対してのみ適用されます。カテゴリ別での Unicode 文字の分類には適用されません。 詳細については、記事「<xref:System.String>」 の「Strings and The Unicode Standard」 \(文字列と Unicode 標準\) セクションを参照してください。  
+ <span data-ttu-id="2607c-198">.NET Framework は、文字列データのカルチャに依存した並べ替えを実行するためにテーブルを使用します。</span><span class="sxs-lookup"><span data-stu-id="2607c-198">The .NET Framework uses tables to perform culture-sensitive sorts on string data.</span></span> <span data-ttu-id="2607c-199">並べ替えのウエイトと文字列の正規化に関するデータが入ったこれらのテーブルの内容は、特定のバージョンの .NET Framework によって実装される Unicode 規格のバージョンによって決まります。</span><span class="sxs-lookup"><span data-stu-id="2607c-199">The content of these tables, which contain data on sort weights and string normalization, is determined by the version of the Unicode standard implemented by a particular version of the .NET Framework.</span></span> <span data-ttu-id="2607c-200">次の表は、特定のバージョンの .NET Framework によって実装される Unicode のバージョンです。</span><span class="sxs-lookup"><span data-stu-id="2607c-200">The following table lists the versions of Unicode implemented by the specified versions of the .NET Framework.</span></span> <span data-ttu-id="2607c-201">サポートされている Unicode バージョンの一覧は、文字の比較と並べ替えに対してのみ適用されます。カテゴリ別での Unicode 文字の分類には適用されません。</span><span class="sxs-lookup"><span data-stu-id="2607c-201">Note that this list of supported Unicode versions applies to character comparison and sorting only; it does not apply to classification of Unicode characters by category.</span></span> <span data-ttu-id="2607c-202">詳細については、記事「<xref:System.String>」 の「Strings and The Unicode Standard」 (文字列と Unicode 標準) セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="2607c-202">For more information, see the "Strings and The Unicode Standard" section in the <xref:System.String> article.</span></span>  
   
-|.NET Framework のバージョン|オペレーティング システム|Unicode バージョン|  
-|---------------------------|-------------------|-------------------|  
-|.NET Framework 2.0|すべてのオペレーティング システム|Unicode 4.1|  
-|.NET Framework 3.0|すべてのオペレーティング システム|Unicode 4.1|  
-|.NET Framework 3.5|すべてのオペレーティング システム|Unicode 4.1|  
-|.NET Framework 4|すべてのオペレーティング システム|Unicode 5.0|  
-|.NET Framework 4.5|[!INCLUDE[win7](../../../includes/win7-md.md)]|Unicode 5.0|  
-|.NET Framework 4.5|[!INCLUDE[win8](../../../includes/win8-md.md)]|Unicode 6.0|  
+|<span data-ttu-id="2607c-203">.NET Framework のバージョン</span><span class="sxs-lookup"><span data-stu-id="2607c-203">.NET Framework version</span></span>|<span data-ttu-id="2607c-204">オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="2607c-204">Operating system</span></span>|<span data-ttu-id="2607c-205">Unicode バージョン</span><span class="sxs-lookup"><span data-stu-id="2607c-205">Unicode version</span></span>|  
+|----------------------------|----------------------|---------------------|  
+|<span data-ttu-id="2607c-206">.NET Framework 2.0</span><span class="sxs-lookup"><span data-stu-id="2607c-206">.NET Framework 2.0</span></span>|<span data-ttu-id="2607c-207">すべてのオペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="2607c-207">All operating systems</span></span>|<span data-ttu-id="2607c-208">Unicode 4.1</span><span class="sxs-lookup"><span data-stu-id="2607c-208">Unicode 4.1</span></span>|  
+|<span data-ttu-id="2607c-209">.NET Framework 3.0</span><span class="sxs-lookup"><span data-stu-id="2607c-209">.NET Framework 3.0</span></span>|<span data-ttu-id="2607c-210">すべてのオペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="2607c-210">All operating systems</span></span>|<span data-ttu-id="2607c-211">Unicode 4.1</span><span class="sxs-lookup"><span data-stu-id="2607c-211">Unicode 4.1</span></span>|  
+|<span data-ttu-id="2607c-212">.NET Framework 3.5</span><span class="sxs-lookup"><span data-stu-id="2607c-212">.NET Framework 3.5</span></span>|<span data-ttu-id="2607c-213">すべてのオペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="2607c-213">All operating systems</span></span>|<span data-ttu-id="2607c-214">Unicode 4.1</span><span class="sxs-lookup"><span data-stu-id="2607c-214">Unicode 4.1</span></span>|  
+|<span data-ttu-id="2607c-215">.NET Framework 4</span><span class="sxs-lookup"><span data-stu-id="2607c-215">.NET Framework 4</span></span>|<span data-ttu-id="2607c-216">すべてのオペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="2607c-216">All operating systems</span></span>|<span data-ttu-id="2607c-217">Unicode 5.0</span><span class="sxs-lookup"><span data-stu-id="2607c-217">Unicode 5.0</span></span>|  
+|<span data-ttu-id="2607c-218">.NET Framework 4.5</span><span class="sxs-lookup"><span data-stu-id="2607c-218">.NET Framework 4.5</span></span>|[!INCLUDE[win7](../../../includes/win7-md.md)]|<span data-ttu-id="2607c-219">Unicode 5.0</span><span class="sxs-lookup"><span data-stu-id="2607c-219">Unicode 5.0</span></span>|  
+|<span data-ttu-id="2607c-220">.NET Framework 4.5</span><span class="sxs-lookup"><span data-stu-id="2607c-220">.NET Framework 4.5</span></span>|[!INCLUDE[win8](../../../includes/win8-md.md)]|<span data-ttu-id="2607c-221">Unicode 6.0</span><span class="sxs-lookup"><span data-stu-id="2607c-221">Unicode 6.0</span></span>|  
   
- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、文字列の比較および並べ替えは、オペレーティング システムによって異なります。[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で実行される [!INCLUDE[win7](../../../includes/win7-md.md)] は、Unicode 5.0 を実装する独自のテーブルからデータを取得します。[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で実行される [!INCLUDE[win8](../../../includes/win8-md.md)] は、Unicode 6.0 を実装するオペレーティング システム テーブルからデータを取得します。 カルチャに依存した並べ替えが実行されたデータをシリアル化する場合は、<xref:System.Globalization.SortVersion> クラスを使用して、.NET Framework およびオペレーティング システムの並べ替え順序と一致するように、シリアル化されたデータをいつ並べ替える必要があるかを判断できます。 例については、<xref:System.Globalization.SortVersion> クラスに関するトピックを参照してください。  
+ <span data-ttu-id="2607c-222">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] では、文字列の比較および並べ替えは、オペレーティング システムによって異なります。</span><span class="sxs-lookup"><span data-stu-id="2607c-222">In the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], string comparison and sorting depends on the operating system.</span></span> <span data-ttu-id="2607c-223">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で実行される [!INCLUDE[win7](../../../includes/win7-md.md)] は、Unicode 5.0 を実装する独自のテーブルからデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="2607c-223">The [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] running on [!INCLUDE[win7](../../../includes/win7-md.md)] retrieves data from its own tables that implement Unicode 5.0.</span></span> <span data-ttu-id="2607c-224">[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] で実行される [!INCLUDE[win8](../../../includes/win8-md.md)] は、Unicode 6.0 を実装するオペレーティング システム テーブルからデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="2607c-224">The [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] running on [!INCLUDE[win8](../../../includes/win8-md.md)] retrieves data from operating system tables that implement Unicode 6.0.</span></span> <span data-ttu-id="2607c-225">カルチャに依存した並べ替えが実行されたデータをシリアル化する場合は、<xref:System.Globalization.SortVersion> クラスを使用して、.NET Framework およびオペレーティング システムの並べ替え順序と一致するように、シリアル化されたデータをいつ並べ替える必要があるかを判断できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-225">If you serialize culture-sensitive sorted data, you can use the <xref:System.Globalization.SortVersion> class to determine when your serialized data needs to be sorted so that it is consistent with the .NET Framework and the operating system's sort order.</span></span> <span data-ttu-id="2607c-226">例については、<xref:System.Globalization.SortVersion> クラスに関するトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="2607c-226">For an example, see the <xref:System.Globalization.SortVersion> class topic.</span></span>  
   
- 広範なカルチャ固有の並べ替えを文字列データに対して実行するアプリの場合、<xref:System.Globalization.SortKey> クラスを使用して文字列を比較できます。 並べ替えキーは、特定の文字列のアルファベット順、大文字と小文字の区別、発音の区別など、カルチャ固有の並べ替えウェイトを反映しています。 並べ替えキーを使用した比較はバイナリであるため、<xref:System.Globalization.CompareInfo> オブジェクトを暗黙的または明示的に使用する比較よりも高速です。<xref:System.Globalization.CompareInfo.GetSortKey%2A?displayProperty=fullName> メソッドに文字列を渡すことによって、特定の文字列のカルチャ固有の並べ替えキーを作成します。  
+ <span data-ttu-id="2607c-227">広範なカルチャ固有の並べ替えを文字列データに対して実行するアプリの場合、<xref:System.Globalization.SortKey> クラスを使用して文字列を比較できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-227">If your app performs extensive culture-specific sorts of string data, you can work with the <xref:System.Globalization.SortKey> class to compare strings.</span></span> <span data-ttu-id="2607c-228">並べ替えキーは、特定の文字列のアルファベット順、大文字と小文字の区別、発音の区別など、カルチャ固有の並べ替えウェイトを反映しています。</span><span class="sxs-lookup"><span data-stu-id="2607c-228">A sort key reflects the culture-specific sort weights, including the alphabetic, case, and diacritic weights of a particular string.</span></span> <span data-ttu-id="2607c-229">並べ替えキーを使用した比較はバイナリであるため、<xref:System.Globalization.CompareInfo> オブジェクトを暗黙的または明示的に使用する比較よりも高速です。</span><span class="sxs-lookup"><span data-stu-id="2607c-229">Because comparisons using sort keys are binary, they are faster than comparisons that use a <xref:System.Globalization.CompareInfo> object either implicitly or explicitly.</span></span> <span data-ttu-id="2607c-230"><xref:System.Globalization.CompareInfo.GetSortKey%2A?displayProperty=nameWithType> メソッドに文字列を渡すことによって、特定の文字列のカルチャ固有の並べ替えキーを作成します。</span><span class="sxs-lookup"><span data-stu-id="2607c-230">You create a culture-specific sort key for a particular string by passing the string to the <xref:System.Globalization.CompareInfo.GetSortKey%2A?displayProperty=nameWithType> method.</span></span>  
   
- 次の例は、前の例と似ています。 ただし、暗黙的に <xref:System.Array.Sort%28System.Array%29?displayProperty=fullName> メソッドを呼び出す <xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=fullName> メソッドを呼び出すのではなく、インスタンス化して、<xref:System.Collections.Generic.IComparer%601?displayProperty=fullName> メソッドに渡す、並べ替えキーを比較する [Array.Sort\<T\>\(T\<xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Collections.Generic.IComparer%7B%60%600%7D%29?displayProperty=fullName> 実装を定義しています。  
+ <span data-ttu-id="2607c-231">次の例は、前の例と似ています。</span><span class="sxs-lookup"><span data-stu-id="2607c-231">The following example is similar to the previous example.</span></span> <span data-ttu-id="2607c-232">ただし、暗黙的に <xref:System.Array.Sort%28System.Array%29?displayProperty=nameWithType> メソッドを呼び出す <xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType> メソッドを呼び出すのではなく、インスタンス化して、<xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> メソッドに渡す、並べ替えキーを比較する <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Collections.Generic.IComparer%7B%60%600%7D%29?displayProperty=nameWithType> 実装を定義しています。</span><span class="sxs-lookup"><span data-stu-id="2607c-232">However, instead of calling the <xref:System.Array.Sort%28System.Array%29?displayProperty=nameWithType> method, which implicitly calls the <xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType> method, it defines an <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> implementation that compares sort keys, which it instantiates and passes to the <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Collections.Generic.IComparer%7B%60%600%7D%29?displayProperty=nameWithType> method.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/sortkey1.cs#15)]
  [!code-vb[Conceptual.Globalization#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/sortkey1.vb#15)]  
   
 <a name="Strings_Concat"></a>   
-### 文字列の連結を回避する  
- 可能な限り、文字列を実行時に連結して使う方法は避けてください。 連結される文字列は、他のローカライズ言語には当てはまらない、アプリの元の言語の語順に依存することが多く、ローカライズ作業が困難になります。  
+### <a name="avoid-string-concatenation"></a><span data-ttu-id="2607c-233">文字列の連結を回避する</span><span class="sxs-lookup"><span data-stu-id="2607c-233">Avoid String Concatenation</span></span>  
+ <span data-ttu-id="2607c-234">可能な限り、文字列を実行時に連結して使う方法は避けてください。</span><span class="sxs-lookup"><span data-stu-id="2607c-234">If at all possible, avoid using composite strings that are built at run time from concatenated phrases.</span></span> <span data-ttu-id="2607c-235">連結される文字列は、他のローカライズ言語には当てはまらない、アプリの元の言語の語順に依存することが多く、ローカライズ作業が困難になります。</span><span class="sxs-lookup"><span data-stu-id="2607c-235">Composite strings are difficult to localize, because they often assume a grammatical order in the app's original language that does not apply to other localized languages.</span></span>  
   
 <a name="DatesAndTimes"></a>   
-## 日付と時刻を処理する  
- 日付と時刻の値を処理する方法は、その値をユーザー インターフェイスに表示するのか、保持するのかによって異なります。 このセクションでは、両方の使用を検討します。 また、日付と時刻を操作するときにタイム ゾーンの相違と算術演算を処理する方法についても説明します。  
+## <a name="handling-dates-and-times"></a><span data-ttu-id="2607c-236">日付と時刻を処理する</span><span class="sxs-lookup"><span data-stu-id="2607c-236">Handling Dates and Times</span></span>  
+ <span data-ttu-id="2607c-237">日付と時刻の値を処理する方法は、その値をユーザー インターフェイスに表示するのか、保持するのかによって異なります。</span><span class="sxs-lookup"><span data-stu-id="2607c-237">How you handle date and time values depends on whether they are displayed in the user interface or persisted.</span></span> <span data-ttu-id="2607c-238">このセクションでは、両方の使用を検討します。</span><span class="sxs-lookup"><span data-stu-id="2607c-238">This section examines both usages.</span></span> <span data-ttu-id="2607c-239">また、日付と時刻を操作するときにタイム ゾーンの相違と算術演算を処理する方法についても説明します。</span><span class="sxs-lookup"><span data-stu-id="2607c-239">It also discusses how you can handle time zone differences and arithmetic operations when working with dates and times.</span></span>  
   
 <a name="DatesAndTimes_Display"></a>   
-### 日付と時刻を表示する  
- 通常、日付と時刻をユーザー インターフェイスに表示するときには、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> プロパティと、<xref:System.Globalization.DateTimeFormatInfo> プロパティによって返される `CultureInfo.CurrentCulture.DateTimeFormat` オブジェクトで定義されているユーザーのカルチャの書式指定規則を使用する必要があります。 次のメソッドのいずれかを使用して日付の書式を設定すると、現在のカルチャの書式指定規則が自動的に使用されます。  
+### <a name="displaying-dates-and-times"></a><span data-ttu-id="2607c-240">日付と時刻を表示する</span><span class="sxs-lookup"><span data-stu-id="2607c-240">Displaying Dates and Times</span></span>  
+ <span data-ttu-id="2607c-241">通常、日付と時刻をユーザー インターフェイスに表示するときには、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> プロパティと、<xref:System.Globalization.DateTimeFormatInfo> プロパティによって返される `CultureInfo.CurrentCulture.DateTimeFormat` オブジェクトで定義されているユーザーのカルチャの書式指定規則を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-241">Typically, when dates and times are displayed in the user interface, you should use the formatting conventions of the user's culture, which is defined by the <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> property and by the <xref:System.Globalization.DateTimeFormatInfo> object returned by the `CultureInfo.CurrentCulture.DateTimeFormat` property.</span></span> <span data-ttu-id="2607c-242">次のメソッドのいずれかを使用して日付の書式を設定すると、現在のカルチャの書式指定規則が自動的に使用されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-242">The formatting conventions of the current culture are automatically used when you format a date by using any of these methods:</span></span>  
   
--   パラメーターなしの <xref:System.DateTime.ToString?displayProperty=fullName> メソッド  
+-   <span data-ttu-id="2607c-243">パラメーターなしの <xref:System.DateTime.ToString?displayProperty=nameWithType> メソッド</span><span class="sxs-lookup"><span data-stu-id="2607c-243">The parameterless <xref:System.DateTime.ToString?displayProperty=nameWithType> method</span></span>  
   
--   書式指定文字列を含む <xref:System.DateTime.ToString%28System.String%29?displayProperty=fullName> メソッド  
+-   <span data-ttu-id="2607c-244">書式指定文字列を含む <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> メソッド</span><span class="sxs-lookup"><span data-stu-id="2607c-244">The <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> method, which includes a format string</span></span>  
   
--   パラメーターなしの <xref:System.DateTimeOffset.ToString?displayProperty=fullName> メソッド  
+-   <span data-ttu-id="2607c-245">パラメーターなしの <xref:System.DateTimeOffset.ToString?displayProperty=nameWithType> メソッド</span><span class="sxs-lookup"><span data-stu-id="2607c-245">The parameterless <xref:System.DateTimeOffset.ToString?displayProperty=nameWithType> method</span></span>  
   
--   書式指定文字列を含む <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=fullName>  
+-   <span data-ttu-id="2607c-246">書式指定文字列を含む <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="2607c-246">The <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType>, which includes a format string</span></span>  
   
--   日付と共に使用した場合、[複合書式指定](../../../docs/standard/base-types/composite-formatting.md)機能  
+-   <span data-ttu-id="2607c-247">[複合書式指定](../../../docs/standard/base-types/composite-formatting.md)日付と共に使用したときに、機能</span><span class="sxs-lookup"><span data-stu-id="2607c-247">The [composite formatting](../../../docs/standard/base-types/composite-formatting.md) feature, when it is used with dates</span></span>  
   
- 次の例では、2012 年 10 月 11 日の日の出と日没のデータを 2 回表示します。 最初に、現在のカルチャをクロアチア語 \(クロアチア\) に設定し、次に英語 \(英国\) に設定します。 どちらの場合も、日付と時刻はそのカルチャに適した書式で表示されます。  
+ <span data-ttu-id="2607c-248">次の例では、2012 年 10 月 11 日の日の出と日没のデータを 2 回表示します。</span><span class="sxs-lookup"><span data-stu-id="2607c-248">The following example displays sunrise and sunset data twice for October 11, 2012.</span></span> <span data-ttu-id="2607c-249">最初に、現在のカルチャをクロアチア語 (クロアチア) に設定し、次に英語 (英国) に設定します。</span><span class="sxs-lookup"><span data-stu-id="2607c-249">It first sets the current culture to Croatian (Croatia), and then to English (Great Britain).</span></span> <span data-ttu-id="2607c-250">どちらの場合も、日付と時刻はそのカルチャに適した書式で表示されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-250">In each case, the dates and times are displayed in the format that is appropriate for that culture.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates1.cs#2)]
  [!code-vb[Conceptual.Globalization#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates1.vb#2)]  
   
 <a name="DatesAndTimes_Persist"></a>   
-### 日付と時刻を保持する  
- 日付と時刻のデータはカルチャによって異なる可能性がある書式で保持しないでください。 これは、データの破損または実行時例外が発生する一般的なプログラミング エラーです。 次の例では、英語 \(米国\) カルチャの書式指定規則を使用して文字列として 2 つの日付 \(2013 年 1 月 9 日と 2013 年 8 月 18 日\) をシリアル化します。 データが英語 \(米国\) カルチャの規則を使用して取得および解析されると、正常に復元されます。 ただし、英語 \(英国\) カルチャの規則を使用して取得および解析されると、最初の日付は 9 月 1 日と間違って解釈され、グレゴリオ暦には 18 番目の月がないため 2 番目の日付は解析されません。  
+### <a name="persisting-dates-and-times"></a><span data-ttu-id="2607c-251">日付と時刻を保持する</span><span class="sxs-lookup"><span data-stu-id="2607c-251">Persisting Dates and Times</span></span>  
+ <span data-ttu-id="2607c-252">日付と時刻のデータはカルチャによって異なる可能性がある書式で保持しないでください。</span><span class="sxs-lookup"><span data-stu-id="2607c-252">You should never persist date and time data in a format that can vary by culture.</span></span> <span data-ttu-id="2607c-253">これは、データの破損または実行時例外が発生する一般的なプログラミング エラーです。</span><span class="sxs-lookup"><span data-stu-id="2607c-253">This is a common programming error that results in either corrupted data or a run-time exception.</span></span> <span data-ttu-id="2607c-254">次の例では、英語 (米国) カルチャの書式指定規則を使用して文字列として 2 つの日付 (2013 年 1 月 9 日と 2013 年 8 月 18 日) をシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="2607c-254">The following example serializes two dates, January 9, 2013 and August 18, 2013, as strings by using the formatting conventions of the English (United States) culture.</span></span> <span data-ttu-id="2607c-255">データが英語 (米国) カルチャの規則を使用して取得および解析されると、正常に復元されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-255">When the data is retrieved and parsed by using the conventions of the English (United States) culture, it is successfully restored.</span></span> <span data-ttu-id="2607c-256">ただし、英語 (英国) カルチャの規則を使用して取得および解析されると、最初の日付は 9 月 1 日と間違って解釈され、グレゴリオ暦には 18 番目の月がないため 2 番目の日付は解析されません。</span><span class="sxs-lookup"><span data-stu-id="2607c-256">However, when it is retrieved and parsed by using the conventions of the English (United Kingdom) culture, the first date is wrongly interpreted as September 1, and the second fails to parse because the Gregorian calendar does not have an eighteenth month.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates2.cs#3)]
  [!code-vb[Conceptual.Globalization#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates2.vb#3)]  
   
- この問題は、次の 3 つのうちいずれかの方法で回避できます。  
+ <span data-ttu-id="2607c-257">この問題は、次の 3 つのうちいずれかの方法で回避できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-257">You can avoid this problem in any of three ways:</span></span>  
   
--   文字列ではなくバイナリ形式で日付と時刻をシリアル化します。  
+-   <span data-ttu-id="2607c-258">文字列ではなくバイナリ形式で日付と時刻をシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="2607c-258">Serialize the date and time in binary format rather than as a string.</span></span>  
   
--   ユーザーのカルチャに関係なく同じであるカスタム書式指定文字列を使用して日付と時刻の文字列表現を保存および解析します。  
+-   <span data-ttu-id="2607c-259">ユーザーのカルチャに関係なく同じであるカスタム書式指定文字列を使用して日付と時刻の文字列表現を保存および解析します。</span><span class="sxs-lookup"><span data-stu-id="2607c-259">Save and parse the string representation of the date and time by using a custom format string that is the same regardless of the user's culture.</span></span>  
   
--   インバリアント カルチャの書式指定規則を使用して文字列を保存します。  
+-   <span data-ttu-id="2607c-260">インバリアント カルチャの書式指定規則を使用して文字列を保存します。</span><span class="sxs-lookup"><span data-stu-id="2607c-260">Save the string by using the formatting conventions of the invariant culture.</span></span>  
   
- 次の例では、最後のアプローチを示します。 この例では、静的 <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> プロパティによって返されるインバリアント カルチャの書式指定規則を使用します。  
+ <span data-ttu-id="2607c-261">次の例では、最後のアプローチを示します。</span><span class="sxs-lookup"><span data-stu-id="2607c-261">The following example illustrates the last approach.</span></span> <span data-ttu-id="2607c-262">この例では、静的 <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> プロパティによって返されるインバリアント カルチャの書式指定規則を使用します。</span><span class="sxs-lookup"><span data-stu-id="2607c-262">It uses the formatting conventions of the invariant culture returned by the static <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> property.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates3.cs#4)]
  [!code-vb[Conceptual.Globalization#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates3.vb#4)]  
   
 <a name="DatesAndTimes_TimeZones"></a>   
-### シリアル化とタイム ゾーンへの対応  
- 日付と時刻の値は、一般的な時刻 \("店舗は 2013 年 1 月 2 日の午前 9 時に開店します"\) から特定の時点 \("生年月日: 2013 年 1 月 2 日午前 6 時 32 分 00 秒"\) まで、多様に解釈できます。 時刻の値が特定の時点を表し、それをシリアル化された値から復元する場合、ユーザーの地理的場所またはタイム ゾーンに関係なく同じ特定の時点を表すことを確認する必要があります。  
+### <a name="serialization-and-time-zone-awareness"></a><span data-ttu-id="2607c-263">シリアル化とタイム ゾーンへの対応</span><span class="sxs-lookup"><span data-stu-id="2607c-263">Serialization and Time Zone Awareness</span></span>  
+ <span data-ttu-id="2607c-264">日付と時刻の値は、一般的な時刻 ("店舗は 2013 年 1 月 2 日の午前 9 時に開店します") から特定の時点 ("生年月日: 2013 年 1 月 2 日午前 6 時 32 分 00 秒") まで、多様に解釈できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-264">A date and time value can have multiple interpretations, ranging from a general time ("The stores open on January 2, 2013, at 9:00 A.M.") to a specific moment in time ("Date of birth: January 2, 2013 6:32:00 A.M.").</span></span> <span data-ttu-id="2607c-265">時刻の値が特定の時点を表し、それをシリアル化された値から復元する場合、ユーザーの地理的場所またはタイム ゾーンに関係なく同じ特定の時点を表すことを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-265">When a time value represents a specific moment in time and you restore it from a serialized value, you should ensure that it represents the same moment in time regardless of the user's geographical location or time zone.</span></span>  
   
- この問題を説明する例を次に示します。 この例では、1 つのローカル日付と時刻の値を、3 つの[標準書式](../../../docs/standard/base-types/standard-date-and-time-format-strings.md) \(一般の日付と長い形式の時刻の "G"、並べ替え可能な日付と時刻の "s"、およびラウンド トリップする日付と時刻の "o"\) の文字列として、およびバイナリ形式で保存します。  
+ <span data-ttu-id="2607c-266">この問題を説明する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="2607c-266">The following example illustrates this problem.</span></span> <span data-ttu-id="2607c-267">1 つのローカル日付と時刻の値を 3 つの文字列として保存[標準形式](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)(一般的な日付、長い形式の時刻の並べ替え可能な日付/時刻、"s"の"G"、"o"ラウンド トリップの日付/時刻) およびバイナリ形式のです。</span><span class="sxs-lookup"><span data-stu-id="2607c-267">It saves a single local date and time value as a string in three [standard formats](../../../docs/standard/base-types/standard-date-and-time-format-strings.md) ("G" for general date long time, "s" for sortable date/time, and "o" for round-trip date/time) as well as in binary format.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates4.cs#10)]
  [!code-vb[Conceptual.Globalization#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates4.vb#10)]  
   
- シリアル化されたシステムと同じタイム ゾーンのシステムでデータを復元すると、出力に示すように、逆シリアル化された日付と時刻の値は正確に元の値を反映しています。  
+ <span data-ttu-id="2607c-268">シリアル化されたシステムと同じタイム ゾーンのシステムでデータを復元すると、出力に示すように、逆シリアル化された日付と時刻の値は正確に元の値を反映しています。</span><span class="sxs-lookup"><span data-stu-id="2607c-268">When the data is restored on a system in the same time zone as the system on which it was serialized, the deserialized date and time values accurately reflect the original value, as the output shows:</span></span>  
   
 ```  
-  
 '3/30/2013 6:00:00 PM' --> 3/30/2013 6:00:00 PM Unspecified  
 '2013-03-30T18:00:00' --> 3/30/2013 6:00:00 PM Unspecified  
 '2013-03-30T18:00:00.0000000-07:00' --> 3/30/2013 6:00:00 PM Local  
   
 3/30/2013 6:00:00 PM Local  
-  
 ```  
   
- ただし、別のタイム ゾーンのシステムでデータを復元する場合は、"o" \(ラウンド トリップ\) 標準書式指定文字列を使用して書式設定された日付と時刻の値だけがタイム ゾーン情報を維持して、同じ時点を表します。 日付と時刻のデータがロマンス標準時ゾーンのシステムで復元されたときの出力を次に示します。  
+ <span data-ttu-id="2607c-269">ただし、別のタイム ゾーンのシステムでデータを復元する場合は、"o" (ラウンド トリップ) 標準書式指定文字列を使用して書式設定された日付と時刻の値だけがタイム ゾーン情報を維持して、同じ時点を表します。</span><span class="sxs-lookup"><span data-stu-id="2607c-269">However, if you restore the data on a system in a different time zone, only the date and time value that was formatted with the "o" (round-trip) standard format string preserves time zone information and therefore represents the same instant in time.</span></span> <span data-ttu-id="2607c-270">日付と時刻のデータがロマンス標準時ゾーンのシステムで復元されたときの出力を次に示します。</span><span class="sxs-lookup"><span data-stu-id="2607c-270">Here's the output when the date and time data is restored on a system in the Romance Standard Time zone:</span></span>  
   
 ```  
-  
 '3/30/2013 6:00:00 PM' --> 3/30/2013 6:00:00 PM Unspecified  
 '2013-03-30T18:00:00' --> 3/30/2013 6:00:00 PM Unspecified  
 '2013-03-30T18:00:00.0000000-07:00' --> 3/31/2013 3:00:00 AM Local  
   
 3/30/2013 6:00:00 PM Local  
-  
 ```  
   
- データが逆シリアル化されるシステムのタイム ゾーンに関係なく 1 つの時点を表す日付と時刻の値を正確に反映するには、次のいずれかの方法を使用できます。  
+ <span data-ttu-id="2607c-271">データが逆シリアル化されるシステムのタイム ゾーンに関係なく 1 つの時点を表す日付と時刻の値を正確に反映するには、次のいずれかの方法を使用できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-271">To accurately reflect a date and time value that represents a single moment of time regardless of the time zone of the system on which the data is deserialized, you can do any of the following:</span></span>  
   
--   "o" \(ラウンド トリップ\) 標準書式指定文字列を使用して値を文字列として保存します。 その後、ターゲット システムで逆シリアル化します。  
+-   <span data-ttu-id="2607c-272">"o" (ラウンド トリップ) 標準書式指定文字列を使用して値を文字列として保存します。</span><span class="sxs-lookup"><span data-stu-id="2607c-272">Save the value as a string by using the "o" (round-trip) standard format string.</span></span> <span data-ttu-id="2607c-273">その後、ターゲット システムで逆シリアル化します。</span><span class="sxs-lookup"><span data-stu-id="2607c-273">Then deserialize it on the target system.</span></span>  
   
--   値を UTC に変換し、"r" \(RFC1123\) 標準書式指定文字列を使用して文字列として保存します。 その後、ターゲット システムで逆シリアル化し、現地時刻に変換します。  
+-   <span data-ttu-id="2607c-274">値を UTC に変換し、"r" (RFC1123) 標準書式指定文字列を使用して文字列として保存します。</span><span class="sxs-lookup"><span data-stu-id="2607c-274">Convert it to UTC and save it as a string by using the "r" (RFC1123) standard format string.</span></span> <span data-ttu-id="2607c-275">その後、ターゲット システムで逆シリアル化し、現地時刻に変換します。</span><span class="sxs-lookup"><span data-stu-id="2607c-275">Then deserialize it on the target system and convert it to local time.</span></span>  
   
--   値を UTC に変換し、"u" \(世界共通の並べ替え可能な日付と時刻\) 標準書式指定文字列を使用して文字列として保存します。 その後、ターゲット システムで逆シリアル化し、現地時刻に変換します。  
+-   <span data-ttu-id="2607c-276">値を UTC に変換し、"u" (世界共通の並べ替え可能な日付と時刻) 標準書式指定文字列を使用して文字列として保存します。</span><span class="sxs-lookup"><span data-stu-id="2607c-276">Convert it to UTC and save it as a string by using the "u" (universal sortable) standard format string.</span></span> <span data-ttu-id="2607c-277">その後、ターゲット システムで逆シリアル化し、現地時刻に変換します。</span><span class="sxs-lookup"><span data-stu-id="2607c-277">Then deserialize it on the target system and convert it to local time.</span></span>  
   
--   値を UTC に変換し、バイナリ形式で保存します。 その後、ターゲット システムで逆シリアル化し、現地時刻に変換します。  
+-   <span data-ttu-id="2607c-278">値を UTC に変換し、バイナリ形式で保存します。</span><span class="sxs-lookup"><span data-stu-id="2607c-278">Convert it to UTC and save it in binary format.</span></span> <span data-ttu-id="2607c-279">その後、ターゲット システムで逆シリアル化し、現地時刻に変換します。</span><span class="sxs-lookup"><span data-stu-id="2607c-279">Then deserialize it on the target system and convert it to local time.</span></span>  
   
- 各方法の例を次に示します。  
+ <span data-ttu-id="2607c-280">各方法の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="2607c-280">The following example illustrates each technique.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates8.cs#11)]
  [!code-vb[Conceptual.Globalization#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates8.vb#11)]  
   
- データを太平洋標準時ゾーンのシステムでシリアル化し、ロマンス標準時ゾーンのシステムで逆シリアル化すると、次の出力が表示されます。  
+ <span data-ttu-id="2607c-281">データを太平洋標準時ゾーンのシステムでシリアル化し、ロマンス標準時ゾーンのシステムで逆シリアル化すると、次の出力が表示されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-281">When the data is serialized on a system in the Pacific Standard Time zone and deserialized on a system in the Romance Standard Time zone, the example displays the following output:</span></span>  
   
 ```  
-  
 '2013-03-30T18:00:00.0000000-07:00' --> 3/31/2013 3:00:00 AM Local  
 'Sun, 31 Mar 2013 01:00:00 GMT' --> 3/31/2013 3:00:00 AM Local  
 '2013-03-31 01:00:00Z' --> 3/31/2013 3:00:00 AM Local  
   
 3/31/2013 3:00:00 AM Local  
-  
 ```  
   
- 詳細については、「[タイム ゾーン間での時刻の変換](../../../docs/standard/datetime/converting-between-time-zones.md)」を参照してください。  
+ <span data-ttu-id="2607c-282">詳細については、次を参照してください。[に変換する時間の間のタイム ゾーン](../../../docs/standard/datetime/converting-between-time-zones.md)です。</span><span class="sxs-lookup"><span data-stu-id="2607c-282">For more information, see [Converting Times Between Time Zones](../../../docs/standard/datetime/converting-between-time-zones.md).</span></span>  
   
 <a name="DatesAndTimes_Arithmetic"></a>   
-### 日付と時刻の演算を実行する  
- <xref:System.DateTime> 型と <xref:System.DateTimeOffset> 型は、算術演算をサポートします。 2 つの日付の値の差を計算したり、日付の値に特定の時間間隔を加算または減算したりできます。 ただし、日付と時刻の値に対する算術演算では、タイム ゾーンとタイム ゾーン調整規則が考慮されません。 このため、時点を表す値に対して日付と時刻の算術を実行すると、不正確な結果が返されることがあります。  
+### <a name="performing-date-and-time-arithmetic"></a><span data-ttu-id="2607c-283">日付と時刻の演算を実行する</span><span class="sxs-lookup"><span data-stu-id="2607c-283">Performing Date and Time Arithmetic</span></span>  
+ <span data-ttu-id="2607c-284"><xref:System.DateTime> 型と <xref:System.DateTimeOffset> 型は、算術演算をサポートします。</span><span class="sxs-lookup"><span data-stu-id="2607c-284">Both the <xref:System.DateTime> and <xref:System.DateTimeOffset> types support arithmetic operations.</span></span> <span data-ttu-id="2607c-285">2 つの日付の値の差を計算したり、日付の値に特定の時間間隔を加算または減算したりできます。</span><span class="sxs-lookup"><span data-stu-id="2607c-285">You can calculate the difference between two date values, or you can add or subtract particular time intervals to or from a date value.</span></span> <span data-ttu-id="2607c-286">ただし、日付と時刻の値に対する算術演算では、タイム ゾーンとタイム ゾーン調整規則が考慮されません。</span><span class="sxs-lookup"><span data-stu-id="2607c-286">However, arithmetic operations on date and time values do not take time zones and time zone adjustment rules into account.</span></span> <span data-ttu-id="2607c-287">このため、時点を表す値に対して日付と時刻の算術を実行すると、不正確な結果が返されることがあります。</span><span class="sxs-lookup"><span data-stu-id="2607c-287">Because of this, date and time arithmetic on values that represent moments in time can return inaccurate results.</span></span>  
   
- たとえば、太平洋標準時から太平洋夏時間への切り替えは、3 月の第 2 日曜日、2013 年の場合は 3 月 10 日に行われます。 次の例に示すように、太平洋標準時ゾーンのシステムで、2013 年 3 月 9 日午前 10 時 30 分の 48 時間後に当たる日付と時刻を計算した場合、結果は 2013 年 3 月 11 日午前 10 時 30 分となり、その間の時間調整は考慮されません。  
+ <span data-ttu-id="2607c-288">たとえば、太平洋標準時から太平洋夏時間への切り替えは、3 月の第 2 日曜日、2013 年の場合は 3 月 10 日に行われます。</span><span class="sxs-lookup"><span data-stu-id="2607c-288">For example, the transition from Pacific Standard Time to Pacific Daylight Time occurs on the second Sunday of March, which is March 10 for the year 2013.</span></span> <span data-ttu-id="2607c-289">次の例として、日を計算し、時刻が、示します 48 時間後は、2013 年 3 月 9 日午前 10 時 30 分</span><span class="sxs-lookup"><span data-stu-id="2607c-289">As the following example shows, if you calculate the date and time that is 48 hours after March 9, 2013 at 10:30 A.M.</span></span> <span data-ttu-id="2607c-290">システムでは太平洋標準時ゾーンの結果、2013 年 3 月 11 日午前 10 時 30 分にアカウントに介在する時間の調整は取りません。</span><span class="sxs-lookup"><span data-stu-id="2607c-290">on a system in the Pacific Standard Time zone, the result, March 11, 2013 at 10:30 A.M., does not take the intervening time adjustment into account.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates5.cs#8)]
  [!code-vb[Conceptual.Globalization#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates5.vb#8)]  
   
- 日付と時刻の値に対する算術演算によって正確な結果を生成するには、次の手順を実行します。  
+ <span data-ttu-id="2607c-291">日付と時刻の値に対する算術演算によって正確な結果を生成するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="2607c-291">To ensure that an arithmetic operation on date and time values produces accurate results, follow these steps:</span></span>  
   
-1.  ソース タイム ゾーンの時刻を UTC に変換します。  
+1.  <span data-ttu-id="2607c-292">ソース タイム ゾーンの時刻を UTC に変換します。</span><span class="sxs-lookup"><span data-stu-id="2607c-292">Convert the time in the source time zone to UTC.</span></span>  
   
-2.  算術演算を実行します。  
+2.  <span data-ttu-id="2607c-293">算術演算を実行します。</span><span class="sxs-lookup"><span data-stu-id="2607c-293">Perform the arithmetic operation.</span></span>  
   
-3.  結果が日付と時刻の値である場合、UTC からソース タイム ゾーンの時刻に変換します。  
+3.  <span data-ttu-id="2607c-294">結果が日付と時刻の値である場合、UTC からソース タイム ゾーンの時刻に変換します。</span><span class="sxs-lookup"><span data-stu-id="2607c-294">If the result is a date and time value, convert it from UTC to the time in the source time zone.</span></span>  
   
- 次の例は前の例と似ていますが、この 3 つの手順を実行することで、2013 年 3 月 9 日午前 10 時 30 分に 48 時間が正しく追加されています。  
+ <span data-ttu-id="2607c-295">次の例は前の例と似ていますが、この 3 つの手順を実行することで、2013 年 3 月 9 日午前 10 時 30 分に 48 時間が正しく追加されています。</span><span class="sxs-lookup"><span data-stu-id="2607c-295">The following example is similar to the previous example, except that it follows these three steps to correctly add 48 hours to March 9, 2013 at 10:30 A.M.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates6.cs#9)]
  [!code-vb[Conceptual.Globalization#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates6.vb#9)]  
   
- 詳細については、「[日付と時刻を使用した算術演算の実行](../../../docs/standard/datetime/performing-arithmetic-operations.md)」を参照してください。  
+ <span data-ttu-id="2607c-296">詳細については、次を参照してください。[日付と時刻の算術演算操作の実行](../../../docs/standard/datetime/performing-arithmetic-operations.md)です。</span><span class="sxs-lookup"><span data-stu-id="2607c-296">For more information, see [Performing Arithmetic Operations with Dates and Times](../../../docs/standard/datetime/performing-arithmetic-operations.md).</span></span>  
   
-### 日付要素のカルチャに依存した名前を使用する  
- アプリによっては、月または曜日の名前を表示することが必要になる場合があります。 これを実行するために、次のようなコードが一般に使用されます。  
+### <a name="using-culture-sensitive-names-for-date-elements"></a><span data-ttu-id="2607c-297">日付要素のカルチャに依存した名前を使用する</span><span class="sxs-lookup"><span data-stu-id="2607c-297">Using Culture-Sensitive Names for Date Elements</span></span>  
+ <span data-ttu-id="2607c-298">アプリによっては、月または曜日の名前を表示することが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-298">Your app may need to display the name of the month or the day of the week.</span></span> <span data-ttu-id="2607c-299">これを実行するために、次のようなコードが一般に使用されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-299">To do this, code such as the following is common.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#19](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/monthname1.cs#19)]
  [!code-vb[Conceptual.Globalization#19](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/monthname1.vb#19)]  
   
- ただし、このコードは曜日の名前を必ず英語で返します。 多くの場合、月の名前を抽出するコードには、さらに柔軟性がありません。 一般に、このようなコードでは特定の言語の月の名前を使用した 12 か月の暦を前提としています。  
+ <span data-ttu-id="2607c-300">ただし、このコードは曜日の名前を必ず英語で返します。</span><span class="sxs-lookup"><span data-stu-id="2607c-300">However, this code always returns the names of the days of the week in English.</span></span> <span data-ttu-id="2607c-301">多くの場合、月の名前を抽出するコードには、さらに柔軟性がありません。</span><span class="sxs-lookup"><span data-stu-id="2607c-301">Code that extracts the name of the month is often even more inflexible.</span></span> <span data-ttu-id="2607c-302">一般に、このようなコードでは特定の言語の月の名前を使用した 12 か月の暦を前提としています。</span><span class="sxs-lookup"><span data-stu-id="2607c-302">It frequently assumes a twelve-month calendar with names of months in a specific language.</span></span>  
   
- 次の例に示すように、[カスタム日時書式指定文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)または <xref:System.Globalization.DateTimeFormatInfo> オブジェクトのプロパティを使用すると、ユーザーのカルチャの曜日または月の名前を反映する文字列を簡単に抽出できます。 この例では、現在のカルチャをフランス語 \(フランス\) に変更し、2013 年 7 月 1 日の曜日の名前と月の名前を表示します。  
+ <span data-ttu-id="2607c-303">使用して[カスタム日付/時刻の書式指定文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)のプロパティを<xref:System.Globalization.DateTimeFormatInfo>オブジェクトを簡単に次の例に示すように、曜日や月で、ユーザーのカルチャの曜日名を反映する文字列を抽出します。</span><span class="sxs-lookup"><span data-stu-id="2607c-303">By using [custom date and time format strings](../../../docs/standard/base-types/custom-date-and-time-format-strings.md) or the properties of the <xref:System.Globalization.DateTimeFormatInfo> object, it is easy to extract strings that reflect the names of days of the week or months in the user's culture, as the following example illustrates.</span></span> <span data-ttu-id="2607c-304">この例では、現在のカルチャをフランス語 (フランス) に変更し、2013 年 7 月 1 日の曜日の名前と月の名前を表示します。</span><span class="sxs-lookup"><span data-stu-id="2607c-304">It changes the current culture to French (France) and displays the name of the day of the week and the name of the month for July 1, 2013.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/monthname2.cs#20)]
  [!code-vb[Conceptual.Globalization#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/monthname2.vb#20)]  
   
 <a name="Numbers"></a>   
-## 数値を処理する  
- 数値の処理は、数値をユーザー インターフェイスに表示するのか、保持するのかによって異なります。 このセクションでは、両方の使用を検討します。  
+## <a name="handling-numeric-values"></a><span data-ttu-id="2607c-305">数値を処理する</span><span class="sxs-lookup"><span data-stu-id="2607c-305">Handling Numeric Values</span></span>  
+ <span data-ttu-id="2607c-306">数値の処理は、数値をユーザー インターフェイスに表示するのか、保持するのかによって異なります。</span><span class="sxs-lookup"><span data-stu-id="2607c-306">The handling of numbers depends on whether they are displayed in the user interface or persisted.</span></span> <span data-ttu-id="2607c-307">このセクションでは、両方の使用を検討します。</span><span class="sxs-lookup"><span data-stu-id="2607c-307">This section examines both usages.</span></span>  
   
 > [!NOTE]
->  解析操作と書式設定操作では、.NET Framework は基本ラテン文字 0 ～ 9 \(U\+0030 ～ U\+0039\) だけを数字として認識します。  
+>  <span data-ttu-id="2607c-308">解析操作と書式設定操作では、.NET Framework は基本ラテン文字 0 ～ 9 (U+0030 ～ U+0039) だけを数字として認識します。</span><span class="sxs-lookup"><span data-stu-id="2607c-308">In parsing and formatting operations, the .NET Framework recognizes only the Basic Latin characters 0 through 9 (U+0030 through U+0039) as numeric digits.</span></span>  
   
 <a name="Numbers_Display"></a>   
-### 数値を表示する  
- 通常、数値をユーザー インターフェイスに表示するときには、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> プロパティと、<xref:System.Globalization.NumberFormatInfo> プロパティによって返される `CultureInfo.CurrentCulture.NumberFormat` オブジェクトで定義されているユーザーのカルチャの書式指定規則を使用する必要があります。 次のメソッドのいずれかを使用して日付の書式を設定すると、現在のカルチャの書式指定規則が自動的に使用されます。  
+### <a name="displaying-numeric-values"></a><span data-ttu-id="2607c-309">数値を表示する</span><span class="sxs-lookup"><span data-stu-id="2607c-309">Displaying Numeric Values</span></span>  
+ <span data-ttu-id="2607c-310">通常、数値をユーザー インターフェイスに表示するときには、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> プロパティと、<xref:System.Globalization.NumberFormatInfo> プロパティによって返される `CultureInfo.CurrentCulture.NumberFormat` オブジェクトで定義されているユーザーのカルチャの書式指定規則を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-310">Typically, when numbers are displayed in the user interface, you should use the formatting conventions of the user's culture, which is defined by the <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> property and by the <xref:System.Globalization.NumberFormatInfo> object returned by the `CultureInfo.CurrentCulture.NumberFormat` property.</span></span> <span data-ttu-id="2607c-311">次のメソッドのいずれかを使用して日付の書式を設定すると、現在のカルチャの書式指定規則が自動的に使用されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-311">The formatting conventions of the current culture are automatically used when you format a date by using any of the following methods:</span></span>  
   
--   任意の数値型のパラメーターなしの `ToString` メソッド  
+-   <span data-ttu-id="2607c-312">任意の数値型のパラメーターなしの `ToString` メソッド</span><span class="sxs-lookup"><span data-stu-id="2607c-312">The parameterless `ToString` method of any numeric type</span></span>  
   
--   書式指定文字列を引数として含む任意の数値型の `ToString(String)` メソッド  
+-   <span data-ttu-id="2607c-313">書式指定文字列を引数として含む任意の数値型の `ToString(String)` メソッド</span><span class="sxs-lookup"><span data-stu-id="2607c-313">The `ToString(String)` method of any numeric type, which includes a format string as an argument</span></span>  
   
--   数値と共に使用した場合、[複合書式指定](../../../docs/standard/base-types/composite-formatting.md)機能  
+-   <span data-ttu-id="2607c-314">[複合書式指定](../../../docs/standard/base-types/composite-formatting.md)機能、数値と共に使用した場合</span><span class="sxs-lookup"><span data-stu-id="2607c-314">The [composite formatting](../../../docs/standard/base-types/composite-formatting.md) feature, when it is used with numeric values</span></span>  
   
- 次の例では、パリ \(フランス\) の毎月の平均気温を表示します。 この例では、最初にデータを表示する前に現在のカルチャをフランス語 \(フランス\) に設定し、次に英語 \(米国\) に設定します。 どちらの場合も、月の名前と気温はそのカルチャに適した形式で表示されます。 この 2 つのカルチャでは、気温の値に使用する小数点記号が異なります。 また、この例では、"MMMM" カスタム日時書式指定文字列を使用して月の正式名を表示し、<xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=fullName> 配列で最も長い月の名前の長さを確認することで、結果の文字列の月の名前に適切な領域を割り当てます。  
+ <span data-ttu-id="2607c-315">次の例では、パリ (フランス) の毎月の平均気温を表示します。</span><span class="sxs-lookup"><span data-stu-id="2607c-315">The following example displays the average temperature per month in Paris, France.</span></span> <span data-ttu-id="2607c-316">この例では、最初にデータを表示する前に現在のカルチャをフランス語 (フランス) に設定し、次に英語 (米国) に設定します。</span><span class="sxs-lookup"><span data-stu-id="2607c-316">It first sets the current culture to French (France) before displaying the data, and then sets it to English (United States).</span></span> <span data-ttu-id="2607c-317">どちらの場合も、月の名前と気温はそのカルチャに適した形式で表示されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-317">In each case, the month names and temperatures are displayed in the format that is appropriate for that culture.</span></span> <span data-ttu-id="2607c-318">この 2 つのカルチャでは、気温の値に使用する小数点記号が異なります。</span><span class="sxs-lookup"><span data-stu-id="2607c-318">Note that the two cultures use different decimal separators in the temperature value.</span></span> <span data-ttu-id="2607c-319">また、この例では、"MMMM" カスタム日時書式指定文字列を使用して月の正式名を表示し、<xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=nameWithType> 配列で最も長い月の名前の長さを確認することで、結果の文字列の月の名前に適切な領域を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="2607c-319">Also note that the example uses the "MMMM" custom date and time format string to display the full month name, and that it allocates the appropriate amount of space for the month name in the result string by determining the length of the longest month name in the <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=nameWithType> array.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/numbers1.cs#5)]
  [!code-vb[Conceptual.Globalization#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/numbers1.vb#5)]  
   
 <a name="Numbers_Persist"></a>   
-### 数値を保持する  
- 数値データはカルチャ固有の書式で保持しないでください。 これは、データの破損または実行時例外が発生する一般的なプログラミング エラーです。 次の例では、10 個のランダムな浮動小数点数を生成し、英語 \(米国\) カルチャの書式指定規則を使用して文字列としてシリアル化します。 データが英語 \(米国\) カルチャの規則を使用して取得および解析されると、正常に復元されます。 ただし、この数値をフランス語 \(フランス\) カルチャの規則を使用して取得および解析すると、使用する小数点記号が異なるため、数値はいずれも解析できません。  
+### <a name="persisting-numeric-values"></a><span data-ttu-id="2607c-320">数値を保持する</span><span class="sxs-lookup"><span data-stu-id="2607c-320">Persisting Numeric Values</span></span>  
+ <span data-ttu-id="2607c-321">数値データはカルチャ固有の書式で保持しないでください。</span><span class="sxs-lookup"><span data-stu-id="2607c-321">You should never persist numeric data in a culture-specific format.</span></span> <span data-ttu-id="2607c-322">これは、データの破損または実行時例外が発生する一般的なプログラミング エラーです。</span><span class="sxs-lookup"><span data-stu-id="2607c-322">This is a common programming error that results in either corrupted data or a run-time exception.</span></span> <span data-ttu-id="2607c-323">次の例では、10 個のランダムな浮動小数点数を生成し、英語 (米国) カルチャの書式指定規則を使用して文字列としてシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="2607c-323">The following example generates ten random floating-point numbers, and then serializes them as strings by using the formatting conventions of the English (United States) culture.</span></span> <span data-ttu-id="2607c-324">データが英語 (米国) カルチャの規則を使用して取得および解析されると、正常に復元されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-324">When the data is retrieved and parsed by using the conventions of the English (United States) culture, it is successfully restored.</span></span> <span data-ttu-id="2607c-325">ただし、この数値をフランス語 (フランス) カルチャの規則を使用して取得および解析すると、使用する小数点記号が異なるため、数値はいずれも解析できません。</span><span class="sxs-lookup"><span data-stu-id="2607c-325">However, when it is retrieved and parsed by using the conventions of the French (France) culture, none of the numbers can be parsed because the cultures use different decimal separators.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/numbers2.cs#6)]
  [!code-vb[Conceptual.Globalization#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/numbers2.vb#6)]  
   
- この問題を回避するには、次の方法のいずれかを使用します。  
+ <span data-ttu-id="2607c-326">この問題を回避するには、次の方法のいずれかを使用します。</span><span class="sxs-lookup"><span data-stu-id="2607c-326">To avoid this problem, you can use one of these techniques:</span></span>  
   
--   ユーザーのカルチャに関係なく同じであるカスタム書式指定文字列を使用して数値の文字列表現を保存および解析します。  
+-   <span data-ttu-id="2607c-327">ユーザーのカルチャに関係なく同じであるカスタム書式指定文字列を使用して数値の文字列表現を保存および解析します。</span><span class="sxs-lookup"><span data-stu-id="2607c-327">Save and parse the string representation of the number by using a custom format string that is the same regardless of the user's culture.</span></span>  
   
--   <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> プロパティによって返されるインバリアント カルチャの書式指定規則を使用して文字列として数値を保存します。  
+-   <span data-ttu-id="2607c-328"><xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> プロパティによって返されるインバリアント カルチャの書式指定規則を使用して文字列として数値を保存します。</span><span class="sxs-lookup"><span data-stu-id="2607c-328">Save the number as a string by using the formatting conventions of the invariant culture, which is returned by the <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> property.</span></span>  
   
--   文字列形式ではなく、バイナリで数値をシリアル化します。  
+-   <span data-ttu-id="2607c-329">文字列形式ではなく、バイナリで数値をシリアル化します。</span><span class="sxs-lookup"><span data-stu-id="2607c-329">Serialize the number in binary instead of string format.</span></span>  
   
- 次の例では、最後のアプローチを示します。 この例では、<xref:System.Double> 値の配列をシリアル化し、英語 \(米国\) カルチャとフランス語 \(フランス\) カルチャの書式指定規則を使用して逆シリアル化して、表示します。  
+ <span data-ttu-id="2607c-330">次の例では、最後のアプローチを示します。</span><span class="sxs-lookup"><span data-stu-id="2607c-330">The following example illustrates the last approach.</span></span> <span data-ttu-id="2607c-331">この例では、<xref:System.Double> 値の配列をシリアル化し、英語 (米国) カルチャとフランス語 (フランス) カルチャの書式指定規則を使用して逆シリアル化して、表示します。</span><span class="sxs-lookup"><span data-stu-id="2607c-331">It serializes the array of <xref:System.Double> values, and then deserializes and displays them by using the formatting conventions of the English (United States) and French (France) cultures.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/numbers3.cs#7)]
  [!code-vb[Conceptual.Globalization#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/numbers3.vb#7)]  
   
- 通貨値のシリアル化は特殊なケースです。 通貨値は、それが表現されている通貨の単位に依存するため、独立した数値として扱う意味はほとんどありません。 ただし、通貨値を、通貨記号を含んだ書式設定された文字列として保存する場合、次の例に示すように、既定のカルチャが異なる通貨記号を使用するシステムで逆シリアル化できません。  
+ <span data-ttu-id="2607c-332">通貨値のシリアル化は特殊なケースです。</span><span class="sxs-lookup"><span data-stu-id="2607c-332">Serializing currency values is a special case.</span></span> <span data-ttu-id="2607c-333">通貨値は、それが表現されている通貨の単位に依存するため、独立した数値として扱う意味はほとんどありません。</span><span class="sxs-lookup"><span data-stu-id="2607c-333">Because a currency value depends on the unit of currency in which it is expressed; it makes little sense to treat it as an independent numeric value.</span></span> <span data-ttu-id="2607c-334">ただし、通貨値を、通貨記号を含んだ書式設定された文字列として保存する場合、次の例に示すように、既定のカルチャが異なる通貨記号を使用するシステムで逆シリアル化できません。</span><span class="sxs-lookup"><span data-stu-id="2607c-334">However, if you save a currency value as a formatted string that includes a currency symbol, it cannot be deserialized on a system whose default culture uses a different currency symbol, as the following example shows.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/currency1.cs#16)]
  [!code-vb[Conceptual.Globalization#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/currency1.vb#16)]  
   
- 代わりに、カルチャの名前など、カルチャに関する情報と共に数値をシリアル化して、値とその通貨記号が現在のカルチャと関係なく逆シリアル化できるようにする必要があります。 次の例では、2 つメンバーを使用して `CurrencyValue` 構造体を定義することでこれを実行しています。2 つのメンバーは、<xref:System.Decimal> 値とその値が属するカルチャの名前です。  
+ <span data-ttu-id="2607c-335">代わりに、カルチャの名前など、カルチャに関する情報と共に数値をシリアル化して、値とその通貨記号が現在のカルチャと関係なく逆シリアル化できるようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-335">Instead, you should serialize the numeric value along with some cultural information, such as the name of the culture, so that the value and its currency symbol can be deserialized independently of the current culture.</span></span> <span data-ttu-id="2607c-336">次の例では、2 つメンバーを使用して `CurrencyValue` 構造体を定義することでこれを実行しています。2 つのメンバーは、<xref:System.Decimal> 値とその値が属するカルチャの名前です。</span><span class="sxs-lookup"><span data-stu-id="2607c-336">The following example does that by defining a `CurrencyValue` structure with two members: the <xref:System.Decimal> value and the name of the culture to which the value belongs.</span></span>  
   
  [!code-csharp[Conceptual.Globalization#17](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/currency2.cs#17)]
  [!code-vb[Conceptual.Globalization#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/currency2.vb#17)]  
   
 <a name="Cultures"></a>   
-## カルチャ固有の設定を使用する  
- .NET Framework では、特定のカルチャまたは地域は <xref:System.Globalization.CultureInfo> クラスによって表されます。 そのプロパティの一部は、カルチャのある側面に関する特定の情報を提供するオブジェクトを返します。  
+## <a name="working-with-culture-specific-settings"></a><span data-ttu-id="2607c-337">カルチャ固有の設定を使用する</span><span class="sxs-lookup"><span data-stu-id="2607c-337">Working with Culture-Specific Settings</span></span>  
+ <span data-ttu-id="2607c-338">.NET Framework では、特定のカルチャまたは地域は <xref:System.Globalization.CultureInfo> クラスによって表されます。</span><span class="sxs-lookup"><span data-stu-id="2607c-338">In the .NET Framework, the <xref:System.Globalization.CultureInfo> class represents a particular culture or region.</span></span> <span data-ttu-id="2607c-339">そのプロパティの一部は、カルチャのある側面に関する特定の情報を提供するオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="2607c-339">Some of its properties return objects that provide specific information about some aspect of a culture:</span></span>  
   
--   <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=fullName> プロパティは、カルチャによる文字列の比較方法および並べ替え方法に関する情報を含んだ <xref:System.Globalization.CompareInfo> オブジェクトを返します。  
+-   <span data-ttu-id="2607c-340"><xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> プロパティは、カルチャによる文字列の比較方法および並べ替え方法に関する情報を含んだ <xref:System.Globalization.CompareInfo> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="2607c-340">The <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> property returns a <xref:System.Globalization.CompareInfo> object that contains information about how the culture compares and orders strings.</span></span>  
   
--   <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=fullName> プロパティは、日付と時刻のデータの書式設定で使用されるカルチャ固有の情報を提供する <xref:System.Globalization.DateTimeFormatInfo> オブジェクトを返します。  
+-   <span data-ttu-id="2607c-341"><xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> プロパティは、日付と時刻のデータの書式設定で使用されるカルチャ固有の情報を提供する <xref:System.Globalization.DateTimeFormatInfo> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="2607c-341">The <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> property returns a <xref:System.Globalization.DateTimeFormatInfo> object that provides culture-specific information used in formatting date and time data.</span></span>  
   
--   <xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=fullName> プロパティは、数値データの書式設定で使用されるカルチャ固有の情報を提供する <xref:System.Globalization.NumberFormatInfo> オブジェクトを返します。  
+-   <span data-ttu-id="2607c-342"><xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=nameWithType> プロパティは、数値データの書式設定で使用されるカルチャ固有の情報を提供する <xref:System.Globalization.NumberFormatInfo> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="2607c-342">The <xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=nameWithType> property returns a <xref:System.Globalization.NumberFormatInfo> object that provides culture-specific information used in formatting numeric data.</span></span>  
   
--   <xref:System.Globalization.CultureInfo.TextInfo%2A?displayProperty=fullName> プロパティは、カルチャの書記体系に関する情報を提供する <xref:System.Globalization.TextInfo> オブジェクトを返します。  
+-   <span data-ttu-id="2607c-343"><xref:System.Globalization.CultureInfo.TextInfo%2A?displayProperty=nameWithType> プロパティは、カルチャの書記体系に関する情報を提供する <xref:System.Globalization.TextInfo> オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="2607c-343">The <xref:System.Globalization.CultureInfo.TextInfo%2A?displayProperty=nameWithType> property returns a <xref:System.Globalization.TextInfo> object that provides information about the culture's writing system.</span></span>  
   
- 一般に、特定の <xref:System.Globalization.CultureInfo> プロパティおよび関連するオブジェクトの値について何も想定しないでください。 代わりに、次の理由により、カルチャ固有のデータは変更される可能性があると考える必要があります。  
+ <span data-ttu-id="2607c-344">一般に、特定の <xref:System.Globalization.CultureInfo> プロパティおよび関連するオブジェクトの値について何も想定しないでください。</span><span class="sxs-lookup"><span data-stu-id="2607c-344">In general, do not make any assumptions about the values of specific <xref:System.Globalization.CultureInfo> properties and their related objects.</span></span> <span data-ttu-id="2607c-345">代わりに、次の理由により、カルチャ固有のデータは変更される可能性があると考える必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-345">Instead, you should view culture-specific data as subject to change, for these reasons:</span></span>  
   
--   個々のプロパティ値は、データが修正された、より優れたデータが使用可能になった、カルチャ固有の規則が変更されたなどの理由で、時間と共に変更または修正される可能性があります。  
+-   <span data-ttu-id="2607c-346">個々のプロパティ値は、データが修正された、より優れたデータが使用可能になった、カルチャ固有の規則が変更されたなどの理由で、時間と共に変更または修正される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-346">Individual property values are subject to change and revision over time, as data is corrected, better data becomes available, or culture-specific conventions change.</span></span>  
   
--   個々のプロパティ値は、.NET Framework のバージョンまたはオペレーティング システムのバージョン間で異なる場合があります。  
+-   <span data-ttu-id="2607c-347">個々のプロパティ値は、.NET Framework のバージョンまたはオペレーティング システムのバージョン間で異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-347">Individual property values may vary across versions of the .NET Framework or operating system versions.</span></span>  
   
--   .NET Framework では置換カルチャをサポートしています。 これにより、既存の標準カルチャを補足または既存の標準カルチャを完全に置き換える新しいカスタム カルチャを定義できます。  
+-   <span data-ttu-id="2607c-348">.NET Framework では置換カルチャをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="2607c-348">The .NET Framework supports replacement cultures.</span></span> <span data-ttu-id="2607c-349">これにより、既存の標準カルチャを補足または既存の標準カルチャを完全に置き換える新しいカスタム カルチャを定義できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-349">This makes it possible to define a new custom culture that either supplements existing standard cultures or completely replaces an existing standard culture.</span></span>  
   
--   ユーザーは、コントロール パネルの **\[地域と言語\]** アプリを使用してカルチャ固有の設定をカスタマイズできます。<xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化するときに、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=fullName> コンストラクターを呼び出すことでこのようなユーザーによるカスタマイズを反映するかどうかを決定できます。 通常は、エンド ユーザーのアプリでは、ユーザー設定を尊重して、ユーザー自身が予期する形式でデータを表示する必要があります。  
+-   <span data-ttu-id="2607c-350">ユーザーを使用してカルチャに固有の設定をカスタマイズすることができます、**地域と言語**コントロール パネルでのアプリです。</span><span class="sxs-lookup"><span data-stu-id="2607c-350">The user can customize culture-specific settings by using the **Region and Language** app in Control Panel.</span></span> <span data-ttu-id="2607c-351"><xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化するときに、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを呼び出すことでこのようなユーザーによるカスタマイズを反映するかどうかを決定できます。</span><span class="sxs-lookup"><span data-stu-id="2607c-351">When you instantiate a <xref:System.Globalization.CultureInfo> object, you can determine whether it reflects these user customizations by calling the <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> constructor.</span></span> <span data-ttu-id="2607c-352">通常は、エンド ユーザーのアプリでは、ユーザー設定を尊重して、ユーザー自身が予期する形式でデータを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2607c-352">Typically, for end-user apps, you should respect user preferences so that the user is presented with data in a format that he or she expects.</span></span>  
   
-## 参照  
- [グローバライズとローカライズ](../../../docs/standard/globalization-localization/index.md)   
- [文字列を使用するためのベスト プラクティス](../../../docs/standard/base-types/best-practices-strings.md)
+## <a name="see-also"></a><span data-ttu-id="2607c-353">関連項目</span><span class="sxs-lookup"><span data-stu-id="2607c-353">See Also</span></span>  
+ [<span data-ttu-id="2607c-354">グローバライズとローカライズ</span><span class="sxs-lookup"><span data-stu-id="2607c-354">Globalization and Localization</span></span>](../../../docs/standard/globalization-localization/index.md)  
+ [<span data-ttu-id="2607c-355">文字列を使用するためのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="2607c-355">Best Practices for Using Strings</span></span>](../../../docs/standard/base-types/best-practices-strings.md)

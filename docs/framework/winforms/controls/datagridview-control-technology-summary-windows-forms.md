@@ -1,75 +1,76 @@
 ---
-title: "DataGridView コントロール テクノロジの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "データ グリッド, データ グリッドの概要"
-  - "DataGridView コントロール [Windows フォーム], DataGridView コントロールの概要"
+title: "DataGridView コントロール テクノロジの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- DataGridView control [Windows Forms], about DataGridView control
+- data grids [Windows Forms], about data grids
 ms.assetid: 094498c3-a126-4a3f-83fe-f69e96c7717b
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: f172d28e5f03e1177db6ad1bd9e98f4c68267765
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# DataGridView コントロール テクノロジの概要 (Windows フォーム)
-ここでは、`DataGridView` コントロールおよびその使用をサポートしているクラスの概要について説明します。  
+# <a name="datagridview-control-technology-summary-windows-forms"></a><span data-ttu-id="dff1d-102">DataGridView コントロール テクノロジの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="dff1d-102">DataGridView Control Technology Summary (Windows Forms)</span></span>
+<span data-ttu-id="dff1d-103">ここでは、`DataGridView` コントロールおよびその使用をサポートしているクラスの概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="dff1d-103">This topic summarizes information about the `DataGridView` control and the classes that support its use.</span></span>  
   
- データを表形式で表示するというタスクは頻繁に実行されます。  `DataGridView` コントロールは、データをグリッドに表示するための解決策としてデザインされたものです。  
+ <span data-ttu-id="dff1d-104">表形式でデータの表示は、頻繁に実行することの多いタスクです。</span><span class="sxs-lookup"><span data-stu-id="dff1d-104">Displaying data in a tabular format is a task you are likely to perform frequently.</span></span> <span data-ttu-id="dff1d-105">`DataGridView`コントロールがグリッドにデータを表すための完全なソリューションに設計されています。</span><span class="sxs-lookup"><span data-stu-id="dff1d-105">The `DataGridView` control is designed to be a complete solution for presenting data in a grid.</span></span>  
   
-## Keywords  
- DataGridView、BindingSource、テーブル、セル、データ バインディング、仮想モード  
+## <a name="keywords"></a><span data-ttu-id="dff1d-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="dff1d-106">Keywords</span></span>  
+ <span data-ttu-id="dff1d-107">DataGridView、BindingSource、テーブル、セル、データ バインディング、仮想モード</span><span class="sxs-lookup"><span data-stu-id="dff1d-107">DataGridView, BindingSource, table, cell, data binding, virtual mode</span></span>  
   
-## 名前空間  
- <xref:System.Windows.Forms?displayProperty=fullName>  
+## <a name="namespaces"></a><span data-ttu-id="dff1d-108">名前空間</span><span class="sxs-lookup"><span data-stu-id="dff1d-108">Namespaces</span></span>  
+ <xref:System.Windows.Forms?displayProperty=nameWithType>  
   
- <xref:System.Data?displayProperty=fullName>  
+ <xref:System.Data?displayProperty=nameWithType>  
   
-## 関連技術  
+## <a name="related-technologies"></a><span data-ttu-id="dff1d-109">関連技術</span><span class="sxs-lookup"><span data-stu-id="dff1d-109">Related Technologies</span></span>  
  `BindingSource`  
   
-## 背景  
- ユーザー インターフェイス \(UI\) デザイナーは、表形式のデータをユーザーに表示しなければならない場面に頻繁に遭遇します。  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] には、データをテーブルまたはグリッドに表示するための方法がいくつか用意されています。  `DataGridView` コントロールは、Windows フォーム アプリケーションで使用できるこの分野の最新機能です。  
+## <a name="background"></a><span data-ttu-id="dff1d-110">背景</span><span class="sxs-lookup"><span data-stu-id="dff1d-110">Background</span></span>  
+ <span data-ttu-id="dff1d-111">ユーザー インターフェイス (UI) のデザイナー頻繁に必要なユーザーに表形式のデータを表示します。</span><span class="sxs-lookup"><span data-stu-id="dff1d-111">User interface (UI) designers frequently find it necessary to display tabular data to users.</span></span> <span data-ttu-id="dff1d-112">[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]テーブルまたはグリッドにデータを表示するいくつかの方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="dff1d-112">The [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] provides several ways to show data in a table or grid.</span></span> <span data-ttu-id="dff1d-113">`DataGridView`コントロールは、Windows フォーム アプリケーションでは、このテクノロジの最新の進化を表します。</span><span class="sxs-lookup"><span data-stu-id="dff1d-113">The `DataGridView` control represents the latest evolution of this technology for Windows Forms applications.</span></span>  
   
- `DataGridView` コントロールでは、データ ストア内のデータの行を表示できます。  何種類のものデータ ストアがサポートされています。  データ ストアには、単純な型指定されていないデータ \(1 次元配列など\) を格納することも、型指定されたデータ \(<xref:System.Data.DataSet> など\) を格納することもできます。  詳細については、「[方法 : データを Windows フォーム DataGridView コントロールにバインドする](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-windows-forms-datagridview-control.md)」を参照してください。  
+ <span data-ttu-id="dff1d-114">`DataGridView`コントロールは行のデータ ストアからデータを表示できます。</span><span class="sxs-lookup"><span data-stu-id="dff1d-114">The `DataGridView` control can display rows of data from a data store.</span></span> <span data-ttu-id="dff1d-115">多くの種類のデータ ストアがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="dff1d-115">Many types of data stores are supported.</span></span> <span data-ttu-id="dff1d-116">データ ストアが 1 次元の配列などのシンプルで型指定されていないデータを保持できるかなど、型指定されたデータを保持できます、<xref:System.Data.DataSet>です。</span><span class="sxs-lookup"><span data-stu-id="dff1d-116">The data store can hold simple, untyped data, such as a one-dimensional array, or it can hold typed data, such as a <xref:System.Data.DataSet>.</span></span> <span data-ttu-id="dff1d-117">詳細については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールにデータをバインド](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-windows-forms-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="dff1d-117">For more information, see [How to: Bind Data to the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/how-to-bind-data-to-the-windows-forms-datagridview-control.md).</span></span>  
   
- `DataGridView` コントロールには、データを表形式で表示するための強力で柔軟な機能が用意されています。  このコントロールを使用して、小さなデータ セットから非常に大きなデータ セットまでの読み取り専用ビューまたは編集可能ビューを表示できます。  
+ <span data-ttu-id="dff1d-118">`DataGridView` コントロールには、データを表形式で表示するための強力で柔軟な機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="dff1d-118">The `DataGridView` control provides a powerful and flexible way to display data in a tabular format.</span></span> <span data-ttu-id="dff1d-119">小さすぎるため非常に大きなデータ セットの読み取り専用または編集可能なビューを表示するのにコントロールを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="dff1d-119">You can use the control to show read-only or editable views of small to very large sets of data.</span></span>  
   
- `DataGridView` コントロールをさまざまな方法で拡張して、アプリケーションにカスタム動作を組み込むことができます。  たとえば、プログラムで独自の並べ替えアルゴリズムを指定したり、独自の種類のセルを作成したりできます。  `DataGridView` コントロールの外観は、いくつかのプロパティを選択することで簡単にカスタマイズできます。  `DataGridView` コントロールはさまざまな種類のデータ ストアをデータ ソースとして使用でき、また、データ ソースをバインドしていない状態でも機能します。  
+ <span data-ttu-id="dff1d-120">拡張することができます、`DataGridView`をアプリケーションにカスタム動作を構築するいくつかの方法で制御します。</span><span class="sxs-lookup"><span data-stu-id="dff1d-120">You can extend the `DataGridView` control in several ways to build custom behavior into your applications.</span></span> <span data-ttu-id="dff1d-121">たとえば、プログラムで独自の並べ替えアルゴリズムを指定したり、独自の種類のセルを作成したりできます。</span><span class="sxs-lookup"><span data-stu-id="dff1d-121">For example, you can programmatically specify your own sorting algorithms, and you can create your own types of cells.</span></span> <span data-ttu-id="dff1d-122">`DataGridView` コントロールの外観は、いくつかのプロパティを選択することで簡単にカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="dff1d-122">You can easily customize the appearance of the `DataGridView` control by choosing among several properties.</span></span> <span data-ttu-id="dff1d-123">多くの種類のデータ ストアは、データ ソースとして使用できますか、`DataGridView`コントロールがデータ ソースをバインドなくても動作できます。</span><span class="sxs-lookup"><span data-stu-id="dff1d-123">Many types of data stores can be used as a data source, or the `DataGridView` control can operate without a data source bound to it.</span></span>  
   
-## DataGridView クラスの実装  
- `DataGridView` コントロールの拡張機能を利用するには、いくつかの方法があります。  イベントとプロパティを通じてコントロールのさまざまな側面をカスタマイズできますが、ある種のカスタマイズを行うときには、既存の `DataGridView` クラスから派生した新しいクラスを作成する必要があります。  
+## <a name="implementing-datagridview-classes"></a><span data-ttu-id="dff1d-124">DataGridView のクラスの実装</span><span class="sxs-lookup"><span data-stu-id="dff1d-124">Implementing DataGridView Classes</span></span>  
+ <span data-ttu-id="dff1d-125">いくつかの方法を活用するための`DataGridView`コントロールの拡張機能です。</span><span class="sxs-lookup"><span data-stu-id="dff1d-125">There are several ways for you to take advantage of the `DataGridView` control's extensibility features.</span></span> <span data-ttu-id="dff1d-126">イベントとプロパティを使用してコントロールの多くの側面をカスタマイズすることができますが、一部のカスタマイズでは、既存のファイルから派生した新しいクラスを作成する必要があります`DataGridView`クラスです。</span><span class="sxs-lookup"><span data-stu-id="dff1d-126">You can customize many aspects of the control through events and properties, but some customizations require you to create new classes derived from existing `DataGridView` classes.</span></span>  
   
- 最もよく使用される基本クラスは `DataGridViewCell` と `DataGridViewColumn` です。  `DataGridViewCell` またはその任意の子クラスから独自のセル クラスを派生させることができます。  任意の列に任意のセル型を追加できますが、通常は、カスタム セル型のセルを既定でホストする対になる列クラスを `DataGridViewColumn` から派生させます。  
+ <span data-ttu-id="dff1d-127">一般的に使用される基本クラスは、`DataGridViewCell`と`DataGridViewColumn`です。</span><span class="sxs-lookup"><span data-stu-id="dff1d-127">The most typically used base classes are `DataGridViewCell` and `DataGridViewColumn`.</span></span> <span data-ttu-id="dff1d-128">独自のセル クラスを派生できます`DataGridViewCell`またはその子クラスのいずれか。</span><span class="sxs-lookup"><span data-stu-id="dff1d-128">You can derive your own cell class from `DataGridViewCell` or any of its child classes.</span></span> <span data-ttu-id="dff1d-129">任意の列に任意のセルの種類を追加できますが、するは通常もコンパニオン列からクラスを派生`DataGridViewColumn`既定では、カスタムのセルの種類のセルをホストします。</span><span class="sxs-lookup"><span data-stu-id="dff1d-129">Although you can add any cell type to any column, you will typically also derive a companion column class from `DataGridViewColumn` that hosts cells of your custom cell type by default.</span></span>  
   
- 派生セル クラス内で `IDataGridViewEditingCell` インターフェイスを実装すると、編集機能を備えつつ編集モードでコントロールをホストしないセル型を作成できます。  編集モードのセル内でホストできるコントロールを作成するには、<xref:System.Windows.Forms.Control> から派生したクラス内で `IDataGridViewEditingControl` インターフェイスを実装します。  
+ <span data-ttu-id="dff1d-130">実装することができます、`IDataGridViewEditingCell`編集機能が編集モードでのコントロールをホストしていないセルの種類を作成する、派生セル クラスのインターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="dff1d-130">You can implement the `IDataGridViewEditingCell` interface in your derived cell class to create a cell type that has editing functionality but does not host a control in editing mode.</span></span> <span data-ttu-id="dff1d-131">編集モードのセルでホストできるコントロールを作成することができますを実装する、`IDataGridViewEditingControl`から派生したクラスでインターフェイス<xref:System.Windows.Forms.Control>です。</span><span class="sxs-lookup"><span data-stu-id="dff1d-131">To create a control that you can host in a cell in editing mode, you can implement the `IDataGridViewEditingControl` interface in a class derived from <xref:System.Windows.Forms.Control>.</span></span>  
   
- 詳細については、「[方法 : Windows フォーム DataGridView コントロールのセルと列を、それぞれの動作と外観を拡張してカスタマイズする](../../../../docs/framework/winforms/controls/customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)」および「[方法 : Windows フォーム DataGridView Cells でコントロールをホストする](../../../../docs/framework/winforms/controls/how-to-host-controls-in-windows-forms-datagridview-cells.md)」を参照してください。  
+ <span data-ttu-id="dff1d-132">詳細については、次を参照してください[する方法: セルのカスタマイズおよびその動作を拡張すると外観が Windows フォーム DataGridView コントロールで列](../../../../docs/framework/winforms/controls/customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)と[する方法: Windows フォーム DataGridView セルでホストコントロール](../../../../docs/framework/winforms/controls/how-to-host-controls-in-windows-forms-datagridview-cells.md).</span><span class="sxs-lookup"><span data-stu-id="dff1d-132">For more information, see [How to: Customize Cells and Columns in the Windows Forms DataGridView Control by Extending Their Behavior and Appearance](../../../../docs/framework/winforms/controls/customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md) and [How to: Host Controls in Windows Forms DataGridView Cells](../../../../docs/framework/winforms/controls/how-to-host-controls-in-windows-forms-datagridview-cells.md).</span></span>  
   
-## DataGridView クラスの概要  
+## <a name="datagridview-classes-at-a-glance"></a><span data-ttu-id="dff1d-133">DataGridView のクラスの概要</span><span class="sxs-lookup"><span data-stu-id="dff1d-133">DataGridView Classes at a Glance</span></span>  
  <xref:System.Windows.Forms>  
   
-|テクノロジの領域|クラス\/インターフェイス\/構成要素|  
-|--------------|-------------------------|  
-|データ バインディング|<xref:System.Windows.Forms.BindingSource>|  
-|データ プレゼンテーション|<xref:System.Windows.Forms.DataGridView><br /><br /> <xref:System.Windows.Forms.DataGridViewCell> と派生クラス<br /><br /> <xref:System.Windows.Forms.DataGridViewRow> と派生クラス<br /><br /> <xref:System.Windows.Forms.DataGridViewColumn> と派生クラス<br /><br /> <xref:System.Windows.Forms.DataGridViewCellStyle>|  
-|<xref:System.Windows.Forms.DataGridView> 拡張機能|<xref:System.Windows.Forms.DataGridViewCell> と派生クラス<br /><br /> <xref:System.Windows.Forms.DataGridViewColumn> と派生クラス<br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingCell><br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingControl>|  
+|<span data-ttu-id="dff1d-134">テクノロジ領域</span><span class="sxs-lookup"><span data-stu-id="dff1d-134">Technology Area</span></span>|<span data-ttu-id="dff1d-135">クラス/インターフェイス/構成要素</span><span class="sxs-lookup"><span data-stu-id="dff1d-135">Classes/interfaces/configuration elements</span></span>|  
+|---------------------|-------------------------------------------------|  
+|<span data-ttu-id="dff1d-136">データ バインディング</span><span class="sxs-lookup"><span data-stu-id="dff1d-136">Data Binding</span></span>|<xref:System.Windows.Forms.BindingSource>|  
+|<span data-ttu-id="dff1d-137">データの表示</span><span class="sxs-lookup"><span data-stu-id="dff1d-137">Data Presentation</span></span>|<xref:System.Windows.Forms.DataGridView><br /><br /> <span data-ttu-id="dff1d-138"><xref:System.Windows.Forms.DataGridViewCell>クラスと派生クラス</span><span class="sxs-lookup"><span data-stu-id="dff1d-138"><xref:System.Windows.Forms.DataGridViewCell> and derived classes</span></span><br /><br /> <span data-ttu-id="dff1d-139"><xref:System.Windows.Forms.DataGridViewRow>クラスと派生クラス</span><span class="sxs-lookup"><span data-stu-id="dff1d-139"><xref:System.Windows.Forms.DataGridViewRow> and derived classes</span></span><br /><br /> <span data-ttu-id="dff1d-140"><xref:System.Windows.Forms.DataGridViewColumn>クラスと派生クラス</span><span class="sxs-lookup"><span data-stu-id="dff1d-140"><xref:System.Windows.Forms.DataGridViewColumn> and derived classes</span></span><br /><br /> <xref:System.Windows.Forms.DataGridViewCellStyle>|  
+|<span data-ttu-id="dff1d-141"><xref:System.Windows.Forms.DataGridView>機能拡張</span><span class="sxs-lookup"><span data-stu-id="dff1d-141"><xref:System.Windows.Forms.DataGridView> Extensibility</span></span>|<span data-ttu-id="dff1d-142"><xref:System.Windows.Forms.DataGridViewCell>クラスと派生クラス</span><span class="sxs-lookup"><span data-stu-id="dff1d-142"><xref:System.Windows.Forms.DataGridViewCell> and derived classes</span></span><br /><br /> <span data-ttu-id="dff1d-143"><xref:System.Windows.Forms.DataGridViewColumn>クラスと派生クラス</span><span class="sxs-lookup"><span data-stu-id="dff1d-143"><xref:System.Windows.Forms.DataGridViewColumn> and derived classes</span></span><br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingCell><br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingControl>|  
   
-## 新機能  
- <xref:System.Windows.Forms.DataGridView> コントロールは、Windows フォームで表形式のデータを表示するための完璧な解決策としてデザインされたものです。  新しいアプリケーションを作成しているときは、<xref:System.Windows.Forms.DataGrid> などの他の方法を探す前に、<xref:System.Windows.Forms.DataGridView> コントロールを使用することを検討してください。  詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
+## <a name="whats-new"></a><span data-ttu-id="dff1d-144">新機能</span><span class="sxs-lookup"><span data-stu-id="dff1d-144">What's New</span></span>  
+ <span data-ttu-id="dff1d-145"><xref:System.Windows.Forms.DataGridView>コントロールが Windows フォームで表形式のデータを表示するための完全なソリューションに設計されています。</span><span class="sxs-lookup"><span data-stu-id="dff1d-145">The <xref:System.Windows.Forms.DataGridView> control is designed to be a complete solution for displaying tabular data with Windows Forms.</span></span> <span data-ttu-id="dff1d-146">使用を検討する必要があります、<xref:System.Windows.Forms.DataGridView>など、他のソリューションの前に制御<xref:System.Windows.Forms.DataGrid>新しいアプリケーションを作成する際、します。</span><span class="sxs-lookup"><span data-stu-id="dff1d-146">You should consider using the <xref:System.Windows.Forms.DataGridView> control before other solutions, such as <xref:System.Windows.Forms.DataGrid>, when you are authoring a new application.</span></span> <span data-ttu-id="dff1d-147">詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="dff1d-147">For more information, see [Differences Between the Windows Forms DataGridView and DataGrid Controls](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).</span></span>  
   
- <xref:System.Windows.Forms.DataGridView> コントロールは <xref:System.Windows.Forms.BindingSource> コンポーネントと密接に組み合わせて使用されます。  このコンポーネントはフォームの主要なデータ ソースとしてデザインされたものです。  このコンポーネントは、<xref:System.Windows.Forms.DataGridView> コントロールとデータ ソースとのやり取りをデータ ソースの種類に関係なく管理します。  
+ <span data-ttu-id="dff1d-148"><xref:System.Windows.Forms.DataGridView>コントロールを閉じると組み合わせて、<xref:System.Windows.Forms.BindingSource>コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="dff1d-148">The <xref:System.Windows.Forms.DataGridView> control can work in close conjunction with the <xref:System.Windows.Forms.BindingSource> component.</span></span> <span data-ttu-id="dff1d-149">このコンポーネントは、フォームのプライマリ データ ソースに設計されています。</span><span class="sxs-lookup"><span data-stu-id="dff1d-149">This component is designed to be the primary data source of a form.</span></span> <span data-ttu-id="dff1d-150">間の相互作用を管理できる、<xref:System.Windows.Forms.DataGridView>コントロールとデータに関係なく、データ ソースのソースの種類。</span><span class="sxs-lookup"><span data-stu-id="dff1d-150">It can manage the interaction between a <xref:System.Windows.Forms.DataGridView> control and its data source, regardless of the data source type.</span></span>  
   
-## 参照  
- [DataGridView コントロールの概要](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)   
- [DataGridView コントロールのアーキテクチャ](../../../../docs/framework/winforms/controls/datagridview-control-architecture-windows-forms.md)   
- [接続情報の保護](../../../../docs/framework/data/adonet/protecting-connection-information.md)
+## <a name="see-also"></a><span data-ttu-id="dff1d-151">関連項目</span><span class="sxs-lookup"><span data-stu-id="dff1d-151">See Also</span></span>  
+ [<span data-ttu-id="dff1d-152">DataGridView コントロールの概要</span><span class="sxs-lookup"><span data-stu-id="dff1d-152">DataGridView Control Overview</span></span>](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md)  
+ [<span data-ttu-id="dff1d-153">DataGridView コントロールのアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="dff1d-153">DataGridView Control Architecture</span></span>](../../../../docs/framework/winforms/controls/datagridview-control-architecture-windows-forms.md)  
+ [<span data-ttu-id="dff1d-154">接続情報の保護</span><span class="sxs-lookup"><span data-stu-id="dff1d-154">Protecting Connection Information</span></span>](../../../../docs/framework/data/adonet/protecting-connection-information.md)

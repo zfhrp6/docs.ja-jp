@@ -1,153 +1,158 @@
 ---
-title: "Cancellation in Managed Threads | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "cancellation in .NET, overview"
+title: "マネージ スレッドのキャンセル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: cancellation in .NET, overview
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
-caps.latest.revision: 23
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 819f564b93d54c41b879fbfcb20997a8abdebc6c
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Cancellation in Managed Threads
-[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降で、非同期操作または長時間にわたる同期操作に対する連携によるキャンセルのための統一されたモデルが .NET Framework に導入されました。  このモデルは、キャンセル トークンと呼ばれる軽量のオブジェクトに基づいています。  新しいスレッドまたは新しいタスクの作成などによって 1 つ以上のキャンセル可能な操作を呼び出すオブジェクトは、各操作にトークンを渡します。  次いで、個々の操作は他の操作にトークンのコピーを渡すことができます。  その後、トークンを作成したオブジェクトは、操作が実行している処理を停止するように、そのトークンを使用してその操作に要求できます。  キャンセル要求は、要求側のオブジェクトからのみ発行できます。各リスナーは要求を確認し、適切な時に定期的にその要求に応答する必要があります。  
+# <a name="cancellation-in-managed-threads"></a><span data-ttu-id="c5eec-102">マネージ スレッドのキャンセル</span><span class="sxs-lookup"><span data-stu-id="c5eec-102">Cancellation in Managed Threads</span></span>
+<span data-ttu-id="c5eec-103">[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降で、非同期操作または長時間にわたる同期操作に対する連携によるキャンセルのための統一されたモデルが .NET Framework に導入されました。</span><span class="sxs-lookup"><span data-stu-id="c5eec-103">Starting with the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], the .NET Framework uses a unified model for cooperative cancellation of asynchronous or long-running synchronous operations.</span></span> <span data-ttu-id="c5eec-104">このモデルは、キャンセル トークンと呼ばれる軽量のオブジェクトに基づいています。</span><span class="sxs-lookup"><span data-stu-id="c5eec-104">This model is based on a lightweight object called a cancellation token.</span></span> <span data-ttu-id="c5eec-105">新しいスレッドまたは新しいタスクの作成などによって 1 つ以上のキャンセル可能な操作を呼び出すオブジェクトは、各操作にトークンを渡します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-105">The object that invokes one or more cancelable operations, for example by creating new threads or tasks, passes the token to each operation.</span></span> <span data-ttu-id="c5eec-106">次いで、個々の操作は他の操作にトークンのコピーを渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-106">Individual operations can in turn pass copies of the token to other operations.</span></span> <span data-ttu-id="c5eec-107">その後、トークンを作成したオブジェクトは、操作が実行している処理を停止するように、そのトークンを使用してその操作に要求できます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-107">At some later time, the object that created the token can use it to request that the operations stop what they are doing.</span></span> <span data-ttu-id="c5eec-108">要求側のオブジェクトのみがキャンセル要求を発行し、各リスナーは、要求を確認しながらおよび適切なと適切な方法で対処をします。</span><span class="sxs-lookup"><span data-stu-id="c5eec-108">Only the requesting object can issue the cancellation request, and each listener is responsible for noticing the request and responding to it in an appropriate and timely manner.</span></span>  
   
- 連携によるキャンセル処理モデルを実装するための一般的なパターンは次のとおりです。  
+ <span data-ttu-id="c5eec-109">連携によるキャンセル処理モデルを実装するための一般的なパターンは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="c5eec-109">The general pattern for implementing the cooperative cancellation model is:</span></span>  
   
--   <xref:System.Threading.CancellationTokenSource> オブジェクトのインスタンスを作成します。このオブジェクトでは、個々のキャンセル トークンへのキャンセル通知を管理し、送信します。  
+-   <span data-ttu-id="c5eec-110"><xref:System.Threading.CancellationTokenSource> オブジェクトのインスタンスを作成します。このオブジェクトでは、個々のキャンセル トークンへのキャンセル通知を管理し、送信します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-110">Instantiate a <xref:System.Threading.CancellationTokenSource> object, which manages and sends cancellation notification to the individual cancellation tokens.</span></span>  
   
--   <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=fullName> プロパティによって返されるトークンを、キャンセルをリッスンしているそれぞれのタスクまたはスレッドに渡します。  
+-   <span data-ttu-id="c5eec-111"><xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> プロパティによって返されるトークンを、キャンセルをリッスンしているそれぞれのタスクまたはスレッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-111">Pass the token returned by the <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> property to each task or thread that listens for cancellation.</span></span>  
   
--   それぞれのタスクまたはスレッドに対し、キャンセルに応答するメカニズムを提供します。  
+-   <span data-ttu-id="c5eec-112">それぞれのタスクまたはスレッドに対し、キャンセルに応答するメカニズムを提供します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-112">Provide a mechanism for each task or thread to respond to cancellation.</span></span>  
   
--   キャンセルの通知を提供する <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName> メソッドを呼び出します。  
+-   <span data-ttu-id="c5eec-113">キャンセルの通知を提供する <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-113">Call the <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> method to provide notification of cancellation.</span></span>  
   
 > [!IMPORTANT]
->  <xref:System.Threading.CancellationTokenSource> クラスは、<xref:System.IDisposable> インターフェイスを実装します。  キャンセル トークン ソースの使用を終えた後は、必ず <xref:System.Threading.CancellationTokenSource.Dispose%2A?displayProperty=fullName> メソッドを呼び出して、キャンセル トークン ソースが保持しているアンマネージ リソースを解放する必要があります。  
+>  <span data-ttu-id="c5eec-114"><xref:System.Threading.CancellationTokenSource> クラスは、<xref:System.IDisposable> インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-114">The <xref:System.Threading.CancellationTokenSource> class implements the <xref:System.IDisposable> interface.</span></span> <span data-ttu-id="c5eec-115">キャンセル トークン ソースの使用を終えた後は、必ず <xref:System.Threading.CancellationTokenSource.Dispose%2A?displayProperty=nameWithType> メソッドを呼び出して、キャンセル トークン ソースが保持しているアンマネージ リソースを解放する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c5eec-115">You should be sure to call the <xref:System.Threading.CancellationTokenSource.Dispose%2A?displayProperty=nameWithType> method when you have finished using the cancellation token source to free any unmanaged resources it holds.</span></span>  
   
- トークンのソースとそのトークンのすべてのコピーの間の関係を次の図に示します。  
+ <span data-ttu-id="c5eec-116">トークンのソースとそのトークンのすべてのコピーの間の関係を次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-116">The following illustration shows the relationship between a token source and all the copies of its token.</span></span>  
   
- ![CancellationTokenSource とキャンセル トークン](../../../docs/standard/threading/media/vs-cancellationtoken.png "VS\_CancellationToken")  
+ <span data-ttu-id="c5eec-117">![CancellationTokenSource とキャンセル トークン](../../../docs/standard/threading/media/vs-cancellationtoken.png "VS_CancellationToken")</span><span class="sxs-lookup"><span data-stu-id="c5eec-117">![CancellationTokenSource and cancellation tokens](../../../docs/standard/threading/media/vs-cancellationtoken.png "VS_CancellationToken")</span></span>  
   
- 新しいキャンセル モデルによって、キャンセルに対応したアプリケーションやライブラリの作成が簡単になりました。このモデルでは次の機能がサポートされます。  
+ <span data-ttu-id="c5eec-118">新しいキャンセル モデルによって、キャンセルに対応したアプリケーションやライブラリの作成が簡単になりました。このモデルでは次の機能がサポートされます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-118">The new cancellation model makes it easier to create cancellation-aware applications and libraries, and it supports the following features:</span></span>  
   
--   キャンセルは連携によって行われ、リスナーに強制されません。  リスナー側でキャンセル要求に応じた適切な終了方法を決定できます。  
+-   <span data-ttu-id="c5eec-119">キャンセルは連携によって行われ、リスナーに強制されません。</span><span class="sxs-lookup"><span data-stu-id="c5eec-119">Cancellation is cooperative and is not forced on the listener.</span></span> <span data-ttu-id="c5eec-120">リスナー側でキャンセル要求に応じた適切な終了方法を決定できます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-120">The listener determines how to gracefully terminate in response to a cancellation request.</span></span>  
   
--   要求とリッスンが区別して行われます。  キャンセルをいつ要求するか \(もし要求する場合\) は、キャンセル可能な操作を呼び出すオブジェクトの側で制御できます。  
+-   <span data-ttu-id="c5eec-121">要求とリッスンが区別して行われます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-121">Requesting is distinct from listening.</span></span> <span data-ttu-id="c5eec-122">キャンセルをいつ要求するか (もし要求する場合) は、キャンセル可能な操作を呼び出すオブジェクトの側で制御できます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-122">An object that invokes a cancelable operation can control when (if ever) cancellation is requested.</span></span>  
   
--   要求側のオブジェクトは、1 回のメソッド呼び出しでトークンのすべてのコピーにキャンセル要求を発行できます。  
+-   <span data-ttu-id="c5eec-123">要求側のオブジェクトは、1 回のメソッド呼び出しでトークンのすべてのコピーにキャンセル要求を発行できます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-123">The requesting object issues the cancellation request to all copies of the token by using just one method call.</span></span>  
   
--   リスナーは、複数のトークンを 1 つの*リンク トークン*に結合して同時にリッスンできます。  
+-   <span data-ttu-id="c5eec-124">リスナーをリッスンできる複数のトークンを同時に 1 つに結合して*リンク トークン*です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-124">A listener can listen to multiple tokens simultaneously by joining them into one *linked token*.</span></span>  
   
--   ライブラリ コードからのキャンセル要求をユーザー コードで確認して応答したり、ユーザー コードからのキャンセル要求をライブラリ コードで確認して応答したりすることができます。  
+-   <span data-ttu-id="c5eec-125">ライブラリ コードからのキャンセル要求をユーザー コードで確認して応答したり、ユーザー コードからのキャンセル要求をライブラリ コードで確認して応答したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-125">User code can notice and respond to cancellation requests from library code, and library code can notice and respond to cancellation requests from user code.</span></span>  
   
--   リスナーはポーリング、コールバックの登録、または待機ハンドルの待機により、キャンセル要求の通知を受け取ることができます。  
+-   <span data-ttu-id="c5eec-126">リスナーはポーリング、コールバックの登録、または待機ハンドルの待機により、キャンセル要求の通知を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-126">Listeners can be notified of cancellation requests by polling, callback registration, or waiting on wait handles.</span></span>  
   
-## キャンセルの型  
- キャンセル フレームワークは、関連する一連の型として実装されます。それらの型を次の表に示します。  
+## <a name="cancellation-types"></a><span data-ttu-id="c5eec-127">キャンセルの型</span><span class="sxs-lookup"><span data-stu-id="c5eec-127">Cancellation Types</span></span>  
+ <span data-ttu-id="c5eec-128">キャンセル フレームワークは、関連する一連の型として実装されます。それらの型を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-128">The cancellation framework is implemented as a set of related types, which are listed in the following table.</span></span>  
   
-|型名|説明|  
-|--------|--------|  
-|<xref:System.Threading.CancellationTokenSource>|キャンセル トークンを作成するオブジェクトです。そのトークンのすべてのコピーに対するキャンセル要求の発行も、このオブジェクトで行います。|  
-|<xref:System.Threading.CancellationToken>|1 つ以上のリスナーに渡される軽量な値型で、通常はメソッド パラメーターとして渡されます。  リスナーはポーリング、コールバック、または待機ハンドルによってトークンの `IsCancellationRequested` プロパティの値を監視します。|  
-|<xref:System.OperationCanceledException>|この例外のコンストラクターのオーバーロードで、<xref:System.Threading.CancellationToken> をパラメーターとして受け入れます。  リスナーは必要に応じてこの例外をスローすることができます。この例外により、キャンセルのソースを確認し、キャンセル要求にそのリスナーが応答したことを他のリスナーに通知します。|  
+|<span data-ttu-id="c5eec-129">型名</span><span class="sxs-lookup"><span data-stu-id="c5eec-129">Type name</span></span>|<span data-ttu-id="c5eec-130">説明</span><span class="sxs-lookup"><span data-stu-id="c5eec-130">Description</span></span>|  
+|---------------|-----------------|  
+|<xref:System.Threading.CancellationTokenSource>|<span data-ttu-id="c5eec-131">キャンセル トークンを作成するオブジェクトです。そのトークンのすべてのコピーに対するキャンセル要求の発行も、このオブジェクトで行います。</span><span class="sxs-lookup"><span data-stu-id="c5eec-131">Object that creates a cancellation token, and also issues the cancellation request for all copies of that token.</span></span>|  
+|<xref:System.Threading.CancellationToken>|<span data-ttu-id="c5eec-132">1 つ以上のリスナーに渡される軽量な値型で、通常はメソッド パラメーターとして渡されます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-132">Lightweight value type passed to one or more listeners, typically as a method parameter.</span></span> <span data-ttu-id="c5eec-133">リスナーはポーリング、コールバック、または待機ハンドルによってトークンの `IsCancellationRequested` プロパティの値を監視します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-133">Listeners monitor the value of the `IsCancellationRequested` property of the token by polling, callback, or wait handle.</span></span>|  
+|<xref:System.OperationCanceledException>|<span data-ttu-id="c5eec-134">この例外のコンストラクターのオーバーロードで、<xref:System.Threading.CancellationToken> をパラメーターとして受け入れます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-134">Overloads of this exception's constructor accept a <xref:System.Threading.CancellationToken> as a parameter.</span></span> <span data-ttu-id="c5eec-135">リスナーは必要に応じてこの例外をスローすることができます。この例外により、キャンセルのソースを確認し、キャンセル要求にそのリスナーが応答したことを他のリスナーに通知します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-135">Listeners can optionally throw this exception to verify the source of the cancellation and notify others that it has responded to a cancellation request.</span></span>|  
   
- この新しいキャンセル モデルは、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] のいくつかの型に統合されています。最も重要なものは、<xref:System.Threading.Tasks.Parallel?displayProperty=fullName>、<xref:System.Threading.Tasks.Task?displayProperty=fullName>、<xref:System.Threading.Tasks.Task%601?displayProperty=fullName>、および <xref:System.Linq.ParallelEnumerable?displayProperty=fullName> です。  新しいライブラリおよびアプリケーション コードでは、すべてこの新しいキャンセル モデルを使用することをお勧めします。  
+ <span data-ttu-id="c5eec-136">この新しいキャンセル モデルに統合されて、[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]でいくつかの種類。</span><span class="sxs-lookup"><span data-stu-id="c5eec-136">The new cancellation model is integrated into the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] in several types.</span></span> <span data-ttu-id="c5eec-137">最も重要なものは<xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>、 <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>、<xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>と<xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-137">The most important ones are <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> and <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType>.</span></span> <span data-ttu-id="c5eec-138">すべての新しいライブラリとアプリケーション コードには、この新しいキャンセル モデルを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c5eec-138">We recommend that you use this new cancellation model for all new library and application code.</span></span>  
   
-## コード例  
- 次の例では、要求側のオブジェクトで <xref:System.Threading.CancellationTokenSource> オブジェクトを作成した後、その <xref:System.Threading.CancellationTokenSource.Token%2A> プロパティをキャンセル可能な操作に渡します。  要求を受け取る側の操作では、ポーリングによってトークンの <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> プロパティの値を監視します。  値が `true` になったら、リスナーは適切な方法で終了できます。  この例では、メソッドの終了だけを行っています。多くの場合はこの処理だけで十分です。  
+## <a name="code-example"></a><span data-ttu-id="c5eec-139">コード例</span><span class="sxs-lookup"><span data-stu-id="c5eec-139">Code Example</span></span>  
+ <span data-ttu-id="c5eec-140">次の例では、要求側のオブジェクトで <xref:System.Threading.CancellationTokenSource> オブジェクトを作成した後、その <xref:System.Threading.CancellationTokenSource.Token%2A> プロパティをキャンセル可能な操作に渡します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-140">In the following example, the requesting object creates a <xref:System.Threading.CancellationTokenSource> object, and then passes its <xref:System.Threading.CancellationTokenSource.Token%2A> property to the cancelable operation.</span></span> <span data-ttu-id="c5eec-141">要求を受け取る側の操作では、ポーリングによってトークンの <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> プロパティの値を監視します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-141">The operation that receives the request monitors the value of the <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> property of the token by polling.</span></span> <span data-ttu-id="c5eec-142">値が `true` になったら、リスナーは適切な方法で終了できます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-142">When the value becomes `true`, the listener can terminate in whatever manner is appropriate.</span></span> <span data-ttu-id="c5eec-143">この例では、メソッドの終了だけを行っています。多くの場合はこの処理だけで十分です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-143">In this example, the method just exits, which is all that is required in many cases.</span></span>  
   
 > [!NOTE]
->  この例では、新しいキャンセル フレームワークが従来の API と互換性があることを示すために、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> メソッドを使用しています。  推奨される新しい <xref:System.Threading.Tasks.Task?displayProperty=fullName> 型を使用した例については、「[How to: Cancel a Task and Its Children](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)」を参照してください。  
+>  <span data-ttu-id="c5eec-144">この例では、新しいキャンセル フレームワークが従来の API と互換性があることを示すために、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> メソッドを使用しています。</span><span class="sxs-lookup"><span data-stu-id="c5eec-144">The example uses the <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> method to demonstrate that the new cancellation framework is compatible with legacy APIs.</span></span> <span data-ttu-id="c5eec-145">例では、新しいについては、優先<xref:System.Threading.Tasks.Task?displayProperty=nameWithType>を入力しを参照してください[する方法: タスクとその子を取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-145">For an example that uses the new, preferred <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> type, see [How to: Cancel a Task and Its Children](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).</span></span>  
   
  [!code-csharp[Cancellation#1](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex1.cs#1)]
  [!code-vb[Cancellation#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex1.vb#1)]  
   
-## 操作のキャンセルとオブジェクトのキャンセル  
- 新しいキャンセル フレームワークでは、キャンセルとは、オブジェクトのキャンセルではなく操作のキャンセルのことを指します。  キャンセル要求とは、必要なクリーンアップの実行後にできるだけ早く操作を停止するようにという要求です。  1 つのキャンセル トークンは 1 つの "キャンセル可能な操作" を参照している必要がありますが、その操作がプログラムに実装されている場合があります。  トークンの <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> プロパティを `true` に設定した後に、`false` に再設定することはできません。  そのため、キャンセルが完了したキャンセル トークンを再利用することはできません。  
+## <a name="operation-cancellation-versus-object-cancellation"></a><span data-ttu-id="c5eec-146">操作のキャンセルとオブジェクトのキャンセル</span><span class="sxs-lookup"><span data-stu-id="c5eec-146">Operation Cancellation Versus Object Cancellation</span></span>  
+ <span data-ttu-id="c5eec-147">新しいキャンセル フレームワークでは、キャンセルとは、オブジェクトのキャンセルではなく操作のキャンセルのことを指します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-147">In the new cancellation framework, cancellation refers to operations, not objects.</span></span> <span data-ttu-id="c5eec-148">キャンセル要求とは、必要なクリーンアップの実行後にできるだけ早く操作を停止するようにという要求です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-148">The cancellation request means that the operation should stop as soon as possible after any required cleanup is performed.</span></span> <span data-ttu-id="c5eec-149">1 つのキャンセル トークンは 1 つの "キャンセル可能な操作" を参照している必要がありますが、その操作がプログラムに実装されている場合があります。</span><span class="sxs-lookup"><span data-stu-id="c5eec-149">One cancellation token should refer to one "cancelable operation," however that operation may be implemented in your program.</span></span> <span data-ttu-id="c5eec-150">トークンの <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> プロパティを `true` に設定した後に、`false` に再設定することはできません。</span><span class="sxs-lookup"><span data-stu-id="c5eec-150">After the <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> property of the token has been set to `true`, it cannot be reset to `false`.</span></span> <span data-ttu-id="c5eec-151">そのため、キャンセルが完了したキャンセル トークンを再利用することはできません。</span><span class="sxs-lookup"><span data-stu-id="c5eec-151">Therefore, cancellation tokens cannot be reused after they have been canceled.</span></span>  
   
- オブジェクトのキャンセル機構が必要な場合は、<xref:System.Threading.CancellationToken.Register%2A?displayProperty=fullName> メソッドを呼び出すことにより、操作のキャンセル機構に基づいて実装できます。次に例を示します。  
+ <span data-ttu-id="c5eec-152">オブジェクトのキャンセル機構が必要な場合は、<xref:System.Threading.CancellationToken.Register%2A?displayProperty=nameWithType> メソッドを呼び出すことにより、操作のキャンセル機構に基づいて実装できます。次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-152">If you require an object cancellation mechanism, you can base it on the operation cancellation mechanism by calling the <xref:System.Threading.CancellationToken.Register%2A?displayProperty=nameWithType> method, as shown in the following example.</span></span>  
   
  [!code-csharp[Cancellation#2](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/objectcancellation1.cs#2)]
  [!code-vb[Cancellation#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/objectcancellation1.vb#2)]  
   
- キャンセル可能な複数の操作の同時処理がオブジェクトでサポートされている場合は、キャンセル可能な各操作への入力として別々のトークンを渡します。  こうすることで、他の操作には影響を与えずに 1 つの操作を取り消すことができます。  
+ <span data-ttu-id="c5eec-153">キャンセル可能な複数の操作の同時処理がオブジェクトでサポートされている場合は、キャンセル可能な各操作への入力として別々のトークンを渡します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-153">If an object supports more than one concurrent cancelable operation, pass a separate token as input to each distinct cancelable operation.</span></span> <span data-ttu-id="c5eec-154">こうすることで、他の操作には影響を与えずに 1 つの操作を取り消すことができます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-154">That way, one operation can be cancelled without affecting the others.</span></span>  
   
-## キャンセル要求のリッスンと応答  
- キャンセル可能な操作の実装者は、ユーザー デリゲート内で、キャンセル要求に応じた操作の終了方法を決定します。  多くの場合、ユーザー デリゲートでは、必要なクリーンアップのみ実行してから、できるだけ早く制御を戻すことができます。  
+## <a name="listening-and-responding-to-cancellation-requests"></a><span data-ttu-id="c5eec-155">キャンセル要求のリッスンと応答</span><span class="sxs-lookup"><span data-stu-id="c5eec-155">Listening and Responding to Cancellation Requests</span></span>  
+ <span data-ttu-id="c5eec-156">キャンセル可能な操作の実装者は、ユーザー デリゲート内で、キャンセル要求に応じた操作の終了方法を決定します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-156">In the user delegate, the implementer of a cancelable operation determines how to terminate the operation in response to a cancellation request.</span></span> <span data-ttu-id="c5eec-157">多くの場合、ユーザー デリゲートでは、必要なクリーンアップのみ実行してから、できるだけ早く制御を戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-157">In many cases, the user delegate can just perform any required cleanup and then return immediately.</span></span>  
   
- ただし、より複雑なケースでは、キャンセルが発生したことをユーザー デリゲートからライブラリ コードに通知する必要がある場合があります。  そのような場合、操作を終了するための正しい方法はユーザー デリゲートから <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> メソッドを呼び出すことです。これにより、<xref:System.OperationCanceledException> がスローされます。  ライブラリ コードでは、ユーザー デリゲートのスレッドでこの例外をキャッチし、例外のトークンを調べて、この例外が連携によるキャンセルを示すのか、それ以外の例外的な状況を示すのかを判断できます。  
+ <span data-ttu-id="c5eec-158">ただし、より複雑なケースでは、キャンセルが発生したことをユーザー デリゲートからライブラリ コードに通知する必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="c5eec-158">However, in more complex cases, it might be necessary for the user delegate to notify library code that cancellation has occurred.</span></span> <span data-ttu-id="c5eec-159">そのような場合、操作を終了するための正しい方法はユーザー デリゲートから <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> メソッドを呼び出すことです。これにより、<xref:System.OperationCanceledException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-159">In such cases, the correct way to terminate the operation is for the delegate to call the <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A>, method, which will cause an <xref:System.OperationCanceledException> to be thrown.</span></span> <span data-ttu-id="c5eec-160">ライブラリ コードでは、ユーザー デリゲートのスレッドでこの例外をキャッチし、例外のトークンを調べて、この例外が連携によるキャンセルを示すのか、それ以外の例外的な状況を示すのかを判断できます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-160">Library code can catch this exception on the user delegate thread and examine the exception's token to determine whether the exception indicates cooperative cancellation or some other exceptional situation.</span></span>  
   
- <xref:System.Threading.Tasks.Task> クラスはこの方法で <xref:System.OperationCanceledException> を処理します。  詳細については、「[Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md)」を参照してください。  
+ <span data-ttu-id="c5eec-161"><xref:System.Threading.Tasks.Task> クラスはこの方法で <xref:System.OperationCanceledException> を処理します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-161">The <xref:System.Threading.Tasks.Task> class handles <xref:System.OperationCanceledException> in this way.</span></span> <span data-ttu-id="c5eec-162">詳細については、「 [Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c5eec-162">For more information, see [Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md).</span></span>  
   
-### ポーリングによるリッスン  
- ループや再帰を伴う長時間にわたる計算では、<xref:System.Threading.CancellationToken.IsCancellationRequested%2A?displayProperty=fullName> プロパティの値を定期的にポーリングすることによってキャンセル要求をリッスンできます。  その値が `true` の場合、メソッドはできるだけ早くクリーンアップを行って終了する必要があります。  最適なポーリング間隔はアプリケーションの種類によって異なります。  プログラムごとに、最適なポーリング間隔を開発者が決定します。  ポーリング自体がパフォーマンスに大きく影響することはありません。  ポーリングを行う方法の 1 つの例を次に示します。  
+### <a name="listening-by-polling"></a><span data-ttu-id="c5eec-163">ポーリングによるリッスン</span><span class="sxs-lookup"><span data-stu-id="c5eec-163">Listening by Polling</span></span>  
+ <span data-ttu-id="c5eec-164">ループや再帰を伴う長時間にわたる計算では、<xref:System.Threading.CancellationToken.IsCancellationRequested%2A?displayProperty=nameWithType> プロパティの値を定期的にポーリングすることによってキャンセル要求をリッスンできます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-164">For long-running computations that loop or recurse, you can listen for a cancellation request by periodically polling the value of the <xref:System.Threading.CancellationToken.IsCancellationRequested%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="c5eec-165">その値が `true` の場合、メソッドはできるだけ早くクリーンアップを行って終了する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c5eec-165">If its value is `true`, the method should clean up and terminate as quickly as possible.</span></span> <span data-ttu-id="c5eec-166">最適なポーリング間隔はアプリケーションの種類によって異なります。</span><span class="sxs-lookup"><span data-stu-id="c5eec-166">The optimal frequency of polling depends on the type of application.</span></span> <span data-ttu-id="c5eec-167">プログラムごとに、最適なポーリング間隔を開発者が決定します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-167">It is up to the developer to determine the best polling frequency for any given program.</span></span> <span data-ttu-id="c5eec-168">ポーリング自体がパフォーマンスに大きく影響することはありません。</span><span class="sxs-lookup"><span data-stu-id="c5eec-168">Polling itself does not significantly impact performance.</span></span> <span data-ttu-id="c5eec-169">ポーリングを行う方法の 1 つの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-169">The following example shows one possible way to poll.</span></span>  
   
  [!code-csharp[Cancellation#3](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex11.cs#3)]
  [!code-vb[Cancellation#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex11.vb#3)]  
   
- さらに完全に近い例については、「[How to: Listen for Cancellation Requests by Polling](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-by-polling.md)」を参照してください。  
+ <span data-ttu-id="c5eec-170">完全な例では、次を参照してください。[する方法: ポーリングによりキャンセル要求をリッスン](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-by-polling.md)です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-170">For a more complete example, see [How to: Listen for Cancellation Requests by Polling](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-by-polling.md).</span></span>  
   
-### コールバックの登録によるリッスン  
- 操作によっては、キャンセル トークンの値を定期的に確認できないことによりブロックされる場合があります。  そのような場合は、キャンセル要求を受け取ったときにメソッドのブロックを解除するコールバック メソッドを登録できます。  
+### <a name="listening-by-registering-a-callback"></a><span data-ttu-id="c5eec-171">コールバックの登録によるリッスン</span><span class="sxs-lookup"><span data-stu-id="c5eec-171">Listening by Registering a Callback</span></span>  
+ <span data-ttu-id="c5eec-172">操作によっては、キャンセル トークンの値を定期的に確認できないことによりブロックされる場合があります。</span><span class="sxs-lookup"><span data-stu-id="c5eec-172">Some operations can become blocked in such a way that they cannot check the value of the cancellation token in a timely manner.</span></span> <span data-ttu-id="c5eec-173">そのような場合は、キャンセル要求を受け取ったときにメソッドのブロックを解除するコールバック メソッドを登録できます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-173">For these cases, you can register a callback method that unblocks the method when a cancellation request is received.</span></span>  
   
- <xref:System.Threading.CancellationToken.Register%2A> メソッドは、特にこの目的のために使用される <xref:System.Threading.CancellationTokenRegistration> オブジェクトを返します。  <xref:System.Threading.CancellationToken.Register%2A> メソッドを使用して非同期 Web 要求を取り消す方法を次の例に示します。  
+ <span data-ttu-id="c5eec-174"><xref:System.Threading.CancellationToken.Register%2A>メソッドを返します、<xref:System.Threading.CancellationTokenRegistration>この用途専用で使用されるオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c5eec-174">The <xref:System.Threading.CancellationToken.Register%2A> method returns a <xref:System.Threading.CancellationTokenRegistration> object that is used specifically for this purpose.</span></span> <span data-ttu-id="c5eec-175"><xref:System.Threading.CancellationToken.Register%2A> メソッドを使用して非同期 Web 要求を取り消す方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-175">The following example shows how to use the <xref:System.Threading.CancellationToken.Register%2A> method to cancel an asynchronous Web request.</span></span>  
   
  [!code-csharp[Cancellation#4](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex4.cs#4)]
  [!code-vb[Cancellation#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex4.vb#4)]  
   
- <xref:System.Threading.CancellationTokenRegistration> オブジェクトは、スレッドの同期を管理し、適切な時点でコールバックの実行を中止できるようにします。  
+ <span data-ttu-id="c5eec-176"><xref:System.Threading.CancellationTokenRegistration> オブジェクトは、スレッドの同期を管理し、適切な時点でコールバックの実行を中止できるようにします。</span><span class="sxs-lookup"><span data-stu-id="c5eec-176">The <xref:System.Threading.CancellationTokenRegistration> object manages thread synchronization and ensures that the callback will stop executing at a precise point in time.</span></span>  
   
- システムの応答性を確保し、デッドロックを回避するには、コールバックの登録時に次のガイドラインに従ってください。  
+ <span data-ttu-id="c5eec-177">システムの応答性を確保し、デッドロックを回避するには、コールバックの登録時に次のガイドラインに従ってください。</span><span class="sxs-lookup"><span data-stu-id="c5eec-177">In order to ensure system responsiveness and to avoid deadlocks, the following guidelines must be followed when registering callbacks:</span></span>  
   
--   コールバック メソッドは同期的に呼び出され、コールバックが戻るまで <xref:System.Threading.CancellationTokenSource.Cancel%2A> の呼び出しは戻りません。そのため、コールバック メソッドは高速に動作する必要があります。  
+-   <span data-ttu-id="c5eec-178">コールバック メソッドは同期的に呼び出され、コールバックが戻るまで <xref:System.Threading.CancellationTokenSource.Cancel%2A> の呼び出しは戻りません。そのため、コールバック メソッドは高速に動作する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c5eec-178">The callback method should be fast because it is called synchronously and therefore the call to <xref:System.Threading.CancellationTokenSource.Cancel%2A> does not return until the callback returns.</span></span>  
   
--   コールバックの実行中に <xref:System.Threading.CancellationTokenRegistration.Dispose%2A> を呼び出し、そのコールバックが待機しているロックを保持する場合は、プログラムのデッドロックが発生する可能性があります。  `Dispose` が戻った後に、コールバックで使用されていたすべてのリソースを解放してください。  
+-   <span data-ttu-id="c5eec-179">コールバックの実行中に <xref:System.Threading.CancellationTokenRegistration.Dispose%2A> を呼び出し、そのコールバックが待機しているロックを保持する場合は、プログラムのデッドロックが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c5eec-179">If you call <xref:System.Threading.CancellationTokenRegistration.Dispose%2A> while the callback is running, and you hold a lock that the callback is waiting on, your program can deadlock.</span></span> <span data-ttu-id="c5eec-180">`Dispose` が戻った後に、コールバックで使用されていたすべてのリソースを解放してください。</span><span class="sxs-lookup"><span data-stu-id="c5eec-180">After `Dispose` returns, you can free any resources required by the callback.</span></span>  
   
--   コールバックでは、手動によるスレッド処理を実行したり、<xref:System.Threading.SynchronizationContext> を使用したりしないでください。  特定のスレッドでコールバックを実行する必要がある場合は、<xref:System.Threading.CancellationTokenRegistration?displayProperty=fullName> コンストラクターを使用します。これにより、ターゲットの syncContext がアクティブな <xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=fullName> であることを指定できます。  コールバックで手動によるスレッド処理を実行すると、デッドロックが発生する可能性があります。  
+-   <span data-ttu-id="c5eec-181">コールバックでは、手動によるスレッド処理を実行したり、<xref:System.Threading.SynchronizationContext> を使用したりしないでください。</span><span class="sxs-lookup"><span data-stu-id="c5eec-181">Callbacks should not perform any manual thread or <xref:System.Threading.SynchronizationContext> usage in a callback.</span></span> <span data-ttu-id="c5eec-182">特定のスレッドでコールバックを実行する必要がある場合は、<xref:System.Threading.CancellationTokenRegistration?displayProperty=nameWithType> コンストラクターを使用します。これにより、ターゲットの syncContext がアクティブな <xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType> であることを指定できます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-182">If a callback must run on a particular thread, use the <xref:System.Threading.CancellationTokenRegistration?displayProperty=nameWithType> constructor that enables you to specify that the target syncContext is the active <xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType>.</span></span> <span data-ttu-id="c5eec-183">コールバックで手動によるスレッド処理を実行すると、デッドロックが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c5eec-183">Performing manual threading in a callback can cause deadlock.</span></span>  
   
- さらに完全に近い例については、「[How to: Register Callbacks for Cancellation Requests](../../../docs/standard/threading/how-to-register-callbacks-for-cancellation-requests.md)」を参照してください。  
+ <span data-ttu-id="c5eec-184">完全な例では、次を参照してください。[する方法: キャンセル要求を行うためのコールバックの登録](../../../docs/standard/threading/how-to-register-callbacks-for-cancellation-requests.md)です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-184">For a more complete example, see [How to: Register Callbacks for Cancellation Requests](../../../docs/standard/threading/how-to-register-callbacks-for-cancellation-requests.md).</span></span>  
   
-### 待機ハンドルを使用したリッスン  
- <xref:System.Threading.ManualResetEvent?displayProperty=fullName> や <xref:System.Threading.Semaphore?displayProperty=fullName> などの同期プリミティブを待機している間、キャンセル可能な操作をブロックできる場合は、<xref:System.Threading.CancellationToken.WaitHandle%2A?displayProperty=fullName> プロパティを使用してその操作がイベントとキャンセル要求の両方を待機するようにできます。  キャンセル トークンの待機ハンドルは、キャンセル要求への応答としてシグナル状態になります。メソッドは <xref:System.Threading.WaitHandle.WaitAny%2A> メソッドの戻り値を使用して、キャンセル トークンがシグナル状態であったかどうかを判断できます。  操作はその後、状況に合わせて、そのまま終了するか、<xref:System.OperationCanceledException> をスローします。  
+### <a name="listening-by-using-a-wait-handle"></a><span data-ttu-id="c5eec-185">待機ハンドルを使用したリッスン</span><span class="sxs-lookup"><span data-stu-id="c5eec-185">Listening by Using a Wait Handle</span></span>  
+ <span data-ttu-id="c5eec-186"><xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> や <xref:System.Threading.Semaphore?displayProperty=nameWithType> などの同期プリミティブを待機している間、キャンセル可能な操作をブロックできる場合は、<xref:System.Threading.CancellationToken.WaitHandle%2A?displayProperty=nameWithType> プロパティを使用してその操作がイベントとキャンセル要求の両方を待機するようにできます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-186">When a cancelable operation can block while it waits on a synchronization primitive such as a <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> or <xref:System.Threading.Semaphore?displayProperty=nameWithType>, you can use the <xref:System.Threading.CancellationToken.WaitHandle%2A?displayProperty=nameWithType> property to enable the operation to wait on both the event and the cancellation request.</span></span> <span data-ttu-id="c5eec-187">キャンセル トークンの待機ハンドルは、キャンセル要求への応答としてシグナル状態になります。メソッドは <xref:System.Threading.WaitHandle.WaitAny%2A> メソッドの戻り値を使用して、キャンセル トークンがシグナル状態であったかどうかを判断できます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-187">The wait handle of the cancellation token will become signaled in response to a cancellation request, and the method can use the return value of the <xref:System.Threading.WaitHandle.WaitAny%2A> method to determine whether it was the cancellation token that signaled.</span></span> <span data-ttu-id="c5eec-188">操作はその後、状況に合わせて、そのまま終了するか、<xref:System.OperationCanceledException> をスローします。</span><span class="sxs-lookup"><span data-stu-id="c5eec-188">The operation can then just exit, or throw a <xref:System.OperationCanceledException>, as appropriate.</span></span>  
   
  [!code-csharp[Cancellation#5](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex9.cs#5)]
  [!code-vb[Cancellation#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex9.vb#5)]  
   
- [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] を対象とする新しいコードでは、<xref:System.Threading.ManualResetEventSlim?displayProperty=fullName> と <xref:System.Threading.SemaphoreSlim?displayProperty=fullName> はどちらも、`Wait` メソッドで新しいキャンセル フレームワークをサポートしています。  メソッドに <xref:System.Threading.CancellationToken> を渡すことができ、キャンセルが要求されると、イベントが起動して <xref:System.OperationCanceledException> がスローされます。  
+ <span data-ttu-id="c5eec-189">[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] を対象とする新しいコードでは、<xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> と <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> はどちらも、`Wait` メソッドで新しいキャンセル フレームワークをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="c5eec-189">In new code that targets the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> and <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> both support the new cancellation framework in their `Wait` methods.</span></span> <span data-ttu-id="c5eec-190">渡すことができます、 <xref:System.Threading.CancellationToken> 、メソッドにイベントが起動され、スロー、キャンセルが要求されると、および、<xref:System.OperationCanceledException>です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-190">You can pass the <xref:System.Threading.CancellationToken> to the method, and when the cancellation is requested, the event wakes up and throws an <xref:System.OperationCanceledException>.</span></span>  
   
  [!code-csharp[Cancellation#6](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex10.cs#6)]
  [!code-vb[Cancellation#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex10.vb#6)]  
   
- さらに完全に近い例については、「[How to: Listen for Cancellation Requests That Have Wait Handles](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-that-have-wait-handles.md)」を参照してください。  
+ <span data-ttu-id="c5eec-191">完全な例では、次を参照してください。[する方法: キャンセル要求がある待機が処理されるのをリッスン](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-that-have-wait-handles.md)です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-191">For a more complete example, see [How to: Listen for Cancellation Requests That Have Wait Handles](../../../docs/standard/threading/how-to-listen-for-cancellation-requests-that-have-wait-handles.md).</span></span>  
   
-### 同時に複数のトークンをリッスンする  
- リスナーでは、複数のキャンセル トークンを同時にリッスンしなければならない場合もあります。  たとえば、キャンセル可能な操作で、メソッド パラメーターの引数として外部から渡されるトークンのほかに、内部のキャンセル トークンも監視する必要がある場合などです。  これを行うには、複数のトークンを 1 つのトークンに結合できるリンク トークン ソースを作成します。次に例を示します。  
+### <a name="listening-to-multiple-tokens-simultaneously"></a><span data-ttu-id="c5eec-192">同時に複数のトークンをリッスンする</span><span class="sxs-lookup"><span data-stu-id="c5eec-192">Listening to Multiple Tokens Simultaneously</span></span>  
+ <span data-ttu-id="c5eec-193">リスナーでは、複数のキャンセル トークンを同時にリッスンしなければならない場合もあります。</span><span class="sxs-lookup"><span data-stu-id="c5eec-193">In some cases, a listener may have to listen to multiple cancellation tokens simultaneously.</span></span> <span data-ttu-id="c5eec-194">たとえば、キャンセル可能な操作で、メソッド パラメーターの引数として外部から渡されるトークンのほかに、内部のキャンセル トークンも監視する必要がある場合などです。</span><span class="sxs-lookup"><span data-stu-id="c5eec-194">For example, a cancelable operation may have to monitor an internal cancellation token in addition to a token passed in externally as an argument to a method parameter.</span></span> <span data-ttu-id="c5eec-195">これを行うには、複数のトークンを 1 つのトークンに結合できるリンク トークン ソースを作成します。次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-195">To accomplish this, create a linked token source that can join two or more tokens into one token, as shown in the following example.</span></span>  
   
  [!code-csharp[Cancellation#7](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex13.cs#7)]
  [!code-vb[Cancellation#7](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex13.vb#7)]  
   
- 処理の終了後にリンク トークン ソースに対して `Dispose` を呼び出す必要があることに注意してください。  さらに完全に近い例については、「[How to: Listen for Multiple Cancellation Requests](../../../docs/standard/threading/how-to-listen-for-multiple-cancellation-requests.md)」を参照してください。  
+ <span data-ttu-id="c5eec-196">処理の終了後にリンク トークン ソースに対して `Dispose` を呼び出す必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="c5eec-196">Notice that you must call `Dispose` on the linked token source when you are done with it.</span></span> <span data-ttu-id="c5eec-197">完全な例では、次を参照してください。[する方法: 複数のキャンセル要求をリッスン](../../../docs/standard/threading/how-to-listen-for-multiple-cancellation-requests.md)です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-197">For a more complete example, see [How to: Listen for Multiple Cancellation Requests](../../../docs/standard/threading/how-to-listen-for-multiple-cancellation-requests.md).</span></span>  
   
-## ライブラリ コードとユーザー コードの連携  
- 統合キャンセル フレームワークでは、ライブラリ コードとユーザー コードを連携させ、どちらのコードからも他方のコードを取り消せるようにすることができます。  円滑な連携のためには、それぞれで以下のガイドラインに従う必要があります。  
+## <a name="cooperation-between-library-code-and-user-code"></a><span data-ttu-id="c5eec-198">ライブラリ コードとユーザー コードの連携</span><span class="sxs-lookup"><span data-stu-id="c5eec-198">Cooperation Between Library Code and User Code</span></span>  
+ <span data-ttu-id="c5eec-199">統合キャンセル フレームワークでは、ライブラリ コードとユーザー コードを連携させ、どちらのコードからも他方のコードを取り消せるようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="c5eec-199">The unified cancellation framework makes it possible for library code to cancel user code, and for user code to cancel library code in a cooperative manner.</span></span> <span data-ttu-id="c5eec-200">円滑な連携のためには、それぞれで以下のガイドラインに従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="c5eec-200">Smooth cooperation depends on each side following these guidelines:</span></span>  
   
--   ライブラリ コードでキャンセル可能な操作を提供する場合は、ユーザー コードからキャンセルを要求できるように、外部のキャンセル トークンを受け入れるパブリック メソッドも提供します。  
+-   <span data-ttu-id="c5eec-201">ライブラリ コードでキャンセル可能な操作を提供する場合は、ユーザー コードからキャンセルを要求できるように、外部のキャンセル トークンを受け入れるパブリック メソッドも提供します。</span><span class="sxs-lookup"><span data-stu-id="c5eec-201">If library code provides cancelable operations, it should also provide public methods that accept an external cancellation token so that user code can request cancellation.</span></span>  
   
--   ライブラリ コードからユーザー コードを呼び出す場合は、ライブラリ コードで  OperationCanceledException\(externalToken\) を常にエラー例外として解釈するのではなく、*連携によるキャンセル*としても解釈するようにします。  
+-   <span data-ttu-id="c5eec-202">ライブラリ コードは、ユーザー コードを呼び出すの場合、ライブラリ コードは、Externaltoken を解釈する必要があります*連携によるキャンセル*、およびエラーの例外とは限らないです。</span><span class="sxs-lookup"><span data-stu-id="c5eec-202">If library code calls into user code, the library code should interpret an OperationCanceledException(externalToken) as *cooperative cancellation*, and not necessarily as a failure exception.</span></span>  
   
--   ユーザー デリゲートでは、ライブラリ コードからのキャンセル要求に定期的に応答するようにします。  
+-   <span data-ttu-id="c5eec-203">ユーザー デリゲートでは、ライブラリ コードからのキャンセル要求に定期的に応答するようにします。</span><span class="sxs-lookup"><span data-stu-id="c5eec-203">User-delegates should attempt to respond to cancellation requests from library code in a timely manner.</span></span>  
   
- <xref:System.Threading.Tasks.Task?displayProperty=fullName> および <xref:System.Linq.ParallelEnumerable?displayProperty=fullName> は、これらのガイドラインに従ったクラスの例です。  詳細については、「[Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md)」および「[How to: Cancel a PLINQ Query](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md)」を参照してください。  
+ <span data-ttu-id="c5eec-204"><xref:System.Threading.Tasks.Task?displayProperty=nameWithType> および <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> は、これらのガイドラインに従ったクラスの例です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-204"><xref:System.Threading.Tasks.Task?displayProperty=nameWithType> and <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> are examples of classes that follows these guidelines.</span></span> <span data-ttu-id="c5eec-205">詳細については、次を参照してください。[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)と[する方法: PLINQ クエリを取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md)です。</span><span class="sxs-lookup"><span data-stu-id="c5eec-205">For more information, see [Task Cancellation](../../../docs/standard/parallel-programming/task-cancellation.md)and [How to: Cancel a PLINQ Query](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md).</span></span>  
   
-## 参照  
- [Managed Threading Basics](../../../docs/standard/threading/managed-threading-basics.md)
+## <a name="see-also"></a><span data-ttu-id="c5eec-206">関連項目</span><span class="sxs-lookup"><span data-stu-id="c5eec-206">See Also</span></span>  
+ [<span data-ttu-id="c5eec-207">マネージ スレッド処理の基本</span><span class="sxs-lookup"><span data-stu-id="c5eec-207">Managed Threading Basics</span></span>](../../../docs/standard/threading/managed-threading-basics.md)

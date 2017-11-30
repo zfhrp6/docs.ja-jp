@@ -1,155 +1,162 @@
 ---
-title: ".NET Framework における文字列の比較 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Compare メソッド"
-  - "CompareOrdinal メソッド"
-  - "CompareTo メソッド"
-  - "EndsWith メソッド"
-  - "Equals メソッド"
-  - "IndexOf メソッド"
-  - "LastIndexOf メソッド"
-  - "StartsWith メソッド"
-  - "文字列 [.NET Framework], 比較"
-  - "値比較 (文字列の)"
+title: ".NET における文字列の比較"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+- cpp
+helpviewer_keywords:
+- value comparisons of strings
+- LastIndexOf method
+- CompareTo method
+- IndexOf method
+- Compare method
+- strings [.NET Framework], comparing
+- CompareOrdinal method
+- EndsWith method
+- Equals method
+- StartsWith method
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
-caps.latest.revision: 15
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 34aa922155943d1b4d39de2e7c33ebc1228e1083
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# .NET Framework における文字列の比較
-.NET Framework は、文字列の値を比較するためのメソッドをいくつか提供します。 これらの値の比較メソッドとその説明を次の表に示します。  
+# <a name="comparing-strings-in-net"></a><span data-ttu-id="f869d-102">.NET における文字列の比較</span><span class="sxs-lookup"><span data-stu-id="f869d-102">Comparing Strings in .NET</span></span>
+<span data-ttu-id="f869d-103">.NET は、文字列の値を比較するためのメソッドをいくつか提供します。</span><span class="sxs-lookup"><span data-stu-id="f869d-103">.NET provides several methods to compare the values of strings.</span></span> <span data-ttu-id="f869d-104">これらの値の比較メソッドとその説明を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="f869d-104">The following table lists and describes the value-comparison methods.</span></span>  
   
-|メソッド名|用途|  
-|-----------|--------|  
-|<xref:System.String.Compare%2A?displayProperty=fullName>|2 つの文字列の値を比較します。 整数値を返します。|  
-|<xref:System.String.CompareOrdinal%2A?displayProperty=fullName>|ローカル カルチャに関係なく、2 つの文字列を比較します。 整数値を返します。|  
-|<xref:System.String.CompareTo%2A?displayProperty=fullName>|現在の文字列オブジェクトを別の文字列と比較します。 整数値を返します。|  
-|<xref:System.String.StartsWith%2A?displayProperty=fullName>|文字列が、渡された文字列で始まるかどうかを確認します。 Boolean 値を返します。|  
-|<xref:System.String.EndsWith%2A?displayProperty=fullName>|文字列が、渡された文字列で終わるかどうかを確認します。 Boolean 値を返します。|  
-|<xref:System.String.Equals%2A?displayProperty=fullName>|2 つの文字列が等しいかどうかを確認します。 Boolean 値を返します。|  
-|<xref:System.String.IndexOf%2A?displayProperty=fullName>|検索対象文字列の先頭から開始して、特定の文字または文字列が見つかったインデックス位置を返します。 整数値を返します。|  
-|<xref:System.String.LastIndexOf%2A?displayProperty=fullName>|検索対象文字列の末尾から開始して、特定の文字または文字列が見つかったインデックス位置を返します。 整数値を返します。|  
+|<span data-ttu-id="f869d-105">メソッド名</span><span class="sxs-lookup"><span data-stu-id="f869d-105">Method name</span></span>|<span data-ttu-id="f869d-106">用途</span><span class="sxs-lookup"><span data-stu-id="f869d-106">Use</span></span>|  
+|-----------------|---------|  
+|<xref:System.String.Compare%2A?displayProperty=nameWithType>|<span data-ttu-id="f869d-107">2 つの文字列の値を比較します。</span><span class="sxs-lookup"><span data-stu-id="f869d-107">Compares the values of two strings.</span></span> <span data-ttu-id="f869d-108">整数値を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-108">Returns an integer value.</span></span>|  
+|<xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType>|<span data-ttu-id="f869d-109">ローカル カルチャに関係なく、2 つの文字列を比較します。</span><span class="sxs-lookup"><span data-stu-id="f869d-109">Compares two strings without regard to local culture.</span></span> <span data-ttu-id="f869d-110">整数値を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-110">Returns an integer value.</span></span>|  
+|<xref:System.String.CompareTo%2A?displayProperty=nameWithType>|<span data-ttu-id="f869d-111">現在の文字列オブジェクトを別の文字列と比較します。</span><span class="sxs-lookup"><span data-stu-id="f869d-111">Compares the current string object to another string.</span></span> <span data-ttu-id="f869d-112">整数値を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-112">Returns an integer value.</span></span>|  
+|<xref:System.String.StartsWith%2A?displayProperty=nameWithType>|<span data-ttu-id="f869d-113">文字列が、渡された文字列で始まるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="f869d-113">Determines whether a string begins with the string passed.</span></span> <span data-ttu-id="f869d-114">Boolean 値を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-114">Returns a Boolean value.</span></span>|  
+|<xref:System.String.EndsWith%2A?displayProperty=nameWithType>|<span data-ttu-id="f869d-115">文字列が、渡された文字列で終わるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="f869d-115">Determines whether a string ends with the string passed.</span></span> <span data-ttu-id="f869d-116">Boolean 値を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-116">Returns a Boolean value.</span></span>|  
+|<xref:System.String.Equals%2A?displayProperty=nameWithType>|<span data-ttu-id="f869d-117">2 つの文字列が等しいかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="f869d-117">Determines whether two strings are the same.</span></span> <span data-ttu-id="f869d-118">Boolean 値を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-118">Returns a Boolean value.</span></span>|  
+|<xref:System.String.IndexOf%2A?displayProperty=nameWithType>|<span data-ttu-id="f869d-119">検索対象文字列の先頭から開始して、特定の文字または文字列が見つかったインデックス位置を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-119">Returns the index position of a character or string, starting from the beginning of the string you are examining.</span></span> <span data-ttu-id="f869d-120">整数値を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-120">Returns an integer value.</span></span>|  
+|<xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>|<span data-ttu-id="f869d-121">検索対象文字列の末尾から開始して、特定の文字または文字列が見つかったインデックス位置を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-121">Returns the index position of a character or string, starting from the end of the string you are examining.</span></span> <span data-ttu-id="f869d-122">整数値を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-122">Returns an integer value.</span></span>|  
   
-## 比較  
- 静的な <xref:System.String.Compare%2A?displayProperty=fullName> メソッドは、2 つの文字列を詳細に比較する手段を提供します。 このメソッドはカルチャに対応しています。 この機能は、2 つの文字列、または 2 つの文字列の部分文字列を比較するために使用できます。 また、大文字と小文字の区別やカルチャの違いを考慮または無視するためのオーバーロードも用意されています。 このメソッドによって返される可能性のある 3 つの整数値を次の表に示します。  
+## <a name="compare"></a><span data-ttu-id="f869d-123">比較</span><span class="sxs-lookup"><span data-stu-id="f869d-123">Compare</span></span>  
+ <span data-ttu-id="f869d-124">静的な <xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドは、2 つの文字列を詳細に比較する手段を提供します。</span><span class="sxs-lookup"><span data-stu-id="f869d-124">The static <xref:System.String.Compare%2A?displayProperty=nameWithType> method provides a thorough way of comparing two strings.</span></span> <span data-ttu-id="f869d-125">このメソッドはカルチャに対応しています。</span><span class="sxs-lookup"><span data-stu-id="f869d-125">This method is culturally aware.</span></span> <span data-ttu-id="f869d-126">この機能は、2 つの文字列、または 2 つの文字列の部分文字列を比較するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="f869d-126">You can use this function to compare two strings or substrings of two strings.</span></span> <span data-ttu-id="f869d-127">また、大文字と小文字の区別やカルチャの違いを考慮または無視するためのオーバーロードも用意されています。</span><span class="sxs-lookup"><span data-stu-id="f869d-127">Additionally, overloads are provided that regard or disregard case and cultural variance.</span></span> <span data-ttu-id="f869d-128">このメソッドによって返される可能性のある 3 つの整数値を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="f869d-128">The following table shows the three integer values that this method might return.</span></span>  
   
-|戻り値|条件|  
-|---------|--------|  
-|負の整数|最初の文字列は、並べ替え順序が 2 番目の文字列の前に置かれます。<br /><br /> または<br /><br /> 最初の文字列は `null` です。|  
-|0|最初の文字列と 2 番目の文字列は等価です。<br /><br /> または<br /><br /> 両方の文字列が `null`です。|  
-|正の整数<br /><br /> または<br /><br /> 1|最初の文字列は、並べ替え順序が 2 番目の文字列の後に続きます。<br /><br /> または<br /><br /> 第 2 文字列は `null` です。|  
+|<span data-ttu-id="f869d-129">戻り値</span><span class="sxs-lookup"><span data-stu-id="f869d-129">Return value</span></span>|<span data-ttu-id="f869d-130">条件</span><span class="sxs-lookup"><span data-stu-id="f869d-130">Condition</span></span>|  
+|------------------|---------------|  
+|<span data-ttu-id="f869d-131">負の整数</span><span class="sxs-lookup"><span data-stu-id="f869d-131">A negative integer</span></span>|<span data-ttu-id="f869d-132">最初の文字列は、並べ替え順序が 2 番目の文字列の前に置かれます。</span><span class="sxs-lookup"><span data-stu-id="f869d-132">The first string precedes the second string in the sort order.</span></span><br /><br /> <span data-ttu-id="f869d-133">または</span><span class="sxs-lookup"><span data-stu-id="f869d-133">-or-</span></span><br /><br /> <span data-ttu-id="f869d-134">最初の文字列は `null`です。</span><span class="sxs-lookup"><span data-stu-id="f869d-134">The first string is `null`.</span></span>|  
+|<span data-ttu-id="f869d-135">0</span><span class="sxs-lookup"><span data-stu-id="f869d-135">0</span></span>|<span data-ttu-id="f869d-136">最初の文字列と 2 番目の文字列は等価です。</span><span class="sxs-lookup"><span data-stu-id="f869d-136">The first string and the second string are equal.</span></span><br /><br /> <span data-ttu-id="f869d-137">または</span><span class="sxs-lookup"><span data-stu-id="f869d-137">-or-</span></span><br /><br /> <span data-ttu-id="f869d-138">両方の文字列が `null`です。</span><span class="sxs-lookup"><span data-stu-id="f869d-138">Both strings are `null`.</span></span>|  
+|<span data-ttu-id="f869d-139">正の整数</span><span class="sxs-lookup"><span data-stu-id="f869d-139">A positive integer</span></span><br /><br /> <span data-ttu-id="f869d-140">または</span><span class="sxs-lookup"><span data-stu-id="f869d-140">-or-</span></span><br /><br /> <span data-ttu-id="f869d-141">1</span><span class="sxs-lookup"><span data-stu-id="f869d-141">1</span></span>|<span data-ttu-id="f869d-142">最初の文字列は、並べ替え順序が 2 番目の文字列の後に続きます。</span><span class="sxs-lookup"><span data-stu-id="f869d-142">The first string follows the second string in the sort order.</span></span><br /><br /> <span data-ttu-id="f869d-143">または</span><span class="sxs-lookup"><span data-stu-id="f869d-143">-or-</span></span><br /><br /> <span data-ttu-id="f869d-144">第 2 文字列は `null`です。</span><span class="sxs-lookup"><span data-stu-id="f869d-144">The second string is `null`.</span></span>|  
   
 > [!IMPORTANT]
->  <xref:System.String.Compare%2A?displayProperty=fullName> メソッドは、主に文字列の並べ替えに使用するものです。 等価性をテストする \(つまり、ある文字列が別の文字列より大きいか小さいかを問題にせずに戻り値 0 を明示的に検索する\) 目的では、<xref:System.String.Compare%2A?displayProperty=fullName> メソッドを使用しないでください。 2 つの文字列が等価かどうかを判断するには、<xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=fullName> メソッドを使用してください。  
+>  <span data-ttu-id="f869d-145"><xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドは、主に文字列の並べ替えに使用するものです。</span><span class="sxs-lookup"><span data-stu-id="f869d-145">The <xref:System.String.Compare%2A?displayProperty=nameWithType> method is primarily intended for use when ordering or sorting strings.</span></span> <span data-ttu-id="f869d-146">等価性をテストする (つまり、ある文字列が別の文字列より大きいか小さいかを問題にせずに戻り値 0 を明示的に検索する) 目的では、<xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="f869d-146">You should not use the <xref:System.String.Compare%2A?displayProperty=nameWithType> method to test for equality (that is, to explicitly look for a return value of 0 with no regard for whether one string is less than or greater than the other).</span></span> <span data-ttu-id="f869d-147">2 つの文字列が等価かどうかを判断するには、<xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> メソッドを使用してください。</span><span class="sxs-lookup"><span data-stu-id="f869d-147">Instead, to determine whether two strings are equal, use the <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> method.</span></span>  
   
- <xref:System.String.Compare%2A?displayProperty=fullName> メソッドを使用して、2 つの文字列の相対値を確認する例を次に示します。  
+ <span data-ttu-id="f869d-148"><xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドを使用して、2 つの文字列の相対値を確認する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f869d-148">The following example uses the <xref:System.String.Compare%2A?displayProperty=nameWithType> method to determine the relative values of two strings.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#6)]
  [!code-csharp[Conceptual.String.BasicOps#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#6)]
  [!code-vb[Conceptual.String.BasicOps#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#6)]  
   
- この例は、コンソールに `-1` と出力します。  
+ <span data-ttu-id="f869d-149">この例は、コンソールに `-1` と出力します。</span><span class="sxs-lookup"><span data-stu-id="f869d-149">This example displays `-1` to the console.</span></span>  
   
- 既定では、上の例はカルチャによって異なります。 カルチャに依存しない文字列操作を実行するには、*culture* パラメーターを指定することによって使用するカルチャを指定することを可能にする <xref:System.String.Compare%2A?displayProperty=fullName> メソッドのオーバーロードを使用します。<xref:System.String.Compare%2A?displayProperty=fullName> メソッドを使用してカルチャに依存しない比較を実行する例については、「[カルチャを認識しない文字列比較の実行](../../../ocs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)」を参照してください。  
+ <span data-ttu-id="f869d-150">既定では、上の例はカルチャによって異なります。</span><span class="sxs-lookup"><span data-stu-id="f869d-150">The preceding example is culture-sensitive by default.</span></span> <span data-ttu-id="f869d-151">カルチャを認識しない文字列比較を実行するには、オーバー ロードを使用して、<xref:System.String.Compare%2A?displayProperty=nameWithType>メソッドを指定して使用するカルチャを指定することができます、*カルチャ*パラメーター。</span><span class="sxs-lookup"><span data-stu-id="f869d-151">To perform a culture-insensitive string comparison, use an overload of the <xref:System.String.Compare%2A?displayProperty=nameWithType> method that allows you to specify the culture to use by supplying a *culture* parameter.</span></span> <span data-ttu-id="f869d-152">使用する方法を示す例については、 <xref:System.String.Compare%2A?displayProperty=nameWithType> 、カルチャに依存しない比較を実行する方法を確認する[カルチャを認識しない文字列比較の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)です。</span><span class="sxs-lookup"><span data-stu-id="f869d-152">For an example that demonstrates how to use the <xref:System.String.Compare%2A?displayProperty=nameWithType> method to perform a culture-insensitive comparison, see [Performing Culture-Insensitive String Comparisons](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).</span></span>  
   
-## CompareOrdinal  
- <xref:System.String.CompareOrdinal%2A?displayProperty=fullName> メソッドは、ローカル カルチャを考慮せずに 2 つの文字列オブジェクトを比較します。 このメソッドの戻り値は、上の表で示した **Compare** メソッドによって返される値と同じです。  
+## <a name="compareordinal"></a><span data-ttu-id="f869d-153">CompareOrdinal</span><span class="sxs-lookup"><span data-stu-id="f869d-153">CompareOrdinal</span></span>  
+ <span data-ttu-id="f869d-154"><xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> メソッドは、ローカル カルチャを考慮せずに 2 つの文字列オブジェクトを比較します。</span><span class="sxs-lookup"><span data-stu-id="f869d-154">The <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> method compares two string objects without considering the local culture.</span></span> <span data-ttu-id="f869d-155">このメソッドの戻り値は、上の表で示した **Compare** メソッドによって返される値と同じです。</span><span class="sxs-lookup"><span data-stu-id="f869d-155">The return values of this method are identical to the values returned by the **Compare** method in the previous table.</span></span>  
   
 > [!IMPORTANT]
->  <xref:System.String.CompareOrdinal%2A?displayProperty=fullName> メソッドは、主に文字列の並べ替えに使用するものです。 等価性をテストする \(つまり、ある文字列が別の文字列より大きいか小さいかを問題にせずに戻り値 0 を明示的に検索する\) 目的では、<xref:System.String.CompareOrdinal%2A?displayProperty=fullName> メソッドを使用しないでください。 2 つの文字列が等価かどうかを判断するには、<xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=fullName> メソッドを使用してください。  
+>  <span data-ttu-id="f869d-156"><xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> メソッドは、主に文字列の並べ替えに使用するものです。</span><span class="sxs-lookup"><span data-stu-id="f869d-156">The <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> method is primarily intended for use when ordering or sorting strings.</span></span> <span data-ttu-id="f869d-157">等価性をテストする (つまり、ある文字列が別の文字列より大きいか小さいかを問題にせずに戻り値 0 を明示的に検索する) 目的では、<xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> メソッドを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="f869d-157">You should not use the <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> method to test for equality (that is, to explicitly look for a return value of 0 with no regard for whether one string is less than or greater than the other).</span></span> <span data-ttu-id="f869d-158">2 つの文字列が等価かどうかを判断するには、<xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> メソッドを使用してください。</span><span class="sxs-lookup"><span data-stu-id="f869d-158">Instead, to determine whether two strings are equal, use the <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> method.</span></span>  
   
- **CompareOrdinal** メソッドを使用して、2 つの文字列の値を比較する例を次に示します。  
+ <span data-ttu-id="f869d-159">**CompareOrdinal** メソッドを使用して、2 つの文字列の値を比較する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f869d-159">The following example uses the **CompareOrdinal** method to compare the values of two strings.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#7)]
  [!code-csharp[Conceptual.String.BasicOps#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#7)]
  [!code-vb[Conceptual.String.BasicOps#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#7)]  
   
- この例は、コンソールに `-32` と出力します。  
+ <span data-ttu-id="f869d-160">この例は、コンソールに `-32` と出力します。</span><span class="sxs-lookup"><span data-stu-id="f869d-160">This example displays `-32` to the console.</span></span>  
   
-## CompareTo  
- <xref:System.String.CompareTo%2A?displayProperty=fullName> メソッドは、現在の文字列オブジェクトがカプセル化している文字列を別の文字列またはオブジェクトと比較します。 このメソッドの戻り値は、上の表で示した <xref:System.String.Compare%2A?displayProperty=fullName> メソッドによって返される値と同じです。  
+## <a name="compareto"></a><span data-ttu-id="f869d-161">CompareTo</span><span class="sxs-lookup"><span data-stu-id="f869d-161">CompareTo</span></span>  
+ <span data-ttu-id="f869d-162"><xref:System.String.CompareTo%2A?displayProperty=nameWithType> メソッドは、現在の文字列オブジェクトがカプセル化している文字列を別の文字列またはオブジェクトと比較します。</span><span class="sxs-lookup"><span data-stu-id="f869d-162">The <xref:System.String.CompareTo%2A?displayProperty=nameWithType> method compares the string that the current string object encapsulates to another string or object.</span></span> <span data-ttu-id="f869d-163">このメソッドの戻り値は、上の表で示した <xref:System.String.Compare%2A?displayProperty=nameWithType> メソッドによって返される値と同じです。</span><span class="sxs-lookup"><span data-stu-id="f869d-163">The return values of this method are identical to the values returned by the <xref:System.String.Compare%2A?displayProperty=nameWithType> method in the previous table.</span></span>  
   
 > [!IMPORTANT]
->  <xref:System.String.CompareTo%2A?displayProperty=fullName> メソッドは、主に文字列の並べ替えに使用するものです。 等価性をテストする \(つまり、ある文字列が別の文字列より大きいか小さいかを問題にせずに戻り値 0 を明示的に検索する\) 目的では、<xref:System.String.CompareTo%2A?displayProperty=fullName> メソッドを使用しないでください。 2 つの文字列が等価かどうかを判断するには、<xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=fullName> メソッドを使用してください。  
+>  <span data-ttu-id="f869d-164"><xref:System.String.CompareTo%2A?displayProperty=nameWithType> メソッドは、主に文字列の並べ替えに使用するものです。</span><span class="sxs-lookup"><span data-stu-id="f869d-164">The <xref:System.String.CompareTo%2A?displayProperty=nameWithType> method is primarily intended for use when ordering or sorting strings.</span></span> <span data-ttu-id="f869d-165">等価性をテストする (つまり、ある文字列が別の文字列より大きいか小さいかを問題にせずに戻り値 0 を明示的に検索する) 目的では、<xref:System.String.CompareTo%2A?displayProperty=nameWithType> メソッドを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="f869d-165">You should not use the <xref:System.String.CompareTo%2A?displayProperty=nameWithType> method to test for equality (that is, to explicitly look for a return value of 0 with no regard for whether one string is less than or greater than the other).</span></span> <span data-ttu-id="f869d-166">2 つの文字列が等価かどうかを判断するには、<xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> メソッドを使用してください。</span><span class="sxs-lookup"><span data-stu-id="f869d-166">Instead, to determine whether two strings are equal, use the <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> method.</span></span>  
   
- <xref:System.String.CompareTo%2A?displayProperty=fullName> メソッドを使用して、`string1` オブジェクトを `string2` オブジェクトと比較する例を次に示します。  
+ <span data-ttu-id="f869d-167"><xref:System.String.CompareTo%2A?displayProperty=nameWithType> メソッドを使用して、`string1` オブジェクトを `string2` オブジェクトと比較する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f869d-167">The following example uses the <xref:System.String.CompareTo%2A?displayProperty=nameWithType> method to compare the `string1` object to the `string2` object.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#8](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#8)]
  [!code-csharp[Conceptual.String.BasicOps#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#8)]
  [!code-vb[Conceptual.String.BasicOps#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#8)]  
   
- この例は、コンソールに `-1` と出力します。  
+ <span data-ttu-id="f869d-168">この例は、コンソールに `-1` と出力します。</span><span class="sxs-lookup"><span data-stu-id="f869d-168">This example displays `-1` to the console.</span></span>  
   
- <xref:System.String.CompareTo%2A?displayProperty=fullName> メソッドのすべてのオーバーロードは、既定で、カルチャに依存して大文字小文字を区別する比較を実行します。 このメソッドのオーバーロードで、カルチャに依存しない比較を実行できるものはありません。 コードを理解しやすくするために、**String.Compare** メソッドを使用することをお勧めします。その際、カルチャに依存する操作には <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> を指定し、カルチャに依存しない操作には <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> を指定します。**String.Compare** メソッドを使用してカルチャに依存する比較とカルチャに依存しない比較の両方を実行する例については、「[カルチャを認識しない文字列比較の実行](../../../ocs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)」を参照してください。  
+ <span data-ttu-id="f869d-169">すべてのオーバー ロード、<xref:System.String.CompareTo%2A?displayProperty=nameWithType>メソッドは、既定ではカルチャおよび大文字小文字を区別の比較を実行します。</span><span class="sxs-lookup"><span data-stu-id="f869d-169">All overloads of the <xref:System.String.CompareTo%2A?displayProperty=nameWithType> method perform culture-sensitive and case-sensitive comparisons by default.</span></span> <span data-ttu-id="f869d-170">このメソッドのオーバーロードで、カルチャに依存しない比較を実行できるものはありません。</span><span class="sxs-lookup"><span data-stu-id="f869d-170">No overloads of this method are provided that allow you to perform a culture-insensitive comparison.</span></span> <span data-ttu-id="f869d-171">コードをわかりやすく、ことをお勧めを使用すること、 **String.Compare**メソッドを指定する代わりに、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>カルチャに依存する操作のまたは<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>のカルチャに依存しない操作します。</span><span class="sxs-lookup"><span data-stu-id="f869d-171">For code clarity, we recommend that you use the **String.Compare** method instead, specifying <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> for culture-sensitive operations or <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> for culture-insensitive operations.</span></span> <span data-ttu-id="f869d-172">**String.Compare** メソッドを使用してカルチャに依存する比較とカルチャに依存しない比較の両方を実行する例については、「 [カルチャを認識しない文字列比較の実行](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f869d-172">For examples that demonstrate how to use the **String.Compare** method to perform both culture-sensitive and culture-insensitive comparisons, see [Performing Culture-Insensitive String Comparisons](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).</span></span>  
   
-## 次の値に等しい  
- **String.Equals** メソッドを使用すると、2 つの文字列が等しいかどうかを簡単に確認できます。 このメソッドは大文字と小文字を区別し、**True** または **False** の Boolean 値を返します。 このメソッドは、次の例に示すように、既存のクラスで使用できます。**Equals** メソッドを使用して、文字列オブジェクトに "Hello World" という語句が含まれているかどうかを確認する例を次に示します。  
+## <a name="equals"></a><span data-ttu-id="f869d-173">次の値に等しい</span><span class="sxs-lookup"><span data-stu-id="f869d-173">Equals</span></span>  
+ <span data-ttu-id="f869d-174">**String.Equals** メソッドを使用すると、2 つの文字列が等しいかどうかを簡単に確認できます。</span><span class="sxs-lookup"><span data-stu-id="f869d-174">The **String.Equals** method can easily determine if two strings are the same.</span></span> <span data-ttu-id="f869d-175">このメソッドは大文字と小文字を区別し、 **True** または **False** の Boolean 値を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-175">This case-sensitive method returns a **true** or **false** Boolean value.</span></span> <span data-ttu-id="f869d-176">このメソッドは、次の例に示すように、既存のクラスで使用できます。</span><span class="sxs-lookup"><span data-stu-id="f869d-176">It can be used from an existing class, as illustrated in the next example.</span></span> <span data-ttu-id="f869d-177">**Equals** メソッドを使用して、文字列オブジェクトに "Hello World" という語句が含まれているかどうかを確認する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f869d-177">The following example uses the **Equals** method to determine whether a string object contains the phrase "Hello World".</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#9](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#9)]
  [!code-csharp[Conceptual.String.BasicOps#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#9)]
  [!code-vb[Conceptual.String.BasicOps#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#9)]  
   
- この例は、コンソールに `True` と出力します。  
+ <span data-ttu-id="f869d-178">この例は、コンソールに `True` と出力します。</span><span class="sxs-lookup"><span data-stu-id="f869d-178">This example displays `True` to the console.</span></span>  
   
- このメソッドは、静的メソッドとしても使用できます。 静的メソッドを使用して、2 つの文字列オブジェクトを比較する例を次に示します。  
+ <span data-ttu-id="f869d-179">このメソッドは、静的メソッドとしても使用できます。</span><span class="sxs-lookup"><span data-stu-id="f869d-179">This method can also be used as a static method.</span></span> <span data-ttu-id="f869d-180">静的メソッドを使用して、2 つの文字列オブジェクトを比較する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f869d-180">The following example compares two string objects using a static method.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#10](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#10)]
  [!code-csharp[Conceptual.String.BasicOps#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#10)]
  [!code-vb[Conceptual.String.BasicOps#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#10)]  
   
- この例は、コンソールに `True` と出力します。  
+ <span data-ttu-id="f869d-181">この例は、コンソールに `True` と出力します。</span><span class="sxs-lookup"><span data-stu-id="f869d-181">This example displays `True` to the console.</span></span>  
   
-## StartsWith と EndsWith  
- **String.StartsWith** メソッドを使用すると、文字列オブジェクトが、別の文字列を構成している文字と同じ文字で始まっているかどうかを確認できます。 このメソッドは大文字と小文字を区別し、現在の文字列オブジェクトが、渡された文字列で始まる場合は **true**、それ以外の場合は **false** を返します。 このメソッドを使用して、文字列オブジェクトが "Hello" で始まるかどうかを確認する例を次に示します。  
+## <a name="startswith-and-endswith"></a><span data-ttu-id="f869d-182">StartsWith と EndsWith</span><span class="sxs-lookup"><span data-stu-id="f869d-182">StartsWith and EndsWith</span></span>  
+ <span data-ttu-id="f869d-183">**String.StartsWith** メソッドを使用すると、文字列オブジェクトが、別の文字列を構成している文字と同じ文字で始まっているかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="f869d-183">You can use the **String.StartsWith** method to determine whether a string object begins with the same characters that encompass another string.</span></span> <span data-ttu-id="f869d-184">このメソッドは大文字と小文字を区別し、現在の文字列オブジェクトが、渡された文字列で始まる場合は **true** 、それ以外の場合は **false** を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-184">This case-sensitive method returns **true** if the current string object begins with the passed string and **false** if it does not.</span></span> <span data-ttu-id="f869d-185">このメソッドを使用して、文字列オブジェクトが "Hello" で始まるかどうかを確認する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f869d-185">The following example uses this method to determine if a string object begins with "Hello".</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#11](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#11)]
  [!code-csharp[Conceptual.String.BasicOps#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#11)]
  [!code-vb[Conceptual.String.BasicOps#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#11)]  
   
- この例は、コンソールに `True` と出力します。  
+ <span data-ttu-id="f869d-186">この例は、コンソールに `True` と出力します。</span><span class="sxs-lookup"><span data-stu-id="f869d-186">This example displays `True` to the console.</span></span>  
   
- **String.EndsWith** メソッドは、渡された文字列を現在の文字列オブジェクトの末尾にある文字列と比較します。 このメソッドも Boolean 値を返します。**EndsWith** メソッドを使用して、文字列の末尾を確認する例を次に示します。  
+ <span data-ttu-id="f869d-187">**String.EndsWith** メソッドは、渡された文字列を現在の文字列オブジェクトの末尾にある文字列と比較します。</span><span class="sxs-lookup"><span data-stu-id="f869d-187">The **String.EndsWith** method compares a passed string to the characters that exist at the end of the current string object.</span></span> <span data-ttu-id="f869d-188">このメソッドも Boolean 値を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-188">It also returns a Boolean value.</span></span> <span data-ttu-id="f869d-189">**EndsWith** メソッドを使用して、文字列の末尾を確認する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f869d-189">The following example checks the end of a string using the **EndsWith** method.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#12](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#12)]
  [!code-csharp[Conceptual.String.BasicOps#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#12)]
  [!code-vb[Conceptual.String.BasicOps#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#12)]  
   
- この例は、コンソールに `False`  と出力します。  
+ <span data-ttu-id="f869d-190">この例は、コンソールに `False` と出力します。</span><span class="sxs-lookup"><span data-stu-id="f869d-190">This example displays `False` to the console.</span></span>  
   
-## IndexOf と LastIndexOf  
- **String.IndexOf** メソッドを使用すると、特定の文字が文字列内で最初に出現する位置を確認できます。 このメソッドは大文字と小文字を区別し、文字列の先頭からカウントを開始し、0 から始まるインデックスを使用して、渡された文字が出現する位置を返します。 指定した文字が見つからない場合は、値 –1 を返します。  
+## <a name="indexof-and-lastindexof"></a><span data-ttu-id="f869d-191">IndexOf と LastIndexOf</span><span class="sxs-lookup"><span data-stu-id="f869d-191">IndexOf and LastIndexOf</span></span>  
+ <span data-ttu-id="f869d-192">**String.IndexOf** メソッドを使用すると、特定の文字が文字列内で最初に出現する位置を確認できます。</span><span class="sxs-lookup"><span data-stu-id="f869d-192">You can use the **String.IndexOf** method to determine the position of the first occurrence of a particular character within a string.</span></span> <span data-ttu-id="f869d-193">このメソッドは大文字と小文字を区別し、文字列の先頭からカウントを開始し、0 から始まるインデックスを使用して、渡された文字が出現する位置を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-193">This case-sensitive method starts counting from the beginning of a string and returns the position of a passed character using a zero-based index.</span></span> <span data-ttu-id="f869d-194">指定した文字が見つからない場合は、値 –1 を返します。</span><span class="sxs-lookup"><span data-stu-id="f869d-194">If the character cannot be found, a value of –1 is returned.</span></span>  
   
- **IndexOf** メソッドを使用して、'`l`' という文字が文字列内で最初に出現する位置を検索する例を次に示します。  
+ <span data-ttu-id="f869d-195">**IndexOf** メソッドを使用して、'`l`' という文字が文字列内で最初に出現する位置を検索する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f869d-195">The following example uses the **IndexOf** method to search for the first occurrence of the '`l`' character in a string.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#13](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#13)]
  [!code-csharp[Conceptual.String.BasicOps#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#13)]
  [!code-vb[Conceptual.String.BasicOps#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#13)]  
   
- この例は、コンソールに `2` と出力します。  
+ <span data-ttu-id="f869d-196">この例は、コンソールに `2` と出力します。</span><span class="sxs-lookup"><span data-stu-id="f869d-196">This example displays `2` to the console.</span></span>  
   
- **String.LastIndexOf** メソッドは **String.IndexOf** メソッドに似ていますが、指定した文字列が文字列内で最後に出現する位置を返すという点が異なります。 このメソッドは大文字と小文字を区別し、0 から始まるインデックスを使用します。  
+ <span data-ttu-id="f869d-197">**String.LastIndexOf** メソッドは **String.IndexOf** メソッドに似ていますが、指定した文字列が文字列内で最後に出現する位置を返すという点が異なります。</span><span class="sxs-lookup"><span data-stu-id="f869d-197">The **String.LastIndexOf** method is similar to the **String.IndexOf** method except that it returns the position of the last occurrence of a particular character within a string.</span></span> <span data-ttu-id="f869d-198">このメソッドは大文字と小文字を区別し、0 から始まるインデックスを使用します。</span><span class="sxs-lookup"><span data-stu-id="f869d-198">It is case-sensitive and uses a zero-based index.</span></span>  
   
- **LastIndexOf** メソッドを使用して、'`l`' という文字が文字列内で最後に出現する位置を検索する例を次に示します。  
+ <span data-ttu-id="f869d-199">**LastIndexOf** メソッドを使用して、'`l`' という文字が文字列内で最後に出現する位置を検索する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f869d-199">The following example uses the **LastIndexOf** method to search for the last occurrence of the '`l`' character in a string.</span></span>  
   
  [!code-cpp[Conceptual.String.BasicOps#14](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#14)]
  [!code-csharp[Conceptual.String.BasicOps#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#14)]
  [!code-vb[Conceptual.String.BasicOps#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#14)]  
   
- この例は、コンソールに `9` と出力します。  
+ <span data-ttu-id="f869d-200">この例は、コンソールに `9` と出力します。</span><span class="sxs-lookup"><span data-stu-id="f869d-200">This example displays `9` to the console.</span></span>  
   
- いずれのメソッドも、**String.Remove** メソッドと組み合わせて使用すると便利です。**IndexOf** メソッドまたは **LastIndexOf** メソッドのいずれかを使用して文字の位置を取得し、その位置を **Remove** メソッドに渡すことによって、その文字またはその文字で始まる単語を削除できます。  
+ <span data-ttu-id="f869d-201">いずれのメソッドも、 **String.Remove** メソッドと組み合わせて使用すると便利です。</span><span class="sxs-lookup"><span data-stu-id="f869d-201">Both methods are useful when used in conjunction with the **String.Remove** method.</span></span> <span data-ttu-id="f869d-202">**IndexOf** メソッドまたは **LastIndexOf** メソッドのいずれかを使用して文字の位置を取得し、その位置を **Remove** メソッドに渡すことによって、その文字またはその文字で始まる単語を削除できます。</span><span class="sxs-lookup"><span data-stu-id="f869d-202">You can use either the **IndexOf** or **LastIndexOf** methods to retrieve the position of a character, and then supply that position to the **Remove** method in order to remove a character or a word that begins with that character.</span></span>  
   
-## 参照  
- [基本的な文字列操作](../../../docs/standard/base-types/basic-string-operations.md)   
- [カルチャを認識しない文字列操作の実行](../../../ocs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+## <a name="see-also"></a><span data-ttu-id="f869d-203">関連項目</span><span class="sxs-lookup"><span data-stu-id="f869d-203">See Also</span></span>  
+ [<span data-ttu-id="f869d-204">基本的な文字列操作</span><span class="sxs-lookup"><span data-stu-id="f869d-204">Basic String Operations</span></span>](../../../docs/standard/base-types/basic-string-operations.md)  
+ [<span data-ttu-id="f869d-205">カルチャを認識しない文字列操作の実行</span><span class="sxs-lookup"><span data-stu-id="f869d-205">Performing Culture-Insensitive String Operations</span></span>](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

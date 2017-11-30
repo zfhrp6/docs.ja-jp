@@ -1,304 +1,307 @@
 ---
-title: "Fundamentals of Garbage Collection | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "garbage collection, generations"
-  - "garbage collection, background garbage collection"
-  - "garbage collection, concurrent garbage collection"
-  - "garbage collection, server garbage collection"
-  - "garbage collection, workstation garbage collection"
-  - "garbage collection, managed heap"
+title: "ガベージ コレクションの基礎"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- garbage collection, generations
+- garbage collection, background garbage collection
+- garbage collection, concurrent garbage collection
+- garbage collection, server garbage collection
+- garbage collection, workstation garbage collection
+- garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-caps.latest.revision: 51
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 51
+caps.latest.revision: "51"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: b15ae041cdadb259c59d447b8775844fc96048be
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Fundamentals of Garbage Collection
-<a name="top"></a> 共通言語ランタイム \(CLR\) では、自動メモリ マネージャーとしてガベージ コレクターを使用できます。 次のような利点があります。  
+# <a name="fundamentals-of-garbage-collection"></a><span data-ttu-id="02d3a-102">ガベージ コレクションの基礎</span><span class="sxs-lookup"><span data-stu-id="02d3a-102">Fundamentals of Garbage Collection</span></span>
+<span data-ttu-id="02d3a-103"><a name="top"></a> 共通言語ランタイム (CLR) では、自動メモリ マネージャーとしてガベージ コレクターを使用できます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-103"><a name="top"></a> In the common language runtime (CLR), the garbage collector serves as an automatic memory manager.</span></span> <span data-ttu-id="02d3a-104">次のような利点があります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-104">It provides the following benefits:</span></span>  
   
--   アプリケーションを開発するときにメモリを解放する必要がありません。  
+-   <span data-ttu-id="02d3a-105">アプリケーションを開発するときにメモリを解放する必要がありません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-105">Enables you to develop your application without having to free memory.</span></span>  
   
--   オブジェクトが効率的にマネージ ヒープに割り当てられます。  
+-   <span data-ttu-id="02d3a-106">オブジェクトが効率的にマネージ ヒープに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-106">Allocates objects on the managed heap efficiently.</span></span>  
   
--   使用されなくなったオブジェクトが解放され、メモリがクリアされてその後の割り当てに使用できるようになります。 マネージ オブジェクトは自動的にクリーンな内容で開始されるため、コンストラクターでデータ フィールドごとに初期化する必要はありません。  
+-   <span data-ttu-id="02d3a-107">使用されなくなったオブジェクトが解放され、メモリがクリアされてその後の割り当てに使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-107">Reclaims objects that are no longer being used, clears their memory, and keeps the memory available for future allocations.</span></span> <span data-ttu-id="02d3a-108">マネージ オブジェクトは自動的にクリーンな内容で開始されるため、コンストラクターでデータ フィールドごとに初期化する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-108">Managed objects automatically get clean content to start with, so their constructors do not have to initialize every data field.</span></span>  
   
--   オブジェクトで別のオブジェクトの内容を使用できなくすることで、メモリの安全が確保されます。  
+-   <span data-ttu-id="02d3a-109">オブジェクトで別のオブジェクトの内容を使用できなくすることで、メモリの安全が確保されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-109">Provides memory safety by making sure that an object cannot use the content of another object.</span></span>  
   
- このトピックでは、ガベージ コレクションの主要な概念について説明します。 このチュートリアルは、次のセクションで構成されています。  
+ <span data-ttu-id="02d3a-110">このトピックでは、ガベージ コレクションの主要な概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-110">This topic describes the core concepts of garbage collection.</span></span> <span data-ttu-id="02d3a-111">このチュートリアルは、次のセクションで構成されています。</span><span class="sxs-lookup"><span data-stu-id="02d3a-111">It contains the following sections:</span></span>  
   
--   [メモリの基礎](#fundamentals_of_memory)  
+-   [<span data-ttu-id="02d3a-112">メモリの基礎</span><span class="sxs-lookup"><span data-stu-id="02d3a-112">Fundamentals of memory</span></span>](#fundamentals_of_memory)  
   
--   [ガベージ コレクションの条件](#conditions_for_a_garbage_collection)  
+-   [<span data-ttu-id="02d3a-113">ガベージ コレクションの条件</span><span class="sxs-lookup"><span data-stu-id="02d3a-113">Conditions for a garbage collection</span></span>](#conditions_for_a_garbage_collection)  
   
--   [マネージ ヒープ](#the_managed_heap)  
+-   [<span data-ttu-id="02d3a-114">マネージ ヒープ</span><span class="sxs-lookup"><span data-stu-id="02d3a-114">The managed heap</span></span>](#the_managed_heap)  
   
--   [ジェネレーション](#generations)  
+-   [<span data-ttu-id="02d3a-115">ジェネレーション</span><span class="sxs-lookup"><span data-stu-id="02d3a-115">Generations</span></span>](#generations)  
   
--   [ガベージ コレクションの実行時の動作](#what_happens_during_a_garbage_collection)  
+-   [<span data-ttu-id="02d3a-116">ガベージ コレクションの実行時の動作</span><span class="sxs-lookup"><span data-stu-id="02d3a-116">What happens during a garbage collection</span></span>](#what_happens_during_a_garbage_collection)  
   
--   [アンマネージ リソースの操作](#manipulating_unmanaged_resources)  
+-   [<span data-ttu-id="02d3a-117">アンマネージ リソースの操作</span><span class="sxs-lookup"><span data-stu-id="02d3a-117">Manipulating unmanaged resources</span></span>](#manipulating_unmanaged_resources)  
   
--   [ワークステーションとサーバーのガベージ コレクション](#workstation_and_server_garbage_collection)  
+-   [<span data-ttu-id="02d3a-118">ワークステーションとサーバーのガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-118">Workstation and server garbage collection</span></span>](#workstation_and_server_garbage_collection)  
   
--   [同時実行ガベージ コレクション](#concurrent_garbage_collection)  
+-   [<span data-ttu-id="02d3a-119">同時実行ガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-119">Concurrent garbage collection</span></span>](#concurrent_garbage_collection)  
   
--   [バックグラウンド ワークステーション ガベージ コレクション](#background_garbage_collection)  
+-   [<span data-ttu-id="02d3a-120">バックグラウンド ワークステーション ガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-120">Background workstation garbage collection</span></span>](#background_garbage_collection)  
   
--   [バックグラウンド サーバー ガベージ コレクション](#background_server_garbage_collection)  
+-   [<span data-ttu-id="02d3a-121">バックグラウンド サーバー ガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-121">Background server garbage collection</span></span>](#background_server_garbage_collection)  
   
 <a name="fundamentals_of_memory"></a>   
-## メモリの基礎  
- CLR のメモリに関する重要な概念の概要を以下に示します。  
+## <a name="fundamentals-of-memory"></a><span data-ttu-id="02d3a-122">メモリの基礎</span><span class="sxs-lookup"><span data-stu-id="02d3a-122">Fundamentals of memory</span></span>  
+ <span data-ttu-id="02d3a-123">CLR のメモリに関する重要な概念の概要を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-123">The following list summarizes important CLR memory concepts.</span></span>  
   
--   各プロセスは、分離された独自の仮想アドレス空間を持ちます。 同じコンピューターのすべてのプロセスが同じ物理メモリとページ ファイル \(存在する場合\) を共有します。  
+-   <span data-ttu-id="02d3a-124">各プロセスは、分離された独自の仮想アドレス空間を持ちます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-124">Each process has its own, separate virtual address space.</span></span> <span data-ttu-id="02d3a-125">同じコンピューターのすべてのプロセスが同じ物理メモリとページ ファイル (存在する場合) を共有します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-125">All processes on the same computer share the same physical memory, and share the page file if there is one.</span></span>  
   
--   32 ビット コンピューターでは、各プロセスが既定で 2 GB のユーザー モード仮想アドレス空間を持ちます。  
+-   <span data-ttu-id="02d3a-126">32 ビット コンピューターでは、各プロセスが既定で 2 GB のユーザー モード仮想アドレス空間を持ちます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-126">By default, on 32-bit computers, each process has a 2-GB user-mode virtual address space.</span></span>  
   
--   アプリケーション開発者が操作するのは仮想アドレス空間だけで、直接物理メモリを操作することはありません。 マネージ ヒープの仮想メモリの割り当てと解放はガベージ コレクターによって行われます。  
+-   <span data-ttu-id="02d3a-127">アプリケーション開発者が操作するのは仮想アドレス空間だけで、直接物理メモリを操作することはありません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-127">As an application developer, you work only with virtual address space and never manipulate physical memory directly.</span></span> <span data-ttu-id="02d3a-128">マネージ ヒープの仮想メモリの割り当てと解放はガベージ コレクターによって行われます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-128">The garbage collector allocates and frees virtual memory for you on the managed heap.</span></span>  
   
-     ネイティブ コードを記述する場合は、Win32 関数を使用して仮想アドレス空間を操作します。 ネイティブ ヒープの仮想メモリの割り当てと解放はこれらの関数によって行われます。  
+     <span data-ttu-id="02d3a-129">ネイティブ コードを記述する場合は、Win32 関数を使用して仮想アドレス空間を操作します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-129">If you are writing native code, you use Win32 functions to work with the virtual address space.</span></span> <span data-ttu-id="02d3a-130">ネイティブ ヒープの仮想メモリの割り当てと解放はこれらの関数によって行われます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-130">These functions allocate and free virtual memory for you on native heaps.</span></span>  
   
--   仮想メモリには次の 3 つの状態があります。  
+-   <span data-ttu-id="02d3a-131">仮想メモリには次の 3 つの状態があります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-131">Virtual memory can be in three states:</span></span>  
   
-    -   空き。 参照されていない、割り当てに使用できるメモリ ブロックです。  
+    -   <span data-ttu-id="02d3a-132">空き。</span><span class="sxs-lookup"><span data-stu-id="02d3a-132">Free.</span></span> <span data-ttu-id="02d3a-133">参照されていない、割り当てに使用できるメモリ ブロックです。</span><span class="sxs-lookup"><span data-stu-id="02d3a-133">The block of memory has no references to it and is available for allocation.</span></span>  
   
-    -   予約済み。 使用できるように確保された、他の割り当て要求には使用できないメモリ ブロックです。 ただし、このメモリ ブロックがコミットされるまではデータを格納できません。  
+    -   <span data-ttu-id="02d3a-134">予約済み。</span><span class="sxs-lookup"><span data-stu-id="02d3a-134">Reserved.</span></span> <span data-ttu-id="02d3a-135">使用できるように確保された、他の割り当て要求には使用できないメモリ ブロックです。</span><span class="sxs-lookup"><span data-stu-id="02d3a-135">The block of memory is available for your use and cannot be used for any other allocation request.</span></span> <span data-ttu-id="02d3a-136">ただし、このメモリ ブロックがコミットされるまではデータを格納できません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-136">However, you cannot store data to this memory block until it is committed.</span></span>  
   
-    -   コミット済み。 物理ストレージに割り当てられたメモリ ブロックです。  
+    -   <span data-ttu-id="02d3a-137">コミット済み。</span><span class="sxs-lookup"><span data-stu-id="02d3a-137">Committed.</span></span> <span data-ttu-id="02d3a-138">物理ストレージに割り当てられたメモリ ブロックです。</span><span class="sxs-lookup"><span data-stu-id="02d3a-138">The block of memory is assigned to physical storage.</span></span>  
   
--   仮想アドレス空間は、断片化することがあります。 断片化とは、アドレス空間に複数の空きブロック \(ホールとも呼ばれます\) がある状態です。 仮想メモリの割り当てが要求された場合、仮想メモリ マネージャーは、その割り当て要求を満たすのに十分な大きさの単一の空きブロックを見つけなければなりません。 2 GB の空き領域があっても、そのすべての領域が 1 つのアドレス ブロックにないと、2 GB の領域を必要とする割り当ては失敗します。  
+-   <span data-ttu-id="02d3a-139">仮想アドレス空間は、断片化することがあります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-139">Virtual address space can get fragmented.</span></span> <span data-ttu-id="02d3a-140">断片化とは、アドレス空間に複数の空きブロック (ホールとも呼ばれます) がある状態です。</span><span class="sxs-lookup"><span data-stu-id="02d3a-140">This means that there are free blocks, also known as holes, in the address space.</span></span> <span data-ttu-id="02d3a-141">仮想メモリの割り当てが要求された場合、仮想メモリ マネージャーは、その割り当て要求を満たすのに十分な大きさの単一の空きブロックを見つけなければなりません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-141">When a virtual memory allocation is requested, the virtual memory manager has to find a single free block that is large enough to satisfy that allocation request.</span></span> <span data-ttu-id="02d3a-142">場合でも、2 GB の空き領域がある場合は、2 GB を必要とする割り当てされません成功した 1 つのアドレス ブロックにない限り、そのすべての空き領域。</span><span class="sxs-lookup"><span data-stu-id="02d3a-142">Even if you have 2 GB of free space, the allocation that requires 2 GB will be unsuccessful unless all of that free space is in a single address block.</span></span>  
   
--   メモリが足りなくなるのは、予約する仮想アドレス空間が足りなくなった場合か、コミットする物理領域が足りなくなった場合です。  
+-   <span data-ttu-id="02d3a-143">メモリが足りなくなるのは、予約する仮想アドレス空間が足りなくなった場合か、コミットする物理領域が足りなくなった場合です。</span><span class="sxs-lookup"><span data-stu-id="02d3a-143">You can run out of memory if you run out of virtual address space to reserve or physical space to commit.</span></span>  
   
- ページ ファイルは、物理メモリの圧迫度 \(物理メモリに対する需要\) が低い場合にも使用されます。 最初に物理メモリの圧迫度が高まると、データを格納するための領域を確保するために物理メモリのデータの一部がページ ファイルにバックアップされますが、 そのデータは必要になるまでページングされないため、物理メモリの圧迫度が非常に低い状況でページングが発生する可能性もあります。  
-  
- [ページのトップへ](#top)  
+ <span data-ttu-id="02d3a-144">ページ ファイルは、物理メモリの圧迫度 (物理メモリに対する需要) が低い場合にも使用されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-144">Your page file is used even if physical memory pressure (that is, demand for physical memory) is low.</span></span> <span data-ttu-id="02d3a-145">最初に物理メモリの圧迫度が高まると、データを格納するための領域を確保するために物理メモリのデータの一部がページ ファイルにバックアップされますが、</span><span class="sxs-lookup"><span data-stu-id="02d3a-145">The first time your physical memory pressure is high, the operating system must make room in physical memory to store data, and it backs up some of the data that is in physical memory to the page file.</span></span> <span data-ttu-id="02d3a-146">そのデータは必要になるまでページングされないため、物理メモリの圧迫度が非常に低い状況でページングが発生する可能性もあります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-146">That data is not paged until it is needed, so it is possible to encounter paging in situations where the physical memory pressure is very low.</span></span> 
+ 
+ [<span data-ttu-id="02d3a-147">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="02d3a-147">Back to top</span></span>](#top)  
   
 <a name="conditions_for_a_garbage_collection"></a>   
-## ガベージ コレクションの条件  
- ガベージ コレクションは、次のいずれかの条件に当てはまる場合に発生します。  
+## <a name="conditions-for-a-garbage-collection"></a><span data-ttu-id="02d3a-148">ガベージ コレクションの条件</span><span class="sxs-lookup"><span data-stu-id="02d3a-148">Conditions for a garbage collection</span></span>  
+ <span data-ttu-id="02d3a-149">ガベージ コレクションは、次のいずれかの条件に当てはまる場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-149">Garbage collection occurs when one of the following conditions is true:</span></span>  
   
--   システムの物理メモリが少ない場合。  
+-   <span data-ttu-id="02d3a-150">システムの物理メモリが少ない場合。</span><span class="sxs-lookup"><span data-stu-id="02d3a-150">The system has low physical memory.</span></span> <span data-ttu-id="02d3a-151">これは、OS からいずれか、メモリ不足の通知またはホストによって示されるメモリの不足によって検出されました。</span><span class="sxs-lookup"><span data-stu-id="02d3a-151">This is detected by either the low memory notification from the OS or low memory indicated by the host.</span></span>
   
--   マネージ ヒープで割り当てられたオブジェクトによって使用されているメモリが、許容されるしきい値を超える場合。 このしきい値は、プロセスの進行に合わせて絶えず調整されます。  
+-   <span data-ttu-id="02d3a-152">マネージ ヒープで割り当てられたオブジェクトによって使用されているメモリが、許容されるしきい値を超える場合。</span><span class="sxs-lookup"><span data-stu-id="02d3a-152">The memory that is used by allocated objects on the managed heap surpasses an acceptable threshold.</span></span> <span data-ttu-id="02d3a-153">このしきい値は、プロセスの進行に合わせて絶えず調整されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-153">This threshold is continuously adjusted as the process runs.</span></span>  
   
--   <xref:System.GC.Collect%2A?displayProperty=fullName> メソッドが呼び出された場合。 ほとんどの場合、ガベージ コレクターは継続して実行されるため、このメソッドを呼び出す必要はありません。 このメソッドは、主に特別な状況やテストで使用されます。  
+-   <span data-ttu-id="02d3a-154"><xref:System.GC.Collect%2A?displayProperty=nameWithType> メソッドが呼び出された場合。</span><span class="sxs-lookup"><span data-stu-id="02d3a-154">The <xref:System.GC.Collect%2A?displayProperty=nameWithType> method is called.</span></span> <span data-ttu-id="02d3a-155">ほとんどの場合、ガベージ コレクターは継続して実行されるため、このメソッドを呼び出す必要はありません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-155">In almost all cases, you do not have to call this method, because the garbage collector runs continuously.</span></span> <span data-ttu-id="02d3a-156">このメソッドは、主に特別な状況やテストで使用されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-156">This method is primarily used for unique situations and testing.</span></span>  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="02d3a-157">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="02d3a-157">Back to top</span></span>](#top)  
   
 <a name="the_managed_heap"></a>   
-## マネージ ヒープ  
- ガベージ コレクターは、CLR によって初期化された後、オブジェクトを格納および管理するためのメモリのセグメントを割り当てます。 オペレーティング システムのネイティブ ヒープに対し、このメモリのことをマネージ ヒープと呼びます。  
+## <a name="the-managed-heap"></a><span data-ttu-id="02d3a-158">マネージ ヒープ</span><span class="sxs-lookup"><span data-stu-id="02d3a-158">The managed heap</span></span>  
+ <span data-ttu-id="02d3a-159">ガベージ コレクターは、CLR によって初期化された後、オブジェクトを格納および管理するためのメモリのセグメントを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-159">After the garbage collector is initialized by the CLR, it allocates a segment of memory to store and manage objects.</span></span> <span data-ttu-id="02d3a-160">オペレーティング システムのネイティブ ヒープに対し、このメモリのことをマネージ ヒープと呼びます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-160">This memory is called the managed heap, as opposed to a native heap in the operating system.</span></span>  
   
- マネージ ヒープはマネージ プロセスごとに割り当てられます。 プロセス内のすべてのスレッドは、同じヒープにオブジェクト用のメモリを割り当てます。  
+ <span data-ttu-id="02d3a-161">マネージ ヒープはマネージ プロセスごとに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-161">There is a managed heap for each managed process.</span></span> <span data-ttu-id="02d3a-162">プロセス内のすべてのスレッドは、同じヒープにオブジェクト用のメモリを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-162">All threads in the process allocate memory for objects on the same heap.</span></span>  
   
- メモリを予約するために、ガベージ コレクターは Win32 [VirtualAlloc](http://go.microsoft.com/fwlink/?LinkId=179047) 関数を呼び出し、マネージ アプリケーション用のメモリのセグメントを一度に 1 つずつ予約します。 また、ガベージ コレクターは、必要に応じてセグメントを予約したり、Win32 [VirtualFree](http://go.microsoft.com/fwlink/?LinkId=179050) 関数を呼び出すことで \(オブジェクトのセグメントをクリアしてから\) セグメントを解放してオペレーティング システムに戻したりします。  
+ <span data-ttu-id="02d3a-163">メモリを予約するために、ガベージ コレクターは Win32 [VirtualAlloc](http://go.microsoft.com/fwlink/?LinkId=179047) 関数を呼び出し、マネージ アプリケーション用のメモリのセグメントを一度に 1 つずつ予約します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-163">To reserve memory, the garbage collector calls the Win32 [VirtualAlloc](http://go.microsoft.com/fwlink/?LinkId=179047) function, and reserves one segment of memory at a time for managed applications.</span></span> <span data-ttu-id="02d3a-164">また、ガベージ コレクターは、必要に応じてセグメントを予約したり、Win32 [VirtualFree](http://go.microsoft.com/fwlink/?LinkId=179050) 関数を呼び出すことで (オブジェクトのセグメントをクリアしてから) セグメントを解放してオペレーティング システムに戻したりします。</span><span class="sxs-lookup"><span data-stu-id="02d3a-164">The garbage collector also reserves segments as needed, and releases segments back to the operating system (after clearing them of any objects) by calling the Win32 [VirtualFree](http://go.microsoft.com/fwlink/?LinkId=179050) function.</span></span>  
   
 > [!IMPORTANT]
->  ガベージ コレクターによって割り当てらるセグメントのサイズは実装に固有であり、定期的な更新プログラムによる場合を含め、いつでも変更されることがあります。 アプリでは、セグメント サイズを推測することや、特定のセグメント サイズに依存することを絶対に避けてください。また、セグメントの割り当てに使用可能なメモリの量を構成しようとしてもなりません。  
+>  <span data-ttu-id="02d3a-165">ガベージ コレクターによって割り当てらるセグメントのサイズは実装に固有であり、定期的な更新プログラムによる場合を含め、いつでも変更されることがあります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-165">The size of segments allocated by the garbage collector is implementation-specific and is subject to change at any time, including in periodic updates.</span></span> <span data-ttu-id="02d3a-166">アプリでは、セグメント サイズを推測することや、特定のセグメント サイズに依存することを絶対に避けてください。また、セグメントの割り当てに使用可能なメモリの量を構成しようとしてもなりません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-166">Your app should never make assumptions about or depend on a particular segment size, nor should it attempt to configure the amount of memory available for segment allocations.</span></span>  
   
- ヒープに割り当てられたオブジェクトが少ないほど、ガベージ コレクターの処理も少なくなります。 そのため、オブジェクトを割り当てるときに、必要な量より多く割り当てないようにしてください。たとえば、15 バイトしか必要がないときに 32 バイトの配列を割り当てないようにしてください。  
+ <span data-ttu-id="02d3a-167">ヒープに割り当てられたオブジェクトが少ないほど、ガベージ コレクターの処理も少なくなります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-167">The fewer objects allocated on the heap, the less work the garbage collector has to do.</span></span> <span data-ttu-id="02d3a-168">そのため、オブジェクトを割り当てるときに、必要な量より多く割り当てないようにしてください。たとえば、15 バイトしか必要がないときに 32 バイトの配列を割り当てないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="02d3a-168">When you allocate objects, do not use rounded-up values that exceed your needs, such as allocating an array of 32 bytes when you need only 15 bytes.</span></span>  
   
- ガベージ コレクションがトリガーされると、ガベージ コレクターは、使用されなくなったオブジェクトに占有されているメモリを解放します。 この解放プロセスでは、まとめて移動できるように有効なオブジェクトを圧縮し、使用されなくなったスペースを削除することで、ヒープを小さくします。 これにより、一緒に割り当てられたオブジェクトが同じマネージ ヒープにまとめられ、局所性が保持されます。  
+ <span data-ttu-id="02d3a-169">ガベージ コレクションがトリガーされると、ガベージ コレクターは、使用されなくなったオブジェクトに占有されているメモリを解放します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-169">When a garbage collection is triggered, the garbage collector reclaims the memory that is occupied by dead objects.</span></span> <span data-ttu-id="02d3a-170">この解放プロセスでは、まとめて移動できるように有効なオブジェクトを圧縮し、使用されなくなったスペースを削除することで、ヒープを小さくします。</span><span class="sxs-lookup"><span data-stu-id="02d3a-170">The reclaiming process compacts live objects so that they are moved together, and the dead space is removed, thereby making the heap smaller.</span></span> <span data-ttu-id="02d3a-171">これにより、一緒に割り当てられたオブジェクトが同じマネージ ヒープにまとめられ、局所性が保持されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-171">This ensures that objects that are allocated together stay together on the managed heap, to preserve their locality.</span></span>  
   
- ガベージ コレクションの割り込みの動作 \(頻度と期間\) は、割り当てのボリュームとマネージ ヒープ上の残ったメモリの量によって決まります。  
+ <span data-ttu-id="02d3a-172">ガベージ コレクションの割り込みの動作 (頻度と期間) は、割り当てのボリュームとマネージ ヒープ上の残ったメモリの量によって決まります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-172">The intrusiveness (frequency and duration) of garbage collections is the result of the volume of allocations and the amount of survived memory on the managed heap.</span></span>  
   
- ヒープは、大きなオブジェクト ヒープと小さなオブジェクト ヒープの 2 つを累積したものと見なすことができます。  
+ <span data-ttu-id="02d3a-173">ヒープは、大きなオブジェクト ヒープと小さなオブジェクト ヒープの 2 つを累積したものと見なすことができます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-173">The heap can be considered as the accumulation of two heaps: the large object heap and the small object heap.</span></span>  
   
- 大きなオブジェクト ヒープには、85,000 バイトを超える非常に大きなオブジェクトが格納されます。 大きなオブジェクト ヒープの中のオブジェクトは、通常は配列になります。 インスタンス オブジェクトが極端に大きくなることはほとんどありません。  
+ <span data-ttu-id="02d3a-174">大きなオブジェクト ヒープには、85,000 バイトを超える非常に大きなオブジェクトが格納されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-174">The large object heap contains very large objects that are 85,000 bytes and larger.</span></span> <span data-ttu-id="02d3a-175">大きなオブジェクト ヒープの中のオブジェクトは、通常は配列になります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-175">The objects on the large object heap are usually arrays.</span></span> <span data-ttu-id="02d3a-176">インスタンス オブジェクトが極端に大きくなることはほとんどありません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-176">It is rare for an instance object to be extremely large.</span></span>  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="02d3a-177">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="02d3a-177">Back to top</span></span>](#top)  
   
 <a name="generations"></a>   
-## ジェネレーション  
- ヒープは、有効期間が長いオブジェクトと有効期間が短いオブジェクトに対処できるようにジェネレーションにまとめられます。 ガベージ コレクションは主に、通常はヒープのごく一部だけを占有する有効期間が短いオブジェクトを解放する場合に発生します。 ヒープのオブジェクトのジェネレーションには次の 3 つがあります。  
+## <a name="generations"></a><span data-ttu-id="02d3a-178">ジェネレーション</span><span class="sxs-lookup"><span data-stu-id="02d3a-178">Generations</span></span>  
+ <span data-ttu-id="02d3a-179">ヒープは、有効期間が長いオブジェクトと有効期間が短いオブジェクトに対処できるようにジェネレーションにまとめられます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-179">The heap is organized into generations so it can handle long-lived and short-lived objects.</span></span> <span data-ttu-id="02d3a-180">ガベージ コレクションは主に、通常はヒープのごく一部だけを占有する有効期間が短いオブジェクトを解放する場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-180">Garbage collection primarily occurs with the reclamation of short-lived objects that typically occupy only a small part of the heap.</span></span> <span data-ttu-id="02d3a-181">ヒープのオブジェクトのジェネレーションには次の 3 つがあります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-181">There are three generations of objects on the heap:</span></span>  
   
--   **ジェネレーション 0**。 これは一番最初のジェネレーションで、有効期間が短いオブジェクトが格納されます。 有効期間が短いオブジェクトには、たとえば、テンポラリ変数などがあります。 ガベージ コレクションは、このジェネレーションで最も頻繁に発生します。  
+-   <span data-ttu-id="02d3a-182">**ジェネレーション 0**。</span><span class="sxs-lookup"><span data-stu-id="02d3a-182">**Generation 0**.</span></span> <span data-ttu-id="02d3a-183">これは一番最初のジェネレーションで、有効期間が短いオブジェクトが格納されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-183">This is the youngest generation and contains short-lived objects.</span></span> <span data-ttu-id="02d3a-184">有効期間が短いオブジェクトには、たとえば、テンポラリ変数などがあります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-184">An example of a short-lived object is a temporary variable.</span></span> <span data-ttu-id="02d3a-185">ガベージ コレクションは、このジェネレーションで最も頻繁に発生します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-185">Garbage collection occurs most frequently in this generation.</span></span>  
   
-     オブジェクトが新しく割り当てられると、大きなオブジェクトの場合以外は、オブジェクトの新しいジェネレーションが形成されて暗黙的にジェネレーション 0 のコレクションになります。大きなオブジェクトの場合は、ジェネレーション 2 のコレクションの大きなオブジェクトのヒープに割り当てられます。  
+     <span data-ttu-id="02d3a-186">オブジェクトが新しく割り当てられると、大きなオブジェクトの場合以外は、オブジェクトの新しいジェネレーションが形成されて暗黙的にジェネレーション 0 のコレクションになります。大きなオブジェクトの場合は、ジェネレーション 2 のコレクションの大きなオブジェクトのヒープに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-186">Newly allocated objects form a new generation of objects and are implicitly generation 0 collections, unless they are large objects, in which case they go on the large object heap in a generation 2 collection.</span></span>  
   
-     ジェネレーション 0 では、ほとんどのオブジェクトがガベージ コレクションで解放され、次のジェネレーションには残りません。  
+     <span data-ttu-id="02d3a-187">ジェネレーション 0 では、ほとんどのオブジェクトがガベージ コレクションで解放され、次のジェネレーションには残りません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-187">Most objects are reclaimed for garbage collection in generation 0 and do not survive to the next generation.</span></span>  
   
--   **ジェネレーション 1**。 このジェネレーションには有効期間が短いオブジェクトが格納されます。有効期間が短いオブジェクトと有効期間が長いオブジェクトの間のバッファーとして機能します。  
+-   <span data-ttu-id="02d3a-188">**ジェネレーション 1**。</span><span class="sxs-lookup"><span data-stu-id="02d3a-188">**Generation 1**.</span></span> <span data-ttu-id="02d3a-189">このジェネレーションには有効期間が短いオブジェクトが格納されます。有効期間が短いオブジェクトと有効期間が長いオブジェクトの間のバッファーとして機能します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-189">This generation contains short-lived objects and serves as a buffer between short-lived objects and long-lived objects.</span></span>  
   
--   **ジェネレーション 2**。 このジェネレーションには、有効期間が長いオブジェクトが格納されます。 有効期間が長いオブジェクトには、たとえば、プロセスの存続期間を通じて有効な静的データを含むサーバー アプリケーションのオブジェクトなどがあります。  
+-   <span data-ttu-id="02d3a-190">**ジェネレーション 2**。</span><span class="sxs-lookup"><span data-stu-id="02d3a-190">**Generation 2**.</span></span> <span data-ttu-id="02d3a-191">このジェネレーションには、有効期間が長いオブジェクトが格納されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-191">This generation contains long-lived objects.</span></span> <span data-ttu-id="02d3a-192">有効期間が長いオブジェクトには、たとえば、プロセスの存続期間を通じて有効な静的データを含むサーバー アプリケーションのオブジェクトなどがあります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-192">An example of a long-lived object is an object in a server application that contains static data that is live for the duration of the process.</span></span>  
   
- ガベージ コレクションは、条件に応じて特定のジェネレーションで発生します。 ジェネレーションのコレクションでは、そのジェネレーションとそれよりも前のすべてのジェネレーションのオブジェクトがコレクションの対象になります。 ジェネレーション 2 のガベージ コレクションは、すべてのジェネレーションのすべてのオブジェクト \(つまり、マネージ ヒープのすべてのオブジェクト\) を解放することから、フル ガベージ コレクションとも呼ばれます。  
+ <span data-ttu-id="02d3a-193">ガベージ コレクションは、条件に応じて特定のジェネレーションで発生します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-193">Garbage collections occur on specific generations as conditions warrant.</span></span> <span data-ttu-id="02d3a-194">ジェネレーションのコレクションでは、そのジェネレーションとそれよりも前のすべてのジェネレーションのオブジェクトがコレクションの対象になります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-194">Collecting a generation means collecting objects in that generation and all its younger generations.</span></span> <span data-ttu-id="02d3a-195">ジェネレーション 2 のガベージ コレクションは、すべてのジェネレーションのすべてのオブジェクト (つまり、マネージ ヒープのすべてのオブジェクト) を解放することから、フル ガベージ コレクションとも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-195">A generation 2 garbage collection is also known as a full garbage collection, because it reclaims all objects in all generations (that is, all objects in the managed heap).</span></span>  
   
-### 存続と昇格  
- ガベージ コレクションで解放されなかったオブジェクトは残存オブジェクトと呼ばれ、次のジェネレーションに昇格されます。 ジェネレーション 0 のガベージ コレクションでごみではないと判断されたオブジェクトは、ジェネレーション 1 に昇格されます。ジェネレーション 1 のガベージ コレクションでごみではないと判断されたオブジェクトは、ジェネレーション 2 に昇格されます。ジェネレーション 2 のガベージ コレクションでごみではないと判断されたオブジェクトは、ジェネレーション 2 に残ります。  
+### <a name="survival-and-promotions"></a><span data-ttu-id="02d3a-196">存続と昇格</span><span class="sxs-lookup"><span data-stu-id="02d3a-196">Survival and promotions</span></span>  
+ <span data-ttu-id="02d3a-197">ガベージ コレクションで解放されなかったオブジェクトは残存オブジェクトと呼ばれ、次のジェネレーションに昇格されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-197">Objects that are not reclaimed in a garbage collection are known as survivors, and are promoted to the next generation.</span></span> <span data-ttu-id="02d3a-198">ジェネレーション 0 のガベージ コレクションでごみではないと判断されたオブジェクトは、ジェネレーション 1 に昇格されます。ジェネレーション 1 のガベージ コレクションでごみではないと判断されたオブジェクトは、ジェネレーション 2 に昇格されます。ジェネレーション 2 のガベージ コレクションでごみではないと判断されたオブジェクトは、ジェネレーション 2 に残ります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-198">Objects that survive a generation 0 garbage collection are promoted to generation 1; objects that survive a generation 1 garbage collection are promoted to generation 2; and objects that survive a generation 2 garbage collection remain in generation 2.</span></span>  
   
- ガベージ コレクターは、ジェネレーションでごみではないと判断される割合が高いことを検出すると、そのジェネレーションに対する割り当てのしきい値を高くして、次のジェネレーションで十分なサイズの解放されたメモリを受け取ることができるようにします。 CLR は、アプリケーションのワーキング セットが大きくなりすぎないようにすることと、ガベージ コレクションに時間がかかりすぎないようにすることに注意して、それらの 2 つの優先事項のバランスを絶えず調整します。  
+ <span data-ttu-id="02d3a-199">ガベージ コレクターは、ジェネレーションでごみではないと判断される割合が高いことを検出すると、そのジェネレーションに対する割り当てのしきい値を高くして、次のジェネレーションで十分なサイズの解放されたメモリを受け取ることができるようにします。</span><span class="sxs-lookup"><span data-stu-id="02d3a-199">When the garbage collector detects that the survival rate is high in a generation, it increases the threshold of allocations for that generation, so the next collection gets a substantial size of reclaimed memory.</span></span> <span data-ttu-id="02d3a-200">CLR は、アプリケーションのワーキング セットが大きくなりすぎないようにすることと、ガベージ コレクションに時間がかかりすぎないようにすることに注意して、それらの 2 つの優先事項のバランスを絶えず調整します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-200">The CLR continually balances two priorities: not letting an application's working set get too big and not letting the garbage collection take too much time.</span></span>  
   
-### 短期のジェネレーションとセグメント  
- ジェネレーション 0 および 1 のオブジェクトは有効期間が短いことから、それらのジェネレーションのことを短期ジェネレーションと呼びます。  
+### <a name="ephemeral-generations-and-segments"></a><span data-ttu-id="02d3a-201">短期のジェネレーションとセグメント</span><span class="sxs-lookup"><span data-stu-id="02d3a-201">Ephemeral generations and segments</span></span>  
+ <span data-ttu-id="02d3a-202">ジェネレーション 0 および 1 のオブジェクトは有効期間が短いことから、それらのジェネレーションのことを短期ジェネレーションと呼びます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-202">Because objects in generations 0 and 1 are short-lived, these generations are known as the ephemeral generations.</span></span>  
   
- 短期ジェネレーションは、短期セグメントと呼ばれるメモリ セグメントに割り当てる必要があります。 ガベージ コレクターによって新しいセグメントが取得されると、いずれも新しい短期セグメントになり、ジェネレーション 0 のガベージ コレクションで残ったオブジェクトが格納されます。 古い短期セグメントは新しいジェネレーション 2 のセグメントになります。  
+ <span data-ttu-id="02d3a-203">短期ジェネレーションは、短期セグメントと呼ばれるメモリ セグメントに割り当てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-203">Ephemeral generations must be allocated in the memory segment that is known as the ephemeral segment.</span></span> <span data-ttu-id="02d3a-204">ガベージ コレクターによって新しいセグメントが取得されると、いずれも新しい短期セグメントになり、ジェネレーション 0 のガベージ コレクションで残ったオブジェクトが格納されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-204">Each new segment acquired by the garbage collector becomes the new ephemeral segment and contains the objects that survived a generation 0 garbage collection.</span></span> <span data-ttu-id="02d3a-205">古い短期セグメントは新しいジェネレーション 2 のセグメントになります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-205">The old ephemeral segment becomes the new generation 2 segment.</span></span>  
   
- 短期セグメントのサイズは、システムが 32 ビット 64 ビットのどちらであるか、および実行されているガベージ コレクターの種類に応じて異なります。 既定の値を次の表に示します。  
+ <span data-ttu-id="02d3a-206">短期セグメントのサイズは、システムが 32 ビット 64 ビットのどちらであるか、および実行されているガベージ コレクターの種類に応じて異なります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-206">The size of the ephemeral segment varies depending on whether a system is 32- or 64-bit, and on the type of garbage collector it is running.</span></span> <span data-ttu-id="02d3a-207">既定の値を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-207">Default values are shown in the following table.</span></span>  
   
-||32 ビット|64 ビット|  
-|-|------------|------------|  
-|ワークステーションの GC|16 MB|256 MB|  
-|サーバーの GC|64 MB|4 GB|  
-|サーバーの GC \(論理 CPU が 4 個以上の場合\)|32 MB|2 GB|  
-|サーバーの GC \(論理 CPU が 8 個以上の場合\)|16 MB|1 GB|  
+||<span data-ttu-id="02d3a-208">32 ビット</span><span class="sxs-lookup"><span data-stu-id="02d3a-208">32-bit</span></span>|<span data-ttu-id="02d3a-209">64 ビット</span><span class="sxs-lookup"><span data-stu-id="02d3a-209">64-bit</span></span>|  
+|-|-------------|-------------|  
+|<span data-ttu-id="02d3a-210">ワークステーションの GC</span><span class="sxs-lookup"><span data-stu-id="02d3a-210">Workstation GC</span></span>|<span data-ttu-id="02d3a-211">16 MB</span><span class="sxs-lookup"><span data-stu-id="02d3a-211">16 MB</span></span>|<span data-ttu-id="02d3a-212">256 MB</span><span class="sxs-lookup"><span data-stu-id="02d3a-212">256 MB</span></span>|  
+|<span data-ttu-id="02d3a-213">サーバーの GC</span><span class="sxs-lookup"><span data-stu-id="02d3a-213">Server GC</span></span>|<span data-ttu-id="02d3a-214">64 MB</span><span class="sxs-lookup"><span data-stu-id="02d3a-214">64 MB</span></span>|<span data-ttu-id="02d3a-215">4 GB</span><span class="sxs-lookup"><span data-stu-id="02d3a-215">4 GB</span></span>|  
+|<span data-ttu-id="02d3a-216">サーバーの GC (論理 CPU が 4 個以上の場合)</span><span class="sxs-lookup"><span data-stu-id="02d3a-216">Server GC with > 4 logical CPUs</span></span>|<span data-ttu-id="02d3a-217">32 MB</span><span class="sxs-lookup"><span data-stu-id="02d3a-217">32 MB</span></span>|<span data-ttu-id="02d3a-218">2 GB</span><span class="sxs-lookup"><span data-stu-id="02d3a-218">2 GB</span></span>|  
+|<span data-ttu-id="02d3a-219">サーバーの GC (論理 CPU が 8 個以上の場合)</span><span class="sxs-lookup"><span data-stu-id="02d3a-219">Server GC with > 8 logical CPUs</span></span>|<span data-ttu-id="02d3a-220">16 MB</span><span class="sxs-lookup"><span data-stu-id="02d3a-220">16 MB</span></span>|<span data-ttu-id="02d3a-221">1 GB</span><span class="sxs-lookup"><span data-stu-id="02d3a-221">1 GB</span></span>|  
   
- 短期セグメントには、ジェネレーション 2 のオブジェクトも含めることができます。 ジェネレーション 2 のオブジェクトでは複数のセグメントを使用できます \(プロセスでの必要に応じてメモリが許容できる限りいくつでも使用できます\)。  
+ <span data-ttu-id="02d3a-222">短期セグメントには、ジェネレーション 2 のオブジェクトも含めることができます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-222">The ephemeral segment can include generation 2 objects.</span></span> <span data-ttu-id="02d3a-223">ジェネレーション 2 のオブジェクトでは複数のセグメントを使用できます (プロセスでの必要に応じてメモリが許容できる限りいくつでも使用できます)。</span><span class="sxs-lookup"><span data-stu-id="02d3a-223">Generation 2 objects can use multiple segments (as many as your process requires and memory allows for).</span></span>  
   
- 短期ガベージ コレクションによって解放されるメモリの量は、短期セグメントのサイズまでに限られます。 解放されるメモリの量は、使用されなくなったオブジェクトに占有されていた領域に比例します。  
+ <span data-ttu-id="02d3a-224">短期ガベージ コレクションによって解放されるメモリの量は、短期セグメントのサイズまでに限られます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-224">The amount of freed memory from an ephemeral garbage collection is limited to the size of the ephemeral segment.</span></span> <span data-ttu-id="02d3a-225">解放されるメモリの量は、使用されなくなったオブジェクトに占有されていた領域に比例します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-225">The amount of memory that is freed is proportional to the space that was occupied by the dead objects.</span></span>  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="02d3a-226">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="02d3a-226">Back to top</span></span>](#top)  
   
 <a name="what_happens_during_a_garbage_collection"></a>   
-## ガベージ コレクションの実行時の動作  
- ガベージ コレクションには次のフェーズがあります。  
+## <a name="what-happens-during-a-garbage-collection"></a><span data-ttu-id="02d3a-227">ガベージ コレクションの実行時の動作</span><span class="sxs-lookup"><span data-stu-id="02d3a-227">What happens during a garbage collection</span></span>  
+ <span data-ttu-id="02d3a-228">ガベージ コレクションには次のフェーズがあります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-228">A garbage collection has the following phases:</span></span>  
   
--   マーキング フェーズ。有効なすべてのオブジェクトを探し、そのリストを作成します。  
+-   <span data-ttu-id="02d3a-229">マーキング フェーズ。有効なすべてのオブジェクトを探し、そのリストを作成します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-229">A marking phase that finds and creates a list of all live objects.</span></span>  
   
--   再配置フェーズ。圧縮するオブジェクトへの参照を更新します。  
+-   <span data-ttu-id="02d3a-230">再配置フェーズ。圧縮するオブジェクトへの参照を更新します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-230">A relocating phase that updates the references to the objects that will be compacted.</span></span>  
   
--   圧縮フェーズ。使用されなくなったオブジェクトに占有されている領域を解放し、残ったオブジェクトを圧縮します。 圧縮フェーズでは、ガベージ コレクションで残ったオブジェクトをセグメントの後ろに移動します。  
+-   <span data-ttu-id="02d3a-231">圧縮フェーズ。使用されなくなったオブジェクトに占有されている領域を解放し、残ったオブジェクトを圧縮します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-231">A compacting phase that reclaims the space occupied by the dead objects and compacts the surviving objects.</span></span> <span data-ttu-id="02d3a-232">圧縮フェーズでは、ガベージ コレクションで残ったオブジェクトをセグメントの後ろに移動します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-232">The compacting phase moves objects that have survived a garbage collection toward the older end of the segment.</span></span>  
   
-     ジェネレーション 2 のコレクションでは複数のセグメントを占有できるため、ジェネレーション 2 に昇格されたオブジェクトはより古いセグメントに移動できます。 ジェネレーション 1 とジェネレーション 2 の残存オブジェクトは、どちらもジェネレーション 2 に昇格されるため、別のセグメントに移動できます。  
+     <span data-ttu-id="02d3a-233">ジェネレーション 2 のコレクションでは複数のセグメントを占有できるため、ジェネレーション 2 に昇格されたオブジェクトはより古いセグメントに移動できます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-233">Because generation 2 collections can occupy multiple segments, objects that are promoted into generation 2 can be moved into an older segment.</span></span> <span data-ttu-id="02d3a-234">ジェネレーション 1 とジェネレーション 2 の残存オブジェクトは、どちらもジェネレーション 2 に昇格されるため、別のセグメントに移動できます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-234">Both generation 1 and generation 2 survivors can be moved to a different segment, because they are promoted to generation 2.</span></span>  
   
-     通常、大きなオブジェクト ヒープは圧縮されません。これは、大きなオブジェクトをコピーするとパフォーマンスが低下するためです。 ただし [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] 以降では、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=fullName> プロパティを使用して、大きなオブジェクト ヒープを必要に応じて圧縮できます。  
+     <span data-ttu-id="02d3a-235">通常、大きなオブジェクト ヒープは圧縮されません。これは、大きなオブジェクトをコピーするとパフォーマンスが低下するためです。</span><span class="sxs-lookup"><span data-stu-id="02d3a-235">Ordinarily, the large object heap is not compacted, because copying large objects imposes a performance penalty.</span></span> <span data-ttu-id="02d3a-236">ただし [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] 以降では、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> プロパティを使用して、大きなオブジェクト ヒープを必要に応じて圧縮できます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-236">However, starting with the [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], you can use the <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> property to compact the large object heap on demand.</span></span>  
   
- ガベージ コレクターは、次の情報に基づいてオブジェクトが有効かどうかを判断します。  
+ <span data-ttu-id="02d3a-237">ガベージ コレクターは、次の情報に基づいてオブジェクトが有効かどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-237">The garbage collector uses the following information to determine whether objects are live:</span></span>  
   
--   **スタック ルート**。 Just\-In\-Time \(JIT\) コンパイラとスタック ウォーカーによって提供されるスタック変数。  
+-   <span data-ttu-id="02d3a-238">**スタック ルート**。</span><span class="sxs-lookup"><span data-stu-id="02d3a-238">**Stack roots**.</span></span> <span data-ttu-id="02d3a-239">Just-In-Time (JIT) コンパイラとスタック ウォーカーによって提供されるスタック変数。</span><span class="sxs-lookup"><span data-stu-id="02d3a-239">Stack variables provided by the just-in-time (JIT) compiler and stack walker.</span></span>  
   
--   **ガベージ コレクション ハンドル**。 マネージ オブジェクトを参照するハンドル。これらのハンドルは、ユーザー コードまたは共通言語ランタイムで割り当てることができます。  
+-   <span data-ttu-id="02d3a-240">**ガベージ コレクション ハンドル**。</span><span class="sxs-lookup"><span data-stu-id="02d3a-240">**Garbage collection handles**.</span></span> <span data-ttu-id="02d3a-241">マネージ オブジェクトを参照するハンドル。これらのハンドルは、ユーザー コードまたは共通言語ランタイムで割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-241">Handles that point to managed objects and that can be allocated by user code or by the common language runtime.</span></span>  
   
--   **静的データ**。 他のオブジェクトを参照している可能性があるアプリケーション ドメインの静的オブジェクト。 静的オブジェクトはそれぞれのアプリケーション ドメインで追跡されます。  
+-   <span data-ttu-id="02d3a-242">**静的データ**。</span><span class="sxs-lookup"><span data-stu-id="02d3a-242">**Static data**.</span></span> <span data-ttu-id="02d3a-243">他のオブジェクトを参照している可能性があるアプリケーション ドメインの静的オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="02d3a-243">Static objects in application domains that could be referencing other objects.</span></span> <span data-ttu-id="02d3a-244">静的オブジェクトはそれぞれのアプリケーション ドメインで追跡されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-244">Each application domain keeps track of its static objects.</span></span>  
   
- ガベージ コレクションが開始される前に、そのガベージ コレクションをトリガーしたスレッドを除くすべてのマネージ スレッドが中断されます。  
+ <span data-ttu-id="02d3a-245">ガベージ コレクションが開始される前に、そのガベージ コレクションをトリガーしたスレッドを除くすべてのマネージ スレッドが中断されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-245">Before a garbage collection starts, all managed threads are suspended except for the thread that triggered the garbage collection.</span></span>  
   
- 次の図は、ガベージ コレクションを発生させて他のスレッドの中断を引き起こすスレッドを示しています。  
+ <span data-ttu-id="02d3a-246">次の図は、ガベージ コレクションを発生させて他のスレッドの中断を引き起こすスレッドを示しています。</span><span class="sxs-lookup"><span data-stu-id="02d3a-246">The following illustration shows a thread that triggers a garbage collection and causes the other threads to be suspended.</span></span>  
   
- ![スレッドがガベージ コレクションを発生させる場合](../../../docs/standard/garbage-collection/media/gc-triggered.png "GC\_Triggered")  
-ガベージ コレクションを発生させるスレッド  
+ <span data-ttu-id="02d3a-247">![スレッドがガベージ コレクションを発生させる](../../../docs/standard/garbage-collection/media/gc-triggered.png "GC_Triggered")</span><span class="sxs-lookup"><span data-stu-id="02d3a-247">![When a thread triggers a Garbage Collection](../../../docs/standard/garbage-collection/media/gc-triggered.png "GC_Triggered")</span></span>  
+<span data-ttu-id="02d3a-248">ガベージ コレクションを発生させるスレッド</span><span class="sxs-lookup"><span data-stu-id="02d3a-248">Thread that triggers a garbage collection</span></span>  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="02d3a-249">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="02d3a-249">Back to top</span></span>](#top)  
   
 <a name="manipulating_unmanaged_resources"></a>   
-## アンマネージ リソースの操作  
- ガベージ コレクターではマネージ ヒープのメモリのみを追跡するため、マネージ オブジェクトでネイティブのファイル ハンドルを使用してアンマネージ オブジェクトを参照している場合は、そのアンマネージ オブジェクトを明示的に解放する必要があります。  
+## <a name="manipulating-unmanaged-resources"></a><span data-ttu-id="02d3a-250">アンマネージ リソースの操作</span><span class="sxs-lookup"><span data-stu-id="02d3a-250">Manipulating unmanaged resources</span></span>  
+ <span data-ttu-id="02d3a-251">ガベージ コレクターではマネージ ヒープのメモリのみを追跡するため、マネージ オブジェクトでネイティブのファイル ハンドルを使用してアンマネージ オブジェクトを参照している場合は、そのアンマネージ オブジェクトを明示的に解放する必要があります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-251">If your managed objects reference unmanaged objects by using their native file handles, you have to explicitly free the unmanaged objects, because the garbage collector tracks memory only on the managed heap.</span></span>  
   
- マネージ オブジェクトのユーザーは、オブジェクトで使用されているネイティブ リソースを破棄できません。 そのため、クリーンアップを行うには、マネージ オブジェクトをファイナライズ可能にします。 ファイナライズは、オブジェクトが使用されなくなったときに実行するクリーンアップ アクションで構成されます。 マネージ オブジェクトが使用されなくなると、ファイナライザー メソッドで指定されたクリーンアップ アクションが実行されます。  
+ <span data-ttu-id="02d3a-252">マネージ オブジェクトのユーザーは、オブジェクトで使用されているネイティブ リソースを破棄できません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-252">Users of your managed object may not dispose the native resources used by the object.</span></span> <span data-ttu-id="02d3a-253">そのため、クリーンアップを行うには、マネージ オブジェクトをファイナライズ可能にします。</span><span class="sxs-lookup"><span data-stu-id="02d3a-253">To perform the cleanup, you can make your managed object finalizable.</span></span> <span data-ttu-id="02d3a-254">ファイナライズは、オブジェクトが使用されなくなったときに実行するクリーンアップ アクションで構成されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-254">Finalization consists of cleanup actions that you execute when the object is no longer in use.</span></span> <span data-ttu-id="02d3a-255">マネージ オブジェクトが使用されなくなると、ファイナライザー メソッドで指定されたクリーンアップ アクションが実行されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-255">When your managed object dies, it performs cleanup actions that are specified in its finalizer method.</span></span>  
   
- ファイナライズ可能なオブジェクトが使用されなくなったことが検出されると、クリーンアップ アクションを実行するためにファイナライザーによってキューに入れられますが、オブジェクト自体は次のジェネレーションに昇格されます。 そのため、そのジェネレーションで次のガベージ コレクション \(次回のガベージ コレクションではない場合もあります\) が発生するまで、オブジェクトが解放されたかどうかは確認できません。  
+ <span data-ttu-id="02d3a-256">ファイナライズ可能なオブジェクトが使用されなくなったことが検出されると、クリーンアップ アクションを実行するためにファイナライザーによってキューに入れられますが、オブジェクト自体は次のジェネレーションに昇格されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-256">When a finalizable object is discovered to be dead, its finalizer is put in a queue so that its cleanup actions are executed, but the object itself is promoted to the next generation.</span></span> <span data-ttu-id="02d3a-257">そのため、そのジェネレーションで次のガベージ コレクション (次回のガベージ コレクションではない場合もあります) が発生するまで、オブジェクトが解放されたかどうかは確認できません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-257">Therefore, you have to wait until the next garbage collection that occurs on that generation (which is not necessarily the next garbage collection) to determine whether the object has been reclaimed.</span></span>  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="02d3a-258">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="02d3a-258">Back to top</span></span>](#top)  
   
 <a name="workstation_and_server_garbage_collection"></a>   
-## ワークステーションとサーバーのガベージ コレクション  
- ガベージ コレクターは、さまざまなシナリオに対応できるように自動的に調整されます。 構成ファイルの設定を使って、作業負荷の特性に基づいてガベージ コレクションの種類を設定できます。 CLR には、次の種類のガベージ コレクションが用意されています。  
+## <a name="workstation-and-server-garbage-collection"></a><span data-ttu-id="02d3a-259">ワークステーションとサーバーのガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-259">Workstation and server garbage collection</span></span>  
+ <span data-ttu-id="02d3a-260">ガベージ コレクターは、さまざまなシナリオに対応できるように自動的に調整されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-260">The garbage collector is self-tuning and can work in a wide variety of scenarios.</span></span> <span data-ttu-id="02d3a-261">構成ファイルの設定を使って、作業負荷の特性に基づいてガベージ コレクションの種類を設定できます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-261">You can use a configuration file setting to set the type of garbage collection based on the characteristics of the workload.</span></span> <span data-ttu-id="02d3a-262">CLR には、次の種類のガベージ コレクションが用意されています。</span><span class="sxs-lookup"><span data-stu-id="02d3a-262">The CLR provides the following types of garbage collection:</span></span>  
   
--   ワークステーションのガベージ コレクション。すべてのクライアント ワークステーションとスタンドアロンの PC を対象としたオプションです。 これは、ランタイム構成スキーマの [\<gcServer\> 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)の既定の設定です。  
+-   <span data-ttu-id="02d3a-263">ワークステーションのガベージ コレクション。すべてのクライアント ワークステーションとスタンドアロンの PC を対象としたオプションです。</span><span class="sxs-lookup"><span data-stu-id="02d3a-263">Workstation garbage collection, which is for all client workstations and stand-alone PCs.</span></span> <span data-ttu-id="02d3a-264">これは、既定の設定、 [ \<gcServer > 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)ランタイム構成スキーマでします。</span><span class="sxs-lookup"><span data-stu-id="02d3a-264">This is the default setting for the [\<gcServer> element](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) in the runtime configuration schema.</span></span>  
   
-     ワークステーションのガベージ コレクションは、同時実行または非同時実行のどちらかで実行できます。 同時実行ガベージ コレクションでは、ガベージ コレクションの実行中にマネージ スレッドの操作を続けることができます。  
+     <span data-ttu-id="02d3a-265">ワークステーションのガベージ コレクションは、同時実行または非同時実行のどちらかで実行できます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-265">Workstation garbage collection can be concurrent or non-concurrent.</span></span> <span data-ttu-id="02d3a-266">同時実行ガベージ コレクションでは、ガベージ コレクションの実行中にマネージ スレッドの操作を続けることができます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-266">Concurrent garbage collection enables managed threads to continue operations during a garbage collection.</span></span>  
   
-     [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] 以降では、同時実行ガベージ コレクションに代わるものとしてバックグラウンド ガベージ コレクションが使用されます。  
+     <span data-ttu-id="02d3a-267">[!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]以降では、同時実行ガベージ コレクションに代わるものとしてバックグラウンド ガベージ コレクションが使用されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-267">Starting with the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], background garbage collection replaces concurrent garbage collection.</span></span>  
   
--   サーバーのガベージ コレクション。高いスループットとスケーラビリティが必要なサーバー アプリケーションを対象としたオプションです。 サーバーのガベージ コレクションは、非同時実行ガベージ コレクションまたはバックグラウンド ガベージ コレクションである場合があります。  
+-   <span data-ttu-id="02d3a-268">サーバーのガベージ コレクション。高いスループットとスケーラビリティが必要なサーバー アプリケーションを対象としたオプションです。</span><span class="sxs-lookup"><span data-stu-id="02d3a-268">Server garbage collection, which is intended for server applications that need high throughput and scalability.</span></span> <span data-ttu-id="02d3a-269">サーバーのガベージ コレクションは、非同時実行ガベージ コレクションまたはバックグラウンド ガベージ コレクションである場合があります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-269">Server garbage collection can be non-concurrent or background.</span></span>  
   
- 次の図は、サーバー上でガベージ コレクションを実行する専用のスレッドを示しています。  
+ <span data-ttu-id="02d3a-270">次の図は、サーバー上でガベージ コレクションを実行する専用のスレッドを示しています。</span><span class="sxs-lookup"><span data-stu-id="02d3a-270">The following illustration shows the dedicated threads that perform the garbage collection on a server.</span></span>  
   
- ![サーバー ガベージ コレクションのスレッド](../../../docs/standard/garbage-collection/media/gc-server.png "GC\_Server")  
-サーバー ガベージ コレクション  
+ <span data-ttu-id="02d3a-271">![サーバーのガベージ コレクション スレッド](../../../docs/standard/garbage-collection/media/gc-server.png "GC_Server")</span><span class="sxs-lookup"><span data-stu-id="02d3a-271">![Server Garbage Collection Threads](../../../docs/standard/garbage-collection/media/gc-server.png "GC_Server")</span></span>  
+<span data-ttu-id="02d3a-272">サーバー ガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-272">Server garbage collection</span></span>  
   
-### ガベージ コレクションの構成  
- ランタイム構成スキーマの [\<gcServer\> 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)を使用して、CLR で実行するガベージ コレクションの種類を指定できます。 この要素の `enabled` 属性が `false` \(既定値\) に設定されている場合、ワークステーションのガベージ コレクションが実行されます。`enabled` 属性を `true` に設定すると、サーバーのガベージ コレクションが実行されます。  
+### <a name="configuring-garbage-collection"></a><span data-ttu-id="02d3a-273">ガベージ コレクションの構成</span><span class="sxs-lookup"><span data-stu-id="02d3a-273">Configuring garbage collection</span></span>  
+ <span data-ttu-id="02d3a-274">使用することができます、 [ \<gcServer > 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)CLR で実行する場合、ランタイム構成スキーマのガベージ コレクションの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-274">You can use the [\<gcServer> element](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) of the runtime configuration schema to specify the type of garbage collection you want the CLR to perform.</span></span> <span data-ttu-id="02d3a-275">この要素の `enabled` 属性が `false` (既定値) に設定されている場合、ワークステーションのガベージ コレクションが実行されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-275">When this element's `enabled` attribute is set to `false` (the default), the CLR performs workstation garbage collection.</span></span> <span data-ttu-id="02d3a-276">`enabled` 属性を `true`に設定すると、サーバーのガベージ コレクションが実行されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-276">When you set the `enabled` attribute to `true`, the CLR performs server garbage collection.</span></span>  
   
- 同時実行ガベージ コレクションは、ランタイム構成スキーマの [\<gcConcurrent\> 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)を使用して指定します。 既定値は `enabled` です。 この設定は、同時実行ガベージ コレクションとバックグラウンド ガベージ コレクションの両方を制御します。  
+ <span data-ttu-id="02d3a-277">同時実行ガベージ コレクションを指定した、 [ \<gcConcurrent > 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)ランタイム構成スキーマのです。</span><span class="sxs-lookup"><span data-stu-id="02d3a-277">Concurrent garbage collection is specified with the [\<gcConcurrent> element](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) of the runtime configuration schema.</span></span> <span data-ttu-id="02d3a-278">既定値は `enabled`です。</span><span class="sxs-lookup"><span data-stu-id="02d3a-278">The default setting is `enabled`.</span></span> <span data-ttu-id="02d3a-279">この設定は、同時実行ガベージ コレクションとバックグラウンド ガベージ コレクションの両方を制御します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-279">This setting controls both concurrent and background garbage collection.</span></span>  
   
- サーバーのガベージ コレクションは、アンマネージ ホスト インターフェイスを使用して指定することもできます。 ASP.NET および SQL Server では、アプリケーションがそのいずれかの環境内でホストされている場合、自動的にサーバーのガベージ コレクションが有効になることに注意してください。  
+ <span data-ttu-id="02d3a-280">サーバーのガベージ コレクションは、アンマネージ ホスト インターフェイスを使用して指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-280">You can also specify server garbage collection with unmanaged hosting interfaces.</span></span> <span data-ttu-id="02d3a-281">ASP.NET および SQL Server では、アプリケーションがそのいずれかの環境内でホストされている場合、自動的にサーバーのガベージ コレクションが有効になることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="02d3a-281">Note that ASP.NET and SQL Server enable server garbage collection automatically if your application is hosted inside one of these environments.</span></span>  
   
-### ワークステーションとサーバーのガベージ コレクションの比較  
- ワークステーションのガベージ コレクションにおける、スレッド処理とパフォーマンスについての注意点を次に示します。  
+### <a name="comparing-workstation-and-server-garbage-collection"></a><span data-ttu-id="02d3a-282">ワークステーションとサーバーのガベージ コレクションの比較</span><span class="sxs-lookup"><span data-stu-id="02d3a-282">Comparing workstation and server garbage collection</span></span>  
+ <span data-ttu-id="02d3a-283">ワークステーションのガベージ コレクションにおける、スレッド処理とパフォーマンスについての注意点を次に示します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-283">The following are threading and performance considerations for workstation garbage collection:</span></span>  
   
--   コレクションは、ガベージ コレクションをトリガーしたユーザー スレッドで、それと同じ優先順位で実行されます。 ユーザー スレッドは一般に通常の優先順位で実行されるため、その場合 \(通常の優先順位のスレッドで実行された場合\)、ガベージ コレクターの CPU 時間が他のスレッドと競合します。  
+-   <span data-ttu-id="02d3a-284">コレクションは、ガベージ コレクションをトリガーしたユーザー スレッドで、それと同じ優先順位で実行されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-284">The collection occurs on the user thread that triggered the garbage collection and remains at the same priority.</span></span> <span data-ttu-id="02d3a-285">ユーザー スレッドは一般に通常の優先順位で実行されるため、その場合 (通常の優先順位のスレッドで実行された場合)、ガベージ コレクターの CPU 時間が他のスレッドと競合します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-285">Because user threads typically run at normal priority, the garbage collector (which runs on a normal priority thread) must compete with other threads for CPU time.</span></span>  
   
-     ネイティブ コードを実行しているスレッドは中断されません。  
+     <span data-ttu-id="02d3a-286">ネイティブ コードを実行しているスレッドは中断されません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-286">Threads that are running native code are not suspended.</span></span>  
   
--   プロセッサが 1 つしかないコンピューターでは、[\<gcServer\>](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) の設定に関係なく、常にワークステーションのガベージ コレクションが使用されます。 サーバーのガベージ コレクションを指定した場合、CLR は、同時実行を無効にしてワークステーションのガベージ コレクションを使用します。  
+-   <span data-ttu-id="02d3a-287">関係なく 1 つのみのプロセッサをあるコンピューター上で常にワークステーションのガベージ コレクションを使用、 [ \<gcServer >](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)設定します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-287">Workstation garbage collection is always used on a computer that has only one processor, regardless of the [\<gcServer>](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) setting.</span></span> <span data-ttu-id="02d3a-288">サーバーのガベージ コレクションを指定した場合、CLR は、同時実行を無効にしてワークステーションのガベージ コレクションを使用します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-288">If you specify server garbage collection, the CLR uses workstation garbage collection with concurrency disabled.</span></span>  
   
- サーバーのガベージ コレクションにおける、スレッド処理とパフォーマンスについての注意点を次に示します。  
+ <span data-ttu-id="02d3a-289">サーバーのガベージ コレクションにおける、スレッド処理とパフォーマンスについての注意点を次に示します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-289">The following are threading and performance considerations for server garbage collection:</span></span>  
   
--   コレクションは、`THREAD_PRIORITY_HIGHEST` の優先順位で実行される複数の専用スレッドで実行されます。  
+-   <span data-ttu-id="02d3a-290">コレクションは、 `THREAD_PRIORITY_HIGHEST` の優先順位で実行される複数の専用スレッドで実行されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-290">The collection occurs on multiple dedicated threads that are running at `THREAD_PRIORITY_HIGHEST` priority level.</span></span>  
   
--   ヒープおよびガベージ コレクションを実行するための専用スレッドは CPU ごとに 1 つずつ用意され、複数のヒープのコレクションが同時に行われます。 各ヒープには小さなオブジェクト ヒープと大きなオブジェクト ヒープがあり、どのヒープもユーザー コードからアクセスできます。 異なるヒープのオブジェクトを相互に参照できます。  
+-   <span data-ttu-id="02d3a-291">ヒープおよびガベージ コレクションを実行するための専用スレッドは CPU ごとに 1 つずつ用意され、複数のヒープのコレクションが同時に行われます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-291">A heap and a dedicated thread to perform garbage collection are provided for each CPU, and the heaps are collected at the same time.</span></span> <span data-ttu-id="02d3a-292">各ヒープには小さなオブジェクト ヒープと大きなオブジェクト ヒープがあり、どのヒープもユーザー コードからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-292">Each heap contains a small object heap and a large object heap, and all heaps can be accessed by user code.</span></span> <span data-ttu-id="02d3a-293">異なるヒープのオブジェクトを相互に参照できます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-293">Objects on different heaps can refer to each other.</span></span>  
   
--   複数のガベージ コレクション スレッドが連携して処理を行うため、同じサイズのヒープを処理した場合、サーバーのガベージ コレクションの方がワークステーションのガベージ コレクションよりも高速です。  
+-   <span data-ttu-id="02d3a-294">複数のガベージ コレクション スレッドが連携して処理を行うため、同じサイズのヒープを処理した場合、サーバーのガベージ コレクションの方がワークステーションのガベージ コレクションよりも高速です。</span><span class="sxs-lookup"><span data-stu-id="02d3a-294">Because multiple garbage collection threads work together, server garbage collection is faster than workstation garbage collection on the same size heap.</span></span>  
   
--   一般に、サーバーのガベージ コレクションの方が、格納されるセグメントのサイズは大きくなります。 ただし、これは一般論に過ぎません。セグメントのサイズは実装に固有であり、変更されることがあります。 アプリをチューニングする時に、ガベージ コレクターによって割り当てられるセグメントのサイズに関して何らかの仮定をすることは避けてください。  
+-   <span data-ttu-id="02d3a-295">一般に、サーバーのガベージ コレクションの方が、格納されるセグメントのサイズは大きくなります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-295">Server garbage collection often has larger size segments.</span></span> <span data-ttu-id="02d3a-296">ただし、これは一般論に過ぎません。セグメントのサイズは実装に固有であり、変更されることがあります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-296">Note, however, that this is only a generalization: segment size is implementation-specific and is subject to change.</span></span> <span data-ttu-id="02d3a-297">アプリをチューニングする時に、ガベージ コレクターによって割り当てられるセグメントのサイズに関して何らかの仮定をすることは避けてください。</span><span class="sxs-lookup"><span data-stu-id="02d3a-297">You should make no assumptions about the size of segments allocated by the garbage collector when tuning your app.</span></span>  
   
--   サーバーのガベージ コレクションでは、リソースが大量に消費されることがあります。 たとえば、4 つのプロセッサを搭載したコンピューターで 12 のプロセスを実行する場合、そのすべてでサーバーのガベージ コレクションを使用するには、48 の専用のガベージ コレクション スレッドが必要です。 メモリの負荷が高い状況で、すべてのプロセスがガベージ コレクションの処理を開始した場合、ガベージ コレクターは 48 のスレッドをスケジュールすることになります。  
+-   <span data-ttu-id="02d3a-298">サーバーのガベージ コレクションでは、リソースが大量に消費されることがあります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-298">Server garbage collection can be resource-intensive.</span></span> <span data-ttu-id="02d3a-299">たとえば、4 つのプロセッサを搭載したコンピューターで 12 のプロセスを実行する場合、そのすべてでサーバーのガベージ コレクションを使用するには、48 の専用のガベージ コレクション スレッドが必要です。</span><span class="sxs-lookup"><span data-stu-id="02d3a-299">For example, if you have 12 processes running on a computer that has 4 processors, there will be 48 dedicated garbage collection threads if they are all using server garbage collection.</span></span> <span data-ttu-id="02d3a-300">メモリの負荷が高い状況で、すべてのプロセスがガベージ コレクションの処理を開始した場合、ガベージ コレクターは 48 のスレッドをスケジュールすることになります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-300">In a high memory load situation, if all the processes start doing garbage collection, the garbage collector will have 48 threads to schedule.</span></span>  
   
- 実行するアプリケーションのインスタンスが数百に及ぶ場合は、同時実行ガベージ コレクションを無効にしてワークステーションのガベージ コレクションを使用することを検討してください。 これによって、コンテキストの切り替えが少なくなり、パフォーマンスが向上します。  
+ <span data-ttu-id="02d3a-301">実行するアプリケーションのインスタンスが数百に及ぶ場合は、同時実行ガベージ コレクションを無効にしてワークステーションのガベージ コレクションを使用することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="02d3a-301">If you are running hundreds of instances of an application, consider using workstation garbage collection with concurrent garbage collection disabled.</span></span> <span data-ttu-id="02d3a-302">これによって、コンテキストの切り替えが少なくなり、パフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-302">This will result in less context switching, which can improve performance.</span></span>  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="02d3a-303">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="02d3a-303">Back to top</span></span>](#top)  
   
 <a name="concurrent_garbage_collection"></a>   
-## 同時実行ガベージ コレクション  
- ワークステーションまたはサーバーのガベージ コレクションでは、同時実行ガベージ コレクションを有効にすることで、複数のスレッドを同時に実行できます。同時実行ガベージ コレクションでは、コレクションの実行中は、ほとんどの場合、ガベージ コレクションの処理を行う専用のスレッドが使用されます。 このオプションは、ジェネレーション 2 のガベージ コレクションにのみ影響します。ジェネレーション 0 と 1 の処理はすぐに終了するため、常に非同時実行で行われます。  
+## <a name="concurrent-garbage-collection"></a><span data-ttu-id="02d3a-304">同時実行ガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-304">Concurrent garbage collection</span></span>  
+ <span data-ttu-id="02d3a-305">ワークステーションまたはサーバーのガベージ コレクションでは、同時実行ガベージ コレクションを有効にすることで、複数のスレッドを同時に実行できます。同時実行ガベージ コレクションでは、コレクションの実行中は、ほとんどの場合、ガベージ コレクションの処理を行う専用のスレッドが使用されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-305">In workstation or server garbage collection, you can enable concurrent garbage collection, which enables threads to run concurrently with a dedicated thread that performs the garbage collection for most of the duration of the collection.</span></span> <span data-ttu-id="02d3a-306">このオプションは、ジェネレーション 2 のガベージ コレクションにのみ影響します。ジェネレーション 0 と 1 の処理はすぐに終了するため、常に非同時実行で行われます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-306">This option affects only garbage collections in generation 2; generations 0 and 1 are always non-concurrent because they finish very fast.</span></span>  
   
- 同時実行ガベージ コレクションでは、コレクションの一時停止を最小限にすることで、インタラクティブ アプリケーションの応答性を高めることができます。 マネージ スレッドは、同時実行ガベージ コレクションのスレッドが実行されている間も、ほぼ常に処理を続けることができます。 そのため、ガベージ コレクションの実行中の一時停止が短くなります。  
+ <span data-ttu-id="02d3a-307">同時実行ガベージ コレクションでは、コレクションの一時停止を最小限にすることで、インタラクティブ アプリケーションの応答性を高めることができます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-307">Concurrent garbage collection enables interactive applications to be more responsive by minimizing pauses for a collection.</span></span> <span data-ttu-id="02d3a-308">マネージ スレッドは、同時実行ガベージ コレクションのスレッドが実行されている間も、ほぼ常に処理を続けることができます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-308">Managed threads can continue to run most of the time while the concurrent garbage collection thread is running.</span></span> <span data-ttu-id="02d3a-309">そのため、ガベージ コレクションの実行中の一時停止が短くなります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-309">This results in shorter pauses while a garbage collection is occurring.</span></span>  
   
- 複数のプロセスを実行している場合にパフォーマンスを向上させるには、同時実行ガベージ コレクションを無効にします。[\<gcConcurrent\> 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)をアプリの構成ファイルに追加し、`enabled` 属性の値を `"false"` に設定することで、これを行うことができます。  
+ <span data-ttu-id="02d3a-310">複数のプロセスを実行している場合にパフォーマンスを向上させるには、同時実行ガベージ コレクションを無効にします。</span><span class="sxs-lookup"><span data-stu-id="02d3a-310">To improve performance when several processes are running, disable concurrent garbage collection.</span></span> <span data-ttu-id="02d3a-311">追加することでこれを行う、 [ \<gcConcurrent > 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)アプリの構成ファイルと設定の値をその`enabled`属性を`"false"`です。</span><span class="sxs-lookup"><span data-stu-id="02d3a-311">You can do this by adding a [\<gcConcurrent> element](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) to the app's configuration file and setting the value of its `enabled` attribute to `"false"`.</span></span>  
   
- 同時実行ガベージ コレクションは、専用のスレッドで実行されます。 既定では、CLR は、同時実行ガベージ コレクションを有効にしてワークステーションのガベージ コレクションを実行します。 これは、シングルプロセッサのコンピューターでもマルチプロセッサのコンピューターでも同じです。  
+ <span data-ttu-id="02d3a-312">同時実行ガベージ コレクションは、専用のスレッドで実行されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-312">Concurrent garbage collection is performed on a dedicated thread.</span></span> <span data-ttu-id="02d3a-313">既定では、CLR は、同時実行ガベージ コレクションを有効にしてワークステーションのガベージ コレクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-313">By default, the CLR runs workstation garbage collection with concurrent garbage collection enabled.</span></span> <span data-ttu-id="02d3a-314">これは、シングルプロセッサのコンピューターでもマルチプロセッサのコンピューターでも同じです。</span><span class="sxs-lookup"><span data-stu-id="02d3a-314">This is true for single-processor and multi-processor computers.</span></span>  
   
- 同時実行ガベージ コレクションの実行中にヒープに小さなオブジェクトを割り当てる機能は、同時実行ガベージ コレクションの開始時に短期セグメントに残っていたオブジェクトによって制限されます。 セグメントの最後に達した後は、同時実行ガベージ コレクションが終了するまで、小さなオブジェクトを割り当てる必要があるマネージ スレッドは中断されたままになります。  
+ <span data-ttu-id="02d3a-315">同時実行ガベージ コレクションの実行中にヒープに小さなオブジェクトを割り当てる機能は、同時実行ガベージ コレクションの開始時に短期セグメントに残っていたオブジェクトによって制限されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-315">Your ability to allocate small objects on the heap during a concurrent garbage collection is limited by the objects left on the ephemeral segment when a concurrent garbage collection starts.</span></span> <span data-ttu-id="02d3a-316">セグメントの最後に達した後は、同時実行ガベージ コレクションが終了するまで、小さなオブジェクトを割り当てる必要があるマネージ スレッドは中断されたままになります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-316">As soon as you reach the end of the segment, you will have to wait for the concurrent garbage collection to finish while managed threads that have to make small object allocations are suspended.</span></span>  
   
- 同時実行ガベージ コレクションのワーキング セットは、同時実行コレクションの実行中にオブジェクトを割り当てることができるように \(非同時実行ガベージ コレクションに比べて\) 若干大きくなっています。 ただし、オブジェクトを割り当てるとそれもワーキング セットの一部になるため、パフォーマンスに影響することがあります。 基本的に、同時実行ガベージ コレクションでは、ある程度の CPU およびメモリと引き換えに一時停止が短くなります。  
+ <span data-ttu-id="02d3a-317">同時実行ガベージ コレクションのワーキング セットは、同時実行コレクションの実行中にオブジェクトを割り当てることができるように (非同時実行ガベージ コレクションに比べて) 若干大きくなっています。</span><span class="sxs-lookup"><span data-stu-id="02d3a-317">Concurrent garbage collection has a slightly bigger working set (compared with non-concurrent garbage collection), because you can allocate objects during concurrent collection.</span></span> <span data-ttu-id="02d3a-318">ただし、オブジェクトを割り当てるとそれもワーキング セットの一部になるため、パフォーマンスに影響することがあります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-318">However, this can affect performance, because the objects that you allocate become part of your working set.</span></span> <span data-ttu-id="02d3a-319">基本的に、同時実行ガベージ コレクションでは、ある程度の CPU およびメモリと引き換えに一時停止が短くなります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-319">Essentially, concurrent garbage collection trades some CPU and memory for shorter pauses.</span></span>  
   
- 次の図は、別々の専用のスレッドで実行される同時実行ガベージ コレクションを示しています。  
+ <span data-ttu-id="02d3a-320">次の図は、別々の専用のスレッドで実行される同時実行ガベージ コレクションを示しています。</span><span class="sxs-lookup"><span data-stu-id="02d3a-320">The following illustration shows concurrent garbage collection performed on a separate dedicated thread.</span></span>  
   
- ![同時実行ガベージ コレクションのスレッド](../../../docs/standard/garbage-collection/media/gc-concurrent.png "GC\_Concurrent")  
-同時実行ガベージ コレクション  
+ <span data-ttu-id="02d3a-321">![同時実行ガベージ コレクション スレッド](../../../docs/standard/garbage-collection/media/gc-concurrent.png "GC_Concurrent")</span><span class="sxs-lookup"><span data-stu-id="02d3a-321">![Concurrent Garbage Collection Threads](../../../docs/standard/garbage-collection/media/gc-concurrent.png "GC_Concurrent")</span></span>  
+<span data-ttu-id="02d3a-322">同時実行ガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-322">Concurrent garbage collection</span></span>  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="02d3a-323">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="02d3a-323">Back to top</span></span>](#top)  
   
 <a name="background_garbage_collection"></a>   
-## バックグラウンド ワークステーション ガベージ コレクション  
- バックグラウンド ガベージ コレクションでは、ジェネレーション 2 のコレクションの実行中に、必要に応じて短期ジェネレーション \(0 および 1\) のコレクションが行われます。 バックグラウンド ガベージ コレクションの設定はありません。同時実行ガベージ コレクションを有効にすると自動的に有効になります。 バックグラウンド ガベージ コレクションは同時実行ガベージ コレクションに代わるものです。 同時実行ガベージ コレクションと同様に、バックグラウンド ガベージ コレクションは専用のスレッドで実行され、ジェネレーション 2 のコレクションにのみ適用されます。  
+## <a name="background-workstation-garbage-collection"></a><span data-ttu-id="02d3a-324">バックグラウンド ワークステーション ガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-324">Background workstation garbage collection</span></span>  
+ <span data-ttu-id="02d3a-325">バックグラウンド ガベージ コレクションでは、ジェネレーション 2 のコレクションの実行中に、必要に応じて短期ジェネレーション (0 および 1) のコレクションが行われます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-325">In background garbage collection, ephemeral generations (0 and 1) are collected as needed while the collection of generation 2 is in progress.</span></span> <span data-ttu-id="02d3a-326">バックグラウンド ガベージ コレクションの設定はありません。同時実行ガベージ コレクションを有効にすると自動的に有効になります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-326">There is no setting for background garbage collection; it is automatically enabled with concurrent garbage collection.</span></span> <span data-ttu-id="02d3a-327">バックグラウンド ガベージ コレクションは同時実行ガベージ コレクションに代わるものです。</span><span class="sxs-lookup"><span data-stu-id="02d3a-327">Background garbage collection is a replacement for concurrent garbage collection.</span></span> <span data-ttu-id="02d3a-328">同時実行ガベージ コレクションと同様に、バックグラウンド ガベージ コレクションは専用のスレッドで実行され、ジェネレーション 2 のコレクションにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-328">As with concurrent garbage collection, background garbage collection is performed on a dedicated thread and is applicable only to generation 2 collections.</span></span>  
   
 > [!NOTE]
->  バックグラウンド ガベージ コレクションは、[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降のバージョンでのみ使用できます。[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] では、ワークステーションのガベージ コレクションのみがサポートされます。 .NET Framework 4.5 以降では、バックグラウンド ガベージ コレクションは、ワークステーションとサーバーのガベージ コレクションの両方で使用できます。  
+>  <span data-ttu-id="02d3a-329">バックグラウンド ガベージ コレクションは、 [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] 以降のバージョンでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-329">Background garbage collection is available only in the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] and later versions.</span></span> <span data-ttu-id="02d3a-330">[!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]では、ワークステーションのガベージ コレクションのみがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-330">In the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], it is supported only for workstation garbage collection.</span></span> <span data-ttu-id="02d3a-331">.NET Framework 4.5 以降では、バックグラウンド ガベージ コレクションは、ワークステーションとサーバーのガベージ コレクションの両方で使用できます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-331">Starting with the .NET Framework 4.5, background garbage collection is available for both workstation and server garbage collection.</span></span>  
   
- バックグラウンド ガベージ コレクションの実行中に行われる短期ジェネレーションに対するコレクションのことを、フォアグラウンド ガベージ コレクションと呼びます。 フォアグラウンド ガベージ コレクションが発生すると、マネージ スレッドはすべて中断されます。  
+ <span data-ttu-id="02d3a-332">バックグラウンド ガベージ コレクションの実行中に行われる短期ジェネレーションに対するコレクションのことを、フォアグラウンド ガベージ コレクションと呼びます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-332">A collection on ephemeral generations during background garbage collection is known as foreground garbage collection.</span></span> <span data-ttu-id="02d3a-333">フォアグラウンド ガベージ コレクションが発生すると、マネージ スレッドはすべて中断されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-333">When foreground garbage collections occur, all managed threads are suspended.</span></span>  
   
- バックグラウンド ガベージ コレクションの実行中にジェネレーション 0 に十分なオブジェクトが割り当てられていれば、CLR はジェネレーション 0 またはジェネレーション 1 のフォアグラウンド ガベージ コレクションを実行します。 バックグラウンド ガベージ コレクションの専用スレッドは、フォアグラウンド ガベージ コレクションの要求がないかどうかをセーフ ポイントで頻繁に確認します。 要求があると、バックグラウンド コレクションを中断して、フォアグラウンド ガベージ コレクションを実行します。 フォアグラウンド ガベージ コレクションが完了すると、バックグラウンド ガベージ コレクションの専用スレッドとユーザー スレッドが再開されます。  
+ <span data-ttu-id="02d3a-334">バックグラウンド ガベージ コレクションの実行中にジェネレーション 0 に十分なオブジェクトが割り当てられていれば、CLR はジェネレーション 0 またはジェネレーション 1 のフォアグラウンド ガベージ コレクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-334">When background garbage collection is in progress and you have allocated enough objects in generation 0, the CLR performs a generation 0 or generation 1 foreground garbage collection.</span></span> <span data-ttu-id="02d3a-335">バックグラウンド ガベージ コレクションの専用スレッドは、フォアグラウンド ガベージ コレクションの要求がないかどうかをセーフ ポイントで頻繁に確認します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-335">The dedicated background garbage collection thread checks at frequent safe points to determine whether there is a request for foreground garbage collection.</span></span> <span data-ttu-id="02d3a-336">要求があると、バックグラウンド コレクションを中断して、フォアグラウンド ガベージ コレクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="02d3a-336">If there is, the background collection suspends itself so that foreground garbage collection can occur.</span></span> <span data-ttu-id="02d3a-337">フォアグラウンド ガベージ コレクションが完了すると、バックグラウンド ガベージ コレクションの専用スレッドとユーザー スレッドが再開されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-337">After the foreground garbage collection is completed, the dedicated background garbage collection thread and user threads resume.</span></span>  
   
- バックグラウンド ガベージ コレクションでは、バックグラウンド ガベージ コレクションの実行中に短期ガベージ コレクションが発生する可能性があるため、同時実行ガベージ コレクションによる割り当ての制限が解除されます。 つまり、バックグラウンド ガベージ コレクションで短期ジェネレーションの使用されなくなったオブジェクトを削除でき、また、ジェネレーション 1 のガベージ コレクションの実行中に必要に応じてヒープを拡張することもできます。  
+ <span data-ttu-id="02d3a-338">バックグラウンド ガベージ コレクションでは、バックグラウンド ガベージ コレクションの実行中に短期ガベージ コレクションが発生する可能性があるため、同時実行ガベージ コレクションによる割り当ての制限が解除されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-338">Background garbage collection removes allocation restrictions imposed by concurrent garbage collection, because ephemeral garbage collections can occur during background garbage collection.</span></span> <span data-ttu-id="02d3a-339">つまり、バックグラウンド ガベージ コレクションで短期ジェネレーションの使用されなくなったオブジェクトを削除でき、また、ジェネレーション 1 のガベージ コレクションの実行中に必要に応じてヒープを拡張することもできます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-339">This means that background garbage collection can remove dead objects in ephemeral generations and can also expand the heap if needed during a generation 1 garbage collection.</span></span>  
   
- 次の図は、ワークステーション上の別々の専用スレッドで実行されるバックグラウンド ガベージ コレクションを示しています。  
+ <span data-ttu-id="02d3a-340">次の図は、ワークステーション上の別々の専用スレッドで実行されるバックグラウンド ガベージ コレクションを示しています。</span><span class="sxs-lookup"><span data-stu-id="02d3a-340">The following illustration shows background garbage collection performed on a separate dedicated thread on a workstation.</span></span>  
   
- ![バックグラウンド ワークステーション ガベージ コレクション](../../../docs/standard/garbage-collection/media/backgroundworkstn.png "BackgroundWorkstn")  
-バックグラウンド ワークステーション ガベージ コレクション  
+ <span data-ttu-id="02d3a-341">![バック グラウンド ワークステーション ガベージ コレクション](../../../docs/standard/garbage-collection/media/backgroundworkstn.png "BackgroundWorkstn")</span><span class="sxs-lookup"><span data-stu-id="02d3a-341">![Background workstation garbage collection](../../../docs/standard/garbage-collection/media/backgroundworkstn.png "BackgroundWorkstn")</span></span>  
+<span data-ttu-id="02d3a-342">バックグラウンド ワークステーション ガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-342">Background workstation garbage collection</span></span>  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="02d3a-343">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="02d3a-343">Back to top</span></span>](#top)  
   
 <a name="background_server_garbage_collection"></a>   
-## バックグラウンド サーバー ガベージ コレクション  
- .NET Framework 4.5 以降では、サーバーのバックグラウンド ガベージ コレクションは、サーバーのガベージ コレクションの既定のモードです。 このモードを選択するには、ランタイム構成スキーマで [\<gcServer\>](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) 要素の `enabled` 属性を `true` に設定します。 このモードは、前のセクションで説明したワークステーションのバックグラウンド ガベージ コレクションと同様に機能しますが、いくつかの違いがあります。 ワークステーションのバックグラウンド ガベージ コレクションでは専用のバックグラウンド ガベージ コレクション スレッドを 1 つ使用します。これに対して、サーバーのバックグラウンド ガベージ コレクションでは複数のスレッドを使用し、通常、論理プロセッサごとに専用のスレッドが使用されます。 ワークステーションのバックグラウンド ガベージ コレクション スレッドとは異なり、これらのスレッドはタイムアウトになりません。  
+## <a name="background-server-garbage-collection"></a><span data-ttu-id="02d3a-344">バックグラウンド サーバー ガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-344">Background server garbage collection</span></span>  
+ <span data-ttu-id="02d3a-345">.NET Framework 4.5 以降では、サーバーのバックグラウンド ガベージ コレクションは、サーバーのガベージ コレクションの既定のモードです。</span><span class="sxs-lookup"><span data-stu-id="02d3a-345">Starting with the .NET Framework 4.5, background server garbage collection is the default mode for server garbage collection.</span></span> <span data-ttu-id="02d3a-346">このモードを選択するには設定、`enabled`の属性、 [ \<gcServer > 要素](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md)に`true`ランタイム構成スキーマでします。</span><span class="sxs-lookup"><span data-stu-id="02d3a-346">To choose this mode, set the `enabled` attribute of the [\<gcServer> element](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) to `true` in the runtime configuration schema.</span></span> <span data-ttu-id="02d3a-347">このモードは、前のセクションで説明したワークステーションのバックグラウンド ガベージ コレクションと同様に機能しますが、いくつかの違いがあります。</span><span class="sxs-lookup"><span data-stu-id="02d3a-347">This mode functions similarly to background workstation garbage collection, described in the previous section, but there are a few differences.</span></span> <span data-ttu-id="02d3a-348">ワークステーションのバックグラウンド ガベージ コレクションでは専用のバックグラウンド ガベージ コレクション スレッドを 1 つ使用します。これに対して、サーバーのバックグラウンド ガベージ コレクションでは複数のスレッドを使用し、通常、論理プロセッサごとに専用のスレッドが使用されます。</span><span class="sxs-lookup"><span data-stu-id="02d3a-348">Background workstation garbage collection uses one dedicated background garbage collection thread, whereas background server garbage collection uses multiple threads, typically a dedicated thread for each logical processor.</span></span> <span data-ttu-id="02d3a-349">ワークステーションのバックグラウンド ガベージ コレクション スレッドとは異なり、これらのスレッドはタイムアウトになりません。</span><span class="sxs-lookup"><span data-stu-id="02d3a-349">Unlike the workstation background garbage collection thread, these threads do not time out.</span></span>  
   
- 次の図は、サーバー上の別々の専用スレッドで実行されるバックグラウンド ガベージ コレクションを示しています。  
+ <span data-ttu-id="02d3a-350">次の図は、サーバー上の別々の専用スレッドで実行されるバックグラウンド ガベージ コレクションを示しています。</span><span class="sxs-lookup"><span data-stu-id="02d3a-350">The following illustration shows background garbage collection performed on a separate dedicated thread on a server.</span></span>  
   
- ![バックグラウンド サーバー ガベージ コレクション](../../../docs/standard/garbage-collection/media/backgroundserver.png "BackgroundServer")  
-バックグラウンド サーバー ガベージ コレクション  
+ <span data-ttu-id="02d3a-351">![バック グラウンド サーバー ガベージ コレクション](../../../docs/standard/garbage-collection/media/backgroundserver.png "BackgroundServer")</span><span class="sxs-lookup"><span data-stu-id="02d3a-351">![Background server garbage collection](../../../docs/standard/garbage-collection/media/backgroundserver.png "BackgroundServer")</span></span>  
+<span data-ttu-id="02d3a-352">バックグラウンド サーバー ガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-352">Background server garbage collection</span></span>  
   
-## 参照  
- [Garbage Collection](../../../docs/standard/garbage-collection/index.md)
+## <a name="see-also"></a><span data-ttu-id="02d3a-353">関連項目</span><span class="sxs-lookup"><span data-stu-id="02d3a-353">See Also</span></span>  
+ [<span data-ttu-id="02d3a-354">ガベージ コレクション</span><span class="sxs-lookup"><span data-stu-id="02d3a-354">Garbage Collection</span></span>](../../../docs/standard/garbage-collection/index.md)

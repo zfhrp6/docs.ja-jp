@@ -1,126 +1,132 @@
 ---
-title: "正規表現での前方参照構成体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - ".NET Framework 正規表現, 前方参照構成体"
-  - "逆参照"
-  - "構成体, 前方参照"
-  - "正規表現, 前方参照構成体"
+title: "正規表現での前方参照構成体"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- backreferences
+- constructs, backreference
+- .NET Framework regular expressions, backreference constructs
+- regular expressions, backreference constructs
 ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
-caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: a884e70f542c2ed7ff63e39cb7eadedf0ef7b4d0
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 正規表現での前方参照構成体
-前方参照を使用すると、文字列内で繰り返し出現する文字や部分文字列を簡単に特定できます。  たとえば、入力文字列に任意の部分文字列が複数回出現する場合は、最初の出現箇所をキャプチャ グループで一致させた後に、前方参照を使用してそれ以降の出現箇所を一致させることができます。  
+# <a name="backreference-constructs-in-regular-expressions"></a><span data-ttu-id="76989-102">正規表現での前方参照構成体</span><span class="sxs-lookup"><span data-stu-id="76989-102">Backreference Constructs in Regular Expressions</span></span>
+<span data-ttu-id="76989-103">前方参照は、文字列内の繰り返しの文字または部分文字列を識別するために便利な方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="76989-103">Backreferences provide a convenient way to identify a repeated character or substring within a string.</span></span> <span data-ttu-id="76989-104">たとえば、入力文字列に複数回出現する任意の部分文字列が含まれている場合は、キャプチャ グループを使用して最初の一致を検出し、前方参照を使用して部分文字列の後続の出現箇所を見つけます。</span><span class="sxs-lookup"><span data-stu-id="76989-104">For example, if the input string contains multiple occurrences of an arbitrary substring, you can match the first occurrence with a capturing group, and then use a backreference to match subsequent occurrences of the substring.</span></span>  
   
 > [!NOTE]
->  置換文字列の名前付きのキャプチャ グループと番号付きのキャプチャ グループの参照には、別の構文が使用されます。  詳細については、「[置換](../../../docs/standard/base-types/substitutions-in-regular-expressions.md)」を参照してください。  
+>  <span data-ttu-id="76989-105">別の構文を使用して、置換文字列内の名前付きおよび番号付きのキャプチャ グループを参照します。</span><span class="sxs-lookup"><span data-stu-id="76989-105">A separate syntax is used to refer to named and numbered capturing groups in replacement strings.</span></span> <span data-ttu-id="76989-106">詳細については、「 [Substitutions](substitutions-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="76989-106">For more information, see [Substitutions](substitutions-in-regular-expressions.md).</span></span>  
   
- .NET Framework では、番号付きのキャプチャ グループと名前付きのキャプチャ グループを参照する個別の言語要素が定義されています。  キャプチャ グループの詳細については、「[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」を参照してください。  
+ <span data-ttu-id="76989-107">.NET では、番号付きおよび名前付きのキャプチャ グループを参照する個別の言語要素が定義されています。</span><span class="sxs-lookup"><span data-stu-id="76989-107">.NET defines separate language elements to refer to numbered and named capturing groups.</span></span> <span data-ttu-id="76989-108">キャプチャ グループの詳細については、次を参照してください。[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)です。</span><span class="sxs-lookup"><span data-stu-id="76989-108">For more information about capturing groups, see [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).</span></span>  
   
-## 番号付き前方参照  
- 番号付き前方参照では、次の構文を使用します。  
+## <a name="numbered-backreferences"></a><span data-ttu-id="76989-109">番号付き前方参照</span><span class="sxs-lookup"><span data-stu-id="76989-109">Numbered Backreferences</span></span>  
+ <span data-ttu-id="76989-110">番号付き前方参照は、次の構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="76989-110">A numbered backreference uses the following syntax:</span></span>  
   
- `\` *number*  
+ <span data-ttu-id="76989-111">`\` *number*</span><span class="sxs-lookup"><span data-stu-id="76989-111">`\` *number*</span></span>  
   
- *number* は、正規表現のキャプチャ グループの位置です。  たとえば、`\4` を使用すると、4 番目のキャプチャ グループの内容と一致します。  *number* が正規表現パターンで定義されていない場合は、解析エラーが発生し、正規表現エンジンは <xref:System.ArgumentException>をスローします。  たとえば、正規表現 `\b(\w+)\s\1` は、`(\w+)` が式の 1 番目の唯一のキャプチャ グループであるので有効です。  これに対して、`\b(\w+)\s\2` は、`\2` の番号が付けられたキャプチャ グループが存在しないので無効であり、引数の例外がスローされます。  
+ <span data-ttu-id="76989-112">ここで、*number* は、正規表現でのキャプチャ グループの位置を表す序数です。</span><span class="sxs-lookup"><span data-stu-id="76989-112">where *number* is the ordinal position of the capturing group in the regular expression.</span></span> <span data-ttu-id="76989-113">たとえば、`\4` は 4 番目のキャプチャ グループの内容と一致します。</span><span class="sxs-lookup"><span data-stu-id="76989-113">For example, `\4` matches the contents of the fourth capturing group.</span></span> <span data-ttu-id="76989-114">場合*数*は正規表現パターンで定義されていない、解析エラーが発生し、正規表現エンジンは、スロー、<xref:System.ArgumentException>です。</span><span class="sxs-lookup"><span data-stu-id="76989-114">If *number* is not defined in the regular expression pattern, a parsing error occurs, and the regular expression engine throws an <xref:System.ArgumentException>.</span></span> <span data-ttu-id="76989-115">たとえば、正規表現 `\b(\w+)\s\1` は有効です (`(\w+)` が式の中の最初で唯一のキャプチャ グループであるため)。</span><span class="sxs-lookup"><span data-stu-id="76989-115">For example, the regular expression `\b(\w+)\s\1` is valid, because `(\w+)` is the first and only capturing group in the expression.</span></span> <span data-ttu-id="76989-116">これに対して、`\b(\w+)\s\2` は無効であり、引数の例外がスローされます (`\2` という番号のキャプチャ グループは存在しないため)。</span><span class="sxs-lookup"><span data-stu-id="76989-116">On the other hand, `\b(\w+)\s\2` is invalid and throws an argument exception, because there is no capturing group numbered `\2`.</span></span>  
   
- 同じ表記を使用する `\`*number* の前方参照と 8 のエスケープ コードがあいまいです \(`\16`など\) にします。  このあいまいさは次のように解決されます。  
+ <span data-ttu-id="76989-117">8 進数のエスケープ コード間であいまいさを注意してください (など`\16`) および`\`*数*同じ表記を使用する前方参照です。</span><span class="sxs-lookup"><span data-stu-id="76989-117">Note the ambiguity between octal escape codes (such as `\16`) and `\`*number* backreferences that use the same notation.</span></span> <span data-ttu-id="76989-118">このあいまいさは、次のように解決されます。</span><span class="sxs-lookup"><span data-stu-id="76989-118">This ambiguity is resolved as follows:</span></span>  
   
--   `\1` から `\9` までの式は常に前方参照と解釈され、8 進コードとは解釈されません。  
+-   <span data-ttu-id="76989-119">`\1` から `\9` までの式は、8 進数コードとしてではなく、常に前方参照として解釈されます。</span><span class="sxs-lookup"><span data-stu-id="76989-119">The expressions `\1` through `\9` are always interpreted as backreferences, and not as octal codes.</span></span>  
   
--   複数桁の式の最初の桁が 8 または 9 の場合 \(`\80` や `\91` など\)、その式はリテラルと解釈されます。  
+-   <span data-ttu-id="76989-120">複数桁の式の最初の桁が 8 または 9 (`\80`や `\91`) の場合、式はリテラルとして解釈されます。</span><span class="sxs-lookup"><span data-stu-id="76989-120">If the first digit of a multidigit expression is 8 or 9 (such as `\80` or `\91`), the expression as interpreted as a literal.</span></span>  
   
--   `\10` 以降の式は、その番号に対応する前方参照がある場合には、前方参照と見なされます。それ以外の場合は、8 進コードと解釈されます。  
+-   <span data-ttu-id="76989-121">`\10` 以降の式は、その番号に対応する前方参照がある場合、前方参照として解釈されます。それ以外の場合は、8 進数のコードとして解釈されます。</span><span class="sxs-lookup"><span data-stu-id="76989-121">Expressions from `\10` and greater are considered backreferences if there is a backreference corresponding to that number; otherwise, they are interpreted as octal codes.</span></span>  
   
--   未定義のグループ番号への前方参照が正規表現にある場合は、解析エラーが発生し、正規表現エンジンから <xref:System.ArgumentException> がスローされます。  
+-   <span data-ttu-id="76989-122">正規表現に未定義のグループ番号への前方参照が含まれている場合は解析エラーが発生し、正規表現エンジンがスローされます、<xref:System.ArgumentException>です。</span><span class="sxs-lookup"><span data-stu-id="76989-122">If a regular expression contains a backreference to an undefined group number, a parsing error occurs, and the regular expression engine throws an <xref:System.ArgumentException>.</span></span>  
   
- あいまいさが問題になる場合は、明確、8 進文字コードと混同できない `\k<`*name*`>` 表記法を使用できます。  同様に、`\xdd` などの 16 進コードにもあいまいさがないため、前方参照と混同されることはありません。  
+ <span data-ttu-id="76989-123">あいまいさが問題の場合は、行うこともできます、 `\k<`*名前*`>`形式では、あいまいではないと、8 進文字コードが混乱することはできません。</span><span class="sxs-lookup"><span data-stu-id="76989-123">If the ambiguity is a problem, you can use the `\k<`*name*`>` notation, which is unambiguous and cannot be confused with octal character codes.</span></span> <span data-ttu-id="76989-124">同様に、`\xdd` などの 16 進数コードはあいまいではなく、前方参照と混同することはありません。</span><span class="sxs-lookup"><span data-stu-id="76989-124">Similarly, hexadecimal codes such as `\xdd` are unambiguous and cannot be confused with backreferences.</span></span>  
   
- 次の例では、文字列内で、単語に使用される文字のうち重複する文字を検索します。  この例では、次の要素で構成される正規表現 `(\w)\1` が定義されています。  
+ <span data-ttu-id="76989-125">次の例では、文字列内の単語に使用される重複した文字を検索します。</span><span class="sxs-lookup"><span data-stu-id="76989-125">The following example finds doubled word characters in a string.</span></span> <span data-ttu-id="76989-126">例で定義している正規表現 `(\w)\1` は、次の要素で構成されています。</span><span class="sxs-lookup"><span data-stu-id="76989-126">It defines a regular expression, `(\w)\1`, which consists of the following elements.</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|`(\w)`|単語に使用される文字と一致し、その文字を 1 番目のキャプチャ グループに代入します。|  
-|`\1`|次に出現した、1 番目のキャプチャ グループの値と同じ文字と一致します。|  
+|<span data-ttu-id="76989-127">要素</span><span class="sxs-lookup"><span data-stu-id="76989-127">Element</span></span>|<span data-ttu-id="76989-128">説明</span><span class="sxs-lookup"><span data-stu-id="76989-128">Description</span></span>|  
+|-------------|-----------------|  
+|`(\w)`|<span data-ttu-id="76989-129">単語文字を検出し、最初のキャプチャ グループに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="76989-129">Match a word character and assign it to the first capturing group.</span></span>|  
+|`\1`|<span data-ttu-id="76989-130">最初のキャプチャ グループの値と同じ次の文字を検出します。</span><span class="sxs-lookup"><span data-stu-id="76989-130">Match the next character that is the same as the value of the first capturing group.</span></span>|  
   
  [!code-csharp[RegularExpressions.Language.Backreferences#1](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference1.cs#1)]
  [!code-vb[RegularExpressions.Language.Backreferences#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference1.vb#1)]  
   
-## 名前付き前方参照  
- 名前付き前方参照は、次の構文を使用して定義します。  
+## <a name="named-backreferences"></a><span data-ttu-id="76989-131">名前付き前方参照</span><span class="sxs-lookup"><span data-stu-id="76989-131">Named Backreferences</span></span>  
+ <span data-ttu-id="76989-132">名前付き前方参照は、次の構文を使用して定義します。</span><span class="sxs-lookup"><span data-stu-id="76989-132">A named backreference is defined by using the following syntax:</span></span>  
   
- `\k<` *name* `>`  
+ <span data-ttu-id="76989-133">`\k<` *name* `>`</span><span class="sxs-lookup"><span data-stu-id="76989-133">`\k<` *name* `>`</span></span>  
   
- または  
+ <span data-ttu-id="76989-134">または</span><span class="sxs-lookup"><span data-stu-id="76989-134">or:</span></span>  
   
- `\k'` *name* `'`  
+ <span data-ttu-id="76989-135">`\k'` *name* `'`</span><span class="sxs-lookup"><span data-stu-id="76989-135">`\k'` *name* `'`</span></span>  
   
- *name* が正規表現パターンで定義されているキャプチャ グループの名前です。  *name* が正規表現パターンで定義されていない場合は、解析エラーが発生し、正規表現エンジンは <xref:System.ArgumentException>をスローします。  
+ <span data-ttu-id="76989-136">ここで、*name* は正規表現パターンで定義されたキャプチャ グループの名前です。</span><span class="sxs-lookup"><span data-stu-id="76989-136">where *name* is the name of a capturing group defined in the regular expression pattern.</span></span> <span data-ttu-id="76989-137">場合*名前*は正規表現パターンで定義されていない、解析エラーが発生し、正規表現エンジンは、スロー、<xref:System.ArgumentException>です。</span><span class="sxs-lookup"><span data-stu-id="76989-137">If *name* is not defined in the regular expression pattern, a parsing error occurs, and the regular expression engine throws an <xref:System.ArgumentException>.</span></span>  
   
- 次の例では、文字列内で、単語に使用される文字のうち重複する文字を検索します。  この例では、次の要素で構成される正規表現 `(?<char>\w)\k<char>` が定義されています。  
+ <span data-ttu-id="76989-138">次の例では、文字列内の単語に使用される重複した文字を検索します。</span><span class="sxs-lookup"><span data-stu-id="76989-138">The following example finds doubled word characters in a string.</span></span> <span data-ttu-id="76989-139">例で定義している正規表現 `(?<char>\w)\k<char>` は、次の要素で構成されています。</span><span class="sxs-lookup"><span data-stu-id="76989-139">It defines a regular expression, `(?<char>\w)\k<char>`, which consists of the following elements.</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|`(?<char>\w)`|単語に使用される文字と一致し、その文字を `char` という名前のキャプチャ グループに代入します。|  
-|`\k<char>`|次に出現した、`char` キャプチャ グループの値と同じ文字と一致します。|  
+|<span data-ttu-id="76989-140">要素</span><span class="sxs-lookup"><span data-stu-id="76989-140">Element</span></span>|<span data-ttu-id="76989-141">説明</span><span class="sxs-lookup"><span data-stu-id="76989-141">Description</span></span>|  
+|-------------|-----------------|  
+|`(?<char>\w)`|<span data-ttu-id="76989-142">単語文字と一致し、名前付きキャプチャ グループに割り当てる`char`です。</span><span class="sxs-lookup"><span data-stu-id="76989-142">Match a word character and assign it to a capturing group named `char`.</span></span>|  
+|`\k<char>`|<span data-ttu-id="76989-143">値と同じでは、次の文字を一致、`char`キャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="76989-143">Match the next character that is the same as the value of the `char` capturing group.</span></span>|  
   
  [!code-csharp[RegularExpressions.Language.Backreferences#2](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference2.cs#2)]
  [!code-vb[RegularExpressions.Language.Backreferences#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference2.vb#2)]  
   
- *name* には、数値の文字列形式である場合があることに注意してください。  たとえば、次の例では、正規表現 `(?<2>\w)\k<2>` を使用して、文字列内で、単語に使用される文字のうち重複する文字を検索します。  
+ <span data-ttu-id="76989-144">*name* は数字の文字列表現とすることもできます。</span><span class="sxs-lookup"><span data-stu-id="76989-144">Note that *name* can also be the string representation of a number.</span></span> <span data-ttu-id="76989-145">たとえば、次の例では正規表現 `(?<2>\w)\k<2>` を使用して、文字列内の単語の重複した文字を検索します。</span><span class="sxs-lookup"><span data-stu-id="76989-145">For example, the following example uses the regular expression `(?<2>\w)\k<2>` to find doubled word characters in a string.</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Backreferences#3](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference3.cs#3)]
  [!code-vb[RegularExpressions.Language.Backreferences#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference3.vb#3)]  
   
-## 前方参照で一致する対象  
- 前方参照は、最も近いグループ定義 \(左から右に検索する場合、左側の最も近いところにある定義\) を参照します。  1 つのグループで複数のキャプチャが行われる場合、前方参照は最も近いキャプチャを参照します。  
+## <a name="what-backreferences-match"></a><span data-ttu-id="76989-146">前方参照と一致する内容</span><span class="sxs-lookup"><span data-stu-id="76989-146">What Backreferences Match</span></span>  
+ <span data-ttu-id="76989-147">前方参照は、グループの最新の定義 (左から右に検出する場合は、すぐ左にある定義) を参照します。</span><span class="sxs-lookup"><span data-stu-id="76989-147">A backreference refers to the most recent definition of a group (the definition most immediately to the left, when matching left to right).</span></span> <span data-ttu-id="76989-148">1 つのグループで複数のキャプチャが発生した場合、前方参照は最新のキャプチャを参照します。</span><span class="sxs-lookup"><span data-stu-id="76989-148">When a group makes multiple captures, a backreference refers to the most recent capture.</span></span>  
   
- 次の例では、\\1 名前付きグループを再定義する正規表現パターン `(?<1>a)(?<1>\1b)*` を使用しています。  この正規表現の各パターンの説明を次の表に示します。  
+ <span data-ttu-id="76989-149">次の例には、正規表現パターン `(?<1>a)(?<1>\1b)*` が含まれています。このパターンは \1 の名前付きグループを再定義します。</span><span class="sxs-lookup"><span data-stu-id="76989-149">The following example includes a regular expression pattern, `(?<1>a)(?<1>\1b)*`, which redefines the \1 named group.</span></span> <span data-ttu-id="76989-150">正規表現の各パターンは、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="76989-150">The following table describes each pattern in the regular expression.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`(?<1>a)`|文字 "a" と一致し、結果を `1` という名前のキャプチャ グループに代入します。|  
-|`(?<1>\1b)*`|`1` という名前のグループに "b" を加えた文字列に 0 回または 1 回一致し、結果を `1` という名前のキャプチャ グループに代入します。|  
+|<span data-ttu-id="76989-151">パターン</span><span class="sxs-lookup"><span data-stu-id="76989-151">Pattern</span></span>|<span data-ttu-id="76989-152">説明</span><span class="sxs-lookup"><span data-stu-id="76989-152">Description</span></span>|  
+|-------------|-----------------|  
+|`(?<1>a)`|<span data-ttu-id="76989-153">文字と一致"a"と、その結果、キャプチャ グループを名前付き割り当て`1`です。</span><span class="sxs-lookup"><span data-stu-id="76989-153">Match the character "a" and assign the result to the capturing group named `1`.</span></span>|  
+|`(?<1>\1b)*`|<span data-ttu-id="76989-154">という名前のグループの一致 0 または 1 が発生`1`"b"、および割り当てという名前のキャプチャ グループに結果と共に`1`です。</span><span class="sxs-lookup"><span data-stu-id="76989-154">Match 0 or 1 occurrence of the group named `1` along with a "b", and assign the result to the capturing group named `1`.</span></span>|  
   
  [!code-csharp[RegularExpressions.Language.Backreferences#4](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference4.cs#4)]
  [!code-vb[RegularExpressions.Language.Backreferences#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference4.vb#4)]  
   
- 正規表現と入力文字列 \("aababb"\) の比較時、正規表現エンジンは次の操作を実行します。  
+ <span data-ttu-id="76989-155">正規表現を入力文字列 ("aababb") と比較する際、正規表現エンジンは次の操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="76989-155">In comparing the regular expression with the input string ("aababb"), the regular expression engine performs the following operations:</span></span>  
   
-1.  文字列の先頭から開始し、"a" と式 `(?<1>a)` の一致に成功します。  `1` グループの値は "a" になります。  
+1.  <span data-ttu-id="76989-156">文字列の先頭から開始し、式 `(?<1>a)` で "a" を検出します。</span><span class="sxs-lookup"><span data-stu-id="76989-156">It starts at the beginning of the string, and successfully matches "a" with the expression `(?<1>a)`.</span></span> <span data-ttu-id="76989-157">値、`1`グループが、"a"です。</span><span class="sxs-lookup"><span data-stu-id="76989-157">The value of the `1` group is now "a".</span></span>  
   
-2.  2 番目の文字に進み、文字列 "ab" と式 `\1b` \(つまり "ab"\) の一致に成功します。  結果の "ab" を `\1` に代入します。  
+2.  <span data-ttu-id="76989-158">次の文字に進み、式 `\1b` で文字列 "ab" を検出します。</span><span class="sxs-lookup"><span data-stu-id="76989-158">It advances to the second character, and successfully matches the string "ab" with the expression `\1b`, or "ab".</span></span> <span data-ttu-id="76989-159">次に、その結果 "ab" を `\1` に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="76989-159">It then assigns the result, "ab" to `\1`.</span></span>  
   
-3.  4 番目の文字に進みます。  式 `(?<1>\1b)` は 0 回以上一致するので、文字列 "abb" と式 `\1b` の一致に成功します。  結果の "abb" を `\1` に代入します。  
+3.  <span data-ttu-id="76989-160">これにより 4 番目の文字に進みます。</span><span class="sxs-lookup"><span data-stu-id="76989-160">It advances to the fourth character.</span></span> <span data-ttu-id="76989-161">式 `(?<1>\1b)` を 0 回以上照合し、式 `\1b` で文字列 "abb" を検出します。</span><span class="sxs-lookup"><span data-stu-id="76989-161">The expression `(?<1>\1b)` is to be matched zero or more times, so it successfully matches the string "abb" with the expression `\1b`.</span></span> <span data-ttu-id="76989-162">その結果 "abb" を `\1` に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="76989-162">It assigns the result, "abb", back to `\1`.</span></span>  
   
- この例では、`*` はループ量指定子であるので、定義されているパターンと一致する文字列がなくなるまで、繰り返し評価されます。  量指定子によるループが行われても、グループ定義はクリアされません。  
+ <span data-ttu-id="76989-163">この例では、`*` はループ量指定子であり、正規表現エンジンが定義したパターンを照合できなくなるまで、繰り返し評価されます。</span><span class="sxs-lookup"><span data-stu-id="76989-163">In this example, `*` is a looping quantifier -- it is evaluated repeatedly until the regular expression engine cannot match the pattern it defines.</span></span> <span data-ttu-id="76989-164">ループ量指定子によってグループの定義はクリアされません。</span><span class="sxs-lookup"><span data-stu-id="76989-164">Looping quantifiers do not clear group definitions.</span></span>  
   
- あるグループによってキャプチャされる部分文字列がない場合は、そのグループへの前方参照は未定義になるため、一致する文字列は見つかりません。  このことを、次のように定義される正規表現パターン `\b(\p{Lu}{2})(\d{2})?(\p{Lu}{2})\b` を使用して示します。  
+ <span data-ttu-id="76989-165">グループで部分文字列がキャプチャされなかった場合、そのグループへの前方参照は未定義になり、一致することはありません。</span><span class="sxs-lookup"><span data-stu-id="76989-165">If a group has not captured any substrings, a backreference to that group is undefined and never matches.</span></span> <span data-ttu-id="76989-166">正規表現パターンに例を示しますこの`\b(\p{Lu}{2})(\d{2})?(\p{Lu}{2})\b`、次のように定義されています。</span><span class="sxs-lookup"><span data-stu-id="76989-166">This is illustrated by the regular expression pattern `\b(\p{Lu}{2})(\d{2})?(\p{Lu}{2})\b`, which is defined as follows:</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`(\p{Lu}{2})`|2 個の大文字と一致します。  これが最初のキャプチャ グループです。|  
-|`(\d{2})?`|2 桁の 10 進数と 0 回または 1 回一致します。  これが 2 番目のキャプチャ グループです。|  
-|`(\p{Lu}{2})`|2 個の大文字と一致します。  これが 3 番目のキャプチャ グループです。|  
-|`\b`|ワード境界で照合を終了します。|  
+|<span data-ttu-id="76989-167">パターン</span><span class="sxs-lookup"><span data-stu-id="76989-167">Pattern</span></span>|<span data-ttu-id="76989-168">説明</span><span class="sxs-lookup"><span data-stu-id="76989-168">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="76989-169">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="76989-169">Begin the match on a word boundary.</span></span>|  
+|`(\p{Lu}{2})`|<span data-ttu-id="76989-170">2 つの大文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="76989-170">Match two uppercase letters.</span></span> <span data-ttu-id="76989-171">これが最初のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="76989-171">This is the first capturing group.</span></span>|  
+|`(\d{2})?`|<span data-ttu-id="76989-172">2 桁の 10 進数の 0 回または 1 回の出現と一致します。</span><span class="sxs-lookup"><span data-stu-id="76989-172">Match zero or one occurrence of two decimal digits.</span></span> <span data-ttu-id="76989-173">これが 2 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="76989-173">This is the second capturing group.</span></span>|  
+|`(\p{Lu}{2})`|<span data-ttu-id="76989-174">2 つの大文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="76989-174">Match two uppercase letters.</span></span> <span data-ttu-id="76989-175">これが 3 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="76989-175">This is the third capturing group.</span></span>|  
+|`\b`|<span data-ttu-id="76989-176">ワード境界で照合を終了します。</span><span class="sxs-lookup"><span data-stu-id="76989-176">End the match on a word boundary.</span></span>|  
   
- 2 番目のキャプチャ グループで定義されている 2 桁の 10 進数が存在しない場合でも、入力文字列とこの正規表現を一致させることができます。  次の例では、一致する対象は見つかりますが、一致する対象が見つかった 2 つのキャプチャ グループの間には空のキャプチャ グループがあります。  
+ <span data-ttu-id="76989-177">2 番目のキャプチャ グループによって定義されている 2 桁の 10 進数が存在しない場合でも、入力文字列はこの正規表現を照合できます。</span><span class="sxs-lookup"><span data-stu-id="76989-177">An input string can match this regular expression even if the two decimal digits that are defined by the second capturing group are not present.</span></span> <span data-ttu-id="76989-178">次の例では、一致が見つかった場合でも、成功した 2 つのキャプチャ グループの間に空のキャプチャ グループが検出されます。</span><span class="sxs-lookup"><span data-stu-id="76989-178">The following example shows that even though the match is successful, an empty capturing group is found between two successful capturing groups.</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Backreferences#5](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference5.cs#5)]
  [!code-vb[RegularExpressions.Language.Backreferences#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference5.vb#5)]  
   
-## 参照  
- [正規表現言語 \- クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+## <a name="see-also"></a><span data-ttu-id="76989-179">関連項目</span><span class="sxs-lookup"><span data-stu-id="76989-179">See Also</span></span>  
+ [<span data-ttu-id="76989-180">正規表現言語 - クイック リファレンス</span><span class="sxs-lookup"><span data-stu-id="76989-180">Regular Expression Language - Quick Reference</span></span>](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

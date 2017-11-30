@@ -1,77 +1,83 @@
 ---
-title: "方法 : Web コントロールでの数値のユーザー入力を数値に変換する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "変換 (数字のユーザー入力を数値に)"
-  - "書式指定 [.NET Framework], 数"
-  - "数値の書式指定 [.NET Framework]"
-  - "数値 [.NET Framework], 変換 (数字のユーザー入力を数値に)"
-  - "数値書式指定文字列 [.NET Framework]"
-  - "解析 (文字列を) [.NET Framework], 数値文字列"
+title: "方法 : Web コントロールでの数値のユーザー入力を数値に変換する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- numeric format strings [.NET Framework]
+- formatting [.NET Framework], numbers
+- number formatting [.NET Framework]
+- parsing strings [.NET Framework], numeric strings
+- converting numeric user input to number
+- numbers [.NET Framework], converting numeric user input to number
 ms.assetid: f27ddfb8-7479-4b79-8879-02a3bd8402d4
-caps.latest.revision: 8
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 92e28e3b303a7523b9da69b7eb283e0261fc681c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Web コントロールでの数値のユーザー入力を数値に変換する
-Web ページは世界中どこでも表示可能なため、ユーザーは <xref:System.Web.UI.WebControls.TextBox> コントロールの中に多種多様な形式で数値データを入力する可能性があります。  このため、Web ページのユーザーのロケールとカルチャを判別することは非常に重要です。  ユーザー入力を解析するとき、ユーザーのロケールとカルチャによって定義された書式指定規則を適用できます。  
+# <a name="how-to-convert-numeric-user-input-in-web-controls-to-numbers"></a><span data-ttu-id="6f089-102">方法 : Web コントロールでの数値のユーザー入力を数値に変換する</span><span class="sxs-lookup"><span data-stu-id="6f089-102">How to: Convert Numeric User Input in Web Controls to Numbers</span></span>
+<span data-ttu-id="6f089-103">ユーザーに数値データを入力できる Web ページは、世界中のどこでも表示できます、ため、<xref:System.Web.UI.WebControls.TextBox>ほぼ無制限の数の形式で制御します。</span><span class="sxs-lookup"><span data-stu-id="6f089-103">Because a Web page can be displayed anywhere in the world, users can input numeric data into a <xref:System.Web.UI.WebControls.TextBox> control in an almost unlimited number of formats.</span></span> <span data-ttu-id="6f089-104">その結果、ロケールと、Web ページのユーザーのカルチャを判別することが重要です。</span><span class="sxs-lookup"><span data-stu-id="6f089-104">As a result, it is very important to determine the locale and culture of the Web page's user.</span></span> <span data-ttu-id="6f089-105">ユーザー入力を解析する場合、ユーザーのロケールとカルチャによって定義された書式指定規則を適用することができます。</span><span class="sxs-lookup"><span data-stu-id="6f089-105">When you parse user input, you can then apply the formatting conventions defined by the user's locale and culture.</span></span>  
   
-### Web TextBox コントロールでの数値入力を数値に変換するには  
+### <a name="to-convert-numeric-input-from-a-web-textbox-control-to-a-number"></a><span data-ttu-id="6f089-106">Web のテキスト ボックス コントロールから数値の入力を数値に変換するには</span><span class="sxs-lookup"><span data-stu-id="6f089-106">To convert numeric input from a Web TextBox control to a number</span></span>  
   
-1.  <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=fullName> プロパティによって返された文字列配列にデータが含まれているかどうかを判別します。  含まれない場合は、手順 6. に進みます。  
+1.  <span data-ttu-id="6f089-107">文字列の配列がによって返されるかどうかを判断、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>プロパティが設定されます。</span><span class="sxs-lookup"><span data-stu-id="6f089-107">Determine whether the string array returned by the <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> property is populated.</span></span> <span data-ttu-id="6f089-108">そうでない場合は、手順 6 に進みます。</span><span class="sxs-lookup"><span data-stu-id="6f089-108">If it is not, continue to step 6.</span></span>  
   
-2.  <xref:System.Web.HttpRequest.UserLanguages%2A> プロパティによって返された文字列配列にデータが含まれる場合は、その最初の要素を取得します。  最初の要素は、ユーザーの既定の言語と地域、または優先される言語と地域を表します。  
+2.  <span data-ttu-id="6f089-109">文字列の配列がによって返される場合、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティが設定されると、その最初の要素を取得します。</span><span class="sxs-lookup"><span data-stu-id="6f089-109">If the string array returned by the <xref:System.Web.HttpRequest.UserLanguages%2A> property is populated, retrieve its first element.</span></span> <span data-ttu-id="6f089-110">最初の要素は、ユーザーの既定値または優先する言語と地域を示します。</span><span class="sxs-lookup"><span data-stu-id="6f089-110">The first element indicates the user's default or preferred language and region.</span></span>  
   
-3.  <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=fullName> コンストラクターを呼び出すことにより、ユーザーが選択したカルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化します。  
+3.  <span data-ttu-id="6f089-111">インスタンスを作成、 <xref:System.Globalization.CultureInfo> 、ユーザーを表すオブジェクトを呼び出してのカルチャの優先、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>コンス トラクターです。</span><span class="sxs-lookup"><span data-stu-id="6f089-111">Instantiate a <xref:System.Globalization.CultureInfo> object that represents the user's preferred culture by calling the <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> constructor.</span></span>  
   
-4.  ユーザー入力の変換先となる数値型の `TryParse` メソッドまたは `Parse` メソッドを呼び出します。  `TryParse` メソッドまたは `Parse` メソッドの `provider` パラメーターを指定するオーバーロードを使用して、次のいずれかを渡します。  
+4.  <span data-ttu-id="6f089-112">いずれかを呼び出す、`TryParse`または`Parse`にユーザーを変換する数値型のメソッドの入力します。</span><span class="sxs-lookup"><span data-stu-id="6f089-112">Call either the `TryParse` or the `Parse` method of the numeric type that you want to convert the user's input to.</span></span> <span data-ttu-id="6f089-113">オーバー ロードを使用して、`TryParse`または`Parse`メソッドを`provider`パラメーター、させ、次のいずれか。</span><span class="sxs-lookup"><span data-stu-id="6f089-113">Use an overload of the `TryParse` or the `Parse` method with a `provider` parameter, and pass it either of the following:</span></span>  
   
-    -   手順 3. で作成した <xref:System.Globalization.CultureInfo> オブジェクト。  
+    -   <span data-ttu-id="6f089-114"><xref:System.Globalization.CultureInfo>手順 3. で作成されたオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6f089-114">The <xref:System.Globalization.CultureInfo> object created in step 3.</span></span>  
   
-    -   手順 3. で作成した <xref:System.Globalization.CultureInfo> オブジェクトの <xref:System.Globalization.CultureInfo.NumberFormat%2A> プロパティによって返される <xref:System.Globalization.NumberFormatInfo> オブジェクト。  
+    -   <span data-ttu-id="6f089-115"><xref:System.Globalization.NumberFormatInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.NumberFormat%2A>のプロパティ、<xref:System.Globalization.CultureInfo>手順 3. で作成されたオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6f089-115">The <xref:System.Globalization.NumberFormatInfo> object that is returned by the <xref:System.Globalization.CultureInfo.NumberFormat%2A> property of the <xref:System.Globalization.CultureInfo> object created in step 3.</span></span>  
   
-5.  変換が失敗した場合、<xref:System.Web.HttpRequest.UserLanguages%2A> プロパティによって返される文字列配列内の他の要素ごとに手順 2. から 4. を繰り返します。  
+5.  <span data-ttu-id="6f089-116">変換が失敗した場合、手順 2. ~ 4. string 配列に残った各要素によって返される、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="6f089-116">If the conversion fails, repeat steps 2 through 4 for each remaining element in the string array returned by the <xref:System.Web.HttpRequest.UserLanguages%2A> property.</span></span>  
   
-6.  変換が引き続き失敗する場合、または <xref:System.Web.HttpRequest.UserLanguages%2A> プロパティによって返された文字列配列が空の場合には、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> プロパティによって返されるインバリアント カルチャを使って文字列を解析します。  
+6.  <span data-ttu-id="6f089-117">変換がまだ失敗する場合、または文字列の配列がによって返される場合、<xref:System.Web.HttpRequest.UserLanguages%2A>プロパティが空、によって返されるインバリアント カルチャを使用して、文字列の解析、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="6f089-117">If the conversion still fails or if the string array returned by the <xref:System.Web.HttpRequest.UserLanguages%2A> property is empty, parse the string by using the invariant culture, which is returned by the <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> property.</span></span>  
   
-## 使用例  
- 次の例は、<xref:System.Web.UI.WebControls.TextBox> コントロールに数値を入力するようユーザーに要求して、それを数値に変換する Web フォームの完全な分離コード ページです。  その後、その数値を 2 倍にして、元の入力と同じ書式指定規則を使って表示します。  
+## <a name="example"></a><span data-ttu-id="6f089-118">例</span><span class="sxs-lookup"><span data-stu-id="6f089-118">Example</span></span>  
+ <span data-ttu-id="6f089-119">次の例は数値で入力を求める Web フォームを完全な分離コード ページ、<xref:System.Web.UI.WebControls.TextBox>を制御し、数値に変換します。</span><span class="sxs-lookup"><span data-stu-id="6f089-119">The following example is the complete code-behind page for a Web form that asks the user to enter a numeric value in a <xref:System.Web.UI.WebControls.TextBox> control and converts it to a number.</span></span> <span data-ttu-id="6f089-120">その数が 2 倍になり、元の入力として同じ書式指定規則を使用して表示します。</span><span class="sxs-lookup"><span data-stu-id="6f089-120">That number is then doubled and displayed by using the same formatting rules as the original input.</span></span>  
   
  [!code-csharp[Formatting.HowTo.ParseNumericInput#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.ParseNumericInput/cs/NumericUserInput1.aspx.cs#1)]
  [!code-vb[Formatting.HowTo.ParseNumericInput#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.ParseNumericInput/vb/NumericUserInput1.aspx.vb#1)]  
   
- <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=fullName> プロパティには、HTTP 要求の `Accept-Language` ヘッダーに含まれるカルチャ名からデータが入ります。  ただし、すべてのブラウザーの要求に `Accept-Language` ヘッダーが含まれるとは限りません。ユーザーがヘッダーを完全に禁止する場合もあります。  このため、ユーザー入力を解析する際にはフォールバック カルチャが重要になります。  通常、フォールバック カルチャは、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> によって返されるインバリアント カルチャです。  また、テキスト ボックスへの入力によってユーザーがカルチャ名を Internet Explorer に提供する場合もありますが、無効なカルチャ名が指定される可能性があります。  このため、<xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化する際には、例外処理が重要になります。  
+ <span data-ttu-id="6f089-121"><xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>プロパティに含まれているカルチャ名から取得されます`Accept-Language`HTTP 要求に含まれるヘッダー。</span><span class="sxs-lookup"><span data-stu-id="6f089-121">The <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> property is populated from the culture names that are contained in `Accept-Language` headers included in an HTTP request.</span></span> <span data-ttu-id="6f089-122">ただし、一部のブラウザーを含める`Accept-Language`ヘッダーを要求、およびユーザーでのヘッダーを完全に抑制もことができます。</span><span class="sxs-lookup"><span data-stu-id="6f089-122">However, not all browsers include `Accept-Language` headers in their requests, and users can also suppress the headers completely.</span></span> <span data-ttu-id="6f089-123">これにより、ユーザー入力を解析するときに、フォールバック カルチャを理解しておくことができます。</span><span class="sxs-lookup"><span data-stu-id="6f089-123">This makes it important to have a fallback culture when parsing user input.</span></span> <span data-ttu-id="6f089-124">通常、によって返されるインバリアント カルチャは、フォールバック カルチャ<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="6f089-124">Typically, the fallback culture is the invariant culture returned by <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>.</span></span> <span data-ttu-id="6f089-125">ユーザーも指定できます Internet Explorer のカルチャ名を作成する可能性があるカルチャ名が無効であるテキスト ボックスに入力します。</span><span class="sxs-lookup"><span data-stu-id="6f089-125">Users can also provide Internet Explorer with culture names that they input in a text box, which creates the possibility that the culture names may not be valid.</span></span> <span data-ttu-id="6f089-126">これにより、インスタンス化するときに、例外処理を使用する重要な<xref:System.Globalization.CultureInfo>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6f089-126">This makes it important to use exception handling when instantiating a <xref:System.Globalization.CultureInfo> object.</span></span>  
   
- Internet Explorer によって送信された HTTP 要求から取得される <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=fullName> 配列には、ユーザー側の優先度設定の順序でデータが入ります。  配列の先頭の要素には、ユーザーの最優先カルチャ\/地域の名前が格納されます。  何らかの追加項目が配列に含まれる場合、Internet Explorer はそれらに任意のクオリティ識別子を割り当てます。この識別子はセミコロンによってカルチャから区切られます。  たとえば、fr\-FR カルチャの項目は `fr-FR;q=0.7` という形式になります。  
+ <span data-ttu-id="6f089-127">Internet Explorer によって送信された HTTP 要求から取得されたときに、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>のユーザーの優先順位に従って配列を作成します。</span><span class="sxs-lookup"><span data-stu-id="6f089-127">When retrieved from an HTTP request submitted by Internet Explorer, the <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> array is populated in order of user preference.</span></span> <span data-ttu-id="6f089-128">配列の最初の要素には、ユーザーのプライマリのカルチャまたは地域の名前が含まれています。</span><span class="sxs-lookup"><span data-stu-id="6f089-128">The first element in the array contains the name of the user's primary culture/region.</span></span> <span data-ttu-id="6f089-129">配列には、追加項目が含まれている場合、Internet Explorer 任意に割り当てます品質指定子は、カルチャ名をセミコロンで区切られます。</span><span class="sxs-lookup"><span data-stu-id="6f089-129">If the array contains any additional items, Internet Explorer arbitrarily assigns them a quality specifier, which is delimited from the culture name by a semicolon.</span></span> <span data-ttu-id="6f089-130">たとえば、FR-FR カルチャのエントリがフォームをかかる場合があります`fr-FR;q=0.7`です。</span><span class="sxs-lookup"><span data-stu-id="6f089-130">For example, an entry for the fr-FR culture might take the form `fr-FR;q=0.7`.</span></span>  
   
- この例では、`useUserOverride` パラメーターを `false` に設定して <xref:System.Globalization.CultureInfo.%23ctor%2A> コンストラクターを呼び出し、新しい <xref:System.Globalization.CultureInfo> オブジェクトを作成します。  これによって、カルチャ名がサーバー上の既定のカルチャ名である場合、クラス コンストラクターによって作成される新しい <xref:System.Globalization.CultureInfo> オブジェクトにはカルチャの既定の設定が含まれ、サーバーの **\[地域と言語のオプション\]** アプリケーションを使ってオーバーライドされた設定は反映されません。  通常、サーバーでオーバーライドされた設定値はユーザーのシステムに存在せず、ユーザー入力に反映されることもありません。  
+ <span data-ttu-id="6f089-131">呼び出しの例、<xref:System.Globalization.CultureInfo.%23ctor%2A>を持つコンス トラクター、`useUserOverride`パラメーターに設定`false`新しい<xref:System.Globalization.CultureInfo>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6f089-131">The example calls the <xref:System.Globalization.CultureInfo.%23ctor%2A> constructor with its `useUserOverride` parameter set to `false` to create a new <xref:System.Globalization.CultureInfo> object.</span></span> <span data-ttu-id="6f089-132">これにより、カルチャ名がサーバーで、既定のカルチャ名である場合、新しい<xref:System.Globalization.CultureInfo>クラスのコンス トラクターによって作成されたオブジェクトのカルチャの既定の設定が含まれています、サーバーを使用してオーバーライドされた設定が反映されない**地域と言語のオプション**アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="6f089-132">This ensures that, if the culture name is the default culture name on the server, the new <xref:System.Globalization.CultureInfo> object created by the class constructor contains a culture's default settings and does not reflect any settings overridden by using the server's **Regional and Language Options** application.</span></span> <span data-ttu-id="6f089-133">サーバーでオーバーライドされた設定値は、ユーザーのシステム上に存在するか、ユーザーの入力に反映させる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="6f089-133">The values from any overridden settings on the server are unlikely to exist on the user's system or to be reflected in the user's input.</span></span>  
   
- ユーザー入力の変換先となる数値型の `Parse` メソッドまたは `TryParse` メソッドをコードで呼び出すことができます。  1 つの解析操作で解析メソッドを繰り返し呼び出す必要が生じる場合があります。  したがって、解析操作が失敗した場合に `false` を返す `TryParse` メソッドの方が適切です。  これに対して、`Parse` メソッドによって繰り返しスローされる例外を Web アプリケーションで処理する場合、コストが非常に大きくなる可能性があります。  
+ <span data-ttu-id="6f089-134">コードは、いずれかを呼び出すことができます、`Parse`または`TryParse`ユーザーの入力を数値型のメソッドに変換されます。</span><span class="sxs-lookup"><span data-stu-id="6f089-134">Your code can call either the `Parse` or the `TryParse` method of the numeric type that the user's input will be converted to.</span></span> <span data-ttu-id="6f089-135">Parse メソッドを繰り返し呼び出す解析操作が 1 つ必要があります。</span><span class="sxs-lookup"><span data-stu-id="6f089-135">Repeated calls to a parse method may be required for a single parsing operation.</span></span> <span data-ttu-id="6f089-136">その結果、`TryParse`返すためにのメソッドもよく、`false`解析操作が失敗した場合。</span><span class="sxs-lookup"><span data-stu-id="6f089-136">As a result, the `TryParse` method is better, because it returns `false` if a parse operation fails.</span></span> <span data-ttu-id="6f089-137">これに対し、繰り返される例外を処理するによってスローされる可能性があります、`Parse`メソッドは、Web アプリケーションで非常にコストがかかる処理をすることができます。</span><span class="sxs-lookup"><span data-stu-id="6f089-137">In contrast, handling the repeated exceptions that may be thrown by the `Parse` method can be a very expensive proposition in a Web application.</span></span>  
   
-## コードのコンパイル  
- コードをコンパイルするには、既存のすべてのコードに置き換える形で、このコードを [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] 分離コード ページの中にコピーします。  [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web ページには、次のコントロールを含める必要があります。  
+## <a name="compiling-the-code"></a><span data-ttu-id="6f089-138">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="6f089-138">Compiling the Code</span></span>  
+ <span data-ttu-id="6f089-139">コードをコンパイルするをコピー、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]分離コード ページのため、その既存のすべてのコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="6f089-139">To compile the code, copy it into an [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] code-behind page so that it replaces all the existing code.</span></span> <span data-ttu-id="6f089-140">[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web ページは、次のコントロールを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="6f089-140">The [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Web page should contain the following controls:</span></span>  
   
--   コード内で参照されない <xref:System.Web.UI.WebControls.Label> コントロール。  その <xref:System.Web.UI.WebControls.TextBox.Text%2A> プロパティを "Enter a Number:" に設定します。  
+-   <span data-ttu-id="6f089-141">A<xref:System.Web.UI.WebControls.Label>コントロールで、コードで参照されていません。</span><span class="sxs-lookup"><span data-stu-id="6f089-141">A <xref:System.Web.UI.WebControls.Label> control, which is not referenced in code.</span></span> <span data-ttu-id="6f089-142">設定の<xref:System.Web.UI.WebControls.TextBox.Text%2A>プロパティを"の数値を入力:"です。</span><span class="sxs-lookup"><span data-stu-id="6f089-142">Set its <xref:System.Web.UI.WebControls.TextBox.Text%2A> property to "Enter a Number:".</span></span>  
   
--   `NumericString` という名前の <xref:System.Web.UI.WebControls.TextBox> コントロール。  
+-   <span data-ttu-id="6f089-143">`NumericString` という名前の <xref:System.Web.UI.WebControls.TextBox> コントロール。</span><span class="sxs-lookup"><span data-stu-id="6f089-143">A <xref:System.Web.UI.WebControls.TextBox> control named `NumericString`.</span></span>  
   
--   `OKButton` という名前の <xref:System.Web.UI.WebControls.Button> コントロール。  その <xref:System.Web.UI.WebControls.Button.Text%2A> プロパティを "OK" に設定します。  
+-   <span data-ttu-id="6f089-144">`OKButton` という名前の <xref:System.Web.UI.WebControls.Button> コントロール。</span><span class="sxs-lookup"><span data-stu-id="6f089-144">A <xref:System.Web.UI.WebControls.Button> control named `OKButton`.</span></span> <span data-ttu-id="6f089-145">設定の<xref:System.Web.UI.WebControls.Button.Text%2A>プロパティを"OK"です。</span><span class="sxs-lookup"><span data-stu-id="6f089-145">Set its <xref:System.Web.UI.WebControls.Button.Text%2A> property to "OK".</span></span>  
   
- クラスの名前を、`NumericUserInput` から、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] ページの `Page` ディレクティブの `Inherits` 属性で定義されるクラス名に変更します。  `NumericInput` オブジェクト参照の名前を、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] ページの `form` タグの `id` 属性で定義される名前に変更します。  
+ <span data-ttu-id="6f089-146">クラスの名前を変更`NumericUserInput`で定義されているクラスの名前に、`Inherits`の属性、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]ページの`Page`ディレクティブです。</span><span class="sxs-lookup"><span data-stu-id="6f089-146">Change the name of the class from `NumericUserInput` to the name of the class that is defined by the `Inherits` attribute of the [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] page's `Page` directive.</span></span> <span data-ttu-id="6f089-147">名前を変更、`NumericInput`オブジェクトによって定義された名前への参照、`id`の属性、[!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]ページの`form`タグ。</span><span class="sxs-lookup"><span data-stu-id="6f089-147">Change the name of the `NumericInput` object reference to the name defined by the `id` attribute of the [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] page's `form` tag.</span></span>  
   
-## .NET Framework セキュリティ  
- ユーザーが HTML ストリーム内にスクリプトを挿入するのを防ぐために、サーバー応答の中でユーザー入力を直接エコー バックしないでください。  そうする代わりに、<xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=fullName> メソッドを使ってこれをエンコードする必要があります。  
+## <a name="net-framework-security"></a><span data-ttu-id="6f089-148">.NET Framework セキュリティ</span><span class="sxs-lookup"><span data-stu-id="6f089-148">.NET Framework Security</span></span>  
+ <span data-ttu-id="6f089-149">ユーザーが HTML ストリームにスクリプトを挿入することを防ぐためにユーザー入力する必要がありますしない直接をエコーするサーバーの応答でします。</span><span class="sxs-lookup"><span data-stu-id="6f089-149">To prevent a user from injecting script into the HTML stream, user input should never be directly echoed back in the server response.</span></span> <span data-ttu-id="6f089-150">代わりを使用してエンコードする必要がある、<xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="6f089-150">Instead, it should be encoded by using the <xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType> method.</span></span>  
   
-## 参照  
- [書式設定操作の実行](../../../docs/standard/base-types/performing-formatting-operations.md)   
- [数値文字列の解析](../../../docs/standard/base-types/parsing-numeric.md)
+## <a name="see-also"></a><span data-ttu-id="6f089-151">関連項目</span><span class="sxs-lookup"><span data-stu-id="6f089-151">See Also</span></span>  
+ [<span data-ttu-id="6f089-152">書式設定操作の実行</span><span class="sxs-lookup"><span data-stu-id="6f089-152">Performing Formatting Operations</span></span>](../../../docs/standard/base-types/performing-formatting-operations.md)  
+ [<span data-ttu-id="6f089-153">数値文字列の解析</span><span class="sxs-lookup"><span data-stu-id="6f089-153">Parsing Numeric Strings</span></span>](../../../docs/standard/base-types/parsing-numeric.md)

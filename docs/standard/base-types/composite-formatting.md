@@ -1,170 +1,176 @@
 ---
-title: "複合書式指定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "複合書式設定"
-  - "書式指定子, 複合書式設定"
-  - "オブジェクト [.NET Framework], 書式設定 (複数のオブジェクトの)"
-  - "パラメーター指定子"
-  - "文字列 [.NET Framework], 配置"
-  - "文字列 [.NET Framework], 複合"
+title: "複合書式指定"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- parameter specifiers
+- strings [.NET Framework], alignment
+- format specifiers, composite formatting
+- strings [.NET Framework], composite
+- composite formatting
+- objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-caps.latest.revision: 36
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 33
+caps.latest.revision: "36"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 1f4b311d6e933f6c653fd7ab189c2e644021970d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 複合書式指定
-.NET Framework の複合書式指定機能は、オブジェクトのリストおよび複合書式指定文字列を入力として使用します。  複合書式指定文字列は、固定テキストに、書式指定項目と呼ばれるインデックス化されたプレースホルダーが混合されて構成されます。このプレースホルダーはリスト内のオブジェクトに対応します。  書式設定操作によって生成される結果の文字列は、元の固定テキストに文字列で表されたリスト内のオブジェクトが混合されて構成されます。  
+# <a name="composite-formatting"></a><span data-ttu-id="5bb50-102">複合書式指定</span><span class="sxs-lookup"><span data-stu-id="5bb50-102">Composite Formatting</span></span>
+<span data-ttu-id="5bb50-103">.NET Framework の複合書式指定機能は、オブジェクトのリストおよび複合書式指定文字列を入力として使用します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-103">The .NET Framework composite formatting feature takes a list of objects and a composite format string as input.</span></span> <span data-ttu-id="5bb50-104">複合書式指定文字列は、固定テキストに、書式指定項目と呼ばれるインデックス化されたプレースホルダーが混合されて構成されます。このプレースホルダーはリスト内のオブジェクトに対応します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-104">A composite format string consists of fixed text intermixed with indexed placeholders, called format items, that correspond to the objects in the list.</span></span> <span data-ttu-id="5bb50-105">書式設定操作によって生成される結果の文字列は、元の固定テキストに文字列で表されたリスト内のオブジェクトが混合されて構成されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-105">The formatting operation yields a result string that consists of the original fixed text intermixed with the string representation of the objects in the list.</span></span>  
   
- 複合書式指定機能をサポートするメソッドには、次のようなものがあります。  
+ <span data-ttu-id="5bb50-106">複合書式指定機能をサポートするメソッドには、次のようなものがあります。</span><span class="sxs-lookup"><span data-stu-id="5bb50-106">The composite formatting feature is supported by methods such as the following:</span></span>  
   
--   <xref:System.String.Format%2A?displayProperty=fullName>。書式設定された結果文字列を返します。  
+-   <span data-ttu-id="5bb50-107"><xref:System.String.Format%2A?displayProperty=nameWithType>。書式設定された結果文字列を返します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-107"><xref:System.String.Format%2A?displayProperty=nameWithType>, which returns a formatted result string.</span></span>  
   
--   <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=fullName>。書式設定された結果文字列を <xref:System.Text.StringBuilder> オブジェクトに追加します。  
+-   <span data-ttu-id="5bb50-108"><xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>。書式設定された結果文字列を <xref:System.Text.StringBuilder> オブジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-108"><xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>, which appends a formatted result string to a <xref:System.Text.StringBuilder> object.</span></span>  
   
--   <xref:System.Console.WriteLine%2A?displayProperty=fullName> メソッドの一部のオーバーロード。書式設定された結果文字列をコンソールに表示します。  
+-   <span data-ttu-id="5bb50-109"><xref:System.Console.WriteLine%2A?displayProperty=nameWithType> メソッドの一部のオーバーロード。書式設定された結果文字列をコンソールに表示します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-109">Some overloads of the <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> method, which display a formatted result string to the console.</span></span>  
   
--   <xref:System.IO.TextWriter.WriteLine%2A?displayProperty=fullName> メソッドの一部のオーバーロード。書式設定された結果文字列をストリームまたはファイルに書き込みます。  <xref:System.IO.TextWriter> から派生したクラス \(<xref:System.IO.StreamWriter>、<xref:System.Web.UI.HtmlTextWriter> など\) も、この機能を共有します。  
+-   <span data-ttu-id="5bb50-110"><xref:System.IO.TextWriter.WriteLine%2A?displayProperty=nameWithType> メソッドの一部のオーバーロード。書式設定された結果文字列をストリームまたはファイルに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-110">Some overloads of the <xref:System.IO.TextWriter.WriteLine%2A?displayProperty=nameWithType> method, which write the formatted result string to a stream or file.</span></span> <span data-ttu-id="5bb50-111"><xref:System.IO.TextWriter> から派生したクラス (<xref:System.IO.StreamWriter>、<xref:System.Web.UI.HtmlTextWriter> など) も、この機能を共有します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-111">The classes derived from <xref:System.IO.TextWriter>, such as <xref:System.IO.StreamWriter> and <xref:System.Web.UI.HtmlTextWriter>, also share this functionality.</span></span>  
   
--   [Debug.WriteLine\(String, Object\<xref:System.Diagnostics.Debug.WriteLine%28System.String%2CSystem.Object%5B%5D%29?displayProperty=fullName>。書式設定されたメッセージをトレース リスナーに出力します。  
+-   <span data-ttu-id="5bb50-112"><xref:System.Diagnostics.Debug.WriteLine%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>。書式設定されたメッセージをトレース リスナーに出力します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-112"><xref:System.Diagnostics.Debug.WriteLine%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, which outputs a formatted message to trace listeners.</span></span>  
   
--   [Trace.TraceError\(String, Object\<xref:System.Diagnostics.Trace.TraceError%28System.String%2CSystem.Object%5B%5D%29?displayProperty=fullName>、[Trace.TraceInformation\(String, Object\<xref:System.Diagnostics.Trace.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=fullName>、および [Trace.TraceWarning\(String, Object\<xref:System.Diagnostics.Trace.TraceWarning%28System.String%2CSystem.Object%5B%5D%29?displayProperty=fullName> メソッド。書式設定されたメッセージをトレース リスナーに出力します。  
+-   <span data-ttu-id="5bb50-113"><xref:System.Diagnostics.Trace.TraceError%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>、<xref:System.Diagnostics.Trace.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>、および <xref:System.Diagnostics.Trace.TraceWarning%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> メソッド。書式設定されたメッセージをトレース リスナーに出力します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-113">The <xref:System.Diagnostics.Trace.TraceError%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, and <xref:System.Diagnostics.Trace.TraceWarning%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> methods, which output formatted messages to trace listeners.</span></span>  
   
--   [TraceSource.TraceInformation\(String, Object\<xref:System.Diagnostics.TraceSource.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=fullName> メソッド。情報提供メソッドをトレース リスナーに書き込みます。  
+-   <span data-ttu-id="5bb50-114"><xref:System.Diagnostics.TraceSource.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> メソッド。情報提供メソッドをトレース リスナーに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-114">The <xref:System.Diagnostics.TraceSource.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> method, which writes an informational method to trace listeners.</span></span>  
   
-## 複合書式指定文字列  
- 複合書式指定文字列とオブジェクト リストは、複合書式指定機能をサポートするメソッドの引数として使用されます。  複合書式指定文字列は、1 つ以上の書式指定項目が混合された 0 個以上の固定テキストで構成されます。  固定テキストはユーザーが任意に選択した文字列で、各書式指定項目はリスト内のオブジェクトまたはボックス化された構造体に対応します。  複合書式指定機能は、各書式指定項目がリスト内の対応するオブジェクトの文字列表現で置換された新しい文字列を返します。  
+## <a name="composite-format-string"></a><span data-ttu-id="5bb50-115">複合書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="5bb50-115">Composite Format String</span></span>  
+ <span data-ttu-id="5bb50-116">複合書式指定文字列とオブジェクト リストは、複合書式指定機能をサポートするメソッドの引数として使用されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-116">A composite format string and object list are used as arguments of methods that support the composite formatting feature.</span></span> <span data-ttu-id="5bb50-117">複合書式指定文字列は、1 つ以上の書式指定項目が混合された 0 個以上の固定テキストで構成されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-117">A composite format string consists of zero or more runs of fixed text intermixed with one or more format items.</span></span> <span data-ttu-id="5bb50-118">固定テキストはユーザーが任意に選択した文字列で、各書式指定項目はリスト内のオブジェクトまたはボックス化された構造体に対応します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-118">The fixed text is any string that you choose, and each format item corresponds to an object or boxed structure in the list.</span></span> <span data-ttu-id="5bb50-119">複合書式指定機能は、各書式指定項目がリスト内の対応するオブジェクトの文字列表現で置換された新しい文字列を返します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-119">The composite formatting feature returns a new result string where each format item is replaced by the string representation of the corresponding object in the list.</span></span>  
   
- 次の <xref:System.String.Format%2A> コードがあるとします。  
+ <span data-ttu-id="5bb50-120">次の <xref:System.String.Format%2A> コードがあるとします。</span><span class="sxs-lookup"><span data-stu-id="5bb50-120">Consider the following <xref:System.String.Format%2A> code fragment.</span></span>  
   
  [!code-csharp[Formatting.Composite#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#1)]
  [!code-vb[Formatting.Composite#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#1)]  
   
- 固定テキストは、"`Name =` " および "`, hours =` " です。  書式指定項目の 1 つは、インデックスが 0 である "`{0}`" であり、オブジェクト  `myName` に対応します。もう 1 つはインデックスが 1 である "`{1:hh}`" であり、オブジェクト  `DateTime.Now` に対応します。  
+ <span data-ttu-id="5bb50-121">固定テキストは、"`Name =` " および "`, hours =` " です。</span><span class="sxs-lookup"><span data-stu-id="5bb50-121">The fixed text is "`Name =` " and "`, hours =` ".</span></span> <span data-ttu-id="5bb50-122">書式指定項目の 1 つは、インデックスが 0 である "`{0}`" であり、オブジェクト `name` に対応します。もう 1 つはインデックスが 1 である "`{1:hh}`" であり、オブジェクト `DateTime.Now` に対応します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-122">The format items are "`{0}`", whose index is 0, which corresponds to the object `name`, and "`{1:hh}`", whose index is 1, which corresponds to the object `DateTime.Now`.</span></span>  
   
-## 書式指定項目の構文  
- 各書式指定項目は、次の形式を使用し、次のコンポーネントで構成されます。  
+## <a name="format-item-syntax"></a><span data-ttu-id="5bb50-123">書式指定項目の構文</span><span class="sxs-lookup"><span data-stu-id="5bb50-123">Format Item Syntax</span></span>  
+ <span data-ttu-id="5bb50-124">各書式指定項目は、次の形式を使用し、次のコンポーネントで構成されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-124">Each format item takes the following form and consists of the following components:</span></span>  
   
- `{` *index*\[`,`*alignment*\]\[`:`*formatString*\]`}`  
+ <span data-ttu-id="5bb50-125">`{` *index*[`,`*alignment*][`:`*formatString*]`}`</span><span class="sxs-lookup"><span data-stu-id="5bb50-125">`{` *index*[`,`*alignment*][`:`*formatString*]`}`</span></span>  
   
- 対になった中かっこ \("{" と "}"\) が必要です。  
+ <span data-ttu-id="5bb50-126">対になった中かっこ ("{" と "}") が必要です。</span><span class="sxs-lookup"><span data-stu-id="5bb50-126">The matching braces ("{" and "}") are required.</span></span>  
   
-### Index コンポーネント  
- 必須の *index* コンポーネントは、パラメーター指定子とも呼ばれ、オブジェクトのリスト内で対応する項目を識別するための 0 から始まる数値です。  つまり、パラメーター指定子が 0 である書式指定項目はリスト内の最初のオブジェクトを書式設定し、パラメーター指定子が 1 である書式指定項目はリスト内の 2 番目のオブジェクトを書式設定します。  次の例には、10 未満の素数を表す 5 つのパラメーター指定子が含まれています。  
+### <a name="index-component"></a><span data-ttu-id="5bb50-127">Index コンポーネント</span><span class="sxs-lookup"><span data-stu-id="5bb50-127">Index Component</span></span>  
+ <span data-ttu-id="5bb50-128">必須の *index* コンポーネントは、パラメーター指定子とも呼ばれ、オブジェクトのリスト内で対応する項目を識別するための 0 から始まる数値です。</span><span class="sxs-lookup"><span data-stu-id="5bb50-128">The mandatory *index* component, also called a parameter specifier, is a number starting from 0 that identifies a corresponding item in the list of objects.</span></span> <span data-ttu-id="5bb50-129">つまり、パラメーター指定子が 0 である書式指定項目はリスト内の最初のオブジェクトを書式設定し、パラメーター指定子が 1 である書式指定項目はリスト内の 2 番目のオブジェクトを書式設定します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-129">That is, the format item whose parameter specifier is 0 formats the first object in the list, the format item whose parameter specifier is 1 formats the second object in the list, and so on.</span></span> <span data-ttu-id="5bb50-130">次の例には、10 未満の素数を表す 4 つのパラメーター指定子 (0 ～ 3 の番号が付けられている) が含まれています。</span><span class="sxs-lookup"><span data-stu-id="5bb50-130">The following example includes four parameter specifiers, numbered zero through three,  to represent prime numbers less than ten:</span></span>  
   
  [!code-csharp[Formatting.Composite#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#7)]
  [!code-vb[Formatting.Composite#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#7)]  
   
- 同じパラメーター指定子を指定することによって、複数の書式指定項目でオブジェクトのリスト内の同じ要素を参照できます。  たとえば、複合書式指定文字列で "0x{0:X} {0:E} {0:N}" のように指定することによって、1 つの数値を 16 進形式、指数形式、および数値形式で書式設定できます。以下に例を示します。  
+ <span data-ttu-id="5bb50-131">同じパラメーター指定子を指定することによって、複数の書式指定項目でオブジェクトのリスト内の同じ要素を参照できます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-131">Multiple format items can refer to the same element in the list of objects by specifying the same parameter specifier.</span></span> <span data-ttu-id="5bb50-132">たとえば、複合書式指定文字列で "0x{0:X} {0:E} {0:N}" のように指定することによって、1 つの数値を 16 進形式、指数形式、および数値形式で書式設定できます。以下に例を示します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-132">For example, you can format the same numeric value in hexadecimal, scientific, and number format by specifying a composite format string such as : "0x{0:X} {0:E} {0:N}", as the following example shows.</span></span>  
   
  [!code-csharp[Formatting.Composite#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#10)]
  [!code-vb[Formatting.Composite#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#10)]  
   
- 各書式指定項目は、リスト内のどのオブジェクトでも参照できます。  たとえば、3 つのオブジェクトが存在する場合、2 番目、1 番目、3 番目のオブジェクトを書式設定するには、"{1} {0} {2}" のような複合書式指定文字列を指定します。  書式指定項目で参照されないオブジェクトは無視されます。  パラメーター指定子がオブジェクトのリストの範囲外の項目を指定する場合は、ランタイムに <xref:System.FormatException> がスローされます。  
+ <span data-ttu-id="5bb50-133">各書式指定項目は、リスト内のどのオブジェクトでも参照できます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-133">Each format item can refer to any object in the list.</span></span> <span data-ttu-id="5bb50-134">たとえば、3 つのオブジェクトが存在する場合、2 番目、1 番目、3 番目のオブジェクトを書式設定するには、"{1} {0} {2}" のような複合書式指定文字列を指定します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-134">For example, if there are three objects, you can format the second, first, and third object by specifying a composite format string like this: "{1} {0} {2}".</span></span> <span data-ttu-id="5bb50-135">書式指定項目で参照されないオブジェクトは無視されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-135">An object that is not referenced by a format item is ignored.</span></span> <span data-ttu-id="5bb50-136">パラメーター指定子がオブジェクトのリストの範囲外の項目を指定する場合は、ランタイムに <xref:System.FormatException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-136">A <xref:System.FormatException> is thrown at runtime if a parameter specifier designates an item outside the bounds of the list of objects.</span></span>  
   
-### Alignment コンポーネント  
- 省略可能な *alignment* コンポーネントは、書式設定フィールドの幅を指定する符号付き整数です。  *alignment* の値が書式設定する文字列の長さよりも小さい場合、*alignment* は無視され、書式設定する文字列の長さがフィールドの幅として使用されます。  フィールド内の書式設定されたデータは、*alignment* が正の場合は右揃え、*alignment* が負の場合は左揃えされます。  埋め込みが必要な場合は、空白が使用されます。  *alignment* を指定する場合は、コンマが必要です。  
+### <a name="alignment-component"></a><span data-ttu-id="5bb50-137">Alignment コンポーネント</span><span class="sxs-lookup"><span data-stu-id="5bb50-137">Alignment Component</span></span>  
+ <span data-ttu-id="5bb50-138">省略可能な *alignment* コンポーネントは、書式設定フィールドの幅を指定する符号付き整数です。</span><span class="sxs-lookup"><span data-stu-id="5bb50-138">The optional *alignment* component is a signed integer indicating the preferred formatted field width.</span></span> <span data-ttu-id="5bb50-139">*alignment* の値が書式設定する文字列の長さよりも小さい場合、*alignment* は無視され、書式設定する文字列の長さがフィールドの幅として使用されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-139">If the value of *alignment* is less than the length of the formatted string, *alignment* is ignored and the length of the formatted string is used as the field width.</span></span> <span data-ttu-id="5bb50-140">フィールド内の書式設定されたデータは、*alignment* が正の場合は右揃え、*alignment* が負の場合は左揃えされます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-140">The formatted data in the field is right-aligned if *alignment* is positive and left-aligned if *alignment* is negative.</span></span> <span data-ttu-id="5bb50-141">埋め込みが必要な場合は、空白が使用されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-141">If padding is necessary, white space is used.</span></span> <span data-ttu-id="5bb50-142">*alignment* を指定する場合は、コンマが必要です。</span><span class="sxs-lookup"><span data-stu-id="5bb50-142">The comma is required if *alignment*  is specified.</span></span>  
   
- 次の例では、2 つの配列を定義します。1 つの配列には従業員の名前が含まれていて、もう 1 つの配列には従業員が 2 週間にわたって作業した時間数が含まれています。  複合書式指定文字列では、名前が 20 文字のフィールドに左揃えに指定され、時間数が 5 文字のフィールドに右揃えに指定されます。  "N1" 標準書式指定文字列も、時間を 1 桁の小数部で書式設定するために使用されることに注意してください。  
+ <span data-ttu-id="5bb50-143">次の例では、2 つの配列を定義します。1 つの配列には従業員の名前が含まれていて、もう 1 つの配列には従業員が 2 週間にわたって作業した時間数が含まれています。</span><span class="sxs-lookup"><span data-stu-id="5bb50-143">The following example defines two arrays, one containing the names of employees and the other containing the hours they worked over a two-week period.</span></span> <span data-ttu-id="5bb50-144">複合書式指定文字列では、名前が 20 文字のフィールドに左揃えに指定され、時間数が 5 文字のフィールドに右揃えに指定されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-144">The composite format string left-aligns the names in a 20-character field, and right-aligns their hours in a 5-character field.</span></span> <span data-ttu-id="5bb50-145">"N1" 標準書式指定文字列も、時間を 1 桁の小数部で書式設定するために使用されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="5bb50-145">Note that the "N1" standard format string is also used to format the hours with one fractional digit.</span></span>  
   
  [!code-csharp[Formatting.Composite#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/alignment1.cs#8)]
  [!code-vb[Formatting.Composite#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/alignment1.vb#8)]  
   
-### Format String コンポーネント  
- オプションの *formatString* コンポーネントは、書式設定されるオブジェクトの種類に適した書式指定文字列です。  対応するオブジェクトが数値の場合は標準またはカスタムの数値書式指定文字列を指定し、対応するオブジェクトが <xref:System.DateTime> オブジェクトの場合は標準またはカスタムの日時書式指定文字列を指定し、対応するオブジェクトが列挙値の場合は[列挙型書式指定文字列](../../../docs/standard/base-types/enumeration-format-strings.md)を指定します。  *formatString* が指定されない場合は、数値、日付と時刻、または列挙型の汎用 \("G"\) 書式指定子が使用されます。  *formatString* を指定する場合はコロンが必要です。  
+### <a name="format-string-component"></a><span data-ttu-id="5bb50-146">Format String コンポーネント</span><span class="sxs-lookup"><span data-stu-id="5bb50-146">Format String Component</span></span>  
+ <span data-ttu-id="5bb50-147">オプションの *formatString* コンポーネントは、書式設定されるオブジェクトの種類に適した書式指定文字列です。</span><span class="sxs-lookup"><span data-stu-id="5bb50-147">The optional *formatString* component is a format string that is appropriate for the type of object being formatted.</span></span> <span data-ttu-id="5bb50-148">標準またはカスタム数値書式指定文字列の対応するオブジェクトが、数値の場合、標準またはカスタムの日付と時刻書式設定文字列場合は、対応するオブジェクトを指定して、<xref:System.DateTime>オブジェクト、または[列挙型書式指定文字列](../../../docs/standard/base-types/enumeration-format-strings.md)、対応するオブジェクトが列挙値の場合。</span><span class="sxs-lookup"><span data-stu-id="5bb50-148">Specify a standard or custom numeric format string if the corresponding object is a numeric value, a standard or custom date and time format string if the corresponding object is a <xref:System.DateTime> object, or an [enumeration format string](../../../docs/standard/base-types/enumeration-format-strings.md) if the corresponding object is an enumeration value.</span></span> <span data-ttu-id="5bb50-149">*formatString* が指定されない場合は、数値、日付と時刻、または列挙型の汎用 ("G") 書式指定子が使用されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-149">If *formatString* is not specified, the general ("G") format specifier for a numeric, date and time, or enumeration type is used.</span></span> <span data-ttu-id="5bb50-150">*formatString* を指定する場合はコロンが必要です。</span><span class="sxs-lookup"><span data-stu-id="5bb50-150">The colon is required if *formatString* is specified.</span></span>  
   
- 次の表は、定義済みの一連の書式指定文字列をサポートする .NET Framework クラス ライブラリ内の型または型のカテゴリの一覧です。サポートされている書式指定文字列が示されているトピックへのリンクも含まれています。  文字列の書式設定とは拡張可能な機構で、既存のすべての型に対する新しい書式指定文字列を定義できるだけでなく、アプリケーション定義の型でサポートされる一連の書式指定文字列も定義できます。  詳しくは、<xref:System.IFormattable> および <xref:System.ICustomFormatter> のインターフェイスに関するトピックを参照してください。  
+ <span data-ttu-id="5bb50-151">次の表は、定義済みの一連の書式指定文字列をサポートする .NET Framework クラス ライブラリ内の型または型のカテゴリの一覧です。サポートされている書式指定文字列が示されているトピックへのリンクも含まれています。</span><span class="sxs-lookup"><span data-stu-id="5bb50-151">The following table lists types or categories of types in the .NET Framework class library that support a predefined set of format strings, and provides links to the topics that list the supported format strings.</span></span> <span data-ttu-id="5bb50-152">文字列の書式設定とは拡張可能な機構で、既存のすべての型に対する新しい書式指定文字列を定義できるだけでなく、アプリケーション定義の型でサポートされる一連の書式指定文字列も定義できます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-152">Note that string formatting is an extensible mechanism that makes it possible to define new format strings for all existing types as well as to define a set of format strings supported by an application-defined type.</span></span> <span data-ttu-id="5bb50-153">詳しくは、<xref:System.IFormattable> および <xref:System.ICustomFormatter> のインターフェイスに関するトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="5bb50-153">For more information, see the <xref:System.IFormattable> and <xref:System.ICustomFormatter> interface topics.</span></span>  
   
-|型または型のカテゴリ|参照トピック|  
-|----------------|------------|  
-|日付と時刻の型 \(<xref:System.DateTime>、<xref:System.DateTimeOffset>\)|[標準の日時書式指定文字列](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [カスタム日時書式指定文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
-|列挙型 \(<xref:System.Enum?displayProperty=fullName> から派生したすべての型\)|[列挙型書式指定文字列](../../../docs/standard/base-types/enumeration-format-strings.md)|  
-|数値型 \(<xref:System.Numerics.BigInteger>、<xref:System.Byte>、<xref:System.Decimal>、<xref:System.Double>、<xref:System.Int16>、<xref:System.Int32>、<xref:System.Int64>、<xref:System.SByte>、<xref:System.Single>、<xref:System.UInt16>、<xref:System.UInt32>、<xref:System.UInt64>\)|[標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [カスタム数値書式指定文字列](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
-|<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=fullName>|  
-|<xref:System.TimeSpan>|[標準の時間間隔書式指定文字列](../../../docs/standard/base-types/standard-timespan-format-strings.md)<br /><br /> [カスタム時間間隔書式指定文字列](../../../docs/standard/base-types/custom-timespan-format-strings.md)|  
+|<span data-ttu-id="5bb50-154">型または型のカテゴリ</span><span class="sxs-lookup"><span data-stu-id="5bb50-154">Type or type category</span></span>|<span data-ttu-id="5bb50-155">参照トピック</span><span class="sxs-lookup"><span data-stu-id="5bb50-155">See</span></span>|  
+|---------------------------|---------|  
+|<span data-ttu-id="5bb50-156">日付と時刻の型 (<xref:System.DateTime>、<xref:System.DateTimeOffset>)</span><span class="sxs-lookup"><span data-stu-id="5bb50-156">Date and time types (<xref:System.DateTime>, <xref:System.DateTimeOffset>)</span></span>|[<span data-ttu-id="5bb50-157">Standard Date and Time Format Strings</span><span class="sxs-lookup"><span data-stu-id="5bb50-157">Standard Date and Time Format Strings</span></span>](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [<span data-ttu-id="5bb50-158">Custom Date and Time Format Strings</span><span class="sxs-lookup"><span data-stu-id="5bb50-158">Custom Date and Time Format Strings</span></span>](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
+|<span data-ttu-id="5bb50-159">列挙型 (<xref:System.Enum?displayProperty=nameWithType> から派生したすべての型)</span><span class="sxs-lookup"><span data-stu-id="5bb50-159">Enumeration types (all types derived from <xref:System.Enum?displayProperty=nameWithType>)</span></span>|[<span data-ttu-id="5bb50-160">Enumeration Format Strings</span><span class="sxs-lookup"><span data-stu-id="5bb50-160">Enumeration Format Strings</span></span>](../../../docs/standard/base-types/enumeration-format-strings.md)|  
+|<span data-ttu-id="5bb50-161">数値型 (<xref:System.Numerics.BigInteger>、<xref:System.Byte>、<xref:System.Decimal>、<xref:System.Double>、<xref:System.Int16>、<xref:System.Int32>、<xref:System.Int64>、<xref:System.SByte>、<xref:System.Single>、<xref:System.UInt16>、<xref:System.UInt32>、<xref:System.UInt64>)</span><span class="sxs-lookup"><span data-stu-id="5bb50-161">Numeric types (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)</span></span>|[<span data-ttu-id="5bb50-162">Standard Numeric Format Strings</span><span class="sxs-lookup"><span data-stu-id="5bb50-162">Standard Numeric Format Strings</span></span>](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [<span data-ttu-id="5bb50-163">Custom Numeric Format Strings</span><span class="sxs-lookup"><span data-stu-id="5bb50-163">Custom Numeric Format Strings</span></span>](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
+|<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
+|<xref:System.TimeSpan>|[<span data-ttu-id="5bb50-164">標準の時間間隔書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="5bb50-164">Standard TimeSpan Format Strings</span></span>](../../../docs/standard/base-types/standard-timespan-format-strings.md)<br /><br /> [<span data-ttu-id="5bb50-165">カスタム時間間隔書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="5bb50-165">Custom TimeSpan Format Strings</span></span>](../../../docs/standard/base-types/custom-timespan-format-strings.md)|  
   
-### エスケープ中かっこ \({}\)  
- 左中かっこ \({\) および右中かっこ \(}\) は、書式指定項目の開始および終了として解釈されます。  したがって、左中かっこおよび右中かっこを文字として表示するためには、エスケープ シーケンスを使用する必要があります。  左中かっこを 1 つ \("{"\) 表示するには、左中かっこ 2 つ \("{{"\) を固定テキストに指定します。また、右中かっこを 1 つ \("}"\) 表示するには、右中かっこ 2 つ \("}}"\) を指定します。  書式指定項目に使用されている中かっこは、指定されている順序に従って解釈されます。  入れ子になった中かっこを解釈する機能はサポートされていません。  
+### <a name="escaping-braces"></a><span data-ttu-id="5bb50-166">エスケープ中かっこ ({})</span><span class="sxs-lookup"><span data-stu-id="5bb50-166">Escaping Braces</span></span>  
+ <span data-ttu-id="5bb50-167">左中かっこ ({) および右中かっこ (}) は、書式指定項目の開始および終了として解釈されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-167">Opening and closing braces are interpreted as starting and ending a format item.</span></span> <span data-ttu-id="5bb50-168">したがって、左中かっこおよび右中かっこを文字として表示するためには、エスケープ シーケンスを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5bb50-168">Consequently, you must use an escape sequence to display a literal opening brace or closing brace.</span></span> <span data-ttu-id="5bb50-169">左中かっこを 1 つ ("{") 表示するには、左中かっこ 2 つ ("{{") を固定テキストに指定します。また、右中かっこを 1 つ ("}") 表示するには、右中かっこ 2 つ ("}}") を指定します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-169">Specify two opening braces ("{{") in the fixed text to display one opening brace ("{"), or two closing braces ("}}") to display one closing brace ("}").</span></span> <span data-ttu-id="5bb50-170">書式指定項目に使用されている中かっこは、指定されている順序に従って解釈されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-170">Braces in a format item are interpreted sequentially in the order they are encountered.</span></span> <span data-ttu-id="5bb50-171">入れ子になった中かっこを解釈する機能はサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="5bb50-171">Interpreting nested braces is not supported.</span></span>  
   
- エスケープされた中かっこの解釈によっては、予測しない結果になる場合があります。  たとえば、"{{{0:D}}}" という書式指定項目について考えます。この書式指定項目は、左中かっこ、10 進数として書式設定された数値、および右中かっこを表示することを意図しています。  しかし、この書式指定項目は、実際には、次のように解釈されます。  
+ <span data-ttu-id="5bb50-172">エスケープされた中かっこの解釈によっては、予測しない結果になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="5bb50-172">The way escaped braces are interpreted can lead to unexpected results.</span></span> <span data-ttu-id="5bb50-173">たとえば、"{{{0:D}}}" という書式指定項目について考えます。この書式指定項目は、左中かっこ、10 進数として書式設定された数値、および右中かっこを表示することを意図しています。</span><span class="sxs-lookup"><span data-stu-id="5bb50-173">For example, consider the format item "{{{0:D}}}", which is intended to display an opening brace, a numeric value formatted as a decimal number, and a closing brace.</span></span> <span data-ttu-id="5bb50-174">しかし、この書式指定項目は、実際には、次のように解釈されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-174">However, the format item is actually interpreted in the following manner:</span></span>  
   
-1.  最初の 2 つの左中かっこ \("{{"\) がエスケープされ、左中かっこ 1 つが作成されます。  
+1.  <span data-ttu-id="5bb50-175">最初の 2 つの左中かっこ ("{{") がエスケープされ、左中かっこ 1 つが作成されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-175">The first two opening braces ("{{") are escaped and yield one opening brace.</span></span>  
   
-2.  次の 3 文字 \("{0:"\) は、書式指定項目の開始として解釈されます。  
+2.  <span data-ttu-id="5bb50-176">次の 3 文字 ("{0:") は、書式指定項目の開始として解釈されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-176">The next three characters ("{0:") are interpreted as the start of a format item.</span></span>  
   
-3.  次の文字 \("D"\) は、Decimal 標準数値書式指定子として解釈できますが、エスケープされた次の 2 つの右中かっこ \("}}"\) からは単一の中かっこが作成されます。  結果として作成される文字列 \("D}"\) は、標準数値書式指定子ではないため、リテラル文字列 "D}" の表示を意味するカスタム書式指定文字列として解釈されます。  
+3.  <span data-ttu-id="5bb50-177">次の文字 ("D") は、Decimal 標準数値書式指定子として解釈できますが、エスケープされた次の 2 つの右中かっこ ("}}") からは単一の中かっこが作成されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-177">The next character ("D") would be interpreted as the Decimal standard numeric format specifier, but the next two escaped braces ("}}") yield a single brace.</span></span> <span data-ttu-id="5bb50-178">結果として作成される文字列 ("D}") は、標準数値書式指定子ではないため、リテラル文字列 "D}" の表示を意味するカスタム書式指定文字列として解釈されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-178">Because the resulting string ("D}") is not a standard numeric format specifier, the resulting string is interpreted as a custom format string that means display the literal string "D}".</span></span>  
   
-4.  最後の中かっこ \("}"\) は、書式指定項目の終わりとして解釈されます。  
+4.  <span data-ttu-id="5bb50-179">最後の中かっこ ("}") は、書式指定項目の終わりとして解釈されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-179">The last brace ("}") is interpreted as the end of the format item.</span></span>  
   
-5.  最終的には、"{D}" というリテラル文字列が表示されます。  書式設定対象だった数値は、表示されません。  
+5.  <span data-ttu-id="5bb50-180">最終的には、"{D}" というリテラル文字列が表示されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-180">The final result that is displayed is the literal string, "{D}".</span></span> <span data-ttu-id="5bb50-181">書式設定対象だった数値は、表示されません。</span><span class="sxs-lookup"><span data-stu-id="5bb50-181">The numeric value that was to be formatted is not displayed.</span></span>  
   
- エスケープした中かっこと書式指定項目とが誤って解釈されないコードを記述するためには、中かっこと書式指定項目を別々に書式設定するという方法があります。  つまり、最初の書式設定操作でリテラルの開く中かっこを表示し、次の書式設定操作で書式指定項目の結果を表示し、最後の操作でリテラルの閉じる中かっこを表示します。  このアプローチの例を次に示します。  
+ <span data-ttu-id="5bb50-182">エスケープした中かっこと書式指定項目とが誤って解釈されないコードを記述するためには、中かっこと書式指定項目を別々に書式設定するという方法があります。</span><span class="sxs-lookup"><span data-stu-id="5bb50-182">One way to write your code to avoid misinterpreting escaped braces and format items is to format the braces and format item separately.</span></span> <span data-ttu-id="5bb50-183">つまり、最初の書式設定操作でリテラルの開く中かっこを表示し、次の書式設定操作で書式指定項目の結果を表示し、最後の操作でリテラルの閉じる中かっこを表示します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-183">That is, in the first format operation display a literal opening brace, in the next operation display the result of the format item, then in the final operation display a literal closing brace.</span></span> <span data-ttu-id="5bb50-184">このアプローチの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-184">The following example illustrates this approach.</span></span>  
   
  [!code-csharp[Formatting.Composite#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Escaping1.cs#2)]
  [!code-vb[Formatting.Composite#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Escaping1.vb#2)]  
   
-### 処理の順序  
- 複合書式指定メソッドの呼び出しに、値が <xref:System.IFormatProvider> でない `null` 引数が含まれている場合、ランタイムはその <xref:System.IFormatProvider.GetFormat%2A?displayProperty=fullName> メソッドを呼び出して、<xref:System.ICustomFormatter> 実装を要求します。  このメソッドが <xref:System.ICustomFormatter> 実装を返すことができる場合、実装は後で使用できるようにキャッシュされます。  
+### <a name="processing-order"></a><span data-ttu-id="5bb50-185">処理の順序</span><span class="sxs-lookup"><span data-stu-id="5bb50-185">Processing Order</span></span>  
+ <span data-ttu-id="5bb50-186">複合書式指定メソッドの呼び出しに、値が <xref:System.IFormatProvider> でない `null` 引数が含まれている場合、ランタイムはその <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> メソッドを呼び出して、<xref:System.ICustomFormatter> 実装を要求します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-186">If the call to the composite formatting method includes an <xref:System.IFormatProvider> argument whose value is not `null`, the runtime calls its <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> method to request an <xref:System.ICustomFormatter> implementation.</span></span> <span data-ttu-id="5bb50-187">このメソッドが <xref:System.ICustomFormatter> 実装を返すことができる場合、実装は後で使用できるようにキャッシュされます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-187">If the method is able to return an <xref:System.ICustomFormatter> implementation, it is cached for later use.</span></span>  
   
- 書式指定項目に対応するパラメーター リストのそれぞれの値は、次の手順を実行することで文字列に変換されます。  最初の 3 つの手順の条件のいずれかに該当する場合は、その手順で値の文字列形式が返され、後続の手順は実行されません。  
+ <span data-ttu-id="5bb50-188">書式指定項目に対応するパラメーター リストのそれぞれの値は、次の手順を実行することで文字列に変換されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-188">Each value in the parameter list that corresponds to a format item is converted to a string by performing the following steps.</span></span> <span data-ttu-id="5bb50-189">最初の 3 つの手順の条件のいずれかに該当する場合は、その手順で値の文字列形式が返され、後続の手順は実行されません。</span><span class="sxs-lookup"><span data-stu-id="5bb50-189">If any condition in the first three steps is true, the string representation of the value is returned in that step, and subsequent steps are not executed.</span></span>  
   
-1.  書式設定する値が `null` の場合は、空の文字列 \(""\) が返されます。  
+1.  <span data-ttu-id="5bb50-190">書式設定する値が `null` の場合は、空の文字列 ("") が返されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-190">If the value to be formatted is `null`, an empty string ("") is returned.</span></span>  
   
-2.  <xref:System.ICustomFormatter> 実装が利用できる場合、ランタイムはその <xref:System.ICustomFormatter.Format%2A> メソッドを呼び出します。  メソッドには書式指定項目の *formatString* 値 \(ある場合\) または `null` \(ない場合\) と、<xref:System.IFormatProvider> 実装が渡されます。  
+2.  <span data-ttu-id="5bb50-191"><xref:System.ICustomFormatter> 実装が利用できる場合、ランタイムはその <xref:System.ICustomFormatter.Format%2A> メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-191">If an <xref:System.ICustomFormatter> implementation is available, the runtime calls its <xref:System.ICustomFormatter.Format%2A> method.</span></span> <span data-ttu-id="5bb50-192">書式項目のメソッドに渡します*formatString*値のいずれかが存在する場合または`null`がない場合は、と共に、<xref:System.IFormatProvider>実装します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-192">It passes the method the format item's *formatString* value, if one is present, or `null` if it is not, along with the <xref:System.IFormatProvider> implementation.</span></span>  
   
-3.  値が <xref:System.IFormattable> インターフェイスを実装している場合は、インターフェイスの <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> メソッドが呼び出されます。  メソッドは、*formatString* 値 \(書式指定項目内に値がある場合\) または `null` \(ない場合\) を受け取ります。  <xref:System.IFormatProvider> 引数は、次のように判断されます。  
+3.  <span data-ttu-id="5bb50-193">値が <xref:System.IFormattable> インターフェイスを実装している場合は、インターフェイスの <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-193">If the value implements the <xref:System.IFormattable> interface, the interface's <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> method is called.</span></span> <span data-ttu-id="5bb50-194">メソッドは、*formatString* 値 (書式指定項目内に値がある場合) または `null` (ない場合) を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="5bb50-194">The method is passed the *formatString* value, if one is present in the format item, or `null` if it is not.</span></span> <span data-ttu-id="5bb50-195"><xref:System.IFormatProvider> 引数は、次のように判断されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-195">The <xref:System.IFormatProvider> argument is determined as follows:</span></span>  
   
-    -   数値の場合、null 以外の <xref:System.IFormatProvider> 引数を持つ複合書式指定メソッドが呼び出されると、ランタイムは <xref:System.Globalization.NumberFormatInfo> メソッドから <xref:System.IFormatProvider.GetFormat%2A?displayProperty=fullName> オブジェクトを要求します。  オブジェクトを 1 つも取得できないか、引数の値が `null` であるか、または複合書式指定メソッドに <xref:System.IFormatProvider> パラメーターがない場合は、現在のスレッド カルチャの <xref:System.Globalization.NumberFormatInfo> オブジェクトが使用されます。  
+    -   <span data-ttu-id="5bb50-196">数値の場合、null 以外の <xref:System.IFormatProvider> 引数を持つ複合書式指定メソッドが呼び出されると、ランタイムは <xref:System.Globalization.NumberFormatInfo> メソッドから <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> オブジェクトを要求します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-196">For a numeric value, if a composite formatting method with a non-null <xref:System.IFormatProvider> argument is called, the runtime requests a <xref:System.Globalization.NumberFormatInfo> object from its <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="5bb50-197">オブジェクトを 1 つも取得できないか、引数の値が `null` であるか、または複合書式指定メソッドに <xref:System.IFormatProvider> パラメーターがない場合は、現在のスレッド カルチャの <xref:System.Globalization.NumberFormatInfo> オブジェクトが使用されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-197">If it is unable to supply one, if the value of the argument is `null`, or if the composite formatting method does not have an <xref:System.IFormatProvider> parameter, the <xref:System.Globalization.NumberFormatInfo> object for the current thread culture is used.</span></span>  
   
-    -   日付と時刻の値の場合、null 以外の <xref:System.IFormatProvider> 引数を持つ複合書式指定メソッドが呼び出されると、ランタイムは <xref:System.Globalization.DateTimeFormatInfo> メソッドから <xref:System.IFormatProvider.GetFormat%2A?displayProperty=fullName> オブジェクトを要求します。  オブジェクトを 1 つも取得できないか、引数の値が `null` であるか、または複合書式指定メソッドに <xref:System.IFormatProvider> パラメーターがない場合は、現在のスレッド カルチャの <xref:System.Globalization.DateTimeFormatInfo> オブジェクトが使用されます。  
+    -   <span data-ttu-id="5bb50-198">日付と時刻の値の場合、null 以外の <xref:System.IFormatProvider> 引数を持つ複合書式指定メソッドが呼び出されると、ランタイムは <xref:System.Globalization.DateTimeFormatInfo> メソッドから <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> オブジェクトを要求します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-198">For a date and time value, if a composite formatting method with a non-null <xref:System.IFormatProvider> argument is called, the runtime requests a <xref:System.Globalization.DateTimeFormatInfo> object from its <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="5bb50-199">オブジェクトを 1 つも取得できないか、引数の値が `null` であるか、または複合書式指定メソッドに <xref:System.IFormatProvider> パラメーターがない場合は、現在のスレッド カルチャの <xref:System.Globalization.DateTimeFormatInfo> オブジェクトが使用されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-199">If it is unable to supply one, if the value of the argument is `null`, or if the composite formatting method does not have an <xref:System.IFormatProvider> parameter, the <xref:System.Globalization.DateTimeFormatInfo> object for the current thread culture is used.</span></span>  
   
-    -   他の型のオブジェクトの場合、<xref:System.IFormatProvider> 引数を持つ複合書式指定が呼び出されると、その値 \(`null` オブジェクトが指定されない場合の <xref:System.IFormatProvider> を含む\) は <xref:System.IFormattable.ToString%2A?displayProperty=fullName> 実装に直接渡されます。  それ以外の場合は、現在のスレッド カルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトが <xref:System.IFormattable.ToString%2A?displayProperty=fullName> 実装に渡されます。  
+    -   <span data-ttu-id="5bb50-200">他の型のオブジェクトの場合、<xref:System.IFormatProvider> 引数を持つ複合書式指定が呼び出されると、その値 (`null` オブジェクトが指定されない場合の <xref:System.IFormatProvider> を含む) は <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> 実装に直接渡されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-200">For objects of other types, if a composite formatting is called with an <xref:System.IFormatProvider> argument, its value (including a `null`, if no <xref:System.IFormatProvider> object is supplied) is passed directly to the <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementation.</span></span>  <span data-ttu-id="5bb50-201">それ以外の場合は、現在のスレッド カルチャを表す <xref:System.Globalization.CultureInfo> オブジェクトが <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> 実装に渡されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-201">Otherwise, a <xref:System.Globalization.CultureInfo> object that represents the current thread culture is passed to the <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementation.</span></span>  
   
-4.  `ToString` をオーバーライドするか、基底クラスの動作を継承する、型のパラメーターなしの <xref:System.Object.ToString?displayProperty=fullName> メソッドが呼び出されます。  この場合、書式指定項目の *formatString* コンポーネントで指定されている書式指定文字列は、存在していても無視されます。  
+4.  <span data-ttu-id="5bb50-202">`ToString` をオーバーライドするか、基底クラスの動作を継承する、型のパラメーターなしの <xref:System.Object.ToString?displayProperty=nameWithType> メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-202">The type's parameterless `ToString` method, which either overrides <xref:System.Object.ToString?displayProperty=nameWithType> or inherits the behavior of its base class, is called.</span></span> <span data-ttu-id="5bb50-203">この場合、書式指定項目の *formatString* コンポーネントで指定されている書式指定文字列は、存在していても無視されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-203">In this case, the format string specified by the *formatString* component in the format item, if it is present, is ignored.</span></span>  
   
- 前の手順が実行された後、アラインメントが適用されます。  
+ <span data-ttu-id="5bb50-204">前の手順が実行された後、アラインメントが適用されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-204">Alignment is applied after the preceding steps have been performed.</span></span>  
   
-## コード例  
- 複合書式指定を使用して文字列を作成する方法と、オブジェクトの `ToString` メソッドを使用して文字列を作成する方法を示すコード例を次に示します。  この 2 つの書式設定方法では、等価の文字列が作成されます。  
+## <a name="code-examples"></a><span data-ttu-id="5bb50-205">コード例</span><span class="sxs-lookup"><span data-stu-id="5bb50-205">Code Examples</span></span>  
+ <span data-ttu-id="5bb50-206">複合書式指定を使用して文字列を作成する方法と、オブジェクトの `ToString` メソッドを使用して文字列を作成する方法を示すコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-206">The following example shows one string created using composite formatting and another created using an object's `ToString` method.</span></span> <span data-ttu-id="5bb50-207">この 2 つの書式設定方法では、等価の文字列が作成されます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-207">Both types of formatting produce equivalent results.</span></span>  
   
  [!code-csharp[Formatting.Composite#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#3)]
  [!code-vb[Formatting.Composite#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#3)]  
   
- 現在の曜日が木曜日であり、月が 5 月であり、現在のカルチャが英語 \(U.S.\) の場合、上記のコード例で作成される 2 つの文字列の値はどちらも `Thursday May` です。  
+ <span data-ttu-id="5bb50-208">現在の曜日が木曜日であり、月が 5 月であり、現在のカルチャが英語 (U.S.) の場合、上記のコード例で作成される 2 つの文字列の値はどちらも `Thursday May`です。</span><span class="sxs-lookup"><span data-stu-id="5bb50-208">Assuming that the current day is a Thursday in May, the value of both strings in the preceding example is `Thursday May` in the U.S. English culture.</span></span>  
   
- <xref:System.Console.WriteLine%2A?displayProperty=fullName> は、<xref:System.String.Format%2A?displayProperty=fullName> と同じ機能を公開します。  これら 2 つのメソッドの唯一の違いは、<xref:System.String.Format%2A?displayProperty=fullName> が結果を文字列で返すのに対し、<xref:System.Console.WriteLine%2A?displayProperty=fullName> は、<xref:System.Console> オブジェクトに関連付けられた出力ストリームに結果を書き出す点です。  <xref:System.Console.WriteLine%2A?displayProperty=fullName> メソッドを使用して値 `MyInt` を通貨値として書式設定するコード例を次に示します。  
+ <span data-ttu-id="5bb50-209"><xref:System.Console.WriteLine%2A?displayProperty=nameWithType> は、<xref:System.String.Format%2A?displayProperty=nameWithType> と同じ機能を公開します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-209"><xref:System.Console.WriteLine%2A?displayProperty=nameWithType> exposes the same functionality as <xref:System.String.Format%2A?displayProperty=nameWithType>.</span></span> <span data-ttu-id="5bb50-210">これら 2 つのメソッドの唯一の違いは、<xref:System.String.Format%2A?displayProperty=nameWithType> が結果を文字列で返すのに対し、<xref:System.Console.WriteLine%2A?displayProperty=nameWithType> は、<xref:System.Console> オブジェクトに関連付けられた出力ストリームに結果を書き出す点です。</span><span class="sxs-lookup"><span data-stu-id="5bb50-210">The only difference between the two methods is that <xref:System.String.Format%2A?displayProperty=nameWithType> returns its result as a string, while <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> writes the result to the output stream associated with the <xref:System.Console> object.</span></span> <span data-ttu-id="5bb50-211"><xref:System.Console.WriteLine%2A?displayProperty=nameWithType> メソッドを使用して値 `MyInt` を通貨値として書式設定するコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-211">The following example uses the <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> method to format the value of `MyInt` to a currency value.</span></span>  
   
  [!code-csharp[Formatting.Composite#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#4)]
  [!code-vb[Formatting.Composite#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#4)]  
   
- 1 つのオブジェクトを 2 つの方法で書式設定する例を含め、複数のオブジェクトを書式設定する例を次に示します。  
+ <span data-ttu-id="5bb50-212">1 つのオブジェクトを 2 つの方法で書式設定する例を含め、複数のオブジェクトを書式設定する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-212">The following example demonstrates formatting multiple objects, including formatting one object two different ways.</span></span>  
   
  [!code-csharp[Formatting.Composite#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#5)]
  [!code-vb[Formatting.Composite#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#5)]  
   
- 書式設定でアラインメントを使用する方法を示す例を次に示します。  アラインメント結果を強調表示するため、書式が設定される引数を縦棒 \(&#124;\) で囲んでいます。  
+ <span data-ttu-id="5bb50-213">書式設定でアラインメントを使用する方法を示す例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="5bb50-213">The following example demonstrates the use of alignment in formatting.</span></span> <span data-ttu-id="5bb50-214">アラインメント結果を強調表示するため、書式が設定される引数を縦棒 (&#124;) で囲んでいます。</span><span class="sxs-lookup"><span data-stu-id="5bb50-214">The arguments that are formatted are placed between vertical bar characters (&#124;) to highlight the resulting alignment.</span></span>  
   
  [!code-csharp[Formatting.Composite#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#6)]
  [!code-vb[Formatting.Composite#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#6)]  
   
-## 参照  
- <xref:System.Console.WriteLine%2A>   
- <xref:System.String.Format%2A?displayProperty=fullName>   
- [型の書式設定](../../../docs/standard/base-types/formatting-types.md)   
- [標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)   
- [カスタム数値書式指定文字列](../../../docs/standard/base-types/custom-numeric-format-strings.md)   
- [標準の日時書式指定文字列](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)   
- [カスタム日時書式指定文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)   
- [標準の時間間隔書式指定文字列](../../../docs/standard/base-types/standard-timespan-format-strings.md)   
- [カスタム時間間隔書式指定文字列](../../../docs/standard/base-types/custom-timespan-format-strings.md)   
- [列挙型書式指定文字列](../../../docs/standard/base-types/enumeration-format-strings.md)
+## <a name="see-also"></a><span data-ttu-id="5bb50-215">関連項目</span><span class="sxs-lookup"><span data-stu-id="5bb50-215">See Also</span></span>  
+ <xref:System.Console.WriteLine%2A>  
+ <xref:System.String.Format%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="5bb50-216">型の書式設定</span><span class="sxs-lookup"><span data-stu-id="5bb50-216">Formatting Types</span></span>](../../../docs/standard/base-types/formatting-types.md)  
+ [<span data-ttu-id="5bb50-217">標準の数値書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="5bb50-217">Standard Numeric Format Strings</span></span>](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
+ [<span data-ttu-id="5bb50-218">カスタム数値書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="5bb50-218">Custom Numeric Format Strings</span></span>](../../../docs/standard/base-types/custom-numeric-format-strings.md)  
+ [<span data-ttu-id="5bb50-219">標準の日時書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="5bb50-219">Standard Date and Time Format Strings</span></span>](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
+ [<span data-ttu-id="5bb50-220">カスタム日時書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="5bb50-220">Custom Date and Time Format Strings</span></span>](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)  
+ [<span data-ttu-id="5bb50-221">標準の時間間隔書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="5bb50-221">Standard TimeSpan Format Strings</span></span>](../../../docs/standard/base-types/standard-timespan-format-strings.md)  
+ [<span data-ttu-id="5bb50-222">カスタム時間間隔書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="5bb50-222">Custom TimeSpan Format Strings</span></span>](../../../docs/standard/base-types/custom-timespan-format-strings.md)  
+ [<span data-ttu-id="5bb50-223">Enumeration Format Strings</span><span class="sxs-lookup"><span data-stu-id="5bb50-223">Enumeration Format Strings</span></span>](../../../docs/standard/base-types/enumeration-format-strings.md)

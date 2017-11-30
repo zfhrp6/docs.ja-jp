@@ -1,60 +1,58 @@
 ---
-title: "XML とリレーショナル データおよび ADO.NET との統合 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "XML とリレーショナル データおよび ADO.NET との統合"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f6ebb1a1-f2ca-49b9-92c9-0150940cf6e6
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 5d03a0ca7518b06c08d98967d7c5ae864f1c04ac
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# XML とリレーショナル データおよび ADO.NET との統合
-**XmlDocument** の派生クラスである **XmlDataDocument** クラスには XML データが格納されます。  **XmlDataDocument** の利点は、リレーショナル データと階層データとを仲介できることです。  **DataSet** に連結できるのは **XmlDocument** であり、どちらのクラスも、それぞれが格納しているデータが変更されたときに、変更内容の同期をとることができます。  **DataSet** に連結した **XmlDocument** では XML をリレーショナル データと統合できるため、データ表現は XML でもリレーショナル形式でもかまいません。  両方の処理ができ、一方のデータ表現だけに制限されることもありません。  
+# <a name="xml-integration-with-relational-data-and-adonet"></a><span data-ttu-id="e382a-102">XML とリレーショナル データおよび ADO.NET との統合</span><span class="sxs-lookup"><span data-stu-id="e382a-102">XML Integration with Relational Data and ADO.NET</span></span>
+<span data-ttu-id="e382a-103">**XmlDataDocument**クラスは、派生クラスの**XmlDocument**、XML データが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e382a-103">The **XmlDataDocument** class is a derived class of the **XmlDocument**, and contains XML data.</span></span> <span data-ttu-id="e382a-104">利点、 **XmlDataDocument**リレーショナル データと階層データ間のブリッジを提供できることです。</span><span class="sxs-lookup"><span data-stu-id="e382a-104">The advantage of the **XmlDataDocument** is that it provides a bridge between relational and hierarchical data.</span></span> <span data-ttu-id="e382a-105">**XmlDocument**に連結できる、**データセット**2 つのクラスに含まれるデータに加えられた変更を同期できるは、両方のクラスとします。</span><span class="sxs-lookup"><span data-stu-id="e382a-105">It is an **XmlDocument** that can be bound to a **DataSet** and both classes can synchronize changes made to data contained in the two classes.</span></span> <span data-ttu-id="e382a-106">**XmlDocument**にバインドされている、**データセット**XML とリレーショナル データを統合することができ、データ、XML、またはリレーショナル形式で表現する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="e382a-106">An **XmlDocument** that is bound to a **DataSet** allows XML to integrate with relational data, and you do not have to have your data represented as either XML or in a relational format.</span></span> <span data-ttu-id="e382a-107">両方の処理ができ、一方のデータ表現だけに制限されることもありません。</span><span class="sxs-lookup"><span data-stu-id="e382a-107">You can do both and not be constrained to a single representation of the data.</span></span>  
   
- 2 つの形式でデータが使用できる利点は次のとおりです。  
+ <span data-ttu-id="e382a-108">2 つの形式でデータが使用できる利点は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e382a-108">The benefits of having data available in two views are:</span></span>  
   
--   XML ドキュメントの構造部分はデータセットに対応付けることができ、効率的な格納、インデックス付け、および検索ができる。  
+-   <span data-ttu-id="e382a-109">XML ドキュメントの構造部分はデータセットに対応付けることができ、効率的な格納、インデックス付け、および検索ができる。</span><span class="sxs-lookup"><span data-stu-id="e382a-109">The structured portion of an XML document can be mapped to a dataset, and be efficiently stored, indexed, and searched.</span></span>  
   
--   リレーション形式で格納された XML データに対して、カーソル モデルを使用して、効率的な変換、検証、および移動ができる。  **XmlDocument** モデルに XML が格納されている場合よりも、リレーショナル構造の方が効率的に処理できる場合があります。  
+-   <span data-ttu-id="e382a-110">リレーション形式で格納された XML データに対して、カーソル モデルを使用して、効率的な変換、検証、および移動ができる。</span><span class="sxs-lookup"><span data-stu-id="e382a-110">Transformations, validation, and navigation can be done efficiently through a cursor model over the XML data that is stored relationally.</span></span> <span data-ttu-id="e382a-111">ときに、実行できますより効率的によりに、XML が格納されている場合は、リレーショナル構造、 **XmlDocument**モデル。</span><span class="sxs-lookup"><span data-stu-id="e382a-111">At times, it can be done more efficiently against relational structures than if the XML is stored in an **XmlDocument** model.</span></span>  
   
--   **DataSet** に XML の一部を格納できる。  **XPath** または **XslTransform** を使用して、目的の要素や属性だけを **DataSet** に格納できます。  この場合は、抽出された部分的なデータに対して変更を行い、その変更を **XmlDataDocument** 内のデータに反映させることができます。  
+-   <span data-ttu-id="e382a-112">**データセット**XML の一部を格納することができます。</span><span class="sxs-lookup"><span data-stu-id="e382a-112">The **DataSet** can store a portion of the XML.</span></span> <span data-ttu-id="e382a-113">つまり、使用することができます**XPath**または**XslTransform**に保存する、**データセット**要素や関心のある属性だけです。</span><span class="sxs-lookup"><span data-stu-id="e382a-113">That is, you can use **XPath** or **XslTransform** to store to a **DataSet** only those elements and attributes of interest.</span></span> <span data-ttu-id="e382a-114">そこから、変更できるよう、データのより小さく、フィルター選択されたサブセットにでより大きなデータを反映する変更内容を**XmlDataDocument**です。</span><span class="sxs-lookup"><span data-stu-id="e382a-114">From there, changes can be made to the smaller, filtered subset of data, with the changes propagating to the larger data in the **XmlDataDocument**.</span></span>  
   
- SQL サーバーから **DataSet** に読み込まれたデータを変換することもできます。  また、.NET Framework のクラスの形式で管理されている WinForm および WebForm のコントロールを、XML 入力ストリームからデータを読み込んだ **DataSet** に連結することもできます。  
+ <span data-ttu-id="e382a-115">読み込まれたデータの変換を実行することも、**データセット**SQL Server からです。</span><span class="sxs-lookup"><span data-stu-id="e382a-115">You can also run a transform over data that was loaded into the **DataSet** from SQL Server.</span></span> <span data-ttu-id="e382a-116">別のオプションは、.NET Framework クラスからスタイル マネージ WinForm をバインドして、WebForm のコントロールを**データセット**ですが、XML 入力ストリームから設定します。</span><span class="sxs-lookup"><span data-stu-id="e382a-116">Another option is to bind .NET Framework classes-style-managed WinForm and WebForm controls to a **DataSet** that was populated from an XML input stream.</span></span>  
   
- **XslTransform** のサポートの他に、**XmlDataDocument** は、リレーショナル データに対する **XPath** クエリと検証もサポートします。  基本的には、すべての XML サービスをリレーショナル データで利用でき、コントロールの連結やコード生成などのすべてのリレーショナル機能を XML に基づく構造化データで、XML の厳密性を損なうことなく利用できます。  
+ <span data-ttu-id="e382a-117">サポートするだけでなく**XslTransform**、 **XmlDataDocument**リレーショナル データを公開**XPath**クエリおよび検証します。</span><span class="sxs-lookup"><span data-stu-id="e382a-117">In addition to supporting **XslTransform**, an **XmlDataDocument** exposes relational data to **XPath** queries and validation.</span></span>  <span data-ttu-id="e382a-118">基本的には、すべての XML サービスをリレーショナル データで利用でき、コントロールの連結やコード生成などのすべてのリレーショナル機能を XML に基づく構造化データで、XML の厳密性を損なうことなく利用できます。</span><span class="sxs-lookup"><span data-stu-id="e382a-118">Basically, all XML services are available over relational data, and relational facilities, such as control binding, codegen, and so on, are available over a structured projection of XML without compromising XML fidelity.</span></span>  
   
- **XmlDataDocument** は **XmlDocument** から継承されているため、W3C DOM が実装されています。  **XmlDataDocument** は、**DataSet** に関連付けられており、そのデータの一部を格納していますが、**XmlDocument** として使用する場合に制限や特別な対応が必要になることはありません。  **XmlDocument** を使用しているコードは、**XmlDataDocument** を使用する場合でも、修正せずに動作させることができます。  **DataSet** は、テーブル、列、リレーション、および制約を定義することで、データをリレーショナル形式で提示できる、スタンドアロンかつインメモリのユーザー データ ストアです。  
+ <span data-ttu-id="e382a-119">**XmlDataDocument**から継承されますが、 **XmlDocument**、W3C DOM の実装を提供</span><span class="sxs-lookup"><span data-stu-id="e382a-119">Because **XmlDataDocument** is inherited from an **XmlDocument**, it provides an implementation of the W3C DOM.</span></span> <span data-ttu-id="e382a-120">ファクトを**XmlDataDocument**が関連付けられ、そのデータのサブセットを格納、**データセット**制限またはとしての使用を変更していない、 **XmlDocument**任意の方法でします。</span><span class="sxs-lookup"><span data-stu-id="e382a-120">The fact that the **XmlDataDocument** is associated with, and stores a subset of its data within, a **DataSet** does not restrict or alter its use as an **XmlDocument** in any way.</span></span> <span data-ttu-id="e382a-121">使用する記述されたコード、 **XmlDocument**に対して動作が変更されない、 **XmlDataDocument**です。</span><span class="sxs-lookup"><span data-stu-id="e382a-121">Code written to consume an **XmlDocument** works unaltered against an **XmlDataDocument**.</span></span> <span data-ttu-id="e382a-122">**データセット**テーブル、列、リレーション、および制約を定義することで、同じデータのリレーショナル ビューを提供し、スタンドアロンのメモリ内のユーザーのデータ ストアです。</span><span class="sxs-lookup"><span data-stu-id="e382a-122">The **DataSet** provides the relational view of the same data by defining tables, columns, relations, and constraints, and is a stand-alone, in-memory user data store.</span></span>  
   
- XML データと **DataSet** の関係と、XML データと **XmlDataDocument** の関連との違いを次の図に示します。  
+ <span data-ttu-id="e382a-123">次の図は、XML データを持つことを別の関連付けには、**データセット**と**XmlDataDocument**です。</span><span class="sxs-lookup"><span data-stu-id="e382a-123">The following illustration shows the different associations that XML data has with the **DataSet** and **XmlDataDocument**.</span></span>  
   
- ![XML データセット](../../../../docs/standard/data/xml/media/xmlintegrationwithrelationaldataandadodotnet.gif "xmlIntegrationWithRelationalDataAndADOdotNet")  
+ <span data-ttu-id="e382a-124">![XML データセット](../../../../docs/standard/data/xml/media/xmlintegrationwithrelationaldataandadodotnet.gif "xmlIntegrationWithRelationalDataAndADOdotNet")</span><span class="sxs-lookup"><span data-stu-id="e382a-124">![XML DataSet](../../../../docs/standard/data/xml/media/xmlintegrationwithrelationaldataandadodotnet.gif "xmlIntegrationWithRelationalDataAndADOdotNet")</span></span>  
   
- この図では、XML データは **DataSet** に直接読み込むことができ、XML をリレーショナルな方法で直接操作できることが示されています。  また、XML を DOM の派生クラスである **XmlDataDocument** に読み込み、その後、**DataSet** と同期させることができることも示されています。  **DataSet** と **XmlDataDocument** は、1 つのデータ セットを基にして同期がとられているため、一方のデータ ストアのデータを変更すると、他方のストアに反映されます。  
+ <span data-ttu-id="e382a-125">図に示す XML データを直接に読み込めること、**データセット**、リレーショナルな方法で XML を直接操作できます。</span><span class="sxs-lookup"><span data-stu-id="e382a-125">The illustration shows that XML data can be loaded directly into a **DataSet**, which allows direct manipulation with XML in the relational manner.</span></span> <span data-ttu-id="e382a-126">または、これは、DOM の派生クラスに、XML を読み込むことができます、 **XmlDataDocument**、およびその後読み込みと同期されている、**データセット**です。</span><span class="sxs-lookup"><span data-stu-id="e382a-126">Or, the XML can be loaded into a derived class of the DOM, which is the **XmlDataDocument**, and subsequently loaded and synchronized with the **DataSet**.</span></span> <span data-ttu-id="e382a-127">**データセット**と**XmlDataDocument** 1 つのセット上で同期が、データの 1 つのストア内のデータに加えられた変更は他方のストアに反映されます。</span><span class="sxs-lookup"><span data-stu-id="e382a-127">Because the **DataSet** and **XmlDataDocument** are synchronized over a single set of data, changes made to the data in one store are reflected in the other store.</span></span>  
   
- **XmlDataDocument** は、**XmlDocument** のすべての編集機能と移動機能を継承します。  状況によっては、XML を直接 **DataSet** に読み込む方法よりも、**XmlDataDocument** とその継承された機能を使用して **DataSet** と同期する方法の方が適している場合があります。  **DataSet** にデータを読み込む場合に、どちらの方法を採用すればよいかを判断するための条件を次の表に示します。  
+ <span data-ttu-id="e382a-128">**XmlDataDocument**からすべての編集と移動機能を継承、 **XmlDocument**です。</span><span class="sxs-lookup"><span data-stu-id="e382a-128">The **XmlDataDocument** inherits all the editing and navigational features from the **XmlDocument**.</span></span> <span data-ttu-id="e382a-129">ありますを使用する場合、 **XmlDataDocument**と同期されているその継承された機能と、**データセット**に直接 XML を読み込むよりも適切なオプションは、**データセット**.</span><span class="sxs-lookup"><span data-stu-id="e382a-129">There are times when using the **XmlDataDocument** and its inherited features, synchronized with a **DataSet**, is a more appropriate option than loading XML directly into the **DataSet**.</span></span> <span data-ttu-id="e382a-130">次の表に、読み込みに使用する方法を選択する際に考慮すべき項目、**データセット**です。</span><span class="sxs-lookup"><span data-stu-id="e382a-130">The following table shows the items to be considered when choosing which method to use to load the **DataSet**.</span></span>  
   
-|XML を DataSet に直接読み込む方がよい場合|XmlDataDocument と DataSet の同期をとる方がよい場合|  
-|---------------------------------|--------------------------------------------|  
-|**DataSet** のデータに対するクエリで、XPath よりも SQL を使用する方が簡単である。|**DataSet** のデータに対して XPath クエリが必要である。|  
-|ソース XML 内での要素の順序を保つ必要がない。|ソース XML 内での要素の順序を保つ必要がある。|  
-|要素間の空白や形式をソース XML で保持する必要がない。|空白や形式をソース XML で保持する必要がある。|  
+|<span data-ttu-id="e382a-131">XML を DataSet に直接読み込む方がよい場合</span><span class="sxs-lookup"><span data-stu-id="e382a-131">When to load XML directly into a DataSet</span></span>|<span data-ttu-id="e382a-132">XmlDataDocument と DataSet の同期をとる方がよい場合</span><span class="sxs-lookup"><span data-stu-id="e382a-132">When to synchronize an XmlDataDocument with a DataSet</span></span>|  
+|----------------------------------------------|-----------------------------------------------------------|  
+|<span data-ttu-id="e382a-133">内のデータのクエリ、**データセット**は XPath よりも SQL を使用して容易に行えます。</span><span class="sxs-lookup"><span data-stu-id="e382a-133">Queries of data in the **DataSet** are easier using SQL than XPath.</span></span>|<span data-ttu-id="e382a-134">内のデータに対して XPath クエリが必要、**データセット**です。</span><span class="sxs-lookup"><span data-stu-id="e382a-134">XPath queries are needed over data in the **DataSet**.</span></span>|  
+|<span data-ttu-id="e382a-135">ソース XML 内での要素の順序を保つ必要がない。</span><span class="sxs-lookup"><span data-stu-id="e382a-135">Preservation of element ordering in the source XML is not critical.</span></span>|<span data-ttu-id="e382a-136">ソース XML 内での要素の順序を保つ必要がある。</span><span class="sxs-lookup"><span data-stu-id="e382a-136">Preservation of element ordering in the source XML is critical.</span></span>|  
+|<span data-ttu-id="e382a-137">要素間の空白や形式をソース XML で保持する必要がない。</span><span class="sxs-lookup"><span data-stu-id="e382a-137">White space between elements and formatting does not need to be preserved in the source XML.</span></span>|<span data-ttu-id="e382a-138">空白や形式をソース XML で保持する必要がある。</span><span class="sxs-lookup"><span data-stu-id="e382a-138">White space and formatting preservation in the source XML is critical.</span></span>|  
   
- **DataSet** に XML を直接読み込んだり、[DataSet](../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) から XML を書き出す方法については、「[XML からの DataSet の読み込み](../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)」と「XML データとしての DataSet の書き込み」を参照してください。  
+ <span data-ttu-id="e382a-139">読み込みと XML の記述に直接および out の場合、**データセット**、ニーズに対応するを参照してください[XML からの DataSet の読み込み](../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)と[XML データとしての DataSet の書き込み](../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)です。</span><span class="sxs-lookup"><span data-stu-id="e382a-139">If loading and writing XML directly into and out of a **DataSet** addresses your needs, see [Loading a DataSet from XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) and [Writing a DataSet as XML Data](../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).</span></span>  
   
- **XmlDataDocument** から **DataSet** にデータを読み込む方法については、「[Dataset と XmlDataDocument の同期](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)」を参照してください。  
+ <span data-ttu-id="e382a-140">読み込んでいる場合、**データセット**から、 **XmlDataDocument** 、ニーズに対応するを参照してください[Datasetwith XML ドキュメントを同期する](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)です。</span><span class="sxs-lookup"><span data-stu-id="e382a-140">If loading the **DataSet** from an **XmlDataDocument** addresses your needs, see [Synchronizing a Datasetwith an XML Document](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).</span></span>  
   
-## 参照  
- [DataSet での XML の使用](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
+## <a name="see-also"></a><span data-ttu-id="e382a-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="e382a-141">See Also</span></span>  
+ [<span data-ttu-id="e382a-142">DataSet での XML の使用</span><span class="sxs-lookup"><span data-stu-id="e382a-142">Using XML in a DataSet</span></span>](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)

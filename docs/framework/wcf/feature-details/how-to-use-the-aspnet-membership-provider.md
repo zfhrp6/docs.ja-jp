@@ -1,48 +1,51 @@
 ---
-title: "方法 : ASP.NET メンバーシップ プロバイダーを使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "WCF と ASP.NET"
-  - "WCF, 承認"
-  - "WCF, セキュリティ"
+title: "方法 : ASP.NET メンバーシップ プロバイダーを使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF and ASP.NET
+- WCF, authorization
+- WCF, security
 ms.assetid: 322c56e0-938f-4f19-a981-7b6530045b90
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 74056ae23b08850b9c9a564248d6e276fc518a8a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ASP.NET メンバーシップ プロバイダーを使用する
-[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] メンバーシップ プロバイダーを使用すると、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 開発者は、ユーザーが一意のユーザー名とパスワードの組み合わせを作成できる Web サイトを作成できます。この機能を使用すれば、ユーザーはだれでもサイトでアカウントを作成し、そのサイトにサインインして、サービスに排他的にアクセスできます。これは、ユーザーが Windows ドメイン内にアカウントを持っていることが必要な Windows セキュリティとは対照的です。自分の資格情報 \(ユーザー名とパスワードの組み合わせ\) を提示したユーザーは、だれでもサイトとそのサービスを使用できるからです。  
+# <a name="how-to-use-the-aspnet-membership-provider"></a><span data-ttu-id="d29db-102">方法 : ASP.NET メンバーシップ プロバイダーを使用する</span><span class="sxs-lookup"><span data-stu-id="d29db-102">How to: Use the ASP.NET Membership Provider</span></span>
+<span data-ttu-id="d29db-103">[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] メンバーシップ プロバイダーを使用すると、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 開発者は、ユーザーが一意のユーザー名とパスワードの組み合わせを作成できる Web サイトを作成できます。</span><span class="sxs-lookup"><span data-stu-id="d29db-103">The [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] membership provider is a feature that enables [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] developers to create Web sites that allow users to create unique user name and password combinations.</span></span> <span data-ttu-id="d29db-104">この機能を使用すれば、ユーザーはだれでもサイトでアカウントを作成し、そのサイトにサインインして、サービスに排他的にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="d29db-104">With this facility, any user can establish an account with the site, and sign in for exclusive access to the site and its services.</span></span> <span data-ttu-id="d29db-105">これは、ユーザーが Windows ドメイン内にアカウントを持っていることが必要な Windows セキュリティとは対照的です。</span><span class="sxs-lookup"><span data-stu-id="d29db-105">This is in contrast to Windows security, which requires users to have accounts in a Windows domain.</span></span> <span data-ttu-id="d29db-106">自分の資格情報 (ユーザー名とパスワードの組み合わせ) を提示したユーザーは、だれでもサイトとそのサービスを使用できるからです。</span><span class="sxs-lookup"><span data-stu-id="d29db-106">Instead, any user that supplies his or her credentials (the user name/password combination) can use the site and its services.</span></span>  
   
- サンプル アプリケーションについては、「[メンバーシップとロール プロバイダー](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)」を参照してください。[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ロール プロバイダー機能の使用については、「[方法 : ASP.NET のロール プロバイダーとサービスを使用する](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)」を参照してください。  
+ <span data-ttu-id="d29db-107">サンプル アプリケーションについては、次を参照してください。[メンバーシップとロール プロバイダー](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)です。</span><span class="sxs-lookup"><span data-stu-id="d29db-107">For a sample application, see [Membership and Role Provider](../../../../docs/framework/wcf/samples/membership-and-role-provider.md).</span></span> <span data-ttu-id="d29db-108">使用方法について、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]ロール プロバイダー機能を参照してください[する方法: ASP.NET ロール プロバイダーを使用して、サービスと](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)です。</span><span class="sxs-lookup"><span data-stu-id="d29db-108">For information about using the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] role provider feature, see [How to: Use the ASP.NET Role Provider with a Service](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).</span></span>  
   
- メンバーシップ機能では、SQL Server データベースを使用してユーザー情報を格納する必要があります。メンバーシップ機能には、パスワードを忘れたユーザーへの質問を行うためのメソッドも含まれています。  
+ <span data-ttu-id="d29db-109">メンバーシップ機能では、SQL Server データベースを使用してユーザー情報を格納する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d29db-109">The membership feature requires using a SQL Server database to store the user information.</span></span> <span data-ttu-id="d29db-110">メンバーシップ機能には、パスワードを忘れたユーザーへの質問を行うためのメソッドも含まれています。</span><span class="sxs-lookup"><span data-stu-id="d29db-110">The feature also includes methods for prompting with a question any users who have forgotten their password.</span></span>  
   
- [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 開発者は、セキュリティを向上させるためにこれらの機能を利用できます。この機能を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションに統合した場合、ユーザーはユーザー名とパスワードの組み合わせを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アプリケーションに提示する必要があります。データを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスに転送するには、<xref:System.ServiceModel.WSHttpBinding> \(構成では [\<wsHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)\) のような、ユーザー名\/パスワード資格情報をサポートするバインディングを使用し、クライアントの資格情報の種類を `UserName` に設定します。サービス側では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティが、ユーザー名とパスワードに基づいてユーザーを認証し、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ロールによって指定されるロールを割り当てます。  
+ [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]<span data-ttu-id="d29db-111"> 開発者は、セキュリティを向上させるためにこれらの機能を利用できます。</span><span class="sxs-lookup"><span data-stu-id="d29db-111"> developers can take advantage of these features for security purposes.</span></span> <span data-ttu-id="d29db-112">この機能を [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションに統合した場合、ユーザーはユーザー名とパスワードの組み合わせを [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] クライアント アプリケーションに提示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d29db-112">When integrated into an [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application, users must supply a user name/password combination to the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client application.</span></span> <span data-ttu-id="d29db-113">データを転送する、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]サービス, など、ユーザー名/パスワードの資格情報をサポートするバインドを使用して、 <xref:System.ServiceModel.WSHttpBinding> (構成では、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)) し、クライアントの資格情報を設定型を`UserName`です。</span><span class="sxs-lookup"><span data-stu-id="d29db-113">To transfer the data to the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service, use a binding that supports user name/password credentials, such as the <xref:System.ServiceModel.WSHttpBinding> (in configuration, the [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)) and set the client credential type to `UserName`.</span></span> <span data-ttu-id="d29db-114">サービス側では、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] セキュリティが、ユーザー名とパスワードに基づいてユーザーを認証し、[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] ロールによって指定されるロールを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="d29db-114">On the service, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] security authenticates the user based on the user name and password, and also assigns the role specified by the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] role.</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、ユーザー名\/パスワードの組み合わせ、またはその他のユーザー情報をデータベースに格納するメソッドは提供されません。  
+>  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="d29db-115"> では、ユーザー名/パスワードの組み合わせ、またはその他のユーザー情報をデータベースに格納するメソッドは提供されません。</span><span class="sxs-lookup"><span data-stu-id="d29db-115"> does not provide methods to populate the database with user name/password combinations or other user information.</span></span>  
   
-### メンバーシップ プロバイダーを構成するには  
+### <a name="to-configure-the-membership-provider"></a><span data-ttu-id="d29db-116">メンバーシップ プロバイダーを構成するには</span><span class="sxs-lookup"><span data-stu-id="d29db-116">To configure the membership provider</span></span>  
   
-1.  Web.config ファイルの \<`system.web`\> 要素の下に \<`membership`\> 要素を作成します。  
+1.  <span data-ttu-id="d29db-117">Web.config ファイルで下にある、<`system.web`> 要素を作成、<`membership`> 要素。</span><span class="sxs-lookup"><span data-stu-id="d29db-117">In the Web.config file, under the <`system.web`> element, create a <`membership`> element.</span></span>  
   
-2.  `<membership>` `<providers> 要素の下に、` 要素を作成します。  
+2.  <span data-ttu-id="d29db-118">`<membership>` 要素の下に、`<providers>` 要素を作成します。</span><span class="sxs-lookup"><span data-stu-id="d29db-118">Under the `<membership>` element, create a `<providers>` element.</span></span>  
   
-3.  \<`providers`\> 要素の子要素として、`<clear />` 要素を追加し、プロバイダーのコレクションをフラッシュします。  
+3.  <span data-ttu-id="d29db-119">子として、<`providers`> 要素を追加、`<clear />`プロバイダーのコレクションをフラッシュする要素。</span><span class="sxs-lookup"><span data-stu-id="d29db-119">As a child to the <`providers`> element, add a `<clear />` element to flush the collection of providers.</span></span>  
   
-4.  `<clear />`\< `要素の下に add`\>`name 要素を作成し、``type、``connectionStringName、``applicationName、``enablePasswordRetrieval、``enablePasswordReset、``requiresQuestionAndAnswer、``requiresUniqueEmail、``passwordFormat、および`  の各属性を適切な値に設定します。`name` 属性は、構成ファイルの値として後で使用します。`SqlMembershipProvider` に設定する方法の例を次に示します。  
+4.  <span data-ttu-id="d29db-120">下にある、`<clear />`要素を作成、<`add`> 次の属性を持つ要素が適切な値に設定: `name`、 `type`、 `connectionStringName`、 `applicationName`、 `enablePasswordRetrieval`、 `enablePasswordReset`、 `requiresQuestionAndAnswer`、 `requiresUniqueEmail`、および`passwordFormat`です。</span><span class="sxs-lookup"><span data-stu-id="d29db-120">Under the `<clear />` element, create an <`add`> element with the following attributes set to appropriate values: `name`, `type`, `connectionStringName`, `applicationName`, `enablePasswordRetrieval`, `enablePasswordReset`, `requiresQuestionAndAnswer`, `requiresUniqueEmail`, and `passwordFormat`.</span></span> <span data-ttu-id="d29db-121">`name` 属性は、構成ファイルの値として後で使用します。</span><span class="sxs-lookup"><span data-stu-id="d29db-121">The `name` attribute is used later as a value in the configuration file.</span></span> <span data-ttu-id="d29db-122">`SqlMembershipProvider` に設定する方法の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="d29db-122">The following example sets it to `SqlMembershipProvider`.</span></span>  
   
-     次の例は構成セクションを示します。  
+     <span data-ttu-id="d29db-123">次の例は構成セクションを示します。</span><span class="sxs-lookup"><span data-stu-id="d29db-123">The following example shows the configuration section.</span></span>  
   
     ```xml  
     <!-- Configure the Sql Membership Provider -->  
@@ -63,17 +66,17 @@ caps.handback.revision: 15
     </membership>  
     ```  
   
-### ユーザー名\/パスワードの組み合わせを受け入れるようにサービス セキュリティを構成するには  
+### <a name="to-configure-service-security-to-accept-the-user-namepassword-combination"></a><span data-ttu-id="d29db-124">ユーザー名/パスワードの組み合わせを受け入れるようにサービス セキュリティを構成するには</span><span class="sxs-lookup"><span data-stu-id="d29db-124">To configure service security to accept the user name/password combination</span></span>  
   
-1.  構成ファイルの [\<system.serviceModel\>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)[\<bindings\>](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) 要素を追加します。  
+1.  <span data-ttu-id="d29db-125">構成ファイルで下にある、 [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)要素を追加、 [\<バインド >](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)要素。</span><span class="sxs-lookup"><span data-stu-id="d29db-125">In the configuration file, under the [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) element, add a [\<bindings>](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element.</span></span>  
   
-2.  [\<wsHttpBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)をバインディング セクションに追加します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] バインド要素の作成[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[方法 : 構成でサービス バインディングを指定する](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)」を参照してください。  
+2.  <span data-ttu-id="d29db-126">追加、 [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)バインディング セクションにします。</span><span class="sxs-lookup"><span data-stu-id="d29db-126">Add a [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) to the bindings section.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="d29db-127">作成する、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]バインド要素を参照してください[する方法: 構成でサービス バインディングを指定](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)です。</span><span class="sxs-lookup"><span data-stu-id="d29db-127"> creating an [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] binding element, see [How to: Specify a Service Binding in Configuration](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).</span></span>  
   
-3.  `<security>` 要素の `modeMessage 属性を`  に設定します。  
+3.  <span data-ttu-id="d29db-128">`mode` 要素の `<security>` 属性を `Message` に設定します。</span><span class="sxs-lookup"><span data-stu-id="d29db-128">Set the `mode` attribute of the `<security>` element to `Message`.</span></span>  
   
-4.  \<`message`\> 要素の `clientCredentialType` 属性を `UserName` に設定します。これにより、ユーザー名\/パスワードの組み合わせがクライアントの資格情報として使用されるようになります。  
+4.  <span data-ttu-id="d29db-129">設定、`clientCredentialType`の属性、<`message`> 要素を`UserName`です。</span><span class="sxs-lookup"><span data-stu-id="d29db-129">Set the `clientCredentialType` attribute of the <`message`> element to `UserName`.</span></span> <span data-ttu-id="d29db-130">これにより、ユーザー名/パスワードの組み合わせがクライアントの資格情報として使用されるようになります。</span><span class="sxs-lookup"><span data-stu-id="d29db-130">This specifies that a user name/password pair will be used as the client's credential.</span></span>  
   
-     次のコード例は、バインディングの構成コードを示しています。  
+     <span data-ttu-id="d29db-131">次のコード例は、バインディングの構成コードを示しています。</span><span class="sxs-lookup"><span data-stu-id="d29db-131">The following example shows the configuration code for the binding.</span></span>  
   
     ```xml  
     <system.serviceModel>  
@@ -90,24 +93,24 @@ caps.handback.revision: 15
     </system.serviceModel>  
     ```  
   
-### メンバーシップ プロバイダーを使用するようにサービスを構成するには  
+### <a name="to-configure-a-service-to-use-the-membership-provider"></a><span data-ttu-id="d29db-132">メンバーシップ プロバイダーを使用するようにサービスを構成するには</span><span class="sxs-lookup"><span data-stu-id="d29db-132">To configure a service to use the membership provider</span></span>  
   
-1.  `<system.serviceModel>` [\<behaviors\>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) 要素を追加します。  
+1.  <span data-ttu-id="d29db-133">子として、`<system.serviceModel>`要素を追加、 [\<動作 >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)要素</span><span class="sxs-lookup"><span data-stu-id="d29db-133">As a child to the `<system.serviceModel>` element, add a [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) element</span></span>  
   
-2.  [\<serviceBehaviors\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) を \<`behaviors`\> 要素に追加します。  
+2.  <span data-ttu-id="d29db-134">追加、 [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)に、<`behaviors`> 要素。</span><span class="sxs-lookup"><span data-stu-id="d29db-134">Add a [\<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) to the <`behaviors`> element.</span></span>  
   
-3.  [\<behavior\>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) を追加し、`name` 属性を適切な値に設定します。  
+3.  <span data-ttu-id="d29db-135">追加、 [\<動作 >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)設定と、`name`属性を適切な値にします。</span><span class="sxs-lookup"><span data-stu-id="d29db-135">Add a [\<behavior>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) and set the `name` attribute to an appropriate value.</span></span>  
   
-4.  [\<serviceCredentials\>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)\<`behaviorを` \> 要素に追加します。  
+4.  <span data-ttu-id="d29db-136">追加、 [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)に、<`behavior`> 要素。</span><span class="sxs-lookup"><span data-stu-id="d29db-136">Add a [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) to the <`behavior`> element.</span></span>  
   
-5.  [\<userNameAuthentication\>](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md)を `<serviceCredentials>` 要素に追加します。  
+5.  <span data-ttu-id="d29db-137">追加、 [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md)を`<serviceCredentials>`要素。</span><span class="sxs-lookup"><span data-stu-id="d29db-137">Add a [\<userNameAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md) to the `<serviceCredentials>` element.</span></span>  
   
-6.  `userNamePasswordValidationMode` 属性を `MembershipProvider` に設定します。  
+6.  <span data-ttu-id="d29db-138">`userNamePasswordValidationMode` 属性を `MembershipProvider` に設定します。</span><span class="sxs-lookup"><span data-stu-id="d29db-138">Set the `userNamePasswordValidationMode` attribute to `MembershipProvider`.</span></span>  
   
     > [!IMPORTANT]
-    >  `userNamePasswordValidationMode` 値が設定されていない場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] メンバーシップ プロバイダーの代わりに Windows 認証を使用します。  
+    >  <span data-ttu-id="d29db-139">`userNamePasswordValidationMode` 値が設定されていない場合、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] は [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] メンバーシップ プロバイダーの代わりに Windows 認証を使用します。</span><span class="sxs-lookup"><span data-stu-id="d29db-139">If the `userNamePasswordValidationMode` value is not set, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uses Windows authentication instead of the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] membership provider.</span></span>  
   
-7.  `membershipProviderName` 属性をプロバイダーの名前 \(このトピックの最初の手順でプロバイダーを追加したときに指定したもの\) に設定します。次の例に、この時点での `<serviceCredentials>` のフラグメントを示します。  
+7.  <span data-ttu-id="d29db-140">`membershipProviderName` 属性をプロバイダーの名前 (このトピックの最初の手順でプロバイダーを追加したときに指定したもの) に設定します。</span><span class="sxs-lookup"><span data-stu-id="d29db-140">Set the `membershipProviderName` attribute to the name of the provider (specified when adding the provider in the first procedure in this topic).</span></span> <span data-ttu-id="d29db-141">次の例に、この時点での `<serviceCredentials>` のフラグメントを示します。</span><span class="sxs-lookup"><span data-stu-id="d29db-141">The following example shows the `<serviceCredentials>` fragment to this point.</span></span>  
   
     ```xml  
     <behaviors>  
@@ -121,13 +124,12 @@ caps.handback.revision: 15
           </behavior>  
        </serviceBehaviors>  
     </behaviors>  
-  
     ```  
   
-## 使用例  
- 次のコードは、ASP メンバーシップ機能を使用するサービスの構成を示します。  
+## <a name="example"></a><span data-ttu-id="d29db-142">例</span><span class="sxs-lookup"><span data-stu-id="d29db-142">Example</span></span>  
+ <span data-ttu-id="d29db-143">次のコードは、ASP メンバーシップ機能を使用するサービスの構成を示します。</span><span class="sxs-lookup"><span data-stu-id="d29db-143">The following code shows the configuration for a service that uses the ASP membership feature.</span></span>  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   <system.serviceModel>  
@@ -160,9 +162,8 @@ caps.handback.revision: 15
     </bindings>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
-## 参照  
- [方法 : ASP.NET のロール プロバイダーとサービスを使用する](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)   
- [メンバーシップとロール プロバイダー](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)
+## <a name="see-also"></a><span data-ttu-id="d29db-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="d29db-144">See Also</span></span>  
+ [<span data-ttu-id="d29db-145">方法: サービスで ASP.NET ロール プロバイダーを使用</span><span class="sxs-lookup"><span data-stu-id="d29db-145">How to: Use the ASP.NET Role Provider with a Service</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)  
+ [<span data-ttu-id="d29db-146">メンバーシップとロール プロバイダー</span><span class="sxs-lookup"><span data-stu-id="d29db-146">Membership and Role Provider</span></span>](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)

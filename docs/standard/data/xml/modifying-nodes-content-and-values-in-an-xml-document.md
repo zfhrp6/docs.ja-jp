@@ -1,59 +1,57 @@
 ---
-title: "XML ドキュメントのノード、コンテンツ、値の変更 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "XML ドキュメントのノード、コンテンツ、値の変更"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 761773e0-db72-4986-b9f5-a522213d8397
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 00b923edb95852d9434db1b393df68fd9d0c8a1a
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# XML ドキュメントのノード、コンテンツ、値の変更
-ドキュメントのノードおよびコンテンツを変更するには、さまざまな方法があります。  次の操作を行うことができます。  
+# <a name="modifying-nodes-content-and-values-in-an-xml-document"></a><span data-ttu-id="af222-102">XML ドキュメントのノード、コンテンツ、値の変更</span><span class="sxs-lookup"><span data-stu-id="af222-102">Modifying Nodes, Content, and Values in an XML Document</span></span>
+<span data-ttu-id="af222-103">ドキュメントのノードおよびコンテンツを変更するには、さまざまな方法があります。</span><span class="sxs-lookup"><span data-stu-id="af222-103">There are many ways you can modify the nodes and content in a document.</span></span> <span data-ttu-id="af222-104">次の操作を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="af222-104">You can:</span></span>  
   
--   <xref:System.Xml.XmlNode.Value%2A> プロパティを使用してノードの値を変更する。  
+-   <span data-ttu-id="af222-105"><xref:System.Xml.XmlNode.Value%2A> プロパティを使用してノードの値を変更する。</span><span class="sxs-lookup"><span data-stu-id="af222-105">Change the value of nodes using the <xref:System.Xml.XmlNode.Value%2A> property.</span></span>  
   
--   ノードを新しいノードに置き換えることにより、ノード セット全体を変更します。  これは <xref:System.Xml.XmlNode.InnerXml%2A> プロパティを使用して実行できます。  
+-   <span data-ttu-id="af222-106">ノードを新しいノードに置き換えることにより、ノード セット全体を変更します。</span><span class="sxs-lookup"><span data-stu-id="af222-106">Modify an entire set of nodes by replacing the nodes with new nodes.</span></span> <span data-ttu-id="af222-107">これは <xref:System.Xml.XmlNode.InnerXml%2A> プロパティを使用して実行できます。</span><span class="sxs-lookup"><span data-stu-id="af222-107">This is done using the <xref:System.Xml.XmlNode.InnerXml%2A> property.</span></span>  
   
--   <xref:System.Xml.XmlNode.RemoveChild%2A> メソッドを使用して既存のノードを新しいノードに置き換える。  
+-   <span data-ttu-id="af222-108"><xref:System.Xml.XmlNode.RemoveChild%2A> メソッドを使用して既存のノードを新しいノードに置き換える。</span><span class="sxs-lookup"><span data-stu-id="af222-108">Replace existing nodes with new nodes using the <xref:System.Xml.XmlNode.RemoveChild%2A> method.</span></span>  
   
--   <xref:System.Xml.XmlCharacterData.AppendData%2A>、<xref:System.Xml.XmlCharacterData.InsertData%2A>、または <xref:System.Xml.XmlCharacterData.ReplaceData%2A> メソッドを使用して <xref:System.Xml.XmlCharacterData> クラスから継承した追加の文字をノードに追加する。  
+-   <span data-ttu-id="af222-109"><xref:System.Xml.XmlCharacterData>、<xref:System.Xml.XmlCharacterData.AppendData%2A>、または <xref:System.Xml.XmlCharacterData.InsertData%2A> メソッドを使用して <xref:System.Xml.XmlCharacterData.ReplaceData%2A> クラスから継承した追加の文字をノードに追加する。</span><span class="sxs-lookup"><span data-stu-id="af222-109">Add additional characters to nodes that inherit from the <xref:System.Xml.XmlCharacterData> class using the <xref:System.Xml.XmlCharacterData.AppendData%2A>, <xref:System.Xml.XmlCharacterData.InsertData%2A>, or <xref:System.Xml.XmlCharacterData.ReplaceData%2A> methods.</span></span>  
   
--   <xref:System.Xml.XmlCharacterData> から継承したノード型に対し、<xref:System.Xml.XmlCharacterData.DeleteData%2A> メソッドを使用することにより、文字範囲を削除してコンテンツを変更する。  
+-   <span data-ttu-id="af222-110"><xref:System.Xml.XmlCharacterData.DeleteData%2A> から継承したノード型に対し、<xref:System.Xml.XmlCharacterData> メソッドを使用することにより、文字範囲を削除してコンテンツを変更する。</span><span class="sxs-lookup"><span data-stu-id="af222-110">Modify the content by removing a range of characters using the <xref:System.Xml.XmlCharacterData.DeleteData%2A> method on node types that inherit from <xref:System.Xml.XmlCharacterData>.</span></span>  
   
- ノードの値を簡単に変更するには、`node.Value = "new value";` を使用します。  この 1 行のコードを実行できるノード型と、そのノード型で変更されるデータを次の表に示します。  
+ <span data-ttu-id="af222-111">ノードの値を簡単に変更するには、`node.Value = "new value";` を使用します。</span><span class="sxs-lookup"><span data-stu-id="af222-111">A simple technique for changing the value of a node is to use `node.Value = "new value";`.</span></span> <span data-ttu-id="af222-112">この 1 行のコードを実行できるノード型と、そのノード型で変更されるデータを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="af222-112">The following table lists the node types that this single line of code works on and exactly what data for that node type is changed.</span></span>  
   
-|ノード型|変更されるデータ|  
-|----------|--------------|  
-|属性|属性の値。|  
-|CDATASection|CDATASection のコンテンツ。|  
-|コメント|コメントの内容。|  
-|ProcessingInstruction|ターゲットを除くコンテンツ。|  
-|Text|テキストのコンテンツ。|  
-|XmlDeclaration|`<?xml` と `?>` のマークアップを除く、宣言のコンテンツ。|  
-|Whitespace|空白の値。  この値は、スペース、タブ、CR、LF という 4 つの認識可能 XML 空白文字のいずれかに設定できます。|  
-|SignificantWhitespace|有意の空白の値。  この値は、スペース、タブ、CR、LF という 4 つの認識可能 XML 空白文字のいずれかに設定できます。|  
+|<span data-ttu-id="af222-113">ノード型</span><span class="sxs-lookup"><span data-stu-id="af222-113">Node type</span></span>|<span data-ttu-id="af222-114">変更されるデータ</span><span class="sxs-lookup"><span data-stu-id="af222-114">Data changed</span></span>|  
+|---------------|------------------|  
+|<span data-ttu-id="af222-115">属性</span><span class="sxs-lookup"><span data-stu-id="af222-115">Attribute</span></span>|<span data-ttu-id="af222-116">属性の値。</span><span class="sxs-lookup"><span data-stu-id="af222-116">The value of the attribute.</span></span>|  
+|<span data-ttu-id="af222-117">CDATASection</span><span class="sxs-lookup"><span data-stu-id="af222-117">CDATASection</span></span>|<span data-ttu-id="af222-118">CDATASection のコンテンツ。</span><span class="sxs-lookup"><span data-stu-id="af222-118">The content of the CDATASection.</span></span>|  
+|<span data-ttu-id="af222-119">コメント</span><span class="sxs-lookup"><span data-stu-id="af222-119">Comment</span></span>|<span data-ttu-id="af222-120">コメントの内容。</span><span class="sxs-lookup"><span data-stu-id="af222-120">The content of the comment.</span></span>|  
+|<span data-ttu-id="af222-121">ProcessingInstruction</span><span class="sxs-lookup"><span data-stu-id="af222-121">ProcessingInstruction</span></span>|<span data-ttu-id="af222-122">ターゲットを除くコンテンツ。</span><span class="sxs-lookup"><span data-stu-id="af222-122">The content, excluding the target.</span></span>|  
+|<span data-ttu-id="af222-123">Text</span><span class="sxs-lookup"><span data-stu-id="af222-123">Text</span></span>|<span data-ttu-id="af222-124">テキストのコンテンツ。</span><span class="sxs-lookup"><span data-stu-id="af222-124">The content of the text.</span></span>|  
+|<span data-ttu-id="af222-125">XmlDeclaration</span><span class="sxs-lookup"><span data-stu-id="af222-125">XmlDeclaration</span></span>|<span data-ttu-id="af222-126">`<?xml` と `?>` のマークアップを除く、宣言のコンテンツ。</span><span class="sxs-lookup"><span data-stu-id="af222-126">The content of the declaration, excluding the `<?xml` and `?>` markup.</span></span>|  
+|<span data-ttu-id="af222-127">Whitespace</span><span class="sxs-lookup"><span data-stu-id="af222-127">Whitespace</span></span>|<span data-ttu-id="af222-128">空白の値。</span><span class="sxs-lookup"><span data-stu-id="af222-128">The value of the white space.</span></span> <span data-ttu-id="af222-129">この値は、スペース、タブ、CR、LF という 4 つの認識可能 XML 空白文字のいずれかに設定できます。</span><span class="sxs-lookup"><span data-stu-id="af222-129">You can set the value to be one of the four recognized XML white space characters: space, tab, CR, or LF.</span></span>|  
+|<span data-ttu-id="af222-130">SignificantWhitespace</span><span class="sxs-lookup"><span data-stu-id="af222-130">SignificantWhitespace</span></span>|<span data-ttu-id="af222-131">有意の空白の値。</span><span class="sxs-lookup"><span data-stu-id="af222-131">The value of the significant white space.</span></span> <span data-ttu-id="af222-132">この値は、スペース、タブ、CR、LF という 4 つの認識可能 XML 空白文字のいずれかに設定できます。</span><span class="sxs-lookup"><span data-stu-id="af222-132">You can set the value to be one of the four recognized XML white space characters: space, tab, CR, or LF.</span></span>|  
   
- この表に記載されていないノード型は、値を設定できるノード型ではありません。  これら以外のノード型に値を設定すると、<xref:System.InvalidOperationException> がスローされます。  
+ <span data-ttu-id="af222-133">この表に記載されていないノード型は、値を設定できるノード型ではありません。</span><span class="sxs-lookup"><span data-stu-id="af222-133">Any node type not listed in the table is not a valid node type to set a value on.</span></span> <span data-ttu-id="af222-134">これら以外のノード型に値を設定すると、<xref:System.InvalidOperationException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="af222-134">Setting a value on any other node type throws an <xref:System.InvalidOperationException>.</span></span>  
   
- <xref:System.Xml.XmlNode.InnerXml%2A> プロパティによって、現在のノードの子ノードのマークアップを変更できます。  このプロパティを設定すると、指定した文字列から解析されたコンテンツで子ノードが置き換えられます。  文字列の解析は、現在の名前空間コンテキストで実行されます。  さらに、<xref:System.Xml.XmlNode.InnerXml%2A> は冗長な名前空間宣言を削除します。  この結果、カット アンド ペースト操作を何度も実行しても、冗長な名前空間宣言によってドキュメント サイズが増加することはありません。  <xref:System.Xml.XmlNode.InnerXml%2A>の操作における名前空間の影響を示すコード サンプルについては、「<xref:System.Xml.XmlDocument.InnerXml%2A>」を参照してください。  
+ <span data-ttu-id="af222-135"><xref:System.Xml.XmlNode.InnerXml%2A> プロパティによって、現在のノードの子ノードのマークアップを変更できます。</span><span class="sxs-lookup"><span data-stu-id="af222-135">The <xref:System.Xml.XmlNode.InnerXml%2A> property changes the markup of the child nodes for the current node.</span></span> <span data-ttu-id="af222-136">このプロパティを設定すると、指定した文字列から解析されたコンテンツで子ノードが置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="af222-136">Setting this property replaces the child nodes with the parsed contents of the given string.</span></span> <span data-ttu-id="af222-137">文字列の解析は、現在の名前空間コンテキストで実行されます。</span><span class="sxs-lookup"><span data-stu-id="af222-137">The parsing is done in the current namespace context.</span></span> <span data-ttu-id="af222-138">さらに、<xref:System.Xml.XmlNode.InnerXml%2A> は冗長な名前空間宣言を削除します。</span><span class="sxs-lookup"><span data-stu-id="af222-138">In addition, <xref:System.Xml.XmlNode.InnerXml%2A> removes redundant namespace declarations.</span></span> <span data-ttu-id="af222-139">この結果、カット アンド ペースト操作を何度も実行しても、冗長な名前空間宣言によってドキュメント サイズが増加することはありません。</span><span class="sxs-lookup"><span data-stu-id="af222-139">As a result, numerous cut and paste operations do not increase the size of your document with redundant namespace declarations.</span></span> <span data-ttu-id="af222-140"><xref:System.Xml.XmlNode.InnerXml%2A>の操作における名前空間の影響を示すコード サンプルについては、「<xref:System.Xml.XmlDocument.InnerXml%2A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="af222-140">For a code example showing the effect of namespaces on the <xref:System.Xml.XmlNode.InnerXml%2A> operation, see the <xref:System.Xml.XmlDocument.InnerXml%2A> property.</span></span>  
   
- <xref:System.Xml.XmlCharacterData.ReplaceData%2A> メソッドと <xref:System.Xml.XmlNode.RemoveChild%2A> メソッドを使用すると、これらのメソッドによって置換または削除されたノードが返されます。  このノードは XML ドキュメント オブジェクト モデル \(DOM\) のどこかに再度挿入することができます。  <xref:System.Xml.XmlCharacterData.ReplaceData%2A> メソッドは、ドキュメントに挿入されるノードに対し、2 種類の検証チェックを実行します。  最初のチェックでは、そのノードの親となるノードが、挿入されるノード型の子ノードを持つことができるかどうかを確認します。  2 番目のチェックでは、挿入されるノードが、その親となるノードの祖先でないことを確認します。  これらの条件のいずれかに違反すると、<xref:System.InvalidOperationException> がスローされます。  
+ <span data-ttu-id="af222-141"><xref:System.Xml.XmlCharacterData.ReplaceData%2A> メソッドと <xref:System.Xml.XmlNode.RemoveChild%2A> メソッドを使用すると、これらのメソッドによって置換または削除されたノードが返されます。</span><span class="sxs-lookup"><span data-stu-id="af222-141">When using the <xref:System.Xml.XmlCharacterData.ReplaceData%2A> and <xref:System.Xml.XmlNode.RemoveChild%2A> methods, the methods return the replaced or removed node.</span></span> <span data-ttu-id="af222-142">このノードは XML ドキュメント オブジェクト モデル (DOM) のどこかに再度挿入することができます。</span><span class="sxs-lookup"><span data-stu-id="af222-142">This node can then be reinserted somewhere else in the XML Document Object Model (DOM).</span></span> <span data-ttu-id="af222-143"><xref:System.Xml.XmlCharacterData.ReplaceData%2A> メソッドは、ドキュメントに挿入されるノードに対し、2 種類の検証チェックを実行します。</span><span class="sxs-lookup"><span data-stu-id="af222-143">The <xref:System.Xml.XmlCharacterData.ReplaceData%2A> method does two validation checks on the node being inserted into the document.</span></span> <span data-ttu-id="af222-144">最初のチェックでは、そのノードの親となるノードが、挿入されるノード型の子ノードを持つことができるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="af222-144">The first check ensures that the node is becoming a child of a node that can have child nodes of its type.</span></span> <span data-ttu-id="af222-145">2 番目のチェックでは、挿入されるノードが、その親となるノードの祖先でないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="af222-145">The second check ensures that the node being inserted is not an ancestor of the node it is becoming a child of.</span></span> <span data-ttu-id="af222-146">これらの条件のいずれかに違反すると、<xref:System.InvalidOperationException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="af222-146">Violating either of these conditions throws an <xref:System.InvalidOperationException>.</span></span>  
   
- 編集可能なノードに読み取り専用の子を追加したり、削除したりするのは有効な操作です。  しかし、読み取り専用のノードそのものを変更しようとすると、<xref:System.InvalidOperationException> がスローされます。  この一例として、<xref:System.Xml.XmlEntityReference> ノードの子を変更しようとした場合が当てはまります。  このノードの子は読み取り専用であり、変更できません。  それらを変更しようとすると、<xref:System.InvalidOperationException> がスローされます。  
+ <span data-ttu-id="af222-147">編集可能なノードに読み取り専用の子を追加したり、削除したりするのは有効な操作です。</span><span class="sxs-lookup"><span data-stu-id="af222-147">It is valid to add or remove a read-only child from a node that can be edited.</span></span> <span data-ttu-id="af222-148">しかし、読み取り専用のノードそのものを変更しようとすると、<xref:System.InvalidOperationException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="af222-148">However, attempts to modify the read-only node itself throws an <xref:System.InvalidOperationException>.</span></span> <span data-ttu-id="af222-149">この一例として、<xref:System.Xml.XmlEntityReference> ノードの子を変更しようとした場合が当てはまります。</span><span class="sxs-lookup"><span data-stu-id="af222-149">An example of this is modifying the children of an <xref:System.Xml.XmlEntityReference> node.</span></span> <span data-ttu-id="af222-150">このノードの子は読み取り専用であり、変更できません。</span><span class="sxs-lookup"><span data-stu-id="af222-150">The children are read-only and cannot be modified.</span></span> <span data-ttu-id="af222-151">それらを変更しようとすると、<xref:System.InvalidOperationException> がスローされます。</span><span class="sxs-lookup"><span data-stu-id="af222-151">Any attempt to modify them throws an <xref:System.InvalidOperationException>.</span></span>  
   
-## 参照  
- [XML ドキュメント オブジェクト モデル \(DOM\)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a><span data-ttu-id="af222-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="af222-152">See Also</span></span>  
+ [<span data-ttu-id="af222-153">XML ドキュメント オブジェクト モデル (DOM)</span><span class="sxs-lookup"><span data-stu-id="af222-153">XML Document Object Model (DOM)</span></span>](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

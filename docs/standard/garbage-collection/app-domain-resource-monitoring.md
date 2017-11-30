@@ -1,94 +1,97 @@
 ---
-title: "Application Domain Resource Monitoring | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "monitoring managed memory use by application domain"
-  - "application domains, memory use"
-  - "memory use, monitoring"
-  - "application domains, resource monitoring"
+title: "アプリケーション ドメインのリソース監視"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- monitoring managed memory use by application domain
+- application domains, memory use
+- memory use, monitoring
+- application domains, resource monitoring
 ms.assetid: 318bedf8-7f35-4f00-b34a-2b7b8e3fa315
-caps.latest.revision: 8
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 62a514f94857044af5020d36a1cfd6ce06741ac7
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Application Domain Resource Monitoring
-アプリケーション ドメインのリソース監視 \(ARM\) を使用すると、ホストでアプリケーション ドメインによる CPU とメモリの使用状況を監視できます。  これは、ASP.NET など、長時間実行されるプロセスで多数のアプリケーション ドメインを使用するホストで役立ちます。  プロセス全体のパフォーマンスに悪影響を及ぼしているアプリケーションのアプリケーション ドメインをホストでアンロードできます。ただし、問題となっているアプリケーションを特定できる場合に限ります。  ARM を使用することで、そのような判断の際に役立つ情報が提供されます。  
+# <a name="application-domain-resource-monitoring"></a><span data-ttu-id="18711-102">アプリケーション ドメインのリソース監視</span><span class="sxs-lookup"><span data-stu-id="18711-102">Application Domain Resource Monitoring</span></span>
+<span data-ttu-id="18711-103">アプリケーション ドメインのリソース監視 (ARM) では、ホスト アプリケーション ドメインによる CPU およびメモリの使用状況を監視できるようにします。</span><span class="sxs-lookup"><span data-stu-id="18711-103">Application domain resource monitoring (ARM) enables hosts to monitor CPU and memory usage by application domain.</span></span> <span data-ttu-id="18711-104">これは、ASP.NET などのホストの実行時間の長いプロセスで多数のアプリケーション ドメインを使用するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="18711-104">This is useful for hosts such as ASP.NET that use many application domains in a long-running process.</span></span> <span data-ttu-id="18711-105">ホストに悪影響がのみ、プロセス全体のパフォーマンス問題のあるアプリケーションを特定できる場合、アプリケーションのアプリケーション ドメインをアンロードできます。</span><span class="sxs-lookup"><span data-stu-id="18711-105">The host can unload the application domain of an application that is adversely affecting the performance of the entire process, but only if it can identify the problematic application.</span></span> <span data-ttu-id="18711-106">ARM では、このような意思決定を行う支援するために使用できる情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="18711-106">ARM provides information that can be used to assist in making such decisions.</span></span>  
   
- たとえば、ホスティング サービスが ASP.NET サーバーで多数のアプリケーションを実行している場合があります。  プロセスの特定のアプリケーションによるメモリ使用量が多くなりすぎたり、プロセッサ時間が長くなりすぎたりした場合、ホスティング サービスで ARM を使用すると、問題の原因になっているアプリケーション ドメインを特定できます。  
+ <span data-ttu-id="18711-107">たとえば、ホスティング サービスには、ASP.NET サーバーで実行されている多くのアプリケーションがあります。</span><span class="sxs-lookup"><span data-stu-id="18711-107">For example, a hosting service might have many applications running on an ASP.NET server.</span></span> <span data-ttu-id="18711-108">プロセスの 1 つのアプリケーションでは、大量のメモリやプロセッサ時間がかかりすぎる消費を開始、する場合は、ホスティング サービスは、問題の原因となっているアプリケーション ドメインを識別する ARM を使用できます。</span><span class="sxs-lookup"><span data-stu-id="18711-108">If one application in the process begins consuming too much memory or too much processor time, the hosting service can use ARM to identify the application domain that is causing the problem.</span></span>  
   
- ARM は軽量のため、実行中のアプリケーションで問題なく使用できます。  情報を確認するときは、Windows イベント トレーシング \(ETW\) を使用するか、マネージ API またはネイティブ API から直接アクセスします。  
+ <span data-ttu-id="18711-109">ARM はライブ アプリケーションで使用する十分な軽量です。</span><span class="sxs-lookup"><span data-stu-id="18711-109">ARM is sufficiently lightweight to use in live applications.</span></span> <span data-ttu-id="18711-110">For Windows (ETW) またはマネージまたはネイティブの Api を介して直接イベントのトレースを使用して、情報にアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="18711-110">You can access the information by using event tracing for Windows (ETW) or directly through managed or native APIs.</span></span>  
   
-## リソース監視の有効化  
- ARM を有効にする方法は 4 つあります。共通言語ランタイム \(CLR\) の起動時に構成ファイルを指定するか、アンマネージ ホスト API を使用するか、マネージ コードを使用するか、ARM ETW イベントをリッスンします。  
+## <a name="enabling-resource-monitoring"></a><span data-ttu-id="18711-111">リソースの監視を有効にします。</span><span class="sxs-lookup"><span data-stu-id="18711-111">Enabling Resource Monitoring</span></span>  
+ <span data-ttu-id="18711-112">ARM は、4 つの方法で有効にすることができます: 共通言語ランタイム (CLR) が開始されたときに、構成ファイルを指定すること、によってアンマネージを使用してホスト API、マネージ コードを使用して、または ARM ETW イベントを待機しています。</span><span class="sxs-lookup"><span data-stu-id="18711-112">ARM can be enabled in four ways: by supplying a configuration file when the common language runtime (CLR) is started, by using an unmanaged hosting API, by using managed code, or by listening to ARM ETW events.</span></span>  
   
- ARM を有効にすると、プロセス内のアプリケーション ドメインに関するデータの収集がすぐに開始されます。  ARM を有効にする前にアプリケーション ドメインが作成されていた場合の累積データは、アプリケーション ドメインの作成時点ではなく、ARM を有効にした時点からの累積データです。ARM を有効にすると、後で無効にすることはできません。  
+ <span data-ttu-id="18711-113">ARM が有効になっていると、すぐには、プロセス内のすべてのアプリケーション ドメインでデータの収集を開始します。ARM が有効にする前に、アプリケーション ドメインが作成されている場合、アプリケーション ドメインが作成されたときではなく、ARM が有効にすると、累積的なデータが起動します。有効にすると、ARM を無効にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="18711-113">As soon as ARM is enabled, it begins collecting data on all application domains in the process.If an application domain was created before ARM is enabled, cumulative data starts when ARM is enabled, not when the application domain was created.Once it is enabled, ARM cannot be disabled.</span></span>  
   
--   CLR の起動時に [\<appDomainResourceMonitoring\>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md) 要素を構成ファイルに追加し、`true`へ `enabled` 属性を設定することで ARM を有効にすることができます。  値が `false` \(既定\) の場合、ARM が起動時には有効にならないだけで、他のアクティブ化方法を使用して後から有効にすることができます。  
+-   <span data-ttu-id="18711-114">追加することによって CLR スタートアップ時 ARM を有効にすることができます、 [ \<appDomainResourceMonitoring >](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)構成ファイル、および設定する要素、`enabled`属性を`true`です。</span><span class="sxs-lookup"><span data-stu-id="18711-114">You can enable ARM at CLR startup by adding the [\<appDomainResourceMonitoring>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md) element to the configuration file, and setting the `enabled` attribute to `true`.</span></span> <span data-ttu-id="18711-115">値`false`(既定) のみ ARM が起動時に無効になっている。 つまり、他のライセンス認証メカニズムのいずれかを使用して後でアクティブにできます。</span><span class="sxs-lookup"><span data-stu-id="18711-115">A value of `false` (the default) means only that ARM is not enabled at startup; you can activate it later by using one of the other activation mechanisms.</span></span>  
   
--   ホストで ARM を有効にするには、[ICLRAppDomainResourceMonitor](../../../ocs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) ホスト インターフェイスを要求します。  このインターフェイスが正常に取得されると、ARM が有効になります。  
+-   <span data-ttu-id="18711-116">ホストは、ARM を有効に要求することによって、 [ICLRAppDomainResourceMonitor](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)インターフェイスをホストします。</span><span class="sxs-lookup"><span data-stu-id="18711-116">The host can enable ARM by requesting the [ICLRAppDomainResourceMonitor](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) hosting interface.</span></span> <span data-ttu-id="18711-117">このインターフェイスは正常に取得した、ARM が有効になります。</span><span class="sxs-lookup"><span data-stu-id="18711-117">Once this interface is successfully obtained, ARM is enabled.</span></span>  
   
--   マネージ コードで ARM を有効にするには、static \(Visual Basic では `Shared`\) の <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=fullName> プロパティを `true` に設定します。  プロパティを設定すると、すぐに ARM が有効になります。  
+-   <span data-ttu-id="18711-118">マネージ コードは、ARM を有効にするには、静的 (`Shared` Visual Basic で)<xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>プロパティを`true`です。</span><span class="sxs-lookup"><span data-stu-id="18711-118">Managed code can enable ARM by setting the static (`Shared` in Visual Basic) <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> property to `true`.</span></span> <span data-ttu-id="18711-119">プロパティを設定するとすぐには、ARM は有効です。</span><span class="sxs-lookup"><span data-stu-id="18711-119">As soon as the property is set, ARM is enabled.</span></span>  
   
--   起動後に ARM を有効にするには、ETW イベントをリッスンします。  `AppDomainResourceManagementKeyword` キーワードを使用してパブリック プロバイダー `Microsoft-Windows-DotNETRuntime` を有効にすると、ARM が有効になり、すべてのアプリケーション ドメインのイベントの生成が開始されます。  データをアプリケーション ドメインおよびスレッドと関連付けるには、さらに `ThreadingKeyword` キーワードを指定して `Microsoft-Windows-DotNETRuntimeRundown` プロバイダーを有効にする必要があります。  
+-   <span data-ttu-id="18711-120">ETW イベントを待機して、起動後に ARM を有効にできます。</span><span class="sxs-lookup"><span data-stu-id="18711-120">You can enable ARM after startup by listening to ETW events.</span></span> <span data-ttu-id="18711-121">ARM が有効であり、パブリック プロバイダーを有効にすると、すべてのアプリケーション ドメイン イベントを発生させる開始`Microsoft-Windows-DotNETRuntime`を使用して、`AppDomainResourceManagementKeyword`キーワード。</span><span class="sxs-lookup"><span data-stu-id="18711-121">ARM is enabled and begins raising events for all application domains when you enable the public provider `Microsoft-Windows-DotNETRuntime` by using the `AppDomainResourceManagementKeyword` keyword.</span></span> <span data-ttu-id="18711-122">アプリケーション ドメインとスレッドとデータを関連付ける、する必要がありますも有効にする、`Microsoft-Windows-DotNETRuntimeRundown`とプロバイダー、`ThreadingKeyword`キーワード。</span><span class="sxs-lookup"><span data-stu-id="18711-122">To correlate data with application domains and threads, you must also enable the `Microsoft-Windows-DotNETRuntimeRundown` provider with the `ThreadingKeyword` keyword.</span></span>  
   
-## ARM の使用  
- ARM を使用すると、アプリケーション ドメインによって使用されている合計プロセッサ時間と、メモリの使用状況に関する 3 種類の情報が得られます。  
+## <a name="using-arm"></a><span data-ttu-id="18711-123">ARM の使用</span><span class="sxs-lookup"><span data-stu-id="18711-123">Using ARM</span></span>  
+ <span data-ttu-id="18711-124">ARM では、アプリケーション ドメイン、およびメモリ使用量に関する情報の 3 つの種類によって使用されるプロセッサの合計時間を示します。</span><span class="sxs-lookup"><span data-stu-id="18711-124">ARM provides the total processor time that is used by an application domain and three kinds of information about memory use.</span></span>  
   
--   **アプリケーション ドメインの合計プロセッサ時間 \(秒\)**: アプリケーション ドメインの有効期間中に実行に時間を費やしたすべてのスレッドについて、オペレーティング システムから報告されたスレッド時間を合計した時間です。  ブロック状態またはスリープ状態のスレッドはプロセッサ時間を消費しません。  ネイティブ コードを呼び出すスレッドの場合、スレッドがネイティブ コードで費やした時間は、呼び出しを行ったアプリケーション ドメインの時間に加算されます。  
+-   <span data-ttu-id="18711-125">**合計プロセッサ時間を秒単位で、アプリケーション ドメインの**: この時間がその有効期間中に、アプリケーション ドメインで実行に費やされたすべてのスレッドのオペレーティング システムにより報告されたスレッドの時間を加算して計算されます。</span><span class="sxs-lookup"><span data-stu-id="18711-125">**Total processor time for an application domain, in seconds**: This is calculated by adding up the thread times reported by the operating system for all threads that spent time executing in the application domain during its lifetime.</span></span> <span data-ttu-id="18711-126">ブロックされているか、スリープ状態のスレッドがプロセッサ時間を使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="18711-126">Blocked or sleeping threads do not use processor time.</span></span> <span data-ttu-id="18711-127">スレッドは、ネイティブ コードを呼び出すの呼び出しが行われたアプリケーション ドメインの数に、スレッドがネイティブ コードに費やす時間が含まれます。</span><span class="sxs-lookup"><span data-stu-id="18711-127">When a thread calls into native code, the time that the thread spends in native code is included in the count for the application domain where the call was made.</span></span>  
   
-    -   マネージ API: <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=fullName> プロパティ。  
+    -   <span data-ttu-id="18711-128">マネージ API:<xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="18711-128">Managed API: <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> property.</span></span>  
   
-    -   ホスト API: [ICLRAppDomainResourceMonitor::GetCurrentCpuTime](../Topic/ICLRAppDomainResourceMonitor::GetCurrentCpuTime%20Method.md) メソッド。  
+    -   <span data-ttu-id="18711-129">API をホスティング: [iclrappdomainresourcemonitor::getcurrentcputime](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md)メソッドです。</span><span class="sxs-lookup"><span data-stu-id="18711-129">Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentCpuTime](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md) method.</span></span>  
   
-    -   ETW イベント: `ThreadCreated` イベント、`ThreadAppDomainEnter` イベント、および `ThreadTerminated` イベント。  プロバイダーおよびキーワードの詳細については、「[CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)」の「アプリケーション ドメインのリソース監視イベント」を参照してください。  
+    -   <span data-ttu-id="18711-130">ETW イベント: `ThreadCreated`、 `ThreadAppDomainEnter`、および`ThreadTerminated`イベント。</span><span class="sxs-lookup"><span data-stu-id="18711-130">ETW events: `ThreadCreated`, `ThreadAppDomainEnter`, and `ThreadTerminated` events.</span></span> <span data-ttu-id="18711-131">プロバイダーとキーワードについてを参照してください「AppDomain リソース監視イベント」 [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)です。</span><span class="sxs-lookup"><span data-stu-id="18711-131">For information about providers and keywords, see "AppDomain Resource Monitoring Events" in [CLR ETW Events](../../../docs/framework/performance/clr-etw-events.md).</span></span>  
   
--   **有効期間中にアプリケーション ドメインによって行われたマネージ割り当ての合計 \(バイト\)**: 割り当てオブジェクトの有効期間が短い場合があるため、アプリケーション ドメインによるすべてのメモリ使用が、割り当ての合計に必ずしも反映されるとは限りません。  ただし、アプリケーションで大量のオブジェクトの割り当てや解放を行う場合、割り当てのコストが問題になる可能性があります。  
+-   <span data-ttu-id="18711-132">**(バイト単位)、その有効期間中にアプリケーション ドメインによって行われたマネージの割り当ての合計**: 割り当ての合計は常に反映されておらず、アプリケーション ドメインによるメモリの使用割り当て済みオブジェクトの有効期間が短い可能性があるためです。</span><span class="sxs-lookup"><span data-stu-id="18711-132">**Total managed allocations made by an application domain during its lifetime, in bytes**: Total allocations do not always reflect memory use by an application domain, because the allocated objects might be short-lived.</span></span> <span data-ttu-id="18711-133">ただし、アプリケーションでは、割り当てし、大量のオブジェクトの解放する場合、割り当てのコストが大幅な可能性があります。</span><span class="sxs-lookup"><span data-stu-id="18711-133">However, if an application allocates and frees huge numbers of objects, the cost of the allocations could be significant.</span></span>  
   
-    -   マネージ API: <xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=fullName> プロパティ。  
+    -   <span data-ttu-id="18711-134">マネージ API:<xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="18711-134">Managed API: <xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType> property.</span></span>  
   
-    -   ホスト API: [ICLRAppDomainResourceMonitor::GetCurrentAllocated](../Topic/ICLRAppDomainResourceMonitor::GetCurrentAllocated%20Method.md) メソッド。  
+    -   <span data-ttu-id="18711-135">API をホスティング: [iclrappdomainresourcemonitor::getcurrentallocated](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md)メソッドです。</span><span class="sxs-lookup"><span data-stu-id="18711-135">Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentAllocated](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md) method.</span></span>  
   
-    -   ETW イベント: `AppDomainMemAllocated` イベント、`Allocated` フィールド。  
+    -   <span data-ttu-id="18711-136">ETW イベント:`AppDomainMemAllocated`イベント、`Allocated`フィールドです。</span><span class="sxs-lookup"><span data-stu-id="18711-136">ETW events: `AppDomainMemAllocated` event, `Allocated` field.</span></span>  
   
--   **アプリケーション ドメインによって参照される、最後のフル ブロッキング コレクションで残ったマネージ メモリ \(バイト\)**: この数値は、フル ブロッキング コレクションの後にしか正確になりません \(対照的なのは同時実行コレクションです。同時実行コレクションはバックグラウンドで実行され、アプリケーションがブロックされません\)。フル ブロッキング コレクションは、たとえば <xref:System.GC.Collect?displayProperty=fullName> メソッド オーバーロードで実行されます。  
+-   <span data-ttu-id="18711-137">**マネージ メモリ、(バイト単位) は、アプリケーション ドメインによって参照されると、最新の完全なブロッキング コレクションで残ったを**: この値は正確な後にのみフル ブロッキング コレクション。</span><span class="sxs-lookup"><span data-stu-id="18711-137">**Managed memory, in bytes, that is referenced by an application domain and that survived the most recent full, blocking collection**: This number is accurate only after a full, blocking collection.</span></span> <span data-ttu-id="18711-138">(これは、バック グラウンドで発生して、アプリケーションをブロックしませんが、同時実行のガベージ コレクションとは対照的です。)たとえば、<xref:System.GC.Collect?displayProperty=nameWithType>メソッドのオーバー ロードがフル ブロッキング コレクションが発生します。</span><span class="sxs-lookup"><span data-stu-id="18711-138">(This is in contrast to concurrent collections, which occur in the background and do not block the application.) For example, the <xref:System.GC.Collect?displayProperty=nameWithType> method overload causes a full, blocking collection.</span></span>  
   
-    -   マネージ API: <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=fullName> プロパティ。  
+    -   <span data-ttu-id="18711-139">マネージ API:<xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="18711-139">Managed API: <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> property.</span></span>  
   
-    -   ホスト API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../Topic/ICLRAppDomainResourceMonitor::GetCurrentSurvived%20Method.md) メソッド、`pAppDomainBytesSurvived` パラメーター。  
+    -   <span data-ttu-id="18711-140">API をホスティング: [iclrappdomainresourcemonitor::getcurrentsurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md)メソッド、`pAppDomainBytesSurvived`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="18711-140">Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) method, `pAppDomainBytesSurvived` parameter.</span></span>  
   
-    -   ETW イベント: `AppDomainMemSurvived` イベント、`Survived` フィールド。  
+    -   <span data-ttu-id="18711-141">ETW イベント:`AppDomainMemSurvived`イベント、`Survived`フィールドです。</span><span class="sxs-lookup"><span data-stu-id="18711-141">ETW events: `AppDomainMemSurvived` event, `Survived` field.</span></span>  
   
--   **プロセスよって参照される、最後のフル ブロッキング コレクションで残った合計マネージ メモリ \(バイト\)**: 個々のアプリケーション ドメインで残ったメモリをこの数値と比較できます。  
+-   <span data-ttu-id="18711-142">**マネージ メモリ合計、(バイト単位) は、プロセスによって参照されると、最新の完全なブロッキング コレクションで残ったを**: この番号に個々 のアプリケーション ドメインの残ったメモリを比較することができます。</span><span class="sxs-lookup"><span data-stu-id="18711-142">**Total managed memory, in bytes, that is referenced by the process and that survived the most recent full, blocking collection**: The survived memory for individual application domains can be compared to this number.</span></span>  
   
-    -   マネージ API: <xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=fullName> プロパティ。  
+    -   <span data-ttu-id="18711-143">マネージ API:<xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="18711-143">Managed API: <xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=nameWithType> property.</span></span>  
   
-    -   ホスト API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../Topic/ICLRAppDomainResourceMonitor::GetCurrentSurvived%20Method.md) メソッド、`pTotalBytesSurvived` パラメーター。  
+    -   <span data-ttu-id="18711-144">API をホスティング: [iclrappdomainresourcemonitor::getcurrentsurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md)メソッド、`pTotalBytesSurvived`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="18711-144">Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) method, `pTotalBytesSurvived` parameter.</span></span>  
   
-    -   ETW イベント: `AppDomainMemSurvived` イベント、`ProcessSurvived` フィールド。  
+    -   <span data-ttu-id="18711-145">ETW イベント:`AppDomainMemSurvived`イベント、`ProcessSurvived`フィールドです。</span><span class="sxs-lookup"><span data-stu-id="18711-145">ETW events: `AppDomainMemSurvived` event, `ProcessSurvived` field.</span></span>  
   
-### フル ブロッキング コレクションがいつ実行されたか確認する  
- 残ったメモリのカウントのうちどの時点のものが正確かを判断するには、フル ブロッキング コレクションがいつ発生したかを確認する必要があります。  そのための方法は、ARM の統計情報を調べるのに使用する API によって異なります。  
+### <a name="determining-when-a-full-blocking-collection-occurs"></a><span data-ttu-id="18711-146">完全なときに決定する、ブロッキング コレクションが発生しました。</span><span class="sxs-lookup"><span data-stu-id="18711-146">Determining When a Full, Blocking Collection Occurs</span></span>  
+ <span data-ttu-id="18711-147">残ったメモリの数が正確な場合を判断するのにフル ブロッキング コレクションが発生したときを把握する必要があります。</span><span class="sxs-lookup"><span data-stu-id="18711-147">To determine when counts of survived memory are accurate, you need to know when a full, blocking collection has just occurred.</span></span> <span data-ttu-id="18711-148">これを行うためのメソッドは、ARM 統計情報を確認するを使用する API に依存します。</span><span class="sxs-lookup"><span data-stu-id="18711-148">The method for doing this depends on the API you use to examine ARM statistics.</span></span>  
   
-#### マネージ API  
- <xref:System.AppDomain> クラスのプロパティを使用する場合は、<xref:System.GC.RegisterForFullGCNotification%2A?displayProperty=fullName> メソッドを使用してフル コレクションの通知を登録できます。  使用するしきい値は重要ではありません。コレクションが開始されるまでではなく、コレクションが完了するまで待機するからです。  その後、<xref:System.GC.WaitForFullGCComplete%2A?displayProperty=fullName> メソッドを呼び出して、フル コレクションが完了するまでブロックします。  ループでメソッドを呼び出し、メソッドから制御が戻るたびに必要な分析を実行するスレッドを作成できます。  
+#### <a name="managed-api"></a><span data-ttu-id="18711-149">マネージ API</span><span class="sxs-lookup"><span data-stu-id="18711-149">Managed API</span></span>  
+ <span data-ttu-id="18711-150">プロパティを使用する場合、<xref:System.AppDomain>クラスを使用することができます、<xref:System.GC.RegisterForFullGCNotification%2A?displayProperty=nameWithType>すべてのコレクションの通知を登録します。</span><span class="sxs-lookup"><span data-stu-id="18711-150">If you use the properties of the <xref:System.AppDomain> class, you can use the <xref:System.GC.RegisterForFullGCNotification%2A?displayProperty=nameWithType> method to register for notification of full collections.</span></span> <span data-ttu-id="18711-151">コレクションのアプローチではなく、コレクションの完了を待機しているために、使用するしきい値は、重要ではありません。</span><span class="sxs-lookup"><span data-stu-id="18711-151">The threshold you use is not important, because you are waiting for the completion of a collection rather than the approach of a collection.</span></span> <span data-ttu-id="18711-152">呼び出すことができますし、<xref:System.GC.WaitForFullGCComplete%2A?displayProperty=nameWithType>メソッドで、完全なコレクションが完了するまでブロックします。</span><span class="sxs-lookup"><span data-stu-id="18711-152">You can then call the <xref:System.GC.WaitForFullGCComplete%2A?displayProperty=nameWithType> method, which blocks until a full collection has completed.</span></span> <span data-ttu-id="18711-153">ループ内でメソッドを呼び出し、メソッドが返すときに必要な分析がスレッドを作成できます。</span><span class="sxs-lookup"><span data-stu-id="18711-153">You can create a thread that calls the method in a loop and does any necessary analysis whenever the method returns.</span></span>  
   
- また、<xref:System.GC.CollectionCount%2A?displayProperty=fullName> メソッドを定期的に呼び出して、ジェネレーション 2 のコレクションの数が増加していないかどうかを確認する方法もあります。  ただし、ポーリング間隔によっては、この手法ではフル コレクションの発生を正確に特定できない場合があります。  
+ <span data-ttu-id="18711-154">代わりに、呼び出すことができます、<xref:System.GC.CollectionCount%2A?displayProperty=nameWithType>メソッドを定期的にジェネレーション 2 のコレクションの数が増えたかどうかを参照してください。</span><span class="sxs-lookup"><span data-stu-id="18711-154">Alternatively, you can call the <xref:System.GC.CollectionCount%2A?displayProperty=nameWithType> method periodically to see if the count of generation 2 collections has increased.</span></span> <span data-ttu-id="18711-155">ポーリング頻度に応じてこの手法可能性がありますに渡さないほど正確で完全なコレクションの発生を示す値。</span><span class="sxs-lookup"><span data-stu-id="18711-155">Depending on the polling frequency, this technique might not provide as accurate an indication of the occurrence of a full collection.</span></span>  
   
-#### ホスト API  
- アンマネージ ホスト API を使用する場合は、ホストで CLR の [IHostGCManager](../../../ocs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md) インターフェイスの実装を渡す必要があります。  この CLR は、コレクションの実行中に中断されたスレッドの実行を再開すると [IHostGCManager::SuspensionEnding](../Topic/IHostGCManager::SuspensionEnding%20Method.md) メソッドを呼び出します。  完了したコレクションのジェネレーションがメソッドのパラメーターとして CLR から渡されるため、そのコレクションがフル コレクションだったかどうかをホストで確認できます。  残ったメモリを [IHostGCManager::SuspensionEnding](../Topic/IHostGCManager::SuspensionEnding%20Method.md) メソッドの実装で照会すると、カウントが更新された後ですぐ取得できるようになります。  
+#### <a name="hosting-api"></a><span data-ttu-id="18711-156">ホスト API</span><span class="sxs-lookup"><span data-stu-id="18711-156">Hosting API</span></span>  
+ <span data-ttu-id="18711-157">ホストは、CLR の実装を渡す必要があります、アンマネージ ホスト API を使用する場合、 [IHostGCManager](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md)インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="18711-157">If you use the unmanaged hosting API, your host must pass the CLR an implementation of the [IHostGCManager](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md) interface.</span></span> <span data-ttu-id="18711-158">CLR の呼び出し、 [ihostgcmanager::suspensionending](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md)メソッドのコレクションが発生したときに中断されているスレッドの実行を再開するときにします。</span><span class="sxs-lookup"><span data-stu-id="18711-158">The CLR calls the [IHostGCManager::SuspensionEnding](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md) method when it resumes execution of threads that have been suspended while a collection occurs.</span></span> <span data-ttu-id="18711-159">CLR は、ホストは、コレクションが完全または部分的なであるかどうかを特定できるように、メソッドのパラメーターとして完了したコレクションの生成を渡します。</span><span class="sxs-lookup"><span data-stu-id="18711-159">The CLR passes the generation of the completed collection as a parameter of the method, so the host can determine whether the collection was full or partial.</span></span> <span data-ttu-id="18711-160">実装、 [ihostgcmanager::suspensionending](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md)カウントが更新されるとすぐに取得ことを確認の残ったメモリ メソッドを照会できます。</span><span class="sxs-lookup"><span data-stu-id="18711-160">Your implementation of the [IHostGCManager::SuspensionEnding](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md) method can query for survived memory, to ensure that the counts are retrieved as soon as they are updated.</span></span>  
   
-## 参照  
- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=fullName>   
- [ICLRAppDomainResourceMonitor インターフェイス](../../../ocs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)   
- [\<appDomainResourceMonitoring\>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)   
- [CLR ETW イベント](../../../docs/framework/performance/clr-etw-events.md)
+## <a name="see-also"></a><span data-ttu-id="18711-161">関連項目</span><span class="sxs-lookup"><span data-stu-id="18711-161">See Also</span></span>  
+ <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="18711-162">ICLRAppDomainResourceMonitor インターフェイス</span><span class="sxs-lookup"><span data-stu-id="18711-162">ICLRAppDomainResourceMonitor Interface</span></span>](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
+ [<span data-ttu-id="18711-163">\<appDomainResourceMonitoring></span><span class="sxs-lookup"><span data-stu-id="18711-163">\<appDomainResourceMonitoring></span></span>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)  
+ [<span data-ttu-id="18711-164">CLR ETW イベント</span><span class="sxs-lookup"><span data-stu-id="18711-164">CLR ETW Events</span></span>](../../../docs/framework/performance/clr-etw-events.md)

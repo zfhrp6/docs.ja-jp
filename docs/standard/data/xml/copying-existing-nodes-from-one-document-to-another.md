@@ -1,53 +1,51 @@
 ---
-title: "ドキュメント間での既存のノードのコピー | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "ドキュメント間での既存のノードのコピー"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3caa78c1-3448-4b7b-b83c-228ee857635e
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 0f20e5bd595c8eb49360e58f281a8cf6eda89acf
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ドキュメント間での既存のノードのコピー
-**ImportNode** メソッドを使用すると、ある **XmlDocument** から別の **XmlDocument** へ、ノードまたはノードのサブツリー全体をコピーできます。  呼び出しから返されるノードは、ソース ドキュメントのノードのコピーであり、そこには属性値、ノード名、ノード型が含まれます。さらに、プレフィックス、ローカル名、名前空間 URI \(Uniform Resource Identifier\) など、名前空間に関連するすべての属性も含まれます。  ソース ドキュメントは変更されません。  インポートしたノードは、ノードを挿入するメソッドの 1 つを使用してツリーに追加する必要があります。  
+# <a name="copying-existing-nodes-from-one-document-to-another"></a><span data-ttu-id="b3b59-102">ドキュメント間での既存のノードのコピー</span><span class="sxs-lookup"><span data-stu-id="b3b59-102">Copying Existing Nodes from One Document to Another</span></span>
+<span data-ttu-id="b3b59-103">**ImportNode**メソッドは、ノードまたはノード サブツリー全体をコピーしてから 1 つの機構**XmlDocument**別にします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-103">The **ImportNode** method is the mechanism by which a node or entire node subtree is copied from one **XmlDocument** to another.</span></span> <span data-ttu-id="b3b59-104">呼び出しから返されるノードは、ソース ドキュメントのノードのコピーであり、そこには属性値、ノード名、ノード型が含まれます。さらに、プレフィックス、ローカル名、名前空間 URI (Uniform Resource Identifier) など、名前空間に関連するすべての属性も含まれます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-104">The node returned from the call is a copy of the node from the source document, including attribute values, the node name, node type, and all namespace-related attributes such as the prefix, local name, and namespace Uniform Resource Identifier (URI).</span></span> <span data-ttu-id="b3b59-105">ソース ドキュメントは変更されません。</span><span class="sxs-lookup"><span data-stu-id="b3b59-105">The source document is not changed.</span></span> <span data-ttu-id="b3b59-106">インポートしたノードは、ノードを挿入するメソッドの 1 つを使用してツリーに追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3b59-106">After you have imported the node, you still have to add it to the tree using one of the methods used to insert nodes.</span></span>  
   
- 新しいドキュメントにノードを追加すると、その新しいドキュメントがそのノードを所有します。  これは、ノードが別のドキュメント フラグメントに作成される場合でも、各ノードの作成時には所有元のドキュメントが設定されるためです。  これは XML ドキュメント オブジェクト モデル \(DOM\) の要件であり、**XmlDocument** クラスの設計仕様です。  たとえば、**CreateElement** は、新しいノードを作成する唯一の手段です。  
+ <span data-ttu-id="b3b59-107">新しいドキュメントにノードを追加すると、その新しいドキュメントがそのノードを所有します。</span><span class="sxs-lookup"><span data-stu-id="b3b59-107">When the node is attached to its new document, the new document owns the node.</span></span> <span data-ttu-id="b3b59-108">これは、ノードが別のドキュメント フラグメントに作成される場合でも、各ノードの作成時には所有元のドキュメントが設定されるためです。</span><span class="sxs-lookup"><span data-stu-id="b3b59-108">The reason is that each node, when created, has an owning document, even if the nodes are created in separate document fragments.</span></span> <span data-ttu-id="b3b59-109">これは、XML ドキュメント オブジェクト モデル (DOM) の要件とに、設計仕様が適用されて、 **XmlDocument**クラスです。</span><span class="sxs-lookup"><span data-stu-id="b3b59-109">This is a requirement of the XML Document Object Model (DOM) and is enforced by the factory creation design on the **XmlDocument** class.</span></span> <span data-ttu-id="b3b59-110">たとえば、 **CreateElement**、新しいノードを作成する唯一の方法です。</span><span class="sxs-lookup"><span data-stu-id="b3b59-110">For example, **CreateElement**, is the only way to create new nodes.</span></span>  
   
- インポートされたノード型と *deep* パラメーターの値によって、必要に応じて追加情報がコピーされます。  XML では、あるドキュメントから別のドキュメントへ XML ソースまたは HTML ソースのフラグメントをコピーしたときに 2 つのドキュメントのドキュメント型定義 \(DTD\) が別々になることがありますが、このメソッドでは、その動作を再現しようとします。  
+ <span data-ttu-id="b3b59-111">インポートされたノード、および値のノードの種類によって、*ディープ*パラメーター、追加情報を適切にコピーされます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-111">Depending on the node type of the imported node and the value of the *deep* parameter, additional information is copied as appropriate.</span></span> <span data-ttu-id="b3b59-112">XML では、あるドキュメントから別のドキュメントへ XML ソースまたは HTML ソースのフラグメントをコピーしたときに 2 つのドキュメントのドキュメント型定義 (DTD) が別々になることがありますが、このメソッドでは、その動作を再現しようとします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-112">This method attempts to mirror the behavior expected if a fragment of XML or HTML source was copied from one document to another, accounting for the fact that for XML, the two documents may have different document type definitions (DTDs).</span></span>  
   
- インポートできるノードの型について、それぞれに固有の動作を次の表に示します。  
+ <span data-ttu-id="b3b59-113">インポートできるノードの型について、それぞれに固有の動作を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="b3b59-113">The following table describes the specific behavior for each type of node that can be imported.</span></span>  
   
-|ノード型|*deep* パラメーターが true|*deep* パラメーターが false|  
-|----------|-------------------------|--------------------------|  
-|XmlAttribute|XmlAttribute では、[XmlAttribute.Specified プロパティ](frlrfSystemXmlXmlAttributeClassSpecifiedTopic)が **true** に設定されます。  ソース **XmlAttribute** の子孫は再帰的にインポートされます。結果として得られるノードは再アセンブルされ、対応するサブツリーが形成されます。|**XmlAttribute** ノードは常に子ノードと共にインポートされるため、**XmlAttribute** ノードには *deep* パラメーターは適用されません。|  
-|XmlCDataSection|ノードをそのデータと共にコピーします。|ノードをそのデータと共にコピーします。|  
-|XmlComment|ノードをそのデータと共にコピーします。|ノードをそのデータと共にコピーします。|  
-|XmlDocumentFragment|ソース ノードの子孫が再帰的にインポートされます。結果として得られるノードは再アセンブルされ、対応するサブツリーが形成されます。|空の **XmlDocumentFragment** が作成されます。|  
-|XmlDocumentType|ノードがデータと共にコピーされます。\*|ノードがデータと共にコピーされます。\*|  
-|XmlElement|ソース要素の子孫が再帰的にインポートされます。結果として得られるノードは再アセンブルされ、対応するサブツリーが形成されます。 **Note:**  既存の属性はコピーされません。  インポートされるドキュメントでこの要素名に対する既定の属性が定義されている場合は、それらが割り当てられます。|指定された属性ノードがソース要素からインポートされ、生成された **XmlAttribute** ノードが新しい要素に追加されます。  子孫ノードはコピーされません。 **Note:**  既存の属性はコピーされません。  インポートされるドキュメントでこの要素名に対する既定の属性が定義されている場合は、それらが割り当てられます。|  
-|XmlEntityReference|ソース ドキュメントとターゲット ドキュメントではエンティティの定義が異なる可能性があるため、このメソッドは **XmlEntityReference** ノードだけをコピーします。  置換テキストは含まれません。  インポート先のドキュメントに同じエンティティが定義されている場合は、その値が割り当てられます。|ソース ドキュメントとターゲット ドキュメントではエンティティの定義が異なる可能性があるため、このメソッドは **XmlEntityReference** ノードだけをコピーします。  置換テキストは含まれません。  インポート先のドキュメントに同じエンティティが定義されている場合は、その値が割り当てられます。|  
-|XmlProcessingInstruction|インポートされたノードから、ターゲットおよびデータの値がコピーされます。|インポートされたノードから、ターゲットおよびデータの値がコピーされます。|  
-|XmlText|ノードをそのデータと共にコピーします。|ノードをそのデータと共にコピーします。|  
-|XmlSignificantWhitespace|ノードをそのデータと共にコピーします。|ノードをそのデータと共にコピーします。|  
-|XmlWhitespace|ノードをそのデータと共にコピーします。|ノードをそのデータと共にコピーします。|  
-|XmlDeclaration|インポートされたノードから、ターゲットおよびデータの値がコピーされます。|インポートされたノードから、ターゲットおよびデータの値がコピーされます。|  
-|その他のすべてのノード型|これらのノード型はインポートできません。|これらのノード型はインポートできません。|  
+|<span data-ttu-id="b3b59-114">ノード型</span><span class="sxs-lookup"><span data-stu-id="b3b59-114">Node Type</span></span>|<span data-ttu-id="b3b59-115">*ディープ*パラメーターが true</span><span class="sxs-lookup"><span data-stu-id="b3b59-115">*deep* parameter is true</span></span>|<span data-ttu-id="b3b59-116">*ディープ*パラメーターが false</span><span class="sxs-lookup"><span data-stu-id="b3b59-116">*deep* parameter is false</span></span>|  
+|---------------|------------------------------|-------------------------------|  
+|<span data-ttu-id="b3b59-117">XmlAttribute</span><span class="sxs-lookup"><span data-stu-id="b3b59-117">XmlAttribute</span></span>|<span data-ttu-id="b3b59-118"><xref:System.Xml.XmlAttribute.Specified%2A>に設定されている**true** XmlAttribute でします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-118">The <xref:System.Xml.XmlAttribute.Specified%2A> is set to **true** on the XmlAttribute.</span></span> <span data-ttu-id="b3b59-119">ソースの子孫の**XmlAttribute**は再帰的にインポートし、結果として得られるノード再アセンブルされ、対応するサブツリーが形成されます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-119">The descendants of the source **XmlAttribute** are recursively imported and the resulting nodes reassembled to form the corresponding subtree.</span></span>|<span data-ttu-id="b3b59-120">*ディープ*パラメーターには適用されません**XmlAttribute**ノード、インポート時に、その子ノードを常に実行するためです。</span><span class="sxs-lookup"><span data-stu-id="b3b59-120">The *deep* parameter does not apply to **XmlAttribute** nodes, because they always carry their child nodes with them when imported.</span></span>|  
+|<span data-ttu-id="b3b59-121">XmlCDataSection</span><span class="sxs-lookup"><span data-stu-id="b3b59-121">XmlCDataSection</span></span>|<span data-ttu-id="b3b59-122">ノードをそのデータと共にコピーします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-122">Copies the node, including its data.</span></span>|<span data-ttu-id="b3b59-123">ノードをそのデータと共にコピーします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-123">Copies the node, including its data.</span></span>|  
+|<span data-ttu-id="b3b59-124">XmlComment</span><span class="sxs-lookup"><span data-stu-id="b3b59-124">XmlComment</span></span>|<span data-ttu-id="b3b59-125">ノードをそのデータと共にコピーします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-125">Copies the node, including its data.</span></span>|<span data-ttu-id="b3b59-126">ノードをそのデータと共にコピーします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-126">Copies the node, including its data.</span></span>|  
+|<span data-ttu-id="b3b59-127">XmlDocumentFragment</span><span class="sxs-lookup"><span data-stu-id="b3b59-127">XmlDocumentFragment</span></span>|<span data-ttu-id="b3b59-128">ソース ノードの子孫が再帰的にインポートされます。結果として得られるノードは再アセンブルされ、対応するサブツリーが形成されます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-128">The descendants of the source node are recursively imported and the resulting nodes reassembled to form the corresponding subtree.</span></span>|<span data-ttu-id="b3b59-129">空**XmlDocumentFragment**を作成します。</span><span class="sxs-lookup"><span data-stu-id="b3b59-129">An empty **XmlDocumentFragment** is created.</span></span>|  
+|<span data-ttu-id="b3b59-130">XmlDocumentType</span><span class="sxs-lookup"><span data-stu-id="b3b59-130">XmlDocumentType</span></span>|<span data-ttu-id="b3b59-131">ノードがデータと共にコピーされます。*</span><span class="sxs-lookup"><span data-stu-id="b3b59-131">Copies the node, including its data.*</span></span>|<span data-ttu-id="b3b59-132">ノードがデータと共にコピーされます。*</span><span class="sxs-lookup"><span data-stu-id="b3b59-132">Copies the node, including its data.*</span></span>|  
+|<span data-ttu-id="b3b59-133">XmlElement</span><span class="sxs-lookup"><span data-stu-id="b3b59-133">XmlElement</span></span>|<span data-ttu-id="b3b59-134">ソース要素の子孫が再帰的にインポートされます。結果として得られるノードは再アセンブルされ、対応するサブツリーが形成されます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-134">The descendants of the source element are recursively imported and the resulting nodes reassembled to form the corresponding subtree.</span></span> <span data-ttu-id="b3b59-135">**注:**既定の属性はコピーされません。</span><span class="sxs-lookup"><span data-stu-id="b3b59-135">**Note:**  Default attributes are not copied.</span></span> <span data-ttu-id="b3b59-136">インポートされるドキュメントでこの要素名に対する既定の属性が定義されている場合は、それらが割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-136">If the document being imported into defines default attributes for this element name, those are assigned.</span></span>|<span data-ttu-id="b3b59-137">インポートされたノード、ソース要素の属性と、生成された指定**XmlAttribute**ノードは、新しい要素にアタッチします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-137">Specified attribute nodes of the source element are imported, and the generated **XmlAttribute** nodes are attached to the new element.</span></span> <span data-ttu-id="b3b59-138">子孫ノードはコピーされません。</span><span class="sxs-lookup"><span data-stu-id="b3b59-138">The descendant nodes are not copied.</span></span> <span data-ttu-id="b3b59-139">**注:**既定の属性はコピーされません。</span><span class="sxs-lookup"><span data-stu-id="b3b59-139">**Note:**  Default attributes are not copied.</span></span> <span data-ttu-id="b3b59-140">インポートされるドキュメントでこの要素名に対する既定の属性が定義されている場合は、それらが割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-140">If the document being imported into defines default attributes for this element name, those are assigned.</span></span>|  
+|<span data-ttu-id="b3b59-141">XmlEntityReference</span><span class="sxs-lookup"><span data-stu-id="b3b59-141">XmlEntityReference</span></span>|<span data-ttu-id="b3b59-142">このメソッドはのみコピー元とコピー先のドキュメントには、エンティティの定義が異なる可能性がある、ため、 **XmlEntityReference**ノード。</span><span class="sxs-lookup"><span data-stu-id="b3b59-142">Because the source and destination documents could have the entities defined differently, this method only copies the **XmlEntityReference** node.</span></span> <span data-ttu-id="b3b59-143">置換テキストは含まれません。</span><span class="sxs-lookup"><span data-stu-id="b3b59-143">The replacement text is not included.</span></span> <span data-ttu-id="b3b59-144">インポート先のドキュメントに同じエンティティが定義されている場合は、その値が割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-144">If the destination document has the entity defined, its value is assigned.</span></span>|<span data-ttu-id="b3b59-145">このメソッドはのみコピー元とコピー先のドキュメントには、エンティティの定義が異なる可能性がある、ため、 **XmlEntityReference**ノード。</span><span class="sxs-lookup"><span data-stu-id="b3b59-145">Because the source and destination documents could have the entities defined differently, this method only copies the **XmlEntityReference** node.</span></span> <span data-ttu-id="b3b59-146">置換テキストは含まれません。</span><span class="sxs-lookup"><span data-stu-id="b3b59-146">The replacement text is not included.</span></span> <span data-ttu-id="b3b59-147">インポート先のドキュメントに同じエンティティが定義されている場合は、その値が割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-147">If the destination document has the entity defined, its value is assigned.</span></span>|  
+|<span data-ttu-id="b3b59-148">XmlProcessingInstruction</span><span class="sxs-lookup"><span data-stu-id="b3b59-148">XmlProcessingInstruction</span></span>|<span data-ttu-id="b3b59-149">インポートされたノードから、ターゲットおよびデータの値がコピーされます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-149">Copies the target and data value from the imported node.</span></span>|<span data-ttu-id="b3b59-150">インポートされたノードから、ターゲットおよびデータの値がコピーされます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-150">Copies the target and data value from the imported node.</span></span>|  
+|<span data-ttu-id="b3b59-151">XmlText</span><span class="sxs-lookup"><span data-stu-id="b3b59-151">XmlText</span></span>|<span data-ttu-id="b3b59-152">ノードをそのデータと共にコピーします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-152">Copies the node, including its data.</span></span>|<span data-ttu-id="b3b59-153">ノードをそのデータと共にコピーします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-153">Copies the node, including its data.</span></span>|  
+|<span data-ttu-id="b3b59-154">XmlSignificantWhitespace</span><span class="sxs-lookup"><span data-stu-id="b3b59-154">XmlSignificantWhitespace</span></span>|<span data-ttu-id="b3b59-155">ノードをそのデータと共にコピーします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-155">Copies the node, including its data.</span></span>|<span data-ttu-id="b3b59-156">ノードをそのデータと共にコピーします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-156">Copies the node, including its data.</span></span>|  
+|<span data-ttu-id="b3b59-157">XmlWhitespace</span><span class="sxs-lookup"><span data-stu-id="b3b59-157">XmlWhitespace</span></span>|<span data-ttu-id="b3b59-158">ノードをそのデータと共にコピーします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-158">Copies the node, including its data.</span></span>|<span data-ttu-id="b3b59-159">ノードをそのデータと共にコピーします。</span><span class="sxs-lookup"><span data-stu-id="b3b59-159">Copies the node, including its data.</span></span>|  
+|<span data-ttu-id="b3b59-160">XmlDeclaration</span><span class="sxs-lookup"><span data-stu-id="b3b59-160">XmlDeclaration</span></span>|<span data-ttu-id="b3b59-161">インポートされたノードから、ターゲットおよびデータの値がコピーされます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-161">Copies the target and data value from the imported node.</span></span>|<span data-ttu-id="b3b59-162">インポートされたノードから、ターゲットおよびデータの値がコピーされます。</span><span class="sxs-lookup"><span data-stu-id="b3b59-162">Copies the target and data value from the imported node.</span></span>|  
+|<span data-ttu-id="b3b59-163">その他のすべてのノード型</span><span class="sxs-lookup"><span data-stu-id="b3b59-163">All other node types</span></span>|<span data-ttu-id="b3b59-164">これらのノード型はインポートできません。</span><span class="sxs-lookup"><span data-stu-id="b3b59-164">These node types cannot be imported.</span></span>|<span data-ttu-id="b3b59-165">これらのノード型はインポートできません。</span><span class="sxs-lookup"><span data-stu-id="b3b59-165">These node types cannot be imported.</span></span>|  
   
 > [!NOTE]
->  DocumentType ノードはインポートできますが、1 つのドキュメントは 1 つの DocumentType しか持てません。  したがって、ドキュメント型をインポートした場合は、それをツリーに挿入する前に、ドキュメント内にドキュメント型がないことを確認する必要があります。  ノードの削除については、「[XML ドキュメントからのノード、コンテンツ、値の削除](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md)」を参照してください。  
+>  <span data-ttu-id="b3b59-166">DocumentType ノードはインポートできますが、1 つのドキュメントは 1 つの DocumentType しか持てません。</span><span class="sxs-lookup"><span data-stu-id="b3b59-166">Although DocumentType nodes can be imported, a document can only have one DocumentType.</span></span> <span data-ttu-id="b3b59-167">したがって、ドキュメント型をインポートした場合は、それをツリーに挿入する前に、ドキュメント内にドキュメント型がないことを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3b59-167">So, once you have imported the document type, before inserting it into tree you have to make sure that there is no document type in the document.</span></span> <span data-ttu-id="b3b59-168">ノードの削除方法の詳細については、次を参照してください。[ノードの削除、コンテンツ、および XML ドキュメントから値](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md)です。</span><span class="sxs-lookup"><span data-stu-id="b3b59-168">For information on removing nodes, see [Removing Nodes, Content, and Values from an XML Document](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md).</span></span>  
   
-## 参照  
- [XML ドキュメント オブジェクト モデル \(DOM\)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a><span data-ttu-id="b3b59-169">関連項目</span><span class="sxs-lookup"><span data-stu-id="b3b59-169">See Also</span></span>  
+ [<span data-ttu-id="b3b59-170">XML ドキュメント オブジェクト モデル (DOM)</span><span class="sxs-lookup"><span data-stu-id="b3b59-170">XML Document Object Model (DOM)</span></span>](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

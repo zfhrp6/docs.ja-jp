@@ -1,74 +1,77 @@
 ---
-title: "EventWaitHandle | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "threading [.NET Framework], EventWaitHandle class"
-  - "EventWaitHandle class"
-  - "event wait handles [.NET Framework]"
-  - "threading [.NET Framework], cross-process synchronization"
+title: EventWaitHandle
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- threading [.NET Framework], EventWaitHandle class
+- EventWaitHandle class
+- event wait handles [.NET Framework]
+- threading [.NET Framework], cross-process synchronization
 ms.assetid: 11ee0b38-d663-4617-b793-35eb6c64e9fc
-caps.latest.revision: 9
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 1bd248133bd95ff05246eb36a8e250247fd7ed61
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# EventWaitHandle
-<xref:System.Threading.EventWaitHandle> クラスを使用すると、スレッドは通知および通知の待機により、互いに通信できます。  イベント待機ハンドル \(単にイベントとも呼ばれます\) は、通知を受けて、1 つ以上の待機中のイベントを解放できる待機ハンドルです。  通知を受けると、イベント待機ハンドルは手動または自動でリセットされます。  <xref:System.Threading.EventWaitHandle> クラスは、ローカルのイベント待機ハンドル \(ローカル イベント\) または名前付きのシステム イベント待機ハンドル \(名前付きのイベントまたはシステム イベント。すべてのプロセスから参照できます\) を表すことができます。  
+# <a name="eventwaithandle"></a><span data-ttu-id="cce6b-102">EventWaitHandle</span><span class="sxs-lookup"><span data-stu-id="cce6b-102">EventWaitHandle</span></span>
+<span data-ttu-id="cce6b-103"><xref:System.Threading.EventWaitHandle>クラスを通知し、通知を待機して、互いに通信するためにスレッドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="cce6b-103">The <xref:System.Threading.EventWaitHandle> class allows threads to communicate with each other by signaling and by waiting for signals.</span></span> <span data-ttu-id="cce6b-104">イベント待機ハンドルが (単にイベントとも呼ばれます) は、待機ハンドルを待機中の 1 つまたは複数のスレッドを解放するために通知されることができます。</span><span class="sxs-lookup"><span data-stu-id="cce6b-104">Event wait handles (also referred to simply as events) are wait handles that can be signaled in order to release one or more waiting threads.</span></span> <span data-ttu-id="cce6b-105">通知を受けると、イベント待機ハンドルは、手動または自動的にリセットされます。</span><span class="sxs-lookup"><span data-stu-id="cce6b-105">After it is signaled, an event wait handle is reset either manually or automatically.</span></span> <span data-ttu-id="cce6b-106"><xref:System.Threading.EventWaitHandle>クラスは、いずれか、ローカル イベント待機ハンドル (ローカル イベント) を表すことができるまたは名前付きシステム イベント (イベントまたはシステム イベント、すべてのプロセスに表示される名前付き) のハンドルを待機します。</span><span class="sxs-lookup"><span data-stu-id="cce6b-106">The <xref:System.Threading.EventWaitHandle> class can represent either a local event wait handle (local event) or a named system event wait handle (named event or system event, visible to all processes).</span></span>  
   
 > [!NOTE]
->  イベント待機ハンドルは、通常 .NET Framework でイベントと呼ばれるものとは異なります。  デリゲートやイベント ハンドラーは関連していません。  "イベント" という言葉で説明されているのは、それらがこれまでオペレーティング システム イベントと呼ばれており、待機ハンドルの通知はイベントが発生した待機中のスレッドを示すためです。  
+>  <span data-ttu-id="cce6b-107">イベント待機ハンドルは、.NET Framework では、その単語を通常意味という意味でのイベントでがありません。</span><span class="sxs-lookup"><span data-stu-id="cce6b-107">Event wait handles are not events in the sense usually meant by that word in the .NET Framework.</span></span> <span data-ttu-id="cce6b-108">またはがないデリゲート イベント ハンドラー関係します。</span><span class="sxs-lookup"><span data-stu-id="cce6b-108">There are no delegates or event handlers involved.</span></span> <span data-ttu-id="cce6b-109">Word「イベント」は使用を参照して、オペレーティング システムのイベントとしてしました従来されているため、および待機ハンドルの通知を待機中のスレッドを示すので説明のために、イベントが発生しました。</span><span class="sxs-lookup"><span data-stu-id="cce6b-109">The word "event" is used to describe them because they have traditionally been referred to as operating-system events, and because the act of signaling the wait handle indicates to waiting threads that an event has occurred.</span></span>  
   
- ローカル イベント待機ハンドルと名前付きイベント待機ハンドルはどちらも、システム同期オブジェクトを使用します。これは <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> ラッパーによって保護されており、リソースが確実に解放されるようにします。  <xref:System.Threading.WaitHandle.System%23IDisposable%23Dispose%2A> メソッドを使用すると、オブジェクトを使い終わったらすぐにリソースを解放できます。  
+ <span data-ttu-id="cce6b-110">両方のローカルと名前付きイベント待機ハンドルによって保護されて、システムの同期オブジェクトを使用して<xref:Microsoft.Win32.SafeHandles.SafeWaitHandle>する対象のリソースを解放することを確認してください。</span><span class="sxs-lookup"><span data-stu-id="cce6b-110">Both local and named event wait handles use system synchronization objects, which are protected by <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> wrappers to ensure that the resources are released.</span></span> <span data-ttu-id="cce6b-111">使用することができます、<xref:System.Threading.WaitHandle.Dispose%2A>オブジェクトの使用が完了したらすぐにリソースを解放します。</span><span class="sxs-lookup"><span data-stu-id="cce6b-111">You can use the <xref:System.Threading.WaitHandle.Dispose%2A> method to free the resources immediately when you have finished using the object.</span></span>  
   
-## 自動的にリセットされるイベント待機ハンドル  
- 自動リセット イベントを作成するには、<xref:System.Threading.EventWaitHandle> オブジェクトを作成するときに <xref:System.Threading.EventResetMode?displayProperty=fullName> を指定します。  その名前が示すとおり、この同期イベントは通知を受けたときに、単一の待機中のスレッドを解放した後、に自動的にリセットされます。  イベントを通知するには、その <xref:System.Threading.EventWaitHandle.Set%2A> メソッドを呼び出します。  
+## <a name="event-wait-handles-that-reset-automatically"></a><span data-ttu-id="cce6b-112">イベント待機ハンドルを自動的にリセットします。</span><span class="sxs-lookup"><span data-stu-id="cce6b-112">Event Wait Handles That Reset Automatically</span></span>  
+ <span data-ttu-id="cce6b-113">指定して自動リセット イベントを作成する<xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType>を作成するとき、<xref:System.Threading.EventWaitHandle>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cce6b-113">You create an automatic reset event by specifying <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType> when you create the <xref:System.Threading.EventWaitHandle> object.</span></span> <span data-ttu-id="cce6b-114">その名前からわかるように、この同期イベントに自動的にリセット シグナルを受け取ると、1 つの待機中のスレッドを解放します。</span><span class="sxs-lookup"><span data-stu-id="cce6b-114">As its name implies, this synchronization event resets automatically when signaled, after releasing a single waiting thread.</span></span> <span data-ttu-id="cce6b-115">呼び出して、イベントの信号をその<xref:System.Threading.EventWaitHandle.Set%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="cce6b-115">Signal the event by calling its <xref:System.Threading.EventWaitHandle.Set%2A> method.</span></span>  
   
- 通常、自動リセット イベントは、単一のスレッドのリソースに一度に排他アクセスを提供するために使用されます。  スレッドは、<xref:System.Threading.WaitHandle.WaitOne%2A> メソッドを呼び出してリソースを要求します。  他のスレッドに待機ハンドルがない場合、メソッドは `true` を返し、呼び出し元スレッドはリソースの制御権を持ちます。  
+ <span data-ttu-id="cce6b-116">自動リセット イベントは通常、一度に 1 つのスレッドのリソースへの排他アクセスを提供するために使用します。</span><span class="sxs-lookup"><span data-stu-id="cce6b-116">Automatic reset events are usually used to provide exclusive access to a resource for a single thread at a time.</span></span> <span data-ttu-id="cce6b-117">スレッドが呼び出すことによって、リソースを要求、<xref:System.Threading.WaitHandle.WaitOne%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="cce6b-117">A thread requests the resource by calling the <xref:System.Threading.WaitHandle.WaitOne%2A> method.</span></span> <span data-ttu-id="cce6b-118">メソッドを返しますのかどうかはその他のスレッドが保持していない待機ハンドル、`true`し、呼び出し元のスレッドがリソースを制御します。</span><span class="sxs-lookup"><span data-stu-id="cce6b-118">If no other thread is holding the wait handle, the method returns `true` and the calling thread has control of the resource.</span></span>  
   
 > [!IMPORTANT]
->  あらゆる同期機構と同様に、すべてのコード パスが適切な待機ハンドルを待ってから、保護されているリソースにアクセスする必要があります。  スレッドの同期は連携しています。  
+>  <span data-ttu-id="cce6b-119">同様に、すべての同期機構には、すべてのコード パスが保護されたリソースにアクセスする前に、適切な待機ハンドルを待機することを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cce6b-119">As with all synchronization mechanisms, you must ensure that all code paths wait on the appropriate wait handle before accessing a protected resource.</span></span> <span data-ttu-id="cce6b-120">スレッドの同期は協調的です。</span><span class="sxs-lookup"><span data-stu-id="cce6b-120">Thread synchronization is cooperative.</span></span>  
   
- 自動リセット イベントが通知を受けたとき、大気中のスレッドがない場合は、スレッドが待機中になるまでシグナル状態のままです。  イベントはスレッドを解放してすぐにリセットされ、以降のスレッドをブロックします。  
+ <span data-ttu-id="cce6b-121">自動リセット イベントがシグナル状態にスレッドが待機していないときに、シグナル状態のままになるスレッドが試行されるまでです。</span><span class="sxs-lookup"><span data-stu-id="cce6b-121">If an automatic reset event is signaled when no threads are waiting, it remains signaled until a thread attempts to wait on it.</span></span> <span data-ttu-id="cce6b-122">イベントは、スレッドを解放し、すぐにリセットされ、後続のスレッドをブロックします。</span><span class="sxs-lookup"><span data-stu-id="cce6b-122">The event releases the thread and immediately resets, blocking subsequent threads.</span></span>  
   
-## 手動でリセットされるイベント待機ハンドル  
- 手動リセット イベントを作成するには、<xref:System.Threading.EventWaitHandle> オブジェクトを作成するときに <xref:System.Threading.EventResetMode?displayProperty=fullName> を指定します。  その名前が示すとおり、この同期イベントは、通知を受けた後に手動でリセットする必要があります。  <xref:System.Threading.EventWaitHandle.Reset%2A> メソッドを呼び出してリセットするまで、イベント ハンドルを待っているスレッドはすぐに続行され、ブロックされません。  
+## <a name="event-wait-handles-that-reset-manually"></a><span data-ttu-id="cce6b-123">手動でリセットされるイベント待機ハンドル</span><span class="sxs-lookup"><span data-stu-id="cce6b-123">Event Wait Handles That Reset Manually</span></span>  
+ <span data-ttu-id="cce6b-124">指定して、手動リセット イベントを作成する<xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType>を作成するとき、<xref:System.Threading.EventWaitHandle>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cce6b-124">You create a manual reset event by specifying <xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType> when you create the <xref:System.Threading.EventWaitHandle> object.</span></span> <span data-ttu-id="cce6b-125">その名前からわかるように、この同期イベント必要があります手動でリセットする通知を受けた後です。</span><span class="sxs-lookup"><span data-stu-id="cce6b-125">As its name implies, this synchronization event must be reset manually after it has been signaled.</span></span> <span data-ttu-id="cce6b-126">これがリセットされるまで、呼び出すことによってその<xref:System.Threading.EventWaitHandle.Reset%2A>メソッド、イベント ハンドルを待機しているスレッドすぐにブロックなしで実行します。</span><span class="sxs-lookup"><span data-stu-id="cce6b-126">Until it is reset, by calling its <xref:System.Threading.EventWaitHandle.Reset%2A> method, threads that wait on the event handle proceed immediately without blocking.</span></span>  
   
- 手動リセット イベントは、家畜を囲うゲートのように動作します。  イベントが通知を受けないと、待機中のスレッドは柵の中の馬のようにブロックされます。  イベントが通知を受けると、その <xref:System.Threading.EventWaitHandle.Set%2A> メソッドを呼び出して、すべての待機中のスレッドは続行できます。  イベントは、その <xref:System.Threading.EventWaitHandle.Reset%2A> メソッドが呼び出されるまで、シグナル状態のままです。  これにより、手動リセット イベントは、1 つのスレッドがタスクを終えるまで待機させる必要のあるスレッドを保持する理想的な方法となっています。  
+ <span data-ttu-id="cce6b-127">手動では、並べてのゲートのようにイベントの動作をリセットします。</span><span class="sxs-lookup"><span data-stu-id="cce6b-127">A manual reset event acts like the gate of a corral.</span></span> <span data-ttu-id="cce6b-128">イベントがシグナル状態ではないときを並べてで木馬と同様に、待機しているスレッドをブロックします。</span><span class="sxs-lookup"><span data-stu-id="cce6b-128">When the event is not signaled, threads that wait on it block, like horses in a corral.</span></span> <span data-ttu-id="cce6b-129">呼び出すことによって、イベントを通知するときにその<xref:System.Threading.EventWaitHandle.Set%2A>メソッドを待機中のすべてのスレッドは続行するために解放します。</span><span class="sxs-lookup"><span data-stu-id="cce6b-129">When the event is signaled, by calling its <xref:System.Threading.EventWaitHandle.Set%2A> method, all waiting threads are free to proceed.</span></span> <span data-ttu-id="cce6b-130">イベントはまでシグナル状態のまま、<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="cce6b-130">The event remains signaled until its <xref:System.Threading.EventWaitHandle.Reset%2A> method is called.</span></span> <span data-ttu-id="cce6b-131">これにより、手動リセット イベントは、1 つのスレッドがタスクを終了するまで待機する必要があるスレッドを保持するための望ましい方法です。</span><span class="sxs-lookup"><span data-stu-id="cce6b-131">This makes the manual reset event an ideal way to hold up threads that need to wait until one thread finishes a task.</span></span>  
   
- 馬が柵を出るのと同様に、解放されたスレッドがオペレーティング システムによってスケジュールされ、実行が再開されるには時間がかかります。  すべてのスレッドの実行が再開される前に <xref:System.Threading.EventWaitHandle.Reset%2A> メソッドが呼び出された場合、残りのスレッドは再びブロックされます。  再開されるスレッドとブロックされるスレッドは、システムのロード、スケジューラを待っているスレッドの数など、ランダムな要素によって異なります。  イベントを通知したスレッドが通知後に終了した場合 \(これは最も一般的な使用パターンです\)、これは問題ではありません。  すべての待機中のスレッドが再開された後で、イベントを通知したスレッドに新しいタスクを開始させる場合は、すべての待機中のスレッドが再開されるまで、そのスレッドをブロックする必要があります。  それ以外の場合は競合状態で、コードの動作は予測できません。  
+ <span data-ttu-id="cce6b-132">並べてのままの木馬と同様に、オペレーティング システムによってスケジュールされると実行を再開するにはリリースのスレッドの時間がかかります。</span><span class="sxs-lookup"><span data-stu-id="cce6b-132">Like horses leaving a corral, it takes time for the released threads to be scheduled by the operating system and to resume execution.</span></span> <span data-ttu-id="cce6b-133">場合、<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドはすべてのスレッドの実行が再開する前に、残りのスレッドをもう一度ブロックできます。</span><span class="sxs-lookup"><span data-stu-id="cce6b-133">If the <xref:System.Threading.EventWaitHandle.Reset%2A> method is called before all the threads have resumed execution, the remaining threads once again block.</span></span> <span data-ttu-id="cce6b-134">再開されるスレッドとブロックされるスレッド ランダムなどの要因によって負荷、システムでは、スレッドの数を待機しているスケジューラのです。</span><span class="sxs-lookup"><span data-stu-id="cce6b-134">Which threads resume and which threads block depends on random factors like the load on the system, the number of threads waiting for the scheduler, and so on.</span></span> <span data-ttu-id="cce6b-135">これは、最も一般的な使用パターン、通知を行った後のイベントを通知するスレッドの終了する場合でもこれは問題ではありません。</span><span class="sxs-lookup"><span data-stu-id="cce6b-135">This is not a problem if the thread that signals the event ends after signaling, which is the most common usage pattern.</span></span> <span data-ttu-id="cce6b-136">結局のところ、新しいタスクを開始するイベントをシグナル状態には、スレッドが再開された待機中のスレッドを実行する場合に、待機中のすべてのスレッドが再開されるまでブロックする必要があります。</span><span class="sxs-lookup"><span data-stu-id="cce6b-136">If you want the thread that signaled the event to begin a new task after all the waiting threads have resumed, you must block it until all the waiting threads have resumed.</span></span> <span data-ttu-id="cce6b-137">それ以外の場合、競合状態があり、コードの動作は予測できません。</span><span class="sxs-lookup"><span data-stu-id="cce6b-137">Otherwise, you have a race condition, and the behavior of your code is unpredictable.</span></span>  
   
-## 自動イベントと手動イベントの共通の機能  
- 通常、ブロックされていないスレッドが <xref:System.Threading.EventWaitHandle.Set%2A> メソッドを呼び出して、いずれかの待機中のスレッド \(自動リセット イベントの場合\) またはそれらすべて \(手動リセット イベントの場合\) を解放するまで、1 つ以上のスレッドが <xref:System.Threading.EventWaitHandle> でブロックします。  スレッドは、静的な <xref:System.Threading.WaitHandle.SignalAndWait%2A?displayProperty=fullName> メソッドを呼び出すことにより、<xref:System.Threading.EventWaitHandle> の通知とブロックを分割できない操作として行うことができます。  
+## <a name="features-common-to-automatic-and-manual-events"></a><span data-ttu-id="cce6b-138">自動および手動のイベントに共通の機能</span><span class="sxs-lookup"><span data-stu-id="cce6b-138">Features Common to Automatic and Manual Events</span></span>  
+ <span data-ttu-id="cce6b-139">通常、1 つまたは複数のスレッドをブロックする<xref:System.Threading.EventWaitHandle>ブロックされていないスレッドを呼び出すまで、 <xref:System.Threading.EventWaitHandle.Set%2A> (自動リセット イベント) の場合の待機中のスレッドの 1 つまたはすべてのパラメーターを解放するメソッド (の場合は手動リセット イベント)。</span><span class="sxs-lookup"><span data-stu-id="cce6b-139">Typically, one or more threads block on an <xref:System.Threading.EventWaitHandle> until an unblocked thread calls the <xref:System.Threading.EventWaitHandle.Set%2A> method, which releases one of the waiting threads (in the case of automatic reset events) or all of them (in the case of manual reset events).</span></span> <span data-ttu-id="cce6b-140">スレッドがシグナル送信、<xref:System.Threading.EventWaitHandle>し、ブロックには、アトミックな操作として、静的なを呼び出すことによって、<xref:System.Threading.WaitHandle.SignalAndWait%2A?displayProperty=nameWithType>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="cce6b-140">A thread can signal an <xref:System.Threading.EventWaitHandle> and then block on it, as an atomic operation, by calling the static <xref:System.Threading.WaitHandle.SignalAndWait%2A?displayProperty=nameWithType> method.</span></span>  
   
- <xref:System.Threading.EventWaitHandle> オブジェクトは、静的な <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=fullName> および <xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=fullName> メソッドと共に使用できます。  <xref:System.Threading.EventWaitHandle> および <xref:System.Threading.Mutex> クラスはいずれも <xref:System.Threading.WaitHandle> から派生するため、両方のクラスをこれらのメソッドで使用できます。  
+ <span data-ttu-id="cce6b-141"><xref:System.Threading.EventWaitHandle>オブジェクトは、静的で使用できる<xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType>と<xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="cce6b-141"><xref:System.Threading.EventWaitHandle> objects can be used with the static <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType> and <xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType> methods.</span></span> <span data-ttu-id="cce6b-142"><xref:System.Threading.EventWaitHandle>と<xref:System.Threading.Mutex>両方のクラスから派生<xref:System.Threading.WaitHandle>、これらの方法で両方のクラスを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="cce6b-142">Because the <xref:System.Threading.EventWaitHandle> and <xref:System.Threading.Mutex> classes both derive from <xref:System.Threading.WaitHandle>, you can use both classes with these methods.</span></span>  
   
-### 名前付きのイベント  
- Windows オペレーティング システムでは、イベント待機ハンドルに名前を付けることができます。  名前付きのイベントはシステム全体で使用されます。  つまり、いったん名前付きのイベントを作成すると、すべてのプロセスのすべてのスレッドがそれを参照できます。  したがって、名前付きのイベントを使用して、スレッドだけでなくプロセスのアクティビティも同期できます。  
+### <a name="named-events"></a><span data-ttu-id="cce6b-143">名前付きイベント</span><span class="sxs-lookup"><span data-stu-id="cce6b-143">Named Events</span></span>  
+ <span data-ttu-id="cce6b-144">Windows オペレーティング システムでは、名前を持つイベント待機ハンドルを許可します。</span><span class="sxs-lookup"><span data-stu-id="cce6b-144">The Windows operating system allows event wait handles to have names.</span></span> <span data-ttu-id="cce6b-145">名前付きイベントは、システム全体です。</span><span class="sxs-lookup"><span data-stu-id="cce6b-145">A named event is system wide.</span></span> <span data-ttu-id="cce6b-146">つまり、名前付きのイベントが作成されると、すべてのプロセスのすべてのスレッドから参照です。</span><span class="sxs-lookup"><span data-stu-id="cce6b-146">That is, once the named event is created, it is visible to all threads in all processes.</span></span> <span data-ttu-id="cce6b-147">したがって、名前付きイベントは、プロセスおよびスレッドの活動を同期するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="cce6b-147">Thus, named events can be used to synchronize the activities of processes as well as threads.</span></span>  
   
- 名前付きのシステム イベントを表す <xref:System.Threading.EventWaitHandle> オブジェクトを作成するには、イベントの名前を指定するいずれかのコンストラクターを使用します。  
-  
-> [!NOTE]
->  名前付きのイベントはシステム全体で使用されるため、複数の <xref:System.Threading.EventWaitHandle> オブジェクトで同じ名前付きイベントを表すことができます。  コンストラクターまたは <xref:System.Threading.EventWaitHandle.OpenExisting%2A> メソッドを呼び出すたびに、新しい <xref:System.Threading.EventWaitHandle> オブジェクトが作成されます。  同じ名前を繰り返し指定すると、同じ名前付きイベントを表す複数のオブジェクトを作成できます。  
-  
- 名前付きのイベントを使用する際には注意が必要です。  それらはシステム全体で使用されるので、別のプロセスが同じ名前を使用すると、スレッドが予期せずにブロックされる場合があります。  悪意のあるコードが同じコンピューターで実行されると、サービス拒否攻撃の基本としてこれが使用される場合があります。  
-  
- アクセス制御セキュリティを使用して、名前付きのイベントを表す <xref:System.Threading.EventWaitHandle> オブジェクトを保護します。可能であれば <xref:System.Security.AccessControl.EventWaitHandleSecurity> オブジェクトを指定するコンストラクターを使用します。  また、<xref:System.Threading.EventWaitHandle.SetAccessControl%2A> メソッドを使用してアクセス制御セキュリティを適用できます。ただし、こうすると、イベント待機ハンドルが作成されてから保護されるまでの間に、脆弱性が生じます。  アクセス制御セキュリティでイベントを保護すると、悪意のある攻撃を防ぐのに役立ちますが、予期しない名前の衝突の問題解決にはなりません。  
+ <span data-ttu-id="cce6b-148">作成することができます、<xref:System.Threading.EventWaitHandle>イベント名を指定するコンス トラクターのいずれかを使用して名前付きシステム イベントを表すオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cce6b-148">You can create an <xref:System.Threading.EventWaitHandle> object that represents a named system event by using one of the constructors that specifies an event name.</span></span>  
   
 > [!NOTE]
->  <xref:System.Threading.EventWaitHandle> クラスとは異なり、派生したクラスである <xref:System.Threading.AutoResetEvent> および <xref:System.Threading.ManualResetEvent> は、ローカルの待機ハンドルのみを表すことができます。  名前付きのシステム イベントを表すことはできません。  
+>  <span data-ttu-id="cce6b-149">名前付きイベントがシステム全体であるため、可能であれば複数<xref:System.Threading.EventWaitHandle>名前付きイベントを同じを表すオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cce6b-149">Because named events are system wide, it is possible to have multiple <xref:System.Threading.EventWaitHandle> objects that represent the same named event.</span></span> <span data-ttu-id="cce6b-150">コンス トラクターを呼び出すたびに、または<xref:System.Threading.EventWaitHandle.OpenExisting%2A>メソッドは、新しい<xref:System.Threading.EventWaitHandle>オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="cce6b-150">Each time you call a constructor, or the <xref:System.Threading.EventWaitHandle.OpenExisting%2A> method, a new <xref:System.Threading.EventWaitHandle> object is created.</span></span> <span data-ttu-id="cce6b-151">同じ名前を繰り返し指定すると、同じ名前付きイベントを表す複数のオブジェクトが作成します。</span><span class="sxs-lookup"><span data-stu-id="cce6b-151">Specifying the same name repeatedly creates multiple objects that represent the same named event.</span></span>  
   
-## 参照  
- <xref:System.Threading.EventWaitHandle>   
- <xref:System.Threading.WaitHandle>   
- <xref:System.Threading.AutoResetEvent>   
- <xref:System.Threading.ManualResetEvent>   
- [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)
+ <span data-ttu-id="cce6b-152">イベントの名前を使用して、警告が表示されます。</span><span class="sxs-lookup"><span data-stu-id="cce6b-152">Caution is advised in using named events.</span></span> <span data-ttu-id="cce6b-153">これらは、システム全体であるため、同じ名前を使用する別のプロセスでは予期せず、スレッドをブロックできます。</span><span class="sxs-lookup"><span data-stu-id="cce6b-153">Because they are system wide, another process that uses the same name can block your threads unexpectedly.</span></span> <span data-ttu-id="cce6b-154">同じコンピューター上で実行される悪意のあるコードが、これをサービス拒否攻撃の土台として使用する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cce6b-154">Malicious code executing on the same computer could use this as the basis of a denial-of-service attack.</span></span>  
+  
+ <span data-ttu-id="cce6b-155">アクセス制御セキュリティを使用して保護する、<xref:System.Threading.EventWaitHandle>を指定するコンス トラクターを使用して、可能であれば、名前付きイベントを表すオブジェクト、<xref:System.Security.AccessControl.EventWaitHandleSecurity>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cce6b-155">Use access control security to protect an <xref:System.Threading.EventWaitHandle> object that represents a named event, preferably by using a constructor that specifies an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object.</span></span> <span data-ttu-id="cce6b-156">アクセス制御を使用してセキュリティを適用することも、<xref:System.Threading.EventWaitHandle.SetAccessControl%2A>メソッドが、このイベント待機ハンドルが作成された時刻と保護されている時間の間に脆弱性のままにします。</span><span class="sxs-lookup"><span data-stu-id="cce6b-156">You can also apply access control security using the <xref:System.Threading.EventWaitHandle.SetAccessControl%2A> method, but this leaves a window of vulnerability between the time the event wait handle is created and the time it is protected.</span></span> <span data-ttu-id="cce6b-157">イベントを保護するが、アクセス制御セキュリティにより、悪意のある攻撃を防ぐため、予期しない名前の衝突の問題が解決しません。</span><span class="sxs-lookup"><span data-stu-id="cce6b-157">Protecting events with access control security helps prevent malicious attacks, but it does not solve the problem of unintentional name collisions.</span></span>  
+  
+> [!NOTE]
+>  <span data-ttu-id="cce6b-158">異なり、<xref:System.Threading.EventWaitHandle>クラス、派生クラス<xref:System.Threading.AutoResetEvent>と<xref:System.Threading.ManualResetEvent>待機ハンドルを表すローカルのみであることができます。</span><span class="sxs-lookup"><span data-stu-id="cce6b-158">Unlike the <xref:System.Threading.EventWaitHandle> class, the derived classes <xref:System.Threading.AutoResetEvent> and <xref:System.Threading.ManualResetEvent> can represent only local wait handles.</span></span> <span data-ttu-id="cce6b-159">名前付きシステム イベントを表すことはできません。</span><span class="sxs-lookup"><span data-stu-id="cce6b-159">They cannot represent named system events.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="cce6b-160">関連項目</span><span class="sxs-lookup"><span data-stu-id="cce6b-160">See Also</span></span>  
+ <xref:System.Threading.EventWaitHandle>  
+ <xref:System.Threading.WaitHandle>  
+ <xref:System.Threading.AutoResetEvent>  
+ <xref:System.Threading.ManualResetEvent>  
+ [<span data-ttu-id="cce6b-161">EventWaitHandle、AutoResetEvent、CountdownEvent、ManualResetEvent</span><span class="sxs-lookup"><span data-stu-id="cce6b-161">EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent</span></span>](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)

@@ -1,42 +1,40 @@
 ---
-title: "XslTransform への XmlDataDocument の入力 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "XslTransform への XmlDataDocument の入力"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a0b536b6-cdb3-4a44-86c2-3b2ebc7bd4c9
-caps.latest.revision: 4
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 813c240ca0115015158988e1226d25890cde6939
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XslTransform への XmlDataDocument の入力
+# <a name="xmldatadocument-input-to-xsltransform"></a><span data-ttu-id="1516f-102">XslTransform への XmlDataDocument の入力</span><span class="sxs-lookup"><span data-stu-id="1516f-102">XmlDataDocument Input to XslTransform</span></span>
 > [!NOTE]
->  <xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。<xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT \(Extensible Stylesheet Language for Transformations\) 変換を実行できます。 詳細については、「[XslCompiledTransform クラスの使用](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)」および「[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)」を参照してください。  
+>  <span data-ttu-id="1516f-103"><xref:System.Xml.Xsl.XslTransform> では、[!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] クラスが廃止されています。</span><span class="sxs-lookup"><span data-stu-id="1516f-103">The <xref:System.Xml.Xsl.XslTransform> class is obsolete in the [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)].</span></span> <span data-ttu-id="1516f-104"><xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT (Extensible Stylesheet Language for Transformations) 変換を実行できます。</span><span class="sxs-lookup"><span data-stu-id="1516f-104">You can perform Extensible Stylesheet Language for Transformations (XSLT) transformations using the <xref:System.Xml.Xsl.XslCompiledTransform> class.</span></span> <span data-ttu-id="1516f-105">参照してください[XslCompiledTransform クラスを使用して](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)と[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)詳細についてはします。</span><span class="sxs-lookup"><span data-stu-id="1516f-105">See [Using the XslCompiledTransform Class](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) and [Migrating From the XslTransform Class](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) for more information.</span></span>  
   
- Microsoft [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] は、XML ドキュメント内のデータにアクセスするための XML ドキュメント オブジェクト モデル \(DOM\) を実装しているほか、XML ドキュメント内で読み込み、書き込み、移動を行うためのさまざまなクラスも実装しています。<xref:System.Xml.XmlDataDocument> 名前空間にある <xref:System.Xml> は、<xref:System.Data.DataSet> 内のデータへのリレーショナル アクセス機能およびリレーショナル データとの同期機能を備えています。<xref:System.Data.DataSet> のリレーショナル表現を介して構造化 XML を表示すると同時に操作したり、<xref:System.Xml.XmlDataDocument> の DOM 表現を介して半構造化 XML を操作したりすることができます。 したがって、<xref:System.Xml.XmlDataDocument> は、XML 環境とリレーショナル環境の境界を越えて機能します。  
+ <span data-ttu-id="1516f-106">Microsoft [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] は、XML ドキュメント内のデータにアクセスするための XML ドキュメント オブジェクト モデル (DOM) を実装しているほか、XML ドキュメント内で読み込み、書き込み、移動を行うためのさまざまなクラスも実装しています。</span><span class="sxs-lookup"><span data-stu-id="1516f-106">The Microsoft [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] implements the XML Document Object Model (DOM) to provide access to data in XML documents and additional classes to read, write, and navigate in XML documents.</span></span> <span data-ttu-id="1516f-107"><xref:System.Xml.XmlDataDocument>で見つかった、<xref:System.Xml>名前空間、リレーショナル データと同期する機能とデータへのリレーショナル アクセスを提供する、<xref:System.Data.DataSet>です。</span><span class="sxs-lookup"><span data-stu-id="1516f-107">The <xref:System.Xml.XmlDataDocument>, found in the <xref:System.Xml> namespace, provides relational access to data with its ability to synchronize with the relational data in the <xref:System.Data.DataSet>.</span></span> <span data-ttu-id="1516f-108"><xref:System.Data.DataSet> のリレーショナル表現を介して構造化 XML を表示すると同時に操作したり、<xref:System.Xml.XmlDataDocument> の DOM 表現を介して半構造化 XML を操作したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="1516f-108">You can simultaneously view and manipulate structured XML through the relational representation of the <xref:System.Data.DataSet> or manipulate the semi-structured XML through the DOM representation of the <xref:System.Xml.XmlDataDocument>.</span></span> <span data-ttu-id="1516f-109">したがって、<xref:System.Xml.XmlDataDocument> は、XML 環境とリレーショナル環境の境界を越えて機能します。</span><span class="sxs-lookup"><span data-stu-id="1516f-109">The <xref:System.Xml.XmlDataDocument> therefore crosses the boundaries of the XML and the relational worlds.</span></span>  
   
- データがリレーショナル構造に格納されている場合、そのデータを XSLT 変換への入力として使用するには、そのリレーショナル データを <xref:System.Data.DataSet> に読み込み、<xref:System.Xml.XmlDataDocument> に関連付けます。<xref:System.Xml.XPath.XPathNavigator> への入力である <xref:System.Xml.Xsl.XslTransform> は、<xref:System.Xml.XmlDataDocument> インターフェイスを介して <xref:System.Xml.XPath.IXPathNavigable> に実装されます。 リレーショナル データを受け取り、それを <xref:System.Data.DataSet> に読み込み、<xref:System.Xml.XmlDataDocument> 内の同期機能を利用することで、そのリレーショナル データに対する XSLT 変換を実行できます。  
+ <span data-ttu-id="1516f-110">データがリレーショナル構造に格納されている場合、そのデータを XSLT 変換への入力として使用するには、そのリレーショナル データを <xref:System.Data.DataSet> に読み込み、<xref:System.Xml.XmlDataDocument> に関連付けます。</span><span class="sxs-lookup"><span data-stu-id="1516f-110">If data is stored in a relational structure and you want it to be input to an XSLT transformation, you can load the relational data into a <xref:System.Data.DataSet> and associate it with the <xref:System.Xml.XmlDataDocument>.</span></span> <span data-ttu-id="1516f-111"><xref:System.Xml.XPath.XPathNavigator> への入力である <xref:System.Xml.Xsl.XslTransform> は、<xref:System.Xml.XmlDataDocument> インターフェイスを介して <xref:System.Xml.XPath.IXPathNavigable> に実装されます。</span><span class="sxs-lookup"><span data-stu-id="1516f-111">The <xref:System.Xml.XPath.XPathNavigator>, the input to the <xref:System.Xml.Xsl.XslTransform>, is implemented on the <xref:System.Xml.XmlDataDocument> through the <xref:System.Xml.XPath.IXPathNavigable> interface.</span></span> <span data-ttu-id="1516f-112">リレーショナル データを受け取り、それを <xref:System.Data.DataSet> に読み込み、<xref:System.Xml.XmlDataDocument> 内の同期機能を利用することで、そのリレーショナル データに対する XSLT 変換を実行できます。</span><span class="sxs-lookup"><span data-stu-id="1516f-112">By taking relational data, loading it into a <xref:System.Data.DataSet>, and using the synchronizing within the <xref:System.Xml.XmlDataDocument>, the relational data can now have XSLT transformations performed on it.</span></span>  
   
- リレーショナル データへの変換の適用については、「[DataSet への XSLT 変換の適用](../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md)」を参照してください。  
+ <span data-ttu-id="1516f-113">リレーショナル データに変換を適用する方法の詳細については、次を参照してください。[データセットに、XSLT 変換を適用する](../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md)です。</span><span class="sxs-lookup"><span data-stu-id="1516f-113">For more information on applying a transform to relational data, see [Applying an XSLT Transform to a DataSet](../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md).</span></span>  
   
-## 参照  
- <xref:System.Xml.XmlDataDocument>   
- [DataSet と XmlDataDocument の同期](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)   
- [XslTransform クラスを使用した XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)   
- [XslTransform クラスによる XSLT プロセッサの実装](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)   
- [変換における XPathNavigator](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)   
- [変換における XPathNodeIterator](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)   
- [XslTransform への XPathDocument の入力](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)   
- [XslTransform への XmlDocument の入力](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)
+## <a name="see-also"></a><span data-ttu-id="1516f-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="1516f-114">See Also</span></span>  
+ <xref:System.Xml.XmlDataDocument>  
+ [<span data-ttu-id="1516f-115">DataSet と XmlDataDocument の同期</span><span class="sxs-lookup"><span data-stu-id="1516f-115">DataSet and XmlDataDocument Synchronization</span></span>](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
+ [<span data-ttu-id="1516f-116">XslTransform クラスによる XSLT 変換</span><span class="sxs-lookup"><span data-stu-id="1516f-116">XSLT Transformations with the XslTransform Class</span></span>](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
+ [<span data-ttu-id="1516f-117">XslTransform クラスによる XSLT プロセッサ</span><span class="sxs-lookup"><span data-stu-id="1516f-117">XslTransform Class Implements the XSLT Processor</span></span>](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)  
+ [<span data-ttu-id="1516f-118">変換における XPathNavigator</span><span class="sxs-lookup"><span data-stu-id="1516f-118">XPathNavigator in Transformations</span></span>](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)  
+ [<span data-ttu-id="1516f-119">変換における XPathNodeIterator</span><span class="sxs-lookup"><span data-stu-id="1516f-119">XPathNodeIterator in Transformations</span></span>](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)  
+ [<span data-ttu-id="1516f-120">XslTransform への XPathDocument の入力</span><span class="sxs-lookup"><span data-stu-id="1516f-120">XPathDocument Input to XslTransform</span></span>](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)  
+ [<span data-ttu-id="1516f-121">XslTransform への XmlDocument の入力</span><span class="sxs-lookup"><span data-stu-id="1516f-121">XmlDocument Input to XslTransform</span></span>](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)

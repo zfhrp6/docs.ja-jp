@@ -1,130 +1,111 @@
 ---
 title: "プロパティの使用 (C# プログラミング ガイド)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-dev_langs:
-- CSharp
 helpviewer_keywords:
 - set accessor [C#]
 - get accessor [C#]
 - properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: aae36195f4a6eb2ab49ec27e1e07debff7289b37
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 6b1b1dbffa3af7fdaf1f3a93ecdf6183fe1c1cf2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="using-properties-c-programming-guide"></a>プロパティの使用 (C# プログラミング ガイド)
-プロパティは、フィールドとメソッドの両方の側面を結合します。 オブジェクトのユーザーにとってプロパティは、プロパティへのアクセスに同じ構文を必要とするフィールドのように見えます。 クラスの実装者にとってプロパティは、[get](../../../csharp/language-reference/keywords/get.md) アクセサーと [set](../../../csharp/language-reference/keywords/set.md) アクセサーの両方またはいずれかを表す 1 つまたは 2 つのコード ブロックです。 `get` アクセサーのコード ブロックはプロパティが読み取られる時に実行され、`set` アクセサーのコード ブロックはプロパティに新しい値が割り当てられるときに実行されます。 `set` アクセサーのないプロパティは読み取り専用と見なされます。 `get` アクセサーのないプロパティは書き込み専用と見なされます。 両方のアクセサーを持つプロパティは、読み取り/書き込みです。  
+# <a name="using-properties-c-programming-guide"></a><span data-ttu-id="90667-102">プロパティの使用 (C# プログラミング ガイド)</span><span class="sxs-lookup"><span data-stu-id="90667-102">Using Properties (C# Programming Guide)</span></span>
+<span data-ttu-id="90667-103">プロパティは、フィールドとメソッドの両方の側面を結合します。</span><span class="sxs-lookup"><span data-stu-id="90667-103">Properties combine aspects of both fields and methods.</span></span> <span data-ttu-id="90667-104">オブジェクトのユーザーにとってプロパティは、プロパティへのアクセスに同じ構文を必要とするフィールドのように見えます。</span><span class="sxs-lookup"><span data-stu-id="90667-104">To the user of an object, a property appears to be a field, accessing the property requires the same syntax.</span></span> <span data-ttu-id="90667-105">クラスの実装者にとってプロパティは、[get](../../../csharp/language-reference/keywords/get.md) アクセサーと [set](../../../csharp/language-reference/keywords/set.md) アクセサーの両方またはいずれかを表す 1 つまたは 2 つのコード ブロックです。</span><span class="sxs-lookup"><span data-stu-id="90667-105">To the implementer of a class, a property is one or two code blocks, representing a [get](../../../csharp/language-reference/keywords/get.md) accessor and/or a [set](../../../csharp/language-reference/keywords/set.md) accessor.</span></span> <span data-ttu-id="90667-106">`get` アクセサーのコード ブロックはプロパティが読み取られる時に実行され、`set` アクセサーのコード ブロックはプロパティに新しい値が割り当てられるときに実行されます。</span><span class="sxs-lookup"><span data-stu-id="90667-106">The code block for the `get` accessor is executed when the property is read; the code block for the `set` accessor is executed when the property is assigned a new value.</span></span> <span data-ttu-id="90667-107">`set` アクセサーのないプロパティは読み取り専用と見なされます。</span><span class="sxs-lookup"><span data-stu-id="90667-107">A property without a `set` accessor is considered read-only.</span></span> <span data-ttu-id="90667-108">`get` アクセサーのないプロパティは書き込み専用と見なされます。</span><span class="sxs-lookup"><span data-stu-id="90667-108">A property without a `get` accessor is considered write-only.</span></span> <span data-ttu-id="90667-109">両方のアクセサーを持つプロパティは、読み取り/書き込みです。</span><span class="sxs-lookup"><span data-stu-id="90667-109">A property that has both accessors is read-write.</span></span>  
   
- フィールドとは異なり、プロパティは変数には分類されません。 そのため、プロパティを [ref](../../../csharp/language-reference/keywords/ref.md) または [out](../../../csharp/language-reference/keywords/out.md) パラメーターとして渡すことはできません。  
+ <span data-ttu-id="90667-110">フィールドとは異なり、プロパティは変数には分類されません。</span><span class="sxs-lookup"><span data-stu-id="90667-110">Unlike fields, properties are not classified as variables.</span></span> <span data-ttu-id="90667-111">そのため、プロパティを [ref](../../../csharp/language-reference/keywords/ref.md) または [out](../../../csharp/language-reference/keywords/out.md) パラメーターとして渡すことはできません。</span><span class="sxs-lookup"><span data-stu-id="90667-111">Therefore, you cannot pass a property as a [ref](../../../csharp/language-reference/keywords/ref.md) or [out](../../../csharp/language-reference/keywords/out.md) parameter.</span></span>  
   
- プロパティには次のようなさまざまな用途があります。変更を許可する前にデータを検証したり、データをそのデータが実際に他のソース (データベースなど) から取得されるクラスで透過的に公開したり、イベントの発生や他のフィールドの値を変更するなど、データが変更されたときに、アクションを実行したりすることができます。  
+ <span data-ttu-id="90667-112">プロパティには次のようなさまざまな用途があります。変更を許可する前にデータを検証したり、データをそのデータが実際に他のソース (データベースなど) から取得されるクラスで透過的に公開したり、イベントの発生や他のフィールドの値を変更するなど、データが変更されたときに、アクションを実行したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="90667-112">Properties have many uses: they can validate data before allowing a change; they can transparently expose data on a class where that data is actually retrieved from some other source, such as a database; they can take an action when data is changed, such as raising an event, or changing the value of other fields.</span></span>  
   
- プロパティはクラス ブロックで宣言できます。フィールドのアクセス レベル、プロパティの型、プロパティの名前、`get` アクセサーと `set` アクセサーの両方またはいずれかを宣言するコード ブロックの順で指定します。 例:  
+ <span data-ttu-id="90667-113">プロパティはクラス ブロックで宣言できます。フィールドのアクセス レベル、プロパティの型、プロパティの名前、`get` アクセサーと `set` アクセサーの両方またはいずれかを宣言するコード ブロックの順で指定します。</span><span class="sxs-lookup"><span data-stu-id="90667-113">Properties are declared in the class block by specifying the access level of the field, followed by the type of the property, followed by the name of the property, and followed by a code block that declares a `get`-accessor and/or a `set` accessor.</span></span> <span data-ttu-id="90667-114">例:</span><span class="sxs-lookup"><span data-stu-id="90667-114">For example:</span></span>  
   
- [!code-cs[csProgGuideProperties#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_1.cs)]  
+ [!code-csharp[csProgGuideProperties#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_1.cs)]  
   
- この例では、`set` アクセサーが `Month` が 1 から 12 までの値に設定されていることを確認できるように、`Month` がプロパティとして宣言されています。 `Month` プロパティは、プライベート フィールドを使用して実際の値を追跡します。 プロパティのデータの実際の場所は、プロパティの "バッキング ストア" と呼ばれることがよくあります。 プロパティがプライベート フィールドをバッキング ストアとして使用するのは一般的なことです。 フィールドは、プロパティを呼び出すことでのみ変更できるようにするため、プライベートとマークされます。 パブリックおよびプライベートのアクセス制限の詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+ <span data-ttu-id="90667-115">この例では、`set` アクセサーが `Month` が 1 から 12 までの値に設定されていることを確認できるように、`Month` がプロパティとして宣言されています。</span><span class="sxs-lookup"><span data-stu-id="90667-115">In this example, `Month` is declared as a property so that the `set` accessor can make sure that the `Month` value is set between 1 and 12.</span></span> <span data-ttu-id="90667-116">`Month` プロパティは、プライベート フィールドを使用して実際の値を追跡します。</span><span class="sxs-lookup"><span data-stu-id="90667-116">The `Month` property uses a private field to track the actual value.</span></span> <span data-ttu-id="90667-117">プロパティのデータの実際の場所は、プロパティの "バッキング ストア" と呼ばれることがよくあります。</span><span class="sxs-lookup"><span data-stu-id="90667-117">The real location of a property's data is often referred to as the property's "backing store."</span></span> <span data-ttu-id="90667-118">プロパティがプライベート フィールドをバッキング ストアとして使用するのは一般的なことです。</span><span class="sxs-lookup"><span data-stu-id="90667-118">It is common for properties to use private fields as a backing store.</span></span> <span data-ttu-id="90667-119">フィールドは、プロパティを呼び出すことでのみ変更できるようにするため、プライベートとマークされます。</span><span class="sxs-lookup"><span data-stu-id="90667-119">The field is marked private in order to make sure that it can only be changed by calling the property.</span></span> <span data-ttu-id="90667-120">パブリックおよびプライベートのアクセス制限の詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="90667-120">For more information about public and private access restrictions, see [Access Modifiers](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).</span></span>  
   
- 自動実装プロパティは、単純なプロパティ宣言の簡単な構文を提供します。 詳細については、「[自動実装プロパティ](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)」を参照してください。  
+ <span data-ttu-id="90667-121">自動実装プロパティは、単純なプロパティ宣言の簡単な構文を提供します。</span><span class="sxs-lookup"><span data-stu-id="90667-121">Auto-implemented properties provide simplified syntax for simple property declarations.</span></span> <span data-ttu-id="90667-122">詳細については、「[自動実装プロパティ](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="90667-122">For more information, see [Auto-Implemented Properties](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md).</span></span>  
   
-## <a name="the-get-accessor"></a>get アクセサー  
- `get` アクセサーの本体は、メソッドの本体と似ています。 プロパティの型の値を返す必要があります。 `get` アクセサーの実行は、フィールドの値を読み取ることに相当します。 たとえば、`get` アクセサーからプライベート変数を返し、最適化が有効になっている場合、`get` アクセサー メソッドへの呼び出しはコンパイラによってインライン化されるため、メソッド呼び出しのオーバーヘッドはありません。 ただし、仮想 `get` アクセサー メソッドはインライン化できません。これは、コンパイラがコンパイル時にどのメソッドが実際に実行時に呼び出されるかを認識しないからです。 次に、プライベート フィールド `name` の値を返す `get` アクセサーを示します。  
+## <a name="the-get-accessor"></a><span data-ttu-id="90667-123">get アクセサー</span><span class="sxs-lookup"><span data-stu-id="90667-123">The get Accessor</span></span>  
+ <span data-ttu-id="90667-124">`get` アクセサーの本体は、メソッドの本体と似ています。</span><span class="sxs-lookup"><span data-stu-id="90667-124">The body of the `get` accessor resembles that of a method.</span></span> <span data-ttu-id="90667-125">プロパティの型の値を返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="90667-125">It must return a value of the property type.</span></span> <span data-ttu-id="90667-126">`get` アクセサーの実行は、フィールドの値を読み取ることに相当します。</span><span class="sxs-lookup"><span data-stu-id="90667-126">The execution of the `get` accessor is equivalent to reading the value of the field.</span></span> <span data-ttu-id="90667-127">たとえば、`get` アクセサーからプライベート変数を返し、最適化が有効になっている場合、`get` アクセサー メソッドへの呼び出しはコンパイラによってインライン化されるため、メソッド呼び出しのオーバーヘッドはありません。</span><span class="sxs-lookup"><span data-stu-id="90667-127">For example, when you are returning the private variable from the `get` accessor and optimizations are enabled, the call to the `get` accessor method is inlined by the compiler so there is no method-call overhead.</span></span> <span data-ttu-id="90667-128">ただし、仮想 `get` アクセサー メソッドはインライン化できません。これは、コンパイラがコンパイル時にどのメソッドが実際に実行時に呼び出されるかを認識しないからです。</span><span class="sxs-lookup"><span data-stu-id="90667-128">However, a virtual `get` accessor method cannot be inlined because the compiler does not know at compile-time which method may actually be called at run time.</span></span> <span data-ttu-id="90667-129">次に、プライベート フィールド `name` の値を返す `get` アクセサーを示します。</span><span class="sxs-lookup"><span data-stu-id="90667-129">The following is a `get` accessor that returns the value of a private field `name`:</span></span>  
   
- [!code-cs[csProgGuideProperties#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_2.cs)]  
+ [!code-csharp[csProgGuideProperties#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_2.cs)]  
   
- プロパティを参照するとき、割り当ての対象を除き、`get` アクセサーがプロパティの値を読み取るために呼び出されます。 例:  
+ <span data-ttu-id="90667-130">プロパティを参照するとき、割り当ての対象を除き、`get` アクセサーがプロパティの値を読み取るために呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="90667-130">When you reference the property, except as the target of an assignment, the `get` accessor is invoked to read the value of the property.</span></span> <span data-ttu-id="90667-131">例:</span><span class="sxs-lookup"><span data-stu-id="90667-131">For example:</span></span>  
   
- [!code-cs[csProgGuideProperties#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_3.cs)]  
+ [!code-csharp[csProgGuideProperties#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_3.cs)]  
   
- `get` アクセサーは [return](../../../csharp/language-reference/keywords/return.md) または [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントで終わる必要があります。コントロールはアクセサー本体をフロー オフすることはできません。  
+ <span data-ttu-id="90667-132">`get` アクセサーは [return](../../../csharp/language-reference/keywords/return.md) または [throw](../../../csharp/language-reference/keywords/throw.md) ステートメントで終わる必要があります。コントロールはアクセサー本体をフロー オフすることはできません。</span><span class="sxs-lookup"><span data-stu-id="90667-132">The `get` accessor must end in a [return](../../../csharp/language-reference/keywords/return.md) or [throw](../../../csharp/language-reference/keywords/throw.md) statement, and control cannot flow off the accessor body.</span></span>  
   
- `get` アクセサーを使用してオブジェクトの状態を変更するのは、悪いプログラミング スタイルです。 たとえば、次のアクセサーでは、`number` フィールドにアクセスされるたびにオブジェクトの状態が変更される副作用が発生します。  
+ <span data-ttu-id="90667-133">`get` アクセサーを使用してオブジェクトの状態を変更するのは、悪いプログラミング スタイルです。</span><span class="sxs-lookup"><span data-stu-id="90667-133">It is a bad programming style to change the state of the object by using the `get` accessor.</span></span> <span data-ttu-id="90667-134">たとえば、次のアクセサーでは、`number` フィールドにアクセスされるたびにオブジェクトの状態が変更される副作用が発生します。</span><span class="sxs-lookup"><span data-stu-id="90667-134">For example, the following accessor produces the side effect of changing the state of the object every time that the `number` field is accessed.</span></span>  
   
- [!code-cs[csProgGuideProperties#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_4.cs)]  
+ [!code-csharp[csProgGuideProperties#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_4.cs)]  
   
- `get` アクセサーは、フィールド値を返すまたは計算してから返すために使用できます。 例:  
+ <span data-ttu-id="90667-135">`get` アクセサーは、フィールド値を返すまたは計算してから返すために使用できます。</span><span class="sxs-lookup"><span data-stu-id="90667-135">The `get` accessor can be used to return the field value or to compute it and return it.</span></span> <span data-ttu-id="90667-136">例:</span><span class="sxs-lookup"><span data-stu-id="90667-136">For example:</span></span>  
   
- [!code-cs[csProgGuideProperties#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_5.cs)]  
+ [!code-csharp[csProgGuideProperties#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_5.cs)]  
   
- 前のコード セグメントで `Name` プロパティに値を割り当てない場合、値 NA が返されます。  
+ <span data-ttu-id="90667-137">前のコード セグメントで `Name` プロパティに値を割り当てない場合、値 NA が返されます。</span><span class="sxs-lookup"><span data-stu-id="90667-137">In the previous code segment, if you do not assign a value to the `Name` property, it will return the value NA.</span></span>  
   
-## <a name="the-set-accessor"></a>set アクセサー  
- `set` アクセサーは、戻り値の型が [void](../../../csharp/language-reference/keywords/void.md) のメソッドと似ています。 型がプロパティの型の `value` と呼ばれる暗黙のパラメーターを使用します。 次の例では、`set` アクセサーが `Name` プロパティに追加されます。  
+## <a name="the-set-accessor"></a><span data-ttu-id="90667-138">set アクセサー</span><span class="sxs-lookup"><span data-stu-id="90667-138">The set Accessor</span></span>  
+ <span data-ttu-id="90667-139">`set` アクセサーは、戻り値の型が [void](../../../csharp/language-reference/keywords/void.md) のメソッドと似ています。</span><span class="sxs-lookup"><span data-stu-id="90667-139">The `set` accessor resembles a method whose return type is [void](../../../csharp/language-reference/keywords/void.md).</span></span> <span data-ttu-id="90667-140">型がプロパティの型の `value` と呼ばれる暗黙のパラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="90667-140">It uses an implicit parameter called `value`, whose type is the type of the property.</span></span> <span data-ttu-id="90667-141">次の例では、`set` アクセサーが `Name` プロパティに追加されます。</span><span class="sxs-lookup"><span data-stu-id="90667-141">In the following example, a `set` accessor is added to the `Name` property:</span></span>  
   
- [!code-cs[csProgGuideProperties#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_6.cs)]  
+ [!code-csharp[csProgGuideProperties#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_6.cs)]  
   
- プロパティに値を割り当てるときに、新しい値を提供する引数を使用して `set` アクセサーが呼び出されます。 例:  
+ <span data-ttu-id="90667-142">プロパティに値を割り当てるときに、新しい値を提供する引数を使用して `set` アクセサーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="90667-142">When you assign a value to the property, the `set` accessor is invoked by using an argument that provides the new value.</span></span> <span data-ttu-id="90667-143">例:</span><span class="sxs-lookup"><span data-stu-id="90667-143">For example:</span></span>  
   
- [!code-cs[csProgGuideProperties#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_7.cs)]  
+ [!code-csharp[csProgGuideProperties#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_7.cs)]  
   
- `set` アクセサーでローカル変数の宣言に暗黙のパラメーター名 `value` を使用すると、エラーになります。  
+ <span data-ttu-id="90667-144">`set` アクセサーでローカル変数の宣言に暗黙のパラメーター名 `value` を使用すると、エラーになります。</span><span class="sxs-lookup"><span data-stu-id="90667-144">It is an error to use the implicit parameter name, `value`, for a local variable declaration in a `set` accessor.</span></span>  
   
-## <a name="remarks"></a>コメント  
- プロパティは`public`、`private`、`protected`、`internal`、または `protected internal` のいずれかでマークされます。 これらのアクセス修飾子により、クラスのユーザーがプロパティにアクセスできる方法が定義されます。 同じプロパティの `get` と `set` アクセサーは、異なるアクセス修飾子を持つことができます。 たとえば、`get` を `public` にして、型の外部からの読み取り専用アクセスを許可して、`set` を `private` または `protected` にすることができます。 詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。  
+## <a name="remarks"></a><span data-ttu-id="90667-145">コメント</span><span class="sxs-lookup"><span data-stu-id="90667-145">Remarks</span></span>  
+ <span data-ttu-id="90667-146">として設定できるプロパティ`public`、 `private`、 `protected`、 `internal`、`protected internal`または`private protected`です。</span><span class="sxs-lookup"><span data-stu-id="90667-146">Properties can be marked as `public`, `private`, `protected`, `internal`, `protected internal` or `private protected`.</span></span> <span data-ttu-id="90667-147">これらのアクセス修飾子により、クラスのユーザーがプロパティにアクセスできる方法が定義されます。</span><span class="sxs-lookup"><span data-stu-id="90667-147">These access modifiers define how users of the class can access the property.</span></span> <span data-ttu-id="90667-148">同じプロパティの `get` と `set` アクセサーは、異なるアクセス修飾子を持つことができます。</span><span class="sxs-lookup"><span data-stu-id="90667-148">The `get` and `set` accessors for the same property may have different access modifiers.</span></span> <span data-ttu-id="90667-149">たとえば、`get` を `public` にして、型の外部からの読み取り専用アクセスを許可して、`set` を `private` または `protected` にすることができます。</span><span class="sxs-lookup"><span data-stu-id="90667-149">For example, the `get` may be `public` to allow read-only access from outside the type, and the `set` may be `private` or `protected`.</span></span> <span data-ttu-id="90667-150">詳細については、「[アクセス修飾子](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="90667-150">For more information, see [Access Modifiers](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).</span></span>  
   
- `static` キーワードを使用して、プロパティを静的プロパティとして宣言できます。 その場合、クラスのインスタンスが存在しなくても、呼び出し元がいつでもプロパティを使用できるようになります。 詳細については、「[静的クラスと静的クラス メンバー](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)」を参照してください。  
+ <span data-ttu-id="90667-151">`static` キーワードを使用して、プロパティを静的プロパティとして宣言できます。</span><span class="sxs-lookup"><span data-stu-id="90667-151">A property may be declared as a static property by using the `static` keyword.</span></span> <span data-ttu-id="90667-152">その場合、クラスのインスタンスが存在しなくても、呼び出し元がいつでもプロパティを使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="90667-152">This makes the property available to callers at any time, even if no instance of the class exists.</span></span> <span data-ttu-id="90667-153">詳細については、「[静的クラスと静的クラス メンバー](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="90667-153">For more information, see [Static Classes and Static Class Members](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).</span></span>  
   
- プロパティは、[virtual](../../../csharp/language-reference/keywords/virtual.md) キーワードを使用して仮想プロパティとしてマークできます。 その場合、派生クラスでは、[override](../../../csharp/language-reference/keywords/override.md) キーワードを使用してプロパティの動作をオーバーライドできます。 これらのオプションの詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」を参照してください。  
+ <span data-ttu-id="90667-154">プロパティは、[virtual](../../../csharp/language-reference/keywords/virtual.md) キーワードを使用して仮想プロパティとしてマークできます。</span><span class="sxs-lookup"><span data-stu-id="90667-154">A property may be marked as a virtual property by using the [virtual](../../../csharp/language-reference/keywords/virtual.md) keyword.</span></span> <span data-ttu-id="90667-155">その場合、派生クラスでは、[override](../../../csharp/language-reference/keywords/override.md) キーワードを使用してプロパティの動作をオーバーライドできます。</span><span class="sxs-lookup"><span data-stu-id="90667-155">This enables derived classes to override the property behavior by using the [override](../../../csharp/language-reference/keywords/override.md) keyword.</span></span> <span data-ttu-id="90667-156">これらのオプションの詳細については、「[継承](../../../csharp/programming-guide/classes-and-structs/inheritance.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="90667-156">For more information about these options, see [Inheritance](../../../csharp/programming-guide/classes-and-structs/inheritance.md).</span></span>  
   
- 仮想プロパティをオーバーライドするプロパティは、[sealed](../../../csharp/language-reference/keywords/sealed.md) にすることもできます。その場合、派生クラスでは、プロパティが仮想でなくなります。 最後に、プロパティは[抽象](../../../csharp/language-reference/keywords/abstract.md)として宣言できます。 つまり、クラスに実装はなく、派生クラスが独自の実装を記述する必要があります。 これらのオプションの詳細については、「[抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)」を参照してください。  
+ <span data-ttu-id="90667-157">仮想プロパティをオーバーライドするプロパティは、[sealed](../../../csharp/language-reference/keywords/sealed.md) にすることもできます。その場合、派生クラスでは、プロパティが仮想でなくなります。</span><span class="sxs-lookup"><span data-stu-id="90667-157">A property overriding a virtual property can also be [sealed](../../../csharp/language-reference/keywords/sealed.md), specifying that for derived classes it is no longer virtual.</span></span> <span data-ttu-id="90667-158">最後に、プロパティは[抽象](../../../csharp/language-reference/keywords/abstract.md)として宣言できます。</span><span class="sxs-lookup"><span data-stu-id="90667-158">Lastly, a property can be declared [abstract](../../../csharp/language-reference/keywords/abstract.md).</span></span> <span data-ttu-id="90667-159">つまり、クラスに実装はなく、派生クラスが独自の実装を記述する必要があります。</span><span class="sxs-lookup"><span data-stu-id="90667-159">This means that there is no implementation in the class, and derived classes must write their own implementation.</span></span> <span data-ttu-id="90667-160">これらのオプションの詳細については、「[抽象クラスとシール クラス、およびクラス メンバー](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="90667-160">For more information about these options, see [Abstract and Sealed Classes and Class Members](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).</span></span>  
   
 > [!NOTE]
->  [静的](../../../csharp/language-reference/keywords/static.md)プロパティのアクセサーで[virtual](../../../csharp/language-reference/keywords/virtual.md)、[abstract](../../../csharp/language-reference/keywords/abstract.md)、または [override](../../../csharp/language-reference/keywords/override.md) 修飾子を使用すると、エラーになります。  
+>  <span data-ttu-id="90667-161">[静的](../../../csharp/language-reference/keywords/static.md)プロパティのアクセサーで[virtual](../../../csharp/language-reference/keywords/virtual.md)、[abstract](../../../csharp/language-reference/keywords/abstract.md)、または [override](../../../csharp/language-reference/keywords/override.md) 修飾子を使用すると、エラーになります。</span><span class="sxs-lookup"><span data-stu-id="90667-161">It is an error to use a [virtual](../../../csharp/language-reference/keywords/virtual.md), [abstract](../../../csharp/language-reference/keywords/abstract.md), or [override](../../../csharp/language-reference/keywords/override.md) modifier on an accessor of a [static](../../../csharp/language-reference/keywords/static.md) property.</span></span>  
   
-## <a name="example"></a>例  
- この例では、インスタンス、静的、および読み取り専用のプロパティを示します。 キーボードから従業員の名前を受け取り、`NumberOfEmployees` を 1 だけインクリメントし、従業員の名前と番号を表示します。  
+## <a name="example"></a><span data-ttu-id="90667-162">例</span><span class="sxs-lookup"><span data-stu-id="90667-162">Example</span></span>  
+ <span data-ttu-id="90667-163">この例では、インスタンス、静的、および読み取り専用のプロパティを示します。</span><span class="sxs-lookup"><span data-stu-id="90667-163">This example demonstrates instance, static, and read-only properties.</span></span> <span data-ttu-id="90667-164">キーボードから従業員の名前を受け取り、`NumberOfEmployees` を 1 だけインクリメントし、従業員の名前と番号を表示します。</span><span class="sxs-lookup"><span data-stu-id="90667-164">It accepts the name of the employee from the keyboard, increments `NumberOfEmployees` by 1, and displays the Employee name and number.</span></span>  
   
- [!code-cs[csProgGuideProperties#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_8.cs)]  
+ [!code-csharp[csProgGuideProperties#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_8.cs)]  
   
-## <a name="example"></a>例  
- この例では、派生クラスで同じ名前を持つ別のプロパティによって非表示にされている基底クラスのプロパティにアクセスする方法を示します。  
+## <a name="example"></a><span data-ttu-id="90667-165">例</span><span class="sxs-lookup"><span data-stu-id="90667-165">Example</span></span>  
+ <span data-ttu-id="90667-166">この例では、派生クラスで同じ名前を持つ別のプロパティによって非表示にされている基底クラスのプロパティにアクセスする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="90667-166">This example demonstrates how to access a property in a base class that is hidden by another property that has the same name in a derived class.</span></span>  
   
- [!code-cs[csProgGuideProperties#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_9.cs)]  
+ [!code-csharp[csProgGuideProperties#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_9.cs)]  
   
- 前の例で重要な点を次に示します。  
+ <span data-ttu-id="90667-167">前の例で重要な点を次に示します。</span><span class="sxs-lookup"><span data-stu-id="90667-167">The following are important points in the previous example:</span></span>  
   
--   派生クラスのプロパティ `Name` により基底クラス内のプロパティ `Name` が非表示になっています。 このような場合、`new` 修飾子は派生クラスのプロパティの宣言で使用されます。  
+-   <span data-ttu-id="90667-168">派生クラスのプロパティ `Name` により基底クラス内のプロパティ `Name` が非表示になっています。</span><span class="sxs-lookup"><span data-stu-id="90667-168">The property `Name` in the derived class hides the property `Name` in the base class.</span></span> <span data-ttu-id="90667-169">このような場合、`new` 修飾子は派生クラスのプロパティの宣言で使用されます。</span><span class="sxs-lookup"><span data-stu-id="90667-169">In such a case, the `new` modifier is used in the declaration of the property in the derived class:</span></span>  
   
-     [!code-cs[csProgGuideProperties#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_10.cs)]  
+     [!code-csharp[csProgGuideProperties#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_10.cs)]  
   
--   キャスト `(Employee)` は基底クラスで非表示のプロパティにアクセスするために使用されます。  
+-   <span data-ttu-id="90667-170">キャスト `(Employee)` は基底クラスで非表示のプロパティにアクセスするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="90667-170">The cast `(Employee)` is used to access the hidden property in the base class:</span></span>  
   
-     [!code-cs[csProgGuideProperties#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_11.cs)]  
+     [!code-csharp[csProgGuideProperties#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_11.cs)]  
   
-     メンバーを非表示にする詳細については、「[new 修飾子](../../../csharp/language-reference/keywords/new-modifier.md)」を参照してください。  
+     <span data-ttu-id="90667-171">メンバーを非表示にする詳細については、「[new 修飾子](../../../csharp/language-reference/keywords/new-modifier.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="90667-171">For more information about hiding members, see the [new Modifier](../../../csharp/language-reference/keywords/new-modifier.md).</span></span>  
   
-## <a name="example"></a>例  
- この例では、`Cube` と `Square` の 2 つのクラスが抽象クラス `Shape` を実装し、その抽象 `Area` プロパティを上書きします。 プロパティでの [override](../../../csharp/language-reference/keywords/override.md) 修飾子の使用に注意してください。 プログラムは、入力として辺を受け入れ、四角形と立方体の面積を計算します。 プログラムはまた、入力として面積を受け入れ、四角形と立方体の対応する辺を計算します。  
+## <a name="example"></a><span data-ttu-id="90667-172">例</span><span class="sxs-lookup"><span data-stu-id="90667-172">Example</span></span>  
+ <span data-ttu-id="90667-173">この例では、`Cube` と `Square` の 2 つのクラスが抽象クラス `Shape` を実装し、その抽象 `Area` プロパティを上書きします。</span><span class="sxs-lookup"><span data-stu-id="90667-173">In this example, two classes, `Cube` and `Square`, implement an abstract class, `Shape`, and override its abstract `Area` property.</span></span> <span data-ttu-id="90667-174">プロパティでの [override](../../../csharp/language-reference/keywords/override.md) 修飾子の使用に注意してください。</span><span class="sxs-lookup"><span data-stu-id="90667-174">Note the use of the [override](../../../csharp/language-reference/keywords/override.md) modifier on the properties.</span></span> <span data-ttu-id="90667-175">プログラムは、入力として辺を受け入れ、四角形と立方体の面積を計算します。</span><span class="sxs-lookup"><span data-stu-id="90667-175">The program accepts the side as an input and calculates the areas for the square and cube.</span></span> <span data-ttu-id="90667-176">プログラムはまた、入力として面積を受け入れ、四角形と立方体の対応する辺を計算します。</span><span class="sxs-lookup"><span data-stu-id="90667-176">It also accepts the area as an input and calculates the corresponding side for the square and cube.</span></span>  
   
- [!code-cs[csProgGuideProperties#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_12.cs)]  
+ [!code-csharp[csProgGuideProperties#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_12.cs)]  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../../../csharp/programming-guide/index.md)   
- [プロパティ](../../../csharp/programming-guide/classes-and-structs/properties.md)   
- [インターフェイスのプロパティ](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)   
- [自動実装プロパティ](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)
-
+## <a name="see-also"></a><span data-ttu-id="90667-177">関連項目</span><span class="sxs-lookup"><span data-stu-id="90667-177">See Also</span></span>  
+ [<span data-ttu-id="90667-178">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="90667-178">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+ [<span data-ttu-id="90667-179">プロパティ</span><span class="sxs-lookup"><span data-stu-id="90667-179">Properties</span></span>](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+ [<span data-ttu-id="90667-180">インターフェイスのプロパティ</span><span class="sxs-lookup"><span data-stu-id="90667-180">Interface Properties</span></span>](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
+ [<span data-ttu-id="90667-181">自動実装プロパティ</span><span class="sxs-lookup"><span data-stu-id="90667-181">Auto-Implemented Properties</span></span>](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)

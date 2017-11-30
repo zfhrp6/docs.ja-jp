@@ -1,134 +1,140 @@
 ---
-title: "Walkthrough: Creating a Dataflow Pipeline | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "dataflow pipelines, creating with TPL"
-  - "Task Parallel Library, dataflows"
-  - "TPL dataflow library, creating dataflow pipeline"
+title: "チュートリアル: データフロー パイプラインの作成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- dataflow pipelines, creating with TPL
+- Task Parallel Library, dataflows
+- TPL dataflow library, creating dataflow pipeline
 ms.assetid: 69308f82-aa22-4ac5-833d-e748533b58e8
-caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: d63fb872382bfc0a3ba3b8637c7357ab65c58fbf
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Walkthrough: Creating a Dataflow Pipeline
-<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=fullName>、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=fullName>、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=fullName> の各メソッドを使用すると、ソース ブロックからメッセージを受信できますが、メッセージ ブロックに接続して*データフロー パイプライン*を形成することもできます。  データフロー パイプラインは一連のコンポーネント、または*データフロー ブロック*です。それぞれがより大きな目標を達成するための特定のタスクを実行します。  データフロー パイプラインのすべてのデータフロー ブロックは、他のデータフロー ブロックからメッセージを受け取ったときに処理を実行します。  これは、自動車製造の組み立てラインに例えることができます。  各車両が組み立てラインを通過する際、あるステーションではフレームを組み立て、次のステーションではエンジンを設置するなどです。  組み立てラインでは、複数の車両を同時に組み立てることができるため、一度に車両全体を組み立てるよりスループットが向上します。  
+# <a name="walkthrough-creating-a-dataflow-pipeline"></a><span data-ttu-id="851d6-102">チュートリアル: データフロー パイプラインの作成</span><span class="sxs-lookup"><span data-stu-id="851d6-102">Walkthrough: Creating a Dataflow Pipeline</span></span>
+<span data-ttu-id="851d6-103">使用できますが、 <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=nameWithType>、 <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=nameWithType>、および<xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=nameWithType>からメッセージを受信するメソッドのソース ブロック、フォームに、メッセージ ブロックを接続することも、*データフロー パイプライン*です。</span><span class="sxs-lookup"><span data-stu-id="851d6-103">Although you can use the <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=nameWithType>, and <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=nameWithType> methods to receive messages from source blocks, you can also connect message blocks to form a *dataflow pipeline*.</span></span> <span data-ttu-id="851d6-104">データフロー パイプラインは一連のコンポーネント、または*データフロー ブロック*より大きな目標を達成する特定のタスクそれぞれを実行します。</span><span class="sxs-lookup"><span data-stu-id="851d6-104">A dataflow pipeline is a series of components, or *dataflow blocks*, each of which performs a specific task that contributes to a larger goal.</span></span> <span data-ttu-id="851d6-105">データフロー パイプラインのすべてのデータフロー ブロックは、他のデータフロー ブロックからメッセージを受け取ったときに処理を実行します。</span><span class="sxs-lookup"><span data-stu-id="851d6-105">Every dataflow block in a dataflow pipeline performs work when it receives a message from another dataflow block.</span></span> <span data-ttu-id="851d6-106">これは、自動車製造の組み立てラインに例えることができます。</span><span class="sxs-lookup"><span data-stu-id="851d6-106">An analogy to this is an assembly line for automobile manufacturing.</span></span> <span data-ttu-id="851d6-107">各車両が組み立てラインを通過する際、あるステーションではフレームを組み立て、次のステーションではエンジンを設置するなどです。</span><span class="sxs-lookup"><span data-stu-id="851d6-107">As each vehicle passes through the assembly line, one station assembles the frame, the next one installs the engine, and so on.</span></span> <span data-ttu-id="851d6-108">組み立てラインでは、複数の車両を同時に組み立てることができるため、一度に車両全体を組み立てるよりスループットが向上します。</span><span class="sxs-lookup"><span data-stu-id="851d6-108">Because an assembly line enables multiple vehicles to be assembled at the same time, it provides better throughput than assembling complete vehicles one at a time.</span></span>  
   
 > [!TIP]
->  TPL データ フローのライブラリ \(<xref:System.Threading.Tasks.Dataflow?displayProperty=fullName> 名前空間\) は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と一緒に配布されません。  <xref:System.Threading.Tasks.Dataflow> 名前空間をインストールするには、[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)] でプロジェクトを開き、\[プロジェクト\] メニューの **\[NuGet パッケージの管理\]** をクリックし、`Microsoft.Tpl.Dataflow` パッケージをオンラインで検索します。  
+>  <span data-ttu-id="851d6-109">TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> 名前空間) は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と一緒に配布されません。</span><span class="sxs-lookup"><span data-stu-id="851d6-109">The TPL Dataflow Library (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> namespace) is not distributed with the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].</span></span> <span data-ttu-id="851d6-110">インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。</span><span class="sxs-lookup"><span data-stu-id="851d6-110">To install the <xref:System.Threading.Tasks.Dataflow> namespace, open your project in [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], choose **Manage NuGet Packages** from the Project menu, and search online for the `Microsoft.Tpl.Dataflow` package.</span></span>  
   
- このドキュメントでは、Web サイトから書籍『*The Iliad of Homer*』 \(ホメロスのイリアッド\) をダウンロードしてから、個々の単語と一致するテキストを、最初の単語の文字を逆方向にして検索するデータフロー パイプラインについて説明します。  このドキュメントでは、データフロー パイプラインは、次の手順で構成しています。  
+ <span data-ttu-id="851d6-111">このドキュメントは、ブックをダウンロードするデータ フロー パイプラインを示します*Homer の The Iliad* web サイトと検索から個々 の単語と一致するテキストを単語を逆方向の最初の単語の文字です。</span><span class="sxs-lookup"><span data-stu-id="851d6-111">This document demonstrates a dataflow pipeline that downloads the book *The Iliad of Homer* from a website and searches the text to match individual words with words that reverse the first word's characters.</span></span> <span data-ttu-id="851d6-112">このドキュメントでは、データフロー パイプラインは、次の手順で構成しています。</span><span class="sxs-lookup"><span data-stu-id="851d6-112">The formation of the dataflow pipeline in this document consists of the following steps:</span></span>  
   
-1.  パイプラインに参加しているデータフロー ブロックを作成します。  
+1.  <span data-ttu-id="851d6-113">パイプラインに参加しているデータフロー ブロックを作成します。</span><span class="sxs-lookup"><span data-stu-id="851d6-113">Create the dataflow blocks that participate in the pipeline.</span></span>  
   
-2.  各データフロー ブロックを、パイプラインの次のブロックに接続します。  各ブロックは、入力として、パイプラインの前のブロックの出力を受信します。  
+2.  <span data-ttu-id="851d6-114">各データフロー ブロックを、パイプラインの次のブロックに接続します。</span><span class="sxs-lookup"><span data-stu-id="851d6-114">Connect each dataflow block to the next block in the pipeline.</span></span> <span data-ttu-id="851d6-115">各ブロックは、入力として、パイプラインの前のブロックの出力を受信します。</span><span class="sxs-lookup"><span data-stu-id="851d6-115">Each block receives as input the output of the previous block in the pipeline.</span></span>  
   
-3.  各データフロー ブロックでは、前のブロックの終了後、次のブロックで完了状態に設定する継続タスクを作成します。  
+3.  <span data-ttu-id="851d6-116">各データフロー ブロックでは、前のブロックの終了後、次のブロックで完了状態に設定する継続タスクを作成します。</span><span class="sxs-lookup"><span data-stu-id="851d6-116">For each dataflow block, create a continuation task that sets the next block to the completed state after the previous block finishes.</span></span>  
   
-4.  データをパイプラインの先頭に送信します。  
+4.  <span data-ttu-id="851d6-117">データをパイプラインの先頭に送信します。</span><span class="sxs-lookup"><span data-stu-id="851d6-117">Post data to the head of the pipeline.</span></span>  
   
-5.  パイプラインの先頭を完了としてマークします。  
+5.  <span data-ttu-id="851d6-118">パイプラインの先頭を完了としてマークします。</span><span class="sxs-lookup"><span data-stu-id="851d6-118">Mark the head of the pipeline as completed.</span></span>  
   
-6.  パイプラインのすべての作業が完了するまで待機します。  
+6.  <span data-ttu-id="851d6-119">パイプラインのすべての作業が完了するまで待機します。</span><span class="sxs-lookup"><span data-stu-id="851d6-119">Wait for the pipeline to complete all work.</span></span>  
   
-## 必須コンポーネント  
- このチュートリアルを開始する前に、「[データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)」をお読みください。  
+## <a name="prerequisites"></a><span data-ttu-id="851d6-120">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="851d6-120">Prerequisites</span></span>  
+ <span data-ttu-id="851d6-121">このチュートリアルを開始する前に、「[Dataflow (データフロー)](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)」をお読みください。</span><span class="sxs-lookup"><span data-stu-id="851d6-121">Read [Dataflow](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) before you start this walkthrough.</span></span>  
   
-## コンソール アプリケーションの作成  
- [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、[!INCLUDE[csprcs](../../../includes/csprcs-md.md)] または [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] コンソール アプリケーション プロジェクトを作成します。  System.Threading.Tasks.Dataflow.dll への参照を追加します。  
+## <a name="creating-a-console-application"></a><span data-ttu-id="851d6-122">コンソール アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="851d6-122">Creating a Console Application</span></span>  
+ <span data-ttu-id="851d6-123">[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] で、[!INCLUDE[csprcs](../../../includes/csprcs-md.md)] または [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] コンソール アプリケーション プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="851d6-123">In [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], create a [!INCLUDE[csprcs](../../../includes/csprcs-md.md)] or [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] Console Application project.</span></span> <span data-ttu-id="851d6-124">System.Threading.Tasks.Dataflow.dll への参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="851d6-124">Add a reference to System.Threading.Tasks.Dataflow.dll.</span></span>  
   
- 別の方法として、ファイルを作成し、名前を `ReverseWords.cs` \([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] の場合は `ReverseWords.vb`\) と指定します。続いて、Visual Studio のコマンド プロンプト ウィンドウで次のコマンドを実行して、プロジェクトをコンパイルします。  
+ <span data-ttu-id="851d6-125">また、ファイルを作成し、名前を付けます`ReverseWords.cs`(`ReverseWords.vb`の[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)])、プロジェクトをコンパイルする Visual Studio コマンド プロンプト ウィンドウで、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="851d6-125">Alternatively, create a file and name it `ReverseWords.cs` (`ReverseWords.vb` for [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]), and then run the following command in a Visual Studio Command Prompt window to compile the project.</span></span>  
   
  [!INCLUDE[csprcs](../../../includes/csprcs-md.md)]  
   
- **csc.exe \/r:System.Threading.Tasks.Dataflow.dll ReverseWords.cs**  
+ <span data-ttu-id="851d6-126">**csc.exe/r:System.Threading.Tasks.Dataflow.dll ReverseWords.cs**</span><span class="sxs-lookup"><span data-stu-id="851d6-126">**csc.exe /r:System.Threading.Tasks.Dataflow.dll ReverseWords.cs**</span></span>  
   
  [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]  
   
- **vbc.exe \/r:System.Threading.Tasks.Dataflow.dll ReverseWords.vb**  
+ <span data-ttu-id="851d6-127">**vbc.exe/r:System.Threading.Tasks.Dataflow.dll ReverseWords.vb**</span><span class="sxs-lookup"><span data-stu-id="851d6-127">**vbc.exe /r:System.Threading.Tasks.Dataflow.dll ReverseWords.vb**</span></span>  
   
- 次のコードをプロジェクトに追加して、基本のアプリケーションを作成します。  
+ <span data-ttu-id="851d6-128">次のコードをプロジェクトに追加して、基本のアプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="851d6-128">Add the following code to your project to create the basic application.</span></span>  
   
  [!code-csharp[TPLDataflow_Palindromes#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#2)]
  [!code-vb[TPLDataflow_Palindromes#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#2)]  
   
-## データフロー ブロックの作成  
- 次のコードを `Main` メソッドに追加して、パイプラインに参加するデータフロー ブロックを作成します。  次の表は、パイプラインの各メンバーの役割をまとめたものです。  
+## <a name="creating-the-dataflow-blocks"></a><span data-ttu-id="851d6-129">データフロー ブロックの作成</span><span class="sxs-lookup"><span data-stu-id="851d6-129">Creating the Dataflow Blocks</span></span>  
+ <span data-ttu-id="851d6-130">次のコードを `Main` メソッドに追加して、パイプラインに参加するデータフロー ブロックを作成します。</span><span class="sxs-lookup"><span data-stu-id="851d6-130">Add the following code to the `Main` method to create the dataflow blocks that participate in the pipeline.</span></span> <span data-ttu-id="851d6-131">次の表は、パイプラインの各メンバーの役割をまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="851d6-131">The table that follows summarizes the role of each member of the pipeline.</span></span>  
   
  [!code-csharp[TPLDataflow_Palindromes#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#3)]
  [!code-vb[TPLDataflow_Palindromes#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#3)]  
   
-|メンバー|型|説明|  
-|----------|-------|--------|  
-|`downloadString`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Web から書籍のテキストをダウンロードします。|  
-|`createWordList`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|書籍のテキストを単語の配列に区切ります。|  
-|`filterWordList`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|単語の配列から短い単語を削除し、結果として得られる単語をアルファベット順に並べ、重複部分を削除します。|  
-|`findReversedWords`|<xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602>|フィルター処理した単語の配列のコレクションにある全単語のうち、逆方向の単語の配列も発生するものを検索します。|  
-|`printReversedWords`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|単語と、関連する逆方向の単語をコンソールに表示します。|  
+|<span data-ttu-id="851d6-132">メンバー</span><span class="sxs-lookup"><span data-stu-id="851d6-132">Member</span></span>|<span data-ttu-id="851d6-133">型</span><span class="sxs-lookup"><span data-stu-id="851d6-133">Type</span></span>|<span data-ttu-id="851d6-134">説明</span><span class="sxs-lookup"><span data-stu-id="851d6-134">Description</span></span>|  
+|------------|----------|-----------------|  
+|`downloadString`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|<span data-ttu-id="851d6-135">Web から書籍のテキストをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="851d6-135">Downloads the book text from the Web.</span></span>|  
+|`createWordList`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|<span data-ttu-id="851d6-136">書籍のテキストを単語の配列に区切ります。</span><span class="sxs-lookup"><span data-stu-id="851d6-136">Separates the book text into an array of words.</span></span>|  
+|`filterWordList`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|<span data-ttu-id="851d6-137">単語の配列から短い単語を削除し、結果として得られる単語をアルファベット順に並べ、重複部分を削除します。</span><span class="sxs-lookup"><span data-stu-id="851d6-137">Removes short words from the word array, orders the resulting words alphabetically, and remove duplicates.</span></span>|  
+|`findReversedWords`|<xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602>|<span data-ttu-id="851d6-138">フィルター処理した単語の配列のコレクションにある全単語のうち、逆方向の単語の配列も発生するものを検索します。</span><span class="sxs-lookup"><span data-stu-id="851d6-138">Finds all words in the filtered word array collection whose reverse also occurs in the word array.</span></span>|  
+|`printReversedWords`|<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>|<span data-ttu-id="851d6-139">単語と、関連する逆方向の単語をコンソールに表示します。</span><span class="sxs-lookup"><span data-stu-id="851d6-139">Displays words and the corresponding reverse words to the console.</span></span>|  
   
- この例のデータフロー パイプラインの複数の手順を 1 つの手順に結合することができますが、この例では、大規模なタスクを実行するために複数の独立したデータ フロー タスクを構成する概念を示します。  この例では、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602> を使用して、パイプラインの各メンバーが入力データで操作を実行し、結果をパイプラインの次の手順に送ることができるようにします。  パイプラインの `findReversedWords` のメンバーは、各入力に複数の独立した出力を生成するため、<xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> オブジェクトになります。  パイプラインの末尾の `printReversedWords` は、入力で操作を実行しますが、結果を生成しないため、<xref:System.Threading.Tasks.Dataflow.ActionBlock%601> オブジェクトになります。  
+ <span data-ttu-id="851d6-140">この例のデータフロー パイプラインの複数の手順を 1 つの手順に結合することができますが、この例では、大規模なタスクを実行するために複数の独立したデータ フロー タスクを構成する概念を示します。</span><span class="sxs-lookup"><span data-stu-id="851d6-140">Although you could combine multiple steps in the dataflow pipeline in this example into one step, the example illustrates the concept of composing multiple independent dataflow tasks to perform a larger task.</span></span> <span data-ttu-id="851d6-141">この例では、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602> を使用して、パイプラインの各メンバーが入力データで操作を実行し、結果をパイプラインの次の手順に送ることができるようにします。</span><span class="sxs-lookup"><span data-stu-id="851d6-141">The example uses <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> to enable each member of the pipeline to perform an operation on its input data and send the results to the next step in the pipeline.</span></span> <span data-ttu-id="851d6-142">パイプラインの `findReversedWords` のメンバーは、各入力に複数の独立した出力を生成するため、<xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> オブジェクトになります。</span><span class="sxs-lookup"><span data-stu-id="851d6-142">The `findReversedWords` member of the pipeline is a <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> object because it produces multiple independent outputs for each input.</span></span> <span data-ttu-id="851d6-143">パイプラインの末尾の `printReversedWords` は、入力で操作を実行しますが、結果を生成しないため、<xref:System.Threading.Tasks.Dataflow.ActionBlock%601> オブジェクトになります。</span><span class="sxs-lookup"><span data-stu-id="851d6-143">The tail of the pipeline, `printReversedWords`, is a <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> object because it performs an action on its input, and does not produce a result.</span></span>  
   
-## パイプラインの形成  
- 各ブロックをパイプラインの次のブロックに接続するには、次のコードを追加します。  
+## <a name="forming-the-pipeline"></a><span data-ttu-id="851d6-144">パイプラインの形成</span><span class="sxs-lookup"><span data-stu-id="851d6-144">Forming the Pipeline</span></span>  
+ <span data-ttu-id="851d6-145">各ブロックをパイプラインの次のブロックに接続するには、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="851d6-145">Add the following code to connect each block to the next block in the pipeline.</span></span>  
   
- <xref:System.Threading.Tasks.Dataflow.DataflowBlock.LinkTo%2A> メソッドを呼び出してソース データフロー ブロックをターゲット データフロー ブロックに接続すると、データが使用可能になったときにソース データフロー ブロックがターゲット ブロックにデータを反映させます。  
+ <span data-ttu-id="851d6-146"><xref:System.Threading.Tasks.Dataflow.DataflowBlock.LinkTo%2A> メソッドを呼び出してソース データフロー ブロックをターゲット データフロー ブロックに接続すると、データが使用可能になったときにソース データフロー ブロックがターゲット ブロックにデータを反映させます。</span><span class="sxs-lookup"><span data-stu-id="851d6-146">When you call the <xref:System.Threading.Tasks.Dataflow.DataflowBlock.LinkTo%2A> method to connect a source dataflow block to a target dataflow block, the source dataflow block propagates data to the target block as data becomes available.</span></span>  
   
  [!code-csharp[TPLDataflow_Palindromes#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#4)]
  [!code-vb[TPLDataflow_Palindromes#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#4)]  
   
-## 完了タスクの作成  
- すべてのデータを処理した後、各データフロー ブロックが最後の操作を実行できるようにするには、次のコードを追加します。  
+## <a name="creating-the-completion-tasks"></a><span data-ttu-id="851d6-147">完了タスクの作成</span><span class="sxs-lookup"><span data-stu-id="851d6-147">Creating the Completion Tasks</span></span>  
+ <span data-ttu-id="851d6-148">すべてのデータを処理した後、各データフロー ブロックが最後の操作を実行できるようにするには、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="851d6-148">Add the following code to enable each dataflow block to perform a final action after it processes all data.</span></span>  
   
  [!code-csharp[TPLDataflow_Palindromes#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#5)]
  [!code-vb[TPLDataflow_Palindromes#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#5)]  
   
- パイプラインを介して完了を反映させるには、各完了タスクで次のデータフロー ブロックを完了状態に設定します。  たとえば、パイプラインの先頭が完了状態に設定されると、残りのバッファーに格納されたメッセージがすべて処理され、その後完了タスクが実行されます。完了タスクでは、パイプラインの 2 番目のメンバーを完了状態に設定します。  同様に、パイプラインの 2 番目のメンバーでバッファーに格納された残りのメッセージがすべて処理され、その後完了タスクが実行されます。完了タスクでは、パイプラインの 3 番目のメンバーを完了状態に設定します。  このプロセスは、パイプラインのすべてのメンバーが完了するまで続行します。  この例では、キーワード `delegate` \([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] の `Function`\) を使用して継続タスクを定義します。  
+ <span data-ttu-id="851d6-149">パイプラインを介して完了を反映させるには、各完了タスクで次のデータフロー ブロックを完了状態に設定します。</span><span class="sxs-lookup"><span data-stu-id="851d6-149">To propagate completion through the pipeline, each completion task sets the next dataflow block to the completed state.</span></span> <span data-ttu-id="851d6-150">たとえば、パイプラインの先頭が完了状態に設定されると、残りのバッファーに格納されたメッセージがすべて処理され、その後完了タスクが実行されます。完了タスクでは、パイプラインの 2 番目のメンバーを完了状態に設定します。</span><span class="sxs-lookup"><span data-stu-id="851d6-150">For example, when the head of the pipeline is set to the completed state, it processes any remaining buffered messages and then runs its completion task, which sets the second member of the pipeline to the completed state.</span></span> <span data-ttu-id="851d6-151">同様に、パイプラインの 2 番目のメンバーでバッファーに格納された残りのメッセージがすべて処理され、その後完了タスクが実行されます。完了タスクでは、パイプラインの 3 番目のメンバーを完了状態に設定します。</span><span class="sxs-lookup"><span data-stu-id="851d6-151">The second member of the pipeline in turn processes any remaining buffered messages and then runs its completion task, which sets the third member of the pipeline to the completed state.</span></span> <span data-ttu-id="851d6-152">このプロセスは、パイプラインのすべてのメンバーが完了するまで続行します。</span><span class="sxs-lookup"><span data-stu-id="851d6-152">This process continues until all members of the pipeline finish.</span></span> <span data-ttu-id="851d6-153">この例では、キーワード `delegate` ([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] の `Function`) を使用して継続タスクを定義します。</span><span class="sxs-lookup"><span data-stu-id="851d6-153">This example uses the `delegate` keyword (`Function` in [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) to define the continuation tasks.</span></span>  
   
-## パイプラインへのデータの送信  
- 書籍『*The Iliad of Homer*』\(ホメロスのイリアッド\) の URL をデータフローのパイプラインの先頭に送信するには、次のコードを追加します。  
+## <a name="posting-data-to-the-pipeline"></a><span data-ttu-id="851d6-154">パイプラインへのデータの送信</span><span class="sxs-lookup"><span data-stu-id="851d6-154">Posting Data to the Pipeline</span></span>  
+ <span data-ttu-id="851d6-155">次のコードを book の URL をポスト追加*Homer の The Iliad*データフロー パイプラインの先頭にします。</span><span class="sxs-lookup"><span data-stu-id="851d6-155">Add the following code to post the URL of the book *The Iliad of Homer* to the head of the dataflow pipeline.</span></span>  
   
  [!code-csharp[TPLDataflow_Palindromes#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#6)]
  [!code-vb[TPLDataflow_Palindromes#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#6)]  
   
- この例では、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A?displayProperty=fullName> を使用して、同期的にパイプラインの先頭にデータを送信します。  データフロー ノードにデータを非同期的に送信する必要がある場合は、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A?displayProperty=fullName> メソッドを使用します。  
+ <span data-ttu-id="851d6-156">この例では、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A?displayProperty=nameWithType> を使用して、同期的にパイプラインの先頭にデータを送信します。</span><span class="sxs-lookup"><span data-stu-id="851d6-156">This example uses <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A?displayProperty=nameWithType> to synchronously send data to the head of the pipeline.</span></span> <span data-ttu-id="851d6-157">データフロー ノードにデータを非同期的に送信する必要がある場合は、<xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A?displayProperty=nameWithType> メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="851d6-157">Use the <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A?displayProperty=nameWithType> method when you must asynchronously send data to a dataflow node.</span></span>  
   
-## パイプラインのアクティビティの完了  
- パイプラインの先頭を完了済みとしてマークするには、次のコードを追加します。  パイプラインの先頭では、バッファに格納されているすべてのメッセージを処理した後、継続タスクが実行されます。  この継続タスクは、パイプラインを介して完了の状態を反映します。  
+## <a name="completing-pipeline-activity"></a><span data-ttu-id="851d6-158">パイプラインのアクティビティの完了</span><span class="sxs-lookup"><span data-stu-id="851d6-158">Completing Pipeline Activity</span></span>  
+ <span data-ttu-id="851d6-159">パイプラインの先頭を完了済みとしてマークするには、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="851d6-159">Add the following code to mark the head of the pipeline as completed.</span></span> <span data-ttu-id="851d6-160">パイプラインの先頭では、バッファに格納されているすべてのメッセージを処理した後、継続タスクが実行されます。</span><span class="sxs-lookup"><span data-stu-id="851d6-160">The head of the pipeline runs its continuation task after it processes all buffered messages.</span></span> <span data-ttu-id="851d6-161">この継続タスクは、パイプラインを介して完了の状態を反映します。</span><span class="sxs-lookup"><span data-stu-id="851d6-161">This continuation task propagates the completed state through the pipeline.</span></span>  
   
  [!code-csharp[TPLDataflow_Palindromes#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#7)]
  [!code-vb[TPLDataflow_Palindromes#7](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#7)]  
   
- この例では、処理するために 1 つの URL をデータフロー パイプラインを介して送信します。  パイプラインを介して複数の入力を送信する場合は、すべての入力を送信した後に <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A?displayProperty=fullName> メソッドを呼び出します。  アプリケーションに、適切に定義されたポイントがない \(データが使用できなくなっているか、アプリケーションがパイプラインの終了を待つ必要がない\) 場合は、この手順を省略できます。  
+ <span data-ttu-id="851d6-162">この例では、処理するために 1 つの URL をデータフロー パイプラインを介して送信します。</span><span class="sxs-lookup"><span data-stu-id="851d6-162">This example sends one URL through the dataflow pipeline to be processed.</span></span> <span data-ttu-id="851d6-163">パイプラインを介して複数の入力を送信する場合は、すべての入力を送信した後に <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A?displayProperty=nameWithType> メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="851d6-163">If you send more than one input through a pipeline, call the <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A?displayProperty=nameWithType> method after you submit all the input.</span></span> <span data-ttu-id="851d6-164">アプリケーションに、適切に定義されたポイントがない (データが使用できなくなっているか、アプリケーションがパイプラインの終了を待つ必要がない) 場合は、この手順を省略できます。</span><span class="sxs-lookup"><span data-stu-id="851d6-164">You can omit this step if your application has no well-defined point at which data is no longer available or the application does not have to wait for the pipeline to finish.</span></span>  
   
-## パイプラインの終了までの待機  
- パイプラインの終了まで待機するには、次のコードを追加します。  この例では、継続タスクを使用して、パイプラインを介して完了を反映させるため、全体の操作はパイプラインの末尾が終了したときに終了します。  
+## <a name="waiting-for-the-pipeline-to-finish"></a><span data-ttu-id="851d6-165">パイプラインの終了までの待機</span><span class="sxs-lookup"><span data-stu-id="851d6-165">Waiting for the Pipeline to Finish</span></span>  
+ <span data-ttu-id="851d6-166">パイプラインの終了まで待機するには、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="851d6-166">Add the following code to wait for the pipeline to finish.</span></span> <span data-ttu-id="851d6-167">この例では、継続タスクを使用して、パイプラインを介して完了を反映させるため、全体の操作はパイプラインの末尾が終了したときに終了します。</span><span class="sxs-lookup"><span data-stu-id="851d6-167">Because this example uses continuation tasks to propagate completion through the pipeline, the overall operation is finished when the tail of the pipeline finishes.</span></span>  
   
  [!code-csharp[TPLDataflow_Palindromes#8](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#8)]
  [!code-vb[TPLDataflow_Palindromes#8](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#8)]  
   
- データフローの完了は、いずれかのスレッドから、または複数のスレッドから同時に待つことができます。  
+ <span data-ttu-id="851d6-168">データフローの完了は、いずれかのスレッドから、または複数のスレッドから同時に待つことができます。</span><span class="sxs-lookup"><span data-stu-id="851d6-168">You can wait for dataflow completion from any thread or from multiple threads at the same time.</span></span>  
   
-## 完全な例  
- 次の例は、このチュートリアルのコード全体を示しています。  
+## <a name="the-complete-example"></a><span data-ttu-id="851d6-169">完全な例</span><span class="sxs-lookup"><span data-stu-id="851d6-169">The Complete Example</span></span>  
+ <span data-ttu-id="851d6-170">次の例は、このチュートリアルのコード全体を示しています。</span><span class="sxs-lookup"><span data-stu-id="851d6-170">The following example shows the complete code for this walkthrough.</span></span>  
   
  [!code-csharp[TPLDataflow_Palindromes#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#1)]
  [!code-vb[TPLDataflow_Palindromes#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#1)]  
   
-## 次の手順  
- この例では、データフロー パイプラインを介して処理するために 1 つの URL を送信しています。  パイプラインを介して複数の入力値を送信する場合は、自動車工場で部品が通過する方法に似た並列処理の形式をアプリケーションに導入することができます。  パイプラインの最初のメンバーが結果を 2 番目のメンバーに送信する場合、最初のメンバーは、2 番目のメンバーが最初のメンバーの結果を処理するときに、並行して別のアイテムを処理できます。  
+## <a name="next-steps"></a><span data-ttu-id="851d6-171">次の手順</span><span class="sxs-lookup"><span data-stu-id="851d6-171">Next Steps</span></span>  
+ <span data-ttu-id="851d6-172">この例では、データフロー パイプラインを介して処理するために 1 つの URL を送信しています。</span><span class="sxs-lookup"><span data-stu-id="851d6-172">This example sends one URL to process through the dataflow pipeline.</span></span> <span data-ttu-id="851d6-173">パイプラインを介して複数の入力値を送信する場合は、自動車工場で部品が通過する方法に似た並列処理の形式をアプリケーションに導入することができます。</span><span class="sxs-lookup"><span data-stu-id="851d6-173">If you send more than one input value through a pipeline, you can introduce a form of parallelism into your application that resembles how parts might move through an automobile factory.</span></span> <span data-ttu-id="851d6-174">パイプラインの最初のメンバーが結果を 2 番目のメンバーに送信する場合、最初のメンバーは、2 番目のメンバーが最初のメンバーの結果を処理するときに、並行して別のアイテムを処理できます。</span><span class="sxs-lookup"><span data-stu-id="851d6-174">When the first member of the pipeline sends its result to the second member, it can process another item in parallel as the second member processes the first result.</span></span>  
   
- データフロー パイプラインを使用して実現されるを並列処理は、*粒度の粗い並列処理*として知られています。これは一般に、より少なくて大きいタスクを構成するためです。  データフロー パイプラインでは、より小さく実行時間の短いタスクによる、より*粒度の細かい並列処理*も行えます。  この例では、パイプラインの `findReversedWords` メンバーは、<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> メソッドを使用して、作業リストの複数の項目を並行して処理します。  粒度の粗いパイプラインで粒度の細かい並列処理を行うと、全体のスループットが向上します。  
+ <span data-ttu-id="851d6-175">データフロー パイプラインを使用して実現される並列処理と呼ばれる*粒度の粗い並列処理*のため、通常、少なくて大きいタスクで構成されます。</span><span class="sxs-lookup"><span data-stu-id="851d6-175">The parallelism that is achieved by using dataflow pipelines is known as *coarse-grained parallelism* because it typically consists of fewer, larger tasks.</span></span> <span data-ttu-id="851d6-176">詳細を使用することもできます。*粒度の細かい並列処理*データフロー パイプラインのタスクを、より小さく実行時間が短いのです。</span><span class="sxs-lookup"><span data-stu-id="851d6-176">You can also use a more *fine-grained parallelism* of smaller, short-running tasks in a dataflow pipeline.</span></span> <span data-ttu-id="851d6-177">この例では、パイプラインの `findReversedWords` メンバーは、<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> メソッドを使用して、作業リストの複数の項目を並行して処理します。</span><span class="sxs-lookup"><span data-stu-id="851d6-177">In this example, the `findReversedWords` member of the pipeline uses the <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method to process multiple items in the work list in parallel.</span></span> <span data-ttu-id="851d6-178">粒度の粗いパイプラインで粒度の細かい並列処理を行うと、全体のスループットが向上します。</span><span class="sxs-lookup"><span data-stu-id="851d6-178">The use of fine-grained parallelism in a coarse-grained pipeline can improve overall throughput.</span></span>  
   
- また、ソース データフロー ブロックを複数のターゲット ブロックに接続すると、*データフロー ネットワーク*を作成することができます。  オーバー ロードされたバージョンの <xref:System.Threading.Tasks.Dataflow.DataflowBlock.LinkTo%2A> メソッドは、ターゲット ブロックがその値に基づいて各メッセージを受け入れるかどうかを定義する <xref:System.Predicate%601> オブジェクトを受け取ります。  ソースとして動作するほとんどのデータフロー ブロック型では、接続されたすべてのターゲット ブロックにメッセージを提供します。これは、いずれかのブロックがそのメッセージを受け入れるまで、ターゲット ブロックが接続された順序で行われます。  このフィルター機構を使用すると、特定のデータはあるパスを通り、その他のデータは別のパスを通るように仕向ける、接続されたデータフロー ブロックの体系を作成することができます。  フィルター処理を使用してデータフロー ネットワークを作成する例については、「[Walkthrough: Using Dataflow in a Windows Forms Application](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md)」を参照してください。  
+ <span data-ttu-id="851d6-179">作成する複数のターゲット ブロックにソース データフロー ブロックを接続することも、*データフロー ネットワーク*です。</span><span class="sxs-lookup"><span data-stu-id="851d6-179">You can also connect a source dataflow block to multiple target blocks to create a *dataflow network*.</span></span> <span data-ttu-id="851d6-180">オーバー ロードされたバージョンの <xref:System.Threading.Tasks.Dataflow.DataflowBlock.LinkTo%2A> メソッドは、ターゲット ブロックがその値に基づいて各メッセージを受け入れるかどうかを定義する <xref:System.Predicate%601> オブジェクトを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="851d6-180">The overloaded version of the <xref:System.Threading.Tasks.Dataflow.DataflowBlock.LinkTo%2A> method takes a <xref:System.Predicate%601> object that defines whether the target block accepts each message based on its value.</span></span> <span data-ttu-id="851d6-181">ソースとして動作するほとんどのデータフロー ブロック型では、接続されたすべてのターゲット ブロックにメッセージを提供します。これは、いずれかのブロックがそのメッセージを受け入れるまで、ターゲット ブロックが接続された順序で行われます。</span><span class="sxs-lookup"><span data-stu-id="851d6-181">Most dataflow block types that act as sources offer messages to all connected target blocks, in the order in which they were connected, until one of the blocks accepts that message.</span></span> <span data-ttu-id="851d6-182">このフィルター機構を使用すると、特定のデータはあるパスを通り、その他のデータは別のパスを通るように仕向ける、接続されたデータフロー ブロックの体系を作成することができます。</span><span class="sxs-lookup"><span data-stu-id="851d6-182">By using this filtering mechanism, you can create systems of connected dataflow blocks that direct certain data through one path and other data through another path.</span></span> <span data-ttu-id="851d6-183">フィルター処理を使用してデータフロー ネットワークを作成する例は、次を参照してください。[チュートリアル: Windows フォーム アプリケーションでのデータフローの使用](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md)です。</span><span class="sxs-lookup"><span data-stu-id="851d6-183">For an example that uses filtering to create a dataflow network, see [Walkthrough: Using Dataflow in a Windows Forms Application](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).</span></span>  
   
-## 参照  
- [データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+## <a name="see-also"></a><span data-ttu-id="851d6-184">関連項目</span><span class="sxs-lookup"><span data-stu-id="851d6-184">See Also</span></span>  
+ [<span data-ttu-id="851d6-185">データフロー</span><span class="sxs-lookup"><span data-stu-id="851d6-185">Dataflow</span></span>](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

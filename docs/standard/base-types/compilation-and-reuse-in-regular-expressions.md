@@ -1,57 +1,57 @@
 ---
-title: "正規表現におけるコンパイルと再利用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - ".NET Framework 正規表現, コンパイル"
-  - ".NET Framework 正規表現, エンジン"
-  - "コンパイル, 正規表現"
-  - "解析 (正規表現を使用したテキストを), コンパイル"
-  - "パターン一致 (正規表現を使用した), コンパイル"
-  - "正規表現, コンパイル"
-  - "正規表現, エンジン"
-  - "検索 (正規表現を使用した), コンパイル"
+title: "正規表現におけるコンパイルと再利用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- parsing text with regular expressions, compilation
+- searching with regular expressions, compilation
+- .NET Framework regular expressions, engines
+- .NET Framework regular expressions, compilation
+- regular expressions, compilation
+- compilation, regular expressions
+- pattern-matching with regular expressions, compilation
+- regular expressions, engines
 ms.assetid: 182ec76d-5a01-4d73-996c-0b0d14fcea18
-caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 76acdf2d0d2f7805ec78ea44136bfc63441b9bc9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 正規表現におけるコンパイルと再利用
-正規表現エンジンが表現をどのようにコンパイルするか、および正規表現がどのようにキャッシュされるかを理解すると、正規表現を多く使用するアプリケーションのパフォーマンスを最適化できます。  このトピックでは、コンパイルとキャッシュの両方について説明します。  
+# <a name="compilation-and-reuse-in-regular-expressions"></a><span data-ttu-id="18987-102">正規表現におけるコンパイルと再利用</span><span class="sxs-lookup"><span data-stu-id="18987-102">Compilation and Reuse in Regular Expressions</span></span>
+<span data-ttu-id="18987-103">正規表現エンジンが式をどのようにコンパイルするか、および正規表現がどのようにキャッシュされるかを理解することで、正規表現を幅広く使用するアプリケーションのパフォーマンスを最適化できます。</span><span class="sxs-lookup"><span data-stu-id="18987-103">You can optimize the performance of applications that make extensive use of regular expressions by understanding how the regular expression engine compiles expressions and by understanding how regular expressions are cached.</span></span> <span data-ttu-id="18987-104">このトピックでは、コンパイルとキャッシュの両方について説明します。</span><span class="sxs-lookup"><span data-stu-id="18987-104">This topic discusses both compilation and caching.</span></span>  
   
-## コンパイルされた正規表現  
- 既定では、正規表現エンジンは正規表現をコンパイルして内部命令のシーケンスを生成します。これらは Microsoft Intermediate Language \(MSIL\) とは別の高水準コードです。  エンジンは正規表現を実行するときに、その内部コードを解釈します。  
+## <a name="compiled-regular-expressions"></a><span data-ttu-id="18987-105">コンパイルされた正規表現</span><span class="sxs-lookup"><span data-stu-id="18987-105">Compiled Regular Expressions</span></span>  
+ <span data-ttu-id="18987-106">既定では、正規表現エンジンは、内部命令のシーケンス (Microsoft 中間言語 (MSIL) とは異なる高度なコード) に正規表現をコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="18987-106">By default, the regular expression engine compiles a regular expression to a sequence of internal instructions (these are high-level codes that are different from Microsoft intermediate language, or MSIL).</span></span> <span data-ttu-id="18987-107">エンジンは、正規表現を実行するときに内部コードを解釈します。</span><span class="sxs-lookup"><span data-stu-id="18987-107">When the engine executes a regular expression, it interprets the internal codes.</span></span>  
   
- <xref:System.Text.RegularExpressions.Regex> オブジェクトを構築するときに <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> オプションを使用すると、正規表現エンジンは、高水準の正規表現内部命令ではなく、明示的な MSIL コードに正規表現をコンパイルします。  これにより、.NET Framework の JIT \(Just\-In\-Time\) コンパイラは、正規表現をネイティブな機械語コードに変換してパフォーマンスの向上を図ることができます。  
+ <span data-ttu-id="18987-108">場合、<xref:System.Text.RegularExpressions.Regex>にオブジェクトを構築、<xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>オプション、高度な正規表現内部の手順ではなく明示的な MSIL コードを正規表現をコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="18987-108">If a <xref:System.Text.RegularExpressions.Regex> object is constructed with the <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> option, it compiles the regular expression to explicit MSIL code instead of high-level regular expression internal instructions.</span></span> <span data-ttu-id="18987-109">これにより、.NET の Just-In-Time (JIT) コンパイラは、式をネイティブのマシン コードに変換してパフォーマンスを高めることができます。</span><span class="sxs-lookup"><span data-stu-id="18987-109">This allows .NET's just-in-time (JIT) compiler to convert the expression to native machine code for higher performance.</span></span>  
   
- ただし、生成された MSIL はアンロードできません。  コードをアンロードする唯一の方法は、アプリケーション ドメイン全体をアンロードする \(つまり、アプリケーションのコードをすべてアンロードする\) ことです。  実際、<xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> オプションを使用して正規表現をコンパイルした場合は、その正規表現を作成した <xref:System.Text.RegularExpressions.Regex> オブジェクト自体がガベージ コレクションで解放されたとしても、コンパイル済みの正規表現によって使用されるリソースを .NET Framework が解放することはありません。  
+<span data-ttu-id="18987-110">ただし、生成された MSIL をアンロードすることはできません。</span><span class="sxs-lookup"><span data-stu-id="18987-110">However, generated MSIL cannot be unloaded.</span></span> <span data-ttu-id="18987-111">コードをアンロードする唯一の方法は、アプリケーション ドメイン全体をアンロードする (つまり、アプリケーションのすべてのコードをアンロードする) ことです。</span><span class="sxs-lookup"><span data-stu-id="18987-111">The only way to unload code is to unload an entire application domain (that is, to unload all of your application's code.).</span></span> <span data-ttu-id="18987-112">実際には、正規表現をコンパイルした後、<xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>オプションで、正規表現が作成した場合でも、コンパイル済みの式で使用したリソースを解放しない、<xref:System.Text.RegularExpressions.Regex>ガベージ コレクションにリリースされた自体であるオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="18987-112">Effectively, once a regular expression is compiled with the <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> option,   never releases the resources used by the compiled expression, even if the regular expression was created by a <xref:System.Text.RegularExpressions.Regex> object that is itself released to garbage collection.</span></span>  
   
- このため、<xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> オプションを使用してコンパイルする正規表現の数を制限することで、リソースの消費が過度にならないように注意する必要があります。  大量または無制限の正規表現をアプリケーションで使用する必要がある場合、**Options.Compiled** オプションを使用したコンパイルを行わないようにします。  ただし、少数の正規表現を繰り返して使用する場合は、パフォーマンスを向上させるために、<xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> を使用して正規表現をコンパイルする必要があります。  別の方法として、プリコンパイル済みの正規表現を使用することもできます。  <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A> メソッドを使用すると、再利用できる DLL にすべての表現をコンパイルできます。  これにより、実行時にコンパイルする必要がなくなり、コンパイルされた正規表現の処理速度も維持されます。  
+ <span data-ttu-id="18987-113">コンパイルすると、さまざまな正規表現の数を制限するように注意する必要があります、<xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>多くのリソースを消費しないようにするにはオプションです。</span><span class="sxs-lookup"><span data-stu-id="18987-113">You must be careful to limit the number of different regular expressions you compile with the <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> option to avoid consuming too many resources.</span></span> <span data-ttu-id="18987-114">アプリケーションで多数または無制限の数の正規表現を使用しなければならない場合は、各式をコンパイルするのではなく、解釈する必要があります。</span><span class="sxs-lookup"><span data-stu-id="18987-114">If an application must use a large or unbounded number of regular expressions, each expression should be interpreted, not compiled.</span></span> <span data-ttu-id="18987-115">ただし、正規表現の数が少ないを繰り返し使用する場合、コンパイルは<xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>パフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="18987-115">However, if a small number of regular expressions are used repeatedly, they should be compiled with <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> for better performance.</span></span> <span data-ttu-id="18987-116">代わりに、プリコンパイル済みの正規表現の使用を開始します。</span><span class="sxs-lookup"><span data-stu-id="18987-116">An alternative is to use precompiled regular expressions.</span></span> <span data-ttu-id="18987-117">すべての dll を再利用可能な表現を使用してコンパイルすることができます、<xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="18987-117">You can compile all of your expressions into a reusable DLL by using the <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A> method.</span></span> <span data-ttu-id="18987-118">これにより、コンパイルされた正規表現の速度も維持しながら、実行時にコンパイルする必要があります。</span><span class="sxs-lookup"><span data-stu-id="18987-118">This avoids the need to compile at runtime while still benefiting from the speed of compiled regular expressions.</span></span>  
   
-## 正規表現キャッシュ  
- パフォーマンスを向上させるために、正規表現エンジンは、コンパイル済みの正規表現のキャッシュをアプリケーション全体で保持します。  このキャッシュには、静的メソッド呼び出しでのみ使用される正規表現パターンが格納されます \(インスタンス メソッドに渡される正規表現パターンはキャッシュされません\)。これにより、正規表現を使用するたびに解析し直して高水準のバイト コードを生成する必要がなくなります。  
+## <a name="the-regular-expressions-cache"></a><span data-ttu-id="18987-119">正規表現のキャッシュ</span><span class="sxs-lookup"><span data-stu-id="18987-119">The Regular Expressions Cache</span></span>  
+ <span data-ttu-id="18987-120">パフォーマンスを高めるために、正規表現エンジンは、コンパイルされた正規表現のアプリケーション全体のキャッシュを保持します。</span><span class="sxs-lookup"><span data-stu-id="18987-120">To improve performance, the regular expression engine maintains an application-wide cache of compiled regular expressions.</span></span> <span data-ttu-id="18987-121">キャッシュは、静的メソッド呼び出しでのみ使用される正規表現パターンを格納します</span><span class="sxs-lookup"><span data-stu-id="18987-121">The cache stores regular expression patterns that are used only in static method calls.</span></span> <span data-ttu-id="18987-122">(インスタンス メソッドに渡される正規表現パターンはキャッシュされません)。これにより、式を使用するたびに高度なバイト コードに再解析する必要がなくなります。</span><span class="sxs-lookup"><span data-stu-id="18987-122">(Regular expression patterns supplied to instance methods are not cached.) This avoids the need to reparse an expression into high-level byte code each time it is used.</span></span>  
   
- キャッシュされる正規表現の最大数は、`static` \(Visual Basic では `Shared`\) <xref:System.Text.RegularExpressions.Regex.CacheSize%2A?displayProperty=fullName> プロパティの値で決まります。  既定では、正規表現エンジンは最大で 15 個のコンパイル済み正規表現をキャッシュします。  コンパイル済み正規表現の数がキャッシュ サイズを超えると、最後に使用されてからの時間が最も長い正規表現が破棄され、新しい正規表現がキャッシュされます。  
+ <span data-ttu-id="18987-123">キャッシュの正規表現の最大数の値によって決まります、 `static` (`Shared` Visual Basic で)<xref:System.Text.RegularExpressions.Regex.CacheSize%2A?displayProperty=nameWithType>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="18987-123">The maximum number of cached regular expressions is determined by the value of the `static` (`Shared` in Visual Basic) <xref:System.Text.RegularExpressions.Regex.CacheSize%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="18987-124">既定では、正規表現エンジンは最大 15 個のコンパイルされた正規表現をキャッシュします。</span><span class="sxs-lookup"><span data-stu-id="18987-124">By default, the regular expression engine caches up to 15 compiled regular expressions.</span></span> <span data-ttu-id="18987-125">コンパイルされた正規表現の数がキャッシュ サイズを超えた場合は、最近の使用頻度が最も低い正規表現が破棄され、新しい正規表現がキャッシュされます。</span><span class="sxs-lookup"><span data-stu-id="18987-125">If the number of compiled regular expressions exceeds the cache size, the least recently used regular expression is discarded and the new regular expression is cached.</span></span>  
   
-> [!IMPORTANT]
->  .NET Framework Version 2.0 での正規表現のキャッシュ方法は、.NET Framework Version 1.0 および 1.1 とは大きく異なります。  .NET Framework 1.0 および 1.1 では、静的メソッド呼び出しとインスタンス メソッド呼び出しの両方で使用されるすべての正規表現がキャッシュされます。  このキャッシュは、新しい正規表現を格納するために自動的に拡張されます。  .NET Framework 2.0 では、静的メソッド呼び出しで使用された正規表現のみがキャッシュされます。  既定では最新の 15 個の正規表現だけがキャッシュされますが、キャッシュのサイズは <xref:System.Text.RegularExpressions.Regex.CacheSize%2A> プロパティの値を設定することで調整できます。  
+ <span data-ttu-id="18987-126">アプリケーションでは、次の 2 つの方法のいずれかでプリコンパイル済みの正規表現を利用できます。</span><span class="sxs-lookup"><span data-stu-id="18987-126">Your application can take advantage of precompiled regular expressions in one of the following two ways:</span></span>  
   
- アプリケーションでは、次の 2 つの方法のいずれかにより、プリコンパイル済みの正規表現を利用できます。  
+-   <span data-ttu-id="18987-127">静的メソッドを使用して、<xref:System.Text.RegularExpressions.Regex>正規表現を定義するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="18987-127">By using a static method of the <xref:System.Text.RegularExpressions.Regex> object to define the regular expression.</span></span> <span data-ttu-id="18987-128">別の静的メソッド呼び出しで既に定義されている正規表現パターンを使用している場合、正規表現エンジンはこれをキャッシュから取得します。</span><span class="sxs-lookup"><span data-stu-id="18987-128">If you are using a regular expression pattern that has already been defined in another static method call, the regular expression engine will retrieve it from the cache.</span></span> <span data-ttu-id="18987-129">そうでない場合、エンジンは正規表現をコンパイルしてキャッシュに追加します。</span><span class="sxs-lookup"><span data-stu-id="18987-129">If not, the engine will compile the regular expression and add it to the cache.</span></span>  
   
--   <xref:System.Text.RegularExpressions.Regex> オブジェクトの静的メソッドを使用して、正規表現を定義します。  別の静的メソッド呼び出しで既に定義されている正規表現パターンを使用する場合、正規表現エンジンはその表現をキャッシュから取得します。  それ以外の場合、エンジンは正規表現をコンパイルしてキャッシュに追加します。  
+-   <span data-ttu-id="18987-130">既存の再利用して<xref:System.Text.RegularExpressions.Regex>オブジェクトの正規表現パターンが必要な限り、します。</span><span class="sxs-lookup"><span data-stu-id="18987-130">By reusing an existing <xref:System.Text.RegularExpressions.Regex> object as long as its regular expression pattern is needed.</span></span>  
   
--   正規表現パターンが必要な場合に、既存の <xref:System.Text.RegularExpressions.Regex> オブジェクトを再利用します。  
+ <span data-ttu-id="18987-131">オブジェクトのインスタンス化と作成と破棄迅速に、さまざまな正規表現のコンパイル時のオーバーヘッドが原因<xref:System.Text.RegularExpressions.Regex>オブジェクトは、非常に高価なプロセスです。</span><span class="sxs-lookup"><span data-stu-id="18987-131">Because of the overhead of object instantiation and regular expression compilation, creating and rapidly destroying numerous <xref:System.Text.RegularExpressions.Regex> objects is a very expensive process.</span></span> <span data-ttu-id="18987-132">多数の異なる正規表現を使用するアプリケーションでは、静的に呼び出しを使用してパフォーマンスを最適化できます`Regex`メソッドおよび可能性のあるによって、正規表現のキャッシュのサイズを大ききます。</span><span class="sxs-lookup"><span data-stu-id="18987-132">For applications that use a large number of different regular expressions, you can optimize performance by using calls to static `Regex` methods and possibly by increasing the size of the regular expression cache.</span></span>  
   
- オブジェクトのインスタンス化と正規表現のコンパイルによって生じるオーバーヘッドのため、多数の <xref:System.Text.RegularExpressions.Regex> オブジェクトを作成してすぐに破棄するのは効率が良くありません。  多数の異なる正規表現を使用するアプリケーションでは、静的な `Regex` メソッドの呼び出しを使用することと、必要に応じて正規表現キャッシュのサイズを大きくすることで、パフォーマンスを最適化できます。  
-  
-## 参照  
- [.NET Framework の正規表現](../../../docs/standard/base-types/regular-expressions.md)
+## <a name="see-also"></a><span data-ttu-id="18987-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="18987-133">See Also</span></span>  
+ [<span data-ttu-id="18987-134">.NET の正規表現</span><span class="sxs-lookup"><span data-stu-id="18987-134">.NET Regular Expressions</span></span>](../../../docs/standard/base-types/regular-expressions.md)

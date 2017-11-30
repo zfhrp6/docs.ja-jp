@@ -1,224 +1,230 @@
 ---
-title: "正規表現での置換 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - ".NET Framework 正規表現, 置換"
-  - "構成体, 置換"
-  - "メタ文字, 置換"
-  - "正規表現, 置換"
-  - "置換パターン"
-  - "置換"
+title: "正規表現での置換"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- regular expressions, substitutions
+- replacement patterns
+- metacharacters, substitutions
+- .NET Framework regular expressions, substitutions
+- constructs, substitutions
+- substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-caps.latest.revision: 20
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 7a92c454548c69d1a64c954ab2d510b77553a895
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 正規表現での置換
-<a name="Top"></a> 置換は、置換パターン内でのみ認識される言語要素です。 置換では、正規表現パターンを使用して、入力文字列内の一致するテキストを置換するテキストの全体または一部を定義します。 置換パターンは、1 個以上の置換と、リテラル文字で構成されます。 置換パターンは、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=fullName> パラメーターを持つ `replacement` メソッドのオーバーロードおよび <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=fullName> メソッドに対して用意されています。 メソッドは、一致するパターンを、`replacement` パラメーターで定義されているパターンで置換します。  
+# <a name="substitutions-in-regular-expressions"></a><span data-ttu-id="91aa4-102">正規表現での置換</span><span class="sxs-lookup"><span data-stu-id="91aa4-102">Substitutions in Regular Expressions</span></span>
+<span data-ttu-id="91aa4-103"><a name="Top"></a> 置換は、置換パターン内でのみ認識される言語要素です。</span><span class="sxs-lookup"><span data-stu-id="91aa4-103"><a name="Top"></a> Substitutions are language elements that are recognized only within replacement patterns.</span></span> <span data-ttu-id="91aa4-104">置換では、正規表現パターンを使用して、入力文字列内の一致するテキストを置換するテキストの全体または一部を定義します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-104">They use a regular expression pattern to define all or part of the text that is to replace matched text in the input string.</span></span> <span data-ttu-id="91aa4-105">置換パターンは、1 個以上の置換と、リテラル文字で構成されます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-105">The replacement pattern can consist of one or more substitutions along with literal characters.</span></span> <span data-ttu-id="91aa4-106">置換パターンは、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> パラメーターを持つ `replacement` メソッドのオーバーロードおよび <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> メソッドに対して用意されています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-106">Replacement patterns are provided to overloads of the <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> method that have a `replacement` parameter and to the <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="91aa4-107">メソッドは、一致するパターンを、 `replacement` パラメーターで定義されているパターンで置換します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-107">The methods replace the matched pattern with the pattern that is defined by the `replacement` parameter.</span></span>  
   
- .NET Framework では、次の表に示す置換要素が定義されています。  
+ <span data-ttu-id="91aa4-108">.NET Framework では、次の表に示す置換要素が定義されています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-108">The .NET Framework defines the substitution elements listed in the following table.</span></span>  
   
-|代入|説明|  
-|--------|--------|  
-|`$` *number*|*number* で識別されるキャプチャ グループに一致する最後の部分文字列を置換文字列に含めます。*number* は 10 進値です。 詳細については、「[番号付きグループの置換](#Numbered)」を参照してください。|  
-|`${` *name* `}`|`(?<` *name* `> )` で指定された名前付きグループに一致する最後の部分文字列を置換文字列に含めます。 詳細については、「[名前付きグループの置換](#Named)」を参照してください。|  
-|`$$`|置換文字列に 1 つの "$" リテラルを含めます。 詳細については、「["$" 文字の置換](#DollarSign)」を参照してください。|  
-|`$&`|一致した文字列全体のコピーを置換文字列に含めます。 詳細については、「[一致した文字列全体の置換](#EntireMatch)」を参照してください。|  
-|`$``|一致した場所より前にある入力文字列のテキストすべてを置換文字列に含めます。 詳細については、「[一致した文字列より前にあるテキストの置換](#BeforeMatch)」を参照してください。|  
-|`$'`|一致した場所より後にある入力文字列のテキストすべてを置換文字列に含めます。 詳細については、「[一致した文字列より後にあるテキストの置換](#AfterMatch)」を参照してください。|  
-|`$+`|最後にキャプチャされたグループを置換文字列に含めます。 詳細については、「[キャプチャされた最後のグループの置換](#LastGroup)」を参照してください。|  
-|`$_`|入力文字列全体を置換文字列に含めます。 詳細については、「[入力文字列全体の置換](#EntireString)」を参照してください。|  
+|<span data-ttu-id="91aa4-109">代入</span><span class="sxs-lookup"><span data-stu-id="91aa4-109">Substitution</span></span>|<span data-ttu-id="91aa4-110">説明</span><span class="sxs-lookup"><span data-stu-id="91aa4-110">Description</span></span>|  
+|------------------|-----------------|  
+|<span data-ttu-id="91aa4-111">`$` *number*</span><span class="sxs-lookup"><span data-stu-id="91aa4-111">`$` *number*</span></span>|<span data-ttu-id="91aa4-112">*number*で識別されるキャプチャ グループに一致する最後の部分文字列を置換文字列に含めます。 *number* は 10 進値です。</span><span class="sxs-lookup"><span data-stu-id="91aa4-112">Includes the last substring matched by the capturing group that is identified by *number*, where *number* is a decimal value, in the replacement string.</span></span> <span data-ttu-id="91aa4-113">詳細については、「 [番号付きグループの置換](#Numbered)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-113">For more information, see [Substituting a Numbered Group](#Numbered).</span></span>|  
+|<span data-ttu-id="91aa4-114">`${` *name* `}`</span><span class="sxs-lookup"><span data-stu-id="91aa4-114">`${` *name* `}`</span></span>|<span data-ttu-id="91aa4-115">`(?<`*name*`> )` で指定された名前付きグループに一致する最後の部分文字列を置換文字列に含めます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-115">Includes the last substring matched by the named group that is designated by `(?<`*name*`> )` in the replacement string.</span></span> <span data-ttu-id="91aa4-116">詳細については、「 [名前付きグループの置換](#Named)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-116">For more information, see [Substituting a Named Group](#Named).</span></span>|  
+|`$$`|<span data-ttu-id="91aa4-117">置換文字列に 1 つの "$" リテラルを含めます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-117">Includes a single "$" literal in the replacement string.</span></span> <span data-ttu-id="91aa4-118">詳細については、「 ["$" 文字の置換](#DollarSign)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-118">For more information, see [Substituting a "$" Symbol](#DollarSign).</span></span>|  
+|`$&`|<span data-ttu-id="91aa4-119">一致した文字列全体のコピーを置換文字列に含めます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-119">Includes a copy of the entire match in the replacement string.</span></span> <span data-ttu-id="91aa4-120">詳細については、「 [一致した文字列全体の置換](#EntireMatch)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-120">For more information, see [Substituting the Entire Match](#EntireMatch).</span></span>|  
+|<code>$\`</code>|<span data-ttu-id="91aa4-121">一致した場所より前にある入力文字列のテキストすべてを置換文字列に含めます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-121">Includes all the text of the input string before the match in the replacement string.</span></span> <span data-ttu-id="91aa4-122">詳細については、「 [一致した文字列より前にあるテキストの置換](#BeforeMatch)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-122">For more information, see [Substituting the Text before the Match](#BeforeMatch).</span></span>|  
+|`$'`|<span data-ttu-id="91aa4-123">一致した場所より後にある入力文字列のテキストすべてを置換文字列に含めます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-123">Includes all the text of the input string after the match in the replacement string.</span></span> <span data-ttu-id="91aa4-124">詳細については、「 [一致した文字列より後にあるテキストの置換](#AfterMatch)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-124">For more information, see [Substituting the Text after the Match](#AfterMatch).</span></span>|  
+|`$+`|<span data-ttu-id="91aa4-125">最後にキャプチャされたグループを置換文字列に含めます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-125">Includes the last group captured in the replacement string.</span></span> <span data-ttu-id="91aa4-126">詳細については、「 [キャプチャされた最後のグループの置換](#LastGroup)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-126">For more information, see [Substituting the Last Captured Group](#LastGroup).</span></span>|  
+|`$_`|<span data-ttu-id="91aa4-127">入力文字列全体を置換文字列に含めます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-127">Includes the entire input string in the replacement string.</span></span> <span data-ttu-id="91aa4-128">詳細については、「 [入力文字列全体の置換](#EntireString)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-128">For more information, see [Substituting the Entire Input String](#EntireString).</span></span>|  
   
-## 置換要素と置換パターン  
- 置換構成体は、置換パターンで認識される特殊な構成体です。 文字エスケープやピリオド \(`.`\) など、任意の文字に一致する他の正規表現言語要素はいずれもサポートされていません。 同様に、置換言語要素は置換パターン内でのみ認識され、正規表現パターン内では有効ではありません。  
+## <a name="substitution-elements-and-replacement-patterns"></a><span data-ttu-id="91aa4-129">置換要素と置換パターン</span><span class="sxs-lookup"><span data-stu-id="91aa4-129">Substitution Elements and Replacement Patterns</span></span>  
+ <span data-ttu-id="91aa4-130">置換構成体は、置換パターンで認識される特殊な構成体です。</span><span class="sxs-lookup"><span data-stu-id="91aa4-130">Substitutions are the only special constructs recognized in a replacement pattern.</span></span> <span data-ttu-id="91aa4-131">文字エスケープやピリオド (`.`) など、任意の文字に一致する他の正規表現言語要素はいずれもサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="91aa4-131">None of the other regular expression language elements, including character escapes and the period (`.`), which matches any character, are supported.</span></span> <span data-ttu-id="91aa4-132">同様に、置換言語要素は置換パターン内でのみ認識され、正規表現パターン内では有効ではありません。</span><span class="sxs-lookup"><span data-stu-id="91aa4-132">Similarly, substitution language elements are recognized only in replacement patterns and are never valid in regular expression patterns.</span></span>  
   
- 正規表現パターンと置換の両方に使用できる文字は `$` 文字だけですが、この文字の意味はコンテキストによって異なります。 正規表現パターンでは、`$` は文字列の末尾に一致するアンカーです。 置換パターンでは、`$` は置換の先頭を示します。  
+ <span data-ttu-id="91aa4-133">正規表現パターンと置換の両方に使用できる文字は `$` 文字だけですが、この文字の意味はコンテキストによって異なります。</span><span class="sxs-lookup"><span data-stu-id="91aa4-133">The only character that can appear either in a regular expression pattern or in a substitution is the `$` character, although it has a different meaning in each context.</span></span> <span data-ttu-id="91aa4-134">正規表現パターンでは、 `$` は文字列の末尾に一致するアンカーです。</span><span class="sxs-lookup"><span data-stu-id="91aa4-134">In a regular expression pattern, `$` is an anchor that matches the end of the string.</span></span> <span data-ttu-id="91aa4-135">置換パターンでは、 `$` は置換の先頭を示します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-135">In a replacement pattern, `$` indicates the beginning of a substitution.</span></span>  
   
 > [!NOTE]
->  正規表現の中で置換パターンに似た機能を利用するには、前方参照を使用します。 前方参照の詳細については、「[前方参照構成体](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md)」を参照してください。  
+>  <span data-ttu-id="91aa4-136">正規表現の中で置換パターンに似た機能を利用するには、前方参照を使用します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-136">For functionality similar to a replacement pattern within a regular expression, use a backreference.</span></span> <span data-ttu-id="91aa4-137">前方参照の詳細については、「 [前方参照構成体](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-137">For more information about backreferences, see [Backreference Constructs](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).</span></span>  
   
 <a name="Numbered"></a>   
-## 番号付きグループの置換  
- `$` *number* 言語要素は、*number* キャプチャ グループに一致する最後の部分文字列を置換文字列に含めます。*number* は、キャプチャ グループのインデックスです。 たとえば、置換パターン `$1` は、一致した部分文字列がキャプチャされた最初のグループに置き換えられることを示します。 番号付きキャプチャ グループの詳細については、「[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」を参照してください。  
+## <a name="substituting-a-numbered-group"></a><span data-ttu-id="91aa4-138">番号付きグループの置換</span><span class="sxs-lookup"><span data-stu-id="91aa4-138">Substituting a Numbered Group</span></span>  
+ <span data-ttu-id="91aa4-139">`$`*number* 言語要素は、 *number* キャプチャ グループに一致する最後の部分文字列を置換文字列に含めます。 *number* は、キャプチャ グループのインデックスです。</span><span class="sxs-lookup"><span data-stu-id="91aa4-139">The `$`*number* language element includes the last substring matched by the *number* capturing group in the replacement string, where *number* is the index of the capturing group.</span></span> <span data-ttu-id="91aa4-140">たとえば、置換パターン `$1` は、一致した部分文字列がキャプチャされた最初のグループに置き換えられることを示します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-140">For example, the replacement pattern `$1` indicates that the matched substring is to be replaced by the first captured group.</span></span> <span data-ttu-id="91aa4-141">番号付きキャプチャ グループの詳細については、「 [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-141">For more information about numbered capturing groups, see [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).</span></span>  
   
- `$` 以降のすべての数字が、*number* グループに所属すると解釈されます。 そうしたくない場合は、代わりに名前付きグループを使用できます。 たとえば、`${1}1` の代わりに、置換文字列 `$11` を使用して、最初のキャプチャ グループの値と数字 "1" を置換文字列として定義できます。 詳細については、「[名前付きグループの置換](#Named)」を参照してください。  
+ <span data-ttu-id="91aa4-142">`$` 以降のすべての数字が、 *number* グループに所属すると解釈されます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-142">All digits that follow `$` are interpreted as belonging to the *number* group.</span></span> <span data-ttu-id="91aa4-143">そうしたくない場合は、代わりに名前付きグループを使用できます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-143">If this is not your intent, you can substitute a named group instead.</span></span> <span data-ttu-id="91aa4-144">たとえば、 `${1}1` の代わりに、置換文字列 `$11` を使用して、最初のキャプチャ グループの値と数字 "1" を置換文字列として定義できます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-144">For example, you can use the replacement string `${1}1` instead of `$11` to define the replacement string as the value of the first captured group along with the number "1".</span></span> <span data-ttu-id="91aa4-145">詳細については、「 [名前付きグループの置換](#Named)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-145">For more information, see [Substituting a Named Group](#Named).</span></span>  
   
- `(?<` *name* `>)` 構文を使用して名前が明示的に割り当てられていないキャプチャ グループには、1 から開始する番号が左から右の順に割り当てられます。 名前付きグループにも、最後の名前のないグループのインデックスよりも 1 つ大きい数値から開始する番号が、左から右へと順に割り当てられます。 たとえば、正規表現 `(\w)(?<digit>\d)` では、`digit` という名前付きグループのインデックスは 2 です。  
+ <span data-ttu-id="91aa4-146">`(?<`*name*`>)` 構文を使用して名前が明示的に割り当てられていないキャプチャ グループには、1 から開始する番号が左から右の順に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-146">Capturing groups that are not explicitly assigned names using the `(?<`*name*`>)` syntax are numbered from left to right starting at one.</span></span> <span data-ttu-id="91aa4-147">名前付きグループにも、最後の名前のないグループのインデックスよりも 1 つ大きい数値から開始する番号が、左から右へと順に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-147">Named groups are also numbered from left to right, starting at one greater than the index of the last unnamed group.</span></span> <span data-ttu-id="91aa4-148">たとえば、正規表現 `(\w)(?<digit>\d)`では、 `digit` という名前付きグループのインデックスは 2 です。</span><span class="sxs-lookup"><span data-stu-id="91aa4-148">For example, in the regular expression `(\w)(?<digit>\d)`, the index of the `digit` named group is 2.</span></span>  
   
- *number* が、正規表現パターンで定義される有効なキャプチャ グループを指定していない場合は、`$`*number* が、一致した各文字列の置換に使用されるリテラル文字列シーケンスとして解釈されます。  
+ <span data-ttu-id="91aa4-149">*number* が、正規表現パターンで定義される有効なキャプチャ グループを指定していない場合は、 `$`*number* が、一致した各文字列の置換に使用されるリテラル文字列シーケンスとして解釈されます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-149">If *number* does not specify a valid capturing group defined in the regular expression pattern, `$`*number* is interpreted as a literal character sequence that is used to replace each match.</span></span>  
   
- 次の例では、`$`*number* の置換を使用して、10 進値から通貨記号を削除しています。 通貨値の先頭または末尾に見つかった通貨記号を削除し、最も一般的な 2 つの桁区切り記号 \("." および ","\) を認識します。  
+ <span data-ttu-id="91aa4-150">次の例では、 `$`*number* の置換を使用して、10 進値から通貨記号を削除しています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-150">The following example uses the `$`*number* substitution to strip the currency symbol from a decimal value.</span></span> <span data-ttu-id="91aa4-151">通貨値の先頭または末尾に見つかった通貨記号を削除し、最も一般的な 2 つの桁区切り記号 ("." および ",") を認識します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-151">It removes currency symbols found at the beginning or end of a monetary value, and recognizes the two most common decimal separators ("." and ",").</span></span>  
   
  [!code-csharp[Conceptual.RegEx.Language.Substitutions#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/numberedgroup1.cs#1)]
  [!code-vb[Conceptual.RegEx.Language.Substitutions#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/numberedgroup1.vb#1)]  
   
- 正規表現パターン `\p{Sc}*(\s?\d+[.,]?\d*)\p{Sc}*` は、次の表に示すように定義されています。  
+ <span data-ttu-id="91aa4-152">正規表現パターン `\p{Sc}*(\s?\d+[.,]?\d*)\p{Sc}*` は、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-152">The regular expression pattern `\p{Sc}*(\s?\d+[.,]?\d*)\p{Sc}*` is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\p{Sc}*`|0 個以上の通貨記号文字と一致します。|  
-|`\s?`|0 個または 1 個の空白文字と一致します。|  
-|`\d+`|1 個以上の 10 進数と一致します。|  
-|`[.,]?`|0 個または 1 個のピリオドまたはコンマと一致します。|  
-|`\d*`|0 個以上の 10 進数と一致します。|  
-|`(\s?\d+[.,]?\d*)`|空白の後に 1 つ以上の 10 進数、0 個または 1 個のピリオドまたはコンマ、さらに 0 個以上の 10 進数が続くパターンに一致します。 これが最初のキャプチャ グループです。 置換パターンは `$1` であるため、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=fullName> メソッドを呼び出すと、一致する部分文字列全体がこのキャプチャされたグループに置き換えられます。|  
+|<span data-ttu-id="91aa4-153">パターン</span><span class="sxs-lookup"><span data-stu-id="91aa4-153">Pattern</span></span>|<span data-ttu-id="91aa4-154">説明</span><span class="sxs-lookup"><span data-stu-id="91aa4-154">Description</span></span>|  
+|-------------|-----------------|  
+|`\p{Sc}*`|<span data-ttu-id="91aa4-155">0 個以上の通貨記号文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-155">Match zero or more currency symbol characters.</span></span>|  
+|`\s?`|<span data-ttu-id="91aa4-156">0 個または 1 個の空白文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-156">Match zero or one white-space characters.</span></span>|  
+|`\d+`|<span data-ttu-id="91aa4-157">1 個以上の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-157">Match one or more decimal digits.</span></span>|  
+|`[.,]?`|<span data-ttu-id="91aa4-158">0 個または 1 個のピリオドまたはコンマと一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-158">Match zero or one period or comma.</span></span>|  
+|`\d*`|<span data-ttu-id="91aa4-159">0 個以上の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-159">Match zero or more decimal digits.</span></span>|  
+|`(\s?\d+[.,]?\d*)`|<span data-ttu-id="91aa4-160">空白の後に 1 つ以上の 10 進数、0 個または 1 個のピリオドまたはコンマ、さらに 0 個以上の 10 進数が続くパターンに一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-160">Match a white space followed by one or more decimal digits, followed by zero or one period or comma, followed by zero or more decimal digits.</span></span> <span data-ttu-id="91aa4-161">これが最初のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="91aa4-161">This is the first capturing group.</span></span> <span data-ttu-id="91aa4-162">置換パターンは `$1` であるため、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドを呼び出すと、一致する部分文字列全体がこのキャプチャされたグループに置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-162">Because the replacement pattern is `$1`, the call to the <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> method replaces the entire matched substring with this captured group.</span></span>|  
   
- [ページのトップへ](#Top)  
+ [<span data-ttu-id="91aa4-163">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="91aa4-163">Back to top</span></span>](#Top)  
   
 <a name="Named"></a>   
-## 名前付きのグループの置換  
- `${` *name* `}` 言語要素は、*name* キャプチャ グループに一致する最後の部分文字列を置換します。ここで、*name* は `(?<`*name*`>)` 言語要素で定義されているキャプチャ グループの名前です。 名前付きキャプチャ グループの詳細については、「[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」を参照してください。  
+## <a name="substituting-a-named-group"></a><span data-ttu-id="91aa4-164">名前付きグループの置換</span><span class="sxs-lookup"><span data-stu-id="91aa4-164">Substituting a Named Group</span></span>  
+ <span data-ttu-id="91aa4-165">`${`*name*`}` 言語要素は、 *name* キャプチャ グループに一致する最後の部分文字列を置換します。ここで、 *name* は `(?<`*name*`>)` 言語要素で定義されているキャプチャ グループの名前です。</span><span class="sxs-lookup"><span data-stu-id="91aa4-165">The `${`*name*`}` language element substitutes the last substring matched by the *name* capturing group, where *name* is the name of a capturing group defined by the `(?<`*name*`>)` language element.</span></span> <span data-ttu-id="91aa4-166">名前付きキャプチャ グループの詳細については、「 [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91aa4-166">For more information about named capturing groups, see [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).</span></span>  
   
- *name* が正規表現パターンで定義されている有効な名前付きキャプチャ グループを指定していないものの、数字で構成されている場合、`${`*name*`}` は番号付きグループとして解釈されます。  
+ <span data-ttu-id="91aa4-167">*name* が正規表現パターンで定義されている有効な名前付きキャプチャ グループを指定していないものの、数字で構成されている場合、 `${`*name*`}` は番号付きグループとして解釈されます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-167">If *name* doesn't specify a valid named capturing group defined in the regular expression pattern but consists of digits, `${`*name*`}` is interpreted as a numbered group.</span></span>  
   
- *name* が、正規表現パターンで定義されている有効な名前付きキャプチャ グループも有効な番号付きキャプチャ グループも指定していない場合、`${`*name*`}` は、一致した各文字列の置換に使用されるリテラル文字列シーケンスとして解釈されます。  
+ <span data-ttu-id="91aa4-168">*name* が、正規表現パターンで定義されている有効な名前付きキャプチャ グループも有効な番号付きキャプチャ グループも指定していない場合、 `${`*name*`}` は、一致した各文字列の置換に使用されるリテラル文字列シーケンスとして解釈されます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-168">If *name* specifies neither a valid named capturing group nor a valid numbered capturing group defined in the regular expression pattern, `${`*name*`}` is interpreted as a literal character sequence that is used to replace each match.</span></span>  
   
- 次の例では、`${`*name*`}` の置換を使用して、10 進値から通貨記号を削除しています。 通貨値の先頭または末尾に見つかった通貨記号を削除し、最も一般的な 2 つの桁区切り記号 \("." および ","\) を認識します。  
+ <span data-ttu-id="91aa4-169">次の例では、 `${`*name*`}` の置換を使用して、10 進値から通貨記号を削除しています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-169">The following example uses the `${`*name*`}` substitution to strip the currency symbol from a decimal value.</span></span> <span data-ttu-id="91aa4-170">通貨値の先頭または末尾に見つかった通貨記号を削除し、最も一般的な 2 つの桁区切り記号 ("." および ",") を認識します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-170">It removes currency symbols found at the beginning or end of a monetary value, and recognizes the two most common decimal separators ("." and ",").</span></span>  
   
  [!code-csharp[Conceptual.RegEx.Language.Substitutions#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/namedgroup1.cs#2)]
  [!code-vb[Conceptual.RegEx.Language.Substitutions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/namedgroup1.vb#2)]  
   
- 正規表現パターン `\p{Sc}*(?<amount>\s?\d[.,]?\d*)\p{Sc}*` は、次の表に示すように定義されています。  
+ <span data-ttu-id="91aa4-171">正規表現パターン `\p{Sc}*(?<amount>\s?\d[.,]?\d*)\p{Sc}*` は、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-171">The regular expression pattern `\p{Sc}*(?<amount>\s?\d[.,]?\d*)\p{Sc}*` is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\p{Sc}*`|0 個以上の通貨記号文字と一致します。|  
-|`\s?`|0 個または 1 個の空白文字と一致します。|  
-|`\d+`|1 個以上の 10 進数と一致します。|  
-|`[.,]?`|0 個または 1 個のピリオドまたはコンマと一致します。|  
-|`\d*`|0 個以上の 10 進数と一致します。|  
-|`(?<amount>\s?\d[.,]?\d*)`|空白の後に 1 つ以上の 10 進数、0 個または 1 個のピリオドまたはコンマ、さらに 0 個以上の 10 進数が続くパターンに一致します。 これは、`amount` という名前のキャプチャ グループです。 置換パターンは `${amount}` であるため、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=fullName> メソッドを呼び出すと、一致する部分文字列全体がこのキャプチャされたグループに置き換えられます。|  
+|<span data-ttu-id="91aa4-172">パターン</span><span class="sxs-lookup"><span data-stu-id="91aa4-172">Pattern</span></span>|<span data-ttu-id="91aa4-173">説明</span><span class="sxs-lookup"><span data-stu-id="91aa4-173">Description</span></span>|  
+|-------------|-----------------|  
+|`\p{Sc}*`|<span data-ttu-id="91aa4-174">0 個以上の通貨記号文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-174">Match zero or more currency symbol characters.</span></span>|  
+|`\s?`|<span data-ttu-id="91aa4-175">0 個または 1 個の空白文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-175">Match zero or one white-space characters.</span></span>|  
+|`\d+`|<span data-ttu-id="91aa4-176">1 個以上の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-176">Match one or more decimal digits.</span></span>|  
+|`[.,]?`|<span data-ttu-id="91aa4-177">0 個または 1 個のピリオドまたはコンマと一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-177">Match zero or one period or comma.</span></span>|  
+|`\d*`|<span data-ttu-id="91aa4-178">0 個以上の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-178">Match zero or more decimal digits.</span></span>|  
+|`(?<amount>\s?\d[.,]?\d*)`|<span data-ttu-id="91aa4-179">空白の後に 1 つ以上の 10 進数、0 個または 1 個のピリオドまたはコンマ、さらに 0 個以上の 10 進数が続くパターンに一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-179">Match a white space, followed by one or more decimal digits, followed by zero or one period or comma, followed by zero or more decimal digits.</span></span> <span data-ttu-id="91aa4-180">これは、 `amount`という名前のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="91aa4-180">This is the capturing group named `amount`.</span></span> <span data-ttu-id="91aa4-181">置換パターンは `${amount}` であるため、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドを呼び出すと、一致する部分文字列全体がこのキャプチャされたグループに置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-181">Because the replacement pattern is `${amount}`, the call to the <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> method replaces the entire matched substring with this captured group.</span></span>|  
   
- [ページのトップへ](#Top)  
+ [<span data-ttu-id="91aa4-182">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="91aa4-182">Back to top</span></span>](#Top)  
   
 <a name="DollarSign"></a>   
-## "$" 文字の置換  
- `$$` の置換は、リテラル文字 "$" を置換文字列に挿入します。  
+## <a name="substituting-a--character"></a><span data-ttu-id="91aa4-183">"$" 文字の置換</span><span class="sxs-lookup"><span data-stu-id="91aa4-183">Substituting a "$" Character</span></span>  
+ <span data-ttu-id="91aa4-184">`$$` の置換は、リテラル文字 "$" を置換文字列に挿入します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-184">The `$$` substitution inserts a literal "$" character in the replaced string.</span></span>  
   
- 次の例では、<xref:System.Globalization.NumberFormatInfo> オブジェクトを使用して、現在のカルチャの通貨記号と、通貨文字列内でのその配置を決定します。 次に、正規表現パターンと置換パターンの両方を動的に構築します。 現在 en\-US カルチャが使用されているコンピューターでこの例を実行すると、`\b(\d+)(\.(\d+))?` という正規表現パターンと `$$ $1$2` という置換パターンが生成されます。 置換パターンは、一致するテキストを、通貨記号と空白に続いて、キャプチャされた最初および 2 番目のグループで置換します。  
+ <span data-ttu-id="91aa4-185">次の例では、 <xref:System.Globalization.NumberFormatInfo> オブジェクトを使用して、現在のカルチャの通貨記号と、通貨文字列内でのその配置を決定します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-185">The following example uses the <xref:System.Globalization.NumberFormatInfo> object to determine the current culture's currency symbol and its placement in a currency string.</span></span> <span data-ttu-id="91aa4-186">次に、正規表現パターンと置換パターンの両方を動的に構築します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-186">It then builds both a regular expression pattern and a replacement pattern dynamically.</span></span> <span data-ttu-id="91aa4-187">現在 en-US カルチャが使用されているコンピューターでこの例を実行すると、 `\b(\d+)(\.(\d+))?` という正規表現パターンと `$$ $1$2`という置換パターンが生成されます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-187">If the example is run on a computer whose current culture is en-US, it generates the regular expression pattern `\b(\d+)(\.(\d+))?` and the replacement pattern `$$ $1$2`.</span></span> <span data-ttu-id="91aa4-188">置換パターンは、一致するテキストを、通貨記号と空白に続いて、キャプチャされた最初および 2 番目のグループで置換します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-188">The replacement pattern replaces the matched text with a currency symbol and a space followed by the first and second captured groups.</span></span>  
   
  [!code-csharp[Conceptual.Regex.Language.Substitutions#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/dollarsign1.cs#8)]
  [!code-vb[Conceptual.Regex.Language.Substitutions#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/dollarsign1.vb#8)]  
   
- 正規表現パターン `\b(\d+)(\.(\d+))?` は、次の表に示すように定義されています。  
+ <span data-ttu-id="91aa4-189">正規表現パターン `\b(\d+)(\.(\d+))?` は、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-189">The regular expression pattern `\b(\d+)(\.(\d+))?` is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界の先頭から照合を開始します。|  
-|`(\d+)`|1 個以上の 10 進数と一致します。 これが最初のキャプチャ グループです。|  
-|`\.`|ピリオド \(桁区切り記号\) と一致します。|  
-|`(\d+)`|1 個以上の 10 進数と一致します。 これが 3 番目のキャプチャ グループです。|  
-|`(\.(\d+))?`|ピリオドの後に 1 つ以上の 10 進数が続くパターンの 0 回または 1 回の出現と一致します。 これが 2 番目のキャプチャ グループです。|  
+|<span data-ttu-id="91aa4-190">パターン</span><span class="sxs-lookup"><span data-stu-id="91aa4-190">Pattern</span></span>|<span data-ttu-id="91aa4-191">説明</span><span class="sxs-lookup"><span data-stu-id="91aa4-191">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="91aa4-192">ワード境界の先頭から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-192">Start the match at the beginning of a word boundary.</span></span>|  
+|`(\d+)`|<span data-ttu-id="91aa4-193">1 個以上の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-193">Match one or more decimal digits.</span></span> <span data-ttu-id="91aa4-194">これが最初のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="91aa4-194">This is the first capturing group.</span></span>|  
+|`\.`|<span data-ttu-id="91aa4-195">ピリオド (桁区切り記号) と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-195">Match a period (the decimal separator).</span></span>|  
+|`(\d+)`|<span data-ttu-id="91aa4-196">1 個以上の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-196">Match one or more decimal digits.</span></span> <span data-ttu-id="91aa4-197">これが 3 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="91aa4-197">This is the third capturing group.</span></span>|  
+|`(\.(\d+))?`|<span data-ttu-id="91aa4-198">ピリオドの後に 1 つ以上の 10 進数が続くパターンの 0 回または 1 回の出現と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-198">Match zero or one occurrence of a period followed by one or more decimal digits.</span></span> <span data-ttu-id="91aa4-199">これが 2 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="91aa4-199">This is the second capturing group.</span></span>|  
   
 <a name="EntireMatch"></a>   
-## 一致した文字列全体の置換  
- `$&` の置換は、一致した文字列全体を置換文字列に含めます。 通常は、一致した文字列の先頭または末尾に部分文字列を追加するために使用されます。 たとえば、`($&)` という置換パターンは、一致した各文字列の先頭と末尾にかっこを追加します。 一致する文字列がない場合、`$&` の置換は無効です。  
+## <a name="substituting-the-entire-match"></a><span data-ttu-id="91aa4-200">一致した文字列全体の置換</span><span class="sxs-lookup"><span data-stu-id="91aa4-200">Substituting the Entire Match</span></span>  
+ <span data-ttu-id="91aa4-201">`$&` の置換は、一致した文字列全体を置換文字列に含めます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-201">The `$&` substitution includes the entire match in the replacement string.</span></span> <span data-ttu-id="91aa4-202">通常は、一致した文字列の先頭または末尾に部分文字列を追加するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="91aa4-202">Often, it is used to add a substring to the beginning or end of the matched string.</span></span> <span data-ttu-id="91aa4-203">たとえば、 `($&)` という置換パターンは、一致した各文字列の先頭と末尾にかっこを追加します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-203">For example, the `($&)` replacement pattern adds parentheses to the beginning and end of each match.</span></span> <span data-ttu-id="91aa4-204">一致する文字列がない場合、 `$&` の置換は無効です。</span><span class="sxs-lookup"><span data-stu-id="91aa4-204">If there is no match, the `$&` substitution has no effect.</span></span>  
   
- `$&` の置換を使用して、文字列配列に格納されている書籍タイトルの先頭と末尾に引用符を追加する例を次に示します。  
+ <span data-ttu-id="91aa4-205">`$&` の置換を使用して、文字列配列に格納されている書籍タイトルの先頭と末尾に引用符を追加する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-205">The following example uses the `$&` substitution to add quotation marks at the beginning and end of book titles stored in a string array.</span></span>  
   
  [!code-csharp[Conceptual.RegEx.Language.Substitutions#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/entirematch1.cs#3)]
  [!code-vb[Conceptual.RegEx.Language.Substitutions#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/entirematch1.vb#3)]  
   
- 正規表現パターン `^(\w+\s?)+$` は、次の表に示すように定義されています。  
+ <span data-ttu-id="91aa4-206">正規表現パターン `^(\w+\s?)+$` は、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-206">The regular expression pattern `^(\w+\s?)+$` is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`^`|入力文字列の先頭から照合を開始します。|  
-|`(\w+\s?)+`|1 つ以上の単語文字の後に 0 個または 1 個の空白文字が 1 回以上続くパターンに一致します。|  
-|`$`|入力文字列の末尾と一致します。|  
+|<span data-ttu-id="91aa4-207">パターン</span><span class="sxs-lookup"><span data-stu-id="91aa4-207">Pattern</span></span>|<span data-ttu-id="91aa4-208">説明</span><span class="sxs-lookup"><span data-stu-id="91aa4-208">Description</span></span>|  
+|-------------|-----------------|  
+|`^`|<span data-ttu-id="91aa4-209">入力文字列の先頭から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-209">Start the match at the beginning of the input string.</span></span>|  
+|`(\w+\s?)+`|<span data-ttu-id="91aa4-210">1 つ以上の単語文字の後に 0 個または 1 個の空白文字が 1 回以上続くパターンに一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-210">Match the pattern of one or more word characters followed by zero or one white-space characters one or more times.</span></span>|  
+|`$`|<span data-ttu-id="91aa4-211">入力文字列の末尾と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-211">Match the end of the input string.</span></span>|  
   
- `"$&"` という置換パターンは、各一致文字列の先頭と末尾にリテラルの一重引用符を追加します。  
+ <span data-ttu-id="91aa4-212">`"$&"` という置換パターンは、各一致文字列の先頭と末尾にリテラルの一重引用符を追加します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-212">The `"$&"` replacement pattern adds a literal quotation mark to the beginning and end of each match.</span></span>  
   
- [ページのトップへ](#Top)  
+ [<span data-ttu-id="91aa4-213">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="91aa4-213">Back to top</span></span>](#Top)  
   
 <a name="BeforeMatch"></a>   
-## 一致した文字列より前にあるテキストの置換  
- `$`` の置換は、一致した場所より前にある入力文字列全体で一致した文字列を置換します。 つまり、一致した場所までの入力文字列を複製し、一致したテキストを削除します。 結果文字列では、一致したテキストに続くテキストは変更されません。 入力文字列に複数の一致文字列がある場合、置換テキストは、テキストが前の一致で置換された文字列からではなく、元の入力文字列から派生します  \(具体的な例を次に示します\)。 一致する文字列がない場合、`$`` の置換は無効です。  
+## <a name="substituting-the-text-before-the-match"></a><span data-ttu-id="91aa4-214">一致した文字列より前にあるテキストの置換</span><span class="sxs-lookup"><span data-stu-id="91aa4-214">Substituting the Text Before the Match</span></span>  
+ <span data-ttu-id="91aa4-215"><code>$\\`</code> の置換は、一致した場所より前にある入力文字列全体で一致した文字列を置換します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-215">The <code>$\\`</code> substitution replaces the matched string with the entire input string before the match.</span></span> <span data-ttu-id="91aa4-216">つまり、一致した場所までの入力文字列を複製し、一致したテキストを削除します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-216">That is, it duplicates the input string up to the match while removing the matched text.</span></span> <span data-ttu-id="91aa4-217">結果文字列では、一致したテキストに続くテキストは変更されません。</span><span class="sxs-lookup"><span data-stu-id="91aa4-217">Any text that follows the matched text is unchanged in the result string.</span></span> <span data-ttu-id="91aa4-218">入力文字列に複数の一致文字列がある場合、置換テキストは、テキストが前の一致で置換された文字列からではなく、元の入力文字列から派生します </span><span class="sxs-lookup"><span data-stu-id="91aa4-218">If there are multiple matches in an input string, the replacement text is derived from the original input string, rather than from the string in which text has been replaced by earlier matches.</span></span> <span data-ttu-id="91aa4-219">\(この例では、具体的なを示します。\)一致する文字列がない場合、<code>$\\`</code> の置換は無効です。</span><span class="sxs-lookup"><span data-stu-id="91aa4-219">\(The example provides an illustration.\) If there is no match, the <code>$\\`</code> substitution has no effect.</span></span>  
   
- 次の例では、正規表現パターン `\d+` を使用して、入力文字列内の 1 つ以上の 10 進数のシーケンスを照合します。 置換文字列 `$`` は、これらの数字を、一致文字列より前にあるテキストで置換します。  
+ <span data-ttu-id="91aa4-220">次の例では、正規表現パターン `\d+` を使用して、入力文字列内の 1 つ以上の 10 進数のシーケンスを照合します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-220">The following example uses the regular expression pattern `\d+` to match a sequence of one or more decimal digits in the input string.</span></span> <span data-ttu-id="91aa4-221">置換文字列 <code>$\`</code> は、これらの数字を、一致文字列より前にあるテキストで置換します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-221">The replacement string <code>$\`</code> replaces these digits with the text that precedes the match.</span></span>  
   
  [!code-csharp[Conceptual.Regex.Language.Substitutions#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/before1.cs#4)]
  [!code-vb[Conceptual.Regex.Language.Substitutions#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/before1.vb#4)]  
   
- この例では、入力文字列 `"aa1bb2cc3dd4ee5"` に 5 つの一致が含まれています。`$`` の置換によって、正規表現エンジンが入力文字列の各一致文字列をどのように置換するかを、次の表に示します。 挿入されたテキストは結果列に太字で示されています。  
+ <span data-ttu-id="91aa4-222">この例では、入力文字列 `"aa1bb2cc3dd4ee5"` に 5 つの一致が含まれています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-222">In this example, the input string `"aa1bb2cc3dd4ee5"` contains five matches.</span></span> <span data-ttu-id="91aa4-223"><code>$\`</code> の置換によって、正規表現エンジンが入力文字列の各一致文字列をどのように置換するかを、次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-223">The following table illustrates how the <code>$\`</code> substitution causes the regular expression engine to replace each match in the input string.</span></span> <span data-ttu-id="91aa4-224">挿入されたテキストは結果列に太字で示されています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-224">Inserted text is shown in bold in the results column.</span></span>  
   
-|一致したもの|位置|一致した場所より前にある文字列|結果文字列|  
-|------------|--------|---------------------|-----------|  
-|1|2|aa|aa`aa`bb2cc3dd4ee5|  
-|2|5|aa1bb|aaaabb`aa1bb`cc3dd4ee5|  
-|3|8|aa1bb2cc|aaaabbaa1bbcc`aa1bb2cc`dd4ee5|  
-|4|11|aa1bb2cc3dd|aaaabbaa1bbccaa1bb2ccdd`aa1bb2cc3dd`ee5|  
-|5|14|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee `aa1bb2cc3dd4ee`|  
+|<span data-ttu-id="91aa4-225">一致したもの</span><span class="sxs-lookup"><span data-stu-id="91aa4-225">Match</span></span>|<span data-ttu-id="91aa4-226">位置</span><span class="sxs-lookup"><span data-stu-id="91aa4-226">Position</span></span>|<span data-ttu-id="91aa4-227">一致した場所より前にある文字列</span><span class="sxs-lookup"><span data-stu-id="91aa4-227">String before match</span></span>|<span data-ttu-id="91aa4-228">結果文字列</span><span class="sxs-lookup"><span data-stu-id="91aa4-228">Result string</span></span>|  
+|-----------|--------------|-------------------------|-------------------|  
+|<span data-ttu-id="91aa4-229">1</span><span class="sxs-lookup"><span data-stu-id="91aa4-229">1</span></span>|<span data-ttu-id="91aa4-230">2</span><span class="sxs-lookup"><span data-stu-id="91aa4-230">2</span></span>|<span data-ttu-id="91aa4-231">aa</span><span class="sxs-lookup"><span data-stu-id="91aa4-231">aa</span></span>|<span data-ttu-id="91aa4-232">aa**aa**bb2cc3dd4ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-232">aa**aa**bb2cc3dd4ee5</span></span>|  
+|<span data-ttu-id="91aa4-233">2</span><span class="sxs-lookup"><span data-stu-id="91aa4-233">2</span></span>|<span data-ttu-id="91aa4-234">5</span><span class="sxs-lookup"><span data-stu-id="91aa4-234">5</span></span>|<span data-ttu-id="91aa4-235">aa1bb</span><span class="sxs-lookup"><span data-stu-id="91aa4-235">aa1bb</span></span>|<span data-ttu-id="91aa4-236">aaaabb**aa1bb**cc3dd4ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-236">aaaabb**aa1bb**cc3dd4ee5</span></span>|  
+|<span data-ttu-id="91aa4-237">3</span><span class="sxs-lookup"><span data-stu-id="91aa4-237">3</span></span>|<span data-ttu-id="91aa4-238">8</span><span class="sxs-lookup"><span data-stu-id="91aa4-238">8</span></span>|<span data-ttu-id="91aa4-239">aa1bb2cc</span><span class="sxs-lookup"><span data-stu-id="91aa4-239">aa1bb2cc</span></span>|<span data-ttu-id="91aa4-240">aaaabbaa1bbcc**aa1bb2cc**dd4ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-240">aaaabbaa1bbcc**aa1bb2cc**dd4ee5</span></span>|  
+|<span data-ttu-id="91aa4-241">4</span><span class="sxs-lookup"><span data-stu-id="91aa4-241">4</span></span>|<span data-ttu-id="91aa4-242">11</span><span class="sxs-lookup"><span data-stu-id="91aa4-242">11</span></span>|<span data-ttu-id="91aa4-243">aa1bb2cc3dd</span><span class="sxs-lookup"><span data-stu-id="91aa4-243">aa1bb2cc3dd</span></span>|<span data-ttu-id="91aa4-244">aaaabbaa1bbccaa1bb2ccdd**aa1bb2cc3dd**ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-244">aaaabbaa1bbccaa1bb2ccdd**aa1bb2cc3dd**ee5</span></span>|  
+|<span data-ttu-id="91aa4-245">5</span><span class="sxs-lookup"><span data-stu-id="91aa4-245">5</span></span>|<span data-ttu-id="91aa4-246">14</span><span class="sxs-lookup"><span data-stu-id="91aa4-246">14</span></span>|<span data-ttu-id="91aa4-247">aa1bb2cc3dd4ee</span><span class="sxs-lookup"><span data-stu-id="91aa4-247">aa1bb2cc3dd4ee</span></span>|<span data-ttu-id="91aa4-248">aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**</span><span class="sxs-lookup"><span data-stu-id="91aa4-248">aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**</span></span>|  
   
- [ページのトップへ](#Top)  
+ [<span data-ttu-id="91aa4-249">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="91aa4-249">Back to top</span></span>](#Top)  
   
 <a name="AfterMatch"></a>   
-## 一致した文字列より後にあるテキストの置換  
- `$'` の置換は、一致した場所より後にある入力文字列全体で一致した文字列を置換します。 つまり、一致した場所より後にある入力文字列を複製し、一致したテキストを削除します。 結果文字列では、一致したテキストより前にあるテキストは変更されません。 一致する文字列がない場合、`$'` の置換は無効です。  
+## <a name="substituting-the-text-after-the-match"></a><span data-ttu-id="91aa4-250">一致した文字列より後にあるテキストの置換</span><span class="sxs-lookup"><span data-stu-id="91aa4-250">Substituting the Text After the Match</span></span>  
+ <span data-ttu-id="91aa4-251">`$'` の置換は、一致した場所より後にある入力文字列全体で一致した文字列を置換します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-251">The `$'` substitution replaces the matched string with the entire input string after the match.</span></span> <span data-ttu-id="91aa4-252">つまり、一致した場所より後にある入力文字列を複製し、一致したテキストを削除します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-252">That is, it duplicates the input string after the match while removing the matched text.</span></span> <span data-ttu-id="91aa4-253">結果文字列では、一致したテキストより前にあるテキストは変更されません。</span><span class="sxs-lookup"><span data-stu-id="91aa4-253">Any text that precedes the matched text is unchanged in the result string.</span></span> <span data-ttu-id="91aa4-254">一致する文字列がない場合、  `$'` の置換は無効です。</span><span class="sxs-lookup"><span data-stu-id="91aa4-254">If there is no match, the  `$'` substitution has no effect.</span></span>  
   
- 次の例では、正規表現パターン `\d+` を使用して、入力文字列内の 1 つ以上の 10 進数のシーケンスを照合します。 置換文字列 `$'` は、これらの数字を、一致文字列に続くテキストで置換します。  
+ <span data-ttu-id="91aa4-255">次の例では、正規表現パターン `\d+` を使用して、入力文字列内の 1 つ以上の 10 進数のシーケンスを照合します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-255">The following example uses the regular expression pattern `\d+` to match a sequence of one or more decimal digits in the input string.</span></span> <span data-ttu-id="91aa4-256">置換文字列 `$'` は、これらの数字を、一致文字列に続くテキストで置換します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-256">The replacement string `$'` replaces these digits with the text that follows the match.</span></span>  
   
  [!code-csharp[Conceptual.Regex.Language.Substitutions#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/after1.cs#5)]
  [!code-vb[Conceptual.Regex.Language.Substitutions#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/after1.vb#5)]  
   
- この例では、入力文字列 `"aa1bb2cc3dd4ee5"` に 5 つの一致が含まれています。`$'` の置換によって、正規表現エンジンが入力文字列の各一致文字列をどのように置換するかを、次の表に示します。 挿入されたテキストは結果列に太字で示されています。  
+ <span data-ttu-id="91aa4-257">この例では、入力文字列 `"aa1bb2cc3dd4ee5"` に 5 つの一致が含まれています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-257">In this example, the input string `"aa1bb2cc3dd4ee5"` contains five matches.</span></span> <span data-ttu-id="91aa4-258">`$'` の置換によって、正規表現エンジンが入力文字列の各一致文字列をどのように置換するかを、次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-258">The following table illustrates how the `$'` substitution causes the regular expression engine to replace each match in the input string.</span></span> <span data-ttu-id="91aa4-259">挿入されたテキストは結果列に太字で示されています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-259">Inserted text is shown in bold in the results column.</span></span>  
   
-|一致したもの|位置|一致した場所より後にある文字列|結果文字列|  
-|------------|--------|---------------------|-----------|  
-|1|2|bb2cc3dd4ee5|aa`bb2cc3dd4ee5`bb2cc3dd4ee5|  
-|2|5|cc3dd4ee5|aabb2cc3dd4ee5bb`cc3dd4ee5`cc3dd4ee5|  
-|3|8|dd4ee5|aabb2cc3dd4ee5bbcc3dd4ee5cc`dd4ee5`dd4ee5|  
-|4|11|ee5|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5dd`ee5`ee5|  
-|5|14|<xref:System.String.Empty?displayProperty=fullName>|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5ddee5ee|  
+|<span data-ttu-id="91aa4-260">一致したもの</span><span class="sxs-lookup"><span data-stu-id="91aa4-260">Match</span></span>|<span data-ttu-id="91aa4-261">位置</span><span class="sxs-lookup"><span data-stu-id="91aa4-261">Position</span></span>|<span data-ttu-id="91aa4-262">一致した場所より後にある文字列</span><span class="sxs-lookup"><span data-stu-id="91aa4-262">String after match</span></span>|<span data-ttu-id="91aa4-263">結果文字列</span><span class="sxs-lookup"><span data-stu-id="91aa4-263">Result string</span></span>|  
+|-----------|--------------|------------------------|-------------------|  
+|<span data-ttu-id="91aa4-264">1</span><span class="sxs-lookup"><span data-stu-id="91aa4-264">1</span></span>|<span data-ttu-id="91aa4-265">2</span><span class="sxs-lookup"><span data-stu-id="91aa4-265">2</span></span>|<span data-ttu-id="91aa4-266">bb2cc3dd4ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-266">bb2cc3dd4ee5</span></span>|<span data-ttu-id="91aa4-267">aa**bb2cc3dd4ee5**bb2cc3dd4ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-267">aa**bb2cc3dd4ee5**bb2cc3dd4ee5</span></span>|  
+|<span data-ttu-id="91aa4-268">2</span><span class="sxs-lookup"><span data-stu-id="91aa4-268">2</span></span>|<span data-ttu-id="91aa4-269">5</span><span class="sxs-lookup"><span data-stu-id="91aa4-269">5</span></span>|<span data-ttu-id="91aa4-270">cc3dd4ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-270">cc3dd4ee5</span></span>|<span data-ttu-id="91aa4-271">aabb2cc3dd4ee5bb**cc3dd4ee5**cc3dd4ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-271">aabb2cc3dd4ee5bb**cc3dd4ee5**cc3dd4ee5</span></span>|  
+|<span data-ttu-id="91aa4-272">3</span><span class="sxs-lookup"><span data-stu-id="91aa4-272">3</span></span>|<span data-ttu-id="91aa4-273">8</span><span class="sxs-lookup"><span data-stu-id="91aa4-273">8</span></span>|<span data-ttu-id="91aa4-274">dd4ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-274">dd4ee5</span></span>|<span data-ttu-id="91aa4-275">aabb2cc3dd4ee5bbcc3dd4ee5cc**dd4ee5**dd4ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-275">aabb2cc3dd4ee5bbcc3dd4ee5cc**dd4ee5**dd4ee5</span></span>|  
+|<span data-ttu-id="91aa4-276">4</span><span class="sxs-lookup"><span data-stu-id="91aa4-276">4</span></span>|<span data-ttu-id="91aa4-277">11</span><span class="sxs-lookup"><span data-stu-id="91aa4-277">11</span></span>|<span data-ttu-id="91aa4-278">ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-278">ee5</span></span>|<span data-ttu-id="91aa4-279">aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5dd**ee5**ee5</span><span class="sxs-lookup"><span data-stu-id="91aa4-279">aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5dd**ee5**ee5</span></span>|  
+|<span data-ttu-id="91aa4-280">5</span><span class="sxs-lookup"><span data-stu-id="91aa4-280">5</span></span>|<span data-ttu-id="91aa4-281">14</span><span class="sxs-lookup"><span data-stu-id="91aa4-281">14</span></span>|<xref:System.String.Empty?displayProperty=nameWithType>|<span data-ttu-id="91aa4-282">aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5ddee5ee</span><span class="sxs-lookup"><span data-stu-id="91aa4-282">aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5ddee5ee</span></span>|  
   
- [ページのトップへ](#Top)  
+ [<span data-ttu-id="91aa4-283">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="91aa4-283">Back to top</span></span>](#Top)  
   
 <a name="LastGroup"></a>   
-## キャプチャされた最後のグループの置換  
- `$+` の置換は、キャプチャされた最後のグループで一致した文字列を置換します。 キャプチャされたグループがない場合、またはキャプチャされた最後のグループの値が <xref:System.String.Empty?displayProperty=fullName> の場合、`$+` の置換は無効です。  
+## <a name="substituting-the-last-captured-group"></a><span data-ttu-id="91aa4-284">キャプチャされた最後のグループの置換</span><span class="sxs-lookup"><span data-stu-id="91aa4-284">Substituting the Last Captured Group</span></span>  
+ <span data-ttu-id="91aa4-285">`$+` の置換は、キャプチャされた最後のグループで一致した文字列を置換します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-285">The `$+` substitution replaces the matched string with the last captured group.</span></span> <span data-ttu-id="91aa4-286">キャプチャされたグループがない場合、またはキャプチャされた最後のグループの値が <xref:System.String.Empty?displayProperty=nameWithType> の場合、`$+` の置換は無効です。</span><span class="sxs-lookup"><span data-stu-id="91aa4-286">If there are no captured groups or if the value of the last captured group is <xref:System.String.Empty?displayProperty=nameWithType>, the `$+` substitution has no effect.</span></span>  
   
- 次の例では、文字列内の重複する単語を識別し、`$+` の置換を使用して、これらの単語をその単語 1 つに置換します。<xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> オプションを使用すると、大文字と小文字の違いを除いて同一である単語が重複と見なされるようになります。  
+ <span data-ttu-id="91aa4-287">次の例では、文字列内の重複する単語を識別し、 `$+` の置換を使用して、これらの単語をその単語 1 つに置換します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-287">The following example identifies duplicate words in a string and uses the `$+` substitution to replace them with a single occurrence of the word.</span></span> <span data-ttu-id="91aa4-288"><xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> オプションを使用すると、大文字と小文字の違いを除いて同一である単語が重複と見なされるようになります。</span><span class="sxs-lookup"><span data-stu-id="91aa4-288">The <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> option is used to ensure that words that differ in case but that are otherwise identical are considered duplicates.</span></span>  
   
  [!code-csharp[Conceptual.Regex.Language.Substitutions#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/lastmatch1.cs#6)]
  [!code-vb[Conceptual.Regex.Language.Substitutions#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/lastmatch1.vb#6)]  
   
- 正規表現パターン `\b(\w+)\s\1\b` は、次の表に示すように定義されています。  
+ <span data-ttu-id="91aa4-289">正規表現パターン `\b(\w+)\s\1\b` は、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-289">The regular expression pattern `\b(\w+)\s\1\b` is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`(\w+)`|1 つ以上の単語文字に一致します。 これが最初のキャプチャ グループです。|  
-|`\s`|空白文字と一致します。|  
-|`\1`|キャプチャされた最初のグループと一致します。|  
-|`\b`|ワード境界で照合を終了します。|  
+|<span data-ttu-id="91aa4-290">パターン</span><span class="sxs-lookup"><span data-stu-id="91aa4-290">Pattern</span></span>|<span data-ttu-id="91aa4-291">説明</span><span class="sxs-lookup"><span data-stu-id="91aa4-291">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="91aa4-292">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-292">Begin the match at a word boundary.</span></span>|  
+|`(\w+)`|<span data-ttu-id="91aa4-293">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-293">Match one or more word characters.</span></span> <span data-ttu-id="91aa4-294">これが最初のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="91aa4-294">This is the first capturing group.</span></span>|  
+|`\s`|<span data-ttu-id="91aa4-295">空白文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-295">Match a white-space character.</span></span>|  
+|`\1`|<span data-ttu-id="91aa4-296">キャプチャされた最初のグループと一致します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-296">Match the first captured group.</span></span>|  
+|`\b`|<span data-ttu-id="91aa4-297">ワード境界で照合を終了します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-297">End the match at a word boundary.</span></span>|  
   
- [ページのトップへ](#Top)  
+ [<span data-ttu-id="91aa4-298">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="91aa4-298">Back to top</span></span>](#Top)  
   
 <a name="EntireString"></a>   
-## 入力文字列全体の置換  
- `$_` の置換は、一致した文字列を入力文字列全体で置換します。 つまり、一致したテキストを削除し、一致したテキストを含む文字列全体でそのテキストを置換します。  
+## <a name="substituting-the-entire-input-string"></a><span data-ttu-id="91aa4-299">入力文字列全体の置換</span><span class="sxs-lookup"><span data-stu-id="91aa4-299">Substituting the Entire Input String</span></span>  
+ <span data-ttu-id="91aa4-300">`$_` の置換は、一致した文字列を入力文字列全体で置換します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-300">The `$_` substitution replaces the matched string with the entire input string.</span></span> <span data-ttu-id="91aa4-301">つまり、一致したテキストを削除し、一致したテキストを含む文字列全体でそのテキストを置換します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-301">That is, it removes the matched text and replaces it with the entire string, including the matched text.</span></span>  
   
- 次の例では、入力文字列の 1 つ以上の 10 進数を照合します。`$_` の置換を使用して、これらを入力文字列全体で置換します。  
+ <span data-ttu-id="91aa4-302">次の例では、入力文字列の 1 つ以上の 10 進数を照合します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-302">The following example matches one or more decimal digits in the input string.</span></span> <span data-ttu-id="91aa4-303">`$_` の置換を使用して、これらを入力文字列全体で置換します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-303">It uses the `$_` substitution to replace them with the entire input string.</span></span>  
   
  [!code-csharp[Conceptual.Regex.Language.Substitutions#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/entire1.cs#7)]
  [!code-vb[Conceptual.Regex.Language.Substitutions#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/entire1.vb#7)]  
   
- この例では、入力文字列 `"ABC123DEF456"` に 2 つの一致が含まれています。`$_` の置換によって、正規表現エンジンが入力文字列の各一致文字列をどのように置換するかを、次の表に示します。 挿入されたテキストは結果列に太字で示されています。  
+ <span data-ttu-id="91aa4-304">この例では、入力文字列 `"ABC123DEF456"` に 2 つの一致が含まれています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-304">In this example, the input string `"ABC123DEF456"` contains two matches.</span></span> <span data-ttu-id="91aa4-305">`$_` の置換によって、正規表現エンジンが入力文字列の各一致文字列をどのように置換するかを、次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="91aa4-305">The following table illustrates how the `$_` substitution causes the regular expression engine to replace each match in the input string.</span></span> <span data-ttu-id="91aa4-306">挿入されたテキストは結果列に太字で示されています。</span><span class="sxs-lookup"><span data-stu-id="91aa4-306">Inserted text is shown in bold in the results column.</span></span>  
   
-|一致したもの|位置|一致したもの|結果文字列|  
-|------------|--------|------------|-----------|  
-|1|3|123|ABC`ABC123DEF456`DEF456|  
-|2|5|456|ABCABC123DEF456DEF`ABC123DEF456`|  
+|<span data-ttu-id="91aa4-307">一致したもの</span><span class="sxs-lookup"><span data-stu-id="91aa4-307">Match</span></span>|<span data-ttu-id="91aa4-308">位置</span><span class="sxs-lookup"><span data-stu-id="91aa4-308">Position</span></span>|<span data-ttu-id="91aa4-309">一致したもの</span><span class="sxs-lookup"><span data-stu-id="91aa4-309">Match</span></span>|<span data-ttu-id="91aa4-310">結果文字列</span><span class="sxs-lookup"><span data-stu-id="91aa4-310">Result string</span></span>|  
+|-----------|--------------|-----------|-------------------|  
+|<span data-ttu-id="91aa4-311">1</span><span class="sxs-lookup"><span data-stu-id="91aa4-311">1</span></span>|<span data-ttu-id="91aa4-312">3</span><span class="sxs-lookup"><span data-stu-id="91aa4-312">3</span></span>|<span data-ttu-id="91aa4-313">123</span><span class="sxs-lookup"><span data-stu-id="91aa4-313">123</span></span>|<span data-ttu-id="91aa4-314">ABC**ABC123DEF456**DEF456</span><span class="sxs-lookup"><span data-stu-id="91aa4-314">ABC**ABC123DEF456**DEF456</span></span>|  
+|<span data-ttu-id="91aa4-315">2</span><span class="sxs-lookup"><span data-stu-id="91aa4-315">2</span></span>|<span data-ttu-id="91aa4-316">5</span><span class="sxs-lookup"><span data-stu-id="91aa4-316">5</span></span>|<span data-ttu-id="91aa4-317">456</span><span class="sxs-lookup"><span data-stu-id="91aa4-317">456</span></span>|<span data-ttu-id="91aa4-318">ABCABC123DEF456DEF**ABC123DEF456**</span><span class="sxs-lookup"><span data-stu-id="91aa4-318">ABCABC123DEF456DEF**ABC123DEF456**</span></span>|  
   
-## 参照  
- [正規表現言語 \- クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+## <a name="see-also"></a><span data-ttu-id="91aa4-319">関連項目</span><span class="sxs-lookup"><span data-stu-id="91aa4-319">See Also</span></span>  
+ [<span data-ttu-id="91aa4-320">正規表現言語 - クイック リファレンス</span><span class="sxs-lookup"><span data-stu-id="91aa4-320">Regular Expression Language - Quick Reference</span></span>](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

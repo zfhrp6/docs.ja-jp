@@ -1,50 +1,48 @@
 ---
-title: "XML スキーマの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "XML スキーマの使用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: bbbcc70c-bf9a-4f6a-af72-1bab5384a187
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: e21d402dce02ecb332d041f0cda651df911979ca
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# XML スキーマの使用
-XML ドキュメントの構造、その要素間のリレーションシップ、データ型、および内容の制約を定義するには、ドキュメント型定義 \(DTD: Document Type Definition\) または XML スキーマ定義言語 \(XSD\) スキーマを使用します。  XML ドキュメントは、W3C \(World Wide Web Consortium\) 勧告『Extensible Markup Language \(XML\) 1.0』で定義されている構文要件をすべて満たしている場合には整形式と見なされますが、整形式であると同時に DTD またはスキーマに定義されている制約に準拠していなければ有効とは見なされません。  したがって、有効な XML ドキュメントはすべて整形式ですが、整形式の XML ドキュメントがすべて有効であるとは限りません。  
+# <a name="working-with-xml-schemas"></a><span data-ttu-id="19639-102">XML スキーマの使用</span><span class="sxs-lookup"><span data-stu-id="19639-102">Working with XML Schemas</span></span>
+<span data-ttu-id="19639-103">XML ドキュメントの構造、その要素間のリレーションシップ、データ型、および内容の制約を定義するには、ドキュメント型定義 (DTD: Document Type Definition) または XML スキーマ定義言語 (XSD) スキーマを使用します。</span><span class="sxs-lookup"><span data-stu-id="19639-103">To define the structure of an XML document, as well as its element relationships, data types, and content constraints, you use a document type definition (DTD) or XML Schema definition language (XSD) schema.</span></span> <span data-ttu-id="19639-104">XML ドキュメントは、W3C (World Wide Web Consortium) 勧告『Extensible Markup Language (XML) 1.0』で定義されている構文要件をすべて満たしている場合には整形式と見なされますが、整形式であると同時に DTD またはスキーマに定義されている制約に準拠していなければ有効とは見なされません。</span><span class="sxs-lookup"><span data-stu-id="19639-104">Although an XML document is considered to be well-formed if it meets all the syntactical requirements defined by the World Wide Web Consortium (W3C) Extensible Markup Language (XML) 1.0 Recommendation, it is not considered valid unless it is both well-formed and conforms to the constraints defined by its DTD or schema.</span></span> <span data-ttu-id="19639-105">したがって、有効な XML ドキュメントはすべて整形式ですが、整形式の XML ドキュメントがすべて有効であるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="19639-105">Therefore, although all valid XML documents are well-formed, not all well-formed XML documents are valid.</span></span>  
   
- XML の詳細については、W3C 勧告『[XML 1.0](http://go.microsoft.com/fwlink/?linkid=7269)』を参照してください。  XML スキーマの詳細については、W3C 勧告『[XML Schema Part 1: Structures](http://go.microsoft.com/fwlink/?linkid=48881)』および W3C 勧告『[XML Schema Part 2: Datatypes](http://go.microsoft.com/fwlink/?linkid=17392)』を参照してください。  
+ <span data-ttu-id="19639-106">XML の詳細については、次を参照してください。、 [w3c 勧告 『 XML 1.0 』](http://go.microsoft.com/fwlink/?linkid=7269)です。</span><span class="sxs-lookup"><span data-stu-id="19639-106">For more information about XML, see the [W3C XML 1.0 Recommendation](http://go.microsoft.com/fwlink/?linkid=7269).</span></span> <span data-ttu-id="19639-107">XML スキーマの詳細については、次を参照してください。、 [W3C XML Schema Part 1: Structures](http://go.microsoft.com/fwlink/?linkid=48881)と[W3C XML Schema Part 2: Datatypes recommendation 』](http://go.microsoft.com/fwlink/?linkid=17392)の推奨事項です。</span><span class="sxs-lookup"><span data-stu-id="19639-107">For more information about XML Schema, see the [W3C XML Schema Part 1: Structures Recommendation](http://go.microsoft.com/fwlink/?linkid=48881) and the [W3C XML Schema Part 2: Datatypes Recommendation](http://go.microsoft.com/fwlink/?linkid=17392) recommendations.</span></span>  
   
-## このセクションの内容  
- [XML スキーマ オブジェクト モデル \(SOM\)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
- <xref:System.Xml.Schema?displayProperty=fullName> 名前空間のスキーマ オブジェクト モデル \(SOM\) について説明します。SOM は、ファイルからスキーマ定義言語 \(XSD\) スキーマを読み取ったり、プログラムを使用してメモリ内にスキーマを作成したりできる一連のクラスを提供します。  
+## <a name="in-this-section"></a><span data-ttu-id="19639-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="19639-108">In This Section</span></span>  
+ [<span data-ttu-id="19639-109">XML スキーマ オブジェクト モデル (SOM)</span><span class="sxs-lookup"><span data-stu-id="19639-109">XML Schema Object Model (SOM)</span></span>](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
+ <span data-ttu-id="19639-110"><xref:System.Xml.Schema?displayProperty=nameWithType> 名前空間のスキーマ オブジェクト モデル (SOM) について説明します。SOM は、ファイルからスキーマ定義言語 (XSD) スキーマを読み取ったり、プログラムを使用してメモリ内にスキーマを作成したりできる一連のクラスを提供します。</span><span class="sxs-lookup"><span data-stu-id="19639-110">Discusses the Schema Object Model (SOM) in the <xref:System.Xml.Schema?displayProperty=nameWithType> namespace that provides a set of classes that allows you to read a Schema definition language (XSD) schema from a file or programmatically create a schema in-memory.</span></span>  
   
- [スキーマをコンパイルするための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
- <xref:System.Xml.Schema.XmlSchemaSet> クラスについて説明します。このクラスは、XSD スキーマを格納または検証できるキャッシュです。  
+ [<span data-ttu-id="19639-111">スキーマのコンパイルのための XmlSchemaSet</span><span class="sxs-lookup"><span data-stu-id="19639-111">XmlSchemaSet for Schema Compilation</span></span>](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
+ <span data-ttu-id="19639-112"><xref:System.Xml.Schema.XmlSchemaSet> クラスについて説明します。このクラスは、XSD スキーマを格納または検証できるキャッシュです。</span><span class="sxs-lookup"><span data-stu-id="19639-112">Discusses the <xref:System.Xml.Schema.XmlSchemaSet> class that is a cache where XSD schemas can be stored and validated.</span></span>  
   
- [XmlSchemaValidator のプッシュ ベースの検証](../../../../docs/standard/data/xml/xmlschemavalidator-push-based-validation.md)  
- <xref:System.Xml.Schema.XmlSchemaValidator> クラスについて説明します。このクラスは、プッシュ ベース方式で、XSD スキーマを基準として XML データを検証する、効率的かつ高性能なしくみを提供します。  
+ [<span data-ttu-id="19639-113">XmlSchemaValidator のプッシュ ベースの検証</span><span class="sxs-lookup"><span data-stu-id="19639-113">XmlSchemaValidator Push-Based Validation</span></span>](../../../../docs/standard/data/xml/xmlschemavalidator-push-based-validation.md)  
+ <span data-ttu-id="19639-114"><xref:System.Xml.Schema.XmlSchemaValidator> クラスについて説明します。このクラスは、プッシュ ベース方式で、XSD スキーマを基準として XML データを検証する、効率的かつ高性能なしくみを提供します。</span><span class="sxs-lookup"><span data-stu-id="19639-114">Discusses the <xref:System.Xml.Schema.XmlSchemaValidator> class that provides an efficient, high-performance mechanism to validate XML data against XSD schemas in a push-based manner.</span></span>  
   
- [XML スキーマの推論](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)  
- <xref:System.Xml.Schema.XmlSchemaInference> クラスを使用して XML ドキュメントの構造から XSD スキーマを推論する方法を説明します。  
+ [<span data-ttu-id="19639-115">XML スキーマの推論</span><span class="sxs-lookup"><span data-stu-id="19639-115">Inferring an XML Schema</span></span>](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)  
+ <span data-ttu-id="19639-116"><xref:System.Xml.Schema.XmlSchemaInference> クラスを使用して XML ドキュメントの構造から XSD スキーマを推論する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="19639-116">Discusses how to use the <xref:System.Xml.Schema.XmlSchemaInference> class to infer an XSD schema from the structure of an XML document.</span></span>  
   
-## 関連項目  
- <xref:System.Xml.Schema.XmlSchemaSet> &#124; <xref:System.Xml.Schema.XmlSchemaInference> &#124; <xref:System.Xml.XmlReader>  
+## <a name="reference"></a><span data-ttu-id="19639-117">参照</span><span class="sxs-lookup"><span data-stu-id="19639-117">Reference</span></span>  
+ <span data-ttu-id="19639-118"><xref:System.Xml.Schema.XmlSchemaSet> &#124; <xref:System.Xml.Schema.XmlSchemaInference> &#124; <xref:System.Xml.XmlReader></span><span class="sxs-lookup"><span data-stu-id="19639-118"><xref:System.Xml.Schema.XmlSchemaSet> &#124; <xref:System.Xml.Schema.XmlSchemaInference> &#124; <xref:System.Xml.XmlReader></span></span>  
   
-## 関連項目  
- [DOM における XML ドキュメントの検証](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md)  
- ドキュメント オブジェクト モデル \(DOM\) の XML を検証する方法を説明します。  検証できる XML は、DOM に読み込まれている XML か、または事前に検証されていない DOM の XML ドキュメントです。  
+## <a name="related-sections"></a><span data-ttu-id="19639-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="19639-119">Related Sections</span></span>  
+ [<span data-ttu-id="19639-120">DOM における XML ドキュメントの検証</span><span class="sxs-lookup"><span data-stu-id="19639-120">Validating an XML Document in the DOM</span></span>](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md)  
+ <span data-ttu-id="19639-121">ドキュメント オブジェクト モデル (DOM) の XML を検証する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="19639-121">Discusses how to validate the XML in the Document Object Model (DOM).</span></span> <span data-ttu-id="19639-122">検証できる XML は、DOM に読み込まれている XML か、または事前に検証されていない DOM の XML ドキュメントです。</span><span class="sxs-lookup"><span data-stu-id="19639-122">You can validate the XML as it is loaded into the DOM, or validate a previously unvalidated XML document in the DOM.</span></span>  
   
- [XPathNavigator を使用したスキーマ検証](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
- <xref:System.Xml.XPath.XPathNavigator> クラスを使用して操作中および編集中の XML を検証する方法を説明します。
+ [<span data-ttu-id="19639-123">XPathNavigator を使用するスキーマの検証</span><span class="sxs-lookup"><span data-stu-id="19639-123">Schema Validation using XPathNavigator</span></span>](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
+ <span data-ttu-id="19639-124"><xref:System.Xml.XPath.XPathNavigator> クラスを使用して操作中および編集中の XML を検証する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="19639-124">Discusses how to validate XML being navigated and edited using the <xref:System.Xml.XPath.XPathNavigator> class.</span></span>

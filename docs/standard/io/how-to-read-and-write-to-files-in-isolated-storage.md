@@ -1,46 +1,52 @@
 ---
-title: "方法 : 分離ストレージ内でファイルの読み取りと書き込みを行う | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "データ ストレージ (分離ストレージを使用した), 読み取りと書き込み (ファイルの)"
-  - "データ ストア, 読み取りと書き込み (ファイルの)"
-  - "ファイル, 分離ストレージ"
-  - "分離ストレージ, 読み取りと書き込み (ファイルの)"
-  - "読み取り (データを)"
-  - "読み取り (ストア内のファイルを)"
-  - "ストア, 読み取りと書き込み (ファイルの)"
-  - "格納 (分離ストレージを使用したデータの), 読み取りと書き込み (ファイルの)"
-  - "書き込み (ストア内のファイルへの)"
+title: "方法 : 分離ストレージ内でファイルの読み取りと書き込みを行う"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- files, isolated storage
+- reading data
+- storing data using isolated storage, reading and writing to files
+- writing to files within store
+- data storage using isolated storage, reading and writing to files
+- reading files within store
+- isolated storage, reading and writing to files
+- data stores, reading and writing to files
+- stores, reading and writing to files
 ms.assetid: f977ebdc-1b55-475a-bc3d-3376470b08ae
-caps.latest.revision: 15
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 8d733efc3d70070dd12f55c651033e97d1792c38
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 分離ストレージ内でファイルの読み取りと書き込みを行う
-から読み取ったり、またはファイルに、分離ストアに書き込むには、ストリーム リーダー \(<xref:System.IO.StreamReader> オブジェクト\) またはストリーム ライター \(<xref:System.IO.StreamWriter> オブジェクト\) を持つ <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> オブジェクトを使用します。  
+# <a name="how-to-read-and-write-to-files-in-isolated-storage"></a><span data-ttu-id="d69d3-102">方法 : 分離ストレージ内でファイルの読み取りと書き込みを行う</span><span class="sxs-lookup"><span data-stu-id="d69d3-102">How to: Read and Write to Files in Isolated Storage</span></span>
+<span data-ttu-id="d69d3-103">データの読み取りまたは書き込み、分離ストア内のファイル、使用、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>ストリーム リーダーを持つオブジェクト (<xref:System.IO.StreamReader>オブジェクト) またはストリーム ライター (<xref:System.IO.StreamWriter>オブジェクト)。</span><span class="sxs-lookup"><span data-stu-id="d69d3-103">To read from, or write to, a file in an isolated store, use an <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> object with a stream reader (<xref:System.IO.StreamReader> object) or stream writer (<xref:System.IO.StreamWriter> object).</span></span>  
   
-## 例  
- 次のコード例は TestStore.txt という名前のストアにファイルがあるかどうかを分離ストアをチェックします。  存在しない場合は、ファイルを作成して「Hello Isolated Storage」と書き込みます。  TestStore.txt が既に存在する場合は、このコード例では、ファイルから読み込みます。  
+## <a name="example"></a><span data-ttu-id="d69d3-104">例</span><span class="sxs-lookup"><span data-stu-id="d69d3-104">Example</span></span>  
+ <span data-ttu-id="d69d3-105">次のコード例では、分離ストアを取得し、TestStore.txt をという名前のファイルが、ストアに存在するかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="d69d3-105">The following code example obtains an isolated store and checks whether a file named TestStore.txt exists in the store.</span></span> <span data-ttu-id="d69d3-106">存在しない場合、ファイルが作成され、「こんにちは分離ストレージ」をファイルに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="d69d3-106">If it doesn't exist, it creates the file and writes "Hello Isolated Storage" to the file.</span></span> <span data-ttu-id="d69d3-107">TestStore.txt が既に存在する場合、コード例は、ファイルから読み取ります。</span><span class="sxs-lookup"><span data-stu-id="d69d3-107">If TestStore.txt already exists, the example code reads from the file.</span></span>  
   
  [!code-csharp[Conceptual.IsolatedStorage#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source5.cs#5)]
  [!code-vb[Conceptual.IsolatedStorage#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source5.vb#5)]  
   
-## 参照  
- <xref:System.IO.IsolatedStorage.IsolatedStorageFile>   
- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>   
- <xref:System.IO.FileMode?displayProperty=fullName>   
- <xref:System.IO.FileAccess?displayProperty=fullName>   
- <xref:System.IO.StreamReader?displayProperty=fullName>   
- <xref:System.IO.StreamWriter?displayProperty=fullName>   
- [ファイルおよびストリーム入出力](../../../docs/standard/io/index.md)   
- [分離ストレージ](../../../docs/standard/io/isolated-storage.md)
+## <a name="see-also"></a><span data-ttu-id="d69d3-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="d69d3-108">See Also</span></span>  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>  
+ <xref:System.IO.FileMode?displayProperty=nameWithType>  
+ <xref:System.IO.FileAccess?displayProperty=nameWithType>  
+ <xref:System.IO.StreamReader?displayProperty=nameWithType>  
+ <xref:System.IO.StreamWriter?displayProperty=nameWithType>  
+ [<span data-ttu-id="d69d3-109">ファイルおよびストリーム入出力</span><span class="sxs-lookup"><span data-stu-id="d69d3-109">File and Stream I-O</span></span>](../../../docs/standard/io/index.md)  
+ [<span data-ttu-id="d69d3-110">分離ストレージ</span><span class="sxs-lookup"><span data-stu-id="d69d3-110">Isolated Storage</span></span>](../../../docs/standard/io/isolated-storage.md)

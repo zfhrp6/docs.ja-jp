@@ -1,69 +1,60 @@
 ---
 title: "コレクション (C#)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: get-started-article
-dev_langs:
-- CSharp
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: 4955b3d7048b4dfee23fbcf6eeaed995ebf4f1be
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 26a90b57350837bd51f222ff716364cb3bb902d5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="collections-c"></a>コレクション (C#)
-多くのアプリケーションで、関連するオブジェクトのグループの作成および管理が必要になります。 オブジェクトをグループ化するには、オブジェクトの配列を作成する方法と、オブジェクトのコレクションを作成する方法があります。  
+# <a name="collections-c"></a><span data-ttu-id="c6c20-102">コレクション (C#)</span><span class="sxs-lookup"><span data-stu-id="c6c20-102">Collections (C#)</span></span>
+<span data-ttu-id="c6c20-103">多くのアプリケーションで、関連するオブジェクトのグループの作成および管理が必要になります。</span><span class="sxs-lookup"><span data-stu-id="c6c20-103">For many applications, you want to create and manage groups of related objects.</span></span> <span data-ttu-id="c6c20-104">オブジェクトをグループ化するには、オブジェクトの配列を作成する方法と、オブジェクトのコレクションを作成する方法があります。</span><span class="sxs-lookup"><span data-stu-id="c6c20-104">There are two ways to group objects: by creating arrays of objects, and by creating collections of objects.</span></span>  
   
- 配列は、数が固定されている厳密に型指定されたオブジェクトの作成および処理に最も適しています。 配列の詳細については、「[配列](../../../csharp/programming-guide/arrays/index.md)」を参照してください。  
+ <span data-ttu-id="c6c20-105">配列は、数が固定されている厳密に型指定されたオブジェクトの作成および処理に最も適しています。</span><span class="sxs-lookup"><span data-stu-id="c6c20-105">Arrays are most useful for creating and working with a fixed number of strongly-typed objects.</span></span> <span data-ttu-id="c6c20-106">配列の詳細については、「[配列](../../../csharp/programming-guide/arrays/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6c20-106">For information about arrays, see [Arrays](../../../csharp/programming-guide/arrays/index.md).</span></span>  
   
- コレクションは、オブジェクトのグループをより柔軟に処理できます。 配列の場合とは違って、コレクションで扱うオブジェクトのグループは、アプリケーションの変更に伴う必要に応じて動的に拡大および縮小できます。 コレクションによっては、コレクションに含まれるオブジェクトのキーを割り当てると、そのキーを使用してオブジェクトを迅速に取り出すことができます。  
+ <span data-ttu-id="c6c20-107">コレクションは、オブジェクトのグループをより柔軟に処理できます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-107">Collections provide a more flexible way to work with groups of objects.</span></span> <span data-ttu-id="c6c20-108">配列の場合とは違って、コレクションで扱うオブジェクトのグループは、アプリケーションの変更に伴う必要に応じて動的に拡大および縮小できます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-108">Unlike arrays, the group of objects you work with can grow and shrink dynamically as the needs of the application change.</span></span> <span data-ttu-id="c6c20-109">コレクションによっては、コレクションに含まれるオブジェクトのキーを割り当てると、そのキーを使用してオブジェクトを迅速に取り出すことができます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-109">For some collections, you can assign a key to any object that you put into the collection so that you can quickly retrieve the object by using the key.</span></span>  
   
- コレクションはクラスであるため、そのコレクションに要素を追加するには、事前にそのクラスのインスタンスを宣言する必要があります。  
+ <span data-ttu-id="c6c20-110">コレクションはクラスであるため、そのコレクションに要素を追加するには、事前にそのクラスのインスタンスを宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6c20-110">A collection is a class, so you must declare an instance of the class before you can add elements to that collection.</span></span>  
   
- 含まれる要素が 1 つのデータ型だけのコレクションの場合は、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間のクラスのいずれかを使用できます。 ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。 ジェネリック コレクションから要素を取得する場合は、データ型を判断したり、変換したりする必要はありません。  
+ <span data-ttu-id="c6c20-111">含まれる要素が 1 つのデータ型だけのコレクションの場合は、<xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間のクラスのいずれかを使用できます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-111">If your collection contains elements of only one data type, you can use one of the classes in the <xref:System.Collections.Generic?displayProperty=nameWithType> namespace.</span></span> <span data-ttu-id="c6c20-112">ジェネリック コレクションでは、タイプ セーフが強制されるため、他のデータ型を追加することはできません。</span><span class="sxs-lookup"><span data-stu-id="c6c20-112">A generic collection enforces type safety so that no other data type can be added to it.</span></span> <span data-ttu-id="c6c20-113">ジェネリック コレクションから要素を取得する場合は、データ型を判断したり、変換したりする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="c6c20-113">When you retrieve an element from a generic collection, you do not have to determine its data type or convert it.</span></span>  
   
 > [!NOTE]
->  このトピックの例には、`System.Collections.Generic` 名前空間および `System.Linq` 名前空間の [using](../../../csharp/language-reference/keywords/using-directive.md) ディレクティブがあります。  
+>  <span data-ttu-id="c6c20-114">このトピックの例には、`System.Collections.Generic` 名前空間および `System.Linq` 名前空間の [using](../../../csharp/language-reference/keywords/using-directive.md) ディレクティブがあります。</span><span class="sxs-lookup"><span data-stu-id="c6c20-114">For the examples in this topic, include [using](../../../csharp/language-reference/keywords/using-directive.md) directives for the `System.Collections.Generic` and `System.Linq` namespaces.</span></span>  
   
- **このトピックの内容**  
+ <span data-ttu-id="c6c20-115">**このトピックの内容**</span><span class="sxs-lookup"><span data-stu-id="c6c20-115">**In this topic**</span></span>  
   
--   [単純なコレクションを使用する](#BKMK_SimpleCollection)  
+-   [<span data-ttu-id="c6c20-116">単純なコレクションを使用する</span><span class="sxs-lookup"><span data-stu-id="c6c20-116">Using a Simple Collection</span></span>](#BKMK_SimpleCollection)  
   
--   [コレクションの種類](#BKMK_KindsOfCollections)  
+-   [<span data-ttu-id="c6c20-117">コレクションの種類</span><span class="sxs-lookup"><span data-stu-id="c6c20-117">Kinds of Collections</span></span>](#BKMK_KindsOfCollections)  
   
-    -   [System.Collections.Generic のクラス](#BKMK_Generic)  
+    -   [<span data-ttu-id="c6c20-118">System.Collections.Generic のクラス</span><span class="sxs-lookup"><span data-stu-id="c6c20-118">System.Collections.Generic Classes</span></span>](#BKMK_Generic)  
   
-    -   [System.Collections.Concurrent のクラス](#BKMK_Concurrent)  
+    -   [<span data-ttu-id="c6c20-119">System.Collections.Concurrent のクラス</span><span class="sxs-lookup"><span data-stu-id="c6c20-119">System.Collections.Concurrent Classes</span></span>](#BKMK_Concurrent)  
   
-    -   [System.Collections のクラス](#BKMK_Collections)  
+    -   [<span data-ttu-id="c6c20-120">System.Collections のクラス</span><span class="sxs-lookup"><span data-stu-id="c6c20-120">System.Collections Classes</span></span>](#BKMK_Collections)  
   
--   [キーと値のペアのコレクションを実装する](#BKMK_KeyValuePairs)  
+-   [<span data-ttu-id="c6c20-121">キーと値のペアのコレクションを実装する</span><span class="sxs-lookup"><span data-stu-id="c6c20-121">Implementing a Collection of Key/Value Pairs</span></span>](#BKMK_KeyValuePairs)  
   
--   [LINQ を使用してコレクションにアクセスする](#BKMK_LINQ)  
+-   [<span data-ttu-id="c6c20-122">LINQ を使用してコレクションにアクセスする</span><span class="sxs-lookup"><span data-stu-id="c6c20-122">Using LINQ to Access a Collection</span></span>](#BKMK_LINQ)  
   
--   [コレクションを並べ替える](#BKMK_Sorting)  
+-   [<span data-ttu-id="c6c20-123">コレクションを並べ替える</span><span class="sxs-lookup"><span data-stu-id="c6c20-123">Sorting a Collection</span></span>](#BKMK_Sorting)  
   
--   [カスタム コレクションを定義する](#BKMK_CustomCollection)  
+-   [<span data-ttu-id="c6c20-124">カスタム コレクションを定義する</span><span class="sxs-lookup"><span data-stu-id="c6c20-124">Defining a Custom Collection</span></span>](#BKMK_CustomCollection)  
   
--   [反復子](#BKMK_Iterators)  
+-   [<span data-ttu-id="c6c20-125">反復子</span><span class="sxs-lookup"><span data-stu-id="c6c20-125">Iterators</span></span>](#BKMK_Iterators)  
   
 <a name="BKMK_SimpleCollection"></a>
-## <a name="using-a-simple-collection"></a>単純なコレクションを使用する  
- このセクションの例は、厳密に型指定されたオブジェクトの一覧を使用できる、ジェネリックの <xref:System.Collections.Generic.List%601> クラスを使用します。  
+## <a name="using-a-simple-collection"></a><span data-ttu-id="c6c20-126">単純なコレクションを使用する</span><span class="sxs-lookup"><span data-stu-id="c6c20-126">Using a Simple Collection</span></span>  
+ <span data-ttu-id="c6c20-127">このセクションの例は、厳密に型指定されたオブジェクトの一覧を使用できる、ジェネリックの <xref:System.Collections.Generic.List%601> クラスを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-127">The examples in this section use the generic <xref:System.Collections.Generic.List%601> class, which enables you to work with a strongly typed list of objects.</span></span>  
   
- 次の例は、文字列の一覧を作成した後、[foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメントを使用して文字列を反復処理します。  
+ <span data-ttu-id="c6c20-128">次の例は、文字列の一覧を作成した後、[foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメントを使用して文字列を反復処理します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-128">The following example creates a list of strings and then iterates through the strings by using a or [foreach](../../../csharp/language-reference/keywords/foreach-in.md) statement.</span></span>  
   
 ```csharp  
 // Create a list of strings.  
@@ -81,9 +72,9 @@ foreach (var salmon in salmons)
 // Output: chinook coho pink sockeye  
 ```  
   
- コレクションのコンテンツが既知の場合、コレクションの初期化に*コレクション初期化子*を使用できます。 詳細については、「[オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)」を参照してください。  
+ <span data-ttu-id="c6c20-129">コレクションのコンテンツが既知の場合、コレクションの初期化に*コレクション初期化子*を使用できます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-129">If the contents of a collection are known in advance, you can use a *collection initializer* to initialize the collection.</span></span> <span data-ttu-id="c6c20-130">詳細については、「[オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6c20-130">For more information, see [Object and Collection Initializers](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).</span></span>  
   
- 次の例は、コレクションへの要素の追加にコレクション初期化子を使用する以外、前の例と同じです。  
+ <span data-ttu-id="c6c20-131">次の例は、コレクションへの要素の追加にコレクション初期化子を使用する以外、前の例と同じです。</span><span class="sxs-lookup"><span data-stu-id="c6c20-131">The following example is the same as the previous example, except a collection initializer is used to add elements to the collection.</span></span>  
   
 ```csharp  
 // Create a list of strings by using a  
@@ -98,9 +89,9 @@ foreach (var salmon in salmons)
 // Output: chinook coho pink sockeye  
 ```  
   
- コレクションを反復処理するには、`foreach` ステートメントの代わりに、[for](../../../csharp/language-reference/keywords/for.md) ステートメントを使用できます。 インデックス位置によってコレクションの要素にアクセスすることで、これを実現します。 要素のインデックスは、0 から開始し、要素の数から 1 少ない値で終了します。  
+ <span data-ttu-id="c6c20-132">コレクションを反復処理するには、`foreach` ステートメントの代わりに、[for](../../../csharp/language-reference/keywords/for.md) ステートメントを使用できます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-132">You can use a [for](../../../csharp/language-reference/keywords/for.md) statement instead of a `foreach` statement to iterate through a collection.</span></span> <span data-ttu-id="c6c20-133">インデックス位置によってコレクションの要素にアクセスすることで、これを実現します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-133">You accomplish this by accessing the collection elements by the index position.</span></span> <span data-ttu-id="c6c20-134">要素のインデックスは、0 から開始し、要素の数から 1 少ない値で終了します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-134">The index of the elements starts at 0 and ends at the element count minus 1.</span></span>  
   
- 次の例は、`for` の代わりに `foreach` を使用して、コレクションの要素を反復処理します。  
+ <span data-ttu-id="c6c20-135">次の例は、`for` の代わりに `foreach` を使用して、コレクションの要素を反復処理します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-135">The following example iterates through the elements of a collection by using `for` instead of `foreach`.</span></span>  
   
 ```csharp  
 // Create a list of strings by using a  
@@ -114,7 +105,7 @@ for (var index = 0; index < salmons.Count; index++)
 // Output: chinook coho pink sockeye  
 ```  
   
- 次の例は、削除するオブジェクトを指定して、コレクションから要素を削除します。  
+ <span data-ttu-id="c6c20-136">次の例は、削除するオブジェクトを指定して、コレクションから要素を削除します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-136">The following example removes an element from the collection by specifying the object to remove.</span></span>  
   
 ```csharp  
 // Create a list of strings by using a  
@@ -133,7 +124,7 @@ foreach (var salmon in salmons)
 // Output: chinook pink sockeye  
 ```  
   
- 次の例では、ジェネリック リストからすべての要素を削除します。 `foreach` ステートメントの代わりに、降順に反復する [for](../../../csharp/language-reference/keywords/for.md) ステートメントを使用します。 これは、<xref:System.Collections.Generic.List%601.RemoveAt%2A> メソッドを実行すると、削除された要素の後にある各要素のインデックス値が小さくなるためです。  
+ <span data-ttu-id="c6c20-137">次の例では、ジェネリック リストからすべての要素を削除します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-137">The following example removes elements from a generic list.</span></span> <span data-ttu-id="c6c20-138">`foreach` ステートメントの代わりに、降順に反復する [for](../../../csharp/language-reference/keywords/for.md) ステートメントを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-138">Instead of a `foreach` statement, a [for](../../../csharp/language-reference/keywords/for.md) statement that iterates in descending order is used.</span></span> <span data-ttu-id="c6c20-139">これは、<xref:System.Collections.Generic.List%601.RemoveAt%2A> メソッドを実行すると、削除された要素の後にある各要素のインデックス値が小さくなるためです。</span><span class="sxs-lookup"><span data-stu-id="c6c20-139">This is because the <xref:System.Collections.Generic.List%601.RemoveAt%2A> method causes elements after a removed element to have a lower index value.</span></span>  
   
 ```csharp  
 var numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };  
@@ -157,7 +148,7 @@ numbers.ForEach(
 // Output: 0 2 4 6 8  
 ```  
   
- <xref:System.Collections.Generic.List%601> の要素の型は、独自のクラスでも定義できます。 次の例では、`Galaxy` が使用する <xref:System.Collections.Generic.List%601> クラスがコードに定義されます。  
+ <span data-ttu-id="c6c20-140"><xref:System.Collections.Generic.List%601> の要素の型は、独自のクラスでも定義できます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-140">For the type of elements in the <xref:System.Collections.Generic.List%601>, you can also define your own class.</span></span> <span data-ttu-id="c6c20-141">次の例では、`Galaxy` が使用する <xref:System.Collections.Generic.List%601> クラスがコードに定義されます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-141">In the following example, the `Galaxy` class that is used by the <xref:System.Collections.Generic.List%601> is defined in the code.</span></span>  
   
 ```csharp  
 private static void IterateThroughList()  
@@ -190,63 +181,63 @@ public class Galaxy
 ```  
 
 <a name="BKMK_KindsOfCollections"></a>
-## <a name="kinds-of-collections"></a>コレクションの種類 
- .NET Framework は、多くの共通のコレクションを提供します。 各コレクションの型は、固有の目的に合わせてデザインされています。  
+## <a name="kinds-of-collections"></a><span data-ttu-id="c6c20-142">コレクションの種類</span><span class="sxs-lookup"><span data-stu-id="c6c20-142">Kinds of Collections</span></span> 
+ <span data-ttu-id="c6c20-143">.NET Framework は、多くの共通のコレクションを提供します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-143">Many common collections are provided by the .NET Framework.</span></span> <span data-ttu-id="c6c20-144">各コレクションの型は、固有の目的に合わせてデザインされています。</span><span class="sxs-lookup"><span data-stu-id="c6c20-144">Each type of collection is designed for a specific purpose.</span></span>  
   
- このセクションでは、次の共通のコレクション クラスをいつくか説明します:  
+ <span data-ttu-id="c6c20-145">このセクションでは、次の共通のコレクション クラスをいつくか説明します:</span><span class="sxs-lookup"><span data-stu-id="c6c20-145">Some of the common collection classes are described in this section:</span></span>  
   
--   @System.Collections.Generic クラス  
+-   <span data-ttu-id="c6c20-146"><xref:System.Collections.Generic> クラス</span><span class="sxs-lookup"><span data-stu-id="c6c20-146"><xref:System.Collections.Generic> classes</span></span>  
   
--   @System.Collections.Concurrent クラス  
+-   <span data-ttu-id="c6c20-147"><xref:System.Collections.Concurrent> クラス</span><span class="sxs-lookup"><span data-stu-id="c6c20-147"><xref:System.Collections.Concurrent> classes</span></span>  
   
--   @System.Collections クラス  
+-   <span data-ttu-id="c6c20-148"><xref:System.Collections> クラス</span><span class="sxs-lookup"><span data-stu-id="c6c20-148"><xref:System.Collections> classes</span></span>  
   
 <a name="BKMK_Generic"></a>
-### <a name="systemcollectionsgeneric-classes"></a>System.Collections.Generic のクラス  
- <xref:System.Collections.Generic> 名前空間の 1 つのクラスを使用すると、ジェネリック コレクションを作成できます。 ジェネリック コレクションは、コレクション内のすべての項目が同じデータ型である場合に便利です。 ジェネリック コレクションには該当するデータ型しか追加できないため、厳密な型指定が適用されます。  
+### <a name="systemcollectionsgeneric-classes"></a><span data-ttu-id="c6c20-149">System.Collections.Generic のクラス</span><span class="sxs-lookup"><span data-stu-id="c6c20-149">System.Collections.Generic Classes</span></span>  
+ <span data-ttu-id="c6c20-150"><xref:System.Collections.Generic> 名前空間の 1 つのクラスを使用すると、ジェネリック コレクションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-150">You can create a generic collection by using one of the classes in the <xref:System.Collections.Generic> namespace.</span></span> <span data-ttu-id="c6c20-151">ジェネリック コレクションは、コレクション内のすべての項目が同じデータ型である場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="c6c20-151">A generic collection is useful when every item in the collection has the same data type.</span></span> <span data-ttu-id="c6c20-152">ジェネリック コレクションには該当するデータ型しか追加できないため、厳密な型指定が適用されます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-152">A generic collection enforces strong typing by allowing only the desired data type to be added.</span></span>  
   
- 次のテーブルは <xref:System.Collections.Generic?displayProperty=fullName> 名前空間でよく使用されるクラスの一覧です:  
+ <span data-ttu-id="c6c20-153">次のテーブルは <xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間でよく使用されるクラスの一覧です:</span><span class="sxs-lookup"><span data-stu-id="c6c20-153">The following table lists some of the frequently used classes of the <xref:System.Collections.Generic?displayProperty=nameWithType> namespace:</span></span>  
 
-|クラス|説明| 
+|<span data-ttu-id="c6c20-154">クラス</span><span class="sxs-lookup"><span data-stu-id="c6c20-154">Class</span></span>|<span data-ttu-id="c6c20-155">説明</span><span class="sxs-lookup"><span data-stu-id="c6c20-155">Description</span></span>| 
 |---|---|  
-|<xref:System.Collections.Generic.Dictionary%602>|キーに基づいて編成された、キーと値のペアのコレクションを表します。|  
-|<xref:System.Collections.Generic.List%601>|インデックスを使用してアクセスできる、オブジェクトの一覧を表します。 リストの検索、並べ替え、および変更のメソッドを提供します。|  
-|<xref:System.Collections.Generic.Queue%601>|先入れ先出し (FIFO) のオブジェクトのコレクションを表します。|  
-|<xref:System.Collections.Generic.SortedList%602>|関連付けられた <xref:System.Collections.Generic.IComparer%601> 実装に基づいて、キーにより並べ替えられた、キーと値のペアのコレクションを表します。|  
-|<xref:System.Collections.Generic.Stack%601>|後入れ先出し (LIFO) のオブジェクトのコレクションを表します。|  
+|<xref:System.Collections.Generic.Dictionary%602>|<span data-ttu-id="c6c20-156">キーに基づいて編成された、キーと値のペアのコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-156">Represents a collection of key/value pairs that are organized based on the key.</span></span>|  
+|<xref:System.Collections.Generic.List%601>|<span data-ttu-id="c6c20-157">インデックスを使用してアクセスできる、オブジェクトの一覧を表します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-157">Represents a list of objects that can be accessed by index.</span></span> <span data-ttu-id="c6c20-158">リストの検索、並べ替え、および変更のメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-158">Provides methods to search, sort, and modify lists.</span></span>|  
+|<xref:System.Collections.Generic.Queue%601>|<span data-ttu-id="c6c20-159">先入れ先出し (FIFO) のオブジェクトのコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-159">Represents a first in, first out (FIFO) collection of objects.</span></span>|  
+|<xref:System.Collections.Generic.SortedList%602>|<span data-ttu-id="c6c20-160">関連付けられた <xref:System.Collections.Generic.IComparer%601> 実装に基づいて、キーにより並べ替えられた、キーと値のペアのコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-160">Represents a collection of key/value pairs that are sorted by key based on the associated <xref:System.Collections.Generic.IComparer%601> implementation.</span></span>|  
+|<xref:System.Collections.Generic.Stack%601>|<span data-ttu-id="c6c20-161">後入れ先出し (LIFO) のオブジェクトのコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-161">Represents a last in, first out (LIFO) collection of objects.</span></span>|  
   
- 詳細については、「[一般的に使用されるコレクション型](../../../standard/collections/commonly-used-collection-types.md)」、「[コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)」、「@System.Collections.Generic」を参照してください。  
+ <span data-ttu-id="c6c20-162">詳細については、「[一般的に使用されるコレクション型](../../../standard/collections/commonly-used-collection-types.md)」、「[コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)」、「<xref:System.Collections.Generic>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6c20-162">For additional information, see [Commonly Used Collection Types](../../../standard/collections/commonly-used-collection-types.md), [Selecting a Collection Class](../../../standard/collections/selecting-a-collection-class.md), and <xref:System.Collections.Generic>.</span></span>  
   
 <a name="BKMK_Concurrent"></a>
-### <a name="systemcollectionsconcurrent-classes"></a>System.Collections.Concurrent のクラス  
- .NET Framework 4 以降では、<xref:System.Collections.Concurrent> 名前空間のコレクションによって、複数のスレッドからコレクション項目にアクセスするための効率的なスレッド セーフ操作が可能になります。  
+### <a name="systemcollectionsconcurrent-classes"></a><span data-ttu-id="c6c20-163">System.Collections.Concurrent のクラス</span><span class="sxs-lookup"><span data-stu-id="c6c20-163">System.Collections.Concurrent Classes</span></span>  
+ <span data-ttu-id="c6c20-164">.NET Framework 4 以降では、<xref:System.Collections.Concurrent> 名前空間のコレクションによって、複数のスレッドからコレクション項目にアクセスするための効率的なスレッド セーフ操作が可能になります。</span><span class="sxs-lookup"><span data-stu-id="c6c20-164">In the .NET Framework 4 or newer, the collections in the <xref:System.Collections.Concurrent> namespace provide efficient thread-safe operations for accessing collection items from multiple threads.</span></span>  
   
- <xref:System.Collections.Concurrent> 名前空間のクラスは、複数のスレッドがコレクションに同時にアクセスするときに、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間および <xref:System.Collections?displayProperty=fullName> 名前空間の対応する型の代わりに使用する必要があります。 詳しくは、「[スレッド セーフなコレクション](../../../standard/collections/thread-safe/index.md)」と「<xref:System.Collections.Concurrent>」を参照してください。  
+ <span data-ttu-id="c6c20-165"><xref:System.Collections.Concurrent> 名前空間のクラスは、複数のスレッドがコレクションに同時にアクセスするときに、<xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間および <xref:System.Collections?displayProperty=nameWithType> 名前空間の対応する型の代わりに使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6c20-165">The classes in the <xref:System.Collections.Concurrent> namespace should be used instead of the corresponding types in the <xref:System.Collections.Generic?displayProperty=nameWithType> and <xref:System.Collections?displayProperty=nameWithType> namespaces whenever multiple threads are accessing the collection concurrently.</span></span> <span data-ttu-id="c6c20-166">詳しくは、「[スレッド セーフなコレクション](../../../standard/collections/thread-safe/index.md)」と「<xref:System.Collections.Concurrent>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6c20-166">For more information, see [Thread-Safe Collections](../../../standard/collections/thread-safe/index.md) and <xref:System.Collections.Concurrent>.</span></span>  
   
- <xref:System.Collections.Concurrent> 名前空間には、<xref:System.Collections.Concurrent.BlockingCollection%601>、<xref:System.Collections.Concurrent.ConcurrentDictionary%602>、<xref:System.Collections.Concurrent.ConcurrentQueue%601>、および <xref:System.Collections.Concurrent.ConcurrentStack%601> などのクラスがあります。  
+ <span data-ttu-id="c6c20-167"><xref:System.Collections.Concurrent> 名前空間には、<xref:System.Collections.Concurrent.BlockingCollection%601>、<xref:System.Collections.Concurrent.ConcurrentDictionary%602>、<xref:System.Collections.Concurrent.ConcurrentQueue%601>、および <xref:System.Collections.Concurrent.ConcurrentStack%601> などのクラスがあります。</span><span class="sxs-lookup"><span data-stu-id="c6c20-167">Some classes included in the <xref:System.Collections.Concurrent> namespace are <xref:System.Collections.Concurrent.BlockingCollection%601>, <xref:System.Collections.Concurrent.ConcurrentDictionary%602>, <xref:System.Collections.Concurrent.ConcurrentQueue%601>, and <xref:System.Collections.Concurrent.ConcurrentStack%601>.</span></span>  
   
 <a name="BKMK_Collections"></a>
-### <a name="systemcollections-classes"></a>System.Collections のクラス  
- <xref:System.Collections?displayProperty=fullName> 名前空間のクラスでは、要素は、固有の型のオブジェクトとしてではなく `Object` 型のオブジェクトとして格納されます。  
+### <a name="systemcollections-classes"></a><span data-ttu-id="c6c20-168">System.Collections のクラス</span><span class="sxs-lookup"><span data-stu-id="c6c20-168">System.Collections Classes</span></span>  
+ <span data-ttu-id="c6c20-169"><xref:System.Collections?displayProperty=nameWithType> 名前空間のクラスでは、要素は、固有の型のオブジェクトとしてではなく `Object` 型のオブジェクトとして格納されます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-169">The classes in the <xref:System.Collections?displayProperty=nameWithType> namespace do not store elements as specifically typed objects, but as objects of type `Object`.</span></span>  
   
- できる限り、<xref:System.Collections.Generic?displayProperty=fullName> 名前空間の従来の型の代わりに、<xref:System.Collections.Concurrent> 名前空間または `System.Collections` 名前空間のジェネリック コレクションを使用します。  
+ <span data-ttu-id="c6c20-170">できる限り、<xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間の従来の型の代わりに、<xref:System.Collections.Concurrent> 名前空間または `System.Collections` 名前空間のジェネリック コレクションを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-170">Whenever possible, you should use the generic collections in the <xref:System.Collections.Generic?displayProperty=nameWithType> namespace or the <xref:System.Collections.Concurrent> namespace instead of the legacy types in the `System.Collections` namespace.</span></span>  
   
- 次のテーブルは `System.Collections` 名前空間でよく使用されるクラスの一覧です:  
+ <span data-ttu-id="c6c20-171">次のテーブルは `System.Collections` 名前空間でよく使用されるクラスの一覧です:</span><span class="sxs-lookup"><span data-stu-id="c6c20-171">The following table lists some of the frequently used classes in the `System.Collections` namespace:</span></span>  
   
-|クラス|説明|  
+|<span data-ttu-id="c6c20-172">クラス</span><span class="sxs-lookup"><span data-stu-id="c6c20-172">Class</span></span>|<span data-ttu-id="c6c20-173">説明</span><span class="sxs-lookup"><span data-stu-id="c6c20-173">Description</span></span>|  
 |---|---|  
-|<xref:System.Collections.ArrayList>|必要に応じてサイズが動的に拡大されるオブジェクトの配列を表します。|  
-|<xref:System.Collections.Hashtable>|キーのハッシュ コードに基づいて編成された、キーと値のペアのコレクションを表します。|  
-|<xref:System.Collections.Queue>|先入れ先出し (FIFO) のオブジェクトのコレクションを表します。|  
-|<xref:System.Collections.Stack>|後入れ先出し (LIFO) のオブジェクトのコレクションを表します。|  
+|<xref:System.Collections.ArrayList>|<span data-ttu-id="c6c20-174">必要に応じてサイズが動的に拡大されるオブジェクトの配列を表します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-174">Represents an array of objects whose size is dynamically increased as required.</span></span>|  
+|<xref:System.Collections.Hashtable>|<span data-ttu-id="c6c20-175">キーのハッシュ コードに基づいて編成された、キーと値のペアのコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-175">Represents a collection of key/value pairs that are organized based on the hash code of the key.</span></span>|  
+|<xref:System.Collections.Queue>|<span data-ttu-id="c6c20-176">先入れ先出し (FIFO) のオブジェクトのコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-176">Represents a first in, first out (FIFO) collection of objects.</span></span>|  
+|<xref:System.Collections.Stack>|<span data-ttu-id="c6c20-177">後入れ先出し (LIFO) のオブジェクトのコレクションを表します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-177">Represents a last in, first out (LIFO) collection of objects.</span></span>|  
   
- <xref:System.Collections.Specialized> 名前空間には、文字列専用のコレクションやリンク リスト、ハイブリッド ディクショナリなど、厳密に型指定された専用のコレクション クラスが用意されています。  
+ <span data-ttu-id="c6c20-178"><xref:System.Collections.Specialized> 名前空間には、文字列専用のコレクションやリンク リスト、ハイブリッド ディクショナリなど、厳密に型指定された専用のコレクション クラスが用意されています。</span><span class="sxs-lookup"><span data-stu-id="c6c20-178">The <xref:System.Collections.Specialized> namespace provides specialized and strongly typed collection classes, such as string-only collections and linked-list and hybrid dictionaries.</span></span>  
 
 <a name="BKMK_KeyValuePairs"></a>
-## <a name="implementing-a-collection-of-keyvalue-pairs"></a>キーと値のペアのコレクションを実装する  
- <xref:System.Collections.Generic.Dictionary%602> ジェネリック コレクションでは、各要素のキーを使用してコレクションの要素にアクセスできます。 ディクショナリに追加される各エントリは、値とその値に関連付けられたキーで構成されます。 `Dictionary` クラスはハッシュ テーブルとして実装されているため、キーを使用した値の取得は非常に高速になります。  
+## <a name="implementing-a-collection-of-keyvalue-pairs"></a><span data-ttu-id="c6c20-179">キーと値のペアのコレクションを実装する</span><span class="sxs-lookup"><span data-stu-id="c6c20-179">Implementing a Collection of Key/Value Pairs</span></span>  
+ <span data-ttu-id="c6c20-180"><xref:System.Collections.Generic.Dictionary%602> ジェネリック コレクションでは、各要素のキーを使用してコレクションの要素にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-180">The <xref:System.Collections.Generic.Dictionary%602> generic collection enables you to access to elements in a collection by using the key of each element.</span></span> <span data-ttu-id="c6c20-181">ディクショナリに追加される各エントリは、値とその値に関連付けられたキーで構成されます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-181">Each addition to the dictionary consists of a value and its associated key.</span></span> <span data-ttu-id="c6c20-182">`Dictionary` クラスはハッシュ テーブルとして実装されているため、キーを使用した値の取得は非常に高速になります。</span><span class="sxs-lookup"><span data-stu-id="c6c20-182">Retrieving a value by using its key is fast because the `Dictionary` class is implemented as a hash table.</span></span>  
   
- 次の例では `Dictionary` のコレクションを作成し、`foreach` ステートメントを使用してディクショナリを反復処理します。  
+ <span data-ttu-id="c6c20-183">次の例では `Dictionary` のコレクションを作成し、`foreach` ステートメントを使用してディクショナリを反復処理します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-183">The following example creates a `Dictionary` collection and iterates through the dictionary by using a `foreach` statement.</span></span>  
   
 ```csharp  
 private static void IterateThruDictionary()  
@@ -295,7 +286,7 @@ public class Element
 }  
 ```  
   
- コレクション初期化子を使用して `Dictionary` コレクションをビルドする代わりに、`BuildDictionary` および `AddToDictionary` メソッドを次のメソッドに置換できます。  
+ <span data-ttu-id="c6c20-184">コレクション初期化子を使用して `Dictionary` コレクションをビルドする代わりに、`BuildDictionary` および `AddToDictionary` メソッドを次のメソッドに置換できます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-184">To instead use a collection initializer to build the `Dictionary` collection, you can replace the `BuildDictionary` and `AddToDictionary` methods with the following method.</span></span>  
   
 ```csharp  
 private static Dictionary<string, Element> BuildDictionary2()  
@@ -314,7 +305,7 @@ private static Dictionary<string, Element> BuildDictionary2()
 }  
 ```  
   
- 次の例では、キーによって項目をすばやく検索するために、<xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> の <xref:System.Collections.Generic.Dictionary%602.Item%2A> メソッドと `Dictionary` プロパティを使用します。 `Item` プロパティでは、C# の `elements[symbol]` を使用して `elements` コレクションの項目にアクセスできます。  
+ <span data-ttu-id="c6c20-185">次の例では、キーによって項目をすばやく検索するために、<xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> の <xref:System.Collections.Generic.Dictionary%602.Item%2A> メソッドと `Dictionary` プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-185">The following example uses the <xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> method and the <xref:System.Collections.Generic.Dictionary%602.Item%2A> property of `Dictionary` to quickly find an item by key.</span></span> <span data-ttu-id="c6c20-186">`Item` プロパティでは、C# の `elements[symbol]` を使用して `elements` コレクションの項目にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-186">The `Item` property enables you to access an item in the `elements` collection by using the `elements[symbol]` in C#.</span></span>  
   
 ```csharp  
 private static void FindInDictionary(string symbol)  
@@ -333,7 +324,7 @@ private static void FindInDictionary(string symbol)
 }  
 ```  
   
- 次の例では、キーによって項目をすばやく検索するために、<xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> メソッドを代わりに使用します。  
+ <span data-ttu-id="c6c20-187">次の例では、キーによって項目をすばやく検索するために、<xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> メソッドを代わりに使用します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-187">The following example instead uses the <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> method quickly find an item by key.</span></span>  
   
 ```csharp  
 private static void FindInDictionary2(string symbol)  
@@ -349,10 +340,10 @@ private static void FindInDictionary2(string symbol)
 ```  
 
 <a name="BKMK_LINQ"></a>
-## <a name="using-linq-to-access-a-collection"></a>LINQ を使用してコレクションにアクセスする  
- 統合言語クエリ (LINQ) を使用してコレクションにアクセスできます。 LINQ クエリは、フィルター処理、並べ替え、およびグループ化の機能を提供します。 詳細については、「[Getting Started with LINQ in C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)」 (C# での LINQ の概要) を参照してください。  
+## <a name="using-linq-to-access-a-collection"></a><span data-ttu-id="c6c20-188">LINQ を使用してコレクションにアクセスする</span><span class="sxs-lookup"><span data-stu-id="c6c20-188">Using LINQ to Access a Collection</span></span>  
+ <span data-ttu-id="c6c20-189">統合言語クエリ (LINQ) を使用してコレクションにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-189">LINQ (Language-Integrated Query) can be used to access collections.</span></span> <span data-ttu-id="c6c20-190">LINQ クエリは、フィルター処理、並べ替え、およびグループ化の機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-190">LINQ queries provide filtering, ordering, and grouping capabilities.</span></span> <span data-ttu-id="c6c20-191">詳細については、「[Getting Started with LINQ in C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)」 (C# での LINQ の概要) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6c20-191">For more information, see  [Getting Started with LINQ in C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md).</span></span>  
   
- 次の例では、ジェネリック `List` に対して LINQ クエリを実行します。 LINQ クエリは、結果が格納されている別のコレクションを戻します。  
+ <span data-ttu-id="c6c20-192">次の例では、ジェネリック `List` に対して LINQ クエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-192">The following example runs a LINQ query against a generic `List`.</span></span> <span data-ttu-id="c6c20-193">LINQ クエリは、結果が格納されている別のコレクションを戻します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-193">The LINQ query returns a different collection that contains the results.</span></span>  
   
 ```csharp  
 private static void ShowLINQ()  
@@ -396,12 +387,12 @@ public class Element
 ```  
 
 <a name="BKMK_Sorting"></a>
-## <a name="sorting-a-collection"></a>コレクションを並べ替える  
- 次の例では、コレクションを並べ替えるための手順を示しています。 この例は、`Car` に格納されている <xref:System.Collections.Generic.List%601> クラスのインスタンスの並べ替えを実行します。 `Car` クラスは、<xref:System.IComparable%601> のメソッドの実装を必要とする <xref:System.IComparable%601.CompareTo%2A> インターフェイスを実装します。  
+## <a name="sorting-a-collection"></a><span data-ttu-id="c6c20-194">コレクションを並べ替える</span><span class="sxs-lookup"><span data-stu-id="c6c20-194">Sorting a Collection</span></span>  
+ <span data-ttu-id="c6c20-195">次の例では、コレクションを並べ替えるための手順を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6c20-195">The following example illustrates a procedure for sorting a collection.</span></span> <span data-ttu-id="c6c20-196">この例は、`Car` に格納されている <xref:System.Collections.Generic.List%601> クラスのインスタンスの並べ替えを実行します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-196">The example sorts instances of the `Car` class that are stored in a <xref:System.Collections.Generic.List%601>.</span></span> <span data-ttu-id="c6c20-197">`Car` クラスは、<xref:System.IComparable%601> のメソッドの実装を必要とする <xref:System.IComparable%601.CompareTo%2A> インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-197">The `Car` class implements the <xref:System.IComparable%601> interface, which requires that the <xref:System.IComparable%601.CompareTo%2A> method be implemented.</span></span>  
   
- <xref:System.IComparable%601.CompareTo%2A> メソッドに対する各呼び出しは、並べ替えに使用される単一の比較を実行します。 `CompareTo` メソッドのユーザーが作成したコードは、現在のオブジェクトと別のオブジェクトとの各比較の値を戻します。 現在のオブジェクトが別のオブジェクトよりも小さい場合はゼロ未満の値を、大きい場合はゼロ以上の値を、等しい場合はゼロを戻します。 これによって、より大きい、より小さい、等しい、の条件をコードに定義することができます。  
+ <span data-ttu-id="c6c20-198"><xref:System.IComparable%601.CompareTo%2A> メソッドに対する各呼び出しは、並べ替えに使用される単一の比較を実行します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-198">Each call to the <xref:System.IComparable%601.CompareTo%2A> method makes a single comparison that is used for sorting.</span></span> <span data-ttu-id="c6c20-199">`CompareTo` メソッドのユーザーが作成したコードは、現在のオブジェクトと別のオブジェクトとの各比較の値を戻します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-199">User-written code in the `CompareTo` method returns a value for each comparison of the current object with another object.</span></span> <span data-ttu-id="c6c20-200">現在のオブジェクトが別のオブジェクトよりも小さい場合はゼロ未満の値を、大きい場合はゼロ以上の値を、等しい場合はゼロを戻します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-200">The value returned is less than zero if the current object is less than the other object, greater than zero if the current object is greater than the other object, and zero if they are equal.</span></span> <span data-ttu-id="c6c20-201">これによって、より大きい、より小さい、等しい、の条件をコードに定義することができます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-201">This enables you to define in code the criteria for greater than, less than, and equal.</span></span>  
   
- `ListCars` のメソッドでは、`cars.Sort()` ステートメントがリストを並べ替えます。 <xref:System.Collections.Generic.List%601.Sort%2A> の <xref:System.Collections.Generic.List%601> メソッドへの呼び出しによって、`CompareTo` メソッドは `Car` 内の `List` オブジェクトに自動的に呼び出されます。  
+ <span data-ttu-id="c6c20-202">`ListCars` のメソッドでは、`cars.Sort()` ステートメントがリストを並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-202">In the `ListCars` method, the `cars.Sort()` statement sorts the list.</span></span> <span data-ttu-id="c6c20-203"><xref:System.Collections.Generic.List%601.Sort%2A> の <xref:System.Collections.Generic.List%601> メソッドへの呼び出しによって、`CompareTo` メソッドは `Car` 内の `List` オブジェクトに自動的に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-203">This call to the <xref:System.Collections.Generic.List%601.Sort%2A> method of the <xref:System.Collections.Generic.List%601> causes the `CompareTo` method to be called automatically for the `Car` objects in the `List`.</span></span>  
   
 ```csharp  
 private static void ListCars()  
@@ -474,14 +465,14 @@ public class Car : IComparable<Car>
 ```  
   
 <a name="BKMK_CustomCollection"></a>
-## <a name="defining-a-custom-collection"></a>カスタム コレクションを定義する  
- <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Collections.IEnumerable> のインターフェイスを実装してコレクションを定義できます。 詳細については、「[方法 : foreach を使用してコレクション クラスにアクセスする](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)」を参照してください。  
+## <a name="defining-a-custom-collection"></a><span data-ttu-id="c6c20-204">カスタム コレクションを定義する</span><span class="sxs-lookup"><span data-stu-id="c6c20-204">Defining a Custom Collection</span></span>  
+ <span data-ttu-id="c6c20-205"><xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Collections.IEnumerable> のインターフェイスを実装してコレクションを定義できます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-205">You can define a collection by implementing the <xref:System.Collections.Generic.IEnumerable%601> or <xref:System.Collections.IEnumerable> interface.</span></span> <span data-ttu-id="c6c20-206">詳細については、「[方法 : foreach を使用してコレクション クラスにアクセスする](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6c20-206">For additional information, see [How to: Access a Collection Class with foreach](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md).</span></span>  
   
- カスタム コレクションを定義できますが、通常は、.NET Framework に含まれるコレクションを使用することが推奨されます。これについては、このトピックの[コレクションの種類](#BKMK_KindsOfCollections)で既に説明されています。  
+ <span data-ttu-id="c6c20-207">カスタム コレクションを定義できますが、通常は、.NET Framework に含まれるコレクションを使用することが推奨されます。これについては、このトピックの[コレクションの種類](#BKMK_KindsOfCollections)で既に説明されています。</span><span class="sxs-lookup"><span data-stu-id="c6c20-207">Although you can define a custom collection, it is usually better to instead use the collections that are included in the .NET Framework, which are described in [Kinds of Collections](#BKMK_KindsOfCollections) earlier in this topic.</span></span>  
   
- 次の例は、`AllColors` という名前のカスタム コレクション クラスを定義します。 このクラスは、<xref:System.Collections.IEnumerable> メソッドの実装を必要とする <xref:System.Collections.IEnumerable.GetEnumerator%2A> インターフェイスを実装します。  
+ <span data-ttu-id="c6c20-208">次の例は、`AllColors` という名前のカスタム コレクション クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-208">The following example defines a custom collection class named `AllColors`.</span></span> <span data-ttu-id="c6c20-209">このクラスは、<xref:System.Collections.IEnumerable> メソッドの実装を必要とする <xref:System.Collections.IEnumerable.GetEnumerator%2A> インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-209">This class implements the <xref:System.Collections.IEnumerable> interface, which requires that the <xref:System.Collections.IEnumerable.GetEnumerator%2A> method be implemented.</span></span>  
   
- `GetEnumerator` メソッドは、`ColorEnumerator` クラスのインスタンスを戻します。 `ColorEnumerator` は、<xref:System.Collections.IEnumerator> プロパティ、<xref:System.Collections.IEnumerator.Current%2A> メソッド、および <xref:System.Collections.IEnumerator.MoveNext%2A> メソッドの実装を必要とする <xref:System.Collections.IEnumerator.Reset%2A> インターフェイスを実装します。  
+ <span data-ttu-id="c6c20-210">`GetEnumerator` メソッドは、`ColorEnumerator` クラスのインスタンスを戻します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-210">The `GetEnumerator` method returns an instance of the `ColorEnumerator` class.</span></span> <span data-ttu-id="c6c20-211">`ColorEnumerator` は、<xref:System.Collections.IEnumerator> プロパティ、<xref:System.Collections.IEnumerator.Current%2A> メソッド、および <xref:System.Collections.IEnumerator.MoveNext%2A> メソッドの実装を必要とする <xref:System.Collections.IEnumerator.Reset%2A> インターフェイスを実装します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-211">`ColorEnumerator` implements the <xref:System.Collections.IEnumerator> interface, which requires that the <xref:System.Collections.IEnumerator.Current%2A> property, <xref:System.Collections.IEnumerator.MoveNext%2A> method, and <xref:System.Collections.IEnumerator.Reset%2A> method be implemented.</span></span>  
   
 ```csharp  
 private static void ListColors()  
@@ -555,14 +546,14 @@ public class Color
 ```  
 
 <a name="BKMK_Iterators"></a> 
-##  <a name="iterators"></a>反復子  
- *反復子*は、コレクションに対するカスタム イテレーションを実行するために使用されます。 反復子は、メソッドまたは `get` アクセサーのいずれかです。 反復子は、[yield return](../../../csharp/language-reference/keywords/yield.md) ステートメントを使用して、コレクションの各要素を 1 回に 1 つ返します。  
+##  <a name="iterators"></a><span data-ttu-id="c6c20-212">反復子</span><span class="sxs-lookup"><span data-stu-id="c6c20-212">Iterators</span></span>  
+ <span data-ttu-id="c6c20-213">*反復子*は、コレクションに対するカスタム イテレーションを実行するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-213">An *iterator* is used to perform a custom iteration over a collection.</span></span> <span data-ttu-id="c6c20-214">反復子は、メソッドまたは `get` アクセサーのいずれかです。</span><span class="sxs-lookup"><span data-stu-id="c6c20-214">An iterator can be a method or a `get` accessor.</span></span> <span data-ttu-id="c6c20-215">反復子は、[yield return](../../../csharp/language-reference/keywords/yield.md) ステートメントを使用して、コレクションの各要素を 1 回に 1 つ返します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-215">An iterator uses a [yield return](../../../csharp/language-reference/keywords/yield.md) statement to return each element of the collection one at a time.</span></span>  
   
- [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメントを使用して、反復子を呼び出します。 `foreach` ループの各イテレーションは、反復子を呼び出します。 `yield return` ステートメントが反復子に到達すると、式が戻され、コードの現在の位置が保持されます。 次回、反復子が呼び出されると、この位置から実行が再開されます。  
+ <span data-ttu-id="c6c20-216">[foreach](../../../csharp/language-reference/keywords/foreach-in.md) ステートメントを使用して、反復子を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-216">You call an iterator by using a [foreach](../../../csharp/language-reference/keywords/foreach-in.md) statement.</span></span> <span data-ttu-id="c6c20-217">`foreach` ループの各イテレーションは、反復子を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-217">Each iteration of the `foreach` loop calls the iterator.</span></span> <span data-ttu-id="c6c20-218">`yield return` ステートメントが反復子に到達すると、式が戻され、コードの現在の位置が保持されます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-218">When a `yield return` statement is reached in the iterator, an expression is returned, and the current location in code is retained.</span></span> <span data-ttu-id="c6c20-219">次回、反復子が呼び出されると、この位置から実行が再開されます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-219">Execution is restarted from that location the next time that the iterator is called.</span></span>  
   
- 詳細については、「[反復子 (C#)](../../../csharp/programming-guide/concepts/iterators.md)」を参照してください。  
+ <span data-ttu-id="c6c20-220">詳細については、「[反復子 (C#)](../../../csharp/programming-guide/concepts/iterators.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6c20-220">For more information, see [Iterators (C#)](../../../csharp/programming-guide/concepts/iterators.md).</span></span>  
   
- 次の例は、反復子メソッドを使用します。 反復子メソッドには、[for](../../../csharp/language-reference/keywords/for.md) ループ内に `yield return` ステートメントがあります。 `ListEvenNumbers` メソッドでは、`foreach` ステートメント本文の各イテレーションが、反復子メソッドの呼び出しを作成し、これが次の `yield return` ステートメントに続行されます。  
+ <span data-ttu-id="c6c20-221">次の例は、反復子メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6c20-221">The following example uses an iterator method.</span></span> <span data-ttu-id="c6c20-222">反復子メソッドには、[for](../../../csharp/language-reference/keywords/for.md) ループ内に `yield return` ステートメントがあります。</span><span class="sxs-lookup"><span data-stu-id="c6c20-222">The iterator method has a `yield return` statement that is inside a [for](../../../csharp/language-reference/keywords/for.md) loop.</span></span> <span data-ttu-id="c6c20-223">`ListEvenNumbers` メソッドでは、`foreach` ステートメント本文の各イテレーションが、反復子メソッドの呼び出しを作成し、これが次の `yield return` ステートメントに続行されます。</span><span class="sxs-lookup"><span data-stu-id="c6c20-223">In the `ListEvenNumbers` method, each iteration of the `foreach` statement body creates a call to the iterator method, which proceeds to the next `yield return` statement.</span></span>  
   
 ```csharp  
 private static void ListEvenNumbers()  
@@ -589,16 +580,15 @@ private static IEnumerable<int> EvenSequence(
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [オブジェクト初期化子とコレクション初期化子](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)   
- [プログラミングの概念 (C#)](../../../csharp/programming-guide/concepts/index.md)   
- [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)   
- [LINQ to Objects (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)   
- [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)   
- [コレクションとデータ構造体](../../../standard/collections/index.md)   
- [コレクションの作成と操作](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)   
- [コレクション クラスの選択](../../../standard/collections/selecting-a-collection-class.md)   
- [コレクション内での比較と並べ替え](../../../standard/collections/comparisons-and-sorts-within-collections.md)   
- [ジェネリック コレクションを使用する状況](../../../standard/collections/when-to-use-generic-collections.md)   
- [方法: foreach を使用してコレクション クラスにアクセスする](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)
-
+## <a name="see-also"></a><span data-ttu-id="c6c20-224">関連項目</span><span class="sxs-lookup"><span data-stu-id="c6c20-224">See Also</span></span>  
+ [<span data-ttu-id="c6c20-225">オブジェクト初期化子とコレクション初期化子</span><span class="sxs-lookup"><span data-stu-id="c6c20-225">Object and Collection Initializers</span></span>](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
+ [<span data-ttu-id="c6c20-226">プログラミングの概念 (C#)</span><span class="sxs-lookup"><span data-stu-id="c6c20-226">Programming Concepts (C#)</span></span>](../../../csharp/programming-guide/concepts/index.md)  
+ [<span data-ttu-id="c6c20-227">Option Strict ステートメント</span><span class="sxs-lookup"><span data-stu-id="c6c20-227">Option Strict Statement</span></span>](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [<span data-ttu-id="c6c20-228">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="c6c20-228">LINQ to Objects (C#)</span></span>](../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
+ [<span data-ttu-id="c6c20-229">Parallel LINQ (PLINQ)</span><span class="sxs-lookup"><span data-stu-id="c6c20-229">Parallel LINQ (PLINQ)</span></span>](../../../standard/parallel-programming/parallel-linq-plinq.md)  
+ [<span data-ttu-id="c6c20-230">コレクションとデータ構造体</span><span class="sxs-lookup"><span data-stu-id="c6c20-230">Collections and Data Structures</span></span>](../../../standard/collections/index.md)  
+ [<span data-ttu-id="c6c20-231">作成して、コレクションの操作</span><span class="sxs-lookup"><span data-stu-id="c6c20-231">Creating and Manipulating Collections</span></span>](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)  
+ [<span data-ttu-id="c6c20-232">コレクション クラスの選択</span><span class="sxs-lookup"><span data-stu-id="c6c20-232">Selecting a Collection Class</span></span>](../../../standard/collections/selecting-a-collection-class.md)  
+ [<span data-ttu-id="c6c20-233">コレクション内での比較と並べ替え</span><span class="sxs-lookup"><span data-stu-id="c6c20-233">Comparisons and Sorts Within Collections</span></span>](../../../standard/collections/comparisons-and-sorts-within-collections.md)  
+ [<span data-ttu-id="c6c20-234">ジェネリック コレクションを使用する状況</span><span class="sxs-lookup"><span data-stu-id="c6c20-234">When to Use Generic Collections</span></span>](../../../standard/collections/when-to-use-generic-collections.md)  
+ [<span data-ttu-id="c6c20-235">方法: foreach を使用してコレクション クラスにアクセスする</span><span class="sxs-lookup"><span data-stu-id="c6c20-235">How to: Access a Collection Class with foreach</span></span>](../../../csharp/programming-guide/classes-and-structs/how-to-access-a-collection-class-with-foreach.md)

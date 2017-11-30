@@ -1,96 +1,102 @@
 ---
-title: "方法 : カスタム数値書式プロバイダーを定義して使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "カスタム書式指定文字列"
-  - "カスタム数値書式指定文字列"
-  - "表示 (日付と時刻のデータを)"
-  - "書式プロバイダー [.NET Framework]"
-  - "書式指定 [.NET Framework], 数"
-  - "数値の書式指定 [.NET Framework]"
-  - "数値 [.NET Framework], カスタム数値書式指定文字列"
-  - "数値書式指定文字列 [.NET Framework]"
+title: "方法 : カスタム数値書式プロバイダーを定義して使用する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- numeric format strings [.NET Framework]
+- formatting [.NET Framework], numbers
+- number formatting [.NET Framework]
+- custom numeric format strings
+- numbers [.NET Framework], custom numeric format strings
+- displaying date and time data
+- format providers [.NET Framework]
+- custom format strings
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
-caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 0e44a909eb92f0d9dfa21980a918a2d370dcf427
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 方法 : カスタム数値書式プロバイダーを定義して使用する
-[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] では、数値の文字列表現を広範に制御することができます。  数値の書式をカスタマイズするための、次のような機能がサポートされています。  
+# <a name="how-to-define-and-use-custom-numeric-format-providers"></a><span data-ttu-id="c2543-102">方法 : カスタム数値書式プロバイダーを定義して使用する</span><span class="sxs-lookup"><span data-stu-id="c2543-102">How to: Define and Use Custom Numeric Format Providers</span></span>
+<span data-ttu-id="c2543-103">[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]に制御する広範な数値の文字列形式。</span><span class="sxs-lookup"><span data-stu-id="c2543-103">The [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] gives you extensive control over the string representation of numeric values.</span></span> <span data-ttu-id="c2543-104">数値の書式をカスタマイズするため、次の機能をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="c2543-104">It supports the following features for customizing the format of numeric values:</span></span>  
   
--   標準の数値書式指定文字列。これは、数値を文字列形式に変換するための定義済み形式のセットです。  `format` パラメーターを持つ、<xref:System.Decimal.ToString%28System.String%29?displayProperty=fullName> などの任意の数値書式指定メソッドでこれらを使用できます。  詳細については、「[標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)」を参照してください。  
+-   <span data-ttu-id="c2543-105">標準の数値書式指定文字列: 数値をその文字列形式に変換するための定義済みの書式セットを提供します。</span><span class="sxs-lookup"><span data-stu-id="c2543-105">Standard numeric format strings, which provide a predefined set of formats for converting numbers to their string representation.</span></span> <span data-ttu-id="c2543-106">それらをなど、書式指定メソッド、任意の数値で使用できます<xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>を持つ、`format`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="c2543-106">You can use them with any numeric formatting method, such as <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, that has a `format` parameter.</span></span> <span data-ttu-id="c2543-107">詳細については、「[標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)です。</span><span class="sxs-lookup"><span data-stu-id="c2543-107">For details, see [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md).</span></span>  
   
--   カスタム数値書式指定文字列。これはシンボルのセットで、これらのシンボルを組み合わせてカスタム数値書式指定子を定義できます。  これらもまた、<xref:System.Decimal.ToString%28System.String%29?displayProperty=fullName> などの、`format` パラメーターを持つ任意の数値書式指定メソッドで使用できます。  詳細については、「[カスタム数値書式指定文字列](../../../docs/standard/base-types/custom-numeric-format-strings.md)」を参照してください。  
+-   <span data-ttu-id="c2543-108">カスタム数値書式指定文字列: カスタム数値書式指定子を定義するために結合できる記号のセットを提供します。</span><span class="sxs-lookup"><span data-stu-id="c2543-108">Custom numeric format strings, which provide a set of symbols that can be combined to define custom numeric format specifiers.</span></span> <span data-ttu-id="c2543-109">などの書式設定メソッド、任意の数値で使用することもできます<xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>を持つ、`format`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="c2543-109">They can also be used with any numeric formatting method, such as <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, that has a `format` parameter.</span></span> <span data-ttu-id="c2543-110">詳細については、「[カスタム数値書式指定文字列](../../../docs/standard/base-types/custom-numeric-format-strings.md)です。</span><span class="sxs-lookup"><span data-stu-id="c2543-110">For details, see [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md).</span></span>  
   
--   カスタム <xref:System.Globalization.CultureInfo> または <xref:System.Globalization.NumberFormatInfo> オブジェクト。これらは、数値の文字列表現の表示で使用されるシンボルと書式パターンを定義します。  `provider` パラメーターを持つ、<xref:System.Int32.ToString%2A> などの任意の数値書式指定メソッドでこれらを使用できます。  通常は、カルチャ固有の書式設定を指定するために `provider` パラメーターを使用します。  
+-   <span data-ttu-id="c2543-111">カスタム<xref:System.Globalization.CultureInfo>または<xref:System.Globalization.NumberFormatInfo>シンボルを定義し、数値の文字列形式を表示するために使用されるパターンの書式を設定するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c2543-111">Custom <xref:System.Globalization.CultureInfo> or <xref:System.Globalization.NumberFormatInfo> objects, which define the symbols and format patterns used in displaying the string representations of numeric values.</span></span> <span data-ttu-id="c2543-112">それらをなど、書式指定メソッド、任意の数値で使用できます<xref:System.Int32.ToString%2A>を持つ、`provider`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="c2543-112">You can use them with any numeric formatting method, such as <xref:System.Int32.ToString%2A>, that has a `provider` parameter.</span></span> <span data-ttu-id="c2543-113">通常、`provider`パラメーターを使用して、カルチャ固有の書式設定を指定します。</span><span class="sxs-lookup"><span data-stu-id="c2543-113">Typically, the `provider` parameter is used to specify culture-specific formatting.</span></span>  
   
- これら 3 つの技法が不適切な場合もあります。書式設定されたアカウント番号、識別番号、または郵便番号をアプリケーションで表示する必要がある場合などです。  [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] では、数値の書式を決定するために、<xref:System.Globalization.CultureInfo> オブジェクトでも <xref:System.Globalization.NumberFormatInfo> オブジェクトでもない書式設定オブジェクトを定義することもできます。  ここでは、そのようなオブジェクトの実装方法を手順を追って説明し、電話番号の書式を設定する例を示します。  
+ <span data-ttu-id="c2543-114">一部の例には (アプリケーションで書式設定されたアカウント番号や ID 番号、郵便番号を表示する必要がある場合など)、これら 3 つの方法は適していません。</span><span class="sxs-lookup"><span data-stu-id="c2543-114">In some cases (such as when an application must display a formatted account number, an identification number, or a postal code) these three techniques are inappropriate.</span></span> <span data-ttu-id="c2543-115">[!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]どちらである書式設定オブジェクトを定義することもできます、<xref:System.Globalization.CultureInfo>も<xref:System.Globalization.NumberFormatInfo>数値を書式設定する方法を決定するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c2543-115">The [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] also enables you to define a formatting object that is neither a <xref:System.Globalization.CultureInfo> nor a <xref:System.Globalization.NumberFormatInfo> object to determine how a numeric value is formatted.</span></span> <span data-ttu-id="c2543-116">このトピックでは、このようなオブジェクトを実装するため、詳細な手順を説明し、電話番号の書式を設定する例について説明します。</span><span class="sxs-lookup"><span data-stu-id="c2543-116">This topic provides the step-by-step instructions for implementing such an object, and provides an example that formats telephone numbers.</span></span>  
   
-### カスタム書式プロバイダーを定義するには  
+### <a name="to-define-a-custom-format-provider"></a><span data-ttu-id="c2543-117">カスタム書式プロバイダーを定義するには</span><span class="sxs-lookup"><span data-stu-id="c2543-117">To define a custom format provider</span></span>  
   
-1.  <xref:System.IFormatProvider> インターフェイスと <xref:System.ICustomFormatter> インターフェイスを実装するクラスを定義します。  
+1.  <span data-ttu-id="c2543-118">実装するクラスを定義、<xref:System.IFormatProvider>と<xref:System.ICustomFormatter>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="c2543-118">Define a class that implements the <xref:System.IFormatProvider> and <xref:System.ICustomFormatter> interfaces.</span></span>  
   
-2.  <xref:System.IFormatProvider.GetFormat%2A?displayProperty=fullName> メソッドを実装します。  <xref:System.IFormatProvider.GetFormat%2A> はコールバック メソッドで、カスタム書式指定を実際に行うオブジェクトを取得するために \([String.Format\(IFormatProvider, String, Object\<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=fullName> メソッドなどの\) 書式指定メソッドによって呼び出されます。  通常、<xref:System.IFormatProvider.GetFormat%2A> の実装は次のような操作を実行します。  
+2.  <span data-ttu-id="c2543-119"><xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="c2543-119">Implement the <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="c2543-120"><xref:System.IFormatProvider.GetFormat%2A>コールバック メソッドを書式設定メソッド (など、<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>メソッド) を実際にはカスタム書式設定を行うオブジェクトを取得するために呼び出します。</span><span class="sxs-lookup"><span data-stu-id="c2543-120"><xref:System.IFormatProvider.GetFormat%2A> is a callback method that the formatting method (such as the <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> method) invokes to retrieve the object that is actually responsible for performing custom formatting.</span></span> <span data-ttu-id="c2543-121">一般的な実装<xref:System.IFormatProvider.GetFormat%2A>は次の実行します。</span><span class="sxs-lookup"><span data-stu-id="c2543-121">A typical implementation of <xref:System.IFormatProvider.GetFormat%2A> does the following:</span></span>  
   
-    1.  メソッド パラメーターとして渡される <xref:System.Type> オブジェクトが <xref:System.ICustomFormatter> インターフェイスを表すかどうかを判断します。  
+    1.  <span data-ttu-id="c2543-122">決定するかどうか、<xref:System.Type>オブジェクト メソッドとして渡されるパラメーターを表します、<xref:System.ICustomFormatter>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="c2543-122">Determines whether the <xref:System.Type> object passed as a method parameter represents an <xref:System.ICustomFormatter> interface.</span></span>  
   
-    2.  パラメーターが <xref:System.ICustomFormatter> インターフェイスを表す場合、<xref:System.IFormatProvider.GetFormat%2A> は、カスタム書式指定を行う <xref:System.ICustomFormatter> インターフェイスを実装するオブジェクトを返します。  通常は、カスタム書式指定オブジェクト自身が返されます。  
+    2.  <span data-ttu-id="c2543-123">パラメーターが表している場合、<xref:System.ICustomFormatter>インターフェイス、<xref:System.IFormatProvider.GetFormat%2A>を実装するオブジェクトを返します、<xref:System.ICustomFormatter>カスタム書式設定を提供するインターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="c2543-123">If the parameter does represent the <xref:System.ICustomFormatter> interface, <xref:System.IFormatProvider.GetFormat%2A> returns an object that implements the <xref:System.ICustomFormatter> interface that is responsible for providing custom formatting.</span></span> <span data-ttu-id="c2543-124">通常、カスタム書式指定オブジェクトは、それ自体を返します。</span><span class="sxs-lookup"><span data-stu-id="c2543-124">Typically, the custom formatting object returns itself.</span></span>  
   
-    3.  パラメーターが <xref:System.ICustomFormatter> インターフェイスを表さない場合、<xref:System.IFormatProvider.GetFormat%2A> は `null` を返します。  
+    3.  <span data-ttu-id="c2543-125">パラメーターを表していない場合、<xref:System.ICustomFormatter>インターフェイス、<xref:System.IFormatProvider.GetFormat%2A>返します`null`です。</span><span class="sxs-lookup"><span data-stu-id="c2543-125">If the parameter does not represent the <xref:System.ICustomFormatter> interface, <xref:System.IFormatProvider.GetFormat%2A> returns `null`.</span></span>  
   
-3.  <xref:System.ICustomFormatter.Format%2A> メソッドを実装します。  このメソッドは [String.Format\(IFormatProvider, String, Object\<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=fullName> メソッドによって呼び出され、数値の文字列表現を返します。  このメソッドを実装する場合には、通常、次のような操作を行う必要があります。  
+3.  <span data-ttu-id="c2543-126"><xref:System.ICustomFormatter.Format%2A> メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="c2543-126">Implement the <xref:System.ICustomFormatter.Format%2A> method.</span></span> <span data-ttu-id="c2543-127">このメソッドは、<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>メソッド、数値の文字列形式を返すことを行います。</span><span class="sxs-lookup"><span data-stu-id="c2543-127">This method is called by the <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> method and is responsible for returning the string representation of a number.</span></span> <span data-ttu-id="c2543-128">メソッドの実装には通常、次の作業を行います。</span><span class="sxs-lookup"><span data-stu-id="c2543-128">Implementing the method typically involves the following:</span></span>  
   
-    1.  必要に応じて、`provider` パラメーターを検査することにより、このメソッドが適切な書式設定サービスを提供することを確認します。  <xref:System.IFormatProvider> と <xref:System.ICustomFormatter> の両方を実装する書式設定オブジェクトの場合、現在の書式設定オブジェクトと等しいかどうか `provider` パラメーターを検査する必要があります。  
+    1.  <span data-ttu-id="c2543-129">必要に応じて、メソッドが確認するには書式指定サービスを提供する正当なものであることを確認、`provider`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="c2543-129">Optionally, make sure that the method is legitimately intended to provide formatting services by examining the `provider` parameter.</span></span> <span data-ttu-id="c2543-130">両方を実装するオブジェクトを書式設定の<xref:System.IFormatProvider>と<xref:System.ICustomFormatter>、テストが必要、`provider`現在の書式設定オブジェクトと等しいかどうかのパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="c2543-130">For formatting objects that implement both <xref:System.IFormatProvider> and <xref:System.ICustomFormatter>, this involves testing the `provider` parameter for equality with the current formatting object.</span></span>  
   
-    2.  書式設定オブジェクトがカスタム書式指定子をサポートするかどうかを判断します。\(たとえば、「N」書式指定子は ITU\-T の推奨 E.123 形式で出力を示す場合があります。"」米国の電話番号が NANP 形式で「出力する必要があることを示すことがあります。\) 書式指定子が使用される場合、メソッドで特定の書式指定子を処理する必要があります。  これは `format` パラメーターでメソッドに渡されます。  指定子が存在しない場合、`format` パラメーターの値は <xref:System.String.Empty?displayProperty=fullName> です。  
+    2.  <span data-ttu-id="c2543-131">書式指定オブジェクトが、カスタム書式指定子をサポートするかどうかを決定します </span><span class="sxs-lookup"><span data-stu-id="c2543-131">Determine whether the formatting object should support custom format specifiers.</span></span> <span data-ttu-id="c2543-132">(たとえば、"N" 書式指定子は、米国の電話番号を NANP 形式で出力することを示し、"I" はITU-T 推奨 E.123 形式での出力を示すことができます)。書式指定子を使用している場合、メソッドが特定の書式指定子を処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2543-132">(For example, an "N" format specifier might indicate that a U.S. telephone number should be output in NANP format, and an "I" might indicate output in ITU-T Recommendation E.123 format.) If format specifiers are used, the method should handle the specific format specifier.</span></span> <span data-ttu-id="c2543-133">内のメソッドに渡されます、`format`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="c2543-133">It is passed to the method in the `format` parameter.</span></span> <span data-ttu-id="c2543-134">指定子にも存在する場合の値、`format`パラメーターは<xref:System.String.Empty?displayProperty=nameWithType>します。</span><span class="sxs-lookup"><span data-stu-id="c2543-134">If no specifier is present, the value of the `format` parameter is <xref:System.String.Empty?displayProperty=nameWithType>.</span></span>  
   
-    3.  `arg` パラメーターとしてメソッドに渡される数値を取得します。  それを文字列形式に変換するために必要な操作をすべて実行します。  
+    3.  <span data-ttu-id="c2543-135">としてメソッドに渡される数値の値を取得、`arg`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="c2543-135">Retrieve the numeric value passed to the method as the `arg` parameter.</span></span> <span data-ttu-id="c2543-136">文字列形式に変換するために必要な操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="c2543-136">Perform whatever manipulations are required to convert it to its string representation.</span></span>  
   
-    4.  `arg` パラメーターの文字列表現を返します。  
+    4.  <span data-ttu-id="c2543-137">文字列表現を返します、`arg`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="c2543-137">Return the string representation of the `arg` parameter.</span></span>  
   
-### カスタム数値書式設定オブジェクトを使用するには  
+### <a name="to-use-a-custom-numeric-formatting-object"></a><span data-ttu-id="c2543-138">カスタム数値書式設定オブジェクトを使用するには</span><span class="sxs-lookup"><span data-stu-id="c2543-138">To use a custom numeric formatting object</span></span>  
   
-1.  カスタム書式設定クラスの新しいインスタンスを作成します。  
+1.  <span data-ttu-id="c2543-139">カスタム書式指定クラスの新しいインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="c2543-139">Create a new instance of the custom formatting class.</span></span>  
   
-2.  書式指定メソッド [String.Format\(IFormatProvider, String, Object\<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=fullName> を呼び出します。その際、カスタム書式設定オブジェクト、書式指定子 \(使用しない場合は <xref:System.String.Empty?displayProperty=fullName>\)、および書式設定の対象となる数値を渡します。  
+2.  <span data-ttu-id="c2543-140">呼び出す、<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>メソッドを書式設定、カスタム書式指定オブジェクトを書式指定子を渡すこと (または<xref:System.String.Empty?displayProperty=nameWithType>いずれかを使用しない場合、)、および書式設定する数値。</span><span class="sxs-lookup"><span data-stu-id="c2543-140">Call the <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> formatting method, passing it the custom formatting object, the formatting specifier (or <xref:System.String.Empty?displayProperty=nameWithType>, if one is not used), and the numeric value to be formatted.</span></span>  
   
-## 使用例  
- 次の例では `TelephoneFormatter` という NANP または E.123 形式に米国の電話番号を表す数値を変換するカスタム数値書式のプロバイダーを定義します。  このメソッドは、"N" \(NANP 形式を出力\) および "I" \(国際 E.123 形式を出力\) の 2 つの書式指定子を処理します。  
+## <a name="example"></a><span data-ttu-id="c2543-141">例</span><span class="sxs-lookup"><span data-stu-id="c2543-141">Example</span></span>  
+ <span data-ttu-id="c2543-142">次の例では、米国の電話番号を表す数値を NANP または E.123 形式に変換する、`TelephoneFormatter` という名前のカスタム数値書式プロバイダーを定義します。</span><span class="sxs-lookup"><span data-stu-id="c2543-142">The following example defines a custom numeric format provider named `TelephoneFormatter` that converts a number that represents a U.S. telephone number to its NANP or E.123 format.</span></span> <span data-ttu-id="c2543-143">このメソッドは、"N" (NANP 形式を出力) と "I" (国際 E.123 形式を出力) の 2 つの書式指定子を処理します。</span><span class="sxs-lookup"><span data-stu-id="c2543-143">The method handles two format specifiers, "N" (which outputs the NANP format) and "I" (which outputs the international E.123 format).</span></span>  
   
  [!code-csharp[Formatting.HowTo.NumericValue#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.NumericValue/cs/Telephone1.cs#1)]
  [!code-vb[Formatting.HowTo.NumericValue#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.NumericValue/vb/Telephone1.vb#1)]  
   
- このカスタム数値書式プロバイダーは、[String.Format\(IFormatProvider, String, Object\<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=fullName> メソッドでのみ使用可能です。  <xref:System.IFormatProvider> 型のパラメーターを持つ数値書式指定メソッドの他のすべてのオーバーロード \(たとえば `ToString`\) は、<xref:System.Globalization.NumberFormatInfo> 型を表す <xref:System.Type> オブジェクトを <xref:System.IFormatProvider.GetFormat%2A?displayProperty=fullName> 実装に渡します。  これらは、メソッドから <xref:System.Globalization.NumberFormatInfo> オブジェクトが返されることを期待します。  これが返されない場合、カスタム数値書式プロバイダーは無視され、現在のカルチャの <xref:System.Globalization.NumberFormatInfo> オブジェクトが代わりに使用されます。  この例の `TelephoneFormatter.GetFormat` メソッドは、数値書式指定メソッドに渡されるものが適切でない場合に備えて、メソッド パラメーターを検査し、それが <xref:System.ICustomFormatter> 以外の型を表す場合には `null` を返します。  
+ <span data-ttu-id="c2543-144">カスタム数値書式プロバイダーでのみ使用することができます、<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="c2543-144">The custom numeric format provider can be used only with the <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="c2543-145">数値書式指定メソッドの他のオーバー ロード (など`ToString`) 型のパラメーターがある<xref:System.IFormatProvider>すべて合格、<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>実装、<xref:System.Type>を表すオブジェクト、<xref:System.Globalization.NumberFormatInfo>型です。</span><span class="sxs-lookup"><span data-stu-id="c2543-145">The other overloads of numeric formatting methods (such as `ToString`) that have a parameter of type <xref:System.IFormatProvider> all pass the <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> implementation a <xref:System.Type> object that represents the <xref:System.Globalization.NumberFormatInfo> type.</span></span> <span data-ttu-id="c2543-146">返すメソッドを代わりに、期待どおり、<xref:System.Globalization.NumberFormatInfo>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c2543-146">In return, they expect the method to return a <xref:System.Globalization.NumberFormatInfo> object.</span></span> <span data-ttu-id="c2543-147">そうでない場合は、カスタム数値書式プロバイダーは無視されます、および<xref:System.Globalization.NumberFormatInfo>オブジェクトの代わりに、現在のカルチャが使用されます。</span><span class="sxs-lookup"><span data-stu-id="c2543-147">If it does not, the custom numeric format provider is ignored, and the <xref:System.Globalization.NumberFormatInfo> object for the current culture is used in its place.</span></span> <span data-ttu-id="c2543-148">例では、`TelephoneFormatter.GetFormat`メソッド型の数値書式指定メソッドのパラメーターを確認し、返すことでメソッドに不適切な渡すことのできる可能性は処理`null`以外の型を表す場合<xref:System.ICustomFormatter>です。</span><span class="sxs-lookup"><span data-stu-id="c2543-148">In the example, the `TelephoneFormatter.GetFormat` method handles the possibility that it may be inappropriately passed to a numeric formatting method by examining the method parameter and returning `null` if it represents a type other than <xref:System.ICustomFormatter>.</span></span>  
   
- カスタム数値書式プロバイダーで書式指定子のセットをサポートする場合には、[String.Format\(IFormatProvider, String, Object\<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=fullName> メソッド呼び出しの書式指定項目に書式指定子が含まれない場合の既定の動作を必ず実装してください。  この例では、"N" が既定の書式指定子です。  こうして書式指定子を明示的に指定することで、数値を書式設定された電話番号に変換できます。  次の例は、このようなメソッド呼び出しを示しています。  
+ <span data-ttu-id="c2543-149">カスタム数値書式プロバイダーでは、書式指定子のセットをサポートする場合に使用される書式項目の書式指定子が指定されていない場合、既定の動作を指定することを確認、<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>メソッドの呼び出しです。</span><span class="sxs-lookup"><span data-stu-id="c2543-149">If a custom numeric format provider supports a set of format specifiers, make sure you provide a default behavior if no format specifier is supplied in the format item used in the <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> method call.</span></span> <span data-ttu-id="c2543-150">例では、"N" が既定の書式指定子です。</span><span class="sxs-lookup"><span data-stu-id="c2543-150">In the example, "N" is the default format specifier.</span></span> <span data-ttu-id="c2543-151">これにより、明示的な書式指定子を提供することによって、数値を書式設定された電話番号に変換できます。</span><span class="sxs-lookup"><span data-stu-id="c2543-151">This allows for a number to be converted to a formatted telephone number by providing an explicit format specifier.</span></span> <span data-ttu-id="c2543-152">このようなメソッドの呼び出しの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c2543-152">The following example illustrates such a method call.</span></span>  
   
  [!code-csharp[Formatting.HowTo.NumericValue#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.NumericValue/cs/Telephone1.cs#2)]
  [!code-vb[Formatting.HowTo.NumericValue#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.NumericValue/vb/Telephone1.vb#2)]  
   
- 加えて、書式指定子が存在しない場合にも変換が可能です。  次の例は、このようなメソッド呼び出しを示しています。  
+ <span data-ttu-id="c2543-153">ただし、書式指定子が存在しない場合に、変換を行うようにすることもできます。</span><span class="sxs-lookup"><span data-stu-id="c2543-153">But it also allows the conversion to occur if no format specifier is present.</span></span> <span data-ttu-id="c2543-154">このようなメソッドの呼び出しの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c2543-154">The following example illustrates such a method call.</span></span>  
   
  [!code-csharp[Formatting.HowTo.NumericValue#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.NumericValue/cs/Telephone1.cs#3)]
  [!code-vb[Formatting.HowTo.NumericValue#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.NumericValue/vb/Telephone1.vb#3)]  
   
- 既定の書式指定子が定義されない場合、コードがサポートしない書式設定を .NET Framework で提供できるように、<xref:System.ICustomFormatter.Format%2A?displayProperty=fullName> メソッドの実装に次のようなコードを含める必要があります。  
+ <span data-ttu-id="c2543-155">既定の書式指定子が定義されていない場合の実装、<xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType>その .NET 提供できるように書式設定コードがサポートされていないこと、メソッドは、次のようなコードを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2543-155">If no default format specifier is defined, your implementation of the <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> method should include code such as the following so that .NET can provide formatting that your code does not support.</span></span>  
   
  [!code-csharp[System.ICustomFormatter.Format#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.ICustomFormatter.Format/cs/format.cs#1)]
  [!code-vb[System.ICustomFormatter.Format#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ICustomFormatter.Format/vb/Format.vb#1)]  
   
- この例では、<xref:System.ICustomFormatter.Format%2A?displayProperty=fullName> を実装するメソッドが [String.Format\(IFormatProvider, String, Object\<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=fullName> メソッドのコールバック メソッドとして機能するようになっています。  このため、このメソッドは `formatProvider` パラメーターを検査して、現在の `TelephoneFormatter` オブジェクトへの参照が含まれるかどうかを判別します。  また、コードからこのメソッドを直接呼び出すこともできます。  その場合には、カルチャ固有の書式設定情報を指定する <xref:System.Globalization.CultureInfo> オブジェクトまたは <xref:System.Globalization.NumberFormatInfo> オブジェクトを提供するために `formatProvider` パラメーターを使用できます。  
+ <span data-ttu-id="c2543-156">この例の場合、メソッドを実装する<xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType>をコールバック メソッドとして機能するためのものでは、<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="c2543-156">In the case of this example, the method that implements <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> is intended to serve as a callback method for the <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="c2543-157">そのため、それを調べ、`formatProvider`現在への参照が含まれているかどうかのパラメーター`TelephoneFormatter`オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c2543-157">Therefore, it examines the `formatProvider` parameter to determine whether it contains a reference to the current `TelephoneFormatter` object.</span></span> <span data-ttu-id="c2543-158">ただし、メソッドはコードから直接呼び出すこともできます。</span><span class="sxs-lookup"><span data-stu-id="c2543-158">However, the method can also be called directly from code.</span></span> <span data-ttu-id="c2543-159">その場合は、使用することができます、`formatProvider`を提供するパラメーター、<xref:System.Globalization.CultureInfo>または<xref:System.Globalization.NumberFormatInfo>をカルチャに固有の書式情報を提供するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c2543-159">In that case, you can use the `formatProvider` parameter to provide a <xref:System.Globalization.CultureInfo> or <xref:System.Globalization.NumberFormatInfo> object that supplies culture-specific formatting information.</span></span>  
   
-## コードのコンパイル  
- コマンド ラインで csc.exe または vb.exe を使用してコードをコンパイルします。  [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] でコードをコンパイルするには、コンソール アプリケーション プロジェクト テンプレートの中にコードを配置します。  
+## <a name="compiling-the-code"></a><span data-ttu-id="c2543-160">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="c2543-160">Compiling the Code</span></span>  
+ <span data-ttu-id="c2543-161">コマンド ラインで csc.exe または vb.exe を使用してコードをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="c2543-161">Compile the code at the command line using csc.exe or vb.exe.</span></span> <span data-ttu-id="c2543-162">[!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] でコードをコンパイルするには、コンソール アプリケーション プロジェクト テンプレートの中にコードを配置します。</span><span class="sxs-lookup"><span data-stu-id="c2543-162">To compile the code in [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], put it in a console application project template.</span></span>  
   
-## 参照  
- [書式設定操作の実行](../../../docs/standard/base-types/performing-formatting-operations.md)
+## <a name="see-also"></a><span data-ttu-id="c2543-163">関連項目</span><span class="sxs-lookup"><span data-stu-id="c2543-163">See Also</span></span>  
+ [<span data-ttu-id="c2543-164">書式設定操作の実行</span><span class="sxs-lookup"><span data-stu-id="c2543-164">Performing Formatting Operations</span></span>](../../../docs/standard/base-types/performing-formatting-operations.md)

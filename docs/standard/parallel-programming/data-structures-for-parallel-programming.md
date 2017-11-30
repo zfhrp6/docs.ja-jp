@@ -1,78 +1,80 @@
 ---
-title: "Data Structures for Parallel Programming | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "data structures, multi-threading"
+title: "並列プログラミングのデータ構造"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: data structures, multi-threading
 ms.assetid: bdc82f2f-4754-45a1-a81e-fe2e9c30cef9
-caps.latest.revision: 15
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: f35c5382455021f0a001604367e59204ce4ad93c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Data Structures for Parallel Programming
-.NET Framework Version 4 では、並列プログラミングに役立つ新しい型がいくつか導入されています。たとえば、一連の同時実行コレクション クラス、軽量な同期プリミティブ、限定的な初期化などです。  これらの型は、タスク並列ライブラリや PLINQ などのマルチスレッド アプリケーション コードで使用できます。  
+# <a name="data-structures-for-parallel-programming"></a><span data-ttu-id="91c23-102">並列プログラミングのデータ構造</span><span class="sxs-lookup"><span data-stu-id="91c23-102">Data Structures for Parallel Programming</span></span>
+<span data-ttu-id="91c23-103">.NET Framework version 4 には、同時実行コレクション クラス、軽量な同期プリミティブ、および遅延初期化の種類のセットなどの並列プログラミングに役立ついくつかの新しい型が導入されています。</span><span class="sxs-lookup"><span data-stu-id="91c23-103">The .NET Framework version 4 introduces several new types that are useful in parallel programming, including a set of concurrent collection classes, lightweight synchronization primitives, and types for lazy initialization.</span></span> <span data-ttu-id="91c23-104">タスク並列ライブラリおよび PLINQ を含めて、マルチ スレッド アプリケーション コードでこれらの型を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="91c23-104">You can use these types with any multithreaded application code, including the Task Parallel Library and PLINQ.</span></span>  
   
-## 同時実行コレクション クラス  
- <xref:System.Collections.Concurrent?displayProperty=fullName> 名前空間のコレクション クラスには、スレッド セーフな追加操作と削除操作が用意されており、できる限りロックを回避する一方で、ロックが必要な場合は粒度の細かいロックを使用できます。  .NET Framework Version 1.0 および 2.0 で導入されたコレクションとは異なり、同時実行コレクション クラスでは、項目にアクセスするときにロックを取得するユーザー コードを必要としません。  同時実行コレクション クラスでは、複数のスレッドが 1 つのコレクションに項目を追加したり、コレクションから項目を削除したりする場合に、<xref:System.Collections.ArrayList?displayProperty=fullName>、<xref:System.Collections.Generic.List%601?displayProperty=fullName> などの型で \(ユーザーが実装したロックを使用して\) パフォーマンスを大幅に向上させることができます。  
+## <a name="concurrent-collection-classes"></a><span data-ttu-id="91c23-105">同時実行コレクション クラス</span><span class="sxs-lookup"><span data-stu-id="91c23-105">Concurrent Collection Classes</span></span>  
+ <span data-ttu-id="91c23-106">内のコレクション クラス、<xref:System.Collections.Concurrent?displayProperty=nameWithType>スレッド セーフを提供する名前空間を追加、削除可能な場合は、ロックを回避する操作とロックが必要な粒度の細かいロックを使用します。</span><span class="sxs-lookup"><span data-stu-id="91c23-106">The collection classes in the <xref:System.Collections.Concurrent?displayProperty=nameWithType> namespace provide thread-safe add and remove operations that avoid locks wherever possible and use fine-grained locking where locks are necessary.</span></span> <span data-ttu-id="91c23-107">.NET Framework のバージョン 1.0 および 2.0 で導入されたコレクションとは異なり、同時実行コレクション クラスに項目にアクセスするときに、すべてのロックを実行するユーザー コードは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="91c23-107">Unlike collections that were introduced in the .NET Framework versions 1.0 and 2.0, a concurrent collection class does not require user code to take any locks when it accesses items.</span></span> <span data-ttu-id="91c23-108">同時実行コレクション クラスが大幅にパフォーマンスが向上種類など<xref:System.Collections.ArrayList?displayProperty=nameWithType>と<xref:System.Collections.Generic.List%601?displayProperty=nameWithType>(ロックを使用してユーザー実装) では複数のスレッドが追加し、コレクションから項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="91c23-108">The concurrent collection classes can significantly improve performance over types such as <xref:System.Collections.ArrayList?displayProperty=nameWithType> and <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> (with user-implemented locking) in scenarios where multiple threads add and remove items from a collection.</span></span>  
   
- 次の表は、新しい同時実行コレクション クラスの一覧です。  
+ <span data-ttu-id="91c23-109">次の表は、新しい同時実行コレクション クラスを示します。</span><span class="sxs-lookup"><span data-stu-id="91c23-109">The following table lists the new concurrent collection classes:</span></span>  
   
-|型|説明|  
-|-------|--------|  
-|<xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=fullName>|<xref:System.Collections.Concurrent.IProducerConsumerCollection%601?displayProperty=fullName> を実装するスレッド セーフなコレクションに、ブロッキングと範囲指定の機能を提供します。  スロットが使用できないか、コレクションがいっぱいになった場合に、producer スレッドがブロックを実行します。  コレクションが空の場合、consumer スレッドがブロックを実行します。  また、この型は consumer と producer によってブロックされないアクセスもサポートしています。  <xref:System.Collections.Concurrent.BlockingCollection%601> は、<xref:System.Collections.Generic.IEnumerable%601> をサポートするコレクション クラスにブロッキングおよび境界を提供する基本クラスまたはバッキング ストアとして使用できます。|  
-|<xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=fullName>|スケーラブルな操作の追加と取得を提供するスレッド セーフなバッグの実装。|  
-|<xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=fullName>|同時実行されるスケーラブルなディクショナリ型。|  
-|<xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=fullName>|同時実行されるスケーラブルな FIFO キュー。|  
-|<xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=fullName>|同時実行されるスケーラブルな LIFO スタック。|  
+|<span data-ttu-id="91c23-110">型</span><span class="sxs-lookup"><span data-stu-id="91c23-110">Type</span></span>|<span data-ttu-id="91c23-111">説明</span><span class="sxs-lookup"><span data-stu-id="91c23-111">Description</span></span>|  
+|----------|-----------------|  
+|<xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType>|<span data-ttu-id="91c23-112"><xref:System.Collections.Concurrent.IProducerConsumerCollection%601?displayProperty=nameWithType> を実装するスレッド セーフなコレクションに、ブロッキングと範囲指定の機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="91c23-112">Provides blocking and bounding capabilities for thread-safe collections that implement <xref:System.Collections.Concurrent.IProducerConsumerCollection%601?displayProperty=nameWithType>.</span></span> <span data-ttu-id="91c23-113">利用できるスロットがない場合、またはコレクションがいっぱいの場合は、producer スレッドがブロックされます。</span><span class="sxs-lookup"><span data-stu-id="91c23-113">Producer threads block if no slots are available or if the collection is full.</span></span> <span data-ttu-id="91c23-114">コレクションが空の場合、コンシューマーのスレッドがブロックします。</span><span class="sxs-lookup"><span data-stu-id="91c23-114">Consumer threads block if the collection is empty.</span></span> <span data-ttu-id="91c23-115">この型には、コンシューマーとプロデューサーによって非ブロッキング アクセスもサポートしています。</span><span class="sxs-lookup"><span data-stu-id="91c23-115">This type also supports non-blocking access by consumers and producers.</span></span> <span data-ttu-id="91c23-116"><xref:System.Collections.Concurrent.BlockingCollection%601>基底クラスとして使用できますか、バッキング ストアに、ブロッキングとをサポートする任意のコレクション クラスの境界を提供する<xref:System.Collections.Generic.IEnumerable%601>です。</span><span class="sxs-lookup"><span data-stu-id="91c23-116"><xref:System.Collections.Concurrent.BlockingCollection%601> can be used as a base class or backing store to provide blocking and bounding for any collection class that supports <xref:System.Collections.Generic.IEnumerable%601>.</span></span>|  
+|<xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>|<span data-ttu-id="91c23-117">スケーラビリティを提供するスレッド セーフであるバッグの実装では、追加し、操作を取得します。</span><span class="sxs-lookup"><span data-stu-id="91c23-117">A thread-safe bag implementation that provides scalable add and get operations.</span></span>|  
+|<xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>|<span data-ttu-id="91c23-118">スケーラブルな同時実行ディクショナリ型。</span><span class="sxs-lookup"><span data-stu-id="91c23-118">A concurrent and scalable dictionary type.</span></span>|  
+|<xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType>|<span data-ttu-id="91c23-119">同時実行と拡張性の高い FIFO キューです。</span><span class="sxs-lookup"><span data-stu-id="91c23-119">A concurrent and scalable FIFO queue.</span></span>|  
+|<xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=nameWithType>|<span data-ttu-id="91c23-120">同時実行と拡張性の高い LIFO スタック。</span><span class="sxs-lookup"><span data-stu-id="91c23-120">A concurrent and scalable LIFO stack.</span></span>|  
   
- 詳細については、「[スレッド セーフなコレクション](../../../docs/standard/collections/thread-safe/index.md)」を参照してください。  
+ <span data-ttu-id="91c23-121">詳しくは、「[スレッド セーフなコレクション](../../../docs/standard/collections/thread-safe/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91c23-121">For more information, see [Thread-Safe Collections](../../../docs/standard/collections/thread-safe/index.md).</span></span>  
   
-## 同期プリミティブ  
- 従来のマルチスレッド コードに見られる負荷の高いロック機構を使用する代わりに <xref:System.Threading?displayProperty=fullName> 名前空間の新しい同期プリミティブを使用すると、粒度の細かい同時実行とパフォーマンスの向上が実現されます。  <xref:System.Threading.Barrier?displayProperty=fullName>、<xref:System.Threading.CountdownEvent?displayProperty=fullName> などの新しい型の場合、.NET Framework の以前のリリースには同等の型がありません。  
+## <a name="synchronization-primitives"></a><span data-ttu-id="91c23-122">同期プリミティブ</span><span class="sxs-lookup"><span data-stu-id="91c23-122">Synchronization Primitives</span></span>  
+ <span data-ttu-id="91c23-123">新しい同期プリミティブ、<xref:System.Threading?displayProperty=nameWithType>名前空間が従来のマルチ スレッド コード内で見つかった高コストのロック メカニズムを回避することで粒度の細かい同時実行性と高速なパフォーマンスを有効にします。</span><span class="sxs-lookup"><span data-stu-id="91c23-123">The new synchronization primitives in the <xref:System.Threading?displayProperty=nameWithType> namespace enable fine-grained concurrency and faster performance by avoiding expensive locking mechanisms found in legacy multithreading code.</span></span> <span data-ttu-id="91c23-124">いくつか、新しい型のように<xref:System.Threading.Barrier?displayProperty=nameWithType>と<xref:System.Threading.CountdownEvent?displayProperty=nameWithType>.NET Framework の以前のリリースに対応するがあるないです。</span><span class="sxs-lookup"><span data-stu-id="91c23-124">Some of the new types, such as <xref:System.Threading.Barrier?displayProperty=nameWithType> and <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> have no counterparts in earlier releases of the .NET Framework.</span></span>  
   
- 新しい同期型の一覧を次に示します。  
+ <span data-ttu-id="91c23-125">次の表は、新しい同期型を示します。</span><span class="sxs-lookup"><span data-stu-id="91c23-125">The following table lists the new synchronization types:</span></span>  
   
-|型|説明|  
-|-------|--------|  
-|<xref:System.Threading.Barrier?displayProperty=fullName>|各タスクが到着を通知してから一部またはすべてのタスクが到着するまでブロックするポイントを指定して、複数のスレッドが並列のアルゴリズムで実行できるようにします。  詳細については、「[Barrier](../../../docs/standard/threading/barrier.md)」を参照してください。|  
-|<xref:System.Threading.CountdownEvent?displayProperty=fullName>|容易な連結方法を提供して、フォークと結合の方法を簡略化します。  詳細については、「[CountdownEvent](../../../docs/standard/threading/countdownevent.md)」を参照してください。|  
-|<xref:System.Threading.ManualResetEventSlim?displayProperty=fullName>|<xref:System.Threading.ManualResetEvent?displayProperty=fullName> に似た同期プリミティブです。  <xref:System.Threading.ManualResetEventSlim> は軽量ですが、プロセス間通信での使用に限定されます。  詳細については、「[ManualResetEvent and ManualResetEventSlim](../../../docs/standard/threading/manualresetevent-and-manualreseteventslim.md)」を参照してください。|  
-|<xref:System.Threading.SemaphoreSlim?displayProperty=fullName>|リソースまたはリソースのプールに同時にアクセスできるスレッドの数を制限する同期プリミティブです。  詳細については、「[Semaphore and SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md)」を参照してください。|  
-|<xref:System.Threading.SpinLock?displayProperty=fullName>|クォンタムを生成するまでの一定期間内に、ループまたは*スピン*で待機するロックの取得を試みるスレッドを発生させるロック プリミティブで、一度に 1 つしか指定できません。  ロックの待機時間が短いことが予測される場合、<xref:System.Threading.SpinLock> ではその他の形式のロックよりも高いパフォーマンスが得られます。  詳細については、「[SpinLock](../../../docs/standard/threading/spinlock.md)」を参照してください。|  
-|<xref:System.Threading.SpinWait?displayProperty=fullName>|指定された時刻にスピンし、スピン カウントが超過した場合は最終的にスレッドを待機状態にする、小さくて軽量な型です。詳細については、「[SpinWait](../../../docs/standard/threading/spinwait.md)」を参照してください。|  
+|<span data-ttu-id="91c23-126">型</span><span class="sxs-lookup"><span data-stu-id="91c23-126">Type</span></span>|<span data-ttu-id="91c23-127">説明</span><span class="sxs-lookup"><span data-stu-id="91c23-127">Description</span></span>|  
+|----------|-----------------|  
+|<xref:System.Threading.Barrier?displayProperty=nameWithType>|<span data-ttu-id="91c23-128">アルゴリズムで並行してポイントする各タスクは到着を通知して、一部またはすべてのタスクが到着するまでのブロックを指定して作業する複数のスレッドを有効にします。</span><span class="sxs-lookup"><span data-stu-id="91c23-128">Enables multiple threads to work on an algorithm in parallel by providing a point at which each task can signal its arrival and then block until some or all tasks have arrived.</span></span> <span data-ttu-id="91c23-129">詳細については、「[バリア](../../../docs/standard/threading/barrier.md)」を参照してください</span><span class="sxs-lookup"><span data-stu-id="91c23-129">For more information, see [Barrier](../../../docs/standard/threading/barrier.md).</span></span>|  
+|<xref:System.Threading.CountdownEvent?displayProperty=nameWithType>|<span data-ttu-id="91c23-130">Rendezvous の簡単なメカニズムを提供することで、フォークと結合のシナリオを簡略化します。</span><span class="sxs-lookup"><span data-stu-id="91c23-130">Simplifies fork and join scenarios by providing an easy rendezvous mechanism.</span></span> <span data-ttu-id="91c23-131">詳細については、次を参照してください。 [CountdownEvent](../../../docs/standard/threading/countdownevent.md)です。</span><span class="sxs-lookup"><span data-stu-id="91c23-131">For more information, see [CountdownEvent](../../../docs/standard/threading/countdownevent.md).</span></span>|  
+|<xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>|<span data-ttu-id="91c23-132">ような同期プリミティブ<xref:System.Threading.ManualResetEvent?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="91c23-132">A synchronization primitive similar to <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType>.</span></span> <span data-ttu-id="91c23-133"><xref:System.Threading.ManualResetEventSlim>軽量がプロセス間通信用にのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="91c23-133"><xref:System.Threading.ManualResetEventSlim> is lighter-weight but can only be used for intra-process communication.</span></span> <span data-ttu-id="91c23-134">詳細については、次を参照してください。 [ManualResetEvent と ManualResetEventSlim](../../../docs/standard/threading/manualresetevent-and-manualreseteventslim.md)です。</span><span class="sxs-lookup"><span data-stu-id="91c23-134">For more information, see [ManualResetEvent and ManualResetEventSlim](../../../docs/standard/threading/manualresetevent-and-manualreseteventslim.md).</span></span>|  
+|<xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType>|<span data-ttu-id="91c23-135">同期プリミティブは、リソースを同時にアクセスできるスレッドの数またはリソースのプールを制限します。</span><span class="sxs-lookup"><span data-stu-id="91c23-135">A synchronization primitive that limits the number of threads that can concurrently access a resource or a pool of resources.</span></span> <span data-ttu-id="91c23-136">詳細については、次を参照してください。 [Semaphore と SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md)です。</span><span class="sxs-lookup"><span data-stu-id="91c23-136">For more information, see [Semaphore and SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md).</span></span>|  
+|<xref:System.Threading.SpinLock?displayProperty=nameWithType>|<span data-ttu-id="91c23-137">スレッドを原因となった相互排他ロック プリミティブが、ループ内で待機するロックを取得しようとしてまたは*スピン*クォンタムを生成する前に、期間。</span><span class="sxs-lookup"><span data-stu-id="91c23-137">A mutual exclusion lock primitive that causes the thread that is trying to acquire the lock to wait in a loop, or *spin*, for a period of time before yielding its quantum.</span></span> <span data-ttu-id="91c23-138">ここで、ロックを待機できると予想される短いシナリオで<xref:System.Threading.SpinLock>オファー ロックの他の形式よりもパフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="91c23-138">In scenarios where the wait for the lock is expected to be short, <xref:System.Threading.SpinLock> offers better performance than other forms of locking.</span></span> <span data-ttu-id="91c23-139">詳細については、次を参照してください。[スピンロック](../../../docs/standard/threading/spinlock.md)です。</span><span class="sxs-lookup"><span data-stu-id="91c23-139">For more information, see [SpinLock](../../../docs/standard/threading/spinlock.md).</span></span>|  
+|<xref:System.Threading.SpinWait?displayProperty=nameWithType>|<span data-ttu-id="91c23-140">小型、軽量の型で、スピン、指定した時間と最終的には、スピン カウントが超過した場合、待機状態に、スレッドを配置します。</span><span class="sxs-lookup"><span data-stu-id="91c23-140">A small, lightweight type that will spin for a specified time and eventually put the thread into a wait state if the spin count is exceeded.</span></span>  <span data-ttu-id="91c23-141">詳細については、次を参照してください。 [SpinWait](../../../docs/standard/threading/spinwait.md)です。</span><span class="sxs-lookup"><span data-stu-id="91c23-141">For more information, see [SpinWait](../../../docs/standard/threading/spinwait.md).</span></span>|  
   
- 詳細については、次のトピックを参照してください。  
+ <span data-ttu-id="91c23-142">詳細については次を参照してください:</span><span class="sxs-lookup"><span data-stu-id="91c23-142">For more information, see:</span></span>  
   
--   [How to: Use SpinLock for Low\-Level Synchronization](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md)  
+-   [<span data-ttu-id="91c23-143">方法: 下位レベルの同期に SpinLock を使用する</span><span class="sxs-lookup"><span data-stu-id="91c23-143">How to: Use SpinLock for Low-Level Synchronization</span></span>](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md)  
   
--   [How to: Synchronize Concurrent Operations with a Barrier](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md).  
+-   <span data-ttu-id="91c23-144">[方法: バリアと同時実行操作を同期](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md)です。</span><span class="sxs-lookup"><span data-stu-id="91c23-144">[How to: Synchronize Concurrent Operations with a Barrier](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md).</span></span>  
   
-## 限定的な初期化クラス  
- 限定的な初期化を使用すると、オブジェクトのメモリは必要になるまで割り当てられません。  限定的な初期化では、プログラムの有効期間内でオブジェクトの割り当てを均等に展開することによって、パフォーマンスが向上します。  <xref:System.Lazy%601> の型をラップすることにより、任意のカスタム型の限定的な初期化を有効にできます。  
+## <a name="lazy-initialization-classes"></a><span data-ttu-id="91c23-145">遅延初期化クラス</span><span class="sxs-lookup"><span data-stu-id="91c23-145">Lazy Initialization Classes</span></span>  
+ <span data-ttu-id="91c23-146">限定的な初期化が必要になるまで、オブジェクトのメモリには割り当てられません。</span><span class="sxs-lookup"><span data-stu-id="91c23-146">With lazy initialization, the memory for an object is not allocated until it is needed.</span></span> <span data-ttu-id="91c23-147">限定的な初期化は、オブジェクトの割り当てをプログラムの有効期間に均等に分散させることによってパフォーマンスを向上できます。</span><span class="sxs-lookup"><span data-stu-id="91c23-147">Lazy initialization can improve performance by spreading object allocations evenly across the lifetime of a program.</span></span> <span data-ttu-id="91c23-148">型をラッピングするを任意のカスタム型の限定的な初期化を有効にする<xref:System.Lazy%601>です。</span><span class="sxs-lookup"><span data-stu-id="91c23-148">You can enable lazy initialization for any custom type by wrapping the type <xref:System.Lazy%601>.</span></span>  
   
- 限定的な初期化の型の一覧を次に示します。  
+ <span data-ttu-id="91c23-149">次の表は、遅延初期化の種類を示します。</span><span class="sxs-lookup"><span data-stu-id="91c23-149">The following table lists the lazy initialization types:</span></span>  
   
-|型|説明|  
-|-------|--------|  
-|<xref:System.Lazy%601?displayProperty=fullName>|軽量でスレッド セーフな限定的な初期化を提供します。|  
-|<xref:System.Threading.ThreadLocal%601?displayProperty=fullName>|初期化関数を限定的に呼び出す各スレッドで、スレッドごとに限定的に初期化された値を提供します。|  
-|<xref:System.Threading.LazyInitializer?displayProperty=fullName>|専用の限定的な初期化インスタンスを割り当てる必要を回避する静的メソッドを提供します。  代わりに、参照を使用して、ターゲットがアクセスされるときに初期化されていることを確認します。|  
+|<span data-ttu-id="91c23-150">型</span><span class="sxs-lookup"><span data-stu-id="91c23-150">Type</span></span>|<span data-ttu-id="91c23-151">説明</span><span class="sxs-lookup"><span data-stu-id="91c23-151">Description</span></span>|  
+|----------|-----------------|  
+|<xref:System.Lazy%601?displayProperty=nameWithType>|<span data-ttu-id="91c23-152">軽量のスレッド セーフである限定的な初期化を提供します。</span><span class="sxs-lookup"><span data-stu-id="91c23-152">Provides lightweight, thread-safe lazy-initialization.</span></span>|  
+|<xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType>|<span data-ttu-id="91c23-153">スレッドごとの単位で限定的に呼び出す初期化関数の各スレッドで遅延初期化の値を提供します。</span><span class="sxs-lookup"><span data-stu-id="91c23-153">Provides a lazily-initialized value on a per-thread basis, with each thread lazily-invoking the initialization function.</span></span>|  
+|<xref:System.Threading.LazyInitializer?displayProperty=nameWithType>|<span data-ttu-id="91c23-154">遅延初期化の専用インスタンスを割り当てる必要を避けるための静的メソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="91c23-154">Provides static methods that avoid the need to allocate a dedicated, lazy-initialization instance.</span></span> <span data-ttu-id="91c23-155">代わりに、参照を使用してアクセスされたときのみ、ターゲットが初期化されているを確認してください。</span><span class="sxs-lookup"><span data-stu-id="91c23-155">Instead, they use references to ensure targets have been initialized as they are accessed.</span></span>|  
   
- 詳細については、「[限定的な初期化](../../../docs/framework/performance/lazy-initialization.md)」を参照してください。  
+ <span data-ttu-id="91c23-156">詳細については、「[限定的な初期化](../../../docs/framework/performance/lazy-initialization.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="91c23-156">For more information, see [Lazy Initialization](../../../docs/framework/performance/lazy-initialization.md).</span></span>  
   
-## 例外の集約  
- <xref:System.AggregateException?displayProperty=fullName> 型を使用して、別のスレッドで同時にスローされた複数の例外をキャプチャし、単一の例外として連結しているスレッドに返すことができます。  <xref:System.Threading.Tasks.Task?displayProperty=fullName> 型、<xref:System.Threading.Tasks.Parallel?displayProperty=fullName> 型、および PLINQ は、この目的で幅広く <xref:System.AggregateException> を使用します。  詳細については、「[NIB: How to: Handle Exceptions Thrown by Tasks](http://msdn.microsoft.com/ja-jp/d6c47ec8-9de9-4880-beb3-ff19ae51565d)」および「[How to: Handle Exceptions in a PLINQ Query](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md)」を参照してください。  
+## <a name="aggregate-exceptions"></a><span data-ttu-id="91c23-157">例外の集約</span><span class="sxs-lookup"><span data-stu-id="91c23-157">Aggregate Exceptions</span></span>  
+ <span data-ttu-id="91c23-158"><xref:System.AggregateException?displayProperty=nameWithType>型は、別のスレッドで同時にスローされ、1 つの例外として連結されたスレッドに戻すことを複数の例外をキャプチャするために使用できます。</span><span class="sxs-lookup"><span data-stu-id="91c23-158">The <xref:System.AggregateException?displayProperty=nameWithType> type can be used to capture multiple exceptions that are thrown concurrently on separate threads, and return them to the joining thread as a single exception.</span></span> <span data-ttu-id="91c23-159"><xref:System.Threading.Tasks.Task?displayProperty=nameWithType>と<xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType>型および PLINQ を使用して<xref:System.AggregateException>この目的で広範囲にします。</span><span class="sxs-lookup"><span data-stu-id="91c23-159">The <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> and <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> types and PLINQ use <xref:System.AggregateException> extensively for this purpose.</span></span> <span data-ttu-id="91c23-160">詳細については、次を参照してください。 [NIB: 方法: タスクによってスローされた例外を処理](http://msdn.microsoft.com/en-us/d6c47ec8-9de9-4880-beb3-ff19ae51565d)と[する方法: PLINQ クエリの例外を処理](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md)です。</span><span class="sxs-lookup"><span data-stu-id="91c23-160">For more information, see [NIB: How to: Handle Exceptions Thrown by Tasks](http://msdn.microsoft.com/en-us/d6c47ec8-9de9-4880-beb3-ff19ae51565d) and [How to: Handle Exceptions in a PLINQ Query](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md).</span></span>  
   
-## 参照  
- <xref:System.Collections.Concurrent?displayProperty=fullName>   
- <xref:System.Threading?displayProperty=fullName>   
- [Parallel Programming](../../../docs/standard/parallel-programming/index.md)
+## <a name="see-also"></a><span data-ttu-id="91c23-161">関連項目</span><span class="sxs-lookup"><span data-stu-id="91c23-161">See Also</span></span>  
+ <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
+ <xref:System.Threading?displayProperty=nameWithType>  
+ [<span data-ttu-id="91c23-162">並列プログラミング</span><span class="sxs-lookup"><span data-stu-id="91c23-162">Parallel Programming</span></span>](../../../docs/standard/parallel-programming/index.md)

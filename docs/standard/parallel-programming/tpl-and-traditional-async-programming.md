@@ -1,124 +1,129 @@
 ---
-title: "TPL and Traditional .NET Framework Asynchronous Programming | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "tasks, with other asynchronous models"
+title: "TPL と従来の .NET Framework 非同期プログラミング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: tasks, with other asynchronous models
 ms.assetid: e7b31170-a156-433f-9f26-b1fc7cd1776f
-caps.latest.revision: 16
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 0f29ca819fa7a59edeb105720d74a25512e95bdc
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# TPL and Traditional .NET Framework Asynchronous Programming
-.NET Framework の I\/O バインドの非同期操作および計算主体の非同期操作には、次の 2 つの標準パターンがあります。  
+# <a name="tpl-and-traditional-net-framework-asynchronous-programming"></a><span data-ttu-id="698e7-102">TPL と従来の .NET Framework 非同期プログラミング</span><span class="sxs-lookup"><span data-stu-id="698e7-102">TPL and Traditional .NET Framework Asynchronous Programming</span></span>
+<span data-ttu-id="698e7-103">.NET Framework の I/O バインドの非同期操作および計算主体の非同期操作には、次の 2 つの標準パターンがあります。</span><span class="sxs-lookup"><span data-stu-id="698e7-103">The .NET Framework provides the following two standard patterns for performing I/O-bound and compute-bound asynchronous operations:</span></span>  
   
--   非同期操作が Begin\/End メソッドのペアによって表される非同期プログラミング モデル \(APM\)。<xref:System.IO.FileStream.BeginRead%2A?displayProperty=fullName>、<xref:System.IO.Stream.EndRead%2A?displayProperty=fullName> など。  
+-   <span data-ttu-id="698e7-104">非同期操作が Begin/End メソッドのペアによって表される非同期プログラミング モデル (APM)。<xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType>、<xref:System.IO.Stream.EndRead%2A?displayProperty=nameWithType> など。</span><span class="sxs-lookup"><span data-stu-id="698e7-104">Asynchronous Programming Model (APM), in which asynchronous operations are represented by a pair of Begin/End methods such as <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> and <xref:System.IO.Stream.EndRead%2A?displayProperty=nameWithType>.</span></span>  
   
--   イベントベースの非同期パターン \(EAP\)。たとえば <xref:System.Net.WebClient.DownloadStringAsync%2A?displayProperty=fullName> や <xref:System.Net.WebClient.DownloadStringCompleted?displayProperty=fullName> など、 *OperationName*Async および *OperationName*Completed という名前のメソッドとイベントのペアによって非同期操作が表されています。  \(EAP は、.NET Framework Version 2.0 で導入されました\)。  
+-   <span data-ttu-id="698e7-105">イベント ベースの非同期パターン (EAP)、非同期操作が名前付きであるメソッドとイベントのペアで表されている*OperationName*Async および*OperationName*完了すると、たとえば、 <xref:System.Net.WebClient.DownloadStringAsync%2A?displayProperty=nameWithType>と<xref:System.Net.WebClient.DownloadStringCompleted?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="698e7-105">Event-based asynchronous pattern (EAP), in which asynchronous operations are represented by a method/event pair that are named *OperationName*Async and *OperationName*Completed, for example, <xref:System.Net.WebClient.DownloadStringAsync%2A?displayProperty=nameWithType> and <xref:System.Net.WebClient.DownloadStringCompleted?displayProperty=nameWithType>.</span></span> <span data-ttu-id="698e7-106">(EAP は、.NET Framework Version 2.0 で導入されました)。</span><span class="sxs-lookup"><span data-stu-id="698e7-106">(EAP was introduced in the .NET Framework version 2.0.)</span></span>  
   
- タスク並列ライブラリ \(TPL\) は、これらの非同期パターンと共にさまざまな方法で使用されます。  ライブラリ使用時に、APM 操作と EAP 操作をタスクとして公開するか、または APM パターンを公開し、タスク オブジェクトを使用して内部的に実装することができます。  どちらの場合でも、タスク オブジェクトを使用することでコードを簡易化し、次のような便利な機能を活用できます。  
+ <span data-ttu-id="698e7-107">タスク並列ライブラリ (TPL) は、これらの非同期パターンと共にさまざまな方法で使用されます。</span><span class="sxs-lookup"><span data-stu-id="698e7-107">The Task Parallel Library (TPL) can be used in various ways in conjunction with either of the asynchronous patterns.</span></span> <span data-ttu-id="698e7-108">ライブラリ使用時に、APM 操作と EAP 操作をタスクとして公開するか、または APM パターンを公開し、タスク オブジェクトを使用して内部的に実装することができます。</span><span class="sxs-lookup"><span data-stu-id="698e7-108">You can expose both APM and EAP operations as Tasks to library consumers, or you can expose the APM patterns but use Task objects to implement them internally.</span></span> <span data-ttu-id="698e7-109">どちらの場合でも、タスク オブジェクトを使用することでコードを簡易化し、次のような便利な機能を活用できます。</span><span class="sxs-lookup"><span data-stu-id="698e7-109">In both scenarios, by using Task objects, you can simplify the code and take advantage of the following useful functionality:</span></span>  
   
--   タスクの継続の形で、タスク開始後に随時コールバックを登録する。  
+-   <span data-ttu-id="698e7-110">タスクの継続の形で、タスク開始後に随時コールバックを登録する。</span><span class="sxs-lookup"><span data-stu-id="698e7-110">Register callbacks, in the form of task continuations, at any time after the task has started.</span></span>  
   
--   `Begin_` および <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> メソッド、または <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> メソッドまたは <xref:System.Threading.Tasks.Task.WaitAll%2A> メソッドを使用し、<xref:System.Threading.Tasks.Task.WaitAny%2A> メソッドに対する応答として実行される複数の操作を調整する。  
+-   <span data-ttu-id="698e7-111">`Begin_` および <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> メソッド、または <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> メソッドまたは <xref:System.Threading.Tasks.Task.WaitAll%2A> メソッドを使用し、<xref:System.Threading.Tasks.Task.WaitAny%2A> メソッドに対する応答として実行される複数の操作を調整する。</span><span class="sxs-lookup"><span data-stu-id="698e7-111">Coordinate multiple operations that execute in response to a `Begin_` method, by using the <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> and <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> methods, or the <xref:System.Threading.Tasks.Task.WaitAll%2A> method or the <xref:System.Threading.Tasks.Task.WaitAny%2A> method.</span></span>  
   
--   非同期 I\/O バインド操作と計算主体の操作を、同じタスク オブジェクトにカプセル化する。  
+-   <span data-ttu-id="698e7-112">非同期 I/O バインド操作と計算主体の操作を、同じタスク オブジェクトにカプセル化する。</span><span class="sxs-lookup"><span data-stu-id="698e7-112">Encapsulate asynchronous I/O-bound and compute-bound operations in the same Task object.</span></span>  
   
--   タスク オブジェクトの状態を監視する。  
+-   <span data-ttu-id="698e7-113">タスク オブジェクトの状態を監視する。</span><span class="sxs-lookup"><span data-stu-id="698e7-113">Monitor the status of the Task object.</span></span>  
   
--   <xref:System.Threading.Tasks.TaskCompletionSource%601> を使用し、タスク オブジェクトへの操作の状態をマーシャリングする。  
+-   <span data-ttu-id="698e7-114"><xref:System.Threading.Tasks.TaskCompletionSource%601> を使用し、タスク オブジェクトへの操作の状態をマーシャリングする。</span><span class="sxs-lookup"><span data-stu-id="698e7-114">Marshal the status of an operation to a Task object by using <xref:System.Threading.Tasks.TaskCompletionSource%601>.</span></span>  
   
-## APM 操作のタスクへのラッピング  
- <xref:System.Threading.Tasks.TaskFactory?displayProperty=fullName> クラスと <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=fullName> クラスには、1 つの <xref:System.Threading.Tasks.Task> インスタンスまたは <xref:System.Threading.Tasks.Task%601> インスタンスに APM の Begin\/End メソッドのペアをカプセル化できる <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A?displayProperty=fullName> メソッドと <xref:System.Threading.Tasks.TaskFactory%601.FromAsync%2A?displayProperty=fullName> メソッドの複数のオーバーロードが用意されています。  さまざまなオーバーロードが、0 ～ 3 個の入力パラメーターを持つ Begin\/End メソッドのペアに対応します。  
+## <a name="wrapping-apm-operations-in-a-task"></a><span data-ttu-id="698e7-115">APM 操作のタスクへのラッピング</span><span class="sxs-lookup"><span data-stu-id="698e7-115">Wrapping APM Operations in a Task</span></span>  
+ <span data-ttu-id="698e7-116"><xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType> クラスと <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType> クラスには、1 つの <xref:System.Threading.Tasks.Task> インスタンスまたは <xref:System.Threading.Tasks.Task%601> インスタンスに APM の Begin/End メソッドのペアをカプセル化できる <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A?displayProperty=nameWithType> メソッドと <xref:System.Threading.Tasks.TaskFactory%601.FromAsync%2A?displayProperty=nameWithType> メソッドの複数のオーバーロードが用意されています。</span><span class="sxs-lookup"><span data-stu-id="698e7-116">Both the <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType> and <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType> classes provide several overloads of the <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A?displayProperty=nameWithType> and <xref:System.Threading.Tasks.TaskFactory%601.FromAsync%2A?displayProperty=nameWithType> methods that let you encapsulate an APM Begin/End method pair in one <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601> instance.</span></span> <span data-ttu-id="698e7-117">さまざまなオーバーロードが、0 ～ 3 個の入力パラメーターを持つ Begin/End メソッドのペアに対応します。</span><span class="sxs-lookup"><span data-stu-id="698e7-117">The various overloads accommodate any Begin/End method pair that have from zero to three input parameters.</span></span>  
   
- 値 \(Visual Basic の場合は `Function`\) を返す `End` メソッドを持つペアの場合は、<xref:System.Threading.Tasks.Task%601> を作成する <xref:System.Threading.Tasks.TaskFactory%601> のメソッドを使用します。  Void \(Visual Basic の場合は `Sub`\) を返す `End` メソッドの場合は、<xref:System.Threading.Tasks.Task> を作成する <xref:System.Threading.Tasks.TaskFactory> のメソッドを使用します。  
+ <span data-ttu-id="698e7-118">値 (Visual Basic の場合は `Function`) を返す `End` メソッドを持つペアの場合は、<xref:System.Threading.Tasks.Task%601> を作成する <xref:System.Threading.Tasks.TaskFactory%601> のメソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="698e7-118">For pairs that have `End` methods that return a value (`Function` in Visual Basic), use the methods in <xref:System.Threading.Tasks.TaskFactory%601> that create a <xref:System.Threading.Tasks.Task%601>.</span></span> <span data-ttu-id="698e7-119">Void (Visual Basic の場合は `Sub`) を返す `End` メソッドの場合は、<xref:System.Threading.Tasks.Task> を作成する <xref:System.Threading.Tasks.TaskFactory> のメソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="698e7-119">For `End` methods that return void (`Sub` in Visual Basic), use the methods in <xref:System.Threading.Tasks.TaskFactory> that create a <xref:System.Threading.Tasks.Task>.</span></span>  
   
- ごくまれなケースですが、`Begin` メソッドが 3 個以上のパラメーターを持つ場合や、`ref` パラメーターまたは `out` パラメーターが含まれる場合は、`FromAsync` メソッドだけをカプセル化する `End` オーバーロードが追加で提供されます。  
+ <span data-ttu-id="698e7-120">ごくまれなケースですが、`Begin` メソッドが 3 個以上のパラメーターを持つ場合や、`ref` パラメーターまたは `out` パラメーターが含まれる場合は、`FromAsync` メソッドだけをカプセル化する `End` オーバーロードが追加で提供されます。</span><span class="sxs-lookup"><span data-stu-id="698e7-120">For those few cases in which the `Begin` method has more than three parameters or contains `ref` or `out` parameters, additional `FromAsync` overloads that encapsulate only the `End` method are provided.</span></span>  
   
- <xref:System.IO.FileStream.BeginRead%2A?displayProperty=fullName> メソッドおよび <xref:System.IO.FileStream.EndRead%2A?displayProperty=fullName> メソッドと一致する `FromAsync` オーバーロードの署名を、次のコード例に示します。  このオーバーロードは、次のように、3 つの入力パラメーターを取ります。  
+ <span data-ttu-id="698e7-121"><xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> メソッドおよび <xref:System.IO.FileStream.EndRead%2A?displayProperty=nameWithType> メソッドと一致する `FromAsync` オーバーロードの署名を、次のコード例に示します。</span><span class="sxs-lookup"><span data-stu-id="698e7-121">The following example shows the signature for the `FromAsync` overload that matches the <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> and <xref:System.IO.FileStream.EndRead%2A?displayProperty=nameWithType> methods.</span></span> <span data-ttu-id="698e7-122">このオーバーロードは、次のように、3 つの入力パラメーターを取ります。</span><span class="sxs-lookup"><span data-stu-id="698e7-122">This overload takes three input parameters, as follows.</span></span>  
   
  [!code-csharp[FromAsync#01](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/fromasync.cs#01)]
  [!code-vb[FromAsync#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#01)]  
   
- 1 つ目のパラメーターは <xref:System.Func%606> デリゲートで、<xref:System.IO.FileStream.BeginRead%2A?displayProperty=fullName> メソッドの署名と一致します。  2 つ目のパラメーターは、<xref:System.Func%602> を受け取り、<xref:System.IAsyncResult> を返す `TResult` デリゲートです。  <xref:System.IO.FileStream.EndRead%2A> は整数を返すので、コンパイラは `TResult` の型を <xref:System.Int32> と推論し、タスクの型を <xref:System.Threading.Tasks.Task> と推論します。  最後の 4 つのパラメーターは、<xref:System.IO.FileStream.BeginRead%2A?displayProperty=fullName> メソッドのパラメーターと同じです。  
+ <span data-ttu-id="698e7-123">1 つ目のパラメーターは <xref:System.Func%606> デリゲートで、<xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> メソッドの署名と一致します。</span><span class="sxs-lookup"><span data-stu-id="698e7-123">The first parameter is a <xref:System.Func%606> delegate that matches the signature of the <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="698e7-124">2 つ目のパラメーターは、<xref:System.Func%602> を受け取り、<xref:System.IAsyncResult> を返す `TResult` デリゲートです。</span><span class="sxs-lookup"><span data-stu-id="698e7-124">The second parameter is a <xref:System.Func%602> delegate that takes an <xref:System.IAsyncResult> and returns a `TResult`.</span></span> <span data-ttu-id="698e7-125"><xref:System.IO.FileStream.EndRead%2A> は整数を返すので、コンパイラは `TResult` の型を <xref:System.Int32> と推論し、タスクの型を <xref:System.Threading.Tasks.Task> と推論します。</span><span class="sxs-lookup"><span data-stu-id="698e7-125">Because <xref:System.IO.FileStream.EndRead%2A> returns an integer, the compiler infers the type of `TResult` as <xref:System.Int32> and the type of the task as <xref:System.Threading.Tasks.Task>.</span></span> <span data-ttu-id="698e7-126">最後の 4 つのパラメーターは、<xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> メソッドのパラメーターと同じです。</span><span class="sxs-lookup"><span data-stu-id="698e7-126">The last four parameters are identical to those in the <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> method:</span></span>  
   
--   ファイル データを格納するバッファー。  
+-   <span data-ttu-id="698e7-127">ファイル データを格納するバッファー。</span><span class="sxs-lookup"><span data-stu-id="698e7-127">The buffer in which to store the file data.</span></span>  
   
--   データ書き込みの開始位置を示すバッファー内のオフセット。  
+-   <span data-ttu-id="698e7-128">データ書き込みの開始位置を示すバッファー内のオフセット。</span><span class="sxs-lookup"><span data-stu-id="698e7-128">The offset in the buffer at which to begin writing data.</span></span>  
   
--   ファイルから読み取る最大データ量。  
+-   <span data-ttu-id="698e7-129">ファイルから読み取る最大データ量。</span><span class="sxs-lookup"><span data-stu-id="698e7-129">The maximum amount of data to read from the file.</span></span>  
   
--   コールバックに渡されるユーザー定義の状態データを格納する、オプションのオブジェクト。  
+-   <span data-ttu-id="698e7-130">コールバックに渡されるユーザー定義の状態データを格納する、オプションのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="698e7-130">An optional object that stores user-defined state data to pass to the callback.</span></span>  
   
-### コールバック関数での ContinueWith の使用  
- バイト数だけでなく、ファイルのデータにアクセスする必要がある場合は、<xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> メソッドだけでは不十分です。  代わりに、<xref:System.Threading.Tasks.Task> プロパティにファイル データが含まれている `Result` を使用します。  これを実行するには、元のタスクに継続を追加します。  継続は、通常、<xref:System.AsyncCallback> デリゲートによって実行される作業を実行します。  継続元が完了したとき、およびデータ バッファーが満杯になったときに呼び出されます   \(<xref:System.IO.FileStream> オブジェクトは、返される前に終了している必要があります\)。  
+### <a name="using-continuewith-for-the-callback-functionality"></a><span data-ttu-id="698e7-131">コールバック関数での ContinueWith の使用</span><span class="sxs-lookup"><span data-stu-id="698e7-131">Using ContinueWith for the Callback Functionality</span></span>  
+ <span data-ttu-id="698e7-132">バイト数だけでなく、ファイルのデータにアクセスする必要がある場合は、<xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> メソッドだけでは不十分です。</span><span class="sxs-lookup"><span data-stu-id="698e7-132">If you require access to the data in the file, as opposed to just the number of bytes, the <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> method is not sufficient.</span></span> <span data-ttu-id="698e7-133">代わりに、<xref:System.Threading.Tasks.Task> プロパティにファイル データが含まれている `Result` を使用します。</span><span class="sxs-lookup"><span data-stu-id="698e7-133">Instead, use <xref:System.Threading.Tasks.Task>, whose `Result` property contains the file data.</span></span> <span data-ttu-id="698e7-134">これを実行するには、元のタスクに継続を追加します。</span><span class="sxs-lookup"><span data-stu-id="698e7-134">You can do this by adding a continuation to the original task.</span></span> <span data-ttu-id="698e7-135">継続は、通常、<xref:System.AsyncCallback> デリゲートによって実行される作業を実行します。</span><span class="sxs-lookup"><span data-stu-id="698e7-135">The continuation performs the work that would typically be performed by the <xref:System.AsyncCallback> delegate.</span></span> <span data-ttu-id="698e7-136">継続元が完了したとき、およびデータ バッファーが満杯になったときに呼び出されます </span><span class="sxs-lookup"><span data-stu-id="698e7-136">It is invoked when the antecedent completes, and the data buffer has been filled.</span></span> <span data-ttu-id="698e7-137">(<xref:System.IO.FileStream> オブジェクトは、返される前に終了している必要があります)。</span><span class="sxs-lookup"><span data-stu-id="698e7-137">(The <xref:System.IO.FileStream> object should be closed before returning.)</span></span>  
   
- <xref:System.Threading.Tasks.Task> クラスの BeginRead\/EndRead ペアをカプセル化する <xref:System.IO.FileStream> を返す方法を、次の例に示します。  
+ <span data-ttu-id="698e7-138"><xref:System.Threading.Tasks.Task> クラスの BeginRead/EndRead ペアをカプセル化する <xref:System.IO.FileStream> を返す方法を、次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="698e7-138">The following example shows how to return a <xref:System.Threading.Tasks.Task> that encapsulates the BeginRead/EndRead pair of the <xref:System.IO.FileStream> class.</span></span>  
   
  [!code-csharp[FromAsync#03](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/fromasync.cs#03)]
  [!code-vb[FromAsync#03](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#03)]  
   
- このメソッドは、次のようにして呼び出すことができます。  
+ <span data-ttu-id="698e7-139">このメソッドは、次のようにして呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="698e7-139">The method can then be called, as follows.</span></span>  
   
  [!code-csharp[FromAsync#04](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/fromasync.cs#04)]
  [!code-vb[FromAsync#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#04)]  
   
-### カスタム状態データの提供  
- 一般的な <xref:System.IAsyncResult> 操作では、<xref:System.AsyncCallback> デリゲートにカスタム状態データが必要な場合、最終的にコールバック メソッドに渡される `Begin` オブジェクトにデータをパッケージ化できるよう、<xref:System.IAsyncResult> メソッドの最後のパラメーターを通じてカスタム状態データを渡す必要があります。  通常、`FromAsync` メソッドが使用される場合は必要ありません。  カスタム データが継続に対して既知の場合は、継続のデリゲートで直接キャプチャできます。  次の例は前の例と似ていますが、継続は継続元の `Result` プロパティを検証せずに、継続のユーザー デリゲートに直接アクセスできるカスタム状態データを検証します。  
+### <a name="providing-custom-state-data"></a><span data-ttu-id="698e7-140">カスタム状態データの提供</span><span class="sxs-lookup"><span data-stu-id="698e7-140">Providing Custom State Data</span></span>  
+ <span data-ttu-id="698e7-141">一般的な <xref:System.IAsyncResult> 操作では、<xref:System.AsyncCallback> デリゲートにカスタム状態データが必要な場合、最終的にコールバック メソッドに渡される `Begin` オブジェクトにデータをパッケージ化できるよう、<xref:System.IAsyncResult> メソッドの最後のパラメーターを通じてカスタム状態データを渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="698e7-141">In typical <xref:System.IAsyncResult> operations, if your <xref:System.AsyncCallback> delegate requires some custom state data, you have to pass it in through the last parameter in the `Begin` method, so that the data can be packaged into the <xref:System.IAsyncResult> object that is eventually passed to the callback method.</span></span> <span data-ttu-id="698e7-142">通常、`FromAsync` メソッドが使用される場合は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="698e7-142">This is typically not required when the `FromAsync` methods are used.</span></span> <span data-ttu-id="698e7-143">カスタム データが継続に対して既知の場合は、継続のデリゲートで直接キャプチャできます。</span><span class="sxs-lookup"><span data-stu-id="698e7-143">If the custom data is known to the continuation, then it can be captured directly in the continuation delegate.</span></span> <span data-ttu-id="698e7-144">次の例は前の例と似ていますが、継続は継続元の `Result` プロパティを検証せずに、継続のユーザー デリゲートに直接アクセスできるカスタム状態データを検証します。</span><span class="sxs-lookup"><span data-stu-id="698e7-144">The following example resembles the previous example, but instead of examining the `Result` property of the antecedent, the continuation examines the custom state data that is directly accessible to the user delegate of the continuation.</span></span>  
   
  [!code-csharp[FromAsync#05](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/fromasync.cs#05)]
  [!code-vb[FromAsync#05](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#05)]  
   
-### 複数の FromAsync タスクの同期化  
- 静的な <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> メソッドと <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> メソッドは、`FromAsync` メソッドと共に使用することによって、柔軟性を強化できます。  複数の非同期 I\/O 操作を開始し、継続を実行する前にすべての操作が完了するまで待機する方法を次の例に示します。  
+### <a name="synchronizing-multiple-fromasync-tasks"></a><span data-ttu-id="698e7-145">複数の FromAsync タスクの同期化</span><span class="sxs-lookup"><span data-stu-id="698e7-145">Synchronizing Multiple FromAsync Tasks</span></span>  
+ <span data-ttu-id="698e7-146">静的な <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> メソッドと <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> メソッドは、`FromAsync` メソッドと共に使用することによって、柔軟性を強化できます。</span><span class="sxs-lookup"><span data-stu-id="698e7-146">The static <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> and <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> methods provide added flexibility when used in conjunction with the `FromAsync` methods.</span></span> <span data-ttu-id="698e7-147">複数の非同期 I/O 操作を開始し、継続を実行する前にすべての操作が完了するまで待機する方法を次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="698e7-147">The following example shows how to initiate multiple asynchronous I/O operations, and then wait for all of them to complete before you execute the continuation.</span></span>  
   
  [!code-csharp[FromAsync#06](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/fromasync.cs#06)]
  [!code-vb[FromAsync#06](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#06)]  
   
-### End メソッドだけの FromAsync タスク  
- ごくまれなケースですが、`Begin` メソッドに 3 個以上の入力パラメーターが必要な場合や、`ref` パラメーターまたは `out` パラメーターが含まれる場合は、`FromAsync` など、<xref:System.Threading.Tasks.TaskFactory%601.FromAsync%28System.IAsyncResult%2CSystem.Func%7BSystem.IAsyncResult%2C%600%7D%29?displayProperty=fullName> メソッドだけを表す `End` オーバーロードを使用します。  これらのメソッドは、<xref:System.IAsyncResult> が渡され、それをタスクにカプセル化するシナリオでも使用できます。  
+### <a name="fromasync-tasks-for-only-the-end-method"></a><span data-ttu-id="698e7-148">End メソッドだけの FromAsync タスク</span><span class="sxs-lookup"><span data-stu-id="698e7-148">FromAsync Tasks For Only the End Method</span></span>  
+ <span data-ttu-id="698e7-149">ごくまれなケースですが、`Begin` メソッドに 3 個以上の入力パラメーターが必要な場合や、`ref` パラメーターまたは `out` パラメーターが含まれる場合は、`FromAsync` など、<xref:System.Threading.Tasks.TaskFactory%601.FromAsync%28System.IAsyncResult%2CSystem.Func%7BSystem.IAsyncResult%2C%600%7D%29?displayProperty=nameWithType> メソッドだけを表す `End` オーバーロードを使用します。</span><span class="sxs-lookup"><span data-stu-id="698e7-149">For those few cases in which the `Begin` method requires more than three input parameters, or has `ref` or `out` parameters, you can use the `FromAsync` overloads, for example, <xref:System.Threading.Tasks.TaskFactory%601.FromAsync%28System.IAsyncResult%2CSystem.Func%7BSystem.IAsyncResult%2C%600%7D%29?displayProperty=nameWithType>, that represent only the `End` method.</span></span> <span data-ttu-id="698e7-150">これらのメソッドは、<xref:System.IAsyncResult> が渡され、それをタスクにカプセル化するシナリオでも使用できます。</span><span class="sxs-lookup"><span data-stu-id="698e7-150">These methods can also be used in any scenario in which you are passed an <xref:System.IAsyncResult> and want to encapsulate it in a Task.</span></span>  
   
  [!code-csharp[FromAsync#07](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/fromasync.cs#07)]
  [!code-vb[FromAsync#07](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#07)]  
   
-### FromAsync タスクの開始とキャンセル  
- `FromAsync` メソッドから返されるタスクの状態は WaitingForActivation で、タスク作成後のある時点でシステムによって開始されます。  このようなタスクで Start を呼び出そうとすると、例外が発生します。  
+### <a name="starting-and-canceling-fromasync-tasks"></a><span data-ttu-id="698e7-151">FromAsync タスクの開始とキャンセル</span><span class="sxs-lookup"><span data-stu-id="698e7-151">Starting and Canceling FromAsync Tasks</span></span>  
+ <span data-ttu-id="698e7-152">`FromAsync` メソッドから返されるタスクの状態は WaitingForActivation で、タスク作成後のある時点でシステムによって開始されます。</span><span class="sxs-lookup"><span data-stu-id="698e7-152">The task returned by a `FromAsync` method has a status of WaitingForActivation and will be started by the system at some point after the task is created.</span></span> <span data-ttu-id="698e7-153">このようなタスクで Start を呼び出そうとすると、例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="698e7-153">If you attempt to call Start on such a task, an exception will be raised.</span></span>  
   
- 基になる .NET Framework の API は、現時点ではファイルまたはネットワーク I\/O の処理中の取り消しをサポートしていないので、`FromAsync` タスクを取り消すことはできません。  `FromAsync` の呼び出しをカプセル化するメソッドにキャンセル機能を追加することはできますが、キャンセルに応答できるのは `FromAsync` が呼び出される前、または完了した後 \(たとえば、継続タスク上など\) だけです。  
+ <span data-ttu-id="698e7-154">基になる .NET Framework の API は、現時点ではファイルまたはネットワーク I/O の処理中の取り消しをサポートしていないので、`FromAsync` タスクを取り消すことはできません。</span><span class="sxs-lookup"><span data-stu-id="698e7-154">You cannot cancel a `FromAsync` task, because the underlying .NET Framework APIs currently do not support in-progress cancellation of file or network I/O.</span></span> <span data-ttu-id="698e7-155">`FromAsync` の呼び出しをカプセル化するメソッドにキャンセル機能を追加することはできますが、キャンセルに応答できるのは `FromAsync` が呼び出される前、または完了した後 (たとえば、継続タスク上など) だけです。</span><span class="sxs-lookup"><span data-stu-id="698e7-155">You can add cancellation functionality to a method that encapsulates a `FromAsync` call, but you can only respond to the cancellation before `FromAsync` is called or after it completed (for example, in a continuation task).</span></span>  
   
- <xref:System.Net.WebClient> など、EAP をサポートするいくつかのクラスはキャンセルをサポートしていないため、ネイティブのキャンセル機能を統合するには、キャンセル トークンを使用します。  
+ <span data-ttu-id="698e7-156"><xref:System.Net.WebClient> など、EAP をサポートするいくつかのクラスはキャンセルをサポートしていないため、ネイティブのキャンセル機能を統合するには、キャンセル トークンを使用します。</span><span class="sxs-lookup"><span data-stu-id="698e7-156">Some classes that support EAP, for example, <xref:System.Net.WebClient>, do support cancellation, and you can integrate that native cancellation functionality by using cancellation tokens.</span></span>  
   
-## 複雑な EAP 操作のタスクとしての公開  
- TPL は、`FromAsync` 系のメソッドが <xref:System.IAsyncResult> パターンをラップするのとは異なる方法で、イベント ベースの非同期操作をカプセル化するよう特別に設計されたメソッドを提供します。  ただし、TPL は <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=fullName> クラスを提供するので、これを使用して任意の操作セットを <xref:System.Threading.Tasks.Task%601> として表すことができます。  操作は、同期または非同期、I\/O バインドまたは計算主体、またはその両方です。  
+## <a name="exposing-complex-eap-operations-as-tasks"></a><span data-ttu-id="698e7-157">複雑な EAP 操作のタスクとしての公開</span><span class="sxs-lookup"><span data-stu-id="698e7-157">Exposing Complex EAP Operations As Tasks</span></span>  
+ <span data-ttu-id="698e7-158">TPL は、`FromAsync` 系のメソッドが <xref:System.IAsyncResult> パターンをラップするのとは異なる方法で、イベント ベースの非同期操作をカプセル化するよう特別に設計されたメソッドを提供します。</span><span class="sxs-lookup"><span data-stu-id="698e7-158">The TPL does not provide any methods that are specifically designed to encapsulate an event-based asynchronous operation in the same way that the `FromAsync` family of methods wrap the <xref:System.IAsyncResult> pattern.</span></span> <span data-ttu-id="698e7-159">ただし、TPL は <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> クラスを提供するので、これを使用して任意の操作セットを <xref:System.Threading.Tasks.Task%601> として表すことができます。</span><span class="sxs-lookup"><span data-stu-id="698e7-159">However, the TPL does provide the <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> class, which can be used to represent any arbitrary set of operations as a <xref:System.Threading.Tasks.Task%601>.</span></span> <span data-ttu-id="698e7-160">操作は、同期または非同期、I/O バインドまたは計算主体、またはその両方です。</span><span class="sxs-lookup"><span data-stu-id="698e7-160">The operations may be synchronous or asynchronous, and may be I/O bound or compute-bound, or both.</span></span>  
   
- <xref:System.Threading.Tasks.TaskCompletionSource%601> を使用し、非同期の <xref:System.Net.WebClient> 操作を基本的な <xref:System.Threading.Tasks.Task%601> としてクライアント コードに公開する方法を、次の例に示します。  このメソッドを使用すると、Web URL の配列および検索対象の用語または名前を入力し、各サイトで検索用語が使用される回数を返すことができます。  
+ <span data-ttu-id="698e7-161"><xref:System.Threading.Tasks.TaskCompletionSource%601> を使用し、非同期の <xref:System.Net.WebClient> 操作を基本的な <xref:System.Threading.Tasks.Task%601> としてクライアント コードに公開する方法を、次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="698e7-161">The following example shows how to use a <xref:System.Threading.Tasks.TaskCompletionSource%601> to expose a set of asynchronous <xref:System.Net.WebClient> operations to client code as a basic <xref:System.Threading.Tasks.Task%601>.</span></span> <span data-ttu-id="698e7-162">このメソッドを使用すると、Web URL の配列および検索対象の用語または名前を入力し、各サイトで検索用語が使用される回数を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="698e7-162">The method lets you enter an array of Web URLs, and a term or name to search for, and then returns the number of times the search term occurs on each site.</span></span>  
   
  [!code-csharp[FromAsync#10](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/snippet10.cs#10)]
  [!code-vb[FromAsync#10](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/snippet10.vb#10)]  
   
- 追加の例外処理を含み、クライアント コードからメソッドを呼び出す方法を示す、より包括的な例については、「[How to: Wrap EAP Patterns in a Task](../../../docs/standard/parallel-programming/how-to-wrap-eap-patterns-in-a-task.md)」を参照してください。  
+ <span data-ttu-id="698e7-163">追加の例外処理を含む、クライアント コードからメソッドを呼び出す方法を示していますより詳細な例については[する方法: タスクに EAP パターンをラップ](../../../docs/standard/parallel-programming/how-to-wrap-eap-patterns-in-a-task.md)です。</span><span class="sxs-lookup"><span data-stu-id="698e7-163">For a more complete example, which includes additional exception handling and shows how to call the method from client code, see [How to: Wrap EAP Patterns in a Task](../../../docs/standard/parallel-programming/how-to-wrap-eap-patterns-in-a-task.md).</span></span>  
   
- <xref:System.Threading.Tasks.TaskCompletionSource%601> によって作成されたタスクは、その TaskCompletionSource によって開始されるので、ユーザー コードがそのタスクで Start メソッドを呼び出さないようにする必要があります。  
+ <span data-ttu-id="698e7-164"><xref:System.Threading.Tasks.TaskCompletionSource%601> によって作成されたタスクは、その TaskCompletionSource によって開始されるので、ユーザー コードがそのタスクで Start メソッドを呼び出さないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="698e7-164">Remember that any task that is created by a <xref:System.Threading.Tasks.TaskCompletionSource%601> will be started by that TaskCompletionSource and, therefore, user code should not call the Start method on that task.</span></span>  
   
-## タスクを使用した APM パターンの実装  
- 一部のシナリオでは、API で Begin\/End メソッド ペアを使用することにより、<xref:System.IAsyncResult> を直接公開する方が望ましいこともあります。  たとえば、既存の API との一貫性を保ちたいときや、このパターンを必要とする自動ツールがある場合などです。  そのような場合は、タスクを使用し、APM パターンを内部的に実装する方法を簡素化できます。  
+## <a name="implementing-the-apm-pattern-by-using-tasks"></a><span data-ttu-id="698e7-165">タスクを使用した APM パターンの実装</span><span class="sxs-lookup"><span data-stu-id="698e7-165">Implementing the APM Pattern By Using Tasks</span></span>  
+ <span data-ttu-id="698e7-166">一部のシナリオでは、API で Begin/End メソッド ペアを使用することにより、<xref:System.IAsyncResult> を直接公開する方が望ましいこともあります。</span><span class="sxs-lookup"><span data-stu-id="698e7-166">In some scenarios, it may be desirable to directly expose the <xref:System.IAsyncResult> pattern by using Begin/End method pairs in an API.</span></span> <span data-ttu-id="698e7-167">たとえば、既存の API との一貫性を保ちたいときや、このパターンを必要とする自動ツールがある場合などです。</span><span class="sxs-lookup"><span data-stu-id="698e7-167">For example, you may want to maintain consistency with existing APIs, or you may have automated tools that require this pattern.</span></span> <span data-ttu-id="698e7-168">そのような場合は、タスクを使用し、APM パターンを内部的に実装する方法を簡素化できます。</span><span class="sxs-lookup"><span data-stu-id="698e7-168">In such cases, you can use Tasks to simplify how the APM pattern is implemented internally.</span></span>  
   
- タスクを使用し、長期間実行される計算主体のメソッドに APM の Begin\/End メソッド ペアを実装する方法を、次の例に示します。  
+ <span data-ttu-id="698e7-169">タスクを使用し、長期間実行される計算主体のメソッドに APM の Begin/End メソッド ペアを実装する方法を、次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="698e7-169">The following example shows how to use tasks to implement an APM Begin/End method pair for a long-running compute-bound method.</span></span>  
   
  [!code-csharp[FromAsync#09](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/fromasync.cs#09)]
  [!code-vb[FromAsync#09](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#09)]  
   
-## StreamExtensions サンプル コードの使用  
- MSDN Web サイトの「[.NET Framework 4 による並列プログラミングのサンプル](http://go.microsoft.com/fwlink/?LinkID=165717)」 の Streamextensions.cs ファイルには、非同期ファイルおよびネットワーク I\/O に対してタスク オブジェクトを使用する参照実装がいくつか含まれています。  
+## <a name="using-the-streamextensions-sample-code"></a><span data-ttu-id="698e7-170">StreamExtensions サンプル コードの使用</span><span class="sxs-lookup"><span data-stu-id="698e7-170">Using the StreamExtensions Sample Code</span></span>  
+ <span data-ttu-id="698e7-171">Streamextensions.cs ファイルに[、.NET Framework 4 による並列プログラミングのサンプル](http://go.microsoft.com/fwlink/?LinkID=165717)MSDN Web サイト、およびネットワーク I/O 非同期のファイルのタスク オブジェクトを使用するいくつかの参照実装が含まれています。</span><span class="sxs-lookup"><span data-stu-id="698e7-171">The Streamextensions.cs file, in [Samples for Parallel Programming with the .NET Framework 4](http://go.microsoft.com/fwlink/?LinkID=165717) on the MSDN Web site, contains several reference implementations that use Task objects for asynchronous file and network I/O.</span></span>  
   
-## 参照  
- [Task Parallel Library \(TPL\)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
+## <a name="see-also"></a><span data-ttu-id="698e7-172">関連項目</span><span class="sxs-lookup"><span data-stu-id="698e7-172">See Also</span></span>  
+ [<span data-ttu-id="698e7-173">タスク並列ライブラリ (TPL)</span><span class="sxs-lookup"><span data-stu-id="698e7-173">Task Parallel Library (TPL)</span></span>](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)

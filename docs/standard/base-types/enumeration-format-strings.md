@@ -1,56 +1,58 @@
 ---
-title: "列挙型書式指定文字列 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "列挙型書式指定文字列"
-  - "書式指定子, 列挙型書式指定文字列"
-  - "書式指定 [.NET Framework], 列挙型"
+title: "列挙型書式指定文字列"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- format specifiers, enumeration format strings
+- enumeration format strings
+- formatting [.NET Framework], enumeration
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
-caps.latest.revision: 13
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "13"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: e0992d8591711073f9094c29fad980a8e652e686
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 列挙型書式指定文字列
-<xref:System.Enum.ToString%2A?displayProperty=fullName> メソッドを使用すると、列挙型のメンバーの数値、16 進数値、または文字列値を表す新しい文字列オブジェクトを作成できます。  `ToString` メソッドでは、返す値を指定するために列挙型書式指定文字列が使用されます。  
+# <a name="enumeration-format-strings"></a><span data-ttu-id="70029-102">列挙型書式指定文字列</span><span class="sxs-lookup"><span data-stu-id="70029-102">Enumeration Format Strings</span></span>
+<span data-ttu-id="70029-103">使用することができます、<xref:System.Enum.ToString%2A?displayProperty=nameWithType>数値、16 進数、または列挙体のメンバーの文字列値を表す新しい文字列オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="70029-103">You can use the <xref:System.Enum.ToString%2A?displayProperty=nameWithType> method to create a new string object that represents the numeric, hexadecimal, or string value of an enumeration member.</span></span> <span data-ttu-id="70029-104">このメソッドは、列挙型書式指定文字列のいずれかを使って、返される値を指定します。</span><span class="sxs-lookup"><span data-stu-id="70029-104">This method takes one of the enumeration formatting strings to specify the value that you want returned.</span></span>  
   
- 列挙型書式指定文字列と、各書式指定文字列が返す値の一覧を次の表に示します。  列挙型書式指定子では、大文字と小文字は区別されません。  
+ <span data-ttu-id="70029-105">次の表では、列挙型書式指定文字列とそれが返す値を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="70029-105">The following table lists the enumeration formatting strings and the values they return.</span></span> <span data-ttu-id="70029-106">これらの書式指定子では大文字と小文字は区別されません。</span><span class="sxs-lookup"><span data-stu-id="70029-106">These format specifiers are not case-sensitive.</span></span>  
   
-|書式指定文字列|結果|  
-|-------------|--------|  
-|G または g|列挙型エントリを文字列値として表示できる場合は、文字列値として表示されます。文字列値として表示できない場合には、現在のインスタンスの整数値が表示されます。  **Flags** 属性が設定されており、これによって列挙型が定義されている場合には、有効な各エントリの文字列値がコンマで区切られた形式で連結されます。  **Flags** 属性が設定されていない場合には、無効な値が数値エントリとして表示されます。  G 書式指定子の例を次に示します。<br /><br /> [!code-csharp[Formatting.Enum#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#1)]
- [!code-vb[Formatting.Enum#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#1)]|  
-|F または f|列挙エントリを文字列値として表示できる場合には、文字列値として表示されます。  **Flags** 属性がない場合でも、列挙値の各エントリの合計値として値を完全に表示できる場合には、有効な各エントリの文字列値が、コンマで区切った形式で連結されます。  列挙エントリによって値を完全に決定できない場合は、この値は整数値として書式指定されます。  F 書式指定子の例を次に示します。<br /><br /> [!code-csharp[Formatting.Enum#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#2)]
- [!code-vb[Formatting.Enum#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#2)]|  
-|D または d|列挙エントリが、表現可能な最も短い整数値として表示されます。  D 書式指定子の例を次に示します。<br /><br /> [!code-csharp[Formatting.Enum#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#3)]
- [!code-vb[Formatting.Enum#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#3)]|  
-|X または x|列挙エントリが 16 進数値として表示されます。  最小桁数である 8 桁で値を表示するため、必要に応じて先行ゼロが埋め込まれます。  X 書式指定子の例を次に示します。<br /><br /> [!code-csharp[Formatting.Enum#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)]
- [!code-vb[Formatting.Enum#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#4)]|  
+| <span data-ttu-id="70029-107">書式文字列</span><span class="sxs-lookup"><span data-stu-id="70029-107">Format string</span></span> | <span data-ttu-id="70029-108">結果</span><span class="sxs-lookup"><span data-stu-id="70029-108">Result</span></span> |  
+| ------------- | ------ |  
+| <span data-ttu-id="70029-109">G または g</span><span class="sxs-lookup"><span data-stu-id="70029-109">G or g</span></span> | <span data-ttu-id="70029-110">可能な場合には列挙エントリを文字列値として表示し、それ以外の場合は、現在のインスタンスの整数値を表示します。</span><span class="sxs-lookup"><span data-stu-id="70029-110">Displays the enumeration entry as a string value, if possible, and otherwise displays the integer value of the current instance.</span></span> <span data-ttu-id="70029-111">列挙型が **Flags** 属性セットで定義されている場合、有効な各エントリの文字列値はコンマで区切られて連結されます。</span><span class="sxs-lookup"><span data-stu-id="70029-111">If the enumeration is defined with the **Flags** attribute set, the string values of each valid entry are concatenated together, separated by commas.</span></span> <span data-ttu-id="70029-112">**Flags** 属性が設定されていない場合、無効な値が数値エントリとして表示されます。</span><span class="sxs-lookup"><span data-stu-id="70029-112">If the **Flags** attribute is not set, an invalid value is displayed as a numeric entry.</span></span> <span data-ttu-id="70029-113">次の例は、G 書式指定子を示しています。</span><span class="sxs-lookup"><span data-stu-id="70029-113">The following example illustrates the G format specifier.</span></span><br><br><span data-ttu-id="70029-114">[!code-csharp[Formatting.Enum#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#1)] [!code-vb[Formatting.Enum#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#1)]</span><span class="sxs-lookup"><span data-stu-id="70029-114">[!code-csharp[Formatting.Enum#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#1)] [!code-vb[Formatting.Enum#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#1)]</span></span> |  
+| <span data-ttu-id="70029-115">F または f</span><span class="sxs-lookup"><span data-stu-id="70029-115">F or f</span></span> | <span data-ttu-id="70029-116">可能な場合には列挙エントリを文字列値として表示します。</span><span class="sxs-lookup"><span data-stu-id="70029-116">Displays the enumeration entry as a string value, if possible.</span></span> <span data-ttu-id="70029-117">(**Flags** 属性が存在しない場合でも) 値が列挙内のエントリの総和として完全に表示できる場合、有効な各エントリの文字列値はコンマで区切られて連結されます。</span><span class="sxs-lookup"><span data-stu-id="70029-117">If the value can be completely displayed as a summation of the entries in the enumeration (even if the **Flags** attribute is not present), the string values of each valid entry are concatenated together, separated by commas.</span></span> <span data-ttu-id="70029-118">値が列挙エントリによって完全に特定できない場合、その値は整数値として書式設定されます。</span><span class="sxs-lookup"><span data-stu-id="70029-118">If the value cannot be completely determined by the enumeration entries, then the value is formatted as the integer value.</span></span> <span data-ttu-id="70029-119">次の例は、F 書式指定子を示しています。</span><span class="sxs-lookup"><span data-stu-id="70029-119">The following example illustrates the F format specifier.</span></span><br><br><span data-ttu-id="70029-120">[!code-csharp[Formatting.Enum#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#2)] [!code-vb[Formatting.Enum#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#2)]</span><span class="sxs-lookup"><span data-stu-id="70029-120">[!code-csharp[Formatting.Enum#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#2)] [!code-vb[Formatting.Enum#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#2)]</span></span> |  
+| <span data-ttu-id="70029-121">D または d</span><span class="sxs-lookup"><span data-stu-id="70029-121">D or d</span></span> | <span data-ttu-id="70029-122">列挙エントリを整数値として可能な限り短い表現で表示します。</span><span class="sxs-lookup"><span data-stu-id="70029-122">Displays the enumeration entry as an integer value in the shortest representation possible.</span></span> <span data-ttu-id="70029-123">次の例は、D 書式指定子を示しています。</span><span class="sxs-lookup"><span data-stu-id="70029-123">The following example illustrates the D format specifier.</span></span><br><br><span data-ttu-id="70029-124">[!code-csharp[Formatting.Enum#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#3)] [!code-vb[Formatting.Enum#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#3)]</span><span class="sxs-lookup"><span data-stu-id="70029-124">[!code-csharp[Formatting.Enum#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#3)] [!code-vb[Formatting.Enum#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#3)]</span></span> |  
+| <span data-ttu-id="70029-125">X または x</span><span class="sxs-lookup"><span data-stu-id="70029-125">X or x</span></span> | <span data-ttu-id="70029-126">列挙エントリを 16 進値として表示します。</span><span class="sxs-lookup"><span data-stu-id="70029-126">Displays the enumeration entry as a hexadecimal value.</span></span> <span data-ttu-id="70029-127">値は、最小の 8 桁の長さにするため、必要に応じて先頭にゼロを付けて表されます。</span><span class="sxs-lookup"><span data-stu-id="70029-127">The value is represented with leading zeros as necessary, to ensure that the value is a minimum eight digits in length.</span></span> <span data-ttu-id="70029-128">次の例は、X 書式指定子を示しています。</span><span class="sxs-lookup"><span data-stu-id="70029-128">The following example illustrates the X format specifier.</span></span><br /><br /> <span data-ttu-id="70029-129">[!code-csharp[Formatting.Enum#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)] [!code-vb[Formatting.Enum#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#4)]</span><span class="sxs-lookup"><span data-stu-id="70029-129">[!code-csharp[Formatting.Enum#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)] [!code-vb[Formatting.Enum#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#4)]</span></span> |  
   
-## 例  
- `Red`、`Blue`、および `Green` の 3 つのエントリから成る `Colors` という列挙型を定義する例を次に示します。  
+## <a name="example"></a><span data-ttu-id="70029-130">例</span><span class="sxs-lookup"><span data-stu-id="70029-130">Example</span></span>  
+ <span data-ttu-id="70029-131">次の例では、`Red`、`Blue`、`Green` の 3 つのエントリから構成される、`Colors` と呼ばれる列挙型を定義します。</span><span class="sxs-lookup"><span data-stu-id="70029-131">The following example defines an enumeration called `Colors` that consists of three entries: `Red`, `Blue`, and `Green`.</span></span>  
   
  [!code-csharp[Formatting.Enum#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#5)]
  [!code-vb[Formatting.Enum#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#5)]  
   
- 列挙値の定義が完了したら、次の方法でインスタンスを宣言できます。  
+ <span data-ttu-id="70029-132">列挙型を定義すると、次のようにインスタンスを宣言できます。</span><span class="sxs-lookup"><span data-stu-id="70029-132">After the enumeration is defined, an instance can be declared in the following manner.</span></span>  
   
  [!code-csharp[Formatting.Enum#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#6)]
  [!code-vb[Formatting.Enum#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#6)]  
   
- その後、`Color.ToString(System.String)` メソッドを使用して、それに渡される書式指定子に応じてさまざまな方法で列挙値を表示できます。  
+ <span data-ttu-id="70029-133">これで `Color.ToString(System.String)` メソッドを使用して、渡された書式指定子に応じて、列挙値をさまざまな方法で表示することができます。</span><span class="sxs-lookup"><span data-stu-id="70029-133">The `Color.ToString(System.String)` method can then be used to display the enumeration value in different ways, depending on the format specifier passed to it.</span></span>  
   
  [!code-csharp[Formatting.Enum#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#7)]
  [!code-vb[Formatting.Enum#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#7)]  
   
-## 参照  
- [型の書式設定](../../../docs/standard/base-types/formatting-types.md)
+## <a name="see-also"></a><span data-ttu-id="70029-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="70029-134">See Also</span></span>  
+ [<span data-ttu-id="70029-135">型の書式設定</span><span class="sxs-lookup"><span data-stu-id="70029-135">Formatting Types</span></span>](../../../docs/standard/base-types/formatting-types.md)

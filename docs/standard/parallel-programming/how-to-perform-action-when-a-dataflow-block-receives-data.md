@@ -1,61 +1,67 @@
 ---
-title: "How to: Perform Action When a Dataflow Block Receives Data | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Task Parallel Library, dataflows"
-  - "TPL dataflow library, receiving data"
+title: "方法: データフロー ブロックでデータを受信したときにアクションを実行する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Task Parallel Library, dataflows
+- TPL dataflow library, receiving data
 ms.assetid: fc2585dc-965e-4632-ace7-73dd02684ed3
-caps.latest.revision: 11
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: d049d20f5e685096a72857cd18a89688633883c3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# How to: Perform Action When a Dataflow Block Receives Data
-*実行データ フローのブロック型は* データを受け取ったときにユーザーが指定したデリゲートを呼び出します。  <xref:System.Threading.Tasks.Dataflow.ActionBlock%601?displayProperty=fullName>、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=fullName>と <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=fullName> クラスは実行データ フローのブロック型です。  `delegate` の実行データ フローのブロックに処理関数を提供するとキーワード \([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]の`Sub`\)、<xref:System.Action%601>、<xref:System.Func%602>、またはラムダ式を使用できます。  このドキュメントでは、実行ブロックにアクションを実行する場合に <xref:System.Func%602> とラムダ式を使用する方法について説明します。  
+# <a name="how-to-perform-action-when-a-dataflow-block-receives-data"></a><span data-ttu-id="cc9ce-102">方法: データフロー ブロックでデータを受信したときにアクションを実行する</span><span class="sxs-lookup"><span data-stu-id="cc9ce-102">How to: Perform Action When a Dataflow Block Receives Data</span></span>
+<span data-ttu-id="cc9ce-103">"*実行データフロー ブロック*" の型は、データを受信したときに、ユーザーが指定したデリゲートを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-103">*Execution dataflow block* types call a user-provided delegate when they receive data.</span></span> <span data-ttu-id="cc9ce-104"><xref:System.Threading.Tasks.Dataflow.ActionBlock%601?displayProperty=nameWithType>、 <xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType>、および<xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=nameWithType>クラスは、実行データ フロー ブロックの型。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-104">The <xref:System.Threading.Tasks.Dataflow.ActionBlock%601?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType>, and <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=nameWithType> classes are execution dataflow block types.</span></span> <span data-ttu-id="cc9ce-105">使用することができます、`delegate`キーワード (`Sub`で[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)])、 <xref:System.Action%601>、 <xref:System.Func%602>、または実行データフロー ブロックを処理関数を提供する場合は、ラムダ式。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-105">You can use the `delegate` keyword (`Sub` in [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]), <xref:System.Action%601>, <xref:System.Func%602>, or a lambda expression when you provide a work function to an execution dataflow block.</span></span> <span data-ttu-id="cc9ce-106">このドキュメントを使用する方法について説明<xref:System.Func%602>と実行ブロックで操作を実行するラムダ式。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-106">This document describes how to use <xref:System.Func%602> and lambda expressions to perform action in execution blocks.</span></span>  
   
 > [!TIP]
->  TPL データ フローのライブラリ \(<xref:System.Threading.Tasks.Dataflow?displayProperty=fullName> 名前空間\) は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と一緒に配布されません。  <xref:System.Threading.Tasks.Dataflow> 名前空間をインストールするには、[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)] でプロジェクトを開き、\[プロジェクト\] メニューの **\[NuGet パッケージの管理\]** をクリックし、`Microsoft.Tpl.Dataflow` パッケージをオンラインで検索します。  
+>  <span data-ttu-id="cc9ce-107">TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> 名前空間) は [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] と一緒に配布されません。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-107">The TPL Dataflow Library (<xref:System.Threading.Tasks.Dataflow?displayProperty=nameWithType> namespace) is not distributed with the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].</span></span> <span data-ttu-id="cc9ce-108">インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-108">To install the <xref:System.Threading.Tasks.Dataflow> namespace, open your project in [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], choose **Manage NuGet Packages** from the Project menu, and search online for the `Microsoft.Tpl.Dataflow` package.</span></span>  
   
-## 使用例  
- 次の例は、ディスク上のファイルの読み取りにデータ フローを使用し、ゼロと同じファイルのバイト数を計算します。  このパラメーターは、ファイルを読み取り、それをコンソールにゼロ バイト数を印刷するために、バイト数を計算するために <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> と <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> を使用します。  <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> オブジェクトはブロックがデータを受信するときに処理を実行するに <xref:System.Func%602> オブジェクトを指定します。  <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> オブジェクトは、コンソールに読み取り、バイト数を出力するためにラムダ式を使用します。  
+## <a name="example"></a><span data-ttu-id="cc9ce-109">例</span><span class="sxs-lookup"><span data-stu-id="cc9ce-109">Example</span></span>  
+ <span data-ttu-id="cc9ce-110">次の例では、データフローを使用してディスクからファイルを読み取り、ファイル内のバイト数がゼロに等しい件数を計算します。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-110">The following example uses dataflow to read a file from disk and computes the number of bytes in that file that are equal to zero.</span></span> <span data-ttu-id="cc9ce-111">使用して<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>、ファイルを読み取り、ゼロのバイト数を計算して<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>をコンソールにゼロのバイト数を印刷します。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-111">It uses <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> to read the file and compute the number of zero bytes, and <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> to print the number of zero bytes to the console.</span></span> <span data-ttu-id="cc9ce-112"><xref:System.Threading.Tasks.Dataflow.TransformBlock%602>オブジェクトを指定します、<xref:System.Func%602>ブロックのデータの受信時に作業を実行するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-112">The <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> object specifies a <xref:System.Func%602> object to perform work when the blocks receive data.</span></span> <span data-ttu-id="cc9ce-113"><xref:System.Threading.Tasks.Dataflow.ActionBlock%601>オブジェクトでは、ラムダ式を使用して、読み取られるゼロのバイト数をコンソールに出力します。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-113">The <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> object uses a lambda expression to print to the console the number of zero bytes that are read.</span></span>  
   
  [!code-csharp[TPLDataflow_ExecutionBlocks#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_executionblocks/cs/dataflowexecutionblocks.cs#1)]
  [!code-vb[TPLDataflow_ExecutionBlocks#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_executionblocks/vb/dataflowexecutionblocks.vb#1)]  
   
- <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> オブジェクトにラムダ式を使用できますが `CountBytes` のメソッドが他のコードを有効にするために、この例では <xref:System.Func%602>。  <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> オブジェクトは、実行する作業がこのタスクに固有であり、他のコードから役に立つとは異なります。ラムダ式を使用します。  ラムダ式は、タスク並列ライブラリでどのように動作するか詳細については、「[Lambda Expressions in PLINQ and TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)」を参照してください。  
+ <span data-ttu-id="cc9ce-114">ラムダ式を指定できますが、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>オブジェクト、この例では<xref:System.Func%602>を使用するには、その他のコードを有効にする、`CountBytes`メソッドです。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-114">Although you can provide a lambda expression to a <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> object, this example uses <xref:System.Func%602> to enable other code to use the `CountBytes` method.</span></span> <span data-ttu-id="cc9ce-115"><xref:System.Threading.Tasks.Dataflow.ActionBlock%601>がであるため実行される作業は、このタスクを特定すると思われるその他のコードからに、オブジェクトは、ラムダ式を使用します。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-115">The <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> object uses a lambda expression because the work to be performed is specific to this task and is not likely to be useful from other code.</span></span> <span data-ttu-id="cc9ce-116">タスク並列ライブラリでのラムダ式の動作の詳細については、「[PLINQ および TPL のラムダ式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-116">For more information about how lambda expressions work in the Task Parallel Library, see [Lambda Expressions in PLINQ and TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).</span></span>  
   
- [データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) ドキュメントのデリゲート型の概要セクションは、<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>と <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> オブジェクトに割り当てることのできるデリゲート型をまとめたものです。  この表では、デリゲート型を同期的または非同期的に実行するかどうかを指定します。  
+ <span data-ttu-id="cc9ce-117">デリゲート型の概要 セクションで、[データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)ドキュメントを提供できるデリゲート型の概要を示します<xref:System.Threading.Tasks.Dataflow.ActionBlock%601>、 <xref:System.Threading.Tasks.Dataflow.TransformBlock%602>、および<xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-117">The section Summary of Delegate Types in the [Dataflow](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) document summarizes the delegate types that you can provide to <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602>, and <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> objects.</span></span> <span data-ttu-id="cc9ce-118">表では、デリゲート型が同期的または非同期的に動作するかどうかについても示しています。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-118">The table also specifies whether the delegate type operates synchronously or asynchronously.</span></span>  
   
-## コードのコンパイル  
- プログラム例をコピーし、Visual Studio のプロジェクトに貼り付けるか、`DataflowExecutionBlocks.cs` \([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]の`DataflowExecutionBlocks.vb`\) という、Visual Studio のコマンド プロンプト ウィンドウで次のコマンドを実行してファイルに貼り付けます。  
+## <a name="compiling-the-code"></a><span data-ttu-id="cc9ce-119">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="cc9ce-119">Compiling the Code</span></span>  
+ <span data-ttu-id="cc9ce-120">コード例をコピーし、Visual Studio プロジェクトに貼り付けるか、`DataflowExecutionBlocks.cs` ([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] では `DataflowExecutionBlocks.vb`) という名前のファイルに貼り付けてから、Visual Studio のコマンド プロンプト ウィンドウで次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-120">Copy the example code and paste it in a Visual Studio project, or paste it in a file that is named `DataflowExecutionBlocks.cs` (`DataflowExecutionBlocks.vb` for [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]), and then run the following command in a Visual Studio Command Prompt window.</span></span>  
   
  [!INCLUDE[csprcs](../../../includes/csprcs-md.md)]  
   
- **csc.exe \/r:System.Threading.Tasks.Dataflow.dll DataflowExecutionBlocks.cs**  
+ <span data-ttu-id="cc9ce-121">**csc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowExecutionBlocks.cs**</span><span class="sxs-lookup"><span data-stu-id="cc9ce-121">**csc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowExecutionBlocks.cs**</span></span>  
   
  [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]  
   
- **vbc.exe \/r:System.Threading.Tasks.Dataflow.dll DataflowExecutionBlocks.vb**  
+ <span data-ttu-id="cc9ce-122">**vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowExecutionBlocks.vb**</span><span class="sxs-lookup"><span data-stu-id="cc9ce-122">**vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowExecutionBlocks.vb**</span></span>  
   
-## 信頼性の高いプログラミング  
- この例では <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> オブジェクトからデータ フローのブロックのタスクを同期的に実行 <xref:System.Func%602> 型のデリゲートを示します。  データ フローのブロックを非同期的に実行できるようにするには、データ フローのブロックに <xref:System.Func%601> 型のデリゲートを提供します。  データ フローのブロックを非同期的に実行すると、データ フローのブロックのタスクは <xref:System.Threading.Tasks.Task%601> から返されたオブジェクトのみが完了すると完了します。  次の例では `CountBytes` のメソッドを変更し、[async](../Topic/async%20\(C%23%20Reference\).md) を使用し、非同期的にあるバイト数の合計を計算する [待機します。](../Topic/await%20\(C%23%20Reference\).md) の演算子 \([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]の[Async](../Topic/Async%20\(Visual%20Basic\).md) と [待機します。](../Topic/Await%20Operator%20\(Visual%20Basic\).md)\) を指定されたファイルにゼロを返します。  <xref:System.IO.FileStream.ReadAsync%2A> メソッドは、ファイルの読み取り操作を非同期的に実行します。  
+## <a name="robust-programming"></a><span data-ttu-id="cc9ce-123">信頼性の高いプログラミング</span><span class="sxs-lookup"><span data-stu-id="cc9ce-123">Robust Programming</span></span>  
+ <span data-ttu-id="cc9ce-124">この例では、型のデリゲート<xref:System.Func%602>を<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>データ フロー ブロックのタスクを同期的に実行するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-124">This example provides a delegate of type <xref:System.Func%602> to the <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> object to perform the task of the dataflow block synchronously.</span></span> <span data-ttu-id="cc9ce-125">非同期的に動作するデータフロー ブロックを有効にするには、型のデリゲートを指定<xref:System.Func%601>データ フロー ブロックにします。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-125">To enable the dataflow block to behave asynchronously, provide a delegate of type <xref:System.Func%601> to the dataflow block.</span></span> <span data-ttu-id="cc9ce-126">データ フロー ブロックは非同期に動作する、データ フロー ブロックのタスクは完了の場合にのみ、返された<xref:System.Threading.Tasks.Task%601>オブジェクトが完了するとします。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-126">When a dataflow block behaves asynchronously, the task of the dataflow block is complete only when the returned <xref:System.Threading.Tasks.Task%601> object finishes.</span></span> <span data-ttu-id="cc9ce-127">次の例では、`CountBytes` メソッドを変更して、[async](~/docs/csharp/language-reference/keywords/async.md) 演算子と [await](~/docs/csharp/language-reference/keywords/await.md) 演算子 ([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] では [Async](~/docs/visual-basic/language-reference/modifiers/async.md) と [Await](~/docs/visual-basic/language-reference/operators/await-operator.md)) を使用して、提供されたファイル内のゼロ バイトの件数の合計を非同期的に計算します。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-127">The following example modifies the `CountBytes` method and uses the [async](~/docs/csharp/language-reference/keywords/async.md) and [await](~/docs/csharp/language-reference/keywords/await.md) operators ([Async](~/docs/visual-basic/language-reference/modifiers/async.md) and [Await](~/docs/visual-basic/language-reference/operators/await-operator.md) in [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) to asynchronously compute the total number of bytes that are zero in the provided file.</span></span> <span data-ttu-id="cc9ce-128"><xref:System.IO.FileStream.ReadAsync%2A>メソッドは非同期的にファイル読み取り操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-128">The <xref:System.IO.FileStream.ReadAsync%2A> method performs file read operations asynchronously.</span></span>  
   
  [!code-csharp[TPLDataflow_ExecutionBlocks#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_executionblocks/cs/dataflowexecutionblocks.cs#2)]
  [!code-vb[TPLDataflow_ExecutionBlocks#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_executionblocks/vb/dataflowexecutionblocks.vb#2)]  
   
- 実行データ フローのブロックで操作を非同期にラムダ式を使用できます。  次の例では、非同期的に作業を行うためにラムダ式を使用する場合は、前の例で使用した <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> オブジェクトを変更します。  
+ <span data-ttu-id="cc9ce-129">実行データフロー ブロックでアクションを実行するために、非同期ラムダ式を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-129">You can also use asynchronous lambda expressions to perform action in an execution dataflow block.</span></span> <span data-ttu-id="cc9ce-130">次の例を変更、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>作業を非同期的に実行する、ラムダ式を使用するように、前の例で使用されるオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cc9ce-130">The following example modifies the <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> object that is used in the previous example so that it uses a lambda expression to perform the work asynchronously.</span></span>  
   
  [!code-csharp[TPLDataflow_ExecutionBlocks#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_executionblocks/cs/dataflowexecutionblocks.cs#3)]
  [!code-vb[TPLDataflow_ExecutionBlocks#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_executionblocks/vb/dataflowexecutionblocks.vb#3)]  
   
-## 参照  
- [データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+## <a name="see-also"></a><span data-ttu-id="cc9ce-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="cc9ce-131">See Also</span></span>  
+ [<span data-ttu-id="cc9ce-132">データフロー</span><span class="sxs-lookup"><span data-stu-id="cc9ce-132">Dataflow</span></span>](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

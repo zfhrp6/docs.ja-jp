@@ -1,90 +1,88 @@
 ---
-title: "単純型を推論するときの規則 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: "単純型を推論するときの規則"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-caps.latest.revision: 3
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: 9a74d111720eb9436f0cd71fd5acef7ea10939c0
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 単純型を推論するときの規則
-Describes how the <xref:System.Xml.Schema.XmlSchemaInference> class infers the data type for attributes and elements.  
+# <a name="rules-for-inferring-simple-types"></a><span data-ttu-id="50728-102">単純型を推論するときの規則</span><span class="sxs-lookup"><span data-stu-id="50728-102">Rules for Inferring Simple Types</span></span>
+<span data-ttu-id="50728-103"><xref:System.Xml.Schema.XmlSchemaInference> クラスが属性と要素のデータ型を推論する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="50728-103">Describes how the <xref:System.Xml.Schema.XmlSchemaInference> class infers the data type for attributes and elements.</span></span>  
   
- <xref:System.Xml.Schema.XmlSchemaInference> クラスは、属性と要素のデータ型を単純型として推論します。  このセクションでは、推論される可能性がある型、複数の異なる値を 1 つの型に調整する方法、スキーマ定義 `xsi` 属性の取り扱いについて説明します。  
+ <span data-ttu-id="50728-104"><xref:System.Xml.Schema.XmlSchemaInference> クラスは、属性と要素のデータ型を単純型として推論します。</span><span class="sxs-lookup"><span data-stu-id="50728-104">The <xref:System.Xml.Schema.XmlSchemaInference> class infers the data type for attributes and elements as simple types.</span></span> <span data-ttu-id="50728-105">このセクションでは、推論される可能性がある型、複数の異なる値を 1 つの型に調整する方法、スキーマ定義 `xsi` 属性の取り扱いについて説明します。</span><span class="sxs-lookup"><span data-stu-id="50728-105">This section describes the potential inferred types, how multiple differing values are reconciled to a single type, and how schema-defining `xsi` attributes are handled.</span></span>  
   
-## 推論型  
- <xref:System.Xml.Schema.XmlSchemaInference> クラスは、要素値と属性値を単純型として推論し、生成されるスキーマに型属性をインクルードします。  推論型はすべて単純型です。  生成されるスキーマの一部として基本型またはファセットがインクルードされることはありません。  
+## <a name="inferred-types"></a><span data-ttu-id="50728-106">推論型</span><span class="sxs-lookup"><span data-stu-id="50728-106">Inferred Types</span></span>  
+ <span data-ttu-id="50728-107"><xref:System.Xml.Schema.XmlSchemaInference> クラスは、要素値と属性値を単純型として推論し、生成されるスキーマに型属性をインクルードします。</span><span class="sxs-lookup"><span data-stu-id="50728-107">The <xref:System.Xml.Schema.XmlSchemaInference> class infers element and attribute values as simple types and includes a type attribute in the resulting schema.</span></span> <span data-ttu-id="50728-108">推論型はすべて単純型です。</span><span class="sxs-lookup"><span data-stu-id="50728-108">All inferred types are simple types.</span></span> <span data-ttu-id="50728-109">生成されるスキーマの一部として基本型またはファセットがインクルードされることはありません。</span><span class="sxs-lookup"><span data-stu-id="50728-109">No base types or facets are included as part of the resulting schema.</span></span>  
   
- XML ドキュメントで値が検出されるたびに、その値が個別に調べられます。  値が調べられるときに、その値の型が推論されます。  属性または要素の型が既に推論されており、その属性または要素に対して新たに検出された値が現在推論されている型と一致しない場合、<xref:System.Xml.Schema.XmlSchemaInference> クラスは、一定の規則に基づいてその型を昇格させます。  型を昇格させるときの規則については、このトピックの「型の昇格」のセクションで説明します。  
+ <span data-ttu-id="50728-110">XML ドキュメントで値が検出されるたびに、その値が個別に調べられます。</span><span class="sxs-lookup"><span data-stu-id="50728-110">Values are examined individually as they are encountered in the XML document.</span></span> <span data-ttu-id="50728-111">値が調べられるときに、その値の型が推論されます。</span><span class="sxs-lookup"><span data-stu-id="50728-111">The type is inferred for a value at the time it is examined.</span></span> <span data-ttu-id="50728-112">属性または要素の型が既に推論されており、その属性または要素に対して新たに検出された値が現在推論されている型と一致しない場合、<xref:System.Xml.Schema.XmlSchemaInference> クラスは、一定の規則に基づいてその型を昇格させます。</span><span class="sxs-lookup"><span data-stu-id="50728-112">If a type has been inferred for an attribute or element, and a value for the attribute or element is encountered that does not match the currently inferred type, the <xref:System.Xml.Schema.XmlSchemaInference> class promotes the type for each of a set of rules.</span></span> <span data-ttu-id="50728-113">型を昇格させるときの規則については、このトピックの「型の昇格」のセクションで説明します。</span><span class="sxs-lookup"><span data-stu-id="50728-113">These rules are discussed in the Type Promotion section, later in this topic.</span></span>  
   
- 生成されるスキーマに含まれる可能性がある推論型を次の表に示します。  
+ <span data-ttu-id="50728-114">生成されるスキーマに含まれる可能性がある推論型を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="50728-114">The following table lists the possible inferred types for the resulting schema.</span></span>  
   
-|単純型|説明|  
-|---------|--------|  
-|boolean|true、false、0、1|  
-|byte|\-128 ～ 127 の整数|  
-|unsignedByte|0 ～ 255 の整数|  
-|short|\-32768 ～ 32767 の整数|  
-|unsignedShort|0 ～ 65535 の整数|  
-|int|\-2147483648 ～ 2147483647 の整数|  
-|unsignedInt|0 ～ 4294967295 の整数|  
-|long|\-9223372036854775808 ～ 9223372036854775807 の整数|  
-|unsignedLong|0 ～ 18446744073709551615 の整数|  
-|整数|先頭に "\-" 記号が付く可能性がある有限桁の数値。|  
-|decimal|精度が 0 ～ 28 桁の数値。|  
-|float|小数点数。指数を表す整数値を伴った、省略可能な "E" または "e" を付ける表記法もあります。  仮数部の範囲は \-16777216 ～ 16777216 です。  指数部の範囲は \-149 ～ 104 です。<br /><br /> float では、無限大および非数を表す特殊値が使用可能です。  float の特殊値は、0、\-0、INF、\-INF、NaN です。|  
-|double|仮数部の範囲が \-9007199254740992 ～ 9007199254740992 で、指数部の範囲が \-1075 ～ 970 である点を除いて、float と同じです。<br /><br /> double では、無限大および非数を表す特殊値が使えます。  float の特殊値は、0、\-0、INF、\-INF、NaN です。|  
-|duration|W3C の持続時間形式|  
-|dateTime|W3C の日付時刻形式|  
-|時間|W3C の時刻形式|  
-|date|年に使用できる値は 0001 ～ 9999 に制限されています。|  
-|gYearMonth|W3C のグレゴリオ暦の年月形式|  
-|string|1 つ以上の Unicode 文字|  
+|<span data-ttu-id="50728-115">単純型</span><span class="sxs-lookup"><span data-stu-id="50728-115">Simple Type</span></span>|<span data-ttu-id="50728-116">説明</span><span class="sxs-lookup"><span data-stu-id="50728-116">Description</span></span>|  
+|-----------------|-----------------|  
+|<span data-ttu-id="50728-117">boolean</span><span class="sxs-lookup"><span data-stu-id="50728-117">boolean</span></span>|<span data-ttu-id="50728-118">true、false、0、1</span><span class="sxs-lookup"><span data-stu-id="50728-118">True, false, 0, 1.</span></span>|  
+|<span data-ttu-id="50728-119">byte</span><span class="sxs-lookup"><span data-stu-id="50728-119">byte</span></span>|<span data-ttu-id="50728-120">-128 ～ 127 の整数</span><span class="sxs-lookup"><span data-stu-id="50728-120">Integers in the range of –128 to 127.</span></span>|  
+|<span data-ttu-id="50728-121">unsignedByte</span><span class="sxs-lookup"><span data-stu-id="50728-121">unsignedByte</span></span>|<span data-ttu-id="50728-122">0 ～ 255 の整数</span><span class="sxs-lookup"><span data-stu-id="50728-122">Integers in the range of 0 to 255.</span></span>|  
+|<span data-ttu-id="50728-123">short</span><span class="sxs-lookup"><span data-stu-id="50728-123">short</span></span>|<span data-ttu-id="50728-124">-32768 ～ 32767 の整数</span><span class="sxs-lookup"><span data-stu-id="50728-124">Integers in the range of –32768 to 32767.</span></span>|  
+|<span data-ttu-id="50728-125">unsignedShort</span><span class="sxs-lookup"><span data-stu-id="50728-125">unsignedShort</span></span>|<span data-ttu-id="50728-126">0 ～ 65535 の整数</span><span class="sxs-lookup"><span data-stu-id="50728-126">Integers in the range of 0 to 65535.</span></span>|  
+|<span data-ttu-id="50728-127">int</span><span class="sxs-lookup"><span data-stu-id="50728-127">int</span></span>|<span data-ttu-id="50728-128">-2147483648 ～ 2147483647 の整数</span><span class="sxs-lookup"><span data-stu-id="50728-128">Integers in the range of –2147483648 to 2147483647.</span></span>|  
+|<span data-ttu-id="50728-129">unsignedInt</span><span class="sxs-lookup"><span data-stu-id="50728-129">unsignedInt</span></span>|<span data-ttu-id="50728-130">0 ～ 4294967295 の整数</span><span class="sxs-lookup"><span data-stu-id="50728-130">Integers in the range of 0 to 4294967295.</span></span>|  
+|<span data-ttu-id="50728-131">long</span><span class="sxs-lookup"><span data-stu-id="50728-131">long</span></span>|<span data-ttu-id="50728-132">-9223372036854775808 ～ 9223372036854775807 の整数</span><span class="sxs-lookup"><span data-stu-id="50728-132">Integers in the range of –9223372036854775808 to 9223372036854775807.</span></span>|  
+|<span data-ttu-id="50728-133">unsignedLong</span><span class="sxs-lookup"><span data-stu-id="50728-133">unsignedLong</span></span>|<span data-ttu-id="50728-134">0 ～ 18446744073709551615 の整数</span><span class="sxs-lookup"><span data-stu-id="50728-134">Integers in the range of 0 to 18446744073709551615.</span></span>|  
+|<span data-ttu-id="50728-135">整数</span><span class="sxs-lookup"><span data-stu-id="50728-135">integer</span></span>|<span data-ttu-id="50728-136">先頭に "-" 記号が付く可能性がある有限桁の数値。</span><span class="sxs-lookup"><span data-stu-id="50728-136">A finite number of digits possibly prefixed with "-".</span></span>|  
+|<span data-ttu-id="50728-137">decimal</span><span class="sxs-lookup"><span data-stu-id="50728-137">decimal</span></span>|<span data-ttu-id="50728-138">精度が 0 ～ 28 桁の数値。</span><span class="sxs-lookup"><span data-stu-id="50728-138">Numerical values that contain from 0 to 28 digits of precision.</span></span>|  
+|<span data-ttu-id="50728-139">float</span><span class="sxs-lookup"><span data-stu-id="50728-139">float</span></span>|<span data-ttu-id="50728-140">小数点数。指数を表す整数値を伴った、省略可能な "E" または "e" を付ける表記法もあります。</span><span class="sxs-lookup"><span data-stu-id="50728-140">Decimals optionally followed by "E" or "e" followed by an integer value representing the exponent.</span></span> <span data-ttu-id="50728-141">仮数部の範囲は -16777216 ～ 16777216 です。</span><span class="sxs-lookup"><span data-stu-id="50728-141">Decimal values can be in the range of -16777216 to 16777216.</span></span> <span data-ttu-id="50728-142">指数部の範囲は -149 ～ 104 です。</span><span class="sxs-lookup"><span data-stu-id="50728-142">Exponent values can be in the range of –149 to 104.</span></span><br /><br /> <span data-ttu-id="50728-143">float では、無限大および非数を表す特殊値が使用可能です。</span><span class="sxs-lookup"><span data-stu-id="50728-143">Float allows for special values to represent infinity and non-numeric values.</span></span> <span data-ttu-id="50728-144">float の特殊値は、0、-0、INF、-INF、NaN です。</span><span class="sxs-lookup"><span data-stu-id="50728-144">Special values for float are: 0, -0, INF, -INF, NaN.</span></span>|  
+|<span data-ttu-id="50728-145">double</span><span class="sxs-lookup"><span data-stu-id="50728-145">double</span></span>|<span data-ttu-id="50728-146">仮数部の範囲が -9007199254740992 ～ 9007199254740992 で、指数部の範囲が -1075 ～ 970 である点を除いて、float と同じです。</span><span class="sxs-lookup"><span data-stu-id="50728-146">The same as float except decimal values can be in the range of -9007199254740992 to 9007199254740992, and exponent values can be in the range of –1075 to 970.</span></span><br /><br /> <span data-ttu-id="50728-147">double では、無限大および非数を表す特殊値が使えます。</span><span class="sxs-lookup"><span data-stu-id="50728-147">Double allows for special values to represent infinity and non-numeric values.</span></span> <span data-ttu-id="50728-148">float の特殊値は、0、-0、INF、-INF、NaN です。</span><span class="sxs-lookup"><span data-stu-id="50728-148">Special values for float are: 0, -0, INF, -INF, NaN.</span></span>|  
+|<span data-ttu-id="50728-149">duration</span><span class="sxs-lookup"><span data-stu-id="50728-149">duration</span></span>|<span data-ttu-id="50728-150">W3C の持続時間形式</span><span class="sxs-lookup"><span data-stu-id="50728-150">The W3C duration format.</span></span>|  
+|<span data-ttu-id="50728-151">dateTime</span><span class="sxs-lookup"><span data-stu-id="50728-151">dateTime</span></span>|<span data-ttu-id="50728-152">W3C の日付時刻形式</span><span class="sxs-lookup"><span data-stu-id="50728-152">The W3C dateTime format.</span></span>|  
+|<span data-ttu-id="50728-153">時間</span><span class="sxs-lookup"><span data-stu-id="50728-153">time</span></span>|<span data-ttu-id="50728-154">W3C の時刻形式</span><span class="sxs-lookup"><span data-stu-id="50728-154">The W3C time format.</span></span>|  
+|<span data-ttu-id="50728-155">date</span><span class="sxs-lookup"><span data-stu-id="50728-155">date</span></span>|<span data-ttu-id="50728-156">年に使用できる値は 0001 ～ 9999 に制限されています。</span><span class="sxs-lookup"><span data-stu-id="50728-156">Year values are restricted from 0001 to 9999.</span></span>|  
+|<span data-ttu-id="50728-157">gYearMonth</span><span class="sxs-lookup"><span data-stu-id="50728-157">gYearMonth</span></span>|<span data-ttu-id="50728-158">W3C のグレゴリオ暦の年月形式</span><span class="sxs-lookup"><span data-stu-id="50728-158">The W3C Gregorian month and year format.</span></span>|  
+|<span data-ttu-id="50728-159">string</span><span class="sxs-lookup"><span data-stu-id="50728-159">string</span></span>|<span data-ttu-id="50728-160">1 つ以上の Unicode 文字</span><span class="sxs-lookup"><span data-stu-id="50728-160">One or more Unicode characters.</span></span>|  
   
-## 型の上位変換  
- <xref:System.Xml.Schema.XmlSchemaInference> クラスは属性値と要素値を 1 つずつ調べます。  値が検出されると、最も制限の厳しい、符号なし型が推論されます。  属性または要素の型が推論されている状態で、現在推論されている型と一致しない新しい値が検出されると、推論型が現在の推論型と新しい値の両方に当てはまる新しい型に昇格します。  <xref:System.Xml.Schema.XmlSchemaInference> クラスは、推論型を昇格させるときに前の値を考慮します。  
+## <a name="type-promotion"></a><span data-ttu-id="50728-161">型の上位変換</span><span class="sxs-lookup"><span data-stu-id="50728-161">Type Promotion</span></span>  
+ <span data-ttu-id="50728-162"><xref:System.Xml.Schema.XmlSchemaInference> クラスは属性値と要素値を 1 つずつ調べます。</span><span class="sxs-lookup"><span data-stu-id="50728-162">The <xref:System.Xml.Schema.XmlSchemaInference> class examines attribute and element values one at a time.</span></span> <span data-ttu-id="50728-163">値が検出されると、最も制限の厳しい、符号なし型が推論されます。</span><span class="sxs-lookup"><span data-stu-id="50728-163">As values are encountered, the most restrictive, unsigned type is inferred.</span></span> <span data-ttu-id="50728-164">属性または要素の型が推論されている状態で、現在推論されている型と一致しない新しい値が検出されると、推論型が現在の推論型と新しい値の両方に当てはまる新しい型に昇格します。</span><span class="sxs-lookup"><span data-stu-id="50728-164">If a type has been inferred for an attribute or element, and a new value is encountered that does not match the currently inferred type, the inferred type is promoted to a new type that applies to both the currently inferred type and the new value.</span></span> <span data-ttu-id="50728-165"><xref:System.Xml.Schema.XmlSchemaInference> クラスは、推論型を昇格させるときに前の値を考慮します。</span><span class="sxs-lookup"><span data-stu-id="50728-165">The <xref:System.Xml.Schema.XmlSchemaInference> class does consider previous values when promoting the inferred type.</span></span>  
   
- たとえば、2 つの XML ドキュメントから取得された次の XML フラグメントを見てみましょう。  
+ <span data-ttu-id="50728-166">たとえば、2 つの XML ドキュメントから取得された次の XML フラグメントを見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="50728-166">For example, consider the following XML fragments from two XML documents:</span></span>  
   
  `<MyElement1 attr1="12" />`  
   
  `<MyElement1 attr1="52344" />`  
   
- 最初に `attr1` の値が検出されると、`attr1` の型は、値 `unsignedByte` に基づいて `12` と推論されます。  `attr1` の 2 番目の値が検出されると、現在推論されている型 `unsignedShort` と現在の値 `unsignedByte` に基づいて、型が `52344` に昇格します。  
+ <span data-ttu-id="50728-167">最初に `attr1` の値が検出されると、`attr1` の型は、値 `unsignedByte` に基づいて `12` と推論されます。</span><span class="sxs-lookup"><span data-stu-id="50728-167">When the first `attr1` value is encountered, the type of `attr1` is inferred as `unsignedByte` based on the value `12`.</span></span> <span data-ttu-id="50728-168">`attr1` の 2 番目の値が検出されると、現在推論されている型 `unsignedShort` と現在の値 `unsignedByte` に基づいて、型が `52344` に昇格します。</span><span class="sxs-lookup"><span data-stu-id="50728-168">When the second `attr1` is encountered, the type is promoted to `unsignedShort` based on the currently inferred type of `unsignedByte` and the current value `52344`.</span></span>  
   
- 次に、2 つの XML ドキュメントから取得された次の XML を見てみましょう。  
+ <span data-ttu-id="50728-169">次に、2 つの XML ドキュメントから取得された次の XML を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="50728-169">Now, consider the following XML from two XML documents:</span></span>  
   
  `<MyElement2 attr2="0" />`  
   
  `<MyElement2 attr2="true" />`  
   
- 最初に `attr2` の値が検出されると、`attr2` の型は、値 `unsignedByte` に基づいて `0` と推論されます。  `attr2` の 2 番目の値が検出されると、現在推論されている型 `string` と現在の値 `unsignedByte` に基づいて、型が `true` に昇格します。これは、<xref:System.Xml.Schema.XmlSchemaInference> クラスが推論型を昇格させるときに前の値を考慮するためです。  ただし、`attr2` の 2 つのインスタンスが、上記の説明のように 2 つの別々の XML ドキュメントで検出されたのではなく、同じ XML ドキュメントで検出された場合、`attr2` は `boolean` と推論されます。  
+ <span data-ttu-id="50728-170">最初に `attr2` の値が検出されると、`attr2` の型は、値 `unsignedByte` に基づいて `0` と推論されます。</span><span class="sxs-lookup"><span data-stu-id="50728-170">When the first `attr2` value is encountered, the type of `attr2` is inferred as `unsignedByte` based on the value `0`.</span></span> <span data-ttu-id="50728-171">`attr2` の 2 番目の値が検出されると、現在推論されている型 `string` と現在の値 `unsignedByte` に基づいて、型が `true` に昇格します。これは、<xref:System.Xml.Schema.XmlSchemaInference> クラスが推論型を昇格させるときに前の値を考慮するためです。</span><span class="sxs-lookup"><span data-stu-id="50728-171">When the second `attr2` is encountered, the type is promoted to `string` based on the currently inferred type of `unsignedByte` and the current value `true` because the <xref:System.Xml.Schema.XmlSchemaInference> class does consider previous values when promoting the inferred type.</span></span> <span data-ttu-id="50728-172">ただし、`attr2` の 2 つのインスタンスが、上記の説明のように 2 つの別々の XML ドキュメントで検出されたのではなく、同じ XML ドキュメントで検出された場合、`attr2` は `boolean` と推論されます。</span><span class="sxs-lookup"><span data-stu-id="50728-172">However, if both instances of `attr2` were encountered in the same XML document and not in two different XML documents as illustrated above, `attr2` would have been inferred as `boolean`.</span></span>  
   
-### 無視される http:\/\/www.w3.org\/2001\/XMLSchema\-instance 名前空間の属性  
- スキーマの推論で無視されるスキーマ定義属性を次に示します。  
+### <a name="ignored-attributes-from-the-httpwwww3org2001xmlschema-instance-namespace"></a><span data-ttu-id="50728-173">無視される http://www.w3.org/2001/XMLSchema-instance 名前空間の属性</span><span class="sxs-lookup"><span data-stu-id="50728-173">Ignored Attributes from the http://www.w3.org/2001/XMLSchema-instance Namespace</span></span>  
+ <span data-ttu-id="50728-174">スキーマの推論で無視されるスキーマ定義属性を次に示します。</span><span class="sxs-lookup"><span data-stu-id="50728-174">The following are schema-defining attributes that are ignored during schema inference.</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|`xsi:type`|`xsi:type` が指定されている要素が検出された場合、`xsi:type` は無視されます。|  
-|`xsi:nil`|`xsi:nil` 属性を持った要素が検出されると、推論されるスキーマ内の要素宣言の値が `nillable="true"` に設定されます。  `xsi:nil` 属性が `true` に設定された要素は子要素を持つことができません。|  
-|`xsi:schemaLocation`|`xsi:schemaLocation` は検出されても無視されます。|  
-|`xsi:noNamespaceSchemaLocation`|`xsi:noNamespaceSchemaLocation` は検出されても無視されます。|  
+|<span data-ttu-id="50728-175">属性</span><span class="sxs-lookup"><span data-stu-id="50728-175">Attribute</span></span>|<span data-ttu-id="50728-176">説明</span><span class="sxs-lookup"><span data-stu-id="50728-176">Description</span></span>|  
+|---------------|-----------------|  
+|`xsi:type`|<span data-ttu-id="50728-177">`xsi:type` が指定されている要素が検出された場合、`xsi:type` は無視されます。</span><span class="sxs-lookup"><span data-stu-id="50728-177">If an element is encountered with `xsi:type` specified, the `xsi:type` is ignored.</span></span>|  
+|`xsi:nil`|<span data-ttu-id="50728-178">`xsi:nil` 属性を持った要素が検出されると、推論されるスキーマ内の要素宣言の値が `nillable="true"` に設定されます。</span><span class="sxs-lookup"><span data-stu-id="50728-178">If an element with an `xsi:nil` attribute is encountered, its element declaration in the inferred schema has the value of `nillable="true"`.</span></span> <span data-ttu-id="50728-179">`xsi:nil` 属性が `true` に設定された要素は子要素を持つことができません。</span><span class="sxs-lookup"><span data-stu-id="50728-179">An element with an `xsi:nil` attribute set to `true` cannot have child elements.</span></span>|  
+|`xsi:schemaLocation`|<span data-ttu-id="50728-180">`xsi:schemaLocation` は検出されても無視されます。</span><span class="sxs-lookup"><span data-stu-id="50728-180">If `xsi:schemaLocation` is encountered, it is ignored.</span></span>|  
+|`xsi:noNamespaceSchemaLocation`|<span data-ttu-id="50728-181">`xsi:noNamespaceSchemaLocation` は検出されても無視されます。</span><span class="sxs-lookup"><span data-stu-id="50728-181">If `xsi:noNamespaceSchemaLocation` is encountered, it is ignored.</span></span>|  
   
-## 参照  
- [XML スキーマ オブジェクト モデル \(SOM\)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)   
- [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)   
- [スキーマのノード型および構造を推論するときの規則](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
+## <a name="see-also"></a><span data-ttu-id="50728-182">関連項目</span><span class="sxs-lookup"><span data-stu-id="50728-182">See Also</span></span>  
+ [<span data-ttu-id="50728-183">XML スキーマ オブジェクト モデル (SOM)</span><span class="sxs-lookup"><span data-stu-id="50728-183">XML Schema Object Model (SOM)</span></span>](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
+ [<span data-ttu-id="50728-184">XML ドキュメントからスキーマの推論</span><span class="sxs-lookup"><span data-stu-id="50728-184">Inferring Schemas from XML Documents</span></span>](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
+ [<span data-ttu-id="50728-185">スキーマのノード型と構造を推論するときの規則</span><span class="sxs-lookup"><span data-stu-id="50728-185">Rules for Inferring Schema Node Types and Structure</span></span>](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)

@@ -1,100 +1,103 @@
 ---
-title: "Threads and Threading | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "multiple threads"
-  - "threading [.NET Framework]"
-  - "threading [.NET Framework], multiple threads"
+title: "スレッドおよびスレッド処理"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- multiple threads
+- threading [.NET Framework]
+- threading [.NET Framework], multiple threads
 ms.assetid: 5baac3aa-e603-4fa6-9f89-0f2c1084e6b1
-caps.latest.revision: 14
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: b57cac34009e13c27c6d34a0ab402f9ecbe08305
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Threads and Threading
-オペレーティング システムは、実行中の各アプリケーションをプロセスを使用して分離します。  スレッドとは、オペレーティング システムがプロセッサ時間を割り当てる対象の基本単位です。複数のスレッドが、そのプロセス内でコードを実行できます。  各スレッドは、例外ハンドラー、スケジューリングの優先順位、およびスレッド コンテキストをスケジュールされるまでの間保存するために使用する一連の構造体を保持します。  スレッド コンテキストは、スレッドがシームレスに実行を再開するために必要な、スレッドの CPU レジスタおよびスタックのセットを含むすべての情報を、該当するホスト プロセスのアドレス空間に格納します。  
+# <a name="threads-and-threading"></a><span data-ttu-id="a07c7-102">スレッドおよびスレッド処理</span><span class="sxs-lookup"><span data-stu-id="a07c7-102">Threads and Threading</span></span>
+<span data-ttu-id="a07c7-103">オペレーティング システムでは、プロセスを使用して、実行されている別のアプリケーションを区切ります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-103">Operating systems use processes to separate the different applications that they are executing.</span></span> <span data-ttu-id="a07c7-104">スレッドは、オペレーティング システムが、プロセッサ時間を割り当てる基本単位と、複数のスレッドが、プロセス内でコードを実行することができます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-104">Threads are the basic unit to which an operating system allocates processor time, and more than one thread can be executing code inside that process.</span></span> <span data-ttu-id="a07c7-105">各スレッドは、例外ハンドラー、スケジューリング優先順位、およびシステムを使用して保存のスレッド コンテキストがスケジュールされるまで構造のセットを保持します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-105">Each thread maintains exception handlers, a scheduling priority, and a set of structures the system uses to save the thread context until it is scheduled.</span></span> <span data-ttu-id="a07c7-106">スレッド コンテキストには、シームレスに実行を再開する、スレッドのホスト プロセスのアドレス空間内の CPU レジスタおよびスタック、スレッドのセットを含む、スレッドが必要なすべての情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-106">The thread context includes all the information the thread needs to seamlessly resume execution, including the thread's set of CPU registers and stack, in the address space of the thread's host process.</span></span>  
   
- .NET Framework は、オペレーティング システム プロセスを、<xref:System.AppDomain?displayProperty=fullName> で表されるアプリケーション ドメインと呼ばれる軽量なマネージ サブプロセスへとさらに分割します。  <xref:System.Threading.Thread?displayProperty=fullName> で表される 1 つ以上のマネージ スレッドが、同じマネージ プロセス内にある任意の数のアプリケーション ドメインで実行できます。  各アプリケーション ドメインは最初はシングル スレッドですが、そのアプリケーション ドメイン内のコードで追加のアプリケーション ドメインやスレッドを作成できます。  そのため、マネージ スレッドは、同じマネージ プロセス内のアプリケーション ドメイン間を自由に移動できます。1 つのスレッドだけを複数のアプリケーション ドメイン間で移動させることもできます。  
+ <span data-ttu-id="a07c7-107">さらに、.NET Framework、オペレーティング システム プロセスに細分化によって表される、アプリケーション ドメインと呼ばれる、軽量のマネージ サブプロセス<xref:System.AppDomain?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="a07c7-107">The .NET Framework further subdivides an operating system process into lightweight managed subprocesses, called application domains, represented by <xref:System.AppDomain?displayProperty=nameWithType>.</span></span> <span data-ttu-id="a07c7-108">1 つ以上のマネージ スレッド (によって表される<xref:System.Threading.Thread?displayProperty=nameWithType>)、同じ管理対象プロセス内のアプリケーション ドメインの 1 つまたは任意の数で実行できます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-108">One or more managed threads (represented by <xref:System.Threading.Thread?displayProperty=nameWithType>) can run in one or any number of application domains within the same managed process.</span></span> <span data-ttu-id="a07c7-109">各アプリケーション ドメインは 1 つのスレッドを開始、そのアプリケーション ドメイン内のコードは追加のアプリケーション ドメインと追加のスレッドを作成できます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-109">Although each application domain is started with a single thread, code in that application domain can create additional application domains and additional threads.</span></span> <span data-ttu-id="a07c7-110">結果は、マネージ スレッドが同じマネージ プロセス; 内のアプリケーション ドメイン間で自由に移動できます。1 つのスレッドが複数のアプリケーション ドメイン間を移動するがあります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-110">The result is that a managed thread can move freely between application domains inside the same managed process; you might have only one thread moving among several application domains.</span></span>  
   
- プリエンプティブなマルチタスクをサポートするオペレーティング システムは、複数のプロセスからの複数のスレッドを同時に実行できます。  システムは、使用できるプロセッサ時間をこれを必要とするスレッド間で分割し、各スレッドにプロセッサ タイム スライスを順次割り当てることによってこれを実現します。  現在実行中のスレッドはタイム スライスが経過すると中断され、別のスレッドが実行を再開します。  システムは、スレッドを切り替えるときに、切り替える前のスレッドのスレッド コンテキストを保存し、スレッド キュー内にある次のスレッドの保存済みスレッド コンテキストを再読み込みします。  
+ <span data-ttu-id="a07c7-111">Preemptive マルチタスク処理をサポートするオペレーティング システムでは、複数のプロセスから複数のスレッドの同時実行の効果を作成します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-111">An operating system that supports preemptive multitasking creates the effect of simultaneous execution of multiple threads from multiple processes.</span></span> <span data-ttu-id="a07c7-112">これで必要なスレッド間で利用可能なプロセッサ時間の分割、各スレッドにプロセッサ時間スライスを 1 つずつ割り当ています。</span><span class="sxs-lookup"><span data-stu-id="a07c7-112">It does this by dividing the available processor time among the threads that need it, allocating a processor time slice to each thread one after another.</span></span> <span data-ttu-id="a07c7-113">スライスを過ぎると、その時間と別のスレッドの実行を再開、実行中のスレッドが中断されます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-113">The currently executing thread is suspended when its time slice elapses, and another thread resumes running.</span></span> <span data-ttu-id="a07c7-114">システムは、別に 1 つのスレッドから切り替える、ときに優先されたスレッドのスレッド コンテキストを保存し、[次へ] のスレッドのスレッドのキューに保存されているスレッドのコンテキストを再読み込みします。</span><span class="sxs-lookup"><span data-stu-id="a07c7-114">When the system switches from one thread to another, it saves the thread context of the preempted thread and reloads the saved thread context of the next thread in the thread queue.</span></span>  
   
- タイム スライスの長さは、オペレーティング システムやプロセッサによって異なります。  各タイム スライスは短いため、プロセッサが 1 つしか存在しない場合でも、複数のスレッドが同時に実行しているように見えます。  マルチプロセッサ システムでは、実行可能スレッドが複数の有効なプロセッサに分散されているため、実際に複数のスレッドが同時に実行されます。  
+ <span data-ttu-id="a07c7-115">タイム スライスの長さは、オペレーティング システムと、プロセッサーによって異なります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-115">The length of the time slice depends on the operating system and the processor.</span></span> <span data-ttu-id="a07c7-116">各タイム スライスが小さいために、複数のスレッドは、1 つだけのプロセッサがある場合でも、同時に実行されているに見えます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-116">Because each time slice is small, multiple threads appear to be executing at the same time, even if there is only one processor.</span></span> <span data-ttu-id="a07c7-117">場合は、実際には、マルチプロセッサ システムで使用できるプロセッサ間での実行可能なスレッドの配布先です。</span><span class="sxs-lookup"><span data-stu-id="a07c7-117">This is actually the case on multiprocessor systems, where the executable threads are distributed among the available processors.</span></span>  
   
-## 複数のスレッドを使用する場合  
- ユーザーとの対話を必要とするソフトウェアは、ユーザーのアクティビティにできるだけ迅速に反応して、充実したパフォーマンスを提供する必要があります。  ただし、同時にこのソフトウェアは、ユーザーにデータを表示するために必要な計算をできるだけ高速に行う必要もあります。  アプリケーションが 1 つの実行スレッドだけを使用する場合は、[非同期プログラミング](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)を [.NET Framework リモート処理](http://msdn.microsoft.com/ja-jp/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)、または ASP.NET を使用して作成された [XML Web サービス](http://msdn.microsoft.com/ja-jp/1e64af78-d705-4384-b08d-591a45f4379c)と組み合わせることで、使用しているコンピューターの処理時間だけでなく他のコンピューターの処理時間も利用できます。これにより、ユーザーへの応答を速くし、アプリケーションのデータ処理時間を短縮できます。  また、多くの I\/O 操作を行う場合は、I\/O 完了ポートを使用すると、アプリケーションの応答を速くすることができます。  
+## <a name="when-to-use-multiple-threads"></a><span data-ttu-id="a07c7-118">複数のスレッドを使用するには、場合</span><span class="sxs-lookup"><span data-stu-id="a07c7-118">When To Use Multiple Threads</span></span>  
+ <span data-ttu-id="a07c7-119">ユーザーの介入を必要とするソフトウェアが、豊富なユーザー エクスペリエンスを提供できる限り早くのユーザーのアクティビティに反応する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-119">Software that requires user interaction must react to the user's activities as rapidly as possible to provide a rich user experience.</span></span> <span data-ttu-id="a07c7-120">ただし、同時には、できるだけ高速のユーザーにデータを提示するために必要な計算を実行にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-120">At the same time, however, it must do the calculations necessary to present data to the user as fast as possible.</span></span> <span data-ttu-id="a07c7-121">アプリケーションでは、実行のスレッドを 1 つだけを使用する場合は、結合[非同期プログラミング](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)で[.NET Framework リモート処理](http://msdn.microsoft.com/en-us/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)または[XML Web サービス](http://msdn.microsoft.com/en-us/1e64af78-d705-4384-b08d-591a45f4379c)ASP を使用して作成されました。ユーザーと、アプリケーションのデータの処理時間が低下するを増やすには独自の応答性をさらに、他のコンピューターの処理時間を使用する .NET します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-121">If your application uses only one thread of execution, you can combine [asynchronous programming](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md) with[.NET Framework remoting](http://msdn.microsoft.com/en-us/eccb1d31-0a22-417a-97fd-f4f1f3aa4462) or [XML Web services](http://msdn.microsoft.com/en-us/1e64af78-d705-4384-b08d-591a45f4379c) created using ASP.NET to use the processing time of other computers in addition to that of your own to increase responsiveness to the user and decrease the data processing time of your application.</span></span> <span data-ttu-id="a07c7-122">入力/出力を要する処理を実行する場合は、アプリケーションの応答性を向上させる、また I/O 完了ポートを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-122">If you are doing intensive input/output work, you can also use I/O completion ports to increase your application's responsiveness.</span></span>  
   
-### 複数のスレッドを使用するメリット  
- ユーザーへの応答の高速化と、ジョブの実行に必要なデータの処理をほぼ同時に実現できる最も強力な方法は、複数のスレッドを使用することです。  シングル プロセッサのコンピューターで複数のスレッドを使用すると、ユーザー イベント間の短い時間を利用してバックグラウンドでデータが処理されることによって、この効果が得られます。  たとえば、別のスレッドが同じアプリケーション内でスプレッドシートのほかの部分を再計算している間に、そのスプレッドシートを編集できます。  
+### <a name="advantages-of-multiple-threads"></a><span data-ttu-id="a07c7-123">複数のスレッドの利点</span><span class="sxs-lookup"><span data-stu-id="a07c7-123">Advantages of Multiple Threads</span></span>  
+ <span data-ttu-id="a07c7-124">複数のスレッドを使用して、データがユーザーへの応答性の向上し、ほぼ同時に実行するジョブを取得するために必要なデータの処理に使用できる最も強力な方法です。</span><span class="sxs-lookup"><span data-stu-id="a07c7-124">Using more than one thread, however, is the most powerful technique available to increase responsiveness to the user and process the data necessary to get the job done at almost the same time.</span></span> <span data-ttu-id="a07c7-125">1 つのプロセッサを搭載したコンピューターに複数のスレッドがバック グラウンドでデータを処理するユーザーのイベント間の時間の短い時間の利用によって、この効果を作成できます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-125">On a computer with one processor, multiple threads can create this effect, taking advantage of the small periods of time in between user events to process the data in the background.</span></span> <span data-ttu-id="a07c7-126">たとえば、ユーザーは、別のスレッドが同じアプリケーション内でワークシートの他の部分を再計算中に、スプレッドシートを編集できます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-126">For example, a user can edit a spreadsheet while another thread is recalculating other parts of the spreadsheet within the same application.</span></span>  
   
- 同じアプリケーションをマルチ プロセッサのコンピューターで実行すると、変更しなくてもパフォーマンスが大幅に向上します。  単一のアプリケーション ドメインで複数のスレッドを使用すると、次のタスクを実行できます。  
+ <span data-ttu-id="a07c7-127">変更しない限り、同じアプリケーションの場合は、1 つ以上のプロセッサを搭載したコンピューター上で実行時にユーザーの満足度に著しくです。</span><span class="sxs-lookup"><span data-stu-id="a07c7-127">Without modification, the same application would dramatically increase user satisfaction when run on a computer with more than one processor.</span></span> <span data-ttu-id="a07c7-128">1 つのアプリケーション ドメインでは、次のタスクを実行するのに複数のスレッドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-128">Your single application domain could use multiple threads to accomplish the following tasks:</span></span>  
   
--   ネットワーク経由での Web サーバーやデータベースとの通信。  
+-   <span data-ttu-id="a07c7-129">データベース、Web サーバーに、ネットワーク経由で通信します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-129">Communicate over a network, to a Web server, and to a database.</span></span>  
   
--   時間のかかる処理の実行。  
+-   <span data-ttu-id="a07c7-130">大量の時間がかかる操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-130">Perform operations that take a large amount of time.</span></span>  
   
--   さまざまな優先順位のタスクの区別。  たとえば、優先順位の高いスレッドは速度が重視されるタスクを管理し、優先順位の低いスレッドはほかのタスクを実行します。  
+-   <span data-ttu-id="a07c7-131">さまざまな優先順位のタスクを識別します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-131">Distinguish tasks of varying priority.</span></span> <span data-ttu-id="a07c7-132">たとえば、優先度の高いスレッドがタイム クリティカルなタスクを管理し、優先度の低いスレッドが他のタスクを実行します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-132">For example, a high-priority thread manages time-critical tasks, and a low-priority thread performs other tasks.</span></span>  
   
--   ユーザー インターフェイスによる迅速な応答と、バックグラウンド タスクへの割り当て時間の両立。  
+-   <span data-ttu-id="a07c7-133">応答性を維持、バック グラウンド タスクに時間を割り当てているときに、ユーザー インターフェイスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-133">Allow the user interface to remain responsive, while allocating time to background tasks.</span></span>  
   
-### 複数のスレッドを使用するデメリット  
- オペレーティング システム リソースの使用を最小にしてパフォーマンスを向上させるには、使用するスレッドをできるだけ少なくすることをお勧めします。  また、アプリケーションをデザインするときは、スレッド処理にはリソース要件があること、競合が発生する可能性があることを考慮する必要があります。  リソース要件は次のとおりです。  
+### <a name="disadvantages-of-multiple-threads"></a><span data-ttu-id="a07c7-134">複数のスレッドの短所</span><span class="sxs-lookup"><span data-stu-id="a07c7-134">Disadvantages of Multiple Threads</span></span>  
+ <span data-ttu-id="a07c7-135">可能な限りは、オペレーティング システム リソースの使用を最小限に抑えるため、パフォーマンスを向上させると、少数のスレッドを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a07c7-135">It is recommended that you use as few threads as possible, thereby minimizing the use of operating-system resources and improving performance.</span></span> <span data-ttu-id="a07c7-136">スレッド処理と、アプリケーションの設計時に考慮すには、リソースの要件と競合の可能性もあります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-136">Threading also has resource requirements and potential conflicts to be considered when designing your application.</span></span> <span data-ttu-id="a07c7-137">リソース要件は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a07c7-137">The resource requirements are as follows:</span></span>  
   
--   システムは、プロセス、**AppDomain** オブジェクト、およびスレッドが必要とするコンテキスト情報を格納するためにメモリを消費します。  そのため、使用できるメモリの量によって、作成できるプロセス、**AppDomain** オブジェクト、およびスレッドの数は制限されます。  
+-   <span data-ttu-id="a07c7-138">システム プロセス、必要なコンテキスト情報のためのメモリを消費する**AppDomain**オブジェクト、およびスレッドです。</span><span class="sxs-lookup"><span data-stu-id="a07c7-138">The system consumes memory for the context information required by processes, **AppDomain** objects, and threads.</span></span> <span data-ttu-id="a07c7-139">プロセスの数ではそのため、 **AppDomain**オブジェクト、および作成できるスレッドが使用可能なメモリによって制限されます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-139">Therefore, the number of processes, **AppDomain** objects, and threads that can be created is limited by available memory.</span></span>  
   
--   多数のスレッドを追跡するには、プロセッサ時間を大量に消費します。  スレッドが多すぎると、ほとんどのスレッドで処理に重大な影響がでます。  現在のスレッドのほとんどが 1 つのプロセスにある場合は、ほかのプロセスにあるスレッドのスケジュール頻度が低下します。  
+-   <span data-ttu-id="a07c7-140">大量のプロセッサ時間を消費の多数のスレッドを追跡します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-140">Keeping track of a large number of threads consumes significant processor time.</span></span> <span data-ttu-id="a07c7-141">スレッドが多すぎるがある場合、それらのほとんどは重要な進行状況を加えないでます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-141">If there are too many threads, most of them will not make significant progress.</span></span> <span data-ttu-id="a07c7-142">現在のスレッドのほとんどは、1 つのプロセスでは、他のプロセス内のスレッドが頻繁にスケジュールされます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-142">If most of the current threads are in one process, threads in other processes are scheduled less frequently.</span></span>  
   
--   多数のスレッドを使用したコードの実行は制御が複雑なため、多くのバグの原因となる可能性があります。  
+-   <span data-ttu-id="a07c7-143">コードが実行される多数のスレッドの制御は複雑であり、多くのバグのソースを指定できます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-143">Controlling code execution with many threads is complex, and can be a source of many bugs.</span></span>  
   
--   スレッドを破棄するには、発生する可能性がある問題を認識して対処する必要があります。  
+-   <span data-ttu-id="a07c7-144">スレッドの破棄するには、発生する可能性が知ることと、それらの問題を処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-144">Destroying threads requires knowing what could happen and handling those issues.</span></span>  
   
- リソースへの共有アクセスを提供すると、競合が発生する場合があります。  競合を回避するには、共有リソースへのアクセスとの同期をとるか、またはアクセスを制御する必要があります。  同じアプリケーション ドメインまたは異なるアプリケーション ドメインで、アクセスを正しく同期することに失敗すると、デッドロック \(2 つのスレッドがお互いの完了を待って応答しなくなる状態\) や競合状態 \(2 つのイベントのタイミングによって予測できない動作が生じたために、異常な結果が発生した場合\) などの問題が生じる可能性があります。  システムには、複数のスレッド間でのリソース共有を調整するための同期オブジェクトが用意されています。  スレッド数を減らすことで、より簡単にリソースの同期がとれるようになります。  
+ <span data-ttu-id="a07c7-145">リソースへの共有アクセスを提供すると、競合を作成できます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-145">Providing shared access to resources can create conflicts.</span></span> <span data-ttu-id="a07c7-146">競合を避けるためには、同期、か、共有リソースへのアクセスを制御する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-146">To avoid conflicts, you must synchronize, or control the access to, shared resources.</span></span> <span data-ttu-id="a07c7-147">(2 つのスレッドで応答を停止するには、他のそれぞれが待機中に) デッドロックなどの問題につながる可能性が正しく (同じまたは別のアプリケーション ドメイン) でのアクセスを同期するためにエラーや (ために異常な結果が発生したときに競合状態予測できない動作の 2 つのイベントのタイミングで)。</span><span class="sxs-lookup"><span data-stu-id="a07c7-147">Failure to synchronize access properly (in the same or different application domains) can lead to problems such as deadlocks (in which two threads stop responding while each waits for the other to complete) and race conditions (when an anomalous result occurs due to an unexpected critical dependence on the timing of two events).</span></span> <span data-ttu-id="a07c7-148">システムでは、複数のスレッド間の共有リソースを調整するために使用する同期オブジェクトを提供します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-148">The system provides synchronization objects that can be used to coordinate resource sharing among multiple threads.</span></span> <span data-ttu-id="a07c7-149">スレッドの数を減らすと、リソースを同期するためにやすくなります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-149">Reducing the number of threads makes it easier to synchronize resources.</span></span>  
   
- 同期を必要とするリソースは、次のとおりです。  
+ <span data-ttu-id="a07c7-150">同期が必要なリソースは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a07c7-150">Resources that require synchronization include:</span></span>  
   
--   システム リソース \(通信ポートなど\)  
+-   <span data-ttu-id="a07c7-151">システム リソース (通信ポートなど)。</span><span class="sxs-lookup"><span data-stu-id="a07c7-151">System resources (such as communications ports).</span></span>  
   
--   複数のプロセスによって共有されるリソース \(ファイル ハンドルなど\)  
+-   <span data-ttu-id="a07c7-152">リソース (ファイル ハンドル) などの複数のプロセスと共有します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-152">Resources shared by multiple processes (such as file handles).</span></span>  
   
--   複数のスレッドによってアクセスされる単一のアプリケーション ドメインのリソース \(グローバル フィールド、静的フィールド、インスタンス フィールドなど\)  
+-   <span data-ttu-id="a07c7-153">1 つのアプリケーション ドメインのリソース (など、グローバルの静的インスタンス フィールドと) 複数のスレッドによってアクセスします。</span><span class="sxs-lookup"><span data-stu-id="a07c7-153">The resources of a single application domain (such as global, static, and instance fields) accessed by multiple threads.</span></span>  
   
-### スレッド処理とアプリケーションのデザイン  
- 一般に、他のスレッドをブロックしない比較的短いタスクを特定のスケジューリングを指定せずに実行する場合、複数のスレッドを処理する最も簡単な方法は、<xref:System.Threading.ThreadPool> クラスを使用することです。  ただし、次に示すように、独自のスレッドを作成した方がよい場合も多くあります。  
+### <a name="threading-and-application-design"></a><span data-ttu-id="a07c7-154">スレッド処理とアプリケーションのデザイン</span><span class="sxs-lookup"><span data-stu-id="a07c7-154">Threading and Application Design</span></span>  
+ <span data-ttu-id="a07c7-155">一般を使用して、<xref:System.Threading.ThreadPool>クラスは、他のスレッドがブロックされていないことと、ときに予期しない特定のタスクのスケジューリング、比較的短いタスクに複数のスレッドを処理する最も簡単な方法です。</span><span class="sxs-lookup"><span data-stu-id="a07c7-155">In general, using the <xref:System.Threading.ThreadPool> class is the easiest way to handle multiple threads for relatively short tasks that will not block other threads and when you do not expect any particular scheduling of the tasks.</span></span> <span data-ttu-id="a07c7-156">ただし、これには、独自のスレッドを作成する理由の数があります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-156">However, there are a number of reasons to create your own threads:</span></span>  
   
--   タスクに特定の優先順位を設定する必要がある場合。  
+-   <span data-ttu-id="a07c7-157">特定の優先順位に作業する場合。</span><span class="sxs-lookup"><span data-stu-id="a07c7-157">If you need a task to have a particular priority.</span></span>  
   
--   タスクが長時間実行して、ほかのタスクをブロックする可能性がある場合。  
+-   <span data-ttu-id="a07c7-158">ある場合は、タスクを実行時間の長い (およびその他のタスクをブロックするため) ことがあります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-158">If you have a task that might run a long time (and therefore block other tasks).</span></span>  
   
--   スレッドをシングルスレッド アパートメント内に配置する必要がある場合 \(すべての **ThreadPool** スレッドがマルチスレッド アパートメント内にある場合\)。  
+-   <span data-ttu-id="a07c7-159">シングル スレッド アパートメント スレッドに配置する必要があるかどうか (すべて**ThreadPool**スレッドがマルチ スレッド アパートメント内)。</span><span class="sxs-lookup"><span data-stu-id="a07c7-159">If you need to place threads into a single-threaded apartment (all **ThreadPool** threads are in the multithreaded apartment).</span></span>  
   
--   スレッドに関連付けられた、確立された ID が必要な場合。  たとえば、そのスレッドをアボートまたは中断したり、名前で探索したりするには、専用のスレッドを使用する必要があります。  
+-   <span data-ttu-id="a07c7-160">場合は、安定した id をスレッドに関連付けられている必要があります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-160">If you need a stable identity associated with the thread.</span></span> <span data-ttu-id="a07c7-161">たとえば、そのスレッドの中止、中断したり、または名前で探索を専用のスレッドを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-161">For example, you should use a dedicated thread to abort that thread, suspend it, or discover it by name.</span></span>  
   
--   ユーザー インターフェイスと対話するバックグラウンド スレッドを実行する必要がある場合、.NET Framework Version 2.0 では、イベントを使用し、ユーザー インターフェイス スレッドへのスレッド間マーシャリングによって通信する <xref:System.ComponentModel.BackgroundWorker> コンポーネントを利用できます。  
+-   <span data-ttu-id="a07c7-162">.NET Framework version 2.0 は、ユーザー インターフェイスと対話するバック グラウンド スレッドを実行する必要がある場合、<xref:System.ComponentModel.BackgroundWorker>スレッド間のユーザー インターフェイス スレッドにマーシャ リングと、イベントを使用して通信するコンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="a07c7-162">If you need to run background threads that interact with the user interface, the .NET Framework version 2.0 provides a <xref:System.ComponentModel.BackgroundWorker> component that communicates using events, with cross-thread marshaling to the user-interface thread.</span></span>  
   
-### スレッド処理と例外  
- スレッドで例外を処理します。  スレッドで処理できない例外が発生すると、バックグラウンド スレッドの場合でも、通常、プロセスが終了します。  この規則には、次の 3 つの例外があります。  
+### <a name="threading-and-exceptions"></a><span data-ttu-id="a07c7-163">スレッド処理および例外</span><span class="sxs-lookup"><span data-stu-id="a07c7-163">Threading and Exceptions</span></span>  
+ <span data-ttu-id="a07c7-164">スレッドで例外を処理します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-164">Do handle exceptions in threads.</span></span> <span data-ttu-id="a07c7-165">偶数のバック グラウンド スレッドでのスレッドでハンドルされない例外は、一般に、プロセスを終了します。</span><span class="sxs-lookup"><span data-stu-id="a07c7-165">Unhandled exceptions in threads, even background threads, generally terminate the process.</span></span> <span data-ttu-id="a07c7-166">この規則には、次の 3 つの例外があります。</span><span class="sxs-lookup"><span data-stu-id="a07c7-166">There are three exceptions to this rule:</span></span>  
   
--   <xref:System.Threading.Thread.Abort%2A> が呼び出されると、スレッドで <xref:System.Threading.ThreadAbortException> がスローされる。  
+-   <span data-ttu-id="a07c7-167">A<xref:System.Threading.ThreadAbortException>ためのスレッドでスローされる<xref:System.Threading.Thread.Abort%2A>が呼び出されました。</span><span class="sxs-lookup"><span data-stu-id="a07c7-167">A <xref:System.Threading.ThreadAbortException> is thrown in a thread because <xref:System.Threading.Thread.Abort%2A> was called.</span></span>  
   
--   アプリケーション ドメインがアンロードされるため、スレッドに <xref:System.AppDomainUnloadedException> がスローされる。  
+-   <span data-ttu-id="a07c7-168"><xref:System.AppDomainUnloadedException>が、アプリケーション ドメインがアンロードされるため、スレッドでスローされます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-168">An <xref:System.AppDomainUnloadedException> is thrown in a thread because the application domain is being unloaded.</span></span>  
   
--   共通言語ランタイムまたはホスト プロセスがスレッドを終了する。  
+-   <span data-ttu-id="a07c7-169">共通言語ランタイムまたはホスト プロセスがスレッドを終了する。</span><span class="sxs-lookup"><span data-stu-id="a07c7-169">The common language runtime or a host process terminates the thread.</span></span>  
   
- 詳細については、「[Exceptions in Managed Threads](../../../docs/standard/threading/exceptions-in-managed-threads.md)」を参照してください。  
+ <span data-ttu-id="a07c7-170">詳細については、次を参照してください。[マネージ スレッドの例外](../../../docs/standard/threading/exceptions-in-managed-threads.md)です。</span><span class="sxs-lookup"><span data-stu-id="a07c7-170">For more information, see [Exceptions in Managed Threads](../../../docs/standard/threading/exceptions-in-managed-threads.md).</span></span>  
   
 > [!NOTE]
->  .NET Framework Version 1.0 および 1.1 では、共通言語ランタイムが、スレッド プール スレッドなどで一部の例外を通知なしにトラップします。  このため、アプリケーション状態が破損し、最終的にアプリケーションが停止することにより、デバッグが困難になることがあります。  
+>  <span data-ttu-id="a07c7-171">.NET Framework バージョン 1.0 および 1.1 では、共通言語ランタイムはサイレント モードでスレッド プールのスレッドの例では、いくつかの例外をトラップします。</span><span class="sxs-lookup"><span data-stu-id="a07c7-171">In the .NET Framework versions 1.0 and 1.1, the common language runtime silently traps some exceptions, for example in thread pool threads.</span></span> <span data-ttu-id="a07c7-172">これはアプリケーションの状態が破損し、デバッグが困難に可能性のあるアプリケーションが停止するされます。</span><span class="sxs-lookup"><span data-stu-id="a07c7-172">This may corrupt application state and eventually cause applications to hang, which might be very difficult to debug.</span></span>  
   
-## 参照  
- <xref:System.Threading.ThreadPool>   
- <xref:System.ComponentModel.BackgroundWorker>   
- [Synchronizing Data for Multithreading](../../../docs/standard/threading/synchronizing-data-for-multithreading.md)   
- [The Managed Thread Pool](../../../docs/standard/threading/the-managed-thread-pool.md)
+## <a name="see-also"></a><span data-ttu-id="a07c7-173">関連項目</span><span class="sxs-lookup"><span data-stu-id="a07c7-173">See Also</span></span>  
+ <xref:System.Threading.ThreadPool>  
+ <xref:System.ComponentModel.BackgroundWorker>  
+ [<span data-ttu-id="a07c7-174">マルチスレッド処理のためのデータの同期</span><span class="sxs-lookup"><span data-stu-id="a07c7-174">Synchronizing Data for Multithreading</span></span>](../../../docs/standard/threading/synchronizing-data-for-multithreading.md)  
+ [<span data-ttu-id="a07c7-175">マネージ スレッド プール</span><span class="sxs-lookup"><span data-stu-id="a07c7-175">The Managed Thread Pool</span></span>](../../../docs/standard/threading/the-managed-thread-pool.md)

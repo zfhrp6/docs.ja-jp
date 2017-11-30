@@ -1,476 +1,482 @@
 ---
-title: "正規表現でのグループ化構成体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - ".NET Framework 正規表現, グループ化構成体"
-  - "構成体, グループ化"
-  - "グループ化構成体"
-  - "先読み"
-  - "後読み"
-  - "正規表現, グループ化構成体"
+title: "正規表現でのグループ化構成体"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- lookbehinds
+- regular expressions, grouping constructs
+- lookaheads
+- .NET Framework regular expressions, grouping constructs
+- constructs, grouping
+- grouping constructs
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
-caps.latest.revision: 33
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 33
+caps.latest.revision: "33"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 37428cf96bbe36a55e88edeb5ec56e09895be994
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 正規表現でのグループ化構成体
-グループ化構成体は、正規表現の部分式を表し、入力文字列の部分文字列をキャプチャします。 グループ化構成体を使用して、以下を実行できます。  
+# <a name="grouping-constructs-in-regular-expressions"></a><span data-ttu-id="e8069-102">正規表現でのグループ化構成体</span><span class="sxs-lookup"><span data-stu-id="e8069-102">Grouping Constructs in Regular Expressions</span></span>
+<span data-ttu-id="e8069-103">グループ化構成体は、正規表現の部分式を表し、入力文字列の部分文字列をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="e8069-103">Grouping constructs delineate the subexpressions of a regular expression and capture the substrings of an input string.</span></span> <span data-ttu-id="e8069-104">グループ化構成体を使用して、以下を実行できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-104">You can use grouping constructs to do the following:</span></span>  
   
--   入力文字列で繰り返し使用されている部分式を照合する。  
+-   <span data-ttu-id="e8069-105">入力文字列で繰り返し使用されている部分式を照合する。</span><span class="sxs-lookup"><span data-stu-id="e8069-105">Match a subexpression that is repeated in the input string.</span></span>  
   
--   複数の正規表現言語要素を含む部分式に量指定子を適用する。 量指定子について詳しくは、「[限定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)」をご覧ください。  
+-   <span data-ttu-id="e8069-106">複数の正規表現言語要素を含む部分式に量指定子を適用する。</span><span class="sxs-lookup"><span data-stu-id="e8069-106">Apply a quantifier to a subexpression that has multiple regular expression language elements.</span></span> <span data-ttu-id="e8069-107">量指定子について詳しくは、「 [Quantifiers](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e8069-107">For more information about quantifiers, see [Quantifiers](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).</span></span>  
   
--   <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=fullName> メソッドおよび <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=fullName> メソッドによって返される文字列に部分式を含める。  
+-   <span data-ttu-id="e8069-108"><xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドおよび <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> メソッドによって返される文字列に部分式を含める。</span><span class="sxs-lookup"><span data-stu-id="e8069-108">Include a subexpression in the string that is returned by the <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> and <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> methods.</span></span>  
   
--   <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=fullName> プロパティから個々の部分式を取得し、一致したテキスト全体とは別に処理する。  
+-   <span data-ttu-id="e8069-109"><xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> プロパティから個々の部分式を取得し、一致したテキスト全体とは別に処理する。</span><span class="sxs-lookup"><span data-stu-id="e8069-109">Retrieve individual subexpressions from the <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> property and process them separately from the matched text as a whole.</span></span>  
   
- 次の表に、.NET Framework 正規表現エンジンでサポートされているグループ化構成体と、これらの構成体がキャプチャまたは非キャプチャのいずれであるかを示します。  
+ <span data-ttu-id="e8069-110">次の表は、.NET の正規表現エンジンでサポートされているグループ化構成体の一覧し、キャプチャまたは非キャプチャするかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-110">The following table lists the grouping constructs supported by the .NET regular expression engine and indicates whether they are capturing or non-capturing.</span></span>  
   
-|グループ化構成体|キャプチャまたは非キャプチャ|  
-|--------------|--------------------|  
-|[一致した部分式](#matched_subexpression)|キャプチャ|  
-|[一致した名前付き部分式](#named_matched_subexpression)|キャプチャ|  
-|[グループ定義の均等化](#balancing_group_definition)|キャプチャ|  
-|[非キャプチャ グループ](#noncapturing_group)|非キャプチャ|  
-|[グループ オプション](#group_options)|非キャプチャ|  
-|[ゼロ幅の肯定先読みアサーション](#zerowidth_positive_lookahead_assertion)|非キャプチャ|  
-|[ゼロ幅の否定先読みアサーション](#zerowidth_negative_lookahead_assertion)|非キャプチャ|  
-|[ゼロ幅の正の後読みアサーション](#zerowidth_positive_lookbehind_assertion)|非キャプチャ|  
-|[ゼロ幅の負の後読みアサーション](#zerowidth_negative_lookbehind_assertion)|非キャプチャ|  
-|[非バックトラッキング部分式](#nonbacktracking_subexpression)|非キャプチャ|  
+|<span data-ttu-id="e8069-111">グループ化構成体</span><span class="sxs-lookup"><span data-stu-id="e8069-111">Grouping construct</span></span>|<span data-ttu-id="e8069-112">キャプチャまたは非キャプチャ</span><span class="sxs-lookup"><span data-stu-id="e8069-112">Capturing or noncapturing</span></span>|  
+|------------------------|-------------------------------|  
+|[<span data-ttu-id="e8069-113">一致した部分式</span><span class="sxs-lookup"><span data-stu-id="e8069-113">Matched subexpressions</span></span>](#matched_subexpression)|<span data-ttu-id="e8069-114">キャプチャ</span><span class="sxs-lookup"><span data-stu-id="e8069-114">Capturing</span></span>|  
+|[<span data-ttu-id="e8069-115">一致した名前付き部分式</span><span class="sxs-lookup"><span data-stu-id="e8069-115">Named matched subexpressions</span></span>](#named_matched_subexpression)|<span data-ttu-id="e8069-116">キャプチャ</span><span class="sxs-lookup"><span data-stu-id="e8069-116">Capturing</span></span>|  
+|[<span data-ttu-id="e8069-117">グループ定義の均等化</span><span class="sxs-lookup"><span data-stu-id="e8069-117">Balancing group definitions</span></span>](#balancing_group_definition)|<span data-ttu-id="e8069-118">キャプチャ</span><span class="sxs-lookup"><span data-stu-id="e8069-118">Capturing</span></span>|  
+|[<span data-ttu-id="e8069-119">非キャプチャ グループ</span><span class="sxs-lookup"><span data-stu-id="e8069-119">Noncapturing groups</span></span>](#noncapturing_group)|<span data-ttu-id="e8069-120">非キャプチャ</span><span class="sxs-lookup"><span data-stu-id="e8069-120">Noncapturing</span></span>|  
+|[<span data-ttu-id="e8069-121">グループ オプション</span><span class="sxs-lookup"><span data-stu-id="e8069-121">Group options</span></span>](#group_options)|<span data-ttu-id="e8069-122">非キャプチャ</span><span class="sxs-lookup"><span data-stu-id="e8069-122">Noncapturing</span></span>|  
+|[<span data-ttu-id="e8069-123">ゼロ幅の肯定先読みアサーション</span><span class="sxs-lookup"><span data-stu-id="e8069-123">Zero-width positive lookahead assertions</span></span>](#zerowidth_positive_lookahead_assertion)|<span data-ttu-id="e8069-124">非キャプチャ</span><span class="sxs-lookup"><span data-stu-id="e8069-124">Noncapturing</span></span>|  
+|[<span data-ttu-id="e8069-125">ゼロ幅の否定先読みアサーション</span><span class="sxs-lookup"><span data-stu-id="e8069-125">Zero-width negative lookahead assertions</span></span>](#zerowidth_negative_lookahead_assertion)|<span data-ttu-id="e8069-126">非キャプチャ</span><span class="sxs-lookup"><span data-stu-id="e8069-126">Noncapturing</span></span>|  
+|[<span data-ttu-id="e8069-127">ゼロ幅の正の後読みアサーション</span><span class="sxs-lookup"><span data-stu-id="e8069-127">Zero-width positive lookbehind assertions</span></span>](#zerowidth_positive_lookbehind_assertion)|<span data-ttu-id="e8069-128">非キャプチャ</span><span class="sxs-lookup"><span data-stu-id="e8069-128">Noncapturing</span></span>|  
+|[<span data-ttu-id="e8069-129">ゼロ幅の負の後読みアサーション</span><span class="sxs-lookup"><span data-stu-id="e8069-129">Zero-width negative lookbehind assertions</span></span>](#zerowidth_negative_lookbehind_assertion)|<span data-ttu-id="e8069-130">非キャプチャ</span><span class="sxs-lookup"><span data-stu-id="e8069-130">Noncapturing</span></span>|  
+|[<span data-ttu-id="e8069-131">非バックトラッキング部分式</span><span class="sxs-lookup"><span data-stu-id="e8069-131">Nonbacktracking subexpressions</span></span>](#nonbacktracking_subexpression)|<span data-ttu-id="e8069-132">非キャプチャ</span><span class="sxs-lookup"><span data-stu-id="e8069-132">Noncapturing</span></span>|  
   
- グループと正規表現オブジェクト モデルの詳細については、「[グループ化構成体および正規表現オブジェクト](#Objects)」を参照してください。  
+ <span data-ttu-id="e8069-133">グループと正規表現オブジェクト モデルの詳細については、「 [グループ化構成体および正規表現オブジェクト](#Objects)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e8069-133">For information on groups and the regular expression object model, see [Grouping constructs and regular expression objects](#Objects).</span></span>  
   
 <a name="matched_subexpression"></a>   
-## 一致した部分式  
- 次のグループ化構成体は、一致した部分式をキャプチャします。  
+## <a name="matched-subexpressions"></a><span data-ttu-id="e8069-134">一致した部分式</span><span class="sxs-lookup"><span data-stu-id="e8069-134">Matched Subexpressions</span></span>  
+ <span data-ttu-id="e8069-135">次のグループ化構成体は、一致した部分式をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="e8069-135">The following grouping construct captures a matched subexpression:</span></span>  
   
- `(` *subexpression* `)`  
+ <span data-ttu-id="e8069-136">`(` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="e8069-136">`(` *subexpression* `)`</span></span>  
   
- ここで、*subexpression* は有効な正規表現パターンです。 かっこを使用するキャプチャには、正規表現の左かっこの順番に基づいて、左から右に自動的に 1 から始まる番号が付けられます。 番号が 0 になるキャプチャは、正規表現パターン全体と一致するテキストです。  
+ <span data-ttu-id="e8069-137">ここで、 *subexpression* は有効な正規表現パターンです。</span><span class="sxs-lookup"><span data-stu-id="e8069-137">where *subexpression* is any valid regular expression pattern.</span></span> <span data-ttu-id="e8069-138">かっこを使用するキャプチャには、正規表現の左かっこの順番に基づいて、左から右に自動的に 1 から始まる番号が付けられます。</span><span class="sxs-lookup"><span data-stu-id="e8069-138">Captures that use parentheses are numbered automatically from left to right based on the order of the opening parentheses in the regular expression, starting from one.</span></span> <span data-ttu-id="e8069-139">番号が 0 になるキャプチャは、正規表現パターン全体と一致するテキストです。</span><span class="sxs-lookup"><span data-stu-id="e8069-139">The capture that is numbered zero is the text matched by the entire regular expression pattern.</span></span>  
   
 > [!NOTE]
->  既定では、`(`*subexpression*`)` 言語要素が、一致する部分式をキャプチャします。 ただし、正規表現パターン一致メソッドの <xref:System.Text.RegularExpressions.RegexOptions> パラメーターに <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> フラグが含まれる場合や、`n` オプションがこの部分式に適用される場合は \(このトピックで後述する「[グループ オプション](#group_options)」を参照\)、一致した部分式はキャプチャされません。  
+>  <span data-ttu-id="e8069-140">既定では、 `(`*subexpression*`)` 言語要素が、一致する部分式をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="e8069-140">By default, the `(`*subexpression*`)` language element captures the matched subexpression.</span></span> <span data-ttu-id="e8069-141">場合に、<xref:System.Text.RegularExpressions.RegexOptions>正規表現パターン一致メソッドのパラメーターが含まれています、<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType>フラグ、または、`n`オプションがこの部分式に適用される (を参照してください[グループ オプション](#group_options)このトピックで後述) では、一致した部分式はキャプチャされません。</span><span class="sxs-lookup"><span data-stu-id="e8069-141">But if the <xref:System.Text.RegularExpressions.RegexOptions> parameter of a regular expression pattern matching method includes the <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> flag, or if the `n` option is applied to this subexpression (see [Group options](#group_options) later in this topic), the matched subexpression is not captured.</span></span>  
   
- キャプチャされたグループにアクセスする方法は 4 つあります。  
+ <span data-ttu-id="e8069-142">キャプチャされたグループにアクセスする方法は 4 つあります。</span><span class="sxs-lookup"><span data-stu-id="e8069-142">You can access captured groups in four ways:</span></span>  
   
--   正規表現内で前方参照構成体を使用する。`\`*number* という構文を使うと、一致した部分式が同じ正規表現内で参照されます。ここで、*number* はキャプチャされた部分式の序数です。  
+-   <span data-ttu-id="e8069-143">正規表現内で前方参照構成体を使用する。</span><span class="sxs-lookup"><span data-stu-id="e8069-143">By using the backreference construct within the regular expression.</span></span> <span data-ttu-id="e8069-144">構文を使用して、同じ正規表現で一致した部分式が参照されている`\`*数*ここで、*数*はキャプチャされた部分式の序数。</span><span class="sxs-lookup"><span data-stu-id="e8069-144">The matched subexpression is referenced in the same regular expression by using the syntax `\`*number*, where *number* is the ordinal number of the captured subexpression.</span></span>  
   
--   正規表現内で名前付き前方参照構成体を使用する。`\k<`*name*`>` \(*name* はキャプチャ グループの名前\) や、`\k<`*number*`>` \(*number* はキャプチャ グループの序数\) という構文を使うと、一致した部分式が同じ正規表現内で参照されます。 キャプチャ グループには、その序数と同じ既定の名前が付いています。 詳細については、このトピックで後述する「[一致した名前付き部分式](#named_matched_subexpression)」を参照してください。  
+-   <span data-ttu-id="e8069-145">正規表現内で名前付き前方参照構成体を使用する。</span><span class="sxs-lookup"><span data-stu-id="e8069-145">By using the named backreference construct within the regular expression.</span></span> <span data-ttu-id="e8069-146">構文を使用して、同じ正規表現で一致した部分式が参照されている`\k<`*名前*`>`ここで、*名前*、キャプチャ グループの名前を指定または`\k<`*数*`>`ここで、*数*キャプチャ グループの序数します。</span><span class="sxs-lookup"><span data-stu-id="e8069-146">The matched subexpression is referenced in the same regular expression by using the syntax `\k<`*name*`>`, where *name* is the name of a capturing group, or `\k<`*number*`>`, where *number* is the ordinal number of a capturing group.</span></span> <span data-ttu-id="e8069-147">キャプチャ グループには、その序数と同じ既定の名前が付いています。</span><span class="sxs-lookup"><span data-stu-id="e8069-147">A capturing group has a default name that is identical to its ordinal number.</span></span> <span data-ttu-id="e8069-148">詳細については、このトピックで後述する「 [一致した名前付き部分式](#named_matched_subexpression) 」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e8069-148">For more information, see [Named matched subexpressions](#named_matched_subexpression) later in this topic.</span></span>  
   
--   `$` *number* 置換シーケンスを <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=fullName> メソッドや <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=fullName> メソッドの呼び出しで使用する。ここで、*number* はキャプチャされた部分式の序数です。  
+-   <span data-ttu-id="e8069-149">使用して、 `$`*数*置換シーケンスを<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>または<xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>メソッドを呼び出す場所*数*はキャプチャされた部分式の序数。</span><span class="sxs-lookup"><span data-stu-id="e8069-149">By using the `$`*number* replacement sequence in a <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> or <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method call, where *number* is the ordinal number of the captured subexpression.</span></span>  
   
--   プログラムで <xref:System.Text.RegularExpressions.GroupCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=fullName> オブジェクトを使用する。 コレクション内の位置 0 にあるメンバーは、正規表現に一致した文字列全体を表します。 後続の各メンバーは、一致した部分式を表します。 詳しくは、「[グループ化構成体および正規表現オブジェクト](#Objects)」セクションをご覧ください。  
+-   <span data-ttu-id="e8069-150">プログラムで <xref:System.Text.RegularExpressions.GroupCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> オブジェクトを使用する。</span><span class="sxs-lookup"><span data-stu-id="e8069-150">Programmatically, by using the <xref:System.Text.RegularExpressions.GroupCollection> object returned by the <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="e8069-151">コレクション内の位置 0 にあるメンバーは、正規表現に一致した文字列全体を表します。</span><span class="sxs-lookup"><span data-stu-id="e8069-151">The member at position zero in the collection represents the entire regular expression match.</span></span> <span data-ttu-id="e8069-152">後続の各メンバーは、一致した部分式を表します。</span><span class="sxs-lookup"><span data-stu-id="e8069-152">Each subsequent member represents a matched subexpression.</span></span> <span data-ttu-id="e8069-153">詳しくは、「 [Grouping Constructs and Regular Expression Objects](#Objects) 」セクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e8069-153">For more information, see the [Grouping Constructs and Regular Expression Objects](#Objects) section.</span></span>  
   
- 次の例は、テキスト内で重複している単語を識別する正規表現を示しています。 正規表現パターンの 2 つのキャプチャ グループは、2 つの重複する単語を表します。 2 番目の単語は、入力文字列内の開始位置を報告するためにキャプチャされます。  
+ <span data-ttu-id="e8069-154">次の例は、テキスト内で重複している単語を識別する正規表現を示しています。</span><span class="sxs-lookup"><span data-stu-id="e8069-154">The following example illustrates a regular expression that identifies duplicated words in text.</span></span> <span data-ttu-id="e8069-155">正規表現パターンの 2 つのキャプチャ グループは、2 つの重複する単語を表します。</span><span class="sxs-lookup"><span data-stu-id="e8069-155">The regular expression pattern's two capturing groups represent the two instances of the duplicated word.</span></span> <span data-ttu-id="e8069-156">2 番目の単語は、入力文字列内の開始位置を報告するためにキャプチャされます。</span><span class="sxs-lookup"><span data-stu-id="e8069-156">The second instance is captured to report its starting position in the input string.</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#1](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/grouping1.cs#1)]
  [!code-vb[RegularExpressions.Language.Grouping#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/grouping1.vb#1)]  
   
- 正規表現パターンは次のとおりです。  
+ <span data-ttu-id="e8069-157">正規表現パターンは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e8069-157">The regular expression pattern is the following:</span></span>  
   
 ```  
 (\w+)\s(\1)\W  
 ```  
   
- 次の表に、正規表現パターンがどのように解釈されるかを示します。  
+ <span data-ttu-id="e8069-158">次の表に、正規表現パターンがどのように解釈されるかを示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-158">The following table shows how the regular expression pattern is interpreted.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`(\w+)`|1 つ以上の単語文字に一致します。 これが最初のキャプチャ グループです。|  
-|`\s`|空白文字と一致します。|  
-|`(\1)`|最初のキャプチャ グループの文字列と一致します。 これが 2 番目のキャプチャ グループです。 例では、これをキャプチャ グループに割り当てて、重複する単語の開始位置を `Match.Index` プロパティから取得できるようにしています。|  
-|`\W`|空白や句読点などの単語文字以外の文字と一致します。 これにより、正規表現パターンが、最初のキャプチャ グループの単語で始まる単語と一致しなくなります。|  
+|<span data-ttu-id="e8069-159">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-159">Pattern</span></span>|<span data-ttu-id="e8069-160">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-160">Description</span></span>|  
+|-------------|-----------------|  
+|`(\w+)`|<span data-ttu-id="e8069-161">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-161">Match one or more word characters.</span></span> <span data-ttu-id="e8069-162">これが最初のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="e8069-162">This is the first capturing group.</span></span>|  
+|`\s`|<span data-ttu-id="e8069-163">空白文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-163">Match a white-space character.</span></span>|  
+|`(\1)`|<span data-ttu-id="e8069-164">最初のキャプチャ グループの文字列と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-164">Match the string in the first captured group.</span></span> <span data-ttu-id="e8069-165">これが 2 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="e8069-165">This is the second capturing group.</span></span> <span data-ttu-id="e8069-166">例では、これをキャプチャ グループに割り当てて、重複する単語の開始位置を `Match.Index` オブジェクトを使用する。</span><span class="sxs-lookup"><span data-stu-id="e8069-166">The example assigns it to a captured group so that the starting position of the duplicate word can be retrieved from the `Match.Index` property.</span></span>|  
+|`\W`|<span data-ttu-id="e8069-167">空白や句読点などの単語文字以外の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-167">Match a non-word character, including white space and punctuation.</span></span> <span data-ttu-id="e8069-168">これにより、正規表現パターンが、最初のキャプチャ グループの単語で始まる単語と一致しなくなります。</span><span class="sxs-lookup"><span data-stu-id="e8069-168">This prevents the regular expression pattern from matching a word that starts with the word from the first captured group.</span></span>|  
   
 <a name="named_matched_subexpression"></a>   
-## 一致した名前付き部分式  
- 次のグループ化構成体は、一致した部分式をキャプチャし、その部分式に名前または番号でアクセスできるようにします。  
+## <a name="named-matched-subexpressions"></a><span data-ttu-id="e8069-169">一致した名前付き部分式</span><span class="sxs-lookup"><span data-stu-id="e8069-169">Named Matched Subexpressions</span></span>  
+ <span data-ttu-id="e8069-170">次のグループ化構成体は、一致した部分式をキャプチャし、その部分式に名前または番号でアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="e8069-170">The following grouping construct captures a matched subexpression and lets you access it by name or by number:</span></span>  
   
 ```  
 (?<name>subexpression)  
 ```  
   
- または  
+ <span data-ttu-id="e8069-171">または</span><span class="sxs-lookup"><span data-stu-id="e8069-171">or:</span></span>  
   
 ```  
 (?'name'subexpression)  
 ```  
   
- ここで、*name* は有効なグループ名、*subexpression* は有効な正規表現パターンです。*name* は区切り記号を含まず、先頭が数字以外である必要があります。  
+ <span data-ttu-id="e8069-172">ここで、 *name* は有効なグループ名、 *subexpression* は有効な正規表現パターンです。</span><span class="sxs-lookup"><span data-stu-id="e8069-172">where *name* is a valid group name, and *subexpression* is any valid regular expression pattern.</span></span> <span data-ttu-id="e8069-173">*name* は区切り記号を含まず、先頭が数字以外である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e8069-173">*name* must not contain any punctuation characters and cannot begin with a number.</span></span>  
   
 > [!NOTE]
->  正規表現パターン一致メソッドの <xref:System.Text.RegularExpressions.RegexOptions> パラメーターに <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> フラグが含まれる場合や、`n` オプションがこの部分式に適用される場合 \(このトピックで後述する「[グループ オプション](#group_options)」を参照\)、部分式をキャプチャする唯一の方法は、キャプチャ グループの名前を明示的に指定することです。  
+>  <span data-ttu-id="e8069-174">場合、<xref:System.Text.RegularExpressions.RegexOptions>正規表現パターン一致メソッドのパラメーターが含まれています、<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType>フラグ、または、`n`オプションがこの部分式に適用される (を参照してください[グループ オプション](#group_options)このトピックで後述)、のみキャプチャする方法、部分式は明示的にグループの名前をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="e8069-174">If the <xref:System.Text.RegularExpressions.RegexOptions> parameter of a regular expression pattern matching method includes the <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> flag, or if the `n` option is applied to this subexpression (see [Group options](#group_options) later in this topic), the only way to capture a subexpression is to explicitly name capturing groups.</span></span>  
   
- キャプチャされた名前付きグループには次の方法でアクセスできます。  
+ <span data-ttu-id="e8069-175">キャプチャされた名前付きグループには次の方法でアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="e8069-175">You can access named captured groups in the following ways:</span></span>  
   
--   正規表現内で名前付き前方参照構成体を使用する。`\k<`*name*`>` という構文を使うと、一致した部分式が同じ正規表現内で参照されます。ここで、*name* はキャプチャされた部分式の名前です。  
+-   <span data-ttu-id="e8069-176">正規表現内で名前付き前方参照構成体を使用する。</span><span class="sxs-lookup"><span data-stu-id="e8069-176">By using the named backreference construct within the regular expression.</span></span> <span data-ttu-id="e8069-177">構文を使用して、同じ正規表現で一致した部分式が参照されている`\k<`*名前*`>`ここで、*名前*キャプチャされた部分式の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="e8069-177">The matched subexpression is referenced in the same regular expression by using the syntax `\k<`*name*`>`, where *name* is the name of the captured subexpression.</span></span>  
   
--   正規表現内で前方参照構成体を使用する。`\`*number* という構文を使うと、一致した部分式が同じ正規表現内で参照されます。ここで、*number* はキャプチャされた部分式の序数です。 一致した名前付き部分式には、一致した部分式の後、左から右に連続した番号が付けられます。  
+-   <span data-ttu-id="e8069-178">正規表現内で前方参照構成体を使用する。</span><span class="sxs-lookup"><span data-stu-id="e8069-178">By using the backreference construct within the regular expression.</span></span> <span data-ttu-id="e8069-179">構文を使用して、同じ正規表現で一致した部分式が参照されている`\`*数*ここで、*数*はキャプチャされた部分式の序数。</span><span class="sxs-lookup"><span data-stu-id="e8069-179">The matched subexpression is referenced in the same regular expression by using the syntax `\`*number*, where *number* is the ordinal number of the captured subexpression.</span></span> <span data-ttu-id="e8069-180">一致した名前付き部分式には、一致した部分式の後、左から右に連続した番号が付けられます。</span><span class="sxs-lookup"><span data-stu-id="e8069-180">Named matched subexpressions are numbered consecutively from left to right after matched subexpressions.</span></span>  
   
--   `${` *name* `}` 置換シーケンスを、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=fullName> メソッドや <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=fullName> メソッドの呼び出しで使用する。ここで、*name* はキャプチャされた部分式の名前です。  
+-   <span data-ttu-id="e8069-181">使用して、 `${`*名前*`}`置換シーケンスを<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>または<xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>メソッドを呼び出す場所*名前*キャプチャされた部分式の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="e8069-181">By using the `${`*name*`}` replacement sequence in a <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> or <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method call, where *name* is the name of the captured subexpression.</span></span>  
   
--   `$` *number* 置換シーケンスを <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=fullName> メソッドや <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=fullName> メソッドの呼び出しで使用する。ここで、*number* はキャプチャされた部分式の序数です。  
+-   <span data-ttu-id="e8069-182">使用して、 `$`*数*置換シーケンスを<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>または<xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>メソッドを呼び出す場所*数*はキャプチャされた部分式の序数。</span><span class="sxs-lookup"><span data-stu-id="e8069-182">By using the `$`*number* replacement sequence in a <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> or <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> method call, where *number* is the ordinal number of the captured subexpression.</span></span>  
   
--   プログラムで <xref:System.Text.RegularExpressions.GroupCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=fullName> オブジェクトを使用する。 コレクション内の位置 0 にあるメンバーは、正規表現に一致した文字列全体を表します。 後続の各メンバーは、一致した部分式を表します。 キャプチャされた名前付きグループは、キャプチャされた番号付きグループの後にコレクションに格納されます。  
+-   <span data-ttu-id="e8069-183">プログラムで <xref:System.Text.RegularExpressions.GroupCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> オブジェクトを使用する。</span><span class="sxs-lookup"><span data-stu-id="e8069-183">Programmatically, by using the <xref:System.Text.RegularExpressions.GroupCollection> object returned by the <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="e8069-184">コレクション内の位置 0 にあるメンバーは、正規表現に一致した文字列全体を表します。</span><span class="sxs-lookup"><span data-stu-id="e8069-184">The member at position zero in the collection represents the entire regular expression match.</span></span> <span data-ttu-id="e8069-185">後続の各メンバーは、一致した部分式を表します。</span><span class="sxs-lookup"><span data-stu-id="e8069-185">Each subsequent member represents a matched subexpression.</span></span> <span data-ttu-id="e8069-186">キャプチャされた名前付きグループは、キャプチャされた番号付きグループの後にコレクションに格納されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-186">Named captured groups are stored in the collection after numbered captured groups.</span></span>  
   
--   プログラムで <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトのインデクサー \(C\# の場合\) またはその <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> プロパティ \(Visual Basic の場合\) に部分式名を指定する。  
+-   <span data-ttu-id="e8069-187">プログラムで <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトのインデクサー (C# の場合) またはその <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> プロパティ (Visual Basic の場合) に部分式名を指定する。</span><span class="sxs-lookup"><span data-stu-id="e8069-187">Programmatically, by providing the subexpression name to the <xref:System.Text.RegularExpressions.GroupCollection> object's indexer (in C#) or to its <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> property (in Visual Basic).</span></span>  
   
- 簡単な正規表現パターンで、プログラムまたは正規表現言語構文を使用して番号付き \(名前のない\) グループおよび名前付きグループをどのように参照できるかを示します。 正規表現 `((?<One>abc)\d+)?(?<Two>xyz)(.*)`  からは、次のように番号と名前の付いたキャプチャ グループが作成されます。 最初のキャプチャ グループ \(番号 0\) は、常にパターン全体を指します。  
+ <span data-ttu-id="e8069-188">簡単な正規表現パターンで、プログラムまたは正規表現言語構文を使用して番号付き (名前のない) グループおよび名前付きグループをどのように参照できるかを示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-188">A simple regular expression pattern illustrates how numbered (unnamed) and named groups can be referenced either programmatically or by using regular expression language syntax.</span></span> <span data-ttu-id="e8069-189">正規表現 `((?<One>abc)\d+)?(?<Two>xyz)(.*)` からは、次のように番号と名前の付いたキャプチャ グループが作成されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-189">The regular expression `((?<One>abc)\d+)?(?<Two>xyz)(.*)` produces the following capturing groups by number and by name.</span></span> <span data-ttu-id="e8069-190">最初のキャプチャ グループ (番号 0) は、常にパターン全体を指します。</span><span class="sxs-lookup"><span data-stu-id="e8069-190">The first capturing group (number 0) always refers to the entire pattern.</span></span>  
   
-|Number|名前|パターン|  
-|------------|--------|----------|  
-|0|0 \(既定名\)|`((?<One>abc)\d+)?(?<Two>xyz)(.*)`|  
-|1|1 \(既定名\)|`((?<One>abc)\d+)`|  
-|2|2 \(既定名\)|`(.*)`|  
-|3|1|`(?<One>abc)`|  
-|4|2|`(?<Two>xyz)`|  
+|<span data-ttu-id="e8069-191">number</span><span class="sxs-lookup"><span data-stu-id="e8069-191">Number</span></span>|<span data-ttu-id="e8069-192">name</span><span class="sxs-lookup"><span data-stu-id="e8069-192">Name</span></span>|<span data-ttu-id="e8069-193">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-193">Pattern</span></span>|  
+|------------|----------|-------------|  
+|<span data-ttu-id="e8069-194">0</span><span class="sxs-lookup"><span data-stu-id="e8069-194">0</span></span>|<span data-ttu-id="e8069-195">0 (既定名)</span><span class="sxs-lookup"><span data-stu-id="e8069-195">0 (default name)</span></span>|`((?<One>abc)\d+)?(?<Two>xyz)(.*)`|  
+|<span data-ttu-id="e8069-196">1</span><span class="sxs-lookup"><span data-stu-id="e8069-196">1</span></span>|<span data-ttu-id="e8069-197">1 (既定名)</span><span class="sxs-lookup"><span data-stu-id="e8069-197">1 (default name)</span></span>|`((?<One>abc)\d+)`|  
+|<span data-ttu-id="e8069-198">2</span><span class="sxs-lookup"><span data-stu-id="e8069-198">2</span></span>|<span data-ttu-id="e8069-199">2 (既定名)</span><span class="sxs-lookup"><span data-stu-id="e8069-199">2 (default name)</span></span>|`(.*)`|  
+|<span data-ttu-id="e8069-200">3</span><span class="sxs-lookup"><span data-stu-id="e8069-200">3</span></span>|<span data-ttu-id="e8069-201">1</span><span class="sxs-lookup"><span data-stu-id="e8069-201">One</span></span>|`(?<One>abc)`|  
+|<span data-ttu-id="e8069-202">4</span><span class="sxs-lookup"><span data-stu-id="e8069-202">4</span></span>|<span data-ttu-id="e8069-203">2</span><span class="sxs-lookup"><span data-stu-id="e8069-203">Two</span></span>|`(?<Two>xyz)`|  
   
- 次の例は、重複している単語、および重複している各単語の直後にある単語を識別する正規表現を示しています。 この正規表現パターンでは、重複している単語を表す `duplicateWord` と重複している単語の後にある単語を表す `nextWord` の 2 つの名前付き部分式を定義しています。  
+ <span data-ttu-id="e8069-204">次の例は、重複している単語、および重複している各単語の直後にある単語を識別する正規表現を示しています。</span><span class="sxs-lookup"><span data-stu-id="e8069-204">The following example illustrates a regular expression that identifies duplicated words and the word that immediately follows each duplicated word.</span></span> <span data-ttu-id="e8069-205">この正規表現パターンでは、重複している単語を表す `duplicateWord`と重複している単語の後にある単語を表す `nextWord`の 2 つの名前付き部分式を定義しています。</span><span class="sxs-lookup"><span data-stu-id="e8069-205">The regular expression pattern defines two named subexpressions: `duplicateWord`, which represents the duplicated word; and `nextWord`, which represents the word that follows the duplicated word.</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#2](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/grouping2.cs#2)]
  [!code-vb[RegularExpressions.Language.Grouping#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/grouping2.vb#2)]  
   
- 正規表現パターンは次のとおりです。  
+ <span data-ttu-id="e8069-206">正規表現パターンは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e8069-206">The regular expression pattern is as follows:</span></span>  
   
 ```  
 (?<duplicateWord>\w+)\s\k<duplicateWord>\W(?<nextWord>\w+)  
 ```  
   
- 次の表に、正規表現がどのように解釈されるかを示します。  
+ <span data-ttu-id="e8069-207">次の表に、正規表現がどのように解釈されるかを示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-207">The following table shows how the regular expression is interpreted.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`(?<duplicateWord>\w+)`|1 つ以上の単語文字に一致します。 このキャプチャ グループに `duplicateWord` という名前を付けます。|  
-|`\s`|空白文字と一致します。|  
-|`\k<duplicateWord>`|`duplicateWord` という名前のキャプチャ済みグループの文字列と一致します。|  
-|`\W`|空白や句読点などの単語文字以外の文字と一致します。 これにより、正規表現パターンが、最初のキャプチャ グループの単語で始まる単語と一致しなくなります。|  
-|`(?<nextWord>\w+)`|1 つ以上の単語文字に一致します。 このキャプチャ グループに `nextWord` という名前を付けます。|  
+|<span data-ttu-id="e8069-208">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-208">Pattern</span></span>|<span data-ttu-id="e8069-209">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-209">Description</span></span>|  
+|-------------|-----------------|  
+|`(?<duplicateWord>\w+)`|<span data-ttu-id="e8069-210">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-210">Match one or more word characters.</span></span> <span data-ttu-id="e8069-211">このキャプチャ グループに `duplicateWord`という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="e8069-211">Name this capturing group `duplicateWord`.</span></span>|  
+|`\s`|<span data-ttu-id="e8069-212">空白文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-212">Match a white-space character.</span></span>|  
+|`\k<duplicateWord>`|<span data-ttu-id="e8069-213">`duplicateWord`という名前のキャプチャ済みグループの文字列と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-213">Match the string from the captured group that is named `duplicateWord`.</span></span>|  
+|`\W`|<span data-ttu-id="e8069-214">空白や句読点などの単語文字以外の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-214">Match a non-word character, including white space and punctuation.</span></span> <span data-ttu-id="e8069-215">これにより、正規表現パターンが、最初のキャプチャ グループの単語で始まる単語と一致しなくなります。</span><span class="sxs-lookup"><span data-stu-id="e8069-215">This prevents the regular expression pattern from matching a word that starts with the word from the first captured group.</span></span>|  
+|`(?<nextWord>\w+)`|<span data-ttu-id="e8069-216">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-216">Match one or more word characters.</span></span> <span data-ttu-id="e8069-217">このキャプチャ グループに `nextWord`という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="e8069-217">Name this capturing group `nextWord`.</span></span>|  
   
- グループ名は、正規表現で繰り返し使用できます。 たとえば、次の例が示すように、複数のグループに `digit` という名前を付けることができます。 名前が重複する場合、<xref:System.Text.RegularExpressions.Group> オブジェクトの値は、入力文字列の最後の正常なキャプチャによって決定されます。 さらに、グループ名が重複されない場合と同じように、各キャプチャについての情報が <xref:System.Text.RegularExpressions.CaptureCollection> 格納されます。  
+ <span data-ttu-id="e8069-218">グループ名は、正規表現で繰り返し使用できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-218">Note that a group name can be repeated in a regular expression.</span></span> <span data-ttu-id="e8069-219">たとえば、次の例が示すように、複数のグループに `digit`という名前を付けることができます。</span><span class="sxs-lookup"><span data-stu-id="e8069-219">For example, it is possible for more than one group to be named `digit`, as the following example illustrates.</span></span> <span data-ttu-id="e8069-220">名前が重複する場合、 <xref:System.Text.RegularExpressions.Group> オブジェクトの値は、入力文字列の最後の正常なキャプチャによって決定されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-220">In the case of duplicate names, the value of the <xref:System.Text.RegularExpressions.Group> object is determined by the last successful capture in the input string.</span></span> <span data-ttu-id="e8069-221">さらに、グループ名が重複されない場合と同じように、各キャプチャについての情報が <xref:System.Text.RegularExpressions.CaptureCollection> 格納されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-221">In addition, the <xref:System.Text.RegularExpressions.CaptureCollection> is populated with information about each capture just as it would be if the group name was not duplicated.</span></span>  
   
- 次の例では、正規表現 `\D+(?<digit>\d+)\D+(?<digit>\d+)?` に `digit` という名前のグループの 2 回の出現が含まれています。 最初の `digit` という名前のグループは、1 桁以上の数字をキャプチャします。 2 番目の `digit` という名前のグループは、1 桁以上の数字の 0 回か 1 回の出現をキャプチャします。 例の出力が示すように、2 番目のキャプチャ グループがテキストと正常に一致する場合、そのテキストの値は <xref:System.Text.RegularExpressions.Group> オブジェクトの値を定義します。 2 番目のキャプチャ グループが入力文字列と一致しない場合、最後に成功した一致の値によって <xref:System.Text.RegularExpressions.Group> オブジェクトの値が定義されます。  
+ <span data-ttu-id="e8069-222">次の例では、正規表現 `\D+(?<digit>\d+)\D+(?<digit>\d+)?` に `digit`という名前のグループの 2 回の出現が含まれています。</span><span class="sxs-lookup"><span data-stu-id="e8069-222">In the following example, the regular expression `\D+(?<digit>\d+)\D+(?<digit>\d+)?` includes two occurrences of a group named `digit`.</span></span> <span data-ttu-id="e8069-223">最初の `digit` という名前のグループは、1 桁以上の数字をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="e8069-223">The first `digit` named group captures one or more digit characters.</span></span> <span data-ttu-id="e8069-224">2 番目の `digit` という名前のグループは、1 桁以上の数字の 0 回か 1 回の出現をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="e8069-224">The second `digit` named group captures either zero or one occurrence of one or more digit characters.</span></span> <span data-ttu-id="e8069-225">例の出力が示すように、2 番目のキャプチャ グループがテキストと正常に一致する場合、そのテキストの値は <xref:System.Text.RegularExpressions.Group> オブジェクトの値を定義します。</span><span class="sxs-lookup"><span data-stu-id="e8069-225">As the output from the example shows, if the second capturing group successfully matches text, the value of that text defines the value of the <xref:System.Text.RegularExpressions.Group> object.</span></span> <span data-ttu-id="e8069-226">2 番目のキャプチャ グループが入力文字列と一致しない場合、最後に成功した一致の値によって <xref:System.Text.RegularExpressions.Group> オブジェクトの値が定義されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-226">If the second capturing group cannot does not match the input string, the value of the last successful match defines the value of the <xref:System.Text.RegularExpressions.Group> object.</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#12](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/duplicate1.cs#12)]
  [!code-vb[RegularExpressions.Language.Grouping#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/duplicate1.vb#12)]  
   
- 次の表に、正規表現がどのように解釈されるかを示します。  
+ <span data-ttu-id="e8069-227">次の表に、正規表現がどのように解釈されるかを示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-227">The following table shows how the regular expression is interpreted.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\D+`|1 個以上の 10 進数以外の文字と一致します。|  
-|`(?<digit>\d+)`|1 個以上の 10 進数の文字と一致します。 一致を `digit` という名前のグループに割り当てます。|  
-|\\D\+|1 個以上の 10 進数以外の文字と一致します。|  
-|`(?<digit>\d+)?`|1 つ以上の 10 進数の文字の 0 回または 1 回の出現と一致します。 一致を `digit` という名前のグループに割り当てます。|  
+|<span data-ttu-id="e8069-228">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-228">Pattern</span></span>|<span data-ttu-id="e8069-229">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-229">Description</span></span>|  
+|-------------|-----------------|  
+|`\D+`|<span data-ttu-id="e8069-230">1 個以上の 10 進数以外の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-230">Match one or more non-decimal digit characters.</span></span>|  
+|`(?<digit>\d+)`|<span data-ttu-id="e8069-231">1 個以上の 10 進数の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-231">Match one or more decimal digit characters.</span></span> <span data-ttu-id="e8069-232">一致を `digit` という名前のグループに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="e8069-232">Assign the match to the `digit` named group.</span></span>|  
+|<span data-ttu-id="e8069-233">\D+</span><span class="sxs-lookup"><span data-stu-id="e8069-233">\D+</span></span>|<span data-ttu-id="e8069-234">1 個以上の 10 進数以外の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-234">Match one or more non-decimal digit characters.</span></span>|  
+|`(?<digit>\d+)?`|<span data-ttu-id="e8069-235">1 つ以上の 10 進数の文字の 0 回または 1 回の出現と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-235">Match zero or one occurrence of one or more decimal digit characters.</span></span> <span data-ttu-id="e8069-236">一致を `digit` という名前のグループに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="e8069-236">Assign the match to the `digit` named group.</span></span>|  
   
 <a name="balancing_group_definition"></a>   
-## グループ定義の均等化  
- グループ定義の均等化では、既に定義されていたグループの定義を削除し、既に定義されていたグループと現在のグループの間隔を現在のグループに格納します。 このグループ化構成体の形式は次のとおりです。  
+## <a name="balancing-group-definitions"></a><span data-ttu-id="e8069-237">グループ定義の均等化</span><span class="sxs-lookup"><span data-stu-id="e8069-237">Balancing Group Definitions</span></span>  
+ <span data-ttu-id="e8069-238">グループ定義の均等化では、既に定義されていたグループの定義を削除し、既に定義されていたグループと現在のグループの間隔を現在のグループに格納します。</span><span class="sxs-lookup"><span data-stu-id="e8069-238">A balancing group definition deletes the definition of a previously defined group and stores, in the current group, the interval between the previously defined group and the current group.</span></span> <span data-ttu-id="e8069-239">このグループ化構成体の形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e8069-239">This grouping construct has the following format:</span></span>  
   
 ```  
 (?<name1-name2>subexpression)  
 ```  
   
- または  
+ <span data-ttu-id="e8069-240">または</span><span class="sxs-lookup"><span data-stu-id="e8069-240">or:</span></span>  
   
 ```  
 (?'name1-name2' subexpression)  
 ```  
   
- ここで、*name1* は現在のグループ \(省略可能\) で、*name2* は既に定義されていたグループで、*subexpression* は有効な正規表現パターンです。 グループ定義の均等化では、*name2* の定義を削除し、*name2* と *name1* の間隔を *name1* に格納します。*name2* グループが定義されていない場合、一致はバックトラックされます。*name2* の最後の定義を削除すると、*name2* の以前の定義がわかるため、この構成体によって、かっこや左右の角かっこなど入れ子になった構成体を追跡するカウンターとして *name2* グループのキャプチャのスタックを使用できます。  
+ <span data-ttu-id="e8069-241">ここで、 *name1* は現在のグループ (省略可能) で、 *name2* は既に定義されていたグループで、 *subexpression* は有効な正規表現パターンです。</span><span class="sxs-lookup"><span data-stu-id="e8069-241">where *name1* is the current group (optional), *name2* is a previously defined group, and *subexpression* is any valid regular expression pattern.</span></span> <span data-ttu-id="e8069-242">グループ定義の均等化では、 *name2* の定義を削除し、 *name2* と *name1* の間隔を *name1*に格納します。</span><span class="sxs-lookup"><span data-stu-id="e8069-242">The balancing group definition deletes the definition of *name2* and stores the interval between *name2* and *name1* in *name1*.</span></span> <span data-ttu-id="e8069-243">*name2* グループが定義されていない場合、一致はバックトラックされます。</span><span class="sxs-lookup"><span data-stu-id="e8069-243">If no *name2* group is defined, the match backtracks.</span></span> <span data-ttu-id="e8069-244">*name2* の最後の定義を削除すると、 *name2*の以前の定義がわかるため、この構成体によって、かっこや左右の角かっこなど入れ子になった構成体を追跡するカウンターとして *name2* グループのキャプチャのスタックを使用できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-244">Because deleting the last definition of *name2* reveals the previous definition of *name2*, this construct lets you use the stack of captures for group *name2* as a counter for keeping track of nested constructs such as parentheses or opening and closing brackets.</span></span>  
   
- グループ定義の均等化では、*name2* をスタックとして使用します。 入れ子になった各構成体の開始文字が、グループとその <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=fullName> コレクションに配置されます。 終了文字が一致すると、対応する開始文字がグループから削除され、<xref:System.Text.RegularExpressions.Group.Captures%2A> コレクションが 1 つ減らされます。 入れ子になったすべての構成体の開始文字と終了文字が一致したら、*name1* は空になります。  
+ <span data-ttu-id="e8069-245">グループ定義の均等化では、 *name2* をスタックとして使用します。</span><span class="sxs-lookup"><span data-stu-id="e8069-245">The balancing group definition uses *name2* as a stack.</span></span> <span data-ttu-id="e8069-246">入れ子になった各構成体の開始文字が、グループとその <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> コレクションに配置されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-246">The beginning character of each nested construct is placed in the group and in its <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> collection.</span></span> <span data-ttu-id="e8069-247">終了文字が一致すると、対応する開始文字がグループから削除され、 <xref:System.Text.RegularExpressions.Group.Captures%2A> コレクションが 1 つ減らされます。</span><span class="sxs-lookup"><span data-stu-id="e8069-247">When the closing character is matched, its corresponding opening character is removed from the group, and the <xref:System.Text.RegularExpressions.Group.Captures%2A> collection is decreased by one.</span></span> <span data-ttu-id="e8069-248">入れ子になったすべての構成体の開始文字と終了文字が一致したら、 *name1* は空になります。</span><span class="sxs-lookup"><span data-stu-id="e8069-248">After the opening and closing characters of all nested constructs have been matched, *name1* is empty.</span></span>  
   
 > [!NOTE]
->  入れ子になった構成体の適切な開始文字と終了文字を使用するように次の例の正規表現を変更すると、その正規表現を使用して、複数の入れ子になったメソッド呼び出しを含む数式やプログラム コード行などのほとんどの入れ子になった構成体を処理できるようになります。  
+>  <span data-ttu-id="e8069-249">入れ子になった構成体の適切な開始文字と終了文字を使用するように次の例の正規表現を変更すると、その正規表現を使用して、複数の入れ子になったメソッド呼び出しを含む数式やプログラム コード行などのほとんどの入れ子になった構成体を処理できるようになります。</span><span class="sxs-lookup"><span data-stu-id="e8069-249">After you modify the regular expression in the following example to use the appropriate opening and closing character of a nested construct, you can use it to handle most nested constructs, such as mathematical expressions or lines of program code that include multiple nested method calls.</span></span>  
   
- 次の例では、グループ定義の均等化を使用して、入力文字列内の左と右の山かっこ \(\<\>\) を一致させています。 この例では、一致する山かっこのペアを追跡するスタックのように使用される `Open` および `Close` という 2 つの名前付きグループを定義しています。 キャプチャされた各左山かっこは `Open` グループのキャプチャ コレクションに挿入され、キャプチャされた各右山かっこは `Close` グループのキャプチャ コレクションに挿入されます。 グループ定義の均等化によって、各左山かっこに一致する右山かっこが存在することが確認されます。 存在しない場合、最後のサブパターンの `(?(Open)(?!))` は、`Open` グループが空でない場合 \(したがって、いくつかの入れ子になった構成体に右山かっこがない場合\) にのみ評価されます。 最後のサブパターンが評価されると、`(?!)` サブパターンが必ず失敗するゼロ幅の否定先読みアサーションであるため、照合は失敗します。  
+ <span data-ttu-id="e8069-250">次の例では、グループ定義の均等化を使用して、入力文字列内の左と右の山かっこ (<>) を一致させています。</span><span class="sxs-lookup"><span data-stu-id="e8069-250">The following example uses a balancing group definition to match left and right angle brackets (<>) in an input string.</span></span> <span data-ttu-id="e8069-251">この例では、一致する山かっこのペアを追跡するスタックのように使用される `Open` および `Close`という 2 つの名前付きグループを定義しています。</span><span class="sxs-lookup"><span data-stu-id="e8069-251">The example defines two named groups, `Open` and `Close`, that are used like a stack to track matching pairs of angle brackets.</span></span> <span data-ttu-id="e8069-252">キャプチャされた各左山かっこは `Open` グループのキャプチャ コレクションに挿入され、キャプチャされた各右山かっこは `Close` グループのキャプチャ コレクションに挿入されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-252">Each captured left angle bracket is pushed into the capture collection of the `Open` group, and each captured right angle bracket is pushed into the capture collection of the `Close` group.</span></span> <span data-ttu-id="e8069-253">グループ定義の均等化によって、各左山かっこに一致する右山かっこが存在することが確認されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-253">The balancing group definition ensures that there is a matching right angle bracket for each left angle bracket.</span></span> <span data-ttu-id="e8069-254">存在しない場合、最後のサブパターンの `(?(Open)(?!))`は、 `Open` グループが空でない場合 (したがって、いくつかの入れ子になった構成体に右山かっこがない場合) にのみ評価されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-254">If there is not, the final subpattern, `(?(Open)(?!))`, is evaluated only if the `Open` group is not empty (and, therefore, if all nested constructs have not been closed).</span></span> <span data-ttu-id="e8069-255">最後のサブパターンが評価されると、 `(?!)` サブパターンが必ず失敗するゼロ幅の否定先読みアサーションであるため、照合は失敗します。</span><span class="sxs-lookup"><span data-stu-id="e8069-255">If the final subpattern is evaluated, the match fails, because the `(?!)` subpattern is a zero-width negative lookahead assertion that always fails.</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#3](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/grouping3.cs#3)]
  [!code-vb[RegularExpressions.Language.Grouping#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/grouping3.vb#3)]  
   
- 正規表現パターンは次のとおりです。  
+ <span data-ttu-id="e8069-256">正規表現パターンは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e8069-256">The regular expression pattern is:</span></span>  
   
 ```  
 ^[^<>]*(((?'Open'<)[^<>]*)+((?'Close-Open'>)[^<>]*)+)*(?(Open)(?!))$  
 ```  
   
- この正規表現パターンは、次のように解釈されます。  
+ <span data-ttu-id="e8069-257">この正規表現パターンは、次のように解釈されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-257">The regular expression is interpreted as follows:</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`^`|文字列の先頭から始まります。|  
-|`[^<>]*`|左または右の山かっこではない 0 個以上の文字と一致します。|  
-|`(?'Open'<)`|左山かっこと一致し、そのかっこを `Open` という名前のグループに代入します。|  
-|`[^<>]*`|左または右の山かっこではない 0 個以上の文字と一致します。|  
-|`((?'Open'<)[^<>]*) +`|左山かっこの後に左または右の山かっこではない 0 個以上の文字が続くパターンの 1 回以上の出現と一致します。 これが 2 番目のキャプチャ グループです。|  
-|`(?'Close-Open'>)`|右山かっこと一致し、`Open` グループと現在のグループの間の部分文字列を `Close` グループに代入して、`Open` グループの定義を削除します。|  
-|`[^<>]*`|左または右の山かっこではない任意の文字の 0 回以上の出現と一致します。|  
-|`((?'Close-Open'>)[^<>]*)+`|右山かっこの後に左または右の山かっこではない任意の文字の 0 回以上の出現が続くパターンの 1 回以上の出現と一致します。 右山かっこと一致したときに、`Open` グループと現在のグループの間の部分文字列を `Close` グループに代入して、`Open` グループの定義を削除します。 これが 3 番目のキャプチャ グループです。|  
-|`(((?'Open'<)[^<>]*)+((?'Close-Open'>)[^<>]*)+)*`|左山かっこの 1 回以上の出現の後に山かっこではない 0 個以上の文字が続き、その後に右山かっこの 1 回以上の出現が続き、その後に山かっこ以外の 0 回以上の出現が続くパターンの 0 回以上の出現と一致します。 右山かっこと一致したときに、`Open` グループの定義を削除して、`Open` グループと現在のグループの間の部分文字列を `Close` グループに代入します。 これが最初のキャプチャ グループです。|  
-|`(?(Open)(?!))`|`Open` グループが存在し、空の文字列が一致する場合、照合を破棄してください。ただし、文字列内での正規表現エンジンの位置は進めないでください。 これはゼロ幅の否定先読みアサーションです。 空の文字列が常に入力文字列に暗黙的に存在するため、この照合は必ず失敗します。 この照合の失敗は、山かっこの数が一致していないことを示します。|  
-|`$`|入力文字列の末尾と一致します。|  
+|<span data-ttu-id="e8069-258">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-258">Pattern</span></span>|<span data-ttu-id="e8069-259">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-259">Description</span></span>|  
+|-------------|-----------------|  
+|`^`|<span data-ttu-id="e8069-260">文字列の先頭から始まります。</span><span class="sxs-lookup"><span data-stu-id="e8069-260">Begin at the start of the string.</span></span>|  
+|`[^<>]*`|<span data-ttu-id="e8069-261">左または右の山かっこではない 0 個以上の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-261">Match zero or more characters that are not left or right angle brackets.</span></span>|  
+|`(?'Open'<)`|<span data-ttu-id="e8069-262">左山かっこと一致し、そのかっこを `Open`という名前のグループに代入します。</span><span class="sxs-lookup"><span data-stu-id="e8069-262">Match a left angle bracket and assign it to a group named `Open`.</span></span>|  
+|`[^<>]*`|<span data-ttu-id="e8069-263">左または右の山かっこではない 0 個以上の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-263">Match zero or more characters that are not left or right angle brackets.</span></span>|  
+|`((?'Open'<)[^<>]*) +`|<span data-ttu-id="e8069-264">左山かっこの後に左または右の山かっこではない 0 個以上の文字が続くパターンの 1 回以上の出現と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-264">Match one or more occurrences of a left angle bracket followed by zero or more characters that are not left or right angle brackets.</span></span> <span data-ttu-id="e8069-265">これが 2 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="e8069-265">This is the second capturing group.</span></span>|  
+|`(?'Close-Open'>)`|<span data-ttu-id="e8069-266">右山かっこと一致し、 `Open` グループと現在のグループの間の部分文字列を `Close` グループに代入して、 `Open` グループの定義を削除します。</span><span class="sxs-lookup"><span data-stu-id="e8069-266">Match a right angle bracket, assign the substring between the `Open` group and the current group to the `Close` group, and delete the definition of the `Open` group.</span></span>|  
+|`[^<>]*`|<span data-ttu-id="e8069-267">左または右の山かっこではない任意の文字の 0 回以上の出現と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-267">Match zero or more occurrences of any character that is neither a left  nor a right angle bracket.</span></span>|  
+|`((?'Close-Open'>)[^<>]*)+`|<span data-ttu-id="e8069-268">右山かっこの後に左または右の山かっこではない任意の文字の 0 回以上の出現が続くパターンの 1 回以上の出現と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-268">Match one or more occurrences of a right angle bracket, followed by zero or more occurrences of any character that is neither a left nor a right angle bracket.</span></span> <span data-ttu-id="e8069-269">右山かっこと一致したときに、 `Open` グループと現在のグループの間の部分文字列を `Close` グループに代入して、 `Open` グループの定義を削除します。</span><span class="sxs-lookup"><span data-stu-id="e8069-269">When matching the right angle bracket, assign the substring between the `Open` group and the current group to the `Close` group, and delete the definition of the `Open` group.</span></span> <span data-ttu-id="e8069-270">これが 3 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="e8069-270">This is the third capturing group.</span></span>|  
+|`(((?'Open'<)[^<>]*)+((?'Close-Open'>)[^<>]*)+)*`|<span data-ttu-id="e8069-271">左山かっこの 1 回以上の出現の後に山かっこではない 0 個以上の文字が続き、その後に右山かっこの 1 回以上の出現が続き、その後に山かっこ以外の 0 回以上の出現が続くパターンの 0 回以上の出現と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-271">Match zero or more occurrences of the following pattern: one or more occurrences of a left angle bracket, followed by zero or more non-angle bracket characters, followed by one or more occurrences of a right angle bracket, followed by zero or more occurrences of non-angle brackets.</span></span> <span data-ttu-id="e8069-272">右山かっこと一致したときに、 `Open` グループの定義を削除して、 `Open` グループと現在のグループの間の部分文字列を `Close` グループに代入します。</span><span class="sxs-lookup"><span data-stu-id="e8069-272">When matching the right angle bracket, delete the definition of the `Open` group, and assign the substring between the `Open` group and the current group to the `Close` group.</span></span> <span data-ttu-id="e8069-273">これが最初のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="e8069-273">This is the first capturing group.</span></span>|  
+|`(?(Open)(?!))`|<span data-ttu-id="e8069-274">`Open` グループが存在し、空の文字列が一致する場合、照合を破棄してください。ただし、文字列内での正規表現エンジンの位置は進めないでください。</span><span class="sxs-lookup"><span data-stu-id="e8069-274">If the `Open` group exists, abandon the match if an empty string can be matched, but do not advance the position of the regular expression engine in the string.</span></span> <span data-ttu-id="e8069-275">これはゼロ幅の否定先読みアサーションです。</span><span class="sxs-lookup"><span data-stu-id="e8069-275">This is a zero-width negative lookahead assertion.</span></span> <span data-ttu-id="e8069-276">空の文字列が常に入力文字列に暗黙的に存在するため、この照合は必ず失敗します。</span><span class="sxs-lookup"><span data-stu-id="e8069-276">Because an empty string is always implicitly present in an input string, this match always fails.</span></span> <span data-ttu-id="e8069-277">この照合の失敗は、山かっこの数が一致していないことを示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-277">Failure of this match indicates that the angle brackets are not balanced.</span></span>|  
+|`$`|<span data-ttu-id="e8069-278">入力文字列の末尾と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-278">Match the end of the input string.</span></span>|  
   
- 最後の部分式の `(?(Open)(?!))` は、入力文字列内の入れ子の構成体の数が一致しているかどうかを示します \(各左山かっこに一致する右山かっこが存在するかどうかなど\)。 有効なキャプチャ グループに基づく条件一致を使います。詳しくは、「[代替構成体](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)」をご覧ください。`Open` グループが定義されている場合は、正規表現エンジンによって、入力文字列内で部分式 `(?!)` の照合が試行されます。`Open` グループは、入れ子の構成体の数が一致していない場合にのみ定義する必要があります。 したがって、入力文字列で照合されるパターンでは、照合は常に失敗します。 この場合、`(?!)` は、常に失敗するゼロ幅の否定先読みアサーションです。入力文字列内の次の位置に、必ず空の文字列が暗黙的に存在するためです。  
+ <span data-ttu-id="e8069-279">最後の部分式の `(?(Open)(?!))`は、入力文字列内の入れ子の構成体の数が一致しているかどうかを示します (各左山かっこに一致する右山かっこが存在するかどうかなど)。</span><span class="sxs-lookup"><span data-stu-id="e8069-279">The final subexpression, `(?(Open)(?!))`, indicates whether the nesting constructs in the input string are properly balanced (for example, whether each left angle bracket is matched by a right angle bracket).</span></span> <span data-ttu-id="e8069-280">有効なキャプチャ グループに基づく条件一致を使います。詳しくは、「 [Alternation Constructs](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e8069-280">It uses conditional matching based on a valid captured group; for more information, see [Alternation Constructs](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md).</span></span> <span data-ttu-id="e8069-281">`Open` グループが定義されている場合は、正規表現エンジンによって、入力文字列内で部分式 `(?!)` の照合が試行されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-281">If the `Open` group is defined, the regular expression engine attempts to match the subexpression `(?!)` in the input string.</span></span> <span data-ttu-id="e8069-282">`Open` グループは、入れ子の構成体の数が一致していない場合にのみ定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e8069-282">The `Open` group should be defined only if nesting constructs are unbalanced.</span></span> <span data-ttu-id="e8069-283">したがって、入力文字列で照合されるパターンでは、照合は常に失敗します。</span><span class="sxs-lookup"><span data-stu-id="e8069-283">Therefore, the pattern to be matched in the input string should be one that always causes the match to fail.</span></span> <span data-ttu-id="e8069-284">この場合、 `(?!)` は、常に失敗するゼロ幅の否定先読みアサーションです。入力文字列内の次の位置に、必ず空の文字列が暗黙的に存在するためです。</span><span class="sxs-lookup"><span data-stu-id="e8069-284">In this case, `(?!)` is a zero-width negative lookahead assertion that always fails, because an empty string is always implicitly present at the next position in the input string.</span></span>  
   
- この例では、正規表現エンジンによって、次の表に示すように入力文字列 "\<abc\>\<mno\<xyz\>\>" が評価されます。  
+ <span data-ttu-id="e8069-285">例では、正規表現エンジンは、入力文字列を評価"\<abc >< mno\<xyz >>"次の表に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="e8069-285">In the example, the regular expression engine evaluates the input string "\<abc><mno\<xyz>>" as shown in the following table.</span></span>  
   
-|手順|パターン|結果|  
-|--------|----------|--------|  
-|1|`^`|入力文字列の先頭から照合を開始します。|  
-|2|`[^<>]*`|左山かっこの前にある山かっこではない文字を検索します。一致する項目は見つかりません。|  
-|3|`(((?'Open'<)`|"\<abc\>" の左山かっこと一致し、そのかっこを `Open` グループに代入します。|  
-|4|`[^<>]*`|"abc" と一致します。|  
-|5|`)+`|"\<abc" が 2 番目のキャプチャ グループの値になります。<br /><br /> 入力文字列内の次の文字は左山かっこではないので、正規表現エンジンは `(?'Open'<)[^<>]*)` サブパターンに戻りません。|  
-|6|`((?'Close-Open'>)`|"\<abc\>" の右山かっこと一致し、`Open` グループと右山かっこの間の部分文字列である "abc" を `Close` グループに代入して、`Open` グループの現在の値 \("\<"\) を削除してグループを空にします。|  
-|7|`[^<>]*`|右山かっこの後にある山かっこではない文字を検索します。一致する項目は見つかりません。|  
-|8|`)+`|3 番目のキャプチャ グループの値は "\>" です。<br /><br /> 入力文字列内の次の文字は右山かっこではないので、正規表現エンジンは `((?'Close-Open'>)[^<>]*)` サブパターンに戻りません。|  
-|9|`)*`|最初のキャプチャ グループの値は "\<abc\>" です。<br /><br /> 入力文字列内の次の文字は左山かっこなので、正規表現エンジンは `(((?'Open'<)` サブパターンに戻ります。|  
-|10|`(((?'Open'<)`|"\<mno\>" の左山かっこと一致し、そのかっこを `Open` グループに代入します。 その <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=fullName> コレクションには、現在、単一の値 "\<" が含まれています。|  
-|11|`[^<>]*`|"mno" と一致します。|  
-|12|`)+`|"\<mno" が 2 番目のキャプチャ グループの値になります。<br /><br /> 入力文字列内の次の文字は左山かっこなので、正規表現エンジンは `(?'Open'<)[^<>]*)` サブパターンに戻ります。|  
-|13|`(((?'Open'<)`|"\<xyz\>" の左山かっこと一致し、そのかっこを `Open` グループに代入します。<xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=fullName> グループの `Open` コレクションには、現在、"\<mno\>" の左山かっこと "\<xyz\>" の左山かっこの 2 つのキャプチャが含まれています。|  
-|14|`[^<>]*`|"xyz" と一致します。|  
-|15|`)+`|"\<xyz" が 2 番目のキャプチャ グループの値になります。<br /><br /> 入力文字列内の次の文字は左山かっこではないので、正規表現エンジンは `(?'Open'<)[^<>]*)` サブパターンに戻りません。|  
-|16|`((?'Close-Open'>)`|"\<xyz\>" の右山かっこと一致します。 "xyz" は `Open` グループと右山かっこの間の部分文字列を `Close` グループに代入して、`Open` グループの現在の値を削除します。 前のキャプチャの値 \("\<mno\>" の左山かっこ\) が `Open` グループの現在の値になります。<xref:System.Text.RegularExpressions.Group.Captures%2A> グループの `Open` コレクションには、現在、単一のキャプチャ \("\<xyz\>" の左山かっこ\) が含まれています。|  
-|17|`[^<>]*`|山かっこではない文字を検索します。一致する項目は見つかりません。|  
-|18|`)+`|3 番目のキャプチャ グループの値は "\>" です。<br /><br /> 入力文字列内の次の文字は右山かっこなので、正規表現エンジンは `((?'Close-Open'>)[^<>]*)` サブパターンに戻ります。|  
-|19|`((?'Close-Open'>)`|"xyz\>\>" の最後の右山かっこと一致し、"mno\<xyz\>" \(`Open` グループと右山かっこの間の部分文字列\) を `Close` グループに代入して、`Open` グループの現在の値を削除します。`Open` グループは空になります。|  
-|20|`[^<>]*`|山かっこではない文字を検索します。一致する項目は見つかりません。|  
-|21|`)+`|3 番目のキャプチャ グループの値は "\>" です。<br /><br /> 入力文字列内の次の文字は右山かっこではないので、正規表現エンジンは `((?'Close-Open'>)[^<>]*)` サブパターンに戻りません。|  
-|22|`)*`|最初のキャプチャ グループの値は "\<mno\<xyz\>\>" です。<br /><br /> 入力文字列内の次の文字は左山かっこではないので、正規表現エンジンは `(((?'Open'<)` サブパターンに戻りません。|  
-|23|`(?(Open)(?!))`|`Open` グループは定義されていないので、照合は試行されません。|  
-|24|`$`|入力文字列の末尾と一致します。|  
+|<span data-ttu-id="e8069-286">手順</span><span class="sxs-lookup"><span data-stu-id="e8069-286">Step</span></span>|<span data-ttu-id="e8069-287">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-287">Pattern</span></span>|<span data-ttu-id="e8069-288">結果</span><span class="sxs-lookup"><span data-stu-id="e8069-288">Result</span></span>|  
+|----------|-------------|------------|  
+|<span data-ttu-id="e8069-289">1</span><span class="sxs-lookup"><span data-stu-id="e8069-289">1</span></span>|`^`|<span data-ttu-id="e8069-290">入力文字列の先頭から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="e8069-290">Starts the match at the beginning of the input string</span></span>|  
+|<span data-ttu-id="e8069-291">2</span><span class="sxs-lookup"><span data-stu-id="e8069-291">2</span></span>|`[^<>]*`|<span data-ttu-id="e8069-292">左山かっこの前にある山かっこではない文字を検索します。一致する項目は見つかりません。</span><span class="sxs-lookup"><span data-stu-id="e8069-292">Looks for non-angle bracket characters before the left angle bracket;finds no matches.</span></span>|  
+|<span data-ttu-id="e8069-293">3</span><span class="sxs-lookup"><span data-stu-id="e8069-293">3</span></span>|`(((?'Open'<)`|<span data-ttu-id="e8069-294">左山かっこと一致する"\<abc >"に割り当てます、`Open`グループ。</span><span class="sxs-lookup"><span data-stu-id="e8069-294">Matches the left angle bracket in "\<abc>" and assigns it to the `Open` group.</span></span>|  
+|<span data-ttu-id="e8069-295">4</span><span class="sxs-lookup"><span data-stu-id="e8069-295">4</span></span>|`[^<>]*`|<span data-ttu-id="e8069-296">"abc" と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-296">Matches "abc".</span></span>|  
+|<span data-ttu-id="e8069-297">5</span><span class="sxs-lookup"><span data-stu-id="e8069-297">5</span></span>|`)+`|<span data-ttu-id="e8069-298">"<abc" が 2 番目のキャプチャ グループの値になります。</span><span class="sxs-lookup"><span data-stu-id="e8069-298">"<abc" is the value of the second captured group.</span></span><br /><br /> <span data-ttu-id="e8069-299">入力文字列内の次の文字は左山かっこではないので、正規表現エンジンは `(?'Open'<)[^<>]*)` サブパターンに戻りません。</span><span class="sxs-lookup"><span data-stu-id="e8069-299">The next character in the input string is not a left angle bracket, so the regular expression engine does not loop back to the `(?'Open'<)[^<>]*)` subpattern.</span></span>|  
+|<span data-ttu-id="e8069-300">6</span><span class="sxs-lookup"><span data-stu-id="e8069-300">6</span></span>|`((?'Close-Open'>)`|<span data-ttu-id="e8069-301">右山かっこと一致する"\<abc >"、"abc"は、部分文字列を割り当てます間、`Open`グループと、右山かっこに、`Close`グループ化、および現在の値を削除 ("<") の`Open`グループ空のままにします。</span><span class="sxs-lookup"><span data-stu-id="e8069-301">Matches the right angle bracket in "\<abc>", assigns "abc", which is the substring between the `Open` group and the right angle bracket, to the `Close` group, and deletes the current value ("<") of the `Open` group, leaving it empty.</span></span>|  
+|<span data-ttu-id="e8069-302">7</span><span class="sxs-lookup"><span data-stu-id="e8069-302">7</span></span>|`[^<>]*`|<span data-ttu-id="e8069-303">右山かっこの後にある山かっこではない文字を検索します。一致する項目は見つかりません。</span><span class="sxs-lookup"><span data-stu-id="e8069-303">Looks for non-angle bracket characters after the right angle bracket; finds no matches.</span></span>|  
+|<span data-ttu-id="e8069-304">8</span><span class="sxs-lookup"><span data-stu-id="e8069-304">8</span></span>|`)+`|<span data-ttu-id="e8069-305">3 番目のキャプチャ グループの値は ">" です。</span><span class="sxs-lookup"><span data-stu-id="e8069-305">The value of the third captured group is ">".</span></span><br /><br /> <span data-ttu-id="e8069-306">入力文字列内の次の文字は右山かっこではないので、正規表現エンジンは `((?'Close-Open'>)[^<>]*)` サブパターンに戻りません。</span><span class="sxs-lookup"><span data-stu-id="e8069-306">The next character in the input string is not a right angle bracket, so the regular expression engine does not loop back to the `((?'Close-Open'>)[^<>]*)` subpattern.</span></span>|  
+|<span data-ttu-id="e8069-307">9</span><span class="sxs-lookup"><span data-stu-id="e8069-307">9</span></span>|`)*`|<span data-ttu-id="e8069-308">最初のキャプチャ グループの値が"\<abc >"です。</span><span class="sxs-lookup"><span data-stu-id="e8069-308">The value of the first captured group is "\<abc>".</span></span><br /><br /> <span data-ttu-id="e8069-309">入力文字列内の次の文字は左山かっこなので、正規表現エンジンは `(((?'Open'<)` サブパターンに戻ります。</span><span class="sxs-lookup"><span data-stu-id="e8069-309">The next character in the input string is a left  angle bracket, so the regular expression engine loops back to the `(((?'Open'<)` subpattern.</span></span>|  
+|<span data-ttu-id="e8069-310">10</span><span class="sxs-lookup"><span data-stu-id="e8069-310">10</span></span>|`(((?'Open'<)`|<span data-ttu-id="e8069-311">左山かっこと一致する"\<mno >"に割り当てます、`Open`グループ。</span><span class="sxs-lookup"><span data-stu-id="e8069-311">Matches the left angle bracket in "\<mno>" and assigns it to the `Open` group.</span></span> <span data-ttu-id="e8069-312">その <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> コレクションには、現在、単一の値 "<" が含まれています。</span><span class="sxs-lookup"><span data-stu-id="e8069-312">Its <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> collection now has a single value, "<".</span></span>|  
+|<span data-ttu-id="e8069-313">11</span><span class="sxs-lookup"><span data-stu-id="e8069-313">11</span></span>|`[^<>]*`|<span data-ttu-id="e8069-314">"mno" と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-314">Matches "mno".</span></span>|  
+|<span data-ttu-id="e8069-315">12</span><span class="sxs-lookup"><span data-stu-id="e8069-315">12</span></span>|`)+`|<span data-ttu-id="e8069-316">"<mno" が 2 番目のキャプチャ グループの値になります。</span><span class="sxs-lookup"><span data-stu-id="e8069-316">"<mno" is the value of the second captured group.</span></span><br /><br /> <span data-ttu-id="e8069-317">入力文字列内の次の文字は左山かっこなので、正規表現エンジンは `(?'Open'<)[^<>]*)` サブパターンに戻ります。</span><span class="sxs-lookup"><span data-stu-id="e8069-317">The next character in the input string is an left angle bracket, so the regular expression engine loops back to the `(?'Open'<)[^<>]*)` subpattern.</span></span>|  
+|<span data-ttu-id="e8069-318">13</span><span class="sxs-lookup"><span data-stu-id="e8069-318">13</span></span>|`(((?'Open'<)`|<span data-ttu-id="e8069-319">左山かっこと一致する"\<xyz >"に割り当てます、`Open`グループ。</span><span class="sxs-lookup"><span data-stu-id="e8069-319">Matches the left angle bracket in "\<xyz>" and assigns it to the `Open` group.</span></span> <span data-ttu-id="e8069-320"><xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>のコレクション、`Open`グループが 2 つのキャプチャを含むようになりました: 左山かっこ"\<mno >"、および左山かっこから"\<xyz >"です。</span><span class="sxs-lookup"><span data-stu-id="e8069-320">The <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> collection of the `Open` group now includes two captures: the left angle bracket from "\<mno>", and the left angle bracket from "\<xyz>".</span></span>|  
+|<span data-ttu-id="e8069-321">14</span><span class="sxs-lookup"><span data-stu-id="e8069-321">14</span></span>|`[^<>]*`|<span data-ttu-id="e8069-322">"xyz" と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-322">Matches "xyz".</span></span>|  
+|<span data-ttu-id="e8069-323">15</span><span class="sxs-lookup"><span data-stu-id="e8069-323">15</span></span>|`)+`|<span data-ttu-id="e8069-324">"<xyz" が 2 番目のキャプチャ グループの値になります。</span><span class="sxs-lookup"><span data-stu-id="e8069-324">"<xyz" is the value of the second captured group.</span></span><br /><br /> <span data-ttu-id="e8069-325">入力文字列内の次の文字は左山かっこではないので、正規表現エンジンは `(?'Open'<)[^<>]*)` サブパターンに戻りません。</span><span class="sxs-lookup"><span data-stu-id="e8069-325">The next character in the input string is not a left angle bracket, so the regular expression engine does not loop back to the `(?'Open'<)[^<>]*)` subpattern.</span></span>|  
+|<span data-ttu-id="e8069-326">16</span><span class="sxs-lookup"><span data-stu-id="e8069-326">16</span></span>|`((?'Close-Open'>)`|<span data-ttu-id="e8069-327">右山かっこと一致する"\<xyz >"です。</span><span class="sxs-lookup"><span data-stu-id="e8069-327">Matches the right angle bracket in "\<xyz>".</span></span> <span data-ttu-id="e8069-328">"xyz" は `Open` グループと右山かっこの間の部分文字列を `Close` グループに代入して、 `Open` グループの現在の値を削除します。</span><span class="sxs-lookup"><span data-stu-id="e8069-328">"xyz", assigns the substring between the `Open` group and the right angle bracket to the `Close` group, and deletes the current value of the `Open` group.</span></span> <span data-ttu-id="e8069-329">前のキャプチャの値 (で左山かっこ"\<mno >") の現在の値になります、`Open`グループ。</span><span class="sxs-lookup"><span data-stu-id="e8069-329">The value of the previous capture (the left angle bracket in "\<mno>") becomes the current value of the `Open` group.</span></span> <span data-ttu-id="e8069-330"><xref:System.Text.RegularExpressions.Group.Captures%2A>のコレクション、`Open`グループにはここで、単一のキャプチャ、左山かっこが含まれています"\<xyz >"です。</span><span class="sxs-lookup"><span data-stu-id="e8069-330">The <xref:System.Text.RegularExpressions.Group.Captures%2A> collection of the `Open` group now includes a single capture, the left angle bracket from "\<xyz>".</span></span>|  
+|<span data-ttu-id="e8069-331">17</span><span class="sxs-lookup"><span data-stu-id="e8069-331">17</span></span>|`[^<>]*`|<span data-ttu-id="e8069-332">山かっこではない文字を検索します。一致する項目は見つかりません。</span><span class="sxs-lookup"><span data-stu-id="e8069-332">Looks for non-angle bracket characters; finds no matches.</span></span>|  
+|<span data-ttu-id="e8069-333">18</span><span class="sxs-lookup"><span data-stu-id="e8069-333">18</span></span>|`)+`|<span data-ttu-id="e8069-334">3 番目のキャプチャ グループの値は ">" です。</span><span class="sxs-lookup"><span data-stu-id="e8069-334">The value of the third captured group is ">".</span></span><br /><br /> <span data-ttu-id="e8069-335">入力文字列内の次の文字は右山かっこなので、正規表現エンジンは `((?'Close-Open'>)[^<>]*)` サブパターンに戻ります。</span><span class="sxs-lookup"><span data-stu-id="e8069-335">The next character in the input string is a right angle bracket, so the regular expression engine loops back to the `((?'Close-Open'>)[^<>]*)` subpattern.</span></span>|  
+|<span data-ttu-id="e8069-336">19</span><span class="sxs-lookup"><span data-stu-id="e8069-336">19</span></span>|`((?'Close-Open'>)`|<span data-ttu-id="e8069-337">最後の右山かっこと一致する"xyz >>"、割り当てます"mno\<xyz >"(間の部分文字列、`Open`グループと、右の山かっ) に、`Close`グループ化、および現在の値を削除、`Open`グループ。</span><span class="sxs-lookup"><span data-stu-id="e8069-337">Matches the final right angle bracket in "xyz>>", assigns "mno\<xyz>" (the substring between the `Open` group and the right angle bracket) to the `Close` group, and deletes the current value of the `Open` group.</span></span> <span data-ttu-id="e8069-338">`Open` グループは空になります。</span><span class="sxs-lookup"><span data-stu-id="e8069-338">The `Open` group is now empty.</span></span>|  
+|<span data-ttu-id="e8069-339">20</span><span class="sxs-lookup"><span data-stu-id="e8069-339">20</span></span>|`[^<>]*`|<span data-ttu-id="e8069-340">山かっこではない文字を検索します。一致する項目は見つかりません。</span><span class="sxs-lookup"><span data-stu-id="e8069-340">Looks for non-angle bracket characters; finds no matches.</span></span>|  
+|<span data-ttu-id="e8069-341">21</span><span class="sxs-lookup"><span data-stu-id="e8069-341">21</span></span>|`)+`|<span data-ttu-id="e8069-342">3 番目のキャプチャ グループの値は ">" です。</span><span class="sxs-lookup"><span data-stu-id="e8069-342">The value of the third captured group is ">".</span></span><br /><br /> <span data-ttu-id="e8069-343">入力文字列内の次の文字は右山かっこではないので、正規表現エンジンは `((?'Close-Open'>)[^<>]*)` サブパターンに戻りません。</span><span class="sxs-lookup"><span data-stu-id="e8069-343">The next character in the input string is not a right angle bracket, so the regular expression engine does not loop back to the `((?'Close-Open'>)[^<>]*)` subpattern.</span></span>|  
+|<span data-ttu-id="e8069-344">22</span><span class="sxs-lookup"><span data-stu-id="e8069-344">22</span></span>|`)*`|<span data-ttu-id="e8069-345">最初のキャプチャ グループの値は"< mno\<xyz >>"です。</span><span class="sxs-lookup"><span data-stu-id="e8069-345">The value of the first captured group is "<mno\<xyz>>".</span></span><br /><br /> <span data-ttu-id="e8069-346">入力文字列内の次の文字は左山かっこではないので、正規表現エンジンは `(((?'Open'<)` サブパターンに戻りません。</span><span class="sxs-lookup"><span data-stu-id="e8069-346">The next character in the input string is not a left angle bracket, so the regular expression engine does not loop back to the `(((?'Open'<)` subpattern.</span></span>|  
+|<span data-ttu-id="e8069-347">23</span><span class="sxs-lookup"><span data-stu-id="e8069-347">23</span></span>|`(?(Open)(?!))`|<span data-ttu-id="e8069-348">`Open` グループは定義されていないので、照合は試行されません。</span><span class="sxs-lookup"><span data-stu-id="e8069-348">The `Open` group is not defined, so no match is attempted.</span></span>|  
+|<span data-ttu-id="e8069-349">24</span><span class="sxs-lookup"><span data-stu-id="e8069-349">24</span></span>|`$`|<span data-ttu-id="e8069-350">入力文字列の末尾と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-350">Matches the end of the input string.</span></span>|  
   
 <a name="noncapturing_group"></a>   
-## 非キャプチャ グループ  
- 次のグループ化構成体は、部分式と一致した部分文字列をキャプチャしません。  
+## <a name="noncapturing-groups"></a><span data-ttu-id="e8069-351">非キャプチャ グループ</span><span class="sxs-lookup"><span data-stu-id="e8069-351">Noncapturing Groups</span></span>  
+ <span data-ttu-id="e8069-352">次のグループ化構成体は、部分式と一致した部分文字列をキャプチャしません。</span><span class="sxs-lookup"><span data-stu-id="e8069-352">The following grouping construct does not capture the substring that is matched by a subexpression:</span></span>  
   
 ```  
 (?:subexpression)  
 ```  
   
- ここで、*subexpression* は有効な正規表現パターンです。 非キャプチャ グループ構成体は、通常、量指定子がグループに適用されるがグループによってキャプチャされた部分文字列は対象にならない場合に使用されます。  
+ <span data-ttu-id="e8069-353">ここで、 *subexpression* は有効な正規表現パターンです。</span><span class="sxs-lookup"><span data-stu-id="e8069-353">where *subexpression* is any valid regular expression pattern.</span></span> <span data-ttu-id="e8069-354">非キャプチャ グループ構成体は、通常、量指定子がグループに適用されるがグループによってキャプチャされた部分文字列は対象にならない場合に使用されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-354">The noncapturing group construct is typically used when a quantifier is applied to a group, but the substrings captured by the group are of no interest.</span></span>  
   
 > [!NOTE]
->  正規表現に入れ子になったグループ化構成体が含まれる場合、外側の非キャプチャ グループ構成体は内側の入れ子になったグループ構成体には適用されません。  
+>  <span data-ttu-id="e8069-355">正規表現に入れ子になったグループ化構成体が含まれる場合、外側の非キャプチャ グループ構成体は内側の入れ子になったグループ構成体には適用されません。</span><span class="sxs-lookup"><span data-stu-id="e8069-355">If a regular expression includes nested grouping constructs, an outer noncapturing group construct does not apply to the inner nested group constructs.</span></span>  
   
- 次の例は、非キャプチャ グループを含む正規表現を示しています。 出力には、キャプチャされたグループは含まれません。  
+ <span data-ttu-id="e8069-356">次の例は、非キャプチャ グループを含む正規表現を示しています。</span><span class="sxs-lookup"><span data-stu-id="e8069-356">The following example illustrates a regular expression that includes noncapturing groups.</span></span> <span data-ttu-id="e8069-357">出力には、キャプチャされたグループは含まれません。</span><span class="sxs-lookup"><span data-stu-id="e8069-357">Note that the output does not include any captured groups.</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#5](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/noncapture1.cs#5)]
  [!code-vb[RegularExpressions.Language.Grouping#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/noncapture1.vb#5)]  
   
- 正規表現 `(?:\b(?:\w+)\W*)+\.` は、ピリオドで終了する文と一致します。 この正規表現は個々の単語ではなく文に焦点を合わせているので、グループ化構成体は量指定子としてのみ使用されます。 この正規表現パターンの解釈を次の表に示します。  
+ <span data-ttu-id="e8069-358">正規表現 `(?:\b(?:\w+)\W*)+\.` は、ピリオドで終了する文と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-358">The regular expression `(?:\b(?:\w+)\W*)+\.` matches a sentence that is terminated by a period.</span></span> <span data-ttu-id="e8069-359">この正規表現は個々の単語ではなく文に焦点を合わせているので、グループ化構成体は量指定子としてのみ使用されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-359">Because the regular expression focuses on sentences and not on individual words, grouping constructs are used exclusively as quantifiers.</span></span> <span data-ttu-id="e8069-360">この正規表現パターンの解釈を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-360">The regular expression pattern is interpreted as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`(?:\w+)`|1 つ以上の単語文字に一致します。 一致したテキストをキャプチャされたグループに代入しません。|  
-|`\W*`|0 個以上の単語文字に使用されない文字と一致します。|  
-|`(?:\b(?:\w+)\W*)+`|ワード境界から始まる 1 個以上の単語文字、および 0 個以上の単語文字に使用されない文字が 1 回以上続くパターンと一致します。 一致したテキストをキャプチャされたグループに代入しません。|  
-|`\.`|ピリオドと一致します。|  
+|<span data-ttu-id="e8069-361">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-361">Pattern</span></span>|<span data-ttu-id="e8069-362">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-362">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="e8069-363">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="e8069-363">Begin the match at a word boundary.</span></span>|  
+|`(?:\w+)`|<span data-ttu-id="e8069-364">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-364">Match one or more word characters.</span></span> <span data-ttu-id="e8069-365">一致したテキストをキャプチャされたグループに代入しません。</span><span class="sxs-lookup"><span data-stu-id="e8069-365">Do not assign the matched text to a captured group.</span></span>|  
+|`\W*`|<span data-ttu-id="e8069-366">0 個以上の単語文字に使用されない文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-366">Match zero or more non-word characters.</span></span>|  
+|`(?:\b(?:\w+)\W*)+`|<span data-ttu-id="e8069-367">ワード境界から始まる 1 個以上の単語文字、および 0 個以上の単語文字に使用されない文字が 1 回以上続くパターンと一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-367">Match the pattern of one or more word characters starting at a word boundary, followed by zero or more non-word characters, one or more times.</span></span> <span data-ttu-id="e8069-368">一致したテキストをキャプチャされたグループに代入しません。</span><span class="sxs-lookup"><span data-stu-id="e8069-368">Do not assign the matched text to a captured group.</span></span>|  
+|`\.`|<span data-ttu-id="e8069-369">ピリオドと一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-369">Match a period.</span></span>|  
   
 <a name="group_options"></a>   
-## グループ オプション  
- 次のグループ化構成体は、指定したオプションを部分式に適用または無効にします。  
+## <a name="group-options"></a><span data-ttu-id="e8069-370">グループ オプション</span><span class="sxs-lookup"><span data-stu-id="e8069-370">Group Options</span></span>  
+ <span data-ttu-id="e8069-371">次のグループ化構成体は、指定したオプションを部分式に適用または無効にします。</span><span class="sxs-lookup"><span data-stu-id="e8069-371">The following grouping construct applies or disables the specified options within a subexpression:</span></span>  
   
- `(?imnsx-imnsx:` *subexpression* `)`  
+ <span data-ttu-id="e8069-372">`(?imnsx-imnsx:` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="e8069-372">`(?imnsx-imnsx:` *subexpression* `)`</span></span>  
   
- ここで、*subexpression* は有効な正規表現パターンです。 たとえば、`(?i-s:)` によって、大文字小文字の区別が有効になり単一行モードが無効になります。 指定できるインライン オプションの詳細については、「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」を参照してください。  
+ <span data-ttu-id="e8069-373">ここで、 *subexpression* は有効な正規表現パターンです。</span><span class="sxs-lookup"><span data-stu-id="e8069-373">where *subexpression* is any valid regular expression pattern.</span></span> <span data-ttu-id="e8069-374">たとえば、 `(?i-s:)` によって、大文字小文字の区別が有効になり単一行モードが無効になります。</span><span class="sxs-lookup"><span data-stu-id="e8069-374">For example, `(?i-s:)` turns on case insensitivity and disables single-line mode.</span></span> <span data-ttu-id="e8069-375">指定できるインライン オプションの詳細については、「 [正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e8069-375">For more information about the inline options you can specify, see [Regular Expression Options](../../../docs/standard/base-types/regular-expression-options.md).</span></span>  
   
 > [!NOTE]
->  <xref:System.Text.RegularExpressions.Regex?displayProperty=fullName> クラス コンストラクターまたは静的メソッドを使用すると、部分式ではなく正規表現全体に適用されるオプションを指定できます。 また、`(?imnsx-imnsx)` 言語コンストラクトを使うと、正規表現内の特定の位置より後に適用されるインライン オプションを指定できます。  
+>  <span data-ttu-id="e8069-376"><xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> クラス コンストラクターまたは静的メソッドを使用すると、部分式ではなく正規表現全体に適用されるオプションを指定できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-376">You can specify options that apply to an entire regular expression rather than a subexpression by using a <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> class constructor or a static method.</span></span> <span data-ttu-id="e8069-377">また、 `(?imnsx-imnsx)` 言語コンストラクトを使うと、正規表現内の特定の位置より後に適用されるインライン オプションを指定できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-377">You can also specify inline options that apply after a specific point in a regular expression by using the `(?imnsx-imnsx)` language construct.</span></span>  
   
- グループ オプション構成体はキャプチャ グループではありません。 つまり、*subexpression* によってキャプチャされる文字列の一部は一致に含まれますが、キャプチャ グループに含まれることも <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトにデータを設定するために使用されることもありません。  
+ <span data-ttu-id="e8069-378">グループ オプション構成体はキャプチャ グループではありません。</span><span class="sxs-lookup"><span data-stu-id="e8069-378">The group options construct is not a capturing group.</span></span> <span data-ttu-id="e8069-379">つまり、 *subexpression* によってキャプチャされる文字列の一部は一致に含まれますが、キャプチャ グループに含まれることも <xref:System.Text.RegularExpressions.GroupCollection> オブジェクトにデータを設定するために使用されることもありません。</span><span class="sxs-lookup"><span data-stu-id="e8069-379">That is, although any portion of a string that is captured by *subexpression* is included in the match, it is not included in a captured group nor used to populate the <xref:System.Text.RegularExpressions.GroupCollection> object.</span></span>  
   
- たとえば、次の例の正規表現 `\b(?ix: d \w+)\s` では、グループ化構成体のインライン オプションを使用して、文字 "d" で始まるすべての単語を識別するときに、大文字と小文字を区別しない一致を有効にすると同時に、パターンの空白を無視します。 正規表現は、次の表に示すように定義されています。  
+ <span data-ttu-id="e8069-380">たとえば、次の例の正規表現 `\b(?ix: d \w+)\s` では、グループ化構成体のインライン オプションを使用して、文字 "d" で始まるすべての単語を識別するときに、大文字と小文字を区別しない一致を有効にすると同時に、パターンの空白を無視します。</span><span class="sxs-lookup"><span data-stu-id="e8069-380">For example, the regular expression `\b(?ix: d \w+)\s` in the following example uses inline options in a grouping construct to enable case-insensitive matching and ignore pattern whitespace in identifying all words that begin with the letter "d".</span></span> <span data-ttu-id="e8069-381">正規表現は、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="e8069-381">The regular expression is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`(?ix: d \w+)`|大文字と小文字を区別しない一致を使用してこのパターンの空白を無視し、"d" の後に単語文字に使用される文字が 1 個以上続くパターンと一致します。|  
-|`\s`|空白文字と一致します。|  
+|<span data-ttu-id="e8069-382">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-382">Pattern</span></span>|<span data-ttu-id="e8069-383">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-383">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="e8069-384">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="e8069-384">Begin the match at a word boundary.</span></span>|  
+|`(?ix: d \w+)`|<span data-ttu-id="e8069-385">大文字と小文字を区別しない一致を使用してこのパターンの空白を無視し、"d" の後に単語文字に使用される文字が 1 個以上続くパターンと一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-385">Using case-insensitive matching and ignoring white space in this pattern, match a "d" followed by one or more word characters.</span></span>|  
+|`\s`|<span data-ttu-id="e8069-386">空白文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-386">Match a white-space character.</span></span>|  
   
  [!code-csharp[Conceptual.Regex.Language.Options#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#8)]
  [!code-vb[Conceptual.Regex.Language.Options#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#8)]  
   
 <a name="zerowidth_positive_lookahead_assertion"></a>   
-## ゼロ幅の肯定先読みアサーション  
- 次のグループ化構成体は、ゼロ幅の肯定先読みアサーションを定義します。  
+## <a name="zero-width-positive-lookahead-assertions"></a><span data-ttu-id="e8069-387">ゼロ幅の肯定先読みアサーション</span><span class="sxs-lookup"><span data-stu-id="e8069-387">Zero-Width Positive Lookahead Assertions</span></span>  
+ <span data-ttu-id="e8069-388">次のグループ化構成体は、ゼロ幅の肯定先読みアサーションを定義します。</span><span class="sxs-lookup"><span data-stu-id="e8069-388">The following grouping construct defines a zero-width positive lookahead assertion:</span></span>  
   
- `(?=` *subexpression* `)`  
+ <span data-ttu-id="e8069-389">`(?=` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="e8069-389">`(?=` *subexpression* `)`</span></span>  
   
- ここで、*subexpression* は正規表現パターンです。 一致と見なされるためには、入力文字列が *subexpression* の正規表現パターンと一致する必要がありますが、一致した部分文字列は一致結果には含まれません。 ゼロ幅の肯定先読みアサーションはバックトラックしません。  
+ <span data-ttu-id="e8069-390">ここで、 *subexpression* は正規表現パターンです。</span><span class="sxs-lookup"><span data-stu-id="e8069-390">where *subexpression* is any regular expression pattern.</span></span> <span data-ttu-id="e8069-391">一致と見なされるためには、入力文字列が *subexpression*の正規表現パターンと一致する必要がありますが、一致した部分文字列は一致結果には含まれません。</span><span class="sxs-lookup"><span data-stu-id="e8069-391">For a match to be successful, the input string must match the regular expression pattern in *subexpression*, although the matched substring is not included in the match result.</span></span> <span data-ttu-id="e8069-392">ゼロ幅の肯定先読みアサーションはバックトラックしません。</span><span class="sxs-lookup"><span data-stu-id="e8069-392">A zero-width positive lookahead assertion does not backtrack.</span></span>  
   
- 通常、ゼロ幅の肯定先読みアサーションは正規表現パターンの末尾にあります。 一致と見なされるには文字列の末尾にある必要がありますが、一致には含まれない部分文字列を定義します。 これは、過度なバックトラッキングを防ぐためにも役立ちます。 ゼロ幅の肯定先読みアサーションを使用して、特定のキャプチャされたグループの先頭テキストが、そのキャプチャされたグループに対して定義されたパターンのサブセットと一致するテキストになるようにすることができます。 たとえば、キャプチャ グループが連続する単語文字と一致する場合に、ゼロ幅の肯定先読みアサーションを使用して、先頭の文字がアルファベット大文字になるように要求できます。  
+ <span data-ttu-id="e8069-393">通常、ゼロ幅の肯定先読みアサーションは正規表現パターンの末尾にあります。</span><span class="sxs-lookup"><span data-stu-id="e8069-393">Typically, a zero-width positive lookahead assertion is found at the end of a regular expression pattern.</span></span> <span data-ttu-id="e8069-394">一致と見なされるには文字列の末尾にある必要がありますが、一致には含まれない部分文字列を定義します。</span><span class="sxs-lookup"><span data-stu-id="e8069-394">It defines a substring that must be found at the end of a string for a match to occur but that should not be included in the match.</span></span> <span data-ttu-id="e8069-395">これは、過度なバックトラッキングを防ぐためにも役立ちます。</span><span class="sxs-lookup"><span data-stu-id="e8069-395">It is also useful for preventing excessive backtracking.</span></span> <span data-ttu-id="e8069-396">ゼロ幅の肯定先読みアサーションを使用して、特定のキャプチャされたグループの先頭テキストが、そのキャプチャされたグループに対して定義されたパターンのサブセットと一致するテキストになるようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="e8069-396">You can use a zero-width positive lookahead assertion to ensure that a particular captured group begins with text that matches a subset of the pattern defined for that captured group.</span></span> <span data-ttu-id="e8069-397">たとえば、キャプチャ グループが連続する単語文字と一致する場合に、ゼロ幅の肯定先読みアサーションを使用して、先頭の文字がアルファベット大文字になるように要求できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-397">For example, if a capturing group matches consecutive word characters, you can use a zero-width positive lookahead assertion to require that the first character be an alphabetical uppercase character.</span></span>  
   
- 次の例では、ゼロ幅の肯定先読みアサーションを使用して、入力文字列内の動詞 "is" の前にある単語を照合します。  
+ <span data-ttu-id="e8069-398">次の例では、ゼロ幅の肯定先読みアサーションを使用して、入力文字列内の動詞 "is" の前にある単語を照合します。</span><span class="sxs-lookup"><span data-stu-id="e8069-398">The following example uses a zero-width positive lookahead assertion to match the word that precedes the verb "is" in the input string.</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#6](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/lookahead1.cs#6)]
  [!code-vb[RegularExpressions.Language.Grouping#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/lookahead1.vb#6)]  
   
- この正規表現 `\b\w+(?=\sis\b)` の解釈を次の表に示します。  
+ <span data-ttu-id="e8069-399">この正規表現 `\b\w+(?=\sis\b)` の解釈を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-399">The regular expression `\b\w+(?=\sis\b)` is interpreted as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`\w+`|1 つ以上の単語文字に一致します。|  
-|`(?=\sis\b)`|単語文字に使用される文字の後に、空白文字とワード境界で終了する文字列 "is" が続くかどうかを確認します。 該当する場合は一致と見なされます。|  
+|<span data-ttu-id="e8069-400">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-400">Pattern</span></span>|<span data-ttu-id="e8069-401">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-401">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="e8069-402">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="e8069-402">Begin the match at a word boundary.</span></span>|  
+|`\w+`|<span data-ttu-id="e8069-403">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-403">Match one or more word characters.</span></span>|  
+|`(?=\sis\b)`|<span data-ttu-id="e8069-404">単語文字に使用される文字の後に、空白文字とワード境界で終了する文字列 "is" が続くかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="e8069-404">Determine whether the word characters are followed by a white-space character and the string "is", which ends on a word boundary.</span></span> <span data-ttu-id="e8069-405">該当する場合は一致と見なされます。</span><span class="sxs-lookup"><span data-stu-id="e8069-405">If so, the match is successful.</span></span>|  
   
 <a name="zerowidth_negative_lookahead_assertion"></a>   
-## ゼロ幅の否定先読みアサーション  
- 次のグループ化構成体は、ゼロ幅の否定先読みアサーションを定義します。  
+## <a name="zero-width-negative-lookahead-assertions"></a><span data-ttu-id="e8069-406">ゼロ幅の否定先読みアサーション</span><span class="sxs-lookup"><span data-stu-id="e8069-406">Zero-Width Negative Lookahead Assertions</span></span>  
+ <span data-ttu-id="e8069-407">次のグループ化構成体は、ゼロ幅の否定先読みアサーションを定義します。</span><span class="sxs-lookup"><span data-stu-id="e8069-407">The following grouping construct defines a zero-width negative lookahead assertion:</span></span>  
   
- `(?!` *subexpression* `)`  
+ <span data-ttu-id="e8069-408">`(?!` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="e8069-408">`(?!` *subexpression* `)`</span></span>  
   
- ここで、*subexpression* は正規表現パターンです。 一致と見なされるためには、入力文字列が *subexpression* の正規表現パターンと一致しない必要がありますが、一致した文字列は一致結果には含まれません。  
+ <span data-ttu-id="e8069-409">ここで、 *subexpression* は正規表現パターンです。</span><span class="sxs-lookup"><span data-stu-id="e8069-409">where *subexpression* is any regular expression pattern.</span></span> <span data-ttu-id="e8069-410">一致と見なされるためには、入力文字列が *subexpression*の正規表現パターンと一致しない必要がありますが、一致した文字列は一致結果には含まれません。</span><span class="sxs-lookup"><span data-stu-id="e8069-410">For the match to be successful, the input string must not match the regular expression pattern in *subexpression*, although the matched string is not included in the match result.</span></span>  
   
- 通常、ゼロ幅の否定先読みアサーションは正規表現の先頭または末尾で使用されます。 正規表現の先頭の場合は、類似してもより一般的なパターンを照合するように正規表現の先頭で定義されているときに、一致しない必要がある特定のパターンを定義できます。 この場合は、バックトラッキングを制限するためによく使用されます。 正規表現の末尾の場合は、一致の末尾に出現できない部分式を定義できます。  
+ <span data-ttu-id="e8069-411">通常、ゼロ幅の否定先読みアサーションは正規表現の先頭または末尾で使用されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-411">A zero-width negative lookahead assertion is typically used either at the beginning or at the end of a regular expression.</span></span> <span data-ttu-id="e8069-412">正規表現の先頭の場合は、類似してもより一般的なパターンを照合するように正規表現の先頭で定義されているときに、一致しない必要がある特定のパターンを定義できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-412">At the beginning of a regular expression, it can define a specific pattern that should not be matched when the beginning of the regular expression defines a similar but more general pattern to be matched.</span></span> <span data-ttu-id="e8069-413">この場合は、バックトラッキングを制限するためによく使用されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-413">In this case, it is often used to limit backtracking.</span></span> <span data-ttu-id="e8069-414">正規表現の末尾の場合は、一致の末尾に出現できない部分式を定義できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-414">At the end of a regular expression, it can define a subexpression that cannot occur at the end of a match.</span></span>  
   
- 次の例では、正規表現の先頭でゼロ幅の先読みアサーションを使用して、"un" で始まらない単語を照合する正規表現を定義します。  
+ <span data-ttu-id="e8069-415">次の例では、正規表現の先頭でゼロ幅の先読みアサーションを使用して、"un" で始まらない単語を照合する正規表現を定義します。</span><span class="sxs-lookup"><span data-stu-id="e8069-415">The following example defines a regular expression that uses a zero-width lookahead assertion at the beginning of the regular expression to match words that do not begin with "un".</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#7](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/negativelookahead1.cs#7)]
  [!code-vb[RegularExpressions.Language.Grouping#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/negativelookahead1.vb#7)]  
   
- この正規表現 `\b(?!un)\w+\b` の解釈を次の表に示します。  
+ <span data-ttu-id="e8069-416">この正規表現 `\b(?!un)\w+\b` の解釈を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-416">The regular expression `\b(?!un)\w+\b` is interpreted as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`(?!un)`|次の 2 文字が "un" であるかどうかを確認します。 該当しない場合は一致と考えられます。|  
-|`\w+`|1 つ以上の単語文字に一致します。|  
-|`\b`|ワード境界で照合を終了します。|  
+|<span data-ttu-id="e8069-417">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-417">Pattern</span></span>|<span data-ttu-id="e8069-418">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-418">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="e8069-419">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="e8069-419">Begin the match at a word boundary.</span></span>|  
+|`(?!un)`|<span data-ttu-id="e8069-420">次の 2 文字が "un" であるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="e8069-420">Determine whether the next two characters are "un".</span></span> <span data-ttu-id="e8069-421">該当しない場合は一致と考えられます。</span><span class="sxs-lookup"><span data-stu-id="e8069-421">If they are not, a match is possible.</span></span>|  
+|`\w+`|<span data-ttu-id="e8069-422">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-422">Match one or more word characters.</span></span>|  
+|`\b`|<span data-ttu-id="e8069-423">ワード境界で照合を終了します。</span><span class="sxs-lookup"><span data-stu-id="e8069-423">End the match at a word boundary.</span></span>|  
   
- 次の例では、正規表現の末尾でゼロ幅の先読みアサーションを使用して、区切り文字で終わらない単語を照合する正規表現を定義します。  
+ <span data-ttu-id="e8069-424">次の例では、正規表現の末尾でゼロ幅の先読みアサーションを使用して、区切り文字で終わらない単語を照合する正規表現を定義します。</span><span class="sxs-lookup"><span data-stu-id="e8069-424">The following example defines a regular expression that uses a zero-width lookahead assertion at the end of the regular expression to match words that do not end with a punctuation character.</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#8](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/negativelookahead2.cs#8)]
  [!code-vb[RegularExpressions.Language.Grouping#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/negativelookahead2.vb#8)]  
   
- この正規表現 `\b\w+\b(?!\p{P})` の解釈を次の表に示します。  
+ <span data-ttu-id="e8069-425">この正規表現 `\b\w+\b(?!\p{P})` の解釈を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-425">The regular expression `\b\w+\b(?!\p{P})` is interpreted as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`\w+`|1 つ以上の単語文字に一致します。|  
-|`\b`|ワード境界で照合を終了します。|  
-|`\p{P})`|次の文字が区切り記号 \(ピリオドやコンマなど\) ではない場合は一致と見なされます。|  
+|<span data-ttu-id="e8069-426">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-426">Pattern</span></span>|<span data-ttu-id="e8069-427">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-427">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="e8069-428">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="e8069-428">Begin the match at a word boundary.</span></span>|  
+|`\w+`|<span data-ttu-id="e8069-429">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-429">Match one or more word characters.</span></span>|  
+|`\b`|<span data-ttu-id="e8069-430">ワード境界で照合を終了します。</span><span class="sxs-lookup"><span data-stu-id="e8069-430">End the match at a word boundary.</span></span>|  
+|`\p{P})`|<span data-ttu-id="e8069-431">次の文字が区切り記号 (ピリオドやコンマなど) ではない場合は一致と見なされます。</span><span class="sxs-lookup"><span data-stu-id="e8069-431">If the next character is not a punctuation symbol (such as a period or a comma), the match succeeds.</span></span>|  
   
 <a name="zerowidth_positive_lookbehind_assertion"></a>   
-## ゼロ幅の正の後読みアサーション  
- 次のグループ化構成体は、ゼロ幅の正の後読みアサーションを定義します。  
+## <a name="zero-width-positive-lookbehind-assertions"></a><span data-ttu-id="e8069-432">ゼロ幅の正の後読みアサーション</span><span class="sxs-lookup"><span data-stu-id="e8069-432">Zero-Width Positive Lookbehind Assertions</span></span>  
+ <span data-ttu-id="e8069-433">次のグループ化構成体は、ゼロ幅の正の後読みアサーションを定義します。</span><span class="sxs-lookup"><span data-stu-id="e8069-433">The following grouping construct defines a zero-width positive lookbehind assertion:</span></span>  
   
- `(?<=` *subexpression* `)`  
+ <span data-ttu-id="e8069-434">`(?<=` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="e8069-434">`(?<=` *subexpression* `)`</span></span>  
   
- ここで、*subexpression* は正規表現パターンです。 一致と見なされるためには、*subexpression* が入力文字列の現在の位置の左側に出現する必要がありますが、`subexpression` は一致結果には含まれません。 ゼロ幅の正の後読みアサーションはバックトラックしません。  
+ <span data-ttu-id="e8069-435">ここで、 *subexpression* は正規表現パターンです。</span><span class="sxs-lookup"><span data-stu-id="e8069-435">where *subexpression* is any regular expression pattern.</span></span> <span data-ttu-id="e8069-436">一致と見なされるためには、 *subexpression* が入力文字列の現在の位置の左側に出現する必要がありますが、 `subexpression` は一致結果には含まれません。</span><span class="sxs-lookup"><span data-stu-id="e8069-436">For a match to be successful, *subexpression* must occur at the input string to the left of the current position, although `subexpression` is not included in the match result.</span></span> <span data-ttu-id="e8069-437">ゼロ幅の正の後読みアサーションはバックトラックしません。</span><span class="sxs-lookup"><span data-stu-id="e8069-437">A zero-width positive lookbehind assertion does not backtrack.</span></span>  
   
- 通常、ゼロ幅の正の後読みアサーションは正規表現の先頭で使用されます。 定義されるパターンは一致の事前条件ですが、一致結果には含まれません。  
+ <span data-ttu-id="e8069-438">通常、ゼロ幅の正の後読みアサーションは正規表現の先頭で使用されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-438">Zero-width positive lookbehind assertions are typically used at the beginning of regular expressions.</span></span> <span data-ttu-id="e8069-439">定義されるパターンは一致の事前条件ですが、一致結果には含まれません。</span><span class="sxs-lookup"><span data-stu-id="e8069-439">The pattern that they define is a precondition for a match, although it is not a part of the match result.</span></span>  
   
- たとえば、次の例では、21 世紀の西暦下 2 桁を照合します \(つまり、一致する文字列の前に数字 "20" がある必要があります\)。  
+ <span data-ttu-id="e8069-440">たとえば、次の例では、21 世紀の西暦下 2 桁を照合します (つまり、一致する文字列の前に数字 "20" がある必要があります)。</span><span class="sxs-lookup"><span data-stu-id="e8069-440">For example, the following example matches the last two digits of the year for the twenty first century (that is, it requires that the digits "20" precede the matched string).</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#9](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/lookbehind1.cs#9)]
  [!code-vb[RegularExpressions.Language.Grouping#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/lookbehind1.vb#9)]  
   
- この正規表現パターン `(?<=\b20)\d{2}\b` の解釈を次の表に示します。  
+ <span data-ttu-id="e8069-441">この正規表現パターン `(?<=\b20)\d{2}\b` の解釈を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-441">The regular expression pattern `(?<=\b20)\d{2}\b` is interpreted as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\d{2}`|2 桁の 10 進数と一致します。|  
-|`{?<=\b20)`|ワード境界で 2 桁の 10 進数の前に 10 進数 "20" がある場合は照合を続行します。|  
-|`\b`|ワード境界で照合を終了します。|  
+|<span data-ttu-id="e8069-442">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-442">Pattern</span></span>|<span data-ttu-id="e8069-443">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-443">Description</span></span>|  
+|-------------|-----------------|  
+|`\d{2}`|<span data-ttu-id="e8069-444">2 桁の 10 進数と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-444">Match two decimal digits.</span></span>|  
+|`{?<=\b20)`|<span data-ttu-id="e8069-445">ワード境界で 2 桁の 10 進数の前に 10 進数 "20" がある場合は照合を続行します。</span><span class="sxs-lookup"><span data-stu-id="e8069-445">Continue the match if the two decimal digits are preceded by the decimal digits "20" on a word boundary.</span></span>|  
+|`\b`|<span data-ttu-id="e8069-446">ワード境界で照合を終了します。</span><span class="sxs-lookup"><span data-stu-id="e8069-446">End the match at a word boundary.</span></span>|  
   
- ゼロ幅の正の後読みアサーションは、キャプチャされたグループの最後の文字がそのグループの正規表現パターンと一致する文字のサブセットになる必要がある場合に、バックトラッキングを制限するためにも使用されます。 たとえば、グループが連続するすべての単語文字をキャプチャする場合に、ゼロ幅の正の後読みアサーションを使用して、最後の文字がアルファベットになるように要求できます。  
+ <span data-ttu-id="e8069-447">ゼロ幅の正の後読みアサーションは、キャプチャされたグループの最後の文字がそのグループの正規表現パターンと一致する文字のサブセットになる必要がある場合に、バックトラッキングを制限するためにも使用されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-447">Zero-width positive lookbehind assertions are also used to limit backtracking when the last character or characters in a captured group must be a subset of the characters that match that group's regular expression pattern.</span></span> <span data-ttu-id="e8069-448">たとえば、グループが連続するすべての単語文字をキャプチャする場合に、ゼロ幅の正の後読みアサーションを使用して、最後の文字がアルファベットになるように要求できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-448">For example, if a group captures all consecutive word characters, you can use a zero-width positive lookbehind assertion to require that the last character be alphabetical.</span></span>  
   
 <a name="zerowidth_negative_lookbehind_assertion"></a>   
-## ゼロ幅の負の後読みアサーション  
- 次のグループ化構成体は、ゼロ幅の負の後読みアサーションを定義します。  
+## <a name="zero-width-negative-lookbehind-assertions"></a><span data-ttu-id="e8069-449">ゼロ幅の負の後読みアサーション</span><span class="sxs-lookup"><span data-stu-id="e8069-449">Zero-Width Negative Lookbehind Assertions</span></span>  
+ <span data-ttu-id="e8069-450">次のグループ化構成体は、ゼロ幅の負の後読みアサーションを定義します。</span><span class="sxs-lookup"><span data-stu-id="e8069-450">The following grouping construct defines a zero-width negative lookbehind assertion:</span></span>  
   
- `(?<!` *subexpression* `)`  
+ <span data-ttu-id="e8069-451">`(?<!` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="e8069-451">`(?<!` *subexpression* `)`</span></span>  
   
- ここで、*subexpression* は正規表現パターンです。 一致と見なされるためには、*subexpression* が入力文字列の現在の位置の左側に出現しない必要があります。 ただし、`subexpression` と一致しない部分文字列は一致結果には含まれません。  
+ <span data-ttu-id="e8069-452">ここで、 *subexpression* は正規表現パターンです。</span><span class="sxs-lookup"><span data-stu-id="e8069-452">where *subexpression* is any regular expression pattern.</span></span> <span data-ttu-id="e8069-453">一致と見なされるためには、 *subexpression* が入力文字列の現在の位置の左側に出現しない必要があります。</span><span class="sxs-lookup"><span data-stu-id="e8069-453">For a match to be successful, *subexpression* must not occur at the input string to the left of the current position.</span></span> <span data-ttu-id="e8069-454">ただし、 `subexpression` と一致しない部分文字列は一致結果には含まれません。</span><span class="sxs-lookup"><span data-stu-id="e8069-454">However, any substring that does not match `subexpression` is not included in the match result.</span></span>  
   
- 通常、ゼロ幅の負の後読みアサーションは正規表現の先頭で使用されます。 定義されるパターンでは、後に続く文字列内の一致が除外されます。 このアサーションは、キャプチャされたグループの最後の文字がそのグループの正規表現パターンと一致する 1 つ以上の文字にならない必要がある場合に、バックトラッキングを制限するためにも使用されます。 たとえば、グループが連続するすべての単語文字をキャプチャする場合に、ゼロ幅の正の後読みアサーションを使用して、最後の文字がアンダースコア \(\_\) にならないように要求できます。  
+ <span data-ttu-id="e8069-455">通常、ゼロ幅の負の後読みアサーションは正規表現の先頭で使用されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-455">Zero-width negative lookbehind assertions are typically used at the beginning of regular expressions.</span></span> <span data-ttu-id="e8069-456">定義されるパターンでは、後に続く文字列内の一致が除外されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-456">The pattern that they define precludes a match in the string that follows.</span></span> <span data-ttu-id="e8069-457">このアサーションは、キャプチャされたグループの最後の文字がそのグループの正規表現パターンと一致する 1 つ以上の文字にならない必要がある場合に、バックトラッキングを制限するためにも使用されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-457">They are also used to limit backtracking when the last character or characters in a captured group must not be one or more of the characters that match that group's regular expression pattern.</span></span> <span data-ttu-id="e8069-458">たとえば、グループが連続するすべての単語文字をキャプチャする場合に、ゼロ幅の正の後読みアサーションを使用して、最後の文字がアンダースコア (_) にならないように要求できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-458">For example, if a group captures all consecutive word characters, you can use a zero-width positive lookbehind assertion to require that the last character not be an underscore (_).</span></span>  
   
- 次の例では、週末でない \(土曜日や日曜日でない\) 曜日の日付を照合します。  
+ <span data-ttu-id="e8069-459">次の例では、週末でない (土曜日や日曜日でない) 曜日の日付を照合します。</span><span class="sxs-lookup"><span data-stu-id="e8069-459">The following example matches the date for any day of the week that is not a weekend (that is, that is neither Saturday nor Sunday).</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#10](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/negativelookbehind1.cs#10)]
  [!code-vb[RegularExpressions.Language.Grouping#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/negativelookbehind1.vb#10)]  
   
- この正規表現パターン `(?<!(Saturday|Sunday) )\b\w+ \d{1,2}, \d{4}\b` の解釈を次の表に示します。  
+ <span data-ttu-id="e8069-460">この正規表現パターン `(?<!(Saturday|Sunday) )\b\w+ \d{1,2}, \d{4}\b` の解釈を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="e8069-460">The regular expression pattern `(?<!(Saturday|Sunday) )\b\w+ \d{1,2}, \d{4}\b` is interpreted as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`\w+`|1 個以上の単語文字の後に空白文字が続くパターンと一致します。|  
-|`\d{1,2},`|1 桁または 2 桁の 10 進数の後に空白文字とコンマが続くパターンと一致します。|  
-|`\d{4}\b`|4 桁の 10 進数と一致し、ワード境界で照合を終了します。|  
-|`(?<!(Saturday&#124;Sunday) )`|文字列 "Saturday" または "Sunday" の後に空白が続くパターン以外が一致の前にある場合は、一致と見なされます。|  
+|<span data-ttu-id="e8069-461">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-461">Pattern</span></span>|<span data-ttu-id="e8069-462">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-462">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="e8069-463">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="e8069-463">Begin the match at a word boundary.</span></span>|  
+|`\w+`|<span data-ttu-id="e8069-464">1 個以上の単語文字の後に空白文字が続くパターンと一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-464">Match one or more word characters followed by a white-space character.</span></span>|  
+|`\d{1,2},`|<span data-ttu-id="e8069-465">1 桁または 2 桁の 10 進数の後に空白文字とコンマが続くパターンと一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-465">Match either one or two decimal digits followed by a white-space character and a comma.</span></span>|  
+|`\d{4}\b`|<span data-ttu-id="e8069-466">4 桁の 10 進数と一致し、ワード境界で照合を終了します。</span><span class="sxs-lookup"><span data-stu-id="e8069-466">Match four decimal digits, and end the match at a word boundary.</span></span>|  
+|`(?<!(Saturday&#124;Sunday) )`|<span data-ttu-id="e8069-467">文字列 "Saturday" または "Sunday" の後に空白が続くパターン以外が一致の前にある場合は、一致と見なされます。</span><span class="sxs-lookup"><span data-stu-id="e8069-467">If the match is preceded by something other than the strings "Saturday" or "Sunday" followed by a space, the match is successful.</span></span>|  
   
 <a name="nonbacktracking_subexpression"></a>   
-## 非バックトラッキング部分式  
- 次のグループ化構成体は、非バックトラッキング部分式を表します。"最長" 部分式とも呼ばれます。  
+## <a name="nonbacktracking-subexpressions"></a><span data-ttu-id="e8069-468">非バックトラッキング部分式</span><span class="sxs-lookup"><span data-stu-id="e8069-468">Nonbacktracking Subexpressions</span></span>  
+ <span data-ttu-id="e8069-469">次のグループ化構成体は、非バックトラッキング部分式を表します。"最長" 部分式とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="e8069-469">The following grouping construct represents a nonbacktracking subexpression (also known as a "greedy" subexpression):</span></span>  
   
- `(?>` *subexpression* `)`  
+ <span data-ttu-id="e8069-470">`(?>` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="e8069-470">`(?>` *subexpression* `)`</span></span>  
   
- ここで、*subexpression* は正規表現パターンです。  
+ <span data-ttu-id="e8069-471">ここで、 *subexpression* は正規表現パターンです。</span><span class="sxs-lookup"><span data-stu-id="e8069-471">where *subexpression* is any regular expression pattern.</span></span>  
   
- 通常、正規表現にオプションまたは代替の一致パターンが含まれる場合に一致する文字列が見つからなかったときは、正規表現エンジンは複数の方向に分岐することで入力文字列とパターンを照合できます。 最初の分岐で一致する文字列が見つからなかった場合、正規表現エンジンは最初に一致した時点まで戻り \(バックトラック\)、2 番目の分岐を使用して照合を試みることができます。 すべての分岐が試されるまでこの処理を続行できます。  
+ <span data-ttu-id="e8069-472">通常、正規表現にオプションまたは代替の一致パターンが含まれる場合に一致する文字列が見つからなかったときは、正規表現エンジンは複数の方向に分岐することで入力文字列とパターンを照合できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-472">Ordinarily, if a regular expression includes an optional or alternative matching pattern and a match does not succeed, the regular expression engine can branch in multiple directions to match an input string with a pattern.</span></span> <span data-ttu-id="e8069-473">最初の分岐で一致する文字列が見つからなかった場合、正規表現エンジンは最初に一致した時点まで戻り (バックトラック)、2 番目の分岐を使用して照合を試みることができます。</span><span class="sxs-lookup"><span data-stu-id="e8069-473">If a match is not found when it takes the first branch, the regular expression engine can back up or backtrack to the point where it took the first match and attempt the match using the second branch.</span></span> <span data-ttu-id="e8069-474">すべての分岐が試されるまでこの処理を続行できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-474">This process can continue until all branches have been tried.</span></span>  
   
- `(?>` *subexpression* `)` 言語コンストラクトでは、バックトラッキングが無効になります。 正規表現エンジンは、入力文字列内の文字をできるだけ多く照合します。 一致する文字列が見つからなくなっても、バックトラックして代替パターン一致を試みることはありません。 つまり、部分式はその部分式単体と一致する文字列のみと一致します。部分式とその後続の部分式に基づく文字列の照合は試行しません。  
+ <span data-ttu-id="e8069-475">インデックスが 2 の `(?>`*subexpression*`)` 言語コンストラクトでは、バックトラッキングが無効になります。</span><span class="sxs-lookup"><span data-stu-id="e8069-475">The `(?>`*subexpression*`)` language construct disables backtracking.</span></span> <span data-ttu-id="e8069-476">正規表現エンジンは、入力文字列内の文字をできるだけ多く照合します。</span><span class="sxs-lookup"><span data-stu-id="e8069-476">The regular expression engine will match as many characters in the input string as it can.</span></span> <span data-ttu-id="e8069-477">一致する文字列が見つからなくなっても、バックトラックして代替パターン一致を試みることはありません。</span><span class="sxs-lookup"><span data-stu-id="e8069-477">When no further match is possible, it will not backtrack to attempt alternate pattern matches.</span></span> <span data-ttu-id="e8069-478">つまり、部分式はその部分式単体と一致する文字列のみと一致します。部分式とその後続の部分式に基づく文字列の照合は試行しません。</span><span class="sxs-lookup"><span data-stu-id="e8069-478">(That is, the subexpression matches only strings that would be matched by the subexpression alone; it does not attempt to match a string based on the subexpression and any subexpressions that follow it.)</span></span>  
   
- バックトラッキングが成功しないことがわかっている場合は、このオプションを使用することをお勧めします。 正規表現エンジンで不要な検索が実行されないようにすることで、パフォーマンスが向上します。  
+ <span data-ttu-id="e8069-479">バックトラッキングが成功しないことがわかっている場合は、このオプションを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="e8069-479">This option is recommended if you know that backtracking will not succeed.</span></span> <span data-ttu-id="e8069-480">正規表現エンジンで不要な検索が実行されないようにすることで、パフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="e8069-480">Preventing the regular expression engine from performing unnecessary searching improves performance.</span></span>  
   
- 次の例は、非バックトラッキング部分式によってパターン一致の結果がどのように変わるかを示しています。 バックトラッキング正規表現は、ワード境界で一連の文字の繰り返しの後に同じ文字がもう一度出現するパターンと一致しますが、非バックトラッキング正規表現は一致しません。  
+ <span data-ttu-id="e8069-481">次の例は、非バックトラッキング部分式によってパターン一致の結果がどのように変わるかを示しています。</span><span class="sxs-lookup"><span data-stu-id="e8069-481">The following example illustrates how a nonbacktracking subexpression modifies the results of a pattern match.</span></span> <span data-ttu-id="e8069-482">バックトラッキング正規表現は、ワード境界で一連の文字の繰り返しの後に同じ文字がもう一度出現するパターンと一致しますが、非バックトラッキング正規表現は一致しません。</span><span class="sxs-lookup"><span data-stu-id="e8069-482">The backtracking regular expression successfully matches a series of repeated characters followed by one more occurrence of the same character on a word boundary, but the nonbacktracking regular expression does not.</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#11](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/nonbacktracking1.cs#11)]
  [!code-vb[RegularExpressions.Language.Grouping#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/nonbacktracking1.vb#11)]  
   
- 非バックトラッキング正規表現 `(?>(\w)\1+).\b` は、次の表に示すように定義されています。  
+ <span data-ttu-id="e8069-483">非バックトラッキング正規表現 `(?>(\w)\1+).\b` は、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="e8069-483">The nonbacktracking regular expression `(?>(\w)\1+).\b` is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`(\w)`|単語文字に使用される 1 文字と一致し、その文字を 1 番目のキャプチャ グループに代入します。|  
-|`\1+`|最初にキャプチャされた部分文字列の値と 1 回以上一致します。|  
-|`.`|任意の文字と一致します。|  
-|`\b`|ワード境界で照合を終了します。|  
-|`(?>(\w)\1+)`|重複する単語文字の 1 回以上の出現と一致しますが、バックトラックしてワード境界の最後の文字と一致することはありません。|  
+|<span data-ttu-id="e8069-484">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-484">Pattern</span></span>|<span data-ttu-id="e8069-485">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-485">Description</span></span>|  
+|-------------|-----------------|  
+|`(\w)`|<span data-ttu-id="e8069-486">単語文字に使用される 1 文字と一致し、その文字を 1 番目のキャプチャ グループに代入します。</span><span class="sxs-lookup"><span data-stu-id="e8069-486">Match a single word character and assign it to the first capturing group.</span></span>|  
+|`\1+`|<span data-ttu-id="e8069-487">最初にキャプチャされた部分文字列の値と 1 回以上一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-487">Match the value of the first captured substring one or more times.</span></span>|  
+|`.`|<span data-ttu-id="e8069-488">任意の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-488">Match any character.</span></span>|  
+|`\b`|<span data-ttu-id="e8069-489">ワード境界で照合を終了します。</span><span class="sxs-lookup"><span data-stu-id="e8069-489">End the match on a word boundary.</span></span>|  
+|`(?>(\w)\1+)`|<span data-ttu-id="e8069-490">重複する単語文字の 1 回以上の出現と一致しますが、バックトラックしてワード境界の最後の文字と一致することはありません。</span><span class="sxs-lookup"><span data-stu-id="e8069-490">Match one or more occurrences of a duplicated word character, but do not backtrack to match the last character on a word boundary.</span></span>|  
   
 <a name="Objects"></a>   
-## グループ化構成体および正規表現オブジェクト  
- 正規表現キャプチャ グループと一致する部分文字列は、<xref:System.Text.RegularExpressions.Group?displayProperty=fullName> オブジェクトで表されます。このオブジェクトは、<xref:System.Text.RegularExpressions.GroupCollection?displayProperty=fullName> プロパティによって返される <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=fullName> オブジェクトから取得できます。<xref:System.Text.RegularExpressions.GroupCollection> オブジェクトの値は次のように設定されます。  
+## <a name="grouping-constructs-and-regular-expression-objects"></a><span data-ttu-id="e8069-491">グループ化構成体および正規表現オブジェクト</span><span class="sxs-lookup"><span data-stu-id="e8069-491">Grouping Constructs and Regular Expression Objects</span></span>  
+ <span data-ttu-id="e8069-492">正規表現キャプチャ グループと一致する部分文字列は、<xref:System.Text.RegularExpressions.Group?displayProperty=nameWithType> オブジェクトで表されます。このオブジェクトは、<xref:System.Text.RegularExpressions.GroupCollection?displayProperty=nameWithType> プロパティによって返される <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> オブジェクトから取得できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-492">Substrings that are matched by a regular expression capturing group are represented by <xref:System.Text.RegularExpressions.Group?displayProperty=nameWithType> objects, which can be retrieved from the <xref:System.Text.RegularExpressions.GroupCollection?displayProperty=nameWithType> object that is returned by the <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> property.</span></span> <span data-ttu-id="e8069-493"><xref:System.Text.RegularExpressions.GroupCollection> オブジェクトの値は次のように設定されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-493">The <xref:System.Text.RegularExpressions.GroupCollection> object is populated as follows:</span></span>  
   
--   コレクション内の最初の <xref:System.Text.RegularExpressions.Group> オブジェクト \(インデックス 0 の位置にあるオブジェクト\) は、一致した文字列全体を表します。  
+-   <span data-ttu-id="e8069-494">コレクション内の最初の <xref:System.Text.RegularExpressions.Group> オブジェクト (インデックス 0 の位置にあるオブジェクト) は、一致した文字列全体を表します。</span><span class="sxs-lookup"><span data-stu-id="e8069-494">The first <xref:System.Text.RegularExpressions.Group> object in the collection (the object at index zero) represents the entire match.</span></span>  
   
--   次の <xref:System.Text.RegularExpressions.Group> オブジェクト セットは、名前のない \(番号付き\) キャプチャ グループを表します。 正規表現で定義されている順序で左から右に並びます。 これらのグループのインデックス値の範囲は、1 からコレクション内の名前のないキャプチャ グループの数までです。 \(特定のグループのインデックスは、その番号付き前方参照と同等です。 前方参照について詳しくは、「[前方参照構成体](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md)」をご覧ください。\)  
+-   <span data-ttu-id="e8069-495">次の <xref:System.Text.RegularExpressions.Group> オブジェクト セットは、名前のない (番号付き) キャプチャ グループを表します。</span><span class="sxs-lookup"><span data-stu-id="e8069-495">The next set of <xref:System.Text.RegularExpressions.Group> objects represent unnamed (numbered) capturing groups.</span></span> <span data-ttu-id="e8069-496">正規表現で定義されている順序で左から右に並びます。</span><span class="sxs-lookup"><span data-stu-id="e8069-496">They appear in the order in which they are defined in the regular expression, from left to right.</span></span> <span data-ttu-id="e8069-497">これらのグループのインデックス値の範囲は、1 からコレクション内の名前のないキャプチャ グループの数までです。</span><span class="sxs-lookup"><span data-stu-id="e8069-497">The index values of these groups range from 1 to the number of unnamed capturing groups in the collection.</span></span> <span data-ttu-id="e8069-498">(特定のグループのインデックスは、その番号付き前方参照と同等です。</span><span class="sxs-lookup"><span data-stu-id="e8069-498">(The index of a particular group is equivalent to its numbered backreference.</span></span> <span data-ttu-id="e8069-499">前方参照について詳しくは、「 [Backreference Constructs](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md)」をご覧ください。)</span><span class="sxs-lookup"><span data-stu-id="e8069-499">For more information about backreferences, see [Backreference Constructs](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)</span></span>  
   
--   最後の <xref:System.Text.RegularExpressions.Group> オブジェクト セットは、名前付きキャプチャ グループを表します。 正規表現で定義されている順序で左から右に並びます。 最初の名前付きキャプチャ グループのインデックス値は、最後の名前のないキャプチャ グループのインデックスよりも 1 大きい数値になります。 正規表現に名前のないキャプチャ グループがない場合、最初の名前付きキャプチャ グループのインデックス値は 1 になります。  
+-   <span data-ttu-id="e8069-500">最後の <xref:System.Text.RegularExpressions.Group> オブジェクト セットは、名前付きキャプチャ グループを表します。</span><span class="sxs-lookup"><span data-stu-id="e8069-500">The final set of <xref:System.Text.RegularExpressions.Group> objects represent named capturing groups.</span></span> <span data-ttu-id="e8069-501">正規表現で定義されている順序で左から右に並びます。</span><span class="sxs-lookup"><span data-stu-id="e8069-501">They appear in the order in which they are defined in the regular expression, from left to right.</span></span> <span data-ttu-id="e8069-502">最初の名前付きキャプチャ グループのインデックス値は、最後の名前のないキャプチャ グループのインデックスよりも 1 大きい数値になります。</span><span class="sxs-lookup"><span data-stu-id="e8069-502">The index value of the first named capturing group is one greater than the index of the last unnamed capturing group.</span></span> <span data-ttu-id="e8069-503">正規表現に名前のないキャプチャ グループがない場合、最初の名前付きキャプチャ グループのインデックス値は 1 になります。</span><span class="sxs-lookup"><span data-stu-id="e8069-503">If there are no unnamed capturing groups in the regular expression, the index value of the first named capturing group is one.</span></span>  
   
- 量指定子をキャプチャ グループに適用する場合、対応する <xref:System.Text.RegularExpressions.Group> オブジェクトの <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=fullName>、<xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=fullName>、および <xref:System.Text.RegularExpressions.Capture.Length%2A?displayProperty=fullName> の各プロパティには、キャプチャ グループによってキャプチャされた最後の部分文字列が反映されます。 量指定子を持つグループによってキャプチャされたすべての部分文字列は、<xref:System.Text.RegularExpressions.CaptureCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=fullName> オブジェクトから取得できます。  
+ <span data-ttu-id="e8069-504">量指定子をキャプチャ グループに適用する場合、対応する <xref:System.Text.RegularExpressions.Group> オブジェクトの <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType>、<xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType>、および <xref:System.Text.RegularExpressions.Capture.Length%2A?displayProperty=nameWithType> の各プロパティには、キャプチャ グループによってキャプチャされた最後の部分文字列が反映されます。</span><span class="sxs-lookup"><span data-stu-id="e8069-504">If you apply a quantifier to a capturing group, the corresponding <xref:System.Text.RegularExpressions.Group> object's <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType>, <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType>, and <xref:System.Text.RegularExpressions.Capture.Length%2A?displayProperty=nameWithType> properties reflect the last substring that is captured by a capturing group.</span></span> <span data-ttu-id="e8069-505">量指定子を持つグループによってキャプチャされたすべての部分文字列は、<xref:System.Text.RegularExpressions.CaptureCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> オブジェクトから取得できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-505">You can retrieve a complete set of substrings that are captured by groups that have quantifiers from the <xref:System.Text.RegularExpressions.CaptureCollection> object that is returned by the <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> property.</span></span>  
   
- 次の例では、<xref:System.Text.RegularExpressions.Group> オブジェクトと <xref:System.Text.RegularExpressions.Capture> オブジェクトの関係を明確にします。  
+ <span data-ttu-id="e8069-506">次の例では、 <xref:System.Text.RegularExpressions.Group> オブジェクトと <xref:System.Text.RegularExpressions.Capture> オブジェクトの関係を明確にします。</span><span class="sxs-lookup"><span data-stu-id="e8069-506">The following example clarifies the relationship between the <xref:System.Text.RegularExpressions.Group> and <xref:System.Text.RegularExpressions.Capture> objects.</span></span>  
   
  [!code-csharp[RegularExpressions.Language.Grouping#4](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/objectmodel1.cs#4)]
  [!code-vb[RegularExpressions.Language.Grouping#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/objectmodel1.vb#4)]  
   
- 正規表現パターン `\b(\w+)\W+)+` は、文字列から単語を個別に抽出します。 このパターンは、次の表に示すように定義されています。  
+ <span data-ttu-id="e8069-507">正規表現パターン `\b(\w+)\W+)+` は、文字列から単語を個別に抽出します。</span><span class="sxs-lookup"><span data-stu-id="e8069-507">The regular expression pattern `\b(\w+)\W+)+` extracts individual words from a string.</span></span> <span data-ttu-id="e8069-508">このパターンは、次の表に示すように定義されています。</span><span class="sxs-lookup"><span data-stu-id="e8069-508">It is defined as shown in the following table.</span></span>  
   
-|パターン|説明|  
-|----------|--------|  
-|`\b`|ワード境界から照合を開始します。|  
-|`(\w+)`|1 つ以上の単語文字に一致します。 これらの文字が集まって、単語を形成します  これが 2 番目のキャプチャ グループです。|  
-|`\W+`|1 個以上の単語文字に使用されない文字と一致します。|  
-|`(\w+)\W+)+`|1 個以上の単語文字、および 1 個以上の単語文字に使用されない文字が 1 回以上続くパターンと一致します。 これが最初のキャプチャ グループです。|  
+|<span data-ttu-id="e8069-509">パターン</span><span class="sxs-lookup"><span data-stu-id="e8069-509">Pattern</span></span>|<span data-ttu-id="e8069-510">説明</span><span class="sxs-lookup"><span data-stu-id="e8069-510">Description</span></span>|  
+|-------------|-----------------|  
+|`\b`|<span data-ttu-id="e8069-511">ワード境界から照合を開始します。</span><span class="sxs-lookup"><span data-stu-id="e8069-511">Begin the match at a word boundary.</span></span>|  
+|`(\w+)`|<span data-ttu-id="e8069-512">1 つ以上の単語文字に一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-512">Match one or more word characters.</span></span> <span data-ttu-id="e8069-513">これらの文字が集まって、単語を形成します</span><span class="sxs-lookup"><span data-stu-id="e8069-513">Together, these characters form a word.</span></span> <span data-ttu-id="e8069-514">これが 2 番目のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="e8069-514">This is the second capturing group.</span></span>|  
+|`\W+`|<span data-ttu-id="e8069-515">1 個以上の単語文字に使用されない文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-515">Match one or more non-word characters.</span></span>|  
+|`(\w+)\W+)+`|<span data-ttu-id="e8069-516">1 個以上の単語文字、および 1 個以上の単語文字に使用されない文字が 1 回以上続くパターンと一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-516">Match the pattern of one or more word characters followed by one or more non-word characters one or more times.</span></span> <span data-ttu-id="e8069-517">これが最初のキャプチャ グループです。</span><span class="sxs-lookup"><span data-stu-id="e8069-517">This is the first capturing group.</span></span>|  
   
- 最初のキャプチャ グループは、文の各単語と一致します。 2 番目のキャプチャ グループは、各単語およびその単語に続く句読点や空白と一致します。 インデックスが 2 の <xref:System.Text.RegularExpressions.Group> オブジェクトは、2 番目のキャプチャ グループと一致したテキストの情報を保持します。 キャプチャ グループによってキャプチャされたすべての単語は、<xref:System.Text.RegularExpressions.CaptureCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=fullName> オブジェクトから取得できます。  
+ <span data-ttu-id="e8069-518">最初のキャプチャ グループは、文の各単語と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-518">The first capturing group matches each word of the sentence.</span></span> <span data-ttu-id="e8069-519">2 番目のキャプチャ グループは、各単語およびその単語に続く句読点や空白と一致します。</span><span class="sxs-lookup"><span data-stu-id="e8069-519">The second capturing group matches each word along with the punctuation and white space that follow the word.</span></span> <span data-ttu-id="e8069-520">インデックスが 2 の <xref:System.Text.RegularExpressions.Group> オブジェクトは、2 番目のキャプチャ グループと一致したテキストの情報を保持します。</span><span class="sxs-lookup"><span data-stu-id="e8069-520">The <xref:System.Text.RegularExpressions.Group> object whose index is 2 provides information about the text matched by the second capturing group.</span></span> <span data-ttu-id="e8069-521">キャプチャ グループによってキャプチャされたすべての単語は、<xref:System.Text.RegularExpressions.CaptureCollection> プロパティによって返される <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> オブジェクトから取得できます。</span><span class="sxs-lookup"><span data-stu-id="e8069-521">The complete set of words captured by the capturing group are available from the <xref:System.Text.RegularExpressions.CaptureCollection> object returned by the <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> property.</span></span>  
   
-## 参照  
- [正規表現言語 \- クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)   
- [バックトラッキング](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)
+## <a name="see-also"></a><span data-ttu-id="e8069-522">関連項目</span><span class="sxs-lookup"><span data-stu-id="e8069-522">See Also</span></span>  
+ [<span data-ttu-id="e8069-523">正規表現言語 - クイック リファレンス</span><span class="sxs-lookup"><span data-stu-id="e8069-523">Regular Expression Language - Quick Reference</span></span>](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
+ [<span data-ttu-id="e8069-524">バックトラッキング</span><span class="sxs-lookup"><span data-stu-id="e8069-524">Backtracking</span></span>](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)

@@ -1,34 +1,39 @@
 ---
-title: "Understanding Speedup in PLINQ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "PLINQ queries, performance tuning"
+title: "PLINQ での高速化について"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: PLINQ queries, performance tuning
 ms.assetid: 53706c7e-397d-467a-98cd-c0d1fd63ba5e
-caps.latest.revision: 14
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: c3373cb6a2c535bd7d42eb062e1f9727952f7cfb
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Understanding Speedup in PLINQ
-PLINQ の主な目的は、マルチコア コンピューターでクエリのデリゲートを並列で実行することにより、LINQ to Objects クエリの実行を高速化することです。  PLINQ は、ソース コレクションの各要素の処理が独立し、個別のデリゲート間に共有状態がない場合に、最大のパフォーマンスを発揮します。  このような操作は、LINQ to Objects および PLINQ では一般的であり、複数のスレッドでのスケジュール設定が容易であることから、"*適切な並列*" とも言われます。  しかし、すべてのクエリが適切な並列操作だけで構成されるわけではありません。ほとんどの場合、クエリには、並列化できない演算子や、並列実行では速度が低下する演算子がいくつか含まれています。  また、完全に適切な並列クエリでも、PLINQ ではデータ ソースをパーティション分割して作業をスレッド上でスケジュールし、通常はクエリが完了したときに結果をマージする必要があります。  これらすべての操作により、並列化の計算コストが増えます。このような並列化を加えることによるコストを、*オーバーヘッド*といいます。  PLINQ クエリで最適なパフォーマンスを実現するには、適切な並列の部分を最大化し、オーバーヘッドを要する部分を最小化することが目標です。  ここでは、できる限り効率的で、正しい結果を生成する PLINQ クエリを記述するのに役立つ情報を示します。  
+# <a name="understanding-speedup-in-plinq"></a><span data-ttu-id="63993-102">PLINQ での高速化について</span><span class="sxs-lookup"><span data-stu-id="63993-102">Understanding Speedup in PLINQ</span></span>
+<span data-ttu-id="63993-103">PLINQ の主な目的では、実行速度を高めるの LINQ to Objects クエリ マルチコア コンピューターで並列クエリ デリゲートを実行することによってです。</span><span class="sxs-lookup"><span data-stu-id="63993-103">The primary purpose of PLINQ is to speed up the execution of LINQ to Objects queries by executing the query delegates in parallel on multi-core computers.</span></span> <span data-ttu-id="63993-104">PLINQ は、ソース コレクション内の各要素の処理が独立しており、個別のデリゲートの間で関係する共有状態がない場合に発揮します。</span><span class="sxs-lookup"><span data-stu-id="63993-104">PLINQ performs best when the processing of each element in a source collection is independent, with no shared state involved among the individual delegates.</span></span> <span data-ttu-id="63993-105">このような操作は LINQ to Objects および PLINQ では一般的とも呼ばれます"*適切な並列*"であることから簡単に複数のスレッドでのスケジュール設定します。</span><span class="sxs-lookup"><span data-stu-id="63993-105">Such operations are common in LINQ to Objects and PLINQ, and are often called "*delightfully parallel*" because they lend themselves easily to scheduling on multiple threads.</span></span> <span data-ttu-id="63993-106">ただし、すべてのクエリのみで構成する適切な並列操作です。ほとんどの場合、クエリはいずれかを並行化できない、または並列実行速度が低下するいくつかの演算子ではします。</span><span class="sxs-lookup"><span data-stu-id="63993-106">However, not all queries consist entirely of delightfully parallel operations; in most cases, a query involves some operators that either cannot be parallelized, or that slow down parallel execution.</span></span> <span data-ttu-id="63993-107">クエリを完全に適切な並列でも PLINQ 必要があります、データ ソースをパーティション分割と、スレッドに作業をスケジュール通常、クエリの完了時に結果をマージします。</span><span class="sxs-lookup"><span data-stu-id="63993-107">And even with queries that are entirely delightfully parallel, PLINQ must still partition the data source and schedule the work on the threads, and usually merge the results when the query completes.</span></span> <span data-ttu-id="63993-108">これらすべての操作を並列化以外の計算コストを追加します。これらのコストを並列化を追加すると呼びます*オーバーヘッド*です。</span><span class="sxs-lookup"><span data-stu-id="63993-108">All these operations add to the computational cost of parallelization; these costs of adding parallelization are called *overhead*.</span></span> <span data-ttu-id="63993-109">PLINQ クエリの最適なパフォーマンスを得るには、目標は、適切な並列されている部分を最大化し、オーバーヘッドが必要な部分を最小限に抑えるです。</span><span class="sxs-lookup"><span data-stu-id="63993-109">To achieve optimum performance in a PLINQ query, the goal is to maximize the parts that are delightfully parallel and minimize the parts that require overhead.</span></span> <span data-ttu-id="63993-110">この記事では、正しい結果を生成できる限り効率的な PLINQ クエリを記述するうえで役立つ情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="63993-110">This article provides information that will help you write PLINQ queries that are as efficient as possible while still yielding correct results.</span></span>  
   
-## PLINQ クエリのパフォーマンスに影響を与える要因  
- ここでは、並列クエリのパフォーマンスに影響を与える最も重要な要因をいくつか示します。  これらは一般的な説明であり、これだけではすべてのケースのクエリのパフォーマンスを予測するには不十分です。  当然ながら、一連の代表的な構成および負荷を使用して、コンピューターで特定のクエリの実際のパフォーマンスを計測することが重要です。  
+## <a name="factors-that-impact-plinq-query-performance"></a><span data-ttu-id="63993-111">PLINQ クエリのパフォーマンスに影響する要因</span><span class="sxs-lookup"><span data-stu-id="63993-111">Factors that Impact PLINQ Query Performance</span></span>  
+ <span data-ttu-id="63993-112">次のセクションでは、並列クエリ パフォーマンスに影響する最も重要な要因のいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="63993-112">The following sections lists some of the most important factors that impact parallel query performance.</span></span> <span data-ttu-id="63993-113">これらは、一般的なないステートメントを単独で常にクエリのパフォーマンスを予測するだけで十分です。</span><span class="sxs-lookup"><span data-stu-id="63993-113">These are general statements that by themselves are not sufficient to predict query performance in all cases.</span></span> <span data-ttu-id="63993-114">いつものように、コンピューター上の特定のクエリの代表的な構成と読み込みの範囲と実際のパフォーマンスを測定する重要なです。</span><span class="sxs-lookup"><span data-stu-id="63993-114">As always, it is important to measure actual performance of specific queries on computers with a range of representative configurations and loads.</span></span>  
   
-1.  作業全体の計算コスト。  
+1.  <span data-ttu-id="63993-115">全体的な作業のコストを計算します。</span><span class="sxs-lookup"><span data-stu-id="63993-115">Computational cost of the overall work.</span></span>  
   
-     高速化を実現するには、PLINQ クエリの適切な並列処理が、オーバーヘッドを相殺するのに十分な量である必要があります。  この量は、各デリゲートの計算コストを、ソース コレクション内の要素の数で乗算して表すことができます。  操作を並列化できると仮定した場合、その操作の計算コストが大きいほど、高速化の可能性は高くなります。  たとえば、関数の実行に 1 ミリ秒かかる場合、1,000 個の要素に対する順次クエリを実行するには 1 秒かかりますが、4 つのコアを備えるコンピューター上で並列クエリを実行した場合は 250 ミリ秒しかかかりません。  これにより、750 ミリ秒の高速化が実現します。  関数を各要素に対して実行するのに 1 秒かかる場合は、750 秒の高速化が実現します。  デリゲートがきわめて高コストである場合、PLINQ は、項目が数個しかないソース コレクションで大幅な高速化を実現することがあります。  逆に、デリゲートが低コストである小さなソース コレクションは、通常、PLINQ にふさわしい候補ではありません。  
+     <span data-ttu-id="63993-116">高速化を行うには、PLINQ クエリは、必要な適切な並列処理のオーバーヘッドを相殺をする必要があります。</span><span class="sxs-lookup"><span data-stu-id="63993-116">To achieve speedup, a PLINQ query must have enough delightfully parallel work to offset the overhead.</span></span> <span data-ttu-id="63993-117">作業は、ソース コレクション内の要素の数を掛けた値の各デリゲートの計算コストとして表現できます。</span><span class="sxs-lookup"><span data-stu-id="63993-117">The work can be expressed as the computational cost of each delegate multiplied by the number of elements in the source collection.</span></span> <span data-ttu-id="63993-118">想定されるので、操作を並列化できますより計算負荷の高いことが、大きい高速化の機会です。</span><span class="sxs-lookup"><span data-stu-id="63993-118">Assuming that an operation can be parallelized, the more computationally expensive it is, the greater the opportunity for speedup.</span></span> <span data-ttu-id="63993-119">たとえば、関数が 1 ミリ秒を実行する場合、1000 個の要素になります、その操作を実行する 1 秒 4 つのコアを使用しているコンピューター上で並列クエリは順次クエリは 250 ミリ秒しかにかかる場合があります。</span><span class="sxs-lookup"><span data-stu-id="63993-119">For example, if a function takes one millisecond to execute, a sequential query over 1000 elements will take one second to perform that operation, whereas a parallel query on a computer with four cores might take only 250 milliseconds.</span></span> <span data-ttu-id="63993-120">これには、750 ミリ秒の高速化が生成されます。</span><span class="sxs-lookup"><span data-stu-id="63993-120">This yields a speedup of 750 milliseconds.</span></span> <span data-ttu-id="63993-121">関数は、各要素に対して実行する 1 秒を必要な場合、高速化になります 750 秒です。</span><span class="sxs-lookup"><span data-stu-id="63993-121">If the function required one second to execute for each element, then the speedup would be 750 seconds.</span></span> <span data-ttu-id="63993-122">デリゲートが非常に多くの場合は、PLINQ はソース コレクション内のいくつかのアイテムのみが大幅に高速化を提供します。</span><span class="sxs-lookup"><span data-stu-id="63993-122">If the delegate is very expensive, then PLINQ might offer significant speedup with only a few items in the source collection.</span></span> <span data-ttu-id="63993-123">逆に、単純なデリゲートで小さなソース コレクションは一般的に PLINQ の適切な候補です。</span><span class="sxs-lookup"><span data-stu-id="63993-123">Conversely, small source collections with trivial delegates are generally not good candidates for PLINQ.</span></span>  
   
-     次の例では、queryA が PLINQ にふさわしい候補、Select 関数に大量の処理が含まれているからです。queryB は、Select ステートメントに十分な処理が、並列化のオーバーヘッドによって高速化ほとんどまたはすべてが相殺されるため、ふさわしい候補ではありません。  
+     <span data-ttu-id="63993-124">次の例では、簡易問い合わせと、その関数選択 にはに、多く作業にはが含まれていると仮定した場合、PLINQ で有力候補では可能性があります。</span><span class="sxs-lookup"><span data-stu-id="63993-124">In the following example, queryA is probably a good candidate for PLINQ, assuming that its Select function involves a lot of work.</span></span> <span data-ttu-id="63993-125">queryB は、Select ステートメントに十分な処理がないと、並列処理のオーバーヘッドは、高速化のほとんどまたはすべてをオフセットがあるために、適切な候補ではありません。</span><span class="sxs-lookup"><span data-stu-id="63993-125">queryB is probably not a good candidate because there is not enough work in the Select statement, and the overhead of parallelization will offset most or all of the speedup.</span></span>  
   
     ```vb  
     Dim queryA = From num In numberList.AsParallel()  
@@ -46,45 +51,44 @@ PLINQ の主な目的は、マルチコア コンピューターでクエリの�
     var queryB = from num in numberList.AsParallel()  
                  where num % 2 > 0  
                  select num; //not as good for PLINQ  
-  
     ```  
   
-2.  システムの論理コアの数 \(並列化の程度\)。  
+2.  <span data-ttu-id="63993-126">システム (並列処理の次数) 上の論理コアの数。</span><span class="sxs-lookup"><span data-stu-id="63993-126">The number of logical cores on the system (degree of parallelism).</span></span>  
   
-     このポイントは、前のセクションの当然の帰結です。適切な並列クエリは、マシンのコア数が多いほど高速に実行されます。これは、より多くの同時スレッド間で処理を分割できるからです。  高速化の総量は、クエリの処理全体の何パーセントが並列化可能であるかによって異なります。  ただし、すべてのクエリが、8 コアのコンピューターでは 4 コアのコンピューターの 2 倍の速さで実行されるとは考えないでください。  最適なパフォーマンスを得るためにクエリを調整するときは、さまざまなコア数のコンピューターで実際の結果を計測することが重要です。  このポイントは 1 番目のポイントに関連しています。より多くのコンピューティング リソースを利用するには、より大きなデータセットが必要です。  
+     <span data-ttu-id="63993-127">このポイントは、前のセクションに、明確な推論は、適切な並列クエリを上で実行高速マシンより多くのコアと同時実行性のスレッド間で作業を分けることがあるためです。</span><span class="sxs-lookup"><span data-stu-id="63993-127">This point is an obvious corollary to the previous section, queries that are delightfully parallel run faster on machines with more cores because the work can be divided among more concurrent threads.</span></span> <span data-ttu-id="63993-128">高速化の全体量は、クエリの全体的な作業の割合が並列化に依存します。</span><span class="sxs-lookup"><span data-stu-id="63993-128">The overall amount of speedup depends on what percentage of the overall work of the query is parallelizable.</span></span> <span data-ttu-id="63993-129">ただしと想定しないでとして 2 回、すべてのクエリを実行は、4 コアのコンピューターと 8 コアのコンピューターに高速です。</span><span class="sxs-lookup"><span data-stu-id="63993-129">However, do not assume that all queries will run twice as fast on an eight core computer as a four core computer.</span></span> <span data-ttu-id="63993-130">最適なパフォーマンスのクエリをチューニングするときは、さまざまなコア数のコンピューターで実際の結果を測定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="63993-130">When tuning queries for optimal performance, it is important to measure actual results on computers with various numbers of cores.</span></span> <span data-ttu-id="63993-131">このポイントが 1 のポイントに関連する: 大規模なデータセットがより多くのコンピューティング リソースを活用するために必要です。</span><span class="sxs-lookup"><span data-stu-id="63993-131">This point is related to point #1: larger datasets are required to take advantage of greater computing resources.</span></span>  
   
-3.  操作の数と種類。  
+3.  <span data-ttu-id="63993-132">数と操作の種類。</span><span class="sxs-lookup"><span data-stu-id="63993-132">The number and kind of operations.</span></span>  
   
-     PLINQ には、ソース シーケンス内の要素の順序を維持する必要がある状況に備えて、AsOrdered 演算子が用意されています。  順序操作にはコストがかかりますが、このコストは通常はそれほど大きくありません。  同様に、GroupBy 操作と Join 操作でもオーバーヘッドが生じます。  PLINQ は、ソース コレクション内の要素を任意の順序で処理でき、それらの要素を準備完了と同時に次の演算子に渡すことができる場合に、最大のパフォーマンスを発揮します。  詳細については、「[Order Preservation in PLINQ](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md)」を参照してください。  
+     <span data-ttu-id="63993-133">PLINQ では、ソース シーケンス内の要素の順序を維持するために必要な場合に、AsOrdered 演算子を提供します。</span><span class="sxs-lookup"><span data-stu-id="63993-133">PLINQ provides the AsOrdered operator for situations in which it is necessary to maintain the order of elements in the source sequence.</span></span> <span data-ttu-id="63993-134">順序付けに関連するコストが、このコストは通常中程度。</span><span class="sxs-lookup"><span data-stu-id="63993-134">There is a cost associated with ordering, but this cost is usually modest.</span></span> <span data-ttu-id="63993-135">同様に、GroupBy および結合操作には、オーバーヘッドが発生します。</span><span class="sxs-lookup"><span data-stu-id="63993-135">GroupBy and Join operations likewise incur overhead.</span></span> <span data-ttu-id="63993-136">PLINQ は、任意の順序でソース コレクション内の要素を処理し、準備が完了するとすぐに次の演算子に渡すことができる場合に発揮します。</span><span class="sxs-lookup"><span data-stu-id="63993-136">PLINQ performs best when it is allowed to process elements in the source collection in any order, and pass them to the next operator as soon as they are ready.</span></span> <span data-ttu-id="63993-137">詳細については、「[Order Preservation in PLINQ (PLINQ における順序維持)](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="63993-137">For more information, see [Order Preservation in PLINQ](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md).</span></span>  
   
-4.  クエリ実行の形式。  
+4.  <span data-ttu-id="63993-138">クエリの実行の形式。</span><span class="sxs-lookup"><span data-stu-id="63993-138">The form of query execution.</span></span>  
   
-     ToArray または ToList を呼び出してクエリの結果を格納する場合、すべての並列スレッドの結果を単一のデータ構造にマージする必要があります。  この場合、計算コストが必ず生じます。  同様に、foreach \(Visual Basic では For Each\) ループを使用して結果を反復処理する場合、ワーカー スレッドの結果を列挙子スレッドにシリアル化する必要があります。  しかし、各スレッドの結果に基づいて何らかのアクションを実行するだけであれば、ForAll メソッドを使用して、この処理を複数のスレッドで実行できます。  
+     <span data-ttu-id="63993-139">ToArray または ToList を呼び出すことによって、クエリの結果を格納する場合は、1 つのデータ構造にすべての並列スレッドの結果をマージする必要があります。</span><span class="sxs-lookup"><span data-stu-id="63993-139">If you are storing the results of a query by calling ToArray or ToList, then the results from all parallel threads must be merged into the single data structure.</span></span> <span data-ttu-id="63993-140">これには、ロックベースの計算コストが含まれます。</span><span class="sxs-lookup"><span data-stu-id="63993-140">This involves an unavoidable computational cost.</span></span> <span data-ttu-id="63993-141">同様に、foreach (Visual Basic では各) For ループを使用して、結果を反復処理する場合、ワーカー スレッドからの結果を列挙子のスレッドにシリアル化される必要があります。</span><span class="sxs-lookup"><span data-stu-id="63993-141">Likewise, if you iterate the results by using a foreach (For Each in Visual Basic) loop, the results from the worker threads need to be serialized onto the enumerator thread.</span></span> <span data-ttu-id="63993-142">各スレッドの結果に基づいてアクションを実行する場合は、複数のスレッドでこの作業を実行する ForAll メソッドを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="63993-142">But if you just want to perform some action based on the result from each thread, you can use the ForAll method to perform this work on multiple threads.</span></span>  
   
-5.  マージ オプションの種類。  
+5.  <span data-ttu-id="63993-143">マージ オプションの種類。</span><span class="sxs-lookup"><span data-stu-id="63993-143">The type of merge options.</span></span>  
   
-     PLINQ は、出力をバッファーに格納し、それをチャンク単位で生成するか、結果セット全体が生成された後で一度に生成するように構成するか、または個別の結果を生成時にストリーミングするように構成できます。  前者の場合は、全体的な実行時間が減少し、後者の場合は、生成される要素間の遅延が減少します。マージ オプションは、クエリのパフォーマンス全体に大きな影響を与えるとは限りませんが、ユーザーが結果を目にするまでの時間を制御するため、知覚されるパフォーマンスに影響を与えることがあります。  詳細については、「[Merge Options in PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md)」を参照してください。  
+     <span data-ttu-id="63993-144">PLINQ は、いずれかの出力をバッファリングして作成のチャンクまたは一度に結果セット全体が作成された後、または else 個々 の結果をストリームが生成されるように構成できます。</span><span class="sxs-lookup"><span data-stu-id="63993-144">PLINQ can be configured to either buffer its output, and produce it in chunks or all at once after the entire result set is produced, or else to stream individual results as they are produced.</span></span> <span data-ttu-id="63993-145">前者の場合は、全体の実行時間を短縮および後者結果の生成される要素間の遅延が減少します。</span><span class="sxs-lookup"><span data-stu-id="63993-145">The former result is decreased overall execution time and the latter results in decreased latency between yielded elements.</span></span>  <span data-ttu-id="63993-146">マージ オプションが常に主要な影響のない全体的なクエリ パフォーマンス、中に影響を与えること見かけ上のパフォーマンス、ユーザーはどのくらいの時間を制御するための結果を表示するまで待機する必要があります。</span><span class="sxs-lookup"><span data-stu-id="63993-146">While the merge options do not always have a major impact on overall query performance, they can impact perceived performance because they control how long a user must wait to see results.</span></span> <span data-ttu-id="63993-147">詳細については、「[Merge Options in PLINQ (PLINQ のマージ オプション)](../../../docs/standard/parallel-programming/merge-options-in-plinq.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="63993-147">For more information, see [Merge Options in PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).</span></span>  
   
-6.  パーティション分割の種類。  
+6.  <span data-ttu-id="63993-148">パーティション分割の種類。</span><span class="sxs-lookup"><span data-stu-id="63993-148">The kind of partitioning.</span></span>  
   
-     場合によっては、インデックス可能なソース コレクションに対する PLINQ クエリで、作業負荷のバランスが崩れることがあります。  この場合、カスタム パーティショナーを作成することにより、クエリのパフォーマンスを改善できることがあります。  詳細については、「[Custom Partitioners for PLINQ and TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+     <span data-ttu-id="63993-149">場合によっては、インデックス可能なソース コレクションに対する PLINQ クエリが不均衡の作業負荷にあります。</span><span class="sxs-lookup"><span data-stu-id="63993-149">In some cases, a PLINQ query over an indexable source collection may result in an unbalanced work load.</span></span> <span data-ttu-id="63993-150">この場合は、カスタム パーティショナーを作成することで、クエリのパフォーマンスを向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="63993-150">When this occurs, you might be able to increase the query performance by creating a custom partitioner.</span></span> <span data-ttu-id="63993-151">詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="63993-151">For more information, see [Custom Partitioners for PLINQ and TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md).</span></span>  
   
-## PLINQ が順次モードを選択するケース  
- PLINQ は、少なくとも順次実行した場合と同じ速さでクエリを実行しようと常に試みます。  PLINQ は、ユーザー デリゲートの計算コストの大きさや、入力ソースの大きさは確認しませんが、クエリの特定の "形態"は確認します。具体的には、クエリの並列モードでの実行を低速化させる原因となるクエリ演算子または演算子の組み合わせを検索します。  そのような形態を見つけた場合、PLINQ は、既定で順次モードに戻ります。  
+## <a name="when-plinq-chooses-sequential-mode"></a><span data-ttu-id="63993-152">PLINQ が順次モードを選択すると</span><span class="sxs-lookup"><span data-stu-id="63993-152">When PLINQ Chooses Sequential Mode</span></span>  
+ <span data-ttu-id="63993-153">PLINQ は常に、以上の速度でクエリを順次実行とクエリの実行を試みます。</span><span class="sxs-lookup"><span data-stu-id="63993-153">PLINQ will always attempt to execute a query at least as fast as the query would run sequentially.</span></span> <span data-ttu-id="63993-154">PLINQ は負荷の大きい計算方法を参照できませんが高価なユーザー デリゲートが、または大きさ入力ソースが、特定のクエリ「の図形です」を探しては</span><span class="sxs-lookup"><span data-stu-id="63993-154">Although PLINQ does not look at how computationally expensive the user delegates are, or how big the input source is, it does look for certain query "shapes."</span></span> <span data-ttu-id="63993-155">具体的には、クエリ演算子または並列モードで実行速度が低下するクエリが通常発生演算子の組み合わせの検索します。</span><span class="sxs-lookup"><span data-stu-id="63993-155">Specifically, it looks for query operators or combinations of operators that typically cause a query to execute more slowly in parallel mode.</span></span> <span data-ttu-id="63993-156">このような図形が検出されると、既定では、PLINQ は、シーケンシャル モードに戻ります。</span><span class="sxs-lookup"><span data-stu-id="63993-156">When it finds such shapes, PLINQ by default falls back to sequential mode.</span></span>  
   
- しかし、特定のクエリのパフォーマンスを計測した後で、実際には並列モードのほうが高速に実行されることがわかる場合があります。  そのような場合、<xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A?displayProperty=fullName> メソッドを通じて <xref:System.Linq.ParallelExecutionMode> フラグを使用して、クエリを並列化するように PLINQ に指示できます。  詳細については、「[How to: Specify the Execution Mode in PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md)」を参照してください。  
+ <span data-ttu-id="63993-157">ただし、特定のクエリのパフォーマンスを測定した後には、実際に実行される高速並列モードでを判断可能性があります。</span><span class="sxs-lookup"><span data-stu-id="63993-157">However, after measuring a specific query's performance, you may determine that it actually runs faster in parallel mode.</span></span> <span data-ttu-id="63993-158">このような場合に使用することができます、<xref:System.Linq.ParallelExecutionMode.ForceParallelism?displayProperty=nameWithType>フラグを使用して、<xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A>クエリを並列化するために PLINQ に指示するメソッド。</span><span class="sxs-lookup"><span data-stu-id="63993-158">In such cases you can use the <xref:System.Linq.ParallelExecutionMode.ForceParallelism?displayProperty=nameWithType> flag via the <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> method to instruct PLINQ to parallelize the query.</span></span> <span data-ttu-id="63993-159">詳細については、「[How to: Specify the Execution Mode in PLINQ (方法: PLINQ の実行モードを指定する)](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="63993-159">For more information, see [How to: Specify the Execution Mode in PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md).</span></span>  
   
- PLINQ が既定で順次モードで実行するクエリの形態は次のとおりです。  
+ <span data-ttu-id="63993-160">次の一覧には、シーケンシャル モードで実行されます。 既定で PLINQ クエリの図形がについて説明します。</span><span class="sxs-lookup"><span data-stu-id="63993-160">The following list describes the query shapes that PLINQ by default will execute in sequential mode:</span></span>  
   
--   元のインデックスを削除または再配列した順序設定またはフィルター処理の演算子の後に、Select 句、インデックス付きの Where 句、インデックス付きの SelectMany 句、または ElementAt 句を含むクエリ。  
+-   <span data-ttu-id="63993-161">ここで、インデックス付きの SelectMany にインデックス付けを選択を含むクエリまたは順序またはフィルター演算子が削除されたか、元のインデックスを再配置した後に ElementAt 句を指定します。</span><span class="sxs-lookup"><span data-stu-id="63993-161">Queries that contain a Select, indexed Where, indexed SelectMany, or ElementAt clause after an ordering or filtering operator that has removed or rearranged original indices.</span></span>  
   
--   Take 演算子、TakeWhile 演算子、Skip 演算子、または SkipWhile 演算子を含み、ソース シーケンスのインデックスが元の順序ではないクエリ。  
+-   <span data-ttu-id="63993-162">Take、TakeWhile、スキップ、SkipWhile 演算子が含まれており、ここで、ソース シーケンス内のインデックスは順番がない、元のクエリ。</span><span class="sxs-lookup"><span data-stu-id="63993-162">Queries that contain a Take, TakeWhile, Skip, SkipWhile operator and where indices in the source sequence are not in the original order.</span></span>  
   
--   データ ソースの 1 つがに順序付けられたインデックスがあると、Zip または SequenceEquals を含むクエリは他のデータ ソースがです \(つまり配列または IList \(T\)\)。  
+-   <span data-ttu-id="63993-163">またはを含む Zip SequenceEquals、ない場合は、最初の並べ替えられたインデックスのデータ ソースのいずれかが、その他のデータ ソース [indexable] クエリ (つまり、配列または IList(T)) です。</span><span class="sxs-lookup"><span data-stu-id="63993-163">Queries that contain Zip or SequenceEquals, unless one of the data sources has an originally ordered index and the other data source is indexable (i.e. an array or IList(T)).</span></span>  
   
--   Concat を含むクエリ。ただし、Concat がインデックス可能なデータ ソースに適用されている場合を除きます。  
+-   <span data-ttu-id="63993-164">インデックス可能なデータ ソースに適用されている場合を除き、Concat を含むクエリ。</span><span class="sxs-lookup"><span data-stu-id="63993-164">Queries that contain Concat, unless it is applied to indexable data sources.</span></span>  
   
--   Reverse を含むクエリ。ただし、Reverse がインデックス可能なデータ ソースに適用されている場合を除きます。  
+-   <span data-ttu-id="63993-165">含むクエリは、インデックス可能データ ソースに適用される場合を除き、反転します。</span><span class="sxs-lookup"><span data-stu-id="63993-165">Queries that contain Reverse, unless applied to an indexable data source.</span></span>  
   
-## 参照  
- [Parallel LINQ \(PLINQ\)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+## <a name="see-also"></a><span data-ttu-id="63993-166">関連項目</span><span class="sxs-lookup"><span data-stu-id="63993-166">See Also</span></span>  
+ [<span data-ttu-id="63993-167">Parallel LINQ (PLINQ)</span><span class="sxs-lookup"><span data-stu-id="63993-167">Parallel LINQ (PLINQ)</span></span>](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

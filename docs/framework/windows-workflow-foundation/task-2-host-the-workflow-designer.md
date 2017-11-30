@@ -1,42 +1,45 @@
 ---
-title: "タスク 2: ワークフロー デザイナーのホスティング | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "タスク 2: ワークフロー デザイナーのホスティング"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 7f3b35bf4150dc05c6bedaaebc65a0a188c5c782
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# タスク 2: ワークフロー デザイナーのホスティング
-このトピックでは、[!INCLUDE[avalon1](../../../includes/avalon1-md.md)] アプリケーションで [!INCLUDE[wfd1](../../../includes/wfd1-md.md)]のインスタンスをホストする手順について説明します。  
+# <a name="task-2-host-the-workflow-designer"></a><span data-ttu-id="4b7bf-102">タスク 2: ワークフロー デザイナーのホスティング</span><span class="sxs-lookup"><span data-stu-id="4b7bf-102">Task 2: Host the Workflow Designer</span></span>
+<span data-ttu-id="4b7bf-103">このトピックでは、[!INCLUDE[wfd1](../../../includes/wfd1-md.md)] アプリケーションで [!INCLUDE[avalon1](../../../includes/avalon1-md.md)]のインスタンスをホストする手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-103">This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] in a [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] application.</span></span>  
   
- この手順では、デザイナーを格納する **Grid** コントロールを構成し、既定の <xref:System.Activities.Statements.Sequence> アクティビティを含む <xref:System.Activities.Presentation.WorkflowDesigner> のインスタンスをプログラムで作成します。さらに、デザイナーのメタデータを登録して、すべてのビルトイン アクティビティにデザイナー サポートを追加し、[!INCLUDE[avalon2](../../../includes/avalon2-md.md)] アプリケーションで[!INCLUDE[wfd2](../../../includes/wfd2-md.md)]をホストします。  
+ <span data-ttu-id="4b7bf-104">プロシージャを構成、**グリッド**、デザイナーが含まれるコントロールのインスタンスをプログラムで作成する、 <xref:System.Activities.Presentation.WorkflowDesigner> 、既定値を格納している<xref:System.Activities.Statements.Sequence>活動が提供するデザイナーのメタデータを登録すべての組み込みのアクティビティとホスト用のデザイナーのサポート、[!INCLUDE[wfd2](../../../includes/wfd2-md.md)]で、[!INCLUDE[avalon2](../../../includes/avalon2-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-104">The procedure configures the **Grid** control that contains the designer, programmatically creates an instance of the <xref:System.Activities.Presentation.WorkflowDesigner> that contains a default <xref:System.Activities.Statements.Sequence> activity, registers the designer metadata to provide designer support for all built-in activities, and hosts the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] in the [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] application.</span></span>  
   
-### ワークフロー デザイナーをホストするには  
+### <a name="to-host-the-workflow-designer"></a><span data-ttu-id="4b7bf-105">ワークフロー デザイナーをホストするには</span><span class="sxs-lookup"><span data-stu-id="4b7bf-105">To host the workflow designer</span></span>  
   
-1.  「[タスク 1: 新しい Windows Presentation Foundation アプリケーションの作成](../../../docs/framework/windows-workflow-foundation//task-1-create-a-new-wpf-app.md)」で作成した HostingApplication プロジェクトを開きます。  
+1.  <span data-ttu-id="4b7bf-106">開く、HostingApplication プロジェクトので作成した[タスク 1: 新しい Windows Presentation Foundation アプリケーションを作成する](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)です。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-106">Open the HostingApplication project you created in [Task 1: Create a New Windows Presentation Foundation Application](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md).</span></span>  
   
-2.  [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] が見やすくなるように、ウィンドウのサイズを調整します。ウィンドウのサイズを調整するには、デザイナーで **\[MainWindow\]** を選択し、F4 キーを押して **\[プロパティ\]** ウィンドウを表示して、**レイアウト** セクションで **\[幅\]** の値を「600」に設定し、**\[高さ\]** の値を「350」に設定します。  
+2.  <span data-ttu-id="4b7bf-107">[!INCLUDE[wfd2](../../../includes/wfd2-md.md)] が見やすくなるように、ウィンドウのサイズを調整します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-107">Adjust the size of the window to make it easier to use the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)].</span></span> <span data-ttu-id="4b7bf-108">これを行うには、次のように選択します**MainWindow**デザイナーで、f4 キーを表示、**プロパティ**ウィンドウ、および、、**レイアウト**ありますセクションで、設定、**幅。** 600 の値を**高さ**350 の値にします。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-108">To do this, select **MainWindow** in the designer, press F4 to display the **Properties** window, and, in the **Layout** section there, set the **Width** to a value of 600 and the **Height** to a value of 350.</span></span>  
   
-3.  デザイナーで **\[グリッド\]** パネルを選択し \(**\[MainWindow\]** 内のボックスをクリックします\)、**\[プロパティ\]** ウィンドウの一番上にある **Name** プロパティを「grid1」に設定して、グリッド名を設定します。  
+3.  <span data-ttu-id="4b7bf-109">選択すると、グリッド名を設定、**グリッド**デザイナーでのパネル (内のボックスをクリックして、 **MainWindow**) と設定、**名前**の上部にあるプロパティ、 **プロパティ**を「grid1」ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-109">Set the grid name by selecting the **Grid** panel in the designer (click the box inside the **MainWindow**) and setting the **Name** property at the top of the **Properties** window to "grid1".</span></span>  
   
-4.  **\[プロパティ\]** ウィンドウで、`ColumnDefinitions` プロパティの横の省略記号 \(**\[...\]**\) をクリックして **\[コレクション エディター\]** ダイアログ ボックスを開きます。  
+4.  <span data-ttu-id="4b7bf-110">**プロパティ**ウィンドウで、省略記号ボタン (**.**) の横に、`ColumnDefinitions`プロパティを開くには、**コレクション エディター**  ダイアログ ボックス。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-110">In the **Properties** window, click the ellipsis (**…**) next to the `ColumnDefinitions` property to open the **Collection Editor** dialog box.</span></span>  
   
-5.  **\[コレクション エディター\]** ダイアログ ボックスの **\[追加\]** ボタンを 3 回クリックして、3 つの列をレイアウトに挿入します。最初の列には **\[ツールボックス\]** が含まれ、2 番目の列は [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] をホストし、3 番目の列はプロパティ インスペクターに使用されます。  
+5.  <span data-ttu-id="4b7bf-111">**コレクション エディター**  ダイアログ ボックスをクリックして、**追加**ボタンを 3 回、レイアウトに 3 つの列を挿入します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-111">In the **Collection Editor** dialog box, click the **Add** button three times to insert three columns into the layout.</span></span> <span data-ttu-id="4b7bf-112">最初の列に格納される、**ツールボックス**、2 番目の列をホストする、 [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]、プロパティ インスペクターの 3 番目の列に使用されます。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-112">The first column will contain the **Toolbox**, the second column will host the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], and the third column will be used for the property inspector.</span></span>  
   
-6.  中央の列の `Width` プロパティの値を「4\*」に設定します。  
+6.  <span data-ttu-id="4b7bf-113">設定、`Width`プロパティ値を中央の列の"4 *"です。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-113">Set the `Width` property of the middle column to the value "4*".</span></span>  
   
-7.  **\[OK\]** をクリックして、変更を保存します。次の XAML が MainWindow.xaml ファイルに追加されます。  
+7.  <span data-ttu-id="4b7bf-114">**[OK]** をクリックして変更を保存します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-114">Click **OK** to save the changes.</span></span> <span data-ttu-id="4b7bf-115">次の XAML が MainWindow.xaml ファイルに追加されます。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-115">The following XAML is added to your MainWindow.xaml file:</span></span>  
   
-    ```  
-  
+    ```xml  
     <Grid Name="grid1">  
         <Grid.ColumnDefinitions>  
             <ColumnDefinition />  
@@ -44,15 +47,13 @@ caps.handback.revision: 19
             <ColumnDefinition />  
         </Grid.ColumnDefinitions>  
     </Grid>  
-  
     ```  
   
-8.  ソリューション エクスプローラーで MainWindow.xaml を右クリックし、**\[コードの表示\]** を選択します。次の手順に従ってコードを修正します。  
+8.  <span data-ttu-id="4b7bf-116">**ソリューション エクスプ ローラー**、MainWindow.xaml を右クリックし **コードの表示**です。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-116">In **Solution Explorer**, right-click MainWindow.xaml and select **View Code**.</span></span> <span data-ttu-id="4b7bf-117">次の手順に従ってコードを修正します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-117">Modify the code by following these steps:</span></span>  
   
-    1.  次の名前空間を追加します。  
+    1.  <span data-ttu-id="4b7bf-118">次の名前空間を追加します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-118">Add the following namespaces:</span></span>  
   
         ```csharp  
-  
         using System.Activities;  
         using System.Activities.Core.Presentation;  
         using System.Activities.Presentation;  
@@ -60,13 +61,11 @@ caps.handback.revision: 19
         using System.Activities.Presentation.Toolbox;  
         using System.Activities.Statements;  
         using System.ComponentModel;  
-  
         ```  
   
-    2.  <xref:System.Activities.Presentation.WorkflowDesigner> のインスタンスを保持するプライベート メンバー フィールドを宣言するには、次のコードを `MainWindow` クラスに追加します。  
+    2.  <span data-ttu-id="4b7bf-119"><xref:System.Activities.Presentation.WorkflowDesigner> のインスタンスを保持するプライベート メンバー フィールドを宣言するには、次のコードを `MainWindow` クラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-119">To declare a private member field to hold an instance of the <xref:System.Activities.Presentation.WorkflowDesigner>, add the following code to the `MainWindow` class.</span></span>  
   
         ```csharp  
-  
         public partial class MainWindow : Window  
         {  
             private WorkflowDesigner wd;  
@@ -76,13 +75,11 @@ caps.handback.revision: 19
                 InitializeComponent();  
             }  
         }  
-  
         ```  
   
-    3.  次の `AddDesigner` メソッドを `MainWindow` クラスに追加します。この実装で、<xref:System.Activities.Presentation.WorkflowDesigner> のインスタンスを作成し、これに <xref:System.Activities.Statements.Sequence> アクティビティを追加して、grid1 **グリッド**の中央の列に配置します。  
+    3.  <span data-ttu-id="4b7bf-120">次の `AddDesigner` メソッドを `MainWindow` クラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-120">Add the following `AddDesigner` method to the `MainWindow` class.</span></span> <span data-ttu-id="4b7bf-121">実装のインスタンスを作成する、 <xref:System.Activities.Presentation.WorkflowDesigner>、追加、 <xref:System.Activities.Statements.Sequence> 、活動して、grid1 の中央の列に配置**グリッド**です。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-121">The implementation creates an instance of the <xref:System.Activities.Presentation.WorkflowDesigner>, adds a <xref:System.Activities.Statements.Sequence> activity to it, and places it in middle column of the grid1 **Grid**.</span></span>  
   
         ```csharp  
-  
         private void AddDesigner()  
         {  
             //Create an instance of WorkflowDesigner class.  
@@ -97,24 +94,21 @@ caps.handback.revision: 19
             //Add the designer canvas to the grid.  
             grid1.Children.Add(this.wd.View);  
         }  
-  
         ```  
   
-    4.  デザイナーのメタデータを登録して、すべてのビルトイン アクティビティにデザイナー サポートを追加します。こうすることにより、ツールボックスから[!INCLUDE[wfd2](../../../includes/wfd2-md.md)]の元の <xref:System.Activities.Statements.Sequence> アクティビティに、アクティビティをドロップできるようになります。この操作を行うには、`RegisterMetadata` メソッドを `MainWindow` クラスに追加します。  
+    4.  <span data-ttu-id="4b7bf-122">デザイナーのメタデータを登録して、すべてのビルトイン アクティビティにデザイナー サポートを追加します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-122">Register the designer metadata to add designer support for all the  built-in activities.</span></span> <span data-ttu-id="4b7bf-123">こうすることにより、ツールボックスから<xref:System.Activities.Statements.Sequence>の元の [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] アクティビティに、アクティビティをドロップできるようになります。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-123">This enables you to drop activities from the toolbox onto the original <xref:System.Activities.Statements.Sequence> activity in the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)].</span></span> <span data-ttu-id="4b7bf-124">この操作を行うには、`RegisterMetadata` メソッドを `MainWindow` クラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-124">To do this, add the `RegisterMetadata` method to the `MainWindow` class.</span></span>  
   
         ```csharp  
-  
         private void RegisterMetadata()  
         {               
             DesignerMetadata dm = new DesignerMetadata();  
             dm.Register();  
         }  
-  
         ```  
   
-         登録アクティビティ デザイナー[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[方法: カスタム アクティビティ デザイナーを作成する](../../../docs/framework/windows-workflow-foundation//how-to-create-a-custom-activity-designer.md)」を参照してください。  
+         [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="4b7bf-125">アクティビティ デザイナーを登録するを参照してください[する方法: カスタム アクティビティ デザイナーを作成](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md)です。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-125"> registering activity designers, see [How to: Create a Custom Activity Designer](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md).</span></span>  
   
-    5.  `MainWindow` クラス コンストラクターで、前に宣言したメソッドへの呼び出しを追加して、デザイナー サポートのメタデータを登録し、<xref:System.Activities.Presentation.WorkflowDesigner> を作成します。  
+    5.  <span data-ttu-id="4b7bf-126">`MainWindow` クラス コンストラクターで、前に宣言したメソッドへの呼び出しを追加して、デザイナー サポートのメタデータを登録し、<xref:System.Activities.Presentation.WorkflowDesigner> を作成します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-126">In the `MainWindow` class constructor, add calls to the methods declared previously to register the metadata for designer support and to create the <xref:System.Activities.Presentation.WorkflowDesigner>.</span></span>  
   
         ```csharp  
         public MainWindow()  
@@ -127,17 +121,16 @@ caps.handback.revision: 19
             // Add the WFF Designer  
             AddDesigner();  
         }  
-  
         ```  
   
         > [!NOTE]
-        >  `RegisterMetadata` メソッドは、<xref:System.Activities.Statements.Sequence> アクティビティを含むビルトイン アクティビティのデザイナーのメタデータを登録します。`AddDesigner` メソッドは <xref:System.Activities.Statements.Sequence> アクティビティを使用するので、`RegisterMetadata` メソッドを先に呼び出す必要があります。  
+        >  <span data-ttu-id="4b7bf-127">`RegisterMetadata` メソッドは、<xref:System.Activities.Statements.Sequence> アクティビティを含むビルトイン アクティビティのデザイナーのメタデータを登録します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-127">The `RegisterMetadata` method registers the designer metadata of built-in activities including the <xref:System.Activities.Statements.Sequence> activity.</span></span> <span data-ttu-id="4b7bf-128">`AddDesigner` メソッドは <xref:System.Activities.Statements.Sequence> アクティビティを使用するので、`RegisterMetadata` メソッドを先に呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-128">Because the `AddDesigner` method uses the <xref:System.Activities.Statements.Sequence> activity, the `RegisterMetadata` method must be called first.</span></span>  
   
-9. F5 キーを押して、ソリューションをビルドおよび実行します。  
+9. <span data-ttu-id="4b7bf-129">F5 キーを押して、ソリューションをビルドおよび実行します。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-129">Press F5 to build and run the solution.</span></span>  
   
-10. **\[ツールボックス\]** と **\[PropertyGrid\]** のサポートを、再ホストしたワークフロー デザイナーに追加する方法を学習するには、「[タスク 3: ツールボックス ペインと PropertyGrid ペインの作成](../../../docs/framework/windows-workflow-foundation//task-3-create-the-toolbox-and-propertygrid-panes.md)」を参照してください。  
+10. <span data-ttu-id="4b7bf-130">参照してください[タスク 3: ツールボックス ペインと PropertyGrid ペインを作成する](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)を追加する方法について**ツールボックス**と**PropertyGrid**再ホストされたワークフロー デザイナーにサポートします。</span><span class="sxs-lookup"><span data-stu-id="4b7bf-130">See [Task 3: Create the Toolbox and PropertyGrid Panes](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md) to learn how to add **Toolbox** and **PropertyGrid** support to your rehosted workflow designer.</span></span>  
   
-## 参照  
- [ワークフロー デザイナーのホスト変更](../../../docs/framework/windows-workflow-foundation//rehosting-the-workflow-designer.md)   
- [タスク 1: 新しい Windows Presentation Foundation アプリケーションの作成](../../../docs/framework/windows-workflow-foundation//task-1-create-a-new-wpf-app.md)   
- [タスク 3: ツールボックス ペインと PropertyGrid ペインの作成](../../../docs/framework/windows-workflow-foundation//task-3-create-the-toolbox-and-propertygrid-panes.md)
+## <a name="see-also"></a><span data-ttu-id="4b7bf-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="4b7bf-131">See Also</span></span>  
+ [<span data-ttu-id="4b7bf-132">ワークフロー デザイナーのホスト変更</span><span class="sxs-lookup"><span data-stu-id="4b7bf-132">Rehosting the Workflow Designer</span></span>](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
+ [<span data-ttu-id="4b7bf-133">タスク 1: 新しい Windows Presentation Foundation アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="4b7bf-133">Task 1: Create a New Windows Presentation Foundation Application</span></span>](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)  
+ [<span data-ttu-id="4b7bf-134">タスク 3: ツールボックス ペインと PropertyGrid ペインの作成</span><span class="sxs-lookup"><span data-stu-id="4b7bf-134">Task 3: Create the Toolbox and PropertyGrid Panes</span></span>](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)

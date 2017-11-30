@@ -1,79 +1,82 @@
 ---
-title: "Synchronizing Data for Multithreading | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "synchronization, threads"
-  - "threading [.NET Framework], synchronizing threads"
-  - "managed threading"
+title: "マルチスレッド処理のためのデータの同期"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- synchronization, threads
+- threading [.NET Framework], synchronizing threads
+- managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-caps.latest.revision: 16
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: a17eba2f930fda06d643d78c73c117e89ae86928
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Synchronizing Data for Multithreading
-複数のスレッドが同じオブジェクトのプロパティとメソッドを呼び出す場合は、これらの呼び出しを同期することが重要です。  同期しないと、1 つのスレッドが行っていることを別のスレッドが中断し、オブジェクトが無効な状態になってしまうことがあります。  メンバーがこのような干渉を受けないように保護されているクラスを、スレッド セーフと呼びます。  
+# <a name="synchronizing-data-for-multithreading"></a><span data-ttu-id="f4092-102">マルチスレッド処理のためのデータの同期</span><span class="sxs-lookup"><span data-stu-id="f4092-102">Synchronizing Data for Multithreading</span></span>
+<span data-ttu-id="f4092-103">複数のスレッドが同じオブジェクトのプロパティとメソッドを呼び出す場合は、これらの呼び出しを同期することが重要です。</span><span class="sxs-lookup"><span data-stu-id="f4092-103">When multiple threads can make calls to the properties and methods of a single object, it is critical that those calls be synchronized.</span></span> <span data-ttu-id="f4092-104">同期しないと、1 つのスレッドが行っていることを別のスレッドが中断し、オブジェクトが無効な状態になってしまう可能性があります。</span><span class="sxs-lookup"><span data-stu-id="f4092-104">Otherwise one thread might interrupt what another thread is doing, and the object could be left in an invalid state.</span></span> <span data-ttu-id="f4092-105">メンバーがこのように中断されないように保護されているクラスを、スレッドセーフと呼びます。</span><span class="sxs-lookup"><span data-stu-id="f4092-105">A class whose members are protected from such interruptions is called thread-safe.</span></span>  
   
- 共通言語基盤には、インスタンスと静的メンバーへのアクセスを同期するいくつかの方法が用意されています。  
+ <span data-ttu-id="f4092-106">共通言語基盤には、インスタンスや静的メンバーへのアクセスを同期するためのいくつかの方法が備わっています。</span><span class="sxs-lookup"><span data-stu-id="f4092-106">The Common Language Infrastructure provides several strategies to synchronize access to instance and static members:</span></span>  
   
--   同期されたコード領域。  <xref:System.Threading.Monitor> クラス、またはこのクラスのコンパイラ サポートを使用して、パフォーマンスを向上させながら、同期を必要とするコード ブロックだけを同期できます。  
+-   <span data-ttu-id="f4092-107">同期されたコード領域。</span><span class="sxs-lookup"><span data-stu-id="f4092-107">Synchronized code regions.</span></span> <span data-ttu-id="f4092-108">使用することができます、<xref:System.Threading.Monitor>コード ブロックをだけを同期するためにこのクラスのクラス、またはコンパイラのサポートが必要とパフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="f4092-108">You can use the <xref:System.Threading.Monitor> class or compiler support for this class to synchronize only the code block that needs it, improving performance.</span></span>  
   
--   手動同期。  .NET Framework クラス ライブラリに用意されている同期オブジェクトを使用できます。  <xref:System.Threading.Monitor> クラスについての説明が記載されている「[Overview of Synchronization Primitives](../../../docs/standard/threading/overview-of-synchronization-primitives.md)」を参照してください。  
+-   <span data-ttu-id="f4092-109">手動での同期。</span><span class="sxs-lookup"><span data-stu-id="f4092-109">Manual synchronization.</span></span> <span data-ttu-id="f4092-110">.NET Framework クラス ライブラリによって提供されている同期オブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="f4092-110">You can use the synchronization objects provided by the .NET Framework class library.</span></span> <span data-ttu-id="f4092-111">参照してください[同期プリミティブの概要](../../../docs/standard/threading/overview-of-synchronization-primitives.md)の説明を含む、<xref:System.Threading.Monitor>クラスです。</span><span class="sxs-lookup"><span data-stu-id="f4092-111">See [Overview of Synchronization Primitives](../../../docs/standard/threading/overview-of-synchronization-primitives.md), which includes a discussion of the <xref:System.Threading.Monitor> class.</span></span>  
   
--   同期されたコンテキスト。  <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> を使用すると、<xref:System.ContextBoundObject> オブジェクトに対して単純な自動同期を有効にできます。  
+-   <span data-ttu-id="f4092-112">同期されたコンテキスト。</span><span class="sxs-lookup"><span data-stu-id="f4092-112">Synchronized contexts.</span></span> <span data-ttu-id="f4092-113">使用することができます、<xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>の単純な自動同期を有効にする<xref:System.ContextBoundObject>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="f4092-113">You can use the <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> to enable simple, automatic synchronization for <xref:System.ContextBoundObject> objects.</span></span>  
   
--   <xref:System.Collections.Concurrent?displayProperty=fullName> 名前空間のコレクション クラス。  これらのクラスには、同期された追加操作および削除操作が組み込まれています。  詳細については、「[スレッド セーフなコレクション](../../../docs/standard/collections/thread-safe/index.md)」を参照してください。  
+-   <span data-ttu-id="f4092-114">内のコレクション クラス、<xref:System.Collections.Concurrent?displayProperty=nameWithType>名前空間。</span><span class="sxs-lookup"><span data-stu-id="f4092-114">Collection classes in the <xref:System.Collections.Concurrent?displayProperty=nameWithType> namespace.</span></span> <span data-ttu-id="f4092-115">これらのクラスには、同期された追加操作および削除操作が組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="f4092-115">These classes provide built-in synchronized add and remove operations.</span></span> <span data-ttu-id="f4092-116">詳しくは、「[スレッド セーフなコレクション](../../../docs/standard/collections/thread-safe/index.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f4092-116">For more information, see [Thread-Safe Collections](../../../docs/standard/collections/thread-safe/index.md).</span></span>  
   
- 共通言語ランタイムにはスレッド モデルが用意されていて、要件に応じたさまざまな方法で同期することができる多数のカテゴリにクラスを分類できます。  次の表で、各同期カテゴリで提供されるフィールドおよびメソッドに対する同期サポートを示します。  
+ <span data-ttu-id="f4092-117">共通言語ランタイムにはスレッド モデルが用意されていて、要件に応じたさまざまな方法で同期することができる多数のカテゴリにクラスを分類できます。</span><span class="sxs-lookup"><span data-stu-id="f4092-117">The common language runtime provides a thread model in which classes fall into a number of categories that can be synchronized in a variety of different ways depending on the requirements.</span></span> <span data-ttu-id="f4092-118">次の表に、各同期カテゴリで提供されるフィールドおよびメソッドに対する同期サポートを示します。</span><span class="sxs-lookup"><span data-stu-id="f4092-118">The following table shows what synchronization support is provided for fields and methods with a given synchronization category.</span></span>  
   
-|分類|グローバル フィールド|静的フィールド|静的メソッド|インスタンス フィールド|インスタンス メソッド|特定のコード ブロック|  
-|--------|-----------------|-------------|------------|------------------|-----------------|-----------------|  
-|同期なし|No|No|No|No|No|No|  
-|同期されたコンテキスト|No|No|No|Yes|Yes|No|  
-|同期されたコード領域|No|No|マークされている場合のみ|No|マークされている場合のみ|マークされている場合のみ|  
-|手動同期|手動|手動|手動|手動|手動|手動|  
+|<span data-ttu-id="f4092-119">カテゴリ</span><span class="sxs-lookup"><span data-stu-id="f4092-119">Category</span></span>|<span data-ttu-id="f4092-120">グローバル フィールド</span><span class="sxs-lookup"><span data-stu-id="f4092-120">Global fields</span></span>|<span data-ttu-id="f4092-121">静的フィールド</span><span class="sxs-lookup"><span data-stu-id="f4092-121">Static fields</span></span>|<span data-ttu-id="f4092-122">静的メソッド</span><span class="sxs-lookup"><span data-stu-id="f4092-122">Static methods</span></span>|<span data-ttu-id="f4092-123">インスタンス フィールド</span><span class="sxs-lookup"><span data-stu-id="f4092-123">Instance fields</span></span>|<span data-ttu-id="f4092-124">インスタンス メソッド</span><span class="sxs-lookup"><span data-stu-id="f4092-124">Instance methods</span></span>|<span data-ttu-id="f4092-125">特定のコード ブロック</span><span class="sxs-lookup"><span data-stu-id="f4092-125">Specific code blocks</span></span>|  
+|--------------|-------------------|-------------------|--------------------|---------------------|----------------------|--------------------------|  
+|<span data-ttu-id="f4092-126">同期なし</span><span class="sxs-lookup"><span data-stu-id="f4092-126">No Synchronization</span></span>|<span data-ttu-id="f4092-127">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-127">No</span></span>|<span data-ttu-id="f4092-128">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-128">No</span></span>|<span data-ttu-id="f4092-129">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-129">No</span></span>|<span data-ttu-id="f4092-130">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-130">No</span></span>|<span data-ttu-id="f4092-131">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-131">No</span></span>|<span data-ttu-id="f4092-132">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-132">No</span></span>|  
+|<span data-ttu-id="f4092-133">同期されたコンテキスト</span><span class="sxs-lookup"><span data-stu-id="f4092-133">Synchronized Context</span></span>|<span data-ttu-id="f4092-134">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-134">No</span></span>|<span data-ttu-id="f4092-135">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-135">No</span></span>|<span data-ttu-id="f4092-136">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-136">No</span></span>|<span data-ttu-id="f4092-137">はい</span><span class="sxs-lookup"><span data-stu-id="f4092-137">Yes</span></span>|<span data-ttu-id="f4092-138">はい</span><span class="sxs-lookup"><span data-stu-id="f4092-138">Yes</span></span>|<span data-ttu-id="f4092-139">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-139">No</span></span>|  
+|<span data-ttu-id="f4092-140">同期されたコード領域</span><span class="sxs-lookup"><span data-stu-id="f4092-140">Synchronized Code Regions</span></span>|<span data-ttu-id="f4092-141">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-141">No</span></span>|<span data-ttu-id="f4092-142">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-142">No</span></span>|<span data-ttu-id="f4092-143">マークされている場合にのみ</span><span class="sxs-lookup"><span data-stu-id="f4092-143">Only if marked</span></span>|<span data-ttu-id="f4092-144">いいえ</span><span class="sxs-lookup"><span data-stu-id="f4092-144">No</span></span>|<span data-ttu-id="f4092-145">マークされている場合にのみ</span><span class="sxs-lookup"><span data-stu-id="f4092-145">Only if marked</span></span>|<span data-ttu-id="f4092-146">マークされている場合にのみ</span><span class="sxs-lookup"><span data-stu-id="f4092-146">Only if marked</span></span>|  
+|<span data-ttu-id="f4092-147">手動での同期</span><span class="sxs-lookup"><span data-stu-id="f4092-147">Manual Synchronization</span></span>|<span data-ttu-id="f4092-148">手動</span><span class="sxs-lookup"><span data-stu-id="f4092-148">Manual</span></span>|<span data-ttu-id="f4092-149">手動</span><span class="sxs-lookup"><span data-stu-id="f4092-149">Manual</span></span>|<span data-ttu-id="f4092-150">手動</span><span class="sxs-lookup"><span data-stu-id="f4092-150">Manual</span></span>|<span data-ttu-id="f4092-151">手動</span><span class="sxs-lookup"><span data-stu-id="f4092-151">Manual</span></span>|<span data-ttu-id="f4092-152">手動</span><span class="sxs-lookup"><span data-stu-id="f4092-152">Manual</span></span>|<span data-ttu-id="f4092-153">手動</span><span class="sxs-lookup"><span data-stu-id="f4092-153">Manual</span></span>|  
   
-## 同期なし  
- これは、オブジェクトに対する既定の設定です。  どのスレッドも、すべてのメソッドやフィールドにいつでもアクセスできます。  ただし、これらのオブジェクトにアクセスできるスレッドは一度に 1 つだけです。  
+## <a name="no-synchronization"></a><span data-ttu-id="f4092-154">同期なし</span><span class="sxs-lookup"><span data-stu-id="f4092-154">No Synchronization</span></span>  
+ <span data-ttu-id="f4092-155">これは、オブジェクトに対する既定の設定です。</span><span class="sxs-lookup"><span data-stu-id="f4092-155">This is the default for objects.</span></span> <span data-ttu-id="f4092-156">すべてのスレッドが、すべてのメソッドまたはフィールドにいつでもアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="f4092-156">Any thread can access any method or field at any time.</span></span> <span data-ttu-id="f4092-157">ただし、これらのオブジェクトにアクセスできるスレッドは一度に 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="f4092-157">Only one thread at a time should access these objects.</span></span>  
   
-## 手動同期  
- .NET Framework クラス ライブラリには、スレッドを同期するためのさまざまなクラスが用意されています。  「[Overview of Synchronization Primitives](../../../docs/standard/threading/overview-of-synchronization-primitives.md)」を参照してください。  
+## <a name="manual-synchronization"></a><span data-ttu-id="f4092-158">手動での同期</span><span class="sxs-lookup"><span data-stu-id="f4092-158">Manual Synchronization</span></span>  
+ <span data-ttu-id="f4092-159">.NET Framework クラス ライブラリには、スレッドを同期するための多数のクラスがあります。</span><span class="sxs-lookup"><span data-stu-id="f4092-159">The .NET Framework class library provides a number of classes for synchronizing threads.</span></span> <span data-ttu-id="f4092-160">「[同期プリミティブの概要](../../../docs/standard/threading/overview-of-synchronization-primitives.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f4092-160">See [Overview of Synchronization Primitives](../../../docs/standard/threading/overview-of-synchronization-primitives.md).</span></span>  
   
-## 同期されたコード領域  
- <xref:System.Threading.Monitor> クラスまたはコンパイラ キーワードを使用して、コード ブロック、インスタンス メソッド、および静的メソッドを同期できます。  同期された静的フィールドはサポートされません。  
+## <a name="synchronized-code-regions"></a><span data-ttu-id="f4092-161">同期されたコード領域</span><span class="sxs-lookup"><span data-stu-id="f4092-161">Synchronized Code Regions</span></span>  
+ <span data-ttu-id="f4092-162">使用することができます、<xref:System.Threading.Monitor>クラス、またはコードのブロック、インスタンス メソッド、および静的メソッドを同期するためにコンパイラ キーワード。</span><span class="sxs-lookup"><span data-stu-id="f4092-162">You can use the <xref:System.Threading.Monitor> class or a compiler keyword to synchronize blocks of code, instance methods, and static methods.</span></span> <span data-ttu-id="f4092-163">同期された静的フィールドに対するサポートはありません。</span><span class="sxs-lookup"><span data-stu-id="f4092-163">There is no support for synchronized static fields.</span></span>  
   
- Visual Basic および C\# のいずれも、コード ブロックに特定の言語キーワードのマークを付けることをサポートしています。特定の言語キーワードとは、C\# では `lock` ステートメント、Visual Basic では `SyncLock` ステートメントです。  コードがスレッドによって実行されると、ロックの取得が試みられます。  ロックが既に別のスレッドに取得されている場合は、ロックが使用できるようになるまで、そのスレッドがブロックされます。  同期されているコード ブロック部分の実行をスレッドが終了すると、終了方法に関係なく、ロックが解放されます。  
+ <span data-ttu-id="f4092-164">Visual Basic と C# の両方が、コード ブロックに特定の言語キーワード (C# の `lock` ステートメント、Visual Basic の `SyncLock` ステートメント) のマークを付けることをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="f4092-164">Both Visual Basic and C# support the marking of blocks of code with a particular language keyword, the `lock` statement in C# or the `SyncLock` statement in Visual Basic.</span></span> <span data-ttu-id="f4092-165">スレッドによってコードが実行されると、ロックの取得が試行されます。</span><span class="sxs-lookup"><span data-stu-id="f4092-165">When the code is executed by a thread, an attempt is made to acquire the lock.</span></span> <span data-ttu-id="f4092-166">別のスレッドによってロックが既に取得されている場合、ロックが使用可能になるまでスレッドはブロックされます。</span><span class="sxs-lookup"><span data-stu-id="f4092-166">If the lock has already been acquired by another thread, the thread blocks until the lock becomes available.</span></span> <span data-ttu-id="f4092-167">同期されているコード ブロック部分の実行をスレッドが終了すると、終了方法に関係なく、ロックが解放されます。</span><span class="sxs-lookup"><span data-stu-id="f4092-167">When the thread exits the synchronized block of code, the lock is released, no matter how the thread exits the block.</span></span>  
   
 > [!NOTE]
->  `lock` ステートメントおよび `SyncLock` ステートメントは、<xref:System.Threading.Monitor.Enter%2A?displayProperty=fullName> および <xref:System.Threading.Monitor.Exit%2A?displayProperty=fullName> を使用して実装されるため、<xref:System.Threading.Monitor> の他のメソッドを、同期された領域内でこれらと組み合わせて使用できます。  
+>  <span data-ttu-id="f4092-168">`lock`と`SyncLock`ステートメントを使用して実装<xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType>と<xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>、他のメソッドの<xref:System.Threading.Monitor>と連携して、同期された地域内で使用できます。</span><span class="sxs-lookup"><span data-stu-id="f4092-168">The `lock` and `SyncLock` statements are implemented using <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> and <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>, so other methods of <xref:System.Threading.Monitor> can be used in conjunction with them within the synchronized region.</span></span>  
   
- また、メソッドを **MethodImplAttribute** および **MethodImplOptions.Synchronized** で修飾することもできます。この処理は、**Monitor** またはメソッド全体をロックするためのコンパイラ キーワードの 1 つを使用した場合と同じ結果になります。  
+ <span data-ttu-id="f4092-169">また、**MethodImplAttribute** および **MethodImplOptions.Synchronized** を使用してメソッドを修飾することもできます。これにより、**Monitor** またはメソッド全体をロックするためのコンパイラ キーワードの 1 つを使用した場合と同じ結果になります。</span><span class="sxs-lookup"><span data-stu-id="f4092-169">You can also decorate a method with a **MethodImplAttribute** and **MethodImplOptions.Synchronized**, which has the same effect as using **Monitor** or one of the compiler keywords to lock the entire body of the method.</span></span>  
   
- <xref:System.Threading.Thread.Interrupt%2A?displayProperty=fullName> を使用すると、同期されたコード領域へのアクセスの待機などのブロック操作から、スレッドを切り離すことができます。  また、この **Thread.Interrupt** を使用することで、<xref:System.Threading.Thread.Sleep%2A?displayProperty=fullName> などの操作からスレッドを切り離すこともできます。  
+ <span data-ttu-id="f4092-170"><xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType>スレッド同期コード領域へのアクセスを待機しているなどのブロッキング操作を中断するために使用します。</span><span class="sxs-lookup"><span data-stu-id="f4092-170"><xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> can be used to break a thread out of blocking operations such as waiting for access to a synchronized region of code.</span></span> <span data-ttu-id="f4092-171">**Thread.Interrupt**はのような操作からのスレッドの中断にも使用<xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>です。</span><span class="sxs-lookup"><span data-stu-id="f4092-171">**Thread.Interrupt** is also used to break threads out of operations like <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>.</span></span>  
   
 > [!IMPORTANT]
->  `static` メソッド \(Visual Basic では `Shared` メソッド\) をプロテクトするために、型 \(C\# の `typeof(MyType)`、Visual Basic の `GetType(MyType)`、または C\+\+ の `MyType::typeid`\) をロックしないでください。  代わりに、プライベート静的オブジェクトを使用してください。  同様に、C\# の `this` \(Visual Basic の場合は `Me`\) を使用してインスタンス メソッドをロックしないでください。  代わりに、プライベート オブジェクトを使用してください。  クラスまたはインスタンスは、独自のコード以外のコードでもロックできますが、デッドロックやパフォーマンス上の問題を引き起こす可能性があります。  
+>  <span data-ttu-id="f4092-172">`static` メソッド (Visual Basic では`Shared`) を保護するために、型 (C# の場合は`typeof(MyType)`、Visual Basic の場合は`GetType(MyType)`、C++ の場合は`MyType::typeid`) をロックしないでください。</span><span class="sxs-lookup"><span data-stu-id="f4092-172">Do not lock the type — that is, `typeof(MyType)` in C#, `GetType(MyType)` in Visual Basic, or `MyType::typeid` in C++ — in order to protect `static` methods (`Shared` methods in Visual Basic).</span></span> <span data-ttu-id="f4092-173">代わりにプライベート静的オブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="f4092-173">Use a private static object instead.</span></span> <span data-ttu-id="f4092-174">同様に、C# の `this` (Visual Basic の場合は `Me`) を使用してインスタンス メソッドをロックしないでください。</span><span class="sxs-lookup"><span data-stu-id="f4092-174">Similarly, do not use `this` in C# (`Me` in Visual Basic) to lock instance methods.</span></span> <span data-ttu-id="f4092-175">代わりにプライベート オブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="f4092-175">Use a private object instead.</span></span> <span data-ttu-id="f4092-176">クラスやインスタンスは、独自のコード以外のコードでもロックできますが、デッドロックやパフォーマンスの問題が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="f4092-176">A class or instance can be locked by code other than your own, potentially causing deadlocks or performance problems.</span></span>  
   
-### コンパイラ サポート  
- Visual Basic と C\# は、どちらも <xref:System.Threading.Monitor.Enter%2A?displayProperty=fullName> と <xref:System.Threading.Monitor.Exit%2A?displayProperty=fullName> を使用してオブジェクトをロックする言語キーワードをサポートします。  Visual Basic は [SyncLock](../../../ocs/visual-basic/language-reference/statements/synclock-statement.md) ステートメントをサポートし、C\# は [lock](../Topic/lock%20Statement%20\(C%23%20Reference\).md) ステートメントをサポートします。  
+### <a name="compiler-support"></a><span data-ttu-id="f4092-177">コンパイラ サポート</span><span class="sxs-lookup"><span data-stu-id="f4092-177">Compiler Support</span></span>  
+ <span data-ttu-id="f4092-178">Visual Basic と c# の両方を使用する言語のキーワードをサポートして<xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType>と<xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>オブジェクトをロックします。</span><span class="sxs-lookup"><span data-stu-id="f4092-178">Both Visual Basic and C# support a language keyword that uses <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> and <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> to lock the object.</span></span> <span data-ttu-id="f4092-179">Visual Basic は [SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md) ステートメントをサポートしており、C# は [lock](~/docs/csharp/language-reference/keywords/lock-statement.md) ステートメントをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="f4092-179">Visual Basic supports the [SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md) statement; C# supports the [lock](~/docs/csharp/language-reference/keywords/lock-statement.md) statement.</span></span>  
   
- どちらの場合も、コード ブロックで例外がスローされると、**lock** または **SyncLock** によって取得されたロックが自動的に解放されます。  C\# コンパイラおよび Visual Basic コンパイラは、**try** ブロックおよび **finally** ブロックを生成します。try ブロックは先頭に **Monitor.Enter** を含み、**finally** ブロックは **Monitor.Exit** を含みます。  **lock** ブロックまたは **SyncLock** ブロック内で例外がスローされると、**finally** ハンドラーが実行されて、任意のクリーンアップ処理を実行できるようになります。  
+ <span data-ttu-id="f4092-180">両方とも、コード ブロックで例外がスローされると、**lock** または **SyncLock** によって取得されたロックは自動的に解放されます。</span><span class="sxs-lookup"><span data-stu-id="f4092-180">In both cases, if an exception is thrown in the code block, the lock acquired by the **lock** or **SyncLock** is released automatically.</span></span> <span data-ttu-id="f4092-181">C# コンパイラおよび Visual Basic コンパイラは **try**/**finally** ブロックを生成します。tryブロックは先頭に **Monitor.Enter** を含み、**finally** ブロックは **Monitor.Exit** を含みます。</span><span class="sxs-lookup"><span data-stu-id="f4092-181">The C# and Visual Basic compilers emit a **try**/**finally** block with **Monitor.Enter** at the beginning of the try, and **Monitor.Exit** in the **finally** block.</span></span> <span data-ttu-id="f4092-182">**lock** ブロックまたは **SyncLock** ブロック内部で例外がスローされると、**finally** ハンドラーが実行され、任意のクリーンアップ作業を行えるようになります。</span><span class="sxs-lookup"><span data-stu-id="f4092-182">If an exception is thrown inside the **lock** or **SyncLock** block, the **finally** handler runs to allow you to do any clean-up work.</span></span>  
   
-## 同期されたコンテキスト  
- 任意の **ContextBoundObject** で **SynchronizationAttribut** を使用して、すべてのインスタンス メソッドおよびインスタンス フィールドを同期できます。  同じコンテキスト ドメイン内のすべてのオブジェクトは、同じロックを共有します。  複数のスレッドがメソッドやフィールドにアクセスできますが、これらのオブジェクトに一度にアクセスできるのは 1 つのスレッドだけです。  
+## <a name="synchronized-context"></a><span data-ttu-id="f4092-183">同期されたコンテキスト</span><span class="sxs-lookup"><span data-stu-id="f4092-183">Synchronized Context</span></span>  
+ <span data-ttu-id="f4092-184">任意の **ContextBoundObject** で **SynchronizationAttribute** を使用して、すべてのインスタンス メソッドとインスタンス フィールドを同期することができます。</span><span class="sxs-lookup"><span data-stu-id="f4092-184">You can use the **SynchronizationAttribute** on any **ContextBoundObject** to synchronize all instance methods and fields.</span></span> <span data-ttu-id="f4092-185">同じコンテキスト ドメイン内のすべてのオブジェクトが同じロックを共有します。</span><span class="sxs-lookup"><span data-stu-id="f4092-185">All objects in the same context domain share the same lock.</span></span> <span data-ttu-id="f4092-186">複数のスレッドがメソッドやフィールドにアクセスできますが、これらのオブジェクトに一度にアクセスできるのは 1 つのスレッドだけです。</span><span class="sxs-lookup"><span data-stu-id="f4092-186">Multiple threads are allowed to access the methods and fields, but only a single thread is allowed at any one time.</span></span>  
   
-## 参照  
- <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>   
- [Threads and Threading](../../../docs/standard/threading/threads-and-threading.md)   
- [Overview of Synchronization Primitives](../../../docs/standard/threading/overview-of-synchronization-primitives.md)   
- [SyncLock Statement](../../../ocs/visual-basic/language-reference/statements/synclock-statement.md)   
- [lock ステートメント](../Topic/lock%20Statement%20\(C%23%20Reference\).md)
+## <a name="see-also"></a><span data-ttu-id="f4092-187">関連項目</span><span class="sxs-lookup"><span data-stu-id="f4092-187">See Also</span></span>  
+ <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>  
+ [<span data-ttu-id="f4092-188">スレッドおよびスレッド処理</span><span class="sxs-lookup"><span data-stu-id="f4092-188">Threads and Threading</span></span>](../../../docs/standard/threading/threads-and-threading.md)  
+ [<span data-ttu-id="f4092-189">同期プリミティブの概要</span><span class="sxs-lookup"><span data-stu-id="f4092-189">Overview of Synchronization Primitives</span></span>](../../../docs/standard/threading/overview-of-synchronization-primitives.md)  
+ [<span data-ttu-id="f4092-190">SyncLock ステートメント</span><span class="sxs-lookup"><span data-stu-id="f4092-190">SyncLock Statement</span></span>](~/docs/visual-basic/language-reference/statements/synclock-statement.md)  
+ [<span data-ttu-id="f4092-191">lock ステートメント</span><span class="sxs-lookup"><span data-stu-id="f4092-191">lock Statement</span></span>](~/docs/csharp/language-reference/keywords/lock-statement.md)

@@ -1,71 +1,76 @@
 ---
-title: "Merge Options in PLINQ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "PLINQ queries, merge options"
+title: "PLINQ のマージ オプション"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords: PLINQ queries, merge options
 ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
-caps.latest.revision: 10
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: e9bf586c1805fc5b5f1cc5f96f4e6b08d80c199a
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Merge Options in PLINQ
-クエリが並列実行される場合、PLINQ は、複数のスレッドが別の部分 \(通常は別のスレッド\) で同時に動作できるよう、ソース シーケンスをパーティション分割します。  結果が、`foreach` \([!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] の `For Each`\) ループなど、1 つのスレッドで消費される場合は、すべてのスレッドからの結果を 1 つのシーケンスに再度マージする必要があります。  PLINQ によって実行されるマージの種類は、クエリに存在する演算子に依存します。  たとえば、結果に対して新しい順序を課す演算子は、すべてのスレッドからのすべての要素をバッファーに格納する必要があります。  \(アプリケーション ユーザーの観点でもある\) consumer スレッドの観点からは、完全にバッファーに格納されたクエリは、最初の結果を生成するまでに長時間にわたって実行される可能性があります。  他の演算子は、既定では部分的にバッファーに格納され、結果はバッチで生成されます。  <xref:System.Linq.ParallelEnumerable.ForAll%2A> という演算子は、既定ではバッファーに格納されません。  すべてのスレッドからの全要素を直ちに生成します。  
+# <a name="merge-options-in-plinq"></a><span data-ttu-id="a10d3-102">PLINQ のマージ オプション</span><span class="sxs-lookup"><span data-stu-id="a10d3-102">Merge Options in PLINQ</span></span>
+<span data-ttu-id="a10d3-103">クエリが実行するときに並列、PLINQ パーティションとしてソース シーケンス複数のスレッドで作業できるさまざまな部分に同時に、通常別々 のスレッドでできるようにします。</span><span class="sxs-lookup"><span data-stu-id="a10d3-103">When a query is executing as parallel, PLINQ partitions the source sequence so that multiple threads can work on different parts concurrently, typically on separate threads.</span></span> <span data-ttu-id="a10d3-104">結果を 1 つのスレッドで使用する場合など、 `foreach` (`For Each`で[!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) ループ、そのすべてのスレッドからの結果を 1 つのシーケンスにマージする必要があります。</span><span class="sxs-lookup"><span data-stu-id="a10d3-104">If the results are to be consumed on one thread, for example, in a `foreach` (`For Each` in [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)]) loop, then the results from every thread must be merged back into one sequence.</span></span> <span data-ttu-id="a10d3-105">PLINQ を実行する結合の種類は、クエリに存在する演算子によって異なります。</span><span class="sxs-lookup"><span data-stu-id="a10d3-105">The kind of merge that PLINQ performs depends on the operators that are present in the query.</span></span> <span data-ttu-id="a10d3-106">たとえば、結果に新しい注文を課す演算子では、すべてのスレッドからすべての要素がバッファーに格納する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a10d3-106">For example, operators that impose a new order on the results must buffer all elements from all threads.</span></span> <span data-ttu-id="a10d3-107">(これはでも、アプリケーションのユーザーの) かかるスレッドの観点から、顕著な期間の最初の結果を生成する前に完全にバッファー内のクエリ可能性があります実行されます。</span><span class="sxs-lookup"><span data-stu-id="a10d3-107">From the perspective of the consuming thread (which is also that of the application user) a fully buffered query might run for a noticeable period of time before it produces its first result.</span></span> <span data-ttu-id="a10d3-108">その他の演算子では、既定は部分的にバッファーに格納します。これらは、バッチ処理の結果をもたらします。</span><span class="sxs-lookup"><span data-stu-id="a10d3-108">Other operators, by default, are partially buffered; they yield their results in batches.</span></span> <span data-ttu-id="a10d3-109">1 つの演算子<xref:System.Linq.ParallelEnumerable.ForAll%2A>が既定ではバッファーされていません。</span><span class="sxs-lookup"><span data-stu-id="a10d3-109">One operator, <xref:System.Linq.ParallelEnumerable.ForAll%2A> is not buffered by default.</span></span> <span data-ttu-id="a10d3-110">として生成されるすべての要素のすべてのスレッドからすぐにします。</span><span class="sxs-lookup"><span data-stu-id="a10d3-110">It yields all elements from all threads immediately.</span></span>  
   
- 次の例に示すように、<xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A> メソッドを使用して、実行するマージの種類を示すヒントを PLINQ に提供できます。  
+ <span data-ttu-id="a10d3-111">使用して、<xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A>メソッドを次の例で示すように提供できるヒント PLINQ を実行する結合の種類を示すです。</span><span class="sxs-lookup"><span data-stu-id="a10d3-111">By using the <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A> method, as shown in the following example, you can provide a hint to PLINQ that indicates what kind of merging to perform.</span></span>  
   
  [!code-csharp[PLINQ#26](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#26)]
  [!code-vb[PLINQ#26](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#26)]  
   
- コード例全体については、「[How to: Specify Merge Options in PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)」を参照してください。  
+ <span data-ttu-id="a10d3-112">完了の例では、次を参照してください。[する方法: PLINQ のマージ オプションの指定](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)です。</span><span class="sxs-lookup"><span data-stu-id="a10d3-112">For the complete example, see [How to: Specify Merge Options in PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md).</span></span>  
   
- 特定のクエリが要求されたオプションをサポートできない場合は、そのオプションは無視されます。  ほとんどの場合は、PLINQ クエリに対してマージ オプションを指定する必要はありません。  ただし、場合によっては、テストと測定によって、既定以外のモードで最も効率よくクエリが実行されることが判明することもあります。  このオプションの一般的な用途は、チャンク マージ演算子を強制的に処理してその結果をストリーミングし、より応答性の高いユーザー インターフェイスを提供することです。  
+ <span data-ttu-id="a10d3-113">特定のクエリで要求されたオプションがサポートされていない場合、オプションだけ無視されます。</span><span class="sxs-lookup"><span data-stu-id="a10d3-113">If the particular query cannot support the requested option, then the option will just be ignored.</span></span> <span data-ttu-id="a10d3-114">ほとんどの場合、PLINQ クエリのマージ オプションを指定するはありません。</span><span class="sxs-lookup"><span data-stu-id="a10d3-114">In most cases, you do not have to specify a merge option for a PLINQ query.</span></span> <span data-ttu-id="a10d3-115">ただし、場合によっては、テストと、既定以外のモードでクエリの最適な実行測定によって検索可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a10d3-115">However, in some cases you may find by testing and measurement that a query executes best in a non-default mode.</span></span> <span data-ttu-id="a10d3-116">このオプションの一般的な用途は、応答性の高いユーザー インターフェイスを提供するためにその結果をストリーミングにチャンク結合演算子を強制的にです。</span><span class="sxs-lookup"><span data-stu-id="a10d3-116">A common use of this option is to force a chunk-merging operator to stream its results in order to provide a more responsive user interface.</span></span>  
   
-## ParallelMergeOptions  
- <xref:System.Linq.ParallelMergeOptions> 列挙型には、サポートされるクエリの形態について、1 つのスレッドで結果が消費されたときにクエリの最終的な出力がどのように生成されるかを指定する、次のオプションが含まれます。  
+## <a name="parallelmergeoptions"></a><span data-ttu-id="a10d3-117">ParallelMergeOptions</span><span class="sxs-lookup"><span data-stu-id="a10d3-117">ParallelMergeOptions</span></span>  
+ <span data-ttu-id="a10d3-118"><xref:System.Linq.ParallelMergeOptions>列挙には、次のオプション指定する、図形はサポートされているクエリ、結果が 1 つのスレッドで使用される場合に、クエリの最終的な出力を生成する方法にはが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a10d3-118">The <xref:System.Linq.ParallelMergeOptions> enumeration includes the following options that specify, for supported query shapes, how the final output of the query is yielded when the results are consumed on one thread:</span></span>  
   
 -   `Not Buffered`  
   
-     <xref:System.Linq.ParallelMergeOptions> オプションを使用すると、処理された各要素が生成されると同時に各スレッドから返されます。  この動作は出力の "ストリーミング" と同じです。  クエリに <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> 演算子がある場合、`NotBuffered` はソース要素の順番を保持します。  `NotBuffered` は、結果が使用可能になると同時に結果の生成を開始しますが、すべての結果が生成されるまでの合計時間は、他のマージ操作にかかる合計時間よりも長くなることがあります。  
+     <span data-ttu-id="a10d3-119"><xref:System.Linq.ParallelMergeOptions.NotBuffered>オプションの設定により、生成されるとすぐに、各スレッドから返される各処理された要素。</span><span class="sxs-lookup"><span data-stu-id="a10d3-119">The <xref:System.Linq.ParallelMergeOptions.NotBuffered> option causes each processed element to be returned from each thread as soon as it is produced.</span></span> <span data-ttu-id="a10d3-120">この動作は、"streaming"出力に似ています。</span><span class="sxs-lookup"><span data-stu-id="a10d3-120">This behavior is analogous to "streaming" the output.</span></span> <span data-ttu-id="a10d3-121">場合、<xref:System.Linq.ParallelEnumerable.AsOrdered%2A>演算子は、クエリ内に存在`NotBuffered`ソース要素の順序が保持されます。</span><span class="sxs-lookup"><span data-stu-id="a10d3-121">If the <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> operator is present in the query, `NotBuffered` preserves the order of the source elements.</span></span> <span data-ttu-id="a10d3-122">`NotBuffered`利用可能なとすぐに結果を生成を開始するには、および、結果がある可能性がありますすべてを生成するために時間の合計は、他のマージ オプションのいずれかを使用してより長くします。</span><span class="sxs-lookup"><span data-stu-id="a10d3-122">Although `NotBuffered` starts yielding results as soon as they're available,, the total time to produce all the results might still be longer than using one of the other merge options.</span></span>  
   
 -   `Auto Buffered`  
   
-     <xref:System.Linq.ParallelMergeOptions> オプションを使用すると、要素を収集してバッファーに格納し、その後定期的に consumer スレッドにバッファーの内容を一度に生成します。  これは、`NotBuffered` の "ストリーミング" 動作を使用する代わりに、ソース データを "チャンク" として生成するのと同じです。  `AutoBuffered` では、consumer スレッドで最初の要素を使用できるようになるまで、`NotBuffered` よりも長い時間がかかることがあります。  バッファーのサイズと正確な生成動作を構成できないため、クエリに関連するさまざまな要因に左右されることがあります。  
+     <span data-ttu-id="a10d3-123"><xref:System.Linq.ParallelMergeOptions.AutoBuffered>オプションの設定により、バッファーに要素を収集し、バッファーの内容がかかるスレッドに一度にすべてを定期的に生成するクエリをします。</span><span class="sxs-lookup"><span data-stu-id="a10d3-123">The <xref:System.Linq.ParallelMergeOptions.AutoBuffered> option causes the query to collect elements into a buffer and then periodically yield the buffer contents all at once to the consuming thread.</span></span> <span data-ttu-id="a10d3-124">これは「ストリーミング」の動作を使用する代わりに「チャンク」でソース データを応答に似ています`NotBuffered`です。</span><span class="sxs-lookup"><span data-stu-id="a10d3-124">This is analogous to yielding the source data in "chunks" instead of using the "streaming" behavior of `NotBuffered`.</span></span> <span data-ttu-id="a10d3-125">`AutoBuffered`も長い時間がかかる`NotBuffered`がかかるスレッドでの最初の要素を使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="a10d3-125">`AutoBuffered` may take longer than `NotBuffered` to make the first element available on the consuming thread.</span></span> <span data-ttu-id="a10d3-126">バッファーのサイズ、および正確な生成動作は構成できないと、クエリに関連するさまざまな要因によって異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="a10d3-126">The size of the buffer and the exact yielding behavior are not configurable and may vary, depending on various factors that relate to the query.</span></span>  
   
 -   `FullyBuffered`  
   
-     <xref:System.Linq.ParallelMergeOptions> オプションを使用すると、要素が生成される前に、クエリ全体の出力がバッファーに格納されます。  このオプションを使用すると、consumer スレッドで最初の要素が使用できるようになるまで時間がかかることがありますが、完全な結果は、他のオプションを使用するよりも短時間で生成されます。  
+     <span data-ttu-id="a10d3-127"><xref:System.Linq.ParallelMergeOptions.FullyBuffered>オプションの設定により、クエリの出力、全体に任意の要素が生成する前にバッファーに格納します。</span><span class="sxs-lookup"><span data-stu-id="a10d3-127">The <xref:System.Linq.ParallelMergeOptions.FullyBuffered> option causes the output of the whole query to be buffered before any of the elements are yielded.</span></span> <span data-ttu-id="a10d3-128">このオプションを使用する場合、長い時間がかかる最初の要素がかかるスレッドで使用できますが、完全な結果を生成する可能性がある前に、他のオプションを使用して、高速です。</span><span class="sxs-lookup"><span data-stu-id="a10d3-128">When you use this option, it can take longer before the first element is available on the consuming thread, but the complete results might still be produced faster than by using the other options.</span></span>  
   
-## マージ オプションをサポートするクエリ演算子  
- 次の表に、すべてのマージ オプションをサポートする演算子を示します。ただし、ここに示す制約があります。  
+## <a name="query-operators-that-support-merge-options"></a><span data-ttu-id="a10d3-129">マージ オプションをサポートするクエリ演算子</span><span class="sxs-lookup"><span data-stu-id="a10d3-129">Query Operators that Support Merge Options</span></span>  
+ <span data-ttu-id="a10d3-130">次の表では、指定された制限に従い、すべてのマージ オプション モードをサポートする演算子が一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="a10d3-130">The following table lists the operators that support all merge option modes, subject to the specified restrictions.</span></span>  
   
-|演算子|制約|  
-|---------|--------|  
-|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|なし。|  
-|<xref:System.Linq.ParallelEnumerable.Cast%2A>|なし。|  
-|<xref:System.Linq.ParallelEnumerable.Concat%2A>|配列ソースまたはリスト ソースしか持たない、順序なしのクエリ|  
-|<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|なし。|  
-|<xref:System.Linq.ParallelEnumerable.OfType%2A>|なし。|  
-|<xref:System.Linq.ParallelEnumerable.Reverse%2A>|配列ソースまたはリスト ソースしか持たない、順序なしのクエリ|  
-|<xref:System.Linq.ParallelEnumerable.Select%2A>|なし。|  
-|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|なし。|  
-|<xref:System.Linq.ParallelEnumerable.Skip%2A>|なし。|  
-|<xref:System.Linq.ParallelEnumerable.Take%2A>|なし。|  
-|<xref:System.Linq.ParallelEnumerable.Where%2A>|なし。|  
+|<span data-ttu-id="a10d3-131">演算子</span><span class="sxs-lookup"><span data-stu-id="a10d3-131">Operator</span></span>|<span data-ttu-id="a10d3-132">制約</span><span class="sxs-lookup"><span data-stu-id="a10d3-132">Restrictions</span></span>|  
+|--------------|------------------|  
+|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|<span data-ttu-id="a10d3-133">なし</span><span class="sxs-lookup"><span data-stu-id="a10d3-133">None</span></span>|  
+|<xref:System.Linq.ParallelEnumerable.Cast%2A>|<span data-ttu-id="a10d3-134">なし</span><span class="sxs-lookup"><span data-stu-id="a10d3-134">None</span></span>|  
+|<xref:System.Linq.ParallelEnumerable.Concat%2A>|<span data-ttu-id="a10d3-135">配列またはリスト ソースがのみ非順次のクエリです。</span><span class="sxs-lookup"><span data-stu-id="a10d3-135">Non-ordered queries that have an Array or List source only.</span></span>|  
+|<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|<span data-ttu-id="a10d3-136">なし</span><span class="sxs-lookup"><span data-stu-id="a10d3-136">None</span></span>|  
+|<xref:System.Linq.ParallelEnumerable.OfType%2A>|<span data-ttu-id="a10d3-137">なし</span><span class="sxs-lookup"><span data-stu-id="a10d3-137">None</span></span>|  
+|<xref:System.Linq.ParallelEnumerable.Reverse%2A>|<span data-ttu-id="a10d3-138">配列またはリスト ソースがのみ非順次のクエリです。</span><span class="sxs-lookup"><span data-stu-id="a10d3-138">Non-ordered queries that have an Array or List source only.</span></span>|  
+|<xref:System.Linq.ParallelEnumerable.Select%2A>|<span data-ttu-id="a10d3-139">なし</span><span class="sxs-lookup"><span data-stu-id="a10d3-139">None</span></span>|  
+|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|<span data-ttu-id="a10d3-140">なし</span><span class="sxs-lookup"><span data-stu-id="a10d3-140">None</span></span>|  
+|<xref:System.Linq.ParallelEnumerable.Skip%2A>|<span data-ttu-id="a10d3-141">なし</span><span class="sxs-lookup"><span data-stu-id="a10d3-141">None</span></span>|  
+|<xref:System.Linq.ParallelEnumerable.Take%2A>|<span data-ttu-id="a10d3-142">なし</span><span class="sxs-lookup"><span data-stu-id="a10d3-142">None</span></span>|  
+|<xref:System.Linq.ParallelEnumerable.Where%2A>|<span data-ttu-id="a10d3-143">なし</span><span class="sxs-lookup"><span data-stu-id="a10d3-143">None</span></span>|  
   
- その他すべての PLINQ クエリ演算子は、ユーザー指定のマージ オプションを無視することがあります。  <xref:System.Linq.ParallelEnumerable.Reverse%2A> や <xref:System.Linq.ParallelEnumerable.OrderBy%2A> のようなクエリ演算子は、すべての要素が生成され、並べ替えられるまでは、どの要素も生成できません。  したがって、<xref:System.Linq.ParallelEnumerable.Reverse%2A> などの演算子も含むクエリで <xref:System.Linq.ParallelMergeOptions> が使用される場合、マージ動作は、その演算子が結果を生成するまで、クエリには適用されません。  
+ <span data-ttu-id="a10d3-144">他のすべての PLINQ クエリ演算子は、ユーザー指定のマージ オプションを無視する場合があります。</span><span class="sxs-lookup"><span data-stu-id="a10d3-144">All other PLINQ query operators might ignore user-provided merge options.</span></span> <span data-ttu-id="a10d3-145">一部のクエリ演算子、たとえば、<xref:System.Linq.ParallelEnumerable.Reverse%2A>と<xref:System.Linq.ParallelEnumerable.OrderBy%2A>をすべて生成および順序を変更するまで、すべての要素を生成できません。</span><span class="sxs-lookup"><span data-stu-id="a10d3-145">Some query operators, for example, <xref:System.Linq.ParallelEnumerable.Reverse%2A> and <xref:System.Linq.ParallelEnumerable.OrderBy%2A>, cannot yield any elements until all have been produced and reordered.</span></span> <span data-ttu-id="a10d3-146">したがって、<xref:System.Linq.ParallelMergeOptions>などの演算子が含まれているクエリで使用<xref:System.Linq.ParallelEnumerable.Reverse%2A>マージの動作は適用されませんまでクエリでその演算子には、その結果によって生成された後にします。</span><span class="sxs-lookup"><span data-stu-id="a10d3-146">Therefore, when <xref:System.Linq.ParallelMergeOptions> is used in a query that also contains an operator such as <xref:System.Linq.ParallelEnumerable.Reverse%2A>, the merge behavior will not be applied in the query until after that operator has produced its results.</span></span>  
   
- マージ オプションを処理する一部の演算子の機能は、ソース シーケンスの種類と、クエリの前半で <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> 演算子が使用されたかどうかによって異なります。  <xref:System.Linq.ParallelEnumerable.ForAll%2A> は常に <xref:System.Linq.ParallelMergeOptions> であり、要素を即座に生成します。  <xref:System.Linq.ParallelEnumerable.OrderBy%2A> は常に <xref:System.Linq.ParallelMergeOptions> です。したがって、要素を生成する前にリスト全体を並べ替える必要があります。  
+ <span data-ttu-id="a10d3-147">マージ オプションを処理するいくつかの演算子の機能は、ソース シーケンスの種類によって異なります。 かどうかと、<xref:System.Linq.ParallelEnumerable.AsOrdered%2A>演算子がクエリ内で既に使用されています。</span><span class="sxs-lookup"><span data-stu-id="a10d3-147">The ability of some operators to handle merge options depends on the type of the source sequence, and whether the <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> operator was used earlier in the query.</span></span> <span data-ttu-id="a10d3-148"><xref:System.Linq.ParallelEnumerable.ForAll%2A>常に<xref:System.Linq.ParallelMergeOptions.NotBuffered>; すぐにその要素になります。</span><span class="sxs-lookup"><span data-stu-id="a10d3-148"><xref:System.Linq.ParallelEnumerable.ForAll%2A> is always <xref:System.Linq.ParallelMergeOptions.NotBuffered> ; it yields its elements immediately.</span></span> <span data-ttu-id="a10d3-149"><xref:System.Linq.ParallelEnumerable.OrderBy%2A>常に<xref:System.Linq.ParallelMergeOptions.FullyBuffered>; として生成される前に、リスト全体を並べ替えるにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="a10d3-149"><xref:System.Linq.ParallelEnumerable.OrderBy%2A> is always <xref:System.Linq.ParallelMergeOptions.FullyBuffered>; it must sort the whole list before it yields.</span></span>  
   
-## 参照  
- [Parallel LINQ \(PLINQ\)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)   
- [How to: Specify Merge Options in PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)
+## <a name="see-also"></a><span data-ttu-id="a10d3-150">関連項目</span><span class="sxs-lookup"><span data-stu-id="a10d3-150">See Also</span></span>  
+ [<span data-ttu-id="a10d3-151">Parallel LINQ (PLINQ)</span><span class="sxs-lookup"><span data-stu-id="a10d3-151">Parallel LINQ (PLINQ)</span></span>](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
+ [<span data-ttu-id="a10d3-152">方法: PLINQ のマージ オプションを指定する</span><span class="sxs-lookup"><span data-stu-id="a10d3-152">How to: Specify Merge Options in PLINQ</span></span>](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)

@@ -1,64 +1,70 @@
 ---
-title: "方法 : メッセージ リプレイ検出を有効にする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "リプレイ検出 [WCF]"
-  - "WCF セキュリティ"
-  - "WCF, カスタム バインディング"
-  - "WCF, セキュリティ"
+title: "方法 : メッセージ リプレイ検出を有効にする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- WCF security
+- replay detection [WCF]
+- WCF, custom bindings
+- WCF, security
 ms.assetid: 8b847e91-69a3-49e1-9e5f-0c455e50d804
-caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: ed0bca649e7e94ff94a7dab6191c59e48c0bec3c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : メッセージ リプレイ検出を有効にする
-リプレイ攻撃は、攻撃者がメッセージのストリームを 2 つのパーティ間でコピーし、そのストリームを他の 1 つ以上のパーティにリプレイすることで発生します。攻撃が止むまで、攻撃対象になったコンピューターはストリームを正当なメッセージとして処理しようとし、その結果、命令が重複するなど、望ましくない状況に陥ります。  
+# <a name="how-to-enable-message-replay-detection"></a><span data-ttu-id="43e71-102">方法 : メッセージ リプレイ検出を有効にする</span><span class="sxs-lookup"><span data-stu-id="43e71-102">How to: Enable Message Replay Detection</span></span>
+<span data-ttu-id="43e71-103">リプレイ攻撃は、攻撃者がメッセージのストリームを 2 つのパーティ間でコピーし、そのストリームを他の 1 つ以上のパーティにリプレイすることで発生します。</span><span class="sxs-lookup"><span data-stu-id="43e71-103">A replay attack occurs when an attacker copies a stream of messages between two parties and replays the stream to one or more of the parties.</span></span> <span data-ttu-id="43e71-104">攻撃が止むまで、攻撃対象になったコンピューターはストリームを正当なメッセージとして処理しようとし、その結果、命令が重複するなど、望ましくない状況に陥ります。</span><span class="sxs-lookup"><span data-stu-id="43e71-104">Unless mitigated, the computers subject to the attack will process the stream as legitimate messages, resulting in a range of bad consequences, such as redundant orders of an item.</span></span>  
   
- メッセージ リプレイ検出[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[メッセージ リプレイ検出](http://go.microsoft.com/fwlink/?LinkId=88536)」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="43e71-105">メッセージのリプレイ検出を参照してください[メッセージ リプレイ検出](http://go.microsoft.com/fwlink/?LinkId=88536)です。</span><span class="sxs-lookup"><span data-stu-id="43e71-105"> message replay detection, see [Message Replay Detection](http://go.microsoft.com/fwlink/?LinkId=88536).</span></span>  
   
- 以下の手順では、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でリプレイ検出を制御するために使用できるさまざまなプロパティを示します。  
+ <span data-ttu-id="43e71-106">以下の手順では、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] でリプレイ検出を制御するために使用できるさまざまなプロパティを示します。</span><span class="sxs-lookup"><span data-stu-id="43e71-106">The following procedure demonstrates various properties that you can use to control replay detection using [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].</span></span>  
   
-### コードを使用してクライアントでのリプレイ検出を制御するには  
+### <a name="to-control-replay-detection-on-the-client-using-code"></a><span data-ttu-id="43e71-107">コードを使用してクライアントでのリプレイ検出を制御するには</span><span class="sxs-lookup"><span data-stu-id="43e71-107">To control replay detection on the client using code</span></span>  
   
-1.  <xref:System.ServiceModel.Channels.CustomBinding> で使用する <xref:System.ServiceModel.Channels.SecurityBindingElement> を作成します。[!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).次の例では、<xref:System.ServiceModel.Channels.SecurityBindingElement> クラスの <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> を使用して作成された <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> を使用します。  
+1.  <span data-ttu-id="43e71-108"><xref:System.ServiceModel.Channels.SecurityBindingElement> で使用する <xref:System.ServiceModel.Channels.CustomBinding> を作成します。</span><span class="sxs-lookup"><span data-stu-id="43e71-108">Create a <xref:System.ServiceModel.Channels.SecurityBindingElement> to use in a <xref:System.ServiceModel.Channels.CustomBinding>.</span></span> [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)]<span data-ttu-id="43e71-109">[する方法: SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)です。</span><span class="sxs-lookup"><span data-stu-id="43e71-109"> [How to: Create a Custom Binding Using the SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).</span></span> <span data-ttu-id="43e71-110">次の例では、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> クラスの <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> を使用して作成された <xref:System.ServiceModel.Channels.SecurityBindingElement> を使用します。</span><span class="sxs-lookup"><span data-stu-id="43e71-110">The following example uses a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> created with the <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> of the <xref:System.ServiceModel.Channels.SecurityBindingElement> class.</span></span>  
   
-2.  <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> プロパティを使用して <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> クラスへの参照を返し、次のプロパティを適切な値に設定します。  
+2.  <span data-ttu-id="43e71-111"><xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> プロパティを使用して <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> クラスへの参照を返し、次のプロパティを適切な値に設定します。</span><span class="sxs-lookup"><span data-stu-id="43e71-111">Use the <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> property to return a reference to the <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> class and set any of the following properties, as appropriate:</span></span>  
   
-    1.  `DetectReplay`.ブール値。サーバーからのリプレイをクライアントが検出するかどうかを制御します。既定値は `true` です。  
+    1.  <span data-ttu-id="43e71-112">`DetectReplay`。</span><span class="sxs-lookup"><span data-stu-id="43e71-112">`DetectReplay`.</span></span> <span data-ttu-id="43e71-113">ブール値。</span><span class="sxs-lookup"><span data-stu-id="43e71-113">A Boolean value.</span></span> <span data-ttu-id="43e71-114">サーバーからのリプレイをクライアントが検出するかどうかを制御します。</span><span class="sxs-lookup"><span data-stu-id="43e71-114">This governs whether the client should detect replays from the server.</span></span> <span data-ttu-id="43e71-115">既定値は、`true` です。</span><span class="sxs-lookup"><span data-stu-id="43e71-115">The default is `true`.</span></span>  
   
-    2.  `MaxClockSkew`.<xref:System.TimeSpan> 値。リプレイ機構に許容されるクライアントとサーバー間の時刻のずれを制御します。セキュリティ機構は送信されたメッセージのタイム スタンプを調べ、メッセージが古すぎるかどうかを決定します。既定値は 5 分です。  
+    2.  <span data-ttu-id="43e71-116">`MaxClockSkew`。</span><span class="sxs-lookup"><span data-stu-id="43e71-116">`MaxClockSkew`.</span></span> <span data-ttu-id="43e71-117"><xref:System.TimeSpan> 値。</span><span class="sxs-lookup"><span data-stu-id="43e71-117">A <xref:System.TimeSpan> value.</span></span> <span data-ttu-id="43e71-118">リプレイ機構に許容されるクライアントとサーバー間の時刻のずれを制御します。</span><span class="sxs-lookup"><span data-stu-id="43e71-118">Governs how much time skew the replay mechanism can tolerate between the client and the server.</span></span> <span data-ttu-id="43e71-119">セキュリティ機構は送信されたメッセージのタイム スタンプを調べ、メッセージが古すぎるかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="43e71-119">The security mechanism examines the time stamp sent and determines whether it was sent too far back in the past.</span></span> <span data-ttu-id="43e71-120">既定値は、5 分です。</span><span class="sxs-lookup"><span data-stu-id="43e71-120">The default is 5 minutes.</span></span>  
   
-    3.  `ReplayWindow`.`TimeSpan` 値。メッセージがサーバーによって送信されてから \(中継局を通過して\) クライアントに到達するまで、ネットワーク内に存在できる期間を制御します。クライアントは、リプレイ検出のため、最新の `ReplayWindow` 内で送信されたメッセージの署名を追跡します。  
+    3.  <span data-ttu-id="43e71-121">`ReplayWindow`。</span><span class="sxs-lookup"><span data-stu-id="43e71-121">`ReplayWindow`.</span></span> <span data-ttu-id="43e71-122">`TimeSpan` 値。</span><span class="sxs-lookup"><span data-stu-id="43e71-122">A `TimeSpan` value.</span></span> <span data-ttu-id="43e71-123">メッセージがサーバーによって送信されてから (中継局を通過して) クライアントに到達するまで、ネットワーク内に存在できる期間を制御します。</span><span class="sxs-lookup"><span data-stu-id="43e71-123">This governs how long a message can live in the network after the server sends it (through intermediaries) before reaching the client.</span></span> <span data-ttu-id="43e71-124">クライアントは、リプレイ検出のため、最新の `ReplayWindow` 内で送信されたメッセージの署名を追跡します。</span><span class="sxs-lookup"><span data-stu-id="43e71-124">The client tracks the signatures of the messages sent within the latest `ReplayWindow` for the purposes of replay detection.</span></span>  
   
-    4.  `ReplayCacheSize`.整数値。クライアントは、メッセージの署名をキャッシュに格納します。この設定は、キャッシュに格納できる署名の数を指定します。最新のリプレイ ウィンドウ内の送信されたメッセージの数がキャッシュ制限に達すると、キャッシュされた最も古い署名が制限時間に達するまで、新しいメッセージは拒否されます。既定値は 500000 です。  
+    4.  <span data-ttu-id="43e71-125">`ReplayCacheSize`。</span><span class="sxs-lookup"><span data-stu-id="43e71-125">`ReplayCacheSize`.</span></span> <span data-ttu-id="43e71-126">整数値。</span><span class="sxs-lookup"><span data-stu-id="43e71-126">An integer value.</span></span> <span data-ttu-id="43e71-127">クライアントは、メッセージの署名をキャッシュに格納します。</span><span class="sxs-lookup"><span data-stu-id="43e71-127">The client stores the signatures of the message in a cache.</span></span> <span data-ttu-id="43e71-128">この設定は、キャッシュに格納できる署名の数を指定します。</span><span class="sxs-lookup"><span data-stu-id="43e71-128">This setting specifies how many signatures the cache can store.</span></span> <span data-ttu-id="43e71-129">最新のリプレイ ウィンドウ内の送信されたメッセージの数がキャッシュ制限に達すると、キャッシュされた最も古い署名が制限時間に達するまで、新しいメッセージは拒否されます。</span><span class="sxs-lookup"><span data-stu-id="43e71-129">If the number of messages sent within the last replay window reaches the cache limit, new messages are rejected until the oldest cached signatures reach the time limit.</span></span> <span data-ttu-id="43e71-130">既定値は 500000 です。</span><span class="sxs-lookup"><span data-stu-id="43e71-130">The default is 500000.</span></span>  
   
-### コードを使用してサービスでのリプレイ検出を制御するには  
+### <a name="to-control-replay-detection-on-the-service-using-code"></a><span data-ttu-id="43e71-131">コードを使用してサービスでのリプレイ検出を制御するには</span><span class="sxs-lookup"><span data-stu-id="43e71-131">To control replay detection on the service using code</span></span>  
   
-1.  <xref:System.ServiceModel.Channels.CustomBinding> で使用する <xref:System.ServiceModel.Channels.SecurityBindingElement> を作成します。  
+1.  <span data-ttu-id="43e71-132"><xref:System.ServiceModel.Channels.SecurityBindingElement> で使用する <xref:System.ServiceModel.Channels.CustomBinding> を作成します。</span><span class="sxs-lookup"><span data-stu-id="43e71-132">Create a <xref:System.ServiceModel.Channels.SecurityBindingElement> to use in a <xref:System.ServiceModel.Channels.CustomBinding>.</span></span>  
   
-2.  <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> プロパティを使用して <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> クラスへの参照を返し、前述のように各プロパティを設定します。  
+2.  <span data-ttu-id="43e71-133"><xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> プロパティを使用して <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> クラスへの参照を返し、前述のように各プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="43e71-133">Use the <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> property to return a reference to the <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> class, and set the properties as described previously.</span></span>  
   
-### クライアントまたはサービスの構成でリプレイ検出を制御するには  
+### <a name="to-control-replay-detection-in-configuration-for-the-client-or-service"></a><span data-ttu-id="43e71-134">クライアントまたはサービスの構成でリプレイ検出を制御するには</span><span class="sxs-lookup"><span data-stu-id="43e71-134">To control replay detection in configuration for the client or service</span></span>  
   
-1.  [\<customBinding\>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)を作成します。  
+1.  <span data-ttu-id="43e71-135">作成、 [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)です。</span><span class="sxs-lookup"><span data-stu-id="43e71-135">Create a [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).</span></span>  
   
-2.  `<security>` 要素を作成します。  
+2.  <span data-ttu-id="43e71-136">`<security>` 要素を作成します。</span><span class="sxs-lookup"><span data-stu-id="43e71-136">Create a `<security>` element.</span></span>  
   
-3.  [\<localClientSettings\>](../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)または [\<localServiceSettings\>](../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md)を作成します。  
+3.  <span data-ttu-id="43e71-137">作成、 [ \<localClientSettings >](../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)または[ \<localServiceSettings >](../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md)です。</span><span class="sxs-lookup"><span data-stu-id="43e71-137">Create a [\<localClientSettings>](../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md) or [\<localServiceSettings>](../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md).</span></span>  
   
-4.  `detectReplays`、`maxClockSkew`、`replayWindow`、および `replayCacheSize` の各属性値を適切に設定します。`<localServiceSettings>``<localClientSettings> 要素と`  要素の両方の属性を設定する例を次に示します。  
+4.  <span data-ttu-id="43e71-138">`detectReplays`、`maxClockSkew`、`replayWindow`、および `replayCacheSize` の各属性値を適切に設定します。</span><span class="sxs-lookup"><span data-stu-id="43e71-138">Set the following attribute values, as appropriate: `detectReplays`, `maxClockSkew`, `replayWindow`, and `replayCacheSize`.</span></span> <span data-ttu-id="43e71-139">`<localServiceSettings>` 要素と`<localClientSettings>` 要素の両方の属性を設定する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="43e71-139">The following example sets the attributes of both a `<localServiceSettings>` and a `<localClientSettings>` element:</span></span>  
   
-    ```  
+    ```xml  
     <customBinding>  
       <binding name="NewBinding0">  
        <textMessageEncoding />  
@@ -78,27 +84,27 @@ caps.handback.revision: 10
     </customBinding>  
     ```  
   
-## 使用例  
- 次の例は、<xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> メソッドを使用して <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> を作成し、作成されたバインディングのリプレイ プロパティを設定します。  
+## <a name="example"></a><span data-ttu-id="43e71-140">例</span><span class="sxs-lookup"><span data-stu-id="43e71-140">Example</span></span>  
+ <span data-ttu-id="43e71-141">次の例は、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> メソッドを使用して <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> を作成し、作成されたバインディングのリプレイ プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="43e71-141">The following example creates a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> using the <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> method, and sets the replay properties of the binding.</span></span>  
   
  [!code-csharp[c_ReplayDetection#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_replaydetection/cs/source.cs#1)]
  [!code-vb[c_ReplayDetection#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_replaydetection/vb/source.vb#1)]  
   
-## リプレイのスコープ : メッセージ セキュリティのみ  
- 次の手順は、メッセージ セキュリティ モードにのみ適用されます。トランスポート モードとメッセージ資格情報付きトランスポート モードでは、トランスポート機構がリプレイを検出します。  
+## <a name="scope-of-replay-message-security-only"></a><span data-ttu-id="43e71-142">リプレイのスコープ : メッセージ セキュリティのみ</span><span class="sxs-lookup"><span data-stu-id="43e71-142">Scope of Replay: Message Security Only</span></span>  
+ <span data-ttu-id="43e71-143">次の手順は、メッセージ セキュリティ モードにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="43e71-143">Note that the following procedures apply only to Message security mode.</span></span> <span data-ttu-id="43e71-144">トランスポート モードとメッセージ資格情報付きトランスポート モードでは、トランスポート機構がリプレイを検出します。</span><span class="sxs-lookup"><span data-stu-id="43e71-144">For Transport and Transport with Message Credential modes, the transport mechanisms detect replays.</span></span>  
   
-## セキュリティで保護されたメッセージ交換に関するメモ  
- セキュリティで保護されたメッセージ交換を有効にするバインディングでは、アプリケーション チャネルとセキュリティで保護されたメッセージ交換のブートストラップ バインディングの両方で、上記の設定を調整できます。たとえば、アプリケーション チャネルに対するリプレイを無効にして、セキュリティで保護されたメッセージ交換を確立するブートストラップ チャネルに対するリプレイを有効にできます。  
+## <a name="secure-conversation-notes"></a><span data-ttu-id="43e71-145">セキュリティで保護されたメッセージ交換に関するメモ</span><span class="sxs-lookup"><span data-stu-id="43e71-145">Secure Conversation Notes</span></span>  
+ <span data-ttu-id="43e71-146">セキュリティで保護されたメッセージ交換を有効にするバインディングでは、アプリケーション チャネルとセキュリティで保護されたメッセージ交換のブートストラップ バインディングの両方で、上記の設定を調整できます。</span><span class="sxs-lookup"><span data-stu-id="43e71-146">For bindings that enable secure conversations, you can adjust these settings both for the application channel as well as for the secure conversation bootstrap binding.</span></span> <span data-ttu-id="43e71-147">たとえば、アプリケーション チャネルに対するリプレイを無効にして、セキュリティで保護されたメッセージ交換を確立するブートストラップ チャネルに対するリプレイを有効にできます。</span><span class="sxs-lookup"><span data-stu-id="43e71-147">For example, you can turn off replays for the application channel but enable them for the bootstrap channel that establishes the secure conversation.</span></span>  
   
- セキュリティで保護されたメッセージ交換セッションを使用しない場合、サーバー ファームのシナリオでのリプレイや、プロセスをリサイクルしたときのリプレイについては、リプレイ検出による検出が保証されません。これは、次のシステム指定のバインディングに当てはまります。  
+ <span data-ttu-id="43e71-148">セキュリティで保護されたメッセージ交換セッションを使用しない場合、サーバー ファームのシナリオでのリプレイや、プロセスをリサイクルしたときのリプレイについては、リプレイ検出による検出が保証されません。</span><span class="sxs-lookup"><span data-stu-id="43e71-148">If you do not use secure conversation sessions, replay detection does not guarantee detecting replays in server farm scenarios and when the process is recycled.</span></span> <span data-ttu-id="43e71-149">これは、次のシステム指定のバインディングに当てはまります。</span><span class="sxs-lookup"><span data-stu-id="43e71-149">This applies to the following system-provided bindings:</span></span>  
   
--   <xref:System.ServiceModel.BasicHttpBinding>.  
+-   <span data-ttu-id="43e71-150"><xref:System.ServiceModel.BasicHttpBinding>。</span><span class="sxs-lookup"><span data-stu-id="43e71-150"><xref:System.ServiceModel.BasicHttpBinding>.</span></span>  
   
--   <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> プロパティが `false` に設定された <xref:System.ServiceModel.WSHttpBinding>。  
+-   <span data-ttu-id="43e71-151"><xref:System.ServiceModel.WSHttpBinding> プロパティが <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> に設定された `false`。</span><span class="sxs-lookup"><span data-stu-id="43e71-151"><xref:System.ServiceModel.WSHttpBinding> with the <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> property set to `false`.</span></span>  
   
-## コードのコンパイル  
+## <a name="compiling-the-code"></a><span data-ttu-id="43e71-152">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="43e71-152">Compiling the Code</span></span>  
   
--   コードのコンパイルには次の名前空間が必要です。  
+-   <span data-ttu-id="43e71-153">コードのコンパイルには次の名前空間が必要です。</span><span class="sxs-lookup"><span data-stu-id="43e71-153">The following namespaces are required to compile the code:</span></span>  
   
 -   <xref:System>  
   
@@ -106,9 +112,9 @@ caps.handback.revision: 10
   
 -   <xref:System.ServiceModel.Channels>  
   
-## 参照  
- <xref:System.ServiceModel.Channels.LocalClientSecuritySettings>   
- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>   
- [セキュリティ保護されたメッセージ交換とセッション](../../../../docs/framework/wcf/feature-details/secure-conversations-and-secure-sessions.md)   
- [\<localClientSettings\>](../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)   
- [方法 : SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+## <a name="see-also"></a><span data-ttu-id="43e71-154">関連項目</span><span class="sxs-lookup"><span data-stu-id="43e71-154">See Also</span></span>  
+ <xref:System.ServiceModel.Channels.LocalClientSecuritySettings>  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>  
+ [<span data-ttu-id="43e71-155">メッセージ交換とセッションをセキュリティで保護</span><span class="sxs-lookup"><span data-stu-id="43e71-155">Secure Conversations and Secure Sessions</span></span>](../../../../docs/framework/wcf/feature-details/secure-conversations-and-secure-sessions.md)  
+ [<span data-ttu-id="43e71-156">\<localClientSettings ></span><span class="sxs-lookup"><span data-stu-id="43e71-156">\<localClientSettings></span></span>](../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)  
+ [<span data-ttu-id="43e71-157">方法: SecurityBindingElement を使用してカスタム バインディングを作成します。</span><span class="sxs-lookup"><span data-stu-id="43e71-157">How to: Create a Custom Binding Using the SecurityBindingElement</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)

@@ -12,18 +12,18 @@ caps.latest.revision: "10"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.openlocfilehash: a8a4418c582d00f1163305ce5d63c63c198dbc30
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: 57a6a15f648f83a60f3ac402443c3c5e4aecfcd4
+ms.sourcegitcommit: 5177d6ae2e9baf026f07ee0631556700a5a193f7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/28/2017
 ---
-# <a name="usage-of-the-switch-activity-with-custom-types"></a><span data-ttu-id="15822-102">カスタム型を使用した Switch アクティビティの使用</span><span class="sxs-lookup"><span data-stu-id="15822-102">Usage of the Switch Activity with Custom Types</span></span>
-<span data-ttu-id="15822-103">このサンプルは、有効にする方法を説明する<!--zz <xref:System.Activities. Statements.Switch`1>--> `xref:System.Activities` Statements.Switch`1?qualifyHint=False&autoUpgrade=True activity to evaluate a user-defined complex type at runtime. In most traditional procedural programming languages, a [switch](http://go.microsoft.com/fwlink/?LinkId=180521) statement selects an execution logic based on the conditional evaluation of a variable. Traditionally, a \`スイッチ ' ステートメントは静的に評価される式で動作します。</span><span class="sxs-lookup"><span data-stu-id="15822-103">This sample describes how to enable a <!--zz <xref:System.Activities. Statements.Switch`1>--> `xref:System.Activities` Statements.Switch`1?qualifyHint=False&autoUpgrade=True activity to evaluate a user-defined complex type at runtime. In most traditional procedural programming languages, a [switch](http://go.microsoft.com/fwlink/?LinkId=180521) statement selects an execution logic based on the conditional evaluation of a variable. Traditionally, a `switch` statement operates on an expression that can be statically evaluated.</span></span> <span data-ttu-id="15822-104">つまり、たとえば C# では、プリミティブ型 (<xref:System.Boolean>、<xref:System.Int32>、<xref:System.String>、列挙型など) のみがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="15822-104">For example, in C# this means that only primitive types, such as <xref:System.Boolean>, <xref:System.Int32>, <xref:System.String>, and enumeration types are supported.</span></span>  
+# <a name="usage-of-the-switch-activity-with-custom-types"></a><span data-ttu-id="081d2-102">カスタム型を使用した Switch アクティビティの使用</span><span class="sxs-lookup"><span data-stu-id="081d2-102">Usage of the Switch Activity with Custom Types</span></span>
+<span data-ttu-id="081d2-103">このサンプルでは、<xref:System.Activities.Statements.Switch%601> アクティビティを有効にしてユーザー定義の複合型を実行時に評価する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="081d2-103">This sample describes how to enable a <xref:System.Activities.Statements.Switch%601> activity to evaluate a user-defined complex type at runtime.</span></span> <span data-ttu-id="081d2-104">従来のほとんどの手続き型プログラミング言語で、[切り替える](http://go.microsoft.com/fwlink/?LinkId=180521)ステートメントが変数の条件の評価に基づいて実行ロジックを選択します。</span><span class="sxs-lookup"><span data-stu-id="081d2-104">In most traditional procedural programming languages, a [switch](http://go.microsoft.com/fwlink/?LinkId=180521) statement selects an execution logic based on the conditional evaluation of a variable.</span></span> <span data-ttu-id="081d2-105">従来、`switch` ステートメントは、静的に評価できる式を対象としています。</span><span class="sxs-lookup"><span data-stu-id="081d2-105">Traditionally, a `switch` statement operates on an expression that can be statically evaluated.</span></span> <span data-ttu-id="081d2-106">つまり、たとえば C# では、プリミティブ型 (<xref:System.Boolean>、<xref:System.Int32>、<xref:System.String>、列挙型など) のみがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="081d2-106">For example, in C# this means that only primitive types, such as <xref:System.Boolean>, <xref:System.Int32>, <xref:System.String>, and enumeration types are supported.</span></span>  
   
- <span data-ttu-id="15822-105">カスタム クラスで切り替えを有効にするには、カスタム複合型の値を実行時に評価するロジックを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="15822-105">To enable switching on a custom class, logic must be implemented to evaluate values of the custom complex type at runtime.</span></span> <span data-ttu-id="15822-106">このサンプルでは、`Person` という名前のカスタム複合型で切り替えを有効にする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="15822-106">This sample demonstrates how to enable switching on a custom complex type named `Person`.</span></span>  
+ <span data-ttu-id="081d2-107">カスタム クラスで切り替えを有効にするには、カスタム複合型の値を実行時に評価するロジックを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="081d2-107">To enable switching on a custom class, logic must be implemented to evaluate values of the custom complex type at runtime.</span></span> <span data-ttu-id="081d2-108">このサンプルでは、`Person` という名前のカスタム複合型で切り替えを有効にする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="081d2-108">This sample demonstrates how to enable switching on a custom complex type named `Person`.</span></span>  
   
--   <span data-ttu-id="15822-107">カスタム クラス `Person` では、<xref:System.ComponentModel.TypeConverter> 属性がカスタム <xref:System.ComponentModel.TypeConverter> の名前で宣言されます。</span><span class="sxs-lookup"><span data-stu-id="15822-107">In the custom class `Person`, a <xref:System.ComponentModel.TypeConverter> attribute is declared with the name of the custom <xref:System.ComponentModel.TypeConverter>.</span></span>  
+-   <span data-ttu-id="081d2-109">カスタム クラス `Person` では、<xref:System.ComponentModel.TypeConverter> 属性がカスタム <xref:System.ComponentModel.TypeConverter> の名前で宣言されます。</span><span class="sxs-lookup"><span data-stu-id="081d2-109">In the custom class `Person`, a <xref:System.ComponentModel.TypeConverter> attribute is declared with the name of the custom <xref:System.ComponentModel.TypeConverter>.</span></span>  
   
     ```  
     [TypeConverter(typeof(PersonConverter))]  
@@ -34,7 +34,7 @@ ms.lasthandoff: 10/18/2017
     ...  
     ```  
   
--   <span data-ttu-id="15822-108">カスタム クラス `Person` では、<xref:System.Object.Equals%2A> クラスと <xref:System.Object.GetHashCode%2A> クラスがオーバーライドされます。</span><span class="sxs-lookup"><span data-stu-id="15822-108">In the custom class `Person`, the <xref:System.Object.Equals%2A> and <xref:System.Object.GetHashCode%2A> classes are overridden.</span></span>  
+-   <span data-ttu-id="081d2-110">カスタム クラス `Person` では、<xref:System.Object.Equals%2A> クラスと <xref:System.Object.GetHashCode%2A> クラスがオーバーライドされます。</span><span class="sxs-lookup"><span data-stu-id="081d2-110">In the custom class `Person`, the <xref:System.Object.Equals%2A> and <xref:System.Object.GetHashCode%2A> classes are overridden.</span></span>  
   
     ```  
     public override bool Equals(object obj)  
@@ -60,7 +60,7 @@ ms.lasthandoff: 10/18/2017
     }  
     ```  
   
--   <span data-ttu-id="15822-109">カスタム クラスのインスタンスから文字列への変換、および文字列からカスタム クラスのインスタンスへの変換を行う、カスタム <xref:System.ComponentModel.TypeConverter> クラスが実装されます。</span><span class="sxs-lookup"><span data-stu-id="15822-109">A custom <xref:System.ComponentModel.TypeConverter> class is implemented that performs the conversion of an instance of the custom class to a string and a string to an instance of a custom class.</span></span>  
+-   <span data-ttu-id="081d2-111">カスタム クラスのインスタンスから文字列への変換、および文字列からカスタム クラスのインスタンスへの変換を行う、カスタム <xref:System.ComponentModel.TypeConverter> クラスが実装されます。</span><span class="sxs-lookup"><span data-stu-id="081d2-111">A custom <xref:System.ComponentModel.TypeConverter> class is implemented that performs the conversion of an instance of the custom class to a string and a string to an instance of a custom class.</span></span>  
   
     ```  
     public class PersonConverter : TypeConverter  
@@ -112,32 +112,32 @@ ms.lasthandoff: 10/18/2017
     }  
     ```  
   
- <span data-ttu-id="15822-110">このサンプルには、次のファイルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="15822-110">The following files are included in this sample:</span></span>  
+ <span data-ttu-id="081d2-112">このサンプルには、次のファイルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="081d2-112">The following files are included in this sample:</span></span>  
   
--   <span data-ttu-id="15822-111">**Person.cs**: 定義、`Person`クラスです。</span><span class="sxs-lookup"><span data-stu-id="15822-111">**Person.cs**: Defines the `Person` class.</span></span>  
+-   <span data-ttu-id="081d2-113">**Person.cs**: 定義、`Person`クラスです。</span><span class="sxs-lookup"><span data-stu-id="081d2-113">**Person.cs**: Defines the `Person` class.</span></span>  
   
--   <span data-ttu-id="15822-112">**PersonConverter.cs**: の型コンバーター、`Person`クラスです。</span><span class="sxs-lookup"><span data-stu-id="15822-112">**PersonConverter.cs**: The type converter for the `Person` class.</span></span>  
+-   <span data-ttu-id="081d2-114">**PersonConverter.cs**: の型コンバーター、`Person`クラスです。</span><span class="sxs-lookup"><span data-stu-id="081d2-114">**PersonConverter.cs**: The type converter for the `Person` class.</span></span>  
   
--   <span data-ttu-id="15822-113">**Sequence.xaml**: ワークフローを切り替えられる、`Person`型です。</span><span class="sxs-lookup"><span data-stu-id="15822-113">**Sequence.xaml**: a workflow that switches over the `Person` type.</span></span>  
+-   <span data-ttu-id="081d2-115">**Sequence.xaml**: ワークフローを切り替えられる、`Person`型です。</span><span class="sxs-lookup"><span data-stu-id="081d2-115">**Sequence.xaml**: a workflow that switches over the `Person` type.</span></span>  
   
--   <span data-ttu-id="15822-114">**Program.cs**: ワークフローを実行する主な機能です。</span><span class="sxs-lookup"><span data-stu-id="15822-114">**Program.cs**: The main function that runs the workflow.</span></span>  
+-   <span data-ttu-id="081d2-116">**Program.cs**: ワークフローを実行する主な機能です。</span><span class="sxs-lookup"><span data-stu-id="081d2-116">**Program.cs**: The main function that runs the workflow.</span></span>  
   
-#### <a name="to-use-this-sample"></a><span data-ttu-id="15822-115">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="15822-115">To use this sample</span></span>  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="081d2-117">このサンプルを使用するには</span><span class="sxs-lookup"><span data-stu-id="081d2-117">To use this sample</span></span>  
   
-1.  <span data-ttu-id="15822-116">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] に Switch.sln を読み込みます。</span><span class="sxs-lookup"><span data-stu-id="15822-116">Load Switch.sln in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
+1.  <span data-ttu-id="081d2-118">[!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] に Switch.sln を読み込みます。</span><span class="sxs-lookup"><span data-stu-id="081d2-118">Load Switch.sln in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
   
-2.  <span data-ttu-id="15822-117">Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。</span><span class="sxs-lookup"><span data-stu-id="15822-117">Press CTRL+SHIFT+B to build the solution.</span></span>  
+2.  <span data-ttu-id="081d2-119">Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。</span><span class="sxs-lookup"><span data-stu-id="081d2-119">Press CTRL+SHIFT+B to build the solution.</span></span>  
   
-3.  <span data-ttu-id="15822-118">Ctrl キーを押しながら F5 キーを押してサンプルを実行します。</span><span class="sxs-lookup"><span data-stu-id="15822-118">Press CTRL + F5 to run the sample.</span></span>  
+3.  <span data-ttu-id="081d2-120">Ctrl キーを押しながら F5 キーを押してサンプルを実行します。</span><span class="sxs-lookup"><span data-stu-id="081d2-120">Press CTRL + F5 to run the sample.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="15822-119">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="15822-119">The samples may already be installed on your machine.</span></span> <span data-ttu-id="15822-120">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="15822-120">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="081d2-121">サンプルは、既にコンピューターにインストールされている場合があります。</span><span class="sxs-lookup"><span data-stu-id="081d2-121">The samples may already be installed on your machine.</span></span> <span data-ttu-id="081d2-122">続行する前に、次の (既定の) ディレクトリを確認してください。</span><span class="sxs-lookup"><span data-stu-id="081d2-122">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="15822-121">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="15822-121">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="15822-122">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="15822-122">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="081d2-123">このディレクトリが存在しない場合は、「 [.NET Framework 4 向けの Windows Communication Foundation (WCF) および Windows Workflow Foundation (WF) のサンプル](http://go.microsoft.com/fwlink/?LinkId=150780) 」にアクセスして、 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] および [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをすべてダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="081d2-123">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="081d2-124">このサンプルは、次のディレクトリに格納されます。</span><span class="sxs-lookup"><span data-stu-id="081d2-124">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\Switch`  
   
-## <a name="see-also"></a><span data-ttu-id="15822-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="15822-123">See Also</span></span>  
- [<span data-ttu-id="15822-124">ビルトイン アクティビティ ライブラリ</span><span class="sxs-lookup"><span data-stu-id="15822-124">Built-In Activity Library</span></span>](../../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md)
+## <a name="see-also"></a><span data-ttu-id="081d2-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="081d2-125">See Also</span></span>  
+ [<span data-ttu-id="081d2-126">ビルトイン アクティビティ ライブラリ</span><span class="sxs-lookup"><span data-stu-id="081d2-126">Built-In Activity Library</span></span>](../../../../docs/framework/windows-workflow-foundation/net-framework-4-5-built-in-activity-library.md)

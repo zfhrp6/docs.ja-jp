@@ -1,230 +1,232 @@
 ---
-title: "正規表現言語 - クイック リファレンス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VS.RegularExpressionBuilder"
-helpviewer_keywords: 
-  - ".NET Framework 正規表現, 言語要素"
-  - "カンニング ペーパー"
-  - "解析 (正規表現を使用したテキストを), 言語要素"
-  - "パターン一致 (正規表現を使用した), 言語要素"
-  - "regex カンニング ペーパー"
-  - "正規表現 [.NET Framework]"
-  - "正規表現, 言語要素"
-  - "検索 (正規表現を使用した), 言語要素"
+title: "正規表現言語 - クイック リファレンス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: VS.RegularExpressionBuilder
+helpviewer_keywords:
+- regex cheat sheet
+- parsing text with regular expressions, language elements
+- searching with regular expressions, language elements
+- pattern-matching with regular expressions, language elements
+- regular expressions, language elements
+- regular expressions [.NET Framework]
+- cheat sheet
+- .NET Framework regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-caps.latest.revision: 56
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 56
+caps.latest.revision: "56"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: ab77293796eb20b1056f57f64903beb9357a80c5
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 正規表現言語 - クイック リファレンス
-<a name="top"></a> 正規表現とは、入力テキスト内で正規表現エンジンによる照合が試行されるパターンです。 パターンは、1 個以上の文字リテラル、演算子、または構成体で構成されます。  簡単な紹介については、「[.NET Framework の正規表現](../../../docs/standard/base-types/regular-expressions.md)」を参照してください。  
+# <a name="regular-expression-language---quick-reference"></a><span data-ttu-id="c6175-102">正規表現言語 - クイック リファレンス</span><span class="sxs-lookup"><span data-stu-id="c6175-102">Regular Expression Language - Quick Reference</span></span>
+<span data-ttu-id="c6175-103"><a name="top"></a> 正規表現とは、入力テキスト内で正規表現エンジンによる照合が試行されるパターンです。</span><span class="sxs-lookup"><span data-stu-id="c6175-103"><a name="top"></a> A regular expression is a pattern that the regular expression engine attempts to match in input text.</span></span> <span data-ttu-id="c6175-104">パターンは、1 個以上の文字リテラル、演算子、または構成体で構成されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-104">A pattern consists of one or more character literals, operators, or constructs.</span></span>  <span data-ttu-id="c6175-105">簡単な概要については、次を参照してください。 [.NET 正規表現](../../../docs/standard/base-types/regular-expressions.md)です。</span><span class="sxs-lookup"><span data-stu-id="c6175-105">For a brief introduction, see [.NET Regular Expressions](../../../docs/standard/base-types/regular-expressions.md).</span></span>  
   
- このクイック リファレンスの各セクションでは、正規表現の定義に使用できる特定カテゴリの文字、演算子、および構成体を一覧表示します。  
+ <span data-ttu-id="c6175-106">このクイック リファレンスの各セクションでは、正規表現の定義に使用できる特定カテゴリの文字、演算子、および構成体を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="c6175-106">Each section in this quick reference lists a particular category of characters, operators, and constructs that you can use to define regular expressions:</span></span>  
   
- [文字のエスケープ](#character_escapes)  
- [文字クラス](#character_classes)  
- [アンカー](#atomic_zerowidth_assertions)  
- [グループ化構成体](#grouping_constructs)  
- [量指定子](#quantifiers)  
- [前方参照構成体](#backreference_constructs)  
- [代替構成体](#alternation_constructs)  
- [置換](#substitutions)  
- [正規表現のオプション](#options)  
- [その他の構成体](#miscellaneous_constructs)  
+ [<span data-ttu-id="c6175-107">文字のエスケープ</span><span class="sxs-lookup"><span data-stu-id="c6175-107">Character escapes</span></span>](#character_escapes)  
+ [<span data-ttu-id="c6175-108">文字クラス</span><span class="sxs-lookup"><span data-stu-id="c6175-108">Character classes</span></span>](#character_classes)  
+ [<span data-ttu-id="c6175-109">アンカー</span><span class="sxs-lookup"><span data-stu-id="c6175-109">Anchors</span></span>](#atomic_zerowidth_assertions)  
+ [<span data-ttu-id="c6175-110">グループ化構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-110">Grouping constructs</span></span>](#grouping_constructs)  
+ [<span data-ttu-id="c6175-111">量指定子</span><span class="sxs-lookup"><span data-stu-id="c6175-111">Quantifiers</span></span>](#quantifiers)  
+ [<span data-ttu-id="c6175-112">前方参照構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-112">Backreference constructs</span></span>](#backreference_constructs)  
+ [<span data-ttu-id="c6175-113">代替構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-113">Alternation constructs</span></span>](#alternation_constructs)  
+ [<span data-ttu-id="c6175-114">置換</span><span class="sxs-lookup"><span data-stu-id="c6175-114">Substitutions</span></span>](#substitutions)  
+ [<span data-ttu-id="c6175-115">正規表現のオプション</span><span class="sxs-lookup"><span data-stu-id="c6175-115">Regular expression options</span></span>](#options)  
+ [<span data-ttu-id="c6175-116">その他の構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-116">Miscellaneous constructs</span></span>](#miscellaneous_constructs)  
   
- また、ダウンロードして印刷し、簡単に参照できるように、この情報を 2 種類の形式で提供します  
+ <span data-ttu-id="c6175-117">また、ダウンロードして印刷し、簡単に参照できるように、この情報を 2 種類の形式で提供します</span><span class="sxs-lookup"><span data-stu-id="c6175-117">We’ve also provided this information in two formats that you can download and print for easy reference:</span></span>  
   
- [Word \(.docx\) 形式でダウンロード](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
-[PDF \(.pdf\) 形式でダウンロード](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
+ [<span data-ttu-id="c6175-118">Word (.docx) 形式でダウンロード</span><span class="sxs-lookup"><span data-stu-id="c6175-118">Download in Word (.docx) format</span></span>](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
+ [<span data-ttu-id="c6175-119">PDF (.pdf) 形式でダウンロード</span><span class="sxs-lookup"><span data-stu-id="c6175-119">Download in PDF (.pdf) format</span></span>](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
   
 <a name="character_escapes"></a>   
-## 文字のエスケープ  
- 正規表現内の円記号 \(\\\) は、直後の文字が特殊文字 \(次の表を参照\) であるか、文字どおりに解釈する必要があることを示します。 詳細については、「[文字のエスケープ](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)」を参照してください。  
+## <a name="character-escapes"></a><span data-ttu-id="c6175-120">文字のエスケープ</span><span class="sxs-lookup"><span data-stu-id="c6175-120">Character Escapes</span></span>  
+ <span data-ttu-id="c6175-121">正規表現内の円記号 (\\) は、直後の文字が特殊文字 (次の表を参照) であるか、文字どおりに解釈する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="c6175-121">The backslash character (\\) in a regular expression indicates that the character that follows it either is a special character (as shown in the following table), or should be interpreted literally.</span></span> <span data-ttu-id="c6175-122">詳細については、「[文字のエスケープ](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-122">For more information, see [Character Escapes](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md).</span></span>  
   
-|エスケープ文字|説明|パターン|一致件数|  
-|-------------|--------|----------|----------|  
-|`\a`|ビープ音文字の \\u0007 と一致します。|`\a`|"Error\!" \+ '\\u0007'  の "\\u0007"|  
-|`\b`|文字クラスでバックスペースの \\u0008 と一致します。|`[\b]{3,}`|"\\b\\b\\b\\b" の "\\b\\b\\b\\b"|  
-|`\t`|タブの \\u0009 と一致します。|`(\w+)\t`|"item1\\titem2\\t" の "item1\\t"、"item2\\t"|  
-|`\r`|キャリッジ リターンの \\u000D と一致します。 \(`\r` は改行文字 `\n` とは異なります。\)|`\r\n(\w+)`|"\\r\\nThese are\\ntwo lines." の "\\r\\nThese"|  
-|`\v`|垂直タブの \\u000B と一致します。|`[\v]{2,}`|"\\v\\v\\v" の "\\v\\v\\v"|  
-|`\f`|フォーム フィードの \\u000C と一致します。|`[\f]{2,}`|"\\f\\f\\f" の "\\f\\f\\f"|  
-|`\n`|改行文字の \\u000A と一致します。|`\r\n(\w+)`|"\\r\\nThese are\\ntwo lines." の "\\r\\nThese"|  
-|`\e`|エスケープ文字の \\u001B と一致します。|`\e`|"\\x001B" の "\\x001B"|  
-|`\` *nnn*|8 進数表現で文字を指定します \(*nnn* は 2 桁または 3 桁で構成されます\)。|`\w\040\w`|"a bc d" の<br /><br /> "a b"、"c d"|  
-|`\x` *nn*|16 進数表現で文字を指定します \(*nn* は 2 桁で構成されます\)。|`\w\x20\w`|"a bc d" の<br /><br /> "a b"、"c d"|  
-|`\c` *X*<br /><br /> `\c` *x*|*X* または *x* で指定された ASCII の制御文字と一致します。*X* または *x* は制御文字です。|`\cC`|"\\x0003" \(Ctrl\-C\) の "\\x0003"|  
-|`\u` *nnnn*|16 進数形式で表される Unicode 文字 \(*nnnn* で表される 4 桁の数字\) と一致します。|`\w\u0020\w`|"a bc d" の<br /><br /> "a b"、"c d"|  
-|`\`|このトピック内の表に示されているエスケープ文字として認識されない文字が後ろに付いている場合は、その文字と一致します。 たとえば、`\*` は `\x2A` と同じであり、`\.` は `\x2E` と同じです。 これを使用すると、正規表現エンジンによって言語要素 \(\* や ? など\)  と文字リテラル \( や  で表されたもの\) のあいまいさが解消されます。|`\d+[\+-x\*]\d+`|"\(2\+2\) \* 3\*9" の "2\+2" および "3\*9"|  
+|<span data-ttu-id="c6175-123">エスケープ文字</span><span class="sxs-lookup"><span data-stu-id="c6175-123">Escaped character</span></span>|<span data-ttu-id="c6175-124">説明</span><span class="sxs-lookup"><span data-stu-id="c6175-124">Description</span></span>|<span data-ttu-id="c6175-125">パターン</span><span class="sxs-lookup"><span data-stu-id="c6175-125">Pattern</span></span>|<span data-ttu-id="c6175-126">一致件数</span><span class="sxs-lookup"><span data-stu-id="c6175-126">Matches</span></span>|  
+|-----------------------|-----------------|-------------|-------------|  
+|`\a`|<span data-ttu-id="c6175-127">ビープ音文字の \u0007 と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-127">Matches a bell character, \u0007.</span></span>|`\a`|<span data-ttu-id="c6175-128">"Error!" + '\u0007'</span><span class="sxs-lookup"><span data-stu-id="c6175-128">"\u0007" in "Error!"</span></span> <span data-ttu-id="c6175-129">の "\u0007"</span><span class="sxs-lookup"><span data-stu-id="c6175-129">+ '\u0007'</span></span>|  
+|`\b`|<span data-ttu-id="c6175-130">文字クラスでバックスペースの \u0008 と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-130">In a character class, matches a backspace, \u0008.</span></span>|`[\b]{3,}`|<span data-ttu-id="c6175-131">"\b\b\b\b" の "\b\b\b\b"</span><span class="sxs-lookup"><span data-stu-id="c6175-131">"\b\b\b\b" in "\b\b\b\b"</span></span>|  
+|`\t`|<span data-ttu-id="c6175-132">タブの \u0009 と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-132">Matches a tab, \u0009.</span></span>|`(\w+)\t`|<span data-ttu-id="c6175-133">"item1\titem2\t" の "item1\t"、"item2\t"</span><span class="sxs-lookup"><span data-stu-id="c6175-133">"item1\t", "item2\t" in "item1\titem2\t"</span></span>|  
+|`\r`|<span data-ttu-id="c6175-134">キャリッジ リターンの \u000D と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-134">Matches a carriage return, \u000D.</span></span> <span data-ttu-id="c6175-135">(`\r` は改行文字 `\n`とは異なります。)</span><span class="sxs-lookup"><span data-stu-id="c6175-135">(`\r` is not equivalent to the newline character, `\n`.)</span></span>|`\r\n(\w+)`|<span data-ttu-id="c6175-136">"\r\nThese are\ntwo lines." の "\r\nThese"</span><span class="sxs-lookup"><span data-stu-id="c6175-136">"\r\nThese" in "\r\nThese are\ntwo lines."</span></span>|  
+|`\v`|<span data-ttu-id="c6175-137">垂直タブの \u000B と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-137">Matches a vertical tab, \u000B.</span></span>|`[\v]{2,}`|<span data-ttu-id="c6175-138">"\v\v\v" の "\v\v\v"</span><span class="sxs-lookup"><span data-stu-id="c6175-138">"\v\v\v" in "\v\v\v"</span></span>|  
+|`\f`|<span data-ttu-id="c6175-139">フォーム フィードの \u000C と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-139">Matches a form feed, \u000C.</span></span>|`[\f]{2,}`|<span data-ttu-id="c6175-140">"\f\f\f" の "\f\f\f"</span><span class="sxs-lookup"><span data-stu-id="c6175-140">"\f\f\f" in "\f\f\f"</span></span>|  
+|`\n`|<span data-ttu-id="c6175-141">改行文字の \u000A と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-141">Matches a new line, \u000A.</span></span>|`\r\n(\w+)`|<span data-ttu-id="c6175-142">"\r\nThese are\ntwo lines." の "\r\nThese"</span><span class="sxs-lookup"><span data-stu-id="c6175-142">"\r\nThese" in "\r\nThese are\ntwo lines."</span></span>|  
+|`\e`|<span data-ttu-id="c6175-143">エスケープ文字の \u001B と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-143">Matches an escape, \u001B.</span></span>|`\e`|<span data-ttu-id="c6175-144">"\x001B" の "\x001B"</span><span class="sxs-lookup"><span data-stu-id="c6175-144">"\x001B" in "\x001B"</span></span>|  
+|<span data-ttu-id="c6175-145">`\` *nnn*</span><span class="sxs-lookup"><span data-stu-id="c6175-145">`\` *nnn*</span></span>|<span data-ttu-id="c6175-146">8 進数表現で文字を指定します (*nnn* は 2 桁または 3 桁で構成されます)。</span><span class="sxs-lookup"><span data-stu-id="c6175-146">Uses octal representation to specify a character (*nnn* consists of two or three digits).</span></span>|`\w\040\w`|<span data-ttu-id="c6175-147">"a bc d" の</span><span class="sxs-lookup"><span data-stu-id="c6175-147">"a b", "c d" in</span></span><br /><br /> <span data-ttu-id="c6175-148">"a b"、"c d"</span><span class="sxs-lookup"><span data-stu-id="c6175-148">"a bc d"</span></span>|  
+|<span data-ttu-id="c6175-149">`\x` *nn*</span><span class="sxs-lookup"><span data-stu-id="c6175-149">`\x` *nn*</span></span>|<span data-ttu-id="c6175-150">16 進数表現で文字を指定します (*nn* は 2 桁で構成されます)。</span><span class="sxs-lookup"><span data-stu-id="c6175-150">Uses hexadecimal representation to specify a character (*nn* consists of exactly two digits).</span></span>|`\w\x20\w`|<span data-ttu-id="c6175-151">"a bc d" の</span><span class="sxs-lookup"><span data-stu-id="c6175-151">"a b", "c d" in</span></span><br /><br /> <span data-ttu-id="c6175-152">"a b"、"c d"</span><span class="sxs-lookup"><span data-stu-id="c6175-152">"a bc d"</span></span>|  
+|<span data-ttu-id="c6175-153">`\c` *X*</span><span class="sxs-lookup"><span data-stu-id="c6175-153">`\c` *X*</span></span><br /><br /> <span data-ttu-id="c6175-154">`\c` *x*</span><span class="sxs-lookup"><span data-stu-id="c6175-154">`\c` *x*</span></span>|<span data-ttu-id="c6175-155">*X* または *x*で指定された ASCII の制御文字と一致します。 *X* または *x* は制御文字です。</span><span class="sxs-lookup"><span data-stu-id="c6175-155">Matches the ASCII control character that is specified by *X* or *x*, where *X* or *x* is the letter of the control character.</span></span>|`\cC`|<span data-ttu-id="c6175-156">"\x0003" (Ctrl-C) の "\x0003"</span><span class="sxs-lookup"><span data-stu-id="c6175-156">"\x0003" in "\x0003" (Ctrl-C)</span></span>|  
+|<span data-ttu-id="c6175-157">`\u` *nnnn*</span><span class="sxs-lookup"><span data-stu-id="c6175-157">`\u` *nnnn*</span></span>|<span data-ttu-id="c6175-158">16 進数形式で表される Unicode 文字 ( *nnnn*で表される 4 桁の数字) と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-158">Matches a Unicode character by using hexadecimal representation (exactly four digits, as represented by *nnnn*).</span></span>|`\w\u0020\w`|<span data-ttu-id="c6175-159">"a bc d" の</span><span class="sxs-lookup"><span data-stu-id="c6175-159">"a b", "c d" in</span></span><br /><br /> <span data-ttu-id="c6175-160">"a b"、"c d"</span><span class="sxs-lookup"><span data-stu-id="c6175-160">"a bc d"</span></span>|  
+|`\`|<span data-ttu-id="c6175-161">このトピック内の表に示されているエスケープ文字として認識されない文字が後ろに付いている場合は、その文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-161">When followed by a character that is not recognized as an escaped character in this and other tables in this topic, matches that character.</span></span> <span data-ttu-id="c6175-162">たとえば、 `\*` は `\x2A`と同じであり、 `\.` は `\x2E`と同じです。</span><span class="sxs-lookup"><span data-stu-id="c6175-162">For example, `\*` is the same as `\x2A`, and `\.` is the same as `\x2E`.</span></span> <span data-ttu-id="c6175-163">これにより、正規表現エンジンは言語要素を区別するために (など\*または?) と文字リテラル (によって表される`\*`または`\?`)。</span><span class="sxs-lookup"><span data-stu-id="c6175-163">This allows the regular expression engine to disambiguate language elements (such as \* or ?) and character literals (represented by `\*` or `\?`).</span></span>|`\d+[\+-x\*]\d+`|<span data-ttu-id="c6175-164">「2 + 2」および"3\*"の""(2+2) \* 3\*9"</span><span class="sxs-lookup"><span data-stu-id="c6175-164">"2+2" and "3\*9" in "(2+2) \* 3\*9"</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="c6175-165">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="c6175-165">Back to top</span></span>](#top)  
   
 <a name="character_classes"></a>   
-## 文字クラス  
- 文字クラスは、文字セットのいずれかと一致します。 文字クラスに含まれる言語要素を次の表に示します。 詳細については、「[文字クラス](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)」を参照してください。  
+## <a name="character-classes"></a><span data-ttu-id="c6175-166">文字クラス</span><span class="sxs-lookup"><span data-stu-id="c6175-166">Character Classes</span></span>  
+ <span data-ttu-id="c6175-167">文字クラスは、文字セットのいずれかと一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-167">A character class matches any one of a set of characters.</span></span> <span data-ttu-id="c6175-168">文字クラスに含まれる言語要素を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="c6175-168">Character classes include the language elements listed in the following table.</span></span> <span data-ttu-id="c6175-169">詳細については、「 [Character Classes](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-169">For more information, see [Character Classes](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).</span></span>  
   
-|文字クラス|説明|パターン|一致件数|  
-|-----------|--------|----------|----------|  
-|`[` *character\_group* `]`|*character\_group* 内の任意の 1 文字と一致します。 既定では、大文字と小文字が区別されます。|`[ae]`|"gray" の "a"<br /><br /> "lane" の "a"、"e"|  
-|`[^` *character\_group* `]`|否定: *character\_group* 内にない任意の 1 文字と一致します。 既定では、*character\_group* の文字について、大文字と小文字が区別されます。|`[^aei]`|"reign" の "r"、"g"、"n"|  
-|`[` *先頭* `-` *last* `]`|文字範囲: *first* から *last* までの範囲にある任意の 1 文字と一致します。|`[A-Z]`|"AB123" の "A"、"B"|  
-|`.`|ワイルドカード: \\n を除く任意の 1 文字と一致します。<br /><br /> リテラルのピリオド文字 \(.  または `\u002E`\) と一致させるには、この文字の前にエスケープ文字 \(`\.`\) を指定します。|`a.e`|"nave" の "ave"<br /><br /> "water" の "ate"|  
-|`\p{` *name* `}`|*name* で指定された名前付きブロックまたは Unicode 一般カテゴリ内の任意の 1 文字と一致します。|`\p{Lu}`<br /><br /> `\p{IsCyrillic}`|"City Lights" の "C"、"L"<br /><br /> "ДЖem" の "Д"、"Ж"|  
-|`\P{` *name* `}`|*name* で指定された名前付きブロックまたは Unicode 一般カテゴリにない任意の 1 文字と一致します。|`\P{Lu}`<br /><br /> `\P{IsCyrillic}`|"City" の "i"、"t"、"y"<br /><br /> "ДЖem" の "e"、"m"|  
-|`\w`|単語に使用される任意の文字と一致します。|`\w`|"ID A1.3" の "I"、"D"、"A"、"1"、"3"|  
-|`\W`|単語に使用される文字以外の任意の文字と一致します。|`\W`|"ID A1.3" の " "、"."|  
-|`\s`|空白文字と一致します。|`\w\s`|"ID A1.3" の "D "|  
-|`\S`|空白以外の文字と一致します。|`\s\S`|"int \_\_ctr" の " \_"|  
-|`\d`|10 進数字と一致します。|`\d`|"4 \= IV" の "4"|  
-|`\D`|10 進数以外の任意の文字と一致します。|`\D`|"4 \= IV" の " "、"\="、" "、"I"、"V"|  
+|<span data-ttu-id="c6175-170">文字クラス</span><span class="sxs-lookup"><span data-stu-id="c6175-170">Character class</span></span>|<span data-ttu-id="c6175-171">説明</span><span class="sxs-lookup"><span data-stu-id="c6175-171">Description</span></span>|<span data-ttu-id="c6175-172">パターン</span><span class="sxs-lookup"><span data-stu-id="c6175-172">Pattern</span></span>|<span data-ttu-id="c6175-173">一致件数</span><span class="sxs-lookup"><span data-stu-id="c6175-173">Matches</span></span>|  
+|---------------------|-----------------|-------------|-------------|  
+|<span data-ttu-id="c6175-174">`[` *character_group* `]`</span><span class="sxs-lookup"><span data-stu-id="c6175-174">`[` *character_group* `]`</span></span>|<span data-ttu-id="c6175-175">*character_group*内の任意の 1 文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-175">Matches any single character in *character_group*.</span></span> <span data-ttu-id="c6175-176">既定では、大文字と小文字が区別されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-176">By default, the match is case-sensitive.</span></span>|`[ae]`|<span data-ttu-id="c6175-177">"gray" の "a"</span><span class="sxs-lookup"><span data-stu-id="c6175-177">"a" in "gray"</span></span><br /><br /> <span data-ttu-id="c6175-178">"lane" の "a"、"e"</span><span class="sxs-lookup"><span data-stu-id="c6175-178">"a", "e" in "lane"</span></span>|  
+|<span data-ttu-id="c6175-179">`[^` *character_group* `]`</span><span class="sxs-lookup"><span data-stu-id="c6175-179">`[^` *character_group* `]`</span></span>|<span data-ttu-id="c6175-180">否定: *character_group*内にない任意の 1 文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-180">Negation: Matches any single character that is not in *character_group*.</span></span> <span data-ttu-id="c6175-181">既定では、 *character_group* の文字について、大文字と小文字が区別されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-181">By default, characters in *character_group* are case-sensitive.</span></span>|`[^aei]`|<span data-ttu-id="c6175-182">"reign" の "r"、"g"、"n"</span><span class="sxs-lookup"><span data-stu-id="c6175-182">"r", "g", "n" in "reign"</span></span>|  
+|<span data-ttu-id="c6175-183">`[` *先頭* `-` *last* `]`</span><span class="sxs-lookup"><span data-stu-id="c6175-183">`[` *first* `-` *last* `]`</span></span>|<span data-ttu-id="c6175-184">文字範囲: *first* から *last*までの範囲にある任意の 1 文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-184">Character range: Matches any single character in the range from *first* to *last*.</span></span>|`[A-Z]`|<span data-ttu-id="c6175-185">"AB123" の "A"、"B"</span><span class="sxs-lookup"><span data-stu-id="c6175-185">"A", "B" in "AB123"</span></span>|  
+|`.`|<span data-ttu-id="c6175-186">ワイルドカード: \n を除く任意の 1 文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-186">Wildcard: Matches any single character except \n.</span></span><br /><br /> <span data-ttu-id="c6175-187">リテラルのピリオド文字 (.</span><span class="sxs-lookup"><span data-stu-id="c6175-187">To match a literal period character (.</span></span> <span data-ttu-id="c6175-188">または `\u002E`) と一致させるには、この文字の前にエスケープ文字 (`\.`) を指定します。</span><span class="sxs-lookup"><span data-stu-id="c6175-188">or `\u002E`), you must precede it with the escape character (`\.`).</span></span>|`a.e`|<span data-ttu-id="c6175-189">"nave" の "ave"</span><span class="sxs-lookup"><span data-stu-id="c6175-189">"ave" in "nave"</span></span><br /><br /> <span data-ttu-id="c6175-190">"water" の "ate"</span><span class="sxs-lookup"><span data-stu-id="c6175-190">"ate" in "water"</span></span>|  
+|<span data-ttu-id="c6175-191">`\p{` *name* `}`</span><span class="sxs-lookup"><span data-stu-id="c6175-191">`\p{` *name* `}`</span></span>|<span data-ttu-id="c6175-192">*name*で指定された名前付きブロックまたは Unicode 一般カテゴリ内の任意の 1 文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-192">Matches any single character in the Unicode general category or named block specified by *name*.</span></span>|`\p{Lu}`<br /><br /> `\p{IsCyrillic}`|<span data-ttu-id="c6175-193">"City Lights" の "C"、"L"</span><span class="sxs-lookup"><span data-stu-id="c6175-193">"C", "L" in "City Lights"</span></span><br /><br /> <span data-ttu-id="c6175-194">"ДЖem" の "Д"、"Ж"</span><span class="sxs-lookup"><span data-stu-id="c6175-194">"Д", "Ж" in "ДЖem"</span></span>|  
+|<span data-ttu-id="c6175-195">`\P{` *name* `}`</span><span class="sxs-lookup"><span data-stu-id="c6175-195">`\P{` *name* `}`</span></span>|<span data-ttu-id="c6175-196">*name*で指定された名前付きブロックまたは Unicode 一般カテゴリにない任意の 1 文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-196">Matches any single character that is not in the Unicode general category or named block specified by *name*.</span></span>|`\P{Lu}`<br /><br /> `\P{IsCyrillic}`|<span data-ttu-id="c6175-197">"City" の "i"、"t"、"y"</span><span class="sxs-lookup"><span data-stu-id="c6175-197">"i", "t", "y" in "City"</span></span><br /><br /> <span data-ttu-id="c6175-198">"ДЖem" の "e"、"m"</span><span class="sxs-lookup"><span data-stu-id="c6175-198">"e", "m" in "ДЖem"</span></span>|  
+|`\w`|<span data-ttu-id="c6175-199">単語に使用される任意の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-199">Matches any word character.</span></span>|`\w`|<span data-ttu-id="c6175-200">"ID A1.3" の "I"、"D"、"A"、"1"、"3"</span><span class="sxs-lookup"><span data-stu-id="c6175-200">"I", "D", "A", "1", "3" in "ID A1.3"</span></span>|  
+|`\W`|<span data-ttu-id="c6175-201">単語に使用される文字以外の任意の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-201">Matches any non-word character.</span></span>|`\W`|<span data-ttu-id="c6175-202">"ID A1.3" の " "、"."</span><span class="sxs-lookup"><span data-stu-id="c6175-202">" ", "." in "ID A1.3"</span></span>|  
+|`\s`|<span data-ttu-id="c6175-203">空白文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-203">Matches any white-space character.</span></span>|`\w\s`|<span data-ttu-id="c6175-204">"ID A1.3" の "D "</span><span class="sxs-lookup"><span data-stu-id="c6175-204">"D " in "ID A1.3"</span></span>|  
+|`\S`|<span data-ttu-id="c6175-205">空白以外の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-205">Matches any non-white-space character.</span></span>|`\s\S`|<span data-ttu-id="c6175-206">"int \__ctr" の " _"</span><span class="sxs-lookup"><span data-stu-id="c6175-206">" _" in "int \__ctr"</span></span>|  
+|`\d`|<span data-ttu-id="c6175-207">10 進数字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-207">Matches any decimal digit.</span></span>|`\d`|<span data-ttu-id="c6175-208">"4 = IV" の "4"</span><span class="sxs-lookup"><span data-stu-id="c6175-208">"4" in "4 = IV"</span></span>|  
+|`\D`|<span data-ttu-id="c6175-209">10 進数以外の任意の文字と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-209">Matches any character other than a decimal digit.</span></span>|`\D`|<span data-ttu-id="c6175-210">"4 = IV" の " "、"="、" "、"I"、"V"</span><span class="sxs-lookup"><span data-stu-id="c6175-210">" ", "=", " ", "I", "V" in "4 = IV"</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="c6175-211">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="c6175-211">Back to top</span></span>](#top)  
   
 <a name="atomic_zerowidth_assertions"></a>   
-## アンカー  
- アンカー \(アトミック ゼロ幅アサーション\) を使用すると、文字列内での現在位置によって一致するかどうかが決まります。しかし、エンジンで後方の文字列が読み込まれたり、複数の文字と一致したりすることはありません。 アンカーであるメタ文字を次の表に示します。 詳細については、「[アンカー](../../../docs/standard/base-types/anchors-in-regular-expressions.md)」を参照してください。  
+## <a name="anchors"></a><span data-ttu-id="c6175-212">アンカー</span><span class="sxs-lookup"><span data-stu-id="c6175-212">Anchors</span></span>  
+ <span data-ttu-id="c6175-213">アンカー (アトミック ゼロ幅アサーション) を使用すると、文字列内での現在位置によって一致するかどうかが決まります。しかし、エンジンで後方の文字列が読み込まれたり、複数の文字と一致したりすることはありません。</span><span class="sxs-lookup"><span data-stu-id="c6175-213">Anchors, or atomic zero-width assertions, cause a match to succeed or fail depending on the current position in the string, but they do not cause the engine to advance through the string or consume characters.</span></span> <span data-ttu-id="c6175-214">アンカーであるメタ文字を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="c6175-214">The metacharacters listed in the following table are anchors.</span></span> <span data-ttu-id="c6175-215">詳細については、「 [アンカー](../../../docs/standard/base-types/anchors-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-215">For more information, see [Anchors](../../../docs/standard/base-types/anchors-in-regular-expressions.md).</span></span>  
   
-|アサーション|説明|パターン|一致件数|  
-|------------|--------|----------|----------|  
-|`^`|文字列または行の先頭で一致する必要があります。|`^\d{3}`|"901"<br /><br /> \("901\-333\-" の\)|  
-|`$`|文字列の末尾で一致するか、行または文字列の末尾にある `\n` の前で一致する必要があります。|`-\d{3}$`|"\-333"<br /><br /> \("\-901\-333" の\)|  
-|`\A`|文字列の先頭で一致する必要があります。|`\A\d{3}`|"901"<br /><br /> \("901\-333\-" の\)|  
-|`\Z`|文字列の末尾で一致するか、文字列の末尾にある `\n` の前で一致する必要があります。|`-\d{3}\Z`|"\-333"<br /><br /> \("\-901\-333" の\)|  
-|`\z`|文字列の末尾で一致する必要があります。|`-\d{3}\z`|"\-333"<br /><br /> \("\-901\-333" の\)|  
-|`\G`|前回の一致が終了した位置で一致する必要があります。|`\G\(\d\)`|"\(1\)\(3\)\(5\)\[7\]\(9\)" の "\(1\)"、"\(3\)"、"\(5\)"|  
-|`\b`|`\w` \(英数字\) と `\W` \(英数字以外\) 文字の境界位置で一致する必要があります。|`\b\w+\s\w+\b`|"them theme them them" の "them theme"|  
-|`\B`|`\b` 境界以外で一致する必要があります。|`\Bend\w*\b`|"end sends endure lender" の "ends"、"ender"|  
+|<span data-ttu-id="c6175-216">アサーション</span><span class="sxs-lookup"><span data-stu-id="c6175-216">Assertion</span></span>|<span data-ttu-id="c6175-217">説明</span><span class="sxs-lookup"><span data-stu-id="c6175-217">Description</span></span>|<span data-ttu-id="c6175-218">パターン</span><span class="sxs-lookup"><span data-stu-id="c6175-218">Pattern</span></span>|<span data-ttu-id="c6175-219">一致件数</span><span class="sxs-lookup"><span data-stu-id="c6175-219">Matches</span></span>|  
+|---------------|-----------------|-------------|-------------|  
+|`^`|<span data-ttu-id="c6175-220">文字列または行の先頭で一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6175-220">The match must start at the beginning of the string or line.</span></span>|`^\d{3}`|<span data-ttu-id="c6175-221">"901"</span><span class="sxs-lookup"><span data-stu-id="c6175-221">"901" in</span></span><br /><br /> <span data-ttu-id="c6175-222">("901-333-" の)</span><span class="sxs-lookup"><span data-stu-id="c6175-222">"901-333-"</span></span>|  
+|`$`|<span data-ttu-id="c6175-223">文字列の末尾で一致するか、行または文字列の末尾にある `\n` の前で一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6175-223">The match must occur at the end of the string or before `\n` at the end of the line or string.</span></span>|`-\d{3}$`|<span data-ttu-id="c6175-224">"-333"</span><span class="sxs-lookup"><span data-stu-id="c6175-224">"-333" in</span></span><br /><br /> <span data-ttu-id="c6175-225">("-901-333" の)</span><span class="sxs-lookup"><span data-stu-id="c6175-225">"-901-333"</span></span>|  
+|`\A`|<span data-ttu-id="c6175-226">文字列の先頭で一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6175-226">The match must occur at the start of the string.</span></span>|`\A\d{3}`|<span data-ttu-id="c6175-227">"901"</span><span class="sxs-lookup"><span data-stu-id="c6175-227">"901" in</span></span><br /><br /> <span data-ttu-id="c6175-228">("901-333-" の)</span><span class="sxs-lookup"><span data-stu-id="c6175-228">"901-333-"</span></span>|  
+|`\Z`|<span data-ttu-id="c6175-229">文字列の末尾で一致するか、文字列の末尾にある `\n` の前で一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6175-229">The match must occur at the end of the string or before `\n` at the end of the string.</span></span>|`-\d{3}\Z`|<span data-ttu-id="c6175-230">"-333"</span><span class="sxs-lookup"><span data-stu-id="c6175-230">"-333" in</span></span><br /><br /> <span data-ttu-id="c6175-231">("-901-333" の)</span><span class="sxs-lookup"><span data-stu-id="c6175-231">"-901-333"</span></span>|  
+|`\z`|<span data-ttu-id="c6175-232">文字列の末尾で一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6175-232">The match must occur at the end of the string.</span></span>|`-\d{3}\z`|<span data-ttu-id="c6175-233">"-333"</span><span class="sxs-lookup"><span data-stu-id="c6175-233">"-333" in</span></span><br /><br /> <span data-ttu-id="c6175-234">("-901-333" の)</span><span class="sxs-lookup"><span data-stu-id="c6175-234">"-901-333"</span></span>|  
+|`\G`|<span data-ttu-id="c6175-235">前回の一致が終了した位置で一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6175-235">The match must occur at the point where the previous match ended.</span></span>|`\G\(\d\)`|<span data-ttu-id="c6175-236">"(1)(3)(5)[7](9\)" の "(1)"、"(3)"、"(5)"</span><span class="sxs-lookup"><span data-stu-id="c6175-236">"(1)", "(3)", "(5)" in "(1)(3)(5)[7](9\)"</span></span>|  
+|`\b`|<span data-ttu-id="c6175-237">`\w` (英数字) と `\W` (英数字以外) 文字の境界位置で一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6175-237">The match must occur on a boundary between a `\w` (alphanumeric) and a `\W` (nonalphanumeric) character.</span></span>|`\b\w+\s\w+\b`|<span data-ttu-id="c6175-238">"them theme them them" の "them theme"</span><span class="sxs-lookup"><span data-stu-id="c6175-238">"them theme", "them them" in "them theme them them"</span></span>|  
+|`\B`|<span data-ttu-id="c6175-239">`\b` 境界以外で一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6175-239">The match must not occur on a `\b` boundary.</span></span>|`\Bend\w*\b`|<span data-ttu-id="c6175-240">"end sends endure lender" の "ends"、"ender"</span><span class="sxs-lookup"><span data-stu-id="c6175-240">"ends", "ender" in "end sends endure lender"</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="c6175-241">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="c6175-241">Back to top</span></span>](#top)  
   
 <a name="grouping_constructs"></a>   
-## グループ化構成体  
- グループ化構成体は、正規表現の部分式を表し、通常は入力文字列の部分文字列をキャプチャします。 グループ化構成体に含まれる言語要素を次の表に示します。 詳細については、「[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」を参照してください。  
+## <a name="grouping-constructs"></a><span data-ttu-id="c6175-242">グループ化構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-242">Grouping Constructs</span></span>  
+ <span data-ttu-id="c6175-243">グループ化構成体は、正規表現の部分式を表し、通常は入力文字列の部分文字列をキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="c6175-243">Grouping constructs delineate subexpressions of a regular expression and typically capture substrings of an input string.</span></span> <span data-ttu-id="c6175-244">グループ化構成体に含まれる言語要素を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="c6175-244">Grouping constructs include the language elements listed in the following table.</span></span> <span data-ttu-id="c6175-245">詳細については、「 [Grouping Constructs](grouping-constructs-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-245">For more information, see [Grouping Constructs](grouping-constructs-in-regular-expressions.md).</span></span>  
   
-|グループ化構成体|説明|パターン|一致件数|  
-|--------------|--------|----------|----------|  
-|`(` *subexpression* `)`|一致した部分式をキャプチャして、1 から始まる序数を代入します。|`(\w)\1`|"deep" の "ee"|  
-|`(?<` *name* `>` *subexpression*`)`|一致した部分式を名前付きグループにキャプチャします。|`(?<double>\w)\k<double>`|"deep" の "ee"|  
-|`(?<` *name1* `-` *name2* `>` *subexpression*`)`|グループ定義の均等化を定義します。 詳細については、「[グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」の「グループ定義の均等化」を参照してください。|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|"3\+2^\(\(1\-3\)\*\(3\-1\)\)" の "\(\(1\-3\)\*\(3\-1\)\)"|  
-|`(?:` *subexpression*`)`|非キャプチャ グループを定義します。|`Write(?:Line)?`|"Console.WriteLine\(\)" の "WriteLine"<br /><br /> "Console.Write\(value\)" の "Write"|  
-|`(?imnsx-imnsx:` *subexpression*`)`|指定したオプションを *subexpression* に適用するか、または無効にします。 詳細については、「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」を参照してください。|`A\d{2}(?i:\w+)\b`|"A12xl A12XL a12xl" の "A12xl"、"A12XL"|  
-|`(?=` *subexpression*`)`|ゼロ幅の肯定先読みアサーションです。|`\w+(?=\.)`|"He is. The dog ran. The sun is out." の "is"、"ran"、および "out"|  
-|`(?!` *subexpression*`)`|ゼロ幅の否定先読みアサーションです。|`\b(?!un)\w+\b`|"unsure sure unity used" の "sure"、"used"|  
-|`(?<=` *subexpression*`)`|ゼロ幅の正の後読みアサーションです。|`(?<=19)\d{2}\b`|"1851 1999 1950 1905 2003" の "99"、"50"、"05"|  
-|`(?<!` *subexpression*`)`|ゼロ幅の負の後読みアサーションです。|`(?<!19)\d{2}\b`|"1851 1999 1950 1905 2003" の "51"、"03"|  
-|`(?>` *subexpression*`)`|非バックトラッキング \("最長"\) 部分式です。|`[13579](?>A+B+)`|"1ABB 3ABBC 5AB 5AC" の "1ABB"、"3ABB"、および "5AB"|  
+|<span data-ttu-id="c6175-246">グループ化構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-246">Grouping construct</span></span>|<span data-ttu-id="c6175-247">説明</span><span class="sxs-lookup"><span data-stu-id="c6175-247">Description</span></span>|<span data-ttu-id="c6175-248">パターン</span><span class="sxs-lookup"><span data-stu-id="c6175-248">Pattern</span></span>|<span data-ttu-id="c6175-249">一致件数</span><span class="sxs-lookup"><span data-stu-id="c6175-249">Matches</span></span>|  
+|------------------------|-----------------|-------------|-------------|  
+|<span data-ttu-id="c6175-250">`(` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-250">`(` *subexpression* `)`</span></span>|<span data-ttu-id="c6175-251">一致した部分式をキャプチャして、1 から始まる序数を代入します。</span><span class="sxs-lookup"><span data-stu-id="c6175-251">Captures the matched subexpression and assigns it a one-based ordinal number.</span></span>|`(\w)\1`|<span data-ttu-id="c6175-252">"deep" の "ee"</span><span class="sxs-lookup"><span data-stu-id="c6175-252">"ee" in "deep"</span></span>|  
+|<span data-ttu-id="c6175-253">`(?<` *name* `>` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-253">`(?<` *name* `>` *subexpression* `)`</span></span>|<span data-ttu-id="c6175-254">一致した部分式を名前付きグループにキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="c6175-254">Captures the matched subexpression into a named group.</span></span>|`(?<double>\w)\k<double>`|<span data-ttu-id="c6175-255">"deep" の "ee"</span><span class="sxs-lookup"><span data-stu-id="c6175-255">"ee" in "deep"</span></span>|  
+|<span data-ttu-id="c6175-256">`(?<` *name1* `-` *name2* `>` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-256">`(?<` *name1* `-` *name2* `>` *subexpression* `)`</span></span>|<span data-ttu-id="c6175-257">グループ定義の均等化を定義します。</span><span class="sxs-lookup"><span data-stu-id="c6175-257">Defines a balancing group definition.</span></span> <span data-ttu-id="c6175-258">詳細については、「 [Grouping Constructs](grouping-constructs-in-regular-expressions.md)」の「グループ定義の均等化」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-258">For more information, see the "Balancing Group Definition" section in [Grouping Constructs](grouping-constructs-in-regular-expressions.md).</span></span>|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|<span data-ttu-id="c6175-259">"3+2^((1-3)\*(3-1))" の "((1-3)\*(3-1))"</span><span class="sxs-lookup"><span data-stu-id="c6175-259">"((1-3)\*(3-1))" in "3+2^((1-3)\*(3-1))"</span></span>|  
+|<span data-ttu-id="c6175-260">`(?:` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-260">`(?:` *subexpression* `)`</span></span>|<span data-ttu-id="c6175-261">非キャプチャ グループを定義します。</span><span class="sxs-lookup"><span data-stu-id="c6175-261">Defines a noncapturing group.</span></span>|`Write(?:Line)?`|<span data-ttu-id="c6175-262">"Console.WriteLine()" の "WriteLine"</span><span class="sxs-lookup"><span data-stu-id="c6175-262">"WriteLine" in "Console.WriteLine()"</span></span><br /><br /> <span data-ttu-id="c6175-263">"Console.Write(value)" の "Write"</span><span class="sxs-lookup"><span data-stu-id="c6175-263">"Write" in "Console.Write(value)"</span></span>|  
+|<span data-ttu-id="c6175-264">`(?imnsx-imnsx:` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-264">`(?imnsx-imnsx:` *subexpression* `)`</span></span>|<span data-ttu-id="c6175-265">指定したオプションを *subexpression*に適用するか、または無効にします。</span><span class="sxs-lookup"><span data-stu-id="c6175-265">Applies or disables the specified options within *subexpression*.</span></span> <span data-ttu-id="c6175-266">詳細については、「 [Regular Expression Options](regular-expression-options.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-266">For more information, see [Regular Expression Options](regular-expression-options.md).</span></span>|`A\d{2}(?i:\w+)\b`|<span data-ttu-id="c6175-267">"A12xl A12XL a12xl" の "A12xl"、"A12XL"</span><span class="sxs-lookup"><span data-stu-id="c6175-267">"A12xl", "A12XL" in "A12xl A12XL a12xl"</span></span>|  
+|<span data-ttu-id="c6175-268">`(?=` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-268">`(?=` *subexpression* `)`</span></span>|<span data-ttu-id="c6175-269">ゼロ幅の肯定先読みアサーションです。</span><span class="sxs-lookup"><span data-stu-id="c6175-269">Zero-width positive lookahead assertion.</span></span>|`\w+(?=\.)`|<span data-ttu-id="c6175-270">"He is.</span><span class="sxs-lookup"><span data-stu-id="c6175-270">"is", "ran", and "out" in "He is.</span></span> <span data-ttu-id="c6175-271">The dog ran.</span><span class="sxs-lookup"><span data-stu-id="c6175-271">The dog ran.</span></span> <span data-ttu-id="c6175-272">The sun is out." の "is"、"ran"、および "out"</span><span class="sxs-lookup"><span data-stu-id="c6175-272">The sun is out."</span></span>|  
+|<span data-ttu-id="c6175-273">`(?!` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-273">`(?!` *subexpression* `)`</span></span>|<span data-ttu-id="c6175-274">ゼロ幅の否定先読みアサーションです。</span><span class="sxs-lookup"><span data-stu-id="c6175-274">Zero-width negative lookahead assertion.</span></span>|`\b(?!un)\w+\b`|<span data-ttu-id="c6175-275">"unsure sure unity used" の "sure"、"used"</span><span class="sxs-lookup"><span data-stu-id="c6175-275">"sure", "used" in "unsure sure unity used"</span></span>|  
+|<span data-ttu-id="c6175-276">`(?<=` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-276">`(?<=` *subexpression* `)`</span></span>|<span data-ttu-id="c6175-277">ゼロ幅の正の後読みアサーションです。</span><span class="sxs-lookup"><span data-stu-id="c6175-277">Zero-width positive lookbehind assertion.</span></span>|`(?<=19)\d{2}\b`|<span data-ttu-id="c6175-278">"1851 1999 1950 1905 2003" の "99"、"50"、"05"</span><span class="sxs-lookup"><span data-stu-id="c6175-278">"99", "50", "05" in "1851 1999 1950 1905 2003"</span></span>|  
+|<span data-ttu-id="c6175-279">`(?<!` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-279">`(?<!` *subexpression* `)`</span></span>|<span data-ttu-id="c6175-280">ゼロ幅の負の後読みアサーションです。</span><span class="sxs-lookup"><span data-stu-id="c6175-280">Zero-width negative lookbehind assertion.</span></span>|`(?<!19)\d{2}\b`|<span data-ttu-id="c6175-281">"1851 1999 1950 1905 2003" の "51"、"03"</span><span class="sxs-lookup"><span data-stu-id="c6175-281">"51", "03" in "1851 1999 1950 1905 2003"</span></span>|  
+|<span data-ttu-id="c6175-282">`(?>` *subexpression* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-282">`(?>` *subexpression* `)`</span></span>|<span data-ttu-id="c6175-283">非バックトラッキング ("最長") 部分式です。</span><span class="sxs-lookup"><span data-stu-id="c6175-283">Nonbacktracking (or "greedy") subexpression.</span></span>|`[13579](?>A+B+)`|<span data-ttu-id="c6175-284">"1ABB 3ABBC 5AB 5AC" の "1ABB"、"3ABB"、および "5AB"</span><span class="sxs-lookup"><span data-stu-id="c6175-284">"1ABB", "3ABB", and "5AB" in "1ABB 3ABBC 5AB 5AC"</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="c6175-285">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="c6175-285">Back to top</span></span>](#top)  
   
 <a name="quantifiers"></a>   
-## 限定子  
- 量指定子は、一致するために、入力文字列中に直前の要素 \(文字、グループ、または文字クラス\) がいくつ存在しなければならないかを指定します。 量指定子に含まれる言語要素を次の表に示します。 詳細については、「[限定子](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)」を参照してください。  
+## <a name="quantifiers"></a><span data-ttu-id="c6175-286">量指定子</span><span class="sxs-lookup"><span data-stu-id="c6175-286">Quantifiers</span></span>  
+ <span data-ttu-id="c6175-287">量指定子は、一致するために、入力文字列中に直前の要素 (文字、グループ、または文字クラス) がいくつ存在しなければならないかを指定します。</span><span class="sxs-lookup"><span data-stu-id="c6175-287">A quantifier specifies how many instances of the previous element (which can be a character, a group, or a character class) must be present in the input string for a match to occur.</span></span> <span data-ttu-id="c6175-288">量指定子に含まれる言語要素を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="c6175-288">Quantifiers include the language elements listed in the following table.</span></span> <span data-ttu-id="c6175-289">詳細については、「 [Quantifiers](quantifiers-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-289">For more information, see [Quantifiers](quantifiers-in-regular-expressions.md).</span></span>  
   
-|量指定子|説明|パターン|一致件数|  
-|----------|--------|----------|----------|  
-|`*`|直前の要素と 0 回以上一致します。|`\d*\.\d`|".0"、"19.9"、"219.9"|  
-|`+`|直前の要素と 1 回以上一致します。|`"be+"`|"been" の "bee"、"bent" の "be"|  
-|`?`|直前の要素と 0 回または 1 回一致します。|`"rai?n"`|"ran"、"rain"|  
-|`{` *n* `}`|直前の要素とちょうど *n* 回一致します。|`",\d{3}"`|"1,043.6" の ",043"、"9,876,543,210" の ",876"、",543"、および ",210"|  
-|`{` *n* `,}`|直前の要素と *n* 回以上一致します。|`"\d{2,}"`|"166"、"29"、"1930"|  
-|`{` *n* `,` *分* `}`|直前の要素と *n* 回以上 *m* 回以下で一致します。|`"\d{3,5}"`|"166"、"17668"<br /><br /> "193024" の "19302"|  
-|`*?`|直前の要素と 0 回以上 \(ただし、できるだけ少ない回数\) 一致します。|`\d*?\.\d`|".0"、"19.9"、"219.9"|  
-|`+?`|直前の要素と 1 回以上 \(ただし、できるだけ少ない回数\) 一致します。|`"be+?"`|"been" の "be"、"bent" の "be"|  
-|`??`|直前の要素と 0 回または 1 回 \(ただし、できるだけ少ない回数\) 一致します。|`"rai??n"`|"ran"、"rain"|  
-|`{` *n* `}?`|直前の要素とちょうど *n* 回一致します。|`",\d{3}?"`|"1,043.6" の ",043"、"9,876,543,210" の ",876"、",543"、および ",210"|  
-|`{` *n* `,}?`|直前の要素と *n* 回以上 \(ただし、できるだけ少ない回数\) 一致します。|`"\d{2,}?"`|"166"、"29"、"1930"|  
-|`{` *n* `,` *分* `}?`|直前の要素と *n* 回以上 *m* 回以下 \(ただし、できるだけ少ない回数\) 一致します。|`"\d{3,5}?"`|"166"、"17668"<br /><br /> "193024" の "193"、"024"|  
+|<span data-ttu-id="c6175-290">量指定子</span><span class="sxs-lookup"><span data-stu-id="c6175-290">Quantifier</span></span>|<span data-ttu-id="c6175-291">説明</span><span class="sxs-lookup"><span data-stu-id="c6175-291">Description</span></span>|<span data-ttu-id="c6175-292">パターン</span><span class="sxs-lookup"><span data-stu-id="c6175-292">Pattern</span></span>|<span data-ttu-id="c6175-293">一致件数</span><span class="sxs-lookup"><span data-stu-id="c6175-293">Matches</span></span>|  
+|----------------|-----------------|-------------|-------------|  
+|`*`|<span data-ttu-id="c6175-294">直前の要素と 0 回以上一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-294">Matches the previous element zero or more times.</span></span>|`\d*\.\d`|<span data-ttu-id="c6175-295">".0"、"19.9"、"219.9"</span><span class="sxs-lookup"><span data-stu-id="c6175-295">".0", "19.9", "219.9"</span></span>|  
+|`+`|<span data-ttu-id="c6175-296">直前の要素と 1 回以上一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-296">Matches the previous element one or more times.</span></span>|`"be+"`|<span data-ttu-id="c6175-297">"been" の "bee"、"bent" の "be"</span><span class="sxs-lookup"><span data-stu-id="c6175-297">"bee" in "been", "be" in "bent"</span></span>|  
+|`?`|<span data-ttu-id="c6175-298">直前の要素と 0 回または 1 回一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-298">Matches the previous element zero or one time.</span></span>|`"rai?n"`|<span data-ttu-id="c6175-299">"ran"、"rain"</span><span class="sxs-lookup"><span data-stu-id="c6175-299">"ran", "rain"</span></span>|  
+|<span data-ttu-id="c6175-300">`{` *n* `}`</span><span class="sxs-lookup"><span data-stu-id="c6175-300">`{` *n* `}`</span></span>|<span data-ttu-id="c6175-301">直前の要素とちょうど *n* 回一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-301">Matches the previous element exactly *n* times.</span></span>|`",\d{3}"`|<span data-ttu-id="c6175-302">"1,043.6" の ",043"、"9,876,543,210" の ",876"、",543"、および ",210"</span><span class="sxs-lookup"><span data-stu-id="c6175-302">",043" in "1,043.6", ",876", ",543", and ",210" in "9,876,543,210"</span></span>|  
+|<span data-ttu-id="c6175-303">`{` *n* `,}`</span><span class="sxs-lookup"><span data-stu-id="c6175-303">`{` *n* `,}`</span></span>|<span data-ttu-id="c6175-304">直前の要素と *n* 回一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-304">Matches the previous element at least *n* times.</span></span>|`"\d{2,}"`|<span data-ttu-id="c6175-305">"166"、"29"、"1930"</span><span class="sxs-lookup"><span data-stu-id="c6175-305">"166", "29", "1930"</span></span>|  
+|<span data-ttu-id="c6175-306">`{` *n* `,` *分* `}`</span><span class="sxs-lookup"><span data-stu-id="c6175-306">`{` *n* `,` *m* `}`</span></span>|<span data-ttu-id="c6175-307">直前の要素と *n* 回以上 *分* 回一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-307">Matches the previous element at least *n* times, but no more than *m* times.</span></span>|`"\d{3,5}"`|<span data-ttu-id="c6175-308">"166"、"17668"</span><span class="sxs-lookup"><span data-stu-id="c6175-308">"166", "17668"</span></span><br /><br /> <span data-ttu-id="c6175-309">"193024" の "19302"</span><span class="sxs-lookup"><span data-stu-id="c6175-309">"19302" in "193024"</span></span>|  
+|`*?`|<span data-ttu-id="c6175-310">直前の要素と 0 回以上 (ただし、できるだけ少ない回数) 一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-310">Matches the previous element zero or more times, but as few times as possible.</span></span>|`\d*?\.\d`|<span data-ttu-id="c6175-311">".0"、"19.9"、"219.9"</span><span class="sxs-lookup"><span data-stu-id="c6175-311">".0", "19.9", "219.9"</span></span>|  
+|`+?`|<span data-ttu-id="c6175-312">直前の要素と 1 回以上 (ただし、できるだけ少ない回数) 一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-312">Matches the previous element one or more times, but as few times as possible.</span></span>|`"be+?"`|<span data-ttu-id="c6175-313">"been" の "be"、"bent" の "be"</span><span class="sxs-lookup"><span data-stu-id="c6175-313">"be" in "been", "be" in "bent"</span></span>|  
+|`??`|<span data-ttu-id="c6175-314">直前の要素と 0 回または 1 回 (ただし、できるだけ少ない回数) 一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-314">Matches the previous element zero or one time, but as few times as possible.</span></span>|`"rai??n"`|<span data-ttu-id="c6175-315">"ran"、"rain"</span><span class="sxs-lookup"><span data-stu-id="c6175-315">"ran", "rain"</span></span>|  
+|<span data-ttu-id="c6175-316">`{` *n* `}?`</span><span class="sxs-lookup"><span data-stu-id="c6175-316">`{` *n* `}?`</span></span>|<span data-ttu-id="c6175-317">直前の要素とちょうど *n* 回一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-317">Matches the preceding element exactly *n* times.</span></span>|`",\d{3}?"`|<span data-ttu-id="c6175-318">"1,043.6" の ",043"、"9,876,543,210" の ",876"、",543"、および ",210"</span><span class="sxs-lookup"><span data-stu-id="c6175-318">",043" in "1,043.6", ",876", ",543", and ",210" in "9,876,543,210"</span></span>|  
+|<span data-ttu-id="c6175-319">`{` *n* `,}?`</span><span class="sxs-lookup"><span data-stu-id="c6175-319">`{` *n* `,}?`</span></span>|<span data-ttu-id="c6175-320">直前の要素と *n* 回以上 (ただし、できるだけ少ない回数) 一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-320">Matches the previous element at least *n* times, but as few times as possible.</span></span>|`"\d{2,}?"`|<span data-ttu-id="c6175-321">"166"、"29"、"1930"</span><span class="sxs-lookup"><span data-stu-id="c6175-321">"166", "29", "1930"</span></span>|  
+|<span data-ttu-id="c6175-322">`{` *n* `,` *分* `}?`</span><span class="sxs-lookup"><span data-stu-id="c6175-322">`{` *n* `,` *m* `}?`</span></span>|<span data-ttu-id="c6175-323">直前の要素と *n* 回以上 *分* 回以上 (ただし、できるだけ少ない回数) 一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-323">Matches the previous element between *n* and *m* times, but as few times as possible.</span></span>|`"\d{3,5}?"`|<span data-ttu-id="c6175-324">"166"、"17668"</span><span class="sxs-lookup"><span data-stu-id="c6175-324">"166", "17668"</span></span><br /><br /> <span data-ttu-id="c6175-325">"193024" の "193"、"024"</span><span class="sxs-lookup"><span data-stu-id="c6175-325">"193", "024" in "193024"</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="c6175-326">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="c6175-326">Back to top</span></span>](#top)  
   
 <a name="backreference_constructs"></a>   
-## 前方参照構成体  
- 前方参照を使用すると、以前に一致した部分式を、同じ正規表現内で引き続き識別できます。 .NET Framework の正規表現でサポートされている前方参照構成体を、次の表に示します。 詳細については、「[前方参照構成体](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md)」を参照してください。  
+## <a name="backreference-constructs"></a><span data-ttu-id="c6175-327">前方参照構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-327">Backreference Constructs</span></span>  
+ <span data-ttu-id="c6175-328">前方参照を使用すると、以前に一致した部分式を、同じ正規表現内で引き続き識別できます。</span><span class="sxs-lookup"><span data-stu-id="c6175-328">A backreference allows a previously matched subexpression to be identified subsequently in the same regular expression.</span></span> <span data-ttu-id="c6175-329">次の表は、.NET の正規表現でサポートされている前方参照構成体を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="c6175-329">The following table lists the backreference constructs supported by regular expressions in .NET.</span></span> <span data-ttu-id="c6175-330">詳細については、「 [Backreference Constructs](backreference-constructs-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-330">For more information, see [Backreference Constructs](backreference-constructs-in-regular-expressions.md).</span></span>  
   
-|前方参照構成体|説明|パターン|一致件数|  
-|-------------|--------|----------|----------|  
-|`\` *number*|前方参照。 番号付き部分式の値に一致します。|`(\w)\1`|"seek" の "ee"|  
-|`\k<` *name* `>`|名前付き前方参照。 名前付きの式の値に一致します。|`(?<char>\w)\k<char>`|"seek" の "ee"|  
+|<span data-ttu-id="c6175-331">前方参照構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-331">Backreference construct</span></span>|<span data-ttu-id="c6175-332">説明</span><span class="sxs-lookup"><span data-stu-id="c6175-332">Description</span></span>|<span data-ttu-id="c6175-333">パターン</span><span class="sxs-lookup"><span data-stu-id="c6175-333">Pattern</span></span>|<span data-ttu-id="c6175-334">一致件数</span><span class="sxs-lookup"><span data-stu-id="c6175-334">Matches</span></span>|  
+|-----------------------------|-----------------|-------------|-------------|  
+|<span data-ttu-id="c6175-335">`\` *number*</span><span class="sxs-lookup"><span data-stu-id="c6175-335">`\` *number*</span></span>|<span data-ttu-id="c6175-336">前方参照。</span><span class="sxs-lookup"><span data-stu-id="c6175-336">Backreference.</span></span> <span data-ttu-id="c6175-337">番号付き部分式の値に一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-337">Matches the value of a numbered subexpression.</span></span>|`(\w)\1`|<span data-ttu-id="c6175-338">"seek" の "ee"</span><span class="sxs-lookup"><span data-stu-id="c6175-338">"ee" in "seek"</span></span>|  
+|<span data-ttu-id="c6175-339">`\k<` *name* `>`</span><span class="sxs-lookup"><span data-stu-id="c6175-339">`\k<` *name* `>`</span></span>|<span data-ttu-id="c6175-340">名前付き前方参照。</span><span class="sxs-lookup"><span data-stu-id="c6175-340">Named backreference.</span></span> <span data-ttu-id="c6175-341">名前付きの式の値に一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-341">Matches the value of a named expression.</span></span>|`(?<char>\w)\k<char>`|<span data-ttu-id="c6175-342">"seek" の "ee"</span><span class="sxs-lookup"><span data-stu-id="c6175-342">"ee" in "seek"</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="c6175-343">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="c6175-343">Back to top</span></span>](#top)  
   
 <a name="alternation_constructs"></a>   
-## 代替構成体  
- 代替構成体は、OR 一致を有効にするように正規表現を変更します。 これらの構成体に含まれる言語要素を次の表に示します。 詳細については、「[代替構成体](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)」を参照してください。  
+## <a name="alternation-constructs"></a><span data-ttu-id="c6175-344">代替構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-344">Alternation Constructs</span></span>  
+ <span data-ttu-id="c6175-345">代替構成体は、OR 一致を有効にするように正規表現を変更します。</span><span class="sxs-lookup"><span data-stu-id="c6175-345">Alternation constructs modify a regular expression to enable either/or matching.</span></span> <span data-ttu-id="c6175-346">これらの構成体に含まれる言語要素を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="c6175-346">These constructs include the language elements listed in the following table.</span></span> <span data-ttu-id="c6175-347">詳細については、「 [Alternation Constructs](alternation-constructs-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-347">For more information, see [Alternation Constructs](alternation-constructs-in-regular-expressions.md).</span></span>  
   
-|代替構成体|説明|パターン|一致件数|  
-|-----------|--------|----------|----------|  
-|`&#124;`|縦棒 \(&#124;\) 文字で区切られた要素のいずれかと一致します。|`th(e&#124;is&#124;at)`|"this is the day." の "the"、"this "|  
-|`(?(` *式* `)` *可* `&#124;` *no* `)`|*expression* で指定される正規表現パターンが一致する場合は *yes* と一致します。それ以外の場合は、*no* \(省略可能\) 部分と一致します。*expression* はゼロ幅アサーションとして解釈されます。|`(?(A)A\d{2}\b&#124;\b\d{3}\b)`|"A10 C103 910" の "A10"、"910"|  
-|`(?(` *name* `)` *可* `&#124;` *no* `)`|名前付きまたは番号付きのキャプチャ グループ *name* に一致が見つかった場合は *yes* と一致します。それ以外の場合は *no* \(省略可能\) と一致します。|`(?<quoted>")?(?(quoted).+?"&#124;\S+\s)`|"Dogs.jpg "Yiska playing.jpg"" の Dogs.jpg、"Yiska playing.jpg"|  
+|<span data-ttu-id="c6175-348">代替構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-348">Alternation construct</span></span>|<span data-ttu-id="c6175-349">説明</span><span class="sxs-lookup"><span data-stu-id="c6175-349">Description</span></span>|<span data-ttu-id="c6175-350">パターン</span><span class="sxs-lookup"><span data-stu-id="c6175-350">Pattern</span></span>|<span data-ttu-id="c6175-351">一致件数</span><span class="sxs-lookup"><span data-stu-id="c6175-351">Matches</span></span>|  
+|---------------------------|-----------------|-------------|-------------|  
+|<code>&#124;</code>|<span data-ttu-id="c6175-352">縦棒 (&#124;) 文字で区切られた要素のいずれか 1 つと一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-352">Matches any one element separated by the vertical bar (&#124;) character.</span></span>|<code>th(e&#124;is&#124;at)</code>|<span data-ttu-id="c6175-353">"this is the day." の "the"、"this</span><span class="sxs-lookup"><span data-stu-id="c6175-353">"the", "this" in "this is the day.</span></span> <span data-ttu-id="c6175-354">"</span><span class="sxs-lookup"><span data-stu-id="c6175-354">"</span></span>|  
+|<span data-ttu-id="c6175-355">`(?(` *expression* `)` *yes* <code>&#124;</code> *no* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-355">`(?(` *expression* `)` *yes* <code>&#124;</code> *no* `)`</span></span>|<span data-ttu-id="c6175-356">*expression* で指定される正規表現パターンが一致する場合は *yes* と一致します。それ以外の場合は、 *no* (省略可能) 部分と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-356">Matches *yes* if the regular expression pattern designated by *expression* matches; otherwise, matches the optional *no* part.</span></span> <span data-ttu-id="c6175-357">*expression* はゼロ幅アサーションとして解釈されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-357">*expression* is interpreted as a zero-width assertion.</span></span>|<code>(?(A)A\d{2}\b&#124;\b\d{3}\b)</code>|<span data-ttu-id="c6175-358">"A10 C103 910" の "A10"、"910"</span><span class="sxs-lookup"><span data-stu-id="c6175-358">"A10", "910" in "A10 C103 910"</span></span>|  
+|<span data-ttu-id="c6175-359">`(?(` *name* `)` *yes* <code>&#124;</code> *no* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-359">`(?(` *name* `)` *yes* <code>&#124;</code> *no* `)`</span></span>|<span data-ttu-id="c6175-360">名前付きまたは番号付きのキャプチャ グループ *name* に一致が見つかった場合は *yes*と一致します。それ以外の場合は *no*(省略可能) と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-360">Matches *yes* if *name*, a named or numbered capturing group, has a match; otherwise, matches the optional *no*.</span></span>|<code>(?&lt;quoted&gt;&quot;)?(?(quoted).+?&quot;&#124;\S+\s)</code>|<span data-ttu-id="c6175-361">"Dogs.jpg "Yiska playing.jpg"" の Dogs.jpg、"Yiska playing.jpg"</span><span class="sxs-lookup"><span data-stu-id="c6175-361">Dogs.jpg, "Yiska playing.jpg" in "Dogs.jpg "Yiska playing.jpg""</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="c6175-362">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="c6175-362">Back to top</span></span>](#top)  
   
 <a name="substitutions"></a>   
-## 置換  
- 置換は、置換パターンでサポートされる正規表現言語要素です。 詳細については、「[置換](../../../docs/standard/base-types/substitutions-in-regular-expressions.md)」を参照してください。 アトミック ゼロ幅アサーションであるメタ文字を次の表に示します。  
+## <a name="substitutions"></a><span data-ttu-id="c6175-363">置換</span><span class="sxs-lookup"><span data-stu-id="c6175-363">Substitutions</span></span>  
+ <span data-ttu-id="c6175-364">置換は、置換パターンでサポートされる正規表現言語要素です。</span><span class="sxs-lookup"><span data-stu-id="c6175-364">Substitutions are regular expression language elements that are supported in replacement patterns.</span></span> <span data-ttu-id="c6175-365">詳細については、「 [Substitutions](substitutions-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-365">For more information, see [Substitutions](substitutions-in-regular-expressions.md).</span></span> <span data-ttu-id="c6175-366">アトミック ゼロ幅アサーションであるメタ文字を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="c6175-366">The metacharacters listed in the following table are atomic zero-width assertions.</span></span>  
   
-|文字|説明|パターン|置換パターン|入力文字列|結果文字列|  
-|--------|--------|----------|------------|-----------|-----------|  
-|`$` *number*|グループの *number* と一致した部分文字列に置換されます。|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|"one two"|"two one"|  
-|`${` *name* `}`|名前付きグループの *name* と一致した部分文字列に置換されます。|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|"one two"|"two one"|  
-|`$$`|"$" リテラルに置換されます。|`\b(\d+)\s?USD`|`$$$1`|"103 USD"|"$103"|  
-|`$&`|一致したパターン全体と同じパターンに置換されます。|`\$?\d*\.?\d+`|`**$&**`|"$1.30"|"\*\*$1.30\*\*"|  
-|`$``|一致した場所より前にある入力文字列のすべてに置換されます。|`B+`|`$``|"AABBCC"|"AAAACC"|  
-|`$'`|一致した場所より後にある入力文字列のすべてに置換されます。|`B+`|`$'`|"AABBCC"|"AACCCC"|  
-|`$+`|キャプチャされた最後のグループに置換されます。|`B+(C+)`|`$+`|"AABBCCDD"|AACCDD|  
-|`$_`|入力文字列全体に置換されます。|`B+`|`$_`|"AABBCC"|"AAAABBCCCC"|  
+|<span data-ttu-id="c6175-367">文字</span><span class="sxs-lookup"><span data-stu-id="c6175-367">Character</span></span>|<span data-ttu-id="c6175-368">説明</span><span class="sxs-lookup"><span data-stu-id="c6175-368">Description</span></span>|<span data-ttu-id="c6175-369">パターン</span><span class="sxs-lookup"><span data-stu-id="c6175-369">Pattern</span></span>|<span data-ttu-id="c6175-370">置換パターン</span><span class="sxs-lookup"><span data-stu-id="c6175-370">Replacement pattern</span></span>|<span data-ttu-id="c6175-371">入力文字列</span><span class="sxs-lookup"><span data-stu-id="c6175-371">Input string</span></span>|<span data-ttu-id="c6175-372">結果文字列</span><span class="sxs-lookup"><span data-stu-id="c6175-372">Result string</span></span>|  
+|---------------|-----------------|-------------|-------------------------|------------------|-------------------|  
+|<span data-ttu-id="c6175-373">`$` *number*</span><span class="sxs-lookup"><span data-stu-id="c6175-373">`$` *number*</span></span>|<span data-ttu-id="c6175-374">グループの *number*と一致した部分文字列に置換されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-374">Substitutes the substring matched by group *number*.</span></span>|`\b(\w+)(\s)(\w+)\b`|`$3$2$1`|<span data-ttu-id="c6175-375">"one two"</span><span class="sxs-lookup"><span data-stu-id="c6175-375">"one two"</span></span>|<span data-ttu-id="c6175-376">"two one"</span><span class="sxs-lookup"><span data-stu-id="c6175-376">"two one"</span></span>|  
+|<span data-ttu-id="c6175-377">`${` *name* `}`</span><span class="sxs-lookup"><span data-stu-id="c6175-377">`${` *name* `}`</span></span>|<span data-ttu-id="c6175-378">名前付きグループの *name*と一致した部分文字列に置換されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-378">Substitutes the substring matched by the named group *name*.</span></span>|`\b(?<word1>\w+)(\s)(?<word2>\w+)\b`|`${word2} ${word1}`|<span data-ttu-id="c6175-379">"one two"</span><span class="sxs-lookup"><span data-stu-id="c6175-379">"one two"</span></span>|<span data-ttu-id="c6175-380">"two one"</span><span class="sxs-lookup"><span data-stu-id="c6175-380">"two one"</span></span>|  
+|`$$`|<span data-ttu-id="c6175-381">"$" リテラルに置換されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-381">Substitutes a literal "$".</span></span>|`\b(\d+)\s?USD`|`$$$1`|<span data-ttu-id="c6175-382">"103 USD"</span><span class="sxs-lookup"><span data-stu-id="c6175-382">"103 USD"</span></span>|<span data-ttu-id="c6175-383">"$103"</span><span class="sxs-lookup"><span data-stu-id="c6175-383">"$103"</span></span>|  
+|`$&`|<span data-ttu-id="c6175-384">一致したパターン全体と同じパターンに置換されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-384">Substitutes a copy of the whole match.</span></span>|`\$?\d*\.?\d+`|`**$&**`|<span data-ttu-id="c6175-385">"$1.30"</span><span class="sxs-lookup"><span data-stu-id="c6175-385">"$1.30"</span></span>|<span data-ttu-id="c6175-386">"\*\*$1.30\*\*"</span><span class="sxs-lookup"><span data-stu-id="c6175-386">"\*\*$1.30\*\*"</span></span>|  
+|<code>$`</code>|<span data-ttu-id="c6175-387">一致した場所より前にある入力文字列のすべてに置換されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-387">Substitutes all the text of the input string before the match.</span></span>|`B+`|<code>$`</code>|<span data-ttu-id="c6175-388">"AABBCC"</span><span class="sxs-lookup"><span data-stu-id="c6175-388">"AABBCC"</span></span>|<span data-ttu-id="c6175-389">"AAAACC"</span><span class="sxs-lookup"><span data-stu-id="c6175-389">"AAAACC"</span></span>|  
+|`$'`|<span data-ttu-id="c6175-390">一致した場所より後にある入力文字列のすべてに置換されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-390">Substitutes all the text of the input string after the match.</span></span>|`B+`|`$'`|<span data-ttu-id="c6175-391">"AABBCC"</span><span class="sxs-lookup"><span data-stu-id="c6175-391">"AABBCC"</span></span>|<span data-ttu-id="c6175-392">"AACCCC"</span><span class="sxs-lookup"><span data-stu-id="c6175-392">"AACCCC"</span></span>|  
+|`$+`|<span data-ttu-id="c6175-393">キャプチャされた最後のグループに置換されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-393">Substitutes the last group that was captured.</span></span>|`B+(C+)`|`$+`|<span data-ttu-id="c6175-394">"AABBCCDD"</span><span class="sxs-lookup"><span data-stu-id="c6175-394">"AABBCCDD"</span></span>|<span data-ttu-id="c6175-395">AACCDD</span><span class="sxs-lookup"><span data-stu-id="c6175-395">AACCDD</span></span>|  
+|`$_`|<span data-ttu-id="c6175-396">入力文字列全体に置換されます。</span><span class="sxs-lookup"><span data-stu-id="c6175-396">Substitutes the entire input string.</span></span>|`B+`|`$_`|<span data-ttu-id="c6175-397">"AABBCC"</span><span class="sxs-lookup"><span data-stu-id="c6175-397">"AABBCC"</span></span>|<span data-ttu-id="c6175-398">"AAAABBCCCC"</span><span class="sxs-lookup"><span data-stu-id="c6175-398">"AAAABBCCCC"</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="c6175-399">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="c6175-399">Back to top</span></span>](#top)  
   
 <a name="options"></a>   
-## 正規表現のオプション  
- 正規表現エンジンで正規表現パターンを解釈する方法を制御するオプションを指定できます。 これらのオプションの多くは、インラインで \(正規表現パターンで\) 指定することも、1 つ以上の <xref:System.Text.RegularExpressions.RegexOptions> 定数として指定することもできます。 このクイック リファレンスでは、インライン オプションのみを示しています。 インライン オプションと <xref:System.Text.RegularExpressions.RegexOptions> オプションの詳細については、「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」を参照してください。  
+## <a name="regular-expression-options"></a><span data-ttu-id="c6175-400">正規表現のオプション</span><span class="sxs-lookup"><span data-stu-id="c6175-400">Regular Expression Options</span></span>  
+ <span data-ttu-id="c6175-401">正規表現エンジンで正規表現パターンを解釈する方法を制御するオプションを指定できます。</span><span class="sxs-lookup"><span data-stu-id="c6175-401">You can specify options that control how the regular expression engine interprets a regular expression pattern.</span></span> <span data-ttu-id="c6175-402">これらのオプションの多くは、インラインで (正規表現パターンで) 指定することも、1 つ以上の <xref:System.Text.RegularExpressions.RegexOptions> 定数として指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="c6175-402">Many of these options can be specified either inline (in the regular expression pattern) or as one or more <xref:System.Text.RegularExpressions.RegexOptions> constants.</span></span> <span data-ttu-id="c6175-403">このクイック リファレンスでは、インライン オプションのみを示しています。</span><span class="sxs-lookup"><span data-stu-id="c6175-403">This quick reference lists only inline options.</span></span> <span data-ttu-id="c6175-404">インライン オプションと <xref:System.Text.RegularExpressions.RegexOptions> オプションの詳細については、「 [Regular Expression Options](regular-expression-options.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-404">For more information about inline and <xref:System.Text.RegularExpressions.RegexOptions> options, see the article [Regular Expression Options](regular-expression-options.md).</span></span>  
   
- インライン オプションは、次の 2 種類の方法で指定できます。  
+ <span data-ttu-id="c6175-405">インライン オプションは、次の 2 種類の方法で指定できます。</span><span class="sxs-lookup"><span data-stu-id="c6175-405">You can specify an inline option in two ways:</span></span>  
   
--   [その他の構成体](../../../docs/standard/base-types/miscellaneous-constructs-in-regular-expressions.md) `(?imnsx-imnsx)` の使用。オプションまたはオプション セットの前に負符号 \(\-\) がある場合、そのオプションが無効になります。 たとえば、`(?i-mn)` では、大文字と小文字を区別しない一致 \(`i`\) がオン、複数行モード \(`m`\) がオフ、名前のないグループ キャプチャ \(`n`\) がオフになります。 このオプションは、このオプションが定義されている位置から正規表現パターンに適用され、パターンの末尾まで、または別の構成体によってオプションが反転する位置まで有効になります。  
+-   <span data-ttu-id="c6175-406">[その他の構成体](miscellaneous-constructs-in-regular-expressions.md) `(?imnsx-imnsx)`の使用。オプションまたはオプション セットの前に負符号 (-) がある場合、そのオプションが無効になります。</span><span class="sxs-lookup"><span data-stu-id="c6175-406">By using the [miscellaneous construct](miscellaneous-constructs-in-regular-expressions.md) `(?imnsx-imnsx)`, where a minus sign (-) before an option or set of options turns those options off.</span></span> <span data-ttu-id="c6175-407">たとえば、 `(?i-mn)` では、大文字と小文字を区別しない一致 (`i`) がオン、複数行モード (`m`) がオフ、名前のないグループ キャプチャ (`n`) がオフになります。</span><span class="sxs-lookup"><span data-stu-id="c6175-407">For example, `(?i-mn)` turns case-insensitive matching (`i`) on, turns multiline mode (`m`) off, and turns unnamed group captures (`n`) off.</span></span> <span data-ttu-id="c6175-408">このオプションは、このオプションが定義されている位置から正規表現パターンに適用され、パターンの末尾まで、または別の構成体によってオプションが反転する位置まで有効になります。</span><span class="sxs-lookup"><span data-stu-id="c6175-408">The option applies to the regular expression pattern from the point at which the option is defined, and is effective either to the end of the pattern or to the point where another construct reverses the option.</span></span>  
   
--   [グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md) `(?imnsx-imnsx:`*subexpression*`)` の使用。これは、指定されたグループのみに対するオプションを定義します。  
+-   <span data-ttu-id="c6175-409">[グループ化構造体 ](grouping-constructs-in-regular-expressions.md)`(?imnsx-imnsx:`*subexpression*`)` を使用する。これは、指定されたグループのみに対してオプションを定義します。</span><span class="sxs-lookup"><span data-stu-id="c6175-409">By using the [grouping construct](grouping-constructs-in-regular-expressions.md)`(?imnsx-imnsx:`*subexpression*`)`, which defines options for the specified group only.</span></span>  
   
- .NET Framework 正規表現エンジンでは、次のインライン オプションがサポートされます。  
+ <span data-ttu-id="c6175-410">.NET の正規表現エンジンでは、次のインライン オプションがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="c6175-410">The .NET regular expression engine supports the following inline options.</span></span>  
   
-|オプション|説明|パターン|一致件数|  
-|-----------|--------|----------|----------|  
-|`i`|大文字と小文字を区別しない一致を使用します。|`\b(?i)a(?-i)a\w+\b`|"aardvark AAAuto aaaAuto Adam breakfast" の "aardvark"、"aaaAuto"|  
-|`m`|複数行モードを使用します。`^` と `$` は、\(入力文字列の先頭および末尾ではなく\) 各行の先頭および末尾と一致します。|例については、「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」の「複数行モード」を参照してください。||  
-|`n`|名前のないグループをキャプチャしません。|例については、「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」の「明示的なキャプチャのみ」を参照してください。||  
-|`s`|単一行モードを使用します。|例については、「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」の「単一行モード」を参照してください。||  
-|`x`|正規表現パターンでエスケープされていない空白を無視します。|`\b(?x) \d+ \s \w+`|"1 aardvark 2 cats IV centurions" の "1 aardvark"、"2 cats"|  
+|<span data-ttu-id="c6175-411">オプション</span><span class="sxs-lookup"><span data-stu-id="c6175-411">Option</span></span>|<span data-ttu-id="c6175-412">説明</span><span class="sxs-lookup"><span data-stu-id="c6175-412">Description</span></span>|<span data-ttu-id="c6175-413">パターン</span><span class="sxs-lookup"><span data-stu-id="c6175-413">Pattern</span></span>|<span data-ttu-id="c6175-414">一致件数</span><span class="sxs-lookup"><span data-stu-id="c6175-414">Matches</span></span>|  
+|------------|-----------------|-------------|-------------|  
+|`i`|<span data-ttu-id="c6175-415">大文字と小文字を区別しない一致を使用します。</span><span class="sxs-lookup"><span data-stu-id="c6175-415">Use case-insensitive matching.</span></span>|`\b(?i)a(?-i)a\w+\b`|<span data-ttu-id="c6175-416">"aardvark AAAuto aaaAuto Adam breakfast" の "aardvark"、"aaaAuto"</span><span class="sxs-lookup"><span data-stu-id="c6175-416">"aardvark", "aaaAuto" in "aardvark AAAuto aaaAuto Adam breakfast"</span></span>|  
+|`m`|<span data-ttu-id="c6175-417">複数行モードを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6175-417">Use multiline mode.</span></span> <span data-ttu-id="c6175-418">`^` と `$` は、(入力文字列の先頭および末尾ではなく) 各行の先頭および末尾と一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-418">`^` and `$` match the beginning and end of a line, instead of the beginning and end of a string.</span></span>|<span data-ttu-id="c6175-419">例については、「 [Regular Expression Options](regular-expression-options.md)」の「複数行モード」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-419">For an example, see the "Multiline Mode" section in [Regular Expression Options](regular-expression-options.md).</span></span>||  
+|`n`|<span data-ttu-id="c6175-420">名前のないグループをキャプチャしません。</span><span class="sxs-lookup"><span data-stu-id="c6175-420">Do not capture unnamed groups.</span></span>|<span data-ttu-id="c6175-421">例については、「 [Regular Expression Options](regular-expression-options.md)」の「明示的なキャプチャのみ」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-421">For an example, see the "Explicit Captures Only" section in [Regular Expression Options](regular-expression-options.md).</span></span>||  
+|`s`|<span data-ttu-id="c6175-422">単一行モードを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6175-422">Use single-line mode.</span></span>|<span data-ttu-id="c6175-423">例については、「 [Regular Expression Options](regular-expression-options.md)」の「単一行モード」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-423">For an example, see the "Single-line Mode" section in [Regular Expression Options](regular-expression-options.md).</span></span>||  
+|`x`|<span data-ttu-id="c6175-424">正規表現パターンでエスケープされていない空白を無視します。</span><span class="sxs-lookup"><span data-stu-id="c6175-424">Ignore unescaped white space in the regular expression pattern.</span></span>|`\b(?x) \d+ \s \w+`|<span data-ttu-id="c6175-425">"1 aardvark 2 cats IV centurions" の "1 aardvark"、"2 cats"</span><span class="sxs-lookup"><span data-stu-id="c6175-425">"1 aardvark", "2 cats" in "1 aardvark 2 cats IV centurions"</span></span>|  
   
- [ページのトップへ](#top)  
+ [<span data-ttu-id="c6175-426">ページのトップへ</span><span class="sxs-lookup"><span data-stu-id="c6175-426">Back to top</span></span>](#top)  
   
 <a name="miscellaneous_constructs"></a>   
-## その他の構成体  
- その他の構成体は、正規表現パターンを変更するか、それに関する情報を指定します。 .NET Framework でサポートされているその他の構成体を、次の表に示します。 詳細については、「[その他の構成体](../../../docs/standard/base-types/miscellaneous-constructs-in-regular-expressions.md)」を参照してください。  
+## <a name="miscellaneous-constructs"></a><span data-ttu-id="c6175-427">その他の構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-427">Miscellaneous Constructs</span></span>  
+ <span data-ttu-id="c6175-428">その他の構成体は、正規表現パターンを変更するか、それに関する情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="c6175-428">Miscellaneous constructs either modify a regular expression pattern or provide information about it.</span></span> <span data-ttu-id="c6175-429">次の表は、.NET でサポートされるその他の構文を示します。</span><span class="sxs-lookup"><span data-stu-id="c6175-429">The following table lists the miscellaneous constructs supported by .NET.</span></span> <span data-ttu-id="c6175-430">詳細については、「 [Miscellaneous Constructs](miscellaneous-constructs-in-regular-expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-430">For more information, see [Miscellaneous Constructs](miscellaneous-constructs-in-regular-expressions.md).</span></span>  
   
-|構成体|定義|例|  
-|---------|--------|-------|  
-|`(?imnsx-imnsx)`|パターンの途中で、大文字と小文字の区別などのオプションを設定または無効化します。 詳細については、「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」を参照してください。|`\bA(?i)b\w+\b` は、"ABA Able Act" の "ABA"、"Able" に一致します。|  
-|`(?#` *comment*`)`|インライン コメントです。 コメントは、最初の閉じかっこで終了します。|`\bA(?#Matches words starting with A)\w+\b`|  
-|`#` \[to end of line\]|X モード コメントです。 コメントの先頭はエスケープされない `#` で、コメントは行末まで継続します。|`(?x)\bA\w+\b#Matches words starting with A`|  
+|<span data-ttu-id="c6175-431">構成体</span><span class="sxs-lookup"><span data-stu-id="c6175-431">Construct</span></span>|<span data-ttu-id="c6175-432">定義</span><span class="sxs-lookup"><span data-stu-id="c6175-432">Definition</span></span>|<span data-ttu-id="c6175-433">例</span><span class="sxs-lookup"><span data-stu-id="c6175-433">Example</span></span>|  
+|---------------|----------------|-------------|  
+|`(?imnsx-imnsx)`|<span data-ttu-id="c6175-434">パターンの途中で、大文字と小文字の区別などのオプションを設定または無効化します。詳細については、「[正規表現のオプション](regular-expression-options.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6175-434">Sets or disables options such as case insensitivity in the middle of a pattern.For more information, see [Regular Expression Options](regular-expression-options.md).</span></span>|<span data-ttu-id="c6175-435">`\bA(?i)b\w+\b` は、"ABA Able Act" の "ABA"、"Able" に一致します。</span><span class="sxs-lookup"><span data-stu-id="c6175-435">`\bA(?i)b\w+\b` matches "ABA", "Able" in "ABA Able Act"</span></span>|  
+|<span data-ttu-id="c6175-436">`(?#` *comment* `)`</span><span class="sxs-lookup"><span data-stu-id="c6175-436">`(?#` *comment* `)`</span></span>|<span data-ttu-id="c6175-437">インライン コメントです。</span><span class="sxs-lookup"><span data-stu-id="c6175-437">Inline comment.</span></span> <span data-ttu-id="c6175-438">コメントは、最初の閉じかっこで終了します。</span><span class="sxs-lookup"><span data-stu-id="c6175-438">The comment ends at the first closing parenthesis.</span></span>|`\bA(?#Matches words starting with A)\w+\b`|  
+|<span data-ttu-id="c6175-439">`#` [to end of line]</span><span class="sxs-lookup"><span data-stu-id="c6175-439">`#` [to end of line]</span></span>|<span data-ttu-id="c6175-440">X モード コメントです。</span><span class="sxs-lookup"><span data-stu-id="c6175-440">X-mode comment.</span></span> <span data-ttu-id="c6175-441">コメントの先頭はエスケープされない `#` で、コメントは行末まで継続します。</span><span class="sxs-lookup"><span data-stu-id="c6175-441">The comment starts at an unescaped `#` and continues to the end of the line.</span></span>|`(?x)\bA\w+\b#Matches words starting with A`|  
   
-## 参照  
- <xref:System.Text.RegularExpressions?displayProperty=fullName>   
- <xref:System.Text.RegularExpressions.Regex>   
- [.NET Framework の正規表現](../../../docs/standard/base-types/regular-expressions.md)   
- [正規表現クラス](../../../docs/standard/base-types/the-regular-expression-object-model.md)   
- [正規表現の例](../../../docs/standard/base-types/regular-expression-examples.md)   
- [正規表現 \- クイック リファレンス \(Word 形式でダウンロード\)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)   
- [正規表現 \- クイック リファレンス \(PDF 形式でダウンロード\)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)
+## <a name="see-also"></a><span data-ttu-id="c6175-442">関連項目</span><span class="sxs-lookup"><span data-stu-id="c6175-442">See Also</span></span>  
+ <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
+ <xref:System.Text.RegularExpressions.Regex>  
+ [<span data-ttu-id="c6175-443">正規表現</span><span class="sxs-lookup"><span data-stu-id="c6175-443">Regular Expressions</span></span>](regular-expressions.md)  
+ [<span data-ttu-id="c6175-444">正規表現クラス</span><span class="sxs-lookup"><span data-stu-id="c6175-444">Regular Expression Classes</span></span>](the-regular-expression-object-model.md)  
+ [<span data-ttu-id="c6175-445">正規表現の例</span><span class="sxs-lookup"><span data-stu-id="c6175-445">Regular Expression Examples</span></span>](regular-expression-examples.md)  
+ [<span data-ttu-id="c6175-446">正規表現 - クイック リファレンス (Word 形式でダウンロード)</span><span class="sxs-lookup"><span data-stu-id="c6175-446">Regular Expressions - Quick Reference (download in Word format)</span></span>](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
+ [<span data-ttu-id="c6175-447">正規表現 - クイック リファレンス (PDF 形式でダウンロード)</span><span class="sxs-lookup"><span data-stu-id="c6175-447">Regular Expressions - Quick Reference (download in PDF format)</span></span>](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

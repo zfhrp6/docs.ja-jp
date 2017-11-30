@@ -1,104 +1,107 @@
 ---
-title: "方法 : Windows Server AppFabric を使用してワークフロー サービスをホストする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : Windows Server AppFabric を使用してワークフロー サービスをホストする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 83b62cce-5fc2-4c6d-b27c-5742ba3bac73
-caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 69911b2baf0e184957158ac536fa2271524cb2ba
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows Server AppFabric を使用してワークフロー サービスをホストする
-AppFabric でのワークフロー サービスのホスティングは IIS\/WAS でのホスティングに似ています。唯一の違いは、ワークフロー サービスの投入、監視、および管理のために AppFabric に用意されているツールです。このトピックでは「[長時間のワークフロー サービスの作成](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)」で作成されたワークフロー サービスを使用します。ワークフロー サービスの作成方法はそちらのトピックで説明されています。このトピックでは、AppFabric を使用したワークフロー サービスのホスティング方法を説明します。Windows Server AppFabric [!INCLUDE[crabout](../../../../includes/crabout-md.md)]、[Windows Server AppFabric のドキュメント](http://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409)を参照してください。下の手順を完了する前に、Windows Server AppFabric がインストールされていることを確認してください。それには、Internet Information Services \(inetmgr.exe\) を開いて、**\[接続\]** ビューでサーバー名をクリックし、\[サイト\] をクリックして、**\[既定の Web サイト\]** をクリックします。画面の右側に **\[AppFabric\]** というセクションが表示されます。\(右側のペインの一番上に表示される\) このセクションが表示されないのであれば、AppFabric がインストールされていません。Windows Server AppFabric のインストール[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[Windows Server AppFabric のインストール](http://go.microsoft.com/fwlink/?LinkId=193136)」を参照してください。  
+# <a name="how-to-host-a-workflow-service-with-windows-server-app-fabric"></a><span data-ttu-id="69156-102">方法 : Windows Server AppFabric を使用してワークフロー サービスをホストする</span><span class="sxs-lookup"><span data-stu-id="69156-102">How to: Host a Workflow Service with Windows Server App Fabric</span></span>
+<span data-ttu-id="69156-103">AppFabric でのワークフロー サービスのホスティングは IIS/WAS でのホスティングに似ています。</span><span class="sxs-lookup"><span data-stu-id="69156-103">Hosting workflow services in App Fabric is similar to hosting under IIS/WAS.</span></span> <span data-ttu-id="69156-104">唯一の違いは、ワークフロー サービスの投入、監視、および管理のために AppFabric に用意されているツールです。</span><span class="sxs-lookup"><span data-stu-id="69156-104">The only difference is the tools App Fabric provides for deploying, monitoring, and managing workflow services.</span></span> <span data-ttu-id="69156-105">このトピックで作成したワークフロー サービスを使用して、[実行時間の長いワークフロー サービスを作成する](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)です。</span><span class="sxs-lookup"><span data-stu-id="69156-105">This topic uses the workflow service created in the [Creating a Long-running Workflow Service](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md).</span></span> <span data-ttu-id="69156-106">ワークフロー サービスの作成方法はそちらのトピックで説明されています。</span><span class="sxs-lookup"><span data-stu-id="69156-106">That topic will walk you through creating a workflow service.</span></span> <span data-ttu-id="69156-107">このトピックでは、AppFabric を使用したワークフロー サービスのホスティング方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="69156-107">This topic will explain how to host the workflow service using App Fabric.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="69156-108">Windows Server App Fabric を参照してください[Windows Server App Fabric ドキュメント](http://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409)です。</span><span class="sxs-lookup"><span data-stu-id="69156-108"> Windows Server App Fabric, see [Windows Server App Fabric Documentation](http://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409).</span></span> <span data-ttu-id="69156-109">下の手順を完了する前に、Windows Server AppFabric がインストールされていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="69156-109">Before completing the steps below make sure you have Windows Server App Fabric installed.</span></span>  <span data-ttu-id="69156-110">インターネット インフォメーション サービス (inetmgr.exe) を開いてでサーバー名をクリックして、**接続**サイトをクリックし、をクリックして**既定の Web サイト**です。</span><span class="sxs-lookup"><span data-stu-id="69156-110">To do this open up Internet Information Services (inetmgr.exe), click your server name in the **Connections** view, click Sites, and click **Default Web Site**.</span></span> <span data-ttu-id="69156-111">画面の右側にある必要がありますと呼ばれるセクションを参照して**App Fabric**です。</span><span class="sxs-lookup"><span data-stu-id="69156-111">In the right-hand side of the screen you should see a section called **App Fabric**.</span></span> <span data-ttu-id="69156-112">(右側のペインの一番上に表示される) このセクションが表示されない場合は、AppFabric がインストールされていません。</span><span class="sxs-lookup"><span data-stu-id="69156-112">If you don’t see this section (it will be on the top of the right-hand pane) you do not have App Fabric installed.</span></span> [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="69156-113">Windows Server App Fabric のインストールを参照してください[をインストールする Windows Server Appfabric](http://go.microsoft.com/fwlink/?LinkId=193136)です。</span><span class="sxs-lookup"><span data-stu-id="69156-113"> installing Windows Server App Fabric see [Installing Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=193136).</span></span>  
   
-### 単純なワークフロー サービスの作成  
+### <a name="creating-a-simple-workflow-service"></a><span data-ttu-id="69156-114">単純なワークフロー サービスの作成</span><span class="sxs-lookup"><span data-stu-id="69156-114">Creating a Simple Workflow Service</span></span>  
   
-1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] を開き、「[長時間のワークフロー サービスの作成](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)」のトピックで作成した OrderProcessing ソリューションを読み込みます。  
+1.  <span data-ttu-id="69156-115">開いている[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]ソリューションを読み込み、OrderProcessing で作成して、[実行時間の長いワークフロー サービスを作成する](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)トピックです。</span><span class="sxs-lookup"><span data-stu-id="69156-115">Open [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] and load the OrderProcessing solution you created in the [Creating a Long-running Workflow Service](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md) topic.</span></span>  
   
-2.  **\[OrderService\]** プロジェクトを右クリックし、**\[プロパティ\]** をクリックして、**\[Web\]** タブをクリックします。  
+2.  <span data-ttu-id="69156-116">右クリックして、 **[orderservice]**プロジェクトし、選択**プロパティ**を選択し、 **Web**タブです。</span><span class="sxs-lookup"><span data-stu-id="69156-116">Right click the **OrderService** project and select **Properties** and select the **Web** tab.</span></span>  
   
-3.  プロパティ ページの **\[開始動作\]** セクションで **\[ページを指定する\]** をクリックして、編集ボックスに「Service1.xamlx」と入力します。  
+3.  <span data-ttu-id="69156-117">**開始動作**プロパティ ページのセクションを選択**特定ページ**Service1.xamlx をエディット ボックスに入力します。</span><span class="sxs-lookup"><span data-stu-id="69156-117">In the **Start Action** section of the property page select **Specific Page** and type Service1.xamlx in the edit box.</span></span>  
   
-4.  プロパティ ページの **\[サーバー\]** セクションで **\[ローカル IIS Web サーバーを使用する\]** をクリックして、「`http://localhost/OrderService`」と入力します。  
+4.  <span data-ttu-id="69156-118">**サーバー**プロパティ ページのセクションを選択**ローカル IIS Web サーバー**し、次の URL を入力:`http://localhost/OrderService`です。</span><span class="sxs-lookup"><span data-stu-id="69156-118">In the **Servers** section of the property page select **Use Local IIS Web Server** and type in the following URL: `http://localhost/OrderService`.</span></span>  
   
-5.  **\[仮想ディレクトリの作成\]** ボタンをクリックします。これで新しい仮想ディレクトリが作成され、プロジェクトが作成されるときに必要なファイルが仮想ディレクトリにコピーされるようにプロジェクトが設定されます。または、仮想ディレクトリに .xamlx、web.config、および必要な DLL を手動でコピーすることもできます。  
+5.  <span data-ttu-id="69156-119">クリックして、**仮想ディレクトリの作成**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="69156-119">Click the **Create Virtual Directory** button.</span></span> <span data-ttu-id="69156-120">これで新しい仮想ディレクトリが作成され、プロジェクトが作成されるときに必要なファイルが仮想ディレクトリにコピーされるようにプロジェクトが設定されます。</span><span class="sxs-lookup"><span data-stu-id="69156-120">This will create a new virtual directory and set up the project to copy the needed files to the virtual directory when the project is built.</span></span>  <span data-ttu-id="69156-121">または、仮想ディレクトリに .xamlx、web.config、および必要な DLL を手動でコピーすることもできます。</span><span class="sxs-lookup"><span data-stu-id="69156-121">Alternatively you could manually copy the .xamlx, the web.config, and any needed DLLs to the virtual directory.</span></span>  
   
-### Windows Server AppFabric でホストされるワークフロー サービスの構成  
+### <a name="configuring-a-workflow-service-hosted-in-windows-server-app-fabric"></a><span data-ttu-id="69156-122">Windows Server AppFabric でホストされるワークフロー サービスの構成</span><span class="sxs-lookup"><span data-stu-id="69156-122">Configuring a Workflow Service Hosted in Windows Server App Fabric</span></span>  
   
-1.  インターネット インフォメーション サービス マネージャー \(inetmgr.exe\) を開きます。  
+1.  <span data-ttu-id="69156-123">インターネット インフォメーション サービス マネージャー (inetmgr.exe) を開きます。</span><span class="sxs-lookup"><span data-stu-id="69156-123">Open Internet Information Services Manager (inetmgr.exe).</span></span>  
   
-2.  **\[接続\]** ペインで OrderService 仮想ディレクトリに移動します。  
+2.  <span data-ttu-id="69156-124">OrderService 仮想ディレクトリに移動し、**接続**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="69156-124">Navigate to the OrderService virtual directory in the **Connections** pane.</span></span>  
   
-3.  OrderService を右クリックし、**\[WCF サービスと WF サービスの管理\]**、**\[構成\]** の順にクリックします。**\[アプリケーションの WCF と WF の構成\]** ダイアログ ボックスが表示されます。  
+3.  <span data-ttu-id="69156-125">[Orderservice] を右クリックし、選択**管理の WCF と WF サービス**、**構成しています**.</span><span class="sxs-lookup"><span data-stu-id="69156-125">Right click OrderService and select **Manage WCF and WF Services**, **Configure…**.</span></span> <span data-ttu-id="69156-126">**WCF と WF アプリケーションの構成** ダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="69156-126">The **Configure WCF and WF for Application** dialog box is displayed.</span></span>  
   
-4.  **\[全般\]** タブをクリックして、次のスクリーン ショットに示すようなアプリケーションに関する全般的な情報を表示します。  
+4.  <span data-ttu-id="69156-127">選択、**全般**の次のスクリーン ショットに示すように、アプリケーションに関する一般情報を表示するタブです。</span><span class="sxs-lookup"><span data-stu-id="69156-127">Select the **General** tab to display general information about the application as shown in the following screen shot.</span></span>  
   
-     ![App Fabric の構成ダイアログの &#91;全般&#93; タブ](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-general.gif "AppFabricConfiguration\-General")  
+     <span data-ttu-id="69156-128">![App Fabric の構成 ダイアログ ボックスの [全般] タブ](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-general.gif "AppFabricConfiguration-全般")</span><span class="sxs-lookup"><span data-stu-id="69156-128">![General tab of the App Fabric Configuration dialog](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-general.gif "AppFabricConfiguration-General")</span></span>  
   
-5.  **\[監視\]** タブをクリックします。次のスクリーン ショットに示すような各種の監視設定が表示されます。  
+5.  <span data-ttu-id="69156-129">選択、**監視**タブです。次のスクリーン ショットに示すような各種の監視設定が表示されます。</span><span class="sxs-lookup"><span data-stu-id="69156-129">Select the **Monitoring** tab. This shows various monitoring settings as shown in the following screen shot.</span></span>  
   
-     ![App Fabric の構成の &#91;監視&#93; タブ](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-monitoring.gif "AppFabricConfiguration\-Monitoring")  
+     <span data-ttu-id="69156-130">![App Fabric の構成 [監視] タブ](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-monitoring.gif "AppFabricConfiguration 監視")</span><span class="sxs-lookup"><span data-stu-id="69156-130">![App Fabric Configuration Monitoring tab](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-monitoring.gif "AppFabricConfiguration-Monitoring")</span></span>  
   
-     AppFabric におけるワークフロー サービスの監視を構成する手順[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、AppFabric ドキュメントの「[監視を構成する](http://go.microsoft.com/fwlink/?LinkId=193153)」を参照してください。  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="69156-131">App Fabric でワークフロー サービスの監視の構成を参照してください[App Fabric の監視を構成する](http://go.microsoft.com/fwlink/?LinkId=193153)です。</span><span class="sxs-lookup"><span data-stu-id="69156-131"> configuring workflow service monitoring in App Fabric see [Configuring monitoring with App Fabric](http://go.microsoft.com/fwlink/?LinkId=193153).</span></span>  
   
-6.  **\[ワークフローの永続化\]** タブをクリックします。ここでは、次のスクリーン ショットに示すように、AppFabric の既定の永続化プロバイダーをアプリケーションで使用するように構成できます。  
+6.  <span data-ttu-id="69156-132">選択、**ワークフローの永続化**タブです。ここでは、次のスクリーン ショットに示すように、AppFabric の既定の永続化プロバイダーをアプリケーションで使用するように構成できます。</span><span class="sxs-lookup"><span data-stu-id="69156-132">Select the **Workflow Persistence** tab. This allows you to configure your application to use App Fabric’s default persistence provider as shown in the following screen shot.</span></span>  
   
-     ![App Fabric の構成 &#45; 永続化](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-persistence.gif "AppFabricConfiguration\-Persistence")  
+     <span data-ttu-id="69156-133">![App Fabric の構成 &#45;永続化](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-persistence.gif "AppFabricConfiguration 永続化")</span><span class="sxs-lookup"><span data-stu-id="69156-133">![App Fabric Configuration &#45; Persistence](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-persistence.gif "AppFabricConfiguration-Persistence")</span></span>  
   
-     Windows Server AppFabric におけるワークフロー永続化を構成する手順[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、AppFabric ドキュメントの「[ワークフロー永続化を構成する](http://go.microsoft.com/fwlink/?LinkId=193148)」を参照してください。  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="69156-134">Windows Server App Fabric でのワークフローの永続化の構成を参照してください[ワークフロー永続化では、App Fabric の構成](http://go.microsoft.com/fwlink/?LinkId=193148)です。</span><span class="sxs-lookup"><span data-stu-id="69156-134"> configuring workflow persistence in Windows Server App Fabric see [Configuring Workflow Persistence in App Fabric](http://go.microsoft.com/fwlink/?LinkId=193148).</span></span>  
   
-7.  **\[ワークフロー ホスト管理\]** タブをクリックします。ここでは、次のスクリーン ショットに見られるように、アイドル状態のワークフロー サービス インスタンスをいつアンロードして永続化するかを指定できます。  
+7.  <span data-ttu-id="69156-135">選択、**ワークフロー ホスト管理**タブです。ここでは、次のスクリーン ショットに見られるように、アイドル状態のワークフロー サービス インスタンスをいつアンロードして永続化するかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="69156-135">Select the **Workflow Host Management** tab. This allows you to specify when idle workflow service instances should be unloaded and persisted as shown in the following screen shot.</span></span>  
   
-     ![App Fabric の構成の &#91;ワークフロー ホスト管理&#93; タブ](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-management.gif "AppFabricConfiguration\-Management")  
+     <span data-ttu-id="69156-136">![App Fabric の構成ワークフロー ホスト管理](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-management.gif "AppFabricConfiguration 管理")</span><span class="sxs-lookup"><span data-stu-id="69156-136">![App Fabric Configuration  Workflow Host Management](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-management.gif "AppFabricConfiguration-Management")</span></span>  
   
-     ワークフロー ホスト管理の構成[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、AppFabric ドキュメントの「[ワークフロー ホスト管理を構成する](http://go.microsoft.com/fwlink/?LinkId=193151)」を参照してください。  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="69156-137">ワークフロー ホスト管理の構成を参照してください[App Fabric を使用したワークフロー ホスト管理を構成する](http://go.microsoft.com/fwlink/?LinkId=193151)です。</span><span class="sxs-lookup"><span data-stu-id="69156-137"> workflow host management configuration see [Configuring Workflow Host Management in App Fabric](http://go.microsoft.com/fwlink/?LinkId=193151).</span></span>  
   
-8.  **\[自動開始\]** タブをクリックします。ここでは、次のスクリーン ショットに示すように、アプリケーションでのワークフロー サービスに対する自動開始の設定を指定できます。  
+8.  <span data-ttu-id="69156-138">選択、 **Auto-start**タブです。ここでは、次のスクリーン ショットに示すように、アプリケーションでのワークフロー サービスに対する自動開始の設定を指定できます。</span><span class="sxs-lookup"><span data-stu-id="69156-138">Select the **Auto-Start** tab. This allows you to specify auto-start settings for the workflow services in the application as shown in the following screen shot.</span></span>  
   
-     ![App Fabric の自動開始構成](../../../../docs/framework/wcf/feature-details/media/appfabricconfigurationautostart.gif "AppFabricConfigurationAutostart")  
+     <span data-ttu-id="69156-139">![App Fabric の自動 &#45; 開始構成](../../../../docs/framework/wcf/feature-details/media/appfabricconfigurationautostart.gif "AppFabricConfigurationAutostart")</span><span class="sxs-lookup"><span data-stu-id="69156-139">![App Fabric Auto&#45;start configuration](../../../../docs/framework/wcf/feature-details/media/appfabricconfigurationautostart.gif "AppFabricConfigurationAutostart")</span></span>  
   
-     自動開始の構成手順[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、AppFabric ドキュメントの「[自動開始の構成](http://go.microsoft.com/fwlink/?LinkId=193150)」を参照してください。  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="69156-140">自動開始の構成を参照してください[App Fabric を自動的に開始を構成する](http://go.microsoft.com/fwlink/?LinkId=193150)です。</span><span class="sxs-lookup"><span data-stu-id="69156-140"> configuring Auto-Start see [Configuring Auto-Start with App Fabric](http://go.microsoft.com/fwlink/?LinkId=193150).</span></span>  
   
-9. **\[スロットル\]** タブをクリックします。ここでは、次のスクリーン ショットに示すように、ワークフロー サービスのスロットル設定を構成できます。  
+9. <span data-ttu-id="69156-141">選択、**スロットル**タブです。ここでは、次のスクリーン ショットに示すように、ワークフロー サービスのスロットル設定を構成できます。</span><span class="sxs-lookup"><span data-stu-id="69156-141">Select the **Throttling** tab. This allows you to configure throttling settings for the workflow service as shown in the following screen shot.</span></span>  
   
-     ![App Fabric の構成の調整](../../../../docs/framework/wcf/feature-details/media/appfabricconfigurationthrottling.gif "AppFabricConfigurationThrottling")  
+     <span data-ttu-id="69156-142">![App Fabric の構成の調整](../../../../docs/framework/wcf/feature-details/media/appfabricconfigurationthrottling.gif "AppFabricConfigurationThrottling")</span><span class="sxs-lookup"><span data-stu-id="69156-142">![App Fabric configuration throttling](../../../../docs/framework/wcf/feature-details/media/appfabricconfigurationthrottling.gif "AppFabricConfigurationThrottling")</span></span>  
   
-     スロットルの構成手順[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、AppFabric ドキュメントの「[スロットルを構成する](http://go.microsoft.com/fwlink/?LinkId=193149)」を参照してください。  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="69156-143">throttling の構成を参照してください[App Fabric の調整を構成する](http://go.microsoft.com/fwlink/?LinkId=193149)です。</span><span class="sxs-lookup"><span data-stu-id="69156-143"> configuring throttling see [Configuring Throttling with App Fabric](http://go.microsoft.com/fwlink/?LinkId=193149).</span></span>  
   
-10. **\[セキュリティ\]** タブをクリックします。ここでは、次のスクリーン ショットに示すように、アプリケーションに対するセキュリティの設定を構成できます。  
+10. <span data-ttu-id="69156-144">選択、**セキュリティ**タブです。ここでは、次のスクリーン ショットに示すように、アプリケーションに対するセキュリティの設定を構成できます。</span><span class="sxs-lookup"><span data-stu-id="69156-144">Select the **Security** tab. This allows you to configure security settings for the application as shown in the following screen shot.</span></span>  
   
-     ![App Fabric のセキュリティ構成](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-security.gif "AppFabricConfiguration\-Security")  
+     <span data-ttu-id="69156-145">![App Fabric のセキュリティ構成](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-security.gif "AppFabricConfiguration セキュリティ")</span><span class="sxs-lookup"><span data-stu-id="69156-145">![App Fabric Security Configuration](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-security.gif "AppFabricConfiguration-Security")</span></span>  
   
-     Windows Server AppFabric でのセキュリティの構成手順[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、AppFabric ドキュメントの「[セキュリティの構成](http://go.microsoft.com/fwlink/?LinkId=193152)」を参照してください。  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<span data-ttu-id="69156-146">Windows Server App Fabric のセキュリティの構成を参照してください[App Fabric のセキュリティの構成](http://go.microsoft.com/fwlink/?LinkId=193152)です。</span><span class="sxs-lookup"><span data-stu-id="69156-146"> configuring security with Windows Server App Fabric see [Configuring Security with App Fabric](http://go.microsoft.com/fwlink/?LinkId=193152).</span></span>  
   
-### Windows Server AppFabric の使用  
+### <a name="using-windows-server-app-fabric"></a><span data-ttu-id="69156-147">Windows Server AppFabric の使用</span><span class="sxs-lookup"><span data-stu-id="69156-147">Using Windows Server App Fabric</span></span>  
   
-1.  ソリューションを作成して、仮想ディレクトリに必要なファイルをコピーします。  
+1.  <span data-ttu-id="69156-148">ソリューションを作成して、仮想ディレクトリに必要なファイルをコピーします。</span><span class="sxs-lookup"><span data-stu-id="69156-148">Build the solution to copy the necessary files to the virtual directory.</span></span>  
   
-2.  OrderClient プロジェクトを右クリックし、**\[デバッグ\]**、**\[新しいインスタンスを開始\]** の順にクリックして、クライアント アプリケーションを実行します。  
+2.  <span data-ttu-id="69156-149">OrderClient プロジェクトを右クリックし、選択**デバッグ**、**新しいインスタンスを開始**クライアント アプリケーションを起動します。</span><span class="sxs-lookup"><span data-stu-id="69156-149">Right click the OrderClient project and select **Debug**, **Start New Instance** to launch the client application.</span></span>  
   
-3.  クライアントが実行され、Visual Studio により **\[アタッチのセキュリティ警告\]** ダイアログ ボックスが表示されたら、**\[アタッチしない\]** ボタンをクリックします。これにより、IIS プロセスにアタッチしてデバッグしないように Visual Studio に指示します。  
+3.  <span data-ttu-id="69156-150">クライアントが実行され、Visual Studio に表示されます、**アタッチのセキュリティ警告**ダイアログ ボックスで、をクリックして、**アタッチしない**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="69156-150">The client will run and Visual Studio will display an **Attach Security Warning** dialog box, click the **Don’t Attach** button.</span></span> <span data-ttu-id="69156-151">これにより、IIS プロセスにアタッチしてデバッグしないように Visual Studio に指示します。</span><span class="sxs-lookup"><span data-stu-id="69156-151">This tells Visual Studio to not attach to the IIS process for debugging.</span></span>  
   
-4.  クライアント アプリケーションは直ちにワークフロー サービスを呼び出して待機します。ワークフロー サービスはアイドル状態になり永続化されます。これは、インターネット インフォメーション サービス \(inetmgr.exe\) を開始して、\[接続\] ペインで \[OrderService\] に移動し、それを選択することによって確認できます。次に、右側のペインで \[AppFabric ダッシュボード\] のアイコンをクリックします。次のスクリーン ショットに示すように、\[永続的な WF インスタンス\] の下に、永続化されたワークフロー サービスのインスタンスが 1 つ表示されます。  
+4.  <span data-ttu-id="69156-152">クライアント アプリケーションは直ちにワークフロー サービスを呼び出して待機します。</span><span class="sxs-lookup"><span data-stu-id="69156-152">The client application will immediately call the Workflow service and then wait.</span></span> <span data-ttu-id="69156-153">ワークフロー サービスはアイドル状態になり永続化されます。</span><span class="sxs-lookup"><span data-stu-id="69156-153">The workflow service will go idle and be persisted.</span></span> <span data-ttu-id="69156-154">これは、インターネット インフォメーション サービス (inetmgr.exe) を開始して、[接続] ペインで [OrderService] に移動し、それを選択することによって確認できます。</span><span class="sxs-lookup"><span data-stu-id="69156-154">You can verify this by starting Internet Information Services (inetmgr.exe), navigating to the OrderService in the Connections pane and selecting it.</span></span> <span data-ttu-id="69156-155">次に、右側のペインで [App Fabric ダッシュボード] のアイコンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="69156-155">Next, click the App Fabric Dashboard icon in the right-hand pane.</span></span> <span data-ttu-id="69156-156">次のスクリーン ショットに示すように、[永続的な WF インスタンス] の下に、永続化されたワークフロー サービスのインスタンスが 1 つ表示されます。</span><span class="sxs-lookup"><span data-stu-id="69156-156">Under Persisted WF Instances you will see there is one persisted workflow service instance as shown in the following screen shot.</span></span>  
   
-     ![App Fabric ダッシュボード](../../../../docs/framework/wcf/feature-details/media/appfabricdashboard.gif "AppFabricDashboard")  
+     <span data-ttu-id="69156-157">![App Fabric ダッシュ ボード](../../../../docs/framework/wcf/feature-details/media/appfabricdashboard.gif "AppFabricDashboard")</span><span class="sxs-lookup"><span data-stu-id="69156-157">![App Fabric Dashboard](../../../../docs/framework/wcf/feature-details/media/appfabricdashboard.gif "AppFabricDashboard")</span></span>  
   
-     **\[WF インスタンスの履歴\]** には、ワークフロー サービスのアクティベーション数、ワークフロー サービス インスタンスの完了数、ワークフロー インスタンスの失敗数など、そのワークフロー サービスに関する情報が表示されます。\[アクティブなインスタンスまたはアイドル状態のインスタンス\] の下に表示されるリンクをクリックすると、次のスクリーン ショットに示すように、アイドル状態のワークフロー インスタンスの詳細情報が表示されます。  
+     <span data-ttu-id="69156-158">**WF インスタンスの履歴**ワークフロー サービスのライセンス認証数、ワークフロー サービス インスタンスの入力候補の数の障害を持つワークフロー インスタンスの数など、ワークフロー サービスに関する情報を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="69156-158">The **WF Instance History** lists information about the workflow service such as the number of workflow service activations, the number of workflow service instance completions, and the number of workflow instances with failures.</span></span> <span data-ttu-id="69156-159">[アクティブなインスタンスまたはアイドル状態のインスタンス] の下に表示されるリンクをクリックすると、次のスクリーン ショットに示すように、アイドル状態のワークフロー インスタンスの詳細情報が表示されます。</span><span class="sxs-lookup"><span data-stu-id="69156-159">Under Active or Idle instances a link will be displayed, clicking on the link will display more information about the idle workflow instances as shown in the following screen shot.</span></span>  
   
-     ![永続化ワークフロー インスタンスの詳細](../../../../docs/framework/wcf/feature-details/media/persisteddetail.gif "PersistedDetail")  
+     <span data-ttu-id="69156-160">![ワークフロー インスタンスの詳細を永続化](../../../../docs/framework/wcf/feature-details/media/persisteddetail.gif "PersistedDetail")</span><span class="sxs-lookup"><span data-stu-id="69156-160">![Persisted Workflow Instance Details](../../../../docs/framework/wcf/feature-details/media/persisteddetail.gif "PersistedDetail")</span></span>  
   
-     Windows Server AppFabric の機能に関する詳細については、「[AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkID=193143&clcid=0x409)」を参照してください。  
+     <span data-ttu-id="69156-161">Windows Server App Fabric の詳細については機能とその使用方法を参照してください[Windows Server App Fabric をホストしている機能](http://go.microsoft.com/fwlink/?LinkID=193143&clcid=0x409)</span><span class="sxs-lookup"><span data-stu-id="69156-161">For more information about Windows Server App Fabric features and how to use them see [Windows Server App Fabric Hosting Features](http://go.microsoft.com/fwlink/?LinkID=193143&clcid=0x409)</span></span>  
   
-## 参照  
- [長時間のワークフロー サービスの作成](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)   
- [AppFabric のホスティング機能](http://go.microsoft.com/fwlink/?LinkId=193143)   
- [Windows Server AppFabric のインストール](http://go.microsoft.com/fwlink/?LinkId=193136)   
- [Windows Server AppFabric のドキュメント](http://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409)
+## <a name="see-also"></a><span data-ttu-id="69156-162">関連項目</span><span class="sxs-lookup"><span data-stu-id="69156-162">See Also</span></span>  
+ [<span data-ttu-id="69156-163">実行時間の長いワークフロー サービスを作成します。</span><span class="sxs-lookup"><span data-stu-id="69156-163">Creating a Long-running Workflow Service</span></span>](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)  
+ [<span data-ttu-id="69156-164">Windows Server App Fabric のホスティング機能</span><span class="sxs-lookup"><span data-stu-id="69156-164">Windows Server App Fabric Hosting Features</span></span>](http://go.microsoft.com/fwlink/?LinkId=193143)  
+ [<span data-ttu-id="69156-165">Windows Server App Fabric をインストールします。</span><span class="sxs-lookup"><span data-stu-id="69156-165">Installing Windows Server App Fabric</span></span>](http://go.microsoft.com/fwlink/?LinkId=193136)  
+ [<span data-ttu-id="69156-166">Windows Server App Fabric のドキュメント</span><span class="sxs-lookup"><span data-stu-id="69156-166">Windows Server App Fabric Documentation</span></span>](http://go.microsoft.com/fwlink/?LinkID=193037&clcid=0x409)

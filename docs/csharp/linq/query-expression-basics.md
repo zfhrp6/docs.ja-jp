@@ -7,179 +7,176 @@ manager: wpickett
 ms.author: wiwagn
 ms.date: 11/30/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
 ms.assetid: 027db1f8-346f-44d2-a16e-043fcea3a4e0
+ms.openlocfilehash: dbb77f57c7f3484930e1639da501ab828e1c2070
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: be8e2374f89366c6a98df900674a957bd2f531cc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="query-expression-basics"></a>クエリ式の基本
+# <a name="query-expression-basics"></a><span data-ttu-id="2879f-104">クエリ式の基本</span><span class="sxs-lookup"><span data-stu-id="2879f-104">Query expression basics</span></span>
 
-## <a name="what-is-a-query-and-what-does-it-do"></a>クエリとは何か。またどのような働きをするのか 
+## <a name="what-is-a-query-and-what-does-it-do"></a><span data-ttu-id="2879f-105">クエリとは何か。またどのような働きをするのか</span><span class="sxs-lookup"><span data-stu-id="2879f-105">What is a query and what does it do?</span></span> 
 
- *クエリ*とは、指定したデータ ソース (単一または複数) からどのようなデータを取得し、それらのデータをどのような形式と編成で返すかを説明した、命令のセットです。 クエリは、それが生成する結果とは区別されます。  
+ <span data-ttu-id="2879f-106">*クエリ*とは、指定したデータ ソース (単一または複数) からどのようなデータを取得し、それらのデータをどのような形式と編成で返すかを説明した、命令のセットです。</span><span class="sxs-lookup"><span data-stu-id="2879f-106">A *query* is a set of instructions that describes what data to retrieve from a given data source (or sources) and what shape and organization the returned data should have.</span></span> <span data-ttu-id="2879f-107">クエリは、それが生成する結果とは区別されます。</span><span class="sxs-lookup"><span data-stu-id="2879f-107">A query is distinct from the results that it produces.</span></span>  
   
- 一般に、ソース データは、同じ種類の要素のシーケンスとして論理的に編成されます。 たとえば、SQL データベース テーブルには、行のシーケンスが含まれています。 XML ファイルには、XML 要素のシーケンスがあります (ただし、これらはツリー構造で階層化されています)。 メモリ内コレクションには、オブジェクトのシーケンスが含まれています。 
+ <span data-ttu-id="2879f-108">一般に、ソース データは、同じ種類の要素のシーケンスとして論理的に編成されます。</span><span class="sxs-lookup"><span data-stu-id="2879f-108">Generally, the source data is organized logically as a sequence of elements of the same kind.</span></span> <span data-ttu-id="2879f-109">たとえば、SQL データベース テーブルには、行のシーケンスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="2879f-109">For example, a SQL database table contains a sequence of rows.</span></span> <span data-ttu-id="2879f-110">XML ファイルには、XML 要素のシーケンスがあります (ただし、これらはツリー構造で階層化されています)。</span><span class="sxs-lookup"><span data-stu-id="2879f-110">In an XML file, there is a "sequence" of XML elements (although these are organized hierarchically in a tree structure).</span></span> <span data-ttu-id="2879f-111">メモリ内コレクションには、オブジェクトのシーケンスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="2879f-111">An in-memory collection contains a sequence of objects.</span></span> 
   
- アプリケーションの観点から言うと、元のソース データの特定の型や構造体はは重要ではありません。 アプリケーションは常に、ソース データを <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Linq.IQueryable%601> コレクションとして認識します。 たとえば、LINQ to XML では、ソース データは `IEnumerable`\<<xref:System.Xml.Linq.XElement>> として表示されます。  
+ <span data-ttu-id="2879f-112">アプリケーションの観点から言うと、元のソース データの特定の型や構造体はは重要ではありません。</span><span class="sxs-lookup"><span data-stu-id="2879f-112">From an application's viewpoint, the specific type and structure of the original source data is not important.</span></span> <span data-ttu-id="2879f-113">アプリケーションは常に、ソース データを <xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Linq.IQueryable%601> コレクションとして認識します。</span><span class="sxs-lookup"><span data-stu-id="2879f-113">The application always sees the source data as an <xref:System.Collections.Generic.IEnumerable%601> or <xref:System.Linq.IQueryable%601> collection.</span></span> <span data-ttu-id="2879f-114">たとえば、LINQ to XML では、ソース データは `IEnumerable`\<<xref:System.Xml.Linq.XElement>> として表示されます。</span><span class="sxs-lookup"><span data-stu-id="2879f-114">For example, in LINQ to XML, the source data is made visible as an `IEnumerable`\<<xref:System.Xml.Linq.XElement>>.</span></span>  
   
- クエリは、このソース シーケンスに対して、次の 3 つのうち、いずれかの操作を行います。  
+ <span data-ttu-id="2879f-115">クエリは、このソース シーケンスに対して、次の 3 つのうち、いずれかの操作を行います。</span><span class="sxs-lookup"><span data-stu-id="2879f-115">Given this source sequence, a query may do one of three things:</span></span>  
   
--   個々 の要素を変更することなく、要素のサブセットを取得して新しいシーケンスを生成する。 クエリはその後、次の例のように、返されたシーケンスをさまざまな方法で並べ替えたり、グループ化する場合があります (例では `scores` を `int[]` と想定)。  
+-   <span data-ttu-id="2879f-116">個々 の要素を変更することなく、要素のサブセットを取得して新しいシーケンスを生成する。</span><span class="sxs-lookup"><span data-stu-id="2879f-116">Retrieve a subset of the elements to produce a new sequence without modifying the individual elements.</span></span> <span data-ttu-id="2879f-117">クエリはその後、次の例のように、返されたシーケンスをさまざまな方法で並べ替えたり、グループ化する場合があります (例では `scores` を `int[]` と想定)。</span><span class="sxs-lookup"><span data-stu-id="2879f-117">The query may then sort or group the returned sequence in various ways, as shown in the following example (assume `scores` is an `int[]`):</span></span>  
   
-     [!code-cs[csrefQueryExpBasics#45](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_1.cs)]  
+     [!code-csharp[csrefQueryExpBasics#45](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_1.cs)]  
   
--   上記の例のように要素のシーケンスを取得するが、それらを新しい型のオブジェクトに変換する。 たとえば、クエリでは、データ ソース内の特定の顧客レコードから姓だけを取得することがあります。 また、完全なレコードを取得し、それを使用して別のメモリ内オブジェクト型や XML データを構築した後、最終的な結果シーケンスを生成することもあります。 次の例では、`int` から `string` へのプロジェクションを行っています。 `highScoresQuery` の新しい型があることに注目してください。  
+-   <span data-ttu-id="2879f-118">上記の例のように要素のシーケンスを取得するが、それらを新しい型のオブジェクトに変換する。</span><span class="sxs-lookup"><span data-stu-id="2879f-118">Retrieve a sequence of elements as in the previous example but transform them to a new type of object.</span></span> <span data-ttu-id="2879f-119">たとえば、クエリでは、データ ソース内の特定の顧客レコードから姓だけを取得することがあります。</span><span class="sxs-lookup"><span data-stu-id="2879f-119">For example, a query may retrieve only the last names from certain customer records in a data source.</span></span> <span data-ttu-id="2879f-120">また、完全なレコードを取得し、それを使用して別のメモリ内オブジェクト型や XML データを構築した後、最終的な結果シーケンスを生成することもあります。</span><span class="sxs-lookup"><span data-stu-id="2879f-120">Or it may retrieve the complete record and then use it to construct another in-memory object type or even XML data before generating the final result sequence.</span></span> <span data-ttu-id="2879f-121">次の例では、`int` から `string` へのプロジェクションを行っています。</span><span class="sxs-lookup"><span data-stu-id="2879f-121">The following example shows a projection from an `int` to a `string`.</span></span> <span data-ttu-id="2879f-122">`highScoresQuery` の新しい型があることに注目してください。</span><span class="sxs-lookup"><span data-stu-id="2879f-122">Note the new type of `highScoresQuery`.</span></span>  
   
-     [!code-cs[csrefQueryExpBasics#46](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_2.cs)]  
+     [!code-csharp[csrefQueryExpBasics#46](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_2.cs)]  
   
--   ソース データに関するシングルトン値を取得します。次に例を示します。  
+-   <span data-ttu-id="2879f-123">ソース データに関するシングルトン値を取得します。次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="2879f-123">Retrieve a singleton value about the source data, such as:</span></span>  
   
-    -   特定の条件に一致する要素の数。  
+    -   <span data-ttu-id="2879f-124">特定の条件に一致する要素の数。</span><span class="sxs-lookup"><span data-stu-id="2879f-124">The number of elements that match a certain condition.</span></span>  
   
-    -   最大値または最小値を持つ要素。  
+    -   <span data-ttu-id="2879f-125">最大値または最小値を持つ要素。</span><span class="sxs-lookup"><span data-stu-id="2879f-125">The element that has the greatest or least value.</span></span>  
   
-    -   条件に一致する最初の要素や、指定された要素セット内の特定の値の合計。 たとえば、次のクエリは、整数配列 `scores` から、80 より大きいスコアの数を返します。  
+    -   <span data-ttu-id="2879f-126">条件に一致する最初の要素や、指定された要素セット内の特定の値の合計。</span><span class="sxs-lookup"><span data-stu-id="2879f-126">The first element that matches a condition, or the sum of particular values in a specified set of elements.</span></span> <span data-ttu-id="2879f-127">たとえば、次のクエリは、整数配列 `scores` から、80 より大きいスコアの数を返します。</span><span class="sxs-lookup"><span data-stu-id="2879f-127">For example, the following query returns the number of scores greater than 80 from the `scores` integer array:</span></span>  
   
-     [!code-cs[csrefQueryExpBasics#47](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_3.cs)]  
+     [!code-csharp[csrefQueryExpBasics#47](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_3.cs)]  
   
-     上記の例では、`Count` メソッドに対する呼び出しの前に、クエリ式を囲むかっこが使用されています。 これは、具体的な結果を格納する新しい変数を使用しても表現できます。 この手法では、クエリを格納する変数が、結果を格納するクエリとは別に保持されるので、コードがより読みやすくなります。  
+     <span data-ttu-id="2879f-128">上記の例では、`Count` メソッドに対する呼び出しの前に、クエリ式を囲むかっこが使用されています。</span><span class="sxs-lookup"><span data-stu-id="2879f-128">In the previous example, note the use of parentheses around the query expression before the call to the `Count` method.</span></span> <span data-ttu-id="2879f-129">これは、具体的な結果を格納する新しい変数を使用しても表現できます。</span><span class="sxs-lookup"><span data-stu-id="2879f-129">You can also express this by using a new variable to store the concrete result.</span></span> <span data-ttu-id="2879f-130">この手法では、クエリを格納する変数が、結果を格納するクエリとは別に保持されるので、コードがより読みやすくなります。</span><span class="sxs-lookup"><span data-stu-id="2879f-130">This technique is more readable because it keeps the variable that stores the query separate from the query that stores a result.</span></span>  
   
-     [!code-cs[csrefQueryExpBasics#48](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_4.cs)]  
+     [!code-csharp[csrefQueryExpBasics#48](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_4.cs)]  
   
- 上記の例では、`Count` に対する呼び出しの前でクエリが実行されています。これは、`highScoresQuery` によって返された要素の数を確認するために、`Count` が結果を反復処理する必要があるためです。  
+ <span data-ttu-id="2879f-131">上記の例では、`Count` に対する呼び出しの前でクエリが実行されています。これは、`highScoresQuery` によって返された要素の数を確認するために、`Count` が結果を反復処理する必要があるためです。</span><span class="sxs-lookup"><span data-stu-id="2879f-131">In the previous example, the query is executed in the call to `Count`, because `Count` must iterate over the results in order to determine the number of elements returned by `highScoresQuery`.</span></span>  
   
-## <a name="what-is-a-query-expression"></a>クエリ式とは何か  
+## <a name="what-is-a-query-expression"></a><span data-ttu-id="2879f-132">クエリ式とは何か</span><span class="sxs-lookup"><span data-stu-id="2879f-132">What is a query expression?</span></span>  
 
- *クエリ式*とは、クエリ構文で表されたクエリのことです。 クエリ式は、ファーストクラスの言語コンストラクトです。 他の式とよく似ていて、C# 式が有効である任意のコンテキストで使用できます。 クエリ式の構文は、SQL や XQuery などのような宣言型の構文で記述された、一連の句で構成されます。 各句には 1 つ以上の C# 式が含まれていて、それらの式は、それ自体がクエリ式である場合もあれば、クエリ式を含んでいる場合もあります。  
+ <span data-ttu-id="2879f-133">*クエリ式*とは、クエリ構文で表されたクエリのことです。</span><span class="sxs-lookup"><span data-stu-id="2879f-133">A *query expression* is a query expressed in query syntax.</span></span> <span data-ttu-id="2879f-134">クエリ式は、ファーストクラスの言語コンストラクトです。</span><span class="sxs-lookup"><span data-stu-id="2879f-134">A query expression is a first-class language construct.</span></span> <span data-ttu-id="2879f-135">他の式とよく似ていて、C# 式が有効である任意のコンテキストで使用できます。</span><span class="sxs-lookup"><span data-stu-id="2879f-135">It is just like any other expression and can be used in any context in which a C# expression is valid.</span></span> <span data-ttu-id="2879f-136">クエリ式の構文は、SQL や XQuery などのような宣言型の構文で記述された、一連の句で構成されます。</span><span class="sxs-lookup"><span data-stu-id="2879f-136">A query expression consists of a set of clauses written in a declarative syntax similar to SQL or XQuery.</span></span> <span data-ttu-id="2879f-137">各句には 1 つ以上の C# 式が含まれていて、それらの式は、それ自体がクエリ式である場合もあれば、クエリ式を含んでいる場合もあります。</span><span class="sxs-lookup"><span data-stu-id="2879f-137">Each clause in turn contains one or more C# expressions, and these expressions may themselves be either a query expression or contain a query expression.</span></span>  
   
- クエリ式は [from](../language-reference/keywords/from-clause.md) 句で始まり、[select](../language-reference/keywords/select-clause.md) または [group](../language-reference/keywords/group-clause.md) 句で終わる必要があります。 最初の `from` 句と最後の `select` または `group` 句の間には、次の省略可能句を 1 つ以上含めることができます: [where](../language-reference/keywords/where-clause.md)、[orderby](../language-reference/keywords/orderby-clause.md)、[join](../language-reference/keywords/join-clause.md)、[let](../language-reference/keywords/let-clause.md)、および追加の [from](../language-reference/keywords/from-clause.md) 句。 また、[into](../language-reference/keywords/into.md) キーワードを使用して、`join` 句や `group` 句の結果を、同じクエリ式内の追加のクエリ句のソースとして使用することもできます。  
+ <span data-ttu-id="2879f-138">クエリ式は [from](../language-reference/keywords/from-clause.md) 句で始まり、[select](../language-reference/keywords/select-clause.md) または [group](../language-reference/keywords/group-clause.md) 句で終わる必要があります。</span><span class="sxs-lookup"><span data-stu-id="2879f-138">A query expression must begin with a [from](../language-reference/keywords/from-clause.md) clause and must end with a [select](../language-reference/keywords/select-clause.md) or [group](../language-reference/keywords/group-clause.md) clause.</span></span> <span data-ttu-id="2879f-139">最初の `from` 句と最後の `select` または `group` 句の間には、次の省略可能句を 1 つ以上含めることができます: [where](../language-reference/keywords/where-clause.md)、[orderby](../language-reference/keywords/orderby-clause.md)、[join](../language-reference/keywords/join-clause.md)、[let](../language-reference/keywords/let-clause.md)、および追加の [from](../language-reference/keywords/from-clause.md) 句。</span><span class="sxs-lookup"><span data-stu-id="2879f-139">Between the first `from` clause and the last `select` or `group` clause, it can contain one or more of these optional clauses: [where](../language-reference/keywords/where-clause.md), [orderby](../language-reference/keywords/orderby-clause.md), [join](../language-reference/keywords/join-clause.md), [let](../language-reference/keywords/let-clause.md) and even additional [from](../language-reference/keywords/from-clause.md) clauses.</span></span> <span data-ttu-id="2879f-140">また、[into](../language-reference/keywords/into.md) キーワードを使用して、`join` 句や `group` 句の結果を、同じクエリ式内の追加のクエリ句のソースとして使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="2879f-140">You can also use the [into](../language-reference/keywords/into.md) keyword to enable the result of a `join` or `group` clause to serve as the source for additional query clauses in the same query expression.</span></span>  
   
-### <a name="query-variable"></a>クエリ変数  
+### <a name="query-variable"></a><span data-ttu-id="2879f-141">クエリ変数</span><span class="sxs-lookup"><span data-stu-id="2879f-141">Query variable</span></span>  
  
- LINQ では、クエリの*結果*ではなく、*クエリ*を格納する変数を、クエリ変数と呼びます。 より具体的に言うと、クエリ変数は常に列挙可能な型であり、`foreach` ステートメントか、または `IEnumerator.MoveNext` メソッドに対する直接呼び出しで反復処理された場合に、要素のシーケンスを生成します。  
+ <span data-ttu-id="2879f-142">LINQ では、クエリの*結果*ではなく、*クエリ*を格納する変数を、クエリ変数と呼びます。</span><span class="sxs-lookup"><span data-stu-id="2879f-142">In LINQ, a query variable is any variable that stores a *query* instead of the *results* of a query.</span></span> <span data-ttu-id="2879f-143">より具体的に言うと、クエリ変数は常に列挙可能な型であり、`foreach` ステートメントか、または `IEnumerator.MoveNext` メソッドに対する直接呼び出しで反復処理された場合に、要素のシーケンスを生成します。</span><span class="sxs-lookup"><span data-stu-id="2879f-143">More specifically, a query variable is always an enumerable type that will produce a sequence of elements when it is iterated over in a `foreach` statement or a direct call to its `IEnumerator.MoveNext` method.</span></span>  
   
- 次のコード例は、データ ソース、フィルター句、および並べ替え句がそれぞれ 1 つずつあり、ソース要素の変換がない、簡単なクエリ式を示したものです。 `select` 句でクエリが終わっています。  
+ <span data-ttu-id="2879f-144">次のコード例は、データ ソース、フィルター句、および並べ替え句がそれぞれ 1 つずつあり、ソース要素の変換がない、簡単なクエリ式を示したものです。</span><span class="sxs-lookup"><span data-stu-id="2879f-144">The following code example shows a simple query expression with one data source, one filtering clause, one ordering clause, and no transformation of the source elements.</span></span> <span data-ttu-id="2879f-145">`select` 句でクエリが終わっています。</span><span class="sxs-lookup"><span data-stu-id="2879f-145">The `select` clause ends the query.</span></span>  
   
- [!code-cs[csrefQueryExpBasics#49](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_5.cs)]  
+ [!code-csharp[csrefQueryExpBasics#49](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_5.cs)]  
   
- 上記の例では、`scoreQuery` が *クエリ変数*です。クエリ変数は単に*クエリ*と呼ばれることもあります。 クエリ変数には、`foreach` ループで生成された実際の結果データは格納されません。 また、`foreach` ステートメントが実行されたとき、クエリ結果はクエリ変数 `scoreQuery` を通じては返されません。 結果は反復変数 `testScore` を通じて返されます。 `scoreQuery` 変数は 2 番目の `foreach` ループで反復処理できます。 この変数とデータ ソースのどちらかが変更されないかぎり、同じ結果が生成されます。  
+ <span data-ttu-id="2879f-146">上記の例では、`scoreQuery` が *クエリ変数*です。クエリ変数は単に*クエリ*と呼ばれることもあります。</span><span class="sxs-lookup"><span data-stu-id="2879f-146">In the previous example, `scoreQuery` is a *query variable,* which is sometimes referred to as just a *query*.</span></span> <span data-ttu-id="2879f-147">クエリ変数には、`foreach` ループで生成された実際の結果データは格納されません。</span><span class="sxs-lookup"><span data-stu-id="2879f-147">The query variable stores no actual result data, which is produced in the `foreach` loop.</span></span> <span data-ttu-id="2879f-148">また、`foreach` ステートメントが実行されたとき、クエリ結果はクエリ変数 `scoreQuery` を通じては返されません。</span><span class="sxs-lookup"><span data-stu-id="2879f-148">And when the `foreach` statement executes, the query results are not returned through the query variable `scoreQuery`.</span></span> <span data-ttu-id="2879f-149">結果は反復変数 `testScore` を通じて返されます。</span><span class="sxs-lookup"><span data-stu-id="2879f-149">Rather, they are returned through the iteration variable `testScore`.</span></span> <span data-ttu-id="2879f-150">`scoreQuery` 変数は 2 番目の `foreach` ループで反復処理できます。</span><span class="sxs-lookup"><span data-stu-id="2879f-150">The `scoreQuery` variable can be iterated in a second `foreach` loop.</span></span> <span data-ttu-id="2879f-151">この変数とデータ ソースのどちらかが変更されないかぎり、同じ結果が生成されます。</span><span class="sxs-lookup"><span data-stu-id="2879f-151">It will produce the same results as long as neither it nor the data source has been modified.</span></span>  
   
- クエリ変数には、クエリ構文、メソッド構文、またはそれら 2 つの組合せで表現されたクエリが格納される場合があります。 次の例では、`queryMajorCities` と `queryMajorCities2` の両方がクエリ変数です。  
+ <span data-ttu-id="2879f-152">クエリ変数には、クエリ構文、メソッド構文、またはそれら 2 つの組合せで表現されたクエリが格納される場合があります。</span><span class="sxs-lookup"><span data-stu-id="2879f-152">A query variable may store a query that is expressed in query syntax or method syntax, or a combination of the two.</span></span> <span data-ttu-id="2879f-153">次の例では、`queryMajorCities` と `queryMajorCities2` の両方がクエリ変数です。</span><span class="sxs-lookup"><span data-stu-id="2879f-153">In the following examples, both `queryMajorCities` and `queryMajorCities2` are query variables:</span></span>  
   
- [!code-cs[csrefQueryExpBasics#50](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_6.cs)]  
+ [!code-csharp[csrefQueryExpBasics#50](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_6.cs)]  
   
- これに対し、次の 2 つの例は、クエリで初期化されてはいるものの、クエリ変数ではない変数を示しています。 これらは結果を格納するので、クエリ変数ではありません。  
+ <span data-ttu-id="2879f-154">これに対し、次の 2 つの例は、クエリで初期化されてはいるものの、クエリ変数ではない変数を示しています。</span><span class="sxs-lookup"><span data-stu-id="2879f-154">On the other hand, the following two examples show variables that are not query variables even through each is initialized with a query.</span></span> <span data-ttu-id="2879f-155">これらは結果を格納するので、クエリ変数ではありません。</span><span class="sxs-lookup"><span data-stu-id="2879f-155">They are not query variables because they store results:</span></span>  
   
- [!code-cs[csrefQueryExpBasics#51](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_7.cs)]  
+ [!code-csharp[csrefQueryExpBasics#51](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_7.cs)]  
   
- クエリのさまざまな表現方法については、「[LINQ でのクエリ構文とメソッド構文](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」をご覧ください。  
+ <span data-ttu-id="2879f-156">クエリのさまざまな表現方法については、「[LINQ でのクエリ構文とメソッド構文](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2879f-156">For more information about the different ways to express queries, see [Query syntax and method syntax in LINQ](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).</span></span>  
   
-#### <a name="explicit-and-implicit-typing-of-query-variables"></a>クエリ変数の明示的型指定と暗黙的型指定  
+#### <a name="explicit-and-implicit-typing-of-query-variables"></a><span data-ttu-id="2879f-157">クエリ変数の明示的型指定と暗黙的型指定</span><span class="sxs-lookup"><span data-stu-id="2879f-157">Explicit and implicit typing of query variables</span></span>  
  
- このドキュメントでは通常、明示的な型のクエリ変数で説明を行います。これは、クエリ変数と [select 句](../language-reference/keywords/select-clause.md)の関係を示すためです。 ただし、 [var](../language-reference/keywords/var.md) キーワードを使用すれば、コンパイル時にクエリ変数 (またはその他のローカル変数) の型を推論するようにコンパイラに指示することもできます。 たとえば、このトピックで先に示したクエリの例は、暗黙的な型指定を使用しても表現できます。  
+ <span data-ttu-id="2879f-158">このドキュメントでは通常、明示的な型のクエリ変数で説明を行います。これは、クエリ変数と [select 句](../language-reference/keywords/select-clause.md)の関係を示すためです。</span><span class="sxs-lookup"><span data-stu-id="2879f-158">This documentation usually provides the explicit type of the query variable in order to show the type relationship between the query variable and the [select clause](../language-reference/keywords/select-clause.md).</span></span> <span data-ttu-id="2879f-159">ただし、 [var](../language-reference/keywords/var.md) キーワードを使用すれば、コンパイル時にクエリ変数 (またはその他のローカル変数) の型を推論するようにコンパイラに指示することもできます。</span><span class="sxs-lookup"><span data-stu-id="2879f-159">However, you can also use the [var](../language-reference/keywords/var.md) keyword to instruct the compiler to infer the type of a query variable (or any other local variable) at compile time.</span></span> <span data-ttu-id="2879f-160">たとえば、このトピックで先に示したクエリの例は、暗黙的な型指定を使用しても表現できます。</span><span class="sxs-lookup"><span data-stu-id="2879f-160">For example, the query example that was shown previously in this topic can also be expressed by using implicit typing:</span></span>  
   
- [!code-cs[csrefQueryExpBasics#52](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_8.cs)]  
+ [!code-csharp[csrefQueryExpBasics#52](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_8.cs)]  
   
- 詳しくは、「[暗黙的に型指定されるローカル変数](../programming-guide/classes-and-structs/implicitly-typed-local-variables.md)」および「[LINQ クエリ操作での型の関係](../programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md)」をご覧ください。  
+ <span data-ttu-id="2879f-161">詳しくは、「[暗黙的に型指定されるローカル変数](../programming-guide/classes-and-structs/implicitly-typed-local-variables.md)」および「[LINQ クエリ操作での型の関係](../programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2879f-161">For more information, see [Implicitly typed local variables](../programming-guide/classes-and-structs/implicitly-typed-local-variables.md) and [Type relationships in LINQ query operations](../programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md).</span></span>  
   
-### <a name="starting-a-query-expression"></a>クエリ式の開始  
+### <a name="starting-a-query-expression"></a><span data-ttu-id="2879f-162">クエリ式の開始</span><span class="sxs-lookup"><span data-stu-id="2879f-162">Starting a query expression</span></span>  
  
- クエリ式は、`from` 句で始める必要があります。 この句では、データ ソースと範囲変数を指定します。 範囲変数は、ソース シーケンスが走査されるときの、ソース シーケンス内の連続する各要素を表します。 範囲変数は、データ ソース内の要素の型に基づいて厳密に型指定されます。 次の例では、`countries` が `Country` オブジェクトの配列であるため、範囲変数も `Country` として型指定されています。 範囲変数は厳密に型指定されるので、ドット演算子を使用して、その型の利用可能なメンバーにアクセスすることができます。  
+ <span data-ttu-id="2879f-163">クエリ式は、`from` 句で始める必要があります。</span><span class="sxs-lookup"><span data-stu-id="2879f-163">A query expression must begin with a `from` clause.</span></span> <span data-ttu-id="2879f-164">この句では、データ ソースと範囲変数を指定します。</span><span class="sxs-lookup"><span data-stu-id="2879f-164">It specifies a data source together with a range variable.</span></span> <span data-ttu-id="2879f-165">範囲変数は、ソース シーケンスが走査されるときの、ソース シーケンス内の連続する各要素を表します。</span><span class="sxs-lookup"><span data-stu-id="2879f-165">The range variable represents each successive element in the source sequence as the source sequence is being traversed.</span></span> <span data-ttu-id="2879f-166">範囲変数は、データ ソース内の要素の型に基づいて厳密に型指定されます。</span><span class="sxs-lookup"><span data-stu-id="2879f-166">The range variable is strongly typed based on the type of elements in the data source.</span></span> <span data-ttu-id="2879f-167">次の例では、`countries` が `Country` オブジェクトの配列であるため、範囲変数も `Country` として型指定されています。</span><span class="sxs-lookup"><span data-stu-id="2879f-167">In the following example, because `countries` is an array of `Country` objects, the range variable is also typed as `Country`.</span></span> <span data-ttu-id="2879f-168">範囲変数は厳密に型指定されるので、ドット演算子を使用して、その型の利用可能なメンバーにアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="2879f-168">Because the range variable is strongly typed, you can use the dot operator to access any available members of the type.</span></span>  
   
- [!code-cs[csrefQueryExpBasics#53](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_9.cs)]  
+ [!code-csharp[csrefQueryExpBasics#53](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_9.cs)]  
   
- 範囲変数は、クエリがセミコロンまたは *continuation* 句で終了するまでスコープ内に維持されます。  
+ <span data-ttu-id="2879f-169">範囲変数は、クエリがセミコロンまたは *continuation* 句で終了するまでスコープ内に維持されます。</span><span class="sxs-lookup"><span data-stu-id="2879f-169">The range variable is in scope until the query is exited either with a semicolon or with a *continuation* clause.</span></span>  
   
- クエリ式には、複数の `from` 句を含めることができます。 ソース シーケンス内の各要素がそれ自体コレクションであるか、またはコレクションを格納している場合には、追加の `from` 句を使用します。 たとえば、`Country` オブジェクトのコレクションがあり、各オブジェクトに、`Cities` という名前の `City` オブジェクトのコレクションが格納されているとします。 その場合、各 `Country` 内の `City` オブジェクトを照会するには、次のように 2 つの `from` 句を使用します。  
+ <span data-ttu-id="2879f-170">クエリ式には、複数の `from` 句を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="2879f-170">A query expression may contain multiple `from` clauses.</span></span> <span data-ttu-id="2879f-171">ソース シーケンス内の各要素がそれ自体コレクションであるか、またはコレクションを格納している場合には、追加の `from` 句を使用します。</span><span class="sxs-lookup"><span data-stu-id="2879f-171">Use additional `from` clauses when each element in the source sequence is itself a collection or contains a collection.</span></span> <span data-ttu-id="2879f-172">たとえば、`Country` オブジェクトのコレクションがあり、各オブジェクトに、`Cities` という名前の `City` オブジェクトのコレクションが格納されているとします。</span><span class="sxs-lookup"><span data-stu-id="2879f-172">For example, assume that you have a collection of `Country` objects, each of which contains a collection of `City` objects named `Cities`.</span></span> <span data-ttu-id="2879f-173">その場合、各 `Country` 内の `City` オブジェクトを照会するには、次のように 2 つの `from` 句を使用します。</span><span class="sxs-lookup"><span data-stu-id="2879f-173">To query the `City` objects in each `Country`, use two `from` clauses as shown here:</span></span>  
   
- [!code-cs[csrefQueryExpBasics#54](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_10.cs)]  
+ [!code-csharp[csrefQueryExpBasics#54](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_10.cs)]  
   
- 詳しくは、「[from 句](../language-reference/keywords/from-clause.md)」をご覧ください。  
+ <span data-ttu-id="2879f-174">詳しくは、「[from 句](../language-reference/keywords/from-clause.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2879f-174">For more information, see [from clause](../language-reference/keywords/from-clause.md).</span></span>  
   
-### <a name="ending-a-query-expression"></a>クエリ式の終了  
+### <a name="ending-a-query-expression"></a><span data-ttu-id="2879f-175">クエリ式の終了</span><span class="sxs-lookup"><span data-stu-id="2879f-175">Ending a query expression</span></span>  
  
- クエリ式は、`group` 句または `select` 句のいずれかで終わる必要があります。  
+ <span data-ttu-id="2879f-176">クエリ式は、`group` 句または `select` 句のいずれかで終わる必要があります。</span><span class="sxs-lookup"><span data-stu-id="2879f-176">A query expression must end with either a `group` clause or a `select` clause.</span></span>  
   
-#### <a name="group-clause"></a>group 句  
+#### <a name="group-clause"></a><span data-ttu-id="2879f-177">group 句</span><span class="sxs-lookup"><span data-stu-id="2879f-177">group clause</span></span>  
  
- `group` 句は、指定したキーによって編成されたグループのシーケンスを生成するために使用します。 キーには、任意のデータ型を指定できます。 たとえば、次のクエリでは、1 つ以上の `Country` オブジェクトを含み、キーが `char` 値であるグループのシーケンスが作成されます。  
+ <span data-ttu-id="2879f-178">`group` 句は、指定したキーによって編成されたグループのシーケンスを生成するために使用します。</span><span class="sxs-lookup"><span data-stu-id="2879f-178">Use the `group` clause to produce a sequence of groups organized by a key that you specify.</span></span> <span data-ttu-id="2879f-179">キーには、任意のデータ型を指定できます。</span><span class="sxs-lookup"><span data-stu-id="2879f-179">The key can be any data type.</span></span> <span data-ttu-id="2879f-180">たとえば、次のクエリでは、1 つ以上の `Country` オブジェクトを含み、キーが `char` 値であるグループのシーケンスが作成されます。</span><span class="sxs-lookup"><span data-stu-id="2879f-180">For example, the following query creates a sequence of groups that contains one or more `Country` objects and whose key is a `char` value.</span></span>  
   
- [!code-cs[csrefQueryExpBasics#55](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_11.cs)]  
+ [!code-csharp[csrefQueryExpBasics#55](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_11.cs)]  
   
- グループ化について詳しくは、「[group 句](../language-reference/keywords/group-clause.md)」をご覧ください。  
+ <span data-ttu-id="2879f-181">グループ化について詳しくは、「[group 句](../language-reference/keywords/group-clause.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2879f-181">For more information about grouping, see [group clause](../language-reference/keywords/group-clause.md).</span></span>  
   
-#### <a name="select-clause"></a>select 句  
- `select` 句は、その他すべての型のシーケンスを生成するために使用します。 シンプルな `select` 句は、データ ソース内に含まれるオブジェクトと同じ型のオブジェクトのシーケンスを生成します。 この例では、データ ソースに `Country` オブジェクトが含まれています。 `orderby` 句は要素を新しい順序に並べ替え、`select` 句は並べ替えられた `Country` オブジェクトのシーケンスを生成します。  
+#### <a name="select-clause"></a><span data-ttu-id="2879f-182">select 句</span><span class="sxs-lookup"><span data-stu-id="2879f-182">select clause</span></span>  
+ <span data-ttu-id="2879f-183">`select` 句は、その他すべての型のシーケンスを生成するために使用します。</span><span class="sxs-lookup"><span data-stu-id="2879f-183">Use the `select` clause to produce all other types of sequences.</span></span> <span data-ttu-id="2879f-184">シンプルな `select` 句は、データ ソース内に含まれるオブジェクトと同じ型のオブジェクトのシーケンスを生成します。</span><span class="sxs-lookup"><span data-stu-id="2879f-184">A simple `select` clause just produces a sequence of the same type of objects as the objects that are contained in the data source.</span></span> <span data-ttu-id="2879f-185">この例では、データ ソースに `Country` オブジェクトが含まれています。</span><span class="sxs-lookup"><span data-stu-id="2879f-185">In this example, the data source contains `Country` objects.</span></span> <span data-ttu-id="2879f-186">`orderby` 句は要素を新しい順序に並べ替え、`select` 句は並べ替えられた `Country` オブジェクトのシーケンスを生成します。</span><span class="sxs-lookup"><span data-stu-id="2879f-186">The `orderby` clause just sorts the elements into a new order and the `select` clause produces a sequence of the reordered `Country` objects.</span></span>  
   
- [!code-cs[csrefQueryExpBasics#56](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_12.cs)]  
+ [!code-csharp[csrefQueryExpBasics#56](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_12.cs)]  
   
- `select` 句は、ソース データを新しい型のシーケンスに変換するために使用できます。 この変換は、*プロジェクション*とも呼ばれます。 次の例では、`select` 句は元の要素内にあるフィールドのサブセットのみを含んだ、匿名型のシーケンスを*プロジェクト*します。 新しいオブジェクトはオブジェクト初期化子を使用して初期化されています。  
+ <span data-ttu-id="2879f-187">`select` 句は、ソース データを新しい型のシーケンスに変換するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="2879f-187">The `select` clause can be used to transform source data into sequences of new types.</span></span> <span data-ttu-id="2879f-188">この変換は、*プロジェクション*とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="2879f-188">This transformation is also named a *projection*.</span></span> <span data-ttu-id="2879f-189">次の例では、`select` 句は元の要素内にあるフィールドのサブセットのみを含んだ、匿名型のシーケンスを*プロジェクト*します。</span><span class="sxs-lookup"><span data-stu-id="2879f-189">In the following example, the `select` clause *projects* a sequence of anonymous types which contains only a subset of the fields in the original element.</span></span> <span data-ttu-id="2879f-190">新しいオブジェクトはオブジェクト初期化子を使用して初期化されています。</span><span class="sxs-lookup"><span data-stu-id="2879f-190">Note that the new objects are initialized by using an object initializer.</span></span>  
   
- [!code-cs[csrefQueryExpBasics#57](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_13.cs)]  
+ [!code-csharp[csrefQueryExpBasics#57](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_13.cs)]  
   
- `select` 句を使用してソース データを変換する方法について詳しくは、「[select 句](../language-reference/keywords/select-clause.md)」をご覧ください。  
+ <span data-ttu-id="2879f-191">`select` 句を使用してソース データを変換する方法について詳しくは、「[select 句](../language-reference/keywords/select-clause.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2879f-191">For more information about all the ways that a `select` clause can be used to transform source data, see [select clause](../language-reference/keywords/select-clause.md).</span></span>  
   
-#### <a name="continuations-with-into"></a>"into" を使用した継続  
+#### <a name="continuations-with-into"></a><span data-ttu-id="2879f-192">"into" を使用した継続</span><span class="sxs-lookup"><span data-stu-id="2879f-192">Continuations with "into"</span></span>  
  
- `select` 句または `group` 句で `into` キーワードを使用すると、クエリを格納する一時的な識別子を作成できます。 これは、grouping 操作や select 操作の後、クエリに対する追加のクエリ操作を実行する必要がある場合に便利です。 次の例では、1 千万という範囲の人口で `countries` をグループ化しています。 これらのグループが作成された後、追加の句で一部のグループを除外し、その後、グループを昇順で並べ替えようとしています。 これらの追加操作を実行するには、`countryGroup` によって継続を表す必要があります。  
+ <span data-ttu-id="2879f-193">`select` 句または `group` 句で `into` キーワードを使用すると、クエリを格納する一時的な識別子を作成できます。</span><span class="sxs-lookup"><span data-stu-id="2879f-193">You can use the `into` keyword in a `select` or `group` clause to create a temporary identifier that stores a query.</span></span> <span data-ttu-id="2879f-194">これは、grouping 操作や select 操作の後、クエリに対する追加のクエリ操作を実行する必要がある場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="2879f-194">Do this when you must perform additional query operations on a query after a grouping or select operation.</span></span> <span data-ttu-id="2879f-195">次の例では、1 千万という範囲の人口で `countries` をグループ化しています。</span><span class="sxs-lookup"><span data-stu-id="2879f-195">In the following example `countries` are grouped according to population in ranges of 10 million.</span></span> <span data-ttu-id="2879f-196">これらのグループが作成された後、追加の句で一部のグループを除外し、その後、グループを昇順で並べ替えようとしています。</span><span class="sxs-lookup"><span data-stu-id="2879f-196">After these groups are created, additional clauses filter out some groups, and then to sort the groups in ascending order.</span></span> <span data-ttu-id="2879f-197">これらの追加操作を実行するには、`countryGroup` によって継続を表す必要があります。</span><span class="sxs-lookup"><span data-stu-id="2879f-197">To perform those additional operations, the continuation represented by `countryGroup` is required.</span></span>  
   
- [!code-cs[csrefQueryExpBasics#58](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_14.cs)]  
+ [!code-csharp[csrefQueryExpBasics#58](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_14.cs)]  
   
- 詳しくは、「[into](../language-reference/keywords/into.md)」をご覧ください。  
+ <span data-ttu-id="2879f-198">詳しくは、「[into](../language-reference/keywords/into.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2879f-198">For more information, see [into](../language-reference/keywords/into.md).</span></span>  
   
-### <a name="filtering-ordering-and-joining"></a>フィルター処理、並べ替え、および結合
+### <a name="filtering-ordering-and-joining"></a><span data-ttu-id="2879f-199">フィルター処理、並べ替え、および結合</span><span class="sxs-lookup"><span data-stu-id="2879f-199">Filtering, ordering, and joining</span></span>
 
- 開始の `from` 句と、終了の `select` または`group`句の間には、その他のすべての省略可能句 (`where`、`join`、`orderby`、`from`、`let`) を必要に応じて使用できます。 省略可能句は、クエリ本文で任意の回数 (0 回～複数回) 使用できます。  
+ <span data-ttu-id="2879f-200">開始の `from` 句と、終了の `select` または`group`句の間には、その他のすべての省略可能句 (`where`、`join`、`orderby`、`from`、`let`) を必要に応じて使用できます。</span><span class="sxs-lookup"><span data-stu-id="2879f-200">Between the starting `from` clause, and the ending `select` or `group` clause, all other clauses (`where`, `join`, `orderby`, `from`, `let`) are optional.</span></span> <span data-ttu-id="2879f-201">省略可能句は、クエリ本文で任意の回数 (0 回～複数回) 使用できます。</span><span class="sxs-lookup"><span data-stu-id="2879f-201">Any of the optional clauses may be used zero times or multiple times in a query body.</span></span>  
   
-#### <a name="where-clause"></a>where 句  
+#### <a name="where-clause"></a><span data-ttu-id="2879f-202">where 句</span><span class="sxs-lookup"><span data-stu-id="2879f-202">where clause</span></span>  
 
- `where` 句は、1 つ以上の述語式に基づいて、ソース データから要素を除外するために使用します。 次の例では、`where` 句に 1 つの述語と 2 つの条件があります。  
+ <span data-ttu-id="2879f-203">`where` 句は、1 つ以上の述語式に基づいて、ソース データから要素を除外するために使用します。</span><span class="sxs-lookup"><span data-stu-id="2879f-203">Use the `where` clause to filter out elements from the source data based on one or more predicate expressions.</span></span> <span data-ttu-id="2879f-204">次の例では、`where` 句に 1 つの述語と 2 つの条件があります。</span><span class="sxs-lookup"><span data-stu-id="2879f-204">The `where` clause in the following example has one predicate with two conditions.</span></span>  
   
- [!code-cs[csrefQueryExpBasics#59](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_15.cs)]  
+ [!code-csharp[csrefQueryExpBasics#59](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_15.cs)]  
   
- 詳しくは、「[where 句](../language-reference/keywords/where-clause.md)」をご覧ください。  
+ <span data-ttu-id="2879f-205">詳しくは、「[where 句](../language-reference/keywords/where-clause.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2879f-205">For more information, see [where clause](../language-reference/keywords/where-clause.md).</span></span>  
   
-#### <a name="orderby-clause"></a>orderby 句
+#### <a name="orderby-clause"></a><span data-ttu-id="2879f-206">orderby 句</span><span class="sxs-lookup"><span data-stu-id="2879f-206">orderby clause</span></span>
 
- `orderby` 句は、結果を昇順または降順で並べ替えるために使用します。 第 2 の並べ替え順序を指定することもできます。 次の例では、`Area` プロパティを使用して、`country` オブジェクトに対する 第 1 の並べ替えを実行しています。 その後、`Population` プロパティを使用して第 2 の並べ替えを実行しています。  
+ <span data-ttu-id="2879f-207">`orderby` 句は、結果を昇順または降順で並べ替えるために使用します。</span><span class="sxs-lookup"><span data-stu-id="2879f-207">Use the `orderby` clause to sort the results in either ascending or descending order.</span></span> <span data-ttu-id="2879f-208">第 2 の並べ替え順序を指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="2879f-208">You can also specify secondary sort orders.</span></span> <span data-ttu-id="2879f-209">次の例では、`Area` プロパティを使用して、`country` オブジェクトに対する 第 1 の並べ替えを実行しています。</span><span class="sxs-lookup"><span data-stu-id="2879f-209">The following example performs a primary sort on the `country` objects by using the `Area` property.</span></span> <span data-ttu-id="2879f-210">その後、`Population` プロパティを使用して第 2 の並べ替えを実行しています。</span><span class="sxs-lookup"><span data-stu-id="2879f-210">It then performs a secondary sort by using the `Population` property.</span></span>  
   
- [!code-cs[csrefQueryExpBasics#60](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_16.cs)]  
+ [!code-csharp[csrefQueryExpBasics#60](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_16.cs)]  
   
- `ascending` キーワードは省略可能です。順序が指定されていない場合は、これが既定の並べ替え順序になります。 詳しくは、「[orderby 句](../language-reference/keywords/orderby-clause.md)」をご覧ください。  
+ <span data-ttu-id="2879f-211">`ascending` キーワードは省略可能です。順序が指定されていない場合は、これが既定の並べ替え順序になります。</span><span class="sxs-lookup"><span data-stu-id="2879f-211">The `ascending` keyword is optional; it is the default sort order if no order is specified.</span></span> <span data-ttu-id="2879f-212">詳しくは、「[orderby 句](../language-reference/keywords/orderby-clause.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2879f-212">For more information, see [orderby clause](../language-reference/keywords/orderby-clause.md).</span></span>  
   
-#### <a name="join-clause"></a>join 句
+#### <a name="join-clause"></a><span data-ttu-id="2879f-213">join 句</span><span class="sxs-lookup"><span data-stu-id="2879f-213">join clause</span></span>
 
- `join` 句は、各要素内の指定したキー間での等値比較に基づいて、1 つのデータ ソースの要素を別のデータ ソースの要素と関連付けたり、組み合わせたりするために使用します。 LINQ では、join 操作は要素の型が異なるオブジェクトのシーケンスに対して実行されます。 2 つのシーケンスを結合した後には、`select` または `group` ステートメント使用して、出力シーケンスに格納する要素を指定する必要があります。 また、匿名型を使用して、関連付けられた各要素セットのプロパティを、出力シーケンス用の新しい型に結合することもできます。 次の例では、`Category` プロパティが `categories` 文字列配列内のいずれかのカテゴリと一致する `prod` オブジェクトを関連付けています。 `Category` が `categories` 内の文字列に一致しない製品は除外されます。 `select` ステートメントは、`cat` と `prod` の両方からプロパティを取った新しい型をプロジェクトしています。  
+ <span data-ttu-id="2879f-214">`join` 句は、各要素内の指定したキー間での等値比較に基づいて、1 つのデータ ソースの要素を別のデータ ソースの要素と関連付けたり、組み合わせたりするために使用します。</span><span class="sxs-lookup"><span data-stu-id="2879f-214">Use the `join` clause to associate and/or combine elements from one data source with elements from another data source based on an equality comparison between specified keys in each element.</span></span> <span data-ttu-id="2879f-215">LINQ では、join 操作は要素の型が異なるオブジェクトのシーケンスに対して実行されます。</span><span class="sxs-lookup"><span data-stu-id="2879f-215">In LINQ, join operations are performed on sequences of objects whose elements are different types.</span></span> <span data-ttu-id="2879f-216">2 つのシーケンスを結合した後には、`select` または `group` ステートメント使用して、出力シーケンスに格納する要素を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2879f-216">After you have joined two sequences, you must use a `select` or `group` statement to specify which element to store in the output sequence.</span></span> <span data-ttu-id="2879f-217">また、匿名型を使用して、関連付けられた各要素セットのプロパティを、出力シーケンス用の新しい型に結合することもできます。</span><span class="sxs-lookup"><span data-stu-id="2879f-217">You can also use an anonymous type to combine properties from each set of associated elements into a new type for the output sequence.</span></span> <span data-ttu-id="2879f-218">次の例では、`Category` プロパティが `categories` 文字列配列内のいずれかのカテゴリと一致する `prod` オブジェクトを関連付けています。</span><span class="sxs-lookup"><span data-stu-id="2879f-218">The following example associates `prod` objects whose `Category` property matches one of the categories in the `categories` string array.</span></span> <span data-ttu-id="2879f-219">`Category` が `categories` 内の文字列に一致しない製品は除外されます。`select` ステートメントは、`cat` と `prod` の両方からプロパティを取った新しい型をプロジェクトしています。</span><span class="sxs-lookup"><span data-stu-id="2879f-219">Products whose `Category` does not match any string in `categories` are filtered out. The `select` statement projects a new type whose properties are taken from both `cat` and `prod`.</span></span>  
   
- [!code-cs[csrefQueryExpBasics#61](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_17.cs)]  
+ [!code-csharp[csrefQueryExpBasics#61](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_17.cs)]  
   
- [into](../language-reference/keywords/into.md) キーワードを使用して `join` 操作の結果を一時変数に格納することにより、グループ結合を実行することもできます。 詳しくは、「[join 句](../language-reference/keywords/join-clause.md)」をご覧ください。  
+ <span data-ttu-id="2879f-220">[into](../language-reference/keywords/into.md) キーワードを使用して `join` 操作の結果を一時変数に格納することにより、グループ結合を実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="2879f-220">You can also perform a group join by storing the results of the `join` operation into a temporary variable by using the [into](../language-reference/keywords/into.md) keyword.</span></span> <span data-ttu-id="2879f-221">詳しくは、「[join 句](../language-reference/keywords/join-clause.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2879f-221">For more information, see [join clause](../language-reference/keywords/join-clause.md).</span></span>  
   
-#### <a name="let-clause"></a>let 句 
+#### <a name="let-clause"></a><span data-ttu-id="2879f-222">let 句</span><span class="sxs-lookup"><span data-stu-id="2879f-222">let clause</span></span> 
 
- `let` 句は、式の結果 (メソッド呼び出しなど) を新しい範囲変数に格納するために使用します。 次の例では、`Split` よって返された文字列配列の最初の要素を、範囲変数 `firstName` に格納しています。  
+ <span data-ttu-id="2879f-223">`let` 句は、式の結果 (メソッド呼び出しなど) を新しい範囲変数に格納するために使用します。</span><span class="sxs-lookup"><span data-stu-id="2879f-223">Use the `let` clause to store the result of an expression, such as a method call, in a new range variable.</span></span> <span data-ttu-id="2879f-224">次の例では、`Split` よって返された文字列配列の最初の要素を、範囲変数 `firstName` に格納しています。</span><span class="sxs-lookup"><span data-stu-id="2879f-224">In the following example, the range variable `firstName` stores the first element of the array of strings that is returned by `Split`.</span></span>  
   
- [!code-cs[csrefQueryExpBasics#62](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_18.cs)]  
+ [!code-csharp[csrefQueryExpBasics#62](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_18.cs)]  
   
- 詳しくは、「[let 句](../language-reference/keywords/let-clause.md)」をご覧ください。  
+ <span data-ttu-id="2879f-225">詳しくは、「[let 句](../language-reference/keywords/let-clause.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2879f-225">For more information, see [let clause](../language-reference/keywords/let-clause.md).</span></span>  
   
-### <a name="subqueries-in-a-query-expression"></a>クエリ式内のサブクエリ  
+### <a name="subqueries-in-a-query-expression"></a><span data-ttu-id="2879f-226">クエリ式内のサブクエリ</span><span class="sxs-lookup"><span data-stu-id="2879f-226">Subqueries in a query expression</span></span>  
 
- クエリ句には、それ自体にクエリ式が含まれることがあります。これは、*サブクエリ*とも呼ばれます。 各サブクエリは、独自の `from` で始まります。この句は、最初の `from` 句と必ずしも同じデータ ソースを指している必要はありません。 たとえば、次のクエリは、select ステートメントで grouping 操作の結果を取得するために使用されるクエリ式を示しています。  
+ <span data-ttu-id="2879f-227">クエリ句には、それ自体にクエリ式が含まれることがあります。これは、*サブクエリ*とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="2879f-227">A query clause may itself contain a query expression, which is sometimes referred to as a *subquery*.</span></span> <span data-ttu-id="2879f-228">各サブクエリは、独自の `from` で始まります。この句は、最初の `from` 句と必ずしも同じデータ ソースを指している必要はありません。</span><span class="sxs-lookup"><span data-stu-id="2879f-228">Each subquery starts with its own `from` clause that does not necessarily point to the same data source in the first `from` clause.</span></span> <span data-ttu-id="2879f-229">たとえば、次のクエリは、select ステートメントで grouping 操作の結果を取得するために使用されるクエリ式を示しています。</span><span class="sxs-lookup"><span data-stu-id="2879f-229">For example, the following query shows a query expression that is used in the select statement to retrieve the results of a grouping operation.</span></span>  
   
- [!code-cs[csrefQueryExpBasics#63](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_19.cs)]  
+ [!code-csharp[csrefQueryExpBasics#63](../../../samples/snippets/csharp/concepts/linq/query-expression-basics_19.cs)]  
   
- 詳しくは、「[方法: グループ化操作でサブクエリを実行する](perform-a-subquery-on-a-grouping-operation.md)」をご覧ください。  
+ <span data-ttu-id="2879f-230">詳しくは、「[方法: グループ化操作でサブクエリを実行する](perform-a-subquery-on-a-grouping-operation.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2879f-230">For more information, see [How to: perform a subquery on a grouping operation](perform-a-subquery-on-a-grouping-operation.md).</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [C# プログラミング ガイド](../programming-guide/index.md)   
- [LINQ クエリ式](index.md)   
- [クエリ キーワード (LINQ)](../language-reference/keywords/query-keywords.md)   
- [標準クエリ演算子の概要](../programming-guide/concepts/linq/standard-query-operators-overview.md)
-
+## <a name="see-also"></a><span data-ttu-id="2879f-231">関連項目</span><span class="sxs-lookup"><span data-stu-id="2879f-231">See Also</span></span>  
+ [<span data-ttu-id="2879f-232">C# プログラミング ガイド</span><span class="sxs-lookup"><span data-stu-id="2879f-232">C# programming guide</span></span>](../programming-guide/index.md)  
+ [<span data-ttu-id="2879f-233">LINQ クエリ式</span><span class="sxs-lookup"><span data-stu-id="2879f-233">LINQ query expressions</span></span>](index.md)  
+ [<span data-ttu-id="2879f-234">クエリ キーワード (LINQ)</span><span class="sxs-lookup"><span data-stu-id="2879f-234">Query keywords (LINQ)</span></span>](../language-reference/keywords/query-keywords.md)  
+ [<span data-ttu-id="2879f-235">標準クエリ演算子の概要</span><span class="sxs-lookup"><span data-stu-id="2879f-235">Standard query operators overview</span></span>](../programming-guide/concepts/linq/standard-query-operators-overview.md)
