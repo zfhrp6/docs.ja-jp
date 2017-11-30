@@ -1,1 +1,1 @@
-詳細情報:
+<span data-ttu-id="e0052-101">詳細情報:</span><span class="sxs-lookup"><span data-stu-id="e0052-101">For more information about</span></span>

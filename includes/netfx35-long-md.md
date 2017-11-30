@@ -1,1 +1,1 @@
-.NET Framework version 3.5
+<span data-ttu-id="0f88e-101">.NET Framework version 3.5</span><span class="sxs-lookup"><span data-stu-id="0f88e-101">.NET Framework version 3.5</span></span>

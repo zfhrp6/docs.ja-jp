@@ -1,1 +1,1 @@
-ダイナミック リンク ライブラリ (DLL)
+<span data-ttu-id="99e8d-101">ダイナミック リンク ライブラリ (DLL)</span><span class="sxs-lookup"><span data-stu-id="99e8d-101">dynamic-link library (DLL)</span></span>
