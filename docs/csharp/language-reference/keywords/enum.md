@@ -71,13 +71,13 @@ enum Days : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 > [!NOTE]
 >  列挙子の名前に空白を使用することはできません。  
   
- 基になる型は、列挙子ごとに割り当てるストレージの大きさを指定します。 ただし、 `enum` 型を整数型に変換するには、明示的なキャストが必要です。 たとえば、次のステートメントではキャストを使用して `Sun` から [に変換することで、列挙子](../../../csharp/language-reference/keywords/int.md) を `enum` int `int`型の変数に代入します。  
+ 基になる型は、列挙子ごとに割り当てるストレージの大きさを指定します。 ただし、 `enum` 型を整数型に変換するには、明示的なキャストが必要です。 たとえば、次のステートメントでは `enum` 型から [int](../../../csharp/language-reference/keywords/int.md) 型へのキャストを使用することで、列挙子 `Sun` を `int` 型の変数に代入します。  
   
 ```  
 int x = (int)Days.Sun;  
 ```  
   
- 列挙型に <xref:System.FlagsAttribute?displayProperty=nameWithType> を適用し、その要素をビットごとの `OR` 演算と組み合わせると、一部のツールを使用したときに、 `enum` の動作に属性が反映されます。 このような変更は、 <xref:System.Console> クラス メソッドや式エバリュエーターなどのツールを使用して確認できます。 (3 番目の使用例をご参照ください。)  
+ ビット単位の `OR` 演算と組み合わせることができる要素を含む列挙型に <xref:System.FlagsAttribute?displayProperty=nameWithType> を適用すると、一部のツールを使用したときに、 `enum` の動作に属性が反映されます。 このような変更は、 <xref:System.Console> クラス メソッドや式エバリュエーターなどのツールを使用して確認できます。 (3 番目の使用例をご参照ください。) 
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
  定数の場合と同様に、列挙型の個々の値へのすべての参照はコンパイル時に数値リテラルに変換されます。 これにより、「[定数](../../../csharp/programming-guide/classes-and-structs/constants.md)」で説明しているように、バージョン管理の問題が発生する可能性があります。  
