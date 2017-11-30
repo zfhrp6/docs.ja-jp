@@ -2,8 +2,7 @@
 title: "厳密な名前付きアセンブリの作成と使用"
 ms.date: 08/01/2017
 ms.prod: .net-framework
-ms.technology:
-- dotnet-bcl
+ms.technology: dotnet-bcl
 ms.topic: article
 helpviewer_keywords:
 - strong-name bypass feature
@@ -16,16 +15,15 @@ helpviewer_keywords:
 - strong-named assemblies, loading into trusted application domains
 - assembly binding, strong-named
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.translationtype: HT
-ms.sourcegitcommit: 0ee5fed355e0d8418500f1ecee53019548d9f7f8
 ms.openlocfilehash: 39fbd38549a791a761c633dca90dbdeeeefce10b
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/02/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="creating-and-using-strong-named-assemblies"></a>厳密な名前付きアセンブリの作成と使用
 <a name="top"></a> 厳密な名前は、単純テキスト名、バージョン番号、カルチャ情報 (設定されている場合) から成るアセンブリの識別子と、公開キーおよびデジタル署名で構成されます。 このデジタル署名は、対応する秘密キーを使用してアセンブリ ファイルから生成されます。 (アセンブリ ファイルにはアセンブリ マニフェストが格納されており、そこに、アセンブリを構成するすべてのファイルの名前とハッシュが含まれます。)  
@@ -93,4 +91,3 @@ ms.lasthandoff: 08/02/2017
 |[Visual Studio 内でアセンブリに遅延署名する方法](/visualstudio/ide/managing-assembly-and-manifest-signing#how-to-sign-an-assembly-in-visual-studio)|アセンブリを作成した後に厳密な名前でアセンブリに署名する方法について説明します。|  
 |[Sn.exe (厳密名ツール)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)|厳密な名前のアセンブリの作成に役立つ、.NET Framework に付属のツールについて説明します。 このツールには、キーの管理、署名の生成、署名の検査に関する各オプションが用意されています。|  
 |[Al.exe (アセンブリ リンカー)](../../../docs/framework/tools/al-exe-assembly-linker.md)|モジュールまたはリソース ファイルからアセンブリ マニフェストを含むファイルを生成する、.NET Framework に付属のツールについて説明します。|
-

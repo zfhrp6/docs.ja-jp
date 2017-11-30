@@ -10,14 +10,12 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 0d6e1e34-277c-4aaf-9880-3ebf81023857
+ms.openlocfilehash: 596bc689e423082dcae0c79801e9f796b398391e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 67c08dd9804f6b51961be250033161427159e66e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>継続的インテグレーション (CI) で .NET Core SDK とツールを使用する
 
 ## <a name="overview"></a>概要
@@ -81,7 +79,7 @@ Write-Host "Downloading the CLI installer..."
 # Use the Invoke-WebRequest PowerShell cmdlet to obtain the 
 #   installation script and save it into the installation directory.
 Invoke-WebRequest `
-    -Uri "https://raw.githubusercontent.com/dotnet/cli/rel/1.0.1/scripts/obtain/dotnet-install.ps1" `
+    -Uri "https://dot.net/v1/dotnet-install.ps1" `
     -OutFile "$InstallDir/dotnet-install.ps1"
 
 Write-Host "Installing the CLI requested version ($CliVersion) ..."
@@ -104,8 +102,6 @@ $LocalDotnet = "$InstallDir/dotnet"
 
 ```bash
 #!/bin/bash
-# Do not use an INSTALLDIR path containing spaces:
-#   https://github.com/dotnet/cli/issues/5281
 INSTALLDIR="cli-tools"
 CLI_VERSION=1.0.1
 DOWNLOADER=$(which curl)
@@ -115,7 +111,7 @@ then
 fi
 mkdir -p "$INSTALLDIR"
 echo Downloading the CLI installer.
-$DOWNLOADER https://raw.githubusercontent.com/dotnet/cli/rel/1.0.1/scripts/obtain/dotnet-install.sh > "$INSTALLDIR/dotnet-install.sh"
+$DOWNLOADER https://dot.net/v1/dotnet-install.sh > "$INSTALLDIR/dotnet-install.sh"
 chmod +x "$INSTALLDIR/dotnet-install.sh"
 echo Installing the CLI requested version $CLI_VERSION. Please wait, installation may take a few minutes.
 "$INSTALLDIR/dotnet-install.sh" --install-dir "$INSTALLDIR" --version $CLI_VERSION
@@ -187,4 +183,3 @@ VSTS で手動セットアップ スクリプトを使用するには、新し�
 ## <a name="see-also"></a>関連項目
 
 [Ubuntu 取得手順](https://www.microsoft.com/net/core#linuxubuntu)   
-

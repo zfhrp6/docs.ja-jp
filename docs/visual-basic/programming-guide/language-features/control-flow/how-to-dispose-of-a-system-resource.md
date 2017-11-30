@@ -1,41 +1,40 @@
 ---
-title: "How to: Dispose of a System Resource (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Using statement, disposing of system resources"
-  - "Visual Basic code, control flow"
-  - "system resources, disposing of"
-  - "resources [Visual Basic], disposing of system"
-  - "system resources"
-  - "Using statement, Using...End Using"
-  - "Using block"
+title: "方法: システム リソースを破棄する (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- Using statement [Visual Basic], disposing of system resources
+- Visual Basic code, control flow
+- system resources, disposing of
+- resources [Visual Basic], disposing of system
+- system resources
+- Using statement [Visual Basic], Using...End Using
+- Using block
 ms.assetid: 8be2b239-8090-419b-8e7e-bcaa75b0ecc8
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 5b5c65c9d123c6f481852eb249cb4d479a180c5b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Dispose of a System Resource (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`Using` ブロックを使用して、コードがブロックを終了するときに、必ずシステムでリソースが破棄されるようにできます。  これは、大量のメモリを消費するシステム リソースを使用している場合、または他のコンポーネントでもシステム リソースを使用できるようにする場合に便利です。  
+# <a name="how-to-dispose-of-a-system-resource-visual-basic"></a>方法: システム リソースを破棄する (Visual Basic)
+使用することができます、`Using`システムは、コード ブロックを終了するときに、リソースの破棄を保証するためにブロックします。 これは、大量のメモリを消費する、またはその他のコンポーネントが使用する必要も、システム リソースを使用している場合に便利です。  
   
-### コードがデータベース処理を終了するときにデータベース接続を切断するには  
+### <a name="to-dispose-of-a-database-connection-when-your-code-is-finished-with-it"></a>コードの後に、データベース接続を破棄するには  
   
-1.  ソース ファイルの先頭に、データベース接続用の適切な [Imports Statement \(.NET Namespace and Type\)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) が含まれていることを確認します \(この場合は、<xref:System.Data.SqlClient>\)。  
+1.  必ず記録し、適切な[Imports ステートメント (.NET Namespace よぶ型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) 、ソース ファイルの先頭にデータベース接続に (この場合、 <xref:System.Data.SqlClient>)。  
   
-2.  `Using` および `End Using` ステートメントを使用して、`Using` ブロックを作成します。  ブロック内部には、データベース接続を処理するコードを含めます。  
+2.  作成、`Using`ブロックを`Using`と`End Using`ステートメントです。 ブロックの内部には、データベース接続を処理するコードを配置します。  
   
-3.  接続を宣言し、`Using` ステートメントの一部として、インスタンスを作成します。  
+3.  接続を宣言し、そのインスタンスを作成の一部として、`Using`ステートメントです。  
   
     ```  
     ' Insert the following line at the beginning of your source file.  
@@ -47,17 +46,17 @@ caps.handback.revision: 15
     End Sub  
     ```  
   
-     システムは、未処理の例外も含めて、どのような場合であってもブロックを終了するときに、リソースを破棄します。  
+     システムは、未処理の例外の大文字と小文字を含む、ブロックを終了する方法に関係なく、リソースを破棄します。  
   
-     `sqc` の範囲はブロックに限定されているため、`Using` ブロックの外側からはこれにアクセスできないことに注意してください。  
+     アクセスすることはできません注`sqc`から外、`Using`ブロック、そのスコープは、ブロックに制限されているためです。  
   
-     ファイル処理または COM ラッパーなどのシステム リソースに対しても、これと同じ技法を使用できます。  `Using` ブロックを終了した後、他のコンポーネントでそのリソースを確実に使用できるようにするには、`Using` ブロックを使用します。  
+     ファイルのハンドルまたは COM ラッパーなどのシステム リソースでは、これと同じ手法を使用できます。 使用する、`Using`終了した後、その他のコンポーネントの使用可能なリソースのままにすることを確認する場合は、ブロック、`Using`ブロックします。  
   
-## 参照  
- <xref:System.Data.SqlClient.SqlConnection>   
- [Control Flow](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)   
- [Decision Structures](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)   
- [Loop Structures](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)   
- [Other Control Structures](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)   
- [Nested Control Structures](../../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)   
- [Using Statement](../../../../visual-basic/language-reference/statements/using-statement.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Data.SqlClient.SqlConnection>  
+ [制御フロー](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)  
+ [条件判断構造](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)  
+ [ループ構造](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
+ [その他の制御構造](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)  
+ [入れ子になった制御構造](../../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
+ [Using ステートメント](../../../../visual-basic/language-reference/statements/using-statement.md)

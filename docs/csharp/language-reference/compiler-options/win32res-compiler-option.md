@@ -1,43 +1,24 @@
 ---
 title: "-win32res (C# コンパイラ オプション)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /win32res
-dev_langs:
-- CSharp
+f1_keywords: /win32res
 helpviewer_keywords:
 - win32res compiler option
 - /win32res compiler option [C#]
 - -win32res compiler option [C#]
 - win32res compiler option [C#]
 ms.assetid: 3c33f750-6948-4c7e-a27e-bef98f77255b
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 96583542c62305cbaa5a24f66e9e54ec9b525c90
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 4552b526767584e62106b2b10f8a1e6394a23b46
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="win32res-c-compiler-options"></a>/win32res (C# コンパイラ オプション)
 **/win32res** オプションは、Win32 リソースを出力ファイルに挿入します。  
@@ -53,7 +34,7 @@ ms.lasthandoff: 07/28/2017
  出力ファイルに追加するリソース ファイル。  
   
 ## <a name="remarks"></a>コメント  
- Win32 リソース ファイルは、[リソース コンパイラ](http://go.microsoft.com/fwlink/?LinkId=148370)を使用して作成できます。 リソース コンパイラは、Visual C++ プログラムをコンパイルするときに呼び出されます。.res ファイルは .rc ファイルから作成されます。  
+ Win32 リソース ファイルは、[リソース コンパイラ](../../language-reference/compiler-options/resource-compiler-option.md)を使用して作成できます。 リソース コンパイラは、Visual C++ プログラムをコンパイルするときに呼び出されます。.res ファイルは .rc ファイルから作成されます。  
   
  Win32 リソースは、バージョンまたはビットマップ (アイコン) 情報を格納できます。エクスプローラーでアプリケーションを識別するのに役立ちます。 **/win32res** を指定しない場合、コンパイラはアセンブリ バージョンに基づいてバージョン情報を生成します。  
   
@@ -75,6 +56,5 @@ csc /win32res:rf.res in.cs
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
+ [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
  [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
-

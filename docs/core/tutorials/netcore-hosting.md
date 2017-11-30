@@ -9,14 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 13edec8b-614d-47ed-9e95-ed6d3b94ec0c
-ms.translationtype: HT
-ms.sourcegitcommit: e0271ba3392ce8861dc916714af8c16d4581ce4f
 ms.openlocfilehash: 1f0983b909244dda7270d3eff01dc302383639a5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-
 # <a name="hosting-net-core"></a>.NET Core のホスティング
 
 あらゆるマネージ コードと同様に、.NET Core アプリケーションはホストにより実行されます。 ホストは、ランタイム (JIT やガベージ コレクターのようなコンポーネントを含む) の開始、AppDomain の作成、マネージ エントリ ポイントの呼び出しを担当します。
@@ -147,4 +145,3 @@ coreclrhost.h を利用する例 (mscoree.h を直接利用するのではなく
 最初の実行で動作しなかった場合、ホストが期待している場所に *coreclr.dll* があること、必要なすべての Framework ライブラリが TPA 一覧にあること、CoreCLR のビット数 (32 ビットまたは 64 ビット) がホストのビルド方法に一致することをもう一度確認してください。
 
 .NET Core ランタイムのホスティングは、多くの開発者が必要としない高度なシナリオですが、ネイティブ プロセスからマネージ コードを起動する場合や .NET Core ランタイムの動作をより細かくコントロールする場合、非常に便利です。 .NET Core は並行して実行できるので、同じプロセス内で、複数のバージョンの .NET Core ランタイムを初期化して開始するホストを作成し、そのすべてのホスト上でアプリを実行することもできます。 
-

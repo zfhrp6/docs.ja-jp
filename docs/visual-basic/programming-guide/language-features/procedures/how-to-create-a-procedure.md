@@ -1,75 +1,74 @@
 ---
-title: "How to: Create a Procedure (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "procedures, defining"
-  - "Visual Basic code, procedures"
-  - "Visual Basic code, reusing"
-  - "procedure declarations"
-  - "procedures, about procedures"
+title: "方法: プロシージャを作成する (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- procedures [Visual Basic], defining
+- Visual Basic code, procedures
+- Visual Basic code, reusing
+- procedure declarations
+- procedures [Visual Basic], about procedures
 ms.assetid: 4f779247-0b50-47e8-9e5c-ab5cf39ac0d2
-caps.latest.revision: 27
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 27
+caps.latest.revision: "27"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 56a44918b7a1426d215cee0ff2981f5763432a48
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Create a Procedure (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-プロシージャは、開始宣言ステートメント \(`Sub` または `Function`\) と終了宣言ステートメント \(`End Sub` または `End Function`\) で囲みます。  プロシージャのコードは、すべてこれらのステートメントの間に作成します。  
+# <a name="how-to-create-a-procedure-visual-basic"></a>方法: プロシージャを作成する (Visual Basic)
+開始宣言ステートメントの間のプロシージャを囲みます (`Sub`または`Function`) と終了の宣言ステートメント (`End Sub`または`End Function`)。 これらのステートメント、プロシージャのすべてのコードの範囲です。  
   
- プロシージャの内部に別のプロシージャを含めることはできません。つまり、開始ステートメントと終了ステートメントは他のプロシージャの外部に置く必要があります。  
+ 最初と最後のステートメントが、他のプロシージャの外側にある必要がありますので、プロシージャは別のプロシージャを含めることはできません。  
   
- 同じタスクを複数の場所で実行するコードがある場合は、そのタスクをプロシージャとして一度記述し、コード内の複数の場所からそれを呼び出します。  
+ 別の場所で同じタスクを実行するコードがある場合は、プロシージャとして 1 回タスクを記述し、コード内の異なる場所から呼び出すできます。  
   
-### 値を返さないプロシージャを作成するには  
+### <a name="to-create-a-procedure-that-does-not-return-a-value"></a>値を返さないプロシージャを作成するには  
   
-1.  他のプロシージャの外側で `Sub` ステートメントを記述し、続けて `End Sub` ステートメントを記述します。  
+1.  その他のすべてのプロシージャの外側を使用して、`Sub`ステートメントの後に、`End Sub`ステートメントです。  
   
-2.  `Sub` ステートメント内で、`Sub` キーワードの後ろにプロシージャ名を指定し、続けてパラメーター リストをかっこで囲んで記述します。  
+2.  `Sub`ステートメントでは、以下の`Sub`パラメーター リストをかっこで、プロシージャの名前を持つキーワード。  
   
-3.  `Sub` ステートメントと `End Sub` ステートメントの間にプロシージャのコード ステートメントを記述します。  
+3.  間に、プロシージャのコード ステートメントを配置、`Sub`と`End Sub`ステートメントです。  
   
-### 値を返すプロシージャを作成するには  
+### <a name="to-create-a-procedure-that-returns-a-value"></a>値を返すプロシージャを作成するのには  
   
-1.  その他のプロシージャの外部で、`Function` ステートメントと `End Function` ステートメントを使用します。  
+1.  その他のすべてのプロシージャの外側を使用して、`Function`ステートメントの後に、`End Function`ステートメントです。  
   
-2.  `Function` ステートメント内で、`Function` キーワードの後にプロシージャ名を定義し、パラメーター リストをかっこで囲んで記述してから、戻り値のデータ型を指定する `As` 句を記述します。  
+2.  `Function`ステートメントでは、以下の`Function`パラメーター リストをかっこで、プロシージャの名前を持つキーワードし、`As`戻り値のデータ型を指定する句。  
   
-3.  プロシージャのコード ステートメントは、`Function` と `End Function` ステートメントの間に記述します。  
+3.  間に、プロシージャのコード ステートメントを配置、`Function`と`End Function`ステートメントです。  
   
-4.  `Return` ステートメントを使用して、呼び出し元のコードに値を返します。  
+4.  使用して、`Return`ステートメントを呼び出し元のコードに値を返します。  
   
-### 作成したプロシージャを、ブロックが繰り返し出現する古いコードにリンクさせるには  
+### <a name="to-connect-your-new-procedure-with-the-old-repetitive-blocks-of-code"></a>古い、反復的なコード ブロックで、新しいプロシージャを接続するには  
   
-1.  作成したコードが、古いコードからアクセス可能な場所にあることを確認します。  
+1.  古いコードがへのアクセス権を持つ場所に、新しいプロシージャを定義することを確認してください。  
   
-2.  ブロックが繰り返し出現する古いコードで、同じタスクを実行しているステートメントを、`Sub` プロシージャまたは `Function` プロシージャを呼び出す単一のステートメントに置き換えます。  
+2.  反復的な古いコード ブロックで、単一のステートメントを呼び出す反復的なタスクを実行しているステートメントを置き換える、`Sub`または`Function`プロシージャです。  
   
-3.  値を返す `Function` プロシージャで置き換える場合は、呼び出しステートメントが戻り値を使ってアクション \(変数に格納するなど\) を実行していることを確認します。実行していなければ、値は失われます。  
+3.  プロシージャで置き換える場合、`Function`値を返す、ある呼び出し元のステートメントが変数に格納するなど、戻り値を使ってアクションを実行するか、値は失われますことを確認します。  
   
-## 使用例  
- 次の `Function` プロシージャは、直角三角形の最も長い辺 \(斜辺\) を他の 2 つの辺の値を基に計算します。  
+## <a name="example"></a>例  
+ 次`Function`最長側では、やの他の 2 つの辺の値を指定、直角三角形の斜辺を計算します。  
   
  [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/how-to-create-a-procedure_1.vb)]  
   
-## 参照  
- [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Sub Procedures](../../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)   
- [Function プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)   
- [Property プロシージャ](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [Operator Procedures](../../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)   
- [Procedure Parameters and Arguments](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)   
- [Recursive Procedures](../../../../visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)   
- [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)   
- [Objects and Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)   
- [オブジェクト指向プログラミング](../Topic/Object-Oriented%20Programming%20\(C%23%20and%20Visual%20Basic\).md)
+## <a name="see-also"></a>関連項目  
+ [手順](./index.md)  
+ [Sub プロシージャ](./sub-procedures.md)  
+ [Function プロシージャ](./function-procedures.md)  
+ [Property プロシージャ](./property-procedures.md)  
+ [演算子プロシージャ](./operator-procedures.md)  
+ [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)  
+ [再帰プロシージャ](./recursive-procedures.md)  
+ [プロシージャのオーバーロード](./procedure-overloading.md)  
+ [クラスとオブジェクト](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
+ [オブジェクト指向プログラミング](http://msdn.microsoft.com/library/1cf6e655-3f30-45f1-9a5d-4a88ca24a1c2)
