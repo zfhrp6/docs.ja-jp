@@ -1,88 +1,94 @@
 ---
-title: "パフォーマンスの最適化 : その他の推奨事項 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ブラシ, パフォーマンス"
-  - "ヒットテスト (オブジェクトの) [WPF]"
-  - "不透明"
-  - "ScrollBarVisibility 列挙体"
-  - "ターミナル サービスのレンダリング"
+title: "パフォーマンスの最適化 : その他の推奨事項"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- Terminal Services rendering [WPF]
+- opacity [WPF]
+- hit-test objects [WPF]
+- ScrollBarVisibility enumeration [WPF]
+- brushes [WPF], performance
 ms.assetid: d028cc65-7e97-4a4f-9859-929734eaf40d
-caps.latest.revision: 20
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "20"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: eda112db6dd977b6ef25a1b3a9ae40349d3a045f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# パフォーマンスの最適化 : その他の推奨事項
-<a name="introduction"></a> このトピックでは、「[WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)」のトピックで説明されている推奨事項を補足するパフォーマンスに関する推奨事項について説明します。  
+# <a name="optimizing-performance-other-recommendations"></a><span data-ttu-id="0e223-102">パフォーマンスの最適化 : その他の推奨事項</span><span class="sxs-lookup"><span data-stu-id="0e223-102">Optimizing Performance: Other Recommendations</span></span>
+<span data-ttu-id="0e223-103"><a name="introduction"></a> このトピックでは、「[WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)」セクションのトピックで説明されている推奨事項を補足するパフォーマンスに関する推奨事項について取り上げます。</span><span class="sxs-lookup"><span data-stu-id="0e223-103"><a name="introduction"></a> This topic provides performance recommendations in addition to the ones covered by the topics in the [Optimizing WPF Application Performance](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md) section.</span></span>  
   
- このトピックは、次のセクションで構成されています。  
+ <span data-ttu-id="0e223-104">このトピックは、次のセクションで構成されています。</span><span class="sxs-lookup"><span data-stu-id="0e223-104">This topic contains the following sections:</span></span>  
   
--   [ブラシの Opacity と要素の Opacity](#Opacity)  
+-   [<span data-ttu-id="0e223-105">ブラシの Opacity と要素の Opacity</span><span class="sxs-lookup"><span data-stu-id="0e223-105">Opacity on Brushes Versus Opacity on Elements</span></span>](#Opacity)  
   
--   [オブジェクトへの移動](#Navigation_Objects)  
+-   [<span data-ttu-id="0e223-106">オブジェクトへの移動</span><span class="sxs-lookup"><span data-stu-id="0e223-106">Navigation to Object</span></span>](#Navigation_Objects)  
   
--   [大きな 3D サーフェイスのヒット テスト](#Hit_Testing)  
+-   [<span data-ttu-id="0e223-107">大きな 3D サーフェイスのヒット テスト</span><span class="sxs-lookup"><span data-stu-id="0e223-107">Hit Testing on Large 3D Surfaces</span></span>](#Hit_Testing)  
   
--   [CompositionTarget.Rendering イベント](#CompositionTarget_Rendering_Event)  
+-   [<span data-ttu-id="0e223-108">CompositionTarget.Rendering イベント</span><span class="sxs-lookup"><span data-stu-id="0e223-108">CompositionTarget.Rendering Event</span></span>](#CompositionTarget_Rendering_Event)  
   
--   [ScrollBarVisibility\=Auto は使用しない](#Avoid_Using_ScrollBarVisibility)  
+-   [<span data-ttu-id="0e223-109">ScrollBarVisibility=Auto は使用しない</span><span class="sxs-lookup"><span data-stu-id="0e223-109">Avoid Using ScrollBarVisibility=Auto</span></span>](#Avoid_Using_ScrollBarVisibility)  
   
--   [Font Cache サービスの構成による起動時間の短縮](#FontCache)  
+-   [<span data-ttu-id="0e223-110">Font Cache サービスの構成による起動時間の短縮</span><span class="sxs-lookup"><span data-stu-id="0e223-110">Configure Font Cache Service to Reduce Start-up Time</span></span>](#FontCache)  
   
 <a name="Opacity"></a>   
-## ブラシの Opacity と要素の Opacity  
- <xref:System.Windows.Media.Brush> を使用して要素の <xref:System.Windows.Shapes.Shape.Fill%2A> や <xref:System.Windows.Shapes.Shape.Stroke%2A> を設定するときには、要素の <xref:System.Windows.UIElement.Opacity%2A> プロパティを設定するより <xref:System.Windows.Media.Brush.Opacity%2A?displayProperty=fullName> 値を設定することをお勧めします。  要素の <xref:System.Windows.UIElement.Opacity%2A> プロパティを変更すると、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] によって一時的なサーフェイスが作成される可能性があります。  
+## <a name="opacity-on-brushes-versus-opacity-on-elements"></a><span data-ttu-id="0e223-111">ブラシの Opacity と要素の Opacity</span><span class="sxs-lookup"><span data-stu-id="0e223-111">Opacity on Brushes Versus Opacity on Elements</span></span>  
+ <span data-ttu-id="0e223-112">使用すると、<xref:System.Windows.Media.Brush>を設定する、<xref:System.Windows.Shapes.Shape.Fill%2A>または<xref:System.Windows.Shapes.Shape.Stroke%2A>、要素のことをお勧めを設定する、<xref:System.Windows.Media.Brush.Opacity%2A?displayProperty=nameWithType>値の設定ではなく、要素の<xref:System.Windows.UIElement.Opacity%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="0e223-112">When you use a <xref:System.Windows.Media.Brush> to set the <xref:System.Windows.Shapes.Shape.Fill%2A> or <xref:System.Windows.Shapes.Shape.Stroke%2A> of an element, it is better to set the <xref:System.Windows.Media.Brush.Opacity%2A?displayProperty=nameWithType> value rather than the setting the element's <xref:System.Windows.UIElement.Opacity%2A> property.</span></span> <span data-ttu-id="0e223-113">要素の変更<xref:System.Windows.UIElement.Opacity%2A>プロパティが生成されることができます[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を一時的な画面を作成します。</span><span class="sxs-lookup"><span data-stu-id="0e223-113">Modifying an element's <xref:System.Windows.UIElement.Opacity%2A> property can cause [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] to create a temporary surface.</span></span>  
   
 <a name="Navigation_Objects"></a>   
-## オブジェクトへの移動  
- <xref:System.Windows.Navigation.NavigationWindow> オブジェクトは <xref:System.Windows.Window> から派生し、コンテンツ ナビゲーションのサポートでウィンドウを拡張します。この拡張は、主に <xref:System.Windows.Navigation.NavigationService> と履歴を統合することによって行われます。  <xref:System.Windows.Navigation.NavigationWindow> のクライアント領域は、[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] またはオブジェクトを指定することによって更新できます。  この両方の方法を次のサンプルに示します。  
+## <a name="navigation-to-object"></a><span data-ttu-id="0e223-114">オブジェクトへの移動</span><span class="sxs-lookup"><span data-stu-id="0e223-114">Navigation to Object</span></span>  
+ <span data-ttu-id="0e223-115"><xref:System.Windows.Navigation.NavigationWindow>から派生したオブジェクト<xref:System.Windows.Window>および集計することによって、主に、コンテンツ ナビゲーションのサポートを備えた拡張<xref:System.Windows.Navigation.NavigationService>およびジャーナルです。</span><span class="sxs-lookup"><span data-stu-id="0e223-115">The <xref:System.Windows.Navigation.NavigationWindow> object derives from <xref:System.Windows.Window> and extends it with content navigation support, primarily by aggregating <xref:System.Windows.Navigation.NavigationService> and the journal.</span></span> <span data-ttu-id="0e223-116">クライアント領域を更新する<xref:System.Windows.Navigation.NavigationWindow>いずれかを指定することによって、[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]またはオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="0e223-116">You can update the client area of <xref:System.Windows.Navigation.NavigationWindow> by specifying either a [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] or an object.</span></span> <span data-ttu-id="0e223-117">この両方の方法を次のサンプルに示します。</span><span class="sxs-lookup"><span data-stu-id="0e223-117">The following sample shows both methods:</span></span>  
   
  [!code-csharp[Performance#PerformanceSnippet14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/TestNavigation.xaml.cs#performancesnippet14)]
  [!code-vb[Performance#PerformanceSnippet14](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Performance/visualbasic/testnavigation.xaml.vb#performancesnippet14)]  
   
- 各 <xref:System.Windows.Navigation.NavigationWindow> オブジェクトには、そのウィンドウのユーザーのナビゲーションを記録する履歴があります。  履歴の目的の 1 つは、ユーザーが自分の来た道を戻れるようにすることです。  
+ <span data-ttu-id="0e223-118">各<xref:System.Windows.Navigation.NavigationWindow>オブジェクトには、journal ウィンドウで、ユーザーのナビゲーション履歴を記録します。</span><span class="sxs-lookup"><span data-stu-id="0e223-118">Each <xref:System.Windows.Navigation.NavigationWindow> object has a journal that records the user's navigation history in that window.</span></span> <span data-ttu-id="0e223-119">履歴の目的の 1 つは、ユーザーが自分の来た道を戻れるようにすることです。</span><span class="sxs-lookup"><span data-stu-id="0e223-119">One of the purposes of the journal is to allow users to retrace their steps.</span></span>  
   
- [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] を使用して移動した場合、履歴には [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] の参照のみが格納されます。  したがって、ページに戻るたびにそのページが動的に再構築されることになり、ページの複雑さによってはかなりの時間がかかることもあります。  この場合、履歴の格納の負荷は低い反面、ページの再構築にかかる時間が長くなる可能性があります。  
+ <span data-ttu-id="0e223-120">[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] を使用して移動した場合、履歴には [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] の参照のみが格納されます。</span><span class="sxs-lookup"><span data-stu-id="0e223-120">When you navigate using a [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)], the journal stores only the [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] reference.</span></span> <span data-ttu-id="0e223-121">したがって、ページに戻るたびにそのページが動的に再構築されることになり、ページの複雑さによってはかなりの時間がかかることもあります。</span><span class="sxs-lookup"><span data-stu-id="0e223-121">This means that each time you revisit the page, it is dynamically reconstructed, which may be time consuming depending on the complexity of the page.</span></span> <span data-ttu-id="0e223-122">この場合、履歴の格納の負荷は低い反面、ページの再構築にかかる時間が長くなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="0e223-122">In this case, the journal storage cost is low, but the time to reconstitute the page is potentially high.</span></span>  
   
- オブジェクトを使用して移動した場合は、オブジェクトのビジュアル ツリー全体が履歴に格納されます。  したがって、ページに戻るたびにページを再構築する必要はなく、ページがすぐに描画されます。  この場合、履歴の格納の負荷は高くなりますが、ページの再構築にかかる時間は短くて済みます。  
+ <span data-ttu-id="0e223-123">オブジェクトを使用して移動した場合は、オブジェクトのビジュアル ツリー全体が履歴に格納されます。</span><span class="sxs-lookup"><span data-stu-id="0e223-123">When you navigate using an object, the journal stores the entire visual tree of the object.</span></span> <span data-ttu-id="0e223-124">したがって、ページに戻るたびにページを再構築する必要はなく、ページがすぐに描画されます。</span><span class="sxs-lookup"><span data-stu-id="0e223-124">This means that each time you revisit the page, it renders immediately without having to be reconstructed.</span></span> <span data-ttu-id="0e223-125">この場合、履歴の格納の負荷は高くなりますが、ページの再構築にかかる時間は短くて済みます。</span><span class="sxs-lookup"><span data-stu-id="0e223-125">In this case, the journal storage cost is high, but the time to reconstitute the page is low.</span></span>  
   
- <xref:System.Windows.Navigation.NavigationWindow> オブジェクトを使用するときには、履歴のサポートがアプリケーションのパフォーマンスにどのように影響するのかを念頭に置いておく必要があります。  詳細については、「[ナビゲーションの概要](../../../../docs/framework/wpf/app-development/navigation-overview.md)」を参照してください。  
+ <span data-ttu-id="0e223-126">使用すると、<xref:System.Windows.Navigation.NavigationWindow>オブジェクト、ジャーナリング サポートと、アプリケーションのパフォーマンスがどのように影響しているか注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0e223-126">When you use the <xref:System.Windows.Navigation.NavigationWindow> object, you will need to keep in mind how the journaling support impacts your application's performance.</span></span> <span data-ttu-id="0e223-127">詳細については、「[ナビゲーションの概要](../../../../docs/framework/wpf/app-development/navigation-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0e223-127">For more information, see [Navigation Overview](../../../../docs/framework/wpf/app-development/navigation-overview.md).</span></span>  
   
 <a name="Hit_Testing"></a>   
-## 大きな 3D サーフェイスのヒット テスト  
- 大きな 3D サーフェイスのヒット テストは、CPU 消費の面でパフォーマンスへの影響が非常に大きくなります。  3D サーフェイスがアニメーション化されている場合には特にその傾向が強くなります。  そのようなサーフェイスでヒット テストを行う必要がない場合は、ヒット テストを無効にしてください。  <xref:System.Windows.UIElement> から派生したオブジェクトでは、<xref:System.Windows.UIElement.IsHitTestVisible%2A> プロパティを `false` に設定することによってヒット テストを無効にできます。  
+## <a name="hit-testing-on-large-3d-surfaces"></a><span data-ttu-id="0e223-128">大きな 3D サーフェイスのヒット テスト</span><span class="sxs-lookup"><span data-stu-id="0e223-128">Hit Testing on Large 3D Surfaces</span></span>  
+ <span data-ttu-id="0e223-129">大きな 3D サーフェイスのヒット テストは、CPU 消費の面でパフォーマンスへの影響が非常に大きくなります。</span><span class="sxs-lookup"><span data-stu-id="0e223-129">Hit testing on large 3D surfaces is a very performance intensive operation in terms of CPU consumption.</span></span> <span data-ttu-id="0e223-130">3D サーフェイスがアニメーション化されている場合には特にその傾向が強くなります。</span><span class="sxs-lookup"><span data-stu-id="0e223-130">This is especially true when the 3D surface is animating.</span></span> <span data-ttu-id="0e223-131">そのようなサーフェイスでヒット テストを行う必要がない場合は、ヒット テストを無効にしてください。</span><span class="sxs-lookup"><span data-stu-id="0e223-131">If you do not require hit testing on these surfaces, then disable hit testing.</span></span> <span data-ttu-id="0e223-132">派生したオブジェクト<xref:System.Windows.UIElement>できます無効にするヒット テストの設定によって、<xref:System.Windows.UIElement.IsHitTestVisible%2A>プロパティを`false`です。</span><span class="sxs-lookup"><span data-stu-id="0e223-132">Objects that are derived from <xref:System.Windows.UIElement> can disable hit testing by setting the <xref:System.Windows.UIElement.IsHitTestVisible%2A> property to `false`.</span></span>  
   
 <a name="CompositionTarget_Rendering_Event"></a>   
-## CompositionTarget.Rendering イベント  
- <xref:System.Windows.Media.CompositionTarget.Rendering?displayProperty=fullName> イベントは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] を常にアニメーション化します。  このイベントを使用する場合は、毎回デタッチしてください。  
+## <a name="compositiontargetrendering-event"></a><span data-ttu-id="0e223-133">CompositionTarget.Rendering イベント</span><span class="sxs-lookup"><span data-stu-id="0e223-133">CompositionTarget.Rendering Event</span></span>  
+ <span data-ttu-id="0e223-134"><xref:System.Windows.Media.CompositionTarget.Rendering?displayProperty=nameWithType>イベントにより[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]継続的にアニメーション化します。</span><span class="sxs-lookup"><span data-stu-id="0e223-134">The <xref:System.Windows.Media.CompositionTarget.Rendering?displayProperty=nameWithType> event causes [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] to continuously animate.</span></span> <span data-ttu-id="0e223-135">このイベントを使用する場合は、毎回デタッチしてください。</span><span class="sxs-lookup"><span data-stu-id="0e223-135">If you use this event, detach it at every opportunity.</span></span>  
   
 <a name="Avoid_Using_ScrollBarVisibility"></a>   
-## ScrollBarVisibility\=Auto は使用しない  
- できる限り、<xref:System.Windows.Controls.ScrollBarVisibility?displayProperty=fullName> 値を `HorizontalScrollBarVisibility` プロパティと `VerticalScrollBarVisibility` プロパティでは使用しないでください。  これらのプロパティは、<xref:System.Windows.Controls.RichTextBox>、<xref:System.Windows.Controls.ScrollViewer>、<xref:System.Windows.Controls.TextBox>、<xref:System.Windows.Controls.ListBox> の各オブジェクトで定義されています。  代わりに、<xref:System.Windows.Controls.ScrollBarVisibility> を <xref:System.Windows.Controls.ScrollBarVisibility>、<xref:System.Windows.Controls.ScrollBarVisibility>、または <xref:System.Windows.Controls.ScrollBarVisibility> に設定します。  
+## <a name="avoid-using-scrollbarvisibilityauto"></a><span data-ttu-id="0e223-136">ScrollBarVisibility=Auto は使用しない</span><span class="sxs-lookup"><span data-stu-id="0e223-136">Avoid Using ScrollBarVisibility=Auto</span></span>  
+ <span data-ttu-id="0e223-137">可能な限り回避を使用して、<xref:System.Windows.Controls.ScrollBarVisibility.Auto?displayProperty=nameWithType>値を`HorizontalScrollBarVisibility`と`VerticalScrollBarVisibility`プロパティです。</span><span class="sxs-lookup"><span data-stu-id="0e223-137">Whenever possible, avoid using the <xref:System.Windows.Controls.ScrollBarVisibility.Auto?displayProperty=nameWithType> value for the `HorizontalScrollBarVisibility` and `VerticalScrollBarVisibility` properties.</span></span> <span data-ttu-id="0e223-138">これらのプロパティが定義されている<xref:System.Windows.Controls.RichTextBox>、 <xref:System.Windows.Controls.ScrollViewer>、および<xref:System.Windows.Controls.TextBox>オブジェクトとの添付プロパティとして、<xref:System.Windows.Controls.ListBox>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="0e223-138">These properties are defined for <xref:System.Windows.Controls.RichTextBox>, <xref:System.Windows.Controls.ScrollViewer>, and <xref:System.Windows.Controls.TextBox> objects, and as an attached property for the <xref:System.Windows.Controls.ListBox> object.</span></span> <span data-ttu-id="0e223-139">代わりに、設定<xref:System.Windows.Controls.ScrollBarVisibility>に<xref:System.Windows.Controls.ScrollBarVisibility.Disabled>、 <xref:System.Windows.Controls.ScrollBarVisibility.Hidden>、または<xref:System.Windows.Controls.ScrollBarVisibility.Visible>です。</span><span class="sxs-lookup"><span data-stu-id="0e223-139">Instead, set <xref:System.Windows.Controls.ScrollBarVisibility> to <xref:System.Windows.Controls.ScrollBarVisibility.Disabled>, <xref:System.Windows.Controls.ScrollBarVisibility.Hidden>, or <xref:System.Windows.Controls.ScrollBarVisibility.Visible>.</span></span>  
   
- <xref:System.Windows.Controls.ScrollBarVisibility> 値は、スペースが限られていて、スクロール バーを必要なときにだけ表示する場合に使用するための値です。  <xref:System.Windows.Controls.ScrollBarVisibility> 値の使用は、たとえば、数百行のテキストを含む <xref:System.Windows.Controls.TextBox> ではなく、30 の項目を含む <xref:System.Windows.Controls.ListBox> で役に立ちます。  
+ <span data-ttu-id="0e223-140"><xref:System.Windows.Controls.ScrollBarVisibility.Auto>値は、ケースの空き領域が少ないと、スクロール バーは、必要な場合にのみ表示されます。</span><span class="sxs-lookup"><span data-stu-id="0e223-140">The <xref:System.Windows.Controls.ScrollBarVisibility.Auto> value is intended for cases when space is limited and scrollbars should only be displayed when necessary.</span></span> <span data-ttu-id="0e223-141">たとえば、ある可能性がありますを使用してこの<xref:System.Windows.Controls.ScrollBarVisibility>値と、<xref:System.Windows.Controls.ListBox>はなく 30 の項目の<xref:System.Windows.Controls.TextBox>何百もの行のテキスト。</span><span class="sxs-lookup"><span data-stu-id="0e223-141">For example, it may be useful to use this <xref:System.Windows.Controls.ScrollBarVisibility> value with a <xref:System.Windows.Controls.ListBox> of 30 items as opposed to a <xref:System.Windows.Controls.TextBox> with hundreds of lines of text.</span></span>  
   
 <a name="FontCache"></a>   
-## Font Cache サービスの構成による起動時間の短縮  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Font Cache サービスは、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーション間でフォント データを共有します。  このサービスがまだ実行されていない場合は、実行する最初の [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションによって開始されます。  [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] を使用している場合は、\[[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] Font Cache 3.0.0.0\] サービスの設定を \[手動\] \(既定\) から \[自動 \(遅延開始\)\] に変更することで、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの最初の起動時間を短縮できます。  
+## <a name="configure-font-cache-service-to-reduce-start-up-time"></a><span data-ttu-id="0e223-142">Font Cache サービスの構成による起動時間の短縮</span><span class="sxs-lookup"><span data-stu-id="0e223-142">Configure Font Cache Service to Reduce Start-up Time</span></span>  
+ <span data-ttu-id="0e223-143">[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Font Cache サービスは、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーション間でフォント データを共有します。</span><span class="sxs-lookup"><span data-stu-id="0e223-143">The [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Font Cache service shares font data between [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications.</span></span> <span data-ttu-id="0e223-144">このサービスがまだ実行されていない場合は、実行する最初の [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションによって開始されます。</span><span class="sxs-lookup"><span data-stu-id="0e223-144">The first [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application you run starts this service if the service is not already running.</span></span> <span data-ttu-id="0e223-145">[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] を使用している場合は、[[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] Font Cache 3.0.0.0] サービスの設定を [手動] (既定) から [自動 (遅延開始)] に変更することで、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションの最初の起動時間を短縮できます。</span><span class="sxs-lookup"><span data-stu-id="0e223-145">If you are using [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], you can set the "[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] Font Cache 3.0.0.0" service from "Manual" (the default) to "Automatic (Delayed Start)" to reduce the initial start-up time of [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications.</span></span>  
   
-## 参照  
- [アプリケーション パフォーマンスの計画](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)   
- [ハードウェアの活用](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)   
- [レイアウトとデザイン](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)   
- [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)   
- [オブジェクトの動作](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)   
- [アプリケーション リソース](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)   
- [テキスト](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)   
- [データ バインド](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)   
- [アニメーションのヒントとテクニック](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)
+## <a name="see-also"></a><span data-ttu-id="0e223-146">関連項目</span><span class="sxs-lookup"><span data-stu-id="0e223-146">See Also</span></span>  
+ [<span data-ttu-id="0e223-147">アプリケーション パフォーマンスの計画</span><span class="sxs-lookup"><span data-stu-id="0e223-147">Planning for Application Performance</span></span>](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
+ [<span data-ttu-id="0e223-148">ハードウェアの活用</span><span class="sxs-lookup"><span data-stu-id="0e223-148">Taking Advantage of Hardware</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  
+ [<span data-ttu-id="0e223-149">レイアウトとデザイン</span><span class="sxs-lookup"><span data-stu-id="0e223-149">Layout and Design</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
+ [<span data-ttu-id="0e223-150">2D グラフィックスとイメージング</span><span class="sxs-lookup"><span data-stu-id="0e223-150">2D Graphics and Imaging</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
+ [<span data-ttu-id="0e223-151">オブジェクトの動作</span><span class="sxs-lookup"><span data-stu-id="0e223-151">Object Behavior</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
+ [<span data-ttu-id="0e223-152">アプリケーション リソース</span><span class="sxs-lookup"><span data-stu-id="0e223-152">Application Resources</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
+ [<span data-ttu-id="0e223-153">テキスト</span><span class="sxs-lookup"><span data-stu-id="0e223-153">Text</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
+ [<span data-ttu-id="0e223-154">データ バインディング</span><span class="sxs-lookup"><span data-stu-id="0e223-154">Data Binding</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
+ [<span data-ttu-id="0e223-155">アニメーションのヒントとテクニック</span><span class="sxs-lookup"><span data-stu-id="0e223-155">Animation Tips and Tricks</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)

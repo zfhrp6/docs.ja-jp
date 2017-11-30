@@ -1,56 +1,59 @@
 ---
-title: "読み取り専用の依存関係プロパティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "依存関係プロパティ, 読み取り専用"
-  - "読み取り専用の依存関係プロパティ"
+title: "読み取り専用の依存関係プロパティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- dependency properties [WPF], read-only
+- read-only dependency properties [WPF]
 ms.assetid: f23d6ec9-3780-4c09-a2ff-b2f0a2deddf1
-caps.latest.revision: 8
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 9cb4477fe388c294bbd6b87589d5a3108a90d27f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 読み取り専用の依存関係プロパティ
-ここでは、既存の読み取り専用依存関係プロパティ、カスタムの読み取り専用依存関係プロパティを作成するシナリオと手法など、読み取り専用依存関係プロパティについて説明します。  
+# <a name="read-only-dependency-properties"></a><span data-ttu-id="caeed-102">読み取り専用の依存関係プロパティ</span><span class="sxs-lookup"><span data-stu-id="caeed-102">Read-Only Dependency Properties</span></span>
+<span data-ttu-id="caeed-103">このトピックでは、既存の読み取り専用の依存関係プロパティ、カスタムの読み取り専用の依存関係プロパティを作成するシナリオと手法など、読み取り専用の依存関係プロパティについて説明します。</span><span class="sxs-lookup"><span data-stu-id="caeed-103">This topic describes read-only dependency properties, including existing read-only dependency properties and the scenarios and techniques for creating a custom read-only dependency property.</span></span>  
   
-   
+
   
 <a name="prerequisites"></a>   
-## 必要条件  
- このトピックでは、依存プロパティの実装の基本シナリオとカスタム依存プロパティへのメタデータの適用方法を理解していることを前提とします。  詳細については、「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」および「[依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)」を参照してください。  
+## <a name="prerequisites"></a><span data-ttu-id="caeed-104">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="caeed-104">Prerequisites</span></span>  
+ <span data-ttu-id="caeed-105">このトピックでは、依存関係プロパティの実装の基本シナリオとカスタム依存関係プロパティへのメタデータの適用方法を理解していることを前提とします。</span><span class="sxs-lookup"><span data-stu-id="caeed-105">This topic assumes that you understand the basic scenarios of implementing a dependency property, and how metadata is applied to a custom dependency property.</span></span> <span data-ttu-id="caeed-106">詳細については、「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」および「[依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="caeed-106">See [Custom Dependency Properties](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md) and [Dependency Property Metadata](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md) for context.</span></span>  
   
 <a name="existing"></a>   
-## 既存の読み取り専用依存関係プロパティ  
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] フレームワークで定義されている依存関係プロパティの一部は読み取り専用です。  読み取り専用依存関係プロパティを指定する一般的な理由は、状態決定に使用する必要のあるプロパティがあるけれども、その状態は多くの要因から影響を受け、プロパティをその状態に設定するだけでは、ユーザー インターフェイス設計の観点から望ましくないためです。  たとえば、<xref:System.Windows.UIElement.IsMouseOver%2A> プロパティは、実際にはマウス入力から決定される単なるサーフェイス状態です。  実際にマウス入力を行わずにプログラムでこの値を設定しようとすると、結果は予想できず、不整合が発生する可能性があります。  
+## <a name="existing-read-only-dependency-properties"></a><span data-ttu-id="caeed-107">既存の読み取り専用の依存関係プロパティ</span><span class="sxs-lookup"><span data-stu-id="caeed-107">Existing Read-Only Dependency Properties</span></span>  
+ <span data-ttu-id="caeed-108">[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] フレームワークで定義されている依存関係プロパティの一部は読み取り専用です。</span><span class="sxs-lookup"><span data-stu-id="caeed-108">Some of the dependency properties defined in the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] framework are read-only.</span></span> <span data-ttu-id="caeed-109">読み取り専用の依存関係プロパティを指定する一般的な理由は、それらが状態決定に使用されるプロパティであるにも関わらず、その状態は多くの要因の影響を受け、プロパティをその状態に設定するだけではユーザー インターフェイス設計の観点から望ましくないことにあります。</span><span class="sxs-lookup"><span data-stu-id="caeed-109">The typical reason for specifying a read-only dependency property is that these are properties that should be used for state determination, but where that state is influenced by a multitude of factors, but just setting the property to that state isn't desirable from a user interface design perspective.</span></span> <span data-ttu-id="caeed-110">たとえば、このプロパティ<xref:System.Windows.UIElement.IsMouseOver%2A>マウス入力から決定された状態の表示が実際には。</span><span class="sxs-lookup"><span data-stu-id="caeed-110">For example, the property <xref:System.Windows.UIElement.IsMouseOver%2A> is really just surfacing state as determined from the mouse input.</span></span> <span data-ttu-id="caeed-111">実際にマウス入力を行わずにプログラムでこの値を設定しようとすると、予期しない結果になり、不整合が生じる原因になります。</span><span class="sxs-lookup"><span data-stu-id="caeed-111">Any attempt to set this value programmatically by circumventing the true mouse input would be unpredictable and would cause inconsistency.</span></span>  
   
- 設定可能ではないため、読み取り専用の依存関係プロパティは、依存関係プロパティがソリューションを通常提供するシナリオの多くには適切ではありません \(データ バインディング、直接スタイル設定可能な値、検証、アニメーション、継承など\)。  それでも、設定不可能な読み取り専用依存関係プロパティには、プロパティ システムの依存関係プロパティによってサポートされるいくつかの追加機能があります。  最も重要な機能は、読み取り専用依存関係プロパティはスタイルのプロパティ トリガーとして使用できることです。  通常の [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] プロパティではトリガーを有効にできません。依存関係プロパティであることが必要です。  上で挙げた <xref:System.Windows.UIElement.IsMouseOver%2A> プロパティは、コントロールのスタイルを定義するために便利なシナリオのよい例です。背景、前景、またはコントロール内の複合要素の同種のプロパティなどの一部の表示プロパティは、コントロールの定義済み領域にユーザーがマウスを置くと変化します。  読み取り専用依存関係プロパティの変化は、プロパティ システム固有の検証プロセスによって検出して報告することもでき、これは実際にはプロパティ トリガー機能を内部的にサポートします。  
+ <span data-ttu-id="caeed-112">設定可能ではないため、読み取り専用の依存関係プロパティは、依存関係プロパティがソリューションを通常提供するシナリオの多くには適切ではありません (データ バインディング、直接スタイル設定可能な値、検証、アニメーション、継承など)。</span><span class="sxs-lookup"><span data-stu-id="caeed-112">By virtue of not being settable, read-only dependency properties aren't appropriate for many of the scenarios for which dependency properties normally offer a solution (namely: data binding, directly stylable to a value, validation, animation, inheritance).</span></span> <span data-ttu-id="caeed-113">それでも、設定不可能な読み取り専用依存関係プロパティには、プロパティ システムの依存関係プロパティによってサポートされるいくつかの追加機能があります。</span><span class="sxs-lookup"><span data-stu-id="caeed-113">Despite not being settable, read-only dependency properties still have some of the additional capabilities supported by dependency properties in the property system.</span></span> <span data-ttu-id="caeed-114">その他の機能のうち最も重要なのは、読み取り専用の依存関係プロパティはスタイルのプロパティ トリガーとして使用できることです。</span><span class="sxs-lookup"><span data-stu-id="caeed-114">The most important remaining capability is that the read-only dependency property can still be used as a property trigger in a style.</span></span> <span data-ttu-id="caeed-115">通常の [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] プロパティではトリガーを有効にできません。依存関係プロパティであることが必要です。</span><span class="sxs-lookup"><span data-stu-id="caeed-115">You can't enable triggers with a normal [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] property; it needs to be a dependency property.</span></span> <span data-ttu-id="caeed-116">前述<xref:System.Windows.UIElement.IsMouseOver%2A>プロパティ場合がありますをいくつかのコントロールのスタイルを定義するのには、非常に役にシナリオの完全な例は、背景、前景、内の合成要素のようなプロパティなどの visible プロパティ、ユーザーがコントロールのいくつかの定義済みの領域の上にマウスを置いたときに、コントロールが変更されます。</span><span class="sxs-lookup"><span data-stu-id="caeed-116">The aforementioned <xref:System.Windows.UIElement.IsMouseOver%2A> property is a perfect example of a scenario where it might be quite useful to define a style for a control, where some visible property such as a background, foreground, or similar properties of composited elements within the control will change when the user places a mouse over some defined region of your control.</span></span> <span data-ttu-id="caeed-117">読み取り専用の依存関係プロパティの変化は、プロパティ システム固有の無効化プロセスによって検出して報告することもでき、これは実際にはプロパティ トリガー機能を内部的にサポートします。</span><span class="sxs-lookup"><span data-stu-id="caeed-117">Changes in a read-only dependency property can also be detected and reported by the property system's inherent invalidation processes, and this in fact supports the property trigger functionality internally.</span></span>  
   
 <a name="new"></a>   
-## 読み取り専用のカスタム依存プロパティの作成  
- 多くの一般的な依存関係プロパティのシナリオで読み取り専用依存関係プロパティが機能しない理由に関する前のセクションを参照してください。  ただし、適切なシナリオがある場合は、独自の読み取り専用依存関係プロパティを作成してもかまいません。  
+## <a name="creating-custom-read-only-dependency-properties"></a><span data-ttu-id="caeed-118">読み取り専用のカスタム依存関係プロパティの作成</span><span class="sxs-lookup"><span data-stu-id="caeed-118">Creating Custom Read-Only Dependency Properties</span></span>  
+ <span data-ttu-id="caeed-119">多くの一般的な依存関係プロパティのシナリオで読み取り専用依存関係プロパティが機能しない理由に関する前のセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="caeed-119">Make sure to read the section above regarding why read-only dependency properties won't work for many typical dependency-property scenarios.</span></span> <span data-ttu-id="caeed-120">ただし、適切なシナリオがある場合は、独自の読み取り専用依存関係プロパティを作成してもかまいません。</span><span class="sxs-lookup"><span data-stu-id="caeed-120">But if you have an appropriate scenario, you may wish to create your own read-only dependency property.</span></span>  
   
- 読み取り専用依存関係プロパティを作成するプロセスのほとんどは、「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」および「[依存関係プロパティを実装する](../../../../docs/framework/wpf/advanced/how-to-implement-a-dependency-property.md)」の説明と同じです。  ただし、次の 3 つの重要な違いがあります。  
+ <span data-ttu-id="caeed-121">読み取り専用の依存関係プロパティを作成するプロセスの大部分は、「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」と「[依存関係プロパティの実装](../../../../docs/framework/wpf/advanced/how-to-implement-a-dependency-property.md)」のトピックの説明と同じです。</span><span class="sxs-lookup"><span data-stu-id="caeed-121">Much of the process of creating a read-only dependency property is the same as is described in the [Custom Dependency Properties](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md) and [Implement a Dependency Property](../../../../docs/framework/wpf/advanced/how-to-implement-a-dependency-property.md) topics.</span></span> <span data-ttu-id="caeed-122">ただし、次の 3 つの重要な違いがあります。</span><span class="sxs-lookup"><span data-stu-id="caeed-122">There are three important differences:</span></span>  
   
--   プロパティを登録するときは、プロパティ登録用の通常の <xref:System.Windows.DependencyProperty.Register%2A> メソッドではなく、<xref:System.Windows.DependencyProperty.RegisterReadOnly%2A> メソッドを呼び出します。  
+-   <span data-ttu-id="caeed-123">プロパティを登録するときに呼び出す、<xref:System.Windows.DependencyProperty.RegisterReadOnly%2A>メソッド、標準ではなく<xref:System.Windows.DependencyProperty.Register%2A>プロパティの登録の方法です。</span><span class="sxs-lookup"><span data-stu-id="caeed-123">When registering your property, call the <xref:System.Windows.DependencyProperty.RegisterReadOnly%2A> method instead of the normal <xref:System.Windows.DependencyProperty.Register%2A> method for property registration.</span></span>  
   
--   [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] の "ラッパー" プロパティを実装するときは、ラッパーにも set 実装をしないようにして、公開するパブリック ラッパーの読み取り専用状態が矛盾しないようにする必要があります。  
+-   <span data-ttu-id="caeed-124">[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] の "ラッパー" プロパティを実装するときは、ラッパーにも set 実装をしないようにして、公開するパブリック ラッパーの読み取り専用状態が矛盾しないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="caeed-124">When implementing the [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] "wrapper" property, make sure that the wrapper too doesn't have a set implementation, so that there is no inconsistency in read-only state for the public wrapper you expose.</span></span>  
   
--   読み取り専用の登録によって返されるオブジェクトは、<xref:System.Windows.DependencyProperty> ではなく <xref:System.Windows.DependencyPropertyKey> です。  やはりこのフィールドをメンバーとして格納する必要がありますが、通常は、型のパブリック メンバーにはしません。  
+-   <span data-ttu-id="caeed-125">読み取り専用登録によって返されるオブジェクトは<xref:System.Windows.DependencyPropertyKey>なく<xref:System.Windows.DependencyProperty>です。</span><span class="sxs-lookup"><span data-stu-id="caeed-125">The object returned by the read-only registration is <xref:System.Windows.DependencyPropertyKey> rather than <xref:System.Windows.DependencyProperty>.</span></span> <span data-ttu-id="caeed-126">やはりこのフィールドをメンバーとして格納する必要がありますが、通常は、型のパブリック メンバーにはしません。</span><span class="sxs-lookup"><span data-stu-id="caeed-126">You should still store this field as a member but typically you would not make it a public member of the type.</span></span>  
   
- 読み取り専用依存関係プロパティを補足するために使用するプライベートのフィールドまたは値はすべて、適当なロジックを使用して完全に書き込み可能にしてかまいません。  ただし、初期化で、またはランタイム ロジックの一部として、プロパティを設定する最も簡単な方法は、プロパティ システムを使用しないでプライベートな補足フィールドを直接設定するのではなく、プロパティ システムの [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] を使用する方法です。  具体的には、<xref:System.Windows.DependencyPropertyKey> 型のパラメーターを受け取る <xref:System.Windows.DependencyObject.SetValue%2A> のシグネチャがあります。  アプリケーション ロジック内でプログラムによってこの値を設定する方法と場所により、依存関係プロパティを最初に登録したときに作成される <xref:System.Windows.DependencyPropertyKey> に対するアクセスの設定方法が影響を受けます。  このロジックすべてをクラス内で処理する場合はプライベートにでき、アセンブリの他の部分から設定する必要がある場合は内部に設定します。  1 つの方法は、格納されているプロパティ値の変更が必要であることをクラスのインスタンスに通知する関連イベントのクラス イベント ハンドラー内で、<xref:System.Windows.DependencyObject.SetValue%2A> を呼び出すというものです。  もう 1 つの方法は、登録の際にプロパティのメタデータの一部として、ペアになった <xref:System.Windows.PropertyChangedCallback> コールバックと <xref:System.Windows.CoerceValueCallback> コールバックを使用して、依存関係プロパティを結び付けるというものです。  
+ <span data-ttu-id="caeed-127">読み取り専用の依存関係プロパティを補足するために使用するプライベートのフィールドまたは値はすべて、適当なロジックを使用して完全に書き込み可能にしてかまいません。</span><span class="sxs-lookup"><span data-stu-id="caeed-127">Whatever private field or value you have backing your read-only dependency property can of course be fully writable using whatever logic you decide.</span></span> <span data-ttu-id="caeed-128">ただし、初期化で、またはランタイム ロジックの一部として、プロパティを設定する最も簡単な方法は、プロパティ システムを使用しないでプライベートなバッキング フィールドを直接設定するのではなく、プロパティ システムの [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] を使用する方法です。</span><span class="sxs-lookup"><span data-stu-id="caeed-128">However, the most straightforward way to set the property either initially or as part of runtime logic is to use the property system's [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], rather than circumventing the property system and setting the private backing field directly.</span></span> <span data-ttu-id="caeed-129">具体的には、署名がある<xref:System.Windows.DependencyObject.SetValue%2A>型のパラメーターを受け入れる<xref:System.Windows.DependencyPropertyKey>です。</span><span class="sxs-lookup"><span data-stu-id="caeed-129">In particular, there is a signature of <xref:System.Windows.DependencyObject.SetValue%2A> that accepts a parameter of type <xref:System.Windows.DependencyPropertyKey>.</span></span> <span data-ttu-id="caeed-130">この値、アプリケーション ロジック内で、プログラムによって設定方法と場所に影響を与える方法に対してアクセスを設定する場合、<xref:System.Windows.DependencyPropertyKey>依存関係プロパティを最初に登録するときに作成します。</span><span class="sxs-lookup"><span data-stu-id="caeed-130">How and where you set this value programmatically within your application logic will affect how you may wish to set access on the <xref:System.Windows.DependencyPropertyKey> created when you first registered the dependency property.</span></span> <span data-ttu-id="caeed-131">このロジックすべてをクラス内で処理する場合はプライベートにでき、アセンブリの他の部分から設定する必要がある場合は内部に設定します。</span><span class="sxs-lookup"><span data-stu-id="caeed-131">If you handle this logic all within the class you could make it private, or if you require it to be set from other portions of the assembly you might set it internal.</span></span> <span data-ttu-id="caeed-132">呼び出す方法の 1 つは、<xref:System.Windows.DependencyObject.SetValue%2A>ストアド プロパティの値が変更する必要があるクラスのインスタンスに通知する関連イベントのクラスのイベント ハンドラー内で。</span><span class="sxs-lookup"><span data-stu-id="caeed-132">One approach is to call <xref:System.Windows.DependencyObject.SetValue%2A> within a class event handler of a relevant event that informs a class instance that the stored property value needs to be changed.</span></span> <span data-ttu-id="caeed-133">別のアプローチがペアリングを使用して、依存関係プロパティを結び、<xref:System.Windows.PropertyChangedCallback>と<xref:System.Windows.CoerceValueCallback>登録時にこれらのプロパティのメタデータの一部としてコールバック。</span><span class="sxs-lookup"><span data-stu-id="caeed-133">Another approach is to tie dependency properties together by using paired <xref:System.Windows.PropertyChangedCallback> and <xref:System.Windows.CoerceValueCallback> callbacks as part of those properties' metadata during registration.</span></span>  
   
- <xref:System.Windows.DependencyPropertyKey> はプライベートであり、コードの外部のプロパティ システムによっては伝達されないので、読み取り専用依存関係プロパティの方が、読み取り\/書き込み依存関係プロパティより設定のセキュリティが優れています。  読み取り\/書き込み依存関係プロパティの場合は、識別するフィールドは明示的または暗黙的にパブリックであり、したがってプロパティは広範に設定可能です。  詳細については、「[依存関係プロパティのセキュリティ](../../../../docs/framework/wpf/advanced/dependency-property-security.md)」を参照してください。  
+ <span data-ttu-id="caeed-134"><xref:System.Windows.DependencyPropertyKey>はプライベートであるとは反映されませんプロパティで、システムによって、コードの外部で、読み取り専用の依存関係プロパティがより読み取り/書き込みの依存関係プロパティよりもセキュリティを設定します。</span><span class="sxs-lookup"><span data-stu-id="caeed-134">Because the <xref:System.Windows.DependencyPropertyKey> is private, and is not propagated by the property system outside of your code, a read-only dependency property does have better setting security than a read-write dependency property.</span></span> <span data-ttu-id="caeed-135">読み取り/書き込み依存関係プロパティの場合は、識別するフィールドは明示的または暗黙的にパブリックであり、したがってプロパティは広範に設定可能です。</span><span class="sxs-lookup"><span data-stu-id="caeed-135">For a read-write dependency property, the identifying field is explicitly or implicitly public and thus the property is widely settable.</span></span> <span data-ttu-id="caeed-136">詳細については、「[依存関係プロパティのセキュリティ](../../../../docs/framework/wpf/advanced/dependency-property-security.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="caeed-136">For more specifics, see [Dependency Property Security](../../../../docs/framework/wpf/advanced/dependency-property-security.md).</span></span>  
   
-## 参照  
- [依存関係プロパティの概要](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)   
- [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+## <a name="see-also"></a><span data-ttu-id="caeed-137">関連項目</span><span class="sxs-lookup"><span data-stu-id="caeed-137">See Also</span></span>  
+ [<span data-ttu-id="caeed-138">依存関係プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="caeed-138">Dependency Properties Overview</span></span>](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [<span data-ttu-id="caeed-139">カスタム依存関係プロパティ</span><span class="sxs-lookup"><span data-stu-id="caeed-139">Custom Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
+ [<span data-ttu-id="caeed-140">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="caeed-140">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)

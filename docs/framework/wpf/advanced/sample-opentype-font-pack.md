@@ -1,67 +1,69 @@
 ---
-title: "OpenType フォント パックのサンプル | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "フォント, OpenType フォント パック"
-  - "OpenType フォント パック"
-  - "タイポグラフィ, OpenType フォント パック"
+title: "OpenType フォント パックのサンプル"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- OpenType font pack [WPF]
+- fonts [WPF], OpenType font pack
+- typography [WPF], OpenType font pack
 ms.assetid: 56b46fa1-a44e-419b-8f14-25ad51c715c3
-caps.latest.revision: 23
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 22
+caps.latest.revision: "23"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bbc5caeab5a77518e160bacb9722e50ff7abbfb4
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# OpenType フォント パックのサンプル
-ここでは、[!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] で配布されている、サンプルの [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォントの概要について説明します。  サンプル フォントは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションで使用可能な拡張 [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] 機能をサポートしています。  
+# <a name="sample-opentype-font-pack"></a><span data-ttu-id="30245-102">OpenType フォント パックのサンプル</span><span class="sxs-lookup"><span data-stu-id="30245-102">Sample OpenType Font Pack</span></span>
+<span data-ttu-id="30245-103">このトピックでは、[!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] で配布されている [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォントのサンプルの概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="30245-103">This topic provides an overview of the sample [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts that are distributed with the [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)].</span></span> <span data-ttu-id="30245-104">サンプル フォントは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションで使用可能な拡張 [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] 機能をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="30245-104">The sample fonts support extended [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] features that can be used by [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
   
-   
   
 <a name="overview"></a>   
-## OpenType フォント パックのフォント  
- [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] には、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションの作成に使用できる一連の [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォントがサンプルとして用意されています。  サンプル フォントは、Ascender Corporation のライセンスを受けて提供されています。  これらのフォントには、[!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] 形式で定義されているすべての機能のサブセットだけが実装されています。  次の表に、サンプルの [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォント名の一覧を示します。  
+## <a name="fonts-in-the-opentype-font-pack"></a><span data-ttu-id="30245-105">OpenType フォント パックのフォント</span><span class="sxs-lookup"><span data-stu-id="30245-105">Fonts in the OpenType Font Pack</span></span>  
+ <span data-ttu-id="30245-106">[!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] には、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションの作成に使用できる [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォント サンプルのセットが用意されています。</span><span class="sxs-lookup"><span data-stu-id="30245-106">The [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] provides a set of sample [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts that you can use in creating [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span> <span data-ttu-id="30245-107">サンプル フォントは、Ascender Corporation のライセンスを受けて提供されています。</span><span class="sxs-lookup"><span data-stu-id="30245-107">The sample fonts are supplied under license from Ascender Corporation.</span></span> <span data-ttu-id="30245-108">これらのフォントには、[!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォーマットで定義されている機能全体のサブセットだけが実装されています。</span><span class="sxs-lookup"><span data-stu-id="30245-108">These fonts implement only a subset of the total features defined by the [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] format.</span></span> <span data-ttu-id="30245-109">サンプルの [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォント名の一覧を次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="30245-109">The following table lists the names of the sample [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts.</span></span>  
   
-|**名前**|**File**|  
-|------------|--------------|  
-|Kootenay|Kooten.ttf|  
-|Lindsey|Linds.ttf|  
-|Miramonte|Miramo.ttf|  
-|Miramonte Bold|Miramob.ttf|  
-|Pericles|Peric.ttf|  
-|Pericles Light|Pericl.ttf|  
-|Pescadero|Pesca.ttf|  
-|Pescadero Bold|Pescab.ttf|  
+|<span data-ttu-id="30245-110">**名前**</span><span class="sxs-lookup"><span data-stu-id="30245-110">**Name**</span></span>|<span data-ttu-id="30245-111">**ファイル**</span><span class="sxs-lookup"><span data-stu-id="30245-111">**File**</span></span>|  
+|--------------|--------------|  
+|<span data-ttu-id="30245-112">Kootenay</span><span class="sxs-lookup"><span data-stu-id="30245-112">Kootenay</span></span>|<span data-ttu-id="30245-113">Kooten.ttf</span><span class="sxs-lookup"><span data-stu-id="30245-113">Kooten.ttf</span></span>|  
+|<span data-ttu-id="30245-114">Lindsey</span><span class="sxs-lookup"><span data-stu-id="30245-114">Lindsey</span></span>|<span data-ttu-id="30245-115">Linds.ttf</span><span class="sxs-lookup"><span data-stu-id="30245-115">Linds.ttf</span></span>|  
+|<span data-ttu-id="30245-116">Miramonte</span><span class="sxs-lookup"><span data-stu-id="30245-116">Miramonte</span></span>|<span data-ttu-id="30245-117">Miramo.ttf</span><span class="sxs-lookup"><span data-stu-id="30245-117">Miramo.ttf</span></span>|  
+|<span data-ttu-id="30245-118">Miramonte Bold</span><span class="sxs-lookup"><span data-stu-id="30245-118">Miramonte Bold</span></span>|<span data-ttu-id="30245-119">Miramob.ttf</span><span class="sxs-lookup"><span data-stu-id="30245-119">Miramob.ttf</span></span>|  
+|<span data-ttu-id="30245-120">Pericles</span><span class="sxs-lookup"><span data-stu-id="30245-120">Pericles</span></span>|<span data-ttu-id="30245-121">Peric.ttf</span><span class="sxs-lookup"><span data-stu-id="30245-121">Peric.ttf</span></span>|  
+|<span data-ttu-id="30245-122">Pericles Light</span><span class="sxs-lookup"><span data-stu-id="30245-122">Pericles Light</span></span>|<span data-ttu-id="30245-123">Pericl.ttf</span><span class="sxs-lookup"><span data-stu-id="30245-123">Pericl.ttf</span></span>|  
+|<span data-ttu-id="30245-124">Pescadero</span><span class="sxs-lookup"><span data-stu-id="30245-124">Pescadero</span></span>|<span data-ttu-id="30245-125">Pesca.ttf</span><span class="sxs-lookup"><span data-stu-id="30245-125">Pesca.ttf</span></span>|  
+|<span data-ttu-id="30245-126">Pescadero Bold</span><span class="sxs-lookup"><span data-stu-id="30245-126">Pescadero Bold</span></span>|<span data-ttu-id="30245-127">Pescab.ttf</span><span class="sxs-lookup"><span data-stu-id="30245-127">Pescab.ttf</span></span>|  
   
- 次に示すのは、サンプルの [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォントです。  
+ <span data-ttu-id="30245-128">次の図は [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォントのサンプルが、どのように表示されるかを示しています。</span><span class="sxs-lookup"><span data-stu-id="30245-128">The following illustration shows what the sample [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts look like.</span></span>  
   
- ![サンプル フォント パック内のフォント名の一覧](../../../../docs/framework/wpf/advanced/media/samplefontpack01.png "samplefontpack01")  
-OpenType フォント パックのフォント  
+ <span data-ttu-id="30245-129">![サンプル フォント パック内のフォント名のリスト](../../../../docs/framework/wpf/advanced/media/samplefontpack01.gif "samplefontpack01")</span><span class="sxs-lookup"><span data-stu-id="30245-129">![List of font names in sample font pack](../../../../docs/framework/wpf/advanced/media/samplefontpack01.gif "samplefontpack01")</span></span>  
+<span data-ttu-id="30245-130">OpenType フォント パックのフォント</span><span class="sxs-lookup"><span data-stu-id="30245-130">Fonts in the OpenType Font Pack</span></span>  
   
- サンプル フォントは、Ascender Corporation のライセンスを受けて提供されています。  Ascender は高度なフォント製品を提供する企業です。  サンプル フォントの拡張版またはカスタム版のライセンスを受けるには、[Ascender Corporation の Web サイト](http://go.microsoft.com/fwlink/?LinkId=182627)を参照してください。  
+ <span data-ttu-id="30245-131">サンプル フォントは、Ascender Corporation のライセンスを受けて提供されています。</span><span class="sxs-lookup"><span data-stu-id="30245-131">The sample fonts are supplied under license from Ascender Corporation.</span></span> <span data-ttu-id="30245-132">Ascender は、高度なフォント製品を提供する企業です。</span><span class="sxs-lookup"><span data-stu-id="30245-132">Ascender is a provider of advanced font products.</span></span> <span data-ttu-id="30245-133">サンプル フォントの拡張版またはカスタム版のライセンスを受けるには、[Ascender Corporation の Web サイト](http://go.microsoft.com/fwlink/?LinkId=182627)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="30245-133">To license extended or custom versions of the sample fonts, see [Ascender Corporation's Web site](http://go.microsoft.com/fwlink/?LinkId=182627).</span></span>  
   
 > [!NOTE]
->  アプリケーションに埋め込む、または別の方法で再頒布するフォントについて、必要なライセンス権限を取得することは、開発者であるユーザーの責任で行ってください。  
+>  <span data-ttu-id="30245-134">アプリケーションに埋め込む、または別の方法で再頒布するフォントについて、必要なライセンス権限を取得することは、開発者であるユーザーの責任で行ってください。</span><span class="sxs-lookup"><span data-stu-id="30245-134">As a developer it is your responsibility to ensure that you have the required license rights for any font you embed within an application or otherwise redistribute.</span></span>  
   
 <a name="installing_the_fonts"></a>   
-## フォントのインストール  
- サンプルの [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォントは、既定の [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] フォント ディレクトリ **\\WINDOWS\\Fonts** にインストールできます。  フォントをインストールするには、コントロール パネルの \[フォント\] を使用します。  これらのフォントをコンピューターにインストールすると、既定の [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] フォントを参照するすべてのアプリケーションからアクセスできるようになります。フォント ファイルの名前をダブルクリックすることで、各フォントの文字をさまざまなサイズで表示して確認することができます。  次のスクリーン ショットは、Lindsey フォント ファイル \(Linds.ttf\) を表示したものです。  
+## <a name="installing-the-fonts"></a><span data-ttu-id="30245-135">フォントのインストール</span><span class="sxs-lookup"><span data-stu-id="30245-135">Installing the Fonts</span></span>  
+ <span data-ttu-id="30245-136">サンプルの [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] フォントを、既定の [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] フォント ディレクトリである **\WINDOWS\Fonts** にインストールできます。</span><span class="sxs-lookup"><span data-stu-id="30245-136">You have the option of installing the sample [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] fonts to the default [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Fonts directory, **\WINDOWS\Fonts**.</span></span> <span data-ttu-id="30245-137">フォントをインストールするには、コントロール パネルの [フォント] を使用します。</span><span class="sxs-lookup"><span data-stu-id="30245-137">Use the Fonts control panel to install the fonts.</span></span> <span data-ttu-id="30245-138">これらのフォントをコンピューターにインストールすると、既定の [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] フォントを参照するすべてのアプリケーションからアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="30245-138">Once these fonts are on your computer, they are accessible to all applications that reference default [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] fonts.</span></span> <span data-ttu-id="30245-139">フォント ファイルをダブルクリックして、各フォントの文字を異なるいくつかのフォント サイズで表示できます。</span><span class="sxs-lookup"><span data-stu-id="30245-139">You can display a representative set of characters in several font sizes by doubling-clicking the font file.</span></span> <span data-ttu-id="30245-140">次のスクリーン ショットは、Lindsey フォント ファイル (Linds.ttf) を表示したものです。</span><span class="sxs-lookup"><span data-stu-id="30245-140">The following screenshot shows the Lindsey font file, Linds.ttf.</span></span>  
   
- ![Lindsey フォント &#40;OpenType&#41;](../../../../docs/framework/wpf/advanced/media/typographyinwpf-04.png "TypographyInWPF\_04")  
-Lindsey フォントの表示  
+ <span data-ttu-id="30245-141">![Lindsey フォント &#40;OpenType&#41;] (../../../../docs/framework/wpf/advanced/media/typographyinwpf-04.png "TypographyInWPF_04")</span><span class="sxs-lookup"><span data-stu-id="30245-141">![Lindsey font &#40;OpenType&#41;](../../../../docs/framework/wpf/advanced/media/typographyinwpf-04.png "TypographyInWPF_04")</span></span>  
+<span data-ttu-id="30245-142">Lindsey フォントの表示</span><span class="sxs-lookup"><span data-stu-id="30245-142">Displaying the Lindsey font</span></span>  
   
 <a name="using_the_fonts"></a>   
-## フォントの使用  
- アプリケーションでフォントを使用するには、2 とおりの方法があります。  フォントは、アセンブリにリソースとして埋め込まれていないプロジェクト コンテンツ項目としてアプリケーションに追加できます。  フォントは、アプリケーションのアセンブリ ファイルに埋め込まれたプロジェクト リソース項目としてアプリケーションに追加することもできます。  詳細については、「[アプリケーションでのフォントのパッケージング](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)」を参照してください。  
+## <a name="using-the-fonts"></a><span data-ttu-id="30245-143">フォントの使用</span><span class="sxs-lookup"><span data-stu-id="30245-143">Using the Fonts</span></span>  
+ <span data-ttu-id="30245-144">アプリケーションでフォントを使用するには、2 とおりの方法があります。</span><span class="sxs-lookup"><span data-stu-id="30245-144">There are two ways that you can use fonts in your application.</span></span> <span data-ttu-id="30245-145">アセンブリ内にリソースとして埋め込まれていないプロジェクト コンテンツ項目として、フォントをアプリケーションに追加できます。</span><span class="sxs-lookup"><span data-stu-id="30245-145">You can add fonts to your application as project content items that are not embedded as resources within an assembly.</span></span> <span data-ttu-id="30245-146">あるいは、アプリケーションのアセンブリ ファイル内に埋め込まれたプロジェクト リソース項目として、フォントをアプリケーションに追加できます。</span><span class="sxs-lookup"><span data-stu-id="30245-146">Alternatively, you can add fonts to your application as project resource items that are embedded within the application's assembly files.</span></span> <span data-ttu-id="30245-147">詳細については、「[アプリケーションでのフォントのパッケージング](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="30245-147">For more information, see [Packaging Fonts with Applications](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Documents.Typography>   
- [OpenType フォントの機能](../../../../docs/framework/wpf/advanced/opentype-font-features.md)   
- [アプリケーションでのフォントのパッケージング](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)
+## <a name="see-also"></a><span data-ttu-id="30245-148">関連項目</span><span class="sxs-lookup"><span data-stu-id="30245-148">See Also</span></span>  
+ <xref:System.Windows.Documents.Typography>  
+ [<span data-ttu-id="30245-149">OpenType フォントの機能</span><span class="sxs-lookup"><span data-stu-id="30245-149">OpenType Font Features</span></span>](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
+ [<span data-ttu-id="30245-150">アプリケーションでのフォントのパッケージング</span><span class="sxs-lookup"><span data-stu-id="30245-150">Packaging Fonts with Applications</span></span>](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)

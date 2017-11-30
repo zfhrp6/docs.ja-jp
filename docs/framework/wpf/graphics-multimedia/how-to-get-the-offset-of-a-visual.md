@@ -1,75 +1,81 @@
 ---
-title: "方法 : ビジュアルのオフセットを取得する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "取得 (ビジュアル オブジェクトからオフセット値を)"
-  - "オフセット値, 取得 (ビジュアル オブジェクトから)"
-  - "取得 (ビジュアル オブジェクトからオフセット値を)"
-  - "ビジュアル オブジェクト, 取得 (オフセット値を)"
+title: "方法 : ビジュアルのオフセットを取得する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- getting offset values from visual objects [WPF]
+- offset values [WPF], retrieving from visual objects [WPF]
+- visual objects [WPF], retrieving offset values from
+- retrieving offset values from visual objects [WPF]
 ms.assetid: 889a1dd6-1b11-445a-b351-fbb04c53ee34
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 22c35a683f479660a17f11e44f9a0721f9d35968
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ビジュアルのオフセットを取得する
-この例では、親、先祖、または子孫を基準とした相対値である、ビジュアル オブジェクトのオフセット値を取得する方法を示します。  
+# <a name="how-to-get-the-offset-of-a-visual"></a><span data-ttu-id="7dbd3-102">方法 : ビジュアルのオフセットを取得する</span><span class="sxs-lookup"><span data-stu-id="7dbd3-102">How to: Get the Offset of a Visual</span></span>
+<span data-ttu-id="7dbd3-103">これらの例では、その親または先祖、または子孫に対応するビジュアル オブジェクトのオフセット値を取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-103">These examples show how to retrieve the offset value of a visual object that is relative to its parent, or any ancestor or descendant.</span></span>  
   
-## 使用例  
- 次に示すマークアップの例では、<xref:System.Windows.Controls.TextBlock> の <xref:System.Windows.FrameworkElement.Margin%2A> の値に 4 が指定されています。  
+## <a name="example"></a><span data-ttu-id="7dbd3-104">例</span><span class="sxs-lookup"><span data-stu-id="7dbd3-104">Example</span></span>  
+ <span data-ttu-id="7dbd3-105">次のマークアップの例は、<xref:System.Windows.Controls.TextBlock>で定義されている<xref:System.Windows.FrameworkElement.Margin%2A>4 の値。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-105">The following markup example shows a <xref:System.Windows.Controls.TextBlock> that is defined with <xref:System.Windows.FrameworkElement.Margin%2A> value of 4.</span></span>  
   
- [!code-xml[VisualSnippets#VisualSnippet1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window1.xaml#visualsnippet1)]  
+ [!code-xaml[VisualSnippets#VisualSnippet1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window1.xaml#visualsnippet1)]  
   
- <xref:System.Windows.Media.VisualTreeHelper.GetOffset%2A> メソッドを使用して <xref:System.Windows.Controls.TextBlock> のオフセットを取得する方法を次の例に示します。  オフセット値は、返される <xref:System.Windows.Vector> 値に含まれます。  
+ <span data-ttu-id="7dbd3-106">次のコード例を使用する方法を示しています、<xref:System.Windows.Media.VisualTreeHelper.GetOffset%2A>のオフセットを取得する方法を<xref:System.Windows.Controls.TextBlock>です。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-106">The following code example shows how to use the <xref:System.Windows.Media.VisualTreeHelper.GetOffset%2A> method to retrieve the offset of the <xref:System.Windows.Controls.TextBlock>.</span></span> <span data-ttu-id="7dbd3-107">オフセット値が含まれている、返された内<xref:System.Windows.Vector>値。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-107">The offset values are contained within the returned <xref:System.Windows.Vector> value.</span></span>  
   
  [!code-csharp[VisualSnippets#VisualSnippet2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window1.xaml.cs#visualsnippet2)]
  [!code-vb[VisualSnippets#VisualSnippet2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualSnippets/visualbasic/window1.xaml.vb#visualsnippet2)]  
   
- オフセットでは、<xref:System.Windows.FrameworkElement.Margin%2A> 値が考慮されます。  ここでは、<xref:System.Windows.Vector.X%2A> は 4 で、<xref:System.Windows.Vector.Y%2A> も 4 です。  
+ <span data-ttu-id="7dbd3-108">オフセットは考慮に入れて、<xref:System.Windows.FrameworkElement.Margin%2A>値。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-108">The offset takes into account the <xref:System.Windows.FrameworkElement.Margin%2A> value.</span></span> <span data-ttu-id="7dbd3-109">ここでは、<xref:System.Windows.Vector.X%2A>は、4、および<xref:System.Windows.Vector.Y%2A>は 4 です。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-109">In this case, <xref:System.Windows.Vector.X%2A> is 4, and <xref:System.Windows.Vector.Y%2A> is 4.</span></span>  
   
- 返されるオフセット値は、<xref:System.Windows.Media.Visual> の親を基準とする相対値です。  <xref:System.Windows.Media.Visual> の親が基準ではないオフセット値を返す必要がある場合は、<xref:System.Windows.Media.Visual.TransformToAncestor%2A> メソッドを使用します。  
+ <span data-ttu-id="7dbd3-110">返されたオフセット値は、親の<xref:System.Windows.Media.Visual>です。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-110">The returned offset value is relative to the parent of the <xref:System.Windows.Media.Visual>.</span></span> <span data-ttu-id="7dbd3-111">親を基準にはないオフセット値を取得する場合、<xref:System.Windows.Media.Visual>を使用して、<xref:System.Windows.Media.Visual.TransformToAncestor%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-111">If you want to return an offset value that is not relative to the parent of a <xref:System.Windows.Media.Visual>, use the <xref:System.Windows.Media.Visual.TransformToAncestor%2A> method.</span></span>  
   
-## 先祖を基準としたオフセットの取得  
- 2 つの <xref:System.Windows.Controls.StackPanel> オブジェクトの中で入れ子になっている <xref:System.Windows.Controls.TextBlock> のマークアップ例を次に示します。  
+## <a name="getting-the-offset-relative-to-an-ancestor"></a><span data-ttu-id="7dbd3-112">先祖に相対的なオフセットの取得</span><span class="sxs-lookup"><span data-stu-id="7dbd3-112">Getting the Offset Relative to an Ancestor</span></span>  
+ <span data-ttu-id="7dbd3-113">次のマークアップの例は、 <xref:System.Windows.Controls.TextBlock> 2 内で入れ子になっている<xref:System.Windows.Controls.StackPanel>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-113">The following markup example shows a <xref:System.Windows.Controls.TextBlock> that is nested within two <xref:System.Windows.Controls.StackPanel> objects.</span></span>  
   
- [!code-xml[VisualSnippets#VisualSnippet7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window2.xaml#visualsnippet7)]  
+ [!code-xaml[VisualSnippets#VisualSnippet7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window2.xaml#visualsnippet7)]  
   
- マークアップの結果を次の図に示します。  
+ <span data-ttu-id="7dbd3-114">次の図は、マークアップの結果を示します。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-114">The following illustration shows the results of the markup.</span></span>  
   
- ![オブジェクトのオフセット値](../../../../docs/framework/wpf/graphics-multimedia/media/visualoffset-01.png "VisualOffset\_01")  
-2 つの StackPanel 内で入れ子にされた TextBlock  
+ <span data-ttu-id="7dbd3-115">![オブジェクトのオフセット値](../../../../docs/framework/wpf/graphics-multimedia/media/visualoffset-01.png "VisualOffset_01")</span><span class="sxs-lookup"><span data-stu-id="7dbd3-115">![Offset values of objects](../../../../docs/framework/wpf/graphics-multimedia/media/visualoffset-01.png "VisualOffset_01")</span></span>  
+<span data-ttu-id="7dbd3-116">2 つの StackPanels 内で入れ子になった TextBlock</span><span class="sxs-lookup"><span data-stu-id="7dbd3-116">TextBlock nested within two StackPanels</span></span>  
   
- <xref:System.Windows.Media.Visual.TransformToAncestor%2A> メソッドを使用して、<xref:System.Windows.Controls.TextBlock> のオフセットを、このオブジェクトを格納している <xref:System.Windows.Window> を基準として取得する方法を次のコード例に示します。  オフセット値は、返される <xref:System.Windows.Media.GeneralTransform> 値に含まれます。  
+ <span data-ttu-id="7dbd3-117">次のコード例を使用する方法を示しています、<xref:System.Windows.Media.Visual.TransformToAncestor%2A>のオフセットを取得する方法を<xref:System.Windows.Controls.TextBlock>を含む、に対して相対的<xref:System.Windows.Window>です。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-117">The following code example shows how to use the <xref:System.Windows.Media.Visual.TransformToAncestor%2A> method to retrieve the offset of the <xref:System.Windows.Controls.TextBlock> relative to the containing <xref:System.Windows.Window>.</span></span> <span data-ttu-id="7dbd3-118">オフセット値が含まれている、返された内<xref:System.Windows.Media.GeneralTransform>値。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-118">The offset values are contained within the returned <xref:System.Windows.Media.GeneralTransform> value.</span></span>  
   
  [!code-csharp[VisualSnippets#VisualSnippet5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window1.xaml.cs#visualsnippet5)]
  [!code-vb[VisualSnippets#VisualSnippet5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualSnippets/visualbasic/window1.xaml.vb#visualsnippet5)]  
   
- オフセットの値は、そのオブジェクトを格納している <xref:System.Windows.Window> 内のすべてのオブジェクトの <xref:System.Windows.FrameworkElement.Margin%2A> 値を考慮して計算されます。  この例では、<xref:System.Windows.Vector.X%2A> は 28 \(16 \+ 8 \+ 4\) で、<xref:System.Windows.Vector.Y%2A> も 28 です。  
+ <span data-ttu-id="7dbd3-119">オフセットは考慮に入れて、<xref:System.Windows.FrameworkElement.Margin%2A>を含む、すべてのオブジェクトの値<xref:System.Windows.Window>です。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-119">The offset takes into account the <xref:System.Windows.FrameworkElement.Margin%2A> values for all objects within the containing <xref:System.Windows.Window>.</span></span> <span data-ttu-id="7dbd3-120">この場合、 <xref:System.Windows.Vector.X%2A> 28 (16 + 8 + 4)、および<xref:System.Windows.Vector.Y%2A>28 です。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-120">In this case, <xref:System.Windows.Vector.X%2A> is 28 (16 + 8 + 4), and <xref:System.Windows.Vector.Y%2A> is 28.</span></span>  
   
- 返されるオフセット値は、<xref:System.Windows.Media.Visual> の先祖を基準としています。  <xref:System.Windows.Media.Visual> の子孫を基準とするオフセット値を返す必要がある場合は、<xref:System.Windows.Media.Visual.TransformToDescendant%2A> メソッドを使用します。  
+ <span data-ttu-id="7dbd3-121">返されたオフセット値の先祖、<xref:System.Windows.Media.Visual>です。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-121">The returned offset value is relative to the ancestor of the <xref:System.Windows.Media.Visual>.</span></span> <span data-ttu-id="7dbd3-122">子に対して相対的なオフセット値を取得する場合、<xref:System.Windows.Media.Visual>を使用して、<xref:System.Windows.Media.Visual.TransformToDescendant%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-122">If you want to return an offset value that is relative to the descendant of a <xref:System.Windows.Media.Visual>, use the <xref:System.Windows.Media.Visual.TransformToDescendant%2A> method.</span></span>  
   
-## 子孫を基準としたオフセットの取得  
- <xref:System.Windows.Controls.StackPanel> オブジェクトに格納されている <xref:System.Windows.Controls.TextBlock> のマークアップ例を次に示します。  
+## <a name="getting-the-offset-relative-to-a-descendant"></a><span data-ttu-id="7dbd3-123">子に相対的なオフセットの取得</span><span class="sxs-lookup"><span data-stu-id="7dbd3-123">Getting the Offset Relative to a Descendant</span></span>  
+ <span data-ttu-id="7dbd3-124">マークアップ例を次に、<xref:System.Windows.Controls.TextBlock>内に含まれているが、<xref:System.Windows.Controls.StackPanel>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-124">The following markup example shows a <xref:System.Windows.Controls.TextBlock> that is contained within a <xref:System.Windows.Controls.StackPanel> object.</span></span>  
   
- [!code-xml[VisualSnippets#VisualSnippet4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window1.xaml#visualsnippet4)]  
+ [!code-xaml[VisualSnippets#VisualSnippet4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window1.xaml#visualsnippet4)]  
   
- <xref:System.Windows.Media.Visual.TransformToDescendant%2A> メソッドを使用して、子 <xref:System.Windows.Controls.TextBlock> を基準にして <xref:System.Windows.Controls.StackPanel> のオフセットを取得する方法を次のコード例に示します。  オフセット値は、返される <xref:System.Windows.Media.GeneralTransform> 値に含まれます。  
+ <span data-ttu-id="7dbd3-125">次のコード例を使用する方法を示しています、<xref:System.Windows.Media.Visual.TransformToDescendant%2A>のオフセットを取得する方法を<xref:System.Windows.Controls.StackPanel>その子の基準とした<xref:System.Windows.Controls.TextBlock>です。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-125">The following code example shows how to use the <xref:System.Windows.Media.Visual.TransformToDescendant%2A> method to retrieve the offset of the <xref:System.Windows.Controls.StackPanel> relative to its child <xref:System.Windows.Controls.TextBlock>.</span></span> <span data-ttu-id="7dbd3-126">オフセット値が含まれている、返された内<xref:System.Windows.Media.GeneralTransform>値。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-126">The offset values are contained within the returned <xref:System.Windows.Media.GeneralTransform> value.</span></span>  
   
  [!code-csharp[VisualSnippets#VisualSnippet9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window1.xaml.cs#visualsnippet9)]
  [!code-vb[VisualSnippets#VisualSnippet9](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualSnippets/visualbasic/window1.xaml.vb#visualsnippet9)]  
   
- オフセットでは、すべてのオブジェクトの <xref:System.Windows.FrameworkElement.Margin%2A> 値が考慮されます。  ここでは、<xref:System.Windows.Vector.X%2A> は \-4 で、<xref:System.Windows.Vector.Y%2A> も \-4 です。  これらのオフセット値が負の値である理由は、子オブジェクトを基準とした親オブジェクトのオフセットが負のオフセットであるためです。  
+ <span data-ttu-id="7dbd3-127">オフセットは考慮に入れて、<xref:System.Windows.FrameworkElement.Margin%2A>すべてのオブジェクトの値。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-127">The offset takes into account the <xref:System.Windows.FrameworkElement.Margin%2A> values for all objects.</span></span> <span data-ttu-id="7dbd3-128">この場合、 <xref:System.Windows.Vector.X%2A> -4、および<xref:System.Windows.Vector.Y%2A>-4 です。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-128">In this case, <xref:System.Windows.Vector.X%2A> is -4, and <xref:System.Windows.Vector.Y%2A> is -4.</span></span> <span data-ttu-id="7dbd3-129">オフセットの値は負の値は、親オブジェクトは、子オブジェクトに対してオフセット悪影響を及ぼすためです。</span><span class="sxs-lookup"><span data-stu-id="7dbd3-129">The offset values are negative values, since the parent object is negatively offset relative to its child object.</span></span>  
   
-## 参照  
- <xref:System.Windows.Media.Visual>   
- <xref:System.Windows.Media.VisualTreeHelper>   
- [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+## <a name="see-also"></a><span data-ttu-id="7dbd3-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="7dbd3-130">See Also</span></span>  
+ <xref:System.Windows.Media.Visual>  
+ <xref:System.Windows.Media.VisualTreeHelper>  
+ [<span data-ttu-id="7dbd3-131">WPF グラフィックス レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="7dbd3-131">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)

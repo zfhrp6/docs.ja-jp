@@ -1,50 +1,51 @@
 ---
-title: "方法 : Windows フォーム上のコントロールのサイズを変更する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Size.Height"
-  - "Size.Width"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "コントロール [Windows フォーム], サイズ変更"
-  - "サイズ, コントロール"
-  - "Windows フォーム コントロール, サイズ"
+title: "方法 : Windows フォーム上のコントロールのサイズを変更する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- Size.Height
+- Size.Width
+helpviewer_keywords:
+- controls [Windows Forms], resizing
+- size [Windows Forms], controls
+- Windows Forms controls, size
 ms.assetid: d2dba441-a8c0-4705-b8e8-2e5d86d6e7ec
-caps.latest.revision: 13
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 84915ecf08c9ef5471ec3a48685893c42ef13013
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム上のコントロールのサイズを変更する
-コントロールのサイズは個別に変更することも、複数のコントロールのサイズを変更することもできます。複数のコントロールのサイズ変更では、コントロールの種類 \(<xref:System.Windows.Forms.Button> コントロールと <xref:System.Windows.Forms.GroupBox> コントロールなど\) に関係なく変更できます。  
+# <a name="how-to-resize-controls-on-windows-forms"></a><span data-ttu-id="629e7-102">方法 : Windows フォーム上のコントロールのサイズを変更する</span><span class="sxs-lookup"><span data-stu-id="629e7-102">How to: Resize Controls on Windows Forms</span></span>
+<span data-ttu-id="629e7-103">個々 のコントロールのサイズを変更することができ、サイズを変更する、同じまたは異なる種類の複数のコントロールなど<xref:System.Windows.Forms.Button>と<xref:System.Windows.Forms.GroupBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="629e7-103">You can resize individual controls, and you can resize multiple controls of the same or different kind, such as <xref:System.Windows.Forms.Button> and <xref:System.Windows.Forms.GroupBox> controls.</span></span>  
   
-### コントロールのサイズを変更するには  
+### <a name="to-resize-a-control"></a><span data-ttu-id="629e7-104">コントロールのサイズを変更するには</span><span class="sxs-lookup"><span data-stu-id="629e7-104">To resize a control</span></span>  
   
-1.  サイズ変更するコントロールをクリックし、8 つのサイズ ハンドルのうちの 1 つをドラッグします。  
+1.  <span data-ttu-id="629e7-105">8 つのサイズ変更ハンドルの 1 つをドラッグしてサイズを変更するコントロールをクリックします。</span><span class="sxs-lookup"><span data-stu-id="629e7-105">Click the control to be resized and drag one of the eight sizing handles.</span></span>  
   
     > [!NOTE]
-    >  コントロールを選択し、Shift キーを押しならが方向キーを押してコントロールのサイズを一度に 1 ピクセルずつ変更します。  コントロールのサイズを大幅に変更するには、Shift キーと Ctrl キーを押しながら ↓ キーまたは → キーを押します。  
+    >  <span data-ttu-id="629e7-106">コントロールを選択し、一度にコントロール 1 ピクセルのサイズを変更する、SHIFT キーを押しながら方向キーを押します。</span><span class="sxs-lookup"><span data-stu-id="629e7-106">Select the control and press the ARROW keys while holding down the SHIFT key to resize the control one pixel at a time.</span></span> <span data-ttu-id="629e7-107">コントロールのサイズのサイズを変更する shift キーや CTRL キーを押しながら下または右方向キーを押します。</span><span class="sxs-lookup"><span data-stu-id="629e7-107">Press the DOWN or RIGHT arrow keys while holding down the SHIFT and CTRL keys to resize the control in large increments.</span></span>  
   
-### フォームで複数のコントロールのサイズを変更するには  
+### <a name="to-resize-multiple-controls-on-a-form"></a><span data-ttu-id="629e7-108">複数のコントロールをフォーム上のサイズを変更するには</span><span class="sxs-lookup"><span data-stu-id="629e7-108">To resize multiple controls on a form</span></span>  
   
-1.  Ctrl キーまたは Shift キーを押して、サイズを変更するコントロールを選択します。  最初に選択したコントロールのサイズが他のコントロールに使用されます。  
+1.  <span data-ttu-id="629e7-109">Ctrl キーまたは SHIFT キーを押しながらし、サイズを変更するコントロールを選択します。</span><span class="sxs-lookup"><span data-stu-id="629e7-109">Hold down the CTRL or SHIFT key and select the controls you want to resize.</span></span> <span data-ttu-id="629e7-110">最初に選択したコントロールのサイズは、その他のコントロールに使用されます。</span><span class="sxs-lookup"><span data-stu-id="629e7-110">The size of the first control you select is used for the other controls.</span></span>  
   
-2.  **\[書式\]** メニューの **\[同じサイズに揃える\]** を選択し、4 つのオプションのいずれかを選択します。  最初の 3 つのコマンドでは、最初に選択されたコントロールに合わせてコントロールの大きさが変更されます。  
+2.  <span data-ttu-id="629e7-111">**形式**] メニューの [選択**同じサイズに揃える**、4 つのオプションのいずれかを選択します。</span><span class="sxs-lookup"><span data-stu-id="629e7-111">On the **Format** menu, choose **Make Same Size**, and select one of the four options.</span></span> <span data-ttu-id="629e7-112">最初の 3 つのコマンドは、最初に選択されたコントロールに合わせてコントロールのサイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="629e7-112">The first three commands change the dimensions of the controls to match the first-selected control.</span></span>  
   
-## 参照  
- [Windows フォーム コントロール](../../../../docs/framework/winforms/controls/index.md)   
- [Windows フォームでのコントロールの配置](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)   
- [各 Windows フォーム コントロールのラベル設定とショートカットの作成](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)   
- [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)   
- [Windows フォーム コントロールの機能別一覧](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)   
- [How to: Resize Windows Forms Using the Designer](http://msdn.microsoft.com/ja-jp/3fe57c94-851c-45d7-a6f6-6b85f3c4a104)
+## <a name="see-also"></a><span data-ttu-id="629e7-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="629e7-113">See Also</span></span>  
+ [<span data-ttu-id="629e7-114">Windows フォーム コントロール</span><span class="sxs-lookup"><span data-stu-id="629e7-114">Windows Forms Controls</span></span>](../../../../docs/framework/winforms/controls/index.md)  
+ [<span data-ttu-id="629e7-115">Windows フォームでのコントロールの配置</span><span class="sxs-lookup"><span data-stu-id="629e7-115">Arranging Controls on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
+ [<span data-ttu-id="629e7-116">各 Windows フォーム コントロールのラベル設定とショートカットの作成</span><span class="sxs-lookup"><span data-stu-id="629e7-116">Labeling Individual Windows Forms Controls and Providing Shortcuts to Them</span></span>](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
+ [<span data-ttu-id="629e7-117">Windows フォームで使用するコントロール</span><span class="sxs-lookup"><span data-stu-id="629e7-117">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
+ [<span data-ttu-id="629e7-118">Windows フォーム コントロールの機能別一覧</span><span class="sxs-lookup"><span data-stu-id="629e7-118">Windows Forms Controls by Function</span></span>](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)  
+ [<span data-ttu-id="629e7-119">方法: デザイナーを使用して Windows フォームのサイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="629e7-119">How to: Resize Windows Forms Using the Designer</span></span>](http://msdn.microsoft.com/en-us/3fe57c94-851c-45d7-a6f6-6b85f3c4a104)

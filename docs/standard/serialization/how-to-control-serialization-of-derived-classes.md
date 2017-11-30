@@ -8,28 +8,25 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- VB
-- CSharp
-- C++
-- jsharp
+- csharp
+- vb
 ms.assetid: caa92596-9e15-4d91-acbe-56911ef47a84
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: f09584345d10cece014da9604ffbfe01ad08d10f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: b6ef944b9c41d26736f044fff9d40efb5e3ef32f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-control-serialization-of-derived-classes"></a>方法 : 派生クラスのシリアル化を制御する
-**XmlElementAttribute** 属性を使用して XML 要素の名前を変更することが、オブジェクトのシリアル化をカスタマイズする唯一の方法というわけではありません。 既存のクラスからクラスを派生させ、この新しいクラスをシリアル化する方法を <xref:System.Xml.Serialization.XmlSerializer> インスタンスに指示することでも、XML ストリームをカスタマイズできます。  
+# <a name="how-to-control-serialization-of-derived-classes"></a><span data-ttu-id="39ec7-102">方法 : 派生クラスのシリアル化を制御する</span><span class="sxs-lookup"><span data-stu-id="39ec7-102">How to: Control Serialization of Derived Classes</span></span>
+<span data-ttu-id="39ec7-103">**XmlElementAttribute** 属性を使用して XML 要素の名前を変更することが、オブジェクトのシリアル化をカスタマイズする唯一の方法というわけではありません。</span><span class="sxs-lookup"><span data-stu-id="39ec7-103">Using the **XmlElementAttribute** attribute to change the name of an XML element is not the only way to customize object serialization.</span></span> <span data-ttu-id="39ec7-104">既存のクラスからクラスを派生させ、この新しいクラスをシリアル化する方法を <xref:System.Xml.Serialization.XmlSerializer> インスタンスに指示することでも、XML ストリームをカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="39ec7-104">You can also customize the XML stream by deriving from an existing class and instructing the <xref:System.Xml.Serialization.XmlSerializer> instance how to serialize the new class.</span></span>  
   
- たとえば、`Book` クラスからクラスを派生させ、より多くのプロパティを持つ `ExpandedBook` クラスを作成できます。 ただし、**XmlSerializer** に対して、シリアル化または逆シリアル化するときに、派生型を受け入れるように指示する必要があります。 そのためには、<xref:System.Xml.Serialization.XmlElementAttribute> インスタンスを作成し、その **Type** プロパティを派生クラス型に設定します。 **XmlElementAttribute** を <xref:System.Xml.Serialization.XmlAttributes> インスタンスに追加します。 次に、**XmlAttributes** を <xref:System.Xml.Serialization.XmlAttributeOverrides> インスタンスに追加して、オーバーライドされる型、および派生クラスを受け入れるメンバーの名前を指定します。 これを次の例に示します。  
+ <span data-ttu-id="39ec7-105">たとえば、`Book` クラスからクラスを派生させ、より多くのプロパティを持つ `ExpandedBook` クラスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="39ec7-105">For example, given a `Book` class, you can derive from it and create an `ExpandedBook` class that has a few more properties.</span></span> <span data-ttu-id="39ec7-106">ただし、**XmlSerializer** に対して、シリアル化または逆シリアル化するときに、派生型を受け入れるように指示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="39ec7-106">However, you must instruct the **XmlSerializer** to accept the derived type when serializing or deserializing.</span></span> <span data-ttu-id="39ec7-107">そのためには、<xref:System.Xml.Serialization.XmlElementAttribute> インスタンスを作成し、その **Type** プロパティを派生クラス型に設定します。</span><span class="sxs-lookup"><span data-stu-id="39ec7-107">This can be done by creating a <xref:System.Xml.Serialization.XmlElementAttribute> instance and setting its **Type** property to the derived class type.</span></span> <span data-ttu-id="39ec7-108">**XmlElementAttribute** を <xref:System.Xml.Serialization.XmlAttributes> インスタンスに追加します。</span><span class="sxs-lookup"><span data-stu-id="39ec7-108">Add the **XmlElementAttribute** to a <xref:System.Xml.Serialization.XmlAttributes> instance.</span></span> <span data-ttu-id="39ec7-109">次に、**XmlAttributes** を <xref:System.Xml.Serialization.XmlAttributeOverrides> インスタンスに追加して、オーバーライドされる型、および派生クラスを受け入れるメンバーの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="39ec7-109">Then add the **XmlAttributes** to a <xref:System.Xml.Serialization.XmlAttributeOverrides> instance, specifying the type being overridden and the name of the member that accepts the derived class.</span></span> <span data-ttu-id="39ec7-110">これを次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="39ec7-110">This is shown in the following example.</span></span>  
   
-## <a name="example"></a>例  
+## <a name="example"></a><span data-ttu-id="39ec7-111">例</span><span class="sxs-lookup"><span data-stu-id="39ec7-111">Example</span></span>  
   
 ```vb  
 Public Class Orders  
@@ -244,12 +241,11 @@ public class Run
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Xml.Serialization.XmlSerializer>   
- <xref:System.Xml.Serialization.XmlElementAttribute>   
- <xref:System.Xml.Serialization.XmlAttributes>   
- <xref:System.Xml.Serialization.XmlAttributeOverrides>   
- [XML シリアル化および SOAP シリアル化](../../../docs/standard/serialization/xml-and-soap-serialization.md)   
- [方法 : オブジェクトをシリアル化する](../../../docs/standard/serialization/how-to-serialize-an-object.md)   
- [方法 : XML ストリームの代替要素名を指定する](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
-
+## <a name="see-also"></a><span data-ttu-id="39ec7-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="39ec7-112">See Also</span></span>  
+ <xref:System.Xml.Serialization.XmlSerializer>  
+ <xref:System.Xml.Serialization.XmlElementAttribute>  
+ <xref:System.Xml.Serialization.XmlAttributes>  
+ <xref:System.Xml.Serialization.XmlAttributeOverrides>  
+ [<span data-ttu-id="39ec7-113">XML シリアル化および SOAP シリアル化</span><span class="sxs-lookup"><span data-stu-id="39ec7-113">XML and SOAP Serialization</span></span>](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+ [<span data-ttu-id="39ec7-114">方法 : オブジェクトをシリアル化する</span><span class="sxs-lookup"><span data-stu-id="39ec7-114">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+ [<span data-ttu-id="39ec7-115">方法 : XML ストリームの代替要素名を指定する</span><span class="sxs-lookup"><span data-stu-id="39ec7-115">How to: Specify an Alternate Element Name for an XML Stream</span></span>](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)

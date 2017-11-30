@@ -1,37 +1,35 @@
 ---
-title: "&#39;&lt;keyword&gt;&#39; is valid only within an instance method | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "bc30043"
-  - "vbc30043"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30043"
+title: "&#39;です。&lt;キーワード&gt;&#39; は、インスタンス メソッド内でのみ有効です"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- bc30043
+- vbc30043
+helpviewer_keywords: BC30043
 ms.assetid: 7973aa82-a681-440c-9bca-242627d7ba86
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: a61314c036cec0fd1412a9c844a610fbd1401add
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &#39;&lt;keyword&gt;&#39; is valid only within an instance method
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`Me`、`MyClass`、`MyBase` の各キーワードは、特定のクラス インスタンスを表します。  これらのキーワードは、共有の `Function` プロシージャや `Sub` プロシージャの中では使用できません。  
+# <a name="39ltkeywordgt39-is-valid-only-within-an-instance-method"></a><span data-ttu-id="a354d-102">&#39;です。&lt;キーワード&gt;&#39; は、インスタンス メソッド内でのみ有効です</span><span class="sxs-lookup"><span data-stu-id="a354d-102">&#39;&lt;keyword&gt;&#39; is valid only within an instance method</span></span>
+<span data-ttu-id="a354d-103">`Me`、 `MyClass`、および`MyBase`キーワードは、特定のクラスのインスタンスを参照してください。</span><span class="sxs-lookup"><span data-stu-id="a354d-103">The `Me`, `MyClass`, and `MyBase` keywords refer to specific class instances.</span></span> <span data-ttu-id="a354d-104">共有内には使用できません`Function`または`Sub`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="a354d-104">You cannot use them inside a shared `Function` or `Sub` procedure.</span></span>  
   
- **Error ID:** BC30043  
+ <span data-ttu-id="a354d-105">**エラー ID:** BC30043</span><span class="sxs-lookup"><span data-stu-id="a354d-105">**Error ID:** BC30043</span></span>  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a><span data-ttu-id="a354d-106">このエラーを解決するには</span><span class="sxs-lookup"><span data-stu-id="a354d-106">To correct this error</span></span>  
   
--   プロシージャからキーワードを削除するか、またはプロシージャ宣言から `Shared` キーワードを削除します。  
+-   <span data-ttu-id="a354d-107">プロシージャからキーワードを削除するか、削除、`Shared`プロシージャ宣言からキーワード。</span><span class="sxs-lookup"><span data-stu-id="a354d-107">Remove the keyword from the procedure, or remove the `Shared` keyword from the procedure declaration.</span></span>  
   
-## 参照  
- [Object Variable Assignment](../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)   
- [Me, My, MyBase, and MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)   
- [Inheritance Basics](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+## <a name="see-also"></a><span data-ttu-id="a354d-108">関連項目</span><span class="sxs-lookup"><span data-stu-id="a354d-108">See Also</span></span>  
+ [<span data-ttu-id="a354d-109">オブジェクト変数の代入</span><span class="sxs-lookup"><span data-stu-id="a354d-109">Object Variable Assignment</span></span>](../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)  
+ [<span data-ttu-id="a354d-110">Me、My、MyBase、および MyClass</span><span class="sxs-lookup"><span data-stu-id="a354d-110">Me, My, MyBase, and MyClass</span></span>](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)  
+ [<span data-ttu-id="a354d-111">継承の基本</span><span class="sxs-lookup"><span data-stu-id="a354d-111">Inheritance Basics</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
