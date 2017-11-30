@@ -1,96 +1,96 @@
 ---
-title: "ComboBox のスタイルとテンプレート | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ComboBox [WPF], スタイルおよびテンプレート"
-  - "ControlTemplate [WPF], ComboBox"
-  - "パーツ [WPF], ComboBox"
-  - "状態 [WPF], ComboBox"
-  - "スタイル [WPF], ComboBox"
-  - "テンプレート [WPF], ComboBox"
+title: "ComboBox のスタイルとテンプレート"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- ComboBox [WPF], styles and templates
+- states [WPF], ComboBox
+- ControlTemplate [WPF], ComboBox
+- styles [WPF], ComboBox
+- templates [WPF], ComboBox
+- parts [WPF], ComboBox
 ms.assetid: b0662fa1-16d7-4320-b26b-c1804e565a44
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bd89d2150b2623a749614ab01aa767997dc4bdf3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ComboBox のスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.ComboBox> コントロールのスタイルおよびテンプレートについて説明します。  既定の <xref:System.Windows.Controls.ControlTemplate> に変更を加えることで、コントロールに独自の外観を設定できます。  詳細については、「[ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+# <a name="combobox-styles-and-templates"></a><span data-ttu-id="939f9-102">ComboBox のスタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="939f9-102">ComboBox Styles and Templates</span></span>
+<span data-ttu-id="939f9-103">このトピックは、のスタイルとテンプレートについて説明します、<xref:System.Windows.Controls.ComboBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="939f9-103">This topic describes the styles and templates for the <xref:System.Windows.Controls.ComboBox> control.</span></span> <span data-ttu-id="939f9-104">既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。</span><span class="sxs-lookup"><span data-stu-id="939f9-104">You can modify the default <xref:System.Windows.Controls.ControlTemplate> to give the control a unique appearance.</span></span> <span data-ttu-id="939f9-105">詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="939f9-105">For more information, see [Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).</span></span>  
   
-## ComboBox のパーツ  
- 次の表は、<xref:System.Windows.Controls.ComboBox> コントロールの名前付きパーツの一覧です。  
+## <a name="combobox-parts"></a><span data-ttu-id="939f9-106">コンボ ボックスの部分</span><span class="sxs-lookup"><span data-stu-id="939f9-106">ComboBox Parts</span></span>  
+ <span data-ttu-id="939f9-107">次の表に、名前付きのパーツの<xref:System.Windows.Controls.ComboBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="939f9-107">The following table lists the named parts for the <xref:System.Windows.Controls.ComboBox> control.</span></span>  
   
-||||  
+|<span data-ttu-id="939f9-108">パーツ</span><span class="sxs-lookup"><span data-stu-id="939f9-108">Part</span></span>|<span data-ttu-id="939f9-109">型</span><span class="sxs-lookup"><span data-stu-id="939f9-109">Type</span></span>|<span data-ttu-id="939f9-110">説明</span><span class="sxs-lookup"><span data-stu-id="939f9-110">Description</span></span>|  
 |-|-|-|  
-|指定項目|種類|Description|  
-|PART\_EditableTextBox|<xref:System.Windows.Controls.TextBox>|<xref:System.Windows.Controls.ComboBox> のテキストが格納されます。|  
-|PART\_Popup|<xref:System.Windows.Controls.Primitives.Popup>|コンボ ボックスの項目を格納するドロップダウンです。|  
+|<span data-ttu-id="939f9-111">PART_EditableTextBox</span><span class="sxs-lookup"><span data-stu-id="939f9-111">PART_EditableTextBox</span></span>|<xref:System.Windows.Controls.TextBox>|<span data-ttu-id="939f9-112">テキストを含む、<xref:System.Windows.Controls.ComboBox>です。</span><span class="sxs-lookup"><span data-stu-id="939f9-112">Contains the text of the <xref:System.Windows.Controls.ComboBox>.</span></span>|  
+|<span data-ttu-id="939f9-113">PART_Popup</span><span class="sxs-lookup"><span data-stu-id="939f9-113">PART_Popup</span></span>|<xref:System.Windows.Controls.Primitives.Popup>|<span data-ttu-id="939f9-114">コンボ ボックス内の項目を含むドロップダウン リスト。</span><span class="sxs-lookup"><span data-stu-id="939f9-114">The drop-down that contains the items in the combo box.</span></span>|  
   
- <xref:System.Windows.Controls.ComboBox> の <xref:System.Windows.Controls.ControlTemplate> を作成するときに、テンプレートの <xref:System.Windows.Controls.ScrollViewer> 内に <xref:System.Windows.Controls.ItemsPresenter> が含まれる場合があります。  <xref:System.Windows.Controls.ItemsPresenter> により、<xref:System.Windows.Controls.ComboBox> の各項目が表示されます。また、<xref:System.Windows.Controls.ScrollViewer> により、コントロール内でスクロールできるようになります。  <xref:System.Windows.Controls.ItemsPresenter> が <xref:System.Windows.Controls.ScrollViewer> の直接の子でない場合は、<xref:System.Windows.Controls.ItemsPresenter> に `ItemsPresenter` という名前を付ける必要があります。  
+ <span data-ttu-id="939f9-115">作成するときに、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.ComboBox>、テンプレートを含めることがあります、<xref:System.Windows.Controls.ItemsPresenter>内で、<xref:System.Windows.Controls.ScrollViewer>です。</span><span class="sxs-lookup"><span data-stu-id="939f9-115">When you create a <xref:System.Windows.Controls.ControlTemplate> for a <xref:System.Windows.Controls.ComboBox>, your template might contain an <xref:System.Windows.Controls.ItemsPresenter> within a <xref:System.Windows.Controls.ScrollViewer>.</span></span> <span data-ttu-id="939f9-116">(、<xref:System.Windows.Controls.ItemsPresenter>内の各項目を表示、 <xref:System.Windows.Controls.ComboBox>;<xref:System.Windows.Controls.ScrollViewer>コントロール内でスクロールできるように) します。</span><span class="sxs-lookup"><span data-stu-id="939f9-116">(The <xref:System.Windows.Controls.ItemsPresenter> displays each item in the <xref:System.Windows.Controls.ComboBox>; the <xref:System.Windows.Controls.ScrollViewer> enables scrolling within the control).</span></span>  <span data-ttu-id="939f9-117">場合、<xref:System.Windows.Controls.ItemsPresenter>の直接の子ではない、<xref:System.Windows.Controls.ScrollViewer>を付ける必要があります、<xref:System.Windows.Controls.ItemsPresenter>名、`ItemsPresenter`です。</span><span class="sxs-lookup"><span data-stu-id="939f9-117">If the <xref:System.Windows.Controls.ItemsPresenter> is not the direct child of the <xref:System.Windows.Controls.ScrollViewer>, you must give the <xref:System.Windows.Controls.ItemsPresenter> the name, `ItemsPresenter`.</span></span>  
   
-## ComboBox の状態  
- 次の表は、<xref:System.Windows.Controls.ComboBox> コントロールの状態の一覧です。  
+## <a name="combobox-states"></a><span data-ttu-id="939f9-118">コンボ ボックスの状態</span><span class="sxs-lookup"><span data-stu-id="939f9-118">ComboBox States</span></span>  
+ <span data-ttu-id="939f9-119">次の表に、状態、<xref:System.Windows.Controls.ComboBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="939f9-119">The following table lists the states for the <xref:System.Windows.Controls.ComboBox> control.</span></span>  
   
-||||  
+|<span data-ttu-id="939f9-120">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="939f9-120">VisualState Name</span></span>|<span data-ttu-id="939f9-121">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="939f9-121">VisualStateGroup Name</span></span>|<span data-ttu-id="939f9-122">説明</span><span class="sxs-lookup"><span data-stu-id="939f9-122">Description</span></span>|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
-|Disabled|CommonStates|コントロールが無効になっています。|  
-|MouseOver|CommonStates|<xref:System.Windows.Controls.ComboBox> コントロール上にマウス ポインターがあります。|  
-|Focused|FocusStates|コントロールにフォーカスがあります。|  
-|Unfocused|FocusStates|コントロールにフォーカスがありません。|  
-|FocusedDropDown|FocusStates|<xref:System.Windows.Controls.ComboBox> のドロップダウンにフォーカスがあります。|  
-|Valid|ValidationStates|このコントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `false` です。|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがありません。|  
-|Editable|EditStates|<xref:System.Windows.Controls.ComboBox.IsEditable%2A> プロパティが `true` である。|  
-|Uneditable|EditStates|<xref:System.Windows.Controls.ComboBox.IsEditable%2A> プロパティが `false` である。|  
+|<span data-ttu-id="939f9-123">標準</span><span class="sxs-lookup"><span data-stu-id="939f9-123">Normal</span></span>|<span data-ttu-id="939f9-124">CommonStates</span><span class="sxs-lookup"><span data-stu-id="939f9-124">CommonStates</span></span>|<span data-ttu-id="939f9-125">既定の状態です。</span><span class="sxs-lookup"><span data-stu-id="939f9-125">The default state.</span></span>|  
+|<span data-ttu-id="939f9-126">無効</span><span class="sxs-lookup"><span data-stu-id="939f9-126">Disabled</span></span>|<span data-ttu-id="939f9-127">CommonStates</span><span class="sxs-lookup"><span data-stu-id="939f9-127">CommonStates</span></span>|<span data-ttu-id="939f9-128">コントロールが無効になっています。</span><span class="sxs-lookup"><span data-stu-id="939f9-128">The control is disabled.</span></span>|  
+|<span data-ttu-id="939f9-129">MouseOver</span><span class="sxs-lookup"><span data-stu-id="939f9-129">MouseOver</span></span>|<span data-ttu-id="939f9-130">CommonStates</span><span class="sxs-lookup"><span data-stu-id="939f9-130">CommonStates</span></span>|<span data-ttu-id="939f9-131">上にマウス ポインターが、<xref:System.Windows.Controls.ComboBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="939f9-131">The mouse pointer is over the <xref:System.Windows.Controls.ComboBox> control.</span></span>|  
+|<span data-ttu-id="939f9-132">フォーカスされている</span><span class="sxs-lookup"><span data-stu-id="939f9-132">Focused</span></span>|<span data-ttu-id="939f9-133">FocusStates</span><span class="sxs-lookup"><span data-stu-id="939f9-133">FocusStates</span></span>|<span data-ttu-id="939f9-134">コントロールにフォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="939f9-134">The control has focus.</span></span>|  
+|<span data-ttu-id="939f9-135">フォーカスされていない</span><span class="sxs-lookup"><span data-stu-id="939f9-135">Unfocused</span></span>|<span data-ttu-id="939f9-136">FocusStates</span><span class="sxs-lookup"><span data-stu-id="939f9-136">FocusStates</span></span>|<span data-ttu-id="939f9-137">コントロールにフォーカスがありません。</span><span class="sxs-lookup"><span data-stu-id="939f9-137">The control does not have focus.</span></span>|  
+|<span data-ttu-id="939f9-138">FocusedDropDown</span><span class="sxs-lookup"><span data-stu-id="939f9-138">FocusedDropDown</span></span>|<span data-ttu-id="939f9-139">FocusStates</span><span class="sxs-lookup"><span data-stu-id="939f9-139">FocusStates</span></span>|<span data-ttu-id="939f9-140">ドロップダウン リスト、<xref:System.Windows.Controls.ComboBox>にフォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="939f9-140">The drop-down for the <xref:System.Windows.Controls.ComboBox> has focus.</span></span>|  
+|<span data-ttu-id="939f9-141">有効</span><span class="sxs-lookup"><span data-stu-id="939f9-141">Valid</span></span>|<span data-ttu-id="939f9-142">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="939f9-142">ValidationStates</span></span>|<span data-ttu-id="939f9-143">コントロールを使用して、<xref:System.Windows.Controls.Validation>クラスおよび<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`false`します。</span><span class="sxs-lookup"><span data-stu-id="939f9-143">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="939f9-144">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="939f9-144">InvalidFocused</span></span>|<span data-ttu-id="939f9-145">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="939f9-145">ValidationStates</span></span>|<span data-ttu-id="939f9-146"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスします。</span><span class="sxs-lookup"><span data-stu-id="939f9-146">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="939f9-147">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="939f9-147">InvalidUnfocused</span></span>|<span data-ttu-id="939f9-148">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="939f9-148">ValidationStates</span></span>|<span data-ttu-id="939f9-149"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスがないです。</span><span class="sxs-lookup"><span data-stu-id="939f9-149">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
+|<span data-ttu-id="939f9-150">編集可能です</span><span class="sxs-lookup"><span data-stu-id="939f9-150">Editable</span></span>|<span data-ttu-id="939f9-151">EditStates</span><span class="sxs-lookup"><span data-stu-id="939f9-151">EditStates</span></span>|<span data-ttu-id="939f9-152"><xref:System.Windows.Controls.ComboBox.IsEditable%2A> プロパティが `true` です。</span><span class="sxs-lookup"><span data-stu-id="939f9-152">The <xref:System.Windows.Controls.ComboBox.IsEditable%2A> property is `true`.</span></span>|  
+|<span data-ttu-id="939f9-153">編集不可</span><span class="sxs-lookup"><span data-stu-id="939f9-153">Uneditable</span></span>|<span data-ttu-id="939f9-154">EditStates</span><span class="sxs-lookup"><span data-stu-id="939f9-154">EditStates</span></span>|<span data-ttu-id="939f9-155"><xref:System.Windows.Controls.ComboBox.IsEditable%2A> プロパティが `false` です。</span><span class="sxs-lookup"><span data-stu-id="939f9-155">The <xref:System.Windows.Controls.ComboBox.IsEditable%2A> property is `false`.</span></span>|  
   
-## ComboBoxItem のパーツ  
- <xref:System.Windows.Controls.ComboBoxItem> コントロールには、名前付きのパーツは存在しません。  
+## <a name="comboboxitem-parts"></a><span data-ttu-id="939f9-156">ComboBoxItem 部分</span><span class="sxs-lookup"><span data-stu-id="939f9-156">ComboBoxItem Parts</span></span>  
+ <span data-ttu-id="939f9-157"><xref:System.Windows.Controls.ComboBoxItem>コントロールには、その名前付きの部分はありません。</span><span class="sxs-lookup"><span data-stu-id="939f9-157">The <xref:System.Windows.Controls.ComboBoxItem> control does not have any named parts.</span></span>  
   
-## ComboBoxItem の状態  
- 次の表は、<xref:System.Windows.Controls.ComboBoxItem> コントロールの状態の一覧です。  
+## <a name="comboboxitem-states"></a><span data-ttu-id="939f9-158">ComboBoxItem 状態</span><span class="sxs-lookup"><span data-stu-id="939f9-158">ComboBoxItem States</span></span>  
+ <span data-ttu-id="939f9-159">次の表に、状態、<xref:System.Windows.Controls.ComboBoxItem>コントロール。</span><span class="sxs-lookup"><span data-stu-id="939f9-159">The following table lists the states for the <xref:System.Windows.Controls.ComboBoxItem> control.</span></span>  
   
-||||  
+|<span data-ttu-id="939f9-160">VisualState 名</span><span class="sxs-lookup"><span data-stu-id="939f9-160">VisualState Name</span></span>|<span data-ttu-id="939f9-161">VisualStateGroup 名</span><span class="sxs-lookup"><span data-stu-id="939f9-161">VisualStateGroup Name</span></span>|<span data-ttu-id="939f9-162">説明</span><span class="sxs-lookup"><span data-stu-id="939f9-162">Description</span></span>|  
 |-|-|-|  
-|VisualState 名|VisualStateGroup 名|Description|  
-|Normal|CommonStates|既定の状態です。|  
-|Disabled|CommonStates|コントロールが無効になっています。|  
-|MouseOver|CommonStates|<xref:System.Windows.Controls.ComboBox> コントロール上にマウス ポインターがあります。|  
-|Focused|FocusStates|コントロールにフォーカスがあります。|  
-|Unfocused|FocusStates|コントロールにフォーカスがありません。|  
-|Selected|SelectionStates|項目は選択されています。|  
-|Unselected|SelectionStates|項目は選択されていません。|  
-|SelectedUnfocused|SelectionStates|項目は選択されていますが、フォーカスはありません。|  
-|Valid|ValidationStates|このコントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `false` です。|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがあります。|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=fullName> 添付プロパティは `true` で、コントロールにはフォーカスがありません。|  
+|<span data-ttu-id="939f9-163">標準</span><span class="sxs-lookup"><span data-stu-id="939f9-163">Normal</span></span>|<span data-ttu-id="939f9-164">CommonStates</span><span class="sxs-lookup"><span data-stu-id="939f9-164">CommonStates</span></span>|<span data-ttu-id="939f9-165">既定の状態です。</span><span class="sxs-lookup"><span data-stu-id="939f9-165">The default state.</span></span>|  
+|<span data-ttu-id="939f9-166">無効</span><span class="sxs-lookup"><span data-stu-id="939f9-166">Disabled</span></span>|<span data-ttu-id="939f9-167">CommonStates</span><span class="sxs-lookup"><span data-stu-id="939f9-167">CommonStates</span></span>|<span data-ttu-id="939f9-168">コントロールが無効になっています。</span><span class="sxs-lookup"><span data-stu-id="939f9-168">The control is disabled.</span></span>|  
+|<span data-ttu-id="939f9-169">MouseOver</span><span class="sxs-lookup"><span data-stu-id="939f9-169">MouseOver</span></span>|<span data-ttu-id="939f9-170">CommonStates</span><span class="sxs-lookup"><span data-stu-id="939f9-170">CommonStates</span></span>|<span data-ttu-id="939f9-171">上にマウス ポインターが、<xref:System.Windows.Controls.ComboBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="939f9-171">The mouse pointer is over the <xref:System.Windows.Controls.ComboBox> control.</span></span>|  
+|<span data-ttu-id="939f9-172">フォーカスされている</span><span class="sxs-lookup"><span data-stu-id="939f9-172">Focused</span></span>|<span data-ttu-id="939f9-173">FocusStates</span><span class="sxs-lookup"><span data-stu-id="939f9-173">FocusStates</span></span>|<span data-ttu-id="939f9-174">コントロールにフォーカスがあります。</span><span class="sxs-lookup"><span data-stu-id="939f9-174">The control has focus.</span></span>|  
+|<span data-ttu-id="939f9-175">フォーカスされていない</span><span class="sxs-lookup"><span data-stu-id="939f9-175">Unfocused</span></span>|<span data-ttu-id="939f9-176">FocusStates</span><span class="sxs-lookup"><span data-stu-id="939f9-176">FocusStates</span></span>|<span data-ttu-id="939f9-177">コントロールにフォーカスがありません。</span><span class="sxs-lookup"><span data-stu-id="939f9-177">The control does not have focus.</span></span>|  
+|<span data-ttu-id="939f9-178">選択済み</span><span class="sxs-lookup"><span data-stu-id="939f9-178">Selected</span></span>|<span data-ttu-id="939f9-179">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="939f9-179">SelectionStates</span></span>|<span data-ttu-id="939f9-180">項目が現在選択されています。</span><span class="sxs-lookup"><span data-stu-id="939f9-180">The item is currently selected.</span></span>|  
+|<span data-ttu-id="939f9-181">未選択</span><span class="sxs-lookup"><span data-stu-id="939f9-181">Unselected</span></span>|<span data-ttu-id="939f9-182">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="939f9-182">SelectionStates</span></span>|<span data-ttu-id="939f9-183">この項目は選択されていません。</span><span class="sxs-lookup"><span data-stu-id="939f9-183">The item is not selected.</span></span>|  
+|<span data-ttu-id="939f9-184">SelectedUnfocused</span><span class="sxs-lookup"><span data-stu-id="939f9-184">SelectedUnfocused</span></span>|<span data-ttu-id="939f9-185">SelectionStates</span><span class="sxs-lookup"><span data-stu-id="939f9-185">SelectionStates</span></span>|<span data-ttu-id="939f9-186">この項目は選択されていますが、フォーカスがありません。</span><span class="sxs-lookup"><span data-stu-id="939f9-186">The item is selected, but does not have focus.</span></span>|  
+|<span data-ttu-id="939f9-187">有効</span><span class="sxs-lookup"><span data-stu-id="939f9-187">Valid</span></span>|<span data-ttu-id="939f9-188">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="939f9-188">ValidationStates</span></span>|<span data-ttu-id="939f9-189">コントロールを使用して、<xref:System.Windows.Controls.Validation>クラスおよび<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`false`します。</span><span class="sxs-lookup"><span data-stu-id="939f9-189">The control uses the <xref:System.Windows.Controls.Validation> class and the <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `false`.</span></span>|  
+|<span data-ttu-id="939f9-190">InvalidFocused</span><span class="sxs-lookup"><span data-stu-id="939f9-190">InvalidFocused</span></span>|<span data-ttu-id="939f9-191">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="939f9-191">ValidationStates</span></span>|<span data-ttu-id="939f9-192"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスします。</span><span class="sxs-lookup"><span data-stu-id="939f9-192">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control has focus.</span></span>|  
+|<span data-ttu-id="939f9-193">InvalidUnfocused</span><span class="sxs-lookup"><span data-stu-id="939f9-193">InvalidUnfocused</span></span>|<span data-ttu-id="939f9-194">ValidationStates</span><span class="sxs-lookup"><span data-stu-id="939f9-194">ValidationStates</span></span>|<span data-ttu-id="939f9-195"><xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>添付プロパティは`true`がコントロールにフォーカスがないです。</span><span class="sxs-lookup"><span data-stu-id="939f9-195">The <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> attached property is `true` has the control does not have focus.</span></span>|  
   
-## ComboBox ControlTemplate の例  
- 次の例は、<xref:System.Windows.Controls.ComboBox> コントロールの <xref:System.Windows.Controls.ControlTemplate> と関連の型を定義する方法を示しています。  
+## <a name="combobox-controltemplate-example"></a><span data-ttu-id="939f9-196">コンボ ボックス ControlTemplate の例</span><span class="sxs-lookup"><span data-stu-id="939f9-196">ComboBox ControlTemplate Example</span></span>  
+ <span data-ttu-id="939f9-197">次の例は、定義する方法を示します、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.ComboBox>コントロールと関連する型。</span><span class="sxs-lookup"><span data-stu-id="939f9-197">The following example shows how to define a <xref:System.Windows.Controls.ControlTemplate> for the <xref:System.Windows.Controls.ComboBox> control and associated types.</span></span>  
   
- [!code-xml[ControlTemplateExamples#ComboBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#combobox)]  
+ [!code-xaml[ControlTemplateExamples#ComboBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#combobox)]  
   
- 前の例では、次の 1 つ以上のリソースを使用しています。  
+ <span data-ttu-id="939f9-198">前の例では、次のリソースの 1 つ以上を使用します。</span><span class="sxs-lookup"><span data-stu-id="939f9-198">The preceding example uses one or more of the following resources.</span></span>  
   
- [!code-xml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- サンプル全体については、「[ControlTemplate を使用したスタイル設定のサンプル](http://go.microsoft.com/fwlink/?LinkID=160041)」を参照してください。.  
+ <span data-ttu-id="939f9-199">完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="939f9-199">For the complete sample, see [Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041).</span></span>  
   
-## 参照  
- <xref:System.Windows.FrameworkElement.Style%2A>   
- <xref:System.Windows.Controls.ControlTemplate>   
- [コントロールのスタイルとテンプレート](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)   
- [コントロールのカスタマイズ](../../../../docs/framework/wpf/controls/control-customization.md)   
- [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a><span data-ttu-id="939f9-200">関連項目</span><span class="sxs-lookup"><span data-stu-id="939f9-200">See Also</span></span>  
+ <xref:System.Windows.FrameworkElement.Style%2A>  
+ <xref:System.Windows.Controls.ControlTemplate>  
+ [<span data-ttu-id="939f9-201">コントロールのスタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="939f9-201">Control Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
+ [<span data-ttu-id="939f9-202">コントロールのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="939f9-202">Control Customization</span></span>](../../../../docs/framework/wpf/controls/control-customization.md)  
+ [<span data-ttu-id="939f9-203">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="939f9-203">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="939f9-204">ControlTemplate の作成による既存のコントロールの外観のカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="939f9-204">Customizing the Appearance of an Existing Control by Creating a ControlTemplate</span></span>](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

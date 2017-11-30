@@ -1,76 +1,77 @@
 ---
-title: "BindingSource コンポーネントの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "BindingSource コンポーネント [Windows フォーム], BindingSource コンポーネントの概要"
-  - "コントロール [Windows フォーム], バインド (データに)"
-  - "データ バインド, BindingSource コンポーネント"
-  - "Windows フォーム, データ バインド"
+title: "BindingSource コンポーネントの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Forms, data binding
+- controls [Windows Forms], binding to data
+- BindingSource component [Windows Forms], about BindingSource component
+- data binding [Windows Forms], BindingSource component
 ms.assetid: be838caf-fcb0-4b68-827f-58b2c04b747f
-caps.latest.revision: 26
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: cf46a3d5207f3414bc8abd5fd7bdb904e91f07d2
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# BindingSource コンポーネントの概要
-<xref:System.Windows.Forms.BindingSource> コンポーネントは、基になるデータ ソースにコントロールをバインドするプロセスを簡略化するように設計されています。  <xref:System.Windows.Forms.BindingSource> コンポーネントは、他のコントロールのバインド先となるパイプおよびデータ ソースの両方の働きをします。  このコンポーネントは、フォームのデータ接続を抽象化し、基になるデータ リストにコマンドを渡します。  また、コンポーネントに直接データを追加することにより、コンポーネント自体がデータ ソースとして機能するようにすることができます。  
+# <a name="bindingsource-component-overview"></a><span data-ttu-id="66ade-102">BindingSource コンポーネントの概要</span><span class="sxs-lookup"><span data-stu-id="66ade-102">BindingSource Component Overview</span></span>
+<span data-ttu-id="66ade-103"><xref:System.Windows.Forms.BindingSource> コンポーネントは、基になるデータ ソースにコントロールをバインドするプロセスを簡略化するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="66ade-103">The <xref:System.Windows.Forms.BindingSource> component is designed to simplify the process of binding controls to an underlying data source.</span></span> <span data-ttu-id="66ade-104"><xref:System.Windows.Forms.BindingSource> コンポーネントは、他のコントロールのバインド先となるパイプおよびデータ ソースの両方の働きをします。</span><span class="sxs-lookup"><span data-stu-id="66ade-104">The <xref:System.Windows.Forms.BindingSource> component acts as both a conduit and a data source for other controls to bind to.</span></span> <span data-ttu-id="66ade-105">このコンポーネントは、フォームのデータ接続を抽象化し、基になるデータ リストにコマンドを渡します。</span><span class="sxs-lookup"><span data-stu-id="66ade-105">It provides an abstraction of your form's data connection while passing through commands to the underlying list of data.</span></span> <span data-ttu-id="66ade-106">また、コンポーネントに直接データを追加することにより、コンポーネント自体がデータ ソースとして機能するようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="66ade-106">Additionally, you can add data directly to it, so that the component itself functions as a data source.</span></span>  
   
-## 媒介手段としての BindingSource コンポーネント  
- <xref:System.Windows.Forms.BindingSource> コンポーネントは、フォーム上のコントロールの一部またはすべてのデータ ソースとして機能します。  Visual Studio では、<xref:System.Windows.Forms.BindingSource> は `DataBindings` プロパティを使用してコントロールにバインドします。このプロパティは **\[プロパティ\]** ウィンドウからアクセスできます。  「[方法 : デザイナーを使用して Windows フォーム コントロールを BindingSource コンポーネントにバインドする](../../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)」も参照してください。  
+## <a name="bindingsource-component-as-an-intermediary"></a><span data-ttu-id="66ade-107">媒介手段としての BindingSource コンポーネント</span><span class="sxs-lookup"><span data-stu-id="66ade-107">BindingSource Component as an Intermediary</span></span>  
+ <span data-ttu-id="66ade-108"><xref:System.Windows.Forms.BindingSource> コンポーネントは、フォーム上のコントロールの一部またはすべてのデータ ソースとして機能します。</span><span class="sxs-lookup"><span data-stu-id="66ade-108">The <xref:System.Windows.Forms.BindingSource> component acts as the data source for some or all of the controls on the form.</span></span> <span data-ttu-id="66ade-109">Visual Studio で、<xref:System.Windows.Forms.BindingSource>のコントロールにバインドすることができます、`DataBindings`からアクセス可能なプロパティ、**プロパティ**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="66ade-109">In Visual Studio, the <xref:System.Windows.Forms.BindingSource> can be bound to a control by means of the `DataBindings` property, which is accessible from the **Properties** window.</span></span> <span data-ttu-id="66ade-110">「[方法 : デザイナーを使用して Windows フォーム コントロールを BindingSource コンポーネントにバインドする](../../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)」も参照してください。</span><span class="sxs-lookup"><span data-stu-id="66ade-110">Also see [How to: Bind Windows Forms Controls with the BindingSource Component Using the Designer](../../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md).</span></span>  
   
- <xref:System.Windows.Forms.BindingSource> コンポーネントは、単純なデータ ソース \(オブジェクトの 1 つのプロパティや、<xref:System.Collections.ArrayList> のような基本的なコレクションなど\) と複雑なデータ ソース \(データベース テーブルなど\) の両方にバインドできます。  <xref:System.Windows.Forms.BindingSource> コンポーネントは、バインディングおよび現在位置管理サービスを提供する媒介手段として機能します。  デザイン時や実行時には、<xref:System.Windows.Forms.BindingSource.DataSource%2A> プロパティと <xref:System.Windows.Forms.BindingSource.DataMember%2A> プロパティをそれぞれデータベースとテーブルに設定して <xref:System.Windows.Forms.BindingSource> コンポーネントを複雑なデータ ソースにバインドできます。  既存のデータ バインディング アーキテクチャにおける <xref:System.Windows.Forms.BindingSource> コンポーネントの位置づけを次の図に示します。  
+ <span data-ttu-id="66ade-111"><xref:System.Windows.Forms.BindingSource> コンポーネントは、単純なデータ ソース (オブジェクトの 1 つのプロパティや、<xref:System.Collections.ArrayList> のような基本的なコレクションなど) と複雑なデータ ソース (データベース テーブルなど) の両方にバインドできます。</span><span class="sxs-lookup"><span data-stu-id="66ade-111">You can bind the <xref:System.Windows.Forms.BindingSource> component to both simple data sources, like a single property of an object or a basic collection like <xref:System.Collections.ArrayList>, and complex data sources, like a database table.</span></span> <span data-ttu-id="66ade-112"><xref:System.Windows.Forms.BindingSource> コンポーネントは、バインディングおよび現在位置管理サービスを提供する媒介手段として機能します。</span><span class="sxs-lookup"><span data-stu-id="66ade-112">The <xref:System.Windows.Forms.BindingSource> component acts as an intermediary that provides binding and currency management services.</span></span> <span data-ttu-id="66ade-113">デザイン時や実行時には、<xref:System.Windows.Forms.BindingSource.DataSource%2A> プロパティと <xref:System.Windows.Forms.BindingSource.DataMember%2A> プロパティをそれぞれデータベースとテーブルに設定して <xref:System.Windows.Forms.BindingSource> コンポーネントを複雑なデータ ソースにバインドできます。</span><span class="sxs-lookup"><span data-stu-id="66ade-113">At design time or run time, you can bind a <xref:System.Windows.Forms.BindingSource> component to a complex data source by setting its <xref:System.Windows.Forms.BindingSource.DataSource%2A> and <xref:System.Windows.Forms.BindingSource.DataMember%2A> properties to the database and table, respectively.</span></span> <span data-ttu-id="66ade-114">既存のデータ バインディング アーキテクチャにおける <xref:System.Windows.Forms.BindingSource> コンポーネントの位置づけを次の図に示します。</span><span class="sxs-lookup"><span data-stu-id="66ade-114">The following illustration demonstrates where the <xref:System.Windows.Forms.BindingSource> component fits into the existing data-binding architecture.</span></span>  
   
- ![バインディング ソースとデータ バインディング アーキテクチャ](../../../../docs/framework/winforms/controls/media/net-bindsrcdatabindarch.gif "NET\_BindSrcDataBindArch")  
+ <span data-ttu-id="66ade-115">![バインディング ソースとデータ バインディング アーキテクチャ](../../../../docs/framework/winforms/controls/media/net-bindsrcdatabindarch.gif "NET_BindSrcDataBindArch")</span><span class="sxs-lookup"><span data-stu-id="66ade-115">![Binding Source and Data Binding Architecture](../../../../docs/framework/winforms/controls/media/net-bindsrcdatabindarch.gif "NET_BindSrcDataBindArch")</span></span>  
   
 > [!NOTE]
->  デザイン時には、特定のアクション \(データ ウィンドウから空白のフォームへのデータベース テーブルのドラッグなど\) によって <xref:System.Windows.Forms.BindingSource> コンポーネントが作成され、基になるデータ ソースにバインドされ、データ バインディングに対応したコントロールが追加されます。これらはすべて 1 つの操作によって実行されます。  「[Visual Studio でのデータへの Windows フォーム コントロールのバインド](../Topic/Bind%20Windows%20Forms%20controls%20to%20data%20in%20Visual%20Studio.md)」も参照してください。  
+>  <span data-ttu-id="66ade-116">デザイン時には、特定のアクション (データ ウィンドウから空白のフォームへのデータベース テーブルのドラッグなど) によって <xref:System.Windows.Forms.BindingSource> コンポーネントが作成され、基になるデータ ソースにバインドされ、データ バインディングに対応したコントロールが追加されます。これらはすべて 1 つの操作によって実行されます。</span><span class="sxs-lookup"><span data-stu-id="66ade-116">At design time, some actions, like dragging a database table from a data window onto a blank form, will create the <xref:System.Windows.Forms.BindingSource> component, bind it to the underlying data source, and add data-aware controls all in one operation.</span></span> <span data-ttu-id="66ade-117">「[Visual Studio でのデータへの Windows フォーム コントロールのバインド](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio)」も参照してください。</span><span class="sxs-lookup"><span data-stu-id="66ade-117">Also see [Bind Windows Forms controls to data in Visual Studio](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio).</span></span>  
   
-## データソースとしての BindingSource コンポーネント  
- 最初にバインド先のリストを指定せずに <xref:System.Windows.Forms.BindingSource> コンポーネントに項目を追加し始めると、このコンポーネントはリスト形式のデータ ソースとして動作し、追加した項目を受け入れます。  
+## <a name="bindingsource-component-as-a-data-source"></a><span data-ttu-id="66ade-118">データソースとしての BindingSource コンポーネント</span><span class="sxs-lookup"><span data-stu-id="66ade-118">BindingSource Component as a Data Source</span></span>  
+ <span data-ttu-id="66ade-119">最初にバインド先のリストを指定せずに <xref:System.Windows.Forms.BindingSource> コンポーネントに項目を追加し始めると、このコンポーネントはリスト形式のデータ ソースとして動作し、追加した項目を受け入れます。</span><span class="sxs-lookup"><span data-stu-id="66ade-119">If you start adding items to the <xref:System.Windows.Forms.BindingSource> component without first specifying a list to be bound to, the component will act like a list-style data source and accept these added items.</span></span>  
   
- また、<xref:System.Windows.Forms.BindingSource.AddingNew> イベントを使用して、カスタムの "AddNew" 機能を提供するコードを記述することもできます。このイベントは、<xref:System.Windows.Forms.BindingSource.AddNew%2A> メソッドが呼び出された時点で、リストに項目が追加される前に発生します。  詳細については、「[BindingSource コンポーネント アーキテクチャ](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md)」を参照してください。  
+ <span data-ttu-id="66ade-120">また、<xref:System.Windows.Forms.BindingSource.AddingNew> イベントを使用して、カスタムの "AddNew" 機能を提供するコードを記述することもできます。このイベントは、<xref:System.Windows.Forms.BindingSource.AddNew%2A> メソッドが呼び出された時点で、リストに項目が追加される前に発生します。</span><span class="sxs-lookup"><span data-stu-id="66ade-120">Additionally, you can write code to provide custom "AddNew" functionality by means of the <xref:System.Windows.Forms.BindingSource.AddingNew> event, which is raised when the <xref:System.Windows.Forms.BindingSource.AddNew%2A> method is called prior to the item being added to the list.</span></span> <span data-ttu-id="66ade-121">詳細については、「[BindingSource コンポーネント アーキテクチャ](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="66ade-121">For more information, see [BindingSource Component Architecture](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md).</span></span>  
   
-## ナビゲーション  
- フォーム上でデータのナビゲーションを実行する必要のあるユーザーに対しては、<xref:System.Windows.Forms.BindingNavigator> コンポーネントが <xref:System.Windows.Forms.BindingSource> コンポーネントと連携することにより、データのナビゲーションと操作が提供されます。  詳細については、「[BindingNavigator コントロール](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)」を参照してください。  
+## <a name="navigation"></a><span data-ttu-id="66ade-122">ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="66ade-122">Navigation</span></span>  
+ <span data-ttu-id="66ade-123">フォーム上でデータのナビゲーションを実行する必要のあるユーザーに対しては、<xref:System.Windows.Forms.BindingNavigator> コンポーネントが <xref:System.Windows.Forms.BindingSource> コンポーネントと連携することにより、データのナビゲーションと操作が提供されます。</span><span class="sxs-lookup"><span data-stu-id="66ade-123">For users that need to navigate the data on a form, the <xref:System.Windows.Forms.BindingNavigator> component enables you to navigate and manipulate data, in coordination with a <xref:System.Windows.Forms.BindingSource> component.</span></span> <span data-ttu-id="66ade-124">詳細については、「[BindingNavigator コントロール](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="66ade-124">For more information, see [BindingNavigator Control](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md).</span></span>  
   
-## データの操作  
- <xref:System.Windows.Forms.BindingSource> は、すべてのバインディングの <xref:System.Windows.Forms.CurrencyManager> として動作するため、データ ソースに関する現在位置情報へのアクセスを提供します。  基になるデータへのアクセスおよび操作のために <xref:System.Windows.Forms.BindingSource> コンポーネントが提供するメンバーを次の表に示します。  
+## <a name="data-manipulation"></a><span data-ttu-id="66ade-125">データの操作</span><span class="sxs-lookup"><span data-stu-id="66ade-125">Data Manipulation</span></span>  
+ <span data-ttu-id="66ade-126"><xref:System.Windows.Forms.BindingSource> は、すべてのバインディングの <xref:System.Windows.Forms.CurrencyManager> として動作するため、データ ソースに関する現在位置情報へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="66ade-126">The: <xref:System.Windows.Forms.BindingSource> acts as a <xref:System.Windows.Forms.CurrencyManager> for all of its bindings and can, therefore, provide access to currency and position information regarding the data source.</span></span> <span data-ttu-id="66ade-127">基になるデータへのアクセスおよび操作のために <xref:System.Windows.Forms.BindingSource> コンポーネントが提供するメンバーを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="66ade-127">The following table shows the members that the <xref:System.Windows.Forms.BindingSource> component provides for accessing and manipulating the underlying data.</span></span>  
   
-|メンバー|説明|  
-|----------|--------|  
-|<xref:System.Windows.Forms.BindingSource.Current%2A> プロパティ|データソースの現在の項目を取得します。|  
-|<xref:System.Windows.Forms.BindingSource.Position%2A> プロパティ|基になるリストでの現在の位置を取得または設定します。|  
-|<xref:System.Windows.Forms.BindingSource.List%2A> プロパティ|<xref:System.Windows.Forms.BindingSource.DataSource%2A> と <xref:System.Windows.Forms.BindingSource.DataMember%2A> の評価であるリストを取得します。  <xref:System.Windows.Forms.BindingSource.DataMember%2A> が設定されていないときは、<xref:System.Windows.Forms.BindingSource.DataSource%2A> によって指定されたリストを返します。|  
-|<xref:System.Windows.Forms.BindingSource.Insert%2A> メソッド|リスト内の指定されたインデックス位置に項目を挿入します。|  
-|<xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A> メソッド|リストから現在の項目を削除します。|  
-|<xref:System.Windows.Forms.BindingSource.EndEdit%2A> メソッド|基になるデータ ソースに保留中の変更を適用します。|  
-|<xref:System.Windows.Forms.BindingSource.CancelEdit%2A> メソッド|現在の編集操作をキャンセルします。|  
-|<xref:System.Windows.Forms.BindingSource.AddNew%2A> メソッド|基になるリストに新しい項目を追加します。  データ ソースが <xref:System.ComponentModel.IBindingList> を実装しており、<xref:System.Windows.Forms.BindingSource.AddingNew> イベントから項目が返された場合は、その項目を追加します。  それ以外の場合、リストの <xref:System.ComponentModel.IBindingList.AddNew%2A> メソッドに要求が渡されます。  基になるリストが <xref:System.ComponentModel.IBindingList> でない場合は、既定のパブリック コンストラクターを使用して項目が自動的に作成されます。|  
+|<span data-ttu-id="66ade-128">メンバー</span><span class="sxs-lookup"><span data-stu-id="66ade-128">Member</span></span>|<span data-ttu-id="66ade-129">説明</span><span class="sxs-lookup"><span data-stu-id="66ade-129">Description</span></span>|  
+|------------|-----------------|  
+|<span data-ttu-id="66ade-130"><xref:System.Windows.Forms.BindingSource.Current%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="66ade-130"><xref:System.Windows.Forms.BindingSource.Current%2A> property</span></span>|<span data-ttu-id="66ade-131">データソースの現在の項目を取得します。</span><span class="sxs-lookup"><span data-stu-id="66ade-131">Gets the current item of the data source.</span></span>|  
+|<span data-ttu-id="66ade-132"><xref:System.Windows.Forms.BindingSource.Position%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="66ade-132"><xref:System.Windows.Forms.BindingSource.Position%2A> property</span></span>|<span data-ttu-id="66ade-133">基になるリストでの現在の位置を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="66ade-133">Gets or sets the current position in the underlying list.</span></span>|  
+|<span data-ttu-id="66ade-134"><xref:System.Windows.Forms.BindingSource.List%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="66ade-134"><xref:System.Windows.Forms.BindingSource.List%2A> property</span></span>|<span data-ttu-id="66ade-135"><xref:System.Windows.Forms.BindingSource.DataSource%2A> と <xref:System.Windows.Forms.BindingSource.DataMember%2A> の評価であるリストを取得します。</span><span class="sxs-lookup"><span data-stu-id="66ade-135">Gets the list that is the evaluation of the <xref:System.Windows.Forms.BindingSource.DataSource%2A> and <xref:System.Windows.Forms.BindingSource.DataMember%2A> evaluation.</span></span> <span data-ttu-id="66ade-136"><xref:System.Windows.Forms.BindingSource.DataMember%2A> が設定されていないときは、<xref:System.Windows.Forms.BindingSource.DataSource%2A> によって指定されたリストを返します。</span><span class="sxs-lookup"><span data-stu-id="66ade-136">If <xref:System.Windows.Forms.BindingSource.DataMember%2A> is not set, returns the list specified by <xref:System.Windows.Forms.BindingSource.DataSource%2A>.</span></span>|  
+|<span data-ttu-id="66ade-137"><xref:System.Windows.Forms.BindingSource.Insert%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="66ade-137"><xref:System.Windows.Forms.BindingSource.Insert%2A> method</span></span>|<span data-ttu-id="66ade-138">リスト内の指定されたインデックス位置に項目を挿入します。</span><span class="sxs-lookup"><span data-stu-id="66ade-138">Inserts an item in the list at the specified index.</span></span>|  
+|<span data-ttu-id="66ade-139"><xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="66ade-139"><xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A> method</span></span>|<span data-ttu-id="66ade-140">リストから現在の項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="66ade-140">Removes the current item from the list.</span></span>|  
+|<span data-ttu-id="66ade-141"><xref:System.Windows.Forms.BindingSource.EndEdit%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="66ade-141"><xref:System.Windows.Forms.BindingSource.EndEdit%2A> method</span></span>|<span data-ttu-id="66ade-142">基になるデータ ソースに保留中の変更を適用します。</span><span class="sxs-lookup"><span data-stu-id="66ade-142">Applies pending changes to the underlying data source.</span></span>|  
+|<span data-ttu-id="66ade-143"><xref:System.Windows.Forms.BindingSource.CancelEdit%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="66ade-143"><xref:System.Windows.Forms.BindingSource.CancelEdit%2A> method</span></span>|<span data-ttu-id="66ade-144">現在の編集操作をキャンセルします。</span><span class="sxs-lookup"><span data-stu-id="66ade-144">Cancels the current edit operation.</span></span>|  
+|<span data-ttu-id="66ade-145"><xref:System.Windows.Forms.BindingSource.AddNew%2A> メソッド</span><span class="sxs-lookup"><span data-stu-id="66ade-145"><xref:System.Windows.Forms.BindingSource.AddNew%2A> method</span></span>|<span data-ttu-id="66ade-146">基になるリストに新しい項目を追加します。</span><span class="sxs-lookup"><span data-stu-id="66ade-146">Adds a new item to the underlying list.</span></span> <span data-ttu-id="66ade-147">データ ソースが <xref:System.ComponentModel.IBindingList> を実装しており、<xref:System.Windows.Forms.BindingSource.AddingNew> イベントから項目が返された場合は、その項目を追加します。</span><span class="sxs-lookup"><span data-stu-id="66ade-147">If the data source implements <xref:System.ComponentModel.IBindingList> and returns an item from the <xref:System.Windows.Forms.BindingSource.AddingNew> event, adds this item.</span></span> <span data-ttu-id="66ade-148">それ以外の場合、リストの <xref:System.ComponentModel.IBindingList.AddNew%2A> メソッドに要求が渡されます。</span><span class="sxs-lookup"><span data-stu-id="66ade-148">Otherwise, the request is passed to the list's <xref:System.ComponentModel.IBindingList.AddNew%2A> method.</span></span> <span data-ttu-id="66ade-149">基になるリストが <xref:System.ComponentModel.IBindingList> でない場合は、既定のパブリック コンストラクターを使用して項目が自動的に作成されます。</span><span class="sxs-lookup"><span data-stu-id="66ade-149">If the underlying list is not an <xref:System.ComponentModel.IBindingList>, the item is automatically created through its public default constructor.</span></span>|  
   
-## 並べ替えとフィルター処理  
- 通常、一定の順序で並べられた、またはフィルター処理されたデータ ソースのビューを使用します。  <xref:System.Windows.Forms.BindingSource> コンポーネント データ ソースが提供するメンバーを次の表に示します。  
+## <a name="sorting-and-filtering"></a><span data-ttu-id="66ade-150">並べ替えとフィルター処理</span><span class="sxs-lookup"><span data-stu-id="66ade-150">Sorting and Filtering</span></span>  
+ <span data-ttu-id="66ade-151">通常、一定の順序で並べられた、またはフィルター処理されたデータ ソースのビューを使用します。</span><span class="sxs-lookup"><span data-stu-id="66ade-151">Usually, you should work with an ordered or filtered view of the data source.</span></span> <span data-ttu-id="66ade-152"><xref:System.Windows.Forms.BindingSource> コンポーネント データ ソースが提供するメンバーを次の表に示します。</span><span class="sxs-lookup"><span data-stu-id="66ade-152">The following table shows the members that the <xref:System.Windows.Forms.BindingSource> component data source provides.</span></span>  
   
-|メンバー|説明|  
-|----------|--------|  
-|<xref:System.Windows.Forms.BindingSource.Sort%2A> プロパティ|データ ソースが <xref:System.ComponentModel.IBindingList> である場合は、並べ替えに使用する列名と並べ替え順序情報を取得または設定します。  データ ソースが <xref:System.ComponentModel.IBindingListView> であり、高度な並べ替えをサポートしている場合は、並べ替えに使用する複数の列名と並べ替え順序情報を取得します。|  
-|<xref:System.Windows.Forms.BindingSource.Filter%2A> プロパティ|データ ソースが <xref:System.ComponentModel.IBindingListView> である場合は、表示する行のフィルター処理に使用する式を取得または設定します。|  
+|<span data-ttu-id="66ade-153">メンバー</span><span class="sxs-lookup"><span data-stu-id="66ade-153">Member</span></span>|<span data-ttu-id="66ade-154">説明</span><span class="sxs-lookup"><span data-stu-id="66ade-154">Description</span></span>|  
+|------------|-----------------|  
+|<span data-ttu-id="66ade-155"><xref:System.Windows.Forms.BindingSource.Sort%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="66ade-155"><xref:System.Windows.Forms.BindingSource.Sort%2A> property</span></span>|<span data-ttu-id="66ade-156">データ ソースが <xref:System.ComponentModel.IBindingList> である場合は、並べ替えに使用する列名と並べ替え順序情報を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="66ade-156">If the data source is an <xref:System.ComponentModel.IBindingList>, gets or sets a column name used for sorting and sort order information.</span></span> <span data-ttu-id="66ade-157">データ ソースが <xref:System.ComponentModel.IBindingListView> であり、高度な並べ替えをサポートしている場合は、並べ替えに使用する複数の列名と並べ替え順序情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="66ade-157">If the data source is an <xref:System.ComponentModel.IBindingListView> and supports advanced sorting, gets multiple column names used for sorting and sort order information</span></span>|  
+|<span data-ttu-id="66ade-158"><xref:System.Windows.Forms.BindingSource.Filter%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="66ade-158"><xref:System.Windows.Forms.BindingSource.Filter%2A> property</span></span>|<span data-ttu-id="66ade-159">データ ソースが <xref:System.ComponentModel.IBindingListView> である場合は、表示する行のフィルター処理に使用する式を取得または設定します。</span><span class="sxs-lookup"><span data-stu-id="66ade-159">If the data source is an <xref:System.ComponentModel.IBindingListView>, gets or sets the expression used to filter which rows are viewed.</span></span>|  
   
-## 参照  
- <xref:System.Windows.Forms.BindingSource>   
- <xref:System.Windows.Forms.BindingNavigator>   
- [BindingSource コンポーネント アーキテクチャ](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md)   
- [BindingSource コンポーネント](../../../../docs/framework/winforms/controls/bindingsource-component.md)   
- [BindingNavigator コントロール](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)   
- [Windows フォームでのデータ バインド](../../../../docs/framework/winforms/windows-forms-data-binding.md)   
- [Windows フォームで使用するコントロール](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="66ade-160">関連項目</span><span class="sxs-lookup"><span data-stu-id="66ade-160">See Also</span></span>  
+ <xref:System.Windows.Forms.BindingSource>  
+ <xref:System.Windows.Forms.BindingNavigator>  
+ [<span data-ttu-id="66ade-161">BindingSource コンポーネント アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="66ade-161">BindingSource Component Architecture</span></span>](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md)  
+ [<span data-ttu-id="66ade-162">BindingSource コンポーネント</span><span class="sxs-lookup"><span data-stu-id="66ade-162">BindingSource Component</span></span>](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
+ [<span data-ttu-id="66ade-163">BindingNavigator コントロール</span><span class="sxs-lookup"><span data-stu-id="66ade-163">BindingNavigator Control</span></span>](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)  
+ [<span data-ttu-id="66ade-164">Windows フォームでのデータ バインディング</span><span class="sxs-lookup"><span data-stu-id="66ade-164">Windows Forms Data Binding</span></span>](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
+ [<span data-ttu-id="66ade-165">Windows フォームで使用するコントロール</span><span class="sxs-lookup"><span data-stu-id="66ade-165">Controls to Use on Windows Forms</span></span>](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

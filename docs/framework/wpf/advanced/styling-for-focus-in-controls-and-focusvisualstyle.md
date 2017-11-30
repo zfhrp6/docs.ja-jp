@@ -1,105 +1,93 @@
 ---
-title: "コントロールのフォーカスのスタイルと FocusVisualStyle | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "キーボード フォーカス"
-  - "フォーカスの外観のスタイル設定"
-  - "フォーカス表示スタイルのスタイル"
+title: "コントロールのフォーカスのスタイルと FocusVisualStyle"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- keyboard focus [WPF]
+- focus [WPF], visual styling
+- styles [WPF], focus visual style
 ms.assetid: 786ac576-011b-4d72-913b-558deccb9b35
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bf04af2baa037b2df9e2980cc2347460de961c39
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# コントロールのフォーカスのスタイルと FocusVisualStyle
-\<?xml version="1.0" encoding="utf-8"?>
-\<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ddue.schemas.microsoft.com/authoring/2003/5 http://dduestorage.blob.core.windows.net/ddueschema/developer.xsd">
-  <introduction>
-    <para>
-      <token>相互</token>がキーボード フォーカスを受け取ったときに、コントロールの外観を変更するための&2; つの並列メカニズムを提供します。最初のメカニズムはなどのプロパティをプロパティ set アクセス操作子を使用して、 <codeEntityReference autoUpgrade="true">P:System.Windows.UIElement.IsKeyboardFocused</codeEntityReference>スタイルまたはコントロールに適用されているテンプレート内で。2 番目の機構の値として個別のスタイルを提供する、 <codeEntityReference autoUpgrade="true">P:System.Windows.FrameworkElement.FocusVisualStyle</codeEntityReference>プロパティ「フォーカス表示スタイル」、置換することで、コントロールまたはその他の UI 要素のビジュアル ツリーを変更するのではなく、コントロールの上に描画される装飾には別個のビジュアル ツリーを作成します。このトピックでは、これらのメカニズムが適切なシナリオについて説明します。</para> 
-    <para>
-      <token>アウトラインの自動作成</token>
-    </para>
-  </introduction>
-  <section address="Purpose">
-    <title>目的のフォーカス表示スタイル</title>
-    <content>
-      <para>フォーカス表示スタイル機能は、UI 要素にキーボード ナビゲーションに基づいてビジュアルのユーザーからのフィードバックを導入するため共通「オブジェクト モデル」を提供します。新しいテンプレートをコントロールに適用するか、特定のテンプレート構成を知ることがなく可能です。</para>
-      <para>フォーカス表示スタイル機能は、コントロール テンプレートを知らなくても機能するために正確にフォーカス表示スタイルを使用してコントロールの表示可能な視覚的なフィードバックが制限とは限りません。コントロールの描画、テンプレートを通じてによって作成されたビジュアル ツリーの上に別のビジュアル ツリー (装飾) をオーバーレイには、機能が実際にです。この次の値を格納するスタイルを使用して別個のビジュアル ツリーを定義する、 <codeEntityReference autoUpgrade="true">P:System.Windows.FrameworkElement.FocusVisualStyle</codeEntityReference>プロパティです。</para>
-    </content>
-  </section>
-  <section address="Default">
-    <title>既定のフォーカス ビジュアル スタイル動作</title>
-    <content>
-      <para>のみフォーカス操作が開始されたとき、キーボードでフォーカス表示スタイルの機能です。マウス操作やプログラムでのフォーカスが変更には、フォーカス表示スタイルのモードが無効にします。フォーカスのモードの違いの詳細については、次を参照してください\<link xlink:href="0230c4eb-0c8a-462b-ac4b-ae3e511659f4">フォーカス概要</link>。</para> 。
-      <para>コントロールのテーマには、テーマでのすべてのコントロールのフォーカス表示スタイルになる既定フォーカス表示スタイルの動作が含まれます。このテーマ スタイルは、静的なキーの値によって識別される<codeEntityReference autoUpgrade="true">P:System.Windows.SystemParameters.FocusVisualStyleKey</codeEntityReference>します。アプリケーション レベルで、独自のフォーカス表示スタイルを宣言するときに、この既定のスタイルの動作のテーマからを置き換えます。または、全体のテーマを定義する場合は、テーマ全体の既定の動作の線のスタイルを定義するこれと同じキーを使用する必要があります。</para>
-      <para>テーマ、既定のフォーカス表示スタイルが一般に非常にシンプルです。おおよその近似値を次に示します。</para>
-      <code>&lt;Style x:Key="{x:Static SystemParameters.FocusVisualStyleKey}"&gt;
-  &lt;Setter Property="Control.Template"&gt;
-    &lt;Setter.Value&gt;
-      &lt;ControlTemplate&gt;
-        &lt;Rectangle StrokeThickness="1"
-          Stroke="Black"
-          StrokeDashArray="1 2"
-          SnapsToDevicePixels="true"/&gt;
-      &lt;/ControlTemplate&gt;
-    &lt;/Setter.Value&gt;
-  &lt;/Setter&gt;
-&lt;/Style&gt;</code>
-    </content>
-  </section>
-  <section address="When">
-    <title>フォーカスの Visual スタイルを使用するタイミング</title>
-    <content>
-      <para>概念的には、コントロールに適用されるフォーカス表示スタイルの外観はで一貫しているコントロールをします。一貫性を実現する&1; つの方法では、コントロールから、テーマで定義されている各コントロールを取得、まったく同じフォーカス表示スタイル、またはスタイルのいくつかのバリエーションのいずれかを全体のテーマを作成する場合にのみ、visual スタイルが関連する視覚的にフォーカスをコントロールに変更します。ページや UI にキーボード フォーカスのすべての要素のスタイルを設定する同じスタイル (または同様のスタイル) を使用する場合があります。</para>
-      <para>設定<codeEntityReference autoUpgrade="true">P:System.Windows.FrameworkElement.FocusVisualStyle</codeEntityReference>テーマの一部ではない個別のコントロールのスタイルでは、フォーカスの使用目的ではない視覚スタイル。これは、コントロール間の一貫性のない visual 動作は、キーボード フォーカスに関してユーザー エクスペリエンスに混乱する可能性があるためです。トリガー (スタイルの) などを使用して入力の状態をそれぞれのプロパティをはるかに優れた方法は、意図的に不整合があるテーマにわたって、キーボード フォーカス コントロール固有の動作をコントロールする場合<codeEntityReference autoUpgrade="true">において</codeEntityReference>または<codeEntityReference autoUpgrade="true">P:System.Windows.UIElement.IsKeyboardFocused</codeEntityReference>.</para>
-      <para>フォーカス表示スタイルがキーボード フォーカス専用の機能です。そのため、フォーカス表示スタイルは、ユーザー補助機能の種類です。マウスを使用しているかどうか、フォーカスの任意の型の UI の変更をする場合はフォーカス表示スタイルを使用しないでくださいし、set アクセス操作子とスタイルやなどの全般的な焦点プロパティの値から作業するテンプレート内のトリガーを使用する必要がありますキーボード、またはプログラムを使用して、次を<languageKeyword>IsFocused</languageKeyword>または<languageKeyword>IsFocusWithin</languageKeyword>します。</para>
-    </content>
-  </section>
-  <section address="How">
-    <title>フォーカス表示スタイルを作成する方法</title>
-    <content>
-      <para>フォーカス表示スタイルがある用に作成する、スタイル、<codeEntityReference autoUpgrade="true">見ると</codeEntityReference>の<codeEntityReference autoUpgrade="true">動作</codeEntityReference>します。スタイルがの主要な要素で構成する必要があります、<codeEntityReference autoUpgrade="true">由来</codeEntityReference>します。フォーカス表示スタイルが割り当てられている型となる対象の型を指定しない、 <codeEntityReference autoUpgrade="true">P:System.Windows.FrameworkElement.FocusVisualStyle</codeEntityReference>.</para>
-      <para>対象の型は常にため<codeEntityReference autoUpgrade="true">動作</codeEntityReference>、すべてのコントロールに共通するプロパティを使用してスタイルを設定する必要があります (のプロパティを使用して、<codeEntityReference autoUpgrade="true">動作</codeEntityReference>クラスとその基本クラス)。UI 要素にオーバーレイとして正しく機能して、コントロールの機能領域を隠さないテンプレートを作成する必要があります。一般に、この表示を意味する、視覚的なフィードバック必要がありますコントロールのマージンの外部またはコントロールのヒット テストがブロックされていない一時的または控え目な効果としてフォーカス表示スタイルが適用されます。テンプレート バインディングで使用できるサイズ変更とオーバーレイ テンプレートの配置を決定するのに便利なプロパティには、 <codeEntityReference autoUpgrade="true">P:System.Windows.FrameworkElement.ActualHeight</codeEntityReference>、 <codeEntityReference autoUpgrade="true">P:System.Windows.FrameworkElement.ActualWidth</codeEntityReference>、<codeEntityReference autoUpgrade="true">子</codeEntityReference>、および<codeEntityReference autoUpgrade="true">もう&1; つ</codeEntityReference>します。</para>
-    </content>
-  </section>
-  <section address="Alternatives">
-    <title>フォーカス表示スタイルを使用に代わる方法</title>
-    <content>
-      <para>フォーカス表示スタイルを使用してがない場合、適切ないずれかをスタイルを設定するための単一のコントロールまたはコントロール テンプレートをより細かく制御する必要があるためにがあるその他の多くのアクセス可能なプロパティやフォーカスのある変更に応じて、視覚的な動作を作成できる手法</para>。
-      <para>トリガー、set アクセス操作子、およびイベントの set アクセス操作子がすべてで詳しく説明されている\<link xlink:href="481765e5-5467-4a75-9f7b-e10e2ac410d9">スタイルとテンプレート</link>します。ルーティング イベントの処理は、後ほど\<link xlink:href="1a2189ae-13b4-45b0-b12c-8de2e49c29d2">ルーティング イベントの概要</link>します。</para>
-    </content>
-    <sections>
-      <section>
-        <title>IsKeyboardFocused</title>
-        <content>
-          <para>にキーボード フォーカスを具体的には興味がある場合、 <codeEntityReference autoUpgrade="true">P:System.Windows.UIElement.IsKeyboardFocused</codeEntityReference>プロパティに対して依存関係プロパティを使用できる<codeEntityReference autoUpgrade="true">T:System.Windows.Trigger</codeEntityReference>します。スタイルまたはテンプレートのプロパティ トリガーは、1 つのコントロールについて非常に具体的には、必ずしも視覚的に一致しない他のコントロールのキーボード フォーカスの動作は、キーボード フォーカスの動作を定義するための適切な手法です。</para>
-          <para>別のような依存関係プロパティが<codeEntityReference autoUpgrade="true">P:System.Windows.UIElement.IsKeyboardFocusWithin</codeEntityReference>、どこかに合成内またはコントロールの機能領域内では、視覚的に、そのキーボード フォーカスを呼び出そうとする場合に使用する適切なする必要があります。たとえば、配置することがあります、 <codeEntityReference autoUpgrade="true">P:System.Windows.UIElement.IsKeyboardFocusWithin</codeEntityReference>そのパネル内の個々 の要素上にあることなど、いくつかのコントロールをグループ化するパネルれる場合でも、キーボード フォーカスがより正確に可能性がありますが、異なるトリガー</para> 。
-          <para>イベントを使用することもできます。 <codeEntityReference autoUpgrade="true">E:System.Windows.UIElement.GotKeyboardFocus</codeEntityReference>と<codeEntityReference autoUpgrade="true">E:System.Windows.UIElement.LostKeyboardFocus</codeEntityReference> (と同様に、プレビューの同等)。基準として、これらのイベントを使用することができます、<codeEntityReference autoUpgrade="true">可能な</codeEntityReference>、分離コードで、イベントのハンドラーを記述することもできます。</para>
-        </content>
-      </section>
-      <section>
-        <title>その他のフォーカス プロパティ</title>
-        <content>
-          <para>は setter を基本やをトリガーする必要がありますフォーカスを変更するすべての考えられる原因、視覚的な動作を作成する場合は、<codeEntityReference autoUpgrade="true">において</codeEntityReference>依存関係プロパティまたは上、<codeEntityReference autoUpgrade="true">また</codeEntityReference>または<codeEntityReference autoUpgrade="true">E:System.Windows.UIElement.LostFocus</codeEntityReference>に使用されるイベント、<codeEntityReference autoUpgrade="true">可能な</codeEntityReference>です。</para>
-        </content>
-      </section>
-    </sections>
-  </section>
-  <relatedTopics>
-\<link xlink:href="481765e5-5467-4a75-9f7b-e10e2ac410d9">スタイルとテンプレート</link>
-\<link xlink:href="0230c4eb-0c8a-462b-ac4b-ae3e511659f4">フォーカスの概要</link>
-\<link xlink:href="ee5258b7-6567-415a-9b1c-c0cbe46e79ef">入力の概要</link>
-<codeEntityReference autoUpgrade="true">P:System.Windows.FrameworkElement.FocusVisualStyle</codeEntityReference>
-\<legacyLink xlink:href="e7ec856e-41ee-47b1-9d57-b75a3dad088c">ユーザー補助機能</legacyLink>
-</relatedTopics>
-</developerConceptualDocument>
+# <a name="styling-for-focus-in-controls-and-focusvisualstyle"></a><span data-ttu-id="c23a5-102">コントロールのフォーカスのスタイルと FocusVisualStyle</span><span class="sxs-lookup"><span data-stu-id="c23a5-102">Styling for Focus in Controls, and FocusVisualStyle</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="c23a5-103">キーボード フォーカスを受け取るときに、コントロールの外観を変更するための 2 つの並列メカニズムを提供します。</span><span class="sxs-lookup"><span data-stu-id="c23a5-103"> provides two parallel mechanisms for changing the visual appearance of a control when it receives keyboard focus.</span></span> <span data-ttu-id="c23a5-104">最初のメカニズムがなどを使用してプロパティの setter のプロパティは<xref:System.Windows.UIElement.IsKeyboardFocused%2A>スタイルまたはコントロールに適用されているテンプレート内で。</span><span class="sxs-lookup"><span data-stu-id="c23a5-104">The first mechanism is to use property setters for properties such as <xref:System.Windows.UIElement.IsKeyboardFocused%2A> within the style or template that is applied to the control.</span></span> <span data-ttu-id="c23a5-105">2 番目の機構の値として別のスタイルを提供する、<xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>プロパティです"visual スタイルにフォーカスする"または他の UI コントロールのビジュアル ツリーを変更するのではなく、コントロールの上に描画される装飾用の別個のビジュアル ツリーの作成。置換する要素。</span><span class="sxs-lookup"><span data-stu-id="c23a5-105">The second mechanism is to provide a separate style as the value of the <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> property; the "focus visual style" creates a separate visual tree for an adorner that draws on top of the control, rather than changing the visual tree of the control or other UI element by replacing it.</span></span> <span data-ttu-id="c23a5-106">このトピックでは、これらのメカニズムが適切であるシナリオについて説明します。</span><span class="sxs-lookup"><span data-stu-id="c23a5-106">This topic discusses the scenarios where each of these mechanisms is appropriate.</span></span>  
+   
+  
+<a name="Purpose"></a>   
+## <a name="the-purpose-of-focus-visual-style"></a><span data-ttu-id="c23a5-107">フォーカスの Visual スタイルの目的は、</span><span class="sxs-lookup"><span data-stu-id="c23a5-107">The Purpose of Focus Visual Style</span></span>  
+ <span data-ttu-id="c23a5-108">フォーカス visual スタイル機能では、任意の UI 要素にキーボード ナビゲーションに基づいてビジュアル ユーザー フィードバックを導入するため、一般的な「オブジェクト モデル」を提供します。</span><span class="sxs-lookup"><span data-stu-id="c23a5-108">The focus visual style feature provides a common "object model" for introducing visual user feedback based on keyboard navigation to any UI element.</span></span> <span data-ttu-id="c23a5-109">新しいテンプレートをコントロールに適用するか、特定のテンプレート構成を知ることがなく可能です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-109">This is possible without applying a new template to the control, or knowing the specific template composition.</span></span>  
+  
+ <span data-ttu-id="c23a5-110">ただし、正確に機能するため、フォーカス visual スタイル コントロール テンプレートを知らなくても、フォーカスの visual スタイルを使用してコントロールの表示可能な視覚的なフィードバックは必ずしも制限されます。</span><span class="sxs-lookup"><span data-stu-id="c23a5-110">However, precisely because the focus visual style feature works without knowing the control templates, the visual feedback that can be displayed for a control using a focus visual style is necessarily limited.</span></span> <span data-ttu-id="c23a5-111">機能が実際に行うには、コントロールの描画のテンプレートを使用して作成されると、ビジュアル ツリーの上に別のビジュアル ツリー (装飾) をオーバーレイをします。</span><span class="sxs-lookup"><span data-stu-id="c23a5-111">What the feature actually does is to overlay a different visual tree (an adorner) on top of the visual tree as created by a control's rendering through its template.</span></span> <span data-ttu-id="c23a5-112">格納するスタイルを使用してこの別個のビジュアル ツリーを定義する、<xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="c23a5-112">You define this separate visual tree using a style that fills the <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> property.</span></span>  
+  
+<a name="Default"></a>   
+## <a name="default-focus-visual-style-behavior"></a><span data-ttu-id="c23a5-113">フォーカス Visual スタイルの既定の動作</span><span class="sxs-lookup"><span data-stu-id="c23a5-113">Default Focus Visual Style Behavior</span></span>  
+ <span data-ttu-id="c23a5-114">フォーカスの visual スタイルは、キーボードによってフォーカス操作が開始されたときにのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="c23a5-114">Focus visual styles act only when the focus action was initiated by the keyboard.</span></span> <span data-ttu-id="c23a5-115">任意のマウス操作またはプログラムでフォーカスの変更は、visual スタイルのフォーカス モードを無効にします。</span><span class="sxs-lookup"><span data-stu-id="c23a5-115">Any mouse action or programmatic focus change disables the mode for focus visual styles.</span></span> <span data-ttu-id="c23a5-116">フォーカス モードの違いの詳細については、次を参照してください。[フォーカス概要](../../../../docs/framework/wpf/advanced/focus-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-116">For more information about the distinctions between focus modes, see [Focus Overview](../../../../docs/framework/wpf/advanced/focus-overview.md).</span></span>  
+  
+ <span data-ttu-id="c23a5-117">コントロールのテーマには、すべてのコントロールのテーマでのフォーカス visual スタイルになる既定フォーカス visual スタイルの動作が含まれます。</span><span class="sxs-lookup"><span data-stu-id="c23a5-117">The themes for controls include a default focus visual style behavior that becomes the focus visual style for all controls in the theme.</span></span> <span data-ttu-id="c23a5-118">このテーマ スタイルは、静的なキーの値によって識別される<xref:System.Windows.SystemParameters.FocusVisualStyleKey%2A>です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-118">This theme style is identified by the value of the static key <xref:System.Windows.SystemParameters.FocusVisualStyleKey%2A>.</span></span> <span data-ttu-id="c23a5-119">アプリケーション レベルで、独自のフォーカス visual スタイルを宣言する場合は、テーマからこの既定のスタイルの動作を置き換えます。</span><span class="sxs-lookup"><span data-stu-id="c23a5-119">When you declare your own focus visual style at the application level, you replace this default style behavior from the themes.</span></span> <span data-ttu-id="c23a5-120">また、全体のテーマを定義する場合、全体のテーマの既定の動作の線のスタイルを定義するこれと同じキーを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c23a5-120">Alternatively, if you define the entire theme, then you should use this same key to define the style for the default behavior for your entire theme.</span></span>  
+  
+ <span data-ttu-id="c23a5-121">テーマで既定フォーカス visual スタイルは一般に非常に単純です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-121">In the themes, the default focus visual style is generally very simple.</span></span> <span data-ttu-id="c23a5-122">おおよその近似値を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c23a5-122">The following is a rough approximation:</span></span>  
+  
+```  
+<Style x:Key="{x:Static SystemParameters.FocusVisualStyleKey}">  
+  <Setter Property="Control.Template">  
+    <Setter.Value>  
+      <ControlTemplate>  
+        <Rectangle StrokeThickness="1"  
+          Stroke="Black"  
+          StrokeDashArray="1 2"  
+          SnapsToDevicePixels="true"/>  
+      </ControlTemplate>  
+    </Setter.Value>  
+  </Setter>  
+</Style>  
+```  
+  
+<a name="When"></a>   
+## <a name="when-to-use-focus-visual-styles"></a><span data-ttu-id="c23a5-123">フォーカスの Visual スタイルを使用する場合</span><span class="sxs-lookup"><span data-stu-id="c23a5-123">When to Use Focus Visual Styles</span></span>  
+ <span data-ttu-id="c23a5-124">概念的には、コントロールに適用されるフォーカス visual スタイルの外観は、コントロール間で一貫している必要があります。</span><span class="sxs-lookup"><span data-stu-id="c23a5-124">Conceptually, the appearance of focus visual styles applied to controls should be coherent from control to control.</span></span> <span data-ttu-id="c23a5-125">一貫性を実現する方法の 1 つは、テーマで定義されている各コントロールを取得、まったく同じフォーカス visual スタイル、またはスタイルのいくつかのバリエーションのいずれかを全体のテーマを作成している場合にのみ、visual スタイルが関連する視覚的にフォーカスをコントロールから続きを変更するにはロール。</span><span class="sxs-lookup"><span data-stu-id="c23a5-125">One way to ensure coherence is to change the focus visual style only if you are composing an entire theme, where each control that is defined in the theme gets either the very same focus visual style, or some variation of a style that is visually related from control to control.</span></span> <span data-ttu-id="c23a5-126">代わりに、ページまたは、UI にキーボード フォーカスのすべての要素のスタイルを設定する同じスタイル (または類似スタイル) を使用する場合があります。</span><span class="sxs-lookup"><span data-stu-id="c23a5-126">Alternatively, you might use the same style (or similar styles) to style every keyboard-focusable element on a page or in a UI.</span></span>  
+  
+ <span data-ttu-id="c23a5-127">設定<xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>テーマの一部ではない個別のコントロールのスタイルでは、フォーカスの使用目的ではない visual スタイル。</span><span class="sxs-lookup"><span data-stu-id="c23a5-127">Setting <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> on individual control styles that are not part of a theme is not the intended usage of focus visual styles.</span></span> <span data-ttu-id="c23a5-128">これは、コントロール間の一貫性のない visual 動作がキーボード フォーカスに関するユーザー エクスペリエンスに混乱する可能性があるためです。</span><span class="sxs-lookup"><span data-stu-id="c23a5-128">This is because an inconsistent visual behavior between controls can lead to a confusing user experience regarding keyboard focus.</span></span> <span data-ttu-id="c23a5-129">されない意図的に一貫性のあるテーマで、キーボード フォーカス コントロール固有の動作する場合は、はるかに優れた方法を使用してトリガーのスタイルでの個々 の入力状態プロパティなど<xref:System.Windows.UIElement.IsFocused%2A>または<xref:System.Windows.UIElement.IsKeyboardFocused%2A>です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-129">If you are intending control-specific behaviors for keyboard focus that are deliberately not coherent across a theme, a much better approach is to use triggers in styles for individual input state properties, such as <xref:System.Windows.UIElement.IsFocused%2A> or <xref:System.Windows.UIElement.IsKeyboardFocused%2A>.</span></span>  
+  
+ <span data-ttu-id="c23a5-130">フォーカスはキーボード フォーカスの専用の visual スタイルが機能します。</span><span class="sxs-lookup"><span data-stu-id="c23a5-130">Focus visual styles act exclusively for keyboard focus.</span></span> <span data-ttu-id="c23a5-131">そのため、フォーカスの visual スタイルは、ユーザー補助機能の種類です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-131">As such, focus visual styles are a type of accessibility feature.</span></span> <span data-ttu-id="c23a5-132">場合 UI の変更の種類、フォーカスのマウスを使用しているかどうか、キーボード、またはプログラムでは、次をフォーカスの visual スタイルを使用しないでくださいして代わりに、set アクセス操作子およびスタイルまたはテンプレートの一般的なフォーカス プロパティの値から作業をトリガーに使用する必要があります。ように`IsFocused`または`IsFocusWithin`です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-132">If you want UI changes for any type of focus, whether via mouse, keyboard, or programmatically, then you should not use focus visual styles, and should instead use setters and triggers in styles or templates that are working from the value of general focus properties such as `IsFocused` or `IsFocusWithin`.</span></span>  
+  
+<a name="How"></a>   
+## <a name="how-to-create-a-focus-visual-style"></a><span data-ttu-id="c23a5-133">フォーカスの Visual スタイルを作成する方法</span><span class="sxs-lookup"><span data-stu-id="c23a5-133">How to Create a Focus Visual Style</span></span>  
+ <span data-ttu-id="c23a5-134">フォーカスの visual スタイルがある用に作成する、スタイル、<xref:System.Windows.Style.TargetType%2A>の<xref:System.Windows.Controls.Control>します。</span><span class="sxs-lookup"><span data-stu-id="c23a5-134">The style you create for a focus visual style should always have the <xref:System.Windows.Style.TargetType%2A> of <xref:System.Windows.Controls.Control>.</span></span> <span data-ttu-id="c23a5-135">スタイルは、主に、<xref:System.Windows.Controls.ControlTemplate>です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-135">The style should consist mainly of a <xref:System.Windows.Controls.ControlTemplate>.</span></span> <span data-ttu-id="c23a5-136">フォーカスの visual スタイルに割り当てられた型にする対象の型を指定しない、<xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-136">You do not specify the target type to be the type where the focus visual style is assigned to the <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>.</span></span>  
+  
+ <span data-ttu-id="c23a5-137">対象の型は常にため<xref:System.Windows.Controls.Control>、すべてのコントロールに共通するプロパティを使用してスタイルを設定する必要があります (のプロパティを使用して、<xref:System.Windows.Controls.Control>クラスとその基本クラス)。</span><span class="sxs-lookup"><span data-stu-id="c23a5-137">Because the target type is always <xref:System.Windows.Controls.Control>, you must style by using properties that are common to all controls (using properties of the <xref:System.Windows.Controls.Control> class and its base classes).</span></span> <span data-ttu-id="c23a5-138">UI 要素にオーバーレイとして正しく機能するコントロールの機能領域を隠さない、テンプレートを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c23a5-138">You should create a template that will properly function as an overlay to a UI element and that will not obscure functional areas of the control.</span></span> <span data-ttu-id="c23a5-139">一般に、視覚的なフィードバック表示されるコントロールの余白の外部またはコントロールのヒット テストがブロックされていない一時または控えめな効果とフォーカス visual スタイルが適用されるつまり。</span><span class="sxs-lookup"><span data-stu-id="c23a5-139">Generally, this means that the visual feedback should appear outside the control margins, or as temporary or unobtrusive effects that will not block the hit testing on the control where the focus visual style is applied.</span></span> <span data-ttu-id="c23a5-140">テンプレート バインディングで使用できるサイズ変更と、オーバーレイ テンプレートの配置を決定するための便利なプロパティが含まれます<xref:System.Windows.FrameworkElement.ActualHeight%2A>、 <xref:System.Windows.FrameworkElement.ActualWidth%2A>、 <xref:System.Windows.FrameworkElement.Margin%2A>、および<xref:System.Windows.Controls.Control.Padding%2A>です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-140">Properties that you can use in template binding that are useful for determining sizing and positioning of your overlay template include <xref:System.Windows.FrameworkElement.ActualHeight%2A>, <xref:System.Windows.FrameworkElement.ActualWidth%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>, and <xref:System.Windows.Controls.Control.Padding%2A>.</span></span>  
+  
+<a name="Alternatives"></a>   
+## <a name="alternatives-to-using-a-focus-visual-style"></a><span data-ttu-id="c23a5-141">フォーカスの Visual スタイルを使用に代わる方法</span><span class="sxs-lookup"><span data-stu-id="c23a5-141">Alternatives to Using a Focus Visual Style</span></span>  
+ <span data-ttu-id="c23a5-142">フォーカスの visual スタイルを使用してが適切ではありません、1 つのコントロールをスタイル処理のみか、またはコントロール テンプレートをより細かく制御するための場合があるその他の多くのアクセス可能なプロパティやビジュアルを作成できる手法フォーカスの変更に応答で動作します。</span><span class="sxs-lookup"><span data-stu-id="c23a5-142">For situations where using a focus visual style is not appropriate, either because you are only styling single controls or because you want greater control over the control template, there are many other accessible properties and techniques that can create visual behavior in response to changes in focus.</span></span>  
+  
+ <span data-ttu-id="c23a5-143">トリガー、setter、およびイベント セッターがすべてで詳しく説明されている[スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-143">Triggers, setters, and event setters are all discussed in detail in [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md).</span></span> <span data-ttu-id="c23a5-144">ルーティングされたイベントの処理は、後ほど[ルーティング イベントの概要](../../../../docs/framework/wpf/advanced/routed-events-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-144">Routed event handling is discussed in [Routed Events Overview](../../../../docs/framework/wpf/advanced/routed-events-overview.md).</span></span>  
+  
+### <a name="iskeyboardfocused"></a><span data-ttu-id="c23a5-145">IsKeyboardFocused</span><span class="sxs-lookup"><span data-stu-id="c23a5-145">IsKeyboardFocused</span></span>  
+ <span data-ttu-id="c23a5-146">キーボード フォーカス、特に関心がある場合、<xref:System.Windows.UIElement.IsKeyboardFocused%2A>プロパティに対して依存関係プロパティを使用できる<xref:System.Windows.Trigger>です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-146">If you are specifically interested in keyboard focus, the <xref:System.Windows.UIElement.IsKeyboardFocused%2A> dependency property can be used for a property <xref:System.Windows.Trigger>.</span></span> <span data-ttu-id="c23a5-147">スタイルまたはテンプレートのプロパティ トリガーは非常に具体的には、1 つのコントロールとその他のコントロールのキーボード フォーカスの動作に一致する可能性がありますいない視覚的には、キーボード フォーカスの動作を定義するためのより適切な手法です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-147">A property trigger in either a style or template is a more appropriate technique for defining a keyboard focus behavior that is very specifically for a single control, and which might not visually match the keyboard focus behavior for other controls.</span></span>  
+  
+ <span data-ttu-id="c23a5-148">別のような依存関係プロパティが<xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A>、合成内またはコントロールの機能領域内で任意の場所は、キーボード フォーカスを視覚的に呼び出すために必要な場合に使用する適切なされる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c23a5-148">Another similar dependency property is <xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A>, which might be appropriate to use if you want to visually call out that keyboard focus is somewhere within compositing or within the functional area of the control.</span></span> <span data-ttu-id="c23a5-149">たとえば、配置する場合があります、<xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A>トリガー キーボード フォーカスがより正確にでも複数のコントロールをグループ化するパネルを異なる方法で表示されるようにあるそのパネル内の各要素にします。</span><span class="sxs-lookup"><span data-stu-id="c23a5-149">For example, you might place an <xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A> trigger such that a panel that groups several controls appears differently, even though keyboard focus might more precisely be on an individual element within that panel.</span></span>  
+  
+ <span data-ttu-id="c23a5-150">イベントを使用することもできます。<xref:System.Windows.UIElement.GotKeyboardFocus>と<xref:System.Windows.UIElement.LostKeyboardFocus>(およびプレビュー同等)。</span><span class="sxs-lookup"><span data-stu-id="c23a5-150">You can also use the events <xref:System.Windows.UIElement.GotKeyboardFocus> and <xref:System.Windows.UIElement.LostKeyboardFocus> (as well as their Preview equivalents).</span></span> <span data-ttu-id="c23a5-151">これらのイベントを使用するには、基礎として、 <xref:System.Windows.EventSetter>、または分離コードでイベントのハンドラーを記述することができます。</span><span class="sxs-lookup"><span data-stu-id="c23a5-151">You can use these events as the basis for an <xref:System.Windows.EventSetter>, or you can write handlers for the events in code-behind.</span></span>  
+  
+### <a name="other-focus-properties"></a><span data-ttu-id="c23a5-152">その他のフォーカス プロパティ</span><span class="sxs-lookup"><span data-stu-id="c23a5-152">Other Focus Properties</span></span>  
+ <span data-ttu-id="c23a5-153">Setter を基本または上をトリガーする必要がありますフォーカスを変更するすべての考えられる原因を視覚的な動作を生成する場合は、<xref:System.Windows.UIElement.IsFocused%2A>依存関係プロパティをまたはに、<xref:System.Windows.UIElement.GotFocus>または<xref:System.Windows.UIElement.LostFocus>に使用されるイベント、<xref:System.Windows.EventSetter>です。</span><span class="sxs-lookup"><span data-stu-id="c23a5-153">If you want all possible causes of changing focus to produce a visual behavior, you should base a setter or trigger on the <xref:System.Windows.UIElement.IsFocused%2A> dependency property, or alternatively on the <xref:System.Windows.UIElement.GotFocus> or <xref:System.Windows.UIElement.LostFocus> events used for an <xref:System.Windows.EventSetter>.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="c23a5-154">関連項目</span><span class="sxs-lookup"><span data-stu-id="c23a5-154">See Also</span></span>  
+ <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>  
+ [<span data-ttu-id="c23a5-155">スタイルとテンプレート</span><span class="sxs-lookup"><span data-stu-id="c23a5-155">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [<span data-ttu-id="c23a5-156">フォーカスの概要</span><span class="sxs-lookup"><span data-stu-id="c23a5-156">Focus Overview</span></span>](../../../../docs/framework/wpf/advanced/focus-overview.md)  
+ [<span data-ttu-id="c23a5-157">入力の概要</span><span class="sxs-lookup"><span data-stu-id="c23a5-157">Input Overview</span></span>](../../../../docs/framework/wpf/advanced/input-overview.md)

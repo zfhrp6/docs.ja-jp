@@ -1,73 +1,76 @@
 ---
-title: "パフォーマンスの最適化 : ハードウェアの活用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "グラフィックスの描画層"
-  - "グラフィックス, パフォーマンス"
-  - "グラフィックス, 描画層"
-  - "ハードウェア レンダリング パイプライン"
-  - "描画層"
-  - "ソフトウェア レンダリング パイプライン"
+title: "パフォーマンスの最適化 : ハードウェアの活用"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- graphics [WPF], performance
+- hardware rendering pipeline [WPF]
+- rendering tiers [WPF]
+- graphics rendering tiers [WPF]
+- graphics [WPF], rendering tiers
+- software rendering pipeline [WPF]
 ms.assetid: bfb89bae-7aab-4cac-a26c-a956eda8fce2
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 8828ff0f263943c6094af0073ec4cad6068c6e1c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# パフォーマンスの最適化 : ハードウェアの活用
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の内部アーキテクチャには、ハードウェアとソフトウェアの 2 つのレンダリング パイプラインがあります。  このトピックでは、レンダリング パイプラインに関して、アプリケーションのパフォーマンスの最適化に関する判断に役立つ情報を提供します。  
+# <a name="optimizing-performance-taking-advantage-of-hardware"></a><span data-ttu-id="f57a2-102">パフォーマンスの最適化 : ハードウェアの活用</span><span class="sxs-lookup"><span data-stu-id="f57a2-102">Optimizing Performance: Taking Advantage of Hardware</span></span>
+<span data-ttu-id="f57a2-103">内部アーキテクチャ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]は、2 つのレンダリング パイプライン、ハードウェアおよびソフトウェア。</span><span class="sxs-lookup"><span data-stu-id="f57a2-103">The internal architecture of [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] has two rendering pipelines, hardware and software.</span></span> <span data-ttu-id="f57a2-104">このトピックをアプリケーションのパフォーマンスの最適化に関する決定を行うには、これらのレンダリング パイプラインについて情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="f57a2-104">This topic provides information about these rendering pipelines to help you make decisions about performance optimizations of your applications.</span></span>  
   
-## ハードウェア レンダリング パイプライン  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のパフォーマンスを決定する最も重要な要因の 1 つは、それがレンダリング制約であるということです。つまり、描画するピクセルが増えるほどパフォーマンスへの負荷が大きくなります。  ただし、[!INCLUDE[TLA#tla_gpu](../../../../includes/tlasharptla-gpu-md.md)] にオフロードできるレンダリングが増えれば、その分パフォーマンスが向上します。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションのハードウェア レンダリング パイプラインは、[!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] Version 7.0 以上をサポートするハードウェアの [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] 機能を最大限に活用します。  [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] Version 7.0 と PixelShader 2.0\+ の機能をサポートするハードウェアでは、さらなる最適化を実現できます。  
+## <a name="hardware-rendering-pipeline"></a><span data-ttu-id="f57a2-105">ハードウェア レンダリング パイプライン</span><span class="sxs-lookup"><span data-stu-id="f57a2-105">Hardware Rendering Pipeline</span></span>  
+ <span data-ttu-id="f57a2-106">判断する最も重要な要因の 1 つ[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]パフォーマンスが表示範囲であること、ピクセルの数が大きいほど、パフォーマンス コストをレンダリングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f57a2-106">One of the most important factors in determining [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] performance is that it is render bound—the more pixels you have to render, the greater the performance cost.</span></span> <span data-ttu-id="f57a2-107">ただし、できるレンダリングにオフロードできます、 [!INCLUDE[TLA#tla_gpu](../../../../includes/tlasharptla-gpu-md.md)]、複数のパフォーマンス向上することができます。</span><span class="sxs-lookup"><span data-stu-id="f57a2-107">However, the more rendering that can be offloaded to the [!INCLUDE[TLA#tla_gpu](../../../../includes/tlasharptla-gpu-md.md)], the more performance benefits you can gain.</span></span> <span data-ttu-id="f57a2-108">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーション ハードウェア レンダリング パイプラインを最大限の活用[!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)]の最小値をサポートするハードウェアで機能[!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)]バージョン 7.0。</span><span class="sxs-lookup"><span data-stu-id="f57a2-108">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application hardware rendering pipeline takes full advantage of [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] features on hardware that supports a minimum of [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] version 7.0.</span></span> <span data-ttu-id="f57a2-109">さらに最適化することによって得をサポートするハードウェア[!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)]バージョン 7.0 と PixelShader 2.0 + 機能します。</span><span class="sxs-lookup"><span data-stu-id="f57a2-109">Further optimizations can be gained by hardware that supports [!INCLUDE[TLA#tla_dx](../../../../includes/tlasharptla-dx-md.md)] version 7.0 and PixelShader 2.0+ features.</span></span>  
   
-## ソフトウェア レンダリング パイプライン  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のソフトウェア レンダリング パイプラインは完全に CPU 制約です。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、CPU の SSE\/SSE2 命令セットを活用して、最適化されたフル機能のソフトウェア ラスタライザーを実装します。  ハードウェア レンダリング パイプラインを使用して実行できないアプリケーション機能のレンダリングは、シームレスにソフトウェア レンダリングに戻ります。  
+## <a name="software-rendering-pipeline"></a><span data-ttu-id="f57a2-110">ソフトウェア レンダリング パイプライン</span><span class="sxs-lookup"><span data-stu-id="f57a2-110">Software Rendering Pipeline</span></span>  
+ <span data-ttu-id="f57a2-111">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ソフトウェア レンダリング パイプラインは完全に CPU バインドします。</span><span class="sxs-lookup"><span data-stu-id="f57a2-111">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] software rendering pipeline is entirely CPU bound.</span></span> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="f57a2-112">sse 命令と SSE2 命令の利用を最適化された、完全な機能を備えたソフトウェア ラスタライザーを実装する、CPU で設定します。</span><span class="sxs-lookup"><span data-stu-id="f57a2-112"> takes advantage of the SSE and SSE2 instruction sets in the CPU to implement an optimized, fully-featured software rasterizer.</span></span> <span data-ttu-id="f57a2-113">ソフトウェアへのフォールバックは、シームレス ハードウェア レンダリング パイプラインを使用してアプリケーションの機能を表示することはできません。</span><span class="sxs-lookup"><span data-stu-id="f57a2-113">Fallback to software is seamless any time application functionality cannot be rendered using the hardware rendering pipeline.</span></span>  
   
- ソフトウェア モードでのレンダリングにおけるパフォーマンスの最大の問題は、塗りつぶし速度に関連する問題です。塗りつぶし速度は、描画するピクセルの数として定義されます。  ソフトウェア レンダリング モードでのパフォーマンスに懸念がある場合は、ピクセルの再描画の回数をできるだけ減らすようにしてください。  たとえば、アプリケーションに青い背景があり、その上にやや透明のイメージを描画する場合は、アプリケーションのすべてのピクセルが 2 回描画されることになります。  その結果、アプリケーションにイメージが含まれている場合は、青い背景のみの場合に比べて描画に 2 倍の時間がかかることになります。  
+ <span data-ttu-id="f57a2-114">最大のパフォーマンスの問題が発生フィル レートで表示するにはピクセルの数として定義されているに関連するソフトウェアのモードでのレンダリング時にします。</span><span class="sxs-lookup"><span data-stu-id="f57a2-114">The biggest performance issue you will encounter when rendering in software mode is related to fill rate, which is defined as the number of pixels that you are rendering.</span></span> <span data-ttu-id="f57a2-115">ソフトウェア レンダリング モードでのパフォーマンスに関する懸念がある場合は、ピクセルが再描画される回数を超えるを最小限に抑えてください。</span><span class="sxs-lookup"><span data-stu-id="f57a2-115">If you are concerned about performance in software rendering mode, try to minimize the number of times a pixel is redrawn.</span></span> <span data-ttu-id="f57a2-116">たとえば、上にわずかに透明のイメージを表示し、青色の背景を持つアプリケーションがある場合は、すべてのアプリケーションを 2 回のピクセルがレンダリングされます。</span><span class="sxs-lookup"><span data-stu-id="f57a2-116">For example, if you have an application with a blue background, which then renders a slightly transparent image over it, you will render all of the pixels in the application twice.</span></span> <span data-ttu-id="f57a2-117">その結果はかかる 2 回の背景色を青にした場合よりも、イメージを使用してアプリケーションを表示するためにします。</span><span class="sxs-lookup"><span data-stu-id="f57a2-117">As a result, it will take twice as long to render the application with the image than if you had only the blue background.</span></span>  
   
-### グラフィックスの描画層  
- アプリケーションが実行されるハードウェア構成を予測するのは非常に難しい場合があります。  ただし、異なるハードウェアで実行された場合にシームレスに機能を切り替えられるようにアプリケーションを設計することもできます。これにより、アプリケーションでそれぞれのハードウェア構成を最大限に活用できます。  
+### <a name="graphics-rendering-tiers"></a><span data-ttu-id="f57a2-118">グラフィックスの描画層</span><span class="sxs-lookup"><span data-stu-id="f57a2-118">Graphics Rendering Tiers</span></span>  
+ <span data-ttu-id="f57a2-119">アプリケーションを実行するハードウェア構成を予測する非常に困難な場合があります。</span><span class="sxs-lookup"><span data-stu-id="f57a2-119">It may be very difficult to predict the hardware configuration that your application will be running on.</span></span> <span data-ttu-id="f57a2-120">ただし、設計により、アプリケーションにシームレスに切り替える機能別のハードウェアで実行されているときにそれぞれ別のハードウェア構成を最大限に活用がかかることができるようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="f57a2-120">However, you might want to consider a design that allows your application to seamlessly switch features when running on different hardware, so that it can take full advantage of each different hardware configuration.</span></span>  
   
- そのために、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] にはシステムのグラフィックス機能を実行時に判別する機能が用意されています。  グラフィックス機能の判別は、ビデオ カードを 3 つの描画層に分類することによって行われます。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] が公開する [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] を使用して描画層を照会することにより、  アプリケーションは、ハードウェアでサポートされている描画層に応じて、実行時に異なるコード パスを受け取ることができます。  
+ <span data-ttu-id="f57a2-121">これを実現する[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]実行時にシステムのグラフィックス機能を判断する機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="f57a2-121">To achieve this, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provides functionality to determine the graphics capability of a system at runtime.</span></span> <span data-ttu-id="f57a2-122">グラフィックス機能は、3 つの描画層の 1 つとして、ビデオ カードを分類することによって決定されます。</span><span class="sxs-lookup"><span data-stu-id="f57a2-122">Graphics capability is determined by categorizing the video card as one of three rendering capability tiers.</span></span> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="f57a2-123">公開、[!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)]アプリケーション描画機能層をクエリすることができます。</span><span class="sxs-lookup"><span data-stu-id="f57a2-123"> exposes an [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] that allows an application to query the rendering capability tier.</span></span> <span data-ttu-id="f57a2-124">アプリケーションは、ハードウェアでサポートされている描画層によって実行時に別のコード パスを受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="f57a2-124">Your application can then take different code paths at run time depending on the rendering tier supported by the hardware.</span></span>  
   
- 描画層のレベルに大きく影響するグラフィックス ハードウェアの機能は、次のとおりです。  
+ <span data-ttu-id="f57a2-125">描画層に最も影響を与えるグラフィックス ハードウェアの機能:</span><span class="sxs-lookup"><span data-stu-id="f57a2-125">The features of the graphics hardware that most impact the rendering tier levels are:</span></span>  
   
--   **ビデオ RAM** グラフィックス ハードウェアのビデオ メモリの量によって、グラフィックスを合成する際に使用できるバッファーのサイズと数が決まります。  
+-   <span data-ttu-id="f57a2-126">**ビデオ RAM** グラフィックス ハードウェアのビデオ メモリの量で、グラフィックスの構築に利用できるバッファーのサイズと数が決まります。</span><span class="sxs-lookup"><span data-stu-id="f57a2-126">**Video RAM** The amount of video memory on the graphics hardware determines the size and number of buffers that can be used for compositing graphics.</span></span>  
   
--   **ピクセル シェーダー** ピクセル シェーダーは、ピクセル単位で効果を計算するグラフィックス処理関数です。  表示するグラフィックスの解像度によっては、各表示フレームの処理に数百万ピクセルが必要な場合もあります。  
+-   <span data-ttu-id="f57a2-127">**ピクセル シェーダー** ピクセル シェーダーは、ピクセル単位で効果を計算するグラフィックス処理機能です。</span><span class="sxs-lookup"><span data-stu-id="f57a2-127">**Pixel Shader** A pixel shader is a graphics processing function that calculates effects on a per-pixel basis.</span></span> <span data-ttu-id="f57a2-128">表示されるグラフィックスの解像度によっては、各表示フレームの処理に数百万単位のピクセルが必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="f57a2-128">Depending on the resolution of the displayed graphics, there could be several million pixels that need to be processed for each display frame.</span></span>  
   
--   **頂点シェーダー** 頂点シェーダーは、オブジェクトの頂点データの算術演算を実行するグラフィックス処理関数です。  
+-   <span data-ttu-id="f57a2-129">**頂点シェーダー** 頂点シェーダーは、オブジェクトの頂点データに数学演算を実行するグラフィックス処理機能です。</span><span class="sxs-lookup"><span data-stu-id="f57a2-129">**Vertex Shader** A vertex shader is a graphics processing function that performs mathematical operations on the vertex data of the object.</span></span>  
   
--   **マルチテクスチャのサポート** マルチテクスチャがサポートされていると、3D グラフィックス オブジェクトのブレンド操作を行うときに、2 つ以上の別個のテクスチャを適用できます。  マルチテクスチャのサポートの度合いは、グラフィックス ハードウェアのマルチテクスチャ ユニットの数によって決まります。  
+-   <span data-ttu-id="f57a2-130">**マルチテクスチャ サポート** マルチテクスチャ サポートとは、3D グラフィックス オブジェクトにブレンド操作を実行するとき、2 つ以上の異なるテクスチャを適用できる機能のことです。</span><span class="sxs-lookup"><span data-stu-id="f57a2-130">**Multitexture Support** Multitexture support refers to the ability to apply two or more distinct textures during a blending operation on a 3D graphics object.</span></span> <span data-ttu-id="f57a2-131">マルチテクスチャ サポートの度合いは、グラフィックス ハードウェア上のマルチテクスチャ ユニットの数で決まります。</span><span class="sxs-lookup"><span data-stu-id="f57a2-131">The degree of multitexture support is determined by the number of multitexture units on the graphics hardware.</span></span>  
   
- ピクセル シェーダー、頂点シェーダー、およびマルチテクスチャの各機能を使用して、[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] の特定のバージョン レベルを定義し、次にこのバージョン レベルを使用して [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のさまざまな描画層を定義します。  
+ <span data-ttu-id="f57a2-132">ピクセル シェーダー、頂点シェーダーとマルチ テクスチャ機能の定義に使用特定[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]さらに、さまざまな表示の層の定義に使用されるバージョン レベル[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="f57a2-132">The pixel shader, vertex shader, and multitexture features are used to define specific [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] version levels, which, in turn, are used to define the different rendering tiers in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span>  
   
- グラフィックス ハードウェアの機能によって、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションの表示能力が決まります。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] システムは、次の 3 つの描画階層を定義します。  
+ <span data-ttu-id="f57a2-133">グラフィックス ハードウェアの機能により [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションのレンダリング能力が決まります。</span><span class="sxs-lookup"><span data-stu-id="f57a2-133">The features of the graphics hardware determine the rendering capability of a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application.</span></span> <span data-ttu-id="f57a2-134">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] システムには次の 3 つの描画層があります。</span><span class="sxs-lookup"><span data-stu-id="f57a2-134">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] system defines three rendering tiers:</span></span>  
   
--   **描画層 0** グラフィックス ハードウェアの加速が使用されません。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン レベルは Version 7.0 未満です。  
+-   <span data-ttu-id="f57a2-135">**描画層 0** グラフィックス ハードウェアの高速化はありません。</span><span class="sxs-lookup"><span data-stu-id="f57a2-135">**Rendering Tier 0** No graphics hardware acceleration.</span></span> <span data-ttu-id="f57a2-136">[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]バージョン レベルがバージョン 7.0 未満です。</span><span class="sxs-lookup"><span data-stu-id="f57a2-136">The [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] version level is less than version 7.0.</span></span>  
   
--   **描画層 1** グラフィックス ハードウェアの加速が部分的に使用されます。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン レベルは、Version 7.0 以上で Version 9.0 未満です。  
+-   <span data-ttu-id="f57a2-137">**階層 1 のレンダリング**部分のグラフィックス ハードウェア アクセラレータです。</span><span class="sxs-lookup"><span data-stu-id="f57a2-137">**Rendering Tier 1** Partial graphics hardware acceleration.</span></span> <span data-ttu-id="f57a2-138">[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]バージョン レベルには、バージョン 7.0 では、以下と**いずれか小さいほう**9.0 のバージョンよりもします。</span><span class="sxs-lookup"><span data-stu-id="f57a2-138">The [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] version level is greater than or equal to version 7.0, and **lesser** than version 9.0.</span></span>  
   
--   **描画層 2** ほとんどのグラフィックス機能でグラフィックス ハードウェアの加速を使用します。  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] のバージョン レベルは Version 9.0 以上です。  
+-   <span data-ttu-id="f57a2-139">**描画層 2** ほとんどのグラフィックス機能でグラフィックス ハードウェア高速が利用されます。</span><span class="sxs-lookup"><span data-stu-id="f57a2-139">**Rendering Tier 2** Most graphics features use graphics hardware acceleration.</span></span> <span data-ttu-id="f57a2-140">[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] バージョンのレベルはバージョン 9.0 以上です。</span><span class="sxs-lookup"><span data-stu-id="f57a2-140">The [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] version level is greater than or equal to version 9.0.</span></span>  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レンダリング層の詳細については、「[グラフィックスの描画層](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)」を参照してください。  
+ <span data-ttu-id="f57a2-141">詳細については[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]階層を表示するを参照してください[グラフィックスの描画層](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)です。</span><span class="sxs-lookup"><span data-stu-id="f57a2-141">For more information on [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rendering tiers, see [Graphics Rendering Tiers](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md).</span></span>  
   
-## 参照  
- [WPF アプリケーションのパフォーマンスの最適化](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)   
- [アプリケーション パフォーマンスの計画](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)   
- [レイアウトとデザイン](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)   
- [2D グラフィックスとイメージング](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)   
- [オブジェクトの動作](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)   
- [アプリケーション リソース](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)   
- [テキスト](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)   
- [データ バインド](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)   
- [パフォーマンスに関するその他の推奨事項](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
+## <a name="see-also"></a><span data-ttu-id="f57a2-142">関連項目</span><span class="sxs-lookup"><span data-stu-id="f57a2-142">See Also</span></span>  
+ [<span data-ttu-id="f57a2-143">WPF アプリケーションのパフォーマンスの最適化</span><span class="sxs-lookup"><span data-stu-id="f57a2-143">Optimizing WPF Application Performance</span></span>](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
+ [<span data-ttu-id="f57a2-144">アプリケーション パフォーマンスの計画</span><span class="sxs-lookup"><span data-stu-id="f57a2-144">Planning for Application Performance</span></span>](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
+ [<span data-ttu-id="f57a2-145">レイアウトとデザイン</span><span class="sxs-lookup"><span data-stu-id="f57a2-145">Layout and Design</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
+ [<span data-ttu-id="f57a2-146">2D グラフィックスとイメージング</span><span class="sxs-lookup"><span data-stu-id="f57a2-146">2D Graphics and Imaging</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
+ [<span data-ttu-id="f57a2-147">オブジェクトの動作</span><span class="sxs-lookup"><span data-stu-id="f57a2-147">Object Behavior</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
+ [<span data-ttu-id="f57a2-148">アプリケーション リソース</span><span class="sxs-lookup"><span data-stu-id="f57a2-148">Application Resources</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
+ [<span data-ttu-id="f57a2-149">テキスト</span><span class="sxs-lookup"><span data-stu-id="f57a2-149">Text</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
+ [<span data-ttu-id="f57a2-150">データ バインディング</span><span class="sxs-lookup"><span data-stu-id="f57a2-150">Data Binding</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
+ [<span data-ttu-id="f57a2-151">パフォーマンスに関するその他の推奨事項</span><span class="sxs-lookup"><span data-stu-id="f57a2-151">Other Performance Recommendations</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

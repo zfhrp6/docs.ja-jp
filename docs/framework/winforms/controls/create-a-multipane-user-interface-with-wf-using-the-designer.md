@@ -1,60 +1,61 @@
 ---
-title: "方法 : デザイナーを使用して Windows フォームでマルチペイン ユーザー インターフェイスを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "マルチペイン ユーザー インターフェイス"
-  - "SplitContainer コントロール [Windows フォーム], 使用 (デザイナーを)"
-  - "ユーザー インターフェイス, マルチペイン"
+title: "方法 : デザイナーを使用して Windows フォームでマルチペイン ユーザー インターフェイスを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- user interface [Windows Forms], multipane
+- SplitContainer control [Windows Forms], using the designer
+- multipane user interface
 ms.assetid: c3f9294d-a26c-4198-9242-f237f55f7573
-caps.latest.revision: 6
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 7b49f5440626fc7f6c869e87351680ec2f1de25e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : デザイナーを使用して Windows フォームでマルチペイン ユーザー インターフェイスを作成する
-次の手順では、Microsoft Outlook で使用されているユーザー インターフェイスに似た**フォルダー**一覧、**メッセージ** ペイン、および**プレビュー** ペインを備えたマルチペイン ユーザー インターフェイスを作成します。  これは、主にコントロールをフォームにドッキングして作成します。  
+# <a name="how-to-create-a-multipane-user-interface-with-windows-forms-using-the-designer"></a><span data-ttu-id="7ad9e-102">方法 : デザイナーを使用して Windows フォームでマルチペイン ユーザー インターフェイスを作成する</span><span class="sxs-lookup"><span data-stu-id="7ad9e-102">How to: Create a Multipane User Interface with Windows Forms Using the Designer</span></span>
+<span data-ttu-id="7ad9e-103">Microsoft Outlook で使用される次のようなマルチペイン ユーザー インターフェイスを作成する次の手順で、**フォルダー**  ボックスの一覧、**メッセージ** ウィンドウで、および**プレビュー**ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-103">In the following procedure, you will create a multipane user interface that is similar to the one used in Microsoft Outlook, with a **Folder** list, a **Messages** pane, and a **Preview** pane.</span></span> <span data-ttu-id="7ad9e-104">この方法は、主にコントロールをフォームにドッキングすることにより実現されます。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-104">This arrangement is achieved chiefly through docking controls with the form.</span></span>  
   
- コントロールをドッキングするときは、どちらの親コンテナーの端にコントロールを固定するかを決定します。  <xref:System.Windows.Forms.SplitContainer.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle> に設定した場合、コントロールの右端が親コントロールの右端にドッキングされます。  さらに、コントロールがドッキングされた端は、そのコンテナー コントロールに合うようにサイズ変更されます。  <xref:System.Windows.Forms.SplitContainer.Dock%2A> プロパティの機能の詳細については、「[方法 : Windows フォーム上のコントロールをドッキングする](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)」を参照してください。  
+ <span data-ttu-id="7ad9e-105">コントロールをドッキングするときは、親コンテナーの端にコントロールを固定するを決定します。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-105">When you dock a control, you determine which edge of the parent container a control is fastened to.</span></span> <span data-ttu-id="7ad9e-106">このため、設定した場合、<xref:System.Windows.Forms.SplitContainer.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Right>コントロールの右エッジは、親コントロールの右端にドッキングされます。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-106">Thus, if you set the <xref:System.Windows.Forms.SplitContainer.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Right>, the right edge of the control will be docked to the right edge of its parent control.</span></span> <span data-ttu-id="7ad9e-107">さらに、ドッキングされたコントロールの端は、コンテナー コントロールの一致するようにサイズ変更されます。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-107">Additionally, the docked edge of the control is resized to match that of its container control.</span></span> <span data-ttu-id="7ad9e-108">方法の詳細については<xref:System.Windows.Forms.SplitContainer.Dock%2A>プロパティを参照してください[する方法: Windows フォームでのドッキング コントロール](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-108">For more information about how the <xref:System.Windows.Forms.SplitContainer.Dock%2A> property works, see [How to: Dock Controls on Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md).</span></span>  
   
- この手順は、機能を追加してアプリケーションを Microsoft Outlook のようにするのではなく、フォーム上に <xref:System.Windows.Forms.SplitContainer> などのコントロールを配置します。  
+ <span data-ttu-id="7ad9e-109">この手順では、配置で、<xref:System.Windows.Forms.SplitContainer>および他のコントロール、フォームではなく、アプリケーションの Microsoft Outlook を模倣する機能を追加します。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-109">This procedure focuses on arranging the <xref:System.Windows.Forms.SplitContainer> and the other controls on the form, not on adding functionality to make the application mimic Microsoft Outlook.</span></span>  
   
- このユーザー インターフェイスを作成するには、左側のパネルに <xref:System.Windows.Forms.TreeView> コントロールを含む <xref:System.Windows.Forms.SplitContainer> コントロール内に、すべてのコントロールを配置します。  <xref:System.Windows.Forms.SplitContainer> コントロールの右側のパネルには、第 2 の <xref:System.Windows.Forms.SplitContainer> コントロールが含まれます。第 2 のコントロールでは、上部に <xref:System.Windows.Forms.ListView> コントロール、その下部に <xref:System.Windows.Forms.RichTextBox> コントロールが配置されます。  これらの <xref:System.Windows.Forms.SplitContainer> コントロールを使用すると、フォーム上の他のコントロールを個別にサイズ変更できます。  この手順に示される手法を応用して、独自のカスタム ユーザー インターフェイスを作成できます。  
+ <span data-ttu-id="7ad9e-110">内のすべてのコントロールを配置するこのユーザー インターフェイスを作成する、<xref:System.Windows.Forms.SplitContainer>を含むコントロール、<xref:System.Windows.Forms.TreeView>左側のパネルのコントロールです。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-110">To create this user interface, you place all the controls within a <xref:System.Windows.Forms.SplitContainer> control, which contains a <xref:System.Windows.Forms.TreeView> control in the left-hand panel.</span></span> <span data-ttu-id="7ad9e-111">右側のパネル、<xref:System.Windows.Forms.SplitContainer>コントロールには、2 つ目が含まれている<xref:System.Windows.Forms.SplitContainer>コントロールを<xref:System.Windows.Forms.ListView>上のコントロール、<xref:System.Windows.Forms.RichTextBox>コントロール。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-111">The right-hand panel of the <xref:System.Windows.Forms.SplitContainer> control contains a second <xref:System.Windows.Forms.SplitContainer> control with a <xref:System.Windows.Forms.ListView> control above a <xref:System.Windows.Forms.RichTextBox> control.</span></span> <span data-ttu-id="7ad9e-112">これら<xref:System.Windows.Forms.SplitContainer>コントロールがフォーム上の他のコントロールの独立したサイズ変更を有効にします。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-112">These <xref:System.Windows.Forms.SplitContainer> controls enable independent resizing of the other controls on the form.</span></span> <span data-ttu-id="7ad9e-113">独自のカスタム ユーザー インターフェイスを作成するには、この手順の手法を適用することができます。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-113">You can adapt the techniques in this procedure to craft custom user interfaces of your own.</span></span>  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="7ad9e-114">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-114">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="7ad9e-115">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-115">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="7ad9e-116">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-116">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### デザイン時に Outlook スタイルのユーザー インターフェイスを作成するには  
+### <a name="to-create-an-outlook-style-user-interface-at-design-time"></a><span data-ttu-id="7ad9e-117">デザイン時に Outlook スタイルのユーザー インターフェイスを作成するには</span><span class="sxs-lookup"><span data-stu-id="7ad9e-117">To create an Outlook-style user interface at design time</span></span>  
   
-1.  新しい Windows アプリケーション プロジェクトを作成します。  詳細については、「[How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。  
+1.  <span data-ttu-id="7ad9e-118">新しい Windows アプリケーション プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-118">Create a new Windows Application project.</span></span> <span data-ttu-id="7ad9e-119">詳細については、「[方法 : Windows アプリケーション プロジェクトを作成する](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-119">For details, see [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).</span></span>  
   
-2.  **\[ツールボックス\]** から <xref:System.Windows.Forms.SplitContainer> コントロールをフォームにドラッグします。  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.SplitContainer.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle> に設定します。  
+2.  <span data-ttu-id="7ad9e-120">ドラッグ、<xref:System.Windows.Forms.SplitContainer>から制御、**ツールボックス**をフォームにします。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-120">Drag a <xref:System.Windows.Forms.SplitContainer> control from the **Toolbox** to the form.</span></span> <span data-ttu-id="7ad9e-121">**プロパティ**ウィンドウで、設定、<xref:System.Windows.Forms.SplitContainer.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Fill>です。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-121">In the **Properties** window, set the <xref:System.Windows.Forms.SplitContainer.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Fill>.</span></span>  
   
-3.  **\[ツールボックス\]** から <xref:System.Windows.Forms.TreeView> コントロールを <xref:System.Windows.Forms.SplitContainer> コントロールの左側のパネルにドラッグします。  **\[プロパティ\]** ウィンドウで <xref:System.Windows.Forms.SplitContainer.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle> に設定します。これを行うには、値エディター \(下向きの矢印をクリックすると表示されるエディター\) で左側のパネルをクリックします。  
+3.  <span data-ttu-id="7ad9e-122">ドラッグ、<xref:System.Windows.Forms.TreeView>から制御、**ツールボックス**の左側のパネルに、<xref:System.Windows.Forms.SplitContainer>コントロール。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-122">Drag a <xref:System.Windows.Forms.TreeView> control from the **Toolbox** to the left-hand panel of the <xref:System.Windows.Forms.SplitContainer> control.</span></span> <span data-ttu-id="7ad9e-123">**プロパティ**ウィンドウで、設定、<xref:System.Windows.Forms.SplitContainer.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Left>を示す下向きの矢印をクリックすると、値エディターで左側のパネルをクリックします。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-123">In the **Properties** window, set the <xref:System.Windows.Forms.SplitContainer.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Left> by clicking the left hand panel in the value editor shown when the down arrow is clicked.</span></span>  
   
-4.  **\[ツールボックス\]** から別の <xref:System.Windows.Forms.SplitContainer> コントロールをドラッグします。このコントロールは、既にフォームに追加している <xref:System.Windows.Forms.SplitContainer> コントロールの右側のパネルに配置します。  **\[プロパティ\]** ウィンドウで、<xref:System.Windows.Forms.SplitContainer.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle> に、<xref:System.Windows.Forms.SplitContainer.Orientation%2A> プロパティを <xref:System.Windows.Forms.Orientation> に設定します。  
+4.  <span data-ttu-id="7ad9e-124">別のドラッグ<xref:System.Windows.Forms.SplitContainer>から制御、**ツールボックス**; の右側のパネルに配置すること、<xref:System.Windows.Forms.SplitContainer>コントロールをフォームに追加します。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-124">Drag another <xref:System.Windows.Forms.SplitContainer> control from the **Toolbox**; place it in the right-hand panel of the <xref:System.Windows.Forms.SplitContainer> control you added to your form.</span></span> <span data-ttu-id="7ad9e-125">**プロパティ**ウィンドウで、設定、<xref:System.Windows.Forms.SplitContainer.Dock%2A>プロパティを<xref:System.Windows.Forms.DockStyle.Fill>と<xref:System.Windows.Forms.SplitContainer.Orientation%2A>プロパティを<xref:System.Windows.Forms.Orientation.Horizontal>です。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-125">In the **Properties** window, set the <xref:System.Windows.Forms.SplitContainer.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Fill> and the <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property to <xref:System.Windows.Forms.Orientation.Horizontal>.</span></span>  
   
-5.  **\[ツールボックス\]** から <xref:System.Windows.Forms.ListView> コントロールを、フォームに追加した第 2 の <xref:System.Windows.Forms.SplitContainer> コントロールの上部パネルにドラッグします。  <xref:System.Windows.Forms.ListView> コントロールの <xref:System.Windows.Forms.SplitContainer.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle> に設定します。  
+5.  <span data-ttu-id="7ad9e-126">ドラッグ、<xref:System.Windows.Forms.ListView>から制御、**ツールボックス**、2 つ目の上側のパネルに<xref:System.Windows.Forms.SplitContainer>コントロールをフォームに追加します。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-126">Drag a <xref:System.Windows.Forms.ListView> control from the **Toolbox** to the upper panel of the second <xref:System.Windows.Forms.SplitContainer> control you added to your form.</span></span> <span data-ttu-id="7ad9e-127"><xref:System.Windows.Forms.ListView> プロパティの <xref:System.Windows.Forms.SplitContainer.Dock%2A> コントロールを <xref:System.Windows.Forms.DockStyle.Fill> に設定します。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-127">Set the <xref:System.Windows.Forms.SplitContainer.Dock%2A> property of the <xref:System.Windows.Forms.ListView> control to <xref:System.Windows.Forms.DockStyle.Fill>.</span></span>  
   
-6.  **\[ツールボックス\]** から <xref:System.Windows.Forms.RichTextBox> コントロールを、第 2 の <xref:System.Windows.Forms.SplitContainer> コントロールの下部パネルにドラッグします。  <xref:System.Windows.Forms.RichTextBox> コントロールの <xref:System.Windows.Forms.SplitContainer.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle> に設定します。  
+6.  <span data-ttu-id="7ad9e-128">ドラッグ、<xref:System.Windows.Forms.RichTextBox>から制御、**ツールボックス**、2 つ目の下部のパネルに<xref:System.Windows.Forms.SplitContainer>コントロール。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-128">Drag a <xref:System.Windows.Forms.RichTextBox> control from the **Toolbox** to the lower panel of the second <xref:System.Windows.Forms.SplitContainer> control.</span></span> <span data-ttu-id="7ad9e-129"><xref:System.Windows.Forms.RichTextBox> プロパティの <xref:System.Windows.Forms.SplitContainer.Dock%2A> コントロールを <xref:System.Windows.Forms.DockStyle.Fill> に設定します。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-129">Set the <xref:System.Windows.Forms.SplitContainer.Dock%2A> property of the <xref:System.Windows.Forms.RichTextBox> control to <xref:System.Windows.Forms.DockStyle.Fill>.</span></span>  
   
-     この時点で F5 キーを押してアプリケーションを実行すると、フォームには、Microsoft Outlook で使用されるような 3 つの部分に分かれたユーザー インターフェイスが表示されます。  
+     <span data-ttu-id="7ad9e-130">この時点では、アプリケーションを実行する場合は F5 キーを押した場合、3 部構成のユーザー インターフェイスであり、Microsoft Outlook のと似ていますが、フォームに表示されます。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-130">At this point, if you press F5 to run the application, the form displays a three-part user interface, similar to that of Microsoft Outlook.</span></span>  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.SplitContainer> コントロール内のいずれかの境界線上にマウス ポインターを移動すると、内部寸法のサイズを変更できます。  
+    >  <span data-ttu-id="7ad9e-131">内でスプリッターのいずれかにマウス ポインターを配置すると、<xref:System.Windows.Forms.SplitContainer>コントロール、内部の次元のサイズを変更することができます。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-131">When you put the mouse pointer over either of the splitters within the <xref:System.Windows.Forms.SplitContainer> controls, you can resize the internal dimensions.</span></span>  
   
-     アプリケーション開発のこの時点で、非常に洗練されたユーザー インターフェイスが作成されました。  次の手順では、<xref:System.Windows.Forms.TreeView> コントロールと <xref:System.Windows.Forms.ListView> コントロールをデータ ソースに連結して、アプリケーション自体のプログラミングに進みます。  コントロールのデータへの連結の詳細については、「[データ連結と Windows フォーム](../../../../docs/framework/winforms/data-binding-and-windows-forms.md)」を参照してください。  
+     <span data-ttu-id="7ad9e-132">この時点でアプリケーションの開発、高度なユーザー インターフェイスを作成しました。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-132">At this point in application development, you have crafted a sophisticated user interface.</span></span> <span data-ttu-id="7ad9e-133">次の手順は、アプリケーション自体のプログラミングを進めるおそらく接続することによって、<xref:System.Windows.Forms.TreeView>コントロールと<xref:System.Windows.Forms.ListView>いくつかの種類のデータ ソースへのコントロールです。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-133">The next step is proceeding with the programming of the application itself, perhaps by connecting the <xref:System.Windows.Forms.TreeView> control and <xref:System.Windows.Forms.ListView> controls to some kind of data source.</span></span> <span data-ttu-id="7ad9e-134">コントロールをデータに接続する方法の詳細については、次を参照してください。[データ連結と Windows フォーム](../../../../docs/framework/winforms/data-binding-and-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="7ad9e-134">For more information about connecting controls to data, see [Data Binding and Windows Forms](../../../../docs/framework/winforms/data-binding-and-windows-forms.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.SplitContainer>   
- [SplitContainer コントロール](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="7ad9e-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="7ad9e-135">See Also</span></span>  
+ <xref:System.Windows.Forms.SplitContainer>  
+ [<span data-ttu-id="7ad9e-136">SplitContainer コントロール</span><span class="sxs-lookup"><span data-stu-id="7ad9e-136">SplitContainer Control</span></span>](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)

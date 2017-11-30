@@ -1,38 +1,41 @@
 ---
-title: "方法 : 複雑なグリッドを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "カレンダー, 作成"
-  - "グリッド コントロール, 作成, 複雑なグリッド"
-  - "月別カレンダー, 作成"
+title: "方法 : 複雑なグリッドを作成する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- calendar [WPF], creating
+- monthly calendar [WPF], creating
+- Grid control [WPF], creating [WPF], complex grid
 ms.assetid: 4ce3040a-a156-4364-9596-98ca1eca5550
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 2c0008a7379feefd9b3fe719f85b3205a72fb51d
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : 複雑なグリッドを作成する
-この例では、<xref:System.Windows.Controls.Grid> を使用して月別カレンダーと同様のレイアウトを作成する方法を示します。  
+# <a name="how-to-create-a-complex-grid"></a><span data-ttu-id="91847-102">方法 : 複雑なグリッドを作成する</span><span class="sxs-lookup"><span data-stu-id="91847-102">How to: Create a Complex Grid</span></span>
+<span data-ttu-id="91847-103">この例を使用する方法を示しています、<xref:System.Windows.Controls.Grid>月間予定表のようなレイアウトを作成します。</span><span class="sxs-lookup"><span data-stu-id="91847-103">This example shows how to use a <xref:System.Windows.Controls.Grid> to create layout that looks like a monthly calendar.</span></span>  
   
-## 使用例  
- 次の例では、<xref:System.Windows.Controls.RowDefinition> クラスと <xref:System.Windows.Controls.ColumnDefinition> クラスを使用して、8 つの行と 8 つの列を定義します。  <xref:System.Windows.Controls.Grid.ColumnSpan%2A?displayProperty=fullName> 添付プロパティと <xref:System.Windows.Controls.Grid.RowSpan%2A?displayProperty=fullName> 添付プロパティを <xref:System.Windows.Shapes.Rectangle> 要素と共に使用し、さまざまな列と行の背景を塗りつぶします。  このようなデザインが可能なのは、<xref:System.Windows.Controls.Grid> 内の各セルに複数の要素が存在できるためです。これは、<xref:System.Windows.Controls.Grid> と <xref:System.Windows.Documents.Table> の本質的な違いです。  
+## <a name="example"></a><span data-ttu-id="91847-104">例</span><span class="sxs-lookup"><span data-stu-id="91847-104">Example</span></span>  
+ <span data-ttu-id="91847-105">次の例を使用して 8 つの行と 8 つの列の定義、<xref:System.Windows.Controls.RowDefinition>と<xref:System.Windows.Controls.ColumnDefinition>クラスです。</span><span class="sxs-lookup"><span data-stu-id="91847-105">The following example defines eight rows and eight columns by using the <xref:System.Windows.Controls.RowDefinition> and <xref:System.Windows.Controls.ColumnDefinition> classes.</span></span> <span data-ttu-id="91847-106">使用して、<xref:System.Windows.Controls.Grid.ColumnSpan%2A?displayProperty=nameWithType>と<xref:System.Windows.Controls.Grid.RowSpan%2A?displayProperty=nameWithType>と共にアタッチされるプロパティ、<xref:System.Windows.Shapes.Rectangle>要素で、さまざまな列と行の背景色を入力します。</span><span class="sxs-lookup"><span data-stu-id="91847-106">It uses the <xref:System.Windows.Controls.Grid.ColumnSpan%2A?displayProperty=nameWithType> and <xref:System.Windows.Controls.Grid.RowSpan%2A?displayProperty=nameWithType> attached properties, together with <xref:System.Windows.Shapes.Rectangle> elements, which fill the backgrounds of various columns and rows.</span></span> <span data-ttu-id="91847-107">この設計は、複数の要素が内の各セル内に存在できるため、可能な<xref:System.Windows.Controls.Grid>、原則違い<xref:System.Windows.Controls.Grid>と<xref:System.Windows.Documents.Table>です。</span><span class="sxs-lookup"><span data-stu-id="91847-107">This design is possible because more than one element can exist in each cell in a <xref:System.Windows.Controls.Grid>, a principle difference between <xref:System.Windows.Controls.Grid> and <xref:System.Windows.Documents.Table>.</span></span>  
   
- この例では、カレンダーの見た目を良くし、読みやすくするために、垂直グラデーションを使用して列と行を塗りつぶします \(<xref:System.Windows.Shapes.Shape.Fill%2A>\)。  スタイル設定された <xref:System.Windows.Controls.TextBlock> 要素は、日付と曜日を表します。  <xref:System.Windows.Controls.TextBlock> 要素は、<xref:System.Windows.FrameworkElement.Margin%2A> プロパティと、アプリケーションのスタイル内で定義された配置プロパティを使用して、それぞれのセル内の絶対位置に配置されます。  
+ <span data-ttu-id="91847-108">例では、使用する垂直グラデーション<xref:System.Windows.Shapes.Shape.Fill%2A>ビジュアルのプレゼンテーションや予定表の読みやすさを向上するために行と列。</span><span class="sxs-lookup"><span data-stu-id="91847-108">The example uses vertical gradients to <xref:System.Windows.Shapes.Shape.Fill%2A> the columns and rows in order to improve the visual presentation and readability of the calendar.</span></span> <span data-ttu-id="91847-109">スタイルの<xref:System.Windows.Controls.TextBlock>要素は、日付と曜日を表します。</span><span class="sxs-lookup"><span data-stu-id="91847-109">Styled <xref:System.Windows.Controls.TextBlock> elements represent the dates and days of the week.</span></span> <span data-ttu-id="91847-110"><xref:System.Windows.Controls.TextBlock>要素は、セル内を使用して絶対位置、<xref:System.Windows.FrameworkElement.Margin%2A>プロパティと、アプリケーションのスタイル内で定義されている配置プロパティです。</span><span class="sxs-lookup"><span data-stu-id="91847-110"><xref:System.Windows.Controls.TextBlock> elements are absolutely positioned within their cells by using the <xref:System.Windows.FrameworkElement.Margin%2A> property and alignment properties that are defined within the style for the application.</span></span>  
   
- [!code-xml[GridComplex#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridComplex/CS/default.xaml#1)]  
+ [!code-xaml[GridComplex#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridComplex/CS/default.xaml#1)]  
   
-## 参照  
- <xref:System.Windows.Controls.Grid>   
- <xref:System.Windows.Documents.TableCell>   
- [純色およびグラデーションによる塗りつぶしの概要](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)   
- [パネルの概要](../../../../docs/framework/wpf/controls/panels-overview.md)   
- [テーブルの概要](../../../../docs/framework/wpf/advanced/table-overview.md)
+## <a name="see-also"></a><span data-ttu-id="91847-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="91847-111">See Also</span></span>  
+ <xref:System.Windows.Controls.Grid>  
+ <xref:System.Windows.Documents.TableCell>  
+ [<span data-ttu-id="91847-112">純色およびグラデーションによる塗りつぶしの概要</span><span class="sxs-lookup"><span data-stu-id="91847-112">Painting with Solid Colors and Gradients Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
+ [<span data-ttu-id="91847-113">パネルの概要</span><span class="sxs-lookup"><span data-stu-id="91847-113">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [<span data-ttu-id="91847-114">テーブルの概要</span><span class="sxs-lookup"><span data-stu-id="91847-114">Table Overview</span></span>](../../../../docs/framework/wpf/advanced/table-overview.md)

@@ -1,52 +1,58 @@
 ---
-title: "方法 : TextBox のテキストがいつ変更されたかを検出する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "検出 (テキストの変更を)"
-  - "テキストの変更, 検出"
-  - "TextBox コントロール, 検出 (テキストの変更を)"
+title: "方法 : TextBox のテキストがいつ変更されたかを検出する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- TextBox control [WPF], detecting text change
+- text change [WPF], detecting
+- detecting text change [WPF]
 ms.assetid: 1c39ee14-e37f-49fb-a0d1-a9824ca13584
-caps.latest.revision: 10
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 92fc8995ab75cc25bac3bb21b1646052822c3721
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : TextBox のテキストがいつ変更されたかを検出する
-この例では、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> イベントを使用して、<xref:System.Windows.Controls.TextBox> コントロール内のテキストが変わるたびにメソッドを実行する 1 つの方法を示します。  
+# <a name="how-to-detect-when-text-in-a-textbox-has-changed"></a><span data-ttu-id="3156c-102">方法 : TextBox のテキストがいつ変更されたかを検出する</span><span class="sxs-lookup"><span data-stu-id="3156c-102">How to: Detect When Text in a TextBox Has Changed</span></span>
+<span data-ttu-id="3156c-103">この例を使用する方法を示しています、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>イベント メソッドを実行するたびに内のテキスト、<xref:System.Windows.Controls.TextBox>コントロールが変更されました。</span><span class="sxs-lookup"><span data-stu-id="3156c-103">This example shows one way to use the <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> event to execute a method whenever the text in a <xref:System.Windows.Controls.TextBox> control has changed.</span></span>  
   
- 変更用にモニターする <xref:System.Windows.Controls.TextBox> コントロールを含む [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の分離コード クラスでは、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> イベントの実行時に呼び出し用メソッドを挿入します。  このメソッドには、<xref:System.Windows.Controls.TextChangedEventHandler> デリゲートで想定された署名に一致する署名を含める必要があります。  
+ <span data-ttu-id="3156c-104">分離コード クラスで、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を格納している、<xref:System.Windows.Controls.TextBox>変更については、監視するコントロールを挿入するたびに呼び出すメソッドを<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="3156c-104">In the code-behind class for the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] that contains the <xref:System.Windows.Controls.TextBox> control that you want to monitor for changes, insert a method to call whenever the <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> event fires.</span></span>  <span data-ttu-id="3156c-105">このメソッドのシグネチャが一致で期待される必要があります、<xref:System.Windows.Controls.TextChangedEventHandler>を委任します。</span><span class="sxs-lookup"><span data-stu-id="3156c-105">This method must have a signature that matches what is expected by the <xref:System.Windows.Controls.TextChangedEventHandler> delegate.</span></span>  
   
- イベント ハンドラーは、<xref:System.Windows.Controls.TextBox> コントロールの内容が変更されるたびにユーザーまたはプログラムによって呼び出されます。  
+ <span data-ttu-id="3156c-106">イベント ハンドラーが呼び出されるとされるたびの内容、<xref:System.Windows.Controls.TextBox>ユーザー、またはプログラムによってコントロールを変更します。</span><span class="sxs-lookup"><span data-stu-id="3156c-106">The event handler is called whenever the contents of the <xref:System.Windows.Controls.TextBox> control are changed, either by a user or programmatically.</span></span>  
   
- **メモ :** このイベントは、<xref:System.Windows.Controls.TextBox> コントロールが作成され、テキストが初めて読み込まれるときに実行されます。  
+ <span data-ttu-id="3156c-107">**注:**このイベントが発生したときに、<xref:System.Windows.Controls.TextBox>コントロールが作成し、最初にテキストを格納します。</span><span class="sxs-lookup"><span data-stu-id="3156c-107">**Note:** This event fires when the <xref:System.Windows.Controls.TextBox> control is created and initially populated with text.</span></span>  
   
-## 使用例  
- <xref:System.Windows.Controls.TextBox> コントロールを定義する [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] で、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> 属性に、イベント ハンドラーのメソッド名と一致する値を指定します。  
+## <a name="example"></a><span data-ttu-id="3156c-108">例</span><span class="sxs-lookup"><span data-stu-id="3156c-108">Example</span></span>  
+ <span data-ttu-id="3156c-109">[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]を定義する、<xref:System.Windows.Controls.TextBox>コントロールを指定、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>の属性をイベント ハンドラー メソッドの名前に一致する値。</span><span class="sxs-lookup"><span data-stu-id="3156c-109">In the [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] that defines your <xref:System.Windows.Controls.TextBox> control, specify the <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> attribute with a value that matches the event handler method name.</span></span>  
   
- [!code-xml[TextBox_MiscCode#_TextChangedXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textchangedxaml)]  
+ [!code-xaml[TextBox_MiscCode#_TextChangedXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textchangedxaml)]  
   
-## 使用例  
- 変更用にモニターする <xref:System.Windows.Controls.TextBox> コントロールを含む [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の分離コード クラスでは、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> イベントの実行時に呼び出し用メソッドを挿入します。  このメソッドには、<xref:System.Windows.Controls.TextChangedEventHandler> デリゲートで想定された署名に一致する署名を含める必要があります。  
+## <a name="example"></a><span data-ttu-id="3156c-110">例</span><span class="sxs-lookup"><span data-stu-id="3156c-110">Example</span></span>  
+ <span data-ttu-id="3156c-111">分離コード クラスで、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を格納している、<xref:System.Windows.Controls.TextBox>変更については、監視するコントロールを挿入するたびに呼び出すメソッドを<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="3156c-111">In the code-behind class for the [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] that contains the <xref:System.Windows.Controls.TextBox> control that you want to monitor for changes, insert a method to call whenever the <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> event fires.</span></span>  <span data-ttu-id="3156c-112">このメソッドのシグネチャが一致で期待される必要があります、<xref:System.Windows.Controls.TextChangedEventHandler>を委任します。</span><span class="sxs-lookup"><span data-stu-id="3156c-112">This method must have a signature that matches what is expected by the <xref:System.Windows.Controls.TextChangedEventHandler> delegate.</span></span>  
   
  [!code-csharp[TextBox_MiscCode#_TextChangedEventHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml.cs#_textchangedeventhandler)]
  [!code-vb[TextBox_MiscCode#_TextChangedEventHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_textchangedeventhandler)]  
   
- イベント ハンドラーは、<xref:System.Windows.Controls.TextBox> コントロールの内容が変更されるたびにユーザーまたはプログラムによって呼び出されます。  
+ <span data-ttu-id="3156c-113">イベント ハンドラーが呼び出されるとされるたびの内容、<xref:System.Windows.Controls.TextBox>ユーザー、またはプログラムによってコントロールを変更します。</span><span class="sxs-lookup"><span data-stu-id="3156c-113">The event handler is called whenever the contents of the <xref:System.Windows.Controls.TextBox> control are changed, either by a user or programmatically.</span></span>  
   
- **メモ :** このイベントは、<xref:System.Windows.Controls.TextBox> コントロールが作成され、テキストが初めて読み込まれるときに実行されます。  
+ <span data-ttu-id="3156c-114">**注:**このイベントが発生したときに、<xref:System.Windows.Controls.TextBox>コントロールが作成し、最初にテキストを格納します。</span><span class="sxs-lookup"><span data-stu-id="3156c-114">**Note:** This event fires when the <xref:System.Windows.Controls.TextBox> control is created and initially populated with text.</span></span>  
   
- コメント  
+ <span data-ttu-id="3156c-115">コメント</span><span class="sxs-lookup"><span data-stu-id="3156c-115">Comments</span></span>  
   
-## 参照  
- <xref:System.Windows.Controls.TextChangedEventArgs>   
- [TextBox の概要](../../../../docs/framework/wpf/controls/textbox-overview.md)   
- [RichTextBox の概要](../../../../docs/framework/wpf/controls/richtextbox-overview.md)
+## <a name="see-also"></a><span data-ttu-id="3156c-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="3156c-116">See Also</span></span>  
+ <xref:System.Windows.Controls.TextChangedEventArgs>  
+ [<span data-ttu-id="3156c-117">TextBox の概要</span><span class="sxs-lookup"><span data-stu-id="3156c-117">TextBox Overview</span></span>](../../../../docs/framework/wpf/controls/textbox-overview.md)  
+ [<span data-ttu-id="3156c-118">RichTextBox の概要</span><span class="sxs-lookup"><span data-stu-id="3156c-118">RichTextBox Overview</span></span>](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

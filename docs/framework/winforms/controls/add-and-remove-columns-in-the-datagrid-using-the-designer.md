@@ -1,56 +1,56 @@
 ---
-title: "方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.DataGridViewAddColumnDialog"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "DataGridView コントロール [Windows フォーム], 追加 (列を)"
-  - "DataGridView コントロール [Windows フォーム], 削除 (列を)"
+title: "方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vs.DataGridViewAddColumnDialog
+helpviewer_keywords:
+- DataGridView control [Windows Forms], adding columns
+- DataGridView control [Windows Forms], removing columns
 ms.assetid: 9e709f35-0a8c-4e7e-b4c4-bacb7a834077
-caps.latest.revision: 17
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 71b02124dd68299552737df35163e3b766d4df73
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する
-Windows フォーム <xref:System.Windows.Forms.DataGridView> コントロールには、データを表示するための列を含める必要があります。  コントロールに手動でデータを設定する場合は、手動で列を追加する必要があります。  別の方法として、コントロールをデータ ソースにバインドすることもできます。この場合、自動的に列が生成されデータが読み込まれます。  表示する列数を超える列がデータ ソースに含まれるときは、不要な列を削除できます。  
+# <a name="how-to-add-and-remove-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a><span data-ttu-id="b59e6-102">方法 : デザイナーを使用して Windows フォーム DataGridView コントロールの列を追加および削除する</span><span class="sxs-lookup"><span data-stu-id="b59e6-102">How to: Add and Remove Columns in the Windows Forms DataGridView Control Using the Designer</span></span>
+<span data-ttu-id="b59e6-103">Windows フォーム<xref:System.Windows.Forms.DataGridView>コントロールは、データを表示するために列を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="b59e6-103">The Windows Forms <xref:System.Windows.Forms.DataGridView> control must contain columns in order to display data.</span></span> <span data-ttu-id="b59e6-104">コントロールを手動で設定する場合は、する必要があります自分自身を追加する列。</span><span class="sxs-lookup"><span data-stu-id="b59e6-104">If you plan to populate the control manually, you must add the columns yourself.</span></span> <span data-ttu-id="b59e6-105">代わりに、コントロールを生成し、列を自動的に設定するデータ ソースにバインドできます。</span><span class="sxs-lookup"><span data-stu-id="b59e6-105">Alternately, you can bind the control to a data source, which generates and populates the columns automatically.</span></span> <span data-ttu-id="b59e6-106">データ ソースを表示する数より多い列が含まれている場合は、不要な列を削除することができます。</span><span class="sxs-lookup"><span data-stu-id="b59e6-106">If the data source contains more columns than you want to display, you can remove the unwanted columns.</span></span>  
   
- 次の手順では、<xref:System.Windows.Forms.DataGridView> コントロールを含むフォームを持つ **Windows アプリケーション** プロジェクトが必要です。  このプロジェクトの設定の詳細については、「[How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)」および「[方法 : Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)」を参照してください。  
+ <span data-ttu-id="b59e6-107">次の手順が必要な**Windows アプリケーション**が含まれているフォーム プロジェクト、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="b59e6-107">The following procedures require a **Windows Application** project with a form containing a <xref:System.Windows.Forms.DataGridView> control.</span></span> <span data-ttu-id="b59e6-108">このようなプロジェクトの設定の詳細については、次を参照してください。[する方法: Windows アプリケーション プロジェクトを作成](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)と[する方法: Windows フォームにコントロールを追加](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)です。</span><span class="sxs-lookup"><span data-stu-id="b59e6-108">For information about setting up such a project, see [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa) and [How to: Add Controls to Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).</span></span>  
   
 > [!NOTE]
->  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。  設定を変更するには、**\[ツール\]** メニューの **\[設定のインポートとエクスポート\]** をクリックします。  詳細については、「[Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/ja-jp/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。  
+>  <span data-ttu-id="b59e6-109">実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="b59e6-109">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="b59e6-110">設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b59e6-110">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="b59e6-111">詳細については、「[Visual Studio での開発設定のカスタマイズ](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b59e6-111">For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).</span></span>  
   
-### デザイナーを使用して列を追加するには  
+### <a name="to-add-a-column-using-the-designer"></a><span data-ttu-id="b59e6-112">デザイナーを使用して列を追加するには</span><span class="sxs-lookup"><span data-stu-id="b59e6-112">To add a column using the designer</span></span>  
   
-1.  <xref:System.Windows.Forms.DataGridView> コントロールの右上隅にあるスマート タグ グリフ \(![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.png "VS\_WinFormSmtTagGlyph")\) をクリックして、**\[列の追加\]** を選択します。  
+1.  <span data-ttu-id="b59e6-113">スマート タグ グリフをクリックして (![スマート タグ グリフ](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) の右上隅で、<xref:System.Windows.Forms.DataGridView>を制御し、**列の追加**です。</span><span class="sxs-lookup"><span data-stu-id="b59e6-113">Click the smart tag glyph (![Smart Tag Glyph](../../../../docs/framework/winforms/controls/media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) on the upper-right corner of the <xref:System.Windows.Forms.DataGridView> control, and then select **Add Column**.</span></span>  
   
-2.  **\[列の追加\]** ダイアログ ボックスで、**\[データバインド列\]** を選択し、データ ソースの列を選択します。または、**\[非バインド列\]** を選択し、提供されたフィールドを使用して列を定義します。  
+2.  <span data-ttu-id="b59e6-114">**列の追加** ダイアログ ボックスで、選択、**データ バインド列**オプションし、データ ソースから列を選択するかを選択して、**非バインド列**オプションし、列の定義指定されたフィールドを使用します。</span><span class="sxs-lookup"><span data-stu-id="b59e6-114">In the **Add Column** dialog box, choose the **Databound Column** option and select a column from the data source, or choose the **Unbound Column** option and define the column using the fields provided.</span></span>  
   
-3.  **\[追加\]** をクリックして列を追加します。既存の列がコントロールの表示領域いっぱいに表示されていない場合は、追加した列がデザイナーに表示されます。  
+3.  <span data-ttu-id="b59e6-115">クリックして、**追加**を既存の列は既に埋まらない場合コントロールの表示領域に、デザイナーに表示する列を追加するボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b59e6-115">Click the **Add** button to add the column, causing it to appear in the designer if the existing columns do not already fill the control display area.</span></span>  
   
     > [!NOTE]
-    >  列のプロパティは、コントロールのスマート タグからアクセスできる **\[列の編集\]** ダイアログ ボックスで変更できます。  
+    >  <span data-ttu-id="b59e6-116">列のプロパティを変更することができます、**列の編集** ダイアログ ボックスは、コントロールのスマート タグからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="b59e6-116">You can modify column properties in the **Edit Columns** dialog box, which you can access from the control's smart tag.</span></span>  
   
-### デザイナーを使用して列を削除するには  
+### <a name="to-remove-a-column-using-the-designer"></a><span data-ttu-id="b59e6-117">デザイナーを使用して列を削除するには</span><span class="sxs-lookup"><span data-stu-id="b59e6-117">To remove a column using the designer</span></span>  
   
-1.  コントロールのスマート タグの **\[列の編集\]** をクリックします。  
+1.  <span data-ttu-id="b59e6-118">選択**列の編集**コントロールのスマート タグからです。</span><span class="sxs-lookup"><span data-stu-id="b59e6-118">Choose **Edit Columns** from the control's smart tag.</span></span>  
   
-2.  **\[選択された列\]** ボックスの一覧で列を選択します。  
+2.  <span data-ttu-id="b59e6-119">列を選択して、**選択されている列** ボックスの一覧です。</span><span class="sxs-lookup"><span data-stu-id="b59e6-119">Select a column from the **Selected Columns** list.</span></span>  
   
-3.  **\[削除\]** をクリックして列を削除します。削除した列がデザイナーに表示されなくなります。  
+3.  <span data-ttu-id="b59e6-120">をクリックして、**削除**ボタンに、デザイナーに表示されなくなった原因の列を削除します。</span><span class="sxs-lookup"><span data-stu-id="b59e6-120">Click the **Remove** button to delete the column, causing it to disappear from the designer.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
- [How to: Create a Windows Application Project](http://msdn.microsoft.com/ja-jp/b2f93fed-c635-4705-8d0e-cf079a264efa)   
- [方法 : Windows フォームにコントロールを追加する](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="b59e6-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="b59e6-121">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ [<span data-ttu-id="b59e6-122">方法: Windows アプリケーション プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="b59e6-122">How to: Create a Windows Application Project</span></span>](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa)  
+ [<span data-ttu-id="b59e6-123">方法: Windows フォームにコントロールを追加する</span><span class="sxs-lookup"><span data-stu-id="b59e6-123">How to: Add Controls to Windows Forms</span></span>](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md)

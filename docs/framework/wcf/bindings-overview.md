@@ -1,66 +1,68 @@
 ---
-title: "Windows Communication Foundation のバインディングの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "バインディング [WCF], 概要"
+title: "Windows Communication Foundation のバインディングの概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: a131574e0e3de8507a91807d5de2899238c14628
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Windows Communication Foundation のバインディングの概要
-バインディングとは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスのエンドポイントへの接続に必要な通信の詳細設定を指定する際に使用するオブジェクトのことです。  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの各エンドポイントでは、バインディングを適切に指定する必要があります。  ここでは、バインディングによって定義される通信の詳細設定、バインディングの要素、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に用意されているバインディング、およびエンドポイントにバインディングを指定する方法について説明します。  
+# <a name="windows-communication-foundation-bindings-overview"></a><span data-ttu-id="d6b68-102">Windows Communication Foundation のバインディングの概要</span><span class="sxs-lookup"><span data-stu-id="d6b68-102">Windows Communication Foundation Bindings Overview</span></span>
+<span data-ttu-id="d6b68-103">バインディングとは、[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] サービスのエンドポイントへの接続に必要な通信の詳細設定を指定する際に使用するオブジェクトのことです。</span><span class="sxs-lookup"><span data-stu-id="d6b68-103">Bindings are objects that are used to specify the communication details that are required to connect to the endpoint of a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service.</span></span> <span data-ttu-id="d6b68-104">[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスの各エンドポイントでは、バインディングを適切に指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d6b68-104">Each endpoint in a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service requires a binding to be well-specified.</span></span> <span data-ttu-id="d6b68-105">ここでは、バインディングによって定義される通信の詳細設定、バインディングの要素、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に用意されているバインディング、およびエンドポイントにバインディングを指定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d6b68-105">This topic outlines the types of communication details that the bindings define, the elements of a binding, what bindings are included in [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], and how a binding can be specified for an endpoint.</span></span>  
   
-## バインディングの定義内容  
- バインディングの情報は非常に基本的にも複雑にもなりえます。  最も基本的なバインディングはトランスポート プロトコル \(HTTP など\) のみを指定したもので、これはエンドポイントへの接続に必ず使用します。  一般的に、バインディングに含まれるエンドポイントへの接続方法を示す情報は、次のカテゴリのいずれかに当てはまります。  
+## <a name="what-a-binding-defines"></a><span data-ttu-id="d6b68-106">バインディングの定義内容</span><span class="sxs-lookup"><span data-stu-id="d6b68-106">What a Binding Defines</span></span>  
+ <span data-ttu-id="d6b68-107">バインディングの情報は非常に基本的にも複雑にもなりえます。</span><span class="sxs-lookup"><span data-stu-id="d6b68-107">The information in a binding can be very basic, or very complex.</span></span> <span data-ttu-id="d6b68-108">最も基本的なバインディングはトランスポート プロトコル (HTTP など) のみを指定したもので、これはエンドポイントへの接続に必ず使用します。</span><span class="sxs-lookup"><span data-stu-id="d6b68-108">The most basic binding specifies only the transport protocol (such as HTTP) that must be used to connect to the endpoint.</span></span> <span data-ttu-id="d6b68-109">一般的に、バインディングに含まれるエンドポイントへの接続方法を示す情報は、次のカテゴリのいずれかに当てはまります。</span><span class="sxs-lookup"><span data-stu-id="d6b68-109">More generally, the information a binding contains about how to connect to an endpoint falls into one of the following categories.</span></span>  
   
- プロトコル  
- 使用されているセキュリティ機構 \(信頼性の高いメッセージング機能またはトランザクション コンテキストのフロー設定のいずれか\) を決定します。  
+ <span data-ttu-id="d6b68-110">プロトコル</span><span class="sxs-lookup"><span data-stu-id="d6b68-110">Protocols</span></span>  
+ <span data-ttu-id="d6b68-111">使用されているセキュリティ機構 (信頼性の高いメッセージング機能またはトランザクション コンテキストのフロー設定のいずれか) を決定します。</span><span class="sxs-lookup"><span data-stu-id="d6b68-111">Determines the security mechanism being used: either reliable messaging capability or transaction context flow settings.</span></span>  
   
- エンコーディング  
- メッセージ エンコーディング \(テキストまたはバイナリなど\) を決定します。  
+ <span data-ttu-id="d6b68-112">エンコーディング</span><span class="sxs-lookup"><span data-stu-id="d6b68-112">Encoding</span></span>  
+ <span data-ttu-id="d6b68-113">メッセージ エンコーディング (テキストまたはバイナリなど) を決定します。</span><span class="sxs-lookup"><span data-stu-id="d6b68-113">Determines the message encoding (for example, text or binary).</span></span>  
   
- Transport  
- 使用する基本のトランスポート プロトコル \(TCP や HTTP など\) を決定します。  
+ <span data-ttu-id="d6b68-114">Transport</span><span class="sxs-lookup"><span data-stu-id="d6b68-114">Transport</span></span>  
+ <span data-ttu-id="d6b68-115">使用する基本のトランスポート プロトコル (TCP や HTTP など) を決定します。</span><span class="sxs-lookup"><span data-stu-id="d6b68-115">Determines the underlying transport protocol to use (for example, TCP or HTTP).</span></span>  
   
-## バインディングの要素  
- バインディングは、基本的に、バインド要素の順序付きスタックで構成されます。各バインド要素では、サービス エンドポイントに接続するために必要な通信情報の一部を指定します。  スタックの 2 つの最も低い層は両方とも必須です。  スタックの一番下にトランスポート バインド要素があり、そのすぐ上にメッセージ エンコーディング仕様を含んだ要素があります。  その他の通信プロトコルを指定するオプションのバインド要素は、この 2 つの必須要素の上に配置されます。  これらのバインド要素とその正確な順序[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[カスタム バインディング](../../../docs/framework/wcf/extending/custom-bindings.md)」を参照してください。  
+## <a name="the-elements-of-a-binding"></a><span data-ttu-id="d6b68-116">バインディングの要素</span><span class="sxs-lookup"><span data-stu-id="d6b68-116">The Elements of a Binding</span></span>  
+ <span data-ttu-id="d6b68-117">バインディングは、基本的に、バインド要素の順序付きスタックで構成されます。各バインド要素では、サービス エンドポイントに接続するために必要な通信情報の一部を指定します。</span><span class="sxs-lookup"><span data-stu-id="d6b68-117">A binding basically consists of an ordered stack of binding elements, each of which specifies part of the communication information required to connect to a service endpoint.</span></span> <span data-ttu-id="d6b68-118">スタックの 2 つの最も低い層は両方とも必須です。</span><span class="sxs-lookup"><span data-stu-id="d6b68-118">The two lowest layers in the stack are both required.</span></span> <span data-ttu-id="d6b68-119">スタックの一番下にトランスポート バインド要素があり、そのすぐ上にメッセージ エンコーディング仕様を含んだ要素があります。</span><span class="sxs-lookup"><span data-stu-id="d6b68-119">At the base of the stack is the transport binding element and just above this is the element that contains the message encoding specifications.</span></span> <span data-ttu-id="d6b68-120">その他の通信プロトコルを指定するオプションのバインド要素は、この 2 つの必須要素の上に配置されます。</span><span class="sxs-lookup"><span data-stu-id="d6b68-120">The optional binding elements that specify the other communication protocols are layered above these two required elements.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="d6b68-121">これらのバインド要素と、正しい順序に基づいてを参照してください。[カスタム バインディング](../../../docs/framework/wcf/extending/custom-bindings.md)です。</span><span class="sxs-lookup"><span data-stu-id="d6b68-121"> these binding elements and their correct ordering, see [Custom Bindings](../../../docs/framework/wcf/extending/custom-bindings.md).</span></span>  
   
-## システム標準のバインディング  
- バインディングの情報は複雑になる可能性があり、一部の設定は他の設定と互換性がない場合もあります。  このため、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、システム指定のバインディングが用意されています。  このバインディングは、アプリケーション要件のほとんどに対応するように設計されています。  システム指定のバインディングの例のいくつかを次のクラスで示します。  
+## <a name="system-provided-bindings"></a><span data-ttu-id="d6b68-122">システム標準のバインディング</span><span class="sxs-lookup"><span data-stu-id="d6b68-122">System-Provided Bindings</span></span>  
+ <span data-ttu-id="d6b68-123">バインディングの情報は複雑になる可能性があり、一部の設定は他の設定と互換性がない場合もあります。</span><span class="sxs-lookup"><span data-stu-id="d6b68-123">The information in a binding can be complex, and some settings may not be compatible with others.</span></span> <span data-ttu-id="d6b68-124">このため、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] には、システム指定のバインディングが用意されています。</span><span class="sxs-lookup"><span data-stu-id="d6b68-124">For this reason, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] includes a set of system-provided bindings.</span></span> <span data-ttu-id="d6b68-125">このバインディングは、アプリケーション要件のほとんどに対応するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="d6b68-125">These bindings are designed to cover most application requirements.</span></span> <span data-ttu-id="d6b68-126">システム指定のバインディングの例のいくつかを次のクラスで示します。</span><span class="sxs-lookup"><span data-stu-id="d6b68-126">The following classes represent some examples of system-provided bindings:</span></span>  
   
--   <xref:System.ServiceModel.BasicHttpBinding> : WS\-I Basic Profile 仕様に準拠する Web サービス \(ASP.NET Web サービス ベースのサービスなど\) への接続に適した HTTP プロトコル バインディング。  
+-   <span data-ttu-id="d6b68-127"><xref:System.ServiceModel.BasicHttpBinding> : WS-I Basic Profile 仕様に準拠する Web サービス (ASP.NET Web サービス ベースのサービスなど) への接続に適した HTTP プロトコル バインディング。</span><span class="sxs-lookup"><span data-stu-id="d6b68-127"><xref:System.ServiceModel.BasicHttpBinding>: An HTTP protocol binding suitable for connecting to Web services that conforms to the WS-I Basic Profile specification (for example, ASP.NET Web services-based services).</span></span>  
   
--   <xref:System.ServiceModel.WSHttpBinding> : WS\-\* プロトコルに準拠するエンドポイントへの接続に適した相互運用可能なバインディング。  
+-   <span data-ttu-id="d6b68-128"><xref:System.ServiceModel.WSHttpBinding> : WS-* プロトコルに準拠するエンドポイントへの接続に適した相互運用可能なバインディング。</span><span class="sxs-lookup"><span data-stu-id="d6b68-128"><xref:System.ServiceModel.WSHttpBinding>: An interoperable binding suitable for connecting to endpoints that conform to the WS-* protocols.</span></span>  
   
--   <xref:System.ServiceModel.NetNamedPipeBinding> : 同じコンピューター上の他の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] エンドポイントへの接続に [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] を使用するバインディング。  
+-   <span data-ttu-id="d6b68-129"><xref:System.ServiceModel.NetNamedPipeBinding> : 同じコンピューター上の他の [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] エンドポイントへの接続に [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用するバインディング。</span><span class="sxs-lookup"><span data-stu-id="d6b68-129"><xref:System.ServiceModel.NetNamedPipeBinding>: Uses the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] to connect to other [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] endpoints on the same machine.</span></span>  
   
--   <xref:System.ServiceModel.NetMsmqBinding> : キューに置かれたメッセージと他の [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] エンドポイントとの接続を作成するために [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] を使用するバインディング。  
+-   <span data-ttu-id="d6b68-130"><xref:System.ServiceModel.NetMsmqBinding> : キューに置かれたメッセージと他の [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] エンドポイントとの接続を作成するために [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] を使用するバインディング。</span><span class="sxs-lookup"><span data-stu-id="d6b68-130"><xref:System.ServiceModel.NetMsmqBinding>: Uses the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] to create queued message connections with other [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] endpoints.</span></span>  
   
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] 指定のバインディングの完全な一覧と説明については、「[システム標準のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)」を参照してください。  
+ <span data-ttu-id="d6b68-131">すべての説明を含む、完全な一覧について、 [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]-バインド」を参照してください提供[システム指定のバインディング](../../../docs/framework/wcf/system-provided-bindings.md)です。</span><span class="sxs-lookup"><span data-stu-id="d6b68-131">For a complete list, with descriptions, of all the [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]-provided bindings, see [System-Provided Bindings](../../../docs/framework/wcf/system-provided-bindings.md).</span></span>  
   
-## 独自のバインディングの使用  
- システム指定のバインディングに、サービス アプリケーションに必要な正しい組み合わせの機能がない場合、独自のバインディングを作成できます。  これには、2 つの方法があります。  <xref:System.ServiceModel.Channels.CustomBinding> オブジェクトを使用して既存のバインド要素から新しいバインディングを作成するか、<xref:System.ServiceModel.Channels.Binding> バインディングから派生することによって完全にユーザー定義のバインディングを作成することができます。  これら 2 つの方法で独自のバインディングを作成する手順[!INCLUDE[crabout](../../../includes/crabout-md.md)]、「[カスタム バインディング](../../../docs/framework/wcf/extending/custom-bindings.md)」および「[ユーザー定義バインディングの作成](../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)」を参照してください。  
+## <a name="using-your-own-bindings"></a><span data-ttu-id="d6b68-132">独自のバインディングの使用</span><span class="sxs-lookup"><span data-stu-id="d6b68-132">Using Your Own Bindings</span></span>  
+ <span data-ttu-id="d6b68-133">システム指定のバインディングに、サービス アプリケーションに必要な正しい組み合わせの機能がない場合、独自のバインディングを作成できます。</span><span class="sxs-lookup"><span data-stu-id="d6b68-133">If none of the system-provided bindings included has the right combination of features that a service application requires, you can create your own binding.</span></span> <span data-ttu-id="d6b68-134">これには、2 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="d6b68-134">There are two ways to do this.</span></span> <span data-ttu-id="d6b68-135"><xref:System.ServiceModel.Channels.CustomBinding> オブジェクトを使用して既存のバインド要素から新しいバインディングを作成するか、<xref:System.ServiceModel.Channels.Binding> バインディングから派生することによって完全にユーザー定義のバインディングを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="d6b68-135">You can either create a new binding from pre-existing binding elements using a <xref:System.ServiceModel.Channels.CustomBinding> object or you can create a completely user-defined binding by deriving from the <xref:System.ServiceModel.Channels.Binding> binding.</span></span> [!INCLUDE[crabout](../../../includes/crabout-md.md)]<span data-ttu-id="d6b68-136">独自の作成をこれら 2 つの方法を使用したバインディングを参照してください[カスタム バインディング](../../../docs/framework/wcf/extending/custom-bindings.md)と[ユーザー定義バインディング](../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)です。</span><span class="sxs-lookup"><span data-stu-id="d6b68-136"> creating your own binding using these two approaches, see [Custom Bindings](../../../docs/framework/wcf/extending/custom-bindings.md) and [Creating User-Defined Bindings](../../../docs/framework/wcf/extending/creating-user-defined-bindings.md).</span></span>  
   
-## バインディングの使用  
- バインディングを使用する際には、次の 2 つの基本手順があります。  
+## <a name="using-bindings"></a><span data-ttu-id="d6b68-137">バインディングの使用</span><span class="sxs-lookup"><span data-stu-id="d6b68-137">Using Bindings</span></span>  
+ <span data-ttu-id="d6b68-138">バインディングを使用する際には、次の 2 つの基本手順があります。</span><span class="sxs-lookup"><span data-stu-id="d6b68-138">Using bindings entails two basic steps:</span></span>  
   
-1.  バインディングを選択、または定義します。  最も簡単な方法は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に用意されているシステム指定のバインディングを 1 つ選択し、それを既定の設定で使用することです。  また、システム指定のバインディングを選択し、そのプロパティを要件に適した値に再設定することもできます。  別の方法として、カスタム バインディングまたはユーザー定義バインディングを作成し、より高度な制御とカスタマイズを実現することができます。  
+1.  <span data-ttu-id="d6b68-139">バインディングを選択、または定義します。</span><span class="sxs-lookup"><span data-stu-id="d6b68-139">Select or define a binding.</span></span> <span data-ttu-id="d6b68-140">最も簡単な方法は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] に用意されているシステム指定のバインディングを 1 つ選択し、それを既定の設定で使用することです。</span><span class="sxs-lookup"><span data-stu-id="d6b68-140">The easiest method is to choose one of the system-provided bindings included with [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] and use it with its default settings.</span></span> <span data-ttu-id="d6b68-141">また、システム指定のバインディングを選択し、そのプロパティを要件に適した値に再設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="d6b68-141">You can also choose a system-provided binding and reset its property values to suit your requirements.</span></span> <span data-ttu-id="d6b68-142">別の方法として、カスタム バインディングまたはユーザー定義バインディングを作成し、より高度な制御とカスタマイズを実現することができます。</span><span class="sxs-lookup"><span data-stu-id="d6b68-142">Alternatively, you can create a custom binding or a user-defined binding to have higher degrees of control and customization.</span></span>  
   
-2.  選択または定義されたバインディングを使用するエンドポイントを作成します。  
+2.  <span data-ttu-id="d6b68-143">選択または定義されたバインディングを使用するエンドポイントを作成します。</span><span class="sxs-lookup"><span data-stu-id="d6b68-143">Create an endpoint that uses the binding selected or defined.</span></span>  
   
-## コードおよび構成  
- バインディングを定義するには、コードによる方法と構成による方法の 2 とおりがあります。  この 2 つの方法は、システム指定またはカスタムのどちらのバインディングを使用している場合でも有効です。  一般的には、コードを使用すると、開発者がデザイン時にバインディングの定義を完全に制御することになります。  一方、構成を使用する場合は、システム管理者や、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスまたはクライアントのユーザーが、サービス アプリケーションをコンパイルし直すことなくバインディングのパラメーターを変更できます。  通常は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションの展開先の具体的なコンピューター要件を予測する方法がないため、柔軟性のあるこの方法が望まれます。  バインディング情報とアドレス情報をコードに含めないでおくと、これらの情報を変更したときにアプリケーションを再度コンパイルしたり、展開したりする必要がなくなります。  コードで定義したバインディングは、構成で指定したバインディングの後に作成されます。そのため、構成で定義したバインディングはコードで定義したバインディングによって上書きされることに注意してください。  
+## <a name="code-and-configuration"></a><span data-ttu-id="d6b68-144">コードおよび構成</span><span class="sxs-lookup"><span data-stu-id="d6b68-144">Code and Configuration</span></span>  
+ <span data-ttu-id="d6b68-145">バインディングを定義するには、コードによる方法と構成による方法の 2 とおりがあります。</span><span class="sxs-lookup"><span data-stu-id="d6b68-145">You can define bindings in two ways: through code or through configuration.</span></span> <span data-ttu-id="d6b68-146">この 2 つの方法は、システム指定またはカスタムのどちらのバインディングを使用している場合でも有効です。</span><span class="sxs-lookup"><span data-stu-id="d6b68-146">These two approaches do not depend on whether you are using a system-provided binding or a custom binding.</span></span> <span data-ttu-id="d6b68-147">一般的には、コードを使用すると、開発者がデザイン時にバインディングの定義を完全に制御することになります。</span><span class="sxs-lookup"><span data-stu-id="d6b68-147">In general, using code gives you complete control over the definition of a binding at design time.</span></span> <span data-ttu-id="d6b68-148">一方、構成を使用する場合は、システム管理者や、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] サービスまたはクライアントのユーザーが、サービス アプリケーションをコンパイルし直すことなくバインディングのパラメーターを変更できます。</span><span class="sxs-lookup"><span data-stu-id="d6b68-148">Using configuration, on the other hand, allows a system administrator or the user of a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service or client to change the parameters of a binding without having to recompile the service application.</span></span> <span data-ttu-id="d6b68-149">通常は、[!INCLUDE[indigo2](../../../includes/indigo2-md.md)] アプリケーションの展開先の具体的なコンピューター要件を予測する方法がないため、柔軟性のあるこの方法が望まれます。</span><span class="sxs-lookup"><span data-stu-id="d6b68-149">This flexibility is often desirable because there is no way to predict specific machine requirements on which a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] application is to be deployed.</span></span> <span data-ttu-id="d6b68-150">バインディング情報とアドレス情報をコードに含めないでおくと、これらの情報を変更したときにアプリケーションを再度コンパイルしたり、展開したりする必要がなくなります。</span><span class="sxs-lookup"><span data-stu-id="d6b68-150">Keeping the binding (and the addressing) information out of the code allows them to change without requiring recompilation or redeployment of the application.</span></span> <span data-ttu-id="d6b68-151">コードで定義したバインディングは、構成で指定したバインディングの後に作成されます。そのため、構成で定義したバインディングはコードで定義したバインディングによって上書きされることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="d6b68-151">Note that bindings defined in code are created after bindings specified in configuration, allowing the code-defined bindings to overwrite any configuration-defined bindings.</span></span>  
   
-## 参照  
- [サービスとクライアントを構成するためのバインディングの使用](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+## <a name="see-also"></a><span data-ttu-id="d6b68-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="d6b68-152">See Also</span></span>  
+ [<span data-ttu-id="d6b68-153">サービスとクライアントを構成するためのバインディングの使用</span><span class="sxs-lookup"><span data-stu-id="d6b68-153">Using Bindings to Configure Services and Clients</span></span>](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)

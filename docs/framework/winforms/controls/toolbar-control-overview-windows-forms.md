@@ -1,47 +1,47 @@
 ---
-title: "ToolBar コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ToolBar"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "ToolBar コントロール [Windows フォーム], ToolBar コントロールの概要"
-  - "ツール バー [Windows フォーム], ツール バーの概要"
+title: "ToolBar コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: ToolBar
+helpviewer_keywords:
+- toolbars [Windows Forms], about toolbars
+- ToolBar control [Windows Forms], about ToolBar controls
 ms.assetid: d426b203-0216-4dbe-b834-1641e50a9c29
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 13
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 857cc04af6c619035fa2bf0a548053f57292f7bc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# ToolBar コントロールの概要 (Windows フォーム)
+# <a name="toolbar-control-overview-windows-forms"></a><span data-ttu-id="20ddc-102">ToolBar コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="20ddc-102">ToolBar Control Overview (Windows Forms)</span></span>
 > [!NOTE]
->  <xref:System.Windows.Forms.ToolStrip> コントロールは、<xref:System.Windows.Forms.ToolBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.ToolBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  
+>  <span data-ttu-id="20ddc-103"><xref:System.Windows.Forms.ToolStrip> コントロールは、<xref:System.Windows.Forms.ToolBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.ToolBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。</span><span class="sxs-lookup"><span data-stu-id="20ddc-103">The <xref:System.Windows.Forms.ToolStrip> control replaces and adds functionality to the <xref:System.Windows.Forms.ToolBar> control; however, the <xref:System.Windows.Forms.ToolBar> control is retained for both backward compatibility and future use, if you choose.</span></span>  
   
- Windows フォームの <xref:System.Windows.Forms.ToolBar> コントロールは、一連のドロップダウン メニューやコマンド実行用のビットマップ ボタンを表示する、フォーム上のコントロール バーとして使用します。  ツール バーのボタンをクリックして、メニュー コマンドを選択するのと同じ操作ができます。  ボタンは、プッシュ ボタン、ドロップダウン メニュー、または区切り記号として機能するように設定できます。  通常、ツール バーのボタンとメニューは、アプリケーションのメニュー構造の項目に対応し、使用頻度の高い関数やコマンドをすばやく実行します。  
+ <span data-ttu-id="20ddc-104">Windows フォーム <xref:System.Windows.Forms.ToolBar> コントロールは、コマンドをアクティブ化するドロップダウン メニューとビットマップのボタンの行を表示するコントロール バーとしてフォームを使用します。</span><span class="sxs-lookup"><span data-stu-id="20ddc-104">The Windows Forms <xref:System.Windows.Forms.ToolBar> control is used on forms as a control bar that displays a row of drop-down menus and bitmapped buttons that activate commands.</span></span> <span data-ttu-id="20ddc-105">そのため、ツールバー ボタンをクリックすることは、メニュー コマンドを選択することと同じです。</span><span class="sxs-lookup"><span data-stu-id="20ddc-105">Thus, clicking a toolbar button can be an equivalent to choosing a menu command.</span></span> <span data-ttu-id="20ddc-106">ボタンは、プッシュ ボタン、ドロップダウン メニュー、または区切りとして表示して機能するように構成できます。</span><span class="sxs-lookup"><span data-stu-id="20ddc-106">The buttons can be configured to appear and behave as pushbuttons, drop-down menus, or separators.</span></span> <span data-ttu-id="20ddc-107">通常、ツールバーには、アプリケーションのメニュー構造の項目に対応するボタンとメニューが含まれ、アプリケーションで最も頻繁に使用される関数やコマンドにすばやくアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="20ddc-107">Typically, a toolbar contains buttons and menus that correspond to items in an application's menu structure, providing quick access to an application's most frequently used functions and commands.</span></span>  
   
-## ToolBar コントロールの操作  
- <xref:System.Windows.Forms.ToolBar> コントロールは、通常は親ウィンドウの上部に沿って "ドッキング" されますが、ウィンドウの上下左右のどこにでもドッキングできます。  ツール バーには、ユーザーがツール バー ボタンをマウス ポインターでポイントしたときに表示されるツール ヒントを実装できます。  ツール ヒントは、ボタンまたはメニューの用途を簡潔に説明するための、小さなポップアップ ウィンドウです。  ツールヒントを表示するには、<xref:System.Windows.Forms.ToolBar.ShowToolTips%2A> プロパティに `true` を設定します。  
+## <a name="working-with-the-toolbar-control"></a><span data-ttu-id="20ddc-108">ToolBar コントロールの操作</span><span class="sxs-lookup"><span data-stu-id="20ddc-108">Working with the ToolBar Control</span></span>  
+ <span data-ttu-id="20ddc-109">A<xref:System.Windows.Forms.ToolBar>コントロールは、通常「ドッキング」、その親ウィンドウの上部にあるが、ウィンドウの任意の辺にもドッキングできます。</span><span class="sxs-lookup"><span data-stu-id="20ddc-109">A <xref:System.Windows.Forms.ToolBar> control is usually "docked" along the top of its parent window, but it can also be docked to any side of the window.</span></span> <span data-ttu-id="20ddc-110">ツール バー ボタンをマウス ポインターでポイントすると、ツールヒントが表示されます。</span><span class="sxs-lookup"><span data-stu-id="20ddc-110">A toolbar can display tooltips when the user points the mouse pointer at a toolbar button.</span></span> <span data-ttu-id="20ddc-111">ツールヒントは、ボタンやメニューの目的を簡単に説明する小さなポップアップ ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="20ddc-111">A ToolTip is a small pop-up window that briefly describes the button or menu's purpose.</span></span> <span data-ttu-id="20ddc-112">ツールヒントを表示する、<xref:System.Windows.Forms.ToolBar.ShowToolTips%2A>プロパティに設定する必要があります`true`です。</span><span class="sxs-lookup"><span data-stu-id="20ddc-112">To display ToolTips, the <xref:System.Windows.Forms.ToolBar.ShowToolTips%2A> property must be set to `true`.</span></span>  
   
 > [!NOTE]
->  一部のアプリケーションには、アプリケーション ウィンドウの上部に "浮遊" していて位置を変更できる、ツール バーによく似たコントロールがあります。  Windows フォームの ToolBar コントロールは、位置を変更できません。  
+>  <span data-ttu-id="20ddc-113">特定のアプリケーション機能のコントロールは、アプリケーション ウィンドウの上に "フローティング" して位置変更できるツールバーとよく似ています。</span><span class="sxs-lookup"><span data-stu-id="20ddc-113">Certain applications feature controls very similar to the toolbar that have the ability to "float" above the application window and be repositioned.</span></span> <span data-ttu-id="20ddc-114">Windows フォームのツール バー コントロールでは、このような操作を実行できません。</span><span class="sxs-lookup"><span data-stu-id="20ddc-114">The Windows Forms ToolBar control is not able to do these actions.</span></span>  
   
- <xref:System.Windows.Forms.ToolBar.Appearance%2A> プロパティに [Normal](frlrfSystemWindowsFormsToolBarAppearanceClassTopic) を設定すると、ツール バー ボタンが立体的に表示されます。  ツール バーの <xref:System.Windows.Forms.ToolBar.Appearance%2A> プロパティに <xref:System.Windows.Forms.ToolBarAppearance> を設定すると、ツール バーとボタンが平面的に表示されます。  平面表示されたボタンの上にマウス ポインターが置かれると、ボタンが立体的に表示されます。  ツール バー ボタンは、区切り記号で論理的なグループに分類できます。  区切り記号は、<xref:System.Windows.Forms.ToolBarButton.Style%2A> プロパティに [Separator](frlrfSystemWindowsFormsToolBarButtonStyleClassTopic) を設定したツール バー ボタンです。  ツール バー上では空の領域として表示されます。  ツール バーが平面表示されているときは、ボタン区切り記号は空の領域ではなく線で表示されます。  
+ <span data-ttu-id="20ddc-115">ときに、<xref:System.Windows.Forms.ToolBar.Appearance%2A>プロパティに設定されている<xref:System.Windows.Forms.ToolBarAppearance>、発生し、3 次元、ツールバーのボタンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="20ddc-115">When the <xref:System.Windows.Forms.ToolBar.Appearance%2A> property is set to <xref:System.Windows.Forms.ToolBarAppearance>, the toolbar buttons appear raised and three-dimensional.</span></span> <span data-ttu-id="20ddc-116">設定することができます、<xref:System.Windows.Forms.ToolBar.Appearance%2A>ツールバーのプロパティ<xref:System.Windows.Forms.ToolBarAppearance>ツールバーとそのボタンの外観フラットです。</span><span class="sxs-lookup"><span data-stu-id="20ddc-116">You can set the <xref:System.Windows.Forms.ToolBar.Appearance%2A> property of the toolbar to <xref:System.Windows.Forms.ToolBarAppearance> to give the toolbar and its buttons a flat appearance.</span></span> <span data-ttu-id="20ddc-117">フラットなボタンにマウス ポインターを置くと、ボタンは 3 次元表示に変わります。</span><span class="sxs-lookup"><span data-stu-id="20ddc-117">When the mouse pointer moves over a flat button, the button's appearance changes to three-dimensional.</span></span> <span data-ttu-id="20ddc-118">ツール バー ボタンは、区切りを使用すると論理グループに分けることができます。</span><span class="sxs-lookup"><span data-stu-id="20ddc-118">Toolbar buttons can be divided into logical groups by using separators.</span></span> <span data-ttu-id="20ddc-119">区切り記号がツール バー ボタンで、<xref:System.Windows.Forms.ToolBarButton.Style%2A>プロパティに設定<xref:System.Windows.Forms.ToolBarButtonStyle>です。</span><span class="sxs-lookup"><span data-stu-id="20ddc-119">A separator is a toolbar button with the <xref:System.Windows.Forms.ToolBarButton.Style%2A> property set to <xref:System.Windows.Forms.ToolBarButtonStyle>.</span></span> <span data-ttu-id="20ddc-120">区切りは、ツール バー上の空スペースとして表示されます。</span><span class="sxs-lookup"><span data-stu-id="20ddc-120">It appears as empty space on the toolbar.</span></span> <span data-ttu-id="20ddc-121">ツール バーはフラットに表示され、ボタンの区切りは、ボタンの間にスペースを入れて表示されるのではなく線として表示されます。</span><span class="sxs-lookup"><span data-stu-id="20ddc-121">When the toolbar has a flat appearance, button separators appear as lines rather than spaces between the buttons.</span></span>  
   
- <xref:System.Windows.Forms.ToolBar> コントロールでは、<xref:System.Windows.Forms.Button> オブジェクトを <xref:System.Windows.Forms.ToolBar.Buttons%2A> コレクションに追加することにより、ツール バーを作成できます。  ボタンを <xref:System.Windows.Forms.ToolBar> コントロールに追加するときには、コレクション エディターを使用できます。各 <xref:System.Windows.Forms.Button> オブジェクトには、テキストまたはイメージを割り当てます \(両方を割り当てることもできます\)。  イメージは、関連付けられた [ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) コンポーネントによって提供されます。  実行時に <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Add%2A> メソッドや <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Remove%2A> メソッドを使用して、<xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection> にボタンを登録したり、登録済みのボタンを削除したりできます。  <xref:System.Windows.Forms.ToolBar> のボタンをプログラミングするには、<xref:System.Windows.Forms.ToolBar> の <xref:System.Windows.Forms.ToolBar.ButtonClick> イベントにコードを追加します。クリックされたボタンの判別には、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs> クラスの <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A> プロパティを使用します。  
+ <span data-ttu-id="20ddc-122"><xref:System.Windows.Forms.ToolBar>コントロールでは、ツールバーを追加することで作成できます。<xref:System.Windows.Forms.Button>オブジェクトを、<xref:System.Windows.Forms.ToolBar.Buttons%2A>コレクション。</span><span class="sxs-lookup"><span data-stu-id="20ddc-122">The <xref:System.Windows.Forms.ToolBar> control allows you to create toolbars by adding <xref:System.Windows.Forms.Button> objects to a <xref:System.Windows.Forms.ToolBar.Buttons%2A> collection.</span></span> <span data-ttu-id="20ddc-123">ボタンを追加するコレクション エディターを使用することができます、<xref:System.Windows.Forms.ToolBar>コントロール; 各<xref:System.Windows.Forms.Button>オブジェクトがテキストまたはイメージが割り当てられて、両方を割り当てることはできます。</span><span class="sxs-lookup"><span data-stu-id="20ddc-123">You can use the Collection Editor to add buttons to a <xref:System.Windows.Forms.ToolBar> control; each <xref:System.Windows.Forms.Button> object should have text or an image assigned, although you can assign both.</span></span> <span data-ttu-id="20ddc-124">イメージは、関連付けられた [ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) コンポーネントから取得されます。</span><span class="sxs-lookup"><span data-stu-id="20ddc-124">The image is supplied by an associated [ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md) component.</span></span> <span data-ttu-id="20ddc-125">実行時に、追加または削除できますからボタン、<xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection>を使用して、<xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Add%2A>と<xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Remove%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="20ddc-125">At run time, you can add or remove buttons from the <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection> using the <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Add%2A> and <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Remove%2A> methods.</span></span> <span data-ttu-id="20ddc-126">プログラムのボタンを<xref:System.Windows.Forms.ToolBar>、コードを追加、<xref:System.Windows.Forms.ToolBar.ButtonClick>のイベント、<xref:System.Windows.Forms.ToolBar>を使用して、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A>のプロパティ、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs>クリックしてされたボタンを決めるクラスをします。</span><span class="sxs-lookup"><span data-stu-id="20ddc-126">To program the buttons of a <xref:System.Windows.Forms.ToolBar>, add code to the <xref:System.Windows.Forms.ToolBar.ButtonClick> events of the <xref:System.Windows.Forms.ToolBar>, using the <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A> property of the <xref:System.Windows.Forms.ToolBarButtonClickEventArgs> class to determine which button was clicked.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.ToolBar>   
- [ToolBar コントロール](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)   
- [方法 : ツール バー コントロールにボタンを追加する](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)   
- [方法 : ツール バー ボタンのアイコンを定義する](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)   
- [方法 : ツール バー ボタンのメニュー イベントをトリガーする](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)
+## <a name="see-also"></a><span data-ttu-id="20ddc-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="20ddc-127">See Also</span></span>  
+ <xref:System.Windows.Forms.ToolBar>  
+ [<span data-ttu-id="20ddc-128">ToolBar コントロール</span><span class="sxs-lookup"><span data-stu-id="20ddc-128">ToolBar Control</span></span>](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)  
+ [<span data-ttu-id="20ddc-129">方法: ツール バー コントロールにボタンを追加する</span><span class="sxs-lookup"><span data-stu-id="20ddc-129">How to: Add Buttons to a ToolBar Control</span></span>](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)  
+ [<span data-ttu-id="20ddc-130">方法: ツール バー ボタンのアイコンを定義する</span><span class="sxs-lookup"><span data-stu-id="20ddc-130">How to: Define an Icon for a ToolBar Button</span></span>](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)  
+ [<span data-ttu-id="20ddc-131">方法: ツール バー ボタンのメニュー イベントをトリガーする</span><span class="sxs-lookup"><span data-stu-id="20ddc-131">How to: Trigger Menu Events for Toolbar Buttons</span></span>](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)

@@ -1,35 +1,38 @@
 ---
-title: "改変 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "改変"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3bad93be-60bb-4f89-96ab-a1c3dc7c0fad
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: d8852c4d19c48af2beee598f4ddfae7b775a025f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 改変
-*改変*は、メッセージまたはメッセージの配信を変更し、意図された以外の目的のために、変更したメッセージを使用する行為です。  
+# <a name="tampering"></a><span data-ttu-id="68c8c-102">改変</span><span class="sxs-lookup"><span data-stu-id="68c8c-102">Tampering</span></span>
+<span data-ttu-id="68c8c-103">*改ざん*は、メッセージまたはメッセージの配信を変更しの意図された以外の目的の変更後のメッセージを使用して動作します。</span><span class="sxs-lookup"><span data-stu-id="68c8c-103">*Tampering* is the act of altering a message, or the delivery of a message, and using the altered message for a purpose other than what it was intended for.</span></span>  
   
-## WS\-Addressing を無効にしない  
- WS\-Addressing の仕様では、各メッセージにアドレス ヘッダーが提供されるため、メッセージの受信者はメッセージの送信者を検証できます。この機能を無効にするには、<xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> プロパティを <xref:System.ServiceModel.Channels.AddressingVersion.None%2A> に設定します。  
+## <a name="do-not-disable-ws-addressing"></a><span data-ttu-id="68c8c-104">WS-Addressing を無効にしない</span><span class="sxs-lookup"><span data-stu-id="68c8c-104">Do Not Disable WS-Addressing</span></span>  
+ <span data-ttu-id="68c8c-105">WS-Addressing の仕様では、各メッセージにアドレス ヘッダーが提供されるため、メッセージの受信者はメッセージの送信者を検証できます。</span><span class="sxs-lookup"><span data-stu-id="68c8c-105">The WS-Addressing specification provides address headers on each message, allowing a message recipient to verify the sender of the message.</span></span> <span data-ttu-id="68c8c-106">この機能を無効にするには、<xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> プロパティを <xref:System.ServiceModel.Channels.AddressingVersion.None%2A> に設定します。</span><span class="sxs-lookup"><span data-stu-id="68c8c-106">You can disable this feature by setting the <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> property to <xref:System.ServiceModel.Channels.AddressingVersion.None%2A>.</span></span>  
   
- セキュリティ モードが Message に設定された状態で、WS\-Addressing が無効になっていると、攻撃者がクライアントから要求を取得して、これを別のサービスに送信した場合、要求を受信したサービスは、このメッセージが元のクライアントから送信されたことを検出できません。事実上、最初のサービスは、2 番目のサービスと対話するときに、自分をクライアントと偽ることができます。  
+ <span data-ttu-id="68c8c-107">セキュリティ モードが Message に設定された状態で、WS-Addressing が無効になっていると、攻撃者がクライアントから要求を取得して、これを別のサービスに送信した場合、要求を受信したサービスは、このメッセージが元のクライアントから送信されたことを検出できません。</span><span class="sxs-lookup"><span data-stu-id="68c8c-107">When the security mode is set to Message, and if WS-Addressing is disabled, an attacker could take a request from a client and send it to another service, and the second service has no way of detecting that the message came from the original client.</span></span> <span data-ttu-id="68c8c-108">事実上、最初のサービスは、2 番目のサービスと対話するときに、自分をクライアントと偽ることができます。</span><span class="sxs-lookup"><span data-stu-id="68c8c-108">In effect, the first service can pretend that it is a client when talking to the second service.</span></span>  
   
- これを防ぐには、<xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> プロパティを絶対に <xref:System.ServiceModel.Channels.AddressingVersion.None%2A> に設定しないようにし、静的 <xref:System.ServiceModel.Channels.MessageVersion.Soap12%2A> プロパティのように、<xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> プロパティを <xref:System.ServiceModel.Channels.AddressingVersion.None%2A> に設定する <xref:System.ServiceModel.Channels.MessageVersion> の使用を避けます。  
+ <span data-ttu-id="68c8c-109">これを防ぐには、<xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> プロパティを絶対に <xref:System.ServiceModel.Channels.AddressingVersion.None%2A> に設定しないようにし、静的 <xref:System.ServiceModel.Channels.MessageVersion> プロパティのように、<xref:System.ServiceModel.Channels.MessageVersion.Soap12%2A> プロパティを <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> に設定する <xref:System.ServiceModel.Channels.AddressingVersion.None%2A> の使用を避けます。</span><span class="sxs-lookup"><span data-stu-id="68c8c-109">To mitigate this, never set the <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> property to <xref:System.ServiceModel.Channels.AddressingVersion.None%2A>, and avoid the use of <xref:System.ServiceModel.Channels.MessageVersion>, such as the static <xref:System.ServiceModel.Channels.MessageVersion.Soap12%2A> property, which sets the <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> property to <xref:System.ServiceModel.Channels.AddressingVersion.None%2A>.</span></span>  
   
-## 参照  
- [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)   
- [情報の漏えい](../../../../docs/framework/wcf/feature-details/information-disclosure.md)   
- [権限の昇格](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)   
- [サービス拒否](../../../../docs/framework/wcf/feature-details/denial-of-service.md)   
- [サポートされていないシナリオ](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)   
- [リプレイ攻撃](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
+## <a name="see-also"></a><span data-ttu-id="68c8c-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="68c8c-110">See Also</span></span>  
+ [<span data-ttu-id="68c8c-111">セキュリティに関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="68c8c-111">Security Considerations</span></span>](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [<span data-ttu-id="68c8c-112">情報漏えいが起こる</span><span class="sxs-lookup"><span data-stu-id="68c8c-112">Information Disclosure</span></span>](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
+ [<span data-ttu-id="68c8c-113">特権の昇格</span><span class="sxs-lookup"><span data-stu-id="68c8c-113">Elevation of Privilege</span></span>](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
+ [<span data-ttu-id="68c8c-114">サービス拒否が起こる</span><span class="sxs-lookup"><span data-stu-id="68c8c-114">Denial of Service</span></span>](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [<span data-ttu-id="68c8c-115">サポートされていないシナリオ</span><span class="sxs-lookup"><span data-stu-id="68c8c-115">Unsupported Scenarios</span></span>](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)  
+ [<span data-ttu-id="68c8c-116">リプレイ攻撃</span><span class="sxs-lookup"><span data-stu-id="68c8c-116">Replay Attacks</span></span>](../../../../docs/framework/wcf/feature-details/replay-attacks.md)

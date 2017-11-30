@@ -1,60 +1,64 @@
 ---
-title: "方法 : Windows フォーム DataGridView コントロールの現在のセルを取得および設定する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "セル, 取得と設定 (現在の)"
-  - "DataGridView コントロール [Windows フォーム], 取得 (現在のセルを)"
-  - "DataGridView コントロール [Windows フォーム], 設定 (現在のセルを)"
+title: "方法 : Windows フォーム DataGridView コントロールの現在のセルを取得および設定する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- DataGridView control [Windows Forms], getting current cell
+- DataGridView control [Windows Forms], setting current cell
+- cells [Windows Forms], getting and setting current
 ms.assetid: b0e41e57-493a-4bd0-9376-a6f76723540c
-caps.latest.revision: 14
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: bb63c48831e19ce3cbb166e899aeee8b6a331839
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : Windows フォーム DataGridView コントロールの現在のセルを取得および設定する
-多くの場合、<xref:System.Windows.Forms.DataGridView> との対話では、現在アクティブなセルをプログラムで検出する必要があります。  また、現在のセルを変更する必要もあります。  これらのタスクは <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> プロパティを使用して実行できます。  
+# <a name="how-to-get-and-set-the-current-cell-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="e8282-102">方法 : Windows フォーム DataGridView コントロールの現在のセルを取得および設定する</span><span class="sxs-lookup"><span data-stu-id="e8282-102">How to: Get and Set the Current Cell in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="e8282-103">対話、<xref:System.Windows.Forms.DataGridView>多くの場合、ことをプログラムによって検出されるセルが現在アクティブなが必要です。</span><span class="sxs-lookup"><span data-stu-id="e8282-103">Interaction with the <xref:System.Windows.Forms.DataGridView> often requires that you programmatically discover which cell is currently active.</span></span> <span data-ttu-id="e8282-104">また、現在のセルを変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e8282-104">You may also need to change the current cell.</span></span> <span data-ttu-id="e8282-105">これらのタスクを行うことができます、<xref:System.Windows.Forms.DataGridView.CurrentCell%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="e8282-105">You can perform these tasks with the <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> property.</span></span>  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridViewBand.Visible%2A> プロパティが `false` に設定されている行または列には現在のセルを設定できません。  
+>  <span data-ttu-id="e8282-106">行または列を持つ現在のセルを設定することはできません、<xref:System.Windows.Forms.DataGridViewBand.Visible%2A>プロパティに設定`false`です。</span><span class="sxs-lookup"><span data-stu-id="e8282-106">You cannot set the current cell in a row or column that has its <xref:System.Windows.Forms.DataGridViewBand.Visible%2A> property set to `false`.</span></span>  
   
- <xref:System.Windows.Forms.DataGridView> コントロールの選択モードによっては、現在のセルを変更することで選択内容が変わることがあります。  詳細については、「[Windows フォーム DataGridView コントロールの選択モード](../../../../docs/framework/winforms/controls/selection-modes-in-the-windows-forms-datagridview-control.md)」を参照してください。  
+ <span data-ttu-id="e8282-107">によって、<xref:System.Windows.Forms.DataGridView>現在のセルを変更するコントロールの選択モードが選択を変更できます。</span><span class="sxs-lookup"><span data-stu-id="e8282-107">Depending on the <xref:System.Windows.Forms.DataGridView> control's selection mode, changing the current cell can change the selection.</span></span> <span data-ttu-id="e8282-108">詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールで選択モード](../../../../docs/framework/winforms/controls/selection-modes-in-the-windows-forms-datagridview-control.md)です。</span><span class="sxs-lookup"><span data-stu-id="e8282-108">For more information, see [Selection Modes in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/selection-modes-in-the-windows-forms-datagridview-control.md).</span></span>  
   
-### 現在のセルをプログラムで取得するには  
+### <a name="to-get-the-current-cell-programmatically"></a><span data-ttu-id="e8282-109">現在のセルをプログラムで取得するには</span><span class="sxs-lookup"><span data-stu-id="e8282-109">To get the current cell programmatically</span></span>  
   
--   <xref:System.Windows.Forms.DataGridView> コントロールの <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> プロパティを使用します。  
+-   <span data-ttu-id="e8282-110">使用して、<xref:System.Windows.Forms.DataGridView>コントロールの<xref:System.Windows.Forms.DataGridView.CurrentCell%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="e8282-110">Use the <xref:System.Windows.Forms.DataGridView> control's <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> property.</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#080](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#080)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#080](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#080)]  
   
-### 現在のセルをプログラムで設定するには  
+### <a name="to-set-the-current-cell-programmatically"></a><span data-ttu-id="e8282-111">現在のセルをコードから設定するには</span><span class="sxs-lookup"><span data-stu-id="e8282-111">To set the current cell programmatically</span></span>  
   
--   <xref:System.Windows.Forms.DataGridView> コントロールの <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> プロパティを設定します。  次のコード例では、現在のセルは行 0、列 1 に設定されています。  
+-   <span data-ttu-id="e8282-112">設定、<xref:System.Windows.Forms.DataGridView.CurrentCell%2A>のプロパティ、<xref:System.Windows.Forms.DataGridView>コントロール。</span><span class="sxs-lookup"><span data-stu-id="e8282-112">Set the <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> property of the <xref:System.Windows.Forms.DataGridView> control.</span></span> <span data-ttu-id="e8282-113">次のコード例では、現在のセルは行の 0、1 列目に設定されます。</span><span class="sxs-lookup"><span data-stu-id="e8282-113">In the following code example, the current cell is set to row 0, column 1.</span></span>  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#085](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#085)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#085](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#085)]  
   
-## コードのコンパイル  
- この例には、次の項目が必要です。  
+## <a name="compiling-the-code"></a><span data-ttu-id="e8282-114">コードのコンパイル</span><span class="sxs-lookup"><span data-stu-id="e8282-114">Compiling the Code</span></span>  
+ <span data-ttu-id="e8282-115">この例で必要な要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e8282-115">This example requires:</span></span>  
   
--   `getCurrentCellButton` という名前と `setCurrentCellButton` という名前の <xref:System.Windows.Forms.Button> コントロール。  [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] では、各ボタンの <xref:System.Windows.Forms.Control.Click> イベントをプログラム例の関連付けられているイベント ハンドラーに結合する必要があります。  
+-   <span data-ttu-id="e8282-116"><xref:System.Windows.Forms.Button>という名前のコントロール`getCurrentCellButton`と`setCurrentCellButton`です。</span><span class="sxs-lookup"><span data-stu-id="e8282-116"><xref:System.Windows.Forms.Button> controls named `getCurrentCellButton` and `setCurrentCellButton`.</span></span> <span data-ttu-id="e8282-117">[!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]、アタッチする必要があります、<xref:System.Windows.Forms.Control.Click>のコード例に関連付けられているイベント ハンドラーには、各ボタンのイベントです。</span><span class="sxs-lookup"><span data-stu-id="e8282-117">In [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], you must attach the <xref:System.Windows.Forms.Control.Click> events for each button to the associated event handler in the example code.</span></span>  
   
--   `dataGridView1` という名前の <xref:System.Windows.Forms.DataGridView> コントロール。  
+-   <span data-ttu-id="e8282-118">`dataGridView1` という名前の <xref:System.Windows.Forms.DataGridView> コントロール。</span><span class="sxs-lookup"><span data-stu-id="e8282-118">A <xref:System.Windows.Forms.DataGridView> control named `dataGridView1`.</span></span>  
   
--   <xref:System?displayProperty=fullName> アセンブリおよび <xref:System.Windows.Forms?displayProperty=fullName> アセンブリへの参照。  
+-   <span data-ttu-id="e8282-119"><xref:System?displayProperty=nameWithType> アセンブリおよび <xref:System.Windows.Forms?displayProperty=nameWithType> アセンブリへの参照。</span><span class="sxs-lookup"><span data-stu-id="e8282-119">References to the <xref:System?displayProperty=nameWithType> and <xref:System.Windows.Forms?displayProperty=nameWithType> assemblies.</span></span>  
   
-## 参照  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridView.CurrentCell%2A?displayProperty=fullName>   
- [Windows フォーム DataGridView コントロールでの列、行、およびセルの基本機能](../../../../docs/framework/winforms/controls/basic-column-row-and-cell-features-wf-datagridview-control.md)   
- [Windows フォーム DataGridView コントロールの選択モード](../../../../docs/framework/winforms/controls/selection-modes-in-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a><span data-ttu-id="e8282-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="e8282-120">See Also</span></span>  
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridView.CurrentCell%2A?displayProperty=nameWithType>  
+ [<span data-ttu-id="e8282-121">Windows フォーム DataGridView コントロールでの列、行、およびセルの基本機能</span><span class="sxs-lookup"><span data-stu-id="e8282-121">Basic Column, Row, and Cell Features in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/basic-column-row-and-cell-features-wf-datagridview-control.md)  
+ [<span data-ttu-id="e8282-122">Windows フォーム DataGridView コントロールの選択モード</span><span class="sxs-lookup"><span data-stu-id="e8282-122">Selection Modes in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/selection-modes-in-the-windows-forms-datagridview-control.md)
