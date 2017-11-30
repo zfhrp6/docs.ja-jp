@@ -1,39 +1,36 @@
 ---
-title: "セキュリティとパブリックの読み取り専用配列フィールド | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "セキュリティ [.NET Framework], パブリックの読み取り専用配列フィールド"
+title: "セキュリティとパブリックの読み取り専用配列フィールド"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: security [.NET Framework], public read-only array fields
 ms.assetid: 3df28dee-2a9f-40ff-9852-bfdbe59c27f3
-caps.latest.revision: 7
-author: "mairaw"
-ms.author: "mairaw"
-manager: "wpickett"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mairaw
+ms.author: mairaw
+manager: wpickett
+ms.openlocfilehash: ae2e9a7dd9e08344c254b52c7139c6d1dd2776a3
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# セキュリティとパブリックの読み取り専用配列フィールド
-読み取り専用のパブリック配列フィールドは変更できるため、マネージ ライブラリから読み取り専用のパブリック配列フィールドを使用して、アプリケーションの境界動作やセキュリティを定義しないでください。  
+# <a name="security-and-public-read-only-array-fields"></a><span data-ttu-id="35779-102">セキュリティとパブリックの読み取り専用配列フィールド</span><span class="sxs-lookup"><span data-stu-id="35779-102">Security and Public Read-only Array Fields</span></span>
+<span data-ttu-id="35779-103">読み取り専用のパブリック配列フィールドを変更できるため、境界の動作や、アプリケーションのセキュリティを定義するのには、マネージ ライブラリからの読み取り専用のパブリック配列フィールドを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="35779-103">Never use read-only public array fields from managed libraries to define the boundary behavior or security of your applications because read-only public array fields can be modified.</span></span>  
   
-## 解説  
- .NET Framework の一部のクラスには、プラットフォーム固有の境界パラメーターを含む読み取り専用のパブリック フィールドが含まれます。たとえば <xref:System.IO.Path.InvalidPathChars> フィールドは、ファイル パス文字列で使用できない文字を記述する配列です。.NET Framework には、これに類似したフィールドが数多くあります。  
+## <a name="remarks"></a><span data-ttu-id="35779-104">コメント</span><span class="sxs-lookup"><span data-stu-id="35779-104">Remarks</span></span>  
+ <span data-ttu-id="35779-105">.NET framework の一部のクラスには、プラットフォーム固有の境界パラメーターが含まれている読み取り専用のパブリック フィールドが含まれます。</span><span class="sxs-lookup"><span data-stu-id="35779-105">Some .NET framework classes include read-only public fields that contain platform-specific boundary parameters.</span></span>  <span data-ttu-id="35779-106">たとえば、<xref:System.IO.Path.InvalidPathChars>フィールドは、ファイルのパス文字列の許可されていない文字を表す配列。</span><span class="sxs-lookup"><span data-stu-id="35779-106">For example, the <xref:System.IO.Path.InvalidPathChars> field is an array that describes the characters that are not allowed in a file path string.</span></span>  <span data-ttu-id="35779-107">多くの同様のフィールドは、.NET Framework 全体にわたって存在します。</span><span class="sxs-lookup"><span data-stu-id="35779-107">Many similar fields are present throughout the .NET Framework.</span></span>  
   
- <xref:System.IO.Path.InvalidPathChars> などのパブリックの読み取り専用フィールドの値は、コード、またはコードのアプリケーション ドメインを共有するコードを使用して変更できます。このような読み取り専用のパブリック配列フィールドを使用して、アプリケーションの境界動作を定義しないでください。このようなフィールドを使用してアプリケーションの境界動作を定義すると、悪意のあるコードによって境界定義が変更され、コードが悪用される恐れがあります。  
+ <span data-ttu-id="35779-108">パブリックの読み取り専用フィールドの値と同様に<xref:System.IO.Path.InvalidPathChars>コードや、コードのアプリケーション ドメインを共有しているコードで変更できます。</span><span class="sxs-lookup"><span data-stu-id="35779-108">The values of public read-only fields like <xref:System.IO.Path.InvalidPathChars> can be modified by your code or code that shares your code’s application domain.</span></span>  <span data-ttu-id="35779-109">アプリケーションの境界の動作を定義するのに次のようにパブリックの読み取り専用の配列フィールドを使用する必要がありますできません。</span><span class="sxs-lookup"><span data-stu-id="35779-109">You should not use read-only public array fields like this to define the boundary behavior of your applications.</span></span>  <span data-ttu-id="35779-110">作成する場合は、悪意のあるコードは境界の定義を変更し、予期しない方法でコードを利用できます。</span><span class="sxs-lookup"><span data-stu-id="35779-110">If you do, malicious code can alter the boundary definitions and use your code in unexpected ways.</span></span>  
   
- .NET Framework Version 2.0 以降では、パブリック配列フィールドを使用する代わりに、新しい配列を返すメソッドを使用します。たとえば、<xref:System.IO.Path.InvalidPathChars> フィールドを使用する代わりに <xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+ <span data-ttu-id="35779-111">2.0 と .NET Framework の以降のバージョンでは、パブリックの配列フィールドを使用する代わりに新しい配列を返すメソッドを使用してください。</span><span class="sxs-lookup"><span data-stu-id="35779-111">In version 2.0 and later of the .NET Framework, you should use methods that return a new array instead of using public array fields.</span></span>  <span data-ttu-id="35779-112">使用せずになど、<xref:System.IO.Path.InvalidPathChars>フィールドを使用してください、<xref:System.IO.Path.GetInvalidPathChars%2A>メソッドです。</span><span class="sxs-lookup"><span data-stu-id="35779-112">For example, instead of using the <xref:System.IO.Path.InvalidPathChars> field, you should use the <xref:System.IO.Path.GetInvalidPathChars%2A> method.</span></span>  
   
- .NET Framework の型は、パブリック フィールドを使用して境界の種類を内部的に定義しないことに注意してください。代わりに .NET Framework では、個別のプライベート フィールドを使用します。パブリック フィールドの値を変更しても、.NET Framework の型の動作は変わりません。  
+ <span data-ttu-id="35779-113">.NET Framework の型が内部的には境界の種類を定義するパブリック フィールドを使用しないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="35779-113">Note that the .NET Framework types do not use the public fields to define boundary types internally.</span></span>  <span data-ttu-id="35779-114">代わりに、.NET Framework では、別のプライベート フィールドを使用します。</span><span class="sxs-lookup"><span data-stu-id="35779-114">Instead, the .NET Framework uses separate private fields.</span></span>  <span data-ttu-id="35779-115">これらのパブリック フィールドの値を変更しても、.NET Framework の型の動作は変わりません。</span><span class="sxs-lookup"><span data-stu-id="35779-115">Changing the values of these public fields does not alter the behavior of .NET Framework types.</span></span>  
   
-## 参照  
- [安全なコーディングのガイドライン](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a><span data-ttu-id="35779-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="35779-116">See Also</span></span>  
+ [<span data-ttu-id="35779-117">安全なコーディングのガイドライン</span><span class="sxs-lookup"><span data-stu-id="35779-117">Secure Coding Guidelines</span></span>](../../../docs/standard/security/secure-coding-guidelines.md)

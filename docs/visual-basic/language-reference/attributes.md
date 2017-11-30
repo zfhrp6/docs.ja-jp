@@ -1,48 +1,29 @@
 ---
-title: "属性 (Visual Basic) |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "属性 (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
-helpviewer_keywords:
-- attributes [Visual Basic]
+helpviewer_keywords: attributes [Visual Basic]
 ms.assetid: 5deb2b8a-1afd-4dbd-8ee8-f093d74ad0eb
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 5a23e083cec1d7a8fa8ca923ca35eee506f2c9cf
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 411208ff134f53f0d3c9b842c9282a1545119066
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="attributes-visual-basic"></a>属性 (Visual Basic)
-[!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]オブジェクトが、アンマネージ コードと相互運用できるようにするいくつかの属性と属性によって、モジュール名を指定せずにアクセスするモジュールのメンバーが&1; つ提供します。 次の表で使用される属性[!INCLUDE[vbprvb](../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]します。  
+# <a name="attributes-visual-basic"></a><span data-ttu-id="b14c7-102">属性 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b14c7-102">Attributes (Visual Basic)</span></span>
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="b14c7-103">オブジェクトが、アンマネージ コードと相互運用できるようにするいくつかの属性とモジュール名を指定せずにアクセスしてモジュール メンバーを使用できる 1 つの属性を提供します。</span><span class="sxs-lookup"><span data-stu-id="b14c7-103"> provides several attributes that allow objects interoperate with unmanaged code, and one attribute that enables module members to be accessed without the module name.</span></span> <span data-ttu-id="b14c7-104">次の表で使用される属性[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="b14c7-104">The following table lists the attributes used by [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].</span></span>  
   
 |||  
 |---|---|  
-|<xref:Microsoft.VisualBasic.ComClassAttribute></xref:Microsoft.VisualBasic.ComClassAttribute>|クラスが COM オブジェクトとして公開できるようにするメタデータの追加をコンパイラに指示します。|  
-|<xref:Microsoft.VisualBasic.HideModuleNameAttribute></xref:Microsoft.VisualBasic.HideModuleNameAttribute>|モジュール メンバーのモジュールに必要な修飾子のみを使用してアクセス許可します。|  
-|<xref:Microsoft.VisualBasic.VBFixedArrayAttribute></xref:Microsoft.VisualBasic.VBFixedArrayAttribute>|構造体または非ローカル変数の配列を固定長の配列として処理することを示します。|  
-|<xref:Microsoft.VisualBasic.VBFixedStringAttribute></xref:Microsoft.VisualBasic.VBFixedStringAttribute>|固定長かのように文字列を処理することを示します。|  
+|<xref:Microsoft.VisualBasic.ComClassAttribute>|<span data-ttu-id="b14c7-105">クラスが COM オブジェクトとして公開できるようにするメタデータの追加をコンパイラに指示します。</span><span class="sxs-lookup"><span data-stu-id="b14c7-105">Instructs the compiler to add metadata that allows a class to be exposed as a COM object.</span></span>|  
+|<xref:Microsoft.VisualBasic.HideModuleNameAttribute>|<span data-ttu-id="b14c7-106">モジュール メンバーに、モジュールに必要な修飾子のみを使用してアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="b14c7-106">Allows the module members to be accessed using only the qualification needed for the module.</span></span>|  
+|<xref:Microsoft.VisualBasic.VBFixedArrayAttribute>|<span data-ttu-id="b14c7-107">構造体または非ローカル変数の配列を固定長の配列として扱うことを示します。</span><span class="sxs-lookup"><span data-stu-id="b14c7-107">Indicates that an array in a structure or non-local variable should be treated as a fixed-length array.</span></span>|  
+|<xref:Microsoft.VisualBasic.VBFixedStringAttribute>|<span data-ttu-id="b14c7-108">固定長かのように文字列を扱うことを示します。</span><span class="sxs-lookup"><span data-stu-id="b14c7-108">Indicates that a string should be treated as if it were fixed length.</span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [属性の概要](../../visual-basic/programming-guide/concepts/attributes/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="b14c7-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="b14c7-109">See Also</span></span>  
+ [<span data-ttu-id="b14c7-110">属性の概要</span><span class="sxs-lookup"><span data-stu-id="b14c7-110">Attributes overview</span></span>](../../visual-basic/programming-guide/concepts/attributes/index.md)

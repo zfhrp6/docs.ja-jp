@@ -1,109 +1,112 @@
 ---
-title: "グラフィックス レンダリングのレジストリ設定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "グラフィックス [WPF], 描画"
-  - "描画 (グラフィックスを)"
-  - "描画 (グラフィックスを), レジストリ設定"
-  - "描画 (グラフィックスを), トラブルシューティング"
-  - "トラブルシューティング (グラフィックス レンダリング)"
+title: "グラフィックス レンダリングのレジストリ設定"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- rendering graphics [WPF], registry settings
+- rendering graphics [WPF]
+- rendering graphics [WPF], troubleshooting
+- troubleshooting graphics rendering [WPF]
+- graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-caps.latest.revision: 18
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 17
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: c1a86d715edb68564d6ebfcc8a419e333da4ea03
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# グラフィックス レンダリングのレジストリ設定
-ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションに影響を与える [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] グラフィックス レンダリングのレジストリ設定の概要について説明します。  
+# <a name="graphics-rendering-registry-settings"></a><span data-ttu-id="bc1ca-102">グラフィックス レンダリングのレジストリ設定</span><span class="sxs-lookup"><span data-stu-id="bc1ca-102">Graphics Rendering Registry Settings</span></span>
+<span data-ttu-id="bc1ca-103">ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションに影響を与える [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] グラフィックス レンダリングのレジストリ設定の概要を示します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-103">This topic provides an overview of the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] graphics rendering registry settings that affect [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications.</span></span>  
   
-   
+
   
 <a name="overview"></a>   
-## グラフィックス レンダリングのレジストリ設定を使用する場合  
- これらのレジストリ設定は、トラブルシューティング、デバッグ、および製品サポートのために提供されています。  レジストリを変更するとすべての [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションが影響を受けるので、アプリケーションでは、これらのレジストリ キーを自動的に変更したり、インストール時に変更したりしないでください。  
+## <a name="when-to-use-graphics-rendering-registry-settings"></a><span data-ttu-id="bc1ca-104">グラフィックス レンダリングのレジストリ設定を使用する場合</span><span class="sxs-lookup"><span data-stu-id="bc1ca-104">When to Use Graphics Rendering Registry Settings</span></span>  
+ <span data-ttu-id="bc1ca-105">これらのレジストリ設定は、トラブルシューティング、デバッグ、製品サポートの目的で提供されています。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-105">These registry settings are provided for troubleshooting, debugging, and product support purposes.</span></span> <span data-ttu-id="bc1ca-106">レジストリの変更はすべての [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションに影響するため、アプリケーションでは、これらのレジストリ キーを自動的に変更したり、インストール時に変更したりしないでください。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-106">Because changes to the registry affect all [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications, your application should never alter these registry keys automatically, or during installation.</span></span>  
   
 <a name="xpdmandwddm"></a>   
-## XPDM と WDDM について  
- グラフィックス レンダリングのレジストリの一部の設定は、ビデオ カードが XPDM ドライバーまたは WDDM ドライバーのどちらを使用するかによって、既定値が異なります。  XPDM は [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] Display Driver Model、WDDM は Windows Display Driver Model の略です。  WDDM は、[!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] および [!INCLUDE[win7](../../../../includes/win7-md.md)] を実行中のコンピューターで使用できます。  XPDM は、[!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)]、[!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]、および [!INCLUDE[TLA#tla_winnetsvrfam](../../../../includes/tlasharptla-winnetsvrfam-md.md)] を実行中のコンピューターで使用できます。  WDDM の詳細については、「[Windows Vista Display Driver Model Design Guide \(Windows Vista ディスプレイ ドライバー モデル デザイン ガイド\)](http://go.microsoft.com/fwlink/?LinkId=178394)」を参照してください。  
+## <a name="what-are-xpdm-and-wddm"></a><span data-ttu-id="bc1ca-107">XPDM と WDDM について</span><span class="sxs-lookup"><span data-stu-id="bc1ca-107">What are XPDM and WDDM?</span></span>  
+ <span data-ttu-id="bc1ca-108">グラフィックス レンダリングのレジストリの一部の設定は、ビデオ カードが XPDM ドライバーまたは WDDM ドライバーのどちらを使用するかによって既定値が異なります。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-108">Some of the graphics rendering registry settings have different default values, depending on whether your video card uses an XPDM or WDDM driver.</span></span> <span data-ttu-id="bc1ca-109">XPDM は [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] Display Driver Model、WDDM は Windows Display Driver Model の略です。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-109">XPDM is the [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] Display Driver Model and WDDM is the Windows Display Driver Model.</span></span> <span data-ttu-id="bc1ca-110">WDDM は、[!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] と [!INCLUDE[win7](../../../../includes/win7-md.md)] を実行しているコンピューターで使用できます。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-110">WDDM is available on computers running [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] and [!INCLUDE[win7](../../../../includes/win7-md.md)].</span></span> <span data-ttu-id="bc1ca-111">XPDM は、[!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)]、[!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]、[!INCLUDE[TLA#tla_winnetsvrfam](../../../../includes/tlasharptla-winnetsvrfam-md.md)] を実行しているコンピューターで使用できます。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-111">XPDM is available on computers running [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)], [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)], and [!INCLUDE[TLA#tla_winnetsvrfam](../../../../includes/tlasharptla-winnetsvrfam-md.md)].</span></span> <span data-ttu-id="bc1ca-112">WDDM について詳しくは、「[Windows Vista Display Driver Model Design Guide](http://go.microsoft.com/fwlink/?LinkId=178394)」(Windows Vista Display Driver Model 設計ガイド) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-112">For more information about WDDM, see [Windows Vista Display Driver Model Design Guide](http://go.microsoft.com/fwlink/?LinkId=178394).</span></span>  
   
 <a name="registry_settings"></a>   
-## レジストリ設定  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のレンダリングを制御するために 4 つのレジストリ設定が用意されています。  
+## <a name="registry-settings"></a><span data-ttu-id="bc1ca-113">レジストリ設定</span><span class="sxs-lookup"><span data-stu-id="bc1ca-113">Registry Settings</span></span>  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="bc1ca-114"> には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のレンダリングを制御するために 4 つのレジストリ設定が用意されています。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-114"> provides four registry settings for controlling [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rendering:</span></span>  
   
-|設定|Description|  
-|--------|-----------------|  
-|**Disable Hardware Acceleration Option**|ハードウェア アクセラレータを有効にするかどうかを指定します。|  
-|**Maximum Multisample Value**|[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] コンテンツのアンチエイリアシングのマルチサンプリングの度合いを指定します。|  
-|**Required Video Driver Date Setting**|2004 年 11 月より前にリリースされたドライバーに対してハードウェア アクセラレータをシステムで無効にするかどうかを指定します。|  
-|**Use Reference Rasterizer Option**|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でリファレンス ラスタライザーを使用するかどうかを指定します。|  
+|<span data-ttu-id="bc1ca-115">設定</span><span class="sxs-lookup"><span data-stu-id="bc1ca-115">Setting</span></span>|<span data-ttu-id="bc1ca-116">説明</span><span class="sxs-lookup"><span data-stu-id="bc1ca-116">Description</span></span>|  
+|-------------|-----------------|  
+|<span data-ttu-id="bc1ca-117">**Disable Hardware Acceleration Option (ハードウェア高速化オプションを無効にする)**</span><span class="sxs-lookup"><span data-stu-id="bc1ca-117">**Disable Hardware Acceleration Option**</span></span>|<span data-ttu-id="bc1ca-118">ハードウェア高速化を有効にするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-118">Specifies whether hardware acceleration should be enabled.</span></span>|  
+|<span data-ttu-id="bc1ca-119">**Maximum Multisample Value (最大マルチサンプル値)**</span><span class="sxs-lookup"><span data-stu-id="bc1ca-119">**Maximum Multisample Value**</span></span>|<span data-ttu-id="bc1ca-120">[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] コンテンツをアンチエイリアシングするためのマルチサンプリングの度合いを指定します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-120">Specifies the degree of multisampling for antialiasing [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] content.</span></span>|  
+|<span data-ttu-id="bc1ca-121">**Required Video Driver Date Setting (ビデオ ドライバーの日付設定が必須)**</span><span class="sxs-lookup"><span data-stu-id="bc1ca-121">**Required Video Driver Date Setting**</span></span>|<span data-ttu-id="bc1ca-122">2004 年 11 月より前にリリースされたドライバーについて、ハードウェア高速化を無効にするかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-122">Specifies whether the system disables hardware acceleration for drivers released before November 2004.</span></span>|  
+|<span data-ttu-id="bc1ca-123">**Use Reference Rasterizer Option (リファレンス ラスタライザー オプションを使用する)**</span><span class="sxs-lookup"><span data-stu-id="bc1ca-123">**Use Reference Rasterizer Option**</span></span>|<span data-ttu-id="bc1ca-124">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でリファレンス ラスタライザーを使用するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-124">Specifies whether [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] should use the reference rasterizer.</span></span>|  
   
- これらの設定には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レジストリ設定の参照方法を認識している外部構成ユーティリティを使用してアクセスできます。  また、これらの設定は、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] レジストリ エディターを使用して値に直接アクセスして作成または変更することもできます。  
+ <span data-ttu-id="bc1ca-125">これらの設定には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] レジストリ設定の参照方法を認識する外部構成ユーティリティを使用してアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-125">These settings can be accessed by any external configuration utility that knows how to reference the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] registry settings.</span></span> <span data-ttu-id="bc1ca-126">これらの設定は、[!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] レジストリ エディターを使用して値に直接アクセスして作成または変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-126">These settings can also be created or modified by accessing the values directly by using the [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Registry Editor.</span></span>  
   
 <a name="disablehardwareacceleration"></a>   
-## Disable Hardware Acceleration Option  
+## <a name="disable-hardware-acceleration-option"></a><span data-ttu-id="bc1ca-127">Disable Hardware Acceleration Option (ハードウェアの高速化オプションを無効にする)</span><span class="sxs-lookup"><span data-stu-id="bc1ca-127">Disable Hardware Acceleration Option</span></span>  
   
-|レジストリ キー|値の種類|  
-|--------------|----------|  
-|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\DisableHWAcceleration`|DWORD|  
+|<span data-ttu-id="bc1ca-128">レジストリ キー</span><span class="sxs-lookup"><span data-stu-id="bc1ca-128">Registry key</span></span>|<span data-ttu-id="bc1ca-129">値の種類</span><span class="sxs-lookup"><span data-stu-id="bc1ca-129">Value type</span></span>|  
+|------------------|----------------|  
+|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\DisableHWAcceleration`|<span data-ttu-id="bc1ca-130">DWORD</span><span class="sxs-lookup"><span data-stu-id="bc1ca-130">DWORD</span></span>|  
   
- **Disable Hardware Acceleration Option** を使用すると、デバッグとテストのためにハードウェアの加速を無効にできます。  アプリケーションでレンダリング アイテムを表示するとき、ハードウェア加速を無効にしてみてください。  アイテムが消える場合は、ビデオ ドライバーの問題である可能性があります。  
+ <span data-ttu-id="bc1ca-131">**[disable hardware acceleration option]** (ハードウェアの高速化オプションを無効にする) を使用すると、デバッグとテストの目的でハードウェアの高速化を無効にできます。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-131">The **disable hardware acceleration option** enables you to turn off hardware acceleration for debugging and test purposes.</span></span> <span data-ttu-id="bc1ca-132">アプリケーションにレンダリング アーティファクトが見られる場合は、ハードウェアの高速化を無効にしてみてください。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-132">When you see rendering artifacts in an application, try turning off hardware acceleration.</span></span> <span data-ttu-id="bc1ca-133">アーティファクトが消える場合は、ビデオ ドライバーの問題である可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-133">If the artifact disappears, the problem might be with your video driver.</span></span>  
   
- **Disable Hardware Acceleration Option** は、0 か 1 の DWORD 値です。  値を 1 に設定すると、ハードウェア アクセラレータが無効になります。  値が 0 の場合、システムがハードウェア加速の要件を満たしていれば、ハードウェア加速が有効になります。詳細については、「[グラフィックスの描画層](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)」を参照してください。  
+ <span data-ttu-id="bc1ca-134">**[disable hardware acceleration option]** (ハードウェアの高速化オプションを無効にする) は、0 か 1 の DWORD 値です。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-134">The **disable hardware acceleration option** is a DWORD value that is either 0 or 1.</span></span> <span data-ttu-id="bc1ca-135">値が 1 の場合、ハードウェアの高速化は無効になります。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-135">A value of 1 disables hardware acceleration.</span></span> <span data-ttu-id="bc1ca-136">値が 0 の場合、システムがハードウェアの高速化の要件を満たしていれば、ハードウェアの高速化が有効になります。詳しくは、「[グラフィックスの描画層](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-136">A value of 0 enables hardware acceleration, provided the system meets hardware acceleration requirements; for more information, see [Graphics Rendering Tiers](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md).</span></span>  
   
 <a name="maxmultisample"></a>   
-## Maximum Multisample Value  
+## <a name="maximum-multisample-value"></a><span data-ttu-id="bc1ca-137">Maximum Multisample Value (最大マルチサンプル値)</span><span class="sxs-lookup"><span data-stu-id="bc1ca-137">Maximum Multisample Value</span></span>  
   
-|レジストリ キー|値の種類|  
-|--------------|----------|  
-|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\MaxMultisampleType`|DWORD|  
+|<span data-ttu-id="bc1ca-138">レジストリ キー</span><span class="sxs-lookup"><span data-stu-id="bc1ca-138">Registry key</span></span>|<span data-ttu-id="bc1ca-139">値の種類</span><span class="sxs-lookup"><span data-stu-id="bc1ca-139">Value type</span></span>|  
+|------------------|----------------|  
+|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\MaxMultisampleType`|<span data-ttu-id="bc1ca-140">DWORD</span><span class="sxs-lookup"><span data-stu-id="bc1ca-140">DWORD</span></span>|  
   
- **Maximum Multisample Value** を使用すると、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] コンテンツのアンチエイリアシングの最大量を調整できます。  [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] のアンチエイリアシングを [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] で無効にするには、または [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] で有効にするには、このレベルを使用します。  
+ <span data-ttu-id="bc1ca-141">**[Maximum Multisample Value]** (最大マルチサンプル値) を使用すると、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] コンテンツのアンチエイリアシングの最大量を調整できます。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-141">The **maximum multisample value** enables you to adjust the maximum amount of antialiasing of [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] content.</span></span> <span data-ttu-id="bc1ca-142">[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] のアンチエイリアシングを [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] で無効にするには、または [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] で有効にするには、このレベルを使用します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-142">Use this level to disable [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] antialiasing in [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] or enable it in [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)].</span></span>  
   
- **Maximum Multisample Value** は、0 ～ 16 の範囲の DWORD 値です。  値 0 を指定すると、3\-D コンテンツのマルチサンプル アンチエイリアシングは無効になり、値 16 を指定すると、ビデオ カードがサポートする場合は、最大で 16 倍のマルチサンプル アンチエイリアシングの使用が試行されます。  XPDM ドライバーを使用するコンピューターでこのレジストリ キー値を設定すると、アプリケーションは大量のビデオ メモリを追加使用するため、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] レンダリングのパフォーマンスが低下し、レンダリング エラーや安定性の問題が発生する可能性があることに注意してください。  
+ <span data-ttu-id="bc1ca-143">**[maximum multisample value]** (最大マルチサンプル値) は 0 から 16 の DWORD 値です。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-143">The **maximum multisample value** is a DWORD value that ranges from 0 to 16.</span></span> <span data-ttu-id="bc1ca-144">値 0 は、3-D コンテンツのマルチサンプル アンチエイリアシングが無効になることを指定し、値 16 では、ビデオ カードでサポートされる場合に最大で 16 倍のマルチサンプル アンチエイリアシングの使用が試行されます。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-144">A value of 0 specifies that multisample antialiasing of 3-D content should be disabled, and a value of 16 will attempt to use up to 16x multisample antialiasing, if supported by the video card.</span></span> <span data-ttu-id="bc1ca-145">XPDM ドライバーを使用するコンピューターでこのレジストリ キー値を設定すると、アプリケーションは大量のビデオ メモリを追加使用するため、[!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] レンダリングのパフォーマンスが低下し、レンダリング エラーや安定性の問題が発生する可能性があることにご注意ください。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-145">Beware that setting this registry key value on computers using XPDM drivers will cause applications to use a large amount of additional video memory, decrease the performance of [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] rendering, and has the potential to introduce rendering errors and stability problems.</span></span>  
   
- このレジストリ キーを設定しないと、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の既定値は、XPDM ドライバーでは 0、WDDM ドライバーでは 4 になります。  
+ <span data-ttu-id="bc1ca-146">このレジストリ キーを設定しないと、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の既定値は、XPDM ドライバーでは 0、WDDM ドライバーでは 4 になります。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-146">When this registry key is not set, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] defaults to 0 for XPDM drivers and 4 for WDDM drivers.</span></span>  
   
 <a name="requiredvideodriverdatesetting"></a>   
-## Required Video Driver Date Setting  
+## <a name="required-video-driver-date-setting"></a><span data-ttu-id="bc1ca-147">Required Video Driver Date Setting (ビデオ ドライバーの日付設定が必須)</span><span class="sxs-lookup"><span data-stu-id="bc1ca-147">Required Video Driver Date Setting</span></span>  
   
-|レジストリ キー|値の種類|  
-|--------------|----------|  
-|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|\[文字列\]|  
+|<span data-ttu-id="bc1ca-148">レジストリ キー</span><span class="sxs-lookup"><span data-stu-id="bc1ca-148">Registry key</span></span>|<span data-ttu-id="bc1ca-149">値の種類</span><span class="sxs-lookup"><span data-stu-id="bc1ca-149">Value type</span></span>|  
+|------------------|----------------|  
+|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|<span data-ttu-id="bc1ca-150">文字列型</span><span class="sxs-lookup"><span data-stu-id="bc1ca-150">String</span></span>|  
   
- 2004 年 11 月に、[!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] はドライバー テストに関するガイドラインの新バージョンをリリースしました。これ以降に作成されたドライバーは、安定性が向上しています。  既定では、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、これらのドライバーに対してはハードウェア加速パイプラインを使用し、この日より前に公開された XPDM ドライバーについてはソフトウェア レンダリングを使用します。  
+ <span data-ttu-id="bc1ca-151">2004 年 11 月に、[!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] はドライバー テストに関するガイドラインの新バージョンをリリースしました。この日より後に作成されたドライバーは、安定性が向上しています。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-151">In November, 2004, [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] released a new version of the driver testing guidelines; the drivers written after this date offer better stability.</span></span> <span data-ttu-id="bc1ca-152">既定では、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、これらのドライバーに対してはハードウェアの高速化パイプラインを使用し、この日より前に公開された XPDM ドライバーについてはソフトウェア レンダリングを使用します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-152">By default, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] will use the hardware acceleration pipeline for these drivers and will fall back to software rendering for XPDM drivers published before this date.</span></span>  
   
- **Required Video Driver Date Setting** を使用すると、XPDM ドライバーに対して最低限の代わりの日付を指定できます。  使用するビデオ ドライバーが十分に安定して [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] をサポートすることが確実な場合にのみ、2004 年 11 月より前の日付を指定するようにしてください。  
+ <span data-ttu-id="bc1ca-153">**[required video driver date setting]** (ビデオ ドライバーの日付設定が必須) を使用すると、XPDM ドライバーに対して最低限の代わりの日付を指定できます。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-153">The **required video driver date setting** enables you to specify an alternate minimum date for XPDM drivers.</span></span> <span data-ttu-id="bc1ca-154">使用するビデオ ドライバーが十分に安定して [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] をサポートすることが確実な場合にのみ、2004 年 11 月より前の日付を指定してください。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-154">You should only specify a date earlier than November, 2004 if you are confident that your video driver is stable enough to support [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].</span></span>  
   
- ビデオ ドライバーの設定では、次の形式の文字列を使用する必要があります。  
+ <span data-ttu-id="bc1ca-155">必須のビデオ ドライバーの設定では、次の形式の文字列を使用します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-155">The required video driver setting takes a string of the following format:</span></span>  
   
 ||  
 |-|  
-|*YYYY* `/` *MM* `/` *DD*|  
+|<span data-ttu-id="bc1ca-156">*YYYY* `/` *MM* `/` *DD*</span><span class="sxs-lookup"><span data-stu-id="bc1ca-156">*YYYY* `/` *MM* `/` *DD*</span></span>|  
   
- *YYYY* は 4 桁の年、*MM* は 2 桁の月、*DD* は 2 桁の日です。  この値を設定しないと、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は必要なビデオ ドライバーの日付として 2004 年 11 月を使用します。  
+ <span data-ttu-id="bc1ca-157">*YYYY* は 4 桁の年、*MM* は 2 桁の月、*DD* は 2 桁の日です。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-157">Where *YYYY* is the four-digit year, *MM* is the two-digit month, and *DD* is the two digit day.</span></span> <span data-ttu-id="bc1ca-158">この値を設定しないと、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は必要なビデオ ドライバーの日付として 2004 年 11 月を使用します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-158">When this value is unset, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uses November, 2004 as its required video driver date.</span></span>  
   
 <a name="usereferencerasterizeroption"></a>   
-## Use Reference Rasterizer Option  
+## <a name="use-reference-rasterizer-option"></a><span data-ttu-id="bc1ca-159">Use Reference Rasterizer Option (リファレンス ラスタライザー オプションを使用する)</span><span class="sxs-lookup"><span data-stu-id="bc1ca-159">Use Reference Rasterizer Option</span></span>  
   
-|レジストリ キー|値の種類|  
-|--------------|----------|  
-|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\UseReferenceRasterizer`|DWORD|  
+|<span data-ttu-id="bc1ca-160">レジストリ キー</span><span class="sxs-lookup"><span data-stu-id="bc1ca-160">Registry key</span></span>|<span data-ttu-id="bc1ca-161">値の種類</span><span class="sxs-lookup"><span data-stu-id="bc1ca-161">Value type</span></span>|  
+|------------------|----------------|  
+|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\UseReferenceRasterizer`|<span data-ttu-id="bc1ca-162">DWORD</span><span class="sxs-lookup"><span data-stu-id="bc1ca-162">DWORD</span></span>|  
   
- **Use Reference Rasterizer Option** を使用すると、強制的に [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] をデバッグ用のシミュレートされたハードウェア レンダリング モードにすることができます。[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] はハードウェア モードになりますが、実際のハードウェア デバイスの代わりに、[!INCLUDE[TLA#tla_d3d](../../../../includes/tlasharptla-d3d-md.md)] リファレンス ソフトウェア ラスタライザー d3dref9.dll を使用します。  
+ <span data-ttu-id="bc1ca-163">**[Use Reference Rasterizer Option]** (リファレンス ラスタライザー オプションを使用する) では、強制的に [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] をデバッグ用のシミュレートされたハードウェア レンダリング モードにすることができます。[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] はハードウェア モードになりますが、実際のハードウェア デバイスの代わりに、[!INCLUDE[TLA#tla_d3d](../../../../includes/tlasharptla-d3d-md.md)] リファレンス ソフトウェア ラスタライザー d3dref9.dll を使用します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-163">The **use reference rasterizer option** enables you to force [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] into a simulated hardware rendering mode for debugging: [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] goes into hardware mode, but uses the [!INCLUDE[TLA#tla_d3d](../../../../includes/tlasharptla-d3d-md.md)] reference software rasterizer, d3dref9.dll, instead of an actual hardware device.</span></span>  
   
- リファレンス ラスタライザーは非常に低速ですが、ビデオ ドライバーをバイパスし、ドライバーの問題によって発生するレンダリングの問題を回避します。  このため、リファレンス ラスタライザーを使用すると、レンダリングの問題の原因がビデオ ドライバーかどうかを判断できます。  d3dref9.dll ファイルは、システム パス内の場所やアプリケーションのローカル ディレクトリなど、アプリケーションがアクセスできる場所に存在する必要があります。  
+ <span data-ttu-id="bc1ca-164">リファレンス ラスタライザーは非常に低速ですが、ビデオ ドライバーをバイパスし、ドライバーの問題によって発生するレンダリングの問題を回避します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-164">The reference rasterizer is very slow, but bypasses your video driver to avoid any rendering issues caused by driver problems.</span></span> <span data-ttu-id="bc1ca-165">このため、リファレンス ラスタライザーを使用すると、レンダリングの問題の原因がビデオ ドライバーかどうかを判断できます。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-165">For this reason, you can use the reference rasterizer to determine if rendering issues are caused by the video driver.</span></span> <span data-ttu-id="bc1ca-166">d3dref9.dll ファイルは、システム パス内の場所やアプリケーションのローカル ディレクトリなど、アプリケーションがアクセスできる場所に存在する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-166">The d3dref9.dll file must be in a location where the application can access it, such as in any location in the system path or in the local directory of the application.</span></span>  
   
- **Use Reference Rasterizer Option** は DWORD 値を受け取ります。  値 0 は、リファレンス ラスタライザーを使用しないことを示します。  他の 0 以外の値は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] にリファレンス ラスタライザーの使用を強制します。  
+ <span data-ttu-id="bc1ca-167">**[use reference rasterizer option]** (リファレンス ラスタライザー オプションを使用する) は、DWORD 値を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-167">The **use reference rasterizer option** takes a DWORD value.</span></span> <span data-ttu-id="bc1ca-168">値 0 は、リファレンス ラスタライザーを使用しないことを示します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-168">A value of 0 indicates that the reference rasterizer is not used.</span></span> <span data-ttu-id="bc1ca-169">他の 0 以外の値は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] にリファレンス ラスタライザーの使用を強制します。</span><span class="sxs-lookup"><span data-stu-id="bc1ca-169">Any other non-zero value forces [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] to use the reference rasterizer.</span></span>  
   
-## 参照  
- [グラフィックスの描画層](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)   
- [WPF グラフィックス レンダリングの概要](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+## <a name="see-also"></a><span data-ttu-id="bc1ca-170">関連項目</span><span class="sxs-lookup"><span data-stu-id="bc1ca-170">See Also</span></span>  
+ [<span data-ttu-id="bc1ca-171">グラフィックスの描画層</span><span class="sxs-lookup"><span data-stu-id="bc1ca-171">Graphics Rendering Tiers</span></span>](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)  
+ [<span data-ttu-id="bc1ca-172">WPF グラフィックス レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="bc1ca-172">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)

@@ -1,162 +1,165 @@
 ---
-title: "ServiceDescription と WSDL 参照 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ServiceDescription と WSDL 参照"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: eedc025d-abd9-46b1-bf3b-61d2d5c95fd6
-caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 26babd473ca78d6b55ada6c0505ec2f94214448b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ServiceDescription と WSDL 参照
-ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で行われる Web サービス記述言語 \(WSDL\) ドキュメントと <xref:System.ServiceModel.Description.ServiceDescription> インスタンスの間のマッピングについて説明します。  
+# <a name="servicedescription-and-wsdl-reference"></a><span data-ttu-id="1e1d9-102">ServiceDescription と WSDL 参照</span><span class="sxs-lookup"><span data-stu-id="1e1d9-102">ServiceDescription and WSDL Reference</span></span>
+<span data-ttu-id="1e1d9-103">ここでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] で行われる Web サービス記述言語 (WSDL) ドキュメントと <xref:System.ServiceModel.Description.ServiceDescription> インスタンスの間のマッピングについて説明します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-103">This topic describes how [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] maps Web Services Description Language (WSDL) documents to and from <xref:System.ServiceModel.Description.ServiceDescription> instances.</span></span>  
   
-## ServiceDescription から WSDL 1.1 へのマッピング  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して、サービスの <xref:System.ServiceModel.Description.ServiceDescription> インスタンスから WSDL ドキュメントをエクスポートできます。  WSDL ドキュメントは、メタデータ エンドポイントを公開したときに自動的にサービスに対して生成されます。  
+## <a name="how-servicedescription-maps-to-wsdl-11"></a><span data-ttu-id="1e1d9-104">ServiceDescription から WSDL 1.1 へのマッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-104">How ServiceDescription Maps to WSDL 1.1</span></span>  
+ <span data-ttu-id="1e1d9-105">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] を使用して、サービスの <xref:System.ServiceModel.Description.ServiceDescription> インスタンスから WSDL ドキュメントをエクスポートできます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-105">You can use [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] to export WSDL documents from a <xref:System.ServiceModel.Description.ServiceDescription> instance for your service.</span></span> <span data-ttu-id="1e1d9-106">WSDL ドキュメントは、メタデータ エンドポイントを公開したときに自動的にサービスに対して生成されます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-106">WSDL documents are automatically generated for your service when you publish metadata endpoints.</span></span>  
   
- また、`WsdlImporter` 型を使用して、WSDL ドキュメントから <xref:System.ServiceModel.Description.ServiceEndpoint> インスタンス、<xref:System.ServiceModel.Description.ContractDescription> インスタンス、および <xref:System.ServiceModel.Channels.Binding> インスタンスをインポートできます。  
+ <span data-ttu-id="1e1d9-107">また、<xref:System.ServiceModel.Description.ServiceEndpoint> 型を使用して、WSDL ドキュメントから <xref:System.ServiceModel.Description.ContractDescription> インスタンス、<xref:System.ServiceModel.Channels.Binding> インスタンス、および `WsdlImporter` インスタンスをインポートできます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-107">You can also import <xref:System.ServiceModel.Description.ServiceEndpoint> instances, <xref:System.ServiceModel.Description.ContractDescription> instances, and <xref:System.ServiceModel.Channels.Binding> instances from WSDL documents using the `WsdlImporter` type.</span></span>  
   
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によってエクスポートされる WSDL ドキュメントは、外部の XML スキーマ ドキュメントから使用する XML スキーマ定義をインポートします。  データ型がサービスで使用するターゲット名前空間ごとに、個別の XML スキーマ ドキュメントがエクスポートされます。  同様に、サービス コントラクトが使用するターゲット名前空間ごとに、個別の WSDL ドキュメントがエクスポートされます。  
+ <span data-ttu-id="1e1d9-108">[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] によってエクスポートされる WSDL ドキュメントは、外部の XML スキーマ ドキュメントから使用する XML スキーマ定義をインポートします。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-108">The WSDL documents, exported by [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], import any XML Schema definitions used from external XML Schema documents.</span></span> <span data-ttu-id="1e1d9-109">データ型がサービスで使用するターゲット名前空間ごとに、個別の XML スキーマ ドキュメントがエクスポートされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-109">A separate XML Schema document is exported for each target namespace the data types use in the service.</span></span> <span data-ttu-id="1e1d9-110">同様に、サービス コントラクトが使用するターゲット名前空間ごとに、個別の WSDL ドキュメントがエクスポートされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-110">Likewise, a separate WSDL document is exported for each target namespace the service contracts use.</span></span>  
   
-### ServiceDescription  
- <xref:System.ServiceModel.Description.ServiceDescription> インスタンスは `wsdl:service` 要素にマップされます。  <xref:System.ServiceModel.Description.ServiceDescription> インスタンスは、それぞれが個別の `wsdl:port` 要素にマップされる <xref:System.ServiceModel.Description.ServiceEndpoint> インスタンスのコレクションを格納します。  
+### <a name="servicedescription"></a><span data-ttu-id="1e1d9-111">ServiceDescription</span><span class="sxs-lookup"><span data-stu-id="1e1d9-111">ServiceDescription</span></span>  
+ <span data-ttu-id="1e1d9-112"><xref:System.ServiceModel.Description.ServiceDescription> インスタンスは `wsdl:service` 要素にマップされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-112">A <xref:System.ServiceModel.Description.ServiceDescription> instance maps to a `wsdl:service` element.</span></span> <span data-ttu-id="1e1d9-113"><xref:System.ServiceModel.Description.ServiceDescription> インスタンスは、それぞれが個別の <xref:System.ServiceModel.Description.ServiceEndpoint> 要素にマップされる `wsdl:port` インスタンスのコレクションを格納します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-113">A <xref:System.ServiceModel.Description.ServiceDescription> instance contains a collection of <xref:System.ServiceModel.Description.ServiceEndpoint> instances that each map to individual `wsdl:port` elements.</span></span>  
   
-|プロパティ|WSDL マッピング|  
-|-----------|----------------|  
-|`Name`|サービスの `wsdl:service`\/@name 値|  
-|`Namespace`|サービスの `wsdl:service` 定義の targetNamespace|  
-|`Endpoints`|サービスの `wsdl:port` 定義|  
+|<span data-ttu-id="1e1d9-114">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-114">Properties</span></span>|<span data-ttu-id="1e1d9-115">WSDL マッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-115">WSDL mapping</span></span>|  
+|----------------|------------------|  
+|`Name`|<span data-ttu-id="1e1d9-116">`wsdl:service` /@nameサービスの値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-116">The `wsdl:service`/@name value for the service.</span></span>|  
+|`Namespace`|<span data-ttu-id="1e1d9-117">サービスの `wsdl:service` 定義の targetNamespace</span><span class="sxs-lookup"><span data-stu-id="1e1d9-117">The targetNamespace for the `wsdl:service` definition for the service.</span></span>|  
+|`Endpoints`|<span data-ttu-id="1e1d9-118">サービスの `wsdl:port` 定義</span><span class="sxs-lookup"><span data-stu-id="1e1d9-118">The `wsdl:port` definitions for the service.</span></span>|  
   
-### ServiceEndpoint  
- <xref:System.ServiceModel.Description.ServiceEndpoint> インスタンスは `wsdl:port` 要素にマップされます。  <xref:System.ServiceModel.Description.ServiceEndpoint> インスタンスは、アドレス、バインディング、およびコントラクトを格納します。  
+### <a name="serviceendpoint"></a><span data-ttu-id="1e1d9-119">ServiceEndpoint</span><span class="sxs-lookup"><span data-stu-id="1e1d9-119">ServiceEndpoint</span></span>  
+ <span data-ttu-id="1e1d9-120"><xref:System.ServiceModel.Description.ServiceEndpoint> インスタンスは `wsdl:port` 要素にマップされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-120">A <xref:System.ServiceModel.Description.ServiceEndpoint> instance maps to a `wsdl:port` element.</span></span> <span data-ttu-id="1e1d9-121"><xref:System.ServiceModel.Description.ServiceEndpoint> インスタンスは、アドレス、バインディング、およびコントラクトを格納します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-121">A <xref:System.ServiceModel.Description.ServiceEndpoint> instance contains an address, a binding, and a contract.</span></span>  
   
- <xref:System.ServiceModel.Description.IWsdlExportExtension> インターフェイスを実装するエンドポイント動作は、その動作が関連付けられているエンドポイントの `wsdl:port` 要素を変更できます。  
+ <span data-ttu-id="1e1d9-122"><xref:System.ServiceModel.Description.IWsdlExportExtension> インターフェイスを実装するエンドポイント動作は、その動作が関連付けられているエンドポイントの `wsdl:port` 要素を変更できます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-122">Endpoint behaviors that implement the <xref:System.ServiceModel.Description.IWsdlExportExtension> interface can modify the `wsdl:port` element for the endpoint they are attached to.</span></span>  
   
-|プロパティ|WSDL マッピング|  
-|-----------|----------------|  
-|`Name`|エンドポイントの `wsdl:port`\/@name 値およびエンドポイント バインディングの `wsdl:binding`\/@name 値|  
-|`Address`|エンドポイントの `wsdl:port` 定義のアドレス<br /><br /> アドレスの形式は、エンドポイントのトランスポートによって決まります。  たとえば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされるトランスポートの場合、SOAP アドレスまたはエンドポイント参照になります。|  
-|`Binding`|エンドポイントの `wsdl:binding` 定義<br /><br /> `wsdl:binding` 定義とは異なり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のバインディングはどのコントラクトにも関連付けられません。|  
-|`Contract`|エンドポイントの `wsdl:portType` 定義|  
-|`Behaviors`|<xref:System.ServiceModel.Description.IWsdlExportExtension> インターフェイスを実装するエンドポイント動作は、エンドポイントの `wsdl:port` を変更できます。|  
+|<span data-ttu-id="1e1d9-123">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-123">Properties</span></span>|<span data-ttu-id="1e1d9-124">WSDL マッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-124">WSDL mapping</span></span>|  
+|----------------|------------------|  
+|`Name`|<span data-ttu-id="1e1d9-125">`wsdl:port` /@nameエンドポイントの値と`wsdl:binding`/@nameエンドポイント バインディングの値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-125">The `wsdl:port`/@name value for the endpoint and the `wsdl:binding`/@name value for the endpoint binding.</span></span>|  
+|`Address`|<span data-ttu-id="1e1d9-126">エンドポイントの `wsdl:port` 定義のアドレス</span><span class="sxs-lookup"><span data-stu-id="1e1d9-126">The address for the `wsdl:port` definition for the endpoint.</span></span><br /><br /> <span data-ttu-id="1e1d9-127">アドレスの形式は、エンドポイントのトランスポートによって決まります。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-127">The transport for the endpoint determines the format of the address.</span></span> <span data-ttu-id="1e1d9-128">たとえば、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] でサポートされるトランスポートの場合、SOAP アドレスまたはエンドポイント参照になります。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-128">For example, for [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]-supported transports it could be a SOAP address or an endpoint reference.</span></span>|  
+|`Binding`|<span data-ttu-id="1e1d9-129">エンドポイントの `wsdl:binding` 定義</span><span class="sxs-lookup"><span data-stu-id="1e1d9-129">The `wsdl:binding` definition for the endpoint.</span></span><br /><br /> <span data-ttu-id="1e1d9-130">`wsdl:binding` 定義とは異なり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のバインディングはどのコントラクトにも関連付けられません。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-130">Unlike `wsdl:binding` definitions, bindings in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] are not tied to any one contract.</span></span>|  
+|`Contract`|<span data-ttu-id="1e1d9-131">エンドポイントの `wsdl:portType` 定義</span><span class="sxs-lookup"><span data-stu-id="1e1d9-131">The `wsdl:portType` definition for the endpoint.</span></span>|  
+|`Behaviors`|<span data-ttu-id="1e1d9-132"><xref:System.ServiceModel.Description.IWsdlExportExtension> インターフェイスを実装するエンドポイント動作は、エンドポイントの `wsdl:port` を変更できます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-132">Endpoint behaviors that implement the <xref:System.ServiceModel.Description.IWsdlExportExtension> interface can modify the `wsdl:port` for the endpoint.</span></span>|  
   
-### バインディング  
- `ServiceEndpoint` インスタンスのバインディング インスタンスは、`wsdl:binding` 定義にマップされます。  特定の `wsdl:portType` 定義に関連付ける必要がある `wsdl:binding` 定義とは異なり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のバインディングは、どのコントラクトにも依存しません。  
+### <a name="bindings"></a><span data-ttu-id="1e1d9-133">バインディング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-133">Bindings</span></span>  
+ <span data-ttu-id="1e1d9-134">`ServiceEndpoint` インスタンスのバインディング インスタンスは、`wsdl:binding` 定義にマップされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-134">The binding instance for a `ServiceEndpoint` instance maps to a `wsdl:binding` definition.</span></span> <span data-ttu-id="1e1d9-135">特定の `wsdl:binding` 定義に関連付ける必要がある `wsdl:portType` 定義とは異なり、[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のバインディングは、どのコントラクトにも依存しません。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-135">Unlike `wsdl:binding` definitions, which must be associated with a specific `wsdl:portType` definition, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] bindings are independent of any contract.</span></span>  
   
- バインディングは、バインド要素のコレクションで構成されます。  各要素は、エンドポイントがクライアントと通信する方法の一部分を記述します。  また、バインディングには、エンドポイントの <xref:System.ServiceModel.EnvelopeVersion> と <xref:System.ServiceModel.Channels.AddressingVersion> を示すための <xref:System.ServiceModel.Channels.MessageVersion> があります。  
+ <span data-ttu-id="1e1d9-136">バインディングは、バインド要素のコレクションで構成されます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-136">A binding is made up of a collection of binding elements.</span></span> <span data-ttu-id="1e1d9-137">各要素は、エンドポイントがクライアントと通信する方法の一部分を記述します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-137">Each element describes some aspect of how the endpoint communicates with clients.</span></span> <span data-ttu-id="1e1d9-138">また、バインディングには、エンドポイントの <xref:System.ServiceModel.Channels.MessageVersion> と <xref:System.ServiceModel.EnvelopeVersion> を示すための <xref:System.ServiceModel.Channels.AddressingVersion> があります。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-138">Additionally, a binding has a <xref:System.ServiceModel.Channels.MessageVersion> that indicates the <xref:System.ServiceModel.EnvelopeVersion> and <xref:System.ServiceModel.Channels.AddressingVersion> for the endpoint.</span></span>  
   
-|プロパティ|WSDL マッピング|  
-|-----------|----------------|  
-|`Name`|エンドポイントの既定の名前で使用されます。この名前は、バインディング名にコントラクト名を追加し、アンダースコアで区切った形で表記されます。|  
-|`Namespace`|`wsdl:binding` 定義の `targetNamespace`。<br /><br /> インポートでは、WSDL ポートに関連付けられたポリシーがある場合、インポートされたバインディング名前空間は、`wsdl:port` 定義の `targetNamespace` にマップされます。|  
-|`BindingElementCollection` \(`CreateBindingElements`\(\) メソッドによって返されるプロパティとして\)|`wsdl:binding` 定義に対するさまざまなドメイン固有の拡張。通常は、ポリシー アサーション。|  
-|`MessageVersion`|エンドポイントの `EnvelopeVersion` および `AddressingVersion`。<br /><br /> `MessageVersion.None` が指定されている場合、WSDL バインディングは SOAP バインディングを格納せず、WSDL ポートは WS\-Addressing コンテンツを含みません。  この設定は、通常、Plain Old XML \(POX\) エンドポイントに対して使用されます。|  
+|<span data-ttu-id="1e1d9-139">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-139">Properties</span></span>|<span data-ttu-id="1e1d9-140">WSDL マッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-140">WSDL mapping</span></span>|  
+|----------------|------------------|  
+|`Name`|<span data-ttu-id="1e1d9-141">エンドポイントの既定の名前で使用されます。この名前は、バインディング名にコントラクト名を追加し、アンダースコアで区切った形で表記されます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-141">Used in the default name of an endpoint, which is the binding name with the contract name appended separated by an underscore.</span></span>|  
+|`Namespace`|<span data-ttu-id="1e1d9-142">`targetNamespace` 定義の `wsdl:binding`。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-142">The `targetNamespace` for the `wsdl:binding` definition.</span></span><br /><br /> <span data-ttu-id="1e1d9-143">インポートでは、WSDL ポートに関連付けられたポリシーがある場合、インポートされたバインディング名前空間は、`targetNamespace` 定義の `wsdl:port` にマップされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-143">On import, if a policy is attached to the WSDL port, the imported binding namespace maps to the `targetNamespace` for the `wsdl:port` definition.</span></span>|  
+|<span data-ttu-id="1e1d9-144">`BindingElementCollection` (`CreateBindingElements`() メソッドによって返されるプロパティとして)</span><span class="sxs-lookup"><span data-stu-id="1e1d9-144">`BindingElementCollection`, as returned by the `CreateBindingElements`() method</span></span>|<span data-ttu-id="1e1d9-145">`wsdl:binding` 定義に対するさまざまなドメイン固有の拡張。通常は、ポリシー アサーション。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-145">Various domain-specific extensions to the `wsdl:binding` definition, typically policy assertions.</span></span>|  
+|`MessageVersion`|<span data-ttu-id="1e1d9-146">エンドポイントの `EnvelopeVersion` および `AddressingVersion`。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-146">The `EnvelopeVersion` and `AddressingVersion` for the endpoint.</span></span><br /><br /> <span data-ttu-id="1e1d9-147">`MessageVersion.None` が指定されている場合、WSDL バインディングは SOAP バインディングを格納せず、WSDL ポートは WS-Addressing コンテンツを含みません。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-147">When `MessageVersion.None` is specified, the WSDL binding does not contain a SOAP binding and the WSDL port does not contain WS-Addressing content.</span></span> <span data-ttu-id="1e1d9-148">この設定は、通常、Plain Old XML (POX) エンドポイントに対して使用されます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-148">This setting is typically used for plain old XML (POX) endpoints.</span></span>|  
   
-#### BindingElements  
- エンドポイント バインディングのバインド要素は、ポリシー アサーションなど、`wsdl:binding` のさまざまな WSDL 拡張にマップされます。  
+#### <a name="bindingelements"></a><span data-ttu-id="1e1d9-149">BindingElements</span><span class="sxs-lookup"><span data-stu-id="1e1d9-149">BindingElements</span></span>  
+ <span data-ttu-id="1e1d9-150">エンドポイント バインディングのバインド要素は、ポリシー アサーションなど、`wsdl:binding` のさまざまな WSDL 拡張にマップされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-150">The binding elements for an endpoint binding map to various WSDL extensions in the `wsdl:binding`, such as policy assertions.</span></span>  
   
- SOAP バインディングのトランスポート URI \(Uniform Resource Identifier\) は、バインディングの <xref:System.ServiceModel.Channels.TransportBindingElement> によって決まります。  
+ <span data-ttu-id="1e1d9-151">SOAP バインディングのトランスポート URI (Uniform Resource Identifier) は、バインディングの <xref:System.ServiceModel.Channels.TransportBindingElement> によって決まります。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-151">The <xref:System.ServiceModel.Channels.TransportBindingElement> for the binding determines the transport Uniform Resource Identifier (URI) for a SOAP binding.</span></span>  
   
-#### AddressingVersion  
- バインディングの `AddressingVersion` は、`wsd:port` で使用されるアドレス指定のバージョンにマップされます。  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、SOAP 1.1 と SOAP 1.2 のアドレスおよび WS\-Addressing 08\/2004 と WS\-Addressing 1.0 のエンドポイント参照をサポートします。  
+#### <a name="addressingversion"></a><span data-ttu-id="1e1d9-152">AddressingVersion</span><span class="sxs-lookup"><span data-stu-id="1e1d9-152">AddressingVersion</span></span>  
+ <span data-ttu-id="1e1d9-153">バインディングの `AddressingVersion` は、`wsd:port` で使用されるアドレス指定のバージョンにマップされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-153">The `AddressingVersion` on a binding maps to the version of addressing used in the `wsd:port`.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="1e1d9-154"> では、SOAP 1.1 と SOAP 1.2 のアドレスおよび WS-Addressing 08/2004 と WS-Addressing 1.0 のエンドポイント参照をサポートします。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-154"> supports SOAP 1.1 and SOAP 1.2 addresses, and WS-Addressing 08/2004 and WS-Addressing 1.0 endpoint references.</span></span>  
   
-#### EnvelopeVersion  
- バインディングの `EnvelopeVersion` は、`wsdl:binding` で使用される SOAP のバージョンにマップされます。  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、SOAP 1.1 と SOAP 1.2 のバインディングをサポートします。  
+#### <a name="envelopeversion"></a><span data-ttu-id="1e1d9-155">EnvelopeVersion</span><span class="sxs-lookup"><span data-stu-id="1e1d9-155">EnvelopeVersion</span></span>  
+ <span data-ttu-id="1e1d9-156">バインディングの `EnvelopeVersion` は、`wsdl:binding` で使用される SOAP のバージョンにマップされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-156">The `EnvelopeVersion` on a binding maps to the version of SOAP used in the `wsdl:binding`.</span></span> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]<span data-ttu-id="1e1d9-157"> では、SOAP 1.1 と SOAP 1.2 のバインディングをサポートします。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-157"> supports SOAP 1.1 and SOAP 1.2 bindings.</span></span>  
   
-### コントラクト  
- `ServiceEndpoint` インスタンスの <xref:System.ServiceModel.Description.ContractDescription> インスタンスは、`wsdl:portType` にマップされます。  `ContractDescription` インスタンスは、特定のコントラクトのすべての操作を記述します。  
+### <a name="contracts"></a><span data-ttu-id="1e1d9-158">コントラクト</span><span class="sxs-lookup"><span data-stu-id="1e1d9-158">Contracts</span></span>  
+ <span data-ttu-id="1e1d9-159"><xref:System.ServiceModel.Description.ContractDescription> インスタンスの `ServiceEndpoint` インスタンスは、`wsdl:portType` にマップされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-159">The <xref:System.ServiceModel.Description.ContractDescription> instance for a `ServiceEndpoint` instance maps to a `wsdl:portType`.</span></span> <span data-ttu-id="1e1d9-160">`ContractDescription` インスタンスは、特定のコントラクトのすべての操作を記述します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-160">A `ContractDescription` instance describes all of the operations for a given contract.</span></span>  
   
-|プロパティ|WSDL マッピング|  
-|-----------|----------------|  
-|`Name`|コントラクトの `wsdl:portType`\/@name 値|  
-|`Namespace`|`wsdl:portType` 定義の targetNamespace|  
-|`SessionMode`|コントラクトの `wsdl:portType`\/@msc:usingSession 値。  この属性は、WSDL 1.1 用の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張です。|  
-|`Operations`|コントラクトの `wsdl:operation` 定義|  
+|<span data-ttu-id="1e1d9-161">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-161">Properties</span></span>|<span data-ttu-id="1e1d9-162">WSDL マッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-162">WSDL mapping</span></span>|  
+|----------------|------------------|  
+|`Name`|<span data-ttu-id="1e1d9-163">`wsdl:portType` /@nameコントラクトの値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-163">The `wsdl:portType`/@name value for the contract.</span></span>|  
+|`Namespace`|<span data-ttu-id="1e1d9-164">`wsdl:portType` 定義の targetNamespace</span><span class="sxs-lookup"><span data-stu-id="1e1d9-164">The targetNamespace for the `wsdl:portType` definition.</span></span>|  
+|`SessionMode`|<span data-ttu-id="1e1d9-165">`wsdl:portType` /@msc:usingSessionコントラクトの値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-165">The `wsdl:portType`/@msc:usingSession value for the contract.</span></span> <span data-ttu-id="1e1d9-166">この属性は、WSDL 1.1 用の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張です。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-166">This attribute is a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] extension for WSDL 1.1.</span></span>|  
+|`Operations`|<span data-ttu-id="1e1d9-167">コントラクトの `wsdl:operation` 定義</span><span class="sxs-lookup"><span data-stu-id="1e1d9-167">The `wsdl:operation` definitions for the contract.</span></span>|  
   
-### 操作  
- <xref:System.ServiceModel.Description.OperationDescription> インスタンスは、`wsdl:portType`\/`wsdl:operation` にマップされます。  `OperationDescription` は、操作のメッセージを記述する `MessageDescription` インスタンスのコレクションを格納します。  
+### <a name="operations"></a><span data-ttu-id="1e1d9-168">オペレーション</span><span class="sxs-lookup"><span data-stu-id="1e1d9-168">Operations</span></span>  
+ <span data-ttu-id="1e1d9-169"><xref:System.ServiceModel.Description.OperationDescription>インスタンスにマッピングする`wsdl:portType` /`wsdl:operation`です。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-169">An <xref:System.ServiceModel.Description.OperationDescription> instance maps to a `wsdl:portType`/`wsdl:operation`.</span></span> <span data-ttu-id="1e1d9-170">`OperationDescription` は、操作のメッセージを記述する `MessageDescription` インスタンスのコレクションを格納します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-170">An `OperationDescription` contains a collection of `MessageDescription` instances that describe the messages for the operation.</span></span>  
   
- 主に、2 つの操作動作 `DataContractSerializerOperationBehavior` および `XmlSerializerOperationBehavior` が、`OperationDescription` を WSDL ドキュメントにマップする方法に関与しています。  
+ <span data-ttu-id="1e1d9-171">主に、2 つの操作動作 `OperationDescription` および `DataContractSerializerOperationBehavior` が、`XmlSerializerOperationBehavior` を WSDL ドキュメントにマップする方法に関与しています。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-171">Two operation behaviors participate heavily in how an `OperationDescription` is mapped to a WSDL document: `DataContractSerializerOperationBehavior` and `XmlSerializerOperationBehavior`.</span></span>  
   
-|プロパティ|WSDL マッピング|  
-|-----------|----------------|  
-|`Name`|操作の `wsdl:portType`\/`wsdl:operation`\/@name 値|  
-|`ProtectionLevel`|この操作の `wsdl:binding/wsdl:operation` メッセージに関連付けられたセキュリティ ポリシーの保護アサーション|  
-|`IsInitiating`|操作の `wsdl:portType`\/`wsdl:operation`\/@msc:isInitiating 値。  この属性は、WSDL 1.1 用の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張です。|  
-|`IsTerminating`|操作の `wsdl:portType`\/`wsdl:operation`\/@msc:isTerminating 値。  この属性は、WSDL 1.1 用の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張です。|  
-|`Messages`|操作の `wsdl:portType`\/`wsdl:operation`\/`wsdl:input` メッセージおよび `wsdl:portType`\/`wsdl:operation`\/`wsdl:output` メッセージ|  
-|`Faults`|操作の `wsdl:portType`\/`wsdl:operation`\/`wsdl:fault` 定義|  
-|`Behaviors`|`DataContractSerializerOperationBehavior` および `XmlSerializerOperationBehavior` は、操作バインディングおよび操作メッセージを扱います。|  
+|<span data-ttu-id="1e1d9-172">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-172">Properties</span></span>|<span data-ttu-id="1e1d9-173">WSDL マッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-173">WSDL mapping</span></span>|  
+|----------------|------------------|  
+|`Name`|<span data-ttu-id="1e1d9-174">`wsdl:portType` / `wsdl:operation` /@name操作の値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-174">The `wsdl:portType`/`wsdl:operation`/@name value for the operation.</span></span>|  
+|`ProtectionLevel`|<span data-ttu-id="1e1d9-175">この操作の `wsdl:binding/wsdl:operation` メッセージに関連付けられたセキュリティ ポリシーの保護アサーション</span><span class="sxs-lookup"><span data-stu-id="1e1d9-175">Protection assertions in security policy attached to the `wsdl:binding/wsdl:operation` messages for this operation.</span></span>|  
+|`IsInitiating`|<span data-ttu-id="1e1d9-176">`wsdl:portType` / `wsdl:operation` /@msc:isInitiating操作の値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-176">The `wsdl:portType`/`wsdl:operation`/@msc:isInitiating value for the operation.</span></span> <span data-ttu-id="1e1d9-177">この属性は、WSDL 1.1 用の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張です。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-177">This attribute is a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] extension for WSDL 1.1.</span></span>|  
+|`IsTerminating`|<span data-ttu-id="1e1d9-178">`wsdl:portType` / `wsdl:operation` /@msc:isTerminating操作の値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-178">The `wsdl:portType`/`wsdl:operation`/@msc:isTerminating value for the operation.</span></span> <span data-ttu-id="1e1d9-179">この属性は、WSDL 1.1 用の [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] 拡張です。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-179">This attribute is a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] extension for WSDL 1.1.</span></span>|  
+|`Messages`|<span data-ttu-id="1e1d9-180">`wsdl:portType` / `wsdl:operation` / `wsdl:input`と`wsdl:portType` / `wsdl:operation` / `wsdl:output`操作のメッセージ。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-180">The `wsdl:portType`/`wsdl:operation`/`wsdl:input` and `wsdl:portType`/`wsdl:operation`/`wsdl:output` messages for the operation.</span></span>|  
+|`Faults`|<span data-ttu-id="1e1d9-181">`wsdl:portType` / `wsdl:operation` / `wsdl:fault`操作を定義します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-181">The `wsdl:portType`/`wsdl:operation`/`wsdl:fault` definitions for the operation.</span></span>|  
+|`Behaviors`|<span data-ttu-id="1e1d9-182">`DataContractSerializerOperationBehavior` および `XmlSerializerOperationBehavior` は、操作バインディングおよび操作メッセージを扱います。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-182">The `DataContractSerializerOperationBehavior` and `XmlSerializerOperationBehavior` deal with the operation binding and the operation messages.</span></span>|  
   
-#### DataContractSerializerOperationBehavior  
- 操作の `DataContractSerializerOperationBehavior` は、その操作の WSDL メッセージとバインディングをエクスポートする `IWsdlExportExtension` の実装です。  XML スキーマ型は、`XsdDataContractExporter` を使用してエクスポートされます。  また、`DataContractSerializerOperationBehavior` では、その操作に使用する使用方法、スタイル、およびスキーマ エクスポーターとインポーターを決定します。  
+#### <a name="the-datacontractserializeroperationbehavior"></a><span data-ttu-id="1e1d9-183">DataContractSerializerOperationBehavior</span><span class="sxs-lookup"><span data-stu-id="1e1d9-183">The DataContractSerializerOperationBehavior</span></span>  
+ <span data-ttu-id="1e1d9-184">操作の `DataContractSerializerOperationBehavior` は、その操作の WSDL メッセージとバインディングをエクスポートする `IWsdlExportExtension` の実装です。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-184">The `DataContractSerializerOperationBehavior` for an operation is an `IWsdlExportExtension` implementation that exports the WSDL messages and binding for that operation.</span></span> <span data-ttu-id="1e1d9-185">XML スキーマ型は、`XsdDataContractExporter` を使用してエクスポートされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-185">The XML Schema types are exported using the `XsdDataContractExporter`.</span></span> <span data-ttu-id="1e1d9-186">また、`DataContractSerializerOperationBehavior` では、その操作に使用する使用方法、スタイル、およびスキーマ エクスポーターとインポーターを決定します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-186">The `DataContractSerializerOperationBehavior` also determines the use, style, and schema exporter and importer to use for that operation.</span></span>  
   
-|プロパティ|WSDL マッピング|  
-|-----------|----------------|  
-|`DataContractFormatAttribute`|この属性の `Style` プロパティは、操作の `wsdl:binding`\/`wsdl:operation`\/`soap:operation`\/@style 値にマップされます。<br /><br /> `DataContractSerializerOperationBehavior` は、WSDL のスキーマ型のリテラル使用だけをサポートします。|  
+|<span data-ttu-id="1e1d9-187">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-187">Properties</span></span>|<span data-ttu-id="1e1d9-188">WSDL マッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-188">WSDL Mapping</span></span>|  
+|----------------|------------------|  
+|`DataContractFormatAttribute`|<span data-ttu-id="1e1d9-189">`Style`この属性のプロパティにマップ、 `wsdl:binding` / `wsdl:operation` / `soap:operation` /@style操作の値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-189">The `Style` property for this attribute maps to the `wsdl:binding`/`wsdl:operation`/`soap:operation`/@style value for the operation.</span></span><br /><br /> <span data-ttu-id="1e1d9-190">`DataContractSerializerOperationBehavior` は、WSDL のスキーマ型のリテラル使用だけをサポートします。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-190">The `DataContractSerializerOperationBehavior` supports only the literal use of the schema types in the WSDL.</span></span>|  
   
-#### XmlSerializerOperationBehavior  
- 操作の `XmlSerializerOperationBehavior` は、その操作の WSDL メッセージとバインディングをエクスポートする `IWsdlExportExtension` の実装です。  XML スキーマ型は、`XmlSchemaExporter` を使用してエクスポートされます。  また、`XmlSerializerOperationBehavior` では、その操作に使用する使用方法、スタイル、およびスキーマ エクスポーターとインポーターを決定します。  
+#### <a name="the-xmlserializeroperationbehavior"></a><span data-ttu-id="1e1d9-191">XmlSerializerOperationBehavior</span><span class="sxs-lookup"><span data-stu-id="1e1d9-191">The XmlSerializerOperationBehavior</span></span>  
+ <span data-ttu-id="1e1d9-192">操作の `XmlSerializerOperationBehavior` は、その操作の WSDL メッセージとバインディングをエクスポートする `IWsdlExportExtension` の実装です。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-192">The `XmlSerializerOperationBehavior` for an operation is an `IWsdlExportExtension` implementation that exports the WSDL messages and binding for that operation.</span></span> <span data-ttu-id="1e1d9-193">XML スキーマ型は、`XmlSchemaExporter` を使用してエクスポートされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-193">The XML Schema types are exported using the `XmlSchemaExporter`.</span></span> <span data-ttu-id="1e1d9-194">また、`XmlSerializerOperationBehavior` では、その操作に使用する使用方法、スタイル、およびスキーマ エクスポーターとインポーターを決定します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-194">The `XmlSerializerOperationBehavior` also determines the use, style, and schema exporter and importer to use for that operation.</span></span>  
   
-|プロパティ|WSDL マッピング|  
-|-----------|----------------|  
-|`XmlSerializerFormatAttribute`|この属性の `Style` プロパティは、操作の `wsdl:binding`\/`wsdl:operation`\/`soap:operation`\/@style 値にマップされます。<br /><br /> この属性の `Use` プロパティは、操作のすべてのメッセージについて、`wsdl:binding`\/`wsdl:operation`\/`soap:operation`\/\*\/@use 値にマップされます。|  
+|<span data-ttu-id="1e1d9-195">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-195">Properties</span></span>|<span data-ttu-id="1e1d9-196">WSDL マッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-196">WSDL mapping</span></span>|  
+|----------------|------------------|  
+|`XmlSerializerFormatAttribute`|<span data-ttu-id="1e1d9-197">`Style`この属性のプロパティにマップ、 `wsdl:binding` / `wsdl:operation` / `soap:operation` /@style操作の値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-197">The `Style` property for this attribute maps to the `wsdl:binding`/`wsdl:operation`/`soap:operation`/@style value for the operation.</span></span><br /><br /> <span data-ttu-id="1e1d9-198">`Use`この属性のプロパティにマップ、 `wsdl:binding` / `wsdl:operation` / `soap:operation`/*/@use操作ですべてのメッセージの値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-198">The `Use` property for this attribute maps to the `wsdl:binding`/`wsdl:operation`/`soap:operation`/*/@use values for all messages in the operation.</span></span>|  
   
-### \[メッセージ\]  
- `MessageDescription` インスタンスは、操作の `wsdl:portType`\/`wsdl:operation`\/`wsdl:input` メッセージまたは `wsdl:portType`\/`wsdl:operation`\/`wsdl:output` メッセージによって参照される `wsdl:message` にマップされます。  `MessageDescription` には、本文とヘッダーがあります。  
+### <a name="messages"></a><span data-ttu-id="1e1d9-199">メッセージ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-199">Messages</span></span>  
+ <span data-ttu-id="1e1d9-200">A`MessageDescription`インスタンスにマッピングする`wsdl:message`によって参照される、 `wsdl:portType` / `wsdl:operation` / `wsdl:input`または`wsdl:portType` / `wsdl:operation` / `wsdl:output`操作でのメッセージ。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-200">A `MessageDescription` instance maps to a `wsdl:message` that is referenced by a `wsdl:portType`/`wsdl:operation`/`wsdl:input` or a `wsdl:portType`/`wsdl:operation`/`wsdl:output` message in an operation.</span></span> <span data-ttu-id="1e1d9-201">`MessageDescription` には、本文とヘッダーがあります。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-201">A `MessageDescription` has a body and headers.</span></span>  
   
-|プロパティ|WSDL マッピング|  
-|-----------|----------------|  
-|`Action`|メッセージの SOAP アクションまたは WS\-Addressing アクション。<br /><br /> Action 文字列 "\*" を使用する操作は、WSDL では表示されません。|  
-|`Direction`|`MessageDirection.Input` は `wsdl:input` にマップされます。<br /><br /> `MessageDirection.Output` は `wsdl:output` にマップされます。|  
-|`ProtectionLevel`|このメッセージの `wsdl:message` 定義に関連付けられたセキュリティ ポリシーの保護アサーション|  
-|`Body`|メッセージのメッセージ本文|  
-|`Headers`|メッセージのヘッダー|  
-|`ContractDescription.Name`, `OperationContract.Name`|エクスポートするときに、`wsdl:message`\/@name 値を派生するために使用されます。|  
+|<span data-ttu-id="1e1d9-202">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-202">Properties</span></span>|<span data-ttu-id="1e1d9-203">WSDL マッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-203">WSDL Mapping</span></span>|  
+|----------------|------------------|  
+|`Action`|<span data-ttu-id="1e1d9-204">メッセージの SOAP アクションまたは WS-Addressing アクション。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-204">The SOAP or WS-Addressing action for the message.</span></span><br /><br /> <span data-ttu-id="1e1d9-205">Action 文字列 "*" を使用する操作は、WSDL では表示されません。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-205">Note that operations that use the Action string "*" are not represented in WSDL.</span></span>|  
+|`Direction`|<span data-ttu-id="1e1d9-206">`MessageDirection.Input` は `wsdl:input` にマップされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-206">`MessageDirection.Input` maps to `wsdl:input`.</span></span><br /><br /> <span data-ttu-id="1e1d9-207">`MessageDirection.Output` は `wsdl:output` にマップされます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-207">`MessageDirection.Output` maps to `wsdl:output`.</span></span>|  
+|`ProtectionLevel`|<span data-ttu-id="1e1d9-208">このメッセージの `wsdl:message` 定義に関連付けられたセキュリティ ポリシーの保護アサーション</span><span class="sxs-lookup"><span data-stu-id="1e1d9-208">Protection assertions in security policy attached to the `wsdl:message` definition for this message.</span></span>|  
+|`Body`|<span data-ttu-id="1e1d9-209">メッセージのメッセージ本文</span><span class="sxs-lookup"><span data-stu-id="1e1d9-209">The message body for the message.</span></span>|  
+|`Headers`|<span data-ttu-id="1e1d9-210">メッセージのヘッダー</span><span class="sxs-lookup"><span data-stu-id="1e1d9-210">The headers for the message.</span></span>|  
+|<span data-ttu-id="1e1d9-211">`ContractDescription.Name`, `OperationContract.Name`</span><span class="sxs-lookup"><span data-stu-id="1e1d9-211">`ContractDescription.Name`, `OperationContract.Name`</span></span>|<span data-ttu-id="1e1d9-212">エクスポートで派生に使用される、 `wsdl:message` /@name値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-212">On export, used to derive the `wsdl:message`/@name value.</span></span>|  
   
-#### メッセージ本文  
- `MessageBodyDescription` インスタンスは、メッセージ本文の `wsdl:message`\/`wsdl:part` 定義にマップされます。  メッセージ本文は、ラップされている場合とベアの場合があります。  
+#### <a name="message-body"></a><span data-ttu-id="1e1d9-213">メッセージ本文</span><span class="sxs-lookup"><span data-stu-id="1e1d9-213">Message Body</span></span>  
+ <span data-ttu-id="1e1d9-214">A`MessageBodyDescription`インスタンスにマッピング、 `wsdl:message` / `wsdl:part`メッセージの本文を定義します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-214">A `MessageBodyDescription` instance maps to the `wsdl:message`/`wsdl:part` definitions for the body of a message.</span></span> <span data-ttu-id="1e1d9-215">メッセージ本文は、ラップされている場合とベアの場合があります。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-215">The message body may be wrapped or bare.</span></span>  
   
-|プロパティ|WSDL マッピング|  
-|-----------|----------------|  
-|`WrapperName`|スタイルが RPC 以外の場合、`WrapperName` は、@name が "parameters" に設定された `wsdl:message`\/`wsdl:part` によって参照される要素名にマップされます。|  
-|`WrapperNamespace`|スタイルが RPC 以外の場合、`WrapperNamespace` は、@name が "parameters" に設定された `wsdl:message`\/`wsdl:part` の要素の名前空間にマップされます。|  
-|`Parts`|このメッセージ本文のメッセージ部分|  
-|`ReturnValue`|ラッパー要素が存在する場合 \(ドキュメント ラップ スタイルまたは RPC スタイル\)、そのラッパー要素の子要素。存在しない場合、メッセージに最初に現れる `wsdl:message`\/`wsdl:part`。|  
+|<span data-ttu-id="1e1d9-216">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-216">Properties</span></span>|<span data-ttu-id="1e1d9-217">WSDL マッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-217">WSDL Mapping</span></span>|  
+|----------------|------------------|  
+|`WrapperName`|<span data-ttu-id="1e1d9-218">スタイルが RPC ではない場合、次に、`WrapperName`によって参照される要素名にマップ、 `wsdl:message` / `wsdl:part`で@name"parameters"に設定します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-218">If the style is not RPC, then the `WrapperName` maps to the element name referenced by the `wsdl:message`/`wsdl:part` with @name set to "parameters".</span></span>|  
+|`WrapperNamespace`|<span data-ttu-id="1e1d9-219">スタイルが RPC ではない場合、次に、`WrapperNamespace`の要素の名前空間にマップ、 `wsdl:message` / `wsdl:part`で@name"parameters"に設定します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-219">If the style is not RPC, then the `WrapperNamespace` maps to the element namespace for the `wsdl:message`/`wsdl:part` with @name set to "parameters".</span></span>|  
+|`Parts`|<span data-ttu-id="1e1d9-220">このメッセージ本文のメッセージ部分</span><span class="sxs-lookup"><span data-stu-id="1e1d9-220">The message parts for this message body.</span></span>|  
+|`ReturnValue`|<span data-ttu-id="1e1d9-221">ラッパー要素が存在する場合 (ドキュメント ラップ スタイルまたは RPC スタイル)、それ以外の場合、ラッパー要素の子要素で、最初`wsdl:message` / `wsdl:part`メッセージにします。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-221">The child element of the wrapper element if a wrapper element exists (document wrapped style, or RPC style), otherwise the first `wsdl:message`/`wsdl:part` in the message.</span></span>|  
   
-#### メッセージ部分  
- `MessagePartDescription` インスタンスは、`wsdl:message`\/`wsdl:part` およびメッセージ部分が指す XML スキーマ型または要素にマップされます。  
+#### <a name="message-parts"></a><span data-ttu-id="1e1d9-222">メッセージ部分</span><span class="sxs-lookup"><span data-stu-id="1e1d9-222">Message Parts</span></span>  
+ <span data-ttu-id="1e1d9-223">A`MessagePartDescription`インスタンスにマッピングする`wsdl:message` / `wsdl:part`と、XML スキーマ型またはメッセージ部分が指す要素。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-223">A `MessagePartDescription` instance maps to a `wsdl:message`/`wsdl:part` and the XML schema type or element that the message part points to.</span></span>  
   
-|プロパティ|WSDL マッピング|  
-|-----------|----------------|  
-|`Name`|メッセージ部分の `wsd:message`\/`wsdl:part`\/@name 値およびメッセージ部分が指す要素の名前|  
-|`Namespace`|メッセージ部分が指す要素の名前空間|  
-|`Index`|メッセージの `wsdl:message`\/`wsdl:part` のインデックス|  
-|`ProtectionLevel`|このメッセージ部分の `wsdl:message` 定義に関連付けられたセキュリティ ポリシーの保護アサーション。  ポリシーは、特定のメッセージ部分を指すためにパラメーター化されます。|  
-|`MessageType`|メッセージ部分が指す要素の XML スキーマ型|  
+|<span data-ttu-id="1e1d9-224">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-224">Properties</span></span>|<span data-ttu-id="1e1d9-225">WSDL マッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-225">WSDL mapping</span></span>|  
+|----------------|------------------|  
+|`Name`|<span data-ttu-id="1e1d9-226">`wsd:message` / `wsdl:part` /@nameメッセージ部分であり、メッセージ部分が指す要素の名前の値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-226">The `wsd:message`/`wsdl:part`/@name value for the message part and the name of the element that the message part points to.</span></span>|  
+|`Namespace`|<span data-ttu-id="1e1d9-227">メッセージ部分が指す要素の名前空間</span><span class="sxs-lookup"><span data-stu-id="1e1d9-227">The namespace of the element that the message part points to.</span></span>|  
+|`Index`|<span data-ttu-id="1e1d9-228">インデックス、 `wsdl:message` / `wsdl:part`メッセージ。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-228">The index of the `wsdl:message`/`wsdl:part` for the message.</span></span>|  
+|`ProtectionLevel`|<span data-ttu-id="1e1d9-229">このメッセージ部分の `wsdl:message` 定義に関連付けられたセキュリティ ポリシーの保護アサーション。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-229">Protection assertions in security policy attached to the `wsdl:message` definition for this message part.</span></span> <span data-ttu-id="1e1d9-230">ポリシーは、特定のメッセージ部分を指すためにパラメーター化されます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-230">The policy is parameterized to point to the specific message part.</span></span>|  
+|`MessageType`|<span data-ttu-id="1e1d9-231">メッセージ部分が指す要素の XML スキーマ型</span><span class="sxs-lookup"><span data-stu-id="1e1d9-231">The XML Schema type of the element that the message part points to.</span></span>|  
   
-#### メッセージ ヘッダー  
- `MessageHeaderDescription` インスタンスは、メッセージ部分の `soap:header` バインディングにもマップされるメッセージ部分です。  
+#### <a name="message-headers"></a><span data-ttu-id="1e1d9-232">メッセージ ヘッダー</span><span class="sxs-lookup"><span data-stu-id="1e1d9-232">Message Headers</span></span>  
+ <span data-ttu-id="1e1d9-233">`MessageHeaderDescription` インスタンスは、メッセージ部分の `soap:header` バインディングにもマップされるメッセージ部分です。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-233">A `MessageHeaderDescription` instance is a message part that also maps to a `soap:header` binding for the message part.</span></span>  
   
-### エラー  
- `FaultDescription` インスタンスは、`wsdl:portType`\/`wsdl:operation`\/`wsdl:fault` 定義およびその関連する `wsdl:message` 定義にマップされます。  `wsdl:message` は、関連する WSDL ポートの種類と同じターゲット名前空間に追加されます。  `wsdl:message` には、`FaultDescription` インスタンスの `DefaultType` プロパティ値に相当する XML スキーマ要素を指す、"detail" という名前の 1 つのメッセージ部分があります。  
+### <a name="faults"></a><span data-ttu-id="1e1d9-234">エラー</span><span class="sxs-lookup"><span data-stu-id="1e1d9-234">Faults</span></span>  
+ <span data-ttu-id="1e1d9-235">A`FaultDescription`インスタンスにマッピングする`wsdl:portType` / `wsdl:operation` / `wsdl:fault`定義とそれに関連する`wsdl:message`定義します。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-235">A `FaultDescription` instance maps to a `wsdl:portType`/`wsdl:operation`/`wsdl:fault` definition and its associated `wsdl:message` definition.</span></span> <span data-ttu-id="1e1d9-236">`wsdl:message` は、関連する WSDL ポートの種類と同じターゲット名前空間に追加されます。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-236">The `wsdl:message` is added to the same target namespace as its associated WSDL port type.</span></span> <span data-ttu-id="1e1d9-237">`wsdl:message` には、`DefaultType` インスタンスの `FaultDescription` プロパティ値に相当する XML スキーマ要素を指す、"detail" という名前の 1 つのメッセージ部分があります。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-237">The `wsdl:message` has a single message part named "detail" that points to the XML Schema element that corresponds to the `DefaultType` property value for the `FaultDescription` instance.</span></span>  
   
-|プロパティ|WSDL マッピング|  
-|-----------|----------------|  
-|`Name`|エラーの `wsdl:portType`\/`wsdl:operation`\/`wsdl:fault`\/@name 値|  
-|`Namespace`|エラー詳細メッセージ部分が指す XML スキーマ要素の名前空間|  
-|`Action`|エラーの SOAP アクションまたは WS\-Addressing アクション|  
-|`ProtectionLevel`|このエラーの `wsdl:message` 定義に関連付けられたセキュリティ ポリシーの保護アサーション|  
-|`DetailType`|詳細メッセージ部分が指す要素の XML スキーマ型|  
-|`Name, ContractDescription.Name, OperationDescription.Name,`|エラー メッセージの `wsdl:message`\/@name 値を派生するために使用されます。|  
+|<span data-ttu-id="1e1d9-238">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1e1d9-238">Properties</span></span>|<span data-ttu-id="1e1d9-239">WSDL マッピング</span><span class="sxs-lookup"><span data-stu-id="1e1d9-239">WSDL mapping</span></span>|  
+|----------------|------------------|  
+|`Name`|<span data-ttu-id="1e1d9-240">`wsdl:portType` / `wsdl:operation` / `wsdl:fault` /@nameエラーの値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-240">The `wsdl:portType`/`wsdl:operation`/`wsdl:fault`/@name value for the fault.</span></span>|  
+|`Namespace`|<span data-ttu-id="1e1d9-241">エラー詳細メッセージ部分が指す XML スキーマ要素の名前空間</span><span class="sxs-lookup"><span data-stu-id="1e1d9-241">The namespace of the XML Schema element that the fault detail message part points to.</span></span>|  
+|`Action`|<span data-ttu-id="1e1d9-242">エラーの SOAP アクションまたは WS-Addressing アクション</span><span class="sxs-lookup"><span data-stu-id="1e1d9-242">The SOAP or WS-Addressing action for the fault.</span></span>|  
+|`ProtectionLevel`|<span data-ttu-id="1e1d9-243">このエラーの `wsdl:message` 定義に関連付けられたセキュリティ ポリシーの保護アサーション</span><span class="sxs-lookup"><span data-stu-id="1e1d9-243">Protection assertions in security policy attached to the `wsdl:message` definition for this fault.</span></span>|  
+|`DetailType`|<span data-ttu-id="1e1d9-244">詳細メッセージ部分が指す要素の XML スキーマ型</span><span class="sxs-lookup"><span data-stu-id="1e1d9-244">The XML Schema type of the element that the detail message part points to.</span></span>|  
+|`Name, ContractDescription.Name, OperationDescription.Name,`|<span data-ttu-id="1e1d9-245">派生に使用される、 `wsdl:message` /@nameエラー メッセージの値。</span><span class="sxs-lookup"><span data-stu-id="1e1d9-245">Used to derive the `wsdl:message`/@name value for the fault message.</span></span>|  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="1e1d9-246">関連項目</span><span class="sxs-lookup"><span data-stu-id="1e1d9-246">See Also</span></span>  
  <xref:System.ServiceModel.Description>

@@ -1,1 +1,1 @@
-XBAP
+<span data-ttu-id="63939-101">XBAP</span><span class="sxs-lookup"><span data-stu-id="63939-101">XBAP</span></span>

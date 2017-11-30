@@ -1,55 +1,38 @@
 ---
-title: "数値演算の概要 (Visual Basic) |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "数値演算の概要 (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - math functions, summary
 - mathematical functions
 - math functions, Visual Basic
 - math functions
 ms.assetid: 6abf2dd7-92d2-488a-8e2b-819be9b30c3f
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 795dabae84ef71ecdb3da7cf9dd9f21cdc9246b8
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 330ea0616da11ab5ccb02f5ee91c406f51de5893
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="math-summary-visual-basic"></a>数値演算の概要 (Visual Basic)
-以下の表は、[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] 言語のキーワードとランタイム ライブラリ メンバーを目的および使用方法別に分類したものです。  
+# <a name="math-summary-visual-basic"></a><span data-ttu-id="82487-102">数値演算の概要 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="82487-102">Math Summary (Visual Basic)</span></span>
+<span data-ttu-id="82487-103">以下の表は、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 言語のキーワードとランタイム ライブラリ メンバーを目的および使用方法別に分類したものです。</span><span class="sxs-lookup"><span data-stu-id="82487-103">[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] language keywords and run-time library members are organized by purpose and use.</span></span>  
   
-|アクション|言語要素|  
+|<span data-ttu-id="82487-104">アクション</span><span class="sxs-lookup"><span data-stu-id="82487-104">Action</span></span>|<span data-ttu-id="82487-105">言語要素</span><span class="sxs-lookup"><span data-stu-id="82487-105">Language element</span></span>|  
 |------------|----------------------|  
-|三角関数の計算|<xref:System.Math.Atan%2A>, <xref:System.Math.Cos%2A>, <xref:System.Math.Sin%2A>, <xref:System.Math.Tan%2A></xref:System.Math.Tan%2A></xref:System.Math.Sin%2A></xref:System.Math.Cos%2A></xref:System.Math.Atan%2A>|  
-|一般的な計算|<xref:System.Math.Exp%2A>, <xref:System.Math.Log%2A>, <xref:System.Math.Sqrt%2A></xref:System.Math.Sqrt%2A></xref:System.Math.Log%2A></xref:System.Math.Exp%2A>|  
-|乱数の生成|<xref:Microsoft.VisualBasic.VBMath.Randomize%2A>,<xref:Microsoft.VisualBasic.VBMath.Rnd%2A></xref:Microsoft.VisualBasic.VBMath.Rnd%2A></xref:Microsoft.VisualBasic.VBMath.Randomize%2A>|  
-|絶対値の取得|<xref:System.Math.Abs%2A></xref:System.Math.Abs%2A>|  
-|式の符号の取得|<xref:System.Math.Sign%2A></xref:System.Math.Sign%2A>|  
-|数値の変換|<xref:Microsoft.VisualBasic.Conversion.Fix%2A>,<xref:Microsoft.VisualBasic.Conversion.Int%2A></xref:Microsoft.VisualBasic.Conversion.Int%2A></xref:Microsoft.VisualBasic.Conversion.Fix%2A>|  
+|<span data-ttu-id="82487-106">三角関数の計算</span><span class="sxs-lookup"><span data-stu-id="82487-106">Derive trigonometric functions.</span></span>|<span data-ttu-id="82487-107"><xref:System.Math.Atan%2A>, <xref:System.Math.Cos%2A>, <xref:System.Math.Sin%2A>, <xref:System.Math.Tan%2A></span><span class="sxs-lookup"><span data-stu-id="82487-107"><xref:System.Math.Atan%2A>, <xref:System.Math.Cos%2A>, <xref:System.Math.Sin%2A>, <xref:System.Math.Tan%2A></span></span>|  
+|<span data-ttu-id="82487-108">一般的な計算</span><span class="sxs-lookup"><span data-stu-id="82487-108">General calculations.</span></span>|<span data-ttu-id="82487-109"><xref:System.Math.Exp%2A>、<xref:System.Math.Log%2A>、<xref:System.Math.Sqrt%2A></span><span class="sxs-lookup"><span data-stu-id="82487-109"><xref:System.Math.Exp%2A>, <xref:System.Math.Log%2A>, <xref:System.Math.Sqrt%2A></span></span>|  
+|<span data-ttu-id="82487-110">乱数の生成</span><span class="sxs-lookup"><span data-stu-id="82487-110">Generate random numbers.</span></span>|<span data-ttu-id="82487-111"><xref:Microsoft.VisualBasic.VBMath.Randomize%2A>, <xref:Microsoft.VisualBasic.VBMath.Rnd%2A></span><span class="sxs-lookup"><span data-stu-id="82487-111"><xref:Microsoft.VisualBasic.VBMath.Randomize%2A>, <xref:Microsoft.VisualBasic.VBMath.Rnd%2A></span></span>|  
+|<span data-ttu-id="82487-112">絶対値の取得</span><span class="sxs-lookup"><span data-stu-id="82487-112">Get absolute value.</span></span>|<xref:System.Math.Abs%2A>|  
+|<span data-ttu-id="82487-113">式の符号の取得</span><span class="sxs-lookup"><span data-stu-id="82487-113">Get the sign of an expression.</span></span>|<xref:System.Math.Sign%2A>|  
+|<span data-ttu-id="82487-114">数値の変換</span><span class="sxs-lookup"><span data-stu-id="82487-114">Perform numeric conversions.</span></span>|<span data-ttu-id="82487-115"><xref:Microsoft.VisualBasic.Conversion.Fix%2A>, <xref:Microsoft.VisualBasic.Conversion.Int%2A></span><span class="sxs-lookup"><span data-stu-id="82487-115"><xref:Microsoft.VisualBasic.Conversion.Fix%2A>, <xref:Microsoft.VisualBasic.Conversion.Int%2A></span></span>|  
   
-## <a name="see-also"></a>関連項目  
- [派生される関数](../../../visual-basic/language-reference/keywords/derived-math-functions.md)   
- [キーワード](../../../visual-basic/language-reference/keywords/index.md)   
- [Visual Basic ランタイム ライブラリのメンバー](../../../visual-basic/language-reference/runtime-library-members.md)
+## <a name="see-also"></a><span data-ttu-id="82487-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="82487-116">See Also</span></span>  
+ [<span data-ttu-id="82487-117">数値演算関数の導出</span><span class="sxs-lookup"><span data-stu-id="82487-117">Derived Math Functions</span></span>](../../../visual-basic/language-reference/keywords/derived-math-functions.md)  
+ [<span data-ttu-id="82487-118">キーワード</span><span class="sxs-lookup"><span data-stu-id="82487-118">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)  
+ [<span data-ttu-id="82487-119">Visual Basic ランタイム ライブラリのメンバー</span><span class="sxs-lookup"><span data-stu-id="82487-119">Visual Basic Runtime Library Members</span></span>](../../../visual-basic/language-reference/runtime-library-members.md)

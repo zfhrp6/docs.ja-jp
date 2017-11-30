@@ -1,1 +1,1 @@
-拡張メタファイル (EMF)
+<span data-ttu-id="1c018-101">拡張メタファイル (EMF)</span><span class="sxs-lookup"><span data-stu-id="1c018-101">Enhanced Metafile (EMF)</span></span>

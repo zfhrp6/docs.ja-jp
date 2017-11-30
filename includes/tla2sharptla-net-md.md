@@ -1,1 +1,1 @@
-[.NET]
+<span data-ttu-id="8e1e4-101">.NET</span><span class="sxs-lookup"><span data-stu-id="8e1e4-101">.NET</span></span>

@@ -1,47 +1,50 @@
 ---
-title: "非同期操作 (WCF Data Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-oob"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "非同期操作 [WCF Data Services]"
-  - "WCF Data Services, 非同期操作"
-  - "WCF Data Services, クライアント ライブラリ"
+title: "非同期操作 (WCF Data Services)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework-oob
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- WCF Data Services, asynchronous operations
+- asynchronous operations [WCF Data Services]
+- WCF Data Services, client library
 ms.assetid: 679644c7-e3fc-422c-b14a-b44b683900d0
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c1fc4b2f02c5b07df71ccf78ade4904297583f7e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 非同期操作 (WCF Data Services)
-Web アプリケーションは、内部ネットワーク内で実行するアプリケーションより長い、クライアントとサーバーとの間の待機時間に対応する必要があります。  Web を介して [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] サーバーにアクセスする場合、アプリケーションのパフォーマンスとユーザー エクスペリエンスを最適化するために <xref:System.Data.Services.Client.DataServiceContext> クラスおよび <xref:System.Data.Services.Client.DataServiceQuery%601> クラスの非同期メソッドを使用することをお勧めします。  
+# <a name="asynchronous-operations-wcf-data-services"></a><span data-ttu-id="f4419-102">非同期操作 (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="f4419-102">Asynchronous Operations (WCF Data Services)</span></span>
+<span data-ttu-id="f4419-103">Web アプリケーションは、内部ネットワーク内で実行するアプリケーションより長い、クライアントとサーバーとの間の待機時間に対応する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f4419-103">Web applications must accommodate higher latency between client and server than applications that run inside internal networks.</span></span> <span data-ttu-id="f4419-104">Web を介して <xref:System.Data.Services.Client.DataServiceContext> サーバーにアクセスする場合、アプリケーションのパフォーマンスとユーザー エクスペリエンスを最適化するために <xref:System.Data.Services.Client.DataServiceQuery%601> クラスおよび [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クラスの非同期メソッドを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="f4419-104">To optimize the performance and user experience of your application, we recommend using the asynchronous methods of the <xref:System.Data.Services.Client.DataServiceContext> and <xref:System.Data.Services.Client.DataServiceQuery%601> classes when accessing [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] servers over the Web.</span></span>  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] サーバーでは、HTTP 要求は非同期として処理されますが、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリの一部のメソッドは同期であり、要求と応答のやり取りがすべて完了するまで待ってから実行を継続します。  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリの非同期メソッドは、このやり取りの完了を待たず、アプリケーションはユーザー インターフェイスの応答性を維持できます。  
+ <span data-ttu-id="f4419-105">[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] サーバーでは、HTTP 要求は非同期として処理されますが、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリの一部のメソッドは同期であり、要求と応答のやり取りがすべて完了するまで待ってから実行を継続します。</span><span class="sxs-lookup"><span data-stu-id="f4419-105">Although the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] servers process HTTP requests asynchronously, some methods of the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] client libraries are synchronous and wait until the entire request-response exchange is completed before continuing execution.</span></span> <span data-ttu-id="f4419-106">[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリの非同期メソッドは、このやり取りの完了を待たず、アプリケーションはユーザー インターフェイスの応答性を維持できます。</span><span class="sxs-lookup"><span data-stu-id="f4419-106">The asynchronous methods of the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] client libraries do not wait for this exchange to complete and can allow your application to maintain a responsive user interface in the meantime.</span></span>  
   
- <xref:System.Data.Services.Client.DataServiceContext> クラスと <xref:System.Data.Services.Client.DataServiceQuery%601> クラスでそれぞれ *Begin* および *End* で始まるメソッドのペアを使用して、非同期操作を実行できます。  *Begin* メソッドは、操作が完了したときにサービスが呼び出すデリゲートを登録します。  *End* メソッドは、完了した操作からのコールバックを処理するために登録されたデリゲートで呼び出します。  *End* メソッドを呼び出して非同期操作を完了するときは、操作を開始するために使用したものと同じ <xref:System.Data.Services.Client.DataServiceQuery%601> または <xref:System.Data.Services.Client.DataServiceContext> インスタンスから呼び出しを行う必要があります。  各 *Begin* メソッドは、状態オブジェクトをコールバックに渡すことができる `state` パラメーターを受け取ります。  この状態オブジェクトは、コールバックで指定された <xref:System.IAsyncResult> から取得され、対応する *End* メソッドを呼び出して非同期操作を完了するために使用されます。  たとえば、<xref:System.Data.Services.Client.DataServiceQuery%601> インスタンスで <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> メソッドを呼び出すときにインスタンスを `state` パラメーターとして指定した場合、同じ <xref:System.Data.Services.Client.DataServiceQuery%601> インスタンスが <xref:System.IAsyncResult> によって返されます。  この <xref:System.Data.Services.Client.DataServiceQuery%601> のインスタンスは、<xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> メソッドを呼び出してクエリ操作を完了するために使用されます。  詳細については、「[方法: 非同期データ サービス クエリを実行する](../../../../docs/framework/data/wcf/how-to-execute-asynchronous-data-service-queries-wcf-data-services.md)」を参照してください。  
+ <span data-ttu-id="f4419-107">メソッドのペアを使用して非同期操作を実行することができます、<xref:System.Data.Services.Client.DataServiceContext>と<xref:System.Data.Services.Client.DataServiceQuery%601>クラスで始まる*開始*と*終了*それぞれします。</span><span class="sxs-lookup"><span data-stu-id="f4419-107">You can perform asynchronous operations by using a pair of methods on the <xref:System.Data.Services.Client.DataServiceContext> and <xref:System.Data.Services.Client.DataServiceQuery%601> classes that start with *Begin* and *End* respectively.</span></span> <span data-ttu-id="f4419-108">*開始*メソッドは、操作が完了したら、サービスによって呼び出されるデリゲートを登録します。</span><span class="sxs-lookup"><span data-stu-id="f4419-108">The *Begin* methods register a delegate that the service calls when the operation is complete.</span></span> <span data-ttu-id="f4419-109">*終了*完了した操作からのコールバックを処理する登録されているデリゲートにメソッドを呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="f4419-109">The *End* methods should be called in the delegate that is registered to handle the callback from the completed operations.</span></span> <span data-ttu-id="f4419-110">呼び出すと、*終了*メソッドが、非同期操作を完了する行う必要がありますから同じ<xref:System.Data.Services.Client.DataServiceQuery%601>または<xref:System.Data.Services.Client.DataServiceContext>操作を開始するために使用するインスタンス。</span><span class="sxs-lookup"><span data-stu-id="f4419-110">When you call the *End* method to complete an asynchronous operation, you must do so from the same <xref:System.Data.Services.Client.DataServiceQuery%601> or <xref:System.Data.Services.Client.DataServiceContext> instance that you used to begin the operation.</span></span> <span data-ttu-id="f4419-111">各*開始*メソッドは、`state`状態オブジェクトをコールバックに渡すことができるパラメーター。</span><span class="sxs-lookup"><span data-stu-id="f4419-111">Each *Begin* method takes a `state` parameter that can pass a state object to the callback.</span></span> <span data-ttu-id="f4419-112">この状態オブジェクトを取得、<xref:System.IAsyncResult>コールバックで提供され、対応する呼び出しに使用する*終了*メソッドが非同期操作を完了します。</span><span class="sxs-lookup"><span data-stu-id="f4419-112">This state object is retrieved from the <xref:System.IAsyncResult> that is supplied with the callback and is used to call the corresponding *End* method to complete the asynchronous operation.</span></span> <span data-ttu-id="f4419-113">たとえば、<xref:System.Data.Services.Client.DataServiceQuery%601> インスタンスで `state` メソッドを呼び出すときにインスタンスを <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> パラメーターとして指定した場合、同じ <xref:System.Data.Services.Client.DataServiceQuery%601> インスタンスが <xref:System.IAsyncResult> によって返されます。</span><span class="sxs-lookup"><span data-stu-id="f4419-113">For example, when you supply the <xref:System.Data.Services.Client.DataServiceQuery%601> instance as the `state` parameter when you call the <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> method on the instance, the same <xref:System.Data.Services.Client.DataServiceQuery%601> instance is returned by the <xref:System.IAsyncResult>.</span></span> <span data-ttu-id="f4419-114">この <xref:System.Data.Services.Client.DataServiceQuery%601> のインスタンスは、<xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> メソッドを呼び出してクエリ操作を完了するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="f4419-114">This instance of <xref:System.Data.Services.Client.DataServiceQuery%601> is then used to call the <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> method to complete the query operation.</span></span> <span data-ttu-id="f4419-115">詳細については、次を参照してください。[する方法: 非同期データ サービス クエリの実行](../../../../docs/framework/data/wcf/how-to-execute-asynchronous-data-service-queries-wcf-data-services.md)です。</span><span class="sxs-lookup"><span data-stu-id="f4419-115">For more information, see [How to: Execute Asynchronous Data Service Queries](../../../../docs/framework/data/wcf/how-to-execute-asynchronous-data-service-queries-wcf-data-services.md).</span></span>  
   
 > [!NOTE]
->  Silverlight 用の .NET Framework で提供されるクライアント ライブラリでは、非同期操作だけがサポートされます。  詳細については、「[WCF Data Services \(Silverlight\)](http://go.microsoft.com/fwlink/?LinkID=143149)」を参照してください。  
+>  <span data-ttu-id="f4419-116">Silverlight 用の .NET Framework で提供されるクライアント ライブラリでは、非同期操作だけがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="f4419-116">Only asynchronous operations are supported by the client libraries that are provided in the .NET Framework for Silverlight.</span></span> <span data-ttu-id="f4419-117">詳細については、次を参照してください。 [WCF Data Services (Silverlight)](http://go.microsoft.com/fwlink/?LinkID=143149)です。</span><span class="sxs-lookup"><span data-stu-id="f4419-117">For more information, see [WCF Data Services (Silverlight)](http://go.microsoft.com/fwlink/?LinkID=143149).</span></span>  
   
- .NET Framework クライアント ライブラリは、以下の非同期操作をサポートします。  
+ <span data-ttu-id="f4419-118">.NET Framework クライアント ライブラリは、以下の非同期操作をサポートします。</span><span class="sxs-lookup"><span data-stu-id="f4419-118">The .NET Framework client libraries support the following asynchronous operations:</span></span>  
   
-|操作|メソッド|  
-|--------|----------|  
-|<xref:System.Data.Services.Client.DataServiceQuery%601> の実行。|-   <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A><br />-   <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A>|  
-|<xref:System.Data.Services.Client.DataServiceContext> からのクエリの実行。|-   <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A><br />-   <xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A>|  
-|<xref:System.Data.Services.Client.DataServiceContext> からのバッチ クエリの実行。|-   <xref:System.Data.Services.Client.DataServiceContext.BeginExecuteBatch%2A><br />-   <xref:System.Data.Services.Client.DataServiceContext.EndExecuteBatch%2A>|  
-|<xref:System.Data.Services.Client.DataServiceContext> への関連エンティティの読み込み。|-   <xref:System.Data.Services.Client.DataServiceContext.BeginLoadProperty%2A><br />-   <xref:System.Data.Services.Client.DataServiceContext.EndLoadProperty%2A>|  
-|オブジェクトに対する変更の <xref:System.Data.Services.Client.DataServiceContext> への保存。|-   <xref:System.Data.Services.Client.DataServiceContext.BeginSaveChanges%2A><br />-   <xref:System.Data.Services.Client.DataServiceContext.EndSaveChanges%2A>|  
+|<span data-ttu-id="f4419-119">操作</span><span class="sxs-lookup"><span data-stu-id="f4419-119">Operation</span></span>|<span data-ttu-id="f4419-120">メソッド</span><span class="sxs-lookup"><span data-stu-id="f4419-120">Methods</span></span>|  
+|---------------|-------------|  
+|<span data-ttu-id="f4419-121"><xref:System.Data.Services.Client.DataServiceQuery%601> の実行。</span><span class="sxs-lookup"><span data-stu-id="f4419-121">Executing a <xref:System.Data.Services.Client.DataServiceQuery%601>.</span></span>|-   <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A><br />-   <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A>|  
+|<span data-ttu-id="f4419-122"><xref:System.Data.Services.Client.DataServiceContext> からのクエリの実行。</span><span class="sxs-lookup"><span data-stu-id="f4419-122">Executing a query from the <xref:System.Data.Services.Client.DataServiceContext>.</span></span>|-   <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A><br />-   <xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A>|  
+|<span data-ttu-id="f4419-123"><xref:System.Data.Services.Client.DataServiceContext> からのバッチ クエリの実行。</span><span class="sxs-lookup"><span data-stu-id="f4419-123">Executing a batch query from the <xref:System.Data.Services.Client.DataServiceContext>.</span></span>|-   <xref:System.Data.Services.Client.DataServiceContext.BeginExecuteBatch%2A><br />-   <xref:System.Data.Services.Client.DataServiceContext.EndExecuteBatch%2A>|  
+|<span data-ttu-id="f4419-124"><xref:System.Data.Services.Client.DataServiceContext> への関連エンティティの読み込み。</span><span class="sxs-lookup"><span data-stu-id="f4419-124">Loading a related entity into the <xref:System.Data.Services.Client.DataServiceContext>.</span></span>|-   <xref:System.Data.Services.Client.DataServiceContext.BeginLoadProperty%2A><br />-   <xref:System.Data.Services.Client.DataServiceContext.EndLoadProperty%2A>|  
+|<span data-ttu-id="f4419-125">オブジェクトに対する変更の <xref:System.Data.Services.Client.DataServiceContext> への保存。</span><span class="sxs-lookup"><span data-stu-id="f4419-125">Saving changes to objects in the <xref:System.Data.Services.Client.DataServiceContext></span></span>|-   <xref:System.Data.Services.Client.DataServiceContext.BeginSaveChanges%2A><br />-   <xref:System.Data.Services.Client.DataServiceContext.EndSaveChanges%2A>|  
   
-## 非同期操作のスレッドに関する考慮事項  
- マルチスレッド アプリケーションでは、非同期操作のコールバックとして登録されたデリゲートは、最初の要求を作成する *Begin* メソッドの呼び出しに使用されたものと同じスレッドで必ずしも呼び出す必要はありません。  特定のスレッドでコールバックを呼び出す必要のあるアプリケーションでは、応答を処理する *End* メソッドの実行を目的のスレッドに明示的にマーシャリングする必要があります。  たとえば、Windows Presentation Foundation \(WPF\) ベースのアプリケーションおよび Silverlight ベースのアプリケーションでは、<xref:System.Windows.Threading.Dispatcher> オブジェクトで <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> メソッドを使用して応答を UI スレッドにマーシャリングする必要があります。  詳細については、「[Querying the Data Service \(WCF Data Services\/Silverlight\)](http://msdn.microsoft.com/ja-jp/3a7cdc07-c37e-4da2-b98b-c3763fd0970b)」を参照してください。  
+## <a name="threading-considerations-for-asynchronous-operations"></a><span data-ttu-id="f4419-126">非同期操作のスレッドに関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="f4419-126">Threading Considerations for Asynchronous Operations</span></span>  
+ <span data-ttu-id="f4419-127">マルチ スレッド アプリケーションで非同期操作のコールバックとして登録されているデリゲートが必ずしも呼び出されません呼び出しに使用された同じスレッドで、*開始*メソッドで、最初の要求を作成します。</span><span class="sxs-lookup"><span data-stu-id="f4419-127">In a multi-threaded application, the delegate that is registered as a callback for the asynchronous operation is not necessarily invoked on the same thread that was used to call the *Begin* method, which creates the initial request.</span></span> <span data-ttu-id="f4419-128">アプリケーションでは特定のスレッドでコールバックを呼び出す必要があります、する必要があります明示的にマーシャ リングの実行、*終了*メソッドで、目的のスレッドへの応答を処理します。</span><span class="sxs-lookup"><span data-stu-id="f4419-128">In an application where the callback must be invoked on a specific thread, you must explicitly marshal the execution of the *End* method, which handles the response, to the desired thread.</span></span> <span data-ttu-id="f4419-129">たとえば、Windows Presentation Foundation (WPF) ベースのアプリケーションおよび Silverlight ベースのアプリケーションでは、<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> オブジェクトで <xref:System.Windows.Threading.Dispatcher> メソッドを使用して応答を UI スレッドにマーシャリングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f4419-129">For example, in Windows Presentation Foundation (WPF)-based applications and Silverlight-based applications, the response must be marshaled back to the UI thread by using the <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> method on the <xref:System.Windows.Threading.Dispatcher> object.</span></span> <span data-ttu-id="f4419-130">詳細については、次を参照してください。[クエリ (WCF データ サービス/Silverlight) データ サービスに対する](http://msdn.microsoft.com/en-us/3a7cdc07-c37e-4da2-b98b-c3763fd0970b)です。</span><span class="sxs-lookup"><span data-stu-id="f4419-130">For more information, see [Querying the Data Service (WCF Data Services/Silverlight)](http://msdn.microsoft.com/en-us/3a7cdc07-c37e-4da2-b98b-c3763fd0970b).</span></span>  
   
-## 参照  
- [WCF Data Services クライアント ライブラリ](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+## <a name="see-also"></a><span data-ttu-id="f4419-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="f4419-131">See Also</span></span>  
+ [<span data-ttu-id="f4419-132">WCF Data Services クライアント ライブラリ</span><span class="sxs-lookup"><span data-stu-id="f4419-132">WCF Data Services Client Library</span></span>](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

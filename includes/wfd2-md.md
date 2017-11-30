@@ -1,1 +1,1 @@
-ワークフロー デザイナー
+<span data-ttu-id="2b63b-101">ワークフロー デザイナー</span><span class="sxs-lookup"><span data-stu-id="2b63b-101">Workflow Designer</span></span>

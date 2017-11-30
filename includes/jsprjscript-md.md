@@ -1,1 +1,1 @@
-JScript
+<span data-ttu-id="0ce80-101">JScript</span><span class="sxs-lookup"><span data-stu-id="0ce80-101">JScript</span></span>

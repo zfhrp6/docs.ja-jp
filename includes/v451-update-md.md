@@ -1,1 +1,1 @@
-4.6、4.5.2、2013 年 11 月の 4.5.1 への更新
+<span data-ttu-id="2c893-101">4.6、4.5.2、2013 年 11 月の 4.5.1 への更新</span><span class="sxs-lookup"><span data-stu-id="2c893-101">4.6, 4.5.2, November 2013 update to 4.5.1</span></span>

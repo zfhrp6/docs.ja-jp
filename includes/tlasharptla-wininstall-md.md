@@ -1,1 +1,1 @@
-Microsoft Windows インストーラー
+<span data-ttu-id="1b070-101">Microsoft Windows インストーラー</span><span class="sxs-lookup"><span data-stu-id="1b070-101">Microsoft Windows Installer</span></span>

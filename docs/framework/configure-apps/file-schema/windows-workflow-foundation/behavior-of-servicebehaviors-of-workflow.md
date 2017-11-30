@@ -1,75 +1,86 @@
 ---
-title: "ワークフローの &lt;serviceBehaviors&gt; の &lt;behavior&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: "ワークフローの &lt;serviceBehaviors&gt; の &lt;behavior&gt;"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: 6a4b718a-1b40-4957-935a-f6122819ab3c
-caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 81dfde9a4b75caeea263cc0809f450cbc0c9a5e9
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ワークフローの &lt;serviceBehaviors&gt; の &lt;behavior&gt;
-**behavior** 要素には、サービスの動作設定のコレクションが含まれます。  各動作には、それぞれの **name** によってインデックスが付けられます。  サービスは、[\<endpoint\>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) 要素の **behaviorConfiguration** 属性を使用して、この名前で各動作にリンクできます。  これにより、設定を再定義することなく、エンドポイント間で共通の動作構成を共有できます。  
+# <a name="ltbehaviorgt-of-ltservicebehaviorsgt-of-workflow"></a><span data-ttu-id="19cce-102">ワークフローの &lt;serviceBehaviors&gt; の &lt;behavior&gt;</span><span class="sxs-lookup"><span data-stu-id="19cce-102">&lt;behavior&gt; of &lt;serviceBehaviors&gt; of workflow</span></span>
+<span data-ttu-id="19cce-103">**動作**要素には、サービスの動作の設定のコレクションが含まれています。</span><span class="sxs-lookup"><span data-stu-id="19cce-103">The **behavior** element contains a collection of settings for the behavior of a service.</span></span> <span data-ttu-id="19cce-104">各動作のインデックスを作成してその**名前**です。</span><span class="sxs-lookup"><span data-stu-id="19cce-104">Each behavior is indexed by its **name**.</span></span> <span data-ttu-id="19cce-105">サービスを使用して、この名前を使用して各動作にリンクできます、 **behaviorConfiguration**の属性、 [\<エンドポイント >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)要素。</span><span class="sxs-lookup"><span data-stu-id="19cce-105">Services can link to each behavior through this name using the **behaviorConfiguration**attribute of the [\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) element.</span></span> <span data-ttu-id="19cce-106">これにより、設定を再定義することなく、エンドポイント間で共通の動作構成を共有できます。</span><span class="sxs-lookup"><span data-stu-id="19cce-106">This allows endpoints to share common behavior configurations without redefining the settings.</span></span>  
   
-## 構文  
+<span data-ttu-id="19cce-107">\<システムです。ServiceModel ></span><span class="sxs-lookup"><span data-stu-id="19cce-107">\<system.ServiceModel></span></span>  
+<span data-ttu-id="19cce-108">\<ビヘイビアー ></span><span class="sxs-lookup"><span data-stu-id="19cce-108">\<behaviors></span></span>  
+<span data-ttu-id="19cce-109">\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="19cce-109">\<serviceBehaviors></span></span>  
+<span data-ttu-id="19cce-110">\<動作 ></span><span class="sxs-lookup"><span data-stu-id="19cce-110">\<behavior></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="19cce-111">構文</span><span class="sxs-lookup"><span data-stu-id="19cce-111">Syntax</span></span>  
   
+```xml  
 <system.ServiceModel>  
   <behaviors>  
     <serviceBehaviors>  
-    <behavior name=String">  
-      <bufferReceive maxPendingMessagesPerChannel=”Integer” />  
-      <etwTracking profileName=”String” />  
-     <sendMessageChannelCache allowUnsafeCaching="Boolean" >          
-        <channelSettings idleTimeout="TimeSpan" leaseTimeout="TimeSpan" maxItemsInCache="Integer" />  
-        <factorySettings idleTimeout="TimeSpan" leaseTimeout="TimeSpan" maxItemsInCache="Integer" />  
-     </sendMessageChannelCache>  
-      <sqlWorkflowInstanceStore   
-          connectionStringName=”String”   
-          honstLockRenewalPeriod=”TimeSpan”  
-          instanceCompletionAction=”DeleteNothing/DeleteAll”  
-          instanceEncodingAction=”None/GZip”  
-          instanceLockedExceptionAction=”NoRetry/BasicRetry/AggressiveRetry”  
-          runnableInstancesDetectionPeriod=”TimeSpan” />  
-      <workflowIdle timeToPersist=”TimeSpan”  
-          timeToUnload=”TimeSpan” />  
-      <workflowUnhandledException action=”Abandon/AbandonAndSuspend/Cancel/Terminate” />  
-    </behavior>  
+      <behavior name="String">
+        <bufferReceive maxPendingMessagesPerChannel="Integer" />
+        <etwTracking profileName="String" />
+        <sendMessageChannelCache allowUnsafeCaching="Boolean">
+          <channelSettings idleTimeout="TimeSpan" 
+                           leaseTimeout="TimeSpan" 
+                           maxItemsInCache="Integer" />
+          <factorySettings idleTimeout="TimeSpan" 
+                           leaseTimeout="TimeSpan" 
+                           maxItemsInCache="Integer" />
+        </sendMessageChannelCache>
+        <sqlWorkflowInstanceStore connectionStringName="String" 
+                                  honstLockRenewalPeriod="TimeSpan" 
+                                  instanceCompletionAction="DeleteNothing/DeleteAll" 
+                                  instanceEncodingAction="None/GZip" 
+                                  instanceLockedExceptionAction="NoRetry/BasicRetry/AggressiveRetry" 
+                                  runnableInstancesDetectionPeriod="TimeSpan" />
+        <workflowIdle timeToPersist="TimeSpan" 
+                      timeToUnload="TimeSpan" />
+        <workflowUnhandledException action="Abandon/AbandonAndSuspend/Cancel/Terminate" />
+      </behavior>
     </serviceBehaviors>  
   </behaviors>  
 </system.ServiceModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="19cce-112">属性および要素</span><span class="sxs-lookup"><span data-stu-id="19cce-112">Attributes and Elements</span></span>  
+ <span data-ttu-id="19cce-113">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="19cce-113">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="19cce-114">属性</span><span class="sxs-lookup"><span data-stu-id="19cce-114">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|name|動作の構成名を含む一意の文字列。  この値は、要素の識別文字列として機能するため、一意のユーザー定義の文字列である必要があります。|  
+|<span data-ttu-id="19cce-115">属性</span><span class="sxs-lookup"><span data-stu-id="19cce-115">Attribute</span></span>|<span data-ttu-id="19cce-116">説明</span><span class="sxs-lookup"><span data-stu-id="19cce-116">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="19cce-117">name</span><span class="sxs-lookup"><span data-stu-id="19cce-117">name</span></span>|<span data-ttu-id="19cce-118">動作の構成名を含む一意の文字列。</span><span class="sxs-lookup"><span data-stu-id="19cce-118">A unique string that contains the configuration name of the behavior.</span></span> <span data-ttu-id="19cce-119">この値は、要素の識別文字列として機能するため、一意のユーザー定義の文字列である必要があります。</span><span class="sxs-lookup"><span data-stu-id="19cce-119">This value is a user-defined string that must be unique, since it acts as the identification string for the element.</span></span>|  
   
-### 子要素  
+### <a name="child-elements"></a><span data-ttu-id="19cce-120">子要素</span><span class="sxs-lookup"><span data-stu-id="19cce-120">Child Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<bufferReceive\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/bufferreceive.md)|サービスが、バッファーされた受信処理を使用するためのサービス動作。これにより、ワークフロー サービスは、順番を無視したメッセージを処理できます。|  
-|[\<routing\>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing-of-servicebehavior.md)|<xref:System.Activities.Tracking.ETWTrackingParticipant> を使用した、サービスによる ETW 追跡の利用を可能にするサービス動作。|  
-|[\<sendMessageChannelCache\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/sendmessagechannelcache.md)|キャッシュの共有レベルのカスタマイズや、チャネル ファクトリ キャッシュの設定を可能にするほか、Send メッセージング アクティビティを使用してサービス エンドポイントにメッセージを送信するワークフローのチャネル キャッシュの設定も可能にするサービス動作。|  
-|[\<sqlWorkflowInstanceStore\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/sqlworkflowinstancestore.md)|ワークフロー サービス インスタンスの状態情報の永続化を SQL Server 2005 または SQL Server 2008 データベースでサポートする <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> 機能を構成するためのサービス動作。|  
-|[\<workflowIdle\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowidle.md)|アイドル状態のワークフロー インスタンスのアンロードおよび永続化のタイミングを制御するサービス動作。|  
-|[\<workflowInstanceManagement\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancemanagement.md)|ワークフロー インスタンスの実行方法を制御する設定を指定するためのサービス動作。これには、永続する未処理の例外動作やアイドル状態の動作が含まれます。|  
-|[\<workflowUnhandledException\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowunhandledexception.md)|ワークフロー サービス内で未処理の例外が発生した場合のアクションを指定するためのサービス動作。|  
+|<span data-ttu-id="19cce-121">要素</span><span class="sxs-lookup"><span data-stu-id="19cce-121">Element</span></span>|<span data-ttu-id="19cce-122">説明</span><span class="sxs-lookup"><span data-stu-id="19cce-122">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="19cce-123">\<bufferReceive ></span><span class="sxs-lookup"><span data-stu-id="19cce-123">\<bufferReceive></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/bufferreceive.md)|<span data-ttu-id="19cce-124">サービスが、バッファーされた受信処理を使用するためのサービス動作。これにより、ワークフロー サービスは、順番を無視したメッセージを処理できます。</span><span class="sxs-lookup"><span data-stu-id="19cce-124">A service behavior that enables a service to use buffered receive processing, which enables a workflow service to process out-of-order messages.</span></span>|  
+|[<span data-ttu-id="19cce-125">\<ルーティング ></span><span class="sxs-lookup"><span data-stu-id="19cce-125">\<routing></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing-of-servicebehavior.md)|<span data-ttu-id="19cce-126">により、サービスを使用して ETW の追跡を使用するサービスの動作、<xref:System.Activities.Tracking.EtwTrackingParticipant>です。</span><span class="sxs-lookup"><span data-stu-id="19cce-126">A service behavior that allows a service to utilize ETW tracking using an <xref:System.Activities.Tracking.EtwTrackingParticipant>.</span></span>|  
+|[<span data-ttu-id="19cce-127">\<sendMessageChannelCache ></span><span class="sxs-lookup"><span data-stu-id="19cce-127">\<sendMessageChannelCache></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/sendmessagechannelcache.md)|<span data-ttu-id="19cce-128">キャッシュ共有レベル、チャネル ファクトリ キャッシュの設定および送信メッセージング アクティビティを使用してサービス エンドポイントにメッセージを送信するワークフローのチャネル キャッシュの設定のカスタマイズをできるサービス動作です。</span><span class="sxs-lookup"><span data-stu-id="19cce-128">A service behavior that enables the customization of the cache sharing levels, the settings of the channel factory cache, and the settings of the channel cache for workflows that send messages to service endpoints using Send messaging activities.</span></span>|  
+|[<span data-ttu-id="19cce-129">\<sqlWorkflowInstanceStore ></span><span class="sxs-lookup"><span data-stu-id="19cce-129">\<sqlWorkflowInstanceStore></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/sqlworkflowinstancestore.md)|<span data-ttu-id="19cce-130">サービスの動作を構成することができます、<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>機能で、SQL Server 2005 または SQL Server 2008 データベースにワークフロー サービス インスタンスの永続化の状態情報をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="19cce-130">A service behavior that allows you to configure the <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> feature, which supports persisting state information for workflow service instances into an SQL Server 2005 or SQL Server 2008 database.</span></span>|  
+|[<span data-ttu-id="19cce-131">\<workflowIdle ></span><span class="sxs-lookup"><span data-stu-id="19cce-131">\<workflowIdle></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowidle.md)|<span data-ttu-id="19cce-132">アイドル状態のワークフロー インスタンスのアンロードおよび永続化のタイミングを制御するサービス動作。</span><span class="sxs-lookup"><span data-stu-id="19cce-132">A service behavior that controls when idle workflow instances are unloaded and persisted.</span></span>|  
+|[<span data-ttu-id="19cce-133">\<workflowInstanceManagement ></span><span class="sxs-lookup"><span data-stu-id="19cce-133">\<workflowInstanceManagement></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancemanagement.md)|<span data-ttu-id="19cce-134">ワークフロー インスタンスの実行方法を制御する設定を指定するためのサービス動作。これには、永続する未処理の例外動作やアイドル状態の動作が含まれます。</span><span class="sxs-lookup"><span data-stu-id="19cce-134">A service behavior that enables you to specify settings that control how workflow instances are run, including persistence, unhandled Exception behavior and idle behavior.</span></span>|  
+|[<span data-ttu-id="19cce-135">\<workflowUnhandledException ></span><span class="sxs-lookup"><span data-stu-id="19cce-135">\<workflowUnhandledException></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowunhandledexception.md)|<span data-ttu-id="19cce-136">ワークフロー サービス内で未処理の例外が発生した場合のアクションを指定するためのサービス動作。</span><span class="sxs-lookup"><span data-stu-id="19cce-136">A service behavior that enables you to specify the action to take when an unhandled exception occurs within a workflow service.</span></span>|  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="19cce-137">親要素</span><span class="sxs-lookup"><span data-stu-id="19cce-137">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<serviceBehaviors\>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/servicebehaviors-of-workflow.md)|サービス動作要素のコレクション。|
+|<span data-ttu-id="19cce-138">要素</span><span class="sxs-lookup"><span data-stu-id="19cce-138">Element</span></span>|<span data-ttu-id="19cce-139">説明</span><span class="sxs-lookup"><span data-stu-id="19cce-139">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="19cce-140">\<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="19cce-140">\<serviceBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/servicebehaviors-of-workflow.md)|<span data-ttu-id="19cce-141">サービス動作要素のコレクション。</span><span class="sxs-lookup"><span data-stu-id="19cce-141">A collection of service behavior elements.</span></span>|

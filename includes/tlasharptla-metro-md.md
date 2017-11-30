@@ -1,1 +1,1 @@
-XML Paper Specification (XPS)
+<span data-ttu-id="a5cbe-101">XML Paper Specification (XPS)</span><span class="sxs-lookup"><span data-stu-id="a5cbe-101">XML Paper Specification (XPS)</span></span>

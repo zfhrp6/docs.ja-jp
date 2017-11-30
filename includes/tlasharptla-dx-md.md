@@ -1,1 +1,1 @@
-Microsoft DirectX
+<span data-ttu-id="dc4fa-101">Microsoft DirectX</span><span class="sxs-lookup"><span data-stu-id="dc4fa-101">Microsoft DirectX</span></span>

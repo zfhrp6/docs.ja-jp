@@ -1,1 +1,1 @@
-インターネット インフォメーション サービス (IIS) 6.0
+<span data-ttu-id="cbd30-101">インターネット インフォメーション サービス (IIS) 6.0</span><span class="sxs-lookup"><span data-stu-id="cbd30-101">Internet Information Services (IIS) 6.0</span></span>

@@ -1,59 +1,69 @@
 ---
-title: "&lt;sessionTokenRequirement&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;sessionTokenRequirement&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 496a1735-cbb7-49d5-a6aa-dd5550462073
-caps.latest.revision: 3
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 8b729f588d2195992b231661f7bb718240141fdd
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;sessionTokenRequirement&gt;
-<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> クラスまたは派生クラスにコンフィギュレーションを提供します。  
+# <a name="ltsessiontokenrequirementgt"></a><span data-ttu-id="2820b-102">&lt;sessionTokenRequirement&gt;</span><span class="sxs-lookup"><span data-stu-id="2820b-102">&lt;sessionTokenRequirement&gt;</span></span>
+<span data-ttu-id="2820b-103">構成を提供、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>クラスまたは派生クラス。</span><span class="sxs-lookup"><span data-stu-id="2820b-103">Provides configuration for the <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> class or derived classes.</span></span>  
   
-## 構文  
+ <span data-ttu-id="2820b-104">\<system.identityModel ></span><span class="sxs-lookup"><span data-stu-id="2820b-104">\<system.identityModel></span></span>  
+<span data-ttu-id="2820b-105">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="2820b-105">\<identityConfiguration></span></span>  
+<span data-ttu-id="2820b-106">\<securityTokenHandlers ></span><span class="sxs-lookup"><span data-stu-id="2820b-106">\<securityTokenHandlers></span></span>  
+<span data-ttu-id="2820b-107">\<add></span><span class="sxs-lookup"><span data-stu-id="2820b-107">\<add></span></span>  
+<span data-ttu-id="2820b-108">\<sessionTokenRequirement ></span><span class="sxs-lookup"><span data-stu-id="2820b-108">\<sessionTokenRequirement></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="2820b-109">構文</span><span class="sxs-lookup"><span data-stu-id="2820b-109">Syntax</span></span>  
+  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <securityTokenHandlers>  
-      <add type="System.IdentityModel.Tokens.SessionSecurityTokenHandler, System.IdentityModel">  
-        <sessionTokenRequirement lifetime=TimeSpan >  
-        </sessionTokenRequirement>  
-      </add>  
-    </securityTokenHandlers>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <securityTokenHandlers>  
+      <add type="System.IdentityModel.Tokens.SessionSecurityTokenHandler, System.IdentityModel">  
+        <sessionTokenRequirement lifetime=TimeSpan >  
+        </sessionTokenRequirement>  
+      </add>  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="2820b-110">属性および要素</span><span class="sxs-lookup"><span data-stu-id="2820b-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="2820b-111">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="2820b-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="2820b-112">属性</span><span class="sxs-lookup"><span data-stu-id="2820b-112">Attributes</span></span>  
   
-|属性|説明|  
-|--------|--------|  
-|有効期間|セッションのトークンの有効期間を指定します。|  
+|<span data-ttu-id="2820b-113">属性</span><span class="sxs-lookup"><span data-stu-id="2820b-113">Attribute</span></span>|<span data-ttu-id="2820b-114">説明</span><span class="sxs-lookup"><span data-stu-id="2820b-114">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="2820b-115">有効期間</span><span class="sxs-lookup"><span data-stu-id="2820b-115">lifetime</span></span>|<span data-ttu-id="2820b-116">セッション トークンの有効期間を指定します。</span><span class="sxs-lookup"><span data-stu-id="2820b-116">Specifies the lifetime of session tokens.</span></span>|  
   
-### 子要素  
- なし  
+### <a name="child-elements"></a><span data-ttu-id="2820b-117">子要素</span><span class="sxs-lookup"><span data-stu-id="2820b-117">Child Elements</span></span>  
+ <span data-ttu-id="2820b-118">なし</span><span class="sxs-lookup"><span data-stu-id="2820b-118">None</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="2820b-119">親要素</span><span class="sxs-lookup"><span data-stu-id="2820b-119">Parent Elements</span></span>  
   
-|要素|説明|  
-|--------|--------|  
-|[\<add\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|たとえば、ハンドラーのグループに指定セキュリティのトークン ハンドラーを追加します。|  
+|<span data-ttu-id="2820b-120">要素</span><span class="sxs-lookup"><span data-stu-id="2820b-120">Element</span></span>|<span data-ttu-id="2820b-121">説明</span><span class="sxs-lookup"><span data-stu-id="2820b-121">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="2820b-122">\<add></span><span class="sxs-lookup"><span data-stu-id="2820b-122">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|<span data-ttu-id="2820b-123">トークン ハンドラー コレクションに指定されたセキュリティ トークン ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="2820b-123">Adds the specified security token handler to the token handler collection.</span></span>|  
   
-## 使用例  
+## <a name="example"></a><span data-ttu-id="2820b-124">例</span><span class="sxs-lookup"><span data-stu-id="2820b-124">Example</span></span>  
   
-```  
+```xml  
 <add type="System.IdentityModel.Tokens.SessionSecurityTokenHandler, System.IdentityModel">           
     <sessionTokenRequirement lifetime="10:00" />  
 </add>  

@@ -1,1 +1,1 @@
-バイナリ XAML (BAML)
+<span data-ttu-id="f3d82-101">バイナリ XAML (BAML)</span><span class="sxs-lookup"><span data-stu-id="f3d82-101">binary XAML (BAML)</span></span>

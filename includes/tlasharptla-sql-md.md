@@ -1,1 +1,1 @@
-構造化照会言語 (SQL)
+<span data-ttu-id="75a84-101">構造化照会言語 (SQL)</span><span class="sxs-lookup"><span data-stu-id="75a84-101">Structured Query Language (SQL)</span></span>

@@ -1,58 +1,67 @@
 ---
-title: "&lt;sessionSecurityTokenCache&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;sessionSecurityTokenCache&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d43e676c-0153-485c-ab31-0257a2db7507
-caps.latest.revision: 8
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 7
+caps.latest.revision: "8"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: a1d1af398073e15ce7f73b3359366df9e5629ac6
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;sessionSecurityTokenCache&gt;
-セッション トークンをキャッシュ サービスとセキュリティ トークン ハンドラーのコレクションを登録します。  
+# <a name="ltsessionsecuritytokencachegt"></a><span data-ttu-id="23ac1-102">&lt;sessionSecurityTokenCache&gt;</span><span class="sxs-lookup"><span data-stu-id="23ac1-102">&lt;sessionSecurityTokenCache&gt;</span></span>
+<span data-ttu-id="23ac1-103">サービスまたはセキュリティ トークン ハンドラーはコレクションのセッション トークンのキャッシュに登録します。</span><span class="sxs-lookup"><span data-stu-id="23ac1-103">Registers a cache for session tokens with a service or a security token handler collection.</span></span>  
   
-## 構文  
+ <span data-ttu-id="23ac1-104">\<system.identityModel ></span><span class="sxs-lookup"><span data-stu-id="23ac1-104">\<system.identityModel></span></span>  
+<span data-ttu-id="23ac1-105">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="23ac1-105">\<identityConfiguration></span></span>  
+<span data-ttu-id="23ac1-106">\<キャッシュ ></span><span class="sxs-lookup"><span data-stu-id="23ac1-106">\<caches></span></span>  
+<span data-ttu-id="23ac1-107">\<sessionSecurityTokenCache ></span><span class="sxs-lookup"><span data-stu-id="23ac1-107">\<sessionSecurityTokenCache></span></span>  
   
-```  
+## <a name="syntax"></a><span data-ttu-id="23ac1-108">構文</span><span class="sxs-lookup"><span data-stu-id="23ac1-108">Syntax</span></span>  
+  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <caches>  
-      <sessionSecurityTokenCache type=xs:string>  
-      </sessionSecurityTokenCache>  
-    </caches>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <caches>  
+      <sessionSecurityTokenCache type=xs:string>  
+      </sessionSecurityTokenCache>  
+    </caches>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
-## 属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a><span data-ttu-id="23ac1-109">属性および要素</span><span class="sxs-lookup"><span data-stu-id="23ac1-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="23ac1-110">以降のセクションでは、属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="23ac1-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### 属性  
+### <a name="attributes"></a><span data-ttu-id="23ac1-111">属性</span><span class="sxs-lookup"><span data-stu-id="23ac1-111">Attributes</span></span>  
   
-|属性|Description|  
-|--------|-----------------|  
-|type|派生した型は<xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>クラス。  ユーザー設定を指定する方法の詳細については`type`を参照してください[Custom Type References](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md#BKMK_CustomTypeReferences)。|  
+|<span data-ttu-id="23ac1-112">属性</span><span class="sxs-lookup"><span data-stu-id="23ac1-112">Attribute</span></span>|<span data-ttu-id="23ac1-113">説明</span><span class="sxs-lookup"><span data-stu-id="23ac1-113">Description</span></span>|  
+|---------------|-----------------|  
+|<span data-ttu-id="23ac1-114">型</span><span class="sxs-lookup"><span data-stu-id="23ac1-114">type</span></span>|<span data-ttu-id="23ac1-115">派生する型、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>クラスです。</span><span class="sxs-lookup"><span data-stu-id="23ac1-115">A type that derives from the <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> class.</span></span>|  
   
-### 子要素  
- なし  
+### <a name="child-elements"></a><span data-ttu-id="23ac1-116">子要素</span><span class="sxs-lookup"><span data-stu-id="23ac1-116">Child Elements</span></span>  
+ <span data-ttu-id="23ac1-117">なし</span><span class="sxs-lookup"><span data-stu-id="23ac1-117">None</span></span>  
   
-### 親要素  
+### <a name="parent-elements"></a><span data-ttu-id="23ac1-118">親要素</span><span class="sxs-lookup"><span data-stu-id="23ac1-118">Parent Elements</span></span>  
   
-|要素|Description|  
-|--------|-----------------|  
-|[\<キャッシュ\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|サービス、セキュリティ トークン ハンドラーのコレクションを使用して、キャッシュを登録します。|  
+|<span data-ttu-id="23ac1-119">要素</span><span class="sxs-lookup"><span data-stu-id="23ac1-119">Element</span></span>|<span data-ttu-id="23ac1-120">説明</span><span class="sxs-lookup"><span data-stu-id="23ac1-120">Description</span></span>|  
+|-------------|-----------------|  
+|[<span data-ttu-id="23ac1-121">\<キャッシュ ></span><span class="sxs-lookup"><span data-stu-id="23ac1-121">\<caches></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|<span data-ttu-id="23ac1-122">サービスまたはセキュリティ トークン ハンドラーのコレクションによって使用されるキャッシュに登録します。</span><span class="sxs-lookup"><span data-stu-id="23ac1-122">Registers the caches used by a service or a security token handler collection.</span></span>|  
   
-## 使用例  
- 次の XML は、セッションのセキュリティ トークンを保持して、カスタム キャッシュの構成を示しています \(<xref:System.IdentityModel.Tokens.SessionSecurityToken>\)。  構成から取得されます、 `ClaimsAwareWebFarm`サンプル。  このサンプルの詳細についてを参照してください[WIF コード サンプル インデックス](../../../../../docs/framework/security/wif-code-sample-index.md)。  
+## <a name="example"></a><span data-ttu-id="23ac1-123">例</span><span class="sxs-lookup"><span data-stu-id="23ac1-123">Example</span></span>  
+ <span data-ttu-id="23ac1-124">次の XML は、セッション セキュリティ トークンを保持するためのカスタム キャッシュの構成を示します (<xref:System.IdentityModel.Tokens.SessionSecurityToken>)。</span><span class="sxs-lookup"><span data-stu-id="23ac1-124">The following XML shows the configuration of a custom cache for holding session security tokens (<xref:System.IdentityModel.Tokens.SessionSecurityToken>).</span></span> <span data-ttu-id="23ac1-125">構成がから取得した、`ClaimsAwareWebFarm`サンプルです。</span><span class="sxs-lookup"><span data-stu-id="23ac1-125">The configuration is taken from the `ClaimsAwareWebFarm` sample.</span></span> <span data-ttu-id="23ac1-126">このサンプルの詳細については、次を参照してください。 [WIF コード サンプル インデックス](../../../../../docs/framework/security/wif-code-sample-index.md)です。</span><span class="sxs-lookup"><span data-stu-id="23ac1-126">For more information about this sample, see [WIF Code Sample Index](../../../../../docs/framework/security/wif-code-sample-index.md).</span></span>  
   
-```  
+```xml  
 <caches>  
   <sessionSecurityTokenCache type="CacheLibrary.SharedSessionSecurityTokenCache, CacheLibrary">  
     <!--cacheServiceAddress points to the centralized session security token cache service running in the web farm.-->  
@@ -61,5 +70,5 @@ caps.handback.revision: 7
 </caches>  
 ```  
   
-## 参照  
+## <a name="see-also"></a><span data-ttu-id="23ac1-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="23ac1-127">See Also</span></span>  
  <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>

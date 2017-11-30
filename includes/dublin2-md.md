@@ -1,1 +1,1 @@
-ホスト機能
+<span data-ttu-id="ef32c-101">ホスト機能</span><span class="sxs-lookup"><span data-stu-id="ef32c-101">hosting features</span></span>

@@ -1,1 +1,1 @@
-統合開発環境 (IDE)
+<span data-ttu-id="1adf8-101">統合開発環境 (IDE)</span><span class="sxs-lookup"><span data-stu-id="1adf8-101">Integrated Development Environment (IDE)</span></span>

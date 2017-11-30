@@ -1,1 +1,1 @@
-下記のリスト
+<span data-ttu-id="56153-101">下記のリスト</span><span class="sxs-lookup"><span data-stu-id="56153-101">For a list of</span></span>

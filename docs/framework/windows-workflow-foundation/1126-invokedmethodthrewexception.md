@@ -1,39 +1,43 @@
 ---
-title: "1126 - InvokedMethodThrewException | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 1126 - InvokedMethodThrewException
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0d3cff1a-97e6-4b6c-be18-108c6881bfc0
-caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: b11c2f167ce7afce992cddb2f32f840212d4ac8d
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# 1126 - InvokedMethodThrewException
-## プロパティ  
+# <a name="1126---invokedmethodthrewexception"></a><span data-ttu-id="f2023-102">1126 - InvokedMethodThrewException</span><span class="sxs-lookup"><span data-stu-id="f2023-102">1126 - InvokedMethodThrewException</span></span>
+## <a name="properties"></a><span data-ttu-id="f2023-103">プロパティ</span><span class="sxs-lookup"><span data-stu-id="f2023-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|ID|1126|  
-|キーワード|WFRuntime|  
-|レベル|情報|  
-|チャネル|Microsoft\-Windows\-Application Server\-Applications\/Debug|  
+|<span data-ttu-id="f2023-104">ID</span><span class="sxs-lookup"><span data-stu-id="f2023-104">ID</span></span>|<span data-ttu-id="f2023-105">1126</span><span class="sxs-lookup"><span data-stu-id="f2023-105">1126</span></span>|  
+|<span data-ttu-id="f2023-106">キーワード</span><span class="sxs-lookup"><span data-stu-id="f2023-106">Keywords</span></span>|<span data-ttu-id="f2023-107">WFRuntime</span><span class="sxs-lookup"><span data-stu-id="f2023-107">WFRuntime</span></span>|  
+|<span data-ttu-id="f2023-108">レベル</span><span class="sxs-lookup"><span data-stu-id="f2023-108">Level</span></span>|<span data-ttu-id="f2023-109">情報</span><span class="sxs-lookup"><span data-stu-id="f2023-109">Information</span></span>|  
+|<span data-ttu-id="f2023-110">チャネル</span><span class="sxs-lookup"><span data-stu-id="f2023-110">Channel</span></span>|<span data-ttu-id="f2023-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="f2023-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## 説明  
- InvokeMethod アクティビティによって呼び出されたメソッドにより、例外がスローされたことを示します。  
+## <a name="description"></a><span data-ttu-id="f2023-112">説明</span><span class="sxs-lookup"><span data-stu-id="f2023-112">Description</span></span>  
+ <span data-ttu-id="f2023-113">InvokeMethod アクティビティによって呼び出されたメソッドにより、例外がスローされたことを示します。</span><span class="sxs-lookup"><span data-stu-id="f2023-113">Indicates an exception was thrown by the method called by the InvokeMethod activity.</span></span>  
   
-## メッセージ  
- アクティビティ '%1' によって呼び出されたメソッドで例外がスローされました。  %2  
+## <a name="message"></a><span data-ttu-id="f2023-114">メッセージ</span><span class="sxs-lookup"><span data-stu-id="f2023-114">Message</span></span>  
+ <span data-ttu-id="f2023-115">アクティビティ '%1' によって呼び出されたメソッドで例外がスローされました。</span><span class="sxs-lookup"><span data-stu-id="f2023-115">An exception was thrown in the method called by the activity '%1'.</span></span> <span data-ttu-id="f2023-116">%2</span><span class="sxs-lookup"><span data-stu-id="f2023-116">%2</span></span>  
   
-## 詳細  
+## <a name="details"></a><span data-ttu-id="f2023-117">詳細</span><span class="sxs-lookup"><span data-stu-id="f2023-117">Details</span></span>  
   
-|データ項目名|データ項目の型|説明|  
-|------------|-------------|--------|  
-|InvokeMethod|xs:string|InvokeMethod アクティビティの表示名。|  
-|例外|xs:string|例外の詳細|  
-|AppDomain|xs:string|AppDomain.CurrentDomain.FriendlyName で返される文字列。|
+|<span data-ttu-id="f2023-118">データ項目名</span><span class="sxs-lookup"><span data-stu-id="f2023-118">Data Item Name</span></span>|<span data-ttu-id="f2023-119">データ項目の型</span><span class="sxs-lookup"><span data-stu-id="f2023-119">Data Item Type</span></span>|<span data-ttu-id="f2023-120">説明</span><span class="sxs-lookup"><span data-stu-id="f2023-120">Description</span></span>|  
+|--------------------|--------------------|-----------------|  
+|<span data-ttu-id="f2023-121">InvokeMethod</span><span class="sxs-lookup"><span data-stu-id="f2023-121">InvokeMethod</span></span>|<span data-ttu-id="f2023-122">xs:string</span><span class="sxs-lookup"><span data-stu-id="f2023-122">xs:string</span></span>|<span data-ttu-id="f2023-123">InvokeMethod アクティビティの表示名。</span><span class="sxs-lookup"><span data-stu-id="f2023-123">The display name of the InvokeMethod activity.</span></span>|  
+|<span data-ttu-id="f2023-124">例外</span><span class="sxs-lookup"><span data-stu-id="f2023-124">Exception</span></span>|<span data-ttu-id="f2023-125">xs:string</span><span class="sxs-lookup"><span data-stu-id="f2023-125">xs:string</span></span>|<span data-ttu-id="f2023-126">例外の詳細</span><span class="sxs-lookup"><span data-stu-id="f2023-126">The exception details for the exception</span></span>|  
+|<span data-ttu-id="f2023-127">AppDomain</span><span class="sxs-lookup"><span data-stu-id="f2023-127">AppDomain</span></span>|<span data-ttu-id="f2023-128">xs:string</span><span class="sxs-lookup"><span data-stu-id="f2023-128">xs:string</span></span>|<span data-ttu-id="f2023-129">AppDomain.CurrentDomain.FriendlyName で返される文字列。</span><span class="sxs-lookup"><span data-stu-id="f2023-129">The string returned by AppDomain.CurrentDomain.FriendlyName.</span></span>|

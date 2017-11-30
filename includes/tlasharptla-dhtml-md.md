@@ -1,1 +1,1 @@
-ダイナミック HTML (DHTML)
+<span data-ttu-id="5389f-101">ダイナミック HTML (DHTML)</span><span class="sxs-lookup"><span data-stu-id="5389f-101">Dynamic HTML (DHTML)</span></span>

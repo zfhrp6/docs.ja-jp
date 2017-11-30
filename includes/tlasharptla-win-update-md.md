@@ -1,1 +1,1 @@
-Microsoft Windows Update
+<span data-ttu-id="fa6f1-101">Microsoft Windows Update</span><span class="sxs-lookup"><span data-stu-id="fa6f1-101">Microsoft Windows Update</span></span>

@@ -1,87 +1,70 @@
 ---
-title: "クエリ (Visual Basic) |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: "クエリ (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - queries [Visual Basic]
 - LINQ, queries
 ms.assetid: 8edc717c-4a24-4cbc-9c16-11f479c935db
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 683b0678e570c2dbb774ec724893acb5a7b10554
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 80038bae51f16daca19da73905f6bbce42a63b97
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="queries-visual-basic"></a>クエリ (Visual Basic)
-[!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]作成することができます[!INCLUDE[vbteclinqext](../../../csharp/getting-started/includes/vbteclinqext_md.md)]コード内の式。  
+# <a name="queries-visual-basic"></a><span data-ttu-id="dfc8a-102">クエリ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="dfc8a-102">Queries (Visual Basic)</span></span>
+[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="dfc8a-103">作成することができます[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]コード内の式。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-103"> enables you to create [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] expressions in your code.</span></span>  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [Aggregate 句](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
- 説明、`Aggregate`句は、1 つまたは複数の集計関数をコレクションに適用します。  
+## <a name="in-this-section"></a><span data-ttu-id="dfc8a-104">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="dfc8a-104">In This Section</span></span>  
+ [<span data-ttu-id="dfc8a-105">Aggregate 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-105">Aggregate Clause</span></span>](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
+ <span data-ttu-id="dfc8a-106">について説明します、`Aggregate`句は、1 つまたは複数の集計関数をコレクションに適用します。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-106">Describes the `Aggregate` clause, which applies one or more aggregate functions to a collection.</span></span>  
   
- [Distinct 句](../../../visual-basic/language-reference/queries/distinct-clause.md)  
- 説明、`Distinct`句は、クエリ結果内で重複する値を排除する現在の範囲変数の値を制限します。  
+ [<span data-ttu-id="dfc8a-107">Distinct 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-107">Distinct Clause</span></span>](../../../visual-basic/language-reference/queries/distinct-clause.md)  
+ <span data-ttu-id="dfc8a-108">について説明します、`Distinct`句は、クエリの結果で、重複を回避するのには、現在の範囲変数の値を制限します。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-108">Describes the `Distinct` clause, which restricts the values of the current range variable to eliminate duplicate values in query results.</span></span>  
   
- [From 句](../../../visual-basic/language-reference/queries/from-clause.md)  
- 説明、`From`句は、コレクションとクエリの範囲変数を指定します。  
+ [<span data-ttu-id="dfc8a-109">From 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-109">From Clause</span></span>](../../../visual-basic/language-reference/queries/from-clause.md)  
+ <span data-ttu-id="dfc8a-110">について説明します、`From`句は、コレクションと、クエリの範囲変数を指定します。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-110">Describes the `From` clause, which specifies a collection and a range variable for a query.</span></span>  
   
- [Group By 句](../../../visual-basic/language-reference/queries/group-by-clause.md)  
- 説明、`Group By`句では、クエリ結果の要素をグループ化され、各グループに集計関数を適用するために使用できます。  
+ [<span data-ttu-id="dfc8a-111">Group By 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-111">Group By Clause</span></span>](../../../visual-basic/language-reference/queries/group-by-clause.md)  
+ <span data-ttu-id="dfc8a-112">について説明します、`Group By`句では、クエリ結果の要素をグループ化し、各グループに集計関数を適用するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-112">Describes the `Group By` clause, which groups the elements of a query result and can be used to apply aggregate functions to each group.</span></span>  
   
- [Group Join 句](../../../visual-basic/language-reference/queries/group-join-clause.md)  
- 説明、`Group Join`句は、2 つのコレクションを&1; つの階層コレクションに結合します。  
+ [<span data-ttu-id="dfc8a-113">Group Join 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-113">Group Join Clause</span></span>](../../../visual-basic/language-reference/queries/group-join-clause.md)  
+ <span data-ttu-id="dfc8a-114">について説明します、`Group Join`句は、次の 2 つのコレクションを単一の階層コレクションに結合します。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-114">Describes the `Group Join` clause, which combines two collections into a single hierarchical collection.</span></span>  
   
- [Join 句](../../../visual-basic/language-reference/queries/join-clause.md)  
- 説明、`Join`句は、2 つのコレクションを&1; つのコレクションに結合します。  
+ [<span data-ttu-id="dfc8a-115">Join 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-115">Join Clause</span></span>](../../../visual-basic/language-reference/queries/join-clause.md)  
+ <span data-ttu-id="dfc8a-116">について説明します、`Join`句は、次の 2 つのコレクションを 1 つのコレクションに結合します。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-116">Describes the `Join` clause, which combines two collections into a single collection.</span></span>  
   
- [Let 句](../../../visual-basic/language-reference/queries/let-clause.md)  
- 説明、`Let`句では、値を計算し、クエリ内の新しい変数に割り当てます。  
+ [<span data-ttu-id="dfc8a-117">Let 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-117">Let Clause</span></span>](../../../visual-basic/language-reference/queries/let-clause.md)  
+ <span data-ttu-id="dfc8a-118">について説明します、`Let`句では、値を計算し、クエリ内の新しい変数に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-118">Describes the `Let` clause, which computes a value and assigns it to a new variable in the query.</span></span>  
   
- [Order By 句](../../../visual-basic/language-reference/queries/order-by-clause.md)  
- 説明、`Order By`句は、クエリ内の列の並べ替え順序を指定します。  
+ [<span data-ttu-id="dfc8a-119">Order By 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-119">Order By Clause</span></span>](../../../visual-basic/language-reference/queries/order-by-clause.md)  
+ <span data-ttu-id="dfc8a-120">について説明します、`Order By`句は、クエリ内の列の並べ替え順序を指定します。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-120">Describes the `Order By` clause, which specifies the sort order for columns in a query.</span></span>  
   
- [Select 句](../../../visual-basic/language-reference/queries/select-clause.md)  
- 説明、`Select`句は、クエリの範囲変数のセットを宣言します。  
+ [<span data-ttu-id="dfc8a-121">Select 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-121">Select Clause</span></span>](../../../visual-basic/language-reference/queries/select-clause.md)  
+ <span data-ttu-id="dfc8a-122">について説明します、`Select`句は、クエリの範囲変数のセットを宣言します。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-122">Describes the `Select` clause, which declares a set of range variables for a query.</span></span>  
   
- [Skip 句](../../../visual-basic/language-reference/queries/skip-clause.md)  
- 説明、`Skip`句では、指定したコレクション内の要素数をバイパスし、残りの要素を返します。  
+ [<span data-ttu-id="dfc8a-123">Skip 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-123">Skip Clause</span></span>](../../../visual-basic/language-reference/queries/skip-clause.md)  
+ <span data-ttu-id="dfc8a-124">について説明します、`Skip`句では、指定したコレクション内の要素数をバイパスし、残りの要素を返します。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-124">Describes the `Skip` clause, which bypasses a specified number of elements in a collection and then returns the remaining elements.</span></span>  
   
- [Skip While 句](../../../visual-basic/language-reference/queries/skip-while-clause.md)  
- 説明、`Skip While`句は、指定された条件がである限り、コレクション内の要素をバイパス`true`し、残りの要素を返します。  
+ [<span data-ttu-id="dfc8a-125">Skip While 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-125">Skip While Clause</span></span>](../../../visual-basic/language-reference/queries/skip-while-clause.md)  
+ <span data-ttu-id="dfc8a-126">について説明します、`Skip While`句は、指定した条件である限り、コレクション内の要素をバイパス`true`し、残りの要素を返します。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-126">Describes the `Skip While` clause, which bypasses elements in a collection as long as a specified condition is `true` and then returns the remaining elements.</span></span>  
   
- [Take 句](../../../visual-basic/language-reference/queries/take-clause.md)  
- 説明、`Take`句は、コレクションの先頭から指定した数の連続する要素を返します。  
+ [<span data-ttu-id="dfc8a-127">Take 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-127">Take Clause</span></span>](../../../visual-basic/language-reference/queries/take-clause.md)  
+ <span data-ttu-id="dfc8a-128">について説明します、`Take`句は、コレクションの先頭から指定した数の連続する要素を返します。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-128">Describes the `Take` clause, which returns a specified number of contiguous elements from the start of a collection.</span></span>  
   
- [Take While 句](../../../visual-basic/language-reference/queries/take-while-clause.md)  
- 説明、`Take While`句は、指定された条件が限り、コレクション内の要素を含む`true`し、残りの要素をバイパスします。  
+ [<span data-ttu-id="dfc8a-129">Take While 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-129">Take While Clause</span></span>](../../../visual-basic/language-reference/queries/take-while-clause.md)  
+ <span data-ttu-id="dfc8a-130">について説明します、`Take While`句は、指定された条件が限り、コレクション内の要素を含む`true`し、残りの要素をバイパスします。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-130">Describes the `Take While` clause, which includes elements in a collection as long as a specified condition is `true` and bypasses the remaining elements.</span></span>  
   
- [WHERE 句](../../../visual-basic/language-reference/queries/where-clause.md)  
- 説明、`Where`句は、クエリのフィルター条件を指定します。  
+ [<span data-ttu-id="dfc8a-131">WHERE 句</span><span class="sxs-lookup"><span data-stu-id="dfc8a-131">Where Clause</span></span>](../../../visual-basic/language-reference/queries/where-clause.md)  
+ <span data-ttu-id="dfc8a-132">について説明します、`Where`句は、クエリのフィルター処理条件を指定します。</span><span class="sxs-lookup"><span data-stu-id="dfc8a-132">Describes the `Where` clause, which specifies a filtering condition for a query.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [LINQ](../../../visual-basic/programming-guide/language-features/linq/index.md)   
- [Visual Basic における LINQ の概要](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+## <a name="see-also"></a><span data-ttu-id="dfc8a-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="dfc8a-133">See Also</span></span>  
+ [<span data-ttu-id="dfc8a-134">LINQ</span><span class="sxs-lookup"><span data-stu-id="dfc8a-134">LINQ</span></span>](../../../visual-basic/programming-guide/language-features/linq/index.md)  
+ [<span data-ttu-id="dfc8a-135">Visual Basic における LINQ の概要</span><span class="sxs-lookup"><span data-stu-id="dfc8a-135">Introduction to LINQ in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

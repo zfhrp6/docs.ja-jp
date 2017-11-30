@@ -1,1 +1,1 @@
-共通言語仕様 (CLS)
+<span data-ttu-id="42583-101">共通言語仕様 (CLS)</span><span class="sxs-lookup"><span data-stu-id="42583-101">Common Language Specification (CLS)</span></span>

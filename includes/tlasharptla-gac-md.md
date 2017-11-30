@@ -1,1 +1,1 @@
-グローバル アセンブリ キャッシュ (GAC)
+<span data-ttu-id="db06a-101">グローバル アセンブリ キャッシュ (GAC)</span><span class="sxs-lookup"><span data-stu-id="db06a-101">global assembly cache (GAC)</span></span>

@@ -1,1 +1,1 @@
-カスケード スタイル シート (CSS)
+<span data-ttu-id="e35c3-101">カスケード スタイル シート (CSS)</span><span class="sxs-lookup"><span data-stu-id="e35c3-101">Cascading Style Sheets (CSS)</span></span>

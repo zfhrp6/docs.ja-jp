@@ -1,109 +1,91 @@
 ---
-title: "クラスの定義 (Visual Basic) |Microsoft ドキュメント"
+title: "クラスを定義する (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- execution, ending
+- execution [Visual Basic], ending
 - objects [Visual Basic], initializing
-- Initialize event
-- files, closing
-- programs, quitting
+- Initialize event [Visual Basic]
+- files [Visual Basic], closing
+- programs [Visual Basic], quitting
 - code, exiting
 - objects [Visual Basic], creating
 - program termination
 - classes [Visual Basic], walkthroughs
 - class modules, walkthroughs
-- Terminate event
-- execution, stopping
+- Terminate event [Visual Basic]
+- execution [Visual Basic], stopping
 ms.assetid: 07018828-2d49-4cf5-a44b-19fb15d9efea
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: aeaa5c2bb85c1a642da15c6a29546cf065380e27
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: ec002e1709fa5fe31dfe7744fb91a230c32337a6
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="walkthrough-defining-classes-visual-basic"></a>チュートリアル: クラスの定義 (Visual Basic)
-このチュートリアルでは、オブジェクトの作成に使用することができますし、クラスを定義する方法を示します。 また、新しいクラスにプロパティとメソッドを追加する方法を説明し、オブジェクトを初期化する方法を示します。  
+# <a name="walkthrough-defining-classes-visual-basic"></a><span data-ttu-id="2b643-102">チュートリアル: クラスの定義 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2b643-102">Walkthrough: Defining Classes (Visual Basic)</span></span>
+<span data-ttu-id="2b643-103">このチュートリアルでは、オブジェクトの作成に使用できるクラスを定義する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="2b643-103">This walkthrough demonstrates how to define classes, which you can then use to create objects.</span></span> <span data-ttu-id="2b643-104">また、プロパティとメソッドを新しいクラスに追加する方法を説明し、オブジェクトを初期化する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="2b643-104">It also shows you how to add properties and methods to the new class, and demonstrates how to initialize an object.</span></span>  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-define-a-class"></a>クラスを定義するには  
+### <a name="to-define-a-class"></a><span data-ttu-id="2b643-105">クラスを定義するには</span><span class="sxs-lookup"><span data-stu-id="2b643-105">To define a class</span></span>  
   
-1.  クリックして、プロジェクトを作成**新しいプロジェクト**上、**ファイル**メニュー。 **[新しいプロジェクト]** ダイアログ ボックスが表示されます。  
+1.  <span data-ttu-id="2b643-106">クリックして、プロジェクトを作成**新しいプロジェクト**上、**ファイル**メニュー。</span><span class="sxs-lookup"><span data-stu-id="2b643-106">Create a project by clicking **New Project** on the **File** menu.</span></span> <span data-ttu-id="2b643-107">**[新しいプロジェクト]** ダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="2b643-107">The **New Project** dialog box appears.</span></span>  
   
-2.  一覧から Windows アプリケーションを選択[!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]プロジェクト テンプレートを新しいプロジェクトを表示します。  
+2.  <span data-ttu-id="2b643-108">Windows アプリケーションを一覧から選択[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロジェクト テンプレートを新しいプロジェクトを表示します。</span><span class="sxs-lookup"><span data-stu-id="2b643-108">Select Windows Application from the list of [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] project templates to display the new project.</span></span>  
   
-3.  クリックして新しいクラスをプロジェクトに追加**クラスの追加**上、**プロジェクト**メニュー。 **新しい項目の追加** ダイアログ ボックスが表示されます。  
+3.  <span data-ttu-id="2b643-109">クリックして、プロジェクトに新しいクラスを追加**クラスの追加**上、**プロジェクト**メニュー。</span><span class="sxs-lookup"><span data-stu-id="2b643-109">Add a new class to the project by clicking **Add Class** on the **Project** menu.</span></span> <span data-ttu-id="2b643-110">**[新しい項目の追加]** ダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="2b643-110">The **Add New Item** dialog box appears.</span></span>  
   
-4.  選択、**クラス**テンプレートです。  
+4.  <span data-ttu-id="2b643-111">選択、**クラス**テンプレート。</span><span class="sxs-lookup"><span data-stu-id="2b643-111">Select the **Class** template.</span></span>  
   
-5.  新しいクラスの名前を`UserNameInfo.vb`、 をクリックし、**追加**新しいクラスのコードを表示します。  
+5.  <span data-ttu-id="2b643-112">新しいクラスの名前を`UserNameInfo.vb`、順にクリック**追加**新しいクラスのコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="2b643-112">Name the new class `UserNameInfo.vb`, and then click **Add** to display the code for the new class.</span></span>  
   
-     [!code-vb[VbVbalrOOP&#5;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_1.vb)]  
+     [!code-vb[VbVbalrOOP#5](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_1.vb)]  
   
     > [!NOTE]
-    >  使用することができます、 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] **コード エディター** 」と入力してクラスをスタートアップ フォームに追加する、`Class`キーワードの後に、新しいクラスの名前。 **コード エディター** 、対応する説明`End Class`するステートメントです。  
+    >  <span data-ttu-id="2b643-113">使用することができます、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] **コード エディター** 」と入力して、スタートアップ フォームにクラスを追加する、`Class`キーワードの後に、新しいクラスの名前。</span><span class="sxs-lookup"><span data-stu-id="2b643-113">You can use the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] **Code Editor** to add a class to your startup form by typing the `Class` keyword followed by the name of the new class.</span></span> <span data-ttu-id="2b643-114">**コード エディター** 、対応する提供`End Class`するステートメント。</span><span class="sxs-lookup"><span data-stu-id="2b643-114">The **Code Editor** provides a corresponding `End Class` statement for you.</span></span>  
   
-6.  間に次のコードを追加することで、クラスのプライベート フィールドを定義、`Class`と`End Class`ステートメント。  
+6.  <span data-ttu-id="2b643-115">間に次のコードを追加することで、クラスのプライベート フィールドを定義、`Class`と`End Class`ステートメント。</span><span class="sxs-lookup"><span data-stu-id="2b643-115">Define a private field for the class by adding the following code between the `Class` and `End Class` statements:</span></span>  
   
-     [!code-vb[VbVbalrOOP&#7;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_2.vb)]  
+     [!code-vb[VbVbalrOOP#7](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_2.vb)]  
   
-     ものとしてフィールドを宣言する`Private`クラス内でのみ使用できることを意味します。 利用できるフィールドからクラスの外部でなどのアクセス修飾子を使用して、`Public`以上のアクセスを提供します。 詳細については、次を参照してください。 [Visual Basic でのアクセス レベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)します。  
+     <span data-ttu-id="2b643-116">としてフィールドを宣言する`Private`クラス内でのみ使用できることを意味します。</span><span class="sxs-lookup"><span data-stu-id="2b643-116">Declaring the field as `Private` means it can be used only within the class.</span></span> <span data-ttu-id="2b643-117">利用できるフィールドからクラスの外部などのアクセス修飾子を使用して、`Public`以上のアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="2b643-117">You can make fields available from outside a class by using access modifiers such as `Public` that provide more access.</span></span> <span data-ttu-id="2b643-118">詳細については、次を参照してください。 [Visual Basic でのレベルのアクセス](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)です。</span><span class="sxs-lookup"><span data-stu-id="2b643-118">For more information, see [Access levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
   
-7.  次のコードを追加することで、クラスのプロパティを定義します。  
+7.  <span data-ttu-id="2b643-119">次のコードを追加することで、クラスのプロパティを定義します。</span><span class="sxs-lookup"><span data-stu-id="2b643-119">Define a property for the class by adding the following code:</span></span>  
   
-     [!code-vb[VbVbalrOOP&#8;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_3.vb)]  
+     [!code-vb[VbVbalrOOP#8](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_3.vb)]  
   
-8.  次のコードを追加することで、クラスのメソッドを定義します。  
+8.  <span data-ttu-id="2b643-120">次のコードを追加することで、クラスのメソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="2b643-120">Define a method for the class by adding the following code:</span></span>  
   
-     [!code-vb[VbVbalrOOP&#9;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_4.vb)]  
+     [!code-vb[VbVbalrOOP#9](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_4.vb)]  
   
-9. という名前のプロシージャを追加することで、新しいクラスにパラメーター化されたコンス トラクターを定義`Sub New`:  
+9. <span data-ttu-id="2b643-121">という名前のプロシージャを追加することで、新しいクラスのパラメーター化されたコンス トラクターを定義`Sub New`:</span><span class="sxs-lookup"><span data-stu-id="2b643-121">Define a parameterized constructor for the new class by adding a procedure named `Sub New`:</span></span>  
   
-     [!code-vb[VbVbalrOOP&#10;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_5.vb)]  
+     [!code-vb[VbVbalrOOP#10](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_5.vb)]  
   
-     `Sub New`コンス トラクターはこのクラスに基づくオブジェクトの作成時に自動的に呼び出されます。 このコンス トラクターは、ユーザー名を保持するフィールドの値を設定します。  
+     <span data-ttu-id="2b643-122">`Sub New`コンス トラクターはこのクラスに基づくオブジェクトの作成時に自動的に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="2b643-122">The `Sub New` constructor is called automatically when an object based on this class is created.</span></span> <span data-ttu-id="2b643-123">このコンス トラクターは、ユーザー名を格納するフィールドの値を設定します。</span><span class="sxs-lookup"><span data-stu-id="2b643-123">This constructor sets the value of the field that holds the user name.</span></span>  
   
-### <a name="to-create-a-button-to-test-the-class"></a>クラスをテストするためのボタンを作成するには  
+### <a name="to-create-a-button-to-test-the-class"></a><span data-ttu-id="2b643-124">クラスをテストするためのボタンを作成するには</span><span class="sxs-lookup"><span data-stu-id="2b643-124">To create a button to test the class</span></span>  
   
-1.  その名前を右クリックして、スタートアップ フォームをデザイン モードに変更**ソリューション エクスプ ローラー**クリックし、**ビュー デザイナー**します。 既定では、Windows アプリケーション プロジェクトのスタートアップ フォームを Form1.vb と呼びます。 メイン フォームが表示されます。  
+1.  <span data-ttu-id="2b643-125">スタートアップ フォームをデザイン モードをでその名前を右クリックして変更**ソリューション エクスプ ローラー**クリックし、**ビュー デザイナー**です。</span><span class="sxs-lookup"><span data-stu-id="2b643-125">Change the startup form to design mode by right-clicking its name in **Solution Explorer** and then clicking **View Designer**.</span></span> <span data-ttu-id="2b643-126">既定では、Windows アプリケーション プロジェクトをスタートアップ フォームに Form1.vb がという名前です。</span><span class="sxs-lookup"><span data-stu-id="2b643-126">By default, the startup form for Windows Application projects is named Form1.vb.</span></span> <span data-ttu-id="2b643-127">メイン フォームが表示されます。</span><span class="sxs-lookup"><span data-stu-id="2b643-127">The main form will then appear.</span></span>  
   
-2.  メイン フォームにボタンを追加し、ダブルクリックのコードを表示して、`Button1_Click`イベント ハンドラーです。 テストのプロシージャを呼び出すには、次のコードを追加します。  
+2.  <span data-ttu-id="2b643-128">メイン フォームにボタンを追加し、ダブルクリックのコードを表示して、`Button1_Click`イベント ハンドラー。</span><span class="sxs-lookup"><span data-stu-id="2b643-128">Add a button to the main form and double-click it to display the code for the `Button1_Click` event handler.</span></span> <span data-ttu-id="2b643-129">テストのプロシージャを呼び出すには、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="2b643-129">Add the following code to call the test procedure:</span></span>  
   
-     [!code-vb[VbVbalrOOP&#12;](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_6.vb)]  
+     [!code-vb[VbVbalrOOP#12](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_6.vb)]  
   
-### <a name="to-run-your-application"></a>アプリケーションを実行するには  
+### <a name="to-run-your-application"></a><span data-ttu-id="2b643-130">アプリケーションを実行するには</span><span class="sxs-lookup"><span data-stu-id="2b643-130">To run your application</span></span>  
   
-1.  F5 キーを押して、アプリケーションを実行します。 テスト プロシージャを呼び出すためのフォーム上のボタンをクリックします。 元のことを示すメッセージが表示`UserName`"MOORE、BOBBY"は、プロシージャが呼び出されるため、`Capitalize`オブジェクトのメソッドです。  
+1.  <span data-ttu-id="2b643-131">F5 キーを押してアプリケーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="2b643-131">Run your application by pressing F5.</span></span> <span data-ttu-id="2b643-132">テストのプロシージャを呼び出してフォーム上のボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="2b643-132">Click the button on the form to call the test procedure.</span></span> <span data-ttu-id="2b643-133">元のことを示すメッセージを表示`UserName`"MOORE、BOBBY"では、プロシージャを呼び出す、`Capitalize`オブジェクトのメソッドです。</span><span class="sxs-lookup"><span data-stu-id="2b643-133">It displays a message stating that the original `UserName` is "MOORE, BOBBY", because the procedure called the `Capitalize` method of the object.</span></span>  
   
-2.  クリックして**OK**メッセージ ボックスを閉じます。 `Button1 Click`の値を変更する手順、`UserName`プロパティの新しい値のことを示すメッセージを表示および`UserName`"Worden、Joe"は、です。  
+2.  <span data-ttu-id="2b643-134">をクリックして**OK**メッセージ ボックスを閉じます。</span><span class="sxs-lookup"><span data-stu-id="2b643-134">Click **OK** to dismiss the message box.</span></span> <span data-ttu-id="2b643-135">`Button1 Click`プロシージャの値を変更する、`UserName`プロパティの新しい値のことを示すメッセージを表示および`UserName`"Worden、Joe"は、します。</span><span class="sxs-lookup"><span data-stu-id="2b643-135">The `Button1 Click` procedure changes the value of the `UserName` property and displays a message stating that the new value of `UserName` is "Worden, Joe".</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [オブジェクト指向プログラミング](http://msdn.microsoft.com/library/1cf6e655-3f30-45f1-9a5d-4a88ca24a1c2)   
- [クラスとオブジェクト](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
-
+## <a name="see-also"></a><span data-ttu-id="2b643-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="2b643-136">See Also</span></span>  
+ [<span data-ttu-id="2b643-137">オブジェクト指向プログラミング</span><span class="sxs-lookup"><span data-stu-id="2b643-137">Object-Oriented Programming</span></span>](http://msdn.microsoft.com/library/1cf6e655-3f30-45f1-9a5d-4a88ca24a1c2)  
+ [<span data-ttu-id="2b643-138">クラスとオブジェクト</span><span class="sxs-lookup"><span data-stu-id="2b643-138">Objects and Classes</span></span>](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

@@ -1,1 +1,1 @@
-グラフィックス インターチェンジ形式 (GIF)
+<span data-ttu-id="65ca6-101">グラフィックス インターチェンジ形式 (GIF)</span><span class="sxs-lookup"><span data-stu-id="65ca6-101">Graphics Interchange Format (GIF)</span></span>
