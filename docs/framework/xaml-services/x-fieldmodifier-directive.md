@@ -1,65 +1,68 @@
 ---
-title: "x:FieldModifier Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "FieldModifier attribute in XAML [XAML Services]"
-  - "x:FieldModifier attribute [XAML Services]"
-  - "XAML [XAML Services], x:FieldModifier attribute"
+title: "x:FieldModifier ディレクティブ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- FieldModifier attribute in XAML [XAML Services]
+- x:FieldModifier attribute [XAML Services]
+- XAML [XAML Services], x:FieldModifier attribute
 ms.assetid: ed427cd4-2f35-4d24-bd2f-0fa7b71ec248
-caps.latest.revision: 15
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: "15"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 77745744c0da1e4b4425af6d8e4319faaf524908
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# x:FieldModifier Directive
-指定されているオブジェクト参照のフィールドが、既定動作の <xref:System.Reflection.TypeAttributes?displayProperty=fullName> ではなく <xref:System.Reflection.TypeAttributes?displayProperty=fullName> アクセスで定義されるように、XAML のコンパイル動作を変更します。  
+# <a name="xfieldmodifier-directive"></a><span data-ttu-id="a9f59-102">x:FieldModifier ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="a9f59-102">x:FieldModifier Directive</span></span>
+<span data-ttu-id="a9f59-103">XAML のコンパイルの動作を変更してでの名前付きオブジェクトの参照フィールドが定義されているように<xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType>の代わりにアクセス、<xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>既定の動作です。</span><span class="sxs-lookup"><span data-stu-id="a9f59-103">Modifies XAML compilation behavior so that fields for named object references are defined with <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> access instead of the <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> default behavior.</span></span>  
   
-## XAML 属性の使用方法  
+## <a name="xaml-attribute-usage"></a><span data-ttu-id="a9f59-104">XAML 属性の使用方法</span><span class="sxs-lookup"><span data-stu-id="a9f59-104">XAML Attribute Usage</span></span>  
   
+```xaml  
+<object x:FieldModifier="Public".../>  
 ```  
-<object x:FieldModifier="Public".../>  
-```  
   
-## XAML 値  
+## <a name="xaml-values"></a><span data-ttu-id="a9f59-105">XAML 値</span><span class="sxs-lookup"><span data-stu-id="a9f59-105">XAML Values</span></span>  
   
 |||  
 |-|-|  
-|*Public*|<xref:System.Reflection.TypeAttributes?displayProperty=fullName> か <xref:System.Reflection.TypeAttributes?displayProperty=fullName> かを指定するために渡す正確な文字列は、分離コードで使用されているプログラミング言語によって異なります。  「解説」を参照してください。|  
+|<span data-ttu-id="a9f59-106">*Public*</span><span class="sxs-lookup"><span data-stu-id="a9f59-106">*Public*</span></span>|<span data-ttu-id="a9f59-107">正確な指定した文字列を指定する<xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType>と<xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>のために使用される分離コードのプログラミング言語によって異なります。</span><span class="sxs-lookup"><span data-stu-id="a9f59-107">The exact string you pass to specify <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> versus <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> varies, depending on the code-behind programming language that is used.</span></span> <span data-ttu-id="a9f59-108">「解説」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a9f59-108">See Remarks.</span></span>|  
   
-## 依存関係  
- XAML 稼動環境が任意の場所で `x:FieldModifier` を使用する場合、XAML 稼動環境のルート要素は [x:Class Directive](../../../docs/framework/xaml-services/x-class-directive.md) を宣言する必要があります。  
+## <a name="dependencies"></a><span data-ttu-id="a9f59-109">依存関係</span><span class="sxs-lookup"><span data-stu-id="a9f59-109">Dependencies</span></span>  
+ <span data-ttu-id="a9f59-110">XAML の運用環境で使用する場合`x:FieldModifier`任意の場所では、その XAML の運用環境のルート要素を宣言する必要があります、 [X:class ディレクティブ](../../../docs/framework/xaml-services/x-class-directive.md)です。</span><span class="sxs-lookup"><span data-stu-id="a9f59-110">If a XAML production uses `x:FieldModifier` anywhere, the root element of that XAML production must declare an [x:Class Directive](../../../docs/framework/xaml-services/x-class-directive.md).</span></span>  
   
-## 解説  
- `x:FieldModifier` は、クラスまたはそのメンバーの一般的なアクセス レベルの宣言には関連しません。  XAML 稼動環境の一部である特定の XAML オブジェクトが処理されるときの XAML 処理動作にだけ関係し、アプリケーションのオブジェクト グラフ内で潜在的にアクセスできるオブジェクトとなります。  既定では、このようなオブジェクトのフィールド参照は非公開なので、コントロール コンシューマーはオブジェクト グラフを直接変更できません。  代わりに、コントロール コンシューマーは、レイアウト ルートの取得、子要素のコレクションの取得、専用のパブリック プロパティの取得などのプログラミング モデルによって有効になる標準パターンを使用してオブジェクト グラフを変更します。  
+## <a name="remarks"></a><span data-ttu-id="a9f59-111">コメント</span><span class="sxs-lookup"><span data-stu-id="a9f59-111">Remarks</span></span>  
+ <span data-ttu-id="a9f59-112">`x:FieldModifier`無効、クラスまたはそのメンバーの一般的なアクセス レベルを宣言するためです。</span><span class="sxs-lookup"><span data-stu-id="a9f59-112">`x:FieldModifier` is not relevant for declaring the general access level of a class or its members.</span></span> <span data-ttu-id="a9f59-113">XAML 処理の動作にのみ関連する XAML の運用環境の一部である特定の XAML オブジェクトが処理され、アプリケーションのオブジェクト グラフに可能性のあるアクセス可能なオブジェクトになります。</span><span class="sxs-lookup"><span data-stu-id="a9f59-113">It is relevant only for XAML-processing behavior when a particular XAML object that is part of a XAML production is processed, and becomes an object that is potentially accessible in the object graph of an application.</span></span> <span data-ttu-id="a9f59-114">既定では、このようなオブジェクトのフィールド参照は厳重に保管され、コントロールのコンシューマーは、オブジェクト グラフを直接変更できなきます。</span><span class="sxs-lookup"><span data-stu-id="a9f59-114">By default, the field reference for such an object is kept private, which prevents control consumers from modifying the object graph directly.</span></span> <span data-ttu-id="a9f59-115">代わりに、コントロール コンシューマーでは有効なプログラミング モデルなどのレイアウト ルート、子要素のコレクション、専用のパブリック プロパティを取得することによって標準のパターンを使用して、オブジェクト グラフを変更する必要と。</span><span class="sxs-lookup"><span data-stu-id="a9f59-115">Instead, control consumers are expected to modify the object graph by using standard patterns that are enabled by programming models, such as by obtaining the layout root, the child element collections, the dedicated public properties, and so on.</span></span>  
   
- `x:FieldModifier` 属性の値はプログラミング言語ごとに異なり、その目的は特定のフレームワークで変わることがあります。  使用する文字列は、各言語の <xref:System.CodeDom.Compiler.CodeDomProvider> の実装方法、その言語が <xref:System.Reflection.TypeAttributes?displayProperty=fullName> と <xref:System.Reflection.TypeAttributes?displayProperty=fullName> の意味を定義するために返す型コンバーター、およびその言語が大文字と小文字を区別するかどうかによって決まります。  
+ <span data-ttu-id="a9f59-116">値、`x:FieldModifier`属性は、プログラミング言語によって異なります、特定のフレームワークでの目的が異なります。</span><span class="sxs-lookup"><span data-stu-id="a9f59-116">The value for the `x:FieldModifier` attribute varies by programming language, and its purpose can vary in specific frameworks.</span></span> <span data-ttu-id="a9f59-117">使用する文字列は、各言語の実装に依存その<xref:System.CodeDom.Compiler.CodeDomProvider>と返しますの意味を定義する型コンバーター<xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType>と<xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>、その言語は大文字小文字を区別するかどうかとします。</span><span class="sxs-lookup"><span data-stu-id="a9f59-117">The string to use depends on how each language implements its <xref:System.CodeDom.Compiler.CodeDomProvider> and the type converters it returns to define the meanings for <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> and <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, and whether that language is case sensitive.</span></span>  
   
--   [!INCLUDE[TLA2#tla_cshrp](../../../includes/tla2sharptla-cshrp-md.md)] の場合、<xref:System.Reflection.TypeAttributes?displayProperty=fullName> を指定するために渡す文字列は `public` です。  
+-   <span data-ttu-id="a9f59-118">[!INCLUDE[TLA2#tla_cshrp](../../../includes/tla2sharptla-cshrp-md.md)]、指定に渡す文字列<xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType>は`public`します。</span><span class="sxs-lookup"><span data-stu-id="a9f59-118">For [!INCLUDE[TLA2#tla_cshrp](../../../includes/tla2sharptla-cshrp-md.md)], the string to pass to designate <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> is `public`.</span></span>  
   
--   [!INCLUDE[TLA2#tla_visualbnet](../../../includes/tla2sharptla-visualbnet-md.md)] の場合、<xref:System.Reflection.TypeAttributes?displayProperty=fullName> を指定するために渡す文字列は `Public` です。  
+-   <span data-ttu-id="a9f59-119">[!INCLUDE[TLA2#tla_visualbnet](../../../includes/tla2sharptla-visualbnet-md.md)]、指定に渡す文字列<xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType>は`Public`します。</span><span class="sxs-lookup"><span data-stu-id="a9f59-119">For [!INCLUDE[TLA2#tla_visualbnet](../../../includes/tla2sharptla-visualbnet-md.md)], the string to pass to designate <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> is `Public`.</span></span>  
   
--   [!INCLUDE[TLA2#tla_cppcli](../../../includes/tla2sharptla-cppcli-md.md)] の場合、XAML のターゲットは現在存在しないため、渡す文字列は定義されていません。  
+-   <span data-ttu-id="a9f59-120">[!INCLUDE[TLA2#tla_cppcli](../../../includes/tla2sharptla-cppcli-md.md)]XAML のターゲット現在存在しません。 そのため、渡す文字列は未定義です。</span><span class="sxs-lookup"><span data-stu-id="a9f59-120">For [!INCLUDE[TLA2#tla_cppcli](../../../includes/tla2sharptla-cppcli-md.md)], no targets for XAML currently exist; therefore, the string to pass is undefined.</span></span>  
   
- <xref:System.Reflection.TypeAttributes?displayProperty=fullName> \([!INCLUDE[TLA2#tla_cshrp](../../../includes/tla2sharptla-cshrp-md.md)] では `internal`、[!INCLUDE[TLA2#tla_visualb](../../../includes/tla2sharptla-visualb-md.md)] では `Friend`\) を指定することもできますが、動作としては `NotPublic` が既定となっているため <xref:System.Reflection.TypeAttributes?displayProperty=fullName> を指定するのは一般的ではありません。  
+ <span data-ttu-id="a9f59-121">指定することも<xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>(`internal`で[!INCLUDE[TLA2#tla_cshrp](../../../includes/tla2sharptla-cshrp-md.md)]、`Friend`で[!INCLUDE[TLA2#tla_visualb](../../../includes/tla2sharptla-visualb-md.md)]) が指定する<xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>はほとんどありませんので`NotPublic`動作は、既に既定値として。</span><span class="sxs-lookup"><span data-stu-id="a9f59-121">You can also specify <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> (`internal` in [!INCLUDE[TLA2#tla_cshrp](../../../includes/tla2sharptla-cshrp-md.md)], `Friend` in [!INCLUDE[TLA2#tla_visualb](../../../includes/tla2sharptla-visualb-md.md)]) but specifying <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> is unusual because `NotPublic` as the behavior is already the default.</span></span>  
   
- <xref:System.Reflection.TypeAttributes?displayProperty=fullName> が既定の動作になっているのは、XAML をコンパイルしたアセンブリの外部のコードから XAML で作成された要素にアクセスする必要があまりないためです。  パブリック アクセスを許可するようにユーザーが明確に `x:FieldModifier` を設定しない限り、WPF のセキュリティ アーキテクチャと XAML のコンパイル動作の組み合わせが、要素のインスタンスを格納するフィールドを Public にすることはありません。  
+ <span data-ttu-id="a9f59-122"><xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>XAML をコンパイルされたアセンブリの外側のコードが XAML で作成された要素へのアクセスを必要があることが頻繁ではないために、既定の動作です。</span><span class="sxs-lookup"><span data-stu-id="a9f59-122"><xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> is the default behavior because it is infrequent that code outside the assembly that compiled the XAML needs access to a XAML-created element.</span></span> <span data-ttu-id="a9f59-123">具体的に設定していない場合、XAML のコンパイルの動作と WPF のセキュリティ アーキテクチャは、public として要素のインスタンスを格納するフィールドを宣言しませんが、`x:FieldModifier`パブリック アクセスを許可します。</span><span class="sxs-lookup"><span data-stu-id="a9f59-123">WPF security architecture together with XAML compilation behavior will not declare fields that store element instances as public, unless you specifically set the `x:FieldModifier` to allow public access.</span></span>  
   
- `x:FieldModifier` は、[x:Name Directive](../../../docs/framework/xaml-services/x-name-directive.md)が指定されている要素に対してのみ関係します。これは、フィールドが Public になると、その名前を使用してフィールドを参照するためです。  
+ <span data-ttu-id="a9f59-124">`x:FieldModifier`のみを持つ要素の関係、 [X:name ディレクティブ](../../../docs/framework/xaml-services/x-name-directive.md)その名前は public では後にフィールドを参照に使用されるためです。</span><span class="sxs-lookup"><span data-stu-id="a9f59-124">`x:FieldModifier` is only relevant for elements with an [x:Name Directive](../../../docs/framework/xaml-services/x-name-directive.md) because that name is used to reference the field after it is public.</span></span>  
   
- ルート要素の部分クラスは既定で Public になっていますが、[x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)を使用して NonPublic にすることができます。  [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)は、ルート要素クラスのインスタンスのアクセス レベルにも影響を与えます。  ルート要素には `x:Name` と `x:FieldModifier` の両方を配置できますが、これはルート要素のパブリック フィールドのコピーを作成するだけであり、実際のルート要素クラスのアクセス レベルは引き続き [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)によって制御されます。  
+ <span data-ttu-id="a9f59-125">既定では、ルート要素の部分クラスはパブリックです。ただし、することができます、パブリックでないを使用して、 [X:classmodifier ディレクティブ](../../../docs/framework/xaml-services/x-classmodifier-directive.md)です。</span><span class="sxs-lookup"><span data-stu-id="a9f59-125">By default, the partial class for the root element is public; however, you can make it nonpublic by using the [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md).</span></span> <span data-ttu-id="a9f59-126">[X:classmodifier ディレクティブ](../../../docs/framework/xaml-services/x-classmodifier-directive.md)ルート要素クラスのインスタンスのアクセス レベルにも影響します。</span><span class="sxs-lookup"><span data-stu-id="a9f59-126">The [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md) also affects the access level of the instance of the root element class.</span></span> <span data-ttu-id="a9f59-127">両方を配置できる`x:Name`と`x:FieldModifier`ルートに要素が、これだけのパブリック フィールドのコピーを作成は true。 ルート要素クラスのアクセス レベルも、ルート要素によって制御されます[X:classmodifier ディレクティブ](../../../docs/framework/xaml-services/x-classmodifier-directive.md)です。</span><span class="sxs-lookup"><span data-stu-id="a9f59-127">You can put both `x:Name` and `x:FieldModifier` on the root element, but this only makes a public field copy of the root element, with the true root element class access level still controlled by [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md).</span></span>  
   
-## 参照  
- [WPF における XAML とカスタム クラス](../../../ocs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)   
- [WPF における分離コードと XAML](../../../ocs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)   
- [x:Name Directive](../../../docs/framework/xaml-services/x-name-directive.md)   
- [WPF アプリケーション \(WPF\) のビルド](../../../ocs/framework/wpf/app-development/building-a-wpf-application-wpf.md)   
- [x:ClassModifier Directive](../../../docs/framework/xaml-services/x-classmodifier-directive.md)
+## <a name="see-also"></a><span data-ttu-id="a9f59-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="a9f59-128">See Also</span></span>  
+ [<span data-ttu-id="a9f59-129">WPF における XAML とカスタム クラス</span><span class="sxs-lookup"><span data-stu-id="a9f59-129">XAML and Custom Classes for WPF</span></span>](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
+ [<span data-ttu-id="a9f59-130">WPF における分離コードと XAML</span><span class="sxs-lookup"><span data-stu-id="a9f59-130">Code-Behind and XAML in WPF</span></span>](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)  
+ [<span data-ttu-id="a9f59-131">x:Name ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="a9f59-131">x:Name Directive</span></span>](../../../docs/framework/xaml-services/x-name-directive.md)  
+ [<span data-ttu-id="a9f59-132">WPF アプリケーション (WPF) のビルド</span><span class="sxs-lookup"><span data-stu-id="a9f59-132">Building a WPF Application (WPF)</span></span>](../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
+ [<span data-ttu-id="a9f59-133">x:ClassModifier ディレクティブ</span><span class="sxs-lookup"><span data-stu-id="a9f59-133">x:ClassModifier Directive</span></span>](../../../docs/framework/xaml-services/x-classmodifier-directive.md)

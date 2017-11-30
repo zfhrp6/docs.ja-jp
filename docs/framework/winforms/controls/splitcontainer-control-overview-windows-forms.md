@@ -1,64 +1,63 @@
 ---
-title: "SplitContainer コントロールの概要 (Windows フォーム) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "SplitContainer"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "SplitContainer コントロール [Windows フォーム], SplitContainer コントロールの概要"
+title: "SplitContainer コントロールの概要 (Windows フォーム)"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: SplitContainer
+helpviewer_keywords: SplitContainer control [Windows Forms], about SplitContainer control
 ms.assetid: 6de5a5f7-97a5-402d-be6d-7e2785483db5
-caps.latest.revision: 11
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 10f18c46c85ed840b6625d9ed754d1d036a80975
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# SplitContainer コントロールの概要 (Windows フォーム)
-Windows フォームの <xref:System.Windows.Forms.SplitContainer> コントロールは、移動できるバーによって分割された 2 つのパネルから成る複合コントロールと考えることができます。  マウス ポインターをバーの上に置くと、ポインターが変形し、そのバーを移動できることが示されます。  
+# <a name="splitcontainer-control-overview-windows-forms"></a><span data-ttu-id="7e585-102">SplitContainer コントロールの概要 (Windows フォーム)</span><span class="sxs-lookup"><span data-stu-id="7e585-102">SplitContainer Control Overview (Windows Forms)</span></span>
+<span data-ttu-id="7e585-103">Windows フォームの <xref:System.Windows.Forms.SplitContainer> コントロールは複合と考えることができ、移動可能なバーで区切られた 2 つのパネルです。</span><span class="sxs-lookup"><span data-stu-id="7e585-103">The Windows Forms <xref:System.Windows.Forms.SplitContainer> control can be thought of as a composite; it is two panels separated by a movable bar.</span></span> <span data-ttu-id="7e585-104">マウス ポインターがバーの上に移動すると、ポインターの形が変わり、バーが移動可能であることを示します。</span><span class="sxs-lookup"><span data-stu-id="7e585-104">When the mouse pointer is over the bar, the pointer changes shape to show that the bar is movable.</span></span>  
   
 > [!IMPORTANT]
->  **ツールボックス**では、以前のバージョンの [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] で使用されていた <xref:System.Windows.Forms.Splitter> コントロールが、<xref:System.Windows.Forms.SplitContainer> コントロールに置き換えられました。  <xref:System.Windows.Forms.SplitContainer> コントロールの優先度は、<xref:System.Windows.Forms.Splitter> コントロールよりもかなり高くなります。  <xref:System.Windows.Forms.Splitter> クラスは、既存のアプリケーションとの互換性を確保するために、引き続き [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] に含まれていますが、新しいプロジェクトに対しては、<xref:System.Windows.Forms.SplitContainer> コントロールを使用することを強くお勧めします。  
+>  <span data-ttu-id="7e585-105">**ツールボックス**、<xref:System.Windows.Forms.SplitContainer>置換の制御、<xref:System.Windows.Forms.Splitter>の以前のバージョンに存在していたコントロール[!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)]です。</span><span class="sxs-lookup"><span data-stu-id="7e585-105">In the **Toolbox**, <xref:System.Windows.Forms.SplitContainer> control replaces the <xref:System.Windows.Forms.Splitter> control that was there in the previous version of [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)].</span></span> <span data-ttu-id="7e585-106"><xref:System.Windows.Forms.SplitContainer> コントロールは <xref:System.Windows.Forms.Splitter> コントロールより優先されます。</span><span class="sxs-lookup"><span data-stu-id="7e585-106">The <xref:System.Windows.Forms.SplitContainer> control is much preferred over the <xref:System.Windows.Forms.Splitter> control.</span></span> <span data-ttu-id="7e585-107"><xref:System.Windows.Forms.Splitter>クラスは可能です、 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 、既存のアプリケーションとの互換性を強くお勧めを使用することが、<xref:System.Windows.Forms.SplitContainer>新しいプロジェクトのコントロールです。</span><span class="sxs-lookup"><span data-stu-id="7e585-107">The <xref:System.Windows.Forms.Splitter> class is still included in the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] for compatibility with existing applications, but we strongly encourage you to use the <xref:System.Windows.Forms.SplitContainer> control for new projects.</span></span>  
   
- <xref:System.Windows.Forms.SplitContainer> コントロールを使用すると、複雑なユーザー インターフェイスを作成できます。多くの場合、1 つのパネルで選択した項目によって、他のパネルで表示されるオブジェクトが決まります。  この配置は、情報の表示と参照には非常に有効です。  2 つのパネルを用意することで、領域に情報を集約でき、さらに、バーまたは "分割線" により、ユーザーが簡単にパネルのサイズを変更できます。  
+ <span data-ttu-id="7e585-108"><xref:System.Windows.Forms.SplitContainer>コントロール、複雑なユーザー インターフェイスを作成することができます。 多くの場合、1 つのパネルで選択した項目によって、もう一方のパネルにどのようなオブジェクトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="7e585-108">With the <xref:System.Windows.Forms.SplitContainer> control, you can create complex user interfaces; often, a selection in one panel determines what objects are shown in the other panel.</span></span> <span data-ttu-id="7e585-109">この配置は、情報の表示と参照に対して非常に効果的です。</span><span class="sxs-lookup"><span data-stu-id="7e585-109">This arrangement is very effective for displaying and browsing information.</span></span> <span data-ttu-id="7e585-110">2 つのパネルで地域では、情報を集計して、バー、または「分割」により、パネルのサイズを変更するユーザーの簡単です。</span><span class="sxs-lookup"><span data-stu-id="7e585-110">Having two panels lets you aggregate information in areas, and the bar, or "splitter," makes it easy for users to resize the panels.</span></span>  
   
- 第 2 の <xref:System.Windows.Forms.SplitContainer> コントロールを水平方向に配置した状態で、複数の <xref:System.Windows.Forms.SplitContainer> コントロールを入れ子にして、上部のパネルと下部のパネルを作成することもできます。  
+ <span data-ttu-id="7e585-111">1 つ以上<xref:System.Windows.Forms.SplitContainer>コントロール ネストすることも、2 番目の<xref:System.Windows.Forms.SplitContainer>コントロール指向の水平方向には、上部と下部のパネルを作成します。</span><span class="sxs-lookup"><span data-stu-id="7e585-111">More than one <xref:System.Windows.Forms.SplitContainer> control can also be nested, with the second <xref:System.Windows.Forms.SplitContainer> control oriented horizontally, to create top and bottom panels.</span></span>  
   
- 既定では、<xref:System.Windows.Forms.SplitContainer> コントロールにはキーボードからアクセスできます。<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> プロパティが `false` に設定されていれば、ユーザーは方向キーを押して分割線を移動できます。  
+ <span data-ttu-id="7e585-112">注意してくださいを<xref:System.Windows.Forms.SplitContainer>コントロールがキーボードからアクセス可能な既定以外のユーザーが分割線の移動方向キーを押すことができます、<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A>プロパティに設定されている`false`です。</span><span class="sxs-lookup"><span data-stu-id="7e585-112">Be aware that the <xref:System.Windows.Forms.SplitContainer> control is keyboard-accessible by default; users can press the ARROW keys to move the splitter if the <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> property is set to `false`.</span></span>  
   
- <xref:System.Windows.Forms.SplitContainer> コントロールの <xref:System.Windows.Forms.SplitContainer.Orientation%2A> プロパティは、コントロール自体の方向ではなく、分割線の方向を指定します。  そのため、このプロパティが <xref:System.Windows.Forms.Orientation> に設定されているときは、上から下に向かって分割線が作成され、左パネルと右パネルが作成されます。  
+ <span data-ttu-id="7e585-113"><xref:System.Windows.Forms.SplitContainer.Orientation%2A>のプロパティ、<xref:System.Windows.Forms.SplitContainer>コントロールは、スプリッターのではなく、コントロール自体の方向を決定します。</span><span class="sxs-lookup"><span data-stu-id="7e585-113">The <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property of the <xref:System.Windows.Forms.SplitContainer> control determines the direction of the splitter, not of the control itself.</span></span> <span data-ttu-id="7e585-114">そのため、このプロパティ設定されている場合<xref:System.Windows.Forms.Orientation.Vertical>、分割線を上から下、左と右のパネルを作成する実行します。</span><span class="sxs-lookup"><span data-stu-id="7e585-114">Hence, when this property is set to <xref:System.Windows.Forms.Orientation.Vertical>, the splitter runs from top to bottom, creating left and right panels.</span></span>  
   
- また、<xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A> プロパティの値は、<xref:System.Windows.Forms.SplitContainer.Orientation%2A> プロパティの値に応じて決定されることに注意してください。  詳細については、「<xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A> プロパティ」を参照してください。  
+ <span data-ttu-id="7e585-115">またの値、<xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A>プロパティの値によって異なります、<xref:System.Windows.Forms.SplitContainer.Orientation%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="7e585-115">Additionally, be aware that the value of the <xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A> property varies depending on the value of the <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property.</span></span> <span data-ttu-id="7e585-116">詳細については、次を参照してください。<xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="7e585-116">For more information, see <xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A> property.</span></span>  
   
- <xref:System.Windows.Forms.SplitContainer> コントロールのサイズと移動を制限することもできます。  <xref:System.Windows.Forms.SplitContainer.FixedPanel%2A> プロパティでは、<xref:System.Windows.Forms.SplitContainer> コントロールのサイズを変更した後に同じサイズのままで維持するパネルが決定され、<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> プロパティでは、分割線がキーボードまたはマウスによって移動できるかどうかが決定されます。  
+ <span data-ttu-id="7e585-117">移動とサイズを制限することも、<xref:System.Windows.Forms.SplitContainer>コントロール。</span><span class="sxs-lookup"><span data-stu-id="7e585-117">You can also restrict the size and movement of the <xref:System.Windows.Forms.SplitContainer> control.</span></span> <span data-ttu-id="7e585-118"><xref:System.Windows.Forms.SplitContainer.FixedPanel%2A>プロパティを決定するパネルが後に同じサイズのまま、<xref:System.Windows.Forms.SplitContainer>コントロールのサイズが、および<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A>プロパティは、スプリッターは、キーボードまたはマウスを移動できるかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="7e585-118">The <xref:System.Windows.Forms.SplitContainer.FixedPanel%2A> property determines which panel will remain the same size after the <xref:System.Windows.Forms.SplitContainer> control is resized, and the <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> property determines if the splitter is movable by the keyboard or mouse.</span></span>  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> プロパティが `true` に設定されている場合でも、<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> プロパティを使用するなどの方法で、プログラムによって分割線を移動させることができます。  
+>  <span data-ttu-id="7e585-119">場合でも、<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A>プロパティに設定されている`true`、分割線も移動を許可するプログラム。 たとえば、を使用して、<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="7e585-119">Even if the <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> property is set to `true`, the splitter may still be moved programmatically; for example, by using the <xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> property.</span></span>  
   
- 最後に、<xref:System.Windows.Forms.SplitContainer> コントロールの各パネルには、個々のサイズを決定するプロパティが用意されています。  
+ <span data-ttu-id="7e585-120">最後に、各パネル、<xref:System.Windows.Forms.SplitContainer>コントロール、個々 のサイズを決定するプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="7e585-120">Finally, each panel of the <xref:System.Windows.Forms.SplitContainer> control has properties to determine its individual size.</span></span>  
   
-## 一般的に使用されるプロパティ、メソッド、およびイベント  
+## <a name="commonly-used-properties-methods-and-events"></a><span data-ttu-id="7e585-121">一般的に使用されるプロパティ、メソッド、およびイベント</span><span class="sxs-lookup"><span data-stu-id="7e585-121">Commonly Used Properties, Methods, and Events</span></span>  
   
-|名前|Description|  
-|--------|-----------------|  
-|<xref:System.Windows.Forms.SplitContainer.FixedPanel%2A> プロパティ|<xref:System.Windows.Forms.SplitContainer> コントロールのサイズを変更した後に同じサイズのままで維持するパネルを決定します。|  
-|<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> プロパティ|分割線がキーボードまたはマウスによって移動できるかどうかを決定します。|  
-|<xref:System.Windows.Forms.SplitContainer.Orientation%2A> プロパティ|分割線を垂直方向と水平方法のどちらで配置するかを決定します。|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> プロパティ|左端または上端から移動できる分割バーまでの距離 \(ピクセル単位\) を決定します。|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> プロパティ|ユーザーが分割線を移動できる最小距離 \(ピクセル単位\) を決定します。|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterWidth%2A> プロパティ|分割線の幅 \(ピクセル単位\) を決定します。|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterMoving> イベント|分割線の移動中に発生します。|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterMoved> イベント|分割線の移動後に発生します。|  
+|<span data-ttu-id="7e585-122">名前</span><span class="sxs-lookup"><span data-stu-id="7e585-122">Name</span></span>|<span data-ttu-id="7e585-123">説明</span><span class="sxs-lookup"><span data-stu-id="7e585-123">Description</span></span>|  
+|----------|-----------------|  
+|<span data-ttu-id="7e585-124"><xref:System.Windows.Forms.SplitContainer.FixedPanel%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="7e585-124"><xref:System.Windows.Forms.SplitContainer.FixedPanel%2A> property</span></span>|<span data-ttu-id="7e585-125">どのパネルは変わりませんを決定後サイズ、<xref:System.Windows.Forms.SplitContainer>コントロールのサイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="7e585-125">Determines which panel will remain the same size after the <xref:System.Windows.Forms.SplitContainer> control is resized.</span></span>|  
+|<span data-ttu-id="7e585-126"><xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="7e585-126"><xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> property</span></span>|<span data-ttu-id="7e585-127">キーボードまたはマウスで分割線を移動できるかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="7e585-127">Determines if the splitter can be moved with the keyboard or mouse.</span></span>|  
+|<span data-ttu-id="7e585-128"><xref:System.Windows.Forms.SplitContainer.Orientation%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="7e585-128"><xref:System.Windows.Forms.SplitContainer.Orientation%2A> property</span></span>|<span data-ttu-id="7e585-129">分割線が垂直または水平方向に配置されているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="7e585-129">Determines if the splitter is arranged vertically or horizontally.</span></span>|  
+|<span data-ttu-id="7e585-130"><xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="7e585-130"><xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> property</span></span>|<span data-ttu-id="7e585-131">移動可能な分割バーを左端または上端からのピクセル単位で距離を決定します。</span><span class="sxs-lookup"><span data-stu-id="7e585-131">Determines the distance in pixels from the left or upper edge to the movable splitter bar.</span></span>|  
+|<span data-ttu-id="7e585-132"><xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="7e585-132"><xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> property</span></span>|<span data-ttu-id="7e585-133">最小の距離 (ピクセル単位)、スプリッターをユーザーが移動できることを決定します。</span><span class="sxs-lookup"><span data-stu-id="7e585-133">Determines the minimum distance, in pixels, that the splitter can be moved by the user.</span></span>|  
+|<span data-ttu-id="7e585-134"><xref:System.Windows.Forms.SplitContainer.SplitterWidth%2A> プロパティ</span><span class="sxs-lookup"><span data-stu-id="7e585-134"><xref:System.Windows.Forms.SplitContainer.SplitterWidth%2A> property</span></span>|<span data-ttu-id="7e585-135">分割線のピクセル単位の太さを決定します。</span><span class="sxs-lookup"><span data-stu-id="7e585-135">Determines the thickness, in pixels, of the splitter.</span></span>|  
+|<span data-ttu-id="7e585-136"><xref:System.Windows.Forms.SplitContainer.SplitterMoving> イベント</span><span class="sxs-lookup"><span data-stu-id="7e585-136"><xref:System.Windows.Forms.SplitContainer.SplitterMoving> event</span></span>|<span data-ttu-id="7e585-137">分割境界線が移動するときに発生します。</span><span class="sxs-lookup"><span data-stu-id="7e585-137">Occurs when the splitter is moving.</span></span>|  
+|<span data-ttu-id="7e585-138"><xref:System.Windows.Forms.SplitContainer.SplitterMoved> イベント</span><span class="sxs-lookup"><span data-stu-id="7e585-138"><xref:System.Windows.Forms.SplitContainer.SplitterMoved> event</span></span>|<span data-ttu-id="7e585-139">分割境界線が移動されたときに発生します。</span><span class="sxs-lookup"><span data-stu-id="7e585-139">Occurs when the splitter has moved.</span></span>|  
   
-## 参照  
- <xref:System.Windows.Forms.SplitContainer>   
- [SplitContainer コントロール](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)   
- [SplitContainer Control Sample](http://msdn.microsoft.com/ja-jp/9015fad0-7108-4d85-a83a-a72d038c4f65)
+## <a name="see-also"></a><span data-ttu-id="7e585-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="7e585-140">See Also</span></span>  
+ <xref:System.Windows.Forms.SplitContainer>  
+ [<span data-ttu-id="7e585-141">SplitContainer コントロール</span><span class="sxs-lookup"><span data-stu-id="7e585-141">SplitContainer Control</span></span>](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)  
+ [<span data-ttu-id="7e585-142">SplitContainer コントロールのサンプル</span><span class="sxs-lookup"><span data-stu-id="7e585-142">SplitContainer Control Sample</span></span>](http://msdn.microsoft.com/en-us/9015fad0-7108-4d85-a83a-a72d038c4f65)

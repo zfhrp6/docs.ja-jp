@@ -1,157 +1,156 @@
 ---
-title: "For...Next ステートメント (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.Step"
-  - "vb.Next"
-  - "vb.To"
-  - "vb.for"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "無限ループ"
-  - "Next キーワード, For...Next ステートメント"
-  - "For キーワード [Visual Basic], For...Next ステートメント"
-  - "Step キーワード, For...Next ステートメント"
-  - "演算子のオーバーロード, For...Next ステートメント"
-  - "To キーワード, For...Next ステートメント"
-  - "無限ループ"
-  - "ループ, 無限"
-  - "命令, 繰り返し"
-  - "Next ステートメント, For...Next"
-  - "For...Next ステートメント"
-  - "ループ構造, For...Next"
-  - "ループ, 無限"
-  - "Exit ステートメント, For...Next ステートメント"
-  - "For ステートメント"
+title: "For...Next ステートメント (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.Step
+- vb.Next
+- vb.To
+- vb.for
+helpviewer_keywords:
+- infinite loops
+- Next keyword [Visual Basic], For...Next statements
+- For keyword [Visual Basic], For...Next statements
+- Step keyword [Visual Basic], For...Next statements
+- operator overloading, For...Next statement
+- To keyword [Visual Basic], For...Next statements
+- endless loops
+- loops, endless
+- instructions, repeating
+- Next statement [Visual Basic], For...Next
+- For...Next statements
+- loop structures [Visual Basic], For...Next
+- loops, infinite
+- Exit statement [Visual Basic], For...Next statements
+- For statement [Visual Basic]
 ms.assetid: f5fc0d51-67ce-4c36-9f09-31c9a91c94e9
-caps.latest.revision: 64
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 64
+caps.latest.revision: "64"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 009c5a383cc3296f7f92888a344fa265547f1077
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# For...Next ステートメント (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-指定された回数だけ、一連のステートメントを繰り返すフロー制御ステートメントです。  
+# <a name="fornext-statement-visual-basic"></a><span data-ttu-id="68243-102">For...Next ステートメント (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="68243-102">For...Next Statement (Visual Basic)</span></span>
+<span data-ttu-id="68243-103">ステートメントのグループを指定した回数だけ繰り返されます。</span><span class="sxs-lookup"><span data-stu-id="68243-103">Repeats a group of statements a specified number of times.</span></span>  
   
-## 構文  
+## <a name="syntax"></a><span data-ttu-id="68243-104">構文</span><span class="sxs-lookup"><span data-stu-id="68243-104">Syntax</span></span>  
   
 ```  
-For counter [ As datatype ] = start To end [ Step step ]  
-    [ statements ]  
+For counter [ As datatype ] = start To end [ Step step ]  
+    [ statements ]  
     [ Continue For ]  
     [ statements ]  
-    [ Exit For ]  
-    [ statements ]  
-Next [ counter ]  
+    [ Exit For ]  
+    [ statements ]  
+Next [ counter ]  
 ```  
   
-## 指定項目  
+## <a name="parts"></a><span data-ttu-id="68243-105">指定項目</span><span class="sxs-lookup"><span data-stu-id="68243-105">Parts</span></span>  
   
-|指定項目|説明|  
-|----------|--------|  
-|`counter`|`For` ステートメントには必ず指定します。  数値変数を指定します。  このループの制御変数になります。  詳細については、このトピックで後述する「[counter 引数](#BKMK_Counter)」を参照してください。|  
-|`datatype`|省略可能です。  `counter` のデータ型を指定します。  詳細については、このトピックで後述する「[counter 引数](#BKMK_Counter)」を参照してください。|  
-|`start`|必須です。  数式を指定します。  `counter` の初期値になります。|  
-|`end`|必須です。  数式を指定します。  `counter` の最終値になります。|  
-|`step`|省略可能です。  数式を指定します。  ループを 1 回実行するごとに引数 `counter` を増やす量です。|  
-|`statements`|省略可能です。  `For` と `Next` の間に記述したステートメントは、指定した回数だけ実行されます。|  
-|`Continue For`|省略可能です。  制御をループの次の反復処理に移します。|  
-|`Exit For`|省略可能です。  制御を `For` ループの外に移します。|  
-|`Next`|必須です。  `For` ループの定義を終了します。|  
+|<span data-ttu-id="68243-106">パーツ</span><span class="sxs-lookup"><span data-stu-id="68243-106">Part</span></span>|<span data-ttu-id="68243-107">説明</span><span class="sxs-lookup"><span data-stu-id="68243-107">Description</span></span>|  
+|----------|-----------------|  
+|`counter`|<span data-ttu-id="68243-108">必要な`For`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="68243-108">Required in the `For` statement.</span></span> <span data-ttu-id="68243-109">数値型の変数です。</span><span class="sxs-lookup"><span data-stu-id="68243-109">Numeric variable.</span></span> <span data-ttu-id="68243-110">ループの制御変数。</span><span class="sxs-lookup"><span data-stu-id="68243-110">The control variable for the loop.</span></span> <span data-ttu-id="68243-111">詳細については、次を参照してください。[カウンター引数](#BKMK_Counter)このトピックで後述します。</span><span class="sxs-lookup"><span data-stu-id="68243-111">For more information, see [Counter Argument](#BKMK_Counter) later in this topic.</span></span>|  
+|`datatype`|<span data-ttu-id="68243-112">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="68243-112">Optional.</span></span> <span data-ttu-id="68243-113">データ型`counter`です。</span><span class="sxs-lookup"><span data-stu-id="68243-113">Data type of `counter`.</span></span> <span data-ttu-id="68243-114">詳細については、次を参照してください。[カウンター引数](#BKMK_Counter)このトピックで後述します。</span><span class="sxs-lookup"><span data-stu-id="68243-114">For more information, see [Counter Argument](#BKMK_Counter) later in this topic.</span></span>|  
+|`start`|<span data-ttu-id="68243-115">必須です。</span><span class="sxs-lookup"><span data-stu-id="68243-115">Required.</span></span> <span data-ttu-id="68243-116">数値式です。</span><span class="sxs-lookup"><span data-stu-id="68243-116">Numeric expression.</span></span> <span data-ttu-id="68243-117">`counter` の初期値になります。</span><span class="sxs-lookup"><span data-stu-id="68243-117">The initial value of `counter`.</span></span>|  
+|`end`|<span data-ttu-id="68243-118">必須です。</span><span class="sxs-lookup"><span data-stu-id="68243-118">Required.</span></span> <span data-ttu-id="68243-119">数値式です。</span><span class="sxs-lookup"><span data-stu-id="68243-119">Numeric expression.</span></span> <span data-ttu-id="68243-120">最終値`counter`です。</span><span class="sxs-lookup"><span data-stu-id="68243-120">The final value of `counter`.</span></span>|  
+|`step`|<span data-ttu-id="68243-121">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="68243-121">Optional.</span></span> <span data-ttu-id="68243-122">数値式です。</span><span class="sxs-lookup"><span data-stu-id="68243-122">Numeric expression.</span></span> <span data-ttu-id="68243-123">量`counter`ループのたびにインクリメントされます。</span><span class="sxs-lookup"><span data-stu-id="68243-123">The amount by which `counter` is incremented each time through the loop.</span></span>|  
+|`statements`|<span data-ttu-id="68243-124">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="68243-124">Optional.</span></span> <span data-ttu-id="68243-125">1 つまたは複数のステートメントの間で`For`と`Next`一定の回数を実行します。</span><span class="sxs-lookup"><span data-stu-id="68243-125">One or more statements between `For` and `Next` that run the specified number of times.</span></span>|  
+|`Continue For`|<span data-ttu-id="68243-126">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="68243-126">Optional.</span></span> <span data-ttu-id="68243-127">次のループ反復に制御を転送します。</span><span class="sxs-lookup"><span data-stu-id="68243-127">Transfers control to the next loop iteration.</span></span>|  
+|`Exit For`|<span data-ttu-id="68243-128">省略可能です。</span><span class="sxs-lookup"><span data-stu-id="68243-128">Optional.</span></span> <span data-ttu-id="68243-129">うちの制御を転送、`For`ループします。</span><span class="sxs-lookup"><span data-stu-id="68243-129">Transfers control out of the `For` loop.</span></span>|  
+|`Next`|<span data-ttu-id="68243-130">必須です。</span><span class="sxs-lookup"><span data-stu-id="68243-130">Required.</span></span> <span data-ttu-id="68243-131">定義を終了、`For`ループします。</span><span class="sxs-lookup"><span data-stu-id="68243-131">Terminates the definition of the `For` loop.</span></span>|  
   
 > [!NOTE]
->  このステートメントで `To` のキーワードがカウンターの範囲を指定するために使用されます。  また [Select...Case Statement](../../../visual-basic/language-reference/statements/select-case-statement.md) と配列申告でこのキーワードを使用できます。  配列の宣言の詳細については、「[Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)」を参照してください。  
+>  <span data-ttu-id="68243-132">`To`キーワードは、カウンターの範囲を指定する次のステートメントで使用します。</span><span class="sxs-lookup"><span data-stu-id="68243-132">The `To` keyword is used in this statement to specify the range for the counter.</span></span> <span data-ttu-id="68243-133">このキーワードを使用することも、[を選択しています.ステートメントの case](../../../visual-basic/language-reference/statements/select-case-statement.md)および配列の宣言。</span><span class="sxs-lookup"><span data-stu-id="68243-133">You can also use this keyword in the [Select...Case Statement](../../../visual-basic/language-reference/statements/select-case-statement.md) and in array declarations.</span></span> <span data-ttu-id="68243-134">配列の宣言の詳細については、次を参照してください。 [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="68243-134">For more information about array declarations, see [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md).</span></span>  
   
-## 簡単な例  
- 回数の一連のステートメントを繰り返し実行する場合に `For`…`Next` の構造を使用します。  
+## <a name="simple-examples"></a><span data-ttu-id="68243-135">簡単な例</span><span class="sxs-lookup"><span data-stu-id="68243-135">Simple Examples</span></span>  
+ <span data-ttu-id="68243-136">使用する、`For`しています.`Next`ステートメントのセットに指定された回数だけを繰り返し使用するときにします。</span><span class="sxs-lookup"><span data-stu-id="68243-136">You use a `For`...`Next` structure when you want to repeat a set of statements a set number of times.</span></span>  
   
- 次の例では、1 の値を持つ `index` の変数の先頭は `index` の到達 5.の値の後に終了した場合は、ループ反復ごとにインクリメントします。  
+ <span data-ttu-id="68243-137">次の例で、`index`変数が 1 の値から開始して、終了の値の後に、ループの反復するたびにインクリメントされます`index`5 に到達します。</span><span class="sxs-lookup"><span data-stu-id="68243-137">In the following example, the `index` variable starts with a value of 1 and is incremented with each iteration of the loop, ending after the value of `index` reaches 5.</span></span>  
   
  [!code-vb[VbVbalrStatements#111](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_1.vb)]  
   
- 次の例では、2 時の `number` の変数の先頭は `number` の到達 0 の値の終了後にループの各反復処理の軽減され、0.25。  `-.25` の `Step` の引数はループの各反復で値 0.25 が低くなります。  
+ <span data-ttu-id="68243-138">次の例で、`number`変数が 2 から開始され、終了の値の後に、ループの反復ごとに 0.25 で高い縮小効果が`number`0 に到達します。</span><span class="sxs-lookup"><span data-stu-id="68243-138">In the following example, the `number` variable starts at 2 and is reduced by 0.25 on each iteration of the loop, ending after the value of `number` reaches 0.</span></span> <span data-ttu-id="68243-139">`Step`の引数`-.25`ループの反復ごとに 0.25 で値が減少します。</span><span class="sxs-lookup"><span data-stu-id="68243-139">The `Step` argument of `-.25` reduces the value by 0.25 on each iteration of the loop.</span></span>  
   
  [!code-vb[VbVbalrStatements#112](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_2.vb)]  
   
 > [!TIP]
->  ループまたはのステートメントを実行する回数先立ってわからない場合 [While...End While Statement](../../../visual-basic/language-reference/statements/while-end-while-statement.md) か [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md) は適しています。  一方、指定の回数だけループを実行する場合は、`For`...`Next` ループが最適です。  このループでは、最初にループに入るときに、繰り返しの回数を決定します。  
+>  <span data-ttu-id="68243-140">A[中.While ステートメント終了](../../../visual-basic/language-reference/statements/while-end-while-statement.md)または[操作を行います.Loop ステートメント](../../../visual-basic/language-reference/statements/do-loop-statement.md)しないわかっている場合に事前に、ループでステートメントを実行する回数をうまく動作します。</span><span class="sxs-lookup"><span data-stu-id="68243-140">A [While...End While Statement](../../../visual-basic/language-reference/statements/while-end-while-statement.md) or [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md) works well when you don't know in advance how many times to run the statements in the loop.</span></span> <span data-ttu-id="68243-141">ただし、特定回数、ループを実行しようとする`For`しています.`Next`ループをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="68243-141">However, when you expect to run the loop a specific number of times, a `For`...`Next` loop is a better choice.</span></span> <span data-ttu-id="68243-142">ループを最初に入力したときに、イテレーションの数を決定します。</span><span class="sxs-lookup"><span data-stu-id="68243-142">You determine the number of iterations when you first enter the loop.</span></span>  
   
-## ループの入れ子  
- `For` ループは入れ子構造にできます。つまり、ループの中に別のループを入れることができます。  次の例は、それぞれ異なる step 値を指定した入れ子になった `For`...`Next` 構造体を示しています。  外側のループでは、ループの反復処理が実行されるたびに文字列が作成されます。  内側のループでは、ループの反復処理が実行されるたびにループ カウンター変数がデクリメントされます。  
+## <a name="nesting-loops"></a><span data-ttu-id="68243-143">ループの入れ子</span><span class="sxs-lookup"><span data-stu-id="68243-143">Nesting Loops</span></span>  
+ <span data-ttu-id="68243-144">入れ子にすることができます`For`別内で 1 つのループを記述することによってループします。</span><span class="sxs-lookup"><span data-stu-id="68243-144">You can nest `For` loops by putting one loop within another.</span></span> <span data-ttu-id="68243-145">次の例で入れ子になった`For`しています.`Next`異なるステップ値を持つ構造体。</span><span class="sxs-lookup"><span data-stu-id="68243-145">The following example demonstrates nested `For`...`Next` structures that have different step values.</span></span> <span data-ttu-id="68243-146">外側のループでは、ループのイテレーションごとに文字列を作成します。</span><span class="sxs-lookup"><span data-stu-id="68243-146">The outer loop creates a string for every iteration of the loop.</span></span> <span data-ttu-id="68243-147">内部では、ループのイテレーションごとにループ カウンター変数をデクリメントをループします。</span><span class="sxs-lookup"><span data-stu-id="68243-147">The inner loop decrements a loop counter variable for every iteration of the loop.</span></span>  
   
  [!code-vb[VbVbalrStatements#113](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_3.vb)]  
   
- ループの入れ子は、各ループに一意の変数を `counter` ある必要があります。  
+ <span data-ttu-id="68243-148">ループを入れ子にする場合は、各ループが一意な必要があります`counter`変数。</span><span class="sxs-lookup"><span data-stu-id="68243-148">When nesting loops, each loop must have a unique `counter` variable.</span></span>  
   
- また、さまざまな種類の制御構造を入れ子にすることもできます。  詳細については、「[Nested Control Structures](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)」を参照してください。  
+ <span data-ttu-id="68243-149">互いにさまざまな種類の制御構造を入れ子にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="68243-149">You can also nest different kinds control structures within each other.</span></span> <span data-ttu-id="68243-150">詳細については、次を参照してください。[制御構造の入れ子になった](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)です。</span><span class="sxs-lookup"><span data-stu-id="68243-150">For more information, see [Nested Control Structures](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).</span></span>  
   
-## の終了、のを続行します。  
- `Exit For` のステートメントは `Next` のステートメントの次のステートメントにすぐに `For`\[…\]`Next` のループおよび制御を移し終了します。  
+## <a name="exit-for-and-continue-for"></a><span data-ttu-id="68243-151">終了し、続行</span><span class="sxs-lookup"><span data-stu-id="68243-151">Exit For and Continue For</span></span>  
+ <span data-ttu-id="68243-152">`Exit For`ステートメントがすぐに終了させる、`For`しています.`Next`</span><span class="sxs-lookup"><span data-stu-id="68243-152">The `Exit For` statement immediately exits the `For`…`Next`</span></span> <span data-ttu-id="68243-153">これに続くステートメントにループと転送の制御、`Next`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="68243-153">loop and transfers control to the statement that follows the `Next` statement.</span></span>  
   
- `Continue For` ステートメントは、制御をループの次の反復処理に直ちに移します。  詳細については、「[Continue Statement](../../../visual-basic/language-reference/statements/continue-statement.md)」を参照してください。  
+ <span data-ttu-id="68243-154">`Continue For`ステートメントに制御を移しますすぐに、ループの次の反復処理します。</span><span class="sxs-lookup"><span data-stu-id="68243-154">The `Continue For` statement transfers control immediately to the next iteration of the loop.</span></span> <span data-ttu-id="68243-155">詳細については、次を参照してください。 [Continue ステートメント](../../../visual-basic/language-reference/statements/continue-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="68243-155">For more information, see [Continue Statement](../../../visual-basic/language-reference/statements/continue-statement.md).</span></span>  
   
- 次の例は、`Continue For` ステートメントと `Exit For` ステートメントの使用方法を示しています。  
+ <span data-ttu-id="68243-156">次の例では、使用、`Continue For`と`Exit For`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="68243-156">The following example illustrates the use of the `Continue For` and `Exit For` statements.</span></span>  
   
  [!code-vb[VbVbalrStatements#115](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_4.vb)]  
   
- `Exit For` ステートメントは、`For`…`Next` ループで何度でも使用できます。  入れ子構造になっている `For`…`Next` ループ内で使用すると、`Exit For` は最も内側のループを抜け、入れ子構造の 1 つ外側のレベルに制御を移します。  
+ <span data-ttu-id="68243-157">任意の数を配置する`Exit For`内のステートメント、`For`しています.`Next`</span><span class="sxs-lookup"><span data-stu-id="68243-157">You can put any number of `Exit For` statements in a `For`…`Next`</span></span> <span data-ttu-id="68243-158">ループします。</span><span class="sxs-lookup"><span data-stu-id="68243-158">loop.</span></span> <span data-ttu-id="68243-159">使用すると内で入れ子になった`For`しています.`Next`</span><span class="sxs-lookup"><span data-stu-id="68243-159">When used within nested `For`…`Next`</span></span> <span data-ttu-id="68243-160">ループ、`Exit For`最も内側のループを終了し、入れ子の上位のレベルに制御を移します。</span><span class="sxs-lookup"><span data-stu-id="68243-160">loops, `Exit For` exits the innermost loop and transfers control to the next higher level of nesting.</span></span>  
   
- `Exit For` は条件を評価した後によく使用されます \(たとえば、`If`…`Then`…`Else` の構造体\)  次のような条件の場合に `Exit For` を使用できます。  
+ <span data-ttu-id="68243-161">`Exit For`いくつかの条件を評価した後は、よく使用 (たとえば、 `If`.`Then`...`Else`構造体)。</span><span class="sxs-lookup"><span data-stu-id="68243-161">`Exit For` is often used after you evaluate some condition (for example, in an `If`...`Then`...`Else` structure).</span></span> <span data-ttu-id="68243-162">使用することができます`Exit For`次の条件。</span><span class="sxs-lookup"><span data-stu-id="68243-162">You might want to use `Exit For` for the following conditions:</span></span>  
   
--   ループの継続が不要または不可能である。  エラー値または終了要求はこの要件を作成する場合があります。  
+-   <span data-ttu-id="68243-163">反復処理を続行するは、不要なまたは不可能です。</span><span class="sxs-lookup"><span data-stu-id="68243-163">Continuing to iterate is unnecessary or impossible.</span></span> <span data-ttu-id="68243-164">値が間違っているか、終了要求は、この状態になる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="68243-164">An erroneous value or a termination request might create this condition.</span></span>  
   
--   `Try`…`Catch`…`Finally` のステートメントで例外をキャッチします。  `Finally` ブロックの最後で `Exit For` を使用できます。  
+-   <span data-ttu-id="68243-165">A`Try`しています.`Catch`...`Finally`ステートメントは、例外をキャッチします。</span><span class="sxs-lookup"><span data-stu-id="68243-165">A `Try`...`Catch`...`Finally` statement catches an exception.</span></span> <span data-ttu-id="68243-166">使用する場合があります`Exit For`の最後に、`Finally`ブロックします。</span><span class="sxs-lookup"><span data-stu-id="68243-166">You might use `Exit For` at the end of the `Finally` block.</span></span>  
   
--   大きい、または無限実行回数が多いループになります。無限ループがあります。  このような条件を検出した場合は、`Exit For` を使用してループを抜けることができます。  詳細については、「[Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md)」を参照してください。  
+-   <span data-ttu-id="68243-167">これは、大規模なまたは無限も可能回数だけ実行できるループ、無限ループがあります。</span><span class="sxs-lookup"><span data-stu-id="68243-167">You have an endless loop, which is a loop that could run a large or even infinite number of times.</span></span> <span data-ttu-id="68243-168">このような条件を検出した場合を使用できます`Exit For`ループをエスケープするためにします。</span><span class="sxs-lookup"><span data-stu-id="68243-168">If you detect such a condition, you can use `Exit For` to escape the loop.</span></span> <span data-ttu-id="68243-169">詳細については、次を参照してください[操作を行います.。ステートメントをループ](../../../visual-basic/language-reference/statements/do-loop-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="68243-169">For more information, see [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md).</span></span>  
   
-## 技術的な実装  
- `For`...`Next` ループが開始されると、`start`、`end`、および `step` が評価されます。  Visual Basic は、現時点でのみこれらの値を評価し、`counter`に `start` を再配置。  ステートメント ブロックの実行、Visual Basic が `end`に `counter` を比較する前に、  `counter` が既に場合は `step` が負の場合 `end` の値 \(またはそれより小さい\)、`Next` のステートメントの次のステートメントに `For` のループの終わりとコントロールのパス。  それ以外の場合は、ステートメント ブロックが実行されます。  
+## <a name="technical-implementation"></a><span data-ttu-id="68243-170">技術的な実装</span><span class="sxs-lookup"><span data-stu-id="68243-170">Technical Implementation</span></span>  
+ <span data-ttu-id="68243-171">ときに、`For`しています.`Next`ループが開始、Visual Basic の評価`start`、 `end`、および`step`です。</span><span class="sxs-lookup"><span data-stu-id="68243-171">When a `For`...`Next` loop starts, Visual Basic evaluates `start`, `end`, and `step`.</span></span> <span data-ttu-id="68243-172">Visual Basic では、この時間とし、割り当てにのみこれらの値を評価`start`に`counter`です。</span><span class="sxs-lookup"><span data-stu-id="68243-172">Visual Basic evaluates these values only at this time and then assigns `start` to `counter`.</span></span> <span data-ttu-id="68243-173">ステートメントの前にブロックが実行される Visual Basic 比較`counter`に`end`です。</span><span class="sxs-lookup"><span data-stu-id="68243-173">Before the statement block runs, Visual Basic compares `counter` to `end`.</span></span> <span data-ttu-id="68243-174">場合`counter`よりも大きいは既に、`end`値 (より小さい場合、または`step`が負の値)、`For`終了をループし、これに続くステートメントにパスを制御、`Next`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="68243-174">If `counter` is already larger than the `end` value (or smaller if `step` is negative), the `For` loop ends and control passes to the statement that follows the `Next` statement.</span></span> <span data-ttu-id="68243-175">それ以外の場合、ステートメント ブロックが実行されます。</span><span class="sxs-lookup"><span data-stu-id="68243-175">Otherwise, the statement block runs.</span></span>  
   
- `Next` ステートメントが実行されるたびに、`step` の値が `counter` に加算され、`For` ステートメントに戻ります。  その後、`counter` と `end` が再び比較され、その結果に応じて、ステートメント ブロックが再度実行されるかループが終了します。  このプロセスは、`counter` が `end` を超えるか、`Exit For` ステートメントに到達するまで継続されます。  
+ <span data-ttu-id="68243-176">Visual Basic が発生するたびに、`Next`ステートメントでは、インクリメント`counter`によって`step`を返すと、`For`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="68243-176">Each time Visual Basic encounters the `Next` statement, it increments `counter` by `step` and returns to the `For` statement.</span></span> <span data-ttu-id="68243-177">もう一度比較`counter`に`end`、もう一度、ブロックが実行か、結果に応じて、ループを終了するとします。</span><span class="sxs-lookup"><span data-stu-id="68243-177">Again it compares `counter` to `end`, and again it either runs the block or exits the loop, depending on the result.</span></span> <span data-ttu-id="68243-178">までこの処理を続けます`counter`渡します`end`または`Exit For`ステートメントが見つかりました。</span><span class="sxs-lookup"><span data-stu-id="68243-178">This process continues until `counter` passes `end` or an `Exit For` statement is encountered.</span></span>  
   
- ループは `counter` が `end`を通過するまで停止しません。  `counter` と `end` が等しい場合にはループは継続されます。  ブロックの実行を行うかどうかは、`step` が正の場合は `counter` \<\= `end` の比較によって決定され、`step` が負の場合は `counter` \>\= `end` の比較によって決定されます。  
+ <span data-ttu-id="68243-179">まで、ループが停止しない`counter`経過`end`です。</span><span class="sxs-lookup"><span data-stu-id="68243-179">The loop doesn't stop until `counter` has passed `end`.</span></span> <span data-ttu-id="68243-180">場合`counter`と等しい`end`ループを続行します。</span><span class="sxs-lookup"><span data-stu-id="68243-180">If `counter` is equal to `end`, the loop continues.</span></span> <span data-ttu-id="68243-181">ブロックを実行するかどうかを判断する比較では、 `counter`  <=  `end`場合`step`が正の値と`counter`  >=  `end`場合`step`が負の値。</span><span class="sxs-lookup"><span data-stu-id="68243-181">The comparison that determines whether to run the block is `counter` <= `end` if `step` is positive and `counter` >= `end` if `step` is negative.</span></span>  
   
- ループ内での値を `counter` ときに、変更する、コードが読みにくく、デバッグが困難な場合があります。  `start`の値を変更して、`end`、または `step` は、最初のループに入る時点で決定されるとイテレーションの値には影響しません。  
+ <span data-ttu-id="68243-182">値を変更する場合`counter`ループ内は、コードを読み取りやデバッグが困難にする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="68243-182">If you change the value of `counter` while inside a loop, your code might be more difficult to read and debug.</span></span> <span data-ttu-id="68243-183">値を変更する`start`、 `end`、または`step`ループが最初に入力されたときに決定されたイテレーション値には影響しません。</span><span class="sxs-lookup"><span data-stu-id="68243-183">Changing the value of `start`, `end`, or `step` doesn't affect the iteration values that were determined when the loop was first entered.</span></span>  
   
- ループになっている場合、コンパイラは内部のレベルの `Next` のステートメントの前に外側の入れ子レベルの `Next` のステートメントが発生した場合はエラーを発行します。  ただし、コンパイラがこのエラーを検出できるのは、すべての `Next` ステートメントに `counter` を指定した場合に限られます。  
+ <span data-ttu-id="68243-184">ループを入れ子にする場合、コンパイラはエラーが発生するか、`Next`する前に外部の入れ子レベルのステートメント、`Next`内部レベルのステートメント。</span><span class="sxs-lookup"><span data-stu-id="68243-184">If you nest loops, the compiler signals an error if it encounters the `Next` statement of an outer nesting level before the `Next` statement of an inner level.</span></span> <span data-ttu-id="68243-185">ただし、コンパイラが検出できるこれを指定する場合にのみ、エラーを重複`counter`ですべて`Next`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="68243-185">However, the compiler can detect this overlapping error only if you specify `counter` in every `Next` statement.</span></span>  
   
-### step 引数  
- `step` には正の数または負の数を指定できます。  このパラメーターには、次の表に従って、ループの処理方法を決定します:  
+### <a name="step-argument"></a><span data-ttu-id="68243-186">Step</span><span class="sxs-lookup"><span data-stu-id="68243-186">Step Argument</span></span>  
+ <span data-ttu-id="68243-187">値`step`正または負の値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="68243-187">The value of `step` can be either positive or negative.</span></span> <span data-ttu-id="68243-188">このパラメーターは、次の表に従ってループ処理を決定します。</span><span class="sxs-lookup"><span data-stu-id="68243-188">This parameter determines loop processing according to the following table:</span></span>  
   
-|**ステップの値**|**実行条件**|  
-|----------------|--------------|  
-|正の数または 0|`counter` \<\= `end`|  
-|負|`counter` \>\= `end`|  
+|<span data-ttu-id="68243-189">**ステップ値**</span><span class="sxs-lookup"><span data-stu-id="68243-189">**Step value**</span></span>|<span data-ttu-id="68243-190">**場合に、ループが実行されます。**</span><span class="sxs-lookup"><span data-stu-id="68243-190">**Loop executes if**</span></span>|  
+|--------------------|--------------------------|  
+|<span data-ttu-id="68243-191">正またはゼロ</span><span class="sxs-lookup"><span data-stu-id="68243-191">Positive or zero</span></span>|`counter` <= `end`|  
+|<span data-ttu-id="68243-192">負</span><span class="sxs-lookup"><span data-stu-id="68243-192">Negative</span></span>|`counter` >= `end`|  
   
- `step` の既定値は 1 です。  
+ <span data-ttu-id="68243-193">既定値の`step`は 1 です。</span><span class="sxs-lookup"><span data-stu-id="68243-193">The default value of `step` is 1.</span></span>  
   
-###  <a name="BKMK_Counter"></a> counter 引数  
- 次の表は `counter` が `For…Next` のループ スコープに新しいローカル変数を定義するかどうかを示します。  この確認は `datatype` があるかどうか、および `counter` が既に定義されているかどうかによって異なります。  
+###  <span data-ttu-id="68243-194"><a name="BKMK_Counter"></a>カウンターの引数</span><span class="sxs-lookup"><span data-stu-id="68243-194"><a name="BKMK_Counter"></a> Counter Argument</span></span>  
+ <span data-ttu-id="68243-195">次の表に示すかどうか`counter`全体を対象とする新しいローカル変数を定義`For…Next`ループします。</span><span class="sxs-lookup"><span data-stu-id="68243-195">The following table indicates whether `counter` defines a new local variable that’s scoped to the entire `For…Next` loop.</span></span> <span data-ttu-id="68243-196">この決定によって異なるかどうか`datatype`が存在かどうかおよび`counter`は既に定義されています。</span><span class="sxs-lookup"><span data-stu-id="68243-196">This determination depends on whether `datatype` is present and whether `counter` is already defined.</span></span>  
   
-|`datatype` ですか。|`counter` は既に定義されていますか。|\(`counter` が `For...Next` のループ スコープに新しいローカル変数を定義するかどうか結果\)|  
-|---------------------|-----------------------------|-----------------------------------------------------------------|  
-|Ｘ|○|`counter` が既に定義されているため、No。  `counter` の範囲がプロシージャにローカルである、コンパイル時に警告が発生します。|  
-|Ｘ|Ｘ|はい。  データ型は `start`、`end`と `step` の式から推論されます。  型の推論については、[Option Infer Statement](../../../visual-basic/language-reference/statements/option-infer-statement.md) と [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)を参照してください。|  
-|○|○|`counter` の既存の変数がプロシージャの外部で定義された場合にのみ○ \(ただし。  この変数は別に残ります。  `counter` の既存の変数のスコープがプロシージャにローカルな場合、コンパイル エラーが発生します。|  
-|○|Ｘ|はい。|  
+|<span data-ttu-id="68243-197">`datatype`存在しますか?</span><span class="sxs-lookup"><span data-stu-id="68243-197">Is `datatype` present?</span></span>|<span data-ttu-id="68243-198">`counter`既に定義されていますか。</span><span class="sxs-lookup"><span data-stu-id="68243-198">Is `counter` already defined?</span></span>|<span data-ttu-id="68243-199">結果 (かどうか`counter`全体を対象とする新しいローカル変数を定義`For...Next`ループ)</span><span class="sxs-lookup"><span data-stu-id="68243-199">Result (whether `counter` defines a new local variable that’s scoped to the entire `For...Next` loop)</span></span>|  
+|----------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------|  
+|<span data-ttu-id="68243-200">いいえ</span><span class="sxs-lookup"><span data-stu-id="68243-200">No</span></span>|<span data-ttu-id="68243-201">はい</span><span class="sxs-lookup"><span data-stu-id="68243-201">Yes</span></span>|<span data-ttu-id="68243-202">いいえ、ため`counter`は既に定義されています。</span><span class="sxs-lookup"><span data-stu-id="68243-202">No, because `counter` is already defined.</span></span> <span data-ttu-id="68243-203">場合のスコープ`counter`コンパイル警告が発生した、プロシージャに対してローカルにないです。</span><span class="sxs-lookup"><span data-stu-id="68243-203">If the scope of `counter` isn't local to the procedure, a compile-time warning occurs.</span></span>|  
+|<span data-ttu-id="68243-204">いいえ</span><span class="sxs-lookup"><span data-stu-id="68243-204">No</span></span>|<span data-ttu-id="68243-205">いいえ</span><span class="sxs-lookup"><span data-stu-id="68243-205">No</span></span>|<span data-ttu-id="68243-206">はい。</span><span class="sxs-lookup"><span data-stu-id="68243-206">Yes.</span></span> <span data-ttu-id="68243-207">データ型から推論されます、 `start`、 `end`、および`step`式。</span><span class="sxs-lookup"><span data-stu-id="68243-207">The data type is inferred from the `start`, `end`, and `step` expressions.</span></span> <span data-ttu-id="68243-208">型の推定については、次を参照してください。 [Option Infer ステートメント](../../../visual-basic/language-reference/statements/option-infer-statement.md)と[ローカル型推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)です。</span><span class="sxs-lookup"><span data-stu-id="68243-208">For information about type inference, see [Option Infer Statement](../../../visual-basic/language-reference/statements/option-infer-statement.md) and [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).</span></span>|  
+|<span data-ttu-id="68243-209">はい</span><span class="sxs-lookup"><span data-stu-id="68243-209">Yes</span></span>|<span data-ttu-id="68243-210">はい</span><span class="sxs-lookup"><span data-stu-id="68243-210">Yes</span></span>|<span data-ttu-id="68243-211">場合に限り、[はい]、既存の`counter`プロシージャの外部から変数を定義します。</span><span class="sxs-lookup"><span data-stu-id="68243-211">Yes, but only if the existing `counter` variable is defined outside the procedure.</span></span> <span data-ttu-id="68243-212">その変数は別に維持します。</span><span class="sxs-lookup"><span data-stu-id="68243-212">That variable remains separate.</span></span> <span data-ttu-id="68243-213">場合、既存のスコープ`counter`変数は、プロシージャに対してローカルに、コンパイル時エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="68243-213">If the scope of the existing `counter` variable is local to the procedure, a compile-time error occurs.</span></span>|  
+|<span data-ttu-id="68243-214">はい</span><span class="sxs-lookup"><span data-stu-id="68243-214">Yes</span></span>|<span data-ttu-id="68243-215">いいえ</span><span class="sxs-lookup"><span data-stu-id="68243-215">No</span></span>|<span data-ttu-id="68243-216">はい。</span><span class="sxs-lookup"><span data-stu-id="68243-216">Yes.</span></span>|  
   
- `counter` のデータ型は次の型の 1 つが必要があるイテレーションの型が決まります:  
+ <span data-ttu-id="68243-217">データ型`counter`イテレーションでは、次の種類のいずれかを指定する必要がありますの種類を決定します。</span><span class="sxs-lookup"><span data-stu-id="68243-217">The data type of `counter` determines the type of the iteration, which must be one of the following types:</span></span>  
   
--   `Byte`、`SByte`、`UShort`、`Short`、`UInteger`、`Integer`、`ULong`、`Long`、`Decimal`、`Single`、または `Double`。  
+-   <span data-ttu-id="68243-218">A `Byte`、 `SByte`、 `UShort`、 `Short`、 `UInteger`、 `Integer`、 `ULong`、 `Long`、 `Decimal`、 `Single`、または`Double`です。</span><span class="sxs-lookup"><span data-stu-id="68243-218">A `Byte`, `SByte`, `UShort`, `Short`, `UInteger`, `Integer`, `ULong`, `Long`, `Decimal`, `Single`, or `Double`.</span></span>  
   
--   [Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md) を使用して宣言した列挙型。  
+-   <span data-ttu-id="68243-219">使用して宣言された列挙型、 [Enum ステートメント](../../../visual-basic/language-reference/statements/enum-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="68243-219">An enumeration that you declare by using an [Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md).</span></span>  
   
--   `Object`。  
+-   <span data-ttu-id="68243-220">`Object`。</span><span class="sxs-lookup"><span data-stu-id="68243-220">An `Object`.</span></span>  
   
--   次の演算子を含む `T` 型。`B` は `Boolean` 式で使用できる型です。  
+-   <span data-ttu-id="68243-221">型`T`、次の演算子を持つ場所`B`型で使用できるは、`Boolean`式。</span><span class="sxs-lookup"><span data-stu-id="68243-221">A type `T` that has the following operators, where `B` is a type that can be used in a `Boolean` expression.</span></span>  
   
      `Public Shared Operator >= (op1 As T, op2 As T) As B`  
   
@@ -161,30 +160,30 @@ Next [ counter ]
   
      `Public Shared Operator + (op1 As T, op2 As T) As T`  
   
- `Next` のステートメントに `counter` 変数を指定できます。  この構文は、特に `For` の入れ子になったループ、プログラムの読みやすさが向上します。  `For` のステートメントに表示される変数を指定する必要があります。  
+ <span data-ttu-id="68243-222">必要に応じて指定することができます、`counter`に変数が、`Next`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="68243-222">You can optionally specify the `counter` variable in the `Next` statement.</span></span> <span data-ttu-id="68243-223">入れ子にしていない場合は特に、この構文は、プログラムの読みやすさを向上`For`ループします。</span><span class="sxs-lookup"><span data-stu-id="68243-223">This syntax improves the readability of your program, especially if you have nested `For` loops.</span></span> <span data-ttu-id="68243-224">対応する表示される変数を指定する必要があります`For`ステートメントです。</span><span class="sxs-lookup"><span data-stu-id="68243-224">You must specify the variable that appears in the corresponding `For` statement.</span></span>  
   
- `start`、`end`、および `step` には、`counter` と同じ型に拡張可能な任意のデータ型として評価される式を指定できます。  `counter`のユーザー定義型を使用すると、`counter`の種類に `start`、`end`、または `step` の型を変換するには `CType` の変換演算子を定義しなければならない場合があります。  
+ <span data-ttu-id="68243-225">`start`、 `end`、および`step`の型に拡大する任意のデータ型に式が評価される`counter`です。</span><span class="sxs-lookup"><span data-stu-id="68243-225">The `start`, `end`, and `step` expressions can evaluate to any data type that widens to the type of `counter`.</span></span> <span data-ttu-id="68243-226">ユーザー定義型を使用する場合`counter`を定義する必要があります、`CType`変換演算子の型に変換する`start`、 `end`、または`step`の型に`counter`です。</span><span class="sxs-lookup"><span data-stu-id="68243-226">If you use a user-defined type for `counter`, you might have to define the `CType` conversion operator to convert the types of `start`, `end`, or `step` to the type of `counter`.</span></span>  
   
-## 使用例  
- 次の例では、ジェネリック リストからすべての要素を削除しています。  [For Each...Next ステートメント](../../../visual-basic/language-reference/statements/for-each-next-statement.md)の代わりに、降順で繰り返し発生 `For`…`Next` のステートメントを示しています。  この例では `removeAt` のメソッドに、削除された要素の後に要素のインデックス値が小さくなるため、この方法を使用します。  
+## <a name="example"></a><span data-ttu-id="68243-227">例</span><span class="sxs-lookup"><span data-stu-id="68243-227">Example</span></span>  
+ <span data-ttu-id="68243-228">次の例では、ジェネリック リストからすべての要素を削除します。</span><span class="sxs-lookup"><span data-stu-id="68243-228">The following example removes all elements from a generic list.</span></span> <span data-ttu-id="68243-229">代わりに、[ごとにしています.次のステートメントの](../../../visual-basic/language-reference/statements/for-each-next-statement.md)の例に示す、`For`しています.`Next`降順に反復処理するステートメント。</span><span class="sxs-lookup"><span data-stu-id="68243-229">Instead of a [For Each...Next Statement](../../../visual-basic/language-reference/statements/for-each-next-statement.md), the example shows a `For`...`Next` statement that iterates in descending order.</span></span> <span data-ttu-id="68243-230">この例は、ためにこの手法を使用して、`removeAt`メソッドが低いインデックス値を持つ削除された要素の後に要素をによりします。</span><span class="sxs-lookup"><span data-stu-id="68243-230">The example uses this technique because the `removeAt` method causes elements after the removed element to have a lower index value.</span></span>  
   
  [!code-vb[VbVbalrStatements#114](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_5.vb)]  
   
-## 使用例  
- 次の例では、[Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md)を使用して宣言された列挙型を繰り返します。  
+## <a name="example"></a><span data-ttu-id="68243-231">例</span><span class="sxs-lookup"><span data-stu-id="68243-231">Example</span></span>  
+ <span data-ttu-id="68243-232">次の例を使用して宣言されている列挙型を反復処理する[Enum ステートメント](../../../visual-basic/language-reference/statements/enum-statement.md)です。</span><span class="sxs-lookup"><span data-stu-id="68243-232">The following example iterates through an enumeration that's declared by using an [Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md).</span></span>  
   
  [!code-vb[VbVbalrStatements#116](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_6.vb)]  
   
-## 使用例  
- 次の例では、ステートメントのパラメーターで `+`、`-`、`>=`、および `<=` の各演算子のオーバーロードを持つクラスを使用しています。  
+## <a name="example"></a><span data-ttu-id="68243-233">例</span><span class="sxs-lookup"><span data-stu-id="68243-233">Example</span></span>  
+ <span data-ttu-id="68243-234">次の例では、ステートメントのパラメーターが演算子のオーバー ロードを持つクラスを使用して、 `+`、 `-`、 `>=`、および`<=`演算子。</span><span class="sxs-lookup"><span data-stu-id="68243-234">In the following example, the statement parameters use a class that has operator overloads for the `+`, `-`, `>=`, and `<=` operators.</span></span>  
   
  [!code-vb[VbVbalrStatements#117](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_7.vb)]  
   
-## 参照  
- <xref:System.Collections.Generic.List%601>   
- [Loop Structures](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)   
- [While...End While Statement](../../../visual-basic/language-reference/statements/while-end-while-statement.md)   
- [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md)   
- [Nested Control Structures](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)   
- [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md)   
- [コレクション](../Topic/Collections%20\(C%23%20and%20Visual%20Basic\).md)
+## <a name="see-also"></a><span data-ttu-id="68243-235">関連項目</span><span class="sxs-lookup"><span data-stu-id="68243-235">See Also</span></span>  
+ <xref:System.Collections.Generic.List%601>  
+ [<span data-ttu-id="68243-236">ループ構造</span><span class="sxs-lookup"><span data-stu-id="68243-236">Loop Structures</span></span>](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
+ [<span data-ttu-id="68243-237">While...End While ステートメント</span><span class="sxs-lookup"><span data-stu-id="68243-237">While...End While Statement</span></span>](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  
+ [<span data-ttu-id="68243-238">Do...Loop ステートメント</span><span class="sxs-lookup"><span data-stu-id="68243-238">Do...Loop Statement</span></span>](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
+ [<span data-ttu-id="68243-239">入れ子になった制御構造</span><span class="sxs-lookup"><span data-stu-id="68243-239">Nested Control Structures</span></span>](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
+ [<span data-ttu-id="68243-240">Exit ステートメント</span><span class="sxs-lookup"><span data-stu-id="68243-240">Exit Statement</span></span>](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [<span data-ttu-id="68243-241">コレクション</span><span class="sxs-lookup"><span data-stu-id="68243-241">Collections</span></span>](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)

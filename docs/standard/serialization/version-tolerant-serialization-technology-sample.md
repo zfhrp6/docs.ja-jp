@@ -8,54 +8,52 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 2a183664-bfbf-4ff0-96f6-c836284ea916
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Erikre
 ms.author: erikre
 manager: erikre
-ms.translationtype: HT
-ms.sourcegitcommit: 717bcb6f9f72a728d77e2847096ea558a9c50902
-ms.openlocfilehash: 43057a4b0014ac2ea8aec6f298ccc0b2d9103154
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/21/2017
-
+ms.openlocfilehash: e518d9c4477377e6d0d7e569a29efcf4801101fc
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="version-tolerant-serialization-technology-sample"></a>バージョン間の耐性があるシリアル化に対応する技術サンプル
-[サンプルのダウンロード](http://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Runtime%20Serialization/VTS.zip.exe)  
+# <a name="version-tolerant-serialization-technology-sample"></a><span data-ttu-id="7f838-102">バージョン間の耐性があるシリアル化に対応する技術サンプル</span><span class="sxs-lookup"><span data-stu-id="7f838-102">Version Tolerant Serialization Technology Sample</span></span>
+[<span data-ttu-id="7f838-103">サンプルのダウンロード</span><span class="sxs-lookup"><span data-stu-id="7f838-103">Download Sample</span></span>](http://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Runtime%20Serialization/VTS.zip.exe)  
   
- このサンプルでは、.NET でのバージョン間の耐性があるシリアル化に対応する機能を示します。 このサンプルでは、バージョンの異なる複数の <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> を使用するアプリケーションをビルドし、データをシリアル化および逆シリアル化します。 さまざまなバージョンがありますが、このアプリケーションではシームレスに処理できます。 詳細については、「[Version Tolerant Serialization](../../../docs/standard/serialization/version-tolerant-serialization.md)」(バージョン トレラントなシリアル化) を参照してください。  
+ <span data-ttu-id="7f838-104">このサンプルでは、.NET でのバージョン間の耐性があるシリアル化に対応する機能を示します。</span><span class="sxs-lookup"><span data-stu-id="7f838-104">This sample demonstrates the version tolerance features of .NET Serialization.</span></span> <span data-ttu-id="7f838-105">このサンプルでは、バージョンの異なる複数の <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> を使用するアプリケーションをビルドし、データをシリアル化および逆シリアル化します。</span><span class="sxs-lookup"><span data-stu-id="7f838-105">The sample builds applications that use different versions of a <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> to serialize and deserialize data.</span></span> <span data-ttu-id="7f838-106">さまざまなバージョンがありますが、このアプリケーションではシームレスに処理できます。</span><span class="sxs-lookup"><span data-stu-id="7f838-106">Despite the presence of different type versions, the applications communicate seamlessly.</span></span> <span data-ttu-id="7f838-107">詳細については、「[Version Tolerant Serialization](../../../docs/standard/serialization/version-tolerant-serialization.md)」(バージョン トレラントなシリアル化) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7f838-107">For more information, see [Version Tolerant Serialization](../../../docs/standard/serialization/version-tolerant-serialization.md).</span></span>  
   
-### <a name="to-build-the-sample-using-the-command-prompt"></a>コマンド プロンプトを使用してサンプルをビルドするには  
+### <a name="to-build-the-sample-using-the-command-prompt"></a><span data-ttu-id="7f838-108">コマンド プロンプトを使用してサンプルをビルドするには</span><span class="sxs-lookup"><span data-stu-id="7f838-108">To build the sample using the command prompt</span></span>  
   
-1.  コマンド プロンプト ウィンドウを表示し、サンプルの使用言語に対応するサブディレクトリ (V1 Application または V2 Application の下) に移動します。  
+1.  <span data-ttu-id="7f838-109">コマンド プロンプト ウィンドウを表示し、サンプルの使用言語に対応するサブディレクトリ (V1 Application または V2 Application の下) に移動します。</span><span class="sxs-lookup"><span data-stu-id="7f838-109">Open a Command Prompt window and navigate to one of the language-specific subdirectories (under V1 Application or V2 Application) for the sample.</span></span>  
   
-2.  コマンド ラインに「**msbuild.exe \<ver> application.sln**」と入力します (この \<ver> は v1 または v2 です)。  
+2.  <span data-ttu-id="7f838-110">コマンド ラインに「**msbuild.exe \<ver> application.sln**」と入力します (この \<ver> は v1 または v2 です)。</span><span class="sxs-lookup"><span data-stu-id="7f838-110">Type **msbuild.exe \<ver> application.sln** at the command line (where \<ver> is either v1 or v2).</span></span>  
   
-### <a name="to-build-the-sample-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドするには  
+### <a name="to-build-the-sample-using-visual-studio"></a><span data-ttu-id="7f838-111">Visual Studio を使用してサンプルをビルドするには</span><span class="sxs-lookup"><span data-stu-id="7f838-111">To build the sample using Visual Studio</span></span>  
   
-1.  [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)]を開き、サンプルが格納されている、言語固有のサブディレクトリのいずれかに移動します。  
+1.  <span data-ttu-id="7f838-112">[!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)]を開き、サンプルが格納されている、言語固有のサブディレクトリのいずれかに移動します。</span><span class="sxs-lookup"><span data-stu-id="7f838-112">Open [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] and navigate to one of the language-specific subdirectories for the sample.</span></span>  
   
-2.  前の手順で選択したディレクトリの V1 Application サブディレクトリに移動します。  
+2.  <span data-ttu-id="7f838-113">前の手順で選択したディレクトリの V1 Application サブディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="7f838-113">Navigate to the V1 Application subdirectory of the directory you selected in the previous step.</span></span>  
   
-3.  V1 Application.sln ファイルのアイコンをダブルクリックして、このファイルを Visual Studio で開きます。  
+3.  <span data-ttu-id="7f838-114">V1 Application.sln ファイルのアイコンをダブルクリックして、このファイルを Visual Studio で開きます。</span><span class="sxs-lookup"><span data-stu-id="7f838-114">Double-click the icon for V1 Application.sln to open the file in Visual Studio.</span></span>  
   
-4.  **[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。  
+4.  <span data-ttu-id="7f838-115">**[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7f838-115">On the **Build** menu, click **Build Solution**.</span></span>  
   
-5.  V2 Application サブディレクトリに移動し、前の 2 つの手順を実行して、V2 Application をビルドします。  
+5.  <span data-ttu-id="7f838-116">V2 Application サブディレクトリに移動し、前の 2 つの手順を実行して、V2 Application をビルドします。</span><span class="sxs-lookup"><span data-stu-id="7f838-116">Navigate to the V2 Application subdirectory and repeat the two previous steps to build the V2 Application.</span></span>  
   
- 各アプリケーションは、既定で、それぞれのプロジェクト ディレクトリの \bin または \bin\Debug サブディレクトリにビルドされます。  
+ <span data-ttu-id="7f838-117">各アプリケーションは、既定で、それぞれのプロジェクト ディレクトリの \bin または \bin\Debug サブディレクトリにビルドされます。</span><span class="sxs-lookup"><span data-stu-id="7f838-117">The applications will be built in the default \bin or \bin\Debug subdirectories of their respective project directories.</span></span>  
   
-### <a name="to-run-the-sample"></a>サンプルを実行するには  
+### <a name="to-run-the-sample"></a><span data-ttu-id="7f838-118">サンプルを実行するには</span><span class="sxs-lookup"><span data-stu-id="7f838-118">To run the sample</span></span>  
   
-1.  コマンド プロンプト ウィンドウで、サンプル アプリケーションをビルドしたときに選択した言語に対応する、言語固有のサブディレクトリに移動します。  
+1.  <span data-ttu-id="7f838-119">コマンド プロンプト ウィンドウで、サンプル アプリケーションをビルドしたときに選択した言語に対応する、言語固有のサブディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="7f838-119">In the Command Prompt window, navigate to the language-specific subdirectory that you selected when you built the sample applications.</span></span>  
   
-2.  コマンド ラインに「**runme.cmd**」と入力し、両方のアプリケーションを一度に実行します。  
+2.  <span data-ttu-id="7f838-120">コマンド ラインに「**runme.cmd**」と入力し、両方のアプリケーションを一度に実行します。</span><span class="sxs-lookup"><span data-stu-id="7f838-120">Type **runme.cmd** at the command line to run both applications at once.</span></span>  
   
- または、新しい実行可能ファイルが格納されているディレクトリに移動し、これらを順に実行します。  
+ <span data-ttu-id="7f838-121">または、新しい実行可能ファイルが格納されているディレクトリに移動し、これらを順に実行します。</span><span class="sxs-lookup"><span data-stu-id="7f838-121">Alternatively, navigate to the directories that contain the new executables and run them sequentially.</span></span>  
   
 > [!NOTE]
->  このサンプルでは、コンソール アプリケーションをビルドします。 出力を表示するには、コマンド プロンプト ウィンドウでこれらを起動し、実行する必要があります。  
+>  <span data-ttu-id="7f838-122">このサンプルでは、コンソール アプリケーションをビルドします。</span><span class="sxs-lookup"><span data-stu-id="7f838-122">The sample builds console applications.</span></span> <span data-ttu-id="7f838-123">出力を表示するには、コマンド プロンプト ウィンドウでこれらを起動し、実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7f838-123">You must launch and run them in a Command Prompt window to view their output.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>   
+## <a name="see-also"></a><span data-ttu-id="7f838-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="7f838-124">See Also</span></span>  
+ <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>  
  <xref:System.IO.FileStream>
-

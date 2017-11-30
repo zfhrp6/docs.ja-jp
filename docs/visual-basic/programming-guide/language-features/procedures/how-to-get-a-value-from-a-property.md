@@ -1,76 +1,59 @@
 ---
-title: "方法: プロパティ (Visual Basic の場合) から値を取得 |Microsoft ドキュメント"
+title: "方法: プロパティから値を取得する (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
-- property values
+- property values [Visual Basic]
 - Visual Basic code, procedures
-- values, properties
+- values [Visual Basic], properties
 - Visual Basic code, properties
 - properties [Visual Basic], values
 ms.assetid: 3954423e-6ab7-4a4c-b55c-a8d27be47891
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 7487e4cde724c46a193639f2ad116d25e4ff834c
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 6cde5408ea09398a79a3da01ae9b2d0202c58eaf
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-get-a-value-from-a-property-visual-basic"></a>方法: プロパティから値を取得する (Visual Basic)
-プロパティの値を取得するには、式の中でプロパティ名を含めます。  
+# <a name="how-to-get-a-value-from-a-property-visual-basic"></a><span data-ttu-id="8f410-102">方法: プロパティから値を取得する (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8f410-102">How to: Get a Value from a Property (Visual Basic)</span></span>
+<span data-ttu-id="8f410-103">プロパティの値を取得するには、式の中で、プロパティ名を含めます。</span><span class="sxs-lookup"><span data-stu-id="8f410-103">You retrieve a property's value by including the property name in an expression.</span></span>  
   
- プロパティの`Get`プロシージャが値を取得が明示的に呼び出さないことを名前です。 変数と同じように、プロパティを使用します。 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]プロパティのプロシージャを呼び出します。  
+ <span data-ttu-id="8f410-104">プロパティの`Get`プロシージャが、値を取得しますが、呼び出すことはありません明示的にその名前でします。</span><span class="sxs-lookup"><span data-stu-id="8f410-104">The property's `Get` procedure retrieves the value, but you do not explicitly call it by name.</span></span> <span data-ttu-id="8f410-105">変数を使用すると同様に、プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="8f410-105">You use the property just as you would use a variable.</span></span> [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<span data-ttu-id="8f410-106">プロパティのプロシージャを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="8f410-106"> makes the calls to the property's procedures.</span></span>  
   
-### <a name="to-retrieve-a-value-from-a-property"></a>プロパティから値を取得するには  
+### <a name="to-retrieve-a-value-from-a-property"></a><span data-ttu-id="8f410-107">プロパティから値を取得するには</span><span class="sxs-lookup"><span data-stu-id="8f410-107">To retrieve a value from a property</span></span>  
   
-1.  式の中で変数名を使用すると同じように対応するプロパティ名を使用します。 プロパティを使用する変数または定数を使用する任意の場所。  
+1.  <span data-ttu-id="8f410-108">式の中で変数名を使用するのと同様に対応するプロパティ名を使用します。</span><span class="sxs-lookup"><span data-stu-id="8f410-108">Use the property name in an expression the same way you would use a variable name.</span></span> <span data-ttu-id="8f410-109">プロパティを使用する変数または定数を使用する任意の場所。</span><span class="sxs-lookup"><span data-stu-id="8f410-109">You can use a property anywhere you can use a variable or a constant.</span></span>  
   
-     または  
+     <span data-ttu-id="8f410-110">または</span><span class="sxs-lookup"><span data-stu-id="8f410-110">-or-</span></span>  
   
-     後に続くプロパティ名を使用して (`=`)、代入ステートメントにサインインします。  
+     <span data-ttu-id="8f410-111">等号の後、プロパティ名を使用して (`=`) 代入ステートメントにサインインします。</span><span class="sxs-lookup"><span data-stu-id="8f410-111">Use the property name following the equal (`=`) sign in an assignment statement.</span></span>  
   
-     次の例は、値を読み取って、 [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] `Now`プロパティには、暗黙的に呼び出すことの`Get`プロシージャです。  
+     <span data-ttu-id="8f410-112">次の例の値を読み取ります、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] `Now`プロパティ、暗黙的に呼び出してその`Get`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="8f410-112">The following example reads the value of the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] `Now` property, implicitly calling its `Get` procedure.</span></span>  
   
-     [!code-vb[VbVbalrDateProperties&4;](./codesnippet/VisualBasic/how-to-get-a-value-from-a-property_1.vb)]  
+     [!code-vb[VbVbalrDateProperties#4](./codesnippet/VisualBasic/how-to-get-a-value-from-a-property_1.vb)]  
   
-2.  プロパティは、引数を受け取る場合は、かっこで囲んだ引数リストのプロパティ名に従ってください。 引数がない場合は、かっこを省略することができます。  
+2.  <span data-ttu-id="8f410-113">プロパティが引数を受け取る場合は、プロパティ名を引数リストを囲むかっこに従います。</span><span class="sxs-lookup"><span data-stu-id="8f410-113">If the property takes arguments, follow the property name with parentheses to enclose the argument list.</span></span> <span data-ttu-id="8f410-114">引数がない場合は、かっこを省略することができます。</span><span class="sxs-lookup"><span data-stu-id="8f410-114">If there are no arguments, you can optionally omit the parentheses.</span></span>  
   
-3.  コンマで区切り、かっこで囲まれた引数のリストに、引数を配置します。 プロパティが対応するパラメーターを定義する順序と同じ順序で引数を指定することを確認します。  
+3.  <span data-ttu-id="8f410-115">コンマで区切り、かっこで囲まれた引数のリストに、引数を配置します。</span><span class="sxs-lookup"><span data-stu-id="8f410-115">Place the arguments in the argument list within the parentheses, separated by commas.</span></span> <span data-ttu-id="8f410-116">プロパティが、対応するパラメーターを定義する、同じ順序で引数を指定することを確認します。</span><span class="sxs-lookup"><span data-stu-id="8f410-116">Be sure you supply the arguments in the same order that the property defines the corresponding parameters.</span></span>  
   
- プロパティの値が、式、変数と同様に参加する定数または変数または代入ステートメントの左側にあるプロパティに格納されます。  
+ <span data-ttu-id="8f410-117">プロパティの値が、式、変数と同様に参加する定数または変数または代入ステートメントの左側にあるプロパティに格納されます。</span><span class="sxs-lookup"><span data-stu-id="8f410-117">The value of the property participates in the expression just as a variable or constant would, or it is stored in the variable or property on the left side of the assignment statement.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [手順](./index.md)   
- [プロパティ プロシージャ](./property-procedures.md)   
- [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)   
- [Property ステートメント](../../../../visual-basic/language-reference/statements/property-statement.md)   
- [Visual Basic のプロパティと変数の違い](./differences-between-properties-and-variables.md)   
- [方法: プロパティを作成します。](./how-to-create-a-property.md)   
- [方法: 混合アクセス レベルを持つプロパティの宣言](./how-to-declare-a-property-with-mixed-access-levels.md)   
- [方法: プロパティ プロシージャを呼び出す](./how-to-call-a-property-procedure.md)   
- [方法: 宣言し、Visual Basic では、既定のプロパティを呼び出す](./how-to-declare-and-call-a-default-property.md)   
- [方法 : プロパティに値を格納する](./how-to-put-a-value-in-a-property.md)
+## <a name="see-also"></a><span data-ttu-id="8f410-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="8f410-118">See Also</span></span>  
+ [<span data-ttu-id="8f410-119">手順</span><span class="sxs-lookup"><span data-stu-id="8f410-119">Procedures</span></span>](./index.md)  
+ [<span data-ttu-id="8f410-120">Property プロシージャ</span><span class="sxs-lookup"><span data-stu-id="8f410-120">Property Procedures</span></span>](./property-procedures.md)  
+ [<span data-ttu-id="8f410-121">プロシージャのパラメーターと引数</span><span class="sxs-lookup"><span data-stu-id="8f410-121">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)  
+ [<span data-ttu-id="8f410-122">Property ステートメント</span><span class="sxs-lookup"><span data-stu-id="8f410-122">Property Statement</span></span>](../../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="8f410-123">Visual Basic でのプロパティと変数の違い</span><span class="sxs-lookup"><span data-stu-id="8f410-123">Differences Between Properties and Variables in Visual Basic</span></span>](./differences-between-properties-and-variables.md)  
+ [<span data-ttu-id="8f410-124">方法 : プロパティを作成する</span><span class="sxs-lookup"><span data-stu-id="8f410-124">How to: Create a Property</span></span>](./how-to-create-a-property.md)  
+ [<span data-ttu-id="8f410-125">方法 : 複数のアクセス レベルを持つプロパティを宣言する</span><span class="sxs-lookup"><span data-stu-id="8f410-125">How to: Declare a Property with Mixed Access Levels</span></span>](./how-to-declare-a-property-with-mixed-access-levels.md)  
+ [<span data-ttu-id="8f410-126">方法 : プロパティ プロシージャを呼び出す</span><span class="sxs-lookup"><span data-stu-id="8f410-126">How to: Call a Property Procedure</span></span>](./how-to-call-a-property-procedure.md)  
+ [<span data-ttu-id="8f410-127">方法: 宣言し、Visual Basic では、既定のプロパティを呼び出す</span><span class="sxs-lookup"><span data-stu-id="8f410-127">How to: Declare and Call a Default Property in Visual Basic</span></span>](./how-to-declare-and-call-a-default-property.md)  
+ [<span data-ttu-id="8f410-128">方法 : プロパティに値を格納する</span><span class="sxs-lookup"><span data-stu-id="8f410-128">How to: Put a Value in a Property</span></span>](./how-to-put-a-value-in-a-property.md)

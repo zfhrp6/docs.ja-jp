@@ -1,90 +1,73 @@
 ---
-title: "/target (Visual Basic) |Microsoft ドキュメント"
-ms.date: 2015-07-20
+title: /target (Visual Basic)
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - target compiler options [Visual Basic]
 - -target compiler options [Visual Basic]
 - /target compiler options [Visual Basic]
 ms.assetid: e0954147-548b-461f-9c4b-a8f88845616c
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: ccdb87188b924303057d5867dccece937defe74d
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 8a8a9fcd6fa6dfaace01f8fbb7fa407145acc16f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="target-visual-basic"></a>/target (Visual Basic)
-コンパイラの出力形式を指定します。  
+# <a name="target-visual-basic"></a><span data-ttu-id="10098-102">/target (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="10098-102">/target (Visual Basic)</span></span>
+<span data-ttu-id="10098-103">コンパイラの出力の形式を指定します。</span><span class="sxs-lookup"><span data-stu-id="10098-103">Specifies the format of compiler output.</span></span>  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a><span data-ttu-id="10098-104">構文</span><span class="sxs-lookup"><span data-stu-id="10098-104">Syntax</span></span>  
   
 ```  
 /target:{exe | library | module | winexe | appcontainerexe | winmdobj}  
 ```  
   
-## <a name="remarks"></a>コメント  
- 次の表に、影響、 `/target`  オプション。  
+## <a name="remarks"></a><span data-ttu-id="10098-105">コメント</span><span class="sxs-lookup"><span data-stu-id="10098-105">Remarks</span></span>  
+ <span data-ttu-id="10098-106">次の表の影響、`/target`オプション。</span><span class="sxs-lookup"><span data-stu-id="10098-106">The following table summarizes the effect of the `/target` option.</span></span>  
   
-|**オプション**|**動作**|  
+|<span data-ttu-id="10098-107">**オプション**</span><span class="sxs-lookup"><span data-stu-id="10098-107">**Option**</span></span>|<span data-ttu-id="10098-108">**動作**</span><span class="sxs-lookup"><span data-stu-id="10098-108">**Behavior**</span></span>|  
 |----------------|------------------|  
-|`/target:exe`|コンパイラが、可能なコンソール アプリケーションを作成します。<br /><br /> これはない場合は、既定オプション`/target`オプションを指定します。 拡張子が .exe の実行可能ファイルが作成されます。<br /><br /> それ以外の場合を指定しない限り、`/out`オプション、出力ファイル名を含む入力ファイルの名前を受け取り、`Sub Main`プロシージャです。<br /><br /> 1 つだけ`Sub Main`.exe ファイルにコンパイルされるソース コード ファイル内のプロシージャが必要です。 使用して、`/main`コンパイラ オプションを指定するクラスを含む、`Sub Main`プロシージャです。|  
-|`/target:library`|コンパイラがダイナミック リンク ライブラリ (DLL) を作成します。<br /><br /> ダイナミック リンク ライブラリ ファイルは、拡張子が .dll で作成されます。<br /><br /> それ以外の場合を指定しない限り、`/out`オプション、出力ファイル名は最初の入力ファイルの名前。<br /><br /> DLL を作成するときに、`Sub Main`手順は必要ありません。|  
-|`/target:module`|コンパイラでアセンブリに追加できるモジュールを生成します。<br /><br /> .Netmodule の拡張子を持つ出力ファイルが作成されます。<br /><br /> .NET 共通言語ランタイムは、アセンブリがないファイルを読み込めませんでした。 ただし、組み込むことができます、このようなファイル、アセンブリのアセンブリ マニフェストを使用して`/reference`します。<br /><br /> 使用して、アセンブリ マニフェストに両方のモジュールを組み込む必要が&1; つのモジュール内のコードでは、別のモジュールの内部型を参照する場合`/reference`します。<br /><br /> [/Addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)オプションは、モジュールからメタデータをインポートします。|  
-|`/target:winexe`|コンパイラが実行可能ファイルの Windows ベースのアプリケーションを作成します。<br /><br /> 拡張子が .exe の実行可能ファイルが作成されます。 Windows ベースのアプリケーションは、いずれかのいずれかのユーザー インターフェイスを提供する、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]クラス ライブラリまたは Win32 Api を使用します。<br /><br /> それ以外の場合を指定しない限り、`/out`オプション、出力ファイル名を含む入力ファイルの名前を受け取り、`Sub Main`プロシージャです。<br /><br /> 1 つだけ`Sub Main`.exe ファイルにコンパイルされるソース コード ファイル内のプロシージャが必要です。 内に、コードが&1; つ以上のクラスを持つ場合、`Sub Main`プロシージャを使用して、`/main`コンパイラ オプションを指定するクラスを含む、`Sub Main`プロシージャ|  
-|`/target:appcontainerexe`|コンパイラは、実行可能な Windows ベース アプリケーションを作成するアプリ コンテナー内で実行する必要があります。 この設定が使用するように設計[!INCLUDE[win8_appname_long](../../../csharp/includes/win8_appname_long_md.md)]アプリケーションです。<br /><br /> **Appcontainerexe**設定では、少しの特性 フィールドに、[ポータブル実行可能](http://go.microsoft.com/fwlink/p/?LinkId=236960)ファイルです。 このビットは、アプリがアプリ コンテナー内で実行される必要があることを示します。 場合にエラーが発生したこのビットが設定されている場合、`CreateProcess`メソッドはアプリケーション コンテナーの外部でアプリケーションを起動しようとしています。 このビットを設定するとは別**/target:appcontainerexe**は**/target:winexe**します。<br /><br /> 拡張子が .exe の実行可能ファイルが作成されます。<br /><br /> 使用してそれ以外の場合に指定していない限り、 `/out`  オプションを含む入力ファイルの名前は、出力ファイル名、`Sub Main`プロシージャです。<br /><br /> 1 つだけ`Sub Main`.exe ファイルにコンパイルされるソース コード ファイル内のプロシージャが必要です。 コードには複数のクラスが含まれるかどうか、`Sub Main`プロシージャを使用して、`/main`コンパイラ オプションを指定するクラスを含む、`Sub Main`プロシージャ|  
-|`/target:winmdobj`|コンパイラが、Windows ランタイム バイナリ (.winmd) ファイルに変換できる中間ファイルを作成します。 .Winmd ファイルは、マネージ言語プログラムだけでなく JavaScript および C++ プログラムで使用できます。<br /><br /> .Winmdobj 拡張子を持つ中間ファイルが作成されます。<br /><br /> 使用してそれ以外の場合に指定していない限り、`/out`オプション、出力ファイル名は最初の入力ファイルの名前。 A`Sub Main`手順は必要ありません。<br /><br /> .Winmdobj ファイルが入力として使用するように設計、 <xref:Microsoft.Build.Tasks.WinMDExp>Windows メタデータ (WinMD) ファイルを作成するツールをエクスポートします</xref:Microsoft.Build.Tasks.WinMDExp>。 WinMD ファイルは、.winmd 拡張子を持ち、その JavaScript、C++、および、Windows ランタイムで使用する、元のライブラリと WinMD 定義から、コード両方にはが含まれています。|  
+|`/target:exe`|<span data-ttu-id="10098-109">コンパイラが可能なコンソール アプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="10098-109">Causes the compiler to create an executable console application.</span></span><br /><br /> <span data-ttu-id="10098-110">これはない場合の既定オプション`/target`オプションを指定します。</span><span class="sxs-lookup"><span data-stu-id="10098-110">This is the default option when no `/target` option is specified.</span></span> <span data-ttu-id="10098-111">拡張子が .exe の実行可能ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="10098-111">The executable file is created with an .exe extension.</span></span><br /><br /> <span data-ttu-id="10098-112">それ以外の場合を指定しない限り、`/out`オプション、出力ファイル名は含む入力ファイルの名前、`Sub Main`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="10098-112">Unless otherwise specified with the `/out` option, the output file name takes the name of the input file that contains the `Sub Main` procedure.</span></span><br /><br /> <span data-ttu-id="10098-113">1 つだけ`Sub Main`.exe ファイルにコンパイルされるソース コード ファイル内のプロシージャが必要です。</span><span class="sxs-lookup"><span data-stu-id="10098-113">Only one `Sub Main` procedure is required in the source-code files that are compiled into an .exe file.</span></span> <span data-ttu-id="10098-114">使用して、`/main`コンパイラ オプションを指定するクラスが含まれています、`Sub Main`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="10098-114">Use the `/main` compiler option to specify which class contains the `Sub Main` procedure.</span></span>|  
+|`/target:library`|<span data-ttu-id="10098-115">コンパイラでダイナミック リンク ライブラリ (DLL) を作成します。</span><span class="sxs-lookup"><span data-stu-id="10098-115">Causes the compiler to create a dynamic-link library (DLL).</span></span><br /><br /> <span data-ttu-id="10098-116">ダイナミック リンク ライブラリ ファイルは、拡張子が .dll で作成されます。</span><span class="sxs-lookup"><span data-stu-id="10098-116">The dynamic-link library file is created with a .dll extension.</span></span><br /><br /> <span data-ttu-id="10098-117">それ以外の場合を指定しない限り、`/out`オプション、出力ファイル名は、最初の入力ファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="10098-117">Unless otherwise specified with the `/out` option, the output file name takes the name of the first input file.</span></span><br /><br /> <span data-ttu-id="10098-118">DLL を作成するときに、`Sub Main`手順は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="10098-118">When building a DLL, a `Sub Main` procedure is not required.</span></span>|  
+|`/target:module`|<span data-ttu-id="10098-119">コンパイラがアセンブリに追加できるモジュールを生成します。</span><span class="sxs-lookup"><span data-stu-id="10098-119">Causes the compiler to generate a module that can be added to an assembly.</span></span><br /><br /> <span data-ttu-id="10098-120">.Netmodule の拡張機能では、出力ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="10098-120">The output file is created with an extension of .netmodule.</span></span><br /><br /> <span data-ttu-id="10098-121">.NET 共通言語ランタイムは、アセンブリがないファイルを読み込むことができません。</span><span class="sxs-lookup"><span data-stu-id="10098-121">The .NET common language runtime cannot load a file that does not have an assembly.</span></span> <span data-ttu-id="10098-122">ただし、組み込むことができます、このようなファイル、アセンブリのアセンブリ マニフェストを使用して`/reference`です。</span><span class="sxs-lookup"><span data-stu-id="10098-122">However, you can incorporate such a file into the assembly manifest of an assembly by using `/reference`.</span></span><br /><br /> <span data-ttu-id="10098-123">使用して両方のモジュールをアセンブリ マニフェストに組み込む必要がありますが 1 つのモジュール内のコードでは、別のモジュールの内部の型を参照、`/reference`です。</span><span class="sxs-lookup"><span data-stu-id="10098-123">When code in one module references internal types in another module, both modules must be incorporated into an assembly manifest by using `/reference`.</span></span><br /><br /> <span data-ttu-id="10098-124">[/Addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)オプションは、モジュールからメタデータをインポートします。</span><span class="sxs-lookup"><span data-stu-id="10098-124">The [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) option imports metadata from a module.</span></span>|  
+|`/target:winexe`|<span data-ttu-id="10098-125">コンパイラで実行可能ファイルの Windows ベースのアプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="10098-125">Causes the compiler to create an executable Windows-based application.</span></span><br /><br /> <span data-ttu-id="10098-126">拡張子が .exe の実行可能ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="10098-126">The executable file is created with an .exe extension.</span></span> <span data-ttu-id="10098-127">Windows ベースのアプリケーションは、いずれかのいずれかからユーザー インターフェイスを提供する、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]クラス ライブラリまたは Win32 Api を使用します。</span><span class="sxs-lookup"><span data-stu-id="10098-127">A Windows-based application is one that provides a user interface from either the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] class library or with the Win32 APIs.</span></span><br /><br /> <span data-ttu-id="10098-128">それ以外の場合を指定しない限り、`/out`オプション、出力ファイル名は含む入力ファイルの名前、`Sub Main`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="10098-128">Unless otherwise specified with the `/out` option, the output file name takes the name of the input file that contains the `Sub Main` procedure.</span></span><br /><br /> <span data-ttu-id="10098-129">1 つだけ`Sub Main`.exe ファイルにコンパイルされるソース コード ファイル内のプロシージャが必要です。</span><span class="sxs-lookup"><span data-stu-id="10098-129">Only one `Sub Main` procedure is required in the source-code files that are compiled into an .exe file.</span></span> <span data-ttu-id="10098-130">内に、コードが 1 つ以上持つクラスである場合、`Sub Main`プロシージャを使用して、`/main`コンパイラ オプションを指定するクラスが含まれています、`Sub Main`プロシージャ</span><span class="sxs-lookup"><span data-stu-id="10098-130">In cases where your code has more than one class that has a `Sub Main` procedure, use the `/main` compiler option to specify which class contains the `Sub Main` procedure</span></span>|  
+|`/target:appcontainerexe`|<span data-ttu-id="10098-131">コンパイラがアプリ コンテナー内で実行する必要が実行可能ファイル、Windows ベース アプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="10098-131">Causes the compiler to create an executable Windows-based application that must be run in an app container.</span></span> <span data-ttu-id="10098-132">この設定が使用するように設計[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="10098-132">This setting is designed to be used for [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] applications.</span></span><br /><br /> <span data-ttu-id="10098-133">**Appcontainerexe**設定は、ビットの特性 フィールドを設定、[ポータブル実行可能](http://go.microsoft.com/fwlink/p/?LinkId=236960)ファイル。</span><span class="sxs-lookup"><span data-stu-id="10098-133">The **appcontainerexe** setting sets a bit in the Characteristics field of the [Portable Executable](http://go.microsoft.com/fwlink/p/?LinkId=236960) file.</span></span> <span data-ttu-id="10098-134">このビットは、アプリ コンテナー内で、アプリを実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="10098-134">This bit indicates that the app must be run in an app container.</span></span> <span data-ttu-id="10098-135">このビットが設定されている場合、エラーが発生、`CreateProcess`メソッドはアプリケーション コンテナー外のアプリケーションを起動しようとしています。</span><span class="sxs-lookup"><span data-stu-id="10098-135">When this bit is set, an error occurs if the `CreateProcess` method tries to launch the application outside of an app container.</span></span> <span data-ttu-id="10098-136">このビットを設定する場合を除いて**/target:appcontainerexe**は等価**/target:winexe**です。</span><span class="sxs-lookup"><span data-stu-id="10098-136">Aside from this bit setting, **/target:appcontainerexe** is equivalent to **/target:winexe**.</span></span><br /><br /> <span data-ttu-id="10098-137">拡張子が .exe の実行可能ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="10098-137">The executable file is created with an .exe extension.</span></span><br /><br /> <span data-ttu-id="10098-138">使用してそれ以外の場合に指定していない限り、`/out`オプション、出力ファイル名は含む入力ファイルの名前、`Sub Main`プロシージャです。</span><span class="sxs-lookup"><span data-stu-id="10098-138">Unless you specify otherwise by using the `/out` option, the output file name takes the name of the input file that contains the `Sub Main` procedure.</span></span><br /><br /> <span data-ttu-id="10098-139">1 つだけ`Sub Main`.exe ファイルにコンパイルされるソース コード ファイル内のプロシージャが必要です。</span><span class="sxs-lookup"><span data-stu-id="10098-139">Only one `Sub Main` procedure is required in the source-code files that are compiled into an .exe file.</span></span> <span data-ttu-id="10098-140">コードを持つ 2 つ以上のクラスが含まれるかどうか、`Sub Main`プロシージャを使用して、`/main`コンパイラ オプションを指定するクラスが含まれています、`Sub Main`プロシージャ</span><span class="sxs-lookup"><span data-stu-id="10098-140">If your code contains more than one class that has a `Sub Main` procedure, use the `/main` compiler option to specify which class contains the `Sub Main` procedure</span></span>|  
+|`/target:winmdobj`|<span data-ttu-id="10098-141">コンパイラが Windows ランタイムのバイナリ (.winmd) ファイルに変換できる中間ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="10098-141">Causes the compiler to create an intermediate file that you can convert to a Windows Runtime binary (.winmd) file.</span></span> <span data-ttu-id="10098-142">.Winmd ファイルは、マネージ言語プログラムだけでなく、JavaScript および C++ プログラムで使用できます。</span><span class="sxs-lookup"><span data-stu-id="10098-142">The .winmd file can be consumed by JavaScript and C++ programs, in addition to managed language programs.</span></span><br /><br /> <span data-ttu-id="10098-143">.Winmdobj 拡張子を持つ中間ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="10098-143">The intermediate file is created with a .winmdobj extension.</span></span><br /><br /> <span data-ttu-id="10098-144">使用してそれ以外の場合に指定していない限り、`/out`オプション、出力ファイル名は、最初の入力ファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="10098-144">Unless you specify otherwise by using the `/out` option, the output file name takes the name of the first input file.</span></span> <span data-ttu-id="10098-145">A`Sub Main`手順は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="10098-145">A `Sub Main` procedure isn’t required.</span></span><br /><br /> <span data-ttu-id="10098-146">.Winmdobj ファイルは、入力として使用するように設計された、 <xref:Microsoft.Build.Tasks.WinMDExp> Windows メタデータ (WinMD) ファイルを生成するためにツールをエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="10098-146">The .winmdobj file is designed to be used as input for the <xref:Microsoft.Build.Tasks.WinMDExp> export tool to produce a Windows metadata (WinMD) file.</span></span> <span data-ttu-id="10098-147">WinMD ファイルは、.winmd 拡張子を持ち、その JavaScript、C++、および Windows ランタイムを使用して、元のライブラリおよび WinMD の定義から、コード両方にはが含まれています。</span><span class="sxs-lookup"><span data-stu-id="10098-147">The WinMD file has a .winmd extension and contains both the code from the original library and the WinMD definitions that JavaScript, C++, and  the Windows Runtime use.</span></span>|  
   
- 指定しない限り`/target:module`、`/target`により、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]出力ファイルに追加するアセンブリのマニフェスト。  
+ <span data-ttu-id="10098-148">指定しない限り`/target:module`、`/target`により、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]アセンブリ マニフェストを出力ファイルに追加します。</span><span class="sxs-lookup"><span data-stu-id="10098-148">Unless you specify `/target:module`, `/target` causes a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] assembly manifest to be added to an output file.</span></span>  
   
- Vbc.exe の各インスタンスが発生した場合、最大で&1; つの出力ファイル。 コンパイラ オプションを指定する場合は、`/out`または`/target`2 回以上、最後の&1; つは、コンパイラのプロセスを有効にします。 コンパイルですべてのファイルに関する情報は、マニフェストに追加します。 すべての出力ファイルで作成されたものを除く`/target:module`マニフェストでアセンブリ メタデータが含まれます。 使用[Ildasm.exe (IL 逆アセンブラー)](https://msdn.microsoft.com/library/f7dy01k1)出力ファイルにメタデータを表示します。  
+ <span data-ttu-id="10098-149">Vbc.exe の各インスタンスの生成は、多くても 1 つの出力ファイル。</span><span class="sxs-lookup"><span data-stu-id="10098-149">Each instance of Vbc.exe produces, at most, one output file.</span></span> <span data-ttu-id="10098-150">コンパイラ オプションを指定する場合`/out`または`/target`2 回以上、コンパイラのプロセスが有効になる最後の 1 つです。</span><span class="sxs-lookup"><span data-stu-id="10098-150">If you specify a compiler option such as `/out` or `/target` more than one time, the last one the compiler processes is put into effect.</span></span> <span data-ttu-id="10098-151">コンパイルですべてのファイルに関する情報は、マニフェストに追加されます。</span><span class="sxs-lookup"><span data-stu-id="10098-151">Information about all files in a compilation is added to the manifest.</span></span> <span data-ttu-id="10098-152">すべての出力ファイルで作成されたものを除く`/target:module`マニフェストにアセンブリ メタデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="10098-152">All output files except those created with `/target:module` contain assembly metadata in the manifest.</span></span> <span data-ttu-id="10098-153">使用して[Ildasm.exe (IL 逆アセンブラー)](https://msdn.microsoft.com/library/f7dy01k1)出力ファイルにメタデータを表示します。</span><span class="sxs-lookup"><span data-stu-id="10098-153">Use [Ildasm.exe (IL Disassembler)](https://msdn.microsoft.com/library/f7dy01k1) to view the metadata in an output file.</span></span>  
   
- 短い形式の`/target`は`/t`です。  
+ <span data-ttu-id="10098-154">`/target` の省略形は `/t` です。</span><span class="sxs-lookup"><span data-stu-id="10098-154">The short form of `/target` is `/t`.</span></span>  
   
-### <a name="to-set-target-in-the-visual-studio-ide"></a>Visual Studio IDE 内/target:publish を設定するには  
+### <a name="to-set-target-in-the-visual-studio-ide"></a><span data-ttu-id="10098-155">Visual Studio IDE で/target を設定するには</span><span class="sxs-lookup"><span data-stu-id="10098-155">To set /target in the Visual Studio IDE</span></span>  
   
-1.  **ソリューション エクスプローラー**でプロジェクトを選択します。 **プロジェクト** メニューのをクリックして**プロパティ**します。 詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。  
+1.  <span data-ttu-id="10098-156">**ソリューション エクスプローラー**でプロジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="10098-156">Have a project selected in **Solution Explorer**.</span></span> <span data-ttu-id="10098-157">**[プロジェクト]** メニューの **[プロパティ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="10098-157">On the **Project** menu, click **Properties**.</span></span> <span data-ttu-id="10098-158">詳細については、「[プロジェクト デザイナーの概要](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="10098-158">For more information, see [Introduction to the Project Designer](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).</span></span>  
   
-2.  **[アプリケーション]** タブをクリックします。  
+2.  <span data-ttu-id="10098-159">**[アプリケーション]** タブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="10098-159">Click the **Application** tab.</span></span>  
   
-3.  値を変更、**アプリケーションの種類**ボックス。  
+3.  <span data-ttu-id="10098-160">値を変更、**アプリケーションの種類**ボックス。</span><span class="sxs-lookup"><span data-stu-id="10098-160">Modify the value in the **Application Type** box.</span></span>  
   
-## <a name="example"></a>例  
- 次のコードのコンパイル`in.vb`作成、 `in.dll`:  
+## <a name="example"></a><span data-ttu-id="10098-161">例</span><span class="sxs-lookup"><span data-stu-id="10098-161">Example</span></span>  
+ <span data-ttu-id="10098-162">次のコードのコンパイル`in.vb`作成、 `in.dll`:</span><span class="sxs-lookup"><span data-stu-id="10098-162">The following code compiles `in.vb`, creating `in.dll`:</span></span>  
   
 ```  
 vbc /target:library in.vb  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)   
- [/main](../../../visual-basic/reference/command-line-compiler/main.md)   
- [/out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)   
- [/reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)   
- [/addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)   
- [/moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)   
- [アセンブリとグローバル アセンブリ キャッシュ](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)   
- [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+## <a name="see-also"></a><span data-ttu-id="10098-163">関連項目</span><span class="sxs-lookup"><span data-stu-id="10098-163">See Also</span></span>  
+ [<span data-ttu-id="10098-164">Visual Basic のコマンド ライン コンパイラ</span><span class="sxs-lookup"><span data-stu-id="10098-164">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [<span data-ttu-id="10098-165">/main</span><span class="sxs-lookup"><span data-stu-id="10098-165">/main</span></span>](../../../visual-basic/reference/command-line-compiler/main.md)  
+ [<span data-ttu-id="10098-166">/out (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="10098-166">/out (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/out.md)  
+ [<span data-ttu-id="10098-167">/reference (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="10098-167">/reference (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/reference.md)  
+ [<span data-ttu-id="10098-168">/addmodule</span><span class="sxs-lookup"><span data-stu-id="10098-168">/addmodule</span></span>](../../../visual-basic/reference/command-line-compiler/addmodule.md)  
+ [<span data-ttu-id="10098-169">/moduleassemblyname</span><span class="sxs-lookup"><span data-stu-id="10098-169">/moduleassemblyname</span></span>](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)  
+ [<span data-ttu-id="10098-170">アセンブリとグローバル アセンブリ キャッシュ</span><span class="sxs-lookup"><span data-stu-id="10098-170">Assemblies and the Global Assembly Cache</span></span>](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+ [<span data-ttu-id="10098-171">コンパイル コマンド ラインのサンプル</span><span class="sxs-lookup"><span data-stu-id="10098-171">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

@@ -1,164 +1,166 @@
 ---
-title: "変換の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "2-D 変換クラス"
-  - "クラス, 2-D 変換"
-  - "FrameworkElement オブジェクト, 回転"
-  - "FrameworkElement オブジェクト, スケーリング"
-  - "FrameworkElement オブジェクト, 傾斜"
-  - "FrameworkElement オブジェクト, 変換"
-  - "変換クラス, 2-D"
-  - "変換, 変換の概要"
-  - "変換, 変換の概要"
+title: "変換の概要"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- transformations [WPF], about transformations
+- classes [WPF], 2-D transform
+- transform classes [WPF], 2-D
+- 2-D transform classes
+- FrameworkElement objects [WPF], rotating
+- FrameworkElement objects [WPF], skewing
+- FrameworkElement objects [WPF], translating
+- Transforms [WPF], about Transforms
+- FrameworkElement objects [WPF], scaling
 ms.assetid: 8f153d5e-ed61-4aa5-a7cd-286f0c427a13
-caps.latest.revision: 21
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "21"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: fd4e0f65d404e70f441cf2918fd6c50e08ebec79
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 変換の概要
-ここでは、[!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform> クラスを使用して <xref:System.Windows.FrameworkElement> オブジェクトの回転、拡大縮小、移動 \(平行移動\)、および傾斜を行う方法について説明します。  
+# <a name="transforms-overview"></a><span data-ttu-id="9528f-102">変換の概要</span><span class="sxs-lookup"><span data-stu-id="9528f-102">Transforms Overview</span></span>
+<span data-ttu-id="9528f-103">このトピックを使用する方法について説明、 [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform>回転、拡大縮小、移動クラス (翻訳)、および傾斜させる<xref:System.Windows.FrameworkElement>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9528f-103">This topic describes how to use the [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform> classes to rotate, scale, move (translate), and skew <xref:System.Windows.FrameworkElement> objects.</span></span>  
   
-   
   
 <a name="whatIsATransformSection"></a>   
-## 変換とは  
- <xref:System.Windows.Media.Transform> は、ある座標空間の点を別の座標空間にマップまたは変換する方法を定義します。  このマッピングは、<xref:System.Double> 値を示す 3 つの列を持つ 3 つの行のコレクションである、変換 <xref:System.Windows.Media.Matrix> によって示されます。  
+## <a name="what-is-a-transform"></a><span data-ttu-id="9528f-104">変換とは</span><span class="sxs-lookup"><span data-stu-id="9528f-104">What Is a Transform?</span></span>  
+ <span data-ttu-id="9528f-105">A<xref:System.Windows.Media.Transform>マップ、または 1 つの座標空間から別の座標空間へのポインターを変換する方法を定義します。</span><span class="sxs-lookup"><span data-stu-id="9528f-105">A <xref:System.Windows.Media.Transform> defines how to map, or transform, points from one coordinate space to another coordinate space.</span></span> <span data-ttu-id="9528f-106">このマッピングは、変換によって記述<xref:System.Windows.Media.Matrix>、3 つの行の 3 つの列のコレクションである<xref:System.Double>値。</span><span class="sxs-lookup"><span data-stu-id="9528f-106">This mapping is described by a transformation <xref:System.Windows.Media.Matrix>, which is a collection of three rows with three columns of <xref:System.Double> values.</span></span>  
   
 > [!NOTE]
->  [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] では、行優先の行列が使用されます。  ベクターは、列ベクターではなく行ベクターとして表されます。  
+>  [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]<span data-ttu-id="9528f-107"> では、行優先の行列が使用されます。</span><span class="sxs-lookup"><span data-stu-id="9528f-107"> uses row-major matrices.</span></span> <span data-ttu-id="9528f-108">ベクターは、列ベクターではなく行ベクターとして表されます。</span><span class="sxs-lookup"><span data-stu-id="9528f-108">Vectors are expressed as row-vectors, not column vectors.</span></span>  
   
- 次の表は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 行列の構造を示しています。  
+ <span data-ttu-id="9528f-109">次の表は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 行列の構造を示したものです。</span><span class="sxs-lookup"><span data-stu-id="9528f-109">The following table shows the structure of a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] matrix.</span></span>  
   
-### 2\-D 変換行列  
+### <a name="a-2-d-transformation-matrix"></a><span data-ttu-id="9528f-110">2-D 変換行列</span><span class="sxs-lookup"><span data-stu-id="9528f-110">A 2-D transformation matrix</span></span>  
   
 ||||  
 |-|-|-|  
-|<xref:System.Windows.Media.Matrix.M11%2A><br /><br /> 既定値: 1.0|<xref:System.Windows.Media.Matrix.M12%2A><br /><br /> 既定値: 0.0|0.0|  
-|<xref:System.Windows.Media.Matrix.M21%2A><br /><br /> 既定値: 0.0|<xref:System.Windows.Media.Matrix.M22%2A><br /><br /> 既定値: 1.0|0.0|  
-|<xref:System.Windows.Media.Matrix.OffsetX%2A><br /><br /> 既定値: 0.0|<xref:System.Windows.Media.Matrix.OffsetY%2A><br /><br /> 既定値: 0.0|1.0|  
+|<xref:System.Windows.Media.Matrix.M11%2A><br /><br /> <span data-ttu-id="9528f-111">既定値: 1.0</span><span class="sxs-lookup"><span data-stu-id="9528f-111">Default: 1.0</span></span>|<xref:System.Windows.Media.Matrix.M12%2A><br /><br /> <span data-ttu-id="9528f-112">既定値: 0.0</span><span class="sxs-lookup"><span data-stu-id="9528f-112">Default: 0.0</span></span>|<span data-ttu-id="9528f-113">0.0</span><span class="sxs-lookup"><span data-stu-id="9528f-113">0.0</span></span>|  
+|<xref:System.Windows.Media.Matrix.M21%2A><br /><br /> <span data-ttu-id="9528f-114">既定値: 0.0</span><span class="sxs-lookup"><span data-stu-id="9528f-114">Default: 0.0</span></span>|<xref:System.Windows.Media.Matrix.M22%2A><br /><br /> <span data-ttu-id="9528f-115">既定値: 1.0</span><span class="sxs-lookup"><span data-stu-id="9528f-115">Default: 1.0</span></span>|<span data-ttu-id="9528f-116">0.0</span><span class="sxs-lookup"><span data-stu-id="9528f-116">0.0</span></span>|  
+|<xref:System.Windows.Media.Matrix.OffsetX%2A><br /><br /> <span data-ttu-id="9528f-117">既定値: 0.0</span><span class="sxs-lookup"><span data-stu-id="9528f-117">Default: 0.0</span></span>|<xref:System.Windows.Media.Matrix.OffsetY%2A><br /><br /> <span data-ttu-id="9528f-118">既定値: 0.0</span><span class="sxs-lookup"><span data-stu-id="9528f-118">Default: 0.0</span></span>|<span data-ttu-id="9528f-119">1.0</span><span class="sxs-lookup"><span data-stu-id="9528f-119">1.0</span></span>|  
   
- 行列値を操作することによって、オブジェクトの回転、拡大縮小、傾斜、および移動 \(平行移動\) を行うことができます。  たとえば、第 3 行の第 1 列にある値 \(<xref:System.Windows.Media.Matrix.OffsetX%2A> 値\) を 100 に変更した場合は、その値を使用し、オブジェクトを x 軸に沿って 100 単位移動できます。  第 2 行の第 2 列にある値を 3 に変更した場合は、この値を使用し、オブジェクトを現在の高さの 3 倍に引き伸ばすことができます。  両方の値を変更した場合、オブジェクトは x 軸に沿って 100 単位移動し、オブジェクトの高さは 3 倍に引き伸ばされます。  [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] はアフィン変換のみをサポートするため、右の列の値は常に 0、0、1 です。  
+ <span data-ttu-id="9528f-120">行列の値を操作することで、オブジェクトを回転、拡大縮小、傾斜、移動 (平行移動) させることができます。</span><span class="sxs-lookup"><span data-stu-id="9528f-120">By manipulating matrix values, you can rotate, scale, skew, and move (translate) an object.</span></span> <span data-ttu-id="9528f-121">たとえば、3 番目の行の最初の列の値を変更する場合 (、<xref:System.Windows.Media.Matrix.OffsetX%2A>値) 100、することができるために使用する x 軸に沿って、オブジェクトの 100 単位を移動します。</span><span class="sxs-lookup"><span data-stu-id="9528f-121">For example, if you change the value in the first column of the third row (the <xref:System.Windows.Media.Matrix.OffsetX%2A> value) to 100, you can use it to move an object 100 units along the x-axis.</span></span> <span data-ttu-id="9528f-122">2 番目の行の 2 列目の値を 3 に変更すると、オブジェクトの高さを現在の 3 倍に拡張できます。</span><span class="sxs-lookup"><span data-stu-id="9528f-122">If you change the value in the second column of the second row to 3, you can use it to stretch an object to three times its current height.</span></span> <span data-ttu-id="9528f-123">両方の値を変更した場合は、オブジェクトが x 軸に沿って 100 単位移動し、高さが 3 倍に拡張されます。</span><span class="sxs-lookup"><span data-stu-id="9528f-123">If you change both values, you move the object 100 units along the x-axis and stretch its height by a factor of 3.</span></span> <span data-ttu-id="9528f-124">[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] ではアフィン変換しかサポートされていないため、右側の列の値は常に 0, 0, 1 になります。</span><span class="sxs-lookup"><span data-stu-id="9528f-124">Because [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] only supports affine transforms, the values in the right column are always 0, 0, 1.</span></span>  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] では行列値を直接操作できますが、基になる行列構造体の構成方法がわからなくてもオブジェクトを変換できる、いくつかの <xref:System.Windows.Media.Transform> クラスも提供されています。  たとえば、変換行列を操作する代わりに、<xref:System.Windows.Media.ScaleTransform> クラスを使用し、<xref:System.Windows.Media.ScaleTransform.ScaleX%2A> プロパティと <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> プロパティを設定してオブジェクトをスケーリングできます。  同様に、<xref:System.Windows.Media.RotateTransform> クラスを使用すると、<xref:System.Windows.Media.RotateTransform.Angle%2A> プロパティを設定するだけでオブジェクトを回転できます。  
+ <span data-ttu-id="9528f-125">[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]マトリックスの値を直接操作することができますもいくつか提供<xref:System.Windows.Media.Transform>を基になるマトリックス構造を構成する方法を知らなくてもオブジェクトを変換できるようにするクラス。</span><span class="sxs-lookup"><span data-stu-id="9528f-125">Although [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] enables you to directly manipulate matrix values, it also provides several <xref:System.Windows.Media.Transform> classes that enable you to transform an object without knowing how the underlying matrix structure is configured.</span></span> <span data-ttu-id="9528f-126">たとえば、<xref:System.Windows.Media.ScaleTransform>クラスでは、オブジェクトの拡大縮小を設定することができます、<xref:System.Windows.Media.ScaleTransform.ScaleX%2A>と<xref:System.Windows.Media.ScaleTransform.ScaleY%2A>プロパティの変換行列の操作ではなく、します。</span><span class="sxs-lookup"><span data-stu-id="9528f-126">For example, the <xref:System.Windows.Media.ScaleTransform> class enables you to scale an object by setting its <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> and <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> properties, instead of manipulating a transformation matrix.</span></span> <span data-ttu-id="9528f-127">同様に、<xref:System.Windows.Media.RotateTransform>クラスを設定するだけでオブジェクトを回転させることができます、<xref:System.Windows.Media.RotateTransform.Angle%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="9528f-127">Likewise, the <xref:System.Windows.Media.RotateTransform> class enables you to rotate an object by just setting its <xref:System.Windows.Media.RotateTransform.Angle%2A> property.</span></span>  
   
 <a name="transformClassesSection"></a>   
-## 変換クラス  
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] には、一般的な変換操作用に次の [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform> クラスが用意されています。  
+## <a name="transform-classes"></a><span data-ttu-id="9528f-128">変換クラス</span><span class="sxs-lookup"><span data-stu-id="9528f-128">Transform Classes</span></span>  
+ [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]<span data-ttu-id="9528f-129">次に示します[!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)]<xref:System.Windows.Media.Transform>変換の一般的な操作のためのクラス。</span><span class="sxs-lookup"><span data-stu-id="9528f-129"> provides the following [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform> classes for common transformation operations:</span></span>  
   
-|Class|Description|例|図|  
-|-----------|-----------------|-------|-------|  
-|<xref:System.Windows.Media.RotateTransform>|指定した <xref:System.Windows.Media.RotateTransform.Angle%2A> だけ要素を回転します。|[オブジェクトを回転させる](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object.md)||  
-|<xref:System.Windows.Media.ScaleTransform>|指定した <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> および <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> の量だけ要素をスケーリングします。|[要素をスケーリングする](../../../../docs/framework/wpf/graphics-multimedia/how-to-scale-an-element.md)||  
-|<xref:System.Windows.Media.SkewTransform>|指定した <xref:System.Windows.Media.SkewTransform.AngleX%2A> および <xref:System.Windows.Media.SkewTransform.AngleY%2A> の量だけ要素を傾斜させます。|[要素を傾斜させる](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)||  
-|<xref:System.Windows.Media.TranslateTransform>|指定した <xref:System.Windows.Media.TranslateTransform.X%2A> および <xref:System.Windows.Media.TranslateTransform.Y%2A> の量だけ要素を移動 \(平行移動\) します。|[要素を変換する](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)||  
+|<span data-ttu-id="9528f-130">クラス</span><span class="sxs-lookup"><span data-stu-id="9528f-130">Class</span></span>|<span data-ttu-id="9528f-131">説明</span><span class="sxs-lookup"><span data-stu-id="9528f-131">Description</span></span>|<span data-ttu-id="9528f-132">例</span><span class="sxs-lookup"><span data-stu-id="9528f-132">Example</span></span>|<span data-ttu-id="9528f-133">図</span><span class="sxs-lookup"><span data-stu-id="9528f-133">Illustration</span></span>|  
+|-----------|-----------------|-------------|------------------|  
+|<xref:System.Windows.Media.RotateTransform>|<span data-ttu-id="9528f-134">指定した要素を回転<xref:System.Windows.Media.RotateTransform.Angle%2A>です。</span><span class="sxs-lookup"><span data-stu-id="9528f-134">Rotates an element by the specified <xref:System.Windows.Media.RotateTransform.Angle%2A>.</span></span>|[<span data-ttu-id="9528f-135">オブジェクトを回転させる</span><span class="sxs-lookup"><span data-stu-id="9528f-135">Rotate an Object</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object.md)|<span data-ttu-id="9528f-136">![回転の図](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-rotate.png "graphicsmm_thumbnails_rotate")</span><span class="sxs-lookup"><span data-stu-id="9528f-136">![Rotate illustration](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-rotate.png "graphicsmm_thumbnails_rotate")</span></span>|  
+|<xref:System.Windows.Media.ScaleTransform>|<span data-ttu-id="9528f-137">指定した要素を拡大または縮小<xref:System.Windows.Media.ScaleTransform.ScaleX%2A>と<xref:System.Windows.Media.ScaleTransform.ScaleY%2A>金額です。</span><span class="sxs-lookup"><span data-stu-id="9528f-137">Scales an element by the specified <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> and <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> amounts.</span></span>|[<span data-ttu-id="9528f-138">要素を拡大縮小する</span><span class="sxs-lookup"><span data-stu-id="9528f-138">Scale an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-scale-an-element.md)|<span data-ttu-id="9528f-139">![拡大縮小の図](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-scale.png "graphicsmm_thumbnails_scale")</span><span class="sxs-lookup"><span data-stu-id="9528f-139">![Scale illustration](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-scale.png "graphicsmm_thumbnails_scale")</span></span>|  
+|<xref:System.Windows.Media.SkewTransform>|<span data-ttu-id="9528f-140">指定した要素のずれ<xref:System.Windows.Media.SkewTransform.AngleX%2A>と<xref:System.Windows.Media.SkewTransform.AngleY%2A>金額です。</span><span class="sxs-lookup"><span data-stu-id="9528f-140">Skews an element by the specified <xref:System.Windows.Media.SkewTransform.AngleX%2A> and <xref:System.Windows.Media.SkewTransform.AngleY%2A> amounts.</span></span>|[<span data-ttu-id="9528f-141">要素を傾斜させる</span><span class="sxs-lookup"><span data-stu-id="9528f-141">Skew an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)|<span data-ttu-id="9528f-142">![傾斜の図](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-skew.png "graphicsmm_thumbnails_skew")</span><span class="sxs-lookup"><span data-stu-id="9528f-142">![Skew illustration](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-skew.png "graphicsmm_thumbnails_skew")</span></span>|  
+|<xref:System.Windows.Media.TranslateTransform>|<span data-ttu-id="9528f-143">移動 (変換) 要素を指定した<xref:System.Windows.Media.TranslateTransform.X%2A>と<xref:System.Windows.Media.TranslateTransform.Y%2A>金額です。</span><span class="sxs-lookup"><span data-stu-id="9528f-143">Moves (translates) an element by the specified <xref:System.Windows.Media.TranslateTransform.X%2A> and <xref:System.Windows.Media.TranslateTransform.Y%2A> amounts.</span></span>|[<span data-ttu-id="9528f-144">要素を平行移動する</span><span class="sxs-lookup"><span data-stu-id="9528f-144">Translate an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)|<span data-ttu-id="9528f-145">![平行移動の図](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-translate.png "graphicsmm_thumbnails_translate")</span><span class="sxs-lookup"><span data-stu-id="9528f-145">![Translate illustration](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-translate.png "graphicsmm_thumbnails_translate")</span></span>|  
   
- より複雑な変換を作成するために、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] は次の 2 つのクラスを提供します。  
+ <span data-ttu-id="9528f-146">より複雑な変換を作成する場合のために、[!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] では次の 2 つのクラスが提供されています。</span><span class="sxs-lookup"><span data-stu-id="9528f-146">For creating more complex transformations, [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] provides the following two classes:</span></span>  
   
-|Class|Description|例|  
-|-----------|-----------------|-------|  
-|<xref:System.Windows.Media.TransformGroup>|複数の <xref:System.Windows.Media.TransformGroup> オブジェクトを、変換プロパティに適用できる単一の <xref:System.Windows.Media.Transform> にグループ化します。|[オブジェクトに複数の変換を適用する](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md)|  
-|<xref:System.Windows.Media.MatrixTransform>|他の <xref:System.Windows.Media.Transform> クラスによって提供されないカスタム変換を作成します。  <xref:System.Windows.Media.MatrixTransform> を使用する場合は、Matrix を直接操作します。|[MatrixTransform を使用してカスタム変換を作成する](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md)|  
+|<span data-ttu-id="9528f-147">クラス</span><span class="sxs-lookup"><span data-stu-id="9528f-147">Class</span></span>|<span data-ttu-id="9528f-148">説明</span><span class="sxs-lookup"><span data-stu-id="9528f-148">Description</span></span>|<span data-ttu-id="9528f-149">例</span><span class="sxs-lookup"><span data-stu-id="9528f-149">Example</span></span>|  
+|-----------|-----------------|-------------|  
+|<xref:System.Windows.Media.TransformGroup>|<span data-ttu-id="9528f-150">複数のグループ<xref:System.Windows.Media.TransformGroup>オブジェクト、1 つに<xref:System.Windows.Media.Transform>変換プロパティに適用することができます、します。</span><span class="sxs-lookup"><span data-stu-id="9528f-150">Groups multiple <xref:System.Windows.Media.TransformGroup> objects into a single <xref:System.Windows.Media.Transform> that you can then apply to transform properties.</span></span>|[<span data-ttu-id="9528f-151">オブジェクトに複数の変換を適用する</span><span class="sxs-lookup"><span data-stu-id="9528f-151">Apply Multiple Transforms to an Object</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md)|  
+|<xref:System.Windows.Media.MatrixTransform>|<span data-ttu-id="9528f-152">他のでは提供されないカスタム変換を作成<xref:System.Windows.Media.Transform>クラスです。</span><span class="sxs-lookup"><span data-stu-id="9528f-152">Creates custom transformations that are not provided by the other <xref:System.Windows.Media.Transform> classes.</span></span> <span data-ttu-id="9528f-153">使用すると、<xref:System.Windows.Media.MatrixTransform>マトリックスを直接操作します。</span><span class="sxs-lookup"><span data-stu-id="9528f-153">When you use a <xref:System.Windows.Media.MatrixTransform>, you manipulate a Matrix directly.</span></span>|[<span data-ttu-id="9528f-154">MatrixTransform を使用してカスタム変換を作成する</span><span class="sxs-lookup"><span data-stu-id="9528f-154">Use a MatrixTransform to Create Custom Transforms</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md)|  
   
- [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] は [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] 変換も提供します。  詳細については、<xref:System.Windows.Media.Media3D.Transform3D> クラスを参照してください。  
+ [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]<span data-ttu-id="9528f-155"> では、[!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] 変換も提供されています。</span><span class="sxs-lookup"><span data-stu-id="9528f-155"> also provides [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] transformations.</span></span> <span data-ttu-id="9528f-156">詳細については、<xref:System.Windows.Media.Media3D.Transform3D> クラスを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9528f-156">For more information, see the <xref:System.Windows.Media.Media3D.Transform3D> class.</span></span>  
   
 <a name="transformationproperties"></a>   
-## 一般的な変換プロパティ  
- オブジェクトを変換する方法の 1 つとして、適切な <xref:System.Windows.Media.Transform> 型を宣言してオブジェクトの変換プロパティに適用する方法があります。  さまざまな型のオブジェクトが、異なる種類の変換プロパティを持ちます。  一般的に使用されるいくつかの [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] 型とその変換プロパティを次の表に示します。  
+## <a name="common-transformation-properties"></a><span data-ttu-id="9528f-157">一般的な変換プロパティ</span><span class="sxs-lookup"><span data-stu-id="9528f-157">Common Transformation Properties</span></span>  
+ <span data-ttu-id="9528f-158">オブジェクトを変換する方法の 1 つは、適切な宣言を<xref:System.Windows.Media.Transform>を入力し、オブジェクトの変換プロパティに適用します。</span><span class="sxs-lookup"><span data-stu-id="9528f-158">One way to transform an object is to declare the appropriate <xref:System.Windows.Media.Transform> type and apply it to the transformation property of the object.</span></span> <span data-ttu-id="9528f-159">オブジェクトの型ごとに、異なる型の変換プロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="9528f-159">Different types of objects have different types of transformation properties.</span></span> <span data-ttu-id="9528f-160">次の表は、一般的に使用される [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] 型と、その変換プロパティをまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="9528f-160">The following table lists several commonly used [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] types and their transformation properties.</span></span>  
   
-|種類|変換プロパティ|  
-|--------|-------------|  
-|<xref:System.Windows.Media.Brush>|<xref:System.Windows.Media.Brush.Transform%2A>, <xref:System.Windows.Media.Brush.RelativeTransform%2A>|  
+|<span data-ttu-id="9528f-161">型</span><span class="sxs-lookup"><span data-stu-id="9528f-161">Type</span></span>|<span data-ttu-id="9528f-162">変換プロパティ</span><span class="sxs-lookup"><span data-stu-id="9528f-162">Transformation properties</span></span>|  
+|----------|-------------------------------|  
+|<xref:System.Windows.Media.Brush>|<span data-ttu-id="9528f-163"><xref:System.Windows.Media.Brush.Transform%2A>, <xref:System.Windows.Media.Brush.RelativeTransform%2A></span><span class="sxs-lookup"><span data-stu-id="9528f-163"><xref:System.Windows.Media.Brush.Transform%2A>, <xref:System.Windows.Media.Brush.RelativeTransform%2A></span></span>|  
 |<xref:System.Windows.Media.ContainerVisual>|<xref:System.Windows.Media.ContainerVisual.Transform%2A>|  
 |<xref:System.Windows.Media.DrawingGroup>|<xref:System.Windows.Media.DrawingGroup.Transform%2A>|  
-|<xref:System.Windows.FrameworkElement>|<xref:System.Windows.UIElement.RenderTransform%2A>, <xref:System.Windows.FrameworkElement.LayoutTransform%2A>|  
+|<xref:System.Windows.FrameworkElement>|<span data-ttu-id="9528f-164"><xref:System.Windows.UIElement.RenderTransform%2A>, <xref:System.Windows.FrameworkElement.LayoutTransform%2A></span><span class="sxs-lookup"><span data-stu-id="9528f-164"><xref:System.Windows.UIElement.RenderTransform%2A>, <xref:System.Windows.FrameworkElement.LayoutTransform%2A></span></span>|  
 |<xref:System.Windows.Media.Geometry>|<xref:System.Windows.Media.Geometry.Transform%2A>|  
 |<xref:System.Windows.Media.TextEffect>|<xref:System.Windows.Media.TextEffect.Transform%2A>|  
 |<xref:System.Windows.UIElement>|<xref:System.Windows.UIElement.RenderTransform%2A>|  
   
 <a name="transformcenter"></a>   
-## 変換と座標系  
- オブジェクトを変換する場合は、オブジェクトを変換するだけでなく、オブジェクトが存在する座標空間を変換します。  既定では、変換の中心 \(0,0\) はターゲット オブジェクトの座標系の基点です。  唯一の例外は <xref:System.Windows.Media.TranslateTransform> です。<xref:System.Windows.Media.TranslateTransform> は、中心の位置に関係なく変換効果が同じであるため、中心を設定するためのプロパティはありません。  
+## <a name="transformations-and-coordinate-systems"></a><span data-ttu-id="9528f-165">変換と座標系</span><span class="sxs-lookup"><span data-stu-id="9528f-165">Transformations and Coordinate Systems</span></span>  
+ <span data-ttu-id="9528f-166">オブジェクトを変換する場合は、単にオブジェクトを変換するのではなく、そのオブジェクトが存在する座標空間を変換することになります。</span><span class="sxs-lookup"><span data-stu-id="9528f-166">When you transform an object, you do not just transform the object, you transform coordinate space in which that object exists.</span></span> <span data-ttu-id="9528f-167">既定では、ターゲット オブジェクトの座標系の原点が変換の中心になります: (0, 0)。</span><span class="sxs-lookup"><span data-stu-id="9528f-167">By default, a transform is centered at the origin of the target object's coordinate system: (0,0).</span></span> <span data-ttu-id="9528f-168">唯一の例外は<xref:System.Windows.Media.TranslateTransform>;<xref:System.Windows.Media.TranslateTransform>翻訳効果が中央に関係なく、同じであるために、設定を中央のプロパティを持たない。</span><span class="sxs-lookup"><span data-stu-id="9528f-168">The only exception is <xref:System.Windows.Media.TranslateTransform>; a <xref:System.Windows.Media.TranslateTransform> has no center properties to set because the translation effect is the same regardless of where it is centered.</span></span>  
   
- 次の例では、<xref:System.Windows.Media.RotateTransform> を使用して、<xref:System.Windows.FrameworkElement> の一種である <xref:System.Windows.Shapes.Rectangle> 要素をその既定の位置 \(0, 0\) を中心に 45°回転します。  回転の効果を次の図に示します。  
+ <span data-ttu-id="9528f-169">次の例では、<xref:System.Windows.Media.RotateTransform>を回転する、<xref:System.Windows.Shapes.Rectangle>要素、型の<xref:System.Windows.FrameworkElement>でその既定中心 45 度 (0, 0) です。</span><span class="sxs-lookup"><span data-stu-id="9528f-169">The following example uses a <xref:System.Windows.Media.RotateTransform> to rotate a <xref:System.Windows.Shapes.Rectangle> element, a type of <xref:System.Windows.FrameworkElement>, by 45 degrees about its default center, (0, 0).</span></span> <span data-ttu-id="9528f-170">次の図は、回転の結果を示したものです。</span><span class="sxs-lookup"><span data-stu-id="9528f-170">The following illustration shows the effect of the rotation.</span></span>  
   
- ![&#40;0,0&#41; を軸に 45 度回転した FrameworkElement](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-fe-rotated-about-upperleft-corner.png "graphicsmm\_FE\_rotated\_about\_upperleft\_corner")  
-点 \(0,0\) を中心として 45°回転した四角形要素  
+ <span data-ttu-id="9528f-171">![45 度回転した FrameworkElement &#40;0, 0&#41;] (../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-fe-rotated-about-upperleft-corner.png "graphicsmm_FE_rotated_about_upperleft_corner")</span><span class="sxs-lookup"><span data-stu-id="9528f-171">![A FrameworkElement rotated 45 degrees about &#40;0,0&#41;](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-fe-rotated-about-upperleft-corner.png "graphicsmm_FE_rotated_about_upperleft_corner")</span></span>  
+<span data-ttu-id="9528f-172">ポイント (0, 0) を軸に 45 度回転した四角形要素</span><span class="sxs-lookup"><span data-stu-id="9528f-172">A Rectangle element rotated 45 degrees about the point (0,0)</span></span>  
   
- [!code-xml[Transforms_snip#TransformsFERotatedAboutTopLeft](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/CoordinateSystemExample.xaml#transformsferotatedabouttopleft)]  
+ [!code-xaml[Transforms_snip#TransformsFERotatedAboutTopLeft](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/CoordinateSystemExample.xaml#transformsferotatedabouttopleft)]  
   
- 既定では、この要素は左上隅 \(0, 0\) を中心に回転します。  <xref:System.Windows.Media.RotateTransform>、<xref:System.Windows.Media.ScaleTransform>、および <xref:System.Windows.Media.SkewTransform> の各クラスは、変換が適用される点を指定できる CenterX プロパティと CenterY プロパティを提供します。  
+ <span data-ttu-id="9528f-173">既定では、要素は左上隅 (0, 0) を軸に回転します。</span><span class="sxs-lookup"><span data-stu-id="9528f-173">By default, the element rotates about its upper-left corner, (0, 0).</span></span> <span data-ttu-id="9528f-174"><xref:System.Windows.Media.RotateTransform>、 <xref:System.Windows.Media.ScaleTransform>、および<xref:System.Windows.Media.SkewTransform>クラスが使用すると、変換を適用するポイントを指定する CenterX と CenterY のプロパティを提供します。</span><span class="sxs-lookup"><span data-stu-id="9528f-174">The <xref:System.Windows.Media.RotateTransform>, <xref:System.Windows.Media.ScaleTransform>, and <xref:System.Windows.Media.SkewTransform> classes provide CenterX and CenterY properties that enable you to specify the point at which the transform is applied.</span></span>  
   
- 次の例でも、<xref:System.Windows.Media.RotateTransform> を使用して <xref:System.Windows.Shapes.Rectangle> 要素を 45°回転していますが、<xref:System.Windows.Media.RotateTransform.CenterX%2A> プロパティと <xref:System.Windows.Media.RotateTransform.CenterY%2A> プロパティは <xref:System.Windows.Media.RotateTransform> の中心が \(25, 25\) になるように設定されています。  回転の効果を次の図に示します。  
+ <span data-ttu-id="9528f-175">次の例でも使用、<xref:System.Windows.Media.RotateTransform>を回転する、<xref:System.Windows.Shapes.Rectangle>で 45 度; 要素ただし、この時点、<xref:System.Windows.Media.RotateTransform.CenterX%2A>と<xref:System.Windows.Media.RotateTransform.CenterY%2A>プロパティが設定できるように、<xref:System.Windows.Media.RotateTransform>のセンターがある (25, 25)。</span><span class="sxs-lookup"><span data-stu-id="9528f-175">The next example also uses a <xref:System.Windows.Media.RotateTransform> to rotate a <xref:System.Windows.Shapes.Rectangle> element by 45 degrees; however, this time the <xref:System.Windows.Media.RotateTransform.CenterX%2A> and <xref:System.Windows.Media.RotateTransform.CenterY%2A> properties are set so that the <xref:System.Windows.Media.RotateTransform> has a center of (25, 25).</span></span> <span data-ttu-id="9528f-176">次の図は、回転の結果を示したものです。</span><span class="sxs-lookup"><span data-stu-id="9528f-176">The following illustration shows the effect of the rotation.</span></span>  
   
- ![&#40;25, 25&#41; を軸に 45 度回転した Geometry](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-fe-rotated-about-center.png "graphicsmm\_FE\_rotated\_about\_center")  
-点 \(25, 25\) を中心として 45°回転した四角形要素  
+ <span data-ttu-id="9528f-177">![45 度 &#40; を回転するジオメトリ 25、25 &#41;] (../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-fe-rotated-about-center.png "graphicsmm_FE_rotated_about_center")</span><span class="sxs-lookup"><span data-stu-id="9528f-177">![A Geometry rotated 45 degrees about &#40;25, 25&#41;](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-fe-rotated-about-center.png "graphicsmm_FE_rotated_about_center")</span></span>  
+<span data-ttu-id="9528f-178">ポイント (25, 25) を軸に 45 度回転した四角形要素</span><span class="sxs-lookup"><span data-stu-id="9528f-178">A Rectangle element rotated 45 degrees about the point (25, 25)</span></span>  
   
- [!code-xml[Transforms_snip#TransformsFERotatedAboutCenter](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/CoordinateSystemExample.xaml#transformsferotatedaboutcenter)]  
+ [!code-xaml[Transforms_snip#TransformsFERotatedAboutCenter](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/CoordinateSystemExample.xaml#transformsferotatedaboutcenter)]  
   
 <a name="layoutTransformsAndRenderTransformsSection"></a>   
-## FrameworkElement の変換  
- <xref:System.Windows.FrameworkElement> に変換を適用するには、<xref:System.Windows.Media.Transform> を作成して、<xref:System.Windows.FrameworkElement> クラスが提供する 2 つのプロパティのいずれかに適用します。  
+## <a name="transforming-a-frameworkelement"></a><span data-ttu-id="9528f-179">FrameworkElement の変換</span><span class="sxs-lookup"><span data-stu-id="9528f-179">Transforming a FrameworkElement</span></span>  
+ <span data-ttu-id="9528f-180">変換を適用する、 <xref:System.Windows.FrameworkElement>、作成、<xref:System.Windows.Media.Transform>し、2 つのプロパティのいずれかに適用を<xref:System.Windows.FrameworkElement>クラスを提供します。</span><span class="sxs-lookup"><span data-stu-id="9528f-180">To apply transformations to a <xref:System.Windows.FrameworkElement>, create a <xref:System.Windows.Media.Transform> and apply it to one of the two properties that the <xref:System.Windows.FrameworkElement> class provides:</span></span>  
   
--   <xref:System.Windows.FrameworkElement.LayoutTransform%2A> – レイアウト パスの前に適用される変換。  変換の適用後に、レイアウト システムは要素の変換後のサイズおよび位置を処理します。  
+-   <span data-ttu-id="9528f-181"><xref:System.Windows.FrameworkElement.LayoutTransform%2A>– レイアウト パスの前に適用する変換です。</span><span class="sxs-lookup"><span data-stu-id="9528f-181"><xref:System.Windows.FrameworkElement.LayoutTransform%2A> – A transform that is applied before the layout pass.</span></span> <span data-ttu-id="9528f-182">変換が適用されると、レイアウト システムは変換後のサイズと要素の位置を処理します。</span><span class="sxs-lookup"><span data-stu-id="9528f-182">After the transform is applied, the layout system processes the transformed size and position of the element.</span></span>  
   
--   <xref:System.Windows.UIElement.RenderTransform%2A> – 要素の外観を変更する変換。レイアウト パスの完了後に適用されます。  <xref:System.Windows.FrameworkElement.LayoutTransform%2A> プロパティの代わりに <xref:System.Windows.UIElement.RenderTransform%2A> プロパティを使用すると、パフォーマンスを向上できます。  
+-   <span data-ttu-id="9528f-183"><xref:System.Windows.UIElement.RenderTransform%2A>– 要素の外観を変更、レイアウト パスの後に適用される変換が完了しました。</span><span class="sxs-lookup"><span data-stu-id="9528f-183"><xref:System.Windows.UIElement.RenderTransform%2A> – A transform that modifies the appearance of the element but is applied after the layout pass is complete.</span></span> <span data-ttu-id="9528f-184">使用して、<xref:System.Windows.UIElement.RenderTransform%2A>プロパティの代わりに、<xref:System.Windows.FrameworkElement.LayoutTransform%2A>プロパティ、パフォーマンス上の利点を取得することができます。</span><span class="sxs-lookup"><span data-stu-id="9528f-184">By using the <xref:System.Windows.UIElement.RenderTransform%2A> property instead of the <xref:System.Windows.FrameworkElement.LayoutTransform%2A> property, you can obtain performance benefits.</span></span>  
   
- どちらのプロパティを使用すればよいでしょうか。  パフォーマンスを向上させるために、可能な場合 \(特にアニメーション化された <xref:System.Windows.Media.Transform> オブジェクトを使用する場合\) は必ず、<xref:System.Windows.UIElement.RenderTransform%2A> プロパティを使用してください。  拡大縮小、回転、または傾斜を行うときに、要素の変換後のサイズに合わせるために要素の親が必要になる場合は、<xref:System.Windows.FrameworkElement.LayoutTransform%2A> プロパティを使用します。  <xref:System.Windows.FrameworkElement.LayoutTransform%2A> プロパティと共に使用した場合、<xref:System.Windows.Media.TranslateTransform> オブジェクトは、要素に影響していないように見えます。  これは、レイアウト システムが処理の一部として平行移動された要素を元の位置に戻すためです。  
+ <span data-ttu-id="9528f-185">どちらのプロパティを使用すればよいのでしょうか。</span><span class="sxs-lookup"><span data-stu-id="9528f-185">Which property should you use?</span></span> <span data-ttu-id="9528f-186">提供されるパフォーマンス上の利点、によりを使用して、<xref:System.Windows.UIElement.RenderTransform%2A>プロパティを使用する場合は特に、可能なアニメーション処理されるたびに<xref:System.Windows.Media.Transform>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9528f-186">Because of the performance benefits that it provides, use the <xref:System.Windows.UIElement.RenderTransform%2A> property whenever possible, especially when you use animated <xref:System.Windows.Media.Transform> objects.</span></span> <span data-ttu-id="9528f-187">使用して、<xref:System.Windows.FrameworkElement.LayoutTransform%2A>プロパティ拡大縮小、回転、または傾斜場合必要がある要素の変換後のサイズを調整する要素の親です。</span><span class="sxs-lookup"><span data-stu-id="9528f-187">Use the <xref:System.Windows.FrameworkElement.LayoutTransform%2A> property when scaling, rotating, or skewing and you need the  parent of the element to adjust to the transformed size of the element.</span></span> <span data-ttu-id="9528f-188">なおで使用している場合、<xref:System.Windows.FrameworkElement.LayoutTransform%2A>プロパティ、<xref:System.Windows.Media.TranslateTransform>要素への影響がないオブジェクトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9528f-188">Note that, when they are used with the <xref:System.Windows.FrameworkElement.LayoutTransform%2A> property, <xref:System.Windows.Media.TranslateTransform> objects appear to have no effect on elements.</span></span> <span data-ttu-id="9528f-189">これは、レイアウト システムがその処理の一環として、変換後の要素を元の位置に返すためです。</span><span class="sxs-lookup"><span data-stu-id="9528f-189">That is because the layout system returns the translated element to its original position as part of its processing.</span></span>  
   
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のレイアウトの詳細については、「[レイアウト](../../../../docs/framework/wpf/advanced/layout.md)」の概要を参照してください。  
+ <span data-ttu-id="9528f-190">[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] でのレイアウトに関する追加情報については、[レイアウト](../../../../docs/framework/wpf/advanced/layout.md)の概要をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9528f-190">For additional information about layout in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], see [Layout](../../../../docs/framework/wpf/advanced/layout.md) overview.</span></span>  
   
 <a name="exampleRotateAnElement45degSection"></a>   
-## 例 : FrameworkElement を 45°回転する  
- 次の例では、<xref:System.Windows.Media.RotateTransform> を使用して、ボタンを時計回りに 45°回転します。  このボタンは、他にも 2 つのボタンを持つ <xref:System.Windows.Controls.StackPanel> 内に存在します。  
+## <a name="example-rotate-a-frameworkelement-45-degrees"></a><span data-ttu-id="9528f-191">例: FrameworkElement を 45 度回転させる</span><span class="sxs-lookup"><span data-stu-id="9528f-191">Example: Rotate a FrameworkElement 45 Degrees</span></span>  
+ <span data-ttu-id="9528f-192">次の例では、<xref:System.Windows.Media.RotateTransform>を時計回りにボタンを 45 度回転させます。</span><span class="sxs-lookup"><span data-stu-id="9528f-192">The following example uses a <xref:System.Windows.Media.RotateTransform> to rotate a button clockwise by 45 degrees.</span></span> <span data-ttu-id="9528f-193">ボタンが含まれている、<xref:System.Windows.Controls.StackPanel>を持つ他の 2 つのボタンです。</span><span class="sxs-lookup"><span data-stu-id="9528f-193">The button is contained in a <xref:System.Windows.Controls.StackPanel> that has two other buttons.</span></span>  
   
- 既定では、<xref:System.Windows.Media.RotateTransform> は点 \(0,0\) を中心として回転します。  この例では中心の値を指定しないため、ボタンはその左上隅の点 \(0, 0\) を中心として回転します。  <xref:System.Windows.Media.RotateTransform> は、<xref:System.Windows.UIElement.RenderTransform%2A> プロパティに適用されます。  変換の結果を次の図に示します。  
+ <span data-ttu-id="9528f-194">既定では、 <xref:System.Windows.Media.RotateTransform> (0, 0) のポイントを中心として回転します。</span><span class="sxs-lookup"><span data-stu-id="9528f-194">By default, a <xref:System.Windows.Media.RotateTransform> rotates about the point (0, 0).</span></span> <span data-ttu-id="9528f-195">この例では中心の値を指定していないので、ボタンは左上隅のポイント (0, 0) を軸に回転します。</span><span class="sxs-lookup"><span data-stu-id="9528f-195">Because the example does not specify a center value, the button rotates about the point (0, 0), which is its upper-left corner.</span></span> <span data-ttu-id="9528f-196"><xref:System.Windows.Media.RotateTransform>に適用される、<xref:System.Windows.UIElement.RenderTransform%2A>プロパティです。</span><span class="sxs-lookup"><span data-stu-id="9528f-196">The <xref:System.Windows.Media.RotateTransform> is applied to the <xref:System.Windows.UIElement.RenderTransform%2A> property.</span></span> <span data-ttu-id="9528f-197">次の図は、変換の結果を示したものです。</span><span class="sxs-lookup"><span data-stu-id="9528f-197">The following illustration shows the result of the transformation.</span></span>  
   
- ![RenderTransform を使用して変換されたボタン](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformwithdefaultcenter.png "graphicsmm\_RenderTransformWithDefaultCenter")  
-左上隅から時計回りに 45°回転  
+ <span data-ttu-id="9528f-198">![RenderTransform を使用して変換されたボタン](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformwithdefaultcenter.png "graphicsmm_RenderTransformWithDefaultCenter")</span><span class="sxs-lookup"><span data-stu-id="9528f-198">![A button transformed using RenderTransform](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformwithdefaultcenter.png "graphicsmm_RenderTransformWithDefaultCenter")</span></span>  
+<span data-ttu-id="9528f-199">左上隅を軸とした、時計回り 45 度の回転</span><span class="sxs-lookup"><span data-stu-id="9528f-199">Clockwise rotation 45 degrees from upper-left corner</span></span>  
   
- [!code-xml[Transforms_snip#GraphicsMMRotateButtonExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonRotateTransformExample.xaml#graphicsmmrotatebuttonexample1)]  
+ [!code-xaml[Transforms_snip#GraphicsMMRotateButtonExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonRotateTransformExample.xaml#graphicsmmrotatebuttonexample1)]  
   
- 次の例でも <xref:System.Windows.Media.RotateTransform> を使用してボタンを時計回りに 45 度回転していますが、ボタンの <xref:System.Windows.UIElement.RenderTransformOrigin%2A> を \(0.5, 0.5\) にも設定しています。  <xref:System.Windows.UIElement.RenderTransformOrigin%2A> プロパティの値は、ボタンのサイズに対して相対的です。  その結果、回転はボタンの左上隅ではなく中心に適用されます。  変換の結果を次の図に示します。  
+ <span data-ttu-id="9528f-200">次の例を使用しても、<xref:System.Windows.Media.RotateTransform>もボタン、時計回りに 45 度が、それを回転する設定、<xref:System.Windows.UIElement.RenderTransformOrigin%2A>するボタンの (0.5, 0.5) です。</span><span class="sxs-lookup"><span data-stu-id="9528f-200">The next example also uses a <xref:System.Windows.Media.RotateTransform> to rotate a button 45 degrees clockwise, but it also sets the <xref:System.Windows.UIElement.RenderTransformOrigin%2A> of the button to (0.5, 0.5).</span></span> <span data-ttu-id="9528f-201">値、<xref:System.Windows.UIElement.RenderTransformOrigin%2A>プロパティは、ボタンのサイズに比べて、します。</span><span class="sxs-lookup"><span data-stu-id="9528f-201">The value of the <xref:System.Windows.UIElement.RenderTransformOrigin%2A> property is relative to the size of the button.</span></span> <span data-ttu-id="9528f-202">その結果、回転は左上隅ではなく、ボタンの中心に適用されています。</span><span class="sxs-lookup"><span data-stu-id="9528f-202">As a result, the rotation is applied to the center of the button, instead of its upper-left corner.</span></span> <span data-ttu-id="9528f-203">次の図は、変換の結果を示したものです。</span><span class="sxs-lookup"><span data-stu-id="9528f-203">The following illustration shows the result of the transformation.</span></span>  
   
- ![中心の周りで変換されたボタン](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformrelativecenter.png "graphicsmm\_RenderTransformRelativeCenter")  
-中心を軸に時計回りに 45°回転  
+ <span data-ttu-id="9528f-204">![中心の周りで変換されたボタン](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformrelativecenter.png "graphicsmm_RenderTransformRelativeCenter")</span><span class="sxs-lookup"><span data-stu-id="9528f-204">![A button transformed about its center](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rendertransformrelativecenter.png "graphicsmm_RenderTransformRelativeCenter")</span></span>  
+<span data-ttu-id="9528f-205">中心を軸とした、時計回り 45 度の回転</span><span class="sxs-lookup"><span data-stu-id="9528f-205">Clockwise rotation 45 degrees around center</span></span>  
   
- [!code-xml[Transforms_snip#GraphicsMMRotateButtonExample2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonRotateTransformExample.xaml#graphicsmmrotatebuttonexample2)]  
+ [!code-xaml[Transforms_snip#GraphicsMMRotateButtonExample2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonRotateTransformExample.xaml#graphicsmmrotatebuttonexample2)]  
   
- <xref:System.Windows.UIElement.RenderTransform%2A> プロパティの代わりに <xref:System.Windows.FrameworkElement.LayoutTransform%2A> プロパティを使用して、ボタンを回転する例を次に示します。  これにより、変換がボタンのレイアウトに影響し、レイアウト システムで完全パスをトリガーします。  ボタンはサイズが変更されたため、結果として回転し位置が変わります。  変換の結果を次の図に示します。  
+ <span data-ttu-id="9528f-206">次の例では、<xref:System.Windows.FrameworkElement.LayoutTransform%2A>プロパティの代わりに、<xref:System.Windows.UIElement.RenderTransform%2A>ボタンを回転するプロパティです。</span><span class="sxs-lookup"><span data-stu-id="9528f-206">The following example uses the <xref:System.Windows.FrameworkElement.LayoutTransform%2A> property instead of the <xref:System.Windows.UIElement.RenderTransform%2A> property to rotate the button.</span></span>  <span data-ttu-id="9528f-207">そのため、変換がボタンのレイアウトに影響し、レイアウト システムによるフル パスがトリガーされています。</span><span class="sxs-lookup"><span data-stu-id="9528f-207">This causes the transformation to affect the layout of the button, which triggers a full pass by the layout system.</span></span> <span data-ttu-id="9528f-208">その結果、ボタンが回転された後、位置が変更されています。これは、サイズが変更されたためです。</span><span class="sxs-lookup"><span data-stu-id="9528f-208">As a result, the button is rotated and then repositioned because its size has changed.</span></span> <span data-ttu-id="9528f-209">次の図は、変換の結果を示したものです。</span><span class="sxs-lookup"><span data-stu-id="9528f-209">The following illustration shows the result of the transformation.</span></span>  
   
- ![LayoutTransform を使用して変換されたボタン](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-layouttransform.png "graphicsmm\_LayoutTransform")  
-LayoutTransform を使用したボタンの回転  
+ <span data-ttu-id="9528f-210">![LayoutTransform を使用して変換されたボタン](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-layouttransform.png "graphicsmm_LayoutTransform")</span><span class="sxs-lookup"><span data-stu-id="9528f-210">![A button transformed using LayoutTransform](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-layouttransform.png "graphicsmm_LayoutTransform")</span></span>  
+<span data-ttu-id="9528f-211">LayoutTransform を使用したボタンの回転</span><span class="sxs-lookup"><span data-stu-id="9528f-211">LayoutTransform used to rotate the button</span></span>  
   
- [!code-xml[Transforms_snip#GraphicsMMRotateButtonExample3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonRotateTransformExample.xaml#graphicsmmrotatebuttonexample3)]  
+ [!code-xaml[Transforms_snip#GraphicsMMRotateButtonExample3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonRotateTransformExample.xaml#graphicsmmrotatebuttonexample3)]  
   
 <a name="animate_transforms"></a>   
-## 変換のアニメーション化  
- <xref:System.Windows.Media.Transform> クラスは、<xref:System.Windows.Media.Animation.Animatable> を継承するため、アニメーション化することができます。  <xref:System.Windows.Media.Transform> をアニメーション化するには、互換性のある種類のアニメーションをアニメーション化するプロパティに適用します。  
+## <a name="animating-transformations"></a><span data-ttu-id="9528f-212">変換のアニメーション化</span><span class="sxs-lookup"><span data-stu-id="9528f-212">Animating Transformations</span></span>  
+ <span data-ttu-id="9528f-213">継承するため、<xref:System.Windows.Media.Animation.Animatable>クラス、<xref:System.Windows.Media.Transform>クラスをアニメーション化します。</span><span class="sxs-lookup"><span data-stu-id="9528f-213">Because they inherit from the <xref:System.Windows.Media.Animation.Animatable> class, the <xref:System.Windows.Media.Transform> classes can be animated.</span></span> <span data-ttu-id="9528f-214">アニメーション化する、 <xref:System.Windows.Media.Transform>、互換性のある型を示すアニメーションをアニメーション化するプロパティに適用します。</span><span class="sxs-lookup"><span data-stu-id="9528f-214">To animate a <xref:System.Windows.Media.Transform>, apply an animation of a compatible type to the property you want to animate.</span></span>  
   
- 次の例では、<xref:System.Windows.Media.Animation.Storyboard> と <xref:System.Windows.Media.Animation.DoubleAnimation> を、<xref:System.Windows.Media.RotateTransform> で使用して、<xref:System.Windows.Controls.Button> がクリックされたときにその場で回転させます。  
+ <span data-ttu-id="9528f-215">次の例では、<xref:System.Windows.Media.Animation.Storyboard>と<xref:System.Windows.Media.Animation.DoubleAnimation>で、<xref:System.Windows.Media.RotateTransform>させる、<xref:System.Windows.Controls.Button>スピンがクリックされたときにします。</span><span class="sxs-lookup"><span data-stu-id="9528f-215">The following example uses a <xref:System.Windows.Media.Animation.Storyboard> and a <xref:System.Windows.Media.Animation.DoubleAnimation> with a <xref:System.Windows.Media.RotateTransform> to make a <xref:System.Windows.Controls.Button> spin in place when it is clicked.</span></span>  
   
- [!code-xml[Transforms_snip#GraphicsMMAnimatedRotateButtonExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonAnimatedRotateTransformExample.xaml#graphicsmmanimatedrotatebuttonexamplewholepage)]  
+ [!code-xaml[Transforms_snip#GraphicsMMAnimatedRotateButtonExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonAnimatedRotateTransformExample.xaml#graphicsmmanimatedrotatebuttonexamplewholepage)]  
   
- サンプル全体については、[2\-D 変換のサンプル](http://go.microsoft.com/fwlink/?LinkID=158252)を参照してください。  アニメーションの詳細については、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」を参照してください。  
+ <span data-ttu-id="9528f-216">完全なサンプルについては、「[2-D 変換のサンプル](http://go.microsoft.com/fwlink/?LinkID=158252)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9528f-216">For the complete sample, see [2-D Transforms Sample](http://go.microsoft.com/fwlink/?LinkID=158252).</span></span> <span data-ttu-id="9528f-217">アニメーション化について詳しくは、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9528f-217">For more information about animations, see the [Animation Overview](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).</span></span>  
   
 <a name="freezable_features"></a>   
-## Freezable の機能  
- <xref:System.Windows.Media.Transform> クラスは <xref:System.Windows.Freezable> クラスを継承しているため、<xref:System.Windows.Media.Transform> オブジェクトの[リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)としての宣言、複数のオブジェクトでの共有、読み取り専用に設定することによるパフォーマンスの向上、複製、スレッド セーフの設定など、特殊な機能を備えています。  <xref:System.Windows.Freezable> オブジェクトのさまざまな機能の詳細については、「[Freezable オブジェクトの概要](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)」を参照してください。  
+## <a name="freezable-features"></a><span data-ttu-id="9528f-218">Freezable 機能</span><span class="sxs-lookup"><span data-stu-id="9528f-218">Freezable Features</span></span>  
+ <span data-ttu-id="9528f-219">継承しているため、<xref:System.Windows.Freezable>クラス、<xref:System.Windows.Media.Transform>クラスがいくつかの特別な機能を提供:<xref:System.Windows.Media.Transform>オブジェクトとして宣言できます[リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)を向上させるのには読み取り専用に、複数のオブジェクト間で共有パフォーマンスが複製され、スレッド セーフです。</span><span class="sxs-lookup"><span data-stu-id="9528f-219">Because it inherits from the <xref:System.Windows.Freezable> class, the <xref:System.Windows.Media.Transform> class  provide several special features: <xref:System.Windows.Media.Transform> objects can be declared as [resources](../../../../docs/framework/wpf/advanced/xaml-resources.md), shared among multiple objects, made read-only to improve performance, cloned, and made thread-safe.</span></span> <span data-ttu-id="9528f-220">によって提供されるさまざまな機能の詳細については<xref:System.Windows.Freezable>、オブジェクトを参照してください、 [Freezable オブジェクトの概要](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)です。</span><span class="sxs-lookup"><span data-stu-id="9528f-220">For more information about the different features that are provided by <xref:System.Windows.Freezable> objects, see the [Freezable Objects Overview](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md).</span></span>  
   
-## 参照  
- <xref:System.Windows.Media.Transform>   
- <xref:System.Windows.Media.Matrix>   
- [方法のトピック](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)   
- [2\-D 変換のサンプル](http://go.microsoft.com/fwlink/?LinkID=158252)
+## <a name="see-also"></a><span data-ttu-id="9528f-221">関連項目</span><span class="sxs-lookup"><span data-stu-id="9528f-221">See Also</span></span>  
+ <xref:System.Windows.Media.Transform>  
+ <xref:System.Windows.Media.Matrix>  
+ [<span data-ttu-id="9528f-222">方法トピック</span><span class="sxs-lookup"><span data-stu-id="9528f-222">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)  
+ [<span data-ttu-id="9528f-223">2-D 変換のサンプル</span><span class="sxs-lookup"><span data-stu-id="9528f-223">2-D Transforms Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=158252)

@@ -1,224 +1,209 @@
 ---
-title: "依存関係プロパティの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "添付プロパティ"
-  - "データ バインディング"
-  - "依存関係プロパティ"
-  - "プロパティ, 添付"
-  - "プロパティ, 概要"
-  - "リソース, 参照"
-  - "スタイル"
+title: "依存関係プロパティの概要"
+description: "WPF プロパティ システムでバックアップされているプロパティは、依存関係プロパティと呼ばれます。 この概要では、WPF プロパティ システムと依存関係プロパティの機能について説明します。"
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.technology: dotnet-wpf
+ms.topic: article
+dev_langs:
+- csharp
+- vb
+helpviewer_keywords:
+- properties [WPF], attached
+- properties [WPF], overview
+- styles [WPF]
+- attached properties [WPF]
+- data binding [WPF]
+- dependency properties [WPF]
+- resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-caps.latest.revision: 30
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 29
+caps.latest.revision: "30"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: aa1ad02de74cc73ea67267de7548442078a2f5db
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 依存関係プロパティの概要
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] プロパティの機能を拡張するために使用できる一連のサービスが用意されています。  通常、これらのサービスをまとめて [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムと呼びます。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムによってサポートされるプロパティは、[依存関係プロパティ](GTMT)と呼ばれています。ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムについて、および[依存関係プロパティ](GTMT)の機能について説明します。この説明では、既存の[依存関係プロパティ](GTMT)を XAML およびコードで使用する方法を示します。  また、依存関係プロパティ メタデータなどの依存関係プロパティの特殊な側面や、カスタム クラスで独自の依存関係プロパティを作成する方法についても説明します。  
+# <a name="dependency-properties-overview"></a><span data-ttu-id="a0f29-104">依存関係プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="a0f29-104">Dependency properties overview</span></span>
+
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="a0f29-105"> には、[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] プロパティの機能を拡張するために使用できる一連のサービスが用意されています。</span><span class="sxs-lookup"><span data-stu-id="a0f29-105"> provides a set of services that can be used to extend the functionality of a [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] property.</span></span> <span data-ttu-id="a0f29-106">通常、これらのサービスをまとめて [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムと呼びます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-106">Collectively, these services are typically referred to as the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] property system.</span></span> <span data-ttu-id="a0f29-107">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムによって使用されるプロパティは、依存関係プロパティと呼ばれています。</span><span class="sxs-lookup"><span data-stu-id="a0f29-107">A property that is backed by the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] property system is known as a dependency property.</span></span> <span data-ttu-id="a0f29-108">ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムと、依存関係プロパティの機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-108">This overview describes the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] property system and the capabilities of a dependency property.</span></span> <span data-ttu-id="a0f29-109">この説明では、既存の依存関係プロパティを XAML およびコードで使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-109">This includes how to use existing dependency properties in XAML and in code.</span></span> <span data-ttu-id="a0f29-110">また、依存関係プロパティ メタデータなどの依存関係プロパティの特殊な側面や、カスタム クラスで独自の依存関係プロパティを作成する方法についても説明します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-110">This overview also introduces specialized aspects of dependency properties, such as dependency property metadata, and how to create your own dependency property in a custom class.</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="a0f29-111">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="a0f29-111">Prerequisites</span></span>
+<span data-ttu-id="a0f29-112">ここでは、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] およびオブジェクト指向プログラミングに関する基礎知識があることを前提にしています。</span><span class="sxs-lookup"><span data-stu-id="a0f29-112">This topic assumes that you have some basic knowledge of the [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] and object-oriented programming.</span></span> <span data-ttu-id="a0f29-113">このトピックの例を理解するには、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] について理解し、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションの作成方法に精通している必要があります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-113">In order to follow the examples in this topic, you should also understand [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] and know how to write [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications.</span></span> <span data-ttu-id="a0f29-114">詳細については、次を参照してください。[チュートリアル: 最初の WPF デスクトップ アプリケーション](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-114">For more information, see [Walkthrough: My first WPF desktop application](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).</span></span>  
   
-   
+## <a name="dependency-properties-and-clr-properties"></a><span data-ttu-id="a0f29-115">依存関係プロパティと CLR プロパティ</span><span class="sxs-lookup"><span data-stu-id="a0f29-115">Dependency properties and CLR properties</span></span>
+ <span data-ttu-id="a0f29-116">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では通常、プロパティは[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] プロパティとして公開されます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-116">In [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], properties are typically exposed as [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] properties.</span></span> <span data-ttu-id="a0f29-117">基本的なレベルでは、これらのプロパティと直接対話でき、これらのプロパティが依存関係として実装されることを認識することはありません。</span><span class="sxs-lookup"><span data-stu-id="a0f29-117">At a basic level, you could interact with these properties directly and never know that they are implemented as a dependency property.</span></span> <span data-ttu-id="a0f29-118">ただし、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムの一部またはすべての機能を利用できるように、これらの機能に精通しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-118">However, you should become familiar with some or all of the features of the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] property system, so that you can take advantage of these features.</span></span>
+
+<span data-ttu-id="a0f29-119">依存関係プロパティの目的は、他の入力の値に基づいてプロパティの値を計算する方法を提供することです。</span><span class="sxs-lookup"><span data-stu-id="a0f29-119">The purpose of dependency properties is to provide a way to compute the value of a property based on the value of other inputs.</span></span> <span data-ttu-id="a0f29-120">他の入力には、テーマやユーザー設定などのシステム プロパティ、データ バインディングやアニメーション/ストーリーボードなどのジャスト イン タイム プロパティ判定機構、リソースやスタイルなどの多目的のテンプレート、要素ツリー内の他の要素との親子のリレーションシップから判断される値などがあります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-120">These other inputs might include system properties such as themes and user preference, just-in-time property determination mechanisms such as data binding and animations/storyboards, multiple-use templates such as resources and styles, or values known through parent-child relationships with other elements in the element tree.</span></span> <span data-ttu-id="a0f29-121">また、依存関係プロパティを実装して、自己完結型の検証、既定値、他のプロパティに対する変更を監視するコールバック、およびランタイム情報の可能性がある情報に基づいてプロパティ値を強制するシステムを提供できます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-121">In addition, a dependency property can be implemented to provide self-contained validation, default values, callbacks that monitor changes to other properties, and a system that can coerce property values based on potentially runtime information.</span></span> <span data-ttu-id="a0f29-122">既存のプロパティの実際の実装をオーバーライドしたり新しいプロパティを作成したりするのではなく、依存関係プロパティ メタデータをオーバーライドすることによって、派生クラスで既存のプロパティの特定の特性を変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-122">Derived classes can also change some specific characteristics of an existing property by overriding dependency property metadata, rather than overriding the actual implementation of existing properties or creating new properties.</span></span>
+
+<span data-ttu-id="a0f29-123">SDK リファレンスで、プロパティのマネージ リファレンス ページの「依存関係プロパティの情報」セクションの有無によって、どのプロパティが依存関係プロパティかを特定できます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-123">In the SDK reference, you can identify which property is a dependency property by the presence of the Dependency Property Information section on the managed reference page for that property.</span></span> <span data-ttu-id="a0f29-124">依存プロパティ情報セクションにはへのリンクが含まれています、<xref:System.Windows.DependencyProperty>識別子は、その依存関係プロパティのフィールドし、そのプロパティ、クラスごとの上書きについては、およびその他の詳細に設定されているメタデータ オプションの一覧があります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-124">The Dependency Property Information section includes a link to the <xref:System.Windows.DependencyProperty> identifier field for that dependency property, and also includes a list of the metadata options that are set for that property, per-class override information, and other details.</span></span>
+
+## <a name="dependency-properties-back-clr-properties"></a><span data-ttu-id="a0f29-125">依存関係プロパティのバックアップ CLR プロパティ</span><span class="sxs-lookup"><span data-stu-id="a0f29-125">Dependency properties back CLR properties</span></span>
+<span data-ttu-id="a0f29-126">依存関係プロパティおよび [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムは、プライベート フィールドでプロパティをサポートする標準パターンの代替実装として、プロパティをサポートする型を提供することによって、プロパティ機能を拡張します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-126">Dependency properties and the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] property system extend property functionality by providing a type that backs a property, as an alternative implementation to the standard pattern of backing the property with a private field.</span></span> <span data-ttu-id="a0f29-127">この種類の名前は<xref:System.Windows.DependencyProperty>します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-127">The name of this type is <xref:System.Windows.DependencyProperty>.</span></span> <span data-ttu-id="a0f29-128">定義するその他の重要な型、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]プロパティ システム<xref:System.Windows.DependencyObject>です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-128">The other important type that defines the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] property system is <xref:System.Windows.DependencyObject>.</span></span> <span data-ttu-id="a0f29-129"><xref:System.Windows.DependencyObject>登録および依存関係プロパティを所有できる基本クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-129"><xref:System.Windows.DependencyObject> defines the base class that can register and own a dependency property.</span></span>
+
+<span data-ttu-id="a0f29-130">依存関係プロパティについて説明するときにこの [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] ドキュメントで使用する用語の概要を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-130">Following is a summation of the terminology that is used in this [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] documentation when discussing dependency properties:</span></span>
+
+- <span data-ttu-id="a0f29-131">**依存関係プロパティ:**補助されているプロパティ、<xref:System.Windows.DependencyProperty>です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-131">**Dependency property:** A property that is backed by a <xref:System.Windows.DependencyProperty>.</span></span>
+
+- <span data-ttu-id="a0f29-132">**依存関係プロパティの識別子:** A<xref:System.Windows.DependencyProperty>依存関係プロパティを登録するときに、戻り値として取得され、クラスの静的メンバーとして格納されているインスタンス。</span><span class="sxs-lookup"><span data-stu-id="a0f29-132">**Dependency property identifier:** A <xref:System.Windows.DependencyProperty> instance, which is obtained as a return value when registering a dependency property, and then stored as a static member of a class.</span></span> <span data-ttu-id="a0f29-133">この識別子は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムと対話する多くの [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] でパラメーターとして使用されます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-133">This identifier is used as a parameter for many of the [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] that interact with the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] property system.</span></span>
+
+- <span data-ttu-id="a0f29-134">**CLR "ラッパー":** プロパティの実際の get および set 実装。</span><span class="sxs-lookup"><span data-stu-id="a0f29-134">**CLR "wrapper":** The actual get and set implementations for the property.</span></span> <span data-ttu-id="a0f29-135">これらの実装では、依存関係プロパティの識別子を組み込むでそれを使用して、<xref:System.Windows.DependencyObject.GetValue%2A>と<xref:System.Windows.DependencyObject.SetValue%2A>のプロパティを使用して、バックアップを提供するための呼び出し、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]プロパティ システムです。</span><span class="sxs-lookup"><span data-stu-id="a0f29-135">These implementations incorporate the dependency property identifier by using it in the <xref:System.Windows.DependencyObject.GetValue%2A> and <xref:System.Windows.DependencyObject.SetValue%2A> calls, thus providing the backing for the property using the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] property system.</span></span>
+
+<span data-ttu-id="a0f29-136">次の例、`IsSpinning`依存関係プロパティの関係を示し、<xref:System.Windows.DependencyProperty>バックアップ プロパティの識別子。</span><span class="sxs-lookup"><span data-stu-id="a0f29-136">The following example defines the `IsSpinning` dependency property, and shows the relationship of the <xref:System.Windows.DependencyProperty> identifier to the property that it backs.</span></span>
+
+[!code-csharp[PropertiesOvwSupport#DPFormBasic](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#dpformbasic)]
+[!code-vb[PropertiesOvwSupport#DPFormBasic](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#dpformbasic)]  
   
-<a name="prerequisites"></a>   
-## 必要条件  
- ここでは、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] およびオブジェクト指向プログラミングに関する基礎知識があることを前提にしています。  このトピックの例に従うには、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] について理解し、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションの作成方法に精通している必要があります。  詳細については、「[チュートリアル: WPF の概要](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)」を参照してください。  
-  
-<a name="why_dependency_properties"></a>   
-## 依存関係プロパティおよび CLR プロパティ  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では通常、プロパティは[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] プロパティとして公開されます。  基本的なレベルでは、これらのプロパティと直接対話でき、これらのプロパティが[依存関係](GTMT)として実装されることを認識することはありません。  ただし、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムの一部またはすべての機能を利用できるように、これらの機能に精通しておく必要があります。  
-  
- [依存関係プロパティ](GTMT)の目的は、他の入力の値に基づいてプロパティの値を計算する方法を提供することです。  他の入力には、テーマやユーザー設定などのシステム プロパティ、データ バインディングやアニメーション\/ストーリーボードなどのジャスト イン タイム プロパティ判定機構、リソースやスタイルなどの多目的のテンプレート、要素ツリー内の他の要素との親子のリレーションシップから判断される値などがあります。  また、[依存関係プロパティ](GTMT)を実装して、自己完結型の検証、既定値、他のプロパティに対する変更を監視するコールバック、およびランタイム情報の可能性がある情報に基づいてプロパティ値を強制するシステムを提供できます。  既存のプロパティの実際の実装をオーバーライドしたり新しいプロパティを作成したりするのではなく、依存関係プロパティ メタデータをオーバーライドすることによって、派生クラスで既存のプロパティの特定の特性を変更することもできます。  
-  
- SDK リファレンスで、プロパティのマネージ リファレンス ページの「依存関係プロパティの情報」セクションの有無によって、どのプロパティが依存関係プロパティかを特定できます。  「依存関係プロパティの情報」セクションにはその依存関係プロパティの <xref:System.Windows.DependencyProperty> 識別子フィールドへのリンクがあり、そのプロパティに設定されるメタデータ オプションのリスト、クラスごとのオーバーライド情報、およびその他の詳細も示されています。  
-  
-<a name="back_dependency_properties"></a>   
-## 依存関係プロパティによる CLR プロパティの補足  
- [依存関係プロパティ](GTMT)および [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムは、プライベート フィールドでプロパティをサポートする標準パターンの代替実装として、プロパティをサポートする型を提供することによって、プロパティ機能を拡張します。  この型の名前は <xref:System.Windows.DependencyProperty> です。  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムを定義するもう 1 つの重要な型は <xref:System.Windows.DependencyObject> です。<xref:System.Windows.DependencyObject> は、[依存関係プロパティ](GTMT)を登録および所有できる基本クラスを定義します。  
-  
- [依存関係プロパティ](GTMT)について説明するときにこの[!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] ドキュメントで使用する用語の概要を次に示します。  
-  
--   **依存関係プロパティ** : <xref:System.Windows.DependencyProperty> によってサポートされるプロパティ。  
-  
--   **依存関係プロパティの識別子**: [依存関係プロパティ](GTMT)の登録時に戻り値として取得され、クラスの静的メンバーとして格納される <xref:System.Windows.DependencyProperty> インスタンス。  この識別子は、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムと対話する多くの [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] でパラメーターとして使用されます。  
-  
--   **CLR "ラッパー"** : プロパティの実際の get および set 実装。  これらの実装は、依存関係プロパティの識別子を <xref:System.Windows.DependencyObject.GetValue%2A> および <xref:System.Windows.DependencyObject.SetValue%2A> の呼び出しで使用し、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムを使用してプロパティの補足を提供することによって、その識別子を組み込みます。  
-  
- 次の例では、`IsSpinning` [依存関係プロパティ](GTMT)を定義し、<xref:System.Windows.DependencyProperty> 識別子とサポートされるプロパティの関係を示します。  
-  
- [!code-csharp[PropertiesOvwSupport#DPFormBasic](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#dpformbasic)]
- [!code-vb[PropertiesOvwSupport#DPFormBasic](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#dpformbasic)]  
-[!code-csharp[PropertiesOvwSupport#DPFormBasic2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#dpformbasic2)]  
-  
- プロパティとそれを補足する <xref:System.Windows.DependencyProperty> フィールドの名前付け規則は重要です。  フィールドの名前は常にプロパティの名前であり、サフィックス `Property` が追加されます。  この規則とその理由の詳細については、「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」を参照してください。  
-  
-<a name="setting_property_values"></a>   
-## プロパティ値の設定  
- コードまたは XAML でプロパティを設定できます。  
-  
-<a name="local_property_values"></a>   
-### XAML でのプロパティ値の設定  
- ボタンの背景色を赤に指定する方法を次の XAML の例に示します。  この例では、生成されたコードで XAML 属性の単純な文字列値が WPF XAML パーサーによって [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 型 \(<xref:System.Windows.Media.SolidColorBrush> を使用した <xref:System.Windows.Media.Color>\) に型変換される場合を示します。  
-  
- [!code-xml[PropertiesOvwSupport#MostBasicProperty](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml#mostbasicproperty)]  
-  
- XAML は、プロパティを設定するためのさまざまな構文形式をサポートします。  特定のプロパティに対してどの構文を使用するかは、プロパティで使用される値型、および型コンバーターの有無などのその他の要素によって決定されます。  プロパティ設定の XAML 構文の詳細については、「[XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)」および「[XAML 構文の詳細](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)」を参照してください。  
-  
- 属性以外の構文の例として、別のボタンの背景を次の XAML の例に示します。  今回は単純な純色を設定するのではなく、背景をイメージに設定し、そのイメージおよびそのイメージのソースを表す要素を、入れ子にした要素の属性として指定します。  これは、プロパティ要素構文の例です。  
-  
- [!code-xml[PropertiesOvwSupport#PESyntaxProperty](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml#pesyntaxproperty)]  
-  
-<a name="setting_properties_code"></a>   
-### コードでのプロパティの設定  
- [依存関係プロパティ](GTMT)の値をコードで設定するには、通常、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] "ラッパー" によって公開される set 実装を呼び出すだけで済みます。  
-  
- [!code-csharp[PropertiesOvwSupport#ProceduralPropertySet](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml.cs#proceduralpropertyset)]
- [!code-vb[PropertiesOvwSupport#ProceduralPropertySet](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page1.xaml.vb#proceduralpropertyset)]  
-  
- プロパティ値を取得する場合も、基本的に get "ラッパー" 実装を呼び出します。  
-  
- [!code-csharp[PropertiesOvwSupport#ProceduralPropertyGet](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml.cs#proceduralpropertyget)]
- [!code-vb[PropertiesOvwSupport#ProceduralPropertyGet](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page1.xaml.vb#proceduralpropertyget)]  
-  
- また、プロパティ システム [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] <xref:System.Windows.DependencyObject.GetValue%2A> および <xref:System.Windows.DependencyObject.SetValue%2A> を直接呼び出すこともできます。  これは通常、既存のプロパティを使用する場合は不要ですが \(ラッパーの方が便利で、開発者ツール用のより優れたプロパティが公開されます\)、[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] を直接呼び出す方法は、特定のシナリオに適しています。  
-  
- プロパティは、XAML で設定してから分離コードを介してコードでアクセスすることもできます。  詳細については、「[WPF における分離コードと XAML](../../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)」を参照してください。  
-  
-<a name="functionality"></a>   
-## 依存関係プロパティによって提供されるプロパティ機能  
- 依存関係プロパティは、フィールドによって補足されるプロパティとは対照的に、プロパティの機能を拡張する機能を提供します。  多くの場合、このような機能のそれぞれが、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 全体の機能セットの特定の機能を表したりサポートしたりします。  
-  
--   [リソース](#setting_properties_resources)  
-  
--   [データ バインディング](#setting_properties_data_binding)  
-  
--   [スタイル](#setting_properties_styles)  
-  
--   [アニメーション](#animations)  
-  
--   [メタデータのオーバーライド](#metadata)  
-  
--   [プロパティ値の継承](#setting_properties_inheritance)  
-  
--   [WPF デザイナーの統合](#vs2008_integration)  
-  
-<a name="setting_properties_resources"></a>   
-### リソース  
- 依存関係プロパティの値は、リソースを参照することによって設定できます。  リソースは通常、ページのルート要素またはアプリケーションの `Resources` プロパティ値として指定されます \(これらの場所を使用することが、リソースにアクセスするのに最も便利な方法です\)。  <xref:System.Windows.Media.SolidColorBrush> リソースを定義する方法を次の例に示します。  
-  
- [!code-xml[PropertiesOvwSupport#ResourcesResource](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page2.xaml#resourcesresource)]  
-  
- リソースを定義すると、リソースを参照し、そのリソースを使用してプロパティ値を指定できるようになります。  
-  
- [!code-xml[PropertiesOvwSupport#ResourcesReference](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page2.xaml#resourcesreference)]  
-  
- この特定のリソースは、[DynamicResource のマークアップ拡張機能](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md) として参照されます \(WPF XAML では、静的リソース参照または動的リソース参照を使用できます\)。  動的リソース参照を使用するには、依存関係プロパティに設定している必要があるため、これは具体的には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムによって有効になる動的リソース参照の使用方法になります。  詳細については、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
-  
+<span data-ttu-id="a0f29-137">プロパティとそのバックアップの名前付け規則<xref:System.Windows.DependencyProperty>フィールドが重要です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-137">The naming convention of the property and its backing <xref:System.Windows.DependencyProperty> field is important.</span></span> <span data-ttu-id="a0f29-138">フィールドの名前は常にプロパティの名前であり、サフィックス `Property` が追加されます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-138">The name of the field is always the name of the property, with the suffix `Property` appended.</span></span> <span data-ttu-id="a0f29-139">この規則とその理由の詳細については、「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-139">For more information about this convention and the reasons for it, see [Custom Dependency Properties](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md).</span></span>  
+
+## <a name="setting-property-values"></a><span data-ttu-id="a0f29-140">プロパティ値の設定</span><span class="sxs-lookup"><span data-stu-id="a0f29-140">Setting property values</span></span>
+<span data-ttu-id="a0f29-141">コードまたは XAML でプロパティを設定できます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-141">You can set properties either in code or in XAML.</span></span>
+
+### <a name="setting-property-values-in-xaml"></a><span data-ttu-id="a0f29-142">XAML のプロパティ値の設定</span><span class="sxs-lookup"><span data-stu-id="a0f29-142">Setting property values in XAML</span></span> 
+<span data-ttu-id="a0f29-143">ボタンの背景色を赤に指定する方法を次の XAML の例に示します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-143">The following XAML example specifies the background color of a button as red.</span></span> <span data-ttu-id="a0f29-144">この例は、XAML 属性の単純な文字列値がアクティビティで場合に、WPF XAML パーサーで型変換を示しています、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]型 (、 <xref:System.Windows.Media.Color>、によって、 <xref:System.Windows.Media.SolidColorBrush>) で生成されたコード。</span><span class="sxs-lookup"><span data-stu-id="a0f29-144">This example illustrates a case where the simple string value for a XAML attribute is type-converted by the WPF XAML parser into a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] type (a <xref:System.Windows.Media.Color>, by way of a <xref:System.Windows.Media.SolidColorBrush>) in the generated code.</span></span>
+
+[!code-xaml[PropertiesOvwSupport#MostBasicProperty](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml#mostbasicproperty)]
+
+<span data-ttu-id="a0f29-145">XAML は、プロパティを設定するためのさまざまな構文形式をサポートします。</span><span class="sxs-lookup"><span data-stu-id="a0f29-145">XAML supports a variety of syntax forms for setting properties.</span></span> <span data-ttu-id="a0f29-146">特定のプロパティに対してどの構文を使用するかは、プロパティで使用される値型、および型コンバーターの有無などのその他の要素によって決定されます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-146">Which syntax to use for a particular property will depend on the value type that a property uses, as well as other factors such as the presence of a type converter.</span></span> <span data-ttu-id="a0f29-147">プロパティ設定の XAML 構文の詳細については、「[XAML の概要 (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)」および「[XAML 構文の詳細](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-147">For more information on XAML syntax for property setting, see [XAML Overview (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) and [XAML Syntax In Detail](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).</span></span>
+
+<span data-ttu-id="a0f29-148">属性以外の構文の例として、別のボタンの背景を次の XAML の例に示します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-148">As an example of non-attribute syntax, the following XAML example shows another button background.</span></span> <span data-ttu-id="a0f29-149">今回は単純な純色を設定するのではなく、背景をイメージに設定し、そのイメージおよびそのイメージのソースを表す要素を、入れ子にした要素の属性として指定します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-149">This time rather than setting a simple solid color, the background is set to an image, with an element representing that image and the source of that image specified as an attribute of the nested element.</span></span> <span data-ttu-id="a0f29-150">これは、プロパティ要素構文の例です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-150">This is an example of property element syntax.</span></span>
+
+[!code-xaml[PropertiesOvwSupport#PESyntaxProperty](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml#pesyntaxproperty)]
+
+### <a name="setting-properties-in-code"></a><span data-ttu-id="a0f29-151">コードのプロパティの設定</span><span class="sxs-lookup"><span data-stu-id="a0f29-151">Setting properties in code</span></span>
+ <span data-ttu-id="a0f29-152">依存関係プロパティの値をコードで設定するには、通常、[!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] "ラッパー" によって公開される set 実装を呼び出すだけで済みます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-152">Setting dependency property values in code is typically just a call to the set implementation exposed by the [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] "wrapper".</span></span>
+
+[!code-csharp[PropertiesOvwSupport#ProceduralPropertySet](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml.cs#proceduralpropertyset)]
+[!code-vb[PropertiesOvwSupport#ProceduralPropertySet](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page1.xaml.vb#proceduralpropertyset)]
+
+<span data-ttu-id="a0f29-153">プロパティ値を取得する場合も、基本的に get "ラッパー" 実装を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-153">Getting a property value is also essentially a call to the get "wrapper" implementation:</span></span>
+
+[!code-csharp[PropertiesOvwSupport#ProceduralPropertyGet](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml.cs#proceduralpropertyget)]
+ [!code-vb[PropertiesOvwSupport#ProceduralPropertyGet](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page1.xaml.vb#proceduralpropertyget)]
+
+<span data-ttu-id="a0f29-154">プロパティのシステムを呼び出すこともできます[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]<xref:System.Windows.DependencyObject.GetValue%2A>と<xref:System.Windows.DependencyObject.SetValue%2A>直接です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-154">You can also call the property system [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] <xref:System.Windows.DependencyObject.GetValue%2A> and <xref:System.Windows.DependencyObject.SetValue%2A> directly.</span></span> <span data-ttu-id="a0f29-155">これは通常、既存のプロパティを使用する場合は不要ですが (ラッパーの方が便利で、開発者ツール用のより優れたプロパティが公開されます)、[!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] を直接呼び出す方法は、特定のシナリオに適しています。</span><span class="sxs-lookup"><span data-stu-id="a0f29-155">This is not typically necessary if you are using existing properties (the wrappers are more convenient, and provide better exposure of the property for developer tools), but calling the [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] directly is appropriate for certain scenarios.</span></span>
+
+<span data-ttu-id="a0f29-156">プロパティは、XAML で設定してから分離コードを介してコードでアクセスすることもできます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-156">Properties can be also set in XAML and then accessed later in code, through code-behind.</span></span> <span data-ttu-id="a0f29-157">詳細については、「[WPF における分離コードと XAML](../../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-157">For details, see [Code-Behind and XAML in WPF](../../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md).</span></span>
+
+## <a name="property-functionality-provided-by-a-dependency-property"></a><span data-ttu-id="a0f29-158">依存関係プロパティによって提供されるプロパティの機能</span><span class="sxs-lookup"><span data-stu-id="a0f29-158">Property functionality provided by a dependency property</span></span>
+<span data-ttu-id="a0f29-159">依存関係プロパティは、フィールドによって補足されるプロパティとは対照的に、プロパティの機能を拡張する機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-159">A dependency property provides functionality that extends the functionality of a property as opposed to a property that is backed by a field.</span></span> <span data-ttu-id="a0f29-160">多くの場合、このような機能のそれぞれが、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 全体の機能セットの特定の機能を表したりサポートしたりします。</span><span class="sxs-lookup"><span data-stu-id="a0f29-160">Often, each such functionality represents or supports a specific feature of the overall [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] set of features:</span></span>
+
+- [<span data-ttu-id="a0f29-161">リソース</span><span class="sxs-lookup"><span data-stu-id="a0f29-161">Resources</span></span>](#resources)
+
+- [<span data-ttu-id="a0f29-162">データ バインディング</span><span class="sxs-lookup"><span data-stu-id="a0f29-162">Data binding</span></span>](#data-binding)
+
+- [<span data-ttu-id="a0f29-163">スタイル</span><span class="sxs-lookup"><span data-stu-id="a0f29-163">Styles</span></span>](#styles)
+
+- [<span data-ttu-id="a0f29-164">アニメーション</span><span class="sxs-lookup"><span data-stu-id="a0f29-164">Animations</span></span>](#animations)
+
+- [<span data-ttu-id="a0f29-165">メタデータのオーバーライド</span><span class="sxs-lookup"><span data-stu-id="a0f29-165">Metadata overrides</span></span>](#metadata-overrides)
+
+- [<span data-ttu-id="a0f29-166">プロパティ値の継承</span><span class="sxs-lookup"><span data-stu-id="a0f29-166">Property value inheritance</span></span>](#property-value-inheritance)
+
+- [<span data-ttu-id="a0f29-167">WPF デザイナーの統合</span><span class="sxs-lookup"><span data-stu-id="a0f29-167">WPF Designer integration</span></span>](#wpf-designer-integration)
+
+### <a name="resources"></a><span data-ttu-id="a0f29-168">リソース</span><span class="sxs-lookup"><span data-stu-id="a0f29-168">Resources</span></span>
+<span data-ttu-id="a0f29-169">依存関係プロパティの値は、リソースを参照することによって設定できます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-169">A dependency property value can be set by referencing a resource.</span></span> <span data-ttu-id="a0f29-170">リソースは通常、ページのルート要素またはアプリケーションの `Resources` プロパティ値として指定されます (これらの場所を使用することが、リソースにアクセスするのに最も便利な方法です)。</span><span class="sxs-lookup"><span data-stu-id="a0f29-170">Resources are typically specified as the `Resources` property value of a page root element, or of the application (these locations enable the most convenient access to the resource).</span></span> <span data-ttu-id="a0f29-171">次の例は、定義する方法を示します、<xref:System.Windows.Media.SolidColorBrush>リソース。</span><span class="sxs-lookup"><span data-stu-id="a0f29-171">The following example shows how to define a <xref:System.Windows.Media.SolidColorBrush> resource.</span></span>
+
+[!code-xaml[PropertiesOvwSupport#ResourcesResource](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page2.xaml#resourcesresource)]
+
+<span data-ttu-id="a0f29-172">リソースを定義すると、リソースを参照し、そのリソースを使用してプロパティ値を指定できるようになります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-172">Once the resource is defined, you can reference the resource and use it to provide a property value:</span></span>
+
+[!code-xaml[PropertiesOvwSupport#ResourcesReference](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page2.xaml#resourcesreference)]
+
+<span data-ttu-id="a0f29-173">この特定のリソースは、[DynamicResource マークアップ拡張機能](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)として参照されます (WPF XAML では、静的リソース参照または動的リソース参照を使用できます)。</span><span class="sxs-lookup"><span data-stu-id="a0f29-173">This particular resource is referenced as a [DynamicResource Markup Extension](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md) (in WPF XAML, you can use either a static or dynamic resource reference).</span></span> <span data-ttu-id="a0f29-174">動的リソース参照を使用するには、依存関係プロパティに設定している必要があるため、これは具体的には、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムによって有効になる動的リソース参照の使用方法になります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-174">To use a dynamic resource reference, you must be setting to a dependency property, so it is specifically the dynamic resource reference usage that is enabled by the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] property system.</span></span> <span data-ttu-id="a0f29-175">詳細については、「[XAML リソース](../../../../docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-175">For more information, see [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md).</span></span>
+
 > [!NOTE]
->  リソースはローカル値として扱われます。つまり、別のローカル値を設定すると、リソース参照がなくなります。  詳細については、「[依存関係プロパティ値の優先順位](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)」を参照してください。  
-  
-<a name="setting_properties_data_binding"></a>   
-### データ バインディング  
- 依存関係プロパティは、データ バインディングを介して値を参照できます。  データ バインドは、XAML で特定のマークアップ拡張機能構文を介して機能するか、コードで <xref:System.Windows.Data.Binding> オブジェクトを介して機能します。  データ バインディングを使用すると、プロパティ値の最終的な決定が、データ ソースから値が取得される実行時まで延期されます。  
-  
- XAML で宣言されたバインディングを使用して、<xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.ContentControl.Content%2A> プロパティを設定する例を次に示します。  バインディングでは、継承されたデータ コンテキストおよび <xref:System.Windows.Data.XmlDataProvider> データ ソース \(この例には示されていません\) が使用されます。  バインディング自体は、データ ソース内で <xref:System.Windows.Data.Binding.XPath%2A> によって目的のソース プロパティを指定します。  
-  
- [!code-xml[PropertiesOvwSupport#BasicInlineBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#basicinlinebinding)]  
-  
+> <span data-ttu-id="a0f29-176">リソースはローカル値として扱われます。つまり、別のローカル値を設定すると、リソース参照がなくなります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-176">Resources are treated as a local value, which means that if you set another local value, you will eliminate the resource reference.</span></span> <span data-ttu-id="a0f29-177">詳細については、「[依存関係プロパティ値の優先順位](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-177">For more information, see [Dependency Property Value Precedence](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md).</span></span>
+
+### <a name="data-binding"></a><span data-ttu-id="a0f29-178">データ バインディング</span><span class="sxs-lookup"><span data-stu-id="a0f29-178">Data binding</span></span>
+<span data-ttu-id="a0f29-179">依存関係プロパティは、データ バインディングを介して値を参照できます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-179">A dependency property can reference a value through data binding.</span></span> <span data-ttu-id="a0f29-180">データは、特定のマークアップ拡張構文を XAML では、バインディング、または<xref:System.Windows.Data.Binding>コード内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a0f29-180">Data binding works through a specific markup extension syntax in XAML, or the <xref:System.Windows.Data.Binding> object in code.</span></span> <span data-ttu-id="a0f29-181">データ バインディングを使用すると、プロパティ値の最終的な決定が、データ ソースから値が取得される実行時まで延期されます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-181">With data binding, the final property value determination is deferred until run time, at which time the value is obtained from a data source.</span></span>
+
+<span data-ttu-id="a0f29-182">次の例のセット、<xref:System.Windows.Controls.ContentControl.Content%2A>プロパティを<xref:System.Windows.Controls.Button>XAML で宣言されているバインディングを使用します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-182">The following example sets the <xref:System.Windows.Controls.ContentControl.Content%2A> property for a <xref:System.Windows.Controls.Button>, using a binding declared in XAML.</span></span> <span data-ttu-id="a0f29-183">バインドで、継承されたデータ コンテキストを使用し、<xref:System.Windows.Data.XmlDataProvider>データ ソース (非表示)。</span><span class="sxs-lookup"><span data-stu-id="a0f29-183">The binding uses an inherited data context and an <xref:System.Windows.Data.XmlDataProvider> data source (not shown).</span></span> <span data-ttu-id="a0f29-184">バインディング自体を指定して目的のソース プロパティ<xref:System.Windows.Data.Binding.XPath%2A>データ ソース内で。</span><span class="sxs-lookup"><span data-stu-id="a0f29-184">The binding itself specifies the desired source property by <xref:System.Windows.Data.Binding.XPath%2A> within the data source.</span></span>
+
+[!code-xaml[PropertiesOvwSupport#BasicInlineBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#basicinlinebinding)]
+
 > [!NOTE]
->  バインディングはローカル値として扱われます。つまり、別のローカル値を設定すると、バインディングがなくなります。  詳細については、「[依存関係プロパティ値の優先順位](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)」を参照してください。  
-  
- 依存関係プロパティまたは <xref:System.Windows.DependencyObject> クラスは、データ バインディング操作に対応する <xref:System.Windows.DependencyObject> ソース プロパティ値の変更の通知を生成する <xref:System.ComponentModel.INotifyPropertyChanged> をネイティブ サポートしません。  データ バインディング ターゲットに対する変更を報告できる、データ バインディングで使用するためのプロパティを作成する方法の詳細については、「[データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
-  
-<a name="setting_properties_styles"></a>   
-### スタイル  
- スタイルおよびテンプレートは、依存関係プロパティの使用に関する 2 つの主なシナリオです。  スタイルは、アプリケーション [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] を定義するプロパティを設定する際に特に役立ちます。  通常、スタイルは XAML のリソースとして定義されます。  スタイルには通常、特定のプロパティの "setter" および別のプロパティのリアルタイム値に基づいてプロパティ値を変更する "トリガー" が含まれるため、スタイルはプロパティ システムと対話します。  
-  
- 非常に単純なスタイル \(<xref:System.Windows.FrameworkElement.Resources%2A> ディクショナリ内で定義されますが、この例には示されていません\) を作成し、そのスタイルを <xref:System.Windows.Controls.Button> の <xref:System.Windows.FrameworkElement.Style%2A> プロパティに直接適用する例を次に示します。  スタイル内の setter によって、スタイルが適用された <xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.Control.Background%2A> プロパティが緑色に設定されます。  
-  
- [!code-xml[PropertiesOvwSupport#SimpleStyleDef](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#simplestyledef)]  
-  
- [!code-xml[PropertiesOvwSupport#SimpleStyle](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#simplestyle)]  
-  
- 詳細については、「[スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)」を参照してください。  
-  
-<a name="animations"></a>   
-### アニメーション  
- 依存関係プロパティは、アニメーション化することができます。  アニメーションが適用されて実行されると、アニメーション化された値は、それ以外の場合のプロパティの値 \(ローカル値など\) よりも高い優先順位で動作します。  
-  
- <xref:System.Windows.Controls.Button> プロパティの <xref:System.Windows.Controls.Control.Background%2A> をアニメーション化する例を次に示します \(技術的には、<xref:System.Windows.Controls.Control.Background%2A> はプロパティ要素構文を使用して空白の <xref:System.Windows.Media.SolidColorBrush> を <xref:System.Windows.Controls.Control.Background%2A> として指定することでアニメーション化され、その <xref:System.Windows.Media.SolidColorBrush> の <xref:System.Windows.Media.SolidColorBrush.Color%2A> プロパティが、直接アニメーション化されるプロパティになります\)。  
-  
- [!code-xml[PropertiesOvwSupport#MiniAnimate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#minianimate)]  
-  
- プロパティのアニメーション化の詳細については、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」および「[ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)」を参照してください。  
-  
-<a name="metadata"></a>   
-### メタデータのオーバーライド  
- [依存関係プロパティ](GTMT)の特定の動作は、[依存関係プロパティ](GTMT)を最初に登録したクラスから派生させるときにプロパティのメタデータをオーバーライドすることで変更できます。  メタデータのオーバーライドは、<xref:System.Windows.DependencyProperty> 識別子に依存します。  メタデータのオーバーライドでは、プロパティを再実装する必要はありません。  メタデータの変更は、プロパティ システムでネイティブに処理されます。各クラスは、基本クラスから継承したすべてのプロパティに対して、型ごとに個別のメタデータを保持する可能性があります。  
-  
- 依存関係プロパティ <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A> のメタデータをオーバーライドする例を次に示します。  この特定の依存関係プロパティ メタデータのオーバーライドは、テーマから既定のスタイルを使用できるコントロールを作成する実装パターンの一部です。  
-  
- [!code-csharp[PropertiesOvwSupport#OverrideMetadata](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml.cs#overridemetadata)]
- [!code-vb[PropertiesOvwSupport#OverrideMetadata](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page3.xaml.vb#overridemetadata)]  
-  
- プロパティ メタデータをオーバーライドまたは取得する方法の詳細については、「[依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)」を参照してください。  
-  
-<a name="setting_properties_inheritance"></a>   
-### プロパティ値の継承  
- 要素は、オブジェクト ツリー内の親から依存関係プロパティの値を継承できます。  
-  
+> <span data-ttu-id="a0f29-185">バインディングはローカル値として扱われます。つまり、別のローカル値を設定すると、バインディングがなくなります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-185">Bindings are treated as a local value, which means that if you set another local value, you will eliminate the binding.</span></span> <span data-ttu-id="a0f29-186">詳細については、「[依存関係プロパティ値の優先順位](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-186">For details, see [Dependency Property Value Precedence](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md).</span></span>
+
+<span data-ttu-id="a0f29-187">依存関係プロパティまたは<xref:System.Windows.DependencyObject>クラス、ネイティブにサポート<xref:System.ComponentModel.INotifyPropertyChanged>内の変更の通知を生成するという目的で<xref:System.Windows.DependencyObject>ソースのデータ バインディング操作のプロパティの値。</span><span class="sxs-lookup"><span data-stu-id="a0f29-187">Dependency properties, or the <xref:System.Windows.DependencyObject> class, do not natively support <xref:System.ComponentModel.INotifyPropertyChanged> for purposes of producing notifications of changes in <xref:System.Windows.DependencyObject> source property value for data binding operations.</span></span> <span data-ttu-id="a0f29-188">データ バインディング ターゲットに対する変更を報告できる、データ バインディングで使用するためのプロパティを作成する方法の詳細については、「[データ バインドの概要](../../../../docs/framework/wpf/data/data-binding-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-188">For more information on how to create properties for use in data binding that can report changes to a data binding target, see [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).</span></span>
+
+### <a name="styles"></a><span data-ttu-id="a0f29-189">スタイル</span><span class="sxs-lookup"><span data-stu-id="a0f29-189">Styles</span></span>
+<span data-ttu-id="a0f29-190">スタイルおよびテンプレートは、依存関係プロパティの使用に関する 2 つの主なシナリオです。</span><span class="sxs-lookup"><span data-stu-id="a0f29-190">Styles and templates are two of the chief motivating scenarios for using dependency properties.</span></span> <span data-ttu-id="a0f29-191">スタイルは、アプリケーション[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] を定義するプロパティを設定する際に特に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-191">Styles are particularly useful for setting properties that define application [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)].</span></span> <span data-ttu-id="a0f29-192">通常、スタイルは XAML のリソースとして定義されます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-192">Styles are typically defined as resources in XAML.</span></span> <span data-ttu-id="a0f29-193">スタイルには通常、特定のプロパティの "setter" および別のプロパティのリアルタイム値に基づいてプロパティ値を変更する "トリガー" が含まれるため、スタイルはプロパティ システムと対話します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-193">Styles interact with the property system because they typically contain "setters" for particular properties, as well as "triggers" that change a property value based on the real-time value for another property.</span></span>
+
+<span data-ttu-id="a0f29-194">次の例は非常に単純なスタイルを作成 (の内部定義する、<xref:System.Windows.FrameworkElement.Resources%2A>ディクショナリ、表示されません) に直接そのスタイルを適用、<xref:System.Windows.FrameworkElement.Style%2A>プロパティを<xref:System.Windows.Controls.Button>です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-194">The following example creates a very simple style (which would be defined inside a <xref:System.Windows.FrameworkElement.Resources%2A> dictionary, not shown), then applies that style directly to the <xref:System.Windows.FrameworkElement.Style%2A> property for a <xref:System.Windows.Controls.Button>.</span></span> <span data-ttu-id="a0f29-195">スタイル セット内で set アクセス操作子、<xref:System.Windows.Controls.Control.Background%2A>のスタイル設定されたプロパティ<xref:System.Windows.Controls.Button>緑色にします。</span><span class="sxs-lookup"><span data-stu-id="a0f29-195">The setter within the style sets the <xref:System.Windows.Controls.Control.Background%2A> property for a styled <xref:System.Windows.Controls.Button> to green.</span></span>
+
+[!code-xaml[PropertiesOvwSupport#SimpleStyleDef](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#simplestyledef)]
+
+[!code-xaml[PropertiesOvwSupport#SimpleStyle](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#simplestyle)]
+
+<span data-ttu-id="a0f29-196">詳しくは、「 [スタイルとテンプレート](../../../../docs/framework/wpf/controls/styling-and-templating.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-196">For more information, see [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md).</span></span>
+
+### <a name="animations"></a><span data-ttu-id="a0f29-197">Animations</span><span class="sxs-lookup"><span data-stu-id="a0f29-197">Animations</span></span>
+<span data-ttu-id="a0f29-198">依存関係プロパティは、アニメーション化することができます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-198">Dependency properties can be animated.</span></span> <span data-ttu-id="a0f29-199">アニメーションが適用されて実行されると、アニメーション化された値は、それ以外の場合のプロパティの値 (ローカル値など) よりも高い優先順位で動作します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-199">When an animation is applied and is running, the animated value operates at a higher precedence than any value (such as a local value) that the property otherwise has.</span></span>
+
+<span data-ttu-id="a0f29-200">次の例をアニメーション化、<xref:System.Windows.Controls.Control.Background%2A>上、<xref:System.Windows.Controls.Button>プロパティ (技術的には、<xref:System.Windows.Controls.Control.Background%2A>は空白の文字列を指定するプロパティ要素構文を使用して、アニメーション<xref:System.Windows.Media.SolidColorBrush>として、 <xref:System.Windows.Controls.Control.Background%2A>、<xref:System.Windows.Media.SolidColorBrush.Color%2A>のプロパティ<xref:System.Windows.Media.SolidColorBrush>プロパティは直接アニメーションです)。</span><span class="sxs-lookup"><span data-stu-id="a0f29-200">The following example animates the <xref:System.Windows.Controls.Control.Background%2A> on a <xref:System.Windows.Controls.Button> property (technically, the <xref:System.Windows.Controls.Control.Background%2A> is animated by using property element syntax to specify a blank <xref:System.Windows.Media.SolidColorBrush> as the <xref:System.Windows.Controls.Control.Background%2A>, then the <xref:System.Windows.Media.SolidColorBrush.Color%2A> property of that <xref:System.Windows.Media.SolidColorBrush> is the property that is directly animated).</span></span>
+
+[!code-xaml[PropertiesOvwSupport#MiniAnimate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#minianimate)]
+
+<span data-ttu-id="a0f29-201">プロパティのアニメーション化の詳細については、「[アニメーションの概要](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)」および「[ストーリーボードの概要](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-201">For more information on animating properties, see [Animation Overview](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md) and [Storyboards Overview](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).</span></span>
+
+### <a name="metadata-overrides"></a><span data-ttu-id="a0f29-202">メタデータのオーバーライド</span><span class="sxs-lookup"><span data-stu-id="a0f29-202">Metadata overrides</span></span>
+<span data-ttu-id="a0f29-203">依存関係プロパティの特定の動作は、依存関係プロパティを最初に登録したクラスから派生させるときにプロパティのメタデータをオーバーライドすることで変更できます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-203">You can change certain behaviors of a dependency property by overriding the metadata for that property when you derive from the class that originally registers the dependency property.</span></span> <span data-ttu-id="a0f29-204">メタデータのオーバーライド、<xref:System.Windows.DependencyProperty>識別子。</span><span class="sxs-lookup"><span data-stu-id="a0f29-204">Overriding metadata relies on the <xref:System.Windows.DependencyProperty> identifier.</span></span> <span data-ttu-id="a0f29-205">メタデータのオーバーライドでは、プロパティを再実装する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="a0f29-205">Overriding metadata does not require re-implementing the property.</span></span> <span data-ttu-id="a0f29-206">メタデータの変更は、プロパティ システムでネイティブに処理されます。各クラスは、基本クラスから継承したすべてのプロパティに対して、型ごとに個別のメタデータを保持する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-206">The metadata change is handled natively by the property system; each class potentially holds individual metadata for all properties that are inherited from base classes, on a per-type basis.</span></span>
+
+<span data-ttu-id="a0f29-207">次の例は、依存関係プロパティのメタデータをオーバーライド<xref:System.Windows.FrameworkElement.DefaultStyleKey%2A>です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-207">The following example overrides metadata for a dependency property <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A>.</span></span> <span data-ttu-id="a0f29-208">この特定の依存関係プロパティ メタデータのオーバーライドは、テーマから既定のスタイルを使用できるコントロールを作成する実装パターンの一部です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-208">Overriding this particular dependency property metadata is part of an implementation pattern that creates controls that can use default styles from themes.</span></span>
+
+[!code-csharp[PropertiesOvwSupport#OverrideMetadata](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml.cs#overridemetadata)]
+[!code-vb[PropertiesOvwSupport#OverrideMetadata](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page3.xaml.vb#overridemetadata)]
+
+<span data-ttu-id="a0f29-209">プロパティ メタデータをオーバーライドまたは取得する方法の詳細については、「[依存関係プロパティのメタデータ](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-209">For more information about overriding or obtaining property metadata, see [Dependency Property Metadata](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md).</span></span>
+
+### <a name="property-value-inheritance"></a><span data-ttu-id="a0f29-210">プロパティ値の継承</span><span class="sxs-lookup"><span data-stu-id="a0f29-210">Property value inheritance</span></span>
+<span data-ttu-id="a0f29-211">要素は、オブジェクト ツリー内の親から依存関係プロパティの値を継承できます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-211">An element can inherit the value of a dependency property from its parent in the object tree.</span></span>
+
 > [!NOTE]
->  プロパティ値の継承動作は、すべての依存関係プロパティにグローバルに有効にはなりません。これは、継承の計算時間がパフォーマンスに影響するからです。  プロパティ値の継承は通常、特定のシナリオでプロパティ値の継承が適切であると示されるプロパティに対してのみ有効にします。  SDK リファレンスで、依存関係プロパティの「依存関係プロパティの情報」セクションを調べて、依存関係プロパティで継承を行うかどうかを決定できます。  
-  
- 次の例ではバインディングを示し、前述のバインディングの例では示されていなかったバインディングのソースを指定する <xref:System.Windows.FrameworkElement.DataContext%2A> プロパティを設定します。  子オブジェクトの以降のバインディングではソースを指定する必要はなく、親 <xref:System.Windows.Controls.StackPanel> オブジェクトの <xref:System.Windows.FrameworkElement.DataContext%2A> から継承された値を使用できます   \(または、子オブジェクトが独自の <xref:System.Windows.FrameworkElement.DataContext%2A> または <xref:System.Windows.Data.Binding> の <xref:System.Windows.Data.Binding.Source%2A> を直接指定し、そのバインディングのデータ コンテキストに継承された値を意図的に使用しないようにすることもできます\)。  
-  
- [!code-xml[PropertiesOvwSupport#InheritanceContext](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#inheritancecontext)]  
-  
- 詳細については、「[プロパティ値の継承](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
-  
-<a name="vs2008_integration"></a>   
-### WPF デザイナーの統合  
- 依存関係プロパティとして実装されるプロパティを使用するカスタム コントロールは、適切な [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] のサポートを受けます。  1 つの例として、**\[プロパティ\]** ウィンドウで、直接依存関係プロパティと添付依存関係プロパティを編集できる機能が挙げられます。  詳細については、「[コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)」を参照してください。  
-  
-<a name="value_determination"></a>   
-## 依存関係プロパティ値の優先順位  
- [依存関係プロパティ](GTMT)の値を取得する場合、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムに関係する他のプロパティに基づく入力のいずれかを介して、そのプロパティに設定された値を取得する可能性があります。  プロパティの値の取得方法に関するさまざまなシナリオが予測可能な方法で相互作用できるように、依存関係プロパティ値の優先順位が存在しています。  
-  
- 例を次に示します。  この例には、すべてのボタンおよびそれらの <xref:System.Windows.Controls.Control.Background%2A> プロパティに適用されるスタイルが含まれていますが、<xref:System.Windows.Controls.Control.Background%2A> 値がローカルに設定されているボタンも 1 つ指定されています。  
-  
+> <span data-ttu-id="a0f29-212">プロパティ値の継承動作は、すべての依存関係プロパティにグローバルに有効にはなりません。これは、継承の計算時間がパフォーマンスに影響するからです。</span><span class="sxs-lookup"><span data-stu-id="a0f29-212">Property value inheritance behavior is not globally enabled for all dependency properties, because the calculation time for inheritance does have some performance impact.</span></span> <span data-ttu-id="a0f29-213">プロパティ値の継承は通常、特定のシナリオでプロパティ値の継承が適切であると示されるプロパティに対してのみ有効にします。</span><span class="sxs-lookup"><span data-stu-id="a0f29-213">Property value inheritance is typically only enabled for properties where a particular scenario suggests that property value inheritance is appropriate.</span></span> <span data-ttu-id="a0f29-214">SDK リファレンスで、依存関係プロパティの「**依存関係プロパティの情報**」セクションを調べて、依存関係プロパティで継承を行うかどうかを決定できます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-214">You can determine whether a dependency property inherits by looking at the **Dependency Property Information** section for that dependency property in the SDK reference.</span></span>
+
+<span data-ttu-id="a0f29-215">次の例は、バインディングを示していて、設定、<xref:System.Windows.FrameworkElement.DataContext%2A>プロパティ バインディングの前の例には表示されませんが、バインディングのソースを指定します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-215">The following example shows a binding, and sets the <xref:System.Windows.FrameworkElement.DataContext%2A> property that specifies the source of the binding, which was not shown in the earlier binding example.</span></span> <span data-ttu-id="a0f29-216">子オブジェクトで、後続のバインドは、ソースを指定する必要はありませんから継承した値を使用する<xref:System.Windows.FrameworkElement.DataContext%2A>親<xref:System.Windows.Controls.StackPanel>オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a0f29-216">Any subsequent bindings in child objects do not need to specify the source, they can use the inherited value from <xref:System.Windows.FrameworkElement.DataContext%2A> in the parent <xref:System.Windows.Controls.StackPanel> object.</span></span> <span data-ttu-id="a0f29-217">(または、子オブジェクトでは代わりにするように選択を直接指定独自<xref:System.Windows.FrameworkElement.DataContext%2A>または<xref:System.Windows.Data.Binding.Source%2A>で、<xref:System.Windows.Data.Binding>は意図的にそのバインドのデータ コンテキストの継承された値を使用するとします)。</span><span class="sxs-lookup"><span data-stu-id="a0f29-217">(Alternatively, a child object could instead choose to directly specify its own <xref:System.Windows.FrameworkElement.DataContext%2A> or a <xref:System.Windows.Data.Binding.Source%2A> in the <xref:System.Windows.Data.Binding>, and to deliberately not use the inherited value for data context of its bindings.)</span></span>
+
+[!code-xaml[PropertiesOvwSupport#InheritanceContext](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#inheritancecontext)]
+
+<span data-ttu-id="a0f29-218">詳細については、「[プロパティ値の継承](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-218">For more information, see [Property Value Inheritance](../../../../docs/framework/wpf/advanced/property-value-inheritance.md).</span></span>
+
+### <a name="wpf-designer-integration"></a><span data-ttu-id="a0f29-219">WPF デザイナーの統合</span><span class="sxs-lookup"><span data-stu-id="a0f29-219">WPF designer integration</span></span>
+<span data-ttu-id="a0f29-220">依存関係プロパティとして実装されるプロパティを使用するカスタム コントロールは、適切な [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] のサポートを受けます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-220">A custom control with properties that are implemented as dependency properties will receive appropriate [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] support.</span></span> <span data-ttu-id="a0f29-221">1 つの例として、**[プロパティ]** ウィンドウで、直接依存関係プロパティと添付依存関係プロパティを編集できる機能が挙げられます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-221">One example is the ability to edit direct and attached dependency properties with the **Properties** window.</span></span> <span data-ttu-id="a0f29-222">詳しくは、「[コントロールの作成の概要](../../../../docs/framework/wpf/controls/control-authoring-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-222">For more information, see [Control Authoring Overview](../../../../docs/framework/wpf/controls/control-authoring-overview.md).</span></span>
+
+## <a name="dependency-property-value-precedence"></a><span data-ttu-id="a0f29-223">依存関係プロパティの値の優先順位</span><span class="sxs-lookup"><span data-stu-id="a0f29-223">Dependency property value precedence</span></span>
+<span data-ttu-id="a0f29-224">依存関係プロパティの値を取得する場合、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティ システムに関係する他のプロパティに基づく入力のいずれかを介して、そのプロパティに設定された値を取得する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-224">When you get the value of a dependency property, you are potentially obtaining a value that was set on that property through any one of the other property-based inputs that participate in the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] property system.</span></span> <span data-ttu-id="a0f29-225">プロパティの値の取得方法に関するさまざまなシナリオが予測可能な方法で相互作用できるように、依存関係プロパティ値の優先順位が存在しています。</span><span class="sxs-lookup"><span data-stu-id="a0f29-225">Dependency property value precedence exists so that a variety of scenarios for how properties obtain their values can interact in a predictable way.</span></span>
+
+<span data-ttu-id="a0f29-226">例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-226">Consider the following example.</span></span> <span data-ttu-id="a0f29-227">例では、すべてのボタンに適用されるスタイルが含まれていますとその<xref:System.Windows.Controls.Control.Background%2A>プロパティが 1 つのボタンをローカルで設定にも指定して<xref:System.Windows.Controls.Control.Background%2A>値。</span><span class="sxs-lookup"><span data-stu-id="a0f29-227">The example includes a style that applies to all buttons and their <xref:System.Windows.Controls.Control.Background%2A> properties, but then also specifies one button with a locally set <xref:System.Windows.Controls.Control.Background%2A> value.</span></span>
+
 > [!NOTE]
->  SDK ドキュメントでは、依存関係プロパティについて説明するときに、"ローカル値" または "ローカルに設定された値" という用語が使用される場合があります。  ローカルに設定された値は、コードでオブジェクト インスタンスに直接設定されたプロパティ値または XAML で要素の属性として設定されたプロパティ値です。  
+> <span data-ttu-id="a0f29-228">SDK ドキュメントでは、依存関係プロパティについて説明するときに、"ローカル値" または "ローカルに設定された値" という用語が使用される場合があります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-228">The SDK documentation uses the terms "local value" or "locally set value" occasionally when discussing dependency properties.</span></span> <span data-ttu-id="a0f29-229">ローカルに設定された値は、コードでオブジェクト インスタンスに直接設定されたプロパティ値または XAML で要素の属性として設定されたプロパティ値です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-229">A locally set value is a property value that is set directly on an object instance in code, or as an attribute on an element in XAML.</span></span>  
   
- 原則として、最初のボタンではプロパティが 2 回設定されますが、適用される値は 1 つだけで、優先順位が最も高い値が適用されます。  ローカルに設定された値の優先順位が最も高いため \(実行中のアニメーションを除きますが、この例ではアニメーションは適用されていません\)、最初のボタンの背景に対するスタイル setter の値ではなくローカルに設定された値が使用されます。  2 番目のボタンにはローカル値が設定されていないため \(また、優先順位がスタイル setter より高い値が他にないため\)、そのボタンの背景はスタイル setter に基づきます。  
-  
- [!code-xml[PropertiesOvwSupport#MiniPrecedence](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#miniprecedence)]  
-  
-### 依存関係プロパティの優先順位が存在する理由  
- 通常、スタイルを常に適用し、個別の要素のローカルに設定された値を無効にすることは望ましくありません \(また、一般に、スタイルまたは要素の使用は非常に困難です\)。  そのため、スタイルに基づく値は、ローカルに設定された値よりも低い優先順位で動作します。  依存関係プロパティの詳細なリストおよび依存関係プロパティの有効値を決める要因については、「[依存関係プロパティ値の優先順位](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)」を参照してください。  
-  
+<span data-ttu-id="a0f29-230">原則として、最初のボタンではプロパティが 2 回設定されますが、適用される値は 1 つだけで、優先順位が最も高い値が適用されます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-230">In principle, for the first button, the property is set twice, but only one value applies: the value with the highest precedence.</span></span> <span data-ttu-id="a0f29-231">ローカルに設定された値の優先順位が最も高いため (実行中のアニメーションを除きますが、この例ではアニメーションは適用されていません)、最初のボタンの背景に対するスタイル setter の値ではなくローカルに設定された値が使用されます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-231">A locally set value has the highest precedence (except for a running animation, but no animation applies in this example) and thus the locally set value is used instead of the style setter value for the background on the first button.</span></span> <span data-ttu-id="a0f29-232">2 番目のボタンにはローカル値が設定されていないため (また、優先順位がスタイル setter より高い値が他にないため)、そのボタンの背景はスタイル setter に基づきます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-232">The second button has no local value (and no other value with higher precedence than a style setter) and thus the background in that button comes from the style setter.</span></span>
+
+[!code-xaml[PropertiesOvwSupport#MiniPrecedence](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#miniprecedence)]  
+
+### <a name="why-does-dependency-property-precedence-exist"></a><span data-ttu-id="a0f29-233">依存関係プロパティの優先順位が存在する理由</span><span class="sxs-lookup"><span data-stu-id="a0f29-233">Why does dependency property precedence exist?</span></span>
+<span data-ttu-id="a0f29-234">通常、スタイルを常に適用し、個別の要素のローカルに設定された値を無効にすることは望ましくありません (また、一般に、スタイルまたは要素の使用は非常に困難です)。</span><span class="sxs-lookup"><span data-stu-id="a0f29-234">Typically, you would not want styles to always apply and to obscure even a locally set value of an individual element (otherwise, it would be very difficult to use either styles or elements in general).</span></span> <span data-ttu-id="a0f29-235">そのため、スタイルに基づく値は、ローカルに設定された値よりも低い優先順位で動作します。</span><span class="sxs-lookup"><span data-stu-id="a0f29-235">Therefore, the values that come from styles operate at a lower precedent than a locally set value.</span></span> <span data-ttu-id="a0f29-236">依存関係プロパティの詳細なリストおよび依存関係プロパティの有効値を決める要因については、「[依存関係プロパティ値の優先順位](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-236">For a more thorough listing of dependency properties and where a dependency property effective value might come from, see [Dependency Property Value Precedence](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md).</span></span>
+
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 要素で定義されるプロパティには、依存関係プロパティではないものが多数あります。  概してプロパティは、プロパティ システムによって可能になる 1 つ以上のシナリオ \(データ バインディング、スタイル設定、アニメーション、既定値のサポート、継承、添付プロパティ、または無効化\) をサポートする必要がある場合にのみ依存関係プロパティとして実装されます。  
-  
-<a name="dp_implement_roadmap"></a>   
-## 依存関係プロパティの詳細情報  
-  
--   [添付プロパティ](GTMT)は、XAML で特殊な構文をサポートするプロパティの一種です。  多くの場合、添付プロパティは[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] プロパティと 1 対 1 で対応せず、[依存関係プロパティ](GTMT)であるとは限りません。  [添付プロパティ](GTMT)の一般的な目的は、親要素と子要素がどちらも、クラス メンバー リストの一部としてそのプロパティを処理しない場合でも、子要素が親要素にプロパティ値を報告できるようにすることです。  主なシナリオは、子要素から親要素に [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] でどのように表示するかを通知できるようにすることです。例については、<xref:System.Windows.Controls.DockPanel.Dock%2A> または <xref:System.Windows.Controls.Canvas.Left%2A> を参照してください。  詳細については、「[添付プロパティの概要](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)」を参照してください。  
-  
--   コンポーネントまたはアプリケーションの開発者は、データ バインディングやスタイルのサポートなどの機能を有効にするために、または無効化および値の強制のサポートのために、独自の[依存関係プロパティ](GTMT)を作成できます。  詳細については、「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」を参照してください。  
-  
--   依存関係プロパティは通常、インスタンスにアクセスできる呼び出し元がアクセス可能か、少なくとも検出可能なパブリック プロパティと見なされます。  詳細については、「[依存関係プロパティのセキュリティ](../../../../docs/framework/wpf/advanced/dependency-property-security.md)」を参照してください。  
-  
-## 参照  
- [カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)   
- [読み取り専用の依存関係プロパティ](../../../../docs/framework/wpf/advanced/read-only-dependency-properties.md)   
- [XAML の概要 \(WPF\)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [WPF アーキテクチャ](../../../../docs/framework/wpf/advanced/wpf-architecture.md)
+> <span data-ttu-id="a0f29-237">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 要素で定義されるプロパティには、依存関係プロパティではないものが多数あります。</span><span class="sxs-lookup"><span data-stu-id="a0f29-237">There are a number of properties defined on [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elements that are not dependency properties.</span></span> <span data-ttu-id="a0f29-238">概してプロパティは、プロパティ システムによって可能になる 1 つ以上のシナリオ (データ バインディング、スタイル設定、アニメーション、既定値のサポート、継承、添付プロパティ、または無効化) をサポートする必要がある場合にのみ依存関係プロパティとして実装されます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-238">By and large, properties were implemented as dependency properties only when there were needs to support at least one of the scenarios enabled by the property system: data binding, styling, animation, default value support, inheritance, attached properties, or invalidation.</span></span>
+
+## <a name="learning-more-about-dependency-properties"></a><span data-ttu-id="a0f29-239">依存関係プロパティの詳細を表示します</span><span class="sxs-lookup"><span data-stu-id="a0f29-239">Learning more about dependency properties</span></span>  
+
+- <span data-ttu-id="a0f29-240">添付プロパティは、XAML で特殊な構文をサポートするプロパティの一種です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-240">An attached property is a type of property that supports a specialized syntax in XAML.</span></span> <span data-ttu-id="a0f29-241">多くの場合、添付プロパティは[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] プロパティとは 1 対 1 で対応せず、依存関係プロパティであるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="a0f29-241">An attached property often does not have a 1:1 correspondence with a [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] property, and is not necessarily a dependency property.</span></span> <span data-ttu-id="a0f29-242">添付プロパティの一般的な目的は、親要素と子要素がどちらも、クラス メンバー リストの一部としてそのプロパティを処理しない場合でも、子要素が親要素にプロパティ値を報告できるようにすることです。</span><span class="sxs-lookup"><span data-stu-id="a0f29-242">The typical purpose of a attached property is to allow child elements to report property values to a parent element, even if the parent element and child element do not both possess that property as part of the class members listings.</span></span> <span data-ttu-id="a0f29-243">子要素をどのように表示するのには親に通知を有効にするのには、1 つの主要なシナリオ[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]以外の例についてを参照してください<xref:System.Windows.Controls.DockPanel.Dock%2A>または<xref:System.Windows.Controls.Canvas.Left%2A>です。</span><span class="sxs-lookup"><span data-stu-id="a0f29-243">One primary scenario is to enable child elements to inform the parent how they should be presented in [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]; for an example, see <xref:System.Windows.Controls.DockPanel.Dock%2A> or <xref:System.Windows.Controls.Canvas.Left%2A>.</span></span> <span data-ttu-id="a0f29-244">詳細については、「[添付プロパティの概要](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-244">For details, see [Attached Properties Overview](../../../../docs/framework/wpf/advanced/attached-properties-overview.md).</span></span>
+
+- <span data-ttu-id="a0f29-245">コンポーネントまたはアプリケーションの開発者は、データ バインディングやスタイルのサポートなどの機能を有効にするために、または無効化および値の強制のサポートのために、独自の依存関係プロパティを作成できます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-245">Component developers or application developers may wish to create their own dependency property, in order to enable capabilities such as data binding or styles support, or for invalidation and value coercion support.</span></span> <span data-ttu-id="a0f29-246">詳細については、「[カスタム依存関係プロパティ](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-246">For details, see [Custom Dependency Properties](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md).</span></span>
+
+- <span data-ttu-id="a0f29-247">依存関係プロパティは通常、インスタンスにアクセスできる呼び出し元がアクセス可能か、少なくとも検出可能なパブリック プロパティと見なされます。</span><span class="sxs-lookup"><span data-stu-id="a0f29-247">Dependency properties should generally be considered to be public properties, accessible or at least discoverable by any caller that has access to an instance.</span></span> <span data-ttu-id="a0f29-248">詳細については、「[依存関係プロパティのセキュリティ](../../../../docs/framework/wpf/advanced/dependency-property-security.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0f29-248">For more information, see [Dependency Property Security](../../../../docs/framework/wpf/advanced/dependency-property-security.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="a0f29-249">関連項目</span><span class="sxs-lookup"><span data-stu-id="a0f29-249">See also</span></span>
+ [<span data-ttu-id="a0f29-250">カスタム依存関係プロパティ</span><span class="sxs-lookup"><span data-stu-id="a0f29-250">Custom Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
+ [<span data-ttu-id="a0f29-251">読み取り専用の依存関係プロパティ</span><span class="sxs-lookup"><span data-stu-id="a0f29-251">Read-Only Dependency Properties</span></span>](../../../../docs/framework/wpf/advanced/read-only-dependency-properties.md)  
+ [<span data-ttu-id="a0f29-252">XAML の概要 (WPF)</span><span class="sxs-lookup"><span data-stu-id="a0f29-252">XAML Overview (WPF)</span></span>](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
+ [<span data-ttu-id="a0f29-253">WPF アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="a0f29-253">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)

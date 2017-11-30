@@ -1,48 +1,46 @@
 ---
-title: "例外とパフォーマンス | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-standard"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "tester-doer パターン"
-  - "TryParse パターン"
-  - "例外のスロー"
-  - "パフォーマンスの例外"
-  - "パフォーマンスの例外をスロー"
+title: "例外とパフォーマンス"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-standard
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- tester-doer pattern
+- TryParse pattern
+- exceptions, throwing
+- exceptions, performance
+- throwing exceptions, performance
 ms.assetid: 3ad6aad9-08e6-4232-b336-0e301f2493e6
-caps.latest.revision: 12
-author: "rpetrusha"
-ms.author: "ronpet"
-manager: "wpickett"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: rpetrusha
+ms.author: ronpet
+manager: wpickett
+ms.openlocfilehash: 9c2d7cfcb228c492d2adbe614d0ed88a3b02bb68
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 例外とパフォーマンス
-例外に関連する一般的な懸念事項の 1 つは、定期的に失敗するコードの例外を使用している場合、実装のパフォーマンスがされる許容です。 これはもっともです。 メンバーは、例外をスローするときに、パフォーマンスが極端に遅くにできます。 ただし、エラー コードの使用を許可しない例外のガイドラインに厳密に準拠しつつ、良好なパフォーマンスを実現することができます。 このセクションで説明した 2 つのパターンでは、これを行う方法を提案します。  
+# <a name="exceptions-and-performance"></a><span data-ttu-id="fca2f-102">例外とパフォーマンス</span><span class="sxs-lookup"><span data-stu-id="fca2f-102">Exceptions and Performance</span></span>
+<span data-ttu-id="fca2f-103">例外に関連する 1 つの一般的な問題は、こと日常的に失敗したコードの例外を使用する場合の実装では、パフォーマンスは許容できないです。</span><span class="sxs-lookup"><span data-stu-id="fca2f-103">One common concern related to exceptions is that if exceptions are used for code that routinely fails, the performance of the implementation will be unacceptable.</span></span> <span data-ttu-id="fca2f-104">これは、有効な問題です。</span><span class="sxs-lookup"><span data-stu-id="fca2f-104">This is a valid concern.</span></span> <span data-ttu-id="fca2f-105">メンバーは、例外をスローするときに、パフォーマンスが桁違い低速にできます。</span><span class="sxs-lookup"><span data-stu-id="fca2f-105">When a member throws an exception, its performance can be orders of magnitude slower.</span></span> <span data-ttu-id="fca2f-106">ただし、厳密にエラー コードの使用を許可しない例外のガイドラインに従いながら良好なパフォーマンスを実現することはできます。</span><span class="sxs-lookup"><span data-stu-id="fca2f-106">However, it is possible to achieve good performance while strictly adhering to the exception guidelines that disallow using error codes.</span></span> <span data-ttu-id="fca2f-107">このセクションで説明した 2 つのパターンは、これを行う方法を提案します。</span><span class="sxs-lookup"><span data-stu-id="fca2f-107">Two patterns described in this section suggest ways to do this.</span></span>  
   
- **X のしないで** エラー コードを使用して、例外がパフォーマンスに悪影響を及ぼす影響する問題があるためです。  
+ <span data-ttu-id="fca2f-108">**X しないで**例外がパフォーマンスに悪影響を及ぼす影響する問題が原因のエラー コードを使用します。</span><span class="sxs-lookup"><span data-stu-id="fca2f-108">**X DO NOT** use error codes because of concerns that exceptions might affect performance negatively.</span></span>  
   
- パフォーマンスを向上させる Tester\-doer パターンまたは Try 解析パターンは、次の 2 つのセクションで説明されているのいずれかを使用することができます。  
+ <span data-ttu-id="fca2f-109">パフォーマンスを向上させるには、可能であれば、テスター渡ってパターンまたは Try 解析パターンは、次の 2 つのセクションで説明を使用します。</span><span class="sxs-lookup"><span data-stu-id="fca2f-109">To improve performance, it is possible to use either the Tester-Doer Pattern or the Try-Parse Pattern, described in the next two sections.</span></span>  
   
-## Tester\-doer パターン  
- 場合があります、メンバーを 2 つに分割することにより、例外のスローを持つメンバーのパフォーマンスを向上することができます。 見て、 <xref:System.Collections.Generic.ICollection%601.Add%2A> のメソッド、 <xref:System.Collections.Generic.ICollection%601> インターフェイスです。  
+## <a name="tester-doer-pattern"></a><span data-ttu-id="fca2f-110">テスト担当者渡ってパターン</span><span class="sxs-lookup"><span data-stu-id="fca2f-110">Tester-Doer Pattern</span></span>  
+ <span data-ttu-id="fca2f-111">場合があります、メンバーを 2 つに分割することにより例外スロー メンバーのパフォーマンスを向上することができます。</span><span class="sxs-lookup"><span data-stu-id="fca2f-111">Sometimes performance of an exception-throwing member can be improved by breaking the member into two.</span></span> <span data-ttu-id="fca2f-112">見てみましょう、<xref:System.Collections.Generic.ICollection%601.Add%2A>のメソッド、<xref:System.Collections.Generic.ICollection%601>インターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="fca2f-112">Let’s look at the <xref:System.Collections.Generic.ICollection%601.Add%2A> method of the <xref:System.Collections.Generic.ICollection%601> interface.</span></span>  
   
 ```  
 ICollection<int> numbers = ...   
 numbers.Add(1);  
 ```  
   
- メソッド `Add` コレクションは読み取り専用の場合にスローします。 これは、メソッドの呼び出しが多くの場合、失敗を想定している場所のシナリオでパフォーマンス問題であることができます。 問題を緩和する方法の 1 つは、値を追加する前に、コレクションが書き込み可能かどうかをテストします。  
+ <span data-ttu-id="fca2f-113">メソッド`Add`コレクションが読み取り専用である場合にスローされます。</span><span class="sxs-lookup"><span data-stu-id="fca2f-113">The method `Add` throws if the collection is read-only.</span></span> <span data-ttu-id="fca2f-114">メソッドの呼び出しが多くの場合、失敗すると思われるシナリオでパフォーマンスの問題を指定できます。</span><span class="sxs-lookup"><span data-stu-id="fca2f-114">This can be a performance problem in scenarios where the method call is expected to fail often.</span></span> <span data-ttu-id="fca2f-115">値を追加する前に、コレクションが書き込み可能かどうかをテストすると、問題を軽減する方法のいずれかです。</span><span class="sxs-lookup"><span data-stu-id="fca2f-115">One of the ways to mitigate the problem is to test whether the collection is writable before trying to add a value.</span></span>  
   
 ```  
 ICollection<int> numbers = ...   
@@ -52,12 +50,12 @@ if(!numbers.IsReadOnly){
 }  
 ```  
   
- プロパティであるこの例では、条件をテストに使用するメンバー `IsReadOnly`, 、テスト担当者と呼びます。 スロー元可能性のある操作を実行するために使用するメンバー、 `Add` 例では、メソッドは、渡ってと呼ばれます。  
+ <span data-ttu-id="fca2f-116">状態は、この例では、プロパティをテストに使用するメンバー`IsReadOnly`は、テスト担当者と呼びます。</span><span class="sxs-lookup"><span data-stu-id="fca2f-116">The member used to test a condition, which in our example is the property `IsReadOnly`, is referred to as the tester.</span></span> <span data-ttu-id="fca2f-117">可能性のあるスロー元の操作の実行に使用されるメンバー、`Add`例では、メソッドは、渡ってと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="fca2f-117">The member used to perform a potentially throwing operation, the `Add` method in our example, is referred to as the doer.</span></span>  
   
- **✓ を検討してください** Tester\-doer パターンに例外をスローするメンバーの共通のシナリオのパフォーマンスの問題を回避する例外に関連します。  
+ <span data-ttu-id="fca2f-118">**✓ を検討してください**Tester 渡ってパターンが例外をスローするメンバーの共通のパフォーマンスの問題を回避するシナリオに関連する例外。</span><span class="sxs-lookup"><span data-stu-id="fca2f-118">**✓ CONSIDER** the Tester-Doer Pattern for members that might throw exceptions in common scenarios to avoid performance problems related to exceptions.</span></span>  
   
-## Try 解析パターン  
- 非常に高く、パフォーマンスが重視される Api では、前のセクションで説明した Tester\-doer パターンよりもさらに高速のパターンを使用してください。 メンバーのセマンティクスの一部の場合、適切に定義されたテストを作成するメンバーの名前を調整するためのパターンを呼び出します。 たとえば、 <xref:System.DateTime> を定義、 <xref:System.DateTime.Parse%2A> 文字列の解析に失敗した場合に例外をスローするメソッドです。 対応するも定義されて <xref:System.DateTime.TryParse%2A> を解析しようとするには false が返されます解析は失敗し、正常に解析を使用して、結果を返す場合、 `out` パラメーター。  
+## <a name="try-parse-pattern"></a><span data-ttu-id="fca2f-119">Try 解析パターン</span><span class="sxs-lookup"><span data-stu-id="fca2f-119">Try-Parse Pattern</span></span>  
+ <span data-ttu-id="fca2f-120">非常にパフォーマンスが重視される Api では、前のセクションで説明されているテスト担当者渡ってパターンよりも高速のパターンを使用してください。</span><span class="sxs-lookup"><span data-stu-id="fca2f-120">For extremely performance-sensitive APIs, an even faster pattern than the Tester-Doer Pattern described in the previous section should be used.</span></span> <span data-ttu-id="fca2f-121">メンバーのセマンティクスの一部の場合、適切に定義されたテストを作成するメンバーの名前を調整するため、パターンを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="fca2f-121">The pattern calls for adjusting the member name to make a well-defined test case a part of the member semantics.</span></span> <span data-ttu-id="fca2f-122">たとえば、<xref:System.DateTime>定義、<xref:System.DateTime.Parse%2A>文字列の解析に失敗した場合に例外をスローするメソッド。</span><span class="sxs-lookup"><span data-stu-id="fca2f-122">For example, <xref:System.DateTime> defines a <xref:System.DateTime.Parse%2A> method that throws an exception if parsing of a string fails.</span></span> <span data-ttu-id="fca2f-123">対応する定義も<xref:System.DateTime.TryParse%2A>を解析しようとするメソッドが false を返します解析が失敗し、正常に解析を使用して、結果を返す場合、`out`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="fca2f-123">It also defines a corresponding <xref:System.DateTime.TryParse%2A> method that attempts to parse, but returns false if parsing is unsuccessful and returns the result of a successful parsing using an `out` parameter.</span></span>  
   
 ```  
 public struct DateTime {  
@@ -70,18 +68,18 @@ public struct DateTime {
 }  
 ```  
   
- このパターンを使用する場合は、厳密な用語で try 機能を定義する必要があります。 メンバーは、適切に定義された try 以外の何らかの理由で失敗した場合、メンバーが対応する例外をスローする必要があります。  
+ <span data-ttu-id="fca2f-124">このパターンを使用する場合は、厳密な用語で try 機能を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fca2f-124">When using this pattern, it is important to define the try functionality in strict terms.</span></span> <span data-ttu-id="fca2f-125">メンバーは、適切に定義された再試行以外の何らかの理由で失敗した場合、メンバーが対応する例外をスローする必要があります。</span><span class="sxs-lookup"><span data-stu-id="fca2f-125">If the member fails for any reason other than the well-defined try, the member must still throw a corresponding exception.</span></span>  
   
- **✓ を検討してください** Try 解析パターンに例外をスローするメンバーの共通のシナリオのパフォーマンスの問題を回避する例外に関連します。  
+ <span data-ttu-id="fca2f-126">**✓ を検討してください**Try 解析パターンが例外をスローするメンバーの共通のパフォーマンスの問題を回避するシナリオに関連する例外。</span><span class="sxs-lookup"><span data-stu-id="fca2f-126">**✓ CONSIDER** the Try-Parse Pattern for members that might throw exceptions in common scenarios to avoid performance problems related to exceptions.</span></span>  
   
- **✓ は** このパターンを実装するメソッドにプレフィックス"Try"とブール値の戻り値の型を使用します。  
+ <span data-ttu-id="fca2f-127">**✓ しないで**このパターンを実装するメソッドにプレフィックス"Try"とブール型の戻り値の型を使用します。</span><span class="sxs-lookup"><span data-stu-id="fca2f-127">**✓ DO** use the prefix "Try" and Boolean return type for methods implementing this pattern.</span></span>  
   
- **✓ は** Try 解析パターンを使用する各メンバーの例外のスローを持つメンバーを提供します。  
+ <span data-ttu-id="fca2f-128">**✓ しないで**Try 解析パターンを使用する各メンバーに対して例外スローのメンバーを提供します。</span><span class="sxs-lookup"><span data-stu-id="fca2f-128">**✓ DO** provide an exception-throwing member for each member using the Try-Parse Pattern.</span></span>  
   
- *部分 © 2005年、2009 Microsoft Corporation します。 All rights reserved.*  
+ <span data-ttu-id="fca2f-129">*部分 © 2005、2009 Microsoft Corporation します。All rights reserved.*</span><span class="sxs-lookup"><span data-stu-id="fca2f-129">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- *翔泳社からのアクセス許可によって検出 [Framework デザイン ガイドライン: 規則が、表現方法と再利用可能な .NET ライブラリを 2 nd Edition パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) は Cwalina Brad エイブラムスによる、Microsoft Windows の開発シリーズの一部として Addison\-wesley Professional、2008 年 10 月 22 日を公開します。*  
+ <span data-ttu-id="fca2f-130">*ピアソン教育, Inc. からのアクセス許可によって検出[Framework デザイン ガイドライン: 規則、表現方法、および再利用可能な .NET ライブラリを第 2 版パターン](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)は Cwalina と Brad Abrams、2008 年 10 月 22 日で発行されました。Microsoft Windows 開発シリーズの一部として、Addison-wesley Professional。*</span><span class="sxs-lookup"><span data-stu-id="fca2f-130">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## 参照  
- [Framework デザイン ガイドライン](../../../docs/standard/design-guidelines/index.md)   
- [例外のデザイン ガイドライン](../../../docs/standard/design-guidelines/exceptions.md)
+## <a name="see-also"></a><span data-ttu-id="fca2f-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="fca2f-131">See Also</span></span>  
+ [<span data-ttu-id="fca2f-132">フレームワーク デザインのガイドライン</span><span class="sxs-lookup"><span data-stu-id="fca2f-132">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)  
+ [<span data-ttu-id="fca2f-133">例外のデザイン ガイドライン</span><span class="sxs-lookup"><span data-stu-id="fca2f-133">Design Guidelines for Exceptions</span></span>](../../../docs/standard/design-guidelines/exceptions.md)

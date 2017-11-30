@@ -1,21 +1,18 @@
 ---
-title: "方法: カウント、合計、または LINQ (Visual Basic) を使用して平均データ |Microsoft ドキュメント"
+title: "方法 : LINQ を使用したデータの数、合計、または平均の算出 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 helpviewer_keywords:
 - average operator [LINQ in Visual Basic]
 - aggregate operator [LINQ in Visual Basic]
 - aggregate queries
 - queries [LINQ in Visual Basic], sum results
-- Aggregate clause
+- Aggregate clause [Visual Basic]
 - sum operator [LINQ in Visual Basic]
 - queries [LINQ in Visual Basic], aggregate queries
 - queries [LINQ in Visual Basic], counting results
@@ -24,90 +21,74 @@ helpviewer_keywords:
 - query samples [Visual Basic]
 - count operator [LINQ in Visual Basic]
 ms.assetid: 51ca1f59-7770-4884-8b76-113002e54fc0
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: c5789d9e4bee1388d5ad0368f88fad5c1b6e95cc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 48708af82ec4cc874d9ca3b8e6b231d5a862e004
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="how-to-count-sum-or-average-data-by-using-linq-visual-basic"></a>方法 : LINQ を使用したデータの数、合計、または平均の算出 (Visual Basic)
-統合言語クエリ (LINQ) により、簡単にデータベース情報にアクセスし、クエリを実行します。  
+# <a name="how-to-count-sum-or-average-data-by-using-linq-visual-basic"></a><span data-ttu-id="b653b-102">方法 : LINQ を使用したデータの数、合計、または平均の算出 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b653b-102">How to: Count, Sum, or Average Data by Using LINQ (Visual Basic)</span></span>
+<span data-ttu-id="b653b-103">統合言語クエリ (LINQ) では、簡単にデータベース情報にアクセスしてクエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="b653b-103">Language-Integrated Query (LINQ) makes it easy to access database information and execute queries.</span></span>  
   
- 次の例では、SQL Server データベースに対してクエリを実行する新しいアプリケーションを作成する方法を示します。 サンプル カウント、合計、および結果の平均値を使用して、`Aggregate`と`Group By`句。 詳細については、次を参照してください。 [Aggregate 句](../../../../visual-basic/language-reference/queries/aggregate-clause.md)と[グループ By 句](../../../../visual-basic/language-reference/queries/group-by-clause.md)します。  
+ <span data-ttu-id="b653b-104">次の例では、SQL Server データベースに対してクエリを実行する新しいアプリケーションを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b653b-104">The following example shows how to create a new application that performs queries against a SQL Server database.</span></span> <span data-ttu-id="b653b-105">サンプルは、カウントの合計を計算しを使用して、結果の平均を計算、`Aggregate`と`Group By`句。</span><span class="sxs-lookup"><span data-stu-id="b653b-105">The sample counts, sums, and averages the results by using the `Aggregate` and `Group By` clauses.</span></span> <span data-ttu-id="b653b-106">詳細については、次を参照してください。 [Aggregate 句](../../../../visual-basic/language-reference/queries/aggregate-clause.md)と[グループ By 句](../../../../visual-basic/language-reference/queries/group-by-clause.md)です。</span><span class="sxs-lookup"><span data-stu-id="b653b-106">For more information, see [Aggregate Clause](../../../../visual-basic/language-reference/queries/aggregate-clause.md) and [Group By Clause](../../../../visual-basic/language-reference/queries/group-by-clause.md).</span></span>  
   
- このトピックの例では、Northwind サンプル データベースを使用します。 開発用コンピューターに Northwind サンプル データベースがないをからダウンロードできます、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088) Web サイトです。 手順については、次を参照してください。[サンプル データベースのダウンロード](https://msdn.microsoft.com/library/bb399411)します。  
+ <span data-ttu-id="b653b-107">このトピックの例では、Northwind サンプル データベースを使用します。</span><span class="sxs-lookup"><span data-stu-id="b653b-107">The examples in this topic use the Northwind sample database.</span></span> <span data-ttu-id="b653b-108">開発用コンピューター上に Northwind サンプル データベースがないことからダウンロードする、 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=98088) Web サイトです。</span><span class="sxs-lookup"><span data-stu-id="b653b-108">If you do not have the Northwind sample database on your development computer, you can download it from the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkID=98088) Web site.</span></span> <span data-ttu-id="b653b-109">手順については、次を参照してください。[サンプル データベースのダウンロード](https://msdn.microsoft.com/library/bb399411)です。</span><span class="sxs-lookup"><span data-stu-id="b653b-109">For instructions, see [Downloading Sample Databases](https://msdn.microsoft.com/library/bb399411).</span></span>  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-create-a-connection-to-a-database"></a>データベースへの接続を作成するには  
+### <a name="to-create-a-connection-to-a-database"></a><span data-ttu-id="b653b-110">データベースへの接続を作成するには</span><span class="sxs-lookup"><span data-stu-id="b653b-110">To create a connection to a database</span></span>  
   
-1.  Visual Studio で開きます**サーバー エクスプ ローラー**/**データベース エクスプ ローラー**をクリックして**サーバー エクスプ ローラー**/**データベース エクスプ ローラー**上、**ビュー**メニュー。  
+1.  <span data-ttu-id="b653b-111">Visual Studio で開く**サーバー エクスプ ローラー**/**データベース エクスプ ローラー**  をクリックして**サーバー エクスプ ローラー**/**データベースエクスプ ローラー**上、**ビュー**メニュー。</span><span class="sxs-lookup"><span data-stu-id="b653b-111">In Visual Studio, open **Server Explorer**/**Database Explorer** by clicking **Server Explorer**/**Database Explorer** on the **View** menu.</span></span>  
   
-2.  右クリック**データ接続**で**サーバー エクスプ ローラー**/**データベース エクスプ ローラー**  をクリックし、**接続の追加**します。  
+2.  <span data-ttu-id="b653b-112">右クリック**データ接続**で**サーバー エクスプ ローラー**/**データベース エクスプ ローラー**  をクリックし、**接続の追加**です。</span><span class="sxs-lookup"><span data-stu-id="b653b-112">Right-click **Data Connections** in **Server Explorer**/**Database Explorer** and then click **Add Connection**.</span></span>  
   
-3.  Northwind サンプル データベースに有効な接続を指定します。  
+3.  <span data-ttu-id="b653b-113">Northwind サンプル データベースへの接続を有効なを指定します。</span><span class="sxs-lookup"><span data-stu-id="b653b-113">Specify a valid connection to the Northwind sample database.</span></span>  
   
-### <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a>LINQ to SQL ファイルを含むプロジェクトを追加するのには  
+### <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a><span data-ttu-id="b653b-114">LINQ to SQL ファイルを含むプロジェクトを追加するのには</span><span class="sxs-lookup"><span data-stu-id="b653b-114">To add a project that contains a LINQ to SQL file</span></span>  
   
-1.  Visual Studio での**ファイル** メニューをポイント**新規** をクリックし、**プロジェクト**します。 Visual Basic を選択して**Windows フォーム アプリケーション**プロジェクトの種類として。  
+1.  <span data-ttu-id="b653b-115">Visual Studio で、**[ファイル]** メニューの **[新規作成]** をポイントし、**[プロジェクト]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b653b-115">In Visual Studio, on the **File** menu, point to **New** and then click **Project**.</span></span> <span data-ttu-id="b653b-116">Visual Basic を選択して**Windows フォーム アプリケーション**プロジェクトの種類として。</span><span class="sxs-lookup"><span data-stu-id="b653b-116">Select Visual Basic **Windows Forms Application** as the project type.</span></span>  
   
-2.  **[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。 選択、 **LINQ to SQL クラス**項目テンプレートです。  
+2.  <span data-ttu-id="b653b-117">**[プロジェクト]** メニューの **[新しい項目の追加]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b653b-117">On the **Project** menu, click **Add New Item**.</span></span> <span data-ttu-id="b653b-118">選択、 **LINQ to SQL クラス**項目テンプレート。</span><span class="sxs-lookup"><span data-stu-id="b653b-118">Select the **LINQ to SQL Classes** item template.</span></span>  
   
-3.  そのファイルに `northwind.dbml` という名前を付けます。 **[追加]**をクリックします。 Northwind.dbml ファイルには、オブジェクト リレーショナル デザイナー (O/R デザイナー) が開かれます。  
+3.  <span data-ttu-id="b653b-119">そのファイルに `northwind.dbml` という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="b653b-119">Name the file `northwind.dbml`.</span></span> <span data-ttu-id="b653b-120">**[追加]**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b653b-120">Click **Add**.</span></span> <span data-ttu-id="b653b-121">Northwind.dbml ファイルには、オブジェクト リレーショナル デザイナー (O/R デザイナー) が開かれます。</span><span class="sxs-lookup"><span data-stu-id="b653b-121">The Object Relational Designer (O/R Designer) is opened for the northwind.dbml file.</span></span>  
   
-### <a name="to-add-tables-to-query-to-the-or-designer"></a>O/R デザイナーをクエリにテーブルを追加するには  
+### <a name="to-add-tables-to-query-to-the-or-designer"></a><span data-ttu-id="b653b-122">O/R デザイナーをクエリにテーブルを追加するには</span><span class="sxs-lookup"><span data-stu-id="b653b-122">To add tables to query to the O/R Designer</span></span>  
   
-1.  **サーバー エクスプ ローラー**/**データベース エクスプ ローラー**、Northwind データベースへの接続を展開します。 展開、**テーブル**フォルダーです。  
+1.  <span data-ttu-id="b653b-123">**サーバー エクスプ ローラー**/**データベース エクスプ ローラー**、Northwind データベースへの接続を展開します。</span><span class="sxs-lookup"><span data-stu-id="b653b-123">In **Server Explorer**/**Database Explorer**, expand the connection to the Northwind database.</span></span> <span data-ttu-id="b653b-124">展開して、**テーブル**フォルダーです。</span><span class="sxs-lookup"><span data-stu-id="b653b-124">Expand the **Tables** folder.</span></span>  
   
-     O/R デザイナーを閉じていた場合は、前に追加した northwind.dbml ファイルをダブルクリックして開くことができます。  
+     <span data-ttu-id="b653b-125">O/R デザイナーが閉じられたかと、以前に追加した northwind.dbml ファイルをダブルクリックして開くことができます。</span><span class="sxs-lookup"><span data-stu-id="b653b-125">If you have closed the O/R Designer, you can reopen it by double-clicking the northwind.dbml file that you added earlier.</span></span>  
   
-2.  Customers テーブルをクリックし、デザイナーの左ペインにドラッグします。 Orders テーブルをクリックし、デザイナーの左ペインにドラッグします。  
+2.  <span data-ttu-id="b653b-126">Customers テーブルをクリックし、デザイナーの左ペインにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b653b-126">Click the Customers table and drag it to the left pane of the designer.</span></span> <span data-ttu-id="b653b-127">Orders テーブルをクリックし、デザイナーの左ペインにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b653b-127">Click the Orders table and drag it to the left pane of the designer.</span></span>  
   
-     デザイナーを新規作成`Customer`と`Order`プロジェクトのオブジェクト。 デザイナーが自動的にテーブル間のリレーションシップを検出し、関連オブジェクトのプロパティの子を作成することに注意してください。 たとえば、IntelliSense が表示されますが、`Customer`オブジェクトには、`Orders`その顧客に関連するすべての発注書のプロパティです。  
+     <span data-ttu-id="b653b-128">デザイナーを新規作成`Customer`と`Order`プロジェクトのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="b653b-128">The designer creates new `Customer` and `Order` objects for your project.</span></span> <span data-ttu-id="b653b-129">デザイナーが自動的にテーブル間のリレーションシップを検出し、関連オブジェクトのプロパティの子を作成することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="b653b-129">Notice that the designer automatically detects relationships between the tables and creates child properties for related objects.</span></span> <span data-ttu-id="b653b-130">たとえば、IntelliSense ことが表示されます、`Customer`オブジェクトには、`Orders`その顧客に関連するすべての注文のプロパティです。</span><span class="sxs-lookup"><span data-stu-id="b653b-130">For example, IntelliSense will show that the `Customer` object has an `Orders` property for all orders related to that customer.</span></span>  
   
-3.  変更内容を保存してデザイナーを閉じます。  
+3.  <span data-ttu-id="b653b-131">変更を保存し、デザイナーを終了します。</span><span class="sxs-lookup"><span data-stu-id="b653b-131">Save your changes and close the designer.</span></span>  
   
-4.  プロジェクトを保存します。  
+4.  <span data-ttu-id="b653b-132">プロジェクトを保存します。</span><span class="sxs-lookup"><span data-stu-id="b653b-132">Save your project.</span></span>  
   
-### <a name="to-add-code-to-query-the-database-and-display-the-results"></a>データベースを照会し、結果を表示するコードを追加するには  
+### <a name="to-add-code-to-query-the-database-and-display-the-results"></a><span data-ttu-id="b653b-133">データベースを照会し、結果を表示するコードを追加するには</span><span class="sxs-lookup"><span data-stu-id="b653b-133">To add code to query the database and display the results</span></span>  
   
-1.  **ツールボックス**、ドラッグ、<xref:System.Windows.Forms.DataGridView>コントロールをプロジェクトの Form1 の既定の Windows フォームにします</xref:System.Windows.Forms.DataGridView>。  
+1.  <span data-ttu-id="b653b-134">**ツールボックス**、ドラッグ、 <xref:System.Windows.Forms.DataGridView> Form1、プロジェクトの既定の Windows フォームにコントロールできます。</span><span class="sxs-lookup"><span data-stu-id="b653b-134">From the **Toolbox**, drag a <xref:System.Windows.Forms.DataGridView> control onto the default Windows Form for your project, Form1.</span></span>  
   
-2.  コードを追加する Form1 をダブルクリックして、`Load`形式のイベントです。  
+2.  <span data-ttu-id="b653b-135">コードを追加する Form1 をダブルクリックして、`Load`フォームのイベントです。</span><span class="sxs-lookup"><span data-stu-id="b653b-135">Double-click Form1 to add code to the `Load` event of the form.</span></span>  
   
-3.  O/R デザイナーにテーブルを追加したときに、デザイナーが追加、 <xref:System.Data.Linq.DataContext>、プロジェクトのオブジェクト</xref:System.Data.Linq.DataContext>。 このオブジェクトには、これらのテーブルにアクセスして、個々 のオブジェクトと各テーブルのコレクションにアクセスに必要なコードが含まれています。 <xref:System.Data.Linq.DataContext>オブジェクトは、プロジェクトの名前に基づいての .dbml ファイルの名前</xref:System.Data.Linq.DataContext>。 このプロジェクトで、<xref:System.Data.Linq.DataContext>オブジェクトの名前は`northwindDataContext`</xref:System.Data.Linq.DataContext>。  
+3.  <span data-ttu-id="b653b-136">O/R デザイナーにテーブルを追加すると、デザイナーが追加、<xref:System.Data.Linq.DataContext>プロジェクトのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="b653b-136">When you added tables to the O/R Designer, the designer added a <xref:System.Data.Linq.DataContext> object for your project.</span></span> <span data-ttu-id="b653b-137">このオブジェクトには、これらのテーブルにアクセスして、個々 のオブジェクトと各テーブルのコレクションにアクセスする必要があります、コードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="b653b-137">This object contains the code that you must have to access those tables, and to access individual objects and collections for each table.</span></span> <span data-ttu-id="b653b-138"><xref:System.Data.Linq.DataContext>オブジェクトは、プロジェクトの名前に基づいて、.dbml ファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="b653b-138">The <xref:System.Data.Linq.DataContext> object for your project is named based on the name of your .dbml file.</span></span> <span data-ttu-id="b653b-139">このプロジェクトの<xref:System.Data.Linq.DataContext>オブジェクトの名前は`northwindDataContext`します。</span><span class="sxs-lookup"><span data-stu-id="b653b-139">For this project, the <xref:System.Data.Linq.DataContext> object is named `northwindDataContext`.</span></span>  
   
-     インスタンスを作成することができます、 <xref:System.Data.Linq.DataContext>O/R デザイナーで指定されたテーブル内のコードとクエリ</xref:System.Data.Linq.DataContext>。  
+     <span data-ttu-id="b653b-140">インスタンスを作成することができます、 <xref:System.Data.Linq.DataContext> O/R デザイナーで指定されたテーブル内のコードとクエリ。</span><span class="sxs-lookup"><span data-stu-id="b653b-140">You can create an instance of the <xref:System.Data.Linq.DataContext> in your code and query the tables specified by the O/R Designer.</span></span>  
   
-     次のコードを追加、`Load`のプロパティとして公開されているテーブルを照会するイベント、<xref:System.Data.Linq.DataContext>とカウント、合計、および結果の平均します</xref:System.Data.Linq.DataContext>。 サンプルを使用、 `Aggregate` 、単一の結果のクエリに句と`Group By`の平均値を表示する句の結果をグループ化します。  
+     <span data-ttu-id="b653b-141">次のコードを追加、`Load`イベントのプロパティとして公開されているテーブルに対するクエリを<xref:System.Data.Linq.DataContext>とカウント、合計、および結果を平均します。</span><span class="sxs-lookup"><span data-stu-id="b653b-141">Add the following code to the `Load` event to query the tables that are exposed as properties of your <xref:System.Data.Linq.DataContext> and count, sum, and average the results.</span></span> <span data-ttu-id="b653b-142">サンプルを使用、`Aggregate`句を 1 つの結果のクエリと`Group By`の平均値を表示する句の結果をグループ化します。</span><span class="sxs-lookup"><span data-stu-id="b653b-142">The sample uses the `Aggregate` clause to query for a single result, and the `Group By` clause to show an average for grouped results.</span></span>  
   
-     [!code-vb[VbLINQToSQLHowTos&#13;](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-count-sum-or-average-data-by-using-linq_1.vb)]  
+     [!code-vb[VbLINQToSQLHowTos#13](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-count-sum-or-average-data-by-using-linq_1.vb)]  
   
-4.  F5 キーを押してプロジェクトを実行し、結果を表示します。  
+4.  <span data-ttu-id="b653b-143">F5 キーを押してプロジェクトを実行し、結果を表示します。</span><span class="sxs-lookup"><span data-stu-id="b653b-143">Press F5 to run your project and view the results.</span></span>  
   
-## <a name="see-also"></a>関連項目  
- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)   
- [クエリ](../../../../visual-basic/language-reference/queries/queries.md)   
- [LINQ to SQL](https://msdn.microsoft.com/library/bb386976)   
- [DataContext メソッド (O/R デザイナー)](https://docs.microsoft.com/visualstudio/data-tools/datacontext-methods-o-r-designer)  
- [Aggregate 句](../../../../visual-basic/language-reference/queries/aggregate-clause.md)   
- [Group By 句](../../../../visual-basic/language-reference/queries/group-by-clause.md)
-
+## <a name="see-also"></a><span data-ttu-id="b653b-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="b653b-144">See Also</span></span>  
+ [<span data-ttu-id="b653b-145">LINQ</span><span class="sxs-lookup"><span data-stu-id="b653b-145">LINQ</span></span>](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
+ [<span data-ttu-id="b653b-146">クエリ</span><span class="sxs-lookup"><span data-stu-id="b653b-146">Queries</span></span>](../../../../visual-basic/language-reference/queries/queries.md)  
+ [<span data-ttu-id="b653b-147">LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="b653b-147">LINQ to SQL</span></span>](https://msdn.microsoft.com/library/bb386976)  
+ [<span data-ttu-id="b653b-148">DataContext メソッド (O/R デザイナー)</span><span class="sxs-lookup"><span data-stu-id="b653b-148">DataContext Methods (O/R Designer)</span></span>](/visualstudio/data-tools/datacontext-methods-o-r-designer)  
+ [<span data-ttu-id="b653b-149">Aggregate 句</span><span class="sxs-lookup"><span data-stu-id="b653b-149">Aggregate Clause</span></span>](../../../../visual-basic/language-reference/queries/aggregate-clause.md)  
+ [<span data-ttu-id="b653b-150">Group By 句</span><span class="sxs-lookup"><span data-stu-id="b653b-150">Group By Clause</span></span>](../../../../visual-basic/language-reference/queries/group-by-clause.md)
