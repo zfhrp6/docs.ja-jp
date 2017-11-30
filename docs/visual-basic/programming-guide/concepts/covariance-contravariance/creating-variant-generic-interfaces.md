@@ -1,46 +1,38 @@
 ---
-title: "バリアント ジェネリック インターフェイス (Visual Basic) を作成する |Microsoft ドキュメント"
+title: "バリアント ジェネリック インターフェイス (Visual Basic) の作成"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: d4037dd2-dfe9-4811-9150-93d4e8b20113
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 324e2a906e84950aa9019bbf68a524458492646e
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: 380af3b29172b1fa13d42d33e574201607cb804b
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="creating-variant-generic-interfaces-visual-basic"></a>バリアント ジェネリック インターフェイス (Visual Basic) の作成
-共変性のインターフェイスのジェネリック型パラメーターを宣言するまたは反変です。 *ジェネリックの共変性*インターフェイス メソッドのジェネリック型パラメーターで定義されているよりも戻り値の型の派生を許可します。 *反変性*インターフェイス メソッドには、ジェネリック パラメーターで指定されているよりも弱い派生の引数の型を持つことができます。 ジェネリック インターフェイスを持つ共変または反変のジェネリック型パラメーターと呼ばれる*バリアント*します。  
+インターフェイスのジェネリック型パラメーターは、共変または反変として宣言できます。 "*共変性*" により、インターフェイス メソッドの戻り値の型の派生を、ジェネリック型パラメーターで定義されている型よりも強くすることができます。 "*反変性*" により、インターフェイス メソッドの引数の型の派生を、ジェネリック パラメーターで指定されている型よりも弱くすることができます。 共変または反変のジェネリック型パラメーターを持つジェネリック インターフェイスは、"*バリアント*" と呼ばれます。  
   
 > [!NOTE]
->  .NET framework 4 には、いくつかの既存のジェネリック インターフェイスの分散のサポートが導入されました。 .NET Framework のバリアントのインターフェイスの一覧で、次を参照してください。[ジェネリック インターフェイス (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)します。  
+>  .NET Framework 4 では、既存のいくつかのジェネリック インターフェイスに対して、分散のサポートが導入されています。 .NET Framework のバリアントのインターフェイスの一覧で、次を参照してください。[ジェネリック インターフェイス (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)です。  
   
-## <a name="declaring-variant-generic-interfaces"></a>バリアント ジェネリック インターフェイスを宣言します。  
- バリアント ジェネリック インターフェイスを宣言するにを使用して、`in`と`out`ジェネリック型パラメーターのキーワードです。  
+## <a name="declaring-variant-generic-interfaces"></a>バリアント ジェネリック インターフェイスの宣言  
+ バリアント ジェネリック インターフェイスは、ジェネリック型パラメーターの `in` キーワードと `out` キーワードを使用して宣言できます。  
   
 > [!IMPORTANT]
->  `ByRef`Visual Basic でのパラメーターは、バリアント型にすることはできません。 また、値型では、分散はサポートされません。  
+>  `ByRef`Visual Basic でのパラメーターは、バリアント型にすることはできません。 また、値の型も変性をサポートしていません。  
   
- 宣言するジェネリック型パラメーター共変性を使用して、`out`キーワードです。 共変の型は、次の条件を満たしている必要があります。  
+ ジェネリック型パラメーターを共変として宣言するには、`out` キーワードを使用します。 共変の型は、次の条件を満たす必要があります。  
   
--   型がインターフェイス メソッドの戻り値の型としてのみ使用され、メソッド引数の型として使用できません。 これで、次の例に示すは種類`R`共変で宣言されています。  
+-   型がインターフェイス メソッドの戻り値の型としてのみ使用され、メソッド引数の型として使用されない。 この例を以下に示します。ここでは、型 `R` が共変として宣言されています。  
   
     ```vb  
     Interface ICovariant(Of Out R)  
@@ -50,7 +42,7 @@ ms.lasthandoff: 03/13/2017
     End Interface  
     ```  
   
-     この規則には例外が&1; つあります。 メソッド パラメーターとして反変のジェネリック デリゲートをした場合は、デリゲートのジェネリック型パラメーターとして型を使用できます。 型でその例を示します`R`次の例です。 詳細については、次を参照してください。[デリゲート (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)と[用 Func および Action 汎用デリゲート (Visual Basic) を使用して分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)します。  
+     この規則には例外が 1 つあります。 反変の汎用デリゲートをメソッド パラメーターとして使用する場合は、型をデリゲートのジェネリック型パラメーターとして使用できます。 次の例では、型 `R` によって示します。 詳細については、次を参照してください。[デリゲート (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)と[Func および Action 汎用デリゲート (Visual Basic) を使用して分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)です。  
   
     ```vb  
     Interface ICovariant(Of Out R)  
@@ -58,7 +50,7 @@ ms.lasthandoff: 03/13/2017
     End Interface  
     ```  
   
--   種類は、インターフェイス メソッドのジェネリック制約として使用されません。 これは、次のコードに示します。  
+-   型がインターフェイス メソッドのジェネリック制約として使用されない。 これを次のコードに示します。  
   
     ```vb  
     Interface ICovariant(Of Out R)  
@@ -69,7 +61,7 @@ ms.lasthandoff: 03/13/2017
     End Interface  
     ```  
   
- 使用してジェネリック型パラメーターの反変性を宣言することができます、`in`キーワードです。 反変の型は、インターフェイス メソッドの戻り値の型としてではなく、メソッド引数の型としてのみ使用できます。 反変の型は、ジェネリック制約にも使用できます。 次のコードでは、反変のインターフェイスを宣言し、そのメソッドのいずれかに汎用的な制約を使用する方法を示します。  
+ ジェネリック型パラメーターを反変として宣言するには、`in` キーワードを使用します。 反変の型は、メソッド引数の型としてのみ使用でき、インターフェイス メソッドの戻り値の型として使用できません。 また、反変の型はジェネリック制約にも使用できます。 次のコードでは、反変のインターフェイスを宣言し、そのメソッドの 1 つにジェネリック制約を使用する方法を示します。  
   
 ```vb  
 Interface IContravariant(Of In A)  
@@ -80,7 +72,7 @@ Interface IContravariant(Of In A)
 End Interface  
 ```  
   
- 次のコード例のようには、同じインターフェイスが異なる型のパラメーターの共変性と反変性の両方をサポートすることもです。  
+ 次のコード例に示すように、同一インターフェイス内の異なる型パラメーターで、共変性と反変性の両方をサポートすることもできます。  
   
 ```vb  
 Interface IVariant(Of Out R, In A)  
@@ -90,7 +82,7 @@ Interface IVariant(Of Out R, In A)
 End Interface  
 ```  
   
- Visual Basic では、デリゲート型を指定することがなくバリアント インターフェイスのイベントを宣言できません。 また、variant インターフェイスがクラス、列挙、または構造体で入れ子になっている必要しますが、インターフェイスを入れ子にできます。 これは、次のコードに示します。  
+ Visual basic では、デリゲート型を指定せずバリアント インターフェイスのイベントを宣言できません。 また、バリアント インターフェイスは、クラス、列挙型、または構造体、入れ子ことはできませんが、インターフェイスが入れ子にしたことができます。 これを次のコードに示します。  
   
 ```vb  
 Interface ICovariant(Of Out R)  
@@ -113,8 +105,8 @@ Interface ICovariant(Of Out R)
 End Interface  
 ```  
   
-## <a name="implementing-variant-generic-interfaces"></a>バリアント ジェネリック インターフェイスを実装します。  
- クラスのバリアント ジェネリック インターフェイスを実装するには、ロケールに依存しないインターフェイスに使用されるのと同じ構文を使用します。 次のコード例では、ジェネリック クラスに、共変のインターフェイスを実装する方法を示します。  
+## <a name="implementing-variant-generic-interfaces"></a>バリアント ジェネリック インターフェイスの実装  
+ バリアント ジェネリック インターフェイスをクラスに実装する場合は、インバリアント インターフェイスに使用するのと同じ構文を使用します。 次のコード例では、共変のインターフェイスをジェネリック クラスに実装する方法を示します。  
   
 ```vb  
 Interface ICovariant(Of Out R)  
@@ -130,7 +122,7 @@ Class SampleImplementation(Of R)
 End Class  
 ```  
   
- バリアント型のインターフェイスを実装するクラスは変化しません。 次に例を示します。  
+ バリアント インターフェイスを実装するクラスは不変です。 次に例を示します。  
   
 ```vb  
  The interface is covariant.  
@@ -147,7 +139,7 @@ Dim button As SampleImplementation(Of Button) =
 ```  
   
 ## <a name="extending-variant-generic-interfaces"></a>バリアント ジェネリック インターフェイスの拡張  
- 使用する必要があるバリアント ジェネリック インターフェイスを拡張するときに、`in`と`out`派生インターフェイスで変性をサポートするかどうかを明示的に指定するキーワードです。 コンパイラは、拡張されているインターフェイスからの差異を推論できません。 たとえば、次のインターフェイスがあるとします。  
+ バリアント ジェネリック インターフェイスを拡張するときは、`in` キーワードと `out` キーワードを使用して、派生インターフェイスで変性をサポートするかどうかを明示的に指定する必要があります。 コンパイラでは、拡張されているインターフェイスからの変性の推論は行われません。 たとえば、次のようなインターフェイスがあるとします。  
   
 ```vb  
 Interface ICovariant(Of Out T)  
@@ -162,9 +154,9 @@ Interface IExtCovariant(Of Out T)
 End Interface  
 ```  
   
- `Invariant(Of T)`インターフェイス、ジェネリック型パラメーター`T`バリアントで`IExtCovariant (Of Out T)`型パラメーターが共変で両方のインターフェイスは、同じインターフェイスを拡張します。 同じ規則には、反変のジェネリック型パラメーターに適用されます。  
+ `Invariant(Of T)`インターフェイス、ジェネリック型パラメーター`T`バリアントではない一方で`IExtCovariant (Of Out T)`型パラメーターが共変で両方のインターフェイスは、同じインターフェイスを拡張します。 これと同じ規則が、反変のジェネリック型パラメーターにも当てはまります。  
   
- ジェネリック型パラメーターで、インターフェイスを拡張するインターフェイスを作成する`T`が共変とインターフェイスのジェネリック型パラメーターの場合の反変、拡張の場合は、インターフェイス`T`バリアント型ではありません。 これは、次のコード例に示します。  
+ 拡張インターフェイスのジェネリック型パラメーター `T` が不変であれば、ジェネリック型パラメーター `T` が共変のインターフェイスと反変のインターフェイスの両方を拡張する 1 つのインターフェイスを作成できます。 これを次のコード例に示します。  
   
 ```vb  
 Interface ICovariant(Of Out T)  
@@ -178,7 +170,7 @@ Interface IInvariant(Of T)
 End Interface  
 ```  
   
- ただし、ジェネリック型パラメーター`T`は&1; つのインターフェイスの宣言と共変は宣言できません反変拡張するインターフェイスまたはその逆です。 これは、次のコード例に示します。  
+ ただし、一方のインターフェイスでジェネリック型パラメーター `T` が共変として宣言されている場合は、それを拡張インターフェイスで反変として宣言することはできません。その逆についても同様です。 これを次のコード例に示します。  
   
 ```vb  
 Interface ICovariant(Of Out T)  
@@ -190,10 +182,10 @@ End Interface
 ' End Interface  
 ```  
   
-### <a name="avoiding-ambiguity"></a>あいまいさを回避します。  
- バリアント ジェネリック インターフェイスを実装するときに分散できる場合もありますわかりにくくなる場合します。 このような状況は回避する必要があります。  
+### <a name="avoiding-ambiguity"></a>あいまいさの回避  
+ バリアント ジェネリック インターフェイスの実装時には、変性によってあいまいさが発生することがあります。 このような状況は回避する必要があります。  
   
- たとえば、1 つのクラスで明示的に別のジェネリック型パラメーターを持つ同じバリアント ジェネリック インターフェイスを実装する場合のあいまいさを作成できます。 コンパイラ エラーは発生しませんが、ここでは、するインターフェイスの実装は、実行時に選択が指定されていません。 これにより、コードで軽度のバグです。 次のコード例を検討してください。  
+ たとえば、同一のバリアント ジェネリック インターフェイスを、異なるジェネリック型パラメーターを使用して 1 つのクラスに明示的に実装すると、あいまいさが発生する可能性があります。 この場合、コンパイラでエラーは生成されませんが、実行時にどのインターフェイスの実装が選択されるかは明確ではありません。 これにより、コードで特定しにくいバグが発生する可能性があります。 次のコード例について考えます。  
   
 > [!NOTE]
 >  `Option Strict Off`、Visual Basic では、あいまいなインターフェイスの実装がある場合に、コンパイラの警告が生成されます。 `Option Strict On`、Visual Basic コンパイラ エラーが生成されます。  
@@ -240,8 +232,8 @@ Sub Main()
 End Sub  
 ```  
   
- この例では指定されていないか、`pets.GetEnumerator`メソッドによって選択される`Cat`と`Dog`です。 これにより、コードで問題が発生する可能性があります。  
+ この例では、`pets.GetEnumerator` メソッドで `Cat` と `Dog` がどのように選択されるかが明らかではありません。 そのため、コードで問題が発生する可能性があります。  
   
 ## <a name="see-also"></a>関連項目  
- [ジェネリック インターフェイス (Visual Basic) の分散](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)   
- [Func および Action 汎用デリゲート (Visual Basic) に対する分散の使用](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+ [ジェネリック インターフェイスの分散 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
+ [Func および Action 汎用デリゲートでの分散の使用 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)

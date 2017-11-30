@@ -1,36 +1,38 @@
 ---
-title: "GROUPPARTITION (Entity SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-ado"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: GROUPPARTITION (Entity SQL)
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-ado
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: d0482e9b-086c-451c-9dfa-ccb024a9efb6
-caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: JennieHubbard
+ms.author: jhubbard
+manager: jhubbard
+ms.openlocfilehash: ceadd193784a2c1936b0dcc2d634ae87b513e57e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# GROUPPARTITION (Entity SQL)
-引数値のコレクションを返します。この値は、集計が関連する現在のグループ パーティションから投影されたものです。`GroupPartition` 集計は、グループベースの集計であり、コレクションベースの形式ではありません。  
+# <a name="grouppartition-entity-sql"></a>GROUPPARTITION (Entity SQL)
+引数値のコレクションを返します。この値は、集計が関連する現在のグループ パーティションから投影されたものです。 `GroupPartition` 集計は、グループベースの集計であり、コレクションベースの形式ではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
 GROUPPARTITION( [ALL|DISTINCT] expression )  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
  `expression`  
- 任意のブール型 \([!INCLUDE[esql](../../../../../../includes/esql-md.md)]\) の式を指定します。  
+ 任意のブール型 ( [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ) の式を指定します。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  次のクエリでは、製品の一覧と、製品ごとの注文明細の数量のコレクションが生成されます。  
   
 ```  
@@ -77,7 +79,7 @@ select groupkey, GroupPartition({42}) from {1,2,3} as a inner join {4,5,6} as b 
 select groupkey, GroupPartition(b > a) from {1,2,3} as a inner join {4,5,6} as b on true group by a as groupkey  
 ```  
   
-## 使用例  
- 次の例では、GROUPPARTITION 句を GROUP BY 句と共に使用する方法を示します。 GROUP BY 句は `SalesOrderHeader` によって `Contact` エンティティをグループ化します。 続いて GROUPPARTITION 句は、各グループの `TotalDue` プロパティを投影し、その結果、10 進数のコレクションが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、GROUPPARTITION 句を GROUP BY 句と共に使用する方法を示します。 GROUP BY 句は `SalesOrderHeader` によって `Contact`エンティティをグループ化します。 続いて GROUPPARTITION 句は、各グループの `TotalDue` プロパティを投影し、その結果、10 進数のコレクションが生成されます。  
   
  [!code-csharp[DP EntityServices Concepts 2#Collection_GroupPartition](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#collection_grouppartition)]

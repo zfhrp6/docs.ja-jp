@@ -1,35 +1,38 @@
 ---
-title: "Windows Communication Foundation セキュリティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "セキュリティ [WCF]"
-  - "Windows Communication Foundation, プログラミング"
-  - "Windows Communication Foundation, セキュリティ"
+title: "Windows Communication Foundation セキュリティ"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Windows Communication Foundation, programming
+- security [WCF]
+- Windows Communication Foundation, security
 ms.assetid: 7ea87fcb-dcfb-4a4a-8b03-6b954575d45b
-caps.latest.revision: 21
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 38f62a6ccc0c9291f3963173475f99d5800feb39
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# Windows Communication Foundation セキュリティ
+# <a name="windows-communication-foundation-security"></a>Windows Communication Foundation セキュリティ
 このセクションの各トピックでは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] のセキュリティ機能、およびこれらの機能を使用してメッセージをセキュリティで保護する方法について説明します。  
   
- Windows Server AppFabric およびセキュリティ[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[Windows Server AppFabric のセキュリティ モデル](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)」を参照してください。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Windows Server AppFabric とセキュリティを参照してください[Windows Server AppFabric のセキュリティ モデル。](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ機能について説明します。  
   
- [セキュリティの概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
+ [セキュリティの基本概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティで使用される基本的な用語と概念について説明します。  
   
  [一般的なセキュリティ シナリオ](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
@@ -41,7 +44,7 @@ caps.handback.revision: 21
  [バインディングとセキュリティ](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
  カスタム セキュリティ バインディングの作成方法を示すトピックなど、バインディングをセキュリティの観点から説明します。  
   
- [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [サービスとクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] のセキュリティ機能を使用して、メッセージをセキュリティで保護する方法について説明します。  
   
  [認証](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)  
@@ -59,15 +62,15 @@ caps.handback.revision: 21
  [監査](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
  セキュリティ イベントを監査する方法について説明します。  
   
- [セキュリティ ガイドラインとベスト プラクティス](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+ [セキュリティ ガイダンスとベスト プラクティス](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  セキュリティで保護された [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] アプリケーションの作成に関するガイドラインを示します。  
   
-## 関連項目  
+## <a name="reference"></a>参照  
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Security>  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [WCF 機能の詳細](../../../../docs/framework/wcf/feature-details/index.md)  
   
  [基本的な WCF プログラミング](../../../../docs/framework/wcf/basic-wcf-programming.md)  
@@ -76,5 +79,5 @@ caps.handback.revision: 21
   
  [概念](../../../../docs/framework/wcf/conceptual-overview.md)  
   
-## 参照  
- [アプリケーションの構成](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)
+## <a name="see-also"></a>関連項目  
+ [アプリケーションを構成します。](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)

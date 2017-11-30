@@ -1,46 +1,44 @@
 ---
-title: "&#39;Get&#39; accessor of property &#39;&lt;propertyname&gt;&#39; is not accessible | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc31103"
-  - "bc31103"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC31103"
+title: "&#39;です。Get &#39;プロパティ &#39; アクセサー&lt;propertyname&gt;&#39; にアクセスできません"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc31103
+- bc31103
+helpviewer_keywords: BC31103
 ms.assetid: 3c346c32-7669-4b04-841d-7a9df9cb703e
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 167e040570af1fc78ce48f5e930e54981ba909ae
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &#39;Get&#39; accessor of property &#39;&lt;propertyname&gt;&#39; is not accessible
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-ステートメントがプロパティの値を取得しようとしましたが、プロパティの `Get` プロシージャへのアクセス許可がありません。  
+# <a name="39get39-accessor-of-property-39ltpropertynamegt39-is-not-accessible"></a>&#39;です。Get &#39;プロパティ &#39; アクセサー&lt;propertyname&gt;&#39; にアクセスできません
+ステートメントが、プロパティへのアクセスがあるないときに、プロパティの値を取得しようとしています。`Get`プロシージャです。  
   
- [Get Statement](../../../visual-basic/language-reference/statements/get-statement.md)が [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)よりも制限の高いアクセス レベルでマーク付けされている場合、プロパティ値の読み取りは次のケースでエラーになります。  
+ 場合、 [Get ステートメント](../../../visual-basic/language-reference/statements/get-statement.md)でマークされているより制限の厳しいアクセス レベルよりもその[Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)、次の場合、プロパティ値を読み取ろうとしてが失敗します。  
   
--   `Get` ステートメントが [Private](../../../visual-basic/language-reference/modifiers/private.md) でマーク付けされており、呼び出し元のコードがプロパティが定義されたクラスまたは構造体の外側にある場合。  
+-   `Get`ステートメントがマークされている[プライベート](../../../visual-basic/language-reference/modifiers/private.md)し、呼び出し元のコードがクラスまたはプロパティが定義されている構造体の範囲外です。  
   
--   `Get` ステートメントが [Protected](../../../visual-basic/language-reference/modifiers/protected.md) でマーク付けされており、呼び出し元のコードがプロパティが定義されたクラスまたは構造体の内部にも、派生クラスの内部にもない場合。  
+-   `Get`ステートメントがマークされている[Protected](../../../visual-basic/language-reference/modifiers/protected.md)呼び出し元のコードは、派生クラスでないか、クラスまたはプロパティが定義されている構造体ではなくとします。  
   
--   `Get` ステートメントが [Friend](../../../visual-basic/language-reference/modifiers/friend.md) でマーク付けされており、呼び出し元のコードがプロパティが定義されたのと同じアセンブリにない場合。  
+-   `Get`ステートメントがマークされている[フレンド](../../../visual-basic/language-reference/modifiers/friend.md)し、呼び出し元のコードは、プロパティが定義されている同じアセンブリに含まれない。  
   
- **Error ID:** BC31103  
+ **エラー ID:** BC31103  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   プロパティが定義されたソース コードを変更できる場合は、`Get` プロシージャをプロパティ自体と同じアクセス レベルで宣言することを検討してください。  
+-   プロパティが定義されたソース コードを使っている場合を宣言することを検討してください、`Get`プロパティ自体と同じアクセス レベルを持つプロシージャ。  
   
--   プロパティが定義されたソース コードを変更できない場合、または `Get` プロシージャをプロパティ自体よりも厳しいアクセス レベルで制限する必要がある場合は、プロパティ値を読み取るステートメントをプロパティへのアクセスが可能なコード領域に移動することを検討してください。  
+-   プロパティを定義するソース コードがないか、または制限する必要がある場合、`Get`プロシージャに簡単にアクセスのあるコード領域にプロパティ値を読み取るステートメントに移動しようとしている、プロパティ自体には、複数のレベルにアクセスしますプロパティ。  
   
-## 参照  
- [Property プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)   
- [How to: Declare a Property with Mixed Access Levels](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-a-property-with-mixed-access-levels.md)
+## <a name="see-also"></a>関連項目  
+ [Property プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)  
+ [方法 : 複数のアクセス レベルを持つプロパティを宣言する](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-a-property-with-mixed-access-levels.md)

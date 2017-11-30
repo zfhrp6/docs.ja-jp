@@ -1,33 +1,25 @@
 ---
-title: "AttributeUsage (Visual Basic) |Microsoft ドキュメント"
+title: AttributeUsage (Visual Basic)
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 48757216-c21d-4051-86d5-8a3e03c39d2c
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: bf56f40033f9d1547d63fccd25e3c0561bb62cb1
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: aef00d201c3dea82f67395bee0d85f8989afa01e
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="attributeusage-visual-basic"></a>AttributeUsage (Visual Basic)
-カスタム属性クラスの使用方法を決定します。 `AttributeUsage`新しい属性を適用する方法を制御するカスタム属性の定義に適用できる属性です。 既定の設定は、明示的に適用されるときに、次のようになります。  
+カスタム属性クラスの使用方法を決定します。 `AttributeUsage` は、カスタム属性の定義に適用して新しい属性の適用方法を制御できる属性です。 明示的に適用するときの既定の設定は次のようになります。  
   
 ```vb  
 <System.AttributeUsage(System.AttributeTargets.All,   
@@ -38,9 +30,9 @@ Class NewAttribute
 End Class  
 ```  
   
- この例では、`NewAttribute`クラスは、すべての属性を使用できるコード エンティティを適用して、エンティティごとに&1; 回だけ適用できます。 基本クラスに適用すると、派生クラスによって継承されます。  
+ この例では、属性にできる任意のコード エンティティに `NewAttribute` クラスを適用できますが、各エンティティに適用できるのは 1 回だけです。 基底クラスに適用すると、派生クラスによって継承されます。  
   
- `AllowMultiple`と`Inherited`のため、このコードは、同じ効果を持ちます引数は省略できます。  
+ `AllowMultiple` 引数と `Inherited` 引数は省略できるので、次のコードは同じ効果を持ちます。  
   
 ```vb  
 <System.AttributeUsage(System.AttributeTargets.All)>   
@@ -49,7 +41,7 @@ Class NewAttribute
 End Class  
 ```  
   
- 最初の`AttributeUsage`引数の&1; つまたは複数の要素でなければなりません、<xref:System.AttributeTargets>列挙体</xref:System.AttributeTargets>。 複数のターゲット型は、次のように、OR 演算子と一緒にリンクされたことができます。  
+ 最初の `AttributeUsage` 引数は、<xref:System.AttributeTargets> 列挙型の 1 つまたは複数の要素でなければなりません。 次のように、複数のターゲット型を OR 演算子で 1 つにまとめることができます。  
   
 ```vb  
 Imports System  
@@ -62,7 +54,7 @@ Class NewPropertyOrFieldAttribute
 End Class  
 ```  
   
- 場合、`AllowMultiple`に設定されている引数`true`、次のように、単一のエンティティに結果の属性が複数回適用されます。  
+ `AllowMultiple` 引数を `true` に設定すると、次のように、結果の属性を 1 つのエンティティに複数回適用できます。  
   
 ```vb  
 Imports System  
@@ -79,9 +71,9 @@ Class Class1
 End Class  
 ```  
   
- ここで`MultiUseAttr`ため繰り返し適用できる`AllowMultiple`に設定されている`true`します。 複数の属性を適用する場合、両方の形式は有効です。  
+ この例では、`AllowMultiple` が `true` に設定されているので、`MultiUseAttr` を繰り返し適用できます。 示されているどちらの形式でも、複数の属性を適用できます。  
   
- 場合`Inherited`に設定されている`false`、属性が指定されるクラスから派生したクラスによって継承されません。 例:  
+ `Inherited` を `false` に設定すると、属性化されたクラスから派生するクラスは属性を継承しません。 例:  
   
 ```vb  
 Imports System  
@@ -103,15 +95,15 @@ Class DClass
 End Class  
 ```  
   
- ここで`Attr1`には適用されません`DClass`継承を使用しています。  
+ この例では、`Attr1` は継承によって `DClass` に適用されません。  
   
 ## <a name="remarks"></a>コメント  
- `AttributeUsage`属性は、単一目的の属性 - 同じクラスに複数回適用することはできません。 `AttributeUsage`<xref:System.AttributeUsageAttribute>。</xref:System.AttributeUsageAttribute>エイリアスします。  
+ `AttributeUsage` 属性は、1 回だけ使用できる属性です。同じクラスに複数回適用することはできません。 `AttributeUsage` は <xref:System.AttributeUsageAttribute> の別名です。  
   
- 詳細については、次を参照してください。[属性 (Visual Basic) を使用してリフレクションによってへのアクセス](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)します。  
+ 詳細については、「[リフレクションを使用した属性へのアクセス (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- 次の例では、効果、`Inherited`と`AllowMultiple`への引数、`AttributeUsage`属性、およびクラスに適用されるカスタム属性を列挙する方法です。  
+ 次の例を見ると、`AttributeUsage` 属性に対する `Inherited` 引数と `AllowMultiple` 引数の効果、およびクラスに適用されているカスタム属性の列挙方法がわかります。  
   
 ```vb  
 Imports System  
@@ -179,11 +171,11 @@ A2
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.Attribute></xref:System.Attribute>   
- <xref:System.Reflection></xref:System.Reflection>   
- [Visual Basic のプログラミング ガイド](../../../../visual-basic/programming-guide/index.md)   
- [属性](https://msdn.microsoft.com/library/5x6cd29c)   
- [リフレクション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)   
- [属性 (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)   
- [カスタム属性 (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)   
- [リフレクション (Visual Basic) を使用して属性へのアクセス](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+ <xref:System.Attribute>  
+ <xref:System.Reflection>  
+ [Visual Basic プログラミング ガイド](../../../../visual-basic/programming-guide/index.md)  
+ [属性](https://msdn.microsoft.com/library/5x6cd29c)  
+ [リフレクション (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)  
+ [属性 (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)  
+ [カスタム属性の作成 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)  
+ [リフレクションを使用した属性へのアクセス (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)

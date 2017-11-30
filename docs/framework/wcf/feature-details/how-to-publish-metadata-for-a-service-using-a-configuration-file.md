@@ -1,28 +1,31 @@
 ---
-title: "方法: 構成ファイルを使用してサービスのメタデータを公開する | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法: 構成ファイルを使用してサービスのメタデータを公開する"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 24
+caps.latest.revision: "24"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: e94fe7135d51c4e1578ca69768b6d0ba2aa6ae6c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法: 構成ファイルを使用してサービスのメタデータを公開する
-このトピックは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスのメタデータを公開する手段を示す&2; つの「方法」トピックのうちの&1; つです。 構成ファイルとコードを使用して、サービスがメタデータを公開する手段を指定する方法は&2; つあります。 このトピックでは、構成ファイルを使用してサービスのメタデータを公開する方法について説明します。  
+# <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>方法: 構成ファイルを使用してサービスのメタデータを公開する
+このトピックは、[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスのメタデータを公開する手段を示す 2 つの「方法」トピックのうちの 1 つです。 構成ファイルとコードを使用して、サービスがメタデータを公開する手段を指定する方法は 2 つあります。 このトピックでは、構成ファイルを使用してサービスのメタデータを公開する方法について説明します。  
   
 > [!CAUTION]
->  このトピックでは、セキュリティで保護されていない方法でメタデータを公開する方法について説明します。 クライアントは、サービスからメタデータを取得できます。 安全な方法でメタデータを公開するサービスを必要とする場合は、次を参照してください。[カスタム セキュリティで保護されたメタデータ エンドポイント](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md)します。  
+>  このトピックでは、セキュリティで保護されていない方法でメタデータを公開する方法について説明します。 クライアントは、サービスからメタデータを取得できます。 安全な方法でメタデータを公開するようにサービスを必要とする場合は、次を参照してください。[カスタム セキュリティで保護されたメタデータ エンドポイント](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md)です。  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]コードでは、メタデータの公開を参照してください[方法: サービスを使用してコードのメタデータを公開](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)します。 メタデータを公開すると、クライアントが `?wsdl` クエリ文字列を使用した WS-Transfer GET 要求または HTTP/GET 要求によりメタデータを取得できるようになります。 コードが機能するかどうかを確認するために、基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを作成します。 簡略化のため、次のコードに基本的な自己ホスト型サービスが用意されています。  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]コードでは、メタデータの公開を参照してください[する方法: サービスを使用してコードのメタデータを公開](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)です。 メタデータを公開すると、クライアントが `?wsdl` クエリ文字列を使用した WS-Transfer GET 要求または HTTP/GET 要求によりメタデータを取得できるようになります。 コードが機能するかどうかを確認するために、基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスを作成します。 簡略化のため、次のコードに基本的な自己ホスト型サービスが用意されています。  
   
 ```csharp  
 using System;  
@@ -95,28 +98,23 @@ namespace Metadata.Samples
     </behaviors>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
 ### <a name="to-publish-metadata-for-a-wcf-service-using-an-application-configuration-file"></a>アプリケーション構成ファイルを使用して WCF サービスのメタデータを公開するには  
   
-1.  
-          `</services>` 要素を閉じた後、App.config ファイル内に `<behaviors>` 要素を作成します。  
+1.  `</services>` 要素を閉じた後、App.config ファイル内に `<behaviors>` 要素を作成します。  
   
   
   
-2.  
-          `<behaviors>` 要素内に `<serviceBehaviors>` 要素を追加します。  
+2.  `<behaviors>` 要素内に `<serviceBehaviors>` 要素を追加します。  
   
   
   
-3.  
-          `<behavior>`要素に `<serviceBehaviors>` 要素を追加し、`name` 要素の `<behavior>` 属性に値を指定します。  
+3.  `<behavior>`要素に `<serviceBehaviors>` 要素を追加し、`name` 要素の `<behavior>` 属性に値を指定します。  
   
   
   
-4.  
-          `<serviceMetadata>` 要素を `<behavior>` 要素に追加します。 `httpGetEnabled` 属性を `true` に設定し、`policyVersion` 属性を Policy15 に設定します。 `httpGetEnabled` により、サービスは HTTP GET 要求からのメタデータ要求に応答できるようになります。 `policyVersion` は、サービスに対して、WS-Policy 1.5 準拠でメタデータを生成するように指示します。  
+4.  `<serviceMetadata>` 要素を `<behavior>` 要素に追加します。 `httpGetEnabled` 属性を `true` に設定し、`policyVersion` 属性を Policy15 に設定します。 `httpGetEnabled` により、サービスは HTTP GET 要求からのメタデータ要求に応答できるようになります。 `policyVersion` は、サービスに対して、WS-Policy 1.5 準拠でメタデータを生成するように指示します。  
   
   
   
@@ -182,7 +180,7 @@ namespace Metadata.Samples
   
 ### <a name="to-use-default-endpoints"></a>既定のエンドポイントを使用するには  
   
-1.  既定のエンドポイントを使用するサービスのメタデータを構成するには、指定、 <xref:System.ServiceModel.Description.ServiceMetadataBehavior>の構成ファイルの前の例のように、任意のエンドポイントを指定しません。 構成ファイルは、次のようになります。  
+1.  既定のエンドポイントを使用するサービスでメタデータを構成するには、前の例のように、構成ファイルで <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を指定します。ただし、エンドポイントは指定しないでください。 構成ファイルは、次のようになります。  
   
     ```xml  
     <configuration>  
@@ -199,7 +197,7 @@ namespace Metadata.Samples
     </configuration>  
     ```  
   
-     サービスがあるため、 <xref:System.ServiceModel.Description.ServiceMetadataBehavior>で、`httpGetEnabled`に設定`true`サービスが有効な場合、メタデータの公開、およびエンドポイントが明示的に追加されていないため、ランタイムは既定のエンドポイントを追加します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]既定のエンドポイント、バインディング、および動作を参照してください[簡略化された構成](../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)します。  
+     サービスの <xref:System.ServiceModel.Description.ServiceMetadataBehavior> では `httpGetEnabled` が `true` に設定されているため、サービスではメタデータの公開が有効になっています。また、エンドポイントが明示的に追加されていないため、ランタイムは既定のエンドポイントを追加します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]既定のエンドポイント、バインディング、および動作を参照してください[簡略化された構成](../../../../docs/framework/wcf/simplified-configuration.md)と[WCF サービスの構成を簡略化](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)です。  
   
 ## <a name="example"></a>例  
  次のコード例は、基本的な [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] サービスの実装と、このサービスのメタデータを公開する構成ファイルを示しています。  
@@ -274,9 +272,9 @@ namespace Metadata.Samples
 ```  
   
 ## <a name="see-also"></a>関連項目  
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior>   
- [方法: マネージ アプリケーションで WCF サービスをホスト](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)   
- [自己ホストします。](../../../../docs/framework/wcf/samples/self-host.md)   
- [メタデータ アーキテクチャの概要](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)   
- [メタデータを使用します。](../../../../docs/framework/wcf/feature-details/using-metadata.md)   
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior>  
+ [方法: マネージ アプリケーションで WCF サービスをホストする](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)  
+ [自己ホストします。](../../../../docs/framework/wcf/samples/self-host.md)  
+ [メタデータ アーキテクチャの概要](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)  
+ [メタデータを使用します。](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
  [方法: コードを使用して、サービスのメタデータを公開](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)

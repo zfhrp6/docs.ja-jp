@@ -1,36 +1,36 @@
 ---
-title: ".NET Framework を使用したカスタム Windows フォーム コントロールの開発 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-winforms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "jsharp"
-helpviewer_keywords: 
-  - "Component クラス"
-  - "Control クラス, Windows フォーム"
-  - "カスタム コントロール [Windows フォーム], 開発 (コードを使用して)"
+title: ".NET Framework を使用したカスタム Windows フォーム コントロールの開発"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-winforms
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- custom controls [Windows Forms], developing using code
+- Control class [Windows Forms], Windows Forms
 ms.assetid: 236cebc0-bd71-4f18-9fd6-5d0e592375df
-caps.latest.revision: 22
-author: "dotnet-bot"
-ms.author: "dotnetcontent"
-manager: "wpickett"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: dotnet-bot
+ms.author: dotnetcontent
+manager: wpickett
+ms.openlocfilehash: 89be7e347556c8ec34296044f17fbfd4450bc127
+ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/22/2017
 ---
-# .NET Framework を使用したカスタム Windows フォーム コントロールの開発
-Windows フォーム コントロールは、ユーザー インターフェイスの機能をカプセル化して、クライアント側の Windows ベースのアプリケーションで使用される再利用可能なコンポーネントです。  Windows フォームは、すぐに使用できる多数のコントロールを提供するだけでなく、独自のコントロールを開発するためのインフラストラクチャも提供します。  既存のコントロールの結合、既存のコントロールの拡張、または独自のカスタム コントロールの記述ができます。  このセクションでは、Windows フォーム コントロールの開発に役立つ背景情報とサンプルを提供します。  
+# <a name="developing-custom-windows-forms-controls-with-the-net-framework"></a>.NET Framework を使用したカスタム Windows フォーム コントロールの開発
+Windows フォーム コントロールは、ユーザー インターフェイスの機能をカプセル化して、クライアント側の Windows ベースのアプリケーションで使用される再利用可能なコンポーネントです。 Windows フォームは、すぐに使用できる多数のコントロールを提供するだけでなく、独自のコントロールを開発するためのインフラストラクチャも提供します。 既存のコントロールの結合、既存のコントロールの拡張、または独自のカスタム コントロールの記述ができます。 このセクションでは、Windows フォーム コントロールの開発に役立つ背景情報とサンプルを提供します。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [Windows フォームでのコントロールの使用方法の概要](../../../../docs/framework/winforms/controls/overview-of-using-controls-in-windows-forms.md)  
  Windows フォーム アプリケーションでのコントロールの使用の重要な要素を示しています。  
   
  [さまざまなカスタム コントロール](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)  
- <xref:System.Windows.Forms?displayProperty=fullName> 名前空間を使用して作成できる様々な種類のカスタム コントロールについて説明します。  
+ <xref:System.Windows.Forms?displayProperty=nameWithType> 名前空間を使用して作成できる様々な種類のカスタム コントロールについて説明します。  
   
  [Windows フォーム コントロール開発の基本概念](../../../../docs/framework/winforms/controls/windows-forms-control-development-basics.md)  
  Windows フォーム コントロールの開発の最初の手順について説明します。  
@@ -53,21 +53,21 @@ Windows フォーム コントロールは、ユーザー インターフェイ�
  [Windows フォーム コントロールのマルチスレッド処理](../../../../docs/framework/winforms/controls/multithreading-in-windows-forms-controls.md)  
  マルチスレッド コントロールを実装する方法を示します。  
   
-## 関連項目  
- <xref:System.Windows.Forms.Control?displayProperty=fullName>  
+## <a name="reference"></a>参照  
+ <xref:System.Windows.Forms.Control?displayProperty=nameWithType>  
  このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
   
- <xref:System.Windows.Forms.UserControl?displayProperty=fullName>  
+ <xref:System.Windows.Forms.UserControl?displayProperty=nameWithType>  
  このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
   
-## 関連項目  
- [コンポーネントのデザイン時属性](../Topic/Design-Time%20Attributes%20for%20Components.md)  
+## <a name="related-sections"></a>関連項目  
+ [コンポーネントのデザイン時属性](http://msdn.microsoft.com/library/12050fe3-9327-4509-9e21-4ee2494b95c3)  
  ビジュアル デザイナーでデザインするときに正しく表示されるようにコンポーネントとコントロールに適用するメタデータ属性の一覧を表示します。  
   
- [Extending Design\-Time Support](../Topic/Extending%20Design-Time%20Support.md)  
+ [デザイン時サポートの拡張](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)  
  デザイン時サポートを提供するエディターやデザイナーなどのクラスを実装する方法について説明します。  
   
- [方法 : コンポーネントおよびコントロールのライセンス処理を行う](../Topic/How%20to:%20License%20Components%20and%20Controls.md)  
+ [方法 : コンポーネントおよびコントロールのライセンス処理を行う](http://msdn.microsoft.com/library/8e66c1ed-a445-4b26-8185-990b6e2bbd57)  
  コントロールやコンポーネントのライセンスを実装する方法について説明します。  
   
  「[デザイン時の Windows フォーム コントロールの開発](http://msdn.microsoft.com/library/w29y3h59\(v=vs.110\))」も参照してください。

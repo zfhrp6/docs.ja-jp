@@ -1,40 +1,38 @@
 ---
-title: "This array is fixed or temporarily locked (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID10"
-dev_langs: 
-  - "VB"
+title: "この配列は固定か、または一時的にロックされています。(Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID10
 ms.assetid: de6713a6-51d7-4edb-8515-d5fb544e2091
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: adff10d4ae61e45402df64ebaa3baf146371ff9e
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# This array is fixed or temporarily locked (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-このエラーでは以下の原因が考えられます。  
+# <a name="this-array-is-fixed-or-temporarily-locked-visual-basic"></a>この配列は固定か、または一時的にロックされています。(Visual Basic)
+このエラーには、次の考えられる原因があります。  
   
--   固定サイズの配列の要素数を変更するために `ReDim` を使用しています。  
+-   使用して`ReDim`固定サイズの配列の要素の数を変更します。  
   
--   モジュール レベルの動的配列を再定義しようとしていますが、その配列の要素の 1 つがプロシージャに引数として渡されています。  要素が引数として渡された場合、その配列はロックされ、プロシージャ内の参照パラメーターのメモリが解放されなくなります。  
+-   1 つの要素が渡されている引数としてプロシージャに、モジュール レベル動的配列の次元です。 配列を防ぐためにロックされている要素が渡された場合、プロシージャ内での参照パラメーターのメモリ割り当てを解除します。  
   
--   配列を含む `Variant` 変数に値を代入しようとしましたが、その `Variant` は現在ロックされています。  
+-   値を代入しようとして、 `Variant` 、配列を含む変数が、`Variant`現在ロックされています。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  `ReDim` を使用して元の配列を固定ではなく動的として宣言するか \(配列がプロシージャ内で宣言されている場合\)、要素数を指定せずに宣言します \(配列がモジュール レベルで宣言されている場合\)。  
+1.  元の配列を作成してと共に宣言することにより固定ではなく動的`ReDim`(配列が宣言されているプロシージャ内で)、または (配列は、モジュール レベルで宣言されて場合、要素の数を指定せずに宣言しています。  
   
-2.  その要素を渡す必要があるのかどうかを確認します。これは、要素がモジュール内のすべてのプロシージャから参照できるためです。  
+2.  本当にモジュール内のすべてのプロシージャ内で参照可能であるため、要素を渡す必要があるかどうかを決定します。  
   
-3.  `Variant` がロックされている原因を判断し、解決します。  
+3.  新機能がロックを判断、`Variant`およびそれを解決します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)

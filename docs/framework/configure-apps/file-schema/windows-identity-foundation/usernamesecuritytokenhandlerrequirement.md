@@ -1,62 +1,72 @@
 ---
-title: "&lt;userNameSecurityTokenHandlerRequirement&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;userNameSecurityTokenHandlerRequirement&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6ec3bac1-b014-49ae-843c-c54518cb709a
-caps.latest.revision: 4
-author: "BrucePerlerMS"
-ms.author: "bruceper"
-manager: "mbaldwin"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: BrucePerlerMS
+ms.author: bruceper
+manager: mbaldwin
+ms.openlocfilehash: 4ffe9764eb730be4859fb66ae2f0cc845c9404e8
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;userNameSecurityTokenHandlerRequirement&gt;
-<xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler> クラスまたは派生クラスにコンフィギュレーションを提供します。  
+# <a name="ltusernamesecuritytokenhandlerrequirementgt"></a>&lt;userNameSecurityTokenHandlerRequirement&gt;
+構成を提供、<xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler>クラスまたは派生クラス。  
   
-## 構文  
+ \<system.identityModel >  
+\<identityConfiguration >  
+\<securityTokenHandlers >  
+\<add>  
+\<userNameSecurityTokenHandlerRequirement >  
   
-```  
+## <a name="syntax"></a>構文  
+  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <securityTokenHandlers>  
-      <add type="System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler, System.IdentityModel.Services">  
-        <userNameSecurityTokenHandlerRequirement membershipProviderName=xs:string >  
-        </userNameSecurityTokenHandlerRequirement>  
-      </add>  
-    </securityTokenHandlers>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <securityTokenHandlers>  
+      <add type="System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler, System.IdentityModel.Services">  
+        <userNameSecurityTokenHandlerRequirement membershipProviderName=xs:string >  
+        </userNameSecurityTokenHandlerRequirement>  
+      </add>  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
 |属性|説明|  
-|--------|--------|  
-|membershipProviderName|セキュリティのトークン ハンドラーで使用される <xref:System.Web.Security.MembershipProvider> を指定します。|  
+|---------------|-----------------|  
+|membershipProviderName|指定します、<xref:System.Web.Security.MembershipProvider>セキュリティ トークン ハンドラーを使用する必要があります。|  
   
-### 子要素  
+### <a name="child-elements"></a>子要素  
  なし  
   
-### 親要素  
+### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<add\>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|たとえば、ハンドラーのグループに指定セキュリティのトークン ハンドラーを追加します。|  
+|-------------|-----------------|  
+|[\<add>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|トークン ハンドラー コレクションに指定されたセキュリティ トークン ハンドラーを追加します。|  
   
-## 解説  
- <xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler> のオブジェクトを構成から開始されるときに `<userNameSecurityTokenHandlerRequirement>` の要素セット <xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler.MembershipProvider%2A> のプロパティ。  
+## <a name="remarks"></a>コメント  
+ `<userNameSecurityTokenHandlerRequirement>`要素セット、<xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler.MembershipProvider%2A>プロパティと、<xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler>構成からオブジェクトを初期化します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```xml  
 <add type="System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler, System.IdentityModel.Services">  
     <userNameSecurityTokenHandlerRequirement membershipProviderName="AspNetSqlProvider/>  
 </add>  

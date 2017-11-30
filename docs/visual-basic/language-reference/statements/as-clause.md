@@ -1,33 +1,31 @@
 ---
-title: "As Clause (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.as"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "constraints, Visual Basic generic types"
-  - "As keyword, statement syntax"
-  - "As keyword"
+title: "As 句 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.as
+helpviewer_keywords:
+- constraints, Visual Basic generic types
+- As keyword [Visual Basic], statement syntax
+- As keyword [Visual Basic]
 ms.assetid: b4281ec8-2be5-49f7-aae8-ae0a96265b0d
-caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 73f0a59dae5e95fe8e4be49afeebd2c29f8a1a7f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# As Clause (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-宣言ステートメント内、またはジェネリック型のパラメーターの入力規則リスト内のデータ型を識別する `As` 句を開始します。  
+# <a name="as-clause-visual-basic"></a>As 句 (Visual Basic)
+導入されています、`As`句は、宣言ステートメントまたはジェネリック型パラメーターの制約リストでのデータ型を識別します。  
   
-## 解説  
- キーワード `As` は、次の構文で使用します。  
+## <a name="remarks"></a>コメント  
+ キーワード `As` は次のコンテキストで使用できます。  
   
  [Aggregate 句](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
   
@@ -45,9 +43,9 @@ caps.handback.revision: 19
   
  [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [しています.Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)  
   
- [For Each...Next ステートメント](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
+ [各しています.Next ステートメント](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
   
  [From 句](../../../visual-basic/language-reference/queries/from-clause.md)  
   
@@ -65,12 +63,12 @@ caps.handback.revision: 19
   
  [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
- [Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
+ [Try しています.キャッチしてください.Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
   
-## 参照  
- [How to: Create a New Variable](../../../visual-basic/programming-guide/language-features/variables/how-to-create-a-new-variable.md)   
- [データ型](../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [変数宣言](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)   
- [Type List](../../../visual-basic/language-reference/statements/type-list.md)   
- [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)   
+## <a name="see-also"></a>関連項目  
+ [方法 : 新しい変数を作成する](../../../visual-basic/programming-guide/language-features/variables/how-to-create-a-new-variable.md)  
+ [データの種類](../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [変数宣言](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)  
+ [型リスト](../../../visual-basic/language-reference/statements/type-list.md)  
+ [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
  [キーワード](../../../visual-basic/language-reference/keywords/index.md)

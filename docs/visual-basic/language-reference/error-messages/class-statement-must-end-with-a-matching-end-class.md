@@ -1,38 +1,36 @@
 ---
-title: "&#39;Class&#39; statement must end with a matching &#39;End Class&#39; | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbc30481"
-  - "bc30481"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "BC30481"
+title: "&#39;です。クラス &#39;ステートメントの終わりに対応する &#39; にする必要があります。End Class &#39;"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vbc30481
+- bc30481
+helpviewer_keywords: BC30481
 ms.assetid: 583f3029-bc3a-4e06-866f-92dbecc46f19
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: e8643a0a5b55e220ca8dd53065500fe4b1e473d3
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# &#39;Class&#39; statement must end with a matching &#39;End Class&#39;
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`Class` は `Class` ブロックを開始するために使用します。したがって、ブロックの先頭にだけ記述でき、対応する `End Class` ステートメントでブロックの終了を示す必要があります。  余分な `Class` ステートメントがあります。または、`Class` ブロックが `End Class` で終了していません。  
+# <a name="39class39-statement-must-end-with-a-matching-39end-class39"></a>&#39;です。クラス &#39;ステートメントの終わりに対応する &#39; にする必要があります。End Class &#39;
+`Class`使用を開始、`Class`ブロックです。 したがってだけ記述できますが、一致する、ブロックの先頭に`End Class`ステートメント ブロックを終了します。 あるか、冗長`Class`ステートメント、またはするが終了していない、`Class`ブロックを`End Class`です。  
   
- **Error ID:** BC30481  
+ **エラー ID:** BC30481  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
--   必要のない `Class` ステートメントを探し、削除します。  
+-   探し、削除、不要な`Class`ステートメントです。  
   
--   `Class` ブロックを対応する `End Class` で終了します。  
+-   これで完了、 `Class` 、対応するブロック`End Class`です。  
   
-## 参照  
- [End \<keyword\> Statement](../../../visual-basic/language-reference/statements/end-keyword-statement.md)   
- [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)
+## <a name="see-also"></a>関連項目  
+ [終了\<キーワード > ステートメント](../../../visual-basic/language-reference/statements/end-keyword-statement.md)  
+ [Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)

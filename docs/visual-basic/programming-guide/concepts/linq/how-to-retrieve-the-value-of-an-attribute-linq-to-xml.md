@@ -1,30 +1,25 @@
 ---
-title: "方法: 属性 (LINQ to XML) の値を取得 (Visual Basic) |Microsoft ドキュメント"
+title: "方法: 属性 (LINQ to XML) の値の取得 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: 5f4b3790-c83f-4eb3-a889-e3587edf3ca1
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: a1661b1ea00eb7e377fc4d8a57ba27a558052b46
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/13/2017
-
-
+ms.openlocfilehash: 5eed0c34f79a4a338dda7b26049f2c1510443736
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# <a name="how-to-retrieve-the-value-of-an-attribute-linq-to-xml-visual-basic"></a>方法: 属性 (LINQ to XML) の値を取得 (Visual Basic)
-このトピックでは、属性の値を取得する方法について説明します。 2 つの主な方法があります: をキャストすること、<xref:System.Xml.Linq.XAttribute>目的の型に明示的な変換演算子のコンテンツ変換要素または属性を指定した型にします</xref:System.Xml.Linq.XAttribute>。 また、使用することができます、<xref:System.Xml.Linq.XAttribute.Value%2A>プロパティ</xref:System.Xml.Linq.XAttribute.Value%2A>。 ただし、通常はキャストがより適切な方法です。 属性を NULL 値が許容される型にキャストすると、存在が不明確な属性の値を取得する場合にコードをより簡単に記述できます。 この手法の例については、次を参照してください。[方法: 要素 (LINQ to XML) の値を取得 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-the-value-of-an-element-linq-to-xml.md)します。  
+# <a name="how-to-retrieve-the-value-of-an-attribute-linq-to-xml-visual-basic"></a>方法: 属性 (LINQ to XML) の値の取得 (Visual Basic)
+このトピックでは、属性の値を取得する方法について説明します。 主に 2 つの方法があります。1 つは、<xref:System.Xml.Linq.XAttribute> を目的の型にキャストする方法です。その後、明示的な変換演算子によって、要素または属性のコンテンツが指定した型に変換されます。 もう 1 つは、<xref:System.Xml.Linq.XAttribute.Value%2A> プロパティを使用する方法です。 ただし、通常はキャストがより適切な方法です。 属性を NULL 値が許容される型にキャストすると、存在が不明確な属性の値を取得する場合にコードをより簡単に記述できます。 この手法の例については、次を参照してください。[する方法: 要素 (LINQ to XML) の値の取得 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-the-value-of-an-element-linq-to-xml.md)です。  
   
 ## <a name="example"></a>例  
  Visual Basic では、統合属性プロパティを使用して属性の値を取得できます。  
@@ -60,7 +55,7 @@ Console.WriteLine(root)
 ```  
   
 ## <a name="example"></a>例  
- 属性が名前空間内にある場合にその属性の値を取得する方法を次の例に示します。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の使用](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)します。  
+ 属性が名前空間内にある場合にその属性の値を取得する方法を次の例に示します。 詳細については、次を参照してください。 [XML 名前空間 (Visual Basic) の操作](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)です。  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  

@@ -1,43 +1,23 @@
 ---
 title: "-nostdlib (C# コンパイラ オプション)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /nostdlib
-dev_langs:
-- CSharp
+f1_keywords: /nostdlib
 helpviewer_keywords:
 - nostdlib compiler option [C#]
 - -nostdlib compiler option [C#]
 - /nostdlib compiler option [C#]
 ms.assetid: ec197989-fa49-4725-a455-e06b551eb65f
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.openlocfilehash: ad3ca7775512623de43c7fe6b7fe1cf481ccca87
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: 1d500e2e55ab3117aa674e11d6cdd25703035879
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="nostdlib-c-compiler-options"></a>/nostdlib (C# コンパイラ オプション)
 **/nostdlib** は、System 名前空間の全体を定義する mscorlib.dll がインポートされないようにします。  
@@ -59,7 +39,7 @@ ms.lasthandoff: 07/28/2017
   
 2.  **[ビルド]** プロパティ ページをクリックします。  
   
-3.  [詳細設定 **** ] ボタンをクリックします。  
+3.  **[詳細設定]** ボタンをクリックします。  
   
 4.  **[mscorlib.dll を参照しない]** プロパティを変更します。  
   
@@ -67,4 +47,3 @@ ms.lasthandoff: 07/28/2017
   
 ## <a name="see-also"></a>関連項目  
  [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)
-

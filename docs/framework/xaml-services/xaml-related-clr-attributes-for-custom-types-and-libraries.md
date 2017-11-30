@@ -1,280 +1,282 @@
 ---
-title: "XAML-Related CLR Attributes for Custom Types and Libraries | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-wpf"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "CLR attributes for custom types [XAML Services]"
+title: "カスタム型およびライブラリの XAML 関連の CLR 属性"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-wpf
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: CLR attributes for custom types [XAML Services]
 ms.assetid: 5dfb299a-b6e2-41b8-8694-e6ac987547f1
-caps.latest.revision: 8
-author: "wadepickett"
-ms.author: "wpickett"
-manager: "wpickett"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: wadepickett
+ms.author: wpickett
+manager: wpickett
+ms.openlocfilehash: 9a445d7e730ecb743d5e4086ec682b12a7bf3ff9
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# XAML-Related CLR Attributes for Custom Types and Libraries
-このトピックでは、.NET Framework XAML サービスによって定義される共通言語ランタイム \(CLR: Common Language Runtime\) 属性について説明します。  また、アセンブリまたは型に適用される XAML 関連のシナリオを持つ、.NET Framework で定義されるその他の CLR 属性についても説明します。  アセンブリ、型、およびメンバーに対して、このような CLR 属性を設定すると、型に関連する XAML 型システム情報が提供されます。  情報は、XAML ノード ストリームの直接処理または専用の XAML リーダーおよび XAML ライターによる処理を目的として .NET Framework XAML サービスを使用する、すべての XAML コンシューマーに提供されます。  
+# <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>カスタム型およびライブラリの XAML 関連の CLR 属性
+このトピックでは、.NET Framework XAML サービスによって定義されている共通言語ランタイム (CLR) の属性について説明します。 その他の CLR 属性、.NET Framework で定義されているアセンブリまたは型へのアプリケーションの XAML 関連のシナリオがあることについても説明します。 これらの CLR 属性を持つアセンブリ、型、またはメンバーの属性の型に関連する XAML 型システム情報を提供します。 情報は、直接、XAML ノード ストリームを処理するため、または専用の XAML リーダーと XAML ライターで、.NET Framework XAML サービスを使用する任意の XAML コンシューマーに提供されます。  
   
-## カスタム型とカスタム メンバー用の XAML 関連の CLR 属性  
- CLR 属性を使用すると、CLR 全般を使用して型を定義することになります。それ以外の場合は、CLR 属性は使用できません。  CLR を使用して型バッキングを定義した場合、.NET Framework XAML サービスの XAML ライターによって使用される既定の XAML スキーマ コンテキストは、バッキング アセンブリに対するリフレクションを介して CLR 属性を読み取ることができるようになります。  
+## <a name="xaml-related-clr-attributes-for-custom-types-and-custom-members"></a>XAML 関連のカスタム型とカスタム メンバーの CLR 属性  
+ CLR 属性を使用するには、全体的な CLR を使用して、型を定義することは、それ以外の場合などの属性がご利用いただけません必要があります。 CLR を使用してバックアップの種類を定義する場合、.NET Framework XAML サービスの XAML ライターによって使用される既定の XAML スキーマ コンテキストはアセンブリのバックアップに対するリフレクションの CLR 属性を読み取ることができます。  
   
- 以降では、カスタム型およびカスタム メンバーに適用できる XAML 関連の属性について説明します。  各 CLR 属性は、XAML 型システムに関連する情報をやり取りします。  読み込みパスでは、属性付きの情報に基づいて、XAML リーダーが有効な XAML ノード ストリームを形成する場合と、XAML ライターが有効なオブジェクト グラフを生成する場合があります。  保存パスでは、属性付きの情報に基づいて、XAML リーダーが有効な XAML ノード ストリームを形成して XAML 型システム情報を再構築する場合と、XAML ライターやその他の XAML コンシューマーに対するシリアル化のヒントおよび要件が宣言される場合があります。  
+ 次のセクションでは、カスタムの型またはカスタムのメンバーに適用可能な XAML 関連の属性について説明します。 XAML 型システムに関連する情報を CLR 属性ごとに通信します。 読み込みパスでは属性付きの情報は有効な XAML ノード ストリームでは、XAML リーダーに役立ちますか、または有効なオブジェクト グラフを生成する XAML ライターと役に立ちます。 ファイルのパス、XAML リーダーが XAML 型システム情報を再構成する有効な XAML ノード ストリームは、いずれかの属性情報または、シリアル化のヒントや XAML ライターは、またはその他の XAML コンシューマーの要件を宣言します。  
   
-### AmbientAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.AmbientAttribute>  
+### <a name="ambientattribute"></a>AmbientAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.AmbientAttribute>  
   
- **対象:** クラス、プロパティ、またはアタッチ可能なプロパティをサポートする `get` アクセサー メンバー。  
+ **適用されます:**クラス、プロパティ、または`get`アクセサー メンバー アタッチ可能なプロパティをサポートします。  
   
- **引数:** なし  
+ **引数:**なし  
   
- <xref:System.Windows.Markup.AmbientAttribute> は、プロパティ \(属性付き型を受け取るすべてのプロパティ\) は XAML のアンビエント プロパティの概念に基づいて解釈する必要があることを示します。  アンビエントの概念は XAML プロセッサがメンバーの型の所有者を確認する方法と関連します。  アンビエント プロパティは、オブジェクト グラフの作成時にパーサー コンテキストで値を使用できるという想定のプロパティです。ただし、XAML ノード セットを迅速に作成するために、通常の型メンバーの検索は中断されます。  
+ <xref:System.Windows.Markup.AmbientAttribute>XAML でのアンビエント プロパティという概念に基づいて解釈する必要があります、プロパティ、または属性付きの型を受け取るすべてのプロパティを示します。 アンビエントの概念は XAML プロセッサがメンバーの型の所有者を確認する方法と関連します。 アンビエント プロパティは、イミディ エイトの XAML ノードが作成されている設定の一般的な型メンバーの参照が中断されているが、オブジェクト グラフを作成するときにパーサー コンテキストで使用できる値が予期されるときのプロパティです。  
   
- アンビエントの概念は、CLR 属性で <xref:System.AttributeTargets> を定義する方法に関してプロパティとして表現されない、アタッチ可能なメンバーに適用できます。  メソッド属性の使用は、`get` アクセサーが XAML のアタッチ可能な使用方法をサポートするケースのみに限定する必要があります。  
+ アンビエントの概念は、アタッチ可能なメンバーは、CLR 属性の定義の観点からのプロパティとしては表されないに適用できる<xref:System.AttributeTargets>です。 のみの場合、メソッドの属性の使用を適用する必要があります、 `get` XAML のアタッチの使用をサポートするアクセサー。  
   
-### ConstructorArgumentAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.ConstructorArgumentAttribute>  
+### <a name="constructorargumentattribute"></a>ConstructorArgumentAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.ConstructorArgumentAttribute>  
   
- **対象:** クラス  
+ **適用されます:**クラス  
   
- **引数:** 単一のコンストラクター引数と照合されるプロパティ名を指定する文字列。  
+ **引数:**コンス トラクターの 1 つの引数に一致するプロパティの名前を指定する文字列。  
   
- <xref:System.Windows.Markup.ConstructorArgumentAttribute> は、既定以外のコンストラクター構文を使用してオブジェクトを初期化できることと、指定された名前のプロパティが構造情報を提供することを指定します。  この情報は、主に XAML のシリアル化に使用されます。  詳細については、「<xref:System.Windows.Markup.ConstructorArgumentAttribute>」を参照してください。  
+ <xref:System.Windows.Markup.ConstructorArgumentAttribute>既定以外のコンス トラクター構文を使用してオブジェクトを初期化できることと、指定した名前のプロパティが構造情報を提供することを指定します。 この情報は主に XAML シリアル化用です。 詳細については、「<xref:System.Windows.Markup.ConstructorArgumentAttribute>」を参照してください。  
   
-### ContentPropertyAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.ContentPropertyAttribute>  
+### <a name="contentpropertyattribute"></a>Contentpropertyattribute があります。  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.ContentPropertyAttribute>  
   
- **対象:** クラス  
+ **適用されます:**クラス  
   
- **引数:** 属性付き型のメンバー名を指定する文字列。  
+ **引数:**属性付く型のメンバーの名前を指定する文字列。  
   
- <xref:System.Windows.Markup.ContentPropertyAttribute> は、引数によって名前が指定されたプロパティはその型の XAML コンテンツ プロパティとして機能する必要があることを示します。  XAML コンテンツ プロパティ定義は、定義元の型に割り当て可能なすべての派生型に継承されます。  特定の派生型の定義を無視するには、<xref:System.Windows.Markup.ContentPropertyAttribute> を特定の派生型に適用します。  
+ <xref:System.Windows.Markup.ContentPropertyAttribute>引数で指定された名前のプロパティがその型の XAML コンテンツ プロパティとして使用する必要があることを示します。 XAML コンテンツ プロパティ定義を定義する型に割り当てることができるすべての派生型を継承します。 適用することで特定の派生型の定義をオーバーライドできます<xref:System.Windows.Markup.ContentPropertyAttribute>特定の型を派生します。  
   
- XAML コンテンツ プロパティとして機能するプロパティの場合、そのプロパティのプロパティ要素に対するタグ付けは XAML の使用方法では省略できます。  通常は、XAML コンテンツ プロパティを指定して、コンテンツおよびコンテインメント モデルの XAML マークアップを簡略化します。  XAML コンテンツ プロパティとして指定できるのは単一のメンバーのみに限定されるので、場合によっては、XAML コンテンツ プロパティとして指定する必要がある、型のいくつかのコンテナー プロパティの種類に関して、デザインを選択することになります。  その他のコンテナー プロパティは、明示的なプロパティ要素と共に使用する必要があります。  
+ XAML コンテンツ プロパティとして機能するプロパティに、XAML の使用方法のプロパティ要素のプロパティのタグ付けを省略できます。 通常、モデルのコンテンツや含有関係の簡素化された XAML マークアップを促進する XAML のコンテンツ プロパティを指定します。 1 つのメンバーは、XAML コンテンツ プロパティとして指定することができます、ために、いくつかのコンテナーのに関しては、XAML コンテンツ プロパティとして型のプロパティを指定するようにする設計の選択肢がある場合があります。 その他のコンテナーのプロパティは、明示的なプロパティ要素で使用する必要があります。  
   
- XAML ノード ストリームでは、XAML コンテンツ プロパティは <xref:System.Xaml.XamlMember> のプロパティ名に基づいて `StartMember` ノードと `EndMember` ノードを生成します。  メンバーが XAML コンテンツ プロパティであるかどうか判断するには、`StartObject` の位置から <xref:System.Xaml.XamlType> 値を調べ、<xref:System.Xaml.XamlType.ContentProperty%2A> の値を取得します。  
+ XAML ノード ストリームで XAML コンテンツ プロパティでも発生する可能性`StartMember`と`EndMember`のプロパティの名前を使用して、ノード、<xref:System.Xaml.XamlMember>です。 メンバーが XAML コンテンツ プロパティであるかどうかを確認するのには、確認、<xref:System.Xaml.XamlType>値から、`StartObject`を配置し、値を取得する<xref:System.Xaml.XamlType.ContentProperty%2A>です。  
   
-### ContentWrapperAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.ContentWrapperAttribute>  
+### <a name="contentwrapperattribute"></a>ContentWrapperAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.ContentWrapperAttribute>  
   
- **対象:** クラス \(特にコレクション型\)。  
+ **適用されます:**クラス、具体的にはコレクション型。  
   
- **引数:** 外部コンテンツ用のコンテンツ ラッパー型として使用する型を指定する <xref:System.Type>。  
+ **引数:** A<xref:System.Type>外部コンテンツのコンテンツ ラッパー型として使用する型を指定します。  
   
- <xref:System.Windows.Markup.ContentWrapperAttribute> は、外部コンテンツをラップするために使用される関連するコレクション型に対して 1 つ以上の型を指定します。  外部コンテンツは、コンテンツ プロパティの型に対する型システムの制約で、所有する型の XAML 使用方法でサポートされるコンテンツ ケースの一部がキャプチャされないケースを指します。  たとえば、XAML は、厳密に型指定されたジェネリック <xref:System.Collections.ObjectModel.Collection%601> で文字列をサポートする可能性がある、特定の型のコンテンツをサポートします。  コンテンツ ラッパーは、テキスト関連のコンテンツ モデルの移行など、既存のマークアップ規則を、コレクションの割り当て可能な値に関する XAML の概念に移行する場合に役立ちます。  
+ <xref:System.Windows.Markup.ContentWrapperAttribute>外部コンテンツをラップするために使用される関連するコレクション型の 1 つまたは複数の種類を指定します。 外部コンテンツをコンテンツのプロパティの型の型システムの制約をキャプチャしません所有している型の XAML の使用方法をサポートするコンテンツ ケースのすべてのケースを指します。 XAML での特定の種類のコンテンツは厳密に型指定されたジェネリック型の文字列をサポートする場合がありますのサポートなど、<xref:System.Collections.ObjectModel.Collection%601>です。 コンテンツ ラッパーは、移行するテキストに関連するコンテンツのモデルなどのコレクションの値を割り当てることができるの XAML の概念に既存のマークアップ規則を移行するのに役立ちます。  
   
- 複数のコンテンツ ラッパー型を指定するには、属性を複数回適用します。  
+ 1 つ以上のコンテンツ ラッパー型を指定するには、複数回、属性を適用します。  
   
-### DependsOnAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.DependsOnAttribute>  
+### <a name="dependsonattribute"></a>DependsOnAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.DependsOnAttribute>  
   
- **対象:** プロパティ  
+ **適用されます:**プロパティ  
   
- **引数:** 属性付き型の別のメンバー名を指定する文字列。  
+ **引数:**属性付く型の別のメンバーの名前を指定する文字列。  
   
- <xref:System.Windows.Markup.DependsOnAttribute> は、属性付きプロパティが別のプロパティの値に依存することを示します。  この属性をプロパティ定義に適用すると、依存プロパティは XAML オブジェクトの記述で最初に処理されます。  <xref:System.Windows.Markup.DependsOnAttribute> の使用により、例外的なケースを指定して、有効なオブジェクトを作成するために特定の順序で解析を行う必要がある型のプロパティに対応します。  
+ <xref:System.Windows.Markup.DependsOnAttribute>属性付きのプロパティが別のプロパティの値に依存することを示します。 この属性をプロパティ定義に適用する XAML オブジェクトの記述に依存するプロパティが最初に処理されることを確認します。 使用状況<xref:System.Windows.Markup.DependsOnAttribute>解析の特定の順序を有効なオブジェクトの作成に従う必要がありますの種類のプロパティの例外的なケースを指定します。  
   
- プロパティ定義に対して複数の <xref:System.Windows.Markup.DependsOnAttribute> ケースを適用できます。  
+ 複数を適用する<xref:System.Windows.Markup.DependsOnAttribute>プロパティが定義する場合。  
   
-### MarkupExtensionReturnTypeAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>  
+### <a name="markupextensionreturntypeattribute"></a>MarkupExtensionReturnTypeAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>  
   
- **対象:** <xref:System.Windows.Markup.MarkupExtension> 派生型であると想定されるクラス。  
+ **適用されます:**できると予想される、クラス、<xref:System.Windows.Markup.MarkupExtension>派生型です。  
   
- **引数:** 属性付きの <xref:System.Windows.Markup.MarkupExtension> の `ProvideValue` の結果として想定される最も精密な型を指定する <xref:System.Type>。  
+ **引数:** A<xref:System.Type>として期待する最も正確な型を指定する、`ProvideValue`属性の結果<xref:System.Windows.Markup.MarkupExtension>です。  
   
- 詳細については、「[Markup Extensions for XAML Overview](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md)」を参照してください。  
+ 詳細については、次を参照してください。 [XAML の概要のマークアップ拡張機能](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md)します。  
   
-### NameScopePropertyAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.NameScopePropertyAttribute>  
+### <a name="namescopepropertyattribute"></a>NameScopePropertyAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.NameScopePropertyAttribute>  
   
- **対象:** クラス  
+ **適用されます:**クラス  
   
- **引数:** 次の 2 つの形式の属性をサポートします。  
+ **引数:**属性の 2 つの形式をサポートしています。  
   
--   属性付き型のプロパティ名を指定する文字列  
+-   属性付く型のプロパティの名前を指定する文字列。  
   
--   プロパティ名を指定する文字列、および名前付きプロパティを定義する型の <xref:System.Type> この形式では、XAML 名前スコープ プロパティとしてアタッチ可能なメンバーを指定します。  
+-   プロパティの名前を指定する文字列と<xref:System.Type>名前付きのプロパティを定義する型。 フォームは、XAML 名前スコープのプロパティとしてアタッチ可能なメンバーを指定するためです。  
   
- <xref:System.Windows.Markup.NameScopePropertyAttribute> は、属性付きクラスに XAML 名前スコープの値を提供するプロパティを指定します。  XAML 名前スコープのプロパティは、<xref:System.Windows.Markup.INameScope> を実装し、実際の XAML 名前スコープ、そのストア、およびその動作を保持するオブジェクトを参照すると想定されます。  
+ <xref:System.Windows.Markup.NameScopePropertyAttribute>属性付きクラスの XAML 名前スコープの値を提供するプロパティを指定します。 XAML 名前スコープのプロパティを実装するオブジェクトを参照する必要は<xref:System.Windows.Markup.INameScope>実際の XAML 名前スコープ、そのストア、およびその動作を保持します。  
   
-### RuntimeNamePropertyAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.RuntimeNamePropertyAttribute>  
+### <a name="runtimenamepropertyattribute"></a>RuntimeNamePropertyAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.RuntimeNamePropertyAttribute>  
   
- **対象:** クラス  
+ **適用されます:**クラス  
   
- **引数:** 属性付き型のランタイム名のプロパティ名を指定する文字列。  
+ **引数:**属性付く型を実行時の name プロパティの名前を指定する文字列。  
   
- <xref:System.Windows.Markup.RuntimeNamePropertyAttribute> は、XAML の [x:Name Directive](../../../docs/framework/xaml-services/x-name-directive.md) にマップされる属性付き型のプロパティを報告します。  このプロパティは <xref:System.String> 型であると同時に、読み書き可能である必要があります。  
+ <xref:System.Windows.Markup.RuntimeNamePropertyAttribute>XAML にマップされる属性付く型のプロパティをレポート[X:name ディレクティブ](../../../docs/framework/xaml-services/x-name-directive.md)です。 プロパティは、型でなければなりません<xref:System.String>読み取り/書き込みをする必要があります。  
   
- この定義は、定義元の型に割り当て可能なすべての派生型に継承されます。  特定の派生型の定義を無視するには、<xref:System.Windows.Markup.RuntimeNamePropertyAttribute> を特定の派生型に適用します。  
+ 定義を定義する型に割り当てることができるすべての派生型を継承します。 適用することで特定の派生型の定義をオーバーライドできます<xref:System.Windows.Markup.RuntimeNamePropertyAttribute>特定の型を派生します。  
   
-### TrimSurroundingWhitespaceAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>  
+### <a name="trimsurroundingwhitespaceattribute"></a>TrimSurroundingWhitespaceAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>  
   
- **対象:** 型  
+ **適用されます:**型  
   
- **引数:** なし。  
+ **引数:**なし。  
   
- <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute> は、空白が意味を持つコンテンツ \(<xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute> を含むコレクションによって保持されるコンテンツ\) 内で子要素として表される可能性がある特定の型に適用されます。  <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute> は主に保存パスに関連しますが、<xref:System.Xaml.XamlType.TrimSurroundingWhitespace%2A?displayProperty=fullName> を調べることで、読み込みパスの XAML 型システムでも使用できます。  詳細については、「[Whitespace Processing in XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)」を参照してください。  
+ <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>空白の重要なコンテンツ内の子要素として表示される特定の種類に適用される (を持つコレクションで保持されているコンテンツ<xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>)。 <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>主に、保存パスが利用できる、読み込みパスで XAML 型システムで確認するには<xref:System.Xaml.XamlType.TrimSurroundingWhitespace%2A?displayProperty=nameWithType>します。 詳細については、次を参照してください。 [XAML での空白の処理](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)です。  
   
-### TypeConverterAttribute  
- **リファレンス ドキュメント:**  <xref:System.ComponentModel.TypeConverterAttribute>  
+### <a name="typeconverterattribute"></a>TypeConverterAttribute  
+ **リファレンス ドキュメント。**  <xref:System.ComponentModel.TypeConverterAttribute>  
   
- **対象:** クラス、プロパティ、メソッド \(XAML 対応の唯一のメソッド ケースは、アタッチ可能なメンバーをサポートする `get` アクセサー\)。  
+ **適用されます:**クラス、プロパティ、メソッド (だけ有効では XAML のメソッドの場合は、`get`アタッチ可能なメンバーをサポートするアクセサー)。  
   
- **引数:** <xref:System.ComponentModel.TypeConverter> の <xref:System.Type>。  
+ **引数:** 、<xref:System.Type>の<xref:System.ComponentModel.TypeConverter>です。  
   
- XAML コンテキストの <xref:System.ComponentModel.TypeConverterAttribute> は、カスタム <xref:System.ComponentModel.TypeConverter> を参照します。  この <xref:System.ComponentModel.TypeConverter> は、カスタム型 \(その型のメンバー\) の型変換動作を提供します。  
+ <xref:System.ComponentModel.TypeConverterAttribute>XAML でコンテキストを参照して、カスタム<xref:System.ComponentModel.TypeConverter>です。 これは、<xref:System.ComponentModel.TypeConverter>カスタム型、またはその型のメンバーの型変換動作を提供します。  
   
- 型コンバーターの実装を参照し、<xref:System.ComponentModel.TypeConverterAttribute> 属性を型に適用します。  クラス、構造体、およびインターフェイスに対して、XAML の型コンバーターを定義できます。  列挙体に対しては、型変換がネイティブで有効になっているため、型変換を提供する必要はありません。  
+ 適用する、<xref:System.ComponentModel.TypeConverterAttribute>属性を型、型コンバーターの実装を参照します。 クラス、構造体、またはインターフェイスに、XAML の型コンバーターを定義できます。 変換がネイティブで有効になっている、列挙体の型の変換を提供する必要はありません。  
   
- 型コンバーターは、マークアップで属性または初期化テキストに使用される文字列を目的の型に変換できる必要があります。  詳細については、「[TypeConverters および XAML](../../../ocs/framework/wpf/advanced/typeconverters-and-xaml.md)」を参照してください。  
+ 型コンバーターを目的の型に属性またはマークアップでは、初期化のテキストに使用される文字列に変換することがあります。 詳細については、次を参照してください。 [TypeConverters と XAML](../../../docs/framework/wpf/advanced/typeconverters-and-xaml.md)です。  
   
- XAML の型コンバーターの動作は、型のすべての値を適用する代わりに、特定のプロパティを対象にすることもできます。  このケースでは、<xref:System.ComponentModel.TypeConverterAttribute> をプロパティ定義 \(特定の `get` および `set` 定義以外の定義\) に適用します。  
+ 型のすべての値に適用するではなくに、特定のプロパティで XAML の型コンバーターの動作を確立することもできます。 この場合は、適用<xref:System.ComponentModel.TypeConverterAttribute>プロパティ定義 (外側の定義、固有ではない`get`と`set`定義) です。  
   
- アタッチ可能なカスタム メンバーの XAML の使用に対応する型コンバーターの動作を割り当てるには、XAML の使用をサポートする `get` メソッド アクセサーに <xref:System.ComponentModel.TypeConverterAttribute> を割り当てます。  
+ 型コンバーターの XAML 使用量は、カスタムのアタッチ可能なメンバーの動作を適用することで割り当てることができる<xref:System.ComponentModel.TypeConverterAttribute>を`get`XAML の使用方法をサポートするメソッドのアクセサー。  
   
- <xref:System.ComponentModel.TypeConverter> と同様に、<xref:System.ComponentModel.TypeConverterAttribute> は XAML よりも前に .NET Framework に存在しており、型コンバーター モデルはその他の目的に対応していました。  <xref:System.ComponentModel.TypeConverterAttribute> を参照して使用するには、完全修飾するか、<xref:System.ComponentModel> に `using` ステートメントを指定します。  システム アセンブリをプロジェクトに含める必要もあります。  
+ ような<xref:System.ComponentModel.TypeConverter>、 <xref:System.ComponentModel.TypeConverterAttribute> XAML が存在する前に .NET Framework が存在し、型コンバーターのモデルは、他の目的を提供します。 参照および使用するために<xref:System.ComponentModel.TypeConverterAttribute>、するには、完全に修飾するか、`using`の声明<xref:System.ComponentModel>です。 システム アセンブリは、プロジェクトにも含める必要があります。  
   
-### UidPropertyAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.UidPropertyAttribute>  
+### <a name="uidpropertyattribute"></a>UidPropertyAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.UidPropertyAttribute>  
   
- **対象:** クラス  
+ **適用されます:**クラス  
   
- **引数:** 関連プロパティを名前で参照する文字列。  
+ **引数:**名前によって、関連するプロパティを参照する文字列。  
   
- [x:Uid Directive](../../../docs/framework/xaml-services/x-uid-directive.md) をエイリアス化するクラスの CLR プロパティを示します。  
+ エイリアスを表すクラスの CLR プロパティを示す、 [X:uid Directive](../../../docs/framework/xaml-services/x-uid-directive.md)です。  
   
-### UsableDuringInitializationAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.UsableDuringInitializationAttribute>  
+### <a name="usableduringinitializationattribute"></a>UsableDuringInitializationAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.UsableDuringInitializationAttribute>  
   
- **対象:** クラス  
+ **適用されます:**クラス  
   
- **引数:** ブール値。  属性の用途で使用する場合、常に `true` として指定する必要があります。  
+ **引数:**ブール値。 属性の使用目的に使用される場合この常に指定してください`true`です。  
   
- XAML のオブジェクト グラフの作成中にこの型がトップダウンで構築されるかどうかを示します。  これは高度な概念であり、実際のプログラミング モデルの定義に密接に関連していると考えられます。  詳細については、「<xref:System.Windows.Markup.UsableDuringInitializationAttribute>」を参照してください。  
+ この型が XAML オブジェクト グラフの作成中に上から下に組み込まれるかどうかを示します。 これは、プログラミング モデルの定義に関連性が高い可能性があります、高度な概念です。 詳細については、「<xref:System.Windows.Markup.UsableDuringInitializationAttribute>」を参照してください。  
   
-### ValueSerializerAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.ValueSerializerAttribute>  
+### <a name="valueserializerattribute"></a>ValueSerializerAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.ValueSerializerAttribute>  
   
- **対象:** クラス、プロパティ、メソッド \(XAML 対応の唯一のメソッド ケースは、アタッチ可能なメンバーをサポートする `get` アクセサー\)。  
+ **適用されます:**クラス、プロパティ、メソッド (だけ有効では XAML のメソッドの場合は、`get`アタッチ可能なメンバーをサポートするアクセサー)。  
   
- **引数:** 属性付き型のプロパティ \(特定の属性付きプロパティ\) をすべてシリアル化する場合に使用する値のシリアライザーのサポート クラスを指定する <xref:System.Type>。  
+ **引数:** A<xref:System.Type>属性付きの型のすべてのプロパティをシリアル化するときに使用するには、値シリアライザー サポート クラスを指定するか、属性付きプロパティを特定します。  
   
- <xref:System.Windows.Markup.ValueSerializer> は、<xref:System.ComponentModel.TypeConverter> よりも状態とコンテキストを必要とする値のシリアル化クラスを指定します。  アタッチ可能なメンバーの静的な `get` アクセサー メソッド上で <xref:System.Windows.Markup.ValueSerializerAttribute> 属性を適用することにより、アタッチ可能なメンバーに <xref:System.Windows.Markup.ValueSerializer> を関連付けることができます。  値のシリアル化は、列挙体、インターフェイス、および構造体に対しても適用できますが、デリゲートには適用できません。  
+ <xref:System.Windows.Markup.ValueSerializer>詳細の状態とよりコンテキストが必要な値のシリアル化クラスを指定、<xref:System.ComponentModel.TypeConverter>はします。 <xref:System.Windows.Markup.ValueSerializer>適用することで、アタッチ可能なメンバーを関連付けることができます、<xref:System.Windows.Markup.ValueSerializerAttribute>属性、静的に`get`アタッチ可能なメンバーのアクセサー メソッドです。 値のシリアル化は適用も列挙体、インターフェイス、および構造体、のではなくデリゲート。  
   
-### WhitespaceSignificantCollectionAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>  
+### <a name="whitespacesignificantcollectionattribute"></a>WhitespaceSignificantCollectionAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>  
   
- **対象:** クラス \(特に、オブジェクト要素周辺の空白が UI 表現で意味を持つ、混合コンテンツをホストする想定のコレクション型\)  
+ **適用されます:**クラス、具体的にはオブジェクト要素の周囲の空白文字を表す UI での大幅なあります混合のコンテンツをホストするとして予想されるコレクション型。  
   
- **引数:** なし。  
+ **引数:**なし。  
   
- <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute> は、コレクション内で XAML ノード ストリームの値ノードの作成に影響を及ぼすため、XAML プロセッサで空白が意味を持つものとしてコレクション型を処理する必要があることを示します。  詳細については、「[Whitespace Processing in XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)」を参照してください。  
+ <xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>コレクション型を有意な空白として、コレクション内の XAML ノード ストリームの値ノードの構築に影響する、XAML プロセッサで処理する必要があることを示します。 詳細については、次を参照してください。 [XAML での空白の処理](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)です。  
   
-### XamlDeferLoadAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.XamlDeferLoadAttribute>  
+### <a name="xamldeferloadattribute"></a>XamlDeferLoadAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.XamlDeferLoadAttribute>  
   
- **対象:** クラス、プロパティ。  
+ **適用されます:**クラス、プロパティです。  
   
- **引数:** 文字列として 2 つの属性フォーム型、または <xref:System.Type> の型をサポートします。  「<xref:System.Windows.Markup.XamlDeferLoadAttribute>」を参照してください。  
+ **引数:**型を文字列としてのフォームまたはとして型をサポートする 2 つの属性<xref:System.Type>です。 「<xref:System.Windows.Markup.XamlDeferLoadAttribute>」を参照してください。  
   
- クラスまたはプロパティに XAML の遅延読み込みの使用 \(テンプレート動作など\) が含まれていることを示し、遅延動作を有効にするクラスと、その宛先\/コンテンツ タイプを報告します。  
+ 示しますクラスやプロパティ (など、テンプレートの動作)、XAML の遅延読み込みの使用状況がレポートを遅延の動作とその宛先/コンテンツ タイプを有効にするクラス。  
   
-### XamlSetMarkupExtensionAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>  
+### <a name="xamlsetmarkupextensionattribute"></a>XamlSetMarkupExtensionAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>  
   
- **対象:** クラス  
+ **適用されます:**クラス  
   
- **引数:** コールバックの名前を指定します。  
+ **引数:**コールバックの名前します。  
   
- クラスでマークアップ拡張機能を使用して 1 つ以上のプロパティの値を指定できることを示すと同時に、クラスの任意のプロパティに対してマークアップ拡張機能のセット操作を実行する前に XAML ライターから呼び出す必要のあるハンドラーを参照します。  
+ クラスが、マークアップ拡張機能を使用して、そのプロパティの 1 つ以上の値を指定することができます、XAML ライターが、クラスの任意のプロパティでマークアップ拡張機能のセットの操作を実行する前に呼び出す必要がありますハンドラーを参照ことを示します。  
   
-### XamlSetTypeConverterAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.XamlSetTypeConverterAttribute>  
+### <a name="xamlsettypeconverterattribute"></a>XamlSetTypeConverterAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.XamlSetTypeConverterAttribute>  
   
- **対象:** クラス  
+ **適用されます:**クラス  
   
- **引数:** コールバックの名前を指定します。  
+ **引数:**コールバックの名前します。  
   
- クラスで型コンバーターを使用して 1 つ以上のプロパティの値を指定できることを示すと同時に、クラスの任意のプロパティに対して型コンバーターのセット操作を実行する前に XAML ライターから呼び出す必要のあるハンドラーを参照します。  
+ クラスが、そのプロパティの 1 つ以上の値を指定する型コンバーターを使用できる XAML ライターが、クラスの任意のプロパティの型コンバーター設定操作を実行する前に呼び出す必要がありますハンドラーを参照ことを示します。  
   
-### XmlLangPropertyAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.XmlLangPropertyAttribute>  
+### <a name="xmllangpropertyattribute"></a>XmlLangPropertyAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.XmlLangPropertyAttribute>  
   
- **対象:** クラス  
+ **適用されます:**クラス  
   
- **引数:** 属性付き型の `xml:lang` にエイリアス化するプロパティ名を指定する文字列。  
+ **引数:**エイリアスを使用するプロパティの名前を指定する文字列`xml:lang`属性付く型にします。  
   
- <xref:System.Windows.Markup.XmlLangPropertyAttribute> は、XML の `lang` ディレクティブにマッピングされる属性付き型のプロパティを報告します。  このプロパティは必ずしも <xref:System.String> 型である必要はありませんが、文字列からの割り当て \(具体的には、プロパティの型または特定のプロパティと型コンバーターの関連付け\) に対応する必要があります。  このプロパティは読み取り\/書き込み可能である必要があります。  
+ <xref:System.Windows.Markup.XmlLangPropertyAttribute>XML にマップされる属性付く型のプロパティをレポート`lang`ディレクティブです。 プロパティが必ずしも型の<xref:System.String>、する必要があります (これを実現する、プロパティの型、または特定のプロパティを使用して実行する型コンバーターを関連付けることによって) 文字列から割り当てることができます。 プロパティには、読み取り/書き込みをする必要があります。  
   
- `xml:lang` のマッピングに対応するシナリオでは、特に XMLDOM による処理を必要とせずに、ランタイム オブジェクト モデルが XML 固有の言語情報にアクセスできます。  
+ マッピングのシナリオは`xml:lang`は具体的には、XMLDOM を処理することがなく、ランタイム オブジェクト モデルに XML が指定した言語情報へのアクセスを持つようにします。  
   
- この定義は、定義元の型に割り当て可能なすべての派生型に継承されます。  特定の派生型の定義を無視するには、<xref:System.Windows.Markup.XmlLangPropertyAttribute> を特定の派生型に適用します。ただし、これは一般的なシナリオではありません。  
+ 定義を定義する型に割り当てることができるすべての派生型を継承します。 適用することで特定の派生型の定義をオーバーライドできます<xref:System.Windows.Markup.XmlLangPropertyAttribute>特定の派生型、れていますが、一般的ではないシナリオです。  
   
-## アセンブリ レベルでの XAML 関連の CLR 属性  
- 以降では、型やメンバー定義に適用されずにアセンブリに適用される XAML 関連の属性について説明します。  各属性の全体としての目的は、XAML で使用するカスタム型を含むライブラリを定義することです。  一部の属性は XAML ノード ストリームに直接影響を及ぼすわけではありませんが、使用するその他のコンシューマー用にノード ストリームで受け渡されます。  情報のコンシューマーとしては、XAML 名前空間の情報および関連付けられたプレフィックス情報を必要とする、デザイン環境やシリアル化処理が挙げられます。  XAML スキーマ コンテキスト \(既定の .NET Framework XAML サービスを含む\) も、この情報を使用します。  
+## <a name="xaml-related-clr-attributes-at-the-assembly-level"></a>アセンブリ レベルで XAML 関連の CLR 属性  
+ 次のセクションでは、型またはメンバーの定義には適用されませんが、代わりに、アセンブリに適用されている XAML 関連の属性について説明します。 これらの属性は、XAML で使用するカスタムの型を含むライブラリを定義する全体的なゴールに当てはまります。 一部の属性には影響を与える、XAML ノード ストリームを直接が、他のコンシューマーを使用する、ノード ストリームで受け渡されます。 情報のコンシューマーには、デザイン環境や XAML 名前空間情報を必要としてプレフィックス情報が関連付けられているシリアル化プロセスが含まれます。 XAML スキーマ コンテキスト (.NET Framework XAML サービスの既定値を含む) もには、この情報が使用されます。  
   
-### XmlnsCompatibleWithAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute>  
+### <a name="xmlnscompatiblewithattribute"></a>XmlnsCompatibleWithAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute>  
   
  **引数:**  
   
 -   包含する XAML 名前空間の識別子を指定する文字列。  
   
--   前の引数から XAML 名前空間を包含できる XAML 名前空間の識別子を指定する文字列。  
+-   XAML 名前空間を前の引数から包含できる XAML 名前空間の識別子を指定する文字列。  
   
- <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute> は、XAML 名前空間を別の XAML 名前空間で包含できることを指定します。  通常、XAML 名前空間の包含は、あらかじめ定義した <xref:System.Windows.Markup.XmlnsDefinitionAttribute> で示されます。  この方法は、ライブラリ内の XAML の語彙のバージョン管理を目的として使用され、以前のバージョンの語彙に対してあらかじめ定義したマークアップとの互換性を確保します。  
+ <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute>XAML 名前空間を別の XAML 名前空間によって包括できることを指定します。 通常は、包含の XAML 名前空間が示されている、あらかじめ定義したで<xref:System.Windows.Markup.XmlnsDefinitionAttribute>です。 この方法は、以前のバージョン管理されたボキャブラリに対して以前に定義されたマークアップとの互換性には、ライブラリ内の XAML ボキャブラリをバージョン管理に使用します。  
   
-### XmlnsDefinitionAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.XmlnsDefinitionAttribute>  
+### <a name="xmlnsdefinitionattribute"></a>XmlnsDefinitionAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.XmlnsDefinitionAttribute>  
   
  **引数:**  
   
 -   定義する XAML 名前空間の識別子を指定する文字列。  
   
--   CLR 名前空間の名前を付ける文字列。  CLR 名前空間がアセンブリのパブリック型を定義し、CLR 名前空間の型のうち少なくとも 1 つが XAML の使用方法で対象になる必要があります。  
+-   CLR 名前空間の名前を示す文字列。 CLR 名前空間は、アセンブリ内のパブリック型を定義する必要がありますあり、少なくとも 1 つの CLR 名前空間の種類は XAML の使用方法に使用する必要があります。  
   
- <xref:System.Windows.Markup.XmlnsDefinitionAttribute> は、XAML 名前空間と CLR 名前空間の間のアセンブリごとのマッピングを指定します。これは、XAML オブジェクト ライターまたは XAML スキーマ コンテキストによる型解決に使用されます。  
+ <xref:System.Windows.Markup.XmlnsDefinitionAttribute>XAML 名前空間と CLR 名前空間は、型の解決で使用した XAML オブジェクト ライターまたは XAML スキーマ コンテキストの間でアセンブリごとの単位でのマッピングを指定します。  
   
- アセンブリに対して、複数の <xref:System.Windows.Markup.XmlnsDefinitionAttribute> を適用できます。  この方法は、次の理由のいずれか、または組み合わせに基づいて使用されます。  
+ 1 つ以上<xref:System.Windows.Markup.XmlnsDefinitionAttribute>アセンブリに適用できます。 これは、次の理由の任意の組み合わせに対して実行する可能性があります。  
   
--   ランタイム API アクセスの論理構成に対応する複数の CLR 名前空間がライブラリ デザインに含まれるが、同じ XAML 名前空間を参照して各名前空間のすべての型を XAML で使用可能にする必要がある。  このケースでは、<xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> 値は同じで <xref:System.Windows.Markup.XmlnsDefinitionAttribute.ClrNamespace%2A> 値は異なる複数の <xref:System.Windows.Markup.XmlnsDefinitionAttribute> 属性を適用します。  XAML 名前空間のマッピングを定義するときに、一般的な使用方法でフレームワークまたはアプリケーションが既定の XAML 名前空間になる想定である場合、この方法が役立ちます。  
+-   ライブラリ デザインには、ランタイム API アクセス; の論理組織用の複数の CLR 名前空間が含まれています。ただし、XAML で使用できるように、同じ XAML 名前空間を参照することでそれらの名前空間内のすべての型が必要です。 この場合は、いくつか適用<xref:System.Windows.Markup.XmlnsDefinitionAttribute>属性を使用して同じ<xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A>値しますが、異なる<xref:System.Windows.Markup.XmlnsDefinitionAttribute.ClrNamespace%2A>値。 これは、フレームワークまたはアプリケーションは、一般的な使用方法の既定の XAML 名前空間を意図している XAML 名前空間のマッピングを定義している場合に特に便利です。  
   
--   複数の CLR 名前空間がライブラリ デザインに含まれ、各 CLR 名前空間での型の使用方法に応じて意図的に XAML 名前空間を分離する必要がある。  
+-   ライブラリ デザインには、複数の CLR 名前空間が含まれ、その CLR 名前空間の型の使用状況の間で意図的な XAML 名前空間の分離をたいとします。  
   
--   アセンブリで CLR 名前空間を定義して、複数の XAML 名前空間からのアクセスを可能にする必要がある。  同じコードベースで複数の語彙をサポートしている場合に、このような必要性が生じます。  
+-   アセンブリの CLR 名前空間を定義して 1 つ以上の XAML 名前空間を介してアクセスできるようにします。 このシナリオでは、同じコードベースで複数のボキャブラリをサポートしているときに発生します。  
   
--   1 つ以上の CLR 名前空間で XAML 言語サポートを定義する。  これらについては、<xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> 値に `http://schemas.microsoft.com/winfx/2006/xaml` を指定する必要があります。  
+-   1 つまたは複数の CLR 名前空間では、XAML 言語サポートを定義します。 これらの場合、<xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A>値でなければなりません`http://schemas.microsoft.com/winfx/2006/xaml`です。  
   
-### XmlnsPrefixAttribute  
- **リファレンス ドキュメント:**  <xref:System.Windows.Markup.XmlnsPrefixAttribute>  
+### <a name="xmlnsprefixattribute"></a>XmlnsPrefixAttribute  
+ **リファレンス ドキュメント。**  <xref:System.Windows.Markup.XmlnsPrefixAttribute>  
   
  **引数:**  
   
 -   XAML 名前空間の識別子を指定する文字列。  
   
--   推奨プレフィックスを指定する文字列。  
+-   推奨されるプレフィックスを指定する文字列。  
   
- <xref:System.Windows.Markup.XmlnsDefinitionAttribute> は、XAML 名前空間に使用する推奨プレフィックスを指定します。  .NET Framework XAML サービスの <xref:System.Xaml.XamlXmlWriter> によってシリアル化される XAML ファイルに要素および属性を書き込む場合や、XAML 実装ライブラリが XAML の編集機能を備えたデザイン環境とやり取りする場合に、このプレフィックスが役立ちます。  
+ <xref:System.Windows.Markup.XmlnsDefinitionAttribute>XAML 名前空間を使用する推奨されるプレフィックスを指定します。 プレフィックスは、.NET Framework XAML サービスによってシリアル化される XAML ファイルで要素と属性を記述するときに便利です<xref:System.Xaml.XamlXmlWriter>、または XAML 実装のライブラリが XAML を持つデザイン環境とやり取りするときに編集機能。  
   
- アセンブリに対して、複数の <xref:System.Windows.Markup.XmlnsPrefixAttribute> を適用できます。  この方法は、次の理由のいずれか、または組み合わせに基づいて使用されます。  
+ 1 つ以上<xref:System.Windows.Markup.XmlnsPrefixAttribute>アセンブリに適用できます。 これは、次の理由の任意の組み合わせに対して実行する可能性があります。  
   
--   アセンブリで複数の XAML 名前空間の型を定義する。  このケースでは、XAML 名前空間ごとに異なるプレフィックス値を定義する必要があります。  
+-   アセンブリでは、1 つ以上の XAML 名前空間の型を定義します。 ここでは XAML 名前空間ごとに値を別のプレフィックスを定義する必要があります。  
   
--   複数の語彙をサポートしている状況で、語彙および XAML 名前空間ごとに異なるプレフィックスを使用する。  
+-   複数のボキャブラリをサポートしているし、ボキャブラリおよび XAML 名前空間ごとに異なるプレフィックスを使用します。  
   
--   アセンブリで XAML 言語サポートを定義し、<xref:System.Windows.Markup.XmlnsDefinitionAttribute> に `http://schemas.microsoft.com/winfx/2006/xaml` を指定する。  このケースでは通常、プレフィックス `x` を昇格させる必要があります。  
+-   アセンブリの XAML 言語サポートを定義している、<xref:System.Windows.Markup.XmlnsDefinitionAttribute>の`http://schemas.microsoft.com/winfx/2006/xaml`します。 ここでは、通常は昇格するプレフィックス`x`です。  
   
 > [!NOTE]
->  .NET Framework XAML サービスでは、XAML 関連の属性 <xref:System.Windows.Markup.RootNamespaceAttribute> も定義します。  これは、プロジェクト システム サポート用のアセンブリ レベルの属性であり、XAML のカスタム型には関連しません。  
+>  .NET framework XAML サービスは、XAML 関連の属性も定義<xref:System.Windows.Markup.RootNamespaceAttribute>です。 この属性は、プロジェクト システムのサポートのアセンブリ レベル属性と、XAML のカスタム型には無効です。  
   
-## 参照  
- <xref:System.Attribute>   
- [Defining Custom Types for Use with .NET Framework XAML Services](../../../docs/framework/xaml-services/defining-custom-types-for-use-with-net-framework-xaml-services.md)
+## <a name="see-also"></a>関連項目  
+ <xref:System.Attribute>  
+ [.NET Framework XAML サービスで使用するためのカスタム型の定義](../../../docs/framework/xaml-services/defining-custom-types-for-use-with-net-framework-xaml-services.md)

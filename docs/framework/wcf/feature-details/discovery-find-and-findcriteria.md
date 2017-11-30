@@ -1,58 +1,61 @@
 ---
-title: "探索検索と FindCriteria | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "探索検索と FindCriteria"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 99016fa4-1778-495b-b4cc-0e22fbec42c6
-caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: c2eca9553862cf1349272142e4165c3cfd2e4f3f
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 探索検索と FindCriteria
-探索検索操作は、1 つ以上のサービスを探索するためにクライアントによって開始される操作であり、探索における主要なアクションの 1 つです。検索を実行すると、WS\-Discovery Probe メッセージがネットワークを介して送信されます。指定された条件に一致するサービスは、WS\-Discovery ProbeMatch メッセージを使用して応答します。探索メッセージ[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、[WS\-Discovery の仕様](http://go.microsoft.com/fwlink/?LinkID=122347)を参照してください。  
+# <a name="discovery-find-and-findcriteria"></a>探索検索と FindCriteria
+探索検索操作は、1 つ以上のサービスを探索するためにクライアントによって開始される操作であり、探索における主要なアクションの 1 つです。 検索を実行すると、WS-Discovery Probe メッセージがネットワークを介して送信されます。 指定された条件に一致するサービスは、WS-Discovery ProbeMatch メッセージを使用して応答します。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]探索メッセージを参照してください、 [Ws-discovery 仕様](http://go.microsoft.com/fwlink/?LinkID=122347)です。  
   
-## DiscoveryClient  
- <xref:System.ServiceModel.Discovery.DiscoveryClient> クラスは、検索操作を実行するメカニズムを提供し、探索クライアントの操作を簡単に実行できるようにします。このクラスには、\(ブロックする\) 同期検索を実行する <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> メソッドと、ブロックしない非同期検索を実行する <xref:System.ServiceModel.Discovery.DiscoveryClient.FindAsync%2A> メソッドが含まれます。どちらのメソッドも <xref:System.ServiceModel.Discovery.FindCriteria> パラメーターを使用し、<xref:System.ServiceModel.Discovery.FindResponse> オブジェクトを介してユーザーに結果を提供します。  
+## <a name="discoveryclient"></a>DiscoveryClient  
+ <xref:System.ServiceModel.Discovery.DiscoveryClient> クラスは、検索操作を実行するメカニズムを提供し、探索クライアントの操作を簡単に実行できるようにします。 このクラスには、(ブロックする) 同期検索を実行する <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> メソッドと、ブロックしない非同期検索を実行する <xref:System.ServiceModel.Discovery.DiscoveryClient.FindAsync%2A> メソッドが含まれます。 どちらのメソッドも <xref:System.ServiceModel.Discovery.FindCriteria> パラメーターを使用し、<xref:System.ServiceModel.Discovery.FindResponse> オブジェクトを介してユーザーに結果を提供します。  
   
-## FindCriteria  
- <xref:System.ServiceModel.Discovery.FindCriteria> にはいくつかのプロパティがあり、検索対象のサービスを指定する検索条件と、検索を続行する期間を指定する検索終了条件に分類できます。<xref:System.ServiceModel.Discovery.FindCriteria> には、複数の検索条件を指定できます。既定では、サービスがすべての条件に一致する必要があり、そうでない場合は、サービスがそれ自体を一致サービスと見なしません。条件の一部にのみ一致するサービスを検索する場合は、サービスにカスタムの検索ロジックを実装するか、複数のクエリを使用します。  
+## <a name="findcriteria"></a>FindCriteria  
+ <xref:System.ServiceModel.Discovery.FindCriteria> にはいくつかのプロパティがあり、検索対象のサービスを指定する検索条件と、検索を続行する期間を指定する検索終了条件に分類できます。 <xref:System.ServiceModel.Discovery.FindCriteria> には、複数の検索条件を指定できます。 既定では、サービスがすべての条件に一致する必要があり、そうでない場合は、サービスがそれ自体を一致サービスと見なしません。 条件の一部にのみ一致するサービスを検索する場合は、サービスにカスタムの検索ロジックを実装するか、複数のクエリを使用します。  
   
  検索条件は、次のとおりです。  
   
--   <xref:System.ServiceModel.Discovery.ContractTypeNames%2A> \- 省略できます。検索対象のサービスのコントラクト名、およびサービスの検索に通常使用される条件を指定します。複数のコントラクト名が指定されると、すべてのコントラクトに一致するサービス エンドポイントのみが応答します。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、各エンドポイントでサポートされるコントラクトは 1 つだけです。  
+-   <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement> - 省略できます。 検索対象のサービスのコントラクト名、およびサービスの検索に通常使用される条件を指定します。 複数のコントラクト名が指定されると、すべてのコントラクトに一致するサービス エンドポイントのみが応答します。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] では、各エンドポイントでサポートされるコントラクトは 1 つだけです。  
   
--   <xref:System.ServiceModel.Discovery.Scopes%2A> \- 省略できます。Scopes は、個々のサービス エンドポイントの分類に使用される絶対 URI です。複数のエンドポイントが同じコントラクトを公開し、これらのエンドポイントのサブセットを検索する手段が必要な場合は、これを使用できます。複数のスコープが指定されると、すべてのスコープに一致するサービス エンドポイントのみが応答します。  
+-   <xref:System.ServiceModel.Discovery.Configuration.ScopeElement> - 省略できます。 Scopes は、個々のサービス エンドポイントの分類に使用される絶対 URI です。 複数のエンドポイントが同じコントラクトを公開し、これらのエンドポイントのサブセットを検索する手段が必要な場合は、これを使用できます。 複数のスコープが指定されると、すべてのスコープに一致するサービス エンドポイントのみが応答します。  
   
--   <xref:System.ServiceModel.Discovery.ScopeMatchBy%2A> \- Probe メッセージのスコープとエンドポイントのスコープとの一致の判定に使用する、一致アルゴリズムを指定します。サポートされているスコープ一致規則は、次の 5 つです。  
+-   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchBy%2A> - Probe メッセージのスコープとエンドポイントのスコープとの一致の判定に使用する、一致アルゴリズムを指定します。 サポートされているスコープ一致規則は、次の 5 つです。  
   
-    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByExact%2A>: 大文字と小文字が区別される基本の文字列比較を実行します。  
+    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByExact?displayProperty=nameWithType>: 大文字と小文字が区別される基本の文字列比較を実行します。  
   
-    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix%2A>: "\/" によって区切られたセグメント単位で一致を判定します。http:\/\/contoso\/building1 を検索する場合、サービスは http:\/\/contoso\/building\/floor1 というスコープと一致します。http:\/\/contoso\/building100 とは、最後の 2 セグメントが一致しないため、一致しません。  
+    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix?displayProperty=nameWithType>区切られたセグメント単位で一致する「/」です。 http://contoso/building1 を検索する場合、サービスは http://contoso/building/floor1 というスコープと一致します。 http://contoso/building100 とは、最後の 2 セグメントが一致しないため、一致しません。  
   
-    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByLdap%2A>: LDAP URL を使用してセグメント単位でスコープの一致を判定します。  
+    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByLdap?displayProperty=nameWithType>: LDAP URL を使用してセグメント単位でスコープの一致を判定します。  
   
-    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByUuid%2A>: UUID 文字列を使用して、スコープが完全に一致するかどうかを判定します。  
+    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByUuid?displayProperty=nameWithType>: UUID 文字列を使用して、スコープが完全に一致するかどうかを判定します。  
   
-    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByNone%2A>: スコープを指定していないサービスのみを対象に一致を判定します。  
+    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByNone?displayProperty=nameWithType>: スコープを指定していないサービスのみを対象に一致を判定します。  
   
-     スコープ一致規則が指定されていない場合は、<xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix%2A> が使用されます。  
+     スコープ一致規則が指定されていない場合は、<xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix> が使用されます。  
   
  終了条件は次のとおりです。  
   
-1.  <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> \- ネットワーク上でサービスからの応答を待機する最長時間。既定の時間は 20 秒です。  
+1.  <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> - ネットワーク上でサービスからの応答を待機する最長時間。 既定の時間は 20 秒です。  
   
-2.  <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> \- 待機する応答の最大件数。<xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> が経過する前に <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> 応答が受信された場合は、検出操作が終了します。  
+2.  <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> - 待機する応答の最大件数。 <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> が経過する前に <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> 応答が受信された場合は、検出操作が終了します。  
   
-## FindResponse  
- <xref:System.ServiceModel.Discovery.FindResponse> には、ネットワーク上で一致するサービスから送信された応答を保持する <xref:System.ServiceModel.Discovery.FindResponse.Endpoints%2A> コレクション プロパティがあります。応答したサービスがない場合、このコレクションは空です。1 つ以上のサービスが応答した場合、各応答は <xref:System.ServiceModel.Discovery.EndpointDiscoveryMetadata> オブジェクトに格納されます。これには、アドレスやコントラクトなど、サービスについての追加情報が含まれます。  
+## <a name="findresponse"></a>FindResponse  
+ <xref:System.ServiceModel.Discovery.FindResponse> には、ネットワーク上で一致するサービスから送信された応答を保持する <xref:System.ServiceModel.Discovery.FindResponse.Endpoints%2A> コレクション プロパティがあります。 応答したサービスがない場合、このコレクションは空です。 1 つ以上のサービスが応答した場合、各応答は <xref:System.ServiceModel.Discovery.EndpointDiscoveryMetadata> オブジェクトに格納されます。これには、アドレスやコントラクトなど、サービスについての追加情報が含まれます。  
   
  次の例は、コードで検索操作を実行する方法を示しています。  
   
@@ -69,12 +72,11 @@ findCriteria.Duration = TimeSpan.FromSeconds(10);
 FindResponse findResponse = discoveryClient.Find(findCriteria);  
   
 Console.WriteLine("Found {0} ICalculatorService endpoint(s).", findResponse.Endpoints.Count)  
-  
 ```  
   
-## 参照  
- [WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)   
- [探索クライアント チャネルの使用](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md)   
- [スコープを使用した探索](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)   
- [非同期検索](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md)   
- [Basic](../../../../docs/framework/wcf/samples/basic-sample.md)
+## <a name="see-also"></a>関連項目  
+ [WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
+ [探索クライアント チャネルの使用](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md)  
+ [スコープの検出](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)  
+ [非同期検索](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md)  
+ [基本](../../../../docs/framework/wcf/samples/basic-sample.md)

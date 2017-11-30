@@ -1,34 +1,26 @@
 ---
-title: "リフレクション (Visual Basic) |Microsoft ドキュメント"
+title: "リフレクション (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
 ms.assetid: d991bc0f-d16a-4ac5-9351-70e5c5b9891b
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 3ae042933575849e105d7b681634a61319c1d6ee
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: b7b94e25d2ca9563cd50f454c94092f18e295863
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="reflection-visual-basic"></a>リフレクション (Visual Basic)
-リフレクション オブジェクトの提供 (型の<xref:System.Type>) アセンブリ、モジュールや型を記述する</xref:System.Type>。 リフレクションを使用して、動的に型のインスタンスを作成、既存のオブジェクトにバインドまたは既存のオブジェクトから型を取得し、メソッドの呼び出しまたは、フィールドやプロパティにアクセスすることができます。 コード内の属性を使用している場合は、リフレクションを使用してアクセスします。 詳細については、次を参照してください。[属性](https://msdn.microsoft.com/library/5x6cd29c)します。  
+リフレクションは、アセンブリ、モジュール、および型を記述する (<xref:System.Type> 型の) オブジェクトを提供します。 リフレクションを使用すると、動的に型のインスタンスを作成したり、作成したインスタンスを既存のオブジェクトにバインドしたり、さらに既存のオブジェクトから型を取得してそのオブジェクトのメソッドを呼び出したり、フィールドやプロパティにアクセスしたりできます。 コードで属性を使用している場合は、リフレクションを使用してそれらにアクセスできます。 詳細については、「[属性](https://msdn.microsoft.com/library/5x6cd29c)」を参照してください。  
   
- 静的メソッドを使用してリフレクションの単純な例を次に示します`GetType`- からすべての型によって継承された、`Object`基本クラスの変数の型を取得します。  
+ 次の例は、`GetType` メソッドを使用して変数の型を取得する簡単なリフレクションを示しています。このメソッドは、`Object` 基底クラスからすべての型に継承される静的メソッドです。  
   
 ```vb  
 ' Using GetType to obtain type information:  
@@ -37,7 +29,7 @@ Dim type As System.Type = i.GetType()
 System.Console.WriteLine(type)  
 ```  
   
- 出力です。  
+ 出力は次のようになります。  
   
  `System.Int32`  
   
@@ -49,34 +41,34 @@ Dim info As System.Reflection.Assembly = GetType(System.Int32).Assembly
 System.Console.WriteLine(info)  
 ```  
   
- 出力です。  
+ 出力は次のようになります。  
   
  `mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089`  
   
 ## <a name="reflection-overview"></a>リフレクションの概要  
- リフレクションは、次のような場合に便利です。  
+ リフレクションは、次の場合に役立ちます。  
   
--   プログラムのメタデータ内の属性にアクセスする必要がある場合。 詳細については、次を参照してください。[を取得する情報を属性に格納](http://msdn.microsoft.com/library/37dfe4e3-7da0-48b6-a3d9-398981524e1c)します。  
+-   プログラムのメタデータ内の属性にアクセスする必要がある。 詳細については、「[属性に格納されている情報の取得](../../../standard/attributes/retrieving-information-stored-in-attributes.md)」を参照してください。  
   
--   調べることと、アセンブリ内の型をインスタンス化します。  
+-   アセンブリの型をチェックし、インスタンス化する。  
   
--   実行時に新しい型を構築します。 <xref:System.Reflection.Emit>。</xref:System.Reflection.Emit>クラスを使用します。  
+-   実行時に新しい型を作成する。 <xref:System.Reflection.Emit> でクラスを使います。  
   
--   実行時に作成された型のメソッドへのアクセスの遅延バインディングを実行します。 トピックを参照して[動的な読み込みおよび使用して型](http://msdn.microsoft.com/library/db985bec-5942-40ec-b13a-771ae98623dc)します。  
+-   遅延バインディングを実行するために、実行時に作成された型でメソッドにアクセスする。 「[型の動的な読み込みおよび使用](../../../framework/reflection-and-codedom/dynamically-loading-and-using-types.md)」を参照してください。  
   
 ## <a name="related-sections"></a>関連項目  
  詳細情報  
   
--   [リフレクション](http://msdn.microsoft.com/library/d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775)  
+-   [リフレクション](../../../framework/reflection-and-codedom/reflection.md)  
   
--   [型情報の表示](http://msdn.microsoft.com/library/7e7303a9-4064-4738-b4e7-b75974ed70d2)  
+-   [型情報の表示](../../../framework/reflection-and-codedom/viewing-type-information.md)  
   
--   [リフレクションとジェネリック型](http://msdn.microsoft.com/library/f7180fc5-dd41-42d4-8a8e-1b34288e06de)  
+-   [リフレクションとジェネリック型](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)  
   
--   <xref:System.Reflection.Emit></xref:System.Reflection.Emit>  
+-   <xref:System.Reflection.Emit>  
   
--   [属性に格納されている情報を取得します。](http://msdn.microsoft.com/library/37dfe4e3-7da0-48b6-a3d9-398981524e1c)  
+-   [属性に格納されている情報の取得](../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
   
 ## <a name="see-also"></a>関連項目  
- [Visual Basic のプログラミング ガイド](../../../visual-basic/programming-guide/index.md)   
+ [Visual Basic プログラミング ガイド](../../../visual-basic/programming-guide/index.md)  
  [共通言語ランタイムのアセンブリ](https://msdn.microsoft.com/library/k3677y81)

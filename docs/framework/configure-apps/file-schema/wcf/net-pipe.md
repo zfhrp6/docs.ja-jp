@@ -1,28 +1,33 @@
 ---
-title: "&lt;net.pipe&gt; | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: '&lt;net.pipe&gt;'
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 6a0f0318-f8f6-466c-9fae-199d7274a82e
-caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 5d68c2113b08065f7ec74ae68d7f0b5918cab0aa
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# &lt;net.pipe&gt;
+# <a name="ltnetpipegt"></a>&lt;net.pipe&gt;
 名前付きパイプ接続の有効期間を管理し、名前付きパイプを介して到着するアクティベーション要求を処理する名前付きパイプ アクティベーション サービスの構成設定を指定します。  
   
-## 構文  
+ \<system.serviceModel.activation >  
+\<net.pipe >  
   
-```  
+## <a name="syntax"></a>構文  
   
+```xml  
 <configuration>  
    <system.serviceModel.activation>  
        <net.pipe maxPendingAccepts="Integer"  
@@ -45,31 +50,31 @@ caps.handback.revision: 11
 </configuration>  
 ```  
   
-## 型  
+## <a name="type"></a>型  
  `Type`  
   
-## 属性および要素  
+## <a name="attributes-and-elements"></a>属性および要素  
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
-### 属性  
+### <a name="attributes"></a>属性  
   
 |属性|説明|  
-|--------|--------|  
-|`maxPendingAccepts`|整数は、共有サービスの待機エンドポイントで同時に受け入れる未処理のスレッドの最大数を示しています。  既定値は 2 です。|  
-|`maxPendingConnections`|ディスパッチを待機できる最大接続数を指定する整数。  既定値は 100 です。|  
-|`receiveTimeout`|フレーム データを読み取り、基礎となる接続から接続ディスパッチを実行するタイムアウトを指定する <xref:System.Timespan> です。  既定値は "00:00:10" です。|  
+|---------------|-----------------|  
+|`maxPendingAccepts`|整数は、共有サービスの待機エンドポイントで同時に受け入れる未処理のスレッドの最大数を示しています。 既定値は 2 です。|  
+|`maxPendingConnections`|ディスパッチを待機できる最大接続数を指定する整数。 既定値は 100 です。|  
+|`receiveTimeout`|フレーム データを読み取り、基礎となる接続から接続ディスパッチを実行するタイムアウトを指定する `TimeSpan` です。 既定値は "00:00:10" です。|  
   
-### 子要素  
-  
-|要素|説明|  
-|--------|--------|  
-|[\<allowAccounts\>](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|[!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] をホストするプロセスのユーザー アカウントを指定する `securityIdentifier` 属性が含まれており、共有サービスへの接続アクセス権が付与される構成要素のコレクションです。|  
-  
-### 親要素  
+### <a name="child-elements"></a>子要素  
   
 |要素|説明|  
-|--------|--------|  
-|[\<system.serviceModel.activation\>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel-activation.md)|リスナー プロセス SMSvcHost.exe の設定が含まれています。|  
+|-------------|-----------------|  
+|[\<allowAccounts >](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|`securityIdentifier` をホストするプロセスのユーザー アカウントを指定する [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] 属性が含まれており、共有サービスへの接続アクセス権が付与される構成要素のコレクションです。|  
   
-## 参照  
+### <a name="parent-elements"></a>親要素  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|[\<system.serviceModel.activation >](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel-activation.md)|リスナー プロセス SMSvcHost.exe の設定が含まれています。|  
+  
+## <a name="see-also"></a>関連項目  
  <xref:System.ServiceModel.Activation.Configuration.NetPipeSection>

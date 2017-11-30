@@ -1,71 +1,53 @@
 ---
-title: "XML ファイル (Visual Basic) の処理 |Microsoft ドキュメント"
+title: "XML ファイルの処理 (Visual Basic)"
 ms.custom: 
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-visual-basic
+ms.technology: devlang-visual-basic
 ms.topic: article
-dev_langs:
-- VB
-helpviewer_keywords:
-- XML comments, parsing [Visual Basic]
+helpviewer_keywords: XML comments [Visual Basic], parsing [Visual Basic]
 ms.assetid: 78a15cd0-7708-4e79-85d1-c154b7a14a8c
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a06bd2a17f1d6c7308fa6337c866c1ca2e7281c0
-ms.openlocfilehash: 72b2832d0131adf39a37ebd9297b43fb34ea49ba
-ms.lasthandoff: 03/13/2017
-
+ms.openlocfilehash: d44f58951d99f1b4b551af75dc0a0e895e337e2c
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="processing-the-xml-file-visual-basic"></a>XML ファイルの処理 (Visual Basic)
-コンパイラでは、ドキュメントを生成するタグが付けられて、コードの中に各構成体の ID 文字列が生成されます。 (コードをタグ付けする方法については、次を参照してください[XML のコメント用タグ](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)。)。ID 文字列は、構成要素を一意に識別します。 XML ファイルを処理するプログラムは、対応するを識別する ID 文字列を使用して[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]メタデータ/リフレクション項目。  
+コンパイラは、ドキュメントを生成するためにタグ付けされたコードのコンストラクトごとに、ID 文字列を生成します。 (コードをタグ付けする方法については、次を参照してください[XML コメント タグ](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)。)。ID 文字列によって、コンストラクトは一意に識別されます。 XML ファイルを処理するプログラムが、対応するを識別する ID 文字列を使用して[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]メタデータ/リフレクション項目。  
   
  XML ファイルは、コードの階層的な表現ではありません。単純なリストの各要素に対して生成された ID を使用することをお勧めします。  
   
- コンパイラは、次の規則をに基づいて ID 文字列を生成します。  
+ コンパイラは、次の規則に基づいて ID 文字列を生成します。  
   
--   文字列に空白文字は適用されません。  
+-   文字列内の空白文字は配置されません。  
   
--   ID 文字列の最初の部分では、一文字、コロンで識別されるメンバーの種類を識別します。 次のメンバーの型が使用されます。  
+-   ID 文字列の最初の部分では、その後にコロン、1 文字で識別されるメンバーの種類を識別します。 次のメンバーの種類が使用されます。  
   
 |文字|説明|  
 |---|---|  
-|N|namespace<br /><br /> ドキュメント コメントを名前空間に追加することはできませんが、CREF 参照を行うことができます、サポートされている場合。|  
-|T|type: `Class`, `Module`, `Interface`, `Structure`, `Enum`,`Delegate`|  
+|N|namespace<br /><br /> 名前空間にドキュメント コメントを追加することはできませんが、それらを CREF 参照を行うことができます、サポートされている場合。|  
+|T|型: `Class`、 `Module`、 `Interface`、 `Structure`、 `Enum`、`Delegate`|  
 |F|フィールド:`Dim`|  
 |P|プロパティ: `Property` (既定のプロパティを含む)|  
-|M|method: `Sub`, `Function`, `Declare`,`Operator`|  
+|M|方法: `Sub`、 `Function`、 `Declare`、`Operator`|  
 |E|イベント:`Event`|  
-|!|エラー文字列<br /><br /> 文字列の残りの部分では、エラーに関する情報を提供します。 [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)]コンパイラが解決できないリンクのエラー情報を生成します。|  
+|!|エラー文字列<br /><br /> あとに続く文字列で、エラーの情報を示します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラを解決できないリンクのエラー情報を生成します。|  
   
--   第&2; 部、 `String` 、名前空間のルートにある項目の完全修飾の名前を指定します。 アイテム、その外側の型、および名前空間の名前は、ピリオドで区切られます。 項目自体の名前にピリオドが含まれている場合、それらはシャープ記号で置き換えられます。 (#)。 項目の名前には、番号記号がないことが前提です。 たとえば、完全修飾名の`String`コンス トラクターになる`System.String.#ctor`します。  
+-   2 番目の部分、 `String` 、名前空間のルートにある項目の完全修飾の名前を指定します。 アイテム、その外側の型、および名前空間の名前は、ピリオドで区切られます。 項目自体の名前にピリオドが含まれている場合は、置き換えられるシャープ記号 (#)。 項目の名前には、番号記号がないことが前提です。 たとえば、完全修飾名の`String`コンス トラクターになる`System.String.#ctor`です。  
   
--   プロパティとメソッドは、メソッドの引数がある場合、引数リストをかっこで囲まれたをたどります。 引数がない場合は、かっこは存在しません。 引数は、コンマで区切られます。 エンコード方法に直接依存各引数のエンコーディング、[!INCLUDE[dnprdnshort](../../../csharp/getting-started/includes/dnprdnshort_md.md)]署名します。  
+-   プロパティおよびメソッドについては、メソッドに引数がある場合は、引数のリストをかっこで囲み、メソッドに続けて指定します。 引数がない場合は、かっこはありません。 引数はコンマで区切られます。 エンコード方法に直接依存引数はそれぞれのエンコード、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]署名します。  
   
 ## <a name="example"></a>例  
- 次のコードは、クラスの ID 文字列がどのようにあり、そのメンバーが生成されます。  
+ 次のコードは、クラスの ID の文字列し、そのメンバーが生成されます。  
   
- [!code-vb[VbVbcnXmlDocComments&#10;](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/processing-the-xml-file_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#10](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/processing-the-xml-file_1.vb)]  
   
 ## <a name="see-also"></a>関連項目  
- [/doc](../../../visual-basic/reference/command-line-compiler/doc.md)   
+ [/doc](../../../visual-basic/reference/command-line-compiler/doc.md)  
  [方法: XML ドキュメントを作成する](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)

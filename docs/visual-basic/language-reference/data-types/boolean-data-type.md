@@ -1,56 +1,55 @@
 ---
-title: "Boolean Data Type (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.FALSE"
-  - "vb.TRUE"
-  - "vb.Boolean"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "Boolean data type"
-  - "Boolean values, False keyword"
-  - "False keyword [Visual Basic]"
-  - "True keyword [Visual Basic]"
-  - "Boolean values, True keyword"
+title: "ブール型 (Boolean) (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords:
+- vb.FALSE
+- vb.TRUE
+- vb.Boolean
+helpviewer_keywords:
+- Boolean data type
+- Boolean values [Visual Basic], False keyword
+- False keyword [Visual Basic]
+- True keyword [Visual Basic]
+- Boolean values [Visual Basic], True keyword
 ms.assetid: 4858e630-4813-4216-a55e-f4d0feb884e4
-caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: bdc106f1ec874c1a2165df069d5f3485fe5b2e43
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Boolean Data Type (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-`True` または `False` の値だけを格納します。  キーワード `True` および `False` は、`Boolean` 変数の 2 つの状態に相当します。  
+# <a name="boolean-data-type-visual-basic"></a>ブール型 (Boolean) (Visual Basic)
+値を保持できるのみ`True`または`False`です。 キーワード`True`と`False`の 2 つの状態に対応している`Boolean`変数。  
   
-## 解説  
- ブール型 \([Boolean Data Type \(Visual Basic\)](../../../visual-basic/language-reference/data-types/boolean-data-type.md)\) は、true\/false、yes\/no、on\/off など、2 つの状態を表す値を格納するために使用します。  
+## <a name="remarks"></a>コメント  
+ 使用して、[ブール データ型 (Visual Basic)](../../../visual-basic/language-reference/data-types/boolean-data-type.md) true または false などの 2 つの状態値が含まれてはい/いいえ、またはオン/オフにします。  
   
- ブール型 \(`Boolean`\) の既定値は `False` です。  
+ `Boolean` の既定値は `False` です。  
   
- `Boolean` 値は数字としては格納されず、格納された値は数字と等しくなりません。  コードを作成する際、`True` および `False` に相当する数値を利用しないようにしてください。  ブール型 \(`Boolean`\) の変数に対しては、できるだけ本来の論理値だけを使用してください。  
+ `Boolean`値は、数値としては格納されませんし、格納された値が数値に相当するものではありません。 数値と等価の値に依存するコードを記述する必要がありますしない`True`と`False`です。 使用を制限する必要があります、可能な限り`Boolean`仕様で定められている論理値変数。  
   
-## 型変換  
- Visual Basic で数値型の値をブール型 \(`Boolean`\) に変換すると、0 は `False` になり、その他の値はすべて `True` になります。  Visual Basic でブール型 \(`Boolean`\) の値を数値型に変換すると、`False` は 0 になり、`True` は \-1 になります。  
+## <a name="type-conversions"></a>型変換  
+ Visual Basic でに数値データ型の値を変換するときに`Boolean`、0 になります`False`になり、その他のすべての値`True`です。 Visual Basic の変換と`Boolean`値、数値型を`False`が 0 になったと`True`-1 になります。  
   
- `Boolean` 値と数値型との間で変換を行う場合は、.NET フレームワークの変換メソッドが必ずしも Visual Basic の変換キーワードと同じ結果を出力するとは限らないことに注意してください。  これは、Visual Basic の変換処理が、前バージョンと互換性のある動作を保持しているからです。  詳細については、「[Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)」の「Boolean 型が数値型に正確に変換されない」を参照してください。  
+ 間で変換する際に`Boolean`値と、数値データ型は、する .NET Framework 変換メソッドは、常に生成しない変換の Visual Basic のキーワードと同じ結果に留意してください。 Visual Basic の変換には、以前のバージョンと互換性のある動作が保持されるためです。 詳細についてを参照してください「ブール型は変換する数値型不適切」[データ型のトラブルシューティング](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)です。  
   
-## プログラミングのヒント  
+## <a name="programming-tips"></a>プログラミングのヒント  
   
--   **負の数。** ブール型 \(`Boolean`\) は数値型ではないので、負の値を表現できません。  どのような場合でも、`Boolean` を使って数値を格納しないでください。  
+-   **負の数。** `Boolean`数値型ではないと、負の値を表すことはできません。 いずれの場合は、使用しないで`Boolean`数値の値を保持します。  
   
--   **型文字。** ブール型 \(`Boolean`\) にはリテラルの型文字も、識別子の型文字もありません。  
+-   **型宣言文字。** `Boolean`リテラルの型文字または識別子の型文字がありません。  
   
--   **Framework のデータ型。**.NET Framework において対応する型は、<xref:System.Boolean?displayProperty=fullName> 構造体です。  
+-   **Framework の型。** .NET Framework において対応する型は、<xref:System.Boolean?displayProperty=nameWithType> 構造体です。  
   
-## 使用例  
- 次の例では、`runningVB` はブール型 \(`Boolean`\) の変数であり、単純な Yes\/No の設定が格納されます。  
+## <a name="example"></a>例  
+ 次の例では、`runningVB`は、`Boolean`単純なはい/いいえの設定を格納する変数。  
   
 ```  
 Dim runningVB As Boolean  
@@ -60,11 +59,11 @@ If scriptEngine = "VB" Then
 End If  
 ```  
   
-## 参照  
- <xref:System.Boolean?displayProperty=fullName>   
- [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
- [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)   
- [Efficient Use of Data Types](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)   
- [Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
+## <a name="see-also"></a>関連項目  
+ <xref:System.Boolean?displayProperty=nameWithType>  
+ [データの種類](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
+ [データ型の有効な使用方法](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)  
+ [トラブルシューティング (データ型)](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
  [CType 関数](../../../visual-basic/language-reference/functions/ctype-function.md)

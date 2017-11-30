@@ -1,42 +1,23 @@
 ---
 title: "-langversion (C# コンパイラ オプション)"
-ms.date: 2015-07-20
+ms.date: 07/20/2015
 ms.prod: .net
-ms.technology:
-- devlang-csharp
+ms.technology: devlang-csharp
 ms.topic: article
-f1_keywords:
-- /langversion
-dev_langs:
-- CSharp
+f1_keywords: /langversion
 helpviewer_keywords:
 - /langversion compiler option [C#]
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-caps.latest.revision: 33
+caps.latest.revision: "33"
 author: BillWagner
 ms.author: wiwagn
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: d034958b14c54540aa175a23067d47bd5d850bab
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
 ms.translationtype: HT
-ms.sourcegitcommit: 306c608dc7f97594ef6f72ae0f5aaba596c936e1
-ms.openlocfilehash: fc501c5532d27168d74d1a5f293abe59d3beeef1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="langversion-c-compiler-options"></a>/langversion (C# コンパイラ オプション)
 コンパイラが、選択した C# 言語仕様に含まれている構文のみを受け入れるようにします。  
@@ -85,31 +66,31 @@ ms.lasthandoff: 07/28/2017
   
 2.  **[ビルド]** プロパティ ページをクリックします。  
   
-3.  [詳細設定 **** ] ボタンをクリックします。  
+3.  **[詳細設定]** ボタンをクリックします。  
   
 4.  **言語バージョン**プロパティを変更します。  
   
  このコンパイラ オプションをプログラムで設定する方法については、「<xref:VSLangProj80.CSharpProjectConfigurationProperties3.LanguageVersion%2A>」を参照してください。  
     
 ## <a name="see-also"></a>関連項目  
- [C# コンパイラのオプション](../../../csharp/language-reference/compiler-options/index.md)   
- [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)   
+ [C# コンパイラ オプション](../../../csharp/language-reference/compiler-options/index.md)  
+ [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)  
  
 ### <a name="c-language-specification"></a>C# 言語仕様
- [C# 言語仕様リファレンス](../../../csharp/language-reference/language-specification/index.md): .NET Foundation   
- C# 1.0/1.1 [ISO/IEC 23270:2003](https://www.iso.org/standard/36768.html) 情報技術 -- C# 言語仕様: ISO カタログ   
- C# 2.0 [ISO/IEC 23270:2006](https://www.iso.org/standard/42926.html) 情報技術 -- C# 言語仕様: ISO カタログ   
- C# 2.0 [c042926_ISO_IEC_23270_2006(E).zip](http://go.microsoft.com/fwlink/?LinkId=144406) ISO/IEC 23270:2006 (PDF 形式) : 自由に利用可能な標準 ISO   
- C# 3.0 [CSharp Language Specification.doc](http://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc) C# 言語仕様バージョン 3.0 : Microsoft Corporation   
+ [C# 言語仕様リファレンス](../../../csharp/language-reference/language-specification/index.md): .NET Foundation  
+ C# 1.0/1.1 [ISO/IEC 23270:2003](https://www.iso.org/standard/36768.html) 情報技術 -- C# 言語仕様: ISO カタログ  
+ C# 2.0 [ISO/IEC 23270:2006](https://www.iso.org/standard/42926.html) 情報技術 -- C# 言語仕様: ISO カタログ  
+ C# 2.0 [c042926_ISO_IEC_23270_2006(E).zip](http://go.microsoft.com/fwlink/?LinkId=144406) ISO/IEC 23270:2006 (PDF 形式) : 自由に利用可能な標準 ISO  
+ C# 3.0 [CSharp Language Specification.doc](http://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc) C# 言語仕様バージョン 3.0 : Microsoft Corporation  
  C# 4.0 [Ecma-334.pdf](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf) Standard ECMA-334 4th Edition    
- C# 5.0 [CSharp Language Specification.docx](https://www.microsoft.com/en-us/download/details.aspx?id=7029) C# 言語仕様バージョン 5.0 : Microsoft Corporation   
- C# 6.0 [README.md](https://github.com/dotnet/csharplang/blob/master/spec/README.md) C# 言語仕様バージョン 6 - 非公式ドラフト: .NET Foundation   
- C# 7.0 (現在使用できません)   
+ C# 5.0 [CSharp Language Specification.docx](https://www.microsoft.com/download/details.aspx?id=7029) C# 言語仕様バージョン 5.0 : Microsoft Corporation  
+ C# 6.0 [README.md](https://github.com/dotnet/csharplang/blob/master/spec/README.md) C# 言語仕様バージョン 6 - 非公式ドラフト: .NET Foundation  
+ C# 7.0 (現在使用できません)  
 
 <!--- Uncomment and add to the above when they become officially released
- C# 7.1 (spec is not yet finished)   
- C# 7.2 (spec is not yet finished)   
- C# 8.0 (spec is not yet finished)   
+ C# 7.1 (spec is not yet finished)  
+ C# 7.2 (spec is not yet finished)  
+ C# 8.0 (spec is not yet finished)  
 -->
 
 ### <a name="minimum-compiler-version-needed-to-support-all-language-features"></a>すべての言語機能をサポートするために必要な最小コンパイラ バージョン   
@@ -126,4 +107,3 @@ ms.lasthandoff: 07/28/2017
 [↩](#TCS72)<a name="FCS72">CS72</a>: Microsoft Visual Studio/Build Tools 20??    
 [↩](#TCS8)<a name="FCS71">CS8</a>: Microsoft Visual Studio/Build Tools 20??    
 -->
-

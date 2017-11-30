@@ -1,33 +1,39 @@
 ---
-title: "方法 : ストリーミングを有効にする | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "方法 : ストリーミングを有効にする"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- csharp
+- vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
-caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 8436ceefea936ddbf708aa3f79c5f7bd8153ac66
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# 方法 : ストリーミングを有効にする
+# <a name="how-to-enable-streaming"></a>方法 : ストリーミングを有効にする
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] では、バッファー転送またはストリーミング転送を使用してメッセージを送信できます。 既定のバッファー転送モードでは、受信側がメッセージを読み取る前に、メッセージの送信が完了している必要があります。 ストリーミング転送モードでは、送信が完了していなくても、受信側でメッセージの処理を開始できます。 ストリーミング モードは、渡される情報が長い場合、または連続的に処理する場合に役立ちます。 ストリーミング モードは、メッセージが大きすぎてすべてをバッファーできない場合にも役立ちます。  
   
  ストリーミングを有効にするには、`OperationContract` を適切に定義し、トランスポート レベルでストリーミングを有効にします。  
   
 ### <a name="to-stream-data"></a>データをストリーミングするには  
   
-1.  データをストリーミングするには、サービスの `OperationContract` が次の&2; つの要件を満たしている必要があります。  
+1.  データをストリーミングするには、サービスの `OperationContract` が次の 2 つの要件を満たしている必要があります。  
   
-    1.  ストリーミングするデータを保持するパラメーターが、メソッド内の唯一のパラメーターになるようにします。 たとえば、入力メッセージをストリーミングする場合、厳密に&1; つの入力パラメーターが操作に含まれている必要があります。 同様に、出力メッセージをストリーミングする場合、厳密に&1; つの出力パラメーターまたは戻り値が操作に含まれている必要があります。  
+    1.  ストリーミングするデータを保持するパラメーターが、メソッド内の唯一のパラメーターになるようにします。 たとえば、入力メッセージをストリーミングする場合、厳密に 1 つの入力パラメーターが操作に含まれている必要があります。 同様に、出力メッセージをストリーミングする場合、厳密に 1 つの出力パラメーターまたは戻り値が操作に含まれている必要があります。  
   
-    2.  パラメーターと戻り値の型の少なくとも&1; つある必要があります<xref:System.IO.Stream>、<xref:System.ServiceModel.Channels.Message>、または<xref:System.Xml.Serialization.IXmlSerializable>します。  
+    2.  パラメーターおよび戻り値の型の少なくとも 1 つが、<xref:System.IO.Stream>、<xref:System.ServiceModel.Channels.Message> または <xref:System.Xml.Serialization.IXmlSerializable> になる必要があります。  
   
      ストリーミングされたデータのコントラクトの例を次に示します。  
   
@@ -52,7 +58,7 @@ caps.handback.revision: 13
   
     1.  次のサンプルの構成スニペットでは、`TransferMode` とカスタム HTTP バインディングで、`basicHttpBinding` プロパティをストリーミングに設定しています。  
   
-         <!-- TODO: review snippet reference [!code[c_HowTo_EnableStreaming#103](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_enablestreaming/common/app.config#103)]  -->  
+         [!code-xml[c_HowTo_EnableStreaming#103](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming/common/app.config#103)]   
   
     2.  次のコード スニペットでは、`TransferMode` とカスタム HTTP バインディングで、`basicHttpBinding` プロパティをストリーミングに設定しています。  
   
@@ -71,13 +77,13 @@ caps.handback.revision: 13
   
 ### <a name="writing-a-custom-stream"></a>カスタム ストリームの書き込み  
   
-1.  カスタム ストリーム クラスを派生が送信されるデータ ストリームの各チャンクに対して特殊な処理を行うに<xref:System.IO.Stream>します。 カスタム ストリームの例として、`GetReversedStream` メソッドと `ReverseStream` クラスのコードを次に示します。  
+1.  送受信中のデータ ストリームの各チャンクに対して特殊な処理を行うには、<xref:System.IO.Stream> からカスタム ストリーム クラスを派生します。 カスタム ストリームの例として、`GetReversedStream` メソッドと `ReverseStream` クラスのコードを次に示します。  
   
-     `GetReversedStream` では、`ReverseStream` の新しいインスタンスを作成して返します。 実際の処理は、システムが `ReverseStream` オブジェクトの読み取りを行うときに発生します。 `ReverseStream.Read` メソッドは、基になるファイルからバイトのチャンクを読み取り、バイトを反転し、その反転したバイトを返します。 このメソッドは、ファイル全体の内容を反転しません。一度に&1; つのバイト チャンクを反転します。 この例では、ストリームの内容の読み取りやストリームへの書き込み時に、ストリーミング処理を実行する方法を示します。  
+     `GetReversedStream` では、`ReverseStream` の新しいインスタンスを作成して返します。 実際の処理は、システムが `ReverseStream` オブジェクトの読み取りを行うときに発生します。 `ReverseStream.Read` メソッドは、基になるファイルからバイトのチャンクを読み取り、バイトを反転し、その反転したバイトを返します。 このメソッドは、ファイル全体の内容を反転しません。一度に 1 つのバイト チャンクを反転します。 この例では、ストリームの内容の読み取りやストリームへの書き込み時に、ストリーミング処理を実行する方法を示します。  
   
      [!code-csharp[c_HowTo_EnableStreaming#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming/cs/service.cs#2)]
      [!code-vb[c_HowTo_EnableStreaming#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_enablestreaming/vb/service.vb#2)]  
   
 ## <a name="see-also"></a>関連項目  
- [大規模データとストリーミング](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)   
+ [大規模なデータとストリーミング](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)  
  [ストリーム](../../../../docs/framework/wcf/samples/stream.md)

@@ -1,33 +1,31 @@
 ---
-title: "Out of string space (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vbrID14"
-dev_langs: 
-  - "VB"
+title: "文字列スペースが不足しています。(Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vbrID14
 ms.assetid: 16681c75-a400-422d-9351-c691d3c7614e
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: d820bdfd7c66ecbe81f8cb75ada2374045257598
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Out of string space (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-Visual Basic では、非常に大きな文字列を使用できます。  ただし、他のプログラムの要求や文字列の操作方法によっては、このエラーが発生する場合があります。  
+# <a name="out-of-string-space-visual-basic"></a>文字列スペースが不足しています。(Visual Basic)
+Visual basic では、非常に大きな文字列を使用できます。 ただし、他のプログラムと、文字列内で操作する方法の要件によっては、このエラーが発生することができますも。  
   
-### このエラーを解決するには  
+## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  評価時に文字列を一時的に作成する必要がある式でこのエラーが発生していないかどうかを確認します。  
+1.  式の評価中に一時的な文字列の作成を必要とするがエラーの原因ではないことを確認します。  
   
-2.  不要なアプリケーションをメモリから削除して領域を拡張します。  
+2.  多くの領域を作成するメモリから不要なアプリケーションを削除します。  
   
-## 参照  
- [Error Types](../../../visual-basic/programming-guide/language-features/error-types.md)   
- [String Manipulation Summary](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)
+## <a name="see-also"></a>関連項目  
+ [エラーの種類](../../../visual-basic/programming-guide/language-features/error-types.md)  
+ [文字列操作の概要](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)

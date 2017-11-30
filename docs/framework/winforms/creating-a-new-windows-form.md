@@ -16,14 +16,14 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 31406d7ed98b462a39e0b57bf66988b1c440a33f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
-ms.translationtype: HT
+ms.openlocfilehash: f373696f4d3a92f15ab7c8641e02303da4a54e6d
+ms.sourcegitcommit: 425524461530f020f9747492b42f8cd72b011ae7
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 11/25/2017
 ---
 # <a name="creating-a-new-windows-form"></a>新しい Windows フォームの作成
-このトピックでは、初めての Windows フォーム アプリケーションを作成する方法について説明したトピックへのリンクを示します。 また、このセクションのトピックでは、Windows フォーム アプリケーションを作成する際に理解しておくべき基本的な用語とガイドラインもいくつか紹介します。 . Windows フォーム アプリケーションとそこで使用できるコントロール、イベントとイベント処理、ユーザー入力の処理方法の詳細については、関連トピックの一覧を参照してください。  
+このトピックでは、初めての Windows フォーム アプリケーションを作成する方法について説明したトピックへのリンクを示します。 また、このセクションのトピックでは、Windows フォーム アプリケーションを作成する際に理解しておくべき基本的な用語とガイドラインもいくつか紹介します。 Windows フォーム アプリケーションに関する詳細についてに、イベントとイベントの処理、および、ユーザーからの入力を処理する方法で使用できるコントロールは、関連するトピックの一覧を参照してください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Windows フォームの座標](../../../docs/framework/winforms/windows-forms-coordinates.md)です。  

@@ -1,59 +1,56 @@
 ---
-title: "Take While Clause (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-f1_keywords: 
-  - "vb.QueryTakeWhile"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "queries [Visual Basic], Take While"
-  - "Take While clause"
-  - "Take While statement"
+title: "Take While 句 (Visual Basic)"
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+f1_keywords: vb.QueryTakeWhile
+helpviewer_keywords:
+- queries [Visual Basic], Take While
+- Take While clause [Visual Basic]
+- Take While statement [Visual Basic]
 ms.assetid: db8f9f2f-fc9f-4a6c-b0b8-1bf048147e11
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 5c8add6c55bb9353bac3489e68f497cb32785aad
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# Take While Clause (Visual Basic)
-[!INCLUDE[vs2017banner](../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
+# <a name="take-while-clause-visual-basic"></a>Take While 句 (Visual Basic)
 指定された条件が `true` である限り、コレクションの要素を含むようにし、残りの要素をバイパスします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Take While expression  
 ```  
   
-## 指定項目  
+## <a name="parts"></a>指定項目  
   
-|||  
-|-|-|  
-|語句|定義|  
-|`expression`|必ず指定します。  要素をテストするための条件を表す式。  この式は、`Boolean` 値、または `Boolean` として評価される `Integer` などの機能的に同等な値を返す必要があります。|  
+|用語|定義|  
+|---|---|  
+|`expression`|必須です。 要素をテストするための条件を表す式。 式を返す必要があります、`Boolean`値またはそれと同等の機能など、`Integer`として評価される、`Boolean`です。|  
   
-## 解説  
- `Take While` 句は、指定した `expression` が `false` を返すまで、クエリ結果の先頭から要素を取得します。  `expression` が `false` を返した後は、残っているすべての要素をバイパスします。  残りの結果では、`expression` は無視されます。  
+## <a name="remarks"></a>コメント  
+ `Take While`句には、まで、指定されたクエリの結果の先頭から要素が含まれる`expression`返します`false`です。 後に、`expression`返します`false`クエリの残りのすべての要素をバイパスします。 `expression`残りの結果は無視されます。  
   
- `Where` 句の場合、特定の条件を満たすすべての要素をクエリから取得できるという点で、`Take While` 句は `Where` 句と異なります。  `Take While` 句は、条件を満たさない最初の要素が出現するまで、要素を取得します。  `Take While` 句は、順序があるクエリ結果を操作する場合に最も役に立ちます。  
+ `Take While`句とは異なります、`Where`を内の句、`Where`クエリから特定の条件を満たすすべての要素を含める句を使用できます。 `Take While`句には、条件が満たされていない最初の時刻までの要素が含まれています。 `Take While`句は、順序付けられたクエリ結果を使用しているときに最も役立ちます。  
   
-## 使用例  
- 次のコード例では、`Take While` 句を使用して、注文がない最初の顧客が見つかるまで、結果を取得します。  
+## <a name="example"></a>例  
+ 次のコード例では、`Take While`句を任意の注文数が、最初の顧客が見つかるまで、結果を取得します。  
   
  [!code-vb[VbSimpleQuerySamples#2](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/take-while-clause_1.vb)]  
   
-## 参照  
- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)   
- [Queries](../../../visual-basic/language-reference/queries/queries.md)   
- [Select Clause](../../../visual-basic/language-reference/queries/select-clause.md)   
- [From Clause](../../../visual-basic/language-reference/queries/from-clause.md)   
- [Take Clause](../../../visual-basic/language-reference/queries/take-clause.md)   
- [Skip While Clause](../../../visual-basic/language-reference/queries/skip-while-clause.md)   
- [Where Clause](../../../visual-basic/language-reference/queries/where-clause.md)
+## <a name="see-also"></a>関連項目  
+ [Visual Basic における LINQ の概要](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ [クエリ](../../../visual-basic/language-reference/queries/queries.md)  
+ [Select 句](../../../visual-basic/language-reference/queries/select-clause.md)  
+ [From 句](../../../visual-basic/language-reference/queries/from-clause.md)  
+ [Take 句](../../../visual-basic/language-reference/queries/take-clause.md)  
+ [Skip While 句](../../../visual-basic/language-reference/queries/skip-while-clause.md)  
+ [WHERE 句](../../../visual-basic/language-reference/queries/where-clause.md)

@@ -1,42 +1,41 @@
 ---
-title: "How to: Declare a Structure (Visual Basic) | Microsoft Docs"
-ms.custom: ""
-ms.date: "2015-07-20"
-ms.prod: ".net"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-visual-basic"
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
-  - "declarations, structures"
-  - "structure statements"
-  - "statements [Visual Basic], structure"
-  - "structures, declaring"
+title: "方法: 構造体を宣言する (Visual Basic)"
+ms.custom: 
+ms.date: 07/20/2015
+ms.prod: .net
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-visual-basic
+ms.topic: article
+helpviewer_keywords:
+- declarations [Visual Basic], structures
+- structure statements [Visual Basic]
+- statements [Visual Basic], structure
+- structures [Visual Basic], declaring
 ms.assetid: d5e98381-eb81-47d4-af83-48cc534a2572
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: dotnet-bot
+ms.author: dotnetcontent
+ms.openlocfilehash: 8203327e189d095c9f7ceeb3b68ea24efe9ba882
+ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/21/2017
 ---
-# How to: Declare a Structure (Visual Basic)
-[!INCLUDE[vs2017banner](../../../../visual-basic/developing-apps/includes/vs2017banner.md)]
-
-構造体宣言は、[Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md) で開始し、`End` `Structure` ステートメントで終了します。  この 2 つのステートメントの間に、少なくとも 1 つの*要素*を宣言する必要があります。  要素にはすべてのデータ型を使用できますが、少なくとも 1 つは、非共有変数または非共有で非カスタムのイベントのいずれかである必要があります。  
+# <a name="how-to-declare-a-structure-visual-basic"></a>方法: 構造体を宣言する (Visual Basic)
+ある構造体の宣言を開始する、 [Structure ステートメント](../../../../visual-basic/language-reference/statements/structure-statement.md)で終了して、 `End` `Structure`ステートメントです。 これら 2 つのステートメントの間で、少なくとも 1 つを宣言する必要があります*要素*です。 任意のデータ型の要素を指定できますが、非共有変数または非共有、非カスタム イベントのいずれかにするには、少なくとも 1 つ必要があります。  
   
- 構造体の宣言で構造体の要素を初期化することはできません。  構造体型の変数を宣言するときは、変数をとおして要素にアクセスすることにより、要素に値を代入します。  
+ 構造体の宣言で構造体の要素を初期化することはできません。 構造型の変数を宣言するときに、要素に、変数にアクセスすることにより値を割り当てます。  
   
- 構造体とクラスとの違いに関する詳細については、「[Structures and Classes](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)」を参照してください。  
+ 構造体とクラス間の違いの詳細については、次を参照してください。[構造体とクラス](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)です。  
   
- デモの目的で、従業員の名前、内線番号、および給与を追跡する状況を考えてみます。  構造体により、単一の変数でこれを行うことができます。  
+ デモの目的の従業員の名前、内線番号、および給与を追跡するような状況を検討してください。 構造体では、これは 1 つの変数で実行することができます。  
   
-### 構造体を宣言するには  
+### <a name="to-declare-a-structure"></a>構造体を宣言するには  
   
-1.  構造体の開始ステートメントと終了ステートメントを作成します。  
+1.  最初と最後のステートメントの構造を作成します。  
   
-     [Public](../../../../visual-basic/language-reference/modifiers/public.md) キーワード、[Protected](../../../../visual-basic/language-reference/modifiers/protected.md) キーワード、[Friend](../../../../visual-basic/language-reference/modifiers/friend.md) キーワード、または [Private](../../../../visual-basic/language-reference/modifiers/private.md) キーワードを使用して、構造体のアクセス レベルを指定できます。または既定の `Public` に設定できます。  
+     使用して、構造体のアクセス レベルを指定することができます、[パブリック](../../../../visual-basic/language-reference/modifiers/public.md)、 [Protected](../../../../visual-basic/language-reference/modifiers/protected.md)、[フレンド](../../../../visual-basic/language-reference/modifiers/friend.md)、または[プライベート](../../../../visual-basic/language-reference/modifiers/private.md)キーワード、またはすることができますできます既定で`Public`です。  
   
     ```  
     Private Structure employee  
@@ -45,7 +44,7 @@ caps.handback.revision: 15
   
 2.  構造体の本体に要素を追加します。  
   
-     構造体は、少なくとも 1 つの要素を持つ必要があります。  すべての要素を宣言し、それぞれのアクセス レベルを指定する必要があります。  キーワードを指定せずに [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) を使用する場合、アクセシビリティは既定で `Public` になります。  
+     構造体には、少なくとも 1 つの要素が必要です。 すべての要素を宣言し、ファイルのアクセス レベルを指定する必要があります。 使用する場合、 [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)、キーワードのないユーザー補助機能の既定値`Public`です。  
   
     ```  
     Private Structure employee  
@@ -60,18 +59,18 @@ caps.handback.revision: 15
     End Structure  
     ```  
   
-     上の例の `salary` フィールドは、`Private` です。つまり、含まれているクラスからでも、構造体の外部ではアクセスできません。  ただし、`giveRaise` プロシージャは `Public` であるため、構造体以外から呼び出すことができます。  同様に、構造体以外から `salaryReviewTime` イベントを発生させることができます。  
+     `salary`フィールド前の例では`Private`、これは外側のクラスからでも、構造体の外部アクセスできません。 ただし、`giveRaise`プロシージャは`Public`ので、構造体の外部から呼び出すことができます。 同様に上げることができます、`salaryReviewTime`構造の外部からのイベントです。  
   
-     変数、`Sub` プロシージャ、およびイベントに加え、定数、`Function` プロシージャ、およびプロパティも構造体で定義できます。  *既定のプロパティ*としてプロパティを 1 つ指定できます。ただし、少なくとも 1 つの引数を指定する必要があります。  イベントは [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) `Sub` プロシージャを使用して処理できます。  詳細については、「[How to: Declare and Call a Default Property in Visual Basic](../../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)」を参照してください。  
+     変数だけでなく`Sub`プロシージャ、およびイベント、定数を定義することもできます。`Function`プロシージャ、および構造のプロパティです。 として最大で 1 つのプロパティを指定することができます、*既定プロパティ*に少なくとも 1 つの引数を受け取る提供します。 イベントを処理することができます、 [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) `Sub`プロシージャです。 詳細については、次を参照してください。[する方法: Visual Basic の既定のプロパティを呼び出してくださいを宣言し](../../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)です。  
   
-## 参照  
- [データ型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [Elementary Data Types](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)   
- [Composite Data Types](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)   
- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)   
- [Structures](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
- [Troubleshooting Data Types](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
- [Structure Variables](../../../../visual-basic/programming-guide/language-features/data-types/structure-variables.md)   
- [Structures and Other Programming Elements](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)   
- [Structures and Classes](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)   
- [User\-Defined Data Type](../../../../visual-basic/language-reference/data-types/user-defined-data-type.md)
+## <a name="see-also"></a>関連項目  
+ [データの種類](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [基本データ型](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  
+ [複合データ型](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)  
+ [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
+ [構造体](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
+ [トラブルシューティング (データ型)](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [構造体変数](../../../../visual-basic/programming-guide/language-features/data-types/structure-variables.md)  
+ [構造体とその他のプログラミング要素](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)  
+ [構造体とクラス](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)  
+ [ユーザー定義型](../../../../visual-basic/language-reference/data-types/user-defined-data-type.md)

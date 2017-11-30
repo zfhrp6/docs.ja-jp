@@ -1,23 +1,26 @@
 ---
-title: "ワークフロー サービス内でのシリアル化の構成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dotnet-clr"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ワークフロー サービス内でのシリアル化の構成"
+ms.custom: 
+ms.date: 03/30/2017
+ms.prod: .net-framework
+ms.reviewer: 
+ms.suite: 
+ms.technology: dotnet-clr
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: aa70b290-a2ee-4c3c-90ea-d0a7665096ae
-caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: Erikre
+ms.author: erikre
+manager: erikre
+ms.openlocfilehash: 9aa50b8e9f29e5dd14f0ff18d253943a73ef3a0b
+ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/18/2017
 ---
-# ワークフロー サービス内でのシリアル化の構成
-ワークフロー サービスは [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスであるため、<xref:System.Runtime.Serialization.DataContractSerializer> \(既定\) または <xref:System.Xml.Serialization.XmlSerializer> を使用するオプションがあります。ワークフロー以外のサービスを記述する場合、使用するシリアライザーの型はサービスまたは操作コントラクトで指定されます。[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ワークフロー サービスを作成する場合、これらのコントラクトはコードで指定せずに、コントラクト推論で実行時に生成されます。コントラクト推論[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[ワークフロー内でのコントラクトの使用](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md)」を参照してください。シリアライザーは、<xref:System.ServiceModel.Activities.Receive.SerializerOption%2A> プロパティを使用して指定されます。これは、次の図に示すようにデザイナーで設定できます。  
+# <a name="configuring-serialization-in-a-workflow-service"></a>ワークフロー サービス内でのシリアル化の構成
+ワークフロー サービスは [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] サービスであるため、<xref:System.Runtime.Serialization.DataContractSerializer> (既定) または <xref:System.Xml.Serialization.XmlSerializer> を使用するオプションがあります。 ワークフロー以外のサービスを記述する場合、使用するシリアライザーの型はサービスまたは操作コントラクトで指定されます。 [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ワークフロー サービスを作成する場合、これらのコントラクトはコードで指定せずに、コントラクト推論で実行時に生成されます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]コントラクトの推論は、「[ワークフロー内のコントラクトの使用](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md)です。  シリアライザーは、<xref:System.ServiceModel.Activities.Receive.SerializerOption%2A> プロパティを使用して指定されます。 これは、次の図に示すようにデザイナーで設定できます。  
   
  ![シリアライザーの設定](../../../../docs/framework/wcf/feature-details/media/settingserialzier.png "SettingSerialzier")  
   
@@ -32,18 +35,17 @@ Receive approveExpense = new Receive
                 SerializerOption = SerializerOption.DataContractSerializer,  
                 Content = ReceiveContent.Create(new OutArgument<Expense>(expense))  
             };  
-  
 ```  
   
- ワークフロー サービスにも既知の型を指定できます。既知の型[!INCLUDE[crabout](../../../../includes/crabout-md.md)]、「[既知のデータ コントラクト型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)」を参照してください。既知の型は、デザイナーまたはコードで指定できます。デザイナーで既知の型を指定するには、次の図に示すように <xref:System.ServiceModel.Activities.Receive> アクティビティのプロパティ ウィンドウで KnownTypes プロパティの横の省略記号ボタンをクリックします。  
+ ワークフロー サービスにも既知の型を指定できます。 [!INCLUDE[crabout](../../../../includes/crabout-md.md)]既知の型を参照してください[データ コントラクトの既知の型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)です。 既知の型は、デザイナーまたはコードで指定できます。 デザイナーで既知の型を指定するには、次の図に示すように <xref:System.ServiceModel.Activities.Receive> アクティビティのプロパティ ウィンドウで KnownTypes プロパティの横の省略記号ボタンをクリックします。  
   
  ![KnownTypes プロパティ](../../../../docs/framework/wcf/feature-details/media/knowntypes.png "KnownTypes")  
   
  これにより、既知の型を検索および指定できる型コレクション エディターが表示されます。  
   
- ![既知の型の追加](../../../../docs/framework/wcf/feature-details/media/typecollectionseditor.gif "TypeCollectionsEditor")  
+ ![既知の型を追加する](../../../../docs/framework/wcf/feature-details/media/typecollectionseditor.gif "TypeCollectionsEditor")  
   
- **\[新しい型の追加\]** リンクをクリックし、ドロップダウンを使用して既知の型コレクションに追加する型を選択または検索します。既知の型をコードで指定するには、次の例に示すように <xref:System.ServiceModel.Activities.Receive.KnownTypes%2A> プロパティを使用します。  
+ クリックして、**新しいタイプの追加**リンクし、既知の型のコレクションに追加する型の選択や検索ドロップダウンを使用します。 既知の型をコードで指定するには、次の例に示すように <xref:System.ServiceModel.Activities.Receive.KnownTypes%2A> プロパティを使用します。  
   
 ```  
 Receive approveExpense = new Receive  
@@ -56,7 +58,6 @@ Receive approveExpense = new Receive
             };  
             approveExpense.KnownTypes.Add(typeof(Travel));  
             approveExpense.KnownTypes.Add(typeof(Meal));  
-  
 ```  
   
- ワークフロー サービスのシリアル化の構成方法を示す完全なコード例を確認するには、「[ワークフロー サービスでのメッセージの書式設定](../../../../docs/framework/windows-workflow-foundation/samples/formatting-messages-in-workflow-services.md)」を参照してください。
+ 完全なコード例をワークフロー サービスのシリアル化を構成する方法を示すを参照してください「[ワークフロー サービス内メッセージを書式設定](../../../../docs/framework/windows-workflow-foundation/samples/formatting-messages-in-workflow-services.md)です。
